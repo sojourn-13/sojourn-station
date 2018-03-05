@@ -15,7 +15,7 @@
 	name = "status display"
 	anchored = 1
 	density = 0
-	use_power = IDLE_POWER_USE
+	use_power = 1
 	idle_power_usage = 10
 	var/mode = 1	// 0 = Blank
 					// 1 = Shuttle timer
@@ -47,18 +47,18 @@
 	var/const/STATUS_DISPLAY_CUSTOM = 99
 
 /obj/machinery/status_display/Destroy()
-	SSradio.remove_object(src,frequency)
-	GLOB.ai_status_display_list -= src
+	if(radio_controller)
+		radio_controller.remove_object(src,frequency)
 	return ..()
 
 // register for radio system
-/obj/machinery/status_display/Initialize()
-	. = ..()
-	SSradio.add_object(src, frequency)
-	GLOB.ai_status_display_list += src
+/obj/machinery/status_display/initialize()
+	..()
+	if(radio_controller)
+		radio_controller.add_object(src, frequency)
 
 // timed process
-/obj/machinery/status_display/Process()
+/obj/machinery/status_display/process()
 	if(stat & NOPOWER)
 		remove_display()
 		return
@@ -105,20 +105,20 @@
 			if(!index1)
 				line1 = message1
 			else
-				line1 = copytext_char("[message1]|[message1]", index1, index1 + CHARS_PER_LINE)
-				var/message1_len = length_char(message1)
+				line1 = copytext(message1+"|"+message1, index1, index1+CHARS_PER_LINE)
+				var/message1_len = length(message1)
 				index1 += SCROLL_SPEED
-				if(index1 > message1_len + 1)
-					index1 -= (message1_len + 1)
+				if(index1 > message1_len)
+					index1 -= message1_len
 
 			if(!index2)
 				line2 = message2
 			else
-				line2 = copytext_char("[message2]|[message2]", index2, index2 + CHARS_PER_LINE)
-				var/message2_len = length_char(message2)
+				line2 = copytext(message2+"|"+message2, index2, index2+CHARS_PER_LINE)
+				var/message2_len = length(message2)
 				index2 += SCROLL_SPEED
-				if(index2 > message2_len + 1)
-					index2 -= (message2_len + 1)
+				if(index2 > message2_len)
+					index2 -= message2_len
 			update_display(line1, line2)
 			return 1
 		if(STATUS_DISPLAY_ALERT)
@@ -134,18 +134,18 @@
 /obj/machinery/status_display/examine(mob/user)
 	. = ..(user)
 	if(mode != STATUS_DISPLAY_BLANK && mode != STATUS_DISPLAY_ALERT)
-		to_chat(user, "The display says:<br>\t[sanitize(message1)]<br>\t[sanitize(message2)]")
+		user << "The display says:<br>\t[sanitize(message1)]<br>\t[sanitize(message2)]"
 
 /obj/machinery/status_display/proc/set_message(m1, m2)
 	if(m1)
-		index1 = (length_char(m1) > CHARS_PER_LINE)
+		index1 = (length(m1) > CHARS_PER_LINE)
 		message1 = m1
 	else
 		message1 = ""
 		index1 = 0
 
 	if(m2)
-		index2 = (length_char(m2) > CHARS_PER_LINE)
+		index2 = (length(m2) > CHARS_PER_LINE)
 		message2 = m2
 	else
 		message2 = ""
@@ -156,7 +156,7 @@
 	if(!picture || picture_state != state)
 		picture_state = state
 		picture = image('icons/obj/status_display.dmi', icon_state=picture_state)
-	add_overlay(picture)
+	overlays |= picture
 
 /obj/machinery/status_display/proc/update_display(line1, line2)
 	var/new_text = {"<div style="font-size:[FONT_SIZE];color:[FONT_COLOR];font:'[FONT_STYLE]';text-align:center;" valign="top">[line1]<br>[line2]</div>"}
@@ -168,9 +168,9 @@
 	if(timeleft < 0)
 		return ""
 	return "[add_zero(num2text((timeleft / 60) % 60),2)]:[add_zero(num2text(timeleft % 60), 2)]"
-/*
+
 /obj/machinery/status_display/proc/get_supply_shuttle_timer()
-	var/datum/shuttle/autodock/ferry/supply/shuttle = SSsupply.shuttle
+	var/datum/shuttle/autodock/ferry/supply/shuttle = supply_controller.shuttle
 	if (!shuttle)
 		return "Error"
 
@@ -180,10 +180,10 @@
 			return "Late"
 		return "[add_zero(num2text((timeleft / 60) % 60),2)]:[add_zero(num2text(timeleft % 60), 2)]"
 	return ""
-*/
+
 /obj/machinery/status_display/proc/remove_display()
 	if(overlays.len)
-		cut_overlays()
+		overlays.Cut()
 	if(maptext)
 		maptext = ""
 
@@ -207,7 +207,8 @@
 			mode = STATUS_DISPLAY_TIME
 	update()
 
-#undef FONT_SIZE
+#undef CHARS_PER_LINE
+#undef FOND_SIZE
 #undef FONT_COLOR
 #undef FONT_STYLE
 #undef SCROLL_SPEED

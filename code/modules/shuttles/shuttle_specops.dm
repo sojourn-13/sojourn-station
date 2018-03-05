@@ -4,7 +4,7 @@
 	req_access = list(access_cent_specops)
 
 /obj/machinery/computer/shuttle_control/specops/attack_ai(user as mob)
-	to_chat(user, "<span class='warning'>Access Denied.</span>")
+	user << "<span class='warning'>Access Denied.</span>"
 	return 1
 
 /datum/shuttle/autodock/ferry/specops
@@ -66,12 +66,12 @@
 		if (!location)	//just arrived home
 			for(var/turf/T in get_area_turfs(shuttle_area))
 				var/mob/M = locate(/mob) in T
-				to_chat(M, "<span class='danger'>You have arrived at [boss_name]. Operation has ended!</span>")
+				M << "<span class='danger'>You have arrived at [boss_name]. Operation has ended!</span>"
 		else	//just left for the station
 			launch_mauraders()
 			for(var/turf/T in get_area_turfs(shuttle_area))
 				var/mob/M = locate(/mob) in T
-				to_chat(M, "<span class='danger'>You have arrived at [station_name]. Commence operation!</span>")
+				M << "<span class='danger'>You have arrived at [station_name]. Commence operation!</span>"
 
 //				var/obj/machinery/light/small/readylight/light = locate() in T
 //				if(light) light.set_state(1)
@@ -160,7 +160,7 @@
 				var/obj/effect/portal/P = new(L.loc)
 				P.invisibility = 101//So it is not seen by anyone.
 				P.failchance = 0//So it has no fail chance when teleporting.
-				P.set_target(pick(spawn_marauder))//Where the marauder will arrive.
+				P.target = pick(spawn_marauder)//Where the marauder will arrive.
 				spawn_marauder.Remove(P.target)
 
 		sleep(10)

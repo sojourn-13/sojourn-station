@@ -1,19 +1,18 @@
-/obj/structure/largecrate //TODO: Refactor this into a crate subtype.
+/obj/structure/largecrate
 	name = "large crate"
 	desc = "A hefty wooden crate."
-	icon = 'icons/obj/crate.dmi'
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "densecrate"
-	matter = list(MATERIAL_WOOD = 10)
 	density = 1
 
 /obj/structure/largecrate/attack_hand(mob/user as mob)
-	to_chat(user, SPAN_NOTICE("You need a crowbar to pry this open!"))
+	user << SPAN_NOTICE("You need a crowbar to pry this open!")
 	return
 
 /obj/structure/largecrate/attackby(obj/item/I, mob/user)
 	if(QUALITY_PRYING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_ROB))
-			drop_materials(drop_location())
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_PRYING, FAILCHANCE_EASY))
+			new /obj/item/stack/material/wood(src)
 			var/turf/T = get_turf(src)
 			for(var/atom/movable/AM in contents)
 				if(AM.simulated) AM.forceMove(T)
@@ -34,7 +33,7 @@
 
 /obj/structure/largecrate/hoverpod/attackby(obj/item/I, mob/user)
 	if(QUALITY_PRYING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_WELDING, FAILCHANCE_EASY))
 			var/obj/item/mecha_parts/mecha_equipment/ME
 			var/obj/mecha/working/hoverpod/H = new (loc)
 
@@ -62,18 +61,6 @@
 	name = "cow crate"
 	held_type = /mob/living/simple_animal/cow
 
-/obj/structure/largecrate/animal/pig
-	name = "pig crate"
-	held_type = /mob/living/simple_animal/pig
-
-/obj/structure/largecrate/animal/bear
-	name = "bear crate"
-	held_type = /mob/living/simple_animal/hostile/bear/brown
-
-/obj/structure/largecrate/animal/p_bear
-	name = "polar bear crate"
-	held_type = /mob/living/simple_animal/hostile/bear/polar
-
 /obj/structure/largecrate/animal/goat
 	name = "goat crate"
 	held_type = /mob/living/simple_animal/hostile/retaliate/goat
@@ -89,22 +76,3 @@
 	name = "chicken crate"
 	held_count = 5
 	held_type = /mob/living/simple_animal/chick
-
-/obj/structure/largecrate/animal/giant_spider
-	name = "Giant Spider crate"
-	held_type = /mob/living/carbon/superior_animal/giant_spider
-
-/obj/structure/largecrate/animal/nurse_spider
-	name = "Nurse Spider crate"
-	held_type = /mob/living/carbon/superior_animal/giant_spider/nurse
-
-/obj/structure/largecrate/animal/hunter_spider
-	name = "Hunter Spider crate"
-	held_type = /mob/living/carbon/superior_animal/giant_spider/hunter
-
-/obj/structure/largecrate/animal/welder_roach
-	name = "Benzin Roach crate"
-	held_type = /mob/living/carbon/superior_animal/roach/benzin
-
-/obj/structure/largecrate/animal/piano
-	held_type = /obj/structure/synthesized_instrument/synthesizer/piano

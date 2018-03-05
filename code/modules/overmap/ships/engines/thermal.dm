@@ -42,17 +42,17 @@
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship."
 	icon = 'icons/obj/ship_engine.dmi'
 	icon_state = "nozzle"
-	use_power = NO_POWER_USE
+	use_power = 0
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
 	power_rating = 7500			//7500 W ~ 10 HP
-	opacity = 0
+	opacity = 1
 	density = 1
 	var/on = 1
 	var/datum/ship_engine/gas_thruster/controller
 	var/thrust_limit = 1	//Value between 1 and 0 to limit the resulting thrust
 	var/moles_per_burn = 5
 
-/obj/machinery/atmospherics/unary/engine/Initialize()
+/obj/machinery/atmospherics/unary/engine/initialize()
 	. = ..()
 	controller = new(src)
 
@@ -94,12 +94,10 @@
 		audible_message(src,"<span class='warning'>[src] coughs once and goes silent!</span>")
 		on = !on
 		return 0
+	var/exhaust_dir = reverse_direction(dir)
 	var/datum/gas_mixture/removed = air_contents.remove(moles_per_burn * thrust_limit)
-	if(!removed)
-		return 0
 	. = calculate_thrust(removed)
 	playsound(loc, 'sound/machines/thruster.ogg', 100 * thrust_limit, 0, world.view * 4, 0.1)
-	var/exhaust_dir = reverse_direction(dir)
 	var/turf/T = get_step(src,exhaust_dir)
 	if(T)
 		T.assume_air(removed)
@@ -113,7 +111,7 @@
 	name = "engine exhaust"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "smoke"
-	light_color = COLOR_LIGHTING_ORANGE_BRIGHT
+	light_color = "#ed9200"
 	anchored = 1
 
 /obj/effect/engine_exhaust/New(var/turf/nloc, var/ndir, var/flame)
@@ -126,13 +124,13 @@
 	spawn(20)
 		qdel(src)
 
-/obj/item/circuitboard/unary_atmos/engine
-	build_name = "gas thruster"
+/obj/item/weapon/circuitboard/unary_atmos/engine
+	name = T_BOARD("gas thruster")
 	icon_state = "mcontroller"
 	build_path = /obj/machinery/atmospherics/unary/engine/
 	origin_tech = list(TECH_POWER = 1, TECH_ENGINEERING = 2)
 	req_components = list(
 							/obj/item/stack/cable_coil = 2,
-							/obj/item/stock_parts/matter_bin = 1,
-							/obj/item/stock_parts/capacitor = 1,
+							/obj/item/weapon/stock_parts/matter_bin = 1,
+							/obj/item/weapon/stock_parts/capacitor = 1,
 							/obj/item/pipe = 2)

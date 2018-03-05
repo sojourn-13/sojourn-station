@@ -3,13 +3,13 @@
 	icon_state = "thick"
 	icon_keyboard = "teleport_key"
 	icon_screen = "teleport"
-	light_color = COLOR_LIGHTING_CYAN_MACHINERY
-	//circuit = /obj/item/circuitboard/sensors
+	light_color = "#77fff8"
+	//circuit = /obj/item/weapon/circuitboard/sensors
 	var/obj/effect/overmap/ship/linked
 	var/obj/machinery/shipsensors/sensors
 	var/viewing = 0
 
-/obj/machinery/computer/sensors/Initialize()
+/obj/machinery/computer/sensors/initialize()
 	. = ..()
 	linked = map_sectors["[z]"]
 	find_sensors()
@@ -19,12 +19,12 @@
 	. = ..()
 
 /obj/machinery/computer/sensors/proc/find_sensors()
-	for(var/obj/machinery/shipsensors/S in GLOB.machines)
+	for(var/obj/machinery/shipsensors/S in machines)
 		if (S.z in GetConnectedZlevels(z))
 			sensors = S
 			break
 
-/obj/machinery/computer/sensors/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/computer/sensors/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	if(!linked)
 		return
 
@@ -36,7 +36,7 @@
 		data["range"] = sensors.range
 		data["health"] = sensors.health
 		data["max_health"] = sensors.max_health
-		data["heat"] = sensors.current_heat
+		data["heat"] = sensors.heat
 		data["critical_heat"] = sensors.critical_heat
 		if(sensors.health == 0)
 			data["status"] = "DESTROYED"
@@ -51,7 +51,7 @@
 		data["range"] = "N/A"
 		data["on"] = 0
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "shipsensors.tmpl", "[linked.name] Sensors Control", 420, 530)
 		ui.set_initial_data(data)
@@ -76,7 +76,7 @@
 		user.set_machine(src)
 		if(linked)
 			user.reset_view(linked)
-	nano_ui_interact(user)
+	ui_interact(user)
 
 /obj/machinery/computer/sensors/Topic(href, href_list, state)
 	if(..())
@@ -101,13 +101,13 @@
 			if(!CanInteract(usr,state))
 				return
 			if (nrange)
-				sensors.set_range(CLAMP(nrange, 1, world.view))
+				sensors.set_range(Clamp(nrange, 1, world.view))
 			return 1
 		if (href_list["toggle"])
 			sensors.toggle()
 			return 1
 
-/obj/machinery/computer/sensors/Process()
+/obj/machinery/computer/sensors/process()
 	..()
 	if(!linked)
 		return
@@ -122,20 +122,20 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "sensors"
 	var/max_health = 200
-	health = 200
+	var/health = 200
 	var/critical_heat = 50 // sparks and takes damage when active & above this heat
 	var/heat_reduction = 1.5 // mitigates this much heat per tick
-	var/current_heat = 0
+	var/heat = 0
 	var/range = 1
 	idle_power_usage = 5000
 
-/obj/machinery/shipsensors/attackby(obj/item/W, mob/user)
+/obj/machinery/shipsensors/attackby(obj/item/weapon/W, mob/user)
 	var/damage = max_health - health
 	if(damage && (QUALITY_WELDING in W.tool_qualities))
-		to_chat(user, "<span class='notice'>You start repairing the damage to [src].</span>")
-		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_ROB))
+		user << "<span class='notice'>You start repairing the damage to [src].</span>"
+		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY))
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
-			to_chat(user, "<span class='notice'>You finish repairing the damage to [src].</span>")
+			user << "<span class='notice'>You finish repairing the damage to [src].</span>"
 			take_damage(-damage)
 		return
 	..()
@@ -158,17 +158,16 @@
 /obj/machinery/shipsensors/examine(mob/user)
 	. = ..()
 	if(health <= 0)
-		to_chat(user, "\The [src] is wrecked.")
+		user << "\The [src] is wrecked."
 	else if(health < max_health * 0.25)
-		to_chat(user, "<span class='danger'>\The [src] looks like it's about to break!</span>")
+		user << "<span class='danger'>\The [src] looks like it's about to break!</span>"
 	else if(health < max_health * 0.5)
-		to_chat(user, "<span class='danger'>\The [src] looks seriously damaged!</span>")
+		user << "<span class='danger'>\The [src] looks seriously damaged!</span>"
 	else if(health < max_health * 0.75)
-		to_chat(user, "\The [src] shows signs of damage!")
+		user << "\The [src] shows signs of damage!"
 
 /obj/machinery/shipsensors/bullet_act(var/obj/item/projectile/Proj)
-	if (!(Proj.testing))
-		take_damage(Proj.get_structure_damage())
+	take_damage(Proj.get_structure_damage())
 	..()
 
 /obj/machinery/shipsensors/proc/toggle()
@@ -179,12 +178,12 @@
 	use_power = !use_power
 	update_icon()
 
-/obj/machinery/shipsensors/Process()
+/obj/machinery/shipsensors/process()
 	..()
 	if(use_power) //can't run in non-vacuum
 		if(!in_vacuum())
 			toggle()
-		if(current_heat > critical_heat)
+		if(heat > critical_heat)
 			src.visible_message("<span class='danger'>\The [src] violently spews out sparks!</span>")
 			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 			s.set_up(3, 1, src)
@@ -192,10 +191,10 @@
 
 			take_damage(rand(10,50))
 			toggle()
-		current_heat += idle_power_usage/15000
+		heat += idle_power_usage/15000
 
-	if (current_heat > 0)
-		current_heat = max(0, current_heat - heat_reduction)
+	if (heat > 0)
+		heat = max(0, heat - heat_reduction)
 
 /obj/machinery/shipsensors/power_change()
 	if(use_power && !powered())

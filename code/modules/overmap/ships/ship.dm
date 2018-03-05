@@ -1,8 +1,7 @@
 /obj/effect/overmap/ship
 	name = "generic ship"
 	desc = "Space faring vessel."
-	name_stages = list("generic ship", "unknown vessel", "unknown spatial phenomenon")
-	icon_stages = list("htu_cruiser", "ship", "poi")
+	icon_state = "ship"
 	var/vessel_mass = 100 				//tonnes, arbitrary number, affects acceleration provided by engines
 	var/default_delay = 6 SECONDS 		//time it takes to move to next tile on overmap
 	var/speed_mod = 10					//multiplier for how much ship's speed reduces above time
@@ -13,84 +12,33 @@
 	var/fore_dir = NORTH				//what dir ship flies towards for purpose of moving stars effect procs
 
 	var/obj/machinery/computer/helm/nav_control
-	var/list/engines = list()  // contains /datum/ship_engine
-	var/list/scanners = list() // contains /obj/machinery/power/long_range_scanner
+	var/list/engines = list()
 	var/engines_state = 1 //global on/off toggle for all engines
 	var/thrust_limit = 1 //global thrust limit for all engines, 0..1
 	var/triggers_events = 1
 
-	Crossed(var/obj/effect/overmap_event/movable/ME)
-		..()
-		if(ME)
-			if(istype(ME, /obj/effect/overmap_event/movable))
-				if(ME.OE)
-					if(istype(src, /obj/effect/overmap/ship))
-						ME.OE:enter(src)
-
-	Uncrossed(var/obj/effect/overmap_event/movable/ME)
-		..()
-		if(ME)
-			if(istype(ME, /obj/effect/overmap_event/movable))
-				if(ME.OE)
-					if(istype(src, /obj/effect/overmap/ship))
-						ME.OE:leave(src)
-
-/obj/effect/overmap/ship/Initialize()
+/obj/effect/overmap/ship/initialize()
 	. = ..()
 	for(var/datum/ship_engine/E in ship_engines)
 		if (E.holder.z in map_z)
 			engines |= E
-			//testing("Engine at level [E.holder.z] linked to overmap object '[name]'.")
-	for(var/obj/machinery/computer/engines/E in SSmachines.machinery)
+	for(var/obj/machinery/computer/engines/E in machines)
 		if (E.z in map_z)
 			E.linked = src
 			//testing("Engines console at level [E.z] linked to overmap object '[name]'.")
 
-	for(var/obj/machinery/power/long_range_scanner/LRS in ship_scanners)
-		if (LRS.z in map_z)
-			//testing("Scanner at level [LRS.z] linked to overmap object '[name]'.")
-			scanners |= LRS
-
-	for(var/obj/machinery/computer/helm/H in SSmachines.machinery)
+	for(var/obj/machinery/computer/helm/H in machines)
 		if (H.z in map_z)
 			nav_control = H
 			H.linked = src
 			H.get_known_sectors()
 			//testing("Helm console at level [H.z] linked to overmap object '[name]'.")
-	for(var/obj/machinery/computer/navigation/N in SSmachines.machinery)
+	for(var/obj/machinery/computer/navigation/N in machines)
 		if (N.z in map_z)
 			N.linked = src
 			//testing("Navigation console at level [N.z] linked to overmap object '[name]'.")
 
-	START_PROCESSING(SSobj, src)
-
-/obj/effect/overmap/ship/proc/check_link()
-	// Depending on initialization order the Initialize() does not properly make the links
-
-	for(var/datum/ship_engine/E in ship_engines)
-		if (E.holder.z in map_z)
-			engines |= E
-			//testing("Engine at level [E.holder.z] linked to overmap object '[name]'.")
-	for(var/obj/machinery/computer/engines/E in SSmachines.machinery)
-		if (E.z in map_z)
-			E.linked = src
-			//testing("Engines console at level [E.z] linked to overmap object '[name]'.")
-
-	for(var/obj/machinery/power/long_range_scanner/LRS in ship_scanners)
-		if (LRS.z in map_z)
-			//testing("Scanner at level [LRS.z] linked to overmap object '[name]'.")
-			scanners |= LRS
-
-	for(var/obj/machinery/computer/helm/H in SSmachines.machinery)
-		if (H.z in map_z)
-			nav_control = H
-			H.linked = src
-			H.get_known_sectors()
-			//testing("Helm console at level [H.z] linked to overmap object '[name]'.")
-	for(var/obj/machinery/computer/navigation/N in SSmachines.machinery)
-		if (N.z in map_z)
-			N.linked = src
-			//testing("Navigation console at level [N.z] linked to overmap object '[name]'.")
+	processing_objects.Add(src)
 
 /obj/effect/overmap/ship/relaymove(mob/user, direction)
 	accelerate(direction)
@@ -124,8 +72,8 @@
 	return res
 
 /obj/effect/overmap/ship/proc/adjust_speed(n_x, n_y)
-	speed[1] = round(CLAMP(speed[1] + n_x, -default_delay, default_delay),0.1)
-	speed[2] = round(CLAMP(speed[2] + n_y, -default_delay, default_delay),0.1)
+	speed[1] = round(Clamp(speed[1] + n_x, -default_delay, default_delay),0.1)
+	speed[2] = round(Clamp(speed[2] + n_y, -default_delay, default_delay),0.1)
 	for(var/zz in map_z)
 		if(is_still())
 			toggle_move_stars(zz)
@@ -161,7 +109,7 @@
 		if(direction & SOUTH)
 			adjust_speed(0, -get_burn_acceleration())
 
-/obj/effect/overmap/ship/Process()
+/obj/effect/overmap/ship/process()
 	if(!is_still())
 		var/list/deltas = list(0,0)
 		for(var/i=1, i<=2, i++)
@@ -173,13 +121,13 @@
 			Move(newloc)
 			handle_wraparound()
 		update_icon()
-	SEND_SIGNAL(src, COMSIG_SHIP_STILL, x, y, is_still())
 
-/obj/effect/overmap/ship/on_update_icon()
-	cut_overlays()
+/obj/effect/overmap/ship/update_icon()
 	if(!is_still())
+		icon_state = "ship_moving"
 		dir = get_heading()
-		add_overlays(image('icons/obj/overmap.dmi', "vector", "dir"=dir))
+	else
+		icon_state = "ship"
 
 /obj/effect/overmap/ship/proc/burn()
 
@@ -211,7 +159,7 @@
 	var/nx = x
 	var/ny = y
 	var/low_edge = 1
-	var/high_edge = GLOB.maps_data.overmap_size - 1
+	var/high_edge = maps_data.overmap_size - 1
 
 	if(dir == WEST && x == low_edge)
 		nx = high_edge
@@ -232,27 +180,3 @@
 	if(istype(A,/turf/unsimulated/map/edge))
 		handle_wraparound()
 	..()
-
-/obj/effect/overmap/ship/proc/pulse()
-
-	var/max_range = 0
-	var/obj/machinery/power/long_range_scanner/max_LRS = null
-	for(var/obj/machinery/power/long_range_scanner/LRS in scanners)
-		if(LRS.scan_range > max_range)
-			max_range = LRS.scan_range
-			max_LRS = LRS
-
-	if(max_LRS)
-		max_LRS.consume_energy_scan()
-
-	// TODO: Briefly scan events around the ship with a big range
-
-/obj/effect/overmap/ship/proc/can_scan()
-
-	for(var/obj/machinery/power/long_range_scanner/LRS in scanners)
-		. |= (LRS.running)
-
-/obj/effect/overmap/ship/proc/can_pulse()
-
-	for(var/obj/machinery/power/long_range_scanner/LRS in scanners)
-		. |= (LRS.running && (LRS.current_energy > round(ENERGY_PER_SCAN)))

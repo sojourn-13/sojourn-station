@@ -2,14 +2,13 @@
 
 /obj/machinery/computer/engines
 	name = "engine control console"
-	icon_state = "computer"
+	icon_state = "thick"
 	icon_keyboard = "tech_key"
-	icon_screen = "engine"
-	circuit = /obj/item/circuitboard/engines
+	icon_screen = "engines"
 	var/state = "status"
 	var/obj/effect/overmap/ship/linked
 
-/obj/machinery/computer/engines/Initialize()
+/obj/machinery/computer/engines/initialize()
 	. = ..()
 	linked = map_sectors["[z]"]
 
@@ -21,11 +20,11 @@
 	if(!isAI(user))
 		user.set_machine(src)
 
-	nano_ui_interact(user)
+	ui_interact(user)
 
-/obj/machinery/computer/engines/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/computer/engines/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	if(!linked)
-		to_chat(user, "<span class='warning'>Unable to connect to ship control systems.</span>")
+		user << "<span class='warning'>Unable to connect to ship control systems.</span>"
 		return
 
 	var/data[0]
@@ -49,7 +48,7 @@
 	data["engines_info"] = enginfo
 	data["total_thrust"] = total_thrust
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "engines_control.tmpl", "[linked.name] Engines Control", 380, 530)
 		ui.set_initial_data(data)
@@ -73,12 +72,12 @@
 		var/newlim = input("Input new thrust limit (0..100%)", "Thrust limit", linked.thrust_limit*100) as num
 		if(!CanInteract(usr,ui_state))
 			return
-		linked.thrust_limit = CLAMP(newlim/100, 0, 1)
+		linked.thrust_limit = Clamp(newlim/100, 0, 1)
 		for(var/datum/ship_engine/E in linked.engines)
 			E.set_thrust_limit(linked.thrust_limit)
 
 	if(href_list["global_limit"])
-		linked.thrust_limit = CLAMP(linked.thrust_limit + text2num(href_list["global_limit"]), 0, 1)
+		linked.thrust_limit = Clamp(linked.thrust_limit + text2num(href_list["global_limit"]), 0, 1)
 		for(var/datum/ship_engine/E in linked.engines)
 			E.set_thrust_limit(linked.thrust_limit)
 
@@ -88,13 +87,13 @@
 			var/newlim = input("Input new thrust limit (0..100)", "Thrust limit", E.get_thrust_limit()) as num
 			if(!CanInteract(usr,ui_state))
 				return
-			var/limit = CLAMP(newlim/100, 0, 1)
+			var/limit = Clamp(newlim/100, 0, 1)
 			if(istype(E))
 				E.set_thrust_limit(limit)
 
 		if(href_list["limit"])
 			var/datum/ship_engine/E = locate(href_list["engine"])
-			var/limit = CLAMP(E.get_thrust_limit() + text2num(href_list["limit"]), 0, 1)
+			var/limit = Clamp(E.get_thrust_limit() + text2num(href_list["limit"]), 0, 1)
 			if(istype(E))
 				E.set_thrust_limit(limit)
 

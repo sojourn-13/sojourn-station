@@ -15,10 +15,10 @@
 	if(..(user))
 		return
 	if(!allowed(user))
-		to_chat(user, "<span class='warning'>Access Denied.</span>")
+		user << "<span class='warning'>Access Denied.</span>"
 		return 1
 
-	nano_ui_interact(user)
+	ui_interact(user)
 
 /obj/machinery/computer/shuttle_control/proc/get_ui_data(var/datum/shuttle/autodock/shuttle)
 	var/shuttle_state
@@ -45,12 +45,13 @@
 	return list(
 		"shuttle_status" = shuttle_status,
 		"shuttle_state" = shuttle_state,
-		"has_docking" = shuttle.active_docking_controller ? 1 : 0,
-		"docking_status" = shuttle.active_docking_controller ? shuttle.active_docking_controller.get_docking_status() : null,
-		"docking_override" = shuttle.active_docking_controller? shuttle.active_docking_controller.override_enabled : null,
+		"has_docking" = shuttle.shuttle_docking_controller? 1 : 0,
+		"docking_status" = shuttle.shuttle_docking_controller? shuttle.shuttle_docking_controller.get_docking_status() : null,
+		"docking_override" = shuttle.shuttle_docking_controller? shuttle.shuttle_docking_controller.override_enabled : null,
 		"can_launch" = shuttle.can_launch(),
 		"can_cancel" = shuttle.can_cancel(),
 		"can_force" = shuttle.can_force(),
+		"docking_codes" = shuttle.docking_codes
 	)
 
 /obj/machinery/computer/shuttle_control/proc/handle_topic_href(var/datum/shuttle/autodock/shuttle, var/list/href_list, var/user)
@@ -59,7 +60,7 @@
 
 	if(href_list["move"])
 		if(!shuttle.next_location.is_valid(shuttle))
-			to_chat(user, "<span class='warning'>Destination zone is invalid or obstructed.</span>")
+			user << "<span class='warning'>Destination zone is invalid or obstructed.</span>"
 			return TOPIC_HANDLED
 		shuttle.launch(src)
 		return TOPIC_REFRESH
@@ -72,15 +73,21 @@
 		shuttle.cancel_launch(src)
 		return TOPIC_REFRESH
 
-/obj/machinery/computer/shuttle_control/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	var/datum/shuttle/autodock/shuttle = SSshuttle.shuttles[shuttle_tag]
+	if(href_list["set_codes"])
+		var/newcode = input("Input new docking codes", "Docking codes", shuttle.docking_codes) as text|null
+		if (newcode && CanInteract(usr, default_state))
+			shuttle.set_docking_codes(uppertext(newcode))
+		return TOPIC_REFRESH
+
+/obj/machinery/computer/shuttle_control/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+	var/datum/shuttle/autodock/shuttle = shuttle_controller.shuttles[shuttle_tag]
 	if (!istype(shuttle))
-		to_chat(user, "<span class='warning'>Unable to establish link with the shuttle.</span>")
+		user << "<span class='warning'>Unable to establish link with the shuttle.</span>"
 		return
 
 	var/list/data = get_ui_data(shuttle)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, ui_template, "[shuttle_tag] Shuttle Control", 470, 450)
 		ui.set_initial_data(data)
@@ -88,19 +95,18 @@
 		ui.set_auto_update(1)
 
 /obj/machinery/computer/shuttle_control/Topic(user, href_list)
-	return handle_topic_href(SSshuttle.shuttles[shuttle_tag], href_list, user)
+	return handle_topic_href(shuttle_controller.shuttles[shuttle_tag], href_list, user)
 
 /obj/machinery/computer/shuttle_control/emag_act(var/remaining_charges, var/mob/user)
 	if (!hacked)
 		req_access = list()
 		req_one_access = list()
 		hacked = 1
-		to_chat(user, "You short out the console's ID checking system. It's now available to everyone!")
+		user << "You short out the console's ID checking system. It's now available to everyone!"
 		return 1
 
 /obj/machinery/computer/shuttle_control/bullet_act(var/obj/item/projectile/Proj)
-	if (!(Proj.testing))
-		visible_message("\The [Proj] ricochets off \the [src]!")
+	visible_message("\The [Proj] ricochets off \the [src]!")
 
 /obj/machinery/computer/shuttle_control/ex_act()
 	return

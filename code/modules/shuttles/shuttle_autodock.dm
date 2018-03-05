@@ -7,16 +7,14 @@
 	var/current_dock_target
 	//ID of the controller on the shuttle
 	var/dock_target = null
+	var/datum/computer/file/embedded_program/docking/shuttle_docking_controller
+	var/docking_codes
 
 	var/obj/effect/shuttle_landmark/next_location
-
-	//For single airlock ships, this is the controller for that airlock. Otherwise it's only one of them if relevant
-	var/default_docking_controller
-
 	var/datum/computer/file/embedded_program/docking/active_docking_controller
 
 	var/obj/effect/shuttle_landmark/landmark_transition
-	var/move_time = 360		//the time spent in the transition area
+	var/move_time = 240		//the time spent in the transition area
 
 	category = /datum/shuttle/autodock
 
@@ -24,15 +22,15 @@
 	..(_name, start_waypoint)
 
 	//Initial dock
-	if (default_docking_controller)
-		active_docking_controller = locate(default_docking_controller)
-
-	if (current_location && current_location.docking_controller)
-		active_docking_controller = current_location.docking_controller
-	current_dock_target = get_docking_target(current_location)
-
-	if (active_docking_controller)
-		dock()
+	active_docking_controller = current_location.docking_controller
+	update_docking_target(current_location)
+	if(active_docking_controller)
+		set_docking_codes(active_docking_controller.docking_codes)
+	else if(config.use_overmap)
+		var/obj/effect/overmap/location = map_sectors["[current_location.z]"]
+		if(location && location.docking_codes)
+			set_docking_codes(location.docking_codes)
+	dock()
 
 	//Optional transition area
 	if(landmark_transition)
@@ -45,48 +43,52 @@
 
 	return ..()
 
+/datum/shuttle/autodock/proc/set_docking_codes(var/code)
+	docking_codes = code
+	if(shuttle_docking_controller)
+		shuttle_docking_controller.docking_codes = code
+
 /datum/shuttle/autodock/shuttle_moved()
 	force_undock() //bye!
 	..()
 
-/datum/shuttle/autodock/proc/get_docking_target(var/obj/effect/shuttle_landmark/location)
-	if(location && location.special_dock_targets)
-		if(location.special_dock_targets[name])
-			return location.special_dock_targets[name]
-	else if (location.dock_target)
-		return location.dock_target
-
+/datum/shuttle/autodock/proc/update_docking_target(var/obj/effect/shuttle_landmark/location)
+	if(location && location.special_dock_targets && location.special_dock_targets[name])
+		current_dock_target = location.special_dock_targets[name]
+	else
+		current_dock_target = dock_target
+	shuttle_docking_controller = locate(current_dock_target)
 /*
 	Docking stuff
 */
 /datum/shuttle/autodock/proc/dock()
-	if(active_docking_controller)
-		active_docking_controller.initiate_docking(current_dock_target)
+	if(active_docking_controller && shuttle_docking_controller)
+		shuttle_docking_controller.initiate_docking(active_docking_controller.id_tag)
 		last_dock_attempt_time = world.time
 
 /datum/shuttle/autodock/proc/undock()
-	if(active_docking_controller)
-		active_docking_controller.initiate_undocking()
+	if(shuttle_docking_controller)
+		shuttle_docking_controller.initiate_undocking()
 
 /datum/shuttle/autodock/proc/force_undock()
-	if(active_docking_controller)
-		active_docking_controller.force_undock()
+	if(shuttle_docking_controller)
+		shuttle_docking_controller.force_undock()
 
 /datum/shuttle/autodock/proc/check_docked()
-	if(active_docking_controller)
-		return active_docking_controller.docked()
+	if(shuttle_docking_controller)
+		return shuttle_docking_controller.docked()
 	return TRUE
 
 /datum/shuttle/autodock/proc/check_undocked()
-	if(active_docking_controller)
-		return active_docking_controller.can_launch()
+	if(shuttle_docking_controller)
+		return shuttle_docking_controller.can_launch()
 	return TRUE
 
 /*
 	Please ensure that long_jump() and short_jump() are only called from here. This applies to subtypes as well.
 	Doing so will ensure that multiple jumps cannot be initiated in parallel.
 */
-/datum/shuttle/autodock/Process()
+/datum/shuttle/autodock/proc/process()
 	switch(process_state)
 		if (WAIT_LAUNCH)
 			if(check_undocked())
@@ -110,9 +112,8 @@
 
 //not to be confused with the arrived() proc
 /datum/shuttle/autodock/proc/process_arrived()
-	if (next_location.docking_controller)
-		active_docking_controller = next_location.docking_controller
-	current_dock_target = get_docking_target(next_location)
+	active_docking_controller = next_location.docking_controller
+	update_docking_target(next_location)
 	dock()
 
 	next_location = null
@@ -169,7 +170,7 @@
 
 	//whatever we were doing with docking: stop it, then redock
 	force_undock()
-	spawn(1 SECONDS)
+	spawn(1 SECOND)
 		dock()
 
 //returns 1 if the shuttle is getting ready to move, but is not in transit yet
