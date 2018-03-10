@@ -4,7 +4,6 @@
 	icon_state = "mining"
 	forced_ambience = list('sound/ambience/mineambience.ogg')
 	sound_env = ASTEROID
-	vessel = null
 
 /area/mine/explored
 	name = "Mine"
@@ -33,19 +32,6 @@
 /area/outpost/abandoned_fortress
 	name = "Abandoned Fortress"
 	icon_state = "yellow"
-
-/area/outpost/blacksite
-	name = "Abandoned Blacksite"
-	icon_state = "away"
-
-/area/outpost/blacksite/small
-	name = "Small Abandoned Blacksite"
-
-/area/outpost/blacksite/medium
-	name = "Medium Abandoned Blacksite"
-
-/area/outpost/blacksite/large
-	name = "Large Abandoned Blacksite"
 
 // Main mining outpost
 /area/outpost/mining_main
@@ -152,62 +138,3 @@
 
 /area/outpost/research/disposal
 	name = "Research Outpost Waste Disposal"
-
-//Prison hulk
-/area/outpost/prisonhulk
-	icon_state = "security"
-
-/area/outpost/prisonhulk/cells
-	name = "Prison Hulk Cells"
-
-/area/outpost/prisonhulk/food
-	name = "Prison Hulk Mess"
-
-/area/outpost/prisonhulk/security
-	name = "Prison Hulk Brig"
-
-/area/outpost/prisonhulk/medical
-	name = "Prison Hulk Infirmary"
-
-/area/outpost/junkyard/
-	icon_state = "away"
-
-/area/outpost/junkyard/ship
-	icon_state = "away1"
-
-/area/outpost/junkyard/ship/canterbury
-	name = "HTU Canterbury"
-
-/area/outpost/junkyard/ship/rocinante
-	name = "NSS Rocinante"
-
-/area/outpost/junkyard/ship/geary
-	name = "MHS Geary"
-
-/area/outpost/junkyard/ship/epstein
-	name = "HTU Epstein"
-
-/area/outpost/junkyard/ship/lehrer
-	name = "HTU Lehrer"
-
-/area/outpost/junkyard/ship/prison
-	name = "IHS Ghislane"
-
-/area/outpost/junkyard/station
-	icon_state = "away2"
-
-/area/outpost/junkyard/station/beta
-	name = "Beta Station"
-
-/area/outpost/junkyard/station/charlie
-	name = "Charlie Station"
-
-/area/outpost/junkyard/station/delta
-	name = "Delta Station"
-
-/area/outpost/junkyard/station/core
-	name = "Delta Station Core"
-
-/area/outpost/junkyard/hermitage
-	icon_state = "away2"
-	name = "Hermitage"
