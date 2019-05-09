@@ -177,6 +177,15 @@
 	character.religion = religion
 	character.s_tone = s_tone
 
+	character.ears = GLOB.ears_styles_list[ears_style]
+	character.ears_colors = ears_colors
+	character.tail = GLOB.tail_styles_list[tail_style]
+	character.tail_colors = tail_colors
+	character.wings = GLOB.wings_styles_list[wings_style]
+	character.wings_colors = wings_colors
+
+	character.body_markings = body_markings
+
 	QDEL_NULL_LIST(character.worn_underwear)
 	character.worn_underwear = list()
 
@@ -202,7 +211,6 @@
 	character.update_underwear(0)
 
 	character.update_hair(0)
-
 	character.update_icons()
 
 	if(is_preview_copy)

@@ -1528,3 +1528,12 @@ var/list/rank_prefix = list(\
 			status_text = SPAN_WARNING(english_list(status))
 
 		src.show_message("My [org.name] is [status_text].",1)
+
+// Furry Stuff
+/mob/living/carbon/human/verb/switch_tail_layer()
+	set name = "Switch Tail Layer"
+	set desc = "Put your tail above or below some clothing types."
+	set category = "IC"
+
+	tail_over = !tail_over
+	update_tail()

@@ -19,9 +19,21 @@
 	var/damage_multiplier = 1 //multiplies melee combat damage
 	var/icon_update = 1 //whether icon updating shall take place
 
+
 	var/datum/body_build/body_build = null
 
 	var/lip_style = null	//no lipstick by default- arguably misleading, as it could be used for general makeup
+
+	//Ears, Tail and Wings
+	var/datum/sprite_accessory/ears/ears	=  null
+	var/list/ears_colors					= list()
+	var/datum/sprite_accessory/tail/tail	=  null
+	var/list/tail_colors					= list()
+	var/datum/sprite_accessory/wings/wings	=  null
+	var/list/wings_colors					= list()
+	var/tail_over = 0 //If the tail's on the alt layer or not.
+
+	var/list/body_markings						= list()
 
 	var/age = 30		//Player's age (pure fluff)
 	var/b_type = "A+"	//Player's bloodtype

@@ -86,11 +86,13 @@
 
 // Bitmasks for the flags_inv variable. These determine when a piece of clothing hides another, i.e. a helmet hiding glasses.
 // WARNING: The following flags apply only to the external suit!
-#define HIDEGLOVES      0x1
-#define HIDESUITSTORAGE 0x2
-#define HIDEJUMPSUIT    0x4
-#define HIDESHOES       0x8
-#define HIDETAIL        0x10
+#define HIDEGLOVES		0x1
+#define HIDESUITSTORAGE	0x2
+#define HIDEJUMPSUIT	0x4
+#define HIDESHOES		0x8
+#define HIDETAIL		0x10
+#define HIDETAUR		0x20
+#define HIDEWINGS		0x40
 
 // WARNING: The following flags apply only to the helmets and masks!
 #define HIDEMASK 0x1

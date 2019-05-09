@@ -51,6 +51,7 @@
 #define BP_ANCHOR   "anchoring ligament"
 #define BP_PLASMA   "plasma filter"
 #define BP_ACETONE  "acetone reactor"
+#define A_FRUIT		"fruit gland" //Alraune organs
 
 // Robo Organs.
 #define BP_POSIBRAIN	"posibrain"
@@ -60,6 +61,10 @@
 #define BP_FLOAT		"floatation disc"
 #define BP_JETS			"maneuvering jets"
 #define BP_COOLING_FINS "cooling fins"
+
+//Protean organs
+#define O_ORCH		"orchestrator"
+#define O_FACT		"refactory"
 
 //Augmetations
 #define BP_AUGMENT_R_ARM         "right arm augment"
@@ -78,10 +83,15 @@
 // Limbs.
 #define BP_L_LEG  "l_leg"
 #define BP_R_LEG  "r_leg"
+#define BP_L_FOOT "l_foot"
+#define BP_R_FOOT "r_foot"
 #define BP_L_ARM  "l_arm"
 #define BP_R_ARM  "r_arm"
+#define BP_L_HAND "l_hand"
+#define BP_R_HAND "r_hand"
 #define BP_HEAD   "head"
 #define BP_CHEST  "chest"
+#define BP_TORSO  "chest"
 #define BP_GROIN  "groin"
 #define BP_LEGS list(BP_R_LEG, BP_L_LEG)
 #define BP_ARMS list(BP_R_ARM, BP_L_ARM)

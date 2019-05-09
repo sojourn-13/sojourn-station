@@ -25,12 +25,12 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 /datum/computer_file/report/crew_record/proc/load_from_mob(var/mob/living/carbon/human/H)
 
 	if(istype(H))
-		photo_front = getFlatIcon(H, SOUTH, always_use_defdir = 1)
-		photo_side = getFlatIcon(H, WEST, always_use_defdir = 1)
+		photo_front = getFlatIcon(H, SOUTH)
+		photo_side = getFlatIcon(H, WEST)
 	else
 		var/mob/living/carbon/human/dummy = new()
-		photo_front = getFlatIcon(dummy, SOUTH, always_use_defdir = 1)
-		photo_side = getFlatIcon(dummy, WEST, always_use_defdir = 1)
+		photo_front = getFlatIcon(dummy, SOUTH)
+		photo_side = getFlatIcon(dummy, WEST)
 		qdel(dummy)
 
 	// Add education, honorifics, etc.

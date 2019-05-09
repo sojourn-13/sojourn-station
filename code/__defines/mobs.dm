@@ -192,4 +192,139 @@
 
 #define HEAT_MOBIGNITE_THRESHOLD 530 //minimum amount of heat an object needs to ignite a mob when it hits the mob
 
-#define SPECIES_HUMAN       "Human"
+// 'Regular' species.
+#define SPECIES_HUMAN			"Human"
+#define SPECIES_HUMAN_VATBORN	"Vatborn"
+#define SPECIES_UNATHI			"Unathi"
+#define SPECIES_SKRELL			"Skrell"
+#define SPECIES_TESHARI			"Teshari"
+#define SPECIES_TAJ				"Tajara"
+#define SPECIES_PROMETHEAN		"Promethean"
+#define SPECIES_DIONA			"Diona"
+#define SPECIES_VOX				"Vox"
+
+#define SPECIES_AKULA			"Akula"
+#define SPECIES_ALRAUNE			"Alraune"
+#define SPECIES_NEVREAN			"Nevrean"
+#define SPECIES_PROTEAN			"Protean"
+#define SPECIES_RAPALA			"Rapala"
+#define SPECIES_SERGAL			"Sergal"
+#define SPECIES_VASILISSAN		"Vasilissan"
+#define SPECIES_VULPKANIN		"Vulpkanin"
+#define SPECIES_XENOCHIMERA		"Xenochimera"
+#define SPECIES_XENOHYBRID		"Xenomorph Hybrid"
+#define SPECIES_ZORREN_FLAT		"Flatland Zorren"
+#define SPECIES_ZORREN_HIGH		"Highlander Zorren"
+#define SPECIES_CUSTOM			"Custom Species"
+
+// Monkey and alien monkeys.
+#define SPECIES_MONKEY			"Monkey"
+#define SPECIES_MONKEY_TAJ		"Farwa"
+#define SPECIES_MONKEY_SKRELL	"Neaera"
+#define SPECIES_MONKEY_UNATHI	"Stok"
+
+// Virtual Reality IDs.
+#define SPECIES_VR				"Virtual Reality Avatar"
+#define SPECIES_VR_HUMAN		"Virtual Reality Human"
+#define SPECIES_VR_UNATHI		"Virtual Reality Unathi"
+#define SPECIES_VR_TAJ			"Virtual Reality Tajara" // NO CHANGING.
+#define SPECIES_VR_SKRELL		"Virtual Reality Skrell"
+#define SPECIES_VR_TESHARI		"Virtual Reality Teshari"
+#define SPECIES_VR_DIONA		"Virtual Reality Diona"
+
+// Ayyy IDs.
+#define SPECIES_XENO			"Xenomorph"
+#define SPECIES_XENO_DRONE		"Xenomorph Drone"
+#define SPECIES_XENO_HUNTER		"Xenomorph Hunter"
+#define SPECIES_XENO_SENTINEL	"Xenomorph Sentinel"
+#define SPECIES_XENO_QUEEN		"Xenomorph Queen"
+
+// Misc species. Mostly unused but might as well be complete.
+#define SPECIES_SHADOW			"Shadow"
+#define SPECIES_SKELETON		"Skeleton"
+#define SPECIES_GOLEM			"Golem"
+#define SPECIES_EVENT1			"X Occursus"
+
+//
+
+#undef VIS_COUNT
+
+#define VIS_CH_STATUS_R		22
+#define VIS_CH_HEALTH_VR	23
+#define VIS_CH_BACKUP		24
+#define VIS_CH_VANTAG		25
+
+#define VIS_AUGMENTED		26
+
+#define VIS_COUNT			26
+
+
+//------------------------------ Stuff from Vore which may need Porting ------------------------------//
+
+// Used to seperate simple animals by ""intelligence"".
+#define SA_PLANT	1
+#define SA_ANIMAL	2
+#define SA_ROBOTIC	3
+#define SA_HUMANOID	4
+
+// For slime commanding.  Higher numbers allow for more actions.
+#define SLIME_COMMAND_OBEY		1 // When disciplined.
+#define SLIME_COMMAND_FACTION	2 // When in the same 'faction'.
+#define SLIME_COMMAND_FRIEND	3 // When befriended with a slime friendship agent.
+
+//Vision flags, for dealing with plane visibility
+#define VIS_FULLBRIGHT		1
+#define VIS_LIGHTING		2
+#define VIS_GHOSTS			3
+#define VIS_AI_EYE			4
+
+#define VIS_CH_STATUS		5
+#define VIS_CH_HEALTH		6
+#define VIS_CH_LIFE			7
+#define VIS_CH_ID			8
+#define VIS_CH_WANTED		9
+#define VIS_CH_IMPLOYAL		10
+#define VIS_CH_IMPTRACK		11
+#define VIS_CH_IMPCHEM		12
+#define VIS_CH_SPECIAL		13
+#define VIS_CH_STATUS_OOC	14
+
+#define VIS_ADMIN1			15
+#define VIS_ADMIN2			16
+#define VIS_ADMIN3			17
+
+#define VIS_MESONS			18
+
+#define VIS_TURFS			19
+#define VIS_OBJS			20
+#define VIS_MOBS			21
+
+#define VIS_COUNT			21 //Must be highest number from above.
+
+//Some mob icon layering defines
+#define BODY_LAYER		-100
+
+// Clothing flags, organized in roughly top-bottom
+#define EXAMINE_SKIPHELMET			0x0001
+#define EXAMINE_SKIPEARS			0x0002
+#define EXAMINE_SKIPEYEWEAR			0x0004
+#define EXAMINE_SKIPMASK			0x0008
+#define EXAMINE_SKIPJUMPSUIT		0x0010
+#define EXAMINE_SKIPTIE				0x0020
+#define EXAMINE_SKIPHOLSTER			0x0040
+#define EXAMINE_SKIPSUITSTORAGE		0x0080
+#define EXAMINE_SKIPBACKPACK		0x0100
+#define EXAMINE_SKIPGLOVES			0x0200
+#define EXAMINE_SKIPBELT			0x0400
+#define EXAMINE_SKIPSHOES			0x0800
+
+// Body flags
+#define EXAMINE_SKIPHEAD			0x0001
+#define EXAMINE_SKIPEYES			0x0002
+#define EXAMINE_SKIPFACE			0x0004
+#define EXAMINE_SKIPBODY			0x0008
+#define EXAMINE_SKIPGROIN			0x0010
+#define EXAMINE_SKIPARMS			0x0020
+#define EXAMINE_SKIPHANDS			0x0040
+#define EXAMINE_SKIPLEGS			0x0080
+#define EXAMINE_SKIPFEET			0x0100

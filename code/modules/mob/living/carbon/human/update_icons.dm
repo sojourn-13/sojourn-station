@@ -106,34 +106,39 @@ Please contact me on #coderbus IRC. ~Carn x
 */
 
 //Human Overlays Indexes/////////
-#define MUTATIONS_LAYER		1
-#define DAMAGE_LAYER		2
-#define SURGERY_LAYER		3
-#define IMPLANTS_LAYER		4
-#define UNDERWEAR_LAYER 	5
-#define UNIFORM_LAYER		6
-#define ID_LAYER			7
-#define SHOES_LAYER			8
-#define GLOVES_LAYER		9
-#define BELT_LAYER			10
-#define SUIT_LAYER			11
-#define TAIL_LAYER			12		//bs12 specific. this hack is probably gonna come back to haunt me
-#define GLASSES_LAYER		13
-#define BELT_LAYER_ALT		14
-#define BACK_LAYER			15
-#define SUIT_STORE_LAYER	16
-#define HAIR_LAYER			17		//TODO: make part of head layer?
-#define EARS_LAYER			18
-#define FACEMASK_LAYER		19
-#define HEAD_LAYER			20
-#define COLLAR_LAYER		21
-#define HANDCUFF_LAYER		22
-#define LEGCUFF_LAYER		23
-#define L_HAND_LAYER		24
-#define R_HAND_LAYER		25
-#define FIRE_LAYER			26		//If you're on fire
-#define TARGETED_LAYER		27		//BS12: Layer for the target overlay from weapon targeting system
-#define TOTAL_LAYERS		27
+#define MARKINGS_LAYER			1
+#define MUTATIONS_LAYER			2
+#define DAMAGE_LAYER			3
+#define SURGERY_LAYER			4
+#define IMPLANTS_LAYER			5
+
+#define UNDERWEAR_LAYER 		6
+#define UNIFORM_LAYER			7
+#define ID_LAYER				8
+#define SHOES_LAYER				9
+#define GLOVES_LAYER			10
+#define BELT_LAYER				11
+#define SUIT_LAYER				12
+#define CUSTOM_TAIL_LAYER		13		//bs12 specific. this hack is probably gonna come back to haunt me
+#define GLASSES_LAYER			14
+#define BELT_LAYER_ALT			15
+#define BACK_LAYER				16
+#define SUIT_STORE_LAYER		17
+#define HAIR_LAYER				18		//TODO: make part of head layer?
+#define EARS_LAYER				19
+#define FACEMASK_LAYER			20
+#define HEAD_LAYER				21
+#define CUSTOM_EARS_LAYER		22
+#define CUSTOM_WINGS_LAYER		23
+#define CUSTOM_TAIL_LAYER_ALT	24	//For Tails that go above Adornments
+#define COLLAR_LAYER			25
+#define HANDCUFF_LAYER			26
+#define LEGCUFF_LAYER			27
+#define L_HAND_LAYER			28
+#define R_HAND_LAYER			29
+#define FIRE_LAYER				30		//If you're on fire
+#define TARGETED_LAYER			31		//BS12: Layer for the target overlay from weapon targeting system
+#define TOTAL_LAYERS			31
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -304,6 +309,12 @@ var/global/list/damage_icon_parts = list()
 		//END CACHED ICON GENERATION.
 		stand_icon.Blend(base_icon,ICON_OVERLAY)
 
+	//ears, wings and tail
+	update_marking()
+	update_ears()
+	update_tail()
+	update_wings()
+
 	appearance_test.Log("EXIT update_body()")
 	if(update_icons)
 		update_icons()
@@ -348,7 +359,7 @@ var/global/list/damage_icon_parts = list()
 		var/datum/sprite_accessory/facial_hair_style = GLOB.facial_hair_styles_list[f_style]
 		if(facial_hair_style && facial_hair_style.species_allowed && (src.species.get_bodytype() in facial_hair_style.species_allowed))
 			var/icon/facial_s = new/icon(facial_hair_style.icon, facial_hair_style.icon_state)
-			if(facial_hair_style.do_colouration)
+			if(facial_hair_style.colored_layers)
 				facial_s.Blend(facial_color, ICON_ADD)
 
 			face_standing.Blend(facial_s, ICON_OVERLAY)
@@ -357,7 +368,7 @@ var/global/list/damage_icon_parts = list()
 		var/datum/sprite_accessory/hair/hair_style = GLOB.hair_styles_list[h_style]
 		if(hair_style && (src.species.get_bodytype() in hair_style.species_allowed))
 			var/icon/hair_s = new/icon(hair_style.icon, hair_style.icon_state)
-			if(hair_style.do_colouration)
+			if(hair_style.colored_layers)
 				hair_s.Blend(hair_color, ICON_ADD)
 
 			face_standing.Blend(hair_s, ICON_OVERLAY)
@@ -413,6 +424,136 @@ var/global/list/damage_icon_parts = list()
 
 	if(update_icons) update_icons()
 
+//Markings
+/mob/living/carbon/human/proc/update_marking(var/update_icons = 1)
+	if(QDESTROYING(src))
+		return
+
+	overlays_standing[MARKINGS_LAYER] = null
+
+	var/marking_image = get_marking_image()
+	if(marking_image)
+		overlays_standing[MARKINGS_LAYER] = marking_image
+		if(update_icons) update_icons()
+
+/mob/living/carbon/human/proc/get_marking_image()
+	if(!body_markings) return
+	var/icon/marking_icon = new()
+	for(var/markname in body_markings)
+		var/datum/sprite_accessory/marking/real_marking = GLOB.body_marking_list[markname]
+		var/icon/specific_marking_icon = new()
+		for(var/part in real_marking.body_parts)
+			//Eris lacks hands and feet. This code should allow hands and feet.
+			var/test_part = part
+			switch(test_part)
+				if(BP_L_HAND) test_part = BP_L_ARM
+				if(BP_R_HAND) test_part = BP_R_ARM
+				if(BP_L_FOOT) test_part = BP_L_LEG
+				if(BP_R_FOOT) test_part = BP_R_LEG
+			var/base_part = FALSE //Apparently chest and groin are considered disembodied, which I otherwise used to exclude the wrong limbs.
+			switch(part)
+				if(BP_CHEST) base_part = TRUE
+				if(BP_GROIN) base_part = TRUE
+			if(!organs_by_name || ((organs_by_name[test_part]) && (base_part || organs_by_name[test_part].dislocated >= 0)))
+				var/icon/specific_marking_subicon = icon(real_marking.icon, "[real_marking.icon_state]-[part]")
+				specific_marking_subicon.Blend(specific_marking_icon, ICON_UNDERLAY)
+				specific_marking_icon = specific_marking_subicon
+		specific_marking_icon.Blend(body_markings[markname], real_marking.blend)
+		specific_marking_icon.Blend(marking_icon, ICON_UNDERLAY)
+		marking_icon = specific_marking_icon
+	return image(marking_icon)
+
+//Insert Furry Bits
+/mob/living/carbon/human/proc/update_ears(var/update_icons = 1)
+	if(QDESTROYING(src))
+		return
+
+	overlays_standing[CUSTOM_EARS_LAYER] = null
+	if(wear_suit && wear_suit.flags_inv & HIDEEARS)
+		if(update_icons) update_icons()
+		return
+
+	var/image/ears_image = get_ears_image()
+	if(ears_image)
+		overlays_standing[CUSTOM_EARS_LAYER] = ears_image
+		if(update_icons) update_icons()
+
+/mob/living/carbon/human/proc/get_ears_image()
+	if(!ears) return
+	var/datum/sprite_accessory/ears/earstype = ears
+	var/icon/ears_icon = icon(earstype.icon, earstype.icon_state)
+	if(earstype.colored_layers)
+		ears_icon.Blend(ears_colors[1], earstype.blend)
+	for(var/i = 2, i <= earstype.colored_layers, i++)
+		var/icon/extra_overlay = icon(earstype.icon, (earstype.extra_overlay ? earstype.extra_overlay : earstype.icon_state)+"[(i-1)]")
+		extra_overlay.Blend(ears_colors[i], earstype.blend)
+		ears_icon.Blend(extra_overlay, ICON_OVERLAY)
+	return image(ears_icon)
+
+/mob/living/carbon/human/proc/update_tail(var/update_icons = 1)
+	if(QDESTROYING(src))
+		return
+
+	overlays_standing[CUSTOM_TAIL_LAYER] = null
+	overlays_standing[CUSTOM_TAIL_LAYER_ALT] = null// Technique ripped from VORE, alternate tail layer
+	if(wear_suit && wear_suit.flags_inv & HIDETAIL && !(istype(tail, /datum/sprite_accessory/tail/taur) || wear_suit.flags_inv & HIDETAUR))
+		if(update_icons) update_icons()
+		return
+
+	var/active_tail_layer = tail_over ? CUSTOM_TAIL_LAYER_ALT : CUSTOM_TAIL_LAYER
+
+	var/image/tail_image = get_tail_image()
+	if(tail_image)
+		overlays_standing[active_tail_layer] = tail_image
+		if(update_icons) update_icons()
+
+/*	var/species_tail = species.get_tail(src) // Species tail icon_state prefix.
+
+	//This one is actually not that bad I guess.
+	if(species_tail && !(wear_suit && wear_suit.flags_inv & HIDETAIL))
+		var/icon/tail_s = get_tail_icon()
+		overlays_standing[used_tail_layer] = image(icon = tail_s, icon_state = "[species_tail]_s", layer = BODY_LAYER+used_tail_layer) // VOREStation Edit - Alt Tail Layer
+		animate_tail_reset()*/
+
+/mob/living/carbon/human/proc/get_tail_image()
+	if(!tail) return
+	var/datum/sprite_accessory/tail/tailtype = tail
+	var/icon/tail_icon = icon(tailtype.icon, tailtype.icon_state)
+	if(tailtype.colored_layers)
+		tail_icon.Blend(tail_colors[1], tailtype.blend)
+	for(var/i = 2, i <= tailtype.colored_layers, i++)
+		var/icon/extra_overlay = icon(tailtype.icon, (tailtype.extra_overlay ? tailtype.extra_overlay : tailtype.icon_state)+"[(i-1)]")
+		extra_overlay.Blend(tail_colors[i], tailtype.blend)
+		tail_icon.Blend(extra_overlay, ICON_OVERLAY)
+	if(istype(tailtype, /datum/sprite_accessory/tail/taur)) return image(tail_icon, "pixel_x" = -16)
+	return image(tail_icon)
+
+/mob/living/carbon/human/proc/update_wings(var/update_icons = 1)
+	if(QDESTROYING(src))
+		return
+
+	overlays_standing[CUSTOM_WINGS_LAYER] = null
+	if(wear_suit && wear_suit.flags_inv & HIDEWINGS)
+		if(update_icons) update_icons()
+		return
+
+	var/image/wings_image = get_wings_image()
+	if(wings_image)
+		overlays_standing[CUSTOM_WINGS_LAYER] = wings_image
+		if(update_icons) update_icons()
+
+mob/living/carbon/human/proc/get_wings_image()
+	if(!wings) return
+	var/datum/sprite_accessory/wings/wingstype = wings
+	var/icon/wings_icon = icon(wingstype.icon, wingstype.icon_state)
+	if(wingstype.colored_layers)
+		wings_icon.Blend(wings_colors[1], wingstype.blend)
+	for(var/i = 2, i <= wingstype.colored_layers, i++)
+		var/icon/extra_overlay = icon(wingstype.icon, (wingstype.extra_overlay ? wingstype.extra_overlay : wingstype.icon_state)+"[(i-1)]")
+		extra_overlay.Blend(wings_colors[i], wingstype.blend)
+		wings_icon.Blend(extra_overlay, ICON_OVERLAY)
+	return image(wings_icon)
+
 /* --------------------------------------- */
 //For legacy support.
 /mob/living/carbon/human/regenerate_icons()
@@ -444,6 +585,10 @@ var/global/list/damage_icon_parts = list()
 	update_inv_pockets(0)
 	update_fire(0)
 	update_surgery(0)
+	/*update_marking(0)
+	update_ears(0)
+	update_tail(0)
+	update_wings(0)*/
 	UpdateDamageIcon()
 	update_icons()
 
@@ -940,19 +1085,20 @@ var/global/list/damage_icon_parts = list()
 	if(on_fire)
 		overlays_standing[FIRE_LAYER] = image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing", "layer"=FIRE_LAYER)
 
-	if(update_icons)   update_icons()
+	if(update_icons)	update_icons()
 
-/mob/living/carbon/human/proc/update_surgery(var/update_icons=1)
+/mob/living/carbon/human/proc/update_surgery(var/update_icons=1) //TODO:TODO - There's a weird bug here where if nothing is set, this layer is a copy of the body.
 	overlays_standing[SURGERY_LAYER] = null
-	var/image/total = new
+	var/mutable_appearance/total = new(null)
 	for(var/obj/item/organ/external/E in organs)
 		if(E.open)
-			var/image/I = image("icon"='icons/mob/surgery.dmi', "icon_state"="[E.name][round(E.open)]", "layer"=-SURGERY_LAYER)
+			var/image/I = image("icon"='icons/mob/surgery.dmi', "icon_state"="[E.name][round(E.open)]", "layer"=SURGERY_LAYER)
 			total.overlays += I
-	overlays_standing[SURGERY_LAYER] = total
-	if(update_icons)   update_icons()
+	overlays_standing[SURGERY_LAYER] = null//image(total)
+	if(update_icons)	update_icons()
 
 //Human Overlays Indexes/////////
+#undef MARKINGS_LAYER
 #undef MUTATIONS_LAYER
 #undef DAMAGE_LAYER
 #undef SURGERY_LAYER
@@ -963,8 +1109,9 @@ var/global/list/damage_icon_parts = list()
 #undef SHOES_LAYER
 #undef GLOVES_LAYER
 #undef EARS_LAYER
+#undef CUSTOM_EARS_LAYER
 #undef SUIT_LAYER
-#undef TAIL_LAYER
+#undef CUSTOM_TAIL_LAYER
 #undef GLASSES_LAYER
 #undef FACEMASK_LAYER
 #undef BELT_LAYER
@@ -979,4 +1126,6 @@ var/global/list/damage_icon_parts = list()
 #undef R_HAND_LAYER
 #undef TARGETED_LAYER
 #undef FIRE_LAYER
+#undef CUSTOM_WING_LAYER
+#undef CUSTOM_TAIL_LAYER_ALT
 #undef TOTAL_LAYERS

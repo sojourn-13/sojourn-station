@@ -100,7 +100,7 @@ var/global/list/limb_icon_cache = list()
 			var/datum/sprite_accessory/facial_hair_style = GLOB.facial_hair_styles_list[owner.f_style]
 			if(facial_hair_style && facial_hair_style.species_allowed && (species.get_bodytype() in facial_hair_style.species_allowed))
 				var/icon/facial = new/icon(facial_hair_style.icon, facial_hair_style.icon_state)
-				if(facial_hair_style.do_colouration)
+				if(facial_hair_style.colored_layers)
 					facial.Blend(owner.facial_color, ICON_ADD)
 				overlays |= facial
 
@@ -108,7 +108,7 @@ var/global/list/limb_icon_cache = list()
 			var/datum/sprite_accessory/hair_style = GLOB.hair_styles_list[owner.h_style]
 			if(hair_style && (species.get_bodytype() in hair_style.species_allowed))
 				var/icon/hair = new/icon(hair_style.icon, hair_style.icon_state)
-				if(hair_style.do_colouration)
+				if(hair_style.colored_layers)
 					hair.Blend(hair_col, ICON_ADD)
 				overlays |= hair
 

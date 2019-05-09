@@ -369,6 +369,15 @@
 		new_character.dna.SetSEState(GLASSESBLOCK,1,0)
 		new_character.disabilities |= NEARSIGHTED
 
+	new_character.ears = GLOB.ears_styles_list[client.prefs.ears_style]
+	new_character.ears_colors = client.prefs.ears_colors
+	new_character.tail = GLOB.tail_styles_list[client.prefs.tail_style]
+	new_character.tail_colors = client.prefs.tail_colors
+	new_character.wings = GLOB.wings_styles_list[client.prefs.wings_style]
+	new_character.wings_colors = client.prefs.wings_colors
+
+	new_character.body_markings = client.prefs.body_markings
+
 	// And uncomment this, too.
 	//new_character.dna.UpdateSE()
 
