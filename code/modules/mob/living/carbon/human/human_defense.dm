@@ -197,7 +197,7 @@ meteor_act
 			if(headcheck(hit_zone))
 				//Harder to score a stun but if you do it lasts a bit longer
 				if(prob(effective_force))
-					visible_message(SPAN_DANGER("[src] [species.knockout_message]"))
+					visible_message(SPAN_DANGER("[src] [form.knockout_message]"))
 					apply_effect(20, PARALYZE, blocked)
 			else
 				//Easier to score a stun but lasts less time

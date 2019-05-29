@@ -245,12 +245,12 @@ var/global/ManifestJSON
 	var/datum/job/J = SSjob.GetJob(H.mind.assigned_role)
 	if(J)
 		var/t_state
-		temp = new /icon(H.body_build.get_mob_icon("uniform", t_state), t_state)
+		temp = new /icon(H.form.get_mob_icon("uniform", t_state), t_state)
 
-		temp.Blend(new /icon(H.body_build.get_mob_icon("shoes", t_state), t_state), ICON_OVERLAY)
+		temp.Blend(new /icon(H.form.get_mob_icon("shoes", t_state), t_state), ICON_OVERLAY)
 	else
-		temp = new /icon(H.body_build.get_mob_icon("uniform", "grey"), "grey")
-		temp.Blend(new /icon(H.body_build.get_mob_icon("shoes", "black"), "black"), ICON_OVERLAY)
+		temp = new /icon(H.form.get_mob_icon("uniform", "grey"), "grey")
+		temp.Blend(new /icon(H.form.get_mob_icon("shoes", "black"), "black"), ICON_OVERLAY)
 
 	preview_icon.Blend(temp, ICON_OVERLAY)
 

@@ -43,14 +43,14 @@
 /proc/get_infectable_species()
 	var/list/meat = list()
 	var/list/res = list()
-	for (var/specie in all_species)
-		var/datum/species/S = all_species[specie]
-		if(!S.virus_immune)
-			meat += S
+	for (var/specie in all_species_form_list)
+		var/datum/species_form/F = all_species_form_list[specie]
+		if(!F.virus_immune)
+			meat += F
 	if(meat.len)
 		var/num = rand(1,meat.len)
 		for(var/i=0,i<num,i++)
-			var/datum/species/picked = pick_n_take(meat)
+			var/datum/species_form/picked = pick_n_take(meat)
 			res |= picked.name
 			if(picked.greater_form)
 				res |= picked.greater_form
@@ -71,7 +71,7 @@
 
 	// Some species are flat out immune to organic viruses.
 	var/mob/living/carbon/human/H = mob
-	if(istype(H) && H.species.virus_immune)
+	if(istype(H) && H.form.virus_immune)
 		cure(mob)
 		return
 

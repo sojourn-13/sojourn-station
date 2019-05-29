@@ -285,11 +285,11 @@ ADMIN_VERB_ADD(/client/proc/drop_bomb, R_FUN, FALSE)
 	if(ishuman(T))
 		var/mob/living/carbon/human/H = T
 		if (H.species)
-			D.affected_species = list(H.species.get_bodytype())
-			if(H.species.primitive_form)
-				D.affected_species |= H.species.primitive_form
-			if(H.species.greater_form)
-				D.affected_species |= H.species.greater_form
+			D.affected_species = list(H.form.get_bodytype())
+			if(H.form.primitive_form)
+				D.affected_species |= H.form.primitive_form
+			if(H.form.greater_form)
+				D.affected_species |= H.form.greater_form
 	infect_virus2(T,D,1)
 
 

@@ -3,21 +3,21 @@
 /datum/preferences
 	//The mob should have a gender you want before running this proc. Will run fine without H
 	proc/randomize_appearance_and_body_for(var/mob/living/carbon/human/H)
-		var/datum/species/current_species = all_species[species]
-		if(!current_species) current_species = all_species[SPECIES_HUMAN]
+		var/datum/species/current_species = all_species[SPECIES_HUMAN]
+		var/datum/species_form/current_form = all_species_form_list[species_form]
+		if(!current_form) current_form = all_species_form_list[FORM_HUMAN]
 		gender = pick(current_species.genders)
-		body_build = pick(list("Slim", "Default", "Fat"))
 		h_style = random_hair_style(gender, species)
 		f_style = random_facial_hair_style(gender, species)
 		if(current_species)
 			s_tone = random_skin_tone()
-			if(current_species.appearance_flags & HAS_EYE_COLOR)
+			if(current_form.appearance_flags & HAS_EYE_COLOR)
 			//ASSIGN_LIST_TO_COLORS(current_species.get_random_eye_color(), r_eyes, g_eyes, b_eyes)
 				randomize_eyes_color()
-			if(current_species.appearance_flags & HAS_SKIN_COLOR)
+			if(current_form.appearance_flags & HAS_SKIN_COLOR)
 				randomize_skin_color()
 				//ASSIGN_LIST_TO_COLORS(current_species.get_random_skin_color(), r_skin, g_skin, b_skin)
-			if(current_species.appearance_flags & HAS_HAIR_COLOR)
+			if(current_form.appearance_flags & HAS_HAIR_COLOR)
 				randomize_hair_color("hair")
 				randomize_hair_color("facial")
 				/*
@@ -34,7 +34,7 @@
 						//ASSIGN_LIST_TO_COLORS(current_species.get_random_facial_hair_color(), r_facial, g_facial, b_facial)
 						ASSIGN_LIST_TO_COLORS(ReadRGB("#000000"), r_facial, g_facial, b_facial)
 				*/
-		if(current_species.appearance_flags & HAS_UNDERWEAR)
+		if(current_form.appearance_flags & HAS_UNDERWEAR)
 			all_underwear.Cut()
 			for(var/datum/category_group/underwear/WRC in GLOB.underwear.categories)
 				var/datum/category_item/underwear/WRI = pick(WRC.items)
@@ -195,7 +195,7 @@
 	skin_color = rgb(red, green, blue)
 
 /datum/preferences/proc/dress_preview_mob(var/mob/living/carbon/human/mannequin, naked = FALSE)
-	var/update_icon = FALSE
+	var/update_icon = TRUE
 	copy_to(mannequin, TRUE)
 
 	if(!naked)

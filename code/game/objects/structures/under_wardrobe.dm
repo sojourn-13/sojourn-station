@@ -59,7 +59,7 @@
 	show_browser(H, dat, "window=wardrobe;size=400x250")
 
 /obj/structure/undies_wardrobe/proc/human_who_can_use_underwear(var/mob/living/carbon/human/H)
-	if(!istype(H) || !H.species || !(H.species.appearance_flags & HAS_UNDERWEAR))
+	if(!istype(H) || !H.form || !(H.form.appearance_flags & HAS_UNDERWEAR))
 		return FALSE
 	return TRUE
 
@@ -104,7 +104,7 @@
 			return
 		LAZYSET(amount_of_underwear_by_id_card, id, ++current_quota)
 
-		var/obj/UW = UWI.create_underwear(metadata_list, H.body_build.underwear_icon)
+		var/obj/UW = UWI.create_underwear(metadata_list, H.form.underwear_icon)
 		UW.forceMove(loc)
 		H.put_in_hands(UW)
 

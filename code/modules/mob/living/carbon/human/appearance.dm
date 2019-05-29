@@ -32,19 +32,6 @@
 		return
 
 	src.gender = gender
-	var/datum/body_build/B = src.body_build
-	body_build = get_body_build(gender, B.name)
-	regenerate_icons() //This is overkill, but we do need to update all of the clothing. Maybe there's a more precise call
-	//reset_hair()
-	//update_body()
-	//update_dna()
-	return 1
-
-/mob/living/carbon/human/proc/change_build(var/build)
-	if(build == body_build.name)
-		return
-
-	body_build = get_body_build(gender, build)
 	regenerate_icons() //This is overkill, but we do need to update all of the clothing. Maybe there's a more precise call
 	//reset_hair()
 	//update_body()
@@ -130,7 +117,7 @@
 	return 1
 
 /mob/living/carbon/human/proc/change_skin_color(var/color)
-	if(color == skin_color || !(species.appearance_flags & HAS_SKIN_COLOR))
+	if(color == skin_color || !(form.appearance_flags & HAS_SKIN_COLOR))
 		return
 
 	skin_color = color
@@ -140,7 +127,7 @@
 	return 1
 
 /mob/living/carbon/human/proc/change_skin_tone(var/tone)
-	if(s_tone == tone || !(species.appearance_flags & HAS_SKIN_TONE))
+	if(s_tone == tone || !(form.appearance_flags & HAS_SKIN_TONE))
 		return
 
 	s_tone = tone

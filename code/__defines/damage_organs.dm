@@ -90,13 +90,20 @@
 #define BP_L_HAND "l_hand"
 #define BP_R_HAND "r_hand"
 #define BP_HEAD   "head"
-#define BP_CHEST  "chest"
-#define BP_TORSO  "chest"
+#define BP_CHEST  "torso"
+#define BP_TORSO  "torso"
 #define BP_GROIN  "groin"
 #define BP_LEGS list(BP_R_LEG, BP_L_LEG)
 #define BP_ARMS list(BP_R_ARM, BP_L_ARM)
 #define BP_ALL_LIMBS list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 #define BP_BY_DEPTH list(BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_GROIN, BP_CHEST)
+#define BP_BASE_PARTS list(BP_TORSO, BP_GROIN)
+
+// Limb Extensions
+#define BP_L_LEG_EXTRA	list(BP_L_FOOT)
+#define BP_R_LEG_EXTRA	list(BP_R_FOOT)
+#define BP_L_ARM_EXTRA	list(BP_L_HAND)
+#define BP_R_ARM_EXTRA	list(BP_R_HAND)
 
 // Prosthetic helpers.
 #define BP_IS_ROBOTIC(org)  (org.status & ORGAN_ROBOTIC)

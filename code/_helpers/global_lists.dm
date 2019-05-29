@@ -72,9 +72,9 @@ GLOBAL_LIST_EMPTY(all_rituals)//List of all rituals
 GLOBAL_LIST_EMPTY(global_ritual_cooldowns) // internal lists. Use ritual's cooldown_category
 
 //Preferences stuff
-	//Bodybuilds
-var/global/list/male_body_builds = list()
-var/global/list/female_body_builds = list()
+	//Body Sprites
+var/global/list/all_species_form_list = list()
+var/global/list/selectable_species_form_list = list()
 	//Hairstyles
 GLOBAL_LIST_EMPTY(hair_styles_list)        //stores /datum/sprite_accessory/hair indexed by name
 GLOBAL_LIST_EMPTY(facial_hair_styles_list) //stores /datum/sprite_accessory/facial_hair indexed by name
@@ -155,14 +155,13 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 
 	var/list/paths
 
-	//Bodybuilds
-	paths = typesof(/datum/body_build)
+	//Forms
+	paths = typesof(/datum/species_form) - /datum/species_form
 	for(var/path in paths)
-		var/datum/body_build/B = new path()
-		if (B.gender == FEMALE)
-			female_body_builds[B.name] = B
-		else
-			male_body_builds[B.name] = B
+		var/datum/species_form/F = new path()
+		all_species_form_list[F.name] = F
+		if(F.selectable)
+			selectable_species_form_list[F.name] = F
 
 	//Hair - Initialise all /datum/sprite_accessory/hair into an list indexed by hair-style name
 	paths = typesof(/datum/sprite_accessory/hair) - /datum/sprite_accessory/hair
@@ -250,18 +249,28 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 		if(!(L.flags & NONGLOBAL))
 			language_keys[lowertext(L.key)] = L
 
-	var/rkey = 0
+	//var/rkey = 0
 	paths = typesof(/datum/species)-/datum/species
 	for(var/T in paths)
-		rkey++
+		//rkey++
 		var/datum/species/S = new T
-		S.race_key = rkey //Used in mob icon caching.
+		//S.race_key = rkey //Used in mob icon caching. Not anymore!
 		all_species[S.name] = S
 
 		if(!(S.spawn_flags & IS_RESTRICTED))
 			playable_species += S.name
 		if(S.spawn_flags & IS_WHITELISTED)
 			whitelisted_species += S.name
+
+	var/fkey = 0
+	paths = typesof(/datum/species_form)-/datum/species_form
+	for(var/T in paths)
+		fkey++
+		var/datum/species_form/F = new T
+		F.form_key = fkey //Used in mob icon caching. The one a segment above is obsoleted by this.
+		all_species_form_list[F.name] = F
+		if(F.selectable)
+			selectable_species_form_list[F.name] = F
 
 	//Posters
 	paths = typesof(/datum/poster) - /datum/poster - /datum/poster/wanted

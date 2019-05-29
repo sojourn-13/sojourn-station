@@ -222,7 +222,7 @@
 			cloud_emote = "cloud-gasp"
 
 		if ("deathgasp")
-			message = "[species.death_message]"
+			message = "[form.death_message]"
 			m_type = 1
 
 		if ("giggle")

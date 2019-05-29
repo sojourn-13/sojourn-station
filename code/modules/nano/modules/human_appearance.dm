@@ -41,11 +41,11 @@
 			if(owner.change_gender(href_list["gender"]))
 				cut_and_generate_data()
 				return 1
-	if(href_list["build"])
+	/*if(href_list["build"])
 		if(can_change(APPEARANCE_BUILD))
 			if(owner.change_build(href_list["build"]))
 				cut_and_generate_data()
-				return 1
+				return 1*/
 	//if(href_list["skin_tone"])
 		// TODO: enable after baymed
 		/*if(can_change_skin_tone())
@@ -106,7 +106,6 @@
 		data["name"] = owner.real_name
 	data["specimen"] = owner.species.name
 	data["gender"] = owner.gender
-	data["build"] = owner.body_build.name
 	data["change_race"] = can_change(APPEARANCE_RACE)
 	if(data["change_race"])
 		var/species[0]
@@ -121,7 +120,7 @@
 			genders[++genders.len] =  list("gender_name" = gender2text(gender), "gender_key" = gender)
 		data["genders"] = genders
 
-	data["change_build"] = can_change(APPEARANCE_BUILD)
+/*	data["change_build"] = can_change(APPEARANCE_BUILD)
 	if(data["change_build"])
 		data["builds"] = list()
 		if (owner.gender == MALE)
@@ -129,7 +128,7 @@
 				data["builds"] += a
 		else
 			for (var/a in female_body_builds)
-				data["builds"] += a
+				data["builds"] += a*/
 
 	data["change_skin_tone"] = can_change_skin_tone()
 	data["change_skin_color"] = can_change_skin_color()
@@ -170,7 +169,7 @@
 	return owner && (flags & APPEARANCE_SKIN)// && owner.species.appearance_flags & HAS_A_SKIN_TONE	// TODO: enable after baymed
 
 /datum/nano_module/appearance_changer/proc/can_change_skin_color()
-	return owner && (flags & APPEARANCE_SKIN) && owner.species.appearance_flags & HAS_SKIN_COLOR
+	return owner && (flags & APPEARANCE_SKIN) && owner.form.appearance_flags & HAS_SKIN_COLOR
 
 /datum/nano_module/appearance_changer/proc/cut_and_generate_data()
 	// Making the assumption that the available species remain constant

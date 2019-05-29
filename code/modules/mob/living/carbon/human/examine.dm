@@ -37,9 +37,7 @@
 		// Just in case someone VVs the gender to something strange. It'll runtime anyway when it hits usages, better to CRASH() now with a helpful message.
 		CRASH("Gender datum was null; key was '[(skipjumpsuit && skipface) ? PLURAL : gender]'")
 
-	msg += "<EM>[src.name]</EM>"
-	if(species.name != "Human")
-		msg += ", a <b><font color='[species.flesh_color]'>[species.name]</font></b>"
+	msg += "<EM>[src.name]</EM>, <b><font color='[species_color_key]'>a[species_aan] [species_name]</font></b>"
 	msg += "!\n"
 
 	//uniform
@@ -216,11 +214,11 @@
 
 	msg += "</span>"
 
-	if(species.show_ssd && (!species.has_organ[BP_BRAIN] || has_brain()) && stat != DEAD)
+	if(form.show_ssd && (!species.has_organ[BP_BRAIN] || has_brain()) && stat != DEAD)
 		if(!key)
-			msg += "<span class='deadsay'>[T.He] [T.is] [species.show_ssd]. It doesn't look like [T.he] [T.is] waking up anytime soon.</span>\n"
+			msg += "<span class='deadsay'>[T.He] [T.is] [form.show_ssd]. It doesn't look like [T.he] [T.is] waking up anytime soon.</span>\n"
 		else if(!client)
-			msg += "<span class='deadsay'>[T.He] [T.is] [species.show_ssd].</span>\n"
+			msg += "<span class='deadsay'>[T.He] [T.is] [form.show_ssd].</span>\n"
 
 	var/list/wound_flavor_text = list()
 	var/list/is_bleeding = list()

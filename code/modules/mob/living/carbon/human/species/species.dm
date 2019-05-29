@@ -5,39 +5,19 @@
 /datum/species
 
 	// Descriptors and strings.
-	var/name                                             // Species name.
-	var/name_plural                                      // Pluralized name (since "[name]s" is not always valid)
-	var/blurb = "A completely nondescript species."      // A brief lore summary for use in the chargen screen.
-	var/mobtype = "/mob/living/carbon/human"
+	var/name                                            // Species name.
+	var/name_plural                                     // Pluralized name (since "[name]s" is not always valid)
+	var/blurb = "A completely nondescript species."		// A brief lore summary for use in the chargen screen.
+	var/mobtype = "/mob/living/carbon/human"			// The mob type that should be spawned for this. TODO: Make spawn code use it.
 
-	// Icon/appearance vars.
-	var/icobase = 'icons/mob/human_races/r_human.dmi'    // Normal icon set.
-	var/deform = 'icons/mob/human_races/r_def_human.dmi' // Mutated icon set.
-	var/faceicobase = 'icons/mob/human_face.dmi'
+	var/default_form = FORM_HUMAN	//If nothing else sets it, what do we look like.
 
-	// Damage overlay and masks.
-	var/damage_overlays = 'icons/mob/human_races/masks/dam_human.dmi'
-	var/damage_mask = 'icons/mob/human_races/masks/dam_mask_human.dmi'
-	var/blood_mask = 'icons/mob/human_races/masks/blood_human.dmi'
-
-	var/prone_icon                                       // If set, draws this from icobase when mob is prone.
-	var/eyes = "eyes_s"                                  // Icon for eyes.
-	var/has_floating_eyes                                // Eyes will overlay over darkness (glow)
-	var/blood_color = "#A10808"                          // Red.
-	var/flesh_color = "#FFC896"                          // Pink.
-	var/base_color                                       // Used by changelings. Should also be used for icon previes..
-	var/tail                                             // Name of tail state in species effects icon file.
-	var/tail_animation                                   // If set, the icon to obtain tail animation states from.
-	var/race_key = 0       	                             // Used for mob icon cache string.
-	var/icon/icon_template                               // Used for mob icon generation for non-32x32 species.
 	var/mob_size	= MOB_MEDIUM
-	var/show_ssd = "fast asleep"
-	var/virus_immune
 	var/blood_volume = 560                               // Initial blood volume.
 	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
 	var/taste_sensitivity = TASTE_NORMAL                 // How sensitive the species is to minute tastes.
 
-	var/min_age = 17
+	var/min_age = 18
 	var/max_age = 70
 
 	// Language/culture vars.
@@ -66,19 +46,6 @@
 
 	var/list/hair_styles
 	var/list/facial_hair_styles
-
-	// Death vars.
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
-	var/gibber_type = /obj/effect/gibspawner/human
-	var/single_gib_type = /obj/effect/decal/cleanable/blood/gibs
-	var/remains_type = /obj/item/remains/xeno
-	var/gibbed_anim = "gibbed-h"
-	var/dusted_anim = "dust-h"
-	var/death_sound
-	var/death_message = "seizes up and falls limp, their eyes dead and lifeless..."
-	var/knockout_message = "has been knocked unconscious!"
-	var/halloss_message = "slumps to the ground, too weak to continue fighting."
-	var/halloss_message_self = "You're in too much pain to keep going..."
 
 	// Environment tolerance/life processes vars.
 	var/reagent_tag                                   //Used for metabolizing reagents.
@@ -124,11 +91,8 @@
 	var/siemens_coefficient = 1   // The lower, the thicker the skin and better the insulation.
 	var/darksight = 2             // Native darksight distance.
 	var/flags = 0                 // Various specific features.
-	var/appearance_flags = 0      // Appearance/display related features.
 	var/spawn_flags = 0           // Flags that specify who can spawn as this species
 	var/slowdown = 0              // Passive movement speed malus (or boost, if negative)
-	var/primitive_form            // Lesser form, if any (ie. monkey for humans)
-	var/greater_form              // Greater form, if any, ie. human for monkeys.
 	var/holder_type
 	var/gluttonous                // Can eat some mobs. Values can be GLUT_TINY, GLUT_SMALLER, GLUT_ANYTHING.
 	var/rarity_value = 1          // Relative rarity/collector value for this species.
@@ -148,10 +112,14 @@
 		BP_CHEST =  new /datum/organ_description/chest,
 		BP_GROIN =  new /datum/organ_description/groin,
 		BP_HEAD =   new /datum/organ_description/head,
-		BP_L_ARM =  new /datum/organ_description/arm/left,
-		BP_R_ARM =  new /datum/organ_description/arm/right,
-		BP_L_LEG =  new /datum/organ_description/leg/left,
-		BP_R_LEG =  new /datum/organ_description/leg/right
+		BP_L_ARM =  new /datum/organ_description/arm/left/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/full
+/*		BP_L_HAND = new /datum/organ_description/hand/left,
+		BP_R_HAND = new /datum/organ_description/hand/right,
+		BP_L_FOOT = new /datum/organ_description/foot/left,
+		BP_R_FOOT = new /datum/organ_description/foot/right*/
 		)
 
 	// Misc
@@ -186,12 +154,6 @@
 
 /datum/species/proc/get_bodytype()
 	return name
-
-/datum/species/proc/get_body_build(var/gender, var/prefered)
-	for(var/BBT in typesof(/datum/body_build))
-		var/datum/body_build/BB = new BBT
-		if((!prefered || BB.name == prefered) && (gender in genders))
-			return BB
 
 
 /datum/species/proc/get_environment_discomfort(var/mob/living/carbon/human/H, var/msg_type)

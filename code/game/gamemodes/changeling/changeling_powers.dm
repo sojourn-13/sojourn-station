@@ -297,8 +297,8 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		for(var/obj/item/W in src)
 			H.drop_from_inventory(W)
 
-		H.set_species(H.species.greater_form)
-		src << "<B>You are now [H.species.name]. </B>"
+		H.set_species(H.form.greater_form)
+		src << "<B>You are now [H.form.name]. </B>"
 		qdel(animation)
 
 		make_changeling()
@@ -327,7 +327,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	var/mob/living/carbon/human/H = src
 
-	if(!istype(H) || !H.species.primitive_form)
+	if(!istype(H) || !H.form.primitive_form)
 		src << SPAN_WARNING("We cannot perform this ability in this form!")
 		return
 

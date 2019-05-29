@@ -13,14 +13,11 @@
 	var/s_tone = 0	//Skin tone
 
 	//Skin colour
-	var/skin_color = "#000000"
+	var/skin_color = "#FFE0D0"
 
 	var/size_multiplier = 1 //multiplier for the mob's icon size
 	var/damage_multiplier = 1 //multiplies melee combat damage
 	var/icon_update = 1 //whether icon updating shall take place
-
-
-	var/datum/body_build/body_build = null
 
 	var/lip_style = null	//no lipstick by default- arguably misleading, as it could be used for general makeup
 

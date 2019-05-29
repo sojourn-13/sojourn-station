@@ -5,6 +5,7 @@
 
 	// Strings.
 	var/organ_tag = "organ"           // Unique identifier.
+	var/additional_limb_parts		  // Other parts to put on top, if the limb is incomplete.
 	var/parent_organ = BP_CHEST       // Organ holding this object.
 	var/dead_icon
 
@@ -15,19 +16,20 @@
 	var/robotic = 0
 
 	// Reference data.
-	var/mob/living/carbon/human/owner // Current mob owning the organ.
+	var/mob/living/carbon/human/owner	// Current mob owning the organ.
 	var/obj/item/organ/external/parent
-	var/list/transplant_data          // Transplant match data.
-	var/list/autopsy_data = list()    // Trauma data for forensics.
-	var/list/trace_chemicals = list() // Traces of chemicals in the organ.
+	var/list/transplant_data			// Transplant match data.
+	var/list/autopsy_data = list()		// Trauma data for forensics.
+	var/list/trace_chemicals = list()	// Traces of chemicals in the organ.
 	var/datum/dna/dna
-	var/datum/species/species
+	var/datum/species/species			//TODO: Fix this
+	var/datum/species_form/form
 
 	// Damage vars.
-	var/min_bruised_damage = 10       // Damage before considered bruised
-	var/min_broken_damage = 30        // Damage before becoming broken
-	var/max_damage                    // Damage cap
-	var/rejecting                     // Is this organ already being rejected?
+	var/min_bruised_damage = 10      	// Damage before considered bruised
+	var/min_broken_damage = 30       	// Damage before becoming broken
+	var/max_damage                   	// Damage cap
+	var/rejecting                    	// Is this organ already being rejected?
 
 /obj/item/organ/Destroy()
 	if(owner)
@@ -51,7 +53,10 @@
 		max_damage = min_broken_damage * 2
 	if(istype(holder))
 		src.owner = holder
-		species = all_species["Human"]
+		species = holder.species
+		if(!species) species = all_species[SPECIES_HUMAN]
+		form = holder.form
+		if(!form) form = all_species_form_list[FORM_HUMAN]
 		if(holder.dna)
 			dna = holder.dna.Clone()
 			species = all_species[dna.species]

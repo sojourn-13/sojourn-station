@@ -17,7 +17,7 @@
 	var/body = ""
 	if(owner)
 		gender = owner.gender == FEMALE ? "f" : "m"
-		body = owner.body_build.index
+		body = owner.form.form_key
 	icon_state = "[organ_tag]_[gender][body]"
 	mob_icon = icon(force_icon, icon_state)
 	return mob_icon

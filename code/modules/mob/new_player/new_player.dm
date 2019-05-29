@@ -322,10 +322,19 @@
 		chosen_species = all_species[client.prefs.species]
 		use_species_name = chosen_species.get_station_variant() //Only used by pariahs atm.
 
+	var/use_form_name
+	var/datum/species_form/chosen_form
+	if(client.prefs.species_form)
+		chosen_form = all_species_form_list[client.prefs.species_form]
+		use_form_name = chosen_form.get_station_variant() //Not used at all but whatever.
+
 	if(chosen_species && use_species_name)
 		// Have to recheck admin due to no usr at roundstart. Latejoins are fine though.
-		if(is_species_whitelisted(chosen_species) || has_admin_rights())
-			new_character = new(loc, use_species_name)
+		if(!is_species_whitelisted(chosen_species) && !has_admin_rights())
+			use_species_name = null
+		if(!is_form_whitelisted(chosen_form) && !has_admin_rights())
+			use_form_name = null
+		new_character = new(loc, use_species_name, use_form_name)
 
 	if(!new_character)
 		new_character = new(loc)
@@ -369,6 +378,10 @@
 		new_character.dna.SetSEState(GLASSESBLOCK,1,0)
 		new_character.disabilities |= NEARSIGHTED
 
+	new_character.species_aan = client.prefs.species_aan
+	new_character.species_color_key = client.prefs.species_color
+	new_character.species_name = client.prefs.custom_species
+
 	new_character.ears = GLOB.ears_styles_list[client.prefs.ears_style]
 	new_character.ears_colors = client.prefs.ears_colors
 	new_character.tail = GLOB.tail_styles_list[client.prefs.tail_style]
@@ -399,6 +412,10 @@
 /mob/new_player/proc/is_species_whitelisted(datum/species/S)
 	if(!S) return 1
 	return is_alien_whitelisted(src, S.name) || !(S.spawn_flags & IS_WHITELISTED)
+
+/mob/new_player/proc/is_form_whitelisted(datum/species_form/F)
+	if(!F) return 1
+	return F.selectable
 
 /mob/new_player/get_species()
 	var/datum/species/chosen_species

@@ -108,6 +108,7 @@
 /obj/item/organ/external/proc/set_description(var/datum/organ_description/desc)
 	src.name = desc.name
 	src.organ_tag = desc.organ_tag
+	src.additional_limb_parts = desc.additional_limb_parts
 	src.amputation_point = desc.amputation_point
 	src.joint = desc.joint
 	src.max_damage = desc.max_damage
@@ -743,11 +744,11 @@ Note that amputating the affected organ does in fact remove the infection from t
 					I.loc = get_turf(src)
 			qdel(src)
 		if(DROPLIMB_BLUNT)
-			var/obj/effect/decal/cleanable/blood/gibs/gore = new victim.species.single_gib_type(get_turf(victim))
-			if(victim.species.flesh_color)
-				gore.fleshcolor = victim.species.flesh_color
-			if(victim.species.blood_color)
-				gore.basecolor = victim.species.blood_color
+			var/obj/effect/decal/cleanable/blood/gibs/gore = new victim.form.single_gib_type(get_turf(victim))
+			if(victim.flesh_color)
+				gore.fleshcolor = victim.flesh_color
+			if(victim.blood_color)
+				gore.basecolor = victim.blood_color
 			gore.update_icon()
 			gore.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,3),30)
 

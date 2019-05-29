@@ -32,7 +32,7 @@
 		var/mob/living/carbon/human/H = victim
 		if(!issmall(H))
 			return 0
-		meat_type = H.species.meat_type
+		meat_type = H.form.meat_type
 		icon_state = "spikebloody"
 	else if(isalien(victim))
 		meat_type = /obj/item/weapon/reagent_containers/food/snacks/xenomeat

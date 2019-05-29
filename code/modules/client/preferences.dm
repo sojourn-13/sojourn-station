@@ -146,6 +146,7 @@
 	// Sanitizing rather than saving as someone might still be editing when copy_to occurs.
 	player_setup.sanitize_setup()
 	character.set_species(species)
+	character.set_form(species_form)
 
 	if(be_random_name)
 		real_name = random_name(gender,species)
@@ -158,7 +159,6 @@
 		else if(firstspace == name_length)
 			real_name += "[pick(GLOB.last_names)]"
 	character.fully_replace_character_name(newname = real_name)
-	character.body_build = get_body_build(gender, body_build)
 	character.gender = gender
 	character.age = age
 	character.b_type = b_type
@@ -176,6 +176,11 @@
 
 	character.religion = religion
 	character.s_tone = s_tone
+
+	character.species_aan = species_aan
+	character.species_color_key = species_color
+	character.species_name = custom_species
+	character.blood_color = blood_color
 
 	character.ears = GLOB.ears_styles_list[ears_style]
 	character.ears_colors = ears_colors
@@ -195,7 +200,7 @@
 			var/underwear_item_name = all_underwear[underwear_category_name]
 			var/datum/category_item/underwear/UWD = underwear_category.items_by_name[underwear_item_name]
 			var/metadata = all_underwear_metadata[underwear_category_name]
-			var/obj/item/underwear/UW = UWD.create_underwear(metadata, character.body_build.underwear_icon)
+			var/obj/item/underwear/UW = UWD.create_underwear(metadata, character.form.underwear_icon)
 			if(UW)
 				UW.ForceEquipUnderwear(character, FALSE)
 		else

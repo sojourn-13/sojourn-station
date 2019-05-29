@@ -34,6 +34,7 @@
 	name = "spider legs"
 	desc = ""
 	icon_state = "spider-legs"
+	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/moth

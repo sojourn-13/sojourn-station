@@ -9,18 +9,23 @@
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
 	var/obj/item/weapon/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_lying_buckled_and_verb_status() call.
 
-/mob/living/carbon/human/New(var/new_loc, var/new_species = null)
-	body_build = get_body_build(gender)
+/mob/living/carbon/human/New(var/new_loc, var/new_species = null, var/new_form = null)
 
 	if(!dna)
 		dna = new /datum/dna(null)
 		// Species name is handled by set_species()
 
+	if(new_species)
+		set_species(new_species,1)
 	if(!species)
-		if(new_species)
-			set_species(new_species,1)
-		else
-			set_species()
+		set_species()
+
+	if(new_form)
+		set_form(new_form, 1)
+	if(!form && species)
+		set_form(species.default_form)
+	if(!form)
+		form = new /datum/species_form/human
 
 	if(species)
 		real_name = species.get_random_name(gender)
@@ -1036,7 +1041,7 @@ var/list/rank_prefix = list(\
 	else
 		usr << SPAN_WARNING("You failed to check the pulse. Try again.")
 
-/mob/living/carbon/human/proc/set_species(var/new_species, var/default_colour)
+/mob/living/carbon/human/proc/set_species(var/new_species, var/default_color)
 	if(!dna)
 		if(!new_species)
 			new_species = "Human"
@@ -1048,7 +1053,7 @@ var/list/rank_prefix = list(\
 
 	// No more invisible screaming wheelchairs because of set_species() typos.
 	if(!all_species[new_species])
-		new_species = "Human"
+		new_species = SPECIES_HUMAN
 
 	if(species)
 
@@ -1064,17 +1069,13 @@ var/list/rank_prefix = list(\
 
 	species = all_species[new_species]
 
+	set_form(species.default_form, default_color)
+
 	if(species.language)
 		add_language(species.language)
 
 	if(species.default_language)
 		add_language(species.default_language)
-
-	if(species.base_color && default_colour)
-		//Apply colour.
-		skin_color = species.base_color
-	else
-		skin_color = "#000000"
 
 	if(species.holder_type)
 		holder_type = species.holder_type
@@ -1112,6 +1113,11 @@ var/list/rank_prefix = list(\
 		return 1
 	else
 		return 0
+
+/mob/living/carbon/human/proc/set_form(var/new_form = FORM_HUMAN, var/default_color)
+	form = all_species_form_list[new_form]
+	if(default_color)
+		skin_color = form.base_color
 
 #define MODIFICATION_ORGANIC 1
 #define MODIFICATION_SILICON 2

@@ -14,11 +14,7 @@ datum/preferences
 	var/list/body_markings = list()
 
 	//Twiddly Bits
-	var/blood_color = "#ff0000"
-//	var/
-
-	var/aan = 0
-	var/custom_species = ""
+	var/blood_color = "#A10808"
 
 /datum/category_item/player_setup_item/physical/furry
 	name = "Furry"
@@ -35,8 +31,6 @@ datum/preferences
 	from_file(S["body_markings"], pref.body_markings)
 
 	from_file(S["blood_color"], pref.blood_color)
-	from_file(S["custom_species"], pref.custom_species)
-	from_file(S["custom_species_aan"], pref.aan)
 
 /datum/category_item/player_setup_item/physical/furry/save_character(var/savefile/S)
 	to_file(S["ears_style"], pref.ears_style)
@@ -49,8 +43,6 @@ datum/preferences
 	to_file(S["body_markings"], pref.body_markings)
 
 	to_file(S["blood_color"], pref.blood_color)
-	to_file(S["custom_species"], pref.custom_species)
-	to_file(S["custom_species_aan"], pref.aan)
 
 
 /datum/category_item/player_setup_item/physical/furry/sanitize_character()
@@ -76,6 +68,7 @@ datum/preferences
 		for(counter = 1, counter <= GLOB.wings_styles_list[pref.wings_style].colored_layers, counter++)
 			if(counter > pref.wings_colors.len) pref.wings_colors.Add(counter ? (counter == 1 ? "#000000" : "#777777") : "#ffffff")
 			else if(!iscolor(pref.wings_colors[counter])) pref.wings_colors[counter] = counter ? (counter == 1 ? "#000000" : "#777777") : "#ffffff"
+	pref.blood_color = iscolor(pref.blood_color) ? pref.blood_color : initial(pref.blood_color)
 
 	if(!istype(pref.body_markings)) pref.body_markings = list()
 	for(var/item in pref.body_markings)
@@ -88,39 +81,11 @@ datum/preferences
 	pref.custom_species		= sanitize_text(pref.custom_species, initial(pref.custom_species))
 
 /datum/category_item/player_setup_item/physical/furry/content(var/mob/user)
-/*	if(!pref.preview_icon)
-		pref.update_preview_icon()
-	user << browse_rsc(pref.preview_icon, "previewicon.png")
-
-	var/datum/species/mob_species = all_species[pref.species]
 	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
-	. += "<hr>"
-	. += "<table><tr style='vertical-align:top; width: 100%'><td width=65%><b>Body</b> "
-	. += "(<a href='?src=\ref[src];random=1'>&reg;</A>)"
+
+	. += "<b>Blood Color:</b> <a href='?src=\ref[src];blood_color=1'><span class='color_holder_box' style='background-color:[pref.blood_color]'></span></a>"
+	. += "<a href='?src=\ref[src];blood_reset=1'>&#707;</a>"
 	. += "<br>"
-
-	. += "Body Shape: <a href='?src=\ref[src];body_build=1'><b>[pref.body_build]</b></a><br>"
-	. += "Blood Type: <a href='?src=\ref[src];blood_type=1'>[pref.b_type]</a><br>"
-
-	. += "Base Colour: <a href='?src=\ref[src];base_skin=1'>[pref.s_base]</a><br>"
-
-	. += "Skin Tone: <a href='?src=\ref[src];skin_tone=1'>[-pref.s_tone + 35]/220</a><br>"
-
-	. += "Needs Glasses: <a href='?src=\ref[src];disabilities=[NEARSIGHTED]'><b>[pref.disabilities & NEARSIGHTED ? "Yes" : "No"]</b></a><br><br>"
-
-	. += "<b>Hair:</b><br>"
-	. += " Style: <a href='?src=\ref[src];cycle_hair=right'>&lt;&lt;</a><a href='?src=\ref[src];cycle_hair=left'>&gt;&gt;</a><a href='?src=\ref[src];hair_style=1'>[pref.h_style]</a>"
-
-	. += "<br><b>Facial:</b><br>"
-	. += " Style: <a href='?src=\ref[src];cycle_facial_hair=right'>&lt;&lt;</a><a href='?src=\ref[src];cycle_facial_hair=left'>&gt;&gt;</a><a href='?src=\ref[src];facial_style=1'>[pref.f_style]</a>"
-
-	. += "</td><td style = 'text-align:center;' width = 35%><b>Preview</b><br>"
-	. += "<div style ='padding-bottom:-2px;' class='statusDisplay'><img src=previewicon.png width=[pref.preview_icon.Width()] height=[pref.preview_icon.Height()]></div>"
-	. += "<br><a href='?src=\ref[src];cycle_bg=1'>Cycle background</a>"
-	. += "<br><a href='?src=\ref[src];toggle_preview_value=[EQUIP_PREVIEW_LOADOUT]'>[pref.equip_preview_mob & EQUIP_PREVIEW_LOADOUT ? "Hide loadout" : "Show loadout"]</a>"
-	. += "<br><a href='?src=\ref[src];toggle_preview_value=[EQUIP_PREVIEW_JOB]'>[pref.equip_preview_mob & EQUIP_PREVIEW_JOB ? "Hide job gear" : "Show job gear"]</a>"
-	. += "</td></tr></table>"*/
-	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
 	var/counter
 	. += "<b>Ears:</b><br>"
 	. += "Type: <a href='?src=\ref[src];ears_type=1'>[pref.ears_style]</a><br>"
@@ -139,7 +104,7 @@ datum/preferences
 	if(GLOB.wings_styles_list[pref.wings_style])
 		for(counter = 1, counter <= GLOB.wings_styles_list[pref.wings_style].colored_layers, counter++)
 			. += "<a href='?src=\ref[src];wings_color=[counter]'><span class='color_holder_box' style='background-color:[pref.wings_colors[counter]]'></span></a>"
-	. += "<br><br>"
+	. += "<br>"
 	. += "<b>Markings:</b><br>"
 	. += "<a href='?src=\ref[src];marking_add=1'>Add Marking</a><br>"
 	for(counter = pref.body_markings.len, counter >= 1, counter--)
@@ -149,6 +114,15 @@ datum/preferences
 		. += "<a href='?src=\ref[src];marking=[counter]'>[pref.body_markings[counter]]</a><br>"
 
 /datum/category_item/player_setup_item/physical/furry/OnTopic(var/href,var/list/href_list, var/mob/user)
+	if(href_list["blood_color"])
+		var/color = input(user, "Choose your character's blood color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.blood_color) as color|null
+		if(color && CanUseTopic(user))
+			pref.blood_color = color
+		return TOPIC_REFRESH_UPDATE_PREVIEW
+	if(href_list["blood_reset"])
+		if(CanUseTopic(user))
+			pref.blood_color = (all_species_form_list[pref.species_form] && all_species_form_list[pref.species_form].blood_color) ? all_species_form_list[pref.species_form].blood_color : "A10808"
+		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["ears_type"])
 		var/new_e_style = input(user, "Choose your character's ears:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.ears_style)   as null|anything in (list("Default" = null) + GLOB.ears_styles_list)
 		if(new_e_style && CanUseTopic(user))
@@ -158,7 +132,7 @@ datum/preferences
 		var/colornum = text2num(href_list["ears_color"])
 		if(colornum && colornum >= 1 && colornum <= GLOB.ears_styles_list[pref.ears_style].colored_layers)
 			var/color = input(user, "Choose your character's ear color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.ears_colors[colornum]) as color|null
-			if(color)
+			if(color && CanUseTopic(user))
 				pref.ears_colors[colornum] = color
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["tail_type"])
@@ -170,7 +144,7 @@ datum/preferences
 		var/colornum = text2num(href_list["tail_color"])
 		if(colornum && colornum >= 1 && colornum <= GLOB.tail_styles_list[pref.tail_style].colored_layers)
 			var/color = input(user, "Choose your character's tail color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.tail_colors[colornum]) as color|null
-			if(color)
+			if(color && CanUseTopic(user))
 				pref.tail_colors[colornum] = color
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["wings_type"])
@@ -182,7 +156,7 @@ datum/preferences
 		var/colornum = text2num(href_list["wings_color"])
 		if(colornum && colornum >= 1 && colornum <= GLOB.wings_styles_list[pref.wings_style].colored_layers)
 			var/color = input(user, "Choose your character's wings color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.wings_colors[colornum]) as color|null
-			if(color)
+			if(color && CanUseTopic(user))
 				pref.wings_colors[colornum] = color
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["marking_add"])
@@ -206,9 +180,9 @@ datum/preferences
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["marking_color"])
 		var/pos = pref.body_markings[text2num(href_list["marking_color"])]
-		if(pos)
+		if(pos && pos in pref.body_markings)
 			var/color = input(user, "Choose the marking color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.body_markings[pos]) as color|null
-			if(color && pos in pref.body_markings)
+			if(color && (pos in pref.body_markings) && CanUseTopic(user))
 				pref.body_markings[pos] = color
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	. = ..()

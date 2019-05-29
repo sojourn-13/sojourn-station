@@ -90,7 +90,7 @@ ADMIN_VERB_ADD(/client/proc/virus2_editor, R_DEBUG, FALSE)
 		"}
 		var/f = 1
 		for(var/k in all_species)
-			var/datum/species/S = all_species[k]
+			var/datum/species_form/S = all_species_form_list[k]
 			if(S.virus_immune)
 				continue
 			if(!f) H += " | "

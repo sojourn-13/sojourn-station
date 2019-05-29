@@ -1,6 +1,10 @@
 /mob/living/carbon/
 	gender = MALE
 	var/datum/species/species //Contains icon generation and language information, set during New().
+	var/datum/species_form/form //Steals the icon generation info from above.
+	var/species_aan = "a"
+	var/species_color_key = "#000000"
+	var/species_name = "Carbon Lifeform"
 	var/list/stomach_contents = list()
 	var/list/datum/disease2/disease/virus2 = list()
 	var/list/antibodies = list()
@@ -28,5 +32,6 @@
 	var/cpr_time = 1.0
 	nutrition = 400.0//Carbon
 
+	var/flesh_color = "#A10808"
 
 	var/obj/item/weapon/tank/internal = null//Human/Monkey

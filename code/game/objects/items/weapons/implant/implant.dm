@@ -113,7 +113,7 @@
 	icon_state = "implant_melted"
 	malfunction = MALFUNCTION_PERMANENT
 
-/obj/item/weapon/implant/proc/get_mob_overlay(var/gender, var/body_build)
+/obj/item/weapon/implant/proc/get_mob_overlay(var/gender, var/form)
 	return null
 
 /obj/item/weapon/implant/Destroy()

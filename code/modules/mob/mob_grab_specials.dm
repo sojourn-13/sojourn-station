@@ -99,7 +99,7 @@
 
 	if(!armor && target.headcheck(BP_HEAD) && prob(damage))
 		target.apply_effect(20, PARALYZE)
-		target.visible_message(SPAN_DANGER("[target] [target.species.knockout_message]"))
+		target.visible_message(SPAN_DANGER("[target] [target.form.knockout_message]"))
 
 	playsound(attacker.loc, "swing_hit", 25, 1, -1)
 	attacker.attack_log += text("\[[time_stamp()]\] <font color='red'>Headbutted [target.name] ([target.ckey])</font>")

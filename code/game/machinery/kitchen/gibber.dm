@@ -207,7 +207,7 @@
 	else if(ishuman(occupant))
 		var/mob/living/carbon/human/H = occupant
 		slab_name = src.occupant.real_name
-		slab_type = H.species.meat_type
+		slab_type = H.form.meat_type
 
 	// Small mobs don't give as much nutrition.
 	if(issmall(src.occupant))

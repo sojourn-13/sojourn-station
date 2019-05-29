@@ -14,12 +14,12 @@
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
-	..(species.gibbed_anim)
-	gibs(loc, dna, null, species.flesh_color, species.blood_color)
+	..(form.gibbed_anim)
+	gibs(loc, dna, null, form.flesh_color, form.blood_color)
 
 /mob/living/carbon/human/dust()
 	if(species)
-		..(species.dusted_anim, species.remains_type)
+		..(form.dusted_anim, form.remains_type)
 	else
 		..()
 
@@ -59,14 +59,14 @@
 			SPAN_DANGER("Warning: user death event. Mobility control passed to integrated intelligence system.")
 		)
 
-	. = ..(gibbed,species.death_message)
+	. = ..(gibbed,form.death_message)
 	if(!gibbed)
 		dizziness = 0
 		jitteriness = 0
 		handle_organs()
 		dead_HUD()
-		if(species.death_sound)
-			playsound(loc, species.death_sound, 80, 1, 1)
+		if(form.death_sound)
+			playsound(loc, form.death_sound, 80, 1, 1)
 	handle_hud_list()
 
 

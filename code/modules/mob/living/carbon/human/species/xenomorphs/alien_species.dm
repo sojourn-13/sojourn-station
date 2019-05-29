@@ -13,8 +13,6 @@
 	siemens_coefficient = 0
 	gluttonous = GLUT_ANYTHING
 
-	eyes = "blank_eyes"
-
 	brute_mod = 0.25 // Hardened carapace.
 	burn_mod = 1.1    // Weak to fire.
 
@@ -29,13 +27,6 @@
 	spawn_flags = IS_RESTRICTED
 
 	reagent_tag = IS_XENOS
-
-	blood_color = "#05EE05"
-	flesh_color = "#282846"
-	gibbed_anim = "gibbed-a"
-	dusted_anim = "dust-a"
-	death_message = "lets out a waning guttural screech, green blood bubbling from its maw."
-	death_sound = 'sound/voice/hiss6.ogg'
 
 	speech_sounds = list('sound/voice/hiss1.ogg','sound/voice/hiss2.ogg','sound/voice/hiss3.ogg','sound/voice/hiss4.ogg')
 	speech_chance = 100
@@ -141,11 +132,9 @@
 	caste_name = "drone"
 	weeds_plasma_rate = 15
 	slowdown = 1
-	tail = "xenos_drone_tail"
 	rarity_value = 5
 
-	icobase = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
-	deform =  'icons/mob/human_races/xenos/r_xenos_drone.dmi'
+	default_form = /datum/species_form/alien/drone
 
 	has_organ = list(
 		BP_HEART =  /obj/item/organ/internal/heart,
@@ -175,10 +164,8 @@
 	caste_name = "hunter"
 	slowdown = -2
 	total_health = 150
-	tail = "xenos_hunter_tail"
 
-	icobase = 'icons/mob/human_races/xenos/r_xenos_hunter.dmi'
-	deform =  'icons/mob/human_races/xenos/r_xenos_hunter.dmi'
+	default_form = /datum/species_form/alien/hunter
 
 	has_organ = list(
 		BP_HEART =  /obj/item/organ/internal/heart,
@@ -202,10 +189,8 @@
 	caste_name = "sentinel"
 	slowdown = 0
 	total_health = 125
-	tail = "xenos_sentinel_tail"
 
-	icobase = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
-	deform =  'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
+	default_form = /datum/species_form/alien/sentinel
 
 	has_organ = list(
 		BP_HEART =  /obj/item/organ/internal/heart,
@@ -229,11 +214,9 @@
 	weeds_plasma_rate = 20
 	caste_name = "queen"
 	slowdown = 4
-	tail = "xenos_queen_tail"
 	rarity_value = 10
 
-	icobase = 'icons/mob/human_races/xenos/r_xenos_queen.dmi'
-	deform =  'icons/mob/human_races/xenos/r_xenos_queen.dmi'
+	default_form = /datum/species_form/alien/queen
 
 	has_organ = list(
 		BP_HEART =  /obj/item/organ/internal/heart,

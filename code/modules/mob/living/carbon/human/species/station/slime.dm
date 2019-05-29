@@ -3,8 +3,7 @@
 	name_plural = "slimes"
 	mob_size = MOB_SMALL
 
-	icobase = 'icons/mob/human_races/r_slime.dmi'
-	deform = 'icons/mob/human_races/r_slime.dmi'
+	default_form = FORM_SLIME
 
 	language = null //todo?
 	unarmed_types = list(/datum/unarmed_attack/slime_glomp)
@@ -12,12 +11,6 @@
 	spawn_flags = IS_RESTRICTED
 	siemens_coefficient = 3 //conductive
 	darksight = 3
-
-	blood_color = "#05FF9B"
-	flesh_color = "#05FFFB"
-
-	remains_type = /obj/effect/decal/cleanable/ash
-	death_message = "rapidly loses cohesion, splattering across the ground..."
 
 	has_organ = list(
 		BP_BRAIN = /obj/item/organ/internal/brain/slime

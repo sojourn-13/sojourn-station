@@ -72,7 +72,7 @@
 * @params g Gender (m or f)
 * @params fat Fat? (0 or 1)
 */
-/datum/dna/gene/proc/OnDrawUnderlays(var/mob/M, var/g, var/fat)
+/datum/dna/gene/proc/OnDrawUnderlays(var/mob/M, var/g, var/species_form/form)
 	return 0
 
 

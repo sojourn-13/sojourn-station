@@ -3,29 +3,16 @@
 	name_plural = "Monkeys"
 	blurb = "Ook."
 
-	icobase = 'icons/mob/human_races/monkeys/r_monkey.dmi'
-	deform = 'icons/mob/human_races/monkeys/r_monkey.dmi'
-	damage_overlays = 'icons/mob/human_races/masks/dam_monkey.dmi'
-	damage_mask = 'icons/mob/human_races/masks/dam_mask_monkey.dmi'
-	blood_mask = 'icons/mob/human_races/masks/blood_monkey.dmi'
+	default_form = FORM_MONKEY
+
 	language = null
 	default_language = LANGUAGE_MONKEY
-	greater_form = "Human"
 	mob_size = MOB_SMALL
 	has_fine_manipulation = 0
-	show_ssd = null
-
-	eyes = "blank_eyes"
-
-	gibbed_anim = "gibbed-m"
-	dusted_anim = "dust-m"
-	death_message = "lets out a faint chimper as it collapses and stops moving..."
-	tail = "chimptail"
 
 	unarmed_types = list(/datum/unarmed_attack/bite, /datum/unarmed_attack/claws)
 	inherent_verbs = list(/mob/living/proc/ventcrawl, /mob/living/proc/hide)
 	hud_type = /datum/hud_data/monkey
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/monkey
 
 	rarity_value = 0.1
 	total_health = 75

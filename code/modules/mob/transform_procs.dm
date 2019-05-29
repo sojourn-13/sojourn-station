@@ -29,14 +29,14 @@
 	update_lying_buckled_and_verb_status()
 	invisibility = initial(invisibility)
 
-	if(!species.primitive_form) //If the creature in question has no primitive set, this is going to be messy.
+	if(!form.primitive_form) //If the creature in question has no primitive set, this is going to be messy.
 		gib()
 		return
 
 	for(var/obj/item/W in src)
 		drop_from_inventory(W)
 
-	set_species(species.primitive_form)
+	set_species(form.primitive_form)
 	dna.SetSEState(MONKEYBLOCK,1)
 	dna.SetSEValueRange(MONKEYBLOCK,0xDAC, 0xFFF)
 
