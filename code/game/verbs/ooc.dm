@@ -34,7 +34,7 @@
 
 	log_ooc("[mob.name]/[key] : [msg]")
 
-	var/ooc_style = "everyone"
+/*	var/ooc_style = "everyone"
 	if(holder && !holder.fakekey)
 		ooc_style = "elevated"
 		if(holder.rights & R_MOD)
@@ -42,7 +42,7 @@
 		if(holder.rights & R_DEBUG)
 			ooc_style = "developer"
 		if(holder.rights & R_ADMIN)
-			ooc_style = "admin"
+			ooc_style = "admin"*/
 
 	for(var/client/target in clients)
 		if(target.get_preference_value(/datum/client_preference/show_ooc) == GLOB.PREF_SHOW)
@@ -54,9 +54,9 @@
 					else
 						display_name = holder.fakekey
 			if(holder && !holder.fakekey && (holder.rights & R_ADMIN) && config.allow_admin_ooccolor && (src.prefs.ooccolor != initial(src.prefs.ooccolor))) // keeping this for the badmins
-				target << "<span class='ooc'>" + create_text_tag("ooc", "OOC:", target) + " <font color='[src.prefs.ooccolor]'><EM>[display_name]:</EM></font> <span class='message'>[msg]</span></span>"
+				target << "<span class='ooc'>" + create_text_tag("ooc", "OOC:", target) + " <font color='[src.prefs.ooccolor]'><EM>[display_name]:</EM> <span class='message'>[msg]</span></font></span>"
 			else
-				target << "<span class='ooc'><span class='[ooc_style]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> <span class='message'>[msg]</span></span></span>"
+				target << "<span class='ooc'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> <span class='message'>[msg]</span></span>"
 
 /client/verb/looc(msg as text)
 	set name = "LOOC"
