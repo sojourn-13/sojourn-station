@@ -154,7 +154,7 @@
 		return standard_mode
 
 	if(length(message) >= 2)
-		var/channel_prefix =  sanitize_key(copytext(message, 1, 3))
+		var/channel_prefix =  copytext(message, 1, 3)
 		return department_radio_keys[channel_prefix]
 
 	return null
@@ -167,7 +167,7 @@
 		return all_languages["Noise"]
 
 	if(length(message) >= 2 && is_language_prefix(prefix))
-		var/language_prefix = sanitize_key(copytext(message, 2, 3))
+		var/language_prefix = copytext(message, 2, 3)
 		var/datum/language/L = language_keys[language_prefix]
 		if(can_speak(L))
 			return L

@@ -5,7 +5,6 @@
 	icon_key is [species.race_key][husk][fat][hulk][skeleton]
 */
 var/global/list/human_icon_cache = list()
-var/global/list/tail_icon_cache = list() //key is [species.race_key][r_skin][g_skin][b_skin]
 var/global/list/light_overlay_cache = list()
 
 	///////////////////////
@@ -174,6 +173,11 @@ Please contact me on #coderbus IRC. ~Carn x
 	..()
 
 var/global/list/damage_icon_parts = list()
+
+var/global/list/marking_cache = list()
+var/global/list/ears_icon_cache = list()
+var/global/list/tail_icon_cache = list()
+var/global/list/wings_icon_cache = list()
 
 //DAMAGE OVERLAYS
 //constructs damage icon for each organ from mask * damage field and saves it in our overlays_ lists
@@ -476,6 +480,10 @@ var/global/list/damage_icon_parts = list()
 
 /mob/living/carbon/human/proc/get_ears_image()
 	if(!ears) return
+	var/cache_key = "[ears.name][ears.colored_layers][ears_colors.Join("", 1, ears.colored_layers+1)]"
+	if(ears_icon_cache[cache_key])
+		return ears_icon_cache[cache_key]
+
 	var/datum/sprite_accessory/ears/earstype = ears
 	var/icon/ears_icon = icon(earstype.icon, earstype.icon_state)
 	if(earstype.colored_layers)
@@ -484,7 +492,10 @@ var/global/list/damage_icon_parts = list()
 		var/icon/extra_overlay = icon(earstype.icon, (earstype.extra_overlay ? earstype.extra_overlay : earstype.icon_state)+"[(i-1)]")
 		extra_overlay.Blend(ears_colors[i], earstype.blend)
 		ears_icon.Blend(extra_overlay, ICON_OVERLAY)
-	return image(ears_icon)
+
+	var/ears_image = image(ears_icon)
+	ears_icon_cache[cache_key] = ears_image
+	return ears_image
 
 /mob/living/carbon/human/proc/update_tail(var/update_icons = 1)
 	if(QDESTROYING(src))
@@ -513,6 +524,10 @@ var/global/list/damage_icon_parts = list()
 
 /mob/living/carbon/human/proc/get_tail_image()
 	if(!tail) return
+	var/cache_key = "[tail.name][tail.colored_layers][tail_colors.Join("", 1, tail.colored_layers+1)]"
+	if(tail_icon_cache[cache_key])
+		return tail_icon_cache[cache_key]
+
 	var/datum/sprite_accessory/tail/tailtype = tail
 	var/icon/tail_icon = icon(tailtype.icon, tailtype.icon_state)
 	if(tailtype.colored_layers)
@@ -522,7 +537,10 @@ var/global/list/damage_icon_parts = list()
 		extra_overlay.Blend(tail_colors[i], tailtype.blend)
 		tail_icon.Blend(extra_overlay, ICON_OVERLAY)
 	if(istype(tailtype, /datum/sprite_accessory/tail/taur)) return image(tail_icon, "pixel_x" = -16)
-	return image(tail_icon)
+
+	var/tail_image = image(tail_icon)
+	ears_icon_cache[cache_key] = tail_image
+	return tail_image
 
 /mob/living/carbon/human/proc/update_wings(var/update_icons = 1)
 	if(QDESTROYING(src))
@@ -540,6 +558,10 @@ var/global/list/damage_icon_parts = list()
 
 mob/living/carbon/human/proc/get_wings_image()
 	if(!wings) return
+	var/cache_key = "[wings.name][wings.colored_layers][wings_colors.Join("", 1, wings.colored_layers+1)]"
+	if(wings_icon_cache[cache_key])
+		return wings_icon_cache[cache_key]
+
 	var/datum/sprite_accessory/wings/wingstype = wings
 	var/icon/wings_icon = icon(wingstype.icon, wingstype.icon_state)
 	if(wingstype.colored_layers)
@@ -548,7 +570,10 @@ mob/living/carbon/human/proc/get_wings_image()
 		var/icon/extra_overlay = icon(wingstype.icon, (wingstype.extra_overlay ? wingstype.extra_overlay : wingstype.icon_state)+"[(i-1)]")
 		extra_overlay.Blend(wings_colors[i], wingstype.blend)
 		wings_icon.Blend(extra_overlay, ICON_OVERLAY)
-	return image(wings_icon)
+
+	var/wings_image = image(wings_icon)
+	ears_icon_cache[cache_key] = wings_image
+	return wings_image
 
 /* --------------------------------------- */
 //For legacy support.

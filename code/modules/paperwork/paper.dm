@@ -50,7 +50,7 @@
 /obj/item/weapon/paper/proc/set_content(text,title)
 	if(title)
 		name = title
-	info = rhtml_encode(text)
+	info = html_encode(text)
 	info = replacetext(info, "\n", "<BR>")
 	info = parsepencode(info)
 	spawn(2)
@@ -223,7 +223,6 @@
 	return (user && user.real_name) ? user.real_name : "Anonymous"
 
 /obj/item/weapon/paper/proc/parsepencode(var/t, var/obj/item/weapon/pen/P, mob/user as mob, var/iscrayon = 0)
-	t = cp1251_to_utf8(t)
 
 	t = replacetext(t, "\[center\]", "<center>")
 	t = replacetext(t, "\[/center\]", "</center>")

@@ -33,7 +33,7 @@
 /turf/proc/lighting_build_overlay()
 	if (lighting_overlay)
 		return
-	
+
 	var/area/A = loc
 	if (!A.dynamic_lighting)
 		return
@@ -58,6 +58,8 @@
 		return 0.5
 
 	var/totallums = 0
+	if(!corners || null in corners)
+		generate_missing_corners() //TODO: Review. This is put in to prevent roundstart runtimes but it may break something else.
 	for(var/LL in corners)
 		var/datum/lighting_corner/L = LL
 		totallums += L.lum_r + L.lum_b + L.lum_g

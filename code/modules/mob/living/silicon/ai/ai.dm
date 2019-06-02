@@ -227,7 +227,7 @@ var/list/ai_verbs_default = list(
 	hud_list[SPECIALROLE_HUD] = image('icons/mob/hud.dmi', src, "hudblank")
 
 	ai_list += src
-	
+
 	..()
 
 /mob/living/silicon/ai/proc/on_mob_init()
@@ -466,7 +466,7 @@ var/list/ai_verbs_default = list(
 		if(target && (!ishuman(target) || target.real_name == target.get_face_name()))
 			ai_actual_track(target)
 		else
-			src << "\red System error. Cannot locate [rhtml_decode(href_list["trackname"])]."
+			src << "\red System error. Cannot locate [html_decode(href_list["trackname"])]."
 		return
 
 	return

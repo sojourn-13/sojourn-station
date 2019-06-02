@@ -165,7 +165,7 @@
 			for(var/datum/computer_file/F in HDD.stored_files)
 				if(F.filetype == "AUD")
 					files.Add(list(list(
-						"name" = cyrillic_to_unicode(F.filename),
+						"name" = F.filename,
 						"size" = F.size
 					)))
 			data["files"] = files
@@ -177,7 +177,7 @@
 				for(var/datum/computer_file/F in RHDD.stored_files)
 					if(F.filetype == "AUD")
 						usbfiles.Add(list(list(
-							"name" = cyrillic_to_unicode(F.filename),
+							"name" = F.filename,
 							"size" = F.size,
 						)))
 				data["usbfiles"] = usbfiles
