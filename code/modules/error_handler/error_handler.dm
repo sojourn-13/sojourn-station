@@ -7,15 +7,15 @@ var/total_runtimes_skipped = 0
 // The ifdef needs to be down here, since the error viewer references total_runtimes
 
 #ifdef DEBUG
-/world/Error(var/exception/e, var/datum/e_src)
+/world/Error(exception/e, datum/e_src)
 	if(!istype(e)) // Something threw an unusual exception
 		log_to_dd("\[[time_stamp()]] Uncaught exception: [e]")
 		return ..()
-	if(!error_last_seen) // A runtime is occurring too early in start-up initialization
+	if(!islist(error_last_seen)) // A runtime is occurring too early in start-up initialization
 		return ..()
 
 	total_runtimes++
-	var/erroruid = "[e.file][e.line]"
+	var/erroruid = "[e.file]:[e.line]"
 	var/last_seen = error_last_seen[erroruid]
 	var/cooldown = error_cooldown[erroruid] || 0
 	if(last_seen == null) // A new error!

@@ -57,6 +57,8 @@ datum/preferences
 	pref.be_random_name     = sanitize_integer(pref.be_random_name, 0, 1, initial(pref.be_random_name))
 	if(!pref.religion)
 		pref.religion =    "None"
+	else if(pref.religion == "Neotheology")
+		pref.religion = "NeoTheology"	// Replace old spelling with new spelling
 
 	pref.species_color		= iscolor(pref.species_color) ? pref.species_color : initial(pref.species_color)
 	var/adjusted = FALSE
@@ -169,7 +171,8 @@ datum/preferences
 		return TOPIC_REFRESH
 
 	else if(href_list["religion"])
-		pref.religion = input("Religion") in list("None", "Neotheology")
+		pref.religion = input("Religion") in list("None", "NeoTheology")
+		prune_occupation_prefs()
 		return TOPIC_REFRESH
 
 	else if(href_list["species_name"])
