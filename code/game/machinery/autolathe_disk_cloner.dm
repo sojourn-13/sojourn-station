@@ -32,17 +32,14 @@
 	for(var/obj/item/weapon/stock_parts/micro_laser/ML in component_parts)
 		laser_rating += ML.rating
 
-	if(scanner_rating+laser_rating >= 9)
-		copying_delay = 30
-	else if(scanner_rating+laser_rating >= 6)
-		copying_delay = 60
-	else
-		copying_delay = 120
+	//Redid these to make each little upgrade worth taking.
+	copying_delay = min(120*14 / (3*scanner_rating + 2*laser_rating), 120) //480 / (3s + 2l)
+	hack_fail_chance = min(40*16 / (2*scanner_rating + 3*laser_rating), 75) //560 / (2s + 3l)
 
-	hack_fail_chance = ((scanner_rating+laser_rating) >= 9) ? 20 : 40
-
-	if(laser_rating >= 4 && scanner_rating >= 2)
-		hacked = TRUE
+	if(!hacked && laser_rating >= 4 && scanner_rating >= 2)
+		hacked = 2 //It'll reset if not emagged.
+	else if(hacked == 2)
+		hacked = FALSE
 
 /obj/machinery/autolathe_disk_cloner/attackby(var/obj/item/I, var/mob/user)
 	if(default_deconstruction(I, user))
@@ -178,10 +175,8 @@
 	SSnano.update_uis(src)
 	update_icon()
 	if(original && copy && !copy.used_capacity)
+		var/designgrade = istype(copy, /obj/item/weapon/computer_hardware/hard_drive/portable/design) //Design disks ignore capacity restrictions.
 		copy.name = original.name
-
-		if(!hacked)
-			copy.name += " \[copy\]"
 
 		for(var/f in original.stored_files)
 			if(!(original && copy) || !copying || !f)
@@ -217,7 +212,7 @@
 				copying_file = original_file.clone()
 
 			// Store the copied file. If the disc is corrupted, faulty, out of space - stop the copying process.
-			if(!copy.store_file(copying_file))
+			if(!copy.store_file(copying_file, designgrade))
 				break
 
 			SSnano.update_uis(src)

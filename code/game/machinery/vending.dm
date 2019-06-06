@@ -1329,7 +1329,7 @@
 	product_slogans = "Print your own gun TODAY!;The future is NOW!;Can't stop the industrial revolution!"
 	product_ads = "Almost free!;Print it yourself!;Don't copy that floppy!"
 	icon_state = "discomat"
-	products = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 20, /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 10,
+	products = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design = 20, /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 10,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 10, /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 10, /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 5, /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 5, /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 20,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 10, /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 5, /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns = 5,

@@ -50,6 +50,7 @@
 
 	var/virus_immune = FALSE
 
+	var/icon_fallback = FORM_HUMAN //Set this to fall back on another spritesheet if this one doesn't have the icon_state needed. Use form defines, it'll pull from the global list.
 	var/backpack_icon = 	'icons/inventory/back/mob.dmi'
 	var/uniform_icon = 		'icons/inventory/uniform/mob.dmi'
 	var/gloves_icon = 		'icons/inventory/hands/mob.dmi'
@@ -67,7 +68,7 @@
 /datum/species_form/proc/get_mob_icon(var/slot, var/icon_state)
 	var/icon/I
 	switch(slot)
-		if("misk")    	I = misc_icon
+		if("misc")    	I = misc_icon
 		if("uniform") 	I = uniform_icon
 		if("suit")    	I = suit_icon
 		if("gloves")  	I = gloves_icon
@@ -84,6 +85,10 @@
 		if("rig")     	I = rig_back*/
 		else
 			log_world("##ERROR. Wrong sprite group for mob icon \"[slot]\"")
+	if(icon_fallback && (icon_fallback != name) && icon_state && !(icon_state in icon_states(I)))
+		var/datum/species_form/F = all_species_form_list[icon_fallback]
+		if(F)
+			I = F.get_mob_icon(slot, icon_state)
 
 	return I
 

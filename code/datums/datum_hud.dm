@@ -52,6 +52,8 @@
 
 	openspace_overlays.Cut()
 
+	if(!LD) return; //TODO: analyze why things can have no level here.
+
 	var/local_z = z-(LD.original_level-1)
 	for(var/zi in 1 to local_z)
 		for(var/mytype in subtypesof(/obj/screen/plane_master))

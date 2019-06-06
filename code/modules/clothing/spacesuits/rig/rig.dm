@@ -96,7 +96,7 @@
 
 
 	//Stuff rigs can store
-
+	allowed = list(/obj/item/weapon/storage/backpack)
 	var/list/extra_allowed = list()
 
 

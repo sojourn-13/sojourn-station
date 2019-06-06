@@ -50,7 +50,9 @@
 	var/list/heating_products
 
 /datum/reagent/proc/remove_self(amount) // Shortcut
-	holder.remove_reagent(id, amount)
+	if(holder) //Apparently it's possible to have holderless reagents.
+		holder.remove_reagent(id, amount)
+
 
 // This doesn't apply to skin contact - this is for, e.g. extinguishers and sprays.
 // The difference is that reagent is not directly on the mob's skin - it might just be on their clothing.

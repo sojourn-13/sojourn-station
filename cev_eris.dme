@@ -1687,6 +1687,7 @@
 #include "code\modules\mob\living\carbon\human\species\forms\monkey.dm"
 #include "code\modules\mob\living\carbon\human\species\forms\slime.dm"
 #include "code\modules\mob\living\carbon\human\species\forms\station.dm"
+#include "code\modules\mob\living\carbon\human\species\forms\station_unusual.dm"
 #include "code\modules\mob\living\carbon\human\species\station\golem.dm"
 #include "code\modules\mob\living\carbon\human\species\station\monkey.dm"
 #include "code\modules\mob\living\carbon\human\species\station\slime.dm"

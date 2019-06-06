@@ -633,7 +633,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		if(w_uniform.icon_override)
 			under_icon = w_uniform.icon_override
 		else
-			under_icon = form.uniform_icon
+			under_icon = form.get_mob_icon("uniform")
 
 		//need to append _s to the icon state for legacy compatibility
 		var/image/standing = image(icon = under_icon, icon_state = under_state)
@@ -689,7 +689,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			standing = image(icon = gloves.icon_override, icon_state = t_state)
 
 		else
-			standing = image(icon = form.gloves_icon, icon_state = t_state)
+			standing = image(icon = form.get_mob_icon("gloves"), icon_state = t_state)
 
 		if(gloves.blood_DNA)
 			var/image/bloodsies	= image("icon" = form.blood_mask, "icon_state" = "bloodyhands")
@@ -713,7 +713,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			overlays_standing[GLASSES_LAYER] = image(icon = glasses.icon_override,   icon_state = glasses.icon_state)
 
 		else
-			overlays_standing[GLASSES_LAYER] = image(icon = form.glasses_icon, icon_state = glasses.icon_state)
+			overlays_standing[GLASSES_LAYER] = image(icon = form.get_mob_icon("glasses"), icon_state = glasses.icon_state)
 
 	else
 		overlays_standing[GLASSES_LAYER]	= null
@@ -733,7 +733,7 @@ mob/living/carbon/human/proc/get_wings_image()
 				overlays_standing[EARS_LAYER] = image(icon = l_ear.icon_override, icon_state = t_type)
 
 			else
-				overlays_standing[EARS_LAYER] = image(icon = form.ears_icon, icon_state = t_type)
+				overlays_standing[EARS_LAYER] = image(icon = form.get_mob_icon("ears"), icon_state = t_type)
 
 		if(r_ear)
 			var/t_type = r_ear.icon_state
@@ -742,7 +742,7 @@ mob/living/carbon/human/proc/get_wings_image()
 				overlays_standing[EARS_LAYER] = image(icon = r_ear.icon_override, icon_state = t_type)
 
 			else
-				overlays_standing[EARS_LAYER] = image(icon = form.ears_icon, icon_state = t_type)
+				overlays_standing[EARS_LAYER] = image(icon = form.get_mob_icon("ears"), icon_state = t_type)
 
 	else
 		overlays_standing[EARS_LAYER]	= null
@@ -755,7 +755,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			standing = image(icon = shoes.icon_override,   icon_state = shoes.icon_state)
 
 		else
-			standing = image(icon = form.shoes_icon, icon_state = shoes.icon_state)
+			standing = image(icon = form.get_mob_icon("shoes"), icon_state = shoes.icon_state)
 
 		if(shoes.blood_DNA)
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "shoeblood")
@@ -774,7 +774,7 @@ mob/living/carbon/human/proc/get_wings_image()
 
 /mob/living/carbon/human/update_inv_s_store(var/update_icons=1)
 	if(s_store)
-		var/store_icon = form.s_store_icon
+		var/store_icon = form.get_mob_icon("s_store")
 		var/t_state = s_store.item_state
 		if(!t_state)	t_state = s_store.icon_state
 
@@ -814,7 +814,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		else if(head.item_icons && (slot_head_str in head.item_icons))
 			t_icon = head.item_icons[slot_head_str]
 		else
-			t_icon = form.hat_icon
+			t_icon = form.get_mob_icon("head")
 
 
 
@@ -849,7 +849,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			standing.icon = belt.icon_override
 
 		else
-			standing.icon = form.belt_icon
+			standing.icon = form.get_mob_icon("belt")
 			//standing.icon = 'icons/mob/belt.dmi'
 
 		var/belt_layer = BELT_LAYER
@@ -874,11 +874,13 @@ mob/living/carbon/human/proc/get_wings_image()
 
 	if( wear_suit && istype(wear_suit, /obj/item/) )
 		var/image/standing
-		var/t_icon = form.suit_icon
+		var/t_icon
 		if(wear_suit.icon_override)
 			t_icon = wear_suit.icon_override
 		else if(wear_suit.item_icons && wear_suit.item_icons[slot_wear_suit_str])
 			t_icon = wear_suit.item_icons[slot_wear_suit_str]
+		else
+			t_icon = form.get_mob_icon("suit")
 
 		standing = image(icon = t_icon, icon_state = wear_suit.icon_state)
 		standing.color = wear_suit.color
@@ -922,7 +924,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			standing = image(icon = wear_mask.icon_override, icon_state = wear_mask.icon_state)
 
 		else
-			standing = image(icon = form.mask_icon, icon_state = wear_mask.icon_state)
+			standing = image(icon = form.get_mob_icon("mask"), icon_state = wear_mask.icon_state)
 		standing.color = wear_mask.color
 
 		if( !istype(wear_mask, /obj/item/clothing/mask/smokable/cigarette) && wear_mask.blood_DNA )
@@ -954,7 +956,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		else if(test.item_icons && (slot_back_str in test.item_icons))
 			overlay_icon = test.item_icons[slot_back_str]
 		else
-			overlay_icon = form.backpack_icon
+			overlay_icon = form.get_mob_icon("back")
 
 		return overlay_icon
 
@@ -995,7 +997,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			standing = image(icon = handcuffed.icon_override, icon_state = "handcuff1")
 
 		else
-			standing = image(icon = form.misc_icon, icon_state = "handcuff1")
+			standing = image(icon = form.get_mob_icon("misc"), icon_state = "handcuff1")
 		overlays_standing[HANDCUFF_LAYER] = standing
 
 	else
@@ -1010,7 +1012,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			standing = image(icon = legcuffed.icon_override, icon_state = "legcuff1")
 
 		else
-			standing = image(icon = form.misc_icon, icon_state = "legcuff1")
+			standing = image(icon = form.get_mob_icon("misc"), icon_state = "legcuff1")
 		overlays_standing[LEGCUFF_LAYER] = standing
 
 

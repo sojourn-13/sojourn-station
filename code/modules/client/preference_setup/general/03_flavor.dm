@@ -36,10 +36,10 @@
 
 /datum/category_item/player_setup_item/physical/flavor/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(href_list["flavor_text"] && href_list["flavor_text"] == "open")
-		var/msg = sanitize(input(usr,"Give a general description of your character. This will be shown regardless of clothing, and may include OOC notes and preferences.","Flavor Text", pref.flavor_text, "message"), extra = 0)
+		var/msg = sanitize(input(usr,"Give a general description of your character. This will be shown regardless of clothing, and may include OOC notes and preferences.","Flavor Text", html_decode(pref.flavor_text)) as message|null, extra = 0)
 		if(CanUseTopic(user))
 			if(msg)
-				pref.flavor_text = msg
+				pref.flavor_text = html_encode(msg)
 		return TOPIC_HANDLED
 
 	else if(href_list["flavour_text_robot"])

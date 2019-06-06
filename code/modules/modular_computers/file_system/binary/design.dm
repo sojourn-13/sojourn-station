@@ -37,7 +37,7 @@
 		return TRUE
 
 	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = holder
-	if(!istype(disk) || disk.license <= 0)
+	if(!istype(disk) || disk.license == 0)
 		return FALSE
 
 	return TRUE
@@ -51,7 +51,8 @@
 		return TRUE
 
 	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = holder
-	disk.license -= 1
+	if(disk.license > 0)
+		disk.license -= 1
 	return TRUE
 
 

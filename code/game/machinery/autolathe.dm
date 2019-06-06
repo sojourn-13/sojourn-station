@@ -154,7 +154,7 @@
 		if(design_file.copy_protected)
 			licenses_used++
 
-			if(!disk || licenses_used > disk.license)
+			if(!disk || (licenses_used > disk.license && disk.license >= 0))
 				QR["error"] = 1
 
 		for(var/rmat in design_file.design.materials)
@@ -632,7 +632,7 @@
 /obj/machinery/autolathe/on_deconstruction()
 	for(var/mat in stored_material)
 		eject(mat, stored_material[mat])
-		
+
 	eject_disk()
 	..()
 

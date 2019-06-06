@@ -20,14 +20,15 @@ calculate text size per text.
 				continue
 			if(R.id == "nutriment")
 				var/list/t = R.get_data()
-				for(var/i in 1 to t.len)
-					var/A = t[i]
-					if(!(A in tastes))
-						tastes.Add(A)
-						tastes[A] = 0
-					tastes[A] += t[A]
-					total_taste += t[A]
-				continue
+				if(t) //TODO: Review why sometimes reagents lack taste.
+					for(var/i in 1 to t.len)
+						var/A = t[i]
+						if(!(A in tastes))
+							tastes.Add(A)
+							tastes[A] = 0
+						tastes[A] += t[A]
+						total_taste += t[A]
+					continue
 			else
 				desc = R.taste_description
 			if(!(desc in tastes))

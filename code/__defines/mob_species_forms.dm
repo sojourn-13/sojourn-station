@@ -64,6 +64,9 @@
 #define FORM_AVIAN				"Avian"
 #define FORM_SPIDER				"Arachnoid"
 
+#define FORM_BIRD				"Teshari"
+#define FORM_VOX				"Vox"
+
 //
 #define FORM_MONKEY				"Monkey"
 #define FORM_GOLEM				"Golem"

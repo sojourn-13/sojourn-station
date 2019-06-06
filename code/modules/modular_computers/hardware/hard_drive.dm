@@ -84,8 +84,8 @@
 	to_chat(user, "Storage capacity: [used_capacity]/[max_capacity]GQ")
 
 // Use this proc to add file to the drive. Returns 1 on success and 0 on failure. Contains necessary sanity checks.
-/obj/item/weapon/computer_hardware/hard_drive/proc/store_file(datum/computer_file/F)
-	if(!try_store_file(F))
+/obj/item/weapon/computer_hardware/hard_drive/proc/store_file(datum/computer_file/F, force = FALSE)
+	if(!try_store_file(F, force))
 		return FALSE
 	F.holder = src
 	stored_files.Add(F)
@@ -128,28 +128,31 @@
 	used_capacity = total_size
 
 // Checks whether file can be stored on the hard drive.
-/obj/item/weapon/computer_hardware/hard_drive/proc/can_store_file(size = 1)
+/obj/item/weapon/computer_hardware/hard_drive/proc/can_store_file(size = 1, force = FALSE)
 	// In the unlikely event someone manages to create that many files.
 	// BYOND is acting weird with numbers above 999 in loops (infinite loop prevention)
 
 	if(!stored_files)
 		return FALSE
 
-	if(read_only || !check_functionality())
+	if(read_only && !force)
+		return FALSE
+
+	if(!check_functionality())
 		return FALSE
 
 	if(stored_files.len >= 999)
 		return FALSE
-	if(used_capacity + size > max_capacity)
+	if(used_capacity + size > max_capacity && !force)
 		return FALSE
 
 	return TRUE
 
 // Checks whether we can store the file. We can only store unique files, so this checks whether we wouldn't get a duplicity by adding a file.
-/obj/item/weapon/computer_hardware/hard_drive/proc/try_store_file(datum/computer_file/F)
+/obj/item/weapon/computer_hardware/hard_drive/proc/try_store_file(datum/computer_file/F, force = FALSE)
 	if(!F || !istype(F))
 		return 0
-	if(!can_store_file(F.size))
+	if(!can_store_file(F.size, force))
 		return 0
 
 	var/list/badchars = list("/",":","*","?","<",">","|", ".")
