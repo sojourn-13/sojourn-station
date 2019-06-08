@@ -30,7 +30,7 @@ SUBSYSTEM_DEF(migration)
 	var/migrate_chance = 15 //The chance, during each migration, for each populated burrow, that mobs will move from there to somewhere else
 
 
-	var/roundstart_burrows = 120
+	var/roundstart_burrows = 0
 	var/migrate_time = 80 SECONDS //How long it takes to move mobs from one burrow to another
 	var/reinforcement_time = 20 SECONDS //How long it takes for reinforcements to arrive
 	var/plantspread_burrows_num = 3 //How many other burrows will each one with plants send them to
