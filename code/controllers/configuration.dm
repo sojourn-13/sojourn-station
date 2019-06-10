@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/ToRban = 0
 	var/automute_on = 0					//enables automuting/spam prevention
 	var/use_cortical_stacks = 0			//enables neural lace
-	var/empty_server_restart_time = 0	// Time in minutes before empty server will restart		
+	var/empty_server_restart_time = 0	// Time in minutes before empty server will restart
 
 	var/character_slots = 10				// The number of available character slots
 	var/loadout_slots = 3					// The number of loadout slots per character
@@ -87,6 +87,8 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/allow_extra_antags = 0
 	var/guests_allowed = 1
 	var/debugparanoid = 0
+	var/borderControl = 0
+
 
 	var/language
 	var/serverurl
@@ -272,6 +274,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("debug_paranoid")
 					config.debugparanoid = 1
+
+				if ("border_control")
+					config.borderControl = 1
 
 				if ("log_admin")
 					config.log_admin = 1
@@ -655,7 +660,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("lobby_screens")
 					config.lobby_screens = splittext(value, ";")
-				
+
 				if("empty_server_restart_time")
 					config.empty_server_restart_time = text2num(value)
 

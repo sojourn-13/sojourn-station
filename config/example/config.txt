@@ -305,3 +305,6 @@ JOIN_UNASSIGNED
 
 ## Time in minutes before empty server will restart	
 EMPTY_SERVER_RESTART_TIME 30
+
+## If the server only accepts whitelisted connections
+BORDER_CONTROL 0
