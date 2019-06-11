@@ -136,7 +136,7 @@
 
 
 
-	if(!BC_IsKeyWhitelisted(key) && !holder)
+	if(!BC_IsKeyAllowedToConnect(key) && !holder)
 		message_admins("<span class='adminnotice'>Failed Login: [key] - New account attempting to connect during border control</span>")
 		to_chat(src, "Sorry but the server is currently not accepting connections from never before seen players.")
 		del(src)
