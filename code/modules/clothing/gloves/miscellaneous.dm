@@ -1,19 +1,19 @@
 /obj/item/clothing/gloves/captain
-	desc = "Regal blue gloves, with a nice gold trim. Swanky."
+	desc = "A pair of regal blue gloves with a swanky gold trim."
 	name = "captain's gloves"
 	icon_state = "captain"
 	item_state = "egloves"
 	price_tag = 500
 
 /obj/item/clothing/gloves/cyborg
-	desc = "beep boop borp"
+	desc = "Beep boop."
 	name = "cyborg gloves"
 	icon_state = "robohands"
 	item_state = "r_hands"
 	siemens_coefficient = 1.0
 
 /obj/item/clothing/gloves/insulated
-	desc = "These gloves will protect the wearer from electric shock."
+	desc = "A pair of gloves which protect the wearer from electric shocks."
 	name = "insulated gloves"
 	icon_state = "yellow"
 	item_state = "ygloves"
@@ -22,7 +22,7 @@
 	price_tag = 200
 
 /obj/item/clothing/gloves/insulated/cheap                          //Cheap Chinese Crap
-	desc = "These gloves are cheap copies of the coveted gloves, no way this can end badly."
+	desc = "A pair of cheaply-made insulated gloves. Not known for reliability."
 	name = "budget insulated gloves"
 	siemens_coefficient = 1			//Set to a default of 1, gets overridden in New()
 	permeability_coefficient = 0.05
@@ -33,7 +33,7 @@
 		siemens_coefficient = pick(0,0.1,0.3,0.5,0.5,0.75,1.35)
 
 /obj/item/clothing/gloves/thick
-	desc = "These work gloves are thick and fire-resistant."
+	desc = "A pair of fire-resistant black work gloves."
 	name = "black gloves"
 	icon_state = "black"
 	item_state = "bgloves"
@@ -47,7 +47,7 @@
 	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/gloves/thick/swat
-	desc = "These tactical gloves are somewhat fire and impact-resistant."
+	desc = "A pair of fire and impact-resistant IHS combat gloves."
 	name = "IHS combat gloves"
 	icon_state = "ihscombat"
 	item_state = "ihscombat"
@@ -55,7 +55,7 @@
 	price_tag = 300
 
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
-	desc = "These tactical gloves are somewhat fire and impact resistant."
+	desc = "A pair of fire and impact-resistant combat gloves."
 	name = "combat gloves"
 	icon_state = "black"
 	item_state = "swat_gl"
@@ -65,7 +65,7 @@
 
 /obj/item/clothing/gloves/latex
 	name = "latex gloves"
-	desc = "Sterile latex gloves."
+	desc = "A pair of sterile latex gloves."
 	icon_state = "latex"
 	item_state = "lgloves"
 	siemens_coefficient = 1.0 //thin latex gloves, much more conductive than fabric gloves (basically a capacitor for AC)
@@ -74,7 +74,7 @@
 	price_tag = 50
 
 /obj/item/clothing/gloves/botanic_leather
-	desc = "These leather work gloves protect against thorns, barbs, prickles, spikes and other harmful objects of floral origin."
+	desc = "A pair of leather work gloves that protect against floral dangers such as thorns and barbs."
 	name = "botanist's leather gloves"
 	icon_state = "leather"
 	item_state = "ggloves"

@@ -194,7 +194,7 @@
 	var/id
 
 /obj/structure/closet/secure_closet/brig/populate_contents()
-	new /obj/item/clothing/under/color/orange(src)
+	new /obj/item/clothing/under/orange(src)
 	new /obj/item/clothing/shoes/color/orange(src)
 
 /obj/structure/closet/secure_closet/courtroom

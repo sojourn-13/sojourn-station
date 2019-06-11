@@ -6,19 +6,19 @@
 	sort_category = "Glasses and Eyewear"
 
 /datum/gear/eyes/glasses
-	display_name = "Glasses, prescription"
+	display_name = "glasses, prescription"
 	path = /obj/item/clothing/glasses/regular
 
 /datum/gear/eyes/glasses/green
-	display_name = "Glasses, green"
+	display_name = "glasses, green"
 	path = /obj/item/clothing/glasses/gglasses
 
 /datum/gear/eyes/glasses/prescriptionhipster
-	display_name = "Glasses, hipster"
+	display_name = "glasses, hipster"
 	path = /obj/item/clothing/glasses/regular/hipster
 
 /datum/gear/eyes/glasses/monocle
-	display_name = "Monocle"
+	display_name = "monocle"
 	path = /obj/item/clothing/glasses/monocle
 
 /datum/gear/eyes/scanning_goggles
@@ -26,7 +26,7 @@
 	path = /obj/item/clothing/glasses/regular/scanners
 
 /datum/gear/eyes/sciencegoggles
-	display_name = "Science Goggles"
+	display_name = "Science goggles"
 	path = /obj/item/clothing/glasses/powered/science
 
 /datum/gear/eyes/security
@@ -40,11 +40,11 @@
 	allowed_roles = list("Moebius Doctor","Moebius Biolab Officer","Moebius Chemist","Moebius Paramedic")
 
 /datum/gear/eyes/shades
-	display_name = "Sunglasses, fat"
+	display_name = "sunglasses, fat"
 	path = /obj/item/clothing/glasses/sunglasses/big
 	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant","Captain","First Officer","Quartermaster","Ironhammer Inspector")
 
 /datum/gear/eyes/shades/prescriptionsun
-	display_name = "sunglasses, presciption"
+	display_name = "sunglasses, prescription"
 	path = /obj/item/clothing/glasses/sunglasses/prescription
 	cost = 2

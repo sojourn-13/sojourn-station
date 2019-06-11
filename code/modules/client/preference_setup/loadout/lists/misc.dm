@@ -4,7 +4,7 @@
 	cost = 2
 
 /datum/gear/flashlight
-	display_name = "Flashlight"
+	display_name = "flashlight"
 	path = /obj/item/device/lighting/toggleable/flashlight
 
 /datum/gear/crowbar

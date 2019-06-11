@@ -1,13 +1,13 @@
-/obj/item/clothing/under/pj/red
-	name = "red pj's"
-	desc = "Sleepwear."
+/obj/item/clothing/under/pj
+	name = "red pyjamas"
+	desc = "White sleepwear with a red stripe pattern."
 	icon_state = "red_pyjamas"
 
 	item_state = "w_suit"
 
 /obj/item/clothing/under/pj/blue
-	name = "blue pj's"
-	desc = "Sleepwear."
+	name = "blue pyjamas"
+	desc = "White sleepwear with a blue stripe pattern."
 	icon_state = "blue_pyjamas"
 
 	item_state = "w_suit"
@@ -53,7 +53,7 @@
 	permeability_coefficient = 0.01
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor = list(melee = 100, bullet = 100, laser = 100,energy = 100, bomb = 100, bio = 100, rad = 100)
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS 
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0
 
@@ -63,14 +63,6 @@
 	icon_state = "owl"
 
 	item_state = "owl"
-
-
-/obj/item/clothing/under/rainbow
-	name = "rainbow"
-	desc = "rainbow"
-	icon_state = "rainbow"
-	item_state = "rainbow"
-
 
 /obj/item/clothing/under/rank/fo_suit
 	name = "First Officer's suit"
@@ -93,7 +85,7 @@
 	item_state = "r_suit"
 
 
-/obj/item/clothing/under/blackskirt
+/obj/item/clothing/under/suit_jacket/blackskirt
 	name = "black skirt"
 	desc = "A black skirt, very fancy!"
 	icon_state = "blackskirt"
@@ -127,9 +119,9 @@
 	icon_state = "soviet"
 	item_state = "gy_suit"
 
-/obj/item/clothing/under/kilt
+/obj/item/clothing/under/casual
 	name = "kilt"
-	desc = "Includes shoes and plaid"
+	desc = "A plaid kilt complete with a matching green shirt."
 	icon_state = "kilt"
 	item_state = "kilt"
 
@@ -173,7 +165,7 @@
 	item_state = "lb_suit"
 
 
-/obj/item/clothing/under/blazer
+/obj/item/clothing/under/suit_jacket/blazer
 	name = "blue blazer"
 	desc = "A bold but yet conservative outfit, red corduroys, navy blazer and a tie."
 	icon_state = "blue_blazer"

@@ -1,5 +1,6 @@
 /obj/item/weapon/clipboard
 	name = "clipboard"
+	desc = "A board for attaching papers and a pen."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "clipboard"
 	item_state = "clipboard"

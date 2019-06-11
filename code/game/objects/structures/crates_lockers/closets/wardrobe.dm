@@ -88,9 +88,9 @@
 	icon_door = "orange"
 
 /obj/structure/closet/wardrobe/orange/populate_contents()
-	new /obj/item/clothing/under/color/orange(src)
-	new /obj/item/clothing/under/color/orange(src)
-	new /obj/item/clothing/under/color/orange(src)
+	new /obj/item/clothing/under/orange(src)
+	new /obj/item/clothing/under/orange(src)
+	new /obj/item/clothing/under/orange(src)
 	new /obj/item/clothing/shoes/color/orange(src)
 	new /obj/item/clothing/shoes/color/orange(src)
 	new /obj/item/clothing/shoes/color/orange(src)
@@ -145,8 +145,8 @@
 	icon_door = "white"
 
 /obj/structure/closet/wardrobe/pjs/populate_contents()
-	new /obj/item/clothing/under/pj/red(src)
-	new /obj/item/clothing/under/pj/red(src)
+	new /obj/item/clothing/under/pj(src)
+	new /obj/item/clothing/under/pj(src)
 	new /obj/item/clothing/under/pj/blue(src)
 	new /obj/item/clothing/under/pj/blue(src)
 	new /obj/item/clothing/shoes/color/white(src)
@@ -219,9 +219,9 @@
 /obj/structure/closet/wardrobe/medic_white/populate_contents()
 	new /obj/item/clothing/under/rank/medical(src)
 	new /obj/item/clothing/under/rank/medical(src)
-	new /obj/item/clothing/under/rank/medical/blue(src)
-	new /obj/item/clothing/under/rank/medical/green(src)
-	new /obj/item/clothing/under/rank/medical/purple(src)
+	new /obj/item/clothing/under/scrubs(src)
+	new /obj/item/clothing/under/scrubs/green(src)
+	new /obj/item/clothing/under/scrubs/purple(src)
 	new /obj/item/clothing/shoes/color/white(src)
 	new /obj/item/clothing/shoes/color/white(src)
 	new /obj/item/clothing/shoes/reinforced(src)
@@ -236,9 +236,9 @@
 	icon_door = "grey"
 
 /obj/structure/closet/wardrobe/grey/populate_contents()
-	new /obj/item/clothing/under/color/grey(src)
-	new /obj/item/clothing/under/color/grey(src)
-	new /obj/item/clothing/under/color/grey(src)
+	new /obj/item/clothing/under/color(src)
+	new /obj/item/clothing/under/color(src)
+	new /obj/item/clothing/under/color(src)
 	new /obj/item/clothing/shoes/black(src)
 	new /obj/item/clothing/shoes/black(src)
 	new /obj/item/clothing/shoes/black(src)
@@ -254,7 +254,7 @@
 	new /obj/item/clothing/under/color/blue(src)
 	new /obj/item/clothing/under/color/yellow(src)
 	new /obj/item/clothing/under/color/green(src)
-	new /obj/item/clothing/under/color/orange(src)
+	new /obj/item/clothing/under/orange(src)
 	new /obj/item/clothing/under/color/pink(src)
 	new /obj/item/clothing/shoes/color/blue(src)
 	new /obj/item/clothing/shoes/color/yellow(src)
