@@ -1,28 +1,37 @@
+#define BORDER_CONTROL_DISABLED 0
+#define BORDER_CONTROL_LEARNING 1
+#define BORDER_CONTROL_ENFORCED 2
+
 var/list/whitelistedCkeys
 var/savefile/borderControlFile = new /savefile("data/bordercontrol.db")
 var/whitelistLoaded = 0
 
+//////////////////////////////////////////////////////////////////////////////////
+proc/BC_IsKeyAllowedToConnect(var/key)
+
+	if(config.borderControl == BORDER_CONTROL_DISABLED)
+		return 1
+	else if (config.borderControl == BORDER_CONTROL_LEARNING)
+		BC_WhitelistKey(key)
+		return 1
+	else
+		return BC_IsKeyWhitelisted(key)
 
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_IsKeyWhitelisted(var/key)
 
-
 	if(!whitelistLoaded)
 		whitelistLoaded = 1
 		BC_LoadWhitelist()
-	if(!config.borderControl)
-		BC_WhitelistKey(key)
+
+	if(LAZYISIN(key,whitelistedCkeys))
 		return 1
 	else
-		if(LAZYISIN(key,whitelistedCkeys))
-			return 1
-		else
-			return 0
+		return 0
 
 //////////////////////////////////////////////////////////////////////////////////
 ADMIN_VERB_ADD(/client/proc/BC_WhitelistKeyVerb, R_ADMIN, FALSE)
 /client/proc/BC_WhitelistKeyVerb()
-
 
 	set name = "Border Control - Whitelist Key"
 	set category = "Admin"
@@ -33,6 +42,10 @@ ADMIN_VERB_ADD(/client/proc/BC_WhitelistKeyVerb, R_ADMIN, FALSE)
 
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_WhitelistKey(var/key)
+
+	if(!whitelistLoaded)
+		whitelistLoaded = 1
+		BC_LoadWhitelist()
 
 	if(key)
 		if(!LAZYISIN(key,whitelistedCkeys))
@@ -80,16 +93,20 @@ ADMIN_VERB_ADD(/client/proc/BC_ToggleState, R_ADMIN, FALSE)
 	set name = "Border Control - Toggle State"
 	set category = "Admin"
 
+	var/choice = input("New State", "Border Control State") as null|anything in list("Disabled", "Learning", "Enforced")
 
-
-	config.borderControl = !config.borderControl
-
-
-	if(config.borderControl)
-		usr << "Border control has been enabled for this round"
-	else
+	if(choice == "Disabled")
+		config.borderControl = BORDER_CONTROL_DISABLED
 		usr << "Border control has been disabled for this round"
-		usr << "New connections will be automatically whitelisted"
+	else if (choice == "Disabled")
+		config.borderControl = BORDER_CONTROL_LEARNING
+		usr << "Border control has learning mode."
+		usr << "New connections will be automatically allowed and whitelisted"
+	else if (choice == "Enforced")
+		config.borderControl = BORDER_CONTROL_ENFORCED
+		usr << "Border control has been enabled for this round"
+
+	// Else do nothing
 
 	return
 
@@ -97,6 +114,7 @@ ADMIN_VERB_ADD(/client/proc/BC_ToggleState, R_ADMIN, FALSE)
 //////////////////////////////////////////////////////////////////////////////////
 
 /hook/startup/proc/loadBorderControlWhitelistHook()
+	whitelistLoaded = 1
 	BC_LoadWhitelist()
 	return 1
 

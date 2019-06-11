@@ -137,7 +137,6 @@
 
 
 	if(!BC_IsKeyWhitelisted(key) && !holder)
-		alert(src,"This server doesn't allow guest accounts to play. Please go to http://www.byond.com/ and register for a key.","Guest","OK")
 		message_admins("<span class='adminnotice'>Failed Login: [key] - New account attempting to connect during border control</span>")
 		to_chat(src, "Sorry but the server is currently not accepting connections from never before seen players.")
 		del(src)
