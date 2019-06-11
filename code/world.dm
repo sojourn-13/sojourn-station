@@ -56,6 +56,8 @@ var/game_id = null
 	cache_lifespan = 0	//stops player uploaded stuff from being kept in the rsc past the current session
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 #define RECOMMENDED_VERSION 512
 /world/New()
 	//logs
@@ -111,6 +113,8 @@ var/game_id = null
 #undef RECOMMENDED_VERSION
 
 	return
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday

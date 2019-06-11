@@ -13,7 +13,7 @@ env:
     global:
     - BYOND_MAJOR="512"
     - BYOND_MINOR="1454"
-    - DM_BUILDFILE="cev_eris.dme"
+    - DM_BUILDFILE="odessa-outpost.dme"
 
 cache:
   directories:
