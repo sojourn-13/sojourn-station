@@ -21,7 +21,6 @@ proc/BC_IsKeyAllowedToConnect(var/key)
 proc/BC_IsKeyWhitelisted(var/key)
 
 	if(!whitelistLoaded)
-		whitelistLoaded = 1
 		BC_LoadWhitelist()
 
 	if(LAZYISIN(key,whitelistedCkeys))
@@ -44,7 +43,6 @@ ADMIN_VERB_ADD(/client/proc/BC_WhitelistKeyVerb, R_ADMIN, FALSE)
 proc/BC_WhitelistKey(var/key)
 
 	if(!whitelistLoaded)
-		whitelistLoaded = 1
 		BC_LoadWhitelist()
 
 	if(key)
@@ -114,7 +112,6 @@ ADMIN_VERB_ADD(/client/proc/BC_ToggleState, R_ADMIN, FALSE)
 //////////////////////////////////////////////////////////////////////////////////
 
 /hook/startup/proc/loadBorderControlWhitelistHook()
-	whitelistLoaded = 1
 	BC_LoadWhitelist()
 	return 1
 
@@ -129,6 +126,8 @@ ADMIN_VERB_ADD(/client/proc/BC_ToggleState, R_ADMIN, FALSE)
 		return 0
 
 	borderControlFile["WhitelistedCkeys"] >> whitelistedCkeys
+
+	whitelistLoaded = 1
 
 
 //////////////////////////////////////////////////////////////////////////////////
