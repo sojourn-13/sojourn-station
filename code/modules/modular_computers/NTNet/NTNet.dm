@@ -253,15 +253,16 @@ var/global/datum/ntnet/ntnet_global = new()
 
 		if(ishuman(user))
 			var/obj/item/modular_computer/C = locate(/obj/item/modular_computer) in user.GetAllContents()
-			var/datum/computer_file/program/P = C.getProgramByType(/datum/computer_file/program/email_client)
-			if(P)
-				var/datum/nano_module/email_client/my_client = P.NM
-				if(my_client && istype(my_client, /datum/nano_module/email_client))
-					if(my_client)
-						my_client.stored_login = EA.login
-						my_client.stored_password = EA.password
-						my_client.log_in()
-					C.minimize_program()
+			if(C)
+				var/datum/computer_file/program/P = C.getProgramByType(/datum/computer_file/program/email_client)
+				if(P)
+					var/datum/nano_module/email_client/my_client = P.NM
+					if(my_client && istype(my_client, /datum/nano_module/email_client))
+						if(my_client)
+							my_client.stored_login = EA.login
+							my_client.stored_password = EA.password
+							my_client.log_in()
+						C.minimize_program()
 		else if(issilicon(user))
 			var/mob/living/silicon/S = user
 			var/datum/nano_module/email_client/my_client = S.get_subsystem_from_path(/datum/nano_module/email_client)

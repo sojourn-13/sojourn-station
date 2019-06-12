@@ -166,7 +166,9 @@ datum/preferences
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["marking"])
 		if(CanUseTopic(user))
-			pref.body_markings.Remove(pref.body_markings[text2num(href_list["marking"])])
+			var/pos = text2num(href_list["marking"])
+			if(pos > 0 && pos <= pref.body_markings.len)
+				pref.body_markings.Remove(pref.body_markings[pos])
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["marking_up"])
 		var/pos = text2num(href_list["marking_up"])

@@ -8,10 +8,13 @@ var/whitelistLoaded = 0
 
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_IsKeyAllowedToConnect(var/key)
+	key = ckey(key)
 
 	if(config.borderControl == BORDER_CONTROL_DISABLED)
 		return 1
 	else if (config.borderControl == BORDER_CONTROL_LEARNING)
+		if(!BC_IsKeyWhitelisted(key))
+			log_and_message_admins("[key] has joined and was added to the border whitelist.")
 		BC_WhitelistKey(key)
 		return 1
 	else
@@ -19,6 +22,7 @@ proc/BC_IsKeyAllowedToConnect(var/key)
 
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_IsKeyWhitelisted(var/key)
+	key = ckey(key)
 
 	if(!whitelistLoaded)
 		BC_LoadWhitelist()
@@ -29,24 +33,28 @@ proc/BC_IsKeyWhitelisted(var/key)
 		return 0
 
 //////////////////////////////////////////////////////////////////////////////////
-ADMIN_VERB_ADD(/client/proc/BC_WhitelistKeyVerb, R_ADMIN, FALSE)
-/client/proc/BC_WhitelistKeyVerb()
+ADMIN_VERB_ADD(/client/verb/BC_WhitelistKeyVerb, R_ADMIN, FALSE)
+/client/verb/BC_WhitelistKeyVerb(key as text)
 
 	set name = "Border Control - Whitelist Key"
 	set category = "Admin"
 
-	var/key = input("CKey to Whitelist", "Whitelist Key") as null|text
-	BC_WhitelistKey(key)
+	if(key)
+		var/confirm = alert("Add [key] to the border control whitelist?", , "Yes", "No")
+		if(confirm == "Yes")
+			log_and_message_admins("[key_name(usr)] added [key] to the border whitelist.")
+			BC_WhitelistKey(key)
 
 
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_WhitelistKey(var/key)
+	key = ckey(key)
 
 	if(!whitelistLoaded)
 		BC_LoadWhitelist()
 
 	if(key)
-		if(!LAZYISIN(key,whitelistedCkeys))
+		if(!LAZYISIN(whitelistedCkeys,key))
 			LAZYINITLIST(whitelistedCkeys)
 
 			ADD_SORTED(whitelistedCkeys, key, /proc/cmp_text_asc)
@@ -56,22 +64,24 @@ proc/BC_WhitelistKey(var/key)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-ADMIN_VERB_ADD(/client/proc/BC_RemoveKeyVerb, R_ADMIN, FALSE)
-/client/proc/BC_RemoveKeyVerb()
+ADMIN_VERB_ADD(/client/verb/BC_RemoveKeyVerb, R_ADMIN, FALSE)
+/client/verb/BC_RemoveKeyVerb(key as anything in whitelistedCkeys)
 
 	set name = "Border Control - Remove Key"
 	set category = "Admin"
 
-	var/keyToRemove = input("CKey to Remove", "Remove Key") as null|anything in whitelistedCkeys
-
-	if(keyToRemove)
-		BC_RemoveKey(keyToRemove)
+	if(key)
+		var/confirm = alert("Remove [key] from the border control whitelist?", , "Yes", "No")
+		if(confirm == "Yes")
+			log_and_message_admins("[key_name(usr)] removed [key] from the border whitelist.")
+			BC_RemoveKey(key)
 
 	return
 
 
 //////////////////////////////////////////////////////////////////////////////////
 /client/proc/BC_RemoveKey(var/key)
+	key = ckey(key)
 
 	if(!LAZYISIN(whitelistedCkeys, key))
 		return 1
@@ -85,24 +95,25 @@ ADMIN_VERB_ADD(/client/proc/BC_RemoveKeyVerb, R_ADMIN, FALSE)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-ADMIN_VERB_ADD(/client/proc/BC_ToggleState, R_ADMIN, FALSE)
-/client/proc/BC_ToggleState()
+ADMIN_VERB_ADD(/client/verb/BC_ToggleState, R_ADMIN, FALSE)
+/client/verb/BC_ToggleState(var/mode as anything in list("Disabled", "Learning", "Enforced"))
 
-	set name = "Border Control - Toggle State"
+	set name = "Border Control - Toggle Mode"
 	set category = "Admin"
 
-	var/choice = input("New State", "Border Control State") as null|anything in list("Disabled", "Learning", "Enforced")
-
-	if(choice == "Disabled")
-		config.borderControl = BORDER_CONTROL_DISABLED
-		usr << "Border control has been disabled for this round"
-	else if (choice == "Disabled")
-		config.borderControl = BORDER_CONTROL_LEARNING
-		usr << "Border control has learning mode."
-		usr << "New connections will be automatically allowed and whitelisted"
-	else if (choice == "Enforced")
-		config.borderControl = BORDER_CONTROL_ENFORCED
-		usr << "Border control has been enabled for this round"
+	switch(mode)
+		if("Disabled")
+			if(config.borderControl != BORDER_CONTROL_DISABLED)
+				config.borderControl = BORDER_CONTROL_DISABLED
+				log_and_message_admins("[key_name(usr)] has disabled border control.")
+		if("Learning")
+			if(config.borderControl != BORDER_CONTROL_LEARNING)
+				config.borderControl = BORDER_CONTROL_LEARNING
+				log_and_message_admins("[key_name(usr)] has set border control to learn new keys on connection!")
+		if("Enforced")
+			if(config.borderControl != BORDER_CONTROL_ENFORCED)
+				config.borderControl = BORDER_CONTROL_ENFORCED
+				log_and_message_admins("[key_name(usr)] has enforced border controls. New keys can no longer join.")
 
 	// Else do nothing
 

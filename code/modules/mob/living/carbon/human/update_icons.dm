@@ -455,7 +455,7 @@ var/global/list/wings_icon_cache = list()
 					if(O.dislocated >= 0 && part in O.additional_limb_parts)
 						valid = TRUE
 						break
-			if(valid)
+			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))
 				var/icon/specific_marking_subicon = icon(real_marking.icon, "[real_marking.icon_state]-[part]")
 				specific_marking_subicon.Blend(specific_marking_icon, ICON_UNDERLAY)
 				specific_marking_icon = specific_marking_subicon
