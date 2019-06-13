@@ -135,12 +135,13 @@
 		holder.associate(src)
 
 
-
+/*  We're going to allow them to connect, but not play.
 	if(!BC_IsKeyAllowedToConnect(key) && !holder)
 		message_admins("<span class='adminnotice'>Failed Login: [key] - New account attempting to connect during border control</span>")
 		to_chat(src, "Sorry but the server is currently not accepting connections from never before seen players.")
 		del(src)
 		return
+*/
 
 
 	// Change the way they should download resources.
