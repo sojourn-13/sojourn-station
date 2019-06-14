@@ -27,17 +27,19 @@ proc/BC_IsKeyWhitelisted(var/key)
 	if(!whitelistLoaded)
 		BC_LoadWhitelist()
 
-	if(LAZYISIN(key,whitelistedCkeys))
+	if(LAZYISIN(whitelistedCkeys, key))
 		return 1
 	else
 		return 0
 
 //////////////////////////////////////////////////////////////////////////////////
-ADMIN_VERB_ADD(/client/verb/BC_WhitelistKeyVerb, R_ADMIN, FALSE)
-/client/verb/BC_WhitelistKeyVerb(key as text)
+ADMIN_VERB_ADD(/client/proc/BC_WhitelistKeyVerb, R_ADMIN, FALSE)
+/client/proc/BC_WhitelistKeyVerb()
 
 	set name = "Border Control - Whitelist Key"
 	set category = "Admin"
+
+	var/key = input("CKey to Whitelist", "Whitelist Key") as null|text
 
 	if(key)
 		var/confirm = alert("Add [key] to the border control whitelist?", , "Yes", "No")
@@ -59,22 +61,27 @@ proc/BC_WhitelistKey(var/key)
 
 			ADD_SORTED(whitelistedCkeys, key, /proc/cmp_text_asc)
 			BC_SaveWhitelist()
+			return 1
+		else // Already in
+			return 0
 
 		return
 
 
 //////////////////////////////////////////////////////////////////////////////////
-ADMIN_VERB_ADD(/client/verb/BC_RemoveKeyVerb, R_ADMIN, FALSE)
-/client/verb/BC_RemoveKeyVerb(key as anything in whitelistedCkeys)
+ADMIN_VERB_ADD(/client/proc/BC_RemoveKeyVerb, R_ADMIN, FALSE)
+/client/proc/BC_RemoveKeyVerb()
 
 	set name = "Border Control - Remove Key"
 	set category = "Admin"
 
-	if(key)
-		var/confirm = alert("Remove [key] from the border control whitelist?", , "Yes", "No")
+	var/keyToRemove = input("CKey to Remove", "Remove Key") as null|anything in whitelistedCkeys
+
+	if(keyToRemove)
+		var/confirm = alert("Remove [keyToRemove] from the border control whitelist?", , "Yes", "No")
 		if(confirm == "Yes")
-			log_and_message_admins("[key_name(usr)] removed [key] from the border whitelist.")
-			BC_RemoveKey(key)
+			log_and_message_admins("[key_name(usr)] removed [keyToRemove] from the border whitelist.")
+			BC_RemoveKey(keyToRemove)
 
 	return
 
@@ -95,13 +102,15 @@ ADMIN_VERB_ADD(/client/verb/BC_RemoveKeyVerb, R_ADMIN, FALSE)
 
 
 //////////////////////////////////////////////////////////////////////////////////
-ADMIN_VERB_ADD(/client/verb/BC_ToggleState, R_ADMIN, FALSE)
-/client/verb/BC_ToggleState(var/mode as anything in list("Disabled", "Learning", "Enforced"))
+ADMIN_VERB_ADD(/client/proc/BC_ToggleState, R_ADMIN, FALSE)
+/client/proc/BC_ToggleState()
 
 	set name = "Border Control - Toggle Mode"
 	set category = "Admin"
 
-	switch(mode)
+	var/choice = input("New State", "Border Control State") as null|anything in list("Disabled", "Learning", "Enforced")
+
+	switch(choice)
 		if("Disabled")
 			if(config.borderControl != BORDER_CONTROL_DISABLED)
 				config.borderControl = BORDER_CONTROL_DISABLED
@@ -110,6 +119,12 @@ ADMIN_VERB_ADD(/client/verb/BC_ToggleState, R_ADMIN, FALSE)
 			if(config.borderControl != BORDER_CONTROL_LEARNING)
 				config.borderControl = BORDER_CONTROL_LEARNING
 				log_and_message_admins("[key_name(usr)] has set border control to learn new keys on connection!")
+			var/confirm = alert("Learn currently connected keys?", , "Yes", "No")
+			if(confirm == "Yes")
+				for(var/client/C in clients)
+					if (BC_WhitelistKey(C.key))
+						log_and_message_admins("[key_name(usr)] added [C.key] to the border whitelist by adding all current clients.")
+
 		if("Enforced")
 			if(config.borderControl != BORDER_CONTROL_ENFORCED)
 				config.borderControl = BORDER_CONTROL_ENFORCED
