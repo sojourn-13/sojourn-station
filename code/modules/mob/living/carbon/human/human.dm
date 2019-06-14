@@ -1115,7 +1115,7 @@ var/list/rank_prefix = list(\
 		return 0
 
 /mob/living/carbon/human/proc/set_form(var/new_form = FORM_HUMAN, var/default_color)
-	form = all_species_form_list[new_form]
+	form = GLOB.all_species_form_list[new_form]
 	if(default_color)
 		skin_color = form.base_color
 

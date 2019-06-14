@@ -216,7 +216,7 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/internal/eyes/oneeye
 
 /datum/body_modification/organ/oneeye/get_mob_icon(organ, body_build, color, gender, species_form)
-	var/datum/species_form/S = all_species_form_list[species_form]
+	var/datum/species_form/S = GLOB.all_species_form_list[species_form]
 	var/icon/I = new/icon(S.face, "eye_l[body_build]")
 	I.Blend(color, ICON_ADD)
 	return I
@@ -233,7 +233,7 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/internal/eyes/oneeye/right
 
 /datum/body_modification/organ/oneeye/right/get_mob_icon(organ, body_build, color, gender, species_form)
-	var/datum/species_form/S = all_species_form_list[species_form]
+	var/datum/species_form/S = GLOB.all_species_form_list[species_form]
 	var/icon/I = new/icon(S.face, "eye_r[body_build]")
 	I.Blend(color, ICON_ADD)
 	return I
@@ -247,7 +247,7 @@ var/global/list/modifications_types = list(
 	hascolor = TRUE
 
 /datum/body_modification/organ/heterochromia/get_mob_icon(organ, body_build, color, gender, species_form)
-	var/datum/species_form/S = all_species_form_list[species_form]
+	var/datum/species_form/S = GLOB.all_species_form_list[species_form]
 	var/icon/I = new/icon(S.face, "eye_l[body_build]")
 	I.Blend(color, ICON_ADD)
 	return I

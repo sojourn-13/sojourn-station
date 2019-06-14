@@ -327,7 +327,7 @@
 	var/use_form_name
 	var/datum/species_form/chosen_form
 	if(client.prefs.species_form)
-		chosen_form = all_species_form_list[client.prefs.species_form]
+		chosen_form = GLOB.all_species_form_list[client.prefs.species_form]
 		use_form_name = chosen_form.get_station_variant() //Not used at all but whatever.
 
 	if(chosen_species && use_species_name)
@@ -417,7 +417,7 @@
 
 /mob/new_player/proc/is_form_whitelisted(datum/species_form/F)
 	if(!F) return 1
-	return F.selectable
+	return F.playable
 
 /mob/new_player/get_species()
 	var/datum/species/chosen_species

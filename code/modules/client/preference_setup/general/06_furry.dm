@@ -121,7 +121,7 @@ datum/preferences
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["blood_reset"])
 		if(CanUseTopic(user))
-			pref.blood_color = (all_species_form_list[pref.species_form] && all_species_form_list[pref.species_form].blood_color) ? all_species_form_list[pref.species_form].blood_color : "A10808"
+			pref.blood_color = (GLOB.all_species_form_list[pref.species_form] && GLOB.all_species_form_list[pref.species_form].blood_color) ? GLOB.all_species_form_list[pref.species_form].blood_color : "A10808"
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["ears_type"])
 		var/new_e_style = input(user, "Choose your character's ears:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.ears_style)   as null|anything in (list("Default" = null) + GLOB.ears_styles_list)

@@ -43,8 +43,8 @@
 /proc/get_infectable_species()
 	var/list/meat = list()
 	var/list/res = list()
-	for (var/specie in all_species_form_list)
-		var/datum/species_form/F = all_species_form_list[specie]
+	for (var/specie in GLOB.all_species_form_list)
+		var/datum/species_form/F = GLOB.all_species_form_list[specie]
 		if(!F.virus_immune)
 			meat += F
 	if(meat.len)

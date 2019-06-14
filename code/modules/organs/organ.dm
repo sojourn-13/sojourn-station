@@ -56,7 +56,7 @@
 		species = holder.species
 		if(!species) species = all_species[SPECIES_HUMAN]
 		form = holder.form
-		if(!form) form = all_species_form_list[FORM_HUMAN]
+		if(!form) form = GLOB.all_species_form_list[FORM_HUMAN]
 		if(holder.dna)
 			dna = holder.dna.Clone()
 			species = all_species[dna.species]

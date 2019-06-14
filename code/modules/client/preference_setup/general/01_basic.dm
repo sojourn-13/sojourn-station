@@ -55,6 +55,7 @@ datum/preferences
 	pref.gender             = sanitize_inlist(pref.gender, S.genders, pick(S.genders))
 	pref.spawnpoint         = sanitize_inlist(pref.spawnpoint, get_late_spawntypes(), initial(pref.spawnpoint))
 	pref.be_random_name     = sanitize_integer(pref.be_random_name, 0, 1, initial(pref.be_random_name))
+	pref.real_name				= sanitize_text(pref.real_name, random_name(pref.gender, pref.species))
 	if(!pref.religion)
 		pref.religion =    "None"
 	else if(pref.religion == "Neotheology")

@@ -2,7 +2,7 @@
 	name = FORM_ALIEN_DRONE
 	base = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_drone.dmi'
-	selectable = FALSE
+	playable = FALSE
 	eyes = "blank_eyes"
 	blood_color = "#05EE05"
 	flesh_color = "#282846"

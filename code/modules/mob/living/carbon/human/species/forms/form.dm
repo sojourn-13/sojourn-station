@@ -1,6 +1,6 @@
 /datum/species_form //The default species form is going to be uncolored human.
 	var/name = "Unknown"
-	var/name_plural = "Unknowns"
+//	var/name_plural = "Unknowns"
 	// Icon/appearance vars.
 	var/base = 'icons/mob/human_races/r_human.dmi'    // Normal icon set.
 	var/deform = 'icons/mob/human_races/r_def_human.dmi' // Mutated icon set.
@@ -46,7 +46,13 @@
 	var/colorable = FALSE
 	var/color_mode = ICON_MULTIPLY
 
-	var/selectable = FALSE
+	var/playable = FALSE //Whether or not it can be selected in char creation.
+	var/variantof = null
+	var/list/variants = list()
+/*
+	How variants work. The base form's variants var will either be set to its own name or null in code.
+	At runtime, each variant will seek the base variant. If the base variant it is given has its own variant
+*/
 
 	var/virus_immune = FALSE
 
@@ -64,6 +70,8 @@
 	var/mask_icon = 		'icons/inventory/face/mob.dmi'
 	var/underwear_icon = 	'icons/inventory/underwear/mob.dmi'
 	var/misc_icon = 		'icons/mob/mob.dmi'
+
+	var/list/subforms = null
 
 /datum/species_form/proc/get_mob_icon(var/slot, var/icon_state)
 	var/icon/I
@@ -86,7 +94,7 @@
 		else
 			log_world("##ERROR. Wrong sprite group for mob icon \"[slot]\"")
 	if(icon_fallback && (icon_fallback != name) && icon_state && !(icon_state in icon_states(I)))
-		var/datum/species_form/F = all_species_form_list[icon_fallback]
+		var/datum/species_form/F = GLOB.all_species_form_list[icon_fallback]
 		if(F)
 			I = F.get_mob_icon(slot, icon_state)
 

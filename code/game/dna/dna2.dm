@@ -150,8 +150,8 @@ var/global/list/datum/dna/gene/dna_genes[0]
 
 	SetUIState(DNA_UI_GENDER,         character.gender!=MALE,        1)
 
-	var/form_ind = all_species_form_list.Find(character.form.name)
-	SetUIValueRange(DNA_UI_FORM, form_ind, all_species_form_list.len, 1)
+	var/form_ind = GLOB.all_species_form_list.Find(character.form.name)
+	SetUIValueRange(DNA_UI_FORM, form_ind, GLOB.all_species_form_list.len, 1)
 
 	SetUIValueRange(DNA_UI_HAIR_STYLE,  hair,  GLOB.hair_styles_list.len,       1)
 	SetUIValueRange(DNA_UI_BEARD_STYLE, beard, GLOB.facial_hair_styles_list.len,1)

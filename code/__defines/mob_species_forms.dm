@@ -65,7 +65,16 @@
 #define FORM_SPIDER				"Arachnoid"
 
 #define FORM_BIRD				"Teshari"
+
 #define FORM_VOX				"Vox"
+#define FORM_VOX_AZURE			"Azure Vox"
+#define FORM_VOX_BROWN			"Brown Vox"
+#define FORM_VOX_EMERALD		"Emerald Vox"
+#define FORM_VOX_GRAY			"Gray Vox"
+#define FORM_VOX_LIME			"Lime Vox"
+
+#define FORM_VOX_BONEY			"Boney Vox"
+#define FORM_VOX_TECHY			"Techy Vox"
 
 //
 #define FORM_MONKEY				"Monkey"

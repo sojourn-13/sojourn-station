@@ -73,8 +73,9 @@ GLOBAL_LIST_EMPTY(global_ritual_cooldowns) // internal lists. Use ritual's coold
 
 //Preferences stuff
 	//Body Sprites
-var/global/list/all_species_form_list = list()
-var/global/list/selectable_species_form_list = list()
+GLOBAL_LIST_EMPTY(all_species_form_list)
+GLOBAL_LIST_EMPTY(playable_species_form_list)
+GLOBAL_LIST_EMPTY(selectable_species_form_list)
 	//Hairstyles
 GLOBAL_LIST_EMPTY(hair_styles_list)        //stores /datum/sprite_accessory/hair indexed by name
 GLOBAL_LIST_EMPTY(facial_hair_styles_list) //stores /datum/sprite_accessory/facial_hair indexed by name
@@ -154,14 +155,6 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 /proc/makeDatumRefLists()
 
 	var/list/paths
-
-	//Forms
-	paths = typesof(/datum/species_form) - /datum/species_form
-	for(var/path in paths)
-		var/datum/species_form/F = new path()
-		all_species_form_list[F.name] = F
-		if(F.selectable)
-			selectable_species_form_list[F.name] = F
 
 	//Hair - Initialise all /datum/sprite_accessory/hair into an list indexed by hair-style name
 	paths = typesof(/datum/sprite_accessory/hair) - /datum/sprite_accessory/hair
@@ -262,15 +255,29 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 		if(S.spawn_flags & IS_WHITELISTED)
 			whitelisted_species += S.name
 
+	//Forms
 	var/fkey = 0
 	paths = typesof(/datum/species_form)-/datum/species_form
-	for(var/T in paths)
+	for(var/path in paths)
 		fkey++
-		var/datum/species_form/F = new T
+		var/datum/species_form/F = new path
 		F.form_key = fkey //Used in mob icon caching. The one a segment above is obsoleted by this.
-		all_species_form_list[F.name] = F
-		if(F.selectable)
-			selectable_species_form_list[F.name] = F
+		GLOB.all_species_form_list[F.name] = F
+		if(F.playable)
+			GLOB.playable_species_form_list[F.name] = F
+			if(!F.variantof || F.variantof == F.name)
+				GLOB.selectable_species_form_list[F.name] = F
+
+	//Form Variants System
+	for(var/formname in GLOB.all_species_form_list)
+		var/datum/species_form/F = GLOB.all_species_form_list[formname]
+		if(F.variantof && (F.variantof != F.name))
+			var/datum/species_form/P = GLOB.all_species_form_list[F.variantof]
+			if(P)
+				LAZYINITLIST(P.variants)
+				if(!P.variants.len)
+					P.variants[P.name] = P
+				P.variants[F.name] = F
 
 	//Posters
 	paths = typesof(/datum/poster) - /datum/poster - /datum/poster/wanted

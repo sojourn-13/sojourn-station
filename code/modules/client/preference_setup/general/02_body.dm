@@ -63,7 +63,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	if(!pref.species || !(pref.species in playable_species))
 		pref.species = SPECIES_HUMAN
 
-	if(!pref.species_form || !(pref.species_form in selectable_species_form_list))
+	if(!pref.species_form || !(pref.species_form in GLOB.playable_species_form_list))
 		pref.species_form = FORM_HUMAN
 
 	sanitize_integer(pref.s_tone, -185, 34, initial(pref.s_tone))
@@ -78,13 +78,24 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		pref.update_preview_icon()
 	user << browse_rsc(pref.preview_icon, "previewicon.png")
 
-	var/datum/species_form/mob_species_form = all_species_form_list[pref.species_form]
+	var/datum/species_form/mob_species_form = GLOB.all_species_form_list[pref.species_form]
 	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
 	. += "<hr>"
 	. += "<table><tr style='vertical-align:top; width: 100%'><td width=65%><b>Body</b> "
 	. += "(<a href='?src=\ref[src];random=1'>&reg;</A>)"
 	. += "<br>"
-	. += "<b>Form:</b> <a href='?src=\ref[src];select_form=1'>[pref.species_form]</a><br>"
+	var/formstring = ""
+	var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form]
+	if(istype(cform) && cform.variants && cform.variants.len)
+		formstring = "<a href='?src=\ref[src];select_variant=[cform.name]'>&#707;</a>" + formstring
+	while(istype(cform))
+		var/mode = (!cform.variantof || cform.name == cform.variantof) ? "select_form=1" : "select_variant=[cform.variantof]"
+		formstring = "<a href='?src=\ref[src];[mode]'>[cform.name]</a>" + formstring
+		if(cform.name == cform.variantof) break
+		cform = GLOB.all_species_form_list[cform.variantof]
+	formstring = "<b>Form:</b> " + formstring
+	. += formstring
+	. += "<br>"
 	. += "<b>Hair:</b> <a href='?src=\ref[src];cycle_hair=right'>&lt;&lt;</a><a href='?src=\ref[src];cycle_hair=left'>&gt;&gt;</a><a href='?src=\ref[src];hair_style=1'>[pref.h_style]</a>"
 	if(has_flag(mob_species_form, HAS_HAIR_COLOR))
 		. += "<a href='?src=\ref[src];hair_color=1'><span class='color_holder_box' style='background-color:[pref.hair_color]'></span></a>"
@@ -120,7 +131,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 /datum/category_item/player_setup_item/physical/body/OnTopic(var/href,var/list/href_list, var/mob/user)
 
 	//var/datum/species/mob_species = all_species[pref.species]
-	var/datum/species_form/mob_species_form = all_species_form_list[pref.species_form]
+	var/datum/species_form/mob_species_form = GLOB.all_species_form_list[pref.species_form]
 	if(href_list["toggle_species_verbose"])
 		hide_species = !hide_species
 		return TOPIC_REFRESH
@@ -130,10 +141,17 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["select_form"])
-		var/new_form = input(user, "Choose your character's form:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species_form) as null|anything in selectable_species_form_list
+		var/new_form = input(user, "Choose your character's form:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species_form) as null|anything in GLOB.selectable_species_form_list
 		if(new_form && CanUseTopic(user))
 			pref.species_form = new_form
 			return TOPIC_REFRESH_UPDATE_PREVIEW
+	else if(href_list["select_variant"])
+		var/datum/species_form/old_base = GLOB.playable_species_form_list[href_list["select_variant"]]
+		if(istype(old_base))
+			var/new_form = input(user, "Choose your character's form:", CHARACTER_PREFERENCE_INPUT_TITLE, href_list["select_variant"]) as null|anything in old_base.variants
+			if(new_form && CanUseTopic(user))
+				pref.species_form = new_form
+				return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	/*else if(href_list["change_descriptor"])
 		if(mob_species.descriptors)
@@ -307,7 +325,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 /datum/category_item/player_setup_item/proc/ResetHair()
 
-	var/datum/species/mob_species_form = all_species_form_list[pref.species]
+	var/datum/species/mob_species_form = GLOB.all_species_form_list[pref.species]
 	var/list/valid_hairstyles = mob_species_form.get_hair_styles()
 
 	if(valid_hairstyles.len)
@@ -320,7 +338,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 /datum/category_item/player_setup_item/proc/ResetFacialHair()
 
-	var/datum/species/mob_species_form = all_species_form_list[pref.species]
+	var/datum/species/mob_species_form = GLOB.all_species_form_list[pref.species]
 	var/list/valid_facialhairstyles = mob_species_form.get_facial_hair_styles(pref.gender)
 
 	if(valid_facialhairstyles.len)
