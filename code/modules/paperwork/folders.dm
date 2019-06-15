@@ -1,23 +1,27 @@
 /obj/item/weapon/folder
-	name = "folder"
-	desc = "A folder."
+	name = "grey folder"
+	desc = "A grey folder."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "folder"
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/folder/blue
+	name = "blue folder"
 	desc = "A blue folder."
 	icon_state = "folder_blue"
 
 /obj/item/weapon/folder/red
+	name = "red folder"
 	desc = "A red folder."
 	icon_state = "folder_red"
 
 /obj/item/weapon/folder/yellow
+	name = "yellow folder"
 	desc = "A yellow folder."
 	icon_state = "folder_yellow"
 
 /obj/item/weapon/folder/white
+	name = "white folder"
 	desc = "A white folder."
 	icon_state = "folder_white"
 

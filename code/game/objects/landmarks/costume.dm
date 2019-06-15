@@ -37,7 +37,7 @@
 	new /obj/item/clothing/head/that(src.loc)
 
 /obj/landmark/costume/highlander/New()
-	new /obj/item/clothing/under/kilt(src.loc)
+	new /obj/item/clothing/under/casual(src.loc)
 	new /obj/item/clothing/head/beret(src.loc)
 
 /obj/landmark/costume/prig/New()

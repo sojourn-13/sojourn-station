@@ -155,7 +155,7 @@
 	siemens_coefficient = 1
 	body_parts_covered = 0
 
-/obj/item/clothing/under/swimsuit/black
+/obj/item/clothing/under/swimsuit
 	name = "black swimsuit"
 	desc = "An oldfashioned black swimsuit."
 	icon_state = "swim_black"

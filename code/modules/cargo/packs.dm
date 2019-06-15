@@ -846,8 +846,8 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 
 /datum/supply_pack/sterile
 	name = "Sterile equipment crate"
-	contains = list(/obj/item/clothing/under/rank/medical/green,
-					/obj/item/clothing/under/rank/medical/green,
+	contains = list(/obj/item/clothing/under/scrubs/green,
+					/obj/item/clothing/under/scrubs/green,
 					/obj/item/clothing/head/surgery/green,
 					/obj/item/clothing/head/surgery/green,
 					/obj/item/weapon/storage/box/masks,
@@ -1287,7 +1287,7 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 					/obj/item/clothing/under/soviet,
 					/obj/item/clothing/under/bride_white,
 					/obj/item/clothing/suit/chef,
-					/obj/item/clothing/under/kilt)
+					/obj/item/clothing/under/casual)
 	name = "Costumes crate"
 	cost = 1000
 	containertype = /obj/structure/closet/crate/secure

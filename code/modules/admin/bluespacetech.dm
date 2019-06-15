@@ -202,7 +202,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	translate_binary = TRUE
 	translate_hive = TRUE
 
-/obj/item/clothing/under/assistantformal/bst
+/obj/item/clothing/under/bst
 	name = "bluespace technician's uniform"
 	desc = "A Bluespace Technician's Uniform. There is a logo on the sleeve that reads 'BST'."
 	has_sensor = FALSE

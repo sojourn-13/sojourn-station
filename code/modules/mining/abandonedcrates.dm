@@ -47,7 +47,7 @@
 		if(36 to 40)
 			new/obj/item/weapon/melee/baton(src)
 		if(41 to 45)
-			new/obj/item/clothing/under/shorts/red(src)
+			new/obj/item/clothing/under/shorts(src)
 			new/obj/item/clothing/under/shorts/blue(src)
 		if(46 to 50)
 			new/obj/item/clothing/under/chameleon(src)
