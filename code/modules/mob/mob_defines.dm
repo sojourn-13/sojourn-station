@@ -176,6 +176,7 @@ While it would be entirely possible to check the mob's move handlers list for th
 
 	var/memory = ""
 	var/flavor_text = ""
+	var/ooc_text = ""
 
 
 	var/list/HUDneed = list() // What HUD object need see

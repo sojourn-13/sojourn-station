@@ -269,7 +269,7 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 				GLOB.selectable_species_form_list[F.name] = F
 
 	//Form Variants System
-	for(var/formname in GLOB.all_species_form_list)
+	for(var/formname in GLOB.playable_species_form_list)
 		var/datum/species_form/F = GLOB.all_species_form_list[formname]
 		if(F.variantof && (F.variantof != F.name))
 			var/datum/species_form/P = GLOB.all_species_form_list[F.variantof]

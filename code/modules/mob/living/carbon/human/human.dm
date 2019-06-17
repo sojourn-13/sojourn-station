@@ -1287,23 +1287,16 @@ var/list/rank_prefix = list(\
 		to_chat(user, SPAN_WARNING(fail_msg))
 
 /mob/living/carbon/human/print_flavor_text(var/shrink = 1)
-	var/list/equipment = list(src.head,src.wear_mask,src.glasses,src.w_uniform,src.wear_suit,src.gloves,src.shoes)
+/*	var/list/equipment = list(src.head,src.wear_mask,src.glasses,src.w_uniform,src.wear_suit,src.gloves,src.shoes)
 
 	for(var/obj/item/clothing/C in equipment)
 		if(C.body_parts_covered & FACE)
 			// Do not show flavor if face is hidden
-			return
+			return*/
 
 	if(client)
 		flavor_text = client.prefs.flavor_text
-
-	if (flavor_text && flavor_text != "" && !shrink)
-		var/msg = trim(replacetext(flavor_text, "\n", " "))
-		if(!msg) return ""
-		if(lentext(msg) <= 40)
-			return "<font color='blue'>[msg]</font>"
-		else
-			return "<font color='blue'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></font>"
+		ooc_text = client.prefs.ooc_text
 	return ..()
 
 /mob/living/carbon/human/getDNA()

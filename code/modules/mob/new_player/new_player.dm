@@ -391,7 +391,7 @@
 		new_character.dna.SetSEState(GLASSESBLOCK,1,0)
 		new_character.disabilities |= NEARSIGHTED
 
-	new_character.species_aan = client.prefs.species_aan
+/*	new_character.species_aan = client.prefs.species_aan
 	new_character.species_color_key = client.prefs.species_color
 	new_character.species_name = client.prefs.custom_species
 
@@ -402,7 +402,7 @@
 	new_character.wings = GLOB.wings_styles_list[client.prefs.wings_style]
 	new_character.wings_colors = client.prefs.wings_colors
 
-	new_character.body_markings = client.prefs.body_markings
+	new_character.body_markings = client.prefs.body_markings*/
 
 	// And uncomment this, too.
 	//new_character.dna.UpdateSE()

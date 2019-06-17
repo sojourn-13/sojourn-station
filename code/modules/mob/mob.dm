@@ -352,13 +352,16 @@
 		flavor_text = msg
 
 /mob/proc/print_flavor_text()
+	. = ""
 	if (flavor_text && flavor_text != "")
 		var/msg = trim(replacetext(flavor_text, "\n", " "))
 		if(!msg) return ""
 		if(lentext(msg) <= 40)
-			return "<font color='blue'>[msg]</font>"
+			. += "<font color='blue'>[msg]</font>"
 		else
-			return "<font color='blue'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></font>"
+			. += "<font color='blue'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></font>"
+	if (ooc_text && ooc_text != "")
+		. += "<br><a href='byond://?src=\ref[src];ooc_text=1'>\[OOC Notes\]</a>"
 
 /*
 /mob/verb/help()
@@ -500,10 +503,18 @@
 				<body><tt>[replacetext(flavor_text, "\n", "<br>")]</tt></body>
 				</html>
 			"}
-			usr << browse(dat, "window=[name];size=500x200")
+			usr << browse(dat, "window=[name]_flavor;size=500x200")
 			onclose(usr, "[name]")
 	if(href_list["flavor_change"])
 		update_flavor_text()
+	if(href_list["ooc_text"])
+		var/dat = {"
+				<html><head><title>[name]</title></head>
+				<body><tt>[replacetext(ooc_text, "\n", "<br>")]</tt></body>
+				</html>
+			"}
+		usr << browse(dat, "window=[name]_ooc;size=500x200")
+		onclose(usr, "[name]")
 //	..()
 	return
 
