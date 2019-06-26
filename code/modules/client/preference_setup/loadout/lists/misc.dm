@@ -3,14 +3,6 @@
 	path = /obj/item/weapon/book/ritual/cruciform
 	cost = 2
 
-/datum/gear/flashlight
-	display_name = "flashlight"
-	path = /obj/item/device/lighting/toggleable/flashlight
-
-/datum/gear/crowbar
-	display_name = "Crowbar"
-	path = /obj/item/weapon/tool/crowbar
-
 /datum/gear/cane
 	display_name = "cane"
 	path = /obj/item/weapon/cane
@@ -18,22 +10,19 @@
 /datum/gear/dice
 	display_name = "dice pack"
 	path = /obj/item/weapon/storage/pill_bottle/dice
-
-/datum/gear/cards
-	display_name = "deck of cards"
-	path = /obj/item/weapon/deck/cards
-
-/datum/gear/tarot
-	display_name = "deck of tarot cards"
-	path = /obj/item/weapon/deck/tarot
-
 /datum/gear/holder
 	display_name = "card holder"
-	path = /obj/item/weapon/deck/holder
+	path = /obj/item/weapon/cardholder
 
-/datum/gear/cardemon_pack
-	display_name = "Cardemon booster pack"
-	path = /obj/item/weapon/pack/cardemon
+/datum/gear/cardpackstrad
+	display_name = "card traditional selection"
+	path = /obj/item/weapon/deck
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/cardpacksgame
+	display_name = "card game selection"
+	path = /obj/item/weapon/pack
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/spaceball_pack
 	display_name = "Spaceball booster pack"
@@ -108,18 +97,19 @@
 
 /datum/gear/lipstick
 	display_name = "lipstick selection"
+	sort_category = "Cosmetics"
 	path = /obj/item/weapon/lipstick
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/comb
 	display_name = "plastic comb"
+	sort_category = "Cosmetics"
 	path = /obj/item/weapon/haircomb
-	flags = GEAR_HAS_COLOR_SELECTION
 
-/datum/gear/mask
-	display_name = "sterile mask"
-	path = /obj/item/clothing/mask/surgical
-	cost = 2
+/datum/gear/hairflower
+	display_name = "hair flower pin, red"
+	sort_category = "Cosmetics"
+	path = /obj/item/clothing/head/hairflower
 
 /datum/gear/smokingpipe
 	display_name = "pipe, smoking"

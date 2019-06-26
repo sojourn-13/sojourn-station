@@ -324,7 +324,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /////////////////
 /obj/item/clothing/mask/smokable/pipe
 	name = "smoking pipe"
-	desc = "A pipe, for smoking. Probably made of meershaum or something."
+	desc = "A meerschaum pipe made for fine smoking."
 	icon_state = "pipeoff"
 	item_state = "pipeoff"
 	icon_on = "pipeon"  //Note - these are in masks.dmi
@@ -402,7 +402,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/smokable/pipe/cobpipe
 	name = "corn cob pipe"
-	desc = "A nicotine delivery system popularized by folksy backwoodsmen, kept popular in the modern age and beyond by space hipsters."
+	desc = "A backwoodsmen pipe, kept popular in the modern age and beyond by space hipsters."
 	icon_state = "cobpipeoff"
 	item_state = "cobpipeoff"
 	icon_on = "cobpipeon"  //Note - these are in masks.dmi
@@ -414,7 +414,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /////////
 /obj/item/weapon/flame/lighter
 	name = "cheap lighter"
-	desc = "A cheap-as-free lighter."
+	desc = "A reusable metal lighter with a cheap unbranded design."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "lighter-g"
 	item_state = "lighter-g"
@@ -426,8 +426,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/base_state
 
 /obj/item/weapon/flame/lighter/zippo
-	name = "\improper Zippo lighter"
-	desc = "The zippo."
+	name = "\improper zippo lighter"
+	desc = "A reusable metal lighter manufactured by Zippo."
 	icon_state = "zippo"
 	item_state = "zippo"
 

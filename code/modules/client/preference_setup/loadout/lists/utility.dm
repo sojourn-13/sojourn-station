@@ -16,6 +16,7 @@
 /datum/gear/utility/paicard
 	display_name = "personal AI device"
 	path = /obj/item/device/paicard
+	cost = 2
 
 /datum/gear/utility/cheaptablet
 	display_name = "tablet computer, cheap"
@@ -26,3 +27,11 @@
 	display_name = "tablet computer"
 	path = /obj/item/modular_computer/tablet/preset/custom_loadout/advanced
 	cost = 3
+
+/datum/gear/utility/crowbar
+	display_name = "crowbar"
+	path = /obj/item/weapon/tool/crowbar
+
+/datum/gear/utility/flashlight
+	display_name = "flashlight"
+	path = /obj/item/device/lighting/toggleable/flashlight

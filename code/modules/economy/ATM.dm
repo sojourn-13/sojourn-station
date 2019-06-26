@@ -13,7 +13,7 @@ log transactions
 #define VIEW_TRANSACTION_LOGS 3
 
 /obj/machinery/atm
-	name = "Automatic Teller Machine"
+	name = "automatic teller machine"
 	desc = "For all your monetary needs!"
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "atm"

@@ -2,7 +2,7 @@
 	icon = 'icons/atmos/connector.dmi'
 	icon_state = "map_connector"
 
-	name = "Connector Port"
+	name = "connector port"
 	desc = "For connecting portables devices related to atmospherics control."
 
 	dir = SOUTH

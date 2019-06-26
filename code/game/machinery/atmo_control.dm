@@ -1,7 +1,7 @@
 /obj/machinery/air_sensor
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "gsensor1"
-	name = "Gas Sensor"
+	name = "gas sensor"
 
 	anchored = 1
 	var/state = 0
@@ -77,7 +77,7 @@ obj/machinery/air_sensor/Destroy()
 	icon_keyboard = "atmos_key"
 	icon_screen = "tank"
 
-	name = "Computer"
+	name = "computer"
 
 	var/frequency = 1439
 	var/list/sensors = list()
@@ -177,7 +177,7 @@ obj/machinery/computer/general_air_control/Destroy()
 	//if(signal.data)
 	//	input_info = signal.data // Attempting to fix intake control -- TLE
 
-	output += "<B>Tank Control System</B><BR><BR>"
+	output += "<B>tank control system</B><BR><BR>"
 	if(input_info)
 		var/power = (input_info["power"])
 		var/volume_rate = round(input_info["volume_rate"], 0.1)
@@ -296,7 +296,7 @@ Max Output Pressure: [output_pressure] kPa<BR>"}
 	//if(signal.data)
 	//	input_info = signal.data // Attempting to fix intake control -- TLE
 
-	output += "<B>Core Cooling Control System</B><BR><BR>"
+	output += "<B>core cooling control system</B><BR><BR>"
 	if(input_info)
 		var/power = (input_info["power"])
 		var/volume_rate = round(input_info["volume_rate"], 0.1)
@@ -440,7 +440,7 @@ Min Core Pressure: [pressure_limit] kPa<BR>"}
 /obj/machinery/computer/general_air_control/fuel_injection/return_text()
 	var/output = ..()
 
-	output += "<B>Fuel Injection System</B><BR>"
+	output += "<B>fuel injection system</B><BR>"
 	if(device_info)
 		var/power = device_info["power"]
 		var/volume_rate = device_info["volume_rate"]

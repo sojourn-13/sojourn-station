@@ -43,7 +43,7 @@
 
 //TODO - Check documentation for client.eye and client.perspective...
 /obj/item/clothing/glasses/hud/health/mech
-	name = "Integrated Medical Hud"
+	name = "integrated medical HUD"
 
 /obj/item/clothing/glasses/hud/health/mech/process_hud(var/mob/M)
 /*

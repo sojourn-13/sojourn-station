@@ -5,7 +5,7 @@
 	var/mob/living/carbon/occupant
 	var/obj/machinery/body_scanconsole/connected
 	var/locked
-	name = "Body Scanner"
+	name = "body scanner"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "scanner_off"
 	density = 1
@@ -149,7 +149,7 @@
 	)
 	var/delete
 	var/temphtml
-	name = "Body Scanner Console"
+	name = "body scanner console"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "scanner_terminal_off"
 	density = 1

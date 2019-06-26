@@ -14,8 +14,8 @@
 	icon_door = "black"
 
 /obj/structure/closet/gmcloset/populate_contents()
-	new /obj/item/clothing/head/that(src)
-	new /obj/item/clothing/head/that(src)
+	new /obj/item/clothing/head/hat/that(src)
+	new /obj/item/clothing/head/hat/that(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/clothing/head/hairflower
@@ -23,8 +23,8 @@
 	new /obj/item/clothing/under/rank/bartender(src)
 	new /obj/item/clothing/suit/wcoat(src)
 	new /obj/item/clothing/suit/wcoat(src)
-	new /obj/item/clothing/shoes/black(src)
-	new /obj/item/clothing/shoes/black(src)
+	new /obj/item/clothing/shoes/color/black(src)
+	new /obj/item/clothing/shoes/color/black(src)
 
 /*
  * Chef

@@ -4,7 +4,7 @@
 	density = 0
 	level = 1
 
-	name = "Gas filter"
+	name = "gas filter"
 
 	use_power = 1
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff

@@ -1,5 +1,5 @@
 /obj/machinery/autolathe/excelsior
-	name = "Excelsior autolathe"
+	name = "excelsior autolathe"
 	desc = "It produces items using metal and glass."
 	icon = 'icons/obj/machines/excelsior/autolathe.dmi'
 	icon_state = "stanok"

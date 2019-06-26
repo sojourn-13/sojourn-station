@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap
 	name = "scrap pile"
-	desc = "Pile of industrial debris. It could use a shovel and pair of hands in gloves."
+	desc = "A pile of industrial debris."
 	appearance_flags = TILE_BOUND
 	anchored = TRUE
 	opacity = FALSE
@@ -295,6 +295,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/large
 	name = "large scrap pile"
+	desc = "A large pile of industrial debris."
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
@@ -308,7 +309,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 /obj/structure/scrap/medical
 	icontype = "medical"
 	name = "medical refuse pile"
-	desc = "Pile of medical refuse. They sure don't cut expenses on these. "
+	desc = "A pile of medical refuse. Watch out for sharp instruments."
 	parts_icon = 'icons/obj/structures/scrap/medical_trash.dmi'
 	loot_list = list(
 		/obj/random/medical = 4,
@@ -322,7 +323,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 /obj/structure/scrap/vehicle
 	icontype = "vehicle"
 	name = "industrial debris pile"
-	desc = "Pile of used machinery. You could use tools from this to build something."
+	desc = "A pile of used machinery. Some of it is stained with fuel."
 	parts_icon = 'icons/obj/structures/scrap/vehicle.dmi'
 	loot_list = list(
 		/obj/random/pack/tech_loot = 3,
@@ -339,7 +340,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 /obj/structure/scrap/food
 	icontype = "food"
 	name = "food trash pile"
-	desc = "Pile of thrown away food. Someone sure have lots of spare food while children on Mars are starving."
+	desc = "A pile of expired food and drink. Some of it smells funny."
 	parts_icon = 'icons/obj/structures/scrap/food_trash.dmi'
 	loot_list = list(
 		/obj/random/junkfood = 5,
@@ -353,8 +354,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/guns
 	icontype = "guns"
-	name = "gun refuse pile"
-	desc = "Pile of military supply refuse. Who thought it was a clever idea to throw that out?"
+	name = "armaments refuse pile"
+	desc = "A pile of military supply refuse. Who thought it was a clever idea to throw that out?"
 	parts_icon = 'icons/obj/structures/scrap/guns_trash.dmi'
 	loot_min = 9
 	loot_max = 12
@@ -372,7 +373,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 /obj/structure/scrap/science
 	icontype = "science"
 	name = "scientific trash pile"
-	desc = "Pile of refuse from research department."
+	desc = "A pile of technical refuse. Some of it still glows and hums faintly."
 	parts_icon = 'icons/obj/structures/scrap/science.dmi'
 	loot_list = list(
 		/obj/random/pack/tech_loot = 3,
@@ -385,14 +386,14 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 /obj/structure/scrap/cloth
 	icontype = "cloth"
 	name = "cloth pile"
-	desc = "Pile of second hand clothing for charity."
+	desc = "A pile of ruined and discarded clothing."
 	parts_icon = 'icons/obj/structures/scrap/cloth.dmi'
 	loot_list = list(/obj/random/pack/cloth,/obj/random/pack/rare = 0.2)
 
 /obj/structure/scrap/poor
 	icontype = "poor"
 	name = "mixed rubbish"
-	desc = "Pile of mixed rubbish. Useless and rotten, mostly."
+	desc = "A pile of mixed rubbish. Useless and rotten, mostly."
 	parts_icon = 'icons/obj/structures/scrap/all_mixed.dmi'
 	loot_list = list(
 		/obj/random/lowkeyrandom = 4,
@@ -404,6 +405,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/poor/large
 	name = "large mixed rubbish"
+	desc = "A large pile of mixed rubbish. Useless and rotten, mostly."
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
@@ -415,6 +417,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/vehicle/large
 	name = "large industrial debris pile"
+	desc = "A large pile of used machinery. Some of it is stained with fuel."
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
@@ -427,6 +430,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/food/large
 	name = "large food trash pile"
+	desc = "A large pile of expired food and drink. Some of it smells funny."
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
@@ -439,6 +443,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/medical/large
 	name = "large medical refuse pile"
+	desc = "A large pile of medical refuse. Watch out for sharp instruments. "
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
@@ -450,7 +455,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	big_item_chance = 60
 
 /obj/structure/scrap/guns/large
-	name = "large gun refuse pile"
+	name = "large armaments refuse pile"
+	desc = "A large pile of military supply refuse. Who thought it was a clever idea to throw that out?"
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
@@ -463,6 +469,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/science/large
 	name = "large scientific trash pile"
+	desc = "A large pile of technical refuse. Some of it still glows and hums faintly."
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
@@ -475,6 +482,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/cloth/large
 	name = "large cloth pile"
+	desc = "A large pile of ruined and discarded clothing."
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"

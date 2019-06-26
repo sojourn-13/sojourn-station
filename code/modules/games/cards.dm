@@ -9,12 +9,12 @@
 	icon = 'icons/obj/playing_cards.dmi'
 	var/list/cards = list()
 
-/obj/item/weapon/deck/holder
+/obj/item/weapon/cardholder
 	name = "card box"
 	desc = "A small leather case to show how classy you are compared to everyone else."
 	icon_state = "card_holder"
 
-/obj/item/weapon/deck/cards
+/obj/item/weapon/deck
 	name = "deck of cards"
 	desc = "A simple deck of playing cards."
 	icon_state = "deck"

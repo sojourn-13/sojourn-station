@@ -5,7 +5,7 @@
 
 
 /obj/machinery/computer/telecomms/traffic
-	name = "Telecommunications Traffic Control"
+	name = "telecommunications traffic control"
 	icon_screen = "generic"
 
 	var/screen = 0				// the screen number:

@@ -1,16 +1,10 @@
 // COLOR GLOVES
 /obj/item/clothing/gloves/color
-	name = "gloves"
-	initial_name = "gloves"
-	desc = "A pair of gloves."
-	icon_state = "latex"
-	item_state = "lgloves"
-
-/obj/item/clothing/gloves/color/white
-	name = "white gloves"
-	desc = "A pair of fancy white gloves."
-	icon_state = "latex"
-	item_state = "lgloves"
+	name = "black gloves"
+	initial_name = "black gloves"
+	desc = "A pair of black gloves."
+	icon_state = "black"
+	item_state = "bgloves"
 
 /obj/item/clothing/gloves/color/yellow
 	name = "yellow gloves"
@@ -61,6 +55,14 @@
 	icon_state = "green"
 	item_state = "greengloves"
 
+/obj/item/clothing/gloves/custom
+	name = "customized gloves"
+	initial_name = "customized gloves"
+	desc = "A pair of customized gloves with a tailored color."
+	icon_state = "latex"
+	item_state = "lgloves"
+
+
 /obj/item/clothing/gloves/color/grey
 	name = "grey gloves"
 	initial_name = "grey gloves"
@@ -81,3 +83,10 @@
 	desc = "A pair of brown gloves."
 	icon_state = "brown"
 	item_state = "browngloves"
+
+/obj/item/clothing/gloves/color/white
+	name = "white gloves"
+	initial_name = "white gloves"
+	desc = "A pair of white gloves."
+	icon_state = "latex"
+	item_state = "lgloves"

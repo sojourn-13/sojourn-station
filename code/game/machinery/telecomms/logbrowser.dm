@@ -4,7 +4,7 @@
 	icon_keyboard = "tech_key"
 
 /obj/machinery/computer/telecomms/server
-	name = "Telecommunications Server Monitor"
+	name = "telecommunications server monitor"
 	icon_screen = "comm_logs"
 
 	var/screen = 0				// the screen number:

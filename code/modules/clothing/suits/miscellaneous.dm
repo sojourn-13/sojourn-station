@@ -61,7 +61,7 @@
 
 /obj/item/clothing/suit/wcoat
 	name = "waistcoat"
-	desc = "For some classy, murderous fun."
+	desc = "A classy waistcoat in a traditional black design."
 	icon_state = "vest"
 	item_state = "wcoat"
 	blood_overlay_type = "armor"
@@ -125,21 +125,6 @@
 //pyjamas
 //originally intended to be pinstripes >.>
 
-/obj/item/clothing/under/bluepyjamas
-	name = "blue pyjamas"
-	desc = "Slightly old-fashioned sleepwear."
-	icon_state = "blue_pyjamas"
-	item_state = "blue_pyjamas"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-
-/obj/item/clothing/under/redpyjamas
-	name = "red pyjamas"
-	desc = "Slightly old-fashioned sleepwear."
-	icon_state = "red_pyjamas"
-	item_state = "red_pyjamas"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-
-
 /obj/item/clothing/suit/xenos
 	name = "xenos suit"
 	desc = "A suit made out of chitinous alien hide."
@@ -157,32 +142,50 @@
 
 /obj/item/clothing/under/swimsuit
 	name = "black swimsuit"
-	desc = "An oldfashioned black swimsuit."
+	desc = "A black swimsuit perfect for the pool."
 	icon_state = "swim_black"
 	siemens_coefficient = 1
 
 /obj/item/clothing/under/swimsuit/blue
 	name = "blue swimsuit"
-	desc = "An oldfashioned blue swimsuit."
+	desc = "A blue swimsuit perfect for the pool."
 	icon_state = "swim_blue"
 	siemens_coefficient = 1
 
 /obj/item/clothing/under/swimsuit/purple
 	name = "purple swimsuit"
-	desc = "An oldfashioned purple swimsuit."
+	desc = "A purple swimsuit perfect for the pool."
 	icon_state = "swim_purp"
 	siemens_coefficient = 1
 
 /obj/item/clothing/under/swimsuit/green
 	name = "green swimsuit"
-	desc = "An oldfashioned green swimsuit."
+	desc = "A green swimsuit perfect for the pool."
 	icon_state = "swim_green"
 	siemens_coefficient = 1
 
 /obj/item/clothing/under/swimsuit/red
 	name = "red swimsuit"
-	desc = "An oldfashioned red swimsuit."
+	desc = "A red swimsuit perfect for the pool."
 	icon_state = "swim_red"
+	siemens_coefficient = 1
+
+/obj/item/clothing/under/swimsuit/striped
+	name = "striped swimsuit"
+	desc = "A striped swimsuit perfect for the pool."
+	icon_state = "swim_striped"
+	siemens_coefficient = 1
+
+/obj/item/clothing/under/swimsuit/earth
+	name = "earth swimsuit"
+	desc = "A earth swimsuit perfect for the pool."
+	icon_state = "swim_earth"
+	siemens_coefficient = 1
+
+/obj/item/clothing/under/swimsuit/white
+	name = "white swimsuit"
+	desc = "A white swimsuit perfect for the pool."
+	icon_state = "swim_white"
 	siemens_coefficient = 1
 
 /obj/item/clothing/suit/poncho
@@ -193,7 +196,7 @@
 
 /obj/item/clothing/suit/storage/toggle/bomber
 	name = "bomber jacket"
-	desc = "A thick, well-worn WW2 leather bomber jacket."
+	desc = "A thick, well-worn leather bomber jacket."
 	icon_state = "bomber"
 	item_state = "bomber"
 	icon_open = "bomber_open"
@@ -205,7 +208,7 @@
 
 /obj/item/clothing/suit/storage/leather_jacket
 	name = "leather jacket"
-	desc = "A sturdy, synthetic leather jacket with a high collar. It is able to protect you from a knife slice or a bite, but don't expect too much. More importantly, it makes you look like a really bad boy or girl. And remember, Tunnel Snakes rule!"
+	desc = "A sturdy, synthetic leather jacket with a high collar."
 	icon_state = "leather_jacket"
 	item_state = "leather_jacket"
 	armor = list(melee = 20, bullet = 5, laser = 10, energy = 20, bomb = 10, bio = 0, rad = 0)
@@ -232,3 +235,43 @@
 	item_state = "black_hoodie"
 	icon_open = "black_hoodie_open"
 	icon_closed = "black_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie/orange
+	name = "orange hoodie"
+	desc = "A warm, orange sweatshirt."
+	icon_state = "orange_hoodie"
+	item_state = "orange_hoodie"
+	icon_open = "orange_hoodie_open"
+	icon_closed = "orange_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie/blue
+	name = "blue hoodie"
+	desc = "A warm, blue sweatshirt."
+	icon_state = "blue_hoodie"
+	item_state = "blue_hoodie"
+	icon_open = "blue_hoodie_open"
+	icon_closed = "blue_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie/green
+	name = "green hoodie"
+	desc = "A warm, green sweatshirt."
+	icon_state = "green_hoodie"
+	item_state = "green_hoodie"
+	icon_open = "green_hoodie_open"
+	icon_closed = "green_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie/yellow
+	name = "yellow hoodie"
+	desc = "A warm, yellow sweatshirt."
+	icon_state = "yellow_hoodie"
+	item_state = "yellow_hoodie"
+	icon_open = "yellow_hoodie_open"
+	icon_closed = "yellow_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie/red
+	name = "red hoodie"
+	desc = "A warm, red sweatshirt."
+	icon_state = "red_hoodie"
+	item_state = "red_hoodie"
+	icon_open = "red_hoodie_open"
+	icon_closed = "red_hoodie"

@@ -3,7 +3,7 @@
 	build_path = /obj/machinery/computer/atmoscontrol
 
 /obj/machinery/computer/atmoscontrol
-	name = "\improper Central Atmospherics Computer"
+	name = "\improper central atmospherics computer"
 	icon = 'icons/obj/computer.dmi'
 	icon_keyboard = "generic_key"
 	icon_screen = "comm_logs"
@@ -16,7 +16,7 @@
 	var/datum/nano_module/atmos_control/atmos_control
 
 /obj/machinery/computer/atmoscontrol/laptop
-	name = "Atmospherics Laptop"
+	name = "atmospherics laptop"
 	desc = "A cheap laptop."
 	icon_state = "laptop"
 	icon_keyboard = "laptop_key"

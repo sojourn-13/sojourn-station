@@ -554,7 +554,7 @@
 
 
 /obj/machinery/computer/med_data/laptop
-	name = "Medical Laptop"
+	name = "medical laptop"
 	desc = "A cheap laptop."
 	icon_state = "laptop"
 	icon_keyboard = "laptop_key"

@@ -19,13 +19,10 @@
 	display_name = "hazard vest"
 	path = /obj/item/clothing/suit/storage/hazardvest
 
-/datum/gear/suit/hoodie
-	display_name = "hoodie, grey"
+/datum/gear/suit/hoodies
+	display_name = "hoodie selection"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
-
-/datum/gear/suit/hoodie/black
-	display_name = "hoodie, black"
-	path = /obj/item/clothing/suit/storage/toggle/hoodie/black
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat"

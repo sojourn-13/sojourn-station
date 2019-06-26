@@ -14,10 +14,11 @@
 	name = "mime shoes"
 	icon_state = "mime"
 
-/obj/item/clothing/shoes/black
+/obj/item/clothing/shoes/color/black
 	name = "black shoes"
-	icon_state = "black"
+	icon_state = "black shoes"
 	desc = "A pair of black shoes."
+	icon_state = "black"
 
 	cold_protection = LEGS
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
@@ -130,3 +131,8 @@
 	name = "leather shoes"
 	desc = "A sturdy pair of leather shoes."
 	icon_state = "leather"
+
+/obj/item/clothing/shoes/laceup
+	name = "laceup shoes"
+	desc = "A pair of sleek polished shoes."
+	icon_state = "laceups"

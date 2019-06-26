@@ -1182,12 +1182,12 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 //----------------------------------------------
 
 /datum/supply_pack/formal_wear
-	contains = list(/obj/item/clothing/head/bowler,
-					/obj/item/clothing/head/that,
+	contains = list(/obj/item/clothing/head/hat/bowler,
+					/obj/item/clothing/head/hat/that,
 					/obj/item/clothing/under/suit_jacket,
 					/obj/item/clothing/under/suit_jacket/red,
-					/obj/item/clothing/shoes/black,
-					/obj/item/clothing/shoes/black,
+					/obj/item/clothing/shoes/color/black,
+					/obj/item/clothing/shoes/color/black,
 					/obj/item/clothing/shoes/leather,
 					/obj/item/clothing/suit/wcoat)
 	name = "Formalwear closet"
@@ -1280,14 +1280,14 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 					/obj/item/clothing/suit/nun,
 					/obj/item/clothing/under/rank/fo_suit,
 					/obj/item/clothing/suit/bio_suit/plaguedoctorsuit,
-					/obj/item/clothing/under/schoolgirl,
+					/obj/item/clothing/under/plaid/schoolgirlblue,
 					/obj/item/clothing/under/owl,
 					/obj/item/clothing/under/waiter,
 					/obj/item/clothing/under/gladiator,
 					/obj/item/clothing/under/soviet,
 					/obj/item/clothing/under/bride_white,
 					/obj/item/clothing/suit/chef,
-					/obj/item/clothing/under/casual)
+					/obj/item/clothing/under/plaid/kilt)
 	name = "Costumes crate"
 	cost = 1000
 	containertype = /obj/structure/closet/crate/secure

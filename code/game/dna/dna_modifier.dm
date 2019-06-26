@@ -189,7 +189,7 @@
 	return
 
 /obj/machinery/computer/scan_consolenew
-	name = "DNA Modifier Access Console"
+	name = "DNA modifier access console"
 	desc = "Scand DNA."
 	icon = 'icons/obj/computer.dmi'
 	icon_keyboard = "med_key"

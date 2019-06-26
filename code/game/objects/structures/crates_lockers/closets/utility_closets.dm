@@ -65,7 +65,7 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/weapon/tank/oxygen/red(src)
 	new /obj/item/weapon/extinguisher(src)
-	new /obj/item/clothing/head/hardhat/red(src)
+	new /obj/item/clothing/head/firefighter(src)
 
 /*
  * Tool Closet
@@ -141,7 +141,7 @@
 /obj/structure/closet/bombcloset/populate_contents()
 	new /obj/item/clothing/suit/bomb_suit(src)
 	new /obj/item/clothing/under/color/black(src)
-	new /obj/item/clothing/shoes/black(src)
+	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/head/bomb_hood(src)
 
 /obj/structure/closet/bombclosetsecurity

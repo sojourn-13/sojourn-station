@@ -1,7 +1,7 @@
 //Todo: make this thing work under new shield system
 /obj/machinery/shieldwallgen/excelsior
 
-	name = "Excelsior Shield Generator"
+	name = "excelsior shield generator"
 	desc = "A shield generator."
 	icon = 'icons/obj/machines/excelsior/field.dmi'
 	stun_chance = 3

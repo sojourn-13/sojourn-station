@@ -1,6 +1,6 @@
 
 /obj/machinery/account_database
-	name = "Accounts uplink terminal"
+	name = "accounts uplink terminal"
 	desc = "Access transaction logs, account data and all kinds of other financial records."
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "account_computer"

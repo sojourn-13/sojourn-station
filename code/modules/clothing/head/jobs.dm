@@ -57,19 +57,19 @@
 	body_parts_covered = 0
 
 //Security
-/obj/item/clothing/head/beret/sec/navy/officer
+/obj/item/clothing/head/sec/navy/officer
 	name = "Operative beret"
 	desc = "A navy blue beret with an Operative's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_navy_officer"
-/obj/item/clothing/head/beret/sec/navy/hos
+/obj/item/clothing/head/sec/navy/hos
 	name = "Commander beret"
 	desc = "Grey beret with a Commander's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_navy_hos"
-/obj/item/clothing/head/beret/sec/navy/warden
+/obj/item/clothing/head/sec/navy/warden
 	name = "Sergeant beret"
 	desc = "Read beret with a Sergeant's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_navy_warden"
-/obj/item/clothing/head/beret/engineering
+/obj/item/clothing/head/engineering
 	name = "engineering beret"
 	desc = "A beret with the engineering insignia emblazoned on it. For engineers that are more inclined towards style than safety."
 	icon_state = "beret_engineering"
@@ -80,19 +80,17 @@
 
 //Medical
 /obj/item/clothing/head/surgery
-	name = "surgical cap"
-	desc = "A cap surgeons wear during operations. Keeps their hair from tickling your internal organs."
+	name = "blue surgical cap"
+	desc = "A sterile blue surgical cap for medical operations."
 	icon_state = "surgcap_blue"
 	flags_inv = BLOCKHEADHAIR
 
 /obj/item/clothing/head/surgery/purple
-	desc = "A cap surgeons wear during operations. Keeps their hair from tickling your internal organs. This one is deep purple."
+	name = "purple surgical cap"
+	desc = "A sterile purple surgical cap for medical operations."
 	icon_state = "surgcap_purple"
 
-/obj/item/clothing/head/surgery/blue
-	desc = "A cap surgeons wear during operations. Keeps their hair from tickling your internal organs. This one is baby blue."
-	icon_state = "surgcap_blue"
-
 /obj/item/clothing/head/surgery/green
-	desc = "A cap surgeons wear during operations. Keeps their hair from tickling your internal organs. This one is dark green."
+	name = "green surgical cap"
+	desc = "A sterile green surgical cap for medical operations."
 	icon_state = "surgcap_green"

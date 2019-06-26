@@ -2,7 +2,7 @@
 	icon = 'icons/atmos/vent_scrubber.dmi'
 	icon_state = "map_scrubber_off"
 
-	name = "Air Scrubber"
+	name = "air scrubber"
 	desc = "Has a valve and pump attached to it"
 	use_power = 0
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff

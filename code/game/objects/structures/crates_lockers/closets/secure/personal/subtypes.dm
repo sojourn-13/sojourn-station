@@ -11,7 +11,7 @@
 
 /obj/structure/closet/secure_closet/personal/patient/populate_contents()
 	new /obj/item/clothing/under/color/white(src)
-	new /obj/item/clothing/shoes/color/white(src)
+	new /obj/item/clothing/shoes/color(src)
 
 /obj/structure/closet/secure_closet/personal/cabinet
 	icon_state = "cabinet"

@@ -24,7 +24,7 @@
 	icon_state = "pwig"
 	item_state = "pwig"
 
-/obj/item/clothing/head/that
+/obj/item/clothing/head/hat/that
 	name = "top-hat"
 	desc = "It's an amish looking hat."
 	icon_state = "tophat"
@@ -33,7 +33,7 @@
 	body_parts_covered = 0
 
 
-/obj/item/clothing/head/mailman
+/obj/item/clothing/head/soft/mailman
 	name = "station cap"
 	icon_state = "mailman"
 	desc = "<i>Choo-choo</i>!"
@@ -74,9 +74,9 @@
 	body_parts_covered = HEAD|FACE|EYES
 	item_flags = COVER_PREVENT_MANIPULATION
 
-/obj/item/clothing/head/greenbandana
+/obj/item/clothing/head/bandana/green
 	name = "green bandana"
-	desc = "It's a green bandana with some fine nanotech lining."
+	desc = "A green bandana fashioned from a piece of cloth."
 	icon_state = "greenbandana"
 	item_state = "greenbandana"
 	flags_inv = 0
@@ -115,7 +115,7 @@
 	icon_state = "bunny"
 	body_parts_covered = 0
 
-/obj/item/clothing/head/flatcap
+/obj/item/clothing/head/hat/flatcap
 	name = "flat cap"
 	desc = "A working man's cap."
 	icon_state = "flat_cap"
@@ -138,45 +138,45 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/head/bandana
-	name = "pirate bandana"
-	desc = "Yarr."
+	name = "red bandana"
+	desc = "A red bandana fashioned from a piece of cloth."
 	icon_state = "bandana"
 
-/obj/item/clothing/head/bowler
-	name = "bowler-hat"
+/obj/item/clothing/head/hat/bowler
+	name = "bowler hat variant"
 	desc = "Gentleman, elite aboard!"
 	icon_state = "bowler"
 	body_parts_covered = 0
 
 //stylish bs12 hats
 
-/obj/item/clothing/head/bowlerhat
+/obj/item/clothing/head/hat
 	name = "bowler hat"
 	icon_state = "bowler_hat"
 	desc = "For the gentleman of distinction."
 	body_parts_covered = 0
 
-/obj/item/clothing/head/beaverhat
+/obj/item/clothing/head/hat/beaverhat
 	name = "beaver hat"
 	icon_state = "beaver_hat"
 	desc = "Soft felt makes this hat both comfortable and elegant."
 
-/obj/item/clothing/head/boaterhat
+/obj/item/clothing/head/hat/boaterhat
 	name = "boater hat"
 	icon_state = "boater_hat"
 	desc = "The ultimate in summer fashion."
 
-/obj/item/clothing/head/fedora
+/obj/item/clothing/head/hat/fedora
 	name = "fedora"
 	icon_state = "fedora"
 	desc = "A sharp, stylish hat."
 
-/obj/item/clothing/head/feathertrilby
+/obj/item/clothing/head/hat/feathertrilby
 	name = "feather trilby"
 	icon_state = "feather_trilby"
 	desc = "A sharp, stylish hat with a feather."
 
-/obj/item/clothing/head/fez
+/obj/item/clothing/head/hat/fez
 	name = "fez"
 	icon_state = "fez"
 	desc = "You should wear a fez. Fezzes are cool."
@@ -233,8 +233,8 @@
 	siemens_coefficient = 2.0 //why is it so conductive?!
 	body_parts_covered = 0
 
-/obj/item/clothing/head/orangebandana //themij: Taryn Kifer
+/obj/item/clothing/head/bandana/orange //themij: Taryn Kifer
 	name = "orange bandana"
-	desc = "An orange piece of cloth, worn on the head."
+	desc = "An orange bandana fashioned from a piece of cloth."
 	icon_state = "orange_bandana"
 	body_parts_covered = 0
