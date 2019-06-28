@@ -105,6 +105,11 @@
 		user << SPAN_DANGER("You are banned from playing synthetics and cannot spawn as a drone.")
 		return
 
+	if(!BC_IsKeyAllowedToConnect(user.ckey) && !usr.client.holder)
+		user << SPAN_DANGER("Border Control is enabled, and you haven't been whitelisted!  You're welcome to observe, \
+			    but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!")
+		return
+
 	if(!user.MayRespawn(1, MINISYNTH))
 		return
 

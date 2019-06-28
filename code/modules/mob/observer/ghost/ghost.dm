@@ -434,6 +434,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!MayRespawn(1, ANIMAL))
 		return
 
+	if(!BC_IsKeyAllowedToConnect(usr.ckey) && !usr.client.holder)
+		usr  << SPAN_DANGER("Border Control is enabled, and you haven't been whitelisted!  You're welcome to observe, \
+			    but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!")
+		return
+
 	var/turf/T = get_turf(src)
 	if(!T || !(T.z in maps_data.station_levels))
 		src << "<span class='warning'>You may not spawn as a mouse on this Z-level.</span>"
