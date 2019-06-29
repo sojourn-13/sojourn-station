@@ -271,6 +271,8 @@ var/list/rank_prefix = list(\
 	if(get_id_rank())
 		if(findtext(name, " "))
 			name = copytext(name, findtext(name, " "))
+		else
+			name = " [name]"
 		name = get_id_rank() + name
 	return name
 

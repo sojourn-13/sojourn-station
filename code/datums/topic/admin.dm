@@ -1076,33 +1076,46 @@
 
 
 /datum/admin_topic/centcommfaxreply
-	keyword = "CentcommFaxReply"
+	keyword = "FaxReply"
 
 /datum/admin_topic/centcommfaxreply/Run(list/input)
-	var/mob/sender = locate(input["CentcommFaxReply"])
+	var/mob/sender = locate(input["FaxReply"])
+	var/datum/faction/faction = GLOB.factions_list[input["faction"]]
 	var/obj/machinery/photocopier/faxmachine/fax = locate(input["originfax"])
 
 	//todo: sanitize
-	var/msg = input(source.owner, "Please enter a message to reply to [key_name(sender)] via secure connection. NOTE: BBCode does not work, but HTML tags do! Use <br> for line breaks.", "Outgoing message from Centcomm", "") as message|null
+	var/msg = input(source.owner, "Please enter a message to reply to [key_name(sender)] via secure connection. NOTE: BBCode does not work, but HTML tags do! Use <br> for line breaks.", "Outgoing message from [faction.name]", "") as message|null
 	if(!msg)
 		return
 
-	var/customname = input(source.owner, "Pick a title for the report", "Title") as text|null
+	var/customname = input(source.owner, "Pick a title for the report", "Title", "[faction.fax_response] - ") as text|null
 
 	// Create the reply message
 	var/obj/item/weapon/paper/P = new /obj/item/weapon/paper( null ) //hopefully the null loc won't cause trouble for us
-	P.name = "[command_name()]- [customname]"
+	P.name = "[customname]"
 	P.info = msg
 	P.update_icon()
 
+	var/list/factions = list(faction.name)
+	if(alert("Modify Stamps?",, "No", "Yes") == "Yes")
+		do
+			switch(alert("Action:",, "Add", "Remove"))
+				if("Add")
+					var/F = input(source.owner, "Choose a stamp to add:") as null|anything in (GLOB.admin_factions_list - factions)
+					if(F)
+						factions += F
+				if("Remove")
+					var/F = input(source.owner, "Choose a stamp to remove:") as null|anything in (factions)
+					if(F)
+						factions -= F
+		while(alert("Continue modifying stamps?",, "Yes", "No") == "Yes")
+
 	// Stamps
-	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-	stampoverlay.icon_state = "paper_stamp-cent"
-	if(!P.stamped)
-		P.stamped = new
-	P.stamped += /obj/item/weapon/stamp
-	P.overlays += stampoverlay
-	P.stamps += "<HR><i>This paper has been stamped by the Central Command Quantum Relay.</i>"
+	for(var/F in factions)
+		faction = GLOB.factions_list[F]
+		if(!faction) continue
+		P.stamp("<i>[faction.stamptext]</i>", faction.stampshape, 0, -2, 2, -1)
+		P.stamped &= STAMP_ADMIN
 
 	if(fax.recievefax(P))
 		source.owner << "\blue Message reply to transmitted successfully."

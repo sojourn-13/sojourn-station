@@ -78,7 +78,6 @@
 		P.info = "<b>[src] analysis report #[report_num]</b><br>"
 		P.info += "<br>"
 		P.info += "\icon[scanned_object] [results]"
-		P.stamped = list(/obj/item/weapon/stamp)
 		P.overlays = list("paper_stamped")
 
 		if(scanned_object && istype(scanned_object, /obj/machinery/artifact))

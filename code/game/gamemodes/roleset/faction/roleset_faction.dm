@@ -16,7 +16,7 @@
 	//Find the faction first, create it if it doesnt exist
 	if (!faction_id)
 		return
-	var/datum/faction/F = get_faction_by_id(faction_id)
+	var/datum/antag_faction/F = get_faction_by_id(faction_id)
 
 	if (!F)
 		F = new faction_type()

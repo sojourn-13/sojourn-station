@@ -190,7 +190,7 @@
 //This fires, and the mission timer starts ticking, as soon as they leave Eris on course to the mercenary base
 /datum/shuttle/autodock/multi/antag/mercenary/announce_departure()
 	.=..()
-	var/datum/faction/F = get_faction_by_id(FACTION_SERBS)
+	var/datum/antag_faction/F = get_faction_by_id(FACTION_SERBS)
 	var/datum/objective/timed/merc/MO = (locate(/datum/objective/timed/merc) in F.objectives)
 	if (MO)
 		MO.end_mission()
@@ -198,7 +198,7 @@
 //This fires, and the mission timer starts ticking, as soon as they leave base
 /datum/shuttle/autodock/multi/antag/mercenary/announce_arrival()
 	.=..()
-	var/datum/faction/F = get_faction_by_id(FACTION_SERBS)
+	var/datum/antag_faction/F = get_faction_by_id(FACTION_SERBS)
 	var/datum/objective/timed/merc/MO = (locate(/datum/objective/timed/merc) in F.objectives)
 	if (MO)
 		MO.start_mission()

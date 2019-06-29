@@ -80,6 +80,7 @@
 
 	// sync the organ's damage with its wounds
 	src.update_damages()
+	if(!owner) return update_damstate() //No point trying to sever severed limbs or update owner health.
 	owner.updatehealth() //droplimb will call updatehealth() again if it does end up being called
 
 	//If limb took enough damage, try to cut or tear it off

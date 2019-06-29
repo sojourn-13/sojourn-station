@@ -5,7 +5,9 @@
 #define TRANSITIONEDGE 7 // Distance from edge to move to another z-level.
 
 // Invisibility constants.
+#define INVISIBILITY_NONE                 0
 #define INVISIBILITY_LIGHTING             20
+#define INVISIBILITY_WEAK                 25
 #define INVISIBILITY_ANGEL                30
 #define INVISIBILITY_LEVEL_ONE            35
 #define INVISIBILITY_LEVEL_TWO            45
@@ -71,6 +73,14 @@
 #define MANIFEST_ERROR_NAME			1
 #define MANIFEST_ERROR_CONTENTS		2
 #define MANIFEST_ERROR_ITEM			4
+
+// Bureaucracy Bitfields
+#define STAMP_GENERIC	0x1		//Most stamps should apply this.
+#define STAMP_APPROVAL	0x2		//No special behaviour usually, a checkmark stamp would apply it.
+#define STAMP_DENIAL	0x4		//Applied by the denied stamp, though some others also have cross symbols.
+#define STAMP_FACTION	0x8		//For factions. A faction will have an official stamp they can use.
+#define STAMP_DOCUMENT	0xF		//For stuff like ATM printouts.
+#define STAMP_ADMIN		0x10	//Admin Fax Replies
 
 //General-purpose life speed define for plants.
 #define HYDRO_SPEED_MULTIPLIER 1

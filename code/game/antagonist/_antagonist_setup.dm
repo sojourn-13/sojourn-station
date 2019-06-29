@@ -77,7 +77,7 @@ GLOBAL_LIST_EMPTY(faction_types)
 		if(istype(M) && A.create_antagonist(M))
 			return A
 
-/proc/make_antagonist_faction(var/datum/mind/M, var/a_id, var/datum/faction/F)
+/proc/make_antagonist_faction(var/datum/mind/M, var/a_id, var/datum/antag_faction/F)
 	if(GLOB.all_antag_types[a_id])
 		var/a_type = GLOB.all_antag_types[a_id].type
 		var/datum/antagonist/A = new a_type
@@ -115,8 +115,8 @@ GLOBAL_LIST_EMPTY(faction_types)
 
 		GLOB.antag_bantypes[A.id] = A.bantype
 
-	for(var/faction_type in typesof(/datum/faction)-/datum/faction)
-		var/datum/faction/F = new faction_type
+	for(var/faction_type in typesof(/datum/antag_faction)-/datum/antag_faction)
+		var/datum/antag_faction/F = new faction_type
 		GLOB.faction_types[F.id] = F
 
 /proc/get_antags(var/id)
@@ -200,18 +200,18 @@ GLOBAL_LIST_EMPTY(faction_types)
 	return active_antags
 
 /proc/get_faction_by_id(var/f_id)
-	for(var/datum/faction/F in current_factions)
+	for(var/datum/antag_faction/F in current_factions)
 		if(F.id == f_id)
 			return F
 
 /proc/get_factions_by_id(var/f_id)
 	var/list/L = list()
-	for(var/datum/faction/F in current_factions)
+	for(var/datum/antag_faction/F in current_factions)
 		if(F.id == f_id)
 			L.Add(F)
 	return L
 
-/proc/player_is_antag_faction(var/datum/mind/player, var/a_id, var/datum/faction/F)
+/proc/player_is_antag_faction(var/datum/mind/player, var/a_id, var/datum/antag_faction/F)
 	for(var/datum/antagonist/antag in player.antagonist)
 		if((!a_id || antag.id == a_id) && antag.faction == F)
 			return TRUE
@@ -219,7 +219,7 @@ GLOBAL_LIST_EMPTY(faction_types)
 
 /proc/create_or_get_faction(var/f_id)
 	var/list/factions = list()
-	for(var/datum/faction/F in current_factions)
+	for(var/datum/antag_faction/F in current_factions)
 		if(F.id == f_id)
 			factions.Add(F)
 

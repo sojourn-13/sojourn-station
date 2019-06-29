@@ -76,7 +76,7 @@
 
 
 /obj/item/weapon/implant/excelsior/on_install(var/mob/living/target)
-	var/datum/faction/F = get_faction_by_id(faction_id)
+	var/datum/antag_faction/F = get_faction_by_id(faction_id)
 
 	if(!wearer || !wearer.mind)
 		return

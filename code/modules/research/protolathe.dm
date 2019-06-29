@@ -75,7 +75,7 @@
 		if(materials[f] > 0)
 			var/path = material_stack_type(f)
 			if(path)
-				var/obj/item/stack/S = new f(loc)
+				var/obj/item/stack/S = new path(loc)
 				S.amount = materials[f]
 	..()
 

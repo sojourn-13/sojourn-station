@@ -15,6 +15,11 @@ var/global/list/current_factions = list()
 var/global/list/antag_team_objectives = list()		//List of shared sets of objectives for antag teams
 var/global/list/antag_team_members = list()			//List of the people who are in antag teams
 
+GLOBAL_LIST_EMPTY(factions_list)			//List of active factions.
+GLOBAL_LIST_EMPTY(faxable_factions_list)	//Factions with faxes.
+GLOBAL_LIST_EMPTY(player_factions_list)		//Factions with players in them. Admin factions can have players added.
+GLOBAL_LIST_EMPTY(admin_factions_list)		//Factions with administrative response. All faxes to an admin faction pass through admins first, even with a primary fax.
+
 var/global/list/cable_list = list()					//Index for all cables, so that powernets don't have to look through the entire world all the time
 var/global/list/chemical_reactions_list				//list of all /datum/chemical_reaction datums. Used during chemical reactions
 var/global/list/chemical_reagents_list				//list of all /datum/reagent datums indexed by reagent id. Used by chemistry stuff
@@ -212,6 +217,17 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 	for(var/T in paths)
 		var/datum/job/J = new T
 		joblist[J.title] = J
+
+	//List of factions
+	paths = typesof(/datum/faction)-/datum/faction
+	for(var/T in paths)
+		var/datum/faction/F = new T()
+		GLOB.factions_list[F.name] = F
+		if(F.faxable)
+			GLOB.faxable_factions_list[F.name] = F
+		if(F.admin)
+			GLOB.admin_factions_list[F.name] = F
+		//Player factions don't get loaded here since they have to be done at roundstart.
 
 	//Stashes
 	paths = subtypesof(/datum/stash)

@@ -12,6 +12,6 @@
 	leaders = 1
 
 	faction_id = FACTION_SERBS
-	faction_type = /datum/faction/mercenary
+	faction_type = /datum/antag_faction/mercenary
 
 

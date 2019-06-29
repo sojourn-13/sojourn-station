@@ -6,7 +6,7 @@
 	Discuss your specialties with your team, choose a broad range of weapons that will allow your group to overcome a variety of obstacles. Search the base and load up everything onto your ship which may be useful, you will not be able to easily return here once you depart.<br>\
 	When ready, use the console on your shuttle bridge to depart for Eris. Travelling will take several minutes, and you will be detected before you even arrive, stealth is not an option. Once you arrive, you have a time limit to complete your mission."
 
-/datum/faction/mercenary
+/datum/antag_faction/mercenary
 	id = FACTION_SERBS
 	name = "Serbians"
 	antag = "soldier"
@@ -34,7 +34,7 @@
 
 
 
-/datum/faction/mercenary/create_objectives()
+/datum/antag_faction/mercenary/create_objectives()
 	objectives.Cut()
 	pick_objectives(src, possible_objectives, objective_quantity)
 
@@ -43,7 +43,7 @@
 	..()
 
 
-/datum/faction/mercenary/add_leader(var/datum/antagonist/member, var/announce = TRUE)
+/datum/antag_faction/mercenary/add_leader(var/datum/antagonist/member, var/announce = TRUE)
 	.=..()
 	if (.)
 		//put the commander outfit on
@@ -59,7 +59,7 @@
 /* Special inventory proc for mercenaries. Includes the content of their base and ship. So any loot that they haul
 back to their ship counts for objectives.
 This could potentially return a list of thousands of atoms, but thats fine. Its not as much work as it sounds */
-/datum/faction/mercenary/get_inventory()
+/datum/antag_faction/mercenary/get_inventory()
 	var/list/contents = ..()
 	var/list/search_areas = list(/area/shuttle/mercenary, /area/centcom/merc_base)
 	for (var/a in search_areas)

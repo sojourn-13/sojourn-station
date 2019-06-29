@@ -2,7 +2,7 @@
 	gender = MALE
 	var/datum/species/species //Contains icon generation and language information, set during New().
 	var/datum/species_form/form //Steals the icon generation info from above.
-	var/species_aan = "a"
+	var/species_aan = ""
 	var/species_color_key = "#000000"
 	var/species_name = "Carbon Lifeform"
 	var/list/stomach_contents = list()

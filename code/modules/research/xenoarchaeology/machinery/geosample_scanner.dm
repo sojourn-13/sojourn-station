@@ -270,7 +270,6 @@
 		//create report
 		var/obj/item/weapon/paper/P = new(src)
 		P.name = "[src] report #[++report_num]: [scanned_item.name]"
-		P.stamped = list(/obj/item/weapon/stamp)
 		P.overlays = list("paper_stamped")
 
 		//work out data

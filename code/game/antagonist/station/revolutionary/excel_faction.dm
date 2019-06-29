@@ -1,4 +1,4 @@
-/datum/faction/excelsior
+/datum/antag_faction/excelsior
 	id = FACTION_EXCELSIOR
 	name = "Excelsior"
 	antag = "infiltrator"
@@ -13,10 +13,10 @@
 	hud_indicator = "hudexcelsior"
 
 	possible_antags = list(ROLE_EXCELSIOR_REV)
-	verbs = list(/datum/faction/excelsior/proc/communicate_verb)
+	verbs = list(/datum/antag_faction/excelsior/proc/communicate_verb)
 
 
-/datum/faction/excelsior/create_objectives()
+/datum/antag_faction/excelsior/create_objectives()
 	objectives.Cut()
 
 
@@ -61,7 +61,7 @@
 
 	.=..()
 
-/datum/faction/excelsior/proc/communicate_verb()
+/datum/antag_faction/excelsior/proc/communicate_verb()
 
 	set name = "Excelsior comms"
 	set category = "Cybernetics"
@@ -69,7 +69,7 @@
 	if(!ishuman(usr))
 		return
 
-	var/datum/faction/F = get_faction_by_id(FACTION_EXCELSIOR)
+	var/datum/antag_faction/F = get_faction_by_id(FACTION_EXCELSIOR)
 
 	if(!F)
 		return

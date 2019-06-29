@@ -16,10 +16,10 @@
 		errors |= MANIFEST_ERROR_ITEM
 
 /obj/item/weapon/paper/manifest/proc/is_approved()
-	return stamped && stamped.len && !is_denied()
+	return stamped && !is_denied()
 
 /obj/item/weapon/paper/manifest/proc/is_denied()
-	return stamped && (/obj/item/weapon/stamp/denied in stamped)
+	return stamped & STAMP_DENIAL
 
 /datum/supply_order
 	var/id

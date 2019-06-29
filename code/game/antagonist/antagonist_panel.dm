@@ -121,21 +121,21 @@
 
 	else if(href_list["add_faction"] && faction_id && !faction)
 		var/list/L = list()
-		for(var/datum/faction/F in current_factions)
+		for(var/datum/antag_faction/F in current_factions)
 			L["[F.name], faction of [F.antag] ([F.id])"] = F
 
 		L["CANCEL"] = null
 
 		var/f_id = input("Select faction for this antagonist.", "Select faction", "CANCEL") in L
 
-		var/datum/faction/F = L[f_id]
+		var/datum/antag_faction/F = L[f_id]
 		if(F)
 			F.add_member(src)
 
 
 	else if(href_list["new_faction"] && faction_id && !faction)
 		var/t = GLOB.faction_types[faction_id]
-		var/datum/faction/F = new t
+		var/datum/antag_faction/F = new t
 		F.customize()
 		F.add_leader(src)
 

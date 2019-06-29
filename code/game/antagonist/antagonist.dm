@@ -25,7 +25,7 @@
 	var/selectable = TRUE
 
 	// Faction data.
-	var/datum/faction/faction = null
+	var/datum/antag_faction/faction = null
 	var/faction_id = null
 
 	//For station antags, access that gets added to their existing ID

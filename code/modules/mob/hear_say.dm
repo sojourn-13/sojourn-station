@@ -51,8 +51,8 @@
 	var/time = say_timestamp()
 	to_chat(src,"[time] [message]")
 
-/mob/proc/hear_radio(var/message, var/verb="says", var/datum/language/language=null,\
-		var/part_a, var/part_b, var/mob/speaker = null, var/hard_to_hear = 0, var/voice_name ="")
+/mob/proc/hear_radio(var/message, var/rverb="says", var/datum/language/language=null,\
+		var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0, var/voice_name ="")
 
 	if(!client)
 		return
@@ -61,21 +61,21 @@
 
 	if(language)
 		if(!say_understands(speaker,language) || language.name == LANGUAGE_COMMON) //Check if we understand the message. If so, add the language name after the verb. Don't do this for Galactic Common.
-			message = language.format_message_radio(message, verb)
+			message = language.format_message_radio(message, rverb)
 		else
 			var/nverb = null
 			switch(src.get_preference_value(/datum/client_preference/language_display))
 				if(GLOB.PREF_FULL) // Full language name
-					nverb = "[verb] in [language.name]"
+					nverb = "[rverb] in [language.name]"
 				if(GLOB.PREF_SHORTHAND) //Shorthand codes
-					nverb = "[verb] ([language.shorthand])"
+					nverb = "[rverb] ([language.shorthand])"
 				if(GLOB.PREF_OFF)//Regular output
-					nverb = verb
+					nverb = rverb
 			message = language.format_message_radio(message, nverb)
 	else
-		message = "[verb], <span class=\"body\">\"[message]\"</span>"
+		message = "[rverb], <span class=\"body\">\"[message]\"</span>"
 
-	on_hear_radio(part_a, speaker_name, part_b, message)
+	on_hear_radio(part_a, speaker_name, part_b, message, part_c)
 
 /mob/proc/get_hear_name(var/mob/speaker, hard_to_hear, voice_name)
 	if(hard_to_hear)
@@ -157,13 +157,13 @@
 /proc/say_timestamp()
 	return "<span class='say_quote'>\[[stationtime2text()]\]</span>"
 
-/mob/proc/on_hear_radio(part_a, speaker_name, part_b, message)
-	to_chat(src,"[part_a][speaker_name][part_b][message]")
+/mob/proc/on_hear_radio(part_a, speaker_name, part_b, message, part_c)
+	to_chat(src,"[part_a][speaker_name][part_b][message][part_c]")
 
 
-/mob/living/silicon/on_hear_radio(part_a, speaker_name, part_b, message)
+/mob/living/silicon/on_hear_radio(part_a, speaker_name, part_b, message, part_c)
 	var/time = say_timestamp()
-	to_chat(src,"[time][part_a][speaker_name][part_b][message]")
+	to_chat(src,"[time][part_a][speaker_name][part_b][message][part_c]")
 
 
 /mob/proc/hear_signlang(var/message, var/verb = "gestures", var/datum/language/language, var/mob/speaker = null)

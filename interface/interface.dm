@@ -13,7 +13,7 @@
 
 /client/verb/discordurl()
 	set name = "discordurl"
-	set desc = "Visit the Discordia Github."
+	set desc = "Visit the Discord Server."
 	set hidden = 1
 	if( config.discordurl )
 		if(alert("This will open the Discordia Discord  invite in your browser. Are you sure?",,"Yes","No")=="No")

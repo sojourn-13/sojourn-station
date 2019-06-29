@@ -23,7 +23,7 @@
 	var/stamps		//The (text for the) stamps on the paper.
 	var/fields		//Amount of user created fields
 	var/free_space = MAX_PAPER_MESSAGE_LEN
-	var/list/stamped
+	var/stamped		//Bitfield of stamp possibilities.
 	var/list/ico[0]      //Icons and
 	var/list/offset_x[0] //offsets stored for later
 	var/list/offset_y[0] //usage by the photocopier
@@ -212,7 +212,6 @@
 	info = null
 	stamps = null
 	free_space = MAX_PAPER_MESSAGE_LEN
-	stamped = list()
 	overlays.Cut()
 	updateinfolinks()
 	update_icon()
@@ -459,39 +458,35 @@
 	else if(istype(P, /obj/item/weapon/stamp))
 		if((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
 			return
+		var/obj/item/weapon/stamp/S = P
 		playsound(src,'sound/effects/Stamp.ogg',40,1)
-		stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
-
-		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-		var/{x; y;}
-		if(istype(P, /obj/item/weapon/stamp/captain))
-			x = rand(-2, 0)
-			y = rand(-1, 2)
-		else
-			x = rand(-2, 2)
-			y = rand(-3, 2)
-		offset_x += x
-		offset_y += y
-		stampoverlay.pixel_x = x
-		stampoverlay.pixel_y = y
-
-		if(!ico)
-			ico = new
-		ico += "paper_[P.icon_state]"
-		stampoverlay.icon_state = "paper_[P.icon_state]"
-
-		if(!stamped)
-			stamped = new
-		stamped += P.type
-		overlays += stampoverlay
-
-		user << SPAN_NOTICE("You stamp the paper with your rubber stamp.")
+		stamp(S.stamp_text ? S.stamp_text : "This paper has been stamped with the [P.name].", "paper_[P.icon_state]", S.xplus, S.xminus, S.yplus, S.yminus)
+		stamped &= S.stamp_flags
+		user << SPAN_NOTICE("You stamp the paper with your [S.name].")
 
 	else if(istype(P, /obj/item/weapon/flame))
 		burnpaper(P, user)
 
 	add_fingerprint(user)
 	return
+
+/obj/item/weapon/paper/proc/stamp(var/text, var/icon_state = "paper_stamp-dots", var/xp = 2, var/xm = -2, var/yp = 2, var/ym = -3, var/color)
+	stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>[text]</i>"
+
+	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi', icon_state)
+	stampoverlay.color = color
+	var/x = rand(xm, xp)
+	var/y = rand(ym, yp)
+	offset_x += x
+	offset_y += y
+	stampoverlay.pixel_x = x
+	stampoverlay.pixel_y = y
+
+	if(!ico)
+		ico = new
+	ico += icon_state
+
+	overlays += stampoverlay
 
 /*
  * Premade paper

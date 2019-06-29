@@ -3,7 +3,7 @@
 	name = "excelsior"
 	role_id = ROLE_EXCELSIOR_REV
 	faction_id = FACTION_EXCELSIOR
-	faction_type = /datum/faction/excelsior
+	faction_type = /datum/antag_faction/excelsior
 	//min_cost = 10
 	//max_cost = 20
 

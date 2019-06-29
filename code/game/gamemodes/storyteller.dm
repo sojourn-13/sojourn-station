@@ -183,7 +183,7 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 			for(var/datum/objective/O in A.objectives)
 				O.update_completion()
 
-	for(var/datum/faction/F in current_factions)
+	for(var/datum/antag_faction/F in current_factions)
 		for(var/datum/objective/O in F.objectives)
 			O.update_completion()
 

@@ -302,6 +302,7 @@
 		owner.verbs -= /mob/living/carbon/human/proc/undislocate
 
 /obj/item/organ/external/proc/setBleeding()
+	if(!owner) return FALSE
 	if(robotic >= ORGAN_ROBOT || owner.species.flags & NO_BLOOD)
 		return FALSE
 	status |= ORGAN_BLEEDING

@@ -219,12 +219,12 @@ proc/slur(phrase)
 		newphrase+="[newletter]";counter-=1
 	return html_encode(newphrase)
 
-/proc/stutter(n)
-	n = length(n)//length of the entire word
+/proc/stutter(phrase)
+	var/n = length(phrase)//length of the entire word
 	var/list/t = list()
 	var/p = 1//1 is the start of any word
 	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
-		var/n_letter = copytext(n, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
+		var/n_letter = copytext(phrase, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
 		if (prob(80) && (lowertext(n_letter) in LIST_OF_CONSONANT))
 			if (prob(10))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.

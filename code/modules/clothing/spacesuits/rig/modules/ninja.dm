@@ -37,12 +37,22 @@
 
 	var/mob/living/carbon/human/H = holder.wearer
 
-	H << "<font color='blue'><b>You are now invisible to normal detection.</b></font>"
-	H.invisibility = INVISIBILITY_LEVEL_TWO
+	if(FALSE) //TODO: INSERT NINJA FULL SKILL CHECK HERE
+		to_chat(H, "<font color='blue'><b>You are now invisible to normal detection.</b></font>")
+		H.invisibility = INVISIBILITY_LEVEL_TWO
+		H.alpha = 64
+	else if(FALSE) //TODO: INSERT NINJA NOVICE SKILL CHECK HERE
+		to_chat(H, "<font color='blue'<b>You are now cloaked to most observation.</b></font>")
+		H.invisibility = INVISIBILITY_WEAK
+		H.alpha = 8
+	else
+		to_chat(H, "<font color='blue'<b>You are now blending into your surroundings.</b></font>")
+		H.invisibility = INVISIBILITY_WEAK
+		H.alpha = 32
 
 	anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)
 
-	H.visible_message("[H.name] vanishes into thin air!",1)
+	H.visible_message("[H.name] melds into the shadows into thin air!",1)
 
 /obj/item/rig_module/stealth_field/deactivate()
 
@@ -53,6 +63,7 @@
 
 	H << SPAN_DANGER("You are now visible.")
 	H.invisibility = 0
+	H.alpha = 255
 
 	anim(get_turf(H), H,'icons/mob/mob.dmi',,"uncloak",,H.dir)
 	anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)

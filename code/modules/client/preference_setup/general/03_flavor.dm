@@ -40,14 +40,14 @@
 
 /datum/category_item/player_setup_item/physical/flavor/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(href_list["flavor_text"] && href_list["flavor_text"] == "open")
-		var/msg = sanitize(input(usr,"Give a general description of your character. This will be shown regardless of clothing.","Flavor Text", pref.flavor_text) as message|null, extra = 0)
+		var/msg = sanitize(input(usr,"Give a general description of your character. This will be shown regardless of clothing.","Flavor Text", html_decode(pref.flavor_text)) as message|null, extra = 0)
 		if(CanUseTopic(user))
 			if(msg)
 				pref.flavor_text = msg
 		return TOPIC_HANDLED
 
 	if(href_list["ooc_text"] && href_list["ooc_text"] == "open")
-		var/msg = sanitize(input(usr,"Enter your OOC preferences. This will be shown regardless of clothing.","OOC Notes", pref.ooc_text) as message|null, extra = 0)
+		var/msg = sanitize(input(usr,"Enter your OOC preferences. This will be shown regardless of clothing.","OOC Notes", html_decode(pref.ooc_text)) as message|null, extra = 0)
 		if(CanUseTopic(user))
 			if(msg)
 				pref.ooc_text = msg

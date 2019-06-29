@@ -365,7 +365,7 @@ proc/get_radio_key_from_channel(var/channel)
 	..()
 
 
-/mob/living/hear_radio(message, verb="says", datum/language/language=null, part_a, part_b, speaker = null, hard_to_hear = 0, voice_name ="")
+/mob/living/hear_radio(message, verb="says", datum/language/language=null, part_a, part_b, part_c, speaker = null, hard_to_hear = 0, voice_name ="")
 	if(!client)
 		return
 
