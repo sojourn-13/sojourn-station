@@ -186,6 +186,14 @@
 	required_reagents = list("silicon" = 1, "potassium" = 1, "ammonia" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/carthatoline
+	name = "Carthatoline"
+	id = "carthatoline"
+	result = "carthatoline"
+	required_reagents = list("anti_toxin" = 1, "toxin" = 1, "plasma" = 0.1)
+	catalysts = list("plasma" = 1)
+	result_amount = 2
+
 /datum/chemical_reaction/tramadol
 	name = "Tramadol"
 	id = "tramadol"

@@ -71,6 +71,25 @@
 	M.adjust_hallucination(-9 * removed)
 	M.adjustToxLoss(-4 * removed)
 
+/datum/reagent/carthatoline
+	name = "Carthatoline"
+	id = "carthatoline"
+	description = "Carthatoline is a strong evacuant used to treat severe poisoning."
+	reagent_state = LIQUID
+	color = "#225722"
+	scannable = 1
+
+/datum/reagent/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	M.adjustToxLoss(-8 * removed)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		if(istype(L))
+			if(L.robotic >= ORGAN_ROBOT)
+				return
+			if(L.damage > 0)
+				L.damage = max(L.damage - 2 * removed, 0)
+
 /datum/reagent/dexalin
 	name = "Dexalin"
 	id = "dexalin"
