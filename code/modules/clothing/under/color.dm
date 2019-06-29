@@ -33,7 +33,7 @@
 /obj/item/clothing/under/orange
 	name = "orange jumpsuit"
 	initial_name = "orange jumpsuit"
-	desc = "A generic orange jumpsuit used for prisoners.Its suit sensors are stuck in the \"Fully On\" position."
+	desc = "A generic orange jumpsuit used for prisoners. Its suit sensors are stuck in the \"Fully On\" position."
 	icon_state = "orange"
 	item_state = "o_suit"
 
