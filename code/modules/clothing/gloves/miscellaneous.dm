@@ -34,7 +34,7 @@
 
 /obj/item/clothing/gloves/thick
 	desc = "A pair of fire-resistant black work gloves."
-	name = "black gloves"
+	name = "thick gloves"
 	icon_state = "black"
 	item_state = "bgloves"
 	siemens_coefficient = 0.50

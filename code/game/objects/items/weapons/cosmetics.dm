@@ -1,7 +1,7 @@
 /obj/item/weapon/lipstick
 	gender = PLURAL
 	name = "red lipstick"
-	desc = "A generic brand of lipstick. You can wipe off lipstick with paper"
+	desc = "A generic brand of red lipstick. Can be wiped off with paper."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "lipstick"
 	w_class = ITEM_SIZE_TINY
@@ -12,19 +12,21 @@
 
 /obj/item/weapon/lipstick/purple
 	name = "purple lipstick"
+	desc = "A generic brand of purple lipstick. Can be wiped off with paper."
 	colour = "purple"
 
 /obj/item/weapon/lipstick/jade
 	name = "jade lipstick"
+	desc = "A generic brand of jade lipstick. Can be wiped off with paper."
 	colour = "jade"
 
 /obj/item/weapon/lipstick/black
 	name = "black lipstick"
+	desc = "A generic brand of black lipstick. Can be wiped off with paper."
 	colour = "black"
 
-
 /obj/item/weapon/lipstick/random
-	name = "lipstick"
+	name = "random lipstick"
 
 /obj/item/weapon/lipstick/random/New()
 	colour = pick("red","purple","jade","black")
@@ -72,7 +74,7 @@
 
 /obj/item/weapon/haircomb //sparklysheep's comb
 	name = "purple comb"
-	desc = "A pristine purple comb made from flexible plastic. You can wipe off lipstick with paper"
+	desc = "A pristine purple comb made from flexible plastic."
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 	icon = 'icons/obj/items.dmi'

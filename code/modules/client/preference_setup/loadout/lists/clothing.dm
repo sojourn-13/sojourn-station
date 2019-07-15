@@ -15,3 +15,9 @@
 	path = /obj/item/clothing/mask/bandana
 	slot = slot_wear_mask
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/clothing/mask
+	display_name = "sterile mask"
+	path = /obj/item/clothing/mask/surgical
+	slot = slot_wear_mask
+	cost = 2

@@ -26,14 +26,14 @@
 	process_med_hud(M, 1)
 
 /obj/item/clothing/glasses/hud/security
-	name = "Security HUD"
+	name = "security HUD"
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their ID status and security records."
 	icon_state = "securityhud"
 	body_parts_covered = 0
 	var/global/list/jobs[0]
 
 /obj/item/clothing/glasses/hud/security/jensenshades
-	name = "Augmented shades"
+	name = "augmented shades"
 	desc = "Polarized bioneural eyewear, designed to augment your vision."
 	icon_state = "jensenshades"
 	item_state = "jensenshades"
@@ -43,8 +43,8 @@
 /obj/item/clothing/glasses/hud/security/process_hud(var/mob/M)
 	process_sec_hud(M, 1)
 
-/obj/item/clothing/glasses/sunglasses/sechud
-	name = "HUDSunglasses"
+/obj/item/clothing/glasses/sechud
+	name = "HUD sunglasses"
 	desc = "Sunglasses with a HUD."
 	icon_state = "sunhud"
 	prescription = TRUE
@@ -54,7 +54,7 @@
 		src.hud = new/obj/item/clothing/glasses/hud/security(src)
 		return
 
-/obj/item/clothing/glasses/sunglasses/sechud/tactical
+/obj/item/clothing/glasses/sechud/tactical
 	name = "Ironhammer tactical HUD"
 	desc = "Flash-resistant goggles with inbuilt combat and security information."
 	icon_state = "swatgoggles"

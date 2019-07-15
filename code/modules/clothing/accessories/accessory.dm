@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory
-	name = "tie"
-	desc = "A neosilk clip-on tie."
+	name = "blue tie"
+	desc = "A neosilk clip-on tie with a blue design."
 	icon = 'icons/inventory/accessory/icon.dmi'
 	icon_state = "bluetie"
 	item_state = ""	//no inhands
@@ -72,18 +72,60 @@
 		return	//we aren't an object on the ground so don't call parent
 	..()
 
-/obj/item/clothing/accessory/blue
-	name = "blue tie"
-	icon_state = "bluetie"
-
-/obj/item/clothing/accessory/red
+/obj/item/clothing/accessory/tie/red
 	name = "red tie"
+	desc = "A neosilk clip-on tie with a red design."
 	icon_state = "redtie"
 
-/obj/item/clothing/accessory/horrible
-	name = "horrible tie"
-	desc = "A neosilk clip-on tie. This one is disgusting."
+/obj/item/clothing/accessory/tie/yellowbig
+	name = "yellow large tie"
+	desc = "A neosilk clip-on tie with a gaudy yellow design."
 	icon_state = "horribletie"
+
+/obj/item/clothing/accessory/tie/black
+	name = "black tie"
+	desc = "A neosilk clip-on tie with a black design."
+	icon_state = "blacktie"
+
+/obj/item/clothing/accessory/tie/blueclip
+	name = "blue clip tie"
+	desc = "A neosilk clip-on tie with a striped blue design and clip."
+	icon_state = "bluecliptie"
+
+/obj/item/clothing/accessory/tie/bluestriped
+	name = "blue striped tie"
+	desc = "A neosilk clip-on tie with a striped blue design."
+	icon_state = "bluelongtie"
+
+/obj/item/clothing/accessory/tie/navy
+	name = "navy tie"
+	desc = "A neosilk clip-on tie with a navy design."
+	icon_state = "navytie"
+
+/obj/item/clothing/accessory/tie/dgreen
+	name = "dark green tie"
+	desc = "A neosilk clip-on tie with a dark green design."
+	icon_state = "dgreentie"
+
+/obj/item/clothing/accessory/tie/redclip
+	name = "red clip tie"
+	desc = "A neosilk clip-on tie with a striped red design and clip."
+	icon_state = "redcliptie"
+
+/obj/item/clothing/accessory/tie/redstriped
+	name = "red striped tie"
+	desc = "A neosilk clip-on tie with a striped red design."
+	icon_state = "redlongtie"
+
+/obj/item/clothing/accessory/tie/white
+	name = "white tie"
+	desc = "A neosilk clip-on tie with a white design."
+	icon_state = "whitetie"
+
+/obj/item/clothing/accessory/tie/yellow
+	name = "yellow tie"
+	desc = "A neosilk clip-on tie with a yellow design."
+	icon_state = "yellowtie"
 
 /obj/item/clothing/accessory/stethoscope
 	name = "stethoscope"

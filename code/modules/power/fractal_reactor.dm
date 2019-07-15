@@ -4,7 +4,7 @@
 // ###############################################################################
 
 /obj/machinery/power/fractal_reactor
-	name = "Fractal Energy Reactor"
+	name = "fractal energy reactor"
 	desc = "This thing drains power from fractal-subspace." // (DEBUG ITEM: INFINITE POWERSOURCE FOR MAP TESTING. CONTACT DEVELOPERS IF FOUND.)"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "tracker" //ICON stolen from solar tracker. There is no need to make new texture for debug item

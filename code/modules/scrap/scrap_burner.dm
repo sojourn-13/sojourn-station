@@ -11,7 +11,7 @@
 	sort_string = "JBAAD"
 
 /obj/machinery/power/port_gen/pacman/scrap
-	name = "Scrapman Portable Generator"
+	name = "S.C.R.A.P.M.A.N portable generator"
 	icon_state = "portgen1"                 // Get a spriter to do something with this perhaps.
 	sheet_name = "refined scrap"
 	sheet_path = /obj/item/stack/sheet/refined_scrap

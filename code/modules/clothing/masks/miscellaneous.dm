@@ -42,14 +42,14 @@
 
 /obj/item/clothing/mask/fakemoustache
 	name = "fake moustache"
-	desc = "Warning: moustache is fake."
+	desc = "A totally inconspicuous imitation moustache."
 	icon_state = "fake-moustache"
 	flags_inv = HIDEFACE
 	body_parts_covered = 0
 
 /obj/item/clothing/mask/snorkel
 	name = "Snorkel"
-	desc = "For the Swimming Savant."
+	desc = "Diving goggles complete with an attached air tube."
 	icon_state = "snorkel"
 	flags_inv = HIDEFACE
 	body_parts_covered = 0
@@ -169,7 +169,7 @@
 // Bandanas below
 /obj/item/clothing/mask/bandana
 	name = "black bandana"
-	desc = "A fine bandana with nanotech lining. Can be worn on the head or face."
+	desc = "A black bandana with nanotech lining. Can be worn on the head or face."
 	flags_inv = HIDEFACE
 	slot_flags = SLOT_MASK|SLOT_HEAD
 	body_parts_covered = FACE
@@ -194,46 +194,54 @@
 
 /obj/item/clothing/mask/bandana/red
 	name = "red bandana"
+	desc = "A red bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandred"
 	item_state = "bandred"
 
 /obj/item/clothing/mask/bandana/blue
 	name = "blue bandana"
+	desc = "A blue bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandblue"
 	item_state = "bandblue"
 
 /obj/item/clothing/mask/bandana/green
 	name = "green bandana"
+	desc = "A green bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandgreen"
 	item_state = "bandgreen"
 
-/obj/item/clothing/mask/bandana/gold
-	name = "gold bandana"
+/obj/item/clothing/mask/bandana/yellow
+	name = "yellow bandana"
+	desc = "A yellow bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandgold"
 	item_state = "bandgold"
 
 /obj/item/clothing/mask/bandana/orange
 	name = "orange bandana"
+	desc = "A orange bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandorange"
 	item_state = "bandorange"
 
 /obj/item/clothing/mask/bandana/purple
 	name = "purple bandana"
+	desc = "A purple bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandpurple"
 	item_state = "bandpurple"
 
 /obj/item/clothing/mask/bandana/botany
 	name = "botany bandana"
+	desc = "A botany bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandbotany"
 	item_state = "bandbotany"
 
 /obj/item/clothing/mask/bandana/camo
 	name = "camo bandana"
+	desc = "A tactical camouflage bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandcamo"
 	item_state = "bandcamo"
 
 /obj/item/clothing/mask/bandana/skull
 	name = "skull bandana"
-	desc = "A fine black bandana with nanotech lining and a skull emblem. Can be worn on the head or face."
+	desc = "A skull-pattern bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandskull"
 	item_state = "bandskull"

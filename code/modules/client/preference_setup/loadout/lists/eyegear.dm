@@ -5,46 +5,31 @@
 	slot = slot_glasses
 	sort_category = "Glasses and Eyewear"
 
-/datum/gear/eyes/glasses
-	display_name = "glasses, prescription"
-	path = /obj/item/clothing/glasses/regular
-
-/datum/gear/eyes/glasses/green
-	display_name = "glasses, green"
-	path = /obj/item/clothing/glasses/gglasses
-
-/datum/gear/eyes/glasses/prescriptionhipster
-	display_name = "glasses, hipster"
-	path = /obj/item/clothing/glasses/regular/hipster
-
 /datum/gear/eyes/glasses/monocle
 	display_name = "monocle"
 	path = /obj/item/clothing/glasses/monocle
 
-/datum/gear/eyes/scanning_goggles
-	display_name = "scanning goggles"
-	path = /obj/item/clothing/glasses/regular/scanners
-
 /datum/gear/eyes/sciencegoggles
-	display_name = "Science goggles"
+	display_name = "science goggles"
 	path = /obj/item/clothing/glasses/powered/science
+	allowed_roles = list("Moebius Expedition Overseer","Moebius Scientist","Moebius Roboticist")
 
 /datum/gear/eyes/security
-	display_name = "Security HUD"
+	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security
 	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant")
 
 /datum/gear/eyes/medical
-	display_name = "Medical HUD"
+	display_name = "medical HUD"
 	path = /obj/item/clothing/glasses/hud/health
 	allowed_roles = list("Moebius Doctor","Moebius Biolab Officer","Moebius Chemist","Moebius Paramedic")
 
-/datum/gear/eyes/shades
-	display_name = "sunglasses, fat"
-	path = /obj/item/clothing/glasses/sunglasses/big
-	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant","Captain","First Officer","Quartermaster","Ironhammer Inspector")
+/datum/gear/eyes/regular
+	display_name = "glasses selection"
+	path = /obj/item/clothing/glasses/regular
+	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/eyes/shades/prescriptionsun
-	display_name = "sunglasses, prescription"
-	path = /obj/item/clothing/glasses/sunglasses/prescription
-	cost = 2
+/datum/gear/eyes/shades
+	display_name = "sunglasses selection"
+	path = /obj/item/clothing/glasses/sunglasses
+	flags = GEAR_HAS_TYPE_SELECTION

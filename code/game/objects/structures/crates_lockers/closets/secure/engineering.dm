@@ -10,7 +10,7 @@
 		new /obj/item/weapon/storage/backpack/satchel/eng(src)
 	new /obj/item/blueprints(src)
 	new /obj/item/clothing/under/rank/exultant(src)
-	new /obj/item/clothing/head/hardhat/white(src)
+	new /obj/item/clothing/head/firefighter/chief(src)
 	new /obj/item/clothing/head/welding(src)
 	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/clothing/shoes/color/brown(src)

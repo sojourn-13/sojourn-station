@@ -1,5 +1,5 @@
 /obj/machinery/portable_atmospherics/powered/scrubber
-	name = "Portable Air Scrubber"
+	name = "portable air scrubber"
 
 	icon = 'icons/obj/atmos.dmi'
 	icon_state = "pscrubber:0"
@@ -143,7 +143,7 @@
 
 //Huge scrubber
 /obj/machinery/portable_atmospherics/powered/scrubber/huge
-	name = "Huge Air Scrubber"
+	name = "huge air scrubber"
 	icon_state = "scrubber:0"
 	anchored = 1
 	volume = 50000
@@ -230,7 +230,7 @@
 
 
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary
-	name = "Stationary Air Scrubber"
+	name = "stationary air scrubber"
 
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/attackby(var/obj/item/I as obj, var/mob/user as mob)
 	if(QUALITY_BOLT_TURNING in I.tool_qualities)

@@ -205,37 +205,37 @@
 //Eris signs
 
 /obj/structure/sign/atmos_co2
-	name = "CO2 warning sign"
+	name = "carbon dioxide warning sign"
 	desc = "WARNING! CO2 flow tube. Ensure the flow is disengaged before working."
 	icon_state = "atmos_co2"
 
 /obj/structure/sign/atmos_n2o
-	name = "N2O warning sign"
+	name = "nitrous oxide warning sign"
 	desc = "WARNING! N2O flow tube. Ensure the flow is disengaged before working."
 	icon_state = "atmos_n2o"
 
 /obj/structure/sign/atmos_plasma
-	name = "Plasma warning sign"
+	name = "plasma warning sign"
 	desc = "WARNING! Plasma flow tube. Ensure the flow is disengaged before working."
 	icon_state = "atmos_plasma"
 
 /obj/structure/sign/atmos_n2
-	name = "N2 warning sign"
+	name = "nitrogen warning sign"
 	desc = "WARNING! N2 flow tube. Ensure the flow is disengaged before working."
 	icon_state = "atmos_n2"
 
 /obj/structure/sign/atmos_o2
-	name = "O2 warning sign"
+	name = "oxygen warning sign"
 	desc = "WARNING! O2 flow tube. Ensure the flow is disengaged before working."
 	icon_state = "atmos_o2"
 
 /obj/structure/sign/atmos_air
-	name = "Air warning sign"
+	name = "air warning sign"
 	desc = "WARNING! Air flow tube. Ensure the flow is disengaged before working."
 	icon_state = "atmos_air"
 
 /obj/structure/sign/atmos_waste
-	name = "Atmos waste warning sign"
+	name = "atmos waste warning sign"
 	desc = "WARNING! Waste flow tube. Ensure the flow is disengaged before working."
 	icon_state = "atmos_waste"
 

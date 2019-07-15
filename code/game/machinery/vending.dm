@@ -959,7 +959,7 @@
 	auto_price = FALSE
 
 /obj/machinery/vending/coffee
-	name = "Hot Drinks machine"
+	name = "hot drinks machine"
 	desc = "A vending machine which dispenses hot drinks."
 	product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the galaxy.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our new chocolate!"
 	icon_state = "coffee"
@@ -1061,7 +1061,7 @@
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/cigarette
-	name = "Cigarette machine" //OCD had to be uppercase to look nice with the new formating
+	name = "cigarette machine" //OCD had to be uppercase to look nice with the new formating
 	desc = "If you want to get cancer, might as well do it in style!"
 	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!"
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs."

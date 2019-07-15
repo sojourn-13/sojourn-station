@@ -116,7 +116,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 // TODO: Make this an actual /obj/machinery/computer that can be crafted from circuit boards and such
 // It is August 22nd, 2012... This TODO has already been here for months.. I wonder how long it'll last before someone does something about it.
 /obj/machinery/librarycomp
-	name = "Check-In/Out Computer"
+	name = "check-in/out computer"
 	icon = 'icons/obj/library.dmi'
 	icon_state = "computer"
 	anchored = 1
@@ -443,7 +443,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
  * Book binder
  */
 /obj/machinery/bookbinder
-	name = "Book Binder"
+	name = "book binder"
 	icon = 'icons/obj/library.dmi'
 	icon_state = "binder"
 	anchored = 1

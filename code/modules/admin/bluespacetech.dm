@@ -32,11 +32,11 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	bst.equip_to_slot_or_del(new /obj/item/device/radio/headset/ert/bst(bst), slot_l_ear)
 	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/holding/bst(bst), slot_back)
 	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(bst.back), slot_in_backpack)
-	bst.equip_to_slot_or_del(new /obj/item/clothing/shoes/black/bst(bst), slot_shoes)
+	bst.equip_to_slot_or_del(new /obj/item/clothing/shoes/bst(bst), slot_shoes)
 	bst.equip_to_slot_or_del(new /obj/item/clothing/head/beret(bst), slot_head)
-	bst.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/bst(bst), slot_glasses)
+	bst.equip_to_slot_or_del(new /obj/item/clothing/glasses/bst(bst), slot_glasses)
 	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full/bst(bst), slot_belt)
-	bst.equip_to_slot_or_del(new /obj/item/clothing/gloves/color/white/bst(bst), slot_gloves)
+	bst.equip_to_slot_or_del(new /obj/item/clothing/gloves/bst(bst), slot_gloves)
 
 	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/box/ids(bst.back), slot_in_backpack)
 	bst.equip_to_slot_or_del(new /obj/item/device/t_scanner(bst.back), slot_in_backpack)
@@ -220,13 +220,13 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	else
 		..()
 
-/obj/item/clothing/gloves/color/white/bst
+/obj/item/clothing/gloves/bst
 	name = "bluespace technician's gloves"
 	desc = "A pair of modified gloves. The letters 'BST' are stamped on the side."
 	siemens_coefficient = 0
 	permeability_coefficient = 0
 
-/obj/item/clothing/gloves/color/white/bst/attack_hand()
+/obj/item/clothing/gloves/bst/attack_hand()
 	if(!usr)
 		return
 	if(!isbst(usr))
@@ -235,14 +235,14 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	else
 		..()
 
-/obj/item/clothing/glasses/sunglasses/bst
+/obj/item/clothing/glasses/bst
 	name = "bluespace technician's glasses"
 	desc = "A pair of modified sunglasses. The word 'BST' is stamped on the side."
 	vision_flags = (SEE_TURFS|SEE_OBJS|SEE_MOBS)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	flash_protection = FLASH_PROTECTION_MAJOR
 
-/obj/item/clothing/glasses/sunglasses/bst/verb/toggle_xray(mode in list("X-Ray without Lighting", "X-Ray with Lighting", "Normal"))
+/obj/item/clothing/glasses/bst/verb/toggle_xray(mode in list("X-Ray without Lighting", "X-Ray with Lighting", "Normal"))
 	set name = "Change Vision Mode"
 	set desc = "Changes your glasses' vision mode."
 	set category = "BST"
@@ -261,7 +261,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 
 	usr << "<span class='notice'>\The [src]'s vision mode is now <b>[mode]</b>.</span>"
 
-/obj/item/clothing/glasses/sunglasses/bst/attack_hand()
+/obj/item/clothing/glasses/bst/attack_hand()
 	if(!usr)
 		return
 	if(!isbst(usr))
@@ -270,13 +270,13 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	else
 		..()
 
-/obj/item/clothing/shoes/black/bst
+/obj/item/clothing/shoes/bst
 	name = "bluespace technician's shoes"
 	desc = "A pair of black shoes with extra grip. The letters 'BST' are stamped on the side."
 	icon_state = "black"
 	item_flags = NOSLIP
 
-/obj/item/clothing/shoes/black/bst/attack_hand()
+/obj/item/clothing/shoes/bst/attack_hand()
 	if(!usr)
 		return
 	if(!isbst(usr))

@@ -76,14 +76,6 @@
 	item_state = "janitor"
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 30, rad = 0)
 
-
-/obj/item/clothing/under/librarian
-	name = "sensible suit"
-	desc = "It's very... sensible."
-	icon_state = "red_suit"
-	item_state = "lawyer_red"
-
-
 /obj/item/clothing/under/mime
 	name = "mime's outfit"
 	desc = "It's not very colourful."

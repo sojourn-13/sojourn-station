@@ -69,7 +69,7 @@
 		/obj/item/device/paicard,
 		/obj/item/device/violin,
 		/obj/item/weapon/storage/belt/utility/full,
-		/obj/item/clothing/accessory/horrible)
+		/obj/item/clothing/accessory/tie/yellow)
 
 	if(!ispath(gift_type,/obj/item))	return
 

@@ -55,7 +55,7 @@
 *   Xenobio Slime Fridge
 ********************/
 /obj/machinery/smartfridge/secure/extract
-	name = "\improper Slime Extract Storage"
+	name = "\improper slime extract SmartFridge"
 	desc = "A refrigerated storage unit for slime extracts"
 	req_access = list(access_moebius)
 
@@ -70,7 +70,7 @@
 *   Chemistry Medicine Storage
 ********************/
 /obj/machinery/smartfridge/secure/medbay
-	name = "\improper Refrigerated Medicine Storage"
+	name = "\improper medicine SmartFridge"
 	desc = "A refrigerated storage unit for storing medicine and chemicals."
 	icon_state = "smartfridge" //To fix the icon in the map editor.
 	icon_on = "smartfridge_chem"
@@ -90,7 +90,7 @@
 *   Virus Storage
 ********************/
 /obj/machinery/smartfridge/secure/virology
-	name = "\improper Refrigerated Virus Storage"
+	name = "\improper virus SmartFridge"
 	desc = "A refrigerated storage unit for storing viral material."
 	req_access = list(access_virology)
 	icon_state = "smartfridge_virology"
@@ -105,7 +105,7 @@
 	return 0
 
 /obj/machinery/smartfridge/chemistry
-	name = "\improper Smart Chemical Storage"
+	name = "\improper chemical SmartFridge"
 	desc = "A refrigerated storage unit for medicine and chemical storage."
 
 /obj/machinery/smartfridge/chemistry/accept_check(var/obj/item/O as obj)
@@ -123,7 +123,7 @@
 *   Bar Drinks Showcase
 **************************/
 /obj/machinery/smartfridge/drinks
-	name = "\improper Drink Showcase"
+	name = "\improper drink showcase"
 	desc = "A refrigerated storage unit for tasty tasty alcohol."
 
 /obj/machinery/smartfridge/drinks/accept_check(var/obj/item/O as obj)
@@ -135,7 +135,7 @@
 *   Hydroponics Drying Rack
 ****************************/
 /obj/machinery/smartfridge/drying_rack
-	name = "\improper Drying Rack"
+	name = "\improper drying rack"
 	desc = "A machine for drying plants."
 	icon_state = "drying_rack"
 	icon_on = "drying_rack_on"

@@ -1,5 +1,5 @@
 /obj/machinery/autolathe_disk_cloner
-	name = "Autolathe disk cloner"
+	name = "autolathe disk cloner"
 	desc = "Machine used for copying recipes from unprotected autolathe disks."
 	icon_state = "disk_cloner"
 	circuit = /obj/item/weapon/circuitboard/autolathe_disk_cloner

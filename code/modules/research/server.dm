@@ -1,5 +1,5 @@
 /obj/machinery/r_n_d/server
-	name = "R&D Server"
+	name = "R&D server"
 	icon = 'icons/obj/machines/research.dmi'
 	icon_state = "server"
 	var/datum/research/files
@@ -131,7 +131,7 @@
 		return
 
 /obj/machinery/r_n_d/server/centcom
-	name = "Central R&D Database"
+	name = "central R&D database"
 	server_id = -1
 
 /obj/machinery/r_n_d/server/centcom/Initialize()
@@ -161,7 +161,7 @@
 	return PROCESS_KILL //don't need process()
 
 /obj/machinery/computer/rdservercontrol
-	name = "R&D Server Controller"
+	name = "R&D server controller"
 	icon_keyboard = "rd_key"
 	icon_screen = "rdcomp"
 	light_color = COLOR_LIGHTING_PURPLE_MACHINERY
@@ -311,13 +311,13 @@
 		return 1
 
 /obj/machinery/r_n_d/server/robotics
-	name = "Robotics R&D Server"
+	name = "robotics R&D server"
 	id_with_upload_string = "1;2"
 	id_with_download_string = "1;2"
 	server_id = 2
 
 /obj/machinery/r_n_d/server/core
-	name = "Core R&D Server"
+	name = "core R&D server"
 	id_with_upload_string = "1"
 	id_with_download_string = "1"
 	server_id = 1

@@ -221,6 +221,7 @@
 
 /obj/item/weapon/packageWrap
 	name = "package wrapper"
+	desc = "A roll of material for wrapping packages."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "deliveryPaper"
 	w_class = ITEM_SIZE_NORMAL
@@ -370,7 +371,7 @@
 	openwindow(usr)
 
 /obj/machinery/disposal/deliveryChute
-	name = "Delivery chute"
+	name = "delivery chute"
 	desc = "A chute for big and small packages alike!"
 	density = 1
 	icon_state = "intake"

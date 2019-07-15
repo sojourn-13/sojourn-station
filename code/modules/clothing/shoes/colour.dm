@@ -1,54 +1,63 @@
 // COLOR SHOES
 /obj/item/clothing/shoes/color
-	name = "shoes"
-	initial_name = "shoes"
-	desc = "A pair of shoes."
-	icon_state = "white"
-
-/obj/item/clothing/shoes/color/white
 	name = "white shoes"
+	initial_name = "white shoes"
+	desc = "A pair of white shoes."
 	icon_state = "white"
 
 /obj/item/clothing/shoes/color/blue
 	name = "blue shoes"
 	initial_name = "blue shoes"
+	desc = "A pair of blue shoes."
 	icon_state = "blue"
 
 /obj/item/clothing/shoes/color/green
 	name = "green shoes"
 	initial_name = "green shoes"
+	desc = "A pair of green shoes."
 	icon_state = "green"
 
 /obj/item/clothing/shoes/color/yellow
 	name = "yellow shoes"
 	initial_name = "yellow shoes"
+	desc = "A pair of yellow shoes."
 	icon_state = "yellow"
 
 /obj/item/clothing/shoes/color/purple
 	name = "purple shoes"
 	initial_name = "purple shoes"
+	desc = "A pair of purple shoes."
 	icon_state = "purple"
 
 /obj/item/clothing/shoes/color/brown
 	name = "brown shoes"
 	initial_name = "brown shoes"
+	desc = "A pair of brown shoes."
 	icon_state = "brown"
+
+/obj/item/clothing/shoes/custom
+	name = "customized shoes"
+	initial_name = "customized shoes"
+	desc = "A pair of customized shoes in a tailored color."
+	icon_state = "white"
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /obj/item/clothing/shoes/color/red
 	name = "red shoes"
 	initial_name = "red shoes"
-	desc = "Stylish red shoes."
+	desc = "A pair of red shoes."
 	icon_state = "red"
 
 /obj/item/clothing/shoes/color/rainbow
 	name = "rainbow shoes"
 	name = "rainbow shoes"
-	desc = "Very gay shoes."
+	desc = "A pair of radiantly vibrant shoes."
 	icon_state = "rain_bow"
 
 /obj/item/clothing/shoes/color/orange
 	name = "orange shoes"
 	initial_name = "orange shoes"
+	desc = "A pair of orange shoes."
 	icon_state = "orange"
 	var/obj/item/weapon/handcuffs/chained = null
 

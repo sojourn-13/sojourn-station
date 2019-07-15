@@ -1,5 +1,5 @@
 /obj/machinery/computer/teleporter
-	name = "Teleporter Control Console"
+	name = "teleporter control console"
 	desc = "Used to control a linked teleportation Hub and Station."
 	icon_keyboard = "teleport_key"
 	icon_screen = "teleport"
@@ -303,8 +303,8 @@
 */
 
 /obj/machinery/teleport/station
-	name = "station"
-	desc = "It's the station thingy of a teleport thingy." //seriously, wtf.
+	name = "teleporter station"
+	desc = "It's the station of a teleporting machine.." //seriously, wtf.
 	icon_state = "controller"
 	var/active = 0
 	var/engaged = 0

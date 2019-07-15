@@ -1,66 +1,66 @@
 /obj/item/clothing/glasses/eyepatch
 	name = "eyepatch"
-	desc = "Yarr."
+	desc = "A black patch worn to cover a single eye."
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/monocle
 	name = "monocle"
-	desc = "Such a dapper eyepiece!"
+	desc = "A rather dapper eyeglass usually worn for cosmetic purposes."
 	icon_state = "monocle"
 	item_state = "headset" // lol
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/regular
-	name = "Prescription Glasses"
-	desc = "Made by Nerd. Co."
+	name = "prescription glasses"
+	desc = "Standard glasses that correct and enhance vision."
 	icon_state = "glasses"
 	item_state = "glasses"
 	prescription = 1
 	body_parts_covered = 0
 
-/obj/item/clothing/glasses/regular/scanners
-	name = "Scanning Goggles"
+/obj/item/clothing/glasses/scanners
+	name = "scanning goggles"
 	desc = "A very oddly shaped pair of goggles with bits of wire poking out the sides. A soft humming sound emanates from it."
 	icon_state = "uzenwa_sissra_1"
 
 /obj/item/clothing/glasses/regular/hipster
-	name = "Prescription Glasses"
-	desc = "Made by Uncool. Co."
+	name = "hipster glasses"
+	desc = "Trendy glasses that correct and enhance vision."
 	icon_state = "hipster_glasses"
 	item_state = "hipster_glasses"
 
-/obj/item/clothing/glasses/threedglasses
-	desc = "A long time ago, people used these glasses to makes images from screens threedimensional."
-	name = "3D glasses"
+/obj/item/clothing/glasses/regular/threedglasses
+	desc = "Glasses that create threedimensional images. They also look cool."
+	name = "3d glasses"
 	icon_state = "3d"
 	item_state = "3d"
 	body_parts_covered = 0
 
-/obj/item/clothing/glasses/gglasses
-	name = "Green Glasses"
-	desc = "Forest green glasses, like the kind you'd wear when hatching a nasty scheme."
+/obj/item/clothing/glasses/regular/gglasses
+	name = "green glasses"
+	desc = "Stylish glasses with a forest green tint."
 	icon_state = "gglasses"
 	item_state = "gglasses"
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/sunglasses
-	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Enhanced shielding blocks many flashes."
+	desc = "Glasses designed for eye protection. The shielding makes good flash protection."
 	name = "sunglasses"
 	icon_state = "sun"
 	item_state = "sunglasses"
 	darkness_view = -1
 	flash_protection = FLASH_PROTECTION_MODERATE
 
-/obj/item/clothing/glasses/sunglasses/blindfold
+/obj/item/clothing/glasses/blindfold
 	name = "blindfold"
-	desc = "Covers the eyes, preventing sight."
+	desc = "A material that covers the eyes, preventing sight."
 	icon_state = "blindfold"
 	item_state = "blindfold"
 	tint = TINT_BLIND
 
-/obj/item/clothing/glasses/sunglasses/blindfold/tape
+/obj/item/clothing/glasses/blindfold/tape
 	name = "length of tape"
 	desc = "It's a robust DIY blindfold!"
 	icon = 'icons/obj/bureaucracy.dmi'
@@ -68,11 +68,13 @@
 	item_state = null
 	w_class = ITEM_SIZE_TINY
 
-/obj/item/clothing/glasses/sunglasses/prescription
-	name = "prescription sunglasses"
+/obj/item/clothing/glasses/sunglasses
+	name = "sunglasses"
+	desc = "Glasses designed for eye protection. The shielding makes good flash protection."
 	prescription = TRUE
 
 /obj/item/clothing/glasses/sunglasses/big
-	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Larger than average enhanced shielding blocks many flashes."
+	name = "large sunglasses"
+	desc = "Rather large glasses designed for eye protection. The shielding makes good flash protection."
 	icon_state = "bigsunglasses"
 	item_state = "bigsunglasses"

@@ -293,7 +293,7 @@
 
 
 /obj/machinery/readybutton
-	name = "Ready Declaration Device"
+	name = "ready declaration device"
 	desc = "This device is used to declare ready. If all devices in an area are ready, the event will begin!"
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "auth_off"

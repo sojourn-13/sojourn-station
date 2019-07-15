@@ -25,7 +25,7 @@
 	new /obj/item/clothing/under/rank/expedition_overseer(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
 	new /obj/item/weapon/cartridge/rd(src)
-	new /obj/item/clothing/shoes/color/white(src)
+	new /obj/item/clothing/shoes/color(src)
 	new /obj/item/clothing/shoes/leather(src)
 	new /obj/item/clothing/gloves/latex(src)
 	new /obj/item/device/radio/headset/heads/rd(src)

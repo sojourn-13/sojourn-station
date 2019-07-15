@@ -107,7 +107,7 @@
 /*
  * Ushanka
  */
-/obj/item/clothing/head/ushanka
+/obj/item/clothing/head/hat/ushanka
 	name = "ushanka"
 	desc = "Perfect for winter in Siberia, da?"
 	icon_state = "ushankadown"

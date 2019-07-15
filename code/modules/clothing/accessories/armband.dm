@@ -1,35 +1,35 @@
 /obj/item/clothing/accessory/armband
-	name = "red armband"
-	desc = "A fancy red armband!"
+	name = "security armband"
+	desc = "A red armband signifying a security position."
 	icon_state = "red"
 	slot = "armband"
 
 /obj/item/clothing/accessory/armband/cargo
 	name = "cargo armband"
-	desc = "An armband, worn by the crew to display which department they're assigned to. This one is brown."
+	desc = "A brown armband signifying a cargo position."
 	icon_state = "cargo"
 
 /obj/item/clothing/accessory/armband/engine
 	name = "engineering armband"
-	desc = "An armband, worn by the crew to display which department they're assigned to. This one is orange with a reflective strip!"
+	desc = "A orange armband with a reflective strip signifying an engineering position."
 	icon_state = "engie"
 
 /obj/item/clothing/accessory/armband/science
 	name = "science armband"
-	desc = "An armband, worn by the crew to display which department they're assigned to. This one is purple."
+	desc = "A purple armband signifying a science position."
 	icon_state = "rnd"
 
 /obj/item/clothing/accessory/armband/hydro
 	name = "hydroponics armband"
-	desc = "An armband, worn by the crew to display which department they're assigned to. This one is green and blue."
+	desc = "A green and blue armband signifying a hydroponics position."
 	icon_state = "hydro"
 
 /obj/item/clothing/accessory/armband/med
 	name = "medical armband"
-	desc = "An armband, worn by the crew to display which department they're assigned to. This one is white."
+	desc = "A white armband signifying a medical position."
 	icon_state = "med"
 
 /obj/item/clothing/accessory/armband/medgreen
 	name = "EMT armband"
-	desc = "An armband, worn by the crew to display which department they're assigned to. This one is white and green."
+	desc = "A white and green armband signifying an EMT position."
 	icon_state = "medgreen"
