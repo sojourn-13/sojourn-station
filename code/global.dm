@@ -25,21 +25,25 @@ var/global/list/global_map = null
 // Noises made when hit while typing.
 var/list/hit_appends = list("-OOF", "-ACK", "-UGH", "-HRNK", "-HURGH", "-GLORF")
 
+var/start_time				= null
 
-var/runtime_diary		= null
-var/diary               = null
-var/world_qdel_log		= null
-var/href_logfile        = null
-var/station_name        = "CEV Eris"
-var/station_short       = "Eris"
-var/const/dock_name     = "N.A.S. Crescent"
-var/const/boss_name     = "Central Command"
-var/const/boss_short    = "Centcomm"
-var/const/company_name  = "CEV Eris"
-var/const/company_short = "Eris"
-var/game_version        = "Discordia"
-var/changelog_hash      = ""
-var/game_year           = (text2num(time2text(world.realtime, "YYYY")) + 544)
+var/runtime_diary			= null
+var/runtime_diary_filename	= null
+var/diary					= null
+var/diary_filename			= null
+var/world_qdel_log			= null
+var/href_logfile			= null
+var/href_logfile_filename	= null
+var/station_name			= "CEV Eris"
+var/station_short			= "Eris"
+var/const/dock_name			= "N.A.S. Crescent"
+var/const/boss_name			= "Central Command"
+var/const/boss_short		= "Centcomm"
+var/const/company_name		= "CEV Eris"
+var/const/company_short		= "Eris"
+var/game_version			= "Discordia"
+var/changelog_hash			= ""
+var/game_year				= (text2num(time2text(world.realtime, "YYYY")) + 544)
 
 var/round_progressing = 1
 var/master_storyteller       = "shitgenerator"

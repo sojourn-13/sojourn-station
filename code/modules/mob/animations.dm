@@ -24,6 +24,18 @@ below 100 is not dizzy
 	var/dizziness = 0
 	var/is_dizzy = 0
 
+/mob/living/carbon/proc/Dizziness(amount)
+	dizziness = max(max(dizziness,amount),0)
+	return
+
+/mob/living/carbon/proc/SetDizziness(amount)
+	dizziness = max(amount,0)
+	return
+
+/mob/living/carbon/proc/AdjustDizziness(amount)
+	dizziness = max(dizziness + amount,0)
+	return
+
 /*
 dizzy process - wiggles the client's pixel offset over time
 spawned from make_dizzy(), will terminate automatically when dizziness gets <100
@@ -51,6 +63,18 @@ note dizziness decrements automatically in the mob's Life() proc.
 /mob/living/carbon
 	var/is_jittery = 0
 	var/jitteriness = 0
+
+/mob/living/carbon/proc/Jitteriness(amount)
+	jitteriness = max(max(jitteriness,amount),0)
+	return
+
+/mob/living/carbon/proc/SetJitteriness(amount)
+	jitteriness = max(amount,0)
+	return
+
+/mob/living/carbon/proc/AdjustJitteriness(amount)
+	jitteriness = max(jitteriness + amount,0)
+	return
 
 /mob/living/carbon/human/make_jittery(var/amount)
 	jitteriness = min(1000, jitteriness + amount)	// store what will be new value

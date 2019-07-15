@@ -1472,6 +1472,15 @@ var/list/rank_prefix = list(\
 		return FALSE
 	return (species && species.has_organ[organ_check])
 
+/mob/living/carbon/human/can_feel_pain(var/obj/item/organ/check_organ)
+	if(isSynthetic())
+		return 0
+	/*if(check_organ)
+		if(!istype(check_organ))
+			return 0
+		return check_organ.organ_can_feel_pain() */ //TODO: This also doesn't work on Eris :))
+	return !(species.flags & NO_PAIN)
+
 /mob/living/carbon/human/has_appendage(var/appendage_check)	//returns TRUE if found, 2 or 3 if limb is robotic, FALSE if not found
 
 	if (appendage_check == BP_CHEST)

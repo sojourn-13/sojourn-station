@@ -39,7 +39,6 @@ This saves us from having to call add_fingerprint() any time something is put in
 	return equip_to_slot_if_possible(W, slot_r_hand)
 
 
-
 //Find HUD position on screen
 /mob/living/carbon/human/proc/find_inv_position(var/slot_id)
 	for(var/obj/screen/inventory/HUDinv in HUDinventory)

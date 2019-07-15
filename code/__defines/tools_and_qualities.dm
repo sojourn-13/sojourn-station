@@ -3,25 +3,31 @@
 #define TOOL_USE_CANCEL					0
 #define TOOL_USE_SUCCESS				1
 
+//Mechanical Qualities
 #define QUALITY_BOLT_TURNING			"bolt turning"
 #define QUALITY_PULSING					"pulsing"
 #define QUALITY_PRYING					"prying"
 #define QUALITY_WELDING					"welding"
 #define QUALITY_SCREW_DRIVING			"screw driving"
 #define QUALITY_WIRE_CUTTING			"wire cutting"
+#define QUALITY_SHOVELING				"shoveling"
+#define QUALITY_DIGGING					"digging"
+#define QUALITY_EXCAVATION				"excavation"
+#define QUALITY_ADHESIVE				"adhesive"
+#define QUALITY_SEALING					"sealing"
+
+//Biological Qualities
 #define QUALITY_CLAMPING				"clamping"
 #define QUALITY_CAUTERIZING				"cauterizing"
 #define QUALITY_RETRACTING				"retracting"
 #define QUALITY_DRILLING				"drilling"
 #define QUALITY_SAWING					"sawing"
 #define QUALITY_BONE_SETTING			"bone setting"
-#define QUALITY_SHOVELING				"shoveling"
-#define QUALITY_DIGGING					"digging"
-#define QUALITY_EXCAVATION				"excavation"
 #define QUALITY_CUTTING					"cutting"
 #define QUALITY_LASER_CUTTING			"laser cutting"	//laser scalpels and e-swords - bloodless cutting
-#define QUALITY_ADHESIVE				"adhesive"
-#define QUALITY_SEALING					"sealing"
+
+//Other Qualities
+#define QUALITY_ELECTROCUTION			"electroshock"
 
 //Time for a work for tool system calculated in that way: basic time - tool level - stat check..
 //It means that basic tools will give -30 on time, and people on right job should have -20 at least, or even more.

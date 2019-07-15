@@ -349,9 +349,12 @@
 	Weaken(Floor(stun_duration/2))
 	return 1
 
-/mob/living/carbon/proc/add_chemical_effect(var/effect, var/magnitude = 1)
+/mob/living/carbon/proc/add_chemical_effect(var/effect, var/magnitude = 1, var/limited = FALSE)
 	if(effect in chem_effects)
-		chem_effects[effect] += magnitude
+		if(limited)
+			chem_effects[effect] = max(magnitude, chem_effects[effect])
+		else
+			chem_effects[effect] += magnitude
 	else
 		chem_effects[effect] = magnitude
 
@@ -386,3 +389,8 @@
 
 /mob/living/carbon/proc/has_appendage(var/limb_check)
 	return 0
+
+/mob/living/carbon/can_feel_pain(var/check_organ)
+	if(isSynthetic())
+		return 0
+	return !(species.flags & NO_PAIN)

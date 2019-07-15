@@ -85,6 +85,24 @@
 				return
 			return custom_emote(m_type, message)
 
+		if ("subtle")
+
+			//if(silent && silent > 0 && findtext(message,"\"",1, null) > 0)
+			//	return //This check does not work and I have no idea why, I'm leaving it in for reference.
+
+			if (src.client)
+				if (client.prefs.muted & MUTE_IC)
+					src << "\red You cannot send IC messages (muted)."
+					return
+				if (src.client.handle_spam_prevention(message,MUTE_IC))
+					return
+			if (stat)
+				return
+			if(!(message))
+				return
+			return custom_emote(m_type, message, 1)
+
+
 		if("pain")
 			if(!message)
 				if(miming)

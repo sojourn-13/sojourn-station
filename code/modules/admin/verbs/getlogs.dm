@@ -92,7 +92,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/view_txt_log, R_ADMIN, FALSE)
 	set name = "Show Server Log"
 	set desc = "Shows today's server log."
 
-	var/path = "data/logs/[time2text(world.realtime,"YYYY/MM-Month/DD-Day")].log"
+	var/path = diary_filename
 	if( fexists(path) )
 		src << run( file(path) )
 	else
@@ -101,7 +101,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/view_txt_log, R_ADMIN, FALSE)
 
 	return
 
-ADMIN_VERB_ADD(/datum/admins/proc/view_atk_log, R_ADMIN, FALSE)
+/*ADMIN_VERB_ADD(/datum/admins/proc/view_atk_log, R_ADMIN, FALSE)
 //Shows today's attack log
 //shows the server combat-log, doesn't do anything presently
 /datum/admins/proc/view_atk_log()
@@ -117,4 +117,4 @@ ADMIN_VERB_ADD(/datum/admins/proc/view_atk_log, R_ADMIN, FALSE)
 		return
 	usr << run( file(path) )
 
-	return
+	return*/

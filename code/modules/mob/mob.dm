@@ -890,6 +890,18 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 	resting = max(resting + amount,0)
 	return
 
+/mob/proc/Drowsyness(amount)
+	drowsyness = max(max(drowsyness,amount),0)
+	return
+
+/mob/proc/SetDrowsyness(amount)
+	drowsyness = max(amount,0)
+	return
+
+/mob/proc/AdjustDrowsyness(amount)
+	drowsyness = max(drowsyness + amount,0)
+	return
+
 /mob/proc/get_species()
 	return ""
 

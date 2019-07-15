@@ -79,7 +79,11 @@
 	drop_l_hand()
 
 	//Bay statistics system would be hooked in here, but we're not porting it
-
+	if(!gibbed)
+		SetParalysis(0)
+		SetStunned(0)
+		SetWeakened(0)
+		SetDrowsyness(0)
 
 	if(isliving(src))
 		var/mob/living/L = src

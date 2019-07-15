@@ -61,8 +61,7 @@
 
 	. = ..(gibbed,form.death_message)
 	if(!gibbed)
-		dizziness = 0
-		jitteriness = 0
+
 		handle_organs()
 		dead_HUD()
 		if(form.death_sound)

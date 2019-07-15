@@ -309,6 +309,18 @@ default behaviour is:
 /mob/living/proc/setMaxHealth(var/newMaxHealth)
 	maxHealth = newMaxHealth
 
+/mob/living/proc/Stuttering(amount)
+	stuttering = max(max(stuttering,amount),0)
+	return
+
+/mob/living/proc/SetStuttering(amount)
+	stuttering = max(amount,0)
+	return
+
+/mob/living/proc/AdjustStuttering(amount)
+	stuttering = max(stuttering + amount,0)
+	return
+
 // ++++ROCKDTBEN++++ MOB PROCS //END
 
 /mob/get_contents()
@@ -640,6 +652,11 @@ default behaviour is:
 	if(deaf >= 0)
 		ear_deaf = deaf
 
+/mob/living/proc/can_feel_pain(var/check_organ)
+	if(isSynthetic())
+		return FALSE
+	return TRUE
+
 /mob/proc/can_be_possessed_by(var/mob/observer/ghost/possessor)
 	return istype(possessor) && possessor.client
 
@@ -774,7 +791,6 @@ default behaviour is:
 	if(ismob(AM))
 		var/mob/pulled = AM
 		pulled.inertia_dir = 0
-
 
 // Static Overlays and Stats
 

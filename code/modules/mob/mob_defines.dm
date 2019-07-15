@@ -34,6 +34,7 @@
 
 
 	var/use_me = 1 //Allows all mobs to use the me verb by default, will have to manually specify they cannot
+	var/use_subtle = 1 //Similarly, the subtle verb.
 	var/damageoverlaytemp = 0
 	var/obj/machinery/machine = null
 	var/poll_answer = 0.0
