@@ -29,8 +29,7 @@
 				/obj/item/weapon/material/sword/katana/platinum = 1,
 				/obj/item/weapon/material/sword/katana/uranium = 1,
 				/obj/item/weapon/material/sword/katana/plastic = 1,
-				/obj/item/weapon/material/sword/katana/diamond = 1,
-				/obj/item/weapon/material/sword/katana/voxalloy = 1))
+				/obj/item/weapon/material/sword/katana/diamond = 1))
 
 /obj/random/claymore
 	name = "random claymore"
@@ -45,5 +44,4 @@
 				/obj/item/weapon/material/sword/platinum = 1,
 				/obj/item/weapon/material/sword/uranium = 1,
 				/obj/item/weapon/material/sword/plastic = 1,
-				/obj/item/weapon/material/sword/diamond = 1,
-				/obj/item/weapon/material/sword/voxalloy = 1))
+				/obj/item/weapon/material/sword/diamond = 1))
