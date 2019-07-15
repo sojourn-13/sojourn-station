@@ -1014,6 +1014,9 @@
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 10,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 10,
 	/obj/item/clothing/accessory/holster = 5,
+	/obj/item/clothing/accessory/holster/hip = 5,
+	/obj/item/clothing/accessory/holster/waist = 5,
+	/obj/item/clothing/accessory/holster/armpit = 5,
 	/obj/item/weapon/storage/pouch/pistol_holster = 5)
 
 	contraband = list(/obj/item/ammo_magazine/sl38 = 20,

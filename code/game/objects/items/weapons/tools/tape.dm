@@ -31,6 +31,15 @@
 	use_stock_cost = 0.10
 	max_stock = 100
 
+/obj/item/weapon/tool/tape_roll/flextape
+	name = "flex tape"
+	desc = "To fix a lot of damage! Posdate: It doesn't repair the Supermatter."
+	icon_state = "flextaperoll"
+	tool_qualities = list(QUALITY_ADHESIVE = 100, QUALITY_SEALING = 100)
+	matter = list(MATERIAL_PLASTIC = 40)
+	use_stock_cost = 0.10
+	max_stock = 100
+
 /obj/item/weapon/tool/tape_roll/attack(var/mob/living/carbon/human/H, var/mob/user)
 	if(istype(H))
 		if(user.targeted_organ == BP_EYES)
