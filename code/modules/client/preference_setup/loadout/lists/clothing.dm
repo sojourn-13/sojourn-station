@@ -11,7 +11,7 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/clothing/bandana
-	display_name = "bandana selection"
+	display_name = "bandana mask selection"
 	path = /obj/item/clothing/mask/bandana
 	slot = slot_wear_mask
 	flags = GEAR_HAS_TYPE_SELECTION

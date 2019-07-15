@@ -68,7 +68,7 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/head/bandana
-	display_name = "bandana selection"
+	display_name = "bandana head selection"
 	path = /obj/item/clothing/head/bandana
 	flags = GEAR_HAS_TYPE_SELECTION
 
