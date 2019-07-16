@@ -78,7 +78,7 @@
 	export_types = list(/obj/item/weapon/material/sword/katana/gold)
 
 /datum/export/weapon/katana/voxalloy
-	cost = 3000
+	cost = 10000
 	unit_name = "voxalloy katana"
 	export_types = list(/obj/item/weapon/material/sword/katana/voxalloy)
 
