@@ -46,6 +46,15 @@
 	heat_protection = ARMS
 	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
 
+/obj/item/clothing/gloves/thick/handmade
+	name = "handmade combat gloves"
+	desc = "A pair of modified work gloves with some steel."
+	icon_state = "hm_combat"
+	item_state = "bgloves"
+	armor = list(melee = 25, bullet = 15, laser = 15,energy = 12, bomb = 25, bio = 5, rad = 0)
+	siemens_coefficient = 0.6
+	price_tag = 150
+
 /obj/item/clothing/gloves/thick/swat
 	desc = "A pair of fire and impact-resistant IHS combat gloves."
 	name = "IHS combat gloves"

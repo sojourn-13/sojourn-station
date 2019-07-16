@@ -134,6 +134,17 @@
 			return 20
 	return base_block_chance
 
+
+/obj/item/weapon/shield/riot/handmade/lid
+	name = "lid shield"
+	desc = "A detached lid from trashcart, that works well as shield."
+	icon_state = "lid_shield"
+	flags = CONDUCT
+	throw_speed = 2
+	throw_range = 2
+	matter = list(MATERIAL_STEEL = 8)
+	base_block_chance = 40
+
 /*
  * Energy Shield
  */

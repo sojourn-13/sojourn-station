@@ -102,6 +102,15 @@
 		list(/obj/item/weapon/storage/belt, 2, "time" = 10)
 	)
 
+/datum/craft_recipe/weapon/lid_shield
+	name = "handmade lid shield"
+	result = /obj/item/weapon/shield/riot/handmade/lid
+	steps = list(
+		list(/obj/item/stack/cable_coil, 4),
+		list(/obj/structure/closet/crate/trashcart, 1, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 10, 60)
+	)
+
 /datum/craft_recipe/weapon/pistol
 	name = "handmade gun"
 	result = /obj/item/weapon/gun/projectile/handmade_pistol

@@ -40,3 +40,25 @@
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
 		list(/obj/item/stack/cable_coil, 2)
 	)
+
+// Masacare poor bucket, but gain some better protection. Cut bigger holes for eyes, drill small ones for some air.
+/datum/craft_recipe/clothing/cheap_greathelm
+	name = "cheap greathelm"
+	result = /obj/item/clothing/head/helmet/handmade/greathelm
+	steps = list(
+		list(/obj/item/weapon/reagent_containers/glass/bucket, 1, "time" = 30),
+		list(QUALITY_CUTTING, 15, 120),
+		list(QUALITY_DRILLING, 10, 60),
+		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL),
+		list(/obj/item/stack/cable_coil, 4)
+	)
+
+// Add some steel to gloves. Simple.
+/datum/craft_recipe/clothing/combat_gloves
+	name = "combat gloves"
+	result = /obj/item/clothing/gloves/thick/handmade
+	steps = list(
+		list(/obj/item/clothing/gloves/thick, 1, "time" = 15),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+		list(/obj/item/stack/cable_coil, 2)
+	)
