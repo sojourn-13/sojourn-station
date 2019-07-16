@@ -45,9 +45,6 @@
 /obj/item/weapon/material/sword/silver
 	default_material = MATERIAL_SILVER
 
-/obj/item/weapon/material/sword/voxalloy
-	default_material = MATERIAL_VOXALLOY
-
 /obj/item/weapon/material/sword/diamond
 	default_material = MATERIAL_DIAMOND
 
@@ -89,9 +86,6 @@
 
 /obj/item/weapon/material/sword/katana/silver
 	default_material = MATERIAL_SILVER
-
-/obj/item/weapon/material/sword/katana/voxalloy
-	default_material = MATERIAL_VOXALLOY
 
 /obj/item/weapon/material/sword/katana/diamond
 	default_material = MATERIAL_DIAMOND
