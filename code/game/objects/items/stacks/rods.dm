@@ -10,7 +10,7 @@
 	throw_speed = 5
 	throw_range = 20
 	matter = list(MATERIAL_STEEL = 1)
-	max_amount = 60
+	max_amount = 120
 	attack_verb = list("hit", "bludgeoned", "whacked")
 	price_tag = 1
 

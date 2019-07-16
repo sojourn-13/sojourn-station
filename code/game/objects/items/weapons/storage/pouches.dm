@@ -43,6 +43,10 @@
 	max_storage_space = ITEM_SIZE_TINY * 3
 	max_w_class = ITEM_SIZE_SMALL
 
+/obj/item/weapon/storage/pouch/small_generic/purple
+	icon_state = "small_generic_p"
+	item_state = "small_generic_p"
+
 /obj/item/weapon/storage/pouch/medium_generic
 	name = "medium generic pouch"
 	desc = "Can hold anything in it, but only about twice."
@@ -135,6 +139,7 @@
 		/obj/item/weapon/tool,
 		/obj/item/stack/material,
 		/obj/item/weapon/material,
+		/obj/item/stack/rods,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/stack/cable_coil,
 		/obj/item/device/t_scanner,
@@ -142,7 +147,27 @@
 		/obj/item/taperoll/engineering,
 		/obj/item/device/robotanalyzer,
 		/obj/item/device/scanner/analyzer/plant_analyzer,
-		/obj/item/weapon/extinguisher/mini
+		/obj/item/weapon/extinguisher/mini,
+		/obj/item/weapon/airlock_electronics,
+		/obj/item/weapon/airalarm_electronics,
+		/obj/item/weapon/circuitboard/apc
+		)
+
+/obj/item/weapon/storage/pouch/janitor_supply
+	name = "janitorial supply pouch"
+	desc = "Can hold janitorial equipment, but only about three pieces of them."
+	icon_state = "janitor_supply"
+	item_state = "janitor_supply"
+
+	storage_slots = 3
+	w_class = ITEM_SIZE_NORMAL
+	max_w_class = ITEM_SIZE_NORMAL
+
+	can_hold = list(
+		/obj/item/weapon/grenade/chem_grenade/cleaner,
+		/obj/item/weapon/grenade/chem_grenade/antiweed,
+		/obj/item/weapon/reagent_containers/spray/cleaner,
+		/obj/item/device/assembly/mousetrap
 		)
 
 /obj/item/weapon/storage/pouch/ammo
