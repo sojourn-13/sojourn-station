@@ -63,7 +63,7 @@ var/game_id = null
 	//logs
 	start_time = world.realtime
 	var/date_string = time2text(start_time, "YYYY/MM-Month/DD-Day")
-	var/time_string = time2text(start_time, "YYYY/MM-Month/DDD-DD-Day/hh:mm:ss")
+	var/time_string = time2text(start_time, "YYYY/MM-Month/DD-Day/DDD-DD-hhmmss")
 	href_logfile_filename = "data/logs/[date_string] hrefs.htm"
 	href_logfile = file(href_logfile_filename)
 	diary_filename = "data/logs/[time_string].log"
