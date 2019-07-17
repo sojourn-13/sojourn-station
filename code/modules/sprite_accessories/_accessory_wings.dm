@@ -150,3 +150,38 @@
 	icon_state = "nevrean_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/spines_short
+	name = "spines, short, colorable"
+	desc = ""
+	icon_state = "spines_short"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/spines_short_membrane
+	name = "spines, short membrane, colorable"
+	desc = ""
+	icon_state = "spines_short_membrane"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/spines_long
+	name = "spines, long, colorable"
+	desc = ""
+	icon_state = "spines_long"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/spines_long_membrane
+	name = "spines, long membrane, colorable"
+	desc = ""
+	icon_state = "spines_long_membrane"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/spines_aquatic
+	name = "spines, aquatic, colorable"
+	desc = ""
+	icon_state = "spines_aqua"
+	colored_layers = 1
+	blend = ICON_MULTIPLY

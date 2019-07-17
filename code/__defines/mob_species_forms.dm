@@ -57,6 +57,8 @@
 #define FORM_FELINE				"Feline"
 #define FORM_SHARK				"Shark"
 #define FORM_LIZARD				"Lizard"
+#define FORM_LIZARD_TGSHARP     "Sharp-Snouted Lizard"
+#define FORM_LIZARD_TGSMOOTH    "Smooth-Snouted Lizard"
 #define FORM_VULPINE			"Vulpine"
 #define FORM_FENNEC				"Fennec"
 #define FORM_SERGALINE			"Sergal"
