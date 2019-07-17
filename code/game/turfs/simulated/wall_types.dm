@@ -81,6 +81,8 @@
 	..(newloc,MATERIAL_SILVER)
 /turf/simulated/wall/plasma/New(var/newloc)
 	..(newloc,MATERIAL_PLASMA)
+/turf/simulated/wall/durasteel/New(var/newloc)
+	..(newloc,MATERIAL_DURASTEEL)
 /turf/simulated/wall/sandstone/New(var/newloc)
 	..(newloc,MATERIAL_SANDSTONE)
 /turf/simulated/wall/ironplasma/New(var/newloc)

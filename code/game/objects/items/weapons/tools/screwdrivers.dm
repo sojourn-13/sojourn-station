@@ -12,6 +12,11 @@
 	attack_verb = list("stabbed")
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 30, QUALITY_BONE_SETTING = 10)
 
+/obj/item/weapon/tool/screwdriver/bs
+	name = "bluespace screwdriver"
+	icon_state = "bs_screwdriver"
+	tool_qualities = list(QUALITY_SCREW_DRIVING = 100, QUALITY_BONE_SETTING = 100)
+
 /obj/item/weapon/tool/screwdriver/improvised
 	name = "screwpusher"
 	desc = "A little metal rod wrapped in tape, barely qualifies as a tool."

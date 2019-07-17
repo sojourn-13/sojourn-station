@@ -82,6 +82,14 @@
 	degradation = 0.07
 	max_upgrades = 4
 
+/obj/item/weapon/tool/weldingtool/bs
+	name = "bluespace welding tool"
+	icon_state = "bs_welder"
+	item_state = "bs_welder"
+	max_fuel = 2500
+	glow_color = COLOR_BLUE_LIGHT
+	switched_on_qualities = list(QUALITY_WELDING = 100, QUALITY_CAUTERIZING = 100, QUALITY_WIRE_CUTTING = 100)
+
 /obj/item/weapon/tool/weldingtool/onestar
 	name = "One Star welding tool"
 	desc = "An old and legendary One Star welding tool. Very powerful and reliable, but its compact design causes it to suffer from a lack of both fuel storage and efficiency."

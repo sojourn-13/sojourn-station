@@ -260,6 +260,17 @@ var/list/name_to_material
 	hardness = 100
 	stack_origin_tech = list(TECH_MATERIAL = 6)
 
+/material/durasteel
+	name = MATERIAL_DURASTEEL
+	stack_type = /obj/item/stack/material/durasteel
+	icon_colour = "#6EA7BE"
+	integrity = 600
+	melting_point = 7000
+	hardness = 100
+	weight = 28
+	explosion_resistance = 75
+	stack_origin_tech = list(TECH_MATERIAL = 8)
+
 /material/gold
 	name = MATERIAL_GOLD
 	stack_type = /obj/item/stack/material/gold

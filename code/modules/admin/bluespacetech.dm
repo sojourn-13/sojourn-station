@@ -304,11 +304,21 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 		..()
 
 /obj/item/weapon/storage/belt/utility/full/bst
+	name = "bluespace technician's tool-belt"
+	storage_slots = 10
 
 /obj/item/weapon/storage/belt/utility/full/bst/New()
 	..()
-	new /obj/item/weapon/tool/multitool(src)
-	new /obj/item/device/t_scanner(src)
+	new /obj/item/weapon/tool/screwdriver/bs(src)
+	new /obj/item/weapon/tool/saw/bs(src)
+	new /obj/item/weapon/tool/wrench/bs(src)
+	new /obj/item/weapon/tool/weldingtool/bs(src)
+	new /obj/item/weapon/tool/crowbar/bs(src)
+	new /obj/item/weapon/tool/wirecutters/bs(src)
+	new /obj/item/weapon/tool/multitool/bs(src)
+	new /obj/item/device/t_scanner/(src)
+	new /obj/item/stack/cable_coil/random(src)
+	new /obj/item/weapon/tool/tape_roll/flextape(src)
 
 /mob/living/carbon/human/bst/restrained()
 	return !(status_flags & GODMODE)

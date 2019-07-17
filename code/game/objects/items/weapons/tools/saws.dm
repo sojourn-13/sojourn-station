@@ -16,6 +16,11 @@
 	tool_qualities = list(QUALITY_SAWING = 30, QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 20)
 	embed_mult = 1 //Serrated blades catch on bone more easily
 
+/obj/item/weapon/tool/saw/bs
+	name = "bluespace metal saw"
+	icon_state = "bs_metal_saw"
+	tool_qualities = list(QUALITY_SAWING = 100, QUALITY_CUTTING = 100, QUALITY_WIRE_CUTTING = 100)
+
 /obj/item/weapon/tool/saw/improvised
 	name = "choppa"
 	desc = "A wicked serrated blade made of whatever nasty sharp things you could find. It would make a pretty decent weapon"

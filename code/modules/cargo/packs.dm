@@ -111,6 +111,15 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 	crate_name = "Export scanners crate"
 	group = "Operations"
 
+/datum/supply_pack/flares
+	name = "Flare boxes"
+	contains = list(/obj/item/weapon/storage/box/flares,
+					/obj/item/weapon/storage/box/flares,
+					/obj/item/weapon/storage/box/flares)
+	cost = 1000
+	crate_name = "Flare boxes crate"
+	group = "Operations"
+
 //----------------------------------------------
 //-----------------SECURITY---------------------
 //----------------------------------------------
@@ -704,6 +713,16 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 	cost = 3000
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "Shield diffuser circuitry crate"
+	group = "Engineering"
+	access = access_ce
+
+/datum/supply_pack/hatton_tube
+	contains = list(/obj/item/weapon/hatton_magazine,
+	/obj/item/weapon/hatton_magazine,
+	/obj/item/weapon/hatton_magazine)
+	name = "Hatton gas tubes crate"
+	cost = 5000
+	containertype = /obj/structure/closet/crate/secure
 	group = "Engineering"
 	access = access_ce
 

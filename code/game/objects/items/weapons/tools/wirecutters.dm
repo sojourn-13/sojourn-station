@@ -14,6 +14,11 @@
 	edge = TRUE
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 30, QUALITY_RETRACTING = 15, QUALITY_BONE_SETTING = 15)
 
+/obj/item/weapon/tool/wirecutters/bs
+	name = "bluespace wirecutters"
+	icon_state = "bs_cutters"
+	tool_qualities = list(QUALITY_WIRE_CUTTING = 100, QUALITY_RETRACTING = 100, QUALITY_BONE_SETTING = 100)
+
 //Better and more flexible than most improvised tools, but more bulky and annoying to make
 /obj/item/weapon/tool/wirecutters/improvised
 	name = "wiremanglers"

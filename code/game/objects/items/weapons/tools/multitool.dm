@@ -23,6 +23,11 @@
 	var/buffer_name
 	var/atom/buffer_object
 
+/obj/item/weapon/tool/multitool/bs
+	name = "bluespace multitool"
+	icon_state = "bs_multitool"
+	tool_qualities = list(QUALITY_PULSING = 100)
+
 /obj/item/weapon/tool/multitool/Destroy()
 	unregister_buffer(buffer_object)
 	return ..()

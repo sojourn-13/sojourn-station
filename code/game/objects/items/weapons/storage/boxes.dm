@@ -477,6 +477,21 @@
 		new /obj/item/weapon/implantcase/death_alarm(src)
 		new /obj/item/weapon/implantcase/death_alarm(src)
 
+/obj/item/weapon/storage/box/flares
+	name = "box of flares"
+	desc = "Box that contains some flares."
+	icon_state = "flare"
+
+	New()
+		..()
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
+
 /obj/item/weapon/storage/box/condimentbottles
 	name = "box of condiment bottles"
 	desc = "It has a large ketchup smear on it."
