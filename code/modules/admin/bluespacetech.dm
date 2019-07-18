@@ -35,7 +35,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	bst.equip_to_slot_or_del(new /obj/item/clothing/shoes/bst(bst), slot_shoes)
 	bst.equip_to_slot_or_del(new /obj/item/clothing/head/beret(bst), slot_head)
 	bst.equip_to_slot_or_del(new /obj/item/clothing/glasses/bst(bst), slot_glasses)
-	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full/bst(bst), slot_belt)
+	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/bst(bst), slot_belt)
 	bst.equip_to_slot_or_del(new /obj/item/clothing/gloves/bst(bst), slot_gloves)
 
 	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/box/ids(bst.back), slot_in_backpack)
@@ -303,11 +303,11 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	else
 		..()
 
-/obj/item/weapon/storage/belt/utility/full/bst
+/obj/item/weapon/storage/belt/utility/bst
 	name = "bluespace technician's tool-belt"
 	storage_slots = 10
 
-/obj/item/weapon/storage/belt/utility/full/bst/New()
+/obj/item/weapon/storage/belt/utility/bst/New()
 	..()
 	new /obj/item/weapon/tool/screwdriver/bs(src)
 	new /obj/item/weapon/tool/saw/bs(src)
