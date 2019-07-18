@@ -126,3 +126,9 @@
 	name = "hip holster"
 	desc = "A leather handgun holster mounted around the hip."
 	icon_state = "holster_hip"
+
+/obj/item/clothing/accessory/holster/leg
+	name = "leg holster"
+	desc = "A tacticool handgun holster. Worn on the upper leg."
+	icon_state = "holster_leg"
+	overlay_state = "holster_leg"
