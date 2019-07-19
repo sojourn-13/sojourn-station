@@ -32,6 +32,7 @@
 /obj/effect/spawner/maintshroom/delayed/Initialize()
 	.=..()
 	//We spawn a burrow immediately, but the plants come later
+	find_or_create_burrow(get_turf(src))
 
 	//Lets decide how long to wait
 	var/delay = rand_between(1, delaymax)
