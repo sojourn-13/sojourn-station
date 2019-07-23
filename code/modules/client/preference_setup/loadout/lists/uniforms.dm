@@ -11,11 +11,17 @@
 	path = /obj/item/clothing/under/color/
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/dress
+	display_name = "dress selection"
+	path = /obj/item/clothing/under/plaid
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/scrubs
 	display_name = "scrubs selection"
 	path = /obj/item/clothing/under/scrubs
 	flags = GEAR_HAS_TYPE_SELECTION
-	allowed_roles = list("Moebius Paramedic","Moebius Psychiatrist","Moebius Chemist","Moebius Doctor","Moebius Biolab Officer","Moebius Expedition Overseer","Moebius Scientist","Moebius Roboticist","Ironhammer Medical Specialist")
+	allowed_roles = list("Moebius Paramedic","Moebius Psychiatrist","Moebius Chemist","Moebius Doctor","Moebius Biolab Officer")
+	sort_category = "Moebius"
 
 /datum/gear/uniform/jumpsuit2
 	display_name = "jumpsuit, customized"
@@ -47,17 +53,29 @@
 	path = /obj/item/clothing/under/swimsuit/
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/uniform/pyjamas
-	display_name = "sleepwear selection"
-	path = /obj/item/clothing/under/pj/
-	flags = GEAR_HAS_TYPE_SELECTION
-
 /datum/gear/uniform/skirt
 	display_name = "skirt selection"
-	path = /obj/item/clothing/under/plaid/
+	path = /obj/item/clothing/under/skirt
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/top
 	display_name = "top selection"
 	path = /obj/item/clothing/under/top/
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/turtleneck
+	display_name = "turtleneck selection"
+	path = /obj/item/clothing/under/turtleneck/
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/cheongsam
+	display_name = "cheongsam selection"
+	path = /obj/item/clothing/under/cheongsam
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/noselect/detcorporate
+	display_name = "inspectors uniform"
+	path = /obj/item/clothing/under/detalt
+	allowed_roles = list("Ironhammer Inspector")
+	slot = slot_w_uniform
+	sort_category = "Ironhammer"

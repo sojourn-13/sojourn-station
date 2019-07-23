@@ -198,13 +198,13 @@
 	item_state = "pinksuitskirt"
 
 /obj/item/clothing/under/suit_jacket/redblack
-	name = "redblack suit"
+	name = "cinnabar suit"
 	desc = "A suit with an outspoken red and black design."
 	icon_state = "redblacksuit"
 	item_state = "redblacksuit"
 
 /obj/item/clothing/under/suit_jacket/redblack/skirt
-	name = "redblack suit skirt"
+	name = "cinnabar suit skirt"
 	desc = "A skirted suit with an outspoken red and black design."
 	icon_state = "redblacksuitskirt"
 	item_state = "redblacksuitskirt"
@@ -381,32 +381,118 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/plaid/schoolgirlblue
-	name = "proper blue skirt"
-	desc = "It's just like one of my Japanese animes!"
+	name = "proper blue dress"
+	desc = "A rather tidy dress in a blue design."
 	icon_state = "schoolgirl"
 	item_state = "schoolgirl"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 
 /obj/item/clothing/under/plaid/schoolgirlred
-	name = "proper red skirt"
-	desc = "It's just like one of my Japanese animes!"
+	name = "proper red dress"
+	desc = "A rather tidy dress in a red design."
 	icon_state = "schoolgirlred"
 	item_state = "schoolgirlred"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 
 /obj/item/clothing/under/plaid/schoolgirlorange
-	name = "proper orange skirt"
-	desc = "It's just like one of my Japanese animes!"
+	name = "proper orange dress"
+	desc = "A rather tidy dress in a orange design."
 	icon_state = "schoolgirlorange"
 	item_state = "schoolgirlorange"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 
 /obj/item/clothing/under/plaid/schoolgirlgreen
-	name = "proper green skirt"
-	desc = "It's just like one of my Japanese animes!"
+	name = "proper green dress"
+	desc = "A rather tidy dress in a green design."
 	icon_state = "schoolgirlgreen"
 	item_state = "schoolgirlgreen"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+
+/obj/item/clothing/under/plaid/sundress
+	name = "dark sundress"
+	desc = "A dark blue sundress decorated with white flowers."
+	icon_state = "sundress"
+	icon_state = "sundress"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+
+/obj/item/clothing/under/plaid/sundress/white
+	name = "light sundress"
+	desc = "A white sundress decorated with purple lilies."
+	icon_state = "sundress_white"
+	item_state = "sundress_white"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+
+/obj/item/clothing/under/plaid/white2
+	name = "white long dress"
+	desc = "A rather long plain white dress."
+	icon_state = "whitedress2"
+	item_state = "whitedress2"
+
+/obj/item/clothing/under/plaid/white3
+	name = "white short dress"
+	desc = "A short plain white dress."
+	icon_state = "whitedress3"
+	item_state = "whitedress3"
+
+/obj/item/clothing/under/plaid/white4
+	name = "white flared dress"
+	desc = "A long plain white dress that flares out at the bottom."
+	icon_state = "whitedress4"
+	item_state = "whitedress4"
+
+/obj/item/clothing/under/plaid/blacktango
+	name = "black tango dress"
+	desc = "A black tango dress with red decor."
+	icon_state = "black_tango"
+	item_state = "black_tango"
+
+/obj/item/clothing/under/plaid/darkred
+	name = "red dress"
+	desc = "A short, red dress with a black belt."
+	icon_state = "darkreddress"
+	item_state = "darkreddress"
+
+/obj/item/clothing/under/plaid/dress_yellow
+	name = "yellow dress"
+	desc = "A flirty, little yellow dress."
+	icon_state = "dress_yellow"
+	item_state = "dress_yellow"
+
+/obj/item/clothing/under/plaid/stripeddress
+	name = "striped dress"
+	desc = "A striped monochrome skirt underneath a blue blazer."
+	icon_state = "striped_dress"
+	item_state = "striped_dress"
+
+/obj/item/clothing/under/plaid/sailordress
+	name = "sailor dress"
+	desc = "A formal blue skirt under a red blazer."
+	icon_state = "sailor_dress"
+	item_state = "sailor_dress"
+
+/obj/item/clothing/under/plaid/dress_fire
+	name = "flame dress"
+	desc = "A small black dress with a distinctive blue flame design."
+	icon_state = "dress_fire"
+	item_state = "dress_fire"
+
+/obj/item/clothing/under/plaid/dress_orange
+	name = "orange dress"
+	desc = "A fancy orange gown with some leg reveal."
+	icon_state = "dress_orange"
+	item_state = "dress_orange"
+
+/obj/item/clothing/under/plaid/dress_green
+	name = "green dress"
+	desc = "A simple and snug green dress."
+	icon_state = "dress_green"
+	item_state = "dress_green"
+
+/obj/item/clothing/under/plaid/dress_pink
+	name = "pink dress"
+	desc = "A simple and snug pink dress."
+	icon_state = "dress_pink"
+	item_state = "dress_pink"
 
 /obj/item/clothing/under/overalls
 	name = "yellow overalls"
@@ -419,6 +505,12 @@
 	desc = "A set of rugged brown overalls with a grey shirt underneath."
 	icon_state = "mechanic"
 	item_state = "mechanic"
+
+/obj/item/clothing/under/overalls/checkered
+	name = "checkered overalls"
+	desc = "A set of tough blue overalls with a checkered red shirt underneath."
+	icon_state = "frontier"
+	item_state = "frontier"
 
 /obj/item/clothing/under/top/
 	name = "grey crop top"
@@ -458,35 +550,107 @@
 	item_state = "gy_suit"
 
 /obj/item/clothing/under/plaid/kilt
-	name = "kilt"
+	name = "plaid kilt"
 	desc = "A plaid kilt complete with a matching green shirt."
 	icon_state = "kilt"
 	item_state = "kilt"
 
 /obj/item/clothing/under/plaid
-	name = "plaid blue skirt"
+	name = "plaid blue dress"
 	desc = "A preppy blue skirt with a white blouse."
 	icon_state = "plaid_blue"
 	item_state = "plaid_blue"
 
 /obj/item/clothing/under/plaid/purple
-	name = "plaid purple skirt"
+	name = "plaid purple dress"
 	desc = "A preppy purple skirt with a white blouse."
 	icon_state = "plaid_purple"
 	item_state = "plaid_purple"
 
 /obj/item/clothing/under/plaid/red
-	name = "plaid red skirt"
+	name = "plaid red dress"
 	desc = "A preppy red skirt with a white blouse."
 	icon_state = "plaid_red"
 	item_state = "plaid_red"
 
-/obj/item/clothing/under/top/turtleneck
+/obj/item/clothing/under/cheongsam
+	name = "white cheongsam"
+	desc = "A white cheongsam dress."
+	icon_state = "cheongsam-white"
+	item_state = "cheongsam-white"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/under/cheongsam/red
+	name = "red cheongsam"
+	desc = "A red cheongsam dress."
+	icon_state = "cheongsam-red"
+	item_state = "cheongsam-red"
+
+/obj/item/clothing/under/cheongsam/blue
+	name = "blue cheongsam"
+	desc = "A blue cheongsam dress."
+	icon_state = "cheongsam-blue"
+	item_state = "cheongsam-blue"
+
+/obj/item/clothing/under/cheongsam/black
+	name = "black cheongsam"
+	desc = "A black cheongsam dress."
+	icon_state = "cheongsam-black"
+	item_state = "cheongsam-black"
+
+/obj/item/clothing/under/cheongsam/darkred
+	name = "dark red cheongsam"
+	desc = "A dark red cheongsam dress."
+	icon_state = "cheongsam-darkred"
+	item_state = "cheongsam-darkred"
+
+/obj/item/clothing/under/cheongsam/green
+	name = "green cheongsam"
+	desc = "A green cheongsam dress."
+	icon_state = "cheongsam-green"
+	item_state = "cheongsam-green"
+
+/obj/item/clothing/under/cheongsam/purple
+	name = "purple cheongsam"
+	desc = "A purple cheongsam dress."
+	icon_state = "cheongsam-purple"
+	item_state = "cheongsam-purple"
+
+/obj/item/clothing/under/cheongsam/darkblue
+	name = "dark blue cheongsam"
+	desc = "A dark blue cheongsam dress."
+	icon_state = "cheongsam-darkblue"
+	item_state = "cheongsam-darkblue"
+
+/obj/item/clothing/under/turtleneck
 	name = "grey turtleneck"
-	desc = "A grey turtleneck."
+	desc = "A grey turtleneck complete with dark blue slacks."
 	icon_state = "turtleneckgrey"
 	item_state = "turtleneck"
 
+/obj/item/clothing/under/turtleneck/green
+	desc = "A turquoise turtleneck complete with dark blue slacks."
+	name = "green turtleneck"
+	icon_state = "psychturtle"
+	item_state = "b_suit"
+
+/obj/item/clothing/under/turtleneck/tacticalgreen
+	desc = "A compact green turtleneck complete with tan combat pants."
+	name = "green tactical turtleneck"
+	icon_state = "greenturtle"
+	item_state = "greenturtle"
+
+/obj/item/clothing/under/turtleneck/tacticalgrey
+	desc = "A compact grey turtleneck complete with tan combat pants."
+	name = "grey tactical turtleneck"
+	icon_state = "blackturtle"
+	item_state = "blackturtle"
+
+/obj/item/clothing/under/turtleneck/tacticalblack
+	name = "black tactical turtleneck"
+	desc = "A compact black turtleneck complete with dark combat pants."
+	icon_state = "blackutility"
+	item_state = "blackutility"
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 
@@ -521,31 +685,25 @@
 	item_state = "gy_suit"
 
 /obj/item/clothing/under/overalls/utility
-	name = "utility grey jumpsuit"
-	desc = "A rugged jumpsuit for utility work with a grey design."
+	name = "grey utility jumpsuit"
+	desc = "A rugged grey jumpsuit designed for maintenance work."
 	icon_state = "greyutility"
 	item_state = "greyutility"
 
 /obj/item/clothing/under/overalls/utility/tan
-	name = "utility tan jumpsuit"
-	desc = "A rugged jumpsuit for utility work with a tan design."
+	name = "tan utility jumpsuit"
+	desc = "A rugged tan jumpsuit designed for maintenance work."
 	icon_state = "tanutility"
 	item_state = "tanutility"
 
 /obj/item/clothing/under/overalls/utility/navy
-	name = "utility navy jumpsuit"
-	desc = "A rugged jumpsuit for utility work with a navy design."
+	name = "navy utility jumpsuit"
+	desc = "A rugged navy jumpsuit designed for maintenance work."
 	icon_state = "navyutility"
 	item_state = "navyutility"
 
-/obj/item/clothing/under/overalls/utility/black
-	name = "utility black jumpsuit"
-	desc = "A rugged jumpsuit for utility work with a black design."
-	icon_state = "blackutility"
-	item_state = "blackutility"
-
 /obj/item/clothing/under/overalls/utility/green
-	name = "utility green jumpsuit"
+	name = "green utility jumpsuit"
 	desc = "A rugged jumpsuit for utility work with a green design."
 	icon_state = "greenutility"
 	item_state = "greenutility"
@@ -560,12 +718,12 @@
 	icon_state = "whiteshorts_f"
 
 /obj/item/clothing/under/shorts/jeans
-	name = "jeans shorts"
+	name = "standard jeans shorts"
 	desc = "Some jeans! Just in short form!"
 	icon_state = "jeans_shorts"
 
 /obj/item/clothing/under/shorts/jeans/female
-	name = "jeans slim shorts"
+	name = "standard jeans slim shorts"
 	icon_state = "jeans_shorts_f"
 
 /obj/item/clothing/under/shorts/jeans/classic
@@ -618,14 +776,14 @@
 	icon_state = "khaki_shorts_f"
 
 /obj/item/clothing/under/pants
-	name = "jeans"
+	name = "standard jeans"
 	desc = "A nondescript pair of tough blue jeans."
 	icon_state = "jeans"
 	gender = PLURAL
 	body_parts_covered = LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/pants/ripped
-	name = "ripped jeans"
+	name = "standard ripped jeans"
 	desc = "A nondescript pair of tough blue jeans with holes in them."
 	icon_state = "jeansripped"
 
@@ -635,7 +793,7 @@
 	icon_state = "jeansclassic"
 
 /obj/item/clothing/under/pants/classicjeans/ripped
-	name = "ripped classic jeans"
+	name = "classic ripped jeans"
 	desc = "You feel cooler already. These have holes in them."
 	icon_state = "jeansclassicripped"
 
@@ -645,7 +803,7 @@
 	icon_state = "jeansmustang"
 
 /obj/item/clothing/under/pants/mustangjeans/ripped
-	name = "ripped mustang jeans"
+	name = "mustang ripped jeans"
 	desc = "Made in the finest space jeans factory this side of Alpha Centauri. These have holes in them."
 	icon_state = "jeansmustangripped"
 
@@ -655,7 +813,7 @@
 	icon_state = "jeansblack"
 
 /obj/item/clothing/under/pants/blackjeans/ripped
-	name = "ripped black jeans"
+	name = "black ripped jeans"
 	desc = "Only for those who can pull it off. These have holes in them."
 	icon_state = "jeansblackripped"
 
@@ -665,7 +823,7 @@
 	icon_state = "jeansgrey"
 
 /obj/item/clothing/under/pants/greyjeans/ripped
-	name = "ripped grey jeans"
+	name = "grey ripped jeans"
 	desc = "Only for those who can pull it off. These have holes in them."
 	icon_state = "jeansgreyripped"
 
@@ -744,97 +902,97 @@
  * Baggy Pants
  */
 /obj/item/clothing/under/pants/baggy
-	name = "baggy jeans"
+	name = "standard baggy jeans"
 	desc = "A nondescript pair of tough baggy blue jeans."
 	icon_state = "baggy_jeans"
 
 /obj/item/clothing/under/pants/baggy/classicjeans
-	name = "baggy classic jeans"
+	name = "classic baggy jeans"
 	desc = "You feel cooler already."
 	icon_state = "baggy_jeansclassic"
 
 /obj/item/clothing/under/pants/baggy/mustangjeans
-	name = "baggy mustang jeans"
+	name = "mustang baggy jeans"
 	desc = "Made in the finest space jeans factory this side of Alpha Centauri."
 	icon_state = "baggy_jeansmustang"
 
 /obj/item/clothing/under/pants/baggy/blackjeans
-	name = "baggy black jeans"
+	name = "black baggy jeans"
 	desc = "Only for those who can pull it off."
 	icon_state = "baggy_jeansblack"
 
 /obj/item/clothing/under/pants/baggy/greyjeans
-	name = "baggy grey jeans"
+	name = "grey baggy jeans"
 	desc = "Only for those who can pull it off."
 	icon_state = "baggy_jeansgrey"
 
 /obj/item/clothing/under/pants/baggy/youngfolksjeans
-	name = "baggy trendy jeans"
+	name = "trendy baggy jeans"
 	desc = "For those tired of boring old jeans. Relive the passion of your youth!"
 	icon_state = "baggy_jeansyoungfolks"
 
 /obj/item/clothing/under/pants/baggy/white
-	name = "baggy white pants"
+	name = "white baggy pants"
 	desc = "Plain white pants. Boring."
 	icon_state = "baggy_whitepants"
 
 /obj/item/clothing/under/pants/baggy/red
-	name = "baggy red pants"
+	name = "red baggy pants"
 	desc = "Bright red pants. Overflowing with personality."
 	icon_state = "baggy_redpants"
 
 /obj/item/clothing/under/pants/baggy/black
-	name = "baggy black pants"
+	name = "black baggy pants"
 	desc = "These pants are dark, like your soul."
 	icon_state = "baggy_blackpants"
 
 /obj/item/clothing/under/pants/baggy/tan
-	name = "baggy tan pants"
+	name = "tan baggy pants"
 	desc = "Some tan pants. You look like a white collar worker with these on."
 	icon_state = "baggy_tanpants"
 
 /obj/item/clothing/under/pants/baggy/track
-	name = "baggy track pants"
+	name = "track baggy pants"
 	desc = "A pair of track pants, for the athletic."
 	icon_state = "baggy_trackpants"
 
 /obj/item/clothing/under/pants/baggy/khaki
-	name = "baggy khaki pants"
+	name = "khaki baggy pants"
 	desc = "A pair of dust beige khaki pants."
 	icon_state = "baggy_khaki"
 
 /obj/item/clothing/under/pants/baggy/camo
-	name = "baggy camo pants"
+	name = "camo baggy pants"
 	desc = "A pair of woodland camouflage pants. Probably not the best choice for a space station."
 	icon_state = "baggy_camopants"
 
-/obj/item/clothing/under/plaid/skirt
+/obj/item/clothing/under/skirt
 	name = "short black skirt"
-	desc = "A skirt that is a shiny black."
+	desc = "A short skirt with a black design."
 	icon_state = "skirt_short_black"
 	body_parts_covered = LOWER_TORSO
 
-/obj/item/clothing/under/plaid/skirt/khaki
+/obj/item/clothing/under/skirt/khaki
 	name = "khaki skirt"
-	desc = "A skirt that is a khaki color."
+	desc = "An exotic skirt with a khaki design."
 	icon_state = "skirt_khaki"
 
-/obj/item/clothing/under/plaid/skirt/blue
+/obj/item/clothing/under/skirt/blue
 	name = "short blue skirt"
-	desc = "A skirt that is a shiny blue."
+	desc = "A short skirt with a shiny blue design."
 	icon_state = "skirt_short_blue"
 
-/obj/item/clothing/under/plaid/skirt/red
+/obj/item/clothing/under/skirt/red
 	name = "short red skirt"
-	desc = "A skirt that is a shiny red."
+	desc = "A short skirt with a shiny red design."
 	icon_state = "skirt_short_red"
 
-/obj/item/clothing/under/plaid/skirt/denim
+/obj/item/clothing/under/skirt/denim
 	name = "short denim skirt"
-	desc = "A skirt that is made of denim."
+	desc = "A short skirt composed of fine denim."
 	icon_state = "skirt_short_denim"
 
-/obj/item/clothing/under/plaid/skirt/swept
+/obj/item/clothing/under/skirt/swept
 	name = "swept skirt"
-	desc = "A skirt that is swept to one side."
+	desc = "A black skirt elegantly swept to one side."
 	icon_state = "skirt_swept"

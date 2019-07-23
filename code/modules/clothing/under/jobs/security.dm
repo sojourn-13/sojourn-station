@@ -74,6 +74,15 @@
 	armor = list(melee = 15, bullet = 10, laser = 10,energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
+/obj/item/clothing/under/detalt
+	name = "inspector's uniform"
+	desc = "A tidy black uniform adorned with an Ironhammer Inspector insignia."
+	icon_state = "det_corporate"
+	item_state = "det_corporate"
+
+	armor = list(melee = 15, bullet = 10, laser = 10,energy = 0, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
+
 
 
 /obj/item/clothing/under/rank/det/black

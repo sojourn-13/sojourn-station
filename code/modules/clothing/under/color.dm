@@ -1,7 +1,7 @@
 /obj/item/clothing/under/color/black
 	name = "black jumpsuit"
 	initial_name = "black jumpsuit"
-	desc = "A generic black jumpsuit."
+	desc = "A standard-issue jumpsuit with a black design."
 	icon_state = "black"
 	item_state = "bl_suit"
 
@@ -9,7 +9,7 @@
 /obj/item/clothing/under/color/blue
 	name = "blue jumpsuit"
 	initial_name = "blue jumpsuit"
-	desc = "A generic blue jumpsuit."
+	desc = "A standard-issue jumpsuit with a blue design."
 	icon_state = "blue"
 	item_state = "b_suit"
 
@@ -17,7 +17,7 @@
 /obj/item/clothing/under/color/green
 	name = "green jumpsuit"
 	initial_name = "green jumpsuit"
-	desc = "A generic green jumpsuit."
+	desc = "A standard-issue jumpsuit with a green design."
 	icon_state = "green"
 	item_state = "g_suit"
 
@@ -25,7 +25,7 @@
 /obj/item/clothing/under/color
 	name = "grey jumpsuit"
 	initial_name = "grey jumpsuit"
-	desc = "A generic grey jumpsuit."
+	desc = "A standard-issue jumpsuit with a grey design."
 	icon_state = "grey"
 	item_state = "gy_suit"
 
@@ -33,7 +33,7 @@
 /obj/item/clothing/under/orange
 	name = "orange jumpsuit"
 	initial_name = "orange jumpsuit"
-	desc = "A generic orange jumpsuit used for prisoners. Its suit sensors are stuck in the \"Fully On\" position."
+	desc = "A standard-issue jumpsuit produced for detention facilities with a orange design."
 	icon_state = "orange"
 	item_state = "o_suit"
 
@@ -43,7 +43,7 @@
 /obj/item/clothing/under/color/pink
 	name = "pink jumpsuit"
 	initial_name = "pink jumpsuit"
-	desc = "A generic pink jumpsuit."
+	desc = "A standard-issue jumpsuit with a pink design."
 	icon_state = "pink"
 	item_state = "p_suit"
 
@@ -51,7 +51,7 @@
 /obj/item/clothing/under/color/red
 	name = "red jumpsuit"
 	initial_name = "red jumpsuit"
-	desc = "A generic red jumpsuit."
+	desc = "A standard-issue jumpsuit with a red design."
 	icon_state = "red"
 	item_state = "r_suit"
 
@@ -59,7 +59,7 @@
 /obj/item/clothing/under/color/white
 	name = "white jumpsuit"
 	initial_name = "white jumpsuit"
-	desc = "A generic white jumpsuit."
+	desc = "A standard-issue jumpsuit with a white design."
 	icon_state = "white"
 	item_state = "w_suit"
 
@@ -67,7 +67,7 @@
 /obj/item/clothing/under/color/yellow
 	name = "yellow jumpsuit"
 	initial_name = "yellow jumpsuit"
-	desc = "A generic yellow jumpsuit."
+	desc = "A standard-issue jumpsuit with a yellow design."
 	icon_state = "yellow"
 	item_state = "y_suit"
 
@@ -80,9 +80,9 @@
 
 
 /obj/item/clothing/under/color/lightblue
-	name = "light-blue jumpsuit"
-	initial_name = "light-blue jumpsuit"
-	desc = "A generic light-blue jumpsuit."
+	name = "light blue jumpsuit"
+	initial_name = "light blue jumpsuit"
+	desc = "A standard-issue jumpsuit with a light blue design."
 	icon_state = "lightblue"
 	item_state = "b_suit"
 
@@ -90,7 +90,7 @@
 /obj/item/clothing/under/color/aqua
 	name = "aqua jumpsuit"
 	initial_name = "aqua jumpsuit"
-	desc = "A generic aqua jumpsuit."
+	desc = "A standard-issue jumpsuit with a aqua design."
 	icon_state = "aqua"
 	item_state = "b_suit"
 
@@ -98,31 +98,31 @@
 /obj/item/clothing/under/color/purple
 	name = "purple jumpsuit"
 	initial_name = "purple jumpsuit"
-	desc = "A generic purple jumpsuit."
+	desc = "A standard-issue jumpsuit with a purple design."
 	icon_state = "purple"
 	item_state = "p_suit"
 
 
 /obj/item/clothing/under/color/lightpurple
-	name = "light-purple jumpsuit"
-	initial_name = "light-purple jumpsuit"
-	desc = "A generic light-purple jumpsuit."
+	name = "light purple jumpsuit"
+	initial_name = "light purple jumpsuit"
+	desc = "A standard-issue jumpsuit with a light purple design."
 	icon_state = "lightpurple"
 	item_state = "p_suit"
 
 
 /obj/item/clothing/under/color/lightgreen
-	name = "light-green jumpsuit"
-	initial_name = "light-green jumpsuit"
-	desc = "A generic light-green jumpsuit."
+	name = "light green jumpsuit"
+	initial_name = "light green jumpsuit"
+	desc = "A standard-issue jumpsuit with a light green design."
 	icon_state = "lightgreen"
 	item_state = "g_suit"
 
 
 /obj/item/clothing/under/color/lightbrown
-	name = "light-brown jumpsuit"
-	initial_name = "light-brown jumpsuit"
-	desc = "A generic light-brown jumpsuit."
+	name = "light brown jumpsuit"
+	initial_name = "light brown jumpsuit"
+	desc = "A standard-issue jumpsuit with a light brown design."
 	icon_state = "lightbrown"
 	item_state = "lb_suit"
 
@@ -130,43 +130,43 @@
 /obj/item/clothing/under/color/brown
 	name = "brown jumpsuit"
 	initial_name = "brown jumpsuit"
-	desc = "A generic brown jumpsuit."
+	desc = "A standard-issue jumpsuit with a brown design."
 	icon_state = "brown"
 	item_state = "lb_suit"
 
 
 /obj/item/clothing/under/color/yellowgreen
-	name = "yellow-green jumpsuit"
-	initial_name = "yellow-green jumpsuit"
-	desc = "A generic yellow-green jumpsuit."
+	name = "lime green jumpsuit"
+	initial_name = "lime green jumpsuit"
+	desc = "A standard-issue jumpsuit with a lime green design."
 	icon_state = "yellowgreen"
 	item_state = "y_suit"
 
 
 /obj/item/clothing/under/color/darkblue
-	name = "dark-blue jumpsuit"
-	initial_name = "dark-blue jumpsuit"
-	desc = "A generic dark-blue jumpsuit."
+	name = "dark blue jumpsuit"
+	initial_name = "dark blue jumpsuit"
+	desc = "A standard-issue jumpsuit with a dark blue design."
 	icon_state = "darkblue"
 	item_state = "b_suit"
 
 
 /obj/item/clothing/under/color/lightred
-	name = "light-red jumpsuit"
-	initial_name = "light-red jumpsuit"
-	desc = "A generic light-red jumpsuit."
+	name = "light red jumpsuit"
+	initial_name = "light red jumpsuit"
+	desc = "A standard-issue jumpsuit with a light red design."
 	icon_state = "lightred"
 	item_state = "r_suit"
 
 
 /obj/item/clothing/under/color/darkred
-	name = "dark-red jumpsuit"
-	initial_name = "dark-red jumpsuit"
-	desc = "A generic dark-red jumpsuit."
+	name = "dark red jumpsuit"
+	initial_name = "dark red jumpsuit"
+	desc = "A standard-issue jumpsuit with a dark red design."
 	icon_state = "darkred"
 	item_state = "r_suit"
 
-/obj/item/clothing/under/color/rainbow
+/obj/item/clothing/under/rainbow
 	name = "rainbow jumpsuit"
 	desc = "A fabulously colorful jumpsuit."
 	icon_state = "rainbow"
@@ -175,6 +175,6 @@
 /obj/item/clothing/under/custom
 	name = "customized jumpsuit"
 	initial_name = "customized jumpsuit"
-	desc = "A customized jumpsuit with a tailored color."
+	desc = "A specialised jumpsuit with a tailored color."
 	icon_state = "white"
 	item_state = "w_suit"

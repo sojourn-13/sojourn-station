@@ -72,6 +72,13 @@
 	siemens_coefficient = 0
 	price_tag = 500
 
+/obj/item/clothing/gloves/evening
+	name = "evening gloves"
+	initial_name = "evening gloves"
+	desc = "A pair of elegant evening gloves."
+	icon_state = "evening_gloves"
+	item_state = "evening_gloves"
+
 /obj/item/clothing/gloves/latex
 	name = "latex gloves"
 	desc = "A pair of sterile latex gloves."

@@ -288,7 +288,7 @@
 		for(var/i in 1 to del_count)
 			product_records.Remove(pick(product_records))
 
-/obj/item/clothing/glasses/sunglasses/sechud/make_old()
+/obj/item/clothing/glasses/sechud/make_old()
 	.=..()
 	if (.)
 		if(hud && prob(75))

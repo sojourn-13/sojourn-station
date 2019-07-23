@@ -25,18 +25,18 @@
 	item_state = "pwig"
 
 /obj/item/clothing/head/hat/that
-	name = "top-hat"
-	desc = "It's an amish looking hat."
+	name = "top hat"
+	desc = "A standard black top hat."
 	icon_state = "tophat"
 	item_state = "tophat"
 	siemens_coefficient = 0.9
 	body_parts_covered = 0
 
 
-/obj/item/clothing/head/soft/mailman
+/obj/item/clothing/head/mailman
 	name = "station cap"
 	icon_state = "mailman"
-	desc = "<i>Choo-choo</i>!"
+	desc = "A blue postal cap worn by the long-defunct mail service."
 	body_parts_covered = 0
 
 /obj/item/clothing/head/plaguedoctorhat
@@ -117,7 +117,7 @@
 
 /obj/item/clothing/head/hat/flatcap
 	name = "flat cap"
-	desc = "A working man's cap."
+	desc = "A rugged and reliable working cap."
 	icon_state = "flat_cap"
 	item_state_slots = list(
 		slot_l_hand_str = "det_hat",
@@ -153,33 +153,33 @@
 /obj/item/clothing/head/hat
 	name = "bowler hat"
 	icon_state = "bowler_hat"
-	desc = "For the gentleman of distinction."
+	desc = "A hard felt hat with a rounded crown."
 	body_parts_covered = 0
 
 /obj/item/clothing/head/hat/beaverhat
 	name = "beaver hat"
 	icon_state = "beaver_hat"
-	desc = "Soft felt makes this hat both comfortable and elegant."
+	desc = "A comfortable top hat made out of pelt."
 
 /obj/item/clothing/head/hat/boaterhat
 	name = "boater hat"
 	icon_state = "boater_hat"
-	desc = "The ultimate in summer fashion."
+	desc = "A formal summer hat."
 
 /obj/item/clothing/head/hat/fedora
 	name = "fedora"
 	icon_state = "fedora"
-	desc = "A sharp, stylish hat."
+	desc = "A soft felt hat with a sharp brim."
 
 /obj/item/clothing/head/hat/feathertrilby
 	name = "feather trilby"
 	icon_state = "feather_trilby"
-	desc = "A sharp, stylish hat with a feather."
+	desc = "A soft felt hat with a sharp brim and feather."
 
 /obj/item/clothing/head/hat/fez
 	name = "fez"
 	icon_state = "fez"
-	desc = "You should wear a fez. Fezzes are cool."
+	desc = "A conical red hat in prime oriental fashion."
 
 //end bs12 hats
 

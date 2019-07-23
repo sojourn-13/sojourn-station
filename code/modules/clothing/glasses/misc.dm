@@ -46,12 +46,36 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/sunglasses
-	desc = "Glasses designed for eye protection. The shielding makes good flash protection."
+	desc = "A pair of standard sunglasses."
 	name = "sunglasses"
 	icon_state = "sun"
 	item_state = "sunglasses"
 	darkness_view = -1
 	flash_protection = FLASH_PROTECTION_MODERATE
+
+/obj/item/clothing/glasses/sunglasses/aviator
+	name = "aviators"
+	desc = "A pair of designer sunglasses."
+	icon_state = "aviator"
+	item_state = "aviator"
+
+/obj/item/clothing/glasses/sunglasses/aviatorred
+	name = "red aviators"
+	desc = "A pair of red-tinted designer sunglasses."
+	icon_state = "aviator_sec"
+	item_state = "aviator_sec"
+
+/obj/item/clothing/glasses/sunglasses/aviatorgreen
+	name = "green aviators"
+	desc = "A pair of green-tinted designer sunglasses."
+	icon_state = "aviator_eng"
+	item_state = "aviator_eng"
+
+/obj/item/clothing/glasses/sunglasses/aviatorblue
+	name = "blue aviators"
+	desc = "A pair of blue-tinted designer sunglasses."
+	icon_state = "aviator_med"
+	item_state = "aviator_med"
 
 /obj/item/clothing/glasses/blindfold
 	name = "blindfold"
