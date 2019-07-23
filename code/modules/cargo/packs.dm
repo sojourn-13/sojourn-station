@@ -582,9 +582,22 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 /datum/supply_pack/fueltank
 	name = "Fuel tank crate"
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
-	cost = 800
+	cost = 1000
 	containertype = /obj/structure/largecrate
 	crate_name = "fuel tank crate"
+	group = "Engineering"
+
+/datum/supply_pack/fuelcrate2
+	name = "Fuel crate" //1000 fuel
+	contains = list(/obj/item/weapon/weldpack,
+			/obj/item/weapon/weldpack,
+			/obj/item/weapon/weldpack/canister,
+			/obj/item/weapon/weldpack/canister,
+			/obj/item/weapon/weldpack/canister,)
+	cost = 2500
+	access = FALSE
+	containertype = /obj/structure/closet/crate
+	crate_name = "fuel crate"
 	group = "Engineering"
 
 /datum/supply_pack/solar
