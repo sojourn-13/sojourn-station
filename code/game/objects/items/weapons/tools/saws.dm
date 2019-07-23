@@ -42,6 +42,17 @@
 	use_power_cost = 0.15
 	suitable_cell = /obj/item/weapon/cell/small
 
+/obj/item/weapon/tool/saw/circular/medical
+	name = "medical cirular saw"
+	desc = "For clean bone cutting but dosnt seem all that durable. Spins slower then the normal saw as well."
+	icon_state = "saw"
+	force = WEAPON_FORCE_PAINFUL
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 4)
+	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
+	use_power_cost = 0.05
+	degradation = 2.65
+	suitable_cell = /obj/item/weapon/cell/small
+
 /obj/item/weapon/tool/saw/advanced_circular
 	name = "advanced circular saw"
 	desc = "You think you can cut anything with it."
