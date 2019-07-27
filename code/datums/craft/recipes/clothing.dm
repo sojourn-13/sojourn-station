@@ -62,3 +62,13 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
 		list(/obj/item/stack/cable_coil, 2)
 	)
+
+// Butcher some clothes into rags to make some cloak
+/datum/craft_recipe/clothing/cloak
+	name = "ragged cloak"
+	result = /obj/item/clothing/suit/hooded/cloak/simple
+	steps = list(
+		list(/obj/item/clothing, 1, time = 30),
+		list(/obj/item/clothing, 1, time = 30),
+		list(QUALITY_CUTTING, 10, 60)
+	)

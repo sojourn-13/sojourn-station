@@ -1343,6 +1343,8 @@
 #include "code\modules\clothing\accessories\badges.dm"
 #include "code\modules\clothing\accessories\holster.dm"
 #include "code\modules\clothing\accessories\lockets.dm"
+#include "code\modules\clothing\cloak\hooded.dm"
+#include "code\modules\clothing\cloak\jobs.dm"
 #include "code\modules\clothing\glasses\glasses.dm"
 #include "code\modules\clothing\glasses\hud.dm"
 #include "code\modules\clothing\glasses\meson.dm"
