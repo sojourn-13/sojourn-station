@@ -69,7 +69,7 @@
 
 /obj/item/weapon/tool/saw/chain
 	name = "chainsaw"
-	desc = "You can cut trees, people walls and zombies with it, just watch out for fuel."
+	desc = "You can cut trees, people, walls, and zombies with it, just watch out for fuel."
 	icon_state = "chainsaw"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
