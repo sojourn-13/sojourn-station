@@ -1,5 +1,50 @@
-/* Paint and crayons */
+/datum/reagent/acetone
+	name = "Acetone"
+	id = "acetone"
+	description = "A colorless liquid solvent used in chemical synthesis."
+	taste_description = "acid"
+	reagent_state = LIQUID
+	color = "#808080"
+	metabolism = REM * 0.2
 
+/datum/reagent/acetone/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	M.adjustToxLoss(removed * 3)
+
+/datum/reagent/acetone/touch_obj(var/obj/O)	//I copied this wholesale from ethanol and could likely be converted into a shared proc. ~Techhead
+	if(istype(O, /obj/item/weapon/paper))
+		var/obj/item/weapon/paper/paperaffected = O
+		paperaffected.clearpaper()
+		usr << "The solution dissolves the ink on the paper."
+		return
+	if(istype(O, /obj/item/weapon/book))
+		if(volume < 5)
+			return
+		var/obj/item/weapon/book/affectedbook = O
+		affectedbook.dat = null
+		usr << "<span class='notice'>The solution dissolves the ink on the book.</span>"
+	return
+
+/datum/reagent/oil
+	name = "Oil"
+	description = "Burns in a small smoky fire, mostly used to get Ash."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	taste_description = "oil"
+
+/datum/reagent/oil/touch_turf(var/turf/T)
+	new /obj/effect/decal/cleanable/liquid_fuel(T, volume)
+	remove_self(volume)
+	return
+
+/datum/reagent/oil/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(issmall(M)) removed *= 2
+	M.adjustToxLoss(2 * removed)
+
+/datum/reagent/fuel/touch_mob(var/mob/living/L, var/amount)
+	if(istype(L))
+		L.adjust_fire_stacks(amount / 20) // Splashing people with welding fuel to make them easy to ignite!
+
+/* Paint and crayons */
 /datum/reagent/crayon_dust
 	name = "Crayon dust"
 	id = "crayon_dust"

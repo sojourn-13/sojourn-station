@@ -508,3 +508,19 @@
 	if(dose > 10)
 		M.make_dizzy(5)
 		M.make_jittery(5)
+
+/datum/reagent/inacusiate
+	name = "Inacusiate"
+	id = "inacusiate"
+	description = "Rapidly heals ear damage"
+	reagent_state = LIQUID
+	color = "#6600FF"
+
+/datum/reagent/inacusiate/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+
+	if(..())
+		return 1
+
+	M.ear_damage = 0
+	M.ear_deaf = 0
+
