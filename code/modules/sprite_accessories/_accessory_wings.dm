@@ -185,3 +185,15 @@
 	icon_state = "spines_aqua"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/Moth_royal
+	name = "moth royal"
+	desc = ""
+	icon_state = "Moth_royal"
+
+/datum/sprite_accessory/wings/Moth_royal_colorable
+	name = "moth royal, colorable"
+	desc = ""
+	icon_state = "Moth_royal_colorable"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
