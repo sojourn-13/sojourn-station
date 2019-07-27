@@ -1,4 +1,3 @@
-/*
 /obj/effect/spawner/maintshroom
 	name = "maintshroom spawner"
 	icon = 'icons/mob/screen1.dmi'
@@ -56,4 +55,3 @@
 	new /obj/effect/plant(get_turf(B), new /datum/seed/mushroom/maintshroom)
 
 	qdel(src)
-*/
