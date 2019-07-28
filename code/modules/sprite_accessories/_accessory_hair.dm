@@ -645,6 +645,58 @@
 	icon_state = "zone"
 	gender = FEMALE
 
+/datum/sprite_accessory/hair/crestedquill
+	name = "Crested Quills"
+	icon_state = "crestedquills"
+
+/datum/sprite_accessory/hair/emperorquill
+	name = "Emperor Quills"
+	icon_state = "emperorquills"
+
+/datum/sprite_accessory/hair/keelquill
+	name = "Keel Quills"
+	icon_state = "keelquills"
+
+/datum/sprite_accessory/hair/keetquill
+	name = "Keet Quills"
+	icon_state = "keetquills"
+
+/datum/sprite_accessory/hair/shortquill
+	name = "Short Quills"
+	icon_state ="shortquills"
+
+/datum/sprite_accessory/hair/tielquill
+	name = "Tiel Quills"
+	icon_state = "tielquills"
+
+/datum/sprite_accessory/hair/kinglyquill
+	name = "Kingly Quills"
+	icon_state = "kinglyquills"
+
+/datum/sprite_accessory/hair/afroquill
+	name = "Afro Quills"
+	icon_state = "afroquills"
+
+/datum/sprite_accessory/hair/yasuquill
+	name = "Yasu Quills"
+	icon_state = "yasuquills"
+
+/datum/sprite_accessory/hair/razorquill
+	name = "Razor Quills"
+	icon_state = "razorquills"
+
+/datum/sprite_accessory/hair/mohawkquill
+	name = "Mohawk Quills"
+	icon_state = "mohawkquills"
+
+/datum/sprite_accessory/hair/hornquill
+	name = "Horn Quills"
+	icon_state = "hornquills"
+
+/datum/sprite_accessory/hair/nightquills
+	name = "Night Quills"
+	icon_state = "nightquills"
+
 /*
 ////////////////////////////
 /  =--------------------=  /
