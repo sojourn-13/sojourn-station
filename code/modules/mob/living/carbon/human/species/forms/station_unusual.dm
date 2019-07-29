@@ -1,8 +1,18 @@
 /datum/species_form/bird
 	playable = TRUE
 	name = FORM_BIRD
-	base = 'icons/mob/human_races/r_seromi_white.dmi'
+	base = 			'icons/mob/human_races/r_seromi_white.dmi'
 	deform = null
+	uniform_icon = 		'icons/inventory/teshari/teshari_uniform.dmi'
+	gloves_icon = 		'icons/inventory/teshari/teshari_gloves.dmi'
+	glasses_icon = 		'icons/inventory/teshari/teshari_eyes.dmi'
+	shoes_icon = 		'icons/inventory/teshari/teshari_shoes.dmi'
+	hat_icon = 			'icons/inventory/teshari/teshari_head.dmi'
+	suit_icon = 		'icons/inventory/teshari/teshari_suit.dmi'
+	mask_icon = 		'icons/inventory/teshari/teshari_masks.dmi'
+	backpack_icon = 	'icons/inventory/teshari/teshari_back.dmi'
+	belt_icon = 		'icons/inventory/teshari/teshari_belts.dmi'
+	ears_icon = 		'icons/inventory/teshari/teshari_ears.dmi'
 	icon_fallback = null
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
