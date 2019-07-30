@@ -1782,6 +1782,7 @@
 #include "code\modules\mob\living\silicon\robot\photos.dm"
 #include "code\modules\mob\living\silicon\robot\robot.dm"
 #include "code\modules\mob\living\silicon\robot\robot_damage.dm"
+#include "code\modules\mob\living\silicon\robot\robot_dogborgs.dm"
 #include "code\modules\mob\living\silicon\robot\robot_hud.dm"
 #include "code\modules\mob\living\silicon\robot\robot_items.dm"
 #include "code\modules\mob\living\silicon\robot\robot_modules.dm"

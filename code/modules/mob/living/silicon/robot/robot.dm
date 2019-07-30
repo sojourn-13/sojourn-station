@@ -1020,13 +1020,14 @@
 	set category = "Robot Commands"
 	set name = "Choose Icon"
 
+	var/tries = 0
 	if(!module_sprites.len)
 		to_chat(src, "Something is badly wrong with the sprite selection. Harass a coder.")
 		return
 	if (icon_selected == TRUE)
 		verbs -= /mob/living/silicon/robot/proc/choose_icon
 		return
-
+	//tries += module_sprites.len //Disabled since it shows you the sprites in the radial menu.
 
 	if(module_sprites.len == 1 || !client)
 		if(!(icontype in module_sprites))
@@ -1034,17 +1035,20 @@
 		if (!client)
 			return
 	else
-		var/list/options = list()
-		for(var/i in module_sprites)
-			options[i] = image(icon = src.icon, icon_state = module_sprites[i])
-		icontype = show_radial_menu(src, src, options, radius = 42)
-	if(!icontype)
-		return
-	icon_state = module_sprites[icontype]
-	updateicon()
-
-	if(alert("Do you like this icon?",null, "No","Yes") == "No")
-		return choose_icon()
+		do
+			var/list/options = list()
+			for(var/i in module_sprites)
+				var/icon/ico = icon(icon = src.icon, icon_state = module_sprites[i])
+				var/offset = (32 - ico.Width()) / 2
+				var/image/img = image(ico)
+				img.pixel_x = offset
+				options[i] = img
+			icontype = show_radial_menu(src, src, options, radius = 42)
+			if(!icontype)
+				return
+			icon_state = module_sprites[icontype]
+			updateicon()
+		while(tries > 0 && (module_sprites.len > 1) && alert("Do you like this icon?",null, "No","Yes") == "No")
 
 	icon_selected = TRUE
 	verbs -= /mob/living/silicon/robot/proc/choose_icon

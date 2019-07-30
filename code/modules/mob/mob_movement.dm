@@ -189,7 +189,7 @@
 		to_chat(src, SPAN_WARNING("You slipped!"))
 		src.inertia_dir = src.last_move
 		step(src, src.inertia_dir)
-		return 0
+		return 1
 	return 0
 
 //Checks if a mob has solid ground to stand on

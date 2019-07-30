@@ -1,15 +1,20 @@
 var/global/list/robot_modules = list(
-	"Standard"		= /obj/item/weapon/robot_module/standard,
-	"Service" 		= /obj/item/weapon/robot_module/service,
-	"Research" 		= /obj/item/weapon/robot_module/research,
-	"Miner" 		= /obj/item/weapon/robot_module/miner,
-	"Rescue" 		= /obj/item/weapon/robot_module/medical/rescue,
-	"Medical" 		= /obj/item/weapon/robot_module/medical/general,
-	"Security" 		= /obj/item/weapon/robot_module/security/general,
-	"Engineering"	= /obj/item/weapon/robot_module/engineering/general,
-	"Construction"	= /obj/item/weapon/robot_module/engineering/construction,
-	"Custodial" 	= /obj/item/weapon/robot_module/custodial
-	//"Combat" 		= /obj/item/weapon/robot_module/combat,
+	"Standard"					= /obj/item/weapon/robot_module/standard,
+	"Service" 					= /obj/item/weapon/robot_module/service,
+	"Research" 					= /obj/item/weapon/robot_module/research,
+	"Miner" 					= /obj/item/weapon/robot_module/miner,
+	"Rescue" 					= /obj/item/weapon/robot_module/medical/rescue,
+	"Medical" 					= /obj/item/weapon/robot_module/medical/general,
+	"Security" 					= /obj/item/weapon/robot_module/security/general,
+	"Engineering"				= /obj/item/weapon/robot_module/engineering/general,
+	"Construction"				= /obj/item/weapon/robot_module/engineering/construction,
+	"Custodial" 				= /obj/item/weapon/robot_module/custodial,
+	"Moebius Medihound"			= /obj/item/weapon/robot_module/robot/medihound,
+	"Ironhammer K9 Unit"		= /obj/item/weapon/robot_module/robot/knine,
+	"Custodial Hound"			= /obj/item/weapon/robot_module/robot/scrubpup,
+	"Moebius Scihound"			= /obj/item/weapon/robot_module/robot/science,
+	"Technomancer Engihound"	= /obj/item/weapon/robot_module/robot/engiedog,
+	//"Combat" 					= /obj/item/weapon/robot_module/combat,
 	)
 
 /obj/item/weapon/robot_module
@@ -131,6 +136,12 @@ var/global/list/robot_modules = list(
 
 	if(R.radio)
 		R.radio.recalculateChannels()
+
+	R.pixel_x = initial(pixel_x)
+	R.pixel_y = initial(pixel_y)
+	R.icon = initial(R.icon)
+	R.default_pixel_x = initial(pixel_x)
+
 	R.set_module_sprites(list("Default" = "robot"))
 	R.icon_selected = 0
 	R.choose_icon()
