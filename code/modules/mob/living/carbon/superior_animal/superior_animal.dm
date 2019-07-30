@@ -91,6 +91,12 @@
 	pixel_y = rand_between(-randpixel, randpixel)
 
 
+/mob/living/carbon/superior_animal/Initialize(var/mapload)
+	.=..()
+	if (mapload && can_burrow)
+		find_or_create_burrow(get_turf(src))
+		if (prob(extra_burrow_chance))
+			create_burrow(get_turf(src))
 
 /mob/living/carbon/superior_animal/Destroy()
 	. = ..()
@@ -130,4 +136,3 @@
 
 /mob/living/carbon/superior_animal/updateicon()
 	. = ..()
-	update_icons()

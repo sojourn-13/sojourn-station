@@ -93,6 +93,7 @@
 				/obj/item/weapon/tool/saw/chain = 1,
 				/obj/item/weapon/tool/pickaxe/diamonddrill = 2,
 				/obj/item/weapon/tool/tape_roll/fiber = 2,
+				/obj/item/weapon/tool/tape_roll/flextape = 1,
 				/obj/item/weapon/material/twohanded/fireaxe = 1))
 
 /obj/random/tool/advanced/low_chance

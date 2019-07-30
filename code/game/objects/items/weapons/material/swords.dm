@@ -1,3 +1,6 @@
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////// Material Claymores ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 /obj/item/weapon/material/sword
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
@@ -21,6 +24,34 @@
 		return 1
 	return 0
 
+/obj/item/weapon/material/sword/gold
+	default_material = MATERIAL_GOLD
+
+/obj/item/weapon/material/sword/plastic
+	default_material = MATERIAL_PLASTIC
+
+/obj/item/weapon/material/sword/uranium
+	default_material = MATERIAL_URANIUM
+
+/obj/item/weapon/material/sword/plasteel
+	default_material = MATERIAL_PLASTEEL
+
+/obj/item/weapon/material/sword/platinum
+	default_material = MATERIAL_PLATINUM
+
+/obj/item/weapon/material/sword/iron
+	default_material = MATERIAL_IRON
+
+/obj/item/weapon/material/sword/silver
+	default_material = MATERIAL_SILVER
+
+/obj/item/weapon/material/sword/diamond
+	default_material = MATERIAL_DIAMOND
+
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////// Material  Katana's ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
 /obj/item/weapon/material/sword/katana
 	name = "katana"
 	desc = "Woefully underpowered in D20. This one looks pretty sharp."
@@ -34,3 +65,27 @@
     var/image/I = image(icon, icon_state = "katana_handle")
     I.appearance_flags = RESET_COLOR
     overlays += I
+
+/obj/item/weapon/material/sword/katana/gold
+	default_material = MATERIAL_GOLD
+
+/obj/item/weapon/material/sword/katana/plastic
+	default_material = MATERIAL_PLASTIC
+
+/obj/item/weapon/material/sword/katana/uranium
+	default_material = MATERIAL_URANIUM
+
+/obj/item/weapon/material/sword/katana/plasteel
+	default_material = MATERIAL_PLASTEEL
+
+/obj/item/weapon/material/sword/katana/platinum
+	default_material = MATERIAL_PLATINUM
+
+/obj/item/weapon/material/sword/katana/iron
+	default_material = MATERIAL_IRON
+
+/obj/item/weapon/material/sword/katana/silver
+	default_material = MATERIAL_SILVER
+
+/obj/item/weapon/material/sword/katana/diamond
+	default_material = MATERIAL_DIAMOND

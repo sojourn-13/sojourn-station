@@ -189,10 +189,34 @@
 	siemens_coefficient = 1
 
 /obj/item/clothing/suit/poncho
-	name = "poncho"
-	desc = "A simple, comfortable poncho."
+	name = "brown poncho"
+	desc = "A comfortable sleeveless poncho with a brown design."
 	icon_state = "classicponcho"
 	item_state = "classicponcho"
+
+/obj/item/clothing/suit/poncho/green
+	name = "green poncho"
+	desc = "A comfortable sleeveless poncho with a green design."
+	icon_state = "greenponcho"
+	item_state = "greenponcho"
+
+/obj/item/clothing/suit/poncho/red
+	name = "red poncho"
+	desc = "A comfortable sleeveless poncho with a red design."
+	icon_state = "redponcho"
+	item_state = "redponcho"
+
+/obj/item/clothing/suit/poncho/purple
+	name = "purple poncho"
+	desc = "A comfortable sleeveless poncho with a purple design."
+	icon_state = "purpleponcho"
+	item_state = "purpleponcho"
+
+/obj/item/clothing/suit/poncho/blue
+	name = "blue poncho"
+	desc = "A comfortable sleeveless poncho with a blue design."
+	icon_state = "blueponcho"
+	item_state = "blueponcho"
 
 /obj/item/clothing/suit/storage/toggle/bomber
 	name = "bomber jacket"
@@ -207,8 +231,8 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/storage/leather_jacket
-	name = "leather jacket"
-	desc = "A sturdy, synthetic leather jacket with a high collar."
+	name = "grey leather jacket"
+	desc = "A sturdy grey jacket made out of synthetic leather."
 	icon_state = "leather_jacket"
 	item_state = "leather_jacket"
 	armor = list(melee = 20, bullet = 5, laser = 10, energy = 20, bomb = 10, bio = 0, rad = 0)
@@ -217,6 +241,131 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/storage/leather_jacket/vest
+	name = "black leather vest"
+	desc = "A sturdy black leather vest made out of synthetic leather."
+	icon_state = "leather_jacket_sleeveless"
+	item_state = "leather_jacket_sleeveless"
+
+/obj/item/clothing/suit/storage/leather_jacket/black
+	name = "black leather jacket"
+	desc = "A sturdy black jacket made out of synthetic leather."
+	icon_state = "leather_jacket2"
+	item_state = "leather_jacket2"
+
+/obj/item/clothing/suit/storage/puffer
+	name = "puffer jacket"
+	desc = "A comfortable grey puffer jacket."
+	icon_state = "pufferjacket"
+	item_state = "pufferjacket"
+
+/obj/item/clothing/suit/storage/puffer/vest
+	name = "puffer vest"
+	desc = "A comfortable grey puffer vest."
+	icon_state = "puffervest"
+	item_state = "puffervest"
+
+/obj/item/clothing/suit/storage/flannel
+	name = "grey flannel shirt"
+	desc = "A comfy flannel shirt with a grey design."
+	icon_state = "flannel"
+	item_state = "flannel"
+
+/obj/item/clothing/suit/storage/flannel/aqua
+	name = "aqua flannel shirt"
+	desc = "A comfy flannel shirt with a aqua design."
+	icon_state = "flannel_aqua"
+	item_state = "flannel_aqua"
+
+/obj/item/clothing/suit/storage/flannel/brown
+	name = "brown flannel shirt"
+	desc = "A comfy flannel shirt with a brown design."
+	icon_state = "flannel_brown"
+	item_state = "flannel_brown"
+
+/obj/item/clothing/suit/storage/flannel/red
+	name = "red flannel shirt"
+	desc = "A comfy flannel shirt with a red design."
+	icon_state = "flannel_red"
+	item_state = "flannel_red"
+
+/obj/item/clothing/suit/varsity
+	name = "black varsity jacket"
+	desc = "A sporty letterman jacket with a black design."
+	icon_state = "varsity"
+	item_state = "varsity"
+
+/obj/item/clothing/suit/varsity/red
+	name = "red varsity jacket"
+	desc = "A sporty letterman jacket with a red design."
+	icon_state = "varsity_red"
+	item_state = "varsity_red"
+
+/obj/item/clothing/suit/varsity/purple
+	name = "purple varsity jacket"
+	desc = "A sporty letterman jacket with a purple design."
+	icon_state = "varsity_purple"
+	item_state = "varsity_purple"
+
+/obj/item/clothing/suit/varsity/green
+	name = "green varsity jacket"
+	desc = "A sporty letterman jacket with a green design."
+	icon_state = "varsity_green"
+	item_state = "varsity_green"
+
+/obj/item/clothing/suit/varsity/blue
+	name = "blue varsity jacket"
+	desc = "A sporty letterman jacket with a blue design."
+	icon_state = "varsity_blue"
+	item_state = "varsity_blue"
+
+/obj/item/clothing/suit/varsity/brown
+	name = "brown varsity jacket"
+	desc = "A sporty letterman jacket with a brown design."
+	icon_state = "varsity_brown"
+	item_state = "varsity_brown"
+
+/obj/item/clothing/suit/storage/miljacket
+	name = "drab military jacket"
+	desc = "A military canvas jacket in an olive drab design."
+	icon_state = "militaryjacket_nobadge"
+	item_state = "militaryjacket_nobadge"
+
+/obj/item/clothing/suit/storage/miljacket/tan
+	name = "tan military jacket"
+	desc = "A military canvas jacket in a sandy tan design."
+	icon_state = "militaryjacket_tan"
+	item_state = "militaryjacket_tan"
+
+/obj/item/clothing/suit/storage/miljacket/grey
+	name = "grey military jacket"
+	desc = "A military canvas jacket in a urban grey design."
+	icon_state = "militaryjacket_grey"
+	item_state = "militaryjacket_grey"
+
+/obj/item/clothing/suit/storage/miljacket/navy
+	name = "navy military jacket"
+	desc = "A military canvas jacket in a dark navy design."
+	icon_state = "militaryjacket_navy"
+	item_state = "militaryjacket_navy"
+
+/obj/item/clothing/suit/storage/miljacket/black
+	name = "black military jacket"
+	desc = "A military canvas jacket in a tactical black design."
+	icon_state = "militaryjacket_black"
+	item_state = "militaryjacket_black"
+
+/obj/item/clothing/suit/storage/miljacket/green
+	name = "green military jacket"
+	desc = "A military canvas jacket in a jungle green design."
+	icon_state = "militaryjacket_green"
+	item_state = "militaryjacket_green"
+
+/obj/item/clothing/suit/storage/miljacket/white
+	name = "white military jacket"
+	desc = "A military canvas jacket in a white snow design."
+	icon_state = "militaryjacket_white"
+	item_state = "militaryjacket_white"
 
 /obj/item/clothing/suit/storage/toggle/hoodie
 	name = "grey hoodie"

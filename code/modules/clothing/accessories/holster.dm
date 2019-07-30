@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory/holster
 	name = "shoulder holster"
-	desc = "A leather handgun holster mounted around the shoulder."
+	desc = "A leather weapon holster mounted around the shoulder."
 	icon_state = "holster"
 	slot = "utility"
 	price_tag = 100
@@ -113,16 +113,22 @@
 
 /obj/item/clothing/accessory/holster/armpit
 	name = "armpit holster"
-	desc = "A leather handgun holster mounted around the armpit."
+	desc = "A leather weapon holster mounted around the armpit."
 	icon_state = "holster"
 
 /obj/item/clothing/accessory/holster/waist
 	name = "waist holster"
-	desc = "A leather handgun holster mounted around the waist."
+	desc = "A leather weapon holster mounted around the waist."
 	icon_state = "holster"
 	overlay_state = "holster_low"
 
 /obj/item/clothing/accessory/holster/hip
 	name = "hip holster"
-	desc = "A leather handgun holster mounted around the hip."
+	desc = "A leather weapon holster mounted around the hip."
 	icon_state = "holster_hip"
+
+/obj/item/clothing/accessory/holster/leg
+	name = "leg holster"
+	desc = "A leather weapon holster mounted around the upper leg."
+	icon_state = "holster_leg"
+	overlay_state = "holster_leg"

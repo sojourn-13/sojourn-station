@@ -13,6 +13,12 @@
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	tool_qualities = list(QUALITY_PRYING = 25, QUALITY_DIGGING = 10)
 
+/obj/item/weapon/tool/crowbar/bs
+	name = "bluespace crowbar"
+	icon_state = "bs_crowbar"
+	item_state = "bs_crowbar"
+	tool_qualities = list(QUALITY_PRYING = 100, QUALITY_DIGGING = 100)
+
 /obj/item/weapon/tool/crowbar/improvised
 	name = "rebar"
 	desc = "A pair of metal rods laboriously twisted into a useful shape"

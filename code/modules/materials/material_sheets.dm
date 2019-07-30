@@ -110,6 +110,12 @@
 	default_type = MATERIAL_DIAMOND
 	price_tag = 100
 
+/obj/item/stack/material/durasteel
+	name = "durasteel"
+	icon_state = "sheet-durasteel"
+	default_type = MATERIAL_DURASTEEL
+	price_tag = 200
+
 /obj/item/stack/material/diamond/random
 	rand_min = 1
 	rand_max = 8

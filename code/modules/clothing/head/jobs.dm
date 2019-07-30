@@ -51,32 +51,48 @@
 
 //Mime
 /obj/item/clothing/head/beret
-	name = "beret"
-	desc = "A beret, an artists favorite headwear."
+	name = "red beret"
+	desc = "A formidable red beret."
 	icon_state = "beret"
 	body_parts_covered = 0
 
 //Security
 /obj/item/clothing/head/sec/navy/officer
-	name = "Operative beret"
-	desc = "A navy blue beret with an Operative's rank emblem. For officers that are more inclined towards style than safety."
+	name = "Ironhammer operative beret"
+	desc = "A navy blue Ironhammer beret signifying a Operative position."
 	icon_state = "beret_navy_officer"
+
 /obj/item/clothing/head/sec/navy/hos
-	name = "Commander beret"
-	desc = "Grey beret with a Commander's rank emblem. For officers that are more inclined towards style than safety."
+	name = "Ironhammer commander beret"
+	desc = "A grey Ironhammer signifying a Commander position."
 	icon_state = "beret_navy_hos"
+
 /obj/item/clothing/head/sec/navy/warden
-	name = "Sergeant beret"
-	desc = "Read beret with a Sergeant's rank emblem. For officers that are more inclined towards style than safety."
+	name = "Ironhammer sergeant beret"
+	desc = "A red Ironhammer beret signifying a Gunnery Sergeant position."
 	icon_state = "beret_navy_warden"
+
 /obj/item/clothing/head/engineering
-	name = "engineering beret"
-	desc = "A beret with the engineering insignia emblazoned on it. For engineers that are more inclined towards style than safety."
+	name = "technomancer beret"
+	desc = "A yellow beret signifying a Technomancer position."
 	icon_state = "beret_engineering"
+
 /obj/item/clothing/head/beret/purple
 	name = "purple beret"
-	desc = "A stylish, if purple, beret."
+	desc = "A rather stylish purple beret."
 	icon_state = "beret_purple"
+
+/obj/item/clothing/head/seccap
+	name = "Ironhammer security cap"
+	initial_name = "Ironhammer security cap"
+	desc = "A generic red Ironhammer field cap."
+	icon_state = "secsoft"
+
+/obj/item/clothing/head/seccorp
+	name = "Ironhammer inspector cap"
+	initial_name = "Ironhammer inspector cap"
+	desc = "A black field cap with an Ironhammer Inspector logo."
+	icon_state = "corpsoft"
 
 //Medical
 /obj/item/clothing/head/surgery

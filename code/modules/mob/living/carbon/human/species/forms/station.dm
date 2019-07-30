@@ -57,9 +57,20 @@
 /datum/species_form/lizard
 	playable = TRUE
 	name = FORM_LIZARD
+	variantof = FORM_LIZARD
 	base = 'icons/mob/human_races/r_lizard_white.dmi'
 	deform = 'icons/mob/human_races/r_def_lizard_white.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
+/datum/species_form/lizard/tgsmooth
+	name = FORM_LIZARD_TGSMOOTH
+	base = 'icons/mob/human_races/r_tgsmooth_white.dmi'
+	deform = 'icons/mob/human_races/r_def_tgsmooth_white.dmi'
+
+/datum/species_form/lizard/tgsharp
+	name = FORM_LIZARD_TGSHARP
+	base = 'icons/mob/human_races/r_tgsharp_white.dmi'
+	deform = 'icons/mob/human_races/r_def_tgsharp_white.dmi'
 
 /datum/species_form/vulpine
 	playable = TRUE

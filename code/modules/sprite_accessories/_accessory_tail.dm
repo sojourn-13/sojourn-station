@@ -97,6 +97,13 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/tail/lizard
+	name = "lizard, colorable"
+	desc = ""
+	icon_state = "liztail"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/tail/wolf_grey
 	name = "wolf, grey"
 	desc = ""

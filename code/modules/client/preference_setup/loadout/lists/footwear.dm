@@ -13,6 +13,10 @@
 	display_name = "sandals"
 	path = /obj/item/clothing/shoes/sandal
 
+/datum/gear/shoes/jackboots
+	display_name = "jackboots"
+	path = /obj/item/clothing/shoes/jackboots
+
 /datum/gear/shoes/leather
 	display_name = "shoes, leather"
 	path = /obj/item/clothing/shoes/leather

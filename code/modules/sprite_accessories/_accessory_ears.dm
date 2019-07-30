@@ -357,6 +357,26 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/frills_aquatic
+	name = "frills, aquatic colorable"
+	desc = ""
+	icon_state = "frills_aqua"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/frills_simple
+	name = "frills, simple colorable"
+	desc = ""
+	icon_state = "frills_simple"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/frills_short
+	name = "frills, short colorable"
+	desc = ""
+	icon_state = "frills_short"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 // Special snowflake ears go below here.
 

@@ -10,6 +10,9 @@
 	edge =  1
 	embed_mult = 5 //We want these to embed
 
+/obj/item/weapon/material/star/uranium
+	default_material = MATERIAL_URANIUM
+
 /obj/item/weapon/material/star/New()
 	..()
 	src.pixel_x = rand(-12, 12)
@@ -22,4 +25,4 @@
 		M.adjustToxLoss(rand(20,40))
 
 /obj/item/weapon/material/star/ninja
-	default_material = MATERIAL_URANIUM
+	default_material = MATERIAL_STEEL

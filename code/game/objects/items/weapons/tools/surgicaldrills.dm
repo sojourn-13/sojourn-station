@@ -14,3 +14,9 @@
 
 	use_power_cost = 0.24
 	suitable_cell = /obj/item/weapon/cell/small
+
+/obj/item/weapon/tool/surgicaldrill/adv
+	name = "long nose surgical drill"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2)
+	tool_qualities = list(QUALITY_DRILLING = 65)
+	use_power_cost = 0.55

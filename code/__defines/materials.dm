@@ -10,6 +10,7 @@
 #define MATERIAL_PLASMA "plasma"
 #define MATERIAL_URANIUM "uranium"
 #define MATERIAL_DIAMOND "diamond"
+#define MATERIAL_DURASTEEL "durasteel"
 #define MATERIAL_PLASTIC "plastic"
 #define MATERIAL_IRON "iron"
 #define MATERIAL_CARDBOARD "cardboard"

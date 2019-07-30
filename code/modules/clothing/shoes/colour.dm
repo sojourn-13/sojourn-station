@@ -48,7 +48,7 @@
 	desc = "A pair of red shoes."
 	icon_state = "red"
 
-/obj/item/clothing/shoes/color/rainbow
+/obj/item/clothing/shoes/rainbow
 	name = "rainbow shoes"
 	name = "rainbow shoes"
 	desc = "A pair of radiantly vibrant shoes."

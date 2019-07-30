@@ -111,6 +111,15 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 	crate_name = "Export scanners crate"
 	group = "Operations"
 
+/datum/supply_pack/flares
+	name = "Flare boxes"
+	contains = list(/obj/item/weapon/storage/box/flares,
+					/obj/item/weapon/storage/box/flares,
+					/obj/item/weapon/storage/box/flares)
+	cost = 1000
+	crate_name = "Flare boxes crate"
+	group = "Operations"
+
 //----------------------------------------------
 //-----------------SECURITY---------------------
 //----------------------------------------------
@@ -573,9 +582,22 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 /datum/supply_pack/fueltank
 	name = "Fuel tank crate"
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
-	cost = 800
+	cost = 1000
 	containertype = /obj/structure/largecrate
 	crate_name = "fuel tank crate"
+	group = "Engineering"
+
+/datum/supply_pack/fuelcrate2
+	name = "Fuel crate" //1000 fuel
+	contains = list(/obj/item/weapon/weldpack,
+			/obj/item/weapon/weldpack,
+			/obj/item/weapon/weldpack/canister,
+			/obj/item/weapon/weldpack/canister,
+			/obj/item/weapon/weldpack/canister,)
+	cost = 2500
+	access = FALSE
+	containertype = /obj/structure/closet/crate
+	crate_name = "fuel crate"
 	group = "Engineering"
 
 /datum/supply_pack/solar
@@ -704,6 +726,16 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 	cost = 3000
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "Shield diffuser circuitry crate"
+	group = "Engineering"
+	access = access_ce
+
+/datum/supply_pack/hatton_tube
+	contains = list(/obj/item/weapon/hatton_magazine,
+	/obj/item/weapon/hatton_magazine,
+	/obj/item/weapon/hatton_magazine)
+	name = "Hatton gas tubes crate"
+	cost = 5000
+	containertype = /obj/structure/closet/crate/secure
 	group = "Engineering"
 	access = access_ce
 

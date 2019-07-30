@@ -44,6 +44,7 @@
 	path = /obj/item/clothing/accessory/holster
 	flags = GEAR_HAS_TYPE_SELECTION
 	allowed_roles = list("Ironhammer Commander","Ironhammer Gunnery Sergeant","Ironhammer Inspector","Ironhammer Medical Specialist","Ironhammer Operative","First Officer","Captain")
+	sort_category = "Ironhammer"
 
 /datum/gear/accessory/tie
 	display_name = "tie selection"

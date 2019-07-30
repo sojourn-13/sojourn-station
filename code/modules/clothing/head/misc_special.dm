@@ -107,9 +107,9 @@
 /*
  * Ushanka
  */
-/obj/item/clothing/head/hat/ushanka
+/obj/item/clothing/head/ushanka
 	name = "ushanka"
-	desc = "Perfect for winter in Siberia, da?"
+	desc = "A warm fur cap with ear flaps."
 	icon_state = "ushankadown"
 	flags_inv = HIDEEARS
 

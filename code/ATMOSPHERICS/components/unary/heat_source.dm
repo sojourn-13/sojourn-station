@@ -1,5 +1,5 @@
 //TODO: Put this under a common parent type with freezers to cut down on the copypasta
-#define HEATER_PERF_MULT 2.5
+#define HEATER_PERF_MULT 4.5
 
 /obj/machinery/atmospherics/unary/heater
 	name = "gas heating system"
@@ -145,7 +145,7 @@
 	max_power_rating = initial(max_power_rating) * cap_rating / 2
 	max_temperature = max(initial(max_temperature) - T20C, 0) * ((bin_rating * 4 + cap_rating) / 5) + T20C
 	if(air_contents)
-		air_contents.volume = max(initial(internal_volume) - 200, 0) + 200 * bin_rating
+		air_contents.volume = max(initial(internal_volume) - 200, 0) + 800 * bin_rating
 	set_power_level(power_setting)
 
 /obj/machinery/atmospherics/unary/heater/proc/set_power_level(var/new_power_setting)

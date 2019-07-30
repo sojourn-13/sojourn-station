@@ -24,3 +24,10 @@
 	sort_category = "Gloves and Handwear"
 	path = /obj/item/clothing/gloves/thick
 	slot = slot_gloves
+
+/datum/gear/gloves/evening
+	display_name = "gloves, evening"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/evening
+	slot = slot_gloves
+	flags = GEAR_HAS_COLOR_SELECTION

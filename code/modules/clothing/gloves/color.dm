@@ -27,7 +27,7 @@
 	icon_state = "red"
 	item_state = "redgloves"
 
-/obj/item/clothing/gloves/color/rainbow
+/obj/item/clothing/gloves/rainbow
 	name = "rainbow gloves"
 	initial_name = "rainbow gloves"
 	desc = "A pair of fabulously colorful gloves."

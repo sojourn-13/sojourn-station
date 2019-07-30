@@ -1014,7 +1014,12 @@
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 10,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 10,
 	/obj/item/clothing/accessory/holster = 5,
-	/obj/item/weapon/storage/pouch/pistol_holster = 5)
+	/obj/item/clothing/accessory/holster/hip = 5,
+	/obj/item/clothing/accessory/holster/waist = 5,
+	/obj/item/clothing/accessory/holster/armpit = 5,
+	/obj/item/clothing/accessory/holster/leg = 5,
+	/obj/item/weapon/storage/pouch/pistol_holster = 5,
+	/obj/item/weapon/storage/pouch/ammo = 2)
 
 	contraband = list(/obj/item/ammo_magazine/sl38 = 20,
 	/obj/item/ammo_magazine/cl32 = 20,
@@ -1025,8 +1030,8 @@
 	/obj/item/weapon/material/hatchet/tacknife = 6)
 	prices = list(/obj/item/device/flash = 600,/obj/item/weapon/reagent_containers/spray/pepper = 800,  /obj/item/weapon/gun/projectile/olivaw = 1600, /obj/item/weapon/gun/projectile/giskard = 1200, /obj/item/weapon/gun/projectile/revolver/detective = 2500, /obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 3700,
 					/obj/item/weapon/gun/projectile/shotgun/pump = 2000, /obj/item/ammo_magazine/cl32/rubber = 300, /obj/item/ammo_magazine/sl38/rubber = 400, /obj/item/ammo_magazine/ammobox/c38/rubber = 400, /obj/item/ammo_magazine/ammobox/cl32/rubber = 500,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags = 300, /obj/item/weapon/storage/box/shotgunammo/flashshells = 300, /obj/item/weapon/storage/box/shotgunammo/blanks = 50, /obj/item/clothing/accessory/holster = 150, /obj/item/weapon/storage/pouch/pistol_holster =150,
-					/obj/item/ammo_magazine/sl38 = 400, /obj/item/ammo_magazine/cl32 = 300, /obj/item/ammo_magazine/ammobox/cl32 = 500, /obj/item/ammo_magazine/ammobox/c38 = 400, /obj/item/weapon/storage/box/shotgunammo/slug = 300, /obj/item/weapon/storage/box/shotgunammo/buckshot = 300, /obj/item/weapon/material/hatchet/tacknife = 600)
+					/obj/item/weapon/storage/box/shotgunammo/beanbags = 300, /obj/item/weapon/storage/box/shotgunammo/flashshells = 300, /obj/item/weapon/storage/box/shotgunammo/blanks = 50, /obj/item/clothing/accessory/holster = 150, /obj/item/clothing/accessory/holster/armpit = 150, /obj/item/clothing/accessory/holster/waist = 150, /obj/item/clothing/accessory/holster/hip = 150, /obj/item/weapon/storage/pouch/pistol_holster = 150, /obj/item/clothing/accessory/holster/leg = 150,
+					/obj/item/ammo_magazine/sl38 = 400, /obj/item/ammo_magazine/cl32 = 300, /obj/item/ammo_magazine/ammobox/cl32 = 500, /obj/item/ammo_magazine/ammobox/c38 = 400, /obj/item/weapon/storage/box/shotgunammo/slug = 300, /obj/item/weapon/storage/box/shotgunammo/buckshot = 300, /obj/item/weapon/material/hatchet/tacknife = 600, /obj/item/weapon/storage/pouch/ammo = 800)
 
 //This one's from bay12
 /obj/machinery/vending/cart
@@ -1085,8 +1090,9 @@
 					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/toxin = 4,
 					/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/syringe = 12,
 					/obj/item/device/scanner/healthanalyzer = 5,/obj/item/weapon/reagent_containers/glass/beaker = 4, /obj/item/weapon/reagent_containers/dropper = 2,
-					/obj/item/stack/medical/advanced/bruise_pack = 3, /obj/item/stack/medical/advanced/ointment = 3, /obj/item/stack/medical/splint = 2)
+					/obj/item/stack/medical/advanced/bruise_pack = 3, /obj/item/stack/medical/advanced/ointment = 3, /obj/item/stack/medical/splint = 2, /obj/item/weapon/storage/pouch/medical_supply = 2)
 	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3,/obj/item/weapon/reagent_containers/pill/stox = 4,/obj/item/weapon/reagent_containers/pill/antitox = 6)
+	prices = list(/obj/item/weapon/storage/pouch/medical_supply = 800)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
 

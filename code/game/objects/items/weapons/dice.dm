@@ -50,7 +50,7 @@
 	name = "d100"
 	desc = "A dice with hundred sides. Can be used as a golfball."
 	icon_state = "d10010"
-	sides = 10
+	sides = 100
 
 /*
 Code below is works, but has duplication of a code.

@@ -11,6 +11,11 @@
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 	tool_qualities = list(QUALITY_BOLT_TURNING = 30)
 
+/obj/item/weapon/tool/wrench/bs
+	name = "bluespace wrench"
+	icon_state = "bs_wrench"
+	tool_qualities = list(QUALITY_BOLT_TURNING = 100)
+
 /obj/item/weapon/tool/wrench/improvised
 	name = "sheet spanner"
 	desc = "A flat bit of metal with some usefully shaped holes cut into it."
