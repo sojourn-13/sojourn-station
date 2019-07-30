@@ -176,7 +176,7 @@
 	name = "Inaprovaline"
 	id = "inaprovaline"
 	result = "inaprovaline"
-	required_reagents = list("oxygen" = 1, "carbon" = 1, "sugar" = 1)
+	required_reagents = list("acetone" = 1, "carbon" = 1, "sugar" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/dylovene
@@ -198,7 +198,7 @@
 	name = "Tramadol"
 	id = "tramadol"
 	result = "tramadol"
-	required_reagents = list("inaprovaline" = 1, "ethanol" = 1, "oxygen" = 1)
+	required_reagents = list("inaprovaline" = 1, "ethanol" = 1, "acetone" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/paracetamol
@@ -227,7 +227,7 @@
 	name = "Silicate"
 	id = "silicate"
 	result = "silicate"
-	required_reagents = list("aluminum" = 1, "silicon" = 1, "oxygen" = 1)
+	required_reagents = list("aluminum" = 1, "silicon" = 1, "acetone" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/mutagen
@@ -241,7 +241,7 @@
 	name = "Thermite"
 	id = "thermite"
 	result = "thermite"
-	required_reagents = list("aluminum" = 1, "iron" = 1, "oxygen" = 1)
+	required_reagents = list("aluminum" = 1, "iron" = 1, "acetone" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/space_drugs
@@ -255,7 +255,7 @@
 	name = "Space Lube"
 	id = "lube"
 	result = "lube"
-	required_reagents = list("water" = 1, "silicon" = 1, "oxygen" = 1)
+	required_reagents = list("water" = 1, "silicon" = 1, "acetone" = 1)
 	result_amount = 4
 
 /datum/chemical_reaction/pacid
@@ -286,18 +286,11 @@
 	required_reagents = list("hyronalin" = 1, "hydrazine" = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/inacusiate
-	name = "Inacusiate"
-	id = "inacusiate"
-	result = "inacusiate"
-	required_reagents = list("anti_toxin" = 1, "carbon" = 1, "water" = 1)
-	result_amount = 1
-
 /datum/chemical_reaction/impedrezene
 	name = "Impedrezene"
 	id = "impedrezene"
 	result = "impedrezene"
-	required_reagents = list("mercury" = 1, "oxygen" = 1, "sugar" = 1)
+	required_reagents = list("mercury" = 1, "acetone" = 1, "sugar" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/kelotane
@@ -335,7 +328,7 @@
 	name = "Cryptobiolin"
 	id = "cryptobiolin"
 	result = "cryptobiolin"
-	required_reagents = list("potassium" = 1, "oxygen" = 1, "sugar" = 1)
+	required_reagents = list("potassium" = 1, "acetone" = 1, "sugar" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/tricordrazine
@@ -356,7 +349,7 @@
 	name = "Dexalin"
 	id = "dexalin"
 	result = "dexalin"
-	required_reagents = list("oxygen" = 2, "plasma" = 0.1)
+	required_reagents = list("acetone" = 2, "plasma" = 0.1)
 	catalysts = list("plasma" = 1)
 	inhibitors = list("water" = 1) // Messes with cryox
 	result_amount = 1
@@ -365,7 +358,7 @@
 	name = "Dermaline"
 	id = "dermaline"
 	result = "dermaline"
-	required_reagents = list("oxygen" = 1, "phosphorus" = 1, "kelotane" = 1)
+	required_reagents = list("acetone" = 1, "phosphorus" = 1, "kelotane" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/dexalinp
@@ -379,7 +372,7 @@
 	name = "Bicaridine"
 	id = "bicaridine"
 	result = "bicaridine"
-	required_reagents = list("inaprovaline" = 1, "carbon" = 1)
+	required_reagents = list("inaprovaline" = 2, "blattedin" = 1)
 	inhibitors = list("sugar" = 1) // Messes up with inaprovaline
 	result_amount = 3
 
@@ -401,7 +394,7 @@
 	name = "Cryoxadone"
 	id = "cryoxadone"
 	result = "cryoxadone"
-	required_reagents = list("dexalin" = 1, "water" = 1, "oxygen" = 1)
+	required_reagents = list("dexalin" = 1, "water" = 1, "acetone" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/clonexadone
@@ -430,7 +423,7 @@
 	name = "Ethylredoxrazine"
 	id = "ethylredoxrazine"
 	result = "ethylredoxrazine"
-	required_reagents = list("oxygen" = 1, "anti_toxin" = 1, "carbon" = 1)
+	required_reagents = list("acetone" = 1, "anti_toxin" = 1, "carbon" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/soporific
@@ -518,19 +511,6 @@
 	required_reagents = list("lithium" = 1, "hydrazine" = 1)
 	result_amount = 1
 
-/datum/chemical_reaction/oil
-	name = "Oil"
-	id = "oil"
-	result = "oil"
-	required_reagents = list("welding_fuel" = 1, "hydrazine" = 1, "carbon" = 1)
-	result_amount = 1
-
-/datum/chemical_reaction/acetone
-	name = "Acetone"
-	id = "acetone"
-	result = "acetone"
-	required_reagents = list("oil" = 1, "welding_fuel" = 1, "oxygen" = 1)
-
 /datum/chemical_reaction/glycerol
 	name = "Glycerol"
 	id = "glycerol"
@@ -557,7 +537,7 @@
 	name = "Coolant"
 	id = "coolant"
 	result = "coolant"
-	required_reagents = list("tungsten" = 1, "oxygen" = 1, "water" = 1)
+	required_reagents = list("tungsten" = 1, "acetone" = 1, "water" = 1)
 	result_amount = 3
 	log_is_important = 1
 
@@ -594,7 +574,7 @@
 	name = "Paroxetine"
 	id = "paroxetine"
 	result = "paroxetine"
-	required_reagents = list("mindbreaker" = 1, "oxygen" = 1, "inaprovaline" = 1)
+	required_reagents = list("mindbreaker" = 1, "acetone" = 1, "inaprovaline" = 1)
 	result_amount = 3
 
 /* Solidification */
