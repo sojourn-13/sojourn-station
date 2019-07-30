@@ -70,7 +70,7 @@
 /obj/item/device/encryptionkey/heads/rd
 	name = "expedition overseer's encryption key"
 	icon_state = "rd_cypherkey"
-	channels = list("Science" = 1, "Command" = 1)
+	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hos
 	name = "Ironhammer commander's encryption key"

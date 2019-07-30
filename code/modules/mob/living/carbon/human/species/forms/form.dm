@@ -57,19 +57,22 @@
 	var/virus_immune = FALSE
 
 	var/icon_fallback = FORM_HUMAN //Set this to fall back on another spritesheet if this one doesn't have the icon_state needed. Use form defines, it'll pull from the global list.
-	var/backpack_icon = 	'icons/inventory/back/mob.dmi'
-	var/uniform_icon = 		'icons/inventory/uniform/mob.dmi'
-	var/gloves_icon = 		'icons/inventory/hands/mob.dmi'
-	var/glasses_icon = 		'icons/inventory/eyes/mob.dmi'
-	var/ears_icon = 		'icons/inventory/ears/mob.dmi'
-	var/shoes_icon = 		'icons/inventory/feet/mob.dmi'
-	var/s_store_icon = 		'icons/inventory/on_suit/mob.dmi'
-	var/hat_icon = 			'icons/inventory/head/mob.dmi'
-	var/belt_icon = 		'icons/inventory/belt/mob.dmi'
-	var/suit_icon = 		'icons/inventory/suit/mob.dmi'
-	var/mask_icon = 		'icons/inventory/face/mob.dmi'
-	var/underwear_icon = 	'icons/inventory/underwear/mob.dmi'
-	var/misc_icon = 		'icons/mob/mob.dmi'
+	var/backpack_icon = 		'icons/inventory/back/mob.dmi'
+	var/uniform_icon = 			'icons/inventory/uniform/mob.dmi'
+	var/gloves_icon = 			'icons/inventory/hands/mob.dmi'
+	var/glasses_icon = 			'icons/inventory/eyes/mob.dmi'
+	var/ears_icon = 			'icons/inventory/ears/mob.dmi'
+	var/shoes_icon = 			'icons/inventory/feet/mob.dmi'
+	var/s_store_icon = 			'icons/inventory/on_suit/mob.dmi'
+	var/hat_icon = 				'icons/inventory/head/mob.dmi'
+	var/belt_icon = 			'icons/inventory/belt/mob.dmi'
+	var/suit_icon = 			'icons/inventory/suit/mob.dmi'
+	var/mask_icon = 			'icons/inventory/face/mob.dmi'
+	var/underwear_icon = 		'icons/inventory/underwear/mob.dmi'
+	var/misc_icon = 			'icons/mob/mob.dmi'
+
+	//Use these for form_variants of sprites. //TODO make functional.
+	//var/form_suffix =			""
 
 	var/list/subforms = null
 

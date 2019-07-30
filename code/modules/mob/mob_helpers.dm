@@ -598,7 +598,7 @@ proc/is_blind(A)
 
 	return ..()
 
-/mob/proc/get_sex()
+/mob/get_sex()
 	return gender
 
 //Tries to find the mob's email.

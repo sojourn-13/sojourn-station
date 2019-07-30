@@ -1553,3 +1553,10 @@ var/list/rank_prefix = list(\
 
 	tail_over = !tail_over
 	update_tail()
+
+/mob/living/carbon/human/get_gender()
+	if(identifying_gender) return GLOB.gender_datums[identifying_gender]
+	. = ..()
+
+/mob/living/carbon/human/gender_word(var/position, var/datum/gender/G = null) //Humans can adopt gender identities other than their own.
+	. = ..(position, G ? G : get_gender())

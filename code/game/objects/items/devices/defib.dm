@@ -1,5 +1,5 @@
-#define DEFIB_TIME_LIMIT (10 MINUTES) //past this many seconds, defib is useless.
-#define DEFIB_TIME_LOSS  (2 MINUTES) //past this many seconds, brain damage occurs.
+#define DEFIB_TIME_LIMIT (1 HOUR) //past this many seconds, defib is useless.
+#define DEFIB_TIME_LOSS  (20 MINUTES) //past this many seconds, brain damage occurs.
 
 //backpack item
 /obj/item/device/defib_kit
@@ -432,24 +432,24 @@
 	playsound(get_turf(src), 'sound/machines/defib_zap.ogg', 50, 1, -1)
 	set_cooldown(cooldowntime)
 
-	error = can_revive(H)
-	if(error)
-		make_announcement(error, "warning")
-		playsound(get_turf(src), 'sound/machines/defib_failed.ogg', 50, 0)
-		return
-
-	H.apply_damage(burn_damage_amt, BURN, BP_TORSO)
-
 	//set oxyloss based on defib strength
 	H.adjustOxyLoss(-defib_oxygain())
 
 	if(H.isSynthetic())
 		H.adjustToxLoss(-H.getToxLoss())
 
-	make_announcement("pings, \"Resuscitation successful.\"", "notice")
-	playsound(get_turf(src), 'sound/machines/defib_success.ogg', 50, 0)
+	H.apply_damage(burn_damage_amt, BURN, BP_TORSO)
+
+	error = can_revive(H)
+	if(error)
+		make_announcement(error, "warning")
+		playsound(get_turf(src), 'sound/machines/defib_failed.ogg', 50, 0)
+		return
 
 	make_alive(H)
+
+	make_announcement("pings, \"Resuscitation successful.\"", "notice")
+	playsound(get_turf(src), 'sound/machines/defib_success.ogg', 50, 0)
 
 	log_and_message_admins("used \a [src] to revive [key_name(H)].")
 
@@ -637,6 +637,27 @@
 	if(ispath(cell_type, suitable_cell))
 		cell = new cell_type(src)
 	update_icon()
+
+/obj/item/device/defib_kit/attackby(obj/item/weapon/W, mob/user, params)
+	if(istype(W, suitable_cell))
+		if(cell)
+			to_chat(user, "<span class='notice'>\the [src] already has a cell.</span>")
+		else
+			if(!user.unEquip(W))
+				return
+			W.forceMove(src)
+			cell = W
+			to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
+			update_icon()
+	else if(W.has_quality(QUALITY_SCREW_DRIVING))
+		if(cell)
+			cell.update_icon()
+			cell.forceMove(get_turf(src.loc))
+			cell = null
+			to_chat(user, "<span class='notice'>You remove the cell from \the [src].</span>")
+			update_icon()
+	else
+		return ..()
 
 /obj/item/weapon/shockpaddles/standalone/Destroy()
 	. = ..()

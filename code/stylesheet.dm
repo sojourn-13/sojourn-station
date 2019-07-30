@@ -19,7 +19,8 @@ em						{font-style: normal;font-weight: bold;}
 .ooc img.text_tag		{width: 32px; height: 10px;}
 
 .ooc .everyone			{color: #002eb8;}
-.ooc .looc				{color: #3A9696;}
+.ooc .looc				{color: #46B2B2;} /*Old LOOC: {color: #3A9696;}*/
+.ooc .rlooc				{color: #307B7B;}
 .ooc .elevated			{color: #2e78d9;}
 .ooc .moderator			{color: #184880;}
 .ooc .developer			{color: #1b521f;}
@@ -54,7 +55,7 @@ em						{font-style: normal;font-weight: bold;}
 .medradio				{color: #008160;}
 .sciradio				{color: #993399;}
 .supradio				{color: #5F4519;}
-.srvradio				{color: #6eaa2c;}
+.srvradio				{color: #6EAA2C;}
 
 /* Miscellaneous */
 .name					{font-weight: bold;}

@@ -607,7 +607,7 @@
 		timespent = 5
 
 	if(use_power_cost)
-		if (!cell.checked_use(use_power_cost*timespent))
+		if (!cell || !cell.checked_use(use_power_cost*timespent))
 			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 			return FALSE
 

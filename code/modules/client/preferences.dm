@@ -186,6 +186,7 @@
 			real_name += "[pick(GLOB.last_names)]"
 	character.fully_replace_character_name(newname = real_name)
 	character.gender = gender
+	character.identifying_gender = gender_identity
 	character.age = age
 	character.b_type = b_type
 

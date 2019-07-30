@@ -694,3 +694,18 @@ its easier to just keep the beam vertical.
 	if(!L)
 		return null
 	return L.AllowDrop() ? L : L.drop_location()
+
+/atom/proc/get_sex()
+	return gender
+
+/atom/proc/get_gender()
+	return GLOB.gender_datums[gender]
+
+/atom/proc/gender_word(var/position, var/datum/gender/G = null) //So you can suggest an alternative gender if needed.
+	if(istype(G))
+		//Use as given.
+	else if(istext(G))
+		G = GLOB.gender_datums[G] //Convert to the gender using the name given.
+	else
+		G = get_gender() //Otherwise, default to this thing's gender.
+	return G.word(position)

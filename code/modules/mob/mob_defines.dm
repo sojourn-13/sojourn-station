@@ -3,6 +3,7 @@
 	layer = 4.0
 	animate_movement = 2
 	flags = PROXMOVE
+	blood_color = "#A10808"
 	var/datum/mind/mind
 
 	movement_handlers = list(

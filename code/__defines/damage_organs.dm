@@ -92,6 +92,7 @@
 #define BP_HEAD   "head"
 #define BP_CHEST  "torso"
 #define BP_TORSO  "torso"
+#define BP_BACK   "back"
 #define BP_GROIN  "groin"
 #define BP_LEGS list(BP_R_LEG, BP_L_LEG)
 #define BP_ARMS list(BP_R_ARM, BP_L_ARM)

@@ -239,7 +239,7 @@ FIELD_LONG("Exploitable Information", antagRecord, access_syndicate, access_synd
 /datum/report_field/options/crew_record/sex/proc/record_genders()
 	. = list()
 	. |= "Unset"
-	for(var/G in gender_datums)
+	for(var/G in GLOB.gender_datums)
 		. |= gender2text(G)
 
 /datum/report_field/options/crew_record/branch/proc/record_branches()

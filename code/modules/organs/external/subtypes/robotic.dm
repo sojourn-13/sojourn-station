@@ -16,9 +16,13 @@
 	var/gender = "m"
 	var/body = ""
 	if(owner)
-		gender = owner.gender == FEMALE ? "f" : "m"
-		body = owner.form.form_key
-	icon_state = "[organ_tag]_[gender][body]"
+		gender = owner.gender == FEMALE ? "_f" : "_m"
+		body = owner.form.form_key //Todo: figure out how to adapt this into multiple forms.
+	icon_state = "[organ_tag][gender][body]"
+	if(!(icon_state in icon_states(force_icon)))
+		icon_state = "[organ_tag][gender]"
+		if(!(icon_state in icon_states(force_icon)))
+			icon_state = "[organ_tag]"
 	mob_icon = icon(force_icon, icon_state)
 	return mob_icon
 

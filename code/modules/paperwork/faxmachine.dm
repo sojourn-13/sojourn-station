@@ -220,4 +220,4 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 
 	for(var/client/C in admins)
 		if(R_ADMIN & C.holder.rights)
-			C << msg
+			C << "[create_text_tag("fax", "FAX:", C)] [msg]"

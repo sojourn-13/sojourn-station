@@ -4,9 +4,9 @@
 
 var/global/list/body_modifications = list()
 var/global/list/modifications_types = list(
-	BP_CHEST = "",  "chest2" = "", BP_HEAD = "",   BP_GROIN = "",
-	BP_L_ARM  = "", BP_R_ARM  = "", BP_L_LEG  = "", BP_R_LEG  = "",
-	BP_HEART  = "", BP_LUNGS  = "", BP_LIVER  = "", BP_EYES   = ""
+	BP_CHEST  = "", BP_BACK   = "", BP_HEAD   = "", BP_GROIN = "",
+	BP_L_ARM  = "", BP_R_ARM  = "", BP_L_LEG  = "", BP_R_LEG = "",
+	BP_HEART  = "", BP_LUNGS  = "", BP_LIVER  = "", BP_EYES  = ""
 )
 
 /proc/generate_body_modification_lists()
@@ -36,7 +36,7 @@ var/global/list/modifications_types = list(
 	var/id = ""								// For savefile. Must be unique.
 	var/desc = ""							// Description.
 	var/list/body_parts = list(				// For sorting'n'selection optimization.
-		BP_CHEST, "chest2", BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG,\
+		BP_CHEST, BP_BACK, BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG,\
 		BP_HEART, BP_LUNGS, BP_LIVER, BP_BRAIN, BP_EYES)
 	var/list/allowed_species = list("Human")// Species restriction.
 	var/replace_limb = null					// To draw usual limb or not.

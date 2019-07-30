@@ -191,11 +191,7 @@
 							src.ExtinguishMob()
 							src.fire_stacks = 0
 		else
-			var/t_him = "it"
-			if (src.gender == MALE)
-				t_him = "him"
-			else if (src.gender == FEMALE)
-				t_him = "her"
+			var/t_him = gender_word("him")
 			if (ishuman(src) && src:w_uniform)
 				var/mob/living/carbon/human/H = src
 				H.w_uniform.add_fingerprint(M)

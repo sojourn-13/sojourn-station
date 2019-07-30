@@ -4,7 +4,7 @@
 	var/current_organ = BP_TORSO
 	var/global/list/r_organs = list(BP_HEAD, BP_R_ARM, BP_TORSO, BP_R_LEG)
 	var/global/list/l_organs = list(BP_EYES, BP_L_ARM, BP_GROIN, BP_L_LEG)
-	var/global/list/internal_organs = list("chest2", BP_HEART, BP_LUNGS, BP_LIVER)
+	var/global/list/internal_organs = list(BP_BACK, BP_HEART, BP_LUNGS, BP_LIVER)
 
 /datum/category_item/player_setup_item/augmentation
 	name = "Augmentation"
@@ -55,13 +55,14 @@
 	for(var/organ in pref.r_organs)
 		var/datum/body_modification/mod = pref.get_modification(organ)
 		var/disp_name = mod ? mod.short_name : "Nothing"
+		dat += "<div>"
 		if(organ == pref.current_organ)
-			dat += "<div><a class='Organs_active' href='?src=\ref[src];organ=[organ]'><b>[organ_tag_to_name[organ]]</b></a>"
+			dat += "<a class='Organs_active' href='?src=\ref[src];organ=[organ]'><b>[organ_tag_to_name[organ]]</b></a>"
 		else
 			dat += "<a href='?src=\ref[src];organ=[organ]'><b>[organ_tag_to_name[organ]]</b></a>"
 		if(mod.hascolor)
 			dat += "<a href='?src=\ref[src];color=[organ]'><span class='color_holder_box' style='background-color:[pref.modifications_colors[organ]]'></span></a>"
-		dat += "<br><div >[disp_name]</div></div>"
+		dat += "<br>[disp_name]</div><br>"
 
 	dat += "</td><td style='width:80px;'><center><img src=new_previewicon[pref.preview_dir].png height=64 width=64>"
 	dat += "<br><center><a href='?src=\ref[src];rotate=right'>&lt;&lt;</a> <a href='?src=\ref[src];rotate=left'>&gt;&gt;</a></center></td>"
@@ -70,13 +71,14 @@
 	for(var/organ in pref.l_organs)
 		var/datum/body_modification/mod = pref.get_modification(organ)
 		var/disp_name = mod ? mod.short_name : "Nothing"
-		if(mod.hascolor)
-			dat += "<div><a href='?src=\ref[src];color=[organ]'><span class='color_holder_box' style='background-color:[pref.modifications_colors[organ]]'></span></a>"
+		dat += "<div>"
 		if(organ == pref.current_organ)
 			dat += "<a class='Organs_active' href='?src=\ref[src];organ=[organ]'><b>[organ_tag_to_name[organ]]</b></a>"
 		else
 			dat += "<a href='?src=\ref[src];organ=[organ]'><b>[organ_tag_to_name[organ]]</b></a>"
-		dat += "<br>[disp_name]</div>"
+		if(mod.hascolor)
+			dat += "<a href='?src=\ref[src];color=[organ]'><span class='color_holder_box' style='background-color:[pref.modifications_colors[organ]]'></span></a>"
+		dat += "<br>[disp_name]</div><br>"
 
 	dat += "</td></tr></table><hr>"
 

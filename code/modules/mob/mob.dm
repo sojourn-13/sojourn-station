@@ -497,14 +497,14 @@
 		src << browse(null, t1)
 
 	if(href_list["flavor_more"])
-		if(src in view(usr))
-			var/dat = {"
-				<html><head><title>[name]</title></head>
-				<body><tt>[replacetext(flavor_text, "\n", "<br>")]</tt></body>
-				</html>
-			"}
-			usr << browse(dat, "window=[name]_flavor;size=500x200")
-			onclose(usr, "[name]")
+		//if(src in view(usr)) //Flavor at any range
+		var/dat = {"
+			<html><head><title>[name]</title></head>
+			<body><tt>[replacetext(flavor_text, "\n", "<br>")]</tt></body>
+			</html>
+		"}
+		usr << browse(dat, "window=[name]_flavor;size=500x200")
+		onclose(usr, "[name]")
 	if(href_list["flavor_change"])
 		update_flavor_text()
 	if(href_list["ooc_text"])
@@ -630,7 +630,7 @@
 /mob/proc/is_ready()
 	return client && !!mind
 
-/mob/proc/get_gender()
+/mob/get_gender()
 	return gender
 
 /mob/proc/see(message)
