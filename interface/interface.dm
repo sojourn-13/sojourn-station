@@ -16,23 +16,23 @@
 	set desc = "Visit the Discord Server."
 	set hidden = 1
 	if( config.discordurl )
-		if(alert("This will open the Discordia Discord  invite in your browser. Are you sure?",,"Yes","No")=="No")
+		if(alert("This will open Sojourn Discord invite in your browser. Are you sure?",,"Yes","No")=="No")
 			return
 		src << link(config.discordurl)
 	else
-		src << SPAN_WARNING("The Discordia Discord invite is not set in the server configuration.")
+		src << SPAN_WARNING("The Sojourn Discord invite is not set in the server configuration.")
 	return
 
 /client/verb/githuburl()
 	set name = "githuburl"
-	set desc = "Visit the Discordia Github."
+	set desc = "Visit Sojourn's Github."
 	set hidden = 1
 	if( config.githuburl )
-		if(alert("This will open the Discordia Github page in your browser. Are you sure?",,"Yes","No")=="No")
+		if(alert("This will open Sojourn Github page in your browser. Are you sure?",,"Yes","No")=="No")
 			return
 		src << link(config.githuburl)
 	else
-		src << SPAN_WARNING("The Discordia Github is not set in the server configuration.")
+		src << SPAN_WARNING("The Github is not set in the server configuration.")
 	return
 
 
