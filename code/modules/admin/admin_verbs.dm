@@ -128,7 +128,7 @@ ADMIN_VERB_ADD(/client/proc/player_panel_new, R_ADMIN, TRUE)
 		holder.player_panel_new()
 
 
-ADMIN_VERB_ADD(/client/proc/storyteller_panel, R_ADMIN|R_MOD, TRUE)
+ADMIN_VERB_ADD(/client/proc/storyteller_panel, R_ADMIN|R_MOD|R_FUN, TRUE)
 /client/proc/storyteller_panel()
 	set name = "Storyteller Panel"
 	set category = "Admin"
@@ -466,7 +466,7 @@ ADMIN_VERB_ADD(/client/proc/change_human_appearance_self, R_ADMIN, FALSE)
 			H.change_appearance(APPEARANCE_ALL, H.loc, check_species_whitelist = 1)
 
 
-ADMIN_VERB_ADD(/client/proc/change_security_level, R_ADMIN, FALSE)
+ADMIN_VERB_ADD(/client/proc/change_security_level, R_ADMIN|R_FUN, FALSE)
 /client/proc/change_security_level()
 	set name = "Set security level"
 	set desc = "Sets the station security level"

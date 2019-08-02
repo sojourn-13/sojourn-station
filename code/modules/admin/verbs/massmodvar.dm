@@ -5,7 +5,7 @@
 
 	var/method = 0	//0 means strict type detection while 1 means this type and all subtypes (IE: /obj/item with this set to 1 will set it to ALL itms)
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_DEBUG))
 		return
 
 	if(A && A.type)
@@ -25,7 +25,7 @@
 
 
 /client/proc/massmodify_variables(var/atom/O, var/var_name = "", var/method = 0)
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_DEBUG))
 		return
 
 	var/list/locked = list("vars", "key", "ckey", "client")

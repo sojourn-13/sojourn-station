@@ -15,7 +15,7 @@
 	log_admin("[key_name(usr)] made [key_name(M)] drop everything!")
 	message_admins("[key_name_admin(usr)] made [key_name_admin(M)] drop everything!", 1)
 
-ADMIN_VERB_ADD(/client/proc/cmd_admin_subtle_message, R_ADMIN, FALSE)
+ADMIN_VERB_ADD(/client/proc/cmd_admin_subtle_message, R_FUN, FALSE)
 //send an message to somebody as a 'voice in their head'
 /client/proc/cmd_admin_subtle_message(mob/M as mob in SSmobs.mob_list)
 	set category = "Special Verbs"
@@ -39,7 +39,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_subtle_message, R_ADMIN, FALSE)
 	message_admins("\blue \bold SubtleMessage: [key_name_admin(usr)] -> [key_name_admin(M)] : [msg]", 1)
 
 
-ADMIN_VERB_ADD(/client/proc/cmd_admin_world_narrate, R_ADMIN, FALSE)
+ADMIN_VERB_ADD(/client/proc/cmd_admin_world_narrate, R_FUN, FALSE)
 //sends text to all players with no padding
 /client/proc/cmd_admin_world_narrate() // Allows administrators to fluff events a little easier -- TLE
 	set category = "Special Verbs"
@@ -308,7 +308,7 @@ If a guy was gibbed and you want to revive him, this is a good way to do so.
 Works kind of like entering the game with a new character. Character receives a new mind if they didn't have one.
 Traitors and the like can also be revived with the previous role mostly intact.
 /N */
-ADMIN_VERB_ADD(/client/proc/respawn_character, R_FUN, FALSE)
+ADMIN_VERB_ADD(/client/proc/respawn_character, R_ADMIN, FALSE)
 /client/proc/respawn_character()
 	set category = "Special Verbs"
 	set name = "Respawn Character"
@@ -445,7 +445,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_add_freeform_ai_law, R_FUN, FALSE)
 		command_announcement.Announce("Ion storm detected near the ship. Please check all AI-controlled equipment for errors.", "Anomaly Alert", new_sound = 'sound/AI/ionstorm.ogg')
 
 
-ADMIN_VERB_ADD(/client/proc/cmd_admin_rejuvenate, R_ADMIN, FALSE)
+ADMIN_VERB_ADD(/client/proc/cmd_admin_rejuvenate, R_ADMIN|R_MOD, FALSE)
 /client/proc/cmd_admin_rejuvenate(mob/living/M as mob in SSmobs.mob_list)
 	set category = "Special Verbs"
 	set name = "Rejuvenate"
@@ -466,7 +466,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_rejuvenate, R_ADMIN, FALSE)
 		alert("Admin revive disabled")
 
 
-ADMIN_VERB_ADD(/client/proc/cmd_admin_create_centcom_report, R_ADMIN, FALSE)
+ADMIN_VERB_ADD(/client/proc/cmd_admin_create_centcom_report, R_FUN, FALSE)
 /client/proc/cmd_admin_create_centcom_report()
 	set category = "Special Verbs"
 	set name = "Create Command Report"
@@ -510,7 +510,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_delete, R_ADMIN|R_SERVER|R_DEBUG, FALSE)
 
 		qdel(O)
 
-ADMIN_VERB_ADD(/client/proc/cmd_admin_list_open_jobs, R_DEBUG, FALSE)
+ADMIN_VERB_ADD(/client/proc/cmd_admin_list_open_jobs, R_ADMIN|R_DEBUG, FALSE)
 /client/proc/cmd_admin_list_open_jobs()
 	set category = "Admin"
 	set name = "List free slots"
@@ -730,7 +730,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_view_range, R_ADMIN, FALSE)
 
 
 
-ADMIN_VERB_ADD(/client/proc/admin_call_shuttle, R_ADMIN, FALSE)
+ADMIN_VERB_ADD(/client/proc/admin_call_shuttle, R_ADMIN|R_FUN, FALSE)
 //allows us to call the emergency shuttle
 /client/proc/admin_call_shuttle()
 
@@ -740,7 +740,7 @@ ADMIN_VERB_ADD(/client/proc/admin_call_shuttle, R_ADMIN, FALSE)
 	if(!evacuation_controller)
 		return
 
-	if(!check_rights(R_ADMIN))	return
+	if(!check_rights(R_ADMIN|R_FUN))	return
 
 	if(alert(src, "Are you sure?", "Confirm", "Yes", "No") != "Yes") return
 
@@ -752,13 +752,13 @@ ADMIN_VERB_ADD(/client/proc/admin_call_shuttle, R_ADMIN, FALSE)
 	message_admins("\blue [key_name_admin(usr)] admin-called the emergency shuttle.", 1)
 	return
 
-ADMIN_VERB_ADD(/client/proc/admin_cancel_shuttle, R_ADMIN, FALSE)
+ADMIN_VERB_ADD(/client/proc/admin_cancel_shuttle, R_ADMIN|R_FUN, FALSE)
 //allows us to cancel the emergency shuttle, sending it back to centcomm
 /client/proc/admin_cancel_shuttle()
 	set category = "Admin"
 	set name = "Cancel Evacuation"
 
-	if(!check_rights(R_ADMIN))	return
+	if(!check_rights(R_ADMIN|R_FUN))	return
 
 	if(alert(src, "You sure?", "Confirm", "Yes", "No") != "Yes") return
 
@@ -779,7 +779,7 @@ ADMIN_VERB_ADD(/client/proc/admin_cancel_shuttle, R_ADMIN, FALSE)
 	if (!evacuation_controller)
 		return
 
-	if(!check_rights(R_ADMIN))	return
+	if(!check_rights(R_ADMIN|R_FUN))	return
 
 	evacuation_controller.deny = !evacuation_controller.deny
 

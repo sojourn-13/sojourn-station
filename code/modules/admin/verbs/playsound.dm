@@ -1,8 +1,8 @@
 var/list/sounds_cache = list()
 
-ADMIN_VERB_ADD(/client/proc/play_sound, R_FUN, FALSE)
+ADMIN_VERB_ADD(/client/proc/play_sound, R_SOUND, FALSE)
 /client/proc/play_sound(S as sound)
-	set category = "Fun"
+	set category = "Sound"
 	set name = "Play Global Sound"
 	if(!check_rights(R_FUN))
 		return
@@ -23,9 +23,9 @@ ADMIN_VERB_ADD(/client/proc/play_sound, R_FUN, FALSE)
 
 
 
-ADMIN_VERB_ADD(/client/proc/play_local_sound, R_FUN, FALSE)
+ADMIN_VERB_ADD(/client/proc/play_local_sound, R_SOUND, FALSE)
 /client/proc/play_local_sound(S as sound)
-	set category = "Fun"
+	set category = "Sound"
 	set name = "Play Local Sound"
 	if(!check_rights(R_FUN))
 		return
@@ -35,9 +35,9 @@ ADMIN_VERB_ADD(/client/proc/play_local_sound, R_FUN, FALSE)
 	playsound(get_turf(src.mob), S, 50, 0, 0)
 
 
-ADMIN_VERB_ADD(/client/proc/play_server_sound, R_FUN, FALSE)
+ADMIN_VERB_ADD(/client/proc/play_server_sound, R_SOUND, FALSE)
 /client/proc/play_server_sound()
-	set category = "Fun"
+	set category = "Sound"
 	set name = "Play Server Sound"
 	if(!check_rights(R_FUN))
 		return
@@ -55,7 +55,7 @@ ADMIN_VERB_ADD(/client/proc/play_server_sound, R_FUN, FALSE)
 
 ADMIN_VERB_ADD(/client/proc/stop_sounds, R_ADMIN, FALSE)
 /client/proc/stop_sounds()
-	set category = "Debug"
+	set category = "Sound"
 	set name = "Stop All Playing Sounds"
 	if(!src.holder)
 		return
@@ -65,9 +65,9 @@ ADMIN_VERB_ADD(/client/proc/stop_sounds, R_ADMIN, FALSE)
 		if(M.client)
 			sound_to(M, sound(null, repeat = 0, wait = 0, volume = 100))
 
-ADMIN_VERB_ADD(/client/proc/stop_sounds_admin, R_ADMIN, FALSE)
+ADMIN_VERB_ADD(/client/proc/stop_sounds_admin, R_SOUND, FALSE)
 /client/proc/stop_sounds_admin() //Selectively shuts up bad admin played songs only without destroying every sound in the game.
-	set category = "Debug"
+	set category = "Sound"
 	set name = "Stop Admin Sounds"
 	if(!src.holder)
 		return

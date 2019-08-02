@@ -554,6 +554,7 @@
 #include "code\game\gamemodes\roleset\faction\mercenary.dm"
 #include "code\game\gamemodes\roleset\faction\roleset_faction.dm"
 #include "code\game\gamemodes\storytellers\chronicler.dm"
+#include "code\game\gamemodes\storytellers\ghostship.dm"
 #include "code\game\gamemodes\storytellers\guide.dm"
 #include "code\game\gamemodes\storytellers\healer.dm"
 #include "code\game\gamemodes\storytellers\jester.dm"

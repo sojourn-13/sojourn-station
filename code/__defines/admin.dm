@@ -28,6 +28,7 @@
 #define R_PERMISSIONS   0x8
 #define R_MENTOR        0x10
 #define R_MOD           0x20
+#define R_SOUND         0x30
 #define R_ADMIN         0x40
 
 // Host permission (sum of all permissions above) is equal to 127 or 0x7F
