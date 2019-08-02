@@ -161,7 +161,7 @@
 	for(var/client/adm in admins)	//Now send to all admins that weren't in range.
 		if(!(adm in listening) && adm.get_preference_value(/datum/client_preference/staff/show_rlooc) == GLOB.PREF_SHOW)
 			var/admin_stuff = "/([key])([admin_jump_link(mob, adm.holder)])"
-			var/prefix = "(R)"
+			var/prefix = ""
 
 			adm << "<span class='ooc'><span class='rlooc'>" + create_text_tag("rlooc", "(R)LOOC:", adm) + " <span class='prefix'>[prefix]</span><EM>[display_name][admin_stuff]:</EM> <span class='message'>[msg]</span></span></span>"
 
