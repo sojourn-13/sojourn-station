@@ -41,7 +41,7 @@ var/const/boss_name			= "Central Command"
 var/const/boss_short		= "Centcomm"
 var/const/company_name		= "CEV Eris"
 var/const/company_short		= "Eris"
-var/game_version			= "Discordia"
+var/game_version			= "Sojourn"
 var/changelog_hash			= ""
 var/game_year				= (text2num(time2text(world.realtime, "YYYY")) + 544)
 
