@@ -29,15 +29,12 @@ other types of metals and chemistry for reagents).
 	category = "Misc"
 	req_tech = list(TECH_MATERIAL = 1)
 
-
 /datum/design/research/item/flash
 	name = "flash"
 	req_tech = list(TECH_MAGNET = 3, TECH_COMBAT = 2)
 	build_type = AUTOLATHE | MECHFAB
 	build_path = /obj/item/device/flash
 	category = "Misc"
-
-
 
 /datum/design/research/item/hud
 	name_category = "HUD glasses"
@@ -60,8 +57,6 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/clothing/glasses/powered/meson
 	sort_string = "GAAAC"
-
-
 
 /datum/design/research/item/medical
 	name_category = "biotech device prototype"
@@ -94,6 +89,18 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_BIO = 2, TECH_MAGNET = 4)
 	build_path = /obj/item/device/scanner/reagent_scanner/adv
 	sort_string = "MACBB"
+
+/datum/design/research/item/medical/defibs
+	desc = "Large paddles that get charged via a cell to give a controlled shock for revival."
+	req_tech = list(TECH_BIO = 4, TECH_POWER = 2)
+	build_path = /obj/item/device/defib_kit
+	sort_string = "MACBC"
+
+/datum/design/research/item/medical/compact_defibs
+	desc = "Much smaller defibulators build into a belt, to more easly carry."
+	req_tech = list(TECH_BIO = 6, TECH_MAGNET = 7)
+	build_path = /obj/item/device/defib_kit/compact
+	sort_string = "MACBD"
 
 /datum/design/research/item/beaker
 	name_category = "beaker prototype"
