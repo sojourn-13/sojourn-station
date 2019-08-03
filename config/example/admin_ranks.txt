@@ -18,6 +18,7 @@
 # +SERVER = higher-risk admin verbs and abilities, such as those which affect the server configuration.
 # +DEBUG = debug tools used for diagnosing and fixing problems. It's useful to give this to coders so they can investigate problems on a live server.
 # +RIGHTS (or +PERMISSIONS) = allows you to promote and/or demote people.
+# +SOUND = allows you to play sounds/stop all server sounds
 # +EVERYTHING (or +HOST or +ALL) = Simply gives you everything without having to type every flag
 
 Admin Observer
@@ -27,7 +28,7 @@ Mentor          +MENTOR
 Admin Candidate	+ADMIN
 Trial Admin		+@ +BAN
 Badmin			+@ +SERVER +FUN
-Game Admin		+@ +DEBUG +PERMISSIONS
+Game Admin		+@ +DEBUG +PERMISSIONS + SOUND
 Game Master		+EVERYTHING
 Head Admin		+EVERYTHING
 Retired Admin	+ADMIN
