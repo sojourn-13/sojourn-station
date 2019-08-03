@@ -12,6 +12,7 @@
 	force = 5
 	throwforce = 6
 	w_class = ITEM_SIZE_LARGE
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 1, MATERIAL_GOLD = 3.25, MATERIAL_SILVER = 4.25) //Glass for the lights
 	origin_tech = list(TECH_BIO = 4, TECH_POWER = 2)
 	action_button_name = "Remove/Replace Paddles"
 
@@ -177,6 +178,7 @@
 	item_state = "defibcompact"
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 7, MATERIAL_GLASS = 2, MATERIAL_GOLD = 7.75, MATERIAL_SILVER = 12.75) //Glass for the lights
 	origin_tech = list(TECH_BIO = 5, TECH_POWER = 3)
 
 	oxygain = 20
