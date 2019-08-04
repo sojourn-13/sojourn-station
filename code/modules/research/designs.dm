@@ -97,7 +97,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "MACBC"
 
 /datum/design/research/item/medical/compact_defibs
-	desc = "Much smaller defibulators build into a belt, to more easly carry."
+	desc = "Much smaller defibulators build into a belt, to more easily carry."
 	req_tech = list(TECH_BIO = 6, TECH_MAGNET = 7)
 	build_path = /obj/item/device/defib_kit/compact
 	sort_string = "MACBD"
