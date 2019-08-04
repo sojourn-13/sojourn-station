@@ -243,7 +243,7 @@
 	name = "executive dress skirt"
 	desc = "A formal black dress skirted suit with a feminine design."
 	icon_state = "executivedressskirt"
-	item_state = "executivedress"
+	item_state = "executivedressskirt"
 
 /obj/item/clothing/under/suit_jacket/chestnut
 	name = "chestnut suit"
