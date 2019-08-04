@@ -64,7 +64,7 @@
 
 /obj/item/clothing/head/sec/navy/hos
 	name = "Ironhammer commander beret"
-	desc = "A grey Ironhammer signifying a Commander position."
+	desc = "A grey Ironhammer beret signifying a Commander position."
 	icon_state = "beret_navy_hos"
 
 /obj/item/clothing/head/sec/navy/warden

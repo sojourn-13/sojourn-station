@@ -13,6 +13,12 @@
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "cult"
 
+/turf/simulated/wall/rock
+	name = "rock wall"
+	desc = "A wall of rocks."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "rockold"
+
 /turf/simulated/shuttle/wall
 	name = "wall"
 	icon_state = "wall1"
@@ -127,3 +133,19 @@
 
 /turf/simulated/wall/untinted/onestar_reinforced/New(var/newloc)
 	..(newloc, MATERIAL_STEEL,MATERIAL_STEEL)
+
+/turf/simulated/wall/jungle
+	name = "dense forestry"
+	icon = 'icons/turf/flooring/grass.dmi'
+	icon_state = "wall2"
+	desc = "A thick, impassable mass of plants and shrubbery."
+
+/turf/simulated/wall/jungle/variant
+	name = "dense forestry"
+	icon = 'icons/turf/flooring/grass.dmi'
+	icon_state = "wall1"
+	desc = "A thick, impassable mass of plants and shrubbery."
+
+/turf/simulated/wall/wood
+	icon_state = "wood"
+	icon_base_override = "wood"
