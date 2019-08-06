@@ -21,6 +21,7 @@
 #define SPECIES_XENOHYBRID		"Xenomorph Hybrid"
 #define SPECIES_ZORREN_FLAT		"Flatland Zorren"
 #define SPECIES_ZORREN_HIGH		"Highlander Zorren"
+#define SPECIES_STATIONXENO     "Xenomorph Hybrid"
 #define SPECIES_CUSTOM			"Custom Species"
 
 // Monkey and alien monkeys.
@@ -65,6 +66,10 @@
 #define FORM_SLIME				"Slime"
 #define FORM_AVIAN				"Avian"
 #define FORM_SPIDER				"Arachnoid"
+#define FORM_STATIONXENO	    "Xenohybrid Drone"
+#define FORM_STATIONXENO_HUNTER	"Xenohybrid Hunter"
+#define FORM_STATIONXENO_QUEEN	"Xenohybrid Queen"
+#define FORM_STATIONXENO_SENTI  "Xenohybrid Sentinel"
 
 #define FORM_BIRD				"Teshari"
 
