@@ -45,7 +45,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if (HUDinv.slot_id == slot_id)
 			return (HUDinv.invisibility == 101) ? null : HUDinv.screen_loc
 	log_admin("[src] try find_inv_position a [slot_id], but not have that slot!")
-	src << "Some problem hase accure, change UI style pls or call admins."
+	src << "Some problem has occurred, change UI style please or call admins."
 	return "7,7"
 
 //Mannequins have no hud, this was causing a lot of spam in the logs
@@ -282,7 +282,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if(slot_s_store)
 			src.s_store = W
 		else
-			src << SPAN_DANGER("You are trying to eqip this item to an unsupported inventory slot. If possible, please write a ticket with steps to reproduce. Slot was: [slot]")
+			src << SPAN_DANGER("You are trying to equip this item to an unsupported inventory slot. If possible, please write a ticket with steps to reproduce. Slot was: [slot]")
 			return
 
 	return 1
