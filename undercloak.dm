@@ -78,6 +78,6 @@
 /obj/item/clothing/under/undercloak/black_brown
 	name = "black and brown undercoat"
 	initial_name = "black and brown undercoat"
-	desc = "A teshari undercloak in black and brown."
+	desc = "A teshari undercloak in black and brown"
 	icon_state = "tesh_uniform_bbr"
 	item_state = "bl_suit"
