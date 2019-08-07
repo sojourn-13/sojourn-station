@@ -113,7 +113,7 @@
 	base = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	variantof = FORM_STATIONXENO
-	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR
 
 /datum/species_form/stationxeno/hunter
 	name = FORM_STATIONXENO_HUNTER
