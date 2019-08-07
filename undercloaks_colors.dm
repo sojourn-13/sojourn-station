@@ -71,6 +71,6 @@
 /obj/item/clothing/under/ndercloak_colors/grey
 	name = "grey undercloak"
 	initial_name = "grey undercloak"
-	desc = "A teshari undercloak in grey"
+	desc = "A teshari undercloak in grey."
 	icon_state = "tesh_uniform_lgg"
 	item_state = "tesh_uniform_lgg"
