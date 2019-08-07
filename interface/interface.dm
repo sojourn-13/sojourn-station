@@ -16,11 +16,11 @@
 	set desc = "Visit the Discord Server."
 	set hidden = 1
 	if( config.discordurl )
-		if(alert("This will open Sojourn Discord invite in your browser. Are you sure?",,"Yes","No")=="No")
+		if(alert("This will open the Discord invite in your browser. Are you sure?",,"Yes","No")=="No")
 			return
 		src << link(config.discordurl)
 	else
-		src << SPAN_WARNING("The Sojourn Discord invite is not set in the server configuration.")
+		src << SPAN_WARNING("The Discord invite is not set in the server configuration.")
 	return
 
 /client/verb/githuburl()
@@ -28,7 +28,7 @@
 	set desc = "Visit Sojourn's Github."
 	set hidden = 1
 	if( config.githuburl )
-		if(alert("This will open Sojourn Github page in your browser. Are you sure?",,"Yes","No")=="No")
+		if(alert("This will open Github page in your browser. Are you sure?",,"Yes","No")=="No")
 			return
 		src << link(config.githuburl)
 	else
