@@ -25,7 +25,7 @@
 
 /client/verb/githuburl()
 	set name = "githuburl"
-	set desc = "Visit Sojourn's Github."
+	set desc = "Visit the Github."
 	set hidden = 1
 	if( config.githuburl )
 		if(alert("This will open Github page in your browser. Are you sure?",,"Yes","No")=="No")
