@@ -27,8 +27,8 @@ Mentor          +MENTOR
 
 Admin Candidate	+ADMIN
 Trial Admin		+@ +BAN
-Badmin			+@ +SERVER +FUN
-Game Admin		+@ +DEBUG +PERMISSIONS + SOUND
+Badmin			+@ +SERVER +FUN +SOUND
+Game Admin		+@ +DEBUG +PERMISSIONS
 Game Master		+EVERYTHING
 Head Admin		+EVERYTHING
 Retired Admin	+ADMIN
