@@ -11,6 +11,16 @@
 	path = /obj/item/clothing/under/color/
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/undercloak
+	display_name = "black undercloak selection"
+	path = /obj/item/clothing/under/undercloak/
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/undercloak_colors
+	display_name = "colored undercloak selection"
+	path = /obj/item/clothing/under/undercloak_colors/
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/dress
 	display_name = "dress selection"
 	path = /obj/item/clothing/under/plaid

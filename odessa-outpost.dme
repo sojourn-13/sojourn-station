@@ -1415,6 +1415,8 @@
 #include "code\modules\clothing\under\miscellaneous.dm"
 #include "code\modules\clothing\under\shorts.dm"
 #include "code\modules\clothing\under\syndicate.dm"
+#include "code\modules\clothing\under\undercloak.dm"
+#include "code\modules\clothing\under\undercloaks_colors.dm"
 #include "code\modules\clothing\under\jobs\civilian.dm"
 #include "code\modules\clothing\under\jobs\engineering.dm"
 #include "code\modules\clothing\under\jobs\medsci.dm"
