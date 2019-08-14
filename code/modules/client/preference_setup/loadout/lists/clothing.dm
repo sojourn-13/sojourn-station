@@ -21,3 +21,9 @@
 	path = /obj/item/clothing/mask/surgical
 	slot = slot_wear_mask
 	cost = 2
+
+/datum/gear/clothing/gasmask
+	display_name = "gas mask"
+	path = /obj/item/clothing/mask/gas
+	slot = slot_wear_mask
+	cost = 3
