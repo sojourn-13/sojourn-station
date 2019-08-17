@@ -178,7 +178,7 @@ var/global/list/image/splatter_cache=list()
 	layer = LOW_OBJ_LAYER
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "gibbl5"
-	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6")
+	random_icon_states = list("gib1", "gib2", "gib3", "gib5", "gib6")
 	var/fleshcolor = "#FFFFFF"
 
 /obj/effect/decal/cleanable/blood/gibs/update_icon()
@@ -197,10 +197,10 @@ var/global/list/image/splatter_cache=list()
 	overlays += giblets
 
 /obj/effect/decal/cleanable/blood/gibs/up
-	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6","gibup1","gibup1","gibup1")
+	random_icon_states = list("gib1", "gib2", "gib3", "gib5", "gib6","gibup1","gibup1","gibup1")
 
 /obj/effect/decal/cleanable/blood/gibs/down
-	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6","gibdown1","gibdown1","gibdown1")
+	random_icon_states = list("gib1", "gib2", "gib3", "gib5", "gib6","gibdown1","gibdown1","gibdown1")
 
 /obj/effect/decal/cleanable/blood/gibs/body
 	random_icon_states = list("gibhead", "gibtorso")
