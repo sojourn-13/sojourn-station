@@ -2,6 +2,7 @@
 	name = "Ironhammer K9 Module"
 	sprites = list(
 					"K9 hound" = "k9",
+					"V2 K9 hound" = "ihsechound",
 					)
 	channels = list("Security" = 1)
 	networks = list(NETWORK_SECURITY)
@@ -57,7 +58,7 @@
 	sprites = list(
 					"Medical Hound" = "medihound",
 					"Dark Medical Hound (Static)" = "medihounddark",
-					"Mediborg model V-2" = "vale",
+					"V2 Medihound" = "vale",
 					)
 	channels = list("Medical" = 1)
 	networks = list(NETWORK_MEDICAL)
@@ -264,7 +265,7 @@
 /obj/item/weapon/robot_module/robot/engiedog
 	name = "Technomancer Hound Module"
 	sprites = list(
-					"V2 Engidog" = "thottbot",
+					"V2 Engihound" = "thottbot",
 					"Pupdozer" = "pupdozer",
 					)
 	channels = list("Engineering" = 1)
