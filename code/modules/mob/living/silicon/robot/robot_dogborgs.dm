@@ -1,8 +1,8 @@
 /obj/item/weapon/robot_module/robot/knine
 	name = "Ironhammer K9 Module"
 	sprites = list(
-					"K9 hound" = "k9",
-					"V2 K9 hound" = "ihsechound",
+					"K9 Hound" = "k9",
+					"V2 K9 Hound" = "ihsechound",
 					)
 	channels = list("Security" = 1)
 	networks = list(NETWORK_SECURITY)
