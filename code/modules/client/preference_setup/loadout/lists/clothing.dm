@@ -26,4 +26,4 @@
 	display_name = "gas mask"
 	path = /obj/item/clothing/mask/gas
 	slot = slot_wear_mask
-	cost = 3
+	cost = 2
