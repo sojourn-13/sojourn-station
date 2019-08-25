@@ -356,23 +356,23 @@
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree"
 
-/obj/structure/flora/tree/jungle/variantone
+/obj/structure/flora/tree/jungle/variant1
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree2"
 
-/obj/structure/flora/tree/jungle/varianttwo
+/obj/structure/flora/tree/jungle/variant2
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree3"
 
-/obj/structure/flora/tree/jungle/variantthree
+/obj/structure/flora/tree/jungle/variant3
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree4"
 
-/obj/structure/flora/tree/jungle/variantfour
+/obj/structure/flora/tree/jungle/variant4
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree5"
 
-/obj/structure/flora/tree/jungle/variantfive
+/obj/structure/flora/tree/jungle/variant5
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree6"
 
@@ -380,23 +380,23 @@
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree"
 
-/obj/structure/flora/tree/jungle_small/variantone
+/obj/structure/flora/tree/jungle_small/variant1
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree2"
 
-/obj/structure/flora/tree/jungle_small/varianttwo
+/obj/structure/flora/tree/jungle_small/variant2
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree3"
 
-/obj/structure/flora/tree/jungle_small/variantthree
+/obj/structure/flora/tree/jungle_small/variant3
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree4"
 
-/obj/structure/flora/tree/jungle_small/variantfour
+/obj/structure/flora/tree/jungle_small/variant4
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree5"
 
-/obj/structure/flora/tree/jungle_small/variantfive
+/obj/structure/flora/tree/jungle_small/variant5
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree6"
 
@@ -419,6 +419,58 @@
 /obj/structure/flora/small/rock5
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "rock5"
+
+/obj/structure/flora/small/trailrocka1
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrock1"
+
+/obj/structure/flora/small/trailrocka2
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrock2"
+
+/obj/structure/flora/small/trailrocka3
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrock3"
+
+/obj/structure/flora/small/trailrocka4
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrock4"
+
+/obj/structure/flora/small/trailrocka5
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrock5"
+
+/obj/structure/flora/small/trailrockb1
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrockbig1"
+
+/obj/structure/flora/small/trailrockb2
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrockbig2"
+
+/obj/structure/flora/small/trailrockb3
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrockbig3"
+
+/obj/structure/flora/small/trailrockb4
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrockbig4"
+
+/obj/structure/flora/small/trailrockb5
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "trailrockbig5"
+
+/obj/structure/flora/small/lavarock1
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "lavarocks1"
+
+/obj/structure/flora/small/lavarock2
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "lavarocks2"
+
+/obj/structure/flora/small/lavarock3
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "lavarocks3"
 
 /obj/structure/flora/small/busha1
 	icon = 'icons/obj/flora/jungleflora.dmi'
@@ -560,3 +612,24 @@
 /obj/structure/flora/pumpkin/carved/owo
 	desc = "A fat, freshly picked pumpkin. This one has a face carved into it! This one has large, round eyes and a squiggly, cat-like smiling mouth. Its pleasantly surprised expression seems to suggest that the pumpkin has noticed something about you."
 	icon_state = "decor-jackolantern-owo"
+
+/obj/structure/flora/rock
+	name = "rock"
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "basalt1"
+	desc = "A dull and sturdy rock."
+	anchored = 1
+
+/obj/structure/flora/rock/variant1
+	name = "rock"
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "basalt2"
+	desc = "A dull and sturdy rock."
+	anchored = 1
+
+/obj/structure/flora/rock/variant2
+	name = "rock"
+	icon = 'icons/obj/flora/rocks.dmi'
+	icon_state = "basalt3"
+	desc = "A dull and sturdy rock."
+	anchored = 1

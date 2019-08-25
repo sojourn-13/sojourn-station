@@ -197,6 +197,77 @@ LINEN BINS
 /obj/item/weapon/bedsheet/brown
 	icon_state = "sheetbrown"
 
+/obj/item/weapon/bedsheet/ian
+	icon_state = "sheetian"
+
+/obj/item/weapon/bedsheet/double
+	icon_state = "doublesheet"
+	item_state = "sheet"
+
+/obj/item/weapon/bedsheet/bluedouble
+	icon_state = "doublesheetblue"
+	item_state = "sheetblue"
+
+/obj/item/weapon/bedsheet/greendouble
+	icon_state = "doublesheetgreen"
+	item_state = "sheetgreen"
+
+/obj/item/weapon/bedsheet/orangedouble
+	icon_state = "doublesheetorange"
+	item_state = "sheetorange"
+
+/obj/item/weapon/bedsheet/purpledouble
+	icon_state = "doublesheetpurple"
+	item_state = "sheetpurple"
+
+/obj/item/weapon/bedsheet/rainbowdouble //all the way across the sky.
+	icon_state = "doublesheetrainbow"
+	item_state = "sheetrainbow"
+
+/obj/item/weapon/bedsheet/reddouble
+	icon_state = "doublesheetred"
+	item_state = "sheetred"
+
+/obj/item/weapon/bedsheet/yellowdouble
+	icon_state = "doublesheetyellow"
+	item_state = "sheetyellow"
+
+/obj/item/weapon/bedsheet/mimedouble
+	icon_state = "doublesheetmime"
+	item_state = "sheetmime"
+
+/obj/item/weapon/bedsheet/clowndouble
+	icon_state = "doublesheetclown"
+	item_state = "sheetrainbow"
+
+/obj/item/weapon/bedsheet/captaindouble
+	icon_state = "doublesheetcaptain"
+	item_state = "sheetcaptain"
+
+/obj/item/weapon/bedsheet/rddouble
+	icon_state = "doublesheetrd"
+	item_state = "sheetrd"
+
+/obj/item/weapon/bedsheet/hosdouble
+	icon_state = "doublesheethos"
+	item_state = "sheethos"
+
+/obj/item/weapon/bedsheet/hopdouble
+	icon_state = "doublesheethop"
+	item_state = "sheethop"
+
+/obj/item/weapon/bedsheet/cedouble
+	icon_state = "doublesheetce"
+	item_state = "sheetce"
+
+/obj/item/weapon/bedsheet/browndouble
+	icon_state = "doublesheetbrown"
+	item_state = "sheetbrown"
+
+/obj/item/weapon/bedsheet/iandouble
+	icon_state = "doublesheetian"
+	item_state = "sheetian"
+
 
 /obj/structure/bedsheetbin
 	name = "linen bin"

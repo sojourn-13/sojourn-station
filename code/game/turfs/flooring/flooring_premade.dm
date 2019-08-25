@@ -20,12 +20,12 @@
 	initial_flooring = /decl/flooring/carpet/turcarpet
 
 /turf/simulated/floor/carpet/sblucarpet
-	name = "sblue carpet"
+	name = "light blue carpet"
 	icon_state = "sblucarpet"
 	initial_flooring = /decl/flooring/carpet/sblucarpet
 
 /turf/simulated/floor/carpet/gaycarpet
-	name = "clown carpet"
+	name = "pink carpet"
 	icon_state = "gaycarpet"
 	initial_flooring = /decl/flooring/carpet/gaycarpet
 

@@ -77,6 +77,24 @@
 	anchored = 1
 	unacidable = 1//temporary until I decide whether the borg can be removed. -veyveyr
 
+/obj/structure/showcase/sign
+	name = "WARNING: WILDERNESS"
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "wilderness1"
+	desc = "A large sign warning that the area beyond is dangerous."
+
+/obj/structure/showcase/sign2
+	name = "WARNING: HAZARDOUS"
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "wilderness2"
+	desc = "A large sign warning that the area beyond is dangerous."
+
+/obj/structure/showcase/sign3
+	name = "blank sign"
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "wilderness3"
+	desc = "A large blank sign. Perhaps someone forgot to paint it."
+
 /obj/item/mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 
 /obj/item/weapon/beach_ball

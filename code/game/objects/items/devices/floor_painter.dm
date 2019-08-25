@@ -15,8 +15,8 @@
 		"dotted outline" =    list("path" = /obj/effect/floor_decal/industrial/outline, "coloured" = 1),
 		"loading sign" =      list("path" = /obj/effect/floor_decal/industrial/loading),
 		"mosaic, large" =     list("path" = /obj/effect/floor_decal/chapel),
-		"1" =                 list("path" = /obj/effect/floor_decal/sign),
-		"2" =                 list("path" = /obj/effect/floor_decal/sign/two),
+		"1" =                 list("path" = /obj/effect/floor_decal/sign/a/one),
+		"2" =                 list("path" = /obj/effect/floor_decal/sign/a/two),
 		"A" =                 list("path" = /obj/effect/floor_decal/sign/a),
 		"B" =                 list("path" = /obj/effect/floor_decal/sign/b),
 		"C" =                 list("path" = /obj/effect/floor_decal/sign/c),
@@ -25,7 +25,7 @@
 		"V" =                 list("path" = /obj/effect/floor_decal/sign/v),
 		"CMO" =               list("path" = /obj/effect/floor_decal/sign/cmo),
 		"Ex" =                list("path" = /obj/effect/floor_decal/sign/ex),
-		"Psy" =               list("path" = /obj/effect/floor_decal/sign/p),
+		"Psy" =               list("path" = /obj/effect/floor_decal/sign/psy),
 		"remove all decals" = list("path" = /obj/effect/floor_decal/reset)
 		)
 	var/list/paint_dirs = list(
