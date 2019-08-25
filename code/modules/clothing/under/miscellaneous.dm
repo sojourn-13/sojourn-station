@@ -996,3 +996,9 @@
 	name = "swept skirt"
 	desc = "A black skirt elegantly swept to one side."
 	icon_state = "skirt_swept"
+
+/obj/item/clothing/under/maid
+	name = "maid dress"
+	desc = "A comfortable outfit for cleaning! Or perhaps performing other activities, too."
+	icon_state = "maid"
+	item_state = "maid"

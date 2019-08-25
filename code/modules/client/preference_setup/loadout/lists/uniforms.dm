@@ -83,6 +83,10 @@
 	path = /obj/item/clothing/under/cheongsam
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/maid
+	display_name = "maid dress"
+	path = /obj/item/clothing/under/maid
+
 /datum/gear/noselect/detcorporate
 	display_name = "inspectors uniform"
 	path = /obj/item/clothing/under/detalt
