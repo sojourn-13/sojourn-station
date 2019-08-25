@@ -553,62 +553,6 @@
 	name = "Side Ponytail 2"
 	icon_state = "ponytailf"
 
-/datum/sprite_accessory/hair/teshari_default
-	name = "Teshari default"
-	icon_state = "teshari_default_s"
-
-/datum/sprite_accessory/hair/teshari_upright
-	name = "Teshari upright"
-	icon_state = "teshari_upright_s"
-
-/datum/sprite_accessory/hair/teshari_burst_short
-	name = "Teshari burst short"
-	icon_state = "teshari_burst_short_s"
-
-/datum/sprite_accessory/hair/teshari_burst
-	name = "Teshari burst"
-	icon_state = "teshari_burst_s"
-
-/datum/sprite_accessory/hair/teshari_pointy
-	name = "Teshari pointy"
-	icon_state = "teshari_pointy_s"
-
-/datum/sprite_accessory/hair/teshari_mushroom
-	name = "Teshari mushroom"
-	icon_state = "teshari_mushroom_s"
-
-/datum/sprite_accessory/hair/teshari_droopy
-	name = "Teshari droopy"
-	icon_state = "teshari_droopy_s"
-
-/datum/sprite_accessory/hair/teshari_mane
-	name = "Teshari mane"
-	icon_state = "teshari_mane_s"
-
-/datum/sprite_accessory/hair/teshari_ears
-	name = "Teshari ears"
-	icon_state = "teshari_ears_s"
-
-/datum/sprite_accessory/hair/teshari_spike
-	name = "Teshari spike"
-	icon_state = "teshari_spike_s"
-
-/datum/sprite_accessory/hair/teshari_tight
-	name = "Teshari tight"
-	icon_state = "teshari_tight_s"
-
-/datum/sprite_accessory/hair/teshari_long
-	name = "Teshari long"
-	icon_state = "teshari_long_s"
-
-/datum/sprite_accessory/hair/teshari_mohawk
-	name = "Teshari mohawk"
-	icon_state = "teshari_mohawk_s"
-
-/datum/sprite_accessory/hair/teshari_spiky
-	name = "Teshari spiky"
-	icon_state = "teshari_spiky_s"
-
 /datum/sprite_accessory/hair/sideswept
 	name = "Side Swipe"
 	icon_state = "sideswipe"
