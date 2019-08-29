@@ -1528,7 +1528,7 @@
 	name = "Nuka Cola"
 	id = "nuka_cola"
 	result = "nuka_cola"
-	required_reagents = list(MATERIAL_URANIUM = 1, "cola" = 5)
+	required_reagents = list("radium" = 1, "cola" = 5)
 	result_amount = 5
 
 /datum/chemical_reaction/moonshine
@@ -1748,7 +1748,7 @@
 	name = "Atomic Bomb"
 	id = "atomicbomb"
 	result = "atomicbomb"
-	required_reagents = list("b52" = 10, MATERIAL_URANIUM = 1)
+	required_reagents = list("b52" = 10, "radium" = 1)
 	result_amount = 10
 
 /datum/chemical_reaction/margarita
@@ -1776,7 +1776,7 @@
 	name = "Three Mile Island Iced Tea"
 	id = "threemileisland"
 	result = "threemileisland"
-	required_reagents = list("longislandicedtea" = 10, MATERIAL_URANIUM = 1)
+	required_reagents = list("longislandicedtea" = 10, "radium" = 1)
 	result_amount = 10
 
 /datum/chemical_reaction/whiskeysoda
@@ -1804,7 +1804,7 @@
 	name = "Manhattan Project"
 	id = "manhattan_proj"
 	result = "manhattan_proj"
-	required_reagents = list("manhattan" = 10, MATERIAL_URANIUM = 1)
+	required_reagents = list("manhattan" = 10, "radium" = 1)
 	result_amount = 10
 
 /datum/chemical_reaction/vodka_tonic
@@ -2087,3 +2087,31 @@
 	result = "luminol"
 	required_reagents = list("hydrogen" = 2, "carbon" = 2, "ammonia" = 2)
 	result_amount = 6
+
+/datum/chemical_reaction/drinks/daiquiri
+	name = "Daiquiri"
+	id = "daiquiri"
+	result = "daiquiri"
+	required_reagents = list("rum" = 3, "limejuice" = 2, "sugar" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/drinks/whiskeysour
+	name = "Whiskey Sour"
+	id = "whiskeysour"
+	result = "whiskeysour"
+	required_reagents = list("whiskey" = 2, "lemonjuice" = 1, "sugar" = 1)
+	result_amount = 4
+
+/datum/chemical_reaction/drinks/mojito
+	name = "Mojito"
+	id = "mojito"
+	result = "mojito"
+	required_reagents = list("rum" = 3, "limejuice" = 1, "ice" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/drinks/balloon
+	name = "Balloon"
+	id = "balloon"
+	result = "balloon"
+	required_reagents = list("cream" = 1, "bluecuracao" = 1)
+	result_amount = 2

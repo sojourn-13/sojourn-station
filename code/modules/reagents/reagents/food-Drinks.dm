@@ -2127,3 +2127,48 @@
 	glass_name = "special blend whiskey"
 	glass_desc = "Just when you thought regular station whiskey was good... This silky, amber goodness has to come along and ruin everything."
 	glass_center_of_mass = list("x"=16, "y"=12)
+
+/datum/reagent/ethanol/daiquiri
+	name = "Daiquiri"
+	id = "daiquiri"
+	description = "Refeshing rum and citrus. Time for a tropical get away."
+	taste_description = "refreshing citrus and rum"
+	color = "#d1ff49" // rgb(209, 255, 73
+	strength = 25
+
+	glass_name = "Daiquiri"
+	glass_desc = "Refeshing rum and citrus. Time for a tropical get away."
+
+/datum/reagent/ethanol/whiskeysour
+	name = "Whiskey Sour"
+	id = "whiskeysour"
+	description = "A smokey, refreshing lemoned whiskey."
+	taste_description = "smoke and citrus"
+	color = "#a0692e" // rgb(160, 105, 46)
+	strength = 20
+
+	glass_name = "Whiskey Sour"
+	glass_desc = "A smokey, refreshing lemoned whiskey."
+
+/datum/reagent/ethanol/mojito
+	name = "Mojito"
+	id = "mojito"
+	description = "Minty rum and citrus, made for sailing."
+	taste_description = "minty rum and lime"
+	color = "#d1ff49" // rgb(209, 255, 73
+	strength = 30
+
+	glass_icon_state = "mojito"
+	glass_name = "Mojito"
+	glass_desc = "Minty rum and citrus, made for sailing."
+
+/datum/reagent/ethanol/balloon
+	name = "Balloon"
+	id = "balloon"
+	description = "A strange drink invented in the aerostats of Venus."
+	taste_description = "strange alcohol"
+	color = "#FAEBD7"
+	strength = 66
+
+	glass_name = "Balloon"
+	glass_desc = "A strange drink invented in the aerostats of Venus."
