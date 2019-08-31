@@ -190,8 +190,16 @@
 	name = "Carthatoline"
 	id = "carthatoline"
 	result = "carthatoline"
-	required_reagents = list("anti_toxin" = 1, "toxin" = 1, "plasma" = 0.1)
-	catalysts = list("plasma" = 1)
+	required_reagents = list("anti_toxin" = 1, "carbon" = 2, "plasma" = 0.1)
+	catalysts = list("plasma" = 5)
+	result_amount = 2
+
+/datum/chemical_reaction/cordradaxon
+	name = "Cordradaxon"
+	id = "cordradaxon"
+	result = "cordradaxon"
+	required_reagents = list("potassium_chloride" = 1, "blattedin" = 1, "bicaridine" = 1)
+	catalysts = list("plasma" = 5)
 	result_amount = 2
 
 /datum/chemical_reaction/tramadol
@@ -368,13 +376,37 @@
 	required_reagents = list("dexalin" = 1, "carbon" = 1, "iron" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/respirodaxon
+	name = "Respirodaxon"
+	id = "respirodaxon"
+	result = "respirodaxon"
+	required_reagents = list("dexalinp" = 1, "blattedin" = 1, "plasma" = 0.1)
+	catalysts = list("plasma" = 5)
+	result_amount = 2
+
 /datum/chemical_reaction/bicaridine
 	name = "Bicaridine"
 	id = "bicaridine"
 	result = "bicaridine"
-	required_reagents = list("inaprovaline" = 2, "blattedin" = 1)
+	required_reagents = list("inaprovaline" = 1, "carbon" = 1)
 	inhibitors = list("sugar" = 1) // Messes up with inaprovaline
-	result_amount = 3
+	result_amount = 2
+
+/datum/chemical_reaction/vermicetol
+	name = "Vermicetol"
+	id = "vermicetol"
+	result = "vermicetol"
+	required_reagents = list("kelotane" = 1, "dermaline" = 1, "blattedin" = 1, "plasma" = 0.1)
+	catalysts = list("plasma" = 5)
+	result_amount = 2
+
+/datum/chemical_reaction/varceptol
+	name = "Varceptol"
+	id = "varceptol"
+	result = "varceptol"
+	required_reagents = list("anti_toxin" = 1, "bicaridine" = 1, "blattedin" = 1)
+	catalysts = list("plasma" = 5)
+	result_amount = 2
 
 /datum/chemical_reaction/hyperzine
 	name = "Hyperzine"
