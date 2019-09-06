@@ -38,6 +38,15 @@
 	//Character stats modifers
 	var/list/stat_modifiers = list()
 
+
+	//Does not display this job on the occupation setup screen
+	var/latejoin_only = 0
+
+	//Every hour playing this role gains this much time off. (Can be negative for off duty jobs!)
+	var/timeoff_factor = 3
+
+
+
 /datum/job/proc/equip(var/mob/living/carbon/human/H, var/alt_title)
 	var/decl/hierarchy/outfit/outfit = get_outfit()
 	if(!outfit)
@@ -196,3 +205,11 @@
 /datum/job/proc/dress_mannequin(var/mob/living/carbon/human/dummy/mannequin/mannequin)
 	mannequin.delete_inventory(TRUE)
 	equip_preview(mannequin, additional_skips = OUTFIT_ADJUSTMENT_SKIP_BACKPACK|OUTFIT_ADJUSTMENT_SKIP_SURVIVAL_GEAR)
+
+
+
+// Check client-specific availability rules.
+// We don't have an SQL server nor do we really care that much about
+// enforcing this mechanically.
+/datum/job/proc/player_has_enough_pto(client/C)
+	return TRUE

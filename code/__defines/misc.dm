@@ -224,3 +224,5 @@
 
  //Preference save/load cooldown. This is in deciseconds.
 #define PREF_SAVELOAD_COOLDOWN 4 //Should be sufficiently hard to achieve without a broken mouse or autoclicker while still fulfilling its intended goal.
+
+#define MAP_FACTION "CEV Eris"
