@@ -183,3 +183,6 @@
 
 	log_vote(text)
 	world << "<font color='purple'>[text]</font>"
+
+/datum/poll/proc/IsAdminOnly()
+	return only_admin

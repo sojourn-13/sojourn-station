@@ -9,13 +9,22 @@
 	time = 60
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
 
-	only_admin = TRUE
+	// Overriden by implementation of IsAdminOnly
+	//only_admin = TRUE
 
 	multiple_votes = FALSE
 	can_revote = TRUE
 	can_unvote = FALSE
 
 	see_votes = TRUE
+
+
+/datum/poll/restart/IsAdminOnly()
+	if(config.allow_vote_restart)
+		return FALSE
+	else
+		return TRUE
+
 
 /datum/vote_choice/restart
 	text = "Restart Round"
@@ -28,7 +37,6 @@
 
 /datum/vote_choice/countinue_round
 	text = "Continue Round"
-
 
 
 
