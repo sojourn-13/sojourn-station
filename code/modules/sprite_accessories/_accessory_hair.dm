@@ -701,6 +701,43 @@
 	icon_state = "zone"
 	gender = FEMALE
 
+/datum/sprite_accessory/hair/messy1
+	name = "Messy"
+	icon_state = "boyish1"
+
+/datum/sprite_accessory/hair/messy2
+	name = "Partly Kept"
+	icon_state = "boyish2"
+
+/datum/sprite_accessory/hair/messy3
+	name = "Tousled"
+	icon_state = "boyish3"
+
+/datum/sprite_accessory/hair/messy4
+	name = "Past Ears"
+	icon_state = "boyish4"
+
+/datum/sprite_accessory/hair/messy5
+	name = "Tidy A"
+	icon_state = "boyish5"
+
+/datum/sprite_accessory/hair/messy5b
+	name = "Tidy B"
+	icon_state = "boyish5b"
+
+/datum/sprite_accessory/hair/blinded
+	name = "Myopia" //alt; 'Fringe Beliefs'
+	icon_state = "overeyebowl"
+
+/datum/sprite_accessory/hair/bookish
+	name = "Bookish"
+	icon_state = "lem"
+
+/datum/sprite_accessory/hair/shorthair3beta
+	name = "Short Hair 3 (Alternate)"
+	icon_state = "shorthair3beta"
+
+
 /datum/sprite_accessory/hair/crestedquill
 	name = "Crested Quills"
 	icon_state = "crestedquills"
