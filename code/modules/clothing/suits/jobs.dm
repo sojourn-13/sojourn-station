@@ -43,7 +43,7 @@
 	extra_allowed = list (/obj/item/seeds, /obj/item/weapon/reagent_containers/glass/fertilizer, /obj/item/weedkiller)
 
 //Chaplain
-/obj/item/clothing/suit/chaplain_hoodie
+/obj/item/clothing/suit/rank/chaplain
 	name = "preacher coat"
 	desc = "A long, lightly armoured coat. Dark, stylish and authoritarian"
 	icon_state = "chaplain_hoodie"
@@ -53,7 +53,7 @@
 	armor = list(melee = 15, bullet = 15, laser = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
 
 //Chaplain
-/obj/item/clothing/suit/nun
+/obj/item/clothing/suit/costume/job/nun
 	name = "nun robe"
 	desc = "Maximum piety in this star system."
 	icon_state = "nun"
@@ -61,8 +61,16 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = HIDESHOES|HIDEJUMPSUIT
 
+/obj/item/clothing/suit/costume/animal/carp
+	name = "carp suit"
+	desc = "A costume made from synthetic carp scale."
+	icon_state = "carp"
+	item_state = "carp"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	flags_inv = HIDESHOES|HIDEJUMPSUIT
+
 //Chef
-/obj/item/clothing/suit/chef
+/obj/item/clothing/suit/rank/chef
 	name = "chef's apron"
 	desc = "An apron used by a high class chef."
 	icon_state = "chef"
@@ -72,7 +80,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 //Chef
-/obj/item/clothing/suit/chef/classic
+/obj/item/clothing/suit/rank/chef/classic
 	name = "A classic chef's apron."
 	desc = "A basic, dull, white chef's apron."
 	icon_state = "apronchef"

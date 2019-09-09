@@ -16,17 +16,17 @@
 		evil_tree.icon_gib = evil_tree.icon_state
 		qdel(xmas)
 
-/obj/item/weapon/toy/xmas_cracker
+/obj/item/toy/junk/xmas_cracker
 	name = "xmas cracker"
 	icon = 'icons/obj/christmas.dmi'
 	icon_state = "cracker"
 	desc = "Directions for use: Requires two people, one to pull each end."
 	var/cracked = 0
 
-/obj/item/weapon/toy/xmas_cracker/New()
+/obj/item/toy/junk/xmas_cracker/New()
 	..()
 
-/obj/item/weapon/toy/xmas_cracker/attack(mob/target, mob/user)
+/obj/item/toy/junk/xmas_cracker/attack(mob/target, mob/user)
 	if( !cracked && ishuman(target) && (target.stat == CONSCIOUS) && !target.get_active_hand() )
 		target.visible_message(SPAN_NOTICE("[user] and [target] pop \an [src]! *pop*"), SPAN_NOTICE("You pull \an [src] with [target]! *pop*"), SPAN_NOTICE("You hear a *pop*."))
 		var/obj/item/weapon/paper/Joke = new /obj/item/weapon/paper(user.loc)
@@ -41,23 +41,15 @@
 			"What do snowmen wear on their heads?\n\n<i>Ice caps!</i>",
 			"Why is Christmas just like life on ss13?\n\n<i>You do all the work and the fat guy gets all the credit.</i>",
 			"Why doesn’t Santa have any children?\n\n<i>Because he only comes down the chimney.</i>")
-		new /obj/item/clothing/head/festive(target.loc)
+		new /obj/item/clothing/head/costume/misc/festive(target.loc)
 		user.update_icons()
 		cracked = 1
 		icon_state = "cracker1"
-		var/obj/item/weapon/toy/xmas_cracker/other_half = new /obj/item/weapon/toy/xmas_cracker(target)
+		var/obj/item/toy/junk/xmas_cracker/other_half = new /obj/item/toy/junk/xmas_cracker(target)
 		other_half.cracked = 1
 		other_half.icon_state = "cracker2"
 		target.put_in_active_hand(other_half)
 		playsound(user, 'sound/effects/snap.ogg', 50, 1)
 		return 1
 	return ..()
-
-/obj/item/clothing/head/festive
-	name = "festive paper hat"
-	icon_state = "xmashat"
-	desc = "A crappy paper hat that you are REQUIRED to wear."
-	flags_inv = 0
-	body_parts_covered = 0
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 

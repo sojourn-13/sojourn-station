@@ -1,10 +1,20 @@
 // Uniform slot
 /datum/gear/uniform
-	display_name = "utility selection"
-	path = /obj/item/clothing/under/overalls
-	flags = GEAR_HAS_TYPE_SELECTION
+	display_name = "wedding dress"
+	path = /obj/item/clothing/under/bride_white
 	slot = slot_w_uniform
 	sort_category = "Uniforms and Casual Dress"
+
+/datum/gear/uniform/gearharness
+	display_name = "gear harness selection"
+	path = /obj/item/clothing/under/harness
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Xenowear"
+
+/datum/gear/uniform/overalls
+	display_name = "overall selection"
+	path = /obj/item/clothing/under/overalls
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/jumpsuit
 	display_name = "jumpsuit selection"
@@ -15,11 +25,23 @@
 	display_name = "black undercloak selection"
 	path = /obj/item/clothing/under/undercloak/
 	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Xenowear"
 
 /datum/gear/uniform/undercloak_colors
 	display_name = "colored undercloak selection"
 	path = /obj/item/clothing/under/undercloak_colors/
 	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Xenowear"
+
+/datum/gear/uniform/nuditypermit
+	display_name = "nudity permit"
+	path = /obj/item/clothing/under/permit
+	sort_category = "Xenowear"
+
+/datum/gear/uniform/loincloth
+	display_name = "loincloth"
+	path = /obj/item/clothing/under/loincloth
+	sort_category = "Xenowear"
 
 /datum/gear/uniform/dress
 	display_name = "dress selection"
@@ -31,12 +53,22 @@
 	path = /obj/item/clothing/under/scrubs
 	flags = GEAR_HAS_TYPE_SELECTION
 	allowed_roles = list("Moebius Paramedic","Moebius Psychiatrist","Moebius Chemist","Moebius Doctor","Moebius Biolab Officer")
-	sort_category = "Moebius"
+	sort_category = "Faction: Moebius"
 
 /datum/gear/uniform/jumpsuit2
 	display_name = "jumpsuit, customized"
 	path = /obj/item/clothing/under/custom
 	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/uniform/jumpskirt2
+	display_name = "jumpskirt, customized"
+	path = /obj/item/clothing/under/customskirt
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/uniform/jumpskirt
+	display_name = "jumpskirt selection"
+	path = /obj/item/clothing/under/jumpskirt
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/onepiecesuit
 	display_name = "one piece suit selection"
@@ -83,13 +115,9 @@
 	path = /obj/item/clothing/under/cheongsam
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/uniform/maid
-	display_name = "maid dress"
-	path = /obj/item/clothing/under/maid
-
-/datum/gear/noselect/detcorporate
+/datum/gear/uniform/detcorporate
 	display_name = "inspectors uniform"
-	path = /obj/item/clothing/under/detalt
+	path = /obj/item/clothing/under/rank/inspector/uniform
 	allowed_roles = list("Ironhammer Inspector")
 	slot = slot_w_uniform
-	sort_category = "Ironhammer"
+	sort_category = "Faction: Ironhammer"

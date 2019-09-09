@@ -12,13 +12,13 @@
 	uniform = /obj/item/clothing/under/rank/bartender
 	pda_type = /obj/item/modular_computer/pda
 	backpack_contents = list(/obj/item/ammo_casing/shotgun/beanbag = 4)
-	
+
 
 /decl/hierarchy/outfit/job/service/chef
 	name = OUTFIT_JOB_NAME("Chef")
 	uniform = /obj/item/clothing/under/rank/chef
-	suit = /obj/item/clothing/suit/chef
-	head = /obj/item/clothing/head/chefhat
+	suit = /obj/item/clothing/suit/rank/chef
+	head = /obj/item/clothing/head/rank/chef
 	id_type = /obj/item/weapon/card/id/ltgrey
 	pda_type = /obj/item/modular_computer/pda
 
@@ -35,7 +35,7 @@
 	..()
 	//backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/weapon/storage/backpack/hydroponics;
 	//backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/weapon/storage/backpack/satchel/hyd;
-	
+
 
 /decl/hierarchy/outfit/job/service/janitor
 	name = OUTFIT_JOB_NAME("Janitor")
@@ -44,18 +44,18 @@
 
 /decl/hierarchy/outfit/job/service/actor/clown
 	name = OUTFIT_JOB_NAME("Clown")
-	uniform = /obj/item/clothing/under/rank/clown
-	shoes = /obj/item/clothing/shoes/clown_shoes
-	mask = /obj/item/clothing/mask/gas/clown_hat
+	uniform = /obj/item/clothing/under/costume/job/clown
+	shoes = /obj/item/clothing/shoes/costume/job/clown
+	mask = /obj/item/clothing/mask/costume/job/clown
 	l_pocket = /obj/item/weapon/bikehorn
-	backpack_contents = list(/obj/item/weapon/bananapeel = 1, /obj/item/weapon/storage/fancy/crayons = 1, /obj/item/toy/waterflower = 1, /obj/item/weapon/stamp/clown = 1)
+	backpack_contents = list(/obj/item/weapon/bananapeel = 1, /obj/item/weapon/storage/fancy/crayons = 1, /obj/item/toy/weapon/waterflower = 1, /obj/item/weapon/stamp/clown = 1)
 
 /decl/hierarchy/outfit/job/service/actor/clown/New()
 	..()
 	backpack_overrides[/decl/backpack_outfit/backpack] = /obj/item/weapon/storage/backpack/clown
 	backpack_overrides[/decl/backpack_outfit/satchel] = /obj/item/weapon/storage/backpack/satchel/norm
-	
-	
+
+
 /decl/hierarchy/outfit/job/service/actor/clown/post_equip(var/mob/living/carbon/human/H)
 	..()
 	H.mutations.Add(CLUMSY)

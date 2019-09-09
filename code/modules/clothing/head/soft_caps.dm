@@ -68,12 +68,6 @@
 	desc = "A peaked cap in a purple color."
 	icon_state = "purplesoft"
 
-/obj/item/clothing/head/rainbow
-	name = "rainbow cap"
-	initial_name = "rainbow cap"
-	desc = "A peaked cap in a bright array of colors."
-	icon_state = "rainbowsoft"
-
 /obj/item/clothing/head/customcap
 	name = "customized cap"
 	initial_name = "customized  cap"

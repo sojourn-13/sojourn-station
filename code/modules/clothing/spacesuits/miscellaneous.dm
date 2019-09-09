@@ -12,25 +12,6 @@
 	flags_inv = BLOCKHAIR
 	siemens_coefficient = 0.6
 
-//Space santa outfit suit
-/obj/item/clothing/head/helmet/space/santahat
-	name = "Santa's hat"
-	desc = "Ho ho ho. Merrry X-mas!"
-	icon_state = "santahat"
-	item_state = "santahat"
-	item_flags = STOPPRESSUREDAMAGE
-	flags_inv = BLOCKHAIR
-	body_parts_covered = HEAD
-
-/obj/item/clothing/suit/space/santa
-	name = "Santa's suit"
-	desc = "Festive!"
-	icon_state = "santa"
-	item_state = "santa"
-	slowdown = 0
-	item_flags = STOPPRESSUREDAMAGE
-	allowed = list(/obj/item) //for stuffing exta special presents
-
 //Orange emergency space suit
 /obj/item/clothing/head/helmet/space/emergency
 	name = "Emergency Space Helmet"

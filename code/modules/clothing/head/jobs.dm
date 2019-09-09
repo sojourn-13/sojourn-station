@@ -1,13 +1,13 @@
 
 //Bartender
-/obj/item/clothing/head/chefhat
+/obj/item/clothing/head/rank/chef
 	name = "chef's hat"
 	desc = "It's a hat used by chefs to keep hair out of your food. Judging by the food in the mess, they don't work."
 	icon_state = "chefhat"
 	item_state = "chefhat"
 
 //Captain
-/obj/item/clothing/head/caphat
+/obj/item/clothing/head/rank/captain
 	name = "captain's hat"
 	icon_state = "captain"
 	desc = "It's good being the king."
@@ -17,24 +17,24 @@
 		)
 	body_parts_covered = 0
 
-/obj/item/clothing/head/caphat/cap
+/obj/item/clothing/head/rank/captain/cap
 	name = "captain's cap"
 	desc = "You fear to wear it for the negligence it brings."
 	icon_state = "capcap"
 
-/obj/item/clothing/head/caphat/formal
+/obj/item/clothing/head/rank/captain/formal
 	name = "parade hat"
 	desc = "No one in a commanding position should be without a perfect, white hat of ultimate authority."
 	icon_state = "officercap"
 
 //HOP
-/obj/item/clothing/head/caphat/hop
+/obj/item/clothing/head/rank/first_officer
 	name = "crew resource's hat"
 	desc = "A stylish hat that both protects you from enraged former-crewmembers and gives you a false sense of authority."
 	icon_state = "hopcap"
 
 //Chaplain
-/obj/item/clothing/head/chaplain_hood
+/obj/item/clothing/head/rank/chaplain
 	name = "preacher's hood"
 	desc = "It's hood that covers the head. It keeps you warm during the space winters."
 	icon_state = "chaplain_hood"
@@ -42,12 +42,7 @@
 	body_parts_covered = HEAD
 
 //Chaplain
-/obj/item/clothing/head/nun_hood
-	name = "nun hood"
-	desc = "Maximum piety in this star system."
-	icon_state = "nun_hood"
-	flags_inv = BLOCKHAIR
-	body_parts_covered = HEAD
+
 
 //Mime
 /obj/item/clothing/head/beret
@@ -81,6 +76,11 @@
 	name = "purple beret"
 	desc = "A rather stylish purple beret."
 	icon_state = "beret_purple"
+
+/obj/item/clothing/head/beret/black
+	name = "black beret"
+	desc = "A dark and imposing black beret."
+	icon_state = "beretblack"
 
 /obj/item/clothing/head/seccap
 	name = "Ironhammer security cap"

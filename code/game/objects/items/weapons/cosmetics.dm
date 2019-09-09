@@ -25,14 +25,6 @@
 	desc = "A generic brand of black lipstick. Can be wiped off with paper."
 	colour = "black"
 
-/obj/item/weapon/lipstick/random
-	name = "random lipstick"
-
-/obj/item/weapon/lipstick/random/New()
-	colour = pick("red","purple","jade","black")
-	name = "[colour] lipstick"
-
-
 /obj/item/weapon/lipstick/attack_self(mob/user as mob)
 	user << "<span class='notice'>You twist \the [src] [open ? "closed" : "open"].</span>"
 	open = !open

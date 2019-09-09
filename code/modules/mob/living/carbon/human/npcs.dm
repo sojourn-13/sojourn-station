@@ -1,4 +1,4 @@
-/obj/item/clothing/under/punpun
+/obj/item/clothing/under/rank/punpun
 	name = "fancy uniform"
 	desc = "It looks like it was tailored for a monkey."
 	icon_state = "punpun"
@@ -10,4 +10,4 @@
 	spawn(1)
 		name = "Pun Pun"
 		real_name = name
-		w_uniform = new /obj/item/clothing/under/punpun(src)
+		w_uniform = new /obj/item/clothing/under/rank/punpun(src)

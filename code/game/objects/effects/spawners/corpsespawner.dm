@@ -92,10 +92,10 @@
 /obj/landmark/corpse/roles/civilian/chef
 	name = "Chef"
 	corpseuniform = /obj/item/clothing/under/rank/chef
-	corpsesuit = /obj/item/clothing/suit/chef
+	corpsesuit = /obj/item/clothing/suit/rank/chef
 	corpseshoes = /obj/item/clothing/shoes/color/black
 	corpseradio = /obj/item/device/radio/headset/headset_service
-	corpsehelmet = /obj/item/clothing/head/chefhat
+	corpsehelmet = /obj/item/clothing/head/rank/chef
 	corpseback = /obj/item/weapon/storage/backpack
 	corpseid = 1
 	corpseidjob = "Chef"
@@ -146,7 +146,7 @@
 /obj/landmark/corpse/roles/civilian/neotheopreacher
 	name = "NeoTheologist Preacher"
 	corpseuniform = /obj/item/clothing/under/rank/chaplain
-	corpsesuit = /obj/item/clothing/suit/chaplain_hoodie
+	corpsesuit = /obj/item/clothing/suit/rank/chaplain
 	corpseshoes = /obj/item/clothing/shoes/reinforced
 	corpsegloves = /obj/item/clothing/gloves/thick
 	corpseradio = /obj/item/device/radio/headset
@@ -645,7 +645,7 @@
 	corpseshoes = /obj/item/clothing/shoes/reinforced
 	corpsegloves = /obj/item/clothing/gloves/stungloves
 	corpseradio = /obj/item/device/radio/headset/headset_sec
-	corpsehelmet = /obj/item/clothing/head/det
+	corpsehelmet = /obj/item/clothing/head/rank/inspector
 	corpsepocket1 = /obj/item/weapon/handcuffs
 	corpseback = /obj/item/weapon/storage/backpack/security
 	corpseid = 1
@@ -743,7 +743,7 @@
 	corpseshoes = /obj/item/clothing/shoes/color/brown
 	corpseradio = /obj/item/device/radio/headset/heads/captain
 	corpseglasses = /obj/item/clothing/glasses/sunglasses
-	corpsehelmet = /obj/item/clothing/head/centhat
+	corpsehelmet = /obj/item/clothing/head/rank/centcomm
 	corpsepocket1 = /obj/item/weapon/flame/lighter/zippo
 	corpseback = /obj/item/weapon/storage/backpack
 	corpseid = 1
@@ -753,10 +753,10 @@
 
 /obj/landmark/corpse/generic/clown
 	name = "Clown"
-	corpseuniform = /obj/item/clothing/under/rank/clown
-	corpseshoes = /obj/item/clothing/shoes/clown_shoes
+	corpseuniform = /obj/item/clothing/under/costume/job/clown
+	corpseshoes = /obj/item/clothing/shoes/costume/job/clown
 	corpseradio = /obj/item/device/radio/headset
-	corpsemask = /obj/item/clothing/mask/gas/clown_hat
+	corpsemask = /obj/item/clothing/mask/costume/job/clown
 	corpsepocket1 = /obj/item/weapon/bikehorn
 	corpseback = /obj/item/weapon/storage/backpack/clown
 	corpseid = 1
@@ -765,7 +765,7 @@
 /obj/landmark/corpse/generic/prisoner
 	name = "Prisoner"
 	corpseuniform = /obj/item/clothing/under/orange
-	corpseshoes = /obj/item/clothing/shoes/color/orange
+	corpseshoes = /obj/item/clothing/shoes/orange
 
 /////////////////Enemies//////////////////////
 
@@ -800,19 +800,19 @@
 
 /obj/landmark/corpse/antagonist/pirate
 	name = "Pirate"
-	corpseuniform = /obj/item/clothing/under/pirate
+	corpseuniform = /obj/item/clothing/under/costume/history/pirate
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpseglasses = /obj/item/clothing/glasses/eyepatch
 	corpsehelmet = /obj/item/clothing/head/bandana
 
 /obj/landmark/corpse/antagonist/pirate/gunner
 	name = "Pirate Gunner"
-	corpsesuit = /obj/item/clothing/suit/pirate
-	corpsehelmet = /obj/item/clothing/head/pirate
+	corpsesuit = /obj/item/clothing/suit/costume/history/pirate
+	corpsehelmet = /obj/item/clothing/head/costume/history/pirate
 
 /obj/landmark/corpse/antagonist/russian
 	name = "Russian"
-	corpseuniform = /obj/item/clothing/under/soviet
+	corpseuniform = /obj/item/clothing/under/costume/history/soviet
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpsehelmet = /obj/item/clothing/head/bearpelt
 

@@ -120,7 +120,7 @@ I said no!
 /datum/recipe/clownburger
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/bun,
-		/obj/item/clothing/mask/gas/clown_hat
+		/obj/item/clothing/mask/costume/job/clown
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/clownburger
 
@@ -985,7 +985,7 @@ I said no!
 	result = /obj/item/weapon/reagent_containers/food/snacks/sliceable/chocolatecake
 
 /datum/recipe/cake/birthday
-	items = list(/obj/item/clothing/head/cakehat)
+	items = list(/obj/item/clothing/head/costume/misc/cake)
 	result = /obj/item/weapon/reagent_containers/food/snacks/sliceable/birthdaycake
 
 /datum/recipe/cake/apple

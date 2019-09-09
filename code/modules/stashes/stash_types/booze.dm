@@ -36,7 +36,7 @@ Now, just in case this rocket juice blacks me out again, its here, you dumbass. 
 
 /datum/stash/booze/teenage_girls
 	story_type = STORY_CRIME
-	contents_list_extra = list(/obj/item/weapon/haircomb = 1, /obj/item/weapon/lipstick/random = 2)
+	contents_list_extra = list(/obj/item/weapon/haircomb = 1, /obj/item/weapon/lipstick/jade = 2)
 	contents_list_random = list(/obj/item/weapon/reagent_containers/syringe/drugs = 50,
 	/obj/item/weapon/reagent_containers/syringe/drugs = 50)
 	lore = "Ugh my mom is being such a pain, i'm grounded in our quarters for a few days.<br>\

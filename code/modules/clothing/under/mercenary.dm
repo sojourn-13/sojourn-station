@@ -1,4 +1,4 @@
-/obj/item/clothing/under/mercenary
+/obj/item/clothing/under/rank/mercenary
 	name = "green tactical turtleneck"
 	desc = "Military style turtleneck, for operating in cold environments. Typically worn underneath armour"
 	icon_state = "greenturtle"
@@ -10,7 +10,7 @@
 	price_tag = 50
 
 
-/obj/item/clothing/under/mercenary/New()
+/obj/item/clothing/under/rank/mercenary/New()
 	if (prob(50))
 		name = "black tactical turtleneck"
 		icon_state = "blackturtle"

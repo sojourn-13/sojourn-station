@@ -10,21 +10,6 @@
 	siemens_coefficient = 0 // DAMN BOI
 	species_restricted = null
 
-/obj/item/clothing/shoes/mime
-	name = "mime shoes"
-	icon_state = "mime"
-
-/obj/item/clothing/shoes/color/black
-	name = "black shoes"
-	icon_state = "black shoes"
-	desc = "A pair of black shoes."
-	icon_state = "black"
-
-	cold_protection = LEGS
-	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
-	heat_protection = LEGS
-	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
-
 /obj/item/clothing/shoes/swat
 	name = "\improper SWAT shoes"
 	desc = "When you want to turn up the heat."
@@ -63,26 +48,6 @@
 	body_parts_covered = LEGS
 	siemens_coefficient = 0
 
-/obj/item/clothing/shoes/clown_shoes
-	desc = "The prankster's standard-issue clowning shoes. Damn they're huge!"
-	name = "clown shoes"
-	icon_state = "clown"
-	item_state = "clown_shoes"
-	slowdown = SHOES_SLOWDOWN+1
-	force = 0
-	var/footstep = 1	//used for squeeks whilst walking
-	species_restricted = null
-
-/obj/item/clothing/shoes/clown_shoes/handle_movement(var/turf/walking, var/running)
-	if(running)
-		if(footstep >= 2)
-			footstep = 0
-			playsound(src, "clownstep", 50, 1) // this will get annoying very fast.
-		else
-			footstep++
-	else
-		playsound(src, "clownstep", 20, 1)
-
 /obj/item/clothing/shoes/cult
 	name = "boots"
 	desc = "A pair of boots worn by the followers of Nar-Sie."
@@ -111,7 +76,7 @@
 	species_restricted = null
 	w_class = ITEM_SIZE_SMALL
 
-/obj/item/clothing/shoes/slippers_worn
+/obj/item/clothing/shoes/slippers/worn
 	name = "worn bunny slippers"
 	desc = "Fluffy..."
 	icon_state = "slippers_worn"

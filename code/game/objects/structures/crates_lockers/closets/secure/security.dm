@@ -6,7 +6,7 @@
 /obj/structure/closet/secure_closet/reinforced/captains/populate_contents()
 	new /obj/item/weapon/storage/backpack/captain(src)
 	new /obj/item/weapon/storage/backpack/satchel/cap(src)
-	new /obj/item/clothing/head/caphat/cap(src)
+	new /obj/item/clothing/head/rank/captain/cap(src)
 	new /obj/item/clothing/under/rank/captain(src)
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet(src)
@@ -19,8 +19,8 @@
 	new /obj/item/ammo_magazine/a50/rubber(src)
 	new /obj/item/ammo_magazine/a50/rubber(src)
 	new /obj/item/weapon/melee/telebaton(src)
-	new /obj/item/clothing/head/caphat/formal(src)
-	new /obj/item/clothing/under/captainformal(src)
+	new /obj/item/clothing/head/rank/captain/formal(src)
+	new /obj/item/clothing/under/rank/captain/formal(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 
 /obj/structure/closet/secure_closet/reinforced/hop
@@ -31,7 +31,7 @@
 /obj/structure/closet/secure_closet/reinforced/hop/populate_contents()
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/under/rank/first_officer(src)
-	new /obj/item/clothing/head/caphat/hop(src)
+	new /obj/item/clothing/head/rank/first_officer(src)
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/device/radio/headset/heads/hop(src)
@@ -54,7 +54,7 @@
 	new /obj/item/weapon/storage/backpack/security(src)
 	new /obj/item/weapon/storage/backpack/satchel/sec(src)
 	new /obj/item/clothing/head/sec/navy/hos(src)
-	new /obj/item/clothing/head/HoS(src)
+	new /obj/item/clothing/head/rank/commander(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/under/rank/ih_commander(src)
@@ -151,15 +151,15 @@
 	icon_state = "cabinetdetective"
 
 /obj/structure/closet/secure_closet/detective/populate_contents()
-	new /obj/item/clothing/under/rank/det(src)
-	new /obj/item/clothing/under/rank/det/black(src)
+	new /obj/item/clothing/under/rank/inspector/suit(src)
+	new /obj/item/clothing/under/rank/inspector/black(src)
 	new /obj/item/clothing/under/rank/inspector(src)
 	new /obj/item/clothing/suit/storage/det_trench(src)
 	new /obj/item/clothing/suit/storage/insp_trench(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/head/det(src)
-	new /obj/item/clothing/head/det/grey(src)
+	new /obj/item/clothing/head/rank/inspector(src)
+	new /obj/item/clothing/head/rank/inspector/grey(src)
 	new /obj/item/clothing/shoes/reinforced(src)
 	new /obj/item/weapon/storage/box/evidence(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
@@ -195,7 +195,7 @@
 
 /obj/structure/closet/secure_closet/brig/populate_contents()
 	new /obj/item/clothing/under/orange(src)
-	new /obj/item/clothing/shoes/color/orange(src)
+	new /obj/item/clothing/shoes/orange(src)
 
 /obj/structure/closet/secure_closet/courtroom
 	name = "courtroom locker"
@@ -208,6 +208,6 @@
 	new /obj/item/weapon/paper/Court(src)
 	new /obj/item/weapon/paper/Court(src)
 	new /obj/item/weapon/pen(src)
-	new /obj/item/clothing/suit/judgerobe(src)
-	new /obj/item/clothing/head/powdered_wig(src)
+	new /obj/item/clothing/suit/costume/job/judge(src)
+	new /obj/item/clothing/head/costume/history/powdered(src)
 	new /obj/item/weapon/storage/briefcase(src)

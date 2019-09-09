@@ -194,7 +194,7 @@
 		else if(W.sharp)
 			if(seed.kitchen_tag == "pumpkin") // Ugggh these checks are awful.
 				user.show_message(SPAN_NOTICE("You carve a face into [src]!"), 1)
-				new /obj/item/clothing/head/pumpkinhead (user.loc)
+				new /obj/item/clothing/head/costume/halloween/pumpkin (user.loc)
 				qdel(src)
 				return
 			else if(seed.chems)

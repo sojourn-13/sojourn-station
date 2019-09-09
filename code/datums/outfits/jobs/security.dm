@@ -21,7 +21,7 @@
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	belt = /obj/item/weapon/gun/projectile/lamia
 	id_type = /obj/item/weapon/card/id/hos
-	head = /obj/item/clothing/head/HoS
+	head = /obj/item/clothing/head/rank/commander
 	pda_type = /obj/item/modular_computer/pda/heads/hos
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/cl44/rubber = 1,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
@@ -37,10 +37,10 @@
 
 /decl/hierarchy/outfit/job/security/inspector
 	name = OUTFIT_JOB_NAME("Ironhammer Inspector")
-	head = /obj/item/clothing/head/det
+	head = /obj/item/clothing/head/rank/inspector
 	uniform = /obj/item/clothing/under/rank/inspector
 	suit = /obj/item/clothing/suit/storage/insp_trench
-	head = /obj/item/clothing/head/det
+	head = /obj/item/clothing/head/rank/inspector
 	gloves = /obj/item/clothing/gloves/stungloves
 	l_pocket = /obj/item/device/flash
 	shoes = /obj/item/clothing/shoes/reinforced

@@ -6,29 +6,29 @@
 	icon_screen = "invaders"
 	var/list/prizes = list(
 		/obj/item/weapon/storage/box/snappops			= 2,
-		/obj/item/toy/blink								= 2,
+		/obj/item/toy/junk/blink								= 2,
 		/obj/item/clothing/under/syndicate				= 2,
-		/obj/item/toy/sword								= 2,
+		/obj/item/toy/weapon/sword								= 2,
 		/obj/item/weapon/gun/projectile/revolver/capgun	= 2,
-		/obj/item/toy/crossbow							= 2,
-		/obj/item/clothing/suit/syndicatefake			= 2,
+		/obj/item/toy/weapon/crossbow							= 2,
+		/obj/item/clothing/suit/costume/halloween/syndicate	= 2,
 		/obj/item/weapon/storage/fancy/crayons			= 2,
-		/obj/item/toy/spinningtoy						= 2,
-		/obj/item/toy/prize/ripley						= 1,
-		/obj/item/toy/prize/fireripley					= 1,
-		/obj/item/toy/prize/deathripley					= 1,
-		/obj/item/toy/prize/gygax						= 1,
-		/obj/item/toy/prize/durand						= 1,
-		/obj/item/toy/prize/honk						= 1,
-		/obj/item/toy/prize/marauder					= 1,
-		/obj/item/toy/prize/seraph						= 1,
-		/obj/item/toy/prize/mauler						= 1,
-		/obj/item/toy/prize/odysseus					= 1,
-		/obj/item/toy/prize/phazon						= 1,
-		/obj/item/toy/waterflower						= 1,
+		/obj/item/toy/junk/spinningtoy						= 2,
+		/obj/item/toy/figure/mecha/ripley						= 1,
+		/obj/item/toy/figure/mecha/fireripley					= 1,
+		/obj/item/toy/figure/mecha/deathripley					= 1,
+		/obj/item/toy/figure/mecha/gygax						= 1,
+		/obj/item/toy/figure/mecha/durand						= 1,
+		/obj/item/toy/figure/mecha/honk						= 1,
+		/obj/item/toy/figure/mecha/marauder					= 1,
+		/obj/item/toy/figure/mecha/seraph						= 1,
+		/obj/item/toy/figure/mecha/mauler						= 1,
+		/obj/item/toy/figure/mecha/odysseus					= 1,
+		/obj/item/toy/figure/mecha/phazon						= 1,
+		/obj/item/toy/weapon/waterflower						= 1,
 		/obj/random/action_figure						= 1,
 		/obj/random/plushie								= 1,
-		/obj/item/toy/cultsword							= 1
+		/obj/item/toy/weapon/cultsword							= 1
 	)
 
 /obj/machinery/computer/arcade/Initialize()
@@ -44,8 +44,8 @@
 		var/prizeselect = pickweight(prizes)
 		new prizeselect(src.loc)
 
-		if(istype(prizeselect, /obj/item/clothing/suit/syndicatefake)) //Helmet is part of the suit
-			new	/obj/item/clothing/head/syndicatefake(src.loc)
+		if(istype(prizeselect, /obj/item/clothing/suit/costume/halloween/syndicate)) //Helmet is part of the suit
+			new	/obj/item/clothing/head/costume/halloween/syndicate(src.loc)
 
 	else
 		var/atom/movable/prize = pick(contents)
@@ -204,7 +204,7 @@
 			if(emagged)
 
 				new /obj/effect/spawner/newbomb/timer/syndicate(src.loc)
-				new /obj/item/clothing/head/collectable/petehat(src.loc)
+				new /obj/item/clothing/head/costume/misc/petehat(src.loc)
 				message_admins("[key_name_admin(usr)] has outbombed Cuban Pete and been awarded a bomb.")
 				log_game("[key_name_admin(usr)] has outbombed Cuban Pete and been awarded a bomb.")
 				src.New()

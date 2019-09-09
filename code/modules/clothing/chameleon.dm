@@ -35,7 +35,7 @@
 				name += " \[[i++]\]"
 			.[name] = typepath
 
-/obj/item/clothing/under/chameleon
+/obj/item/clothing/under/admin/chameleon
 //starts off as black
 	name = "black jumpsuit"
 	icon_state = "black"
@@ -45,12 +45,12 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/global/list/clothing_choices
 
-/obj/item/clothing/under/chameleon/New()
+/obj/item/clothing/under/admin/chameleon/New()
 	..()
 	if(!clothing_choices)
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/under)
 
-/obj/item/clothing/under/chameleon/emp_act(severity)
+/obj/item/clothing/under/admin/chameleon/emp_act(severity)
 	name = "psychedelic"
 	desc = "Groovy!"
 	icon_state = "psyche"
@@ -58,7 +58,7 @@
 	update_icon()
 	update_wear_icon()
 
-/obj/item/clothing/under/chameleon/verb/change(picked in clothing_choices)
+/obj/item/clothing/under/admin/chameleon/verb/change(picked in clothing_choices)
 	set name = "Change Jumpsuit Appearance"
 	set category = "Chameleon Items"
 	set src in usr
@@ -72,7 +72,7 @@
 //**Chameleon Hat**
 //*****************
 
-/obj/item/clothing/head/chameleon
+/obj/item/clothing/head/admin/chameleon
 	name = "grey cap"
 	icon_state = "greysoft"
 	desc = "It looks like a plain hat, but upon closer inspection, there's an advanced holographic array installed inside. It seems to have a small dial inside."
@@ -80,20 +80,20 @@
 	body_parts_covered = 0
 	var/global/list/clothing_choices
 
-/obj/item/clothing/head/chameleon/New()
+/obj/item/clothing/head/admin/chameleon/New()
 	..()
 	if(!clothing_choices)
 		var/blocked = list(src.type, /obj/item/clothing/head/justice,)//Prevent infinite loops and bad hats.
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/head, blocked)
 
-/obj/item/clothing/head/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
+/obj/item/clothing/head/admin/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
 	name = "grey cap"
 	desc = "It's a baseball hat in a tasteful grey colour."
 	icon_state = "greysoft"
 	update_icon()
 	update_wear_icon()
 
-/obj/item/clothing/head/chameleon/verb/change(picked in clothing_choices)
+/obj/item/clothing/head/admin/chameleon/verb/change(picked in clothing_choices)
 	set name = "Change Hat/Helmet Appearance"
 	set category = "Chameleon Items"
 	set src in usr
@@ -107,7 +107,7 @@
 //**Chameleon Suit**
 //******************
 
-/obj/item/clothing/suit/chameleon
+/obj/item/clothing/suit/admin/chameleon
 	name = "armor"
 	icon_state = "armor"
 	item_state = "armor"
@@ -115,20 +115,20 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/global/list/clothing_choices
 
-/obj/item/clothing/suit/chameleon/New()
+/obj/item/clothing/suit/admin/chameleon/New()
 	..()
 	if(!clothing_choices)
 		var/blocked = list(src.type, /obj/item/clothing/suit/cyborg_suit)
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/suit, blocked)
 
-/obj/item/clothing/suit/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
+/obj/item/clothing/suit/admin/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
 	name = "armor"
 	desc = "An armored vest that protects against some damage."
 	icon_state = "armor"
 	update_icon()
 	update_wear_icon()
 
-/obj/item/clothing/suit/chameleon/verb/change(picked in clothing_choices)
+/obj/item/clothing/suit/admin/chameleon/verb/change(picked in clothing_choices)
 	set name = "Change Oversuit Appearance"
 	set category = "Chameleon Items"
 	set src in usr
@@ -141,7 +141,7 @@
 //*******************
 //**Chameleon Shoes**
 //*******************
-/obj/item/clothing/shoes/chameleon
+/obj/item/clothing/shoes/admin/chameleon
 	name = "black shoes"
 	icon_state = "black"
 	item_state = "black"
@@ -149,13 +149,13 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/global/list/clothing_choices
 
-/obj/item/clothing/shoes/chameleon/New()
+/obj/item/clothing/shoes/admin/chameleon/New()
 	..()
 	if(!clothing_choices)
 		var/blocked = list(src.type, /obj/item/clothing/shoes/syndigaloshes, /obj/item/clothing/shoes/cyborg)//prevent infinite loops and bad shoes.
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/shoes, blocked)
 
-/obj/item/clothing/shoes/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
+/obj/item/clothing/shoes/admin/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
 	name = "black shoes"
 	desc = "A pair of black shoes."
 	icon_state = "black"
@@ -163,7 +163,7 @@
 	update_icon()
 	update_wear_icon()
 
-/obj/item/clothing/shoes/chameleon/verb/change(picked in clothing_choices)
+/obj/item/clothing/shoes/admin/chameleon/verb/change(picked in clothing_choices)
 	set name = "Change Footwear Appearance"
 	set category = "Chameleon Items"
 	set src in usr
@@ -212,7 +212,7 @@
 //**Chameleon Gloves**
 //********************
 
-/obj/item/clothing/gloves/chameleon
+/obj/item/clothing/gloves/admin/chameleon
 	name = "black gloves"
 	icon_state = "black"
 	item_state = "bgloves"
@@ -220,19 +220,19 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/global/list/clothing_choices
 
-/obj/item/clothing/gloves/chameleon/New()
+/obj/item/clothing/gloves/admin/chameleon/New()
 	..()
 	if(!clothing_choices)
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/gloves, list(src.type))
 
-/obj/item/clothing/gloves/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
+/obj/item/clothing/gloves/admin/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
 	name = "black gloves"
 	desc = "It looks like a pair of gloves, but it seems to have a small dial inside."
 	icon_state = "black"
 	update_icon()
 	update_wear_icon()
 
-/obj/item/clothing/gloves/chameleon/verb/change(picked in clothing_choices)
+/obj/item/clothing/gloves/admin/chameleon/verb/change(picked in clothing_choices)
 	set name = "Change Gloves Appearance"
 	set category = "Chameleon Items"
 	set src in usr
@@ -246,7 +246,7 @@
 //**Chameleon Mask**
 //******************
 
-/obj/item/clothing/mask/chameleon
+/obj/item/clothing/mask/admin/chameleon
 	name = "gas mask"
 	icon_state = "gas_alt"
 	item_state = "gas_alt"
@@ -254,19 +254,19 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/global/list/clothing_choices
 
-/obj/item/clothing/mask/chameleon/New()
+/obj/item/clothing/mask/admin/chameleon/New()
 	..()
 	if(!clothing_choices)
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/mask, list(src.type))
 
-/obj/item/clothing/mask/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
+/obj/item/clothing/mask/admin/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
 	name = "gas mask"
 	desc = "It's a gas mask."
 	icon_state = "gas_alt"
 	update_icon()
 	update_wear_icon()
 
-/obj/item/clothing/mask/chameleon/verb/change(picked in clothing_choices)
+/obj/item/clothing/mask/admin/chameleon/verb/change(picked in clothing_choices)
 	set name = "Change Mask Appearance"
 	set category = "Chameleon Items"
 	set src in usr
@@ -280,7 +280,7 @@
 //**Chameleon Glasses**
 //*********************
 
-/obj/item/clothing/glasses/chameleon
+/obj/item/clothing/glasses/admin/chameleon
 	name = "Optical Meson Scanner"
 	icon_state = "meson"
 	item_state = "glasses"
@@ -288,19 +288,19 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/list/global/clothing_choices
 
-/obj/item/clothing/glasses/chameleon/New()
+/obj/item/clothing/glasses/admin/chameleon/New()
 	..()
 	if(!clothing_choices)
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/glasses, list(src.type))
 
-/obj/item/clothing/glasses/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
+/obj/item/clothing/glasses/admin/chameleon/emp_act(severity) //Because we don't have psych for all slots right now but still want a downside to EMP.  In this case your cover's blown.
 	name = "Optical Meson Scanner"
 	desc = "It's a set of mesons."
 	icon_state = "meson"
 	update_icon()
 	update_wear_icon()
 
-/obj/item/clothing/glasses/chameleon/verb/change(picked in clothing_choices)
+/obj/item/clothing/glasses/admin/chameleon/verb/change(picked in clothing_choices)
 	set name = "Change Glasses Appearance"
 	set category = "Chameleon Items"
 	set src in usr

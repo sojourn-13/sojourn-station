@@ -34,9 +34,9 @@
 	desc = "IT'S A STORAGE UNIT FOR FIGHTER MASKS OLE!"
 
 /obj/structure/closet/masks/populate_contents()
-	new /obj/item/clothing/mask/luchador(src)
-	new /obj/item/clothing/mask/luchador/rudos(src)
-	new /obj/item/clothing/mask/luchador/tecnicos(src)
+	new /obj/item/clothing/mask/costume/job/luchador(src)
+	new /obj/item/clothing/mask/costume/job/luchador/rudos(src)
+	new /obj/item/clothing/mask/costume/job/luchador/tecnicos(src)
 
 /obj/structure/closet/lasertag/red
 	name = "red laser tag equipment"

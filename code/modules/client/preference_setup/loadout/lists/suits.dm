@@ -10,6 +10,10 @@
 	display_name = "bomber jacket"
 	path = /obj/item/clothing/suit/storage/toggle/bomber
 
+/datum/gear/suit/kimono
+	display_name = "kimono"
+	path = /obj/item/clothing/suit/kimono
+
 /datum/gear/suit/leather_jacket
 	display_name = "leather jacket selection"
 	path = /obj/item/clothing/suit/storage/leather_jacket
@@ -53,88 +57,95 @@
 	path = /obj/item/clothing/suit/storage/miljacket
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/suit/cloak
+/datum/gear/suit/shirts
+	display_name = "shirt selection"
+	path = /obj/item/clothing/suit/shirt
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/suit/cloakselect
 	display_name = "cloak selection"
 	path = /obj/item/clothing/suit/hooded/cloak/simple
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/suit/cloak/captain
-	display_name = "cloak (captain)"
+/datum/gear/suit/cloakcaptain
+	display_name = "cloak, captain"
 	path = /obj/item/clothing/suit/hooded/cloak/job/captain
 	allowed_roles = list("Captain")
+	sort_category = "Faction: Command"
 
-/datum/gear/suit/cloak/fo
-	display_name = "cloak (first officer)"
+/datum/gear/suit/cloakfo
+	display_name = "cloak, first officer"
 	path = /obj/item/clothing/suit/hooded/cloak/job/fo
 	allowed_roles = list("First Officer")
+	sort_category = "Faction: Command"
 
-/datum/gear/suit/cloak/meo
-	display_name = "cloak (expedition overseer)"
+/datum/gear/suit/cloakmeo
+	display_name = "cloak, expedition overseer"
 	path = /obj/item/clothing/suit/hooded/cloak/job/meo
 	allowed_roles = list("Moebius Expedition Overseer")
-	sort_category = "Moebius"
+	sort_category = "Faction: Moebius"
 
-/datum/gear/suit/cloak/mbo
-	display_name = "cloak (biolab officer)"
+/datum/gear/suit/cloakmbo
+	display_name = "cloak, biolab officer"
 	path = /obj/item/clothing/suit/hooded/cloak/job/mbo
 	allowed_roles = list("Moebius Biolab Officer")
-	sort_category = "Moebius"
+	sort_category = "Faction: Moebius"
 
-/datum/gear/suit/cloak/gm
-	display_name = "cloak (guild merchant)"
+/datum/gear/suit/cloakgm
+	display_name = "cloak, guild merchant"
 	path = /obj/item/clothing/suit/hooded/cloak/job/gm
 	allowed_roles = list("Guild Merchant")
-	sort_category = "Asters Guild"
+	sort_category = "Faction: Guild"
 
-/datum/gear/suit/cloak/ihc
-	display_name = "cloak (ironhammer commander)"
+/datum/gear/suit/cloakihc
+	display_name = "cloak, ironhammer commander"
 	path = /obj/item/clothing/suit/hooded/cloak/job/ihc
 	allowed_roles = list("Ironhammer Commander")
-	sort_category = "Ironhammer"
+	sort_category = "Faction: Ironhammer"
 
-/datum/gear/suit/cloak/te
-	display_name = "cloak (technomancer exultant)"
+/datum/gear/suit/cloakte
+	display_name = "cloak, technomancer exultant"
 	path = /obj/item/clothing/suit/hooded/cloak/job/te
 	allowed_roles = list("Technomancer Exultant")
-	sort_category = "Technomancer"
+	sort_category = "Faction: Technomancer"
 
-/datum/gear/suit/cloak/service
-	display_name = "cloak (service)"
+/datum/gear/suit/cloakservice
+	display_name = "cloak, service"
 	path = /obj/item/clothing/suit/hooded/cloak/job/service
 	allowed_roles = list("Gardener","Chef","Bartender","Actor","Janitor")
 
-/datum/gear/suit/cloak/guild
-	display_name = "cloak (guild)"
+/datum/gear/suit/cloakguild
+	display_name = "cloak, guild"
 	path = /obj/item/clothing/suit/hooded/cloak/job/guild
-	allowed_roles = list("Guild Technician","Guild Merchant","Guild Miner")
-	sort_category = "Asters Guild"
+	allowed_roles = list("Guild Technician","Guild Merchant")
+	sort_category = "Faction: Guild"
 
-/datum/gear/suit/cloak/mining
-	display_name = "cloak (mining)"
+/datum/gear/suit/cloakmining
+	display_name = "cloak, guild miner"
 	path = /obj/item/clothing/suit/hooded/cloak/job/mining
 	allowed_roles = list("Guild Miner")
-	sort_category = "Asters Guild"
+	sort_category = "Faction: Guild"
 
-/datum/gear/suit/cloak/medical
-	display_name = "cloak (medical)"
+/datum/gear/suit/cloakmedical
+	display_name = "cloak, moebius medical"
 	path = /obj/item/clothing/suit/hooded/cloak/job/medical
 	allowed_roles = list("Moebius Doctor","Moebius Biolab Officer","Moebius Chemist","Moebius Paramedic")
-	sort_category = "Moebius"
+	sort_category = "Faction: Moebius"
 
-/datum/gear/suit/cloak/science
-	display_name = "cloak (science)"
+/datum/gear/suit/cloakscience
+	display_name = "cloak, moebius research"
 	path = /obj/item/clothing/suit/hooded/cloak/job/science
 	allowed_roles = list("Moebius Expedition Overseer","Moebius Scientist","Moebius Roboticist")
-	sort_category = "Moebius"
+	sort_category = "Faction: Moebius"
 
-/datum/gear/suit/cloak/tecnhomancer
-	display_name = "cloak (technomancer)"
+/datum/gear/suit/cloaktechnomancer
+	display_name = "cloak, technomancer"
 	path = /obj/item/clothing/suit/hooded/cloak/job/technomancer
 	allowed_roles = list("Technomancer","Technomancer Exultant")
-	sort_category = "Technomancer"
+	sort_category = "Faction: Technomancer"
 
-/datum/gear/suit/cloak/ironhammer
-	display_name = "cloak (ironhammer)"
+/datum/gear/suit/cloakironhammer
+	display_name = "cloak, ironhammer"
 	path = /obj/item/clothing/suit/hooded/cloak/job/ironhammer
 	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
-	sort_category = "Ironhammer"
+	sort_category = "Faction: Ironhammer"

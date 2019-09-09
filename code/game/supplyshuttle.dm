@@ -6,17 +6,17 @@
 //Computers are in /code/game/machinery/computer/supply.dm
 
 var/list/mechtoys = list(
-	/obj/item/toy/prize/ripley,
-	/obj/item/toy/prize/fireripley,
-	/obj/item/toy/prize/deathripley,
-	/obj/item/toy/prize/gygax,
-	/obj/item/toy/prize/durand,
-	/obj/item/toy/prize/honk,
-	/obj/item/toy/prize/marauder,
-	/obj/item/toy/prize/seraph,
-	/obj/item/toy/prize/mauler,
-	/obj/item/toy/prize/odysseus,
-	/obj/item/toy/prize/phazon
+	/obj/item/toy/figure/mecha/ripley,
+	/obj/item/toy/figure/mecha/fireripley,
+	/obj/item/toy/figure/mecha/deathripley,
+	/obj/item/toy/figure/mecha/gygax,
+	/obj/item/toy/figure/mecha/durand,
+	/obj/item/toy/figure/mecha/honk,
+	/obj/item/toy/figure/mecha/marauder,
+	/obj/item/toy/figure/mecha/seraph,
+	/obj/item/toy/figure/mecha/mauler,
+	/obj/item/toy/figure/mecha/odysseus,
+	/obj/item/toy/figure/mecha/phazon
 )
 
 /obj/item/weapon/paper/manifest

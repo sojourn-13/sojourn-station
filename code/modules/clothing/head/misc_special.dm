@@ -39,7 +39,7 @@
 
 /obj/item/clothing/head/welding/verb/toggle()
 	set category = "Object"
-	set name = "Adjust welding mask"
+	set name = "Adjust Welding Mask"
 	set src in usr
 
 	if(!usr.incapacitated())
@@ -62,46 +62,85 @@
 		update_wear_icon()	//so our mob-overlays
 		usr.update_action_buttons()
 
+/obj/item/clothing/head/welding/demon
+	name = "demonic welding helmet"
+	desc = "A welding helmet painted to resemble a demonic face."
+	icon_state = "demonwelding"
+	item_state_slots = list(
+		slot_l_hand_str = "demonwelding",
+		slot_r_hand_str = "demonwelding",
+		)
+
+/obj/item/clothing/head/welding/knight
+	name = "knightly welding helmet"
+	desc = "A welding helmet painted to resemble a medieval knight."
+	icon_state = "knightwelding"
+	item_state_slots = list(
+		slot_l_hand_str = "knightwelding",
+		slot_r_hand_str = "knightwelding",
+		)
+
+/obj/item/clothing/head/welding/fancy
+	name = "fancy welding helmet"
+	desc = "A welding helmet painted in fancy black and gold colors."
+	icon_state = "fancywelding"
+	item_state_slots = list(
+		slot_l_hand_str = "fancywelding",
+		slot_r_hand_str = "fancywelding",
+		)
+
+/obj/item/clothing/head/welding/technomancer
+	name = "technomancer welding helmet"
+	desc = "A welding helmet painted in technomancer colors."
+	icon_state = "engiewelding"
+	item_state_slots = list(
+		slot_l_hand_str = "engiewelding",
+		slot_r_hand_str = "engiewelding",
+		)
+
+/obj/item/clothing/head/welding/flame
+	name = "flame welding helmet"
+	desc = "A welding helmet painted with vivid flames and fire."
+	icon_state = "alice_mccrea_1"
+	item_state_slots = list(
+		slot_l_hand_str = "alice_mccrea_1",
+		slot_r_hand_str = "alice_mccrea_1",
+		)
+
+/obj/item/clothing/head/welding/ghetto
+	name = "ghetto welding helmet"
+	desc = "A welding helmet painted white with a graffiti tag."
+	icon_state = "yuki_matsuda_1"
+	item_state_slots = list(
+		slot_l_hand_str = "yuki_matsuda_1",
+		slot_r_hand_str = "yuki_matsuda_1",
+		)
+
+/obj/item/clothing/head/welding/aquatic
+	name = "aquatic welding helmet"
+	desc = "A welding helmet painting in an underwater blue theme."
+	icon_state = "norah_briggs_1"
+	item_state_slots = list(
+		slot_l_hand_str = "norah_briggs_1",
+		slot_r_hand_str = "norah_briggs1",
+		)
+
+
+
+
+
+norah_briggs_1
+
+alice_mccrea_1
+
+yuki_matsuda_1
+
+
 
 /*
  * Cakehat
  */
-/obj/item/clothing/head/cakehat
-	name = "cake-hat"
-	desc = "It's tasty looking!"
-	icon_state = "cake0"
-	item_state = "cake0"
-	var/onfire = 0
-	body_parts_covered = HEAD
 
-/obj/item/clothing/head/cakehat/Process()
-	if(!onfire)
-		STOP_PROCESSING(SSobj, src)
-		return
-
-	var/turf/location = src.loc
-	if(istype(location, /mob/))
-		var/mob/living/carbon/human/M = location
-		if(M.l_hand == src || M.r_hand == src || M.head == src)
-			location = M.loc
-
-	if (istype(location, /turf))
-		location.hotspot_expose(700, 1)
-
-/obj/item/clothing/head/cakehat/attack_self(mob/user as mob)
-	src.onfire = !( src.onfire )
-	if (src.onfire)
-		src.force = 3
-		src.damtype = "fire"
-		src.icon_state = "cake1"
-		src.item_state = "cake1"
-		START_PROCESSING(SSobj, src)
-	else
-		src.force = null
-		src.damtype = "brute"
-		src.icon_state = "cake0"
-		src.item_state = "cake0"
-	return
 
 
 /*
@@ -120,48 +159,3 @@
 	else
 		src.icon_state = "ushankadown"
 		user << "You lower the ear flaps on the ushanka."
-
-/*
- * Pumpkin head
- */
-/obj/item/clothing/head/pumpkinhead
-	name = "carved pumpkin"
-	desc = "A jack o' lantern! Believed to ward off evil spirits."
-	icon_state = "hardhat0_pumpkin"//Could stand to be renamed
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
-	body_parts_covered = HEAD|FACE|EYES
-	brightness_on = 2
-	light_overlay = "helmet_light"
-	w_class = ITEM_SIZE_NORMAL
-
-/*
- * Kitty ears
- */
-/obj/item/clothing/head/kitty
-	name = "kitty ears"
-	desc = "A pair of kitty ears. Meow!"
-	icon_state = "kitty"
-	body_parts_covered = 0
-	siemens_coefficient = 1.5
-	item_icons = list()
-
-/obj/item/clothing/head/kitty/equipped(mob/user, slot)
-	if(slot == slot_head)
-		update_icon(user)
-	..()
-
-/obj/item/clothing/head/kitty/update_icon(var/mob/living/carbon/human/user)
-	if(!istype(user))
-		return
-	var/icon/ears = new/icon('icons/inventory/head/mob.dmi', "kitty")
-	ears.Blend(user.hair_color, ICON_ADD)
-
-	var/icon/earbit = new/icon('icons/inventory/head/mob.dmi', "kittyinner")
-	ears.Blend(earbit, ICON_OVERLAY)
-
-/obj/item/clothing/head/richard
-	name = "chicken mask"
-	desc = "You can hear the distant sounds of rhythmic electronica."
-	icon_state = "richard"
-	body_parts_covered = HEAD|FACE
-	flags_inv = BLOCKHAIR

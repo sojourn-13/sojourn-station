@@ -363,7 +363,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/pack/gun_loot = 8,
 		/obj/random/powercell,
 		/obj/random/mecha_equipment = 2,
-		/obj/item/toy/crossbow,
+		/obj/item/toy/weapon/crossbow,
 		/obj/item/weapon/material/shard,
 		/obj/item/stack/material/steel/random,
 		/obj/random/junk/nondense,

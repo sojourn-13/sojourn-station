@@ -40,7 +40,7 @@
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 60, rad = 0)
 	price_tag = 10
 
-/obj/item/clothing/mask/fakemoustache
+/obj/item/clothing/mask/costume/misc/fakemoustache
 	name = "fake moustache"
 	desc = "A totally inconspicuous imitation moustache."
 	icon_state = "fake-moustache"
@@ -109,7 +109,7 @@
 	item_state = "ninja_scarf"
 	siemens_coefficient = 0
 
-/obj/item/clothing/mask/pig
+/obj/item/clothing/mask/costume/animal/pig
 	name = "pig mask"
 	desc = "A rubber pig mask."
 	icon_state = "pig"
@@ -119,8 +119,104 @@
 	siemens_coefficient = 0.9
 	body_parts_covered = HEAD|FACE|EYES
 
-/obj/item/clothing/mask/horsehead
-	name = "horse head mask"
+/obj/item/clothing/mask/costume/halloween/demon
+	name = "demon mask"
+	desc = "A rubber demon mask."
+	icon_state = "demon"
+	item_state = "demon"
+	flags_inv = HIDEFACE|BLOCKHAIR
+	w_class = ITEM_SIZE_SMALL
+	siemens_coefficient = 0.9
+	body_parts_covered = HEAD|FACE|EYES
+
+/obj/item/clothing/mask/costume/halloween/scarecrow
+	name = "scarecrow sack"
+	desc = "A decaying burlap sack with eyeholes."
+	icon_state = "scarecrow"
+	item_state = "scarecrow"
+	flags_inv = HIDEFACE|BLOCKHAIR
+
+/obj/item/clothing/mask/costume/halloween/mummy
+	name = "mummy bandages"
+	desc = "A firm wrap of sandy cloth covering the face."
+	icon_state = "mummy"
+	item_state = "mummy"
+	flags_inv = HIDEFACE|BLOCKHAIR
+
+/obj/item/clothing/mask/costume/animal/dolphin
+	name = "dolphin mask"
+	desc = "A rubber dolphin mask."
+	icon_state = "dolphin"
+	item_state = "dolphin"
+	flags_inv = HIDEFACE|BLOCKHAIR
+	w_class = ITEM_SIZE_SMALL
+	siemens_coefficient = 0.9
+	body_parts_covered = HEAD|FACE|EYES
+
+/obj/item/clothing/mask/costume/animal/shark
+	name = "shark mask"
+	desc = "A rubber shark mask."
+	icon_state = "shark"
+	item_state = "shark"
+	flags_inv = HIDEFACE|BLOCKHAIR
+	w_class = ITEM_SIZE_SMALL
+	siemens_coefficient = 0.9
+	body_parts_covered = HEAD|FACE|EYES
+
+/obj/item/clothing/mask/costume/halloween/goblin
+	name = "goblin mask"
+	desc = "A rubber goblin mask."
+	icon_state = "goblin"
+	item_state = "goblin"
+	flags_inv = HIDEFACE|BLOCKHAIR
+	w_class = ITEM_SIZE_SMALL
+	siemens_coefficient = 0.9
+	body_parts_covered = HEAD|FACE|EYES
+
+/obj/item/clothing/mask/costume/misc/guy
+	name = "guy fawkes mask"
+	desc = "A mask stylised to depict Guy Fawkes."
+	icon_state = "guyfawkes"
+	item_state = "guyfawkes"
+	flags_inv = HIDEFACE|BLOCKHAIR
+	w_class = ITEM_SIZE_SMALL
+	siemens_coefficient = 0.9
+	body_parts_covered = HEAD|FACE|EYES
+
+/obj/item/clothing/mask/costume/misc/gondola
+	name = "gondola mask"
+	desc = "A mask resembling some sort of strange creature."
+	icon_state = "gondola"
+	item_state = "gondola"
+	flags_inv = HIDEFACE|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EYES
+
+/obj/item/clothing/mask/costume/misc/tiki
+	name = "startled tiki mask"
+	desc = "A primitive wooden mask. This one has a shocked expression."
+	icon_state = "tiki_eyebrow"
+	item_state = "tiki_eyebrow"
+
+/obj/item/clothing/mask/costume/misc/tiki/angry
+	name = "angry tiki mask"
+	desc = "A primitive wooden mask. This one looks furious about something."
+	icon_state = "tiki_angry"
+	item_state = "tiki_angry"
+
+/obj/item/clothing/mask/costume/misc/tiki/confused
+	name = "confused tiki mask"
+	desc = "A primitive wooden mask. This one doesn't seem very sure of itself."
+	icon_state = "tiki_confused"
+	item_state = "tiki_confused"
+
+/obj/item/clothing/mask/costume/misc/tiki/happy
+	name = "happy tiki mask"
+	desc = "A primitive wooden mask. This one is smiling with joy."
+	icon_state = "tiki_happy"
+	item_state = "tiki_happy"
+
+/obj/item/clothing/mask/costume/animal/horse
+	name = "horse mask"
 	desc = "A mask made of soft vinyl and latex, representing the head of a horse."
 	icon_state = "horsehead"
 	item_state = "horsehead"
@@ -129,7 +225,7 @@
 	w_class = ITEM_SIZE_SMALL
 	siemens_coefficient = 0.9
 
-/obj/item/clothing/mask/horsehead/New()
+/obj/item/clothing/mask/costume/animal/horse/New()
     ..()
     // The horse mask doesn't cause voice changes by default, the wizard spell changes the flag as necessary
     say_messages = list("NEEIIGGGHHHH!", "NEEEIIIIGHH!", "NEIIIGGHH!", "HAAWWWWW!", "HAAAWWW!")

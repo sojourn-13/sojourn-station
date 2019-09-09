@@ -14,8 +14,8 @@
 	icon_door = "black"
 
 /obj/structure/closet/gmcloset/populate_contents()
-	new /obj/item/clothing/head/hat/that(src)
-	new /obj/item/clothing/head/hat/that(src)
+	new /obj/item/clothing/head/tophat(src)
+	new /obj/item/clothing/head/tophat(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/clothing/head/hairflower
@@ -35,14 +35,14 @@
 	icon_door = "black"
 
 /obj/structure/closet/chefcloset/populate_contents()
-	new /obj/item/clothing/under/waiter(src)
-	new /obj/item/clothing/under/waiter(src)
+	new /obj/item/clothing/under/costume/job/waiter(src)
+	new /obj/item/clothing/under/costume/job/waiter(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/weapon/storage/box/mousetraps(src)
 	new /obj/item/weapon/storage/box/mousetraps(src)
 	new /obj/item/clothing/under/rank/chef(src)
-	new /obj/item/clothing/head/chefhat(src)
+	new /obj/item/clothing/head/rank/chef(src)
 
 /*
  * Janitor

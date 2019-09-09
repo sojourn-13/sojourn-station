@@ -4,29 +4,33 @@
 	slot = slot_head
 	sort_category = "Hats and Headwear"
 
+/datum/gear/head/fez
+	display_name = "fez"
+	path = /obj/item/clothing/head/fez
+
 /datum/gear/head/beret/bsec_officer
 	display_name = "beret, operative"
 	path = /obj/item/clothing/head/sec/navy/officer
 	allowed_roles = list("Ironhammer Operative")
-	sort_category = "Ironhammer"
+	sort_category = "Faction: Ironhammer"
 
 /datum/gear/head/beret/bsec_warden
 	display_name = "beret, warden"
 	path = /obj/item/clothing/head/sec/navy/warden
 	allowed_roles = list("Ironhammer Gunnery Sergeant")
-	sort_category = "Ironhammer"
+	sort_category = "Faction: Ironhammer"
 
 /datum/gear/head/beret/bsec_hos
 	display_name = "beret, commander"
 	path = /obj/item/clothing/head/sec/navy/hos
 	allowed_roles = list("Ironhammer Commander")
-	sort_category = "Ironhammer"
+	sort_category = "Faction: Ironhammer"
 
 /datum/gear/head/engineering
 	display_name = "beret, engineering"
 	allowed_roles = list("Technomancer", "Technomancer Exultant")
 	path = /obj/item/clothing/head/engineering
-	sort_category = "Technomancer"
+	sort_category = "Faction: Technomancer"
 
 /datum/gear/head/hardhat
 	display_name = "hardhat selection"
@@ -38,16 +42,20 @@
 	path = /obj/item/clothing/head/soft/
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/head/sombrero
+	display_name = "sombrero"
+	path = /obj/item/clothing/head/sombrero
+
+/datum/gear/head/beanie
+	display_name = "beanie selection"
+	path = /obj/item/clothing/head/beanie
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/head/capcustom
 	display_name = "cap, customized"
 	path = /obj/item/clothing/head/customcap
 	slot = slot_head
 	flags = GEAR_HAS_COLOR_SELECTION
-
-/datum/gear/head/hat
-	display_name = "hat selection"
-	path = /obj/item/clothing/head/hat/
-	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/head/surgical
 	display_name = "surgical cap selection"
@@ -55,7 +63,7 @@
 	allowed_roles = list("Moebius Paramedic","Moebius Psychiatrist","Moebius Chemist","Moebius Doctor","Moebius Biolab Officer")
 	cost = 1
 	flags = GEAR_HAS_TYPE_SELECTION
-	sort_category = "Moebius"
+	sort_category = "Faction: Moebius"
 
 /datum/gear/head/bandana
 	display_name = "bandana head selection"
@@ -67,14 +75,42 @@
 	path = /obj/item/clothing/head/beret
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/head/tophat
+	display_name = "top hat selection"
+	path = /obj/item/clothing/head/tophat
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/head/bowler
+	display_name = "bowler hat selection"
+	path = /obj/item/clothing/head/bowler
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/head/fez
+	display_name = "fez"
+	path = /obj/item/clothing/head/fez
+
+/datum/gear/head/boater
+	display_name = "boater hat"
+	path = /obj/item/clothing/head/boaterhat
+
+/datum/gear/head/cowboy
+	display_name = "cowboy hat selection"
+	path = /obj/item/clothing/head/cowboy
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/head/fedora
+	display_name = "fedora selection"
+	path = /obj/item/clothing/head/fedora
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/head/corp
 	display_name = "cap, inspector"
 	path = /obj/item/clothing/head/seccorp
 	allowed_roles = list("Ironhammer Inspector")
-	sort_category = "Ironhammer"
+	sort_category = "Faction: Ironhammer"
 
 /datum/gear/head/sec
 	display_name = "cap, ironhammer"
 	path = /obj/item/clothing/head/seccap
 	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
-	sort_category = "Ironhammer"
+	sort_category = "Faction: Ironhammer"

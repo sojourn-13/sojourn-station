@@ -13,19 +13,19 @@
 	display_name = "science goggles"
 	path = /obj/item/clothing/glasses/powered/science
 	allowed_roles = list("Moebius Expedition Overseer","Moebius Scientist","Moebius Roboticist")
-	sort_category = "Moebius"
+	sort_category = "Faction: Moebius"
 
 /datum/gear/eyes/security
 	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security
 	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
-	sort_category = "Ironhammer"
+	sort_category = "Faction: Ironhammer"
 
 /datum/gear/eyes/medical
 	display_name = "medical HUD"
 	path = /obj/item/clothing/glasses/hud/health
 	allowed_roles = list("Moebius Doctor","Moebius Biolab Officer","Moebius Chemist","Moebius Paramedic")
-	sort_category = "Moebius"
+	sort_category = "Faction: Moebius"
 
 /datum/gear/eyes/regular
 	display_name = "glasses selection"

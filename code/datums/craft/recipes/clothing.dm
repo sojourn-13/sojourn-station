@@ -4,14 +4,14 @@
 
 /datum/craft_recipe/clothing/cardborg_suit
 	name = "cardborg suit"
-	result = /obj/item/clothing/suit/cardborg
+	result = /obj/item/clothing/suit/costume/halloween/cardborg
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_CARDBOARD)
 	)
 
 /datum/craft_recipe/clothing/cardborg_helmet
 	name = "cardborg helmet"
-	result = /obj/item/clothing/head/cardborg
+	result = /obj/item/clothing/head/costume/halloween/cardborg
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)

@@ -381,7 +381,7 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/patron,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/goldschlager,
 					/obj/item/weapon/storage/fancy/cigarettes/dromedaryco,
-					/obj/item/weapon/lipstick/random,
+					/obj/item/weapon/lipstick/jade,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
@@ -1214,8 +1214,8 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 //----------------------------------------------
 
 /datum/supply_pack/formal_wear
-	contains = list(/obj/item/clothing/head/hat/bowler,
-					/obj/item/clothing/head/hat/that,
+	contains = list(/obj/item/clothing/head/bowler/,
+					/obj/item/clothing/head/tophat,
 					/obj/item/clothing/under/suit_jacket,
 					/obj/item/clothing/under/suit_jacket/red,
 					/obj/item/clothing/shoes/color/black,
@@ -1240,30 +1240,16 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 //----------------------------------------------
 
 /datum/supply_pack/randomised
-	name = "Collectable Hats Crate!"
-	cost = 20000
-	var/num_contained = 4 //number of items picked to be contained in a randomised crate
-	contains = list(/obj/item/clothing/head/collectable/chef,
-					/obj/item/clothing/head/collectable/paper,
-					/obj/item/clothing/head/collectable/tophat,
-					/obj/item/clothing/head/collectable/captain,
-					/obj/item/clothing/head/collectable/beret,
-					/obj/item/clothing/head/collectable/welding,
-					/obj/item/clothing/head/collectable/flatcap,
-					/obj/item/clothing/head/collectable/pirate,
-					/obj/item/clothing/head/collectable/kitty,
-					/obj/item/clothing/head/collectable/rabbitears,
-					/obj/item/clothing/head/collectable/wizard,
-					/obj/item/clothing/head/collectable/hardhat,
-					/obj/item/clothing/head/collectable/thunderdome,
-					/obj/item/clothing/head/collectable/swat,
-					/obj/item/clothing/head/collectable/slime,
-					/obj/item/clothing/head/collectable/police,
-					/obj/item/clothing/head/collectable/slime,
-					/obj/item/clothing/head/collectable/xenom,
-					/obj/item/clothing/head/collectable/petehat)
-	crate_name = "Collectable hats crate! Brought to you by Bass.inc!"
-	group = "Miscellaneous"
+	var/num_contained = 5
+	contains = list(/obj/item/pizzabox/margherita,
+					/obj/item/pizzabox/mushroom,
+					/obj/item/pizzabox/meat,
+					/obj/item/pizzabox/vegetable)
+	name = "Surprise pack of five pizzas"
+	cost = 1500
+	containertype = /obj/structure/closet/crate/freezer
+	crate_name = "Pizza crate"
+	group = "Hospitality"
 
 /datum/supply_pack/randomised/fill(obj/structure/closet/crate/C)
 	var/list/L = contains.Copy()
@@ -1292,33 +1278,21 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 	contraband = TRUE
 	group = "Operations"
 
-/datum/supply_pack/randomised/pizza
-	num_contained = 5
-	contains = list(/obj/item/pizzabox/margherita,
-					/obj/item/pizzabox/mushroom,
-					/obj/item/pizzabox/meat,
-					/obj/item/pizzabox/vegetable)
-	name = "Surprise pack of five pizzas"
-	cost = 1500
-	containertype = /obj/structure/closet/crate/freezer
-	crate_name = "Pizza crate"
-	group = "Hospitality"
-
 /datum/supply_pack/randomised/costume
 	num_contained = 2
-	contains = list(/obj/item/clothing/suit/pirate,
-					/obj/item/clothing/suit/judgerobe,
+	contains = list(/obj/item/clothing/suit/costume/history/pirate,
+					/obj/item/clothing/suit/costume/job/judge,
 					/obj/item/clothing/suit/wcoat,
-					/obj/item/clothing/suit/nun,
-					/obj/item/clothing/under/rank/fo_suit,
-					/obj/item/clothing/suit/bio_suit/plaguedoctorsuit,
+					/obj/item/clothing/suit/costume/job/nun,
+					/obj/item/clothing/under/rank/first_officer/suit,
+					/obj/item/clothing/suit/costume/history/plaguedoctor,
 					/obj/item/clothing/under/plaid/schoolgirlblue,
-					/obj/item/clothing/under/owl,
-					/obj/item/clothing/under/waiter,
-					/obj/item/clothing/under/gladiator,
-					/obj/item/clothing/under/soviet,
+					/obj/item/clothing/under/costume/animal/owl,
+					/obj/item/clothing/under/costume/job/waiter,
+					/obj/item/clothing/under/costume/history/gladiator,
+					/obj/item/clothing/under/costume/history/soviet,
 					/obj/item/clothing/under/bride_white,
-					/obj/item/clothing/suit/chef,
+					/obj/item/clothing/suit/rank/chef,
 					/obj/item/clothing/under/plaid/kilt)
 	name = "Costumes crate"
 	cost = 1000

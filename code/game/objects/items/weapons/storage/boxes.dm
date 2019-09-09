@@ -643,11 +643,11 @@
 	desc = "Eight wrappers of fun! Ages 8 and up. Not suitable for children."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "spbox"
-	can_hold = list(/obj/item/toy/snappop)
+	can_hold = list(/obj/item/toy/junk/snappop)
 	New()
 		..()
 		for(var/i=1; i <= 8; i++)
-			new /obj/item/toy/snappop(src)
+			new /obj/item/toy/junk/snappop(src)
 
 /obj/item/weapon/storage/box/matches
 	name = "matchbox"

@@ -41,56 +41,16 @@
 	display_name = "flask"
 	path = /obj/item/weapon/reagent_containers/food/drinks/flask/barflask
 
-// TODO: enable after reagents
-/*
-/datum/gear/flask/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/reagents(lunchables_ethanol_reagents())
-*/
 /datum/gear/vacflask
 	display_name = "vacuum-flask"
 	path = /obj/item/weapon/reagent_containers/food/drinks/flask/vacuumflask
-// TODO: enable after reagents
-/*
-/datum/gear/vacflask/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/reagents(lunchables_drink_reagents())
-*/
-// TODO: enable after reagents
-/*
-/datum/gear/lunchbox
-	display_name = "lunchbox"
-	description = "A little lunchbox."
-	cost = 2
-	path = /obj/item/weapon/storage/lunchbox
-
-/datum/gear/lunchbox/New()
-	..()
-	var/list/lunchboxes = list()
-	for(var/lunchbox_type in typesof(/obj/item/weapon/storage/lunchbox))
-		var/obj/item/weapon/storage/lunchbox/lunchbox = lunchbox_type
-		if(!initial(lunchbox.filled))
-			lunchboxes[initial(lunchbox.name)] = lunchbox_type
-	gear_tweaks += new/datum/gear_tweak/path(lunchboxes)
-	gear_tweaks += new/datum/gear_tweak/contents(lunchables_lunches(), lunchables_snacks(), lunchables_drinks())
-*/
 
 /datum/gear/plush_toy
-	display_name = "plush toy"
-	description = "A plush toy."
+	display_name = "plushie selection"
 	path = /obj/item/toy/plushie
+	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/plush_toy/New()
-	..()
-	var/plushes = list()
-	plushes["mouse plush"] = /obj/item/toy/plushie/mouse
-	plushes["kitten plush"] = /obj/item/toy/plushie/kitten
-	plushes["lizard plush"] = /obj/item/toy/plushie/lizard
-	plushes["spider plush"] = /obj/item/toy/plushie/spider
-	plushes["farwa plush"] = /obj/item/toy/plushie/farwa
-	gear_tweaks += new /datum/gear_tweak/path(plushes)
-
-/datum/gear/mirror/
+/datum/gear/mirror
 	display_name = "handheld mirror"
 	sort_category = "Cosmetics"
 	path = /obj/item/weapon/mirror
@@ -107,9 +67,10 @@
 	path = /obj/item/weapon/haircomb
 
 /datum/gear/hairflower
-	display_name = "hair flower pin, red"
+	display_name = "hair flower pin selection"
 	sort_category = "Cosmetics"
 	path = /obj/item/clothing/head/hairflower
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/smokingpipe
 	display_name = "pipe, smoking"

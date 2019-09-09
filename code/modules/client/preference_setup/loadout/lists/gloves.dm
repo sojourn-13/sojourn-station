@@ -1,5 +1,5 @@
 // Gloves
-/datum/gear/gloves/latex
+/datum/gear/gloves
 	display_name = "gloves, latex"
 	sort_category = "Gloves and Handwear"
 	path = /obj/item/clothing/gloves/latex
@@ -30,4 +30,3 @@
 	sort_category = "Gloves and Handwear"
 	path = /obj/item/clothing/gloves/evening
 	slot = slot_gloves
-	flags = GEAR_HAS_COLOR_SELECTION

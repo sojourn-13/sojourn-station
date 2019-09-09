@@ -3,43 +3,43 @@
 	icon_state = "box-grey"
 
 /obj/random/action_figure/item_to_spawn()
-	return pick(/obj/item/toy/figure/cmo,\
-				/obj/item/toy/figure/assistant,\
-				/obj/item/toy/figure/atmos,\
-				/obj/item/toy/figure/bartender,\
-				/obj/item/toy/figure/borg,\
-				/obj/item/toy/figure/gardener,\
-				/obj/item/toy/figure/captain,\
-				/obj/item/toy/figure/cargotech,\
-				/obj/item/toy/figure/ce,\
-				/obj/item/toy/figure/chaplain,\
-				/obj/item/toy/figure/chef,\
-				/obj/item/toy/figure/chemist,\
-				/obj/item/toy/figure/clown,\
-				/obj/item/toy/figure/corgi,\
-				/obj/item/toy/figure/detective,\
-				/obj/item/toy/figure/dsquad,\
-				/obj/item/toy/figure/engineer,\
-				/obj/item/toy/figure/geneticist,\
-				/obj/item/toy/figure/hop,\
-				/obj/item/toy/figure/hos,\
-				/obj/item/toy/figure/qm,\
-				/obj/item/toy/figure/janitor,\
-				/obj/item/toy/figure/agent,\
-				/obj/item/toy/figure/librarian,\
-				/obj/item/toy/figure/md,\
-				/obj/item/toy/figure/mime,\
-				/obj/item/toy/figure/miner,\
-				/obj/item/toy/figure/ninja,\
-				/obj/item/toy/figure/wizard,\
-				/obj/item/toy/figure/rd,\
-				/obj/item/toy/figure/roboticist,\
-				/obj/item/toy/figure/scientist,\
-				/obj/item/toy/figure/syndie,\
-				/obj/item/toy/figure/secofficer,\
-				/obj/item/toy/figure/warden,\
-				/obj/item/toy/figure/psychologist,\
-				/obj/item/toy/figure/paramedic)
+	return pick(/obj/item/toy/figure/character/moebius/cmo,\
+				/obj/item/toy/figure/character/civilian/assistant,\
+				/obj/item/toy/figure/character/discontinued/atmos,\
+				/obj/item/toy/figure/character/civilian/bartender,\
+				/obj/item/toy/figure/character/moebius/borg,\
+				/obj/item/toy/figure/character/civilian/gardener,\
+				/obj/item/toy/figure/character/command/captain,\
+				/obj/item/toy/figure/character/guild/cargotech,\
+				/obj/item/toy/figure/character/technomancer/ce,\
+				/obj/item/toy/figure/character/civilian/chaplain,\
+				/obj/item/toy/figure/character/civilian/chef,\
+				/obj/item/toy/figure/character/moebius/chemist,\
+				/obj/item/toy/figure/character/civilian/entertainer,\
+				/obj/item/toy/figure/character/command/corgi,\
+				/obj/item/toy/figure/character/ironhammer/detective,\
+				/obj/item/toy/figure/character/discontinued/dsquad,\
+				/obj/item/toy/figure/character/technomancer/engineer,\
+				/obj/item/toy/figure/character/discontinued/geneticist,\
+				/obj/item/toy/figure/character/command/firstofficer,\
+				/obj/item/toy/figure/character/ironhammer/hos,\
+				/obj/item/toy/figure/character/guild/qm,\
+				/obj/item/toy/figure/character/civilian/janitor,\
+				/obj/item/toy/figure/character/discontinued/agent,\
+				/obj/item/toy/figure/character/discontinued/librarian,\
+				/obj/item/toy/figure/character/moebius/md,\
+				/obj/item/toy/figure/character/discontinued/mime,\
+				/obj/item/toy/figure/character/guild/miner,\
+				/obj/item/toy/figure/character/villains/ninja,\
+				/obj/item/toy/figure/character/villains/wizard,\
+				/obj/item/toy/figure/character/moebius/rd,\
+				/obj/item/toy/figure/character/moebius/roboticist,\
+				/obj/item/toy/figure/character/moebius/scientist,\
+				/obj/item/toy/figure/character/villains/syndie,\
+				/obj/item/toy/figure/character/ironhammer/secofficer,\
+				/obj/item/toy/figure/character/ironhammer/warden,\
+				/obj/item/toy/figure/character/moebius/psychologist,\
+				/obj/item/toy/figure/character/moebius/paramedic)
 
 
 /obj/random/plushie

@@ -72,6 +72,36 @@
 /obj/structure/sign/double/map/right
 	icon_state = "map-right"
 
+/obj/structure/sign/double/coffee
+	name = "coffee & sweets"
+	desc = "A charming wooden cafe sign."
+
+/obj/structure/sign/double/coffee/left
+	icon_state = "coffee-left"
+
+/obj/structure/sign/double/coffee/right
+	icon_state = "coffee-right"
+
+/obj/structure/sign/double/gamecenter
+	name = "game center"
+	desc = "A flashing arcade sign. Glitzy."
+
+/obj/structure/sign/double/gamecenter/left
+	icon_state = "gamecenter-left"
+
+/obj/structure/sign/double/gamecenter/right
+	icon_state = "gamecenter-right"
+
+/obj/structure/sign/double/drivethru
+	name = "drivethru"
+	desc = "An eye-catching drivethru sign."
+
+/obj/structure/sign/double/drivethru/left
+	icon_state = "drivethru1"
+
+/obj/structure/sign/double/drivethru/right
+	icon_state = "drivethru2"
+
 /obj/structure/sign/departmentold/examroom
 	name = "\improper EXAM"
 	desc = "A rectangular sign which reads 'EXAM ROOM'."
@@ -119,8 +149,13 @@
 
 /obj/structure/sign/plaque/kiddieplaque
 	name = "\improper AI developers plaque"
-	desc = "Next to the extremely long list of names and job titles, there is a drawing of a little child. The child appears to be retarded. Beneath the image, someone has scratched the word \"PACKETS\""
+	desc = "Next to the extremely long list of names and job titles, there is a drawing of a little child. Beneath the image, someone has scratched the word \"PACKETS\""
 	icon_state = "kiddieplaque"
+
+/obj/structure/sign/plaque/wordplaque
+	name = "\improper AI developers plaque"
+	desc = "Next to the extremely long list of names and job titles, there is a drawing of a little child. Beneath the image, someone has scratched the word \"PACKETS\""
+	icon_state = "writingplaque"
 
 /obj/structure/sign/plaque/atmosplaque
 	name = "\improper FEA atmospherics division plaque"
@@ -417,6 +452,21 @@
 	name = "DECK IV"
 	icon_state = "deck4"
 
+/obj/structure/sign/levels/deck5
+	desc = "A silver sign which reads 'DECK V'."
+	name = "DECK V"
+	icon_state = "deck5"
+
+/obj/structure/sign/levels/stairsup
+	desc = "A silver sign which shows a stairway up."
+	name = "STAIRS"
+	icon_state = "stairs_up"
+
+/obj/structure/sign/levels/stairsdown
+	desc = "A silver sign which shows a stairway down."
+	name = "STAIRS"
+	icon_state = "stairs_down"
+
 /obj/structure/sign/levels/hangar1
 	desc = "A rectangular sign which reads 'HANGAR 1'."
 	name = "HANGAR 1"
@@ -451,6 +501,11 @@
 	desc = "A silver sign which reads 'SECTION IV'."
 	name = "SECTION IV"
 	icon_state = "sec4"
+
+/obj/structure/sign/levels/section5
+	desc = "A silver sign which reads 'SECTION V'."
+	name = "SECTION V"
+	icon_state = "sec5"
 
 /obj/structure/sign/faction/nanotrasen
 	name = "\improper NanoTrasen"
@@ -531,6 +586,71 @@
 	name = "MEMETIC HAZARD"
 	desc = "Warning: Memetic hazard, wear meson goggles!"
 	icon_state = "memetic"
+
+/obj/structure/sign/painting/paintingwaves
+	desc = "A large foamy wave crashing into the rocky and sunlit shore."
+	name = "painting"
+	icon_state = "painting1"
+
+/obj/structure/sign/painting/paintingstreet
+	desc = "A serene city street with a few people on a summer day."
+	name = "painting"
+	icon_state = "painting2"
+
+/obj/structure/sign/painting/paintingsunset
+	desc = "A blazing sunset seen from a steep cliff above the sea."
+	name = "painting"
+	icon_state = "painting3"
+
+/obj/structure/sign/painting/paintingvalley
+	desc = "A wooded mountain valley, explored by a group of horsemen."
+	name = "painting"
+	icon_state = "painting4"
+
+/obj/structure/sign/painting/paintingtable
+	desc = "A table with a piece of white cloth, several fruits and a skull."
+	name = "painting"
+	icon_state = "painting5"
+
+/obj/structure/sign/painting/paintingbird
+	desc = "A long-tailed bird perches on a cherry blossom branch."
+	name = "painting"
+	icon_state = "painting6"
+
+/obj/structure/sign/painting/paintingsnow
+	desc = "A lone figure in the setting sun, gazing at the snow-peaked mountains."
+	name = "painting"
+	icon_state = "painting7"
+
+/obj/structure/sign/painting/paintingtemple
+	desc = "A hilly landscape, with a large temple standing on the bank of a river."
+	name = "painting"
+	icon_state = "painting8"
+
+/obj/structure/sign/painting/paintingdesert
+	desc = "A small encampment in the desert, with a flowing river in the distance."
+	name = "painting"
+	icon_state = "painting9"
+
+/obj/structure/sign/painting/paintingsea
+	desc = "A barque at sea, lit by the full moon."
+	name = "painting"
+	icon_state = "painting10"
+
+/obj/structure/sign/residential/clock
+	name = "\improper clock"
+	desc = "A small wall-mounted clock."
+	icon_state = "clock"
+
+/obj/structure/sign/painting/russianstalin
+	name = "communist portrait"
+	desc = "A portrait of some kind of communist figure."
+	icon_state = "stalin"
+
+/obj/structure/sign/painting/russianlenin
+	name = "communist portrait"
+	desc = "A portrait of some kind of communist figure."
+	icon_state = "lenin"
 
 //Eris departments
 
@@ -771,40 +891,60 @@
 	desc = "A rusted sign displaying some kind of old insignia. It looks imposing."
 	icon_state = "something-old2"
 
-/obj/structure/sign/misc/periodic
+/obj/structure/sign/residential/periodic
 	name = "periodic table"
 	desc = "A scientific chart illustrating the elements."
 	icon_state = "periodic"
 
-/obj/structure/sign/misc/monkeypainting
+/obj/structure/sign/painting/monkey
 	name = "monkey painting"
 	desc = "A small painting of a glaring monkey. Very ominous."
 	icon_state = "monkey_painting"
 
-/obj/structure/sign/misc/rent
+/obj/structure/sign/residential/rent
 	name = "rent sign"
 	desc = "A sign advertising a property for rent."
 	icon_state = "rent"
 
-/obj/structure/sign/misc/fine
+/obj/structure/sign/residential/fine
 	name = "'fine sign"
 	desc = "A sign issuing a reminder to pay any financial penalties."
 	icon_state = "fine"
 
-/obj/structure/sign/misc/vote
+/obj/structure/sign/residential/vote
 	name = "vote sign"
 	desc = "A sign that stresses the importance of democracy."
 	icon_state = "vote"
 
-/obj/structure/sign/misc/phone
+/obj/structure/sign/residential/phone
 	name = "phone sign"
 	desc = "A sign directing to a nearby public radio."
 	icon_state = "phoneicon"
 
-/obj/structure/sign/misc/bus
+/obj/structure/sign/residential/bus
 	name = "bus sign"
 	desc = "A sign signifying a transport hub."
 	icon_state = "bus"
+
+/obj/structure/sign/residential/barber
+	name = "barber"
+	desc = "A spinning pole signifying a barber shop."
+	icon_state = "barber"
+
+/obj/structure/sign/residential/techshop
+	name = "techshop"
+	desc = "A decorative green sign advertising a techshop."
+	icon_state = "techshop"
+
+/obj/structure/sign/residential/botany
+	name = "botany"
+	desc = "A botany sign."
+	icon_state = "botany"
+
+/obj/structure/sign/residential/loan
+	name = "loan"
+	desc = "A financial sign."
+	icon_state = "loan"
 
 /obj/structure/sign/misc/ntmining
 	name = "nanotrasen mining sign"

@@ -20,11 +20,11 @@
 	new /obj/item/clothing/head/ushanka(src)
 	new /obj/item/clothing/head/ushanka(src)
 	new /obj/item/clothing/head/ushanka(src)
-	new /obj/item/clothing/under/soviet(src)
-	new /obj/item/clothing/under/soviet(src)
-	new /obj/item/clothing/under/soviet(src)
-	new /obj/item/clothing/under/soviet(src)
-	new /obj/item/clothing/under/soviet(src)
+	new /obj/item/clothing/under/costume/history/soviet(src)
+	new /obj/item/clothing/under/costume/history/soviet(src)
+	new /obj/item/clothing/under/costume/history/soviet(src)
+	new /obj/item/clothing/under/costume/history/soviet(src)
+	new /obj/item/clothing/under/costume/history/soviet(src)
 
 
 /obj/structure/closet/gimmick/tacticool
