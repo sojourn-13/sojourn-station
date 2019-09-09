@@ -499,6 +499,12 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	icon_state = "varsity_brown"
 	item_state = "varsity_brown"
 
+/obj/item/clothing/suit/varsity/pink
+	name = "pink varsity jacket"
+	desc = "A sporty letterman jacket with a pink design."
+	icon_state = "varsity_pink"
+	item_state = "varsity_pink"
+
 /obj/item/clothing/suit/storage/miljacket
 	name = "drab military jacket"
 	desc = "A military canvas jacket in an olive drab design."
