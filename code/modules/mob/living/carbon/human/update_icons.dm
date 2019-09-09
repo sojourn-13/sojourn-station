@@ -991,6 +991,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		drop_r_hand()
 		drop_l_hand()
 		stop_pulling()	//TODO: should be handled elsewhere
+		handcuffed.equip_slot = slot_handcuffed
 
 		var/image/standing
 		if(handcuffed.icon_override)
