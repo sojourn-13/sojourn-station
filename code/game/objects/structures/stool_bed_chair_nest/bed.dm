@@ -216,22 +216,6 @@
 /obj/structure/bed/double/padded/New(var/newloc)
 	..(newloc,"wood","cotton")
 
-/obj/structure/bed/double/post_buckle_mob(mob/living/M as mob)
-	if(M.buckled == src)
-		M.pixel_y = 13
-		M.old_y = 13
-	else
-		M.pixel_y = 0
-		M.old_y = 0
-
-/obj/structure/bed/post_buckle_mob(mob/living/M as mob)
-	if(M.buckled == src)
-		M.pixel_y = 13
-		M.old_y = 13
-	else
-		M.pixel_y = 0
-		M.old_y = 0
-
 /obj/structure/bed/alien
 	name = "resting contraption"
 	desc = "This looks similar to contraptions from earth. Could aliens be stealing our technology?"
