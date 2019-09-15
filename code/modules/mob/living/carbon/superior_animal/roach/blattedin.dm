@@ -5,7 +5,7 @@
 	taste_description = "chicken"
 	reagent_state = LIQUID
 	color = "#0F4800"
-	strength = 5
+	strength = 0.5
 	metabolism = REM * 0.1
 
 	heating_point = T0C + 260
