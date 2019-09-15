@@ -17,7 +17,7 @@
 		return 0
 	if (affected.status & ORGAN_DESTROYED)
 		return 0
-	if (!(affected.robotic >= ORGAN_ROBOT))
+	if (!BP_IS_ROBOTIC(affected))
 		return 0
 	return 1
 
@@ -153,7 +153,7 @@
 		if(limb_can_operate)
 			if(istype(C))
 				if(!C.get_amount() >= 3)
-					user << SPAN_DANGER("You need three or more cable pieces to repair this damage.")
+					to_chat(user, SPAN_DANGER("You need three or more cable pieces to repair this damage."))
 					return SURGERY_FAILURE
 				C.use(3)
 			return 1
@@ -191,7 +191,7 @@
 	if(!affected) return
 	var/is_organ_damaged = 0
 	for(var/obj/item/organ/I in affected.internal_organs)
-		if(I.damage > 0 && I.robotic >= 2)
+		if(I.damage > 0 && BP_IS_ROBOTIC(I))
 			is_organ_damaged = 1
 			break
 	return affected.open == 2 && is_organ_damaged
@@ -204,7 +204,7 @@
 
 	for(var/obj/item/organ/I in affected.internal_organs)
 		if(I && I.damage > 0)
-			if(I.robotic >= 2)
+			if(BP_IS_ROBOTIC(I))
 				user.visible_message("[user] starts mending the damage to [target]'s [I.name]'s mechanisms.", \
 				"You start mending the damage to [target]'s [I.name]'s mechanisms." )
 
@@ -220,7 +220,7 @@
 	for(var/obj/item/organ/I in affected.internal_organs)
 
 		if(I && I.damage > 0)
-			if(I.robotic >= 2)
+			if(BP_IS_ROBOTIC(I))
 				user.visible_message(SPAN_NOTICE("[user] repairs [target]'s [I.name] with [tool]."), \
 				SPAN_NOTICE("You repair [target]'s [I.name] with [tool].") )
 				I.damage = 0
@@ -250,7 +250,7 @@
 /datum/surgery_step/robotics/detatch_organ_robotic/can_use(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	if(!(affected && (affected.robotic >= ORGAN_ROBOT)))
+	if(!(affected && BP_IS_ROBOTIC(affected)))
 		return 0
 	if(affected.open != 2)
 		return 0
@@ -301,7 +301,7 @@
 /datum/surgery_step/robotics/attach_organ_robotic/can_use(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	if(!(affected && (affected.robotic >= ORGAN_ROBOT)))
+	if(!(affected && BP_IS_ROBOTIC(affected)))
 		return 0
 	if(affected.open != 2)
 		return 0
@@ -311,7 +311,7 @@
 	var/list/removable_organs = list()
 	for(var/organ in target.internal_organs_by_name)
 		var/obj/item/organ/I = target.internal_organs_by_name[organ]
-		if(I && (I.status & ORGAN_CUT_AWAY) && (I.robotic >= ORGAN_ROBOT) && I.parent_organ == target_zone)
+		if(I && (I.status & ORGAN_CUT_AWAY) && BP_IS_ROBOTIC(I) && I.parent_organ == target_zone)
 			removable_organs |= organ
 
 	var/organ_to_replace = input(user, "Which organ do you want to reattach?") as null|anything in removable_organs
@@ -360,23 +360,23 @@
 		return 0
 
 	if(!M.brainmob || !M.brainmob.client || !M.brainmob.ckey || M.brainmob.stat >= DEAD)
-		user << SPAN_DANGER("That brain is not usable.")
+		to_chat(user, SPAN_DANGER("That brain is not usable."))
 		return SURGERY_FAILURE
 
-	if(!(affected.robotic >= ORGAN_ROBOT))
-		user << SPAN_DANGER("You cannot install a computer brain into a meat skull.")
+	if(BP_IS_ORGANIC(affected) || BP_IS_ASSISTED(affected))
+		to_chat(user, SPAN_DANGER("You cannot install a computer brain into a meat skull."))
 		return SURGERY_FAILURE
 
 	if(!target.species)
-		user << SPAN_DANGER("You have no idea what species this person is. Report this on the bug tracker.")
+		to_chat(user, SPAN_DANGER("You have no idea what species this person is. Report this on the bug tracker."))
 		return SURGERY_FAILURE
 
 	if(!target.species.has_organ[BP_BRAIN])
-		user << SPAN_DANGER("You're pretty sure [target.species.name_plural] don't normally have a brain.")
+		to_chat(user, SPAN_DANGER("You're pretty sure [target.species.name_plural] don't normally have a brain."))
 		return SURGERY_FAILURE
 
 	if(!isnull(target.internal_organs[BP_BRAIN]))
-		user << SPAN_DANGER("Your subject already has a brain.")
+		to_chat(user, SPAN_DANGER("Your subject already has a brain."))
 		return SURGERY_FAILURE
 
 	return 1

@@ -86,10 +86,6 @@
 	name = "FS SMG 9x19 \"Idaho\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/idaho
 
-/datum/design/autolathe/gun/wt550
-	name = "FS SMG 9x19 \"W-T Saber\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/wt550
-
 /datum/design/autolathe/gun/atreides
 	name = "FS SMG .45 \"Atreides\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/atreides
@@ -154,17 +150,17 @@
 	name = "NT IR \"Halicon\""
 	build_path = /obj/item/weapon/gun/energy/ionrifle
 
-/datum/design/autolathe/gun/pulse_rifle
+/datum/design/autolathe/gun/pulse
 	name = "NT PR \"Dominion\""
-	build_path = /obj/item/weapon/gun/energy/pulse_rifle
+	build_path = /obj/item/weapon/gun/energy/pulse
 
-/datum/design/autolathe/gun/pulse_rifle_destroyer
+/datum/design/autolathe/gun/pulse_destroyer
 	name = "NT PR \"Purger\""
-	build_path = /obj/item/weapon/gun/energy/pulse_rifle/destroyer
+	build_path = /obj/item/weapon/gun/energy/pulse/destroyer
 
-/datum/design/autolathe/gun/pulse_rifle_cassad
+/datum/design/autolathe/gun/pulse_cassad
 	name = "FS PR \"Cassad\""
-	build_path = /obj/item/weapon/gun/energy/cassad
+	build_path = /obj/item/weapon/gun/energy/pulse/cassad
 
 /datum/design/autolathe/gun/sniperrifle
 	name = "NT MER \"Valkyrie\""

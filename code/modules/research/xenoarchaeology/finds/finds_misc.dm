@@ -16,7 +16,7 @@
 /obj/item/weapon/talkingcrystal
 
 	name = "crystal"
-	icon = 'icons/obj/mining.dmi'
+	icon = 'icons/obj/xenoarchaeology.dmi'
 	icon_state = "talk_crystal"
 	//listening_to_players = 1
 	//speaking_to_players = 1

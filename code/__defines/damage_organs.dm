@@ -25,6 +25,15 @@
 #define FIRE_DAMAGE_MODIFIER 0.0215 // Higher values result in more external fire damage to the skin. (default 0.0215)
 #define  AIR_DAMAGE_MODIFIER 2.025  // More means less damage from hot air scalding lungs, less = more damage. (default 2.025)
 
+//Armor defines
+
+#define ARMOR_MELEE			"melee"
+#define ARMOR_BULLET		"bullet"
+#define ARMOR_ENERGY		"energy"
+#define ARMOR_BOMB			"bomb"
+#define ARMOR_BIO			"bio"
+#define ARMOR_RAD			"rad"
+
 
 // Organs.
 #define BP_MOUTH    "mouth"
@@ -106,11 +115,13 @@
 #define BP_L_ARM_EXTRA	list(BP_L_HAND)
 #define BP_R_ARM_EXTRA	list(BP_R_HAND)
 
-// Prosthetic helpers.
-#define BP_IS_ROBOTIC(org)  (org.status & ORGAN_ROBOTIC)
-#define BP_IS_ASSISTED(org) (org.status & ORGAN_ASSISTED)
-#define BP_IS_BRITTLE(org)  (org.status & ORGAN_BRITTLE)
-#define BP_IS_CRYSTAL(org)  (org.status & ORGAN_CRYSTAL)
+// Organs helpers.
+#define BP_IS_ORGANIC(org)  (org.nature == MODIFICATION_ORGANIC)
+#define BP_IS_ROBOTIC(org) (org.nature == MODIFICATION_SILICON || org.nature == MODIFICATION_LIFELIKE)
+#define BP_IS_SILICON(org) (org.nature == MODIFICATION_SILICON)	// Prothetics that are obvious
+#define BP_IS_REMOVED(org) (org.nature == MODIFICATION_REMOVED)
+#define BP_IS_ASSISTED(org) (org.nature == MODIFICATION_ASSISTED)
+#define BP_IS_LIFELIKE(org) (org.nature == MODIFICATION_LIFELIKE)
 
 
 // Organ defines.
@@ -126,11 +137,11 @@
 #define DROPLIMB_BLUNT 1
 #define DROPLIMB_BURN 2
 
-#define ORGAN_ASSISTED 1 // Like pacemakers, not robotic
-#define ORGAN_ROBOT    2 // Fully robotic, no organic parts
-#define ORGAN_LIFELIKE 3 // Robotic, made to appear organic
-
-#define ORGAN_PROCESS_ACCURACY 10
+#define MODIFICATION_ORGANIC 0	// Organic
+#define MODIFICATION_ASSISTED 1 // Like pacemakers, not robotic
+#define MODIFICATION_SILICON 2	// Fully robotic, no organic parts
+#define MODIFICATION_LIFELIKE 3	// Robotic, made to appear organic
+#define MODIFICATION_REMOVED 4	// Removed completly
 
 // Damage above this value must be repaired with surgery.
 #define ROBOLIMB_SELF_REPAIR_CAP 30
@@ -143,5 +154,5 @@
 #define INFECTION_LEVEL_TWO   500
 #define INFECTION_LEVEL_THREE 1000
 
-//plug before baymed
-#define BP_IS_ROBOTIC(org)  (org.status & ORGAN_ROBOT)
+#define ORGAN_RECOVERY_THRESHOLD (5 MINUTES)
+

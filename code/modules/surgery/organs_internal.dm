@@ -54,15 +54,15 @@
 
 	for(var/obj/item/organ/I in affected.internal_organs)
 		if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
-			if (I.damage > 0 && I.robotic <= 1)
+			if (I.damage > 0 && !BP_IS_ROBOTIC(I))
 				user.visible_message("[user] starts treating damage to [target]'s [I.name] with [tool_name].", \
 				"You start treating damage to [target]'s [I.name] with [tool_name]." )
 		else if (istype(tool, /obj/item/stack/medical/bruise_pack))
-			if (I.damage > 0 && I.robotic <= 1)
+			if (I.damage > 0 && !BP_IS_ROBOTIC(I))
 				user.visible_message("[user] starts treating damage to [target]'s [I.name] with [tool_name].", \
 				"You start treating damage to [target]'s [I.name] with [tool_name]." )
 		else if (istype(tool, /obj/item/stack/nanopaste))
-			if (I.damage > 0 && I.robotic >= 1)
+			if (I.damage > 0 && (BP_IS_ROBOTIC(I) || BP_IS_ASSISTED(I)))
 				user.visible_message(SPAN_NOTICE("[user] treats damage to [target]'s [I.name] with [tool_name]."), \
 				SPAN_NOTICE("You treat damage to [target]'s [I.name] with [tool_name].") )
 
@@ -84,17 +84,17 @@
 
 	for(var/obj/item/organ/I in affected.internal_organs)
 		if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
-			if (I.damage > 0 && I.robotic <= 1)
+			if (I.damage > 0 && !BP_IS_ROBOTIC(I))
 				user.visible_message(SPAN_NOTICE("[user] treats damage to [target]'s [I.name] with [tool_name]."), \
 				SPAN_NOTICE("You treat damage to [target]'s [I.name] with [tool_name].") )
 				I.damage = 0
 		else if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
-			if (I.damage > 0 && I.robotic <= 1)
+			if (I.damage > 0 && !BP_IS_ROBOTIC(I))
 				user.visible_message(SPAN_NOTICE("[user] treats damage to [target]'s [I.name] with [tool_name]."), \
 				SPAN_NOTICE("You treat damage to [target]'s [I.name] with [tool_name].") )
 				I.damage = 0
 		else if (istype(tool, /obj/item/stack/nanopaste))
-			if (I.damage > 0 && I.robotic >= 1)
+			if (I.damage > 0 && (BP_IS_ROBOTIC(I) || BP_IS_ASSISTED(I)))
 				user.visible_message(SPAN_NOTICE("[user] treats damage to [target]'s [I.name] with [tool_name]."), \
 				SPAN_NOTICE("You treat damage to [target]'s [I.name] with [tool_name].") )
 				I.damage= 0
@@ -135,7 +135,7 @@
 
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-	if(!(affected && !(affected.robotic >= ORGAN_ROBOT)))
+	if(!(affected && !BP_IS_ROBOTIC(affected)))
 		return 0
 
 	target.op_stage.current_organ = null
@@ -272,12 +272,12 @@
 	if(!istype(O))
 		return 0
 
-	if((affected.robotic >= ORGAN_ROBOT) && !(O.robotic >= ORGAN_ROBOT))
-		user << SPAN_DANGER("You cannot install a naked organ into a robotic body.")
+	if(BP_IS_ROBOTIC(affected) && !BP_IS_ROBOTIC(O))
+		to_chat(user, SPAN_DANGER("You cannot install a naked organ into a robotic body."))
 		return SURGERY_FAILURE
 
 	if(!target.species)
-		user << SPAN_DANGER("You have no idea what species this person is. Report this on the bug tracker.")
+		to_chat(user, SPAN_DANGER("You have no idea what species this person is. Report this on the bug tracker."))
 		return SURGERY_FAILURE
 
 	var/o_is = (O.gender == PLURAL) ? "are" : "is"
@@ -286,22 +286,22 @@
 
 	if(target.species.has_organ[O.organ_tag])
 		if(O.damage > (O.max_damage * 0.75))
-			user << SPAN_WARNING("\The [O.organ_tag] [o_is] in no state to be transplanted.")
+			to_chat(user, SPAN_WARNING("\The [O.organ_tag] [o_is] in no state to be transplanted."))
 			return SURGERY_FAILURE
 
 		if(!target.internal_organs_by_name[O.organ_tag])
 			organ_missing = 1
 		else
-			user << SPAN_WARNING("\The [target] already has [o_a][O.organ_tag].")
+			to_chat(user, SPAN_WARNING("\The [target] already has [o_a][O.organ_tag]."))
 			return SURGERY_FAILURE
 
 		if(O && affected.organ_tag == O.parent_organ)
 			organ_compatible = 1
 		else
-			user << SPAN_WARNING("\The [O.organ_tag] [o_do] normally go in \the [affected.name].")
+			to_chat(user, SPAN_WARNING("\The [O.organ_tag] [o_do] normally go in \the [affected.name]."))
 			return SURGERY_FAILURE
 	else
-		user << SPAN_WARNING("You're pretty sure [target.species.name_plural] don't normally have [o_a][O.organ_tag].")
+		to_chat(user, SPAN_WARNING("You're pretty sure [target.species.name_plural] don't normally have [o_a][O.organ_tag]."))
 		return SURGERY_FAILURE
 
 	return ..() && organ_missing && organ_compatible
@@ -346,7 +346,7 @@
 	var/list/removable_organs = list()
 	for(var/organ in target.internal_organs_by_name)
 		var/obj/item/organ/I = target.internal_organs_by_name[organ]
-		if(I && (I.status & ORGAN_CUT_AWAY) && !(I.robotic >= ORGAN_ROBOT) && I.parent_organ == target_zone)
+		if(I && (I.status & ORGAN_CUT_AWAY) && !BP_IS_ROBOTIC(I) && I.parent_organ == target_zone)
 			removable_organs |= organ
 
 	if(!removable_organs.len)
@@ -358,7 +358,7 @@
 	var/list/removable_organs = list()
 	for(var/organ in target.internal_organs_by_name)
 		var/obj/item/organ/I = target.internal_organs_by_name[organ]
-		if(I && (I.status & ORGAN_CUT_AWAY) && !(I.robotic >= ORGAN_ROBOT) && I.parent_organ == target_zone)
+		if(I && (I.status & ORGAN_CUT_AWAY) && !BP_IS_ROBOTIC(I) && I.parent_organ == target_zone)
 			removable_organs |= organ
 
 	var/organ_to_replace = input(user, "Which organ do you want to reattach?") as null|anything in removable_organs

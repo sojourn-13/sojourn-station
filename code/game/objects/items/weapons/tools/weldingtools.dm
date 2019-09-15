@@ -30,21 +30,21 @@
 
 	if (get_fuel() > passive_fuel_cost)
 		item_state = "[initial(item_state)]_on"
-		user << SPAN_NOTICE("You switch [src] on.")
+		to_chat(user, SPAN_NOTICE("You switch [src] on."))
 		playsound(loc, 'sound/items/welderactivate.ogg', 50, 1)
 		..()
 		damtype = BURN
 		START_PROCESSING(SSobj, src)
 	else
 		item_state = initial(item_state)
-		user << SPAN_WARNING("[src] has no fuel!")
+		to_chat(user, SPAN_WARNING("[src] has no fuel!"))
 
 	//Todo: Add a better hit sound for a turned_on welder
 
 /obj/item/weapon/tool/weldingtool/turn_off(mob/user)
 	item_state = initial(item_state)
 	playsound(loc, 'sound/items/welderdeactivate.ogg', 50, 1)
-	user << SPAN_NOTICE("You switch [src] off.")
+	to_chat(user, SPAN_NOTICE("You switch [src] off."))
 	..()
 	damtype = initial(damtype)
 
@@ -79,7 +79,7 @@
 	max_fuel = 40
 	switched_on_force = WEAPON_FORCE_PAINFUL * 1.15 //Slightly more powerful, not much more so
 	heat = 3773
-	degradation = 0.07
+	degradation = 0.7
 	max_upgrades = 4
 
 /obj/item/weapon/tool/weldingtool/bs
@@ -101,7 +101,7 @@
 	glow_color = COLOR_RED_LIGHT
 	use_fuel_cost = 0.15
 	max_fuel = 20
-	degradation = 0.06
+	degradation = 0.6
 	heat = 2750
 	max_upgrades = 2
 	workspeed = 1.7

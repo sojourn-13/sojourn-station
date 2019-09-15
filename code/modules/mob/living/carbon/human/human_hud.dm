@@ -8,10 +8,10 @@
 
 	if(!check_HUDdatum())//check client prefs
 		log_debug("[H] try check a HUD, but HUDdatums not have \"[H.client.prefs.UI_style]!\"")
-		H << "Some problem has occurred, use default HUD type"
+		to_chat(H, "Some problem has occurred, use default HUD type")
 		H.defaultHUD = "ErisStyle"
 		recreate_flag = TRUE
-	else if (H.client.prefs.UI_style != H.defaultHUD)//Ã…Ã±Ã«Ã¨ Ã±Ã²Ã¨Ã«Ã¼ Ã³ ÃŒÃŽÃÃ€ Ã­Ã¥ Ã±Ã®Ã¢Ã¯Ã Ã¤Ã Ã¥Ã² Ã±Ã® Ã±Ã²Ã¨Ã«Ã¥Ã¬ Ã³ ÃªÃ«Ã¨Ã­Ã¥Ã²Ã 
+	else if (H.client.prefs.UI_style != H.defaultHUD)//Åñëè ñòèëü ó ÌÎÁÀ íå ñîâïàäàåò ñî ñòèëåì ó êëèíåòà
 		H.defaultHUD = H.client.prefs.UI_style
 		recreate_flag = TRUE
 
@@ -46,8 +46,8 @@
 /mob/living/carbon/human/check_HUDdatum()//correct a datum?
 	var/mob/living/carbon/human/H = src
 
-	if (H.client.prefs.UI_style && !(H.client.prefs.UI_style == "")) //Ã¥Ã±Ã«Ã¨ Ã³ ÃªÃ«Ã¨Ã¥Ã­Ã²Ã  Ã¬Ã®Ã¡Ã  Ã¯Ã°Ã®Ã¯Ã¨Ã±Ã Ã­ Ã±Ã²Ã¨Ã«Ã¼\Ã²Ã¨Ã¯ Ã•Ã“Ã„Ã 
-		if(global.HUDdatums.Find(H.client.prefs.UI_style))//Ã…Ã±Ã«Ã¨ Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã³Ã¥Ã² Ã²Ã ÃªÃ®Ã© Ã²Ã¨Ã¯ Ã•Ã“Ã„Ã€
+	if (H.client.prefs.UI_style && !(H.client.prefs.UI_style == "")) //åñëè ó êëèåíòà ìîáà ïðîïèñàí ñòèëü\òèï ÕÓÄà
+		if(global.HUDdatums.Find(H.client.prefs.UI_style))//Åñëè ñóùåñòâóåò òàêîé òèï ÕÓÄÀ
 			return TRUE
 
 	return FALSE
@@ -142,10 +142,10 @@
 	var/mob/living/carbon/human/H = src
 	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
 
-	for (var/gear_slot in species.hud.gear)//Ã„Ã®Ã¡Ã Ã¢Ã«Ã¿Ã¥Ã¬ ÃÃ«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã•Ã“Ã„Ã  (Ã¨Ã­Ã¢Ã¥Ã­Ã²Ã Ã°Ã¼)
+	for (var/gear_slot in species.hud.gear)//Äîáàâëÿåì Ýëåìåíòû ÕÓÄà (èíâåíòàðü)
 		if (!HUDdatum.slot_data.Find(gear_slot))
 			log_debug("[usr] try take inventory data for [gear_slot], but HUDdatum not have it!")
-			src << "Sorry, but something went wrong with creating inventory slots, we recommend changing HUD type or call admins"
+			to_chat(H, "Sorry, but something went wrong with creating inventory slots, we recommend changing HUD type or call admins")
 			return
 		else
 			var/HUDtype
@@ -168,8 +168,8 @@
 	var/mob/living/carbon/human/H = src
 	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
 
-	for(var/HUDname in species.hud.ProcessHUD) //Ã„Ã®Ã¡Ã Ã¢Ã«Ã¿Ã¥Ã¬ ÃÃ«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã•Ã“Ã„Ã  (Ã­Ã¥ Ã¨Ã­Ã¢Ã¥Ã­Ã²Ã Ã°Ã¼)
-		if (!(HUDdatum.HUDneed.Find(HUDname))) //ÃˆÃ¹Ã¥Ã¬ Ã²Ã ÃªÃ®Ã© Ã¢ Ã¤Ã Ã²Ã³Ã¬Ã¥
+	for(var/HUDname in species.hud.ProcessHUD) //Äîáàâëÿåì Ýëåìåíòû ÕÓÄà (íå èíâåíòàðü)
+		if (!(HUDdatum.HUDneed.Find(HUDname))) //Èùåì òàêîé â äàòóìå
 			log_debug("[usr] try create a [HUDname], but it no have in HUDdatum [HUDdatum.name]")
 		else
 			var/HUDtype = HUDdatum.HUDneed[HUDname]["type"]
@@ -180,16 +180,16 @@
 
 			if(HUDdatum.HUDneed[HUDname]["hideflag"])
 				HUD.hideflag = HUDdatum.HUDneed[HUDname]["hideflag"]
-			H.HUDneed[HUD.name] += HUD//Ã„Ã®Ã¡Ã Ã¢Ã«Ã¿Ã¥Ã¬ Ã¢ Ã±Ã¯Ã¨Ã±Ã®Ãª ÃµÃ³Ã¤Ã®Ã¢
-			if (HUD.process_flag)//Ã…Ã±Ã«Ã¨ ÃµÃ³Ã¤ Ã­Ã³Ã¦Ã­Ã® Ã¯Ã°Ã®Ã¶Ã¥Ã±Ã±Ã¨Ã²Ã¼
-				H.HUDprocess += HUD//Ã‚Ã«Ã¨Ã¢Ã Ã¥Ã¬ Ã¢ Ã±Ã®Ã®Ã²Ã¢Ã¥Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ã© Ã±Ã¯Ã¨Ã±Ã®Ãª
+			H.HUDneed[HUD.name] += HUD//Äîáàâëÿåì â ñïèñîê õóäîâ
+			if (HUD.process_flag)//Åñëè õóä íóæíî ïðîöåññèòü
+				H.HUDprocess += HUD//Âëèâàåì â ñîîòâåñòâóþùèé ñïèñîê
 	return
 
 /mob/living/carbon/human/create_HUDfrippery()
 	var/mob/living/carbon/human/H = src
 	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
 
-	//Ã„Ã®Ã¡Ã Ã¢Ã«Ã¿Ã¥Ã¬ ÃÃ«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã•Ã“Ã„Ã  (Ã³ÃªÃ°Ã Ã¸Ã¥Ã­Ã¨Ã¿)
+	//Äîáàâëÿåì Ýëåìåíòû ÕÓÄà (óêðàøåíèÿ)
 	for (var/list/whistle in HUDdatum.HUDfrippery)
 		var/obj/screen/frippery/perdelka = new (whistle["icon_state"],whistle["loc"],H)
 		perdelka.icon = HUDdatum.icon
@@ -202,7 +202,7 @@
 	var/mob/living/carbon/human/H = src
 	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
 
-	//Ã„Ã®Ã¡Ã Ã¢Ã«Ã¿Ã¥Ã¬ Ã²Ã¥ÃµÃ­Ã¨Ã·Ã¥Ã±ÃªÃ¨Ã¥ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã»(damage,flash,pain... Ã®Ã¢Ã¥Ã°Ã«Ã¥Ã¨)
+	//Äîáàâëÿåì òåõíè÷åñêèå ýëåìåíòû(damage,flash,pain... îâåðëåè)
 	for (var/techobject in HUDdatum.HUDoverlays)
 		var/HUDtype = HUDdatum.HUDoverlays[techobject]["type"]
 
@@ -211,9 +211,9 @@
 		 HUDdatum.HUDoverlays[techobject]["icon_state"] ? HUDdatum.HUDoverlays[techobject]["icon_state"] : null)
 		HUD.layer = FLASH_LAYER
 
-		H.HUDtech[HUD.name] += HUD//Ã„Ã®Ã¡Ã Ã¢Ã«Ã¿Ã¥Ã¬ Ã¢ Ã±Ã¯Ã¨Ã±Ã®Ãª ÃµÃ³Ã¤Ã®Ã¢
-		if (HUD.process_flag)//Ã…Ã±Ã«Ã¨ ÃµÃ³Ã¤ Ã­Ã³Ã¦Ã­Ã® Ã¯Ã°Ã®Ã¶Ã¥Ã±Ã±Ã¨Ã²Ã¼
-			H.HUDprocess += HUD//Ã‚Ã«Ã¨Ã¢Ã Ã¥Ã¬ Ã¢ Ã±Ã®Ã®Ã²Ã¢Ã¥Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ã© Ã±Ã¯Ã¨Ã±Ã®Ãª
+		H.HUDtech[HUD.name] += HUD//Äîáàâëÿåì â ñïèñîê õóäîâ
+		if (HUD.process_flag)//Åñëè õóä íóæíî ïðîöåññèòü
+			H.HUDprocess += HUD//Âëèâàåì â ñîîòâåñòâóþùèé ñïèñîê
 	return
 
 

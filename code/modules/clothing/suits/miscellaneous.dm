@@ -409,7 +409,7 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	desc = "A sturdy grey jacket made out of synthetic leather."
 	icon_state = "leather_jacket"
 	item_state = "leather_jacket"
-	armor = list(melee = 20, bullet = 5, laser = 10, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20

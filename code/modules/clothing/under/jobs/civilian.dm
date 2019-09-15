@@ -57,7 +57,7 @@
 	name = "janitor's jumpsuit"
 	icon_state = "janitor"
 	item_state = "janitor"
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 30, rad = 0)
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 30, rad = 0)
 
 /obj/item/clothing/under/rank/miner
 	desc = "A snappy guild jumpsuit complete with sturdy mining overalls."

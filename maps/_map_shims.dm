@@ -45,3 +45,10 @@
 
 /obj/item/weapon/disk/autolathe_disk/lethal_ammo
 	parent_type = /obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo
+
+
+/obj/item/weapon/gun/energy/cassad
+	parent_type = /obj/item/weapon/gun/energy/pulse/cassad
+
+/obj/machinery/door/firedoor/border_only
+	parent_type = /obj/machinery/door/firedoor

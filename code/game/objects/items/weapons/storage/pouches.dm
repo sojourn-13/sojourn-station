@@ -20,7 +20,7 @@
 	set category = "Object"
 
 	sliding_behavior = !sliding_behavior
-	usr << SPAN_NOTICE("Items will now [sliding_behavior ? "" : "not"] slide out of [src]")
+	to_chat(usr, SPAN_NOTICE("Items will now [sliding_behavior ? "" : "not"] slide out of [src]"))
 
 /obj/item/weapon/storage/pouch/attack_hand(mob/living/carbon/human/user)
 	if(sliding_behavior && contents.len && (src in user))
@@ -238,7 +238,6 @@
 		/obj/item/weapon/gun/projectile/olivaw,
 		/obj/item/weapon/gun/projectile/silenced,
 		/obj/item/weapon/gun/energy/gun,
-		/obj/item/weapon/gun/energy/retro,
 		/obj/item/weapon/gun/energy/chameleon,
 		//obj/item/weapon/gun/energy/captain, //too unwieldy, use belt/suit slot or other storage
 		/obj/item/weapon/gun/energy/stunrevolver,

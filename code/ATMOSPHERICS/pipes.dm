@@ -19,7 +19,7 @@
 
 /obj/machinery/atmospherics/pipe/New()
 	if(istype(get_turf(src), /turf/simulated/wall) || istype(get_turf(src), /turf/simulated/shuttle/wall) || istype(get_turf(src), /turf/unsimulated/wall))
-		level = 1
+		level = BELOW_PLATING_LEVEL
 	..()
 
 /obj/machinery/atmospherics/pipe/hides_under_flooring()
@@ -159,7 +159,7 @@
 	var/fatigue_pressure = 55*ONE_ATMOSPHERE
 	alert_pressure = 55*ONE_ATMOSPHERE
 
-	level = 1
+	level = BELOW_PLATING_LEVEL
 
 /obj/machinery/atmospherics/pipe/simple/New()
 	..()
@@ -294,7 +294,7 @@
 		return
 
 	var/turf/T = loc
-	if(level == 1 && !T.is_plating()) hide(1)
+	if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/simple/disconnect(obj/machinery/atmospherics/reference)
@@ -314,7 +314,7 @@
 
 /obj/machinery/atmospherics/pipe/simple/visible
 	icon_state = "intact"
-	level = 2
+	level = ABOVE_PLATING_LEVEL
 	layer = GAS_PIPE_VISIBLE_LAYER
 
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers
@@ -356,7 +356,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden
 	icon_state = "intact"
 	layer = GAS_PIPE_HIDDEN_LAYER
-	level = 1
+	level = BELOW_PLATING_LEVEL
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers
@@ -405,7 +405,7 @@
 	fatigue_pressure = 900*ONE_ATMOSPHERE
 	alert_pressure = 900*ONE_ATMOSPHERE
 
-	level = 2
+	level = ABOVE_PLATING_LEVEL
 
 
 /obj/machinery/atmospherics/pipe/manifold
@@ -421,7 +421,7 @@
 
 	var/obj/machinery/atmospherics/node3
 
-	level = 1
+	level = BELOW_PLATING_LEVEL
 	layer = GAS_PIPE_VISIBLE_LAYER
 
 /obj/machinery/atmospherics/pipe/manifold/New()
@@ -576,12 +576,12 @@
 		return
 
 	var/turf/T = get_turf(src)
-	if(level == 1 && !T.is_plating()) hide(1)
+	if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/manifold/visible
 	icon_state = "map"
-	level = 2
+	level = ABOVE_PLATING_LEVEL
 
 /obj/machinery/atmospherics/pipe/manifold/visible/scrubbers
 	name="Scrubbers pipe manifold"
@@ -622,7 +622,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold/hidden
 	icon_state = "map"
-	level = 1
+	level = BELOW_PLATING_LEVEL
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers
@@ -675,7 +675,7 @@
 	var/obj/machinery/atmospherics/node3
 	var/obj/machinery/atmospherics/node4
 
-	level = 1
+	level = BELOW_PLATING_LEVEL
 	layer = GAS_PIPE_VISIBLE_LAYER
 
 /obj/machinery/atmospherics/pipe/manifold4w/New()
@@ -832,12 +832,12 @@
 		return
 
 	var/turf/T = get_turf(src)
-	if(level == 1 && !T.is_plating()) hide(1)
+	if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/manifold4w/visible
 	icon_state = "map_4way"
-	level = 2
+	level = ABOVE_PLATING_LEVEL
 
 /obj/machinery/atmospherics/pipe/manifold4w/visible/scrubbers
 	name="4-way scrubbers pipe manifold"
@@ -877,7 +877,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold4w/hidden
 	icon_state = "map_4way"
-	level = 1
+	level = BELOW_PLATING_LEVEL
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers
@@ -921,7 +921,7 @@
 	desc = "An endcap for pipes"
 	icon = 'icons/atmos/pipes.dmi'
 	icon_state = ""
-	level = 2
+	level = ABOVE_PLATING_LEVEL
 	layer = GAS_PIPE_VISIBLE_LAYER
 
 	volume = 35
@@ -987,11 +987,11 @@
 				break
 
 	var/turf/T = src.loc			// hide if turf is not intact
-	if(level == 1 && !T.is_plating()) hide(1)
+	if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/cap/visible
-	level = 2
+	level = ABOVE_PLATING_LEVEL
 	icon_state = "cap"
 
 /obj/machinery/atmospherics/pipe/cap/visible/scrubbers
@@ -1011,7 +1011,7 @@
 	color = PIPE_COLOR_BLUE
 
 /obj/machinery/atmospherics/pipe/cap/hidden
-	level = 1
+	level = BELOW_PLATING_LEVEL
 	icon_state = "cap"
 	alpha = 128
 
@@ -1042,7 +1042,7 @@
 	volume = 10000 //in liters, 1 meters by 1 meters by 2 meters ~tweaked it a little to simulate a pressure tank without needing to recode them yet
 	var/start_pressure = 25*ONE_ATMOSPHERE
 
-	level = 1
+	level = BELOW_PLATING_LEVEL
 	dir = SOUTH
 	initialize_directions = SOUTH
 	density = 1
@@ -1201,7 +1201,7 @@
 	name = "vent"
 	desc = "A large air vent"
 
-	level = 1
+	level = BELOW_PLATING_LEVEL
 
 	volume = 250
 
@@ -1372,7 +1372,7 @@
 
 /obj/machinery/atmospherics/proc/add_underlay_adapter(var/turf/T, var/obj/machinery/atmospherics/node, var/direction, var/icon_connect_type) //modified from add_underlay, does not make exposed underlays
 	if(node)
-		if(!T.is_plating() && node.level == 1 && istype(node, /obj/machinery/atmospherics/pipe))
+		if(!T.is_plating() && node.level == BELOW_PLATING_LEVEL && istype(node, /obj/machinery/atmospherics/pipe))
 			underlays += icon_manager.get_atmos_icon("underlay", direction, color_cache_name(node), "down" + icon_connect_type)
 		else
 			underlays += icon_manager.get_atmos_icon("underlay", direction, color_cache_name(node), "intact" + icon_connect_type)

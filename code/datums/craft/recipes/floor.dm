@@ -3,7 +3,9 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
 	)
+	flags = CRAFT_BATCH
 	time = 1 //Crafting individual tiles is fast
+	related_stats = list(STAT_MEC)
 
 /datum/craft_recipe/floor/wood
 	name = "wood floor tile"

@@ -50,7 +50,18 @@
 	path = /obj/item/toy/plushie
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/mirror
+/datum/gear/plush_toy/New()
+	..()
+	var/plushes = list(
+		"mouse plush"	=	/obj/item/toy/plushie/mouse,
+		"kitten plush"	=	/obj/item/toy/plushie/kitten,
+		"lizard plush"	=	/obj/item/toy/plushie/lizard,
+		"spider plush"	=	/obj/item/toy/plushie/spider,
+		"farwa plush"	=	/obj/item/toy/plushie/farwa,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(plushes)
+
+/datum/gear/mirror/
 	display_name = "handheld mirror"
 	sort_category = "Cosmetics"
 	path = /obj/item/weapon/mirror

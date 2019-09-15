@@ -1,8 +1,8 @@
 /obj/item/weapon/gun/projectile/automatic/idaho
 	name = "FS SMG 9x19 \"Idaho\""
 	desc = "The Idaho is a cheap self-defence weapon, mass-produced by \"Frozen Star\" for paramilitary and private use. Uses 9mm rounds."
-	icon_state = "saber"
-	item_state = "saber"
+	icon_state = "idaho"
+	item_state = "idaho"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = "9mm"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
@@ -20,7 +20,7 @@
 	firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    dispersion=list(0.0, 0.6, 0.6), icon="burst"),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,     icon="burst"),
 		)
 
 /obj/item/weapon/gun/projectile/automatic/idaho/update_icon()

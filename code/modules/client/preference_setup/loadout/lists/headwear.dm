@@ -31,6 +31,7 @@
 	allowed_roles = list("Technomancer", "Technomancer Exultant")
 	path = /obj/item/clothing/head/engineering
 	sort_category = "Faction: Technomancer"
+	allowed_roles = list(JOBS_ENGINEERING)
 
 /datum/gear/head/hardhat
 	display_name = "hardhat selection"

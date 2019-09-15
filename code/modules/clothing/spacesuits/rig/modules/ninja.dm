@@ -52,7 +52,7 @@
 
 	anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)
 
-	H.visible_message("[H.name] melds into the shadows into thin air!",1)
+	H.visible_message("[H.name] melds into the shadows!",1)
 
 /obj/item/rig_module/stealth_field/deactivate()
 
@@ -61,7 +61,7 @@
 
 	var/mob/living/carbon/human/H = holder.wearer
 
-	H << SPAN_DANGER("You are now visible.")
+	to_chat(H, SPAN_DANGER("You are now visible."))
 	H.invisibility = 0
 	H.alpha = 255
 
@@ -115,7 +115,7 @@
 	var/mob/living/carbon/human/H = holder.wearer
 
 	if(!istype(H.loc, /turf))
-		H << SPAN_WARNING("You cannot teleport out of your current location.")
+		to_chat(H, SPAN_WARNING("You cannot teleport out of your current location."))
 		return 0
 
 	var/turf/T
@@ -137,19 +137,19 @@
 
 
 	if(!T || T.density)
-		H << SPAN_WARNING("You cannot teleport into solid walls.")
+		to_chat(H, SPAN_WARNING("You cannot teleport into solid walls."))
 		return 0
 
 	if(isAdminLevel(T.z))
-		H << SPAN_WARNING("You cannot use your teleporter on this Z-level.")
+		to_chat(H, SPAN_WARNING("You cannot use your teleporter on this Z-level."))
 		return 0
 
 	if(T.contains_dense_objects())
-		H << SPAN_WARNING("You cannot teleport to a location with solid objects.")
+		to_chat(H, SPAN_WARNING("You cannot teleport to a location with solid objects."))
 		return 0
 
 	if(T.z != H.z || get_dist(T, get_turf(H)) > world.view)
-		H << SPAN_WARNING("You cannot teleport to such a distant object.")
+		to_chat(H, SPAN_WARNING("You cannot teleport to such a distant object."))
 		return 0
 
 	phase_out(H,get_turf(H))

@@ -24,6 +24,7 @@
 	sort_category = "Gloves and Handwear"
 	path = /obj/item/clothing/gloves/thick
 	slot = slot_gloves
+	cost = 2
 
 /datum/gear/gloves/evening
 	display_name = "gloves, evening"

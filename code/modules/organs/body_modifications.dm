@@ -1,7 +1,3 @@
-#define MODIFICATION_ORGANIC 1
-#define MODIFICATION_SILICON 2
-#define MODIFICATION_REMOVED 3
-
 var/global/list/body_modifications = list()
 var/global/list/modifications_types = list(
 	BP_CHEST  = "", BP_BACK   = "", BP_HEAD   = "", BP_GROIN = "",
@@ -59,7 +55,7 @@ var/global/list/modifications_types = list(
 		if(parent_organ)
 			var/datum/body_modification/parent = P.get_modification(parent_organ)
 			if(parent.nature > nature)
-				usr << "[name] can't be attached to [parent.name]"
+				to_chat(usr, "[name] can't be attached to [parent.name]")
 				return FALSE
 
 	if(!allow_nt)
@@ -182,7 +178,7 @@ var/global/list/modifications_types = list(
 
 /datum/body_modification/organ/assisted/create_organ(var/mob/living/carbon/holder, var/O, var/color)
 	var/obj/item/organ/I = ..(holder,O,color)
-	I.robotic = ORGAN_ASSISTED
+	I.nature = MODIFICATION_ASSISTED
 	I.min_bruised_damage = 15
 	I.min_broken_damage = 35
 	return I
@@ -198,7 +194,7 @@ var/global/list/modifications_types = list(
 
 /datum/body_modification/organ/robotize_organ/create_organ(var/mob/living/carbon/holder, O, color)
 	var/obj/item/organ/I = ..(holder,O,color)
-	I.robotic = ORGAN_ROBOT
+	I.nature = MODIFICATION_SILICON
 	if(istype(I, /obj/item/organ/internal/eyes))
 		var/obj/item/organ/internal/eyes/E = I
 		E.robo_color = iscolor(color) ? color : "#FFFFFF"
@@ -256,7 +252,3 @@ var/global/list/modifications_types = list(
 	var/obj/item/organ/internal/eyes/heterohromia/E = new(holder,organ_type,color)
 	E.second_color = color
 	return E
-
-#undef MODIFICATION_REMOVED
-#undef MODIFICATION_ORGANIC
-#undef MODIFICATION_SILICON

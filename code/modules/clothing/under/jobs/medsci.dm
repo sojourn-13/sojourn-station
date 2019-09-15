@@ -7,7 +7,7 @@
 	icon_state = "director"
 	item_state = "lb_suit"
 
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/scientist
 	desc = "A dark navy scientist's jacket complete with navy pants. The fibre offers minor biohazard protection."
@@ -16,7 +16,7 @@
 	item_state = "w_suit"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/under/rank/chemist
 	desc = "A orange chemist's shirt complete with tan pants. The fiber offers minor biohazard protection."
@@ -25,7 +25,7 @@
 	item_state = "w_suit"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /*
  * Medical
@@ -37,7 +37,7 @@
 	item_state = "w_suit"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/virologist
 	desc = "A green virologist's shirt complete with tan pants. The fiber offers minor biohazard protection."
@@ -46,7 +46,7 @@
 	item_state = "w_suit"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medical
 	desc = "A blue doctor's shirt complete with tan pants. The fiber offers minor biohazard protection."
@@ -55,7 +55,7 @@
 	item_state = "w_suit"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/scrubs
 	name = "blue scrubs"

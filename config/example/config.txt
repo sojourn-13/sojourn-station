@@ -311,3 +311,8 @@ EMPTY_SERVER_RESTART_TIME 30
 ## 1 Puts Border Control into 'learning mode' and will have it automatically whitelist new connections
 ## 2 Puts Border Control into 'enforcing mode' and will have it deny connections that are not already whitelisted.
 BORDER_CONTROL 0
+
+## EMOJI ###
+## Comment this out if you want to disable emojis
+# EMOJIS
+

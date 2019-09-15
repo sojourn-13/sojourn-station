@@ -21,7 +21,7 @@
 		)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GLASS = 2)
 	var/up = 0
-	armor = list(melee = 40, bullet = 30, laser = 30,energy = 30, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 30, energy = 30, bomb = 0, bio = 0, rad = 0)
 	flags_inv = (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 	body_parts_covered = HEAD|FACE|EYES
 	action_button_name = "Flip Welding Mask"
@@ -50,7 +50,7 @@
 			flash_protection = initial(flash_protection)
 			tint = initial(tint)
 			icon_state = base_state
-			usr << "You flip the [src] down to protect your eyes."
+			to_chat(usr, "You flip the [src] down to protect your eyes.")
 		else
 			src.up = !src.up
 			body_parts_covered &= ~(EYES|FACE)
@@ -58,7 +58,7 @@
 			tint = TINT_NONE
 			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 			icon_state = "[base_state]up"
-			usr << "You push the [src] up out of your face."
+			to_chat(usr, "You push the [src] up out of your face.")
 		update_wear_icon()	//so our mob-overlays
 		usr.update_action_buttons()
 
@@ -155,7 +155,52 @@ yuki_matsuda_1
 /obj/item/clothing/head/ushanka/attack_self(mob/user as mob)
 	if(src.icon_state == "ushankadown")
 		src.icon_state = "ushankaup"
-		user << "You raise the ear flaps on the ushanka."
+		to_chat(user, "You raise the ear flaps on the ushanka.")
 	else
 		src.icon_state = "ushankadown"
-		user << "You lower the ear flaps on the ushanka."
+		to_chat(user, "You lower the ear flaps on the ushanka.")
+
+/*
+ * Pumpkin head
+ */
+/obj/item/clothing/head/pumpkinhead
+	name = "carved pumpkin"
+	desc = "A jack o' lantern! Believed to ward off evil spirits."
+	icon_state = "hardhat0_pumpkin"//Could stand to be renamed
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EYES
+	brightness_on = 2
+	light_overlay = "helmet_light"
+	w_class = ITEM_SIZE_NORMAL
+
+/*
+ * Kitty ears
+ */
+/obj/item/clothing/head/kitty
+	name = "kitty ears"
+	desc = "A pair of kitty ears. Meow!"
+	icon_state = "kitty"
+	body_parts_covered = 0
+	siemens_coefficient = 1.5
+	item_icons = list()
+
+/obj/item/clothing/head/kitty/equipped(mob/user, slot)
+	if(slot == slot_head)
+		update_icon(user)
+	..()
+
+/obj/item/clothing/head/kitty/update_icon(var/mob/living/carbon/human/user)
+	if(!istype(user))
+		return
+	var/icon/ears = new/icon('icons/inventory/head/mob.dmi', "kitty")
+	ears.Blend(user.hair_color, ICON_ADD)
+
+	var/icon/earbit = new/icon('icons/inventory/head/mob.dmi', "kittyinner")
+	ears.Blend(earbit, ICON_OVERLAY)
+
+/obj/item/clothing/head/richard
+	name = "chicken mask"
+	desc = "You can hear the distant sounds of rhythmic electronica."
+	icon_state = "richard"
+	body_parts_covered = HEAD|FACE
+	flags_inv = BLOCKHAIR

@@ -33,7 +33,7 @@
 		W.loc = src
 		if(istype(W, /obj/item/weapon/paper))
 			toppaper = W
-		user << SPAN_NOTICE("You clip the [W] onto \the [src].")
+		to_chat(user, SPAN_NOTICE("You clip the [W] onto \the [src]."))
 		update_icon()
 
 	else if(istype(toppaper) && istype(W, /obj/item/weapon/pen))
@@ -86,7 +86,7 @@
 					usr.drop_item()
 					W.loc = src
 					haspen = W
-					usr << SPAN_NOTICE("You slot the pen into \the [src].")
+					to_chat(usr, SPAN_NOTICE("You slot the pen into \the [src]."))
 
 		else if(href_list["write"])
 			var/obj/item/weapon/P = locate(href_list["write"])
@@ -147,7 +147,7 @@
 			var/obj/item/P = locate(href_list["top"])
 			if(P && (P.loc == src) && istype(P, /obj/item/weapon/paper) )
 				toppaper = P
-				usr << SPAN_NOTICE("You move [P.name] to the top.")
+				to_chat(usr, SPAN_NOTICE("You move [P.name] to the top."))
 
 		//Update everything
 		attack_self(usr)

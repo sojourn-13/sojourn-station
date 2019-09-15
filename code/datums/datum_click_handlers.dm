@@ -31,7 +31,7 @@
 				qdel(src)
 		else
 			//Ability fail, delete ourselves
-			owner.mob << "For some reason you can't use [handler_name] ability"
+			to_chat(owner.mob, "For some reason you can't use [handler_name] ability")
 			qdel(src)
 
 		return FALSE //As long as we're not clicking a hud object, we drop the click
@@ -95,11 +95,9 @@
 	firing = FALSE
 	target = null
 	if(reciever)
-		reciever.recoil = initial(reciever.recoil)
 		reciever.cursor_check()
 
 /datum/click_handler/fullauto/proc/do_fire()
-	reciever.recoil += reciever.recoil_buildup //Add shitloads of recoil.
 	reciever.afterattack(target, owner.mob, FALSE)
 
 /datum/click_handler/fullauto/MouseDown(object,location,control,params)
@@ -157,11 +155,11 @@
 
 /datum/click_handler/changeling/use_ability(mob/living/carbon/human/user,atom/target) //Check can mob use a ability
 	if (user.stat == DEAD)
-		user << "No! You dead!"
+		to_chat(user, "No! You dead!")
 		user.kill_CH()
 		return 0
 	if (istype(user.loc, /obj/mecha))
-		user << "Cannot use [handler_name] in mecha!"
+		to_chat(user, "Cannot use [handler_name] in mecha!")
 		user.kill_CH()
 		return 0
 
