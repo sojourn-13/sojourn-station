@@ -548,6 +548,7 @@
 		/datum/design/autolathe/circuit/autolathe_excelsior,
 		/datum/design/autolathe/circuit/shieldgen_excelsior,
 		/datum/design/autolathe/circuit/reconstructor_excelsior,
+		/datum/design/autolathe/circuit/teleporter_excelsior,
 		/datum/design/autolathe/circuit/diesel_excelsior,
 		/datum/design/autolathe/circuit/turret_excelsior,
 		/datum/design/autolathe/circuit/autolathe_disk_cloner,
@@ -595,7 +596,42 @@
 		/datum/design/autolathe/clothing/excelsior_helmet
 	)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_rusted
+	disk_name = "Excelsior Means of Resolution"
+	desc = "A little rusty, but you can still seize it."
+	icon_state = "excelsior"
 
+	license = 0
+	designs = list(
+		/datum/design/autolathe/circuit/autolathe_excelsior,
+		/datum/design/autolathe/circuit/shieldgen_excelsior,
+		/datum/design/autolathe/circuit/teleporter_excelsior,
+		/datum/design/autolathe/circuit/diesel_excelsior,
+		/datum/design/autolathe/circuit/turret_excelsior,
+		/datum/design/autolathe/circuit/autolathe_disk_cloner,
+		/datum/design/autolathe/gun/makarov,
+		/datum/design/autolathe/sec/silencer,
+		/datum/design/autolathe/ammo/magazine_mc9mm,
+		/datum/design/autolathe/gun/ak47,
+		/datum/design/autolathe/ammo/c762_long,
+		/datum/design/autolathe/ammo/box_a762,
+		/datum/design/autolathe/device/excelsiormine,
+		/datum/design/autolathe/sec/beartrap,
+		/datum/design/autolathe/clothing/excelsior_armor,
+		/datum/design/autolathe/clothing/excelsior_helmet,
+		/datum/design/autolathe/cell/large/excelsior,
+		/datum/design/autolathe/cell/medium/excelsior,
+		/datum/design/autolathe/cell/small/excelsior,
+		/datum/design/research/item/part/micro_mani,
+		/datum/design/research/item/part/subspace_amplifier,
+		/datum/design/research/item/part/subspace_crystal,
+		/datum/design/research/item/part/subspace_transmitter,
+		/datum/design/autolathe/part/igniter,
+		/datum/design/autolathe/part/signaler,
+		/datum/design/autolathe/part/sensor_prox,
+		/datum/design/research/item/part/basic_capacitor,
+		/datum/design/autolathe/part/camera_assembly
+	)
 // One Star
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar
 	disk_name = "One Star Tool Pack"

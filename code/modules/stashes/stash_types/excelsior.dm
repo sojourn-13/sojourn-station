@@ -9,6 +9,7 @@
 	nonmaint_reroll = 100
 	contents_list_base = list(/obj/item/weapon/circuitboard/excelsiorautolathe = 1,
 	 /obj/item/weapon/circuitboard/excelsior_teleporter = 1,
+	 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_rusted = 1,
 	 /obj/item/weapon/implanter/excelsior/broken = 2)
 
 	contents_list_random = list(/obj/item/weapon/implantcase/excelsior/broken = 70,
