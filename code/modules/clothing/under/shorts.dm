@@ -1,3 +1,5 @@
+/*Athletic Shorts*/
+
 /obj/item/clothing/under/shorts
 	name = "athletic red shorts"
 	icon_state = "redshorts"
@@ -33,15 +35,7 @@
 	gender = PLURAL
 	body_parts_covered = LOWER_TORSO
 
-/obj/item/clothing/under/shorts/white
-	name = "white shorts"
-	desc = "A pair of standard white shorts."
-	icon_state = "whiteshorts"
-
-/obj/item/clothing/under/shorts/white/female
-	name = "white slim shorts"
-	desc = "A pair of white shorts with a slim design."
-	icon_state = "whiteshorts_f"
+/*Jeans Shorts*/
 
 /obj/item/clothing/under/shorts/jeans
 	name = "standard jeans shorts"
@@ -101,3 +95,13 @@
 	name = "khaki slim shorts"
 	desc = "A pair of khaki shorts with a slim design."
 	icon_state = "khaki_shorts_f"
+
+/obj/item/clothing/under/shorts/white
+	name = "white shorts"
+	desc = "A pair of standard white shorts."
+	icon_state = "whiteshorts"
+
+/obj/item/clothing/under/shorts/white/female
+	name = "white slim shorts"
+	desc = "A pair of white shorts with a slim design."
+	icon_state = "whiteshorts_f"

@@ -1,3 +1,5 @@
+/*Jumpsuits*/
+
 /obj/item/clothing/under/color/black
 	name = "black jumpsuit"
 	initial_name = "black jumpsuit"
@@ -32,7 +34,6 @@
 	desc = "A standard-issue jumpsuit produced for detention facilities with a orange design."
 	icon_state = "orange"
 	item_state = "o_suit"
-
 	has_sensor = 2
 	sensor_mode = 3
 
@@ -142,11 +143,12 @@
 	item_state = "r_suit"
 
 /obj/item/clothing/under/custom
-	name = "customized jumpsuit"
-	initial_name = "customized jumpsuit"
+	name = "jumpsuit"
 	desc = "A specialised jumpsuit with a tailored color."
 	icon_state = "white"
 	item_state = "w_suit"
+
+/*Jumpskirts*/
 
 /obj/item/clothing/under/jumpskirt/black
 	name = "black jumpskirt"
@@ -235,8 +237,7 @@
 	item_state = "w_suit"
 
 /obj/item/clothing/under/customskirt
-	name = "customized jumpskirt"
-	initial_name = "customized jumpskirt"
+	name = "jumpskirt"
 	desc = "A specialised jumpskirt with a tailored color."
 	icon_state = "white_skirt"
 	item_state = "w_suit"

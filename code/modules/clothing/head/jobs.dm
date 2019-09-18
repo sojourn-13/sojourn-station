@@ -1,4 +1,3 @@
-
 //Bartender
 /obj/item/clothing/head/rank/chef
 	name = "chef's hat"
@@ -29,7 +28,7 @@
 
 //HOP
 /obj/item/clothing/head/rank/first_officer
-	name = "crew resource's hat"
+	name = "first officer's hat"
 	desc = "A stylish hat that both protects you from enraged former-crewmembers and gives you a false sense of authority."
 	icon_state = "hopcap"
 
@@ -41,9 +40,6 @@
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
 
-//Chaplain
-
-
 //Mime
 /obj/item/clothing/head/beret
 	name = "red beret"
@@ -53,17 +49,17 @@
 
 //Security
 /obj/item/clothing/head/sec/navy/officer
-	name = "Ironhammer operative beret"
+	name = "ironhammer operative beret"
 	desc = "A navy blue Ironhammer beret signifying a Operative position."
 	icon_state = "beret_navy_officer"
 
 /obj/item/clothing/head/sec/navy/hos
-	name = "Ironhammer commander beret"
+	name = "ironhammer commander beret"
 	desc = "A grey Ironhammer beret signifying a Commander position."
 	icon_state = "beret_navy_hos"
 
 /obj/item/clothing/head/sec/navy/warden
-	name = "Ironhammer sergeant beret"
+	name = "ironhammer sergeant beret"
 	desc = "A red Ironhammer beret signifying a Gunnery Sergeant position."
 	icon_state = "beret_navy_warden"
 
@@ -83,14 +79,12 @@
 	icon_state = "beretblack"
 
 /obj/item/clothing/head/seccap
-	name = "Ironhammer security cap"
-	initial_name = "Ironhammer security cap"
+	name = "ironhammer security cap"
 	desc = "A generic red Ironhammer field cap."
 	icon_state = "secsoft"
 
 /obj/item/clothing/head/seccorp
-	name = "Ironhammer inspector cap"
-	initial_name = "Ironhammer inspector cap"
+	name = "ironhammer inspector cap"
 	desc = "A black field cap with an Ironhammer Inspector logo."
 	icon_state = "corpsoft"
 

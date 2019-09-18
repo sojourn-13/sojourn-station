@@ -12,18 +12,18 @@
 	item_state = "headset" // lol
 	body_parts_covered = 0
 
+/obj/item/clothing/glasses/scanners
+	name = "scanning goggles"
+	desc = "A very oddly shaped pair of goggles with bits of wire poking out the sides. A soft humming sound emanates from it."
+	icon_state = "uzenwa_sissra_1"
+
 /obj/item/clothing/glasses/regular
-	name = "prescription glasses"
+	name = "glasses"
 	desc = "Standard glasses that correct and enhance vision."
 	icon_state = "glasses"
 	item_state = "glasses"
 	prescription = 1
 	body_parts_covered = 0
-
-/obj/item/clothing/glasses/scanners
-	name = "scanning goggles"
-	desc = "A very oddly shaped pair of goggles with bits of wire poking out the sides. A soft humming sound emanates from it."
-	icon_state = "uzenwa_sissra_1"
 
 /obj/item/clothing/glasses/regular/hipster
 	name = "hipster glasses"
@@ -31,9 +31,9 @@
 	icon_state = "hipster_glasses"
 	item_state = "hipster_glasses"
 
-/obj/item/clothing/glasses/regular/threedglasses
-	desc = "Glasses that create threedimensional images. They also look cool."
+/obj/item/clothing/glasses/threedglasses
 	name = "3d glasses"
+	desc = "Glasses that create threedimensional images. They also look cool."
 	icon_state = "3d"
 	item_state = "3d"
 	body_parts_covered = 0
@@ -46,6 +46,7 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/sunglasses
+	name = "sunglasses"
 	desc = "A pair of standard sunglasses."
 	name = "sunglasses"
 	icon_state = "sun"
@@ -53,25 +54,33 @@
 	darkness_view = -1
 	flash_protection = FLASH_PROTECTION_MODERATE
 
-/obj/item/clothing/glasses/sunglasses/aviator
-	name = "aviators"
-	desc = "A pair of designer sunglasses."
+/obj/item/clothing/glasses/sunglasses/big
+	name = "large sunglasses"
+	desc = "A rather large pair of sunglasses."
+	icon_state = "bigsunglasses"
+	item_state = "bigsunglasses"
+
+/obj/item/clothing/glasses/aviator
+	name = "black aviators"
+	desc = "A pair of black-tinted designer sunglasses."
 	icon_state = "aviator"
 	item_state = "aviator"
+	darkness_view = -1
+	flash_protection = FLASH_PROTECTION_MODERATE
 
-/obj/item/clothing/glasses/sunglasses/aviatorred
+/obj/item/clothing/glasses/aviator/red
 	name = "red aviators"
 	desc = "A pair of red-tinted designer sunglasses."
 	icon_state = "aviator_sec"
 	item_state = "aviator_sec"
 
-/obj/item/clothing/glasses/sunglasses/aviatorgreen
+/obj/item/clothing/glasses/aviator/green
 	name = "green aviators"
 	desc = "A pair of green-tinted designer sunglasses."
 	icon_state = "aviator_eng"
 	item_state = "aviator_eng"
 
-/obj/item/clothing/glasses/sunglasses/aviatorblue
+/obj/item/clothing/glasses/aviator/blue
 	name = "blue aviators"
 	desc = "A pair of blue-tinted designer sunglasses."
 	icon_state = "aviator_med"
@@ -91,14 +100,3 @@
 	icon_state = "tape_cross"
 	item_state = null
 	w_class = ITEM_SIZE_TINY
-
-/obj/item/clothing/glasses/sunglasses
-	name = "sunglasses"
-	desc = "Glasses designed for eye protection. The shielding makes good flash protection."
-	prescription = TRUE
-
-/obj/item/clothing/glasses/sunglasses/big
-	name = "large sunglasses"
-	desc = "Rather large glasses designed for eye protection. The shielding makes good flash protection."
-	icon_state = "bigsunglasses"
-	item_state = "bigsunglasses"

@@ -8,25 +8,25 @@
 	name = "black beanie"
 	desc = "A stylish and warm black beanie."
 	icon_state = "beanie"
-	color = "#4A4A4B" //Grey but it looks black
+	color = "#4A4A4B" //grey but it looks black
 
 /obj/item/clothing/head/beanie/red
 	name = "red beanie"
 	desc = "A stylish and warm red beanie."
 	icon_state = "beanie"
-	color = "#D91414" //Red
+	color = "#D91414" //red
 
 /obj/item/clothing/head/beanie/green
 	name = "green beanie"
 	desc = "A stylish and warm green beanie."
 	icon_state = "beanie"
-	color = "#5C9E54" //Green
+	color = "#5C9E54" //green
 
 /obj/item/clothing/head/beanie/darkblue
 	name = "dark blue beanie"
 	desc = "A stylish and warm dark blue beanie."
 	icon_state = "beanie"
-	color = "#1E85BC" //Blue
+	color = "#1E85BC" //blue
 
 /obj/item/clothing/head/beanie/purple
 	name = "purple beanie"
@@ -38,7 +38,7 @@
 	name = "yellow beanie"
 	desc = "A stylish and warm yellow beanie."
 	icon_state = "beanie"
-	color = "#E0C14F" //Yellow
+	color = "#E0C14F" //yellow
 
 /obj/item/clothing/head/beanie/orange
 	name = "orange beanie"
@@ -50,9 +50,7 @@
 	name = "cyan beanie"
 	desc = "A stylish and warm cyan beanie."
 	icon_state = "beanie"
-	color = "#54A3CE" //Cyan (Or close to it)
-
-//Striped Beanies have unique sprites
+	color = "#54A3CE" //cyan
 
 /obj/item/clothing/head/beanie/christmas
 	name = "christmas beanie"

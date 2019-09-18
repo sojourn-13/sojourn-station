@@ -6,6 +6,12 @@
 	icon_state = "assistant"
 	item_state = "assistant"
 
+/obj/item/clothing/under/rank/assistant/formal
+	name = "assistant's formal uniform"
+	desc = "An assistant's formal-wear. Why an assistant needs formal-wear is still unknown."
+	icon_state = "assistant_formal"
+	item_state = "gy_suit"
+
 /obj/item/clothing/under/rank/bartender
 	desc = "A smart bartender's suit adorned with a bow tie."
 	name = "bartender's uniform"
@@ -16,6 +22,12 @@
 	desc = "An authoritative green uniform with gold flair denoting the rank of captain."
 	name = "captain's uniform"
 	icon_state = "captain"
+	item_state = "b_suit"
+
+/obj/item/clothing/under/rank/captain/formal
+	name = "captain's formal uniform"
+	desc = "A captain's formal-wear, saved for special occasions."
+	icon_state = "captain_formal"
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/cargotech
@@ -43,6 +55,12 @@
 	name = "first officer's uniform"
 	icon_state = "hop"
 	item_state = "b_suit"
+
+/obj/item/clothing/under/rank/first_officer/suit
+	name = "first officer's suit"
+	desc = "A teal suit complete with a white shirt and orange tie. This one has a first officer's badge."
+	icon_state = "teal_suit"
+	item_state = "g_suit"
 
 /obj/item/clothing/under/rank/hydroponics
 	desc = "A hardy dark green jumpsuit, designed to provide protection from botanic dangers."

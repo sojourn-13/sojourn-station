@@ -100,6 +100,9 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/warning/full
 	icon_state = "warningfull"
 
+/obj/effect/floor_decal/industrial/warning/fulltile
+	icon_state = "warningfulltile"
+
 /obj/effect/floor_decal/industrial/warning/cee
 	icon_state = "warningcee"
 
@@ -116,13 +119,26 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/danger/cee
 	icon_state = "dangercee"
 
-/obj/effect/floor_decal/industrial/warning/dust
+/obj/effect/floor_decal/industrial/warningdust
 	name = "hazard stripes"
 	icon_state = "warning_dust"
 
-/obj/effect/floor_decal/industrial/warning/dust/corner
+/obj/effect/floor_decal/industrial/warningdust/corner
 	name = "hazard stripes"
 	icon_state = "warningcorner_dust"
+
+/obj/effect/floor_decal/industrial/warningdust/cee
+	name = "hazard stripes"
+	icon_state = "end_dust"
+
+/obj/effect/floor_decal/industrial/warningdust/full
+	name = "hazard stripes"
+	icon_state = "box_dust"
+
+/obj/effect/floor_decal/industrial/warningdust/fulltile
+	name = "hazard stripes"
+	icon_state = "full_dust"
+
 
 /obj/effect/floor_decal/industrial/hatch
 	name = "white hatch"
@@ -144,6 +160,24 @@ var/list/floor_decals = list()
 	name = "grey hatch"
 	color = "#808080"
 
+/obj/effect/floor_decal/industrial/caution
+	icon_state = "caution"
+
+/obj/effect/floor_decal/industrial/caution/white
+	icon_state = "caution_white"
+
+/obj/effect/floor_decal/industrial/caution/red
+	icon_state = "caution_red"
+
+/obj/effect/floor_decal/industrial/stand_clear
+	icon_state = "stand_clear"
+
+/obj/effect/floor_decal/industrial/stand_clear/white
+	icon_state = "stand_clear_white"
+
+/obj/effect/floor_decal/industrial/stand_clear/red
+	icon_state = "stand_clear_red"
+
 /obj/effect/floor_decal/industrial/outline
 	name = "white outline"
 	icon_state = "outline"
@@ -164,9 +198,60 @@ var/list/floor_decals = list()
 	name = "red outline"
 	color = "#990C0C"
 
+/obj/effect/floor_decal/industrial/botleft
+	icon_state = "bot_left_white"
+
+/obj/effect/floor_decal/industrial/botleft/yellow
+	icon_state = "bot_left_yellow"
+
+/obj/effect/floor_decal/industrial/botleft/red
+	icon_state = "bot_left_red"
+
+/obj/effect/floor_decal/industrial/botright
+	icon_state = "bot_right_white"
+
+/obj/effect/floor_decal/industrial/botright/yellow
+	icon_state = "bot_right_yellow"
+
+/obj/effect/floor_decal/industrial/botright/red
+	icon_state = "bot_right_red"
+
+/obj/effect/floor_decal/industrial/arrows
+	icon_state = "arrows"
+
+/obj/effect/floor_decal/industrial/arrows/white
+	icon_state = "arrows_white"
+
+/obj/effect/floor_decal/industrial/arrows/red
+	icon_state = "arrows_red"
+
+/obj/effect/floor_decal/industrial/box
+	icon_state = "box"
+
+/obj/effect/floor_decal/industrial/box/corners
+	icon_state = "box_corners"
+
+/obj/effect/floor_decal/industrial/box/white
+	icon_state = "box_white"
+
+/obj/effect/floor_decal/industrial/box/white/corners
+	icon_state = "box_corners_white"
+
+/obj/effect/floor_decal/industrial/box/red
+	icon_state = "box_red"
+
+/obj/effect/floor_decal/industrial/box/red/corners
+	icon_state = "box_corners_red"
+
 /obj/effect/floor_decal/industrial/loading
 	name = "loading area"
 	icon_state = "loadingarea"
+
+/obj/effect/floor_decal/industrial/loading/white
+	icon_state = "loadingarea_white"
+
+/obj/effect/floor_decal/industrial/loading/red
+	icon_state = "loadingarea_red"
 
 /obj/effect/floor_decal/border/carpet/red
 	name = "carpet"
@@ -388,6 +473,34 @@ var/list/floor_decals = list()
 	name = "derelict16"
 	icon_state = "derelict16"
 
+/obj/effect/floor_decal/floordetail
+	color = COLOR_GUNMETAL
+	icon_state = "manydot"
+	appearance_flags = 0
+
+/obj/effect/floor_decal/floordetail/New(var/newloc, var/newdir, var/newcolour)
+	color = null //color is here just for map preview, if left it applies both our and tile colors.
+	..()
+
+/obj/effect/floor_decal/floordetail/tiled
+	icon_state = "manydot_tiled"
+
+/obj/effect/floor_decal/floordetail/pryhole
+	icon_state = "pryhole"
+
+/obj/effect/floor_decal/floordetail/edgedrain
+	icon_state = "edge"
+
+/obj/effect/floor_decal/floordetail/traction
+	icon_state = "traction"
+
+/obj/effect/floor_decal/ntlogo
+	icon_state = "ntlogo"
+
+/obj/effect/floor_decal/torchltdlogo
+	alpha = 230
+	icon_state = "torch"
+
 /obj/effect/floor_decal/fact_plaque
 	name = "plaque"
 	icon_state = "plaque"
@@ -560,6 +673,10 @@ var/list/floor_decals = list()
 	name = "path decal"
 	icon_state = "stop_decal5"
 
+/obj/effect/floor_decal/industrial/shutoff
+	name = "shutoff valve marker"
+	icon_state = "shutoff"
+
 /obj/effect/floor_decal/border/borderfloor
 	name = "border floor"
 	icon_state = "borderfloor"
@@ -687,6 +804,13 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/border/techfloor/hole/right
 	name = "hole right"
 	icon_state = "techfloor_hole_right"
+
+/obj/effect/floor_decal/border/stoneborder
+	name = "stone border"
+	icon_state = "stoneborder"
+
+/obj/effect/floor_decal/border/stoneborder/corner
+	icon_state = "stoneborder_c"
 
 /obj/effect/floor_decal/corner
 	icon_state = "corner_white"

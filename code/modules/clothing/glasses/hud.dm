@@ -16,7 +16,7 @@
 	return
 
 /obj/item/clothing/glasses/hud/health
-	name = "Health Scanner HUD"
+	name = "health scanner HUD"
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status."
 	icon_state = "healthhud"
 	body_parts_covered = 0
@@ -55,7 +55,7 @@
 		return
 
 /obj/item/clothing/glasses/sechud/tactical
-	name = "Ironhammer tactical HUD"
+	name = "ironhammer tactical HUD"
 	desc = "Flash-resistant goggles with inbuilt combat and security information."
 	icon_state = "swatgoggles"
 

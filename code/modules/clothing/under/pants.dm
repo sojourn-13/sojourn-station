@@ -1,3 +1,5 @@
+/*Pants*/
+
 /obj/item/clothing/under/pants
 	name = "standard jeans"
 	desc = "A nondescript pair of tough blue jeans."
@@ -121,9 +123,8 @@
 	desc = "A pair of tight-fitting yoga pants for those lazy days."
 	icon_state = "yogapants"
 
-/*
- * Baggy Pants
- */
+/*Baggy Pants*/
+
 /obj/item/clothing/under/pants/baggy
 	name = "standard baggy jeans"
 	desc = "A nondescript pair of tough baggy blue jeans."

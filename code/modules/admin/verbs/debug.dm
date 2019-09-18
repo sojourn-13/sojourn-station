@@ -470,7 +470,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/inspector/suit(M), slot_w_uniform)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/color/black(M), slot_shoes)
 
-			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_trench(M), slot_wear_suit)
+			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/rank/det_trench(M), slot_wear_suit)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/monocle(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/rank/inspector(M), slot_head)
 

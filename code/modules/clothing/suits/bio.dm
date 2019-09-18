@@ -87,11 +87,3 @@
 
 /obj/item/clothing/head/bio_hood/cmo
 	icon_state = "bio_cmo"
-
-//Plague Dr mask can be found in clothing/masks/gasmask.dm
-/obj/item/clothing/suit/costume/history/plaguedoctor
-	name = "plague doctor suit"
-	desc = "A large dark robe worn by medieval apothecaries. Spooky."
-	icon_state = "plaguedoctor"
-	item_state = "plaguedoctor"
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL

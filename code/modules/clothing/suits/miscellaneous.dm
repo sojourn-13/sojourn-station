@@ -1,11 +1,4 @@
 /*
- * Contains:
- *		Lasertag
- *		Costume
- *		Misc
- */
-
-/*
  * Lasertag
  */
 /obj/item/clothing/suit/bluetag
@@ -28,139 +21,6 @@
 	allowed = list (/obj/item/weapon/gun/energy/lasertag/red)
 	siemens_coefficient = 3.0
 
-/*
- * Costume
- */
-/obj/item/clothing/suit/costume/history/pirate
-	name = "pirate coat"
-	desc = "Yarr."
-	icon_state = "pirate"
-	item_state = "pirate"
-	body_parts_covered = UPPER_TORSO|ARMS
-
-/obj/item/clothing/suit/costume/halloween/mummy
-	name = "pharaoh tunic"
-	desc = "A dusty tunic covered in sandy residue. Feels royal."
-	icon_state = "pharoah"
-	item_state = "pharoah"
-
-/obj/item/clothing/suit/costume/halloween/flash
-	name = "flash costume"
-	desc = "A giant flash outfit. It's unlikely anything is scarier than this."
-	icon_state = "flashsuit"
-	body_parts_covered = HEAD
-	flags_inv = HIDEEARS|HIDEFACE|HIDEMASK
-
-/obj/item/clothing/suit/costume/job/sumo
-	name = "sumo wrestler costume"
-	desc = "An inflated sumo wrestler costume. It's quite hot."
-	icon_state = "sumo"
-	body_parts_covered = LOWER_TORSO|UPPER_TORSO|LEGS|ARMS
-	flags_inv = HIDESHOES|HIDEJUMPSUIT
-	item_state_slots = list(slot_r_hand_str = "classicponcho", slot_l_hand_str = "classicponcho")
-	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
-
-/obj/item/clothing/suit/costume/kinky/sexy_miner
-	name = "sexy miner costume"
-	desc = "A costume for the most macho of miners."
-	icon_state = "sexyminer"
-	body_parts_covered = LOWER_TORSO|HEAD
-	flags_inv = HIDEJUMPSUIT|HIDESHOES
-	item_state_slots = list(slot_r_hand_str = "miner", slot_l_hand_str = "miner")
-
-/obj/item/clothing/suit/costume/kinky/sexy_engineer
-	name = "sexy engineer costume"
-	desc = "A fake voidsuit that looks more for show than practicality."
-	icon_state = "engicost"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	flags_inv = HIDEJUMPSUIT|HIDESHOES
-	item_state_slots = list(slot_r_hand_str = "eng_voidsuit", slot_l_hand_str = "eng_voidsuit")
-
-/obj/item/clothing/suit/costume/kinky/sexy_scientist
-	name = "sexy scientist costume"
-	desc = "A costume befitting a rather sleazy scientist."
-	icon_state = "maxman"
-	body_parts_covered = LOWER_TORSO|LEGS|HEAD
-	flags_inv = HIDEJUMPSUIT|HIDESHOES
-	item_state_slots = list(slot_r_hand_str = "leather_jacket", slot_l_hand_str = "leather_jacket")
-
-/obj/item/clothing/suit/costume/kinky/sexy_lumberjack
-	name = "sexy lumberjack costume"
-	desc = "A lumberjack costume that smells of dusky pine."
-	icon_state = "sexylumber"
-	body_parts_covered = LOWER_TORSO
-	flags_inv = HIDESHOES|HIDEJUMPSUIT
-	item_state_slots = list(slot_r_hand_str = "red_labcoat", slot_l_hand_str = "red_labcoat")
-
-/obj/item/clothing/suit/costume/kinky/sexy_internalaffairs
-	name = "sexy internal affairs suit"
-	desc = "A suit that takes internal affairs too literally."
-	icon_state = "iacost"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|EYES
-	flags_inv = HIDEJUMPSUIT|HIDESHOES
-	item_state_slots = list(slot_r_hand_str = "suit_black", slot_l_hand_str = "suit_black")
-
-/obj/item/clothing/suit/costume/halloween/skeleton
-	name = "skeleton costume"
-	desc = "A body-tight costume with the human skeleton lined out on it."
-	icon_state = "skelecost"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|EYES|HEAD|FACE
-	flags_inv = HIDEJUMPSUIT|HIDESHOES|HIDEGLOVES
-	item_state_slots = list(slot_r_hand_str = "judge", slot_l_hand_str = "judge")
-
-/obj/item/clothing/suit/costume/halloween/madscientist
-	name = "mad scientist labcoat"
-	desc = "A green labcoat that only a truly insane genius would wear."
-	icon_state = "madscientist"
-	item_state = "madscientist" //Is this even used for anything?
-	blood_overlay_type = "coat"
-	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
-
-/obj/item/clothing/suit/costume/job/imperium_monk
-	name = "imperium monk robe"
-	desc = "A robe resembling that worn by xeno-killing monks."
-	icon_state = "imperium_monk"
-	body_parts_covered = HEAD|UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDESHOES|HIDEJUMPSUIT
-
-/obj/item/clothing/suit/costume/misc/santa
-	name = "santa suit"
-	desc = "A festive red suit great for handing out presents in."
-	icon_state = "santa"
-	item_state = "santa"
-	allowed = list(/obj/item) //for stuffing exta special presents
-
-/obj/item/clothing/suit/costume/misc/hastur
-	name = "hastur robes"
-	desc = "A strange set of stylish yellow robes."
-	icon_state = "hastur"
-	item_state_slots = list(slot_r_hand_str = "rad", slot_l_hand_str = "rad")
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-
-/obj/item/clothing/suit/costume/misc/snowman
-	name = "snowman suit"
-	desc = "Two white spheres covered in white glitter. 'Tis the season."
-	icon_state = "snowman"
-	item_state = "snowman"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	flags_inv = HIDEJUMPSUIT
-
-/obj/item/clothing/suit/costume/halloween/vampire
-	name = "vampire coat"
-	desc = "A gothic black and red coat worn by vampires."
-	icon_state = "draculacoat"
-	item_state = "draculacoat"
-
-/obj/item/clothing/suit/costume/misc/hacker
-	name = "classic hacker costume"
-	desc = "You would feel insanely cool wearing this."
-	icon_state = "hackercost"
-	body_parts_covered = LOWER_TORSO|UPPER_TORSO|LEGS|ARMS|EYES
-	flags_inv = HIDESHOES|HIDEJUMPSUIT
-	item_state_slots = list(slot_r_hand_str = "leather_coat", slot_l_hand_str = "leather_coat")
-
 /obj/item/clothing/suit/cyborg_suit
 	name = "cyborg suit"
 	desc = "Suit for a cyborg costume."
@@ -169,16 +29,6 @@
 	flags = CONDUCT
 	fire_resist = T0C+5200
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-
-/obj/item/clothing/suit/costume/job/judge
-	name = "judge's robe"
-	desc = "This robe commands authority."
-	icon_state = "judge"
-	item_state = "judge"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	allowed = list(/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/spacecash)
-	flags_inv = HIDEJUMPSUIT
-
 
 /obj/item/clothing/suit/wcoat
 	name = "waistcoat"
@@ -193,71 +43,6 @@ obj/item/clothing/suit/kimono
 	desc = "A traditional Japanese kimono."
 	icon_state = "kimono"
 
-/obj/item/clothing/suit/costume/halloween/syndicate
-	name = "red space suit replica"
-	icon_state = "syndicate"
-	item_state = "space_suit_syndicate"
-	desc = "A plastic replica of the syndicate space suit, you'll look just like a real murderous syndicate agent in this! This is a toy, it is not made for use in space!"
-	w_class = ITEM_SIZE_NORMAL
-	allowed = list(/obj/item/device/lighting/toggleable/flashlight,/obj/item/weapon/tank/emergency_oxygen,/obj/item/toy)
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	item_flags = COVER_PREVENT_MANIPULATION
-
-obj/item/clothing/suit/costume/halloween/web_bindings
-	name = "web bindings"
-	desc = "A webbed cocoon that completely restrains the wearer."
-	icon_state = "web_bindings"
-	item_state = "web_bindings"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
-
-
-/obj/item/clothing/suit/costume/animal/chicken
-	name = "chicken suit"
-	desc = "A suit that makes you look like a giant chicken."
-	icon_state = "chickensuit"
-	item_state = "chickensuit"
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	flags_inv = HIDESHOES|HIDEJUMPSUIT
-	siemens_coefficient = 2.0
-
-/obj/item/clothing/suit/costume/animal/bunny
-	name = "bunny suit"
-	desc = "Hop Hop Hop!"
-	icon_state = "bunnysuit"
-	item_state = "bunnysuit"
-	body_parts_covered = LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-
-/obj/item/clothing/suit/costume/animal/ian
-	name = "ian suit"
-	desc = "A suit resembling the famous space corgi.."
-	icon_state = "ian"
-	item_state = ""
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	flags_inv = HIDESHOES|HIDEJUMPSUIT
-	siemens_coefficient = 2.0
-
-
-/obj/item/clothing/suit/costume/animal/monkey
-	name = "monkey suit"
-	desc = "A suit perfect for some monkey business."
-	icon_state = "monkeysuit"
-	item_state = "monkeysuit"
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	siemens_coefficient = 2.0
-
-
-/obj/item/clothing/suit/costume/halloween/cardborg
-	name = "cardborg suit"
-	desc = "An ordinary cardboard box with holes cut in the sides."
-	icon_state = "cardborg"
-	item_state = "cardborg"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	flags_inv = HIDEJUMPSUIT
-
 /*
  * Misc
  */
@@ -271,21 +56,8 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	allowed = list(/obj/item/weapon/tank)
 
+/*Swimsuit*/
 
-//pyjamas
-//originally intended to be pinstripes >.>
-
-/obj/item/clothing/suit/costume/halloween/xenos
-	name = "xenomorph suit"
-	desc = "A suit made out of chitinous alien hide, resembling a xenomorph body."
-	icon_state = "xenos"
-	item_state = "xenos_helm"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	siemens_coefficient = 2.0
-
-
-//swimsuit
 /obj/item/clothing/under/swimsuit/
 	siemens_coefficient = 1
 	body_parts_covered = 0
@@ -338,6 +110,8 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	icon_state = "swim_white"
 	siemens_coefficient = 1
 
+/*Poncho*/
+
 /obj/item/clothing/suit/poncho
 	name = "brown poncho"
 	desc = "A comfortable sleeveless poncho with a brown design."
@@ -374,6 +148,8 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	icon_state = "blueponcho"
 	item_state = "blueponcho"
 
+/*Shirts*/
+
 /obj/item/clothing/suit/shirt
 	name = "corgi shirt"
 	desc = "A curiously comfortable shirt covered with a picture of a corgi."
@@ -392,76 +168,7 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	icon_state = "vapeshirt"
 	item_state = "vapeshirt"
 
-/obj/item/clothing/suit/storage/toggle/bomber
-	name = "bomber jacket"
-	desc = "A thick, well-worn leather bomber jacket."
-	icon_state = "bomber"
-	item_state = "bomber"
-	icon_open = "bomber_open"
-	icon_closed = "bomber"
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-
-/obj/item/clothing/suit/storage/leather_jacket
-	name = "grey leather jacket"
-	desc = "A sturdy grey jacket made out of synthetic leather."
-	icon_state = "leather_jacket"
-	item_state = "leather_jacket"
-	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-
-/obj/item/clothing/suit/storage/leather_jacket/vest
-	name = "black leather vest"
-	desc = "A sturdy black leather vest made out of synthetic leather."
-	icon_state = "leather_jacket_sleeveless"
-	item_state = "leather_jacket_sleeveless"
-
-/obj/item/clothing/suit/storage/leather_jacket/black
-	name = "black leather jacket"
-	desc = "A sturdy black jacket made out of synthetic leather."
-	icon_state = "leather_jacket2"
-	item_state = "leather_jacket2"
-
-/obj/item/clothing/suit/storage/puffer
-	name = "puffer jacket"
-	desc = "A comfortable grey puffer jacket."
-	icon_state = "pufferjacket"
-	item_state = "pufferjacket"
-
-/obj/item/clothing/suit/storage/puffer/vest
-	name = "puffer vest"
-	desc = "A comfortable grey puffer vest."
-	icon_state = "puffervest"
-	item_state = "puffervest"
-
-/obj/item/clothing/suit/storage/flannel
-	name = "grey flannel shirt"
-	desc = "A comfy flannel shirt with a grey design."
-	icon_state = "flannel"
-	item_state = "flannel"
-
-/obj/item/clothing/suit/storage/flannel/aqua
-	name = "aqua flannel shirt"
-	desc = "A comfy flannel shirt with a aqua design."
-	icon_state = "flannel_aqua"
-	item_state = "flannel_aqua"
-
-/obj/item/clothing/suit/storage/flannel/brown
-	name = "brown flannel shirt"
-	desc = "A comfy flannel shirt with a brown design."
-	icon_state = "flannel_brown"
-	item_state = "flannel_brown"
-
-/obj/item/clothing/suit/storage/flannel/red
-	name = "red flannel shirt"
-	desc = "A comfy flannel shirt with a red design."
-	icon_state = "flannel_red"
-	item_state = "flannel_red"
+/*Varsity Jackets*/
 
 /obj/item/clothing/suit/varsity
 	name = "black varsity jacket"
@@ -505,6 +212,8 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	icon_state = "varsity_pink"
 	item_state = "varsity_pink"
 
+/*Military Jackets*/
+
 /obj/item/clothing/suit/storage/miljacket
 	name = "drab military jacket"
 	desc = "A military canvas jacket in an olive drab design."
@@ -547,60 +256,80 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	icon_state = "militaryjacket_white"
 	item_state = "militaryjacket_white"
 
-/obj/item/clothing/suit/storage/toggle/hoodie
-	name = "grey hoodie"
-	desc = "A warm, grey sweatshirt."
-	icon_state = "grey_hoodie"
-	item_state = "grey_hoodie"
-	icon_open = "grey_hoodie_open"
-	icon_closed = "grey_hoodie"
-	min_cold_protection_temperature = T0C - 20
-	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+/*Track Jackets*/
 
-/obj/item/clothing/suit/storage/toggle/hoodie/black
-	name = "black hoodie"
-	desc = "A warm, black sweatshirt."
-	icon_state = "black_hoodie"
-	item_state = "black_hoodie"
-	icon_open = "black_hoodie_open"
-	icon_closed = "black_hoodie"
+/obj/item/clothing/suit/storage/toggle/track
+	name = "black track jacket"
+	desc = "A track jacket, for the athletic."
+	icon_state = "trackjacket"
 
-/obj/item/clothing/suit/storage/toggle/hoodie/orange
-	name = "orange hoodie"
-	desc = "A warm, orange sweatshirt."
-	icon_state = "orange_hoodie"
-	item_state = "orange_hoodie"
-	icon_open = "orange_hoodie_open"
-	icon_closed = "orange_hoodie"
+/obj/item/clothing/suit/storage/toggle/track/blue
+	name = "blue track jacket"
+	icon_state = "trackjacketblue"
 
-/obj/item/clothing/suit/storage/toggle/hoodie/blue
-	name = "blue hoodie"
-	desc = "A warm, blue sweatshirt."
-	icon_state = "blue_hoodie"
-	item_state = "blue_hoodie"
-	icon_open = "blue_hoodie_open"
-	icon_closed = "blue_hoodie"
+/obj/item/clothing/suit/storage/toggle/track/green
+	name = "green track jacket"
+	icon_state = "trackjacketgreen"
 
-/obj/item/clothing/suit/storage/toggle/hoodie/green
-	name = "green hoodie"
-	desc = "A warm, green sweatshirt."
-	icon_state = "green_hoodie"
-	item_state = "green_hoodie"
-	icon_open = "green_hoodie_open"
-	icon_closed = "green_hoodie"
+/obj/item/clothing/suit/storage/toggle/track/red
+	name = "red track jacket"
+	icon_state = "trackjacketred"
 
-/obj/item/clothing/suit/storage/toggle/hoodie/yellow
-	name = "yellow hoodie"
-	desc = "A warm, yellow sweatshirt."
-	icon_state = "yellow_hoodie"
-	item_state = "yellow_hoodie"
-	icon_open = "yellow_hoodie_open"
-	icon_closed = "yellow_hoodie"
+/obj/item/clothing/suit/storage/toggle/track/white
+	name = "white track jacket"
+	icon_state = "trackjacketwhite"
 
-/obj/item/clothing/suit/storage/toggle/hoodie/red
-	name = "red hoodie"
-	desc = "A warm, red sweatshirt."
-	icon_state = "red_hoodie"
-	item_state = "red_hoodie"
-	icon_open = "red_hoodie_open"
-	icon_closed = "red_hoodie"
+/*Suit Jackets*/
+/obj/item/clothing/suit/storage/toggle/lawyer
+	name = "blue suit jacket"
+	desc = "A snappy blue suit jacket."
+	icon_state = "suitjacket_blue"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/lawyer/purple
+	name = "purple suit jacket"
+	desc = "A snappy purple suit jacket."
+	icon_state = "suitjacket_purp"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/lawyer/black
+	name = "black suit jacket"
+	desc = "A snappy black suit jacket."
+	icon_state = "ia_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/lawyer/green
+	name = "green suit jacket"
+	desc = "A snappy green suit jacket."
+	icon_state = "suitjacket_green"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/lawyer/tan
+	name = "tan suit jacket"
+	desc = "A snappy tan suit jacket."
+	icon_state = "tan_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/lawyer/charcoal
+	name = "charcoal suit jacket"
+	desc = "A snappy charcoal suit jacket."
+	icon_state = "charcoal_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/lawyer/navy
+	name = "navy suit jacket"
+	desc = "A snappy navy suit jacket."
+	icon_state = "navy_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/lawyer/burgundy
+	name = "burgundy suit jacket"
+	desc = "A snappy burgundy suit jacket."
+	icon_state = "burgundy_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/lawyer/checkered
+	name = "checkered suit jacket"
+	desc = "A snappy checkered suit jacket."
+	icon_state = "checkered_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS

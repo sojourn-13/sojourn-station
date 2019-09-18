@@ -32,7 +32,12 @@
 	path = /obj/item/clothing/glasses/regular
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/eyes/shades
+/datum/gear/eyes/sunglasses
 	display_name = "sunglasses selection"
 	path = /obj/item/clothing/glasses/sunglasses
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/eyes/aviators
+	display_name = "aviators selection"
+	path = /obj/item/clothing/glasses/aviator
 	flags = GEAR_HAS_TYPE_SELECTION

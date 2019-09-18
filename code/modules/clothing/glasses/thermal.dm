@@ -1,5 +1,5 @@
 /obj/item/clothing/glasses/powered/thermal
-	name = "Optical Thermal Scanner"
+	name = "optical thermal scanner"
 	desc = "Thermals in the shape of glasses."
 	icon_state = "thermal"
 	item_state = "glasses"
@@ -11,7 +11,6 @@
 	price_tag = 1000
 
 	tick_cost = 0.5
-
 
 /obj/item/clothing/glasses/powered/thermal/emp_act(severity)
 	if(ishuman(src.loc))
@@ -32,14 +31,13 @@
 	overlay = global_hud.thermal
 
 /obj/item/clothing/glasses/powered/thermal/syndi	//These are now a traitor item, concealed as mesons.	-Pete
-	name = "Optical Meson Scanner"
+	name = "optical meson scanner"
 	desc = "Used for seeing walls, floors, and stuff through anything."
 	icon_state = "meson"
 	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 
-
 /obj/item/clothing/glasses/powered/thermal/onestar
-	name = "OS Type - 73 \"Zhenchayuan\""
+	name = "type-73 zhenchayuan goggles"
 	desc = "Chinese thermals in the shape of goggles."
 	icon_state = "onestar_thermal"
 	off_state = "onestar_thermal"
@@ -50,7 +48,7 @@
 	action_button_name = null
 
 /obj/item/clothing/glasses/powered/thermal/plain/monocle
-	name = "Thermoncle"
+	name = "thermoncle"
 	desc = "A monocle thermal."
 	icon_state = "thermoncle"
 	flags = null //doesn't protect eyes because it's a monocle, duh
@@ -58,14 +56,14 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/powered/thermal/plain/eyepatch
-	name = "Optical Thermal Eyepatch"
+	name = "optical thermal eyepatch"
 	desc = "An eyepatch with built-in thermal optics"
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/powered/thermal/plain/jensen
-	name = "Optical Thermal Implants"
+	name = "optical thermal implants"
 	desc = "A set of implantable lenses designed to augment your vision"
 	icon_state = "thermalimplants"
 	item_state = "syringe_kit"

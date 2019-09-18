@@ -1,3 +1,5 @@
+/*Ties*/
+
 /obj/item/clothing/accessory
 	name = "blue tie"
 	desc = "A neosilk clip-on tie with a blue design."
@@ -127,6 +129,8 @@
 	desc = "A neosilk clip-on tie with a yellow design."
 	icon_state = "yellowtie"
 
+/*Stethoscope*/
+
 /obj/item/clothing/accessory/stethoscope
 	name = "stethoscope"
 	desc = "An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
@@ -185,8 +189,8 @@
 				user.visible_message("[user] places [src] against [M]'s [body_part] and listens attentively.", "You place [src] against [their] [body_part]. You [sound_strength] [sound].")
 	return ..(M,user)
 
+/*Medals*/
 
-//Medals
 /obj/item/clothing/accessory/medal
 	name = "bronze medal"
 	desc = "A bronze medal."

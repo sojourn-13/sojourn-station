@@ -7,7 +7,7 @@
 	uniform = /obj/item/clothing/under/rank/cargotech
 	shoes = /obj/item/clothing/shoes/color/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
-	suit = /obj/item/clothing/suit/storage/qm_coat
+	suit = /obj/item/clothing/suit/storage/rank/qm_coat
 	l_hand = /obj/item/weapon/clipboard
 	id_type = /obj/item/weapon/card/id/car
 	pda_type = /obj/item/modular_computer/pda/cargo
@@ -16,7 +16,7 @@
 /decl/hierarchy/outfit/job/cargo/cargo_tech
 	name = OUTFIT_JOB_NAME("Guild Technician")
 	uniform = /obj/item/clothing/under/rank/cargotech
-	suit = /obj/item/clothing/suit/storage/cargo_jacket
+	suit = /obj/item/clothing/suit/storage/rank/cargo_jacket
 	pda_type = /obj/item/modular_computer/pda/cargo
 
 /decl/hierarchy/outfit/job/cargo/mining

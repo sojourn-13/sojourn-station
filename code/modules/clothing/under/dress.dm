@@ -1,3 +1,5 @@
+/*Plaid*/
+
 /obj/item/clothing/under/plaid/schoolgirlblue
 	name = "proper blue dress"
 	desc = "A rather tidy dress in a blue design."
@@ -142,6 +144,14 @@
 	icon_state = "plaid_red"
 	item_state = "plaid_red"
 
+/obj/item/clothing/under/plaid/maid
+	name = "maid dress"
+	desc = "A comfortable outfit for cleaning! Or perhaps performing other activities, too."
+	icon_state = "maid"
+	item_state = "maid"
+
+/*Cheongsam*/
+
 /obj/item/clothing/under/cheongsam
 	name = "white cheongsam"
 	desc = "A white cheongsam dress."
@@ -191,11 +201,7 @@
 	icon_state = "cheongsam-darkblue"
 	item_state = "cheongsam-darkblue"
 
-/obj/item/clothing/under/plaid/maid
-	name = "maid dress"
-	desc = "A comfortable outfit for cleaning! Or perhaps performing other activities, too."
-	icon_state = "maid"
-	item_state = "maid"
+/*Skirts*/
 
 /obj/item/clothing/under/skirt
 	name = "short black skirt"

@@ -82,7 +82,7 @@
 /obj/landmark/corpse/roles/civilian/assistant
 	name = "Assistant"
 	corpseuniform = /obj/item/clothing/under/rank/assistant
-	corpsesuit = /obj/item/clothing/suit/storage/ass_jacket
+	corpsesuit = /obj/item/clothing/suit/storage/rank/ass_jacket
 	corpseshoes = /obj/item/clothing/shoes/color/black
 	corpseradio = /obj/item/device/radio/headset
 	corpseback = /obj/item/weapon/storage/backpack
@@ -325,7 +325,7 @@
 /obj/landmark/corpse/roles/research/moebiusroboticist
 	name = "Moebius Roboticist"
 	corpseuniform = /obj/item/clothing/under/rank/roboticist
-	corpsesuit = /obj/item/clothing/suit/storage/robotech_jacket
+	corpsesuit = /obj/item/clothing/suit/storage/rank/robotech_jacket
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpseradio = /obj/item/device/radio/headset/headset_sci
 	corpsebelt = /obj/item/weapon/storage/belt/utility/full
@@ -350,7 +350,7 @@
 /obj/landmark/corpse/roles/research/moebiusexpeditionoverseer
 	name = "Moebius Expedition Overseer"
 	corpseuniform = /obj/item/clothing/under/rank/expedition_overseer
-	corpsesuit = /obj/item/clothing/suit/storage/robotech_jacket
+	corpsesuit = /obj/item/clothing/suit/storage/rank/robotech_jacket
 	corpseshoes = /obj/item/clothing/shoes/reinforced
 	corpseradio = /obj/item/device/radio/headset/heads/rd
 	corpsebelt = /obj/item/weapon/storage/belt/utility/full
@@ -461,7 +461,7 @@
 /obj/landmark/corpse/roles/cargo/guildmerchant
 	name = "Guild Merchant"
 	corpseuniform = /obj/item/clothing/under/rank/cargotech
-	corpsesuit = /obj/item/clothing/suit/storage/qm_coat
+	corpsesuit = /obj/item/clothing/suit/storage/rank/qm_coat
 	corpseshoes = /obj/item/clothing/shoes/color/brown
 	corpseradio = /obj/item/device/radio/headset/heads/merchant
 	corpseglasses = /obj/item/clothing/glasses/sunglasses
@@ -488,7 +488,7 @@
 /obj/landmark/corpse/roles/cargo/guildtechnician
 	name = "Guild Technician"
 	corpseuniform = /obj/item/clothing/under/rank/cargotech
-	corpsesuit = /obj/item/clothing/suit/storage/cargo_jacket
+	corpsesuit = /obj/item/clothing/suit/storage/rank/cargo_jacket
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpseradio = /obj/item/device/radio/headset/headset_cargo
 	corpseback = /obj/item/weapon/storage/backpack/industrial
@@ -641,7 +641,7 @@
 /obj/landmark/corpse/roles/security/ironhammerinspector
 	name = "Ironhammer Inspector"
 	corpseuniform = /obj/item/clothing/under/rank/inspector
-	corpsesuit = /obj/item/clothing/suit/storage/insp_trench
+	corpsesuit = /obj/item/clothing/suit/storage/rank/insp_trench
 	corpseshoes = /obj/item/clothing/shoes/reinforced
 	corpsegloves = /obj/item/clothing/gloves/stungloves
 	corpseradio = /obj/item/device/radio/headset/headset_sec
@@ -790,7 +790,7 @@
 	corpseshoes = /obj/item/clothing/shoes/swat
 	corpsegloves = /obj/item/clothing/gloves/thick/swat
 	corpseradio = /obj/item/device/radio/headset
-	corpsemask = /obj/item/clothing/mask/gas/syndicate
+	corpsemask = /obj/item/clothing/mask/gas/tactical
 	corpsehelmet = /obj/item/clothing/head/helmet/space/void/merc
 	corpseback = /obj/item/weapon/tank/jetpack/oxygen
 	corpsepocket1 = /obj/item/weapon/tank/emergency_oxygen

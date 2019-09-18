@@ -1,3 +1,5 @@
+/*Overalls*/
+
 /obj/item/clothing/under/overalls
 	name = "yellow overalls"
 	desc = "A set of durable yellow overalls with a blue shirt underneath."
@@ -15,6 +17,32 @@
 	desc = "A set of tough blue overalls with a checkered red shirt underneath."
 	icon_state = "frontier"
 	item_state = "frontier"
+
+/obj/item/clothing/under/overalls/utility
+	name = "grey utility jumpsuit"
+	desc = "A rugged grey jumpsuit designed for maintenance work."
+	icon_state = "greyutility"
+	item_state = "greyutility"
+
+/obj/item/clothing/under/overalls/utility/tan
+	name = "tan utility jumpsuit"
+	desc = "A rugged tan jumpsuit designed for maintenance work."
+	icon_state = "tanutility"
+	item_state = "tanutility"
+
+/obj/item/clothing/under/overalls/utility/navy
+	name = "navy utility jumpsuit"
+	desc = "A rugged navy jumpsuit designed for maintenance work."
+	icon_state = "navyutility"
+	item_state = "navyutility"
+
+/obj/item/clothing/under/overalls/utility/green
+	name = "green utility jumpsuit"
+	desc = "A rugged jumpsuit for utility work with a green design."
+	icon_state = "greenutility"
+	item_state = "greenutility"
+
+/*Tops*/
 
 /obj/item/clothing/under/top/
 	name = "grey crop top"
@@ -39,6 +67,8 @@
 	desc = "A red cut top complete with a pair of jeans."
 	icon_state = "cuttop_red"
 	item_state = "cuttop_red"
+
+/*Turtlenecks*/
 
 /obj/item/clothing/under/turtleneck
 	name = "grey turtleneck"
@@ -69,27 +99,3 @@
 	desc = "A compact black turtleneck complete with dark combat pants."
 	icon_state = "blackutility"
 	item_state = "blackutility"
-
-/obj/item/clothing/under/overalls/utility
-	name = "grey utility jumpsuit"
-	desc = "A rugged grey jumpsuit designed for maintenance work."
-	icon_state = "greyutility"
-	item_state = "greyutility"
-
-/obj/item/clothing/under/overalls/utility/tan
-	name = "tan utility jumpsuit"
-	desc = "A rugged tan jumpsuit designed for maintenance work."
-	icon_state = "tanutility"
-	item_state = "tanutility"
-
-/obj/item/clothing/under/overalls/utility/navy
-	name = "navy utility jumpsuit"
-	desc = "A rugged navy jumpsuit designed for maintenance work."
-	icon_state = "navyutility"
-	item_state = "navyutility"
-
-/obj/item/clothing/under/overalls/utility/green
-	name = "green utility jumpsuit"
-	desc = "A rugged jumpsuit for utility work with a green design."
-	icon_state = "greenutility"
-	item_state = "greenutility"

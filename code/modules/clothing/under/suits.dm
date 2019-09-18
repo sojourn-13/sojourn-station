@@ -1,3 +1,5 @@
+/*One Piece Suits*/
+
 /obj/item/clothing/under/suit_jacket
 	name = "black suit"
 	desc = "A black suit complete with a white shirt and red tie."
@@ -195,6 +197,8 @@
 	desc = "A skirted chestnut suit complete with a white shirt."
 	icon_state = "oldwoman"
 	item_state = "oldwoman"
+
+/*Modular Suits*/
 
 /obj/item/clothing/under/modular/smoky
 	name = "smoky suit"

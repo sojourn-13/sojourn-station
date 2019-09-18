@@ -21,7 +21,7 @@
 				new /obj/item/device/powersink(src)
 				new /obj/item/clothing/suit/space/syndicate(src)
 				new /obj/item/clothing/head/helmet/space/syndicate(src)
-				new /obj/item/clothing/mask/gas/syndicate(src)
+				new /obj/item/clothing/mask/gas/tactical(src)
 				new /obj/item/weapon/tank/emergency_oxygen/double(src)
 				return
 
@@ -115,7 +115,7 @@
 	..()
 	new /obj/item/clothing/suit/space/syndicate(src)
 	new /obj/item/clothing/head/helmet/space/syndicate(src)
-	new /obj/item/clothing/mask/gas/syndicate(src)
+	new /obj/item/clothing/mask/gas/tactical(src)
 	new /obj/item/weapon/tank/emergency_oxygen/double(src)
 
 /obj/item/weapon/storage/box/syndie_kit/chameleon

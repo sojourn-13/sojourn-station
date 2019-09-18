@@ -1,15 +1,4 @@
-
-
-/obj/item/clothing/head/rank/centcomm
-	name = "\improper CentComm. hat"
-	icon_state = "centcom"
-	item_state_slots = list(
-		slot_l_hand_str = "centhat",
-		slot_r_hand_str = "centhat",
-		)
-	desc = "It's good to be emperor."
-	siemens_coefficient = 0.9
-	body_parts_covered = 0
+/*Flower Pins*/
 
 /obj/item/clothing/head/hairflower
 	name = "red flower pin"
@@ -42,6 +31,7 @@
 	icon_state = "hairflower_white"
 	name = "white flower pin"
 
+/*Top Hats*/
 
 /obj/item/clothing/head/tophat
 	name = "black top hat"
@@ -63,22 +53,7 @@
 	item_state = "beaver_hat"
 	desc = "A blue top hat made out of comfortable beaver pelt."
 
-
-/obj/item/clothing/head/costume/job/mailman
-	name = "station cap"
-	icon_state = "mailman"
-	desc = "A blue postal cap worn by the long-defunct mail service."
-	body_parts_covered = 0
-
-
-
-/obj/item/clothing/head/costume/misc/hastur
-	name = "hastur hood"
-	desc = "An extremely stylish hood."
-	icon_state = "hasturhood"
-	flags_inv = BLOCKHAIR
-	body_parts_covered = HEAD|FACE|EYES
-
+/*Bandanas*/
 
 /obj/item/clothing/head/bandana/green
 	name = "green bandana"
@@ -87,6 +62,19 @@
 	item_state = "greenbandana"
 	flags_inv = 0
 	body_parts_covered = 0
+
+/obj/item/clothing/head/bandana/orange //themij: Taryn Kifer
+	name = "orange bandana"
+	desc = "An orange bandana fashioned from a piece of cloth."
+	icon_state = "orange_bandana"
+	body_parts_covered = 0
+
+/obj/item/clothing/head/bandana
+	name = "red bandana"
+	desc = "A red bandana fashioned from a piece of cloth."
+	icon_state = "bandana"
+
+/*Justice Hats*/
 
 /obj/item/clothing/head/justice
 	name = "justice hat"
@@ -107,20 +95,7 @@
 /obj/item/clothing/head/justice/pink
 	icon_state = "justicepink"
 
-/obj/item/clothing/head/flatcap
-	name = "flat cap"
-	desc = "A rugged and reliable working cap."
-	icon_state = "flat_cap"
-	item_state_slots = list(
-		slot_l_hand_str = "det_hat",
-		slot_r_hand_str = "det_hat",
-		)
-	siemens_coefficient = 0.9
-
-/obj/item/clothing/head/bandana
-	name = "red bandana"
-	desc = "A red bandana fashioned from a piece of cloth."
-	icon_state = "bandana"
+/*Bowler Hats*/
 
 /obj/item/clothing/head/bowler/bowlerclassic
 	name = "classic bowler hat"
@@ -134,18 +109,13 @@
 	icon_state = "bowlergreen"
 	body_parts_covered = 0
 
-//stylish bs12 hats
-
 /obj/item/clothing/head/bowler
 	name = "banded bowler hat"
 	icon_state = "bowler_hat"
 	desc = "A black felt hat with a rounded crown and white stripe."
 	body_parts_covered = 0
 
-/obj/item/clothing/head/boaterhat
-	name = "boater hat"
-	icon_state = "boater_hat"
-	desc = "A formal beige summer hat."
+/*Cowboy Hats*/
 
 /obj/item/clothing/head/cowboy
 	name = "rancher cowboy hat"
@@ -195,8 +165,10 @@
 
 /obj/item/clothing/head/cowboy/frontiersman
 	name = "frontiersman cowboy hat"
-	desc = "A rugged white felt hat worn with a green leather hood."
+	desc = "A rugged dark felt hat worn with a green leather hood."
 	icon_state = "stormchaser"
+
+/*Fedoras*/
 
 /obj/item/clothing/head/fedora
 	name = "black fedora"
@@ -218,6 +190,19 @@
 	icon_state = "feather_trilby"
 	desc = "A dark blue felt fedora with a classy white feather."
 
+/*Misc*/
+
+/obj/item/clothing/head/rank/centcomm
+	name = "\improper CentComm. hat"
+	icon_state = "centcom"
+	item_state_slots = list(
+		slot_l_hand_str = "centhat",
+		slot_r_hand_str = "centhat",
+		)
+	desc = "It's good to be emperor."
+	siemens_coefficient = 0.9
+	body_parts_covered = 0
+
 /obj/item/clothing/head/sombrero
 	name = "sombrero"
 	desc = "You can practically taste the fiesta."
@@ -230,7 +215,20 @@
 	icon_state = "fez"
 	desc = "A conical red hat in prime oriental fashion."
 
-//end bs12 hats
+/obj/item/clothing/head/boaterhat
+	name = "boater hat"
+	icon_state = "boater_hat"
+	desc = "A formal beige summer hat."
+
+/obj/item/clothing/head/flatcap
+	name = "flat cap"
+	desc = "A rugged and reliable working cap."
+	icon_state = "flat_cap"
+	item_state_slots = list(
+		slot_l_hand_str = "det_hat",
+		slot_r_hand_str = "det_hat",
+		)
+	siemens_coefficient = 0.9
 
 /obj/item/clothing/head/bearpelt
 	name = "bear pelt hat"
@@ -238,9 +236,3 @@
 	icon_state = "bearpelt"
 	flags_inv = BLOCKHAIR
 	siemens_coefficient = 0.7
-
-/obj/item/clothing/head/bandana/orange //themij: Taryn Kifer
-	name = "orange bandana"
-	desc = "An orange bandana fashioned from a piece of cloth."
-	icon_state = "orange_bandana"
-	body_parts_covered = 0

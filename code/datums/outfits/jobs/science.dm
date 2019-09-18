@@ -29,7 +29,7 @@
 /decl/hierarchy/outfit/job/science/roboticist
 	name = OUTFIT_JOB_NAME("Moebius Roboticist")
 	uniform = /obj/item/clothing/under/rank/roboticist
-	suit = /obj/item/clothing/suit/storage/robotech_jacket
+	suit = /obj/item/clothing/suit/storage/rank/robotech_jacket
 	belt = /obj/item/weapon/storage/belt/utility/full
 	pda_slot = slot_r_store
 	id_type = /obj/item/weapon/card/id/dkgrey

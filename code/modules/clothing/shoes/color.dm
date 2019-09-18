@@ -51,8 +51,7 @@
 	icon_state = "brown"
 
 /obj/item/clothing/shoes/custom
-	name = "customized shoes"
-	initial_name = "customized shoes"
+	name = "shoes"
 	desc = "A pair of customized shoes in a tailored color."
 	icon_state = "white"
 	flags = GEAR_HAS_COLOR_SELECTION

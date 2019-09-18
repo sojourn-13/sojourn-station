@@ -1,3 +1,5 @@
+/*History*/
+
 obj/item/clothing/under/costume/history/pirate
 	name = "pirate garments"
 	desc = "A set of scurvy-ridden pirate clothing."
@@ -22,7 +24,6 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "An eye-catching oriental hostess outfit."
 	icon_state = "geisha"
 	item_state = "geisha"
-
 
 /obj/item/clothing/under/costume/history/gladiator
 	name = "gladiator armor"
@@ -61,6 +62,7 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "jester2"
 	item_state = "jester2"
 
+/*Kinky*/
 
 /obj/item/clothing/under/costume/kinky/latex_maid
 	name = "latex maid dress"
@@ -98,6 +100,8 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "stripper_g"
 	item_state = "stripper_g"
 
+/*Animal*/
+
 /obj/item/clothing/under/costume/animal/owl
 	name = "owl suit"
 	desc = "An orange-brown jumpsuit with giant owl wings."
@@ -115,6 +119,8 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "A soft brown jumpsuit with a synthetic white feather collar."
 	icon_state = "griffin"
 	item_state = "griffin"
+
+/*Jobs*/
 
 /obj/item/clothing/under/costume/job/police
 	name = "police uniform"
@@ -176,13 +182,13 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "nurse"
 	item_state = "nurse"
 
-
 /obj/item/clothing/under/costume/job/waiter
 	name = "waiter's outfit"
 	desc = "An elegant waiter's suit, complete with a pocket for tips."
 	icon_state = "waiter"
 	item_state = "waiter"
 
+/*Halloween*/
 
 /obj/item/clothing/under/costume/halloween/scarecrow
 	name = "scarecrow rags"
@@ -234,6 +240,8 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "enclave"
 	item_state = "enclave"
 	body_parts_covered = ARMS|LEGS
+
+/*Misc*/
 
 /obj/item/clothing/under/costume/misc/rainbowjumpsuit
 	name = "rainbow jumpsuit"

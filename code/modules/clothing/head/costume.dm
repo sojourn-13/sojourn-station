@@ -309,6 +309,13 @@
 	item_state= "cueballelectric"
 	body_parts_covered = HEAD
 
+/obj/item/clothing/head/costume/misc/hastur
+	name = "hastur hood"
+	desc = "An extremely stylish hood."
+	icon_state = "hasturhood"
+	flags_inv = BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EYES
+
 /obj/item/clothing/head/costume/misc/cake
 	name = "cake-hat"
 	desc = "It's tasty looking!"

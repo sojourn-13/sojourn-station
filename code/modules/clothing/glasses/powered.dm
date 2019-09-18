@@ -1,5 +1,5 @@
 /obj/item/clothing/glasses/powered
-	name = "Powered Goggles"
+	name = "powered goggles"
 	icon_state = "night"
 	item_state = "glasses"
 	action_button_name = "Toggle Optical Matrix"
@@ -44,3 +44,51 @@
 /obj/item/clothing/glasses/powered/attackby(obj/item/C, mob/living/user)
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
+
+/obj/item/clothing/glasses/powered/science
+	name = "science goggles"
+	desc = "The goggles do nothing!"
+	icon_state = "purple"
+	item_state = "glasses"
+
+	tick_cost = 0.1
+
+/obj/item/clothing/glasses/powered/science/Initialize()
+	. = ..()
+	overlay = global_hud.science
+
+/obj/item/clothing/glasses/powered/meson
+	name = "optical meson scanner"
+	desc = "Used for seeing walls, floors, and stuff through anything."
+	icon_state = "meson"
+	item_state = "glasses"
+	vision_flags = SEE_TURFS
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	origin_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
+	price_tag = 500
+
+	tick_cost = 0.5
+
+/obj/item/clothing/glasses/powered/meson/Initialize()
+	. = ..()
+	overlay = global_hud.meson
+
+/obj/item/clothing/glasses/powered/night
+	name = "night vision goggles"
+	desc = "You can totally see in the dark now!"
+	icon_state = "night"
+	item_state = "glasses"
+	darkness_view = 7
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	off_state = "denight"
+	origin_tech = list(TECH_MAGNET = 2)
+	price_tag = 500
+
+	tick_cost = 1
+
+/obj/item/clothing/glasses/powered/night/Initialize()
+	. = ..()
+	overlay = global_hud.nvg
+
+

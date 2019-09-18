@@ -213,10 +213,12 @@
 "ee" = (/obj/structure/holostool,/turf/simulated/floor/holofloor/carpet,/area/holodeck/source_meetinghall)
 "ef" = (/obj/structure/holostool,/obj/effect/floor_decal/border/carpet{dir = 4},/turf/simulated/floor/holofloor/carpet,/area/holodeck/source_meetinghall)
 "eg" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/uplink,/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
+"eh" = (/obj/effect/window_lwall_spawn/smartspawn,/obj/structure/sign/directions/map,/turf/unsimulated/floor{icon_state = "plating"; name = "plating"},/area/centcom/merc_base)
 "ei" = (/turf/simulated/shuttle/wall{icon_state = "wall3"},/area/space)
 "ej" = (/obj/structure/window/reinforced/holowindow/disappearing{dir = 1},/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_thunderdomecourt)
 "ek" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating,/area/centcom/evac)
 "el" = (/turf/simulated/shuttle/wall{icon_state = "wall3"},/area/centcom/small_base)
+"em" = (/obj/effect/window_lwall_spawn/smartspawn,/obj/structure/sign/directions/map/right,/turf/unsimulated/floor{icon_state = "plating"; name = "plating"},/area/centcom/merc_base)
 "en" = (/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_thunderdomecourt)
 "eo" = (/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_boxingcourt)
 "ep" = (/turf/space,/turf/simulated/shuttle/wall{dir = 8; icon_state = "diagonalWall3"},/area/shuttle/mercenary)
@@ -381,8 +383,6 @@
 "hE" = (/obj/structure/lattice,/obj/structure/grille/broken,/turf/space,/area/space)
 "hF" = (/obj/machinery/door/airlock/centcom{name = "Barracks"; opacity = 1; req_access = list(150)},/turf/unsimulated/floor{icon_state = "lino"},/area/centcom/merc_base)
 "hJ" = (/turf/unsimulated/floor{tag = "icon-cult"; name = "plating"; icon_state = "cult"},/area/centcom/merc_base)
-"hK" = (/obj/structure/sign/double/map/left{pixel_y = 32},/turf/unsimulated/floor{tag = "icon-cult"; name = "plating"; icon_state = "cult"},/area/centcom/merc_base)
-"hL" = (/obj/structure/sign/double/map/right{pixel_y = 32},/turf/unsimulated/floor{tag = "icon-cult"; name = "plating"; icon_state = "cult"},/area/centcom/merc_base)
 "hM" = (/obj/structure/sign/faction/neotheology_cross,/turf/simulated/wall/r_wall,/area/centcom/evac)
 "hN" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/shuttle/plating,/area/skipjack_station/start)
 "hR" = (/obj/machinery/door/airlock/hatch,/turf/simulated/floor/tiled/dark,/area/centcom/evac)
@@ -528,7 +528,7 @@
 "lb" = (/obj/structure/table/standard,/obj/item/weapon/storage/toolbox/syndicate{pixel_x = -1; pixel_y = 3},/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
 "lc" = (/obj/machinery/sleeper,/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/mercenary)
 "ld" = (/obj/structure/closet/secure_closet/anesthetics,/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/mercenary)
-"le" = (/obj/machinery/portable_atmospherics/canister/oxygen,/obj/structure/sign/warning/nosmoking_1{pixel_y = 32},/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/mercenary)
+"le" = (/obj/machinery/portable_atmospherics/canister/oxygen,/obj/structure/sign/warning/nosmoking{pixel_y = 32},/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/mercenary)
 "lf" = (/obj/structure/table/standard,/obj/item/roller{pixel_y = 8},/obj/item/weapon/reagent_containers/blood/OMinus,/obj/item/weapon/reagent_containers/blood/OMinus,/obj/item/weapon/reagent_containers/syringe/antiviral,/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/mercenary)
 "lg" = (/obj/structure/table/standard,/obj/item/bodybag,/obj/item/weapon/reagent_containers/glass/bottle/antitoxin{pixel_x = -4; pixel_y = 8},/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline{pixel_x = 4; pixel_y = 7},/obj/item/weapon/reagent_containers/syringe,/obj/machinery/light{dir = 4},/obj/item/weapon/reagent_containers/syringe/antiviral,/obj/item/weapon/reagent_containers/syringe/antiviral,/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/mercenary)
 "lh" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/item/device/radio/intercom/syndicate{dir = 4; pixel_x = -22},/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
@@ -575,7 +575,7 @@
 "lX" = (/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 0},/obj/item/weapon/reagent_containers/glass/bottle/stoxin,/obj/item/weapon/reagent_containers/glass/bottle/stoxin,/obj/item/weapon/reagent_containers/syringe,/obj/item/weapon/reagent_containers/syringe/antiviral,/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/mercenary)
 "lY" = (/obj/item/weapon/storage/deferred/crate/tools,/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
 "lZ" = (/obj/machinery/light/small{dir = 8},/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
-"ma" = (/obj/structure/sign/warning/nosmoking_2{pixel_x = 32},/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
+"ma" = (/obj/structure/sign/warning/nosmoking/large{pixel_x = 32},/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
 "mb" = (/obj/structure/shuttle_part/science{icon_state = "16,4"},/turf/space,/area/space)
 "mc" = (/obj/structure/table/standard,/obj/item/weapon/storage/deferred/surgery,/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/mercenary)
 "md" = (/obj/machinery/optable,/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/mercenary)
@@ -666,7 +666,7 @@
 "nK" = (/obj/item/clothing/head/costume/halloween/xenos,/turf/unsimulated/floor{tag = "icon-asteroid"; icon_state = "asteroid"},/area/centcom/raider_base)
 "nL" = (/obj/item/organ/internal/xenos/plasmavessel,/turf/unsimulated/floor{tag = "icon-asteroid"; icon_state = "asteroid"},/area/centcom/raider_base)
 "nM" = (/obj/structure/sink{icon_state = "sink"; dir = 8; pixel_x = -12; pixel_y = 2},/turf/unsimulated/floor{icon_state = "freezerfloor"; dir = 2},/area/centcom/raider_base)
-"nN" = (/obj/item/clothing/mask/gas/swat{desc = "A close-fitting mask clearly not made for a human face."; name = "\improper alien mask"},/turf/unsimulated/floor{tag = "icon-asteroid"; icon_state = "asteroid"},/area/centcom/raider_base)
+"nN" = (/obj/item/clothing/mask/gas/tactical{desc = "A close-fitting mask clearly not made for a human face."; name = "\improper alien mask"},/turf/unsimulated/floor{tag = "icon-asteroid"; icon_state = "asteroid"},/area/centcom/raider_base)
 "nO" = (/obj/item/xenos_claw,/turf/unsimulated/floor{tag = "icon-asteroid"; icon_state = "asteroid"},/area/centcom/raider_base)
 "nP" = (/obj/structure/lattice,/obj/structure/window/reinforced/crescent{dir = 4},/turf/space,/area/space)
 "nQ" = (/obj/structure/lattice,/obj/structure/window/reinforced/crescent{dir = 8},/turf/space,/area/space)
@@ -911,8 +911,8 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahocLcNcNdj
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdldndndndndnhZhZhZdndododododododndndndKikaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahlhlhlhlhlaaaaaaaaaaaaaaaaaaaaaaaaaahfhghhhhhhhggZhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhleYfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdldndndndndnhZhZhZdndLdLdLdLdLdLdndndnhoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaaaahlhlaaaaaaaaaaaaaaaahlhlhlaaaaaaaaaaaaaaaaaaaaaaaaaaaagZgZhhhhhhgZgZhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhleYfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdldnhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaahlhlhlhlhlaaaaaaaaaaaahlhlaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagZhhhhhhgZhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhleYfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdldnhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZekaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaahlhlhlhlhlhlaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahfhfhfhfgZgZhFgZgZgZgZgZgZgZhlhlhlhlhlhlhlhlhlhlhlhlhlhleYitaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdldnhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaahlhlhlhlhlhlaaaaaaaaaaaaaaaaaaaaepgNgNhSgNgNicaaaahfhJhKhLhJhJhJhTgZhUinisiygZhlhlhlhlhlhlhlhlhlhlhlhlhlhleYfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdldnhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZekaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaahlhlhlhlhlhlaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahfhfehemgZgZhFgZgZgZgZgZgZgZhlhlhlhlhlhlhlhlhlhlhlhlhlhleYitaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdldnhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhZhMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaahlhlhlhlhlhlaaaaaaaaaaaaaaaaaaaaepgNgNhSgNgNicaaaahfhJhJhJhJhJhJhTgZhUinisiygZhlhlhlhlhlhlhlhlhlhlhlhlhlhleYfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdldndndndndnhZhZhZdndLdLdLdLdLdLdndndMhoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaaaahlhlhlhlhlaaaaaaaaaaaaaaaaaaepiqiriuivixiHiqicaahfhJhphphJhJhJhJiAiBiBiBiCgZgZgZgZgZhlhlhlhlhlhlhlhlhlhleYfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdldndndndndnhZhZhZdndTdTdTdTdTdTdndndndUiTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaaaaaahlhlhlhlaaaaaaaaaaaaaaaaaaiqiIiJiJiLiJiJixiqaahfiziEiFiDhJhJhJgZiOiBiBiPgZkNiXiYgZhlhlhlhlhlhlhlhlhlhleYfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahocLcNcNdXcNcNhZhZhZcNcNdXcNcNcNcNcNcNcNhoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkaaaaaaaaaaaaaaaaaahlhlaaaaaaaaaaaaaaaaaaaaiqiMiJiJiJiJiUiViqaahfhJiNiNhJhJhJjagZjbiBjciZgZlSiXjmgZhlhlhlhlhlhlhlhlhlhleYfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafpeYaaaaaaaaaaaaaaaaaaaaaa
@@ -1006,4 +1006,3 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 qIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-

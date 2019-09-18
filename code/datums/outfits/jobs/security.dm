@@ -39,7 +39,7 @@
 	name = OUTFIT_JOB_NAME("Ironhammer Inspector")
 	head = /obj/item/clothing/head/rank/inspector
 	uniform = /obj/item/clothing/under/rank/inspector
-	suit = /obj/item/clothing/suit/storage/insp_trench
+	suit = /obj/item/clothing/suit/storage/rank/insp_trench
 	head = /obj/item/clothing/head/rank/inspector
 	gloves = /obj/item/clothing/gloves/stungloves
 	l_pocket = /obj/item/device/flash
