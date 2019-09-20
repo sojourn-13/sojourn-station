@@ -160,3 +160,15 @@
 	path = /obj/item/clothing/suit/hooded/cloak/job/ironhammer
 	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
 	sort_category = "Faction: Ironhammer"
+
+/datum/gear/uniform/overcloak
+	display_name = "black overcloa selection"
+	path = /obj/item/clothing/suit/overcloak/
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Xenowear"
+
+/datum/gear/uniform/overcloak_colors
+	display_name = "colored overcloak selection"
+	path = /obj/item/clothing/suit/overcloak_colors/
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Xenowear"

@@ -21,15 +21,15 @@
 	path = /obj/item/clothing/under/color/
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/uniform/undercloak
+/datum/gear/uniform/undercoat
 	display_name = "black undercloak selection"
-	path = /obj/item/clothing/under/undercloak/
+	path = /obj/item/clothing/under/undercoat/
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
 
-/datum/gear/uniform/undercloak_colors
-	display_name = "colored undercloak selection"
-	path = /obj/item/clothing/under/undercloak_colors/
+/datum/gear/uniform/undercoat_colors
+	display_name = "colored undercoat selection"
+	path = /obj/item/clothing/under/undercoat_colors/
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
 

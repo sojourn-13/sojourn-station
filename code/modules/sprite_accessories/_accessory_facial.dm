@@ -119,6 +119,41 @@
 	name = "Walrus Moustache"
 	icon_state = "walrus"
 
+/datum/sprite_accessory/facial_hair/teshari_beard
+	name = "Teshari Beard"
+	icon_state = "teshari_chin"
+	gender = NEUTER
+
+/datum/sprite_accessory/facial_hair/teshari_scraggly
+	name = "Teshari Scraggly"
+	icon_state = "teshari_scraggly"
+	gender = NEUTER
+
+/datum/sprite_accessory/facial_hair/teshari_chops
+	name = "Teshari Chops"
+	icon_state = "teshari_gap"
+	gender = NEUTER
+
+/datum/sprite_accessory/facial_hair/una_chinhorn
+	name = "Unathi Chin Horn"
+	icon_state = "facial_chinhorns_s"
+	gender = NEUTER
+
+/datum/sprite_accessory/facial_hair/una_hornadorns
+	name = "Unathi Horn Adorns"
+	icon_state = "facial_hornadorns_s"
+	gender = NEUTER
+
+/datum/sprite_accessory/facial_hair/una_spinespikes
+	name = "Unathi Spine Spikes"
+	icon_state = "facial_spikes_s"
+	gender = NEUTER
+
+/datum/sprite_accessory/facial_hair/una_dorsalfrill
+	name = "Unathi Dorsal Frill"
+	icon_state = "facial_dorsalfrill_s"
+	gender = NEUTER
+
 /*
 ///////////////////////////////////
 /  =---------------------------=  /
@@ -556,48 +591,6 @@ Not in use currently.
 		name = "Tajaran Smallsatche"
 		icon_state = "facial_smallstache"
 		species_allowed = list(SPECIES_TAJ)
-
-//unathi horn beards and the like
-
-	una_chinhorn
-		name = "Unathi Chin Horn"
-		icon_state = "facial_chinhorns"
-		species_allowed = list(SPECIES_UNATHI)
-
-	una_hornadorns
-		name = "Unathi Horn Adorns"
-		icon_state = "facial_hornadorns"
-		species_allowed = list(SPECIES_UNATHI)
-
-	una_spinespikes
-		name = "Unathi Spine Spikes"
-		icon_state = "facial_spikes"
-		species_allowed = list(SPECIES_UNATHI)
-
-	una_dorsalfrill
-		name = "Unathi Dorsal Frill"
-		icon_state = "facial_dorsalfrill"
-		species_allowed = list(SPECIES_UNATHI)
-
-
-//Teshari things
-	teshari_beard
-		name = "Teshari Beard"
-		icon_state = "teshari_chin"
-		species_allowed = list(SPECIES_TESHARI)
-		gender = NEUTER
-
-	teshari_scraggly
-		name = "Teshari Scraggly"
-		icon_state = "teshari_scraggly"
-		species_allowed = list(SPECIES_TESHARI)
-		gender = NEUTER
-
-	teshari_chops
-		name = "Teshari Chops"
-		icon_state = "teshari_gap"
-		species_allowed = list(SPECIES_TESHARI)
-		gender = NEUTER
 */
 
 /* VORE unconfirmed facial hair

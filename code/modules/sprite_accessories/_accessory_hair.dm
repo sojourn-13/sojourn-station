@@ -609,6 +609,50 @@
 	name = "Teshari spiky"
 	icon_state = "teshari_spiky_s"
 
+/datum/sprite_accessory/hair/una_spines_long
+	name = "Long Unathi Spines"
+	icon_state = "soghun_longspines_s"
+
+/datum/sprite_accessory/hair/una_spines_short
+	name = "Short Unathi Spines"
+	icon_state = "soghun_shortspines_s"
+
+/datum/sprite_accessory/hair/una_frills_long
+	name = "Long Unathi Frills"
+	icon_state = "soghun_longfrills_s"
+
+/datum/sprite_accessory/hair/una_frills_short
+	name = "Short Unathi Frills"
+	icon_state = "soghun_shortfrills_s"
+
+/datum/sprite_accessory/hair/una_horns
+	name = "Unathi Horns"
+	icon_state = "soghun_horns_s"
+
+/datum/sprite_accessory/hair/una_bighorns
+	name = "Unathi Big Horns"
+	icon_state = "unathi_bighorn_s"
+
+/datum/sprite_accessory/hair/una_smallhorns
+	name = "Unathi Small Horns"
+	icon_state = "unathi_smallhorn_s"
+
+/datum/sprite_accessory/hair/una_ramhorns
+	name = "Unathi Ram Horns"
+	icon_state = "unathi_ramhorn_s"
+
+/datum/sprite_accessory/hair/sergal_medicore
+	name = "Sergal Medicore"
+	icon_state = "serg_medicore_s"
+
+/datum/sprite_accessory/hair/sergal_tapered
+	name = "Sergal Tapered"
+	icon_state = "serg_tapered_s"
+
+/datum/sprite_accessory/hair/sergal_fairytail
+	name = "Sergal Fairytail"
+	icon_state = "serg_fairytail_s"
+
 /datum/sprite_accessory/hair/sideswept
 	name = "Side Swipe"
 	icon_state = "sideswipe"
@@ -790,7 +834,8 @@
 	name = "Night Quills"
 	icon_state = "nightquills"
 
-/*
+
+/* hairs?
 ////////////////////////////
 /  =--------------------=  /
 /  == Hair Definitions ==  /
@@ -1556,27 +1601,6 @@ Not confirmed. Someone needs to do the legwork eventually.
 		icon = 'icons/mob/human_face_vr.dmi'
 		icon_add = 'icons/mob/human_face_vr_add.dmi'
 		icon_state = "serg_plain"
-		species_allowed = list(SPECIES_SERGAL)
-
-	sergal_medicore
-		name = "Sergal Medicore"
-		icon = 'icons/mob/human_face_vr.dmi'
-		icon_add = 'icons/mob/human_face_vr_add.dmi'
-		icon_state = "serg_medicore"
-		species_allowed = list(SPECIES_SERGAL)
-
-	sergal_tapered
-		name = "Sergal Tapered"
-		icon = 'icons/mob/human_face_vr.dmi'
-		icon_add = 'icons/mob/human_face_vr_add.dmi'
-		icon_state = "serg_tapered"
-		species_allowed = list(SPECIES_SERGAL)
-
-	sergal_fairytail
-		name = "Sergal Fairytail"
-		icon = 'icons/mob/human_face_vr.dmi'
-		icon_add = 'icons/mob/human_face_vr_add.dmi'
-		icon_state = "serg_fairytail"
 		species_allowed = list(SPECIES_SERGAL)
 
 	braid
