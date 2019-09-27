@@ -16,6 +16,12 @@
 	//Used for hardsuits. If false, this piece cannot be retracted while the core module is engaged
 	var/retract_while_active = TRUE
 
+/obj/item/clothing/Initialize(mapload, ...)
+	. = ..()
+	if(!matter)
+		matter = list()
+	matter.Add(list(MATERIAL_BIOMATTER = 5 * w_class))	// based of item size
+
 /obj/item/clothing/Destroy()
 	for(var/obj/item/clothing/accessory/A in accessories)
 		qdel(A)
@@ -140,6 +146,8 @@
 	var/obj/item/weapon/cell/cell = null
 	var/suitable_cell = /obj/item/weapon/cell/small
 
+
+/*
 /obj/item/clothing/ears/earmuffs/mp3/New()
 	..()
 	player = new(src)
@@ -185,6 +193,8 @@
 /obj/item/clothing/ears/earmuffs/mp3/attackby(obj/item/C, mob/living/user)
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
+
+		*/
 
 ///////////////////////////////////////////////////////////////////////
 //Glasses

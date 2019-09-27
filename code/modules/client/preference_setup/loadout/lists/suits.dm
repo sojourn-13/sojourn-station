@@ -6,6 +6,10 @@
 	sort_category = "Suits and Overwear"
 	cost = 1
 
+/datum/gear/suit/jacket
+	display_name = "jacket"
+	path = /obj/item/clothing/suit/storage/toggle/bomber
+
 /datum/gear/suit/kimono
 	display_name = "kimono"
 	path = /obj/item/clothing/suit/kimono
@@ -28,6 +32,14 @@
 	display_name = "hoodie selection"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/suit/hoodie/New()
+	..()
+	var/jacket = list(
+		"Black"		=	/obj/item/clothing/suit/storage/toggle/hoodie/black,
+		"Grey"		=	/obj/item/clothing/suit/storage/toggle/hoodie,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(jacket)
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat"

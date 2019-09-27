@@ -10,9 +10,17 @@
 /decl/hierarchy/outfit/job/service/bartender
 	name = OUTFIT_JOB_NAME("Bartender")
 	uniform = /obj/item/clothing/under/rank/bartender
+	head = /obj/item/clothing/head/tophat
+	id_type = /obj/item/weapon/card/id/white
 	pda_type = /obj/item/modular_computer/pda
 	backpack_contents = list(/obj/item/ammo_casing/shotgun/beanbag = 4)
 
+
+/decl/hierarchy/outfit/job/service/waiter
+	name = OUTFIT_JOB_NAME("Waiter")
+	uniform = /obj/item/clothing/under/costume/job/waiter
+	id_type = /obj/item/weapon/card/id/white
+	pda_type = /obj/item/modular_computer/pda
 
 /decl/hierarchy/outfit/job/service/chef
 	name = OUTFIT_JOB_NAME("Chef")

@@ -8,10 +8,25 @@
 	display_name = "clipboard"
 	path = /obj/item/weapon/clipboard
 
-/datum/gear/utility/folders
-	display_name = "folder selection"
+/datum/gear/utility/folder_colorable
+	display_name = "folder, colorable"
+	flags = GEAR_HAS_COLOR_SELECTION
 	path = /obj/item/weapon/folder
-	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/utility/folder_presets
+	display_name = "folder"
+	path = /obj/item/weapon/folder
+
+/datum/gear/utility/folder_presets/New()
+	..()
+	var/folder = list(
+		"Grey"			=	/obj/item/weapon/folder,
+		"White"			=	/obj/item/weapon/folder/white,
+		"Red"			=	/obj/item/weapon/folder/red,
+		"Yellow"		=	/obj/item/weapon/folder/yellow,
+		"Blue"			=	/obj/item/weapon/folder/blue,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(folder)
 
 /datum/gear/utility/paicard
 	display_name = "personal AI device"

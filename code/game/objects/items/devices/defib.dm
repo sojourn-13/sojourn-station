@@ -1,4 +1,4 @@
-#define DEFIB_TIME_LIMIT (1 HOUR) //past this many seconds, defib is useless.
+#define DEFIB_TIME_LIMIT (1 HOURS) //past this many seconds, defib is useless.
 #define DEFIB_TIME_LOSS  (20 MINUTES) //past this many seconds, brain damage occurs.
 
 //backpack item
@@ -59,7 +59,7 @@
 			else
 				new_overlays += "[initial(icon_state)]-powered"
 
-		var/ratio = Ceiling(cell.percent()/25) * 25
+		var/ratio = CEILING(cell.percent()/25, 1) * 25
 		new_overlays += "[initial(icon_state)]-charge[ratio]"
 	else
 		new_overlays += "[initial(icon_state)]-nocell"
@@ -520,7 +520,7 @@
 	var/obj/item/organ/internal/brain/brain = H.internal_organs_by_name[BP_BRAIN]
 	if(!brain) return //no brain
 
-	var/brain_damage = Clamp((deadtime - DEFIB_TIME_LOSS)/(DEFIB_TIME_LIMIT - DEFIB_TIME_LOSS)*brain.max_damage, H.getBrainLoss(), brain.max_damage)
+	var/brain_damage = CLAMP((deadtime - DEFIB_TIME_LOSS)/(DEFIB_TIME_LIMIT - DEFIB_TIME_LOSS)*brain.max_damage, H.getBrainLoss(), brain.max_damage)
 	H.setBrainLoss(brain_damage)
 
 /obj/item/weapon/shockpaddles/proc/make_announcement(var/message, var/msg_class)

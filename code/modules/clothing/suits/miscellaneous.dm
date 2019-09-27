@@ -170,6 +170,65 @@ obj/item/clothing/suit/kimono
 
 /*Varsity Jackets*/
 
+/obj/item/clothing/suit/storage/leather_jacket
+	name = "grey leather jacket"
+	desc = "A sturdy grey jacket made out of synthetic leather."
+	icon_state = "leather_jacket"
+	item_state = "leather_jacket"
+	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/storage/leather_jacket/vest
+	name = "black leather vest"
+	desc = "A sturdy black leather vest made out of synthetic leather."
+	icon_state = "leather_jacket_sleeveless"
+	item_state = "leather_jacket_sleeveless"
+
+/obj/item/clothing/suit/storage/leather_jacket/black
+	name = "black leather jacket"
+	desc = "A sturdy black jacket made out of synthetic leather."
+	icon_state = "leather_jacket2"
+	item_state = "leather_jacket2"
+
+/obj/item/clothing/suit/storage/puffer
+	name = "puffer jacket"
+	desc = "A comfortable grey puffer jacket."
+	icon_state = "pufferjacket"
+	item_state = "pufferjacket"
+
+/obj/item/clothing/suit/storage/puffer/vest
+	name = "puffer vest"
+	desc = "A comfortable grey puffer vest."
+	icon_state = "puffervest"
+	item_state = "puffervest"
+
+/obj/item/clothing/suit/storage/flannel
+	name = "grey flannel shirt"
+	desc = "A comfy flannel shirt with a grey design."
+	icon_state = "flannel"
+	item_state = "flannel"
+
+/obj/item/clothing/suit/storage/flannel/aqua
+	name = "aqua flannel shirt"
+	desc = "A comfy flannel shirt with a aqua design."
+	icon_state = "flannel_aqua"
+	item_state = "flannel_aqua"
+
+/obj/item/clothing/suit/storage/flannel/brown
+	name = "brown flannel shirt"
+	desc = "A comfy flannel shirt with a brown design."
+	icon_state = "flannel_brown"
+	item_state = "flannel_brown"
+
+/obj/item/clothing/suit/storage/flannel/red
+	name = "red flannel shirt"
+	desc = "A comfy flannel shirt with a red design."
+	icon_state = "flannel_red"
+	item_state = "flannel_red"
+
 /obj/item/clothing/suit/varsity
 	name = "black varsity jacket"
 	desc = "A sporty letterman jacket with a black design."

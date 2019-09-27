@@ -9,6 +9,12 @@
 	var/colour = "red"
 	var/open = 0
 
+/obj/item/weapon/lipstick/random
+	name = "random lipstick"
+
+/obj/item/weapon/lipstick/random/New()
+	colour = pick("red","purple","jade","black")
+	name = "[colour] lipstick"
 
 /obj/item/weapon/lipstick/purple
 	name = "purple lipstick"

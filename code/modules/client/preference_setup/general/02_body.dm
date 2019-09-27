@@ -114,7 +114,6 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(has_flag(mob_species_form, HAS_SKIN_TONE))
 		. += "<b>Skin Tone: </b><a href='?src=\ref[src];skin_tone=1'>[-pref.s_tone + 35]/220</a><br>"
 
-
 	. += "</td><td style = 'text-align:center;' width = 35%><b>Preview</b><br>"
 	. += "<div style ='padding-bottom:-2px;' class='statusDisplay'><img src=previewicon.png width=[pref.preview_icon.Width()] height=[pref.preview_icon.Height()]></div>"
 	. += "<br><a href='?src=\ref[src];cycle_bg=1'>Cycle background</a>"
@@ -282,7 +281,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["cycle_bg"])
-		pref.bgstate = next_in_list(pref.bgstate, pref.bgstate_options)
+		pref.bgstate = next_list_item(pref.bgstate, pref.bgstate_options)
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["cycle_hair"])
@@ -297,7 +296,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			if(old_pos + 1 > valid_hairstyles.len)
 				return TOPIC_NOACTION
 			new_h_style = valid_hairstyles[old_pos+1]
-
+		mob_species_form = all_species[pref.species]
 		if(new_h_style && CanUseTopic(user) && (new_h_style in mob_species_form.get_hair_styles()))
 			pref.h_style = new_h_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW
