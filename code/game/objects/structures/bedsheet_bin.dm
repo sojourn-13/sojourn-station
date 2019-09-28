@@ -117,7 +117,7 @@ LINEN BINS
 		if(do_after(user, 50, src))
 			to_chat(user, SPAN_NOTICE("You cut \the [src] into pieces!"))
 			for(var/i in 1 to rand(2,5))
-				new /obj/item/weapon/reagent_containers/glass/rag(get_turf(src))
+				new /obj/item/stack/material/cloth(get_turf(src))
 			qdel(src)
 		return
 	..()
