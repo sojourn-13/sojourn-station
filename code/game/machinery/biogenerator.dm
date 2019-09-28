@@ -24,6 +24,7 @@
 			list(name="Left4Zed, 30u", cost=60, reagent="left4zed"),
 			list(name="Robust Harvest, 30u", cost=75, reagent="robustharvest"),
 		"Leather",
+			list(name="Cloth Sheet", cost=50, pat=/obj/item/stack/material/cloth),
 			list(name="Wallet", cost=100, path=/obj/item/weapon/storage/wallet),
 			list(name="Botanical gloves", cost=250, path=/obj/item/clothing/gloves/botanic_leather),
 			list(name="Utility belt", cost=300, path=/obj/item/weapon/storage/belt/utility),
