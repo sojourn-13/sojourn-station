@@ -73,3 +73,29 @@
 		list(/obj/item/clothing, 1, time = 30),
 		list(QUALITY_CUTTING, 10, 60)
 	)
+	
+/datum/craft_recipe/clothing/muzzle
+	name = "muzzle"
+	result = /obj/item/clothing/mask/muzzle
+	steps = list(
+		list(/obj/item/stack/material/cloth, 5, time = 15),
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),	
+		list(QUALITY_CUTTING, 10, 60)
+	)	
+	
+/datum/craft_recipe/clothing/balaclava
+	name = "balaclava"
+	result = /obj/item/clothing/mask/balaclava
+	steps = list( 
+		list(/obj/item/stack/material/cloth, 10, time = 15),
+		list(QUALITY_CUTTING, 10, 60)
+	)
+	
+
+/datum/craft_recipe/clothing/blindfold
+	name = "blindfold"
+	result = /obj/item/clothing/glasses/blindfold
+	steps = list(
+		list(/obj/item/stack/material/cloth, 5, time = 15),
+		list(QUALITY_CUTTING, 10, 60)
+	)
