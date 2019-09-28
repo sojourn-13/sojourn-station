@@ -218,18 +218,3 @@ other types of metals and chemistry for reagents).
 	desc = "Using localized pockets of bluespace this bag prototype offers incredible storage capacity with the contents weighting nothing. It's a shame the bag itself is pretty heavy."
 	build_path = /obj/item/weapon/storage/backpack/holding
 	sort_string = "VAEAA"
-
-/datum/design/research/item/binaryencrypt
-	name = "Binary encryption key"
-	desc = "Allows for deciphering the binary channel on-the-fly."
-	build_path = /obj/item/device/encryptionkey/binary
-	sort_string = "VASAA"
-
-//Why is there a science design to craft a cardboard box full of things? That is not how this works
-/*
-/datum/design/research/item/chameleon
-	name = "Holographic equipment kit"
-	desc = "A kit of dangerous, high-tech equipment with changeable looks."
-	build_path = /obj/item/weapon/storage/box/syndie_kit/chameleon
-	sort_string = "VASBA"
-*/

@@ -11,6 +11,7 @@
 	var/nearest_artifact_distance = -1
 	var/last_scan_time = 0
 	var/scan_delay = 25
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1)
 
 /obj/item/device/ano_scanner/Initialize()
 	. = ..()

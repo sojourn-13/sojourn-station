@@ -13,6 +13,7 @@
 	slot_flags = SLOT_BELT
 	var/list/positive_locations = list()
 	var/datum/depth_scan/current
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1)
 
 /datum/depth_scan
 	var/time = ""

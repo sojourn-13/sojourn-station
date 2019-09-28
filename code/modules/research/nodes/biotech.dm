@@ -131,7 +131,7 @@
 */
 /datum/technology/basic_medical_tools
 	name = "Basic Medical Tools"
-	desc = "Mass Spectrometry method. Experimental surgical, laser tools. Medical sensors intergrated hud in hud-glass."
+	desc = "Mass Spectrometry method. Experimental surgical, laser tools. Medical sensors intergrated hud in hud-glass and large revival electrical shocks."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.4
@@ -144,13 +144,14 @@
 
 	unlocks_designs = list(	/datum/design/research/item/medical/mass_spectrometer,
 							/datum/design/research/item/medical/reagent_scanner,
+							/datum/design/research/item/medical/defibs,
 							/datum/design/research/item/scalpel_laser,
 							/datum/design/research/item/hud/health,
 							)
 
 /datum/technology/improved_biotech
 	name = "Improved Biotech"
-	desc = "Improved micro manipulations, advaced scanning method. Chemical implant, be careful."
+	desc = "Improved micro manipulations, advaced scanning method. Chemical implant and better surgerical tools, be careful."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.55
@@ -163,7 +164,12 @@
 
 	unlocks_designs = list(	/datum/design/research/item/implant/chemical,
 							/datum/design/research/item/part/adv_sensor,
-							/datum/design/research/item/part/nano_mani
+							/datum/design/research/item/part/nano_mani,
+							/datum/design/research/item/bonesetter_adv,
+							/datum/design/research/item/cautery_adv,
+							/datum/design/research/item/hemostat_adv,
+							/datum/design/research/item/retractor_adv,
+							/datum/design/research/item/medsaw_circular,
 							)
 
 /datum/technology/portable_biotech

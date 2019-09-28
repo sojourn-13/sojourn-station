@@ -8,6 +8,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pinoff"	//pinonfar, pinonmedium, pinonclose, pinondirect, pinonnull
 	item_state = "electronic"
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1)
 	var/frequency = PUB_FREQ
 	var/scan_ticks = 0
 	var/obj/item/device/radio/target_radio
