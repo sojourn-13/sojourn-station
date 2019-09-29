@@ -134,10 +134,6 @@
 	name = "IH magazine (5.56mm)"
 	build_path = /obj/item/ammo_magazine/ih556
 
-/datum/design/autolathe/ammo/box_a762
-	name = "ammunition box (7.62mm)"
-	build_path = /obj/item/ammo_magazine/ammobox/a762
-
 /datum/design/autolathe/ammo/smg9mm_brute
 	name = "SMG magazine (9mm)"
 	build_path = /obj/item/ammo_magazine/smg9mm
@@ -153,3 +149,105 @@
 /datum/design/autolathe/ammo/c45smg_rubber
 	name = "SMG magazine (.45 rubber)"
 	build_path = /obj/item/ammo_magazine/c45smg/rubber
+
+//Ammo boxes
+//Note that SMG Magazines holds 30 rounds as well, making the box useless
+//Lethal
+
+/datum/design/autolathe/ammo/box_a762
+	name = "ammunition box (7.62mm)"
+	build_path = /obj/item/ammo_magazine/ammobox/a762
+
+/datum/design/autolathe/ammo/box_a10mm
+	name = "ammunition box (10mm)"
+	build_path = /obj/item/ammo_magazine/ammobox/a10mm
+
+/datum/design/autolathe/ammo/box_a9mm
+	name = "ammunition box (9mm)"
+	build_path = /obj/item/ammo_magazine/ammobox/c9mm
+
+/datum/design/autolathe/ammo/box_cl32
+	name = "ammunition box (.32)"
+	build_path = /obj/item/ammo_magazine/ammobox/cl32
+
+/datum/design/autolathe/ammo/box_c45
+	name = "ammunition box (.45)"
+	build_path = /obj/item/ammo_magazine/ammobox/c45
+
+/datum/design/autolathe/ammo/box_c10x24
+	name = "ammunition box (10mm x 24 caseless)"
+	build_path = /obj/item/ammo_magazine/ammobox/c10x24
+
+/datum/design/autolathe/ammo/box_a556
+	name = "ammunition box (5.56mm)"
+	build_path = /obj/item/ammo_magazine/ammobox/a556
+
+/datum/design/autolathe/ammo/box_c65mm
+	name = "ammunition box (6.5mm)"
+	build_path = /obj/item/ammo_magazine/ammobox/c65mm
+
+/datum/design/autolathe/ammo/box_c357
+	name = "ammunition box (.357mm)"
+	build_path = /obj/item/ammo_magazine/ammobox/c357
+
+/datum/design/autolathe/ammo/box_c38
+	name = "ammunition box (.38)"
+	build_path = /obj/item/ammo_magazine/ammobox/c38
+
+/datum/design/autolathe/ammo/box_c44
+	name = "ammunition box (.44)"
+	build_path = /obj/item/ammo_magazine/ammobox/c44
+
+/datum/design/autolathe/ammo/box_c50
+	name = "ammunition box (.50)"
+	build_path = /obj/item/ammo_magazine/ammobox/c50
+
+/datum/design/autolathe/ammo/box_a145
+	name = "ammunition box (14.5mm)"
+	build_path = /obj/item/ammo_magazine/ammobox/a145
+
+//Non-Lethal
+
+/datum/design/autolathe/ammo/box_a10mm/rubber
+	name = "ammunition box (10mm rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/a10mm/rubber
+
+/datum/design/autolathe/ammo/box_c9mm/flash
+	name = "ammunition box (9mm flash)"
+	build_path = /obj/item/ammo_magazine/ammobox/c9mm/flash
+
+/datum/design/autolathe/ammo/box_c9mm/rubber
+	name = "ammunition box (9mm rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/c9mm/rubber
+
+/datum/design/autolathe/ammo/box_c9mm/practice
+	name = "ammunition box (9mm practice)"
+	build_path = /obj/item/ammo_magazine/ammobox/c9mm/practice
+
+/datum/design/autolathe/ammo/box_cl32/rubber
+	name = "ammunition box (.32 rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/cl32/rubber
+
+/datum/design/autolathe/ammo/box_c45/flash
+	name = "ammunition box (.45 flash)"
+	build_path = /obj/item/ammo_magazine/ammobox/c45/flash
+
+/datum/design/autolathe/ammo/box_c45/rubber
+	name = "ammunition box (.45 rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/c45/rubber
+
+/datum/design/autolathe/ammo/box_c45/practice
+	name = "ammunition box (.45 practice)"
+	build_path = /obj/item/ammo_magazine/ammobox/c45/practice
+
+/datum/design/autolathe/ammo/box_c65mm/rubber
+	name = "ammunition box (6.5mm rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/c65mm/rubber
+
+/datum/design/autolathe/ammo/box_c44/rubber
+	name = "ammunition box (.44 rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/c44/rubber
+
+/datum/design/autolathe/ammo/box_c50/rubber
+	name = "ammunition box (.50 rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/c50/rubber

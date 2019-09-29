@@ -28,7 +28,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools
 	disk_name = "Asters Basic Tool Pack"
 	icon_state = "guild"
-
 	license = 0
 	designs = list(
 		/datum/design/autolathe/tool/hatchet,
@@ -56,7 +55,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc
 	disk_name = "Asters Miscellaneous Pack"
 	icon_state = "guild"
-
 	license = 0
 	designs = list(
 		/datum/design/autolathe/misc/flashlight,
@@ -85,7 +83,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/devices
 	disk_name = "Asters Devices and Instruments"
 	icon_state = "guild"
-
 	license = 10
 	designs = list(
 		/datum/design/autolathe/misc/flashlight,
@@ -110,7 +107,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/robustcells
 	disk_name = "Asters Robustcells"
 	icon_state = "guild"
-
 	license = 8
 	designs = list(
 		/datum/design/autolathe/cell/large,
@@ -119,12 +115,12 @@
 		/datum/design/autolathe/cell/medium/high,
 		/datum/design/autolathe/cell/small,
 		/datum/design/autolathe/cell/small/high,
+		/datum/design/autolathe/part/cell_mout,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/cargo
 	disk_name = "Asters Tidbits Factory"
 	icon_state = "guild"
-
 	license = -1
 	designs = list(
 		//Basic Tools
@@ -201,7 +197,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/components
 	disk_name = "Technomancers ARK-034 Components"
 	icon_state = "technomancers"
-
 	license = 20
 	designs = list(
 		/datum/design/autolathe/part/consolescreen,
@@ -220,11 +215,9 @@
 		/datum/design/autolathe/part/laserguide,
 	)
 
-
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools
 	disk_name = "Technomancers IJIRO-451 Advanced Tools"
 	icon_state = "technomancers"
-
 	license = 10
 	designs = list(
 		/datum/design/autolathe/tool/big_wrench,
@@ -242,10 +235,37 @@
 		/datum/design/autolathe/part/diamondblade,
 	)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/parttoolpack
+	name = "Technomancers PAK-103 Tool Mods"
+	icon_state = "technomancers"
+	license = 10
+	designs = list(
+		/datum/design/autolathe/part/laserguide,
+		/datum/design/autolathe/part/diamondblade,
+		/datum/design/autolathe/part/stick,
+		/datum/design/autolathe/part/plating,
+		/datum/design/autolathe/part/guard,
+		/datum/design/autolathe/part/heatsink,
+		/datum/design/autolathe/part/ergonomic_grip,
+		/datum/design/autolathe/part/ratchet,
+		/datum/design/autolathe/part/red_paint,
+		/datum/design/autolathe/part/whetstone,
+		/datum/design/autolathe/part/magbit,
+		/datum/design/autolathe/part/red_paint,
+		/datum/design/autolathe/part/stabilized_grip,
+		/datum/design/autolathe/part/ported_barrel,
+		/datum/design/autolathe/part/motor,
+		/datum/design/autolathe/part/cell_mout,
+		/datum/design/autolathe/part/fuel_tank,
+		/datum/design/autolathe/part/expansion,
+		/datum/design/autolathe/part/spikes,
+		/datum/design/autolathe/part/dampener,
+	)
+	..()
+
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits
 	disk_name = "Technomancers ESPO-830 Circuits"
 	icon_state = "technomancers"
-
 	license = 10
 	designs = list(
 		/datum/design/autolathe/circuit/airlockmodule,
@@ -269,7 +289,6 @@
 	disk_name = "Technomancers Supply Factory"
 	icon_state = "technomancers"
 	license = -1 //Should make this disk infinite.
-
 	designs = list(
 		// From Components
 		/datum/design/autolathe/part/consolescreen,
@@ -323,7 +342,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical
 	disk_name = "Moebius Medical Designs"
 	icon_state = "moebius"
-
 	license = 20
 	designs = list(
 		/datum/design/autolathe/gun/syringe_gun,
@@ -352,7 +370,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer
 	disk_name = "Moebius Computer Parts"
 	icon_state = "moebius"
-
 	license = 20
 	designs = list(
 		/datum/design/autolathe/computer_part/frame_pda,
@@ -375,18 +392,20 @@
 		/datum/design/autolathe/computer_part/led,
 		/datum/design/autolathe/computer_part/scanner_paper,
 		/datum/design/autolathe/computer_part/scanner_atmos,
+		/datum/design/autolathe/part/heatsink,
+		/datum/design/autolathe/part/motor,
+		/datum/design/autolathe/part/dampener,
+		/datum/design/autolathe/part/cell_mout,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer/rd
 	disk_name = "Moebius Computer Factory"
 	license = -1
 
-
 // NeoTheology
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns
 	disk_name = "NeoTheology Armory of the Old Testament"
 	icon_state = "neotheology"
-
 	license = 3
 	designs = list(
 		/datum/design/autolathe/gun/mk58,
@@ -402,7 +421,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns
 	disk_name = "NeoTheology Armory of the New Testament"
 	icon_state = "neotheology"
-
 	license = 3
 	designs = list(
 		/datum/design/autolathe/gun/energy_crossbow,
@@ -413,12 +431,10 @@
 		/datum/design/autolathe/gun/ionrifle,
 	)
 
-
 // Ironhammer
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security
 	disk_name = "Ironhammer Miscellaneous Pack"
 	icon_state = "ironhammer"
-
 	license = 20
 	designs = list(
 		/datum/design/autolathe/sec/secflashlight,
@@ -434,12 +450,10 @@
 	disk_name = "Ironhammer Miscellaneous Factory"
 	license = -1
 
-
 // Frozen Star
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns
 	disk_name = "Frozen Star Basic Civilian Pack"
 	icon_state = "frozenstar"
-
 	license = 7
 	designs = list(
 		/datum/design/autolathe/gun/giskard,
@@ -453,7 +467,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_kinetic_guns //please, maintain general order (pistol>revolver>SMG>Other>Shotgun>GLs)+(smaller/less damaging caliber>bigger/more damaging caliber)
 	disk_name = "Frozen Star Ultimate Protection Pack"
 	icon_state = "frozenstar"
-
 	license = 5
 	designs = list(
 		/datum/design/autolathe/gun/IH_sidearm, //pistols
@@ -477,7 +490,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns
 	disk_name = "Frozen Star Void Warrior Pack"
 	icon_state = "frozenstar"
-
 	license = 3
 	designs = list(
 		/datum/design/autolathe/gun/energygun_martin,
@@ -488,7 +500,6 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
 	disk_name = "Frozen Star Nonlethal Ammo Pack"
 	icon_state = "frozenstar"
-
 	license = 20
 	designs = list(
 		/datum/design/autolathe/ammo/mg_cl32_rubber, //pistol mags
@@ -508,11 +519,30 @@
 		/datum/design/autolathe/ammo/stunshell,
 		/datum/design/autolathe/ammo/shotgun_beanbag
 	)
+	..()
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammoboxs
+	name = "Frozen Star Nonlethal Ammo Box Pack"
+	icon_state = "frozenstar"
+	license = 30
+	designs = list(
+		/datum/design/autolathe/ammo/box_a10mm/rubber,
+		/datum/design/autolathe/ammo/box_c9mm/flash,
+		/datum/design/autolathe/ammo/box_c9mm/rubber,
+		/datum/design/autolathe/ammo/box_c9mm/practice,
+		/datum/design/autolathe/ammo/box_cl32/rubber,
+		/datum/design/autolathe/ammo/box_c45/flash,
+		/datum/design/autolathe/ammo/box_c45/rubber,
+		/datum/design/autolathe/ammo/box_c45/practice,
+		/datum/design/autolathe/ammo/box_c65mm/rubber,
+		/datum/design/autolathe/ammo/box_c44/rubber,
+		/datum/design/autolathe/ammo/box_c50/rubber,
+	)
+	..()
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
 	disk_name = "Frozen Star Lethal Ammo Pack"
 	icon_state = "frozenstar"
-
 	license = 20
 	designs = list(
 		/datum/design/autolathe/ammo/mg_cl32_brute, //pistol mags
@@ -536,13 +566,32 @@
 		/datum/design/autolathe/ammo/shotgun
 	)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammoboxs
+	name = "Frozen Star Lethal Ammo Boxes Pack"
+	icon_state = "frozenstar"
+	license = 30
+	designs = list(
+		/datum/design/autolathe/ammo/box_a762,
+		/datum/design/autolathe/ammo/box_a10mm,
+		/datum/design/autolathe/ammo/box_a9mm,
+		/datum/design/autolathe/ammo/box_cl32,
+		/datum/design/autolathe/ammo/box_c45,
+		/datum/design/autolathe/ammo/box_c10x24,
+		/datum/design/autolathe/ammo/box_a556,
+		/datum/design/autolathe/ammo/box_c65mm,
+		/datum/design/autolathe/ammo/box_c357,
+		/datum/design/autolathe/ammo/box_c38,
+		/datum/design/autolathe/ammo/box_c44,
+		/datum/design/autolathe/ammo/box_c50,
+		/datum/design/autolathe/ammo/box_a145,
+	)
+	..()
 
 // Excelsior
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior
 	disk_name = "Excelsior Means of Production"
 	desc = "Seize it."
 	icon_state = "excelsior"
-
 	license = 0
 	designs = list(
 		/datum/design/autolathe/circuit/autolathe_excelsior,
@@ -581,7 +630,6 @@
 	disk_name = "Excelsior Means of Revolution"
 	desc = "The back has a machine etching: \"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\""
 	icon_state = "excelsior"
-
 	license = 0
 	designs = list(
 		/datum/design/autolathe/gun/makarov,
@@ -632,11 +680,11 @@
 		/datum/design/research/item/part/basic_capacitor,
 		/datum/design/autolathe/part/camera_assembly
 	)
+
 // One Star
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar
 	disk_name = "One Star Tool Pack"
 	icon_state = "onestar"
-
 	license = 2
 	designs = list(
 		/datum/design/autolathe/tool/crowbar_onestar,

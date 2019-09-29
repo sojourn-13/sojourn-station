@@ -45,7 +45,6 @@
 	bulk_mod = 1
 	health_threshold_modifier = 10
 
-
 /obj/item/weapon/tool_upgrade/reinforcement/guard
 	name = "metal guard"
 	desc = "A bent piece of metal that wraps around sensitive parts of a tool, protecting it from impacts, debris, and stray fingers."
@@ -56,10 +55,6 @@
 	precision = 5
 	health_threshold_modifier = 10
 
-
-
-
-
 // 	 PRODUCTIVITY: INCREASES WORKSPEED
 //------------------------------------------------
 /obj/item/weapon/tool_upgrade/productivity/ergonomic_grip
@@ -68,7 +63,6 @@
 	icon_state = "ergonomic"
 	prefix = "ergonomic"
 	workspeed = 0.15
-
 
 /obj/item/weapon/tool_upgrade/productivity/ratchet
 	name = "ratcheting mechanism"
@@ -120,8 +114,6 @@
 			to_chat(user, SPAN_WARNING("This tool doesn't use a physical edge!"))
 			return FALSE
 
-
-
 /obj/item/weapon/tool_upgrade/productivity/oxyjet
 	name = "oxyjet canister"
 	desc = "A canister of pure, compressed oxygen with adapters for mounting onto a welding tool. Used alongside fuel, it allows for higher burn temperatures"
@@ -132,7 +124,6 @@
 	force_mult = 1.15
 	degradation_mult = 1.15
 	health_threshold_modifier = -10
-
 
 //Enhances power tools majorly, but also increases costs
 /obj/item/weapon/tool_upgrade/productivity/motor
@@ -157,11 +148,6 @@
 			return TRUE
 		return FALSE
 
-
-
-
-
-
 // 	 REFINEMENT: INCREASES PRECISION
 //------------------------------------------------
 /obj/item/weapon/tool_upgrade/refinement/laserguide
@@ -171,7 +157,6 @@
 	prefix = "laser-guided"
 	precision = 10
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_URANIUM = 1)
-
 
 //Fits onto generally small tools that require precision, especially surgical tools
 //Doesn't work onlarger things like crowbars and drills
@@ -193,7 +178,6 @@
 	prefix = "magnetic"
 	precision = 10
 
-
 /obj/item/weapon/tool_upgrade/refinement/ported_barrel
 	name = "ported barrel"
 	desc = "A barrel extension for a welding tool which helps manage gas pressure and keep the torch steady."
@@ -204,14 +188,6 @@
 	degradation_mult = 1.15
 	bulk_mod = 1
 	health_threshold_modifier = 10
-
-
-
-
-
-
-
-
 
 // 		AUGMENTS: MISCELLANEOUS AND UTILITY
 //------------------------------------------------
@@ -249,9 +225,6 @@
 		prefix = "medium-cell"
 	..()
 
-
-
-
 //Stores moar fuel!
 /obj/item/weapon/tool_upgrade/augment/fuel_tank
 	name = "Expanded fuel tank"
@@ -282,7 +255,6 @@
 	if (..())
 		holder.max_fuel += 600
 
-
 //Penalises the tool, but unlocks several more augment slots.
 /obj/item/weapon/tool_upgrade/augment/expansion
 	name = "expansion port"
@@ -297,7 +269,6 @@
 /obj/item/weapon/tool_upgrade/augment/expansion/apply_values()
 	if (..())
 		holder.max_upgrades += 3
-
 
 /obj/item/weapon/tool_upgrade/augment/spikes
 	name = "spikes"
@@ -322,7 +293,6 @@
 	icon_state = "dampener"
 	prefix = "silenced"
 	health_threshold_modifier = -10
-
 
 /obj/item/weapon/tool_upgrade/augment/dampener/apply_values()
 	if (..())
