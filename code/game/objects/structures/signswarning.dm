@@ -174,6 +174,10 @@
 	name = "\improper KEEP CLEAR: DOCKING AREA"
 	icon_state = "cautiontiny"
 
+/obj/structure/sign/warning/dropzone
+	name = "\improper DROP ZONE"
+	icon_state = "dropzone"
+
 /obj/structure/sign/warning/evac
 	name = "\improper KEEP CLEAR: EVAC DOCKING AREA"
 	icon_state = "evac"
@@ -261,6 +265,10 @@
 /obj/structure/sign/warning/nosmoking/largeburnt
 	name = "\improper NO SMOKING"
 	icon_state = "nosmoking2_b"
+
+/obj/structure/sign/warning/safety
+	name = "safety poster"
+	icon_state = "safetyplease"
 
 /obj/structure/sign/warning/smoking
 	name = "\improper SMOKING AREA"

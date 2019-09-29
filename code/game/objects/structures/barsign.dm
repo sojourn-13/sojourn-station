@@ -1,10 +1,10 @@
-/obj/structure/sign/residential/barsign
+/obj/structure/sign/neon/barsign
 	icon = 'icons/obj/barsigns.dmi'
 	icon_state = "empty"
 	anchored = 1
 	var/cult = 0
 
-/obj/structure/sign/residential/barsign/proc/get_valid_states(initial=1)
+/obj/structure/sign/neon/barsign/proc/get_valid_states(initial=1)
 	. = icon_states(icon)
 	. -= "on"
 	. -= "narsiebistro"
@@ -12,7 +12,7 @@
 	if(initial)
 		. -= "Off"
 
-/obj/structure/sign/residential/barsign/examine(mob/user)
+/obj/structure/sign/neon/barsign/examine(mob/user)
 	..()
 	switch(icon_state)
 		if("Off")
@@ -24,11 +24,11 @@
 		else
 			to_chat(user, "It says '[icon_state]'")
 
-/obj/structure/sign/residential/barsign/New()
+/obj/structure/sign/neon/barsign/New()
 	..()
 	icon_state = pick(get_valid_states())
 
-/obj/structure/sign/residential/barsign/attackby(obj/item/I, mob/user)
+/obj/structure/sign/neon/barsign/attackby(obj/item/I, mob/user)
 	if(cult)
 		return ..()
 

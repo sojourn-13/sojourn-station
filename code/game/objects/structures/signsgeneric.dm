@@ -21,7 +21,7 @@
 	return
 
 /obj/structure/sign/attackby(obj/item/tool as obj, mob/user as mob)	//deconstruction
-	if(istype(tool, /obj/item/weapon/tool/screwdriver) && !istype(src, /obj/structure/sign/residential/barsign))
+	if(istype(tool, /obj/item/weapon/tool/screwdriver) && !istype(src, /obj/structure/sign/neon/barsign))
 		to_chat(user, "You unfasten the sign with your [tool].")
 		var/obj/item/sign/S = new(src.loc)
 		S.name = name
@@ -538,16 +538,6 @@
 	name = "medbay"
 	desc = "The Intergalactic symbol of Medical institutions. You'll probably get help here."
 	icon_state = "lifestar"
-
-/obj/structure/sign/medsci/hospital
-	name = "CITY HOSPITAL"
-	icon = 'icons/obj/signs.dmi'
-	icon_state = "meetingroom1"
-
-/obj/structure/sign/medsci/hospital/right
-	name = "CITY HOSPITAL"
-	icon = 'icons/obj/signs.dmi'
-	icon_state = "meetingroom2"
 
 /*Faction Signs*/
 

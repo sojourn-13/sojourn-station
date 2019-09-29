@@ -6,29 +6,16 @@
 	icon_screen = "invaders"
 	var/list/prizes = list(
 		/obj/item/weapon/storage/box/snappops			= 2,
-		/obj/item/toy/junk/blink								= 2,
-		/obj/item/clothing/under/syndicate				= 2,
-		/obj/item/toy/weapon/sword								= 2,
 		/obj/item/weapon/gun/projectile/revolver/capgun	= 2,
-		/obj/item/toy/weapon/crossbow							= 2,
-		/obj/item/clothing/suit/costume/halloween/syndicate	= 2,
 		/obj/item/weapon/storage/fancy/crayons			= 2,
-		/obj/item/toy/junk/spinningtoy						= 2,
-		/obj/item/toy/figure/mecha/ripley						= 1,
-		/obj/item/toy/figure/mecha/fireripley					= 1,
-		/obj/item/toy/figure/mecha/deathripley					= 1,
-		/obj/item/toy/figure/mecha/gygax						= 1,
-		/obj/item/toy/figure/mecha/durand						= 1,
-		/obj/item/toy/figure/mecha/honk						= 1,
-		/obj/item/toy/figure/mecha/marauder					= 1,
-		/obj/item/toy/figure/mecha/seraph						= 1,
-		/obj/item/toy/figure/mecha/mauler						= 1,
-		/obj/item/toy/figure/mecha/odysseus					= 1,
-		/obj/item/toy/figure/mecha/phazon						= 1,
-		/obj/item/toy/weapon/waterflower						= 1,
-		/obj/random/action_figure						= 1,
-		/obj/random/plushie								= 1,
-		/obj/item/toy/weapon/cultsword							= 1
+		/obj/random/costume/body_generic				= 2,
+		/obj/random/costume/body_animals				= 2,
+		/obj/random/costume/head_generic				= 2,
+		/obj/random/costume/head_animals				= 2,
+		/obj/random/toy/arcadejunk						= 1,
+		/obj/random/toy/action_figure					= 1,
+		/obj/random/toy/mecha							= 1,
+		/obj/random/toy/plushie							= 1,
 	)
 
 /obj/machinery/computer/arcade/Initialize()

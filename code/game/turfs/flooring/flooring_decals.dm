@@ -139,6 +139,36 @@ var/list/floor_decals = list()
 	name = "hazard stripes"
 	icon_state = "full_dust"
 
+/obj/effect/floor_decal/industrial/warningwhite
+	icon_state = "warningline_white"
+
+/obj/effect/floor_decal/industrial/warningwhite/end
+	icon_state = "warn_end_white"
+
+/obj/effect/floor_decal/industrial/warningwhite/corner
+	icon_state = "warninglinecorner_white"
+
+/obj/effect/floor_decal/industrial/warningwhite/box
+	icon_state = "warn_box_white"
+
+/obj/effect/floor_decal/industrial/warningwhite/full
+	icon_state = "warn_full_white"
+
+/obj/effect/floor_decal/industrial/warningred
+	icon_state = "warningline_red"
+
+/obj/effect/floor_decal/industrial/warningred/end
+	icon_state = "warn_end_red"
+
+/obj/effect/floor_decal/industrial/warningred/corner
+	icon_state = "warninglinecorner_red"
+
+/obj/effect/floor_decal/industrial/warningred/box
+	icon_state = "warn_box_red"
+
+/obj/effect/floor_decal/industrial/warningred/full
+	icon_state = "warn_full_red"
+
 
 /obj/effect/floor_decal/industrial/hatch
 	name = "white hatch"

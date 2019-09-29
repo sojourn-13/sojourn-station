@@ -250,12 +250,12 @@
 	desc = "A sign issuing a reminder to pay any financial penalties."
 	icon_state = "fine"
 
-/obj/structure/sign/residential/gamecenter
+/obj/structure/sign/neon/gamecenter
 	name = "game center"
 	desc = "A flashing arcade sign. Glitzy."
 	icon_state = "gamecenter-left"
 
-/obj/structure/sign/residential/gamecenter/right
+/obj/structure/sign/neon/gamecenter/right
 	icon_state = "gamecenter-right"
 
 /obj/structure/sign/residential/coffee
@@ -265,14 +265,6 @@
 
 /obj/structure/sign/residential/coffee/right
 	icon_state = "coffee-right"
-
-/obj/structure/sign/residential/maltesefalcon
-	name = "The Maltese Falcon"
-	desc = "The Maltese Falcon, Space Bar and Grill."
-	icon_state = "maltesefalcon-left"
-
-/obj/structure/sign/residential/maltesefalcon/right
-	icon_state = "maltesefalcon-right"
 
 /obj/structure/sign/residential/loan
 	name = "loan"
@@ -298,6 +290,14 @@
 	name = "pool sign"
 	desc = "A sign for the pool area."
 	icon_state = "pool"
+
+/obj/structure/sign/residential/maltesefalcon
+	name = "The Maltese Falcon"
+	desc = "The Maltese Falcon, Space Bar and Grill."
+	icon_state = "maltesefalcon-left"
+
+/obj/structure/sign/residential/maltesefalcon/right
+	icon_state = "maltesefalcon-right"
 
 /obj/structure/sign/residential/arcade
 	name = "arcade sign"
@@ -483,9 +483,9 @@
 	icon_state = "police2"
 
 /obj/structure/sign/security/meetingroom
-	name = "POLICE STATION"
+	name = "MEETING ROOM"
 	icon_state = "meetingroom1"
 
 /obj/structure/sign/security/meetingroom/right
-	name = "POLICE STATION"
+	name = "MEETING ROOM"
 	icon_state = "meetingroom2"

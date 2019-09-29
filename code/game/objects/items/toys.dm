@@ -502,256 +502,302 @@
 /*Civilian*/
 
 /obj/item/toy/figure/character/civilian/assistant
-	name = "Assistant action figure"
-	desc = "A \"Space Life\" brand Assistant action figure."
+	name = "assistant action figure"
+	desc = "The lowly but dutiful helper. Civilians 1/7."
 	icon_state = "assistant"
+	toysay = "Greytide, stationwide!"
 
 /obj/item/toy/figure/character/civilian/bartender
-	name = "Bartender action figure"
-	desc = "A \"Space Life\" brand Bartender action figure."
+	name = "bartender action figure"
+	desc = "The dispenser of station booze. Civilians 2/7."
 	icon_state = "bartender"
+	toysay = "Where's my monkey?"
 
 /obj/item/toy/figure/character/civilian/janitor
-	name = "Janitor action figure"
-	desc = "A \"Space Life\" brand Janitor action figure."
+	name = "janitor action figure"
+	desc = "Blood, vomit, alien slime - they clean all. Civilians 3/7."
 	icon_state = "janitor"
+	toysay = "Look at the signs, fool!"
 
 /obj/item/toy/figure/character/civilian/gardener
-	name = "Gardener action figure"
-	desc = "A \"Space Life\" brand Gardener action figure."
+	name = "gardener action figure"
+	desc = "The best food is often home-grown. Civilians 4/7."
 	icon_state = "gardener"
+	toysay = "Herb is a plant."
 
 /obj/item/toy/figure/character/civilian/chaplain
-	name = "Monochurch Preacher action figure"
-	desc = "A \"Space Life\" brand Monochurch Preacher action figure."
+	name = "preacher action figure"
+	desc = "A calming presence and a ward against evil. Civilians 5/7."
 	icon_state = "chaplain"
+	toysay = "I pray for a combat mech..."
 
 /obj/item/toy/figure/character/civilian/entertainer
 	name = "entertainer action figure"
-	desc = "A \"Space Life\" brand entertainer action figure."
+	desc = "Are they laughing at them or with them? Civilians 6/7."
 	icon_state = "clown"
+	toysay = "Honk honk!"
 
 /obj/item/toy/figure/character/civilian/chef
-	name = "Chef action figure"
-	desc = "A \"Space Life\" brand Chef action figure."
+	name = "chef action figure"
+	desc = "Without one we'd all be eating roach guts. Civilians 7/7."
 	icon_state = "chef"
+	toysay = "I swear it's not human meat!"
 
 /*Moebius*/
 
 /obj/item/toy/figure/character/moebius/cmo
-	name = "Chief Medical Officer action figure"
-	desc = "A \"Space Life\" brand Chief Medical Officer action figure."
+	name = "biolab officer action figure"
+	desc = "The health of the crew is in their hands. Moebius 1/9."
 	icon_state = "cmo"
+	toysay = "Suit sensors on, people!"
 
 /obj/item/toy/figure/character/moebius/rd
-	name = "Research Director action figure"
-	desc = "A \"Space Life\" brand Research Director action figure."
+	name = "expedition overseer action figure"
+	desc = "All research requests go through them. Moebius 2/9."
 	icon_state = "rd"
+	toysay = "I'm the smartest one here."
 
 /obj/item/toy/figure/character/moebius/md
-	name = "Medical Doctor action figure"
-	desc = "A \"Space Life\" brand Medical Doctor action figure."
+	name = "medical doctor action figure"
+	desc = "They'll do their best to uphold the oath. Moebius 3/9."
 	icon_state = "md"
-
-/obj/item/toy/figure/character/moebius/roboticist
-	name = "Roboticist action figure"
-	desc = "A \"Space Life\" brand Roboticist action figure."
-	icon_state = "roboticist"
-
-/obj/item/toy/figure/character/moebius/scientist
-	name = "Scientist action figure"
-	desc = "A \"Space Life\" brand Scientist action figure."
-	icon_state = "scientist"
-
-/obj/item/toy/figure/character/moebius/chemist
-	name = "Chemist action figure"
-	desc = "A \"Space Life\" brand Chemist action figure."
-	icon_state = "chemist"
-
-/obj/item/toy/figure/character/moebius/borg
-	name = "Cyborg action figure"
-	desc = "A \"Space Life\" brand Cyborg action figure."
-	icon_state = "borg"
+	toysay = "They're bleeding out!"
 
 /obj/item/toy/figure/character/moebius/psychologist
-	name = "Psychologist action figure"
-	desc = "A \"Space Life\" brand Psychologist action figure."
+	name = "psychologist action figure"
+	desc = "Diseases of the mind are just as deadly. Moebius 4/9."
 	icon_state = "psychologist"
+	toysay = "Just come and have a seat."
 
 /obj/item/toy/figure/character/moebius/paramedic
-	name = "Paramedic action figure"
-	desc = "A \"Space Life\" brand Paramedic action figure."
+	name = "paramedic action figure"
+	desc = "They'll go anywhere to save a life. Moebius 5/9."
 	icon_state = "paramedic"
+	toysay = "Where are you?!"
+
+/obj/item/toy/figure/character/moebius/chemist
+	name = "chemist action figure"
+	desc = "Hopefully it won't blow up this time. Moebius 6/9."
+	icon_state = "chemist"
+	toysay = "Pills here!"
+
+/obj/item/toy/figure/character/moebius/scientist
+	name = "scientist action figure"
+	desc = "Their experiments sometimes go wacky. Moebius 7/9."
+	icon_state = "scientist"
+	toysay = "Do I make toxins or slimes today?"
+
+/obj/item/toy/figure/character/moebius/roboticist
+	name = "roboticist action figure"
+	desc = "The master of machine life. Moebius 8/9."
+	icon_state = "roboticist"
+	toysay = "He asked to be borged!"
+
+/obj/item/toy/figure/character/moebius/borg
+	name = "cyborg action figure"
+	desc = "A mechanical servant made by man. Moebius 9/9."
+	icon_state = "borg"
+	toysay = "I live again!"
 
 /*Command*/
 
 /obj/item/toy/figure/character/command/captain
-	name = "Captain action figure"
-	desc = "A \"Space Life\" brand Captain action figure."
+	name = "captain action figure"
+	desc = "The man in charge around here. Command 1/4."
 	icon_state = "captain"
+	toysay = "Polish my display case, peasants."
 
 /obj/item/toy/figure/character/command/firstofficer
-	name = "Head of Personel action figure"
-	desc = "A \"Space Life\" brand Head of Personel action figure."
+	name = "first officer action figure"
+	desc = "The loyal lieutenant, and second in command. Command 2/4."
 	icon_state = "hop"
+	toysay = "No, you can't have all-access!"
 
 /obj/item/toy/figure/character/command/corgi
-	name = "Corgi action figure"
-	desc = "A \"Space Life\" brand Corgi action figure."
+	name = "corgi action figure"
+	desc = "This pet dog is still a higher rank than you. Command 3/4."
 	icon_state = "ian"
+	toysay = "Yip!"
 
 /obj/item/toy/figure/character/command/ai
-	name = "ai action figure"
-	desc = "A \"Space Life\" brand AI action figure."
-	icon_state = "ian"
+	name = "AI action figure"
+	desc = "Great intelligence bound by restrictive laws. Command 4/4."
+	icon_state = "AI"
+	toysay = "It's a good job I can multitask."
 
 /*Guild*/
 
 /obj/item/toy/figure/character/guild/qm
-	name = "Quartermaster action figure"
-	desc = "A \"Space Life\" brand Quartermaster action figure."
+	name = "merchant action figure"
+	desc = "The money-minded manager of all cargo affairs. Guild 1/3."
 	icon_state = "qm"
+	toysay = "Watch our budget!"
 
 /obj/item/toy/figure/character/guild/cargotech
-	name = "Cargo Technician action figure"
-	desc = "A \"Space Life\" brand Cargo Technician action figure."
+	name = "technician action figure"
+	desc = "Noone is more experienced at moving crates. Guild 2/3."
 	icon_state = "cargotech"
+	toysay = "My back hurts."
 
 /obj/item/toy/figure/character/guild/miner
-	name = "Shaft Miner action figure"
-	desc = "A \"Space Life\" brand Shaft Miner action figure."
+	name = "miner action figure"
+	desc = "Will they find minerals, treasure, or monsters? Guild 3/3."
 	icon_state = "miner"
+	toysay = "So this is how it ends."
 
 /*Technomancer*/
 
 /obj/item/toy/figure/character/technomancer/ce
-	name = "Chief Engineer action figure"
-	desc = "A \"Space Life\" brand Chief Engineer action figure."
-	icon_state = "ce"
+	name = "exultant action figure"
+	desc = "The overseer of all construction and repair. Technomancers 1/2."
+	toysay = "Hurry up and wire the solars."
 
 /obj/item/toy/figure/character/technomancer/engineer
-	name = "Technomancer action figure"
-	desc = "A \"Space Life\" brand Technomancer action figure."
+	name = "technomancer action figure"
+	desc = "There's little a technomancer can't fix. Technomancers 2/2."
 	icon_state = "engineer"
+	toysay = "Engine levels critical!"
 
 /*Ironhammer*/
 
 /obj/item/toy/figure/character/ironhammer/hos
-	name = "Ironhammer Commander action figure"
-	desc = "A \"Space Life\" brand Ironhammer Commander action figure."
+	name = "commander action figure"
+	desc = "The most formidable force on the station. Ironhammer 1/4."
 	icon_state = "hos"
+	toysay = "I am the law!"
 
 /obj/item/toy/figure/character/ironhammer/secofficer
-	name = "Security Officer action figure"
-	desc = "A \"Space Life\" brand Security Officer action figure."
+	name = "operative action figure"
+	desc = "They don't make the law, but they enforce it. Ironhammer 2/4."
 	icon_state = "secofficer"
+	toysay = "Halt!"
 
 /obj/item/toy/figure/character/ironhammer/warden
-	name = "Warden action figure"
-	desc = "A \"Space Life\" brand Warden action figure."
+	name = "warden figure"
+	desc = "Holding them is even harder than catching them. Ironhammer 3/4."
 	icon_state = "warden"
+	toysay = "Get back in your cell!"
 
 /obj/item/toy/figure/character/ironhammer/detective
-	name = "Detective action figure"
-	desc = "A \"Space Life\" brand Detective action figure."
+	name = "detective action figure"
+	desc = "Some crimes can't be solved by force alone. Ironhammer 4/4."
 	icon_state = "detective"
+	toysay = "Hmm, insulated glove fibers..."
 
 /*Discontinued*/
 
 /obj/item/toy/figure/character/discontinued/agent
-	name = "Internal Affairs Agent action figure"
-	desc = "A \"Space Life\" brand Internal Affairs Agent action figure."
+	name = "internal affairs agent action figure"
+	desc = "Called in for matters of extreme paperwork. Discontinued 1/6."
 	icon_state = "agent"
+	toysay = "The SOP says they're guilty."
 
 /obj/item/toy/figure/character/discontinued/librarian
-	name = "Librarian action figure"
-	desc = "A \"Space Life\" brand Librarian action figure."
+	name = "librarian action figure"
+	desc = "Archivist of new and old. Discontinued 2/6."
 	icon_state = "librarian"
+	toysay = "One day while..."
 
 /obj/item/toy/figure/character/discontinued/mime
-	name = "Mime action figure"
-	desc = "A \"Space Life\" brand Mime action figure."
+	name = "mime action figure"
+	desc = "They don't have much to say. Discontinued 3/6."
 	icon_state = "mime"
+	toysay = "..."
 
 /obj/item/toy/figure/character/discontinued/dsquad
-	name = "Space Commando action figure"
-	desc = "A \"Space Life\" brand Space Commando action figure."
+	name = "space commando action figure"
+	desc = "The final solution. Discontinued 4/6."
 	icon_state = "dsquad"
+	toysay = "Eliminate all threats!"
 
 /obj/item/toy/figure/character/discontinued/geneticist
-	name = "Geneticist action figure"
-	desc = "A \"Space Life\" brand Geneticist action figure, which was recently dicontinued."
+	name = "geneticist action figure"
+	desc = "The seeker of higher power. Discontinued 5/6."
 	icon_state = "geneticist"
+	toysay = "I can't make anything but brain damage?!"
 
 /obj/item/toy/figure/character/discontinued/atmos
-	name = "Atmospheric Technician action figure"
-	desc = "A \"Space Life\" brand Atmospheric Technician action figure."
+	name = "atmospheric technician action figure"
+	desc = "In space, they control the most valuable resource. Discontinued 6/6."
 	icon_state = "atmos"
+	toysay = "Did I filter oxygen or phoron?"
+
 
 /*Villains*/
 
 /obj/item/toy/figure/character/villains/ninja
-	name = "Space Ninja action figure"
-	desc = "A \"Space Life\" brand Space Ninja action figure."
+	name = "space ninja action figure"
+	desc = "You'll never see him coming... unfortunately. Villains 1/3."
 	icon_state = "ninja"
+	toysay = "..."
 
 /obj/item/toy/figure/character/villains/wizard
-	name = "Wizard action figure"
-	desc = "A \"Space Life\" brand Wizard action figure."
+	name = "wizard action figure"
+	desc = "He has grand plans for his ancient powers. Villains 2.3."
 	icon_state = "wizard"
+	toysay = "Hocus pocus, I really can't focus."
 
 /obj/item/toy/figure/character/villains/syndie
-	name = "Doom Operative action figure"
-	desc = "A \"Space Life\" brand Doom Operative action figure."
+	name = "doom operative action figure"
+	desc = "This sinister mercenary has dark plans. Villains 3/3."
 	icon_state = "syndie"
-
-/obj/item/toy/figure/character/villains/alien
-	name = "alien action figure"
-	desc = "A \"Space Life\" brand Space Ninja action figure."
-	icon_state = "aliencharacter"
-
-/obj/item/toy/figure/character/villains/owl
-	name = "owl-man action figure"
-	desc = "A \"Space Life\" brand Space Ninja action figure."
-	icon_state = "owlprize"
-
-/obj/item/toy/figure/character/villains/griffin
-	name = "griffin-man action figure"
-	desc = "A \"Space Life\" brand Space Ninja action figure."
-	icon_state = "griffinprize"
+	toysay = "Secure the nuke!"
 
 /*D&D*/
 
 /obj/item/toy/figure/character/rpg/warrior
 	name = "warrior miniature"
-	desc = "That sword would make a decent toothpick."
+	desc = "The brave warrior stands against all evil."
 	icon_state = "warriorcharacter"
+	toysay = "You can't stand against justice."
 
 /obj/item/toy/figure/character/rpg/cleric
 	name = "cleric miniature"
-	desc = "A wee little cleric, with his wee little staff."
+	desc = "The smart little cleric keeps the party going."
 	icon_state = "clericcharacter"
+	toysay = "Fight with me, my friends."
 
 /obj/item/toy/figure/character/rpg/thief
 	name = "thief miniature"
-	desc = "Hey, where did my wallet go!?"
+	desc = "The sneaky thief seeks out the finest treasures."
 	icon_state = "thiefcharacter"
+	toysay = "You've got to pick a pocket or two."
 
 /obj/item/toy/figure/character/rpg/wizard
 	name = "wizard miniature"
-	desc = "MAGIC!"
+	toysay = "The mysterious wizard dabbles in ancient arts."
 	icon_state = "wizardcharacter"
+	toysay = "Fire and ice, light and dark."
 
 /obj/item/toy/figure/character/rpg/voidone
 	name = "void one miniature"
-	desc = "The dark lord has risen!"
+	desc = "The ultimate dark one, the source of all evil."
 	icon_state = "darkmastercharacter"
+	toysay = "I shall destroy... and hate mankind!"
 
 /obj/item/toy/figure/character/rpg/lich
 	name = "lich miniature"
-	desc = "Murderboner extraordinaire."
+	desc = "The master of the dead and enemy of the living."
 	icon_state = "lichcharacter"
+	toysay = "You shall join the legions of the dead!"
 
+/obj/item/toy/figure/character/rpg/alien
+	name = "alien action figure"
+	desc = "The aliens seek to destroy all other races."
+	icon_state = "aliencharacter"
+	toysay = "Hssss!"
+
+/obj/item/toy/figure/character/rpg/owl
+	name = "owl action figure"
+	desc = "The owls zealously guard the natural lands."
+	icon_state = "owlprize"
+	toysay = "Twit-twoo!"
+
+/obj/item/toy/figure/character/rpg/griffin
+	name = "griffin action figure"
+	desc = "The griffins watch over the ancient relics."
+	icon_state = "griffinprize"
+	toysay = "Caw!"
 
 /*
  * Plushies
@@ -1080,16 +1126,6 @@
 /obj/item/toy/plushie/carp/attack_self(mob/user as mob)
 	playsound(src.loc, bitesound, 20, 1)
 	return ..()
-
-
-/obj/random/carp_plushie
-	name = "Random Carp Plushie"
-	desc = "This is a random plushie"
-	icon = 'icons/obj/toy.dmi'
-	icon_state = "basecarp"
-
-/obj/random/carp_plushie/item_to_spawn()
-	return pick(typesof(/obj/item/toy/plushie/carp)) //can pick any carp plushie, even the original.
 
 /obj/item/toy/plushie/carp/ice
 	name = "carp ice plushie"
