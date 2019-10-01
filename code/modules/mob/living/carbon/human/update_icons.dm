@@ -469,7 +469,7 @@ var/global/list/wings_icon_cache = list()
 		return
 
 	overlays_standing[CUSTOM_EARS_LAYER] = null
-	if(wear_suit && wear_suit.flags_inv & HIDEEARS)
+	if(head && head.flags_inv & HIDEEARS)
 		if(update_icons) update_icons()
 		return
 
