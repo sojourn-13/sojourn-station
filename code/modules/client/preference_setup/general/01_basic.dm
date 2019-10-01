@@ -1,4 +1,4 @@
-datum/preferences
+/datum/preferences
 	var/gender = MALE							//physical gender of character (well duh)
 	var/gender_identity = null
 	var/age = 30								//age of character
@@ -56,7 +56,7 @@ datum/preferences
 	pref.b_type				= sanitize_text(pref.b_type, initial(pref.b_type))
 	pref.disabilities		= sanitize_integer(pref.disabilities, 0, 65535, initial(pref.disabilities))
 	pref.gender             = sanitize_inlist(pref.gender, S.genders, pick(S.genders))
-	pref.gender_identity	= sanitize_inlist(pref.gender_identity, GLOB.gender_datums, null)
+	if(pref.gender_identity != null && !(pref.gender_identity in GLOB.gender_datums)) pref.gender_identity = null;
 	pref.spawnpoint         = sanitize_inlist(pref.spawnpoint, get_late_spawntypes(), initial(pref.spawnpoint))
 	pref.be_random_name     = sanitize_integer(pref.be_random_name, 0, 1, initial(pref.be_random_name))
 	pref.real_name				= sanitize_text(pref.real_name, random_name(pref.gender, pref.species))
