@@ -1813,8 +1813,8 @@
 	result = "bouncer"
 	required_reagents = list("violence" = 1, "fuhrerole" = 1, "hyperzine" = 1)
 	result_amount = 3
-	maximum_temperature = 303
-	minimum_temperature = 333
+	maximum_temperature = 333
+	minimum_temperature = 303
 
 /datum/chemical_reaction/boxer
 	result = "boxer"

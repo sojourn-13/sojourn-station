@@ -56,6 +56,11 @@
 	icon_state = "sci_cypherkey"
 	channels = list("Science" = 1)
 
+/obj/item/device/encryptionkey/headset_moebius
+	name = "Moebius laboratories encryption key"
+	icon_state = "sci_cypherkey"
+	channels = list("Science" = 1, "Medical" = 1)
+
 /obj/item/device/encryptionkey/headset_com
 	name = "Eris command radio encryption key"
 	icon_state = "com_cypherkey"
@@ -74,6 +79,11 @@
 
 /obj/item/device/encryptionkey/heads/rd
 	name = "expedition overseer's encryption key"
+	icon_state = "rd_cypherkey"
+	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
+
+/obj/item/device/encryptionkey/heads/moebius
+	name = "Moebius command encryption key"
 	icon_state = "rd_cypherkey"
 	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
 

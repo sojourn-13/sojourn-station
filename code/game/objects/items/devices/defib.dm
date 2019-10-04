@@ -11,7 +11,7 @@
 	slot_flags = SLOT_BACK
 	force = 5
 	throwforce = 6
-	w_class = ITEM_SIZE_LARGE
+	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 1, MATERIAL_GOLD = 3.25, MATERIAL_SILVER = 4.25) //Glass for the lights
 	origin_tech = list(TECH_BIO = 4, TECH_POWER = 2)
 	action_button_name = "Remove/Replace Paddles"
@@ -216,7 +216,7 @@
 	force = 2
 	throwforce = 6
 	tool_qualities = list(QUALITY_ELECTROCUTION = 30, QUALITY_PULSING = 10)
-	w_class = ITEM_SIZE_LARGE
+	w_class = ITEM_SIZE_BULKY
 
 	var/safety = 1 //if you can zap people with the paddles on harm mode
 	var/combat = 0 //If it can be used to revive people wearing thick clothing (e.g. spacesuits)

@@ -48,7 +48,7 @@
 	desc = "A jumpsuit with an old NASA logo on it. It's made out of space-proof materials."
 	icon_state = "black"
 	item_state = "bl_suit"
-	w_class = ITEM_SIZE_LARGE//bulky item
+	w_class = ITEM_SIZE_BULKY//bulky item
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.02
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
