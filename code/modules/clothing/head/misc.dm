@@ -236,3 +236,10 @@
 	icon_state = "bearpelt"
 	flags_inv = BLOCKHAIR
 	siemens_coefficient = 0.7
+
+/obj/item/clothing/head/turban
+	name = "turban"
+	desc = "A cloth designed to be worn around the head."
+	icon_state = "turban"
+	body_parts_covered = 0
+	flags_inv = BLOCKHAIR

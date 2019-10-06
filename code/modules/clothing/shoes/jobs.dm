@@ -35,3 +35,15 @@
 	armor = list(melee = 40, bullet = 25, energy = 20, bomb = 20, bio = 0, rad = 20)
 	siemens_coefficient = 0
 	can_hold_knife = 1
+
+/obj/item/clothing/shoes/jackboots/toeless
+	name = "toeless jackboots"
+	desc = "A modified pair of jackboots, designed for species with clawed feet."
+	icon_state = "digiboots"
+	species_restricted = null
+
+/obj/item/clothing/shoes/workboots/toeless
+	name = "toeless workboots"
+	desc = "A modified pair of workboots, designed for species with clawed feet."
+	icon_state = "workbootstoeless"
+	species_restricted = null

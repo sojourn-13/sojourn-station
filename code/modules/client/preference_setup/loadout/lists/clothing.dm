@@ -4,12 +4,6 @@
 	slot = slot_wear_mask
 	sort_category = "Clothing Pieces"
 
-/datum/gear/clothing/scarf
-	display_name = "scarf selection"
-	path = /obj/item/clothing/mask/scarf
-	slot = slot_wear_mask
-	flags = GEAR_HAS_TYPE_SELECTION
-
 /datum/gear/clothing/bandana
 	display_name = "bandana mask selection"
 	path = /obj/item/clothing/mask/bandana
@@ -21,3 +15,9 @@
 	path = /obj/item/clothing/mask/gas
 	slot = slot_wear_mask
 	cost = 2
+
+/datum/gear/clothing/scarf
+	display_name = "scarf selection"
+	path = /obj/item/clothing/mask/scarf
+	slot = slot_wear_mask
+	flags = GEAR_HAS_TYPE_SELECTION

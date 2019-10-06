@@ -392,3 +392,26 @@ obj/item/clothing/suit/kimono
 	desc = "A snappy checkered suit jacket."
 	icon_state = "checkered_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
+
+/*Unathi*/
+
+/obj/item/clothing/suit/unathi/robe
+	name = "roughspun robes"
+	desc = "A traditional roughspun garment."
+	icon_state = "robe-unathi"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/suit/unathi/mantle
+	name = "hide mantle"
+	desc = "A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
+	icon_state = "mantle-unathi"
+	body_parts_covered = UPPER_TORSO
+
+/*Tajaran*/
+
+/obj/item/clothing/suit/tajaran/furs
+	name = "heavy furs"
+	desc = "A traditional heavy fur garment."
+	icon_state = "zhan_furs"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL

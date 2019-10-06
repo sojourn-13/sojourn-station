@@ -58,3 +58,10 @@
 		name = "cane shaft"
 		icon_state = "nullrod"
 		item_state = "foldcane"
+
+/obj/item/weapon/cane/whitecane
+	name = "white cane"
+	desc = "A cane used by the blind."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "whitecane"
+	item_state = "whitecane"
