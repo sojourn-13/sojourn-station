@@ -283,6 +283,9 @@
 		/datum/design/autolathe/circuit/helm,
 		/datum/design/autolathe/circuit/nav,
 		/datum/design/autolathe/circuit/centrifuge,
+		/datum/design/autolathe/circuit/electrolyzer,
+		/datum/design/autolathe/circuit/reagentgrinder,
+
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/engineering

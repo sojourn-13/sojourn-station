@@ -14,8 +14,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	icon_state = "small"
 	icon = 'icons/obj/structures/scrap/base.dmi'
 	var/obj/item/weapon/storage/internal/updating/loot	//the visible loot
-	var/loot_min = 7
-	var/loot_max = 13
+	var/loot_min = 6
+	var/loot_max = 12
 	var/list/loot_list = list(
 		/obj/random/material,
 		/obj/item/stack/rods/random,
@@ -299,8 +299,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
-	loot_min = 13
-	loot_max = 20
+	loot_min = 9
+	loot_max = 18
 	dig_amount = 6
 	base_min = 9
 	base_max = 14
@@ -358,8 +358,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	name = "armaments refuse pile"
 	desc = "A pile of military supply refuse. Who thought it was a clever idea to throw that out?"
 	parts_icon = 'icons/obj/structures/scrap/guns_trash.dmi'
-	loot_min = 9
-	loot_max = 12
+	loot_min = 7
+	loot_max = 10
 	loot_list = list(
 		/obj/random/pack/gun_loot = 8,
 		/obj/random/powercell,
@@ -377,7 +377,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	desc = "A pile of technical refuse. Some of it still glows and hums faintly."
 	parts_icon = 'icons/obj/structures/scrap/science.dmi'
 	loot_list = list(
-		/obj/random/pack/tech_loot = 3,
+		/obj/random/pack/tech_loot = 4,
 		/obj/random/powercell,
 		/obj/random/circuitboard,
 		/obj/random/material_ore,
@@ -399,9 +399,9 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	desc = "A pile of mixed rubbish. Useless and rotten, mostly."
 	parts_icon = 'icons/obj/structures/scrap/all_mixed.dmi'
 	loot_list = list(
-		/obj/random/lowkeyrandom = 4,
-		/obj/random/junk/nondense = 3,
-		/obj/item/stack/rods/random = 2,
+		/obj/random/lowkeyrandom = 5,
+		/obj/random/junk/nondense = 4,
+		/obj/item/stack/rods/random = 3,
 		/obj/random/common_oddities = 0.5,
 		/obj/random/material_ore,
 		/obj/item/weapon/material/shard,
@@ -414,8 +414,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
-	loot_min = 13
-	loot_max = 20
+	loot_min = 11
+	loot_max = 18
 	base_min = 9
 	base_max = 14
 	big_item_chance = 75
@@ -426,8 +426,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
-	loot_min = 13
-	loot_max = 20
+	loot_min = 11
+	loot_max = 18
 	base_min = 9
 	base_max = 14
 	base_spread = 16
@@ -452,8 +452,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
-	loot_min = 13
-	loot_max = 20
+	loot_min = 7
+	loot_max = 18
 	base_min = 9
 	base_max = 14
 	base_spread = 16
@@ -465,8 +465,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
-	loot_min = 13
-	loot_max = 16
+	loot_min = 10
+	loot_max = 18
 	base_min = 9
 	base_max = 14
 	base_spread = 16
@@ -478,8 +478,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
-	loot_min = 13
-	loot_max = 20
+	loot_min = 11
+	loot_max = 18
 	base_min = 9
 	base_max = 14
 	base_spread = 16
@@ -491,8 +491,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	opacity = TRUE
 	density = TRUE
 	icon_state = "big"
-	loot_min = 8
-	loot_max = 14
+	loot_min = 7
+	loot_max = 16
 	base_min = 9
 	base_max = 14
 	base_spread = 16

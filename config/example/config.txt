@@ -314,5 +314,7 @@ BORDER_CONTROL 0
 
 ## EMOJI ###
 ## Comment this out if you want to disable emojis
-# EMOJIS
+##EMOJIS
 
+WEBHOOK_URL http://localhost:44303/webhook/en
+WEBHOOK_KEY testkey
