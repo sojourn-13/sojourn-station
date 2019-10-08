@@ -20,10 +20,10 @@
 	icon_state = "bluetag"
 	item_state = "bluetag"
 	projectile_type = /obj/item/projectile/beam/lastertag/blue
-	required_vest = /obj/item/clothing/suit/bluetag
+	required_vest = /obj/item/clothing/suit/fluff/bluetag
 
 /obj/item/weapon/gun/energy/lasertag/red
 	icon_state = "redtag"
 	item_state = "redtag"
 	projectile_type = /obj/item/projectile/beam/lastertag/red
-	required_vest = /obj/item/clothing/suit/redtag
+	required_vest = /obj/item/clothing/suit/fluff/redtag

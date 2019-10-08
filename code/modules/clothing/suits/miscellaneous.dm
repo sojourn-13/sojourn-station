@@ -1,7 +1,7 @@
 /*
  * Lasertag
  */
-/obj/item/clothing/suit/bluetag
+/obj/item/clothing/suit/fluff/bluetag
 	name = "blue laser tag armour"
 	desc = "Blue Pride, Station Wide."
 	icon_state = "bluetag"
@@ -11,7 +11,7 @@
 	allowed = list (/obj/item/weapon/gun/energy/lasertag/blue)
 	siemens_coefficient = 3.0
 
-/obj/item/clothing/suit/redtag
+/obj/item/clothing/suit/fluff/redtag
 	name = "red laser tag armour"
 	desc = "Reputed to go faster."
 	icon_state = "redtag"
@@ -38,10 +38,16 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 
-obj/item/clothing/suit/kimono
+obj/item/clothing/suit/fluff/kimono
 	name = "kimono"
 	desc = "A traditional Japanese kimono."
 	icon_state = "kimono"
+
+/obj/item/clothing/suit/fluff/customs
+	name = "customs jacket"
+	desc = "A standard SolGov Customs formal jacket."
+	icon_state = "customs_jacket"
+	item_state_slots = list(slot_r_hand_str = "suit_blue", slot_l_hand_str = "suit_blue")
 
 /*
  * Misc
@@ -314,6 +320,49 @@ obj/item/clothing/suit/kimono
 	desc = "A military canvas jacket in a white snow design."
 	icon_state = "militaryjacket_white"
 	item_state = "militaryjacket_white"
+
+/*Snowsuits*/
+
+/obj/item/clothing/suit/storage/snowsuit
+	name = "snowsuit"
+	desc = "A special coat designed for cold environments."
+	icon_state = "snowsuit"
+	item_state_slots = list(slot_r_hand_str = "labcoat", slot_l_hand_str = "labcoat")
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
+	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	allowed = list (/obj/item/device/flash, /obj/item/weapon/pen, /obj/item/weapon/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/weapon/tank/emergency_oxygen, /obj/item/weapon/storage/fancy/cigarettes, /obj/item/weapon/storage/box/matches, /obj/item/weapon/reagent_containers/food/drinks/flask)
+
+/obj/item/clothing/suit/storage/snowsuit/command
+	name = "command snowsuit"
+	desc = "A special command coat designed for cold environments."
+	icon_state = "snowsuit_command"
+
+/obj/item/clothing/suit/storage/snowsuit/security
+	name = "ironhammer snowsuit"
+	desc = "A special ironhammer coat designed for cold environments."
+	icon_state = "snowsuit_security"
+
+/obj/item/clothing/suit/storage/snowsuit/medical
+	name = "medical snowsuit"
+	desc = "A special medical coat designed for cold environments."
+	icon_state = "snowsuit_medical"
+
+/obj/item/clothing/suit/storage/snowsuit/engineering
+	name = "technomancer snowsuit"
+	desc = "A special technomancer coat designed for cold environments."
+	icon_state = "snowsuit_engineering"
+
+/obj/item/clothing/suit/storage/snowsuit/cargo
+	name = "guild snowsuit"
+	desc = "A special guild coat designed for cold environments."
+	icon_state = "snowsuit_cargo"
+
+/obj/item/clothing/suit/storage/snowsuit/science
+	name = "science snowsuit"
+	desc = "A special science coat designed for cold environments."
+	icon_state = "snowsuit_science"
 
 /*Track Jackets*/
 

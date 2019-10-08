@@ -62,6 +62,11 @@
 				/obj/item/clothing/mask/costume/kinky/sexy_mime,\
 				/obj/item/clothing/mask/costume/misc/rainbowclown,\
 				/obj/item/clothing/head/costume/misc/cake,\
+				/obj/item/clothing/head/costume/misc/justice,\
+				/obj/item/clothing/head/costume/misc/justice/blue,\
+				/obj/item/clothing/head/costume/misc/justice/yellow,\
+				/obj/item/clothing/head/costume/misc/justice/green,\
+				/obj/item/clothing/head/costume/misc/justice/pink,\
 				/obj/item/clothing/head/costume/misc/festive,\
 				/obj/item/clothing/head/costume/misc/paper,\
 				/obj/item/clothing/head/costume/misc/santa,\
@@ -140,6 +145,7 @@
 				/obj/item/clothing/suit/costume/job/nun,\
 				/obj/item/clothing/suit/costume/misc/santa,\
 				/obj/item/clothing/suit/costume/misc/snowman,\
+				/obj/item/clothing/suit/costume/misc/rainbowovercloak,\
 				/obj/item/clothing/under/costume/history/centurion,\
 				/obj/item/clothing/under/costume/history/geisha,\
 				/obj/item/clothing/under/costume/history/gladiator,\

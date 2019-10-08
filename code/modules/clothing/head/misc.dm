@@ -74,27 +74,6 @@
 	desc = "A red bandana fashioned from a piece of cloth."
 	icon_state = "bandana"
 
-/*Justice Hats*/
-
-/obj/item/clothing/head/justice
-	name = "justice hat"
-	desc = "fight for what's righteous!"
-	icon_state = "justicered"
-	flags_inv = BLOCKHAIR
-	body_parts_covered = HEAD|EYES
-
-/obj/item/clothing/head/justice/blue
-	icon_state = "justiceblue"
-
-/obj/item/clothing/head/justice/yellow
-	icon_state = "justiceyellow"
-
-/obj/item/clothing/head/justice/green
-	icon_state = "justicegreen"
-
-/obj/item/clothing/head/justice/pink
-	icon_state = "justicepink"
-
 /*Bowler Hats*/
 
 /obj/item/clothing/head/bowler/bowlerclassic

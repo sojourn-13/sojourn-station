@@ -26,6 +26,12 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
 
+/datum/gear/xenowear/footwraps
+	display_name = "cloth footwraps"
+	path = /obj/item/clothing/shoes/footwraps
+	slot = slot_shoes
+	sort_category = "Xenowear"
+
 /datum/gear/xenowear/fingerlessgloves
 	display_name = "fingerless gloves"
 	path = /obj/item/clothing/gloves/fingerless
@@ -75,7 +81,7 @@
 	slot = slot_shoes
 	sort_category = "Xenowear"
 
-/datum/gear/xenowear/toelessworkboots
+/datum/gear/xenowear
 	display_name = "toeless workboots"
 	path = /obj/item/clothing/shoes/workboots/toeless
 	slot = slot_shoes

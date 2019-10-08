@@ -28,7 +28,7 @@
 /decl/hierarchy/outfit/job/church/gardener
 	name = OUTFIT_JOB_NAME("Gardener")
 	uniform = /obj/item/clothing/under/rank/church
-	suit = /obj/item/clothing/suit/apron
+	suit = /obj/item/clothing/suit/rank/botanist
 	gloves = /obj/item/clothing/gloves/botanic_leather
 	r_pocket = /obj/item/device/scanner/analyzer/plant_analyzer
 

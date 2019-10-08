@@ -46,8 +46,8 @@
 /obj/structure/closet/lasertag/red/populate_contents()
 	new /obj/item/weapon/gun/energy/lasertag/red(src)
 	new /obj/item/weapon/gun/energy/lasertag/red(src)
-	new /obj/item/clothing/suit/redtag(src)
-	new /obj/item/clothing/suit/redtag(src)
+	new /obj/item/clothing/suit/fluff/redtag(src)
+	new /obj/item/clothing/suit/fluff/redtag(src)
 
 
 /obj/structure/closet/lasertag/blue
@@ -58,5 +58,5 @@
 /obj/structure/closet/lasertag/blue/populate_contents()
 	new /obj/item/weapon/gun/energy/lasertag/blue(src)
 	new /obj/item/weapon/gun/energy/lasertag/blue(src)
-	new /obj/item/clothing/suit/bluetag(src)
-	new /obj/item/clothing/suit/bluetag(src)
+	new /obj/item/clothing/suit/fluff/bluetag(src)
+	new /obj/item/clothing/suit/fluff/bluetag(src)

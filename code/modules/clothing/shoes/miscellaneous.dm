@@ -237,3 +237,71 @@
 	name = "snakeskin cowboy boots"
 	desc = "A pair of cowboy boots made from python skin."
 	icon_state = "cowboy_snakeskin"
+
+/*Footwrap*/
+
+/obj/item/clothing/shoes/footwraps
+	name = "cloth footwraps"
+	desc = "A roll of treated canvas used for wrapping claws or paws."
+	icon_state = "clothwrap"
+
+/*Winter Boots*/
+
+/obj/item/clothing/shoes/winter
+	name = "winter boots"
+	desc = "A pair of furred boots perfect for cold environments."
+	icon_state = "winterboots"
+	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
+	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
+
+/obj/item/clothing/shoes/winter/security
+	name = "ironhammer winter boots"
+	desc = "A pair of reinforced winter boots with a ironhammer design."
+	icon_state = "winterboots_sec"
+	armor = list(melee = 30, bullet = 10, laser = 10, energy = 15, bomb = 20, bio = 0, rad = 0)
+
+/obj/item/clothing/shoes/winter/science
+	name = "science winter boots"
+	desc = "A pair of winter boots with a science design."
+	icon_state = "winterboots_sci"
+
+/obj/item/clothing/shoes/winter/command
+	name = "command winter boots"
+	desc = "A pair of winter boots with a command design."
+	icon_state = "winterboots_cap"
+
+/obj/item/clothing/shoes/winter/engineering
+	name = "technomancer winter boots"
+	desc = "A pair of winter boots with a technomancer design."
+	icon_state = "winterboots_eng"
+
+/obj/item/clothing/shoes/winter/atmos
+	name = "atmospherics winter boots"
+	desc = "A pair of winter boots with a atmospherics design."
+	icon_state = "winterboots_atmos"
+
+/obj/item/clothing/shoes/winter/medical
+	name = "medical winter boots"
+	desc = "A pair of winter boots with a medical design."
+	icon_state = "winterboots_med"
+
+/obj/item/clothing/shoes/winter/mining
+	name = "mining winter boots"
+	desc = "A pair of winter boots with a mining design."
+	icon_state = "winterboots_mining"
+
+/obj/item/clothing/shoes/winter/supply
+	name = "guild winter boots"
+	desc = "A pair of winter boots with a guild design."
+	icon_state = "winterboots_sup"
+
+/obj/item/clothing/shoes/winter/botany
+	name = "botany winter boots"
+	desc = "A pair of winter boots with a botany design."
+	icon_state = "winterboots_hydro"
+
+/obj/item/clothing/shoes/winter/explorer
+	name = "explorer winter boots"
+	desc = "A pair of winter boots designed for hazardous environment exploration."
+	icon_state = "explorer"
+	armor = list(melee = 30, bullet = 10, laser = 10, energy = 15, bomb = 20, bio = 0, rad = 0)

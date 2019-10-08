@@ -9,7 +9,7 @@
 				/obj/item/clothing/mask/balaclava/tactical = 20,
 				/obj/item/clothing/mask/bandana = 2,
 				/obj/item/clothing/mask/bandana/blue = 1,
-				/obj/item/clothing/mask/bandana/botany = 1,
+				/obj/item/clothing/mask/rank/botanist = 1,
 				/obj/item/clothing/mask/bandana/camo = 1,
 				/obj/item/clothing/mask/bandana/yellow = 1,
 				/obj/item/clothing/mask/bandana/green = 1,

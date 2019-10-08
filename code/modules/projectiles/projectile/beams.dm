@@ -89,7 +89,7 @@
 /obj/item/projectile/beam/lastertag/blue/on_hit(var/atom/target, var/blocked = 0)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if(istype(M.wear_suit, /obj/item/clothing/suit/redtag))
+		if(istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag))
 			M.Weaken(5)
 	return 1
 
@@ -105,7 +105,7 @@
 /obj/item/projectile/beam/lastertag/red/on_hit(var/atom/target, var/blocked = 0)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if(istype(M.wear_suit, /obj/item/clothing/suit/bluetag))
+		if(istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag))
 			M.Weaken(5)
 	return 1
 
@@ -124,7 +124,7 @@
 /obj/item/projectile/beam/lastertag/omni/on_hit(var/atom/target, var/blocked = 0)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if((istype(M.wear_suit, /obj/item/clothing/suit/bluetag))||(istype(M.wear_suit, /obj/item/clothing/suit/redtag)))
+		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
 			M.Weaken(5)
 	return 1
 

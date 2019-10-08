@@ -892,136 +892,158 @@
 
 /obj/item/toy/plushie/mouse
 	name = "mouse plushie"
-	desc = "A plushie of a delightful mouse! What was once considered a vile rodent is now your very best friend."
+	desc = "A plushie of a delightful mouse."
 	icon_state = "mouseplushie"
 
 /obj/item/toy/plushie/kitten
 	name = "kitten plushie"
-	desc = "A plushie of a cute kitten! Watch as it purrs it's way right into your heart."
+	desc = "A plushie of a cute kitten."
 	icon_state = "kittenplushie"
 
 /obj/item/toy/plushie/lizard
 	name = "lizard plushie"
-	desc = "A plushie of a scaly lizard! Very controversial, after being accused as \"racist\" by some Unathi."
+	desc = "A plushie of a scaly lizard."
 	icon_state = "lizardplushie"
 
 /obj/item/toy/plushie/spider
 	name = "spider plushie"
-	desc = "A plushie of a fuzzy spider! It has eight legs - all the better to hug you with."
+	desc = "A plushie of a fuzzy spider."
 	icon_state = "spiderplushie"
 
 /obj/item/toy/plushie/farwa
 	name = "farwa plushie"
-	desc = "A farwa plush doll. It's soft and comforting!"
+	desc = "A farwa plush doll."
 	icon_state = "farwaplushie"
 
 /obj/item/toy/plushie/corgi
 	name = "corgi plushie"
+	desc = "A corgi plush doll."
 	icon_state = "corgi"
 	phrase = "Woof!"
 
 /obj/item/toy/plushie/corgi/girly
 	name = "corgi girly plushie"
+	desc = "A girly corgi doll."
 	icon_state = "girlycorgi"
 	phrase = "Arf!"
 
 /obj/item/toy/plushie/corgi/robo
 	name = "corgi borg plushie"
+	desc = "A robotic corgi doll."
 	icon_state = "robotcorgi"
 	phrase = "Bark."
 
 /obj/item/toy/plushie/octopus
 	name = "octopus plushie"
+	desc = "A octopus plush doll."
 	icon_state = "loveable"
 	phrase = "Squish!"
 
 /obj/item/toy/plushie/face_hugger
 	name = "facehugger plushie"
+	desc = "A parasitic plush doll."
 	icon_state = "huggable"
 	phrase = "Hug!"
 
 /obj/item/toy/plushie/fox
 	name = "fox red plushie"
+	desc = "A fox plush doll."
 	icon_state = "redfox"
 	phrase = "Gecker!"
 
 /obj/item/toy/plushie/fox/black
 	name = "fox black plushie"
+	desc = "A fox plush doll."
 	icon_state = "blackfox"
 	phrase = "Ack!"
 
 /obj/item/toy/plushie/fox/marble
 	name = "fox marble plushie"
+	desc = "A fox plush doll."
 	icon_state = "marblefox"
 	phrase = "Awoo!"
 
 /obj/item/toy/plushie/fox/blue
 	name = "fox blue plushie"
+	desc = "A fox plush doll."
 	icon_state = "bluefox"
 	phrase = "Yoww!"
 
 /obj/item/toy/plushie/fox/orange
 	name = "fox orange plushie"
+	desc = "A fox plush doll."
 	icon_state = "orangefox"
 	phrase = "Yagh!"
 
 /obj/item/toy/plushie/fox/coffee
 	name = "fox coffee plushie"
+	desc = "A fox plush doll."
 	icon_state = "coffeefox"
 	phrase = "Gerr!"
 
 /obj/item/toy/plushie/fox/pink
 	name = "fox pink plushie"
+	desc = "A fox plush doll."
 	icon_state = "pinkfox"
 	phrase = "Yack!"
 
 /obj/item/toy/plushie/fox/purple
 	name = "fox purple plushie"
+	desc = "A fox plush doll."
 	icon_state = "purplefox"
 	phrase = "Whine!"
 
 /obj/item/toy/plushie/fox/crimson
 	name = "fox crimson plushie"
+	desc = "A fox plush doll."
 	icon_state = "crimsonfox"
 	phrase = "Auuu!"
 
 /obj/item/toy/plushie/deer
 	name = "deer plushie"
+	desc = "A deer plush doll."
 	icon_state = "deer"
 	phrase = "Bleat!"
 
 /obj/item/toy/plushie/cat
 	name = "cat black plushie"
+	desc = "A cat plush doll."
 	icon_state = "blackcat"
 	phrase = "Mlem!"
 
 /obj/item/toy/plushie/cat/grey
 	name = "cat grey plushie"
+	desc = "A cat plush doll."
 	icon_state = "greycat"
 	phrase = "Mraw!"
 
 /obj/item/toy/plushie/cat/white
 	name = "cat white plushie"
+	desc = "A cat plush doll."
 	icon_state = "whitecat"
 	phrase = "Mew!"
 
 /obj/item/toy/plushie/cat/orange
 	name = "cat orange plushie"
+	desc = "A cat plush doll."
 	icon_state = "orangecat"
 	phrase = "Meow!"
 
 /obj/item/toy/plushie/cat/siamese
 	name = "cat siamese plushie"
+	desc = "A cat plush doll."
 	icon_state = "siamesecat"
 	phrase = "Mrew?"
 
 /obj/item/toy/plushie/cat/tabby
 	name = "cat tabby plushie"
+	desc = "A cat plush doll."
 	icon_state = "tabbycat"
 	phrase = "Purr!"
 
 /obj/item/toy/plushie/cat/tuxedo
 	name = "cat tuxedo plushie"
+	desc = "A cat plush doll."
 	icon_state = "tuxedocat"
 	phrase = "Mrowww!!"
 

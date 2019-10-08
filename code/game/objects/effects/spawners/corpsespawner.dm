@@ -134,8 +134,8 @@
 
 /obj/landmark/corpse/roles/civilian/gardener
 	name = "Gardener"
-	corpseuniform = /obj/item/clothing/under/rank/hydroponics
-	corpsesuit = /obj/item/clothing/suit/apron
+	corpseuniform = /obj/item/clothing/under/rank/botanist
+	corpsesuit = /obj/item/clothing/suit/rank/botanist
 	corpseshoes = /obj/item/clothing/shoes/workboots
 	corpsegloves = /obj/item/clothing/gloves/botanic_leather
 	corpseradio = /obj/item/device/radio/headset/headset_service
@@ -518,7 +518,7 @@
 	corpsegloves = /obj/item/clothing/gloves/stungloves
 	corpseradio = /obj/item/device/radio/headset/heads/hos
 	corpseglasses = /obj/item/clothing/glasses/sechud/tactical
-	corpsehelmet = /obj/item/clothing/head/sec/navy/hos
+	corpsehelmet = /obj/item/clothing/head/rank/commander/beret
 	corpsepocket1 = /obj/item/weapon/handcuffs
 	corpseback = /obj/item/weapon/storage/backpack/security
 	corpseid = 1
@@ -561,7 +561,7 @@
 	corpsegloves = /obj/item/clothing/gloves/stungloves
 	corpseradio = /obj/item/device/radio/headset/headset_sec
 	corpseglasses = /obj/item/clothing/glasses/sechud/tactical
-	corpsehelmet = /obj/item/clothing/head/sec/navy/warden
+	corpsehelmet = /obj/item/clothing/head/rank/warden/beret
 	corpsepocket1 = /obj/item/weapon/handcuffs
 	corpseback = /obj/item/weapon/storage/backpack/security
 	corpseid = 1

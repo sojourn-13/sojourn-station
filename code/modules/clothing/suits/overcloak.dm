@@ -156,7 +156,7 @@
 	icon_state = "tesh_cloak_lgg"
 	item_state = "gy_suit"
 
-/obj/item/clothing/suit/rainbowovercloak
+/obj/item/clothing/suit/costume/misc/rainbowovercloak
 	name = "rainbow overcloak"
 	initial_name = "rainbow overcloak"
 	desc = "A rainbow teshari overcloak."

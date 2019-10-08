@@ -62,7 +62,7 @@
 	new /obj/item/clothing/under/costume/job/waiter(src.loc)
 	var/CHOICE= pick( /obj/item/clothing/head/costume/animal/kitty, /obj/item/clothing/head/costume/animal/rabbitears)
 	new CHOICE(src.loc)
-	new /obj/item/clothing/suit/apron(src.loc)
+	new /obj/item/clothing/suit/rank/botanist(src.loc)
 
 /obj/landmark/costume/pirate/New()
 	new /obj/item/clothing/under/costume/history/pirate(src.loc)

@@ -16,6 +16,18 @@
 	slot = slot_wear_mask
 	cost = 2
 
+/datum/gear/clothing/gasmaskenviro
+	display_name = "gas mask, enviro"
+	path = /obj/item/clothing/mask/gas/old
+	slot = slot_wear_mask
+	cost = 2
+
+/datum/gear/clothing/gasmaskindustrial
+	display_name = "gas mask, industrial"
+	path = /obj/item/clothing/mask/gas/industrial
+	slot = slot_wear_mask
+	cost = 2
+
 /datum/gear/clothing/scarf
 	display_name = "scarf selection"
 	path = /obj/item/clothing/mask/scarf

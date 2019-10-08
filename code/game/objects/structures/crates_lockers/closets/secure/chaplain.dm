@@ -12,6 +12,7 @@
 	new /obj/item/clothing/shoes/reinforced(src)
 	new /obj/item/clothing/suit/rank/chaplain(src)
 	new /obj/item/clothing/suit/rank/chaplain(src)
+	new /obj/item/clothing/suit/rank/chaplain/holiday(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/weapon/storage/fancy/candle_box(src)

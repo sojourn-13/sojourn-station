@@ -83,7 +83,7 @@
 	<BR>\nTADA you're done. Security then executes the sentence and adds the applicable convictions to the person's record.
 	<BR>\n"}
 
-/obj/item/weapon/paper/hydroponics
+/obj/item/weapon/paper/botanist
 	name = "Greetings from Billy Bob"
 	info = {"<B>Hey fellow botanist!</B>
 	<BR>\n

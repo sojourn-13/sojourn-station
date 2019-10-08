@@ -1,7 +1,7 @@
 // Suit slot
 /datum/gear/suit
 	display_name = "yellow apron"
-	path = /obj/item/clothing/suit/apron
+	path = /obj/item/clothing/suit/rank/botanist
 	slot = slot_wear_suit
 	sort_category = "Suits and Overwear"
 	cost = 1
@@ -37,7 +37,7 @@
 
 /datum/gear/suit/kimono
 	display_name = "kimono"
-	path = /obj/item/clothing/suit/kimono
+	path = /obj/item/clothing/suit/fluff/kimono
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat"
@@ -63,6 +63,10 @@
 	path = /obj/item/clothing/suit/storage/puffer
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/suit/snowsuit
+	display_name = "snowsuit"
+	path = /obj/item/clothing/suit/storage/snowsuit
+
 /datum/gear/suit/trackjacket
 	display_name = "track jacket selection"
 	path = /obj/item/clothing/suit/storage/toggle/track
@@ -72,3 +76,7 @@
 	display_name = "varsity jacket selection"
 	path = /obj/item/clothing/suit/varsity
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/suit/wintercoat
+	display_name = "winter coat"
+	path = /obj/item/clothing/suit/hooded/wintercoat

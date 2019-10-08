@@ -309,6 +309,33 @@
 	item_state= "cueballelectric"
 	body_parts_covered = HEAD
 
+/obj/item/clothing/head/costume/misc/justice
+	name = "red justice helm"
+	desc = "The helm of the heroic red justice ranger."
+	icon_state = "justicered"
+	flags_inv = BLOCKHAIR
+	body_parts_covered = HEAD|EYES
+
+/obj/item/clothing/head/costume/misc/justice/blue
+	name = "blue justice helm"
+	desc = "The helm of the cunning blue justice ranger."
+	icon_state = "justiceblue"
+
+/obj/item/clothing/head/costume/misc/justice/yellow
+	name = "yellow justice helm"
+	desc = "The helm of the mighty yellow justice ranger."
+	icon_state = "justiceyellow"
+
+/obj/item/clothing/head/costume/misc/justice/green
+	name = "green justice helm"
+	desc = "The helm of the nervous green justice ranger."
+	icon_state = "justicegreen"
+
+/obj/item/clothing/head/costume/misc/justice/pink
+	name = "pink justice helm"
+	desc = "The helm of the supportive pink justice ranger."
+	icon_state = "justicepink"
+
 /obj/item/clothing/head/costume/misc/hastur
 	name = "hastur hood"
 	desc = "An extremely stylish hood."

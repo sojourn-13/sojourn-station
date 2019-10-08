@@ -48,22 +48,22 @@
 	body_parts_covered = 0
 
 //Security
-/obj/item/clothing/head/sec/navy/officer
-	name = "ironhammer operative beret"
-	desc = "A navy blue Ironhammer beret signifying a Operative position."
+/obj/item/clothing/head/rank/ironhammer
+	name = "ironhammer beret"
+	desc = "A navy blue Ironhammer beret."
 	icon_state = "beret_navy_officer"
 
-/obj/item/clothing/head/sec/navy/hos
+/obj/item/clothing/head/rank/commander/beret
 	name = "ironhammer commander beret"
 	desc = "A grey Ironhammer beret signifying a Commander position."
 	icon_state = "beret_navy_hos"
 
-/obj/item/clothing/head/sec/navy/warden
+/obj/item/clothing/head/rank/warden/beret
 	name = "ironhammer sergeant beret"
 	desc = "A red Ironhammer beret signifying a Gunnery Sergeant position."
 	icon_state = "beret_navy_warden"
 
-/obj/item/clothing/head/engineering
+/obj/item/clothing/head/rank/engineering
 	name = "technomancer beret"
 	desc = "A yellow beret signifying a Technomancer position."
 	icon_state = "beret_engineering"
@@ -80,12 +80,12 @@
 
 /obj/item/clothing/head/seccap
 	name = "ironhammer security cap"
-	desc = "A generic red Ironhammer field cap."
+	desc = "A red field cap worn by Ironhammer personnel."
 	icon_state = "secsoft"
 
 /obj/item/clothing/head/seccorp
 	name = "ironhammer inspector cap"
-	desc = "A black field cap with an Ironhammer Inspector logo."
+	desc = "A black field cap worn by Ironhammer Inspectors."
 	icon_state = "corpsoft"
 
 //Medical

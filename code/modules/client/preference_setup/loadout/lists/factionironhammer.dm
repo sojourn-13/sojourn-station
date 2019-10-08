@@ -1,57 +1,36 @@
-/datum/gear/factionironhammer/detcorporate
-	display_name = "inspectors uniform"
-	path = /obj/item/clothing/under/rank/inspector/uniform
-	allowed_roles = list("Ironhammer Inspector")
-	slot = slot_w_uniform
+/datum/gear/factionironhammer
+	display_name = "winter coat, ironhammer"
+	path = /obj/item/clothing/suit/hooded/wintercoat/security
+	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
+	slot = slot_wear_suit
 	sort_category = "Faction: Ironhammer"
 
-/datum/gear/factionironhammer/beret/bsec_officer
-	display_name = "beret, operative"
-	path = /obj/item/clothing/head/sec/navy/officer
-	allowed_roles = list("Ironhammer Operative")
-	slot = slot_head
-	sort_category = "Faction: Ironhammer"
-
-/datum/gear/factionironhammer/beret/bsec_warden
-	display_name = "beret, warden"
-	path = /obj/item/clothing/head/sec/navy/warden
-	allowed_roles = list("Ironhammer Gunnery Sergeant")
-	slot = slot_head
-	sort_category = "Faction: Ironhammer"
-
-/datum/gear/factionironhammer/beret/bsec_hos
+/datum/gear/factionironhammer/beretcommander
 	display_name = "beret, commander"
-	path = /obj/item/clothing/head/sec/navy/hos
+	path = /obj/item/clothing/head/rank/commander/beret
 	allowed_roles = list("Ironhammer Commander")
 	slot = slot_head
 	sort_category = "Faction: Ironhammer"
 
-/datum/gear/factionironhammer/corp
-	display_name = "cap, inspector"
-	path = /obj/item/clothing/head/seccorp
-	allowed_roles = list("Ironhammer Inspector")
-	slot = slot_head
-	sort_category = "Faction: Ironhammer"
-
-/datum/gear/factionironhammer
-	display_name = "cap, ironhammer"
-	path = /obj/item/clothing/head/seccap
+/datum/gear/factionironhammer/beretironhammer
+	display_name = "beret, ironhammer"
+	path = /obj/item/clothing/head/rank/ironhammer
 	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
 	slot = slot_head
 	sort_category = "Faction: Ironhammer"
 
-/datum/gear/factionironhammer/security
-	display_name = "security HUD"
-	path = /obj/item/clothing/glasses/hud/security
-	allowed_roles = list(JOBS_SECURITY)
-	slot = slot_glasses
+/datum/gear/factionironhammer/beretwarden
+	display_name = "beret, warden"
+	path = /obj/item/clothing/head/rank/warden/beret
+	allowed_roles = list("Ironhammer Gunnery Sergeant")
+	slot = slot_head
 	sort_category = "Faction: Ironhammer"
 
-/datum/gear/factionironhammer/holster
-	display_name = "holster selection"
-	path = /obj/item/clothing/accessory/holster
-	flags = GEAR_HAS_TYPE_SELECTION
-	allowed_roles = list("Ironhammer Commander","Ironhammer Gunnery Sergeant","Ironhammer Inspector","Ironhammer Medical Specialist","Ironhammer Operative","First Officer","Captain")
+/datum/gear/factionironhammer/cloak
+	display_name = "cloak, commander"
+	path = /obj/item/clothing/suit/hooded/cloak/job/ihc
+	allowed_roles = list("Ironhammer Commander")
+	slot = slot_wear_suit
 	sort_category = "Faction: Ironhammer"
 
 /datum/gear/factionironhammer/cloakironhammer
@@ -61,9 +40,51 @@
 	slot = slot_wear_suit
 	sort_category = "Faction: Ironhammer"
 
-/datum/gear/factionironhammer/cloakihc
-	display_name = "cloak, ironhammer commander"
-	path = /obj/item/clothing/suit/hooded/cloak/job/ihc
-	allowed_roles = list("Ironhammer Commander")
+/datum/gear/factionironhammer/capinspector
+	display_name = "cap, inspector"
+	path = /obj/item/clothing/head/seccorp
+	allowed_roles = list("Ironhammer Inspector")
+	slot = slot_head
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/capironhammer
+	display_name = "cap, ironhammer"
+	path = /obj/item/clothing/head/seccap
+	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
+	slot = slot_head
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/holster
+	display_name = "holster selection"
+	path = /obj/item/clothing/accessory/holster
+	flags = GEAR_HAS_TYPE_SELECTION
+	allowed_roles = list("Ironhammer Commander","Ironhammer Gunnery Sergeant","Ironhammer Inspector","Ironhammer Medical Specialist","Ironhammer Operative","First Officer","Captain")
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/inspector
+	display_name = "inspectors uniform"
+	path = /obj/item/clothing/under/rank/inspector/uniform
+	allowed_roles = list("Ironhammer Inspector")
+	slot = slot_w_uniform
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/security
+	display_name = "security HUD"
+	path = /obj/item/clothing/glasses/hud/security
+	allowed_roles = list(JOBS_SECURITY)
+	slot = slot_glasses
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/snowsuitsecurity
+	display_name = "snowsuit, ironhammer"
+	path = /obj/item/clothing/suit/storage/snowsuit/security
+	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
 	slot = slot_wear_suit
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/winterbootssecurity
+	display_name = "winter boots, ironhammer"
+	path = /obj/item/clothing/shoes/winter/security
+	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
+	slot = slot_shoes
 	sort_category = "Faction: Ironhammer"

@@ -29,7 +29,7 @@
 	name = OUTFIT_JOB_NAME("Ironhammer Gunnery Sergeant")
 	uniform = /obj/item/clothing/under/rank/warden
 	suit = /obj/item/clothing/suit/armor/vest/security
-	head = /obj/item/clothing/head/sec/navy/warden
+	head = /obj/item/clothing/head/rank/warden/beret
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves

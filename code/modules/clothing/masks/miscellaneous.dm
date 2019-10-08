@@ -196,7 +196,7 @@
 	icon_state = "bandpurple"
 	item_state = "bandpurple"
 
-/obj/item/clothing/mask/bandana/botany
+/obj/item/clothing/mask/rank/botanist
 	name = "botany bandana"
 	desc = "A botany bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandbotany"

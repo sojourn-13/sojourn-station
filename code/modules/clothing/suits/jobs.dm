@@ -33,7 +33,7 @@
 	armor = list(melee = 30, bullet = 20, energy = 10, bomb = 0, bio = 0, rad = 0)
 
 //Botonist
-/obj/item/clothing/suit/apron
+/obj/item/clothing/suit/rank/botanist
 	name = "apron"
 	desc = "A basic yellow apron."
 	icon_state = "apron"
@@ -45,12 +45,20 @@
 //Chaplain
 /obj/item/clothing/suit/rank/chaplain
 	name = "preacher coat"
-	desc = "A long, lightly armoured coat. Dark, stylish and authoritarian"
+	desc = "A long, lightly armoured coat. Dark, stylish and authoritarian."
 	icon_state = "chaplain_hoodie"
 	item_state = "chaplain_hoodie"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/rank/chaplain/holiday
+	name = "holiday priest"
+	desc = "A garment worn seasonally by chaplains."
+	icon_state = "holidaypriest"
+	item_state_slots = list(slot_r_hand_str = "labcoat", slot_l_hand_str = "labcoat")
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	flags_inv = HIDEJUMPSUIT
 
 //Chef
 /obj/item/clothing/suit/rank/chef

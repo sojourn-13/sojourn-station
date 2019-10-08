@@ -37,14 +37,6 @@
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 90, rad = 0)
 	body_parts_covered = HEAD|FACE|EYES
 
-/obj/item/clothing/mask/gas/swat
-	name = "\improper SWAT mask"
-	desc = "A close-fitting tactical mask that can be connected to an air supply."
-	icon_state = "swat"
-	siemens_coefficient = 0.7
-	body_parts_covered = FACE|EYES
-	price_tag = 50
-
 /obj/item/clothing/mask/gas/ihs
 	name = "ironhammer gasmask"
 	icon_state = "IHSgasmask"
@@ -60,7 +52,7 @@
 	price_tag = 50
 
 /obj/item/clothing/mask/gas/death_commando
-	name = "death commando Mask"
+	name = "death commando mask"
 	icon_state = "death_commando_mask"
 	item_state = "death_commando_mask"
 	siemens_coefficient = 0.2
@@ -69,3 +61,15 @@
 	name = "cyborg visor"
 	desc = "Beep boop."
 	icon_state = "death"
+
+/obj/item/clothing/mask/gas/industrial
+	name = "industrial gas mask"
+	desc = "An industrial gas mask designed for heavy usage."
+	icon_state = "gas_wide"
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 80, rad = 0)
+
+/obj/item/clothing/mask/gas/old
+	name = "enviro gas mask"
+	desc = "An archaic gas mask still widely available due to its mass production."
+	icon_state = "gas_old"
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 70, rad = 0)

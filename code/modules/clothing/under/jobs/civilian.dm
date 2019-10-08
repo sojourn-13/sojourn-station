@@ -74,7 +74,7 @@
 	icon_state = "teal_suit"
 	item_state = "g_suit"
 
-/obj/item/clothing/under/rank/hydroponics
+/obj/item/clothing/under/rank/botanist
 	desc = "A hardy dark green jumpsuit, designed to provide protection from botanic dangers."
 	name = "botanist's jumpsuit"
 	icon_state = "hydroponics"
