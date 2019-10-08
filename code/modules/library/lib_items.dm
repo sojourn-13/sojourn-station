@@ -95,7 +95,16 @@
 	else
 		icon_state = "book-5"
 
+/*Metal Bookcase - same functionality, just a reskin.*/
 
+/obj/structure/bookcase/metal
+	icon_state = "metalshelf-0"
+
+/obj/structure/bookcase/metal/update_icon()
+	if(contents.len < 5)
+		icon_state = "metalshelf-[contents.len]"
+	else
+		icon_state = "metalshelf-5"
 
 /obj/structure/bookcase/manuals/medical
 	name = "Medical Manuals bookcase"

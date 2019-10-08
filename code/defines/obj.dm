@@ -95,6 +95,12 @@
 	icon_state = "wilderness3"
 	desc = "A large blank sign. Perhaps someone forgot to paint it."
 
+/obj/structure/showcase/television
+	name = "television"
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "wooden_tv_broken"
+	desc = "An entertainment monitor with various channels."
+
 /obj/item/mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 
 /obj/item/weapon/beach_ball

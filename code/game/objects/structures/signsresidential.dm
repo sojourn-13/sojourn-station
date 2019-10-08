@@ -276,6 +276,11 @@
 	desc = "A scientific chart illustrating the elements."
 	icon_state = "periodic"
 
+/obj/structure/sign/residential/anatomy
+	name = "anatomy chart"
+	desc = "A chart outlining the organs of the body."
+	icon_state = "anatomy"
+
 /obj/structure/sign/residential/phone
 	name = "phone sign"
 	desc = "A sign directing to a nearby public radio."
@@ -433,6 +438,10 @@
 /obj/structure/sign/security/courtyard/right
 	name = "PRISON COURTYARD"
 	icon_state = "courtyard2"
+
+/obj/structure/sign/security/court
+	name = "justice plaque"
+	icon_state = "justice"
 
 /obj/structure/sign/security/teleporter
 	name = "TELEPORTER ACCESS"

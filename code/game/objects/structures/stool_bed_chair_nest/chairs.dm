@@ -288,3 +288,175 @@
 
 /obj/structure/bed/chair/custom/onestar/red
 	icon_state = "onestar_chair_red"
+
+/*Sofas*/
+/obj/structure/bed/chair/sofa
+	name = "sofa"
+	icon = 'icons/obj/sofas.dmi'
+	icon_state = "sofamiddle"
+	anchored = 1
+	buckle_lying = 0
+	buckle_dir = SOUTH
+	applies_material_colour = 1
+	var/sofa_material = "carpet"
+
+/obj/structure/bed/chair/sofa/left
+	icon_state = "sofaend_left"
+
+/obj/structure/bed/chair/sofa/New()
+	..()
+	if(dir == 1)
+		buckle_dir = NORTH
+		plane = -15
+	if(dir == 2)
+		buckle_dir = SOUTH
+	if(dir == 4)
+		buckle_dir = EAST
+	if(dir == 8)
+		buckle_dir = WEST
+
+	update_icon()
+
+/obj/structure/bed/chair/sofa/update_icon()
+	if(applies_material_colour && sofa_material)
+		material = get_material_by_name(sofa_material)
+		color = material.icon_colour
+
+		if(sofa_material == "carpet")
+			name = "red [initial(name)]"
+		else
+			name = "[sofa_material] [initial(name)]"
+
+//color variations
+
+/obj/structure/bed/chair/sofa
+	sofa_material = "carpet"
+
+/obj/structure/bed/chair/sofa/brown
+	sofa_material = "leather"
+
+/obj/structure/bed/chair/sofa/teal
+	sofa_material = "teal"
+
+/obj/structure/bed/chair/sofa/black
+	sofa_material = "black"
+
+/obj/structure/bed/chair/sofa/green
+	sofa_material = "green"
+
+/obj/structure/bed/chair/sofa/purp
+	sofa_material = "purple"
+
+/obj/structure/bed/chair/sofa/blue
+	sofa_material = "blue"
+
+/obj/structure/bed/chair/sofa/beige
+	sofa_material = "beige"
+
+/obj/structure/bed/chair/sofa/lime
+	sofa_material = "lime"
+
+/obj/structure/bed/chair/sofa/yellow
+	sofa_material = "yellow"
+
+//sofa directions
+
+/obj/structure/bed/chair/sofa/corner/New()
+	..()
+	buckle_dir = SOUTH
+
+/obj/structure/bed/chair/sofa/left
+	icon_state = "sofaend_left"
+
+
+/obj/structure/bed/chair/sofa/right
+	icon_state = "sofaend_right"
+
+
+/obj/structure/bed/chair/sofa/corner
+	icon_state = "sofacorner"
+
+/obj/structure/bed/chair/sofa/brown/left
+	icon_state = "sofaend_left"
+
+
+/obj/structure/bed/chair/sofa/brown/right
+	icon_state = "sofaend_right"
+
+
+/obj/structure/bed/chair/sofa/brown/corner
+	icon_state = "sofacorner"
+
+/obj/structure/bed/chair/sofa/teal/left
+	icon_state = "sofaend_left"
+
+/obj/structure/bed/chair/sofa/teal/right
+	icon_state = "sofaend_right"
+
+/obj/structure/bed/chair/sofa/teal/corner
+	icon_state = "sofacorner"
+
+/obj/structure/bed/chair/sofa/black/left
+	icon_state = "sofaend_left"
+
+/obj/structure/bed/chair/sofa/black/right
+	icon_state = "sofaend_right"
+
+/obj/structure/bed/chair/sofa/black/corner
+	icon_state = "sofacorner"
+
+/obj/structure/bed/chair/sofa/green/left
+	icon_state = "sofaend_left"
+
+/obj/structure/bed/chair/sofa/green/right
+	icon_state = "sofaend_right"
+
+/obj/structure/bed/chair/sofa/green/corner
+	icon_state = "sofacorner"
+
+/obj/structure/bed/chair/sofa/purp/left
+	icon_state = "sofaend_left"
+
+/obj/structure/bed/chair/sofa/purp/right
+	icon_state = "sofaend_right"
+
+/obj/structure/bed/chair/sofa/purp/corner
+	icon_state = "sofacorner"
+
+/obj/structure/bed/chair/sofa/blue/left
+	icon_state = "sofaend_left"
+
+/obj/structure/bed/chair/sofa/blue/right
+	icon_state = "sofaend_right"
+
+/obj/structure/bed/chair/sofa/blue/corner
+	icon_state = "sofacorner"
+
+/obj/structure/bed/chair/sofa/beige/left
+	icon_state = "sofaend_left"
+
+
+/obj/structure/bed/chair/sofa/beige/right
+	icon_state = "sofaend_right"
+
+
+/obj/structure/bed/chair/sofa/beige/corner
+	icon_state = "sofacorner"
+
+/obj/structure/bed/chair/sofa/lime/left
+	icon_state = "sofaend_left"
+
+/obj/structure/bed/chair/sofa/lime/right
+	icon_state = "sofaend_right"
+
+/obj/structure/bed/chair/sofa/lime/corner
+	icon_state = "sofacorner"
+
+/obj/structure/bed/chair/sofa/yellow/left
+	icon_state = "sofaend_left"
+
+/obj/structure/bed/chair/sofa/yellow/right
+	icon_state = "sofaend_right"
+
+/obj/structure/bed/chair/sofa/yellow/corner
+	icon_state = "sofacorner"

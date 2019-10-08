@@ -12,6 +12,36 @@
 	desc = "They look like the remains of something... alien. They have a strange aura about them."
 	icon_state = "remainsxeno"
 
+/obj/item/remains/deer
+	desc = "They look like the remains of a large herbivore, picked clean."
+	icon_state = "remainsdeer"
+
+/obj/item/remains/mummy1
+	name = "mummified remains"
+	desc = "They look like humanoid remains. They've been here a long time."
+	icon_state = "mummified1"
+
+/obj/item/remains/mummy2
+	name = "mummified remains"
+	desc = "They look like humanoid remains. They've been here a long time."
+	icon_state = "mummified2"
+
+/obj/item/remains/posi
+	desc = "They look like the remains of something cybernetic."
+	icon_state = "remainsposi"
+
+/obj/item/remains/ribcage
+	desc = "They look like animal remains of some sort. Hopefully."
+	icon_state = "remainsribcage"
+
+/obj/item/remains/unathi
+	desc = "They look like the remains of some sort of tough creature."
+	icon_state = "remainsunathi"
+
+/obj/item/remains/tajaran
+	desc = "They look like the remains of some sort of small creature."
+	icon_state = "remainstajaran"
+
 /obj/item/remains/robot
 	desc = "They look like the remains of something mechanical. They have a strange aura about them."
 	icon = 'icons/mob/robots.dmi'
