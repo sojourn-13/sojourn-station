@@ -44,8 +44,8 @@
 
 //Chaplain
 /obj/item/clothing/suit/rank/chaplain
-	name = "preacher coat"
-	desc = "A long, lightly armoured coat. Dark, stylish and authoritarian."
+	name = "preacher jacket"
+	desc = "A long, lightly armoured jacket. Dark, stylish and authoritarian."
 	icon_state = "chaplain_hoodie"
 	item_state = "chaplain_hoodie"
 	blood_overlay_type = "coat"
@@ -57,8 +57,12 @@
 	desc = "A garment worn seasonally by chaplains."
 	icon_state = "holidaypriest"
 	item_state_slots = list(slot_r_hand_str = "labcoat", slot_l_hand_str = "labcoat")
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/rank/chaplain/coat
+	name = "preacher coat"
+	desc = "A snugly fitting, lightly armoured coat. Brown with an NT logo on the back"
+	icon_state = "church_coat"
+	item_state = "church_coat"
 
 //Chef
 /obj/item/clothing/suit/rank/chef

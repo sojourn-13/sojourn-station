@@ -185,6 +185,7 @@
 	desc = "A tasteful grey jumpskirt that reminds you of the good old days."
 	icon_state = "grey_skirt"
 	item_state = "gy_suit"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 
 /obj/item/clothing/under/jumpskirt/lightbrown
 	name = "light brown jumpskirt"
