@@ -1,9 +1,3 @@
-/obj/item/clothing/accessory/armband
-	name = "security armband"
-	desc = "A red armband signifying a security position."
-	icon_state = "red"
-	slot = "armband"
-
 /obj/item/clothing/accessory/armband/cargo
 	name = "cargo armband"
 	desc = "A brown armband signifying a cargo position."
@@ -13,11 +7,6 @@
 	name = "engineering armband"
 	desc = "A orange armband with a reflective strip signifying an engineering position."
 	icon_state = "engie"
-
-/obj/item/clothing/accessory/armband/science
-	name = "science armband"
-	desc = "A purple armband signifying a science position."
-	icon_state = "rnd"
 
 /obj/item/clothing/accessory/armband/hydro
 	name = "hydroponics armband"
@@ -30,6 +19,17 @@
 	icon_state = "med"
 
 /obj/item/clothing/accessory/armband/medgreen
-	name = "EMT armband"
+	name = "medical EMT armband"
 	desc = "A white and green armband signifying an EMT position."
 	icon_state = "medgreen"
+
+/obj/item/clothing/accessory/armband/science
+	name = "science armband"
+	desc = "A purple armband signifying a science position."
+	icon_state = "rnd"
+
+/obj/item/clothing/accessory/armband
+	name = "security armband"
+	desc = "A red armband signifying a security position."
+	icon_state = "red"
+	slot = "armband"

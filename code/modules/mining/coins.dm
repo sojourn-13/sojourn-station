@@ -3,6 +3,7 @@
 /obj/item/weapon/coin
 	icon = 'icons/obj/items.dmi'
 	name = COIN_STANDARD
+	desc = "A coin."
 	icon_state = "coin"
 	flags = CONDUCT
 	force = 0.0
@@ -18,30 +19,37 @@
 
 /obj/item/weapon/coin/gold
 	name = COIN_GOLD
+	desc = "A gold coin."
 	icon_state = "coin_gold"
 
 /obj/item/weapon/coin/silver
 	name = COIN_SILVER
+	desc = "A silver coin."
 	icon_state = "coin_silver"
 
 /obj/item/weapon/coin/diamond
 	name = COIN_DIAMOND
+	desc = "A diamond coin."
 	icon_state = "coin_diamond"
 
 /obj/item/weapon/coin/iron
 	name = COIN_IRON
+	desc = "A iron coin."
 	icon_state = "coin_iron"
 
 /obj/item/weapon/coin/plasma
 	name = COIN_PLASMA
+	desc = "A plasma coin."
 	icon_state = "coin_plasma"
 
 /obj/item/weapon/coin/uranium
+	desc = "A uranium coin."
 	name = COIN_URANIUM
 	icon_state = "coin_uranium"
 
 /obj/item/weapon/coin/platinum
 	name = COIN_PLATINUM
+	desc = "A platinum coin."
 	icon_state = "coin_adamantine"
 
 /obj/item/weapon/coin/attackby(obj/item/weapon/W as obj, mob/user as mob)

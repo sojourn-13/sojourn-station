@@ -100,9 +100,9 @@
 	icon_door = "yellow"
 
 /obj/structure/closet/wardrobe/yellow/populate_contents()
-	new /obj/item/clothing/under/color/yellow(src)
-	new /obj/item/clothing/under/color/yellow(src)
-	new /obj/item/clothing/under/color/yellow(src)
+	new /obj/item/clothing/under/color(src)
+	new /obj/item/clothing/under/color(src)
+	new /obj/item/clothing/under/color(src)
 	new /obj/item/clothing/shoes/orange(src)
 	new /obj/item/clothing/shoes/orange(src)
 	new /obj/item/clothing/shoes/orange(src)
@@ -252,7 +252,7 @@
 
 /obj/structure/closet/wardrobe/mixed/populate_contents()
 	new /obj/item/clothing/under/color/blue(src)
-	new /obj/item/clothing/under/color/yellow(src)
+	new /obj/item/clothing/under/color(src)
 	new /obj/item/clothing/under/color/green(src)
 	new /obj/item/clothing/under/orange(src)
 	new /obj/item/clothing/under/color/pink(src)

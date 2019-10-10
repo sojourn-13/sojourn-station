@@ -68,7 +68,7 @@ obj/item/clothing/suit/fluff/kimono
 	siemens_coefficient = 1
 	body_parts_covered = 0
 
-/obj/item/clothing/under/swimsuit
+/obj/item/clothing/under/swimsuit/black
 	name = "black swimsuit"
 	desc = "A black swimsuit perfect for the pool."
 	icon_state = "swim_black"
@@ -80,16 +80,22 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "swim_blue"
 	siemens_coefficient = 1
 
-/obj/item/clothing/under/swimsuit/purple
-	name = "purple swimsuit"
-	desc = "A purple swimsuit perfect for the pool."
-	icon_state = "swim_purp"
+/obj/item/clothing/under/swimsuit/earth
+	name = "earth swimsuit"
+	desc = "A earth swimsuit perfect for the pool."
+	icon_state = "swim_earth"
 	siemens_coefficient = 1
 
 /obj/item/clothing/under/swimsuit/green
 	name = "green swimsuit"
 	desc = "A green swimsuit perfect for the pool."
 	icon_state = "swim_green"
+	siemens_coefficient = 1
+
+/obj/item/clothing/under/swimsuit/purple
+	name = "purple swimsuit"
+	desc = "A purple swimsuit perfect for the pool."
+	icon_state = "swim_purp"
 	siemens_coefficient = 1
 
 /obj/item/clothing/under/swimsuit/red
@@ -104,13 +110,7 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "swim_striped"
 	siemens_coefficient = 1
 
-/obj/item/clothing/under/swimsuit/earth
-	name = "earth swimsuit"
-	desc = "A earth swimsuit perfect for the pool."
-	icon_state = "swim_earth"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/swimsuit/white
+/obj/item/clothing/under/swimsuit
 	name = "white swimsuit"
 	desc = "A white swimsuit perfect for the pool."
 	icon_state = "swim_white"

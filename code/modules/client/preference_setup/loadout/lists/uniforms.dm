@@ -5,6 +5,11 @@
 	slot = slot_w_uniform
 	sort_category = "Uniforms and Casual Dress"
 
+/datum/gear/uniform/casualwear
+	display_name = "casualwear selection"
+	path = /obj/item/clothing/under/top
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/cheongsam
 	display_name = "cheongsam selection"
 	path = /obj/item/clothing/under/cheongsam
@@ -15,9 +20,14 @@
 	path = /obj/item/clothing/under/plaid
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/jeans
+	display_name = "jeans selection"
+	path = /obj/item/clothing/under/jeans
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/jumpsuit
 	display_name = "jumpsuit selection"
-	path = /obj/item/clothing/under/color/
+	path = /obj/item/clothing/under/color
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/jumpsuit2
@@ -27,7 +37,7 @@
 
 /datum/gear/uniform/jumpskirt
 	display_name = "jumpskirt selection"
-	path = /obj/item/clothing/under/jumpskirt
+	path = /obj/item/clothing/under/colorskirt
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/jumpskirt2
@@ -37,27 +47,27 @@
 
 /datum/gear/uniform/modularsuit
 	display_name = "modular suit selection"
-	path = /obj/item/clothing/under/modular/
+	path = /obj/item/clothing/under/modular
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/onepiecesuit
 	display_name = "one piece suit selection"
-	path = /obj/item/clothing/under/suit_jacket/
+	path = /obj/item/clothing/under/suit_jacket
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/overalls
-	display_name = "overall selection"
+	display_name = "overalls selection"
 	path = /obj/item/clothing/under/overalls
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/pants
 	display_name = "pants selection"
-	path = /obj/item/clothing/under/pants/
+	path = /obj/item/clothing/under/pants
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/shorts
 	display_name = "shorts selection"
-	path = /obj/item/clothing/under/shorts/
+	path = /obj/item/clothing/under/shorts
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/skirt
@@ -67,15 +77,10 @@
 
 /datum/gear/uniform/swimsuit
 	display_name = "swimsuit selection"
-	path = /obj/item/clothing/under/swimsuit/
-	flags = GEAR_HAS_TYPE_SELECTION
-
-/datum/gear/uniform/top
-	display_name = "top selection"
-	path = /obj/item/clothing/under/top/
+	path = /obj/item/clothing/under/swimsuit
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/turtleneck
 	display_name = "turtleneck selection"
-	path = /obj/item/clothing/under/turtleneck/
+	path = /obj/item/clothing/under/turtleneck
 	flags = GEAR_HAS_TYPE_SELECTION

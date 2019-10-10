@@ -4,11 +4,11 @@
 	icon_door = "mixed"
 
 /obj/structure/closet/athletic_mixed/populate_contents()
-	new /obj/item/clothing/under/shorts/grey(src)
-	new /obj/item/clothing/under/shorts/black(src)
+	new /obj/item/clothing/under/shorts/athleticgrey(src)
+	new /obj/item/clothing/under/shorts/athleticblack(src)
 	new /obj/item/clothing/under/shorts(src)
-	new /obj/item/clothing/under/shorts/blue(src)
-	new /obj/item/clothing/under/shorts/green(src)
+	new /obj/item/clothing/under/shorts/athleticblue(src)
+	new /obj/item/clothing/under/shorts/athleticgreen(src)
 	new /obj/item/clothing/under/swimsuit/red(src)
 	new /obj/item/clothing/under/swimsuit(src)
 	new /obj/item/clothing/under/swimsuit/blue(src)

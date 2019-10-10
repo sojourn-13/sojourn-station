@@ -48,7 +48,7 @@
 			new/obj/item/weapon/melee/baton(src)
 		if(41 to 45)
 			new/obj/item/clothing/under/shorts(src)
-			new/obj/item/clothing/under/shorts/blue(src)
+			new/obj/item/clothing/under/shorts/athleticblue(src)
 		if(46 to 50)
 			new/obj/item/clothing/under/admin/chameleon(src)
 			for(var/i = 0, i < 7, i++)

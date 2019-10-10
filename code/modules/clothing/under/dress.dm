@@ -152,18 +152,11 @@
 
 /*Cheongsam*/
 
-/obj/item/clothing/under/cheongsam
-	name = "white cheongsam"
-	desc = "A white cheongsam dress."
-	icon_state = "cheongsam-white"
-	item_state = "cheongsam-white"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
-
-/obj/item/clothing/under/cheongsam/red
-	name = "red cheongsam"
-	desc = "A red cheongsam dress."
-	icon_state = "cheongsam-red"
-	item_state = "cheongsam-red"
+/obj/item/clothing/under/cheongsam/black
+	name = "black cheongsam"
+	desc = "A black cheongsam dress."
+	icon_state = "cheongsam-black"
+	item_state = "cheongsam-black"
 
 /obj/item/clothing/under/cheongsam/blue
 	name = "blue cheongsam"
@@ -171,11 +164,11 @@
 	icon_state = "cheongsam-blue"
 	item_state = "cheongsam-blue"
 
-/obj/item/clothing/under/cheongsam/black
-	name = "black cheongsam"
-	desc = "A black cheongsam dress."
-	icon_state = "cheongsam-black"
-	item_state = "cheongsam-black"
+/obj/item/clothing/under/cheongsam/darkblue
+	name = "dark blue cheongsam"
+	desc = "A dark blue cheongsam dress."
+	icon_state = "cheongsam-darkblue"
+	item_state = "cheongsam-darkblue"
 
 /obj/item/clothing/under/cheongsam/darkred
 	name = "dark red cheongsam"
@@ -195,41 +188,48 @@
 	icon_state = "cheongsam-purple"
 	item_state = "cheongsam-purple"
 
-/obj/item/clothing/under/cheongsam/darkblue
-	name = "dark blue cheongsam"
-	desc = "A dark blue cheongsam dress."
-	icon_state = "cheongsam-darkblue"
-	item_state = "cheongsam-darkblue"
+/obj/item/clothing/under/cheongsam/red
+	name = "red cheongsam"
+	desc = "A red cheongsam dress."
+	icon_state = "cheongsam-red"
+	item_state = "cheongsam-red"
+
+/obj/item/clothing/under/cheongsam
+	name = "white cheongsam"
+	desc = "A white cheongsam dress."
+	icon_state = "cheongsam-white"
+	item_state = "cheongsam-white"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /*Skirts*/
-
-/obj/item/clothing/under/skirt
-	name = "short black skirt"
-	desc = "A short skirt with a black design."
-	icon_state = "skirt_short_black"
-	body_parts_covered = LOWER_TORSO
 
 /obj/item/clothing/under/skirt/khaki
 	name = "khaki skirt"
 	desc = "An exotic skirt with a khaki design."
 	icon_state = "skirt_khaki"
 
-/obj/item/clothing/under/skirt/blue
+/obj/item/clothing/under/skirt/shortblack
+	name = "short black skirt"
+	desc = "A short skirt with a black design."
+	icon_state = "skirt_short_black"
+	body_parts_covered = LOWER_TORSO
+
+/obj/item/clothing/under/skirt/shortblue
 	name = "short blue skirt"
 	desc = "A short skirt with a shiny blue design."
 	icon_state = "skirt_short_blue"
 
-/obj/item/clothing/under/skirt/red
-	name = "short red skirt"
-	desc = "A short skirt with a shiny red design."
-	icon_state = "skirt_short_red"
-
-/obj/item/clothing/under/skirt/denim
+/obj/item/clothing/under/skirt/shortdenim
 	name = "short denim skirt"
 	desc = "A short skirt composed of fine denim."
 	icon_state = "skirt_short_denim"
 
-/obj/item/clothing/under/skirt/swept
+/obj/item/clothing/under/skirt/shortred
+	name = "short red skirt"
+	desc = "A short skirt with a shiny red design."
+	icon_state = "skirt_short_red"
+
+/obj/item/clothing/under/skirt
 	name = "swept skirt"
 	desc = "A black skirt elegantly swept to one side."
 	icon_state = "skirt_swept"
