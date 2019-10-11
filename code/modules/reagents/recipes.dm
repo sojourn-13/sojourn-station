@@ -2008,7 +2008,7 @@
 
 /datum/chemical_reaction/eznutrient
 	result = "eznutrient"
-	required_reagents = list("nutriment" = 1, "carbon" = 3)
+	required_reagents = list("ammonia" = 1, "carbon" = 3)
 	result_amount = 4
 
 /datum/chemical_reaction/left4zed
