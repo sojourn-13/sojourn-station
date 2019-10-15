@@ -308,7 +308,14 @@
 	icon_state = "cueballelectric"
 	item_state= "cueballelectric"
 	body_parts_covered = HEAD
-
+	
+/obj/item/clothing/head/costume/misc/fishbowl
+	name = "fishbowl helmet"
+	desc = "A large, featureless clear orb worn on the head. Reminds you of fish!"
+	icon_state = "fishbowl"
+	item_state= "fishbowl"
+	body_parts_covered = HEAD
+	
 /obj/item/clothing/head/costume/misc/justice
 	name = "red justice helm"
 	desc = "The helm of the heroic red justice ranger."

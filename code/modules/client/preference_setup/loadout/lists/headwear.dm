@@ -70,3 +70,7 @@
 /datum/gear/head/turban
 	display_name = "turban"
 	path = /obj/item/clothing/head/turban
+	
+/datum/gear/head/fishbowl
+	display_name = "fishbowl helmet"
+	path = /obj/item/clothing/head/costume/misc/fishbowl
