@@ -15,6 +15,15 @@
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
+	stat_modifiers = list(
+		STAT_ROB = 8,
+		STAT_TGH = 8,
+		STAT_BIO = 8,
+		STAT_MEC = 8,
+		STAT_VIG = 8,
+		STAT_COG = 8
+	)
+
 /datum/job/offduty_cargo
 	title = "Off-duty Guild Member"
 	latejoin_only = TRUE
@@ -27,6 +36,12 @@
 	access = list(access_maint_tunnels)
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
+
+	stat_modifiers = list(
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 10
+	)
 
 /datum/job/offduty_engineering
 	title = "Off-duty Technomancer"
@@ -41,6 +56,12 @@
 //	minimal_access = list(access_maint_tunnels, access_external_airlocks)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
+	stat_modifiers = list(
+		STAT_TGH = 10,
+		STAT_MEC = 30,
+		STAT_COG = 15
+	)
+
 /datum/job/offduty_medical
 	title = "Off-duty Moebius"
 	latejoin_only = TRUE
@@ -53,6 +74,10 @@
 	access = list(access_maint_tunnels, access_external_airlocks)
 //	minimal_access = list(access_maint_tunnels, access_external_airlocks)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
+
+	stat_modifiers = list(
+		STAT_BIO = 30,
+	)
 
 ///datum/job/offduty_science
 //	title = "Off-duty Scientist"
@@ -80,6 +105,12 @@
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
+	stat_modifiers = list(
+		STAT_ROB = 25,
+		STAT_TGH = 20,
+		STAT_VIG = 25
+	)
+
 /datum/job/offduty_command
 	title = "Off-duty CO"
 	latejoin_only = TRUE
@@ -92,3 +123,12 @@
 	access = list(access_maint_tunnels, access_external_airlocks)
 //	minimal_access = list(access_maint_tunnels, access_external_airlocks)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
+
+	stat_modifiers = list(
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_BIO = 30,
+		STAT_MEC = 30,
+		STAT_VIG = 40,
+		STAT_COG = 30
+	)
