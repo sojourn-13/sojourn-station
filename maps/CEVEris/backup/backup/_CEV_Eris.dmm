@@ -3009,7 +3009,7 @@
 "bfS" = (/obj/item/modular_computer/console/preset/engineering/alarms{dir = 8},/turf/simulated/floor/tiled/steel/gray_perforated,/area/eris/maintenance/section2deck4starboard)
 "bfT" = (/obj/machinery/disease2/incubator,/obj/item/device/radio/intercom{dir = 4; pixel_x = -22},/turf/simulated/floor/tiled/white/brown_perforated,/area/eris/medical/virology)
 "bfU" = (/obj/machinery/door/firedoor,/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating,/area/eris/security/prisoncells)
-"bfV" = (/obj/machinery/disposal,/obj/structure/disposalpipe/trunk{dir = 4},/obj/structure/sign/levels/section4{pixel_y = 32},/turf/simulated/floor/tiled/steel,/area/eris/crew_quarters/sleep/cryo)
+"bfV" = (/obj/machinery/disposal,/obj/structure/disposalpipe/trunk{dir = 4},/obj/structure/sign/sec4{pixel_y = 32},/turf/simulated/floor/tiled/steel,/area/eris/crew_quarters/sleep/cryo)
 "bfW" = (/obj/structure/multiz/ladder,/turf/simulated/floor/tiled/techmaint,/area/eris/maintenance/section2deck2starboard)
 "bfX" = (/obj/machinery/alarm{pixel_y = 26},/obj/machinery/camera/network/research,/turf/simulated/floor/tiled/steel/techfloor,/area/eris/rnd/chargebay)
 "bfY" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/landmark/join/start/roboticist,/turf/simulated/floor/tiled/dark/gray_perforated,/area/eris/rnd/lab)

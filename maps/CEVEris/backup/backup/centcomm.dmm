@@ -225,7 +225,7 @@
 "eq" = (/obj/structure/flora/grass/brown,/turf/simulated/floor/holofloor/snow,/area/holodeck/source_snowfield)
 "er" = (/obj/structure/holostool,/obj/effect/floor_decal/border/carpet{dir = 4},/turf/simulated/floor/holofloor/carpet{dir = 8},/area/holodeck/source_meetinghall)
 "es" = (/obj/machinery/door/window/holowindoor{base_state = "right"; icon_state = "right"; name = "Green Team"},/turf/simulated/floor/holofloor/tiled/dark,/area/holodeck/source_basketball)
-"et" = (/obj/structure/bed/chair{dir = 1},/obj/item/clothing/glasses/powered/thermal/plain/monocle,/obj/item/clothing/head/costume/history/pirate,/turf/simulated/shuttle/floor{icon_state = "floor4"},/area/skipjack_station/start)
+"et" = (/obj/structure/bed/chair{dir = 1},/obj/item/clothing/glasses/powered/thermal/plain/monocle,/obj/item/clothing/head/pirate,/turf/simulated/shuttle/floor{icon_state = "floor4"},/area/skipjack_station/start)
 "eu" = (/turf/unsimulated/beach/sand{tag = "icon-beach"; icon_state = "beach"},/area/holodeck/source_beach)
 "ev" = (/obj/machinery/door/window/holowindoor{base_state = "right"; icon_state = "right"; name = "Green Team"},/turf/simulated/floor/holofloor/tiled/dark,/area/holodeck/source_thunderdomecourt)
 "ew" = (/obj/structure/window/reinforced/holowindow{dir = 1},/turf/simulated/floor/holofloor/tiled/dark,/area/holodeck/source_boxingcourt)

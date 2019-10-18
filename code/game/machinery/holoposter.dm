@@ -1,6 +1,6 @@
 /obj/machinery/holoposter
 	name = "holographic poster"
-	desc = "Wall-mounted holographic projector displaying various advertisements."
+	desc = "A wall-mounted holographic projector displaying various advertisements."
 	icon = 'icons/obj/holoposter.dmi'
 	icon_state = "off"
 	anchored = 1

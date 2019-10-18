@@ -22,7 +22,7 @@
 # +EVERYTHING (or +HOST or +ALL) = Simply gives you everything without having to type every flag
 
 Admin Observer
-Moderator		+MOD
+Moderator		+MOD +FUN
 Mentor          +MENTOR
 
 Admin Candidate	+ADMIN

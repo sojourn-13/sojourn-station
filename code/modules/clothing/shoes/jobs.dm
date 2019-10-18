@@ -1,6 +1,6 @@
 /obj/item/clothing/shoes/galoshes
-	desc = "A pair of slip-resistant rubber boots used for janitorial work."
 	name = "galoshes"
+	desc = "A pair of slip-resistant rubber boots used for janitorial work."
 	icon_state = "galoshes"
 	permeability_coefficient = 0.05
 	siemens_coefficient = 0 // DAMN BOI

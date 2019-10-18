@@ -1387,7 +1387,7 @@
 	desc = "Spare tool vending. What? Did you expect some witty description?"
 	icon_state = "engivend"
 	icon_deny = "engivend-deny"
-	products = list(/obj/item/clothing/glasses/meson = 2,
+	products = list(/obj/item/clothing/glasses/powered/meson = 2,
 					/obj/item/weapon/tool/multitool = 4,
 					/obj/item/weapon/airlock_electronics = 10,
 					/obj/item/weapon/circuitboard/apc = 10,
@@ -1405,7 +1405,7 @@
 	icon_deny = "engi-deny"
 	products = list(/obj/item/clothing/head/hardhat = 4,
 					/obj/item/weapon/storage/belt/utility = 4,
-					/obj/item/clothing/glasses/meson = 4,
+					/obj/item/clothing/glasses/powered/meson = 4,
 					/obj/item/clothing/gloves/insulated = 4,
 					/obj/item/weapon/tool/screwdriver = 12,
 					/obj/item/weapon/tool/crowbar = 12,
@@ -1425,7 +1425,7 @@
 					/obj/item/weapon/stock_parts/console_screen = 5)
 	prices = list(/obj/item/clothing/head/hardhat = 4,
 					/obj/item/weapon/storage/belt/utility = 150,
-					/obj/item/clothing/glasses/meson = 300,
+					/obj/item/clothing/glasses/powered/meson = 300,
 					/obj/item/clothing/gloves/insulated = 600,
 					/obj/item/weapon/tool/screwdriver = 30,
 					/obj/item/weapon/tool/crowbar = 30,

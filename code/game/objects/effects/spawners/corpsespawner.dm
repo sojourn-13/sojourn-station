@@ -384,7 +384,7 @@
 	corpsegloves = /obj/item/clothing/gloves/thick
 	corpseradio = /obj/item/device/radio/headset/headset_eng
 	corpsehelmet = /obj/item/clothing/head/hardhat
-	corpsebelt = /obj/item/weapon/storage/belt/utility/mostlyfull
+	corpsebelt = /obj/item/weapon/storage/belt/utility/full
 	corpsepocket1 = /obj/item/device/t_scanner
 	corpseback = /obj/item/weapon/storage/backpack/industrial
 	corpseid = 1
@@ -399,7 +399,7 @@
 	corpseradio = /obj/item/device/radio/headset/headset_eng
 	corpsemask = /obj/item/clothing/mask/breath
 	corpsehelmet = /obj/item/clothing/head/helmet/space/void/engineering
-	corpsebelt = /obj/item/weapon/storage/belt/utility/mostlyfull
+	corpsebelt = /obj/item/weapon/storage/belt/utility/full
 	corpsepocket1 = /obj/item/device/t_scanner
 	corpseback = /obj/item/weapon/storage/backpack/industrial
 	corpseid = 1
@@ -413,7 +413,7 @@
 	corpsegloves = /obj/item/clothing/gloves/thick
 	corpseradio = /obj/item/device/radio/headset/heads/ce
 	corpsehelmet = /obj/item/clothing/head/firefighter/chief
-	corpsebelt = /obj/item/weapon/storage/belt/utility/mostlyfull
+	corpsebelt = /obj/item/weapon/storage/belt/utility/full
 	corpsepocket1 = /obj/item/device/t_scanner
 	corpseback = /obj/item/weapon/storage/backpack/industrial
 	corpseid = 1
@@ -428,7 +428,7 @@
 	corpseradio = /obj/item/device/radio/headset/heads/ce
 	corpsemask = /obj/item/clothing/mask/breath
 	corpsehelmet = /obj/item/clothing/head/helmet/space/void/engineering
-	corpsebelt = /obj/item/weapon/storage/belt/utility/mostlyfull
+	corpsebelt = /obj/item/weapon/storage/belt/utility/full
 	corpsepocket1 = /obj/item/device/t_scanner
 	corpseback = /obj/item/weapon/storage/backpack/industrial
 	corpseid = 1

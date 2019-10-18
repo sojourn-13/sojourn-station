@@ -188,7 +188,7 @@
 				new /obj/effect/decal/cleanable/greenglow(T)
 			return TRUE
 	return TRUE
-	
+
 
 /datum/reagent/adrenaline
 	name = "Adrenaline"
@@ -444,7 +444,7 @@
 					R.metabolism = initial(R.metabolism)
 					break
 
-/datum/reagent/other/arectine 
+/datum/reagent/other/arectine
 	name = "Arectine"
 	id = "arectine"
 	description = "Makes user emit light."
@@ -472,14 +472,6 @@
 	taste_description = "nothing"
 	reagent_state = LIQUID
 	color = "#bbc5f0"
-
-/datum/reagent/organic/biomatter
-	name = "Biomatter"
-	id = "biomatter"
-	description = "A goo of unknown to you origin. Its better to stay that way."
-	taste_description = "vomit"
-	reagent_state = LIQUID
-	color = "#527f4f"
 
 /datum/reagent/vomitol
 	name = "Vomitol"

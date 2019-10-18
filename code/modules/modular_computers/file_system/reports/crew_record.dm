@@ -28,7 +28,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 		photo_front = getFlatIcon(H, SOUTH)
 		photo_side = getFlatIcon(H, WEST)
 	else
-		var/mob/living/carbon/human/dummy = new()
+		var/mob/living/carbon/human/dummy/mannequin/dummy = new()
 		photo_front = getFlatIcon(dummy, SOUTH)
 		photo_side = getFlatIcon(dummy, WEST)
 		qdel(dummy)
