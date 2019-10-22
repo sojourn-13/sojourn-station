@@ -37,8 +37,8 @@
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/rank/security/skirt
-	name = "Ironhammer Operative's jumpskirt"
-	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for robust protection."
+	name = "ironhammer operative's jumpskirt"
+	desc = "A durable operative's jumpsuit, designed to provide moderate combat protection."
 	icon_state = "security_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 

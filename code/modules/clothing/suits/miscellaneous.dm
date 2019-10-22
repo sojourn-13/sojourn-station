@@ -110,7 +110,13 @@ obj/item/clothing/suit/fluff/kimono
 
 /*Poncho*/
 
-/obj/item/clothing/suit/poncho
+/obj/item/clothing/suit/poncho/blue
+	name = "blue poncho"
+	desc = "A comfortable sleeveless poncho with a blue design."
+	icon_state = "blueponcho"
+	item_state = "blueponcho"
+
+/obj/item/clothing/suit/poncho/brown
 	name = "brown poncho"
 	desc = "A comfortable sleeveless poncho with a brown design."
 	icon_state = "classicponcho"
@@ -122,11 +128,11 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "greenponcho"
 	item_state = "greenponcho"
 
-/obj/item/clothing/suit/poncho/red
-	name = "red poncho"
-	desc = "A comfortable sleeveless poncho with a red design."
-	icon_state = "redponcho"
-	item_state = "redponcho"
+/obj/item/clothing/suit/poncho/pink
+	name = "pink poncho"
+	desc = "A comfortable sleeveless poncho with a pink design."
+	icon_state = "pinkponcho"
+	item_state = "pinkponcho"
 
 /obj/item/clothing/suit/poncho/purple
 	name = "purple poncho"
@@ -134,17 +140,12 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "purpleponcho"
 	item_state = "purpleponcho"
 
-/obj/item/clothing/suit/poncho/pink
-	name = "pink poncho"
-	desc = "A comfortable sleeveless poncho with a pink design."
-	icon_state = "pinkponcho"
-	item_state = "pinkponcho"
+/obj/item/clothing/suit/poncho
+	name = "red poncho"
+	desc = "A comfortable sleeveless poncho with a red design."
+	icon_state = "redponcho"
+	item_state = "redponcho"
 
-/obj/item/clothing/suit/poncho/blue
-	name = "blue poncho"
-	desc = "A comfortable sleeveless poncho with a blue design."
-	icon_state = "blueponcho"
-	item_state = "blueponcho"
 
 /*Shirts*/
 

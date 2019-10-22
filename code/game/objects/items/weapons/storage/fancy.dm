@@ -17,6 +17,7 @@
 	icon = 'icons/obj/food.dmi'
 	icon_state = "donutbox6"
 	name = "donut box"
+	max_storage_space = 8
 	var/icon_type = "donut"
 
 /obj/item/weapon/storage/fancy/update_icon(var/itemremoved = 0)
@@ -268,3 +269,38 @@
 /obj/item/weapon/storage/lockbox/vials/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
 	update_icon()
+
+/*
+ * Box of Chocolates/Heart Box
+ */
+
+/obj/item/weapon/storage/fancy/heartbox
+	icon_state = "heartbox"
+	name = "box of chocolates"
+	icon_type = "chocolate"
+	var/startswith = 6
+	max_storage_space = 6
+	max_w_class = ITEM_SIZE_SMALL
+	can_hold = list(
+		/obj/item/weapon/reagent_containers/food/snacks/chocolatepiece,
+		/obj/item/weapon/reagent_containers/food/snacks/chocolatepiece/white,
+		/obj/item/weapon/reagent_containers/food/snacks/chocolatepiece/truffle
+		)
+
+/obj/item/weapon/storage/fancy/heartbox/New()
+	..()
+	new /obj/item/weapon/reagent_containers/food/snacks/chocolatepiece(src)
+	new /obj/item/weapon/reagent_containers/food/snacks/chocolatepiece(src)
+	new /obj/item/weapon/reagent_containers/food/snacks/chocolatepiece(src)
+	new /obj/item/weapon/reagent_containers/food/snacks/chocolatepiece/white(src)
+	new /obj/item/weapon/reagent_containers/food/snacks/chocolatepiece/white(src)
+	new /obj/item/weapon/reagent_containers/food/snacks/chocolatepiece/truffle(src)
+	update_icon()
+
+/obj/item/weapon/storage/fancy/heartbox/Initialize()
+	. = ..()
+	update_icon()
+
+/obj/item/weapon/storage/fancy/heartbox/update_icon(var/itemremoved = 0)
+	if (contents.len == 0)
+		icon_state = "heartbox_empty"

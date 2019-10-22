@@ -36,8 +36,8 @@
 /obj/item/clothing/suit/fire/heavy
 	name = "firesuit"
 	desc = "A suit that protects against extreme fire and heat."
-	//icon_state = "thermal"
-	item_state = "ro_suit"
+	icon_state = "firesuit"
+	item_state = "firefighter"
 	w_class = ITEM_SIZE_BULKY//bulky item
 	slowdown = 1.5
 

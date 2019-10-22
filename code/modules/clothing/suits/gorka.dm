@@ -224,7 +224,6 @@
 	siemens_coefficient = 0.7
 	hoodtype = /obj/item/clothing/head/hood/gorkahood
 
-
 /*Gorka Hood*/
 
 /obj/item/clothing/head/hood/gorkahood/camo
@@ -305,7 +304,6 @@
 	flags_inv = HIDEEARS|BLOCKHEADHAIR
 	body_parts_covered = HEAD|EARS
 
-
 /obj/item/clothing/suit/gorka/toggle/crew_med
 	name = "medical crew gorka jacket"
 	desc = "A durable, baggy grey jacket sporting EMS patches, high vis strips and stain resistant coating."
@@ -331,7 +329,7 @@
 	body_parts_covered = HEAD|EARS
 
 /obj/item/clothing/suit/gorka/toggle/gorka_ih
-	name = "Ironhammer gorka jacket"
+	name = "ironhammer gorka jacket"
 	desc = "A rugged, vaguely slavic two-tone parka, made with robust materials and lined with ballistic mesh."
 	icon_state = "gorka_jacket_ih"
 	icon_open = "gorka_jacket_open_ih"
@@ -345,7 +343,7 @@
 	hoodtype = /obj/item/clothing/head/hood/gorkahood_ih
 
 /obj/item/clothing/head/hood/gorkahood_ih
-	name = "Ironhammer gorka hood"
+	name = "ironhammer gorka hood"
 	desc = "A hood from a gorka jacket, oddly robust."
 	icon_state = "gorka_jacket_ih_hood"
 	armor = list(melee = 20, bullet = 15, energy = 10, bomb = 10, bio = 0, rad = 0)
@@ -353,25 +351,25 @@
 	body_parts_covered = HEAD|EARS
 
 /obj/item/clothing/suit/gorka/toggle/gorka_ih/ih_med_b
-	name = "blue Medical Specialist gorka jacket"
+	name = "blue medspec gorka jacket"
 	desc = "A durable, baggy jacket featuring blue medical liverly, stain-resistant coating and a light ballistic mesh."
 	icon_state = "gorka_jacket_ih_med_b"
 	icon_open = "gorka_jacket_open_ih_med_b"
 	icon_closed = "gorka_jacket_ih_med_b"
 
 /obj/item/clothing/head/hood/gorkahood_ih/ih_med_b
-	name = "blue MedSpec hood"
+	name = "blue medspec hood"
 	desc = "A hood from a gorka jacket, oddly robust."
 	icon_state = "gorka_jacket_ih_med_b_hood"
 
 /obj/item/clothing/suit/gorka/toggle/gorka_ih/ih_med_g
-	name = "green Medical Specialist gorka jacket"
+	name = "green medspec gorka jacket"
 	desc = "A durable, baggy jacket featuring green medical liverly, stain-resistant coating and a light ballistic mesh."
 	icon_state = "gorka_jacket_ih_med_g"
 	icon_open = "gorka_jacket_open_ih_med_g"
 	icon_closed = "gorka_jacket_ih_med_g"
 
 /obj/item/clothing/head/hood/gorkahood_ih/ih_med_g
-	name = "green MedSpec hood"
+	name = "green medspec hood"
 	desc = "A hood from a gorka jacket, oddly robust."
 	icon_state = "gorka_jacket_ih_med_g_hood"

@@ -24,7 +24,7 @@
 	new /obj/item/clothing/shoes/jackboots(src.loc)
 
 /obj/landmark/costume/nyangirl/New()
-	new /obj/item/clothing/under/plaid/schoolgirlblue(src.loc)
+	new /obj/item/clothing/under/plaid/properblue(src.loc)
 	new /obj/item/clothing/head/costume/animal/kitty(src.loc)
 
 /obj/landmark/costume/maid/New()

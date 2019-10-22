@@ -124,6 +124,34 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Ironhammer"
 
+/datum/gear/factionironhammer/jumpskirtcommander
+	display_name = "jumpskirt, commander"
+	path = /obj/item/clothing/under/rank/ih_commander/skirt
+	allowed_roles = list("Ironhammer Commander")
+	slot = slot_w_uniform
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/jumpskirtmedspec
+	display_name = "jumpskirt, medical specialist"
+	path = /obj/item/clothing/under/rank/medspec/skirt
+	allowed_roles = list("Ironhammer Medical Specialist")
+	slot = slot_w_uniform
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/jumpskirtoperative
+	display_name = "jumpskirt, operative"
+	path = /obj/item/clothing/under/rank/security/skirt
+	allowed_roles = list("Ironhammer Operative")
+	slot = slot_w_uniform
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/jumpskirtwarden
+	display_name = "jumpskirt, warden"
+	path = /obj/item/clothing/under/rank/warden/skirt
+	allowed_roles = list("Ironhammer Gunnery Sergeant")
+	slot = slot_w_uniform
+	sort_category = "Faction: Ironhammer"
+
 /datum/gear/factionironhammer/security
 	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security

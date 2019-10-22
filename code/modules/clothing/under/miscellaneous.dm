@@ -187,12 +187,12 @@
 
 /*Gorka Ranks*/
 /obj/item/clothing/under/rank/security/gorka_ih
-	name = "Ironhammer gorka suit"
+	name = "ironhammer gorka suit"
 	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials."
 	icon_state = "gorka_ih"
 
 /obj/item/clothing/under/rank/medspec/gorka_ih_med_b
-	name = "Medical Specialist gorka"
+	name = "medical specialist gorka"
 	desc = "A durable, baggy uniform featuring blue medical liverly and stain-resistant coating."
 	icon_state = "gorka_ih_med_b"
 	item_state = "gorka_ih_med_b"
@@ -200,7 +200,7 @@
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medspec/gorka_ih_med_g
-	name = "Medical Specialist gorka"
+	name = "medical specialist gorka"
 	desc = "A durable, baggy uniform featuring green medical liverly and stain-resistant coating."
 	icon_state = "gorka_ih_med_g"
 	item_state = "gorka_ih_med_g"
@@ -208,13 +208,13 @@
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medical/gorka_crew_med
-	desc = "A durable, baggy grey uniform sporting EMS patches, high vis strips, and stain resistant coating."
 	name = "medical crew gorka"
+	desc = "A durable, baggy grey uniform sporting EMS patches, high vis strips, and stain resistant coating."
 	icon_state = "gorka_crew_med"
 	item_state = "gorka_crew_med"
 
 /obj/item/clothing/under/rank/scientist/gorka_crew_sci
-	desc = "A durable, baggy grey uniform sporting research and development patches, and antiseptic coating."
 	name = "science crew gorka"
+	desc = "A durable, baggy grey uniform sporting research and development patches, and antiseptic coating."
 	icon_state = "gorka_crew_sci"
 	item_state = "gorka_crew_sci"
