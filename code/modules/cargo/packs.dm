@@ -1221,7 +1221,7 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 					/obj/item/clothing/shoes/color/black,
 					/obj/item/clothing/shoes/color/black,
 					/obj/item/clothing/shoes/leather,
-					/obj/item/clothing/suit/wcoat)
+					/obj/item/clothing/accessory/wcoat/black)
 	name = "Formalwear closet"
 	cost = 1500
 	containertype = /obj/structure/closet
@@ -1282,7 +1282,7 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 	num_contained = 2
 	contains = list(/obj/item/clothing/suit/costume/history/pirate,
 					/obj/item/clothing/suit/costume/job/judge,
-					/obj/item/clothing/suit/wcoat,
+					/obj/item/clothing/accessory/wcoat/black,
 					/obj/item/clothing/suit/costume/job/nun,
 					/obj/item/clothing/under/rank/first_officer/suit,
 					/obj/item/clothing/suit/costume/history/plaguedoctor,

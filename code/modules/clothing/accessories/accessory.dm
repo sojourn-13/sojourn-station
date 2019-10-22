@@ -347,3 +347,261 @@
 	slot_flags = SLOT_OCLOTHING
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	siemens_coefficient = 0.9
+
+/*Suit Jackets*/
+
+/obj/item/clothing/accessory/suitjacket/black
+	name = "black suit jacket"
+	desc = "A snappy black suit jacket."
+	icon_state = "ia_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/accessory/suitjacket/blue
+	name = "blue suit jacket"
+	desc = "A snappy blue suit jacket."
+	icon_state = "suitjacket_blue"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/accessory/suitjacket/burgundy
+	name = "burgundy suit jacket"
+	desc = "A snappy burgundy suit jacket."
+	icon_state = "burgundy_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/accessory/suitjacket/charcoal
+	name = "charcoal suit jacket"
+	desc = "A snappy charcoal suit jacket."
+	icon_state = "charcoal_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/accessory/suitjacket/checkered
+	name = "checkered suit jacket"
+	desc = "A snappy checkered suit jacket."
+	icon_state = "checkered_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/accessory/suitjacket/green
+	name = "green suit jacket"
+	desc = "A snappy green suit jacket."
+	icon_state = "suitjacket_green"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/accessory/suitjacket/navy
+	name = "navy suit jacket"
+	desc = "A snappy navy suit jacket."
+	icon_state = "navy_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/accessory/suitjacket/purple
+	name = "purple suit jacket"
+	desc = "A snappy purple suit jacket."
+	icon_state = "suitjacket_purp"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/accessory/suitjacket
+	name = "tan suit jacket"
+	desc = "A snappy tan suit jacket."
+	icon_state = "tan_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/*Scarves*/
+
+/obj/item/clothing/accessory/scarf/black
+	name = "black scarf"
+	desc = "A stylish black scarf."
+	icon_state = "blackscarf"
+
+/obj/item/clothing/accessory/scarf/christmas
+	name = "christmas scarf"
+	desc = "A stylish red and green scarf."
+	icon_state = "christmasscarf"
+
+/obj/item/clothing/accessory/scarf/darkblue
+	name = "dark blue scarf"
+	desc = "A stylish dark blue scarf."
+	icon_state = "darkbluescarf"
+
+obj/item/clothing/accessory/scarf/green
+	name = "green scarf"
+	desc = "A stylish green scarf."
+	icon_state = "greenscarf"
+
+/obj/item/clothing/accessory/scarf/lightblue
+	name = "light blue scarf"
+	desc = "A stylish light blue scarf."
+	icon_state = "lightbluescarf"
+
+/obj/item/clothing/accessory/scarf/orange
+	name = "orange scarf"
+	desc = "A stylish orange scarf."
+	icon_state = "orangescarf"
+
+/obj/item/clothing/accessory/scarf/purple
+	name = "purple scarf"
+	desc = "A stylish purple scarf."
+	icon_state = "purplescarf"
+
+/obj/item/clothing/accessory/scarf/red
+	name = "red scarf"
+	desc = "A stylish red scarf."
+	icon_state = "redscarf"
+
+/obj/item/clothing/accessory/scarf/white
+	name = "white scarf"
+	desc = "A stylish white scarf."
+	icon_state = "whitescarf"
+
+/obj/item/clothing/accessory/scarf/yellow
+	name = "yellow scarf"
+	desc = "A stylish yellow scarf."
+	icon_state = "yellowscarf"
+
+/obj/item/clothing/accessory/scarf/zebra
+	name = "zebra scarf"
+	desc = "A stylish black and white scarf."
+	icon_state = "zebrascarf"
+
+/obj/item/clothing/accessory/scarf/furblack
+	name = "black fur scarf"
+	desc = "A furred scarf in a black color."
+	icon_state = "furscarf_black"
+	item_state = "furscarf_black"
+
+/obj/item/clothing/accessory/scarf/furblue
+	name = "blue fur scarf"
+	desc = "A furred scarf in a blue color."
+	icon_state = "furscarf_blue"
+	item_state = "furscarf_blue"
+
+/obj/item/clothing/accessory/scarf/furbrown
+	name = "brown fur scarf"
+	desc = "A furred scarf in a brown color."
+	icon_state = "furscarf_brown"
+	item_state = "furscarf_brown"
+
+/obj/item/clothing/accessory/scarf/furcinnamon
+	name = "cinnamon fur scarf"
+	desc = "A furred scarf in a cinnamon color."
+	icon_state = "furscarf_cinnamon"
+	item_state = "furscarf_cinnamon"
+
+/obj/item/clothing/accessory/scarf/furcream
+	name = "cream fur scarf"
+	desc = "A furred scarf in a cream color."
+	icon_state = "furscarf_cream"
+	item_state = "furscarf_cream"
+
+/obj/item/clothing/accessory/scarf/furlbrown
+	name = "light brown fur scarf"
+	desc = "A furred scarf in a light brown color."
+	icon_state = "furscarf_lbrown"
+	item_state = "furscarf_lbrown"
+
+/obj/item/clothing/accessory/scarf/furorange
+	name = "orange fur scarf"
+	desc = "A furred scarf in a orange color."
+	icon_state = "furscarf_lasaga"
+	item_state = "furscarf_lasaga"
+
+/obj/item/clothing/accessory/scarf/furruddy
+	name = "ruddy fur scarf"
+	desc = "A furred scarf in a ruddy color."
+	icon_state = "furscarf_ruddy"
+	item_state = "furscarf_ruddy"
+
+/obj/item/clothing/accessory/scarf/fursilver
+	name = "silver fur scarf"
+	desc = "A furred scarf in a silver color."
+	icon_state = "furscarf_silver"
+	item_state = "furscarf_silver"
+
+/obj/item/clothing/accessory/scarf/neckblue
+	name = "blue neck scarf"
+	desc = "A blue neck scarf."
+	icon_state = "blue_scarf"
+	item_state = "blue_scarf"
+	body_parts_covered = FACE
+	item_flags = FLEXIBLEMATERIAL
+	w_class = ITEM_SIZE_SMALL
+	gas_transfer_coefficient = 0.90
+	price_tag = 50
+
+/obj/item/clothing/accessory/scarf/checkered
+	name = "checkered neck scarf"
+	desc = "A red and white checkered neck scarf."
+	icon_state = "redwhite_scarf"
+	item_state = "redwhite_scarf"
+
+/obj/item/clothing/accessory/scarf/neckgreen
+	name = "green neck scarf"
+	desc = "A green neck scarf."
+	icon_state = "green_scarf"
+	item_state = "green_scarf"
+
+/obj/item/clothing/accessory/scarf/neckred
+	name = "red neck scarf"
+	desc = "A red neck scarf."
+	icon_state = "red_scarf"
+	item_state = "red_scarf"
+
+/obj/item/clothing/accessory/scarf/stripedblue
+	name = "striped blue scarf"
+	desc = "A striped blue scarf."
+	icon_state = "stripedbluescarf"
+	item_state = "stripedbluescarf"
+
+/obj/item/clothing/accessory/scarf/stripedgreen
+	name = "striped green scarf"
+	desc = "A striped green scarf."
+	icon_state = "stripedgreenscarf"
+	item_state = "stripedgreenscarf"
+
+/obj/item/clothing/accessory/scarf/stripedpurple
+	name = "striped green scarf"
+	desc = "A striped purple scarf."
+	icon_state = "stripedpurplescarf"
+	item_state = "stripedpurplescarf"
+
+/obj/item/clothing/accessory/scarf
+	name = "striped red scarf"
+	desc = "A striped red scarf."
+	icon_state = "stripedredscarf"
+	item_state = "stripedredscarf"
+
+/obj/item/clothing/accessory/ninjascarf /*Omitted from scarf selection because it's more of a costume piece.*/
+	name = "ninja scarf"
+	desc = "A stealthy, ominous scarf."
+	icon_state = "ninja_scarf"
+	item_state = "ninja_scarf"
+	siemens_coefficient = 0
+
+/*One-Off Stuff*/
+/obj/item/clothing/accessory/necklace
+	name = "metal necklace"
+	desc = "A shiny steel chain with a vague metallic object dangling off it."
+	icon_state = "tronket"
+	item_state = "tronket"
+
+/obj/item/clothing/accessory/dropstraps
+	name = "drop straps"
+	desc = "White suspenders worn over the shoulders."
+	icon_state = "flops"
+	item_state = "flops"
+
+/obj/item/clothing/accessory/dogtags
+	name = "dog tags"
+	desc = "A pair of engraved metal identification tags."
+	icon_state = "tags"
+	item_state = "tags"
+
+/obj/item/clothing/accessory/legbrace
+	name = "leg brace"
+	desc = "A lightweight polymer frame designed to hold legs upright comfortably."
+	icon_state = "legbrace"
+	item_state = "legbrace"
+
+/obj/item/clothing/accessory/neckbrace
+	name = "neck brace"
+	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
+	icon_state = "neckbrace"
+	item_state = "neckbrace"

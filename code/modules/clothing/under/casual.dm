@@ -23,6 +23,12 @@
 	icon_state = "mercf"
 	item_state = "mercf"
 
+/obj/item/clothing/under/overalls/jumpsuitrobotics
+	name = "robotics jumpsuit"
+	desc = "A dull grey-blue jumpsuit with orange highlights."
+	icon_state = "seegson"
+	item_state = "seegson"
+
 /obj/item/clothing/under/overalls/jumpsuitworkhouse
 	name = "workhouse jumpsuit"
 	desc = "A compact green jumpsuit with short sleeves."
@@ -78,6 +84,61 @@
 	item_state = "tanutility"
 
 /*Casual*/
+/obj/item/clothing/under/top/crewtopplain
+	name = "plain crew top"
+	desc = "A plain crew top complete with a pair of jeans."
+	icon_state = "jeans_and_tee"
+	item_state = "jeans_and_tee"
+
+/obj/item/clothing/under/top/crewtoporange
+	name = "orange crew top"
+	desc = "A orange-branded crew top complete with a pair of jeans."
+	icon_state = "jeans_and_tee_o"
+	item_state = "jeans_and_tee_o"
+
+/obj/item/clothing/under/top/crewtopred
+	name = "red crew top"
+	desc = "A red-branded crew top complete with a pair of jeans."
+	icon_state = "jeans_and_tee_r"
+	item_state = "jeans_and_tee_r"
+
+/obj/item/clothing/under/top/crewtopblue
+	name = "blue crew top"
+	desc = "A blue-branded crew top complete with a pair of jeans."
+	icon_state = "jeans_and_tee_b"
+	item_state = "jeans_and_tee_b"
+
+/obj/item/clothing/under/top/crewtoprippedplain
+	name = "rough plain crew top"
+	desc = "A ripped plain crew top complete with a pair of jeans."
+	icon_state = "jeans_and_tee_rough"
+	item_state = "jeans_and_tee_rough"
+
+/obj/item/clothing/under/top/crewtoprippedorange
+	name = "rough orange crew top"
+	desc = "A ripped orange-branded crew top complete with a pair of jeans."
+	icon_state = "jeans_and_tee_rough_o"
+	item_state = "jeans_and_tee_rough_o"
+
+/obj/item/clothing/under/top/crewtoprippedred
+	name = "rough red crew top"
+	desc = "A ripped red-branded crew top complete with a pair of jeans."
+	icon_state = "jeans_and_tee_rough_r"
+	item_state = "jeans_and_tee_rough_r"
+
+/obj/item/clothing/under/top/crewtoprippedblue
+	name = "rough blue crew top"
+	desc = "A ripped blue-branded crew top complete with a pair of jeans."
+	icon_state = "jeans_and_tee_rough_b"
+	item_state = "jeans_and_tee_rough_b"
+
+/obj/item/clothing/under/top/cropred
+	name = "red crop top"
+	desc = "A red crop top complete with a pair of jeans."
+	icon_state = "croptop_red"
+	item_state = "croptop_red"
+
+
 /obj/item/clothing/under/top/cropgrey
 	name = "grey crop top"
 	desc = "A grey crop top complete with a pair of jeans."
@@ -113,6 +174,12 @@
 	desc = "A sturdy dark brown jacket worn with dark navy jeans."
 	icon_state = "trader"
 	item_state = "trader"
+
+/obj/item/clothing/under/top/outfitlabor
+	name = "labor outfit"
+	desc = "A beige shirt and grey working slacks held with suspenders."
+	icon_state = "taj_labor"
+	item_state = "taj_labor"
 
 /obj/item/clothing/under/top/outfitrancher
 	name = "rancher outfit"

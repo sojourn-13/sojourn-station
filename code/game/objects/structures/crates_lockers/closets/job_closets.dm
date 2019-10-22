@@ -22,8 +22,8 @@
 	new /obj/item/clothing/head/hairflower
 	new /obj/item/clothing/under/rank/bartender(src)
 	new /obj/item/clothing/under/rank/bartender(src)
-	new /obj/item/clothing/suit/wcoat(src)
-	new /obj/item/clothing/suit/wcoat(src)
+	new /obj/item/clothing/accessory/wcoat/black(src)
+	new /obj/item/clothing/accessory/wcoat/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
 

@@ -98,7 +98,7 @@
 
 /obj/item/clothing/under/rank/mercenary
 	name = "green tactical turtleneck"
-	desc = "Military style turtleneck, for operating in cold environments. Typically worn underneath armour"
+	desc = "Military style turtleneck, for operating in cold environments. Typically worn underneath armour."
 	icon_state = "greenturtle"
 	item_state = "bl_suit"
 	has_sensor = 0
@@ -122,3 +122,99 @@
 
 /obj/item/clothing/under/syndicate/combat
 	name = "combat turtleneck"
+
+/*Gorkas*/
+
+/obj/item/clothing/under/gorka/standard
+	name = "standard gorka"
+	desc = "A rugged set of vaguely militant and quite slavic two-tone clothes."
+	icon_state = "gorka"
+	item_state = "gorka"
+
+/obj/item/clothing/under/gorka/camo
+	name = "camo gorka"
+	desc = "A rugged set of two-tone military style clothes."
+	icon_state = "gorka_ss"
+	item_state = "gorka_ss"
+
+/obj/item/clothing/under/gorka/crew
+	name = "crew gorka"
+	desc = "A rugged set of vaguely militant two-tone grey utility wear."
+	icon_state = "gorka_crew"
+	item_state = "gorka_crew"
+
+/obj/item/clothing/under/gorka/crewblue
+	name = "blue crew gorka"
+	desc = "A rugged set of vaguely militant two-tone grey utility wear with blue patches and markings."
+	icon_state = "gorka_crew_b"
+	item_state = "gorka_crew_b"
+
+/obj/item/clothing/under/gorka/crewgreen
+	name = "green crew gorka"
+	desc = "A rugged set of vaguely militant two-tone grey utility wear with green patches and markings."
+	icon_state = "gorka_crew_g"
+	item_state = "gorka_crew_g"
+
+/obj/item/clothing/under/gorka/crewlight
+	name = "light crew gorka"
+	desc = "A fashionable set of vaguely militant two-tone clothes."
+	icon_state = "gorka_crew_light"
+	item_state = "gorka_crew_light"
+
+/obj/item/clothing/under/gorka/crewlightblue
+	name = "light blue crew gorka"
+	desc = "A fashionable set of vaguely militant two-tone clothes with a sporty blue-on-white scheme."
+	icon_state = "gorka_crew_light_b"
+	item_state = "gorka_crew_light_b"
+
+/obj/item/clothing/under/gorka/creworange
+	name = "orange crew gorka"
+	desc = "A rugged set of vaguely militant two-tone grey utility wear with orange patches and markings."
+	icon_state = "gorka_crew_o"
+	item_state = "gorka_crew_o"
+
+/obj/item/clothing/under/gorka/crewyellow
+	name = "yellow crew gorka"
+	desc = "A rugged set of vaguely militant two-tone grey utility wear with yellow patches and markings."
+	icon_state = "gorka_crew_y"
+	item_state = "gorka_crew_y"
+
+/obj/item/clothing/under/gorka
+	name = "tan gorka"
+	desc = "A rugged set of vaguely militant and quite slavic two-tone clothes, this time coyote brown on tan."
+	icon_state = "gorka_tan"
+	item_state = "gorka_tan"
+
+/*Gorka Ranks*/
+/obj/item/clothing/under/rank/security/gorka_ih
+	name = "Ironhammer gorka suit"
+	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials."
+	icon_state = "gorka_ih"
+
+/obj/item/clothing/under/rank/medspec/gorka_ih_med_b
+	name = "Medical Specialist gorka"
+	desc = "A durable, baggy uniform featuring blue medical liverly and stain-resistant coating."
+	icon_state = "gorka_ih_med_b"
+	item_state = "gorka_ih_med_b"
+	permeability_coefficient = 0.50
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+
+/obj/item/clothing/under/rank/medspec/gorka_ih_med_g
+	name = "Medical Specialist gorka"
+	desc = "A durable, baggy uniform featuring green medical liverly and stain-resistant coating."
+	icon_state = "gorka_ih_med_g"
+	item_state = "gorka_ih_med_g"
+	permeability_coefficient = 0.50
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+
+/obj/item/clothing/under/rank/medical/gorka_crew_med
+	desc = "A durable, baggy grey uniform sporting EMS patches, high vis strips, and stain resistant coating."
+	name = "medical crew gorka"
+	icon_state = "gorka_crew_med"
+	item_state = "gorka_crew_med"
+
+/obj/item/clothing/under/rank/scientist/gorka_crew_sci
+	desc = "A durable, baggy grey uniform sporting research and development patches, and antiseptic coating."
+	name = "science crew gorka"
+	icon_state = "gorka_crew_sci"
+	item_state = "gorka_crew_sci"

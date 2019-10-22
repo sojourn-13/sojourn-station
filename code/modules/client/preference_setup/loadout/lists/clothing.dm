@@ -27,9 +27,3 @@
 	path = /obj/item/clothing/mask/gas/industrial
 	slot = slot_wear_mask
 	cost = 2
-
-/datum/gear/clothing/scarf
-	display_name = "scarf selection"
-	path = /obj/item/clothing/mask/scarf
-	slot = slot_wear_mask
-	flags = GEAR_HAS_TYPE_SELECTION

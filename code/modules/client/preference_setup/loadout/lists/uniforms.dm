@@ -20,6 +20,16 @@
 	path = /obj/item/clothing/under/plaid
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/gorkajumpsuit
+	display_name = "gorka jumpsuit selection"
+	path = /obj/item/clothing/under/gorka
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/gorkapants
+	display_name = "gorka pants selection"
+	path = /obj/item/clothing/under/gorkapants
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/jeans
 	display_name = "jeans selection"
 	path = /obj/item/clothing/under/jeans

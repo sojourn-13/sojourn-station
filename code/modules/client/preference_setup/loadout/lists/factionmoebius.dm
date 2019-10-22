@@ -33,6 +33,41 @@
 	slot = slot_wear_suit
 	sort_category = "Faction: Moebius"
 
+/datum/gear/factionmoebius/gorka_crew_med
+	display_name = "gorka jacket, moebius medical"
+	path = /obj/item/clothing/suit/gorka/toggle/crew_med
+	allowed_roles = list("Moebius Doctor","Moebius Biolab Officer","Moebius Chemist","Moebius Paramedic")
+	slot = slot_wear_suit
+	sort_category = "Faction: Moebius"
+
+/datum/gear/factionmoebius/gorka_crew_sci
+	display_name = "gorka jacket, moebius research"
+	path = /obj/item/clothing/suit/gorka/toggle/gorka_crew_sci
+	allowed_roles = list("Moebius Expedition Overseer","Moebius Scientist","Moebius Roboticist")
+	slot = slot_wear_suit
+	sort_category = "Faction: Moebius"
+
+/datum/gear/factionmoebius/gorkamoebiusmedical
+	display_name = "gorka jumpsuit, moebius medical"
+	path = /obj/item/clothing/under/rank/medical/gorka_crew_med
+	allowed_roles = list("Moebius Doctor","Moebius Biolab Officer","Moebius Chemist","Moebius Paramedic")
+	slot = slot_w_uniform
+	sort_category = "Faction: Moebius"
+
+/datum/gear/factionmoebius/gorkamoebiusscientist
+	display_name = "gorka jumpsuit, moebius research"
+	path = /obj/item/clothing/under/rank/scientist/gorka_crew_sci
+	allowed_roles = list("Moebius Expedition Overseer","Moebius Scientist","Moebius Roboticist")
+	slot = slot_w_uniform
+	sort_category = "Faction: Moebius"
+
+/datum/gear/factionmoebius/gorkapantsmedical
+	display_name = "gorka pants, moebius medical"
+	path = /obj/item/clothing/under/rank/medical/gorkapantscrewmed
+	allowed_roles = list("Moebius Doctor","Moebius Biolab Officer","Moebius Chemist","Moebius Paramedic")
+	slot = slot_w_uniform
+	sort_category = "Faction: Moebius"
+
 /datum/gear/factionmoebius/medicalhud
 	display_name = "medical HUD"
 	path = /obj/item/clothing/glasses/hud/health
@@ -52,6 +87,7 @@
 	path = /obj/item/clothing/under/scrubs
 	flags = GEAR_HAS_TYPE_SELECTION
 	allowed_roles = list("Moebius Paramedic","Moebius Psychiatrist","Moebius Chemist","Moebius Doctor","Moebius Biolab Officer")
+	slot = slot_w_uniform
 	sort_category = "Faction: Moebius"
 
 /datum/gear/factionmoebius/surgical

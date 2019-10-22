@@ -28,14 +28,6 @@
 				/obj/item/clothing/mask/costume/job/luchador/rudos = 2,
 				/obj/item/clothing/mask/costume/job/luchador/tecnicos = 2,
 				/obj/item/clothing/mask/muzzle = 2,
-				/obj/item/clothing/mask/scarf = 2,
-				/obj/item/clothing/mask/scarf/green = 2,
-				/obj/item/clothing/mask/scarf/ninja = 2,
-				/obj/item/clothing/mask/scarf/red = 2,
-				/obj/item/clothing/mask/scarf/redwhite = 2,
-				/obj/item/clothing/mask/scarf/stripedblue = 2,
-				/obj/item/clothing/mask/scarf/stripedgreen = 2,
-				/obj/item/clothing/mask/scarf/stripedred = 2,
 				/obj/item/clothing/mask/surgical = 8))
 
 /obj/random/cloth/masks/low_chance
@@ -83,7 +75,7 @@
 				/obj/item/clothing/suit/storage/rank/det_trench = 5,
 				/obj/item/clothing/suit/storage/hazardvest = 10,
 				/obj/item/clothing/suit/storage/rank/insp_trench  = 3,
-				/obj/item/clothing/suit/storage/leather_jacket = 3,
+				/obj/item/clothing/suit/storage/leather = 3,
 				/obj/item/clothing/suit/storage/rank/robotech_jacket = 10,
 				/obj/item/clothing/suit/storage/toggle/bomber = 5,
 				/obj/item/clothing/suit/storage/toggle/hoodie = 5,

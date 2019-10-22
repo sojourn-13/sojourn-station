@@ -193,3 +193,63 @@
 	name = "yoga pants"
 	desc = "A pair of tight-fitting white yoga pants."
 	icon_state = "yogapants"
+
+/*Gorka Pants*/
+
+/obj/item/clothing/under/gorkapants/gorkacamo
+	name = "camo gorka pants"
+	desc = "A pair of baggy, two-tone military cargo pants."
+	icon_state = "gorka_pants_ss"
+	item_state = "gorka_pants_ss"
+
+/obj/item/clothing/under/gorkapants/gorkacrew
+	name = "crew gorka pants"
+	desc = "A pair of baggy, two-tone utility pants featuring an elastic waistband and leg cuffs."
+	icon_state = "gorka_pants_crew"
+
+/obj/item/clothing/under/gorkapants/gorkacrewlight
+	name = "light crew gorka pants"
+	desc = "A pair of baggy, fashionable two-tone pants featuring an elastic waistband and leg cuffs."
+	icon_state = "gorka_pants_crew_light"
+
+/obj/item/clothing/under/gorkapants/gorkacrewlightblue
+	name = "light blue crew gorka pants"
+	desc = "A pair of baggy, fashionable two-tone clothes with a sporty blue-on-white scheme."
+	icon_state = "gorka_pants_crew_light_b"
+
+/obj/item/clothing/under/gorkapants/gorkacreworange
+	name = "orange crew gorka pants"
+	desc = "A pair of baggy, two-tone utility pants featuring an elastic waistband and leg cuffs, and orange liverly."
+	icon_state = "gorka_pants_crew_o"
+
+/obj/item/clothing/under/gorkapants/gorkacrewyellow
+	name = "yellow crew gorka pants"
+	desc = "A pair of baggy, two-tone utility pants featuring an elastic waistband and leg cuffs, and yellow liverly."
+	icon_state = "gorka_pants_crew_y"
+
+/obj/item/clothing/under/gorkapants/gorkastandard
+	name = "standard gorka pants"
+	desc = "A pair of baggy, two-tone military style cargo pants featuring an elastic waistband and leg cuffs."
+	icon_state = "gorka_pants"
+
+/obj/item/clothing/under/gorkapants
+	name = "tan gorka pants"
+	desc = "A pair of baggy, two-tone military style cargo pants featuring an elastic waistband and leg cuffs."
+	icon_state = "gorka_pants_tan"
+
+/*Gorka Pants Factions*/
+
+/obj/item/clothing/under/rank/security/gorkapantsih
+	name = "ironhammer gorka pants"
+	desc = "A pair of baggy, two-tone military cargo pants featuring an elastic waistband and leg cuffs."
+	icon_state = "gorka_pants_ih"
+
+/obj/item/clothing/under/rank/medspec/gorkapantsihmed
+	name = "medical specialist gorka pants"
+	desc = "A pair of baggy, two-tone military cargo pants featuring an elastic waistband, leg cuffs, and MedSpec markings."
+	icon_state = "gorka_pants_ih_med"
+
+/obj/item/clothing/under/rank/medical/gorkapantscrewmed
+	name = "medical crew gorka pants"
+	desc = "A pair of baggy, two-tone utility pants featuring an elastic waistband and leg cuffs, and medical liverly."
+	icon_state = "gorka_pants_crew_med"

@@ -47,62 +47,6 @@
 	flags_inv = HIDEFACE
 	body_parts_covered = 0
 
-/*Scarves*/
-
-/obj/item/clothing/mask/scarf
-	name = "blue neck scarf"
-	desc = "A blue neck scarf."
-	icon_state = "blue_scarf"
-	item_state = "blue_scarf"
-	body_parts_covered = FACE
-	item_flags = FLEXIBLEMATERIAL
-	w_class = ITEM_SIZE_SMALL
-	gas_transfer_coefficient = 0.90
-	price_tag = 50
-
-/obj/item/clothing/mask/scarf/stripedblue
-	name = "striped blue scarf"
-	desc = "A striped blue scarf."
-	icon_state = "stripedbluescarf"
-	item_state = "stripedbluescarf"
-
-/obj/item/clothing/mask/scarf/red
-	name = "red scarf"
-	desc = "A red neck scarf."
-	icon_state = "red_scarf"
-	item_state = "red_scarf"
-
-/obj/item/clothing/mask/scarf/stripedred
-	name = "striped red scarf"
-	desc = "A striped red scarf."
-	icon_state = "stripedredscarf"
-	item_state = "stripedredscarf"
-
-/obj/item/clothing/mask/scarf/redwhite
-	name = "checkered scarf"
-	desc = "A red and white checkered neck scarf."
-	icon_state = "redwhite_scarf"
-	item_state = "redwhite_scarf"
-
-/obj/item/clothing/mask/scarf/green
-	name = "green scarf"
-	desc = "A green neck scarf."
-	icon_state = "green_scarf"
-	item_state = "green_scarf"
-
-/obj/item/clothing/mask/scarf/stripedgreen
-	name = "striped green scarf"
-	desc = "A striped green scarf."
-	icon_state = "stripedgreenscarf"
-	item_state = "stripedgreenscarf"
-
-/obj/item/clothing/mask/scarf/ninja
-	name = "ninja scarf"
-	desc = "A stealthy, ominous scarf."
-	icon_state = "ninja_scarf"
-	item_state = "ninja_scarf"
-	siemens_coefficient = 0
-
 /obj/item/clothing/mask/ai
 	name = "camera MIU"
 	desc = "Allows for direct mental connection to accessible camera networks."

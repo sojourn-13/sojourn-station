@@ -64,13 +64,11 @@
 
 /*Jackets*/
 
-/obj/item/clothing/suit/storage/toggle/bomber
-	name = "scout bomber jacket"
-	desc = "A thick brown leather bomber jacket."
-	icon_state = "bomber"
-	item_state = "bomber"
-	icon_open = "bomber_open"
-	icon_closed = "bomber"
+/obj/item/clothing/suit/storage/toggle/bomber/ace
+	name = "ace bomber jacket"
+	desc = "A thick blue leather bomber jacket."
+	icon_state = "pilot_bomber"
+	item_state_slots = list(slot_r_hand_str = "brown_jacket", slot_l_hand_str = "brown_jacket")
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -86,39 +84,49 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/storage/toggle/bomber/ace
-	name = "ace bomber jacket"
-	desc = "A thick blue leather bomber jacket."
-	icon_state = "pilot_bomber"
-	item_state_slots = list(slot_r_hand_str = "brown_jacket", slot_l_hand_str = "brown_jacket")
+/obj/item/clothing/suit/storage/toggle/bomber/orange
+	name = "orange bomber jacket"
+	desc = "A cozy jacket in supply's colors. Show your department pride!"
+	icon_state = "supply_dep_jacket"
+	item_state = "supply_dep_jacket"
+
+/obj/item/clothing/suit/storage/toggle/bomber/purple
+	name = "purple bomber jacket"
+	desc = "A cozy jacket in science's colors. Show your department pride!"
+	icon_state = "sci_dep_jacket"
+	item_state = "sci_dep_jacket"
+
+/obj/item/clothing/suit/storage/toggle/bomber/red
+	name = "red bomber jacket"
+	desc = "A cozy jacket in security's colors. Show your department pride!"
+	icon_state = "sec_dep_jacket"
+	item_state = "sec_dep_jacket"
+
+/obj/item/clothing/suit/storage/toggle/bomber/scout
+	name = "scout bomber jacket"
+	desc = "A thick brown leather bomber jacket."
+	icon_state = "bomber"
+	item_state = "bomber"
+	icon_open = "bomber_open"
+	icon_closed = "bomber"
+
+/obj/item/clothing/suit/storage/toggle/bomber/white
+	name = "white bomber jacket"
+	desc = "A cozy jacket in medical's colors. Show your department pride!"
+	icon_state = "med_dep_jacket"
+	item_state = "med_dep_jacket"
+
+/obj/item/clothing/suit/storage/toggle/bomber
+	name = "yellow bomber jacket"
+	desc = "A cozy jacket in engineering's colors. Show your department pride!"
+	icon_state = "engi_dep_jacket"
+	item_state = "engi_dep_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-
-/obj/item/clothing/suit/storage/leather_jacket
-	name = "grey leather jacket"
-	desc = "A sturdy grey jacket made out of synthetic leather."
-	icon_state = "leather_jacket"
-	item_state = "leather_jacket"
-	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-
-/obj/item/clothing/suit/storage/leather_jacket/vest
-	name = "black leather vest"
-	desc = "A sturdy black leather vest made out of synthetic leather."
-	icon_state = "leather_jacket_sleeveless"
-	item_state = "leather_jacket_sleeveless"
-
-/obj/item/clothing/suit/storage/leather_jacket/black
-	name = "black leather jacket"
-	desc = "A sturdy black jacket made out of synthetic leather."
-	icon_state = "leather_jacket2"
-	item_state = "leather_jacket2"
+/*Puffer Vest*/
 
 /obj/item/clothing/suit/storage/puffer
 	name = "puffer jacket"
@@ -217,3 +225,271 @@
 	item_state = "red_hoodie"
 	icon_open = "red_hoodie_open"
 	icon_closed = "red_hoodie"
+
+/*Peacoat*/
+
+obj/item/clothing/suit/storage/toggle/peacoat
+	name = "peacoat"
+	desc = "A well-tailored, stylish peacoat."
+	icon_state = "peacoat"
+	item_state = "peacoat"
+
+/*Jackets*/
+/obj/item/clothing/suit/storage/leather/blackjacket
+	name = "black leather jacket"
+	desc = "A sturdy black jacket made out of synthetic leather."
+	icon_state = "leather_jacket2"
+	item_state = "leather_jacket2"
+
+/obj/item/clothing/suit/storage/leather/blackvest
+	name = "black leather vest"
+	desc = "A sturdy black leather vest made out of synthetic leather."
+	icon_state = "leather_jacket_sleeveless"
+	item_state = "leather_jacket_sleeveless"
+
+/obj/item/clothing/suit/storage/leather/brownjacket
+	name = "brown leather jacket"
+	desc = "A sturdy brown jacket made out of synthetic leather."
+	icon_state = "brown_jacket"
+	item_state = "brown_jacket"
+
+/obj/item/clothing/suit/storage/leather/brownvest
+	name = "brown leather vest"
+	desc = "A sturdy brown vest made out of synthetic leather."
+	icon_state = "brown_jacket_sleeveless"
+	item_state = "brown_jacket_sleeveless"
+
+/obj/item/clothing/suit/storage/leather/denimjacket
+	name = "denim jacket"
+	desc = "A smart blue jacket made out of denim."
+	icon_state = "denim_jacket"
+	item_state = "denim_jacket"
+
+/obj/item/clothing/suit/storage/leather/denimvest
+	name = "denim vest"
+	desc = "A smart blue vest made out of denim"
+	icon_state = "denim_jacket_sleeveless"
+	item_state = "denim_jacket_sleeveless"
+
+/obj/item/clothing/suit/storage/leather
+	name = "grey leather jacket"
+	desc = "A sturdy grey jacket made out of synthetic leather."
+	icon_state = "leather_jacket"
+	item_state = "leather_jacket"
+	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+/*Dusters*/
+
+/obj/item/clothing/suit/storage/duster/brown
+	name = "brown duster"
+	desc = "A standard brown duster with an added collar."
+	icon_state = "duster"
+	item_state = "duster"
+
+/obj/item/clothing/suit/storage/duster/chestnut
+	name = "chestnut duster"
+	desc = "A worn brown duster with a tough metallic belt."
+	icon_state = "autumn"
+	item_state = "autumn"
+
+/obj/item/clothing/suit/storage/duster/crimson
+	name = "crimson duster"
+	desc = "A deep red duster coat with a thick layer of padding."
+	icon_state = "battlecoat"
+	item_state = "battlecoat"
+
+/obj/item/clothing/suit/storage/duster/gauntlet
+	name = "gauntlet duster"
+	desc = "A thick brown duster with a tough but comfortable design."
+	icon_state = "sheriff"
+	item_state = "sheriff"
+
+/obj/item/clothing/suit/storage/duster/ivory
+	name = "ivory duster"
+	desc = "A lightly toned duster with a thinly layered undercoat."
+	icon_state = "ranger"
+	item_state = "ranger"
+
+/obj/item/clothing/suit/storage/duster/lumber
+	name = "lumber duster"
+	desc = "A dark blue sleeveless duster with a clasp."
+	icon_state = "veteran"
+	item_state = "veteran"
+
+/obj/item/clothing/suit/storage/duster/navy
+	name = "navy duster"
+	desc = "A battered dark navy duster with a well-worn look."
+	icon_state = "courier"
+	item_state = "courier"
+
+/obj/item/clothing/suit/storage/duster
+	name = "tan duster"
+	desc = "A resilient tan duster composed of somewhat frayed fabric."
+	icon_state = "soldiercoat"
+	item_state = "soldiercoat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/*Military Jackets*/
+
+/obj/item/clothing/suit/storage/miljacket/field
+	name = "field jacket"
+	icon_state = "fjacket"
+	item_state = "fjacket"
+
+/obj/item/clothing/suit/storage/miljacket/black
+	name = "black military jacket"
+	desc = "A military canvas jacket in a tactical black design."
+	icon_state = "militaryjacket_black"
+	item_state = "militaryjacket_black"
+
+/obj/item/clothing/suit/storage/miljacket/drab
+	name = "drab military jacket"
+	desc = "A military canvas jacket in an olive drab design."
+	icon_state = "militaryjacket_nobadge"
+	item_state = "militaryjacket_nobadge"
+
+/obj/item/clothing/suit/storage/miljacket/green
+	name = "green military jacket"
+	desc = "A military canvas jacket in a jungle green design."
+	icon_state = "militaryjacket_green"
+	item_state = "militaryjacket_green"
+
+/obj/item/clothing/suit/storage/miljacket/grey
+	name = "grey military jacket"
+	desc = "A military canvas jacket in a urban grey design."
+	icon_state = "militaryjacket_grey"
+	item_state = "militaryjacket_grey"
+
+/obj/item/clothing/suit/storage/miljacket/navy
+	name = "navy military jacket"
+	desc = "A military canvas jacket in a dark navy design."
+	icon_state = "militaryjacket_navy"
+	item_state = "militaryjacket_navy"
+
+/obj/item/clothing/suit/storage/miljacket/tan
+	name = "tan military jacket"
+	desc = "A military canvas jacket in a sandy tan design."
+	icon_state = "militaryjacket_tan"
+	item_state = "militaryjacket_tan"
+
+/obj/item/clothing/suit/storage/miljacket
+	name = "white military jacket"
+	desc = "A military canvas jacket in a white snow design."
+	icon_state = "militaryjacket_white"
+	item_state = "militaryjacket_white"
+
+/*Snowsuits*/
+
+/obj/item/clothing/suit/storage/snowsuit
+	name = "snowsuit"
+	desc = "A special coat designed for cold environments."
+	icon_state = "snowsuit"
+	item_state_slots = list(slot_r_hand_str = "labcoat", slot_l_hand_str = "labcoat")
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
+	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	allowed = list (/obj/item/device/flash, /obj/item/weapon/pen, /obj/item/weapon/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/weapon/tank/emergency_oxygen, /obj/item/weapon/storage/fancy/cigarettes, /obj/item/weapon/storage/box/matches, /obj/item/weapon/reagent_containers/food/drinks/flask)
+
+/obj/item/clothing/suit/storage/snowsuit/command
+	name = "command snowsuit"
+	desc = "A special command coat designed for cold environments."
+	icon_state = "snowsuit_command"
+
+/obj/item/clothing/suit/storage/snowsuit/security
+	name = "ironhammer snowsuit"
+	desc = "A special ironhammer coat designed for cold environments."
+	icon_state = "snowsuit_security"
+
+/obj/item/clothing/suit/storage/snowsuit/medical
+	name = "medical snowsuit"
+	desc = "A special medical coat designed for cold environments."
+	icon_state = "snowsuit_medical"
+
+/obj/item/clothing/suit/storage/snowsuit/engineering
+	name = "technomancer snowsuit"
+	desc = "A special technomancer coat designed for cold environments."
+	icon_state = "snowsuit_engineering"
+
+/obj/item/clothing/suit/storage/snowsuit/cargo
+	name = "guild snowsuit"
+	desc = "A special guild coat designed for cold environments."
+	icon_state = "snowsuit_cargo"
+
+/obj/item/clothing/suit/storage/snowsuit/science
+	name = "science snowsuit"
+	desc = "A special science coat designed for cold environments."
+	icon_state = "snowsuit_science"
+
+/*Sport Jackets*/
+
+/obj/item/clothing/suit/storage/toggle/track/trackblack
+	name = "black track jacket"
+	desc = "An athletic black track jacket."
+	icon_state = "trackjacket"
+
+/obj/item/clothing/suit/storage/toggle/track/trackblue
+	name = "blue track jacket"
+	desc = "An athletic blue track jacket."
+	icon_state = "trackjacketblue"
+
+/obj/item/clothing/suit/storage/toggle/track/trackgreen
+	name = "green track jacket"
+	desc = "An athletic green track jacket."
+	icon_state = "trackjacketgreen"
+
+/obj/item/clothing/suit/storage/toggle/track/trackred
+	name = "red track jacket"
+	desc = "An athletic red track jacket."
+	icon_state = "trackjacketred"
+
+/obj/item/clothing/suit/storage/toggle/track/trackwhite
+	name = "white track jacket"
+	desc = "An athletic white track jacket."
+	icon_state = "trackjacketwhite"
+
+/obj/item/clothing/suit/storage/toggle/track/varsityblack
+	name = "black varsity jacket"
+	desc = "A sporty letterman jacket with a black design."
+	icon_state = "varsity"
+	item_state = "varsity"
+
+/obj/item/clothing/suit/storage/toggle/track/varsityblue
+	name = "blue varsity jacket"
+	desc = "A sporty letterman jacket with a blue design."
+	icon_state = "varsity_blue"
+	item_state = "varsity_blue"
+
+/obj/item/clothing/suit/storage/toggle/track/varsitybrown
+	name = "brown varsity jacket"
+	desc = "A sporty letterman jacket with a brown design."
+	icon_state = "varsity_brown"
+	item_state = "varsity_brown"
+
+/obj/item/clothing/suit/storage/toggle/track/varsitygreen
+	name = "green varsity jacket"
+	desc = "A sporty letterman jacket with a green design."
+	icon_state = "varsity_green"
+	item_state = "varsity_green"
+
+/obj/item/clothing/suit/storage/toggle/track/varsitypink
+	name = "pink varsity jacket"
+	desc = "A sporty letterman jacket with a pink design."
+	icon_state = "varsity_pink"
+	item_state = "varsity_pink"
+
+/obj/item/clothing/suit/storage/toggle/track/varsitypurple
+	name = "purple varsity jacket"
+	desc = "A sporty letterman jacket with a purple design."
+	icon_state = "varsity_purple"
+	item_state = "varsity_purple"
+
+/obj/item/clothing/suit/storage/toggle/track
+	name = "red varsity jacket"
+	desc = "A sporty letterman jacket with a red design."
+	icon_state = "varsity_red"
+	item_state = "varsity_red"
