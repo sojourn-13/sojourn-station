@@ -462,6 +462,7 @@
 		/datum/design/autolathe/gun/giskard,
 		/datum/design/autolathe/gun/olivaw,
 		/datum/design/autolathe/gun/clarissa,
+		/datum/design/autolathe/gun/colt,
 		/datum/design/autolathe/gun/revolver_detective,
 		/datum/design/autolathe/gun/doublebarrel,
 		/datum/design/autolathe/gun/pump_shotgun,
@@ -473,8 +474,10 @@
 	license = 5
 	designs = list(
 		/datum/design/autolathe/gun/IH_sidearm, //pistols
+		/datum/design/autolathe/gun/IH_colt,
 		/datum/design/autolathe/gun/IH_machinepistol,
 		/datum/design/autolathe/gun/lamia,
+		/datum/design/autolathe/gun/scoped_lamia,
 		/datum/design/autolathe/gun/deagle,
 		/datum/design/autolathe/gun/revolver_consul, //revolvers
 		/datum/design/autolathe/gun/revolver_deckard,

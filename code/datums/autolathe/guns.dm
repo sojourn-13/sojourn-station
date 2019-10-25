@@ -62,6 +62,10 @@
 	name = "FS HG .44 \"Lamia\""
 	build_path = /obj/item/weapon/gun/projectile/lamia
 
+/datum/design/autolathe/gun/scoped_lamia
+	name = "FS HG .44 \"Lamia\" Advanced"
+	build_path = /obj/item/weapon/gun/projectile/lamia/scoped_lamia
+
 /datum/design/autolathe/gun/deagle
 	name = "FS HG .50 \"Avasarala\""
 	build_path = /obj/item/weapon/gun/projectile/deagle
@@ -97,6 +101,14 @@
 /datum/design/autolathe/gun/IH_sidearm
 	name = "FS HG 10mm \"Paco\""
 	build_path = /obj/item/weapon/gun/projectile/IH_sidearm
+
+/datum/design/autolathe/gun/colt
+	name = "FS HG .45 \"M1911A1\""
+	build_path = /obj/item/weapon/gun/projectile/colt
+
+/datum/design/autolathe/gun/IH_colt
+	name = "FS HG .45 \"M1911A4\""
+	build_path = /obj/item/weapon/gun/projectile/colt/IH_colt
 
 /datum/design/autolathe/gun/IH_smg
 	name = "FS SMG 9x19 \"Straylight\""

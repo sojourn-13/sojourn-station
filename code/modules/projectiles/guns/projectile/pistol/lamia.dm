@@ -9,7 +9,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	auto_eject = 1
+	auto_eject = 0
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1800
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
@@ -27,3 +27,14 @@
 		icon_state = initial(icon_state) + "_empty"
 	else
 		icon_state = initial(icon_state) + "_full"
+
+/obj/item/weapon/gun/projectile/lamia/scoped_lamia
+	name = "FS HG .44 \"Lamia\" Advanced"
+	desc = "FS HG .44 \"Lamia\", a heavy pistol of Ironhammer enforcers, fitted with a smart-linked optic and stabilizer. Uses .44 rounds."
+	icon_state = "scoped_lamia"
+	item_state = "scoped_lamia"
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5)
+	auto_eject = 1
+	zoom_factor = 0.4
+	recoil = 0.7
+	price_tag = 2500
