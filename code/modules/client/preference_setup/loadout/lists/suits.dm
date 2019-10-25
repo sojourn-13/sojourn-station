@@ -26,6 +26,11 @@
 	path = /obj/item/clothing/suit/gorka/toggle/gorka
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/suit/greatcoat
+	display_name = "greatcoat selection"
+	path = /obj/item/clothing/suit/greatcoat/general
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/suit/hazard_vest
 	display_name = "hazard vest"
 	path = /obj/item/clothing/suit/storage/hazardvest
@@ -84,3 +89,4 @@
 /datum/gear/suit/wintercoat
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat
+

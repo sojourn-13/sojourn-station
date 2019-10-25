@@ -172,3 +172,18 @@
 	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Ironhammer Gunnery Sergeant", "Ironhammer Inspector", "Ironhammer Medical Specialist")
 	slot = slot_shoes
 	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/ihcgreatcoat
+	display_name= "greatcoat, commander"
+	path = /obj/item/clothing/suit/greatcoat/ihc
+	allowed_roles = list("Ironhammer Commander")
+	slot = slot_wear_suit
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Faction: Ironhammer"
+
+/datum/gear/factionironhammer/ihccap
+	display_name= "cap, commander"
+	path = /obj/item/clothing/head/rank/commander/cap
+	allowed_roles = list("Ironhammer Commander")
+	slot = slot_head
+	sort_category = "Faction: Ironhammer"

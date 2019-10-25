@@ -6,6 +6,7 @@
 	item_state = "chefhat"
 
 //Captain
+
 /obj/item/clothing/head/rank/captain
 	name = "captain's hat"
 	icon_state = "captain"
@@ -20,6 +21,7 @@
 	name = "captain's cap"
 	desc = "You fear to wear it for the negligence it brings."
 	icon_state = "capcap"
+
 
 /obj/item/clothing/head/rank/captain/formal
 	name = "parade hat"
@@ -57,6 +59,11 @@
 	name = "ironhammer commander beret"
 	desc = "A grey Ironhammer beret signifying a Commander position."
 	icon_state = "beret_navy_hos"
+
+/obj/item/clothing/head/rank/commander/cap
+	name = "ironhammer commander cap"
+	desc = "An Ironhammer cap signifying a Commander position."
+	icon_state = "ihc_cap"
 
 /obj/item/clothing/head/rank/warden/beret
 	name = "ironhammer sergeant beret"

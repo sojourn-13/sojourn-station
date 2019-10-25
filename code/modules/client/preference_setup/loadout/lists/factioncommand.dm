@@ -32,3 +32,11 @@
 	allowed_roles = list("Captain","First Officer")
 	slot = slot_shoes
 	sort_category = "Faction: Command"
+
+/datum/gear/factioncommand/captaingreatcoat
+	display_name = "greatcoat, captain"
+	path = /obj/item/clothing/suit/greatcoat/cap
+	allowed_roles = list("Captain")
+	slot = slot_wear_suit
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Faction: Command"
