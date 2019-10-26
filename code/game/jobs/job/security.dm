@@ -20,7 +20,7 @@
 		access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
 		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway,
-		access_external_airlocks
+		access_external_airlocks, access_research_equipment
 	)
 
 	stat_modifiers = list(
@@ -76,7 +76,7 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks
+		access_external_airlocks, access_research_equipment
 	)
 
 	stat_modifiers = list(
