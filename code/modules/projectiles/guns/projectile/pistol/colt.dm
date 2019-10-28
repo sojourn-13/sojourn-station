@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/colt
-	name = "FS HG .45 \"M1911A1\""
-	desc = "A cheap knock-off of a Colt M1911. Uses .45 rounds."
+	name = "FS HG .45 \"Colt\""
+	desc = "A decent quality reproduction of the grandfather of automatic pistols, the M1911A1. Uses .45 rounds."
 	icon_state = "colt"
 	item_state = "colt"
 	caliber = ".45"
@@ -23,8 +23,10 @@
 		icon_state = initial(icon_state) + "_full"
 
 /obj/item/weapon/gun/projectile/colt/IH_colt
-	name = "FS HG .45 \"M1911A4\""
-	desc = "A rugged derivative of the venerable M1911. Uses .45 rounds."
+	name = "FS HG .45 \"Bronco\""
+	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A4 standard. Uses .45 rounds."
 	icon_state = "IH_colt"
 	item_state = "IH_colt"
+	auto_eject = 1
+	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)

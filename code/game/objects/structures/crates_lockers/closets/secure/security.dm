@@ -59,6 +59,7 @@
 	new /obj/item/clothing/head/rank/commander/beret(src)
 	new /obj/item/clothing/head/rank/commander(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
+	new /obj/item/taperoll/police(src)
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/under/rank/ih_commander(src)
 	new /obj/item/device/radio/headset/heads/hos(src)
@@ -66,7 +67,7 @@
 	new /obj/item/weapon/storage/belt/security(src)
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/weapon/cell/medium/high(src)
-	new	/obj/item/weapon/gun/projectile/lamia/scoped_lamia(src)
+	new /obj/item/weapon/gun/projectile/lamia/scoped_lamia(src)
 	new /obj/item/ammo_magazine/cl44/rubber(src)
 	new /obj/item/ammo_magazine/cl44/rubber(src)
 	new /obj/item/ammo_magazine/cl44/rubber(src)
@@ -99,7 +100,7 @@
 	new /obj/item/ammo_magazine/c45m/rubber(src)
 	new /obj/item/ammo_magazine/c45m/rubber(src)
 	new /obj/item/ammo_magazine/ammobox/c45/rubber(src)
-	new	/obj/item/weapon/gun/projectile/colt/IH_colt(src)
+	new /obj/item/weapon/gun/projectile/colt/IH_colt(src)
 	new /obj/item/ammo_magazine/sol65/rubber(src)
 	new /obj/item/ammo_magazine/sol65/rubber(src)
 	new /obj/item/weapon/gun/projectile/automatic/sol/rds(src)
@@ -126,7 +127,7 @@
 	new /obj/item/weapon/gun/projectile/automatic/sol/rds(src)
 	new /obj/item/ammo_magazine/a10mm/rubber(src)
 	new /obj/item/ammo_magazine/a10mm/rubber(src)
-	new	/obj/item/weapon/gun/projectile/IH_sidearm(src)
+	new /obj/item/weapon/gun/projectile/IH_sidearm(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
 
@@ -150,6 +151,10 @@
 	new /obj/item/weapon/gun/projectile/automatic/IH_machinepistol(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 	new /obj/item/weapon/storage/briefcase/crimekit(src)
+	new /obj/item/ammo_magazine/c45m/rubber(src)
+	new /obj/item/ammo_magazine/c45m/rubber(src)
+	new /obj/item/ammo_magazine/ammobox/c45/rubber(src)
+	new /obj/item/weapon/gun/projectile/colt/IH_colt(src)
 
 /obj/structure/closet/secure_closet/detective
 	name = "Ironhammer Inspector locker"

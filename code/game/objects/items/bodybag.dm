@@ -86,6 +86,15 @@
 			qdel(src)
 		return
 
+/obj/structure/closet/body_bag/update_icon()
+	if(opened)
+		icon_state = "bodybag_open"
+	else
+		if(contains_body > 0)
+			icon_state = "bodybag_full"
+		else
+			icon_state = "bodybag_closed"
+
 
 /obj/item/bodybag/cryobag
 	name = "stasis bag"
@@ -128,7 +137,7 @@
 		O.name = "used stasis bag"
 		O.icon = src.icon
 		O.icon_state = "bodybag_used"
-		O.desc = "A used bodybag. It's nothing but trash now."
+		O.desc = "A used stasisbag. It's nothing but trash now."
 		qdel(src)
 
 /obj/structure/closet/body_bag/cryobag/Entered(atom/movable/AM)
