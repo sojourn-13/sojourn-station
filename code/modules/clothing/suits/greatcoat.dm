@@ -1,5 +1,3 @@
-/*greatcoat Ranks*/
-
 /obj/item/clothing/suit/greatcoat/ihc
 	name = "ironhammer commander's greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style."
@@ -75,15 +73,3 @@
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
-
-/*/obj/item/clothing/suit/greatcoat/general/greatcoat_brown_b
-	name = "brown greatcoat"
-	desc = "A brown greatcoat. It's thick and insulated with furs, it makes you feel snug and warm. This one has blue furs."
-	icon_state = "greatcoat_brown_b"
-	item_state = "greatcoat_brown_b"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7*/

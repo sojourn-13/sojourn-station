@@ -834,6 +834,22 @@
 	name = "Night Quills"
 	icon_state = "nightquills"
 
+/datum/sprite_accessory/hair/marqua_veryshort
+	name = "Mar'Qua very short headtails"
+	icon_state = "marqua_hair_veryshort_s"
+
+/datum/sprite_accessory/hair/marqua_short
+	name = "Mar'Qua short headtails"
+	icon_state = "marqua_hair_short_s"
+
+/datum/sprite_accessory/hair/marqua_average
+	name = "Mar'Qua average headtails"
+	icon_state = "marqua_hair_average_s"
+
+/datum/sprite_accessory/hair/marqua_long
+	name = "Mar'Qua long headtails"
+	icon_state = "marqua_hair_verylong_s"
+
 
 /* hairs?
 ////////////////////////////

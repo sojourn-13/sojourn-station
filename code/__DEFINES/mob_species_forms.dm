@@ -63,6 +63,7 @@
 #define FORM_VULPINE			"Vulpine"
 #define FORM_FENNEC				"Fennec"
 #define FORM_SERGALINE			"Sergal"
+#define FORM_MARQUA				"Mar'Qua"
 #define FORM_SLIME				"Slime"
 #define FORM_AVIAN				"Avian"
 #define FORM_SPIDER				"Arachnoid"
