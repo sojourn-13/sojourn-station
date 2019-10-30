@@ -11,3 +11,7 @@
 	matter = list(MATERIAL_STEEL = 2)
 	var/breakouttime = 300	//Deciseconds = 30s = 0.5 minute
 
+/obj/item/weapon/legcuffs/fuzzy
+	name = "fuzzy legcuffs"
+	icon_state = "fuzzylegcuff"
+	desc = "Use this to keep... 'prisoners' in line."

@@ -202,7 +202,7 @@
 "dT" = (/obj/structure/bed/chair/wood{tag = "icon-wooden_chair (NORTH)"; icon_state = "wooden_chair"; dir = 1},/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
 "dU" = (/obj/machinery/door/airlock/external{frequency = 1380; icon_state = "door_locked"; id_tag = "escape_pod_2_recovery_hatch"; locked = 1; name = "Recovery Shuttle Dock"; req_access = list(13)},/turf/simulated/floor/tiled/steel/techfloor_grid,/area/centcom/evac)
 "dV" = (/obj/item/weapon/beach_ball/holoball,/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_basketball)
-"dW" = (/obj/item/toy/junk/inflatable_duck,/turf/simulated/floor/holofloor/beach/sand,/area/holodeck/source_beach)
+"dW" = (/obj/item/toy/inflatable_duck,/turf/simulated/floor/holofloor/beach/sand,/area/holodeck/source_beach)
 "dX" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "dY" = (/obj/structure/window/reinforced/holowindow/disappearing,/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_thunderdomecourt)
 "dZ" = (/obj/structure/table/woodentable,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)

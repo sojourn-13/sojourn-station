@@ -53,6 +53,37 @@
 	sides = 100
 
 /*
+ * Dice packs
+ */
+
+/obj/item/weapon/storage/pill_bottle/dice	//7d6
+	name = "bag of dice"
+	desc = "It's a small bag with dice inside."
+	icon = 'icons/obj/dice.dmi'
+	icon_state = "dicebag"
+
+/obj/item/weapon/storage/pill_bottle/dice/New()
+	..()
+	for(var/i = 1 to 7)
+		new /obj/item/weapon/dice( src )
+
+/obj/item/weapon/storage/pill_bottle/dice_nerd	//DnD dice
+	name = "bag of gaming dice"
+	desc = "It's a small bag with gaming dice inside."
+	icon = 'icons/obj/dice.dmi'
+	icon_state = "magicdicebag"
+
+/obj/item/weapon/storage/pill_bottle/dice_nerd/New()
+	..()
+	new /obj/item/weapon/dice/d4( src )
+	new /obj/item/weapon/dice( src )
+	new /obj/item/weapon/dice/d8( src )
+	new /obj/item/weapon/dice/d10( src )
+	new /obj/item/weapon/dice/d12( src )
+	new /obj/item/weapon/dice/d20( src )
+	new /obj/item/weapon/dice/d100( src )
+
+/*
 Code below is works, but has duplication of a code.
 Tryed to code it without duplication, but it doesn't worked.
 Another builds like baystation12 also have a duplication.

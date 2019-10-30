@@ -237,11 +237,9 @@
 	density = 0
 
 
-/*
- * Toy swords
- */
+/*Toy Weapons*/
 /obj/item/toy/weapon/sword
-	name = "toy sword"
+	name = "plastic sword"
 	desc = "A cheap, plastic replica of an energy sword. Realistic sounds! Ages 8 and up."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "sword0"
@@ -271,8 +269,8 @@
 		return
 
 /obj/item/toy/weapon/katana
-	name = "replica katana"
-	desc = "Woefully underpowered in D20."
+	name = "plastic katana"
+	desc = "A cheap, plastic replica of a katana. Cutting action! Ages 8 and up."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "katana"
 	item_state = "katana"
@@ -282,6 +280,15 @@
 	throwforce = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
+
+/obj/item/toy/weapon/cultsword
+	name = "foam sword"
+	desc = "A foam arcane blade. Does not actually have evil powers."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "cultblade"
+	item_state = "cultblade"
+	w_class = ITEM_SIZE_BULKY
+	attack_verb = list("attacked", "slashed", "stabbed", "poked")
 
 /*
  * Snap pops
@@ -1189,17 +1196,9 @@
 	name = "carp void plushie"
 	icon_state = "voidcarp"
 
-//Toy cult sword
-/obj/item/toy/weapon/cultsword
-	name = "foam sword"
-	desc = "An arcane weapon (made of foam) wielded by the followers of the hit Saturday morning cartoon \"King Nursee and the Acolytes of Heroism\"."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "cultblade"
-	item_state = "cultblade"
-	w_class = ITEM_SIZE_BULKY
-	attack_verb = list("attacked", "slashed", "stabbed", "poked")
+/*Inflatable Duck*/
 
-/obj/item/weapon/inflatable_duck
+/obj/item/toy/junk/inflatable_duck
 	name = "inflatable duck"
 	desc = "No bother to sink or swim when you can just float!"
 	icon_state = "inflatable"
@@ -1213,7 +1212,7 @@
 //////////////////////////////////////////////////////
 
 /obj/item/toy/junk/eight_ball
-	name = "\improper Magic 8-Ball"
+	name = "magic 8-ball"
 	desc = "Mystical! Magical! Ages 8+!"
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "eight-ball"
@@ -1231,7 +1230,7 @@
 		return
 
 /obj/item/toy/junk/eight_ball/conch
-	name = "Magic Conch shell"
+	name = "magic conch shell"
 	desc = "All hail the Magic Conch!"
 	icon_state = "conch"
 	use_action = "pulls the string"

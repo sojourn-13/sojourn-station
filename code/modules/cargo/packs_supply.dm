@@ -3,7 +3,7 @@
 //----------------------------------------------
 
 /datum/supply_pack/food
-	name = "Kitchen supply crate"
+	name = "Kitchen Supply Crate"
 	contains = list(/obj/item/weapon/reagent_containers/food/condiment/flour,
 					/obj/item/weapon/reagent_containers/food/condiment/flour,
 					/obj/item/weapon/reagent_containers/food/condiment/flour,
@@ -18,11 +18,11 @@
 
 	cost = 900
 	containertype = /obj/structure/closet/crate/freezer
-	crate_name = "Food crate"
+	crate_name = "kitchen supply crate"
 	group = "Supply"
 
 /datum/supply_pack/toner
-	name = "Toner cartridges"
+	name = "Toner Cartridges Crate"
 	contains = list(/obj/item/device/toner,
 					/obj/item/device/toner,
 					/obj/item/device/toner,
@@ -30,7 +30,7 @@
 					/obj/item/device/toner,
 					/obj/item/device/toner)
 	cost = 600
-	crate_name = "Toner cartridges"
+	crate_name = "toner cartridges crate"
 	group = "Supply"
 
 /datum/supply_pack/misc/posters
@@ -41,11 +41,11 @@
 					/obj/item/weapon/contraband/poster,
 					/obj/item/weapon/contraband/poster)
 	cost = 700
-	crate_name = "Corporate Posters Crate"
+	crate_name = "corporate posters crate"
 	group = "Supply"
 
 /datum/supply_pack/janitor
-	name = "Janitorial supplies"
+	name = "Janitorial Supplies Crate"
 	contains = list(/obj/item/weapon/reagent_containers/glass/bucket,
 					/obj/item/weapon/mop,
 					/obj/item/weapon/mop,
@@ -68,7 +68,7 @@
 	group = "Supply"
 
 /datum/supply_pack/boxes
-	name = "Empty boxes"
+	name = "Empty Boxes Crate"
 	contains = list(/obj/item/weapon/storage/box,
 	/obj/item/weapon/storage/box,
 	/obj/item/weapon/storage/box,
@@ -80,5 +80,5 @@
 	/obj/item/weapon/storage/box,
 	/obj/item/weapon/storage/box)
 	cost = 800
-	crate_name = "Empty box crate"
+	crate_name = "empty boxes crate"
 	group = "Supply"

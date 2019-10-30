@@ -1334,6 +1334,7 @@
 #include "code\modules\cargo\packs_mining.dm"
 #include "code\modules\cargo\packs_operations.dm"
 #include "code\modules\cargo\packs_randomised.dm"
+#include "code\modules\cargo\packs_recreation.dm"
 #include "code\modules\cargo\packs_security.dm"
 #include "code\modules\cargo\packs_supply.dm"
 #include "code\modules\cargo\supplyshuttle.dm"
