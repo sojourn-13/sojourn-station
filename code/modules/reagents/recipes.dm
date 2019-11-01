@@ -392,6 +392,11 @@
 	result = "varceptol"
 	required_reagents = list("anti_toxin" = 1, "bicaridine" = 1, "blattedin" = 1)
 	catalysts = list("plasma" = 5)
+	result_amount = 3
+
+/datum/chemical_reaction/meralyne
+	result = "meralyne"
+	required_reagents = list("hyperzine" = 1, "blattedin" = 2, "tramadol" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/hyperzine

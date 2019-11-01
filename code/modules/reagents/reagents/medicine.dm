@@ -62,6 +62,20 @@
 	M.heal_organ_damage(8 * removed, 0)
 	M.adjustToxLoss(-3 * removed)
 
+/datum/reagent/medicine/meralyne
+	name = "Meralyne"
+	id = "meralyne"
+	description = "Meralyne is the next step in brute trauma medication. Works twice as good as bicaridine and enables the body to restore even the direst brute-damaged tissue."
+	taste_description = "bitterness"
+	taste_mult = 3
+	reagent_state = LIQUID
+	color = "#E6666C"
+	overdose = REAGENTS_OVERDOSE
+	scannable = 1
+/datum/reagent/medicine/meralyne/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.heal_organ_damage(1.2 * effect_multiplier, 0, 5 * effect_multiplier)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.30)
+
 /datum/reagent/medicine/kelotane
 	name = "Kelotane"
 	id = "kelotane"
@@ -663,7 +677,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	M.make_jittery(-50)
 
 
-/datum/reagent/medicine/kyphotorin 
+/datum/reagent/medicine/kyphotorin
 	name = "Kyphotorin"
 	id = "kyphotorin"
 	description = "Allows patient to grow back limbs. Extremely painful to user and needs constant medical attention when applied."

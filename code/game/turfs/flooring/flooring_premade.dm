@@ -304,9 +304,6 @@
 
 
 
-
-
-
 /turf/simulated/floor/tiled/cafe
 	name = "floor"
 	icon = 'icons/turf/flooring/tiles.dmi'
@@ -431,6 +428,33 @@
 	oxygen = 0
 	nitrogen = 0
 	temperature = TCMB
+
+
+/turf/simulated/floor/tiled/derelict
+	name = "floor"
+	icon = 'icons/turf/flooring/derelict.dmi'
+	icon_state = "derelict1"
+	initial_flooring = /decl/flooring/tiling/derelict/white_red_edges
+
+/turf/simulated/floor/tiled/derelict/white_red_edges
+	name = "floor"
+	icon_state = "derelict1"
+	initial_flooring = /decl/flooring/tiling/derelict/white_red_edges
+
+/turf/simulated/floor/tiled/derelict/white_small_edges
+	name = "floor"
+	icon_state = "derelict2"
+	initial_flooring = /decl/flooring/tiling/derelict/white_small_edges
+
+/turf/simulated/floor/tiled/derelict/red_white_edges
+	name = "floor"
+	icon_state = "derelict3"
+	initial_flooring = /decl/flooring/tiling/derelict/red_white_edges
+
+/turf/simulated/floor/tiled/derelict/white_big_edges
+	name = "floor"
+	icon_state = "derelict4"
+	initial_flooring = /decl/flooring/tiling/derelict/white_big_edges
 
 
 // Placeholders

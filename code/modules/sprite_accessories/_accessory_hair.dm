@@ -102,19 +102,19 @@
 	gender = FEMALE
 
 /datum/sprite_accessory/hair/buisness
-	name = "Buisness Hair"
+	name = "Business Hair"
 	icon_state = "business"
 
 /datum/sprite_accessory/hair/buisness2
-	name = "Buisness Hair 2"
+	name = "Business Hair 2"
 	icon_state = "business2"
 
 /datum/sprite_accessory/hair/buisness3
-	name = "Buisness Hair 3"
+	name = "Business Hair 3"
 	icon_state = "business3"
 
 /datum/sprite_accessory/hair/buisness4
-	name = "Buisness Hair 4"
+	name = "Business Hair 4"
 	icon_state = "business4"
 
 /datum/sprite_accessory/hair/bun
@@ -241,11 +241,11 @@
 	icon_state = "gentle"
 
 /datum/sprite_accessory/hair/halfbang
-	name = "Half-banged Hair"
+	name = "Half-Banged Hair"
 	icon_state = "halfbang"
 
 /datum/sprite_accessory/hair/halfbangalt
-	name = "Half-banged Hair Alt"
+	name = "Half-Banged Hair Alt"
 	icon_state = "halfbang_alt"
 
 /datum/sprite_accessory/hair/halfshaved
@@ -780,7 +780,6 @@
 /datum/sprite_accessory/hair/shorthair3beta
 	name = "Short Hair 3 (Alternate)"
 	icon_state = "shorthair3beta"
-
 
 /datum/sprite_accessory/hair/crestedquill
 	name = "Crested Quills"
