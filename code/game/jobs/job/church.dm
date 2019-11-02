@@ -66,14 +66,14 @@
 	join_tag = /datum/job/chaplain
 
 /datum/job/acolyte
-	title = "Neotheology Acolyte"
+	title = "NeoTheology Acolyte"
 	flag = ACOLYTE
 	department = DEPARTMENT_CHURCH
 	department_flag = CHURCH
 	faction = "CEV Eris"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Neotheology Preacher"
+	supervisors = "the NeoTheology Preacher"
 	selection_color = "#ecd37d"
 	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
 	cruciform_access = list(access_morgue, access_crematorium, access_maint_tunnels, access_hydroponics)
@@ -91,7 +91,11 @@
 		CRUCIFORM_PRIEST
 	)
 
-	description = "WIP"
+	description = "You serve the NeoTheology Preacher as a disciple of the Faith.<br>\
+	<br>\
+	The sacred duties of operating the bioreactor and managing biomass for the church's holy cloner falls to you.<br>\
+	<br>\
+	Though more may be required of you, should your Preacher so chose."
 
 	duties = "WIP"
 
@@ -106,12 +110,12 @@
 /datum/job/hydro
 	title = "Gardener"
 	flag = BOTANIST
-	department = DEPARTMENT_CHURCH
-	department_flag = CHURCH
+	department = DEPARTMENT_CIVILIAN
+	department_flag = SERVICE
 	faction = "CEV Eris"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Neotheology Preacher"
+	supervisors = "the First Officer"
 	selection_color = "#ecd37d"
 	//alt_titles = list("Hydroponicist")
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
@@ -125,7 +129,7 @@
 		STAT_ROB = 10,
 	)
 
-	description = "WIP"/*"The green-fingered gnome working in the glorious viridian basement of Eris. You are the gardener, tender of plants.<br>\
+	description = "The green-fingered gnome working in the glorious viridian basement of Eris. You are the gardener, tender of plants.<br>\
 	All plantlife aboard the station is your responsibility to deal with, both the nice and the nasty ones. You have gardens spread across two floors to work with, conveniently located below the diner area. Visitors and guests are not uncommon, but your main contact will be with the Chef, your closest colleague.<br>\
 	<br>\
 	Your first and primary responsibility aboard eris, is as a farmer. The gardens contain all of the seeds, tools and fertilisers you need to grow crops and feed the station. Ensure a good variety of raw vegetables, and plenty of core grains like rice and wheat.<br>\
@@ -136,9 +140,9 @@
 	<br>\
 	The shovels and hatchets in your garden provide the basic tools you'll need for these tasks, but you should always be on the lookout for more advanced equipment. A chainsaw or flamethrower would both be exceptionally useful tools for aggresive plant management"
 */
-	duties = "WIP"/*"Grow food for the chef to feed the station<br>\
+	duties = "Grow food for the chef to feed the station<br>\
 		Raise animals for eggs, meat and recreation<br>\
-		Manage invasive flora around the ship, and cut out mushroom infestations"*/
+		Manage invasive flora around the ship, and cut out mushroom infestations"
 
 	setup_restricted = TRUE
 
@@ -151,12 +155,12 @@
 /datum/job/janitor
 	title = "Janitor"
 	flag = JANITOR
-	department = DEPARTMENT_CHURCH
-	department_flag = CHURCH
+	department = DEPARTMENT_CIVILIAN
+	department_flag = SERVICE
 	faction = "CEV Eris"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Neotheology Preacher"
+	supervisors = "the First Officer"
 	selection_color = "#ecd37d"
 	//alt_titles = list("Custodian","Sanitation Technician")
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
@@ -171,7 +175,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
 
-	description = "WIP"/*"The lowly janitor. Probably the worst paid and least respected role on the ship. Everyone overlooks you, until they need you. And need you they shall. When someone stumbles down the hallway bleeding from every orifice, you get to clean it up.<br>\
+	description = "The lowly janitor. Probably the worst paid and least respected role on the ship. Everyone overlooks you, until they need you. And need you they shall. When someone stumbles down the hallway bleeding from every orifice, you get to clean it up.<br>\
 	<br>\
 	Armed with your trusty janicart full of cleaning supplies, you trundle around the ship mopping up blood, and spraying away oil. Cleaning is obviously your first and foremost duty. Wherever there's dirt, rubble, bloodstains, trash and chemical spills, you should be there to clean it up. Monster corpses are also a bit of a problem to dispose of. The roaches should be taken up to chemistry, where they can be processed for chemical purposes. Others should generally be shoved down a disposal chute, let the guild sort it out from there.<br>\
 	<br>\
@@ -180,10 +184,10 @@
 	In addition to cleaning, you should also handle minor maintenance. Replacing lights, correcting broken vendors, replacing floor tiles, duct taping cracked walls and windows, etc. You're far from being one of the Technomancers, but you can handle small problems if they're busy<br>\
 	<br>\
 	Lastly, your custodial closet contains quite a few traps, large and small. Deploying these carefully around maintenance - and especially ontop of burrows, may help remove a few roaches from the ship. Treasure those traps, as producing more is not so easy."
-*/
-	duties = "WIP"/*"		Clean blood, dirt, rubble and messes. Pickup trash and dispose of monster corpses<br>\
+
+	duties = "Clean blood, dirt, rubble and messes. Pickup trash and dispose of monster corpses<br>\
 		Conduct minor repairs and maintenance when technomancers aren't available<br>\
-		Deploy traps on burrows to keep nasty creatures at bay"*/
+		Deploy traps on burrows to keep nasty creatures at bay"
 
 	setup_restricted = TRUE
 
