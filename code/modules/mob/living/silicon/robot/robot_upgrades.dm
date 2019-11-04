@@ -35,6 +35,11 @@
 	R.module = null
 	R.updatename("Default")
 
+	R.icon = 'icons/mob/robots.dmi'
+	R.pixel_x = 0
+	R.old_x = 0
+	R.default_pixel_x = 0
+
 	return 1
 
 /obj/item/borg/upgrade/rename

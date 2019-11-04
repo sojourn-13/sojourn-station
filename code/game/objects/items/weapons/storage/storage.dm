@@ -109,7 +109,7 @@
 			var/HUD_element/threePartBox/storedItemBackground/itemBackground = new()
 			storageBackground.add(itemBackground)
 
-			var/itemBackgroundWidth = round(minBackgroundWidth * itemStorageCost/max_storage_space)
+			var/itemBackgroundWidth = round(minBackgroundWidth * itemStorageCost/max(max_storage_space, 1))
 			itemBackground.setPosition(totalWidth,0)
 			itemBackground.scaleToSize(itemBackgroundWidth)
 			itemBackground.setAlignment(HUD_NO_ALIGNMENT,HUD_CENTER_ALIGNMENT) //vertical center
@@ -518,7 +518,7 @@
 
 	if(isnull(max_storage_space) && !isnull(storage_slots))
 		max_storage_space = storage_slots*BASE_STORAGE_COST(max_w_class)
-	
+
 	spawn(5)
 		var/total_storage_space = 0
 		for(var/obj/item/I in contents)

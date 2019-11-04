@@ -330,7 +330,7 @@ icon
  */
 
 proc/ReadRGB(rgb)
-	if(!rgb) return
+	if(!rgb) return list(0, 0, 0, 0)
 
 	// interpret the HSV or HSVA value
 	var/i=1, start=1
@@ -380,7 +380,7 @@ proc/ReadRGB(rgb)
 	if(usealpha) . += alpha
 
 proc/ReadHSV(hsv)
-	if(!hsv) return
+	if(!hsv) return list(0, 0, 0, 0)
 
 	// interpret the HSV or HSVA value
 	var/i=1, start=1
@@ -565,11 +565,12 @@ proc/BlendHSV(hsv1, hsv2, amount)
 	amount<0 or amount>1 are allowed
  */
 proc/BlendRGB(rgb1, rgb2, amount)
+	if(rgb1 == null) CRASH("rgb1 not defined")
 	var/list/RGB1 = ReadRGB(rgb1)
 	var/list/RGB2 = ReadRGB(rgb2)
 
 	// add missing alpha if needed
-	if(RGB1.len < RGB2.len) RGB1 += 255
+	if(RGB1.len ^ RGB2.len) RGB1 += 255
 	else if(RGB2.len < RGB1.len) RGB2 += 255
 	var/usealpha = RGB1.len > 3
 

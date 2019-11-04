@@ -60,11 +60,11 @@
 
 /obj/structure/burrow/New(var/loc, var/turf/anchor)
 	.=..()
-	all_burrows.Add(src)
 	var/obj/machinery/power/nt_obelisk/obelisk = locate(/obj/machinery/power/nt_obelisk) in range(7, src)
-	if(obelisk && obelisk.active)
+	if(obelisk ? obelisk.active : FALSE) //(obelisk && obelisk.active) doesn't work for some reason. //TODO: Revisit this
 		qdel(src)
 		return
+	all_burrows.Add(src)
 	if (anchor)
 		offset_to(anchor, 8)
 

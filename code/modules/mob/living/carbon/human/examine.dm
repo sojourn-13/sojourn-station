@@ -201,9 +201,9 @@
 			usr.visible_message("<b>[usr]</b> checks [src]'s pulse.", "You check [src]'s pulse.")
 		if(distance<=1 && do_mob(usr,src,15,progress=0))
 			if(pulse() == PULSE_NONE)
-				to_chat(usr, "<span class='deadsay'>[T.He] [T.has] no pulse[src.client ? "" : " and [T.his] soul has departed"]...</span>")
+				to_chat(usr, "<span class='deadsay'>[He] [has] no pulse[src.client ? "" : " and [his] soul has departed"]...</span>")
 			else
-				to_chat(usr, "<span class='deadsay'>[T.He] [T.has] a pulse!</span>")
+				to_chat(usr, "<span class='deadsay'>[He] [has] a pulse!</span>")
 
 	if(fire_stacks)
 		msg += "[He] [is] covered in some liquid.\n"

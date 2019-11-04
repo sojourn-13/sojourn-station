@@ -30,7 +30,7 @@
 	for(var/mob/living/carbon/l in range(4))
 		if(prob(2))
 			to_chat(l, SPAN_WARNING("Your skin itches."))
-		l.apply_effect(2, IRRADIATE)		
+		l.apply_effect(2, IRRADIATE)
 
 /obj/effect/decal/cleanable/dirt
 	name = "dirt"
@@ -51,8 +51,11 @@
 	mouse_opacity = 0
 	random_rotation = FALSE
 
+	color = "#00000000"
+
 /obj/effect/decal/cleanable/reagents/proc/add_reagents(var/datum/reagents/reagents_to_add)
-	var/space_to_add = reagents_to_add.total_volume - reagents.get_free_space() 
+	if(!reagents) create_reagents(1)
+	var/space_to_add = reagents_to_add.total_volume - reagents.get_free_space()
 	if(space_to_add > 0)
 		create_reagents(space_to_add, TRUE)
 	reagents_to_add.trans_to_holder(reagents, reagents_to_add.total_volume)
@@ -74,9 +77,9 @@
 		START_PROCESSING(SSobj, src)
 
 /obj/effect/decal/cleanable/reagents/splashed/add_reagents(var/datum/reagents/reagents_to_add)
+	..()
 	alpha = min(alpha + reagents_to_add.total_volume * 30, 255)
 	color = BlendRGB(color, reagents_to_add.get_color(), 0.6)
-	..()
 
 /obj/effect/decal/cleanable/reagents/splashed/Process()
 	if(!reagents.total_volume)
@@ -89,8 +92,9 @@
 	icon_state = "powderpile"
 
 /obj/effect/decal/cleanable/reagents/piled/add_reagents(var/datum/reagents/reagents_to_add)
-	color = BlendRGB(color, reagents_to_add.get_color(), 0.8)
 	..()
+	color = BlendRGB(color, reagents_to_add.get_color(), 0.8)
+
 
 /obj/effect/decal/cleanable/flour
 	name = "flour"
