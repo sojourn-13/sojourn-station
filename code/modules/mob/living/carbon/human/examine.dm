@@ -338,7 +338,7 @@
 		is_bleeding[limb] = null
 	for(var/limb in is_bleeding)
 		msg += is_bleeding[limb]
-	for(var/implant in get_visible_implants(0))
+	for(var/implant in get_visible_implants())
 		msg += "<span class='danger'>[src] [has] \a [implant] sticking out of [his] flesh!</span>\n"
 	if(digitalcamo)
 		msg += "[He] [is] repulsively uncanny!\n"
