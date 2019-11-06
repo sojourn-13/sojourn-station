@@ -8,12 +8,14 @@
 	return pickweight(list(/obj/structure/closet = 4,
 				/obj/structure/closet/firecloset = 8,
 				/obj/structure/closet/emcloset = 6,
-				/obj/structure/closet/wardrobe/black = 1,
-				/obj/structure/closet/wardrobe/green = 1,
-				/obj/structure/closet/wardrobe/orange = 1,
-				/obj/structure/closet/wardrobe/yellow = 1,
-				/obj/structure/closet/wardrobe/white = 1,
-				/obj/structure/closet/wardrobe/mixed = 1,
+				/obj/structure/closet/wardrobe/color/black = 1,
+				/obj/structure/closet/wardrobe/color/blue = 1,
+				/obj/structure/closet/wardrobe/color/red = 1,
+				/obj/structure/closet/wardrobe/color/green = 1,
+				/obj/structure/closet/wardrobe/misc/prison = 1,
+				/obj/structure/closet/wardrobe/color/yellow = 1,
+				/obj/structure/closet/wardrobe/color/white = 1,
+				/obj/structure/closet/wardrobe/color/mixed = 1,
 				/obj/structure/closet/lasertag/red = 1,
 				/obj/structure/closet/lasertag/blue = 1,
 				/obj/structure/closet/toolcloset = 8,
@@ -62,12 +64,14 @@
 
 
 /obj/random/closet_wardrobe/item_to_spawn()
-	return pick(/obj/structure/closet/wardrobe/black,
-				/obj/structure/closet/wardrobe/green,
-				/obj/structure/closet/wardrobe/orange,
-				/obj/structure/closet/wardrobe/yellow,
-				/obj/structure/closet/wardrobe/white,
-				/obj/structure/closet/wardrobe/mixed)
+	return pick(/obj/structure/closet/wardrobe/color/black,
+				/obj/structure/closet/wardrobe/color/green,
+				/obj/structure/closet/wardrobe/misc/prison,
+				/obj/structure/closet/wardrobe/color/yellow,
+				/obj/structure/closet/wardrobe/color/white,
+				/obj/structure/closet/wardrobe/color/red,
+				/obj/structure/closet/wardrobe/color/blue,
+				/obj/structure/closet/wardrobe/color/mixed)
 
 /obj/random/closet_wardrobe/low_chance
 	name = "low chance random wardrobe closet"

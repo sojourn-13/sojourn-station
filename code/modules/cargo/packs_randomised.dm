@@ -2,8 +2,8 @@
 //-----------------RANDOMISED-------------------
 //----------------------------------------------
 
-/datum/supply_pack/randomised/contraband
-	num_contained = 5
+/datum/supply_pack/randomised
+	var/num_contained = 5
 	contains = list(/obj/item/seeds/bloodtomatoseed,
 					/obj/item/weapon/storage/pill_bottle/zoom,
 					/obj/item/seeds/kudzuseed,

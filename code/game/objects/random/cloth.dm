@@ -225,7 +225,7 @@
 				/obj/item/clothing/head/costume/misc/rainbow = 1,
 				/obj/item/clothing/head/soft/purple = 1,
 				/obj/item/clothing/head/soft/orange = 1,
-				/obj/item/clothing/head/soft/mime = 1,
+				/obj/item/clothing/head/soft/white = 1,
 				/obj/item/clothing/head/soft/grey = 1,
 				/obj/item/clothing/head/soft/green = 1,
 				/obj/item/clothing/head/soft/blue = 1,

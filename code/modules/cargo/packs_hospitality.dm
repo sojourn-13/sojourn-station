@@ -78,6 +78,27 @@
 	crate_name = "birthday catering crate"
 	group = "Hospitality"
 
+/datum/supply_pack/burgersurprise
+	name = "Burger Surprise Crate (x5)"
+	contains = list(/obj/random/junkfood/onlyburger,
+					/obj/random/junkfood/onlyburger,
+					/obj/random/junkfood/onlyburger,
+					/obj/random/junkfood/onlyburger,
+					/obj/random/junkfood/onlyburger)
+	cost = 1000
+	containertype = /obj/structure/closet/crate/freezer
+	crate_name = "burger crate"
+	group = "Hospitality"
+
+/datum/supply_pack/cakesurprise
+	name = "Cake Surprise Crate (x2)"
+	contains = list(/obj/random/junkfood/onlycake,
+					/obj/random/junkfood/onlycake)
+	cost = 1000
+	containertype = /obj/structure/closet/crate/freezer
+	crate_name = "cake crate"
+	group = "Hospitality"
+
 /datum/supply_pack/cateringcorporate
 	name = "Corporate Catering Crate"
 	contains = list(/obj/item/weapon/reagent_containers/food/drinks/mug,
@@ -100,6 +121,44 @@
 	crate_name = "corporate catering crate"
 	group = "Hospitality"
 
+/datum/supply_pack/kitchensupply
+	name = "Kitchen Supply Crate"
+	contains = list(/obj/item/weapon/reagent_containers/food/condiment/flour,
+					/obj/item/weapon/reagent_containers/food/condiment/flour,
+					/obj/item/weapon/reagent_containers/food/condiment/flour,
+					/obj/item/weapon/reagent_containers/food/condiment/flour,
+					/obj/item/weapon/reagent_containers/food/drinks/milk,
+					/obj/item/weapon/reagent_containers/food/drinks/milk,
+					/obj/item/weapon/storage/fancy/egg_box,
+					/obj/item/weapon/reagent_containers/food/snacks/tofu,
+					/obj/item/weapon/reagent_containers/food/snacks/tofu,
+					/obj/item/weapon/reagent_containers/food/snacks/meat,
+					/obj/item/weapon/reagent_containers/food/snacks/meat)
+
+	cost = 900
+	containertype = /obj/structure/closet/crate/freezer
+	crate_name = "kitchen supply crate"
+	group = "Hospitality"
+
+/datum/supply_pack/lunchboxes
+	name = "Lunchbox Crate"
+	contains = list(/obj/item/weapon/storage/lunchbox/cat,
+					/obj/item/weapon/storage/lunchbox/cat,
+					/obj/item/weapon/storage/lunchbox/cat,
+					/obj/item/weapon/storage/lunchbox/cat,
+					/obj/item/weapon/storage/lunchbox,
+					/obj/item/weapon/storage/lunchbox,
+					/obj/item/weapon/storage/lunchbox,
+					/obj/item/weapon/storage/lunchbox,
+					/obj/item/weapon/storage/lunchbox/rainbow,
+					/obj/item/weapon/storage/lunchbox/rainbow,
+					/obj/item/weapon/storage/lunchbox/rainbow,
+					/obj/item/weapon/storage/lunchbox/rainbow)
+	cost = 400
+	containertype = /obj/structure/closet/crate
+	crate_name  = "lunchbox crate"
+	group = "Hospitality"
+
 /datum/supply_pack/cateringparty
 	name = "Party Catering Crate"
 	contains = list(/obj/item/weapon/storage/box/drinkingglasses,
@@ -120,13 +179,13 @@
 	crate_name = "party catering crate"
 	group = "Hospitality"
 
-/datum/supply_pack/randomised
+/datum/supply_pack/pizzasurprise
 	name = "Pizza Surprise Crate (x5)"
-	var/num_contained = 5
-	contains = list(/obj/item/pizzabox/margherita,
-					/obj/item/pizzabox/mushroom,
-					/obj/item/pizzabox/meat,
-					/obj/item/pizzabox/vegetable)
+	contains = list(/obj/random/junkfood/onlypizza,
+					/obj/random/junkfood/onlypizza,
+					/obj/random/junkfood/onlypizza,
+					/obj/random/junkfood/onlypizza,
+					/obj/random/junkfood/onlypizza)
 	cost = 1000
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "pizza crate"

@@ -2,46 +2,62 @@
 //-----------------OPERATIONS-------------------
 //----------------------------------------------
 
+/datum/supply_pack/flares
+	name = "Flare Boxes Crate"
+	contains = list(/obj/item/weapon/storage/box/flares,
+					/obj/item/weapon/storage/box/flares,
+					/obj/item/weapon/storage/box/flares)
+	cost = 1000
+	crate_name = "flare boxes crate"
+	group = "Operations"
+
+/datum/supply_pack/exportscanner
+	name = "Export Scanners Crate"
+	contains = list(/obj/item/device/scanner/price,
+					/obj/item/device/scanner/price)
+	cost = 700
+	crate_name = "export scanners crate"
+	group = "Operations"
+
 /datum/supply_pack/mule
 	name = "MULEbot Crate"
 	contains = list(/obj/machinery/bot/mulebot)
 	cost = 1200
 	containertype = /obj/structure/largecrate/mule
-	crate_name = "MULEbot Crate"
+	crate_name = "MULEbot crate"
 	group = "Operations"
 
-/datum/supply_pack/lunchboxes
-	name = "Lunchboxes"
-	contains = list(/obj/item/weapon/storage/lunchbox/cat,
-					/obj/item/weapon/storage/lunchbox/cat,
-					/obj/item/weapon/storage/lunchbox/cat,
-					/obj/item/weapon/storage/lunchbox/cat,
-					/obj/item/weapon/storage/lunchbox,
-					/obj/item/weapon/storage/lunchbox,
-					/obj/item/weapon/storage/lunchbox,
-					/obj/item/weapon/storage/lunchbox,
-					/obj/item/weapon/storage/lunchbox/rainbow,
-					/obj/item/weapon/storage/lunchbox/rainbow,
-					/obj/item/weapon/storage/lunchbox/rainbow,
-					/obj/item/weapon/storage/lunchbox/rainbow)
-	cost = 400
-	containertype = /obj/structure/closet/crate
-	crate_name  = "\improper Lunchboxes"
-	group = "Operations"
-
-/datum/supply_pack/price_scanner
-	name = "Export scanners"
-	contains = list(/obj/item/device/scanner/price,
-					/obj/item/device/scanner/price)
-	cost = 700
-	crate_name = "Export scanners crate"
-	group = "Operations"
-
-/datum/supply_pack/flares
-	name = "Flare boxes"
-	contains = list(/obj/item/weapon/storage/box/flares,
-					/obj/item/weapon/storage/box/flares,
-					/obj/item/weapon/storage/box/flares)
+/datum/supply_pack/janitor
+	name = "Janitorial Supplies Crate"
+	contains = list(/obj/item/weapon/reagent_containers/glass/bucket,
+					/obj/item/weapon/mop,
+					/obj/item/weapon/mop,
+					/obj/item/weapon/mop,
+					/obj/item/weapon/mop,
+					/obj/item/weapon/caution,
+					/obj/item/weapon/caution,
+					/obj/item/weapon/caution,
+					/obj/item/weapon/caution,
+					/obj/item/weapon/storage/bag/trash,
+					/obj/item/device/lightreplacer,
+					/obj/item/weapon/reagent_containers/spray/cleaner,
+					/obj/item/weapon/reagent_containers/glass/rag,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/structure/mopbucket)
 	cost = 1000
-	crate_name = "Flare boxes crate"
+	crate_name = "janitorial supplies crate"
+	group = "Operations"
+
+/datum/supply_pack/toner
+	name = "Toner Cartridges Crate"
+	contains = list(/obj/item/device/toner,
+					/obj/item/device/toner,
+					/obj/item/device/toner,
+					/obj/item/device/toner,
+					/obj/item/device/toner,
+					/obj/item/device/toner)
+	cost = 600
+	crate_name = "toner cartridges crate"
 	group = "Operations"

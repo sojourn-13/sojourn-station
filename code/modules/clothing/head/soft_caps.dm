@@ -56,7 +56,7 @@
 	desc = "A peaked cap in a orange color."
 	icon_state = "orangesoft"
 
-/obj/item/clothing/head/soft/mime
+/obj/item/clothing/head/soft/white
 	name = "white cap"
 	initial_name = "white cap"
 	desc = "A peaked cap in a white color."

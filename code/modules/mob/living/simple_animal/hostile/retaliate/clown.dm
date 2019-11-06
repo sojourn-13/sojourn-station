@@ -1,14 +1,13 @@
 /mob/living/simple_animal/hostile/retaliate/clown
 	name = "clown"
-	desc = "A denizen of clown planet"
+	desc = "A curious clown. His life is nothing but a comedy."
 	icon_state = "clown"
 	icon_gib = "clown_gib"
-	speak_chance = 0
 	turns_per_move = 5
 	response_help = "pokes"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
-	speak = list("HONK", "Honk!", "Welcome to clown planet!")
+	speak = list("HONK!", "Honk!", "Isn't it beautiful?", "Is it just me, or is it getting crazier out there?", "There is no punchline. It's not a joke.", "You don't listen, do you?", "You get what you fucking deserve.", "I had a bad day.", "Everyone is awful these days.", "Remember, that's life!")
 	emote_see = list("honks")
 	speak_chance = 1
 	a_intent = I_HURT
