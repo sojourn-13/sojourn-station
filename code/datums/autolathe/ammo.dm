@@ -62,6 +62,22 @@
 	name = "SMG magazine (10mm)"
 	build_path = /obj/item/ammo_magazine/smg10mm
 
+/datum/design/autolathe/ammo/magazine_c10mm
+	name = "magazine (10mmx50mm ball)"
+	build_path = /obj/item/ammo_magazine/c10mm
+
+/datum/design/autolathe/ammo/magazine_c10mm_rubber
+	name = "magazine (10mmx50mm rubber)"
+	build_path = /obj/item/ammo_magazine/c10mm/rubber
+
+/datum/design/autolathe/ammo/magazine_c10mm_hv
+	name = "magazine (10mmx50mm SLAP)"
+	build_path = /obj/item/ammo_magazine/c10mm/hv
+
+/datum/design/autolathe/ammo/magazine_c10mm_lethal
+	name = "magazine (10mmx50mm Hollow-Point)"
+	build_path = /obj/item/ammo_magazine/c10mm/lethal
+
 /datum/design/autolathe/ammo/magazine_a556
 	name = "magazine (5.56mm)"
 	build_path = /obj/item/ammo_magazine/a556
@@ -251,3 +267,20 @@
 /datum/design/autolathe/ammo/box_c50/rubber
 	name = "ammunition box (.50 rubber)"
 	build_path = /obj/item/ammo_magazine/ammobox/c50/rubber
+
+//10mm omni
+/datum/design/autolathe/ammo/box_c10mm
+	name = "ammunition box (10x50mm ball)"
+	build_path = /obj/item/ammo_magazine/ammobox/c10mm
+
+/datum/design/autolathe/ammo/box_c10mm/rubber
+	name = "ammunition box (10x50mm rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/c10mm/rubber
+
+/datum/design/autolathe/ammo/box_c10mm/hv
+	name = "ammunition box (10x50mm SLAP)"
+	build_path = /obj/item/ammo_magazine/ammobox/c10mm/hv
+
+/datum/design/autolathe/ammo/box_c10mm/lethal
+	name = "ammunition box (10x50mm Hollow-Point)"
+	build_path = /obj/item/ammo_magazine/ammobox/c10mm/lethal

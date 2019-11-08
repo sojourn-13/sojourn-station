@@ -2231,6 +2231,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\IH_smg.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\lmg.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\maxim.dm"
+#include "code\modules\projectiles\guns\projectile\automatic\omnifirlfe.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\sol.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\sts35.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\z8.dm"

@@ -729,5 +729,38 @@
 		/datum/design/autolathe/biomatter/medical/splints,
 		/datum/design/autolathe/biomatter/medical/ointment,
 		/datum/design/autolathe/biomatter/medical/advanced/bruise,
-		/datum/design/autolathe/biomatter/medical/advanced/ointment,
-	)
+		/datum/design/autolathe/biomatter/medical/advanced/ointment)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
+	disk_name = "unusual data disk"
+	desc = "An odd, battered disk that might fit in an autolathe. Says something about 'Blackshield'."
+	icon_state = "onestar"
+	license = -1
+
+	designs = list(
+		/datum/design/autolathe/gun/IH_sidearm,
+		/datum/design/autolathe/gun/ten,
+		/datum/design/autolathe/gun/ten_dark,
+		/datum/design/autolathe/gun/omnirifle,//rifles
+		/datum/design/autolathe/gun/standard_omnirifle,
+		/datum/design/autolathe/gun/fancy_omnirifle,
+		/datum/design/autolathe/gun/omnicarbine,
+		/datum/design/autolathe/gun/rds_omnicarbine,
+		/datum/design/autolathe/device/gps,//misc gear
+		/datum/design/autolathe/misc/heavyflashlight,
+		/datum/design/autolathe/sec/secflashlight,
+		/datum/design/research/item/flash,
+		/datum/design/autolathe/misc/taperecorder,
+		/datum/design/autolathe/tool/tacknife,
+		/datum/design/autolathe/sec/beartrap,
+		/datum/design/autolathe/ammo/magazine_a10mm,//ammo
+		/datum/design/autolathe/ammo/magazine_a10mm_rubber,
+		/datum/design/autolathe/ammo/magazine_c10mm,
+		/datum/design/autolathe/ammo/magazine_c10mm_rubber,
+		/datum/design/autolathe/ammo/magazine_c10mm_hv,
+		/datum/design/autolathe/ammo/magazine_c10mm_lethal,
+		/datum/design/autolathe/ammo/box_c10mm,
+		/datum/design/autolathe/ammo/box_c10mm/lethal,
+		/datum/design/autolathe/ammo/box_c10mm/rubber,
+		/datum/design/autolathe/ammo/box_c10mm/hv
+		)

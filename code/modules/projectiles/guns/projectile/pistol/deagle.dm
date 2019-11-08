@@ -21,7 +21,7 @@
 /obj/item/weapon/gun/projectile/deagle/update_icon()
 	..()
 	if(ammo_magazine)
-		icon_state = "deagle-[round(ammo_magazine.stored_ammo.len,2)]"
+		icon_state = "deagle-[round(ammo_magazine.stored_ammo.len,1)]"
 	else
 		icon_state = "deagle"
 	return

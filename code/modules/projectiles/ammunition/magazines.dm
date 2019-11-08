@@ -45,6 +45,37 @@
 	icon_state = "12mmhv"
 	ammo_type = /obj/item/ammo_casing/a10mm/hv
 
+/obj/item/ammo_magazine/c10mm
+	name = "magazine (10x50mm)"
+	icon_state = "c10mm"
+	desc = "A plain rifle magazine."
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_OMNI
+	caliber = "10x50mm"
+	matter = list(MATERIAL_STEEL = 2)
+	ammo_type = /obj/item/ammo_casing/c10mm
+	max_ammo = 20
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/c10mm/rubber
+	name = "magazine (10x50mm rubber)"
+	icon_state = "c10mmr"
+	desc = "A rifle magazine with a blue stripe for less-lethal rounds."
+	ammo_type = /obj/item/ammo_casing/c10mm/rubber
+
+/obj/item/ammo_magazine/c10mm/hv
+	name = "magazine (10x50mm SLAP)"
+	icon_state = "c10mmhv"
+	desc = "A rifle magazine with a grey stripe for AP rounds."
+	ammo_type = /obj/item/ammo_casing/c10mm/hv
+
+/obj/item/ammo_magazine/c10mm/lethal
+	name = "magazine (10x50mm HP)"
+	icon_state = "c10mml"
+	desc = "A rifle magazine with a red stripe for hollow-points"
+	ammo_type = /obj/item/ammo_casing/c10mm/lethal
+
 /obj/item/ammo_magazine/mc9mm
 	name = "magazine (9mm)"
 	icon_state = "9x19pl"

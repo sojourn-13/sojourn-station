@@ -20,6 +20,9 @@
 //Carbines and rifles
 #define DAMAGE_10X24 30
 #define ARMOR_PENETRATION_10X24 10
+#define DAMAGE_10X50 25
+#define ARMOR_PENETRATION_10X50 25
+#define ARMOR_PENETRATION_10X50_SLAP 50
 #define DAMAGE_556 16
 #define ARMOR_PENETRATION_556 25
 #define DAMAGE_65 18
@@ -130,6 +133,40 @@
 	sharp = FALSE
 
 //Carbines and rifles
+/obj/item/projectile/bullet/c10mm
+	damage = DAMAGE_10X50
+	armor_penetration = ARMOR_PENETRATION_10X50
+	penetrating = 1
+	sharp = FALSE
+	can_ricochet = TRUE
+
+/obj/item/projectile/bullet/c10mm/rubber
+	name = "rubber bullet"
+	damage = DAMAGE_10X50 * RUBBER_DAMAGE_MULTIPLIER
+	agony = DAMAGE_10X50 * RUBBER_AGONY_MULTIPLIER
+	armor_penetration = ARMOR_PENETRATION_10X50 * RUBBER_PENETRATION_MULTIPLIER
+	embed = FALSE
+	sharp = FALSE
+
+/obj/item/projectile/bullet/c10mm/hv
+	name = "SLAP bullet"
+	damage = 20
+	armor_penetration = ARMOR_PENETRATION_10X50_SLAP * HIGH_VELOCITY_MULTIPLIER
+	penetrating = 1
+	step_delay = HIGH_VELOCITY_STEP_DELAY
+	embed = FALSE
+	sharp = TRUE
+
+/obj/item/projectile/bullet/c10mm/lethal
+	name = "hollow-point bullet"
+	damage = DAMAGE_10X50
+	agony = DAMAGE_10X50 * 1.2
+	armor_penetration = 15 * RUBBER_PENETRATION_MULTIPLIER
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+
 /obj/item/projectile/bullet/c10x24
 	damage = DAMAGE_10X24
 	armor_penetration = ARMOR_PENETRATION_10X24
@@ -328,3 +365,6 @@
 #undef DAMAGE_BEANBAG
 #undef AGONY_BEANBAG
 #undef ARMOR_PENETRATION_BEANBAG
+#undef DAMAGE_10X50
+#undef ARMOR_PENETRATION_10X50
+#undef ARMOR_PENETRATION_10X50_SLAP
