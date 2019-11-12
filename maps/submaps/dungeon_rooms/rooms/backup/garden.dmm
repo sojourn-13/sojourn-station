@@ -22,7 +22,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "f" = (
-/obj/effect/floor_decal/spline/grass_edge,
+/obj/effect/floor_decal/grass_edge,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "g" = (
@@ -83,7 +83,7 @@
 /turf/simulated/floor/grass,
 /area/crawler)
 "s" = (
-/obj/effect/floor_decal/spline/grass_edge{
+/obj/effect/floor_decal/grass_edge{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/derelict,
@@ -108,7 +108,7 @@
 /turf/simulated/floor/grass,
 /area/crawler)
 "x" = (
-/obj/effect/floor_decal/spline/grass_edge{
+/obj/effect/floor_decal/grass_edge{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/derelict,
@@ -183,7 +183,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "L" = (
-/obj/effect/floor_decal/spline/grass_edge{
+/obj/effect/floor_decal/grass_edge{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/derelict,

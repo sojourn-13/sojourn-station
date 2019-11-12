@@ -65,7 +65,7 @@
 /turf/simulated/floor/wood,
 /area/crawler)
 "o" = (
-/obj/effect/floor_decal/fact_plaque,
+/obj/effect/floor_decal/plaque,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "p" = (

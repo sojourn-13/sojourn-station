@@ -150,7 +150,7 @@
 	dir = 4
 	},
 /obj/item/remains/human,
-/obj/item/clothing/accessory/tie/blue,
+/obj/item/clothing/accessory/blue,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "au" = (
@@ -196,7 +196,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/clothing/accessory/tie/red,
+/obj/item/clothing/accessory/red,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "az" = (
@@ -293,7 +293,7 @@
 	dir = 4
 	},
 /obj/item/weapon/oddity/common/paper_omega,
-/obj/item/clothing/accessory/tie/yellow,
+/obj/item/clothing/accessory/horrible,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "aJ" = (

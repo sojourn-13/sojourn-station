@@ -10,27 +10,15 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/crawler)
 "d" = (
+/obj/random/action_figure,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/crawler)
+"e" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall,
 /area/crawler)
-"e" = (
-/obj/random/mob/roaches,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/crawler)
 "f" = (
-/obj/random/toy/action_figure,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/crawler)
-"g" = (
 /obj/machinery/light/floor,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/crawler)
-"h" = (
-/obj/random/gun_energy_cheap,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/crawler)
-"i" = (
-/obj/random/medical_lowcost,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/crawler)
 
@@ -38,9 +26,9 @@
 a
 a
 a
-d
-d
-d
+e
+e
+e
 a
 a
 a
@@ -58,20 +46,20 @@ a
 "}
 (3,1,1) = {"
 a
+d
+d
+d
 c
-c
-c
-f
-c
-c
-c
+d
+d
+d
 a
 "}
 (4,1,1) = {"
 a
 c
 c
-e
+c
 c
 c
 c
@@ -84,9 +72,9 @@ c
 c
 c
 c
+d
 c
-e
-c
+d
 b
 "}
 (6,1,1) = {"
@@ -95,7 +83,7 @@ c
 c
 c
 c
-h
+c
 c
 c
 b
@@ -104,22 +92,22 @@ b
 b
 c
 c
-e
-g
-i
+c
+f
+c
 c
 c
 b
 "}
 (8,1,1) = {"
 b
+d
+d
+d
 c
-c
-c
-c
-c
-c
-c
+d
+d
+d
 b
 "}
 (9,1,1) = {"
@@ -129,19 +117,19 @@ c
 c
 c
 c
-e
+c
 c
 b
 "}
 (10,1,1) = {"
 a
+d
+d
+d
 c
 c
-e
 c
-c
-c
-c
+d
 a
 "}
 (11,1,1) = {"
@@ -149,10 +137,10 @@ a
 c
 c
 c
-f
 c
 c
 c
+d
 a
 "}
 (12,1,1) = {"
@@ -163,17 +151,17 @@ c
 c
 c
 c
-c
+d
 a
 "}
 (13,1,1) = {"
 a
 a
-d
-d
-d
-d
-d
+e
+e
+e
+e
+e
 a
 a
 "}

@@ -21,7 +21,7 @@
 /turf/simulated/floor/grass,
 /area/crawler)
 "f" = (
-/obj/effect/floor_decal/spline/grass_edge{
+/obj/effect/floor_decal/grass_edge{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/derelict,
@@ -30,7 +30,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "h" = (
-/obj/effect/floor_decal/spline/grass_edge{
+/obj/effect/floor_decal/grass_edge{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/derelict,
@@ -104,14 +104,14 @@
 /turf/simulated/floor/grass,
 /area/crawler)
 "t" = (
-/obj/effect/floor_decal/spline/grass_edge{
+/obj/effect/floor_decal/grass_edge{
 	dir = 8
 	},
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "u" = (
-/obj/effect/floor_decal/spline/grass_edge{
+/obj/effect/floor_decal/grass_edge{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/derelict,
@@ -134,7 +134,7 @@
 /turf/simulated/floor/grass,
 /area/crawler)
 "y" = (
-/obj/effect/floor_decal/spline/grass_edge,
+/obj/effect/floor_decal/grass_edge,
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
@@ -143,7 +143,7 @@
 /turf/simulated/floor/grass,
 /area/crawler)
 "A" = (
-/obj/effect/floor_decal/spline/grass_edge,
+/obj/effect/floor_decal/grass_edge,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "C" = (
