@@ -1,5 +1,6 @@
 /obj/item/device/chameleon
 	name = "chameleon projector"
+	desc = "A projection device allowing for high-tech imitation."
 	icon_state = "shield0"
 	flags = CONDUCT
 	slot_flags = SLOT_BELT

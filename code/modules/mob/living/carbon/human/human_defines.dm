@@ -93,5 +93,17 @@
 	var/exploit_record = ""
 
 	var/stance_damage = 0 //Whether this mob's ability to stand has been affected
+
 	var/identifying_gender = null // In case the human identifies as another gender than it's biological
 	mob_classification = CLASSIFICATION_ORGANIC | CLASSIFICATION_HUMANOID
+
+
+	var/datum/sanity/sanity = null
+
+	var/shock_resist = 0 // Resistance to paincrit
+
+	var/language_blackout = 0
+	var/suppress_communication = 0
+
+	var/flashbacks = 0
+

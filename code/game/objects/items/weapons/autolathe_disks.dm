@@ -609,6 +609,7 @@
 		/datum/design/autolathe/circuit/autolathe_disk_cloner,
 		/datum/design/autolathe/device/implanter,
 		/datum/design/autolathe/gun/makarov,
+		/datum/design/autolathe/gun/drozd,
 		/datum/design/autolathe/sec/silencer,
 		/datum/design/autolathe/ammo/magazine_mc9mm,
 		/datum/design/autolathe/gun/ak47,
@@ -639,6 +640,7 @@
 	license = 0
 	designs = list(
 		/datum/design/autolathe/gun/makarov,
+		/datum/design/autolathe/gun/drozd,
 		/datum/design/autolathe/sec/silencer,
 		/datum/design/autolathe/ammo/magazine_mc9mm,
 		/datum/design/autolathe/gun/ak47,
