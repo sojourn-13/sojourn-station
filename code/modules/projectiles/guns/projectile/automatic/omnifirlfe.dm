@@ -8,7 +8,7 @@
 		 This example... frankly sucks and is limited to semiautomatic."
 	icon_state = "cheap-omnirifle"
 	item_state = "cheap-omnirifle"
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	caliber = "10x50mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
@@ -20,7 +20,7 @@
 	price_tag = 2000
 	recoil = 1.2
 	recoil_buildup = 0.5
-	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/rifle_boltforward.ogg'
@@ -56,9 +56,9 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	firemodes = list(
-		FULL_AUTO_400,
+		SEMI_AUTO_NODELAY,
 		BURST_5_ROUND,
-		SEMI_AUTO_NODELAY
+		FULL_AUTO_400
 		)
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped
@@ -66,19 +66,18 @@
 	desc = "Heavy frontline designated marksman rifle of the Solar Federation and countless others. \
 		 Either a copy or 'liberated' model of the venerable M13A2 Special Purpose Rifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
-		 This example is fitted with an advanced combat sight and limited to semiautomatic and three round bursts."
+		 This example is fitted with an advanced combat sight and limited to semiautomatic."
 	icon_state = "scoped-omnirifle"
 	item_state = "scoped-omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
 	price_tag = 3000
-	recoil = 0.8
+	recoil = 0.7
+	damage_multiplier = 1.2
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
-	zoom_factor = 0.6
-	firemodes = list(
-	SEMI_AUTO_NODELAY,
-	BURST_3_ROUND
-	)
+	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	zoom_factor = 1
+	recoil_buildup = 0.4
 
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/fancy
@@ -92,18 +91,19 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
 	price_tag = 3500
 	recoil = 0.6
-	zoom_factor = 1
-
+	damage_multiplier = 1.2
+	zoom_factor = 1.5
+	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine
-	name = "FS BR 10x50mm \"Boar\""
+	name = "FS CAR 10x50mm \"Boar\""
 	desc = "Heavy scecond-line carbine of the Solar Federation and countless others. \
 		 Either a copy or 'liberated' model of the curious MK-12 Omnicarbine, chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 Despite the blinding muzzle flash and agonizing recoil, its small arguably makes up for the disadvantages."
 	icon_state = "omnicarbine"
 	item_state = "omnicarbine"
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
 	price_tag = 2500
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
@@ -112,12 +112,12 @@
 	recoil_buildup = 0.5
 
 	firemodes = list(
-		FULL_AUTO_400,
-		SEMI_AUTO_NODELAY
+		SEMI_AUTO_NODELAY,
+		FULL_AUTO_400
 		)
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds
-	name = "FS BR 10x50mm \"Boar\""
+	name = "FS CAR 10x50mm \"Boar\""
 	desc = "Heavy scecond-line carbine of the Solar Federation and countless others. \
 		 Either a copy or 'liberated' model of the curious MK-12 MOD 1 Omnicarbine, chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
@@ -131,6 +131,6 @@
 	recoil_buildup = 0.3
 
 	firemodes = list(
-		BURST_3_ROUND,
-		SEMI_AUTO_NODELAY
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
 		)
