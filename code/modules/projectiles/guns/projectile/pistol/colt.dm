@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/colt
-	name = "FS HG .45 \"Colt\""
-	desc = "A decent quality reproduction of the grandfather of automatic pistols, the M1911A1. Uses .45 rounds."
+	name = "FS HG .45 \"Colt M1911\""
+	desc = "A cheap knock-off of a Colt M1911. Uses .45 rounds."
+	icon = 'icons/obj/guns/projectile/colt.dmi'
 	icon_state = "colt"
 	item_state = "colt"
 	caliber = ".45"

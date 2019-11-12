@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/silenced
 	name = "FS HG .45 \"Mandella\""
 	desc = "A small, quiet,  easily concealable gun. Uses .45 rounds. Has an integrated silencer which can't be removed."
+	icon = 'icons/obj/guns/projectile/mandella.dmi'
 	icon_state = "mandella"
 	item_state = "pistol_s"
 	w_class = ITEM_SIZE_NORMAL
@@ -18,3 +19,20 @@
 /obj/item/weapon/gun/projectile/silenced/Initialize()
 	.=..()
 	apply_silencer(new /obj/item/weapon/silencer/integrated(src), null)
+
+/obj/item/weapon/gun/projectile/silenced/update_icon()
+	..()
+
+	var/iconstring = initial(icon_state)
+
+	if (ammo_magazine)
+		iconstring += "_mag"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	icon_state = iconstring
+
+/obj/item/weapon/gun/projectile/silenced/Initialize()
+	. = ..()
+	update_icon()
