@@ -50,6 +50,32 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/greatcoat/ihc
+	name = "Militia Commander's greatcoat"
+	desc = "A durable greatcoat, designed for protecion and style."
+	icon_state = "mc_coat"
+	item_state = "mc_coat"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(melee = 35, bullet = 70, energy = 20, bomb = 15, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/greatcoat/ihc
+	name = "Militia Commander's cloaked greatcoat"
+	desc = "A durable greatcoat, designed for protecion and style, this time wrapped in a fancy cloak."
+	icon_state = "mc_coat_cloak"
+	item_state = "mc_coat_cloak"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(melee = 35, bullet = 70, energy = 20, bomb = 15, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
 /obj/item/clothing/suit/greatcoat/general
 	name = "grey greatcoat"
 	desc = "A grey greatcoat. It's thick and insulated with furs, it makes you feel snug and warm."

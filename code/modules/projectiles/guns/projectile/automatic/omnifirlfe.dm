@@ -3,7 +3,7 @@
 /obj/item/weapon/gun/projectile/automatic/omnirifle
 	name = "FS BR 10x50mm \"Hustler\""
 	desc = "Heavy, inexpensive battle rifle of dubious quality.\
-		 A an inexpensive budget rifle, this rifle is a stripped down copy of the M12 Omnirifle, it fires a variety of utility and specialized munitions. \
+		 An inexpensive budget rifle, this rifle is a stripped down copy of the M12 Omnirifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example... frankly sucks and is limited to semiautomatic."
 	icon_state = "cheap-omnirifle"

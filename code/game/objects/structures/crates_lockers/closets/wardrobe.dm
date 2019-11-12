@@ -197,6 +197,56 @@
 	new /obj/item/clothing/head/rank/ironhammer(src)
 	new /obj/item/clothing/head/rank/ironhammer(src)
 
+/obj/structure/closet/wardrobe/militia
+	name = "Militia wardrobe"
+	icon_door = "militia"
+
+/obj/structure/closet/wardrobe/militia/populate_contents()
+	new /obj/item/clothing/under/rank/trooper(src)
+	new /obj/item/clothing/under/rank/trooper(src)
+	new /obj/item/clothing/under/rank/trooper/tan(src)
+	new /obj/item/clothing/under/rank/trooper/tan(src)
+	new /obj/item/clothing/under/rank/trooper/green(src)
+	new /obj/item/clothing/under/rank/trooper/green(src)
+	new /obj/item/clothing/under/rank/cadet(src)
+	new /obj/item/clothing/under/rank/cadet(src)
+	new /obj/item/clothing/under/rank/cadet(src)
+	new /obj/item/clothing/under/rank/cadet(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/mask/balaclava/tactical(src)
+	new /obj/item/clothing/mask/balaclava/tactical(src)
+	new /obj/item/clothing/mask/balaclava/tactical(src)
+	new /obj/item/clothing/mask/balaclava/tactical(src)
+
+/obj/structure/closet/wardrobe/militia/accessory
+	name = "Militia acessory wardrobe"
+	icon_door = "militia"
+
+/obj/structure/closet/wardrobe/militia/accessory/populate_contents()
+	new /obj/item/clothing/head/rank/trooper/beret(src)
+	new /obj/item/clothing/head/rank/trooper/beret(src)
+	new /obj/item/clothing/head/rank/trooper/beret(src)
+	new /obj/item/clothing/head/rank/trooper/cap(src)
+	new /obj/item/clothing/head/rank/trooper/cap(src)
+	new /obj/item/clothing/head/rank/trooper/cap(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/holster/hip(src)
+	new /obj/item/clothing/accessory/holster/hip(src)
+	new /obj/item/clothing/accessory/holster/hip(src)
+	new /obj/item/clothing/accessory/holster/leg(src)
+	new /obj/item/clothing/accessory/holster/leg(src)
+	new /obj/item/clothing/mask/bandana(src)
+	new /obj/item/clothing/mask/bandana(src)
+	new /obj/item/clothing/mask/bandana/camo(src)
+	new /obj/item/clothing/mask/bandana/camo(src)
 
 /obj/structure/closet/wardrobe/job/science_white
 	name = "science wardrobe"

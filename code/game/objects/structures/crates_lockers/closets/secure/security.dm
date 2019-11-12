@@ -133,6 +133,9 @@
 	new /obj/item/ammo_magazine/a10mm/rubber(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
+	new /obj/item/clothing/suit/armor/platecarrier/ih(src)
+	new /obj/item/taperoll/police(src)
+	new /obj/item/clothing/head/seccap(src)
 
 /obj/structure/closet/secure_closet/medspec
 	name = "Ironhammer Medical Specialist locker"

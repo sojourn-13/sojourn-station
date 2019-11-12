@@ -68,6 +68,18 @@
 	desc = "A peaked cap in a purple color."
 	icon_state = "purplesoft"
 
+/obj/item/clothing/head/soft/tan
+	name = "tan cap"
+	initial_name = "tan patrol cap"
+	desc = "A patrol cap in tan."
+	icon_state = "tansoft"
+
+/obj/item/clothing/head/soft/green2
+	name = "green patrol cap"
+	initial_name = "tan cap"
+	desc = "A patrol cap in green."
+	icon_state = "green2soft"
+
 /obj/item/clothing/head/customcap
 	name = "customized cap"
 	initial_name = "customized  cap"

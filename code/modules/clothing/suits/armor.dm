@@ -143,6 +143,89 @@
 	flags_inv = 0
 	body_parts_covered = UPPER_TORSO|ARMS
 
+//Blackshield armor
+/obj/item/clothing/suit/armor/platecarrier
+	name = "plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes."
+	icon_state = "platecarrier"
+	item_state = "platecarrier"
+	blood_overlay_type = "armor"
+	armor = list(melee = 35, bullet = 50, energy = 15, bomb = 10, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/platecarrier/ih
+	name = "plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, in security colors."
+	icon_state = "platecarrier_ih"
+	item_state = "platecarrier_ih"
+
+/obj/item/clothing/suit/armor/platecarrier/militia
+	name = "Militia plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one ears the distinct IFF stripes of the Blackshield Militia."
+	icon_state = "platecarrier_mil"
+	item_state = "platecarrier_mil"
+
+/obj/item/clothing/suit/armor/platecarrier/corpsman
+	name = "Corpsman plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman liverly and has a stain resistant coating."
+	icon_state = "platecarrier_corpsman"
+	item_state = "platecarrier_corpsman"
+	armor = list(melee = 35, bullet = 50, energy = 15, bomb = 10, bio = 20, rad = 0)
+
+obj/item/clothing/suit/armor/platecarrier/green
+	name = "green plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits wooded areas well."
+	icon_state = "platecarrier_green"
+	item_state = "platecarrier_green"
+
+obj/item/clothing/suit/armor/platecarrier/tan
+	name = "tan plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits endless desert warfare well."
+	icon_state = "platecarrier_tan"
+	item_state = "platecarrier_tan"
+
+obj/item/clothing/suit/armor/flackvest
+	name = "flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel."
+	icon_state = "flakvest"
+	item_state = "flakvest"
+	blood_overlay_type = "armor"
+	slowdown = 0.5
+	armor = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
+
+obj/item/clothing/suit/armor/flackvest/militia
+	name = "militia flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
+			This one is marked with the distinct IFF stripes of the Blackshield Militia."
+	icon_state = "flakvest_mil"
+	item_state = "flakvest_mil"
+
+obj/item/clothing/suit/armor/flackvest/green
+	name = "flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations.\
+			Some folks are born made to wave the flag."
+	icon_state = "flakvest_green"
+	item_state = "flakvest_green"
+
+obj/item/clothing/suit/armor/commander
+	name = "commander's armored coat"
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor."
+	icon_state = "commander"
+	item_state = "commander"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(melee = 55, bullet = 60, energy = 30, bomb = 30, bio = 0, rad = 0)
+	slowdown = 0.2
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+obj/item/clothing/suit/armor/commander/militia
+	name = "Militia Commander's armored coat"
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Militia Commander.."
+	icon_state = "commander_mil"
+	item_state = "commander_mil"
+
 //Reactive armor
 //When the wearer gets hit, this armor will teleport the user a short distance away (to safety or to more danger, no one knows. That's the fun of it!)
 /obj/item/clothing/suit/armor/reactive
