@@ -66,8 +66,12 @@
 	name = "FS HG .44 \"Lamia\" Advanced"
 	build_path = /obj/item/weapon/gun/projectile/lamia/scoped_lamia
 
+/datum/design/autolathe/gun/dark_lamia
+	name = "FS HG .44 \"Naga\""
+	build_path = /obj/item/weapon/gun/projectile/lamia/dark_lamia
+
 /datum/design/autolathe/gun/deagle
-	name = "FS HG .50 \"Avasarala\""
+	name = "FS HG .50 \"Bolter\""
 	build_path = /obj/item/weapon/gun/projectile/deagle
 
 /datum/design/autolathe/gun/smg_sol

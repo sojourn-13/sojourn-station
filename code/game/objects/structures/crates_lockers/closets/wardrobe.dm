@@ -208,10 +208,10 @@
 	new /obj/item/clothing/under/rank/trooper/tan(src)
 	new /obj/item/clothing/under/rank/trooper/green(src)
 	new /obj/item/clothing/under/rank/trooper/green(src)
-	new /obj/item/clothing/under/rank/cadet(src)
-	new /obj/item/clothing/under/rank/cadet(src)
-	new /obj/item/clothing/under/rank/cadet(src)
-	new /obj/item/clothing/under/rank/cadet(src)
+	new /obj/item/clothing/under/rank/trooper/cadet(src)
+	new /obj/item/clothing/under/rank/trooper/cadet(src)
+	new /obj/item/clothing/under/rank/trooper/cadet(src)
+	new /obj/item/clothing/under/rank/trooper/cadet(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/shoes/jackboots(src)
@@ -245,8 +245,8 @@
 	new /obj/item/clothing/accessory/holster/leg(src)
 	new /obj/item/clothing/mask/bandana(src)
 	new /obj/item/clothing/mask/bandana(src)
-	new /obj/item/clothing/mask/bandana/camo(src)
-	new /obj/item/clothing/mask/bandana/camo(src)
+	new /obj/item/clothing/suit/sling(src)
+	new /obj/item/clothing/suit/sling(src)
 
 /obj/structure/closet/wardrobe/job/science_white
 	name = "science wardrobe"

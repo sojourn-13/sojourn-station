@@ -148,6 +148,16 @@
 	embed = FALSE
 	sharp = FALSE
 
+
+/obj/item/projectile/bullet/c10mm/practice
+	name = "training bullet"
+	damage = DAMAGE_10X50 * PRACTICE_DAMAGE_MULTIPLIER
+	agony = DAMAGE_10X50 * PRACTICE_AGONY_MULTIPLIER
+	armor_penetration = ARMOR_PENETRATION_10X50 * PRACTICE_PENETRATION_MULTIPLIER
+	embed = FALSE
+	sharp = FALSE
+	can_ricochet = FALSE
+
 /obj/item/projectile/bullet/c10mm/hv
 	name = "SLAP bullet"
 	damage = 20
@@ -156,6 +166,7 @@
 	step_delay = HIGH_VELOCITY_STEP_DELAY
 	embed = FALSE
 	sharp = TRUE
+	can_ricochet = FALSE
 
 /obj/item/projectile/bullet/c10mm/lethal
 	name = "hollow-point bullet"

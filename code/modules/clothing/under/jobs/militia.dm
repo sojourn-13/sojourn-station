@@ -28,19 +28,13 @@
 	icon_state = "gorka_tan"
 	item_state = "gorka_tan"
 
-/obj/item/clothing/under/rank/corpsman/gorka_ih_med_b
-	name = "medical specialist gorka"
+/obj/item/clothing/under/rank/corpsman
+	name = "Medical Corpsman uniform"
 	desc = "A durable, baggy uniform featuring blue medical liverly and stain-resistant coating."
 	icon_state = "gorka_ih_med_b"
 	item_state = "gorka_ih_med_b"
 	permeability_coefficient = 0.50
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
-
-/obj/item/clothing/under/rank/corpsman
-	name = "Medical Corpsman jumpsuit"
-	desc = "A durable Medical Corpsman's jumpsuit, designed to provide moderate combat protection."
-	icon_state = "medspec"
-	item_state = "ba_suit"
 
 	siemens_coefficient = 0.9
 
@@ -52,7 +46,7 @@
 
 /obj/item/clothing/under/rank/armorer/green
 	name = "green Armorer's gorka"
-	desc = "A rugged set of militant and quite slavic two-tone clothes with the pins of a Blackshield Militia Master-at-Arms.."
+	desc = "A rugged set of militant and quite slavic two-tone clothes with the pins of a Blackshield Militia Master-at-Arms."
 	icon_state = "gorka"
 	item_state = "gorka"
 
@@ -84,18 +78,16 @@
 	desc = "It's a uniform worn by those few with the dedication to achieve the position of \"Blackshield Commander\"."
 	icon_state = "commander"
 
-
-
 /obj/item/clothing/suit/armor/commander/militia
 	name = "Militia Commander's armored coat"
-	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Militia Commander.."
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Militia Commander."
 	icon_state = "commander_mil"
 	item_state = "commander_mil"
 	siemens_coefficient = 0.6
 
 //Cadet
-/obj/item/clothing/under/rank/cadet
+/obj/item/clothing/under/rank/trooper/cadet
 	name = "green cadet uniform"
-	desc = "A rugged, baggy, one-size-fits-all set of militant and quite slavic two-tone clothes for volunteers, cadets, and conscripts.."
+	desc = "A rugged, baggy, one-size-fits-all set of militant and quite slavic two-tone clothes for volunteers, cadets, and conscripts."
 	icon_state = "gorka"
 	item_state = "gorka"

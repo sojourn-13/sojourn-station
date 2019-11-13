@@ -64,6 +64,12 @@
 	desc = "A rifle magazine with a blue stripe for less-lethal rounds."
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
+/obj/item/ammo_magazine/c10mm/practice
+	name = "magazine (10x50mm training)"
+	icon_state = "c10mmp"
+	desc = "A rifle magazine with blue and red stripes for training rounds."
+	ammo_type = /obj/item/ammo_casing/c10mm/practice
+
 /obj/item/ammo_magazine/c10mm/hv
 	name = "magazine (10x50mm SLAP)"
 	icon_state = "c10mmhv"

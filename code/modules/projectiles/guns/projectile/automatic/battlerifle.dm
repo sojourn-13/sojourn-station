@@ -1,5 +1,3 @@
-//The name is welcome to be changed, it's referring to being a big-bore sabot rifle that can throw almost any kind of projectile.
-
 /obj/item/weapon/gun/projectile/automatic/omnirifle
 	name = "FS BR 10x50mm \"Hustler\""
 	desc = "Heavy, inexpensive battle rifle of dubious quality.\
@@ -76,7 +74,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
-	zoom_factor = 1
+	zoom_factor = 0.8
 	recoil_buildup = 0.4
 
 
@@ -92,7 +90,7 @@
 	price_tag = 3500
 	recoil = 0.6
 	damage_multiplier = 1.2
-	zoom_factor = 1.5
+	zoom_factor = 0.9
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine

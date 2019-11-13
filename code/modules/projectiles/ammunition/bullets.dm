@@ -23,6 +23,11 @@
 	caliber = "10x50mm"
 	projectile_type = /obj/item/projectile/bullet/c10mm/rubber
 
+/obj/item/ammo_casing/c10mm/practice
+	desc = "A 10x50mm training bullet casing."
+	caliber = "10x50mm"
+	projectile_type = /obj/item/projectile/bullet/c10mm/practice
+
 /obj/item/ammo_casing/c10mm/hv
 	desc = "A 10x50mm high-velocity bullet casing."
 	caliber = "10x50mm"

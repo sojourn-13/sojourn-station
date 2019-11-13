@@ -143,17 +143,17 @@
 	desc = "A faded black beret with the badge of a Blackshield Master-at-Arms."
 	icon_state = "beret_militia"
 
-/obj/item/clothing/head/rank/commander/beret
+/obj/item/clothing/head/rank/milcom/beret
 	name = "Militia Commander's beret"
 	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield Militia Commander."
 	icon_state = "beret_militia"
 
-/obj/item/clothing/head/rank/commander/cap
+/obj/item/clothing/head/rank/milcom
 	name = "Militia Commander's cap"
 	desc = "A crisp peaked cap signifying the distinguished martial position of the Commander of the Blackshield Militia."
-	icon_state = "commander"
+	icon_state = "commander_cap"
 
-/obj/item/clothing/head/intstuctor
+/obj/item/clothing/head/rank/instructor_hat
 	name = "campaign cover"
 	desc = "Mama, mama, can't you see what this Corps has done to me?"
 	icon_state = "instructor"

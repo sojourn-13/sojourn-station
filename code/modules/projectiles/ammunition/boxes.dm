@@ -69,6 +69,11 @@
 	icon_state = "box10x50mmr"
 	desc = "A box of 10x50mm Omnirifle ammunition. 60ct, 10mm deforming traumatic rounds."
 
+/obj/item/ammo_magazine/ammobox/c10mm/practice
+	name = "ammunition box (10x50mm training)"
+	icon_state = "box10x50mmp"
+	desc = "A box of 10x50mm Omnirifle ammunition. 60ct, 7mm subcaliber frangible training rounds."
+
 /obj/item/ammo_magazine/ammobox/c10mm/hv
 	name = "ammunition box (10x50mm SLAP)"
 	icon_state = "box10x50mmhv"

@@ -70,6 +70,10 @@
 	name = "magazine (10mmx50mm rubber)"
 	build_path = /obj/item/ammo_magazine/c10mm/rubber
 
+/datum/design/autolathe/ammo/magazine_c10mm_practice
+	name = "magazine (10mmx50mm training)"
+	build_path = /obj/item/ammo_magazine/c10mm/practice
+
 /datum/design/autolathe/ammo/magazine_c10mm_hv
 	name = "magazine (10mmx50mm SLAP)"
 	build_path = /obj/item/ammo_magazine/c10mm/hv
@@ -276,6 +280,10 @@
 /datum/design/autolathe/ammo/box_c10mm/rubber
 	name = "ammunition box (10x50mm rubber)"
 	build_path = /obj/item/ammo_magazine/ammobox/c10mm/rubber
+
+/datum/design/autolathe/ammo/box_c10mm/practice
+	name = "ammunition box (10x50mm training)"
+	build_path = /obj/item/ammo_magazine/ammobox/c10mm/practice
 
 /datum/design/autolathe/ammo/box_c10mm/hv
 	name = "ammunition box (10x50mm SLAP)"
