@@ -54,6 +54,36 @@
 	//icon_state = "box10mm-hv"
 	//ammo_type = /obj/item/ammo_casing/a10mm/hv
 
+/obj/item/ammo_magazine/ammobox/c10mm
+	name = "ammunition box (10x50mm ball)"
+	icon_state = "box10x50mm"
+	desc = "A box of 10x50mm Omnirifle ammunition. 60ct, 7mm FMJ subcaliber sabots."
+	matter = list(MATERIAL_STEEL = 15)
+	w_class = ITEM_SIZE_BULKY
+	caliber = "10x50mm"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	max_ammo = 60
+
+/obj/item/ammo_magazine/ammobox/c10mm/rubber
+	name = "ammunition box (10x50mm rubber)"
+	icon_state = "box10x50mmr"
+	desc = "A box of 10x50mm Omnirifle ammunition. 60ct, 10mm deforming traumatic rounds."
+
+/obj/item/ammo_magazine/ammobox/c10mm/practice
+	name = "ammunition box (10x50mm training)"
+	icon_state = "box10x50mmp"
+	desc = "A box of 10x50mm Omnirifle ammunition. 60ct, 7mm subcaliber frangible training rounds."
+
+/obj/item/ammo_magazine/ammobox/c10mm/hv
+	name = "ammunition box (10x50mm SLAP)"
+	icon_state = "box10x50mmhv"
+	desc = "A box of 10x50mm Omnirifle ammunition. 60ct, 5mm Saboted Light Armor Penetrators, spoon-tipped."
+
+/obj/item/ammo_magazine/ammobox/c10mm/lethal
+	name = "ammunition box (10x50mm hollow-tip)"
+	icon_state = "box10x50mml"
+	desc = "A box of 10x50mm Omnirifle ammunition. 60ct, 10mm hollow-tipped full-caliber."
+
 /obj/item/ammo_magazine/ammobox/c9mm
 	name = "ammunition box (9mm)"
 	icon_state = "box9mm"

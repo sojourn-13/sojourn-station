@@ -35,8 +35,11 @@
 /datum/supply_pack/cardgaming
 	name = "Card Gaming Crate"
 	contains = list(/obj/item/weapon/deck/cards,
-					/obj/item/weapon/deck/cards,
-					/obj/item/weapon/deck/cards,
+					/obj/item/weapon/deck/cah,
+					/obj/item/weapon/deck/cah/black,
+					/obj/item/weapon/pack/cardemon,
+					/obj/item/weapon/pack/spaceball,
+					/obj/item/weapon/cardholder,
 					/obj/item/weapon/deck/tarot,
 					/obj/item/weapon/storage/pill_bottle/dice)
 	cost = 500

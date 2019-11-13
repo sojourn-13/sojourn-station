@@ -159,3 +159,28 @@
 	name = "NeoTheology belt"
 	desc = "Waist-held holy items."
 	icon_state = "ntbelt"
+
+/obj/item/weapon/storage/belt/webbing
+	name = "web harness"
+	desc = "Everything you need at hand, at belt."
+	icon_state = "webbing"
+	item_state = "webbing"
+	storage_slots = 9
+
+/obj/item/weapon/storage/belt/webbing/green
+	name = "green web harness"
+	desc = "Everything you need at hand, at belt."
+	icon_state = "webbing_green"
+	item_state = "webbing_green"
+
+/obj/item/weapon/storage/belt/webbing/black
+	name = "black web harness"
+	desc = "Everything you need at hand, at belt."
+	icon_state = "webbing_black"
+	item_state = "webbing_black"
+
+/obj/item/weapon/storage/belt/webbing/ih
+	name = "security web harness"
+	desc = "Everything you need at hand, at belt."
+	icon_state = "webbing_ih"
+	item_state = "webbing_ih"

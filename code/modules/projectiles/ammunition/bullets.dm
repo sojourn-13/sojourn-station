@@ -13,6 +13,31 @@
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/a10mm/hv
 
+/obj/item/ammo_casing/c10mm
+	desc = "A 10x50mm bullet casing."
+	caliber = "10x50mm"
+	projectile_type = /obj/item/projectile/bullet/c10mm
+
+/obj/item/ammo_casing/c10mm/rubber
+	desc = "A 10x50mm rubber bullet casing."
+	caliber = "10x50mm"
+	projectile_type = /obj/item/projectile/bullet/c10mm/rubber
+
+/obj/item/ammo_casing/c10mm/practice
+	desc = "A 10x50mm training bullet casing."
+	caliber = "10x50mm"
+	projectile_type = /obj/item/projectile/bullet/c10mm/practice
+
+/obj/item/ammo_casing/c10mm/hv
+	desc = "A 10x50mm high-velocity bullet casing."
+	caliber = "10x50mm"
+	projectile_type = /obj/item/projectile/bullet/c10mm/hv
+
+/obj/item/ammo_casing/c10mm/lethal
+	desc = "A 10x50mm bullet casing."
+	caliber = "10x50mm"
+	projectile_type = /obj/item/projectile/bullet/c10mm/lethal
+
 /obj/item/ammo_casing/c9mm
 	desc = "A 9mm bullet casing."
 	caliber = "9mm"

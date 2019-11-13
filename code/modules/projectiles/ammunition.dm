@@ -154,6 +154,7 @@
 #define MAG_WELL_PISTOL		1	//Pistols
 #define MAG_WELL_SMG		2	//smgs
 #define MAG_WELL_CIVI_RIFLE	4	//Normal non IH or AK rifles
+#define MAG_WELL_OMNI		6	//10mm omnirifles
 #define MAG_WELL_IH			8	//IH guns
 #define MAG_WELL_AK			16	//AKs
 #define MAG_WELL_BOX		32	//Lmgs with box mags

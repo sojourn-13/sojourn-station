@@ -38,3 +38,13 @@
 	zoom_factor = 0.4
 	recoil = 0.7
 	price_tag = 2500
+
+/obj/item/weapon/gun/projectile/lamia/dark_lamia
+	name = "FS HG .44 \"Naga\""
+	desc = "FS HG .44 \"Naga\", a heavy pistol of SolFed enforcers and commisars, fitted with a smart-linked optic and stabilizer. Uses .44 rounds."
+	icon_state = "dark_lamia"
+	item_state = "dark_lamia"
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
+	zoom_factor = 0.4
+	recoil = 0.7
+	price_tag = 2200

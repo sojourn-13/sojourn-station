@@ -66,8 +66,12 @@
 	name = "FS HG .44 \"Lamia\" Advanced"
 	build_path = /obj/item/weapon/gun/projectile/lamia/scoped_lamia
 
+/datum/design/autolathe/gun/dark_lamia
+	name = "FS HG .44 \"Naga\""
+	build_path = /obj/item/weapon/gun/projectile/lamia/dark_lamia
+
 /datum/design/autolathe/gun/deagle
-	name = "FS HG .50 \"Avasarala\""
+	name = "FS HG .50 \"Bolter\""
 	build_path = /obj/item/weapon/gun/projectile/deagle
 
 /datum/design/autolathe/gun/smg_sol
@@ -103,12 +107,44 @@
 	build_path = /obj/item/weapon/gun/projectile/IH_sidearm
 
 /datum/design/autolathe/gun/colt
-	name = "FS HG .45 \"M1911A1\""
+	name = "FS HG .45 \"Colt\""
 	build_path = /obj/item/weapon/gun/projectile/colt
 
 /datum/design/autolathe/gun/IH_colt
-	name = "FS HG .45 \"M1911A4\""
+	name = "FS HG .45 \"Bronco\""
 	build_path = /obj/item/weapon/gun/projectile/colt/IH_colt
+
+/datum/design/autolathe/gun/ten
+	name = "FS HG 10mm \"Delta Elite\""
+	build_path = /obj/item/weapon/gun/projectile/colt/ten
+
+/datum/design/autolathe/gun/ten_dark
+	name = "FS HG 10mm \"Stallion\""
+	build_path = /obj/item/weapon/gun/projectile/colt/ten/dark
+
+/datum/design/autolathe/gun/standard_omnirifle
+	name = "FS BR 10x50mm \"Omnirifle\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/standard
+
+/datum/design/autolathe/gun/scoped_omnirifle
+	name = "FS BR 10x50mm \"Longarm\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped
+
+/datum/design/autolathe/gun/fancy_omnirifle
+	name = "FS BR 10x50mm \"Osprey\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/fancy
+
+/datum/design/autolathe/gun/omnirifle
+	name = "FS BR 10x50mm \"Hustler\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/
+
+/datum/design/autolathe/gun/omnicarbine
+	name = "FS BR 10x50mm \"Boar\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine
+
+/datum/design/autolathe/gun/rds_omnicarbine
+	name = "FS BR 10x50mm \"Boar\" RDS"
+	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds
 
 /datum/design/autolathe/gun/IH_smg
 	name = "FS SMG 9x19 \"Straylight\""
@@ -117,6 +153,10 @@
 /datum/design/autolathe/gun/IH_machinepistol
 	name = "FS MP 9x19 \"Molly\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/IH_machinepistol
+
+/datum/design/autolathe/gun/drozd
+	name = "Excelsior 9x19 \"Drozd\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/drozd
 
 /datum/design/autolathe/gun/z8
 	name = "FS CAR 5.56x45mm \"Z8 Bulldog\""

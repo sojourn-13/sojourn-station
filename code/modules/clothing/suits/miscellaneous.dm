@@ -189,3 +189,22 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "zhan_furs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
+
+/obj/item/clothing/suit/sling
+	name = "universal sling"
+	desc = "A generic universal equipment sling for whatever you could need on your back."
+	icon_state = "universal_sling"
+	allowed = list (/obj/item/weapon/gun,
+	/obj/item/device,
+	/obj/item/weapon/material,
+	/obj/item/weapon/storage/pouch,
+	/obj/item/weapon/storage/box,
+	/obj/item/weapon/storage/firstaid,
+	/obj/item/weapon/storage/lockbox,
+	/obj/item/weapon/storage/part_replacer,
+	/obj/item/weapon/storage/secure,
+	/obj/item/weapon/storage/toolbox,
+	/obj/item/weapon/tank,
+	/obj/item/ammo_magazine,
+	/obj/item/ammo_magazine/ammobox/
+	)

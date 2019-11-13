@@ -116,6 +116,10 @@
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/personal/security/populate_contents()
+	if(prob(75))
+		new /obj/item/weapon/gun/projectile/IH_sidearm(src)
+	else
+		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
 	new /obj/item/weapon/storage/backpack/security(src)
 	new /obj/item/weapon/storage/backpack/satchel/sec(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
@@ -127,9 +131,11 @@
 	new /obj/item/weapon/gun/projectile/automatic/sol/rds(src)
 	new /obj/item/ammo_magazine/a10mm/rubber(src)
 	new /obj/item/ammo_magazine/a10mm/rubber(src)
-	new /obj/item/weapon/gun/projectile/IH_sidearm(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
+	new /obj/item/clothing/suit/armor/platecarrier/ih(src)
+	new /obj/item/taperoll/police(src)
+	new /obj/item/clothing/head/seccap(src)
 
 /obj/structure/closet/secure_closet/medspec
 	name = "Ironhammer Medical Specialist locker"

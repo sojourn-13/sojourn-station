@@ -33,3 +33,15 @@
 	desc = "A red armband signifying a security position."
 	icon_state = "red"
 	slot = "armband"
+
+/obj/item/clothing/accessory/armband/militia
+	name = "Militia armband"
+	desc = "A blue and white armband signifying a Militiaman position."
+	icon_state = "blackshield"
+	slot = "armband"
+
+/obj/item/clothing/accessory/armband/corpsman
+	name = "Corpsman armband"
+	desc = "A blue and white armband signifying a Medical Corpsman position."
+	icon_state = "corpsman"
+	slot = "armband"

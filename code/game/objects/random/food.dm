@@ -15,8 +15,6 @@
 	icon_state = "food-green-low"
 	spawn_nothing_percentage = 60
 
-
-
 /obj/random/junkfood
 	name = "random junkfood"
 	icon_state = "food-red"
@@ -39,9 +37,37 @@
 	icon_state = "food-red-low"
 	spawn_nothing_percentage = 60
 
+/obj/random/junkfood/onlypizza
+	name = "random pizza"
 
+/obj/random/junkfood/onlypizza/item_to_spawn()
+	return pick(/obj/item/pizzabox/margherita,\
+				/obj/item/pizzabox/mushroom,\
+				/obj/item/pizzabox/meat,\
+				/obj/item/pizzabox/vegetable)
 
+/obj/random/junkfood/onlyburger
+	name = "random burger"
 
+/obj/random/junkfood/onlyburger/item_to_spawn()
+	return pick(/obj/item/weapon/reagent_containers/food/snacks/bigbiteburger,\
+				/obj/item/weapon/reagent_containers/food/snacks/cheeseburger,\
+				/obj/item/weapon/reagent_containers/food/snacks/jellyburger,\
+				/obj/item/weapon/reagent_containers/food/snacks/tofuburger)
+
+/obj/random/junkfood/onlycake
+	name = "random cake"
+
+/obj/random/junkfood/onlycake/item_to_spawn()
+	return pick(/obj/item/weapon/reagent_containers/food/snacks/sliceable/applecake,\
+			/obj/item/weapon/reagent_containers/food/snacks/sliceable/birthdaycake,\
+			/obj/item/weapon/reagent_containers/food/snacks/sliceable/carrotcake,\
+			/obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesecake,\
+			/obj/item/weapon/reagent_containers/food/snacks/sliceable/chocolatecake,\
+			/obj/item/weapon/reagent_containers/food/snacks/sliceable/lemoncake,\
+			/obj/item/weapon/reagent_containers/food/snacks/sliceable/limecake,\
+			/obj/item/weapon/reagent_containers/food/snacks/sliceable/orangecake,\
+			/obj/item/weapon/reagent_containers/food/snacks/sliceable/plaincake)
 
 /obj/random/junkfood/rotten
 	name = "random spoiled food"

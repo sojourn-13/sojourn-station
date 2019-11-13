@@ -18,6 +18,31 @@
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 100
 
+//Blackshield helmets
+/obj/item/clothing/head/helmet/ballistic
+	name = "helmet"
+	desc = "Standard military gear. Protects the head from impacts and shrapnel."
+	icon_state = "helmet_mil"
+	armor = list(melee = 35, bullet = 45,energy = 30, bomb = 30, bio = 0, rad = 0)
+
+/obj/item/clothing/head/helmet/ballistic/militia
+	name = "Militia helmet"
+	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
+			This one bears the IFF stripes of the Blackshield Militia."
+	icon_state = "helmet_mil_alt"
+
+/obj/item/clothing/head/helmet/ballistic/green
+	name = "helmet"
+	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
+			Some folks are born to kill."
+	icon_state = "helmet_green"
+
+/obj/item/clothing/head/helmet/ballistic/tan
+	name = "helmet"
+	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
+			Smells like sweat."
+	icon_state = "helmet_tan"
+
 /obj/item/clothing/head/helmet/botanist
 	name = "botanist hood"
 	desc = "Don't want anything getting in your eyes."

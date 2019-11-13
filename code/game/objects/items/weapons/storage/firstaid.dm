@@ -158,6 +158,69 @@
 
 	make_exact_fit()
 
+
+/obj/item/weapon/storage/firstaid/ifak
+	name = "IFAK"
+	desc = "Individual First Aid Kit"
+	icon = 'icons/inventory/pockets/icon.dmi'
+	icon_state = "medical_supply"
+	item_state = "medical_supply"
+
+	w_class = ITEM_SIZE_SMALL
+	slot_flags = SLOT_BELT
+	storage_slots = 4
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_SMALL_STORAGE
+	matter = list(MATERIAL_BIOMATTER = 12)
+	attack_verb = list("pouched")
+
+	var/sliding_behavior = FALSE
+
+/obj/item/weapon/storage/firstaid/ifak/verb/toggle_slide()
+	set name = "Toggle Slide"
+	set desc = "Toggle the behavior of last item in [src] \"sliding\" into your hand."
+	set category = "Object"
+
+	sliding_behavior = !sliding_behavior
+	to_chat(usr, SPAN_NOTICE("Items will now [sliding_behavior ? "" : "not"] slide out of [src]"))
+
+/obj/item/weapon/storage/firstaid/ifak/attack_hand(mob/living/carbon/human/user)
+	if(sliding_behavior && contents.len && (src in user))
+		var/obj/item/I = contents[contents.len]
+		if(istype(I))
+			hide_from(usr)
+			var/turf/T = get_turf(user)
+			remove_from_storage(I, T)
+			usr.put_in_hands(I)
+			add_fingerprint(user)
+	else
+		..()
+	can_hold = list(
+		/obj/item/device/scanner/health,
+		/obj/item/weapon/dnainjector,
+		/obj/item/weapon/reagent_containers/dropper,
+		/obj/item/weapon/reagent_containers/glass/beaker,
+		/obj/item/weapon/reagent_containers/glass/bottle,
+		/obj/item/weapon/reagent_containers/pill,
+		/obj/item/weapon/reagent_containers/syringe,
+		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/stack/medical,
+		/obj/item/clothing/mask/surgical,
+		/obj/item/clothing/head/surgery,
+		/obj/item/clothing/gloves/latex,
+		/obj/item/weapon/reagent_containers/hypospray,
+		/obj/item/clothing/glasses/hud/health,
+		)
+/obj/item/weapon/storage/firstaid/ifak/New()
+	..()
+	if (empty) return
+	new /obj/item/weapon/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/weapon/reagent_containers/pill/bicaridine(src)
+
+	return
+
 /*
  * Pill Bottles
  */

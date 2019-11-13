@@ -959,7 +959,7 @@
 						/obj/item/weapon/reagent_containers/food/drinks/tea/black = 10)
 	vend_delay = 15
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
-	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?"
+	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?;Care for a cup of coffe? It's Irish.;Whiskey for your sorrows, Beer for your break."
 	product_ads = "Drink up!;Booze is good for you!;Alcohol is humanity's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 2053!;Award-winning wine!;Maximum alcohol!;Man loves beer.;A toast for progress!"
 	auto_price = FALSE
 
@@ -979,7 +979,8 @@
 /obj/machinery/vending/coffee
 	name = "hot drinks machine"
 	desc = "A vending machine which dispenses hot drinks."
-	product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the galaxy.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our new chocolate!"
+	product_slogans = "Care for a cup of hot joe?;Care for a cup of coffee?;How about a pick-me-upper?;Tea, sir/madame?;I hope you ask me for a bloody cup o' tea...;Only the finest!"
+	product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the galaxy.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our hot chocolate!"
 	icon_state = "coffee"
 	icon_vend = "coffee-vend"
 	vend_delay = 34
@@ -998,8 +999,8 @@
 /obj/machinery/vending/snack
 	name = "Getmore Chocolate Corp"
 	desc = "A snack machine courtesy of the Getmore Chocolate Corporation."
-	product_slogans = "Try our new nougat bar!;Twice the calories for half the price!"
-	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Oh my god it's so juicy!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks straight from mars.;We love chocolate!;Try our new jerky!"
+	product_slogans = "Try our new nougat bar!;Twice the calories for half the price!;You know you want it!;So good, try it!;Why not have a treat?;Better than Kitchen's food!"
+	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks straight from mars.;We love chocolate!;Try our new jerky!;Have a treat!;Crunchy!"
 	icon_state = "snack"
 	products = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 6,
 					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 6,
@@ -1024,8 +1025,8 @@
 /obj/machinery/vending/weapon_machine
 	name = "Frozen Star Guns&Ammo"
 	desc = "A self-defense equipment vending machine. When you need to take care of that clown."
-	product_slogans = "The best defense is good offense!;Buy for your whole family today!;Nobody can outsmart bullet!;God created man - Frozen Star made them EQUAL!;Stupidity can be cured! By LEAD.;Dead kids can't bully your children!"
-	product_ads = "Stunning!;Take justice in your own hands!;LEADearship!"
+	product_slogans = "The best defense is good offense!;Buy for your whole family today!;Nobody can outsmart bullet!;God created man - Frozen Star made them EQUAL!;Stupidity can be cured! By LEAD.;Dead kids can't bully your children!;Guns kill people, It's never your fault!;It's dangerous to go unarmed, take this!;Buy more ammo, you never know when you'll need it!" //Yes, It's a Zelda reference, fight me - Papalus
+	product_ads = "Stunning!;Take justice in your own hands!;LEADership!;It's not your fault!;His fault for being in sights!;Serve them a cold plate of justice!;Justice in Lead form!;Smell the gunpowder!;Better now than never!;Frozen Star: We LEAD you to victory!"
 	icon_state = "weapon"
 	no_criminals = TRUE
 	products = list(/obj/item/device/flash = 6,
@@ -1100,7 +1101,7 @@
 /obj/machinery/vending/cart
 	name = "PTech"
 	desc = "PDAs and hardware."
-	product_slogans = "PDAs for everyone!"
+	product_slogans = "PDAs for everyone!;You get a PDA! And you get a PDA!;You lost it again?;"
 	icon_state = "cart"
 	icon_deny = "cart-deny"
 	products = list(/obj/item/modular_computer/pda = 10,
@@ -1117,8 +1118,8 @@
 	name = "Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
 	icon_state = "Cola_Machine"
-	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not have some cola?;Please, have a drink!;Drink up!;The best drinks in space."
+	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!;Operating heavy machinery? Robust Softdrinks has you covered!;Just to fill your sweet tooth needs!;Don't belive the reports, It doesn't have that much sugar!;Thirsty? Why not have cola!;Get your sugarwater here!;The taste of freedom!"
+	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not have some cola?;Please, have a drink!;Drink up!;The best drinks in space.;Treat yourself to what you deserve!"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 10,
@@ -1144,8 +1145,8 @@
 /obj/machinery/vending/cigarette
 	name = "cigarette machine" //OCD had to be uppercase to look nice with the new formating
 	desc = "If you want to get cancer, might as well do it in style!"
-	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!"
-	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs."
+	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!;Who belives in Cancer?;Cancer? Better get it in style!;I'm willing to bet you that those Scientists did not smoke Space Cigs!;Don't stop smoking now, You'll get fat!"
+	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs.;Cigars avalible for premium customers.;Best taste in space!"
 	vend_delay = 34
 	icon_state = "cigs"
 	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10,
@@ -1165,7 +1166,7 @@
 	icon_state = "med"
 	icon_deny = "med-deny"
 	req_access = list(access_medical_equip)
-	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
+	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!;You do know how to use those, right?"
 	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
 					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/toxin = 4,
 					/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/syringe = 12,
@@ -1193,7 +1194,7 @@
 /obj/machinery/vending/wallmed1
 	name = "NanoMed"
 	desc = "Wall-mounted Medical Equipment dispenser."
-	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?"
+	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;I hope you know what you're doing."
 	icon_state = "wallmed"
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 	icon_deny = "wallmed-deny"
@@ -1217,7 +1218,8 @@
 /obj/machinery/vending/security
 	name = "SecTech"
 	desc = "A security equipment vendor."
-	product_ads = "Crack some skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
+	product_slogans = "Criminals don't commit crimes when they're already in prison!;Proper escalation? Who has time for that!;Criminal activity damns the criminal to hell. It's your job to send them there.;Remember, they were already beaten up when you got there.;Fuck the Non-Aggression Principle!"
+	product_ads = "Crack some skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?;Brutalize them!;Tag and bag!;Be quick, be robust."
 	icon_state = "sec"
 	icon_deny = "sec-deny"
 	req_access = list(access_security)
@@ -1243,7 +1245,7 @@
 /obj/machinery/vending/hydronutrients
 	name = "NutriMax"
 	desc = "A plant nutrients vendor."
-	product_slogans = "Aren't you glad you don't have to fertilize the natural way?;Now with 50% less stink!;Plants are people too!"
+	product_slogans = "Aren't you glad you don't have to fertilize the natural way?;Now with 50% less stink!;Plants are people too!;150% of the Effects, 0% of the smell!;We all like plants, don't we?;Remember to Never Underestimate Technology.;Take the spray and ROBUST THOSE PESTS!;Save your plants today!;Your plants deserve only the most Robust chemicals!"
 	product_ads = "We like plants!;Don't you want some?;The greenest thumbs ever.;We like big plants.;Soft soil..."
 	icon_state = "nutri"
 	icon_deny = "nutri-deny"
@@ -1261,8 +1263,8 @@
 /obj/machinery/vending/hydroseeds
 	name = "MegaSeed Servitor"
 	desc = "When you need seeds fast!"
-	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!"
-	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!"
+	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!;Seeds? We got you covered.;Remember: Glowshrooms are bad taste.;I'm legally advised to tell you that Nettles are poisonous.;Grow food, but keep Ambrosia handy."
+	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!;Just like your ancestors!"
 	icon_state = "seeds"
 	always_open = TRUE
 	can_stock = list(/obj/item/seeds)
@@ -1340,7 +1342,7 @@
 /obj/machinery/vending/dinnerware
 	name = "Dinnerware"
 	desc = "A kitchen and restaurant equipment vendor."
-	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these..."
+	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these...;Need knives? Got you covered."
 	icon_state = "dinnerware"
 	products = list(/obj/item/weapon/tray = 8,
 					/obj/item/weapon/material/kitchen/utensil/fork = 6,
@@ -1374,6 +1376,7 @@
 	name = "BODA"
 	desc = "An old sweet water vending machine,how did this end up here?"
 	icon_state = "sovietsoda"
+	product_slogans = "For Tsar and Country!;Fulfill your nutrition quota!;Drink to forget food.;You no hungry anymore, da?"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda = 30)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cola = 20)
@@ -1383,6 +1386,8 @@
 /obj/machinery/vending/tool
 	name = "YouTool"
 	desc = "Tools for tools."
+	product_slogans = "Tools, Gloves and everything you would need!; Need a belt?; Top quality tools, only here!; Doors shocked again? We have gloves!;Better than the competitors!"
+	product_ads = "Reliable!;Highest Quality!;Take a belt!;Colorful cables!;Insulated Gloves, only here!"
 	icon_state = "tool"
 	icon_deny = "tool-deny"
 	products = list(/obj/item/stack/cable_coil/random = 10,/obj/item/weapon/tool/crowbar = 5,/obj/item/weapon/tool/weldingtool = 5,/obj/item/weapon/tool/wirecutters = 5,
@@ -1395,6 +1400,7 @@
 /obj/machinery/vending/engivend
 	name = "Engi-Vend"
 	desc = "Spare tool vending. What? Did you expect some witty description?"
+	product_slogans = "Spare tools for your Engineering needs!;Forgot where we keep mesons again, didn't you?;Need a battery?;You need electronics? I got electronics."
 	icon_state = "engivend"
 	icon_deny = "engivend-deny"
 	products = list(/obj/item/clothing/glasses/powered/meson = 2,
@@ -1411,6 +1417,8 @@
 /obj/machinery/vending/engineering
 	name = "Robco Tool Maker"
 	desc = "Everything you need for do-it-yourself station repair."
+	product_slogans = "Engineering slacking again? Do their job!;Legally, I have to ask you not to use those tools to hack into anything.;Locked door? Tools here!;Big project and you're missing your precious wrench? I bet I can replace it!;The most robust tools on the ship!"
+	product_ads = "Best tools!;Cheap!;Reliable!;Do-It-Yourself!"
 	icon_state = "engi"
 	icon_deny = "engi-deny"
 	products = list(/obj/item/clothing/head/hardhat = 4,
@@ -1458,6 +1466,7 @@
 /obj/machinery/vending/robotics
 	name = "Robotech Deluxe"
 	desc = "All the tools you need to create your own robot army."
+	product_slogans = "Build your robot army TODAY!;How about a mech?;You know you need that Durand!;Lost your jumpsuit again?;Let's implant them, we both know they need it."
 	icon_state = "robotics"
 	icon_deny = "robotics-deny"
 	products = list(/obj/item/clothing/suit/storage/toggle/labcoat = 4,/obj/item/clothing/under/rank/roboticist = 4,/obj/item/stack/cable_coil = 4,/obj/item/device/flash = 4,
@@ -1470,6 +1479,7 @@
 /obj/machinery/vending/props
 	name = "prop dispenser"
 	desc = "All the props an actor could need. Probably."
+	product_slogans = "Every actor needs their banana peel!;Honk!;We all know who you're going to choose.;Be witty! Be funny!;Make them smile!;Everything an Actor needs and some things he doesn't.;Toys Extravaganza!"
 	icon_state = "Theater"
 	products = list(/obj/structure/flora/pottedplant = 2,
 					/obj/item/device/lighting/toggleable/lamp = 2,
@@ -1493,8 +1503,8 @@
 /obj/machinery/vending/theomat
 	name = "NeoTheology Theo-Mat"
 	desc = "A NeoTheology dispensary for disciples and new converts."
-	product_slogans = "Immortality is the reward of the faithful.; Help humanity ascend, join your brethren today!; Come and seek a new life!"
-	product_ads = "Praise!;Pray!;Obey!"
+	product_slogans = "Immortality is the reward of the faithful.; Help humanity ascend, join your brethren today!; Come and seek a new life!;Pray and Obey!"
+	product_ads = "Praise!;Pray!;Obey!;Only for the faithful!;Ascend!;Seek a new life!"
 	icon_state = "teomat"
 	vendor_department = DEPARTMENT_CHURCH
 	products = list(/obj/item/weapon/book/ritual/cruciform = 10,
@@ -1509,8 +1519,8 @@
 /obj/machinery/vending/powermat
 	name = "Asters Guild Power-Mat"
 	desc = "Trust is power, and there's no power you can trust like Robustcell."
-	product_slogans = "Trust is power, and there's no cell you can trust like Robustcell.;No battery is stronger nor lasts longer.;One that Lasts!;You can't top the copper top!"
-	product_ads = "Robust!;Trustworthy!;Durable!"
+	product_slogans = "Trust is power, and there's no cell you can trust like Robustcell.;No battery is stronger nor lasts longer.;One that Lasts!;You can't top the copper top!;Tesla doesn't have anything on us!;Don't belive the competitors, Our cells last longer!"
+	product_ads = "Robust!;Trustworthy!;Durable!;Robustcell - For your power needs!;Better than the others!;Stronger than the others!"
 	icon_state = "powermat"
 	products = list(/obj/item/weapon/cell/large = 10,
 					/obj/item/weapon/cell/large/high = 10,
@@ -1534,8 +1544,8 @@
 /obj/machinery/vending/printomat
 	name = "Asters Guild Print-o-Mat"
 	desc = "Everything you can imagine (not really) on a disc! Print your own gun TODAY."
-	product_slogans = "Print your own gun TODAY!;The future is NOW!;Can't stop the industrial revolution!"
-	product_ads = "Almost free!;Print it yourself!;Don't copy that floppy!"
+	product_slogans = "Print your own gun TODAY!;The future is NOW!;Can't stop the industrial revolution!;Everything you can imagine, RIGHT HERE!;Don't copy that floppy!;Who needs dreams when you can print everything you need?"
+	product_ads = "Almost free!;Print it yourself!;Don't copy that floppy!;Industrial Revolution!;Future!;Print your dreams TODAY!;Cheap and reliable!"
 	icon_state = "discomat"
 	products = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design = 20,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 10,
@@ -1580,6 +1590,65 @@
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 1200,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammoboxs = 2400,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 4000)
+
+/obj/machinery/vending/fitness
+	name = "SweatMAX"
+	desc = "Fueled by your inner inadequacy!"
+	icon_state = "fitness"
+	products = list(
+										/obj/item/weapon/cell/medium = 15) //Placeholder
+	prices = list(
+										/obj/item/weapon/cell/medium = 300)
+
+/obj/machinery/vending/kink
+	name = "KinkMate"
+	desc = "A vending machine for all your unmentionable desires."
+	icon_state = "kink"
+	product_slogans = "Kinky!;Sexy!;Check me out, big boy!"
+	product_ads = "We all need some relax time.;Feeling frisky?"
+	vend_reply = "Have fun, you shameless pervert!"
+	products = list(
+				/obj/item/clothing/under/costume/kinky/latex_maid = 5,
+				/obj/item/clothing/under/costume/kinky/leather = 5,
+				/obj/item/clothing/under/costume/kinky/sexy_clown = 5,
+				/obj/item/clothing/under/costume/kinky/sexy_mime = 5,
+				/obj/item/clothing/under/costume/kinky/stripper_green = 5,
+				/obj/item/clothing/under/costume/kinky/stripper_pink = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_engineer = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_internalaffairs = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_lumberjack = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_miner = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 5,
+				/obj/item/clothing/mask/costume/kinky/sexy_clown = 5,
+				/obj/item/clothing/mask/costume/kinky/sexy_mime = 5,
+				/obj/item/clothing/mask/muzzle = 5,
+				/obj/item/clothing/glasses/blindfold = 5,
+				/obj/item/weapon/handcuffs/fuzzy = 5,
+				/obj/item/weapon/tool/tape_roll = 5,
+				/obj/item/stack/cable_coil/random = 5,
+				/obj/item/clothing/suit/straight_jacket = 5,
+				/obj/item/weapon/legcuffs/fuzzy = 5)
+	prices = list(
+				/obj/item/clothing/under/costume/kinky/latex_maid = 200,
+				/obj/item/clothing/under/costume/kinky/leather = 200,
+				/obj/item/clothing/under/costume/kinky/sexy_clown = 200,
+				/obj/item/clothing/under/costume/kinky/sexy_mime = 200,
+				/obj/item/clothing/under/costume/kinky/stripper_green = 200,
+				/obj/item/clothing/under/costume/kinky/stripper_pink = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_engineer = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_internalaffairs = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_lumberjack = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_miner = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 200,
+				/obj/item/clothing/mask/costume/kinky/sexy_clown = 200,
+				/obj/item/clothing/mask/costume/kinky/sexy_mime = 200,
+				/obj/item/clothing/mask/muzzle = 200,
+				/obj/item/clothing/glasses/blindfold = 200,
+				/obj/item/weapon/handcuffs/fuzzy = 200,
+				/obj/item/weapon/tool/tape_roll = 50,
+				/obj/item/stack/cable_coil/random = 50,
+				/obj/item/clothing/suit/straight_jacket = 200,
+				/obj/item/weapon/legcuffs/fuzzy = 200)
 
 /obj/machinery/vending/custom
 	name = "Custom Vendomat"
