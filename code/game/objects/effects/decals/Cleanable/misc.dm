@@ -51,8 +51,6 @@
 	mouse_opacity = 0
 	random_rotation = FALSE
 
-	color = "#ffffff"
-
 /obj/effect/decal/cleanable/reagents/proc/add_reagents(var/datum/reagents/reagents_to_add)
 	if(!reagents) create_reagents(1)
 	var/space_to_add = reagents_to_add.total_volume - reagents.get_free_space()
@@ -65,6 +63,8 @@
 	if(reagents_to_add && reagents_to_add.total_volume)
 		reagents = reagents_to_add
 		color = reagents.get_color()
+	if(!color)
+		color = "#ffffff"
 
 /obj/effect/decal/cleanable/reagents/splashed
 	name = "splashed liquid"

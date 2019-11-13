@@ -565,7 +565,6 @@ proc/BlendHSV(hsv1, hsv2, amount)
 	amount<0 or amount>1 are allowed
  */
 proc/BlendRGB(rgb1, rgb2, amount)
-	if(rgb1 == null) CRASH("rgb1 not defined: [rgb1]")
 	var/list/RGB1 = ReadRGB(rgb1)
 	var/list/RGB2 = ReadRGB(rgb2)
 
