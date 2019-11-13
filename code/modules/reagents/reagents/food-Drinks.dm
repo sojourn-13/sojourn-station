@@ -28,7 +28,7 @@
 		totalFlavor += data[data[i]]
 
 	if(totalFlavor != 0)
-		for(var/i in 1 to data.len) //cull the tasteless
+		for(var/i = data.len, i > 0, i--) //cull the tasteless
 			if(data[data[i]]/totalFlavor * 100 < 10)
 				data[data[i]] = null
 				data -= data[i]

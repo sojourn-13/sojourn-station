@@ -716,13 +716,13 @@ its easier to just keep the beam vertical.
 	return GLOB.gender_datums[gender]
 
 /atom/proc/gender_word(var/position, var/gen = null) //So you can suggest an alternative gender if needed.
-	var/datum/gender/G = null
-	if(istype(G, /datum/gender))
+	var/datum/gender/G = GLOB.gender_datums["neuter"]
+	if(istype(gen, /datum/gender))
 		//Use as given.
 		G = gen
-	else if(istext(G))
+	else if(istext(gen))
 		G = GLOB.gender_datums[gen] //Convert to the gender using the name given.
 	else
 		G = get_gender() //Otherwise, default to this thing's gender.
-	if(!G) return GLOB.gender_datums["neuter"].word(position)
+	if(istext(G)) CRASH("gender_word has somehow resulted in a text gender") //TODO: REMOVE THIS ONCE FIXED
 	return G.word(position)

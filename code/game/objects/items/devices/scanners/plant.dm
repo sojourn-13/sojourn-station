@@ -45,7 +45,7 @@
 		if(BH.smoked)
 			dat += "The hive is smoked."
 		return jointext(dat, "<br>")
-	
+
 	else if(istype(target,/obj/item/weapon/reagent_containers/food/snacks/grown))
 
 		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = target
@@ -68,6 +68,9 @@
 		var/obj/machinery/portable_atmospherics/hydroponics/H = target
 		grown_seed = H.seed
 		grown_reagents = H.reagents
+
+	if(!grown_seed)
+		return("No Data Available")
 
 	var/form_title = "[grown_seed.seed_name] (#[grown_seed.uid])"
 	dat += "<h3>Plant data for [form_title]</h3>"
@@ -194,5 +197,5 @@
 
 	if(grown_seed.get_trait(TRAIT_CONSUME_GASSES))
 		dat += "<br>It will remove gas from the environment."
-		
+
 	return JOINTEXT(dat)

@@ -51,7 +51,7 @@
 	mouse_opacity = 0
 	random_rotation = FALSE
 
-	color = "#00000000"
+	color = "#ffffff"
 
 /obj/effect/decal/cleanable/reagents/proc/add_reagents(var/datum/reagents/reagents_to_add)
 	if(!reagents) create_reagents(1)

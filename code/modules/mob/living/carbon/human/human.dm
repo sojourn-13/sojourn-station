@@ -785,7 +785,7 @@ var/list/rank_prefix = list(\
 	regenerate_icons()
 	check_dna()
 
-	visible_message("\blue \The [src] morphs and changes [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] appearance!", "\blue You change your appearance!", "\red Oh, god!  What the hell was that?  It sounded like flesh getting squished and bone ground into a different shape!")
+	visible_message("\blue \The [src] morphs and changes [gender_word("his")] appearance!", "\blue You change your appearance!", "\red Oh, god!  What the hell was that?  It sounded like flesh getting squished and bone ground into a different shape!")
 
 /mob/living/carbon/human/proc/remotesay()
 	set name = "Project mind"
@@ -852,11 +852,6 @@ var/list/rank_prefix = list(\
 	else
 		remoteview_target = null
 		reset_view(0)
-
-/mob/living/carbon/human/proc/get_visible_gender()
-	if(wear_suit && wear_suit.flags_inv & HIDEJUMPSUIT && ((head && head.flags_inv & HIDEMASK) || wear_mask))
-		return NEUTER
-	return gender
 
 /mob/living/carbon/human/proc/increase_germ_level(n)
 	if(gloves)
@@ -1562,6 +1557,11 @@ var/list/rank_prefix = list(\
 
 	tail_over = !tail_over
 	update_tail()
+
+/mob/living/carbon/human/proc/get_visible_gender()
+	if(wear_suit && wear_suit.flags_inv & HIDEJUMPSUIT && ((head && head.flags_inv & HIDEMASK) || wear_mask))
+		return NEUTER
+	return get_sex()
 
 /mob/living/carbon/human/get_gender()
 	if(identifying_gender) return GLOB.gender_datums[identifying_gender]

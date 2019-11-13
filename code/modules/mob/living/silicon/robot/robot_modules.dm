@@ -139,7 +139,7 @@ var/global/list/robot_modules = list(
 
 	R.pixel_x = initial(pixel_x)
 	R.pixel_y = initial(pixel_y)
-	R.icon = initial(R.icon)
+	R.icon = icon('icons/mob/robots.dmi')
 	R.default_pixel_x = initial(pixel_x)
 
 	R.set_module_sprites(list("Default" = "robot"))
