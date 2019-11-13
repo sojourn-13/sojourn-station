@@ -1591,6 +1591,65 @@
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammoboxs = 2400,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 4000)
 
+/obj/machinery/vending/fitness
+	name = "SweatMAX"
+	desc = "Fueled by your inner inadequacy!"
+	icon_state = "fitness"
+	products = list(
+										/obj/item/weapon/cell/medium = 15) //Placeholder
+	prices = list(
+										/obj/item/weapon/cell/medium = 300)
+
+/obj/machinery/vending/kink
+	name = "KinkMate"
+	desc = "A vending machine for all your unmentionable desires."
+	icon_state = "kink"
+	product_slogans = "Kinky!;Sexy!;Check me out, big boy!"
+	product_ads = "We all need some relax time.;Feeling frisky?"
+	vend_reply = "Have fun, you shameless pervert!"
+	products = list(
+				/obj/item/clothing/under/costume/kinky/latex_maid = 5,
+				/obj/item/clothing/under/costume/kinky/leather = 5,
+				/obj/item/clothing/under/costume/kinky/sexy_clown = 5,
+				/obj/item/clothing/under/costume/kinky/sexy_mime = 5,
+				/obj/item/clothing/under/costume/kinky/stripper_green = 5,
+				/obj/item/clothing/under/costume/kinky/stripper_pink = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_engineer = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_internalaffairs = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_lumberjack = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_miner = 5,
+				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 5,
+				/obj/item/clothing/mask/costume/kinky/sexy_clown = 5,
+				/obj/item/clothing/mask/costume/kinky/sexy_mime = 5,
+				/obj/item/clothing/mask/muzzle = 5,
+				/obj/item/clothing/glasses/blindfold = 5,
+				/obj/item/weapon/handcuffs/fuzzy = 5,
+				/obj/item/weapon/tool/tape_roll = 5,
+				/obj/item/stack/cable_coil/random = 5,
+				/obj/item/clothing/suit/straight_jacket = 5,
+				/obj/item/weapon/legcuffs/fuzzy = 5)
+	prices = list(
+				/obj/item/clothing/under/costume/kinky/latex_maid = 200,
+				/obj/item/clothing/under/costume/kinky/leather = 200,
+				/obj/item/clothing/under/costume/kinky/sexy_clown = 200,
+				/obj/item/clothing/under/costume/kinky/sexy_mime = 200,
+				/obj/item/clothing/under/costume/kinky/stripper_green = 200,
+				/obj/item/clothing/under/costume/kinky/stripper_pink = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_engineer = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_internalaffairs = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_lumberjack = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_miner = 200,
+				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 200,
+				/obj/item/clothing/mask/costume/kinky/sexy_clown = 200,
+				/obj/item/clothing/mask/costume/kinky/sexy_mime = 200,
+				/obj/item/clothing/mask/muzzle = 200,
+				/obj/item/clothing/glasses/blindfold = 200,
+				/obj/item/weapon/handcuffs/fuzzy = 200,
+				/obj/item/weapon/tool/tape_roll = 50,
+				/obj/item/stack/cable_coil/random = 50,
+				/obj/item/clothing/suit/straight_jacket = 200,
+				/obj/item/weapon/legcuffs/fuzzy = 200)
+
 /obj/machinery/vending/custom
 	name = "Custom Vendomat"
 	desc = "A custom vending machine."
