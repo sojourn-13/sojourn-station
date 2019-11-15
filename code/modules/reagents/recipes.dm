@@ -234,13 +234,13 @@
 
 /datum/chemical_reaction/carthatoline
 	result = "carthatoline"
-	required_reagents = list("anti_toxin" = 1, "carbon" = 2, "plasma" = 0.1)
+	required_reagents = list("anti_toxin" = 1, "carbon" = 2, "toxin" = 0.1)
 	catalysts = list("plasma" = 5)
-	result_amount = 2
+	result_amount = 3
 
 /datum/chemical_reaction/cordradaxon
 	result = "cordradaxon"
-	required_reagents = list("potassium_chloride" = 1, "blattedin" = 1, "bicaridine" = 1)
+	required_reagents = list("potassium_chloride" = 1, "blattedin" = 1, "clonexadone" = 0.1)
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
@@ -323,7 +323,7 @@
 
 /datum/chemical_reaction/peridaxon
 	result = "peridaxon"
-	required_reagents = list("bicaridine" = 2, "clonexadone" = 2)
+	required_reagents = list("bicaridine" = 2, "clonexadone" = 0.1)
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
@@ -355,8 +355,8 @@
 
 /datum/chemical_reaction/dexalin
 	result = "dexalin"
-	required_reagents = list("acetone" = 2, "plasma" = 0.1)
-	catalysts = list("plasma" = 1)
+	required_reagents = list("acetone" = 2, "iron" = 0.1)
+	catalysts = list("plasma" = 5)
 	inhibitors = list("water" = 1) // Messes with cryox
 	result_amount = 1
 
@@ -367,12 +367,13 @@
 
 /datum/chemical_reaction/dexalinp
 	result = "dexalinp"
-	required_reagents = list("dexalin" = 1, "carbon" = 1, "iron" = 1)
+	required_reagents = list("dexalin" = 1, "iron" = 1, "acetone" = 1)
+	catalysts = list("plasma" = 5)
 	result_amount = 3
 
 /datum/chemical_reaction/respirodaxon
 	result = "respirodaxon"
-	required_reagents = list("dexalinp" = 1, "blattedin" = 1, "plasma" = 0.1)
+	required_reagents = list("dexalinp" = 1, "blattedin" = 1, "clonexadone" = 0.1)
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
@@ -384,13 +385,13 @@
 
 /datum/chemical_reaction/vermicetol
 	result = "vermicetol"
-	required_reagents = list("kelotane" = 1, "dermaline" = 1, "blattedin" = 1, "plasma" = 0.1)
+	required_reagents = list("kelotane" = 1, "dermaline" = 1, "blattedin" = 1, "cryoxadone" = 0.5, "clonexadone" = 0.5)
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
 /datum/chemical_reaction/varceptol
 	result = "varceptol"
-	required_reagents = list("anti_toxin" = 1, "bicaridine" = 1, "blattedin" = 1)
+	required_reagents = list("carthatoline" = 1, "bicaridine" = 1, "blattedin" = 1)
 	catalysts = list("plasma" = 5)
 	result_amount = 3
 
@@ -411,12 +412,16 @@
 
 /datum/chemical_reaction/cryoxadone
 	result = "cryoxadone"
-	required_reagents = list("dexalin" = 1, "water" = 1, "acetone" = 1)
+	required_reagents = list("dexalinp" = 1, "water" = 1, "acetone" = 1)
 	result_amount = 3
+	maximum_temperature = 90
+	minimum_temperature = 45
 
 /datum/chemical_reaction/clonexadone
 	result = "clonexadone"
-	required_reagents = list("cryoxadone" = 1, "sodium" = 1, "plasma" = 0.1)
+	required_reagents = list("cryoxadone" = 1, "sodium" = 1, "radium" = 0.1)
+	maximum_temperature = 45
+	minimum_temperature = 22.5
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
@@ -453,7 +458,7 @@
 
 /datum/chemical_reaction/potassium_chlorophoride
 	result = "potassium_chlorophoride"
-	required_reagents = list("potassium_chloride" = 1, "plasma" = 1, "chloralhydrate" = 1)
+	required_reagents = list("potassium_chloride" = 1, "toxin" = 1, "chloralhydrate" = 1)
 	result_amount = 4
 
 /datum/chemical_reaction/zombiepowder
@@ -521,7 +526,7 @@
 
 /datum/chemical_reaction/rezadone
 	result = "rezadone"
-	required_reagents = list("carpotoxin" = 1, "cryptobiolin" = 1, "copper" = 1)
+	required_reagents = list("clonexadone" = 1, "cryptobiolin" = 1, "copper" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/lexorin
