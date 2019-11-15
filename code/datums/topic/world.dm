@@ -96,7 +96,6 @@
 			"sci" = science_positions,
 			"car" = cargo_positions,
 			"civ" = civilian_positions,
-			"chr" = church_positions,
 			"bot" = nonhuman_positions
 		)
 
