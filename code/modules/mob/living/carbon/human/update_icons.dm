@@ -333,7 +333,7 @@ var/global/list/wings_icon_cache = list()
 			var/obj/item/underwear/UW = entry
 			var/icon/I = new /icon(form.underwear_icon, UW.icon_state)
 			if(UW.color)
-				I.Blend(UW.color, ICON_ADD)
+				I.Blend(UW.color, ICON_MULTIPLY)
 			underwear.Blend(I, ICON_OVERLAY)
 		overlays_standing[UNDERWEAR_LAYER] = image(underwear)
 	if(update_icons)
