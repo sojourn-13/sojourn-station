@@ -275,6 +275,15 @@
 #define MAP_FACTION "CEV Eris"
 // Sojourn Additions End
 
+
+// Maploader bounds indices
+#define MAP_MINX 1
+#define MAP_MINY 2
+#define MAP_MINZ 3
+#define MAP_MAXX 4
+#define MAP_MAXY 5
+#define MAP_MAXZ 6
+
 // a place where atoms can be created instead of nullspace
 // dont store anything there, only create temporary
 #define PURGATORY (GLOB.purgatory_loc ? GLOB.purgatory_loc : error("Purgatory was not created."))
