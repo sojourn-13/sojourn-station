@@ -10,7 +10,8 @@ var/list/dreams = list(
 	"a common item","an uncommon item","a rare item","a hidden treasure","a PDA","a radio","a camera","a freezer",
 	"a flamethrower","a pistol","a sniper rifle","a laser cannon","a knife","a crossbow","an improvised weapon",
 	"a hair comb","a landmine","a newspaper","an oddity","a bag of money","a virus dish","a supermatter crystal",
-	"a pair of handcuffs","a pair of legcuffs","a stool","a baton","a nuclear device","a toolbox",
+	"a pair of handcuffs","a pair of legcuffs","a stool","a baton","a nuclear device","a toolbox", "a mind fryer",
+	"a spy implant","a spy sensor",
 
 //Feelings
 	"admiration","adoration","appreciation","amusement","anxiety","awe","awkwardness","boredom","calmness","confusion",
@@ -81,7 +82,8 @@ var/list/dreams = list(
 	"a blackout","a power failure","an engine failure","a crash","a catastrophe","a miracle","an alliance","a discovery",
 	"a battle","a war","a victory","a defeat","a surrender", "a fungal outbreak", "a contagious disease", "an experiment",
 	"a scavenger hunt","an expedition","a journey","a chase","an exploration","a risky move","a conversation","a good time",
-	"a code yellow","a code red","an explosion","a nuclear detonation","an encounter","a regretful moment","getting pounced on")
+	"a code yellow","a code red","an explosion","a nuclear detonation","an encounter","a regretful moment","getting pounced on",
+	"an assassination contract")
 
 
 mob/living/carbon/proc/dream()
