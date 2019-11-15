@@ -13,16 +13,6 @@
 	mag_well = MAG_WELL_PISTOL
 	recoil = 0.5 //regular pistol kick
 
-/obj/item/weapon/gun/projectile/colt/update_icon()
-	..()
-
-	if(!ammo_magazine)
-		icon_state = initial(icon_state)
-	else if(!ammo_magazine.stored_ammo.len)
-		icon_state = initial(icon_state) + "_empty"
-	else
-		icon_state = initial(icon_state) + "_full"
-
 /obj/item/weapon/gun/projectile/colt/IH_colt
 	name = "FS HG .45 \"Bronco\""
 	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A3 standard. Uses .45 rounds."
@@ -59,3 +49,17 @@
 	item_state = "dark_delta"
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+
+/obj/item/weapon/gun/projectile/colt/update_icon()
+	..()
+
+	var/iconstring = initial(icon_state)
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	icon_state = iconstring
+
+/obj/item/weapon/gun/projectile/colt/Initialize()
+	. = ..()
+	update_icon()
