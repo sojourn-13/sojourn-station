@@ -2,7 +2,7 @@
 	title = "NeoTheology Preacher"
 	flag = CHAPLAIN
 	department = DEPARTMENT_CHURCH
-	department_flag = CHURCH | COMMAND
+	department_flag = CHURCH
 	faction = "CEV Eris"
 	total_positions = 1
 	spawn_positions = 1
