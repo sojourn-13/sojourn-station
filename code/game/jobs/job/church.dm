@@ -1,7 +1,6 @@
 /datum/job/chaplain
 	title = "NeoTheology Preacher"
 	flag = CHAPLAIN
-	head_position = 1
 	department = DEPARTMENT_CHURCH
 	department_flag = CHURCH | COMMAND
 	faction = "CEV Eris"
