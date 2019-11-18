@@ -461,7 +461,7 @@
 
 	if(istype(eating, /obj/item/stack))
 		var/obj/item/stack/stack = eating
-		stack.use(max(1, round(total_used/mass_per_sheet))) // Always use at least 1 to prevent infinite materials.
+		stack.use(total_used/mass_per_sheet)
 	else
 		user.remove_from_mob(eating)
 		qdel(eating)
