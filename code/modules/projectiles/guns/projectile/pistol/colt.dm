@@ -11,7 +11,8 @@
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	recoil = 0.5 //regular pistol kick
+	damage_multiplier = 1.5
+	recoil_buildup = 17
 
 /obj/item/weapon/gun/projectile/colt/IH_colt
 	name = "FS HG .45 \"Bronco\""

@@ -13,7 +13,8 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	magazine_type = /obj/item/ammo_magazine/c45m
-	recoil = 0.4 //less than regular pistol because of integrated silencer
+	damage_multiplier = 1.1
+	recoil_buildup = 14
 
 //This comes with a preinstalled silencer
 /obj/item/weapon/gun/projectile/silenced/Initialize()

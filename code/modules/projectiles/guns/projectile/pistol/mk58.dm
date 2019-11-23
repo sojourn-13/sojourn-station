@@ -11,7 +11,9 @@
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	recoil = 0.5 //regular pistol recoil
+	damage_multiplier = 0.9
+	penetration_multiplier = 0.9
+	recoil_buildup = 3
 
 /obj/item/weapon/gun/projectile/mk58/update_icon()
 	..()
@@ -31,4 +33,3 @@
 	icon_state = "mk58_wood"
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 1500
-	recoil = 0.4 //better because that sweet wooden grip

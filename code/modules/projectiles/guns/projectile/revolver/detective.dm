@@ -12,4 +12,6 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 800 //cheap civ peashooter revolver, something similar to olivav
-	recoil = 0.4 //peashooter tier revolver
+	damage_multiplier = 1.15 //because pistol round
+	penetration_multiplier = 1.5
+	recoil_buildup = 24

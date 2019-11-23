@@ -20,8 +20,8 @@
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	zoom_factor = 0.2
-	recoil = 0.8
-	recoil_buildup = 0.1 //smg level
+	damage_multiplier = 1.1
+	recoil_buildup = 6
 	silencer_type = /obj/item/weapon/silencer
 
 	firemodes = list(
