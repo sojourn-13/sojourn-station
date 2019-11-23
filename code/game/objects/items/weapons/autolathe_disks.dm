@@ -5,6 +5,7 @@
 	max_capacity = 0	// Up to 255 designs, automatically reduced to the nearest power of 2
 	origin_tech = list(TECH_DATA = 3) // Most design disks end up being 64 to 128 GQ
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 0.5)
+	license = -1
 	var/list/designs = list()
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/install_default_files()
@@ -13,7 +14,7 @@
 	for(var/design_typepath in designs)
 		var/datum/computer_file/binary/design/D = new
 		D.set_design_type(design_typepath)
-		if(license)
+		if(license > 0)
 			D.set_copy_protection(TRUE)
 
 		store_file(D, TRUE) //Will force the disk to accept it in spite of size.
@@ -28,7 +29,7 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools
 	disk_name = "Asters Basic Tool Pack"
 	icon_state = "guild"
-	license = 0
+	license = -1
 	designs = list(
 		/datum/design/autolathe/tool/hatchet,
 		/datum/design/autolathe/tool/minihoe,
@@ -55,7 +56,7 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc
 	disk_name = "Asters Miscellaneous Pack"
 	icon_state = "guild"
-	license = 0
+	license = -1
 	designs = list(
 		/datum/design/autolathe/misc/flashlight,
 		/datum/design/autolathe/tool/ducttape,
@@ -600,7 +601,7 @@
 	disk_name = "Excelsior Means of Production"
 	desc = "Seize it."
 	icon_state = "excelsior"
-	license = 0
+	license = -1
 	designs = list(
 		/datum/design/autolathe/circuit/autolathe_excelsior,
 		/datum/design/autolathe/circuit/shieldgen_excelsior,
@@ -641,7 +642,7 @@
 	disk_name = "Excelsior Means of Revolution"
 	desc = "The back has a machine etching: \"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\""
 	icon_state = "excelsior"
-	license = 0
+	license = -1
 	designs = list(
 		/datum/design/autolathe/gun/makarov,
 		/datum/design/autolathe/gun/drozd,
@@ -710,10 +711,11 @@
 
 
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/neotheology
-	disk_name = "NeoTeology Pack"
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter
+	disk_name = "NeoTeology Bioprinter Production"
 	icon_state = "neotheology"
 
+	license = -1
 	designs = list(
 		/datum/design/autolathe/biomatter/meat,
 		/datum/design/autolathe/biomatter/milk,
@@ -770,3 +772,29 @@
 		/datum/design/autolathe/ammo/box_c10mm/rubber,
 		/datum/design/autolathe/ammo/box_c10mm/hv
 		)
+
+// Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
+	disk_name = "NeoTheology Bioprinter Pack"
+	icon_state = "neotheology"
+
+	license = -1
+	designs = list(
+		/datum/design/bioprinter/meat,
+		/datum/design/bioprinter/milk,
+
+		/datum/design/bioprinter/ez,
+		/datum/design/bioprinter/l4z,
+		/datum/design/bioprinter/rh,
+
+		/datum/design/bioprinter/wallet,
+		/datum/design/bioprinter/botanic_leather,
+		/datum/design/bioprinter/leather/satchel,
+		/datum/design/bioprinter/leather/leather_jacket,
+		/datum/design/bioprinter/leather/cash_bag,
+		/datum/design/bioprinter/belt/utility,
+		/datum/design/bioprinter/belt/medical,
+		/datum/design/bioprinter/belt/security,
+		/datum/design/bioprinter/belt/medical/emt,
+		/datum/design/bioprinter/belt/misc/champion,
+	)
