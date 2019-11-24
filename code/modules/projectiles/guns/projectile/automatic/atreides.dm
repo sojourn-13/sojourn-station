@@ -6,6 +6,7 @@
 	item_state = "mac"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = ".45"
+	can_dual = 1
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	ammo_type = "/obj/item/ammo_casing/c45"

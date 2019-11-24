@@ -6,6 +6,7 @@
 	item_state = "clarissa"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "9mm"
+	can_dual = 1
 	silenced = 0
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)

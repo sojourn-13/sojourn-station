@@ -6,6 +6,7 @@
 	item_state = "IH_mp"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = "9mm"
+	can_dual = 1
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	ammo_type = "/obj/item/ammo_casing/c9mm"
