@@ -28,7 +28,7 @@
 	var/flags
 	var/mob/living/carbon/human/owner
 
-	var/sanity_invulnerability = 0
+	var/sanity_invulnerability = 1
 	var/level
 	var/max_level = 100
 
