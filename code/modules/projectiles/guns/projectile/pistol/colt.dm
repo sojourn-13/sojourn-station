@@ -41,7 +41,7 @@
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	recoil = 0.6
+	recoil_buildup = 0.6
 	damage_multiplier = 1.4
 
 /obj/item/weapon/gun/projectile/colt/ten/dark

@@ -20,7 +20,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-	recoil = 0.8 //high caliber pistol recoil
+	recoil_buildup = 0.8 //high caliber pistol recoil
 
 /obj/item/weapon/gun/projectile/deagle/update_icon()
 	..()

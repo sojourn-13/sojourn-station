@@ -41,7 +41,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	zoom_factor = 0.4
-	recoil = 0.7
+	recoil_buildup = 0.7
 	price_tag = 2500
 
 /obj/item/weapon/gun/projectile/lamia/dark_lamia
@@ -51,5 +51,5 @@
 	item_state = "dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.4
-	recoil = 0.7
+	recoil_buildup = 0.7
 	price_tag = 2200

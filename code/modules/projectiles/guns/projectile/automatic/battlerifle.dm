@@ -16,7 +16,6 @@
 	magazine_type = /obj/item/ammo_magazine/c10mm
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 2000
-	recoil = 1.2
 	recoil_buildup = 0.5
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
@@ -49,7 +48,6 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	price_tag = 2500
 	zoom_factor = 0.2
-	recoil = 0.9
 	recoil_buildup = 0.3
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
@@ -69,13 +67,12 @@
 	item_state = "scoped-omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
 	price_tag = 3000
-	recoil = 0.7
 	damage_multiplier = 1.2
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	zoom_factor = 0.8
-	recoil_buildup = 0.4
+	recoil_buildup = 0.7
 
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/fancy
@@ -88,7 +85,7 @@
 	item_state = "fancy-omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
 	price_tag = 3500
-	recoil = 0.6
+	recoil_buildup = 0.6
 	damage_multiplier = 1.2
 	zoom_factor = 0.9
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
@@ -106,7 +103,6 @@
 	price_tag = 2500
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	damage_multiplier = 0.8
-	recoil = 1
 	recoil_buildup = 0.5
 
 	firemodes = list(
@@ -124,7 +120,6 @@
 	item_state = "rds-omnicarbine"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	price_tag = 3000
-	recoil = 0.9
 	damage_multiplier = 0.8
 	recoil_buildup = 0.3
 
