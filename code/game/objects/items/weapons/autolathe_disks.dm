@@ -232,10 +232,11 @@
 		/datum/design/autolathe/tool/rcd,
 		/datum/design/autolathe/tool/electric_screwdriver,
 		/datum/design/autolathe/tool/combi_driver,
+		/datum/design/autolathe/tool/weldingtool/advanced, //Soj add
 		/datum/design/autolathe/tool/armature_cutter,
 		/datum/design/autolathe/part/diamondblade,
 	)
-
+//Disk is added by Soj
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/parttoolpack
 	name = "Technomancers PAK-103 Tool Mods"
 	icon_state = "technomancers"
@@ -258,6 +259,7 @@
 		/datum/design/autolathe/part/motor,
 		/datum/design/autolathe/part/cell_mout,
 		/datum/design/autolathe/part/fuel_tank,
+		/datum/design/autolathe/part/oxyjet,
 		/datum/design/autolathe/part/expansion,
 		/datum/design/autolathe/part/spikes,
 		/datum/design/autolathe/part/dampener,
@@ -434,6 +436,39 @@
 		/datum/design/autolathe/gun/pulse_destroyer,
 		/datum/design/autolathe/gun/ionrifle,
 	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/neotheology
+	disk_name = "NeoTeology Pack"
+	icon_state = "neotheology"
+
+	designs = list(
+		/datum/design/autolathe/biomatter/meat,
+		/datum/design/autolathe/biomatter/milk,
+		/datum/design/autolathe/biomatter/salt, //Soj Add
+		/datum/design/autolathe/biomatter/pepper, //Soj Add
+
+		/datum/design/autolathe/biomatter/ez,
+		/datum/design/autolathe/biomatter/l4z,
+		/datum/design/autolathe/biomatter/rh,
+
+		/datum/design/autolathe/biomatter/wallet,
+		/datum/design/autolathe/biomatter/botanic_leather,
+		/datum/design/autolathe/biomatter/leather/satchel,
+		/datum/design/autolathe/biomatter/leather/leather_jacket,
+		/datum/design/autolathe/biomatter/leather/cash_bag,
+		/datum/design/autolathe/biomatter/belt/utility,
+		/datum/design/autolathe/biomatter/belt/medical,
+		/datum/design/autolathe/biomatter/belt/security,
+		/datum/design/autolathe/biomatter/belt/medical/emt,
+		/datum/design/autolathe/biomatter/belt/misc/champion,
+		/datum/design/autolathe/biomatter/belt/nt_utility, //Soj addtion
+
+		/datum/design/autolathe/biomatter/medical/bruise,
+		/datum/design/autolathe/biomatter/medical/splints,
+		/datum/design/autolathe/biomatter/medical/ointment,
+		/datum/design/autolathe/biomatter/medical/advanced/bruise,
+		/datum/design/autolathe/biomatter/medical/advanced/ointment
+		)
 
 // Ironhammer
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security
@@ -702,38 +737,6 @@
 		/datum/design/autolathe/tool/drill_onestar,
 		/datum/design/autolathe/tool/weldertool_onestar
 	)
-
-
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/neotheology
-	disk_name = "NeoTeology Pack"
-	icon_state = "neotheology"
-
-	designs = list(
-		/datum/design/autolathe/biomatter/meat,
-		/datum/design/autolathe/biomatter/milk,
-
-		/datum/design/autolathe/biomatter/ez,
-		/datum/design/autolathe/biomatter/l4z,
-		/datum/design/autolathe/biomatter/rh,
-
-		/datum/design/autolathe/biomatter/wallet,
-		/datum/design/autolathe/biomatter/botanic_leather,
-		/datum/design/autolathe/biomatter/leather/satchel,
-		/datum/design/autolathe/biomatter/leather/leather_jacket,
-		/datum/design/autolathe/biomatter/leather/cash_bag,
-		/datum/design/autolathe/biomatter/belt/utility,
-		/datum/design/autolathe/biomatter/belt/medical,
-		/datum/design/autolathe/biomatter/belt/security,
-		/datum/design/autolathe/biomatter/belt/medical/emt,
-		/datum/design/autolathe/biomatter/belt/misc/champion,
-
-		/datum/design/autolathe/biomatter/medical/bruise,
-		/datum/design/autolathe/biomatter/medical/splints,
-		/datum/design/autolathe/biomatter/medical/ointment,
-		/datum/design/autolathe/biomatter/medical/advanced/bruise,
-		/datum/design/autolathe/biomatter/medical/advanced/ointment
-		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
 	disk_name = "unusual data disk"
