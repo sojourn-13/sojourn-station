@@ -303,9 +303,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	else
 		..()
 
-/obj/item/weapon/storage/belt/utility/bst
-	name = "bluespace technician's tool-belt"
-	storage_slots = 10
+/obj/item/weapon/storage/belt/utility/full/bst
+	storage_slots = 14
 
 /obj/item/weapon/storage/belt/utility/full/bst/populate_contents()
 	new /obj/item/weapon/tool/screwdriver/bs(src)
