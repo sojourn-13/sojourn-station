@@ -21,9 +21,9 @@
 			C.associated_email_login = H.mind.initial_email_login.Copy()
 	return C
 
-/decl/hierarchy/outfit/job/equip(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
-	var/obj/item/weapon/oddity/secdocs/D = /obj/item/weapon/oddity/secdocs
-	if(D.inv_spawn_count > 0 && !backpack_contents[D] && prob(5))
-		backpack_contents[D] = 1
-		--D.inv_spawn_count
-	..()
+///decl/hierarchy/outfit/job/equip(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
+//	var/obj/item/weapon/oddity/secdocs/D = /obj/item/weapon/oddity/secdocs
+//	if(D.inv_spawn_count > 0 && !backpack_contents[D] && prob(5))
+//		backpack_contents[D] = 1
+//		--D.inv_spawn_count
+//	..()

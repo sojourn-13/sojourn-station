@@ -11,7 +11,7 @@
 		STAT_BIO = 8,
 	)
 
-	var/static/inv_spawn_count = 3
+	//var/static/inv_spawn_count = 3
 
 /obj/item/weapon/oddity/secdocs/Initialize()
 	icon_state = "scifolder[rand(0,3)]"
