@@ -3,7 +3,7 @@
 //----------------------------------------------
 
 /datum/supply_pack/medical
-	name = "Medical crate"
+	name = "Medical Crate"
 	contains = list(/obj/item/weapon/storage/firstaid/regular,
 					/obj/item/weapon/storage/firstaid/fire,
 					/obj/item/weapon/storage/firstaid/toxin,
@@ -16,31 +16,31 @@
 					/obj/item/weapon/storage/box/autoinjectors)
 	cost = 1000
 	containertype = /obj/structure/closet/crate/medical
-	crate_name = "Medical crate"
+	crate_name = "medical crate"
 	group = "Medical / Science"
 
 /datum/supply_pack/virus
-	name = "Virus sample crate"
+	name = "Virus Sample Crate"
 	contains = list(/obj/item/weapon/virusdish/random,
 					/obj/item/weapon/virusdish/random,
 					/obj/item/weapon/virusdish/random,
 					/obj/item/weapon/virusdish/random)
 	cost = 2500
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Virus sample crate"
+	crate_name = "virus sample crate"
 	access = access_cmo
 	group = "Medical / Science"
 
 /datum/supply_pack/coolanttank
-	name = "Coolant tank crate"
+	name = "Coolant Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/coolanttank)
 	cost = 1600
 	containertype = /obj/structure/largecrate
-	crate_name = "Coolant tank crate"
+	crate_name = "coolant tank crate"
 	group = "Medical / Science"
 
 /datum/supply_pack/phoron
-	name = "Phoron assembly crate"
+	name = "Phoron Assembly Crate"
 	contains = list(/obj/item/weapon/tank/plasma,
 					/obj/item/weapon/tank/plasma,
 					/obj/item/weapon/tank/plasma,
@@ -55,12 +55,12 @@
 					/obj/item/device/assembly/timer)
 	cost = 1500
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
-	crate_name = "Phoron assembly crate"
+	crate_name = "phoron assembly crate"
 	access = access_tox_storage
 	group = "Medical / Science"
 
 /datum/supply_pack/surgery
-	name = "Surgery crate"
+	name = "Surgery Crate"
 	contains = list(/obj/item/weapon/tool/cautery,
 					/obj/item/weapon/tool/surgicaldrill,
 					/obj/item/clothing/mask/breath/medical,
@@ -72,12 +72,12 @@
 					/obj/item/weapon/tool/saw/circular)
 	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Surgery crate"
+	crate_name = "surgery crate"
 	access = access_moebius
 	group = "Medical / Science"
 
 /datum/supply_pack/sterile
-	name = "Sterile equipment crate"
+	name = "Sterile Equipment Crate"
 	contains = list(/obj/item/clothing/under/scrubs/green,
 					/obj/item/clothing/under/scrubs/green,
 					/obj/item/clothing/head/surgery/green,
@@ -86,7 +86,7 @@
 					/obj/item/weapon/storage/box/gloves)
 	cost = 900
 	containertype = /obj/structure/closet/crate
-	crate_name = "Sterile equipment crate"
+	crate_name = "sterile equipment crate"
 	group = "Medical / Science"
 
 /datum/supply_pack/bloodpacks
@@ -105,7 +105,7 @@
 	group = "Medical / Science"
 
 /datum/supply_pack/medical_stand
-	name = "Medical stand Crate"
+	name = "Medical Stand Crate"
 	cost = 700
 	contains = list(/obj/structure/medical_stand)
 	containertype = /obj/structure/closet/crate/medical
@@ -123,19 +123,30 @@
 	group = "Medical / Science"
 
 /datum/supply_pack/suspension_gen
-	name = "Suspension Field Generetor Crate"
+	name = "Suspension Field Generator Crate"
 	cost = 2500
 	contains = list(/obj/machinery/suspension_gen)
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
-	crate_name = "Suspension Field Generetor Crate"
+	crate_name = "suspension field generator crate"
 	group = "Medical / Science"
 
-/datum/supply_pack/floodlight
-	name = "Emergency Floodlight Crate"
-	cost = 1400
-	contains = list(/obj/machinery/floodlight,
-					/obj/machinery/floodlight)
-	containertype = /obj/structure/closet/crate/scicrate
-	crate name = "Emergency Floodlight Crate"
+/datum/supply_pack/nanites
+	name = "Raw Nanites Crate"
+	contains = list(
+		/obj/item/weapon/reagent_containers/glass/beaker/vial/nanites
+	)
+	cost = 1500
+	crate_name = "raw nanites crate"
 	group = "Medical / Science"
+	containertype = /obj/structure/closet/crate/medical
 
+/datum/supply_pack/uncapnanites
+	name = "Raw Uncapped Nanites Crate"
+	contains = list(
+		/obj/item/weapon/reagent_containers/glass/beaker/vial/uncapnanites
+	)
+	cost = 2000
+	crate_name = "raw uncapped nanites crate"
+	group = "Medical / Science"
+	contraband = TRUE
+	containertype = /obj/structure/closet/crate/medical

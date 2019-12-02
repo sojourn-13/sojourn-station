@@ -5,7 +5,7 @@
 	contains = list(/obj/machinery/mining/drill)
 	cost = 3000
 	containertype = /obj/structure/closet/crate/secure/large
-	crate_name = "Drill Crate"
+	crate_name = "drill crate"
 	group = "Mining"
 
 /datum/supply_pack/mining_brace
@@ -13,7 +13,7 @@
 	contains = list(/obj/machinery/mining/brace)
 	cost = 1500
 	containertype = /obj/structure/closet/crate/secure/large
-	crate_name = "Brace Crate"
+	crate_name = "brace crate"
 	group = "Mining"
 
 /datum/supply_pack/mining_supply
@@ -24,5 +24,5 @@
 					/obj/item/weapon/tool/pickaxe/jackhammer)
 	cost = 1000
 	containertype = /obj/structure/closet/crate/secure/gear
-	crate_name = "Mining Supply Crate"
+	crate_name = "mining supply crate"
 	group = "Mining"

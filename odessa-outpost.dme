@@ -1340,6 +1340,7 @@
 #include "code\modules\cargo\exports.dm"
 #include "code\modules\cargo\order.dm"
 #include "code\modules\cargo\packs.dm"
+#include "code\modules\cargo\packs_clothing.dm"
 #include "code\modules\cargo\packs_engineering.dm"
 #include "code\modules\cargo\packs_hospitality.dm"
 #include "code\modules\cargo\packs_hydroponics.dm"
