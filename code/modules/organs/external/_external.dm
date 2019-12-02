@@ -103,6 +103,8 @@
 	if(module)
 		QDEL_NULL(module)
 
+	update_bionics_hud()
+
 	return ..()
 
 /obj/item/organ/external/proc/set_description(var/datum/organ_description/desc)
@@ -189,6 +191,16 @@
 
 	if(redraw_mob)
 		victim.update_body()
+
+	SSnano.update_uis(src)
+
+
+/obj/item/organ/external/proc/update_bionics_hud()
+	switch(organ_tag)
+		if(BP_L_ARM)
+			owner?.HUDneed["left arm bionics"]?.update_icon()
+		if(BP_R_ARM)
+			owner?.HUDneed["right arm bionics"]?.update_icon()
 
 /obj/item/organ/external/proc/activate_module()
 	set name = "Activate module"
@@ -1023,7 +1035,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	return !is_dislocated() && !(status & (ORGAN_MUTATED|ORGAN_DEAD))
 
 /obj/item/organ/external/proc/has_internal_bleeding()
-	for(var/datum/wound/W in wounds) 
+	for(var/datum/wound/W in wounds)
 		if(W.internal)
 			return TRUE
 	return FALSE
