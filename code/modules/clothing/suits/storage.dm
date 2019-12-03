@@ -142,25 +142,25 @@
 
 /*Flannel Shirts*/
 
-/obj/item/clothing/suit/storage/flannel
-	name = "grey flannel shirt"
-	desc = "A comfy flannel shirt with a grey design."
-	icon_state = "flannel"
-	item_state = "flannel"
+/obj/item/clothing/suit/storage/toggle/flannel
+	name = "black flannel shirt"
+	desc = "A comfy flannel shirt with a black design."
+	icon_state = "flannel_black"
+	item_state = "flannel_black"
 
-/obj/item/clothing/suit/storage/flannel/aqua
+/obj/item/clothing/suit/storage/toggle/flannel/aqua
 	name = "aqua flannel shirt"
 	desc = "A comfy flannel shirt with a aqua design."
 	icon_state = "flannel_aqua"
 	item_state = "flannel_aqua"
 
-/obj/item/clothing/suit/storage/flannel/brown
+/obj/item/clothing/suit/storage/toggle/flannel/brown
 	name = "brown flannel shirt"
 	desc = "A comfy flannel shirt with a brown design."
 	icon_state = "flannel_brown"
 	item_state = "flannel_brown"
 
-/obj/item/clothing/suit/storage/flannel/red
+/obj/item/clothing/suit/storage/toggle/flannel/red
 	name = "red flannel shirt"
 	desc = "A comfy flannel shirt with a red design."
 	icon_state = "flannel_red"
@@ -233,6 +233,8 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	desc = "A well-tailored, stylish peacoat."
 	icon_state = "peacoat"
 	item_state = "peacoat"
+	icon_open = "peacoat_open"
+	icon_closed = "peacoat"
 
 /*Jackets*/
 /obj/item/clothing/suit/storage/leather/blackjacket

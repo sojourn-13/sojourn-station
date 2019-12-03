@@ -18,7 +18,7 @@
 
 /datum/gear/suit/flannel
 	display_name = "flannel shirt selection"
-	path = /obj/item/clothing/suit/storage/flannel
+	path = /obj/item/clothing/suit/storage/toggle/flannel
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/gorka
