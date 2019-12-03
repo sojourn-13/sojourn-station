@@ -1651,6 +1651,23 @@
 				/obj/item/clothing/suit/straight_jacket = 200,
 				/obj/item/weapon/legcuffs/fuzzy = 200)
 
+/obj/machinery/vending/serbomat
+	name = "From Serbia with love"
+	desc = "How did this end up here?"
+	icon_state = "serbomat"
+	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
+	products = list(
+					/obj/item/weapon/storage/deferred/crate/uniform_green = 5, /obj/item/weapon/storage/deferred/crate/uniform_brown = 5,
+					/obj/item/weapon/storage/deferred/crate/uniform_black = 5, /obj/item/weapon/storage/deferred/crate/uniform_flak = 5,
+					/obj/item/weapon/storage/deferred/crate/uniform_light = 5
+					)
+	prices = list(  /obj/item/weapon/storage/deferred/crate/uniform_green = 1000, /obj/item/weapon/storage/deferred/crate/uniform_brown = 1000,
+					/obj/item/weapon/storage/deferred/crate/uniform_black = 1000, /obj/item/weapon/storage/deferred/crate/uniform_flak = 1200,
+					/obj/item/weapon/storage/deferred/crate/uniform_light = 800
+					)
+	idle_power_usage = 211
+	auto_price = FALSE
+
 /obj/machinery/vending/custom
 	name = "Custom Vendomat"
 	desc = "A custom vending machine."

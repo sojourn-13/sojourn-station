@@ -85,3 +85,23 @@
 	initial_name = "customized  cap"
 	desc = "A customized cap in a tailored color."
 	icon_state = "mimesoft"
+
+/obj/item/clothing/head/soft/sec/corp
+	name = "corporate security cap"
+	initial_name = "corporate security cap"
+	desc = "It's field cap in corporate colors."
+	icon_state = "corpsoft"
+
+// S E R B I A //
+
+/obj/item/clothing/head/soft/green2soft
+	name = "green military cap"
+	initial_name = "green cap"
+	desc = "It's a field cap in tasteful green color."
+	icon_state = "green2soft"
+
+/obj/item/clothing/head/soft/tan2soft
+	name = "tan military cap"
+	initial_name = "tan cap"
+	desc = "It's a field cap in tasteful tan color."
+	icon_state = "tansoft"

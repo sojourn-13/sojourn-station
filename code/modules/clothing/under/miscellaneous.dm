@@ -123,6 +123,24 @@
 /obj/item/clothing/under/syndicate/combat
 	name = "combat turtleneck"
 
+/obj/item/clothing/under/serbiansuit
+	name = "green battle dress"
+	desc = "A tough, wear-resistant battle dress uniform in forest colors. Typically worn underneath armor."
+	icon_state = "serbiansuit"
+	item_state = "bl_suit"
+	has_sensor = 0
+	price_tag = 200
+
+/obj/item/clothing/under/serbiansuit/brown
+	name = "brown battle dress"
+	desc = "A tough, wear-resistant battle dress uniform in desert colors. Typically worn underneath armor."
+	icon_state = "serbiansuit_brown"
+
+/obj/item/clothing/under/serbiansuit/black
+	name = "black battle dress"
+	desc = "A tough, wear-resistant battle dress uniform in urban colors. Typically worn underneath armor."
+	icon_state = "serbiansuit_black"
+
 /*Gorkas*/
 
 /obj/item/clothing/under/gorka/standard
