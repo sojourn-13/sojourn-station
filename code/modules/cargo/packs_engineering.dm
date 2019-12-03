@@ -381,7 +381,7 @@
 
 /datum/supply_pack/circulator
 	contains = list(/obj/machinery/atmospherics/binary/circulator)
-	name = "binary atmospheric circulator crate"
+	name = "Binary Atmospheric Circulator Crate"
 	cost = 1500
 	containertype = /obj/structure/closet/crate/secure/large
 	crate_name = "binary atmospheric circulator crate"
