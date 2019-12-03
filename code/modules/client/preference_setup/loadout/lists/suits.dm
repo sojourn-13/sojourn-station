@@ -42,7 +42,7 @@
 
 /datum/gear/suit/jacketbasic
 	display_name = "jacket basic selection"
-	path = /obj/item/clothing/suit/storage/leather
+	path = /obj/item/clothing/suit/storage/toggle/leather
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/bombers

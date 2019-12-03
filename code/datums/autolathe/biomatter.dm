@@ -45,7 +45,7 @@
 
 /datum/design/autolathe/biomatter/leather/leather_jacket
 	name = "Leather jacket"
-	build_path = /obj/item/clothing/suit/storage/leather
+	build_path = /obj/item/clothing/suit/storage/toggle/leather
 
 /datum/design/autolathe/biomatter/leather/cash_bag
 	name = "Cash Bag"

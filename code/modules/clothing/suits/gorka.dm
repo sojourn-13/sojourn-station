@@ -145,20 +145,6 @@
 
 // Gorka Base
 
-/obj/item/clothing/suit/gorka/toggle/gorka
-	name = "tan gorka jacket"
-	desc = "A rugged, two-tone military style tan parka for the adventurer or paramilitant in you."
-	icon_state = "gorka_jacket_tan"
-	icon_open = "gorka_jacket_tan_open"
-	icon_closed = "gorka_jacket_tan"
-	blood_overlay_type = "coat"
-	armor = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-	hoodtype = /obj/item/clothing/head/hood/gorkahood
-
 /obj/item/clothing/suit/gorka/toggle/gorka/standard
 	name = "gorka jacket"
 	desc = "A rugged, two-tone military style field parka for the adventurer or paramilitant in you."
@@ -222,14 +208,21 @@
 	icon_open = "gorka_jacket_crew_y_open"
 	icon_closed = "gorka_jacket_crew_y"
 
-/*Gorka Hood*/
+/obj/item/clothing/suit/gorka/toggle/gorka
+	name = "tan gorka jacket"
+	desc = "A rugged, two-tone military style tan parka for the adventurer or paramilitant in you."
+	icon_state = "gorka_jacket_tan"
+	icon_open = "gorka_jacket_tan_open"
+	icon_closed = "gorka_jacket_tan"
+	blood_overlay_type = "coat"
+	armor = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+	hoodtype = /obj/item/clothing/head/hood/gorkahood
 
-/obj/item/clothing/head/hood/gorkahood
-	name = "tan gorka jacket hood"
-	desc = "A hood from a gorka jacket, oddly cozy."
-	icon_state = "gorka_jacket_tan_hood"
-	flags_inv = HIDEEARS|BLOCKHEADHAIR
-	body_parts_covered = HEAD|EARS
+/*Gorka Hood*/
 
 /obj/item/clothing/head/hood/gorkahood/standard
 	name = "standard gorka jacket hood"
@@ -275,6 +268,13 @@
 	name = "yellow crew gorka hood"
 	desc = "A hood from a gorka jacket, oddly cozy."
 	icon_state = "gorka_jacket_crew_y_hood"
+
+/obj/item/clothing/head/hood/gorkahood
+	name = "tan gorka jacket hood"
+	desc = "A hood from a gorka jacket, oddly cozy."
+	icon_state = "gorka_jacket_tan_hood"
+	flags_inv = HIDEEARS|BLOCKHEADHAIR
+	body_parts_covered = HEAD|EARS
 
 /*Gorka Ranks*/
 
