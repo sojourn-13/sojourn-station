@@ -50,7 +50,7 @@
 			icon_state = icon_open
 			to_chat(usr, "You unbutton the coat.")
 		else //in case some goofy admin switches icon states around without switching the icon_open or icon_closed
-			to_chat(usr, "You attempt to button-up the velcro on your [src], before promptly realising how silly you are.")
+			to_chat(usr, "This coat cannot be opened or closed.")
 			return
 		update_wear_icon()	//so our overlays update
 
@@ -225,26 +225,41 @@
 	name = "black track jacket"
 	desc = "An athletic black track jacket."
 	icon_state = "trackjacket"
+	item_state = "trackjacket"
+	icon_open = "trackjacket_open"
+	icon_closed = "trackjacket"
 
 /obj/item/clothing/suit/storage/toggle/track/trackblue
 	name = "blue track jacket"
 	desc = "An athletic blue track jacket."
 	icon_state = "trackjacketblue"
+	item_state = "trackjacketblue"
+	icon_open = "trackjacketblue_open"
+	icon_closed = "trackjacketblue"
 
 /obj/item/clothing/suit/storage/toggle/track/trackgreen
 	name = "green track jacket"
 	desc = "An athletic green track jacket."
 	icon_state = "trackjacketgreen"
+	item_state = "trackjacketgreen"
+	icon_open = "trackjacketgreen_open"
+	icon_closed = "trackjacketgreen"
 
 /obj/item/clothing/suit/storage/toggle/track/trackred
 	name = "red track jacket"
 	desc = "An athletic red track jacket."
 	icon_state = "trackjacketred"
+	item_state = "trackjacketred"
+	icon_open = "trackjacketred_open"
+	icon_closed = "trackjacketred"
 
 /obj/item/clothing/suit/storage/toggle/track/trackwhite
 	name = "white track jacket"
 	desc = "An athletic white track jacket."
 	icon_state = "trackjacketwhite"
+	item_state = "trackjacketwhite"
+	icon_open = "trackjacketwhite_open"
+	icon_closed = "trackjacketwhite"
 
 /obj/item/clothing/suit/storage/toggle/track/varsityblack
 	name = "black varsity jacket"
@@ -351,14 +366,6 @@
 
 /*Flannel Shirts*/
 
-/obj/item/clothing/suit/storage/toggle/flannel
-	name = "black flannel shirt"
-	desc = "A comfy flannel shirt with a black design."
-	icon_state = "flannel_black"
-	item_state = "flannel_black"
-	icon_open = "flannel_black_open"
-	icon_closed = "flannel_black"
-
 /obj/item/clothing/suit/storage/toggle/flannel/aqua
 	name = "aqua flannel shirt"
 	desc = "A comfy flannel shirt with a aqua design."
@@ -366,6 +373,14 @@
 	item_state = "flannel_aqua"
 	icon_open = "flannel_aqua_open"
 	icon_closed = "flannel_aqua"
+
+/obj/item/clothing/suit/storage/toggle/flannel/black
+	name = "black flannel shirt"
+	desc = "A comfy flannel shirt with a black design."
+	icon_state = "flannel_black"
+	item_state = "flannel_black"
+	icon_open = "flannel_black_open"
+	icon_closed = "flannel_black"
 
 /obj/item/clothing/suit/storage/toggle/flannel/brown
 	name = "brown flannel shirt"
@@ -375,7 +390,7 @@
 	icon_open = "flannel_brown_open"
 	icon_closed = "flannel_brown"
 
-/obj/item/clothing/suit/storage/toggle/flannel/red
+/obj/item/clothing/suit/storage/toggle/flannel
 	name = "red flannel shirt"
 	desc = "A comfy flannel shirt with a red design."
 	icon_state = "flannel_red"
@@ -385,16 +400,6 @@
 
 /*Hoodies*/
 
-/obj/item/clothing/suit/storage/toggle/hoodie
-	name = "grey hoodie"
-	desc = "A warm, grey sweatshirt."
-	icon_state = "grey_hoodie"
-	item_state = "grey_hoodie"
-	icon_open = "grey_hoodie_open"
-	icon_closed = "grey_hoodie"
-	min_cold_protection_temperature = T0C - 20
-	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
-
 /obj/item/clothing/suit/storage/toggle/hoodie/black
 	name = "black hoodie"
 	desc = "A warm, black sweatshirt."
@@ -402,14 +407,6 @@
 	item_state = "black_hoodie"
 	icon_open = "black_hoodie_open"
 	icon_closed = "black_hoodie"
-
-/obj/item/clothing/suit/storage/toggle/hoodie/orange
-	name = "orange hoodie"
-	desc = "A warm, orange sweatshirt."
-	icon_state = "orange_hoodie"
-	item_state = "orange_hoodie"
-	icon_open = "orange_hoodie_open"
-	icon_closed = "orange_hoodie"
 
 /obj/item/clothing/suit/storage/toggle/hoodie/blue
 	name = "blue hoodie"
@@ -427,13 +424,21 @@
 	icon_open = "green_hoodie_open"
 	icon_closed = "green_hoodie"
 
-/obj/item/clothing/suit/storage/toggle/hoodie/yellow
-	name = "yellow hoodie"
-	desc = "A warm, yellow sweatshirt."
-	icon_state = "yellow_hoodie"
-	item_state = "yellow_hoodie"
-	icon_open = "yellow_hoodie_open"
-	icon_closed = "yellow_hoodie"
+/obj/item/clothing/suit/storage/toggle/hoodie/grey
+	name = "grey hoodie"
+	desc = "A warm, grey sweatshirt."
+	icon_state = "grey_hoodie"
+	item_state = "grey_hoodie"
+	icon_open = "grey_hoodie_open"
+	icon_closed = "grey_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie/orange
+	name = "orange hoodie"
+	desc = "A warm, orange sweatshirt."
+	icon_state = "orange_hoodie"
+	item_state = "orange_hoodie"
+	icon_open = "orange_hoodie_open"
+	icon_closed = "orange_hoodie"
 
 /obj/item/clothing/suit/storage/toggle/hoodie/red
 	name = "red hoodie"
@@ -442,6 +447,16 @@
 	item_state = "red_hoodie"
 	icon_open = "red_hoodie_open"
 	icon_closed = "red_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie
+	name = "yellow hoodie"
+	desc = "A warm, yellow sweatshirt."
+	icon_state = "yellow_hoodie"
+	item_state = "yellow_hoodie"
+	icon_open = "yellow_hoodie_open"
+	icon_closed = "yellow_hoodie"
+	min_cold_protection_temperature = T0C - 20
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /*Peacoat*/
 
@@ -460,38 +475,39 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	desc = "A thick blue leather bomber jacket."
 	icon_state = "pilot_bomber"
 	item_state_slots = list(slot_r_hand_str = "brown_jacket", slot_l_hand_str = "brown_jacket")
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
+	icon_open = "pilot_bomber_open"
+	icon_closed = "pilot_bomber"
 
 /obj/item/clothing/suit/storage/toggle/bomber/navigator
 	name = "navigator bomber jacket"
 	desc = "A thick, well-worn leather bomber jacket."
 	icon_state = "bomberjacket_new"
-	item_state_slots = list(slot_r_hand_str = "brown_jacket", slot_l_hand_str = "brown_jacket")
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
+	icon_open = null
+	icon_closed = null
 
 /obj/item/clothing/suit/storage/toggle/bomber/orange
 	name = "orange bomber jacket"
 	desc = "A cozy jacket in supply's colors. Show your department pride!"
 	icon_state = "supply_dep_jacket"
 	item_state = "supply_dep_jacket"
+	icon_open = "supply_dep_jacket_open"
+	icon_closed = "supply_dep_jacket"
 
 /obj/item/clothing/suit/storage/toggle/bomber/purple
 	name = "purple bomber jacket"
 	desc = "A cozy jacket in science's colors. Show your department pride!"
 	icon_state = "sci_dep_jacket"
 	item_state = "sci_dep_jacket"
+	icon_open = "sci_dep_jacket_open"
+	icon_closed = "sci_dep_jacket"
 
 /obj/item/clothing/suit/storage/toggle/bomber/red
 	name = "red bomber jacket"
 	desc = "A cozy jacket in security's colors. Show your department pride!"
 	icon_state = "sec_dep_jacket"
 	item_state = "sec_dep_jacket"
+	icon_open = "sec_dep_jacket_open"
+	icon_closed = "sec_dep_jacket"
 
 /obj/item/clothing/suit/storage/toggle/bomber/scout
 	name = "scout bomber jacket"
@@ -506,12 +522,16 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	desc = "A cozy jacket in medical's colors. Show your department pride!"
 	icon_state = "med_dep_jacket"
 	item_state = "med_dep_jacket"
+	icon_open = "med_dep_jacket_open"
+	icon_closed = "med_dep_jacket"
 
 /obj/item/clothing/suit/storage/toggle/bomber
 	name = "yellow bomber jacket"
 	desc = "A cozy jacket in engineering's colors. Show your department pride!"
 	icon_state = "engi_dep_jacket"
 	item_state = "engi_dep_jacket"
+	icon_open = "engi_dep_jacket_open"
+	icon_closed = "engi_dep_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
