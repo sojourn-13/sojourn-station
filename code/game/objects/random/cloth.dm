@@ -75,7 +75,7 @@
 				/obj/item/clothing/suit/storage/rank/det_trench = 5,
 				/obj/item/clothing/suit/storage/hazardvest = 10,
 				/obj/item/clothing/suit/storage/rank/insp_trench  = 3,
-				/obj/item/clothing/suit/storage/leather = 3,
+				/obj/item/clothing/suit/storage/toggle/leather = 3,
 				/obj/item/clothing/suit/storage/rank/robotech_jacket = 10,
 				/obj/item/clothing/suit/storage/toggle/bomber = 5,
 				/obj/item/clothing/suit/storage/toggle/hoodie = 5,

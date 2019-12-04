@@ -5,6 +5,53 @@
 	item_state = "eyepatch"
 	body_parts_covered = 0
 
+/obj/item/clothing/glasses/eyepatch/attack_self()
+	adjust()
+
+/obj/item/clothing/glasses/eyepatch/verb/adjust()
+	set category = "Object"
+	set name = "Flip Eyepatch"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(!src.active)
+			src.active = !src.active
+			icon_state = initial(icon_state)
+			to_chat(usr, "You flip the eyepatch to cover your right eye.")
+		else
+			src.active = !src.active
+			icon_state = "[initial(icon_state)]_left"
+			to_chat(usr, "You flip the eyepatch to cover your left eye.")
+		update_wear_icon()
+		usr.update_action_buttons()
+
+/obj/item/clothing/glasses/eyepatch_strapless
+	name = "strapless eyepatch"
+	desc = "A black strapless patch worn to cover a single eye."
+	icon_state = "eyepatch_strapless"
+	item_state = "eyepatch_strapless"
+	body_parts_covered = 0
+
+/obj/item/clothing/glasses/eyepatch_strapless/attack_self()
+	adjust()
+
+/obj/item/clothing/glasses/eyepatch_strapless/verb/adjust()
+	set category = "Object"
+	set name = "Flip Eyepatch"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(!src.active)
+			src.active = !src.active
+			icon_state = initial(icon_state)
+			to_chat(usr, "You flip the eyepatch to cover your right eye.")
+		else
+			src.active = !src.active
+			icon_state = "[initial(icon_state)]_left"
+			to_chat(usr, "You flip the eyepatch to cover your left eye.")
+		update_wear_icon()
+		usr.update_action_buttons()
+
 /obj/item/clothing/glasses/monocle
 	name = "monocle"
 	desc = "A rather dapper eyeglass usually worn for cosmetic purposes."

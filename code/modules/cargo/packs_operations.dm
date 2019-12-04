@@ -11,12 +11,27 @@
 	crate_name = "flare boxes crate"
 	group = "Operations"
 
+/datum/supply_pack/eftpos
+	contains = list(/obj/item/device/eftpos)
+	name = "EFTPOS Scanner Crate"
+	cost = 700
+	crate_name = "EFTPOS scanner crate"
+	group = "Operations"
+
 /datum/supply_pack/exportscanner
 	name = "Export Scanners Crate"
 	contains = list(/obj/item/device/scanner/price,
 					/obj/item/device/scanner/price)
 	cost = 700
 	crate_name = "export scanners crate"
+	group = "Operations"
+
+/datum/supply_pack/floodlight
+	name = "Floodlight Crate"
+	contains = list(/obj/machinery/floodlight,
+					/obj/machinery/floodlight)
+	cost = 1400
+	crate_name = "floodlight crate"
 	group = "Operations"
 
 /datum/supply_pack/mule

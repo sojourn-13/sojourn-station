@@ -105,8 +105,6 @@
 			return
 		update_wear_icon()	//so our overlays update
 
-
-
 //Haveing them hold shit
 
 
@@ -147,74 +145,74 @@
 
 // Gorka Base
 
+/obj/item/clothing/suit/gorka/toggle/gorka/standard
+	name = "gorka jacket"
+	desc = "A rugged, two-tone military style field parka for the adventurer or paramilitant in you."
+	icon_state = "gorka_jacket"
+	icon_open = "gorka_jacket_open"
+	icon_closed = "gorka_jacket"
+
 /obj/item/clothing/suit/gorka/toggle/gorka/camo
 	name = "camo gorka jacket"
 	desc = "A rugged, two-tone military field parka for the partizan fighter in you."
 	icon_state = "gorka_jacket_ss"
-	icon_open = "gorka_jacket_open_ss"
+	icon_open = "gorka_jacket_ss_open"
 	icon_closed = "gorka_jacket_ss"
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew
 	name = "crew gorka jacket"
 	desc = "A vaguely military style utility jacket in a modest grey two-tone."
 	icon_state = "gorka_jacket_crew"
-	icon_open = "gorka_jacket_open_crew"
+	icon_open = "gorka_jacket_crew_open"
 	icon_closed = "gorka_jacket_crew"
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_b
 	name = "blue crew gorka jacket"
 	desc = "A vaguely military style utility jacket in a modest grey two-tone featuring blue liverly."
 	icon_state = "gorka_jacket_crew_b"
-	icon_open = "gorka_jacket_open_crew_b"
+	icon_open = "gorka_jacket_crew_b_open"
 	icon_closed = "gorka_jacket_crew_b"
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_g
 	name = "green crew gorka jacket"
 	desc = "A vaguely military style utility jacket in a modest grey two-tone featuring green liverly."
 	icon_state = "gorka_jacket_crew_g"
-	icon_open = "gorka_jacket_open_crew_g"
+	icon_open = "gorka_jacket_crew_g_open"
 	icon_closed = "gorka_jacket_crew_g"
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_light
 	name = "light crew gorka"
 	desc = "A fashionable parka of vaguely militant design."
 	icon_state = "gorka_jacket_crew_light"
-	icon_open = "gorka_jacket_open_crew_light"
+	icon_open = "gorka_jacket_crew_light_open"
 	icon_closed = "gorka_jacket_crew_light"
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_light_b
 	name = "light blue crew gorka"
 	desc = "A fashionable parka of vaguely militant design featuring a sporty two-tone blue-on-white scheme."
 	icon_state = "gorka_jacket_crew_light_b"
-	icon_open = "gorka_jacket_open_crew_light_b"
+	icon_open = "gorka_jacket_crew_light_b_open"
 	icon_closed = "gorka_jacket_crew_light_b"
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_o
 	name = "orange crew gorka jacket"
 	desc = "A vaguely military style utility jacket in a modest grey two-tone and featuring orange liverly."
 	icon_state = "gorka_jacket_crew_o"
-	icon_open = "gorka_jacket_open_crew_o"
+	icon_open = "gorka_jacket_crew_o_open"
 	icon_closed = "gorka_jacket_crew_o"
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_y
 	name = "yellow crew gorka jacket"
 	desc = "A vaguely military style utility jacket in a modest grey two-tone and featuring orange liverly."
 	icon_state = "gorka_jacket_crew_y"
-	icon_open = "gorka_jacket_open_crew_y"
+	icon_open = "gorka_jacket_crew_y_open"
 	icon_closed = "gorka_jacket_crew_y"
-
-/obj/item/clothing/suit/gorka/toggle/gorka/standard
-	name = "gorka jacket"
-	icon_state = "gorka_jacket"
-	desc = "A rugged, two-tone military style field parka for the adventurer or paramilitant in you."
-	icon_open = "gorka_jacket_open"
-	icon_closed = "gorka_jacket"
 
 /obj/item/clothing/suit/gorka/toggle/gorka
 	name = "tan gorka jacket"
 	desc = "A rugged, two-tone military style tan parka for the adventurer or paramilitant in you."
 	icon_state = "gorka_jacket_tan"
-	icon_open = "gorka_jacket_open_tan"
+	icon_open = "gorka_jacket_tan_open"
 	icon_closed = "gorka_jacket_tan"
 	blood_overlay_type = "coat"
 	armor = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
@@ -225,6 +223,11 @@
 	hoodtype = /obj/item/clothing/head/hood/gorkahood
 
 /*Gorka Hood*/
+
+/obj/item/clothing/head/hood/gorkahood/standard
+	name = "standard gorka jacket hood"
+	icon_state = "gorka_jacket_hood"
+	desc = "A hood from a gorka jacket, oddly cozy."
 
 /obj/item/clothing/head/hood/gorkahood/camo
 	name = "camo gorka hood"
@@ -266,11 +269,6 @@
 	desc = "A hood from a gorka jacket, oddly cozy."
 	icon_state = "gorka_jacket_crew_y_hood"
 
-/obj/item/clothing/head/hood/gorkahood/standard
-	name = "standard gorka jacket hood"
-	icon_state = "gorka_jacket_hood"
-	desc = "A hood from a gorka jacket, oddly cozy."
-
 /obj/item/clothing/head/hood/gorkahood
 	name = "tan gorka jacket hood"
 	desc = "A hood from a gorka jacket, oddly cozy."
@@ -284,7 +282,7 @@
 	name = "science crew gorka"
 	desc = "A durable, baggy grey parka sporting research and development patches."
 	icon_state = "gorka_jacket_crew_sci"
-	icon_open = "gorka_jacket_open_crew_sci"
+	icon_open = "gorka_jacket_crew_sci_open"
 	icon_closed = "gorka_jacket_crew_sci"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
@@ -308,7 +306,7 @@
 	name = "medical crew gorka jacket"
 	desc = "A durable, baggy grey jacket sporting EMS patches, high vis strips and stain resistant coating."
 	icon_state = "gorka_jacket_crew_med"
-	icon_open = "gorka_jacket_open_crew_med"
+	icon_open = "gorka_jacket_crew_med_open"
 	icon_closed = "gorka_jacket_crew_med"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
@@ -332,7 +330,7 @@
 	name = "ironhammer gorka jacket"
 	desc = "A rugged, vaguely slavic two-tone parka, made with robust materials and lined with ballistic mesh."
 	icon_state = "gorka_jacket_ih"
-	icon_open = "gorka_jacket_open_ih"
+	icon_open = "gorka_jacket_ih_open"
 	icon_closed = "gorka_jacket_ih"
 	blood_overlay_type = "coat"
 	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 15, bio = 0, rad = 0)
@@ -354,7 +352,7 @@
 	name = "blue medspec gorka jacket"
 	desc = "A durable, baggy jacket featuring blue medical liverly, stain-resistant coating and a light ballistic mesh."
 	icon_state = "gorka_jacket_ih_med_b"
-	icon_open = "gorka_jacket_open_ih_med_b"
+	icon_open = "gorka_jacket_ih_med_b_open"
 	icon_closed = "gorka_jacket_ih_med_b"
 
 /obj/item/clothing/head/hood/gorkahood_ih/ih_med_b
@@ -366,7 +364,7 @@
 	name = "green medspec gorka jacket"
 	desc = "A durable, baggy jacket featuring green medical liverly, stain-resistant coating and a light ballistic mesh."
 	icon_state = "gorka_jacket_ih_med_g"
-	icon_open = "gorka_jacket_open_ih_med_g"
+	icon_open = "gorka_jacket_ih_med_g_open"
 	icon_closed = "gorka_jacket_ih_med_g"
 
 /obj/item/clothing/head/hood/gorkahood_ih/ih_med_g

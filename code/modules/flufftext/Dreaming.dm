@@ -1,22 +1,54 @@
 
 var/list/dreams = list(
-//Items & Structures
-	"a bullet casing","an ammo magazine","a body bag","a broken device","a pile of remains","a shooting target",
-	"a roll of tape","a plushie","a toy","a piece of trash","a wheelchair","a tie","a holster","a locket",
-	"an eyepatch","a blindfold","a pair of gloves","a sombrero","a helmet","a cowboy hat","a beanie","a bandana",
-	"a gas mask","a surgical mask","a halloween mask","a pair of shoes","a pair of jackboots","a gorka","a firesuit",
-	"a duster","a snowsuit","a formal suit","a prison jumpsuit","a medical gown","a swimsuit","a terminal","a missile",
-	"a warning sign","a painting","a poster","a biogenerator","a microwave","an operating table","a violin","a scanner",
-	"a common item","an uncommon item","a rare item","a hidden treasure","a PDA","a radio","a camera","a freezer",
-	"a flamethrower","a pistol","a sniper rifle","a laser cannon","a knife","a crossbow","an improvised weapon",
-	"a hair comb","a landmine","a newspaper","an oddity","a bag of money","a virus dish","a supermatter crystal",
-	"a pair of handcuffs","a pair of legcuffs","a stool","a baton","a nuclear device","a toolbox", "a mind fryer",
-	"a spy implant","a spy sensor",
+//Devices, Appliances, Tools
+	"an arcade machine","an AI card","a biogenerator","a biomatter canister","a bioprinter","a bioreactor","a bluespace crystal",
+	"a broken device","a burnt circuit","a cable","a camera","a console","a conveyor belt","a core sampler","a cyberplant",
+	"a cyborg recharging station","a cryopod","a coolant tank","a debugger","a depth scanner","a design disk","a defibrillator",
+	"an electronic assembly","an encryption key","a flashlight","a floor painter","a freezer","a fuel tank","a hailer",
+	"an integrated circuit","a laptop","a lever","a mecha chassis","a mass spectrometer","a megaphone","an MMI","a microwave",
+	"a mind fryer","a nuclear device","an operating table","a PDA","a power sink","a power storage unit","a radio","a reagent scanner",
+	"a recharger","a relay positioning device","a roll of tape","a scanner","a scrap beacon","a solar panel","a spy implant",
+	"a spy sensor","a suit cooling unit","a supermatter crystal","a toolbox","a violin","a virus dish","a universal recorder","a tablet",
+	"a telescreen","a television","a toilet","a TTS device","a uplink beacon","a water cooler","a wheelchair",
+
+//Structures
+	"an air vent","an airlock","a bed","a bedsheet","a bookcase","a boulder","a burrow","a catwalk","a chair","a closet","a coat rack",
+	"a curtain","a disposals chute","a dog bed","an emergency shutter","a filing cabinet","a floor tile","a medical stand","a mirror",
+	"a notice board","a painting","a poster","a roller bed","a reinforced window","a showcase","a sofa","a stool","a sign","a table",
+	"a transit tube","a wardrobe","a web","a warning sign","a window",
+
+//Weapons
+	"a bullet casing","an ammo magazine","a missile","a flamethrower","a pistol","a sniper rifle","a laser cannon","a knife",
+	"a crossbow","an improvised weapon","a landmine","a baton","a pair of handcuffs","a pair of legcuffs", "a C-20r","a dart gun",
+	"a Excelsior 7.62x39 AKMS","a Excelsior 9mm Drozd","a Excelsior 9x19 Makarov","a FS AR 5.56x45 Wintermute",
+	"a FS AR 7.62x39 Kalashnikov","a FS BR 10x50mm Hustler","a FS BR 10x50mm Longarm","a FS BR 10x50mm Omnirifle","a FS BR 10x50mm Osprey",
+	"a FS CAR 10x50mm Boar","a FS CAR 5.56x45mm Z8 Bulldog","a FS CAR 6.5x39 Sol","a FS HG .32 Giskard","a FS HG .32 Olivaw",
+	"a FS HG .44 Lamia","a FS HG .44 Naga","a FS HG .45 Bronco","a FS HG .45 Colt","a FS HG .45 Mandella","a FS HG .50 Bolter",
+	"a FS HG 10mm Delta Elite","a FS HG 10mm Stallion","a FS HG 9x19 Clarissa","a FS HG Paco","a FS MP 9x19 Molly","a FS REV .357 Mateba",
+	"a FS REV .357 Miller","a FS REV .38 Havelock","a FS REV .44 Consul","a FS REV .44 Deckard","a FS SG Bull","a FS SMG .45 Atreides",
+	"a FS SMG 9x19 Idaho","a FS SMG 9x19 Straylight","a handmade pistol","a L6 SAW","a NT AMR Penetrator","a NT GP Zeus",
+	"a NT HG .45 Mk58","a NT SG Regulator 1000","a PAR 10x24 Dallas","a RPG-7","a STS-35",
+
+
+//Clothing
+	"a blindfold","an eyepatch","a monocle","a pair of aviators","a pair of glasses","a pair of goggles","a pair of earmuffs",
+	"an armband","a badge","a holster","a leg brace","a neck brace","a scarf","a stethoscope","a tie","a waistcoat","a pair of gloves",
+	"a bandana","a beanie","a beret","a cap","a cowboy hat","a fez","a helmet","a hood","a sombrero","a top hat","a ushanka",
+	"a welding helmet","a balaclava","a breath mask","a gas mask","a muzzle","a surgical mask","a mask","a cigarette","a smoking pipe",
+	"a pair of shoes","a pair of boots","a pair of jackboots","a pair of magboots","a pair of footwraps","a pair of slippers",
+	"a bio suit", "a bomb suit","a firesuit","a radiation suit","a shirt","a universal sling","a straight jacket","an overcloak",
+	"a poncho","a gorka","a greatcoat","a hoodie","a bulletproof vest","a bathrobe","a burial gown","a jumpsuit","a jumpskirt",
+	"a prison jumpsuit","a harness","a medical gown","a loincloth","a skirt","a dress","a formal suit","an undercoat","a top","a costume",
+	"a duster","a snowsuit","a locket",
+
+//Misc
+	"a common item","an uncommon item","a rare item","a hidden treasure","a pile of remains","a body bag","a shooting target",
+	"a plushie","a toy","a piece of trash","a hair comb","a newspaper","an oddity","a bag of money",
 
 //Feelings
 	"admiration","adoration","appreciation","amusement","anxiety","awe","awkwardness","boredom","calmness","confusion",
-	"craving","disgust","depression","entrancement","envy","excitement","greed","fear","horror","interest","lust","pain",
-	"joy","nostalgia","romance","sadness","satisfaction","obsession","insanity","sexual desire","sympathy","triumph",
+	"craving","desire","disgust","depression","entrancement","envy","excitement","greed","fear","horror","interest","insanity",
+	"lust","pain","joy","nostalgia","romance","sadness","satisfaction","obsession","insanity","sympathy","triumph",
 
 //Phrases
 	"not a good idea","it might work","you can stop it","it's out of your control","consume it","don't touch it",
@@ -35,10 +67,10 @@ var/list/dreams = list(
 	"a Ironhammer Medical Specialist",
 
 //Races (Check Creatures Before Adding Stuff Here, There's Some Overlap!)
-	"a human","a sablekyne","a kriosan","a mar'qua","a seelie","a sergal","a abhuman","a vox","a cht'mant","a wolf",
-	"a fox","a husky","a shark","a slimewolf","an angel","a demon","a dragon","a dogborg","a kobold","a bird","a squirrel",
-	"a bunny","a siberian spacebat","a synth","a lamia","a wabbite","a polar bear","a lion","a coyote","a deer",
-	"a crocodile","a strange hybrid","a nevrean","an agudner","an otie","a squid","a synx",
+	"an abhuman","an agudner","an akula","an angel","a bird","a bunny","a cht'mant","a coyote","a crocodile","a deer","a demon",
+	"a dogborg","a dragon","a fox","a goblin","a human","a husky","a kobold","a kriosan","a lamia","a lion","a mar'qua","a nevrean",
+	"a polar bear","an otie","a sablekyne","a seelie","a sergal","a shark","a siberian spacebat","a slimewolf","a squid",
+	"a squirrel","a strange hybrid","a synth","a synx","a vox","a wabbite","a wolf",
 
 //People
 	"a friend","an enemy","a loved one","an acquaintance","a stranger","an unknown individual","a hidden figure",

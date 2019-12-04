@@ -190,29 +190,3 @@
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "pizza crate"
 	group = "Hospitality"
-
-//----------------------------------------------
-//--------------MISCELLANEOUS-------------------
-//----------------------------------------------
-
-/datum/supply_pack/formal_wear
-	contains = list(/obj/item/clothing/head/bowler/,
-					/obj/item/clothing/head/tophat,
-					/obj/item/clothing/under/suit_jacket,
-					/obj/item/clothing/under/suit_jacket/red,
-					/obj/item/clothing/shoes/color/black,
-					/obj/item/clothing/shoes/color/black,
-					/obj/item/clothing/shoes/leather,
-					/obj/item/clothing/accessory/wcoat/black)
-	name = "Formalwear closet"
-	cost = 1500
-	containertype = /obj/structure/closet
-	crate_name = "Formalwear for the best occasions."
-	group = "Miscellaneous"
-
-/datum/supply_pack/eftpos
-	contains = list(/obj/item/device/eftpos)
-	name = "EFTPOS scanner"
-	cost = 700
-	crate_name = "EFTPOS crate"
-	group = "Miscellaneous"

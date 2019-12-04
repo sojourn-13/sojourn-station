@@ -88,8 +88,9 @@
 			/obj/item/clothing/suit/straight_jacket,
 			/obj/item/weapon/legcuffs/fuzzy,
 			/obj/item/clothing/under/costume/kinky/latex_maid)
-	crate_name = "recreational restraints crate"
 	cost = 700
+	crate_name = "recreational restraints crate"
+	group = "Recreation"
 
 /datum/supply_pack/tabletop
 	name = "Tabletop Gaming Crate"

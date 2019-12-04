@@ -3,11 +3,11 @@
 //----------------------------------------------
 
 /datum/supply_pack/monkey
-	name = "Monkey crate"
+	name = "Monkey Crate"
 	contains = list (/obj/item/weapon/storage/box/monkeycubes)
 	cost = 1500
 	containertype = /obj/structure/closet/crate/freezer
-	crate_name = "Monkey crate"
+	crate_name = "monkey crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/hydroponics // -- Skie
@@ -23,47 +23,47 @@
 					/obj/item/clothing/suit/rank/botanist) // Updated with new things
 	cost = 900
 	containertype = /obj/structure/closet/crate/hydroponics
-	crate_name = "Hydroponics crate"
+	crate_name = "hydroponics supply crate"
 	group = "Hydroponics"
 
 //farm animals - useless and annoying, but potentially a good source of food
 /datum/supply_pack/cow
-	name = "Cow crate"
+	name = "Cow Crate"
 	cost = 3000
 	containertype = /obj/structure/largecrate/animal/cow
-	crate_name = "Cow crate"
+	crate_name = "cow crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/goat
-	name = "Goat crate"
+	name = "Goat Crate"
 	cost = 2500
 	containertype = /obj/structure/largecrate/animal/goat
-	crate_name = "Goat crate"
+	crate_name = "Goat Crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/chicken
-	name = "Chicken crate"
+	name = "Chicken Crate"
 	cost = 1500
 	containertype = /obj/structure/largecrate/animal/chick
-	crate_name = "Chicken crate"
+	crate_name = "Chicken Crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/corgi
-	name = "Corgi crate"
+	name = "Corgi Crate"
 	cost = 4000
 	containertype = /obj/structure/largecrate/animal/corgi
-	crate_name = "Corgi crate"
+	crate_name = "corgi crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/cat
-	name = "Cat crate"
+	name = "Cat Crate"
 	cost = 3000
 	containertype = /obj/structure/largecrate/animal/cat
-	crate_name = "Cat crate"
+	crate_name = "cat crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/seeds
-	name = "Seeds crate"
+	name = "Seeds Crate"
 	contains = list(/obj/item/seeds/chiliseed,
 					/obj/item/seeds/berryseed,
 					/obj/item/seeds/cornseed,
@@ -83,11 +83,11 @@
 					/obj/item/seeds/sugarcaneseed)
 	cost = 800
 	containertype = /obj/structure/closet/crate/hydroponics
-	crate_name = "Seeds crate"
+	crate_name = "seeds crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/weedcontrol
-	name = "Weed control crate"
+	name = "Weed Control Crate"
 	contains = list(/obj/item/clothing/mask/gas,
 					/obj/item/weapon/grenade/chem_grenade/antiweed,
 					/obj/item/weapon/grenade/chem_grenade/antiweed,
@@ -95,11 +95,11 @@
 					/obj/item/weapon/grenade/chem_grenade/antiweed)
 	cost = 1000
 	containertype = /obj/structure/closet/crate/secure/hydrosec
-	crate_name = "Weed control crate"
+	crate_name = "weed control crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/exoticseeds
-	name = "Exotic seeds crate"
+	name = "Exotic Seeds Crate"
 	contains = list(/obj/item/seeds/libertymycelium,
 					/obj/item/seeds/reishimycelium,
 					/obj/item/seeds/random,
@@ -111,13 +111,13 @@
 					/obj/item/seeds/kudzuseed)
 	cost = 1500
 	containertype = /obj/structure/closet/crate/hydroponics
-	crate_name = "Exotic Seeds crate"
+	crate_name = "exotic seeds crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/watertank
-	name = "Water tank crate"
+	name = "Water Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/watertank)
 	cost = 800
 	containertype = /obj/structure/largecrate
-	crate_name = "Water tank crate"
+	crate_name = "water tank crate"
 	group = "Hydroponics"
