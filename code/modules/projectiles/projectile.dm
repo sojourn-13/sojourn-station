@@ -568,7 +568,7 @@
 			var/blood_color = "#C80000"
 			if(ishuman(target_mob))
 				var/mob/living/carbon/human/H = target_mob
-				blood_color = H.species.blood_color
+				blood_color = H.form.blood_color
 			new /obj/effect/overlay/temp/dir_setting/bloodsplatter(target_mob.loc, splatter_dir, blood_color)
 			if(prob(50))
 				target_loca.add_blood(L)

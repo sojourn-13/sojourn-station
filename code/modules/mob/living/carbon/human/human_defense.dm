@@ -283,7 +283,7 @@ meteor_act
 			splatter_dir = get_dir(user, target_loca)
 			target_loca = get_step(target_loca, splatter_dir)
 			var/blood_color = "#C80000"
-			blood_color = src.species.blood_color
+			blood_color = src.form.blood_color
 			new /obj/effect/overlay/temp/dir_setting/bloodsplatter(src.loc, splatter_dir, blood_color)
 			target_loca.add_blood(src)
 
