@@ -80,8 +80,8 @@
 	speak_chance = 1
 	emote_see = list("looms", "sways gently")
 	speed = 2
-	melee_damage_lower = 30 // Because fuck anyone who hurts this sweet, innocent creature.
-	melee_damage_upper = 30
+	melee_damage_lower = 5 // APWILL WAS HERE
+	melee_damage_upper = 5
 	attacktext = list("thrashed")
 	friendly = "caressed"
 	response_help   = "brushes"	// If clicked on help intent
