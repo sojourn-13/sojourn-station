@@ -46,7 +46,7 @@
 
 /obj/random/cloth/armor/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/suit/armor/bulletproof = 10,
-				/obj/item/clothing/suit/armor/captain = 1,
+				/obj/item/clothing/suit/space/captain = 1,
 				/obj/item/clothing/suit/armor/heavy = 2,
 				/obj/item/clothing/suit/armor/riot = 4,
 				/obj/item/clothing/suit/armor/laserproof = 2,
@@ -70,13 +70,13 @@
 
 /obj/random/cloth/suit/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/suit/poncho = 10,
-				/obj/item/clothing/suit/storage/rank/ass_jacket = 10,
-				/obj/item/clothing/suit/storage/rank/cargo_jacket = 10,
-				/obj/item/clothing/suit/storage/rank/det_trench = 5,
+				/obj/item/clothing/suit/storage/ass_jacket = 10,
+				/obj/item/clothing/suit/storage/cargo_jacket = 10,
+				/obj/item/clothing/suit/storage/detective = 5,
 				/obj/item/clothing/suit/storage/hazardvest = 10,
-				/obj/item/clothing/suit/storage/rank/insp_trench  = 3,
-				/obj/item/clothing/suit/storage/toggle/leather = 3,
-				/obj/item/clothing/suit/storage/rank/robotech_jacket = 10,
+				/obj/item/clothing/suit/storage/detective/ironhammer  = 3,
+				/obj/item/clothing/suit/storage/leather_jacket = 3,
+				/obj/item/clothing/suit/storage/robotech_jacket = 10,
 				/obj/item/clothing/suit/storage/toggle/bomber = 5,
 				/obj/item/clothing/suit/storage/toggle/hoodie = 5,
 				/obj/item/clothing/suit/storage/toggle/hoodie/black = 5,
@@ -180,7 +180,6 @@
 /obj/random/cloth/helmet/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/head/helmet = 5,
 				/obj/item/clothing/head/helmet/riot = 5,
-				/obj/item/clothing/head/helmet/swat = 3,
 				/obj/item/clothing/head/helmet/space/void/SCAF = 1))
 
 /obj/random/cloth/helmet/low_chance
@@ -320,12 +319,10 @@
 				/obj/item/clothing/shoes/color = 1,
 				/obj/item/clothing/shoes/color/red = 1,
 				/obj/item/clothing/shoes/color/yellow = 1,
-				/obj/item/clothing/shoes/combat = 2,  //No slip
 				/obj/item/clothing/shoes/galoshes = 8,
 				/obj/item/clothing/shoes/jackboots = 14,
 				/obj/item/clothing/shoes/leather = 14,
 				/obj/item/clothing/shoes/reinforced = 14,
-				/obj/item/clothing/shoes/swat = 14,
 				/obj/item/clothing/shoes/workboots = 4))
 
 /obj/random/cloth/shoes/low_chance
