@@ -118,10 +118,23 @@ var/last_chew = 0
 
 	last_chew = world.time
 
+
 /obj/item/weapon/handcuffs/fuzzy
 	name = "fuzzy cuffs"
 	icon_state = "fuzzycuff"
+	var/breakouttime = 200
 	desc = "Use this to keep... 'prisoners' in line."
+
+
+/obj/item/weapon/handcuffs/zipties
+	name = "zip ties"
+	desc = "Plastic, disposable zipties that can be used to restrain someone."
+	icon_state = "cuff_white"
+	matter = list(MATERIAL_PLASTIC = 2)
+	breakouttime = 700 //Deciseconds = 70s, this is higher than usual ss13 because breakout time is subtracted by 1 second for every robustness stat
+	cuff_sound = 'sound/weapons/cablecuff.ogg'
+	cuff_type = "zip ties"
+	elastic = 1
 
 /obj/item/weapon/handcuffs/cable
 	name = "cable restraints"
