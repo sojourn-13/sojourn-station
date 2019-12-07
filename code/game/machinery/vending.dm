@@ -1044,7 +1044,6 @@
 	/obj/item/ammo_magazine/ammobox/c38/rubber = 20,
 	/obj/item/ammo_magazine/ammobox/cl32/rubber = 20,
 	/obj/item/ammo_magazine/ammobox/c45/rubber = 20,
-	/obj/item/weapon/gun/projectile/boltgun/fs = 3,
 	/obj/item/weapon/storage/box/shotgunammo/beanbags = 10,
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 10,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 10,
@@ -1081,7 +1080,6 @@
 	/obj/item/ammo_magazine/ammobox/c38/rubber = 400,
 	/obj/item/ammo_magazine/ammobox/cl32/rubber = 500,
 	/obj/item/ammo_magazine/ammobox/c45/rubber = 300,
-	/obj/item/weapon/gun/projectile/boltgun/fs = 2000,
 	/obj/item/weapon/storage/box/shotgunammo/beanbags = 300,
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 300,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 50,
@@ -1654,11 +1652,15 @@
 	products = list(
 					/obj/item/weapon/storage/deferred/crate/uniform_green = 5, /obj/item/weapon/storage/deferred/crate/uniform_brown = 5,
 					/obj/item/weapon/storage/deferred/crate/uniform_black = 5, /obj/item/weapon/storage/deferred/crate/uniform_flak = 5,
-					/obj/item/weapon/storage/deferred/crate/uniform_light = 5
+					/obj/item/weapon/storage/deferred/crate/uniform_light = 5,
+					/obj/item/weapon/gun/projectile/boltgun/serbian = 8,
+					/obj/item/ammo_magazine/ammobox/a762 = 30,
 					)
 	prices = list(  /obj/item/weapon/storage/deferred/crate/uniform_green = 1000, /obj/item/weapon/storage/deferred/crate/uniform_brown = 1000,
 					/obj/item/weapon/storage/deferred/crate/uniform_black = 1000, /obj/item/weapon/storage/deferred/crate/uniform_flak = 1200,
-					/obj/item/weapon/storage/deferred/crate/uniform_light = 800
+					/obj/item/weapon/storage/deferred/crate/uniform_light = 800,
+					/obj/item/weapon/gun/projectile/boltgun/serbian = 1000,
+					/obj/item/ammo_magazine/ammobox/a762 = 300,
 					)
 	idle_power_usage = 211
 	auto_price = FALSE
