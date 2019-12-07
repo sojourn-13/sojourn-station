@@ -1110,7 +1110,7 @@
 					/obj/item/weapon/computer_hardware/scanner/reagent = 6,
 					/obj/item/weapon/computer_hardware/scanner/atmos = 6,
 					/obj/item/weapon/computer_hardware/scanner/paper = 10,
-					/obj/item/weapon/computer_hardware/nano_printer = 10,
+					/obj/item/weapon/computer_hardware/printer = 10,
 					/obj/item/weapon/computer_hardware/card_slot = 3,
 					/obj/item/weapon/computer_hardware/ai_slot = 4)
 	auto_price = FALSE
@@ -1549,49 +1549,43 @@
 	product_slogans = "Print your own gun TODAY!;The future is NOW!;Can't stop the industrial revolution!;Everything you can imagine, RIGHT HERE!;Don't copy that floppy!;Who needs dreams when you can print everything you need?"
 	product_ads = "Almost free!;Print it yourself!;Don't copy that floppy!;Industrial Revolution!;Future!;Print your dreams TODAY!;Cheap and reliable!"
 	icon_state = "discomat"
-	products = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design = 20,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 10,
+	products = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 20,
+	 /obj/item/weapon/storage/box/data_disk/basic = 5,
+	 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 10,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 10,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 10,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 10,
+					  /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 5,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/parttoolpack = 3,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 5,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 20,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 5,
+					  /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 20,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 10,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 5,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns = 5,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_kinetic_guns = 2,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns = 5,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 10,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammoboxs = 5,
-					/obj/item/weapon/circuitboard/autolathe = 3,
-					/obj/item/weapon/circuitboard/autolathe_disk_cloner = 3,
-					/obj/item/weapon/circuitboard/vending = 10)
+					 /obj/item/weapon/circuitboard/autolathe = 3,
+					  /obj/item/weapon/circuitboard/autolathe_disk_cloner = 3,
+					   /obj/item/weapon/circuitboard/vending = 10)
 	contraband = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 3,
-						/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammoboxs = 3,
-						/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 2)
-	prices = list(/obj/item/weapon/computer_hardware/hard_drive/portable= 50,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 300,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design = 300,
+	 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 2)
+	prices = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 50,
+	/obj/item/weapon/storage/box/data_disk/basic = 100,
+	 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 300,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 400,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 400,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 500,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 400,
+					  /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 500,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 1800,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/parttoolpack = 3000,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design = 600,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 400,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 600,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 400,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 500,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 600,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 600,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns = 3000,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_kinetic_guns = 12000, //4x the price of cheaps
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 700,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammoboxs = 1400,
 					/obj/item/weapon/circuitboard/autolathe = 700,
 					/obj/item/weapon/circuitboard/autolathe_disk_cloner = 1000,
 					/obj/item/weapon/circuitboard/vending = 500,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 1200,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammoboxs = 2400,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 4000)
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 1200,
+					  /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 4000)
+
 
 /obj/machinery/vending/fitness
 	name = "SweatMAX"
