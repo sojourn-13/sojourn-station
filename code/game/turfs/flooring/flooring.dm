@@ -149,9 +149,10 @@ var/list/flooring_types
 	desc = "Do they smoke grass out in space, Bowie? Or do they smoke AstroTurf?"
 	icon = 'icons/turf/flooring/dirt.dmi'
 	icon_base = "dirt"
-	flags = TURF_REMOVE_SHOVEL
 	build_type = null //Todo: add bags of fertilised soil or something to create dirt floors
 	footstep_sound = "gravel"
+	resistance = RESISTANCE_TOUGH
+	health = 9999999
 
 
 /decl/flooring/asteroid

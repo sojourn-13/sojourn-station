@@ -18,7 +18,7 @@
 	layer = EDGED_TURF_LAYER
 	blocks_air = 1
 	temperature = T0C
-	var/mined_turf = /turf/simulated/floor/asteroid
+	var/mined_turf = /turf/simulated/floor/dirt
 	var/ore/mineral
 	var/mined_ore = 0
 	var/last_act = 0

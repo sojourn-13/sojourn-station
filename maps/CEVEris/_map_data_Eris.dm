@@ -2,3 +2,5 @@
 #include "shuttles-eris.dm"
 #include "_CEV_Eris.dmm"
 #include "centcomm.dmm"
+#include "_Nadezda_Colony_Surface.dmm"
+#include "_Nadezda_Colony_Underground.dmm"

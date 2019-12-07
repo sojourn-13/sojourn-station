@@ -254,11 +254,24 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 
 /obj/map_data/eris
 	name = "Eris"
+	is_sealed = TRUE
+	height = 5
+
+/obj/map_data/nadezda_s
+	name = "Eris"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
-	is_accessable_level = TRUE
-	height = 5
+	is_accessable_level = FALSE
+	height = 1
+
+/obj/map_data/nadezda_u
+	name = "Eris"
+	is_station_level = TRUE
+	is_player_level = TRUE
+	is_contact_level = TRUE
+	is_accessable_level = FALSE
+	height = 2
 
 /obj/map_data/admin
 	name = "Admin Level"
