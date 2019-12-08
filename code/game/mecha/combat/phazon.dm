@@ -6,7 +6,7 @@
 	step_in = 1
 	dir_in = 1 //Facing North.
 	step_energy_drain = 3
-	health = 200
+	health = 400
 	deflect_chance = 30
 	damage_absorption = list("brute"=0.7,"fire"=0.7,"bullet"=0.7,"energy"=0.7,"bomb"=0.7)
 	max_temperature = 25000
@@ -18,7 +18,8 @@
 	force = 15
 	var/phasing = 0
 	var/phasing_energy_drain = 200
-	max_equip = 4
+	max_equip = 5
+	cargo_capacity = 1
 
 
 /obj/mecha/combat/phazon/New()

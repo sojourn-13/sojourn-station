@@ -232,6 +232,8 @@
 		M.Stun(2)
 		if(M.reagents.get_reagent_amount("inaprovaline") < 5)
 			M.reagents.add_reagent("inaprovaline", 5)
+		if(M.reagents.get_reagent_amount("tricordizine") < 5)
+			M.reagents.add_reagent("tricordizine", 5)
 		S.chassis.use_power(S.energy_drain)
 		S.update_equip_info()
 		return
@@ -383,10 +385,10 @@
 	var/list/syringes
 	var/list/known_reagents
 	var/list/processed_reagents
-	var/max_syringes = 10
-	var/max_volume = 75 //max reagent volume
+	var/max_syringes = 30
+	var/max_volume = 300 //max reagent volume
 	var/synth_speed = 5 //[num] reagent units per cycle
-	energy_drain = 10
+	energy_drain = 5
 	var/mode = 0 //0 - fire syringe, 1 - analyze reagents.
 	var/datum/global_iterator/mech_synth/synth
 	range = MELEE|RANGED
@@ -399,7 +401,7 @@
 		..()
 		reagent_flags |= NO_REACT
 		syringes = new
-		known_reagents = list("inaprovaline"="Inaprovaline","anti_toxin"="Dylovene")
+		known_reagents = list("inaprovaline"="Inaprovaline","anti_toxin"="Dylovene","bicaridine"="Bicaridine","tramadol"="Tramadol","kelotane"="Kelotane")
 		processed_reagents = new
 		create_reagents(max_volume)
 		synth = new (list(src),0)

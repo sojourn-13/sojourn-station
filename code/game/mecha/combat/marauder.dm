@@ -3,8 +3,9 @@
 	name = "Marauder"
 	icon_state = "marauder"
 	initial_icon = "marauder"
-	step_in = 5
-	health = 500
+	step_in = 3
+	step_energy_drain = 3
+	health = 1000
 	deflect_chance = 25
 	damage_absorption = list("brute"=0.5,"fire"=0.7,"bullet"=0.45,"energy"=0.7,"bomb"=0.7)
 	max_temperature = 60000
@@ -20,7 +21,7 @@
 	add_req_access = 0
 	internal_damage_threshold = 25
 	force = 45
-	max_equip = 4
+	max_equip = 10
 
 /obj/mecha/combat/marauder/seraph
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
@@ -28,12 +29,14 @@
 	icon_state = "seraph"
 	initial_icon = "seraph"
 	operation_req_access = list(access_cent_creed)
-	step_in = 3
-	health = 550
+	step_in = 2
+	step_energy_drain = 1
+	health = 1200
 	wreckage = /obj/effect/decal/mecha_wreckage/seraph
 	internal_damage_threshold = 20
 	force = 55
-	max_equip = 5
+	max_equip = 10
+	cargo_capacity = 10
 
 /obj/mecha/combat/marauder/mauler
 	desc = "Heavy-duty, combat exosuit, developed off of the existing Marauder model."

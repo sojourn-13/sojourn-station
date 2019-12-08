@@ -73,6 +73,16 @@
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
 	starts_unlocked = TRUE
 
+/datum/design/research/item/mecha/lmg/scrap
+	name = "Jury-Rigged Lead Repeater"
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/scrap
+	starts_unlocked = TRUE
+
+/datum/design/research/item/mecha/scattershot/flak
+	name = "Jury-Rigged Flak Cannon"
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak
+	starts_unlocked = TRUE
+
 /datum/design/research/item/mecha/weapon
 
 // *** Weapon modules

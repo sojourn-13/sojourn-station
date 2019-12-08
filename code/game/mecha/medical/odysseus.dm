@@ -1,16 +1,19 @@
 /obj/mecha/medical/odysseus
-	desc = "These exosuits are developed and produced by Vey-Med. (&copy; All rights reserved)."
+	desc = "These exosuits are developed and produced by the Excelsior. (&copy; All rights reserved)."
 	name = "Odysseus"
 	icon_state = "odysseus"
 	initial_icon = "odysseus"
-	step_in = 2
+	step_in = 1
 	max_temperature = 15000
-	health = 120
+	health = 320
 	wreckage = /obj/effect/decal/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
 	deflect_chance = 15
-	step_energy_drain = 6
+	step_energy_drain = 1
 	var/obj/item/clothing/glasses/hud/health/mech/hud
+	max_equip = 5
+	cargo_capacity = 1
+
 
 /obj/mecha/medical/odysseus/Initialize()
 	. = ..()

@@ -1,19 +1,22 @@
 /obj/mecha/combat/durand
-	desc = "An aging combat exosuit utilized by many corporations. Originally developed to combat hostile alien lifeforms."
+	desc = "An aging combat exosuit utilized by many frontier groups. Originally developed to combat hostile alien lifeforms."
 	name = "Durand"
 	icon_state = "durand"
 	initial_icon = "durand"
-	step_in = 4
+	step_in = 3
+	step_energy_drain = 3
 	dir_in = 1 //Facing North.
-	health = 600
+	health = 800
 	deflect_chance = 20
-	damage_absorption = list("brute"=0.5,"fire"=1.1,"bullet"=0.65,"energy"=0.9,"bomb"=0.8)
+	damage_absorption = list("brute"=0.5,"fire"=1.1,"bullet"=0.65,"energy"=0.9,"bomb"=1)
 	max_temperature = 30000
 	infra_luminosity = 8
 	force = 40
 	var/defence = 0
 	var/def_boost = 15
 	wreckage = /obj/effect/decal/mecha_wreckage/durand
+	max_equip = 5
+	internal_damage_threshold = 30
 
 /*
 /obj/mecha/combat/durand/New()
