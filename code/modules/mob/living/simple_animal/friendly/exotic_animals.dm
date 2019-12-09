@@ -104,3 +104,9 @@
 				"Ararrrararr.")
 	emote_hear = list("screEEEEeeches!","chirps.")
 	emote_see = list("earflicks","sniffs at the ground")
+
+/mob/living/simple_animal/fennec/fennix
+	name = "fennix"
+	desc = "A distant sandfox relative. Very warm."
+	icon_state = "fennix"
+	icon_dead = "fennix_dead"

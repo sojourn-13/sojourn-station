@@ -28,3 +28,32 @@
 
 	supernatural = 1
 
+/mob/living/simple_animal/hostile/retaliate/spaceman
+	name = "spaceman"
+	desc = "This strange being resembles a human, but is something different entirely."
+	icon = 'icons/mob/critter.dmi'
+	icon_state = "old"
+	icon_dead = "old_dead"
+	response_help = "pokes"
+	response_disarm = "gently pushes aside"
+	response_harm = "punches"
+	health = 100
+	maxHealth = 100
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+	attacktext = "hits"
+
+/mob/living/simple_animal/hostile/retaliate/spaceman/leader
+	name = "spaceman leader"
+	desc = "This appears to be an important figure among its strange kind."
+	icon = 'icons/mob/critter.dmi'
+	icon_state = "old2"
+	icon_dead = "old2_dead"
+	response_help = "pokes"
+	response_disarm = "gently pushes aside"
+	response_harm = "punches"
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 20
+	melee_damage_upper = 40
+	attacktext = "hits"

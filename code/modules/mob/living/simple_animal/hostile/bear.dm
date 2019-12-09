@@ -1,9 +1,9 @@
 //Space bears!
 /mob/living/simple_animal/hostile/bear
-	name = "space bear"
-	desc = "RawrRawr!!"
-	icon_state = "bear"
-	icon_gib = "bear_gib"
+	name = "space black bear"
+	desc = "A space bear of the common black bear variety."
+	icon_state = "bearfloor"
+	icon_gib = "brownbear_gib"
 	speak_emote = list("growls", "roars")
 	emote_see = list("stares ferociously", "stomps")
 	speak_chance = 1
@@ -33,13 +33,36 @@
 
 	faction = "russian"
 
-//SPACE BEARS! SQUEEEEEEEE~     OW! FUCK! IT BIT MY HAND OFF!!
-/mob/living/simple_animal/hostile/bear/Hudson
+/mob/living/simple_animal/hostile/bear/hudson
 	name = "Hudson"
-	desc = ""
+	desc = "A legendary black space bear. It's quite sparkly."
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "pokes"
+	icon_state = "bear"
+	icon_gib = "bear_gib"
+	maxHealth = 120
+	health = 120
+	melee_damage_lower = 30
+	melee_damage_upper = 40
+
+/mob/living/simple_animal/hostile/bear/brown
+	name = "space brown bear"
+	desc = "A space bear of the common brown bear variety."
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "pokes"
+	icon_state = "brownbear"
+	icon_gib = "brownbear_gib"
+
+/mob/living/simple_animal/hostile/bear/polar
+	name = "space polar bear"
+	desc = "A space bear of the uncommon polar bear variety."
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "pokes"
+	icon_state = "polarbear"
+	icon_gib = "brownbear_gib"
 
 /mob/living/simple_animal/hostile/bear/Life()
 	. =..()
