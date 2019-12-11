@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/vintorez
 	name = "Excelsior .20 \"Vintorez\""
-	desc = "This is a copy of design from country that does not exist anymore. Still a highly valuable for it's armor piercing capabilities."
+	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament."
 	icon = 'icons/obj/guns/projectile/vintorez.dmi'
 	icon_state = "vintorez"
 	item_state = "vintorez"
@@ -11,8 +11,8 @@
 	slot_flags = SLOT_BACK
 	ammo_type = "/obj/item/ammo_casing/srifle"
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_RIFLE
-	magazine_type = /obj/item/ammo_magazine/srifle
+	mag_well = MAG_WELL_AK
+	magazine_type = /obj/item/ammo_magazine/c762_long
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5)
 	price_tag = 4000
 	zoom_factor = 0.8 // double as IH_heavy
