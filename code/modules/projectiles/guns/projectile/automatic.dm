@@ -6,10 +6,10 @@
 	w_class = ITEM_SIZE_NORMAL
 	load_method = SPEEDLOADER //Default is speedloader because all might not have magazine sprites.
 	max_shells = 22
-	caliber = "35a"
+	caliber = "9mm"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
-	ammo_type = /obj/item/ammo_casing/pistol
+	ammo_type = /obj/item/ammo_casing/c9mm
 	burst_delay = 2
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	unload_sound = 'sound/weapons/guns/interact/smg_magout.ogg'

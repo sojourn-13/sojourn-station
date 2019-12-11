@@ -103,9 +103,9 @@
 	ranged = 1
 	rapid = 1
 	icon_state = "syndicateranged"
-	casingtype = /obj/item/ammo_casing/pistol
+	casingtype = /obj/item/ammo_casing/a10mm
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
-	projectiletype = /obj/item/projectile/bullet/pistol
+	projectiletype = /obj/item/projectile/bullet/a10mm
 
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
 
