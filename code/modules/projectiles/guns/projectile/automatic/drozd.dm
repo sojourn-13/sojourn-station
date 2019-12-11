@@ -17,7 +17,6 @@
 	damage_multiplier = 0.5
 	recoil = 0.7 //slightly more than a standart pistol due to auto-firing mode
 	recoil_buildup = 0.1 //smg level
-	silencer_type = /obj/item/weapon/silencer
 
 	firemodes = list(
 		FULL_AUTO_600,
@@ -25,25 +24,10 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/drozd/update_icon()
-	..()
-
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
+	var/state = ""
 
 	if (ammo_magazine)
-		iconstring += "_mag"
-		itemstring += "_mag"
+		state += "_mag"
 
-	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		iconstring += "_slide"
-
-	if (silenced)
-		iconstring += "_s"
-		itemstring += "_s"
-
-	icon_state = iconstring
-	item_state = itemstring
-
-/obj/item/weapon/gun/projectile/automatic/sts35/Initialize()
-	. = ..()
-	update_icon()
+	icon_state = initial(icon_state) + state
+	set_item_state(state)
