@@ -787,8 +787,8 @@ mob/living/carbon/human/proc/get_wings_image()
 		var/t_icon
 		if(s_store.item_icons && (slot_s_store_str in s_store.item_icons))
 			t_icon = s_store.item_icons[slot_s_store_str]
-		else
-			t_icon = get_gender_icon("s_store")
+		/*else
+			t_icon = get_gender_icon("s_store")*/   //this part is broken with a proc error. Please fix!
 
 		//Special case here. We will check if the suit store icon contains our desired iconstate
 		//If not we will use the mob's back icon instead. This allows reusing back icons for shoulder-slung guns
