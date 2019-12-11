@@ -18,7 +18,7 @@
 	layer = EDGED_TURF_LAYER
 	blocks_air = 1
 	temperature = T0C
-	var/mined_turf = /turf/simulated/floor/dirt
+	var/mined_turf = /turf/simulated/floor/asteroid
 	var/ore/mineral
 	var/mined_ore = 0
 	var/last_act = 0
@@ -396,6 +396,10 @@
 	mineralChance = 100 //25
 	mineralSpawnChanceList = list("Uranium" = 10, "Platinum" = 10, "Iron" = 20, "Coal" = 20, "Diamond" = 2, "Gold" = 10, "Silver" = 10, "Plasma" = 20)
 
+/********************** Planet **************************/
+
+/turf/simulated/mineral/planet
+	mined_turf = /turf/simulated/floor/dirt
 
 /**********************Asteroid**************************/
 
