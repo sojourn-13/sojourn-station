@@ -1,6 +1,6 @@
 "a" = (/obj/map_data/nadezda_s,/turf/unsimulated/mineral,/area/colony)
 "b" = (/turf/unsimulated/mineral,/area/colony)
-"f" = (/mob/living/simple_animal/tomato{name = "Floor 1 - Surface"},/turf/unsimulated/mineral,/area/colony)
+"f" = (/mob/living/simple_animal/hostile/tomato{name = "Floor 1 - Surface"},/turf/unsimulated/mineral,/area/colony)
 "g" = (/turf/simulated/floor/grass,/area/colony)
 
 (1,1,1) = {"
