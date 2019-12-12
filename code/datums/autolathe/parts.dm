@@ -106,10 +106,6 @@
 	name = "Tool Heavy Cell Mout"
 	build_path = /obj/item/weapon/tool_upgrade/augment/cell_mount
 
-/datum/design/autolathe/part/oxyjet
-	name = "Oxyjeto Tank"
-	build_path = /obj/item/weapon/tool_upgrade/productivity/oxyjet
-
 /datum/design/autolathe/part/fuel_tank
 	name = "Expanded Fuel Tank"
 	build_path = /obj/item/weapon/tool_upgrade/augment/fuel_tank
