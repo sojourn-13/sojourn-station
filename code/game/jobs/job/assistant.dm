@@ -38,7 +38,7 @@ Perhaps you were marooned on an asteroid and rescued by Eris.<br>\
 Your story is yours to write. What matters is, you're here now, and you should find purpose.<br>\
 As an assistant, you should strive to help out anyone you can. Or at least, anyone who offers you a paying job. Find a way to make money, stay out of trouble, and survive."
 
-	loyalties = "Your loyalty is yours to decide"
+	loyalties = "Your loyalty is yours to decide."
 
 /obj/landmark/join/start/assistant
 	name = "Assistant"

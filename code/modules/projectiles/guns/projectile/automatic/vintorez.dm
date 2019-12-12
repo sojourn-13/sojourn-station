@@ -6,13 +6,12 @@
 	item_state = "vintorez"
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	caliber = "srifle"
+	caliber = "a762" //needs a new caliber type.
 	origin_tech = list(TECH_COMBAT = 6, TECH_ILLEGAL = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
-	ammo_type = "/obj/item/ammo_casing/srifle"
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_AK
-	magazine_type = /obj/item/ammo_magazine/c762_long
+	mag_well = MAG_WELL_AK //needs a new mag type(?)
+	magazine_type = /obj/item/ammo_magazine/c762_long //needs a new magazine type.
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5)
 	price_tag = 4000
 	zoom_factor = 0.8 // double as IH_heavy
