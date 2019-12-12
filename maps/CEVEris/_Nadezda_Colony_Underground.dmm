@@ -1,8 +1,8 @@
-"a" = (/mob/living/simple_animal/tomato{name = "Floor 3 - Underground"},/turf/unsimulated/mineral,/area/colony)
+"a" = (/mob/living/simple_animal/hostile/tomato{name = "Floor 3 - Underground"},/turf/unsimulated/mineral,/area/colony)
 "b" = (/turf/unsimulated/mineral,/area/colony)
 "c" = (/turf/simulated/mineral,/area/colony)
 "d" = (/obj/map_data/nadezda_u,/turf/unsimulated/mineral,/area/colony)
-"e" = (/mob/living/simple_animal/tomato{name = "Floor 2 - Underground"},/turf/unsimulated/mineral,/area/colony)
+"e" = (/mob/living/simple_animal/hostile/tomato{name = "Floor 2 - Underground"},/turf/unsimulated/mineral,/area/colony)
 "f" = (/turf/simulated/mineral,/area/eris/hallway)
 
 (1,1,1) = {"
