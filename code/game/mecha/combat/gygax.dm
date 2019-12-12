@@ -3,9 +3,10 @@
 	name = "Gygax"
 	icon_state = "gygax"
 	initial_icon = "gygax"
-	step_in = 3
+	step_in = 2
+	step_energy_drain = 2
 	dir_in = 1 //Facing North.
-	health = 400
+	health = 600
 	deflect_chance = 15
 	damage_absorption = list("brute"=0.75,"fire"=1,"bullet"=0.8,"energy"=0.85,"bomb"=1)
 	max_temperature = 25000
@@ -14,21 +15,23 @@
 	var/overload_coeff = 2
 	wreckage = /obj/effect/decal/mecha_wreckage/gygax
 	internal_damage_threshold = 35
-	max_equip = 3
+	max_equip = 5
+	cargo_capacity = 3
 
 /obj/mecha/combat/gygax/dark
 	desc = "A lightweight exosuit used by Heavy Asset Protection. A significantly upgraded Gygax security mech."
 	name = "Dark Gygax"
 	icon_state = "darkgygax"
 	initial_icon = "darkgygax"
-	health = 500
+	health = 800
 	deflect_chance = 25
 	damage_absorption = list("brute"=0.6,"fire"=0.8,"bullet"=0.6,"energy"=0.65,"bomb"=0.8)
 	max_temperature = 45000
 	overload_coeff = 1
 	wreckage = /obj/effect/decal/mecha_wreckage/gygax/dark
-	max_equip = 4
-	step_energy_drain = 5
+	max_equip = 7
+	step_energy_drain = 1
+	cargo_capacity = 5
 
 /obj/mecha/combat/gygax/dark/New()
 	..()

@@ -9,6 +9,8 @@
 	//operation_req_access = list(access_hos)
 	damage_absorption = list("brute"=0.7,"fire"=1,"bullet"=0.7,"energy"=1,"bomb"=0.8)
 	var/am = "d3c2fbcadca903a41161ccc9df9cf948"
+	var/list/cargo = new
+	var/cargo_capacity = 5
 
 /*
 /obj/mecha/combat/range_action(target as obj|mob|turf)
@@ -135,3 +137,36 @@
 		am = null
 	return
 	*/
+
+/obj/mecha/combat/Topic(href, href_list)
+	..()
+	if(href_list["drop_from_cargo"])
+		var/obj/O = locate(href_list["drop_from_cargo"])
+		if(O && O in src.cargo)
+			src.occupant_message(SPAN_NOTICE("You unload [O]."))
+			O.loc = get_turf(src)
+			src.cargo -= O
+			var/turf/T = get_turf(O)
+			if(T)
+				T.Entered(O)
+			src.log_message("Unloaded [O]. Cargo compartment capacity: [cargo_capacity - src.cargo.len]")
+	return
+
+/obj/mecha/combat/Exit(atom/movable/O)
+	if(O in cargo)
+		return 0
+	return ..()
+
+/obj/mecha/combat/get_stats_part()
+	var/output = ..()
+	output += "<b>Cargo Compartment Contents:</b><div style=\"margin-left: 15px;\">"
+	if(src.cargo.len)
+		for(var/obj/O in src.cargo)
+			output += "<a href='?src=\ref[src];drop_from_cargo=\ref[O]'>Unload</a> : [O]<br>"
+	else
+		output += "Nothing"
+	output += "</div>"
+	return output
+
+/obj/mecha/combat/range_action(atom/target as obj|mob|turf)
+	return

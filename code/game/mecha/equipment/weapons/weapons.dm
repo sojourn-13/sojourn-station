@@ -7,7 +7,9 @@
  * /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse
  * /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
  * /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
+ * /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak
  * /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
+  * /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/scrap
  * /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flare
  * /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive
  * /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
@@ -90,7 +92,7 @@
 	energy_drain = 80
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
-	required_type = list(/obj/mecha/combat, /obj/mecha/working)
+	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
 	equip_cooldown = 15
@@ -220,6 +222,20 @@
 	deviation = 0.7
 	projectile_energy_cost = 25
 
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak
+	name = "\improper jury-rigged flak cannon"
+	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
+	icon_state = "mecha_scatter"
+	equip_cooldown = 20
+	projectile = /obj/item/projectile/bullet/a10mm
+	fire_sound = 'sound/weapons/Gunshot.ogg'
+	fire_volume = 80
+	projectiles = 30
+	projectiles_per_shot = 6
+	deviation = 0.9
+	projectile_energy_cost = 30
+	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
+
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
 	name = "\improper Ultra AC 2"
 	icon_state = "mecha_uac2"
@@ -231,6 +247,20 @@
 	deviation = 0.3
 	projectile_energy_cost = 20
 	fire_cooldown = 2
+
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/scrap
+	name = "\improper jury-rigged lead repeater"
+	desc = "Few would call this weapon reliable, fewer know just how valuable it is."
+	icon_state = "mecha_uac2"
+	equip_cooldown = 10
+	projectile = /obj/item/projectile/bullet/a10mm
+	fire_sound = 'sound/weapons/Gunshot.ogg'
+	projectiles = 60
+	projectiles_per_shot = 3
+	deviation = 0.4
+	projectile_energy_cost = 20
+	fire_cooldown = 2
+	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	var/missile_speed = 2

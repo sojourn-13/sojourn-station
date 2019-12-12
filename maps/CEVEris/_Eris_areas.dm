@@ -3,6 +3,9 @@
 //CEV ERIS//
 ////////////
 
+/area/colony
+	ship_area = TRUE
+	icon_state = "asteroid"
 
 /area/eris
 	ship_area = TRUE

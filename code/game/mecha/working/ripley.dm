@@ -3,11 +3,13 @@
 	name = "APLU \"Ripley\""
 	icon_state = "ripley"
 	initial_icon = "ripley"
-	step_in = 6
+	step_in = 2
+	step_energy_drain = 2
 	max_temperature = 20000
-	health = 300
+	health = 500
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley
 	cargo_capacity = 10
+	max_equip = 6
 
 /obj/mecha/working/ripley/Destroy()
 	for(var/atom/movable/A in src.cargo)
@@ -25,16 +27,18 @@
 	icon_state = "firefighter"
 	initial_icon = "firefighter"
 	max_temperature = 65000
-	health = 350
+	health = 550
 	lights_power = 8
 	damage_absorption = list("fire"=0.5,"bullet"=0.8,"bomb"=0.5)
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley/firefighter
 
 /obj/mecha/working/ripley/deathripley
-	desc = "OH SHIT IT'S THE DEATHSQUAD WE'RE ALL GONNA DIE"
-	name = "DEATH-RIPLEY"
+	desc = "Combat mechs on a budget!"
+	name = "Death Ripley"
 	icon_state = "deathripley"
-	step_in = 2
+	initial_icon = "deathripley"
+	step_in = 1
+	step_energy_drain = 1
 	opacity=0
 	lights_power = 60
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley/deathripley
@@ -43,7 +47,13 @@
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/thruster
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/scrap
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster
 	ME.attach(src)
 	return
 

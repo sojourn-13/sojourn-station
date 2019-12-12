@@ -30,7 +30,7 @@
 	energy_drain = 10
 	var/dam_force = 20
 	var/obj/mecha/working/ripley/cargo_holder
-	required_type = /obj/mecha/working
+	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
 	attach(obj/mecha/M as obj)
 		..()
@@ -100,7 +100,7 @@
 	equip_cooldown = 30
 	energy_drain = 10
 	force = WEAPON_FORCE_DANGEROUS
-	required_type = list(/obj/mecha/working/ripley, /obj/mecha/combat)
+	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
 	action(atom/target)
 		if(!action_checks(target)) return
@@ -968,7 +968,7 @@
 	energy_drain = 0
 	var/dam_force = 0
 	var/obj/mecha/working/ripley/cargo_holder
-	required_type = /obj/mecha/working/ripley
+	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
 	attach(obj/mecha/M as obj)
 		..()
