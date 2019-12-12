@@ -129,11 +129,11 @@
 	sharp = TRUE
 
 /obj/item/projectile/bullet/c10x24
-	damage = DAMAGE_10X24
-	armor_penetration = ARMOR_PENETRATION_10X24
-	penetrating = 1
-	sharp = FALSE
+	damage = 16
+	armor_penetration = 25
+	penetrating = 2
 	can_ricochet = TRUE
+	sharp = TRUE
 
 /obj/item/projectile/bullet/a556
 	damage = 16
