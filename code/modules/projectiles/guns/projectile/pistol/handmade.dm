@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/handmade_pistol
 	name = "handmade pistol"
-	desc = "An unreliable hand-crafted pistol liable to blow up in your hands. It can only be reloaded after shooting or with the use of a screwdriver."
+	desc = "Looks unreliable. May blow up in your hands. Due to a strange design, this one can be reload only after shot. Or with the use of a screwdriver."
 	icon = 'icons/obj/guns/projectile/hm_pistol.dmi'
 	icon_state = "hm_pistol"
 	item_state = "pistol"
