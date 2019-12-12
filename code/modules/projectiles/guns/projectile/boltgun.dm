@@ -9,13 +9,13 @@
 	force = WEAPON_FORCE_PAINFUL // same as spear
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	caliber = "lrifle"
+	caliber = "a762" //needs new caliber type?
 	damage_multiplier = 1.5
 	recoil = 0.2 //same as AMR
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 5
-	ammo_type = /obj/item/ammo_magazine/lrifle
+	ammo_type = /obj/item/ammo_magazine/c762_long //needs new ammunition type?
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
