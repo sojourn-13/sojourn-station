@@ -10,16 +10,6 @@
 	name = "Milk"
 	build_path = /obj/item/weapon/reagent_containers/food/drinks/milk
 
-/datum/design/autolathe/biomatter/salt //Soj add
-	name = "Salt Shaker"
-	build_path = /obj/item/weapon/reagent_containers/food/condiment/saltshaker
-	materials = list("biomatter" = 2)
-
-/datum/design/autolathe/biomatter/pepper //Soj add
-	name = "Pepper Mill"
-	build_path = /obj/item/weapon/reagent_containers/food/condiment/peppermill
-	materials = list("biomatter" = 2)
-
 //[NUTRIMENTS]
 /datum/design/autolathe/biomatter/ez
 	name = "EZ-Nutrient"
@@ -80,10 +70,6 @@
 /datum/design/autolathe/biomatter/belt/medical/emt
 	name = "EMT belt"
 	build_path = /obj/item/weapon/storage/belt/medical/emt
-
-/datum/design/autolathe/biomatter/belt/nt //Soj add
-	name = "NeoTeology belt"
-	build_path = /datum/design/autolathe/biomatter/belt/nt_utility
 
 /datum/design/autolathe/biomatter/belt/misc/champion
 	name = "Champion belt"
