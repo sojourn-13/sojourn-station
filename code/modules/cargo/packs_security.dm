@@ -48,6 +48,16 @@
 	crate_name = "FS assault weapons crate"
 	group = "Security"
 
+/datum/supply_pack/fsrevolver
+	name = "FS Revolvers Crate"
+	contains = list(/obj/item/weapon/gun/projectile/revolver/detective,
+					/obj/item/weapon/gun/projectile/revolver/detective,
+					/obj/item/weapon/gun/projectile/revolver/consul)
+	cost = 3300
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "FS revolvers crate"
+	group = "Security"
+
 /datum/supply_pack/ntweapons
 	name = "NT Energy Weapons Crate"
 	contains = list(/obj/item/weapon/gun/energy/laser,
