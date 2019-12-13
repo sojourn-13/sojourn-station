@@ -10,7 +10,7 @@
 	caliber = "shotgun"
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_RIFLE
+	mag_well = MAG_WELL_CIVI_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 5000
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'

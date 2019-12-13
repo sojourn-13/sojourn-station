@@ -378,7 +378,7 @@
 "hn" = (/obj/structure/lattice,/turf/space,/area/space)
 "ho" = (/turf/simulated/wall/r_wall,/area/centcom/evac)
 "hp" = (/obj/structure/bed/chair/comfy/black,/obj/landmark/storyevent/merc_spawn,/turf/unsimulated/floor{tag = "icon-cult"; name = "plating"; icon_state = "cult"},/area/centcom/merc_base)
-"hq" = (/obj/structure/sign/nosmoking_2{pixel_x = 32},/obj/structure/table/rack,/obj/random/lathe_disk/advanced,/obj/random/lathe_disk,/obj/random/lathe_disk/low_chance,/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
+"hq" = (/obj/structure/sign/warning/nosmoking/large{pixel_x = 32},/obj/structure/table/rack,/obj/random/lathe_disk/advanced,/obj/random/lathe_disk,/obj/random/lathe_disk/low_chance,/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
 "hr" = (/obj/machinery/autolathe,/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
 "hs" = (/obj/structure/table/rack,/obj/item/stack/material/steel/full,/obj/item/stack/material/glass{amount = 120},/obj/item/stack/material/plasteel{amount = 60},/obj/random/material,/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
 "hx" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/box/drinkingglasses{pixel_x = 1; pixel_y = 4},/obj/item/weapon/storage/box/drinkingglasses{pixel_x = 1; pixel_y = 4},/obj/item/weapon/storage/box/drinkingglasses{pixel_x = 1; pixel_y = 4},/turf/simulated/floor/tiled/dark,/area/centcom/evac)

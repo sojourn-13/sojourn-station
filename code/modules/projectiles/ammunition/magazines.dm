@@ -479,7 +479,7 @@
 	name = "ammo drum (12 gauge slug)"
 	icon_state = "m12_slug"
 	mag_type = MAGAZINE
-	mag_well =  MAG_WELL_RIFLE
+	mag_well =  MAG_WELL_CIVI_RIFLE
 	caliber = "shotgun"
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 6)
