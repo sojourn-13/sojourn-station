@@ -43,7 +43,7 @@
 	mag_well = MAG_WELL_DART
 
 /obj/item/weapon/gun/projectile/dartgun
-	name = "dart gun"
+	name = "Z-H P Artemis"
 	desc = "Zeng-Hu Pharmaceutical's entry into the arms market, the Z-H P Artemis is a gas-powered dart gun capable of delivering chemical cocktails swiftly across short distances."
 	icon = 'icons/obj/guns/projectile/dartgun.dmi'
 	icon_state = "dartgun-empty"
@@ -78,11 +78,9 @@
 /obj/item/weapon/gun/projectile/dartgun/update_icon()
 	..()
 	if(ammo_magazine)
-		icon_state = "dartgun-[round(ammo_magazine.stored_ammo.len,1)]"
-		set_item_state("-[round(ammo_magazine.stored_ammo.len,1)]")
+		icon_state = "dartgun-[round(ammo_magazine.stored_ammo.len,2)]"
 	else
 		icon_state = "dartgun-empty"
-		set_item_state("-empty")
 	return
 
 /obj/item/weapon/gun/projectile/dartgun/consume_next_projectile()
