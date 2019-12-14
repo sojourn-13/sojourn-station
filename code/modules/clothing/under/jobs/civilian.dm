@@ -38,7 +38,7 @@
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
-/obj/item/clothing/under/rank/chaplain
+/obj/item/clothing/under/rank/preacher
 	desc = "A dark ceremonial robe tailored for NeoTheology preachers."
 	name = "neotheology preacher's robe"
 	icon_state = "preacher"
@@ -52,7 +52,7 @@
 
 /obj/item/clothing/under/rank/church
 	desc = "Smells like incense."
-	name = "Church Attire"
+	name = "church vestments"
 	icon_state = "church"
 	item_state = "church"
 

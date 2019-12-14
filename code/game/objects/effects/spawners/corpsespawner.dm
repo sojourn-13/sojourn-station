@@ -145,7 +145,7 @@
 
 /obj/landmark/corpse/roles/civilian/neotheopreacher
 	name = "NeoTheologist Preacher"
-	corpseuniform = /obj/item/clothing/under/rank/chaplain
+	corpseuniform = /obj/item/clothing/under/rank/preacher
 	corpsesuit = /obj/item/clothing/suit/rank/chaplain
 	corpseshoes = /obj/item/clothing/shoes/reinforced
 	corpsegloves = /obj/item/clothing/gloves/thick
