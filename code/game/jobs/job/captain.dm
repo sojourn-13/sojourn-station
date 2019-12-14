@@ -20,12 +20,12 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	ideal_character_age = 70 // Old geezer captains ftw
 	outfit_type = /decl/hierarchy/outfit/job/captain
 
-	description = "You are a privateeer. <br>\
-The owner of the vast rusting hulk that is the CEV Eris. At least, as long as you keep up repayments.<br>\
+	description = "You are the privateer owner of the vast rusting hulk that is the CEV Eris. <br>\
+At least, that will be the case as long as you keep up with the repayments.<br>\
 This ship is your life's work, crewed by an alliance of corporations and factions that you've brokered uneasy treaties with.<br>\
 
-You are the supreme leader of this world, and your word is law. But only as long as you can enforce that law.<br>\
-The heads of the factions which make up your command staff, each have their own agendas. Their interests must be served too. If you make them unhappy, the loyalty of their faction goes with them, and you may have a mutiny on your hands.<br>\
+You are the supreme leader of this vessel, and your word is law. But only as long as you can enforce that law.<br>\
+The heads of the factions which make up your command staff each have their own agendas. Their interests must be served too. If you make them unhappy, the loyalty of their faction goes with them, and you may have a mutiny on your hands.<br>\
 Treat your command officers with respect, and listen to their council. Try not to micromanage their departments or interfere in their affairs, and they should serve you well<br>\
 
 You are a free agent, able to go where you will, and loyal to no particular government or nation. You are however, in quite a lot of debt. So wherever you go, you should be sure a profitable venture awaits."

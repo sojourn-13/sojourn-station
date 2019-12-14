@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/automatic/maxim //This is currently deprecated unless someone can code up heavy machine gun mechanics.
 	name = "Excelsior machine gun"
 	desc = ""
+	icon = 'icons/obj/guns/projectile/maxim.dmi'
 	icon_state = "maxim"
 	item_state = "maxim"
 	w_class = ITEM_SIZE_HUGE
@@ -20,7 +21,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
-	recoil_buildup = 0.3 //machinegun level
+	recoil_buildup = 3
 
 	firemodes = list(
 		FULL_AUTO_600,
@@ -35,10 +36,10 @@
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]-full"
-		item_state = "[initial(item_state)]-full"
+		set_item_state("-full")
 	else
 		icon_state = initial(icon_state)
-		item_state = initial(item_state)
+		set_item_state()
 	return
 
 /obj/item/weapon/gun/projectile/automatic/maxim/special_check(mob/user)

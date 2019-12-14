@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/automatic/sts35
 	name = "STS-35"
 	desc = "The rugged STS-35 is a durable automatic weapon, popular on frontier worlds. Uses 7.62mm rounds. This one is unmarked."
+	icon = 'icons/obj/guns/projectile/sts.dmi'
 	icon_state = "sts"
 	item_state = "sts"
 	w_class = ITEM_SIZE_BULKY
@@ -17,6 +18,8 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
+	damage_multiplier = 1.3
+	recoil_buildup = 8
 
 
 	firemodes = list(
@@ -26,8 +29,22 @@
 		BURST_5_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/sts35/update_icon(var/ignore_inhands)
+
+/obj/item/weapon/gun/projectile/automatic/sts35/update_icon()
 	..()
-	icon_state = "[initial(icon_state)][ammo_magazine? "-[ammo_magazine.max_ammo]": ""]"
-	if(!ignore_inhands)
-		update_wear_icon()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+/obj/item/weapon/gun/projectile/automatic/sts35/Initialize()
+	. = ..()
+	update_icon()

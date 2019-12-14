@@ -1,10 +1,12 @@
 /obj/item/weapon/gun/projectile/IH_sidearm
 	name = "FS HG \"Paco\""
 	desc = "A modern and reliable sidearm for the soldier in the field. Commonly issued as a sidearm to Ironhammer Operatives. Uses 10mm rounds."
+	icon = 'icons/obj/guns/projectile/IH_sidearm.dmi'
 	icon_state = "IH_sidearm"
 	item_state = "IH_sidearm"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = "10mm"
+	can_dual = 1
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	ammo_type = "/obj/item/ammo_casing/a10mm"
@@ -17,13 +19,14 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	silencer_type = /obj/item/weapon/silencer
-	recoil = 0.5 //regular pistol recoil
+	damage_multiplier = 1.1
+	recoil_buildup = 20
 
 /obj/item/weapon/gun/projectile/IH_sidearm/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
-	var/itemstring = initial(item_state)
+	var/itemstring = ""
 
 	if (ammo_magazine)
 		iconstring += "_mag"
@@ -36,7 +39,7 @@
 		itemstring += "_s"
 
 	icon_state = iconstring
-	item_state = itemstring
+	set_item_state(itemstring)
 
 /obj/item/weapon/gun/projectile/IH_sidearm/Initialize()
 	. = ..()

@@ -1,9 +1,11 @@
 /obj/item/weapon/gun/projectile/revolver
 	name = "FS REV .357 \"Miller\""
 	desc = "The \"Frozen Star\" \"Miller\" is a revolver of choice when you absolutely, positively need to make a hole in someone. Uses old-school .357 ammo."
+	icon = 'icons/obj/guns/projectile/revolver.dmi'
 	icon_state = "revolver"
 	item_state = "revolver"
 	caliber = "357"
+	can_dual = 1
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	handle_casings = CYCLE_CASINGS
 	max_shells = 7
@@ -14,9 +16,12 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/rev_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/revolver_fire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
-	recoil = 0.8 //high caliber pistol recoil
 	price_tag = 2000 //avasarala of revolver world
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
+	fire_delay = 3 //all revolvers can fire faster, but have huge recoil
+	damage_multiplier = 1.2
+	penetration_multiplier = 1.3
+	recoil_buildup = 30
 
 /obj/item/weapon/gun/projectile/revolver/verb/spin_cylinder()
 	set name = "Spin cylinder"

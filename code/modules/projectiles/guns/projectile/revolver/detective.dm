@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/revolver/detective
 	name = "FS REV .38 \"Havelock\""
 	desc = "A cheap Frozen Star knock-off of a Smith & Wesson Model 10. Uses .38-Special rounds."
+	icon = 'icons/obj/guns/projectile/detective.dmi'
 	icon_state = "detective"
 	drawChargeMeter = FALSE
 	w_class = ITEM_SIZE_SMALL
@@ -11,4 +12,6 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 800 //cheap civ peashooter revolver, something similar to olivav
-	recoil = 0.4 //peashooter tier revolver
+	damage_multiplier = 1.15 //because pistol round
+	penetration_multiplier = 1.5
+	recoil_buildup = 24

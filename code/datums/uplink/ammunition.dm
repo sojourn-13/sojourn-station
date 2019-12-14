@@ -35,6 +35,36 @@
 	item_cost = 3
 	path = /obj/item/ammo_magazine/c762_long/highvelocity
 
+/datum/uplink_item/item/ammo/m12
+	name = "M12 shotgun mag with slugs"
+	item_cost = 2
+	path = /obj/item/ammo_magazine/m12
+
+/datum/uplink_item/item/ammo/m12/beanbag
+	name = "M12 shotgun mag with beanbag"
+	item_cost = 2
+	path = /obj/item/ammo_magazine/m12/beanbag
+
+/datum/uplink_item/item/ammo/m12/pellet
+	name = "M12 shotgun mag with buckshot"
+	item_cost = 2
+	path = /obj/item/ammo_magazine/m12/pellet
+
+/datum/uplink_item/item/ammo/m12
+	name = "M12 shotgun mag with slugs"
+	item_cost = 2
+	path = /obj/item/ammo_magazine/m12
+
+/datum/uplink_item/item/ammo/m12/stun
+	name = "M12 shotgun mag with taser shells"
+	item_cost = 4
+	path = /obj/item/ammo_magazine/m12/stun
+
+/datum/uplink_item/item/ammo/m12/empty
+	name = "empty M12 shotgun mag"
+	item_cost = 1
+	path = /obj/item/ammo_magazine/m12
+
 /datum/uplink_item/item/ammo/sniperammo
 	name = "14.5mm"
 	item_cost = 3

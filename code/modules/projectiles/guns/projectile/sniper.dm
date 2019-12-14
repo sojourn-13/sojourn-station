@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/heavysniper
 	name = "NT AMR \"Penetrator\""
 	desc = "A portable anti-armour rifle, fitted with a scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing 14.5mm shells. Alt click it to access the chamber."
+	icon = 'icons/obj/guns/projectile/heavysniper.dmi'
 	icon_state = "heavysniper"
 	item_state = "heavysniper"
 	w_class = ITEM_SIZE_HUGE
@@ -8,7 +9,7 @@
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 	caliber = "14.5mm"
-	recoil = 0.2 //due to new dynamic crosshair recoil system, in order to hit something we need to have low recoil on it, but 0.2 will allow random misses as well
+	recoil_buildup = 75
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING
 	max_shells = 1

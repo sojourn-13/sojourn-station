@@ -1,14 +1,18 @@
 /obj/item/weapon/gun/projectile/handmade_pistol
 	name = "handmade pistol"
-	desc = "Looks unreliable. May blow up in your hands. Due to a strange design, this one can be reload only after shot. Or with the use of a screwdriver."
+	desc = "An unreliable hand-crafted pistol liable to blow up in your hands. It can only be reloaded after shooting or with the use of a screwdriver."
+	icon = 'icons/obj/guns/projectile/hm_pistol.dmi'
 	icon_state = "hm_pistol"
 	item_state = "pistol"
 	caliber = ".38"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	can_dual = 1
 	load_method = SINGLE_CASING
 	max_shells = 1
 	ammo_type = /obj/item/ammo_casing/c38
+	damage_multiplier = 1.36
+	recoil_buildup = 45
 	var/chamber_open = FALSE
 	var/jammed = FALSE
 	var/jam_chance = 15

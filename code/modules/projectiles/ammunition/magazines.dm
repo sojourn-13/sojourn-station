@@ -472,3 +472,40 @@
 
 /obj/item/ammo_magazine/a75/empty
 	initial_ammo = 0
+
+////////////Shotguns!////////////
+
+/obj/item/ammo_magazine/m12
+	name = "ammo drum (12 gauge slug)"
+	icon_state = "m12_slug"
+	mag_type = MAGAZINE
+	mag_well =  MAG_WELL_CIVI_RIFLE
+	caliber = "shotgun"
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_STEEL = 6)
+	multiple_sprites = 1
+	max_ammo = 8
+	ammo_color = "-slug"
+
+/obj/item/ammo_magazine/m12/empty
+	icon_state = "m12"
+	ammo_color = ""
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/m12/pellet
+	name = "ammo drum (12 gauge pellet)"
+	icon_state = "m12_pellets"
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_color = "-pellets"
+
+/obj/item/ammo_magazine/m12/stun
+	name = "ammo drum (12 gauge stun)"
+	icon_state = "m12_stun"
+	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
+	ammo_color = "-stun"
+
+/obj/item/ammo_magazine/m12/beanbag
+	name = "ammo drum (12 gauge beanbag)"
+	icon_state = "m12_beanbag"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	ammo_color = "-beanbag"

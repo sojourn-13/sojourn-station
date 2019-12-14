@@ -4,6 +4,7 @@
 	name = "PAR 10x24 \"Dallas\""
 	desc = "Dallas is a pulse-action air-cooled automatic assault rifle made by unknown manufacturer. This weapon is very rare, but deadly efficient. \
 		It's used by elite mercenaries, assassins or bald marines. Makes you feel like a space marine when you hold it."
+	icon = 'icons/obj/guns/projectile/dallas.dmi'
 	icon_state = "dallas"
 	item_state = "dallas"
 	w_class = ITEM_SIZE_HUGE
@@ -20,8 +21,8 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/m41_reload.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/m41_cocked.ogg'
-	recoil = 0.8 //advanced pulse rifle will have lower recoil for sure
-	recoil_buildup = 0.1 //advanced pulse weapon
+	damage_multiplier = 1.7
+	recoil_buildup = 6
 
 	firemodes = list(
 		FULL_AUTO_400,

@@ -1,8 +1,10 @@
 /obj/item/weapon/gun/energy/pulse
 	name = "NT PR \"Dominion\""
 	desc = "A weapon that uses advanced pulse-based beam generation technology to emit powerful laser blasts. Due to its complexity and cost, it is rarely seen in use, except by specialists."
+	icon = 'icons/obj/guns/energy/pulse.dmi'
 	icon_state = "pulse"
 	item_state = null	//so the human update icon uses the icon_state instead.
+	item_charge_meter = TRUE
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
@@ -13,7 +15,7 @@
 	cell_type = /obj/item/weapon/cell/medium
 	sel_mode = 2
 	charge_cost = 75
-	recoil_buildup = 0.1 //pulse weapons have a bit more recoil
+	recoil_buildup = 1 //pulse weapons have a bit more recoil
 
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, fire_sound='sound/weapons/Taser.ogg', fire_delay=null, charge_cost=null, icon="stun"),
@@ -45,6 +47,7 @@
 /obj/item/weapon/gun/energy/pulse/cassad
 	name = "FS PR \"Cassad\""
 	desc = "\"Frozen Star\" brand energy assault rifle, capable of prolonged combat. When surrender is not an option."
+	icon = 'icons/obj/guns/energy/cassad.dmi'
 	icon_state = "cassad"
 	item_state = "cassad"
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 6)
@@ -59,3 +62,7 @@
 	firemodes = list(
 		list(mode_name="DESTROY", projectile_type=/obj/item/projectile/beam/pulse, fire_sound='sound/weapons/pulse.ogg', fire_delay=null, charge_cost=null, icon="destroy"),
 	)
+
+/obj/item/weapon/gun/energy/pulse/cassad/update_icon()
+	..()
+	set_item_state(null, back = TRUE)

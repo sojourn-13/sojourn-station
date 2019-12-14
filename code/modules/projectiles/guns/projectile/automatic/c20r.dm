@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/automatic/c20r
 	name = "C-20r"
 	desc = "The C-20r is a lightweight and rapid-firing SMG, for when you REALLY need someone dead. Uses 10mm rounds. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstock stamp."
+	icon = 'icons/obj/guns/projectile/cr20.dmi'
 	icon_state = "c20r"
 	item_state = "c20r"
 	w_class = ITEM_SIZE_NORMAL
@@ -19,8 +20,9 @@
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	zoom_factor = 0.2
-	recoil = 0.8
-	recoil_buildup = 0.1 //smg level
+	damage_multiplier = 1.1
+	recoil_buildup = 6
+	silencer_type = /obj/item/weapon/silencer
 
 	firemodes = list(
 		FULL_AUTO_400,
@@ -29,9 +31,13 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/c20r/update_icon()
-	..()
+	overlays.Cut()
+	icon_state = "[initial(icon_state)][silenced ? "_s" : ""]"
 	if(ammo_magazine)
-		icon_state = "c20r-[round(ammo_magazine.stored_ammo.len,4)]"
-	else
-		icon_state = "c20r"
-	return
+		overlays += "mag[silenced ? "_s" : ""][ammo_magazine.ammo_color]"
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		overlays += "slide[silenced ? "_s" : ""]"
+
+/obj/item/weapon/gun/projectile/automatic/c20r/Initialize()
+	. = ..()
+	update_icon()

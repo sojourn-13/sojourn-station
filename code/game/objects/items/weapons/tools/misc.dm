@@ -29,6 +29,7 @@
 	name = "Medical Omnitool"
 	desc = "An all-in-one medical tool implant based on the legendary One Star model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a power cell."
 	icon_state = "medimplant"
+	matter = null
 	force = WEAPON_FORCE_PAINFUL
 	sharp = TRUE
 	edge = TRUE

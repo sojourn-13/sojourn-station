@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/shotgun/pump
 	name = "FS SG \"Kammerer\""
 	desc = "When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds."
+	icon = 'icons/obj/guns/projectile/shotgun.dmi'
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	max_shells = 4
@@ -18,7 +19,9 @@
 	var/recentpump = 0 // to prevent spammage
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 2200
-	recoil = 0.9 //gladstone will be straight-up upgrade for those
+	damage_multiplier = 1.1
+	penetration_multiplier = 1.1
+	recoil_buildup = 20
 
 /obj/item/weapon/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)

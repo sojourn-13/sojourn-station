@@ -40,7 +40,7 @@
 	group = "Medical / Science"
 
 /datum/supply_pack/phoron
-	name = "Phoron Assembly Crate"
+	name = "Plasma Assembly Crate"
 	contains = list(/obj/item/weapon/tank/plasma,
 					/obj/item/weapon/tank/plasma,
 					/obj/item/weapon/tank/plasma,
@@ -55,7 +55,7 @@
 					/obj/item/device/assembly/timer)
 	cost = 1500
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
-	crate_name = "phoron assembly crate"
+	crate_name = "plasma assembly crate"
 	access = access_tox_storage
 	group = "Medical / Science"
 

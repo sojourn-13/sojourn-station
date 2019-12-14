@@ -2,6 +2,7 @@
 /obj/item/weapon/gun/projectile/automatic/IH_heavyrifle
 	name = "FS AR 5.56x45 \"Wintermute\""
 	desc = "A high end military grade assault rifle, designed as a modern ballistic infantry weapon. Primarily used by and produced for IH troops. Uses 5.56mm rounds."
+	icon = 'icons/obj/guns/projectile/IH_heavyrifle.dmi'
 	icon_state = "IH_heavyrifle"
 	item_state = "IH_heavyrifle"
 	w_class = ITEM_SIZE_HUGE
@@ -21,6 +22,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	zoom_factor = 0.4
+	recoil_buildup = 7
 
 	firemodes = list(
 		FULL_AUTO_400,
@@ -30,10 +32,20 @@
 
 /obj/item/weapon/gun/projectile/automatic/IH_heavyrifle/update_icon()
 	..()
-	if(ammo_magazine)
-		icon_state = "[initial(icon_state)]-full"
-		item_state = "[initial(item_state)]-full"
-	else
-		icon_state = initial(icon_state)
-		item_state = initial(item_state)
-	return
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		iconstring += "_mag"
+		itemstring += "_mag"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+/obj/item/weapon/gun/projectile/automatic/IH_heavyrifle/Initialize()
+	. = ..()
+	update_icon()
