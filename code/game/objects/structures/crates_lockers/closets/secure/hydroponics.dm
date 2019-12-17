@@ -11,7 +11,7 @@
 		new /obj/item/weapon/storage/backpack/sport/botanist(src)
 	else
 		new /obj/item/weapon/storage/backpack/satchel/botanist(src)
-	new /obj/item/clothing/suit/apron(src)
+	new /obj/item/clothing/suit/rank/botanist(src)
 	new /obj/item/weapon/storage/bag/plants(src)
 	new /obj/item/clothing/under/rank/botanist(src)
 	new /obj/item/device/scanner/plant(src)

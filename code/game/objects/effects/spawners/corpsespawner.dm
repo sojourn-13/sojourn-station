@@ -163,7 +163,7 @@
 	corpseshoes = /obj/item/clothing/shoes/laceup
 	corpseradio = /obj/item/device/radio/headset/headset_med
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Doctor"
 
@@ -177,7 +177,7 @@
 	corpsemask = /obj/item/clothing/mask/breath
 	corpsehelmet = /obj/item/clothing/head/bio_hood/virology
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Doctor"
 
@@ -188,7 +188,7 @@
 	corpseshoes = /obj/item/clothing/shoes/laceup
 	corpseradio = /obj/item/device/radio/headset/headset_med
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Chemist"
 
@@ -202,7 +202,7 @@
 	corpsemask = /obj/item/clothing/mask/breath
 	corpsehelmet = /obj/item/clothing/head/bio_hood/virology
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Chemist"
 
@@ -213,7 +213,7 @@
 	corpseshoes = /obj/item/clothing/shoes/laceup
 	corpseradio = /obj/item/device/radio/headset/headset_med
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Psychiatrist"
 
@@ -227,7 +227,7 @@
 	corpsemask = /obj/item/clothing/mask/breath
 	corpsehelmet = /obj/item/clothing/head/bio_hood/virology
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Psychiatrist"
 
@@ -238,7 +238,7 @@
 	corpseradio = /obj/item/device/radio/headset/headset_med
 	corpsebelt = /obj/item/weapon/storage/belt/medical/emt
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Paramedic"
 
@@ -253,7 +253,7 @@
 	corpsehelmet = /obj/item/clothing/head/bio_hood/virology
 	corpsebelt = /obj/item/weapon/storage/belt/medical/emt
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Paramedic"
 
@@ -268,7 +268,7 @@
 	corpsehelmet = /obj/item/clothing/head/helmet/space/rig/medical
 	corpsebelt = /obj/item/weapon/storage/belt/medical/emt
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Paramedic"
 
@@ -279,7 +279,7 @@
 	corpseshoes = /obj/item/clothing/shoes/laceup
 	corpseradio = /obj/item/device/radio/headset/heads/cmo
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Biolab Officer"
 
@@ -293,7 +293,7 @@
 	corpsemask = /obj/item/clothing/mask/breath
 	corpsehelmet = /obj/item/clothing/head/bio_hood/cmo
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
-	corpseback = /obj/item/weapon/storage/backpack/medic
+	corpseback = /obj/item/weapon/storage/backpack/medical
 	corpseid = 1
 	corpseidjob = "Moebius Biolab Officer"
 
