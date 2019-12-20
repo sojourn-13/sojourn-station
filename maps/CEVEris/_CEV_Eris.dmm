@@ -1591,10 +1591,7 @@
 /area/eris/security/armory)
 "adS" = (
 /obj/structure/table/rack,
-/obj/item/weapon/tank/jetpack/oxygen,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/head/helmet/space/void/security,
-/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security/equipped,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/eris/security/armory)
 "adT" = (
@@ -57127,7 +57124,6 @@
 /area/eris/engineering/engeva)
 "cxs" = (
 /obj/structure/table/rack,
-/obj/item/clothing/shoes/magboots,
 /obj/machinery/door/window/northright{
 	dir = 2;
 	name = "Atmospherics Hardsuits";
@@ -57137,9 +57133,7 @@
 	dir = 8
 	},
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/void/engineering,
-/obj/item/clothing/head/helmet/space/void/engineering,
-/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/void/engineering/equipped,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/eris/engineering/engeva)
 "cxt" = (
@@ -57308,7 +57302,6 @@
 /area/eris/quartermaster/office)
 "cxR" = (
 /obj/structure/table/rack,
-/obj/item/clothing/shoes/magboots,
 /obj/machinery/door/window/northright{
 	dir = 2;
 	name = "Atmospherics Hardsuits";
@@ -57316,9 +57309,7 @@
 	},
 /obj/machinery/camera/network/engineering,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/void/engineering,
-/obj/item/clothing/head/helmet/space/void/engineering,
-/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/void/engineering/equipped,
 /obj/structure/sign/faction/technomancers{
 	pixel_y = 32
 	},
@@ -57822,7 +57813,6 @@
 /area/eris/quartermaster/office)
 "cyZ" = (
 /obj/structure/table/rack,
-/obj/item/clothing/shoes/magboots,
 /obj/machinery/door/window/northright{
 	dir = 2;
 	name = "Atmospherics Hardsuits";
@@ -57832,9 +57822,7 @@
 	dir = 4
 	},
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/void/engineering,
-/obj/item/clothing/head/helmet/space/void/engineering,
-/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/void/engineering/equipped,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/eris/engineering/engeva)
 "cza" = (
@@ -57846,7 +57834,6 @@
 /area/eris/engineering/engeva)
 "czb" = (
 /obj/structure/table/rack,
-/obj/item/clothing/shoes/magboots,
 /obj/item/clothing/mask/breath,
 /obj/structure/window/reinforced{
 	dir = 8
@@ -57855,9 +57842,7 @@
 	name = "Engineering Hardsuits";
 	req_access = list(11)
 	},
-/obj/item/clothing/suit/space/void/engineering,
-/obj/item/clothing/head/helmet/space/void/engineering,
-/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/void/engineering/equipped,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/eris/engineering/engeva)
 "czc" = (
@@ -58563,16 +58548,13 @@
 /turf/simulated/floor/plating/under,
 /area/eris/maintenance/section3deck4central)
 "cAz" = (
-/obj/item/clothing/shoes/magboots,
 /obj/item/clothing/mask/breath,
 /obj/machinery/door/window/southleft{
 	name = "Engineering Hardsuits";
 	req_access = list(11)
 	},
 /obj/structure/table/rack,
-/obj/item/clothing/suit/space/void/engineering,
-/obj/item/clothing/head/helmet/space/void/engineering,
-/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/void/engineering/equipped,
 /obj/structure/sign/faction/technomancers{
 	pixel_y = 32
 	},
@@ -58827,16 +58809,13 @@
 /turf/simulated/floor/bluegrid,
 /area/eris/crew_quarters/bar)
 "cBb" = (
-/obj/item/clothing/shoes/magboots,
 /obj/item/clothing/mask/breath,
 /obj/machinery/door/window/southleft{
 	name = "Engineering Hardsuits";
 	req_access = list(11)
 	},
 /obj/structure/table/rack,
-/obj/item/clothing/suit/space/void/engineering,
-/obj/item/clothing/head/helmet/space/void/engineering,
-/obj/item/weapon/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/void/engineering/equipped,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/eris/engineering/engeva)
 "cBc" = (
@@ -65174,7 +65153,6 @@
 /obj/structure/table/rack,
 /obj/item/clothing/suit/space/void/mining,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/head/helmet/space/void/mining,
 /obj/item/device/scanner/mining,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "2,21"
@@ -65506,7 +65484,6 @@
 /obj/structure/table/rack,
 /obj/item/clothing/suit/space/void/mining,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/head/helmet/space/void/mining,
 /obj/item/device/scanner/mining,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "2,20"
@@ -65826,7 +65803,6 @@
 /obj/structure/table/rack,
 /obj/item/clothing/suit/space/void/mining,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/head/helmet/space/void/mining,
 /obj/item/device/scanner/mining,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "2,19"
@@ -76151,9 +76127,7 @@
 	},
 /obj/structure/table/rack,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/head/helmet/space/void/medical,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/suit/space/void/medical,
+/obj/item/clothing/suit/space/void/medical/equipped,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/eris/medical/medeva)
 "dnT" = (
@@ -76817,9 +76791,7 @@
 	},
 /obj/structure/table/rack,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/head/helmet/space/void/medical,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/suit/space/void/medical,
+/obj/item/clothing/suit/space/void/medical/equipped,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/eris/medical/medeva)
 "dps" = (
@@ -76933,9 +76905,7 @@
 "dpH" = (
 /obj/structure/table/rack,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/head/helmet/space/void/medical,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/suit/space/void/medical,
+/obj/item/clothing/suit/space/void/medical/equipped,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/eris/medical/medeva)
 "dpI" = (
@@ -96159,7 +96129,6 @@
 /obj/item/clothing/mask/breath,
 /obj/structure/table/rack,
 /obj/item/clothing/suit/space/void/engineering,
-/obj/item/clothing/head/helmet/space/void/engineering,
 /turf/simulated/floor/tiled/techmaint,
 /area/eris/maintenance/section4deck2starboard)
 "egQ" = (
