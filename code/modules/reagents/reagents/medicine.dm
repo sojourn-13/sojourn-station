@@ -426,6 +426,24 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 		var/mob/living/carbon/human/H = M
 		H.update_mutations()
 
+/datum/reagent/medicine/negative_ling
+	name = "Negative Paragenetic Marker"
+	id = "negativeling"
+	description = "A marker compound that turns positive when put in contact with morphogenic mutant blood."
+	taste_description = "acid"
+	reagent_state = SOLID
+	color = "#022000"
+	
+
+/datum/reagent/medicine/positive_ling
+	name = "Positive Paragenetic Marker"
+	id = "positiveling"
+	description = "This marker compound has come in contact with morphogenic mutant blood."
+	taste_description = "acid"
+	reagent_state = SOLID
+	color = "#910000"
+
+
 /datum/reagent/medicine/ethylredoxrazine
 	name = "Ethylredoxrazine"
 	id = "ethylredoxrazine"

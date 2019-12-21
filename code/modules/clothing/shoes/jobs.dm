@@ -13,7 +13,7 @@
 	desc = "A pair of standard-issue jackboots typically worn by security personnel."
 	icon_state = "jackboots"
 	item_state = "jackboots"
-	force = WEAPON_FORCE_WEAK
+	force = WEAPON_FORCE_HARMLESS
 	armor = list(
 		melee = 20,
 		bullet = 10,
