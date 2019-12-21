@@ -79,6 +79,11 @@
 		desc = "A shooting target with a threatening silhouette."
 		hp = 2350 // alium onest too kinda
 
+/obj/item/target/clown
+		icon_state = "target_c"
+		desc = "A shooting target that invokes righteous fury."
+		hp = 2000 // alium onest too kinda
+
 /obj/item/target/bullet_act(var/obj/item/projectile/Proj)
 	var/p_x = Proj.p_x + pick(0,0,0,0,0,-1,1) // really ugly way of coding "sometimes offset Proj.p_x!"
 	var/p_y = Proj.p_y + pick(0,0,0,0,0,-1,1)

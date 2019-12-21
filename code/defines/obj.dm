@@ -69,13 +69,19 @@
 	var/list/parts = list(  )
 
 /obj/structure/showcase
-	name = "showcase"
+	name = "cyborg statue"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "showcase_1"
 	desc = "A stand with the empty body of a cyborg bolted to it."
 	density = 1
 	anchored = 1
 	unacidable = 1//temporary until I decide whether the borg can be removed. -veyveyr
+
+/obj/structure/showcase/cyborg_old
+	name = "cyborg statue"
+	desc = "An old cyborg model. It looks like it's been inactive a long time."
+	icon = 'icons/mob/robots.dmi'
+	icon_state = "robot_old"
 
 /obj/structure/showcase/sign
 	name = "WARNING: WILDERNESS"
@@ -100,6 +106,19 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "wooden_tv_broken"
 	desc = "An entertainment monitor with various channels."
+
+/obj/structure/showcase/skeleton
+	name = "hanging skeleton model"
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "hangskele"
+	desc = "It's an anatomical model of a human skeletal system made of plaster."
+	anchored = 0
+
+/obj/structure/showcase/horrific_experiment
+	name = "horrific experiment"
+	desc = "Some sort of pod filled with blood and viscera. You swear you can see it moving..."
+	icon = 'icons/obj/cryogenics.dmi'
+	icon_state = "pod_g"
 
 /obj/item/mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 
