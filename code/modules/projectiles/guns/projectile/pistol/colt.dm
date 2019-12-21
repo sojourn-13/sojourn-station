@@ -18,6 +18,7 @@
 /obj/item/weapon/gun/projectile/colt/IH_colt
 	name = "FS HG .45 \"Bronco\""
 	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A3 standard. Uses .45 rounds."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "IH_colt"
 	item_state = "IH_colt"
 	auto_eject = 1
@@ -27,6 +28,7 @@
 /obj/item/weapon/gun/projectile/colt/ten
 	name = "FS HG 10mm \"Delta Elite\""
 	desc = "A classy civilian high-powered automatic based on the M1911 series handguns, with significant reinforcements. Uses 10mm auto."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "delta"
 	item_state = "colt"
 	w_class = ITEM_SIZE_NORMAL
@@ -47,6 +49,7 @@
 /obj/item/weapon/gun/projectile/colt/ten/dark
 	name = "FS HG 10mm \"Stallion\""
 	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard. Uses 10mm auto."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "dark_delta"
 	item_state = "dark_delta"
 	auto_eject = 1
