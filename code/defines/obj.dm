@@ -114,10 +114,16 @@
 	desc = "It's an anatomical model of a human skeletal system made of plaster."
 	anchored = 0
 
-/obj/structure/showcase/horrific_experiment
+/obj/structure/showcase/horrific_experiment_cryo
 	name = "horrific experiment"
-	desc = "Some sort of pod filled with blood and viscera. You swear you can see it moving..."
+	desc = "A large pod absolutely filled with blood. It looks like something else is inside, too..."
 	icon = 'icons/obj/cryogenics.dmi'
+	icon_state = "pod_g"
+
+/obj/structure/showcase/horrific_experiment_cloning
+	name = "horrific experiment"
+	desc = "A small pod filled with blood and viscera. It's shaking quite violently, as if alive."
+	icon = 'icons/obj/cloning.dmi'
 	icon_state = "pod_g"
 
 /obj/item/mouse_drag_pointer = MOUSE_ACTIVE_POINTER
