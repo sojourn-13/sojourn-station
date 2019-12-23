@@ -44,7 +44,7 @@
 	suitable_cell = /obj/item/weapon/cell/small
 
 /obj/item/weapon/tool/saw/circular/medical
-	name = "medical cirular saw"
+	name = "medical circular saw"
 	desc = "For clean bone cutting but dosnt seem all that durable. Spins slower then the normal saw as well."
 	icon_state = "saw"
 	force = WEAPON_FORCE_PAINFUL
