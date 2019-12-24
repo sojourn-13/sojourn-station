@@ -2,7 +2,7 @@
 #define EXCAVATE 0
 #define DIG 1
 
-// Time added to tool operations in percent based on original time 
+// Time added to tool operations in percent based on original time
 // (if you dig hole in 10 seconds then 50 ADDITIONAL_TIME_LOWHEALTH will add 0 on full health, 2.5sec on 50% health and 5sec ~0% health)
 #define ADDITIONAL_TIME_LOWHEALTH 60
 
@@ -142,6 +142,9 @@
 	else
 		..()
 
+/obj/item/weapon/tool/get_cell()
+	return cell
+
 /obj/item/weapon/tool/attackby(obj/item/C, mob/living/user)
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
@@ -243,8 +246,8 @@
 
 	data["force"] = force
 	data["force_max"] = initial(force) * 10
-		
-	
+
+
 	data["extra_volume"] = extra_bulk
 
 	data["upgrades_max"] = max_upgrades
@@ -254,7 +257,7 @@
 		data["attachments"] = list()
 		for(var/atom/A in upgrades)
 			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))
-	
+
 	return data
 
 /obj/item/weapon/tool/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
@@ -267,7 +270,7 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-// saves troubles for some one else who will expand this 
+// saves troubles for some one else who will expand this
 // delete this comment if you are the chosen one
 /obj/item/weapon/tool/Topic(href, href_list)
 	if(..())
@@ -454,7 +457,7 @@
 				if(T.lastNearBreakMessage > world.time + 60 SECONDS) // once in 1 minute
 					T.lastNearBreakMessage = world.time
 					to_chat(user, SPAN_DANGER("Your [src.name] is about to fall apart."))
-		
+
 	//precision reduce failure rates
 	if (T)
 		fail_chance -= T.precision
@@ -463,7 +466,7 @@
 
 	if (fail_chance < 0)
 		fail_chance = 0
-	
+
 	if (fail_chance >= 100)
 		to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! Considering your skills and this tool, it is impossible."))
 		return TOOL_USE_FAIL
@@ -723,7 +726,7 @@
 		timespent = 5
 
 	if(use_power_cost)
-		if (!cell || !cell.checked_use(use_power_cost*timespent))
+		if (!cell?.checked_use(use_power_cost*timespent))
 			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 			return FALSE
 
@@ -822,7 +825,7 @@
 
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"
-	
+
 	health_threshold = max(0, health_threshold)
 
 	//Set the fuel volume, incase any mods altered our max fuel
@@ -839,7 +842,7 @@
 		if(!cell)
 			to_chat(user, SPAN_WARNING("There is no cell inside to power the tool"))
 		else
-			to_chat(user, "The charge meter reads [round(cell.percent() )]%.")
+			to_chat(user, "The charge meter reads [round(cell.percent())]%.")
 
 	if(use_fuel_cost)
 		to_chat(user, text("\icon[] [] contains []/[] units of fuel!", src, src.name, get_fuel(),src.max_fuel ))
