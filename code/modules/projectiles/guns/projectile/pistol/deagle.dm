@@ -12,15 +12,15 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1600
 	can_dual = 1
-	damage_multiplier = 0.83
+	damage_multiplier = 1.3
 	penetration_multiplier = 1.2
-	recoil_buildup = 27
+	recoil_buildup = 33
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-	recoil = 0.8 //high caliber pistol recoil
+	recoil_buildup = 0.8 //high caliber pistol recoil
 
 /obj/item/weapon/gun/projectile/deagle/update_icon()
 	..()

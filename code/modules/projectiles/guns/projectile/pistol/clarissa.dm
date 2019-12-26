@@ -15,7 +15,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	silencer_type = /obj/item/weapon/silencer
-	damage_multiplier = 0.9
+	damage_multiplier = 0.7
 	recoil_buildup = 19
 
 
@@ -47,3 +47,7 @@
 	damage_multiplier = 1.2
 	recoil_buildup = 21
 	price_tag = 1400
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
+	firemodes = list(
+		SEMI_AUTO_NODELAY
+		)

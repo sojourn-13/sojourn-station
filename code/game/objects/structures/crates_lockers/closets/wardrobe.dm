@@ -85,6 +85,7 @@
 	new /obj/item/clothing/head/soft/white(src)
 	new /obj/item/clothing/head/soft/white(src)
 	new /obj/item/clothing/head/soft/white(src)
+	new /obj/item/weapon/storage/backpack/sport/white(src)
 
 /obj/structure/closet/wardrobe/color/red
 	name = "red wardrobe"
@@ -136,6 +137,7 @@
 	new /obj/item/clothing/head/soft/grey(src)
 	new /obj/item/clothing/head/soft/grey(src)
 	new /obj/item/clothing/head/soft/grey(src)
+	new /obj/item/weapon/storage/backpack/sport(src)
 
 /obj/structure/closet/wardrobe/color/mixed
 	name = "mixed wardrobe"
@@ -161,6 +163,10 @@
 	new /obj/item/clothing/mask/bandana/yellow(src)
 	new /obj/item/clothing/mask/bandana/purple(src)
 	new /obj/item/clothing/mask/bandana/camo(src)
+	new /obj/item/weapon/storage/backpack/sport/purple(src)
+	new /obj/item/weapon/storage/backpack/sport/green(src)
+	new /obj/item/weapon/storage/backpack/sport/blue(src)
+	new /obj/item/weapon/storage/backpack/sport/orange(src)
 
 /*Jobs*/
 
@@ -198,7 +204,7 @@
 	new /obj/item/clothing/head/rank/ironhammer(src)
 
 /obj/structure/closet/wardrobe/militia
-	name = "Militia wardrobe"
+	name = "militia wardrobe"
 	icon_door = "militia"
 
 /obj/structure/closet/wardrobe/militia/populate_contents()
@@ -222,7 +228,7 @@
 	new /obj/item/clothing/mask/balaclava/tactical(src)
 
 /obj/structure/closet/wardrobe/militia/accessory
-	name = "Militia acessory wardrobe"
+	name = "militia accessory wardrobe"
 	icon_door = "militia"
 
 /obj/structure/closet/wardrobe/militia/accessory/populate_contents()

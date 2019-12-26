@@ -1,0 +1,29 @@
+/obj/item/stack/cable_coil/heavyduty
+	name = "heavy cable coil"
+	icon = 'icons/obj/power.dmi'
+	icon_state = "wire"
+
+/obj/structure/cable/heavyduty
+	icon = 'icons/obj/power_cond_heavy.dmi'
+	name = "large power cable"
+	desc = "This cable is tough. It cannot be cut with simple hand tools."
+	layer = WIRE_LAYER - 0.05 //Just below pipes
+	color = null
+
+/obj/structure/cable/heavyduty/attackby(obj/item/I, mob/user)
+
+	var/turf/T = src.loc
+	if(!T.is_plating())
+		return
+
+		if(I.use_tool(user, src, WORKTIME_INSTANT, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		usr << "<font color='blue'>These cables are too tough to be cut with those.</font>"
+		return
+	else if(istype(I, /obj/item/stack/cable_coil))
+		usr << "<font color='blue'>You will need heavier cables to connect to these.</font>"
+		return
+	else
+		..()
+
+/obj/structure/cable/heavyduty/cableColor(var/colorC)
+	return

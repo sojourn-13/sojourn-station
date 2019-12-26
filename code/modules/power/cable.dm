@@ -168,7 +168,7 @@ var/list/possible_cable_coil_colours = list(
 			if(locate(/obj/structure/wire_splicing) in T)
 				to_chat(user, SPAN_WARNING("There is splicing already!"))
 				return
-			to_chat(user, SPAN_NOTICE("You started messsing with wires..."))
+			to_chat(user, SPAN_NOTICE("You started messing with the wires..."))
 			if(shock(user, 100)) //check if he got his insulation gloves
 				return 		//he didn't
 			if(do_after(user, 20))

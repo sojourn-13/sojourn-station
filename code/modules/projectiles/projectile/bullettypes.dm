@@ -8,7 +8,7 @@
 //Low-caliber pistols and SMGs
 /obj/item/projectile/bullet/c9mm
 	damage = 24
-	armor_penetration = 5
+	armor_penetration = 15
 	can_ricochet = TRUE
 
 /obj/item/projectile/bullet/c9mm/hv
@@ -49,7 +49,7 @@
 
 /obj/item/projectile/bullet/a10mm/hv
 	damage = 28
-	armor_penetration = 10
+	armor_penetration = 20
 	penetrating = 1
 	step_delay = 0.75
 
@@ -90,8 +90,8 @@
 
 //Carbines and rifles
 /obj/item/projectile/bullet/c10mm
-	damage = 16
-	armor_penetration = 25
+	damage = 25
+	armor_penetration = 35
 	penetrating = 2
 	can_ricochet = TRUE
 
@@ -169,26 +169,26 @@
 	sharp = FALSE
 
 /obj/item/projectile/bullet/a762
-	damage = 20
-	armor_penetration = 15
+	damage = 28
+	armor_penetration = 30
 	penetrating = 1
 	can_ricochet = TRUE
 
 /obj/item/projectile/bullet/a762/hv
-	damage = 24
-	armor_penetration = 20
+	damage = 30
+	armor_penetration = 35
 	penetrating = 2
 	step_delay = 0.75
 
 //Revolvers and high-caliber pistols
 /obj/item/projectile/bullet/a357
-	damage = 36
-	armor_penetration = 10
+	damage = 32
+	armor_penetration = 20
 	can_ricochet = TRUE
 
 /obj/item/projectile/bullet/a357/hv
-	damage = 38
-	armor_penetration = 15
+	damage = 35
+	armor_penetration = 25
 	penetrating = 1
 	step_delay = 0.75
 
@@ -244,9 +244,10 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	icon_state = "slug"
-	damage = 34
-	armor_penetration = 12
+	damage = 54
+	armor_penetration = 10
 	knockback = 1
+	step_delay = 1.65
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
@@ -271,8 +272,9 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	icon_state = "birdshot-1"
-	damage = 12
-	pellets = 6
+	damage = 10
+	armor_penetration = 8
+	pellets = 8
 	range_step = 1
 	spread_step = 10
 	knockback = 1

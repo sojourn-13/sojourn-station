@@ -5,7 +5,7 @@
 
 /obj/structure/closet/secure_closet/reinforced/captains/populate_contents()
 	new /obj/item/weapon/storage/backpack/captain(src)
-	new /obj/item/weapon/storage/backpack/satchel/cap(src)
+	new /obj/item/weapon/storage/backpack/satchel/captain(src)
 	new /obj/item/clothing/head/rank/captain/cap(src)
 	new /obj/item/clothing/under/rank/captain(src)
 	new /obj/item/clothing/suit/armor/vest(src)
@@ -54,8 +54,8 @@
 	icon_state = "hos"
 
 /obj/structure/closet/secure_closet/reinforced/hos/populate_contents()
-	new /obj/item/weapon/storage/backpack/security(src)
-	new /obj/item/weapon/storage/backpack/satchel/sec(src)
+	new /obj/item/weapon/storage/backpack/ironhammer(src)
+	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/clothing/head/rank/commander/beret(src)
 	new /obj/item/clothing/head/rank/commander(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
@@ -86,8 +86,8 @@
 	icon_state = "warden"
 
 /obj/structure/closet/secure_closet/warden/populate_contents()
-	new /obj/item/weapon/storage/backpack/security(src)
-	new /obj/item/weapon/storage/backpack/satchel/sec(src)
+	new /obj/item/weapon/storage/backpack/ironhammer(src)
+	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/clothing/under/rank/warden(src)
 	new /obj/item/clothing/head/rank/warden/beret(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
@@ -120,8 +120,8 @@
 		new /obj/item/weapon/gun/projectile/IH_sidearm(src)
 	else
 		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
-	new /obj/item/weapon/storage/backpack/security(src)
-	new /obj/item/weapon/storage/backpack/satchel/sec(src)
+	new /obj/item/weapon/storage/backpack/ironhammer(src)
+	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/weapon/storage/belt/security(src)
 	new /obj/item/clothing/mask/gas/ihs(src)

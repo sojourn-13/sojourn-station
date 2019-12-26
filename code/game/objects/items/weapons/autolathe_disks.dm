@@ -719,10 +719,10 @@
 	designs = list(
 		/datum/design/bioprinter/meat,
 		/datum/design/bioprinter/milk,
+		/datum/design/bioprinter/soap,
 		/datum/design/bioprinter/ez,
 		/datum/design/bioprinter/l4z,
 		/datum/design/bioprinter/rh,
-
 		/datum/design/bioprinter/wallet,
 		/datum/design/bioprinter/botanic_leather,
 		/datum/design/bioprinter/leather/satchel,
@@ -733,7 +733,6 @@
 		/datum/design/bioprinter/belt/security,
 		/datum/design/bioprinter/belt/medical/emt,
 		/datum/design/bioprinter/belt/misc/champion,
-
 		/datum/design/bioprinter/medical/bruise,
 		/datum/design/bioprinter/medical/splints,
 		/datum/design/bioprinter/medical/ointment,
@@ -796,4 +795,26 @@
 		/datum/design/bioprinter/belt/security,
 		/datum/design/bioprinter/belt/medical/emt,
 		/datum/design/bioprinter/belt/misc/champion,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_boards
+	disk_name = "NeoTheology Circuit Pack"
+	icon_state = "neotheology"
+
+	license = -1
+	designs = list(
+		/datum/design/autolathe/circuit/bioprinter,
+		/datum/design/autolathe/circuit/solidifier,
+		/datum/design/autolathe/circuit/cloner,
+		/datum/design/autolathe/circuit/reader,
+		/datum/design/autolathe/circuit/biocan,
+		/datum/design/autolathe/circuit/bioreactor_platform,
+		/datum/design/autolathe/circuit/bioreactor_unloader,
+		/datum/design/autolathe/circuit/bioreactor_biotank,
+		/datum/design/autolathe/circuit/bioreactor_port,
+		/datum/design/autolathe/circuit/bioreactor_metrics,
+		/datum/design/autolathe/circuit/bioreactor_loader,
+		/datum/design/autolathe/circuit/biogen,
+		/datum/design/autolathe/circuit/biogen_port,
+		/datum/design/autolathe/circuit/biogen_console,
 	)
