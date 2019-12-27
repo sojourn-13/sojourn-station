@@ -977,7 +977,7 @@
 	auto_price = FALSE
 
 /obj/machinery/vending/coffee
-	name = "hot drinks machine"
+	name = "Hot Coffee"
 	desc = "A vending machine which dispenses hot drinks."
 	product_slogans = "Care for a cup of hot joe?;Care for a cup of coffee?;How about a pick-me-upper?;Tea, sir/madame?;I hope you ask me for a bloody cup o' tea...;Only the finest!"
 	product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the galaxy.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our hot chocolate!"
@@ -1065,10 +1065,38 @@
 	/obj/item/weapon/storage/box/shotgunammo/slug = 10,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 10,
 	/obj/item/weapon/material/hatchet/tacknife = 6)
-	prices = list(/obj/item/device/flash = 600,/obj/item/weapon/reagent_containers/spray/pepper = 800,  /obj/item/weapon/gun/projectile/olivaw = 1600, /obj/item/weapon/gun/projectile/giskard = 1200, /obj/item/weapon/gun/energy/gun/martin = 1500, /obj/item/weapon/gun/projectile/revolver/detective = 2500, /obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 3700,
-					/obj/item/weapon/gun/projectile/shotgun/pump = 2000, /obj/item/ammo_magazine/cl32/rubber = 300, /obj/item/ammo_magazine/sl38/rubber = 400, /obj/item/ammo_magazine/ammobox/c38/rubber = 400, /obj/item/ammo_magazine/ammobox/cl32/rubber = 500,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags = 300, /obj/item/weapon/storage/box/shotgunammo/flashshells = 300, /obj/item/weapon/storage/box/shotgunammo/blanks = 50, /obj/item/clothing/accessory/holster = 150, /obj/item/weapon/storage/pouch/pistol_holster =150,
-					/obj/item/ammo_magazine/sl38 = 400, /obj/item/ammo_magazine/cl32 = 300, /obj/item/ammo_magazine/ammobox/cl32 = 500, /obj/item/ammo_magazine/ammobox/c38 = 400, /obj/item/weapon/storage/box/shotgunammo/slug = 300, /obj/item/weapon/storage/box/shotgunammo/buckshot = 300, /obj/item/weapon/material/hatchet/tacknife = 600,/obj/item/weapon/gun/projectile/boltgun/fs = 2000)
+
+	prices = list(/obj/item/device/flash = 600,
+	/obj/item/weapon/reagent_containers/spray/pepper = 800,
+	/obj/item/weapon/gun/projectile/olivaw = 1600,
+	/obj/item/weapon/gun/projectile/giskard = 1200,
+	/obj/item/weapon/gun/projectile/colt = 1200,
+	/obj/item/weapon/gun/energy/gun/martin = 1500,
+	/obj/item/weapon/gun/projectile/revolver/detective = 2500,
+	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 3700,
+	/obj/item/weapon/gun/projectile/shotgun/pump = 2000,
+	/obj/item/ammo_magazine/cl32/rubber = 300,
+	/obj/item/ammo_magazine/sl38/rubber = 400,
+	/obj/item/ammo_magazine/c45m/rubber = 300,
+	/obj/item/ammo_magazine/ammobox/c38/rubber = 400,
+	/obj/item/ammo_magazine/ammobox/cl32/rubber = 500,
+	/obj/item/ammo_magazine/ammobox/c45/rubber = 300,
+	/obj/item/weapon/gun/projectile/boltgun/fs = 2000,
+	/obj/item/weapon/storage/box/shotgunammo/beanbags = 300,
+	/obj/item/weapon/storage/box/shotgunammo/flashshells = 300,
+	/obj/item/weapon/storage/box/shotgunammo/blanks = 50,
+	/obj/item/clothing/accessory/holster = 150,
+	/obj/item/weapon/storage/pouch/pistol_holster =150,
+	/obj/item/weapon/storage/pouch/ammo = 100,
+	/obj/item/ammo_magazine/sl38 = 400,
+	/obj/item/ammo_magazine/cl32 = 300,
+	/obj/item/ammo_magazine/c45m = 300,
+	/obj/item/ammo_magazine/ammobox/cl32 = 500,
+	/obj/item/ammo_magazine/ammobox/c38 = 400,
+	/obj/item/ammo_magazine/ammobox/c45 = 400,
+	/obj/item/weapon/storage/box/shotgunammo/slug = 300,
+	/obj/item/weapon/storage/box/shotgunammo/buckshot = 300,
+	/obj/item/weapon/material/hatchet/tacknife = 600,)
 
 //This one's from bay12
 /obj/machinery/vending/cart
@@ -1116,7 +1144,7 @@
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/cigarette
-	name = "cigarette machine" //OCD had to be uppercase to look nice with the new formating
+	name = "Smooth Cigarettes" //OCD had to be uppercase to look nice with the new formating
 	desc = "If you want to get cancer, might as well do it in style!"
 	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!;Who belives in Cancer?;Cancer? Better get it in style!;I'm willing to bet you that those Scientists did not smoke Space Cigs!;Don't stop smoking now, You'll get fat!"
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs.;Cigars avalible for premium customers.;Best taste in space!"
@@ -1313,7 +1341,7 @@
 
 
 /obj/machinery/vending/dinnerware
-	name = "Dinnerware"
+	name = "Dinnerware Express"
 	desc = "A kitchen and restaurant equipment vendor."
 	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these...;Need knives? Got you covered."
 	icon_state = "dinnerware"
@@ -1450,7 +1478,7 @@
 
 //FOR ACTORS GUILD - mainly props that cannot be spawned otherwise
 /obj/machinery/vending/props
-	name = "prop dispenser"
+	name = "Prop Palace"
 	desc = "All the props an actor could need. Probably."
 	product_slogans = "Every actor needs their banana peel!;Honk!;We all know who you're going to choose.;Be witty! Be funny!;Make them smile!;Everything an Actor needs and some things he doesn't.;Toys Extravaganza!"
 	icon_state = "Theater"
@@ -1465,7 +1493,7 @@
 
 //FOR ACTORS GUILD - Containers
 /obj/machinery/vending/containers
-	name = "container dispenser"
+	name = "Storage King"
 	desc = "A container that dispenses containers."
 	icon_state = "robotics"
 	products = list(/obj/structure/closet/crate/freezer = 2,
@@ -1515,7 +1543,7 @@
 					/obj/item/weapon/cell/small/super = 350)
 
 /obj/machinery/vending/printomat
-	name = "Asters Guild Print-o-Mat"
+	name = "Asters Guild Print-Mat"
 	desc = "Everything you can imagine (not really) on a disc! Print your own gun TODAY."
 	product_slogans = "Print your own gun TODAY!;The future is NOW!;Can't stop the industrial revolution!;Everything you can imagine, RIGHT HERE!;Don't copy that floppy!;Who needs dreams when you can print everything you need?"
 	product_ads = "Almost free!;Print it yourself!;Don't copy that floppy!;Industrial Revolution!;Future!;Print your dreams TODAY!;Cheap and reliable!"
