@@ -130,7 +130,8 @@
 /obj/structure/table/onestar,
 /obj/machinery/button{
 	id = 2;
-	name = "Shutters"
+	name = "Shutters";
+	step_x = 0
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/crawler)
