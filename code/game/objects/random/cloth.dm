@@ -70,13 +70,13 @@
 
 /obj/random/cloth/suit/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/suit/poncho = 10,
-				/obj/item/clothing/suit/storage/ass_jacket = 10,
-				/obj/item/clothing/suit/storage/cargo_jacket = 10,
+				/obj/item/clothing/suit/storage/rank/ass_jacket = 10,
+				/obj/item/clothing/suit/storage/rank/cargo_jacket = 10,
 				/obj/item/clothing/suit/storage/detective = 5,
 				/obj/item/clothing/suit/storage/hazardvest = 10,
 				/obj/item/clothing/suit/storage/detective/ironhammer  = 3,
-				/obj/item/clothing/suit/storage/leather_jacket = 3,
-				/obj/item/clothing/suit/storage/robotech_jacket = 10,
+				/obj/item/clothing/suit/storage/toggle/leather = 3,
+				/obj/item/clothing/suit/storage/rank/robotech_jacket = 10,
 				/obj/item/clothing/suit/storage/toggle/bomber = 5,
 				/obj/item/clothing/suit/storage/toggle/hoodie = 5,
 				/obj/item/clothing/suit/storage/toggle/hoodie/black = 5,

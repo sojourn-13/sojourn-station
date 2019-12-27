@@ -273,7 +273,7 @@
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpsegloves = /obj/item/clothing/gloves/thick/swat
 	corpseradio = /obj/item/device/radio/headset
-	corpsemask = /obj/item/clothing/mask/gas/syndicate
+	corpsemask = /obj/item/clothing/mask/gas/tactical
 	corpsehelmet = /obj/item/clothing/head/helmet/space/void/merc
 	corpseback = /obj/item/weapon/tank/jetpack/oxygen
 	corpsepocket1 = /obj/item/weapon/tank/emergency_oxygen
@@ -769,7 +769,7 @@
 	corpsehelmet = /obj/item/clothing/head/rank/centcomm
 	corpseglasses = /obj/item/clothing/glasses/eyepatch
 	corpsemask = /obj/item/clothing/mask/smokable/cigarette/cigar/cohiba
-	corpsehelmet = /obj/item/clothing/head/centhat
+	corpsehelmet = /obj/item/clothing/head/rank/centcomm
 	corpsegloves = /obj/item/clothing/gloves/thick/swat
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpsepocket1 = /obj/item/weapon/flame/lighter/zippo
