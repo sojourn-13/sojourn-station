@@ -54,7 +54,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 	for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
 		if(B.id == "blood")
 			var/isling = player_is_antag_id(src.mind,ROLE_CHANGELING) ? TRUE : null
-			B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= species.blood_color,"blood_type"=dna.b_type,	\
+			B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
 							"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list(), "ling" = isling)
 			B.color = B.data["blood_colour"]
 

@@ -60,7 +60,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/space_up,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/cola,
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/birthdaycake,
-					/obj/item/weapon/material/knife,
+					/obj/item/weapon/tool/knife,
 					/obj/item/weapon/storage/fancy/heartbox,
 					/obj/item/weapon/storage/fancy/heartbox,
 					/obj/item/weapon/storage/fancy/heartbox,

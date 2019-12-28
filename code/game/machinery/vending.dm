@@ -1063,7 +1063,7 @@
 	/obj/item/ammo_magazine/ammobox/c45 = 20,
 	/obj/item/weapon/storage/box/shotgunammo/slug = 10,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 10,
-	/obj/item/weapon/material/hatchet/tacknife = 6)
+	/obj/item/weapon/tool/knife/tacknife = 6)
 
 	prices = list(/obj/item/device/flash = 600,
 	/obj/item/weapon/reagent_containers/spray/pepper = 800,
@@ -1094,7 +1094,7 @@
 	/obj/item/ammo_magazine/ammobox/c45 = 400,
 	/obj/item/weapon/storage/box/shotgunammo/slug = 300,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 300,
-	/obj/item/weapon/material/hatchet/tacknife = 600,)
+	/obj/item/weapon/tool/knife/tacknife = 600,)
 
 //This one's from bay12
 /obj/machinery/vending/cart
@@ -1238,7 +1238,7 @@
 					/obj/item/taperoll/police = 8,
 					/obj/item/weapon/storage/box/evidence = 2)
 
-	contraband = list(/obj/item/weapon/material/hatchet/tacknife = 4,
+	contraband = list(/obj/item/weapon/tool/knife/tacknife = 4,
 						/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 12)
 	auto_price = FALSE
 
@@ -1346,9 +1346,9 @@
 	icon_state = "dinnerware"
 	products = list(/obj/item/weapon/tray = 8,
 					/obj/item/weapon/material/kitchen/utensil/fork = 6,
-					/obj/item/weapon/material/knife = 6,
+					/obj/item/weapon/tool/knife = 6,
 					/obj/item/weapon/material/kitchen/utensil/spoon = 6,
-					/obj/item/weapon/material/knife = 3,
+					/obj/item/weapon/tool/knife = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 8,
 					/obj/item/clothing/suit/rank/chef/classic = 2,
 					/obj/item/weapon/storage/lunchbox = 3,
@@ -1369,7 +1369,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/mug/moebius = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/mug/teacup = 10)
 	contraband = list(/obj/item/weapon/material/kitchen/rollingpin = 2,
-						/obj/item/weapon/material/knife/butch = 2)
+						/obj/item/weapon/tool/knife/butch = 2)
 	auto_price = FALSE
 
 /obj/machinery/vending/sovietsoda
@@ -1657,7 +1657,7 @@
 					/obj/item/weapon/gun/projectile/boltgun/serbian = 8,
 					/obj/item/ammo_magazine/ammobox/a762 = 30,
 					)
-	prices = list(  
+	prices = list(
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 50,
           				/obj/item/weapon/storage/deferred/crate/uniform_green = 2000, /obj/item/weapon/storage/deferred/crate/uniform_brown = 2000,
 					/obj/item/weapon/storage/deferred/crate/uniform_black = 2000, /obj/item/weapon/storage/deferred/crate/uniform_flak = 2200,

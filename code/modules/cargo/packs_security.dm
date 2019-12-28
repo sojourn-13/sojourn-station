@@ -111,11 +111,11 @@
 					/obj/item/weapon/handcuffs,
 					/obj/item/weapon/handcuffs,
 					/obj/item/clothing/head/helmet/riot,
-					/obj/item/clothing/suit/armor/riot,
+					/obj/item/clothing/suit/armor/heavy/riot,
 					/obj/item/clothing/head/helmet/riot,
-					/obj/item/clothing/suit/armor/riot,
+					/obj/item/clothing/suit/armor/heavy/riot,
 					/obj/item/clothing/head/helmet/riot,
-					/obj/item/clothing/suit/armor/riot)
+					/obj/item/clothing/suit/armor/heavy/riot)
 	cost = 6100
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "IH riot gear crate"
