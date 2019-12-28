@@ -14,5 +14,5 @@
 /obj/item/weapon/legcuffs/fuzzy
 	name = "fuzzy legcuffs"
 	icon_state = "fuzzylegcuff"
-	var/breakouttime = 150
+	breakouttime = 150
 	desc = "Use this to keep... 'prisoners' in line."

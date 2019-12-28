@@ -122,7 +122,7 @@ var/last_chew = 0
 /obj/item/weapon/handcuffs/fuzzy
 	name = "fuzzy cuffs"
 	icon_state = "fuzzycuff"
-	var/breakouttime = 200
+	breakouttime = 200
 	desc = "Use this to keep... 'prisoners' in line."
 
 
