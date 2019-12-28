@@ -2,6 +2,7 @@
 /mob/living/simple_animal/hostile/retaliate/goat
 	name = "goat"
 	desc = "Not known for their pleasant disposition."
+	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "goat"
 	speak_emote = list("brays")
 	emote_see = list("shakes its head", "stamps a foot", "glares around")
@@ -85,6 +86,7 @@
 /mob/living/simple_animal/cow
 	name = "cow"
 	desc = "Known for their milk, just don't tip them over."
+	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "cow"
 	icon_gib = "cow_gib"
 	speak_emote = list("moos","moos hauntingly")
@@ -145,6 +147,7 @@
 /mob/living/simple_animal/chick
 	name = "\improper chick"
 	desc = "Adorable! They make such a racket though."
+	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "chick"
 	icon_gib = "chick_gib"
 	speak_emote = list("cheeps")
@@ -186,6 +189,7 @@ var/global/chicken_count = 0
 /mob/living/simple_animal/chicken
 	name = "\improper chicken"
 	desc = "Hopefully the eggs are good this season."
+	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "chicken_brown"
 	speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
 	emote_see = list("pecks at the ground","flaps its wings viciously")

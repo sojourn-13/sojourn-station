@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/clown
 	name = "clown"
 	desc = "A curious clown. His life is nothing but a comedy."
+	icon = 'icons/mob/mobs-humanoid.dmi'
 	icon_state = "clown"
 	icon_gib = "clown_gib"
 	turns_per_move = 5

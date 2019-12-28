@@ -4,7 +4,7 @@
 /mob/living/simple_animal/hostile/commanded/nanomachine
 	name = "swarm"
 	desc = "a cloud of tiny, tiny robots."
-	icon = 'icons/mob/critter.dmi'
+	icon = 'icons/mob/mobs-roach.dmi'
 	icon_state = "blobsquiggle_grey"
 	health = 10
 	maxHealth = 10

@@ -49,7 +49,7 @@
 
 /obj/item/remains/mouse
 	desc = "Looks like the remains of a small rodent. It doesn't squeak anymore."
-	icon = 'icons/mob/mouse.dmi'
+	icon = 'icons/mob/mobs-mouse.dmi'
 	icon_state = "skeleton"
 
 /obj/item/remains/lizard

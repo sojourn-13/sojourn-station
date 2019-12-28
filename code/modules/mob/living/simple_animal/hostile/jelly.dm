@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/jelly
 	name = "jelly blob"
 	desc = "Some sort of undulating blob of slime."
+	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "jelly"
 	icon_dead = "jelly_dead"
 	faction = "virgo2"

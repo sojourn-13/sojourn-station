@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/creature
 	name = "creature"
 	desc = "A sanity-destroying otherthing."
-	icon = 'icons/mob/critter.dmi'
+	icon = 'icons/mob/mobs-monster.dmi'
 	speak_emote = list("gibbers")
 	icon_state = "otherthing"
 	health = 80
@@ -31,7 +31,7 @@
 /mob/living/simple_animal/hostile/retaliate/spaceman
 	name = "spaceman"
 	desc = "This strange being resembles a human, but is something different entirely."
-	icon = 'icons/mob/critter.dmi'
+	icon = 'icons/mob/mobs-humanoid.dmi'
 	icon_state = "old"
 	icon_dead = "old_dead"
 	response_help = "pokes"
@@ -46,7 +46,6 @@
 /mob/living/simple_animal/hostile/retaliate/spaceman/leader
 	name = "spaceman leader"
 	desc = "This appears to be an important figure among its strange kind."
-	icon = 'icons/mob/critter.dmi'
 	icon_state = "old2"
 	icon_dead = "old2_dead"
 	response_help = "pokes"
