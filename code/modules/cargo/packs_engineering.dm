@@ -289,24 +289,41 @@
 	crate_name = "particle accelerator crate"
 
 /datum/supply_pack/mecha_ripley
-	name = "Circuit Crate (\"Ripley\" APLU)"
-	contains = list(/obj/item/weapon/book/manual/ripley_build_and_repair,
-					/obj/item/weapon/circuitboard/mecha/ripley/main, //TEMPORARY due to lack of circuitboard printer
-					/obj/item/weapon/circuitboard/mecha/ripley/peripherals) //TEMPORARY due to lack of circuitboard printer
+	name = "Exosuit Assembly Crate (\"Ripley\" APLU)"
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/tool/drill,
+		/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
+		/obj/item/weapon/circuitboard/mecha/main,
+		/obj/item/weapon/circuitboard/mecha/peripherals,
+		/obj/item/mecha_parts/chassis/ripley,
+		/obj/item/mecha_parts/part/ripley_torso,
+		/obj/item/mecha_parts/part/ripley_left_arm,
+		/obj/item/mecha_parts/part/ripley_right_arm,
+		/obj/item/mecha_parts/part/ripley_left_leg,
+		/obj/item/mecha_parts/part/ripley_right_leg)
 	cost = 3000
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
-	crate_name = "APLU \"Ripley\" circuit crate"
-	access = access_robotics
+	crate_name = "Exosuit Assembly Crate (\"Ripley\" APLU)"
 	group = "Engineering"
 
 /datum/supply_pack/mecha_odysseus
-	name = "Circuit Crate (\"Odysseus\")"
-	contains = list(/obj/item/weapon/circuitboard/mecha/odysseus/peripherals, //TEMPORARY due to lack of circuitboard printer
-					/obj/item/weapon/circuitboard/mecha/odysseus/main) //TEMPORARY due to lack of circuitboard printer
-	cost = 2500
+	name = "Exosuit Assembly Crate (\"Odysseus\")"
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun,
+		/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
+		/obj/item/weapon/circuitboard/mecha/main,
+		/obj/item/weapon/circuitboard/mecha/peripherals,
+		/obj/item/mecha_parts/chassis/odysseus,
+		/obj/item/mecha_parts/part/odysseus_head,
+		/obj/item/mecha_parts/part/odysseus_torso,
+		/obj/item/mecha_parts/part/odysseus_left_arm,
+		/obj/item/mecha_parts/part/odysseus_right_arm,
+		/obj/item/mecha_parts/part/odysseus_left_leg,
+		/obj/item/mecha_parts/part/odysseus_right_leg
+	)
+	cost = 3000
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
-	crate_name = "\"Odysseus\" circuit crate"
-	access = access_robotics
+	crate_name = "Exosuit Assembly Crate (\"Odysseus\")"
 	group = "Engineering"
 
 /datum/supply_pack/robotics
