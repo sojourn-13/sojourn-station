@@ -500,11 +500,9 @@
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/custodian
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/custodian
 
-
 /obj/machinery/suit_storage_unit/mining
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/mining
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/mining
-
 
 /obj/machinery/suit_storage_unit/excelsior
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/excelsior
@@ -514,4 +512,4 @@
 	overlay_color = "#D04044"
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/merc
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/merc
-	MASK_TYPE = /obj/item/clothing/mask/gas/syndicate
+	MASK_TYPE = /obj/item/clothing/mask/gas/tactical
