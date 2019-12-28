@@ -59,24 +59,17 @@ proc/admin_proc()
 	if(!check_rights(R_ADMIN)) return
 	to_chat(world, "you have enough rights!")
 
-NOTE: It checks usr by default. Supply the "Ñ" argument if you wish to check for a specific client/mob.
+NOTE: It checks usr by default. Supply the "user" argument if you wish to check for a specific mob.
 */
-/proc/check_rights(rights_required, show_msg=1, client/C = usr)
-	if(ismob(C))
-		var/mob/M = C
-		C = M.client
-	if(!C)
-		return FALSE
-	if(!(istype(C, /client))) // If we still didn't find a client, something is wrong.
-		return FALSE
-	if(!C.holder)
-		if(show_msg)
-			C << "<span class='warning'>Error: You are not an admin.</span>"
-		return FALSE
-
-	if(rights_required)
-		if(rights_required & C.holder.rights)
-			return TRUE
+/proc/check_rights(rights_required, show_msg=1, var/mob/user = usr)
+	if(user && user.client)
+		if(rights_required)
+			if(user.client.holder)
+				if(rights_required & user.client.holder.rights)
+					return 1
+				else
+					if(show_msg)
+						to_chat(user, "<font color='red'>Error: You do not have sufficient rights to do that. You require one of the following flags:[rights2text(rights_required," ")].</font>")
 		else
 			if(user.client.holder)
 				return 1
