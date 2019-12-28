@@ -1216,10 +1216,6 @@ var/list/rank_prefix = list(\
 
 	update_body()
 
-#undef MODIFICATION_REMOVED
-#undef MODIFICATION_ORGANIC
-#undef MODIFICATION_SILICON
-
 /mob/living/carbon/human/proc/bloody_doodle()
 	set category = "IC"
 	set name = "Write in blood"
