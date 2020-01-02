@@ -38,7 +38,7 @@
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
-/obj/item/clothing/under/rank/chaplain
+/obj/item/clothing/under/rank/preacher
 	desc = "A dark ceremonial robe tailored for NeoTheology preachers."
 	name = "neotheology preacher's robe"
 	icon_state = "preacher"
@@ -52,7 +52,7 @@
 
 /obj/item/clothing/under/rank/church
 	desc = "Smells like incense."
-	name = "Church Attire"
+	name = "church vestments"
 	icon_state = "church"
 	item_state = "church"
 
@@ -79,7 +79,6 @@
 	name = "botanist's jumpsuit"
 	icon_state = "hydroponics"
 	item_state = "g_suit"
-
 	permeability_coefficient = 0.50
 
 /obj/item/clothing/under/rank/janitor
@@ -87,7 +86,15 @@
 	name = "janitor's jumpsuit"
 	icon_state = "janitor"
 	item_state = "janitor"
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 30, rad = 0)
+	permeability_coefficient = 0.50
+	armor = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 10,
+		rad = 0
+	)
 
 /obj/item/clothing/under/rank/miner
 	desc = "A snappy guild jumpsuit complete with sturdy mining overalls."

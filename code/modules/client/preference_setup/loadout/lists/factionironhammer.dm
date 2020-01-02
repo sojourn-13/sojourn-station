@@ -54,6 +54,16 @@
 	slot = slot_head
 	sort_category = "Faction: Ironhammer"
 
+/datum/gear/factionironhammer/capfield
+	display_name = "cap, IH field"
+	path = /obj/item/clothing/head/soft/sec2soft
+	allowed_roles = list("Ironhammer Operative","Ironhammer Commander","Gunnery Sergeant", "Inspector")
+
+/datum/gear/factionironhammer/capsarge
+	display_name = "cap, IH sergeant"
+	path = /obj/item/clothing/head/soft/sarge2soft
+	allowed_roles = list("Ironhammer Commander","Gunnery Sergeant")
+
 /datum/gear/factionironhammer/gorka_ih
 	display_name = "gorka jacket, ironhammer"
 	path = /obj/item/clothing/suit/gorka/toggle/gorka_ih

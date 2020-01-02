@@ -17,10 +17,11 @@
 	new /obj/item/device/scanner/plant(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/clothing/mask/rank/botanist(src)
-	new /obj/item/weapon/material/minihoe(src)
-	new /obj/item/weapon/material/hatchet(src)
+	new /obj/item/weapon/tool/minihoe(src)
+	new /obj/item/weapon/tool/hatchet(src)
 	new /obj/item/weapon/tool/wirecutters(src)
 	new /obj/item/weapon/reagent_containers/spray/plantbgone(src)
+	new /obj/item/clothing/gloves/botanic_leather(src)
 
 /obj/structure/closet/secure_closet/personal/hydroponics/public
 	name = "botanist's locker"
@@ -34,18 +35,18 @@
 
 /obj/structure/closet/secure_closet/personal/agrolyte/populate_contents()
 	new /obj/item/clothing/suit/rank/botanist(src)
-	new /obj/item/weapon/storage/belt/church(src)
+	new /obj/item/weapon/storage/belt/utility/neotheology(src)
 	new /obj/item/weapon/storage/bag/plants(src)
 	new /obj/item/clothing/under/rank/botanist(src)
 	new /obj/item/device/scanner/plant(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/mask/rank/botanist(src)
-	new /obj/item/weapon/material/minihoe(src)
-	new /obj/item/weapon/material/hatchet(src)
+	new /obj/item/weapon/tool/minihoe(src)
+	new /obj/item/weapon/tool/hatchet(src)
 	new /obj/item/weapon/tool/wirecutters(src)
 	new /obj/item/weapon/reagent_containers/spray/plantbgone(src)
-	new /obj/item/clothing/suit/armor/vest/botanist(src)
-	new /obj/item/clothing/head/helmet/botanist(src)
+	new /obj/item/clothing/suit/space/void/agrolyte(src)
+	new /obj/item/clothing/gloves/botanic_leather(src)
 	if(prob(50))
 		new /obj/item/weapon/storage/backpack/neotheology(src)
 	else

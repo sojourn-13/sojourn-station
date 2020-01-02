@@ -10,7 +10,14 @@
 	item_state = "ass_jacket"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
 
 //Guild Technician
 /obj/item/clothing/suit/storage/rank/cargo_jacket
@@ -20,17 +27,32 @@
 	item_state = "cargo_jacket"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
 
 //Quartermaster
 /obj/item/clothing/suit/storage/rank/qm_coat
 	name = "guild merchant coat"
-	desc = "An ideal choice for a smuggler. This coat seems have good impact resistant, and made from resistant and expensive materials.."
+	desc = "An ideal choice for a smuggler. This coat seems have good impact resistance, and is made from resistant and expensive materials."
 	icon_state = "qm_coat"
 	item_state = "qm_coat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 30, bullet = 20, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor = list(
+		melee = 30,
+		bullet = 20,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	siemens_coefficient = 0.8
 
 //Botonist
 /obj/item/clothing/suit/rank/botanist
@@ -40,7 +62,11 @@
 	item_state = "apron"
 	blood_overlay_type = "armor"
 	body_parts_covered = 0
-	extra_allowed = list (/obj/item/seeds, /obj/item/weapon/reagent_containers/glass/fertilizer, /obj/item/weedkiller)
+	extra_allowed = list(
+		/obj/item/seeds,
+		/obj/item/weapon/reagent_containers/glass/fertilizer,
+		/obj/item/weedkiller
+	)
 
 //Chaplain
 /obj/item/clothing/suit/rank/chaplain
@@ -50,7 +76,14 @@
 	item_state = "chaplain_hoodie"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
 
 /obj/item/clothing/suit/rank/chaplain/holiday
 	name = "holiday priest"
@@ -60,7 +93,7 @@
 
 /obj/item/clothing/suit/rank/chaplain/coat
 	name = "preacher coat"
-	desc = "A snugly fitting, lightly armoured coat. Brown with an NT logo on the back"
+	desc = "A snugly fitting, lightly armoured brown coat."
 	icon_state = "church_coat"
 	item_state = "church_coat"
 
@@ -70,8 +103,8 @@
 	desc = "An apron used by a high class chef."
 	icon_state = "chef"
 	item_state = "chef"
-	gas_transfer_coefficient = 0.90
-	permeability_coefficient = 0.50
+	gas_transfer_coefficient = 0.9
+	permeability_coefficient = 0.5
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/suit/rank/chef/classic
@@ -100,8 +133,22 @@
 	item_state = "det_suit"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(melee = 40, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+	armor = list(
+		melee = 30,
+		bullet = 20,
+		energy = 20,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
 	price_tag = 250
+
+/obj/item/clothing/suit/storage/detective/ironhammer
+	name = "Inspector's armored trenchcoat"
+	desc = "Brown and armored trenchcoat, designed and created by Ironhammer Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
+	icon_state = "insp_coat"
+	item_state = "insp_coat"
+	blood_overlay_type = "coat"
 
 //Engineering
 /obj/item/clothing/suit/storage/hazardvest
@@ -123,7 +170,14 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	price_tag = 50
-	armor = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor = list(
+		melee = 10,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
 
 /obj/item/clothing/suit/storage/surgical_apron
 	name = "surgical apron"

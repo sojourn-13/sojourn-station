@@ -84,13 +84,8 @@ SUBSYSTEM_DEF(research)
 	// If designs are already generated, initialized right away.
 	// If not, add them to the list to be initialized later.
 	if(research_initialized)
-		var/datum/design/design = locate(design_file.design) in all_designs
-		if(design)
-			design_file.design = design
-			design_file.on_design_set()
-		else
-			error("Incorrect design ID or path: [design_file.design]")
-
+		design_file.design = SSresearch.get_design(design_file.design)
+		design_file.on_design_set()
 	else
 		design_files_to_init += design_file
 
@@ -103,8 +98,16 @@ SUBSYSTEM_DEF(research)
 		T.max_level = all_tech_trees[i].len
 		R.researched_tech[T] = list()
 
-	R.known_designs |= starting_designs
-
 	for(var/tech in statting_technologies)
 		R.UnlockTechology(tech, initial = TRUE)
 
+	for(var/design in starting_designs)
+		R.AddDesign2Known(design)
+
+/datum/controller/subsystem/research/proc/get_design(id)
+	for(var/_design in all_designs)
+		var/datum/design/design = _design
+		if(design.id == id)
+			return design
+
+	error("Incorrect design ID or path: [id]")

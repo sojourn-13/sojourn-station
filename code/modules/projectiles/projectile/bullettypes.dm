@@ -8,7 +8,7 @@
 //Low-caliber pistols and SMGs
 /obj/item/projectile/bullet/c9mm
 	damage = 24
-	armor_penetration = 15
+	armor_penetration = 5
 	can_ricochet = TRUE
 
 /obj/item/projectile/bullet/c9mm/hv
@@ -49,7 +49,7 @@
 
 /obj/item/projectile/bullet/a10mm/hv
 	damage = 28
-	armor_penetration = 20
+	armor_penetration = 10
 	penetrating = 1
 	step_delay = 0.75
 
@@ -91,7 +91,7 @@
 //Carbines and rifles
 /obj/item/projectile/bullet/c10mm
 	damage = 25
-	armor_penetration = 35
+	armor_penetration = 25
 	penetrating = 2
 	can_ricochet = TRUE
 
@@ -170,25 +170,25 @@
 
 /obj/item/projectile/bullet/a762
 	damage = 28
-	armor_penetration = 30
+	armor_penetration = 20
 	penetrating = 1
 	can_ricochet = TRUE
 
 /obj/item/projectile/bullet/a762/hv
 	damage = 30
-	armor_penetration = 35
+	armor_penetration = 30
 	penetrating = 2
 	step_delay = 0.75
 
 //Revolvers and high-caliber pistols
 /obj/item/projectile/bullet/a357
 	damage = 32
-	armor_penetration = 20
+	armor_penetration = 15
 	can_ricochet = TRUE
 
 /obj/item/projectile/bullet/a357/hv
 	damage = 35
-	armor_penetration = 25
+	armor_penetration = 20
 	penetrating = 1
 	step_delay = 0.75
 
@@ -234,7 +234,7 @@
 //Sniper rifles
 /obj/item/projectile/bullet/a145
 	damage = 70
-	armor_penetration = 80
+	armor_penetration = 50
 	stun = 3
 	weaken = 3
 	penetrating = 5
@@ -261,9 +261,9 @@
 
 /obj/item/projectile/bullet/shotgun/practice
 	name = "practice slug"
-	damage = 50 * 0
-	agony = 50 * 0.1
-	armor_penetration = 12 * 0.2
+	damage = 1
+	agony = 5
+	armor_penetration = 0
 	embed = FALSE
 	knockback = 0
 
@@ -273,7 +273,6 @@
 	name = "shrapnel"
 	icon_state = "birdshot-1"
 	damage = 10
-	armor_penetration = 8
 	pellets = 8
 	range_step = 1
 	spread_step = 10

@@ -462,7 +462,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/thunderdome(M), slot_head)
 
 			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/pulse/destroyer(M), slot_r_hand)
-			M.equip_to_slot_or_del(new /obj/item/weapon/material/knife(M), slot_l_hand)
+			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_l_hand)
 			M.equip_to_slot_or_del(new /obj/item/weapon/grenade/smokebomb(M), slot_r_store)
 
 
@@ -470,7 +470,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/inspector/suit(M), slot_w_uniform)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/color/black(M), slot_shoes)
 
-			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/rank/det_trench(M), slot_wear_suit)
+			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/detective(M), slot_wear_suit)
+
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/monocle(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/rank/inspector(M), slot_head)
 
@@ -484,9 +485,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/rank/chef(M), slot_head)
 
 			M.equip_to_slot_or_del(new /obj/item/weapon/material/kitchen/rollingpin(M), slot_r_hand)
-			M.equip_to_slot_or_del(new /obj/item/weapon/material/knife(M), slot_l_hand)
-			M.equip_to_slot_or_del(new /obj/item/weapon/material/knife(M), slot_r_store)
-			M.equip_to_slot_or_del(new /obj/item/weapon/material/knife(M), slot_s_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_l_hand)
+			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_s_store)
 
 		if ("tournament janitor")
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/janitor(M), slot_w_uniform)
@@ -559,7 +560,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/monocle(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/clothing/suit/rank/botanist(M), slot_wear_suit)
-			M.equip_to_slot_or_del(new /obj/item/weapon/material/knife(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/tool/knife(M), slot_l_store)
 			M.equip_to_slot_or_del(new /obj/item/weapon/tool/scalpel(M), slot_r_store)
 
 			var/obj/item/weapon/material/twohanded/fireaxe/fire_axe = new(M)
@@ -669,9 +670,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(W, slot_wear_id)
 
 		if("special ops officer")
-			M.equip_to_slot_or_del(new /obj/item/clothing/under/syndicate/combat(M), slot_w_uniform)
-			M.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/swat/officer(M), slot_wear_suit)
-			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/combat(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/syndicate(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/detective(M), slot_wear_suit)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(M), slot_shoes)
 			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick/combat(M), slot_gloves)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/eyepatch(M), slot_glasses)
@@ -689,8 +690,10 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(W, slot_wear_id)
 
 		if("soviet admiral")
+
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/costume/history/piratecap(M), slot_head)
-			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/combat(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(M), slot_shoes)
+
 			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick/combat(M), slot_gloves)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/eyepatch(M), slot_glasses)

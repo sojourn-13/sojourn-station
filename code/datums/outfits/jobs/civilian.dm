@@ -15,7 +15,6 @@
 	pda_type = /obj/item/modular_computer/pda/club_worker
 	backpack_contents = list(/obj/item/ammo_casing/shotgun/beanbag = 4)
 
-
 /decl/hierarchy/outfit/job/service/waiter
 	name = OUTFIT_JOB_NAME("Waiter")
 	uniform = /obj/item/clothing/under/costume/job/waiter
@@ -56,13 +55,12 @@
 	shoes = /obj/item/clothing/shoes/costume/job/clown
 	mask = /obj/item/clothing/mask/costume/job/clown
 	l_pocket = /obj/item/weapon/bikehorn
-	backpack_contents = list(/obj/item/weapon/bananapeel = 1, /obj/item/weapon/storage/fancy/crayons = 1, /obj/item/toy/weapon/waterflower = 1, /obj/item/weapon/stamp/clown = 1)
+	backpack_contents = list(/obj/item/weapon/bananapeel = 1, /obj/item/weapon/storage/fancy/crayons = 1, /obj/item/toy/weapon/waterflower = 1, /obj/item/weapon/stamp/clown = 1, /obj/item/weapon/handcuffs/fake = 1)
 
 /decl/hierarchy/outfit/job/service/actor/clown/New()
 	..()
 	backpack_overrides[/decl/backpack_outfit/backpack] = /obj/item/weapon/storage/backpack/clown
 	backpack_overrides[/decl/backpack_outfit/satchel] = /obj/item/weapon/storage/backpack/satchel/leather
-
 
 /decl/hierarchy/outfit/job/service/actor/clown/post_equip(var/mob/living/carbon/human/H)
 	..()

@@ -22,6 +22,8 @@
 	active_power_usage = 2000
 	circuit = /obj/item/weapon/circuitboard/autolathe
 
+	var/build_type = AUTOLATHE
+
 	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = null
 
 	var/list/stored_material = list()
@@ -82,15 +84,12 @@
 
 	image_load = new(src)
 	image_load_material = new(src)
-	vis_contents += image_load
-	vis_contents += image_load_material
 
 	if(have_disk && default_disk)
 		disk = new default_disk(src)
 
 /obj/machinery/autolathe/Destroy()
 	QDEL_NULL(wires)
-	vis_contents.Cut()
 	QDEL_NULL(image_load)
 	QDEL_NULL(image_load_material)
 	return ..()
@@ -866,8 +865,15 @@
 	icon_state = ""
 	mouse_opacity = 0
 
-/obj/effect/flicker_overlay/New(atom/loc)
+/obj/effect/flicker_overlay/New(atom/movable/loc)
 	..()
 	icon = loc.icon
 	layer = loc.layer
 	plane = loc.plane
+	loc.vis_contents += src
+
+/obj/effect/flicker_overlay/Destroy()
+	if(istype(loc, /atom/movable))
+		var/atom/movable/A = loc
+		A.vis_contents -= src
+	return ..()

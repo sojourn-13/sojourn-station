@@ -145,11 +145,21 @@
 
 /obj/landmark/corpse/roles/civilian/neotheopreacher
 	name = "NeoTheologist Preacher"
-	corpseuniform = /obj/item/clothing/under/rank/chaplain
+	corpseuniform = /obj/item/clothing/under/rank/preacher
 	corpsesuit = /obj/item/clothing/suit/rank/chaplain
 	corpseshoes = /obj/item/clothing/shoes/reinforced
 	corpsegloves = /obj/item/clothing/gloves/thick
 	corpseradio = /obj/item/device/radio/headset
+
+/obj/landmark/corpse/syndicatesoldier
+	name = "Syndicate Operative"
+	corpseuniform = /obj/item/clothing/under/syndicate
+	corpsesuit = /obj/item/clothing/suit/armor/vest
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpsegloves = /obj/item/clothing/gloves/thick/swat
+	corpseradio = /obj/item/device/radio/headset
+	corpsemask = /obj/item/clothing/mask/gas
+	corpsehelmet = /obj/item/clothing/head/helmet
 	corpseback = /obj/item/weapon/storage/backpack
 	corpseid = 1
 	corpseidjob = "NeoTheologist Preacher"
@@ -242,6 +252,7 @@
 	corpseid = 1
 	corpseidjob = "Moebius Paramedic"
 
+
 /obj/landmark/corpse/roles/medical/moebiusparamedic/biosuit
 	name = "Moebius Paramedic"
 	corpseuniform = /obj/item/clothing/under/scrubs/green
@@ -254,6 +265,18 @@
 	corpsebelt = /obj/item/weapon/storage/belt/medical/emt
 	corpsepocket2 = /obj/item/device/lighting/toggleable/flashlight/pen
 	corpseback = /obj/item/weapon/storage/backpack/medical
+
+/obj/landmark/corpse/syndicatecommando
+	name = "Syndicate Commando"
+	corpseuniform = /obj/item/clothing/under/syndicate
+	corpsesuit = /obj/item/clothing/suit/space/void/merc
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpsegloves = /obj/item/clothing/gloves/thick/swat
+	corpseradio = /obj/item/device/radio/headset
+	corpsemask = /obj/item/clothing/mask/gas/tactical
+	corpsehelmet = /obj/item/clothing/head/helmet/space/void/merc
+	corpseback = /obj/item/weapon/tank/jetpack/oxygen
+	corpsepocket1 = /obj/item/weapon/tank/emergency_oxygen
 	corpseid = 1
 	corpseidjob = "Moebius Paramedic"
 
@@ -744,6 +767,11 @@
 	corpseradio = /obj/item/device/radio/headset/heads/captain
 	corpseglasses = /obj/item/clothing/glasses/sunglasses
 	corpsehelmet = /obj/item/clothing/head/rank/centcomm
+	corpseglasses = /obj/item/clothing/glasses/eyepatch
+	corpsemask = /obj/item/clothing/mask/smokable/cigarette/cigar/cohiba
+	corpsehelmet = /obj/item/clothing/head/rank/centcomm
+	corpsegloves = /obj/item/clothing/gloves/thick/swat
+	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpsepocket1 = /obj/item/weapon/flame/lighter/zippo
 	corpseback = /obj/item/weapon/storage/backpack
 	corpseid = 1

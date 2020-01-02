@@ -136,8 +136,7 @@ Please contact me on #coderbus IRC. ~Carn x
 #define L_HAND_LAYER			28
 #define R_HAND_LAYER			29
 #define FIRE_LAYER				30		//If you're on fire
-#define TARGETED_LAYER			31		//BS12: Layer for the target overlay from weapon targeting system
-#define TOTAL_LAYERS			31
+#define TOTAL_LAYERS			30
 //////////////////////////////////
 
 /mob/living/carbon/human

@@ -33,6 +33,7 @@ Procs:
 	var/list/known_designs = list()			//List of available designs (at base reliability).
 	var/list/design_categories_protolathe = list()
 	var/list/design_categories_imprinter = list()
+	var/list/design_categories_mechfab = list()
 
 	var/list/researched_tech = list() // Tree = list(of_researched_tech)
 	var/list/researched_nodes = list() // All research nodes
@@ -88,10 +89,9 @@ Procs:
 	else
 		tree.level += 1
 
-	for(var/D in T.unlocks_designs)
-		var/datum/design/design = locate(D) in SSresearch.all_designs
-		if(design)
-			AddDesign2Known(design)
+	for(var/id in T.unlocks_designs)
+		AddDesign2Known(SSresearch.get_design(id))
+
 	return TRUE
 
 /datum/research/proc/download_from(datum/research/O)
@@ -147,8 +147,10 @@ Procs:
 	var/cat = D.category ? D.category : "Unspecified"
 	if(D.build_type & PROTOLATHE)
 		design_categories_protolathe |= cat
-	else if(D.build_type & IMPRINTER)
+	if(D.build_type & IMPRINTER)
 		design_categories_imprinter |= cat
+	if(D.build_type & MECHFAB)
+		design_categories_mechfab |= cat
 
 
 // Unlocks hidden tech trees

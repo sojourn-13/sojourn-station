@@ -20,7 +20,6 @@
 		hitsound = 'sound/weapons/bladeslice.ogg'
 		icon_state += "_open"
 		w_class = ITEM_SIZE_NORMAL
-		armor_penetration = ARMOR_PEN_SHALLOW
 		tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
 		attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	else
@@ -48,68 +47,3 @@
 		to_chat(user, SPAN_NOTICE("\The [src] can now be concealed."))
 	update_force()
 	add_fingerprint(user)
-
-/*
- * Kitchen knives
- */
-/obj/item/weapon/material/knife
-	name = "kitchen knife"
-	icon = 'icons/obj/kitchen.dmi'
-	icon_state = "knife"
-	desc = "A general purpose Chef's Knife made by SpaceCook Incorporated. Guaranteed to stay sharp for years to come."
-	flags = CONDUCT
-	sharp = 1
-	edge = 1
-	force_divisor = 0.3 // 18 when wielded with hardness 60 (steel)
-	matter = list(MATERIAL_STEEL = 3)
-	armor_penetration = ARMOR_PEN_GRAZING
-	origin_tech = "materials=1"
-	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	unbreakable = 1
-	slot_flags = SLOT_BELT
-	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
-	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
-
-/obj/item/weapon/material/knife/boot
-	name = "boot knife"
-	desc = "A small fixed-blade knife for putting inside a boot."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "tacknife"
-	item_state = "knife"
-	armor_penetration = ARMOR_PEN_MODERATE
-	applies_material_colour = 0
-	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 15)
-
-/obj/item/weapon/material/knife/hook
-	name = "meat hook"
-	desc = "A sharp, metal hook what sticks into things."
-	icon_state = "hook_knife"
-	item_state = "hook_knife"
-	armor_penetration = ARMOR_PEN_SHALLOW
-	embed_mult = 1.5 //This is designed for embedding
-
-/obj/item/weapon/material/knife/ritual
-	name = "ritual knife"
-	desc = "The unearthly energies that once powered this blade are now dormant."
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "render"
-	applies_material_colour = 0
-	armor_penetration = ARMOR_PEN_MODERATE
-
-/obj/item/weapon/material/knife/butch
-	name = "butcher's cleaver"
-	icon_state = "butch"
-	desc = "A huge thing used for chopping and chopping up meat. This includes clowns and clown-by-products."
-	force_divisor = 0.4 // 24 when wielded with hardness 60 (steel)
-	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10)
-	armor_penetration = ARMOR_PEN_SHALLOW
-
-/obj/item/weapon/material/knife/neotritual
-	name = "NeoTheology ritual knife"
-	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "neot-knife"
-	item_state = "knife"
-	applies_material_colour = 0
-	armor_penetration = ARMOR_PEN_SHALLOW
