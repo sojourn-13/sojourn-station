@@ -1,6 +1,9 @@
 /*Atmos Signs*/
 
 /obj/structure/sign/atmos/atmos_co2
+	icon = 'icons/obj/decals-warning.dmi'
+
+/obj/structure/sign/atmos/atmos_co2
 	name = "carbon dioxide warning sign"
 	desc = "WARNING! CO2 flow tube. Ensure the flow is disengaged before working."
 	icon_state = "atmos_co2"
@@ -37,14 +40,17 @@
 
 /*New warning signs*/
 
+/obj/structure/sign/warningnew
+	icon = 'icons/obj/decals-warning.dmi'
+
 /obj/structure/sign/warningnew/biohazard
 	name = "BIOLOGICAL HAZARD"
-	desc = "Warning: Biological and-or toxic hazards present in this area!"
+	desc = "Warning: Biological and/or toxic hazards present in this area!"
 	icon_state = "biohazard"
 
 /obj/structure/sign/warningnew/corrosives
 	name = "CORROSIVE SUBSTANCES"
-	desc = "Warning: Corrosive substances prezent in this area!"
+	desc = "Warning: Corrosive substances present in this area!"
 	icon_state = "corrosives"
 
 /obj/structure/sign/warningnew/explosives
@@ -113,6 +119,9 @@
 	icon_state = "memetic"
 
 /*Warnings*/
+
+/obj/structure/sign/warning
+	icon = 'icons/obj/decals-warning.dmi'
 
 /obj/structure/sign/warning/airlock
 	name = "\improper EXTERNAL AIRLOCK"
@@ -281,22 +290,6 @@
 /obj/structure/sign/warning/pods
 	name = "\improper ESCAPE PODS"
 	icon_state = "pods"
-
-/obj/structure/sign/warning/pods/north
-	name = "\improper ESCAPE PODS"
-	icon_state = "podsnorth"
-
-/obj/structure/sign/warning/pods/south
-	name = "\improper ESCAPE PODS"
-	icon_state = "podssouth"
-
-/obj/structure/sign/warning/pods/east
-	name = "\improper ESCAPE PODS"
-	icon_state = "podseast"
-
-/obj/structure/sign/warning/pods/west
-	name = "\improper ESCAPE PODS"
-	icon_state = "podswest"
 
 /obj/structure/sign/warning/radioactive
 	name = "\improper RADIOACTIVE AREA"
