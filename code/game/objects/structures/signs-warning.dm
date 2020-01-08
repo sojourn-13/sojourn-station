@@ -110,12 +110,12 @@
 
 /obj/structure/sign/warningnew/oxidants
 	name = "OXIDIZING AGENTS"
-	desc = "Warning: Oxidizing agents in this area, do not start fires!"
+	desc = "Warning: Oxidizing agents in this area! Do not start fires."
 	icon_state = "oxidants"
 
 /obj/structure/sign/warningnew/memetic
 	name = "MEMETIC HAZARD"
-	desc = "Warning: Memetic hazard, wear meson goggles!"
+	desc = "Warning: Memetic hazard! Wear meson goggles."
 	icon_state = "memetic"
 
 /*Warnings*/
