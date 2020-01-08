@@ -1,5 +1,4 @@
 /obj/structure/sign
-	icon = 'icons/obj/decals.dmi'
 	anchored = 1
 	opacity = 0
 	density = 0
