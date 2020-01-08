@@ -766,7 +766,7 @@ var/list/flooring_types
 /decl/flooring/grass
 	name = "grass"
 	icon = 'icons/turf/flooring/grass.dmi'
-	icon_base = "grass0"
+	icon_base = "grass"
 	has_base_range = 3
 	damage_temperature = T0C+80
 	flags = TURF_REMOVE_SHOVEL | TURF_EDGES_EXTERNAL | TURF_HAS_CORNERS
@@ -777,14 +777,14 @@ var/list/flooring_types
 	space_smooth = SMOOTH_NONE
 
 /decl/flooring/grass2
-	name = "dirt"
+	name = "grass"
 	icon = 'icons/turf/flooring/grass.dmi'
 	build_type = null
 	footstep_sound = "grass"
 	resistance = RESISTANCE_TOUGH
 
 /decl/flooring/grass2/virgoforest
-	icon_base = "grass"
+	icon_base = "grass-light"
 
 /decl/flooring/grass2/virgoforestdark
 	icon_base = "grass-dark"

@@ -541,7 +541,7 @@
 	initial_flooring = /decl/flooring/grass
 
 /turf/simulated/floor/grass/virgoforest
-	icon_state = "grass"
+	icon_state = "grass-light"
 	initial_flooring = /decl/flooring/grass2/virgoforest
 
 /turf/simulated/floor/grass/virgoforestdark
