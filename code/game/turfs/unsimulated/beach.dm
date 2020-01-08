@@ -1,6 +1,6 @@
 /turf/unsimulated/beach
 	name = "Beach"
-	icon = 'icons/misc/beach.dmi'
+	icon = 'icons/turf/flooring/beach.dmi'
 
 /turf/unsimulated/beach/sand
 	name = "Sand"
@@ -8,7 +8,7 @@
 
 /turf/unsimulated/beach/coastline
 	name = "Coastline"
-	icon = 'icons/misc/beach2.dmi'
+	icon = 'icons/turf/flooring/beach2.dmi'
 	icon_state = "sandwater"
 
 /turf/unsimulated/beach/water
@@ -20,4 +20,4 @@
 
 /turf/unsimulated/beach/water/New()
 	..()
-	overlays += image("icon"='icons/misc/beach.dmi',"icon_state"="water2","layer"=MOB_LAYER+0.1)
+	overlays += image("icon"='icons/turf/flooring/beach.dmi',"icon_state"="water2","layer"=MOB_LAYER+0.1)
