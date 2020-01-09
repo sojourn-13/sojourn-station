@@ -1,7 +1,8 @@
 /obj/item/weapon/gun/launcher
 	name = "launcher"
 	desc = "A device that launches things."
-	icon = 'icons/obj/guns/launcher.dmi'
+	icon = 'icons/obj/guns/launcher/pneumatic.dmi'
+	icon_state = "pneumatic"
 	w_class = ITEM_SIZE_HUGE
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
