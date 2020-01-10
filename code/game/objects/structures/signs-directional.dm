@@ -54,18 +54,22 @@
 
 /obj/structure/sign/directions/podsnorth
 	name = "\improper ESCAPE PODS"
+	desc = "A direction sign pointing the way to the escape pods."
 	icon_state = "podsnorth"
 
 /obj/structure/sign/directions/podssouth
 	name = "\improper ESCAPE PODS"
+	desc = "A direction sign pointing the way to the escape pods."
 	icon_state = "podssouth"
 
 /obj/structure/sign/directions/podseast
 	name = "\improper ESCAPE PODS"
+	desc = "A direction sign pointing the way to the escape pods."
 	icon_state = "podseast"
 
 /obj/structure/sign/directions/podswest
 	name = "\improper ESCAPE PODS"
+	desc = "A direction sign pointing the way to the escape pods."
 	icon_state = "podswest"
 
 /obj/structure/sign/directions/map
@@ -108,62 +112,62 @@
 	icon_state = "deck5"
 
 /obj/structure/sign/levels/smalldeck1
-	desc = "A silver sign which reads 'DECK I'."
+	desc = "A small blue sign which reads 'DECK I'."
 	name = "DECK I"
 	icon_state = "deck1small"
 
 /obj/structure/sign/levels/smalldeck2
-	desc = "A silver sign which reads 'DECK II'."
+	desc = "A small blue sign which reads 'DECK II'."
 	name = "DECK II"
 	icon_state = "deck2small"
 
 /obj/structure/sign/levels/smalldeck3
-	desc = "A silver sign which reads 'DECK III'."
+	desc = "A small blue sign which reads 'DECK III'."
 	name = "DECK III"
 	icon_state = "deck3small"
 
 /obj/structure/sign/levels/smalldeck4
-	desc = "A silver sign which reads 'DECK IV'."
+	desc = "A small blue sign which reads 'DECK IV'."
 	name = "DECK IV"
 	icon_state = "deck4small"
 
 /obj/structure/sign/levels/smalldeck5
-	desc = "A silver sign which reads 'DECK V'."
+	desc = "A small blue sign which reads 'DECK V'."
 	name = "DECK V"
 	icon_state = "deck5small"
 
 /obj/structure/sign/levels/olddeck1
-	desc = "A silver sign which reads 'DECK I'."
+	desc = "A blue sign which reads 'DECK I'."
 	name = "DECK I"
 	icon_state = "deck-1old"
 
 /obj/structure/sign/levels/olddeck2
-	desc = "A silver sign which reads 'DECK II'."
+	desc = "A blue sign which reads 'DECK II'."
 	name = "DECK II"
 	icon_state = "deck-2old"
 
 /obj/structure/sign/levels/olddeck3
-	desc = "A silver sign which reads 'DECK III'."
+	desc = "A blue sign which reads 'DECK III'."
 	name = "DECK III"
 	icon_state = "deck-3old"
 
 /obj/structure/sign/levels/olddeck4
-	desc = "A silver sign which reads 'DECK IV'."
+	desc = "A blue sign which reads 'DECK IV'."
 	name = "DECK IV"
 	icon_state = "deck-4old"
 
 /obj/structure/sign/levels/hangar1
-	desc = "A rectangular sign which reads 'HANGAR 1'."
+	desc = "A blue sign which reads 'HANGAR 1'."
 	name = "HANGAR 1"
 	icon_state = "hangar-1"
 
 /obj/structure/sign/levels/hangar2
-	desc = "A rectangular sign which reads 'HANGAR 2'."
+	desc = "A blue sign which reads 'HANGAR 2'."
 	name = "HANGAR 2"
 	icon_state = "hangar-2"
 
 /obj/structure/sign/levels/hangar3
-	desc = "A rectangular sign which reads 'HANGAR 3'."
+	desc = "A blue sign which reads 'HANGAR 3'."
 	name = "HANGAR 3"
 	icon_state = "hangar-3"
 

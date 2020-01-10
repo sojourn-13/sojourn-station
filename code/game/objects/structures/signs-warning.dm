@@ -401,32 +401,40 @@
 
 /obj/structure/sign/warning/hazard_caution
 	name = "CAUTION"
+	desc = "A warning sign which reads 'CAUTION'."
 	icon_state = "wall_caution"
 
 /obj/structure/sign/warning/hazard_danger
 	name = "DANGER"
+	desc = "A warning sign which reads 'DANGER'."
 	icon_state = "wall_danger"
 
 /obj/structure/sign/warning/hazard_biohazard
 	name = "BIOHAZARD"
+	desc = "A warning sign which reads 'BIOHAZARD'."
 	icon_state = "wall_biohazard"
 
 /obj/structure/sign/warning/hazard_radiation
 	name = "RADIATION"
+	desc = "A warning sign which reads 'RADIATION'."
 	icon_state = "wall_radiation"
 
 /obj/structure/sign/warning/hazard_extremeheat
 	name = "EXTREME HEAT"
+	desc = "A warning sign which reads 'EXTREME HEAT'."
 	icon_state = "wall_extremeheat"
 
 /obj/structure/sign/warning/hazard_electrical
 	name = "ELECTRICAL HAZARD"
+	desc = "A warning sign which reads 'ELECTRICAL HAZARD'."
 	icon_state = "wall_electricalhazard"
 
 /obj/structure/sign/warning/hazard_hotloop
 	name = "HOT LOOP"
+	desc = "A warning sign which reads 'HOT LOOP'."
 	icon_state = "wall_hotloop"
 
 /obj/structure/sign/warning/hazard_coldloop
 	name = "COLD LOOP"
+	desc = "A warning sign which reads 'COLD LOOP'."
 	icon_state = "wall_coldloop"
