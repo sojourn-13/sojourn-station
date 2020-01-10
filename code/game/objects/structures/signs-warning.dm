@@ -1,6 +1,6 @@
 /*Atmos Signs*/
 
-/obj/structure/sign/atmos/atmos_co2
+/obj/structure/sign/atmos
 	icon = 'icons/obj/decals-warning.dmi'
 
 /obj/structure/sign/atmos/atmos_co2

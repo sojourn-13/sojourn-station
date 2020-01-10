@@ -60,7 +60,7 @@
 /obj/item/clothing/head/hood/carp_hood
 	name = "carp hood"
 	desc = "A hood attached to a carp costume."
-	icon_state = "carp_casual"
+	icon_state = "carp"
 	item_state_slots = list(slot_r_hand_str = "carp_casual", slot_l_hand_str = "carp_casual") //Does not exist -S2-
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE	//Space carp like space, so you should too
 
