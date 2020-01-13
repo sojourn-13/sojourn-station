@@ -6,7 +6,7 @@
 ////////////////////////////
 */
 /datum/sprite_accessory/wings
-	name = "You should not see this..."
+	name = "Hide Wings"
 	icon = 'icons/mob/sprite_accessory/wings.dmi'
 	colored_layers = 0 //Set to 1 to enable coloration using the tail color.
 	extra_overlay // Use remaining layers from another sprite name rather than the original.
@@ -17,178 +17,187 @@
 	var/extra_overlay_w // Flapping state for extra overlay
 	var/layers = 0
 
-/datum/sprite_accessory/wings/shock //Unable to split the tail from the wings in the sprite, so let's just classify it as wings.
-	name = "pharoah hound tail (Shock Diamond)"
+/datum/sprite_accessory/wings/bat_black
+	name = "Bat Wings, Black"
 	desc = ""
-	icon_state = "shock"
+	icon_state = "bat-black"
 
-/datum/sprite_accessory/wings/featheredlarge //Made by Natje!
-	name = "large feathered wings (colorable)"
+/datum/sprite_accessory/wings/bat_color
+	name = "Bat Wings, Colorable"
 	desc = ""
-	icon_state = "feathered2"
+	icon_state = "bat-color"
 	colored_layers = 1
-	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/spider_legs //Not really /WINGS/ but they protrude from the back, kinda. Might as well have them here.
-	name = "spider legs"
+/datum/sprite_accessory/wings/bat_red
+	name = "Bat Wings, Red"
 	desc = ""
-	icon_state = "spider-legs"
-	colored_layers = 1
-	blend = ICON_MULTIPLY
+	icon_state = "bat-red"
 
-/datum/sprite_accessory/wings/moth
-	name = "moth wings"
+/datum/sprite_accessory/wings/bee
+	name = "Bee Wings"
 	desc = ""
-	icon_state = "moth"
-
-/datum/sprite_accessory/wings/mothc
-	name = "moth wings, colorable"
-	desc = ""
-	icon_state = "moth"
-	colored_layers = 1
-	blend = ICON_MULTIPLY
+	icon_state = "beewings"
 
 /datum/sprite_accessory/wings/citheroniamoth
-	name = "citheronia wings"
+	name = "Citheronia Wings"
 	desc = ""
 	icon_state = "citheronia_wings"
 
+/datum/sprite_accessory/wings/cyberdragon_red
+	name = "Cyberdragon Wings"
+	desc = ""
+	icon_state = "cyberdragon_red_s"
+
+/datum/sprite_accessory/wings/cyberdragon
+	name = "Cyberdragon Wings, Colorable"
+	desc = ""
+	icon_state = "cyberdragon_s"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/cyberdoe
+	name = "Cyberdoe Wings"
+	desc = ""
+	icon_state = "cyberdoe_s"
+
+/datum/sprite_accessory/wings/demon
+	name = "Demon Wings"
+	desc = ""
+	icon_state = "sepulchre_wings"
+
+/datum/sprite_accessory/wings/dragonfly
+	name = "Dragonfly Wings"
+	desc = ""
+	icon_state = "dragonfly"
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/wings/feathered
-	name = "feathered wings, colorable"
+	name = "Feathered Wings, Small"
 	desc = ""
 	icon_state = "feathered"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/feathered_medium
-	name = "medium feathered wings, colorable" // Keekenox made these feathery things with a little bit more shape to them than the other wings. They are medium sized wing boys.
+	name = "Feathered Wings, Medium"
 	desc = ""
 	icon_state = "feathered3"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/bat_black
-	name = "bat wings, black"
+/datum/sprite_accessory/wings/featheredlarge
+	name = "Feathered Wings, Large"
 	desc = ""
-	icon_state = "bat-black"
-
-/datum/sprite_accessory/wings/bat_color
-	name = "bat wings, colorable"
-	desc = ""
-	icon_state = "bat-color"
+	icon_state = "feathered2"
 	colored_layers = 1
+	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/bat_red
-	name = "bat wings, red"
+/datum/sprite_accessory/wings/fluffdragon
+	name = "Fluffdragon Wings"
 	desc = ""
-	icon_state = "bat-red"
+	icon_state = "miria-fluffdragontail"
+
+/datum/sprite_accessory/wings/gazer
+	name = "Gazer Eyestalks"
+	desc = ""
+	icon_state = "liquidfirefly-eyestalks"
+
+/datum/sprite_accessory/wings/greentaj
+	name = "Green Taj Wings"
+	desc = ""
+	icon_state = "scree-wings"
 
 /datum/sprite_accessory/wings/harpywings
-	name = "harpy wings, colorable"
+	name = "Harpy Wings"
 	desc = ""
 	icon_state = "harpywings"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/feathered
-	name = "feathered wings, colorable"
+/datum/sprite_accessory/wings/mothc
+	name = "Moth Wings"
 	desc = ""
-	icon_state = "feathered"
+	icon_state = "moth"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/beewings
-	name = "bee wings"
+/datum/sprite_accessory/wings/Moth_royal
+	name = "Moth Wings, Royal"
 	desc = ""
-	icon_state = "beewings"
+	icon_state = "Moth_royal"
 
-/datum/sprite_accessory/wings/sepulchre
-	name = "demon wings (Sepulchre)"
+/datum/sprite_accessory/wings/Moth_royal_colorable
+	name = "Moth Wings, Royal Colorable"
 	desc = ""
-	icon_state = "sepulchre_wings"
-
-/datum/sprite_accessory/wings/miria_fluffdragon
-	name = "fluffdragon wings (Miria Masters)"
-	desc = ""
-	icon_state = "miria-fluffdragontail"
-
-/datum/sprite_accessory/wings/scree
-	name = "green wings"
-	desc = ""
-	icon_state = "scree-wings"
-
-/datum/sprite_accessory/wings/liquidfirefly_gazer //I g-guess this could be considered wings?
-	name = "gazer eyestalks"
-	desc = ""
-	icon_state = "liquidfirefly-eyestalks"
+	icon_state = "Moth_royal_colorable"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/moth_full
-	name = "moth antenna and wings"
+	name = "Moth Wings, With Antenna"
 	desc = ""
 	icon_state = "moth_full"
 
-/datum/sprite_accessory/wings/kerena
-	name = "wingwolf wings (Kerena)"
-	desc = ""
-	icon_state = "kerena-wings"
-
-/*
-/datum/sprite_accessory/wings/snag
-	name = "xenomorph backplate"
-	desc = ""
-	icon_state = "snag-backplate"
-*/
-
 /datum/sprite_accessory/wings/nevrean
-	name = "nevrean wings/fantail"
+	name = "Nevrean Wings/Fantail"
 	desc = ""
 	icon_state = "nevrean_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/spines_short
-	name = "spines, short, colorable"
+/datum/sprite_accessory/wings/pharoah
+	name = "Pharoah Hound Tail"
 	desc = ""
-	icon_state = "spines_short"
+	icon_state = "shock"
+
+/datum/sprite_accessory/wings/spider_legs
+	name = "Spider Legs"
+	desc = ""
+	icon_state = "spider-legs"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/spines_short_membrane
-	name = "spines, short membrane, colorable"
+/datum/sprite_accessory/wings/spines_aquatic
+	name = "Spines, Aquatic"
 	desc = ""
-	icon_state = "spines_short_membrane"
+	icon_state = "spines_aqua"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/spines_long
-	name = "spines, long, colorable"
+	name = "Spines, Long"
 	desc = ""
 	icon_state = "spines_long"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/spines_long_membrane
-	name = "spines, long membrane, colorable"
+	name = "Spines, Long Membrane"
 	desc = ""
 	icon_state = "spines_long_membrane"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/spines_aquatic
-	name = "spines, aquatic, colorable"
+/datum/sprite_accessory/wings/spines_short
+	name = "Spines, Short"
 	desc = ""
-	icon_state = "spines_aqua"
+	icon_state = "spines_short"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/Moth_royal
-	name = "moth royal"
+/datum/sprite_accessory/wings/spines_short_membrane
+	name = "Spines, Short Membrane"
 	desc = ""
-	icon_state = "Moth_royal"
-
-/datum/sprite_accessory/wings/Moth_royal_colorable
-	name = "moth royal, colorable"
-	desc = ""
-	icon_state = "Moth_royal_colorable"
+	icon_state = "spines_short_membrane"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/wingwolf
+	name = "Wingwolf Wings"
+	desc = ""
+	icon_state = "kerena-wings"
+
+/datum/sprite_accessory/wings/xenomorph
+	name = "Xenomorph Backplate"
+	desc = ""
+	icon_state = "snag-backplate"
