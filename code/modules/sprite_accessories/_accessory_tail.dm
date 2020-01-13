@@ -6,7 +6,7 @@
 ////////////////////////////
 */
 /datum/sprite_accessory/tail
-	name = "You should not see this..."
+	name = "force no tail"
 	icon = 'icons/mob/sprite_accessory/tails.dmi'
 	colored_layers = 0 //Set to 1 to enable coloration using the tail color.
 	extra_overlay // Change the icon name when adding extra layers
@@ -16,11 +16,6 @@
 	var/ani_state // State when wagging/animated
 	var/extra_overlay_w // Wagging state for extra overlay
 	var/layers = 0
-
-/datum/sprite_accessory/tail/invisible
-	name = "hide species-sprite tail"
-	icon = null
-	icon_state = null
 
 /datum/sprite_accessory/tail/squirrel_orange
 	name = "squirel, orange"

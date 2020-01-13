@@ -43,7 +43,46 @@
 
 	//Messages for smalls moving under larges
 	var/msg_owner_stepunder		= "%owner runs between your legs." //Weird becuase in the case this is used, %owner is the 'bumper' (src)
-	var/msg_prey_stepunder		= "You run between %prey's legs." //Same, inverse
+	var/msg_prey_stepunder		= "You run between %prey's legs." //Same, inverse#
+
+/datum/sprite_accessory/tail/taur/alraune
+	name = "Alraune (natje) (Taur)"
+	icon_state = "alraune_s"
+	ani_state = "alraune_closed_s"
+	ckeys_allowed = list("natje")
+	colored_layers = 0
+	can_ride = 0
+
+	msg_prey_stepunder = "You run between %prey's vines."
+	msg_owner_stepunder = "%owner runs between your vines."
+
+	msg_owner_disarm_run = "You quickly push %prey to the ground with some of your vines!"
+	msg_prey_disarm_run = "%owner pushes you down to the ground with some of their vines!"
+
+	msg_owner_disarm_walk = "You push down on %prey with some of your vines, pinning them down firmly under you!"
+	msg_prey_disarm_walk = "%owner pushes down on you with some of their vines, pinning you down firmly below them!"
+
+	msg_owner_harm_run = "Your vines carelessly slide past %prey, crushing them!"
+	msg_prey_harm_run = "%owner quickly goes over your body, carelessly crushing you with their vines!"
+
+	msg_owner_harm_walk = "Your vines methodically apply pressure on %prey's body, crushing them against the floor below!"
+	msg_prey_harm_walk = "%owner's thick vines methodically apply pressure on your body, crushing you into the floor below!"
+
+	msg_owner_grab_success = "You slide over %prey with your vines, smushing them against the ground before wrapping one up around them, trapping them within the tight confines of your vines!"
+	msg_prey_grab_success = "%owner slides over you with their vines, smushing you against the ground before wrapping one up around you, trapping you within the tight confines of their vines!"
+
+	msg_owner_grab_fail = "You step down onto %prey with one of your vines, forcing them onto the ground!"
+	msg_prey_grab_fail = "%owner steps down onto you with one of their vines, squishing you and forcing you onto the ground!"
+
+/datum/sprite_accessory/tail/taur/alraune/alraune_2c
+	name = "Alraune (dual color)"
+	icon_state = "alraunecolor_s"
+	ani_state = "alraunecolor_closed_s"
+	ckeys_allowed = null
+	colored_layers = 2
+	extra_overlay_w = "alraunecolor_closed_markings"
+
+
 
 /datum/sprite_accessory/tail/taur/roiz_long_lizard // Not ACTUALLY a taur, but it uses 32x64 so it wouldn't fit in tails.dmi, and having it as a tail bugs up the sprite.
 	name = "Long Lizard Tail (Roiz Lizden)"
@@ -289,21 +328,18 @@
 
 //wickedtemp: Chakat Tempest
 /datum/sprite_accessory/tail/taur/feline/tempest
-	name = "Feline (wickedtemp) (Taur)"
+	name = "Feline (Taur)"
 	icon_state = "tempest_s"
-	ckeys_allowed = list("wickedtemp")
 
 //silencedmp5a5: Serdykov Antoz
 /datum/sprite_accessory/tail/taur/wolf/serdy
-	name = "CyberSerdy (silencedmp5a5) (Taur)"
+	name = "CyberSerdy (Taur)"
 	icon_state = "serdy_s"
-	ckeys_allowed = list("silencedmp5a5")
 
 //liquidfirefly: Ariana Scol
 /datum/sprite_accessory/tail/taur/centipede
-	name = "Centipede (liquidfirefly) (Taur)"
+	name = "Centipede (Taur)"
 	icon_state = "ariana_s"
-	ckeys_allowed = list("liquidfirefly")
 	colored_layers = 0
 
 	msg_owner_disarm_run = "You quickly push %prey to the ground with your leg!"
@@ -320,42 +356,3 @@
 
 	msg_owner_grab_fail = "You step down onto %prey, squishing them and forcing them down to the ground!"
 	msg_prey_grab_fail = "%owner steps down and squishes you with their leg, forcing you down to the ground!"
-
-//liquidfirefly: Ariana Scol
-/datum/sprite_accessory/tail/taur/alraune
-	name = "Alraune (natje) (Taur)"
-	icon_state = "alraune_s"
-	ani_state = "alraune_closed_s"
-	ckeys_allowed = list("natje")
-	colored_layers = 0
-	can_ride = 0
-
-
-	msg_prey_stepunder = "You run between %prey's vines."
-	msg_owner_stepunder = "%owner runs between your vines."
-
-	msg_owner_disarm_run = "You quickly push %prey to the ground with some of your vines!"
-	msg_prey_disarm_run = "%owner pushes you down to the ground with some of their vines!"
-
-	msg_owner_disarm_walk = "You push down on %prey with some of your vines, pinning them down firmly under you!"
-	msg_prey_disarm_walk = "%owner pushes down on you with some of their vines, pinning you down firmly below them!"
-
-	msg_owner_harm_run = "Your vines carelessly slide past %prey, crushing them!"
-	msg_prey_harm_run = "%owner quickly goes over your body, carelessly crushing you with their vines!"
-
-	msg_owner_harm_walk = "Your vines methodically apply pressure on %prey's body, crushing them against the floor below!"
-	msg_prey_harm_walk = "%owner's thick vines methodically apply pressure on your body, crushing you into the floor below!"
-
-	msg_owner_grab_success = "You slide over %prey with your vines, smushing them against the ground before wrapping one up around them, trapping them within the tight confines of your vines!"
-	msg_prey_grab_success = "%owner slides over you with their vines, smushing you against the ground before wrapping one up around you, trapping you within the tight confines of their vines!"
-
-	msg_owner_grab_fail = "You step down onto %prey with one of your vines, forcing them onto the ground!"
-	msg_prey_grab_fail = "%owner steps down onto you with one of their vines, squishing you and forcing you onto the ground!"
-
-/datum/sprite_accessory/tail/taur/alraune/alraune_2c
-	name = "Alraune (dual color)"
-	icon_state = "alraunecolor_s"
-	ani_state = "alraunecolor_closed_s"
-	ckeys_allowed = null
-	colored_layers = 2
-	extra_overlay_w = "alraunecolor_closed_markings"
