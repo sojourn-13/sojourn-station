@@ -17,7 +17,7 @@
 
 /datum/supply_pack/fsenergy
 	name = "FS Energy Weapons Crate"
-	contains = list(/obj/item/weapon/gun/energy/pulse/cassad,
+	contains = list(/obj/item/weapon/gun/energy/plasma/cassad,
 				/obj/item/weapon/gun/energy/gun,
 				/obj/item/weapon/gun/energy/gun,
 				/obj/item/weapon/gun/energy/gun/martin,
