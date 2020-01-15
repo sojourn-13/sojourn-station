@@ -6,7 +6,7 @@
 ////////////////////////////
 */
 /datum/sprite_accessory/ears
-	name = "force no ears"
+	name = "Hide Ears"
 	icon = 'icons/mob/sprite_accessory/ears.dmi'
 	colored_layers = 0 // If set to 1, will apply color to the base sprite using the blend variable's mode.
 	var/desc = "You should not see this..."

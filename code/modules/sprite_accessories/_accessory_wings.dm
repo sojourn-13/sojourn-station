@@ -6,7 +6,7 @@
 ////////////////////////////
 */
 /datum/sprite_accessory/wings
-	name = "force no wings"
+	name = "Hide Wings"
 	icon = 'icons/mob/sprite_accessory/wings.dmi'
 	colored_layers = 0 //Set to 1 to enable coloration using the tail color.
 	extra_overlay // Use remaining layers from another sprite name rather than the original.
