@@ -292,6 +292,13 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/mousehcno
+	name = "Mouse Ears, No Inner Colorable"
+	desc = ""
+	icon_state = "mouse"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/oni_h1
 	name = "Oni Horns"
 	desc = ""
