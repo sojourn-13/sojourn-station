@@ -129,7 +129,7 @@
 /obj/item/mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 
 /obj/item/weapon/beach_ball
-	icon = 'icons/turf/flooring/beach.dmi'
+	icon = 'icons/obj/toy.dmi'
 	icon_state = "ball"
 	name = "beach ball"
 	item_state = "beachball"
