@@ -28,7 +28,7 @@
 
 /obj/effect/overlay/palmtree_r
 	name = "Palm tree"
-	icon = 'icons/misc/beach2.dmi'
+	icon = 'icons/turf/flooring/beach2.dmi'
 	icon_state = "palm1"
 	density = 1
 	layer = WALL_OBJ_LAYER
@@ -36,7 +36,7 @@
 
 /obj/effect/overlay/palmtree_l
 	name = "Palm tree"
-	icon = 'icons/misc/beach2.dmi'
+	icon = 'icons/turf/flooring/beach2.dmi'
 	icon_state = "palm2"
 	density = 1
 	layer = WALL_OBJ_LAYER
@@ -44,7 +44,7 @@
 
 /obj/effect/overlay/coconut
 	name = "Coconuts"
-	icon = 'icons/misc/beach.dmi'
+	icon = 'icons/turf/flooring/beach.dmi'
 	icon_state = "coconuts"
 
 /obj/effect/overlay/bluespacify
