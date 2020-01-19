@@ -332,14 +332,12 @@ var/list/rummage_sound = list(\
 
 	for(var/P in listeners)
 		var/mob/M = P
-		if(!M || !M.client)
+		if(!M || !M.client || !M.loc)
 			continue
 
 		if(get_dist(M, turf_source) <= maxdistance)
 			var/turf/T = get_turf(M)
 
-			if(T && (T.z == turf_source.z || zrange && abs(T.z - turf_source.z) <= zrange))
-				M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, is_global, extrarange, override_env, envdry, envwet)
 
 var/const/FALLOFF_SOUNDS = 0.5
 

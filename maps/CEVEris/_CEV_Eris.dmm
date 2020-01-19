@@ -1,6 +1,3 @@
-"aa" = (/turf/space,/area/space)
-"ab" = (/obj/map_data/eris{height = 5},/turf/space,/area/space)
-"QI" = (/obj/effect/overmap/ship/eris,/turf/space,/area/space)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaa

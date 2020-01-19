@@ -109,6 +109,7 @@ var/global/list/organ_structure = list(
 	)
 
 var/global/list/organ_tag_to_name = list(
+
 	head  = "Head" ,r_arm = "Right arm",
 	chest = "Body" ,r_leg = "Right Leg",
 	eyes  = "Eyes" ,l_arm = "Left arm",
