@@ -30,7 +30,7 @@
 	scannable = 1
 
 /datum/reagent/medicine/bicaridine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
+	M.heal_organ_damage(0.2 * effect_multiplier, 0, 3 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
 
 /datum/reagent/medicine/vermicetol
@@ -45,7 +45,7 @@
 	scannable = 1
 
 /datum/reagent/medicine/vermicetol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.heal_organ_damage(12 * removed, 0)
+	M.heal_organ_damage(4 * removed, 0)
 
 /datum/reagent/medicine/varceptol
 	name = "Varceptol"
@@ -59,8 +59,8 @@
 	scannable = 1
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.heal_organ_damage(8 * removed, 0)
-	M.adjustToxLoss(-3 * removed)
+	M.heal_organ_damage(2 * removed, 0)
+	M.adjustToxLoss(-4 * removed)
 
 /datum/reagent/medicine/meralyne
 	name = "Meralyne"
@@ -73,7 +73,7 @@
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1
 /datum/reagent/medicine/meralyne/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.heal_organ_damage(1.2 * effect_multiplier, 0, 5 * effect_multiplier)
+	M.heal_organ_damage(0.8 * effect_multiplier, 0, 4 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.30)
 
 /datum/reagent/medicine/kelotane
@@ -87,7 +87,7 @@
 	scannable = 1
 
 /datum/reagent/medicine/kelotane/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
+	M.heal_organ_damage(0, 0.4 * effect_multiplier, 0, 2 * effect_multiplier)
 
 /datum/reagent/medicine/dermaline
 	name = "Dermaline"
@@ -101,7 +101,7 @@
 	scannable = 1
 
 /datum/reagent/medicine/dermaline/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.heal_organ_damage(0, 1.2 * effect_multiplier, 0, 5 * effect_multiplier)
+	M.heal_organ_damage(0, 0.8 * effect_multiplier, 0, 4 * effect_multiplier)
 
 /datum/reagent/medicine/dylovene
 	name = "Dylovene"
@@ -433,7 +433,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#022000"
-	
+
 
 /datum/reagent/medicine/positive_ling
 	name = "Positive Paragenetic Marker"
