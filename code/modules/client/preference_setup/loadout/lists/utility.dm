@@ -41,6 +41,21 @@
 	path = /obj/item/weapon/folder
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/utility/advancedlaptop
+	display_name = "laptop, advanced"
+	path = /obj/item/modular_computer/laptop/preset/custom_loadout/advanced/golden
+	cost = 5
+
+/datum/gear/utility/normallaptop
+	display_name = "laptop, consumer"
+	path = /obj/item/modular_computer/laptop/preset/custom_loadout/standard/xenoware
+	cost = 3
+
+/datum/gear/utility/cheaplaptop
+	display_name = "laptop, military"
+	path = /obj/item/modular_computer/laptop/preset/custom_loadout/cheap/elbrus4kk
+	cost = 2
+
 /datum/gear/utility/lighter
 	display_name = "lighter"
 	path = /obj/item/weapon/flame/lighter
@@ -75,7 +90,7 @@
 	cost = 3
 
 /datum/gear/utility/tabletcheap
-	display_name = "tablet computer, cheap"
+	display_name = "tablet computer, consumer"
 	path = /obj/item/modular_computer/tablet/preset/custom_loadout/cheap
 	cost = 2
 
@@ -88,4 +103,3 @@
 	display_name = "wheelchair"
 	path = /obj/item/wheelchair
 	cost = 2
-
