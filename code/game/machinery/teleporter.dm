@@ -1,6 +1,6 @@
 /obj/machinery/computer/teleporter
 	name = "teleporter control console"
-	desc = "Used to control a linked teleportation Hub and Station."
+	desc = "Used to control a linked teleportation hub and station."
 	icon_keyboard = "teleport_key"
 	icon_screen = "teleport"
 	circuit = /obj/item/weapon/circuitboard/teleporter

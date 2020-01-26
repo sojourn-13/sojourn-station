@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/sol
-	name = "FS CAR 6.5x39 \"Sol\""
-	desc = "A standard-issue weapon used by Ironhammer operatives. Compact and reliable. Uses 6.5x39 rounds."
+	name = "HS CAR 6.5x39 \"Sol\""
+	desc = "A standard-issue weapon used by operatives and police alike. Compact and reliable. Uses 6.5x39 rounds."
 	icon = 'icons/obj/guns/projectile/sol.dmi'
 	icon_state = "sol-para"
 	item_state = "sol"
@@ -38,7 +38,7 @@
 	update_charge()
 
 /obj/item/weapon/gun/projectile/automatic/sol/rds
-	desc = "A standard-issue weapon used by Ironhammer operatives. Compact and reliable. Uses 6.5x39 rounds. This one comes with red dot sight."
+	desc = "A standard-issue weapon used by operatives and police alike. Compact and reliable. Uses 6.5x39 rounds. This one comes with red dot sight."
 	icon_state = "sol-eot"
 	price_tag = 2350
 	zoom_factor = 0.2

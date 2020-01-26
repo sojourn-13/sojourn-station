@@ -2,19 +2,174 @@
 	name = "priest"
 	phrase = null
 	desc = ""
-	category = "Priest"
+	category = "Devout"
 
 /datum/ritual/targeted/cruciform/priest
 	name = "priest targeted"
 	phrase = null
 	desc = ""
-	category = "Priest"
+	category = "Devout"
+
+
+/*
+	Penance
+	Deals pain damage to a targeted disciple
+*/
+/datum/ritual/targeted/cruciform/priest/penance
+	name = "Penance"
+	phrase = "Mihi vindicta \[Target human]"
+	desc = "Imparts extreme pain on the target disciple. Does no actual harm."
+	power = 35
+
+/datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+	if(!targets.len)
+		fail("Target not found.",user,C,targets)
+		return FALSE
+
+	var/obj/item/weapon/implant/core_implant/CI = targets[1]
+
+	if(!CI.active || !CI.wearer)
+
+		fail("Cruciform not found.", user, C)
+		return FALSE
+
+	var/mob/living/M = CI.wearer
+
+	to_chat(M, SPAN_DANGER("A wave of agony washes over you, the cruciform in your chest searing like a star for a few moments of eternity."))
+
+
+	var/datum/effect/effect/system/spark_spread/s = new
+	s.set_up(1, 1, M.loc)
+	s.start()
+
+	M.apply_effect(50, AGONY, 0)
+
+	return TRUE
+
+
+/*
+	Convalescence
+	Heals yourself a fair amount
+*/
+/datum/ritual/cruciform/priest/selfheal
+	name = "Convalescence"
+	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia Christi"
+	desc = "Recover from the ravages of wounds and pain."
+	cooldown = TRUE
+	cooldown_time = 300
+	power = 35 //Healing yourself is slightly easier than healing someone else
+
+/datum/ritual/cruciform/priest/selfheal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C,list/targets)
+	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
+	H.add_chemical_effect(CE_PAINKILLER, 20)
+	H.adjustBruteLoss(-20)
+	H.adjustFireLoss(-20)
+	H.adjustToxLoss(-20)
+	H.adjustOxyLoss(-40)
+	H.adjustBrainLoss(-5)
+	H.updatehealth()
+	set_personal_cooldown(H)
+	return TRUE
+
+
+/datum/ritual/cruciform/priest/heal_other
+	name = "Succour"
+	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos"
+	desc = "Heal another nearby disciple."
+	cooldown = TRUE
+	cooldown_time = 300
+	power = 45
+
+/datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
+
+	if(!CI || !CI.active || !CI.wearer)
+		fail("Cruciform not found.", user, C)
+		return FALSE
+
+
+
+	var/mob/living/carbon/human/H = CI.wearer
+
+	if(!istype(H))
+		fail("Target not found.",user,C,targets)
+		return FALSE
+
+	//Checking turfs allows this to be done in unusual circumstances, like if both are inside the same mecha
+	var/turf/T = get_turf(user)
+	if (!(T.Adjacent(get_turf(H))))
+		to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
+		return
+
+
+	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of convalescence")
+	if (do_after(user, 40, H, TRUE))
+		T = get_turf(user)
+		if (!(T.Adjacent(get_turf(H))))
+			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
+			return
+		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
+		H.add_chemical_effect(CE_PAINKILLER, 20)
+		H.adjustBruteLoss(-20)
+		H.adjustFireLoss(-20)
+		H.adjustToxLoss(-20)
+		H.adjustOxyLoss(-40)
+		H.adjustBrainLoss(-5)
+		H.updatehealth()
+		set_personal_cooldown(user)
+		return TRUE
+
+
+/*
+	Scrying: Remotely look through someone's eyes. Global range, useful to find fugitives or corpses
+	Uses all of your power and has a limited duration
+*/
+/datum/ritual/cruciform/priest/scrying
+	name = "Scrying"
+	phrase = "Ecce ego ad te et ad caelum. Scio omnes absconditis tuis. Vos can abscondere, tu es coram me: nudus."
+	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom."
+	power = 100
+
+/datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+
+	if(!user.client)
+		return FALSE
+
+	var/mob/living/M = pick_disciple_global(user, TRUE)
+	if (!M)
+		return
+
+	if(user == M)
+		fail("You feel stupid.",user,C,targets)
+		return FALSE
+
+	to_chat(M, SPAN_NOTICE("You feel an odd presence in the back of your mind. A lingering sense that someone is watching you..."))
+
+	var/mob/observer/eye/god/eye = new/mob/observer/eye/god(M)
+	eye.target = M
+	eye.owner_mob = user
+	eye.owner_loc = user.loc
+	eye.owner = eye
+	user.reset_view(eye)
+
+	//After 30 seconds, your view is forced back to yourself
+	addtimer(CALLBACK(user, .mob/proc/reset_view, user), 300)
+
+	return TRUE
+
+
+/datum/ritual/targeted/cruciform/priest/god_eye/process_target(var/index, var/obj/item/weapon/implant/core_implant/target, var/text)
+	if(index == 1 && target.address == text && target.active)
+		if(target.wearer && target.wearer.stat != DEAD)
+			return target
+
+
 
 
 /datum/ritual/cruciform/priest/epiphany
 	name = "Epiphany"
 	phrase = "In nomine Patris et Filii et Spiritus sancti"
-	desc = "NeoTheology's principal sacrament is a ritual of baptism and merging with cruciform. A body, relieved of clothes should be placed on NeoTheology's special altar."
+	desc = "The Absolute's principal sacrament is a ritual of baptism and merging with cruciform. A body, relieved of clothes should be placed on Absolute's special altar."
 
 /datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
@@ -50,6 +205,7 @@
 	phrase = "Et ne inducas nos in tentationem, sed libera nos a malo"
 */
 
+/*
 /datum/ritual/cruciform/priest/reincarnation
 	name = "Reincarnation"
 	phrase = "Vetus moritur et onus hoc levaverit"
@@ -100,12 +256,12 @@
 
 
 	return TRUE
-
+*/
 
 /datum/ritual/cruciform/priest/install
 	name = "Commitment"
 	phrase = "Unde ipse Dominus dabit vobis signum"
-	desc = "This litany will command cruciform attach to person, so you can perform Reincarnation or Epiphany. Cruciform must lay near them."
+	desc = "This litany will command a cruciform attach to person so you can perform an epiphany. Cruciform must lay near them."
 
 /datum/ritual/cruciform/priest/install/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/mob/living/carbon/human/H = get_victim(user)
@@ -167,7 +323,7 @@
 /datum/ritual/cruciform/priest/ejection
 	name = "Deprivation"
 	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum"
-	desc = "This litany will command cruciform to detach from bearer, if the one bearing it is dead. You will be able to use it in scanner for Resurrection."
+	desc = "This litany will command cruciform to detach from bearer, if the one bearing it is dead."
 
 /datum/ritual/cruciform/priest/ejection/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
@@ -204,7 +360,7 @@
 /datum/ritual/cruciform/priest/unupgrade
 	name = "Asacris"
 	phrase = "A caelo usque ad centrum"
-	desc = "This litany will remove any upgrade from the target's Cruciform implant"
+	desc = "This litany will remove any upgrade from the target's cruciform implant"
 
 /datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -322,7 +478,7 @@
 /datum/ritual/targeted/cruciform/priest/atonement
 	name = "Atonement"
 	phrase = "Piaculo sit \[Target human]!"
-	desc = "Imparts extreme pain on the target disciple, but does no actual harm. Use this to enforce Church doctrine on your flock."
+	desc = "Imparts extreme pain on the target disciple, but does no actual harm. Use this if someone who performs a heretical act."
 	power = 45
 
 /datum/ritual/targeted/cruciform/priest/atonement/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
@@ -359,7 +515,7 @@
 /datum/ritual/cruciform/priest/records
 	name = "Baptismal Record"
 	phrase = "Memento nomina..."
-	desc = "Requests a copy of the Church's local parishoner records from your altar."
+	desc = "Requests a copy of the churches local parishoner records from your altar."
 	power = 30
 	success_message = "On the verge of audibility you hear pleasant music, a piece of paper slides out from a slit in the altar."
 

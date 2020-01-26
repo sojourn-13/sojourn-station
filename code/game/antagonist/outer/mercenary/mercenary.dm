@@ -2,7 +2,7 @@
 	id = ROLE_MERCENARY
 	bantype = ROLE_MERCENARY
 	faction_id = FACTION_SERBS
-	role_text = "Serbian Mercenary"
+	role_text = "Void Wolf"
 	welcome_text = WELCOME_SERBS
 	antaghud_indicator = "hudoperative"
 	landmark_id = "mercenary-spawn"

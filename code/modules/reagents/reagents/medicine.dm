@@ -117,8 +117,8 @@
 	M.adjust_hallucination(-0.9 * effect_multiplier)
 	M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
 	M.add_chemical_effect(CE_ANTITOX, 1)
-	holder.remove_reagent("pararein", 0.2 * effect_multiplier)
-	holder.remove_reagent("blattedin", 0.2 * effect_multiplier)
+	holder.remove_reagent("pararein", 0.4 * effect_multiplier)
+	holder.remove_reagent("blattedin", 0.4 * effect_multiplier)
 
 /datum/reagent/medicine/carthatoline
 	name = "Carthatoline"
@@ -433,7 +433,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#022000"
-	
+
 
 /datum/reagent/medicine/positive_ling
 	name = "Positive Paragenetic Marker"

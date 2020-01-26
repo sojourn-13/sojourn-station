@@ -4,7 +4,7 @@
 	icon_state = "cargo"
 
 /obj/item/clothing/accessory/armband/engine
-	name = "engineering armband"
+	name = "guild armband"
 	desc = "A orange armband with a reflective strip signifying an engineering position."
 	icon_state = "engie"
 
@@ -35,13 +35,13 @@
 	slot = "armband"
 
 /obj/item/clothing/accessory/armband/militia
-	name = "Militia armband"
-	desc = "A blue and white armband signifying a Militiaman position."
+	name = "militia armband"
+	desc = "A blue and white armband signifying a militiaman position."
 	icon_state = "blackshield"
 	slot = "armband"
 
 /obj/item/clothing/accessory/armband/corpsman
-	name = "Corpsman armband"
-	desc = "A blue and white armband signifying a Medical Corpsman position."
+	name = "corpsman armband"
+	desc = "A blue and white armband signifying a corpsman position."
 	icon_state = "corpsman"
 	slot = "armband"

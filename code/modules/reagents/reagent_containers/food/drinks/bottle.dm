@@ -250,7 +250,7 @@
 	preloaded_reagents = list("wine" = 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors
-	name = "NeoTheology Cahors Wine"
+	name = "Absolutism Cahors Wine"
 	desc = "Ritual drink that cleanses the soul and body."
 	icon_state = "ntcahors"
 	center_of_mass = list("x"=16, "y"=4)

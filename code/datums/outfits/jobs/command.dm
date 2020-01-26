@@ -1,5 +1,5 @@
 /decl/hierarchy/outfit/job/captain
-	name = OUTFIT_JOB_NAME("Captain")
+	name = OUTFIT_JOB_NAME("Command - Premier")
 	head = /obj/item/clothing/head/rank/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/rank/captain
@@ -28,7 +28,7 @@
 				qdel(medal)
 
 /decl/hierarchy/outfit/job/hop
-	name = OUTFIT_JOB_NAME("First Officer")
+	name = OUTFIT_JOB_NAME("Command - Steward")
 	uniform = /obj/item/clothing/under/rank/first_officer
 	suit = /obj/item/clothing/suit/armor/vest
 	l_ear = /obj/item/device/radio/headset/heads/hop
@@ -36,4 +36,3 @@
 	gloves = /obj/item/clothing/gloves/thick
 	id_type = /obj/item/weapon/card/id/hop
 	pda_type = /obj/item/modular_computer/pda/heads/hop
-	backpack_contents = list(/obj/item/weapon/storage/box/ids = 1)

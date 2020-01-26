@@ -18,6 +18,27 @@
 	max_equip = 5
 	internal_damage_threshold = 30
 
+/obj/mecha/combat/durand/security
+	desc = "A heavy mech suit even older than the standard durand. This one has been repurposed for the security team but isn't in the best shape."
+	name = "Old Stomper"
+	icon_state = "old_durand"
+	initial_icon = "old_durand"
+	wreckage = /obj/effect/decal/mecha_wreckage/durand/security
+	step_in = 4
+	internal_damage_threshold = 40
+
+/obj/mecha/combat/durand/security/New()
+	..()
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_tracking
+	ME.attach(src)
+	return
+
 /*
 /obj/mecha/combat/durand/New()
 	..()

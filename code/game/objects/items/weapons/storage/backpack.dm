@@ -135,7 +135,7 @@
 	desc = "A green backpack for plant related work."
 
 /obj/item/weapon/storage/backpack/captain
-	name = "captain's backpack"
+	name = "premier's backpack"
 	desc = "It's a special backpack made exclusively for officers."
 	icon_state = "backpack_captain"
 
@@ -167,7 +167,7 @@
 
 /obj/item/weapon/storage/backpack/ironhammer
 	name = "operator's backpack"
-	desc = "Done in a complementing shade for IronHammer Security forces, a staple for military contractors everywhere."
+	desc = "Done in a complementing shade for security forces, a staple for military contractors everywhere."
 	icon_state = "backpack_ironhammer"
 
 //Used by mercenaries
@@ -261,7 +261,7 @@
 	desc = "A green satchel for plant related work."
 
 /obj/item/weapon/storage/backpack/satchel/captain
-	name = "captain's satchel"
+	name = "premier's satchel"
 	desc = "An exclusive satchel for officers."
 	icon_state = "satchel_captain"
 

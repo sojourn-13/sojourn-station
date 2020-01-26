@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/captains
-	name = "captain's locker"
+	name = "prime's locker"
 	req_access = list(access_captain)
 	icon_state = "cap"
 
@@ -24,7 +24,7 @@
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 
 /obj/structure/closet/secure_closet/reinforced/hop
-	name = "First Officer's locker"
+	name = "Steward's locker"
 	req_access = list(access_hop)
 	icon_state = "hop"
 
@@ -35,21 +35,19 @@
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/device/radio/headset/heads/hop(src)
-	new /obj/item/weapon/storage/box/ids(src)
-	new /obj/item/weapon/storage/box/ids( src )
-	new /obj/item/weapon/gun/projectile/deagle(src)
-	new /obj/item/ammo_magazine/a50/rubber(src)
-	new /obj/item/ammo_magazine/a50/rubber(src)
-	new /obj/item/ammo_magazine/a50/rubber(src)
-	new /obj/item/ammo_magazine/a50/rubber(src)
+	new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
+	new /obj/item/ammo_magazine/a10mm/rubber(src)
+	new /obj/item/ammo_magazine/a10mm/rubber(src)
+	new /obj/item/ammo_magazine/a10mm/rubber(src)
+	new /obj/item/ammo_magazine/a10mm/rubber(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 
 /obj/structure/closet/secure_closet/reinforced/preacher
-	name = "Preacher's locker"
+	name = "prime's locker"
 
 /obj/structure/closet/secure_closet/reinforced/hos
-	name = "Ironhammer Commander locker"
+	name = "warrant officer's locker"
 	req_access = list(access_hos)
 	icon_state = "hos"
 
@@ -81,7 +79,7 @@
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
 
 /obj/structure/closet/secure_closet/warden
-	name = "Gunnery Sergeant's locker"
+	name = "supply specialist's locker"
 	req_access = list(access_armory)
 	icon_state = "warden"
 
@@ -110,7 +108,7 @@
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
 
 /obj/structure/closet/secure_closet/personal/security
-	name = "Ironhammer Operative locker"
+	name = "marshal officer's locker"
 	req_access = list(access_hos)
 	access_occupy = list(access_brig)
 	icon_state = "sec"
@@ -138,7 +136,7 @@
 	new /obj/item/clothing/head/seccap(src)
 
 /obj/structure/closet/secure_closet/medspec
-	name = "Ironhammer Medical Specialist locker"
+	name = "corpsman's locker"
 	req_access = list(access_medspec)
 	icon_state = "sec"
 
@@ -163,7 +161,7 @@
 	new /obj/item/weapon/gun/projectile/colt/IH_colt(src)
 
 /obj/structure/closet/secure_closet/detective
-	name = "Ironhammer Inspector locker"
+	name = "ranger's locker"
 	req_access = list(access_forensics_lockers)
 	icon_state = "cabinetdetective"
 

@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/automatic/atreides
-	name = "FS SMG .45 \"Atreides\""
+	name = "SA SMG .45 \"Atreides\""
 	desc = "The Atreides is a replica of an old and popular SMG. It has a strong kick. Uses .45 rounds."
 	icon = 'icons/obj/guns/projectile/mac.dmi'
 	icon_state = "mac"

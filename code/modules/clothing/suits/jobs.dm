@@ -21,7 +21,7 @@
 
 //Guild Technician
 /obj/item/clothing/suit/storage/rank/cargo_jacket
-	name = "guild technician jacket"
+	name = "lonestar jacket"
 	desc = "Stylish jacket lined with pockets. It seems have a little protection from physical harm."
 	icon_state = "cargo_jacket"
 	item_state = "cargo_jacket"
@@ -38,7 +38,7 @@
 
 //Quartermaster
 /obj/item/clothing/suit/storage/rank/qm_coat
-	name = "guild merchant coat"
+	name = "executive officer coat"
 	desc = "An ideal choice for a smuggler. This coat seems have good impact resistance, and is made from resistant and expensive materials."
 	icon_state = "qm_coat"
 	item_state = "qm_coat"
@@ -70,19 +70,19 @@
 
 //Chaplain
 /obj/item/clothing/suit/rank/chaplain
-	name = "preacher jacket"
+	name = "prime jacket"
 	desc = "A long, lightly armoured jacket. Dark, stylish and authoritarian."
 	icon_state = "chaplain_hoodie"
 	item_state = "chaplain_hoodie"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor = list(
-		melee = 10,
-		bullet = 10,
+		melee = 30,
+		bullet = 30,
 		energy = 10,
-		bomb = 0,
-		bio = 0,
-		rad = 0
+		bomb = 30,
+		bio = 100,
+		rad = 90
 	)
 
 /obj/item/clothing/suit/rank/chaplain/holiday
@@ -117,7 +117,7 @@
 
 //Detective
 /obj/item/clothing/suit/storage/rank/insp_trench
-	name = "Inspector's armored trenchcoat"
+	name = "ranger's armored trenchcoat"
 	desc = "Brown and armored trenchcoat, designed and created by Ironhammer Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
 	icon_state = "insp_coat"
 	item_state = "insp_coat"
@@ -144,7 +144,7 @@
 	price_tag = 250
 
 /obj/item/clothing/suit/storage/detective/ironhammer
-	name = "Inspector's armored trenchcoat"
+	name = "ranger's armored trenchcoat"
 	desc = "Brown and armored trenchcoat, designed and created by Ironhammer Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
 	icon_state = "insp_coat"
 	item_state = "insp_coat"

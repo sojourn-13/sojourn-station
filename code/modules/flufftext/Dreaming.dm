@@ -19,15 +19,15 @@ var/list/dreams = list(
 
 //Weapons
 	"a bullet casing","an ammo magazine","a missile","a flamethrower","a pistol","a sniper rifle","a laser cannon","a knife",
-	"a crossbow","an improvised weapon","a landmine","a baton","a pair of handcuffs","a pair of legcuffs", "a C-20r","a dart gun",
+	"a crossbow","an improvised weapon","a landmine","a baton","a pair of handcuffs","a pair of legcuffs", "a SA C-20r","a dart gun",
 	"a Excelsior 7.62x39 AKMS","a Excelsior 9mm Drozd","a Excelsior 9x19 Makarov","a FS AR 5.56x45 Wintermute",
-	"a FS AR 7.62x39 Kalashnikov","a FS BR 10x50mm Hustler","a FS BR 10x50mm Longarm","a FS BR 10x50mm Omnirifle","a FS BR 10x50mm Osprey",
-	"a FS CAR 10x50mm Boar","a FS CAR 5.56x45mm Z8 Bulldog","a FS CAR 6.5x39 Sol","a FS HG .32 Giskard","a FS HG .32 Olivaw",
-	"a FS HG .44 Lamia","a FS HG .44 Naga","a FS HG .45 Bronco","a FS HG .45 Colt","a FS HG .45 Mandella","a FS HG .50 Bolter",
-	"a FS HG 10mm Delta Elite","a FS HG 10mm Stallion","a FS HG 9x19 Clarissa","a FS HG Paco","a FS MP 9x19 Molly","a FS REV .357 Mateba",
-	"a FS REV .357 Miller","a FS REV .38 Havelock","a FS REV .44 Consul","a FS REV .44 Deckard","a FS SG Bull","a FS SMG .45 Atreides",
-	"a FS SMG 9x19 Idaho","a FS SMG 9x19 Straylight","a handmade pistol","a L6 SAW","a NT AMR Penetrator","a NT GP Zeus",
-	"a NT HG .45 Mk58","a NT SG Regulator 1000","a PAR 10x24 Dallas","a RPG-7","a STS-35",
+	"a SA AR 7.62x39 Kalashnikov","a HS BR 10x50mm Hustler","a HS BR 10x50mm Longarm","a HS BR 10x50mm Omnirifle","a HS BR 10x50mm Osprey",
+	"a HS CAR 10x50mm Boar","a SA CAR 5.56x45mm Z8 Bulldog","a HS CAR 6.5x39 Sol","a HS HG .32 Giskard","a HS HG .32 Olivaw",
+	"a HS HG .44 Lamia","a FS HG .44 Naga","a FS HG .45 Bronco","a HS HG .45 Colt","a HS HG .45 Mandella","a HS HG .50 Bolter",
+	"a HS HG 10mm Delta Elite","a HS HG 10mm Stallion","a HS HG 9x19 Clarissa","a HS HG Paco","a HS MP 9x19 Molly","a HS REV .357 Mateba",
+	"a HS REV .357 Miller","a HS REV .38 Havelock","a HS REV .44 Consul","a HS REV .44 Deckard","a HS SG Bull","a SA SMG .45 Atreides",
+	"a HS SMG 9x19 Idaho","a HS SMG 9x19 Straylight","a handmade pistol","a L6 SAW","a OT AMR Penetrator","a OT GP Zeus",
+	"a OT HG .45 Mk58","a OT SG Regulator 1000","a PAR 10x24 Dallas","a RPG-7","a STS-35",
 
 
 //Clothing
@@ -59,17 +59,17 @@ var/list/dreams = list(
 	"like a dream","this isn't a dream","are you ready","amazing chest ahead",
 
 //Ranks
-	"the First Officer","the Ironhammer Commander","the Technomancer Exultant","the Moebius Expedition Overseer",
-	"the Moebius Biolab Officer","the Guild Merchant","a Assistant","a Bartender","a Janitor","a Gardener",
-	"a Preacher","a Entertainer","a Chef","a Moebius Medical Doctor","a Moebius Psychologist","a Moebius Paramedic",
-	"a Moebius Chemist","a Moebius Scientist","a Moebius Roboticist","a Cyborg","a Guild Technician","a Guild Miner",
-	"a Technomancer", "a Ironhammer Operative","a Ironhammer Gunnery Sergeant","a Ironhammer Inspector", "the Captain",
-	"a Ironhammer Medical Specialist",
+	"the Steward","the Warrant Officer","the Militia Commander","the Guild Master","the Soteria Research Overseer",
+	"the Soteria Biolab Overseer","the Chief Executive Officer","a Assistant","a Bartender","a Janitor","a Gardener",
+	"a Prime","a Entertainer","a Chef","a Soteria Medical Doctor","a Soteria Psychologist","a Soteria Paramedic",
+	"a Soteria Chemist","a Soteria Scientist","a Soteria Roboticist","a Cyborg","a Cargo Technician","a Lonestar Miner",
+	"a Guild Adept", "a Marshal Officer","a Marshal Supply Specialist","a Marshal Ranger", "the Premier",
+	"a Blackshield Corpsmen", "a Blackshield Trooper",
 
 //Races (Check Creatures Before Adding Stuff Here, There's Some Overlap!)
 	"an abhuman","an agudner","an akula","an angel","a bird","a bunny","a cht'mant","a coyote","a crocodile","a deer","a demon",
 	"a dogborg","a dragon","a fox","a goblin","a human","a husky","a kobold","a kriosan","a lamia","a lion","a mar'qua","a nevrean",
-	"a polar bear","an otie","a sablekyne","a seelie","a sergal","a shark","a siberian spacebat","a slimewolf","a squid",
+	"a polar bear",,"a sablekyne","a seelie","a sergal","a shark","a siberian spacebat","a slime","a squid",
 	"a squirrel","a strange hybrid","a synth","a synx","a vox","a wabbite","a wolf",
 
 //People
@@ -93,7 +93,7 @@ var/list/dreams = list(
 	"the artificers guild","the nadezhda council","mercenary groups","scavenger gangs","terrorist groups","outside forces",
 
 //Station Locations
-	"the arrivals area","the bar","the emergency storage","the transfer shuttle","the tool storage","the bar","the chapel",
+	"the gate","the bar","the emergency storage","the transfer shuttle","the tool storage","the bar","the chapel",
 	"the holodeck","the hydroponics area","the kitchen","the freezer","the locker room","the theatre","the medbay",
 	"the chemistry lab","the morgue","the operating theatre","the recovery room","the cargo bay","the warehouse",
 	"the research lab","the server room","the toxins test chamber","the technical storage","the engine","the armory",

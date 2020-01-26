@@ -13,7 +13,7 @@
 	BACKPACK_OVERRIDE_ENGINEERING
 
 /decl/hierarchy/outfit/job/engineering/exultant
-	name = OUTFIT_JOB_NAME("Technomancer Exultant")
+	name = OUTFIT_JOB_NAME("Artificer - Guild Master")
 	head = /obj/item/clothing/head/firefighter/chief
 	uniform = /obj/item/clothing/under/rank/exultant
 	head = /obj/item/clothing/head/firefighter/chief
@@ -23,7 +23,7 @@
 	pda_type = /obj/item/modular_computer/pda/heads/ce
 
 /decl/hierarchy/outfit/job/engineering/engineer
-	name = OUTFIT_JOB_NAME("Technomancer")
+	name = OUTFIT_JOB_NAME("Artificer - Guild Adept")
 	head = /obj/item/clothing/head/hardhat
 	uniform = /obj/item/clothing/under/rank/engineer
 	suit = /obj/item/clothing/suit/storage/hazardvest
@@ -33,6 +33,6 @@
 	pda_type = /obj/item/modular_computer/pda/engineering
 
 /decl/hierarchy/outfit/job/engineering/engineer/void
-	name = OUTFIT_JOB_NAME("Technomancer - Voidsuit")
+	name = OUTFIT_JOB_NAME("Artificer - Adept Voidsuit")
 	mask = /obj/item/clothing/mask/breath
 	suit = /obj/item/clothing/suit/space/void/engineering

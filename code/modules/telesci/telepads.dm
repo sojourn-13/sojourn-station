@@ -1,7 +1,7 @@
 ///SCI TELEPAD///
 /obj/machinery/telepad
 	name = "telepad"
-	desc = "A bluespace telepad used for teleporting objects to and from a location."
+	desc = "A bluespace telepad used for teleporting objects to and from a location. These short range ones still work even after the bluespace crash."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "pad-idle"
 	anchored = 1

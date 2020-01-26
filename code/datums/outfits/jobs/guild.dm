@@ -3,7 +3,7 @@
 	hierarchy_type = /decl/hierarchy/outfit/job/cargo
 
 /decl/hierarchy/outfit/job/cargo/merchant
-	name = OUTFIT_JOB_NAME("Guild Merchant")
+	name = OUTFIT_JOB_NAME("Lonestar - CEO")
 	uniform = /obj/item/clothing/under/rank/cargotech
 	shoes = /obj/item/clothing/shoes/color/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -14,14 +14,14 @@
 	l_ear = /obj/item/device/radio/headset/heads/merchant
 
 /decl/hierarchy/outfit/job/cargo/cargo_tech
-	name = OUTFIT_JOB_NAME("Guild Technician")
+	name = OUTFIT_JOB_NAME("Lonestar - Cargo Technician")
 	uniform = /obj/item/clothing/under/rank/cargotech
 	suit = /obj/item/clothing/suit/storage/rank/cargo_jacket
 	belt = /obj/item/weapon/storage/belt/utility
 	pda_type = /obj/item/modular_computer/pda/cargo
 
 /decl/hierarchy/outfit/job/cargo/mining
-	name = OUTFIT_JOB_NAME("Guild Miner")
+	name = OUTFIT_JOB_NAME("Lonestar - Lonestar Miner")
 	uniform = /obj/item/clothing/under/rank/miner
 	pda_type = /obj/item/modular_computer/pda/moebius/science
 	belt = /obj/item/weapon/storage/belt/utility
@@ -33,6 +33,7 @@
 	BACKPACK_OVERRIDE_ENGINEERING
 
 /decl/hierarchy/outfit/job/cargo/mining/void
-	name = OUTFIT_JOB_NAME("Guild Miner - Voidsuit")
+	name = OUTFIT_JOB_NAME("Lonestar - Lonestar Miner Voidsuit")
 	mask = /obj/item/clothing/mask/breath
 	suit = /obj/item/clothing/suit/space/void/mining
+

@@ -1,36 +1,37 @@
 var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
-/datum/job/captain
-	title = "Captain"
-	flag = CAPTAIN
+/datum/job/premier
+	title = "Premier"
+	flag = PREMIER
 	department = DEPARTMENT_COMMAND
 	head_position = 1
 	department_flag = COMMAND
-	faction = "CEV Eris"
+	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "your heart and wisdom"
 	selection_color = "#ccccff"
 	req_admin_notify = 1
 	wage = WAGE_NONE //The captain doesn't get paid, he's the one who does the paying
-	//The ship account is his, and he's free to draw as much salary as he likes
+	//The colony account is his, and he's free to draw as much salary as he likes
 
 	also_known_languages = list(LANGUAGE_CYRILLIC = 20, LANGUAGE_SERBIAN = 20)
 
-	ideal_character_age = 70 // Old geezer captains ftw
+	ideal_character_age = 50 // Old geezer captains ftw
+	minimum_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/captain
 
-	description = "You are the privateer owner of the vast rusting hulk that is the CEV Eris. <br>\
-At least, that will be the case as long as you keep up with the repayments.<br>\
-This ship is your life's work, crewed by an alliance of corporations and factions that you've brokered uneasy treaties with.<br>\
+	description = "You are the prime mediator of the colony itself and act as a trusted advisor<br>\
+You are trusted with control of the stations primary accounts and are able to control access within the colony.<br>\
+Your primary objective is to oversee council decision, change access levels, and act as both lawyer and consultant in various decisions.<br>\
 
-You are the supreme leader of this vessel, and your word is law. But only as long as you can enforce that law.<br>\
-The heads of the factions which make up your command staff each have their own agendas. Their interests must be served too. If you make them unhappy, the loyalty of their faction goes with them, and you may have a mutiny on your hands.<br>\
-Treat your command officers with respect, and listen to their council. Try not to micromanage their departments or interfere in their affairs, and they should serve you well<br>\
+You are not the supreme leader of the colony and your word is only an advisement. The only person who you can give legal orders to is your personal guard.<br>\
+The heads of the factions which make up the council each have their own agendas. Their interests must be served too. If you make them unhappy, issues will arise.<br>\
+Treat your command officers with respect, and listen to their council. Try not to micromanage their departments or interfere in their affairs, and they should serve you well.<br>\
 
-You are a free agent, able to go where you will, and loyal to no particular government or nation. You are however, in quite a lot of debt. So wherever you go, you should be sure a profitable venture awaits."
+You are a free agent, able to go where you will, and loyal to no particular faction other than the colony itself."
 
-	loyalties = "Your first loyalty is to Eris, your ship. It is the purpose of your life, and you are nothing without it. If it were to be destroyed, you and your descendants would be ruined for centuries. <br>\
+	loyalties = "Your first loyalty is to the colony. It is the purpose of your job and you are to fulfill your duties to the best of your ability. Failures of your ability can hurt the colony as a whole. <br>\
 
 Your second loyalty is to your command officers. The heads of each faction. Listen to their counsel, ensure their interests are served, and keep them happy"
 
@@ -59,50 +60,45 @@ Your second loyalty is to your command officers. The heads of each faction. List
 	get_access()
 		return get_all_station_access()
 
-/obj/landmark/join/start/captain
-	name = "Captain"
+/obj/landmark/join/start/premier
+	name = "Premier"
 	icon_state = "player-gold-officer"
-	join_tag = /datum/job/captain
+	join_tag = /datum/job/premier
 
 
 
-/datum/job/hop
-	title = "First Officer"
-	flag = FIRSTOFFICER
+/datum/job/pg
+	title = "Steward"
+	flag = STEWARD
 	department = DEPARTMENT_COMMAND
 	head_position = 1
 	department_flag = COMMAND
-	faction = "CEV Eris"
+	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
+	supervisors = "the premier"
 	selection_color = "#ddddff"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
 	also_known_languages = list(LANGUAGE_CYRILLIC = 20, LANGUAGE_SERBIAN = 15)
-	ideal_character_age = 50
+	ideal_character_age = 35
+	minimum_character_age = 30
 
-	description = "You are the captain's right hand. His second in command. Where he goes, you follow. Where he leads, you drag everyone else along. You make sure his will is done, his orders obeyed, and his laws enforced.<br>\
-If he makes mistakes, discreetly inform him. Help to cover up his indiscretions and smooth relations with the crew, especially other command staff. Keep the captain safe, by endangering yourself in his stead if necessary.<br>\
+	description = "You are the premier's right hand. His personal guard. Where he goes, you follow. You make sure he remains safe, follow his orders, and if needed put yourself in the line of fire for him.<br>\
+If he makes mistakes, discreetly inform him. Help to ensure he follows the law and smooth relations with the crew, especially other command staff. Keep the premier safe, by endangering yourself in his stead if necessary.<br>\
 <br>\
 Do not embarass him or harm relations with faction leaders.<br>\
 <br>\
 But who are you?<br>\
-Perhaps you are the captain's lifelong friend, or a trusted associate to whom he gave a position of power.<br>\
+Perhaps you are the premier's lifelong friend, or a trusted associate to whom he gave a position of power.<br>\
 Perhaps you're a consummate professional who comes highly recommended.<br>\
-A retired general or naval officer?<br>\
-Perhaps you're the captain's brother, firstborn son, or spouse. Nobody can prevent nepotism if he chooses<br>\
-Perhaps you're a foreign diplomat, your position a ceremonial one to ensure a treaty.<br>\
+A retired mercenary or naval officer?<br>\
 
-Whatever your origin, you are fiercely loyal to the captain"
+Whatever your origin, you are fiercely loyal to the premier."
 
-	duties = "Oversee everyone else, especially the other command staff, to ensure the captain's orders are being carried out.<br>\
-Handle job reassignments and promotion requests, if an appropriate faction leader isn't available<br>\
-Act as the captain's surrogate in risky situations where a command presence is required<br>\
-Replace the captain if they become incapacitated, need to take a break, or suffer a premature death<br>\
-Act as the captain's sidekick, bodyguard, and last line of defense in a crisis or mutiny situation"
+	duties = "Act as the premier's sidekick, bodyguard, and secretary in a crisis or mutiny situation. You may also be asked to do paperwork or reassign someones badge in his stead, but only by the premier's orders."
 
-	loyalties = "Your first and only loyalty is to the captain. Unless you're an antagonist and have a good reason for betrayal, you should remain loyal to the death. You are the only one he can trust"
+	loyalties = "Your first and only loyalty is to the premier and the colony itself. Unless the premier is breaking the law or corrupt, you're to remain loyal to the death."
 
 	outfit_type = /decl/hierarchy/outfit/job/hop
 
@@ -117,15 +113,15 @@ Act as the captain's sidekick, bodyguard, and last line of defense in a crisis o
 		return get_all_station_access()
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_BIO = 10,
-		STAT_MEC = 10,
-		STAT_VIG = 20,
-		STAT_COG = 10
+		STAT_VIG = 35,
+		STAT_TGH = 30,
+		STAT_ROB = 25,
+		STAT_BIO = 25,
+		STAT_MEC = 25,
+		STAT_COG = 25
 	)
 
-/obj/landmark/join/start/hop
-	name = "First Officer"
+/obj/landmark/join/start/pg
+	name = "Steward"
 	icon_state = "player-gold"
-	join_tag = /datum/job/hop
+	join_tag = /datum/job/pg

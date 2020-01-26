@@ -1,5 +1,5 @@
 /datum/species_form/bird
-	playable = TRUE
+	playable = FALSE
 	name = FORM_BIRD
 	base = 			'icons/mob/human_races/r_seromi_white.dmi'
 	deform = null

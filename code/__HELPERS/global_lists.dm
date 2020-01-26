@@ -37,7 +37,7 @@ var/global/list/hearing_objects = list()			//list of all objects, that can hear 
 var/global/list/joblist = list()					//list of all jobstypes, minus borg and AI
 var/global/list/all_departments = list()			//List of all department datums
 var/global/list/department_IDs = list(DEPARTMENT_COMMAND, DEPARTMENT_MEDICAL, DEPARTMENT_ENGINEERING,
- DEPARTMENT_SCIENCE, DEPARTMENT_SECURITY, DEPARTMENT_GUILD, DEPARTMENT_CHURCH, DEPARTMENT_CIVILIAN)
+ DEPARTMENT_SCIENCE, DEPARTMENT_SECURITY, DEPARTMENT_LSS, DEPARTMENT_CHURCH, DEPARTMENT_CIVILIAN, DEPARTMENT_PROSPECTOR)
 var/global/list/global_corporations = list()
 
 
@@ -181,7 +181,7 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 		GLOB.ears_styles_list[E.name] = E
 
 	// Tails
-	paths = typesof(/datum/sprite_accessory/tail) - /datum/sprite_accessory/tail - /datum/sprite_accessory/tail/taur
+	paths = typesof(/datum/sprite_accessory/tail) - /datum/sprite_accessory/tail
 	for(var/path in paths)
 		var/datum/sprite_accessory/tail/T = new path()
 		GLOB.tail_styles_list[T.name] = T

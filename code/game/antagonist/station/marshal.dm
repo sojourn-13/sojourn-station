@@ -1,25 +1,20 @@
 /datum/antagonist/marshal
 	id = ROLE_MARSHAL
-	role_text = "Ironhammer Marshal"
-	role_text_plural = "Ironhammer Marshals"
+	role_text = "Commando"
+	role_text_plural = "Commandos"
 	bantype = ROLE_BANTYPE_CREW_SIDED
 	protected_jobs = list(JOBS_COMMAND, JOBS_SECURITY)
 	antaghud_indicator = "huddeathsquad"
 
-	possible_objectives = list(
-	/datum/objective/assassinate/marshal = 100,
+	stat_modifiers = list(\
+		STAT_TGH = 10,
+		STAT_ROB = 10,
+		STAT_VIG = 20
 	)
 
-	survive_objective = /datum/objective/escape
-
-	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_VIG = 15
-	)
-
-	welcome_text = "You are a freelance bounty hunter, contracted by Ironhammer to bring in a wanted fugitive, dead or alive.\n\
-	Local Ironhammer forces may assist you if you introduce yourself and win their trust. Remember that you hold no official rank \
-	and they are under no obligation to help or listen to you."
+	welcome_text = "You are a specially promoted member of the colony under orders of the black guard to accomplish a specific objective.\n\
+	Local members of the militia and marshals are unaware of your presence and should remain so if possible, you are to accomplish your objectives \n\
+	discretely and quietly."
 
 /datum/antagonist/marshal/can_become_antag(var/datum/mind/M)
 	if(!..())

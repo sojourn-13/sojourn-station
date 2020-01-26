@@ -18,7 +18,7 @@
 	var/taste_sensitivity = TASTE_NORMAL                 // How sensitive the species is to minute tastes.
 
 	var/min_age = 18
-	var/max_age = 70
+	var/max_age = 90
 
 	// Language/culture vars.
 	var/default_language = LANGUAGE_COMMON   // Default language is used when 'say' is used without modifiers.

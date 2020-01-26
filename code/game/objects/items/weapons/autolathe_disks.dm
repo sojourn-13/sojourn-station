@@ -27,7 +27,7 @@
 
 // Asters
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools
-	disk_name = "Asters Basic Tool Pack"
+	disk_name = "Lonestar Basic Tool Pack"
 	icon_state = "guild"
 	license = -1
 	designs = list(
@@ -54,7 +54,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc
-	disk_name = "Asters Miscellaneous Pack"
+	disk_name = "Lonestar Miscellaneous Pack"
 	icon_state = "guild"
 	license = -1
 	designs = list(
@@ -82,7 +82,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/devices
-	disk_name = "Asters Devices and Instruments"
+	disk_name = "Lonestar Devices and Instruments"
 	icon_state = "guild"
 	license = 10
 	designs = list(
@@ -106,7 +106,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/robustcells
-	disk_name = "Asters Robustcells"
+	disk_name = "Lonestar Robustcells"
 	icon_state = "guild"
 	license = 8
 	designs = list(
@@ -120,7 +120,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/cargo
-	disk_name = "Asters Tidbits Factory"
+	disk_name = "Lonestar Tidbits Factory"
 	icon_state = "guild"
 	license = -1
 	designs = list(
@@ -196,7 +196,7 @@
 
 // Technomancers
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/components
-	disk_name = "Technomancers ARK-034 Components"
+	disk_name = "Artificer's ARK-034 Components"
 	icon_state = "technomancers"
 	license = 20
 	designs = list(
@@ -218,7 +218,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools
-	disk_name = "Technomancers IJIRO-451 Advanced Tools"
+	disk_name = "Artificer's IJIRO-451 Advanced Tools"
 	icon_state = "technomancers"
 	license = 10
 	designs = list(
@@ -234,11 +234,12 @@
 		/datum/design/autolathe/tool/electric_screwdriver,
 		/datum/design/autolathe/tool/combi_driver,
 		/datum/design/autolathe/tool/armature_cutter,
+		/datum/design/autolathe/tool/weldingtool/advanced,
 		/datum/design/autolathe/part/diamondblade,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/parttoolpack
-	name = "Technomancers PAK-103 Tool Mods"
+	name = "Artificer's PAK-103 Tool Mods"
 	icon_state = "technomancers"
 	license = 10
 	designs = list(
@@ -259,6 +260,7 @@
 		/datum/design/autolathe/part/motor,
 		/datum/design/autolathe/part/cell_mout,
 		/datum/design/autolathe/part/fuel_tank,
+		/datum/design/autolathe/part/oxyjet,
 		/datum/design/autolathe/part/expansion,
 		/datum/design/autolathe/part/spikes,
 		/datum/design/autolathe/part/dampener,
@@ -266,7 +268,7 @@
 	..()
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits
-	disk_name = "Technomancers ESPO-830 Circuits"
+	disk_name = "Artificer's ESPO-830 Circuits"
 	icon_state = "technomancers"
 	license = 10
 	designs = list(
@@ -291,7 +293,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/engineering
-	disk_name = "Technomancers Supply Factory"
+	disk_name = "Artificer's Supply Factory"
 	icon_state = "technomancers"
 	license = -1 //Should make this disk infinite.
 	designs = list(
@@ -323,7 +325,7 @@
 		/datum/design/autolathe/tool/electric_screwdriver,
 		/datum/design/autolathe/tool/combi_driver,
 		/datum/design/autolathe/tool/armature_cutter,
-		/datum/design/autolathe/part/diamondblade,
+		/datum/design/autolathe/tool/weldingtool/advanced,
 		// From Circuits
 		/datum/design/autolathe/circuit/airlockmodule,
 		/datum/design/autolathe/circuit/airalarm,
@@ -340,12 +342,34 @@
 		/datum/design/autolathe/circuit/helm,
 		/datum/design/autolathe/circuit/nav,
 		/datum/design/autolathe/circuit/centrifuge,
+		// From tool mods
+		/datum/design/autolathe/part/laserguide,
+		/datum/design/autolathe/part/diamondblade,
+		/datum/design/autolathe/part/stick,
+		/datum/design/autolathe/part/plating,
+		/datum/design/autolathe/part/guard,
+		/datum/design/autolathe/part/heatsink,
+		/datum/design/autolathe/part/ergonomic_grip,
+		/datum/design/autolathe/part/ratchet,
+		/datum/design/autolathe/part/red_paint,
+		/datum/design/autolathe/part/whetstone,
+		/datum/design/autolathe/part/magbit,
+		/datum/design/autolathe/part/red_paint,
+		/datum/design/autolathe/part/stabilized_grip,
+		/datum/design/autolathe/part/ported_barrel,
+		/datum/design/autolathe/part/motor,
+		/datum/design/autolathe/part/cell_mout,
+		/datum/design/autolathe/part/fuel_tank,
+		/datum/design/autolathe/part/oxyjet,
+		/datum/design/autolathe/part/expansion,
+		/datum/design/autolathe/part/spikes,
+		/datum/design/autolathe/part/dampener,
 		)
 
 
 // Moebius
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical
-	disk_name = "Moebius Medical Designs"
+	disk_name = "Soteria Medical Designs"
 	icon_state = "moebius"
 	license = 20
 	designs = list(
@@ -369,11 +393,11 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/cmo
-	disk_name = "Moebius Medical Factory"
-	license = -1 //Same disk, but for the CMO exclusively with endless uses.
+	disk_name = "Soteria Medical Factory"
+	license = -1 //Same disk, but for the CBO exclusively with endless uses.
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer
-	disk_name = "Moebius Computer Parts"
+	disk_name = "Soteria Computer Parts"
 	icon_state = "moebius"
 	license = 20
 	designs = list(
@@ -406,7 +430,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer/rd
-	disk_name = "Moebius Computer Factory"
+	disk_name = "Soteria Computer Factory"
 	license = -1
 
 // NeoTheology
@@ -439,7 +463,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter
-	disk_name = "NeoTheology Bioprinter Production"
+	disk_name = "Church of Absolute Bioprinter Production"
 	icon_state = "neotheology"
 
 	license = -1
@@ -472,7 +496,7 @@
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
-	disk_name = "NeoTheology Bioprinter Pack"
+	disk_name = "Soteria Bioprinter Pack"
 	icon_state = "neotheology"
 
 	license = -1
@@ -499,7 +523,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_boards
-	disk_name = "NeoTheology Circuit Pack"
+	disk_name = "Absolutism Circuit Pack"
 	icon_state = "neotheology"
 
 	license = -1
@@ -507,9 +531,9 @@
 		/datum/design/autolathe/circuit/bioprinter,
 		/datum/design/autolathe/circuit/solidifier,
 
-		/datum/design/autolathe/circuit/cloner,
-		/datum/design/autolathe/circuit/reader,
-		/datum/design/autolathe/circuit/biocan,
+		//datum/design/autolathe/circuit/cloner,
+		//datum/design/autolathe/circuit/reader,
+		//datum/design/autolathe/circuit/biocan,
 
 		/datum/design/autolathe/circuit/bioreactor_platform,
 		/datum/design/autolathe/circuit/bioreactor_unloader,
@@ -525,7 +549,7 @@
 
 // Ironhammer
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security
-	disk_name = "Ironhammer Miscellaneous Pack"
+	disk_name = "Security Miscellaneous Pack"
 	icon_state = "ironhammer"
 	license = 20
 	designs = list(
@@ -540,12 +564,12 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security/hos
-	disk_name = "Ironhammer Miscellaneous Factory"
+	disk_name = "Security Miscellaneous Factory"
 	license = -1
 
 // Frozen Star
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns
-	disk_name = "Frozen Star Basic Civilian Pack"
+	disk_name = "Heckler and Sons Basic Civilian Pack"
 	icon_state = "frozenstar"
 	license = 7
 	designs = list(
@@ -559,7 +583,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_kinetic_guns //please, maintain general order (pistol>revolver>SMG>Other>Shotgun>GLs)+(smaller/less damaging caliber>bigger/more damaging caliber)
-	disk_name = "Frozen Star Ultimate Protection Pack"
+	disk_name = "Heckler and Sons Ultimate Protection Pack"
 	icon_state = "frozenstar"
 	license = 5
 	designs = list(
@@ -584,7 +608,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns
-	disk_name = "Frozen Star Void Warrior Pack"
+	disk_name = "Heckler and Sons Void Warrior Pack"
 	icon_state = "frozenstar"
 	license = 3
 	designs = list(
@@ -594,7 +618,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
-	disk_name = "Frozen Star Nonlethal Ammo Pack"
+	disk_name = "Heckler and Sons Nonlethal Ammo Pack"
 	icon_state = "frozenstar"
 	license = 20
 	designs = list(
@@ -618,7 +642,7 @@
 	..()
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammoboxs
-	name = "Frozen Star Nonlethal Ammo Box Pack"
+	name = "Heckler and Sons Nonlethal Ammo Box Pack"
 	icon_state = "frozenstar"
 	license = 30
 	designs = list(
@@ -637,7 +661,7 @@
 	..()
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
-	disk_name = "Frozen Star Lethal Ammo Pack"
+	disk_name = "Heckler and Sons Lethal Ammo Pack"
 	icon_state = "frozenstar"
 	license = 20
 	designs = list(
@@ -663,7 +687,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammoboxs
-	name = "Frozen Star Lethal Ammo Boxes Pack"
+	name = "Heckler and Sons Lethal Ammo Boxes Pack"
 	icon_state = "frozenstar"
 	license = 30
 	designs = list(
@@ -782,7 +806,7 @@
 
 // One Star
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar
-	disk_name = "One Star Tool Pack"
+	disk_name = "Greyson Positronics Tool Pack"
 	icon_state = "onestar"
 	license = 2
 	designs = list(
@@ -796,7 +820,7 @@
 
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter
-	disk_name = "NeoTheology Bioprinter Production"
+	disk_name = "Absolutism Bioprinter Production"
 	icon_state = "neotheology"
 
 	license = -1
@@ -825,10 +849,9 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
-	disk_name = "unusual data disk"
-	desc = "An odd, battered disk that might fit in an autolathe. Says something about 'Blackshield'."
+	disk_name = "Blackshield Sovereignty Pack"
 	icon_state = "onestar"
-	license = -1
+	license = 30
 
 	designs = list(
 		/datum/design/autolathe/gun/ten,
@@ -857,7 +880,7 @@
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
-	disk_name = "NeoTheology Bioprinter Pack"
+	disk_name = "Church of Absolute Bioprinter Pack"
 	icon_state = "neotheology"
 
 	license = -1
@@ -882,15 +905,15 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_boards
-	disk_name = "NeoTheology Circuit Pack"
+	disk_name = "Absolutism Circuit Pack"
 	icon_state = "neotheology"
 
 	license = -1
 	designs = list(
 		/datum/design/autolathe/circuit/bioprinter,
 		/datum/design/autolathe/circuit/solidifier,
-		/datum/design/autolathe/circuit/cloner,
-		/datum/design/autolathe/circuit/reader,
+		//datum/design/autolathe/circuit/cloner,
+		//datum/design/autolathe/circuit/reader,
 		/datum/design/autolathe/circuit/biocan,
 		/datum/design/autolathe/circuit/bioreactor_platform,
 		/datum/design/autolathe/circuit/bioreactor_unloader,

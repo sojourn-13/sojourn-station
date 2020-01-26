@@ -59,7 +59,7 @@
 	body_parts_covered = HEAD|FACE|EARS
 
 /obj/item/clothing/head/helmet/acolyte
-	name = "acolyte hood"
+	name = "vector hood"
 	desc = "Even the most devout deserve head protection."
 	icon_state = "acolyte"
 	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
@@ -76,7 +76,7 @@
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
-	desc = "They're often used by highly trained Swat Members."
+	desc = "These are often used by highly trained Swat Members."
 	icon_state = "swat"
 	armor = list(melee = 80, bullet = 60, energy = 40, bomb = 50, bio = 10, rad = 0)
 	flags_inv = HIDEEARS|HIDEEYES
@@ -135,7 +135,7 @@
 
 /obj/item/clothing/head/helmet/riot
 	name = "riot helmet"
-	desc = "Standard-issue Ironhammer helmet with a basic HUD and targeting system included."
+	desc = "Standard-issue marshal helmet with a basic HUD and targeting system included."
 	icon_state = "light_riot"
 	body_parts_covered = HEAD|FACE|EARS
 	armor = list(
@@ -206,7 +206,7 @@
 
 /obj/item/clothing/head/helmet/steelpot
 	name = "steelpot helmet"
-	desc = " Titanium helmet of serbian origin. Still widely used despite of its discontinued production."
+	desc = " Titanium helmet of void wolf origin. Still widely used despite of its discontinued production."
 	icon_state = "steelpot"
 	armor = list(melee = 40, bullet = 40, energy = 0, bomb = 40, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
 	flags_inv = BLOCKHAIR
@@ -215,7 +215,7 @@
 
 /obj/item/clothing/head/helmet/altyn
 	name = "green altyn helmet"
-	desc = "Green titanium helmet of serbian origin. Still widely used despite of its discontinued production."
+	desc = "Green titanium helmet of void wolf origin. Still widely used despite of its discontinued production."
 	icon_state = "altyn"
 	armor = list(melee = 45, bullet = 55, energy = 0, bomb = 35, bio = 0, rad = 0) // slightly better than usual due to mask
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
@@ -261,12 +261,12 @@
 
 /obj/item/clothing/head/helmet/altyn/brown
 	name = "brown altyn helmet"
-	desc = "Brown titanium helmet of serbian origin. Still widely used despite of its discontinued production."
+	desc = "Brown titanium helmet of void wolf origin. Still widely used despite of its discontinued production."
 	icon_state = "altyn_brown"
 
 /obj/item/clothing/head/helmet/altyn/black
 	name = "black altyn helmet"
-	desc = "Black titanium helmet of serbian origin. Still widely used despite of its discontinued production."
+	desc = "Black titanium helmet of void wolf origin. Still widely used despite of its discontinued production."
 	icon_state = "altyn_black"
 
 /obj/item/clothing/head/helmet/altyn/maska

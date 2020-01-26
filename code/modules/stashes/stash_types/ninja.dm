@@ -25,5 +25,5 @@
 	Worse still, my suit has malfunctioned, the self destruct module will not activate.<br>\
 	I am crippled, unable to walk, and soldiers hunt for me all over the ship. I cannot even crawl to an airlock.<br>\
 	Our technology must remain hidden, death in battle is not an option.<br>\
-	My only remaining recourse is to hide in the darkest corner I can find, and die with some semblance of honour. %D<br>\
+	My only remaining recourse is to hide in the darkest corner I can find and die with some semblance of honour. %D<br>\
 	If you, reader are not of our clan, then I ask one final favour. Destroy everything you find with my body. Erase my existence from history"

@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/idaho
-	name = "FS SMG 9x19 \"Idaho\""
-	desc = "The Idaho is a cheap self-defence weapon, mass-produced by \"Frozen Star\" for paramilitary and private use. Uses 9mm rounds."
+	name = "HS SMG 9x19 \"Idaho\""
+	desc = "The Idaho is a cheap self-defence weapon, mass-produced by \"Heckler and Sons\" for paramilitary and private use. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/idaho.dmi'
 	icon_state = "idaho"
 	item_state = "idaho"

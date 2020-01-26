@@ -420,14 +420,14 @@
 	icon = 'icons/effects/species_tails_vr.dmi'*/
 
 /datum/sprite_accessory/tail/special/unathi
-	name = "unathi tail"
+	name = "lizard tail"
 	desc = ""
 	icon_state = "sogtail_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/special/tajaran
-	name = "tajaran tail"
+	name = "sablekyne tail"
 	desc = ""
 	icon_state = "tajtail_s"
 	colored_layers = 1
@@ -448,7 +448,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/special/nevrean
-	name = "nevrean tail"
+	name = "avian tail"
 	desc = ""
 	icon_state = "nevreantail_s"
 	colored_layers = 1
@@ -499,14 +499,14 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/special/unathihc
-	name = "unathi tail, colorable"
+	name = "lizard tail, colorable"
 	desc = ""
 	icon_state = "sogtail_hc_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/special/tajaranhc
-	name = "tajaran tail, colorable"
+	name = "sablekyne tail, colorable"
 	desc = ""
 	icon_state = "tajtail_hc_s"
 	colored_layers = 1
@@ -527,21 +527,21 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/special/nevreanhc
-	name = "nevrean tail, colorable"
+	name = "avian tail, colorable"
 	desc = ""
 	icon_state = "nevreantail_hc_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/special/foxhc
-	name = "highlander zorren tail, colorable"
+	name = "highlander tail, colorable"
 	desc = ""
 	icon_state = "foxtail_hc_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/special/fennechc
-	name = "flatland zorren tail, colorable"
+	name = "flatland tail, colorable"
 	desc = ""
 	icon_state = "fentail_hc_s"
 	colored_layers = 1
@@ -606,7 +606,7 @@
 
 
 /datum/sprite_accessory/tail/zenghu_taj
-	name = "Zeng-Hu Tajaran Synth tail"
+	name = "sablekyne synth tail"
 	desc = ""
 	icon_state = "zenghu_taj"
 

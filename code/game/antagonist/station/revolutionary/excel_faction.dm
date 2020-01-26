@@ -3,12 +3,12 @@
 	name = "Excelsior"
 	antag = "infiltrator"
 	antag_plural = "infiltrators"
-	welcome_text = "You are Excelsior, Ever Upward. You have infiltrated this vessel to further the Revolution.\n\
+	welcome_text = "You are Excelsior, Ever Upward. You have infiltrated this colony to further the revolution.\n\
     The People's strength lies in securing our position, gathering the oppressed, and producing arms and armor for the final revolution. A slow and methodical approach is recommended. \n\n\
     Our first phase is to retrieve the cache of manufacturing materials and circuit boards. Without a means of production our revolution is in peril.\n\n\
     Our second phase is to establish a fortified position in secret. The People will send additional resources through the teleporter once it is established. This and our autolathe can be protected further with turrets and shield generators, in addition to loyal comrades.\n\n\
     Our third phase is expansion. Aquire implants, prosthetics or robotic parts and convert them into new implants. These can be injected into the oppressed to formally induct them to the Revolution. Use their labor to produce the weapons of their liberation.\n\n\
-    When the People are ready, break the chains of the oppressor and seize control of the ship"
+    When the People are ready, break the chains of the oppressor and seize control of the colony!"
 
 	hud_indicator = "excelsior"
 

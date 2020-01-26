@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/revolver
-	name = "FS REV .357 \"Miller\""
-	desc = "The \"Frozen Star\" \"Miller\" is a revolver of choice when you absolutely, positively need to make a hole in someone. Uses old-school .357 ammo."
+	name = "HS REV .357 \"Miller\""
+	desc = "The \"Hecklar and Sons\" \"Miller\" is a revolver of choice when you absolutely, positively need to make a hole in someone. Uses old-school .357 ammo."
 	icon = 'icons/obj/guns/projectile/revolver.dmi'
 	icon_state = "revolver"
 	item_state = "revolver"

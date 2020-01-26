@@ -1,5 +1,5 @@
 /obj/item/clothing/suit/greatcoat/ihc
-	name = "ironhammer commander's greatcoat"
+	name = "warrant officer's greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style."
 	icon_state = "ihc_coat"
 	item_state = "ihc_coat"
@@ -12,7 +12,7 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak
-	name = "ironhammer commander's cloaked greatcoat"
+	name = "warrant officer's cloaked greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style. This one has a cloak attached to it."
 	icon_state = "ihc_coat_cloak"
 	item_state = "ihc_coat_cloak"
@@ -25,7 +25,7 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/greatcoat/cap
-	name = "captain's greatcoat"
+	name = "premier's greatcoat"
 	desc = "A green greatcoat. Makes you feel like the leader you are supposed to be."
 	icon_state = "cap_coat"
 	item_state = "cap_coat"
@@ -38,7 +38,7 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/greatcoat/cap/cap_coat_cloak
-	name = "captain's cloaked greatcoat"
+	name = "premier's cloaked greatcoat"
 	desc = "A green greatcoat. Makes you feel like the leader you are supposed to be. This one has a cloak attached to it."
 	icon_state = "cap_coat_cloak"
 	item_state = "cap_coat_cloak"
@@ -51,7 +51,7 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/greatcoat/ihc
-	name = "Militia Commander's greatcoat"
+	name = "militia commander's greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style."
 	icon_state = "mc_coat"
 	item_state = "mc_coat"
@@ -64,7 +64,7 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/greatcoat/ihc
-	name = "Militia Commander's cloaked greatcoat"
+	name = "militia commander's cloaked greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style, this time wrapped in a fancy cloak."
 	icon_state = "mc_coat_cloak"
 	item_state = "mc_coat_cloak"

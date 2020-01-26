@@ -59,14 +59,14 @@
 	group = "Security"
 
 /datum/supply_pack/ntweapons
-	name = "NT Energy Weapons Crate"
+	name = "CA Energy Weapons Crate"
 	contains = list(/obj/item/weapon/gun/energy/laser,
 				/obj/item/weapon/gun/energy/laser,
 				/obj/item/weapon/gun/energy/taser,
 				/obj/item/weapon/gun/energy/taser)
 	cost = 5000
 	containertype = /obj/structure/closet/crate/secure/weapon
-	crate_name = "NT energy weapons crate"
+	crate_name = "CA energy weapons crate"
 	group = "Security"
 
 /datum/supply_pack/eweapons
@@ -84,7 +84,7 @@
 	group = "Security"
 
 /datum/supply_pack/armor
-	name = "IH Surplus Armor Crate"
+	name = "Marshal Surplus Armor Crate"
 	contains = list(/obj/item/clothing/suit/armor/vest,
 					/obj/item/clothing/suit/armor/vest/security,
 					/obj/item/clothing/suit/armor/vest/detective,
@@ -93,11 +93,11 @@
 					/obj/item/clothing/head/helmet)
 	cost = 1500
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "IH surplus armor crate"
+	crate_name = "Marshal surplus armor crate"
 	group = "Security"
 
 /datum/supply_pack/riot
-	name = "IH Riot Gear Crate"
+	name = "Marshal Riot Gear Crate"
 	contains = list(/obj/item/weapon/melee/baton,
 					/obj/item/weapon/melee/baton,
 					/obj/item/weapon/melee/baton,
@@ -118,18 +118,18 @@
 					/obj/item/clothing/suit/armor/heavy/riot)
 	cost = 6100
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "IH riot gear crate"
+	crate_name = "Marshal riot gear crate"
 	group = "Security"
 
 /datum/supply_pack/ballisticarmor
-	name = "IH Ballistic Armor Crate"
+	name = "Marshal Ballistic Armor Crate"
 	contains = list(/obj/item/clothing/suit/armor/bulletproof,
 					/obj/item/clothing/suit/armor/bulletproof,
 					/obj/item/clothing/head/helmet,
 					/obj/item/clothing/head/helmet)
 	cost = 3000
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "IH ballistic armor crate"
+	crate_name = "Marshal ballistic armor crate"
 	group = "Security"
 
 /datum/supply_pack/shotgunammo_beanbag
@@ -169,14 +169,14 @@
 
 
 /datum/supply_pack/energyarmor
-	name = "IH Ablative Armor Crate"
+	name = "Marshal Ablative Armor Crate"
 	contains = list(/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/head/helmet,
 					/obj/item/clothing/head/helmet)
 	cost = 3500
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "IH ablative armor crate"
+	crate_name = "Marshal ablative armor crate"
 	group = "Security"
 
 /datum/supply_pack/securitybarriers
@@ -187,7 +187,7 @@
 					/obj/machinery/deployable/barrier)
 	cost = 2000
 	containertype = /obj/structure/closet/crate/secure/gear
-	crate_name = "IH security barrier crate"
+	crate_name = "Marshal security barrier crate"
 	group = "Security"
 
 /datum/supply_pack/securitywallshield

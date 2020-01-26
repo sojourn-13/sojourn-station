@@ -6,7 +6,7 @@
 	category = "Machinery"
 
 
-
+/*
 //Cloning
 /datum/ritual/cruciform/machines/resurrection
 	name = "Resurrection"
@@ -32,7 +32,7 @@
 
 	pod.start()
 	return TRUE
-
+*/
 
 
 ////////////////////////BIOMATTER MANIPULATION MULTI MACHINES RITUALS

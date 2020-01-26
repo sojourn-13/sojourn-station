@@ -7,7 +7,7 @@
 
 /obj/machinery/telecomms/relay/preset/station
 	id = "station relay"
-	listening_levels = list(1,2,3,4,5)
+	listening_levels = list(1,2)
 	autolinkers = list("s_relay")
 
 /obj/machinery/telecomms/relay/preset/telecomms
@@ -40,7 +40,7 @@
 	id = "hub"
 	network = "tcommsat"
 	autolinkers = list("hub", "relay", "c_relay", "s_relay", "m_relay", "r_relay", "science", "medical",
-	"supply", "service", "common", "command", "engineering", "security", "nt", "unused",
+	"supply", "service", "common", "command", "prospector", "engineering", "security", "nt", "unused",
 	"receiverA", "broadcasterA")
 
 /obj/machinery/telecomms/hub/preset_cent
@@ -56,7 +56,7 @@
 	id = "receiver A"
 	network = "tcommsat"
 	autolinkers = list("receiverA") // link to relay
-	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, NT_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ)
+	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, NT_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, PRO_FREQ)
 
 	//Common and other radio frequencies for people to freely use
 	New()
@@ -77,8 +77,8 @@
 /obj/machinery/telecomms/bus/preset_one
 	id = "bus 1"
 	network = "tcommsat"
-	freq_listening = list(SCI_FREQ, MED_FREQ)
-	autolinkers = list("processor1", "science", "medical")
+	freq_listening = list(SCI_FREQ, MED_FREQ, PRO_FREQ)
+	autolinkers = list("processor1", "science", "medical", "prospector")
 
 /obj/machinery/telecomms/bus/preset_two
 	id = "bus 2"
@@ -198,6 +198,11 @@
 	id = "security server"
 	freq_listening = list(SEC_FREQ)
 	autolinkers = list("security")
+
+/obj/machinery/telecomms/server/presets/prospector
+	id = "prospector server"
+	freq_listening = list(PRO_FREQ)
+	autolinkers = list("prospector")
 
 /obj/machinery/telecomms/server/presets/centcomm
 	id = "CentComm server"

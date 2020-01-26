@@ -9,14 +9,14 @@
 #define ANIM_CLOSE -1
 
 /obj/machinery/neotheology/cloner
-	name = "NeoTheology clonepod"
-	desc = "The newest design and God's gift from NeoTheology, this automatic machine will return the flesh to the spirit in no time."
+	name = "Strange pod"
+	desc = "This pod seems entirely alien and smells disgustingly of old biomass left to rot."
 	icon = 'icons/obj/neotheology_pod.dmi'
 	icon_state = "preview"
 	density = TRUE
 	anchored = TRUE
 	layer = 2.8
-	circuit = /obj/item/weapon/circuitboard/neotheology/cloner
+	//circuit = /obj/item/weapon/circuitboard/neotheology/cloner
 
 	frame_type = FRAME_VERTICAL
 
@@ -358,8 +358,8 @@
 /////////////////////
 
 /obj/machinery/neotheology/biomass_container
-	name = "NeoTheology biomass container"
-	desc = "Making strange noises barrel, filled with a substance which at any time may become someone else's body."
+	name = "Strange biomass container"
+	desc = "It seems to be a biomass container."
 	icon_state = "biocan"
 	density = TRUE
 	anchored = TRUE
@@ -445,12 +445,12 @@
 /////////////////////
 
 /obj/machinery/neotheology/reader
-	name = "NeoTheology cruciform reader"
-	desc = "The altar for scanning genetic information from medium of soul - the cruciform."
+	name = "strange scanner"
+	desc = "It thrums and seems to be scanning anyone who gets near it judging from the small beeps."
 	icon_state = "reader_off"
 	density = TRUE
 	anchored = TRUE
-	circuit = /obj/item/weapon/circuitboard/neotheology/reader
+	//circuit = /obj/item/weapon/circuitboard/neotheology/reader
 
 	var/obj/item/weapon/implant/core_implant/cruciform/implant
 	var/reading = FALSE

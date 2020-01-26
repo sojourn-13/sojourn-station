@@ -106,12 +106,12 @@ var/global/list/modifications_types = list(
 /datum/body_modification/limb/prosthesis
 	name = "Unbranded"
 	id = "prosthesis_basic"
-	desc = "Simple, brutal and reliable prosthesis"
+	desc = "A simple, brutal and reliable prosthesis."
 	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 	replace_limb = /obj/item/organ/external/robotic
 	icon = 'icons/mob/human_races/robotic.dmi'
 	nature = MODIFICATION_SILICON
-	allow_nt = FALSE
+	allow_nt = TRUE
 
 /datum/body_modification/limb/prosthesis/New()
 	var/obj/item/organ/external/robotic/R = replace_limb

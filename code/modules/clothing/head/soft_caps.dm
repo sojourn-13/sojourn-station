@@ -106,16 +106,16 @@
 	desc = "It's a field cap in tasteful tan color."
 	icon_state = "tansoft"
 
-// I H S //
+// S E C //
 
 /obj/item/clothing/head/soft/sec2soft
-	name = "IH field cap"
-	initial_name = "IH field cap"
+	name = "field cap"
+	initial_name = "field cap"
 	desc = "It's a field cap for operatives."
 	icon_state = "sec2soft"
 
 /obj/item/clothing/head/soft/sarge2soft
-	name = "IH sergeant cap"
-	initial_name = "IH sergeant cap"
+	name = "sergeant cap"
+	initial_name = "sergeant cap"
 	desc = "It's a field cap for officers."
 	icon_state = "sargesoft"

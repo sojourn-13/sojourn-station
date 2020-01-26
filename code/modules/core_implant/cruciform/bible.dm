@@ -1,6 +1,6 @@
 /obj/item/weapon/book/ritual/cruciform
-	name = "NeoTheology ritual book"
-	desc = "Contains holy litany and religious prayers."
+	name = "absolutism ritual book"
+	desc = "Contains holy litanies and religious prayers."
 	icon_state = "bible"
 	price_tag = 300
 
@@ -20,7 +20,7 @@
 	icon_state = "biblep"*/
 
 /obj/item/weapon/book/ritual/cruciform/priest
-	name = "clergy ritual book"
-	desc = "Contains holy litany and prayers only for the Clergy."
+	name = "prime ritual book"
+	desc = "Contains holy litany and prayers meant only for the prime."
 	icon_state = "biblep"
 	price_tag = 500

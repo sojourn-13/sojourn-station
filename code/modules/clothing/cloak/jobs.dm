@@ -8,7 +8,7 @@
 
 // Head of Departments
 /obj/item/clothing/suit/hooded/cloak/job/captain
-	name = "captain's cloak"
+	name = "premier's cloak"
 	icon_state = "capcloak"
 	desc = "A green-ish cloak with golden lining."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/captain
@@ -19,7 +19,7 @@
 */
 
 /obj/item/clothing/suit/hooded/cloak/job/fo
-	name = "first officer's cloak"
+	name = "premier guard's cloak"
 	icon_state = "focloak"
 	desc = "A blue cloak with red epaulette."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/fo
@@ -30,7 +30,7 @@
 */
 
 /obj/item/clothing/suit/hooded/cloak/job/meo
-	name = "expedition overseer's cloak"
+	name = "research overseer's cloak"
 	icon_state = "meocloak"
 	desc = "A white cloak with black double stripe at edge."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/meo
@@ -41,7 +41,7 @@
 */
 
 /obj/item/clothing/suit/hooded/cloak/job/mbo
-	name = "biolab officer's cloak"
+	name = "biolab overseer's cloak"
 	icon_state = "mbocloak"
 	desc = "A cyan cloak with dark-cyan double stripe at edge."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/mbo
@@ -52,7 +52,7 @@
 */
 
 /obj/item/clothing/suit/hooded/cloak/job/ihc
-	name = "ironhammer commander's cloak"
+	name = "warrant officer's cloak"
 	icon_state = "ihccloak"
 	desc = "A black cloak with dark-blue lining."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/ihc
@@ -63,7 +63,7 @@
 */
 
 /obj/item/clothing/suit/hooded/cloak/job/gm
-	name = "guild merchant's cloak"
+	name = "executive officer's cloak"
 	icon_state = "gmcloak"
 	desc = "A brown cloak with yellow lining."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/gm
@@ -74,7 +74,7 @@
 */
 
 /obj/item/clothing/suit/hooded/cloak/job/te
-	name = "technomancer exultant's cloak"
+	name = "guild master's cloak"
 	icon_state = "cecloak"
 	desc = "A brown cloak with blue and orange lining."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/te
@@ -97,7 +97,7 @@
 */
 
 /obj/item/clothing/suit/hooded/cloak/job/guild
-	name = "guild cloak"
+	name = "lonestar cloak"
 	icon_state = "cargocloak"
 	desc = "A light-brown cloak."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/guild
@@ -119,7 +119,7 @@
 */
 
 /obj/item/clothing/suit/hooded/cloak/job/technomancer
-	name = "technomancer cloak"
+	name = "adept cloak"
 	icon_state = "engicloak"
 	desc = "A yellow cloak with orange lining."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/technomancer
@@ -152,7 +152,7 @@
 */
 
 /obj/item/clothing/suit/hooded/cloak/job/ironhammer
-	name = "ironhammer cloak"
+	name = "security cloak"
 	icon_state = "seccloak"
 	desc = "A blue, navy cloak."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/ironhammer

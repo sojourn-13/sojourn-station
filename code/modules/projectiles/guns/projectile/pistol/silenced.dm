@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/silenced
-	name = "FS HG .45 \"Mandella\""
+	name = "SA HG .45 \"Mandella\""
 	desc = "A small, quiet,  easily concealable gun. Uses .45 rounds. Has an integrated silencer which can't be removed."
 	icon = 'icons/obj/guns/projectile/mandella.dmi'
 	icon_state = "mandella"

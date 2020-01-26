@@ -19,19 +19,19 @@
 	item_state = "ba_suit"
 
 /obj/item/clothing/under/rank/captain //Alright, technically not a 'civilian' but its better then giving a .dm file for a single define.
-	desc = "An authoritative green uniform with gold flair denoting the rank of captain."
-	name = "captain's uniform"
+	desc = "An authoritative green uniform with gold flair denoting the rank of premier."
+	name = "premier's uniform"
 	icon_state = "captain"
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/captain/formal
-	name = "captain's formal uniform"
-	desc = "A captain's formal-wear, saved for special occasions."
+	name = "premier's formal uniform"
+	desc = "A premier's formal-wear, saved for special occasions."
 	icon_state = "captain_formal"
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/cargotech
-	name = "guild technician's uniform"
+	name = "lonestar cargo uniform"
 	desc = "A dull guild turtleneck complete with sturdy work jeans."
 	icon_state = "cargotech"
 	item_state = "lb_suit"
@@ -39,14 +39,14 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/rank/preacher
-	desc = "A dark ceremonial robe tailored for NeoTheology preachers."
-	name = "neotheology preacher's robe"
+	desc = "A dark ceremonial robe tailored for primes."
+	name = "prime's robe"
 	icon_state = "preacher"
 	item_state = "w_suit"
 
 /obj/item/clothing/under/rank/acolyte
-	desc = "Ceremonial garb of NeoTheology disciples."
-	name = "acolyte's vestments"
+	desc = "Ceremonial garb of the Absolute's vectors."
+	name = "vector's vestments"
 	icon_state = "acolyte"
 	item_state = "acolyte"
 
@@ -63,14 +63,14 @@
 	item_state = "w_suit"
 
 /obj/item/clothing/under/rank/first_officer
-	desc = "A tan shirt with a first officer's badge, worn alongside some black leggings."
-	name = "first officer's uniform"
+	desc = "A tan shirt with a premier guard's badge, worn alongside some black leggings."
+	name = "steward's uniform"
 	icon_state = "hop"
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/first_officer/suit
-	name = "first officer's suit"
-	desc = "A teal suit complete with a white shirt and orange tie. This one has a first officer's badge."
+	name = "steward's suit"
+	desc = "A teal suit complete with a white shirt and orange tie. This one has a premier guard's badge."
 	icon_state = "teal_suit"
 	item_state = "g_suit"
 
@@ -97,7 +97,7 @@
 	)
 
 /obj/item/clothing/under/rank/miner
-	desc = "A snappy guild jumpsuit complete with sturdy mining overalls."
-	name = "guild miner's jumpsuit"
+	desc = "A snappy lonestar jumpsuit complete with sturdy mining overalls."
+	name = "lonestar miner's jumpsuit"
 	icon_state = "miner"
 	item_state = "lb_suit"

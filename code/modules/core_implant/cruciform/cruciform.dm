@@ -3,7 +3,7 @@ var/list/disciples = list()
 /obj/item/weapon/implant/core_implant/cruciform
 	name = "cruciform"
 	icon_state = "cruciform_green"
-	desc = "Soul holder for every disciple. With the proper rituals, this can be implanted to induct a new believer into NeoTheology."
+	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
 	allowed_organs = list(BP_CHEST)
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform
 	layer = ABOVE_MOB_LAYER
@@ -55,8 +55,8 @@ var/list/disciples = list()
 
 /obj/item/weapon/implant/core_implant/cruciform/Process()
 	..()
-	if(active && round(world.time) % 5 == 0)
-		remove_cyber()
+	//if(active && round(world.time) % 5 == 0)
+	//	remove_cyber()
 	if(wearer && wearer.stat == DEAD)
 		deactivate()
 
@@ -81,6 +81,7 @@ var/list/disciples = list()
 		if (activate())
 			return TRUE
 
+/*
 /obj/item/weapon/implant/core_implant/cruciform/proc/remove_cyber()
 	if(!wearer)
 		return
@@ -108,6 +109,7 @@ var/list/disciples = list()
 	if(ishuman(wearer))
 		var/mob/living/carbon/human/H = wearer
 		H.update_implants()
+*/
 
 /obj/item/weapon/implant/core_implant/cruciform/proc/update_data()
 	if(!wearer)
@@ -131,5 +133,5 @@ var/list/disciples = list()
 /obj/item/weapon/implant/core_implant/cruciform/proc/make_inquisitor()
 	add_module(new CRUCIFORM_PRIEST)
 	add_module(new CRUCIFORM_INQUISITOR)
-	add_module(new /datum/core_module/cruciform/uplink())
+	//add_module(new /datum/core_module/cruciform/uplink())
 	remove_modules(/datum/core_module/cruciform/red_light)

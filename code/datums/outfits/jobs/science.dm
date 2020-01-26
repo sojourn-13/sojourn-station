@@ -12,7 +12,7 @@
 	BACKPACK_OVERRIDE_RESEARCH
 
 /decl/hierarchy/outfit/job/science/rd
-	name = OUTFIT_JOB_NAME("Moebius Expedition Overseer")
+	name = OUTFIT_JOB_NAME("Soteria - Expedition Overseer")
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	shoes = /obj/item/clothing/shoes/reinforced
 	uniform = /obj/item/clothing/under/rank/expedition_overseer
@@ -22,13 +22,13 @@
 	backpack_contents = list(/obj/item/weapon/oddity/secdocs = 1)
 
 /decl/hierarchy/outfit/job/science/scientist
-	name = OUTFIT_JOB_NAME("Moebius Scientist")
+	name = OUTFIT_JOB_NAME("Soteria - Scientist")
 
 /decl/hierarchy/outfit/job/science/xenobiologist
-	name = OUTFIT_JOB_NAME("Moebius Xenobiologist")
+	name = OUTFIT_JOB_NAME("Soteria - Xenobiologist")
 
 /decl/hierarchy/outfit/job/science/roboticist
-	name = OUTFIT_JOB_NAME("Moebius Roboticist")
+	name = OUTFIT_JOB_NAME("Soteria - Roboticist")
 	uniform = /obj/item/clothing/under/rank/roboticist
 	suit = /obj/item/clothing/suit/storage/rank/robotech_jacket
 	belt = /obj/item/weapon/storage/belt/utility/full

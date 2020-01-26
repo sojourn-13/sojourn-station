@@ -1,6 +1,6 @@
 /obj/item/weapon/book/ritual
 	name = "Rituals book"
-	desc = "Contains rituals."
+	desc = "Contains all the rituals a disciple needs."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book"
 	var/has_reference = FALSE

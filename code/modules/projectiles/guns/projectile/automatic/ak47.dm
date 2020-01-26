@@ -2,7 +2,7 @@
 	name = "Excelsior 7.62x39 AKMS"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
 		 This is a copy of an ancient semi-automatic rifle chambered for 7.62x39. If it won't fire, percussive maintenance should get it working again. \
-		 It is known for its easy maintenance, and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents. \
+		 It is known for its easy maintenance and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents. \
 		 This is a high-quality copy, which has an automatic fire mode."
 	icon = 'icons/obj/guns/projectile/ak.dmi'
 	icon_state = "AK"
@@ -51,7 +51,7 @@
 	update_icon()
 
 /obj/item/weapon/gun/projectile/automatic/ak47/fs
-	name = "FS AR 7.62x39 \"Kalashnikov\""
+	name = "SA AR 7.62x39 \"Kalashnikov\""
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
 		 This is a copy of an ancient semi-automatic rifle chambered for 7.62x39. If it won't fire, percussive maintenance should get it working again. \
 		 It is known for its easy maintenance, and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents. \

@@ -553,6 +553,7 @@
 	name = "Side Ponytail 2"
 	icon_state = "ponytailf"
 
+/*
 /datum/sprite_accessory/hair/teshari_default
 	name = "Teshari default"
 	icon_state = "teshari_default_s"
@@ -610,35 +611,36 @@
 	icon_state = "teshari_spiky_s"
 
 /datum/sprite_accessory/hair/una_spines_long
-	name = "Long Unathi Spines"
+	name = "Long Lizard Spines"
 	icon_state = "soghun_longspines_s"
+*/
 
 /datum/sprite_accessory/hair/una_spines_short
-	name = "Short Unathi Spines"
+	name = "Short Lizard Spines"
 	icon_state = "soghun_shortspines_s"
 
 /datum/sprite_accessory/hair/una_frills_long
-	name = "Long Unathi Frills"
+	name = "Long Lizard Frills"
 	icon_state = "soghun_longfrills_s"
 
 /datum/sprite_accessory/hair/una_frills_short
-	name = "Short Unathi Frills"
+	name = "Short Lizard Frills"
 	icon_state = "soghun_shortfrills_s"
 
 /datum/sprite_accessory/hair/una_horns
-	name = "Unathi Horns"
+	name = "Lizard Horns"
 	icon_state = "soghun_horns_s"
 
 /datum/sprite_accessory/hair/una_bighorns
-	name = "Unathi Big Horns"
+	name = "Lizard Big Horns"
 	icon_state = "unathi_bighorn_s"
 
 /datum/sprite_accessory/hair/una_smallhorns
-	name = "Unathi Small Horns"
+	name = "Lizard Small Horns"
 	icon_state = "unathi_smallhorn_s"
 
 /datum/sprite_accessory/hair/una_ramhorns
-	name = "Unathi Ram Horns"
+	name = "Lizard Ram Horns"
 	icon_state = "unathi_ramhorn_s"
 
 /datum/sprite_accessory/hair/sergal_medicore

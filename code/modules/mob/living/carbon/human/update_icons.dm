@@ -502,10 +502,11 @@ var/global/list/wings_icon_cache = list()
 
 	overlays_standing[CUSTOM_TAIL_LAYER] = null
 	overlays_standing[CUSTOM_TAIL_LAYER_ALT] = null// Technique ripped from VORE, alternate tail layer
+	/*
 	if(wear_suit && wear_suit.flags_inv & HIDETAIL && !(istype(tail, /datum/sprite_accessory/tail/taur) || wear_suit.flags_inv & HIDETAUR))
 		if(update_icons) update_icons()
 		return
-
+	*/
 	var/active_tail_layer = tail_over ? CUSTOM_TAIL_LAYER_ALT : CUSTOM_TAIL_LAYER
 
 	var/image/tail_image = get_tail_image()
@@ -535,7 +536,7 @@ var/global/list/wings_icon_cache = list()
 		var/icon/extra_overlay = icon(tailtype.icon, (tailtype.extra_overlay ? tailtype.extra_overlay : tailtype.icon_state)+"[(i-1)]")
 		extra_overlay.Blend(tail_colors[i], tailtype.blend)
 		tail_icon.Blend(extra_overlay, ICON_OVERLAY)
-	if(istype(tailtype, /datum/sprite_accessory/tail/taur)) return image(tail_icon, "pixel_x" = -16)
+	//if(istype(tailtype, /datum/sprite_accessory/tail/taur)) return image(tail_icon, "pixel_x" = -16)
 
 	var/tail_image = image(tail_icon)
 	tail_icon_cache[cache_key] = tail_image

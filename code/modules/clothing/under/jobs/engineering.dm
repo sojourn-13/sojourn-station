@@ -1,7 +1,7 @@
 //Contains: Engineering department jumpsuits
 /obj/item/clothing/under/rank/exultant
-	desc = "A blue-green engineering jumpsuit worn by exultants. It has minor radiation shielding."
-	name = "technomancer exultant's jumpsuit"
+	desc = "A blue-green engineering jumpsuit worn by guild masters. It has good radiation shielding."
+	name = "guild master's jumpsuit"
 	icon_state = "chiefengineer"
 	item_state = "g_suit"
 	armor = list(
@@ -10,12 +10,12 @@
 		energy = 0,
 		bomb = 0,
 		bio = 0,
-		rad = 10
+		rad = 30
 	)
 
 /obj/item/clothing/under/rank/engineer
-	desc = "A yellow engineering jumpsuit worn by technomancers. It has minor radiation shielding."
-	name = "technomancer's jumpsuit"
+	desc = "A yellow engineering jumpsuit worn by guild adepts. It has minor radiation shielding."
+	name = "adept's jumpsuit"
 	icon_state = "engine"
 	item_state = "engi_suit"
 	armor = list(
@@ -28,7 +28,7 @@
 	)
 
 /obj/item/clothing/under/rank/roboticist
-	desc = "An orange and tan moebius jumpsuit designed for mechanical work."
+	desc = "An orange and tan soteria jumpsuit designed for mechanical work."
 	name = "roboticist's jumpsuit"
 	icon_state = "robotics"
 	item_state = "bl_suit"

@@ -1,3 +1,4 @@
+/*
 /obj/item/weapon/circuitboard/neotheology/cloner
 	name = T_BOARD("neotheology cloner")
 	build_path = /obj/machinery/neotheology/cloner
@@ -20,6 +21,7 @@
 		/obj/item/weapon/stock_parts/scanning_module = 2,
 		/obj/item/weapon/implant/core_implant/cruciform = 1
 	)
+*/
 
 /obj/item/weapon/circuitboard/neotheology/biocan
 	name = T_BOARD("biomass container")

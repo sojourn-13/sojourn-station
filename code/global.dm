@@ -34,16 +34,16 @@ var/diary_filename			= null
 var/world_qdel_log			= null
 var/href_logfile			= null
 var/href_logfile_filename	= null
-var/station_name			= "CEV Eris"
-var/station_short			= "Eris"
-var/const/dock_name			= "N.A.S. Crescent"
-var/const/boss_name			= "Central Command"
-var/const/boss_short		= "Centcomm"
-var/const/company_name		= "CEV Eris"
-var/const/company_short		= "Eris"
+var/station_name			= "Nadezhda Colony"
+var/station_short			= "Nadezhda"
+var/const/dock_name			= "Amethyn"
+var/const/boss_name			= "High Council"
+var/const/boss_short		= "High Council"
+var/const/company_name		= "Nadezhda Colony"
+var/const/company_short		= "Nadezhda"
 var/game_version			= "Sojourn"
 var/changelog_hash			= ""
-var/game_year				= (text2num(time2text(world.realtime, "YYYY")) + 544)
+var/game_year				= (text2num(time2text(world.realtime, "YYYY")) + 629)
 
 var/round_progressing = 1
 var/master_storyteller       = "shitgenerator"
@@ -122,7 +122,7 @@ var/static/list/scarySounds = list(
 )
 
 // Bomb cap!
-var/max_explosion_range = 14
+var/max_explosion_range = 20
 
 // Announcer intercom, because too much stuff creates an intercom for one message then hard del()s it.
 var/global/obj/item/device/radio/intercom/global_announcer = new(null)

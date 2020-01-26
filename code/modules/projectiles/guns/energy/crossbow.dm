@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/energy/crossbow
-	name = "NT EC \"Nemesis\""
-	desc = "Mini energy crossbow, produced by old Nanotrasen, discontinued now. A weapon favored by many mercenary stealth specialists."
+	name = "OT EC \"Nemesis\""
+	desc = "Mini energy crossbow, produced by Old Testament, discontinued now. Highly favored for a backpack for game hunting."
 	icon = 'icons/obj/guns/energy/crossbow.dmi'
 	icon_state = "crossbow"
 	w_class = ITEM_SIZE_SMALL
@@ -19,13 +19,14 @@
 
 /obj/item/weapon/gun/energy/crossbow/ninja
 	name = "energy dart thrower"
+	desc = "Mini energy crossbow, though this looks black market and doesn't at all resemble existing similar weapons."
 	projectile_type = /obj/item/projectile/energy/dart
 	safety = FALSE
 	restrict_safety = TRUE
 
 /obj/item/weapon/gun/energy/crossbow/largecrossbow
-	name = "NT EC \"Themis\""
-	desc = "Energy crossbow, produced by old Nanotrasen, discontinued now. A weapon favored by mercenary infiltration teams."
+	name = "OT EC \"Themis\""
+	desc = "Energy crossbow, produced by old Old Testament, discontinued now. Highly favored for game hunting."
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_PLASTIC = 20, MATERIAL_SILVER = 9, MATERIAL_URANIUM = 9)

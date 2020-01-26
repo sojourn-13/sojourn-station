@@ -355,50 +355,74 @@
 /obj/structure/flora/tree/jungle
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree"
+	pixel_x = -45
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle/variant1
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree2"
+	pixel_x = -45
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle/variant2
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree3"
+	pixel_x = -45
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle/variant3
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree4"
+	pixel_x = -45
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle/variant4
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree5"
+	pixel_x = -45
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle/variant5
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree6"
+	pixel_x = -45
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle_small
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree"
+	pixel_x = -30
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle_small/variant1
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree2"
+	pixel_x = -30
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle_small/variant2
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree3"
+	pixel_x = -30
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle_small/variant3
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree4"
+	pixel_x = -30
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle_small/variant4
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree5"
+	pixel_x = -30
+	pixel_y = -16
 
 /obj/structure/flora/tree/jungle_small/variant5
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree6"
+	pixel_x = -30
+	pixel_y = -16
 
 /obj/structure/flora/small/rock1
 	icon = 'icons/obj/flora/jungleflora.dmi'

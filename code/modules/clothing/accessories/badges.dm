@@ -5,19 +5,19 @@
 */
 
 /obj/item/clothing/accessory/badge
-	name = "Inspector's badge"
-	desc = "A Ironhammer Security badge, made from gold and set on false leather."
+	name = "Ranger's badge"
+	desc = "A marshal ranger badge, made from gold and set on leather."
 	icon_state = "badge"
 	item_state = "marshalbadge"
 	slot_flags = SLOT_BELT | SLOT_ACCESSORY_BUFFER
 	price_tag = 200
 
 	var/stored_name
-	var/badge_string = "Ironhammer Security"
+	var/badge_string = "Marshal"
 
 /obj/item/clothing/accessory/badge/old
 	name = "faded badge"
-	desc = "A faded badge, backed with leather. It bears the emblem of the Forensic division."
+	desc = "A faded badge, backed with leather. It bears the emblem of a forensic division."
 	icon_state = "badge_round"
 
 /obj/item/clothing/accessory/badge/proc/set_name(var/new_name)
@@ -44,9 +44,10 @@
 //.Holobadges.
 /obj/item/clothing/accessory/badge/holo
 	name = "holobadge"
-	desc = "This glowing blue badge marks the holder as a member of Ironhammer Security."
+	desc = "This glowing blue badge marks the holder as a member of security."
 	icon_state = "holobadge"
 	item_state = "holobadge"
+	badge_string = "Security"
 	var/emagged //Emagging removes Sec check.
 
 /obj/item/clothing/accessory/badge/holo/cord
@@ -96,21 +97,28 @@
 
 
 /obj/item/clothing/accessory/badge/warden
-	name = "Gunnery Sergeant badge"
-	desc = "A silver Ironhammer Security badge. Stamped with the words 'Sergeant.'"
+	name = "Supply specialist badge"
+	desc = "A silver supply specialist badge. Stamped with the words 'SS.'"
 	icon_state = "silverbadge"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 
 /obj/item/clothing/accessory/badge/hos
-	name = "Commander's badge"
-	desc = "An immaculately polished gold Ironhammer Security badge. Labeled 'Commander.'"
+	name = "Warrant officer's badge"
+	desc = "An immaculately polished gold Warrant Officer badge."
 	icon_state = "goldbadge"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
+/obj/item/clothing/accessory/badge/smc
+	name = "Militia Commander's badge"
+	desc = "An immaculately polished gold Militia Commander badge."
+	icon_state = "goldbadge"
+	badge_string = "Blackshield"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
 /obj/item/clothing/accessory/badge/marshal
-	name = "marshal's badge"
-	desc = "A leather-backed gold badge displaying the crest of the Colonial Marshals."
+	name = "commando's badge"
+	desc = "A leather-backed gold badge displaying the crest of the Blackguard, signifying the wearer as one of the Blackguard's agents."
 	icon_state = "marshalbadge"
-	badge_string = "Colonial Marshal Bureau"
+	badge_string = "Blackguard's Commando"
 

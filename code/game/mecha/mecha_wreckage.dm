@@ -212,3 +212,16 @@
 /obj/effect/decal/mecha_wreckage/hoverpod
 	name = "Hover pod wreckage"
 	icon_state = "engineering_pod-broken"
+
+
+/obj/effect/decal/mecha_wreckage/durand/security
+	name = "Old Stomper wreckage"
+	icon_state = "old_durand-broken"
+
+/obj/effect/decal/mecha_wreckage/ripley/honker
+	name = "Honker wreckage"
+	icon_state = "honker-broken"
+
+/obj/effect/decal/mecha_wreckage/odysseus/mime
+	name = "Mime wreckage"
+	icon_state = "mime-broken"

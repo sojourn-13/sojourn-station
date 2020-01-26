@@ -11,20 +11,20 @@
 	Bounty: Calls up the uplink to order supplies
 */
 /datum/ritual/cruciform/inquisitor
-	name = "inquisitor"
+	name = "crusader"
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform
-	category = "Inquisitor"
+	category = "Crusader"
 	power = 30
 
 /datum/ritual/targeted/cruciform/inquisitor
-	name = "inquisitor targeted"
+	name = "crusader targeted"
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform
-	category = "Inquisitor"
+	category = "Crusader"
 	power = 30
 
 
 
-
+/*
 /*
 	Penance
 	Deals pain damage to a targeted disciple
@@ -65,7 +65,7 @@
 	if(index == 1 && target.address == text)
 		if(target.wearer && (target.loc && target.locs[1] in view()))
 			return target
-
+*/
 
 
 /*
@@ -108,6 +108,8 @@
 	Convalescence
 	Heals yourself a fair amount
 */
+
+/*
 /datum/ritual/cruciform/inquisitor/selfheal
 	name = "Convalescence"
 	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia Christi"
@@ -119,13 +121,13 @@
 /datum/ritual/cruciform/inquisitor/selfheal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C,list/targets)
 	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
 	H.add_chemical_effect(CE_PAINKILLER, 20)
-	H.adjustBruteLoss(-20)
-	H.adjustFireLoss(-20)
+	H.adjustBruteLoss(-30)
+	H.adjustFireLoss(-30)
+	H.adjustToxLoss(-40)
 	H.adjustOxyLoss(-40)
 	H.updatehealth()
 	set_personal_cooldown(H)
 	return TRUE
-
 
 
 
@@ -171,8 +173,9 @@
 			return
 		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
 		H.add_chemical_effect(CE_PAINKILLER, 20)
-		H.adjustBruteLoss(-20)
-		H.adjustFireLoss(-20)
+		H.adjustBruteLoss(-30)
+		H.adjustFireLoss(-30)
+		H.adjustToxLoss(-40)
 		H.adjustOxyLoss(-40)
 		H.updatehealth()
 		set_personal_cooldown(user)
@@ -255,7 +258,7 @@
 /datum/ritual/cruciform/inquisitor/initiation
 	name = "Initiation"
 	phrase = "Habe fiduciam in Domino ex toto corde tuo et ne innitaris prudentiae tuae, in omnibus viis tuis cogita illum et ipse diriget gressus tuos"
-	desc = "The second stage of granting a field promotion to a disciple, upgrading them to Preacher. The Preacher ascension kit is the first step."
+	desc = "The second stage of granting a field promotion to a disciple, upgrading them to Prime. The Prime ascension kit is the first step."
 	power = 100
 
 /datum/ritual/cruciform/inquisitor/initiation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
@@ -298,8 +301,76 @@
 	else
 		to_chat(user, "<span class='info'>You have no uplink.</span>")
 		return FALSE
+*/
 
 
+/datum/ritual/cruciform/inquisitor/brotherhood
+	name = "Eternal Brotherhood"
+	phrase = "Ita multi unum corpus sumus in Christo singuli autem alter alterius membra."
+	desc = "Reveals other disciples to speaker."
+
+
+/datum/ritual/cruciform/inquisitor/brotherhood/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	var/datum/core_module/cruciform/neotheologyhud/hud_module = C.get_module(/datum/core_module/cruciform/neotheologyhud)
+	if(hud_module)
+		C.remove_module(hud_module)
+	else
+		C.add_module(new /datum/core_module/cruciform/neotheologyhud)
+	return TRUE
+
+
+/datum/ritual/cruciform/inquisitor/battle_call
+	name = "Call to Battle"
+	phrase = "Si exieritis ad bellum de terra vestra contra hostes qui dimicant adversum vos clangetis ululantibus tubis et erit recordatio vestri coram Domino Deo vestro ut eruamini de manibus inimicorum vestrorum."
+	desc = "Inspires the crusader and gives him strength to protect the other disciples. True strength in unity."
+	cooldown = TRUE
+	cooldown_time = 10 MINUTES
+	cooldown_category = "battle call"
+	effect_time = 10 MINUTES
+
+/datum/ritual/cruciform/inquisitor/battle_call/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	var/count = 0
+	for(var/mob/living/carbon/human/brother in view(user))
+		if(brother.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+			count += 2
+
+	user.stats.changeStat(STAT_TGH, count)
+	user.stats.changeStat(STAT_ROB, count)
+	user.stats.changeStat(STAT_VIG, (count / 2))
+	to_chat(user, SPAN_NOTICE("You feel an extraordinary burst of energy."))
+	set_personal_cooldown(user)
+	addtimer(CALLBACK(src, .proc/discard_effect, user, count), src.cooldown_time)
+	return TRUE
+
+/datum/ritual/cruciform/inquisitor/battle_call/proc/discard_effect(mob/living/carbon/human/user, amount)
+	user.stats.changeStat(STAT_TGH, -amount)
+	user.stats.changeStat(STAT_ROB, -amount)
+	user.stats.changeStat(STAT_VIG, -amount / 2)
+
+/datum/ritual/cruciform/inquisitor/flash
+	name = "Searing Revelation"
+	phrase = "Per fidem enim ambulamus et non per speciem."
+	desc = "Knocks over everybody without cruciform in the view range. Psy-wave is extremely powerful, the speaker can be knocked down too."
+	cooldown = TRUE
+	cooldown_time = 2 MINUTES
+	cooldown_category = "flash"
+
+/datum/ritual/cruciform/inquisitor/flash/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	if(prob(100 - user.stats.getStat(STAT_VIG)))
+		user.Weaken(10)
+		to_chat(user, SPAN_WARNING("The flux of psy-energy knocks over you!"))
+	else
+		to_chat(user, SPAN_NOTICE("The flux of psy-energy washed your mind, but you managed to keep focused!"))
+	playsound(user.loc, 'sound/effects/cascade.ogg', 65, 1)
+	for(var/mob/living/carbon/human/victim in view(user))
+		if(!victim.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+			if(prob(100 - victim.stats.getStat(STAT_VIG)))
+				to_chat(victim, SPAN_WARNING("You feel that your knees bends!"))
+				victim.Weaken(5)
+			else
+				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
+	set_personal_cooldown(user)
+	return TRUE
 
 
 
@@ -308,12 +379,15 @@
 	Uses all your power, so you can't use abilities for a couple minutes
 */
 /datum/ritual/targeted/cruciform/inquisitor/spawn_item
-	name = "Bounty"
+	name = "Armaments"
 	phrase = "Supra Domini, bona de te peto. Audi me, et libera vocationem ad me munera tua"
-	desc = "Request supplies and items from headquarters. Find a private place to do this. Establishing the connection takes a lot of power."
+	desc = "Request an energy sword from headquarters to become a real crusader. Establishing the connection takes a lot of power."
 	power = 100
+	cooldown_time = 30 MINUTES
 
-/datum/ritual/targeted/cruciform/inquisitor/spawn_item/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+
+/datum/ritual/targeted/cruciform/inquisitor/spawn_item/perform(mob/living/carbon/human/user, obj/item/weapon/melee/energy/sword,list/targets)
+/* (mob/living/carbon/human/user, /obj/item/weapon/shield/energy, /obj/item/weapon/melee/energy/sword, list/targets)
 	var/datum/core_module/cruciform/uplink/I = C.get_module(CRUCIFORM_UPLINK)
 
 	if(I && I.uplink)
@@ -321,4 +395,4 @@
 
 		return TRUE
 	return FALSE
-
+*/

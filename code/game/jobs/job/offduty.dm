@@ -25,7 +25,7 @@
 	)
 
 /datum/job/offduty_cargo
-	title = "Off-duty Guild Member"
+	title = "Off-duty Lonestar"
 	latejoin_only = TRUE
 	timeoff_factor = -1
 	total_positions = -1
@@ -44,7 +44,7 @@
 	)
 
 /datum/job/offduty_engineering
-	title = "Off-duty Technomancer"
+	title = "Off-duty Adept"
 	latejoin_only = TRUE
 	timeoff_factor = -1
 	total_positions = -1
@@ -63,7 +63,7 @@
 	)
 
 /datum/job/offduty_medical
-	title = "Off-duty Moebius"
+	title = "Off-duty Soteria"
 	latejoin_only = TRUE
 	timeoff_factor = -1
 	total_positions = -1
@@ -76,7 +76,8 @@
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
 	stat_modifiers = list(
-		STAT_BIO = 30,
+		STAT_BIO = 15,
+		STAT_COG = 15,
 	)
 
 ///datum/job/offduty_science
@@ -125,10 +126,10 @@
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
 	stat_modifiers = list(
-		STAT_ROB = 30,
-		STAT_TGH = 30,
-		STAT_BIO = 30,
-		STAT_MEC = 30,
-		STAT_VIG = 40,
-		STAT_COG = 30
+		STAT_ROB = 15,
+		STAT_TGH = 15,
+		STAT_BIO = 15,
+		STAT_MEC = 15,
+		STAT_VIG = 20,
+		STAT_COG = 15
 	)

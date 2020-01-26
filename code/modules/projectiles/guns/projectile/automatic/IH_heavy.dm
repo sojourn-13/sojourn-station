@@ -1,7 +1,7 @@
 //Primary AR of IH. Has supreme AP to deal with those pesky Serbs (guildsmans actually) in armored hardsuits.
 /obj/item/weapon/gun/projectile/automatic/IH_heavyrifle
-	name = "FS AR 5.56x45 \"Wintermute\""
-	desc = "A high end military grade assault rifle, designed as a modern ballistic infantry weapon. Primarily used by and produced for IH troops. Uses 5.56mm rounds."
+	name = "HS AR 5.56x45 \"Wintermute\""
+	desc = "A high end military grade assault rifle, designed as a modern ballistic infantry weapon. Primarily used by and produced for Sol Federation troops. Uses 5.56mm rounds."
 	icon = 'icons/obj/guns/projectile/IH_heavyrifle.dmi'
 	icon_state = "IH_heavyrifle"
 	item_state = "IH_heavyrifle"

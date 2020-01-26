@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/personal/scientist
-	name = "moebius scientist's locker"
+	name = "soteria scientist's locker"
 	req_access = list(access_rd)
 	access_occupy = list(access_tox_storage)
 	icon_state = "science"
@@ -18,7 +18,7 @@
 	new /obj/item/clothing/mask/gas(src)
 
 /obj/structure/closet/secure_closet/reinforced/RD
-	name = "Moebius Expedition Overseer locker"
+	name = "soteria research overseer's locker"
 	req_access = list(access_rd)
 	icon_state = "rd"
 

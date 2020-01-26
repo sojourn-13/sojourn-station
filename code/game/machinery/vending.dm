@@ -1023,10 +1023,10 @@
 
 
 /obj/machinery/vending/weapon_machine
-	name = "Frozen Star Guns&Ammo"
-	desc = "A self-defense equipment vending machine. When you need to take care of that clown."
-	product_slogans = "The best defense is good offense!;Buy for your whole family today!;Nobody can outsmart bullet!;God created man - Frozen Star made them EQUAL!;Stupidity can be cured! By LEAD.;Dead kids can't bully your children!;Guns kill people, It's never your fault!;It's dangerous to go unarmed, take this!;Buy more ammo, you never know when you'll need it!" //Yes, It's a Zelda reference, fight me - Papalus
-	product_ads = "Stunning!;Take justice in your own hands!;LEADership!;It's not your fault!;His fault for being in sights!;Serve them a cold plate of justice!;Justice in Lead form!;Smell the gunpowder!;Better now than never!;Frozen Star: We LEAD you to victory!"
+	name = "Marshal Portable Armory"
+	desc = "A self-defense equipment vending machine. When you need to be tacticool."
+	product_slogans = "The best defense is good offense!;Buy for your whole family today!;Nobody can outsmart bullet!;Stupidity can be cured! By LEAD.;Dead kids can't bully your children!;Guns kill people, It's never your fault!;It's dangerous to go unarmed, take this!;Buy more ammo, you never know when you'll need it!" //Yes, It's a Zelda reference, fight me - Papalus
+	product_ads = "Stunning!;Take justice in your own hands!;LEADership!;It's not your fault!;His fault for being in sights!;Serve them a cold plate of justice!;Justice in lead form!;Smell the gunpowder!;Better now than never!"
 	icon_state = "weapon"
 	no_criminals = TRUE
 	products = list(/obj/item/device/flash = 6,
@@ -1065,36 +1065,36 @@
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 10,
 	/obj/item/weapon/tool/knife/tacknife = 6)
 
-	prices = list(/obj/item/device/flash = 600,
-	/obj/item/weapon/reagent_containers/spray/pepper = 800,
-	/obj/item/weapon/gun/projectile/olivaw = 1600,
-	/obj/item/weapon/gun/projectile/giskard = 1200,
-	/obj/item/weapon/gun/projectile/colt = 1200,
-	/obj/item/weapon/gun/energy/gun/martin = 1500,
-	/obj/item/weapon/gun/projectile/revolver/detective = 2500,
-	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 3700,
-	/obj/item/weapon/gun/projectile/shotgun/pump = 2000,
-	/obj/item/ammo_magazine/cl32/rubber = 300,
-	/obj/item/ammo_magazine/sl38/rubber = 400,
-	/obj/item/ammo_magazine/c45m/rubber = 300,
+	prices = list(/obj/item/device/flash = 200,
+	/obj/item/weapon/reagent_containers/spray/pepper = 100,
+	/obj/item/weapon/gun/projectile/olivaw = 500,
+	/obj/item/weapon/gun/projectile/giskard = 600,
+	/obj/item/weapon/gun/projectile/colt = 700,
+	/obj/item/weapon/gun/energy/gun/martin = 700,
+	/obj/item/weapon/gun/projectile/revolver/detective = 900,
+	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1500,
+	/obj/item/weapon/gun/projectile/shotgun/pump = 1300,
+	/obj/item/ammo_magazine/cl32/rubber = 100,
+	/obj/item/ammo_magazine/sl38/rubber = 200,
+	/obj/item/ammo_magazine/c45m/rubber = 150,
 	/obj/item/ammo_magazine/ammobox/c38/rubber = 400,
-	/obj/item/ammo_magazine/ammobox/cl32/rubber = 500,
-	/obj/item/ammo_magazine/ammobox/c45/rubber = 300,
-	/obj/item/weapon/storage/box/shotgunammo/beanbags = 300,
-	/obj/item/weapon/storage/box/shotgunammo/flashshells = 300,
+	/obj/item/ammo_magazine/ammobox/cl32/rubber = 800,
+	/obj/item/ammo_magazine/ammobox/c45/rubber = 600,
+	/obj/item/weapon/storage/box/shotgunammo/beanbags = 800,
+	/obj/item/weapon/storage/box/shotgunammo/flashshells = 400,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 50,
 	/obj/item/clothing/accessory/holster = 150,
 	/obj/item/weapon/storage/pouch/pistol_holster =150,
 	/obj/item/weapon/storage/pouch/ammo = 100,
-	/obj/item/ammo_magazine/sl38 = 400,
-	/obj/item/ammo_magazine/cl32 = 300,
-	/obj/item/ammo_magazine/c45m = 300,
-	/obj/item/ammo_magazine/ammobox/cl32 = 500,
-	/obj/item/ammo_magazine/ammobox/c38 = 400,
-	/obj/item/ammo_magazine/ammobox/c45 = 400,
-	/obj/item/weapon/storage/box/shotgunammo/slug = 300,
-	/obj/item/weapon/storage/box/shotgunammo/buckshot = 300,
-	/obj/item/weapon/tool/knife/tacknife = 600,)
+	/obj/item/ammo_magazine/sl38 = 100,
+	/obj/item/ammo_magazine/cl32 = 200,
+	/obj/item/ammo_magazine/c45m = 150,
+	/obj/item/ammo_magazine/ammobox/cl32 = 400,
+	/obj/item/ammo_magazine/ammobox/c38 = 800,
+	/obj/item/ammo_magazine/ammobox/c45 = 600,
+	/obj/item/weapon/storage/box/shotgunammo/slug = 800,
+	/obj/item/weapon/storage/box/shotgunammo/buckshot = 800,
+	/obj/item/weapon/tool/knife/tacknife = 200,)
 
 //This one's from bay12
 /obj/machinery/vending/cart
@@ -1115,7 +1115,7 @@
 
 /obj/machinery/vending/cola
 	name = "Robust Softdrinks"
-	desc = "A softdrink vendor provided by Robust Industries, LLC."
+	desc = "A softdrink vendor provided by Lone Star Solutions, LLC."
 	icon_state = "Cola_Machine"
 	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!;Operating heavy machinery? Robust Softdrinks has you covered!;Just to fill your sweet tooth needs!;Don't belive the reports, It doesn't have that much sugar!;Thirsty? Why not have cola!;Get your sugarwater here!;The taste of freedom!"
 	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not have some cola?;Please, have a drink!;Drink up!;The best drinks in space.;Treat yourself to what you deserve!"
@@ -1374,7 +1374,7 @@
 
 /obj/machinery/vending/sovietsoda
 	name = "BODA"
-	desc = "An old sweet water vending machine,how did this end up here?"
+	desc = "An old sweet water vending machine, how did this end up here?"
 	icon_state = "sovietsoda"
 	product_slogans = "For Tsar and Country!;Fulfill your nutrition quota!;Drink to forget food.;You no hungry anymore, da?"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
@@ -1398,7 +1398,7 @@
 					/obj/item/weapon/storage/pouch/engineering_tools = 300, /obj/item/weapon/storage/pouch/engineering_supply = 600)
 
 /obj/machinery/vending/engivend
-	name = "Engi-Vend"
+	name = "Guild-Vend"
 	desc = "Spare tool vending. What? Did you expect some witty description?"
 	product_slogans = "Spare tools for your Engineering needs!;Forgot where we keep mesons again, didn't you?;Need a battery?;You need electronics? I got electronics."
 	icon_state = "engivend"
@@ -1415,9 +1415,9 @@
 
 //This one's from bay12
 /obj/machinery/vending/engineering
-	name = "Robco Tool Maker"
+	name = "Artificer's Tool Maker"
 	desc = "Everything you need for do-it-yourself station repair."
-	product_slogans = "Engineering slacking again? Do their job!;Legally, I have to ask you not to use those tools to hack into anything.;Locked door? Tools here!;Big project and you're missing your precious wrench? I bet I can replace it!;The most robust tools on the ship!"
+	product_slogans = "Home project planned? Do it yourself!;Legally, I have to ask you not to use those tools to hack into anything.;Locked door? Tools here!;Big project and you're missing your precious wrench? I bet I can replace it!;The most robust tools on the ship!"
 	product_ads = "Best tools!;Cheap!;Reliable!;Do-It-Yourself!"
 	icon_state = "engi"
 	icon_deny = "engi-deny"
@@ -1501,10 +1501,10 @@
 	auto_price = FALSE
 
 /obj/machinery/vending/theomat
-	name = "NeoTheology Theo-Mat"
-	desc = "A NeoTheology dispensary for disciples and new converts."
-	product_slogans = "Immortality is the reward of the faithful.; Help humanity ascend, join your brethren today!; Come and seek a new life!;Pray and Obey!"
-	product_ads = "Praise!;Pray!;Obey!;Only for the faithful!;Ascend!;Seek a new life!"
+	name = "Church of Absolute Theo-Mat"
+	desc = "A church dispensary for disciples and new converts."
+	product_slogans = "Find peace through faith.;Help humanity ascend, join your brethren today!;Come and seek a new life!;Safety in brotherhood!"
+	product_ads = "Praise!;Pray!;Only for the faithful!;Ascend!;Seek a new life!"
 	icon_state = "teomat"
 	vendor_department = DEPARTMENT_CHURCH
 	products = list(/obj/item/weapon/book/ritual/cruciform = 10,
@@ -1517,7 +1517,7 @@
 					/obj/item/weapon/implant/core_implant/cruciform = 1000)
 
 /obj/machinery/vending/powermat
-	name = "Asters Guild Power-Mat"
+	name = "Lonestar Power-Mat"
 	desc = "Trust is power, and there's no power you can trust like Robustcell."
 	product_slogans = "Trust is power, and there's no cell you can trust like Robustcell.;No battery is stronger nor lasts longer.;One that Lasts!;You can't top the copper top!;Tesla doesn't have anything on us!;Don't belive the competitors, Our cells last longer!"
 	product_ads = "Robust!;Trustworthy!;Durable!;Robustcell - For your power needs!;Better than the others!;Stronger than the others!"
@@ -1542,7 +1542,7 @@
 					/obj/item/weapon/cell/small/super = 350)
 
 /obj/machinery/vending/printomat
-	name = "Asters Guild Print-Mat"
+	name = "Lonestar Print-Mat"
 	desc = "Everything you can imagine (not really) on a disc! Print your own gun TODAY."
 	product_slogans = "Print your own gun TODAY!;The future is NOW!;Can't stop the industrial revolution!;Everything you can imagine, RIGHT HERE!;Don't copy that floppy!;Who needs dreams when you can print everything you need?"
 	product_ads = "Almost free!;Print it yourself!;Don't copy that floppy!;Industrial Revolution!;Future!;Print your dreams TODAY!;Cheap and reliable!"

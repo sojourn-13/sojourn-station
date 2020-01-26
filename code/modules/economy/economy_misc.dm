@@ -101,7 +101,7 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 		create_department_account(all_departments[d])
 
 	station_account = department_accounts[DEPARTMENT_COMMAND]
-	vendor_account = department_accounts[DEPARTMENT_GUILD] //Vendors are operated by the guild and purchases pay into their stock
+	vendor_account = department_accounts[DEPARTMENT_LSS] //Vendors are operated by the guild and purchases pay into their stock
 
 	for(var/obj/machinery/vending/V in SSmachines.machinery)
 		if(!V.custom_vendor)

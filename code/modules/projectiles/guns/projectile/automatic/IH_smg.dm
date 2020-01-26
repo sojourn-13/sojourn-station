@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/automatic/IH_smg
-	name = "FS SMG 9x19 \"Straylight\""
+	name = "HS SMG 9x19 \"Straylight\""
 	desc = "A compact and lightweight submachinegun that sprays small rounds rapidly. Sacrifices a fire selector to cut mass, so it requires a careful hand. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/IH_smg.dmi'
 	icon_state = "IH_smg"

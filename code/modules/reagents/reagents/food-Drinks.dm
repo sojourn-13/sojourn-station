@@ -1271,7 +1271,7 @@
 	glass_center_of_mass = list("x"=15, "y"=7)
 
 /datum/reagent/ethanol/ntcahors
-	name = "NeoTheology Cahors Wine"
+	name = "Absolutism Cahors Wine"
 	id = "ntcahors"
 	description = "Fortified dessert wine made from cabernet sauvignon, saperavi and other grapes."
 	taste_description = "sweet charcoal"
@@ -1286,7 +1286,7 @@
 /datum/reagent/ethanol/ntcahors/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
 	M.adjust_hallucination(-0.9 * effect_multiplier)
-	M.adjustToxLoss(-0.5 * effect_multiplier)
+	M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
 
 // Cocktails
 

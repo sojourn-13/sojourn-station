@@ -240,7 +240,7 @@
 /*Gorka Pants Factions*/
 
 /obj/item/clothing/under/rank/security/gorkapantsih
-	name = "ironhammer gorka pants"
+	name = "security gorka pants"
 	desc = "A pair of baggy, two-tone military cargo pants featuring an elastic waistband and leg cuffs."
 	icon_state = "gorka_pants_ih"
 

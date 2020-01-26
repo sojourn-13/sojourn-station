@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/pulse
-	name = "NT PR \"Dominion\""
+	name = "OT PR \"Dominion\""
 	desc = "A weapon that uses advanced pulse-based beam generation technology to emit powerful laser blasts. Due to its complexity and cost, it is rarely seen in use, except by specialists."
 	icon = 'icons/obj/guns/energy/pulse.dmi'
 	icon_state = "pulse"
@@ -30,8 +30,8 @@
 
 
 /obj/item/weapon/gun/energy/pulse/destroyer
-	name = "NT PR \"Purger\""
-	desc = "A more recent \"NeoTheology\" brand pulse rifle, developed in direct response to compete against the highly successful \"Cassad\" design."
+	name = "OT PR \"Purger\""
+	desc = "A more recent \"Old Testament\" brand pulse rifle, developed in direct response to compete against the highly successful \"Cassad\" design."
 	fire_sound = 'sound/weapons/pulse.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 5)
 	sel_mode = 1
@@ -45,8 +45,8 @@
 
 
 /obj/item/weapon/gun/energy/pulse/cassad
-	name = "FS PR \"Cassad\""
-	desc = "\"Frozen Star\" brand energy assault rifle, capable of prolonged combat. When surrender is not an option."
+	name = "HS PR \"Cassad\""
+	desc = "\"Heckler and Sons\" brand energy assault rifle, capable of prolonged combat. When surrender is not an option."
 	icon = 'icons/obj/guns/energy/cassad.dmi'
 	icon_state = "cassad"
 	item_state = "cassad"

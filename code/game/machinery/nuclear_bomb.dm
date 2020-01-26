@@ -2,7 +2,7 @@ var/bomb_set
 
 /obj/machinery/nuclearbomb
 	name = "\improper nuclear fission explosive"
-	desc = "Uh oh. RUN!!!!"
+	desc = "This is probably dangerous."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "nuclearbomb0"
 	density = 1

@@ -1,6 +1,6 @@
 /obj/item/clothing/gloves/captain
 	desc = "A pair of regal blue gloves with a swanky gold trim."
-	name = "captain's gloves"
+	name = "premier's gloves"
 	icon_state = "captain"
 	item_state = "egloves"
 	price_tag = 500
@@ -56,8 +56,8 @@
 	price_tag = 150
 
 /obj/item/clothing/gloves/thick/swat
-	desc = "A pair of fire and impact-resistant IHS combat gloves."
-	name = "IHS combat gloves"
+	desc = "A pair of fire and impact-resistant security combat gloves."
+	name = "combat gloves"
 	icon_state = "ihscombat"
 	item_state = "ihscombat"
 	armor = list(

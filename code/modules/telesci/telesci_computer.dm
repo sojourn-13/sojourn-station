@@ -1,6 +1,6 @@
 /obj/machinery/computer/telescience
 	name = "\improper Telepad Control Console"
-	desc = "Used to teleport objects to and from the telescience telepad."
+	desc = "Used to teleport objects to and from the telescience telepad. Not exactly safe, but it works for short distances."
 	icon_screen = "teleport"
 	light_color = "#6496fa"
 	//circuit = /obj/item/weapon/stock_parts/circuitboard/telesci_console

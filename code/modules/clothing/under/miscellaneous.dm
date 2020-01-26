@@ -205,7 +205,7 @@
 
 /*Gorka Ranks*/
 /obj/item/clothing/under/rank/security/gorka_ih
-	name = "ironhammer gorka suit"
+	name = "security gorka suit"
 	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials."
 	icon_state = "gorka_ih"
 

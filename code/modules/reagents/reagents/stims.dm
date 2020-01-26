@@ -7,7 +7,7 @@
 /datum/reagent/stim/mbr
 	name = "Machine binding ritual"
 	id = "machine binding ritual"
-	description = "A ethanol based stimulator. Used as ritual drink during technomancers initiation into tribe."
+	description = "A ethanol based stimulator. Used as pick me up for engineers and technicians."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#5f95e2"
@@ -137,7 +137,7 @@
 /datum/reagent/stim/steady
 	name = "Steady"
 	id = "steady"
-	description = "Stimulator with ability to enchant reaction time. Usual find in mercenary groups."
+	description = "Stimulator with ability to enhance reaction time. Usual find in mercenary groups."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#334183"
@@ -166,7 +166,7 @@
 /datum/reagent/stim/machine_spirit
 	name = "Machine Spirit"
 	id = "machine spirit"
-	description = "Potent ethanol based stimulator. Used to initiate technomancer into inner cirle."
+	description = "Potent ethanol based stimulator. Used by engineers and technicians to gain an edge when working with machines."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#9eb236"

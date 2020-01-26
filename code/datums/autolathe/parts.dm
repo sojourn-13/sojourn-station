@@ -121,3 +121,7 @@
 /datum/design/autolathe/part/dampener
 	name = "Sound Dampener"
 	build_path = /obj/item/weapon/tool_upgrade/augment/dampener
+
+/datum/design/autolathe/part/oxyjet
+	name = "Oxyjet Canister"
+	build_path = /obj/item/weapon/tool_upgrade/productivity/oxyjet

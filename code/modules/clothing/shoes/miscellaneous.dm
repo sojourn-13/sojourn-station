@@ -303,7 +303,7 @@
 	icon_state = "winterboots_hydro"
 
 /obj/item/clothing/shoes/winter/explorer
-	name = "explorer winter boots"
-	desc = "A pair of winter boots designed for hazardous environment exploration."
+	name = "explorer boots"
+	desc = "A pair of rugged boots designed for hazardous environment exploration."
 	icon_state = "explorer"
 	armor = list(melee = 30, bullet = 10, laser = 10, energy = 15, bomb = 20, bio = 0, rad = 0)

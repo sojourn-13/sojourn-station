@@ -3,7 +3,7 @@
  */
 /obj/item/clothing/under/rank/expedition_overseer
 	desc = "A brown suit complete with a white shirt and green tie. The fibre offers minor biohazard protection."
-	name = "moebius expedition overseer's suit"
+	name = "research overseer's suit"
 	icon_state = "director"
 	item_state = "lb_suit"
 
@@ -11,7 +11,7 @@
 
 /obj/item/clothing/under/rank/scientist
 	desc = "A dark navy scientist's jacket complete with navy pants. The fibre offers minor biohazard protection."
-	name = "moebius scientist's uniform"
+	name = "soteria scientist's uniform"
 	icon_state = "science"
 	item_state = "w_suit"
 
@@ -20,7 +20,7 @@
 
 /obj/item/clothing/under/rank/chemist
 	desc = "A orange chemist's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "moebius chemist's uniform"
+	name = "soteria chemist's uniform"
 	icon_state = "chemistry"
 	item_state = "w_suit"
 
@@ -31,8 +31,8 @@
  * Medical
  */
 /obj/item/clothing/under/rank/moebius_biolab_officer
-	desc = "A white biolab officer's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "moebius biolab officer's uniform"
+	desc = "A white biolab overseer's shirt complete with tan pants. The fiber offers minor biohazard protection."
+	name = "biolab overseer's uniform"
 	icon_state = "cmo"
 	item_state = "w_suit"
 
@@ -41,7 +41,7 @@
 
 /obj/item/clothing/under/rank/virologist
 	desc = "A green virologist's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "moebius virologist's uniform"
+	name = "soteria virologist's uniform"
 	icon_state = "virology"
 	item_state = "w_suit"
 
@@ -50,7 +50,7 @@
 
 /obj/item/clothing/under/rank/medical
 	desc = "A blue doctor's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "moebius doctor's uniform"
+	name = "sotera doctor's uniform"
 	icon_state = "medical"
 	item_state = "w_suit"
 
@@ -77,6 +77,6 @@
 
 /obj/item/clothing/under/rank/psych
 	desc = "A calming turquoise turtleneck combined with dark blue slacks."
-	name = "moebius psychologist's turtleneck"
+	name = "soteria psychologist's turtleneck"
 	icon_state = "psychturtle"
 	item_state = "b_suit"

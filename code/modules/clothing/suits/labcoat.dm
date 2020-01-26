@@ -18,7 +18,7 @@
 	)
 
 /obj/item/clothing/suit/storage/toggle/labcoat/cmo
-	name = "moebius biolab officer's labcoat"
+	name = "biolab overseer's labcoat"
 	desc = "Bluer than the standard model."
 	icon_state = "labcoat_cmo_open"
 	item_state = "labcoat_cmo"
@@ -26,14 +26,14 @@
 	icon_closed = "labcoat_cmo"
 
 /obj/item/clothing/suit/storage/toggle/labcoat/chemist
-	name = "moebius chemist labcoat"
+	name = "soteria chemist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has an orange stripe on the shoulder."
 	icon_state = "labcoat_chem_open"
 	icon_open = "labcoat_chem_open"
 	icon_closed = "labcoat_chem"
 
 /obj/item/clothing/suit/storage/toggle/labcoat/virologist
-	name = "moebius virologist labcoat"
+	name = "soteria virologist labcoat"
 	desc = "A suit that protects against minor chemical spills. Offers slightly more protection against biohazards than the standard model. Has a green stripe on the shoulder."
 	icon_state = "labcoat_vir_open"
 	icon_open = "labcoat_vir_open"
@@ -49,14 +49,14 @@
 	)
 
 /obj/item/clothing/suit/storage/toggle/labcoat/science
-	name = "moebius scientist labcoat"
+	name = "soteria scientist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
 	icon_state = "labcoat_tox_open"
 	icon_open = "labcoat_tox_open"
 	icon_closed = "labcoat_tox"
 
 /obj/item/clothing/suit/storage/toggle/labcoat/medspec
-	name = "medical specialist's labcoat"
+	name = "soteria specialist's labcoat"
 	desc = "A suit that protects against minor chemical spills. This one has marks of Ironhammer Security."
 	icon_state = "labcoat_medspec_open"
 	item_state = "labcoat_medspec"

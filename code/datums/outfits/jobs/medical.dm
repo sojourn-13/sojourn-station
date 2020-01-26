@@ -11,7 +11,7 @@
 	BACKPACK_OVERRIDE_MEDICAL
 
 /decl/hierarchy/outfit/job/medical/cmo
-	name = OUTFIT_JOB_NAME("Moebius Biolab Officer")
+	name = OUTFIT_JOB_NAME("Soteria - Biolab Overseer")
 	l_ear  =/obj/item/device/radio/headset/heads/cmo
 	uniform = /obj/item/clothing/under/rank/moebius_biolab_officer
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/cmo
@@ -21,14 +21,14 @@
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
 
 /decl/hierarchy/outfit/job/medical/doctor
-	name = OUTFIT_JOB_NAME("Moebius Doctor")
+	name = OUTFIT_JOB_NAME("Soteria - Medical Doctor")
 	uniform = /obj/item/clothing/under/rank/medical
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	l_hand = /obj/item/weapon/storage/firstaid/adv
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
 
 /decl/hierarchy/outfit/job/medical/chemist
-	name = OUTFIT_JOB_NAME("Moebius Chemist")
+	name = OUTFIT_JOB_NAME("Soteria - Chemist")
 	uniform = /obj/item/clothing/under/rank/chemist
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/chemist
 	id_type = /obj/item/weapon/card/id/chem
@@ -41,12 +41,12 @@
 	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/weapon/storage/backpack/satchel/orange/chemist;
 
 /decl/hierarchy/outfit/job/medical/psychiatrist
-	name = OUTFIT_JOB_NAME("Moebius Psychiatrist")
+	name = OUTFIT_JOB_NAME("Soteria - Psychiatrist")
 	uniform = /obj/item/clothing/under/rank/psych
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 
 /decl/hierarchy/outfit/job/medical/paramedic
-	name = OUTFIT_JOB_NAME("Moebius Paramedic")
+	name = OUTFIT_JOB_NAME("Soteria - Paramedic")
 	uniform = /obj/item/clothing/under/scrubs/green
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_hand = /obj/item/weapon/storage/firstaid/adv

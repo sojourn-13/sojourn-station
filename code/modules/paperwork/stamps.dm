@@ -19,29 +19,33 @@
 	var/yminus	= -3	//Ditto for Y
 
 /obj/item/weapon/stamp/captain
-	name = "captain's rubber stamp"
+	name = "premier's rubber stamp"
 	icon_state = "stamp-cap"
 	xplus = 0
 	yminus = -1
 
 /obj/item/weapon/stamp/hop
-	name = "first officer's rubber stamp"
+	name = "steward's rubber stamp"
 	icon_state = "stamp-hop"
 
 /obj/item/weapon/stamp/hos
-	name = "ironhammer commander's rubber stamp"
+	name = "warrant officer's rubber stamp"
+	icon_state = "stamp-hos"
+
+/obj/item/weapon/stamp/hos2
+	name = "militia commander's rubber stamp"
 	icon_state = "stamp-hos"
 
 /obj/item/weapon/stamp/ce
-	name = "exultant's rubber stamp"
+	name = "guild master's rubber stamp"
 	icon_state = "stamp-ce"
 
 /obj/item/weapon/stamp/rd
-	name = "moebius expedition overseer's rubber stamp"
+	name = "chief research overseer's rubber stamp"
 	icon_state = "stamp-rd"
 
 /obj/item/weapon/stamp/cmo
-	name = "moebius biolab officer's rubber stamp"
+	name = "chief biolab overseer's rubber stamp"
 	icon_state = "stamp-cmo"
 
 /obj/item/weapon/stamp/denied
@@ -55,7 +59,7 @@
 	stamp_flags = STAMP_GENERIC
 
 /obj/item/weapon/stamp/qm
-	name = "guild merchant's stamp"
+	name = "chief executive officer's stamp"
 	icon_state = "stamp-qm"
 
 // Syndicate stamp to forge documents.

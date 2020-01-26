@@ -16,14 +16,13 @@
 	var/list/dept_data = list(
 
 		list("names" = list(), "header" = "Command Staff", "flag" = COMMAND),
-		list("names" = list(), "header" = "Ironhammer Security", "flag" = IRONHAMMER),
-		list("names" = list(), "header" = "Moebius Medical", "flag" = MEDICAL),
-		list("names" = list(), "header" = "Moebius Research", "flag" = SCIENCE),
-		list("names" = list(), "header" = "Church of NeoTheology", "flag" = CHURCH),
-		list("names" = list(), "header" = "Asters Guild", "flag" = GUILD),
+		list("names" = list(), "header" = "Marshal and Blackshield", "flag" = SECURITY),
+		list("names" = list(), "header" = "Soteria Medical", "flag" = MEDICAL),
+		list("names" = list(), "header" = "Soteria Research", "flag" = SCIENCE),
+		list("names" = list(), "header" = "Church of the Absolute", "flag" = CHURCH),
+		list("names" = list(), "header" = "Lonestar Shipping Solutions", "flag" = LSS),
 		list("names" = list(), "header" = "Civilian", "flag" = CIVILIAN),
-		list("names" = list(), "header" = "Service", "flag" = SERVICE),
-		list("names" = list(), "header" = "Technomancer League", "flag" = ENGINEERING),
+		list("names" = list(), "header" = "Artificers Guild", "flag" = ENGINEERING),
 		list("names" = list(), "header" = "Miscellaneous", "flag" = MISC),
 		list("names" = list(), "header" = "Silicon")
 	)

@@ -11,7 +11,7 @@
 	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/weapon/storage/backpack/satchel/neotheology;
 
 /decl/hierarchy/outfit/job/church/chaplain
-	name = OUTFIT_JOB_NAME("NeoTheology Preacher")
+	name = OUTFIT_JOB_NAME("Church - Prime")
 	l_ear = /obj/item/device/radio/headset/heads/preacher
 	id_type = /obj/item/weapon/card/id/chaplain
 	uniform = /obj/item/clothing/under/rank/preacher
@@ -21,18 +21,7 @@
 	backpack_contents = list(/obj/item/weapon/book/ritual/cruciform/priest = 1)
 
 /decl/hierarchy/outfit/job/church/acolyte
-	name = OUTFIT_JOB_NAME("NeoTheology Acolyte")
+	name = OUTFIT_JOB_NAME("Church - Vector")
 	uniform = /obj/item/clothing/under/rank/acolyte
 	shoes = /obj/item/clothing/shoes/reinforced
 	gloves = /obj/item/clothing/gloves/thick
-
-/decl/hierarchy/outfit/job/church/gardener
-	name = OUTFIT_JOB_NAME("Gardener")
-	uniform = /obj/item/clothing/under/rank/church
-	suit = /obj/item/clothing/suit/rank/botanist
-	gloves = /obj/item/clothing/gloves/botanic_leather
-	r_pocket = /obj/item/device/scanner/plant
-
-/decl/hierarchy/outfit/job/church/janitor
-	name = OUTFIT_JOB_NAME("Janitor")
-	uniform = /obj/item/clothing/under/rank/church

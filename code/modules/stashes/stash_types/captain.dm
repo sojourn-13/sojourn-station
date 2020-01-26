@@ -38,8 +38,8 @@
 	contents_list_external = list(/obj/item/remains/human = 1)
 	lore = "A hundred thousand credits of education fallen to a ten cent rubber bullet to the temple.<br>\
 <br>\
- Kismet, my captain.<br>\
- You were too vainglorious for anything but that damned fine hat. As for your effects, the mutineers won't have them.<br>\
+ Kismet, my friend.<br>\
+ You were too vainglorious for anything but that damned fine hat. As for your effects, the looters won't have them.<br>\
 <br>\
  Lest I forget, %D"
 

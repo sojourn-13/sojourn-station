@@ -3,7 +3,7 @@
 
 /obj/machinery/cellshower
 	name = "P.A.I.N. dispenser"
-	desc = "Pacification And INdignity dispenser."
+	desc = "Pacification And Indignity dispenser."
 	icon = 'icons/obj/machines/shower.dmi'
 	icon_state = "sprayer"
 	density = 0

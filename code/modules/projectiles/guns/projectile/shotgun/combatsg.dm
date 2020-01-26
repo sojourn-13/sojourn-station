@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/shotgun/pump/combat
-	name = "NT SG \"Regulator 1000\""
-	desc = "Designed for close quarters combat, the Regulator is widely regarded as a weapon of choice for repelling boarders. \
-			Some may say that it's too old, but it actually proved itself useful. Can hold up to 7 shells in tube magazine."
+	name = "OT SG \"Regulator 1000\""
+	desc = "Designed for close quarters combat, the Regulator is widely regarded as a weapon of choice for protecting borders. \
+			One of the only decent ballistic weapons made by the Old Testament. Can hold up to 7 shells in tube magazine."
 	icon = 'icons/obj/guns/projectile/cshotgun.dmi'
 	icon_state = "cshotgun"
 	item_state = "cshotgun"

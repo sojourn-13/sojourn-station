@@ -118,6 +118,7 @@ var/const/MED_FREQ = 1355
 var/const/SCI_FREQ = 1351
 var/const/SRV_FREQ = 1349
 var/const/SUP_FREQ = 1347
+var/const/PRO_FREQ = 1345
 
 
 // internal department channels
@@ -134,11 +135,12 @@ var/list/radiochannels = list(
 	"Special Ops" 	= DTH_FREQ,
 	"Mercenary" 	= SYND_FREQ,
 	"Supply" 		= SUP_FREQ,
-	"NT Voice"		= NT_FREQ,
+	"Church"		= NT_FREQ,
 	"Service" 		= SRV_FREQ,
 	"AI Private"	= AI_FREQ,
 	"Medical(I)"	= MED_I_FREQ,
-	"Security(I)"	= SEC_I_FREQ
+	"Security(I)"	= SEC_I_FREQ,
+	"Prospector"	= PRO_FREQ,
 )
 
 // central command channels, i.e deathsquid
@@ -148,7 +150,7 @@ var/list/CENT_FREQS = list(DTH_FREQ)
 var/list/ANTAG_FREQS = list(SYND_FREQ)
 
 //Department channels, arranged lexically
-var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, SEC_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ)
+var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_FREQ, SEC_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ)
 
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1
@@ -181,6 +183,8 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, SEC_
 		return "srvradio"
 	if(frequency == NT_FREQ)
 		return "ntradio"
+	if(frequency == PRO_FREQ)
+		return "proradio"
 	if(frequency in DEPT_FREQS)
 		return "deptradio"
 

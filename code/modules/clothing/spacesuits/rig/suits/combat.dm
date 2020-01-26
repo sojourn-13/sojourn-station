@@ -33,13 +33,14 @@
 		/obj/item/rig_module/chem_dispenser/combat
 		)
 
+
 //Ironhammer rig suit
 /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
 	light_overlay = "sec_light"
 
 /obj/item/weapon/rig/combat/ironhammer
-	name = "ironhammer hardsuit control module"
-	desc = "Standard operative suit issued to Ironhammer mercenaries. Provides balanced overall protection against various threats and widely used on planets surface, space stations or in open space."
+	name = "security hardsuit control module"
+	desc = "Standard operative suit issued to blackshield and marshal operatives alike. Provides balanced overall protection against various threats and widely used on planets surface, space stations or in open space."
 	icon_state = "ihs_rig"
 	helm_type = /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
 	suit_type = "ironhammer hardsuit"

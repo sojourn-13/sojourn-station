@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/maxim //This is currently deprecated unless someone can code up heavy machine gun mechanics.
 	name = "Excelsior machine gun"
-	desc = ""
+	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."
 	icon = 'icons/obj/guns/projectile/maxim.dmi'
 	icon_state = "maxim"
 	item_state = "maxim"

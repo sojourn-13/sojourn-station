@@ -69,7 +69,7 @@
 	new /obj/item/stack/cable_coil/random(src)
 
 /obj/item/weapon/storage/belt/utility/neotheology
-	name = "neotheologian utility belt"
+	name = "Absolutism utility belt"
 	desc = "Waist-held holy items."
 	icon_state = "utility_neotheology"
 	can_hold_extra = list(
@@ -147,8 +147,8 @@
 	)
 
 /obj/item/weapon/storage/belt/security/neotheology
-	name = "neotheologian tactical belt"
-	desc = "Can hold various military and security equipment."
+	name = "tactical crusader belt"
+	desc = "Can hold various military and security equipment for the awakened crusader. Deus Vult."
 	icon_state = "tactical_neotheology"
 	can_hold_extra = list(
 		/obj/item/weapon/book/ritual/cruciform,
@@ -168,7 +168,7 @@
 		)
 
 /obj/item/weapon/storage/belt/church
-	name = "NeoTheology belt"
+	name = "Absolutism belt"
 	desc = "Waist-held holy items."
 	icon_state = "ntbelt"
 

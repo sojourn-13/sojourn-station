@@ -25,6 +25,7 @@
 /*
 	Traitor uplink hidden inside cruciform. Used for inquisitors and maybe other NT antags
 */
+/*
 /datum/core_module/cruciform/uplink
 	var/telecrystals = 15
 	var/obj/item/device/uplink/hidden/uplink
@@ -44,12 +45,11 @@
 
 
 
-
 /datum/core_module/cruciform/uplink/uninstall()
 	telecrystals = uplink.uses
 	implant.hidden_uplink = null
 	QDEL_NULL(uplink)
-
+*/
 
 
 

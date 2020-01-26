@@ -40,13 +40,13 @@
 
 
 /obj/item/clothing/under/rank/armorer
-	name = "Armorer's uniform"
-	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a Blackshield Militia Master-at-Arms."
+	name = "Supply specialist's uniform"
+	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a marshal Supply Specialists."
 	icon_state = "gorka_ih"
 
 /obj/item/clothing/under/rank/armorer/green
-	name = "green Armorer's gorka"
-	desc = "A rugged set of militant and quite slavic two-tone clothes with the pins of a Blackshield Militia Master-at-Arms."
+	name = "green Supply specialist's gorka"
+	desc = "A rugged set of militant and quite slavic two-tone clothes with the pins of a marshal Supply Specialists."
 	icon_state = "gorka"
 	item_state = "gorka"
 

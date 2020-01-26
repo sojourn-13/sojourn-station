@@ -37,6 +37,16 @@
 	lethal = 1
 	icon_state = "control_kill"
 
+/obj/machinery/porta_turret/prepper
+	name = "advanced turret"
+	desc = "A highly modified turret with a stronger laser and self repair system."
+	installation = /obj/item/weapon/gun/energy/lasercannon
+	check_synth = 1
+	ailock = 1
+	use_power = 0
+	shot_delay = 5
+	auto_repair = 1
+
 /obj/machinery/turretid/Destroy()
 	if(control_area)
 		var/area/A = control_area

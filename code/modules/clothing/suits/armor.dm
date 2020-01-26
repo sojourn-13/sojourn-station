@@ -33,12 +33,12 @@
 
 /obj/item/clothing/suit/armor/vest/detective
 	name = "armor"
-	desc = "An armored vest with a detective's badge on it."
+	desc = "An armored vest with a ranger's badge on it."
 	icon_state = "armor_detective"
 
 /obj/item/clothing/suit/armor/vest/ironhammer
 	name = "security armor"
-	desc = "An armored vest that protects against some damage. This one has been done in Ironhammer Security colors. Not designed for serious operations."
+	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
 	icon_state = "armor_ironhammer"
 
 /obj/item/clothing/suit/armor/vest/handmade
@@ -65,8 +65,8 @@
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/acolyte
-	name = "acolyte armor"
-	desc = "Worn heavy, steadfast in the name of God."
+	name = "vector armor"
+	desc = "Worn, heavy, steadfast in the name of God."
 	icon_state = "acolyte"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -284,7 +284,7 @@
 	item_state = "platecarrier_ih"
 
 /obj/item/clothing/suit/armor/platecarrier/militia
-	name = "Militia plate carrier"
+	name = "militia plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one ears the distinct IFF stripes of the Blackshield Militia."
 	icon_state = "platecarrier_mil"
 	item_state = "platecarrier_mil"
@@ -346,7 +346,7 @@ obj/item/clothing/suit/armor/commander
 	siemens_coefficient = 0.7
 
 obj/item/clothing/suit/armor/commander/militia
-	name = "Militia Commander's armored coat"
+	name = "militia commander's armored coat"
 	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Militia Commander.."
 	icon_state = "commander_mil"
 	item_state = "commander_mil"

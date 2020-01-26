@@ -5,7 +5,7 @@
 
 /obj/machinery/clonepod
 	name = "biomass pod"
-	desc = "An electronically-lockable pod for growing organic tissue."
+	desc = "An electronically-lockable pod for growing organic tissue. A grinding noise makes it sound as if it isn't working."
 	density = 1
 	anchored = 1
 	icon = 'icons/obj/cloning.dmi'

@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/automatic/lmg
-	name = "L6 SAW"
-	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. This one is unmarked."
+	name = "SA L6 SAW"
+	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. This one has a steel plate that reads \
+	\"Scarborough Arms: Gloriam intus sine\". Uses 7.62x39 rounds."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
 	icon_base = "l6"

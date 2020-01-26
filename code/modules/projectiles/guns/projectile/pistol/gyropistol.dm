@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/gyropistol
-	name = "NT GP \"Zeus\""
-	desc = "A bulky pistol designed to fire self-propelled rounds."
+	name = "SA GP \"Emperor \""
+	desc = "A bulky pistol designed to fire self-propelled rounds. Commonly referred to as the 'man-opener' by void wolves."
 	icon = 'icons/obj/guns/projectile/gyropistol.dmi'
 	icon_state = "gyropistol"
 	item_state = "pistol"

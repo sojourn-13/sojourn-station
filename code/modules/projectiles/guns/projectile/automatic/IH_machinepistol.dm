@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/IH_machinepistol
-	name = "FS MP 9x19 \"Molly\""
-	desc = "An experimental fully automatic pistol. Compact and flexible, but somewhat underpowered. Issued to non-combatants among Ironhammer as powerful self-protection sidearm. Custom magwell allows it to feed both from pistol and SMG magazines. Uses 9mm rounds."
+	name = "HS MP 9x19 \"Molly\""
+	desc = "An experimental fully automatic pistol. Compact and flexible, but somewhat underpowered. Issued to non-combatants among Sol Federation forces as powerful self-protection sidearm. Custom magwell allows it to feed both from pistol and SMG magazines. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/IH_mp.dmi'
 	icon_state = "IH_mp"
 	item_state = "IH_mp"

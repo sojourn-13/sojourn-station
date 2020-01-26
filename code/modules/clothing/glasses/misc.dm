@@ -106,6 +106,7 @@
 	desc = "A rather large pair of sunglasses."
 	icon_state = "bigsunglasses"
 	item_state = "bigsunglasses"
+	flash_protection = FLASH_PROTECTION_MAJOR
 
 /obj/item/clothing/glasses/aviator
 	name = "black aviators"
@@ -150,7 +151,7 @@
 
 /obj/item/clothing/glasses/ballistic
 	name = "ballistic goggles"
-	desc = "Protects the eyes from sudden flash, debris, and light shrapnel."
+	desc = "Protects the eyes from sudden flashes, debris, and light shrapnel."
 	icon_state = "ballistic"
 	item_state = "ballistic"
 	action_button_name = "Switch Polarization"

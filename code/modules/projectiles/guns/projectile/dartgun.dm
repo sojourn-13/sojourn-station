@@ -43,8 +43,8 @@
 	mag_well = MAG_WELL_DART
 
 /obj/item/weapon/gun/projectile/dartgun
-	name = "Z-H P Artemis"
-	desc = "Zeng-Hu Pharmaceutical's entry into the arms market, the Z-H P Artemis is a gas-powered dart gun capable of delivering chemical cocktails swiftly across short distances."
+	name = "SI \"Artemis\""
+	desc = "The Soteria Institute's entry into the arms market, the SI Artemis is a gas-powered dart gun capable of delivering chemical cocktails swiftly across short distances."
 	icon = 'icons/obj/guns/projectile/dartgun.dmi'
 	icon_state = "dartgun-empty"
 	item_state = null

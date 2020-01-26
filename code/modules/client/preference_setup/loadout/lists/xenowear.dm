@@ -1,3 +1,4 @@
+/*
 /datum/gear/xenowear/undercoat
 	display_name = "black undercoat selection"
 	path = /obj/item/clothing/under/undercoat
@@ -25,6 +26,7 @@
 	slot = slot_wear_suit
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
+*/
 
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"

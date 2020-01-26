@@ -95,11 +95,12 @@
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
 /datum/species_form/avian
-	playable = TRUE
+	playable = FALSE
 	name = FORM_AVIAN
 	base = 'icons/mob/human_races/r_nevrean.dmi'
 	deform = 'icons/mob/human_races/r_def_nevrean.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
 
 /datum/species_form/spider
 	playable = TRUE
@@ -108,6 +109,7 @@
 	deform = 'icons/mob/human_races/r_def_spider.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
+
 /datum/species_form/stationxeno
 	playable = TRUE
 	name = FORM_STATIONXENO
@@ -115,6 +117,8 @@
 	deform =  'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	variantof = FORM_STATIONXENO
 	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR
+	playable = FALSE
+
 
 /datum/species_form/marqua
 	playable = TRUE
@@ -122,6 +126,7 @@
 	base = 'icons/mob/human_races/r_marqua_vr.dmi'
 	deform = 'icons/mob/human_races/r_def_marqua.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
 
 /datum/species_form/stationxeno/hunter
 	name = FORM_STATIONXENO_HUNTER
@@ -137,3 +142,4 @@
 	name = FORM_STATIONXENO_SENTI
 	base = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
 	deform = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
+

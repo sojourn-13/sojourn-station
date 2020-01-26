@@ -1,6 +1,6 @@
 /obj/structure/closet/crate/secure/loot
 	name = "abandoned crate"
-	desc = "What could be inside?"
+	desc = "What could be inside? A small port near the lock could connect to a multi-tool."
 	icon_state = "securecrate"
 	var/list/code = list()
 	var/list/lastattempt = list()

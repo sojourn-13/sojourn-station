@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/engineering_chief
-	name = "technomancer exultant's locker"
+	name = "guild master's locker"
 	req_access = list(access_ce)
 	icon_state = "ce"
 
@@ -64,7 +64,7 @@
 	new /obj/item/weapon/tool_upgrade/augment/fuel_tank(src)
 
 /obj/structure/closet/secure_closet/personal/engineering_personal
-	name = "technomancer's locker"
+	name = "guild adept's locker"
 	req_access = list(access_ce)
 	access_occupy = list(access_engine_equip)
 	icon_state = "eng"

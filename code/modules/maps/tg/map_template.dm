@@ -228,6 +228,7 @@ var/list/global/map_templates = list()
 
 		// If so, try to place it.
 		var/specific_sanity = 100 // A hundred chances to place the chosen submap.
+		var/SUBMAP_MAP_EDGE_PAD = 0
 		while(specific_sanity > 0)
 			specific_sanity--
 			var/orientation = pick(cardinal)

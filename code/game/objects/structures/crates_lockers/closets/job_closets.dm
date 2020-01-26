@@ -106,7 +106,7 @@
 		new /obj/item/weapon/storage/backpack/satchel/neotheology(src)
 
 /obj/structure/closet/acolyte
-	name = "acolyte closet"
+	name = "vector closet"
 	desc = "A closet for those that work with the machines of god."
 	icon_state = "acolyte"
 

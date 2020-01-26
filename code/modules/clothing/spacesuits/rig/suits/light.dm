@@ -36,6 +36,36 @@
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
 
+
+
+/obj/item/weapon/rig/light/hacker/steward
+	name = "SI 'Retainer' control module"
+	desc = "A Soteria Institute modification of the traditional light rig built for equal parts utility and defense."
+	armor = list(
+		melee = 40,
+		bullet = 30,
+		energy = 30,
+		bomb = 30,
+		bio = 100,
+		rad = 30
+	)
+	emp_protection = 20
+	seal_delay = 5
+	icon_state = "hacker_rig"
+	req_access = list(access_hop)
+
+	initial_modules = list(
+		/obj/item/rig_module/mounted/taser,
+		/obj/item/rig_module/device/flash,
+		/obj/item/rig_module/vision/medhud,
+		/obj/item/rig_module/device/healthscanner,
+		/obj/item/rig_module/chem_dispenser/injector,
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/storage
+		)
+
+
+
 /obj/item/weapon/rig/light/hacker
 	name = "cybersuit control module"
 	suit_type = "cyber"

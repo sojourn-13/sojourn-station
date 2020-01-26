@@ -1,23 +1,18 @@
 /datum/antagonist/inquisitor
 	id = ROLE_INQUISITOR
-	role_text = "NeoTheology Inquisitor"
-	role_text_plural = "NeoTheology Inquisitors"
+	role_text = "Crusader"
+	role_text_plural = "Crusaders"
 	bantype = ROLE_BANTYPE_INQUISITOR
 	welcome_text = ""
 	antaghud_indicator = "hudcyberchristian"
-	possible_objectives = list(
-		/datum/objective/assassinate = 30,
-		/datum/objective/brig = 15,
-		/datum/objective/harm = 15,
-		/datum/objective/steal = 30,
-		/datum/objective/baptize = 30,
-	)
 
-	survive_objective = /datum/objective/escape
 	var/was_priest = FALSE
 
+	survive_objective = /datum/objective/escape
+
 	stat_modifiers = list(
-		STAT_TGH = 10,
+		STAT_TGH = 20,
+		STAT_ROB = 20,
 		STAT_VIG = 10
 	)
 
@@ -65,21 +60,16 @@
 	// Basic intro text.
 	to_chat(player, "<span class='danger'><font size=3>You are a [role_text]!</font></span>")
 
-	to_chat(player, "Inquisitor is a higher ranking officer in the Church of NeoTheology.<br>\
-	You are here to promote the Church's interests and protect disciples, but more importantly, you are also here to \
-	track down criminals, spies and saboteurs within the church's ranks. Interrogate NT followers, and deal with those \
-	who would tarnish the public image of the Church or betray its principles.<br>\
+	to_chat(player, "Crusader is a special protocol within the Church of Absolute.<br>\
+	You're cruciform has activated its crusader protocol upon detecting the presence of an active hivemind. You are to do \
+	everything in your power to destroy all traces of the hivemind and any infected machines or organics.<br>\
 	<br>\
-	Any local Church staff are your subordinates and should obey your commands. With other disciples, things are less clear, \
-	people may put their shipboard duties above loyalty to the church. You should be discreet in your interactions with the ship command staff \
-	Revealing your role may tarnish the Church's image, it's often best to deal with internal problems quietly")
+	Any local church staff should aid in goals and other crusaders will announce their presence so you may work together.\
+	Remember that your goal is only to destroy the hivemind, once you've completed your task you should return to your regular \
+	duties but remain vigilant. Under special circumstances your crusader protocol may have activated to deal with a different threat.\
+	Do as befitting of the church and aid the colony in whatever way you can.")
 
-	if (was_priest)
-		to_chat(player, "If you were the ship's preacher before, you have the authority to promote someone to be your replacement.")
-	else
-		to_chat(player, "You have been working undercover here, until a signal from NT command calls you to action. You may wish to make your presence known to the local preacher, if there is one.")
-
-	to_chat(player, "You will need a ritual book to utilise your abilities. They can be found or purchased in the chapel. The Bounty ritual can be used to request items from central command. You may request a Priest upgrade to promote a new preacher.")
+	to_chat(player, "You will need a ritual book to utilise your abilities. They can be found or purchased in the chapel. The bounty ritual can be used to request items from central church command.")
 
 
 	show_objectives()
@@ -88,7 +78,7 @@
 	return TRUE
 
 
-//Returns true if the mob in question is an NT preacher
+//Returns true if the mob in question is a prime
 /proc/ispriest(var/mob/living/carbon/human/H)
 	if (!istype(H))
 		return FALSE

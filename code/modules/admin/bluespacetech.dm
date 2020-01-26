@@ -28,7 +28,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	bst.h_style = "Crewcut"
 
 	//Items
-	bst.equip_to_slot_or_del(new /obj/item/clothing/under/admin/assistantformalbst(bst), slot_w_uniform)
+	bst.equip_to_slot_or_del(new /obj/item/clothing/under/admin/bst(bst), slot_w_uniform)
 	bst.equip_to_slot_or_del(new /obj/item/device/radio/headset/ert/bst(bst), slot_l_ear)
 	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/holding/bst(bst), slot_back)
 	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(bst.back), slot_in_backpack)
@@ -205,8 +205,17 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 /obj/item/clothing/under/admin/bst
 	name = "bluespace technician's uniform"
 	desc = "A Bluespace Technician's Uniform. There is a logo on the sleeve that reads 'BST'."
+	icon = 'icons/inventory/uniform/icon.dmi'
+	icon_state = "syndicate"
+	item_state = "bl_suit"
 	has_sensor = FALSE
 	sensor_mode = 0
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.01
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HEAD
+	armor = list(melee = 100, bullet = 100, laser = 100,energy = 100, bomb = 100, bio = 100, rad = 100)
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS | HEAD
+	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0
 	cold_protection = FULL_BODY
 	heat_protection = FULL_BODY
@@ -223,6 +232,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 /obj/item/clothing/gloves/admin/bst
 	name = "bluespace technician's gloves"
 	desc = "A pair of modified gloves. The letters 'BST' are stamped on the side."
+	icon = 'icons/inventory/hands/icon.dmi'
+	icon_state = "black"
+	item_state = "bgloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0
 
@@ -238,6 +250,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 /obj/item/clothing/glasses/admin/bst
 	name = "bluespace technician's glasses"
 	desc = "A pair of modified sunglasses. The word 'BST' is stamped on the side."
+	icon = 'icons/inventory/eyes/icon.dmi'
+	icon_state = "sun"
+	item_state = "sunglasses"
 	vision_flags = (SEE_TURFS|SEE_OBJS|SEE_MOBS)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	flash_protection = FLASH_PROTECTION_MAJOR
@@ -306,6 +321,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 /obj/item/weapon/storage/belt/utility/full/bst
 	name = "bluespace technician's belt"
 	storage_slots = 14
+	icon = 'icons/inventory/belt/icon.dmi'
+	icon_state = "utility"
+	item_state = "utility"
 
 /obj/item/weapon/storage/belt/utility/full/bst/populate_contents()
 	new /obj/item/weapon/tool/screwdriver/bs(src)

@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/rpg
 	name = "RPG-7"
 	desc = "A modified ancient rocket-propelled grenade launcher, this design is centuries old, but well preserved. \
-			Modification altered gun mechanism to take much more compact, but sligtly less devastating in close quaters rockets and remove backfire. \
+			Modification have altered the gun mechanism to make it much more compact, but sligtly less devastating in close quarters while removing potential backfire. \
 			Their priming and proplusion was altered too for more robust speed, so it has strong recoil."
 	icon = 'icons/obj/guns/projectile/rocket.dmi'
 	icon_state = "rocket" //placeholder, needs new sprites

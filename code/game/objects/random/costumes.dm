@@ -145,7 +145,7 @@
 				/obj/item/clothing/suit/costume/job/nun,\
 				/obj/item/clothing/suit/costume/misc/santa,\
 				/obj/item/clothing/suit/costume/misc/snowman,\
-				/obj/item/clothing/suit/costume/misc/rainbowovercloak,\
+				//obj/item/clothing/suit/costume/misc/rainbowovercloak,
 				/obj/item/clothing/under/costume/history/centurion,\
 				/obj/item/clothing/under/costume/history/geisha,\
 				/obj/item/clothing/under/costume/history/gladiator,\
@@ -170,7 +170,8 @@
 				/obj/item/clothing/under/costume/misc/rainbowclown,\
 				/obj/item/clothing/under/costume/misc/rainbowjumpsuit,\
 				/obj/item/clothing/under/costume/misc/rainbowskirt,\
-				/obj/item/clothing/under/costume/misc/rainbowundercloak)
+				//obj/item/clothing/under/costume/misc/rainbowundercloak
+				)
 
 /obj/random/costume/body_kinky
 	name = "random kinky body"

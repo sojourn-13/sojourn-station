@@ -9,47 +9,47 @@
  * Security
  */
 /obj/item/clothing/under/rank/warden
-	desc = "A durable gunnery sergeant's jumpsuit, designed to provide moderate combat protection."
-	name = "ironhammer gunnery sergeant's jumpsuit"
+	desc = "A durable supply specialist's jumpsuit, designed to provide moderate combat protection."
+	name = "supply specialist's jumpsuit"
 	icon_state = "warden"
 	item_state = "r_suit"
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/head/rank/warden
-	name = "ironhammer gunnery sergeant's helmet"
-	desc = "A distinctive red military helmet signifying a gunnery sergeant rank."
+	name = "supply specialist's helmet"
+	desc = "A distinctive red military helmet signifying a supply specialist rank."
 	icon_state = "policehelm"
 	body_parts_covered = 0
 
 /obj/item/clothing/under/rank/warden/skirt
-	name = "Gunnery Sergeant jumpskirt"
-	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for more robust protection. It has the words \"Gunnery Sergeant\" written on the shoulders."
+	name = "supply specialist's jumpskirt"
+	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for more robust protection. It has the words \"Supply Specialist\" written on the shoulders."
 	icon_state = "warden_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/rank/security
-	name = "ironhammer operative's jumpsuit"
-	desc = "A durable operative's jumpsuit, designed to provide moderate combat protection."
+	name = "marshal officer's jumpsuit"
+	desc = "A durable officer's jumpsuit, designed to provide moderate combat protection."
 	icon_state = "security"
 	item_state = "ba_suit"
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/security/skirt
-	name = "ironhammer operative's jumpskirt"
-	desc = "A durable operative's jumpsuit, designed to provide moderate combat protection."
+	name = "marshal officer's jumpskirt"
+	desc = "A durable officer's jumpsuit, designed to provide moderate combat protection."
 	icon_state = "security_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/rank/medspec
-	name = "ironhammer medical specialist's jumpsuit"
-	desc = "A durable medical specialist's jumpsuit, designed to provide moderate combat protection."
+	name = "militia corpmen's jumpsuit"
+	desc = "A durable corpsmen's jumpsuit, designed to provide moderate combat protection."
 	icon_state = "medspec"
 	item_state = "ba_suit"
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/medspec/skirt
-	name = "Medical Specialist's jumpskirt"
-	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for robust protection. It has the words \"Medical Specialist\" written on the shoulders."
+	name = "militia corpmen's jumpskirt"
+	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for robust protection. It has the words \"Corpsmen\" written on the shoulders."
 	icon_state = "medspec_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
@@ -63,22 +63,22 @@
  * Detective
  */
 /obj/item/clothing/under/rank/inspector
-	name = "ironhammer inspector's turtleneck"
-	desc = "A casual turtleneck and jeans serving as civilian inspector clothing."
+	name = "ranger's turtleneck"
+	desc = "A casual turtleneck and jeans serving as civilian ranger clothing."
 	icon_state = "insp_under"
 	item_state = "insp_under"
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/inspector/suit
-	name = "ironhammer inspector's suit"
-	desc = "A rumpled white shirt combined with grey slacks and a tie worn by inspectors."
+	name = "ranger's suit"
+	desc = "A rumpled white shirt combined with grey slacks and a tie worn by rangers."
 	icon_state = "detective"
 	item_state = "det"
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/inspector/uniform
-	name = "ironhammer inspector's uniform"
-	desc = "A tidy black uniform adorned with an ironhammer inspector insignia."
+	name = "rangers uniform"
+	desc = "A tidy black uniform adorned with a ranger insignia."
 	icon_state = "det_corporate"
 	item_state = "det_corporate"
 
@@ -118,23 +118,23 @@
  * Ironhammer Commander
  */
 /obj/item/clothing/under/rank/ih_commander
-	desc = "It's a jumpsuit worn by those few with the dedication to achieve the position of \"Ironhammer Commander\". It has additional armor to protect the wearer."
-	name = "ironhammer commander's jumpsuit"
+	desc = "It's a jumpsuit worn by those few with the dedication to achieve the position of \"Warrant Officer\". It has additional armor to protect the wearer."
+	name = "warrant officer's jumpsuit"
 	icon_state = "hos"
 	item_state = "r_suit"
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/ih_commander/skirt
-	name = "Ironhammer Commander's jumpskirt"
-	desc = "It's a jumpskirt worn by those few with the dedication to achieve the position of \"Ironhammer Commander\". It has additional armor to protect the wearer."
+	name = "warrant officer's jumpskirt"
+	desc = "It's a jumpskirt worn by those few with the dedication to achieve the position of \"Warrant Officer\". It has additional armor to protect the wearer."
 	icon_state = "hos_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 /obj/item/clothing/head/rank/commander
-	name = "ironhammer commander's Hat"
-	desc = "The hat of the Ironhammer Commander. For showing the officers who's in charge."
+	name = "warrant officer's Hat"
+	desc = "The hat of the Warrant Officer. For showing the officers who's in charge."
 	icon_state = "hoshat"
 	body_parts_covered = 0
-	siemens_coefficient = 0.8
+	siemens_coefficient = 0.6
 
 /obj/item/clothing/head/rank/commander/dermal
 	name = "dermal armor Patch"
@@ -162,7 +162,7 @@
 //Jensen cosplay gear
 /obj/item/clothing/under/rank/ih_commander/jensen
 	desc = "You never asked for anything that stylish."
-	name = "Ironhammer Commander's jumpsuit"
+	name = "stylish augmented jumpsuit"
 	icon_state = "jensen"
 	item_state = "jensen"
 
@@ -179,7 +179,7 @@
  */
 
 /obj/item/clothing/under/rank/cadet
-	name = "Ironhammer Cadet's jumpskirt"
+	name = "marshal cadet's jumpskirt"
 	desc = "It's a sailor's uniform used for cadets in training, though more frequently in acts of hazing."
 	icon_state = "cadet"
 	item_state = "cadet"

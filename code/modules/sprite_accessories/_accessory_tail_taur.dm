@@ -8,6 +8,7 @@
 
 // Taur sprites are now a subtype of tail since they are mutually exclusive anyway.
 
+/*
 /datum/sprite_accessory/tail/taur
 	name = "You should not see this..."
 	icon = 'icons/mob/sprite_accessory/taurs.dmi'
@@ -359,3 +360,5 @@
 	ckeys_allowed = null
 	colored_layers = 2
 	extra_overlay_w = "alraunecolor_closed_markings"
+
+*/

@@ -195,7 +195,7 @@
 	icon_state = "snowsuit_command"
 
 /obj/item/clothing/suit/storage/snowsuit/security
-	name = "ironhammer snowsuit"
+	name = "security snowsuit"
 	desc = "A special ironhammer coat designed for cold environments."
 	icon_state = "snowsuit_security"
 
@@ -205,12 +205,12 @@
 	icon_state = "snowsuit_medical"
 
 /obj/item/clothing/suit/storage/snowsuit/engineering
-	name = "technomancer snowsuit"
+	name = "guild snowsuit"
 	desc = "A special technomancer coat designed for cold environments."
 	icon_state = "snowsuit_engineering"
 
 /obj/item/clothing/suit/storage/snowsuit/cargo
-	name = "guild snowsuit"
+	name = "lonestar snowsuit"
 	desc = "A special guild coat designed for cold environments."
 	icon_state = "snowsuit_cargo"
 

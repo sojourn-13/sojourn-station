@@ -88,9 +88,9 @@
 	/obj/random/cloth/armor = 60,
 	/obj/random/cloth/armor = 60)
 	lore = "Logbook:<br>\
-	 Half-rations unless we want roachmeat? What next, ship's biscuit and weevils? I'll choose the lesser of two weevils, black bloody mutiny.<br>\
- To hell with this half-assed aristocrat and his lording over us because he was born wearing a powdered wig. A millennium late, you poser.<br>\
- Jellico slipped me this with a wink and a nod. The Captain wants to play by old rules, we'll stick a plank out the airlock.<br>\
+	 Half-pay unless we want to be fired? What next, hard biscuit and weevils? I'll choose the lesser of two weevils, black bloody mutiny.<br>\
+ To hell with this half-assed council and there lording over us because they were born wearing a powdered wig. A millennium late, you posers.<br>\
+ Jellico slipped me this with a wink and a nod. The council wants to play by old rules, settle this with old rules.<br>\
  Meet at %D"
 
 
@@ -98,16 +98,16 @@
 /datum/stash/weapon/mutiny/overworked
 	contents_list_extra = list(/obj/item/clothing/mask/gas = 3)
 	lore = "Logbook:<br>\
-	 Engineering has worked for six days in pressure suits with the rest of us packed in amidships.<br>\
- The toilets don't work, the air has been rebreathed by seventy mouths seven million times, and I can smell the damn cook's halitosis coming out the one working air vent because he's sleeping next to the one working scrubber.<br>\
- Half of the crew wants to hit the pods, the other half wants their bonus pay. I know what half I'm in, and we're meeting at %D. Fuck this captain. Once we find some softsuits, that is."
+	 Engineering has worked for six days in pressure suits with the rest of us packed in the upper colony.<br>\
+ It's been far too much of a wait and I just want to get my fucking things and try for living in the wilds of the surface.<br>\
+A few people are talking about striking out, just like Jeremiah did. I'm in and we're meeting at %D. Fuck this place. Once we find enough guns, that is."
 
 
  /datum/stash/weapon/mutiny/warden
 	contents_list_extra = list(/obj/random/gun_normal = 3, /obj/random/ammo = 6)
 	directions = DIRECTION_IMAGE
-	lore = "Warden,<br>\
- You and I both know this rubber buckshot bullshit is going to get us all killed when the convicts realize they outnumber us sixty to one.<br>\
+	lore = "Commander,<br>\
+ You and I both know this rubber buckshot bullshit is going to get us all killed when the convicts realize they outnumber us ten to one.<br>\
  Sarish tells me there's a stash of real heaters wherever the hell this is.<br>\
  Crazy bitch sends a picture instead of a fucking coordinate. %D"
 
@@ -117,7 +117,8 @@
  	//Make sure there's a shotgun with slugs in the stash, as described in the text.
  	//Also the wardens were hoarding food
  	contents_list_extra = list(/obj/random/gun_shotgun = 1, /obj/item/weapon/storage/box/shotgunammo/slug = 1, /obj/random/rations = 6)
- 	lore = "Convicts figured out the starvation rations are neither accidental nor temporary.<br>\
- Plan B is to shoot troublemakers until we balance the calorie equation.<br>\
+ 	lore = "I'm getting really tired of putting up with the day to day shit.<br>\
+ Plan B is to shoot troublemakers until the people we brig start acting nice.<br>\
  Just keep it semi-justifiable, don't leave any slugs in the walls, and stick the lethals back at %D when you're done.<br>\
  Can't have the marshals find out we're breaking those precious regulations."
+

@@ -63,13 +63,13 @@
 
 		if(!requestonly)
 			dat += "<HR>\n"
-			dat += "<b>Guild Credits: [get_account_credits(department_accounts[DEPARTMENT_GUILD])][CREDS]</b><BR><BR>"
+			dat += "<b>Guild Credits: [get_account_credits(department_accounts[DEPARTMENT_LSS])][CREDS]</b><BR><BR>"
 
 		dat += "<A href='?src=\ref[src];order=categories'>[requestonly ? "Request" : "Order"] items</A><BR>"
 
 		if(!requestonly)
 			dat += "<A href='?src=\ref[src];viewmes=1'>View messages</A><BR>"
-			dat += "<A href='?src=\ref[src];viewaccount=\ref[department_accounts[DEPARTMENT_GUILD]]'>View banking data</A><BR>"
+			dat += "<A href='?src=\ref[src];viewaccount=\ref[department_accounts[DEPARTMENT_LSS]]'>View banking data</A><BR>"
 
 		dat += {"
 		<A href='?src=\ref[src];viewrequests=1'>View requests</A><BR>
@@ -94,7 +94,7 @@
 	if(..())
 		return TRUE
 
-	var/datum/money_account/supply_account = department_accounts[DEPARTMENT_GUILD]
+	var/datum/money_account/supply_account = department_accounts[DEPARTMENT_LSS]
 
 	if(isturf(loc) && ( in_range(src, usr) || issilicon(usr) ) )
 		usr.set_machine(src)

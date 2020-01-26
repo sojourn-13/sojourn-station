@@ -12,13 +12,13 @@
     tipText = "The Fuhrer roach can call for an entire battalion of reinforcement roaches. If you hear it scream, RUN!"
 
 /tipsAndTricks/gameplay/spiderPoison
-    tipText = "Spiders are a powerful foe that can poison or tranquilize their targets. Fighting them alone is a bad idea."
+    tipText = "Spiders are a powerful foe that can poison their targets. Fighting them alone is a bad idea."
 
 /tipsAndTricks/gameplay/carryFlashlight
     tipText = "Always carry a flashlight and some spare power cells. Darkness is dangerous."
 
 /tipsAndTricks/gameplay/modifyTools
-    tipText = "You can find or buy many modifications to improve your tools, and turn them into effective weapons."
+    tipText = "You can find or buy many modifications to improve your tools orurn them into effective weapons."
 
 /tipsAndTricks/gameplay/spiderslip
     tipText = "Spiders and roaches can be stunned and slipped like humans. When facing off against either, try to even the fight by either flashing them with a flash, or leading them to slip on some spilled water."

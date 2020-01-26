@@ -30,7 +30,7 @@ SUBSYSTEM_DEF(supply)
 
 
 /datum/controller/subsystem/supply/stat_entry()
-	..("Credits: [get_account_credits(department_accounts[DEPARTMENT_GUILD])]")
+	..("Credits: [get_account_credits(department_accounts[DEPARTMENT_LSS])]")
 
 //To stop things being sent to centcomm which should not be sent to centcomm. Recursively checks for these types.
 /datum/controller/subsystem/supply/proc/forbidden_atoms_check(atom/A)
@@ -73,7 +73,7 @@ SUBSYSTEM_DEF(supply)
 	msg += "<br>Total exports value: [points] credits.<br>"
 	exports.Cut()
 
-	var/datum/money_account/GA = department_accounts[DEPARTMENT_GUILD]
+	var/datum/money_account/GA = department_accounts[DEPARTMENT_LSS]
 	var/datum/transaction/T = new(points, "Asters Guild", "Exports", "Asters Automated Trading System")
 	T.apply_to(GA)
 
@@ -166,7 +166,7 @@ SUBSYSTEM_DEF(supply)
 
 //Deducts credits from the guild account to pay for external purchases
 /proc/pay_for_order(datum/supply_order/order, terminal)
-	var/datum/money_account/GA = department_accounts[DEPARTMENT_GUILD]
+	var/datum/money_account/GA = department_accounts[DEPARTMENT_LSS]
 	if (!GA)
 		return FALSE
 

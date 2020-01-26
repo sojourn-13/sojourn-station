@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 
 /obj/item/device/gps
 	name = "global positioning system"
-	desc = "Helping lost spacemen find their way through the planets since 2016."
+	desc = "Helping lost spacemen find their way through the planets since 2016. Still works, even after the bluespace crash."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "gps-c"
 	w_class = 2

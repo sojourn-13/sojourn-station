@@ -106,7 +106,7 @@
 
 
 /***************************************
-Advanced Voidsuit: Technomancer Exultant
+Advanced Voidsuit: Guild Master
 ****************************************/
 /obj/item/weapon/rig/ce
 	name = "advanced voidsuit control module"
@@ -161,7 +161,7 @@ Advanced Voidsuit: Technomancer Exultant
 	mag_slow = 1
 
 /***************************************
-	Hazmat: Moebius Overseer
+	Hazmat: Chief Research Overseer
 ****************************************/
 /obj/item/weapon/rig/hazmat
 	name = "AMI control module"
@@ -257,7 +257,7 @@ Advanced Voidsuit: Technomancer Exultant
 /obj/item/weapon/rig/hazard
 	name = "hazard hardsuit control module"
 	suit_type = "hazard hardsuit"
-	desc = "A Security hardsuit designed for prolonged EVA in dangerous environments."
+	desc = "A security hardsuit designed for prolonged EVA in dangerous environments."
 	icon_state = "hazard_rig"
 	armor = list(
 		melee = 40,

@@ -42,8 +42,8 @@
 
 /obj/structure/cryopod_spawner/ironhammer
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
-	spawn_faction = "Ironhammer"
-	spawn_role = "Marine"
+	spawn_faction = "Marshal"
+	spawn_role = "Warrant Officer"
 
 	stat_modifiers = list(
 		STAT_ROB = 40,
@@ -53,7 +53,7 @@
 
 /obj/structure/cryopod_spawner/medical
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
-	spawn_faction = "Moebius"
+	spawn_faction = "Soteria"
 	spawn_role = "Doctor"
 
 	stat_modifiers = list(
@@ -64,8 +64,8 @@
 
 /obj/structure/cryopod_spawner/technomancer
 	outfit_type = /decl/hierarchy/outfit/job/engineering/exultant
-	spawn_faction = "Technomancer"
-	spawn_role = "Exultant"
+	spawn_faction = "Guild"
+	spawn_role = "Guild Master"
 
 	stat_modifiers = list(
 		STAT_MEC = 40,
@@ -76,7 +76,7 @@
 
 /obj/structure/cryopod_spawner/serbian
 	outfit_type = /decl/hierarchy/outfit/antagonist/mercenary/equipped
-	spawn_faction = "Serbian"
+	spawn_faction = "Void Wolf"
 	spawn_role = "Operative"
 
 	stat_modifiers = list(

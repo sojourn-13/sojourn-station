@@ -338,7 +338,8 @@ SUBSYSTEM_DEF(job)
 			remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
 			remembered_info += "<b>Your department's account funds are:</b> [department_account.money][CREDS]<br>"
 		if(job.head_position)
-			remembered_info += "<b>Your part of nuke code:</b> [SSticker.get_next_nuke_code_part()]<br>"
+			//remembered_info += "<b>Your part of nuke code:</b> [SSticker.get_next_nuke_code_part()]<br>"
+			//we dont have a station nuke so this isn't needed
 			department_account.owner_name = H.real_name //Register them as the point of contact for this account
 
 		H.mind.store_memory(remembered_info)
@@ -353,9 +354,9 @@ SUBSYSTEM_DEF(job)
 				return H.Robotize()
 			if("AI")
 				return H
-			if("Captain")
+			if("Premier")
 				var/sound/announce_sound = (SSticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/misc/boatswain.ogg', volume=20)
-				captain_announcement.Announce("All hands, Captain [H.real_name] on deck!", new_sound=announce_sound)
+				captain_announcement.Announce("Premier [H.real_name] has signed in.", new_sound=announce_sound)
 
 	//loadout items.
 	if(spawn_in_storage)

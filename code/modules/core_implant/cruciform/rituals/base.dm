@@ -17,7 +17,7 @@
 /datum/ritual/cruciform/base/relief
 	name = "Relief"
 	phrase = "Et si ambulavero in medio umbrae mortis non timebo mala"
-	desc = "Short litany to relieve pain of the afflicted."
+	desc = "A short litany to relieve pain of the afflicted."
 	power = 50
 	chance = 33
 
@@ -29,7 +29,7 @@
 /datum/ritual/cruciform/base/soul_hunger
 	name = "Soul Hunger"
 	phrase = "Panem nostrum cotidianum da nobis hodie"
-	desc = "Litany of piligrims, helps better withstand hunger."
+	desc = "Litany of pilgrims that helps better withstand hunger."
 	power = 50
 	chance = 33
 
@@ -42,7 +42,7 @@
 /datum/ritual/cruciform/base/entreaty
 	name = "Entreaty"
 	phrase = "Deus meus ut quid dereliquisti me"
-	desc = "Call for help, that other cruciform bearers can hear."
+	desc = "Call for help, allowing other cruciform bearers to hear your cries."
 	power = 50
 	chance = 60
 
@@ -60,7 +60,7 @@
 /datum/ritual/cruciform/base/reveal
 	name = "Reveal Adversaries"
 	phrase = "Et fumus tormentorum eorum ascendet in saecula saeculorum: nec habent requiem die ac nocte, qui adoraverunt bestiam, et imaginem ejus, et si quis acceperit caracterem nominis ejus."
-	desc = "Gain knowledge of your surroundings, to reveal evil in people and places. Can tell you about hostile creatures around you, rarely can help you spot traps, and sometimes let you sense a changeling."
+	desc = "Gain knowledge of your surroundings to reveal evil in people and places. This can tell you about hostile creatures around you, rarely can help you spot traps and sometimes let you sense a monster disguised as a person."
 	power = 35
 
 /datum/ritual/cruciform/base/reveal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
@@ -81,15 +81,34 @@
 				was_triggired = TRUE
 				break
 	if (prob(80) && (locate(/obj/structure/wire_splicing) in view(7, H))) //Add more traps later
-		to_chat(H, SPAN_WARNING("Something wrong with this area. Tread carefully."))
+		to_chat(H, SPAN_WARNING("Something is wrong with this area. Tread carefully."))
 		was_triggired = TRUE
 	if (prob(20))
 		for(var/mob/living/carbon/human/target in range(14, H))
 			if(target.mind && target.mind.changeling)
-				to_chat(H, SPAN_DANGER("Something's ire is upon you! Twisted and evil mind touches you for a moment, leaving you in cold sweat."))
+				to_chat(H, SPAN_DANGER("Something's ire is upon you! A twisted and evil mind touches you for a moment, leaving you in cold sweat."))
 				was_triggired = TRUE
 	if (!was_triggired)
-		to_chat(H, SPAN_NOTICE("There is nothing there. You feel safe."))
+		to_chat(H, SPAN_NOTICE("There is nothing here. You feel safe."))
 	return TRUE
 
 
+/datum/ritual/cruciform/base/message
+	name = "Sending"
+	phrase = "Audit, me audit vocationem. Ego nuntius vobis."
+	desc = "Send a message anonymously through the void, straight into the mind of another disciple."
+	power = 30
+
+/datum/ritual/cruciform/base/message/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+	var/mob/living/carbon/human/H = pick_disciple_global(user, TRUE)
+	if (!H)
+		return
+
+	if(user == H)
+		fail("You feel stupid.",user,C,targets)
+		return FALSE
+
+	var/text = input(user, "What message will you send to the target? The message will be recieved telepathically and they will not know who it is from unless you reveal yourself.", "Sending a message") as (text|null)
+	if (!text)
+		return
+	to_chat(H, "<span class='notice'>A voice speaks in your mind: \"[text]\"</span>")

@@ -19,7 +19,7 @@
 	story_type = STORY_CRIME
 	directions = DIRECTION_IMAGE
 	lore = "Dear Diary,<br>\
-That prick First Officer keeps doing inspections of personal lockers, claiming some idiot terrorist\
+That prick premier keeps doing inspections of personal lockers, claiming some idiot terrorist\
 threat. I think he just wants to go poking around through my unmentionables, but still, he'll start \
 wondering where all these little odds and ends come from, or what kind of favors he can get. I'll \
 just stuff it here for now, and he can go stuff himself. %D"
@@ -60,7 +60,7 @@ Signed your pal who isn't named Bob."
 
 /datum/stash/junk/guild/crackdown
 	story_type = STORY_CRIME
-	lore = "Guildsman,<br>\
+	lore = "Fellows,<br>\
  With the recent crackdown on what sorts of merchandise we can sell I am going to teach you a vital lesson in entrepreneurship.<br>\
  <br>\
 
@@ -71,11 +71,11 @@ Signed your pal who isn't named Bob."
 /datum/stash/junk/guild/protection
 	contents_list_external = list(/obj/item/remains/human = 1) //Corrupt security murdered this guy for not paying protection money
 	story_type = STORY_CRIME
-	lore = "Guild Master,<br>\
+	lore = "CEO,<br>\
  The current protection racket for our little lemonade stand is exceeding tolerable levels.<br>\
  I have relocated to %D, just in case you'd think I made off with the lot.<br>\
  <br>\
- Send people my way if they ask, but when those Ironhammers start bitching about where I went, get it on tape, would you?"
+ Send people my way if they ask, but when those thugs start bitching about where I went, get it on tape, would you?"
 
 
 /datum/stash/junk/guild/drop
@@ -85,6 +85,6 @@ Signed your pal who isn't named Bob."
 	Its here for you. %D. <br>\
 	Now I've done my end of the deal, so I'd best find your end of the deal where it belongs.<br>\
 	<br>\
-	You guilds-men have your reputation to uphold, do you not?<br>\
+	You merchants have your reputation to uphold, do you not?<br>\
 	<br>\
 	Johannes"

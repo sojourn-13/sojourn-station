@@ -266,7 +266,7 @@
 	contents_cost = 700
 
 /obj/structure/reagent_dispensers/cahorsbarrel
-	name = "NeoTheology Cahors barrel"
+	name = "Absolutism Cahors barrel"
 	desc = "Barrel a day - keeps liver away."
 	icon_state = "barrel"
 	volume = 1000

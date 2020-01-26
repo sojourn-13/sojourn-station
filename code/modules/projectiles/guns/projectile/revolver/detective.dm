@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/revolver/detective
-	name = "FS REV .38 \"Havelock\""
-	desc = "A cheap Frozen Star knock-off of a Smith & Wesson Model 10. Uses .38-Special rounds."
+	name = "HS REV .38 \"Havelock\""
+	desc = "A cheap Heckler and Sons knock-off of a Smith & Wesson Model 10. Uses .38-Special rounds."
 	icon = 'icons/obj/guns/projectile/detective.dmi'
 	icon_state = "detective"
 	drawChargeMeter = FALSE

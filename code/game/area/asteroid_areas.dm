@@ -6,6 +6,30 @@
 	sound_env = ASTEROID
 	vessel = null
 
+/area/mine/prep
+	name = "Lonestar Mining Prep"
+
+/area/mine/processing
+	name = "Lonestar Ore Processing"
+
+/area/mine/hallway
+	name = "Lonestar General"
+
+/area/mine/medical
+	name = "Lonestar Triage"
+
+/area/mine/livingarea
+	name = "Lonestar Quarters"
+
+/area/mine/atmos
+	name = "Lonestar Atmos"
+
+/area/mine/power
+	name = "Lonestar Machine Room"
+
+/area/mine/lockers
+	name = "Lonestar Locker Room"
+
 /area/mine/explored
 	name = "Mine"
 	icon_state = "explored"

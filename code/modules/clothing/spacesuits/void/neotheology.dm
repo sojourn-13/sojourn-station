@@ -1,5 +1,5 @@
 /obj/item/clothing/head/helmet/space/void/acolyte
-	name = "Acolyte hood"
+	name = "Vector hood"
 	desc = "Even the most devout deserve head protection."
 	icon_state = "acolyte"
 	armor = list(
@@ -12,8 +12,8 @@
 	)
 
 /obj/item/clothing/suit/space/void/acolyte
-	name = "Acolyte armor"
-	desc = "Worn heavy, steadfast in the name of God."
+	name = "Vector armor"
+	desc = "Worn, heavy, steadfast in the name of God."
 	icon_state = "acolyte"
 	slowdown = 0.15
 	armor = list(

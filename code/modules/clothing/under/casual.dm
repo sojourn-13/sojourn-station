@@ -1,6 +1,6 @@
 /*Overalls*/
 /obj/item/clothing/under/overalls/jumpsuitfoundry
-	name = "foundry jumpsuit"
+	name = "mechanic jumpsuit"
 	desc = "A dirty light navy jumpsuit with a well-worn look."
 	icon_state = "mechanicdirt"
 	item_state = "mechanicdirt"

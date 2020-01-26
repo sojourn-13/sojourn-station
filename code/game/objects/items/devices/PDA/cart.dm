@@ -119,7 +119,7 @@
 	. = ..()
 
 /obj/item/weapon/cartridge/quartermaster
-	name = "\improper Asters Guild Parts & Vendors cartridge"
+	name = "\improper Lonestar Parts & Vendors cartridge"
 	desc = "Perfect for the Guild Merchant on the go!"
 	icon_state = "cart-q"
 	access_quartermaster = 1

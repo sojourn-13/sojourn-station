@@ -8,7 +8,7 @@
 //Captain
 
 /obj/item/clothing/head/rank/captain
-	name = "captain's hat"
+	name = "premier's hat"
 	icon_state = "captain"
 	desc = "It's good being the king."
 	item_state_slots = list(
@@ -18,7 +18,7 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/head/rank/captain/cap
-	name = "captain's cap"
+	name = "premier's cap"
 	desc = "You fear to wear it for the negligence it brings."
 	icon_state = "capcap"
 
@@ -30,13 +30,13 @@
 
 //HOP
 /obj/item/clothing/head/rank/first_officer
-	name = "first officer's hat"
+	name = "steward's hat"
 	desc = "A stylish hat that both protects you from enraged former-crewmembers and gives you a false sense of authority."
 	icon_state = "hopcap"
 
 //Chaplain
 /obj/item/clothing/head/rank/chaplain
-	name = "preacher's hood"
+	name = "prime's hood"
 	desc = "It's hood that covers the head. It keeps you warm during the space winters."
 	icon_state = "chaplain_hood"
 	flags_inv = BLOCKHAIR
@@ -51,28 +51,28 @@
 
 //Security
 /obj/item/clothing/head/rank/ironhammer
-	name = "ironhammer beret"
-	desc = "A navy blue Ironhammer beret."
+	name = "marshal beret"
+	desc = "A navy blue marshal beret."
 	icon_state = "beret_navy_officer"
 
 /obj/item/clothing/head/rank/commander/beret
-	name = "ironhammer commander beret"
-	desc = "A grey Ironhammer beret signifying a Commander position."
+	name = "warrant officer beret"
+	desc = "A grey warrant officer beret signifying a command position."
 	icon_state = "beret_navy_hos"
 
 /obj/item/clothing/head/rank/commander/cap
-	name = "ironhammer commander cap"
-	desc = "An Ironhammer cap signifying a Commander position."
+	name = "warrant officer cap"
+	desc = "A marshal cap signifying a command position."
 	icon_state = "ihc_cap"
 
 /obj/item/clothing/head/rank/warden/beret
-	name = "ironhammer sergeant beret"
-	desc = "A red Ironhammer beret signifying a Gunnery Sergeant position."
+	name = "supply specialist beret"
+	desc = "A red marshal beret signifying a supply specialist position."
 	icon_state = "beret_navy_warden"
 
 /obj/item/clothing/head/rank/engineering
-	name = "technomancer beret"
-	desc = "A yellow beret signifying a Technomancer position."
+	name = "adept beret"
+	desc = "A yellow beret signifying a guild adept position."
 	icon_state = "beret_engineering"
 
 /obj/item/clothing/head/beret/purple
@@ -134,12 +134,12 @@
 	icon_state = "beret_militia"
 
 /obj/item/clothing/head/rank/armorer/cap
-	name = "Armorer's cap"
+	name = "Supply Specialist's cap"
 	desc = "A faded black cap with the badge of a Blackshield Master-at-Arms."
 	icon_state = "milsoft"
 
 /obj/item/clothing/head/rank/armorer/beret
-	name = "Armorer's beret"
+	name = "Supply Specialist's beret"
 	desc = "A faded black beret with the badge of a Blackshield Master-at-Arms."
 	icon_state = "beret_militia"
 

@@ -5,7 +5,7 @@
 
 /obj/item/weapon/rig/merc
 	name = "crimson hardsuit control module"
-	desc = "A blood-red hardsuit featuring some fairly illegal technology."
+	desc = "A blood-red hardsuit featuring some fairly advanced technology."
 	icon_state = "merc_rig"
 	suit_type = "crimson hardsuit"
 	armor = list(

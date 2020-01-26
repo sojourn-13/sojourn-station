@@ -21,7 +21,6 @@
 	name = "pharoah hound tail (Shock Diamond)"
 	desc = ""
 	icon_state = "shock"
-	ckeys_allowed = list("icowom")
 
 /datum/sprite_accessory/wings/featheredlarge //Made by Natje!
 	name = "large feathered wings (colorable)"
@@ -53,7 +52,6 @@
 	name = "citheronia wings"
 	desc = ""
 	icon_state = "citheronia_wings"
-	ckeys_allowed = list("kira72")
 
 /datum/sprite_accessory/wings/feathered
 	name = "feathered wings, colorable"
@@ -108,25 +106,21 @@
 	name = "demon wings (Sepulchre)"
 	desc = ""
 	icon_state = "sepulchre_wings"
-	ckeys_allowed = list("sepulchre")
 
 /datum/sprite_accessory/wings/miria_fluffdragon
 	name = "fluffdragon wings (Miria Masters)"
 	desc = ""
 	icon_state = "miria-fluffdragontail"
-	ckeys_allowed = list("miriamasters")
 
 /datum/sprite_accessory/wings/scree
-	name = "green taj wings (Scree)"
+	name = "green wings"
 	desc = ""
 	icon_state = "scree-wings"
-	ckeys_allowed = list("scree")
 
 /datum/sprite_accessory/wings/liquidfirefly_gazer //I g-guess this could be considered wings?
 	name = "gazer eyestalks"
 	desc = ""
 	icon_state = "liquidfirefly-eyestalks"
-	//ckeys_allowed = list("liquidfirefly","seiga") //At request.
 
 /datum/sprite_accessory/wings/moth_full
 	name = "moth antenna and wings"
@@ -137,12 +131,13 @@
 	name = "wingwolf wings (Kerena)"
 	desc = ""
 	icon_state = "kerena-wings"
-	ckeys_allowed = list("somekindofpony")
 
+/*
 /datum/sprite_accessory/wings/snag
 	name = "xenomorph backplate"
 	desc = ""
 	icon_state = "snag-backplate"
+*/
 
 /datum/sprite_accessory/wings/nevrean
 	name = "nevrean wings/fantail"

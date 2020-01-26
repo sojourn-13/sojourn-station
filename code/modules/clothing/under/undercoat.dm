@@ -1,5 +1,6 @@
 /*Black undercoats*/
 
+/*
 /obj/item/clothing/under/undercoat
 	name = "black undercoat"
 	initial_name = "black undercoat"
@@ -232,3 +233,5 @@
 	desc = "A teshari undercoat in grey."
 	icon_state = "tesh_uniform_lgg"
 	item_state = "gy_suit"
+
+*/

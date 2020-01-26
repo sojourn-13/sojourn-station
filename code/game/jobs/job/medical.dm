@@ -1,13 +1,13 @@
 /datum/job/cmo
-	title = "Moebius Biolab Officer"
-	flag = MBO
+	title = "Chief Biolab Overseer"
+	flag = CBO
 	head_position = 1
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL | COMMAND
-	faction = "CEV Eris"
+	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Moebius Expedition Overseer"
+	supervisors = "the Nadezhda Council"
 	selection_color = "#94a87f"
 	req_admin_notify = 1
 	also_known_languages = list(LANGUAGE_CYRILLIC = 10, LANGUAGE_SERBIAN = 5)
@@ -21,7 +21,8 @@
 		access_external_airlocks, access_paramedic, access_research_equipment
 	)
 
-	ideal_character_age = 50
+	ideal_character_age = 40
+	minimum_character_age = 30
 
 	stat_modifiers = list(
 		STAT_BIO = 50,
@@ -35,40 +36,41 @@
 							 /datum/computer_file/program/chem_catalog,
 							 /datum/computer_file/program/reports)
 
-	description = "You are the head of the Moebius Medical branch, contracted by the captain to provide medical services to the crew.<br>\
+	description = "You are the head of the Soteria medical branch, contracted by the colony to provide medical services to the crew.<br>\
 You are here to keep everyone alive and ideally, at work. You should make choices that preserve life as much as possible.<br>\
 
-The handling of the medbay is your domain, although remember that both medical and science are branches of Moebius corp, so your colleagues have free access to your resources, and vice versa"
+The handling of the medbay is your domain, although remember that both medical and science are branches of Soteria Institute so your colleagues have free access to your resources and vice versa"
 
 	duties = "Organise the doctors under your command to help save lives. Assign patients, and check on their progress periodically<br>\
-Dispatch your paramedics to distress calls, and corpse recoveries as needed<br>\
-Use department funds to purchase medical supplies and equipment as needed<br>\
-Advise the captain on medical issues that concern the crew<br>\
-Advise the crew on ethical issues<br>\
+Dispatch your paramedics to distress calls, and corpse recoveries as needed.<br>\
+Use department funds to purchase medical supplies and equipment as needed.<br>\
+Advise the council on medical issues that concern the crew.<br>\
+Advise the crew on ethical issues.<br>\
 In times of crisis, lock down the medbay to protect those within, from outside threats."
 
 	loyalties = "As a doctor, your first loyalty is to your conscience. You swore an oath to save lives and do no harm. It falls on you to be the ethical and moral core of the crew. You should speak up for prisoners, captured lifeforms, and test subjects. Nobody else will.<br>\
 
-Your second loyalty is to your career with Moebius corp, and to your coworkers in both branches of moebius. Help out your scientific colleagues, and aid in their pursuit of knowledge."
+Your second loyalty is to the colonies crew and to your coworkers in both branches of Soteria. Help out your scientific colleagues and aid in their pursuit of knowledge."
 
 /obj/landmark/join/start/cmo
-	name = "Moebius Biolab Officer"
+	name = "Chief Biolab Overseer"
 	icon_state = "player-green-officer"
 	join_tag = /datum/job/cmo
 
 
 /datum/job/doctor
-	title = "Moebius Doctor"
+	title = "Soteria Doctor"
 	flag = DOCTOR
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
-	faction = "CEV Eris"
+	faction = MAP_FACTION
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "the Moebius Biolab Officer"
+	supervisors = "the Chief Biolab Overseer"
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
+	minimum_character_age = 25
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 
@@ -87,44 +89,44 @@ Your second loyalty is to your career with Moebius corp, and to your coworkers i
 							/datum/computer_file/program/camera_monitor)
 
 
-	description = "You are a highly educated professional doctor, working a placement aboard Eris to treat the injured.<br>\
+	description = "You are a highly educated professional doctor, working on the colony to treat the injured.<br>\
 Your tasks will primarily keep you inside medbay, the place needs to have a doctor onsite at all times to treat incoming wounded. As a general rule, you should not leave medbay if you're the only one in it, make sure someone is covering for you if you go elsewhere.<br>\
 
 As a doctor, a broad range of medical procedures fall under your potential purview. You are not expected to be able to perform all of these yourself, being a specialist is fine. <br>\
 <br>\
-	-Diagnostics: Figuring out what's wrong and how to fix it as quickly as possible. <br>\
-	-General Treatment: Administering bandages, medicine, casts and placing people in a cryocell as necessary<br>\
-	-Surgery: Opening the body under general anaesthetic to treat broken bones, organ damage and internal bleeding<br>\
-	-Virology: The study and manipulation of viruses<br>\
+	-Diagnostics: Figuring out what's wrong and how to fix it as quickly as possible.<br>\
+	-General Treatment: Administering bandages, medicine, casts and placing people in a cryocell as necessary.<br>\
+	-Surgery: Opening the body under general anaesthetic to treat broken bones, organ damage and internal bleeding.<br>\
+	-Virology: The study and manipulation of viruses.<br>\
 	<br>\
-Divide responsibilities among your colleagues to ensure each patient gets the treatment they need<br>\
-You also have full access to chemistry, and can utilize  it if medical is short staffed. But if there is a dedicated chemist on staff, they take priority and the lab belongs to them<br>\
+Divide responsibilities among your colleagues to ensure each patient gets the treatment they need.<br>\
+You also have full access to chemistry and can utilize it if medical is short staffed. But if there is a dedicated chemist on staff, they take priority and the lab belongs to them.<br>\
 <br>\
 Character Expectations:<br>\
-You are a real doctor, and as such you are expected to hold a lot of qualifications. You've most likely completed many years of medical study, and hold a PHD in one or more medical fields.<br>\
+You are a real doctor and as such you are expected to hold a lot of qualifications. You've most likely completed many years of medical study and hold a PHD in one or more medical fields.<br>\
 You are expected to be knowledgeable and competent in at least basic treatment, you may have a specialty though."
 
 
 	loyalties = "As a doctor, your first loyalty is to your conscience. You swore an oath to save lives and do no harm. It falls on you to be the ethical and moral core of the crew. You should speak up for prisoners, captured lifeforms, and test subjects. Nobody else will.<br>\
 
-Your second loyalty is to your career with Moebius corp, and to your coworkers in both branches of moebius. Help out your scientific colleagues, and aid in their pursuit of knowledge."
+Your second loyalty is to the colonies crew and to your coworkers in both branches of Soteria. Help out your scientific colleagues and aid in their pursuit of knowledge."
 
 /obj/landmark/join/start/doctor
-	name = "Moebius Doctor"
+	name = "Soteria Doctor"
 	icon_state = "player-green"
 	join_tag = /datum/job/doctor
 
 
 
 /datum/job/chemist
-	title = "Moebius Chemist"
+	title = "Soteria Chemist"
 	flag = CHEMIST
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
-	faction = "CEV Eris"
+	faction = "Nadezhda Colony"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Moebius Biolab Officer"
+	supervisors = "the Chief Biolab Overseer"
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
@@ -148,35 +150,35 @@ Your second loyalty is to your career with Moebius corp, and to your coworkers i
 	<br>\
 	Your primary responsibility is working as a pharmacist. Prepare medicines for use by the medical staff, so that they can capably treat a broad variety of conditions. It's good to keep a stock of bicaridine, dexalin, peridaxon, and alkysine.<br>\
 	<br>\
-	Your secondary responsibility is as a chemical manufacturer for moebius generally. You may be requested to make non-medical chemicals for your colleagues in science, or even for other medical staff. Anyone within moebius should be freely and quickly provided with anything they request. Don't question why, it's above your paygrade.<br>\
+	Your secondary responsibility is as a chemical manufacturer for soteria generally. You may be requested to make non-medical chemicals for your colleagues in science or even for other medical staff. Anyone within soteria should be freely and quickly provided with anything they request. Don't question why, it's above your paygrade.<br>\
 	<br>\
-	Your third duty is to run a chemical sales outlet. You may get requests from other crewmembers to make acid, chemical grenades, smoke, cleaning products, napalm, or perhaps even just to make medicines. You are fully licensed to sell any and all chemicals to those outside moebius. Sell being the operative word here. If someone isn't an employee of Moebius corp, charge them for their chemicals.<br>\
+	Your third duty is to run a chemical sales outlet. You may get requests from other crewmembers to make acid, chemical grenades, smoke, cleaning products, napalm, or perhaps even just to make medicines. You are fully licensed to sell any and all chemicals to those outside soteria. Sell being the operative word here. If someone isn't an employee of Soteria Institute, charge them for their chemicals.<br>\
 	<br>\
-	Its worth noting that you don't always have everything you need on hand. Some recipes will require external ingredients. Bicaridine, most notably, requires the roach toxin blattedin, so you should gather up roach corpses to hack apart for their chemicals. Pay assistants to do this if necessary"
+	Its worth noting that you don't always have everything you need on hand. Some recipes will require external ingredients. Pay assistants to do this if necessary"
 
-	duties = "		Mix medicines for doctors<br>\
-		Fill chemical requests for moebius staff<br>\
-		Sell chemicals and chem grenades to outsiders"
+	duties = "Mix medicines for doctors.<br>\
+		Fill chemical requests for soteria staff.<br>\
+		Sell chemicals and chem grenades to outsiders."
 
-	loyalties = "Your loyalty is to your career with Moebius corp, and to your coworkers in both branches of moebius. Help out your scientific colleagues, and aid in their pursuit of knowledge."
+	loyalties = "Your loyalty is to your career with Soteria Institute and to your coworkers in both branches of soteria. Help out your scientific colleagues and aid in their pursuit of knowledge."
 
 
 /obj/landmark/join/start/chemist
-	name = "Moebius Chemist"
+	name = "Soteria Chemist"
 	icon_state = "player-green"
 	join_tag = /datum/job/chemist
 
 
 /datum/job/psychiatrist
-	title = "Moebius Psychiatrist"
+	title = "Soteria Psychiatrist"
 	flag = PSYCHIATRIST
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
-	faction = "CEV Eris"
+	faction = "Nadezhda Colony"
 	total_positions = 1
 	spawn_positions = 1
 	wage = WAGE_PROFESSIONAL
-	supervisors = "the Moebius Biolab Officer"
+	supervisors = "the Soteria Biolab Overseer"
 	selection_color = "#a8b69a"
 	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
 
@@ -196,22 +198,34 @@ Your second loyalty is to your career with Moebius corp, and to your coworkers i
 							/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/camera_monitor)
 
+	description = "The psychiatrist is a professional talker that works towards understanding peoples problems and aiding them in working through them.<br>\
+	<br>\
+	Your primary responsibility is working with anyone who is struggling on a personal level. After speaking with a patient you should then recommend a course of action and prescribe medicine if needed.<br>\
+	<br>"
+
+	duties = "Speak with anyone who desires help.<br>\
+		Prescribe medicine for those who need it.<br>\
+		Determine if individuals are fit for work or not."
+
+	loyalties = "Your loyalty is to your career with Soteria Institute and to your coworkers in both branches of soteria. Help out security and science staff to ensure a healthy work enviroment."
+
+
 
 /obj/landmark/join/start/psychiatrist
-	name = "Moebius Psychiatrist"
+	name = "Soteria Psychiatrist"
 	icon_state = "player-green"
 	join_tag = /datum/job/psychiatrist
 
 
 /datum/job/paramedic
-	title = "Moebius Paramedic"
+	title = "Soteria Paramedic"
 	flag = PARAMEDIC
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
-	faction = "CEV Eris"
+	faction = "Nadezhda Colony"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Moebius Biolab Officer"
+	supervisors = "the Soteria Biolab Overseer"
 	selection_color = "#a8b69a"
 	wage = WAGE_LABOUR_HAZARD
 	also_known_languages = list(LANGUAGE_CYRILLIC = 20, LANGUAGE_SERBIAN = 15)
@@ -223,8 +237,7 @@ Your second loyalty is to your career with Moebius corp, and to your coworkers i
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 20,
-		STAT_ROB = 10,
+		STAT_BIO = 25,
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 	)
@@ -233,40 +246,35 @@ Your second loyalty is to your career with Moebius corp, and to your coworkers i
 							/datum/computer_file/program/chem_catalog,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "You are a Moebius Paramedic, The hero of the hour! While doctors largely spend their time cloistered away in medbay, your job is to be out there on the frontlines. You work in the field, sometimes treating people on the spot, sometimes bringing them back to medical for specialist treatment. <br>\
+	description = "You are a Soteria Paramedic, The hero of the hour! While doctors largely spend their time cloistered away in medbay, your job is to be out there on the frontlines. You work in the field, sometimes treating people on the spot, sometimes bringing them back to medical for specialist treatment. <br>\
 
-You have significant medical training, but typically you are not a doctor, and will lack a medical degree. The actual doctors have seniority, and you should follow their orders, especially concerning treatment and diagnosis of a patient<br>\
-<br>\
-You need to be ready to run at a moment's notice, and as such you should take careful care of your gear. Pack as many medicines, treatments, rollerbeds and other equipment as you can. Be sure to bring along some kind of heavy tool for breaching sealed areas.<br>\
-<br>\
-When the wounded are inside medbay, you will often act as a porter, transporting patients to and from various specialist treatment rooms. If your labour can save time for a doctor, get to it.<br>\
-<br>\
-Once your duty to the living is dispensed, your secondary duty is to the dead. You are the designated corpse recovery staff, and you will often need to retrieve bodies from where they died, bring them back and store them in the morgue. This gives a reduction in that player's respawn time.<br>\
-<br>\
-This is the most dangerous part of your job, and recovery should only be attempted if you can reasonably do so without endangering yourself. If there are hostile creatures preventing recovery, call ironhammer to deal with them.<br>\
-<br>\
-On a lighter note, since you're so fit and agile, you will often be called upon to run errands. When there's no wounded or dead, a paramedic's duties often involve fetching lunch and coffee for the rest of the medical staff.<br>\
-<br>\
-Character Expectations:<br>\
-Paramedic is a physically demanding job, your character must be fit and strong. No fat bodies allowed<br>\
-EVA training is expected, you should be confident in a medical Voidsuit, and optionally in driving an odysseus mech<br>\
+	You have significant medical training, but typically you are not a doctor and will lack a medical degree. The actual doctors have seniority and you should follow their orders, especially concerning treatment and diagnosis of a patient.<br>\
+	<br>\
+	You need to be ready to run at a moment's notice and as such you should take careful care of your gear. Pack as many medicines, treatments, rollerbeds, and other equipment as you can. Be sure to bring along some kind of heavy tool for breaching sealed areas.<br>\
+	<br>\
+	When the wounded are inside medbay, you will often act as a porter, transporting patients to and from various specialist treatment rooms. If your labour can save time for a doctor, get to it.<br>\
+	<br>\
+	Once your duty to the living is dispensed, your secondary duty is to the dead. You are the designated corpse recovery staff, and you will often need to retrieve bodies from where they died, bring them back and store them in the morgue.<br>\
+	<br>\
+	This is the most dangerous part of your job and recovery should only be attempted if you can reasonably do so without endangering yourself. If there are hostile creatures preventing recovery, call the militia to deal with them.<br>\
+	<br>\
+	On a lighter note, since you're so fit and agile, you will often be called upon to run errands. When there's no wounded or dead, a paramedic's duties often involve fetching lunch and coffee for the rest of the medical staff.<br>\
+	<br>"
 
-Remember that you are a noncombatant. Any weapons you carry should be used for breaching and rescue, not for killing. Use violence only as a last resort to defend yourself or your patient"
-
-	duties = "	Respond to distress calls, extract wounded people from dangerous situations, stabilize them at the scene, and take them to medbay for farther treatment as necessary<br>\
+	duties = "Respond to distress calls, extract wounded people from dangerous situations, stabilize them at the scene, and take them to medbay for farther treatment as necessary.<br>\
 	Watch the crew monitor for signs of injuries or deaths and respond accordingly.<br>\
-	Tour around departments checking up on the health of the crew. Administer first aid on scene as required<br>\
-	During quieter times, retrieve the corpses of the dead from around the ship<br>\
-	Run errands for the medbay staff, act as their hands outside of the medbay"
+	Tour around departments checking up on the health of the crew. Administer first aid on scene as required.<br>\
+	During quieter times, retrieve the corpses of the dead.<br>\
+	Run errands for the medbay staff, act as their hands outside of the medbay."
 
-	loyalties = "	As a medical specialist, your first loyalty is to save lives, you swore an oath to do no harm. When in any dangerous situation, do your best to ensure as many as possible come out of it alive. A martyr complex is not uncommon in paramedics<br>\
+	loyalties = "As a medical specialist, your first loyalty is to save lives, you swore an oath to do no harm. When in any dangerous situation, do your best to ensure as many as possible come out of it alive. A martyr complex is not uncommon in paramedics.<br>\
 	<br>\
-	Your second loyalty is to your immediate superior, the Moebius Biolab Officer. Follow their instructions and policies.<br>\
+	Your second loyalty is to your immediate superior, the Soteria Biolab Overseer. Follow their instructions and policies.<br>\
 	<br>\
-	Your third loyalty is to your fellow colleagues in Moebius, especially those in Moebius medical. You are the lowest ranked personnel in the medbay, and you take orders from everyone else working there."
+	Your third loyalty is to your fellow colleagues in Soteria, especially those in Soteria medical. You are the lowest ranked personnel in the medbay and you take orders from everyone else working there."
 
 /obj/landmark/join/start/paramedic
-	name = "Moebius Paramedic"
+	name = "Soteria Paramedic"
 	icon_state = "player-green"
 	join_tag = /datum/job/paramedic
 

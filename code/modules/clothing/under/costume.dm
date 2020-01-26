@@ -255,12 +255,14 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "rainbow_skirt"
 	item_state = "rainbow_skirt"
 
+/*
 /obj/item/clothing/under/costume/misc/rainbowundercloak
 	name = "rainbow undercloak"
 	initial_name = "rainbow undercloak"
 	desc = "A teshari undercloak in a multitude of colors."
 	icon_state = "tesh_uniform_rainbow"
 	item_state = "rainbow"
+*/
 
 /obj/item/clothing/under/costume/misc/rainbowclown
 	name = "rainbow clown suit"

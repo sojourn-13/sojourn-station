@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/omnirifle
-	name = "FS BR 10x50mm \"Hustler\""
-	desc = "Heavy, inexpensive battle rifle of dubious quality.\
+	name = "BM BR 10x50mm \"Hustler\""
+	desc = "A heavy, inexpensive battle rifle of dubious quality.\
 		 An inexpensive budget rifle, this rifle is a stripped down copy of the M12 Omnirifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example... frankly sucks and is limited to semiautomatic."
@@ -39,9 +39,9 @@
 
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/standard
-	name = "FS BR 10x50mm \"Omnirifle\""
-	desc = "Heavy frontline battle rifle of the Solar Federation and countless others. \
-		 Either a copy or 'liberated' model of the venerable M12A3 Omnirifle, it fires a variety of utility and specialized munitions. \
+	name = "BM BR 10x50mm \"Omnirifle\""
+	desc = "An original rifle created by the Blackshield Militia with aid of the Artificer's Guild and Soteria Institute. \
+		 A weapon built for versatility and rugged reliability, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 Certain loadings are physically demanding for even the strongest users without the aid of powered armor."
 	icon = 'icons/obj/guns/projectile.dmi'
@@ -60,8 +60,8 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped
-	name = "FS BR 10x50mm \"Longarm\""
-	desc = "Heavy frontline designated marksman rifle of the Solar Federation and countless others. \
+	name = "BM BR 10x50mm \"Longarm\""
+	desc = "Heavy frontline designated marksman rifle of the Blackshield Militia designed from an existing Sol Federation rifle. \
 		 Either a copy or 'liberated' model of the venerable M13A2 Special Purpose Rifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an advanced combat sight and limited to semiautomatic."
@@ -79,9 +79,9 @@
 
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/fancy
-	name = "FS BR 10x50mm \"Osprey\""
+	name = "BM BR 10x50mm \"Osprey\""
 	desc = "Classic, elegant sporting rifle based on proven military technology. \
-		 A civilian, sporterized model of the venerable M13A1 Special Purpose Rifle, it fires a variety of utility and specialized munitions. \
+		 A civilian, sportman's model of the venerable M13A1 Special Purpose Rifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an high-zoom optic, elegant wood furniture, and is limited to semiautomatic."
 	icon = 'icons/obj/guns/projectile.dmi'
@@ -95,11 +95,11 @@
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine
-	name = "FS CAR 10x50mm \"Boar\""
-	desc = "Heavy scecond-line carbine of the Solar Federation and countless others. \
-		 Either a copy or 'liberated' model of the curious MK-12 Omnicarbine, chambered in 10x50mm Omni. \
+	name = "BM CAR 10x50mm \"Boar\""
+	desc = "Heavy second-line carbine made by the Boris of the Nadezhda Marshals. \
+		 A rifle fashioned by a brute of a man and made for similar brutes, taking influence from the MK-12 Omnicarbine, chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
-		 Despite the blinding muzzle flash and agonizing recoil, its small arguably makes up for the disadvantages."
+		 Despite the blinding muzzle flash and agonizing recoil, its size arguably makes up for the disadvantages."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "omnicarbine"
 	item_state = "omnicarbine"
@@ -116,11 +116,11 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds
-	name = "FS CAR 10x50mm \"Boar\""
-	desc = "Heavy scecond-line carbine of the Solar Federation and countless others. \
-		 Either a copy or 'liberated' model of the curious MK-12 MOD 1 Omnicarbine, chambered in 10x50mm Omni. \
+	name = "BM CAR 10x50mm \"Boar\""
+	desc = "Heavy second-line carbine made by the Boris of the Nadezhda Marshals. \
+		 A rifle fashioned by a brute of a man and made for similar brutes, taking influence from MK-12 MOD 1 Omnicarbine, chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
-		 Fitted with a muzzle brake, holographic sight, and limited to 3-round bursts, it's almost managable. Almost.."
+		 Fitted with a muzzle brake, holographic sight, and limited to 3-round bursts, it's almost managable. Almost."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "rds-omnicarbine"
 	item_state = "rds-omnicarbine"

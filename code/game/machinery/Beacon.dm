@@ -3,7 +3,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "floor_beaconf"
 	name = "bluespace gigabeacon"
-	desc = "A device that draws power from bluespace and creates a permanent tracking beacon."
+	desc = "A device that draws power from bluespace and creates a permanent short range tracking beacon."
 	level = BELOW_PLATING_LEVEL		// underfloor
 	layer = LOW_OBJ_LAYER
 	anchored = 1

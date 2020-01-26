@@ -25,7 +25,7 @@ Now, just in case this rocket juice blacks me out again, its here, you dumbass. 
 
 /datum/stash/booze/distillers
 	story_type = STORY_CRIME
-	lore = "Heya sugar. The captain's shut down my bar, but no worries boys, Jane's got you covered.<br>\
+	lore = "Heya sugar. The security shut down my bar, but no worries boys, Jane's got you covered.<br>\
 <br>\
  I've been preparing for this ta happen for a while, and have a nice little stash saved up. I'll be running a little private bar at %D.<br>\
  <br>\

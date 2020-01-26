@@ -135,7 +135,7 @@
 
 /obj/structure/closet/secure_closet/rare_loot
 	name = "\improper sealed military supply closet"
-	desc = "The access pannel looks old. There is probably no ID's around that can open it."
+	desc = "The access panel looks old. There is probably no ID's around that can open it."
 	req_access = list(access_cent_specops) //You are suppose to hack it
 	icon_state = "syndicate"
 

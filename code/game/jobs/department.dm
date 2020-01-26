@@ -51,7 +51,7 @@
 	Command
 **************/
 /datum/department/command
-	name = "CEV Eris Command"
+	name = "Nadezhda Council"
 	id = DEPARTMENT_COMMAND
 	/*
 	The command account is the ship account. It is the master account that retainer departments are paid from,
@@ -70,15 +70,16 @@
 **************/
 //These departments are paid out of ship funding
 /datum/department/ironhammer
-	name = "Ironhammer Mercenary Company"
+	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
+	account_initial_balance = 5000
 
 /datum/department/technomancers
-	name = "Technomancer League"
+	name = "Artificier's Guild"
 	id = DEPARTMENT_ENGINEERING
 
 /datum/department/civilian
-	name = "CEV Eris Civic"
+	name = "Nadezhda Contractors"
 	id = DEPARTMENT_CIVILIAN
 	account_budget = 0
 	account_initial_balance = 0
@@ -90,23 +91,23 @@
 *******************/
 //Departments subsidised by an external organisation. These pay their own employees
 /datum/department/moebius_medical
-	name = "Moebius Corp: Medical Division"
+	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
 	funding_type = FUNDING_EXTERNAL
-	funding_source = "Moebius Corp."
+	funding_source = "Soteria Institution."
 
 /datum/department/moebius_research
-	name = "Moebius Corp: Research Division"
+	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
 	account_budget = 5000 //For buying materials and components and things of scientific value
 	funding_type = FUNDING_EXTERNAL
-	funding_source = "Moebius Corp."
+	funding_source = "Soteria Institution."
 
 /datum/department/church
-	name = "Church of NeoTheology"
+	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
 	funding_type = FUNDING_EXTERNAL
-	funding_source = "Church of NeoTheology"
+	funding_source = "Church of Absolute"
 
 
 
@@ -115,13 +116,19 @@
 *******************/
 //Self funds and pays wages out of its earnings
 /datum/department/guild
-	name = "Asters Merchant Guild"
-	id = DEPARTMENT_GUILD
+	name = "Lonestar Shipping Solutions"
+	id = DEPARTMENT_LSS
 
 	/*
-		The guild account represents the holdings of the local branch, and merchant.
+		The LSS account represents the holdings of the local branch, and CEO.
 		He recieves no funding, infact later he will pay guild fees out of his earnings
 	*/
+	account_initial_balance = 7500
+	funding_type = FUNDING_NONE
+
+/datum/department/prospector
+	name = "Prospectors"
+	id = DEPARTMENT_PROSPECTOR
 	account_initial_balance = 7500
 	funding_type = FUNDING_NONE
 

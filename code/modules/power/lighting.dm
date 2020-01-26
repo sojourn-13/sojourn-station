@@ -166,9 +166,9 @@
 	desc = "A lighting fixture."
 	anchored = 1
 	layer = WALL_OBJ_LAYER
-	use_power = 2
-	idle_power_usage = 2
-	active_power_usage = 20
+	use_power = 1
+	idle_power_usage = 1
+	active_power_usage = 5
 	power_channel = LIGHT //Lights are calc'd via area so they dont need to be in the machine list
 	var/on = 0					// 1 if on, 0 if off
 	var/on_gs = 0

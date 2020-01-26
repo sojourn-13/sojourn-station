@@ -1,7 +1,7 @@
 /obj/structure/satellite
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
 	icon_state = "sputnik"
-	desc = "It looks like ancient satellite."
+	desc = "It looks like an ancient satellite."
 	var/cooldown = FALSE
 
 /obj/structure/satellite/attack_hand(mob/living/user as mob)

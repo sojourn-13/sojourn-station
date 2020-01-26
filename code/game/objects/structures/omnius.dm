@@ -1,7 +1,7 @@
 /obj/structure/ominous
 	name = "ominous generator"
 	icon_state = "ominous"
-	desc = "It looks like ancient, and strange generator."
+	desc = "It looks like an ancient and strange generator."
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
 	var/cooldown = FALSE
 

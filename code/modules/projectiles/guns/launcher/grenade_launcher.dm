@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/launcher/grenade
-	name = "NT GL \"Protector\""
+	name = "SA GL \"Protector\""
 	desc = "A bulky pump-action grenade launcher. Holds up to 6 grenades in a revolving magazine."
 	icon = 'icons/obj/guns/launcher/riotgun.dmi'
 	icon_state = "riotgun"
@@ -134,7 +134,7 @@
 /* Ironhammer stuff */
 
 /obj/item/weapon/gun/launcher/grenade/lenar
-	name = "FS GL \"Lenar\""
+	name = "HS GL \"Lenar\""
 	desc = "A more than bulky pump-action grenade launcher. Holds up to 6 grenades in a revolving magazine."
 	icon = 'icons/obj/guns/launcher/grenadelauncher.dmi'
 	icon_state = "Grenadelauncher_PMC"

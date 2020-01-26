@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/olivaw
-	name = "FS HG .32 \"Olivaw\""
-	desc = "That's a \"Frozen Star\" popular non-lethal pistol. This one seems to have a two-round burst-fire mode. Uses .32 rounds."
+	name = "HS HG .32 \"Olivaw\""
+	desc = "That's a \"Heckler and Son\" made pistol, its second most popular model. This one seems to have a two-round burst-fire mode. Uses .32 rounds."
 	icon = 'icons/obj/guns/projectile/olivawcivil.dmi'
 	icon_state = "olivawcivil"
 	item_state = "pistol"

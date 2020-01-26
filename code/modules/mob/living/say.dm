@@ -15,6 +15,7 @@ var/list/department_radio_keys = list(
 	"v" = "Service",
 	"p" = "AI Private",
 	"t" = "NT Voice",
+	"k" = "Prospector"
 )
 
 

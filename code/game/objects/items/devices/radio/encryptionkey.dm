@@ -27,105 +27,115 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 
 /obj/item/device/encryptionkey/headset_sec
-	name = "ironhammer radio encryption key"
+	name = "security radio encryption key"
 	icon_state = "sec_cypherkey"
 	channels = list("Security" = 1)
 
 /obj/item/device/encryptionkey/headset_eng
-	name = "technomancer radio encryption key"
+	name = "guild radio encryption key"
 	icon_state = "eng_cypherkey"
 	channels = list("Engineering" = 1)
 
 /obj/item/device/encryptionkey/headset_rob
-	name = "moebius robotics radio encryption key"
+	name = "sotiera robotics radio encryption key"
 	icon_state = "rob_cypherkey"
 	channels = list("Engineering" = 1, "Science" = 1)
 
 /obj/item/device/encryptionkey/headset_med
-	name = "moebius medical radio encryption key"
+	name = "soteria medical radio encryption key"
 	icon_state = "med_cypherkey"
 	channels = list("Medical" = 1)
 
 /obj/item/device/encryptionkey/headset_church
-	name = "Neotheology radio encryption key"
+	name = "church radio encryption key"
 	icon_state = "nt_cypherkey"
 	channels = list("NT Voice" = 1)
 
 /obj/item/device/encryptionkey/headset_sci
-	name = "moebius science radio encryption key"
+	name = "soteria science radio encryption key"
 	icon_state = "sci_cypherkey"
 	channels = list("Science" = 1)
 
 /obj/item/device/encryptionkey/headset_moebius
-	name = "Moebius laboratories encryption key"
+	name = "soteria laboratories encryption key"
 	icon_state = "sci_cypherkey"
 	channels = list("Science" = 1, "Medical" = 1)
 
 /obj/item/device/encryptionkey/headset_com
-	name = "Eris command radio encryption key"
+	name = "council command radio encryption key"
 	icon_state = "com_cypherkey"
 	channels = list("Command" = 1)
 
 /obj/item/device/encryptionkey/heads/captain
-	name = "Eris captain's encryption key"
+	name = "premier's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Security" = 1, "Engineering" = 0, "NT Voice" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
+	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "NT Voice" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
 
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
 	desc = "Integrated encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "NT Voice" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1)
+	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 1, "NT Voice" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1)
 
 /obj/item/device/encryptionkey/heads/rd
-	name = "expedition overseer's encryption key"
+	name = "research overseer's encryption key"
 	icon_state = "rd_cypherkey"
 	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/moebius
-	name = "Moebius command encryption key"
+	name = "Soteria command encryption key"
 	icon_state = "rd_cypherkey"
 	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hos
-	name = "Ironhammer commander's encryption key"
+	name = "Security commander's encryption key"
 	icon_state = "hos_cypherkey"
 	channels = list("Security" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/ce
-	name = "exultant's encryption key"
+	name = "guild master's encryption key"
 	icon_state = "ce_cypherkey"
 	channels = list("Engineering" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/cmo
-	name = "Biolab officer's encryption key"
+	name = "biolab overseer's encryption key"
 	icon_state = "cmo_cypherkey"
 	channels = list("Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hop
-	name = "First Officer's encryption key"
+	name = "Steward's encryption key"
 	icon_state = "hop_cypherkey"
-	channels = list("Command" = 1, "Security" = 1, "Engineering" = 0, "NT Voice" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
+	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "NT Voice" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
 
 /obj/item/device/encryptionkey/heads/merchant
-	name = "Asters Merchant radio encryption key"
+	name = "Lonestar executive radio encryption key"
 	icon_state = "qm_cypherkey"
 	channels = list("Supply" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/preacher
-	name = "NeoTheology Preacher radio encryption key"
+	name = "Prime's radio encryption key"
 	icon_state = "preach_cypherkey"
 	channels = list("NT Voice" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/headset_cargo
-	name = "Asters Guild radio encryption key"
+	name = "lonestar radio encryption key"
 	icon_state = "cargo_cypherkey"
 	channels = list("Supply" = 1)
 
 /obj/item/device/encryptionkey/headset_service
-	name = "service radio encryption key"
+	name = "lonestar service radio encryption key"
 	icon_state = "srv_cypherkey"
 	channels = list("Service" = 1)
+
+/obj/item/device/encryptionkey/headset_pro
+	name = "prospector radio encryption key"
+	icon_state = "srv_cypherkey"
+	channels = list("Prospector" = 1)
+
+/obj/item/device/encryptionkey/heads/foreman
+	name = "prospector radio encryption key"
+	icon_state = "qm_cypherkey"
+	channels = list("Prospector" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/entertainment
 	name = "entertainment radio key"

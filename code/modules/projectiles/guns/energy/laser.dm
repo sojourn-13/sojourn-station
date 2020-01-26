@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/energy/laser
-	name = "NT LG \"Lightfall\""
-	desc = "\"NeoTheology\" brand laser carbine. Deadly and radiant, like the ire of God it represents."
+	name = "OT LG \"Lightfall\""
+	desc = "\"Old Testament\" brand laser carbine. Deadly and radiant, like the ire of God it represents."
 	icon = 'icons/obj/guns/energy/laser.dmi'
 	icon_state = "laser"
 	item_state = "laser"
@@ -24,18 +24,18 @@
 	restrict_safety = TRUE
 
 /obj/item/weapon/gun/energy/laser/practice
-	name = "NT LG \"Lightfall\" - P"
-	desc = "A modified version of \"NeoTheology\" brand laser carbine, this one fires less concentrated energy bolts, designed for target practice."
+	name = "OT LG \"Lightfall\" - P"
+	desc = "A modified version of \"Old Testament\" brand laser carbine, this one fires less concentrated energy bolts, designed for target practice."
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 2)
 	price_tag = 1000
 	projectile_type = /obj/item/projectile/beam/practice
 
 obj/item/weapon/gun/energy/retro
-	name = "OS LG \"Cog\""
+	name = "GP LG \"Cog\""
 	icon = 'icons/obj/guns/energy/retro.dmi'
 	icon_state = "retro"
 	item_state = "retro"
-	desc = "A One Star cheaply produced laser gun. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous."
+	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous."
 	fire_sound = 'sound/weapons/Laser.ogg'
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_NORMAL
@@ -50,12 +50,12 @@ obj/item/weapon/gun/energy/retro
 	)
 
 /obj/item/weapon/gun/energy/captain
-	name = "NT LG \"Destiny\""
+	name = "GP LG \"Destiny\""
 	icon = 'icons/obj/guns/energy/capgun.dmi'
 	icon_state = "caplaser"
 	item_state = "caplaser"
 	item_charge_meter = TRUE
-	desc = "This weapon is old, yet still robust and reliable. It's marked with old Nanotrasen brand, a distant reminder of what this corporation was, before the Church took control of everything."
+	desc = "This weapon is old, yet still robust and reliable. It's marked with an old Greyson Positronic brand, a distant reminder of what this corporation was, before it fell to ruin."
 	force = WEAPON_FORCE_PAINFUL
 	fire_sound = 'sound/weapons/Laser.ogg'
 	slot_flags = SLOT_BELT
@@ -72,7 +72,7 @@ obj/item/weapon/gun/energy/retro
 
 /obj/item/weapon/gun/energy/lasercannon
 	name = "Prototype: laser cannon"
-	desc = "With the laser cannon, the lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
+	desc = "A new design for an energy weapon. The lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
 	icon = 'icons/obj/guns/energy/lascannon.dmi'
 	icon_state = "lasercannon"
 	item_state = "lasercannon"

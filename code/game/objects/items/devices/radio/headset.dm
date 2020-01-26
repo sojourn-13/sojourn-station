@@ -82,8 +82,8 @@
 	ks2type = /obj/item/device/encryptionkey/headset_sec
 
 /obj/item/device/radio/headset/headset_eng
-	name = "engineering radio headset"
-	desc = "When the engineers wish to chat like girls."
+	name = "guild radio headset"
+	desc = "When the adepts wish to chat like girls."
 	icon_state = "eng_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_eng
@@ -117,8 +117,8 @@
 	ks2type = /obj/item/device/encryptionkey/headset_com
 
 /obj/item/device/radio/headset/heads/captain
-	name = "captain's headset"
-	desc = "The headset of the boss."
+	name = "premier's headset"
+	desc = "The headset of the arbiter."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/captain
@@ -139,49 +139,49 @@
 	return ..(freq, level, 1)
 
 /obj/item/device/radio/headset/heads/rd
-	name = "expedition overseer's headset"
+	name = "research overseer's headset"
 	desc = "Headset of the researching God."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/moebius
 
 /obj/item/device/radio/headset/heads/hos
-	name = "ironhammer commander headset"
-	desc = "The headset of the man who protects your worthless lifes."
+	name = "security commander headset"
+	desc = "The headset of the men who protects your worthless lives."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
 /obj/item/device/radio/headset/heads/ce
-	name = "exultant's headset"
+	name = "guild master's headset"
 	desc = "The headset of the guy who is in charge of morons"
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/ce
 
 /obj/item/device/radio/headset/heads/cmo
-	name = "biolab officer's headset"
+	name = "biolab overseer's headset"
 	desc = "The headset of the highly trained medical chief."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/moebius
 
 /obj/item/device/radio/headset/heads/hop
-	name = "first officer's headset"
-	desc = "The headset of the guy who will one day be captain."
+	name = "steward's headset"
+	desc = "The headset of the most overpayed secretary of all time."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/hop
 
 /obj/item/device/radio/headset/heads/merchant
-	name = "guild merchant's headset"
+	name = "executive officer's headset"
 	desc = "The headset of the guy who know price for everything."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/merchant
 
 /obj/item/device/radio/headset/heads/preacher
-	name = "neotheology preacher's headset"
+	name = "prime's headset"
 	desc = "The headset of the man who leads you to god."
 	icon_state = "nt_com_headset"
 	item_state = "headset"
@@ -189,17 +189,31 @@
 
 /obj/item/device/radio/headset/headset_cargo
 	name = "supply radio headset"
-	desc = "A headset used by Merchant slaves."
+	desc = "A headset used by CEO's slaves."
 	icon_state = "cargo_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_cargo
 
 /obj/item/device/radio/headset/headset_service
 	name = "service radio headset"
-	desc = "Headset used by the service staff, tasked with keeping the station full, happy and clean."
+	desc = "Headset used by the service staff, tasked with keeping the station full, happy, and clean."
 	icon_state = "srv_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_service
+
+/obj/item/device/radio/headset/headset_pro
+	name = "prospector radio headset"
+	desc = "A headset used by the prospectors thugs."
+	icon_state = "cargo_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/headset_pro
+
+/obj/item/device/radio/headset/heads/foreman
+	name = "foreman radio headset"
+	desc = "A headset used by the krumpiest git."
+	icon_state = "cargo_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/heads/foreman
 
 /obj/item/device/radio/headset/ia
 	name = "internal affair's headset"
@@ -209,7 +223,7 @@
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
 /obj/item/device/radio/headset/church
-	name = "neotheology headset"
+	name = "church headset"
 	desc = "If you listen closely you can hear God."
 	icon_state = "nt_headset"
 	item_state = "headset"

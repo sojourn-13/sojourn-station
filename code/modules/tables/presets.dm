@@ -130,6 +130,7 @@
 
 /obj/structure/table/bench/padded
 	icon_state = "padded_preview"
+	color = "#760B0B"
 
 /obj/structure/table/bench/padded/New()
 	material = get_material_by_name(MATERIAL_PLASTIC)

@@ -178,6 +178,79 @@
 	icon_state = "section4deck5starboard"
 
 
+//Outside abandoned structures
+
+/area/eris/maintenance/outside/trashcave
+	name = "Trash Cave"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/abandoned_solars
+	name = "Abandoned Solars"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/burned_outpost
+	name = "Burned Outpost"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/hunter_cabin
+	name = "Hunter Cabin"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/campground
+	name = "Campground"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/farm
+	name = "Lost Farm"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/abandoned_outpost
+	name = "Lost Outpost"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/zoo
+	name = "The Zoo"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/prepper
+	name = "Prepper Base"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/monster_cave
+	name = "Monster Cave"
+	icon_state = "erisgreen"
+
+/area/eris/maintenance/outside/smuggler_zone
+	name = "Smuggler Base"
+	icon_state = "erisgreen"
+
+//Outside natural areas
+
+/area/eris/outside/one_star
+	name = "One Star Base"
+	icon_state = "erisgreen"
+
+/area/eris/outside/dcave
+	name = "Diyaab Cave"
+	icon_state = "erisgreen"
+
+/area/eris/outside/fnest
+	name = "Fennec Nest"
+	icon_state = "erisgreen"
+
+/area/eris/outside/pond
+	name = "Pond"
+	icon_state = "erisgreen"
+
+/area/eris/outside/bcave
+	name = "Bear Cave"
+	icon_state = "erisgreen"
+
+/area/eris/outside/scave
+	name = "Spider Cave"
+	icon_state = "erisgreen"
+
+
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
 /area/eris/maintenance/substation
@@ -1105,11 +1178,66 @@
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "erisgreen"
 
+/area/eris/rnd/anomalisolfour
+	name = "Anomalous Research Isolation Four"
+	flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "erisgreen"
+
+/area/eris/rnd/anomalisolfive
+	name = "Anomalous Research Isolation Five"
+	flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "erisgreen"
+
+/area/eris/rnd/outpostgeneral
+	name = "Anomalous Research Outpost General"
+	flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "erisgreen"
+
+/area/eris/rnd/outpostbotany
+	name = "Anomalous Research Outpost Botany"
+	flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "erisgreen"
+
+/area/eris/rnd/outpostmachineroom
+	name = "Anomalous Research Outpost Machine Rooms"
+	flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "erisgreen"
+
+/area/eris/rnd/outpostbreakroom
+	name = "Anomalous Research Outpost Break Room"
+	flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "erisgreen"
+
+/area/eris/rnd/outpostmedical
+	name = "Anomalous Research Outpost Medstation"
+	flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "erisgreen"
+
+/area/eris/rnd/outpoststorage
+	name = "Anomalous Research Outpost Storage"
+	flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "erisgreen"
+
+
 /area/eris/rnd/server
 	name = "\improper Research Server Room"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "server"
 
+
+//Prospector
+
+/area/eris/pros/dorm
+	name = "\improper Prospector Dorm"
+	icon_state = "erisgreen"
+
+/area/eris/pros/prep
+	name = "\improper Prospector Prep"
+	icon_state = "erisgreen"
+
+/area/eris/pros/foreman
+	name = "\improper Foreman Office"
+	icon_state = "erisgreen"
 
 
 //Storage
