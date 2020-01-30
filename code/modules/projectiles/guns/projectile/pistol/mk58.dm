@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/mk58
-	name = "OT HG .45 \"Mk58\""
+	name = "OT HG .45 \"Thorn\""
 	desc = "The OS Mk58 is a cheap, ubiquitous sidearm, that was one of the Old Testaments few ballistic creations. Uses .45 rounds."
 	icon = 'icons/obj/guns/projectile/mk58.dmi'
 	icon_state = "mk58"
@@ -29,7 +29,7 @@
 
 
 /obj/item/weapon/gun/projectile/mk58/wood
-	name = "OT HG .45 \"Mk58-C\""
+	name = "OT HG .45 \"Rose\""
 	desc = "The OS Mk58 is a cheap, ubiquitous sidearm, that was one of the Old Testaments few ballistic creations. Uses .45 rounds."
 	icon_state = "mk58_wood"
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)

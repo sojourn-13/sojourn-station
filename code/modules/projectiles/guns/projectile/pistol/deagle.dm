@@ -21,3 +21,11 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
 	recoil_buildup = 0.8 //high caliber pistol recoil
+
+/obj/item/weapon/gun/projectile/deagle/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "deagle-[round(ammo_magazine.stored_ammo.len,1)]"
+	else
+		icon_state = "deagle"
+	return

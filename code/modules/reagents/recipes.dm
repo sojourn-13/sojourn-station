@@ -107,7 +107,7 @@
 
 	if(rotation_required && !holder.rotating)
 		return FALSE
-
+	
 	return TRUE
 
 /datum/chemical_reaction/proc/calc_reaction_progress(var/datum/reagents/holder, var/reaction_limit)
@@ -428,9 +428,9 @@
 		var/list/blood_data = holder.get_data("blood")
 		if(blood_data["ling"])
 			return TRUE
-
-	return FALSE
-
+		
+		return FALSE
+		
 /datum/chemical_reaction/cryoxadone
 	result = "cryoxadone"
 	required_reagents = list("dexalinp" = 1, "water" = 1, "acetone" = 1)

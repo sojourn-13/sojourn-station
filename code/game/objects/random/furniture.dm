@@ -40,7 +40,7 @@
 
 /obj/random/furniture/painting /*Ignores monkey painting and the communist portraits*/
 	name = "random painting"
-	icon = 'icons/obj/decals-painting.dmi'
+	icon = 'icons/obj/decals.dmi'
 	icon_state = "painting3"
 
 /obj/random/furniture/painting/item_to_spawn()

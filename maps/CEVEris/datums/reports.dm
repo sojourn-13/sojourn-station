@@ -9,7 +9,7 @@
 /datum/computer_file/report/recipient/crew_transfer/generate_fields()
 	..()
 	var/list/xo_fields = list()
-	add_field(/datum/report_field/instruction, "SEV Torch - Office of the Executive Officer")
+	add_field(/datum/report_field/instruction, "Nadezhda Colony - High Council")
 	add_field(/datum/report_field/people/from_manifest, "Name (XO)")
 	add_field(/datum/report_field/people/from_manifest, "Name (applicant)", required = 1)
 	add_field(/datum/report_field/date, "Date filed")
@@ -19,7 +19,7 @@
 	add_field(/datum/report_field/pencode_text, "Reason stated")
 	add_field(/datum/report_field/instruction, "The following fields render the document invalid if not signed clearly.")
 	add_field(/datum/report_field/signature, "Applicant signature")
-	xo_fields += add_field(/datum/report_field/signature, "Executive Officer's signature")
+	xo_fields += add_field(/datum/report_field/signature, "Faction Owner's signature")
 	xo_fields += add_field(/datum/report_field/number, "Number of personnel in present/previous position")
 	xo_fields += add_field(/datum/report_field/number, "Number of personnel in requested position")
 	xo_fields += add_field(/datum/report_field/options/yes_no, "Approved")
@@ -35,7 +35,7 @@
 /datum/computer_file/report/recipient/access_modification/generate_fields()
 	..()
 	var/list/xo_fields = list()
-	add_field(/datum/report_field/instruction, "SEV Torch - Office of the Executive Officer")
+	add_field(/datum/report_field/instruction, "Nadezhda Colony - High Council")
 	add_field(/datum/report_field/people/from_manifest, "Name (XO)")
 	add_field(/datum/report_field/people/from_manifest, "Name (applicant)", required = 1)
 	add_field(/datum/report_field/date, "Date filed")
@@ -46,7 +46,7 @@
 	add_field(/datum/report_field/simple_text, "Duration of expanded access")
 	add_field(/datum/report_field/instruction, "The following fields render the document invalid if not signed clearly.")
 	add_field(/datum/report_field/signature, "Applicant signature")
-	xo_fields += add_field(/datum/report_field/signature, "Executive Officer's signature")
+	xo_fields += add_field(/datum/report_field/signature, "Faction Owner's signature")
 	xo_fields += add_field(/datum/report_field/number, "Number of personnel in relevant position")
 	xo_fields += add_field(/datum/report_field/options/yes_no, "Approved")
 	for(var/datum/report_field/field in xo_fields)
@@ -61,14 +61,14 @@
 /datum/computer_file/report/recipient/borging/generate_fields()
 	..()
 	var/list/xo_fields = list()
-	add_field(/datum/report_field/instruction, "SEV Torch - Office of the Executive Officer")
+	add_field(/datum/report_field/instruction, "Soteria Institute")
 	add_field(/datum/report_field/people/from_manifest, "Name (XO)")
 	add_field(/datum/report_field/people/from_manifest, "Name (subject)", required = 1)
 	add_field(/datum/report_field/date, "Date filed")
 	add_field(/datum/report_field/time, "Time filed")
 	add_field(/datum/report_field/instruction, "I, undersigned, hereby agree to willingly undergo a Regulation Lobotimization with intention of cyborgification or AI assimilation, and I am aware of all the consequences of such act. I also understand that this operation may be irreversible, and that my employment contract will be terminated.")
 	add_field(/datum/report_field/signature, "Subject's signature")
-	xo_fields += add_field(/datum/report_field/signature, "Executive Officer's signature")
+	xo_fields += add_field(/datum/report_field/signature, "Researc Overseer's signature")
 	xo_fields += add_field(/datum/report_field/options/yes_no, "Approved")
 	for(var/datum/report_field/field in xo_fields)
 		field.set_access(access_edit = access_hop)
@@ -88,7 +88,7 @@
 
 /datum/computer_file/report/recipient/sec/investigation/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "SEV Torch Security Department")
+	add_field(/datum/report_field/instruction, "Marshal Security Department")
 	add_field(/datum/report_field/instruction, "For internal use only.")
 	add_field(/datum/report_field/people/from_manifest, "Name")
 	add_field(/datum/report_field/date, "Date")
@@ -106,7 +106,7 @@
 
 /datum/computer_file/report/recipient/sec/incident/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "SEV Torch Security Department")
+	add_field(/datum/report_field/instruction, "Marshal Security Department")
 	add_field(/datum/report_field/instruction, "To be filled out by Officer on duty responding to the Incident. Report must be signed and submitted before the end of the shift!")
 	add_field(/datum/report_field/people/from_manifest, "Reporting Officer")
 	add_field(/datum/report_field/simple_text, "Offense/Incident Type")
@@ -128,7 +128,7 @@
 /datum/computer_file/report/recipient/sec/evidence/generate_fields()
 	..()
 	var/datum/report_field/temp_field
-	add_field(/datum/report_field/instruction, "SEV Torch Security Department")
+	add_field(/datum/report_field/instruction, "Marshal Security Department")
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/time, "Time")
 	add_field(/datum/report_field/people/from_manifest, "Confiscated from")
@@ -136,7 +136,7 @@
 	set_access(access_edit = access_security)
 	temp_field = add_field(/datum/report_field/signature, "Brig Officer's signature")
 	temp_field.set_access(access_edit = list(access_security, access_armory))
-	temp_field = add_field(/datum/report_field/signature, "Forensic Technician's signature")
+	temp_field = add_field(/datum/report_field/signature, "Ranger's signature")
 	temp_field.set_access(access_edit = list(access_security, access_forensics_lockers))
 
 //Supply and Exploration; these are not shown in deck manager.
@@ -154,7 +154,7 @@
 
 /datum/computer_file/report/recipient/docked/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "SEV Torch Supply and Hangar Management Department")
+	add_field(/datum/report_field/instruction, "Nadezhda Ship Visitation and Logging")
 	add_field(/datum/report_field/instruction, "General Info")
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/simple_text, "Vessel Name")
@@ -186,7 +186,7 @@
 
 /datum/computer_file/report/recipient/fauna/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "SEV Torch Expeditions")
+	add_field(/datum/report_field/instruction, "Prospector Expeditions")
 	add_field(/datum/report_field/instruction, "The following is to be filled out by members of a Expedition team after discovery and study of new alien life forms.")
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/people/list_from_manifest, "Personnel Involved")
@@ -199,7 +199,7 @@
 	add_field(/datum/report_field/pencode_text, "Defense/Offense")
 	add_field(/datum/report_field/pencode_text, "Special Characteristic(s)")
 	add_field(/datum/report_field/pencode_text, "Classification")
-	add_field(/datum/report_field/instruction, "On completion of this form and form approval, the Research Director should fax the form to both the Corporate Liaison and the Commanding Officer, as well as keep a copy on file in their Office alongside other mission reports.")
+	add_field(/datum/report_field/instruction, "On completion of this form and form approval, the foreman should fax the form to both the chief research overseer and the soteria owner, Nakharan Mkne , as well as keep a copy on file in their office alongside other mission reports.")
 
 //NT reports, mostly for liason but can be used by any NT personnel.
 
@@ -281,7 +281,7 @@
 
 /datum/computer_file/report/recipient/nt/incident/personnel
 	form_name = "C-3205"
-	title = "Corporate Personnel Incident Report"
+	title = "Colony Personnel Incident Report"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/personnel/generate_fields()
@@ -291,7 +291,7 @@
 
 /datum/computer_file/report/recipient/nt/incident/asset
 	form_name = "C-3201"
-	title = "Corporate Asset Incident Report"
+	title = "Colony Asset Incident Report"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/asset/generate_fields()
@@ -302,7 +302,7 @@
 
 /datum/computer_file/report/recipient/nt/incident/xeno
 	form_name = "C-3213"
-	title = "Corporate Non-Human Employee Incident Report"
+	title = "Colony Non-Humanoid Employee Incident Report"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/xeno/generate_fields()
@@ -313,18 +313,18 @@
 
 /datum/computer_file/report/recipient/nt/incident/xeno_no_visa/
 	form_name = "C-3213A"
-	title = "Corporate Non-Human Employee Incident Report: Without Visa"
+	title = "Colony Non-Humananoid Employee Incident Report: Without Citizenship"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/xeno_no_visa/generate_fields()
-	add_field(/datum/report_field/instruction, "If non-human employee has a valid work visa, use form C-3213 instead.")
+	add_field(/datum/report_field/instruction, "If non-humanoid employee has a valid citizen record, use form C-3213 instead.")
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Non-Human Employee(s) Involved")
+	add_field(/datum/report_field/people/list_from_manifest, "Non-Humanoid Employee(s) Involved")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/synth
 	form_name = "C-3213X"
-	title = "Corporate Synthetic Employee Incident Report"
+	title = "Colony Synthetic Employee Incident Report"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/synth/generate_fields()
@@ -334,7 +334,7 @@
 
 /datum/computer_file/report/recipient/nt/incident/crew
 	form_name = "C-3241"
-	title = "Corporate Ship Crew/Employee Incident Report"
+	title = "Colony Ship Crew/Employee Incident Report"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/crew/generate_fields()
@@ -346,7 +346,7 @@
 
 /datum/computer_file/report/recipient/nt/volunteer
 	form_name = "C-1443"
-	title = "Corporate Test Subject Volunteer Form"
+	title = "Colony Test Subject Volunteer Form"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/volunteer/generate_fields()
@@ -357,7 +357,7 @@
 	add_field(/datum/report_field/simple_text, "Intended Procedure(s)")
 	add_field(/datum/report_field/simple_text, "Compensation for Volunteer: (if any)")
 	add_field(/datum/report_field/people/list_from_manifest, "Handling Researcher(s)")
-	add_field(/datum/report_field/instruction, "By signing, the \"Volunteer\" agrees to absolve the Corporation, and its employees, of any liability or responsibility for injuries, damages, property loss or side-effects that may result from the intended procedure. If signed by an authorized representative of the Corporation, such as a Research Director or Executive - this form is deemed reviewed, but is only approved if so marked.")
+	add_field(/datum/report_field/instruction, "By signing, the \"Volunteer\" agrees to absolve the corporation, and its employees, of any liability or responsibility for injuries, damages, property loss or side-effects that may result from the intended procedure. If signed by an authorized representative of the Corporation, such as a Research Director or Executive - this form is deemed reviewed, but is only approved if so marked.")
 	add_field(/datum/report_field/signature, "Volunteer's Signature:")
 	temp_fields += add_field(/datum/report_field/signature, "Corporate Representative's Signature")
 	temp_fields += add_field(/datum/report_field/options/yes_no, "Approved")
@@ -430,24 +430,6 @@
 	add_field(/datum/report_field/signature, "Signature")
 	add_field(/datum/report_field/options/yes_no, "Approved")
 
-/datum/computer_file/report/recipient/nt/visa
-	form_name = "C-0952"
-	title = "Corporate Sol Central Government Work Visa Request Form"
-	available_on_ntnet = 1
-
-/datum/computer_file/report/recipient/nt/visa/generate_fields()
-	..()
-	add_header()
-	var/datum/report_field/temp_field
-	add_field(/datum/report_field/people/from_manifest, "Intended Recipient of Visa")
-	add_field(/datum/report_field/pencode_text, "Reason for Request")
-	add_field(/datum/report_field/signature, "Applicant's Signature")
-	temp_field = add_field(/datum/report_field/signature, "Request Issuer's Signature")
-	temp_field.set_access(access_edit = access_heads)
-	temp_field = add_field(/datum/report_field/options/yes_no, "Request Approved by Issuer")
-	temp_field.set_access(access_edit = access_heads)
-	temp_field = add_field(/datum/report_field/signature, "Issuing Authority's Signature (acknowledging reciept)")
-	temp_field.set_access(access_edit = access_heads)
 
 /datum/computer_file/report/recipient/nt/payout
 	form_name = "C-3310"
@@ -472,7 +454,7 @@
 
 /datum/computer_file/report/recipient/sol/audit
 	form_name = "SCG-REP-12"
-	title = "SEV Torch Department Audit"
+	title = "Nadezhda Department Audit"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sol/audit/generate_fields()
@@ -503,16 +485,16 @@
 
 /datum/computer_file/report/recipient/sol/audit
 	form_name = "SCG-REP-03b"
-	title = "Work Visa Issuing Form"
+	title = "Visitor Issuing Form"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sol/audit/generate_fields()
 	var/datum/report_field/temp_field
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/time, "Time")
-	add_field(/datum/report_field/people/from_manifest, "Recipient of Work Visa")
+	add_field(/datum/report_field/people/from_manifest, "Recipient of Visitation Form")
 	add_field(/datum/report_field/simple_text, "Species of Recipient")
-	temp_field = add_field(/datum/report_field/signature, "Issuer of Work Visa Signature")
-	add_field(/datum/report_field/signature, "Recipient of Work Visa Signature")
+	temp_field = add_field(/datum/report_field/signature, "Issuer of Visitation Pass Signature")
+	add_field(/datum/report_field/signature, "Recipient of Visitation Pass Signature")
 	add_field(/datum/report_field/options/yes_no, "Approved")
 	temp_field.set_access(access_edit = access_heads)

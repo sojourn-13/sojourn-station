@@ -3,7 +3,7 @@
 	//var/office = "Generic HQ (Should not be Seen)" //This was an accident, but it'll come in handy later.
 
 	var/admin = TRUE //Whether or not this faction is completely admin controlled.
-	var/faxable = TRUE //Whether or not this faction can be sent messages directly.
+	var/faxable = FALSE //Whether or not this faction can be sent messages directly.
 	var/fax_alert = "GENERIC HQ FAX"
 	var/fax_response = "Generic HQ Reply"
 

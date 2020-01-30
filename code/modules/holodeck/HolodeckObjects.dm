@@ -64,7 +64,7 @@
 
 /turf/simulated/floor/holofloor/beach
 	desc = "Uncomfortably gritty for a hologram."
-	icon = 'icons/turf/flooring/beach.dmi'
+	icon = 'icons/misc/beach.dmi'
 	initial_flooring = null
 
 /turf/simulated/floor/holofloor/beach/sand
@@ -73,7 +73,7 @@
 
 /turf/simulated/floor/holofloor/beach/coastline
 	name = "coastline"
-	icon = 'icons/turf/flooring/beach2.dmi'
+	icon = 'icons/misc/beach2.dmi'
 	icon_state = "sandwater"
 
 /turf/simulated/floor/holofloor/beach/water

@@ -17,9 +17,10 @@
 
 /obj/item/weapon/gun/projectile/colt/IH_colt
 	name = "BM HG .45 \"Bronco\""
-	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A3 standard by the Blackshield Militia and has less recoil as a result. Uses .45 rounds."
-	icon_state = "IH_colt"
-	item_state = "IH_colt"
+	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A3 standard by the Blackshield Militia and has less recoil as a result.. Uses .45 rounds."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "IH_sidearm"
+	item_state = "IH_sidearm"
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)
@@ -28,6 +29,7 @@
 /obj/item/weapon/gun/projectile/colt/ten
 	name = "HS HG 10mm \"Delta Elite\""
 	desc = "A classy civilian high-powered automatic based on the M1911 series handguns, with significant reinforcements. Uses 10mm auto."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "delta"
 	item_state = "colt"
 	w_class = ITEM_SIZE_NORMAL
@@ -48,6 +50,7 @@
 /obj/item/weapon/gun/projectile/colt/ten/dark
 	name = "HS HG 10mm \"Stallion\""
 	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard. Uses 10mm auto."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "dark_delta"
 	item_state = "dark_delta"
 	auto_eject = 1

@@ -122,7 +122,7 @@
 /obj/item/toy/weapon/crossbow
 	name = "foam dart crossbow"
 	desc = "A weapon favored by many overactive children. Ages 8 and up."
-	icon = 'icons/obj/guns/energy/crossbow.dmi'
+	icon = 'icons/obj/guns/energy.dmi'
 	icon_state = "crossbow"
 	item_state = "crossbow"
 	item_icons = list(

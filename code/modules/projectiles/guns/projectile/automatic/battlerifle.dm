@@ -4,7 +4,7 @@
 		 An inexpensive budget rifle, this rifle is a stripped down copy of the M12 Omnirifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example... frankly sucks and is limited to semiautomatic."
-	icon = 'icons/obj/guns/projectile/omnirifle.dmi'
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "cheap-omnirifle"
 	item_state = "cheap-omnirifle"
 	w_class = ITEM_SIZE_HUGE
@@ -44,6 +44,7 @@
 		 A weapon built for versatility and rugged reliability, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 Certain loadings are physically demanding for even the strongest users without the aid of powered armor."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "omnirifle"
 	item_state = "omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
@@ -64,6 +65,7 @@
 		 Either a copy or 'liberated' model of the venerable M13A2 Special Purpose Rifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an advanced combat sight and limited to semiautomatic."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "scoped-omnirifle"
 	item_state = "scoped-omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
@@ -82,6 +84,7 @@
 		 A civilian, sportman's model of the venerable M13A1 Special Purpose Rifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an high-zoom optic, elegant wood furniture, and is limited to semiautomatic."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "fancy-omnirifle"
 	item_state = "fancy-omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
@@ -96,7 +99,8 @@
 	desc = "Heavy second-line carbine made by the Boris of the Nadezhda Marshals. \
 		 A rifle fashioned by a brute of a man and made for similar brutes, taking influence from the MK-12 Omnicarbine, chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
-		 Despite the blinding muzzle flash and agonizing recoil, its small arguably makes up for the disadvantages."
+		 Despite the blinding muzzle flash and agonizing recoil, its size arguably makes up for the disadvantages."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "omnicarbine"
 	item_state = "omnicarbine"
 	w_class = ITEM_SIZE_BULKY
@@ -116,7 +120,8 @@
 	desc = "Heavy second-line carbine made by the Boris of the Nadezhda Marshals. \
 		 A rifle fashioned by a brute of a man and made for similar brutes, taking influence from MK-12 MOD 1 Omnicarbine, chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
-		 Fitted with a muzzle brake, holographic sight, and limited to 3-round bursts, it's almost managable. Almost.."
+		 Fitted with a muzzle brake, holographic sight, and limited to 3-round bursts, it's almost managable. Almost."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "rds-omnicarbine"
 	item_state = "rds-omnicarbine"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)

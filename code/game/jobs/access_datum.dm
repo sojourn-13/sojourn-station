@@ -320,7 +320,7 @@
 /var/const/access_hop = 57
 /datum/access/hop
 	id = access_hop
-	desc = "Premier Guard"
+	desc = "Steward"
 	region = ACCESS_REGION_COMMAND
 
 /var/const/access_hos = 58

@@ -123,12 +123,15 @@
 	/obj/item/weapon/storage/pill_bottle/spaceacillin,
 	/obj/item/stack/medical/splint)
 
+
+
 //Crates
 //These use open topped crate sprites but are still functionally boxes. They can be picked up, but are too large to fit in anything
 /obj/item/weapon/storage/deferred/crate
 	w_class = ITEM_SIZE_HUGE //This is too big to fit in a backpack
 	icon = 'icons/obj/crate.dmi'
 	item_state = "toolbox_yellow"
+
 
 /obj/item/weapon/storage/deferred/crate/tools
 	name = "tool storage box"
@@ -137,12 +140,14 @@
 	initial_contents = list(/obj/random/tool = 13,
 	/obj/random/tool/advanced = 2)
 
+
 /obj/item/weapon/storage/deferred/crate/saw
 	name = "infantry support crate"
 	desc = "A crate containing two Pulemyot Kalashnikova light machine guns, and 640 rounds of 7.62mm ammunition."
 	icon_state = "old_weaponcrate"
 	initial_contents = list(/obj/item/weapon/gun/projectile/automatic/lmg/pk = 2,
 	/obj/item/ammo_magazine/a762/pk = 8)
+
 
 /obj/item/weapon/storage/deferred/crate/ak
 	name = "rifleman crate"
@@ -180,6 +185,7 @@
 	/obj/item/weapon/hatton_magazine = 5,
 	/obj/item/weapon/tool/pickaxe/diamonddrill = 1)
 
+
 /obj/item/weapon/storage/deferred/crate/marksman
 	name = "marksman crate"
 	desc = "A crate containing one \"Penetrator\" rifle, and ten 14.5mm AP shells."
@@ -200,6 +206,7 @@
 	desc = "A moderately sized crate full of various power cells."
 	icon_state = "plasmacrate"
 	initial_contents = list(/obj/random/powercell = 16)
+
 
 /obj/item/weapon/storage/deferred/crate/alcohol
 	name = "liquor crate"

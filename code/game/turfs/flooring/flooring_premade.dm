@@ -1,5 +1,3 @@
-/*Carpet*/
-
 /turf/simulated/floor/carpet
 	name = "carpet"
 	icon = 'icons/turf/flooring/carpet.dmi'
@@ -41,8 +39,6 @@
 	icon_state = "oracarpet"
 	initial_flooring = /decl/flooring/carpet/oracarpet
 
-/*Grid*/
-
 /turf/simulated/floor/bluegrid
 	name = "mainframe floor"
 	icon = 'icons/turf/flooring/circuit.dmi'
@@ -50,13 +46,12 @@
 	flags = TURF_HAS_CORNERS  | TURF_HIDES_THINGS
 	initial_flooring = /decl/flooring/reinforced/circuit
 
+
 /turf/simulated/floor/greengrid
 	name = "mainframe floor"
 	icon = 'icons/turf/flooring/circuit.dmi'
 	icon_state = "gcircuit"
 	initial_flooring = /decl/flooring/reinforced/circuit/green
-
-/*Wood*/
 
 /turf/simulated/floor/wood
 	name = "wooden floor"
@@ -66,31 +61,28 @@
 
 /turf/simulated/floor/wood/wild1
 	icon_state = "wooden_floor_s1"
-	initial_flooring = /decl/flooring/wood/wild1
 
 /turf/simulated/floor/wood/wild2
 	icon_state = "wooden_floor_s2"
-	initial_flooring = /decl/flooring/wood/wild2
 
 /turf/simulated/floor/wood/wild3
 	icon_state = "wooden_floor_s3"
-	initial_flooring = /decl/flooring/wood/wild3
 
 /turf/simulated/floor/wood/wild4
 	icon_state = "wooden_floor_s4"
-	initial_flooring = /decl/flooring/wood/wild4
 
 /turf/simulated/floor/wood/wild5
 	icon_state = "wooden_floor_s5"
-	initial_flooring = /decl/flooring/wood/wild5
-
-/*Tiled*/
 
 /turf/simulated/floor/tiled
 	name = "floor"
 	icon = 'icons/turf/flooring/tiles.dmi'
 	icon_state = "tiles"
 	initial_flooring = /decl/flooring/tiling
+
+
+
+
 
 /turf/simulated/floor/tiled/steel
 	name = "floor"
@@ -170,6 +162,9 @@
 	icon_state = "bar_light"
 	initial_flooring = /decl/flooring/tiling/steel/bar_light
 
+
+
+
 /turf/simulated/floor/tiled/white
 	name = "floor"
 	icon = 'icons/turf/flooring/tiles_white.dmi'
@@ -235,6 +230,11 @@
 /turf/simulated/floor/tiled/white/monofloor
 	icon_state = "monofloor"
 	initial_flooring = /decl/flooring/tiling/white/monofloor
+
+
+
+
+
 
 /turf/simulated/floor/tiled/dark
 	name = "floor"
@@ -302,6 +302,8 @@
 	icon_state = "monofloor"
 	initial_flooring = /decl/flooring/tiling/dark/monofloor
 
+
+
 /turf/simulated/floor/tiled/cafe
 	name = "floor"
 	icon = 'icons/turf/flooring/tiles.dmi'
@@ -332,7 +334,6 @@
 	icon_state = "techmaint_cargo"
 	initial_flooring = /decl/flooring/tiling/techmaint_cargo
 
-/*Reinforced*/
 
 /turf/simulated/floor/reinforced
 	name = "reinforced floor"
@@ -388,8 +389,7 @@
 	nitrogen = 0
 
 
-/*Atmos Premades*/
-
+//ATMOS PREMADES
 /turf/simulated/floor/reinforced/airless
 	name = "reinforced floor"
 	oxygen = 0
@@ -429,7 +429,6 @@
 	nitrogen = 0
 	temperature = TCMB
 
-/*Derelict*/
 
 /turf/simulated/floor/tiled/derelict
 	name = "floor"
@@ -466,259 +465,57 @@
 /turf/simulated/floor/plating/snow
 /turf/simulated/floor/airless/ceiling
 
-/*Beach/Water*/
-
 /turf/simulated/floor/beach
 	name = "beach"
-	icon = 'icons/turf/flooring/beach.dmi'
+	icon = 'icons/misc/beach.dmi'
 
 /turf/simulated/floor/beach/sand
 	name = "sand"
 	icon_state = "sand"
-	initial_flooring = /decl/flooring/beach/sand
 
 /turf/simulated/floor/beach/sand/desert
 	icon_state = "desert"
-	initial_flooring = /decl/flooring/beach/desert
 
 /turf/simulated/floor/beach/sand/drywater
 	icon_state = "sand1"
-	initial_flooring = /decl/flooring/beach/drywater
 
 /turf/simulated/floor/beach/coastline
 	name = "coastline"
-	icon = 'icons/turf/flooring/beach2.dmi'
+	icon = 'icons/misc/beach2.dmi'
 	icon_state = "sandwater"
-	initial_flooring = /decl/flooring/beach/coastline
 
 /turf/simulated/floor/beach/water
 	name = "water"
 	icon_state = "water"
-	initial_flooring = /decl/flooring/beach/water
 
 /turf/simulated/floor/beach/water/coastwater
 	icon_state = "beach"
-	initial_flooring = /decl/flooring/beach/water/coastwater
 
 /turf/simulated/floor/beach/water/coastwatercorner
 	icon_state = "beachcorner"
-	initial_flooring = /decl/flooring/beach/water/coastwatercorner
 
 /turf/simulated/floor/beach/water/swamp
 	icon_state = "seashallow_swamp"
-	initial_flooring = /decl/flooring/beach/water/swamp
 
 /turf/simulated/floor/beach/water/jungle
 	icon_state = "seashallow_jungle1"
-	initial_flooring = /decl/flooring/beach/water/jungle
 
 /turf/simulated/floor/beach/water/flooded
 	icon_state = "seashallow_jungle2"
-	initial_flooring = /decl/flooring/beach/water/flooded
 
 /turf/simulated/floor/beach/water/ice
 	icon_state = "seashallow_frozen"
-	initial_flooring = /decl/flooring/beach/water/ice
 
 /turf/simulated/floor/beach/water/ocean
 	icon_state = "seadeep"
-	initial_flooring = /decl/flooring/beach/water/ocean
 
 /turf/simulated/floor/beach/water/jungledeep
 	icon_state = "seashallow_jungle3"
-	initial_flooring = /decl/flooring/beach/water/jungledeep
 
 /turf/simulated/floor/beach/water/shallow
 	icon_state = "seashallow"
-	initial_flooring = /decl/flooring/beach/water/shallow
 
-/*Grass*/
-
-/turf/simulated/floor/grass
-	name = "grass"
-	icon = 'icons/turf/flooring/grass.dmi'
-	icon_state = "grass0"
-	initial_flooring = /decl/flooring/grass
-
-/turf/simulated/floor/grass/virgoforest
-	icon_state = "grass-light"
-	initial_flooring = /decl/flooring/grass2/virgoforest
-
-/turf/simulated/floor/grass/virgoforestdark
-	icon_state = "grass-dark"
-	initial_flooring = /decl/flooring/grass2/virgoforestdark
-
-/turf/simulated/floor/grass/sif
-	icon_state = "grass_sif"
-	initial_flooring = /decl/flooring/grass2/sif
-
-/turf/simulated/floor/grass/sifdark
-	icon_state = "grass_sif_dark"
-	initial_flooring = /decl/flooring/grass2/sifdark
-
-/turf/simulated/floor/grass/jungle
-	icon_state = "grass_jungle"
-	initial_flooring = /decl/flooring/grass2/jungle
-
-/turf/simulated/floor/grass/dry
-	icon_state = "grass_dry"
-	initial_flooring = /decl/flooring/grass2/dry
-
-/turf/simulated/floor/grass/colonial1
-	icon_state = "cmgrass1"
-	initial_flooring = /decl/flooring/grass2/colonial1
-
-/turf/simulated/floor/grass/colonial2
-	icon_state = "cmgrass2"
-	initial_flooring = /decl/flooring/grass2/colonial2
-
-/turf/simulated/floor/grass/colonial3
-	icon_state = "cmgrass3"
-	initial_flooring = /decl/flooring/grass2/colonial3
-
-/turf/simulated/floor/grass/colonialjungle1
-	icon_state = "junglegrass1"
-	initial_flooring =/decl/flooring/grass2/colonialjungle1
-
-/turf/simulated/floor/grass/colonialjungle2
-	icon_state = "junglegrass2"
-	initial_flooring = /decl/flooring/grass2/colonialjungle2
-
-/turf/simulated/floor/grass/colonialjungle3
-	icon_state = "junglegrass3"
-	initial_flooring = /decl/flooring/grass2/colonialjungle3
-
-/turf/simulated/floor/grass/colonialjungle4
-	icon_state = "junglegrass4"
-	initial_flooring = /decl/flooring/grass2/colonialjungle4
-
-/turf/simulated/floor/grass/colonialbeach
-	icon_state = "grassbeach"
-	initial_flooring = /decl/flooring/grass2/colonialbeach
-
-/turf/simulated/floor/grass/colonialbeach/corner
-	icon_state = "gbcorner"
-	initial_flooring = /decl/flooring/grass2/colonialbeach/corner
-
-/*Dirt*/
-
-/turf/simulated/floor/dirt
-	name = "dirt"
-	icon = 'icons/turf/flooring/dirt.dmi'
-	icon_state = "dirt"
-	initial_flooring = /decl/flooring/dirt
-
-/turf/simulated/floor/dirt/dark
-	icon_state = "dirtnewdark"
-	initial_flooring = /decl/flooring/dirt/dark
-
-/turf/simulated/floor/dirt/dark/plough
-	icon_state = "dirt_ploughed"
-	initial_flooring = /decl/flooring/dirt/dark/plough
-
-/turf/simulated/floor/dirt/flood
-	icon_state = "flood_dirt"
-	initial_flooring = /decl/flooring/dirt/flood
-
-/turf/simulated/floor/dirt/flood/plough
-	icon_state = "flood_dirt_ploughed"
-	initial_flooring = /decl/flooring/dirt/flood/plough
-
-/turf/simulated/floor/dirt/dust
-	icon_state = "dust"
-	initial_flooring = /decl/flooring/dirt/dust
-
-/turf/simulated/floor/dirt/ground
-	icon_state = "desert"
-	initial_flooring = /decl/flooring/dirt/ground
-
-/turf/simulated/floor/dirt/coast
-	name = "coastline"
-	icon_state = "dirtbeach"
-	initial_flooring = /decl/flooring/dirt/coast
-
-/turf/simulated/floor/dirt/coast/corner
-	icon_state = "dirtbeachcorner1"
-	initial_flooring = /decl/flooring/dirt/coast/corner
-
-/turf/simulated/floor/dirt/coast/corner2
-	icon_state = "dirtbeachcorner2"
-	initial_flooring = /decl/flooring/dirt/coast/corner2
-
-/turf/simulated/floor/dirt/burned
-	icon_state = "burned_dirt"
-	initial_flooring = /decl/flooring/dirt/burned
-
-/turf/simulated/floor/dirt/mud
-	name = "mud"
-	icon_state = "mud_dark"
-	initial_flooring = /decl/flooring/dirt/mud
-
-/turf/simulated/floor/dirt/mud/light
-	name = "mud"
-	icon_state = "mud_light"
-	initial_flooring = /decl/flooring/dirt/mud/light
-
-/*Rock*/
-
-/turf/simulated/floor/rock
-	name = "rocks"
-	icon = 'icons/turf/flooring/dirt.dmi'
-	icon_state = "rock"
-	initial_flooring = /decl/flooring/rock
-
-/turf/simulated/floor/rock/alt
-	name = "rocks"
-	icon_state = "rock_alt"
-	initial_flooring = /decl/flooring/rock/alt
-
-/turf/simulated/floor/rock/grey
-	name = "rocks"
-	icon_state = "rock_grey"
-	initial_flooring = /decl/flooring/rock/grey
-
-/turf/simulated/floor/rock/dark
-	name = "rocks"
-	icon_state = "rock_dark"
-	initial_flooring = /decl/flooring/rock/dark
-
-/turf/simulated/floor/rock/old
-	name = "rocks"
-	icon_state = "rock_old"
-	initial_flooring = /decl/flooring/rock/old
-
-/turf/simulated/floor/rock/manmade/ruin1
-	name = "rocks"
-	icon_state = "stone_old"
-	initial_flooring = /decl/flooring/rock/manmade/ruin1
-
-/turf/simulated/floor/rock/manmade/ruin2
-	name = "rocks"
-	icon_state = "stone_old1"
-	initial_flooring = /decl/flooring/rock/manmade/ruin2
-
-/turf/simulated/floor/rock/manmade/ruin3
-	name = "rocks"
-	icon_state = "stone_old2"
-	initial_flooring = /decl/flooring/rock/manmade/ruin3
-
-/turf/simulated/floor/rock/seafloor
-	name = "rocks"
-	icon_state = "seafloor"
-	initial_flooring = /decl/flooring/rock/seafloor
-
-/turf/simulated/floor/rock/manmade/concrete
-	name = "concrete"
-	icon_state = "concrete6"
-	initial_flooring = /decl/flooring/rock/manmade/concrete
-
-/turf/simulated/floor/rock/manmade/asphalt
-	name = "asphalt"
-	icon_state = "asphalt"
-	initial_flooring = /decl/flooring/rock/manmade/asphalt
-
-/turf/simulated/floor/rock/manmade/road
-	name = "road"
-	icon_state = "road_1"
-	initial_flooring = /decl/flooring/rock/manmade/road
+/turf/simulated/floor/beach/water/New()
+	..()
+	overlays += image("icon"='icons/misc/beach.dmi',"icon_state"="water5","layer"=MOB_LAYER+0.1)
 

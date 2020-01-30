@@ -46,7 +46,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 	data["trace_chem"] = temp_chem
 	data["blood_colour"] = blood_color
 	data["resistances"] = null
-	data["ling"] = check_special_role(ROLE_CHANGELING)
+	data["ling"] = player_is_antag_id(src.mind,ROLE_CHANGELING) ? TRUE : null
 	return data
 
 //Resets blood data
@@ -56,7 +56,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 			var/isling = player_is_antag_id(src.mind,ROLE_CHANGELING) ? TRUE : null
 			B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
 							"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list(), "ling" = isling)
-			B.initialize_data(get_blood_data())
+			B.color = B.data["blood_colour"]
 
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
@@ -118,8 +118,25 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 	B.volume = amount
 
 	//set reagent data
-	B.initialize_data(get_blood_data())
+	B.data["donor"] = src
+	if (!B.data["virus2"])
+		B.data["virus2"] = list()
+	B.data["virus2"] |= virus_copylist(src.virus2)
+	B.data["antibodies"] = src.antibodies
+	B.data["blood_DNA"] = copytext(src.dna.unique_enzymes,1,0)
+	B.data["blood_type"] = copytext(src.dna.b_type,1,0)
+	B.data["ling"] = player_is_antag_id(src.mind,ROLE_CHANGELING) ? TRUE : null
+	// Putting this here due to return shenanigans.
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		B.data["blood_colour"] = H.blood_color
+		B.color = B.data["blood_colour"]
 
+	var/list/temp_chem = list()
+	for(var/datum/reagent/R in src.reagents.reagent_list)
+		temp_chem += R.id
+		temp_chem[R.id] = R.volume
+	B.data["trace_chem"] = list2params(temp_chem)
 	return B
 
 //For humans, blood does not appear from blue, it comes from vessels.

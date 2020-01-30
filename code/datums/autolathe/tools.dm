@@ -50,10 +50,6 @@
 	name = "wirecutters"
 	build_path = /obj/item/weapon/tool/wirecutters
 
-/datum/design/autolathe/tool/pliers
-	name = "pliers"
-	build_path = /obj/item/weapon/tool/wirecutters/pliers
-
 /datum/design/autolathe/tool/ducttape
 	name = "roll of duct tape"
 	build_path = /obj/item/weapon/tool/tape_roll

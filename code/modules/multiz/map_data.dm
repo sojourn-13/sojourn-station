@@ -91,13 +91,14 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 
 	var/list/loadout_blacklist	//list of types of loadout items that will not be pickable
 
-	var/default_spawn = "Aft Cryogenic Storage"
+	var/default_spawn = "Cryogenic Storage"
 
-	var/allowed_jobs = list(/datum/job/premier, /datum/job/rd, /datum/job/pg, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/smc, /datum/job/swo,
+	var/allowed_jobs = list(/datum/job/premier, /datum/job/rd, /datum/job/pg, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/smc, /datum/job/swo, /datum/job/foreman,
 						/datum/job/supsec, /datum/job/inspector, /datum/job/medspec, /datum/job/trooper, /datum/job/officer,
 						/datum/job/doctor, /datum/job/chemist, /datum/job/paramedic, /datum/job/psychiatrist,
 						/datum/job/technomancer,
 						/datum/job/cargo_tech, /datum/job/mining, /datum/job/merchant,
+						/datum/job/salvager, /datum/job/pro,
 						/datum/job/clubworker, /datum/job/clubmanager, /datum/job/actor,
 						/datum/job/chaplain, /datum/job/acolyte, /datum/job/janitor, /datum/job/hydro,
 						/datum/job/scientist, /datum/job/roboticist,
@@ -110,18 +111,18 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 	var/overmap_size = 50
 	var/overmap_event_areas = 40
 
-	var/emergency_shuttle_docked_message = "The escape pods are now armed. You have approximately %ETD% to board the escape pods."
-	var/emergency_shuttle_leaving_dock = "The escape pods have been launched, arriving at rendezvous point in %ETA%."
-	var/emergency_shuttle_called_message = "The emergency evacuation procedures are now in effect. Escape pods will be armed in %ETA%"
+	var/emergency_shuttle_docked_message = "Emergency evacuation is now in effect. You have %ETA% to choose to evacuate or stay and help contain the problem."
+	var/emergency_shuttle_leaving_dock = "Emergency evacuation is now complete. Remaining colonists have %ETD% before additional support arrives."
+	var/emergency_shuttle_called_message = "The emergency evacuation procedures are now in effect. You have %ETA% to prepare."
 	var/emergency_shuttle_recall_message = "Emergency evacuation sequence aborted. Return to normal operating conditions."
 
-	var/shuttle_docked_message = "Jump preparation complete. The bluespace drive is now spooling up, secure all stations for departure. Time to jump: approximately %ETD%."
-	var/shuttle_leaving_dock = "Jump initiated, exiting bluespace in %ETA%."
-	var/shuttle_called_message = "Jump sequence initiated. Transit procedures are now in effect. Jump in %ETA%."
-	var/shuttle_recall_message = "Jump sequence aborted, return to normal operating conditions."
+	var/shuttle_docked_message = "Shift end complete, remaining employees who remained have %ETD% before the following shifts employees arrive."
+	var/shuttle_leaving_dock = "Shift end is now in effect, employees now have %ETA% to leave or remain on duty for another shift."
+	var/shuttle_called_message = "The shift end will happen in %ETA%. Any unfinished work should be completed before final call."
+	var/shuttle_recall_message = "Shift end aborted, return to normal operating conditions."
 
-	var/list/usable_email_tlds = list("cev_eris.org","eris.scg","eris.net")
-	var/path = "eris"
+	var/list/usable_email_tlds = list("nad_col.org","nadezhda.scg","nadezhda.net")
+	var/path = "nadezhda"
 
 	var/access_modify_region = list(
 		ACCESS_REGION_SECURITY = list(access_hos, access_change_ids),
@@ -131,7 +132,8 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 		ACCESS_REGION_COMMAND = list(access_change_ids),
 		ACCESS_REGION_GENERAL = list(access_change_ids),
 		ACCESS_REGION_SUPPLY = list(access_change_ids),
-		ACCESS_REGION_CHURCH = list(access_nt_preacher, access_change_ids)
+		ACCESS_REGION_CHURCH = list(access_nt_preacher, access_change_ids),
+		ACCESS_REGION_PROSPECTOR = list(access_foreman, access_change_ids)
 	)
 
 /datum/maps_data/proc/character_save_path(var/slot)
@@ -258,20 +260,40 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 	height = 5
 
 /obj/map_data/nadezda_s
-	name = "Eris"
+	name = "Nadezhda Surface"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
 	is_accessable_level = FALSE
+	is_sealed = TRUE
 	height = 1
 
 /obj/map_data/nadezda_u
-	name = "Eris"
+	name = "Nadezhda Underground"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
 	is_accessable_level = FALSE
+	is_sealed = TRUE
 	height = 2
+
+/obj/map_data/nadezda_f
+	name = "Nadezhda Forest"
+	is_station_level = TRUE
+	is_player_level = TRUE
+	is_contact_level = TRUE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	height = 2
+
+/obj/map_data/nadezda_t
+	name = "Nadezhda Deep Tunnels"
+	is_station_level = TRUE
+	is_player_level = TRUE
+	is_contact_level = TRUE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	height = 1
 
 /obj/map_data/admin
 	name = "Admin Level"

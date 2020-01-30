@@ -380,7 +380,7 @@
 /obj/item/mecha_parts/mecha_equipment/tool/syringe_gun
 	name = "syringe gun"
 	desc = "Exosuit-mounted chem synthesizer with syringe gun. Reagents inside are held in stasis, so no reactions will occur. (Can be attached to: Medical Exosuits)"
-	icon = 'icons/obj/guns/launcher/syringegun.dmi'
+	icon = 'icons/obj/guns/launcher.dmi'
 	icon_state = "syringegun"
 	var/list/syringes
 	var/list/known_reagents
