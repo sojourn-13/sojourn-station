@@ -7,7 +7,7 @@
 // Consider changing this to a child of the stun baton class. ~Z
 /obj/item/borg/stun
 	name = "electrified arm"
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/decals-warning.dmi'
 	icon_state = "shock"
 
 /obj/item/borg/stun/apply_hit_effect(mob/living/M, mob/living/silicon/robot/user, var/hit_zone)
@@ -30,14 +30,14 @@
 
 /obj/item/borg/overdrive
 	name = "overdrive"
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/decals-warning.dmi'
 	icon_state = "shock"
 
 /**********************************************************************
 						HUD/SIGHT things
 ***********************************************************************/
 /obj/item/borg/sight
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/decals-warning.dmi'
 	icon_state = "securearea"
 	var/sight_mode = null
 	var/obj/screen/overlay = null
