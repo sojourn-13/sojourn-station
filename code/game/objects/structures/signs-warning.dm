@@ -1,5 +1,8 @@
 /*Atmos Signs*/
 
+/obj/structure/sign/atmos
+	icon = 'icons/obj/decals-warning.dmi'
+
 /obj/structure/sign/atmos/atmos_co2
 	name = "carbon dioxide warning sign"
 	desc = "WARNING! CO2 flow tube. Ensure the flow is disengaged before working."
@@ -37,14 +40,17 @@
 
 /*New warning signs*/
 
+/obj/structure/sign/warningnew
+	icon = 'icons/obj/decals-warning.dmi'
+
 /obj/structure/sign/warningnew/biohazard
 	name = "BIOLOGICAL HAZARD"
-	desc = "Warning: Biological and-or toxic hazards present in this area!"
+	desc = "Warning: Biological and/or toxic hazards present in this area!"
 	icon_state = "biohazard"
 
 /obj/structure/sign/warningnew/corrosives
 	name = "CORROSIVE SUBSTANCES"
-	desc = "Warning: Corrosive substances prezent in this area!"
+	desc = "Warning: Corrosive substances present in this area!"
 	icon_state = "corrosives"
 
 /obj/structure/sign/warningnew/explosives
@@ -104,15 +110,18 @@
 
 /obj/structure/sign/warningnew/oxidants
 	name = "OXIDIZING AGENTS"
-	desc = "Warning: Oxidizing agents in this area, do not start fires!"
+	desc = "Warning: Oxidizing agents in this area! Do not start fires."
 	icon_state = "oxidants"
 
 /obj/structure/sign/warningnew/memetic
 	name = "MEMETIC HAZARD"
-	desc = "Warning: Memetic hazard, wear meson goggles!"
+	desc = "Warning: Memetic hazard! Wear meson goggles."
 	icon_state = "memetic"
 
 /*Warnings*/
+
+/obj/structure/sign/warning
+	icon = 'icons/obj/decals-warning.dmi'
 
 /obj/structure/sign/warning/airlock
 	name = "\improper EXTERNAL AIRLOCK"
@@ -282,22 +291,6 @@
 	name = "\improper ESCAPE PODS"
 	icon_state = "pods"
 
-/obj/structure/sign/warning/pods/north
-	name = "\improper ESCAPE PODS"
-	icon_state = "podsnorth"
-
-/obj/structure/sign/warning/pods/south
-	name = "\improper ESCAPE PODS"
-	icon_state = "podssouth"
-
-/obj/structure/sign/warning/pods/east
-	name = "\improper ESCAPE PODS"
-	icon_state = "podseast"
-
-/obj/structure/sign/warning/pods/west
-	name = "\improper ESCAPE PODS"
-	icon_state = "podswest"
-
 /obj/structure/sign/warning/radioactive
 	name = "\improper RADIOACTIVE AREA"
 	icon_state = "radiation"
@@ -408,32 +401,40 @@
 
 /obj/structure/sign/warning/hazard_caution
 	name = "CAUTION"
+	desc = "A warning sign which reads 'CAUTION'."
 	icon_state = "wall_caution"
 
 /obj/structure/sign/warning/hazard_danger
 	name = "DANGER"
+	desc = "A warning sign which reads 'DANGER'."
 	icon_state = "wall_danger"
 
 /obj/structure/sign/warning/hazard_biohazard
 	name = "BIOHAZARD"
+	desc = "A warning sign which reads 'BIOHAZARD'."
 	icon_state = "wall_biohazard"
 
 /obj/structure/sign/warning/hazard_radiation
 	name = "RADIATION"
+	desc = "A warning sign which reads 'RADIATION'."
 	icon_state = "wall_radiation"
 
 /obj/structure/sign/warning/hazard_extremeheat
 	name = "EXTREME HEAT"
+	desc = "A warning sign which reads 'EXTREME HEAT'."
 	icon_state = "wall_extremeheat"
 
 /obj/structure/sign/warning/hazard_electrical
 	name = "ELECTRICAL HAZARD"
+	desc = "A warning sign which reads 'ELECTRICAL HAZARD'."
 	icon_state = "wall_electricalhazard"
 
 /obj/structure/sign/warning/hazard_hotloop
 	name = "HOT LOOP"
+	desc = "A warning sign which reads 'HOT LOOP'."
 	icon_state = "wall_hotloop"
 
 /obj/structure/sign/warning/hazard_coldloop
 	name = "COLD LOOP"
+	desc = "A warning sign which reads 'COLD LOOP'."
 	icon_state = "wall_coldloop"

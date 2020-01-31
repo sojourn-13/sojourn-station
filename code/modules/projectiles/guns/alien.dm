@@ -1,16 +1,14 @@
 /obj/item/weapon/gun/launcher/spikethrower
-
 	name = "spike thrower"
 	desc = "A vicious alien projectile weapon. Parts of it quiver gelatinously, as though the thing is insectile and alive."
-
 	var/last_regen = 0
 	var/spike_gen_time = 100
 	var/max_spikes = 3
 	var/spikes = 3
 	release_force = 30
-	icon = 'icons/obj/guns/launcher.dmi'
-	icon_state = "spikethrower3"
-	item_state = "spikethrower"
+	icon = 'icons/obj/guns/launcher/pneumatic.dmi'
+	icon_state = "pneumatic"
+	item_state = "pneumatic"
 	fire_sound_text = "a strange noise"
 	fire_sound = 'sound/weapons/bladeslice.ogg'
 

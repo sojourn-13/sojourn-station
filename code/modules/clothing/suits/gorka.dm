@@ -145,19 +145,13 @@
 
 // Gorka Base
 
-/obj/item/clothing/suit/gorka/toggle/gorka/standard
-	name = "gorka jacket"
-	desc = "A rugged, two-tone military style field parka for the adventurer or paramilitant in you."
-	icon_state = "gorka_jacket"
-	icon_open = "gorka_jacket_open"
-	icon_closed = "gorka_jacket"
-
 /obj/item/clothing/suit/gorka/toggle/gorka/camo
 	name = "camo gorka jacket"
 	desc = "A rugged, two-tone military field parka for the partizan fighter in you."
 	icon_state = "gorka_jacket_ss"
 	icon_open = "gorka_jacket_ss_open"
 	icon_closed = "gorka_jacket_ss"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/camo
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew
 	name = "crew gorka jacket"
@@ -165,6 +159,7 @@
 	icon_state = "gorka_jacket_crew"
 	icon_open = "gorka_jacket_crew_open"
 	icon_closed = "gorka_jacket_crew"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/crew
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_b
 	name = "blue crew gorka jacket"
@@ -172,6 +167,7 @@
 	icon_state = "gorka_jacket_crew_b"
 	icon_open = "gorka_jacket_crew_b_open"
 	icon_closed = "gorka_jacket_crew_b"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/crew_blue
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_g
 	name = "green crew gorka jacket"
@@ -179,6 +175,7 @@
 	icon_state = "gorka_jacket_crew_g"
 	icon_open = "gorka_jacket_crew_g_open"
 	icon_closed = "gorka_jacket_crew_g"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/crew_green
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_light
 	name = "light crew gorka"
@@ -186,6 +183,7 @@
 	icon_state = "gorka_jacket_crew_light"
 	icon_open = "gorka_jacket_crew_light_open"
 	icon_closed = "gorka_jacket_crew_light"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/crew_light
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_light_b
 	name = "light blue crew gorka"
@@ -193,6 +191,7 @@
 	icon_state = "gorka_jacket_crew_light_b"
 	icon_open = "gorka_jacket_crew_light_b_open"
 	icon_closed = "gorka_jacket_crew_light_b"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/crew_light_b
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_o
 	name = "orange crew gorka jacket"
@@ -200,6 +199,7 @@
 	icon_state = "gorka_jacket_crew_o"
 	icon_open = "gorka_jacket_crew_o_open"
 	icon_closed = "gorka_jacket_crew_o"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/crew_orange
 
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_y
 	name = "yellow crew gorka jacket"
@@ -207,6 +207,15 @@
 	icon_state = "gorka_jacket_crew_y"
 	icon_open = "gorka_jacket_crew_y_open"
 	icon_closed = "gorka_jacket_crew_y"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/crew_yellow
+
+/obj/item/clothing/suit/gorka/toggle/gorka/standard
+	name = "standard gorka jacket"
+	desc = "A rugged, two-tone military style field parka for the adventurer or paramilitant in you."
+	icon_state = "gorka_jacket"
+	icon_open = "gorka_jacket_open"
+	icon_closed = "gorka_jacket"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/standard
 
 /obj/item/clothing/suit/gorka/toggle/gorka
 	name = "tan gorka jacket"
@@ -223,11 +232,6 @@
 	hoodtype = /obj/item/clothing/head/hood/gorkahood
 
 /*Gorka Hood*/
-
-/obj/item/clothing/head/hood/gorkahood/standard
-	name = "standard gorka jacket hood"
-	icon_state = "gorka_jacket_hood"
-	desc = "A hood from a gorka jacket, oddly cozy."
 
 /obj/item/clothing/head/hood/gorkahood/camo
 	name = "camo gorka hood"
@@ -268,6 +272,11 @@
 	name = "yellow crew gorka hood"
 	desc = "A hood from a gorka jacket, oddly cozy."
 	icon_state = "gorka_jacket_crew_y_hood"
+
+/obj/item/clothing/head/hood/gorkahood/standard
+	name = "standard gorka jacket hood"
+	icon_state = "gorka_jacket_hood"
+	desc = "A hood from a gorka jacket, oddly cozy."
 
 /obj/item/clothing/head/hood/gorkahood
 	name = "tan gorka jacket hood"
@@ -354,6 +363,7 @@
 	icon_state = "gorka_jacket_ih_med_b"
 	icon_open = "gorka_jacket_ih_med_b_open"
 	icon_closed = "gorka_jacket_ih_med_b"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood_ih/ih_med_b
 
 /obj/item/clothing/head/hood/gorkahood_ih/ih_med_b
 	name = "blue corpsman hood"
@@ -366,6 +376,7 @@
 	icon_state = "gorka_jacket_ih_med_g"
 	icon_open = "gorka_jacket_ih_med_g_open"
 	icon_closed = "gorka_jacket_ih_med_g"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood_ih/ih_med_g
 
 /obj/item/clothing/head/hood/gorkahood_ih/ih_med_g
 	name = "green corpsman hood"

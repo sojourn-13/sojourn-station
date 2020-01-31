@@ -143,12 +143,6 @@
 
 /*Gorkas*/
 
-/obj/item/clothing/under/gorka/standard
-	name = "standard gorka"
-	desc = "A rugged set of vaguely militant and quite slavic two-tone clothes."
-	icon_state = "gorka"
-	item_state = "gorka"
-
 /obj/item/clothing/under/gorka/camo
 	name = "camo gorka"
 	desc = "A rugged set of two-tone military style clothes."
@@ -196,6 +190,12 @@
 	desc = "A rugged set of vaguely militant two-tone grey utility wear with yellow patches and markings."
 	icon_state = "gorka_crew_y"
 	item_state = "gorka_crew_y"
+
+/obj/item/clothing/under/gorka/standard
+	name = "standard gorka"
+	desc = "A rugged set of vaguely militant and quite slavic two-tone clothes."
+	icon_state = "gorka"
+	item_state = "gorka"
 
 /obj/item/clothing/under/gorka
 	name = "tan gorka"
