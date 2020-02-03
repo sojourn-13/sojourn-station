@@ -279,19 +279,19 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 
 /obj/map_data/nadezda_f
 	name = "Nadezhda Forest"
-	is_station_level = TRUE
+	is_station_level = FALSE
 	is_player_level = TRUE
-	is_contact_level = TRUE
+	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	height = 2
 
 /obj/map_data/nadezda_t
 	name = "Nadezhda Deep Tunnels"
-	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
 	is_accessable_level = FALSE
+	generate_asteroid = TRUE
 	is_sealed = TRUE
 	height = 1
 

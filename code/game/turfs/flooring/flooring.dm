@@ -706,9 +706,10 @@ var/list/flooring_types
 	name = "sand"
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "sand"
-	flags = TURF_REMOVE_SHOVEL | TURF_CAN_BURN | TURF_CAN_BREAK
+	flags = TURF_REMOVE_SHOVEL | TURF_CAN_BURN
 	build_type = null
 	footstep_sound = "asteroid"
+	plating_type = /decl/flooring/dirt
 
 /decl/flooring/beach/desert
 	icon = 'icons/turf/flooring/beach.dmi'
@@ -725,6 +726,8 @@ var/list/flooring_types
 /decl/flooring/beach/water
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "water"
+	resistance = RESISTANCE_TOUGH
+	health = 9999999
 
 /decl/flooring/beach/water/coastwater
 	icon = 'icons/turf/flooring/beach.dmi'
@@ -782,6 +785,7 @@ var/list/flooring_types
 	build_type = null
 	footstep_sound = "grass"
 	resistance = RESISTANCE_TOUGH
+	plating_type = /decl/flooring/dirt
 
 /decl/flooring/grass2/virgoforest
 	icon_base = "grass-light"

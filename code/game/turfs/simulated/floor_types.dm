@@ -38,6 +38,8 @@
 	icon_state = "under"
 	icon = 'icons/turf/flooring/plating.dmi'
 	initial_flooring = /decl/flooring/reinforced/plating/under
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/hull
 	name = "hull"

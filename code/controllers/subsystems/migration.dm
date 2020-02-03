@@ -28,10 +28,10 @@ SUBSYSTEM_DEF(migration)
 	var/migrate_chance = 15 //The chance, during each migration, for each populated burrow, that mobs will move from there to somewhere else
 
 
-	var/roundstart_burrows = 120
-	var/migrate_time = 80 SECONDS //How long it takes to move mobs from one burrow to another
-	var/reinforcement_time = 20 SECONDS //How long it takes for reinforcements to arrive
-	var/plantspread_burrows_num = 3 //How many other burrows will each one with plants send them to
+	var/roundstart_burrows = 5
+	var/migrate_time = 30 SECONDS //How long it takes to move mobs from one burrow to another
+	var/reinforcement_time = 10 SECONDS //How long it takes for reinforcements to arrive
+	var/plantspread_burrows_num = 1 //How many other burrows will each one with plants send them to
 
 
 
@@ -239,7 +239,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 		//And a high chance to reroll it if its not what we want in terms of being in/out of maintenance
 		if ((candidate.maintenance != reroll_type) && prob(reroll_prob))
 			continue
-		
+
 		// if burrow was closed before it has chance to be ignored
 		if (candidate.isSealed && candidate.isRevealed && prob(reroll_prob/2))
 			continue
@@ -274,7 +274,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 		//Burrow is already busy
 		if (candidate.target || candidate.recieving)
 			continue
-		
+
 		// Burrow is closed
 		if(candidate.isSealed)
 			continue

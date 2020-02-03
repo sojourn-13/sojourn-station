@@ -84,7 +84,7 @@
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive,
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang))
 
-/obj/random/mecha/mecha_equipment/low_chance
+/obj/random/mecha_equipment/low_chance
 	name = "low chance random mecha equipment"
 	icon_state = "tech-red-low"
 	spawn_nothing_percentage = 80

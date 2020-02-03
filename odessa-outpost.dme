@@ -2654,6 +2654,7 @@
 #include "maps\CEVEris\_Eris_factions.dm"
 #include "maps\CEVEris\_map_data_Eris.dm"
 #include "maps\CEVEris\_Nadezhda_areas.dm"
+#include "maps\CEVEris\_Nadezhda_factions.dm"
 #include "maps\CEVEris\datums\reports.dm"
 #include "maps\dungeons\crawler\crawler.dm"
 #include "maps\encounters\asteroid\asteroid.dm"

@@ -11,13 +11,13 @@
 	name = "Rock"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rock"
-	oxygen = 0
-	nitrogen = 0
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 	opacity = 1
 	density = 1
 	layer = EDGED_TURF_LAYER
 	blocks_air = 1
-	temperature = T0C
+	temperature = T20C
 	var/mined_turf = /turf/simulated/floor/asteroid
 	var/ore/mineral
 	var/mined_ore = 0
@@ -411,9 +411,9 @@
 	icon_state = "asteroid"
 
 	initial_flooring = /decl/flooring/asteroid
-	oxygen = 0
-	nitrogen = 0
-	temperature = TCMB
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
+	temperature = T20C
 	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
 	var/overlay_detail
 	has_resources = 1

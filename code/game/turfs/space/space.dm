@@ -216,3 +216,12 @@
 
 /turf/space/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0)
 	return ..(N, tell_universe, 1)
+
+/turf/space/hydrotile
+	name = "\proper coursing water"
+	icon = 'icons/turf/flooring/beach.dmi'
+	icon_state = "seashallow_jungle2"
+	luminosity = 1
+	is_hole = FALSE
+
+

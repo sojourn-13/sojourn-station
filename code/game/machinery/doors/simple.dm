@@ -175,7 +175,6 @@
 	..(newloc, MATERIAL_WOOD)
 
 /obj/machinery/door/unpowered/simple/wood/saloon
-	icon_base = "saloon"
 	autoclose = 1
 	normalspeed = 0
 

@@ -7,6 +7,8 @@
 	ship_area = TRUE
 	icon_state = "asteroid"
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
+	dynamic_lighting = FALSE
+	base_turf = /turf/simulated/floor/dirt
 
 /area/colony/exposedsun/pastgate
 	ship_area = TRUE
@@ -16,7 +18,8 @@
 
 /area/nadezhda
 	ship_area = TRUE
-	icon_state = "nadezhdayellow"
+	icon_state = "erisyellow"
+	base_turf = /turf/simulated/floor/dirt
 
 //Maintenance
 
@@ -118,6 +121,7 @@
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
+	dynamic_lighting = FALSE
 
 
 /area/nadezhda/maintenance/outside/trashcave
@@ -127,81 +131,86 @@
 
 /area/nadezhda/maintenance/outside/abandoned_solars
 	name = "Abandoned Solars"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/outside/burned_outpost
 	name = "Burned Outpost"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/outside/hunter_cabin
 	name = "Hunter Cabin"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 
 /area/nadezhda/maintenance/outside/campground
 	name = "Campground"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 
 /area/nadezhda/maintenance/outside/farm
 	name = "Lost Farm"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 
 /area/nadezhda/maintenance/outside/abandoned_outpost
 	name = "Lost Outpost"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/outside/zoo
 	name = "The Zoo"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/outside/prepper
 	name = "Prepper Base"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
 
 /area/nadezhda/maintenance/outside/monster_cave
 	name = "Monster Cave"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 	forced_ambience = list('sound/ambience/ambisin1.ogg', 'sound/ambience/ambisin2.ogg', 'sound/ambience/ambisin3.ogg', 'sound/ambience/ambisin4.ogg')
 
 /area/nadezhda/maintenance/outside/smuggler_zone
 	name = "Smuggler Base"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
+
+/area/nadezhda/maintenance/outside/smuggler_zone_u
+	name = "Smuggler Base Underground"
+	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
 
 //Outside natural areas
 
 /area/nadezhda/outside
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
-
+	dynamic_lighting = FALSE
 
 /area/nadezhda/outside/one_star
 	name = "One Star Base"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen13.ogg', 'sound/ambience/ambigen14.ogg', 'sound/ambience/ambimalf.ogg')
 
 /area/nadezhda/outside/dcave
 	name = "Diyaab Cave"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/outside/fnest
 	name = "Fennec Nest"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/outside/pond
 	name = "Pond"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/outside/bcave
 	name = "Bear Cave"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/outside/scave
 	name = "Spider Cave"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
@@ -250,7 +259,7 @@
 
 /area/nadezhda/hallway
 	sound_env = LARGE_ENCLOSED
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/hallway/main/f1section1
 	name = "Floor One Hallway One"
@@ -319,15 +328,15 @@
 
 /area/nadezhda/hallway/side/bridgehallway
 	name = "Bridge Hallway"
-	icon_state = "nadezhdablue"
+	icon_state = "erisblue"
 
 /area/nadezhda/hallway/side/eschangara
 	name = "Escape Hangar A"
-	icon_state = "nadezhdared"
+	icon_state = "erisred"
 
 /area/nadezhda/hallway/side/eschangarb
 	name = "Escape Hangar B"
-	icon_state = "nadezhdared"
+	icon_state = "erisred"
 
 
 
@@ -587,7 +596,7 @@
 
 /area/nadezhda/crew_quarters/barbackroom
 	name = "Bar Backroom"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/crew_quarters/theatre
 	name = "\improper Theatre"
@@ -605,7 +614,7 @@
 
 /area/nadezhda/crew_quarters/librarybackroom
 	name = "Library Backroom"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/crew_quarters/janitor/
 	name = "\improper Custodial Closet"
@@ -618,25 +627,26 @@
 /area/nadezhda/crew_quarters/hydroponics/garden
 	name = "\improper Garden"
 	icon_state = "garden"
+	dynamic_lighting = FALSE
 
 /area/nadezhda/crew_quarters/clothingstorage
 	name = "Clothing Storage"
-	icon_state = "nadezhdayellow"
+	icon_state = "erisyellow"
 
 /area/nadezhda/crew_quarters/pubeva
 	name = "Public E.V.A. Storage"
-	icon_state = "nadezhdablue"
+	icon_state = "erisblue"
 
 /area/nadezhda/crew_quarters/publichydro
 	name = "Public Hydroponics"
-	icon_state = "nadezhdablue"
+	icon_state = "erisblue"
 
 
 
 //Church
 
 /area/nadezhda/absolutism
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
 /area/nadezhda/absolutism/chapel
@@ -1003,26 +1013,26 @@ area/nadezhda/medical/medbaymeeting
 
 /area/nadezhda/medical/chemstor
 	name = "Chemical Storage"
-	icon_state = "nadezhdablue"
+	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_SCI_DARK
 
 /area/nadezhda/medical/medeva
 	name = "Medical E.V.A. Storage"
-	icon_state = "nadezhdablue"
+	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_SCI_DARK
 
 /area/nadezhda/medical/paramedic
 	name = "\improper Paramedic Closet"
-	icon_state = "nadezhdayellow"
+	icon_state = "erisyellow"
 	area_light_color = COLOR_LIGHTING_SCI_DARK
 
 /area/nadezhda/medical/medbay/iso
 	name = "Isolation Wing"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/medical/medbay/uppercor
 	name = "Medbay Upper Coridor"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 
 
@@ -1100,6 +1110,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/security/maingate
 	name = "\improper Security - Main Gate"
 	icon_state = "security"
+	dynamic_lighting = FALSE
 
 /area/nadezhda/security/checkpoint/supply
 	name = "Security Post - Cargo Bay"
@@ -1353,32 +1364,32 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/outpostgeneral
 	name = "Anomalous Research Outpost General"
 	flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 /area/nadezhda/rnd/outpostbotany
 	name = "Anomalous Research Outpost Botany"
 	flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "nadezhdagreen"
+	icon_state = "erisblue"
 
 /area/nadezhda/rnd/outpostmachineroom
 	name = "Anomalous Research Outpost Machine Rooms"
 	flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "nadezhdagreen"
+	icon_state = "erisblue"
 
 /area/nadezhda/rnd/outpostbreakroom
 	name = "Anomalous Research Outpost Break Room"
 	flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "nadezhdagreen"
+	icon_state = "erisblue"
 
 /area/nadezhda/rnd/outpostmedical
 	name = "Anomalous Research Outpost Medstation"
 	flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "nadezhdagreen"
+	icon_state = "erisblue"
 
 /area/nadezhda/rnd/outpoststorage
 	name = "Anomalous Research Outpost Storage"
 	flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
 
 
 /area/nadezhda/rnd/server
