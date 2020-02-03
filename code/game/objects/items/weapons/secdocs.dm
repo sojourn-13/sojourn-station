@@ -1,6 +1,6 @@
 /obj/item/weapon/oddity/secdocs
-	name = "science data"
-	desc = "Folder contains some papers with important science data."
+	name = "classified research"
+	desc = "This folder contains highly confidential scientific research."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "scifolder0"
 	price_tag = 5000
@@ -15,26 +15,47 @@
 
 /obj/item/weapon/oddity/secdocs/Initialize()
 	icon_state = "scifolder[rand(0,3)]"
-	name = pick("Atractor fields theory",
-				"World lines theory",
-				"Outside context problem evidence",
-				"Use of self-learning AI for public administration",
-				"Evidence of time travel related changes in history",
-				"Geograpfy of non existent cyties",
-				"Production of Alliance nanomachines",
-				"Known S.A.U. equipment specifications",
-				"Known access points to Discordia",
-				"The Door phenomenon",
-				"Paralell world related mutations",
-				"Mass hallucinations or a breach from another world?",
-				"Ironhammer budget: evidence of S.A.U. overfund",
-				"Real reason of One Star fall",
-				"Connection between One Star and dead alien civilizations, are we next?",
-				"Unknown device blueprints")
+	desc = pick("It's labelled 'Attractor Fields Theory'.",
+				"It's labelled 'World Lines Theory'.",
+				"It's labelled 'The Door Phenomenon'.",
+				"It's labelled 'FTL Related Mutations'.",
+				"It's labelled 'Mass Hallucinations or Timeline Convergence?'.",
+				"It's labelled 'The Existence of Alternate Realities'.",
+				"It's labelled 'Humane Applications of Mind Fryers'.",
+				"It's labelled 'Summary of Faction Capabilities'.",
+				"It's labelled 'The Technology Behind Absolutism'.",
+				"It's labelled 'Sol Federation Research Ethics'.",
+				"It's labelled 'The Collapse of Greyson Positronics'.",
+				"It's labelled 'Wanderer - A Dossier'.",
+				"It's labelled 'Ironhammer's Legacy: Our Potential Gain'.",
+				"It's labelled 'Evaluation of Nadezhda Council Efficiency'.",
+				"It's labelled 'The Truth Behind the Bluespace Crash'.",
+				"It's labelled 'Dead Colonies - What Can Be Learnt?'.",
+				"It's labelled 'Analysis of Recovered Anomalies'.",
+				"It's labelled 'Collated Evidence of Anomaly Origins'.",
+				"It's labelled 'Anomalies In Warfare - Recommendations'.",
+				"It's labelled 'Surviving Test Candidate Interview'.",
+				"It's labelled 'Subject Elimination Report'.",
+				"It's labelled 'Minimizing Research Casualties'.",
+				"It's labelled 'Alternatives to Traditional Warheads'.",
+				"It's labelled 'Proposals For New Ammunition Types'.",
+				"It's labelled 'Mech Prototype Designs - Awaiting Approval'.",
+				"It's labelled 'Optimizing Nanomachine Production'.",
+				"It's labelled 'Usage of Self-Learning Administrative AI'.",
+				"It's labelled 'Specifications of Project X'.",
+				"It's labelled 'Virus Monitoring Team Update'.",
+				"It's labelled 'The Weaponization of Plague'.",
+				"It's labelled 'Acquisition of Restricted Materials'.",
+				"It's labelled 'Quarterly Overseer Meeting Minutes'.",
+				"It's labelled 'Unabridged Expense Report - Do Not Publish'.",
+				"It's labelled 'For The Attention of Director Mkne'.",
+				"It's labelled 'The Future of the Soteria Institute'.",
+				"The label has been censored with permanent marker. Mysterious.",
+				"The label has been torn off. Maybe it's best not to pry.")
 	. = ..()
 	var/mob/living/carbon/human/owner = loc
 	if(istype(owner))
-		to_chat(owner, SPAN_NOTICE("You have valuable science data on your person. It is essential that you do not let it fall into the wrong hands."))
+		to_chat(owner, SPAN_NOTICE("The Soteria Institute has entrusted you with valuable research data. It is essential that you do not let it fall into the wrong hands."))
 
 /hook/roundstart/proc/place_docs()
 	var/list/L = list()

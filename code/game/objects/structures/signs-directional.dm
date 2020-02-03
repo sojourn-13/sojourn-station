@@ -8,79 +8,89 @@
 	icon_state = "direction"
 
 /obj/structure/sign/directions/science
-	name = "\improper Science"
+	name = "SCIENCE"
 	desc = "A direction sign pointing the way to the Research department."
 	icon_state = "direction_sci"
 
 /obj/structure/sign/directions/engineering
-	name = "\improper Engineering"
+	name = "ENGINEERING"
 	desc = "A direction sign pointing the way to the Engineering department."
 	icon_state = "direction_eng"
 
 /obj/structure/sign/directions/security
-	name = "\improper Security department"
+	name = "SECURITY"
 	desc = "A direction sign pointing the way to the Security department."
 	icon_state = "direction_sec"
 
 /obj/structure/sign/directions/medical
-	name = "\improper Medical"
+	name = "MEDICAL"
 	desc = "A direction sign pointing the way to the Medical department."
 	icon_state = "direction_med"
 
 /obj/structure/sign/directions/evac
-	name = "\improper Evac"
+	name = "EVAC"
 	desc = "A direction sign pointing the way to the shuttle bay."
 	icon_state = "direction_evac"
 
 /obj/structure/sign/directions/command
-	name = "\improper Command"
+	name = "COMMAND"
 	desc = "A direction sign pointing the way to the bridge."
 	icon_state = "direction_cmd"
 
 /obj/structure/sign/directions/elevator
-	name = "\improper Elevator"
+	name = "ELEVATOR"
 	desc = "A direction sign pointing the way to the elevator."
 	icon_state = "direction_elv"
 
 /obj/structure/sign/directions/cryo
-	name = "\improper Cryogenic Storage"
+	name = "CRYO"
 	desc = "A direction sign pointing the way to cryogenic storage."
 	icon_state = "direction_cry"
 
-/obj/structure/sign/directions/roomnum
-	name = "room number"
+/obj/structure/sign/directions/room1
+	name = "ROOM 1"
 	desc = "A sign detailing the number of the room beside it."
-	icon_state = "roomnum"
+	icon_state = "room1"
 
-/obj/structure/sign/directions/podsnorth
-	name = "\improper ESCAPE PODS"
+/obj/structure/sign/directions/room2
+	name = "ROOM 2"
+	desc = "A sign detailing the number of the room beside it."
+	icon_state = "room2"
+
+/obj/structure/sign/directions/room3
+	name = "ROOM 3"
+	desc = "A sign detailing the number of the room beside it."
+	icon_state = "room3"
+
+/obj/structure/sign/directions/room4
+	name = "ROOM 4"
+	desc = "A sign detailing the number of the room beside it."
+	icon_state = "room4"
+
+/obj/structure/sign/directions/room5
+	name = "ROOM 5"
+	desc = "A sign detailing the number of the room beside it."
+	icon_state = "room5"
+
+/obj/structure/sign/directions/room6
+	name = "ROOM 6"
+	desc = "A sign detailing the number of the room beside it."
+	icon_state = "room6"
+
+/obj/structure/sign/directions/room7
+	name = "ROOM 7"
+	desc = "A sign detailing the number of the room beside it."
+	icon_state = "room7"
+
+/obj/structure/sign/directions/room8
+	name = "ROOM 8"
+	desc = "A sign detailing the number of the room beside it."
+	icon_state = "room8"
+
+/obj/structure/sign/directions/pods
+	name = "\improper PODS"
 	desc = "A direction sign pointing the way to the escape pods."
-	icon_state = "podsnorth"
-
-/obj/structure/sign/directions/podssouth
-	name = "\improper ESCAPE PODS"
-	desc = "A direction sign pointing the way to the escape pods."
-	icon_state = "podssouth"
-
-/obj/structure/sign/directions/podseast
-	name = "\improper ESCAPE PODS"
-	desc = "A direction sign pointing the way to the escape pods."
-	icon_state = "podseast"
-
-/obj/structure/sign/directions/podswest
-	name = "\improper ESCAPE PODS"
-	desc = "A direction sign pointing the way to the escape pods."
-	icon_state = "podswest"
-
-/obj/structure/sign/directions/map
-	name = "station map"
-	desc = "A framed picture of the station."
-	icon_state = "map-left"
-
-/obj/structure/sign/directions/map/right
-	name = "station map"
-	desc = "A framed picture of the station."
-	icon_state = "map-right"
+	icon_state = "pods"
 
 /*Levels - Decks, Hangars, Sections, Etc.*/
 /obj/structure/sign/levels
