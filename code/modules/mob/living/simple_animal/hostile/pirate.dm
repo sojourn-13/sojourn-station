@@ -4,7 +4,7 @@
 /mob/living/simple_animal/hostile/voidwolf
 	name = "Void Wolf Commando"
 	desc = "A Void Wolf mercenary wielding an energy blade and combat shield."
-	icon= 'icons/mob/mob-humanoid.dmi'
+	icon= 'icons/mob/faction.dmi'
 	icon_state = "voidwolf_melee"
 	icon_dead = "voidwolf_melee_dead"
 	speak_chance = 0
@@ -37,6 +37,7 @@
 /mob/living/simple_animal/hostile/voidwolf/fieldtech
 	name = "Void Wolf Field Tech"
 	desc = "A Void Wolf mercenary wielding an industrial welder."
+	icon= 'icons/mob/faction.dmi'
 	icon_state = "voidengie"
 	attacktext = "burnt"
 	attack_sound = 'sound/items/Welder.ogg'
@@ -58,17 +59,20 @@
 /mob/living/simple_animal/hostile/voidwolf/fieldtech_ranged
 	name = "Void Wolf Field Tech"
 	desc = "A Void Wolf mercenary wielding an industrial welder and energy pistol."
+	icon= 'icons/mob/faction.dmi'
 	icon_state = "voidengie_ranged"
 	icon_dead = "voidengie_ranged_dead"
 
 /mob/living/simple_animal/hostile/voidwolf/aerotrooper
 	name = "Void Wolf Aerotrooper"
 	desc = "A Void Wolf mercenary wielding an energy rifle and jetpack."
+	icon= 'icons/mob/faction.dmi'
 	icon_state = "voidwolf_flying"
 	icon_dead = "voidwolf_flying_dead"
 
 /mob/living/simple_animal/hostile/voidwolf/captain
 	name = "Void Wolf Captain"
 	desc = "A Void Wolf field commander wielding an energy sword and pistol combo. "
+	icon= 'icons/mob/faction.dmi'
 	icon_state = "voidwolfcap"
 	icon_dead = "voidwolfcap_dead"
