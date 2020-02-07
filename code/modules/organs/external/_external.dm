@@ -14,7 +14,6 @@
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 	organ_tag = "limb"
-	var/icon_name = null
 	var/tally = 0
 
 	// Strings
@@ -34,10 +33,9 @@
 	var/body_part = null               // Part flag
 	var/icon_position = 0              // Used in mob overlay layering calculations.
 	var/model                          // Used when caching robolimb icons.
-	//var/default_icon	// Used to force override of species-specific limb icons (for prosthetics).
-	var/force_icon
+
+	var/force_icon			// Used to force override of species-specific limb icons (for prosthetics).
 	var/icon/mob_icon                  // Cached icon for use in mob overlays.
-	var/gendered = null
 	var/skin_tone			// Skin tone.
 	var/skin_col			// skin colour
 	var/hair_col
@@ -58,7 +56,7 @@
 
 	// Joint/state stuff.
 	var/functions = NONE	// Functions performed by body part. Bitflag, see _defines/damage_organs.dm for possible values.
-	var/disfigured = 0		// Scarred/burned beyond recognition.
+	var/disfigured = FALSE	// Scarred/burned beyond recognition.
 	var/cannot_amputate		// Impossible to amputate.
 	var/cannot_break		// Impossible to fracture.
 	var/joint = "joint"		// Descriptive string used in dislocation.
@@ -74,18 +72,22 @@
 	var/cavity = 0
 	var/diagnosed = FALSE
 
+	// Used for spawned robotic organs
+	var/default_description = null
+
 /obj/item/organ/external/New(mob/living/carbon/holder, datum/organ_description/OD)
 	..(holder)
 
 	if(OD)
 		set_description(OD)
+	else if(default_description)
+		set_description(new default_description)
 
 	if(owner)
 		replaced(owner)
 		sync_colour_to_human(owner)
 
-	spawn(1)
-		update_icon()
+	update_icon()
 
 /obj/item/organ/external/Destroy()
 	if(parent)
@@ -115,15 +117,26 @@
 
 /obj/item/organ/external/proc/set_description(datum/organ_description/desc)
 	src.name = desc.name
-	src.organ_tag = desc.organ_tag
-	src.additional_limb_parts = desc.additional_limb_parts
+	src.surgery_name = desc.surgery_name
+	src.organ_tag = desc.organ_tag	src.additional_limb_parts = desc.additional_limb_parts
 	src.amputation_point = desc.amputation_point
 	src.joint = desc.joint
 	src.max_damage = desc.max_damage
 	src.min_broken_damage = desc.min_broken_damage
+	src.dislocated = desc.dislocated
+	src.vital = desc.vital
+	src.cannot_amputate = desc.cannot_amputate
+
 	src.w_class = desc.w_class
-	src.parent_organ = desc.parent_organ
-	src.body_part = desc.body_part
+	src.cavity_max_w_class = desc.cavity_max_w_class
+
+	src.amputation_point = desc.amputation_point
+	src.joint = desc.joint
+	src.encased = desc.encased
+	src.cavity_name = desc.cavity_name
+
+	if(desc.drop_on_remove)
+		src.drop_on_remove = desc.drop_on_remove.Copy()
 
 /obj/item/organ/external/replaced(mob/living/carbon/human/target)
 	owner = target
@@ -256,9 +269,9 @@
 	return
 B
 /obj/item/organ/external/proc/get_tally()
-	if(status & (ORGAN_DEAD|ORGAN_CUT_AWAY))
-		return 4
-	else if(status & (ORGAN_BROKEN|ORGAN_MUTATED))
+	if(is_broken())
+		return 3
+	else if(status & (ORGAN_MUTATED|ORGAN_DEAD))
 		return 3
 	// malfunctioning only happens intermittently so treat it as a broken limb when it procs
 	else if(is_malfunctioning())
@@ -270,7 +283,7 @@ B
 			spark_system.start()
 			spawn(10)
 				qdel(spark_system)
-		return 3
+		return 2
 	else if(is_dislocated())
 		return 1
 	else if(status & ORGAN_SPLINTED)
@@ -681,7 +694,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		tbrute = 3
 	return "[tbrute][tburn]"
 
-/****************************************************
+
 			   DISMEMBERMENT
 ****************************************************/
 

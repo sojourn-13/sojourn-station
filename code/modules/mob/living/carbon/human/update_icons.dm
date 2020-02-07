@@ -206,8 +206,8 @@ var/global/list/wings_icon_cache = list()
 		O.update_damstate()
 		if(O.damage_state == "00") continue
 		var/icon/DI
-		var/cache_index = "[O.damage_state]/[O.icon_name]/[blood_color]/[species.get_bodytype()]"
-		if(damage_icon_parts[cache_index] == null)
+		var/cache_index = "[O.damage_state]/[O.icon_name]/[species.blood_color]/[species.get_bodytype()]"		if(damage_icon_parts[cache_index] == null)
+
 			DI = new /icon(form.damage_overlays, O.damage_state)			// the damage icon for whole human
 			DI.Blend(new /icon(form.damage_mask, O.icon_name), ICON_MULTIPLY)	// mask with this organ's pixels
 			DI.Blend(blood_color, ICON_MULTIPLY)
