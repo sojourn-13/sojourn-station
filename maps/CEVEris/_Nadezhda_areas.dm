@@ -642,7 +642,6 @@
 	icon_state = "erisblue"
 
 
-
 //Church
 
 /area/nadezhda/absolutism

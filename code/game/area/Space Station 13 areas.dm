@@ -723,6 +723,59 @@ area/space/atmosalert()
 	name = "\improper AI Main New"
 	icon_state = "storage"
 
+//Elevators
+/area/shuttle/mining_elevator
+	name = "\improper Mining Elevator"
+	base_turf = /turf/simulated/floor/plating/under
+	requires_power = 1
+	dynamic_lighting = 0
+
+/area/shuttle/mining_elevator/colony
+	icon_state = "shuttle2"
+
+/area/shuttle/mining_elevator/deep_t
+	icon_state = "shuttle"
+	base_turf = /turf/simulated/floor/plating/under
+
+/area/shuttle/research_elevator
+	name = "\improper Research Elevator"
+	base_turf = /turf/simulated/floor/plating/under
+	requires_power = 1
+	dynamic_lighting = 0
+
+/area/shuttle/research_elevator/colony
+	icon_state = "shuttle2"
+
+/area/shuttle/research_elevator/deep_t
+	icon_state = "shuttle"
+	base_turf = /turf/simulated/floor/plating/under
+
+/area/shuttle/surface_elevator1
+	name = "\improper Surface Elevator 1"
+	base_turf = /turf/simulated/floor/plating/under
+	requires_power = 1
+	dynamic_lighting = 0
+
+/area/shuttle/surface_elevator1/surface
+	icon_state = "shuttle2"
+
+/area/shuttle/surface_elevator1/underground
+	icon_state = "shuttle"
+	base_turf = /turf/simulated/floor/plating/under
+
+/area/shuttle/surface_elevator2
+	name = "\improper Surface Elevator 2"
+	base_turf = /turf/simulated/floor/plating/under
+	requires_power = 1
+	dynamic_lighting = 0
+
+/area/shuttle/surface_elevator2/colony
+	icon_state = "shuttle2"
+
+/area/shuttle/surface_elevator2/deep_t
+	icon_state = "shuttle"
+	base_turf = /turf/simulated/floor/plating/under
+
 
 
 //Misc

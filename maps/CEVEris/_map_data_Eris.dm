@@ -4,5 +4,4 @@
 #include "centcomm.dmm"
 #include "_Nadezhda_Colony_Surface.dmm"
 #include "_Nadezhda_Colony_Underground.dmm"
-#include "_Nadezhda_Deep_Forest.dmm"
-#include "_Nadezhda_Deep_Tunnels.dmm"
+#include "_Nadezhda_Colony_Transition.dmm"

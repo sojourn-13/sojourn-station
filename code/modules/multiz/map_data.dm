@@ -277,6 +277,15 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 	is_sealed = TRUE
 	height = 2
 
+/obj/map_data/nadezda_e
+	name = "Nadezhda Elevator and Stairs"
+	is_station_level = TRUE
+	is_player_level = TRUE
+	is_contact_level = TRUE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	height = 3
+
 /obj/map_data/nadezda_f
 	name = "Nadezhda Forest"
 	is_station_level = FALSE

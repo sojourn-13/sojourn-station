@@ -336,6 +336,9 @@
 	name = "Escape Hangar B"
 	icon_state = "erisred"
 
+/area/eris/hallway/main/stairwell
+	name = "Stairwell"
+	icon_state = "hallway4"
 
 
 

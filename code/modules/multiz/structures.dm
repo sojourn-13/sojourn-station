@@ -162,7 +162,7 @@
 		)
 		playsound(src, pick(climb_sound), 100, 1, 5,5)
 
-		delay = max(delay * M.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66) 
+		delay = max(delay * M.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
 
 
 	if(do_after(M, delay, src))
@@ -173,7 +173,7 @@
 
 /obj/structure/multiz/stairs
 	name = "stairs"
-	desc = "Stairs leading to another deck. Not too useful if the gravity goes out."
+	desc = "Stairs leading to another deck. Not too useful if destroyed."
 	icon_state = "ramptop"
 	layer = 2.4
 

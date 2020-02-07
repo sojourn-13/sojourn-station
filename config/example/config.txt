@@ -1,5 +1,5 @@
 ## Server name: This appears at the top of the screen in-game. In this case it will read "tgstation: station_name" where station_name is the randomly generated name of the station for the round. Remove the # infront of SERVERNAME and replace 'spacestation13' with the name of your choice
-SERVERNAME CEV Eris: Endless Horizon
+SERVERNAME Sojourn Colony
 
 ## Alert levels
 ALERT_GREEN All threats to the ship have passed. Security may not have weapons visible, privacy laws are once again fully enforced.
@@ -99,7 +99,7 @@ PROBABILITY CULT 1
 PROBABILITY EXTEND-A-TRAITORMONGOUS 6
 
 ## Enable asteroid tunnel/cave generation. Will behave strangely if turned off with a map that expects it on.
-#GENERATE_ASTEROID
+GENERATE_ASTEROID
 
 ## Hash out to disable random events during the round.
 ALLOW_RANDOM_EVENTS

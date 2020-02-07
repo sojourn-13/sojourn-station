@@ -95,10 +95,12 @@
 		new /obj/item/weapon/storage/backpack/military(src)
 	else
 		new /obj/item/weapon/storage/backpack/security(src)
-	if(prob(55))
+	if(prob(5))
 		new /obj/item/weapon/gun/projectile/automatic/omnirifle(src)
-	else
+	else if(prob(70))
 		new /obj/item/weapon/gun/projectile/automatic/omnirifle/standard(src)
+	else
+		new /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped(src)
 	if(prob(50))
 		new /obj/item/ammo_magazine/c10mm/lethal(src)
 	else

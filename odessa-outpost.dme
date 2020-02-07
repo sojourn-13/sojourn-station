@@ -2658,6 +2658,8 @@
 #include "maps\CEVEris\datums\reports.dm"
 #include "maps\dungeons\crawler\crawler.dm"
 #include "maps\encounters\asteroid\asteroid.dm"
+#include "maps\encounters\deepforest\deepforest.dm"
+#include "maps\encounters\deeptunnels\deeptunnels.dm"
 #include "maps\encounters\spacefortress\spacefortress.dm"
 #include "maps\encounters\spaceruins\spaceruins.dm"
 #include "maps\submaps\dungeon_rooms\template.dm"
