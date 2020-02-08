@@ -5769,7 +5769,7 @@
 "cgY" = (/turf/simulated/floor/tiled/steel,/area/eris/quartermaster/storage)
 "cgZ" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/steel,/area/eris/storage/tech)
 "cha" = (/obj/machinery/atmospherics/unary/vent_pump/on,/turf/simulated/floor/tiled/steel,/area/eris/quartermaster/storage)
-"chb" = (/obj/structure/closet/crate/hydroponics,/obj/item/weapon/storage/bag/plants,/obj/item/weapon/storage/bag/plants,/turf/simulated/floor/grass,/area/eris/crew_quarters/hydroponics/garden)
+"chb" = (/obj/structure/closet/crate/hydroponics,/obj/item/weapon/storage/bag/produce,/obj/item/weapon/storage/bag/produce,/turf/simulated/floor/grass,/area/eris/crew_quarters/hydroponics/garden)
 "chc" = (/obj/item/modular_computer/console/preset/security/records,/turf/simulated/floor/wood,/area/eris/command/fo)
 "chd" = (/turf/simulated/floor/tiled/steel/techfloor_grid,/area/eris/quartermaster/storage)
 "che" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/steel/techfloor_grid,/area/eris/quartermaster/storage)
