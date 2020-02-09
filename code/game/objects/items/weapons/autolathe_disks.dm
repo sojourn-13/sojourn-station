@@ -756,6 +756,7 @@
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_prox,
 		/datum/design/research/item/part/basic_capacitor,
+		/datum/design/autolathe/device/excelbaton,
 		/datum/design/autolathe/part/camera_assembly
 	)
 
@@ -777,7 +778,6 @@
 		/datum/design/autolathe/device/excelsiormine,
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/clothing/excelsior_armor,
-		/datum/design/autolathe/device/excelbaton
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_rusted
