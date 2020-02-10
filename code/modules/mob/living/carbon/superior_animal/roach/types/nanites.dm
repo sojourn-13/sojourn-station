@@ -36,7 +36,7 @@
 	name = "nanite infested miniroach cluster"
 	desc = "A swarm of disgusting locusts infested with nanomachines."
 	icon = 'icons/mob/mobs-roach.dmi'
-	icon_state = "naniteroach"
+	icon_state = "naniteswarm"
 	pass_flags = PASSTABLE
 	density = FALSE
 	health = 10
