@@ -1,9 +1,9 @@
 /mob/living/simple_animal/hostile/dino
 	name = "primal lizard"
 	desc = "A feral lizard creature that moves fast and bites faster."
+	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "dino"
 	icon_dead = "dino_dead"
-
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"

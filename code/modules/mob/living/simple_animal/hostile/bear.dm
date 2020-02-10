@@ -2,6 +2,7 @@
 /mob/living/simple_animal/hostile/bear
 	name = "space black bear"
 	desc = "A space bear of the common black bear variety."
+	icon = 'icons/mob/mobs-bear.dmi'
 	icon_state = "bearfloor"
 	icon_gib = "brownbear_gib"
 	speak_emote = list("growls", "roars")

@@ -6,7 +6,6 @@
 	icon_state = "samak"
 	icon_living = "samak"
 	icon_dead = "samak_dead"
-	icon = 'icons/jungle.dmi'
 	move_to_delay = 5
 	maxHealth = 130
 	health = 130
@@ -29,7 +28,6 @@
 	icon_state = "diyaab"
 	icon_living = "diyaab"
 	icon_dead = "diyaab_dead"
-	icon = 'icons/jungle.dmi'
 	move_to_delay = 2
 	maxHealth = 25
 	health = 25
@@ -53,7 +51,6 @@
 	icon_state = "shantak"
 	icon_living = "shantak"
 	icon_dead = "shantak_dead"
-	icon = 'icons/jungle.dmi'
 	move_to_delay = 2.5
 	maxHealth = 55
 	health = 55
@@ -74,7 +71,6 @@
 	icon_state = "yithian"
 	icon_living = "yithian"
 	icon_dead = "yithian_dead"
-	icon = 'icons/jungle.dmi'
 	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 2
@@ -85,7 +81,6 @@
 	icon_state = "tindalos"
 	icon_living = "tindalos"
 	icon_dead = "tindalos_dead"
-	icon = 'icons/jungle.dmi'
 	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 1.5

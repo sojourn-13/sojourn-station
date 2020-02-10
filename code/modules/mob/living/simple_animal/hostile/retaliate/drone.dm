@@ -1,8 +1,8 @@
-
 //malfunctioning combat drones
 /mob/living/simple_animal/hostile/retaliate/malf_drone
 	name = "combat drone"
 	desc = "An automated combat drone armed with state of the art weaponry and shielding."
+	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "drone3"
 	icon_dead = "drone_dead"
 	ranged = 1

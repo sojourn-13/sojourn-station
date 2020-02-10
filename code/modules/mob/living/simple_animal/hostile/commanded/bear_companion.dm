@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/commanded/bear
 	name = "bear"
 	desc = "A large brown bear."
-
+	icon = 'icons/mob/mobs-bear.dmi'
 	icon_state = "brownbear"
 	icon_gib = "brownbear_gib"
 

@@ -7,7 +7,6 @@
 	mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	mob_size = MOB_SMALL //MOB_MINISCULE MOB_TINY MOB_SMALL MOB_MEDIUM MOB_LARGE
 	a_intent = I_HURT
-
 	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "tomato"
 
