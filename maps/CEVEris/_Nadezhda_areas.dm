@@ -35,6 +35,10 @@
 	name = "Junk Beacon"
 	icon_state = "disposal"
 
+/area/nadezhda/maintenance/surface_disposal
+	name = "Surface Disposal"
+	icon_state = "disposal"
+
 /area/nadezhda/maintenance/arcade
 	name = "Junk Arcade"
 	icon_state = "disposal"
@@ -716,6 +720,11 @@
 
 /area/nadezhda/engineering/atmos/storage
 	name = "\improper Atmospherics Storage"
+	icon_state = "atmos_storage"
+	sound_env = SMALL_ENCLOSED
+
+/area/nadezhda/engineering/atmos/surface
+	name = "\improper Atmospherics Surface"
 	icon_state = "atmos_storage"
 	sound_env = SMALL_ENCLOSED
 
