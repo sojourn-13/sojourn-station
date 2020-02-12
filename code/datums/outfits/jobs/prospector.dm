@@ -19,7 +19,7 @@
 
 /decl/hierarchy/outfit/job/salv
 	name = OUTFIT_JOB_NAME("Prospectors - Salvager")
-	uniform = /obj/item/clothing/under/top/outfitgambler
+	uniform = /obj/item/clothing/under/overalls/jumpsuitpowerline
 	l_ear = /obj/item/device/radio/headset/headset_pro
 	shoes = /obj/item/clothing/shoes/winter/explorer
 	gloves = /obj/item/clothing/gloves/thick
