@@ -783,14 +783,16 @@
 		flick(icon_vend,src)
 	spawn(vend_delay)
 		if (R.get_product(get_turf(src)))
-			playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+			src.postvend_effect()
 		status_message = ""
 		status_error = 0
 		vend_ready = 1
 		currently_vending = null
 		SSnano.update_uis(src)
 
-
+/obj/machinery/vending/proc/postvend_effect()
+	playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+	return
 
 /obj/machinery/vending/Process()
 	if(stat & (BROKEN|NOPOWER))
@@ -1670,6 +1672,24 @@
 	idle_power_usage = 211
 	auto_price = FALSE
 	vendor_department = DEPARTMENT_CIVILIAN
+
+/obj/machinery/vending/fortune
+	name = "The Great Zoltan"
+	desc = "An archaic fortune teller machine. It looks recently refurbished."
+	icon_state = "fortuneteller"
+	icon_vend = "fortuneteller-vend"
+	product_slogans = list("Ha ha ha ha ha!",
+	"I am the great wizard Zoltan!",
+	"Learn your fate!")
+	product_ads = "Pick a card, any card..."
+	products = list(
+					/obj/item/weapon/paper/fortune = 30)
+	prices = list(
+					/obj/item/weapon/paper/fortune = 50)
+
+/obj/machinery/vending/fortune/postvend_effect()
+	playsound(loc, 'sound/machines/fortune_riff.ogg', 100, 1)
+	return
 
 /obj/machinery/vending/custom
 	name = "Custom Vendomat"
