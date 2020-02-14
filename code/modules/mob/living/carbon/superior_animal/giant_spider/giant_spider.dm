@@ -2,6 +2,7 @@
 /mob/living/carbon/superior_animal/giant_spider
 	name = "giant spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has deep red eyes."
+	icon = 'icons/mob/mobs-spider.dmi'
 	icon_state = "guard"
 	icon_living = "guard"
 	pass_flags = PASSTABLE

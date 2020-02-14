@@ -64,7 +64,7 @@
 /mob/living/simple_animal/lizard
 	name = "lizard"
 	desc = "A cute tiny lizard."
-	icon = 'icons/mob/critter.dmi'
+	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "lizard"
 	speak_emote = list("hisses")
 	health = 5

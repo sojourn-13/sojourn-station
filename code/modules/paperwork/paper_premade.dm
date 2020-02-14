@@ -281,3 +281,90 @@
 	<BR>\n
 	<BR>\n\t\tIf ship does not arrive-
 	<BR>\n\t\t\tEvacuate to a nearby safe area!"}
+
+/obj/item/weapon/paper/fortune
+	name = "fortune card"
+	info = {"<center>YOUR FORTUNE</center>"}
+	icon_state = "fortunecard"
+	desc = "A small card emblazoned with the wisdom of Zoltan."
+
+	var/list/fortune_mystical = list("fortunes","fate","doom","life","death","rewards","secrets","omens",
+	"portents","aura","heart","soul","mind","mysteries","destiny","signs","essence","runes")
+
+	var/list/fortune_nouns = list("curse","crime", "wizard", "station","traitor", "treasure","gold","monster",
+	"beast","machine","ghost","spirit","station","friend","enemy","captain","doctor","assistant","chef","priest",
+	"cat","skull","skeleton","phantasm","aeon","cenotaph","monument","planet","ritual","ceremony","sound","color",
+	"reward","owl","key","buddy","bee","god","gods","sun","stars","crypt","cave","grave","potion","elixir","spectre",
+	"clown","moon","crystals","keys","robot","cyborg","book","orb","cube","apparition","oracle","king","crown","rumpus",
+	"throne","light","darkness","abyss","void","fire","entity","horde","swarm","horrors","legions","nightmare","vampire",
+	"ossuary","portal","shade","stone","talisman","statue","artifact","tomb","urn","pit","depths","blood","ruckus","abomination",
+	"tome","relic","serum","instrument","fungus","garden","cult","implement","device","engine","manuscript","tablet","ambrosia",
+	"watcher","asteroid","drone","servant","blade","coins","amulet","sigil","symbol","coven","pact","sanctuary","grove",
+	"ruin","guide","mirror","pool","chalice","bones","ashes")
+
+	var/list/fortune_verbs = list("murder","kill","hug","meet","greet","punish","devour","exsanguinate","find","destroy","sacrifice",
+	"dehumanize","reveal","cuddle","haunt","frighten","harm","sass","respect","obey","worship","revere",
+	"fear","smash","banish","corrupt","profane","exhume","purge","torment","betray","eradicate","obliterate",
+	"immolate","slay","confront","exalt","sing praises to","abhor","denounce","condemn","venerate","glorify",
+	"deface","debase","consecrate","desecrate","summon","expunge","invoke","rebuke","awaken","consume","vilify",
+	"forsake","consecrate","mourn","butcher","illuminate")
+
+	var/list/fortune_adjectives = list("grumpy","zesty","omniscient","golden","mystical","forgotten","lost","ancient","metal","brass",
+	"eldritch","warped","frozen","martian","robotic","burning","copper","dead","undying","unholy","fabulous","mighty",
+	"elder","hellish","heavenly","antiquated","automated","mechanical","dread","grotesque","mysterious","auspicious",
+	"screaming","rusted","iron","scary","terrifying","horrid","antique","austere","burly","dapper","dutiful",
+	"enlightened","fearless","gleaming","glowing","grim","gray","gruesome","handsome","hideous","horrible",
+	"ill-fated","star-crossed","impure","jaunty","nocturnal","metallic","monstrous","marvelous","prestigious",
+	"quaint","radiant","robust","regal","shameful","shimmering","silent","silver","sinful","smug","tragic",
+	"terrible","terrific","vast","weird","electrical","technicolor","quantum","heroic","villainous","dastardly","evil",
+	"enchanted","accursed","haunted","malicious","macabre","sinister","mortal","immortal","sacred","eerie",
+	"ethereal","inscrutable","lewd","stygian","tarnished","odd","subterranean","cthonic","alien","aberrant","ashen",
+	"baleful","beastly","anomalous","angular","colorless","cosmic","cyclopean","dank","diabolical","elusive","solemn",
+	"endless","enigmatical","festering","faceless","strange","foetid","ghoulish","infernal","kaleidoscopic",
+	"nameless","obscene","pagan","holy","pallid","pale","putrid","quivering","reptilian","sepulchral","sightless",
+	"unseen","doomed","loathsome","demonic","luminous","spooky","eternal","saintly","benighted","beautiful","skeletal",
+	"magical","arcane","rotted","rude","crusty","divine","mercurial","blasted","damned","blessed","blazing","bumbling",
+	"wailing","unspeakable","melancholy","insectoid","infested","lurid","incomprehensible","vile","amorphous","antediluvian",
+	"weeping","moist","grody","unutterable","lurking","immemorial","blasphemous","nebulous","shadowy","obscure","outer","tenebrous",
+	"gloomy","murky","lightless","dismal","unlit","attuned","ghastly","lugubrious","desolate","doleful","baleful","menacing",
+	"dark","cold","lumpy","rotund","burly","buff","fleshy","ornate","imposing","false","fancy","elegant","creepy",
+	"quirky","unnerving","abnormal","peculiar","astral","chaotic","spherical","swirling","deathless","archaic",
+	"atomic","elemental","invisible","awesome","awful","apocalyptic","righteous")
+
+	var/list/fortune_read = list("read","seen","foreseen","inscribed","beheld","witnessed")
+
+	New()
+		var/sentence_1 = "You shall soon [pick(fortune_verbs)] the [pick(fortune_adjectives)] [pick(fortune_nouns)]"
+		var/sentence_2 = "remember to drink more grones"
+		var/sentence_3 = "for reals"
+
+		var/rand2 = rand(1,3)
+		var/rand3 = rand(1,3)
+
+		switch(rand2)
+			if(1)
+				sentence_2 = "but beware, lest the [pick(fortune_adjectives)] [pick(fortune_nouns)] [pick(fortune_verbs)] you"
+			if(2)
+				sentence_2 = "but take heed, for the [pick(fortune_adjectives)] [pick(fortune_nouns)] might [pick(fortune_verbs)] you"
+			else
+				sentence_2 = "but rejoice, for the [pick(fortune_adjectives)] [pick(fortune_nouns)] shall [pick(fortune_verbs)] you"
+
+		switch(rand3)
+			if(1)
+				sentence_3 = "Seek the [pick(fortune_mystical)] of the [pick(fortune_adjectives)] [pick(fortune_nouns)] and [pick(fortune_verbs)] yourself"
+			if(2)
+				sentence_3 = "Remember to [pick(fortune_verbs)] the [pick(fortune_adjectives)] [pick(fortune_nouns)] and you will surely [pick(fortune_verbs)] your [pick(fortune_adjectives)] [pick(fortune_mystical)]"
+			else
+				sentence_3 = "You must [pick(fortune_verbs)] the [pick(fortune_adjectives)] [pick(fortune_nouns)] or the [pick(fortune_nouns)] will surely [pick(fortune_verbs)] your [pick(fortune_adjectives)] [pick(fortune_mystical)]"
+
+		info = {"<font face='System' size='3'><center>YOUR FORTUNE</center><br><br>
+		The great and [pick(fortune_adjectives)] Zoltan has [pick(fortune_read)] your [pick(fortune_mystical)]!<br><br>
+		[sentence_1]... [sentence_2]! [sentence_3].</font>"}
+		return ..() // moving the
+
+/obj/item/weapon/paper/fortune/update_icon()
+	if(info)
+		icon_state = "fortunecard"
+	else
+		icon_state = "fortunecard"
+	return

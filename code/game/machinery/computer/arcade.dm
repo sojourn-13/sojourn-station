@@ -64,8 +64,8 @@
 	desc = "Try your luck against a vicious and deadly opponent."
 	icon_state = "arcade"
 	circuit = /obj/item/weapon/circuitboard/arcade/battle
-	var/enemy_name = "Space Villian"
-	var/temp = "Winners don't use space drugs" //Temporary message, for attack messages, etc
+	var/enemy_name = "Space Villain"
+	var/temp = "Winners don't use space drugs!" //Temporary message, for attack messages, etc
 	var/player_hp = 30 //Player health/attack points
 	var/player_mp = 10
 	var/enemy_hp = 45 //Enemy health/attack points
@@ -80,10 +80,82 @@
 	var/name_part1
 	var/name_part2
 
-	name_action = pick("Ambush ", "Annihilate ", "Assassinate ", "Assault ", "Arrest ", "Attack ", "Assail ", "Battle ", "Beat ", "Besiege ", "Challenge ", "Chase ", "Combat ", "Confront ", "Conquer ", "Contest ", "Crush ", "Decimate ", "Defeat ", "Demolish ", "Destroy ", "Detain ", "Dispatch ", "Duel ", "Execute ", "Expunge ", "Eradicate ", "Fight ", "Greytide ", "Hinder ", "Harm ", "Humiliate ", "Hunt ", "Hurt ", "Impeach ", "Impede ", "Injure ", "Kick ", "Kill ", "Murder ", "Obliterate ", "Oppose ", "Outmanoeuvre ", "Overpower ", "Overthrow ", "Pursue ", "Repel ", "Repress ", "Repulse ", "Resist ", "Robust ", "Rout ", "Raid ", "Raze ", "Ravage ", "Shame ", "Slaughter ", "Slay ", "Smash ", "Spar ", "Stop ", "Strike ", "Subdue ", "Surmount ", "Storm ", "Vanquish ", "Wound ", "Wreck ")
+	name_action = pick("Ambush ", "Annihilate ", "Assassinate ", "Assault ", "Arrest ", "Attack ", "Assail ",
+					   "Backhand ", "Battle ", "Beat ", "Besiege ", "Betray ", "Bombard ", "Bury ",
+					   "Challenge ", "Chase ", "Combat ", "Confront ", "Conquer ", "Contest ", "Crush ",
+					   "Decimate ", "Defeat ", "Demolish ", "Destroy ", "Detain ", "Dispatch ", "Duel ",
+					   "Engage ", "End ", "Execute ", "Expunge ", "Eradicate ", "Explode ",
+					   "Face ", "Flame ", "Faze ", "Flout ", "Fight ", "Fire ",
+					   "Garrote ", "Grind ", "Gut ", "Gash ", "Greytide ", "Gank ",
+					   "Hinder ", "Harm ", "Humiliate ", "Hunt ", "Hurt ",
+					   "Impeach ", "Impede ", "Injure ", "Impale ", "Immobilize ",
+					   "Jab ", "Jeopardize ", "Jail ", "Jolt ", "Jump ",
+					   "Kick ", "Kill ", "Kidnap ", "Knife ", "Knockout ",
+					   "Lash ", "Lecture ", "Liquidate ", "Lacerate ",
+					   "Mangle ", "Mug ", "Mortify ", "Mystify ", "Murder ",
+					   "Neutralize ", "Nullify ", "Neuter ", "Negate ",
+					   "Obliterate ", "Oppose ", "Outmanoeuvre ", "Overpower ", "Overthrow ",
+					   "Pursue ", "Paralyze ", "Persecute ", "Pertube ", "Pain ",
+					   "Repel ", "Repress ", "Repulse ", "Resist ", "Robust ", "Rout ", "Raid ", "Raze ", "Ravage ",
+					   "Shame ", "Slaughter ", "Slay ", "Smash ", "Spar ", "Stop ", "Strike ", "Subdue ", "Surmount ", "Storm ",
+					   "Terrorize ", "Tarnish ", "Terminate ", "Terrify ", "Torture ",
+					   "Unseat ", "Usurp ", "Upset ", "Uproot ",
+					   "Vanquish ", "Vilify ",
+					   "Whack ", "Waste ", "Wrestle ", "Whip ", "Wound ", "Wreck ",
+					   "Zap ")
 
-	name_part1 = pick("Admiral ", "Agent ", "Assassin ", "Anarchist ", "Arms Dealer ", "Arsonist ", "Administrator ", "Abductor ", "Baron ", "Bandit ", "Bounty Hunter ", "Blood Cultist ", "Boss ", "Brigadier ", "Bomber ", "Captain ", "Chapter Master ", "Colonel ", "Commander ", "Commodore ", "Count ", "Cultist ", "Crazy ", "Doctor ", "Dread King ", "Duke ", "Deserter ", "Destroyer ", "Deviant ", "Enforcer ", "Emperor ", "Empress ", "Executioner ", "Escaped Prisoner ", "Extorter ", "Forger ", "Fraudster ", "Firestarter ", "Fanatic ", "Fugitive ", "Gangster ", "General ", "Gunner ", "Inquisitor ", "Interferer ", "Inciter ", "Igniter ", "King ", "Killer ", "Kidnapper ", "Leader ", "Legate ", "Lieutenant ", "Lord ", "Mad ", "Magnate ", "Mafioso ", "Major ", "Mercenary ", "Master ", "Maverick ", "NeoTheologist ", "Ninja ", "Officer ", "Operative ", "Prince ", "Princess ", "Professor ", "Private ", "Prophet ", "Pariah ", "Pirate ", "Queen ", "Secret Agent ", "Sergeant ", "Serial Killer ", "Supreme Commander ", "Serbian ", "Smuggler ", "Traitor ", "Terrorist ", "Thief ", "Trafficker ", "Terroriser ", "Viscount ", "Warlord ", "Warmonger ", "Zealot ")
-	name_part2 = pick("Alexander", "Ana", "Adams", "Arthur", "Bash",  "Brown", "Buchanan", "Bush", "Bowchief", "Boyum", "Brooks", "Carly", "Clark", "Campbell", "Cox", "Carter", "David", "Dane", "Divino", "Dizet", "Duket", "Diaz", "Ebonheart", "Earl", "Evans", "Edwards",  "Frank", "Flores", "Foster", "Ford", "Fillmore", "Garfield", "Greyson", "Grid", "Gustavia", "Griffin", "Hank", "Harold", "Helenora", "Hippolyta", "Harris", "Hoover", "Hippie", "Ian", "Iain", "Ivan", "Ianto", "Jathok", "Jermaine", "Jim", "Jackson", "Johnson", "Kate", "K'vhas", "Kei", "Lee", "Leslie", "Luxitou", "Makino", "Marshall", "Muu'rn", "Myrin", "Madison", "Monroe", "Mcfall", "N'imira", "Nathan", "Natasha", "Oliver", "Owen", "Orion", "Pasotel", "Pauper", "Popsy", "Prax", "Pierce", "Quentin", "Ray", "Resca", "Robinson", "Roosevelt", "Samantha", "Sanders", "Sarah", "Seeking", "Stellar", "Strelle", "Szandor", "Thompson", "Thomas", "Uriel", "Victoria", "Violet", "Victor", "Valentine", "Watson", "Walker", "Wilson", "Wolf", "William", "White", "Washington", "Xarillia", "Xander", "Yael", "Yadon", "Yaakov", "Zach", "Zeke", "Zane")
+	name_part1 = pick("Admiral ", "Agent ", "Assassin ", "Anarchist ", "Arms Dealer ", "Arsonist ", "Administrator ", "Abductor ",
+					  "Baron ", "Bandit ", "Bounty Hunter ", "Blood Cultist ", "Boss ", "Brigadier ", "Bomber ", "Blob ",
+					  "Captain ", "Chapter Master ", "Colonel ", "Commander ", "Commodore ", "Count ", "Crazy ", "Changeling ", "Criminal ",
+					  "Doctor ", "Dread King ", "Duke ", "Deserter ", "Destroyer ", "Deviant ", "Dangerous ",
+					  "Enforcer ", "Emperor ", "Empress ", "Executioner ", "Escaped Prisoner ", "Extorter ", "Exterminator ",
+					  "Forger ", "Fraudster ", "Firestarter ", "Fanatic ", "Fugitive ", "Felon ", "Fiery ",
+					  "Gangster ", "General ", "Gunner ", "Grenadier ", "Galactic ", "Gunrunner ", "Guardian ",
+					  "Head ", "Headhunter ", "Heavyweight ", "Henchman ", "Henchwoman ", "Holoparasite ", "Hoodlum ", "Hustler ",
+					  "Inquisitor ", "Interferer ", "Inciter ", "Igniter ", "Inspector ", "Invincible ",
+					  "Jester ", "Judge ", "Juggernaut ", "Jawbreaker ", "Jumbo ",
+					  "King ", "Kingpin ", "Killer ", "Kidnapper ", "Knave ", "Karate Master ",
+					  "Leader ", "Legate ", "Lieutenant ", "Lord ", "Lance ", "Legislator ",
+					  "Mad ", "Magnate ", "Marshal ", "Major ", "Mercenary ", "Master ", "Maverick ", "Malfunctioning AI ", "Mobster ",
+					  "NeoTheologist ", "Necromancer ", "Ninja ", "Negotiator ", "Nuclear ",
+					  "Overlord ", "Officer ", "Operative ", "Oppressor ", "Obsessor "
+					  "Prince ", "Princess ", "President ", "Professor ", "Private ", "Prophet ", "Pariah ", "Pirate ",
+					  "Queen ",
+					  "Raider ", "Ravager ", "Renegade ", "Revolutionary ", "Representative ", "Racketeer ",
+					  "Soldier ", "Scavenger ", "Sergeant ", "Serial Killer ", "Serbian ", "Smuggler ", "Swarmer ", "Slayer ", "Sorcerer ",
+					  "Traitor ", "Terrorist ", "Thief ", "Trafficker ", "Terroriser ", "Treasure Hunter ", "Terrible ", "Titanic ",
+					  "Vandal ", "Viscount ", "Vampire ", "Void Wolf ", "Veteran ", "Villainous ",
+					  "Warlord ", "Warmonger ", "Wrangler ", "Waster ", "Wizard ",
+					  "Xenomorph ", "Xenohybrid ",
+					  "Yielder ",
+					  "Zealot ")
+
+	name_part2 = pick("Alexander", "Ana", "Adams", "Arthur",
+					  "Bash",  "Brown", "Buchanan", "Bush", "Bowchief", "Boyum", "Brooks",
+					  "Carly", "Clark", "Campbell", "Cox", "Carter",
+					  "David", "Dane", "Divino", "Dizet", "Duket", "Diaz",
+					  "Ebonheart", "Earl", "Evans", "Edwards",
+					  "Frank", "Flores", "Foster", "Ford", "Fillmore",
+					  "Garfield", "Greyson", "Grid", "Gustavia", "Griffin",
+					  "Hank", "Harold", "Helenora", "Hippolyta", "Harris", "Hoover", "Hippie",
+					  "Ian", "Iain", "Ivan", "Ianto",
+					  "Jathok", "Jermaine", "Jim", "Jackson", "Johnson",
+					  "Kate", "K'vhas", "Kei",
+					  "Lee", "Leslie", "Luxitou",
+					  "Makino", "Marshall", "Muu'rn", "Myrin", "Madison", "Monroe", "Mcfall",
+					  "N'imira", "Nathan", "Natasha",
+					  "Oliver", "Owen", "Orion",
+					  "Pasotel", "Pauper", "Popsy", "Prax", "Pierce",
+					  "Quentin",
+					  "Ray", "Resca", "Robinson", "Roosevelt",
+					  "Samantha", "Sanders", "Sarah", "Seeking", "Stellar", "Szandor", "Sydney", "Strelle", //best character
+					  "Thompson", "Thomas",
+					  "Uriel",
+					  "Victoria", "Violet", "Victor", "Valentine",
+					  "Watson", "Walker", "Wilson", "Wolf", "Will", "White", "Washington",
+					  "Xarillia", "Xander",
+					  "Yael", "Yadon", "Yaakov",
+					  "Zach", "Zeke", "Zane")
 
 	src.enemy_name = replacetext((name_part1 + name_part2), "the ", "")
 	src.name = (name_action + name_part1 + name_part2)

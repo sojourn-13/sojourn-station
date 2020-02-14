@@ -2,7 +2,7 @@
 	name = "Vox Armalis"
 	desc = "In truth, this scares you."
 
-	icon = 'icons/mob/armalis.dmi'
+	icon = 'icons/mob/40x40.dmi'
 	icon_state = "armalis_naked"
 
 	health = 125

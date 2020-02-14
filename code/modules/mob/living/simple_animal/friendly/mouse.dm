@@ -2,7 +2,7 @@
 	name = "mouse"
 	real_name = "mouse"
 	desc = "It's a small, disgusting rodent, often found being annoying, and aiding in the spread of disease."
-	icon = 'icons/mob/mouse.dmi'
+	icon = 'icons/mob/mobs-mouse.dmi'
 	icon_state = "mouse_gray"
 	item_state = "mouse_gray"
 	icon_living = "mouse_gray"

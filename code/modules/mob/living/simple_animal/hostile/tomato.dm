@@ -1,9 +1,9 @@
 /mob/living/simple_animal/hostile/tomato
 	name = "tomato"
 	desc = "It's a horrifyingly enormous beef tomato, and it's packing extra beef!"
+	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "tomato"
 	icon_living = "tomato"
-
 	speak_chance = 0
 	turns_per_move = 5
 	maxHealth = 15

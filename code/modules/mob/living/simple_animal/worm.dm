@@ -1,7 +1,7 @@
 /mob/living/simple_animal/space_worm
 	name = "space worm segment"
 	desc = "A part of a space worm."
-	icon = 'icons/mob/animal.dmi'
+	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "spaceworm"
 	status_flags = 0
 

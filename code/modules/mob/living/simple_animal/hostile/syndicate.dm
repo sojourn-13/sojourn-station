@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/syndicate
 	name = "\improper Syndicate operative"
 	desc = "Death to the Company."
-	icon = 'icons/mob/faction.dmi'
+	icon = 'icons/mob/mobs-humanoid.dmi'
 	icon_state = "syndicate"
 	icon_dead = "syndicate_dead" //TODO: That icon doesn't exist
 	icon_gib = "syndicate_gib"
@@ -133,7 +133,7 @@
 /mob/living/simple_animal/hostile/viscerator
 	name = "viscerator"
 	desc = "A small, twin-bladed machine capable of inflicting very deadly lacerations."
-	icon = 'icons/mob/critter.dmi'
+	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "viscerator_attack"
 	pass_flags = PASSTABLE
 	health = 15

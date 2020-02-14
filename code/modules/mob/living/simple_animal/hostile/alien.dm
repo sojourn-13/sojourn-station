@@ -71,7 +71,7 @@
 
 /mob/living/simple_animal/hostile/alien/queen/large
 	name = "alien empress"
-	icon = 'icons/mob/alienqueen.dmi'
+	icon = 'icons/mob/64x64.dmi'
 	icon_state = "queen_s"
 	icon_dead = "queen_dead"
 	move_to_delay = 4
