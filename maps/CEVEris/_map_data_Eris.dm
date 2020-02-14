@@ -1,6 +1,6 @@
 #include "overmap-eris.dm"
 #include "shuttles-eris.dm"
-//#include "_CEV_Eris.dmm"
+#include "_CEV_Eris.dmm"
 #include "centcomm.dmm"
 #include "_Nadezhda_Colony_Surface.dmm"
 #include "_Nadezhda_Colony_Underground.dmm"

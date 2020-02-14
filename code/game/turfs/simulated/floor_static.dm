@@ -21,3 +21,11 @@
 /turf/simulated/floor/fixed/set_flooring()
 	return
 
+/turf/simulated/floor/fixed/hydrotile
+	name = "freezing cold water"
+	icon = 'icons/turf/flooring/beach.dmi'
+	icon_state = "seashallow_jungle2"
+	initial_flooring = /decl/flooring/beach/water/flooded
+	temperature = T20C
+	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
+

@@ -253,12 +253,12 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 		maps_data.registrate(src)
 
 		add_z_level(z_level_r, original_level, height)
-/*
+
 /obj/map_data/eris
 	name = "Eris"
 	is_sealed = TRUE
-	height = 5
-*/
+	height = 1
+
 /obj/map_data/nadezda_s
 	name = "Nadezhda Surface"
 	is_station_level = TRUE

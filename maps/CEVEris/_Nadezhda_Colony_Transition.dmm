@@ -76,7 +76,7 @@
 "bx" = (/obj/machinery/atmospherics/binary/pump/on{dir = 4},/turf/simulated/floor/tiled/white/brown_platform,/area/eris/hallway/main/stairwell)
 "by" = (/obj/machinery/atmospherics/pipe/simple/visible/universal{dir = 4},/turf/simulated/floor/tiled/white/brown_platform,/area/eris/hallway/main/stairwell)
 "bz" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/turf/simulated/floor/tiled/white/brown_platform,/area/eris/hallway/main/stairwell)
-"bA" = (/obj/effect/step_trigger/teleporter{teleport_x = 99; teleport_y = 44; teleport_z = 4},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"bA" = (/obj/effect/step_trigger/teleporter{teleport_x = 99; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
 "bB" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/machinery/atmospherics/pipe/simple/visible/universal{dir = 4},/turf/simulated/floor/plating/under,/area/eris/hallway/main/stairwell)
 "bC" = (/obj/machinery/atmospherics/pipe/zpipe/down{tag = "icon-down (WEST)"; icon_state = "down"; dir = 8},/turf/simulated/open,/area/eris/hallway/main/stairwell)
 "bD" = (/obj/machinery/atmospherics/pipe/manifold/visible/cyan{dir = 1},/turf/simulated/floor/tiled/white/brown_perforated,/area/eris/hallway/main/stairwell)
@@ -116,8 +116,8 @@
 "cl" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (EAST)"; icon_state = "danger"; dir = 4},/turf/simulated/floor/tiled/white/golden,/area/eris/hallway/main/stairwell)
 "cm" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled/white/techfloor_grid,/area/eris/hallway/main/stairwell)
 "cn" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/white/techfloor_grid,/area/eris/hallway/main/stairwell)
-"co" = (/obj/machinery/power/breakerbox{RCon_tag = "Stairwell Substation Bypass"},/turf/simulated/floor/tiled/white/brown_perforated,/area/eris/hallway/main/stairwell)
-"cp" = (/obj/machinery/power/sensor{long_range = 1; name = "Powernet Sensor - Stairwell"; name_tag = "Stairwell Subgrid"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/eris/hallway/main/stairwell)
+"co" = (/obj/machinery/power/breakerbox{RCon_tag = "Stairwell Substation Bypass"},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/tiled/white/brown_perforated,/area/eris/hallway/main/stairwell)
+"cp" = (/obj/machinery/power/sensor{long_range = 1; name = "Powernet Sensor - Stairwell"; name_tag = "Stairwell Subgrid"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/plating/under,/area/eris/hallway/main/stairwell)
 "cq" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/catwalk,/obj/machinery/power/apc{dir = 8; name = "West APC"; pixel_x = -28; pixel_y = 0},/obj/structure/cable/yellow,/turf/simulated/floor/plating/under,/area/eris/hallway/main/stairwell)
 "cr" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/golden,/area/eris/hallway/main/stairwell)
 "cs" = (/obj/effect/floor_decal/industrial/danger/corner{tag = "icon-dangercorner (EAST)"; icon_state = "dangercorner"; dir = 4},/turf/simulated/floor/tiled/white/golden,/area/eris/hallway/main/stairwell)
@@ -167,21 +167,21 @@
 "dk" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/eris/hallway/main/stairwell)
 "dl" = (/obj/structure/table/woodentable,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/carpet/blucarpet,/area/eris/hallway/main/stairwell)
 "dm" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/turf/simulated/floor/carpet/blucarpet,/area/eris/hallway/main/stairwell)
-"dn" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 98; teleport_y = 197; teleport_z = 2},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"dn" = (/obj/effect/step_trigger/teleporter{teleport_x = 100; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
 "do" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/golden,/area/eris/hallway/main/stairwell)
 "dp" = (/obj/machinery/door/airlock/engineering,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/brown_platform,/area/eris/hallway/main/stairwell)
 "dq" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/tiled/white/brown_platform,/area/eris/hallway/main/stairwell)
 "dr" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/eris/hallway/main/stairwell)
 "ds" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/light/small,/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/eris/hallway/main/stairwell)
 "dt" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/eris/hallway/main/stairwell)
-"du" = (/obj/effect/step_trigger/teleporter{teleport_x = 100; teleport_y = 44; teleport_z = 4},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
-"dv" = (/obj/effect/step_trigger/teleporter{teleport_x = 101; teleport_y = 44; teleport_z = 4},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
-"dw" = (/obj/effect/step_trigger/teleporter{teleport_x = 102; teleport_y = 44; teleport_z = 4},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
-"dx" = (/obj/effect/step_trigger/teleporter{teleport_x = 103; teleport_y = 44; teleport_z = 4},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
-"dy" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 99; teleport_y = 197; teleport_z = 2},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
-"dz" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 100; teleport_y = 197; teleport_z = 2},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
-"dA" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 101; teleport_y = 197; teleport_z = 2},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
-"dB" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 102; teleport_y = 197; teleport_z = 2},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"du" = (/obj/effect/step_trigger/teleporter{teleport_x = 101; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"dv" = (/obj/effect/step_trigger/teleporter{teleport_x = 102; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"dw" = (/obj/effect/step_trigger/teleporter{teleport_x = 103; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"dx" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 98; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"dy" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 99; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"dz" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 100; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"dA" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 101; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
+"dB" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 102; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/eris/hallway/main/stairwell)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -190,7 +190,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaabbAdudvdwdxabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabbAdndudvdwabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaabababababaMaMaMaMaMababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaabaiaiaiayaeaeaeaeaeayaiaiaiaiabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaabaiaeaeaeaNaNaNaNaNaeaeaeaeaiabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -290,7 +290,7 @@ aaaaabdeaeaeaeaeakaeaeaecDcGcGcGcGcHcNabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaabbdaeaeaeaecEcFcFcFcOcOcOcOcOcPcQabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaabbdaeaeaeaecRabababaxcIcNcSdkdldmabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaabadadadadadabababababababababazababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabdndydzdAdBabaaaaaaaaababababaAabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaabdxdydzdAdBabaaaaaaaaababababaAabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaabababababababaaaaaaaaabcKaDaCcLabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaabcKaDaLcMabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
