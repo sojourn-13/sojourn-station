@@ -139,6 +139,7 @@
 	build_path = /obj/machinery/computer/supplycomp/order
 	origin_tech = list(TECH_DATA = 2)
 
+/*
 /obj/item/weapon/circuitboard/mining_shuttle
 	name = T_BOARD("mining shuttle console")
 	build_path = /obj/machinery/computer/shuttle_control/mining
@@ -153,6 +154,7 @@
 	name = T_BOARD("research shuttle console")
 	build_path = /obj/machinery/computer/shuttle_control/research
 	origin_tech = list(TECH_DATA = 2)
+*/
 
 /obj/item/weapon/circuitboard/aifixer
 	name = T_BOARD("AI integrity restorer")

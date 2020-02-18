@@ -127,7 +127,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/use_loyalty_implants = 0
 
 	var/welder_vision = 1
-	var/generate_asteroid = 0
+	var/generate_asteroid = 1
 	var/no_click_cooldown = 0
 
 	var/admin_legacy_system = 0	//Defines whether the server uses the legacy admin system with admins.txt or the SQL system. Config option in config.txt

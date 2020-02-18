@@ -69,12 +69,12 @@ AUTOMATED ALERT: Link to [command_name()] lost.
 The access requirements on the Asteroid Shuttles' consoles have now been revoked.
 "}
 		priority_announcement.Announce(txt,"SUPERMATTER CASCADE DETECTED")
-
+/*
 		for(var/obj/machinery/computer/shuttle_control/C in SSmachines.machinery)
 			if(istype(C, /obj/machinery/computer/shuttle_control/research) || istype(C, /obj/machinery/computer/shuttle_control/mining))
 				C.req_access = list()
 				C.req_one_access = list()
-
+*/
 		spawn(5 MINUTES)
 			SSticker.station_explosion_cinematic(0,null) // TODO: Custom cinematic
 			universe_has_ended = 1

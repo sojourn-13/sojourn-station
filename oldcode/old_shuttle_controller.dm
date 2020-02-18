@@ -29,7 +29,7 @@ var/global/datum/shuttle_controller/shuttle_controller
 	process_shuttles = list()
 
 	var/datum/shuttle/ferry/shuttle
-
+/*
 	shuttle = new/datum/shuttle/ferry/escape_pod()
 	shuttle.location = 0
 	shuttle.warmup_time = 0
@@ -66,7 +66,7 @@ var/global/datum/shuttle_controller/shuttle_controller
 		shuttles["Escape Pod 1"],
 		shuttles["Escape Pod 2"],
 	)
-
+*/
 	// Supply shuttle
 	shuttle = new/datum/shuttle/ferry/supply()
 	shuttle.location = 1

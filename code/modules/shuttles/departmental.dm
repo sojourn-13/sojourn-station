@@ -1,3 +1,4 @@
+/*
 /obj/machinery/computer/shuttle_control/mining
 	name = "mining shuttle control console"
 	shuttle_tag = "Mining"
@@ -22,7 +23,7 @@
 	icon_screen = "shuttle"
 	req_access = list(access_cargo)
 	shuttle_tag = "Merchant"
-
+*/
 
 /*
 /obj/machinery/computer/shuttle_control/multi/turbolift
