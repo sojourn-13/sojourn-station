@@ -4,7 +4,7 @@
 	head_position = 1
 	department = DEPARTMENT_SCIENCE
 	department_flag = SCIENCE | COMMAND
-	faction = "Nadezhda Colony"
+	faction = "MAP_FACTION"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Nadezhda Council"
@@ -61,7 +61,7 @@
 	flag = SCIENTIST
 	department = DEPARTMENT_SCIENCE
 	department_flag = SCIENCE
-	faction = "Nadezhda Colony"
+	faction = "MAP_FACTION"
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "the Chief Research Overseer"
@@ -116,7 +116,7 @@
 	flag = ROBOTICIST
 	department = DEPARTMENT_SCIENCE
 	department_flag = SCIENCE
-	faction = "Nadezhda Colony"
+	faction = "MAP_FACTION"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief Research Overseer"
