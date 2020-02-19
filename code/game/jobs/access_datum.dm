@@ -226,7 +226,11 @@
 	desc = "Manufacturing"
 	access_type = ACCESS_TYPE_NONE
 
-// /var/const/free_access_id = 37
+/var/const/access_medical = 37
+/datum/access/access_medical
+    id = access_medical
+    desc = "Medical Access"
+    region = ACCESS_REGION_MEDBAY
 
 // /var/const/free_access_id = 38
 

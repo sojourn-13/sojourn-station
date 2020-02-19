@@ -169,7 +169,6 @@
 
 		computeDirections(stop)
 
-		log_d
 		var/datum/turbolift_stop/cfloor = new()
 		lift.stops += cfloor
 
