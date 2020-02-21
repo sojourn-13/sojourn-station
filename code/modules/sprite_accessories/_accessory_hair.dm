@@ -242,6 +242,10 @@
 	name = "Gentle"
 	icon_state = "gentle"
 
+/datum/sprite_accessory/hair/gumshoe
+	name = "Gumshoe"
+	icon_state = "hair_gumshoe"
+
 /datum/sprite_accessory/hair/halfbang
 	name = "Half-Banged"
 	icon_state = "halfbang"
@@ -289,6 +293,10 @@
 /datum/sprite_accessory/hair/kagami
 	name = "Pigtails"
 	icon_state = "kagami"
+
+/datum/sprite_accessory/hair/kanaya
+	name = "Kanaya"
+	icon_state = "hair_kanaya"
 
 /datum/sprite_accessory/hair/kare
 	name = "Kare"
@@ -378,9 +386,13 @@
 	name = "Messy Bun"
 	icon_state = "messybun"
 
+/datum/sprite_accessory/hair/mia
+	name = "Mia"
+	icon_state = "hair_mia"
+
 /datum/sprite_accessory/hair/miles
-		name = "Miles"
-		icon_state = "hair_miles"
+	name = "Miles"
+	icon_state = "hair_miles"
 
 /datum/sprite_accessory/hair/modern
 	name = "Modern"
@@ -631,6 +643,10 @@
 /datum/sprite_accessory/hair/updo
 	name = "Updo"
 	icon_state = "updo"
+
+/datum/sprite_accessory/hair/vivi
+	name = "Vivi"
+	icon_state = "hair_vivi"
 
 /datum/sprite_accessory/hair/volaju
 	name = "Volaju"
