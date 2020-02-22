@@ -224,7 +224,7 @@
 
 /obj/item/device/makeshift_centrifuge
 	name = "manual centrifuge"
-	desc = "A centrifuge with manual mechanism."
+	desc = "A basic centrifuge utilising a manual mechanism."
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "centrifuge_makeshift"
 	matter = list(MATERIAL_STEEL = 4)

@@ -330,7 +330,7 @@
 
 /obj/item/weapon/storage/makeshift_grinder
 	name = "makeshift grinder"
-	desc = "Mortar and pestle to grind ingridients."
+	desc = "A mortar and pestle, used to grind ingredients."
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "mortar"
 	storage_slots = 3

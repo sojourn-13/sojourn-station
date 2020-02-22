@@ -8,40 +8,28 @@
 	related_stats = list(STAT_MEC)
 
 /datum/craft_recipe/airlock/standard
-	name = "standard airlock assembly"
+	name = "airlock assembly"
 	result = /obj/structure/door_assembly
 
-/datum/craft_recipe/airlock/command
-	name = "command airlock assembly"
-	result = /obj/structure/door_assembly/door_assembly_com
-
-/datum/craft_recipe/airlock/security
-	name = "security airlock assembly"
-	result = /obj/structure/door_assembly/door_assembly_sec
-
-/datum/craft_recipe/airlock/engineering
-	name = "engineering airlock assembly"
-	result = /obj/structure/door_assembly/door_assembly_eng
-
-/datum/craft_recipe/airlock/mining
-	name = "mining airlock assembly"
-	result = /obj/structure/door_assembly/door_assembly_min
+/datum/craft_recipe/airlock/airtight
+	name = "airtight hatch assembly"
+	result = /obj/structure/door_assembly/door_assembly_hatch
 
 /datum/craft_recipe/airlock/atmospherics
 	name = "atmospherics airlock assembly"
 	result = /obj/structure/door_assembly/door_assembly_atmo
 
-/datum/craft_recipe/airlock/research
-	name = "research airlock assembly"
-	result = /obj/structure/door_assembly/door_assembly_research
+/datum/craft_recipe/airlock/command
+	name = "command airlock assembly"
+	result = /obj/structure/door_assembly/door_assembly_com
 
-/datum/craft_recipe/airlock/medical
-	name = "medical airlock assembly"
-	result = /obj/structure/door_assembly/door_assembly_med
+/datum/craft_recipe/airlock/emergency_shutter
+	name = "emergency shutter"
+	result = /obj/structure/firedoor_assembly
 
-/datum/craft_recipe/airlock/maintenance
-	name = "maintenance airlock assembly"
-	result = /obj/structure/door_assembly/door_assembly_mai
+/datum/craft_recipe/airlock/engineering
+	name = "engineering airlock assembly"
+	result = /obj/structure/door_assembly/door_assembly_eng
 
 /datum/craft_recipe/airlock/external
 	name = "external airlock assembly"
@@ -51,21 +39,25 @@
 	name = "freezer airlock assembly"
 	result = /obj/structure/door_assembly/door_assembly_fre
 
-/datum/craft_recipe/airlock/airtight
-	name = "airtight hatch assembly"
-	result = /obj/structure/door_assembly/door_assembly_hatch
+/datum/craft_recipe/airlock/high_security
+	name = "high security airlock assembly"
+	result = /obj/structure/door_assembly/door_assembly_highsecurity
+
+/datum/craft_recipe/airlock/maintenance
+	name = "maintenance airlock assembly"
+	result = /obj/structure/door_assembly/door_assembly_mai
 
 /datum/craft_recipe/airlock/maintenance
 	name = "maintenance hatch assembly"
 	result = /obj/structure/door_assembly/door_assembly_mhatch
 
-/datum/craft_recipe/airlock/high_security
-	name = "high security airlock assembly"
-	result = /obj/structure/door_assembly/door_assembly_highsecurity
+/datum/craft_recipe/airlock/medical
+	name = "medical airlock assembly"
+	result = /obj/structure/door_assembly/door_assembly_med
 
-/datum/craft_recipe/airlock/emergency_shutter
-	name = "emergency shutter"
-	result = /obj/structure/firedoor_assembly
+/datum/craft_recipe/airlock/mining
+	name = "mining airlock assembly"
+	result = /obj/structure/door_assembly/door_assembly_min
 
 /datum/craft_recipe/airlock/multitile
 	name = "multi-tile airlock assembly"
@@ -74,3 +66,10 @@
 		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),
 	)
 
+/datum/craft_recipe/airlock/research
+	name = "research airlock assembly"
+	result = /obj/structure/door_assembly/door_assembly_research
+
+/datum/craft_recipe/airlock/security
+	name = "security airlock assembly"
+	result = /obj/structure/door_assembly/door_assembly_sec

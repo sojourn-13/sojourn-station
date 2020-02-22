@@ -19,7 +19,7 @@
 
 /obj/item/weapon/tool/screwdriver/improvised
 	name = "screwpusher"
-	desc = "A little metal rod wrapped in tape, barely qualifies as a tool."
+	desc = "A little metal rod wrapped in a tape handle. It can just about unfasten screws."
 	icon_state = "impro_screwdriver"
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 15)
 	degradation = 2

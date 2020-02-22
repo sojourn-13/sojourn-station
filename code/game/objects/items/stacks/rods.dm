@@ -1,6 +1,6 @@
 /obj/item/stack/rods
 	name = "metal rod"
-	desc = "Some rods. Can be used for building, or something."
+	desc = "Some rods. Widely used within construction work."
 	icon = 'icons/obj/stack/items.dmi'
 	singular_name = "metal rod"
 	icon_state = "rods"

@@ -1,5 +1,6 @@
 /obj/machinery/electrolyzer
 	name = "electrolyzer"
+	desc = "An advanced chemistry machine used for electrolysis of chemicals."
 	density = TRUE
 	anchored = TRUE
 	icon = 'icons/obj/machines/chemistry.dmi'
@@ -141,7 +142,7 @@
 		separation_beaker.forceMove(get_turf(src))
 		separation_beaker = null
 	..()
-	
+
 
 /obj/machinery/electrolyzer/attack_hand(mob/user)
 	if(..())
@@ -210,6 +211,7 @@
 
 /obj/item/device/makeshift_electrolyser
 	name = "makeshift electrolyzer"
+	desc = "A makeshift chemistry machine used for electrolysis of chemicals."
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "electrolysis_makeshift"
 	var/on = FALSE
@@ -281,7 +283,7 @@
 			if(!state || state == -1)
 				turn_off()
 			SSnano.update_uis(src)
-			
+
 
 /obj/item/device/makeshift_electrolyser/attack_self(mob/user as mob)
 	user.set_machine(src)

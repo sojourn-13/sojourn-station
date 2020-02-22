@@ -1,5 +1,5 @@
 /datum/craft_recipe/floor
-	category = "Tiles"
+	category = "Floors"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
 	)
@@ -195,10 +195,6 @@
 	name = "white monofloor tile"
 	result = /obj/item/stack/tile/floor/white/monofloor
 
-
-
-
-
 /datum/craft_recipe/floor/dark
 	name = "regular dark floor tile"
 	result = /obj/item/stack/tile/floor/dark
@@ -262,13 +258,4 @@
 /datum/craft_recipe/floor/dark/monofloor
 	name = "dark monofloor tile"
 	result = /obj/item/stack/tile/floor/dark/monofloor
-
-/datum/craft_recipe/floor/grille
-	name = "regular grille"
-	result = /obj/structure/grille
-	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
-	steps = list(
-		list(/obj/item/stack/rods, 2, "time" = 10)
-	)
-
 
