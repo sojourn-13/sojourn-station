@@ -120,8 +120,9 @@
 
 			light_x1 = stop.x + lift_size_x - (make_walls ? 1 : 0)
 			light_x2 = stop.x + lift_size_x - (make_walls ? 1 : 0)
+
 			light_y1 = stop.y + (make_walls ? 1 : 0)
-			light_y2 = stop.y + lift_size_y - (make_walls ? 1 : 0)
+			light_y2 = stop.y + lift_size_y-1 - (make_walls ? 1 : 0)
 
 
 
