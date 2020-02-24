@@ -805,7 +805,11 @@ proc/GaussRandRound(var/sigma, var/roundto)
 							X.name = "wall"
 							qdel(O) // prevents multiple shuttle corners from stacking
 							continue
-						O.forceMove(X)
+
+						O.loc = X
+						O.update_light()
+
+
 					for(var/mob/M in T)
 						// If we need to check for more mobs, I'll add a variable
 						if(!ismob(M) || isEye(M))

@@ -151,6 +151,10 @@
 	//lower levels at the bottom, we need to go through the list in reverse
 	for(var/i in lift.stops.len to 1 step -1)
 		var/datum/turbolift_stop/floor = lift.stops[i]
+
+		if(!floor.label)
+			continue
+
 		var/label = floor.label? floor.label : "Level #[i]"
 		dat += "<font color = '[(floor in lift.queued_stops) ? COLOR_YELLOW : COLOR_WHITE]'>"
 		dat += "<a href='?src=\ref[src];move_to_floor=["\ref[floor]"]'>[label]</a>: [floor.name]</font><br>"
