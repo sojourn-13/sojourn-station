@@ -4,7 +4,8 @@
 	desc = "A space bear of the common black bear variety."
 	icon = 'icons/mob/mobs-bear.dmi'
 	icon_state = "bearfloor"
-	icon_gib = "brownbear_gib"
+	icon_gib = "bear_gib"
+	icon_dead = "bear_dead"
 	speak_emote = list("growls", "roars")
 	emote_see = list("stares ferociously", "stomps")
 	speak_chance = 1
@@ -40,8 +41,9 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "pokes"
-	icon_state = "bear"
+	icon_state = "space_bear"
 	icon_gib = "bear_gib"
+	icon_dead = "space_bear_dead"
 	maxHealth = 120
 	health = 120
 	melee_damage_lower = 30
@@ -55,6 +57,7 @@
 	response_harm   = "pokes"
 	icon_state = "brownbear"
 	icon_gib = "brownbear_gib"
+	icon_dead = "brownbear_dead"
 
 /mob/living/simple_animal/hostile/bear/polar
 	name = "space polar bear"
@@ -64,6 +67,7 @@
 	response_harm   = "pokes"
 	icon_state = "polarbear"
 	icon_gib = "brownbear_gib"
+	icon_dead = "polarbear_dead"
 
 /mob/living/simple_animal/hostile/bear/Life()
 	. =..()

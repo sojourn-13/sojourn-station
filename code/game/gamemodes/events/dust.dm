@@ -7,7 +7,7 @@ No command report on the common version of this event.
 The "dust" will damage the hull of the station causin minor hull breaches.
 */
 
-
+/*
 /datum/storyevent/dust
 	id = "space_dust"
 	name = "belt of space dust"
@@ -18,6 +18,7 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 
 
 //////////////////////////////////////////////////////////
+
 /datum/event/dust
 	startWhen	= 10
 	endWhen		= 30
@@ -164,4 +165,4 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 		return
 
 
-
+*/

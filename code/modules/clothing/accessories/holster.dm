@@ -13,12 +13,12 @@
 	if(holstered && istype(user))
 		to_chat(user, SPAN_WARNING("There is already \a [holstered] holstered here!"))
 		return
-	//gut add from cit
+
 	if (LAZYLEN(can_hold))
 		if(!is_type_in_list(I,can_hold))
 			to_chat(user, "<span class='warning'>[I] won't fit in [src]!</span>")
 			return
-	//Gut add from cit end
+
 
 	else if (!(I.slot_flags & SLOT_HOLSTER))
 		to_chat(user, SPAN_WARNING("[I] won't fit in [src]!"))
@@ -47,8 +47,8 @@
 	else
 		if(user.a_intent == I_HURT)
 			usr.visible_message(
-				SPAN_DANGER("[user] draws \the [holstered], ready to shoot!"),
-				SPAN_WARNING("You draw \the [holstered], ready to shoot!")
+				SPAN_DANGER("[user] draws \the [holstered], ready to fight!"),
+				SPAN_WARNING("You draw \the [holstered], ready to fight!")
 				)
 		else
 			user.visible_message(
@@ -155,7 +155,7 @@ Sword holsters
 	name = "saber scabbard"
 	desc = "A white leather weapon sheath mounted around the waist."
 	icon_state = "saber_holster"
-	overlay_state = "saber_holster"
+	overlay_state = "saber"
 	slot = "utility"
 	can_hold = list(/obj/item/weapon/tool/sword/saber)
 	price_tag = 200
@@ -167,7 +167,6 @@ Sword holsters
 	overlays.Cut()
 	if(contents.len)
 		overlays += image('icons/inventory/accessory/icon.dmi', "saber_layer")
-		overlay_state += image('icons/inventory/accessory/mob.dmi', "saber_holster_layer")
 
 
 /obj/item/clothing/accessory/holster/saber/occupied
@@ -176,4 +175,74 @@ Sword holsters
 /obj/item/clothing/accessory/holster/saber/occupied/Initialize()
 	holstered = new holstered_spawn
 
+
+
+
+/obj/item/clothing/accessory/holster/saber/greatsword
+	name = "greatsword scabbard"
+	desc = "A sturdy brown leather scabbard with gold trim. It's made for a crusader's greatsword. Deus Vult."
+	icon_state = "crusader_holster"
+	overlay_state = "crusader"
+	can_hold = list(/obj/item/weapon/tool/sword/crusader)
+
+/obj/item/clothing/accessory/holster/saber/greatsword/update_icon()
+	..()
+	overlays.Cut()
+	if(contents.len)
+		overlays += image('icons/inventory/accessory/icon.dmi', "crusader_layer")
+
+/obj/item/clothing/accessory/holster/saber/greatsword/occupied
+	var/holstered_spawn = /obj/item/weapon/tool/sword/crusader
+
+/obj/item/clothing/accessory/holster/saber/greatsword/occupied/Initialize()
+	holstered = new holstered_spawn
+
+
+
+
+/obj/item/clothing/accessory/holster/saber/machete
+	name = "machete scabbard"
+	desc = "A sturdy black leather scabbard. For the survivalist in you."
+	icon_state = "machete_holster"
+	overlay_state = "machete"
+	can_hold = list(/obj/item/weapon/tool/sword/machete)
+
+/obj/item/clothing/accessory/holster/saber/machete/update_icon()
+	..()
+	overlays.Cut()
+	if(contents.len)
+		overlays += image('icons/inventory/accessory/icon.dmi', "machete_layer")
+
+/obj/item/clothing/accessory/holster/saber/machete/occupied
+	var/holstered_spawn = /obj/item/weapon/tool/sword/machete
+
+/obj/item/clothing/accessory/holster/saber/machete/occupied/Initialize()
+	holstered = new holstered_spawn
+
+
+
+
+/obj/item/clothing/accessory/holster/saber/cutlass
+	name = "cutlass scabbard"
+	desc = "A simple brown scabbard meant for a cutlass. For pirates and military men who take themselves too seriously."
+	icon_state = "cutlass_holster"
+	overlay_state = "cutlass"
+	slot = "utility"
+	can_hold = list(/obj/item/weapon/tool/sword/saber)
+	price_tag = 200
+	sound_in = 'sound/effects/sheathin.ogg'
+	sound_out = 'sound/effects/sheathout.ogg'
+
+/obj/item/clothing/accessory/holster/saber/cutlass/update_icon()
+	..()
+	overlays.Cut()
+	if(contents.len)
+		overlays += image('icons/inventory/accessory/icon.dmi', "cutlass_layer")
+
+
+/obj/item/clothing/accessory/holster/saber/cutlass/occupied
+	var/holstered_spawn = /obj/item/weapon/tool/sword/saber/cutlass
+
+/obj/item/clothing/accessory/holster/saber/cutlass/occupied/Initialize()
+	holstered = new holstered_spawn
 

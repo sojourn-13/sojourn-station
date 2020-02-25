@@ -104,7 +104,7 @@
 		A.touch_map_edge()
 
 	..()
-
+/*
 /turf/space/proc/Sandbox_Spacemove(atom/movable/A as mob|obj)
 	var/cur_x
 	var/cur_y
@@ -217,4 +217,4 @@
 /turf/space/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0)
 	return ..(N, tell_universe, 1)
 
-
+*/

@@ -9,6 +9,7 @@
 			if(istype(victim, /obj/effect/overmap/ship))
 				OE.leave(victim)
 
+/*
 /obj/effect/overmap_event/proc/handle_wraparound()
 	var/low_edge = 1
 	var/high_edge = maps_data.overmap_size - 1
@@ -55,7 +56,7 @@
 			qdel(src)
 	else
 		return //we're not flying off anywhere
-
+*/
 /obj/effect/overmap_event/movable
 	var/movable = 0
 	var/temporary = 0
@@ -83,7 +84,7 @@
 /obj/effect/overmap_event/movable/Process()
 	if(movable == 1)
 		walk(src,moving_vector,170,0)
-		handle_wraparound()
+		//handle_wraparound()
 
 /obj/effect/overmap_event/movable/Initialize()
 	. = ..()
@@ -131,6 +132,7 @@
 
 
 /////////                      ........::::::%%%SPACE_COMET
+/*
 /obj/effect/overmap_event/movable/comet
 	start_x = 2
 	start_y = 2
@@ -171,7 +173,8 @@
 
 		del_event()
 		qdel(src)
-
+*/
+/*
 /obj/effect/overmap_event/movable/comet/comettail
 	movable = 0
 	eventtype = /datum/overmap_event/meteor/comet_tail
@@ -185,5 +188,5 @@
 	spawn(450)
 		del_event()
 		qdel(src)
-
+*/
 //////                                                                           SPACE_COMET%%%::::::........

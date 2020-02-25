@@ -212,13 +212,14 @@
 	event_icon_states = list("electrical1", "electrical2", "electrical3", "electrical4")
 	difficulty = EVENT_LEVEL_MAJOR
 
+/*
 /datum/overmap_event/dust
 	name = "dust cloud"
 	event = /datum/event/dust
 	count = 16
 	radius = 4
 	event_icon_states = list("dust1", "dust2", "dust3", "dust4")
-
+*/
 /datum/overmap_event/ion
 	name = "ion cloud"
 	event = /datum/event/ionstorm

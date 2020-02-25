@@ -351,7 +351,7 @@ Like for example singulo act and whatever.
 	if(!S.gen.check_flag(MODEFLAG_OVERCHARGE))
 		return
 	S.overcharge_shock(src)
-
+/*
 /obj/effect/meteor/shield_impact(var/obj/effect/shield/S)
 	if(!S.gen.check_flag(MODEFLAG_HYPERKINETIC))
 		return
@@ -368,7 +368,7 @@ Like for example singulo act and whatever.
 	visible_message("<span class='danger'>\The [src] breaks into dust!</span>")
 	make_debris()
 	qdel(src)
-
+*/
 
 
 //This function takes a turf to prevent race conditions, as the object calling it will probably be deleted in the same frame

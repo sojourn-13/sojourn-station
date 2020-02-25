@@ -17,7 +17,7 @@
 	. = ..()
 	linked = map_sectors["[z]"]
 	get_known_sectors()
-	new /obj/effect/overmap_event/movable/comet()
+	//new /obj/effect/overmap_event/movable/comet()
 
 /obj/machinery/computer/helm/proc/get_known_sectors()
 	var/area/overmap/map = locate() in world

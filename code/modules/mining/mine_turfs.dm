@@ -5,6 +5,7 @@
 	icon_state = "rock-dark"
 	blocks_air = 1
 	density = 1
+	opacity = 1
 	layer = EDGED_TURF_LAYER
 
 /turf/simulated/mineral //wall piece

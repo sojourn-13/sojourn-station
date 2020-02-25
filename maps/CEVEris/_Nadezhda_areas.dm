@@ -20,6 +20,7 @@
 	ship_area = TRUE
 	icon_state = "erisyellow"
 	base_turf = /turf/simulated/floor/dirt
+	flags = AREA_FLAG_RAD_SHIELDED
 
 //Maintenance
 
@@ -190,6 +191,7 @@
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 	dynamic_lighting = FALSE
+	flags = null
 
 /area/nadezhda/outside/one_star
 	name = "One Star Base"

@@ -173,13 +173,13 @@
 
 /obj/item/weapon/tool/sword/crusader
 	name = "crusader greatsword"
-	desc = "A traditional blade meeting the materials and design of the future. It's made from durasteel and the craftmenship is the highest quality. It bears the insignia of the Church. Deus Vult."
+	desc = "A traditional blade meeting the materials and design of the future. It's made from durasteel and the craftmenship is of the highest quality. It bears the insignia of the Church. Deus Vult."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "crusader"
 	item_state = "crusader"
 	force = WEAPON_FORCE_LETHAL
 	armor_penetration = ARMOR_PEN_HALF
-	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_PLASTIC = 3, MATERIAL_PLASMA = 5)
+	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_PLASTIC = 3)
 	price_tag = 10000
 
 /obj/item/weapon/melee/sledgehammer
@@ -218,3 +218,5 @@
 	icon_state = "machete"
 	item_state = "machete"
 	force = WEAPON_FORCE_ROBUST
+	w_class = ITEM_SIZE_NORMAL
+
