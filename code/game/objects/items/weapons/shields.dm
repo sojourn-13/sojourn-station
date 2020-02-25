@@ -91,6 +91,26 @@
 		playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
 		cooldown = world.time
 
+/obj/item/weapon/shield/riot/crusader
+	name = "crusader shield"
+	desc = "A traditional tower shield meeting the materials and design of the future. It's made from durasteel and the craftmenship is the highest quality. It bears the insignia of the Church. Deus Vult."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "crusader_s"
+	item_state = "crusader_s"
+	price_tag = 2000
+	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10, MATERIAL_DURASTEEL = 20)
+
+/obj/item/weapon/shield/riot/crusader/handle_shield(mob/user)
+	. = ..()
+	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
+
+/obj/item/weapon/shield/riot/crusader/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+	if(istype(damage_source, /obj/item/projectile))
+		var/obj/item/projectile/P = damage_source
+		if((is_sharp(P) && damage > 10) || istype(P, /obj/item/projectile/beam))
+			return (base_block_chance - round(damage / 3)) //block bullets and beams using the old block chance
+	return base_block_chance
+
 /*
  * Handmade shield
  */

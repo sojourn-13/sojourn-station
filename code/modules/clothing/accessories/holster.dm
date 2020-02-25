@@ -5,13 +5,22 @@
 	slot = "utility"
 	price_tag = 100
 	var/obj/item/holstered = null
+	var/sound_in = 'sound/effects/holsterin.ogg'
+	var/sound_out = 'sound/effects/holsterout.ogg'
+	var/list/can_hold
 
 /obj/item/clothing/accessory/holster/proc/holster(var/obj/item/I, var/mob/living/user)
 	if(holstered && istype(user))
 		to_chat(user, SPAN_WARNING("There is already \a [holstered] holstered here!"))
 		return
+	//gut add from cit
+	if (LAZYLEN(can_hold))
+		if(!is_type_in_list(I,can_hold))
+			to_chat(user, "<span class='warning'>[I] won't fit in [src]!</span>")
+			return
+	//Gut add from cit end
 
-	if (!(I.slot_flags & SLOT_HOLSTER))
+	else if (!(I.slot_flags & SLOT_HOLSTER))
 		to_chat(user, SPAN_WARNING("[I] won't fit in [src]!"))
 		return
 
@@ -22,6 +31,8 @@
 	w_class = max(w_class, holstered.w_class)
 	user.visible_message(SPAN_NOTICE("[user] holsters \the [holstered]."), SPAN_NOTICE("You holster \the [holstered]."))
 	name = "occupied [initial(name)]"
+	playsound(user, "[sound_in]", 75, 0)
+	update_icon()
 
 /obj/item/clothing/accessory/holster/proc/clear_holster()
 	holstered = null
@@ -46,6 +57,8 @@
 				)
 		user.put_in_hands(holstered)
 		holstered.add_fingerprint(user)
+		playsound(user, "[sound_out]", 75, 0)
+		update_icon()
 		w_class = initial(w_class)
 		clear_holster()
 
@@ -132,3 +145,35 @@
 	desc = "A leather weapon holster mounted around the upper leg."
 	icon_state = "holster_leg"
 	overlay_state = "holster_leg"
+
+
+/*
+Sword holsters
+*/
+
+/obj/item/clothing/accessory/holster/saber
+	name = "saber scabbard"
+	desc = "A white leather weapon sheath mounted around the waist."
+	icon_state = "saber_holster"
+	overlay_state = "saber_holster"
+	slot = "utility"
+	can_hold = list(/obj/item/weapon/tool/sword/saber)
+	price_tag = 200
+	sound_in = 'sound/effects/sheathin.ogg'
+	sound_out = 'sound/effects/sheathout.ogg'
+
+/obj/item/clothing/accessory/holster/saber/update_icon()
+	..()
+	overlays.Cut()
+	if(contents.len)
+		overlays += image('icons/inventory/accessory/icon.dmi', "saber_layer")
+		overlay_state += image('icons/inventory/accessory/mob.dmi', "saber_holster_layer")
+
+
+/obj/item/clothing/accessory/holster/saber/occupied
+	var/holstered_spawn = /obj/item/weapon/tool/sword/saber
+
+/obj/item/clothing/accessory/holster/saber/occupied/Initialize()
+	holstered = new holstered_spawn
+
+

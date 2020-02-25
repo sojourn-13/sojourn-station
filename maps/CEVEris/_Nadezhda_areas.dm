@@ -342,7 +342,9 @@
 	name = "Escape Hangar B"
 	icon_state = "erisred"
 
-
+/area/nadezhda/hallway/main/stairwell
+	name = "Stairwell"
+	icon_state = "hallway4"
 
 
 //Command
@@ -1253,6 +1255,11 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/quartermaster/misc
 	name = "\improper Cargo Barracks"
 	icon_state = "nadezhdayellow"
+
+/area/nadezhda/quartermaster/supplydock
+	name = "\improper Cargo Delivery Dock"
+	icon_state = "erisgreen"
+	base_turf = /turf/simulated/floor/tiled/dark/cargo
 
 
 

@@ -162,6 +162,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
+	w_class = ITEM_SIZE_BULKY
 
 /obj/item/weapon/tool/sword/katana
 	name = "katana"
@@ -169,3 +170,51 @@
 	icon_state = "katana"
 	item_state = "katana"
 	slot_flags = SLOT_BELT | SLOT_BACK
+
+/obj/item/weapon/tool/sword/crusader
+	name = "crusader greatsword"
+	desc = "A traditional blade meeting the materials and design of the future. It's made from durasteel and the craftmenship is the highest quality. It bears the insignia of the Church. Deus Vult."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "crusader"
+	item_state = "crusader"
+	force = WEAPON_FORCE_LETHAL
+	armor_penetration = ARMOR_PEN_HALF
+	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_PLASTIC = 3, MATERIAL_PLASMA = 5)
+	price_tag = 10000
+
+/obj/item/weapon/melee/sledgehammer
+	name = "sledgehammer"
+	desc = "Once a tool used to nail rivets, now a tool used to crush skulls."
+	icon_state = "sledgehammer"
+	item_state = "sledgehammer"
+	force = WEAPON_FORCE_LETHAL
+	armor_penetration = ARMOR_PEN_EXTREME
+	throwforce = WEAPON_FORCE_PAINFUL
+	throw_speed = 1
+	throw_range = 4
+	w_class = ITEM_SIZE_BULKY
+	origin_tech = list(TECH_COMBAT = 3)
+	attack_verb = list("robusted", "slammed", "struck", "crushed")
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
+
+/obj/item/weapon/tool/sword/saber
+	name = "premier's saber"
+	desc = "A finely made formal blade fit for the premier. Despite being primarily for show it cuts deep and painfully."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "saber"
+	item_state = "saber"
+	armor_penetration = ARMOR_PEN_SHALLOW
+
+/obj/item/weapon/tool/sword/saber/cutlass
+	name = "cutlass"
+	desc = "A finely made sword for pirates or military men who take themselves too seriously."
+	icon_state = "cutlass"
+	item_state = "cutlass"
+
+/obj/item/weapon/tool/sword/machete
+	name = "machete"
+	desc = "An explorer's best friend and trust back up plan. Or primary plan for those who like to get in there personally."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "machete"
+	item_state = "machete"
+	force = WEAPON_FORCE_ROBUST

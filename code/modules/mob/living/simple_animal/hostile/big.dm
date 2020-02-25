@@ -17,17 +17,22 @@
 	pixel_y = -16
 
 /mob/living/simple_animal/hostile/deathclaw
-	name = "deathclaw"
-	desc = "Big! Big! The size of three men! Claws as long as my forearm! Ripped apart! Ripped apart!"
-	icon = 'icons/mob/64x64.dmi'
+	name = "primal render"
+	desc = "A hulking monster out of a living nightmare. It's powerful hide can shrug off advanced lasers with ease and its heavily armored hide requires powerful ballistics to pierce."
+	icon = 'icons/mob/deathclaw.dmi'
 	icon_state = "deathclaw"
+	icon_living = "deathclaw"
 	icon_dead = "deathclaw_dead"
+	icon_gib = "deathclaw_gib"
+	speed = 2
+	move_to_delay = 4
+	turns_per_move = 5
 	attacktext = list("mauled")
 	faction = "deathclaw"
-	maxHealth = 200
-	health = 200
-	melee_damage_lower = 10
-	melee_damage_upper = 60
+	maxHealth = 600
+	health = 600
+	melee_damage_lower = 30
+	melee_damage_upper = 40
 	old_x = -16
 	old_y = 0
 	default_pixel_x = -16
@@ -36,13 +41,14 @@
 
 /mob/living/simple_animal/hostile/deathclaw/chunks
 	name = "Chunks"
-	desc = "An absolute unit of a deathclaw. Somehow maintains his speed."
+	desc = "An absolute unit of a primal render. Somehow maintains his speed despite being severely malformed and ugly as sin."
+	icon = 'icons/mob/64x64.dmi'
 	icon_state = "chunks"
 	icon_dead = "deathclaw_dead"
-	maxHealth = 400
-	health = 400
-	melee_damage_lower = 20
-	melee_damage_upper = 70
+	maxHealth = 1000
+	health = 1000
+	melee_damage_lower = 30
+	melee_damage_upper = 40
 
 /mob/living/simple_animal/hostile/panther
 	name = "panther"

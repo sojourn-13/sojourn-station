@@ -22,9 +22,10 @@
 	return
 
 /turf/simulated/floor/fixed/hydrotile
-	name = "freezing cold water"
+	name = "freezing cold rushing water"
+	desc = "Not safe to stand in."
 	icon = 'icons/turf/flooring/beach.dmi'
-	icon_state = "seadeep"
+	icon_state = "coolant"
 	initial_flooring = /decl/flooring/beach/water/flooded
 	temperature = T20C
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT

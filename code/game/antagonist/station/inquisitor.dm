@@ -11,8 +11,8 @@
 	survive_objective = /datum/objective/escape
 
 	stat_modifiers = list(
-		STAT_TGH = 20,
-		STAT_ROB = 20,
+		STAT_TGH = 30,
+		STAT_ROB = 30,
 		STAT_VIG = 10
 	)
 
