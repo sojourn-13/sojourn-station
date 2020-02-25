@@ -43,6 +43,10 @@
 	name = "Abraham Lincoln Beard"
 	icon_state = "abe"
 
+/datum/sprite_accessory/facial_hair/braid
+	name = "Braided Beard"
+	icon_state = "braided"
+
 /datum/sprite_accessory/facial_hair/chinless
 	name = "Chinless Beard"
 	icon_state = "chinlessbeard"
@@ -83,6 +87,10 @@
 	name = "Long Beard"
 	icon_state = "longbeard"
 
+/datum/sprite_accessory/facial_hair/lumberjack
+	name = "Lumberjack Beard"
+	icon_state = "lumberjack"
+
 /datum/sprite_accessory/facial_hair/martial
 	name = "Martial Artist Beard"
 	icon_state = "martialartist"
@@ -102,6 +110,10 @@
 /datum/sprite_accessory/facial_hair/neckbeard
 	name = "Neckbeard"
 	icon_state = "neckbeard"
+
+/datum/sprite_accessory/facial_hair/seadog
+	name = "Sea Dog Beard"
+	icon_state = "seadog"
 
 /datum/sprite_accessory/facial_hair/tribeard
 	name = "Tribeard"
