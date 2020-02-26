@@ -1,7 +1,7 @@
 //Space bears!
 /mob/living/simple_animal/hostile/bear
-	name = "space black bear"
-	desc = "A space bear of the common black bear variety."
+	name = "black bear"
+	desc = "A bear of the common black bear variety."
 	icon = 'icons/mob/mobs-bear.dmi'
 	icon_state = "bearfloor"
 	icon_gib = "bear_gib"
@@ -50,8 +50,8 @@
 	melee_damage_upper = 40
 
 /mob/living/simple_animal/hostile/bear/brown
-	name = "space brown bear"
-	desc = "A space bear of the common brown bear variety."
+	name = "brown bear"
+	desc = "A bear of the common brown bear variety."
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "pokes"
@@ -60,8 +60,8 @@
 	icon_dead = "brownbear_dead"
 
 /mob/living/simple_animal/hostile/bear/polar
-	name = "space polar bear"
-	desc = "A space bear of the uncommon polar bear variety."
+	name = "polar bear"
+	desc = "A bear of the uncommon polar bear variety."
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "pokes"

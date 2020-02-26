@@ -3,7 +3,7 @@
 	name = "APLU \"Ripley\""
 	icon_state = "ripley"
 	initial_icon = "ripley"
-	step_in = 4
+	step_in = 2
 	max_equip = 5
 	max_temperature = 20000
 	health = 500

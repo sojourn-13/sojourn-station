@@ -236,7 +236,7 @@
 	price_tag = 1000
 
 /obj/item/clothing/accessory/medal/gold/captain
-	name = "medal of captaincy"
+	name = "medal of exceptional statecraft"
 	desc = "A golden medal awarded exclusively to those who show distinguished duty as a premier. It signifies the codified responsibilities of the position and their undisputable qualities within it."
 
 /obj/item/clothing/accessory/medal/gold/heroism
