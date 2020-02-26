@@ -1235,3 +1235,35 @@
 	icon_state = "conch"
 	use_action = "pulls the string"
 	possible_answers = list("Yes.", "No.", "Try asking again.", "Nothing.", "I don't think so.", "Neither.", "Maybe someday.")
+
+/*Desk Toy*/
+/obj/item/toy/desk
+	name = "desk toy master"
+	desc = "A object that does not exist. Parent Item"
+	icon = 'icons/obj/toy.dmi'
+
+	var/on = 0
+	var/activation_sound = 'sound/machines/button.ogg'
+
+/obj/item/toy/desk/update_icon()
+	if(on)
+		icon_state = "[initial(icon_state)]-on"
+	else
+		icon_state = "[initial(icon_state)]"
+
+/obj/item/toy/desk/attack_self(mob/user)
+	on = !on
+	if(on && activation_sound)
+		playsound(src.loc, activation_sound, 75, 1)
+	update_icon()
+	return 1
+
+/obj/item/toy/desk/newtoncradle
+	name = "cradle model"
+	desc = "A metallic pendulum full of endless energy."
+	icon_state = "newtoncradle"
+
+/obj/item/toy/desk/dippingbird
+	name = "dipping bird model"
+	desc = "A favorite amongst clerks and desk jockeys."
+	icon_state= "dippybird"

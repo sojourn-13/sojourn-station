@@ -16,7 +16,7 @@
 var/global/list/obj/machinery/telecomms/telecomms_list = list()
 
 /obj/machinery/telecomms
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/telecomms.dmi'
 	density = TRUE
 	anchored = TRUE
 	use_power = IDLE_POWER_USE
@@ -38,7 +38,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	var/delay = 10 // how many process() ticks to delay per heat
 	var/long_range_link = 0	// Can you link it across Z levels or on the otherside of the map? (Relay & Hub)
 	var/hide = 0				// Is it a hidden machine?
-	var/list/listening_levels = list() // 0 = auto set in New() - this is the z level that the machine is listening to.
+	var/list/listening_levels = list() // 0 = auto set in Initialize() - this is the z level that the machine is listening to.
 
 
 /obj/machinery/telecomms/proc/relay_information(datum/signal/signal, filter, copysig, amount = 20)
@@ -333,7 +333,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 
 /obj/machinery/telecomms/hub
 	name = "telecommunication hub"
-	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "hub"
 	idle_power_usage = 1600
 	machinetype = 7

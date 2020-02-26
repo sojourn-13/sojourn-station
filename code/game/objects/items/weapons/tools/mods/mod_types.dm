@@ -42,8 +42,7 @@
 		"health_threshold_modifier" = 10
 		)
 	I.prefix = "heatsunk"
-	I.req_cell = TRUE
-	I.req_fuel = TRUE
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
 
 /obj/item/weapon/tool_upgrade/reinforcement/plating
@@ -202,8 +201,7 @@
 	)
 	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_DRILLING, QUALITY_SAWING, QUALITY_DIGGING, QUALITY_EXCAVATION)
 	I.prefix = "high-power"
-	I.req_fuel = TRUE
-	I.req_cell = TRUE
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
 // 	 REFINEMENT: INCREASES PRECISION
 //------------------------------------------------
@@ -289,7 +287,7 @@
 	"cell_hold_upgrade" = 1
 	)
 	I.prefix = "medium-cell"
-	I.req_cell = TRUE
+	I.req_fuel_cell = REQ_CELL
 
 //Stores moar fuel!
 /obj/item/weapon/tool_upgrade/augment/fuel_tank
@@ -307,7 +305,7 @@
 	"health_threshold_modifier" = -10,
 	"max_fuel" = 100)
 	I.prefix = "expanded"
-	I.req_fuel = TRUE
+	I.req_fuel_cell = REQ_FUEL
 
 //OneStar fuel mod
 /obj/item/weapon/tool_upgrade/augment/holding_tank
@@ -326,7 +324,7 @@
 	"max_fuel" = 600
 	)
 	I.prefix = "holding"
-	I.req_fuel = TRUE
+	I.req_fuel_cell = REQ_FUEL
 
 //Penalises the tool, but unlocks several more augment slots.
 /obj/item/weapon/tool_upgrade/augment/expansion
@@ -401,7 +399,7 @@
 	"health_threshold_modifier" = -10,
 	)
 	I.prefix = "intelligent"
-	I.req_cell = TRUE
+	I.req_fuel_cell = REQ_CELL
 
 /obj/item/weapon/tool_upgrade/augment/repair_nano
 	name = "repair nano"

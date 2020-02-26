@@ -332,14 +332,14 @@ var/list/rank_prefix = list(\
 
 //Removed the horrible safety parameter. It was only being used by ninja code anyways.
 //Now checks siemens_coefficient of the affected area by default
-/mob/living/carbon/human/electrocute_act(var/shock_damage, var/obj/source, var/base_siemens_coeff = 1.0, var/def_zone = null)
+/mob/living/carbon/human/electrocute_act(shock_damage, obj/source, siemens_coeff = 1.0, def_zone = null)
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if (!def_zone)
 		def_zone = pick(BP_L_ARM, BP_R_ARM)
 
 	var/obj/item/organ/external/affected_organ = get_organ(check_zone(def_zone))
-	var/siemens_coeff = base_siemens_coeff * get_siemens_coefficient_organ(affected_organ)
+	siemens_coeff *= get_siemens_coefficient_organ(affected_organ)
 
 	return ..(shock_damage, source, siemens_coeff, def_zone)
 
@@ -1189,8 +1189,9 @@ var/list/rank_prefix = list(\
 			var/obj/item/weapon/implant/core_implant/C = new I.implant_type
 			C.install(src)
 			C.activate()
-			C.install_default_modules_by_job(mind.assigned_job)
-			C.access.Add(mind.assigned_job.cruciform_access)
+			if(mind)
+				C.install_default_modules_by_job(mind.assigned_job)
+				C.access.Add(mind.assigned_job.cruciform_access)
 
 	else
 		var/organ_type = null
@@ -1215,10 +1216,6 @@ var/list/rank_prefix = list(\
 	species.organs_spawned(src)
 
 	update_body()
-
-#undef MODIFICATION_REMOVED
-#undef MODIFICATION_ORGANIC
-#undef MODIFICATION_SILICON
 
 /mob/living/carbon/human/proc/bloody_doodle()
 	set category = "IC"
