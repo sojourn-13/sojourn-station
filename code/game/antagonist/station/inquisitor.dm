@@ -64,7 +64,7 @@
 	You're cruciform has activated its crusader protocol upon detecting the presence of an active hivemind. You are to do \
 	everything in your power to destroy all traces of the hivemind and any infected machines or organics.<br>\
 	<br>\
-	Any local church staff should aid in goals and other crusaders will announce their presence so you may work together.\
+	Any local church staff should aid in goals and other crusaders will announce their presence so you may work together. \
 	Remember that your goal is only to destroy the hivemind, once you've completed your task you should return to your regular \
 	duties but remain vigilant. Under special circumstances your crusader protocol may have activated to deal with a different threat.\
 	Do as befitting of the church and aid the colony in whatever way you can.")

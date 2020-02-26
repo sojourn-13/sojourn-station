@@ -119,11 +119,11 @@ datum/unit_test/zas_area_test/mining_shuttle_at_station
 
 datum/unit_test/zas_area_test/virology
 	name = "ZAS: Virology"
-	area_path = /area/eris/medical/virology
+	area_path = /area/nadezhda/medical/virology
 
 datum/unit_test/zas_area_test/xenobio
 	name = "ZAS: Xenobiology"
-	area_path = /area/eris/rnd/xenobiology
+	area_path = /area/nadezhda/rnd/xenobiology
 
 datum/unit_test/zas_area_test/west_hall_mining_outpost
 	name = "ZAS: Mining outpost West Hallway"
@@ -131,7 +131,7 @@ datum/unit_test/zas_area_test/west_hall_mining_outpost
 
 datum/unit_test/zas_area_test/
 	name = "ZAS: Cargo Bay"
-	area_path = /area/eris/quartermaster/storage
+	area_path = /area/nadezhda/quartermaster/storage
 
 
 // ==================================================================================================

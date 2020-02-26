@@ -384,20 +384,12 @@
 	Uses all your power, so you can't use abilities for a couple minutes
 */
 /datum/ritual/targeted/cruciform/inquisitor/spawn_item
-	name = "Armaments"
+	name = "Litany of Arms"
 	phrase = "Supra Domini, bona de te peto. Audi me, et libera vocationem ad me munera tua"
-	desc = "Request an energy sword from headquarters to become a real crusader. Establishing the connection takes a lot of power."
+	desc = "Request a greatsword and tower shield from the church armory to become a real crusader. Establishing the connection takes a lot of power."
 	power = 100
-	cooldown_time = 30 MINUTES
+	cooldown_time = 60 MINUTES
 
 
 /datum/ritual/targeted/cruciform/inquisitor/spawn_item/perform(mob/living/carbon/human/user, obj/item/weapon/melee/energy/sword,list/targets)
-/* (mob/living/carbon/human/user, /obj/item/weapon/shield/energy, /obj/item/weapon/melee/energy/sword, list/targets)
-	var/datum/core_module/cruciform/uplink/I = C.get_module(CRUCIFORM_UPLINK)
 
-	if(I && I.uplink)
-		I.uplink.trigger(user)
-
-		return TRUE
-	return FALSE
-*/

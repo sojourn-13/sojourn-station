@@ -736,7 +736,7 @@
 	initial_flooring = /decl/flooring/rock/manmade/asphalt
 
 /turf/simulated/floor/rock/manmade/road
-	name = "road"
+	name = "gravel road"
 	icon_state = "road_1"
 	initial_flooring = /decl/flooring/rock/manmade/road
 

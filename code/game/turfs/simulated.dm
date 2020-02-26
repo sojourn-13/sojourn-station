@@ -17,7 +17,7 @@
 
 /turf/simulated/New()
 	..()
-	if(istype(loc, /area/eris/neotheology))
+	if(istype(loc, /area/nadezhda/absolutism))
 		holy = 1
 	levelupdate()
 

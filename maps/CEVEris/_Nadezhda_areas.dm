@@ -133,6 +133,7 @@
 	name = "Trash Cave"
 	icon_state = "nadezhdagreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+	dynamic_lighting = TRUE
 
 /area/nadezhda/maintenance/outside/abandoned_solars
 	name = "Abandoned Solars"
@@ -164,21 +165,25 @@
 /area/nadezhda/maintenance/outside/zoo
 	name = "The Zoo"
 	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
 
 /area/nadezhda/maintenance/outside/prepper
 	name = "Prepper Base"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
+	dynamic_lighting = TRUE
 
 /area/nadezhda/maintenance/outside/monster_cave
 	name = "Monster Cave"
 	icon_state = "erisgreen"
 	forced_ambience = list('sound/ambience/ambisin1.ogg', 'sound/ambience/ambisin2.ogg', 'sound/ambience/ambisin3.ogg', 'sound/ambience/ambisin4.ogg')
+	dynamic_lighting = TRUE
 
 /area/nadezhda/maintenance/outside/smuggler_zone
 	name = "Smuggler Base"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
+	dynamic_lighting = TRUE
 
 /area/nadezhda/maintenance/outside/smuggler_zone_u
 	name = "Smuggler Base Underground"

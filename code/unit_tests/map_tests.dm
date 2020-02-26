@@ -23,15 +23,15 @@ datum/unit_test/apc_area_test/start_test()
 					/area/supply/station \
 					)
 
-	var/list/exempt_from_atmos = typesof(   /area/eris/maintenance, \
-						/area/eris/storage, \
-						/area/eris/engineering/atmos/storage, \
-						/area/eris/engineering/construction, \
-						/area/eris/rnd/server
+	var/list/exempt_from_atmos = typesof(   /area/nadezhda/maintenance, \
+						/area/nadezhda/storage, \
+						/area/nadezhda/engineering/atmos/storage, \
+						/area/nadezhda/engineering/construction, \
+						/area/nadezhda/rnd/server
 						)
 
-	var/list/exempt_from_apc = typesof(	/area/eris/engineering/construction, \
-						/area/eris/medical/genetics
+	var/list/exempt_from_apc = typesof(	/area/nadezhda/engineering/construction, \
+						/area/nadezhda/medical/genetics
 						)
 
 	for(var/area/A in world)

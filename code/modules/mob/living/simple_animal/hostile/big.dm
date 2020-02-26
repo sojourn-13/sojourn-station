@@ -18,7 +18,7 @@
 
 /mob/living/simple_animal/hostile/deathclaw
 	name = "primal render"
-	desc = "A hulking monster out of a living nightmare. It's powerful hide can shrug off advanced lasers with ease and its heavily armored hide requires powerful ballistics to pierce."
+	desc = "A hulking monster out of a living nightmare. It's powerful hide can shrug off advanced lasers with ease and its heavily armored skin requires powerful ballistics to pierce."
 	icon = 'icons/mob/deathclaw.dmi'
 	icon_state = "deathclaw"
 	icon_living = "deathclaw"

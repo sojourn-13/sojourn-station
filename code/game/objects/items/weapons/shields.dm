@@ -92,7 +92,7 @@
 		cooldown = world.time
 
 /obj/item/weapon/shield/riot/crusader
-	name = "crusader shield"
+	name = "crusader tower shield"
 	desc = "A traditional tower shield meeting the materials and design of the future. It's made from durasteel and the craftmenship is the highest quality. It bears the insignia of the Church. Deus Vult."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "crusader_s"
