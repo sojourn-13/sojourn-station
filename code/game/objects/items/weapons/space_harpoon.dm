@@ -38,7 +38,7 @@
 	if(!Using)
 		Using = TRUE
 		Charging = TRUE
-		if(do_after(user, 4 SECONDS - user.stats.getMult(STAT_COG, STAT_LEVEL_GODLIKE/20, src)))
+		if(do_after(user, 4 SECONDS - user.stats.getMult(STAT_COG, /*STAT_LEVEL_GODLIKE,*/ src)))
 			if(istype(A, /obj/item/weapon/storage/))
 				return
 			else if(istype(A, /obj/structure/table/) && (get_dist(A, user) <= 1))
