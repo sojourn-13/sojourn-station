@@ -226,7 +226,7 @@
 	var/burn_damage_amt = 5
 	var/use_on_synthetic = 0 //If 1, this is only useful on FBPs, if 0, this is only useful on fleshies
 
-	var/wielded = 0
+	var/wieldedm = 0
 	var/cooldown = 0
 	var/busy = 0
 
@@ -245,10 +245,10 @@
 /obj/item/weapon/shockpaddles/update_wear_icon()
 	var/mob/living/M = loc
 	if(istype(M) && M.is_holding(src) && !M.hands_are_full())
-		wielded = 1
+		wieldedm = 1
 		name = "[initial(name)] (wielded)"
 	else
-		wielded = 0
+		wieldedm = 0
 		name = initial(name)
 	update_icon()
 	..()
@@ -265,7 +265,7 @@
 	if(!check_charge(chargecost()))
 		to_chat(user, "<span class='warning'>\The [src] doesn't have enough charge left to do that.</span>")
 		return 0
-	if(!wielded && !isrobot(user))
+	if(!wieldedm && !isrobot(user))
 		to_chat(user, "<span class='warning'>You need to wield the paddles with both hands before you can use them on someone!</span>")
 		return 0
 	if(cooldown)

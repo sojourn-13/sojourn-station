@@ -24,6 +24,7 @@
 				/obj/item/weapon/tool/saw/circular = 2,
 				/obj/item/weapon/tool/saw/advanced_circular = 1,
 				/obj/item/weapon/tool/saw/chain = 0.5,
+				/obj/item/weapon/tool/saw/hyper = 0.5,
 				/obj/item/weapon/tool/shovel = 5,
 				/obj/item/weapon/tool/shovel/spade = 2.5,
 				/obj/item/weapon/tool/pickaxe = 2,
@@ -96,10 +97,11 @@
 				/obj/item/weapon/tool/weldingtool/advanced = 3,
 				/obj/item/weapon/tool/saw/advanced_circular = 2,
 				/obj/item/weapon/tool/saw/chain = 1,
+				/obj/item/weapon/tool/saw/hyper = 1,
 				/obj/item/weapon/tool/pickaxe/diamonddrill = 2,
 				/obj/item/weapon/tool/tape_roll/fiber = 2,
 				/obj/item/weapon/tool/tape_roll/flextape = 1,
-				/obj/item/weapon/material/twohanded/fireaxe = 1))
+				/obj/item/weapon/tool/fireaxe = 1))
 
 /obj/random/tool/advanced/low_chance
 	name = "low chance advanced tool"
