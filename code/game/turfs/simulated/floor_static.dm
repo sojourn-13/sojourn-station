@@ -21,6 +21,10 @@
 /turf/simulated/floor/fixed/set_flooring()
 	return
 
+
+/*
+Engine water turfs
+*/
 /turf/simulated/floor/fixed/hydrotile
 	name = "freezing cold rushing water"
 	desc = "Not safe to stand in."
@@ -30,3 +34,17 @@
 	temperature = T20C
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
 
+/turf/simulated/floor/fixed/hydrotile/shallowcoolant
+	name = "cold river water"
+	desc = "The ice cold water flows from an underground river to cool the super heated pipes."
+	icon_state = "coolantshallow"
+
+/turf/simulated/floor/fixed/hydrotile/inputgate
+	name = "river inlet gate"
+	desc = "This gate allows the freezing water from an underground river to flow to the engine pipes for cooling."
+	icon_state = "input"
+
+/turf/simulated/floor/fixed/hydrotile/outputgate
+	name = "river outlet gate"
+	desc = "This gate allows the now heated water from an underground river to flow back underground."
+	icon_state = "output"

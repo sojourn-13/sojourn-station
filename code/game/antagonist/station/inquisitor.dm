@@ -66,7 +66,7 @@
 	<br>\
 	Any local church staff should aid in goals and other crusaders will announce their presence so you may work together. \
 	Remember that your goal is only to destroy the hivemind, once you've completed your task you should return to your regular \
-	duties but remain vigilant. Under special circumstances your crusader protocol may have activated to deal with a different threat.\
+	duties but remain vigilant. Under special circumstances your crusader protocol may have activated to deal with a different threat. \
 	Do as befitting of the church and aid the colony in whatever way you can.")
 
 	to_chat(player, "You will need a ritual book to utilise your abilities. They can be found or purchased in the chapel. The bounty ritual can be used to request items from central church command.")

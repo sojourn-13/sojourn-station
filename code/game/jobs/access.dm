@@ -165,7 +165,7 @@
 		if(ACCESS_REGION_SUPPLY) //supply
 			return "Supply"
 		if(ACCESS_REGION_CHURCH) //Neotheo
-			return "NeoTheology"
+			return "Church"
 		if(ACCESS_REGION_PROSPECTOR) //Prospectors
 			return "Prospector"
 

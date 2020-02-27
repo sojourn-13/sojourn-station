@@ -445,7 +445,7 @@
 
 // NeoTheology
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns
-	disk_name = "NeoTheology Armory of the Old Testament"
+	disk_name = "Absolute Armory of the Old Testament"
 	icon_state = "neotheology"
 	license = 3
 	designs = list(
@@ -460,7 +460,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns
-	disk_name = "NeoTheology Armory of the New Testament"
+	disk_name = "Absolute Armory of the New Testament"
 	icon_state = "neotheology"
 	license = 3
 	designs = list(
