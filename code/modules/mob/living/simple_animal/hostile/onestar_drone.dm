@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/onestar_custodian
-	name = "One Star Custodial Drone"
-	desc = "Old and weathered One Star drone. It seems to be malfunctioning and hostile."
+	name = "Greyson Positronic Custodial Drone"
+	desc = "Old and weathered Greyson Positronic drone. It seems to be malfunctioning and hostile."
 	icon = 'icons/mob/build_a_drone.dmi'
 	icon_state = "drone_os"
 	faction = "onestar"
@@ -65,8 +65,8 @@
 
 
 /mob/living/simple_animal/hostile/onestar_custodian/chef
-	name = "One Star Service Drone"
-	desc = "Old and weathered One Star drone. This one looks like it used to cook. It seems to be malfunctioning and hostile."
+	name = "Greyson Positronic Service Drone"
+	desc = "Old and weathered Greyson Positronic drone. This one looks like it used to cook. It seems to be malfunctioning and hostile."
 	tool = "flamer"
 	fire_verb = "lobs flame"
 	screen_type = "os_red"
@@ -81,8 +81,8 @@
 
 
 /mob/living/simple_animal/hostile/onestar_custodian/engineer
-	name = "One Star Engineering Drone"
-	desc = "Old and weathered One Star drone. This one has a laser welder. It seems to be malfunctioning and hostile."
+	name = "Greyson Positronic Engineering Drone"
+	desc = "Old and weathered Greyson Positronic drone. This one has a laser welder. It seems to be malfunctioning and hostile."
 	tool = "laser"
 	tooltype = "os_red"
 	screen_type = "yellow"

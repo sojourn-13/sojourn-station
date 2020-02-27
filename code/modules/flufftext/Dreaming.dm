@@ -78,9 +78,9 @@ var/list/dreams = list(
 
 //Creatures & Hostiles
 	"a alien drone","a alien sentinel","a alien queen","a bear","a space carp","a space pike","a creature",
-	"a diyaab","a one star autonomous drone","a one star autonomous sentinel","a hivemind probe","a hivemind cyborg",
+	"a diyaab","a greyson positronic autonomous drone","a greyson positronic autonomous sentinel","a hivemind probe","a hivemind cyborg",
 	"a hivemind zombie","a hivemind maneater","a hivemind warped","a hivemind marionette","a hivemind stinger",
-	"a hivemind tyrant","a one star type 0315","a mimic","a nanite infested miniroach cluster","a scavenger",
+	"a hivemind tyrant","a greyson positronic type 0315","a mimic","a nanite infested miniroach cluster","a scavenger",
 	"a clown","a goat","a combat drone","a russian soldier","a samak","a bat swarm","a shantak","a mercenary",
 	"a sentient tree","a viscerator","a vox armalis","a slime","a cortical borer","a cat","a chick","a chicken",
 	"a corgi","a cow","a crab","a fennec","a goose","a lizard","a mouse","a sentient mushroom","a parrot","a penguin",

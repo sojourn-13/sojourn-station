@@ -44,8 +44,8 @@
 
 
 /obj/item/weapon/tool/pickaxe/onestar //TODO: Add sound to /turn_on proc
-	name = "One Star pickaxe"
-	desc = "A standard One Star basic tool. There used energy technologies what makes it enough powerful and cheap at the same time."
+	name = "greyson positronic pickaxe"
+	desc = "A standard Greyson Positronic basic tool. There used energy technologies what makes it enough powerful and cheap at the same time."
 	icon_state = "one_star_pickaxe"
 	item_state = "pickaxe"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2, MATERIAL_DIAMOND = 2)
@@ -86,8 +86,8 @@
 	suitable_cell = /obj/item/weapon/cell/medium
 
 /obj/item/weapon/tool/pickaxe/jackhammer/onestar
-	name = "One Star jackhammer"
-	desc = "A heavy One Star tool that cracks rocks with blasts, perfect for killing capitalist pigs."
+	name = "greyson positronic jackhammer"
+	desc = "A heavy Greyson Positronic tool that cracks rocks with blasts, perfect for killing capitalist pigs."
 	icon_state = "one_star_jackhammer"
 	item_state = "jackhammer"
 	matter = list(MATERIAL_STEEL = 7, MATERIAL_PLATINUM = 2)
@@ -115,7 +115,7 @@
 	max_fuel = 100
 
 /obj/item/weapon/tool/pickaxe/drill/onestar
-	name = "One Star mining drill"
+	name = "greyson positronic mining drill"
 	desc = "Yours is the drill that will pierce through the worker, metaphorically."
 	icon_state = "one_star_drill"
 	tool_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 10)

@@ -27,7 +27,7 @@
 	degradation = 5 //This one breaks REALLY fast
 
 /obj/item/weapon/tool/crowbar/onestar
-	name = "One Star crowbar"
+	name = "greyson positronic crowbar"
 	desc = "Looks like a classic one, but more durable."
 	icon_state = "one_star_crowbar"
 	item_state = "crowbar"

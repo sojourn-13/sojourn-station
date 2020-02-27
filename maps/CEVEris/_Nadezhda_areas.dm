@@ -199,7 +199,7 @@
 	flags = null
 
 /area/nadezhda/outside/one_star
-	name = "One Star Base"
+	name = "Greyson Positronic Base"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen13.ogg', 'sound/ambience/ambigen14.ogg', 'sound/ambience/ambimalf.ogg')
 

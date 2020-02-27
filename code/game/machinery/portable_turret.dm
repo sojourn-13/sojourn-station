@@ -68,7 +68,7 @@
 	var/overridden = 0				//if the security override is 0, security protocols are on. if 1, protocols are broken.
 
 /obj/machinery/porta_turret/One_star
-	name = "one star turret"
+	name = "greyson positronic turret"
 
 /obj/machinery/porta_turret/crescent
 	enabled = 0

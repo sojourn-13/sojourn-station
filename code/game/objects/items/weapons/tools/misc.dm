@@ -14,8 +14,8 @@
 	max_upgrades = 5
 
 /obj/item/weapon/tool/medmultitool
-	name = "One Star medmultitool"
-	desc = "A compact One Star medical multitool. It has all surgery tools."
+	name = "greyson positronic medmultitool"
+	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools."
 	icon_state = "medmulti"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
 	flags = CONDUCT
@@ -27,7 +27,7 @@
 
 /obj/item/weapon/tool/medmultitool/medimplant
 	name = "Medical Omnitool"
-	desc = "An all-in-one medical tool implant based on the legendary One Star model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a power cell."
+	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a power cell."
 	icon_state = "medimplant"
 	matter = null
 	force = WEAPON_FORCE_PAINFUL

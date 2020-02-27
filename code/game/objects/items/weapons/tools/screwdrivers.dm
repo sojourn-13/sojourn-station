@@ -59,8 +59,8 @@
 
 
 /obj/item/weapon/tool/screwdriver/combi_driver/onestar
-	name = "One Star combi driver"
-	desc = "A One Star combi driver, does better than the standard combi drivers on the market."
+	name = "greyson positronic combi driver"
+	desc = "A Greyson Positronic combi driver, does better than the standard combi drivers on the market."
 	icon_state = "one_star_combidriver"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2)
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 60, QUALITY_BOLT_TURNING = 60, QUALITY_DRILLING = 25)

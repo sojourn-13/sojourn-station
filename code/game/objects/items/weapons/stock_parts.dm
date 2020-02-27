@@ -140,10 +140,10 @@
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 
 
-//one star stock parts (rating 4)
+//greyson positronic stock parts (rating 4)
 
 /obj/item/weapon/stock_parts/capacitor/one_star
-	name = "one star capacitor"
+	name = "greyson positronic capacitor"
 	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
 	icon_state = "one_capacitor"
 	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
@@ -151,7 +151,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 
 /obj/item/weapon/stock_parts/scanning_module/one_star
-	name = "one star scanning module"
+	name = "greyson positronic scanning module"
 	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "one_scan_module"
 	origin_tech = list(TECH_MAGNET = 5)
@@ -159,7 +159,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 
 /obj/item/weapon/stock_parts/manipulator/one_star
-	name = "one star manipulator"
+	name = "greyson positronic manipulator"
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "one_mani"
 	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
@@ -167,7 +167,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2)
 
 /obj/item/weapon/stock_parts/micro_laser/one_star
-	name = "one star micro-laser"
+	name = "greyson positronic micro-laser"
 	icon_state = "one_laser"
 	desc = "A tiny laser used in certain devices."
 	origin_tech = list(TECH_MAGNET = 5)
@@ -175,7 +175,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 
 /obj/item/weapon/stock_parts/matter_bin/one_star
-	name = "one star matter bin"
+	name = "greyson positronic matter bin"
 	desc = "A container for hold compressed matter awaiting re-construction."
 	icon_state = "one_matter"
 	origin_tech = list(TECH_MATERIAL = 5)

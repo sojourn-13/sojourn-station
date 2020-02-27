@@ -1,5 +1,5 @@
 /mob/living/bot/miningonestar
-	name = "One Star Bot"
+	name = "Greyson Positronic Bot"
 	desc = "it looks like a drillbot. Ancient drillbot"
 	health = 20
 	maxHealth = 20

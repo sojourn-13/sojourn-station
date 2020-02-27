@@ -457,17 +457,17 @@
 
 
 /obj/item/stack/tile/derelict/white_red_edges
-	name = "one star floor tile"
-	singular_name = "one star floor tile"
+	name = "greyson positronic floor tile"
+	singular_name = "greyson positronic floor tile"
 
 /obj/item/stack/tile/derelict/white_small_edges
-	name = "one star floor tile"
-	singular_name = "one star floor tile"
+	name = "greyson positronic floor tile"
+	singular_name = "greyson positronic floor tile"
 
 /obj/item/stack/tile/derelict/red_white_edges
-	name = "one star floor tile"
-	singular_name = "one star floor tile"
+	name = "greyson positronic floor tile"
+	singular_name = "greyson positronic floor tile"
 
 /obj/item/stack/tile/derelict/white_big_edges
-	name = "one star floor tile"
-	singular_name = "one star floor tile"
+	name = "greyson positronic floor tile"
+	singular_name = "greyson positronic floor tile"

@@ -66,7 +66,7 @@ They generally give more random result and can provide more divercity in spawn.
 
 
 /obj/random/pack/tech_loot/onestar
-	name = "Random technical One Star loot"
+	name = "Random technical greyson positronic loot"
 	icon_state = "tool-red"
 	desc = "This is a random technical loot."
 

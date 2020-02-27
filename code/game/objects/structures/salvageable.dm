@@ -221,7 +221,7 @@ obj/structure/salvageable/server/Initialize()
 obj/structure/salvageable/personal/Initialize()
 	. = ..()
 	icon_state = "personal[rand(0,12)]"
-	new /obj/structure/table/reinforced (loc) 
+	new /obj/structure/table/reinforced (loc)
 
 /obj/structure/salvageable/bliss
 	name = "strange terminal"
@@ -248,9 +248,9 @@ obj/structure/salvageable/bliss/Initialize()
 			qdel(src)
 			return
 
-//////////////////
-//// ONE STAR ////
-//////////////////
+////////////////////////////
+//// Greyson Positronic ////
+////////////////////////////
 
 /obj/structure/salvageable/machine_os
 	name = "broken machine"

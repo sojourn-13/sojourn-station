@@ -815,7 +815,7 @@
 		/datum/design/autolathe/part/camera_assembly
 	)
 
-// One Star
+// greyson positronic
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar
 	disk_name = "Greyson Positronics Tool Pack"
 	icon_state = "onestar"
