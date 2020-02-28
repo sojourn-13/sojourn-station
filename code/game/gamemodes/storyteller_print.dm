@@ -23,7 +23,7 @@
 
 	if(current_factions.len)
 		text += "<br><font size=3><b>Round factions were:</b></font>"
-		for(var/datum/faction/F in current_factions)
+		for(var/datum/antag_faction/F in current_factions)
 			text += F.print_success()
 
 
