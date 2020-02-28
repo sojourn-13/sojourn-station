@@ -28,7 +28,7 @@
 		STAT_MEC = 40,
 		STAT_COG = 20,
 		STAT_TGH = 15,
-		STAT_VIG = 10,
+		STAT_VIG = 15,
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -68,6 +68,7 @@ Your second loyalty is to your guild. Ensure they are paid, fed and safe. Don't 
 	supervisors = "the Guild Master"
 	selection_color = "#d5c88f"
 	also_known_languages = list(LANGUAGE_CYRILLIC = 100, LANGUAGE_SERBIAN = 5)
+	wage = WAGE_PROFESSIONAL
 
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
 
@@ -80,6 +81,7 @@ Your second loyalty is to your guild. Ensure they are paid, fed and safe. Don't 
 		STAT_MEC = 30,
 		STAT_COG = 15,
 		STAT_TGH = 10,
+		STAT_VIG = 10,
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,

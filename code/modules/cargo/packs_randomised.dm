@@ -47,7 +47,7 @@
                 /obj/random/gun_energy_cheap,
                 /obj/random/gun_shotgun)
 	name = "Surplus Weapons Crate"
-	cost = 2000
+	cost = 5000
 	crate_name = "surplus weapons crate"
 	containertype = /obj/structure/closet/crate/secure/weapon
 	group = "Security"
