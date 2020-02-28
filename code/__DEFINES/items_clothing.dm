@@ -64,9 +64,16 @@
 #define CONDUCT            	0x2   	// Conducts electricity. (metal etc.)
 #define ON_BORDER          	0x4   	// Item has priority to check when entering or leaving.
 #define NOBLOODY           	0x8   	// Used for items if they don't want to get a blood overlay.
+// OPENCONTAINER is defined in Eris as a reagent_flag as opposed to a generic flag.
+// NOREACT will likely be the same.
 #define PLASMAGUARD        	0x10 	// Does not get contaminated by plasma.
 #define PROXMOVE           	0x20  	// Does this object require proximity checking in Enter()?
 #define SILENT				0x40 	// Sneaky shoes and silenced tools
+// 0x80 not used for no reason, feel free
+#define OVERLAY_QUEUED      0x100 // Atom queued to SSoverlay for COMPILE_OVERLAYS
+#define INITIALIZED			0x200
+#define ADMIN_SPAWNED		0x400
+
 
 //Flags for items (equipment)
 #define THICKMATERIAL              0x1  // Prevents syringes, parapens and hyposprays if equiped to slot_suit or slot_head.

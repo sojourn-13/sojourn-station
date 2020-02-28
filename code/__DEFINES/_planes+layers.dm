@@ -62,6 +62,9 @@ What is the naming convention for planes or layers?
 #define FLOOR_PLANE -2
 #define GAME_PLANE -1
 
+////////////////////////////////////////////////////////////////////////////////////////
+#define PLANE_WORLD				0	// BYOND's default value for plane, the "base plane"
+////////////////////////////////////////////////////////////////////////////////////////
 
 //Partial porting of bay defines, with our own values reinserted as placeholder
 //The full list of planes and layers needs ported
@@ -170,3 +173,7 @@ What is the naming convention for planes or layers?
 /atom/proc/reset_plane_and_layer()
 	set_plane(original_plane)
 	layer = initial(layer)
+
+
+// Check if a mob can "logically" see an atom plane
+#define MOB_CAN_SEE_PLANE(M, P) (P <= PLANE_WORLD || (P in M.planes_visible))

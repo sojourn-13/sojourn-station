@@ -5,6 +5,7 @@
 	requires_power = 0
 	sound_env = SMALL_ENCLOSED
 	dynamic_lighting = FALSE
+	luminosity = TRUE
 
 	var/lift_floor_label = null
 	var/lift_floor_name = null

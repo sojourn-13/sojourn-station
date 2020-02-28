@@ -156,3 +156,12 @@
 		return FALSE
 
 	return client.cycle_preference(preference)
+
+/client/proc/is_preference_enabled(var/preference)
+	var/datum/client_preference/cp = get_client_preference(preference)
+	return cp && (cp.key in prefs.preference_values)
+
+/mob/proc/is_preference_enabled(var/preference)
+	if(!client)
+		return FALSE
+	return client.is_preference_enabled(preference)
