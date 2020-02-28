@@ -229,6 +229,7 @@
 		/datum/design/research/item/weapon/mining/drill,
 		/datum/design/research/item/weapon/mining/drill_diamond,
 		/datum/design/autolathe/tool/pickaxe_excavation,
+		/datum/design/autolathe/tool/shovel/power,
 		/datum/design/autolathe/tool/circularsaw,
 		/datum/design/autolathe/tool/chainsaw,
 		/datum/design/autolathe/tool/rcd,
@@ -756,6 +757,7 @@
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_prox,
 		/datum/design/research/item/part/basic_capacitor,
+		/datum/design/autolathe/device/excelbaton,
 		/datum/design/autolathe/part/camera_assembly
 	)
 
@@ -776,7 +778,7 @@
 		/datum/design/autolathe/gun/vintorez,
 		/datum/design/autolathe/device/excelsiormine,
 		/datum/design/autolathe/sec/beartrap,
-		/datum/design/autolathe/clothing/excelsior_armor
+		/datum/design/autolathe/clothing/excelsior_armor,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_rusted
