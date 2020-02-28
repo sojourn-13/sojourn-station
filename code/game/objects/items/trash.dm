@@ -1,16 +1,11 @@
 //Items labled as 'trash' for the trash bag.
 //TODO: Make this an item var or something...
 
+//Added by Jack Rost
 /obj/item/trash
-	name = "trash"
-	desc = "This is rubbish."
 	icon = 'icons/obj/trash.dmi'
 	w_class = ITEM_SIZE_SMALL
-	matter = list(MATERIAL_PLASTIC = 1)
-
-/obj/item/trash/attack(mob/M, mob/living/user)
-	return
-
+	desc = "This is rubbish."
 
 /obj/item/trash/raisins
 	name = "\improper 4no raisins"
@@ -18,7 +13,7 @@
 
 /obj/item/trash/candy
 	name = "candy"
-	icon_state = "candy"
+	icon_state= "candy"
 
 /obj/item/trash/cheesie
 	name = "\improper Cheesie Honkers"
@@ -47,12 +42,10 @@
 /obj/item/trash/plate
 	name = "plate"
 	icon_state = "plate"
-	matter = list(MATERIAL_GLASS = 1)
 
 /obj/item/trash/snack_bowl
 	name = "snack bowl"
 	icon_state	= "snack_bowl"
-	matter = list(MATERIAL_GLASS = 1)
 
 /obj/item/trash/pistachios
 	name = "pistachios pack"
@@ -65,7 +58,6 @@
 /obj/item/trash/tray
 	name = "tray"
 	icon_state = "tray"
-	matter = list(MATERIAL_STEEL = 1)
 
 /obj/item/trash/candle
 	name = "candle"
@@ -79,3 +71,6 @@
 /obj/item/trash/tastybread
 	name = "bread tube"
 	icon_state = "tastybread"
+
+/obj/item/trash/attack(mob/M as mob, mob/living/user as mob)
+	return

@@ -17,7 +17,6 @@
 		bio = 100,
 		rad = 100
 	)
-	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/suit/space/void/engineering
 	name = "engineering voidsuit"
@@ -32,7 +31,6 @@
 		bio = 100,
 		rad = 100
 	)
-	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	extra_allowed = list(
 		/obj/item/weapon/storage/toolbox,
 		/obj/item/weapon/storage/briefcase/inflatable,
