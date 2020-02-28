@@ -110,6 +110,9 @@
 	name = "spade"
 	build_path = /obj/item/weapon/tool/shovel/spade
 
+/datum/design/autolathe/tool/shovel/power
+	build_path = /obj/item/weapon/tool/shovel/power
+
 /datum/design/autolathe/tool/mop
 	name = "janitor's mop"
 	build_path = /obj/item/weapon/mop
