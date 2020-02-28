@@ -158,8 +158,6 @@
 	hud.canremove = FALSE
 
 /obj/item/clothing/head/helmet/riot/ui_action_click()
-	if(..())
-		return TRUE
 	toggle()
 
 /obj/item/clothing/head/helmet/riot/verb/toggle()
