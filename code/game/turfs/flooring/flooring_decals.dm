@@ -94,6 +94,16 @@ var/list/floor_decals = list()
 	name = "hazard stripes"
 	icon_state = "warning"
 
+/obj/effect/floor_decal/industrial/inputgate
+	name = "river inlet gate"
+	desc = "This gate allows the freezing water from an underground river to flow to the engine pipes for cooling."
+	icon_state = "input"
+
+/obj/effect/floor_decal/industrial/outputgate
+	name = "river outlet gate"
+	desc = "This gate allows the now heated water from an underground river to flow back underground."
+	icon_state = "output"
+
 /obj/effect/floor_decal/industrial/warning/corner
 	icon_state = "warningcorner"
 
