@@ -728,15 +728,11 @@ proc/GaussRandRound(var/sigma, var/roundto)
 		C.x_pos = (T.x - trg_min_x)
 		C.y_pos = (T.y - trg_min_y)
 
-	log_debug("fire")
 
 	moving:
 		for (var/turf/T in refined_src)
 			var/datum/coords/C_src = refined_src[T]
-
-			log_debug("refined_src")
 			for (var/turf/B in refined_trg)
-				log_debug("refined_trg")
 				var/datum/coords/C_trg = refined_trg[B]
 				if(C_src.x_pos == C_trg.x_pos && C_src.y_pos == C_trg.y_pos)
 
@@ -754,9 +750,9 @@ proc/GaussRandRound(var/sigma, var/roundto)
 					//Shuttle turfs handle their own fancy moving.
 					if(istype(T,/turf/simulated/shuttle))
 						shuttlework = 1
-					//	var/turf/simulated/shuttle/SS = T
-					//	if(!SS.landed_holder) SS.landed_holder = new(turf = SS)
-					//	X = SS.landed_holder.land_on(B)
+						var/turf/simulated/shuttle/SS = T
+						if(!SS.landed_holder) SS.landed_holder = new(turf = SS)
+						X = SS.landed_holder.land_on(B)
 
 					//Generic non-shuttle turf move.
 					else
@@ -765,7 +761,7 @@ proc/GaussRandRound(var/sigma, var/roundto)
 						var/old_icon1 = T.icon
 						var/old_underlays = T.underlays.Copy()
 						var/old_decals = T.decals ? T.decals.Copy() : null
-                
+
 						X = B.ChangeTurf(T.type)
 						X.set_dir(old_dir1)
 						X.icon_state = old_icon_state1
@@ -773,7 +769,7 @@ proc/GaussRandRound(var/sigma, var/roundto)
 						X.copy_overlays(T, TRUE)
 						X.underlays = old_underlays
 						X.decals = old_decals
-                
+
 					//Move the air from source to dest
 					var/turf/simulated/ST = T
 					if(istype(ST) && ST.zone)
@@ -782,15 +778,14 @@ proc/GaussRandRound(var/sigma, var/roundto)
 							SX.make_air()
 						SX.air.copy_from(ST.zone.air)
 						ST.zone.remove(ST)
-                
+
 					//Move the objects. Not forceMove because the object isn't "moving" really, it's supposed to be on the "same" turf.
 					for(var/obj/O in T)
 						O.loc = X
 						O.update_light()
-                
+
 					//Move the mobs unless it's an AI eye or other eye type.
 					for(var/mob/M in T)
-						log_debug("mob")
 						if(istype(M, /mob/observer/eye))
 							continue // If we need to check for more mobs, I'll add a variable
 
@@ -799,15 +794,15 @@ proc/GaussRandRound(var/sigma, var/roundto)
 						if(istype(M, /mob/living))
 							var/mob/living/LM = M
 							LM.check_shadow() // Need to check their Z-shadow, which is normally done in forceMove().
-                
-					/*if(shuttlework)
+
+					if(shuttlework)
 						var/turf/simulated/shuttle/SS = T
 						SS.landed_holder.leave_turf()
-					else*/ if(turftoleave)
+					else if(turftoleave)
 						T.ChangeTurf(turftoleave)
 					else
 						T.ChangeTurf(get_base_turf_by_area(T))
-                
+
 					refined_src -= T
 					refined_trg -= B
 					continue moving
