@@ -1003,10 +1003,10 @@
 	return ..()
 
 /obj/item/weapon/tool/update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if(switched_on && toggleable)
-		overlays += "[icon_state]_on"
+		add_overlay("[icon_state]_on")
 
 	if(use_power_cost)
 		var/ratio = 0
@@ -1014,7 +1014,7 @@
 		if(cell && cell.charge >= use_power_cost)
 			ratio = cell.charge / cell.maxcharge
 			ratio = max(round(ratio, 0.25) * 100, 25)
-			overlays += "[icon_state]-[ratio]"
+			add_overlay("[icon_state]-[ratio]")
 
 	if(use_fuel_cost)
 		var/ratio = 0
@@ -1022,7 +1022,7 @@
 		if(get_fuel() >= use_fuel_cost)
 			ratio = get_fuel() / max_fuel
 			ratio = max(round(ratio, 0.25) * 100, 25)
-			overlays += "[icon_state]-[ratio]"
+			add_overlay("[icon_state]-[ratio]")
 
 	if(ismob(loc))
 		var/tooloverlay
@@ -1031,7 +1031,7 @@
 				tooloverlay = "excavate"
 			if (DIG)
 				tooloverlay = "dig"
-		overlays += (tooloverlay)
+		add_overlay((tooloverlay))
 
 /***************************
 	Misc/utility procs

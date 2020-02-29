@@ -613,12 +613,12 @@
 	return disk.find_files_by_type(/datum/computer_file/binary/design)
 
 /obj/machinery/autolathe/update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	icon_state = initial(icon_state)
 
 	if(panel_open)
-		overlays.Add(image(icon, "[icon_state]_panel"))
+		add_overlay(image(icon, "[icon_state]_panel"))
 
 	if(stat & NOPOWER)
 		return

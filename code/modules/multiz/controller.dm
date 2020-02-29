@@ -154,7 +154,7 @@ var/datum/controller/process/open_space/OS_controller = null
 
 
 /turf/simulated/open/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/turf/below = GetBelow(src)
 	if(below)
 		if(below.is_space())
@@ -166,7 +166,7 @@ var/datum/controller/process/open_space/OS_controller = null
 		icon_state = below.icon_state
 		dir = below.dir
 		color = below.color//rgb(127,127,127)
-		overlays += below.overlays
+		add_overlay(below.overlays)
 
 		if(!istype(below,/turf/simulated/open))
 			// get objects
@@ -178,14 +178,14 @@ var/datum/controller/process/open_space/OS_controller = null
 				var/image/temp2 = image(o, dir=o.dir, layer = o.layer)
 				temp2.plane = plane
 				temp2.color = o.color//rgb(127,127,127)
-				temp2.overlays += o.overlays
+				temp2.add_overlay(o.overlays)
 				o_img += temp2
-			overlays += o_img
+			add_overlay(o_img)
 
 		var/image/over_OS_darkness = image('icons/turf/floors.dmi', "black_open")
 		over_OS_darkness.plane = OVER_OPENSPACE_PLANE
 		over_OS_darkness.layer = MOB_LAYER
-		overlays += over_OS_darkness
+		add_overlay(over_OS_darkness)
 		return .
 
 #undef LIST_FAST

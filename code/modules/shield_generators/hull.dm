@@ -34,11 +34,11 @@
 
 
 /obj/machinery/power/shield_generator/hull/update_icon()
-	..() //Parent calls overlays.Cut()
+	..() //Parent calls cut_overlays()
 	if (tendrils_deployed)
 		for (var/D in tendril_dirs)
 			var/I = image(icon,"capacitor_connected", dir = D)
-			overlays += I
+			add_overlay(I)
 
 	for (var/obj/machinery/shield_conduit/S in tendrils)
 		if (running)

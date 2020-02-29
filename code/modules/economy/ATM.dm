@@ -358,7 +358,7 @@ log transactions
 					//stamp the paper
 					var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
 					stampoverlay.icon_state = "paper_stamp-cent"
-					R.overlays += stampoverlay
+					R.add_overlay(stampoverlay)
 					R.stamps += "<HR><i>This paper has been stamped by the Automatic Teller Machine.</i>"
 					R.stamped &= STAMP_DOCUMENT
 
@@ -395,7 +395,7 @@ log transactions
 					//stamp the paper
 					var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
 					stampoverlay.icon_state = "paper_stamp-cent"
-					R.overlays += stampoverlay
+					R.add_overlay(stampoverlay)
 					R.stamps += "<HR><i>This paper has been stamped by the Automatic Teller Machine.</i>"
 					R.stamped &= STAMP_DOCUMENT
 

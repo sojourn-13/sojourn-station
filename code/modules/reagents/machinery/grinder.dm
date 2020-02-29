@@ -284,10 +284,10 @@
 	grind()
 
 /obj/machinery/reagentgrinder/industrial/update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if(panel_open)
-		overlays.Add(image(icon, "[icon_state]_p"))
+		add_overlay(image(icon, "[icon_state]_p"))
 
 /obj/machinery/reagentgrinder/industrial/ui_data()
 	var/list/data = ..()

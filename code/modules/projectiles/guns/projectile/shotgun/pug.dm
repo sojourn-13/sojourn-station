@@ -30,12 +30,12 @@
 		)
 
 /obj/item/weapon/gun/projectile/shotgun/pug/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	icon_state = "[initial(icon_state)]"
 	if(ammo_magazine)
-		overlays += "m12[ammo_magazine.ammo_color]"
+		add_overlay("m12[ammo_magazine.ammo_color]")
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		overlays += "slide"
+		add_overlay("slide")
 	if(wielded)//I hate this snowflake bullshit but I don't feel like messing with it.
 		if(ammo_magazine)
 			item_state = wielded_item_state + "_mag"

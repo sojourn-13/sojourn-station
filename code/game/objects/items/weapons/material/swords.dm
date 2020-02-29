@@ -62,10 +62,10 @@
 
 /obj/item/weapon/material/sword/katana/update_icon()
     ..()
-    overlays.Cut()
+    cut_overlays()
     var/image/I = image(icon, icon_state = "katana_handle")
     I.appearance_flags = RESET_COLOR
-    overlays += I
+    add_overlay(I)
 
 /obj/item/weapon/material/sword/katana/gold
 	default_material = MATERIAL_GOLD

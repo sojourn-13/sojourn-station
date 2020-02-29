@@ -49,7 +49,7 @@
 		if(cash_stored)
 			spawn_money(cash_stored, loc, user)
 			cash_stored = 0
-			overlays -= "register_cash"
+			cut_overlay("register_cash")
 		else
 			open_cash_box()
 	else
@@ -473,15 +473,15 @@
 
 	if(cash_open)
 		cash_open = 0
-		overlays -= "register_approve"
-		overlays -= "register_open"
-		overlays -= "register_cash"
+		cut_overlay("register_approve")
+		cut_overlay("register_open")
+		cut_overlay("register_cash")
 	else if(!cash_locked)
 		cash_open = 1
-		overlays += "register_approve"
-		overlays += "register_open"
+		add_overlay("register_approve")
+		add_overlay("register_open")
 		if(cash_stored)
-			overlays += "register_cash"
+			add_overlay("register_cash")
 	else
 		to_chat(usr, SPAN_WARNING("The cash box is locked."))
 

@@ -31,12 +31,12 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/c20r/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	icon_state = "[initial(icon_state)][silenced ? "_s" : ""]"
 	if(ammo_magazine)
-		overlays += "mag[silenced ? "_s" : ""][ammo_magazine.ammo_color]"
+		add_overlay("mag[silenced ? "_s" : ""][ammo_magazine.ammo_color]")
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		overlays += "slide[silenced ? "_s" : ""]"
+		add_overlay("slide[silenced ? "_s" : ""]")
 
 /obj/item/weapon/gun/projectile/automatic/c20r/Initialize()
 	. = ..()

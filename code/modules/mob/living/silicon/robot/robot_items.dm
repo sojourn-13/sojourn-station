@@ -163,7 +163,7 @@
 
 				I.forceMove(src)
 				carrying.Add(I)
-				overlays += image("icon" = I.icon, "icon_state" = I.icon_state, "layer" = 30 + I.layer)
+				add_overlay(image("icon" = I.icon, "icon_state" = I.icon_state, "layer" = 30 + I.layer))
 				addedSomething = 1
 		if ( addedSomething )
 			user.visible_message("\blue [user] load some items onto their service tray.")

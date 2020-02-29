@@ -48,15 +48,15 @@
 
 
 /obj/item/device/assembly_holder/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(left_assembly)
-		overlays += "[left_assembly.icon_state]_left"
+		add_overlay("[left_assembly.icon_state]_left")
 		for(var/O in left_assembly.attached_overlays)
-			overlays += "[O]_l"
+			add_overlay("[O]_l")
 	if(right_assembly)
-		src.overlays += "[right_assembly.icon_state]_right"
+		src.add_overlay("[right_assembly.icon_state]_right")
 		for(var/O in right_assembly.attached_overlays)
-			overlays += "[O]_r"
+			add_overlay("[O]_r")
 	if(master)
 		master.update_icon()
 

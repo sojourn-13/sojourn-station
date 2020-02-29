@@ -43,12 +43,12 @@
 
 /obj/structure/cyberplant/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if (!plant)
 		return
 
 	plant.ChangeOpacity(hologram_opacity)
-	overlays += plant
+	add_overlay(plant)
 
 /obj/structure/cyberplant/proc/change_plant(var/state)
 	plant = prepare_icon(state)
@@ -138,19 +138,19 @@
 			if (QDELETED(src))
 				return
 
-			overlays.Cut()
+			cut_overlays()
 			set_light(0, 0)
 			sleep(3)
 			if (QDELETED(src))
 				return
 
-			overlays += plant
+			add_overlay(plant)
 			set_light(brightness_on, brightness_on/2)
 			sleep(3)
 			if (QDELETED(src))
 				return
 
-			overlays -= plant
+			cut_overlay(plant)
 			set_light(0, 0)
 			sleep(3)
 			if (QDELETED(src))

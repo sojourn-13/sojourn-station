@@ -163,10 +163,10 @@
 
 
 /obj/item/clothing/ears/earmuffs/mp3/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	..() //blood overlay, etc.
 	if(player.current_track)
-		overlays += "headphones_on"
+		add_overlay("headphones_on")
 
 /obj/item/clothing/ears/earmuffs/mp3/ui_action_click()
 	player.OpenInterface(usr)
@@ -326,7 +326,7 @@ BLIND     // can't see anything
 
 /obj/item/clothing/head/update_icon(var/mob/user)
 
-	overlays.Cut()
+	cut_overlays()
 	var/mob/living/carbon/human/H
 	if(ishuman(user))
 		H = user
@@ -473,9 +473,9 @@ BLIND     // can't see anything
 
 
 /obj/item/clothing/shoes/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(holding)
-		overlays += image(icon, "[icon_state]_knife")
+		add_overlay(image(icon, "[icon_state]_knife"))
 	return ..()
 
 /obj/item/clothing/shoes/proc/handle_movement(var/turf/walking, var/running)

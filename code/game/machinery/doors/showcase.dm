@@ -73,7 +73,7 @@
 	return ..()
 
 /obj/machinery/door/blast/shutters/glass/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(density)
 		icon_state = "closed"
 		if(!have_glass)
@@ -83,7 +83,7 @@
 		else if(health < maxhealth)
 			var/ratio = health / maxhealth
 			ratio = CEILING(ratio * 4, 1) * 25
-			overlays += "damage[ratio]"
+			add_overlay("damage[ratio]")
 	else
 		icon_state = "open"
 
@@ -101,7 +101,7 @@
 	else
 		var/ratio = health / maxhealth
 		ratio = CEILING(ratio * 4, 1) * 25
-		overlays.Cut()
+		cut_overlays()
 		flick("opening[ratio]", src)
 
 	density = 0
@@ -114,7 +114,7 @@
 		return
 
 	operating = TRUE
-	overlays.Cut()
+	cut_overlays()
 	if(!have_glass)
 		flick("closing-empty", src)
 		icon_state = "closed-empty"

@@ -185,7 +185,7 @@
 	var/icon/infested = new /icon(icon, icon_state)
 	var/icon/covering_mask = new /icon('icons/mob/hivemind.dmi', "covering[rand(1, 3)]")
 	infested.Blend(covering_mask, ICON_MULTIPLY)
-	overlays += infested
+	add_overlay(infested)
 
 	maxHealth = victim.maxHealth * 2 + 10
 	health = maxHealth
@@ -648,22 +648,22 @@
 	if(target_mob && !passenger && (get_dist(target_mob, src) <= 4) && !is_on_cooldown())
 		if(!hatch_closed)
 			return
-		overlays.Cut()
+		cut_overlays()
 		if(pilot)
 			flick("mechiver-opening", src)
 			icon_state = "mechiver-chief"
-			overlays += "mechiver-hands"
+			add_overlay("mechiver-hands")
 		else
 			flick("mechiver-opening_wires", src)
 			icon_state = "mechiver-welcome"
-			overlays += "mechiver-wires"
+			add_overlay("mechiver-wires")
 		hatch_closed = FALSE
 	else
-		overlays.Cut()
+		cut_overlays()
 		hatch_closed = TRUE
 		icon_state = "mechiver-closed"
 		if(passenger)
-			overlays += "mechiver-process"
+			add_overlay("mechiver-process")
 
 
 /mob/living/simple_animal/hostile/hivemind/mechiver/AttackingTarget()

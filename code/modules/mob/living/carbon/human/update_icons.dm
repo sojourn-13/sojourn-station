@@ -149,12 +149,12 @@ Please contact me on #coderbus IRC. ~Carn x
 /mob/living/carbon/human/update_icons()
 	lying_prev = lying	//so we don't update overlays for lying/standing unless our stance changes again
 //	update_hud()		//TODO: remove the need for this
-	overlays.Cut()
+	cut_overlays()
 
 	if (icon_update)
 		icon = stand_icon
 		for(var/image/I in overlays_standing)
-			overlays += I
+			add_overlay(I)
 		if(form.has_floating_eyes)
 			overlays |= species.get_eyes(src)
 
@@ -214,7 +214,7 @@ var/global/list/wings_icon_cache = list()
 		else
 			DI = damage_icon_parts[cache_index]
 
-		standing_image.overlays += DI
+		standing_image.add_overlay(DI)
 
 	overlays_standing[DAMAGE_LAYER] = standing_image
 
@@ -397,7 +397,7 @@ var/global/list/wings_icon_cache = list()
 	for(var/mut in mutations)
 		switch(mut)
 			if(LASER)
-				standing.overlays += "lasereyes_s"
+				standing.add_overlay("lasereyes_s")
 				add_image = 1
 	if(add_image)
 		overlays_standing[MUTATIONS_LAYER]	= standing
@@ -415,7 +415,7 @@ var/global/list/wings_icon_cache = list()
 		if(I.is_external() && I.wearer == src)
 			var/image/mob_icon = I.get_mob_overlay(gender, form)
 			if(mob_icon)
-				standing.overlays += mob_icon
+				standing.add_overlay(mob_icon)
 				have_icon = TRUE
 
 	if(have_icon)
@@ -459,7 +459,7 @@ var/global/list/wings_icon_cache = list()
 				specific_marking_subicon.Blend(specific_marking_icon, ICON_UNDERLAY)
 				specific_marking_icon = specific_marking_subicon
 		specific_marking_icon.Blend(body_markings[markname], real_marking.blend) //This should be a colour.
-		marking_icon.overlays += specific_marking_icon
+		marking_icon.add_overlay(specific_marking_icon)
 	return image(marking_icon)
 
 //Insert Furry Bits
@@ -643,7 +643,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		if(w_uniform.blood_DNA)
 			var/image/bloodsies	= image(icon = form.blood_mask, icon_state = "uniformblood")
 			bloodsies.color		= w_uniform.blood_color
-			standing.overlays	+= bloodsies
+			standing.add_overlay(bloodsies)
 
 		//accessories
 		var/obj/item/clothing/under/under = w_uniform
@@ -694,7 +694,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		if(gloves.blood_DNA)
 			var/image/bloodsies	= image("icon" = form.blood_mask, "icon_state" = "bloodyhands")
 			bloodsies.color = gloves.blood_color
-			standing.overlays	+= bloodsies
+			standing.add_overlay(bloodsies)
 		standing.color = gloves.color
 		overlays_standing[GLOVES_LAYER]	= standing
 	else
@@ -760,7 +760,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		if(shoes.blood_DNA)
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "shoeblood")
 			bloodsies.color = shoes.blood_color
-			standing.overlays += bloodsies
+			standing.add_overlay(bloodsies)
 		standing.color = shoes.color
 		overlays_standing[SHOES_LAYER] = standing
 	else
@@ -836,7 +836,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		if(head.blood_DNA)
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "helmetblood")
 			bloodsies.color = head.blood_color
-			standing.overlays	+= bloodsies
+			standing.add_overlay(bloodsies)
 
 		if(istype(head,/obj/item/clothing/head))
 			var/obj/item/clothing/head/hat = head
@@ -906,7 +906,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			var/obj/item/clothing/suit/S = wear_suit
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "[S.blood_overlay_type]blood")
 			bloodsies.color = wear_suit.blood_color
-			standing.overlays	+= bloodsies
+			standing.add_overlay(bloodsies)
 
 		// Accessories - copied from uniform, BOILERPLATE because fuck this system.
 		var/obj/item/clothing/suit/suit = wear_suit
@@ -942,7 +942,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		if( !istype(wear_mask, /obj/item/clothing/mask/smokable/cigarette) && wear_mask.blood_DNA )
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "maskblood")
 			bloodsies.color = wear_mask.blood_color
-			standing.overlays	+= bloodsies
+			standing.add_overlay(bloodsies)
 		overlays_standing[FACEMASK_LAYER]	= standing
 	else
 		overlays_standing[FACEMASK_LAYER]	= null
@@ -1129,7 +1129,7 @@ mob/living/carbon/human/proc/get_wings_image()
 	for(var/obj/item/organ/external/E in organs)
 		if(E.open)
 			var/image/I = image("icon"='icons/mob/surgery.dmi', "icon_state"="[E.name][round(E.open)]", "layer"=SURGERY_LAYER)
-			total.overlays += I
+			total.add_overlay(I)
 	overlays_standing[SURGERY_LAYER] = image(total)
 	if(update_icons)	update_icons()
 

@@ -53,7 +53,7 @@
 		R.offset_x += 0
 		R.offset_y += 0
 		R.ico += "paper_stamp-cent"
-		R.overlays += stampoverlay
+		R.add_overlay(stampoverlay)
 		R.stamps += "<HR><i>This paper has been stamped by the EFTPOS device.</i>"
 		R.stamped &= STAMP_DOCUMENT
 
@@ -71,7 +71,7 @@
 	//stamp the paper
 	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
 	stampoverlay.icon_state = "paper_stamp-cent"
-	R.overlays += stampoverlay
+	R.add_overlay(stampoverlay)
 	R.stamps += "<HR><i>This paper has been stamped by the EFTPOS device.</i>"
 	R.stamped &= STAMP_DOCUMENT
 	var/obj/item/smallDelivery/D = new(R.loc)

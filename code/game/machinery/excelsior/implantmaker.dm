@@ -68,7 +68,7 @@
 	if(working)
 		icon_state = "working"
 
-	overlays.Cut()
+	cut_overlays()
 
 	if(panel_open)
-		overlays.Add(image(icon, "panel"))
+		add_overlay(image(icon, "panel"))

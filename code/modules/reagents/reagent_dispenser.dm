@@ -162,7 +162,7 @@
 			var/icon/test = getFlatIcon(I)
 			test.Shift(NORTH,1)
 			test.Shift(EAST,6)
-			overlays += test
+			add_overlay(test)
 
 	var/obj/item/weapon/tool/T = I
 	if(istype(T) && T.use_fuel_cost)

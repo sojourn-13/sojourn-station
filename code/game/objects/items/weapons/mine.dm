@@ -33,10 +33,10 @@
 		qdel(src)
 
 /obj/item/weapon/mine/update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if(armed)
-		overlays.Add(image(icon,"mine_light"))
+		add_overlay(image(icon,"mine_light"))
 
 /obj/item/weapon/mine/attack_self(var/mob/user)
 	armed = !armed

@@ -164,9 +164,9 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if(contents.len)
-		overlays += image('icons/inventory/accessory/icon.dmi', "saber_layer")
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "saber_layer"))
 
 
 /obj/item/clothing/accessory/holster/saber/occupied
@@ -187,9 +187,9 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/greatsword/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if(contents.len)
-		overlays += image('icons/inventory/accessory/icon.dmi', "crusader_layer")
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "crusader_layer"))
 
 /obj/item/clothing/accessory/holster/saber/greatsword/occupied
 	var/holstered_spawn = /obj/item/weapon/tool/sword/crusader
@@ -209,9 +209,9 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/machete/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if(contents.len)
-		overlays += image('icons/inventory/accessory/icon.dmi', "machete_layer")
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "machete_layer"))
 
 /obj/item/clothing/accessory/holster/saber/machete/occupied
 	var/holstered_spawn = /obj/item/weapon/tool/sword/machete
@@ -235,9 +235,9 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/cutlass/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if(contents.len)
-		overlays += image('icons/inventory/accessory/icon.dmi', "cutlass_layer")
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "cutlass_layer"))
 
 
 /obj/item/clothing/accessory/holster/saber/cutlass/occupied

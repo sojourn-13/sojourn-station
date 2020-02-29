@@ -236,8 +236,8 @@
 	update_icon()
 
 /obj/screen/zone_sel/update_icon()
-	overlays.Cut()
-	overlays += image('icons/mob/zone_sel.dmi', "[parentmob.targeted_organ]")
+	cut_overlays()
+	add_overlay(image('icons/mob/zone_sel.dmi', "[parentmob.targeted_organ]"))
 
 /obj/screen/zone_sel/proc/set_selected_zone(bodypart)
 	var/old_selecting = parentmob.targeted_organ
@@ -320,9 +320,9 @@
 		C.activate_hand("r")
 
 /obj/screen/inventory/hand/update_icon()
-	src.overlays -= ovrls["act_hand"]
+	src.cut_overlay(ovrls["act_hand"])
 	if (src.slot_id == (parentmob.hand ? slot_l_hand : slot_r_hand))
-		src.overlays += ovrls["act_hand"]
+		src.add_overlay(ovrls["act_hand"])
 /*	if (src.slot_id == (parentmob.hand ? slot_l_hand : slot_r_hand)) // if display left
 		src.icon_state = "act_hand[src.slot_id==slot_l_hand ? "-l" : "-r"]"
 	else
@@ -355,23 +355,23 @@
 
 /obj/screen/health/update_icon()
 	if(parentmob:stat != DEAD)
-		overlays.Cut()
+		cut_overlays()
 		if (parentmob:analgesic > 100)
 //			icon_state = "health_numb"
-			overlays += ovrls["health0"]
+			add_overlay(ovrls["health0"])
 		else
 			switch(100 - ((parentmob:species.flags & NO_PAIN) ? 0 : parentmob:traumatic_shock))
-				if(100 to INFINITY)		overlays += ovrls["health0"]
-				if(80 to 100)			overlays += ovrls["health1"]
-				if(60 to 80)			overlays += ovrls["health2"]
-				if(40 to 60)			overlays += ovrls["health3"]
-				if(20 to 40)			overlays += ovrls["health4"]
-				if(0 to 20)				overlays += ovrls["health5"]
-				else					overlays += ovrls["health6"]
+				if(100 to INFINITY)		add_overlay(ovrls["health0"])
+				if(80 to 100)			add_overlay(ovrls["health1"])
+				if(60 to 80)			add_overlay(ovrls["health2"])
+				if(40 to 60)			add_overlay(ovrls["health3"])
+				if(20 to 40)			add_overlay(ovrls["health4"])
+				if(0 to 20)				add_overlay(ovrls["health5"])
+				else					add_overlay(ovrls["health6"])
 
 /obj/screen/health/DEADelize()
-	overlays.Cut()
-	overlays += ovrls["health7"]
+	cut_overlays()
+	add_overlay(ovrls["health7"])
 
 /obj/screen/health/Click()
 	if(ishuman(parentmob))
@@ -400,12 +400,12 @@
 	if(!istype(H) || H.stat == DEAD)
 		return
 
-	overlays.Cut()
+	cut_overlays()
 	var/image/ovrl
 
 	switch(H.sanity.level / H.sanity.max_level)
 		if(-INFINITY to 0)
-			overlays += ovrls["sanity6"]
+			add_overlay(ovrls["sanity6"])
 			return
 		if(1 to INFINITY)
 			ovrl = ovrls["sanity0"]
@@ -432,11 +432,11 @@
 		if(80 to INFINITY)
 			ovrl.color = "#9040e0"
 
-	overlays += ovrl
+	add_overlay(ovrl)
 
 /obj/screen/sanity/DEADelize()
-	overlays.Cut()
-	overlays += ovrls["sanity0"]
+	cut_overlays()
+	add_overlay(ovrls["sanity0"])
 
 /obj/screen/sanity/Click()
 	var/mob/living/carbon/human/H = parentmob
@@ -469,34 +469,34 @@
 	var/mob/living/carbon/C = parentmob
 	if(!istype(C) || C.stat == DEAD)
 		return
-	overlays.Cut()
+	cut_overlays()
 	switch(C.metabolism_effects.get_nsa())
 		if(200 to INFINITY)
-			overlays += ovrls["nsa10"]
+			add_overlay(ovrls["nsa10"])
 		if(-INFINITY to 20)
-			overlays += ovrls["nsa0"]
+			add_overlay(ovrls["nsa0"])
 		if(20 to 40)
-			overlays += ovrls["nsa1"]
+			add_overlay(ovrls["nsa1"])
 		if(40 to 60)
-			overlays += ovrls["nsa2"]
+			add_overlay(ovrls["nsa2"])
 		if(60 to 80)
-			overlays += ovrls["nsa3"]
+			add_overlay(ovrls["nsa3"])
 		if(80 to 100)
-			overlays += ovrls["nsa4"]
+			add_overlay(ovrls["nsa4"])
 		if(100 to 120)
-			overlays += ovrls["nsa5"]
+			add_overlay(ovrls["nsa5"])
 		if(120 to 140)
-			overlays += ovrls["nsa6"]
+			add_overlay(ovrls["nsa6"])
 		if(140 to 160)
-			overlays += ovrls["nsa7"]
+			add_overlay(ovrls["nsa7"])
 		if(160 to 180)
-			overlays += ovrls["nsa8"]
+			add_overlay(ovrls["nsa8"])
 		if(180 to 200)
-			overlays += ovrls["nsa9"]
+			add_overlay(ovrls["nsa9"])
 
 /obj/screen/nsa/DEADelize()
-	overlays.Cut()
-	overlays += ovrls["nsa0"]
+	cut_overlays()
+	add_overlay(ovrls["nsa0"])
 
 //--------------------------------------------------nsa end---------------------------------------------------------
 //--------------------------------------------------nutrition---------------------------------------------------------
@@ -523,17 +523,17 @@
 /obj/screen/nutrition/update_icon()
 	set src in usr.client.screen
 	var/mob/living/carbon/human/H = parentmob
-	overlays.Cut()
+	cut_overlays()
 	switch(H.nutrition)
-		if(450 to INFINITY)				overlays += ovrls["nutrition0"]
-		if(350 to 450)					overlays += ovrls["nutrition1"]
-		if(250 to 350)					overlays += ovrls["nutrition2"]
-		if(150 to 250)					overlays += ovrls["nutrition3"]
-		else							overlays += ovrls["nutrition4"]
+		if(450 to INFINITY)				add_overlay(ovrls["nutrition0"])
+		if(350 to 450)					add_overlay(ovrls["nutrition1"])
+		if(250 to 350)					add_overlay(ovrls["nutrition2"])
+		if(150 to 250)					add_overlay(ovrls["nutrition3"])
+		else							add_overlay(ovrls["nutrition4"])
 
 /obj/screen/nutrition/DEADelize()
-	overlays.Cut()
-	overlays += ovrls["nutrition4"]
+	cut_overlays()
+	add_overlay(ovrls["nutrition4"])
 //--------------------------------------------------nutrition end---------------------------------------------------------
 
 //--------------------------------------------------bodytemp---------------------------------------------------------
@@ -569,38 +569,38 @@
 		base_temperature = (parentmob:species.heat_level_1 + parentmob:species.cold_level_1)/2
 
 	var/temp_step
-	overlays.Cut()
+	cut_overlays()
 	if (parentmob:bodytemperature >= base_temperature)
 		temp_step = (parentmob:species.heat_level_1 - base_temperature)/4
 
 		if (parentmob:bodytemperature >= parentmob:species.heat_level_1)
-			overlays += ovrls["temp4"]//icon_state = "temp4"
+			add_overlay(ovrls["temp4"])//icon_state = "temp4"
 		else if (parentmob:bodytemperature >= base_temperature + temp_step*3)
-			overlays += ovrls["temp3"]
+			add_overlay(ovrls["temp3"])
 		else if (parentmob:bodytemperature >= base_temperature + temp_step*2)
-			overlays += ovrls["temp2"]
+			add_overlay(ovrls["temp2"])
 		else if (parentmob:bodytemperature >= base_temperature + temp_step*1)
-			overlays += ovrls["temp1"]
+			add_overlay(ovrls["temp1"])
 		else
-			overlays += ovrls["temp0"]
+			add_overlay(ovrls["temp0"])
 
 	else if (parentmob:bodytemperature < base_temperature)
 		temp_step = (base_temperature - parentmob:species.cold_level_1)/4
 
 		if (parentmob:bodytemperature <= parentmob:species.cold_level_1)
-			overlays += ovrls["temp-4"]
+			add_overlay(ovrls["temp-4"])
 		else if (parentmob:bodytemperature <= base_temperature - temp_step*3)
-			overlays += ovrls["temp-3"]
+			add_overlay(ovrls["temp-3"])
 		else if (parentmob:bodytemperature <= base_temperature - temp_step*2)
-			overlays += ovrls["temp-2"]
+			add_overlay(ovrls["temp-2"])
 		else if (parentmob:bodytemperature <= base_temperature - temp_step*1)
-			overlays += ovrls["temp-1"]
+			add_overlay(ovrls["temp-1"])
 		else
-			overlays += ovrls["temp0"]
+			add_overlay(ovrls["temp0"])
 
 /obj/screen/bodytemp/DEADelize()
-	overlays.Cut()
-	overlays += ovrls["temp-4"]
+	cut_overlays()
+	add_overlay(ovrls["temp-4"])
 //--------------------------------------------------bodytemp end---------------------------------------------------------
 
 
@@ -628,12 +628,12 @@
 /obj/screen/pressure/update_icon()
 	var/mob/living/carbon/human/H = parentmob
 //	icon_state = "pressure[H.pressure_alert]"
-	overlays.Cut()
-	overlays += ovrls["pressure[H.pressure_alert]"]
+	cut_overlays()
+	add_overlay(ovrls["pressure[H.pressure_alert]"])
 
 /obj/screen/pressure/DEADelize()
-	overlays.Cut()
-	overlays += ovrls["pressure-2"]
+	cut_overlays()
+	add_overlay(ovrls["pressure-2"])
 //--------------------------------------------------pressure end---------------------------------------------------------
 
 //--------------------------------------------------toxin---------------------------------------------------------
@@ -654,16 +654,16 @@
 
 /obj/screen/toxin/update_icon()
 	var/mob/living/carbon/human/H = parentmob
-	overlays.Cut()
+	cut_overlays()
 	if(H.plasma_alert)
-		overlays += ovrls["tox1"]
+		add_overlay(ovrls["tox1"])
 //		icon_state = "tox1"
 //	else
 //		icon_state = "tox0"
 
 /obj/screen/toxin/DEADelize()
-	overlays.Cut()
-	overlays += ovrls["tox1"]
+	cut_overlays()
+	add_overlay(ovrls["tox1"])
 //--------------------------------------------------toxin end---------------------------------------------------------
 
 //--------------------------------------------------oxygen---------------------------------------------------------
@@ -686,16 +686,16 @@
 
 /obj/screen/oxygen/update_icon()
 	var/mob/living/carbon/human/H = parentmob
-	overlays.Cut()
+	cut_overlays()
 	if(H.oxygen_alert)
-		overlays += ovrls["oxy1"]
+		add_overlay(ovrls["oxy1"])
 //		icon_state = "oxy1"
 //	else
 //		icon_state = "oxy0"
 
 /obj/screen/oxygen/DEADelize()
-	overlays.Cut()
-	overlays += ovrls["oxy1"]
+	cut_overlays()
+	add_overlay(ovrls["oxy1"])
 //--------------------------------------------------oxygen end---------------------------------------------------------
 
 //--------------------------------------------------fire---------------------------------------------------------
@@ -719,12 +719,12 @@
 
 /obj/screen/fire/update_icon()
 	var/mob/living/carbon/human/H = parentmob
-	src.overlays.Cut()
-	overlays += ovrls["fire[H.fire_alert == 1]"]
+	src.cut_overlays()
+	add_overlay(ovrls["fire[H.fire_alert == 1]"])
 
 obj/screen/fire/DEADelize()
-	overlays.Cut()
-	overlays += ovrls["fire0"]
+	cut_overlays()
+	add_overlay(ovrls["fire0"])
 //--------------------------------------------------fire end---------------------------------------------------------
 /*/obj/screen/slot_object
 	name = "slot"
@@ -847,14 +847,14 @@ obj/screen/fire/DEADelize()
 					update_icon()
 
 /obj/screen/internal/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(parentmob:internal)
-		overlays += ovrls["internal1"]
+		add_overlay(ovrls["internal1"])
 	else
-		overlays += ovrls["internal0"]
+		add_overlay(ovrls["internal0"])
 
 /obj/screen/internal/DEADelize()
-	overlays.Cut()
+	cut_overlays()
 //-----------------------internal END------------------------------
 
 //-----------------------jump------------------------------
@@ -1027,7 +1027,7 @@ obj/screen/fire/DEADelize()
 
 /obj/screen/swap/New()
 	..()
-	overlays += image(icon = src.icon, icon_state =  "swap-r", pixel_x = 32)
+	add_overlay(image(icon = src.icon, icon_state =  "swap-r", pixel_x = 32))
 
 /obj/screen/swap/Click()
 	parentmob.swap_hand()
@@ -1115,16 +1115,16 @@ obj/screen/fire/DEADelize()
 		return ..()
 
 /obj/screen/intent/update_icon()
-	src.overlays.Cut()
+	src.cut_overlays()
 	switch (parentmob.a_intent)
 		if(I_HELP)
-			src.overlays += ovrls["help"]
+			src.add_overlay(ovrls["help"])
 		if(I_HURT)
-			src.overlays += ovrls["harm"]
+			src.add_overlay(ovrls["harm"])
 		if(I_GRAB)
-			src.overlays += ovrls["grab"]
+			src.add_overlay(ovrls["grab"])
 		if(I_DISARM)
-			src.overlays += ovrls["disarm"]
+			src.add_overlay(ovrls["disarm"])
 //-----------------------intent END------------------------------
 
 /obj/screen/fastintent
@@ -1135,7 +1135,7 @@ obj/screen/fire/DEADelize()
 
 /obj/screen/fastintent/New()
 	..()
-	src.overlays += new /image/no_recolor(icon = src.icon, icon_state = src.icon_state)
+	src.add_overlay(new /image/no_recolor(icon = src.icon, icon_state = src.icon_state))
 
 /obj/screen/fastintent/Click()
 	parentmob.a_intent_change(target_intent)
@@ -1207,7 +1207,7 @@ obj/screen/fire/DEADelize()
 	update_icon()
 
 /obj/screen/damageoverlay/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	UpdateHealthState()
 
 	underlays.Cut()
@@ -1241,7 +1241,7 @@ obj/screen/fire/DEADelize()
 					I = H.overlays_cache[9]
 				if(-INFINITY to -95)
 					I = H.overlays_cache[10]
-			overlays += I
+			add_overlay(I)
 	else
 		//Oxygen damage overlay
 		if(H.oxyloss)
@@ -1261,7 +1261,7 @@ obj/screen/fire/DEADelize()
 					I = H.overlays_cache[16]
 				if(45 to INFINITY)
 					I = H.overlays_cache[17]
-			overlays += I
+			add_overlay(I)
 
 		//Fire and Brute damage overlay (BSSR)
 		var/hurtdamage = H.getBruteLoss() + H.getFireLoss() + H.damageoverlaytemp
@@ -1281,7 +1281,7 @@ obj/screen/fire/DEADelize()
 					I = H.overlays_cache[22]
 				if(85 to INFINITY)
 					I = H.overlays_cache[23]
-			overlays += I
+			add_overlay(I)
 
 /obj/screen/damageoverlay/proc/UpdateVisionState()
 	if(parentmob.eye_blind)
@@ -1314,7 +1314,7 @@ obj/screen/fire/DEADelize()
 	return
 
 /obj/screen/glasses_overlay/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/mob/living/carbon/human/H = parentmob
 	if(istype(H.glasses, /obj/item/clothing/glasses))
 		var/obj/item/clothing/glasses/G = H.glasses

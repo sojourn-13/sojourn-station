@@ -197,13 +197,13 @@
 	return 1
 
 /obj/item/weapon/rcd/update_icon()	//For the fancy "ammo" counter
-	overlays.Cut()
+	cut_overlays()
 
 	var/ratio = 0
 	ratio = stored_matter / 30	//30 is the hardcoded max capacity of the RCD
 	ratio = max(round(ratio, 0.10) * 100, 10)
 
-	overlays += "[icon_state]-[ratio]"
+	add_overlay("[icon_state]-[ratio]")
 
 /obj/item/weapon/rcd_ammo
 	name = "compressed matter cartridge"

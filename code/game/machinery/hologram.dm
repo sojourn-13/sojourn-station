@@ -239,9 +239,9 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		for(var/datum/data/record/t in data_core.locked)
 			if(t.fields["name"]==caller_id.name)
 				tempicon = t.fields["image"]
-		hologram.overlays += getHologramIcon(icon(tempicon)) // Add the callers image as an overlay to keep coloration!
+		hologram.add_overlay(getHologramIcon(icon(tempicon)) )// Add the callers image as an overlay to keep coloration!
 	else
-		hologram.overlays += A.holo_icon // Add the AI's configured holo Icon
+		hologram.add_overlay(A.holo_icon) // Add the AI's configured holo Icon
 	hologram.mouse_opacity = 0//So you can't click on it.
 	hologram.layer = FLY_LAYER//Above all the other objects/mobs. Or the vast majority of them.
 	hologram.anchored = 1//So space wind cannot drag it.

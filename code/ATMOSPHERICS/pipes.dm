@@ -248,7 +248,7 @@
 
 	alpha = 255
 
-	overlays.Cut()
+	cut_overlays()
 
 	if(!node1 && !node2)
 		var/turf/T = get_turf(src)
@@ -259,9 +259,9 @@
 				qdel(meter)
 		qdel(src)
 	else if(node1 && node2)
-		overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]intact[icon_connect_type]")
+		add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]intact[icon_connect_type]"))
 	else
-		overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]exposed[node1?1:0][node2?1:0][icon_connect_type]")
+		add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]exposed[node1?1:0][node2?1:0][icon_connect_type]"))
 
 /obj/machinery/atmospherics/pipe/simple/update_underlays()
 	return
@@ -508,9 +508,9 @@
 				qdel(meter)
 		qdel(src)
 	else
-		overlays.Cut()
-		overlays += icon_manager.get_atmos_icon("manifold", , pipe_color, "core" + icon_connect_type)
-		overlays += icon_manager.get_atmos_icon("manifold", , , "clamps" + icon_connect_type)
+		cut_overlays()
+		add_overlay(icon_manager.get_atmos_icon("manifold", , pipe_color, "core" + icon_connect_type))
+		add_overlay(icon_manager.get_atmos_icon("manifold", , , "clamps" + icon_connect_type))
 		underlays.Cut()
 
 		var/turf/T = get_turf(src)
@@ -756,9 +756,9 @@
 				qdel(meter)
 		qdel(src)
 	else
-		overlays.Cut()
-		overlays += icon_manager.get_atmos_icon("manifold", , pipe_color, "4way" + icon_connect_type)
-		overlays += icon_manager.get_atmos_icon("manifold", , , "clamps_4way" + icon_connect_type)
+		cut_overlays()
+		add_overlay(icon_manager.get_atmos_icon("manifold", , pipe_color, "4way" + icon_connect_type))
+		add_overlay(icon_manager.get_atmos_icon("manifold", , , "clamps_4way" + icon_connect_type))
 		underlays.Cut()
 
 		/*
@@ -976,8 +976,8 @@
 
 	alpha = 255
 
-	overlays.Cut()
-	overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "cap")
+	cut_overlays()
+	add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "cap"))
 
 /obj/machinery/atmospherics/pipe/cap/atmos_init()
 	for(var/obj/machinery/atmospherics/target in get_step(src, dir))
@@ -1285,8 +1285,8 @@
 
 	alpha = 255
 
-	overlays.Cut()
-	overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "universal")
+	cut_overlays()
+	add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "universal"))
 	underlays.Cut()
 
 	if (node1)
@@ -1322,8 +1322,8 @@
 
 	alpha = 255
 
-	overlays.Cut()
-	overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "universal")
+	cut_overlays()
+	add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "universal"))
 	underlays.Cut()
 
 	if (node1)

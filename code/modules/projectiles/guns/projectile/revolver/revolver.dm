@@ -50,11 +50,11 @@
 /obj/item/weapon/gun/projectile/revolver/proc/update_charge()
 	if(!drawChargeMeter)
 		return
-	overlays.Cut()
+	cut_overlays()
 	if(loaded.len==0)
-		overlays += "[icon_state]_off"
+		add_overlay("[icon_state]_off")
 	else
-		overlays += "[icon_state]_on"
+		add_overlay("[icon_state]_on")
 
 
 /obj/item/weapon/gun/projectile/revolver/update_icon()

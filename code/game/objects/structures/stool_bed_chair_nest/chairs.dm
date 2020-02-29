@@ -209,7 +209,7 @@
 	..()
 	var/image/I = image(icon, "[icon_state]_over")
 	I.layer = FLY_LAYER
-	overlays += I
+	add_overlay(I)
 
 // Chair types
 
@@ -234,7 +234,7 @@
 	..(newloc, "wood")
 	var/image/I = image(icon, "[icon_state]_over")
 	I.layer = FLY_LAYER
-	overlays += I
+	add_overlay(I)
 
 /obj/structure/bed/chair/wood/wings
 	icon_state = "wooden_chair_wings"
@@ -257,7 +257,7 @@
 	. = ..()
 	var/image/I = image(icon, "[icon_state]_over")
 	I.layer = FLY_LAYER
-	overlays += I
+	add_overlay(I)
 
 
 //wooden

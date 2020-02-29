@@ -38,17 +38,17 @@
 
 /mob/living/simple_animal/hostile/onestar_custodian/proc/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	var/image/shell_I = image(icon, src, "shell_[shell_type]")
 	var/image/marks_I = image(icon, src, "marks_[marks_type]")
 	var/image/screen_I = image(icon, src, "screen_[screen_type]")
 	var/image/tool_I = image(icon, src, "tool_[tool]_[tooltype]")
 	var/image/radio_I = image(icon, src, "radio_os")
-	overlays += shell_I
-	overlays += marks_I
-	overlays += screen_I
-	overlays += tool_I
-	overlays += radio_I
+	add_overlay(shell_I)
+	add_overlay(marks_I)
+	add_overlay(screen_I)
+	add_overlay(tool_I)
+	add_overlay(radio_I)
 
 
 

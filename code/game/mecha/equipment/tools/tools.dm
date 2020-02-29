@@ -634,16 +634,16 @@
 	attach(obj/mecha/M as obj)
 		..()
 		droid_overlay = new(src.icon, icon_state = "repair_droid")
-		M.overlays += droid_overlay
+		M.add_overlay(droid_overlay)
 		return
 
 	destroy()
-		chassis.overlays -= droid_overlay
+		chassis.cut_overlay(droid_overlay)
 		..()
 		return
 
 	detach()
-		chassis.overlays -= droid_overlay
+		chassis.cut_overlay(droid_overlay)
 		pr_repair_droid.stop()
 		..()
 		return
@@ -656,7 +656,7 @@
 	Topic(href, href_list)
 		..()
 		if(href_list["toggle_repairs"])
-			chassis.overlays -= droid_overlay
+			chassis.cut_overlay(droid_overlay)
 			if(pr_repair_droid.toggle())
 				droid_overlay = new(src.icon, icon_state = "repair_droid_a")
 				log_message("Activated.")
@@ -664,7 +664,7 @@
 				droid_overlay = new(src.icon, icon_state = "repair_droid")
 				log_message("Deactivated.")
 				set_ready_state(1)
-			chassis.overlays += droid_overlay
+			chassis.add_overlay(droid_overlay)
 			send_byjax(chassis.occupant,"exosuit.browser","\ref[src]",src.get_equip_info())
 		return
 

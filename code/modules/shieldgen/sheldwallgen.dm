@@ -92,9 +92,9 @@
 		if(stunmode)
 			icon_state = "Shield_Gen_emagged"
 
-	overlays.Cut()
+	cut_overlays()
 	if(panel_open)
-		overlays.Add(image(icon,"Shield_Gen_panel"))
+		add_overlay(image(icon,"Shield_Gen_panel"))
 
 /obj/machinery/shieldwallgen/Process()
 	power()

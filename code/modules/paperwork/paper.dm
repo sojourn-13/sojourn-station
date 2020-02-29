@@ -235,7 +235,7 @@
 	info = null
 	stamps = null
 	free_space = MAX_PAPER_MESSAGE_LEN
-	overlays.Cut()
+	cut_overlays()
 	updateinfolinks()
 	update_icon()
 
@@ -466,7 +466,7 @@
 		ico = new
 	ico += icon_state
 
-	overlays += stampoverlay
+	add_overlay(stampoverlay)
 
 /*
  * Premade paper
