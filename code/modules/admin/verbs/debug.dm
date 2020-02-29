@@ -237,6 +237,20 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 	message_admins("[key_name_admin(src)] has turned aliens [config.aliens_allowed ? "on" : "off"].", 0)
 
 
+// Render stats list for round-end statistics.
+/proc/render_stats(list/stats, user, sort = /proc/cmp_generic_stat_item_time)
+	sortTim(stats, sort, TRUE)
+
+	var/list/lines = list()
+	for (var/entry in stats)
+		var/list/data = stats[entry]
+		lines += "[entry] => [num2text(data[STAT_ENTRY_TIME], 10)]ms ([data[STAT_ENTRY_COUNT]]) (avg:[num2text(data[STAT_ENTRY_TIME]/(data[STAT_ENTRY_COUNT] || 1), 99)])"
+
+	if (user)
+		user << browse("<ol><li>[lines.Join("</li><li>")]</li></ol>", "window=[url_encode("stats:\ref[stats]")]")
+	else
+		. = lines.Join("\n")
+
 /client/proc/cmd_admin_grantfullaccess(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Grant Full Access"

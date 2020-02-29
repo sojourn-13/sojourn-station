@@ -66,3 +66,9 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 
 /proc/cmp_smeslist_rcon_tag(list/A, list/B)
 	return sorttext(A["RCON_tag"], B["RCON_tag"])
+
+// Sorts entries in a performance stats list.
+/proc/cmp_generic_stat_item_time(list/A, list/B)
+	. = B[STAT_ENTRY_TIME] - A[STAT_ENTRY_TIME]
+	if (!.)
+		. = B[STAT_ENTRY_COUNT] - A[STAT_ENTRY_COUNT]

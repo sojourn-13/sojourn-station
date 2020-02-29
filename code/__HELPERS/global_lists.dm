@@ -10,6 +10,7 @@ GLOBAL_LIST_EMPTY(human_mob_list)				//List of all human mobs and sub-types, inc
 GLOBAL_LIST_EMPTY(silicon_mob_list)			//List of all silicon mobs, including clientless
 GLOBAL_LIST_EMPTY(living_mob_list)			//List of all alive mobs, including clientless. Excludes /mob/new_player
 GLOBAL_LIST_EMPTY(dead_mob_list)				//List of all dead mobs, including clientless. Excludes /mob/new_player
+GLOBAL_LIST_EMPTY(listening_objects)	//List of all dead mobs, including clientless. Excludes /mob/new_player
 var/global/list/current_antags = list()
 var/global/list/current_factions = list()
 var/global/list/antag_team_objectives = list()		//List of shared sets of objectives for antag teams

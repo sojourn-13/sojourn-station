@@ -77,7 +77,7 @@
 
 // Overlays
 // (placeholders for if/when TG overlays system is ported)
-#define cut_overlays(...)			overlays.Cut()
+// #define cut_overlays(...)			overlays.Cut()
 
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)

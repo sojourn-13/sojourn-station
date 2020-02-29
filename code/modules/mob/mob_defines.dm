@@ -196,3 +196,7 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/datum/stat_holder/stats
 
 	var/mob_classification = 0 //Bitfield. Uses TYPE_XXXX defines in defines/mobs.dm.
+
+	var/forbid_seeing_deadchat = FALSE // Used for lings to not see deadchat, and to have ghosting behave as if they were not really dead.
+
+	var/list/planes_visible = null	// List of atom planes that are logically visible/interactable (list of actual plane numbers).

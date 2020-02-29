@@ -209,39 +209,40 @@
 		if(level > 1)
 			createInnerDoors = 0
 
+		var/area/turbolift/turboliftArea = stopArea
 
-		// Place exterior doors.
-		for(var/turfX = door_x1 to door_x2)
-			for(var/turfY = door_y1 to door_y2)
-				var/turf/checking = locate(turfX,turfY,stop.z)
-				var/internal = 1
-				if(!(checking in floor_turfs))
-					internal = 0
-					if(checking.type != floor_type)
-						checking.ChangeTurf(floor_type)
-						checking = locate(turfX,turfY,stop.z)
-					for(var/atom/movable/thing in checking.contents)
-						if(thing.simulated)
-							qdel(thing)
-				if(checking.type == floor_type) // Don't build over empty space on lower levels.
-					var/obj/machinery/door/airlock/lift/newdoor = new door_type(checking)
-					if(internal)
-						lift.doors += newdoor
-						newdoor.lift = cfloor
+		if(turboliftArea.lift_floor_label)
+			// Place exterior doors.
+			for(var/turfX = door_x1 to door_x2)
+				for(var/turfY = door_y1 to door_y2)
+					var/turf/checking = locate(turfX,turfY,stop.z)
+					var/internal = 1
+					if(!(checking in floor_turfs))
+						internal = 0
+						if(checking.type != floor_type)
+							checking.ChangeTurf(floor_type)
+							checking = locate(turfX,turfY,stop.z)
+						for(var/atom/movable/thing in checking.contents)
+							if(thing.simulated)
+								qdel(thing)
+					if(checking.type == floor_type) // Don't build over empty space on lower levels.
+						var/obj/machinery/door/airlock/lift/newdoor = new door_type(checking)
+						if(internal)
+							lift.doors += newdoor
+							newdoor.lift = cfloor
+						else
+							cfloor.doors += newdoor
+							newdoor.floor = cfloor
 					else
-						cfloor.doors += newdoor
-						newdoor.floor = cfloor
-				else
-					log_debug("checking.type != floor_type,  [checking.x],[checking.y],[checking.z]")
+						log_debug("checking.type != floor_type,  [checking.x],[checking.y],[checking.z]")
 
-		// Place exterior control panel.
-		var/turf/placing = locate(stop.x-2, stop.y-1, stop.z)
+			// Place exterior control panel.
+			var/turf/placing = locate(stop.x-2, stop.y-1, stop.z)
 
-
-		var/obj/structure/lift/button/panel_ext = new(placing, lift)
-		panel_ext.floor = cfloor
-		panel_ext.set_dir(elevatorBaseDir)
-		cfloor.ext_panel = panel_ext
+			var/obj/structure/lift/button/panel_ext = new(placing, lift)
+			panel_ext.floor = cfloor
+			panel_ext.set_dir(elevatorBaseDir)
+			cfloor.ext_panel = panel_ext
 
 
 

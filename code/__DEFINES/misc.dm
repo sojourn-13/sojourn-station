@@ -241,7 +241,7 @@
 
 // Overlays
 // (placeholders for if/when TG overlays system is ported)
-#define cut_overlays(...)			overlays.Cut()
+// #define cut_overlays(...)			overlays.Cut()
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 
@@ -296,3 +296,28 @@
 #define CATALOG_ALL "all"
 
 #define get_area(A) (get_step(A, 0)?.loc)
+
+
+
+// Macro defining the actual code applying our overlays lists to the BYOND overlays list. (I guess a macro for speed)
+// TODO - I don't really like the location of this macro define.  Consider it. ~Leshana
+#define COMPILE_OVERLAYS(A)\
+	if (TRUE) {\
+		var/list/oo = A.our_overlays;\
+		var/list/po = A.priority_overlays;\
+		if(LAZYLEN(po)){\
+			if(LAZYLEN(oo)){\
+				A.overlays = oo + po;\
+			}\
+			else{\
+				A.overlays = po;\
+			}\
+		}\
+		else if(LAZYLEN(oo)){\
+			A.overlays = oo;\
+		}\
+		else{\
+			A.overlays.Cut();\
+		}\
+		A.flags &= ~OVERLAY_QUEUED;\
+	}
