@@ -56,14 +56,14 @@
 	lift_floor_label = "Nadezhda Mining"
 	lift_floor_name = "Mining"
 	lift_announce_str = "Transition complete.  Welcome to Mining.  Please stay safe!"
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/Mining/colony
 	name = "Nadezhda Mining - Colony"
 	lift_floor_label = "Nadezhda Colony"
 	lift_floor_name = "Colony"
 	lift_announce_str = "Transition complete.  Welcome to the Nadezhda Colony Underground."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 
 
@@ -90,14 +90,14 @@
 	lift_floor_label = "Nadezhda Research"
 	lift_floor_name = "Research Underground"
 	lift_announce_str = "Transition complete"
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/Research/colony
 	name = "Nadezhda Research - Colony"
 	lift_floor_label = "Nadezhda Colony"
 	lift_floor_name = "Research Colony"
 	lift_announce_str = "Transition complete."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 
 
@@ -112,29 +112,29 @@
 	lift_floor_label = "Nadezhda Underground"
 	lift_floor_name = "Floor Two"
 	lift_announce_str = "Transition complete.  Welcome to the Nadezhda Underground."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/ElevatorOne/midlevelOne
 	name = "Transition One"
 	lift_announce_str = "Transition complete.  Welcome to Base Level 1."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/ElevatorOne/midlevelTwo
 	name = "Transition Two"
 	lift_announce_str = "Transition complete.  Welcome to Base Level 2."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/ElevatorOne/midlevelThree
 	name = "Transition Three"
 	lift_announce_str = "Transition complete.  Welcome to Base Level 3."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/ElevatorOne/surface
 	name = "Nadezhda Surface"
 	lift_floor_label = "Nadezhda Surface"
 	lift_floor_name = "Floor One"
 	lift_announce_str = "Transition complete.  Welcome to the Surface."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 
 
@@ -144,29 +144,29 @@
 	lift_floor_label = "Nadezhda Underground"
 	lift_floor_name = "Floor Two"
 	lift_announce_str = "Transition complete.  Welcome to the Nadezhda Underground."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/ElevatorTwo/midlevelOne
 	name = "Transition One"
 	lift_announce_str = "Transition complete.  Welcome to Base Level 1."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/ElevatorTwo/midlevelTwo
 	name = "Transition Two"
 	lift_announce_str = "Transition complete.  Welcome to Base Level 2."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/ElevatorTwo/midlevelThree
 	name = "Transition Three"
 	lift_announce_str = "Transition complete.  Welcome to Base Level 3."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/ElevatorTwo/surface
 	name = "Nadezhda Surface"
 	lift_floor_label = "Nadezhda Surface"
 	lift_floor_name = "Floor One"
 	lift_announce_str = "Transition complete.  Welcome to the Surface."
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 
 
