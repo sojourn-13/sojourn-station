@@ -74,7 +74,7 @@
 		..()
 
 /mob/living/simple_animal/corgi/regenerate_icons()
-	overlays = list()
+	cut_overlays()
 
 	if(inventory_head)
 		var/head_icon_state = inventory_head.icon_state

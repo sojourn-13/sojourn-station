@@ -141,7 +141,7 @@
 	desc = O.desc
 	icon = new_icon
 	icon_state = new_iconstate
-	overlays = new_overlays
+	copy_overlays(new_overlays, TRUE)
 	set_dir(O.dir)
 	M.loc = src
 	master = C

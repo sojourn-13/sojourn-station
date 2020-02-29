@@ -476,7 +476,7 @@
 			add_overlay(image('icons/turf/flooring/asteroid.dmi', "asteroid_edges", dir = step_overlays[direction]))
 
 	//todo cache
-	if(overlay_detail) overlays |= image(icon = 'icons/turf/flooring/decals.dmi', icon_state = overlay_detail)
+	if(overlay_detail) add_overlay(image(icon = 'icons/turf/flooring/decals.dmi', icon_state = overlay_detail))
 
 	if(update_neighbors)
 		var/list/all_step_directions = list(NORTH,NORTHEAST,EAST,SOUTHEAST,SOUTH,SOUTHWEST,WEST,NORTHWEST)

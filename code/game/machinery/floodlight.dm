@@ -120,7 +120,7 @@
 				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_HARD, required_stat = STAT_MEC))
 					if(open)
 						open = 0
-						overlays = null
+						cut_overlays()
 						to_chat(user, SPAN_NOTICE("You crowbar the battery panel in place."))
 					else
 						if(unlocked)

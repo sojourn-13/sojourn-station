@@ -270,7 +270,7 @@
 		//create report
 		var/obj/item/weapon/paper/P = new(src)
 		P.name = "[src] report #[++report_num]: [scanned_item.name]"
-		P.overlays = list("paper_stamped")
+		P.copy_overlays(list("paper_stamped"), TRUE)
 
 		//work out data
 		var/data = " - Mundane object: [scanned_item.desc ? scanned_item.desc : "No information on record."]<br>"

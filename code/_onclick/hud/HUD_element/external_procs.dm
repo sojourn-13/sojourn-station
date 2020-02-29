@@ -294,7 +294,7 @@ alignElements(var/horizontal, var/vertical, var/list/HUD_element/targets) -> /HU
 	dir = A.dir
 	color = A.color
 	alpha = A.alpha
-	overlays = A.overlays
+	copy_overlays(A.overlays, TRUE)
 	underlays = A.underlays
 
 	updateIconInformation()

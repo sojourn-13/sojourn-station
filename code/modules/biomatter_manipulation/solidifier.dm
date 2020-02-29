@@ -31,7 +31,7 @@
 		icon_state = initial(icon_state) + "_on"
 	else
 		icon_state = initial(icon_state)
-	overlays = list()
+	cut_overlays()
 	add_overlay(image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir))
 
 

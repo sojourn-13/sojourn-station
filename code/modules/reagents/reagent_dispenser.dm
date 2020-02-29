@@ -129,7 +129,7 @@
 			usr.visible_message(SPAN_NOTICE("\The [usr] detaches \the [rig] from \the [src]."), SPAN_NOTICE("You detach [rig] from \the [src]"))
 			rig.loc = get_turf(usr)
 			rig = null
-			overlays = new/list()
+			cut_overlays()
 
 /obj/structure/reagent_dispensers/fueltank/attackby(obj/item/I, mob/user)
 	src.add_fingerprint(user)

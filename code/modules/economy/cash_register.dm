@@ -186,7 +186,7 @@
 		if(cash_open)
 			to_chat(user, "You neatly sort the cash into the box.")
 			cash_stored += SC.worth
-			overlays |= "register_cash"
+			add_overlay("register_cash")
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.drop_from_inventory(SC)

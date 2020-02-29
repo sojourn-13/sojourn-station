@@ -2577,7 +2577,7 @@
 
 /obj/item/pizzabox/update_icon()
 
-	overlays = list()
+	cut_overlays()
 
 	// Set appropriate description
 	if( open && pizza )

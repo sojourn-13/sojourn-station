@@ -305,7 +305,7 @@
 			if(P >= CLONING_MEAT && occupant)
 				I = image(occupant.icon, occupant.icon_state)
 				I.alpha = min(255,round(((P-CLONING_MEAT)/(CLONING_BODY-CLONING_MEAT))*255))
-				I.overlays = occupant.overlays
+				I.copy_overlays(occupant.overlays, TRUE)
 				I.layer = 5
 				I.pixel_z = 11
 				add_overlay(I)

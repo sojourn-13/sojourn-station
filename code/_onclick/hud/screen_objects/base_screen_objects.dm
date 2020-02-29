@@ -1319,12 +1319,12 @@ obj/screen/fire/DEADelize()
 	if(istype(H.glasses, /obj/item/clothing/glasses))
 		var/obj/item/clothing/glasses/G = H.glasses
 		if (G.active && G.overlay)//check here need if someone want call this func directly
-			overlays |= G.overlay
+			add_overlay(G.overlay)
 
 	if(istype(H.wearing_rig,/obj/item/weapon/rig))
 		var/obj/item/clothing/glasses/G = H.wearing_rig.getCurrentGlasses()
 		if (G && H.wearing_rig.visor.active)
-			overlays |= G.overlay
+			add_overlay(G.overlay)
 
 //-----------------------toggle_invetory------------------------------
 /obj/screen/toggle_invetory
