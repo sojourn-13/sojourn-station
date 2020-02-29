@@ -24,12 +24,15 @@
 	related_stats = list(STAT_COG)
 
 /datum/craft_recipe/folder
-	name = "folder, blue"
-	result = /obj/item/weapon/folder/blue
+	name = "folder, black"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
 	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/folder/blue
+	name = "folder, blue"
+	result = /obj/item/weapon/folder/blue
 
 /datum/craft_recipe/folder/cyan
 	name = "folder, cyan"

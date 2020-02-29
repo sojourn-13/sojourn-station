@@ -6,6 +6,11 @@
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_BIOMATTER = 2)
 
+/obj/item/weapon/folder/black
+	name = "black folder"
+	desc = "A black folder."
+	icon_state = "folder_black"
+
 /obj/item/weapon/folder/blue
 	name = "blue folder"
 	desc = "A blue folder."
@@ -22,6 +27,7 @@
 	icon_state = "folder_yellow"
 
 /obj/item/weapon/folder/cyan
+	name = "cyan folder"
 	desc = "A cyan folder."
 	icon_state = "folder_cyan"
 
