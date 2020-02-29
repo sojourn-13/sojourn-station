@@ -24,8 +24,8 @@
 		STAT_ROB = 30,
 		STAT_TGH = 30,
 		STAT_VIG = 30,
-		STAT_MEC = 20,
-		STAT_BIO = 20,
+		STAT_MEC = 10,
+		STAT_BIO = 10,
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -73,9 +73,9 @@
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 30,
-		STAT_MEC = 30,
-		STAT_COG = 20,
+		STAT_BIO = 20,
+		STAT_MEC = 20,
+		STAT_COG = 10,
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 		STAT_ROB = 10,
