@@ -58,10 +58,10 @@ var/list/global/excelsior_teleporters = list() //This list is used to make turre
 			energy_gain *= 2
 
 /obj/machinery/complant_teleporter/update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if(panel_open)
-		overlays += image("panel")
+		add_overlay(image("panel"))
 
 	if(stat & (BROKEN|NOPOWER))
 		icon_state = "off"

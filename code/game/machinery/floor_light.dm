@@ -126,7 +126,7 @@ var/list/floor_light_cache = list()
 	update_icon()
 
 /obj/machinery/floor_light/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(use_power && !broken())
 		if(isnull(damaged))
 			var/cache_key = "floorlight-[default_light_colour]"
@@ -135,7 +135,7 @@ var/list/floor_light_cache = list()
 				I.color = default_light_colour
 				I.layer = ABOVE_OPEN_TURF_LAYER
 				floor_light_cache[cache_key] = I
-			overlays |= floor_light_cache[cache_key]
+			add_overlay(floor_light_cache[cache_key])
 		else
 			if(damaged == 0) //Needs init.
 				damaged = rand(1,4)
@@ -145,7 +145,7 @@ var/list/floor_light_cache = list()
 				I.color = default_light_colour
 				I.layer = ABOVE_OPEN_TURF_LAYER
 				floor_light_cache[cache_key] = I
-			overlays |= floor_light_cache[cache_key]
+			add_overlay(floor_light_cache[cache_key])
 
 /obj/machinery/floor_light/proc/broken()
 	return (stat & (BROKEN|NOPOWER))

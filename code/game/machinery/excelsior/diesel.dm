@@ -13,13 +13,13 @@
 	use_reagents_as_fuel = TRUE
 
 /obj/machinery/power/port_gen/pacman/diesel/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(active)
-		overlays += "on"
+		add_overlay("on")
 		if(HasFuel())
-			overlays += "rotor_working"
-			overlays += "[max(round(reagents.total_volume / reagents.maximum_volume, 0.25) * 100, 25)]"
+			add_overlay("rotor_working")
+			add_overlay("[max(round(reagents.total_volume / reagents.maximum_volume, 0.25) * 100, 25)]")
 		else
-			overlays += "0"
+			add_overlay("0")
 	else
-		overlays += "off"
+		add_overlay("off")

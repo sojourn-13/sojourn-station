@@ -48,7 +48,7 @@
 	equipment_vision_flags = 0
 	equipment_prescription = 0
 	equipment_darkness_modifier = 0
-//	equipment_overlays.Cut()
+//	equipment_cut_overlays()
 
 	if(istype(src.head, /obj/item/clothing/head))
 		add_clothing_protection(head)
@@ -65,7 +65,7 @@
 		equipment_vision_flags |= G.vision_flags
 		equipment_prescription = equipment_prescription || G.prescription
 //		if(G.overlay)
-//			equipment_overlays |= G.overlay
+//			equipment_add_overlay(G.overlay)
 //		if (src.HUDtech.Find("glassesoverlay"))//i process that ocerlay
 //			var/obj/screen/glasses_overlay/GO = src.HUDtech["glassesoverlay"]
 //			GO.update_icon()

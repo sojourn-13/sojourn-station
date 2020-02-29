@@ -8,7 +8,7 @@
 
 /obj/structure/bed/chair/e_chair/New()
 	..()
-	overlays += image('icons/obj/objects.dmi', src, "echair_over", MOB_LAYER + 1, dir)
+	add_overlay(image('icons/obj/objects.dmi', src, "echair_over", MOB_LAYER + 1, dir))
 	return
 
 /obj/structure/bed/chair/e_chair/attackby(var/obj/item/weapon/tool/tool, var/mob/user)
@@ -37,8 +37,8 @@
 
 /obj/structure/bed/chair/e_chair/rotate()
 	..()
-	overlays.Cut()
-	overlays += image('icons/obj/objects.dmi', src, "echair_over", MOB_LAYER + 1, dir)	//there's probably a better way of handling this, but eh. -Pete
+	cut_overlays()
+	add_overlay(image('icons/obj/objects.dmi', src, "echair_over", MOB_LAYER + 1, dir))	//there's probably a better way of handling this, but eh. -Pete
 	return
 
 /obj/structure/bed/chair/e_chair/proc/shock()

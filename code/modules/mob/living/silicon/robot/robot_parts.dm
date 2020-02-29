@@ -102,10 +102,10 @@
 	update_icon()
 
 /obj/item/robot_parts/robot_suit/update_icon()
-	src.overlays.Cut()
+	src.cut_overlays()
 	for(var/part in parts)
 		if(parts[part])
-			overlays += "[part]+o"
+			add_overlay("[part]+o")
 
 /obj/item/robot_parts/robot_suit/is_ready()
 	var/list/missed = req_parts - parts

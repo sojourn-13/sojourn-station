@@ -35,7 +35,7 @@
 	..(severity)
 
 /obj/machinery/portable_atmospherics/powered/scrubber/update_icon()
-	src.overlays = 0
+	src.cut_overlays()
 
 	if(on && cell && cell.charge)
 		icon_state = "pscrubber:1"
@@ -43,10 +43,10 @@
 		icon_state = "pscrubber:0"
 
 	if(holding)
-		overlays += "scrubber-open"
+		add_overlay("scrubber-open")
 
 	if(connected_port)
-		overlays += "scrubber-connector"
+		add_overlay("scrubber-connector")
 
 	return
 
@@ -169,7 +169,7 @@
 		to_chat(usr, SPAN_NOTICE("You can't directly interact with this machine. Use the scrubber control console."))
 
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/update_icon()
-	src.overlays = 0
+	src.cut_overlays()
 
 	if(on && !(stat & (NOPOWER|BROKEN)))
 		icon_state = "scrubber:1"

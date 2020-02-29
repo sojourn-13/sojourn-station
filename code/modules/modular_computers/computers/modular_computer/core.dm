@@ -101,24 +101,24 @@
 		return TRUE
 
 /obj/item/modular_computer/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if (screen_on)
 		if(bsod)
-			overlays.Add("bsod")
+			add_overlay("bsod")
 			set_light(screen_light_range, screen_light_strength, get_average_color(icon,"bsod"), skip_screen_check = TRUE)
 			return
 		if(!enabled)
 			if(icon_state_screensaver && try_use_power(0))
-				overlays.Add(icon_state_screensaver)
+				add_overlay(icon_state_screensaver)
 			set_light(0, skip_screen_check = TRUE)
 			return
 		if(active_program)
-			overlays.Add(active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
+			add_overlay(active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
 			set_light(screen_light_range, screen_light_strength, get_average_color(icon,active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu), skip_screen_check = TRUE)
 			if(active_program.program_key_state)
-				overlays.Add(active_program.program_key_state)
+				add_overlay(active_program.program_key_state)
 		else
-			overlays.Add(icon_state_menu)
+			add_overlay(icon_state_menu)
 			set_light(screen_light_range, screen_light_strength, get_average_color(icon,icon_state_menu), skip_screen_check = TRUE)
 	else
 		set_light(0, skip_screen_check = TRUE)

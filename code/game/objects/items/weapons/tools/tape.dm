@@ -154,8 +154,8 @@
 
 	if (istype(stuck, /obj/item/weapon/paper))
 		icon_state = stuck.icon_state
-		overlays.Cut()
-		overlays = stuck.overlays + "tape_overlay"
+		cut_overlays()
+		copy_overlays(stuck.overlays + "tape_overlay", TRUE)
 	else
 		var/mutable_appearance/MA = new(stuck)
 		MA.layer = layer-0.1
@@ -175,7 +175,7 @@
 	stuck.forceMove(get_turf(src))
 	user.put_in_hands(stuck)
 	stuck = null
-	overlays = null
+	cut_overlays()
 	qdel(src)
 
 /obj/item/weapon/ducttape/afterattack(var/A, mob/user, flag, params)

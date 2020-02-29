@@ -24,15 +24,15 @@
 
 /obj/machinery/biomatter_solidifier/New()
 	. = ..()
-	overlays += image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir)
+	add_overlay(image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir))
 
 /obj/machinery/biomatter_solidifier/update_icon()
 	if(active)
 		icon_state = initial(icon_state) + "_on"
 	else
 		icon_state = initial(icon_state)
-	overlays = list()
-	overlays += image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir)
+	cut_overlays()
+	add_overlay(image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir))
 
 
 /obj/machinery/biomatter_solidifier/Process()

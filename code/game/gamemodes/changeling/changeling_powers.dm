@@ -299,7 +299,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		H.transforming = 1
 		H.canmove = 0
 		H.icon = null
-		H.overlays.Cut()
+		H.cut_overlays()
 		H.invisibility = 101
 		var/atom/movable/overlay/animation = new /atom/movable/overlay( H.loc )
 		animation.icon_state = "blank"
@@ -398,7 +398,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	C.transforming = 1
 	C.canmove = 0
 	C.icon = null
-	C.overlays.Cut()
+	C.cut_overlays()
 	C.invisibility = 101
 	var/atom/movable/overlay/animation = new /atom/movable/overlay( C.loc )
 	animation.icon_state = "blank"

@@ -4,13 +4,13 @@ var/global/list/limb_icon_cache = list()
 	return
 
 /obj/item/organ/external/proc/compile_icon()
-	overlays.Cut()
+	cut_overlays()
 	 // This is a kludge, only one icon has more than one generation of children though.
 	for(var/obj/item/organ/external/organ in contents)
 		if(organ.children && organ.children.len)
 			for(var/obj/item/organ/external/child in organ.children)
-				overlays += child.mob_icon
-		overlays += organ.mob_icon
+				add_overlay(child.mob_icon)
+		add_overlay(organ.mob_icon)
 
 /obj/item/organ/external/proc/sync_colour_to_human(var/mob/living/carbon/human/human)
 	skin_tone = null
@@ -84,7 +84,7 @@ var/global/list/limb_icon_cache = list()
 	if(!appearance_test.special_update)
 		return mob_icon
 
-	overlays.Cut()
+	cut_overlays()
 	if(!owner || !owner.species)
 		return
 
@@ -104,7 +104,7 @@ var/global/list/limb_icon_cache = list()
 				var/icon/facial = new/icon(facial_hair_style.icon, facial_hair_style.icon_state)
 				if(facial_hair_style.colored_layers)
 					facial.Blend(owner.facial_color, ICON_ADD)
-				overlays |= facial
+				add_overlay(facial)
 
 		if(owner.h_style && !(owner.head && (owner.head.flags_inv & BLOCKHEADHAIR)))
 			var/datum/sprite_accessory/hair_style = GLOB.hair_styles_list[owner.h_style]
@@ -112,7 +112,7 @@ var/global/list/limb_icon_cache = list()
 				var/icon/hair = new/icon(hair_style.icon, hair_style.icon_state)
 				if(hair_style.colored_layers)
 					hair.Blend(hair_col, ICON_ADD)
-				overlays |= hair
+				add_overlay(hair)
 
 	return mob_icon
 

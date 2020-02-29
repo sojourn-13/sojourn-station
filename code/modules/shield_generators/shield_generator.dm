@@ -75,7 +75,7 @@
 
 
 /obj/machinery/power/shield_generator/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(running)
 		icon_state = "generator1"
 	else

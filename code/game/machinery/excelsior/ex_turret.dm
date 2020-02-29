@@ -130,10 +130,10 @@
 	raised = TRUE
 
 /obj/machinery/porta_turret/excelsior/update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if(!(stat & BROKEN))
-		overlays += image("turret_gun")
+		add_overlay(image("turret_gun"))
 
 /obj/machinery/porta_turret/excelsior/launch_projectile()
 	ammo--

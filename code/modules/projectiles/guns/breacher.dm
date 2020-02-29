@@ -27,14 +27,14 @@
 	update_icon()
 
 /obj/item/weapon/hatton/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(magazine)
 		if(magazine.charge)
 			icon_state = "Hatton_Hammer_1"
-			overlays += icon(icon, "[magazine.charge]/3")
+			add_overlay(icon(icon, "[magazine.charge]/3"))
 		else
 			icon_state = "Hatton_Hammer_1_empty"
-			overlays += icon(icon, "1/3")
+			add_overlay(icon(icon, "1/3"))
 	else
 		icon_state="Hatton_Hammer_0"
 
@@ -209,14 +209,14 @@
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_SILVER = 5, MATERIAL_PLASTIC = 5)
 
 /obj/item/weapon/hatton/moebius/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(magazine)
 		if(magazine.charge)
 			icon_state = "Moebius_Hammer_1"
-			overlays += icon(icon, "[magazine.charge]/3")
+			add_overlay(icon(icon, "[magazine.charge]/3"))
 		else
 			icon_state = "Moebius_Hammer_1_empty"
-			overlays += icon(icon, "1/3")
+			add_overlay(icon(icon, "1/3"))
 	else
 		icon_state = "Moebius_Hammer_0"
 

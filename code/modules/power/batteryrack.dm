@@ -33,7 +33,7 @@
 
 
 /obj/machinery/power/smes/batteryrack/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat & BROKEN)	return
 
 	if(!br_cache)
@@ -48,13 +48,13 @@
 		br_cache[7] = image('icons/obj/power.dmi', "gsmes_og4")
 
 	if (output_attempt)
-		overlays += br_cache[1]
+		add_overlay(br_cache[1])
 	if(inputting)
-		overlays += br_cache[2]
+		add_overlay(br_cache[2])
 
 	var/clevel = chargedisplay()
 	if(clevel>0)
-		overlays += br_cache[3+clevel]
+		add_overlay(br_cache[3+clevel])
 	return
 
 
@@ -108,19 +108,19 @@
 
 
 /obj/machinery/power/smes/batteryrack/makeshift/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat & BROKEN)	return
 
 	if (output_attempt)
-		overlays += br_cache[1]
+		add_overlay(br_cache[1])
 	if(inputting)
-		overlays += br_cache[2]
+		add_overlay(br_cache[2])
 	if (overcharge_percent > 100)
-		overlays += br_cache[3]
+		add_overlay(br_cache[3])
 	else
 		var/clevel = chargedisplay()
 		if(clevel>0)
-			overlays += br_cache[3+clevel]
+			add_overlay(br_cache[3+clevel])
 	return
 
 //This mess of if-elses and magic numbers handles what happens if the engies don't pay attention and let it eat too much charge

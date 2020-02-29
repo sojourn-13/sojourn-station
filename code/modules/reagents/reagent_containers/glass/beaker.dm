@@ -113,10 +113,10 @@
 		return ..()
 
 /obj/item/weapon/reagent_containers/glass/bucket/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(reagents.total_volume >= 1)
-		overlays += "water_bucket"
+		add_overlay("water_bucket")
 	if(has_lid())
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
-		overlays += lid
+		add_overlay(lid)
 

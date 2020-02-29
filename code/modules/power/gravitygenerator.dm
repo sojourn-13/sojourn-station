@@ -81,7 +81,7 @@ var/const/GRAV_NEEDS_WRENCH = 3
 /obj/machinery/gravity_generator/main/station/Initialize()
 	. = ..()
 	setup_parts()
-	middle.overlays += "activated"
+	middle.add_overlay("activated")
 	//Set ourselves in the global var
 	if (!GLOB.active_gravity_generator)
 		GLOB.active_gravity_generator = src
@@ -152,7 +152,7 @@ var/const/GRAV_NEEDS_WRENCH = 3
 	for(var/obj/machinery/gravity_generator/M in parts)
 		if(!(M.stat & BROKEN))
 			M.set_broken()
-	middle.overlays.Cut()
+	middle.cut_overlays()
 	charge_count = 0
 	breaker = 0
 	grav_off()
@@ -379,9 +379,9 @@ var/const/GRAV_NEEDS_WRENCH = 3
 
 			if(overlay_state != current_overlay)
 				if(middle)
-					middle.overlays.Cut()
+					middle.cut_overlays()
 					if(overlay_state)
-						middle.overlays += overlay_state
+						middle.add_overlay(overlay_state)
 					current_overlay = overlay_state
 
 

@@ -37,7 +37,7 @@
 	if(anchored)
 		iconstring += "-open"
 	else
-		overlays.Cut()
+		cut_overlays()
 		iconstring += "-closed"
 
 	icon_state = iconstring
