@@ -206,7 +206,6 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_METAL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_MODERATE
 
 /obj/item/weapon/tool/sword/crusader
 	name = "crusader greatsword"
@@ -240,7 +239,6 @@
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "saber"
 	item_state = "saber"
-	armor_penetration = ARMOR_PEN_SHALLOW
 
 /obj/item/weapon/tool/sword/saber/cutlass
 	name = "cutlass"
