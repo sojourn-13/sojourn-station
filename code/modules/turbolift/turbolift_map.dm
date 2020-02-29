@@ -161,17 +161,23 @@
 	var/level = 1
 
 	for(var/stopAreaAsPseudoInstance in turbolift_stops)
-		var/area/stopArea = locate(stopAreaAsPseudoInstance) in world
+		var/area/turbolift/stopArea = locate(stopAreaAsPseudoInstance) in world
 
 
 
 		var/turf/stop = locate() in stopArea
 
+		if(!stop)
+			CRASH("Failed to find turf in area [stopArea.name].")
 
 		computeDirections(stop)
 
 		var/datum/turbolift_stop/cfloor = new()
 		lift.stops += cfloor
+
+		var/levelFloorType = floor_type
+		if(level > 1)
+			levelFloorType = stopArea.base_turf
 
 		var/list/floor_turfs = list()
 		// Update the appropriate turfs.
@@ -191,7 +197,7 @@
 				if(wall_type && (turfX == elevatorBaseX || turfY == elevatorBaseY || turfX == elevatorSizeX || turfY == elevatorSizeY) && !(turfX >= door_x1 && turfX <= door_x2 && turfY >= door_y1 && turfY <= door_y2))
 					swap_to = wall_type
 				else
-					swap_to = floor_type
+					swap_to = levelFloorType
 
 				if(checking.type != swap_to)
 					checking.ChangeTurf(swap_to)
@@ -206,35 +212,31 @@
 				if(turfX >= elevatorBaseX && turfX <= elevatorSizeX && turfY >= elevatorBaseY && turfY <= elevatorSizeY)
 					floor_turfs += checking
 
-		if(level > 1)
-			createInnerDoors = 0
-
-		var/area/turbolift/turboliftArea = stopArea
-
-		if(turboliftArea.lift_floor_label)
-			// Place exterior doors.
+		if(stopArea.lift_floor_label)
+			// Place all doors.
 			for(var/turfX = door_x1 to door_x2)
 				for(var/turfY = door_y1 to door_y2)
 					var/turf/checking = locate(turfX,turfY,stop.z)
 					var/internal = 1
 					if(!(checking in floor_turfs))
 						internal = 0
-						if(checking.type != floor_type)
-							checking.ChangeTurf(floor_type)
+						/*if(checking.type != levelFloorType)
+							checking.ChangeTurf(levelFloorType)
 							checking = locate(turfX,turfY,stop.z)
 						for(var/atom/movable/thing in checking.contents)
 							if(thing.simulated)
-								qdel(thing)
-					if(checking.type == floor_type) // Don't build over empty space on lower levels.
-						var/obj/machinery/door/airlock/lift/newdoor = new door_type(checking)
-						if(internal)
-							lift.doors += newdoor
-							newdoor.lift = cfloor
-						else
-							cfloor.doors += newdoor
-							newdoor.floor = cfloor
+								qdel(thing)*/
+
+				//	if(checking.type == levelFloorType) // Don't build over empty space on lower levels.
+					var/obj/machinery/door/airlock/lift/newdoor = new door_type(checking)
+					if(internal)
+						lift.doors += newdoor
+						newdoor.lift = cfloor
 					else
-						log_debug("checking.type != floor_type,  [checking.x],[checking.y],[checking.z]")
+						cfloor.doors += newdoor
+						newdoor.floor = cfloor
+				//	else
+				//		log_debug("checking.type != floor_type,  [checking.x],[checking.y],[checking.z]")
 
 			// Place exterior control panel.
 			var/turf/placing = locate(stop.x-2, stop.y-1, stop.z)
@@ -245,18 +247,18 @@
 			cfloor.ext_panel = panel_ext
 
 
-
-        // Place lights
-		var/turf/placing1 = locate(light_x1, light_y1, stop.z)
-		var/turf/placing2 = locate(light_x2, light_y2, stop.z)
-		var/obj/machinery/light/light1 = new(placing1, light)
-		var/obj/machinery/light/light2 = new(placing2, light)
-		if(elevatorBaseDir == NORTH || elevatorBaseDir == SOUTH)
-			light1.set_dir(WEST)
-			light2.set_dir(EAST)
-		else
-			light1.set_dir(SOUTH)
-			light2.set_dir(NORTH)
+	        // Place lights
+			if(level == 1)
+				var/turf/placing1 = locate(light_x1, light_y1, stop.z)
+				var/turf/placing2 = locate(light_x2, light_y2, stop.z)
+				var/obj/machinery/light/light1 = new(placing1, light)
+				var/obj/machinery/light/light2 = new(placing2, light)
+				if(elevatorBaseDir == NORTH || elevatorBaseDir == SOUTH)
+					light1.set_dir(WEST)
+					light2.set_dir(EAST)
+				else
+					light1.set_dir(SOUTH)
+					light2.set_dir(NORTH)
 
 
 
@@ -266,6 +268,10 @@
 		var/area/A = locate(area_path)
 		cfloor.set_area_ref("\ref[A]")
 		level++
+
+		if(level > 1)
+			createInnerDoors = 0
+
 
 
 	// Place lift panel.
