@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
-	tool_qualities = list(QUALITY_PRYING = 25, QUALITY_DIGGING = 10)
+	tool_qualities = list(QUALITY_PRYING = 25, QUALITY_DIGGING = 10, QUALITY_HAMMERING = 10)
 
 /obj/item/weapon/tool/crowbar/bs
 	name = "bluespace crowbar"
@@ -23,7 +23,7 @@
 	desc = "A pair of metal rods laboriously twisted into a useful prying and digging tool. Has more space for tool mods because it's hand-made."
 	icon_state = "impro_crowbar"
 	item_state = "crowbar"
-	tool_qualities = list(QUALITY_PRYING = 10, QUALITY_DIGGING = 10)
+	tool_qualities = list(QUALITY_PRYING = 10, QUALITY_DIGGING = 10,QUALITY_HAMMERING = 10)
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
