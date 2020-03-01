@@ -18,7 +18,6 @@
 	dropped.loc = get_turf(src)
 	var/initial_x = dropped.pixel_x
 	var/initial_y = dropped.pixel_y
-	dropped.plane = 1
 	dropped.pixel_x = rand(-150, 150)
 	dropped.pixel_y = 500 // When you think that pixel_z is height but you are wrong
 	dropped.density = FALSE
@@ -38,8 +37,6 @@
 	playsound(loc, 'sound/effects/meteorimpact.ogg', 50, 1)
 	density = initial(density)
 	opacity = initial(opacity)
-	plane = initial(plane)
-
 /obj/effect/falling_effect/singularity_act()
 	return
 
