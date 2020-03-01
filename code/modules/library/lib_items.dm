@@ -13,6 +13,7 @@
 
 /obj/structure/bookcase
 	name = "bookcase"
+	desc = "A wooden shelving unit used for storing all sorts of literature."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book-0"
 	matter = list(MATERIAL_WOOD = 10)
@@ -99,6 +100,7 @@
 /*Metal Bookcase - same functionality, just a reskin.*/
 
 /obj/structure/bookcase/metal
+	desc = "A metal shelving unit used for storing all sorts of literature."
 	icon_state = "metalshelf-0"
 
 /obj/structure/bookcase/metal/update_icon()

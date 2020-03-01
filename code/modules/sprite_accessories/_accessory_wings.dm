@@ -17,21 +17,11 @@
 	var/extra_overlay_w // Flapping state for extra overlay
 	var/layers = 0
 
-/datum/sprite_accessory/wings/bat_black
-	name = "Bat Wings, Black"
-	desc = ""
-	icon_state = "bat-black"
-
 /datum/sprite_accessory/wings/bat_color
-	name = "Bat Wings, Colorable"
+	name = "Bat Wings"
 	desc = ""
 	icon_state = "bat-color"
 	colored_layers = 1
-
-/datum/sprite_accessory/wings/bat_red
-	name = "Bat Wings, Red"
-	desc = ""
-	icon_state = "bat-red"
 
 /datum/sprite_accessory/wings/bee
 	name = "Bee Wings"
@@ -64,6 +54,11 @@
 	name = "Demon Wings"
 	desc = ""
 	icon_state = "sepulchre_wings"
+
+/datum/sprite_accessory/wings/devil
+	name = "Devil Wings"
+	desc = ""
+	icon_state = "bat-red"
 
 /datum/sprite_accessory/wings/dragonfly
 	name = "Dragonfly Wings"
@@ -191,11 +186,6 @@
 	icon_state = "spines_short_membrane"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
-
-/datum/sprite_accessory/wings/wingwolf
-	name = "Wingwolf Wings"
-	desc = ""
-	icon_state = "kerena-wings"
 
 /datum/sprite_accessory/wings/xenomorph
 	name = "Xenomorph Backplate"

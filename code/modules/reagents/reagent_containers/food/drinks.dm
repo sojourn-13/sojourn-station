@@ -110,7 +110,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/weapon/reagent_containers/food/drinks/golden_cup
-	desc = "A golden cup"
+	desc = "golden cup"
 	name = "golden cup"
 	icon_state = "golden_cup"
 	item_state = "" //nope :(
@@ -128,7 +128,7 @@
 //	Formatting is the same as food.
 
 /obj/item/weapon/reagent_containers/food/drinks/milk
-	name = "Space Milk"
+	name = "milk carton"
 	desc = "It's milk. White and nutritious goodness!"
 	icon_state = "milk"
 	item_state = "carton"
@@ -136,12 +136,29 @@
 	preloaded_reagents = list("milk" = 50)
 
 /obj/item/weapon/reagent_containers/food/drinks/soymilk
-	name = "SoyMilk"
+	name = "soy milk carton"
 	desc = "It's soy milk. White and nutritious goodness!"
 	icon_state = "soymilk"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
 	preloaded_reagents = list("soymilk" = 50)
+
+/obj/item/weapon/reagent_containers/food/drinks/milk/small
+	name = "small milk carton"
+	desc = "It's milk. White and nutritious goodness!"
+	icon_state = "mini-milk"
+	item_state = "carton"
+	center_of_mass = list("x"=16, "y"=9)
+	preloaded_reagents = list("milk" = 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/soymilk/small
+	name = "small soy milk carton"
+	desc = "It's soy milk. White and nutritious goodness!"
+	icon_state = "mini-soymilk"
+	item_state = "carton"
+	center_of_mass = list("x"=16, "y"=9)
+	preloaded_reagents = list("soymilk" = 30)
+
 
 /obj/item/weapon/reagent_containers/food/drinks/coffee
 	name = "Robust Coffee"
@@ -244,8 +261,8 @@
 	center_of_mass = "x=16;y=7"
 
 /obj/item/weapon/reagent_containers/food/drinks/flask
-	name = "Captain's Flask"
-	desc = "A metal flask belonging to the captain"
+	name = "captain's flask"
+	desc = "A metal flask belonging to the captain."
 	icon_state = "flask"
 	volume = 60
 	center_of_mass = list("x"=17, "y"=7)
@@ -261,7 +278,7 @@
 	icon_state = "lithiumflask"
 
 /obj/item/weapon/reagent_containers/food/drinks/flask/detflask
-	name = "Inspector's Flask"
+	name = "inspector's flask"
 	desc = "A metal flask with a leather band and golden badge belonging to the inspector."
 	icon_state = "detflask"
 	volume = 60

@@ -20,6 +20,10 @@
 	name = "candy"
 	icon_state = "candy"
 
+/obj/item/trash/candy/proteinbar
+	name = "protein bar"
+	icon_state = "proteinbar"
+
 /obj/item/trash/cheesie
 	name = "\improper Cheesie Honkers"
 	icon_state = "cheesie_honkers"

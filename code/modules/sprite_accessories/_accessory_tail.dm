@@ -49,13 +49,8 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/tail/bear_brown
-	name = "Bear Tail"
-	desc = ""
-	icon_state = "bear-brown"
-
 /datum/sprite_accessory/tail/bear
-	name = "Bear Tail, colorable"
+	name = "Bear Tail"
 	desc = ""
 	icon_state = "bear"
 	colored_layers = 1
@@ -234,13 +229,8 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/tail/mouse_pink
-	name = "Mouse Tail"
-	desc = ""
-	icon_state = "mouse-pink"
-
 /datum/sprite_accessory/tail/mouse
-	name = "Mouse Tail, Colorable"
+	name = "Mouse Tail"
 	desc = ""
 	icon_state = "mouse"
 	colored_layers = 1
@@ -301,7 +291,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/seromitailfeatheredhc
-	name = "Seromi Tail With Feathers"
+	name = "Seromi Tail, Feathers"
 	desc = ""
 	icon_state = "seromitail_feathers_hc_s"
 	colored_layers = 1

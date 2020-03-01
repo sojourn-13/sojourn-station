@@ -22,6 +22,7 @@
 		/obj/item/weapon/tool/tape_roll = 3,
 		/obj/item/trash/candle = 1,
 		/obj/item/trash/candy = 1,
+		/obj/item/trash/candy/proteinbar = 1,
 		/obj/item/trash/cheesie = 1,
 		/obj/item/trash/chips = 1,
 		/obj/item/trash/liquidfood = 1,
