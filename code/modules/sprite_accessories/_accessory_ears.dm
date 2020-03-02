@@ -267,6 +267,8 @@
 	name = "Panda Ears"
 	desc = ""
 	icon_state = "panda"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/sergal
 	name = "Sergal Ears"
