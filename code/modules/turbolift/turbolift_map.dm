@@ -24,7 +24,7 @@
 
 	// Various turf and door turftypes used when generating the turbolift stops.
 	var/wall_type =  /turf/simulated/wall
-	var/floor_type = /turf/simulated/floor/tiled/dark
+	var/floor_type = /turf/simulated/shuttle/floor/mining
 	var/door_type =  /obj/machinery/door/airlock/lift
 
 	var/list/turbolift_stops = list()
