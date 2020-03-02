@@ -1,5 +1,6 @@
 /obj/structure/computerframe
 	name = "computer frame"
+	desc = "A mechanical frame for a terminal. Looks incomplete."
 	icon = 'icons/obj/stock_parts.dmi'
 	icon_state = "0"
 	density = TRUE

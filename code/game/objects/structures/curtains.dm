@@ -1,5 +1,6 @@
 /obj/structure/curtain
 	name = "curtain"
+	desc = "A cloth curtain that can be parted and closed accordingly."
 	icon = 'icons/obj/curtain.dmi'
 	icon_state = "closed"
 	opacity = 1

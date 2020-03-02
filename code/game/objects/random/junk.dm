@@ -20,6 +20,7 @@
 		/obj/item/weapon/material_trash/circuit = 6,
 		/obj/item/weapon/material_trash/device = 5,
 		/obj/item/weapon/tool/tape_roll = 3,
+		/obj/item/weapon/phone = 2,
 		/obj/item/trash/candle = 1,
 		/obj/item/trash/candy = 1,
 		/obj/item/trash/candy/proteinbar = 1,
