@@ -1,5 +1,6 @@
 /obj/structure/girder
 	name = "wall grider"
+	desc = "The inner support structure of a wall."
 	icon_state = "girder"
 	anchored = 1
 	density = 1

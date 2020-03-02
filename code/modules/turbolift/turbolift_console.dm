@@ -116,6 +116,7 @@
 // Panel. Lists stops (HTML), moves with the elevator, schedules a move to a given floor.
 /obj/structure/lift/panel
 	name = "elevator control panel"
+	desc = "The brains of an elevator. Use this to get where you want to go."
 	icon_state = "panel"
 	req_access = list(access_eva)
 	req_one_access = list(access_heads, access_atmospherics, access_medical)

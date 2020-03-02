@@ -267,6 +267,8 @@
 	name = "Panda Ears"
 	desc = ""
 	icon_state = "panda"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/sergal
 	name = "Sergal Ears"
@@ -334,6 +336,8 @@
 	name = "Tigress Ears"
 	desc = ""
 	icon_state = "tigressears"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/vulp
 	name = "Vulpkanin Ears"

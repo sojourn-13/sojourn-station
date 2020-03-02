@@ -1,6 +1,6 @@
 /obj/item/weapon/phone
-	name = "red phone"
-	desc = "Should anything ever go wrong..."
+	name = "dial phone"
+	desc = "An old rotary dial phone. Who uses these anymore?"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "red_phone"
 	flags = CONDUCT

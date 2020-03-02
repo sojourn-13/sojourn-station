@@ -68,7 +68,7 @@
 
 /obj/structure/multiz/ladder
 	name = "ladder"
-	desc = "A ladder.  You can climb it up and down."
+	desc = "A ladder. You can climb it up and down."
 	icon_state = "ladderdown"
 	var/climb_delay = 30
 
@@ -173,7 +173,7 @@
 
 /obj/structure/multiz/stairs
 	name = "stairs"
-	desc = "Stairs leading to another deck. Not too useful if destroyed."
+	desc = "Stairs leading to another level. Not too useful if destroyed."
 	icon_state = "ramptop"
 	layer = 2.4
 
