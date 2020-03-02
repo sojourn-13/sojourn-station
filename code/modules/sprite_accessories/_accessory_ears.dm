@@ -336,6 +336,8 @@
 	name = "Tigress Ears"
 	desc = ""
 	icon_state = "tigressears"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/vulp
 	name = "Vulpkanin Ears"
