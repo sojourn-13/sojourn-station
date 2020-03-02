@@ -6,7 +6,7 @@
 	anchored = 1
 	icon = LIGHTING_ICON
 	plane = LIGHTING_PLANE
-	//invisibility = INVISIBILITY_LIGHTING
+	invisibility = INVISIBILITY_LIGHTING
 	color = LIGHTING_BASE_MATRIX
 	icon_state = "light1"
 	//auto_init = 0 // doesn't need special init
