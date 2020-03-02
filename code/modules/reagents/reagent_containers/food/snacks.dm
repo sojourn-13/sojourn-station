@@ -342,6 +342,14 @@
 	nutriment_desc = list("candy" = 10)
 	preloaded_reagents = list("nutriment" = 10, "sugar" = 6)
 
+/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar
+	name = "protein bar"
+	desc = "SwoleMAX brand protein bars, guaranteed to get you feeling perfectly overconfident."
+	icon_state = "proteinbar"
+	trash = /obj/item/trash/candy/proteinbar
+	nutriment_amt = 9
+	nutriment_desc = list("nutriment" = 7, "protein" = 8)
+
 /obj/item/weapon/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
 	desc = "It's a handful of candy corn. Cannot be stored in a detective's hat, alas."

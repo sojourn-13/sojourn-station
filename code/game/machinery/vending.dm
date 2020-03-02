@@ -1559,53 +1559,62 @@
 	product_ads = "Almost free!;Print it yourself!;Don't copy that floppy!;Industrial Revolution!;Future!;Print your dreams TODAY!;Cheap and reliable!"
 	icon_state = "discomat"
 	products = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 20,
-	 /obj/item/weapon/storage/box/data_disk/basic = 5,
-	 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 10,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 10,
+					 /obj/item/weapon/storage/box/data_disk/basic = 5,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 10,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 10,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 10,
-					  /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 5,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 5,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 5,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors = 2,
-					  /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 10,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 10,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 5,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 10,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 10,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 5,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns = 5,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 10,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 10,
 					 /obj/item/weapon/circuitboard/autolathe = 3,
-					  /obj/item/weapon/circuitboard/autolathe_disk_cloner = 3,
-					   /obj/item/weapon/circuitboard/vending = 10)
+					 /obj/item/weapon/circuitboard/autolathe_disk_cloner = 3,
+					 /obj/item/weapon/circuitboard/vending = 10)
 	contraband = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 3,
-	 /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 2)
+	 				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 2)
 	prices = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 50,
-	/obj/item/weapon/storage/box/data_disk/basic = 100,
-	 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 300,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 400,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 400,
-					  /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 500,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 1800,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 600,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors = 400,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 400,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 500,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 600,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns = 3000,
-					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 700,
-					/obj/item/weapon/circuitboard/autolathe = 700,
-					/obj/item/weapon/circuitboard/autolathe_disk_cloner = 1000,
-					/obj/item/weapon/circuitboard/vending = 500,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 1200,
-					  /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 4000)
+				  /obj/item/weapon/storage/box/data_disk/basic = 100,
+	 			  /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 300,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 400,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 400,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 500,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 1800,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 600,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors = 400,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 400,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 500,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 600,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns = 3000,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 700,
+				  /obj/item/weapon/circuitboard/autolathe = 700,
+				  /obj/item/weapon/circuitboard/autolathe_disk_cloner = 1000,
+				  /obj/item/weapon/circuitboard/vending = 500,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 1200,
+				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 4000)
 
 
 /obj/machinery/vending/fitness
 	name = "SweatMAX"
 	desc = "Fueled by your inner inadequacy!"
+	product_ads = "Keep working on those gains!;No pain, no gain!;Don't weight - buy today!"
 	icon_state = "fitness"
 	products = list(
-										/obj/item/weapon/cell/medium = 15) //Placeholder
+										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 8,
+										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 8,
+										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 8,
+										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 8,
+										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10)
 	prices = list(
-										/obj/item/weapon/cell/medium = 300)
+										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 40,
+										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 40,
+										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 30,
+										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 30,
+										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 30)
 
 /obj/machinery/vending/kink
 	name = "KinkMate"

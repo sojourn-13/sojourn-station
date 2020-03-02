@@ -2,7 +2,7 @@
 
 /obj/structure/toilet
 	name = "toilet"
-	desc = "The HT-451, a torque rotation-based waste disposal unit for small matter. This one seems remarkably clean."
+	desc = "A HT-451 toilet. A torque rotation-based waste disposal unit for small matter."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "toilet00"
 	density = 0
@@ -119,7 +119,7 @@
 
 /obj/structure/urinal
 	name = "urinal"
-	desc = "The HU-452, an experimental urinal."
+	desc = "A HU-452 urinal. Don't stand too far away."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "urinal"
 	density = 0
@@ -147,7 +147,7 @@
 
 /obj/machinery/shower
 	name = "shower"
-	desc = "The HS-451. Installed in the 2550s by the Hygiene Division."
+	desc = "A HS-451 shower unit. Has a bolted temperature dial."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "shower"
 	density = 0
@@ -353,18 +353,16 @@
 
 /obj/item/weapon/bikehorn/rubberducky
 	name = "rubber ducky"
-	desc = "Rubber ducky you're so fine, you make bathtime lots of fuuun. Rubber ducky I'm awfully fooooond of yooooouuuu~"	//thanks doohl
+	desc = "A yellow rubber ducky for bathtime. Has the most annoying squeak."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "rubberducky"
 	item_state = "rubberducky"
-
-
 
 /obj/structure/sink
 	name = "sink"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "sink"
-	desc = "A sink used for washing one's hands and face."
+	desc = "A HV-11 sink. Used for washing the hands and face."
 	anchored = 1
 	reagent_flags = OPENCONTAINER
 	var/busy = 0 	//Something's being washed at the moment
@@ -484,10 +482,12 @@
 
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
+	desc = "A HV-11B sink. Used for washing the hands and face, and utensils."
 	icon_state = "sink_alt"
 
 /obj/structure/sink/puddle	//splishy splashy ^_^
 	name = "puddle"
+	desc = "A puddle of still water. Great for splashing others."
 	icon_state = "puddle"
 
 /obj/structure/sink/puddle/attack_hand(mob/M as mob)

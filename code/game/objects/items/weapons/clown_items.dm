@@ -17,7 +17,7 @@
  */
 /obj/item/weapon/soap
 	name = "soap"
-	desc = "A cheap bar of soap. Doesn't smell."
+	desc = "An unbranded and unscented bar of soap."
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
 	icon_state = "soap"
@@ -112,7 +112,7 @@
  */
 /obj/item/weapon/bikehorn
 	name = "bike horn"
-	desc = "A horn off of a bicycle."
+	desc = "A loud bike horn. Favored by entertainers system-wide."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "bike_horn"
 	item_state = "bike_horn"
