@@ -25,6 +25,14 @@
 	for(var/i in 1 to 3)
 		new /obj/item/weapon/reagent_containers/food/snacks/meat/monkey(src)
 
+/obj/structure/closet/secure_closet/freezer/blood
+	name = "blood fridge"
+	icon_state = "freezer"
+
+/obj/structure/closet/secure_closet/freezer/blood/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/blood/OMinus(src)
+
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"
 	icon_state = "freezer"

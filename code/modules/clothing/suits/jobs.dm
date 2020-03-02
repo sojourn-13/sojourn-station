@@ -82,7 +82,7 @@
 		energy = 10,
 		bomb = 30,
 		bio = 100,
-		rad = 90
+		rad = 100
 	)
 
 /obj/item/clothing/suit/rank/chaplain/holiday

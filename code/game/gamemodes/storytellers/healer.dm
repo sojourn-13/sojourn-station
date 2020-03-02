@@ -1,7 +1,7 @@
 /datum/storyteller/healer
 	config_tag = "healer"
 	name = "The Healer"
-	welcome = "Welcome to CEV Eris! We hope you enjoy your stay!"
+	welcome = "Welcome to the Nadezhda colony! We hope you enjoy your stay!"
 	description = "Peaceful and relaxed storyteller who will try to help the crew a little."
 
 	gain_mult_mundane = 1.2

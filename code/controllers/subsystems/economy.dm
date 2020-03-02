@@ -102,7 +102,7 @@ SUBSYSTEM_DEF(economy)
 		var/datum/money_account/source //Source account for internal funding
 
 		var/reason = "Payroll Funding"
-		var/terminal = "CEV Eris payroll system"
+		var/terminal = "Nadezhda colony payroll system"
 
 		//Alright, how much money are we requesting
 		var/total_request = department.pending_wage_total + department.pending_budget_total
@@ -183,17 +183,17 @@ SUBSYSTEM_DEF(economy)
 			//Get the crewman's account that we'll pay to
 			var/crew_account_num = R.get_account()
 			var/amount = department.pending_wages[R]
-			paid = transfer_funds(department.account_number, crew_account_num, "Payroll", "CEV Eris payroll system", amount)
+			paid = transfer_funds(department.account_number, crew_account_num, "Payroll", "Nadezhda colony payroll system", amount)
 			if (paid)
 				total_paid += amount
 				var/sender = "[department.name] account"
 				if (department.funding_type == FUNDING_INTERNAL)
 					//If this wage was funded internally, make sure the recipient knows that
-					sender = "CEV Eris via [sender]"
+					sender = "Nadezhda colony via [sender]"
 
 				payroll_mail_account_holder(R, sender, amount)
 		department.pending_wages = list() //All pending wages paid off
-	command_announcement.Announce("Hourly crew wages have been paid, please check your email for details. In total the crew of CEV Eris have earned [total_paid] credits.\n Please contact your Department Heads in case of errors or missing payments.", "Dispensation")
+	command_announcement.Announce("Hourly crew wages have been paid, please check your email for details. In total the crew of Nadezhda colony have earned [total_paid] credits.\n Please contact your Department Heads in case of errors or missing payments.", "Dispensation")
 
 
 //Sent to a head of staff when their department account fails to pay out wages

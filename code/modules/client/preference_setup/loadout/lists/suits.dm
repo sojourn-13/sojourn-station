@@ -90,3 +90,17 @@
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat
 
+/datum/gear/suit/waistcoat
+	display_name = "waistcoat selection"
+	path = /obj/item/clothing/suit/storage/wcoat
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/suit/modular
+	display_name = "modular jacket selection"
+	path = /obj/item/clothing/suit/storage/suitjacket
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/suit/sweater
+	display_name = "sweater selection"
+	path = /obj/item/clothing/suit/sweater
+	flags = GEAR_HAS_TYPE_SELECTION

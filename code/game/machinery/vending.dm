@@ -1043,9 +1043,11 @@
 	/obj/item/ammo_magazine/cl32/rubber = 20,
 	/obj/item/ammo_magazine/sl38/rubber = 20,
 	/obj/item/ammo_magazine/c45m/rubber = 20,
+	/obj/item/ammo_magazine/c10mm/rubber = 20,
 	/obj/item/ammo_magazine/ammobox/c38/rubber = 20,
 	/obj/item/ammo_magazine/ammobox/cl32/rubber = 20,
 	/obj/item/ammo_magazine/ammobox/c45/rubber = 20,
+	/obj/item/ammo_magazine/ammobox/c10mm/rubber = 20,
 	/obj/item/weapon/storage/box/shotgunammo/beanbags = 10,
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 10,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 10,
@@ -1060,9 +1062,11 @@
 	contraband = list(/obj/item/ammo_magazine/sl38 = 20,
 	/obj/item/ammo_magazine/cl32 = 20,
 	/obj/item/ammo_magazine/c45m = 20,
+	/obj/item/ammo_magazine/c10mm = 20,
 	/obj/item/ammo_magazine/ammobox/cl32 = 20,
 	/obj/item/ammo_magazine/ammobox/c38 = 20,
 	/obj/item/ammo_magazine/ammobox/c45 = 20,
+	/obj/item/ammo_magazine/ammobox/c10mm = 20,
 	/obj/item/weapon/storage/box/shotgunammo/slug = 10,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 10,
 	/obj/item/weapon/tool/knife/tacknife = 6)
@@ -1079,9 +1083,11 @@
 	/obj/item/ammo_magazine/cl32/rubber = 100,
 	/obj/item/ammo_magazine/sl38/rubber = 200,
 	/obj/item/ammo_magazine/c45m/rubber = 150,
+	/obj/item/ammo_magazine/c10mm/rubber = 200,
 	/obj/item/ammo_magazine/ammobox/c38/rubber = 400,
 	/obj/item/ammo_magazine/ammobox/cl32/rubber = 800,
 	/obj/item/ammo_magazine/ammobox/c45/rubber = 600,
+	/obj/item/ammo_magazine/ammobox/c10mm/rubber = 800,
 	/obj/item/weapon/storage/box/shotgunammo/beanbags = 800,
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 400,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 50,
@@ -1091,9 +1097,11 @@
 	/obj/item/ammo_magazine/sl38 = 100,
 	/obj/item/ammo_magazine/cl32 = 200,
 	/obj/item/ammo_magazine/c45m = 150,
+	/obj/item/ammo_magazine/c10mm = 200,
 	/obj/item/ammo_magazine/ammobox/cl32 = 400,
 	/obj/item/ammo_magazine/ammobox/c38 = 800,
 	/obj/item/ammo_magazine/ammobox/c45 = 600,
+	/obj/item/ammo_magazine/ammobox/c10mm = 800,
 	/obj/item/weapon/storage/box/shotgunammo/slug = 800,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 800,
 	/obj/item/weapon/tool/knife/tacknife = 200,)
@@ -1264,7 +1272,7 @@
 /obj/machinery/vending/hydroseeds
 	name = "MegaSeed Servitor"
 	desc = "When you need seeds fast!"
-	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!;Seeds? We got you covered.;Remember: Glowshrooms are bad taste.;I'm legally advised to tell you that Nettles are poisonous.;Grow food, but keep Ambrosia handy."
+	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!;Seeds? We got you covered.;Remember: Glowshrooms are bad for you.;I'm legally advised to tell you that Nettles are poisonous.;Grow food, but keep Ambrosia handy."
 	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!;Just like your ancestors!"
 	icon_state = "seeds"
 	always_open = TRUE

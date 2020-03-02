@@ -136,7 +136,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 15)
 
 /obj/item/weapon/tool/knife/neotritual
-	name = "NeoTheology ritual knife"
+	name = "Absolutism ritual knife"
 	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "neot-knife"

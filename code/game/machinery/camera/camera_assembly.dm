@@ -75,7 +75,7 @@
 		if(QUALITY_SCREW_DRIVING)
 			if(state == 3)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
-					var/input = sanitize(input(usr, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: CEV Eris,Security,Secret", "Set Network", camera_network ? camera_network : NETWORK_CEV_ERIS))
+					var/input = sanitize(input(usr, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: Nadezhda colony,Security,Secret", "Set Network", camera_network ? camera_network : NETWORK_CEV_ERIS))
 					if(!input)
 						to_chat(usr, "No input found please hang up and try your call again.")
 						return

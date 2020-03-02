@@ -39,7 +39,7 @@
 	icon_state = "remainsunathi"
 
 /obj/item/remains/tajaran
-	desc = "They look like the remains of some sort of small creature."
+	desc = "They look like the remains of some sort of feline creature."
 	icon_state = "remainstajaran"
 
 /obj/item/remains/robot

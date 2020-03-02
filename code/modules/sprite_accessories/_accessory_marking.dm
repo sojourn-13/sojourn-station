@@ -10,7 +10,7 @@
 	colored_layers = 1 //Almost all of them have it, COLOR_ADD
 
 	//Empty list is unrestricted. Should only restrict the ones that make NO SENSE on other species,
-	//like Tajaran inner-ear coloring overlay stuff.
+	//like feline inner-ear coloring overlay stuff.
 	species_allowed = list()
 
 	var/body_parts = list() //A list of bodyparts this covers, in organ_tag defines

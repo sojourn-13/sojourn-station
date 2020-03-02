@@ -1,15 +1,35 @@
 /obj/effect/mine
-	name = "Mine"
-	desc = "I Better stay away from that thing."
-	density = 1
+	name = "land mine"
+	desc = "A small highly dangerous explosive."
+	density = 0
 	anchored = 1
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "uglymine"
+	icon = 'icons/obj/machines/excelsior/objects.dmi'
+	icon_state = "mine"
 	var/triggerproc = "explode" //name of the proc thats called when the mine is triggered
 	var/triggered = 0
+	var/smoke_strength = 3
 
 /obj/effect/mine/New()
-	icon_state = "uglyminearmed"
+	icon_state = "mine"
+
+/obj/effect/mine/proc/explode(var/mob/living/M)
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()
+	triggered = 1
+	s.set_up(3, 1, src)
+	s.start()
+	explosion(loc, 0, 2, 3, 4) //land mines are dangerous, folks.
+	visible_message("\The [src.name] detonates!")
+	qdel(s)
+	qdel(src)
+
+/obj/effect/mine/bullet_act()
+	if(prob(50))
+		explode()
+
+/obj/effect/mine/ex_act(severity)
+	if(severity <= 2 || prob(50))
+		explode()
+	..()
 
 /obj/effect/mine/Crossed(AM as mob|obj)
 	Bumped(AM)
@@ -24,6 +44,9 @@
 		triggered = 1
 		call(src,triggerproc)(M)
 
+
+
+/*
 /obj/effect/mine/proc/triggerrad(obj)
 	var/datum/effect/effect/system/spark_spread/s = new
 	s.set_up(3, 1, src)
@@ -102,3 +125,4 @@
 	name = "Stun Mine"
 	icon_state = "uglymine"
 	triggerproc = "triggerstun"
+*/

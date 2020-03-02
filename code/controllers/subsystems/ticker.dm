@@ -399,7 +399,7 @@ SUBSYSTEM_DEF(ticker)
 	if(captainless)
 		for(var/mob/M in GLOB.player_list)
 			if(!isnewplayer(M))
-				to_chat(M, "Captainship not forced on anyone.")
+				to_chat(M, "Premier role not forced on anyone.")
 
 /datum/controller/subsystem/ticker/proc/move_characters_to_spawnpoints()
 	for(var/mob/living/carbon/human/player in GLOB.player_list)

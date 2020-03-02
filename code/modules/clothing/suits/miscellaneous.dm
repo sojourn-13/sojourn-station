@@ -167,23 +167,23 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "vapeshirt"
 	item_state = "vapeshirt"
 
-/*Unathi*/
+/*Lizard*/
 
-/obj/item/clothing/suit/unathi/robe
+/obj/item/clothing/suit/lizard/robe
 	name = "roughspun robes"
 	desc = "A traditional roughspun garment."
 	icon_state = "robe-unathi"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
-/obj/item/clothing/suit/unathi/mantle
+/obj/item/clothing/suit/lizard/mantle
 	name = "hide mantle"
 	desc = "A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
 	icon_state = "mantle-unathi"
 	body_parts_covered = UPPER_TORSO
 
-/*Tajaran*/
+/*Feline*/
 
-/obj/item/clothing/suit/tajaran/furs
+/obj/item/clothing/suit/feline/furs
 	name = "heavy furs"
 	desc = "A traditional heavy fur garment."
 	icon_state = "zhan_furs"

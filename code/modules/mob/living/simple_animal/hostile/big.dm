@@ -27,7 +27,7 @@
 	speed = 8
 	move_to_delay = 4
 	turns_per_move = 5
-	attacktext = list("mauled")
+	attacktext = "mauled"
 	faction = "deathclaw"
 	maxHealth = 600
 	health = 600

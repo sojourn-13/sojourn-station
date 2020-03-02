@@ -93,7 +93,7 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 
 	if(announce)
 		if(!engineer && !command)
-			to_chat(world, "<b><font color='[tcol]'>A command officer and technomancer are required to start round.</font></b>")
+			to_chat(world, "<b><font color='[tcol]'>A command officer and engineer are required to start round.</font></b>")
 		else if(!engineer)
 			to_chat(world, "<b><font color='[tcol]'>Technomancer is required to start round.</font></b>")
 		else if(!command)

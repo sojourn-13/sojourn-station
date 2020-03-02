@@ -22,7 +22,7 @@
 	num_contained = 2
 	contains = list(/obj/item/clothing/suit/costume/history/pirate,
 					/obj/item/clothing/suit/costume/job/judge,
-					/obj/item/clothing/accessory/wcoat/black,
+					/obj/item/clothing/suit/storage/wcoat/black,
 					/obj/item/clothing/suit/costume/job/nun,
 					/obj/item/clothing/under/rank/first_officer/suit,
 					/obj/item/clothing/suit/costume/history/plaguedoctor,

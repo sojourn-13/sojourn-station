@@ -1,5 +1,5 @@
 /obj/effect/overmap/ship/eris
-	name = "CEV Eris"
+	name = "Nadezhda Colony"
 	fore_dir = NORTH
 	vessel_mass = 300
 	default_delay = 20 SECONDS

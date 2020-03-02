@@ -380,7 +380,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/tajaranhc
-	name = "Tajaran Tail"
+	name = "Feline Tail"
 	desc = ""
 	icon_state = "tajtail_hc_s"
 	colored_layers = 1
@@ -500,7 +500,7 @@
 	icon_state = "xenos_queen_tail_s"
 
 /datum/sprite_accessory/tail/zenghu_taj
-	name = "Zeng-Hu Tajaran Synth Tail"
+	name = "Zeng-Hu Feline Synth Tail"
 	desc = ""
 	icon_state = "zenghu_taj"
 

@@ -55,13 +55,13 @@
 
 /datum/gear/xenowear/furs
 	display_name = "heavy fur robes"
-	path = /obj/item/clothing/suit/tajaran/furs
+	path = /obj/item/clothing/suit/feline/furs
 	slot = slot_wear_suit
 	sort_category = "Xenowear"
 
 /datum/gear/xenowear/mantle
 	display_name = "hide mantle"
-	path = /obj/item/clothing/suit/unathi/mantle
+	path = /obj/item/clothing/suit/lizard/mantle
 	slot = slot_wear_suit
 	sort_category = "Xenowear"
 
@@ -73,7 +73,7 @@
 
 /datum/gear/xenowear/roughspun
 	display_name = "roughspun robes"
-	path = /obj/item/clothing/suit/unathi/robe
+	path = /obj/item/clothing/suit/lizard/robe
 	slot = slot_wear_suit
 	sort_category = "Xenowear"
 
