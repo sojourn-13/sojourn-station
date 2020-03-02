@@ -130,14 +130,14 @@
 // wall formed by metal foams, dense and opaque, but easy to break
 
 /obj/structure/foamedmetal
+	name = "foamed metal"
+	desc = "A lightweight foamed metal wall."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "metalfoam"
 	density = 1
 	opacity = 1 // changed in New()
 	anchored = 1
 	layer = EDGED_TURF_LAYER
-	name = "foamed metal"
-	desc = "A lightweight foamed metal wall."
 	var/metal = 1 // 1 = aluminum, 2 = iron
 
 /obj/structure/foamedmetal/New()

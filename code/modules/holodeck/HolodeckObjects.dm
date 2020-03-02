@@ -94,14 +94,14 @@
 
 /obj/structure/holostool
 	name = "stool"
-	desc = "Apply butt."
+	desc = "A padded stool for some rear comfort."
 	icon = 'icons/obj/furniture.dmi'
 	icon_state = "stool_padded_preview"
 	anchored = 1.0
 
 /obj/item/clothing/gloves/boxing/hologlove
 	name = "boxing gloves"
-	desc = "Because you really needed another excuse to punch your crewmates."
+	desc = "Because you really needed another excuse to punch other colonists."
 	icon_state = "boxing"
 	item_state = "boxing"
 
@@ -255,7 +255,7 @@
 
 /obj/structure/holohoop
 	name = "basketball hoop"
-	desc = "Boom, Shakalaka!"
+	desc = "A hoop for ball games. Go for a slam dunk."
 	icon = 'icons/obj/basketball.dmi'
 	icon_state = "hoop"
 	anchored = 1

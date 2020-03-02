@@ -343,5 +343,7 @@
 				/obj/item/toy/weapon/cultsword,\
 				/obj/item/toy/weapon/katana,\
 				/obj/item/toy/weapon/waterflower,\
+				/obj/item/toy/desk/newtoncradle,\
+				/obj/item/toy/desk/dippingbird,\
 				/obj/item/toy/junk/inflatable_duck,\
 				/obj/item/toy/weapon/sword)

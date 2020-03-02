@@ -32,7 +32,7 @@ LINEN BINS
 	if(!user)
 		return FALSE
 	if(inuse)
-		to_chat(user, "Someone already using \the [src]")
+		to_chat(user, "Someone is already using \the [src]")
 		return FALSE
 	inuse = TRUE
 	if (do_after(user, 6, src, incapacitation_flags = INCAPACITATION_UNCONSCIOUS))
