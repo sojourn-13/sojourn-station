@@ -159,10 +159,9 @@
 	center_of_mass = list("x"=16, "y"=9)
 	preloaded_reagents = list("soymilk" = 30)
 
-
 /obj/item/weapon/reagent_containers/food/drinks/coffee
 	name = "Robust Coffee"
-	desc = "Careful, the beverage you're about to enjoy is extremely hot."
+	desc = "A cup of hot coffee. Sourced from the leading supplier."
 	icon_state = "cup"
 	center_of_mass = list("x"=15, "y"=10)
 	base_icon = "cup"
@@ -170,8 +169,8 @@
 	preloaded_reagents = list("coffee" = 30)
 
 /obj/item/weapon/reagent_containers/food/drinks/ice
-	name = "Ice Cup"
-	desc = "Careful, cold ice, do not chew."
+	name = "Northern Freeze"
+	desc = "A frosty cup of ice. Do not chew."
 	icon_state = "cup"
 	center_of_mass = list("x"=15, "y"=10)
 	base_icon = "cup"
@@ -180,21 +179,20 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/h_chocolate
 	name = "Dutch Hot Coco"
-	desc = "Made in Space South America."
+	desc = "A cup of delicious hot chocolate. Tastes somewhat exotic."
 	icon_state = "hot_coco"
 	item_state = "coffee"
 	center_of_mass = list("x"=15, "y"=13)
 	preloaded_reagents = list("hot_coco" = 30)
 
 /obj/item/weapon/reagent_containers/food/drinks/dry_ramen
-	name = "Cup Ramen"
-	desc = "Just add 10ml water, self heats! A taste that reminds you of your school years."
+	name = "Raving Ramen"
+	desc = "A self-heating cup of ramen. Just add 10ml water."
 	icon_state = "ramen"
 	center_of_mass = list("x"=16, "y"=11)
 	base_icon = "cup"
 	filling_states = "100"
 	preloaded_reagents = list("dry_ramen" = 30)
-
 
 /obj/item/weapon/reagent_containers/food/drinks/sillycup
 	name = "paper cup"
@@ -261,8 +259,8 @@
 	center_of_mass = "x=16;y=7"
 
 /obj/item/weapon/reagent_containers/food/drinks/flask
-	name = "captain's flask"
-	desc = "A metal flask belonging to the captain."
+	name = "premier's flask"
+	desc = "A metal flask belonging to the Premier."
 	icon_state = "flask"
 	volume = 60
 	center_of_mass = list("x"=17, "y"=7)
@@ -278,8 +276,8 @@
 	icon_state = "lithiumflask"
 
 /obj/item/weapon/reagent_containers/food/drinks/flask/detflask
-	name = "inspector's flask"
-	desc = "A metal flask with a leather band and golden badge belonging to the inspector."
+	name = "ranger's flask"
+	desc = "A metal flask with a leather band and golden badge belonging to the Ranger."
 	icon_state = "detflask"
 	volume = 60
 	center_of_mass = list("x"=17, "y"=8)
@@ -347,7 +345,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/mug/metal
 	name = "metal mug"
-	desc = "A metal mug. You're not sure which metal."
+	desc = "A metal mug. It's unclear which sort of metal."
 	icon_state = "mug_metal"
 	flags = CONDUCT
 	base_name = "metal mug"
@@ -364,8 +362,8 @@
 	icon_state = "britmug"
 
 /obj/item/weapon/reagent_containers/food/drinks/mug/moebius
-	name = "\improper Moebius mug"
-	desc = "A mug with a Moebius Laboratories logo on it. Not even your morning coffee is safe from corporate advertising."
+	name = "\improper soteria mug"
+	desc = "A mug with a Soteria Institute logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius"
 
 /obj/item/weapon/reagent_containers/food/drinks/mug/teacup

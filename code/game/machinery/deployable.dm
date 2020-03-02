@@ -50,7 +50,7 @@ for reference:
 //Barricades!
 /obj/structure/barricade
 	name = "barricade"
-	desc = "An improvised [material.display_name] barrier designed to block access."
+	desc = "An improvised barrier designed to block access."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "barricade"
 	anchored = 1.0
