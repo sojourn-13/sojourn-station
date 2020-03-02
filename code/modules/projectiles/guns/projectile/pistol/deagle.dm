@@ -2,9 +2,9 @@
 /obj/item/weapon/gun/projectile/deagle
 	name = "HS HG .50 \"Avasarala\""
 	desc = "An obvious replica of an old Earth \"Desert Eagle\". Robust and straight, this is a gun for a leader, not just an officer."
-	icon = 'icons/obj/guns/projectile/deagle.dmi'
-	icon_state = "deagle"
-	item_state = "deagle" //Old bolter style Lamia
+	icon = 'icons/obj/guns/projectile/lamia.dmi'
+	icon_state = "lamiabolt"
+	item_state = "lamiabolt"
 	force = WEAPON_FORCE_PAINFUL
 	caliber = ".50"
 	load_method = MAGAZINE

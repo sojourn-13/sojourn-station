@@ -5,8 +5,8 @@
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example... frankly sucks and is limited to semiautomatic."
 	icon = 'icons/obj/guns/projectile/omnirifle.dmi'
-	icon_state = "cheap-omnirifle"
-	item_state = "cheap-omnirifle"
+	icon_state = "cheap-omnirifle_c"
+	item_state = "cheap-omnirifle_c"
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	caliber = "10x50mm"
@@ -17,7 +17,7 @@
 	magazine_type = /obj/item/ammo_magazine/c10mm
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 2000
-	recoil_buildup = 0.5
+	recoil_buildup = 25
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
@@ -44,12 +44,12 @@
 		 A weapon built for versatility and rugged reliability, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 Certain munitions are physically demanding for even the strongest users without the aid of power armor or gun platforms."
-	icon_state = "omnirifle"
-	item_state = "omnirifle"
+	icon_state = "omnirifle_d"
+	item_state = "omnirifle_d"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	price_tag = 2500
 	zoom_factor = 0.2
-	recoil_buildup = 0.3
+	recoil_buildup = 20
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	firemodes = list(
@@ -64,8 +64,8 @@
 		 Either a copy or 'liberated' model of the venerable M13A2 Special Purpose Rifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an advanced combat sight and limited to semiautomatic."
-	icon_state = "scoped-omnirifle"
-	item_state = "scoped-omnirifle"
+	icon_state = "scoped-omnirifle_f"
+	item_state = "scoped-omnirifle_f"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
 	price_tag = 3000
 	damage_multiplier = 1.2
@@ -73,7 +73,7 @@
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	zoom_factor = 0.8
-	recoil_buildup = 0.7
+	recoil_buildup = 28
 
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/fancy
@@ -82,11 +82,11 @@
 		 A civilian, sportman's model of the venerable M13A1 Special Purpose Rifle, it fires a variety of utility and specialized munitions. \
 		 Chambered in 10x50mm Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an high-zoom optic, elegant wood furnishing, and is limited to semiautomatic."
-	icon_state = "fancy-omnirifle"
-	item_state = "fancy-omnirifle"
+	icon_state = "fancy-omnirifle_e"
+	item_state = "fancy-omnirifle_e"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
 	price_tag = 3500
-	recoil_buildup = 0.6
+	recoil_buildup = 23
 	damage_multiplier = 1.2
 	zoom_factor = 0.9
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
@@ -104,7 +104,7 @@
 	price_tag = 2500
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	damage_multiplier = 0.8
-	recoil_buildup = 0.5
+	recoil_buildup = 36
 
 	firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -112,17 +112,17 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds
-	name = "BM CAR 10x50mm \"Boar\""
+	name = "BM CAR 10x50mm \"Warthog\""
 	desc = "The heavy second-line carbine made by Boris Kilmeade of the Nadezhda Marshals. \
 		 A rifle fashioned by a brute of a man and made for similar brutes, taking influence from MK-12 MOD 1 Omnicarbine, chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 This one is fitted with a muzzle brake, holographic sight, and limited to 3-round bursts, it's almost managable. Almost."
-	icon_state = "rds-omnicarbine"
-	item_state = "rds-omnicarbine"
+	icon_state = "rds-omnicarbine_b"
+	item_state = "rds-omnicarbine_b"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	price_tag = 3000
 	damage_multiplier = 0.8
-	recoil_buildup = 0.3
+	recoil_buildup = 31
 
 	firemodes = list(
 		SEMI_AUTO_NODELAY,

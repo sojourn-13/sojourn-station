@@ -77,7 +77,7 @@
 	head = /obj/item/clothing/head/rank/corpsman/beret
 	suit = /obj/item/clothing/suit/armor/platecarrier/corpsman
 	pda_type = /obj/item/modular_computer/pda/forensics
-	belt = /obj/item/weapon/storage/belt/medical
+	belt = /obj/item/weapon/storage/belt/medical/emt
 	backpack_contents = list(/obj/item/weapon/gun/energy/gun/martin = 1, /obj/item/weapon/cell/small/high = 1)
 
 /decl/hierarchy/outfit/job/security/ihoper

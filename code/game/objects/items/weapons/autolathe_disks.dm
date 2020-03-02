@@ -862,7 +862,7 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
 	disk_name = "Blackshield Sovereignty Pack"
 	icon_state = "onestar"
-	license = 30
+	license = 10
 
 	designs = list(
 		/datum/design/autolathe/gun/ten,

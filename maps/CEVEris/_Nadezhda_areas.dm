@@ -223,6 +223,18 @@
 	name = "Spider Cave"
 	icon_state = "erisgreen"
 
+/area/nadezhda/outside/forest
+	name = "Forest"
+	icon_state = "erisgreen"
+
+/area/nadezhda/outside/lakeside
+	name = "Lakeside"
+	icon_state = "erisgreen"
+
+/area/nadezhda/outside/meadow
+	name = "Meadow"
+	icon_state = "erisgreen"
+
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 

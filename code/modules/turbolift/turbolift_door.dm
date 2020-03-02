@@ -4,7 +4,7 @@
 	req_access = list(access_maint_tunnels)
 	opacity = 1
 	autoclose = 0
-	glass = 1
+	glass = 0
 	icon = 'icons/modules/turbolift/turbolift_doors.dmi'
 
 	var/datum/turbolift/lift
