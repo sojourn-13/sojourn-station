@@ -258,6 +258,10 @@ steam.start() -- spawns the effect
 	var/radius = 3
 	var/brightness = 2
 
+/obj/effect/effect/light/forceMove(atom/destination, var/special_event, glide_size_override=0)
+	. = ..()
+	update_light()
+
 /obj/effect/effect/light/New(var/newloc, var/radius, var/brightness)
 	..()
 
