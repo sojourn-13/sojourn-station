@@ -30,7 +30,6 @@
 	min_n2 = 0
 	max_n2 = 0
 	unsuitable_atoms_damage = 15
-	var/corpse = /obj/landmark/corpse/antagonist/pirate
 	var/weapon1 = /obj/item/weapon/melee/energy/sword/pirate
 	faction = "pirate"
 
@@ -38,9 +37,9 @@
 	name = "Void Wolf Field Tech"
 	desc = "A Void Wolf mercenary wielding an industrial welder."
 	icon_state = "voidengie"
+	icon_dead = "voidengie_dead"
 	attacktext = "burnt"
 	attack_sound = 'sound/items/Welder.ogg'
-	icon_dead = "voidengie"
 
 /*Ranged Void Wolfs*/
 /mob/living/simple_animal/hostile/voidwolf/ranged
@@ -52,7 +51,6 @@
 	ranged = 1
 	rapid = 1
 	projectiletype = /obj/item/projectile/beam
-	corpse = /obj/landmark/corpse/antagonist/pirate/gunner
 	weapon1 = /obj/item/weapon/gun/energy/laser
 
 /mob/living/simple_animal/hostile/voidwolf/fieldtech_ranged

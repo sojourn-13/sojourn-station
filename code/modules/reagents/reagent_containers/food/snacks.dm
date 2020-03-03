@@ -323,8 +323,8 @@
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/candy
-	name = "candy"
-	desc = "Nougat, love it or hate it."
+	name = "candy bar"
+	desc = "An unbranded nougat candy bar. Sugary."
 	icon_state = "candy"
 	trash = /obj/item/trash/candy
 	filling_color = "#7D5F46"
@@ -362,8 +362,8 @@
 	preloaded_reagents = list("nutriment" = 4, "sugar" = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/chips
-	name = "chips"
-	desc = "Commander Riker's What-The-Crisps"
+	name = "chips packet"
+	desc = "An unbranded packet of crisps. Salty."
 	icon_state = "chips"
 	trash = /obj/item/trash/chips
 	filling_color = "#E8C31E"
@@ -1164,9 +1164,9 @@
 		..()
 
 /obj/item/weapon/reagent_containers/food/snacks/sosjerky
-	name = "scaredy's private reserve beef jerky"
+	name = "Scaredy's Beef Jerky"
 	icon_state = "sosjerky"
-	desc = "Beef jerky made from the finest space cows."
+	desc = "Packaged protein sourced from a massive private reserve."
 	trash = /obj/item/trash/sosjerky
 	filling_color = "#631212"
 	bitesize = 2
@@ -1174,9 +1174,9 @@
 	preloaded_reagents = list("protein" = 4, "ammonia" = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/no_raisin
-	name = "4no raisins"
+	name = "4No Raisins"
 	icon_state = "4no_raisins"
-	desc = "Best raisins in the universe. Not sure why."
+	desc = "A brand of boxed raisins. Dry but tasty."
 	trash = /obj/item/trash/raisins
 	filling_color = "#343834"
 	center_of_mass = list("x"=15, "y"=4)
@@ -1184,18 +1184,18 @@
 	nutriment_amt = 6
 
 /obj/item/weapon/reagent_containers/food/snacks/spacetwinkie
-	name = "space twinkie"
+	name = "Space Twinkie"
 	icon_state = "space_twinkie"
-	desc = "Guaranteed to survive longer then you will."
+	desc = "A golden sponge cake with a creamy filling."
 	filling_color = "#FFE591"
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=11)
 	preloaded_reagents = list("sugar" = 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers
-	name = "cheesie honkers"
+	name = "Cheesie Honkers"
 	icon_state = "cheesie_honkers"
-	desc = "Bite sized cheesie snacks that will honk all over your mouth"
+	desc = "Bite-sized cheesie snacks that will honk all over your mouth."
 	trash = /obj/item/trash/cheesie
 	filling_color = "#FFA305"
 	bitesize = 2

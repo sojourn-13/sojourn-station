@@ -1,5 +1,6 @@
 /obj/item/clothing/glasses/powered
 	name = "powered goggles"
+	desc = "A set of generic powered goggles."
 	icon_state = "night"
 	item_state = "glasses"
 	action_button_name = "Toggle Optical Matrix"
@@ -47,7 +48,7 @@
 
 /obj/item/clothing/glasses/powered/science
 	name = "science goggles"
-	desc = "The goggles do nothing!"
+	desc = "Powered goggles with access to the scientific hud."
 	icon_state = "purple"
 	item_state = "glasses"
 
@@ -76,7 +77,7 @@
 
 /obj/item/clothing/glasses/powered/night
 	name = "night vision goggles"
-	desc = "You can totally see in the dark now!"
+	desc = "Powered goggles that pierce through the darkness."
 	icon_state = "night"
 	item_state = "glasses"
 	darkness_view = 7
