@@ -70,14 +70,14 @@
 /datum/sprite_accessory/ears/bunny_floppy
 	name = "Bunny Ears, Floppy"
 	desc = ""
-	icon_state = "floppy_bun"
+	icon_state = "bunny_floppy"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/bunny_swooped
 	name = "Bunny Ears, Swooped"
 	desc = ""
-	icon_state = "swooped_bunny"
+	icon_state = "bunny_swooped"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
@@ -293,21 +293,21 @@
 /datum/sprite_accessory/ears/robot
 	name = "Synth Antennae"
 	desc = ""
-	icon_state = "dual_robot_antennae"
+	icon_state = "robot_dual"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/left_robot
 	name = "Synth Antennae, Left"
 	desc = ""
-	icon_state = "left_robot_antennae"
+	icon_state = "robot_left"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/right_robot
 	name = "Synth Antennae, Right"
 	desc = ""
-	icon_state = "right_robot_antennae"
+	icon_state = "robot_right"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 

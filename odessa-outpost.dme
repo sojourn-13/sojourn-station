@@ -934,6 +934,7 @@
 #include "code\game\objects\items\weapons\stunbaton.dm"
 #include "code\game\objects\items\weapons\swords_axes_etc.dm"
 #include "code\game\objects\items\weapons\teleportation.dm"
+#include "code\game\objects\items\weapons\towel.dm"
 #include "code\game\objects\items\weapons\traps.dm"
 #include "code\game\objects\items\weapons\trays.dm"
 #include "code\game\objects\items\weapons\weaponry.dm"

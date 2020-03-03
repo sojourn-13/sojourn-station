@@ -8,11 +8,11 @@
 	desc = "This is rubbish."
 
 /obj/item/trash/raisins
-	name = "\improper 4no raisins"
+	name = "\improper 4No raisins"
 	icon_state= "4no_raisins"
 
 /obj/item/trash/candy
-	name = "candy"
+	name = "candy bar"
 	icon_state= "candy"
 
 /obj/item/trash/candy/proteinbar
@@ -20,11 +20,11 @@
 	icon_state = "proteinbar"
 
 /obj/item/trash/cheesie
-	name = "\improper Cheesie Honkers"
+	name = "Cheesie Honkers"
 	icon_state = "cheesie_honkers"
 
 /obj/item/trash/chips
-	name = "chips"
+	name = "chips packet"
 	icon_state = "chips"
 
 /obj/item/trash/popcorn
@@ -32,7 +32,7 @@
 	icon_state = "popcorn"
 
 /obj/item/trash/sosjerky
-	name = "Scaredy's Private Reserve Beef Jerky"
+	name = "Scaredy's Beef Jerky"
 	icon_state = "sosjerky"
 
 /obj/item/trash/syndi_cakes

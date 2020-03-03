@@ -989,9 +989,9 @@
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	vend_power_usage = 85000 //85 kJ to heat a 250 mL cup of coffee
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 25,
+					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 25,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 25,
-					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 25,
-					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 25)
+					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 25)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/ice = 10)
 	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 3,
@@ -1005,13 +1005,13 @@
 	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks straight from mars.;We love chocolate!;Try our new jerky!;Have a treat!;Crunchy!"
 	icon_state = "snack"
 	products = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 6,
-					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/chips =6,
+					/obj/item/weapon/reagent_containers/food/snacks/tastybread = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 6,
-					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 6,
-					/obj/item/weapon/reagent_containers/food/snacks/tastybread = 6)
+					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 6)
 	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/syndicake = 6)
 	prices = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 40,
 					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 45,
@@ -1133,10 +1133,10 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 10)
+					/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 5,
 						/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 6)
 	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 30,
@@ -1608,13 +1608,15 @@
 										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 8,
 										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 8,
 										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 8,
-										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10)
+										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,
+										/obj/item/weapon/towel/random = 8)
 	prices = list(
 										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 40,
 										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 40,
 										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 30,
 										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 30,
-										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 30)
+										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 30,
+										/obj/item/weapon/towel/random = 70)
 
 /obj/machinery/vending/kink
 	name = "KinkMate"

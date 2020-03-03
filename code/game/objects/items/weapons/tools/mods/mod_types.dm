@@ -144,7 +144,7 @@
 	I.prefix = "sharpened"
 
 /obj/item/weapon/tool_upgrade/productivity/diamond_blade
-	name = "Asters \"Gleaming Edge\": Diamond blade"
+	name = "Asters \"Gleaming Edge\": diamond blade"
 	desc = "An adaptable industrial grade cutting disc, with diamond dust worked into the metal. Exceptionally durable"
 	icon_state = "diamond_blade"
 	price_tag = 300
@@ -291,7 +291,7 @@
 
 //Stores moar fuel!
 /obj/item/weapon/tool_upgrade/augment/fuel_tank
-	name = "Expanded fuel tank"
+	name = "expanded fuel tank"
 	desc = "An auxiliary tank which stores 100 extra units of fuel at the cost of degradation."
 	icon_state = "canister"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
@@ -309,7 +309,7 @@
 
 //OneStar fuel mod
 /obj/item/weapon/tool_upgrade/augment/holding_tank
-	name = "Expanded fuel tank of holding"
+	name = "expanded fuel tank of holding"
 	desc = "Rare relic of OneStar uses the bluetech space to store additional 600 units of fuel at the cost of degradation."
 	icon_state = "canister_holding"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4)
@@ -384,7 +384,7 @@
 	I.prefix = "silenced"
 
 /obj/item/weapon/tool_upgrade/augment/ai_tool
-	name = "Nanointegrated AI"
+	name = "nanointegrated AI"
 	desc = "A forgotten Greyson Positronic tech. Due to its unique installation method of \"slapping it hard enough onto anything should do the trick\", it is highly sought after. \
 		A powerful AI will integrate itself into this tool with the aid of nanotechnology, and improve it in every way possible."
 	icon_state = "ai_tool"
