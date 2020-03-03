@@ -144,7 +144,7 @@
 	name = "secure briefcase"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "secure"
-	item_state = "sec-case"
+	item_state = "sec_secure"
 	desc = "A large briefcase with a digital locking system."
 	force = WEAPON_FORCE_NORMAL
 	throw_speed = 1

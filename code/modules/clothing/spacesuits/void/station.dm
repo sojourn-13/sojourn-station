@@ -124,7 +124,7 @@
 
 	//Security
 /obj/item/clothing/head/helmet/space/void/security
-	name = "ironhammer voidsuit helmet"
+	name = "marshal voidsuit helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
 	icon_state = "ihsvoidhelm"
 	item_state = "ihsvoidhelm"
@@ -145,7 +145,7 @@
 	light_overlay = "helmet_light_ihs"
 
 /obj/item/clothing/suit/space/void/security
-	name = "ironhammer voidsuit"
+	name = "marshal voidsuit"
 	icon_state = "ihvoidsuit"
 	desc = "A bulky suit that protects against hazardous, low pressure environments. Sacrifices mobility for protection"
 	item_state = "ihvoidsuit"
@@ -163,6 +163,37 @@
 /obj/item/clothing/suit/space/void/security/equipped
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/weapon/tank/jetpack/oxygen
+
+
+/obj/item/clothing/head/helmet/space/void/security/odst
+	name = "sol federation voidsuit"
+	icon_state = "odst"
+	item_state = "odst"
+
+/obj/item/clothing/suit/space/void/security/odst
+	name = "sol federation voidsuit"
+	icon_state = "odst"
+	item_state = "odst"
+
+/obj/item/clothing/head/helmet/space/void/security/odst_mil
+	name = "blackshield voidsuit"
+	icon_state = "odst_mil"
+	item_state = "odst_mil"
+
+/obj/item/clothing/suit/space/void/security/odst_mil
+	name = "blackshield voidsuit"
+	icon_state = "odst_mil"
+	item_state = "odst_mil"
+
+/obj/item/clothing/head/helmet/space/void/security/odst_corps
+	name = "blackshield corpsmen voidsuit"
+	icon_state = "odst_corps"
+	item_state = "odst_corps"
+
+/obj/item/clothing/suit/space/void/security/odst_corps
+	name = "blackshield corpsmen voidsuit"
+	icon_state = "odst_corps"
+	item_state = "odst_corps"
 
 //Atmospherics Rig (BS12)
 /obj/item/clothing/head/helmet/space/void/atmos

@@ -76,9 +76,10 @@
 
 /obj/item/device/radio/headset/headset_sec
 	name = "security radio headset"
-	desc = "This is used by your elite security force."
+	desc = "This is used by your elite security force. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "sec_headset"
 	item_state = "headset"
+	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_sec
 
 /obj/item/device/radio/headset/headset_eng
@@ -147,9 +148,10 @@
 
 /obj/item/device/radio/headset/heads/hos
 	name = "security commander headset"
-	desc = "The headset of the men who protects your worthless lives."
+	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "com_headset"
 	item_state = "headset"
+	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
 /obj/item/device/radio/headset/heads/ce
@@ -175,7 +177,7 @@
 
 /obj/item/device/radio/headset/heads/merchant
 	name = "executive officer's headset"
-	desc = "The headset of the guy who know price for everything."
+	desc = "The headset of the guy who knowa the price for everything."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/merchant
@@ -203,16 +205,18 @@
 
 /obj/item/device/radio/headset/headset_pro
 	name = "prospector radio headset"
-	desc = "A headset used by the prospectors thugs."
+	desc = "A headset used by the prospector thugs. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "cargo_headset"
 	item_state = "headset"
+	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_pro
 
 /obj/item/device/radio/headset/heads/foreman
 	name = "foreman radio headset"
-	desc = "A headset used by the krumpiest git."
+	desc = "A headset used by the krumpiest git. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "cargo_headset"
 	item_state = "headset"
+	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/foreman
 
 /obj/item/device/radio/headset/ia

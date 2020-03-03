@@ -70,7 +70,7 @@
 	var/destroy_surroundings = 1
 	var/break_stuff_probability = 10
 	can_burrow = TRUE
-	var/extra_burrow_chance = 1 //The chance that this animal will spawn another burrow in its vicinity
+	var/extra_burrow_chance = 0 //The chance that this animal will spawn another burrow in its vicinity
 	//This is in addition to the single guaranteed burrow that always exists in sight of any burrowing mob
 
 	var/bad_environment = FALSE //Briefly set true whenever anything in the atmosphere damages this mob

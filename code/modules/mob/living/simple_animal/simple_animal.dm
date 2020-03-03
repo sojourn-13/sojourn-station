@@ -15,6 +15,7 @@
 	var/icon_living = ""
 	var/icon_dead = ""
 	var/icon_gib = null	//We only try to show a gibbing animation if this exists.
+	can_burrow = FALSE
 
 	//Napping
 	var/can_nap = FALSE
@@ -135,10 +136,12 @@
 	turns_since_move = turns_per_move
 	..()
 
+/*
 /mob/living/simple_animal/Initialize(var/mapload)
 	.=..()
 	if (mapload && can_burrow)
 		find_or_create_burrow(get_turf(src))
+*/
 
 /mob/living/simple_animal/Login()
 	if(src && src.client)

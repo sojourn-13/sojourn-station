@@ -2,7 +2,7 @@
 	name = OUTFIT_JOB_NAME("Prospectors - Foreman")
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/top/outfitfrontier
-	l_ear = /obj/item/device/radio/headset/
+	l_ear = /obj/item/device/radio/headset/heads/foreman
 	shoes = /obj/item/clothing/shoes/winter/explorer
 	gloves = /obj/item/clothing/gloves/thick
 	id_type = /obj/item/weapon/card/id/black

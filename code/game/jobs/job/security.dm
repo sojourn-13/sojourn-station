@@ -173,8 +173,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Warrant Officer"
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
@@ -227,8 +227,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Militia Commander"
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
@@ -279,8 +279,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Militia Commander"
 	//alt_titles = list("Blackshield Junior Trooper")
 	selection_color = "#a7bbc6"
@@ -337,8 +337,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Warrant Officer"
 	//alt_titles = list("Marshal Junior Operative")
 	selection_color = "#a7bbc6"

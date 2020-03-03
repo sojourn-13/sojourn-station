@@ -39,6 +39,7 @@ var/global/list/default_medbay_channels = list(
 	var/listening = 1
 	var/list/channels = list() //see communications.dm for full list. First channel is a "default" for :h
 	var/subspace_transmission = 0
+	var/adhoc_fallback = FALSE
 	var/syndie = 0//Holder to see if it's a syndicate encrypted radio
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
@@ -402,8 +403,16 @@ var/global/list/default_medbay_channels = list(
 			R.receive_signal(signal)
 
 		// Receiving code can be located in Telecommunications.dm
-		return signal.data["done"] && position.z in signal.data["level"]
+		if(signal.data["done"] && position.z in signal.data["level"])
+			return TRUE //Huzzah, sent via subspace
 
+
+		else if(adhoc_fallback) //Fallback radio
+			to_chat(loc,"<span class='warning'>\The [src] pings as it falls back to local radio transmission.</span>")
+			subspace_transmission = FALSE
+			return Broadcast_Message(connection, M, voicemask, pick(M.speak_emote),
+					  src, message, displayname, jobname, real_name, M.voice_name,
+					  signal.transmission_method, signal.data["compression"], list(position.z), connection.frequency,verb,speaking)
 
   /* ###### Intercoms and station-bounced radios ###### */
 
@@ -451,10 +460,12 @@ var/global/list/default_medbay_channels = list(
 	for(var/obj/machinery/telecomms/receiver/R in telecomms_list)
 		R.receive_signal(signal)
 
-
 	sleep(rand(10,25)) // wait a little...
 
 	if(signal.data["done"] && position.z in signal.data["level"])
+		if(adhoc_fallback)
+			to_chat(loc,"<span class='notice'>\The [src] pings as it reestablishes subspace communications.</span>")
+			subspace_transmission = TRUE
 		// we're done here.
 		return 1
 

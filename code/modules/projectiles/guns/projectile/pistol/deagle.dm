@@ -1,7 +1,7 @@
 //Used to be a Desert Eagle and has been replced with a customized version of the Eris Upstream Lamia
 /obj/item/weapon/gun/projectile/deagle
 	name = "HS HG .50 \"Avasarala\""
-	desc = "An obvious replica of an old Earth \"Desert Eagle\". Robust and straight, this is a gun for a leader, not just an officer."
+	desc = "An obvious replica of an old Earth weapon. Robust and straight, this is a gun for a leader, not just an officer."
 	icon = 'icons/obj/guns/projectile/lamia.dmi'
 	icon_state = "lamiabolt"
 	item_state = "lamiabolt"

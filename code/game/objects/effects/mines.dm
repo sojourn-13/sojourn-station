@@ -8,6 +8,7 @@
 	var/triggerproc = "explode" //name of the proc thats called when the mine is triggered
 	var/triggered = 0
 	var/smoke_strength = 3
+	layer = HIDE_LAYER
 
 /obj/effect/mine/New()
 	icon_state = "mine"
@@ -23,11 +24,11 @@
 	qdel(src)
 
 /obj/effect/mine/bullet_act()
-	if(prob(50))
+	if(prob(90))
 		explode()
 
 /obj/effect/mine/ex_act(severity)
-	if(severity <= 2 || prob(50))
+	if(severity <= 2 || prob(90))
 		explode()
 	..()
 
