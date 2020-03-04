@@ -3,8 +3,8 @@
 	see_invisible = SEE_INVISIBLE_LIVING
 
 	//Health and life related vars
-	var/maxHealth = 100 //Maximum health that should be possible.
-	var/health = 100 	//A mob's health
+	maxHealth = 100 //Maximum health that should be possible.
+	health = 100 	//A mob's health
 
 	var/hud_updateflag = 0
 

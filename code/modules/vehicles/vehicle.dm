@@ -19,13 +19,13 @@
 
 	var/attack_log = null
 	var/on = 0
-	var/health = 0	//do not forget to set health for your vehicle!
-	var/maxhealth = 0
+	health = 0	//do not forget to set health for your vehicle!
+	maxHealth = 0
 	var/fire_dam_coeff = 1.0
 	var/brute_dam_coeff = 1.0
 	var/open = 0	//Maint panel
 	var/locked = 1
-	var/stat = 0
+
 	var/emagged = 0
 	var/powered = 0		//set if vehicle is powered and should use fuel when moving
 	var/move_delay = 1	//set this to limit the speed of the vehicle
@@ -81,7 +81,7 @@
 	var/list/usable_qualities = list(QUALITY_PRYING, QUALITY_SCREW_DRIVING)
 	if(open)
 		usable_qualities.Add(QUALITY_WIRE_CUTTING)
-	if(open && health < maxhealth)
+	if(open && health < maxHealth)
 		usable_qualities.Add(QUALITY_WELDING)
 
 
@@ -116,7 +116,7 @@
 
 		if(QUALITY_WELDING)
 			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY,  required_stat = STAT_MEC))
-				health = min(maxhealth, health+10)
+				health = min(maxHealth, health+10)
 				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 				user.visible_message("\red [user] repairs [src]!","\blue You repair [src]!")
 			return
@@ -136,14 +136,14 @@
 			if("brute")
 				health -= I.force * brute_dam_coeff
 		..()
-		healthcheck()
+		healthCheck()
 	else
 		..()
 
 /obj/vehicle/bullet_act(var/obj/item/projectile/Proj)
 	health -= Proj.get_structure_damage()
 	..()
-	healthcheck()
+	healthCheck()
 
 /obj/vehicle/ex_act(severity)
 	switch(severity)
@@ -153,13 +153,13 @@
 		if(2.0)
 			health -= rand(5,10)*fire_dam_coeff
 			health -= rand(10,20)*brute_dam_coeff
-			healthcheck()
+			healthCheck()
 			return
 		if(3.0)
 			if (prob(50))
 				health -= rand(1,5)*fire_dam_coeff
 				health -= rand(1,5)*brute_dam_coeff
-				healthcheck()
+				healthCheck()
 				return
 	return
 
@@ -235,7 +235,7 @@
 
 	qdel(src)
 
-/obj/vehicle/proc/healthcheck()
+/obj/vehicle/healthCheck()
 	if(health <= 0)
 		explode()
 
@@ -381,5 +381,5 @@
 	src.health -= damage
 	if(prob(10))
 		new /obj/effect/decal/cleanable/blood/oil(src.loc)
-	spawn(1) healthcheck()
+	spawn(1) healthCheck()
 	return 1

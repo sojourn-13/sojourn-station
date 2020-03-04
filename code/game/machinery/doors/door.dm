@@ -20,8 +20,8 @@
 	var/normalspeed = 1
 	var/heat_proof = 0 // For glass airlocks/opacity firedoors
 	var/air_properties_vary_with_direction = 0
-	var/maxhealth = 250
-	var/health
+	maxHealth = 250
+	health
 	var/destroy_hits = 10 //How many strong hits it takes to destroy the door
 	var/resistance = RESISTANCE_TOUGH //minimum amount of force needed to damage the door with a melee weapon
 	var/hitsound = 'sound/weapons/smash.ogg' //sound door makes when hit with a weapon
@@ -72,7 +72,7 @@
 			bound_width = world.icon_size
 			bound_height = width * world.icon_size
 
-	health = maxhealth
+	health = maxHealth
 
 	update_nearby_tiles(need_rebuild=1)
 	return
@@ -231,7 +231,7 @@
 			if(QUALITY_WELDING)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
 					to_chat(user, SPAN_NOTICE("You finish repairing the damage to \the [src]."))
-					health = between(health, health + repairing.amount*DOOR_REPAIR_AMOUNT, maxhealth)
+					health = between(health, health + repairing.amount*DOOR_REPAIR_AMOUNT, maxHealth)
 					update_icon()
 					qdel(repairing)
 					repairing = null
@@ -253,7 +253,7 @@
 		if(stat & BROKEN)
 			to_chat(user, SPAN_NOTICE("It looks like \the [src] is pretty busted. It's going to need more than just patching up now."))
 			return
-		if(health >= maxhealth)
+		if(health >= maxHealth)
 			to_chat(user, SPAN_NOTICE("Nothing to fix!"))
 			return
 		if(!density)
@@ -261,7 +261,7 @@
 			return
 
 		//figure out how much metal we need
-		var/amount_needed = (maxhealth - health) / DOOR_REPAIR_AMOUNT
+		var/amount_needed = (maxHealth - health) / DOOR_REPAIR_AMOUNT
 		amount_needed = CEILING(amount_needed, 1)
 
 		var/obj/item/stack/stack = I
@@ -332,13 +332,13 @@
 	if(src.health <= 0 && initialhealth > 0)
 		src.set_broken()
 		smoke_amount = 4
-	else if(src.health < src.maxhealth / 4 && initialhealth >= src.maxhealth / 4)
+	else if(src.health < src.maxHealth / 4 && initialhealth >= src.maxHealth / 4)
 		visible_message("\The [src] looks like it's about to break!" )
 		smoke_amount = 3
-	else if(src.health < src.maxhealth / 2 && initialhealth >= src.maxhealth / 2)
+	else if(src.health < src.maxHealth / 2 && initialhealth >= src.maxHealth / 2)
 		visible_message("\The [src] looks seriously damaged!" )
 		smoke_amount = 2
-	else if(src.health < src.maxhealth * 3/4 && initialhealth >= src.maxhealth * 3/4)
+	else if(src.health < src.maxHealth * 3/4 && initialhealth >= src.maxHealth * 3/4)
 		visible_message("\The [src] shows signs of damage!" )
 		smoke_amount = 1
 	update_icon()
@@ -351,11 +351,11 @@
 
 /obj/machinery/door/examine(mob/user)
 	. = ..()
-	if(src.health < src.maxhealth / 4)
+	if(src.health < src.maxHealth / 4)
 		to_chat(user, "\The [src] looks like it's about to break!")
-	else if(src.health < src.maxhealth / 2)
+	else if(src.health < src.maxHealth / 2)
 		to_chat(user, "\The [src] looks seriously damaged!")
-	else if(src.health < src.maxhealth * 3/4)
+	else if(src.health < src.maxHealth * 3/4)
 		to_chat(user, "\The [src] shows signs of damage!")
 
 

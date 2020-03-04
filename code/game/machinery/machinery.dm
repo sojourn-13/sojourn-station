@@ -100,7 +100,6 @@ Class Procs:
 	icon = 'icons/obj/stationobjs.dmi'
 	w_class = ITEM_SIZE_GARGANTUAN
 
-	var/stat = 0
 	var/emagged = 0
 	var/use_power = 1
 		//0 = dont run the auto

@@ -42,10 +42,11 @@ avoid code duplication. This includes items that may sometimes act as a standard
 /atom/proc/attackby(obj/item/W, mob/user, params)
 	return
 
+// Why only movable?  Why not group turfs under this?
 /atom/movable/attackby(obj/item/I, mob/living/user)
 	if(!(I.flags & NOBLUDGEON))
 		if(user.client && user.a_intent == I_HELP)
-			return
+			return 0
 
 		user.do_attack_animation(src)
 		if (I.hitsound)
@@ -53,8 +54,14 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		visible_message(SPAN_DANGER("[src] has been hit by [user] with [I]."))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
-/obj/item/attackby(obj/item/I, mob/living/user, var/params)
-	return
+        //TODO: Find a way to make this work.
+        // Probably involves resolving all the callers, or setting a flag if you do the damage yourself...
+		//src.health -= I.force
+		//src.healthCheck()
+
+		return 1
+
+
 
 /mob/living/attackby(obj/item/I, mob/living/user, var/params)
 	if(!ismob(user))

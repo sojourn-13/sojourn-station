@@ -5,7 +5,7 @@
 	icon = 'icons/effects/effects.dmi'
 	anchored = 1
 	density = 0
-	var/health = 15
+	health = 15
 
 //similar to weeds, but only barfed out by nurses manually
 /obj/effect/spider/ex_act(severity)
@@ -33,21 +33,21 @@
 			damage = 15
 
 	health -= damage
-	healthcheck()
+	healthCheck()
 
 /obj/effect/spider/bullet_act(var/obj/item/projectile/Proj)
 	..()
 	health -= Proj.get_structure_damage()
-	healthcheck()
+	healthCheck()
 
-/obj/effect/spider/proc/healthcheck()
+/obj/effect/spider/healthCheck()
 	if(health <= 0)
 		qdel(src)
 
 /obj/effect/spider/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300 + T0C)
 		health -= 5
-		healthcheck()
+		healthCheck()
 
 /obj/effect/spider/stickyweb
 	health = 5
@@ -148,7 +148,7 @@
 	new /obj/effect/decal/cleanable/spiderling_remains(loc)
 	qdel(src)
 
-/obj/effect/spider/spiderling/healthcheck()
+/obj/effect/spider/spiderling/healthCheck()
 	if(health <= 0)
 		die()
 

@@ -30,7 +30,7 @@
 	var/tray_light = 1         // Supplied lighting.
 
 	// Mechanical concerns.
-	var/health = 0             // Plant health.
+	health = 0             // Plant health.
 	var/lastproduce = 0        // Last time tray was harvested
 	var/lastcycle = 0          // Cycle timing/tracking var.
 	var/cycledelay = 150       // Delay per cycle.

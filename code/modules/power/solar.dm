@@ -12,7 +12,7 @@
 	idle_power_usage = 0
 	active_power_usage = 0
 	var/id = 0
-	var/health = 10
+	health = 10
 	var/obscured = 0
 	var/sunfrac = 0
 	var/adir = SOUTH // actual dir
@@ -60,7 +60,7 @@
 /obj/machinery/power/solar/attackby(obj/item/weapon/I, mob/user)
 
 	if(QUALITY_PRYING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_PRYING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			var/obj/item/solar_assembly/S = locate() in src
 			if(S)
 				S.loc = src.loc
@@ -75,7 +75,7 @@
 	..()
 
 
-/obj/machinery/power/solar/proc/healthcheck()
+/obj/machinery/power/solar/healthCheck()
 	if (src.health <= 0)
 		if(!(stat & BROKEN))
 			broken()
@@ -237,15 +237,17 @@
 		if(QUALITY_BOLT_TURNING)
 			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 				anchored = !anchored
-				user.visible_message(SPAN_NOTICE("[user] [anchored ? "un" : ""]wrenches the solar assembly into place."))
+				user.visible_message(SPAN_NOTICE("[user] [!anchored ? "un" : ""]wrenches the solar assembly into place."))
 				return
 			return
 
 		if(ABORT_CHECK)
 			return
 
-	if(anchored && !isturf(loc))
+	if(anchored && isturf(loc))
+		log_debug("1")
 		if(istype(I, /obj/item/stack/material) && (I.get_material_name() == "glass" || I.get_material_name() == "rglass"))
+			log_debug("2")
 			var/obj/item/stack/material/S = I
 			if(S.use(2))
 				glass_type = I.type

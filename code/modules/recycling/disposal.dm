@@ -704,7 +704,7 @@
 	level = BELOW_PLATING_LEVEL			// underfloor only
 	var/pipe_dir = 0		// bitmask of pipe directions
 	dir = 0				// dir will contain dominant direction for junction pipes
-	var/health = 10 	// health points 0-10
+	health = 10 	// health points 0-10
 	layer = 2.3			// slightly lower than wires and other pipes
 	var/base_icon_state	// initial icon state on map
 	var/sortType = list()
@@ -890,16 +890,16 @@
 			return
 		if(2.0)
 			health -= rand(5,15)
-			healthcheck()
+			healthCheck()
 			return
 		if(3.0)
 			health -= rand(0,15)
-			healthcheck()
+			healthCheck()
 			return
 
 
 	// test health for brokenness
-/obj/structure/disposalpipe/proc/healthcheck()
+/obj/structure/disposalpipe/healthCheck()
 	if(health < -2)
 		broken(0)
 	else if(health < 1)

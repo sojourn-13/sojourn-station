@@ -303,11 +303,11 @@ default behaviour is:
 		return FALSE	//godmode
 	halloss = amount
 
-/mob/living/proc/getMaxHealth()
+/mob/living/proc/getmaxHealth()
 	return maxHealth
 
-/mob/living/proc/setMaxHealth(var/newMaxHealth)
-	maxHealth = newMaxHealth
+/mob/living/proc/setmaxHealth(var/newmaxHealth)
+	maxHealth = newmaxHealth
 
 /mob/living/proc/Stuttering(amount)
 	stuttering = max(max(stuttering,amount),0)

@@ -96,8 +96,8 @@
 	if(!istype(H)) //Invalid input
 		return
 	if(H.Adjacent(get_turf(src))) // Like normal analysers, it can't be used at range.
-		var/total_health = round(H.health/H.getMaxHealth(), 0.1)*100
-		var/missing_health = H.getMaxHealth() - H.health
+		var/total_health = round(H.health/H.getmaxHealth(), 0.1)*100
+		var/missing_health = H.getmaxHealth() - H.health
 
 		set_pin_data(IC_OUTPUT, 1, total_health)
 		set_pin_data(IC_OUTPUT, 2, missing_health)
@@ -131,8 +131,8 @@
 	if(!istype(H)) //Invalid input
 		return
 	if(H.Adjacent(get_turf(src))) // Like normal analysers, it can't be used at range.
-		var/total_health = round(H.health/H.getMaxHealth(), 0.1)*100
-		var/missing_health = H.getMaxHealth() - H.health
+		var/total_health = round(H.health/H.getmaxHealth(), 0.1)*100
+		var/missing_health = H.getmaxHealth() - H.health
 
 		set_pin_data(IC_OUTPUT, 1, total_health)
 		set_pin_data(IC_OUTPUT, 2, missing_health)

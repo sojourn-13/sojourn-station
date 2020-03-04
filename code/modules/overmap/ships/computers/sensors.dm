@@ -122,7 +122,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "sensors"
 	var/max_health = 200
-	var/health = 200
+	health = 200
 	var/critical_heat = 50 // sparks and takes damage when active & above this heat
 	var/heat_reduction = 1.5 // mitigates this much heat per tick
 	var/current_heat = 0

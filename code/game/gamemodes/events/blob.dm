@@ -68,8 +68,8 @@
 	anchored = 1
 	mouse_opacity = 2
 
-	var/maxHealth = 20
-	var/health = 1
+	maxHealth = 20
+	health = 1
 	var/health_regen = 1.7
 	var/brute_resist = 1.25
 	var/fire_resist = 0.6

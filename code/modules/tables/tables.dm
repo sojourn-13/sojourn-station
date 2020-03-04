@@ -23,8 +23,8 @@ var/list/custom_table_appearance = list(
 	throwpass = 1
 	matter = list(MATERIAL_STEEL = 2)
 	var/flipped = 0
-	var/maxhealth = 10
-	var/health = 10
+	maxHealth = 10
+	health = 10
 
 	// For racks.
 	var/can_reinforce = 1
@@ -48,21 +48,21 @@ var/list/custom_table_appearance = list(
 		LAZYAPLUS(., reinforced.name, 1)
 
 /obj/structure/table/proc/update_material()
-	var/old_maxhealth = maxhealth
+	var/old_maxHealth = maxHealth
 	if(!material)
-		maxhealth = 10
+		maxHealth = 10
 		if(can_plate)
 			layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 		else
 			layer = TABLE_LAYER
 	else
-		maxhealth = material.integrity / 2
+		maxHealth = material.integrity / 2
 		layer = TABLE_LAYER
 
 		if(reinforced)
-			maxhealth += reinforced.integrity / 2
+			maxHealth += reinforced.integrity / 2
 
-	health += maxhealth - old_maxhealth
+	health += maxHealth - old_maxHealth
 
 /obj/structure/table/proc/take_damage(amount)
 	// If the table is made of a brittle material, and is *not* reinforced with a non-brittle material, damage is multiplied by TABLE_BRITTLE_MATERIAL_MULTIPLIER
@@ -98,8 +98,8 @@ var/list/custom_table_appearance = list(
 
 /obj/structure/table/examine(mob/user)
 	. = ..()
-	if(health < maxhealth)
-		switch(health / maxhealth)
+	if(health < maxHealth)
+		switch(health / maxHealth)
 			if(0.0 to 0.5)
 				to_chat(user, SPAN_WARNING("It looks severely damaged!"))
 			if(0.25 to 0.5)
@@ -114,7 +114,7 @@ var/list/custom_table_appearance = list(
 		usable_qualities.Add(QUALITY_SCREW_DRIVING)
 	if(custom_appearance)
 		usable_qualities.Add(QUALITY_PRYING)
-	if(health < maxhealth)
+	if(health < maxHealth)
 		usable_qualities.Add(QUALITY_WELDING)
 	if(!reinforced && !custom_appearance)
 		usable_qualities.Add(QUALITY_BOLT_TURNING)
@@ -150,10 +150,10 @@ var/list/custom_table_appearance = list(
 			return
 
 		if(QUALITY_WELDING)
-			if(health < maxhealth)
+			if(health < maxHealth)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY,  required_stat = STAT_MEC))
 					user.visible_message(SPAN_NOTICE("\The [user] repairs some damage to \the [src]."),SPAN_NOTICE("You repair some damage to \the [src]."))
-					health = min(health+(maxhealth/5), maxhealth)//max(health+(maxhealth/5), maxhealth) // 20% repair per application
+					health = min(health+(maxHealth/5), maxHealth)//max(health+(maxHealth/5), maxHealth) // 20% repair per application
 			return
 
 		if(QUALITY_BOLT_TURNING)

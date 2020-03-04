@@ -7,11 +7,11 @@
 	layer = ABOVE_OBJ_LAYER //Just above doors
 	anchored = TRUE
 	flags = ON_BORDER
-	var/maxhealth = 20
+	maxHealth = 20
 	var/resistance = RESISTANCE_NONE	//Incoming damage is reduced by this flat amount before being subtracted from health. Defines found in code\__defines\weapons.dm
 	var/maximal_heat = T0C + 100 		// Maximal heat before this window begins taking damage from fire
 	var/damage_per_fire_tick = 2.0 		// Amount of damage per fire tick. Regular windows are not fireproof so they might as well break quickly.
-	var/health
+	health
 	var/ini_dir = null
 	var/state = 2
 	var/reinf = 0
@@ -35,10 +35,10 @@
 /obj/structure/window/examine(mob/user)
 	. = ..(user)
 
-	if(health == maxhealth)
+	if(health == maxHealth)
 		to_chat(user, SPAN_NOTICE("It looks fully intact."))
 	else
-		var/perc = health / maxhealth
+		var/perc = health / maxHealth
 		if(perc > 0.75)
 			to_chat(user, SPAN_NOTICE("It has a few cracks."))
 		else if(perc > 0.5)
@@ -77,18 +77,18 @@
 	else
 		if(sound_effect)
 			playsound(loc, 'sound/effects/Glasshit.ogg', 100, 1)
-		if(health < maxhealth / 4 && initialhealth >= maxhealth / 4)
+		if(health < maxHealth / 4 && initialhealth >= maxHealth / 4)
 			visible_message("[src] looks like it's about to shatter!" )
-		else if(health < maxhealth / 2 && initialhealth >= maxhealth / 2)
+		else if(health < maxHealth / 2 && initialhealth >= maxHealth / 2)
 			visible_message("[src] looks seriously damaged!" )
-		else if(health < maxhealth * 3/4 && initialhealth >= maxhealth * 3/4)
+		else if(health < maxHealth * 3/4 && initialhealth >= maxHealth * 3/4)
 			visible_message("Cracks begin to appear in [src]!" )
 	return damage
 
 /obj/structure/window/proc/apply_silicate(var/amount)
-	if(health < maxhealth) // Mend the damage
-		health = min(health + amount * 3, maxhealth)
-		if(health == maxhealth)
+	if(health < maxHealth) // Mend the damage
+		health = min(health + amount * 3, maxHealth)
+		if(health == maxHealth)
 			visible_message("[src] looks fully repaired." )
 	else // Reinforce
 		silicate = min(silicate + amount, 100)
@@ -285,7 +285,7 @@
 		usable_qualities.Add(QUALITY_SCREW_DRIVING)
 	if(reinf && state <= 1)
 		usable_qualities.Add(QUALITY_PRYING)
-	if (health < maxhealth)
+	if (health < maxHealth)
 		usable_qualities.Add(QUALITY_SEALING)
 
 	//If you set intent to harm, you can hit the window with tools to break it. Set to any other intent to use tools on it
@@ -294,9 +294,9 @@
 		switch(tool_type)
 			if(QUALITY_SEALING)
 				user.visible_message("[user] starts sealing up cracks in [src] with the [I]", "You start sealing up cracks in [src] with the [I]")
-				if (I.use_tool(user, src, 60 + ((maxhealth - health)*3), QUALITY_SEALING, FAILCHANCE_NORMAL, STAT_MEC))
+				if (I.use_tool(user, src, 60 + ((maxHealth - health)*3), QUALITY_SEALING, FAILCHANCE_NORMAL, STAT_MEC))
 					to_chat(user, SPAN_NOTICE("The [src] looks pretty solid now!"))
-					health = maxhealth
+					health = maxHealth
 			if(QUALITY_BOLT_TURNING)
 				if(!anchored && (!state || !reinf))
 					if(!glasstype)
@@ -409,7 +409,7 @@
 	if (start_dir)
 		set_dir(start_dir)
 
-	health = maxhealth
+	health = maxHealth
 
 	ini_dir = dir
 
@@ -516,7 +516,7 @@
 	glasstype = /obj/item/stack/material/glass
 	maximal_heat = T0C + 200	// Was 100. Spaceship windows surely surpass coffee pots.
 	damage_per_fire_tick = 3.0	// Was 2. Made weaker than rglass per tick.
-	maxhealth = 15
+	maxHealth = 15
 	resistance = RESISTANCE_NONE
 
 /obj/structure/window/basic/full
@@ -524,7 +524,7 @@
 	icon = 'icons/obj/structures/windows.dmi'
 	icon_state = "fwindow"
 	alpha = 120
-	maxhealth = 40
+	maxHealth = 40
 	resistance = RESISTANCE_NONE
 	flags = null
 
@@ -537,7 +537,7 @@
 	glasstype = /obj/item/stack/material/glass/plasmaglass
 	maximal_heat = T0C + 5227  // Safe use temperature at 5500 kelvin. Easy to remember.
 	damage_per_fire_tick = 1.5 // Lowest per-tick damage so overheated supermatter chambers have some time to respond to it. Will still shatter before a delam.
-	maxhealth = 150
+	maxHealth = 150
 	resistance = RESISTANCE_AVERAGE
 
 /obj/structure/window/plasmabasic/full
@@ -545,7 +545,7 @@
 	icon = 'icons/obj/structures/windows.dmi'
 	icon_state = "plasmawindow_mask"
 	alpha = 150
-	maxhealth = 200
+	maxHealth = 200
 	resistance = RESISTANCE_AVERAGE
 	flags = null
 
@@ -559,7 +559,7 @@
 	damage_per_fire_tick = 2.0
 	glasstype = /obj/item/stack/material/glass/reinforced
 
-	maxhealth = 50
+	maxHealth = 50
 	resistance = RESISTANCE_FRAGILE
 
 /obj/structure/window/New(Loc, constructed=0)
@@ -574,7 +574,7 @@
 	icon = 'icons/obj/structures/windows.dmi'
 	icon_state = "fwindow"
 	alpha = 150
-	maxhealth = 80
+	maxHealth = 80
 	resistance = RESISTANCE_FRAGILE
 	flags = null
 
@@ -587,7 +587,7 @@
 	glasstype = /obj/item/stack/material/glass/plasmarglass
 	maximal_heat = T0C + 5453 // Safe use temperature at 6000 kelvin.
 	damage_per_fire_tick = 1.5
-	maxhealth = 200
+	maxHealth = 200
 	resistance = RESISTANCE_IMPROVED
 
 /obj/structure/window/reinforced/plasma/full
@@ -595,7 +595,7 @@
 	icon = 'icons/obj/structures/windows.dmi'
 	icon_state = "plasmarwindow_mask"
 	alpha = 150
-	maxhealth = 250
+	maxHealth = 250
 	resistance = RESISTANCE_IMPROVED
 	flags = null
 
@@ -618,7 +618,7 @@
 	icon = 'icons/obj/podwindows.dmi'
 	icon_state = "window"
 	basestate = "window"
-	maxhealth = 300
+	maxHealth = 300
 	resistance = RESISTANCE_IMPROVED
 	reinf = 1
 	basestate = "w"

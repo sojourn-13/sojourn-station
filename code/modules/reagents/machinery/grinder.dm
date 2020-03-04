@@ -1,7 +1,7 @@
 #define REAGENTS_PER_SHEET 20
 
 /obj/machinery/reagentgrinder
-	name = "all-in-one grinder"
+	name = "All-In-One Grinder"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "juicer1"
 	layer = BELOW_OBJ_LAYER
@@ -10,7 +10,11 @@
 	use_power = 1
 	idle_power_usage = 5
 	active_power_usage = 100
-	var/nano_template
+	var/nano_template = "grinder.tmpl"
+	circuit = /obj/item/weapon/circuitboard/reagentgrinder
+	var/inuse = 0
+	var/obj/item/weapon/reagent_containers/beaker = null
+
 	var/limit = 10
 	var/list/holdingitems = list()
 	var/list/sheet_reagents = list(
@@ -160,16 +164,9 @@
 
 
 /obj/machinery/reagentgrinder/portable
-	name = "All-In-One Grinder"
-	icon = 'icons/obj/kitchen.dmi'
-	icon_state = "juicer1"
-	layer = BELOW_OBJ_LAYER
 	density = FALSE
 	anchored = FALSE
-	circuit = /obj/item/weapon/circuitboard/reagentgrinder
-	nano_template = "grinder.tmpl"
-	var/inuse = 0
-	var/obj/item/weapon/reagent_containers/beaker = null
+
 
 /obj/item/weapon/circuitboard/reagentgrinder
 	name = T_BOARD("reagent grinder")
