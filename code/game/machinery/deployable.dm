@@ -55,8 +55,8 @@ for reference:
 	icon_state = "barricade"
 	anchored = 1.0
 	density = 1.0
-	var/health = 100
-	var/maxhealth = 100
+	health = 100
+	maxHealth = 100
 	var/material/material
 
 /obj/structure/barricade/New(newloc, material_name)
@@ -70,8 +70,8 @@ for reference:
 	name = "[material.display_name] barricade"
 	desc = "This space is blocked off by a barricade made of [material.display_name]."
 	color = material.icon_colour
-	maxhealth = material.integrity
-	health = maxhealth
+	maxHealth = material.integrity
+	health = maxHealth
 
 /obj/structure/barricade/get_matter()
 	. = ..()
@@ -86,14 +86,14 @@ for reference:
 		var/obj/item/stack/D = W
 		if(D.get_material_name() != material.name)
 			return //hitting things with the wrong type of stack usually doesn't produce messages, and probably doesn't need to.
-		if(health < maxhealth)
+		if(health < maxHealth)
 			if(D.get_amount() < 1)
 				to_chat(user, SPAN_WARNING("You need one sheet of [material.display_name] to repair \the [src]."))
 				return
 			visible_message(SPAN_NOTICE("[user] begins to repair \the [src]."))
-			if(do_after(user,20,src) && health < maxhealth)
+			if(do_after(user,20,src) && health < maxHealth)
 				if(D.use(1))
-					health = maxhealth
+					health = maxHealth
 					visible_message(SPAN_NOTICE("[user] repairs \the [src]."))
 				return
 		return
@@ -152,8 +152,8 @@ for reference:
 	anchored = 0.0
 	density = 1.0
 	icon_state = "barrier0"
-	var/health = 100.0
-	var/maxhealth = 100.0
+	health = 100.0
+	maxHealth = 100.0
 	var/locked = 0.0
 //	req_access = list(access_maint_tunnels)
 
@@ -183,8 +183,8 @@ for reference:
 				return
 		return
 	else if(istype(W, /obj/item/weapon/tool/wrench))
-		if(health < maxhealth)
-			health = maxhealth
+		if(health < maxHealth)
+			health = maxHealth
 			emagged = 0
 			req_access = list(access_security)
 			visible_message(SPAN_WARNING("[user] repairs \the [src]!"))

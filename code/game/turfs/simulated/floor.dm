@@ -19,8 +19,8 @@
 	heat_capacity = 10000
 	var/lava = 0
 	var/overrided_icon_state
-	var/health = 100
-	var/maxHealth = 100
+	health = 100
+	maxHealth = 100
 
 
 /turf/simulated/floor/Entered(var/atom/movable/AM, var/atom/old_loc)

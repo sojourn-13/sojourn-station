@@ -7,7 +7,7 @@
 	var/randpixel = 6
 	var/abstract = 0
 	var/r_speed = 1.0
-	var/health = null
+	health = null
 	var/max_health = null
 	var/burn_point = null
 	var/burning = null

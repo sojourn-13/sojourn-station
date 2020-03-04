@@ -6,7 +6,7 @@
 	density = 1
 	anchored = 1
 	unacidable = 1//Dissolving the case would also delete the gun.
-	var/health = 60
+	health = 60
 	var/occupied = 1
 	var/destroyed = 0
 
@@ -21,20 +21,20 @@
 		if (2)
 			if (prob(50))
 				src.health -= 15
-				src.healthcheck()
+				src.healthCheck()
 		if (3)
 			if (prob(50))
 				src.health -= 5
-				src.healthcheck()
+				src.healthCheck()
 
 
 /obj/structure/displaycase/bullet_act(var/obj/item/projectile/Proj)
 	health -= Proj.get_structure_damage()
 	..()
-	src.healthcheck()
+	src.healthCheck()
 	return
 
-/obj/structure/displaycase/proc/healthcheck()
+/obj/structure/displaycase/healthCheck()
 	if (src.health <= 0)
 		if (!( src.destroyed ))
 			src.density = 0
@@ -57,7 +57,7 @@
 /obj/structure/displaycase/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	src.health -= W.force
-	src.healthcheck()
+	src.healthCheck()
 	..()
 	return
 
@@ -75,5 +75,5 @@
 			if ((O.client && !( O.blinded )))
 				to_chat(O, SPAN_WARNING("[usr] kicks the display case."))
 		src.health -= 2
-		healthcheck()
+		healthCheck()
 		return

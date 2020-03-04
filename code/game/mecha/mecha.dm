@@ -26,7 +26,7 @@
 	var/mob/living/carbon/occupant = null
 	var/list/dropped_items = list()
 
-	var/health = 300 //health is health
+	health = 300 //health is health
 	var/deflect_chance = 10 //chance to deflect incoming projectiles, hits, or lesser the effect of ex_act.
 	var/r_deflect_coeff = 1
 	var/m_deflect_coeff = 1

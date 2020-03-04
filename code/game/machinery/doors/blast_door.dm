@@ -116,7 +116,7 @@
 				to_chat(usr, SPAN_NOTICE("[src]'s motors resist your effort."))
 		return
 	if(istype(I, /obj/item/stack/material) && I.get_material_name() == "plasteel")
-		var/amt = CEILING((maxhealth - health)/150, 1)
+		var/amt = CEILING((maxHealth - health)/150, 1)
 		if(!amt)
 			to_chat(usr, SPAN_NOTICE("\The [src] is already fully repaired."))
 			return
@@ -162,7 +162,7 @@
 // Parameters: None
 // Description: Fully repairs the blast door.
 /obj/machinery/door/blast/proc/repair()
-	health = maxhealth
+	health = maxHealth
 	if(stat & BROKEN)
 		stat &= ~BROKEN
 
@@ -181,7 +181,7 @@
 	icon_state_closed = "pdoor1"
 	icon_state_closing = "pdoorc1"
 	icon_state = "pdoor1"
-	maxhealth = 400
+	maxHealth = 400
 	block_air_zones = 1
 
 /obj/machinery/door/blast/regular/open

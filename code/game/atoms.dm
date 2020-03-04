@@ -38,6 +38,29 @@
 	var/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSoverlays to manipulate
 	var/list/priority_overlays	//overlays that should remain on top and not normally removed when using cut_overlay functions, like c4.
 
+	// All physical objects that exist have a somewhat metaphysical representation of their integrity
+    // Why are areas derived from /atom instead of /datum?  They're abstracts!
+	var/health    = 99999 // RPG boss unless  otherwise defined
+	var/maxHealth = 99999
+
+	// And a status
+	var/stat = 0
+
+
+/atom/proc/healthCheck()
+	if (src.health <= 0)
+		if(!(stat & BROKEN))
+			breakObject()
+		else
+			return
+	return
+
+atom/proc/breakObject()
+	if(!(stat & BROKEN))
+		stat |= BROKEN
+
+	return
+
 
 
 /atom/New(loc, ...)
@@ -596,7 +619,7 @@ its easier to just keep the beam vertical.
 		O.show_message(message, 1, blind_message, 2)
 	for(var/mob in seeing_mobs)
 		var/mob/M = mob
-		if(M.see_invisible >= invisibility && MOB_CAN_SEE_PLANE(M, plane))
+		if(M.see_invisible >= invisibility /*&& MOB_CAN_SEE_PLANE(M, plane)*/)
 			M.show_message(message, 1, blind_message, 2)
 		else if(blind_message)
 			M.show_message(blind_message, 2)

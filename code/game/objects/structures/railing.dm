@@ -11,8 +11,8 @@
 	icon_state = "railing0"
 	matter = list(MATERIAL_STEEL = 4)
 	var/broken = 0
-	var/health=70
-	var/maxhealth=70
+	health=70
+	maxHealth=70
 	var/check = 0
 	var/icon_modifier = ""	//adds string to icon path for color variations
 
@@ -59,8 +59,8 @@
 
 /obj/structure/railing/examine(mob/user)
 	. = ..()
-	if(health < maxhealth)
-		switch(health / maxhealth)
+	if(health < maxHealth)
+		switch(health / maxHealth)
 			if(0.0 to 0.5)
 				to_chat(user, SPAN_WARNING("It looks severely damaged!"))
 			if(0.25 to 0.5)
@@ -233,7 +233,7 @@
 
 /obj/structure/railing/attackby(obj/item/I, mob/user)
 	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING)
-	if(health < maxhealth)
+	if(health < maxHealth)
 		usable_qualities.Add(QUALITY_WELDING)
 	if(!anchored)
 		usable_qualities.Add(QUALITY_BOLT_TURNING)
@@ -249,10 +249,10 @@
 			return
 
 		if(QUALITY_WELDING)
-			if(health < maxhealth)
+			if(health < maxHealth)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					user.visible_message(SPAN_NOTICE("\The [user] repairs some damage to \the [src]."), SPAN_NOTICE("You repair some damage to \the [src]."))
-					health = min(health+(maxhealth/5), maxhealth)//max(health+(maxhealth/5), maxhealth) // 20% repair per application
+					health = min(health+(maxHealth/5), maxHealth)//max(health+(maxHealth/5), maxHealth) // 20% repair per application
 			return
 
 		if(QUALITY_BOLT_TURNING)
@@ -314,7 +314,7 @@
 		usr.forceMove(get_turf(src))
 
 	usr.visible_message(SPAN_WARNING("[user] climbed over \the [src]!"))
-	if(!anchored)	take_damage(maxhealth) // Fatboy
+	if(!anchored)	take_damage(maxHealth) // Fatboy
 	climbers -= user
 
 /obj/structure/railing/get_fall_damage(var/turf/from, var/turf/dest)

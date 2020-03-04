@@ -6,7 +6,7 @@
 	desc = "It's a gruesome pile of thick, sticky resin shaped like a nest."
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "nest"
-	var/health = 100
+	health = 100
 
 /obj/structure/bed/nest/update_icon()
 	return
@@ -77,9 +77,9 @@
 	playsound(loc, 'sound/effects/attackblob.ogg', 100, 1)
 	for(var/mob/M in viewers(src, 7))
 		M.show_message(SPAN_WARNING("[user] hits [src] with [W]!"), 1)
-	healthcheck()
+	healthCheck()
 
-/obj/structure/bed/nest/proc/healthcheck()
+/obj/structure/bed/nest/healthCheck()
 	if(health <=0)
 		density = 0
 		qdel(src)

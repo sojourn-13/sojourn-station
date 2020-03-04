@@ -3,7 +3,7 @@
 	icon = 'icons/obj/atmos.dmi'
 	icon_state = "yellow"
 	density = 1
-	var/health = 100.0
+	health = 100.0
 	flags = CONDUCT
 	w_class = ITEM_SIZE_HUGE
 
@@ -162,9 +162,9 @@ update_flag
 /obj/machinery/portable_atmospherics/canister/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > temperature_resistance)
 		health -= 5
-		healthcheck()
+		healthCheck()
 
-/obj/machinery/portable_atmospherics/canister/proc/healthcheck()
+/obj/machinery/portable_atmospherics/canister/healthCheck()
 	if(destroyed)
 		return 1
 
@@ -237,7 +237,7 @@ update_flag
 
 	if(Proj.damage)
 		src.health -= round(Proj.damage / 2)
-		healthcheck()
+		healthCheck()
 	..()
 
 /obj/machinery/portable_atmospherics/canister/attackby(var/obj/item/weapon/I, var/mob/user)
@@ -278,7 +278,7 @@ update_flag
 		visible_message(SPAN_WARNING("\The [user] hits \the [src] with \a [I]!"))
 		src.health -= I.force
 		src.add_fingerprint(user)
-		healthcheck()
+		healthCheck()
 
 	return
 

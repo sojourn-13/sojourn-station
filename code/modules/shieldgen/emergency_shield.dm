@@ -9,7 +9,7 @@
 	anchored = 1
 	unacidable = 1
 	var/const/max_health = 200
-	var/health = max_health //The shield can only take so much beating (prevents perma-prisons)
+	health = max_health //The shield can only take so much beating (prevents perma-prisons)
 	var/shield_generate_power = 7500	//how much power we use when regenerating
 	var/shield_idle_power = 1500		//how much power we use when just being sustained.
 
@@ -127,7 +127,7 @@
 	anchored = 0
 	req_access = list(access_engine)
 	var/const/max_health = 100
-	var/health = max_health
+	health = max_health
 	var/active = 0
 	var/malfunction = 0 //Malfunction causes parts of the shield to slowly dissapate
 	var/list/deployed_shields = list()

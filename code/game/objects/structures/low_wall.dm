@@ -34,8 +34,8 @@
 
 	var/construction_stage
 
-	var/maxhealth = 600
-	var/health = 600
+	maxHealth = 600
+	health = 600
 
 	var/hitsound = 'sound/weapons/Genhit.ogg'
 	climbable = TRUE
@@ -395,10 +395,10 @@
 					for(var/obj/effect/overlay/wallrot/WR in src)
 						qdel(WR)
 					return
-			if(health < maxhealth)
+			if(health < maxHealth)
 				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 					to_chat(user, SPAN_NOTICE("You repair the damage to [src]."))
-					take_damage(maxhealth - health)
+					take_damage(maxHealth - health)
 					return
 			if(isnull(construction_stage))
 				to_chat(user, SPAN_NOTICE("You begin removing the outer plating..."))

@@ -41,10 +41,10 @@
 			if(locate(/obj/item/organ/internal/xenos/hivenode) in M.internal_organs)
 				visible_message("<span class='alium'>\The [user] strokes \the [name] and it melts away!</span>")
 				health = 0
-				healthcheck()
+				healthCheck()
 				return
 		visible_message(SPAN_DANGER("\The [user] claws at \the [src]!"))
 		// Todo check attack datums.
 		health -= rand(5,10)
-	healthcheck()
+	healthCheck()
 	return

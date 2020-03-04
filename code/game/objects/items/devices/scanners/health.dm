@@ -42,7 +42,7 @@
 
 	if ((CLUMSY in user.mutations) && prob(50))
 		. = list()
-		
+
 		user.visible_message(SPAN_NOTICE("\The [user] runs \the [scanner] over the floor."))
 		. += span("highlight", "<b>Scan results for the floor:</b>")
 		. += span("highlight", "Overall Status: Healthy")
