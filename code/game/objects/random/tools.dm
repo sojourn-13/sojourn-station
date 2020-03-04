@@ -127,7 +127,7 @@
 
 
 /obj/random/tool/advanced/onestar
-	name = "random onestar tool"
+	name = "random greyson tool"
 
 
 /obj/random/tool/advanced/onestar/item_to_spawn()

@@ -44,7 +44,7 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/neotheologybook
-	display_name = "NeoTheology ritual book"
+	display_name = "Abolutism ritual book"
 	path = /obj/item/weapon/book/ritual/cruciform
 	cost = 2
 

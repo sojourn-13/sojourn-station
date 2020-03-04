@@ -211,7 +211,7 @@
 	autolinkers = list("centcomm")
 
 /obj/machinery/telecomms/server/presets/nt
-	id = "NT Voice Server"
+	id = "Church Server"
 	freq_listening = list(NT_FREQ)
 	autolinkers = list("nt")
 

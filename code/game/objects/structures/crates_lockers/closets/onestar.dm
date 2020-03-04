@@ -3,8 +3,8 @@
 //// Loot table on all tiers
 // Tier 1
 /obj/structure/closet/onestar/tier1
-	name = "\improper OneStar forgotten closet"
-	desc = "It's an old OneStar closet. Doesn't seem like it contains anything worthwhile. Probably."
+	name = "\improper Greyson forgotten closet"
+	desc = "It's an old Greyson closet. Doesn't seem like it contains anything worthwhile. Probably."
 	icon_state = "syndicate"
 
 /obj/structure/closet/onestar/tier1/populate_contents()
@@ -25,8 +25,8 @@
 
 // Tier 2
 /obj/structure/closet/onestar/tier2
-	name = "\improper OneStar forgotten closet"
-	desc = "It's an old OneStar closet. Looks like there might be some decent stuff inside."
+	name = "\improper Greyson forgotten closet"
+	desc = "It's an old Greyson closet. Looks like there might be some decent stuff inside."
 	icon_state = "syndicate"
 
 /obj/structure/closet/onestar/tier2/populate_contents()
@@ -47,8 +47,8 @@
 
 // Tier 3
 /obj/structure/closet/onestar/tier3
-	name = "\improper OneStar forgotten closet"
-	desc = "It's an old OneStar closet. Might contain something very valuable, or so you hope."
+	name = "\improper Greyson forgotten closet"
+	desc = "It's an old Greyson closet. Might contain something very valuable, or so you hope."
 	icon_state = "syndicate"
 
 /obj/structure/closet/onestar/tier3/populate_contents()
@@ -75,7 +75,7 @@
 ////Normal
 //Tier 1
 /obj/structure/closet/onestar/tier1/normal
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 70
 
@@ -85,7 +85,7 @@
 
 //Tier 2
 /obj/structure/closet/onestar/tier2/normal
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 30
 
@@ -95,7 +95,7 @@
 
 //Tier 3
 /obj/structure/closet/onestar/tier3/normal
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 10
 
@@ -107,7 +107,7 @@
 ////Special
 //Tier 1
 /obj/structure/closet/onestar/tier1/special
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 70
 
@@ -122,7 +122,7 @@
 
 //Tier 2
 /obj/structure/closet/onestar/tier2/special
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 30
 
@@ -137,7 +137,7 @@
 
 //Tier 3
 /obj/structure/closet/onestar/tier3/special
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 10
 
@@ -153,7 +153,7 @@
 ////Mineral
 //Tier 1
 /obj/structure/closet/onestar/tier1/mineral
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 70
 
@@ -168,7 +168,7 @@
 
 //Tier 2
 /obj/structure/closet/onestar/tier2/mineral
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 30
 
@@ -183,7 +183,7 @@
 
 //Tier 3
 /obj/structure/closet/onestar/tier3/mineral
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 10
 
@@ -199,7 +199,7 @@
 ////Medical
 //Tier 1
 /obj/structure/closet/onestar/tier1/medical
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 70
 
@@ -214,7 +214,7 @@
 
 //Tier 2
 /obj/structure/closet/onestar/tier2/medical
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 30
 
@@ -229,7 +229,7 @@
 
 //Tier 3
 /obj/structure/closet/onestar/tier3/medical
-	name = "\improper OneStar forgotten closet"
+	name = "\improper Greyson forgotten closet"
 	icon_state = "syndicate"
 	old_chance = 10
 

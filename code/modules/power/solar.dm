@@ -71,7 +71,7 @@
 	else if (I)
 		src.add_fingerprint(user)
 		src.health -= I.force
-		src.healthcheck()
+		//src.healthcheck()
 	..()
 
 

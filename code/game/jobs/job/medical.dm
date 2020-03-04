@@ -123,7 +123,7 @@ Your second loyalty is to the colonies crew and to your coworkers in both branch
 	flag = CHEMIST
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
-	faction = "Nadezhda Colony"
+	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief Biolab Overseer"
@@ -174,7 +174,7 @@ Your second loyalty is to the colonies crew and to your coworkers in both branch
 	flag = PSYCHIATRIST
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
-	faction = "Nadezhda Colony"
+	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
 	wage = WAGE_PROFESSIONAL
@@ -222,7 +222,7 @@ Your second loyalty is to the colonies crew and to your coworkers in both branch
 	flag = PARAMEDIC
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
-	faction = "Nadezhda Colony"
+	faction = MAP_FACTION
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Soteria Biolab Overseer"

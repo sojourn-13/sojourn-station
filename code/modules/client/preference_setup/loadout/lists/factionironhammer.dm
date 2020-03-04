@@ -58,11 +58,13 @@
 	display_name = "cap, SEC field"
 	path = /obj/item/clothing/head/soft/sec2soft
 	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsmen","Blackshield Trooper","Marshal Officer")
+	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/capsarge
 	display_name = "cap, supply specialist"
 	path = /obj/item/clothing/head/soft/sarge2soft
 	allowed_roles = list("Supply Specialist")
+	sort_category = "Faction: Security"
 
 /datum/gear/factionSecurity/gorka_ih
 	display_name = "gorka jacket, security"

@@ -49,7 +49,7 @@
 /obj/item/device/encryptionkey/headset_church
 	name = "church radio encryption key"
 	icon_state = "nt_cypherkey"
-	channels = list("NT Voice" = 1)
+	channels = list("Church" = 1)
 
 /obj/item/device/encryptionkey/headset_sci
 	name = "soteria science radio encryption key"
@@ -69,13 +69,13 @@
 /obj/item/device/encryptionkey/heads/captain
 	name = "premier's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "NT Voice" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
+	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
 
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
 	desc = "Integrated encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 1, "NT Voice" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1)
+	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1)
 
 /obj/item/device/encryptionkey/heads/rd
 	name = "research overseer's encryption key"
@@ -105,7 +105,7 @@
 /obj/item/device/encryptionkey/heads/hop
 	name = "Steward's encryption key"
 	icon_state = "hop_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "NT Voice" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
+	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
 
 /obj/item/device/encryptionkey/heads/merchant
 	name = "Lonestar executive radio encryption key"
@@ -115,7 +115,7 @@
 /obj/item/device/encryptionkey/heads/preacher
 	name = "Prime's radio encryption key"
 	icon_state = "preach_cypherkey"
-	channels = list("NT Voice" = 1, "Command" = 1)
+	channels = list("Church" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/headset_cargo
 	name = "lonestar radio encryption key"
