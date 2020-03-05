@@ -30,15 +30,15 @@
 	var/tooltype = "os"
 
 /mob/living/simple_animal/hostile/onestar_custodian/New()
-	..()
+	. = ..()
 	marks_type = pick("green", "blue", "pink", "orange", "cyan", "red", "os")
 	screen_type = pick("green", "os_red", "yellow", "cyan", "red", "os")
 	update_icon()
 
 
-/mob/living/simple_animal/hostile/onestar_custodian/proc/update_icon()
-	..()
-	cut_overlays()
+/mob/living/simple_animal/hostile/onestar_custodian/update_icon()
+	. = ..()
+	overlays.Cut()
 	var/image/shell_I = image(icon, src, "shell_[shell_type]")
 	var/image/marks_I = image(icon, src, "marks_[marks_type]")
 	var/image/screen_I = image(icon, src, "screen_[screen_type]")
