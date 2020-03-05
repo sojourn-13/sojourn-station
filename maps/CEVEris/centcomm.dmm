@@ -443,7 +443,7 @@
 "kn" = (/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 8; frequency = 1331; id_tag = "merc_shuttle_pump"},/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
 "ko" = (/obj/machinery/door/airlock/external{density = 1; frequency = 1331; id_tag = "merc_shuttle_outer"; name = "Ship External Access"; req_access = list(150)},/obj/machinery/door/blast/regular{density = 0; icon_state = "pdoor0"; id = "smindicate"; name = "Outer Airlock"; opacity = 0},/turf/simulated/shuttle/plating,/area/shuttle/mercenary)
 "kp" = (/turf/simulated/shuttle/floor{icon_state = "floor7"},/area/shuttle/mercenary)
-"kq" = (/obj/item/weapon/cigbutt,/turf/simulated/shuttle/floor{icon_state = "floor7"},/area/shuttle/mercenary)
+"kq" = (/obj/item/trash/cigbutt,/turf/simulated/shuttle/floor{icon_state = "floor7"},/area/shuttle/mercenary)
 "kr" = (/obj/machinery/door/window{dir = 2; name = "Seating"; req_access = list(150)},/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
 "ks" = (/obj/machinery/door/airlock/external{frequency = 1331; id_tag = "merc_base_hatch"; req_access = list(150)},/turf/unsimulated/floor{icon_state = "dark"},/area/centcom/merc_base)
 "kt" = (/obj/structure/table/standard,/obj/machinery/computer/pod/old/syndicate{dir = 4; id = "smindicate"},/obj/machinery/door/window{dir = 4; name = "Blast Door Control"; req_access = list(150)},/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)

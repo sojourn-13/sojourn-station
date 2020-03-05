@@ -37,7 +37,7 @@
 			src.Entered(AM)
 			return
 
-/turf/proc/update_icon()
+/turf/update_icon()
 	return
 
 /turf/Initialize()

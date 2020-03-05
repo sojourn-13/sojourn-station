@@ -46,6 +46,8 @@
 	// And a status
 	var/stat = 0
 
+/atom/proc/update_icon()
+	return
 
 /atom/proc/healthCheck()
 	if (src.health <= 0)
