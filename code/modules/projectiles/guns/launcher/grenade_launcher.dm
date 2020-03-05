@@ -131,7 +131,7 @@
 	else
 		to_chat(user, SPAN_WARNING("\The [src] is empty."))
 
-/* Ironhammer stuff */
+/* Marshal stuff */
 
 /obj/item/weapon/gun/launcher/grenade/lenar
 	name = "HS GL \"Lenar\""

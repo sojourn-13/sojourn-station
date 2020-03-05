@@ -9,19 +9,19 @@
 	name = "Nanotrasen Corporation"
 	textcolor = "blue"
 	icon_state = "nt"
-	about = "Nanotrasen is a powerful corporation having a monopoly on plasma production, experimental bluespace technologies and ANGEL, an extensive network of cloning stations. This corporation has the highest net income among all known organizations in the whole universe; however, they are corrupted, spying on their employees and enganging in shady business practices."
+	about = "Nanotrasen is a minor corporation having a monopoly on computer networks and various random production assets."
 
 /datum/corporation/ironhammer
 	name = "Ironhammer Security"
 	textcolor = "#505050"
 	icon_state = "ironhammer"
-	about = "This is a private military company which provides security services to clients across the Universe. One of the five members of Hansa trade union. This company conducts police functions on Hansa planets and numerous space stations and ships."
+	about = "This is a private military company that's quite old and has long since gone out of business. There name can still be found occassionally, as they were once quite big."
 
 /datum/corporation/frozenstar
-	name = "Frozen Star"
+	name = "Heckler and Sons"
 	textcolor = "#008585"
 	icon_state = "frozenstar"
-	about = "Frozen Star is a known arms manufacturer selling simple and reliable firearms. One of the five members of Hansa Trade Union."
+	about = "Heckler and Sons is a known arms manufacturer selling simple and reliable firearms. One of the five members of Hansa Trade Union."
 
 /datum/corporation/valhalla
     name = "Valhalla Shipyards"

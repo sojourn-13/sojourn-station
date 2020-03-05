@@ -266,11 +266,15 @@
 //Trust me I'm an engineer
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
-	"Ironhammer Operative" = "Operative",\
-	"Ironhammer Inspector" = "Inspector",\
-	"Ironhammer Gunnery Sergeant" = "Sergeant",\
-	"Ironhammer Commander" = "Lieutenant",\
-	"Captain" = "Captain",\
+	"Marshal Officer" = "Officer",\
+	"Marshal Ranger" = "Ranger",\
+	"Marshal Supply Specialist" = "Specialist",\
+	"Marshal Warrant Officer" = "Warrant Officer",\
+	"Blackshield Militia Commander" = "Commander",\
+	"Blackshield Corpsmen" = "Corpsmen",\
+	"Blackshield Trooper" = "Trooper",\
+	"Premier" = "Premier",\
+	"Steward" = "Steward",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)

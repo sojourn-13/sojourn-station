@@ -1,5 +1,5 @@
 /obj/item/weapon/robot_module/robot/knine
-	name = "Ironhammer K9 Module"
+	name = "Security K9 Module"
 	sprites = list(
 					"K9 Hound" = "k9",
 					"V2 K9 Hound" = "ihsechound",
@@ -54,7 +54,7 @@
 	..()
 
 /obj/item/weapon/robot_module/robot/medihound
-	name = "Moebius Medihound Module"
+	name = "Soteria Medihound Module"
 	sprites = list(
 					"Medical Hound" = "medihound",
 					"Dark Medical Hound (Static)" = "medihounddark",
@@ -204,7 +204,7 @@
 	..()
 
 /obj/item/weapon/robot_module/robot/science
-	name = "Moebius Science Hound Module"
+	name = "Soteria Science Hound Module"
 	sprites = list(
 					"Research Hound" = "science",
 					)
@@ -263,7 +263,7 @@
 	..()
 
 /obj/item/weapon/robot_module/robot/engiedog
-	name = "Technomancer Hound Module"
+	name = "Artificer Hound Module"
 	sprites = list(
 					"V2 Engihound" = "thottbot",
 					"Pupdozer" = "pupdozer",

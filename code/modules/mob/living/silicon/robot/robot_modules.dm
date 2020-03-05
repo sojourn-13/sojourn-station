@@ -9,11 +9,11 @@ var/global/list/robot_modules = list(
 	"Engineering"				= /obj/item/weapon/robot_module/engineering/general,
 	"Construction"				= /obj/item/weapon/robot_module/engineering/construction,
 	"Custodial" 				= /obj/item/weapon/robot_module/custodial,
-	"Moebius Medihound"			= /obj/item/weapon/robot_module/robot/medihound,
-	"Ironhammer K9 Unit"		= /obj/item/weapon/robot_module/robot/knine,
+	"Soteria Medihound"			= /obj/item/weapon/robot_module/robot/medihound,
+	"Security K9 Unit"		= /obj/item/weapon/robot_module/robot/knine,
 	"Custodial Hound"			= /obj/item/weapon/robot_module/robot/scrubpup,
-	"Moebius Scihound"			= /obj/item/weapon/robot_module/robot/science,
-	"Technomancer Engihound"	= /obj/item/weapon/robot_module/robot/engiedog,
+	"Soteria Scihound"			= /obj/item/weapon/robot_module/robot/science,
+	"Guild Engihound"	= /obj/item/weapon/robot_module/robot/engiedog,
 	//"Combat" 					= /obj/item/weapon/robot_module/combat,
 	)
 
@@ -28,18 +28,10 @@ var/global/list/robot_modules = list(
 	var/channels = list()
 	var/networks = list()
 	var/languages = list(							//Any listed language will be understandable. Any set to 1 will be speakable
-					LANGUAGE_SOL_COMMON = 1,
-					LANGUAGE_TRADEBAND = 1,
-					LANGUAGE_UNATHI = 0,
-					LANGUAGE_SIIK_MAAS = 0,
-					LANGUAGE_SKRELLIAN = 0,
-					LANGUAGE_GUTTER = 1,
-					LANGUAGE_VAURCESE = 0,
-					LANGUAGE_ROOTSONG = 0,
-					LANGUAGE_SIGN = 0,
-					LANGUAGE_SIGN_TAJARA = 0,
-					LANGUAGE_SIIK_TAJR = 0,
-					LANGUAGE_AZAZIBA = 0
+					LANGUAGE_COMMON = 1,
+					LANGUAGE_SERBIAN = 1,
+					LANGUAGE_CYRILLIC = 1,
+					LANGUAGE_JIVE = 0
 					)
 	var/sprites = list()
 	var/can_be_pushed = 1
@@ -324,7 +316,7 @@ var/global/list/robot_modules = list(
 	power_efficiency = 0.6 //Very poor, shackled to a charger
 
 	stat_modifiers = list(
-		STAT_BIO = 40,
+		STAT_BIO = 50,
 		STAT_COG = 10
 	)
 
@@ -415,8 +407,8 @@ var/global/list/robot_modules = list(
 
 	stat_modifiers = list(
 		STAT_BIO = 20,
-		STAT_ROB = 10,
-		STAT_TGH = 10
+		STAT_ROB = 20,
+		STAT_TGH = 20
 	)
 
 	desc = "The rescue borg fills the role of paramedic. \
@@ -509,8 +501,8 @@ var/global/list/robot_modules = list(
 	power_efficiency = 1.3 //Good for the long haul
 
 	desc = "The construction module is a ponderous, overgeared monstrosity, huge and bulky. \
-	Designed for constructing new ship sections or repairing major damage, it is equipped for long \
-	journeys through maintenance or around the hull. The heavy chassis and power system comes at a great \
+	Designed for constructing new sections or repairing major damage, it is equipped for long \
+	journeys through maintenance or around the colony. The heavy chassis and power system comes at a great \
 	toll in speed though."
 
 /obj/item/weapon/robot_module/engineering/construction/New(var/mob/living/silicon/robot/R)
@@ -680,7 +672,7 @@ var/global/list/robot_modules = list(
 	speed_factor = 0.85 //Kinda slow
 	power_efficiency = 1.15 //Decent
 
-	desc = "Focused on keeping the peace and fighting off threats to the ship, the security module is a \
+	desc = "Focused on keeping the peace and fighting off threats to the colony, the security module is a \
 	heavily armored, though lightly armed battle unit."
 
 	stat_modifiers = list(
@@ -710,7 +702,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
-	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs
+	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
 	src.emag = new /obj/item/weapon/gun/energy/laser/mounted(src)
 	..(R)
 
@@ -741,7 +733,7 @@ var/global/list/robot_modules = list(
 					"Maid" = "maidbot"
 					)
 	health = 250 //Bulky
-	speed_factor = 0.85 //Slow
+	speed_factor = 1.15 //Fast
 	power_efficiency = 0.8 //Poor
 
 	stat_modifiers = list(
@@ -750,7 +742,7 @@ var/global/list/robot_modules = list(
 
 	desc = "A vast machine designed for cleaning up trash and scrubbing floors. A fairly specialised task, \
 	but requiring a large capacity. The huge chassis consequentially grants it a degree of toughness, \
-	though it is slow and cheaply made"
+	without compromising its speed."
 
 
 /obj/item/weapon/robot_module/custodial/New(var/mob/living/silicon/robot/R)
@@ -786,13 +778,10 @@ var/global/list/robot_modules = list(
 	name = "service robot module"
 	channels = list("Service" = 1)
 	languages = list(
-					LANGUAGE_SOL_COMMON = 1,
-					LANGUAGE_TRADEBAND = 1,
-					LANGUAGE_UNATHI = 1,
-					LANGUAGE_SIIK_MAAS = 1,
-					LANGUAGE_SKRELLIAN = 1,
-					LANGUAGE_GUTTER = 1,
-					LANGUAGE_ROOTSONG = 1
+					LANGUAGE_COMMON = 1,
+					LANGUAGE_SERBIAN = 1,
+					LANGUAGE_CYRILLIC = 1,
+					LANGUAGE_JIVE = 0
 					)
 
 	sprites = list(	"Waitress" = "service",
@@ -894,9 +883,9 @@ var/global/list/robot_modules = list(
 		STAT_TGH = 20
 	)
 
-	desc = "Built for digging on asteroids, excavating the ores and materials to keep the ship running, \
+	desc = "Built for digging anywhere, excavating the ores and materials to keep the colony running, \
 	this is heavy and powerful unit with a fairly singleminded purpose. It needs to withstand impacts \
-	from falling boulders, and exist for long periods out on an airless rock, often far from a charging \
+	from falling boulders, and exist for long periodsanwhere, often far from a charging \
 	port. It is built with these purposes in mind."
 
 /obj/item/weapon/robot_module/miner/New(var/mob/living/silicon/robot/R)
@@ -978,13 +967,10 @@ var/global/list/robot_modules = list(
 	name = "syndicate robot module"
 	hide_on_manifest = TRUE
 	languages = list(
-					LANGUAGE_SOL_COMMON = 1,
-					LANGUAGE_TRADEBAND = 1,
-					LANGUAGE_UNATHI = 1,
-					LANGUAGE_SIIK_MAAS = 1,
-					LANGUAGE_SKRELLIAN = 1,
-					LANGUAGE_GUTTER = 1,
-					LANGUAGE_ROOTSONG = 1
+					LANGUAGE_COMMON = 1,
+					LANGUAGE_SERBIAN = 1,
+					LANGUAGE_CYRILLIC = 1,
+					LANGUAGE_JIVE = 0
 					)
 
 	sprites = list(
@@ -1139,13 +1125,10 @@ var/global/list/robot_modules = list(
 /obj/item/weapon/robot_module/hunter_seeker
 	name = "hunter seeker robot module"
 	languages = list(
-					LANGUAGE_SOL_COMMON = 1,
-					LANGUAGE_TRADEBAND = 1,
-					LANGUAGE_UNATHI = 1,
-					LANGUAGE_SIIK_MAAS = 1,
-					LANGUAGE_SKRELLIAN = 1,
-					LANGUAGE_GUTTER = 1,
-					LANGUAGE_ROOTSONG = 1,
+					LANGUAGE_COMMON = 1,
+					LANGUAGE_SERBIAN = 1,
+					LANGUAGE_CYRILLIC = 1,
+					LANGUAGE_JIVE = 0,
 					LANGUAGE_TERMINATOR = 1
 					)
 

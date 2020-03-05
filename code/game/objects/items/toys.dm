@@ -553,72 +553,72 @@
 /*Moebius*/
 
 /obj/item/toy/figure/character/moebius/cmo
-	name = "biolab officer action figure"
-	desc = "The health of the crew is in their hands. Moebius 1/9."
+	name = "biolab overseer action figure"
+	desc = "The health of the crew is in their hands. Soteria 1/9."
 	icon_state = "cmo"
 	toysay = "Suit sensors on, people!"
 
 /obj/item/toy/figure/character/moebius/rd
-	name = "expedition overseer action figure"
-	desc = "All research requests go through them. Moebius 2/9."
+	name = "research overseer action figure"
+	desc = "All research requests go through them. Soteria 2/9."
 	icon_state = "rd"
 	toysay = "I'm the smartest one here."
 
 /obj/item/toy/figure/character/moebius/md
 	name = "medical doctor action figure"
-	desc = "They'll do their best to uphold the oath. Moebius 3/9."
+	desc = "They'll do their best to uphold the oath. Soteria 3/9."
 	icon_state = "md"
 	toysay = "They're bleeding out!"
 
 /obj/item/toy/figure/character/moebius/psychologist
 	name = "psychologist action figure"
-	desc = "Diseases of the mind are just as deadly. Moebius 4/9."
+	desc = "Diseases of the mind are just as deadly. Soteria 4/9."
 	icon_state = "psychologist"
 	toysay = "Just come and have a seat."
 
 /obj/item/toy/figure/character/moebius/paramedic
 	name = "paramedic action figure"
-	desc = "They'll go anywhere to save a life. Moebius 5/9."
+	desc = "They'll go anywhere to save a life. Soteria 5/9."
 	icon_state = "paramedic"
 	toysay = "Where are you?!"
 
 /obj/item/toy/figure/character/moebius/chemist
 	name = "chemist action figure"
-	desc = "Hopefully it won't blow up this time. Moebius 6/9."
+	desc = "Hopefully it won't blow up this time. Soteria 6/9."
 	icon_state = "chemist"
 	toysay = "Pills here!"
 
 /obj/item/toy/figure/character/moebius/scientist
 	name = "scientist action figure"
-	desc = "Their experiments sometimes go wacky. Moebius 7/9."
+	desc = "Their experiments sometimes go wacky. Soteria 7/9."
 	icon_state = "scientist"
 	toysay = "Do I make toxins or slimes today?"
 
 /obj/item/toy/figure/character/moebius/roboticist
 	name = "roboticist action figure"
-	desc = "The master of machine life. Moebius 8/9."
+	desc = "The master of machine life. Soteria 8/9."
 	icon_state = "roboticist"
 	toysay = "He asked to be borged!"
 
 /obj/item/toy/figure/character/moebius/borg
 	name = "cyborg action figure"
-	desc = "A mechanical servant made by man. Moebius 9/9."
+	desc = "A mechanical servant made by man. Soteria 9/9."
 	icon_state = "borg"
 	toysay = "I live again!"
 
 /*Command*/
 
 /obj/item/toy/figure/character/command/captain
-	name = "captain action figure"
-	desc = "The man in charge around here. Command 1/4."
+	name = "premier action figure"
+	desc = "The man who thinks he is in charge around here. Command 1/4."
 	icon_state = "captain"
 	toysay = "Polish my display case, peasants."
 
 /obj/item/toy/figure/character/command/firstofficer
-	name = "first officer action figure"
+	name = "steward action figure"
 	desc = "The loyal lieutenant, and second in command. Command 2/4."
 	icon_state = "hop"
-	toysay = "No, you can't have all-access!"
+	toysay = "Get down Mr. President!"
 
 /obj/item/toy/figure/character/command/corgi
 	name = "corgi action figure"
@@ -652,42 +652,42 @@
 	icon_state = "miner"
 	toysay = "So this is how it ends."
 
-/*Technomancer*/
+/*Engineer*/
 
 /obj/item/toy/figure/character/technomancer/ce
-	name = "exultant action figure"
-	desc = "The overseer of all construction and repair. Technomancers 1/2."
+	name = "guild master figure"
+	desc = "The overseer of all construction and repair. Artificer 1/2."
 	toysay = "Hurry up and wire the solars."
 
 /obj/item/toy/figure/character/technomancer/engineer
-	name = "technomancer action figure"
-	desc = "There's little a technomancer can't fix. Technomancers 2/2."
+	name = "guild adept action figure"
+	desc = "There's little a technomancer can't fix. Artificer 2/2."
 	icon_state = "engineer"
 	toysay = "Engine levels critical!"
 
-/*Ironhammer*/
+/*Security*/
 
 /obj/item/toy/figure/character/ironhammer/hos
 	name = "commander action figure"
-	desc = "The most formidable force on the station. Ironhammer 1/4."
+	desc = "The most formidable force on the station. Marshal 1/4."
 	icon_state = "hos"
 	toysay = "I am the law!"
 
 /obj/item/toy/figure/character/ironhammer/secofficer
 	name = "operative action figure"
-	desc = "They don't make the law, but they enforce it. Ironhammer 2/4."
+	desc = "They don't make the law, but they enforce it. Marshal 2/4."
 	icon_state = "secofficer"
 	toysay = "Halt!"
 
 /obj/item/toy/figure/character/ironhammer/warden
-	name = "warden figure"
-	desc = "Holding them is even harder than catching them. Ironhammer 3/4."
+	name = "supply specialist figure"
+	desc = "Always keep plenty of ammo. Marshal 3/4."
 	icon_state = "warden"
-	toysay = "Get back in your cell!"
+	toysay = "Buy my guns!"
 
 /obj/item/toy/figure/character/ironhammer/detective
-	name = "detective action figure"
-	desc = "Some crimes can't be solved by force alone. Ironhammer 4/4."
+	name = "ranger action figure"
+	desc = "Some crimes can't be solved by force alone. Marshal 4/4."
 	icon_state = "detective"
 	toysay = "Hmm, insulated glove fibers..."
 

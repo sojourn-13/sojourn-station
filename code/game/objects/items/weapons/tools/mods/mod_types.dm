@@ -144,7 +144,7 @@
 	I.prefix = "sharpened"
 
 /obj/item/weapon/tool_upgrade/productivity/diamond_blade
-	name = "Asters \"Gleaming Edge\": diamond blade"
+	name = "Lonestars \"Gleaming Edge\": diamond blade"
 	desc = "An adaptable industrial grade cutting disc, with diamond dust worked into the metal. Exceptionally durable"
 	icon_state = "diamond_blade"
 	price_tag = 300
@@ -206,7 +206,7 @@
 // 	 REFINEMENT: INCREASES PRECISION
 //------------------------------------------------
 /obj/item/weapon/tool_upgrade/refinement/laserguide
-	name = "Asters \"Guiding Light\" laser guide"
+	name = "Lonestars \"Guiding Light\" laser guide"
 	desc = "A small visible laser which can be strapped onto any tool, giving an accurate representation of its target. Helps improve precision"
 	icon_state = "laser_guide"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_URANIUM = 1)

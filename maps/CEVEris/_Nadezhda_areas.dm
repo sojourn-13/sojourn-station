@@ -1181,7 +1181,7 @@ area/nadezhda/medical/medbaymeeting
 	is_maintenance = TRUE
 
 /area/nadezhda/security/barracks
-	name = "Ironhammer Barracks"
+	name = "Barracks"
 	icon_state = "hammerblue"
 
 /area/nadezhda/security/dorm1

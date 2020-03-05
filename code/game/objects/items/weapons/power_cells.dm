@@ -31,7 +31,7 @@
 
 /obj/item/weapon/cell/large/moebius
 	name = "Soteria \"Power-Geyser 2000L\""
-	desc = "Soteria Institute branded rechargeable L-standardized power cell. This one is cheap, yet better than Aster model for same price."
+	desc = "Soteria Institute branded rechargeable L-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
 	icon_state = "meb_b_st"
 	maxcharge = 2000
 
@@ -131,7 +131,7 @@
 
 /obj/item/weapon/cell/medium/moebius
 	name = "Lonestar \"Power-Geyser 700M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. This one is cheap, yet better than Aster model for same price."
+	desc = "Lonestar branded rechargeable M-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
 	icon_state = "meb_m_st"
 	maxcharge = 700
 
@@ -210,7 +210,7 @@
 
 /obj/item/weapon/cell/small/moebius
 	name = "Soteria \"Power-Geyser 120S\""
-	desc = "Soteria Institute branded rechargeable S-standardized power cell. This one is cheap, yet better than Aster model for same price."
+	desc = "Soteria Institute branded rechargeable S-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
 	icon_state = "meb_s_st"
 	maxcharge = 120
 
