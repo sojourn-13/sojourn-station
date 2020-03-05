@@ -392,7 +392,7 @@
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned_fortress)
 "bS" = (
-/obj/item/weapon/folder/white,
+/obj/item/weapon/folder/cyan,
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned_fortress)
 "bT" = (
