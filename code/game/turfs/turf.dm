@@ -37,6 +37,9 @@
 			src.Entered(AM)
 			return
 
+/turf/update_icon()
+	return
+
 /turf/Initialize()
 	turfs += src
 	var/area/A = loc

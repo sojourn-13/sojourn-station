@@ -169,7 +169,7 @@
 		user.do_attack_animation(src)
 		playsound(loc, 'sound/effects/grillehit.ogg', 80, 1)
 		health -= I.force * I.structure_damage_factor
-	healthcheck()
+	healthCheck()
 	..()
 	return
 
