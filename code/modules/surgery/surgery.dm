@@ -61,7 +61,7 @@
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
 		if (can_infect && affected)
 			spread_germs_to_organ(affected, user)
-		if (ishuman(user) && prob(60))
+		if (ishuman(user) && prob(99))
 			var/mob/living/carbon/human/H = user
 			if (blood_level)
 				H.bloody_hands(target,0)
@@ -92,9 +92,11 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 	if (user.a_intent == I_HURT)	//check for Hippocratic Oath
 		return 0
 	var/zone = user.targeted_organ
+/*
 	if(zone in M.op_stage.in_progress) //Can't operate on someone repeatedly.
 		to_chat(user, SPAN_WARNING("You can't operate on this area while surgery is already in progress."))
 		return 1
+*/
 	var/datum/surgery_step/selectedStep = null
 	var/list/possibleSteps = list()
 	for(var/datum/surgery_step/S in surgery_steps)

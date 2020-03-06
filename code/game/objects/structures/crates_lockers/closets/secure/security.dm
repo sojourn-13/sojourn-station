@@ -43,9 +43,6 @@
 	new /obj/item/device/flash(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 
-/obj/structure/closet/secure_closet/reinforced/preacher
-	name = "prime's locker"
-
 /obj/structure/closet/secure_closet/reinforced/hos
 	name = "warrant officer's locker"
 	req_access = list(access_hos)

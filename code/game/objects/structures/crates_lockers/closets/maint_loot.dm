@@ -51,7 +51,7 @@
 	name = "\improper spare parts closet"
 	desc = "Somewhat old closet with spare parts in it."
 	icon_state = "eng"
-	icon_door = "eng_secure_door"
+	icon_door = "eng_tool"
 	old_chance = 10
 
 /obj/structure/closet/random_tech/populate_contents()

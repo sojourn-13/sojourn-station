@@ -1,4 +1,4 @@
-/obj/structure/closet/secure_closet/reinforced/chaplain
+/obj/structure/closet/secure_closet/reinforced/preacher
 	name = "prime's locker"
 	req_access = list(access_chapel_office)
 	icon_state = "head_preacher"

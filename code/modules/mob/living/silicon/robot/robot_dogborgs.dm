@@ -8,8 +8,8 @@
 	networks = list(NETWORK_SECURITY)
 	can_be_pushed = 0
 
-	health = 300 //Very tanky!
-	speed_factor = 0.85 //Kinda slow
+	health = 210 //Very tanky!
+	speed_factor = 1.1 //Kinda slow
 	power_efficiency = 1.15 //Decent
 
 	stat_modifiers = list(
@@ -64,8 +64,8 @@
 	networks = list(NETWORK_MEDICAL)
 	can_be_pushed = 0
 
-	health = 140 //Fragile
-	speed_factor = 0.8 //Kinda slow
+	health = 85 //Fragile
+	speed_factor = 1.0 //Kinda slow
 	power_efficiency = 0.6 //Very poor, shackled to a charger
 
 	stat_modifiers = list(
@@ -154,8 +154,8 @@
 	channels = list("Service" = 1)
 	can_be_pushed = 0
 
-	health = 250 //Bulky
-	speed_factor = 0.85 //Slow
+	health = 175 //Bulky
+	speed_factor = 1.1 //Slow
 	power_efficiency = 0.8 //Poor
 
 	stat_modifiers = list(
@@ -211,8 +211,8 @@
 	channels = list("Science" = 1)
 	can_be_pushed = 0
 
-	health = 160 //Weak
-	speed_factor = 1.0 //Average
+	health = 115 //Weak
+	speed_factor = 1.3 //Average
 	power_efficiency = 0.75 //Poor efficiency
 
 	desc = "Built for working in a well-equipped lab, and designed to handle a wide variety of research \
@@ -272,8 +272,8 @@
 	networks = list(NETWORK_ENGINEERING)
 	can_be_pushed = 0
 
-	health = 240 //Slightly above average
-	speed_factor = 1.1 //Slightly above average
+	health = 170 //Slightly above average
+	speed_factor = 1.4 //Slightly above average
 	power_efficiency = 0.9 //Slightly below average
 
 	desc = "The engineering module is designed for setting up and maintaining core ship systems, \
