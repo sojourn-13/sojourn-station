@@ -434,6 +434,8 @@
 		/datum/design/research/item/computer_part/portabledrive/basic,
 		/datum/design/research/item/computer_part/portabledrive/normal,
 		/datum/design/research/item/computer_part/printer,
+		/datum/design/research/item/computer_part/led,
+		/datum/design/research/item/computer_part/led/adv,
 		/datum/design/autolathe/computer_part/gps,
 		/datum/design/autolathe/part/heatsink,
 		/datum/design/autolathe/part/motor,

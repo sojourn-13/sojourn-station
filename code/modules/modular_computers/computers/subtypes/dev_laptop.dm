@@ -33,11 +33,7 @@
 /obj/item/modular_computer/laptop/update_icon()
 	..()
 
-	var/iconstring = initial(icon_state)
-	if(anchored)
-		iconstring += "-open"
-	else
-		cut_overlays()
-		iconstring += "-closed"
-
-	icon_state = iconstring
+	icon_state = initial(icon_state)
+	if(!anchored)
+		overlays.Cut()
+		icon_state += "-closed"
