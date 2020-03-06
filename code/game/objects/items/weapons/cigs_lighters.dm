@@ -309,7 +309,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/trash/cigbutt
 	name = "cigarette butt"
-	desc = "A manky old cigarette butt."
+	desc = "A decayed cigarette butt."
 	icon = 'icons/inventory/face/icon.dmi'
 	icon_state = "cigbutt"
 	w_class = ITEM_SIZE_TINY
@@ -325,7 +325,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/trash/cigbutt/cigarbutt
 	name = "cigar butt"
-	desc = "A manky old cigar butt."
+	desc = "A decayed cigar butt."
 	icon_state = "cigarbutt"
 
 /////////////////
