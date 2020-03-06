@@ -10,7 +10,6 @@ proc/cardinalrange(var/center)
 /obj/machinery/am_shielding
 	name = "antimatter reactor section"
 	desc = "A device built using a plasma-based life-form with the ability to increase plasma's natural ability to react with neutrinos while reducing its combustibility."
-
 	icon = 'icons/obj/machines/antimatter.dmi'
 	icon_state = "shield"
 	anchored = 1

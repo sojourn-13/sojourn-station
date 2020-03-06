@@ -22,6 +22,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
  */
 /obj/machinery/librarypubliccomp
 	name = "visitor computer"
+	desc = "This public computer can search the library inventory."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "computer"
 	anchored = 1
@@ -116,6 +117,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 // It is August 22nd, 2012... This TODO has already been here for months.. I wonder how long it'll last before someone does something about it.
 /obj/machinery/librarycomp
 	name = "check-in/out computer"
+	desc = "This staff computer can access the library inventory and archives."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "computer"
 	anchored = 1
@@ -391,6 +393,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
  */
 /obj/machinery/libraryscanner
 	name = "scanner"
+	desc = "This machine can upload literature to the library database."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "bigscanner"
 	anchored = 1
@@ -441,6 +444,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
  */
 /obj/machinery/bookbinder
 	name = "book binder"
+	desc = "A machine for turning paper into properly binded books."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "binder"
 	anchored = 1
