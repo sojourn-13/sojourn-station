@@ -18,7 +18,7 @@
     tipText = "Always carry a flashlight and some spare power cells. Darkness is dangerous."
 
 /tipsAndTricks/gameplay/modifyTools
-    tipText = "You can find or buy many modifications to improve your tools orurn them into effective weapons."
+    tipText = "You can find or buy many modifications to improve your tools or turn them into effective weapons."
 
 /tipsAndTricks/gameplay/spiderslip
     tipText = "Spiders and roaches can be stunned and slipped like humans. When facing off against either, try to even the fight by either flashing them with a flash, or leading them to slip on some spilled water."

@@ -132,6 +132,8 @@
 	new /obj/item/clothing/head/rank/trooper/beret(src)
 	new /obj/item/clothing/head/rank/trooper/cap(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
+	new /obj/item/weapon/grenade/smokebomb(src)
+	new /obj/item/weapon/grenade/smokebomb(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"

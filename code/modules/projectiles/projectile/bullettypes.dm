@@ -233,10 +233,10 @@
 
 //Sniper rifles
 /obj/item/projectile/bullet/a145
-	damage = 70
-	armor_penetration = 50
-	stun = 3
-	weaken = 3
+	damage = 150
+	armor_penetration = 90
+	stun = 5
+	weaken = 10
 	penetrating = 5
 	hitscan = TRUE //so the PTR isn't useless as a sniper weapon
 

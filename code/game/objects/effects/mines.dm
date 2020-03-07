@@ -18,7 +18,7 @@
 	triggered = 1
 	s.set_up(3, 1, src)
 	s.start()
-	explosion(loc, 0, 2, 3, 4) //land mines are dangerous, folks.
+	explosion(loc, 0, 3, 3, 4) //land mines are dangerous, folks.
 	visible_message("\The [src.name] detonates!")
 	qdel(s)
 	qdel(src)

@@ -239,7 +239,7 @@
 /obj/item/ammo_magazine/ammobox/a145
 	name = "ammunition box (14.5mm)"
 	icon_state = "box145mm"
-	matter = list(MATERIAL_STEEL = 8)
+	matter = list(MATERIAL_STEEL = 30)
 	w_class = ITEM_SIZE_BULKY
 	caliber = "14.5mm"
 	ammo_type = /obj/item/ammo_casing/a145
