@@ -8,6 +8,24 @@
 	opacity = 1
 	layer = EDGED_TURF_LAYER
 
+/turf/unsimulated/wall/jungle
+	name = "dense forestry"
+	icon = 'icons/turf/flooring/grass.dmi'
+	icon_state = "wall2"
+	desc = "A thick, impassable mass of plants and shrubbery."
+	blocks_air = 1
+	density = 1
+	opacity = 1
+
+/turf/unsimulated/wall/jungle/variant
+	name = "dense forestry"
+	icon = 'icons/turf/flooring/grass.dmi'
+	icon_state = "wall1"
+	desc = "A thick, impassable mass of plants and shrubbery."
+	blocks_air = 1
+	density = 1
+	opacity = 1
+
 /turf/simulated/mineral //wall piece
 	name = "Rock"
 	icon = 'icons/turf/walls.dmi'
