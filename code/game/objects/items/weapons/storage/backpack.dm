@@ -128,8 +128,8 @@
 
 /obj/item/weapon/storage/backpack/botanist
 	name = "botanical backpack"
-	icon_state = "backpack_botanical"
 	desc = "A green backpack for plant related work."
+	icon_state = "backpack_botanical"
 
 /obj/item/weapon/storage/backpack/captain
 	name = "premier's backpack"
