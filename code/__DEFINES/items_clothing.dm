@@ -211,7 +211,6 @@
 #define INV_SUIT_DEF_ICON 'icons/inventory/suit/mob.dmi'
 #define INV_BELT_DEF_ICON 'icons/invenstory/belt/mob.dmi'
 
-
 //Defines for loot stashes
 #define DIRECTION_COORDS 	1
 #define DIRECTION_LANDMARK 	2
