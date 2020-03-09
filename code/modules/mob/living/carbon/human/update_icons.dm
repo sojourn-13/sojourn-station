@@ -1079,11 +1079,11 @@ mob/living/carbon/human/proc/get_wings_image()
 		else if(test.item_icons && (slot_back_str in test.item_icons))
 			overlay_icon = test.item_icons[slot_back_str]
 		else
-			overlay_icon = form.get_mob_icon("backpack")
+			overlay_icon = form.get_mob_icon("back")
 
 		return overlay_icon
 
-	else return form.get_mob_icon("backpack")
+	else return form.get_mob_icon("back")
 
 
 /mob/living/carbon/human/update_inv_back(var/update_icons=1)
