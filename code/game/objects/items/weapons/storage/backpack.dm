@@ -270,7 +270,7 @@
 	desc = "A green satchel for plant related work."
 
 /obj/item/weapon/storage/backpack/satchel/captain
-	name = "captain's satchel"
+	name = "premier's satchel"
 	desc = "An exclusive satchel for officers."
 	icon_state = "satchel_captain"
 
