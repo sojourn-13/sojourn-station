@@ -3,59 +3,59 @@
 "ac" = (/obj/structure/multiz/stairs/active{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
 "ad" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
 "ae" = (/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"af" = (/obj/machinery/alarm{pixel_y = 30},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"ag" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"ah" = (/obj/machinery/firealarm{pixel_y = 30},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"ai" = (/turf/simulated/floor/tiled/steel/monofloor{tag = "icon-monofloor (EAST)"; icon_state = "monofloor"; dir = 4},/area/nadezhda/hallway/main/stairwell)
-"aj" = (/obj/machinery/atmospherics/unary/vent_pump/on,/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"ak" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"al" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"am" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"an" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"ao" = (/obj/machinery/light,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"ap" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"aq" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"ar" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/turf/simulated/floor/tiled/steel/panels,/area/nadezhda/hallway/main/stairwell)
-"as" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled/steel/panels,/area/nadezhda/hallway/main/stairwell)
-"at" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/turf/simulated/floor/tiled/steel/panels,/area/nadezhda/hallway/main/stairwell)
-"au" = (/obj/machinery/light,/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"av" = (/obj/machinery/vending/coffee,/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"aw" = (/obj/machinery/vending/cola,/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
+"af" = (/obj/structure/cyberplant,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"ag" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/obj/machinery/holoposter{pixel_y = 28},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"ah" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"ai" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/obj/machinery/holoposter{pixel_y = 28},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"aj" = (/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"ak" = (/obj/structure/sign/levels/stairsup{pixel_y = -30},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"al" = (/obj/effect/floor_decal/industrial/warningwhite,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"am" = (/obj/structure/sign/levels/stairsdown{pixel_y = -30},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"an" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
+"ao" = (/obj/machinery/newscaster{dir = 8; pixel_x = -30; pixel_y = 0},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"ap" = (/obj/structure/sign/levels/stairsdown{pixel_y = 30},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"aq" = (/obj/effect/floor_decal/industrial/warningwhite{dir = 1},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"ar" = (/obj/machinery/alarm{pixel_y = 30},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"as" = (/obj/machinery/firealarm{pixel_y = 30},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"at" = (/obj/structure/sign/levels/stairsup{pixel_y = 30},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"au" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
+"av" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"aw" = (/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "ax" = (/obj/machinery/vending/cigarette,/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"ay" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel/monofloor{tag = "icon-monofloor (EAST)"; icon_state = "monofloor"; dir = 4},/area/nadezhda/hallway/main/stairwell)
+"ay" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "az" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/window_lwall_spawn,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "aA" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
-"aB" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"aB" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "aC" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "aD" = (/obj/machinery/atmospherics/pipe/simple/visible/universal{dir = 4},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "aE" = (/obj/machinery/atmospherics/pipe/zpipe/up{tag = "icon-up (WEST)"; icon_state = "up"; dir = 8},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "aF" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
-"aG" = (/mob/living/simple_animal/yithian{desc = "How'd he get in here?"; name = "Jorb"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
+"aG" = (/obj/machinery/camera/network/cev_eris{dir = 1},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "aH" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/light/small{dir = 8},/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "aI" = (/obj/effect/window_lwall_spawn,/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
-"aJ" = (/obj/structure/multiz/stairs/active/bottom{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"aK" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"aJ" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"aK" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "aL" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "aM" = (/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"aN" = (/turf/simulated/floor/carpet,/area/nadezhda/hallway/main/stairwell)
-"aO" = (/obj/structure/sign/levels/stairsup{pixel_y = -30},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"aP" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/turf/simulated/floor/carpet,/area/nadezhda/hallway/main/stairwell)
-"aQ" = (/obj/machinery/light,/turf/simulated/floor/carpet,/area/nadezhda/hallway/main/stairwell)
+"aN" = (/obj/effect/step_trigger/teleporter{teleport_x = 112; teleport_y = 67; teleport_z = 5},/obj/structure/multiz/stairs/enter,/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
+"aO" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"aP" = (/obj/effect/step_trigger/teleporter{teleport_x = 113; teleport_y = 67; teleport_z = 5},/obj/structure/multiz/stairs/enter,/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
+"aQ" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/machinery/holoposter{pixel_y = 28},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "aR" = (/obj/structure/multiz/stairs/enter/bottom,/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"aS" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/turf/simulated/floor/tiled/steel/monofloor{tag = "icon-monofloor (EAST)"; icon_state = "monofloor"; dir = 4},/area/nadezhda/hallway/main/stairwell)
-"aT" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/steel/monofloor{tag = "icon-monofloor (EAST)"; icon_state = "monofloor"; dir = 4},/area/nadezhda/hallway/main/stairwell)
-"aU" = (/turf/simulated/floor/carpet/oracarpet,/area/nadezhda/hallway/main/stairwell)
-"aV" = (/obj/machinery/light,/turf/simulated/floor/carpet/oracarpet,/area/nadezhda/hallway/main/stairwell)
-"aW" = (/obj/structure/sign/levels/stairsdown{pixel_y = -30},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"aX" = (/obj/machinery/vending/cola,/obj/machinery/light,/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"aY" = (/obj/machinery/vending/fitness,/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
+"aS" = (/obj/machinery/light,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"aT" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"aU" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"aV" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"aW" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
+"aX" = (/obj/machinery/holoposter{pixel_y = 28},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
+"aY" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
 "aZ" = (/obj/map_data/nadezda_e,/turf/unsimulated/mineral,/area/nadezhda/hallway/main/stairwell)
-"ba" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/status_display{pixel_x = 32; pixel_y = -30},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"bb" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/newscaster{pixel_x = -30; pixel_y = -30},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"bc" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"bd" = (/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"be" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"bf" = (/obj/machinery/door/airlock/engineering,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
+"ba" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 122; teleport_y = 151; teleport_z = 3},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
+"bb" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 123; teleport_y = 151; teleport_z = 3},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
+"bc" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
+"bd" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
+"be" = (/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"bf" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/door/airlock/engineering{name = "Artificer Power Substation"; req_access = list(10)},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bg" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bh" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bi" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/effect/window_lwall_spawn,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
@@ -76,7 +76,7 @@
 "bx" = (/obj/machinery/atmospherics/binary/pump/on{dir = 4},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "by" = (/obj/machinery/atmospherics/pipe/simple/visible/universal{dir = 4},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bz" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
-"bA" = (/obj/effect/step_trigger/teleporter{teleport_x = 99; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
+"bA" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "bB" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/machinery/atmospherics/pipe/simple/visible/universal{dir = 4},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "bC" = (/obj/machinery/atmospherics/pipe/zpipe/down{tag = "icon-down (WEST)"; icon_state = "down"; dir = 8},/turf/simulated/open,/area/nadezhda/hallway/main/stairwell)
 "bD" = (/obj/machinery/atmospherics/pipe/manifold/visible/cyan{dir = 1},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
@@ -94,22 +94,22 @@
 "bP" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bQ" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/machinery/firealarm{dir = 1; pixel_y = -28},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bR" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/item/modular_computer/console/preset/engineering/alarms{dir = 8},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
-"bS" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/door/firedoor,/obj/machinery/door/airlock/engineering,/turf/simulated/floor/tiled/white,/area/nadezhda/hallway/main/stairwell)
+"bS" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/door/firedoor,/obj/machinery/door/airlock/engineering{name = "Artificer Power Substation"; req_access = list(10)},/turf/simulated/floor/tiled/white,/area/nadezhda/hallway/main/stairwell)
 "bT" = (/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -22},/obj/machinery/computer/general_air_control{dir = 8; frequency = 1441; name = "Tank Monitor"; sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous Oxide", "waste_sensor" = "Gas Mix Tank")},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
-"bU" = (/obj/machinery/power/smes/buildable{charge = 2.5e+006; input_attempt = 1; input_level = 250000; inputting = 0; output_attempt = 1; output_level = 250000; RCon_tag = "Stairwell"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
+"bU" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/camera/network/cev_eris{dir = 8},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
 "bV" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
-"bW" = (/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (EAST)"; icon_state = "danger"; dir = 4},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
+"bW" = (/obj/machinery/camera/network/cev_eris,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "bX" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "bY" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/machinery/alarm{dir = 4; pixel_x = -26; pixel_y = 0},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
-"bZ" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/firealarm{dir = 4; pixel_x = 28},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
-"ca" = (/obj/machinery/power/terminal{tag = "icon-term (NORTH)"; icon_state = "term"; dir = 1},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"bZ" = (/obj/machinery/camera/network/cev_eris{dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"ca" = (/obj/machinery/camera/network/engineering{dir = 8},/mob/living/simple_animal/yithian{desc = "How'd he get in here?"; name = "Jorb"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "cb" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "cc" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "cd" = (/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (EAST)"; icon_state = "danger"; dir = 4},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "ce" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "cf" = (/obj/machinery/telecomms/relay/preset/station,/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
 "cg" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
-"ch" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/door/firedoor,/obj/machinery/door/airlock/engineering,/turf/simulated/floor/tiled/white,/area/nadezhda/hallway/main/stairwell)
+"ch" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/door/firedoor,/obj/machinery/door/airlock/engineering{name = "Artificer Power Substation"; req_access = list(10)},/turf/simulated/floor/tiled/white,/area/nadezhda/hallway/main/stairwell)
 "ci" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "cj" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "ck" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
@@ -126,62 +126,43 @@
 "cv" = (/obj/machinery/alarm{dir = 8; pixel_x = 25; pixel_y = 0},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (NORTH)"; icon_state = "danger"; dir = 1},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "cw" = (/obj/machinery/firealarm{dir = 1; pixel_y = -28},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "cx" = (/obj/structure/closet/crate,/obj/item/stack/material/plasma/random,/obj/item/stack/material/plasma/random,/obj/item/stack/material/plasma/random,/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
-"cy" = (/obj/structure/cable/ender{id = "surface to underground"},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"cy" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/machinery/camera/network/engineering{dir = 4},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "cz" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "cA" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "cB" = (/obj/structure/cable/ender{id = "surface to stairs"},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "cC" = (/obj/structure/multiz/stairs/enter,/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"cD" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
-"cE" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"cF" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
+"cD" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"cE" = (/obj/machinery/light,/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
+"cF" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "cG" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
-"cH" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
+"cH" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/window_lwall_spawn,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "cI" = (/obj/machinery/vending/snack,/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"cJ" = (/obj/machinery/alarm{pixel_y = 30},/turf/simulated/floor/tiled/steel/monofloor{tag = "icon-monofloor (EAST)"; icon_state = "monofloor"; dir = 4},/area/nadezhda/hallway/main/stairwell)
-"cK" = (/obj/machinery/atmospherics/pipe/zpipe/down{dir = 4},/turf/simulated/open,/area/nadezhda/hallway/main/stairwell)
-"cL" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
-"cM" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"cJ" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"cK" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"cL" = (/obj/structure/multiz/stairs/active/bottom{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
+"cM" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/door/airlock/engineering{name = "Artificer Power Substation"; req_access = list(10)},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "cN" = (/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "cO" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "cP" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "cQ" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
-"cR" = (/obj/structure/sign/levels/stairsup{pixel_y = -30},/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
+"cR" = (/obj/machinery/power/smes/buildable{charge = 2.5e+006; input_attempt = 1; input_level = 250000; inputting = 0; output_attempt = 1; output_level = 250000; RCon_tag = "Stairwell"},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "cS" = (/obj/machinery/light,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "cT" = (/obj/structure/multiz/stairs/active/bottom,/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
 "cU" = (/obj/structure/multiz/stairs/active,/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"cV" = (/obj/machinery/firealarm{pixel_y = 30},/turf/simulated/floor/tiled/steel/monofloor{tag = "icon-monofloor (EAST)"; icon_state = "monofloor"; dir = 4},/area/nadezhda/hallway/main/stairwell)
-"cW" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/steel/monofloor{tag = "icon-monofloor (EAST)"; icon_state = "monofloor"; dir = 4},/area/nadezhda/hallway/main/stairwell)
-"cX" = (/obj/machinery/light,/turf/simulated/floor/tiled/steel/monofloor{tag = "icon-monofloor (EAST)"; icon_state = "monofloor"; dir = 4},/area/nadezhda/hallway/main/stairwell)
-"cY" = (/obj/machinery/light,/obj/machinery/vending/cigarette,/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"cZ" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/turf/simulated/floor/carpet,/area/nadezhda/hallway/main/stairwell)
-"da" = (/obj/structure/table/woodentable,/turf/simulated/floor/carpet,/area/nadezhda/hallway/main/stairwell)
-"db" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/turf/simulated/floor/carpet,/area/nadezhda/hallway/main/stairwell)
-"dc" = (/obj/structure/sign/levels/stairsdown{pixel_y = 30},/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"dd" = (/obj/structure/sign/levels/stairsup{pixel_y = 30},/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"de" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"df" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"dg" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/turf/simulated/floor/carpet/oracarpet,/area/nadezhda/hallway/main/stairwell)
-"dh" = (/obj/structure/table/woodentable,/turf/simulated/floor/carpet/oracarpet,/area/nadezhda/hallway/main/stairwell)
-"di" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/turf/simulated/floor/carpet/oracarpet,/area/nadezhda/hallway/main/stairwell)
-"dj" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
+"cV" = (/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (EAST)"; icon_state = "danger"; dir = 4},/obj/machinery/camera/network/engineering,/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
+"cW" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/firealarm{dir = 4; pixel_x = 28},/obj/machinery/camera/network/engineering,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
+"cX" = (/obj/machinery/power/terminal{tag = "icon-term (NORTH)"; icon_state = "term"; dir = 1},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"cY" = (/obj/structure/cable/ender{id = "research outpost to engine"; name = "surface power cable"},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"cZ" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/camera/network/engineering{dir = 4},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
+"da" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/camera/network/engineering,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "dk" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "dl" = (/obj/structure/table/woodentable,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "dm" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
-"dn" = (/obj/effect/step_trigger/teleporter{teleport_x = 100; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
 "do" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
-"dp" = (/obj/machinery/door/airlock/engineering,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "dq" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "dr" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "ds" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/light/small,/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "dt" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
-"du" = (/obj/effect/step_trigger/teleporter{teleport_x = 96; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"dv" = (/obj/effect/step_trigger/teleporter{teleport_x = 97; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"dw" = (/obj/effect/step_trigger/teleporter{teleport_x = 98; teleport_y = 44; teleport_z = 5},/obj/structure/multiz/stairs/enter{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"dx" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 98; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"dy" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 99; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"dz" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 100; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"dA" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 101; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"dB" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/obj/effect/step_trigger/teleporter{teleport_x = 102; teleport_y = 197; teleport_z = 3},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
 "dC" = (/turf/simulated/shuttle/wall/mining{icon_state = "10,18"},/area/nadezhda/hallway/main/stairwell)
 "dD" = (/turf/simulated/floor/tiled/steel,/area/turbolift/ElevatorTwo/midlevelOne)
 "dE" = (/turf/simulated/shuttle/wall/mining{icon_state = "13,15"},/area/nadezhda/hallway/main/stairwell)
@@ -222,41 +203,41 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaabdudvdwbAdnabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabababababaMaMaMaMaMababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabaiaiaiayaeaeaeaeaeayaiaiaiaiabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabaiaeaeaeaNaNaNaNaNaeaeaeaeaiabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabaSaeaeaeaNaNaNaNaNaeaeaeaeaTabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabaiaeaeaeaeaOaeauaeaeaeaeaeaiabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababaiaeaeaeaeabababababaiaeaeaiabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababadadadadadabababababaSaeaeaiabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababaJaJaJaJaJabababababaiaeaeaiabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababababababababcJaycVaiaiaeaeaiaiaiabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabajaeaeakaeaeaeaeaeaTabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababababababababamananapaqaeaeaeaeaiabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaabaNaNaNaNaNaNaNaeaeaeaicWaicXarasatabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaabaPaNaNaNaNaNaNaecYaYabazababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaabcZdadbaQaNavawababababaAababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababababababababababababaAababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaabaAababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaabaBaCaDaEabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaabaKaLaDaEabaaaaaaaaaaabdCdEdEdEdEdFdJaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaababababababaaaaaaaaaaabdGdDdDdDdDdKdLaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdDdDdDdDdKdMabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdDdDdDdDdKdLaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSdNaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdCdEdEdEdEdFdOaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdTdTdTdTdKdPaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdTdTdTdTdKdQabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdTdTdTdTdKdVaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSdWaaaaaaaa
-aZaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeaeaeafagahahaiafababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeanaeajajajajajajababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeauakalalaGamalalababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeauabadadababcCcCababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaebUabcLcLababaNaPababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeauabababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNabababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeaYbccOcOcPcNcNcNcQabababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeaeaeaxcIbdcSdkdldmabababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabababababababazabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabababababababaAabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababaAbeababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababaAbeababababaaaaaaaaabdCdEdEdEdEdFdJaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababbAaCaDaEababaaaaaaaaabdGdDdDdDdDdKdLaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababcDaLaDaEababaaaaaaaaabdGdDdDdDdDdKdMabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdGdDdDdDdDdKdLaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdRdEdEdEdEdSdNaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdCdEdEdEdEdFdOabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKdTdTdTdTdKdPabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKdTdTdTdTdKdQabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKdTdTdTdTdKdVabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSdWabaaaaaa
+aZaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
 "}
 
 (1,1,2) = {"
@@ -272,34 +253,34 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaabababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababacacacacacabababababcTcTcTcTcTababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababaMaMaMaMaMabababababaRaRaRaRaRababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaabdcaeaeaeaeaeaeafagahaeaeaeaeaeaeddabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaabdeaeaeaeaeaeajaeaeaeakaeaeaeaeaedfabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaabaUaUaUaUaeaebaanaoanbbbcaeaUaUaUaUabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaabdgdhdiaVaebdbdabababbdbeaeaVdgdhdiabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababababababababababababbfababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaabbgababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-abababababababababababababbhbiaDaEabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-abbjbjbkblbmbnbobJbpbqababaFbsaDaEabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-abbtbubvbvbvbwbxbybzaGababbhbibBbCabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-abbtbDbEbFbGbHbIbybKbRababbrbsbBbCabaaaaaaaaaaabdCdEdEdEdEdFdOaaaaaaaa
-abbMbMbNbObObObLbPbQbTababbgababababaaaaaaaaaaabdGdHdHdHdHdKdXaaaaaaaa
-ababababababababbSababababbgabaaaaaaaaaaaaaaaaabdGdHdHdHdHdKdQabaaaaaa
-aaaaababababbUcobVbWbXababbgabababaaaaaaaaaaaaabdGdHdHdHdHdKdYaaaaaaaa
-aaaaabbYbZabcacbcccdceababaHaIcyabaaaaaaaaaaaaabdRdEdEdEdEdSdZaaaaaaaa
-aaaaabcfcgchcicjckclbXababczabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabcmcnabcqcpcrcscvababczabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaababababctcudocwcxababcAaIcBabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaabababdpababababczabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaabdqdrdrdsdrdtabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaababababababababaaaaaaaaaaaaaaaaabdCdEdEdEdEdFeaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdUdUdUdUdKdVaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdUdUdUdUdKdQabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdUdUdUdUdKebaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSdWaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabababacacababcTcTababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabababaMaMababaRaRababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababapaqaqarasaqaqatabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababaoawavawawawawayabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababbZaBaJaKawawawawabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababawawawaOaSaTaUaVabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabababababbfabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+abababababababababababababbgabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+abababababababababababababbhbiaDaEababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+abbjbjbkblbmbnbobJbpbqababaFbsaDaEababaaaaaaaaabdCdEdEdEdEdFdOaaaaaaaa
+abbtbubvbvbvbwbxbybzcaababcybibBbCababaaaaaaaaabdGdHdHdHdHdKdXaaaaaaaa
+abbtbDbEbFbGbHbIbybKbRababbrbsbBbCababaaaaaaaaabdGdHdHdHdHdKdQabaaaaaa
+abbMbMbNbObObObLbPbQbTababbgabababababaaaaaaaaabdGdHdHdHdHdKdYaaaaaaaa
+ababababababababbSababababbgabababababaaaaaaaaabdRdEdEdEdEdSdZaaaaaaaa
+ababababababcRcobVcVbXababbgababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaababbYcWabcXcbcccdceababaHaIcYababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaababcfcgchcicjckclbXababcZababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaababcmcnabcqcpcrcscvababczababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaabababababctcudocwcxababcAaIcBababaaaaaaaaaaabababababababababaaaaaa
+aaabababababababcMababababczababababaaaaaaaaaaabdCdEdEdEdEdFeaabaaaaaa
+aaaaaaaaababababdqdrdadsdrdtababababaaaaaaaaaaabdKdUdUdUdUdKdVabaaaaaa
+aaaaaaaaaaaaabababababababababababaaaaaaaaaaaaabdKdUdUdUdUdKdQabaaaaaa
+aaaaaaaaaaaaabababababababababababaaaaaaaaaaaaabdKdUdUdUdUdKebabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSdWabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
 "}
 
 (1,1,3) = {"
@@ -311,36 +292,36 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabarasatbdbdbdbddjbdbdbdbdbdarasatabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabbdaeaeaeaeaeaeaeaeaeaeaeaeaeaedfabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabdeaeaeaeaeaeaeaeaeaWaeaeaeaeaebdabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabbdaeaeaeaeabavaXaYabaeaeaeaeaeababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabbdaeaeaealabababababcCcCcCcCcCababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabbdaeaeaeaeabababababcUcUcUcUcUababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabbdaeaeaeaeaeafagahababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabdeaeaeaeaeakaeaeaecDcGcGcGcGcHcNabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabbdaeaeaeaecEcFcFcFcOcOcOcOcOcPcQabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabbdaeaeaeaecRabababaxcIcNcSdkdldmabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabadadadadadabababababababababazababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabdxdydzdAdBabaaaaaaaaababababaAabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaabababababababaaaaaaaaabcKaDaCcLabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaabcKaDaLcMabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdCdEdEdEdEdFeaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdIdIdIdIdKdVaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdIdIdIdIdKecabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeaeaeafagahahaiafabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeaeaeajajajajajajabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeanakalalaGamalalabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeauabadadababcCcCabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaebUabbabbababcUcUabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeauababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeaYbccOcOcPcNcNcNcQababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeaecEaxcIcFcSdkdldmababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabababababababcHababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabababababababcJababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababcKaCaDbCababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababcDaLaDbCababaaaaaaaaabdCdEdEdEdEdFeaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdGdIdIdIdIdKdVaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdGdIdIdIdIdKecabaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdIdIdIdIdKedaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSeeaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdCdEdEdEdEdFefaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGererererdKefaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGererererdKegabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGererererdKehaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSehaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdCdEdEdEdEdFefabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKererererdKefabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKererererdKegabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKererererdKehabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSehabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
 "}

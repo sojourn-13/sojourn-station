@@ -267,11 +267,11 @@
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
 	"Marshal Officer" = "Officer",\
-	"Marshal Ranger" = "Ranger",\
-	"Marshal Supply Specialist" = "Specialist",\
+	"Ranger" = "Ranger",\
+	"Supply Specialist" = "Specialist",\
 	"Marshal Warrant Officer" = "Warrant Officer",\
-	"Blackshield Militia Commander" = "Commander",\
-	"Blackshield Corpsmen" = "Corpsmen",\
+	"Militia Commander" = "Commander",\
+	"Corpsmen" = "Corpsmen",\
 	"Blackshield Trooper" = "Trooper",\
 	"Premier" = "Premier",\
 	"Steward" = "Steward",\

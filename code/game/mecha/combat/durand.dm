@@ -24,7 +24,7 @@
 	icon_state = "old_durand"
 	initial_icon = "old_durand"
 	wreckage = /obj/effect/decal/mecha_wreckage/durand/security
-	step_in = 4
+	step_in = 5
 	internal_damage_threshold = 40
 
 /obj/mecha/combat/durand/security/New()
@@ -34,8 +34,6 @@
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_tracking
 	ME.attach(src)
 	return
 

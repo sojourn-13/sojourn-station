@@ -35,7 +35,6 @@
 /obj/item/weapon/gun/projectile/lamia/scoped_lamia
 	name = "HS HG .44 \"Lamia\" Advanced"
 	desc = "HS HG .44 \"Lamia\", a heavy pistol fit for high ranking enforcers, fitted with a smart-linked optic and stabilizer. Uses .44 rounds."
-	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "scoped_lamia"
 	item_state = "scoped_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5)
@@ -48,7 +47,6 @@
 /obj/item/weapon/gun/projectile/lamia/dark_lamia
 	name = "HS HG .44 \"Naga\""
 	desc = "The \"Naga\", a heavy pistol given only to SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .44 rounds."
-	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "dark_lamia"
 	item_state = "dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
