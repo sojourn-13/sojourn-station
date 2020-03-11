@@ -16,6 +16,7 @@
 		/area/turbolift/ElevatorOne/surface,
 		)
 
+/*
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo
 	name = "Turbolift"
 	lift_size_x = 3 // Size of the actual lift, shaft walls are extra.
@@ -33,7 +34,7 @@
 		/area/turbolift/ElevatorTwo/midlevelThree,
 		/area/turbolift/ElevatorTwo/surface,
 		)
-
+*/
 
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining
 	name = "Turbolift"
