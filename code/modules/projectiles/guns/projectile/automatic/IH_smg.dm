@@ -18,6 +18,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	damage_multiplier = 0.7
 	recoil_buildup = 2.5
+	one_hand_penalty = 20
 	silencer_type = /obj/item/weapon/silencer
 
 	firemodes = list(

@@ -16,6 +16,7 @@
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.1
 	recoil_buildup = 6
+	one_hand_penalty = 8
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),

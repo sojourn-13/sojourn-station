@@ -75,29 +75,27 @@
 	id_type = /obj/item/weapon/card/id/medcpec
 	uniform = /obj/item/clothing/under/rank/corpsman
 	head = /obj/item/clothing/head/rank/corpsman/beret
-	suit = /obj/item/clothing/suit/armor/platecarrier/corpsman
 	pda_type = /obj/item/modular_computer/pda/forensics
 	belt = /obj/item/weapon/storage/belt/medical/emt
+	gloves = /obj/item/clothing/gloves/thick
 	backpack_contents = list(/obj/item/weapon/gun/energy/gun/martin = 1, /obj/item/weapon/cell/small/high = 1)
 
 /decl/hierarchy/outfit/job/security/ihoper
 	name = OUTFIT_JOB_NAME("Marshal - Marshal Officer")
 	l_pocket = /obj/item/device/flash
 	uniform = /obj/item/clothing/under/rank/security
-	suit = /obj/item/clothing/suit/armor/vest/ironhammer
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	head = /obj/item/clothing/head/helmet
-	gloves = /obj/item/clothing/gloves/stungloves
+	gloves = /obj/item/clothing/gloves/thick
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 /decl/hierarchy/outfit/job/security/troop
 	name = OUTFIT_JOB_NAME("Blackshield - Trooper")
 	l_pocket = /obj/item/device/flash
 	uniform = /obj/item/clothing/under/rank/trooper
-	suit = /obj/item/clothing/suit/armor/flackvest/militia
 	mask = /obj/item/clothing/mask/balaclava/tactical
-	glasses = /obj/item/clothing/head/helmet/ballistic
-	head = /obj/item/clothing/head/helmet/ballistic/militia
-	gloves = /obj/item/clothing/gloves/stungloves
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+	glasses = /obj/item/clothing/glasses/ballistic
+	head = /obj/item/clothing/head/rank/trooper/cap
+	gloves = /obj/item/clothing/gloves/thick/swat
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1, /obj/item/weapon/tool/knife/tacknife = 1)

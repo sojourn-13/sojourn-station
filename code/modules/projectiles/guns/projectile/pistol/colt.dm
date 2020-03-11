@@ -14,6 +14,7 @@
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.5
 	recoil_buildup = 17
+	one_hand_penalty = 20
 
 /obj/item/weapon/gun/projectile/colt/IH_colt
 	name = "BM HG .45 \"Bronco\""

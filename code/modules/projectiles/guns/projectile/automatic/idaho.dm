@@ -17,6 +17,7 @@
 	price_tag = 1600
 	damage_multiplier = 0.9
 	recoil_buildup = 4.5
+	one_hand_penalty = 15
 
 	firemodes = list(
 		FULL_AUTO_400,
