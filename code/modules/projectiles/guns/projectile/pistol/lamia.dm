@@ -21,6 +21,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
 	recoil_buildup = 21
+	one_hand_penalty = 20
 
 /obj/item/weapon/gun/projectile/lamia/update_icon()
 	..()

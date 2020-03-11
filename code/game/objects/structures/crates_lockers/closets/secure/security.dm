@@ -182,7 +182,7 @@
 	new /obj/item/weapon/cell/small/high(src)
 	new /obj/item/weapon/cell/small/high(src)
 	new /obj/item/device/taperecorder(src)
-	new /obj/item/weapon/gun/projectile/revolver/consul(src)
+	new /obj/item/weapon/gun/projectile/revolver/deckard(src)
 	new /obj/item/clothing/accessory/holster/armpit(src)
 	new /obj/item/ammo_magazine/sl44/rubber(src)
 	new /obj/item/ammo_magazine/sl44/rubber(src)

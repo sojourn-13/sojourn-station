@@ -17,6 +17,7 @@
 	price_tag = 2000
 	damage_multiplier = 0.75
 	recoil_buildup = 1.5
+	one_hand_penalty = 10
 	silencer_type = /obj/item/weapon/silencer
 
 	firemodes = list(

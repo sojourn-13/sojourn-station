@@ -15,3 +15,4 @@
 	damage_multiplier = 1.15 //because pistol round
 	penetration_multiplier = 1.2
 	recoil_buildup = 18
+	one_hand_penalty = 15

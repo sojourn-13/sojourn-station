@@ -15,6 +15,7 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
 	recoil_buildup = 3
+	one_hand_penalty = 10
 
 /obj/item/weapon/gun/projectile/mk58/update_icon()
 	..()

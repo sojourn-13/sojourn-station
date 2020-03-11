@@ -22,6 +22,7 @@
 	zoom_factor = 0.2
 	damage_multiplier = 1.1
 	recoil_buildup = 6
+	one_hand_penalty = 20
 	silencer_type = /obj/item/weapon/silencer
 
 	firemodes = list(
