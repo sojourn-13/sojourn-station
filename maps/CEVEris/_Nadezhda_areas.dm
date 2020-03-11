@@ -632,7 +632,7 @@
 	sound_env = LARGE_SOFTFLOOR
 
 /area/nadezhda/crew_quarters/clownoffice
-	name = "Clown Office"
+	name = "Entertainment Studio"
 	icon_state = "erisblue"
 
 /area/nadezhda/crew_quarters/library

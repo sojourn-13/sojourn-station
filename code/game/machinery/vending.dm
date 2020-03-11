@@ -1488,17 +1488,28 @@
 
 //FOR ACTORS GUILD - mainly props that cannot be spawned otherwise
 /obj/machinery/vending/props
-	name = "Prop Palace"
-	desc = "All the props an actor could need. Probably."
+	name = "Portable Stage"
+	desc = "All the costumes a performer could need. Probably."
 	product_slogans = "Every actor needs their banana peel!;Honk!;We all know who you're going to choose.;Be witty! Be funny!;Make them smile!;Everything an Actor needs and some things he doesn't.;Toys Extravaganza!"
 	icon_state = "Theater"
-	products = list(/obj/structure/flora/pottedplant = 2,
-					/obj/item/device/lighting/toggleable/lamp = 2,
-					/obj/item/device/lighting/toggleable/lamp/green = 2,
-					/obj/item/weapon/reagent_containers/food/drinks/jar = 1,
-					/obj/item/toy/weapon/cultsword = 4,
-					/obj/item/toy/weapon/katana = 2,
-					/obj/item/weapon/phone = 3)
+	products = list(/obj/item/weapon/storage/box/costume/bunny = 2,
+					/obj/item/weapon/storage/box/costume/chicken = 2,
+					/obj/item/weapon/storage/box/costume/carp = 2,
+					/obj/item/weapon/storage/box/costume/clown = 2,
+					/obj/item/weapon/storage/box/costume/gladiator = 2,
+					/obj/item/weapon/storage/box/costume/griffin = 2,
+					/obj/item/weapon/storage/box/costume/ian = 2,
+					/obj/item/weapon/storage/box/costume/jester = 2,
+					/obj/item/weapon/storage/box/costume/lobster = 2,
+					/obj/item/weapon/storage/box/costume/mailman = 2,
+					/obj/item/weapon/storage/box/costume/monkey = 2,
+					/obj/item/weapon/storage/box/costume/mime = 2,
+					/obj/item/weapon/storage/box/costume/nurse = 2,
+					/obj/item/weapon/storage/box/costume/police = 2,
+					/obj/item/weapon/storage/box/costume/pirate = 2,
+					/obj/item/weapon/storage/box/costume/plaguedoctor = 2,
+					/obj/item/weapon/storage/box/costume/owl = 2,
+					/obj/item/weapon/storage/box/costume/soviet = 2)
 	auto_price = FALSE
 
 //FOR ACTORS GUILD - Containers

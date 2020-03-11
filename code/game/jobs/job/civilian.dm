@@ -92,7 +92,7 @@
 
 	duties = "Provide entertainment to the crew with your varied talents.<br>\
 		Host shows, busk in the corridors, perform harmless pranks, or whatever else you think will be well-received.<br>\
-		Try to be a successful rather than starving artist. The resources in your office may prove useful."
+		Try to be a successful rather than starving artist. The resources in your cramped studio may prove useful."
 
 
 /obj/landmark/join/start/actor
