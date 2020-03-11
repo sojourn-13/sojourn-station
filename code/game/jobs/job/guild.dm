@@ -31,7 +31,7 @@ A staunch entrepreneur, you are motivated by profit, for the company and especia
 <br>\
 The guild also operates all the vendors on the ship, every credit paid into them goes to your guild account. Naturally operating is a two way street, you are expected, when necessary, to refill those vendors. Or send a technician to do it<br>\
 <br>\
-You do not recieve a salary, but the company funds are yours to use. You may pay yourself as much as you like from that account, take the funds and use them for any purpose.<br>\
+You do not receive a salary, but the company funds are yours to use. You may pay yourself as much as you like from that account, take the funds and use them for any purpose.<br>\
 <br>\
 Things to bear in mind:<br>\
 	-Nobody has a right to free stuff. You are well within your rights to charge for anything you distribute and you won't make a penny if you don't.<br>\

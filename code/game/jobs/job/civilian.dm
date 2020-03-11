@@ -79,19 +79,20 @@
 	selection_color = "#dddddd"
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_SERBIAN = 5, LANGUAGE_JIVE = 80)
 	access = list(access_maint_tunnels, access_theatre)
-
 	outfit_type = /decl/hierarchy/outfit/job/service/actor/clown
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
+	//alt_titles = list("Artist","Entertainer")
 	stat_modifiers = list(
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
 
 	description = "The actor serves as a versatile performance artist here to entertain the colony.<br>\
-	You may find your colleagues distracted by boring work or senseless drinking, but it's your job to bring them real culture.<b\
-	The CEO pays you a terrible retaining fee, so try to make some money from audience donations to live well."
+	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
+	The CEO pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations."
 
 	duties = "Provide entertainment to the crew with your varied talents.<br>\
-		Bring culture to the masses through plays, shows, and other performances by assuming a role such as a mime, clown, or other role."
+		Host shows, busk in the corridors, perform harmless pranks, or whatever else you think will be well-received.<br>\
+		Try to be a successful rather than starving artist. The resources in your office may prove useful."
 
 
 /obj/landmark/join/start/actor
