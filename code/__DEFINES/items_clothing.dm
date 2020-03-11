@@ -108,6 +108,9 @@
 #define HIDEEYES 0x4 // Glasses.
 #define HIDEFACE 0x8 // Dictates whether we appear as "Unknown".
 
+#define ALWAYSDRAW	0x16//If set, this item is always rendered even if its slot is hidden by other clothing
+//Note that the item may still not be visible if its sprite is actually covered up.
+
 #define BLOCKHEADHAIR   0x20    // Hides the user's hair overlay. Leaves facial hair.
 #define BLOCKHAIR       0x40    // Hides the user's hair, facial and otherwise.
 #define BLOCKFACEHAIR   0x80    // Hides the user's facial hair. Leaves head hair
@@ -206,7 +209,7 @@
 #define INV_W_UNIFORM_DEF_ICON 'icons/inventory/uniform/mob.dmi'
 #define INV_ACCESSORIES_DEF_ICON 'icons/inventory/accessory/mob.dmi'
 #define INV_SUIT_DEF_ICON 'icons/inventory/suit/mob.dmi'
-
+#define INV_BELT_DEF_ICON 'icons/invenstory/belt/mob.dmi'
 
 //Defines for loot stashes
 #define DIRECTION_COORDS 	1
