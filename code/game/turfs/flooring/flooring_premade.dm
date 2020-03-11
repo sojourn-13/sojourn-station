@@ -610,12 +610,7 @@
 	initial_flooring = /decl/flooring/dirt
 
 /turf/simulated/floor/dirt/glow
-	var/default_light_range = 4
-	var/default_light_power = 2
-	var/brightness_color = COLOR_LIGHTING_DEFAULT_BRIGHT
-	var/use_power = 0
-	var/idle_power_usage = 0
-	var/active_power_usage = 0
+	set_light(l_range = 10, l_power = 10, l_color = "#999999")
 
 /turf/simulated/floor/dirt/dark
 	icon_state = "dirtnewdark"
