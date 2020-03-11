@@ -21,6 +21,7 @@
 	silencer_type = /obj/item/weapon/silencer
 	damage_multiplier = 1.1
 	recoil_buildup = 20
+	one_hand_penalty = 10
 
 /obj/item/weapon/gun/projectile/IH_sidearm/update_icon()
 	..()

@@ -23,7 +23,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	recoil_buildup = 10
-	one_hand_penalty = 10
+	one_hand_penalty = 20
 
 	firemodes = list(
 		FULL_AUTO_400,
@@ -43,7 +43,7 @@
 	if (ammo_magazine)
 		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
 		itemstring += "_full"
-	
+
 	if(wielded)
 		itemstring += "_doble"
 

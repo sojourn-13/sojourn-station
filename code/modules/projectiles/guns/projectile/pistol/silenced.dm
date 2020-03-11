@@ -16,6 +16,7 @@
 	magazine_type = /obj/item/ammo_magazine/c45m
 	damage_multiplier = 1.1
 	recoil_buildup = 14
+	one_hand_penalty = 10
 
 //This comes with a preinstalled silencer
 /obj/item/weapon/gun/projectile/silenced/Initialize()
