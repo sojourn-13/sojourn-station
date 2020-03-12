@@ -7,7 +7,7 @@
 	gloves_icon = 		'icons/inventory/teshari/teshari_gloves.dmi'
 	glasses_icon = 		'icons/inventory/teshari/teshari_eyes.dmi'
 	shoes_icon = 		'icons/inventory/teshari/teshari_shoes.dmi'
-	hat_icon = 			'icons/inventory/teshari/teshari_head.dmi'
+	head_icon = 		'icons/inventory/teshari/teshari_head.dmi'
 	suit_icon = 		'icons/inventory/teshari/teshari_suit.dmi'
 	mask_icon = 		'icons/inventory/teshari/teshari_masks.dmi'
 	backpack_icon = 	'icons/inventory/teshari/teshari_back.dmi'
@@ -26,7 +26,7 @@
 	gloves_icon = 		'icons/inventory/vox/vox_gloves.dmi'
 	glasses_icon = 		'icons/inventory/vox/vox_eyes.dmi'
 	shoes_icon = 		'icons/inventory/vox/vox_shoes.dmi'
-	hat_icon = 			'icons/inventory/vox/vox_head.dmi'
+	head_icon = 		'icons/inventory/vox/vox_head.dmi'
 	suit_icon = 		'icons/inventory/vox/vox_suit.dmi'
 	mask_icon = 		'icons/inventory/vox/vox_masks.dmi'
 	appearance_flags =	 HAS_HAIR_COLOR | HAS_EYE_COLOR

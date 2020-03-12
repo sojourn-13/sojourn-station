@@ -64,7 +64,7 @@
 	var/ears_icon = 			'icons/inventory/ears/mob.dmi'
 	var/shoes_icon = 			'icons/inventory/feet/mob.dmi'
 	var/s_store_icon = 			'icons/inventory/on_suit/mob.dmi'
-	var/hat_icon = 				'icons/inventory/head/mob.dmi'
+	var/head_icon = 			'icons/inventory/head/mob.dmi'
 	var/belt_icon = 			'icons/inventory/belt/mob.dmi'
 	var/suit_icon = 			'icons/inventory/suit/mob.dmi'
 	var/mask_icon = 			'icons/inventory/face/mob.dmi'
@@ -86,7 +86,7 @@
 		if("glasses") 	I = glasses_icon
 		if("ears")    	I = ears_icon
 		if("mask")    	I = mask_icon
-		if("head")    	I = hat_icon
+		if("head")    	I = head_icon
 		if("shoes")   	I = shoes_icon
 		if("belt")    	I = belt_icon
 		if("s_store") 	I = s_store_icon

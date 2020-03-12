@@ -733,7 +733,8 @@ mob/living/carbon/human/proc/get_wings_image()
 			var/image/bloodsies	= image("icon" = form.blood_mask, "icon_state" = "bloodyhands")
 			bloodsies.color = gloves.blood_color
 			standing.add_overlay(bloodsies)
-		standing.color = gloves.color
+		if(gloves.color)
+			standing.color = gloves.color
 		overlays_standing[GLOVES_LAYER]	= standing
 	else
 		if(blood_DNA)
@@ -894,7 +895,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		else if(head.item_icons && (slot_head_str in head.item_icons))
 			t_icon = head.item_icons[slot_head_str]
 		else
-			t_icon = form.get_mob_icon("hat")
+			t_icon = form.get_mob_icon("head")
 
 		if (!standing)
 			//Determine the state to use
@@ -999,7 +1000,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		if(wear_suit.blood_DNA)
 			var/obj/item/clothing/suit/S = wear_suit
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "[S.blood_overlay_type]blood")
-			bloodsies.color = wear_suit.blood_color
+			bloodsies.color = S.blood_color
 			standing.overlays	+= bloodsies
 
 		// Accessories - copied from uniform, BOILERPLATE because fuck this system.
