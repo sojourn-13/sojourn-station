@@ -70,7 +70,7 @@
 	backpack_overrides.Cut()
 
 /decl/hierarchy/outfit/job/security/medspec
-	name = OUTFIT_JOB_NAME("Blackshield - Corpsmen")
+	name = OUTFIT_JOB_NAME("Blackshield - Corpsman")
 	l_pocket = /obj/item/device/flash
 	id_type = /obj/item/weapon/card/id/medcpec
 	uniform = /obj/item/clothing/under/rank/corpsman

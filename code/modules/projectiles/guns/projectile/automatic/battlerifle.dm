@@ -109,8 +109,8 @@
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine
 	name = "BM CAR 10x50mm \"Boar\""
-	desc = "The heavy second-line carbine made by Boris Kilmeade of the Nadezhda Marshals. \
-		 A rifle fashioned by a brute of a man and made for similar brutes, taking influence from the MK-12 Omnicarbine, chambered in 10x50mm Omni. \
+	desc = "The heavy second-line carbine made by the Blackshield Militia, designed for close range encounters and support fire. \
+		 A rifle fashioned for cover fire and cramped enviroments, taking influence from the MK-12 Omnicarbine, chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 Despite the blinding muzzle flash and agonizing recoil, its small size arguably makes up for the disadvantages."
 	icon = 'icons/obj/guns/projectile/Boar.dmi'
@@ -130,8 +130,8 @@
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds
 	name = "BM CAR 10x50mm \"Warthog\""
-	desc = "The heavy second-line carbine made by Boris Kilmeade of the Nadezhda Marshals. \
-		 A rifle fashioned by a brute of a man and made for similar brutes, taking influence from MK-12 MOD 1 Omnicarbine, chambered in 10x50mm Omni. \
+	desc = "The heavy second-line carbine made by the Blackshield Militia, designed for close range encounters and support fire. \
+		 A rifle fashioned for cover fire and cramped enviroments, taking influence from the MK-12 Omnicarbine, chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 This one is fitted with a muzzle brake, holographic sight, and limited to 3-round bursts, it's almost managable. Almost."
 	icon = 'icons/obj/guns/projectile/Warthog.dmi'

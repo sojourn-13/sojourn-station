@@ -64,7 +64,7 @@ var/list/dreams = list(
 	"a Prime","a Entertainer","a Chef","a Soteria Medical Doctor","a Soteria Psychologist","a Soteria Paramedic",
 	"a Soteria Chemist","a Soteria Scientist","a Soteria Roboticist","a Cyborg","a Cargo Technician","a Lonestar Miner",
 	"a Guild Adept", "a Marshal Officer","a Marshal Supply Specialist","a Marshal Ranger", "the Premier",
-	"a Blackshield Corpsmen", "a Blackshield Trooper",
+	"a Blackshield Corpsman", "a Blackshield Trooper",
 
 //Races (Check Creatures Before Adding Stuff Here, There's Some Overlap!)
 	"an abhuman","an agudner","an akula","an angel","a bird","a bunny","a cht'mant","a coyote","a crocodile","a deer","a demon",

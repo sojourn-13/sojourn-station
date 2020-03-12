@@ -222,7 +222,7 @@
 
 
 /datum/job/medspec
-	title = "Corpsmen"
+	title = "Corpsman"
 	flag = MEDSPEC
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
@@ -268,7 +268,7 @@
 	Solving crimes often requires scientific analysis, and expert rulings from a trusted source within security. You will often be expected to analyze blood, chemicals, fingerprints, conduct autopsies, and submit your findings to help track down elusive culprits. In this task, you will work closely with the rangers, if necessary, as he often has the talents to perform these tasks. But his time is better spent questioning and interrogating people."
 
 /obj/landmark/join/start/medspec
-	name = "Corpsmen"
+	name = "Corpsman"
 	icon_state = "player-blue"
 	join_tag = /datum/job/medspec
 

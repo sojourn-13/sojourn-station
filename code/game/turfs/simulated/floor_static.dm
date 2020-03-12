@@ -48,3 +48,18 @@ Engine water turfs
 	name = "river outlet gate"
 	desc = "This gate allows the now heated water from an underground river to flow back underground."
 	icon_state = "output"
+
+/*
+Outdoor turfs for atmos buggery.
+*/
+/turf/simulated/floor/fixed/fdirt
+	name = "dirt"
+	icon = 'icons/turf/flooring/dirt.dmi'
+	icon_state = "dirt"
+	initial_flooring = /decl/flooring/dirt
+
+/turf/simulated/floor/fixed/fgrass
+	name = "grass"
+	icon = 'icons/turf/flooring/grass.dmi'
+	icon_state = "grass0"
+	initial_flooring = /decl/flooring/grass

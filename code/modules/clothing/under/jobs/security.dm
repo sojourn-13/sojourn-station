@@ -42,14 +42,14 @@
 
 /obj/item/clothing/under/rank/medspec
 	name = "militia corpmen's jumpsuit"
-	desc = "A durable corpsmen's jumpsuit, designed to provide moderate combat protection."
+	desc = "A durable corpsman's jumpsuit, designed to provide moderate combat protection."
 	icon_state = "medspec"
 	item_state = "ba_suit"
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/medspec/skirt
 	name = "militia corpmen's jumpskirt"
-	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for robust protection. It has the words \"Corpsmen\" written on the shoulders."
+	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for robust protection. It has the words \"Corpsman\" written on the shoulders."
 	icon_state = "medspec_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 

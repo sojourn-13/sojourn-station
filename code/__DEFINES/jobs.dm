@@ -1,5 +1,5 @@
 //Jobs depatment lists for use in constant expressions
-#define JOBS_SECURITY "Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsmen","Blackshield Trooper","Marshal Officer"
+#define JOBS_SECURITY "Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer"
 #define JOBS_COMMAND "Premier","Steward","Militia Commander","Warrant Officer","Chief Executive Officer","Guild Master","Chief Biolab Overseer","Chief Research Overseer","Prime"
 #define JOBS_ENGINEERING "Guild Master","Guild Adept"
 #define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Chemist","Soteria Paramedic"

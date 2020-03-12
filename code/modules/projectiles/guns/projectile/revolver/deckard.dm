@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/revolver/deckard
 	name = "HS REV .44 \"Deckard\""
-	desc = "A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .44 rounds."
+	desc = "A rare, custom-built revolver designed by Boris Kilmeade of the Nadezhda Marshals. Use when there is no time for the Voight-Kampff test. Uses .44 rounds."
 	icon = 'icons/obj/guns/projectile/deckard.dmi'
 	icon_state = "deckard"
 	caliber = ".44"
