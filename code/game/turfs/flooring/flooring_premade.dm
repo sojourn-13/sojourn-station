@@ -1,7 +1,7 @@
 /*Carpet*/
 
 /turf/simulated/floor/carpet
-	name = "carpet"
+	name = "red carpet"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "carpet"
 	initial_flooring = /decl/flooring/carpet
@@ -17,12 +17,12 @@
 	initial_flooring = /decl/flooring/carpet/blucarpet
 
 /turf/simulated/floor/carpet/turcarpet
-	name = "tur carpet"
+	name = "turquoise carpet"
 	icon_state = "turcarpet"
 	initial_flooring = /decl/flooring/carpet/turcarpet
 
 /turf/simulated/floor/carpet/sblucarpet
-	name = "light blue carpet"
+	name = "silver blue carpet"
 	icon_state = "sblucarpet"
 	initial_flooring = /decl/flooring/carpet/sblucarpet
 
