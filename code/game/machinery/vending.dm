@@ -1490,7 +1490,8 @@
 /obj/machinery/vending/props
 	name = "Portable Stage"
 	desc = "All the costumes a performer could need. Probably."
-	product_slogans = "Every actor needs their banana peel!;Honk!;We all know who you're going to choose.;Be witty! Be funny!;Make them smile!;Everything an Actor needs and some things he doesn't.;Toys Extravaganza!"
+	product_slogans = "Be witty!;Make them smile!;Honk!;Dress to impress!"
+	product_ads = "All animal costumes made out of real fur!;Now featuring our new history selection!;Audiences love a good outfit!"
 	icon_state = "Theater"
 	products = list(/obj/item/weapon/storage/box/costume/bunny = 2,
 					/obj/item/weapon/storage/box/costume/chicken = 2,
@@ -1510,7 +1511,24 @@
 					/obj/item/weapon/storage/box/costume/plaguedoctor = 2,
 					/obj/item/weapon/storage/box/costume/owl = 2,
 					/obj/item/weapon/storage/box/costume/soviet = 2)
-	auto_price = FALSE
+	prices = list(/obj/item/weapon/storage/box/costume/bunny = 200,
+					/obj/item/weapon/storage/box/costume/chicken = 200,
+					/obj/item/weapon/storage/box/costume/carp = 200,
+					/obj/item/weapon/storage/box/costume/clown = 200,
+					/obj/item/weapon/storage/box/costume/gladiator = 200,
+					/obj/item/weapon/storage/box/costume/griffin = 200,
+					/obj/item/weapon/storage/box/costume/ian = 200,
+					/obj/item/weapon/storage/box/costume/jester = 200,
+					/obj/item/weapon/storage/box/costume/lobster = 200,
+					/obj/item/weapon/storage/box/costume/mailman = 200,
+					/obj/item/weapon/storage/box/costume/monkey = 200,
+					/obj/item/weapon/storage/box/costume/mime = 200,
+					/obj/item/weapon/storage/box/costume/nurse = 200,
+					/obj/item/weapon/storage/box/costume/police = 200,
+					/obj/item/weapon/storage/box/costume/pirate = 200,
+					/obj/item/weapon/storage/box/costume/plaguedoctor = 200,
+					/obj/item/weapon/storage/box/costume/owl = 200,
+					/obj/item/weapon/storage/box/costume/soviet = 200)
 
 //FOR ACTORS GUILD - Containers
 /obj/machinery/vending/containers
