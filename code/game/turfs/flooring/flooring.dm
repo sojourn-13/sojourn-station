@@ -309,7 +309,7 @@ var/list/flooring_types
 	build_type = /obj/item/stack/tile/carpet/sblucarpet
 
 /decl/flooring/carpet/gaycarpet
-	name = "clown carpet"
+	name = "pink carpet"
 	icon_base = "gaycarpet"
 	build_type = /obj/item/stack/tile/carpet/gaycarpet
 
