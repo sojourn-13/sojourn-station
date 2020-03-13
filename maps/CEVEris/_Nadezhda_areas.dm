@@ -8,7 +8,7 @@
 	icon_state = "asteroid"
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	dynamic_lighting = FALSE
-	base_turf = /turf/simulated/floor/dirt
+	base_turf = /turf/simulated/floor/asteroid/dirt
 
 /area/colony/exposedsun/pastgate
 	ship_area = TRUE
@@ -19,7 +19,7 @@
 /area/nadezhda
 	ship_area = TRUE
 	icon_state = "erisyellow"
-	base_turf = /turf/simulated/floor/dirt
+	base_turf = /turf/simulated/floor/asteroid/dirt
 	flags = AREA_FLAG_RAD_SHIELDED
 
 //Maintenance
@@ -35,6 +35,7 @@
 /area/nadezhda/maintenance/junk
 	name = "Junk Beacon"
 	icon_state = "disposal"
+	dynamic_lighting = FALSE
 
 /area/nadezhda/maintenance/surface_disposal
 	name = "Surface Disposal"

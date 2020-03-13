@@ -170,6 +170,7 @@
 /obj/machinery/door/unpowered/simple/wood
 	icon_state = "wood"
 	color = "#824B28"
+	opacity = 1
 
 /obj/machinery/door/unpowered/simple/wood/New(var/newloc,var/material_name)
 	..(newloc, MATERIAL_WOOD)

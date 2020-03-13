@@ -418,7 +418,7 @@
 /********************** Planet **************************/
 
 /turf/simulated/mineral/planet
-	mined_turf = /turf/simulated/floor/dirt
+	mined_turf = /turf/simulated/floor/asteroid/dirt
 
 /**********************Asteroid**************************/
 
@@ -480,7 +480,7 @@
 		new/obj/item/weapon/ore/glass(src)
 
 	dug = 1
-	icon_state = "asteroid_dug"
+	//icon_state = "asteroid_dug"
 	return
 
 /turf/simulated/floor/asteroid/proc/updateMineralOverlays(var/update_neighbors)
