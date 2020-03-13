@@ -18,8 +18,8 @@
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	recoil_buildup = 8
-	one_hand_penalty = 15
 	silencer_type = /obj/item/weapon/silencer
+	one_hand_penalty = 15 //automatic rifle level
 
 	firemodes = list(
 		SEMI_AUTO_NODELAY,
