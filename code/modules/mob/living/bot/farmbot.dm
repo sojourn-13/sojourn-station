@@ -144,7 +144,8 @@
 				break
 		else
 			for(var/obj/machinery/portable_atmospherics/hydroponics/tray in view(7, src))
-				if(process_tray(tray))
+				var/trayNeed = process_tray(tray)
+				if(trayNeed && (trayNeed != FARMBOT_WATER || tank.reagents.total_volume >= 100))
 					target = tray
 					frustration = 0
 					break
@@ -294,14 +295,16 @@
 	if(tray.dead && removes_dead || tray.harvest && collects_produce)
 		return FARMBOT_COLLECT
 
-	else if(refills_water && tray.waterlevel < 40 && !tray.reagents.has_reagent("water"))
-		return FARMBOT_WATER
-
-	else if(uproots_weeds && tray.weedlevel > 3)
+	else if(uproots_weeds && tray.weedlevel > 3 && !tray.dead)
 		return FARMBOT_UPROOT
 
-	else if(replaces_nutriment && tray.nutrilevel < 1 && tray.reagents.total_volume < 1)
+	else if(replaces_nutriment && tray.nutrilevel < 1 && tray.reagents.total_volume < 1 && !tray.dead)
 		return FARMBOT_NUTRIMENT
+
+	else if(refills_water && tray.waterlevel < 40 && !tray.reagents.has_reagent("water") && !tray.dead)
+		return FARMBOT_WATER
+
+
 
 	return 0
 
