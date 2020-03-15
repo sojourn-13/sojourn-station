@@ -54,3 +54,21 @@
 		return
 	last_use = world.time
 	teleport()
+
+/obj/structure/invislight
+	name = "invisible light"
+	desc = "You should not be able to see this. Contact the nearest bluespace tech."
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
+
+/obj/structure/invislight/New()
+	set_light(7, 5, "#999999")
+	. = ..()
+
+/obj/structure/invislightsmall
+	name = "small invisible light"
+
+/obj/structure/invislightsmall/New()
+	set_light(1, 1, "#999999")
+	. = ..()
