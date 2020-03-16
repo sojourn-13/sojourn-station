@@ -333,7 +333,7 @@
 	suitable_cell = /obj/item/weapon/cell/medium
 
 /obj/item/device/lighting/toggleable/flashlight/seclite
-	name = "Ironhammer flashlight"
+	name = "security flashlight"
 	desc = "A hand-held security flashlight."
 	icon_state = "seclite"
 	item_state = "seclite"

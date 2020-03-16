@@ -257,8 +257,8 @@
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/shoes/winter/security
-	name = "ironhammer winter boots"
-	desc = "A pair of reinforced winter boots with a ironhammer design."
+	name = "security winter boots"
+	desc = "A pair of reinforced winter boots with a security design."
 	icon_state = "winterboots_sec"
 	armor = list(melee = 30, bullet = 10, laser = 10, energy = 15, bomb = 20, bio = 0, rad = 0)
 

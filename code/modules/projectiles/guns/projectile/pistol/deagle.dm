@@ -3,8 +3,8 @@
 	name = "HS HG .50 \"Avasarala\""
 	desc = "An obvious replica of an old Earth weapon. Robust and straight, this is a gun for a leader, not just an officer."
 	icon = 'icons/obj/guns/projectile/deagle.dmi'
-	icon_state = "lamiabolt"
-	item_state = "lamiabolt"
+	icon_state = "deagle"
+	item_state = "deagle"
 	force = WEAPON_FORCE_PAINFUL
 	caliber = ".50"
 	load_method = MAGAZINE

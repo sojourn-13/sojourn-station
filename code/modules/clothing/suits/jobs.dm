@@ -118,9 +118,9 @@
 //Detective
 /obj/item/clothing/suit/storage/rank/insp_trench
 	name = "ranger's armored trenchcoat"
-	desc = "Brown and armored trenchcoat, designed and created by Ironhammer Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
-	icon_state = "insp_coat"
-	item_state = "insp_coat"
+	desc = "Brown and armored trenchcoat, designed and created by Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
+	icon_state = "rangercoat"
+	item_state = "rangercoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor = list(melee = 40, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
@@ -145,9 +145,9 @@
 
 /obj/item/clothing/suit/storage/detective/ironhammer
 	name = "ranger's armored trenchcoat"
-	desc = "Brown and armored trenchcoat, designed and created by Ironhammer Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
-	icon_state = "insp_coat"
-	item_state = "insp_coat"
+	desc = "Brown and armored trenchcoat, designed and created by Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
+	icon_state = "rangercoat"
+	item_state = "rangercoat"
 	blood_overlay_type = "coat"
 
 //Engineering

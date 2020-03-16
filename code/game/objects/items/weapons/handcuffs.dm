@@ -67,7 +67,7 @@
 		to_chat(user, SPAN_DANGER("\The [src] won't fit around \the [H.gloves]!"))
 		return 0
 
-	//user.visible_message(SPAN_DANGER("\The [user] is attempting to put [cuff_type] on \the [H]!"))
+	user.visible_message(SPAN_DANGER("\The [user] is attempting to put [cuff_type] on \the [H]!"))
 
 	if(!do_after(user, delay, target))
 		return 0

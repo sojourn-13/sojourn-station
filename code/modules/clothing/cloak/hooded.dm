@@ -132,8 +132,8 @@
 	hoodtype = /obj/item/clothing/head/hood/winter/captain
 
 /obj/item/clothing/suit/hooded/wintercoat/security
-	name = "ironhammer winter coat"
-	desc = "A heavy ironhammer jacket designed for cold environments. Armor plating has been sewn into it."
+	name = "security winter coat"
+	desc = "A heavy security jacket designed for cold environments. Armor plating has been sewn into it."
 	icon_state = "coatsecurity"
 	item_state_slots = list(slot_r_hand_str = "coatsecurity", slot_l_hand_str = "coatsecurity")
 	armor = list(melee = 25, bullet = 20, laser = 20, energy = 15, bomb = 20, bio = 0, rad = 0)

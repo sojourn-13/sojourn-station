@@ -1252,11 +1252,11 @@
 
 //security
 /obj/item/weapon/book/manual/wiki/security_ironparagraphs
-	name = "Ironhammer Paragraphs"
+	name = "Marshal Paragraphs"
 	desc = "A set of corporate guidelines for keeping order on privately-owned space assets."
 	icon_state = "book_ironparagraphs"
-	author = "Ironhammer Security"
-	title = "Ironhammer Paragraphs"
+	author = "Marshal Security"
+	title = "Marshal Paragraphs"
 	page_link = "Ironhammer_Paragraphs"
 
 /obj/item/weapon/book/manual/wiki/security_detective

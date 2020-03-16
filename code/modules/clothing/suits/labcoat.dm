@@ -57,7 +57,7 @@
 
 /obj/item/clothing/suit/storage/toggle/labcoat/medspec
 	name = "soteria specialist's labcoat"
-	desc = "A suit that protects against minor chemical spills. This one has marks of Ironhammer Security."
+	desc = "A suit that protects against minor chemical spills. This one has marks of security."
 	icon_state = "labcoat_medspec_open"
 	item_state = "labcoat_medspec"
 	icon_open = "labcoat_medspec_open"

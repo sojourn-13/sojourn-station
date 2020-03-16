@@ -92,8 +92,8 @@
 	icon_state = "secsoft"
 
 /obj/item/clothing/head/seccorp
-	name = "ironhammer inspector cap"
-	desc = "A black field cap worn by Ironhammer Inspectors."
+	name = "ranger inspector cap"
+	desc = "A black field cap worn by ranger."
 	icon_state = "corpsoft"
 
 //Medical

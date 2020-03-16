@@ -196,7 +196,7 @@
 
 /obj/item/clothing/suit/storage/snowsuit/security
 	name = "security snowsuit"
-	desc = "A special ironhammer coat designed for cold environments."
+	desc = "A special security coat designed for cold environments."
 	icon_state = "snowsuit_security"
 
 /obj/item/clothing/suit/storage/snowsuit/medical

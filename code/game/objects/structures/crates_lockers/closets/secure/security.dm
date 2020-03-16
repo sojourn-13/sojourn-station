@@ -176,7 +176,7 @@
 	new /obj/item/clothing/under/rank/inspector/suit(src)
 	new /obj/item/clothing/under/rank/inspector/black(src)
 	new /obj/item/clothing/under/rank/inspector(src)
-	new /obj/item/clothing/suit/storage/detective(src)
+	new /obj/item/clothing/suit/storage/rank/det_trench(src)
 	new /obj/item/clothing/suit/storage/detective/ironhammer(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/gloves/thick(src)
