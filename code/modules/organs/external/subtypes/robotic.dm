@@ -26,13 +26,6 @@
 	mob_icon = icon(force_icon, icon_state)
 	return mob_icon
 
-/obj/item/organ/external/robotic/set_description(var/datum/organ_description/desc)
-	src.name = "[name] [desc.name]"
-	src.organ_tag = desc.organ_tag
-	src.amputation_point = desc.amputation_point
-	src.joint = desc.joint
-
-
 /obj/item/organ/external/robotic/Destroy()
 	deactivate(1)
 	. = ..()

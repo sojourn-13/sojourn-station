@@ -679,7 +679,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			var/obj/item/clothing/under/under = w_uniform
 			if(under.accessories.len)
 				for(var/obj/item/clothing/accessory/A in under.accessories)
-					standing.overlays |= A.get_mob_overlay()
+					standing.copy_overlays(A.get_mob_overlay(), FALSE)
 
 		overlays_standing[UNIFORM_LAYER]	= standing
 	else
@@ -713,20 +713,23 @@ mob/living/carbon/human/proc/get_wings_image()
 /mob/living/carbon/human/update_inv_gloves(var/update_icons=1)
 	overlays_standing[GLOVES_LAYER]	= null
 	if(check_draw_gloves())
-
 		var/t_state = gloves.icon_state
-		if(!t_state)	t_state = gloves.item_state
+		if(!t_state)
+			t_state = gloves.item_state
+
+
 
 		var/image/standing
 		if(gloves.contained_sprite)
 			var/state = ""
 			state += "[gloves.item_state][WORN_GLOVES]"
-
 			if(gloves.icon_override)
 				standing = image("icon" = gloves.icon_override, "icon_state" = state)
 			else
 				standing = image("icon" = gloves.icon, "icon_state" = state)
 		else if(gloves.icon_override)
+			standing = image(icon = gloves.icon_override, icon_state = t_state)
+		else
 			standing = image(icon = form.get_mob_icon("gloves"), icon_state = t_state)
 
 		if(gloves.blood_DNA)
@@ -741,7 +744,8 @@ mob/living/carbon/human/proc/get_wings_image()
 			var/image/bloodsies	= image("icon" = form.blood_mask, "icon_state" = "bloodyhands")
 			bloodsies.color = hand_blood_color
 			overlays_standing[GLOVES_LAYER]	= bloodsies
-	if(update_icons)   update_icons()
+	if(update_icons)
+		update_icons()
 
 
 /mob/living/carbon/human/update_inv_glasses(var/update_icons=1)
@@ -831,7 +835,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		if(shoes.blood_DNA)
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "shoeblood")
 			bloodsies.color = shoes.blood_color
-			standing.overlays += bloodsies
+			standing.add_overlay(bloodsies)
 		standing.color = shoes.color
 		overlays_standing[SHOES_LAYER] = standing
 	else
@@ -907,13 +911,13 @@ mob/living/carbon/human/proc/get_wings_image()
 		if(head.blood_DNA)
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "helmetblood")
 			bloodsies.color = head.blood_color
-			standing.overlays	+= bloodsies
+			standing.add_overlay(bloodsies)
 
 		if(istype(head,/obj/item/clothing/head))
 			var/obj/item/clothing/head/hat = head
 			var/cache_key = "[hat.light_overlay]_[species.get_bodytype()]"
 			if(hat.on && light_overlay_cache[cache_key])
-				standing.overlays |= light_overlay_cache[cache_key]
+				standing.copy_overlays(light_overlay_cache[cache_key], FALSE)
 
 		standing.color = head.color
 		overlays_standing[HEAD_LAYER] = standing
@@ -1001,7 +1005,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			var/obj/item/clothing/suit/S = wear_suit
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "[S.blood_overlay_type]blood")
 			bloodsies.color = S.blood_color
-			standing.overlays	+= bloodsies
+			standing.add_overlay(bloodsies)
 
 		// Accessories - copied from uniform, BOILERPLATE because fuck this system.
 		var/obj/item/clothing/suit/suit = wear_suit
@@ -1047,7 +1051,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		if( !istype(wear_mask, /obj/item/clothing/mask/smokable/cigarette) && wear_mask.blood_DNA )
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "maskblood")
 			bloodsies.color = wear_mask.blood_color
-			standing.overlays	+= bloodsies
+			standing.add_overlay(bloodsies)
 		overlays_standing[FACEMASK_LAYER]	= standing
 
 	if(update_icons)   update_icons()
