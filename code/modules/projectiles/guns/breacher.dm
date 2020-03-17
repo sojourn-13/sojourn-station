@@ -166,7 +166,7 @@
 		icon_state = "Hatton_box0"
 
 /obj/item/weapon/hatton_magazine/moebius
-	name = "Moebius BT \"Q-del\" gas tube"
+	name = "Soteria BT \"Q-del\" gas tube"
 	icon_state = "Moebius_box1"
 	matter = list(MATERIAL_PLASMA = 10, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 2)
 	charge = 2
