@@ -578,3 +578,14 @@ ADMIN_VERB_ADD(/client/proc/toggleUIDebugMode, R_DEBUG, FALSE)
 		UI.toggleDebugMode()
 	else
 		log_debug("This mob has no UI.")
+
+ADMIN_VERB_ADD(/client/proc/toggleHUBVisibility, R_ADMIN, FALSE)
+/client/proc/toggleHUBVisibility()
+	set category = "Server"
+	set name = "Toggle Hub Visibility"
+	set desc = "Toggle the Server's visibility on the Pager"
+
+	world.visibility = world.visibility ? 0 : 1
+
+	log_admin("[key_name(usr)] turned the hub listing [world.visibility ? "on" : "off"].")
+	message_admins("\blue [key_name_admin(usr)] turned the hub listing [world.visibility ? "on" : "off"].", 1)

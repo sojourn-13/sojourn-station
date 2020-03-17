@@ -63,9 +63,9 @@
 	sort_string = "TBAAB"
 
 /datum/design/research/item/weapon/hatton
-	name = "Moebius BT \"Q-del\""
-	desc = "This breaching tool was reverse engineered from the \"Hatton\" design.\
-			Despite the Excelsior \"Hatton\" being traded on the free market through Technomancer League channels,\
+	name = "Soteria BT \"Q-del\""
+	desc = "This breaching tool was reverse engineered from the \"Hatton\" design. \
+			Despite the Artificer's Guild \"Hatton\" being traded on the free market through guild channels, \
 			this device suffers from a wide number of reliability issues stemming from it being lathe printed."
 	build_path = /obj/item/weapon/hatton/moebius
 	sort_string = "TBAAD"
@@ -83,7 +83,7 @@
 	sort_string = "TAACB"
 
 /datum/design/research/item/ammo/hatton
-	name = "Moebius BT \"Q-del\" gas tube"
+	name = "Soteria BT \"Q-del\" gas tube"
 	build_path = /obj/item/weapon/hatton_magazine/moebius
 	sort_string = "TAACC"
 /datum/design/research/item/ammo/c20r_ammo
@@ -91,3 +91,10 @@
 	desc = "10mm SMG magazine for the C-20r"
 	build_path = /obj/item/ammo_magazine/smg10mm
 	sort_string = "TAACD"
+
+//Disks
+/datum/design/research/item/disk/blackshield
+	name = "Blackshield Sovereignty Disk"
+	desc = "A unique disk for printing and creating Blackshield arms and ammunition."
+	build_path = /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
+	sort_string = "TAACE"

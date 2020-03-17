@@ -2,7 +2,7 @@
 	name = "FS Power Gloves"
 	desc = "Frozen Star solution for police operations. Punch criminals right in the face instead of prodding them with some feeble rod."
 	icon_state = "powerglove"
-	item_state = "bgloves"
+	item_state = "powerglove"
 	action_button_name = "Toggle Power Glove"
 	price_tag = 500
 	var/stunforce = 0

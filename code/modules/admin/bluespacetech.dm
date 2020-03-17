@@ -234,7 +234,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	desc = "A pair of modified gloves. The letters 'BST' are stamped on the side."
 	icon = 'icons/inventory/hands/icon.dmi'
 	icon_state = "black"
-	item_state = "bgloves"
+	item_state = "black"
 	siemens_coefficient = 0
 	permeability_coefficient = 0
 

@@ -341,7 +341,7 @@
 		fluorescent = 1
 		blood_color = COLOR_LUMINOL
 		blood_overlay.color = COLOR_LUMINOL
-		update_icon()
+	//	update_icon()
 
 /obj/item/add_blood(mob/living/carbon/human/M as mob)
 	if (!..())
@@ -371,16 +371,15 @@ var/global/list/items_blood_overlay_by_type = list()
 	if(blood_overlay)
 		return
 
-	var/image/IMG = items_blood_overlay_by_type[type]
-	if(IMG)
-		blood_overlay = IMG
+	var/icon/ICO = items_blood_overlay_by_type[type]
+	if(ICO)
+		blood_overlay = image("icon" = ICO)
 	else
-		var/icon/ICO = new /icon(icon, icon_state)
+		ICO = new /icon(icon, icon_state)
 		ICO.Blend(new /icon('icons/effects/blood.dmi', rgb(255, 255, 255)), ICON_ADD) // fills the icon_state with white (except where it's transparent)
 		ICO.Blend(new /icon('icons/effects/blood.dmi', "itemblood"), ICON_MULTIPLY)   // adds blood and the remaining white areas become transparant
-		IMG = image("icon" = ICO)
-		items_blood_overlay_by_type[type] = IMG
-		blood_overlay = IMG
+		items_blood_overlay_by_type[type] = ICO
+		blood_overlay = image("icon" = ICO)
 
 /obj/item/proc/showoff(mob/user)
 	for (var/mob/M in view(user))

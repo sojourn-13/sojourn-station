@@ -2,21 +2,21 @@
 	desc = "A pair of regal blue gloves with a swanky gold trim."
 	name = "premier's gloves"
 	icon_state = "captain"
-	item_state = "egloves"
+	item_state = "captain"
 	price_tag = 500
 
 /obj/item/clothing/gloves/cyborg
 	desc = "Beep boop."
 	name = "cyborg gloves"
 	icon_state = "robohands"
-	item_state = "r_hands"
+	item_state = "robohands"
 	siemens_coefficient = 1
 
 /obj/item/clothing/gloves/insulated
 	desc = "A pair of gloves which protect the wearer from electric shocks."
 	name = "insulated gloves"
 	icon_state = "yellow"
-	item_state = "ygloves"
+	item_state = "yellow"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	price_tag = 200
@@ -36,7 +36,7 @@
 	desc = "A pair of fire-resistant black work gloves."
 	name = "thick gloves"
 	icon_state = "black"
-	item_state = "bgloves"
+	item_state = "black"
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	price_tag = 100
@@ -50,7 +50,7 @@
 	name = "handmade combat gloves"
 	desc = "A pair of modified work gloves with some steel."
 	icon_state = "hm_combat"
-	item_state = "bgloves"
+	item_state = "hm_combat"
 	armor = list(melee = 25, bullet = 15, laser = 15,energy = 12, bomb = 25, bio = 5, rad = 0)
 	siemens_coefficient = 0.6
 	price_tag = 150
@@ -74,7 +74,7 @@
 	desc = "A pair of fire and impact-resistant combat gloves."
 	name = "combat gloves"
 	icon_state = "black"
-	item_state = "swat_gl"
+	item_state = "black"
 	armor = list(
 		melee = 30,
 		bullet = 20,
@@ -97,7 +97,7 @@
 	name = "latex gloves"
 	desc = "A pair of sterile latex gloves."
 	icon_state = "latex"
-	item_state = "lgloves"
+	item_state = "latex"
 	siemens_coefficient = 1.0 //thin latex gloves, much more conductive than fabric gloves (basically a capacitor for AC)
 	permeability_coefficient = 0.01
 	germ_level = 0
@@ -107,7 +107,7 @@
 	desc = "A pair of leather work gloves that protect against floral dangers such as thorns and barbs."
 	name = "botanist's leather gloves"
 	icon_state = "leather"
-	item_state = "ggloves"
+	item_state = "leather"
 	permeability_coefficient = 0.05
 	siemens_coefficient = 0.50 //thick work gloves
 	price_tag = 50

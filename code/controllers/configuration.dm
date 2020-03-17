@@ -684,6 +684,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 				if("enable_mob_sleep")
 					config.enable_mob_sleep = 1
 
+				if("hub_visible")
+					world.visibility = 1
+
 				if("webhook_key")
 					config.webhook_key = value
 
