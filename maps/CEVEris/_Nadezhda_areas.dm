@@ -8,7 +8,7 @@
 	icon_state = "asteroid"
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	dynamic_lighting = FALSE
-	base_turf = /turf/simulated/floor/asteroid/dirt
+	base_turf = /turf/simulated/floor/dirt
 
 /area/colony/exposedsun/pastgate
 	ship_area = TRUE
@@ -19,7 +19,7 @@
 /area/nadezhda
 	ship_area = TRUE
 	icon_state = "erisyellow"
-	base_turf = /turf/simulated/floor/asteroid/dirt
+	base_turf = /turf/simulated/floor/dirt
 	flags = AREA_FLAG_RAD_SHIELDED
 
 //Maintenance
@@ -35,7 +35,6 @@
 /area/nadezhda/maintenance/junk
 	name = "Junk Beacon"
 	icon_state = "disposal"
-	dynamic_lighting = FALSE
 
 /area/nadezhda/maintenance/surface_disposal
 	name = "Surface Disposal"
@@ -203,7 +202,6 @@
 	name = "Greyson Positronic Base"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen13.ogg', 'sound/ambience/ambigen14.ogg', 'sound/ambience/ambimalf.ogg')
-	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/dcave
 	name = "Diyaab Cave"
@@ -220,7 +218,6 @@
 /area/nadezhda/outside/bcave
 	name = "Bear Cave"
 	icon_state = "erisgreen"
-	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/scave
 	name = "Spider Cave"
@@ -229,18 +226,20 @@
 /area/nadezhda/outside/forest
 	name = "Forest"
 	icon_state = "erisgreen"
+	sound_env = FOREST
 	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg')
 
 /area/nadezhda/outside/lakeside
     name = "Lakeside"
     icon_state = "erisblue"
+    sound_env = MOUNTAINS
     forced_ambience = list('sound/ambience/lakeamb1.ogg', 'sound/ambience/lakeamb2.ogg', 'sound/ambience/lakeamb3.ogg')
 
 /area/nadezhda/outside/meadow
     name = "Meadow"
     icon_state = "green"
+    sound_env = MOUNTAINS
     forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
-
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
