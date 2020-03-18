@@ -229,18 +229,20 @@
 /area/nadezhda/outside/forest
 	name = "Forest"
 	icon_state = "erisgreen"
-	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg')
+	sound_env = FOREST
+	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb4.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
 
 /area/nadezhda/outside/lakeside
     name = "Lakeside"
     icon_state = "erisblue"
+    sound_env = MOUNTAINS
     forced_ambience = list('sound/ambience/lakeamb1.ogg', 'sound/ambience/lakeamb2.ogg', 'sound/ambience/lakeamb3.ogg')
 
 /area/nadezhda/outside/meadow
     name = "Meadow"
     icon_state = "green"
+    sound_env = MOUNTAINS
     forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
-
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 

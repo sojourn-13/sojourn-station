@@ -38,6 +38,14 @@
 	default_pixel_x = -16
 	pixel_x = -16
 	pixel_y = 0
+	attack_sound = 'sound/weapons/deathclawattack.ogg'
+
+/mob/living/simple_animal/hostile/deathclaw/FindTarget()
+	. = ..()
+	if(.)
+		visible_emote("lets out a deafening roar and charges at [.]!")
+		playsound(src, 'sound/voice/deathclaw_roar.ogg', 200, 3, 8, 1)
+
 
 /mob/living/simple_animal/hostile/deathclaw/chunks
 	name = "Chunks"
