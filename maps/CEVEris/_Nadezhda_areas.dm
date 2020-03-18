@@ -35,6 +35,7 @@
 /area/nadezhda/maintenance/junk
 	name = "Junk Beacon"
 	icon_state = "disposal"
+	dynamic_lighting = FALSE
 
 /area/nadezhda/maintenance/surface_disposal
 	name = "Surface Disposal"
@@ -202,6 +203,7 @@
 	name = "Greyson Positronic Base"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen13.ogg', 'sound/ambience/ambigen14.ogg', 'sound/ambience/ambimalf.ogg')
+	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/dcave
 	name = "Diyaab Cave"
@@ -218,6 +220,7 @@
 /area/nadezhda/outside/bcave
 	name = "Bear Cave"
 	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/scave
 	name = "Spider Cave"
