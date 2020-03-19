@@ -238,3 +238,43 @@
 		return
 
 	..()
+
+
+
+
+
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil
+	name = "The World Tree"
+	desc = "You feel warm being near the tree that holds up the heavens."
+	icon = 'icons/obj/flora/jungletree.dmi'
+	icon_state = "tree"
+
+	use_power = 0
+	idle_power_usage = 0
+	active_power_usage = 0
+
+
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/attackby(var/obj/item/I as obj, var/mob/user as mob)
+	to_chat(user, SPAN_WARNING("You reach out to the world tree, but something stops your paw."))
+	return
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/attack_hand(var/mob/user)
+	to_chat(user, SPAN_WARNING("You reach out to the world tree, but something stops your paw."))
+	return
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/Process()
+
+	var/datum/gas_mixture/environment = loc.return_air()
+
+	if(environment)
+		environment.temperature = T20C
+		environment.gas = list("oxygen" = O2STANDARD * MolesForPressure(environment.volume), \
+							   "nitrogen" = N2STANDARD *  MolesForPressure(environment.volume))
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/update_icon()
+    return
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/MolesForPressure(var/gasVolume)
+	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * T20C)
