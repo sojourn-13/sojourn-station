@@ -245,7 +245,7 @@
 
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil
-	name = "The World Tree"
+	name = "Yggdrasil"
 	desc = "You feel warm being near the tree that holds up the heavens."
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree"
@@ -257,11 +257,11 @@
 
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/attackby(var/obj/item/I as obj, var/mob/user as mob)
-	to_chat(user, SPAN_WARNING("You reach out to the world tree, but something stops your paw."))
+	to_chat(user, SPAN_WARNING("You reach out to the world tree, but something stops your hand."))
 	return
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/attack_hand(var/mob/user)
-	to_chat(user, SPAN_WARNING("You reach out to the world tree, but something stops your paw."))
+	to_chat(user, SPAN_WARNING("You reach out to the world tree, but something stops your hand."))
 	return
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/Process()
