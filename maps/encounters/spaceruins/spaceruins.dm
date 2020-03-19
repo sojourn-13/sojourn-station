@@ -1,4 +1,4 @@
-#include "spaceruins.dmm"
+//#include "spaceruins.dmm"
 
 /obj/map_data/spaceruins
 	name = "Space ruins Level"

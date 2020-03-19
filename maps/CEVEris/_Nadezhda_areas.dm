@@ -204,6 +204,8 @@
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen13.ogg', 'sound/ambience/ambigen14.ogg', 'sound/ambience/ambimalf.ogg')
 	dynamic_lighting = TRUE
+	requires_power = 0
+	flags = AREA_FLAG_RAD_SHIELDED
 
 /area/nadezhda/outside/dcave
 	name = "Diyaab Cave"

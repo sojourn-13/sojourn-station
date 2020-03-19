@@ -25,7 +25,7 @@
 	var/mob/mymob
 
 /obj/rogue_mobspawner/New()
-	if(loc && istype(loc,/turf/space) && istype(loc.loc,/area/asteroid/rogue))
+	if(loc && istype(loc,/turf/simulated/floor/tiled/derelict/red_white_edges) && istype(loc.loc,/area/asteroid/rogue))
 		var/area/asteroid/rogue/A = loc.loc
 		A.mob_spawns += src
 
@@ -37,6 +37,6 @@
 	anchored = 1
 
 /obj/asteroid_spawner/rogue_teleporter/New()
-	if(loc && istype(loc,/turf/space) && istype(loc.loc,/area/asteroid/rogue))
+	if(loc && istype(loc,/turf/simulated/floor/tiled/derelict/red_white_edges) && istype(loc.loc,/area/asteroid/rogue))
 		var/area/asteroid/rogue/A = loc.loc
 		A.teleporter_spawns += src

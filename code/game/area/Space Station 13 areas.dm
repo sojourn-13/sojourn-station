@@ -944,4 +944,5 @@ var/list/centcom_areas = list (
 	var/mob_spawns = list()
 	var/teleporter_spawns = list()
 	var/teleporter
+	base_turf = /turf/simulated/floor/asteroid/dirt
 
