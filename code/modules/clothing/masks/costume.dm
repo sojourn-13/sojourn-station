@@ -29,9 +29,39 @@
 	item_state = "mime"
 
 /obj/item/clothing/mask/costume/job/clown
-	name = "clown mask"
+	name = "red clown mask"
 	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
 	icon_state = "clown"
+	item_state = "clown_hat"
+
+/obj/item/clothing/mask/costume/job/clown/blue
+	name = "blue clown mask"
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
+	icon_state = "blueclown"
+	item_state = "clown_hat"
+
+/obj/item/clothing/mask/costume/job/clown/green
+	name = "green clown mask"
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
+	icon_state = "greenclown"
+	item_state = "clown_hat"
+
+/obj/item/clothing/mask/costume/job/clown/orange
+	name = "orange clown mask"
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
+	icon_state = "orangeclown"
+	item_state = "clown_hat"
+
+/obj/item/clothing/mask/costume/job/clown/purple
+	name = "purple clown mask"
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
+	icon_state = "purpleclown"
+	item_state = "clown_hat"
+
+/obj/item/clothing/mask/costume/job/clown/yellow
+	name = "yellow clown mask"
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
+	icon_state = "yellowclown"
 	item_state = "clown_hat"
 
 /*Misc*/
