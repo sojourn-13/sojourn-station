@@ -133,7 +133,8 @@
 	color = "#760B0B"
 
 /obj/structure/table/bench/padded/New()
-	material = get_material_by_name(MATERIAL_PLASTIC)
+	material = get_material_by_name(MATERIAL_CARPET)
+
 	..()
 
 /obj/structure/table/bench/glass
