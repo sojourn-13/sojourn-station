@@ -36,20 +36,16 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	description = "You are the commander of the local regiment of the blackshield militia, contracted to protect and serve the Nadezhda colony. The Blackshield serves as the first line of defense and a volunteer military for the colony.<br>\
-	<br>\
+	description = "The Militia Commander serves as the commander of the local regiment of the Blackshield Militia.<br>\
+	Contracted to protect and serve the colony, your militia serves as a voluntary first (and hopefully last) line of defense.<br>\
 	Your goal is to keep everyone living on the colony as safe as possible and to eliminate any threats to safety.<br>\
 	The Warrant Officer is your ally and you should work closely with them, they handle the upholding of the law."
 
 	duties = "Coordinate operatives in the field, assigning them to threats and distress calls as needed.<br>\
-		Work with the Warrant Officer to allocate funds to supply your teams with whatever armor, supplies, weapons, munitions, or tools they need.<br>\
+		Work with the Warrant Officer to allocate funds to supply your teams with whatever munitions or equipment they need.<br>\
 		Plan assaults on entrenched threats, ensure each operative knows their roles and carries them out precisely.<br>\
 		Oversee performance of the operatives under your command and punish any that are insubordinate or incompetent.<br>\
 		Advise the council on threats to colony security and advise them towards choices that will minimise exposure to threats."
-
-	loyalties = "As commander, your first loyalty is to the safety of the troops under your command. They are colonist risking their lives, not cannon fodder. Do not allow them to be sent on suicide missions. Any killings of your men should be repaid in blood.<br>\
-		<br>\
-		You're secondary loyalty is to the Blackguard and Nadezhda council, you are to listen to them and carry out all orders and procedures required by your station."
 
 /obj/landmark/join/start/smc
 	name = "Militia Commander"
@@ -95,20 +91,16 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	description = "You are the head officer of the local regiment of the Marshals, contracted to protect and serve the Nadezhda colony. The Marshals serves as the internal police force to the colony and protect against criminal elements.<br>\
-	<br>\
-	Your goal is to keep everyone safe by maintining order and upholding the law within the colony.<br>\
-	The Militia Commander is your ally and you should work closely with them, they provide the muscle and guns to defend the colony."
+	description = "The Warrant Officer serves as the head officer of the local regiment of the Marshals.<br>\
+	Contracted to protect and serve the colony, your internal police force is dedicated to the fight against criminal elements.<br>\
+	Your main objective is to keep everyone safe by maintining order, and upholding laws of all manner within the colony.<br>\
+	The Militia Commander is your ally and you should work closely with them - they provide the muscle and guns to defend the colony."
 
 	duties = "Coordinate officers around the colony, assigning them to tasks and distress calls as needed.<br>\
 		Work with the Militia Commander to allocate funds to supply your teams with whatever armor, supplies, weapons, munitions, or tools they need.<br>\
 		Keep the peace around the station and ensure each officer knows their roles and carries them out precisely.<br>\
 		Oversee performance of the officers under your command and punish any that are insubordinate or incompetent.<br>\
 		Advise the council on threats to colony security and advise them towards choices that will uphold the public trust."
-
-	loyalties = "		As commander, your first loyalty is to the safety of the troops under your command. They are colonist risking their lives, not cannon fodder. Do not allow them to be sent on suicide missions. Any killings of your men should be repaid in blood.<br>\
-		<br>\
-		You're secondary loyalty is to the Blackguard and Nadezhda council, you are to listen to them and carry out all orders and procedures required by your station."
 
 /obj/landmark/join/start/swo
 	name = "Warrant Officer"
@@ -147,19 +139,16 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "You are the second-in-command of the Marshal division of security and the defacto controller of the armory and armory shop.. <br>\
-	Within the marhals you largely hold a desk job, your duties will rarely take you outside of the colony or even the armoyr itself and you are expected to interact with civilians. You will often be called to sell weaponry and armory to colonists and are probably the hardest working member of security as a whole.<br>\
-	<br>\
-	You have several core duties:<br>\
-		1. As second in command, any of the warrant officer's duties may be delegated to you, if they decide to do so. This means that at any time, you may be expected to handle funding, paperwork, disciplinary matters, planning engagements, or even carrying out executions. If there's no warrant officer or commander, these duties fall naturally to you. If there is a either on site though, you shouldn't make these kind of decisions without consulting them.<br>\
-		<br>\
-		2. You serve as the security quartermaster. And as such, it is your job to maintain the armory and stocks of other equipment. You should keep track of its contents and who has what. Make sure weapons and equipment are returned at the end of a shift, and procure new armaments from cargo or from scavengers as necessary to keep supplies up and respond to new threats.<br>\
-		<br>\
-		3. You will often be asked to watch prisoners or process them for an officer and if there are any prisoners being kept in the Marshal brig you should check up on them. This is mainly so if a riot happens you can suppress it to keep the armory secure.<br>\
-		<br>\
-		4. In times of peace, prepare for war. To this end, you are also the onsite weapons instructor. If the colony is in a lull and there are no outstanding threats, you should take the initiative to order training drills. Allow junior operatives to train and learn with less conventional weapons and tactics, give lessons on aiming, trigger discipline, hand to hand combat. Conduct drills on threat response, squad tactics, and EVA manoeuvres.<br>\ "
+	description = "The Supply Specialist is the second-in-command of the Marshals and the defacto controller of the armory and armory shop. <br>\
+	Your role is mainly a desk job - with duties rarely taking you outside of the colony or even the armory.<br>\
+	You will often be called to sell weaponry and armory to colonists, maintaining the stock of the equipment and tracking who has what.<br>\
+	You will also be often asked to watch or process prisoners. Perform regular checkups on anyone locked in the brig - breakouts are intolerable.<br>\
+	In quieter times, you serve as the onsite weapons instructor. Take the initiative to offer a variety of training drills, especially to junior operatives.<br>\
+	Remember that any Warrant Officer duties may be delegated to you if they wish, and will automatically be given if they are not present."
 
-	loyalties = "You're a police man through and through. As such, your first loyalty is to the Warrant Officer and thusly to the chain of command"
+	duties = "Manage a good balance of armory stock, and dispense responsibly with a paper trail and fair price.<br>\
+	Monitor prisoners in the brig to ensure their health and safety.<br>\
+	Perform training drills and other exercises to bring the Marshals up to standard."
 
 /obj/landmark/join/start/supsec
 	name = "Supply Specialist"
@@ -199,21 +188,16 @@
 							 /datum/computer_file/program/audio,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "You are the colony's detective and field agent, here to take care of the cases that aren't always what they seem and suspects that aren't always caught red handed or ready to confess.<br>\
-	The ranger's job is to interrogate suspects, gather witness statements,  harvest evidence and reach a conclusion about the nature and culprit of a crime.<br>\
-	<br>\
-	You are a higher ranking position than officers and operatives and can determine if charges are valid and may release individuals for lack of evidence. Though you cannot give orders outside those pertaining to charges and arrests. The warrant officer still outranks you though and you should bring all conflicts to them if possible.<br>\
-	<br>\
-	When there are no outstanding cases, your job is to go look for them. Mingle with civilians, interact and converse, sniff out leads about potential criminal activity. In addition to being the only member of security who can freely come and go from the colony a well placed informant is worth any cost."
+	description = "The Ranger is the colony detective and field agent, taking on cases and suspects that aren't always what they seem.<br>\
+	Your job is to interrogate suspects, gather witness statements,  harvest evidence and reach a conclusion about the nature and culprit of a crime.<br>\
+	You are a higher ranking position than officers and operatives and can determine if charges are valid and may release individuals for lack of evidence. <br>\
+	However, you cannot give orders outside those pertaining to charges and arrests. The warrant officer still outranks you - bring all conflicts to them.<br>\
+	When there are no outstanding cases, look for them. Mingle with civilians, interact and converse, sniff out leads about potential criminal activity."
 
 	duties = "Interview suspects and witnesses after a crime. Record important details of their statements, and look for inconsistencies.<br>\
-		Gather evidence and bring it back for processing<br>\
-		Send out officers to bring suspects in for questioning<br>\
-		Interact with civilians and be on the lookout for criminal activity"
-
-	loyalties = "As a detective, your loyalty is firstly to the truth. Seek to uncover the true events of any crime.<br>\
-		<br>\
-		Secondly, you are loyal to marshals and to the public trust. Follow the chain of command"
+		Gather evidence and bring it back for processing.<br>\
+		Send out officers to bring suspects in for questioning.<br>\
+		Interact with civilians and be on the lookout for criminal activity."
 
 /obj/landmark/join/start/inspector
 	name = "Ranger"
@@ -253,19 +237,15 @@
 							 /datum/computer_file/program/chem_catalog,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "You are a highly trained specialist within Blackshield Militia. You were probably a freshly graduated medical student or paramedic when you joined and you thusly have a combination of medical and military training. You are not quite as knowledgeable as a civilian career doctor, not quite as much of a fighter as a dedicated militia operative, but strike a balance inbetween. Balance is the nature of your existence.<br>\
-	<br>\
-	Within the Blackshield, you have three roles to undertake. All of your roles can be delegated to others when needed - Soteria Medical for roles 1 and 2, the Marshal Rangers for role 3. But you are often the best positioned to carry out these tasks, especially when time is short.<br>\
-	<br>\
-	1. Field Medic. <br>\
-	You may be expected to serve on the backlines in a combat situation, treating and stabilising the wounded, making the call as to whether they can return to combat or leave by medivac. You may need to perform emergency trauma surgery in undesireable conditions. <br>\
-	You are allowed to be armed, but remember that saving lives, not taking them, is your first duty. Don't be afraid to send patients to soteria medical for proper specialist care.<br>\
-	<br>\
-	2. Prison Doctor.<br>\
-	During quiet times, when inmates are serving in the brig, you will often be required to treat prisoners, criminal suspects, and the condemned. Suicide attempts are common in prison, and you will often be treating a patient against their will, who is attempting to escape. When serving in this role, stay on guard, work closely with the marshals, and keep control of the situation.<br>\
-	<br>\
-	3. Forensic Specialist.<br>\
-	Solving crimes often requires scientific analysis, and expert rulings from a trusted source within security. You will often be expected to analyze blood, chemicals, fingerprints, conduct autopsies, and submit your findings to help track down elusive culprits. In this task, you will work closely with the rangers, if necessary, as he often has the talents to perform these tasks. But his time is better spent questioning and interrogating people."
+	description = "The Corpsman is a highly trained medical specialist within the Blackshield Militia - a mixture of combatant and doctor.<br>\
+	Your first duty is that of a field medic. Serve on the backlines of any combat situations, treating the wounded and evacuating the critical.<br>\
+	Your second duty is to treat any prisoners and suspects in custody. Wounds from escape and suicide attempts will test your surgical skills.<br>\
+	Your third duty, when faced with strange crimes, is to serve as a scientific analyst - scanning traces and conducting autopsies.<br>\
+	Remember that although you can be armed, the combat is better left to your colleagues. Focus on the tasks only you can do."
+
+	duties = "Minimize casualties in combat situations and treat all related wounds.<br>\
+	Treat any prisoners and suspects, and thoroughly monitor their health.<br>\
+	Work with the Ranger to solve crimes through collecting forensic evidence and conducting autopsies."
 
 /obj/landmark/join/start/medspec
 	name = "Corpsman"
@@ -303,27 +283,17 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "You are the boots on the ground, the rifle in the window, the long arm of the colonies defense. You are the hand of Blackshield and the frontline against pirates, terrorists, and xenos.<br>\
-	<br>\
-	You are the closet thing to a professional soldier or hardened mercenary the colony has. You are required to employ your talents in order to bring an end to threats and conflict situations. As a consummate professional, you're often expected to put your pride aside and work with others. Tactics and teamwork are vital.<br>\
-	<br>\
-	You are paid to act, not to think. When in doubt follow orders and leave the hard choices to someone else. Trust in your chain of command. Remember that you are focused entirely on external threats and should let the marshals handle internal security issues unless they ask for help or lack officers.<br>\
-	<br>\
-	When there are no standing orders, your ongoing task is to patrol the colony and be on the lookout for threats. Check in at departments, watch the main gate, assist the marshals, and do your best to prevent trouble before it spirals out of control. Wipe out threats and other dangerous creatures wherever you encounter them.<br>\
-	<br>\
-	You have wide access to the colony in order to carry out your duties and reach threats quickly. Do not abuse this. It does not mean you can walk into anywhere you like, many areas are full of sensitive machinery and entering unnanounced can be harmful to your health. Do not steal from departments either. If it's not in the security wing, it doesn't belong to you. Stealing from anywhere is a good way to get demoted and arrested."
+	description = "The Trooper forms the base of the Blackshield Militia, the frontline against pirates, terrorists, and xenos.<br>\
+	You are the closest thing to a professional soldier the colony has. Employ your talents to bring an end to threats and conflict situations.<br>\
+	Tactics and teamwork are vital. You are paid to follow orders, not to think. Remember your focus on external threats - leave otherwise to Marshals.<br>\
+	When there are no standing orders, your ongoing task is to patrol and be on the lookout for threats or problems. Help the Marshals if explicitly asked. <br>\
+	Watch the main gate and perimeter. You have access to most places to help with your duties - do not abuse this."
 
 	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\
 		Deal with external threats to the colony such as pirates, hostile xenos, and anything that endangers colonists.<br>\
 		Exterminate monsters, giant vermin and hostile machines.<br>\
 		Follow orders from the chain of command.<br>\
 		Obey the law. You are not above it."
-
-	loyalties = "As a career militia man, your first loyalty is to the chain of command, which ends with the Militia Commander. Their orders are supreme over all unless it breaks the law or standard operating procedure.<br>\
-		<br>\
-		Your second loyalty is to your fellow blackshield brothers in arms. As long as the commander takes care of you, you should follow orders. But if you start being sent on suicide missions and treated as expendable fodder, that should change.<br>\
-		<br>\
-		Your third loyalty is to uphold the public trust. You are still a person under all that armour. If you're being ordered to do something questionable, it may be time to start thinking for yourself."
 
 /obj/landmark/join/start/trooper
 	name = "Blackshield Trooper"
@@ -361,28 +331,17 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "You are the colonies police force first and foremost. You enforce the law, keep the peace, and uphold the public trust.<br>\
-	<br>\
-	As a member of the marshals you are trained and expected to be a problem solver who can descalate a situation and come to a peaceful resolution. You are first and foremost a problem solver and should strive to come to keep your weapons holstered.<br>\
-	<br>\
-	You are paid to keep order in the colony and should strive to use your best judgement in all scenarios. While your primary goal is to keep the peace you are also expected to aid in handling threats to the colony, in such cases you should follow the directives of the Blackshield.<br>\
-	<br>\
-	When there are no standing orders, your ongoing task is to patrol the colony and be on the lookout for threats or problems. Check in at departments, watch the main gate, assist the blackshield, and do your best to prevent trouble before it spirals out of control. Always mediate trouble before it escalates and strive for peace.<br>\
-	<br>\
-	You have wide access to the colony in order to carry out your duties and reach threats quickly. Do not abuse this. It does not mean you can walk into anywhere you like, many areas are full of sensitive machinery and entering unnanounced can be harmful to your health. Do not steal from departments either. If it's not in the security wing, it doesn't belong to you. Stealing from anywhere is a good way to get demoted and arrested."
+	description = "The Marshal Officer forms the brunt of the Marshals, internally enforcing law and keeping the peace.<br>\
+	You are expected to be a problem solver who can descalate situations, reach peaceful agreements, and maintain public trust.<br>\
+	Keep your weapons holstered unless the situation demands otherwise - exercise good judgment and follow Blackshield orders.<br>\
+	When there are no standing orders, your ongoing task is to patrol the colony and be on the lookout for threats or problems. <br>\
+	Check in at departments and watch the main gate. You have access to most places to help with your duties  - do not abuse this."
 
 	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\
 		Deal with internal threats to the colony such as criminals, saboteurs, and anything that endangers colonists.<br>\
 		Ensure that people follow the law and SoP to maintain order.<br>\
 		Follow orders from the chain of command.<br>\
 		Obey the law. You are not above it."
-
-	loyalties = "As a career police man, your first loyalty is to the law. Orders from the Warrant Officer and Nadezhda Council should always be obeyed.<br>\
-		<br>\
-		Your second loyalty is to your fellow officers. As long as the warrant officer takes care of you and follows the law, you should follow orders. But if you start being asked to do anything illegal or corrupt, that should change.<br>\
-		<br>\
-		Your third loyalty is to uphold the public trust. You are still a person under all that armour. If you're being ordered to do something questionable, it may be time to start thinking for yourself."
-
 
 /obj/landmark/join/start/officer
 	name = "Marshal Officer"

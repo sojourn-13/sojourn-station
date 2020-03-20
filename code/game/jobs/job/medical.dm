@@ -36,27 +36,23 @@
 							 /datum/computer_file/program/chem_catalog,
 							 /datum/computer_file/program/reports)
 
-	description = "You are the head of the Soteria medical branch, contracted by the colony to provide medical services to the crew.<br>\
-You are here to keep everyone alive and ideally, at work. You should make choices that preserve life as much as possible.<br>\
+	description = "The Chief Biolab Overseer is the head of the medical branch of the Soteria Institute, preserving and improving lives.<br>\
+	Your main responsibility is to keep everyone alive, as is the objective of your department. Prioritise health over most other concerns. <br>\
+	A variety of medical staff work under your command. Although these roles are clear-cut compared to the research branch, direct them appropriately.<br>\
+	Of course, remember that you are a doctor yourself - feel free to help with less specialised activities to ease the burden.<br>\
+	The Medical wing also falls under the ownership of Soteria. You may use their resources - and they may use yours - as needed."
 
-The handling of the medbay is your domain, although remember that both medical and science are branches of Soteria Institute so your colleagues have free access to your resources and vice versa"
-
-	duties = "Organise the doctors under your command to help save lives. Assign patients, and check on their progress periodically<br>\
-Dispatch your paramedics to distress calls, and corpse recoveries as needed.<br>\
-Use department funds to purchase medical supplies and equipment as needed.<br>\
-Advise the council on medical issues that concern the crew.<br>\
-Advise the crew on ethical issues.<br>\
-In times of crisis, lock down the medbay to protect those within, from outside threats."
-
-	loyalties = "As a doctor, your first loyalty is to your conscience. You swore an oath to save lives and do no harm. It falls on you to be the ethical and moral core of the crew. You should speak up for prisoners, captured lifeforms, and test subjects. Nobody else will.<br>\
-
-Your second loyalty is to the colonies crew and to your coworkers in both branches of Soteria. Help out your scientific colleagues and aid in their pursuit of knowledge."
+	duties = "Direct the doctors under your command towards the bettering of all mankind.<br>\
+	Dispatch your paramedics to distress calls, and corpse recoveries as needed.<br>\
+	Use department funds to purchase medical supplies and equipment as needed.<br>\
+	Advise the council on medical issues that concern the crew.<br>\
+	Advise the crew on ethical issues.<br>\
+	In times of crisis, lock down the medbay to protect those within, from outside threats."
 
 /obj/landmark/join/start/cmo
 	name = "Chief Biolab Overseer"
 	icon_state = "player-green-officer"
 	join_tag = /datum/job/cmo
-
 
 /datum/job/doctor
 	title = "Soteria Doctor"
@@ -88,35 +84,20 @@ Your second loyalty is to the colonies crew and to your coworkers in both branch
 							/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/camera_monitor)
 
+	description = "The Doctor is a professional medic and surgeon dedicated to healing the sick and injured, at all costs.<br>\
+	A broad range of medical procedures fall under your purview - diagnostics, general treatment, surgery, and virology.<br>\
+	You are not expected to be an expert in all: specialising in an area is fine. Divide tasks amongst colleagues, with CBO guidance.<br>\
+	Remember that chemistry has a dedicated specialist. Avoid this department unless it is notably short-staffed.<br>\
+	Due to the nature of your work, you may find yourself confined to the department for the shift majority. Don't abandon patients."
 
-	description = "You are a highly educated professional doctor, working on the colony to treat the injured.<br>\
-Your tasks will primarily keep you inside medbay, the place needs to have a doctor onsite at all times to treat incoming wounded. As a general rule, you should not leave medbay if you're the only one in it, make sure someone is covering for you if you go elsewhere.<br>\
-
-As a doctor, a broad range of medical procedures fall under your potential purview. You are not expected to be able to perform all of these yourself, being a specialist is fine. <br>\
-<br>\
-	-Diagnostics: Figuring out what's wrong and how to fix it as quickly as possible.<br>\
-	-General Treatment: Administering bandages, medicine, casts and placing people in a cryocell as necessary.<br>\
-	-Surgery: Opening the body under general anaesthetic to treat broken bones, organ damage and internal bleeding.<br>\
-	-Virology: The study and manipulation of viruses.<br>\
-	<br>\
-Divide responsibilities among your colleagues to ensure each patient gets the treatment they need.<br>\
-You also have full access to chemistry and can utilize it if medical is short staffed. But if there is a dedicated chemist on staff, they take priority and the lab belongs to them.<br>\
-<br>\
-Character Expectations:<br>\
-You are a real doctor and as such you are expected to hold a lot of qualifications. You've most likely completed many years of medical study and hold a PHD in one or more medical fields.<br>\
-You are expected to be knowledgeable and competent in at least basic treatment, you may have a specialty though."
-
-
-	loyalties = "As a doctor, your first loyalty is to your conscience. You swore an oath to save lives and do no harm. It falls on you to be the ethical and moral core of the crew. You should speak up for prisoners, captured lifeforms, and test subjects. Nobody else will.<br>\
-
-Your second loyalty is to the colonies crew and to your coworkers in both branches of Soteria. Help out your scientific colleagues and aid in their pursuit of knowledge."
+	duties = "Heal the sick and injured, whatever their complaint.<br>\
+		Diagnose illnesses, offer general services, perform surgery, or even study viruses.<br>\
+		Fill in at chemistry if a Chemist is unavailable."
 
 /obj/landmark/join/start/doctor
 	name = "Soteria Doctor"
 	icon_state = "player-green"
 	join_tag = /datum/job/doctor
-
-
 
 /datum/job/chemist
 	title = "Soteria Chemist"
@@ -146,28 +127,22 @@ Your second loyalty is to the colonies crew and to your coworkers in both branch
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/scanner)
 
-	description = "The chemist is a man of medicine, as much as of science. You mix up colorful liquids to make other, equally colorful, but more useful liquids.<br>\
-	<br>\
-	Your primary responsibility is working as a pharmacist. Prepare medicines for use by the medical staff, so that they can capably treat a broad variety of conditions. It's good to keep a stock of bicaridine, dexalin, peridaxon, and alkysine.<br>\
-	<br>\
-	Your secondary responsibility is as a chemical manufacturer for soteria generally. You may be requested to make non-medical chemicals for your colleagues in science or even for other medical staff. Anyone within soteria should be freely and quickly provided with anything they request. Don't question why, it's above your paygrade.<br>\
-	<br>\
-	Your third duty is to run a chemical sales outlet. You may get requests from other crewmembers to make acid, chemical grenades, smoke, cleaning products, napalm, or perhaps even just to make medicines. You are fully licensed to sell any and all chemicals to those outside soteria. Sell being the operative word here. If someone isn't an employee of Soteria Institute, charge them for their chemicals.<br>\
-	<br>\
-	Its worth noting that you don't always have everything you need on hand. Some recipes will require external ingredients. Pay assistants to do this if necessary"
+	description = "The Chemist is both man of medicine and science, mixing colorful liquids to make other similarly colorful, but more useful, liquids.<br>\
+	Your primary role is that of a pharmacist. Prepare medicines for use by the medical staff, so that they can capably treat a broad variety of conditions.<br>\
+	Your secondary responsibility is that of a chemical manufacturer. Efficiently fulfill requests for your Soteria colleagues. Don't question why, it's above your paygrade.<br>\
+	Your third duty is to run a chemical sales outlet. You may get requests from other colonists to make acid, chemical grenades, smoke, napalm, or perhaps even just medicines.<br>\
+	You are fully licensed to sell any and all chemicals to all colonists. If someone isn't an employee of Soteria Institute, charge them for their chemicals.<br>\
+	It's worth noting that you don't always have everything you need on hand. Some recipes will require external ingredients - acquire these however you can."
 
 	duties = "Mix medicines for doctors.<br>\
+		Maintain a good stock of bicaridine, dexalin, peridaxon, and alkysine.<br>\
 		Fill chemical requests for soteria staff.<br>\
 		Sell chemicals and chem grenades to outsiders."
-
-	loyalties = "Your loyalty is to your career with Soteria Institute and to your coworkers in both branches of soteria. Help out your scientific colleagues and aid in their pursuit of knowledge."
-
 
 /obj/landmark/join/start/chemist
 	name = "Soteria Chemist"
 	icon_state = "player-green"
 	join_tag = /datum/job/chemist
-
 
 /datum/job/psychiatrist
 	title = "Soteria Psychiatrist"
@@ -198,18 +173,14 @@ Your second loyalty is to the colonies crew and to your coworkers in both branch
 							/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/camera_monitor)
 
-	description = "The psychiatrist is a professional talker that works towards understanding peoples problems and aiding them in working through them.<br>\
-	<br>\
-	Your primary responsibility is working with anyone who is struggling on a personal level. After speaking with a patient you should then recommend a course of action and prescribe medicine if needed.<br>\
-	<br>"
+	description = "The Psychiatrist is a mental specialist that works to help colonists through their various issues and concerns.<br>\
+	In some ways you are a professional conversationalist. Despite knowing advanced therapy techniques, sometimes a mere chat can work wonders.<br>\
+	More eventful days may involve you having particularly unstable colonists sectioned, or interviewing criminals in coordination with Security.<br>\
+	Remember that patient confidentiality is highly important in your profession. Keep sensitive information between you and the patient."
 
-	duties = "Speak with anyone who desires help.<br>\
-		Prescribe medicine for those who need it.<br>\
-		Determine if individuals are fit for work or not."
-
-	loyalties = "Your loyalty is to your career with Soteria Institute and to your coworkers in both branches of soteria. Help out security and science staff to ensure a healthy work enviroment."
-
-
+	duties = "Speak with anyone who desires help, no matter their rank or relation.<br>\
+		Prescribe medicine and offer therapy courses for those who need it.<br>\
+		Determine if individuals are fit for work or not. Help those who are proven unfit."
 
 /obj/landmark/join/start/psychiatrist
 	name = "Soteria Psychiatrist"
@@ -246,32 +217,17 @@ Your second loyalty is to the colonies crew and to your coworkers in both branch
 							/datum/computer_file/program/chem_catalog,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "You are a Soteria Paramedic, The hero of the hour! While doctors largely spend their time cloistered away in medbay, your job is to be out there on the frontlines. You work in the field, sometimes treating people on the spot, sometimes bringing them back to medical for specialist treatment. <br>\
+	description = "The Paramedic provides medical assistance on the field, while other doctors are busy in their department.<br>\
+	You are trained but lack seniority. Follow the guidance of other doctors - and transport patients back for specialist treatments.<br>\
+	Remember that you must often respond to emergencies. Pack your gear carefully and bring a breaching tool - be ready to run at short notice.<br>\
+	Your other duties include transporting patients between rooms, running errands, and generally saving time for other doctors.<br>\
+	Corpse recovery may also fall within your duties. If the body is in a dangerous location, enlist the help of the Blackshield Militia."
 
-	You have significant medical training, but typically you are not a doctor and will lack a medical degree. The actual doctors have seniority and you should follow their orders, especially concerning treatment and diagnosis of a patient.<br>\
-	<br>\
-	You need to be ready to run at a moment's notice and as such you should take careful care of your gear. Pack as many medicines, treatments, rollerbeds, and other equipment as you can. Be sure to bring along some kind of heavy tool for breaching sealed areas.<br>\
-	<br>\
-	When the wounded are inside medbay, you will often act as a porter, transporting patients to and from various specialist treatment rooms. If your labour can save time for a doctor, get to it.<br>\
-	<br>\
-	Once your duty to the living is dispensed, your secondary duty is to the dead. You are the designated corpse recovery staff, and you will often need to retrieve bodies from where they died, bring them back and store them in the morgue.<br>\
-	<br>\
-	This is the most dangerous part of your job and recovery should only be attempted if you can reasonably do so without endangering yourself. If there are hostile creatures preventing recovery, call the militia to deal with them.<br>\
-	<br>\
-	On a lighter note, since you're so fit and agile, you will often be called upon to run errands. When there's no wounded or dead, a paramedic's duties often involve fetching lunch and coffee for the rest of the medical staff.<br>\
-	<br>"
-
-	duties = "Respond to distress calls, extract wounded people from dangerous situations, stabilize them at the scene, and take them to medbay for farther treatment as necessary.<br>\
+	duties = "Respond to distress calls and extract wounded people from dangerous situations.<br>\
 	Watch the crew monitor for signs of injuries or deaths and respond accordingly.<br>\
 	Tour around departments checking up on the health of the crew. Administer first aid on scene as required.<br>\
 	During quieter times, retrieve the corpses of the dead.<br>\
 	Run errands for the medbay staff, act as their hands outside of the medbay."
-
-	loyalties = "As a medical specialist, your first loyalty is to save lives, you swore an oath to do no harm. When in any dangerous situation, do your best to ensure as many as possible come out of it alive. A martyr complex is not uncommon in paramedics.<br>\
-	<br>\
-	Your second loyalty is to your immediate superior, the Soteria Biolab Overseer. Follow their instructions and policies.<br>\
-	<br>\
-	Your third loyalty is to your fellow colleagues in Soteria, especially those in Soteria medical. You are the lowest ranked personnel in the medbay and you take orders from everyone else working there."
 
 /obj/landmark/join/start/paramedic
 	name = "Soteria Paramedic"

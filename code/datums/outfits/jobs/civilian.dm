@@ -49,19 +49,18 @@
 	uniform = /obj/item/clothing/under/rank/janitor
 	pda_type = /obj/item/modular_computer/pda
 
-/decl/hierarchy/outfit/job/service/actor/clown
-	name = OUTFIT_JOB_NAME("Lonestar - Clown")
-	uniform = /obj/item/clothing/under/costume/job/clown
-	shoes = /obj/item/clothing/shoes/costume/job/clown
-	mask = /obj/item/clothing/mask/costume/job/clown
+/decl/hierarchy/outfit/job/service/actor
+	name = OUTFIT_JOB_NAME("Lonestar - Actor")
+	uniform = /obj/item/clothing/under/modular/black
+	suit = /obj/item/clothing/suit/storage/suitjacket/black
 	l_pocket = /obj/item/weapon/bikehorn
 	backpack_contents = list(/obj/item/weapon/bananapeel = 1, /obj/item/weapon/storage/fancy/crayons = 1, /obj/item/toy/weapon/waterflower = 1, /obj/item/weapon/stamp/clown = 1, /obj/item/weapon/handcuffs/fake = 1)
 
-/decl/hierarchy/outfit/job/service/actor/clown/New()
+/decl/hierarchy/outfit/job/service/actor/New()
 	..()
 	backpack_overrides[/decl/backpack_outfit/backpack] = /obj/item/weapon/storage/backpack/clown
 	backpack_overrides[/decl/backpack_outfit/satchel] = /obj/item/weapon/storage/backpack/satchel/leather
 
-/decl/hierarchy/outfit/job/service/actor/clown/post_equip(var/mob/living/carbon/human/H)
+/decl/hierarchy/outfit/job/service/actor/post_equip(var/mob/living/carbon/human/H)
 	..()
 	H.mutations.Add(CLUMSY)

@@ -33,25 +33,20 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	description = "You are the foreman to the prospectors, a group of independent scavengers seeking their fortune looting old ruins and finding diamonds among the trash piles.<br>\
-	<br>\
-	Your goal is to lead your team into hostile locations and take everything of value that isn't nailed down and even then take the nails if they're not properly secured.<br>\
-	As potentially the youngest head of staff and the one expected to be in the most danger at all times you should be independent and cunning, able to survive the worst situations."
+	description = "The foreman leads the prospectors, a group of independent scavengers seeking fortune from ruins and scrap.<br>\
+	Your goal is to lead your team into hostile locations and take everything of value that isn't nailed down - and the nails too!<br>\
+	As potentially the youngest head of staff and the one expected to be in the most danger at all times you should be independent and cunning.<br>\
+	Your work is perhaps the most dangerous within the entire colony, so good combat and survival skills are essential."
 
-	duties = "Assemble your team of prospectors and salvagers by equipping them with whatever you can find in your prep area or buy around the station.<br>\
+	duties = "Assemble your team of prospectors and salvagers by equipping them with whatever you can find in your prep area and elsewhere.<br>\
 		Lead your team through dangerous areas and ensure they recover everything of value.<br>\
-		Keep everyone stays alive and ensure nobody is left behind.<br>\
-		Fill in any missing role on your team be it as muscle , medical, or technical support."
-
-	loyalties = "As foreman, your first loyalty is to your fellow prospectors. Nobody can survive alone out there so always look out for your fellow mercenaries.<br>\
-		<br>\
-		You're secondary loyalty is to the colony and Nadezhda council, you are to listen to them and aid them when asked."
+		Keep everyone alive and ensure nobody is left behind.<br>\
+		Fill in any missing role on your team be it as muscle, medical, or technical support."
 
 /obj/landmark/join/start/foreman
 	name = "Foreman"
 	icon_state = "player-blue-officer"
 	join_tag = /datum/job/foreman
-
 
 /datum/job/salvager
 	title = "Salvager"
@@ -81,23 +76,19 @@
 		STAT_ROB = 10,
 	)
 
+	description = "The Salvager is an informally trained specialist for the prospectors who functions as both an engineer and a doctor.<br>\
+	Your primary role is that of a field medic. Treat and stabilize the wounded on the combat backlines, and evacuate the critically injured.<br>\
+	Your secondary task is providing technical support to the team by breaching walls, building FOBs, repairing broken equipment, and extracting resources.<br>\
+	Remember that you are here to gain riches from the abandoned wilds. Don't waste time and resources mindlessly hunting creatures."
 
-	description = "You are a 'trained' specialist for the prospectors who functions as both an engineer and a doctor. Maybe you were a paramedic with a knack for machines or a roboticist looking to take on a hands on approach to testing machines.<br>\
-	<br>\
-	Within the prospectors you have two primary roles to carry out to the best of your ability.<br>\
-	<br>\
-	1. Field Medic. <br>\
-	You may be expected to serve on the backlines in a combat situation, treating and stabilizing the wounded, making the call as to whether they can return to combat or leave by medivac. You may need to perform emergency trauma surgery in undesireable conditions. <br>\
-	You are allowed to be armed, but remember that saving lives, not taking them, is your first duty. Don't be afraid to send patients to soteria medical for proper specialist care.<br>\
-	<br>\
-	2. Technician.<br>\
-	Your secondary task is providing technical support to the prospector teams by breaching walls, building forward operating bases, returning broken machines to working condition, and extracting every resource you can using tools to take apart old tech.<br>"
+	duties = "Extract resources for your employer. Use equipment to access new areas and gain a foothold in the wilderness.<br>\
+	Perform medical services on injured colleagues, from patching wounds to full field surgery.<br>\
+	Leave security duties to the hired muscle unless faced with no other option."
 
 /obj/landmark/join/start/salvager
 	name = "Salvager"
 	icon_state = "player-blue"
 	join_tag = /datum/job/salvager
-
 
 /datum/job/pro
 	title = "Prospector"
@@ -124,11 +115,13 @@
 		STAT_ROB = 20,
 	)
 
+	description = "The Prospector serves as hired muscle to the Foreman, positioned somewhere between meat shield and exterminator.<br>\
+	Your job is to keep the Salvagers and anyone else with you protected, handling the fighting and being the first to enter dangerous areas. <br>\
+	While combat is your primary goal, you are still there to salvage valuable technology and make a profit selling said items to the colony."
 
-	description = "You are thug hired by the prospectors to serve as muscle. You may be a member of security looking for side work, a criminal who's record is too long to work anywhere else, or simply someone who has no skills besides aiming a gun or swinging a bat<br>\
-	<br>\
-	You only have a singular purpose to the prospector team, being part ways between meat shield and exterminator. Your job is to keep the salvagers and anyone else with you protected, handling the fighting and being the first to enter dangerous areas. <br>\
-	While combat is your primary goal you are still there to salvage valuable technology and make it a profit selling said items to the colony. Be sure to help carry any loot you can and remember, you might be tough but without your team you're nothing. Don't get greedy."
+	duties = "Guard your peers from hostile creatures and other dangers that cross your path.<br>\
+	Use whatever measures necessary to ensure survival, but try not to soil the standing of your team.<br>\
+	Help with the more general salvaging and heavy lifting."
 
 /obj/landmark/join/start/pro
 	name = "Prospector"

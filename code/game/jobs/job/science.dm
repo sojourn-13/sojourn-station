@@ -39,21 +39,21 @@
 							/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/reports)
 
-	description = "You are the head of the soteria research branch, tasked with directing colony research to new and profitable discoveries."
+	description = "The Chief Research Overseer is the head of the research branch of the Soteria Institute, directing science activities.<br>\
+	The scientists under your command are working on a range of projects. Direct them towards the best interests of the organisation.<br>\
+	With oversight over the funds, you may also purchase scientific artefacts and anything else of research value - even funding away missions.<br>\
+	Even use your position to request support from other factions if required. Most colonists do not understand your work, but know its value.<br>\
+	Of course, remember that you are a scientist yourself - feel free to get into the lab and work on R&D or xeno-related research.<br>\
+	The Medical wing also falls under the ownership of Soteria. You may use their resources - and they may use yours - as needed."
 
-	duties = "Direct the scientists under your command, ensure they work efficiently towards the bettering of all mankind.<br>\
-	Use department funds to purchase scientific curios, artefacts, and anything of interesting research value. As well as any equipment and supplies that would be useful for these ends.<br>\
-	Organise away missions to gather artefacts and research interesting environments. You have the right to request support from other factions as required."
-
-	loyalties = "As a scientist, your first loyalty is to knowledge, the ultimate good in the universe. Learning and developing new technologies is the greatest goal humanity can pursue and no sacrifice is too great to achieve that end. Even the lives of others or yourself.<br>\
-	<br>\
-	Your second loyalty is to soteria institute and by extension the colony. In order to ensure it can continue its mission of research, it must remain profitable. Ensure its interests are furthered and take care of your colleagues in both research and medical wings."
+	duties = "Direct the scientists under your command towards the bettering of all mankind.<br>\
+	Ensure a healthy stock of research equipment through management of department funds.<br>\
+	Consider organising away missions and expeditions to acquire artefacts and other valuable items."
 
 /obj/landmark/join/start/rd
 	name = "Chief Research Overseer"
 	icon_state = "player-purple-officer"
 	join_tag = /datum/job/rd
-
 
 
 /datum/job/scientist
@@ -85,25 +85,15 @@
 		STAT_BIO = 20,
 	)
 
-	description = "You are a scientist, standing at the frontier of human advancement. Here representing Soteria Institute to find new research opportunities on the frontier. The science wing is located in the southwest wing, opposite medical, and your medical colleagues should be fast friends. The medical wing is part of the Soteria too, and so you fully share access with each other, and are free to use each others' supplies.<br>\
-	<br>\
-	As a scientist, your primary purpose is research, testing, and the advancement of knowledge. You can justify almost anything if its done for the purpose of science and people have no reason to be suspicious if you stomp around wearing strange devices and carrying stranger weapons still. You should craft, lathe and print anything you can, toy around with it, and figure out how it works in detail. Deeply explore everything you can.<br>\
-	<br>\
-	There are a few specialist branches within the research wing that you may delve deeper into:<br>\
-	<br>\
-	R&D: The manufacture and testing of high tech weapons and devices. This branch shares close proximity with robotics, and often works closely together to produce vast machines.<br>\
-	Xenoflora: A lab dedicated to experimenting and modifying plant DNA, creating interesting mutated plants that may help the crew.<br>\
-	Xenobiology: A wing full of cells, for the study of alien life forms. Primarily slimes.<br>\
-	Xenoarchaeology: A facility for analysing artefacts and finds brought back from expeditions.<br>\
-	<br>"
+	description = "The Scientist is a researcher representing the Soteria Institute, standing at the frontier of human advancement.<br>\
+	You may engage in a variety of research projects in four distinct fields - R&D, Xenoflora, Xenobiology, and Xenoarchaeology.<br>\
+	The manufacture of high tech devices is the primary source of income for Soteria, but artefacts and alien life may offer great potential.<br>\
+	Remember that dedicated specialists exist for robotics projects. You may work closely for general R&D, but avoid taking over robotics."
 
-	duties = "Create unusual things and experiment with them.<br>\
-	Explore, learn and adventure, do anything to advance the cause of knowledge."
-
-	loyalties = "As a scientist, your first loyalty is to knowledge, the ultimate good in the universe. Learning and developing new technologies is the greatest goal humanity can pursue, and no sacrifice is too great to achieve that end. Even the lives of others or yourself.<br>\
-
-	Your second loyalty is to soteria institute and by extension the colony. In order to ensure it can continue its mission of research, it must remain profitable. Ensure its interests are furthered and take care of your colleagues in both research and medical wings."
-
+	duties = "Advance the cause of knowledge with various research projects.<br>\
+	Manufacture new devices and weapons as you advance up the R&D tree.<br>\
+	Manipulate plant DNA, and investigate alien life and devices.<br>\
+	Create unusual things, explore, learn, and have a scientific adventure."
 
 /obj/landmark/join/start/scientist
 	name = "Soteria Scientist"
@@ -138,18 +128,11 @@
 		STAT_BIO = 25,
 	)
 
-
-
-	description = "As a roboticist, you are probably the busiest person in the research wing. For it is the only area of the department that focuses on providing services to others.<br>\
-	<br>\
-	You have a broad range of tools and machinery at your disposal and a similarly broad range of responsibilities. You will also have a constant stream of visitors and rarely a moment to yourself.<br>\
-	<br>\
-	The duties of robotics are many and the lab often benefits from having multiple staff.<br>\
-	You must maintain, tend to, and upgrade the fleet of synthetics that help keep the ship running. Farther to that, the duty of constructing new robots falls to you too. With the aid of your fabricators, you may turn a pile of sheet metal and wires into sentient life. The robots of the ship are operated by soteria and its not unknown for roboticists to develop a parental attachment to them.<br>\
-	<br>\
-	In addition, your department contains the manufacturing facilities for prosthetic limbs and enhancements. It typically also falls to you to install them too, and thus it is common for biomechanical engineers to work in the robotics lab. This may or may not be in your character's skillset. If surgery isn't your specialty, you may defer the implementation to your colleagues over in Soteria Medical instead and simply supply the parts for them to install.<br>\
-	<br>\
-	Lastly, though not requested often, you have the facilities to construct massive and powerful mechanised vehicles. These have powerful capabilities in mining and rescue, as well as obvious military applications."
+	description = "The Roboticist is a specialised scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
+	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\
+	In addition, you may be asked to manufacture prosthetic limbs and enhancements. Medical can perform the installation if you lack surgical skills.<br>\
+	Though not requested often you can also construct massive and powerful mechanised vehicles. These have powerful mining, rescue, and military applications.<br>\
+	Remember that you are ultimately running a commercial cybernetic clinic - charge for your valuable services to earn a living."
 
 	duties = "Repair, maintain and upgrade robots within the colony.<br>\
 	Maintain and implant new bionics in crewmembers.<br>\

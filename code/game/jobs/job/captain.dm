@@ -21,19 +21,16 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	minimum_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/captain
 
-	description = "You are the prime mediator of the colony itself and act as a trusted advisor<br>\
-You are trusted with control of the stations primary accounts and are able to control access within the colony.<br>\
-Your primary objective is to oversee council decision, change access levels, and act as both lawyer and consultant in various decisions.<br>\
+	description = "The Premier is the prime mediator of the colony itself, acting as a trusted advisor amongst their peers.<br>\
+You are trusted with control of the colony primary accounts, and are also able to control access within the colony.<br>\
+Your primary objective is to oversee council decisions, change access levels, and act as both lawyer and consultant in various decisions.<br>\
+You are not the supreme leader of the colony and your word is only an advisement. The only person you can give legal orders to is the Steward.<br>\
+The heads of the factions which make up the council each have their own agendas. Their interests must be served to avoid issues.<br>\
+Treat your command officers with respect, and listen to their council. Try not to micromanage their departments or interfere in their affairs."
 
-You are not the supreme leader of the colony and your word is only an advisement. The only person who you can give legal orders to is your personal guard.<br>\
-The heads of the factions which make up the council each have their own agendas. Their interests must be served too. If you make them unhappy, issues will arise.<br>\
-Treat your command officers with respect, and listen to their council. Try not to micromanage their departments or interfere in their affairs, and they should serve you well.<br>\
-
-You are a free agent, able to go where you will, and loyal to no particular faction other than the colony itself."
-
-	loyalties = "Your first loyalty is to the colony. It is the purpose of your job and you are to fulfill your duties to the best of your ability. Failures of your ability can hurt the colony as a whole. <br>\
-
-Your second loyalty is to your command officers. The heads of each faction. Listen to their counsel, ensure their interests are served, and keep them happy"
+	duties = "Work between the varying interests of council members to achieve colony stability.<br>\
+	Offer advise and counsel when approached, particularly during important decisions.<br>\
+	Manage the colony primary accounts and access levels accordingly."
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -65,8 +62,6 @@ Your second loyalty is to your command officers. The heads of each faction. List
 	icon_state = "player-gold-officer"
 	join_tag = /datum/job/premier
 
-
-
 /datum/job/pg
 	title = "Steward"
 	flag = STEWARD
@@ -76,7 +71,7 @@ Your second loyalty is to your command officers. The heads of each faction. List
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the premier"
+	supervisors = "the Premier"
 	selection_color = "#ddddff"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
@@ -84,24 +79,18 @@ Your second loyalty is to your command officers. The heads of each faction. List
 	ideal_character_age = 35
 	minimum_character_age = 30
 
-	description = "You are the premier's right hand. His personal guard. Where he goes, you follow. You make sure he remains safe, follow his orders, and if needed put yourself in the line of fire for him.<br>\
-If he makes mistakes, discreetly inform him. Help to ensure he follows the law and smooth relations with the crew, especially other command staff. Keep the premier safe, by endangering yourself in his stead if necessary.<br>\
-<br>\
-Do not embarass him or harm relations with faction leaders.<br>\
-<br>\
-But who are you?<br>\
-Perhaps you are the premier's lifelong friend, or a trusted associate to whom he gave a position of power.<br>\
-Perhaps you're a consummate professional who comes highly recommended.<br>\
-A retired mercenary or naval officer?<br>\
+	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow him wherever he goes.<br>\
+	Your primary, and perhaps only, responsibility is to ensure the safety of the Premier at all costs - even your own life if necessary.<br>\
+	However, you are an advisor as well as a bodyguard. Discreetly inform him of mistakes. Make sure he follows the law and remains popular.<br>\
+	You may be assigned special tasks by the Premier for whatever reason. Ensure these orders are fulfilled.<br>\
+	Do not embarass him, and especially do not harm his relations with faction leaders. You may not do much talking, but you have great impact."
 
-Whatever your origin, you are fiercely loyal to the premier."
-
-	duties = "Act as the premier's sidekick, bodyguard, and secretary in a crisis or mutiny situation. You may also be asked to do paperwork or reassign someones badge in his stead, but only by the premier's orders."
-
-	loyalties = "Your first and only loyalty is to the premier and the colony itself. Unless the premier is breaking the law or corrupt, you're to remain loyal to the death."
+	duties = "Act as a bodyguard, advisor, and confidant to the Premier.<br>\
+	Remain conscious of any potential threats to the safety of the Premier.<br>\
+	Perform tasks as assigned by the Premier - such as filling paperwork or reassigning roles.<br>\
+	Demonstrate true loyalty and do not let your superior down."
 
 	outfit_type = /decl/hierarchy/outfit/job/hop
-
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,
