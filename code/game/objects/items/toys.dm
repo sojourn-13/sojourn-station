@@ -509,7 +509,7 @@
 /*Civilian*/
 
 /obj/item/toy/figure/character/civilian/assistant
-	name = "assistant action figure"
+	name = "colonist action figure"
 	desc = "The lowly but dutiful helper. Civilians 1/7."
 	icon_state = "assistant"
 	toysay = "Greytide, stationwide!"

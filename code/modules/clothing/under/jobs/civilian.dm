@@ -1,13 +1,13 @@
 //Alphabetical order of civilian jobs.
 
 /obj/item/clothing/under/rank/assistant
-	desc = "A standard-issue black and orange assistant uniform."
-	name = "assistant's uniform"
+	desc = "A standard-issue black and orange colonist uniform."
+	name = "colonist's uniform"
 	icon_state = "assistant"
 	item_state = "assistant"
 
 /obj/item/clothing/under/rank/assistant/formal
-	name = "assistant's formal uniform"
+	name = "colonist's formal uniform"
 	desc = "An assistant's formal-wear. Why an assistant needs formal-wear is still unknown."
 	icon_state = "assistant_formal"
 	item_state = "gy_suit"

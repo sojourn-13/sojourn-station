@@ -15,7 +15,7 @@
 "ao" = (/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "ap" = (/obj/structure/closet/onestar/tier2/special,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "aq" = (/obj/structure/closet/onestar/tier1/medical,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
-"ar" = (/obj/machinery/door/airlock/vault/bolted,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
+"ar" = (/obj/machinery/door/airlock/vault/bolted{req_access = list(999)},/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "as" = (/obj/structure/closet/onestar/tier1/special,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "at" = (/obj/structure/multiz/ladder/up,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "au" = (/obj/structure/closet/onestar/tier2/mineral,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)

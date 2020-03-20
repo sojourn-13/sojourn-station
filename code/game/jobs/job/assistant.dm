@@ -1,5 +1,5 @@
 /datum/job/assistant
-	title = "Assistant"
+	title = "Colonist"
 	flag = ASSISTANT
 	department = DEPARTMENT_CIVILIAN
 	department_flag = CIVILIAN
@@ -39,6 +39,6 @@ To form connections, strive to help out anyone you can. Or at least, anyone who 
 Find a way to make money, stay out of trouble, and survive."
 
 /obj/landmark/join/start/assistant
-	name = "Assistant"
+	name = "Colonist"
 	icon_state = "player-grey"
 	join_tag = /datum/job/assistant

@@ -4,7 +4,7 @@
 
 //Assistant
 /obj/item/clothing/suit/storage/rank/ass_jacket
-	name = "assistant jacket"
+	name = "colonist jacket"
 	desc = "Practical and comfortable jacket. It seems have a little protection from physical harm."
 	icon_state = "ass_jacket"
 	item_state = "ass_jacket"
