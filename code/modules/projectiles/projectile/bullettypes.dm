@@ -10,12 +10,13 @@
 	damage = 24
 	armor_penetration = 5
 	can_ricochet = TRUE
+	step_delay = 0.75
 
 /obj/item/projectile/bullet/c9mm/hv
 	damage = 28
 	armor_penetration = 10
 	penetrating = 1
-	step_delay = 0.75
+	step_delay = 0.5
 
 /obj/item/projectile/bullet/c9mm/practice
 	name = "practice bullet"
@@ -30,46 +31,58 @@
 	name = "rubber bullet"
 	damage = 3
 	agony = 22
+	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	can_ricochet = TRUE
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/a10mm
 	damage = 24
 	armor_penetration = 5
 	can_ricochet = TRUE
+	step_delay = 0.75
 
 /obj/item/projectile/bullet/a10mm/rubber
 	name = "rubber bullet"
 	damage = 3
 	agony = 22
+	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	can_ricochet = TRUE
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/a10mm/hv
 	damage = 28
 	armor_penetration = 10
 	penetrating = 1
-	step_delay = 0.75
+	step_delay = 0.5
 
 /obj/item/projectile/bullet/cl32
 	damage = 24
 	armor_penetration = 5
 	can_ricochet = TRUE
+	step_delay = 0.75
 
 /obj/item/projectile/bullet/cl32/rubber
 	name = "rubber bullet"
 	damage = 3
 	agony = 22
+	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	can_ricochet = TRUE
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/c45
 	damage = 24
 	armor_penetration = 5
 	can_ricochet = TRUE
+	step_delay = 0.75
 
 /obj/item/projectile/bullet/c45/practice
 	name = "practice bullet"
@@ -79,14 +92,18 @@
 	embed = FALSE
 	sharp = FALSE
 	can_ricochet = FALSE
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/c45/rubber
 	name = "rubber bullet"
 	damage = 3
 	agony = 22
+	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	can_ricochet = TRUE
+	step_delay = 0.9
 
 //Carbines and rifles
 /obj/item/projectile/bullet/c10mm
@@ -94,14 +111,18 @@
 	armor_penetration = 25
 	penetrating = 2
 	can_ricochet = TRUE
+	step_delay = 0.3
 
 /obj/item/projectile/bullet/c10mm/rubber
 	name = "rubber bullet"
 	damage = 8
 	agony = 32
+	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	can_ricochet = TRUE
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/c10mm/practice
 	name = "practice bullet"
@@ -111,22 +132,25 @@
 	embed = FALSE
 	sharp = FALSE
 	can_ricochet = FALSE
+	step_delay = 0.5
 
 /obj/item/projectile/bullet/c10mm/hv
+	name = "sabot penetrator"
 	damage = 20
-	armor_penetration = 20
-	penetrating = 2
-	step_delay = 0.75
+	armor_penetration = 40
+	penetrating = 3
+	hitscan = TRUE
 
 /obj/item/projectile/bullet/c10mm/lethal
 	name = "hollow-point bullet"
-	damage = 20
+	damage = 25
 	agony = 32
 	armor_penetration = 40
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
 	sharp = TRUE
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/c10x24
 	damage = 16
@@ -134,12 +158,14 @@
 	penetrating = 2
 	can_ricochet = TRUE
 	sharp = TRUE
+	step_delay = 0.3
 
 /obj/item/projectile/bullet/a556
 	damage = 16
 	armor_penetration = 25
 	penetrating = 2
 	can_ricochet = TRUE
+	hitscan = TRUE
 
 /obj/item/projectile/bullet/a556/nomuzzle
 	muzzle_type = null
@@ -152,6 +178,7 @@
 	embed = FALSE
 	sharp = FALSE
 	can_ricochet = FALSE
+	step_delay = 0.3
 
 /obj/item/projectile/bullet/c65
 	damage = 18
@@ -159,77 +186,95 @@
 	penetrating = 1
 	sharp = FALSE
 	can_ricochet = TRUE
+	step_delay = 0.3
 
 /obj/item/projectile/bullet/c65/rubber
 	name = "rubber bullet"
 	damage = 3
 	agony = 16
+	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	can_ricochet = TRUE
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/a762
 	damage = 28
 	armor_penetration = 20
 	penetrating = 1
 	can_ricochet = TRUE
+	step_delay = 0.5
 
 /obj/item/projectile/bullet/a762/hv
 	damage = 30
 	armor_penetration = 30
 	penetrating = 2
-	step_delay = 0.75
+	step_delay = 0.3
 
 //Revolvers and high-caliber pistols
 /obj/item/projectile/bullet/a357
 	damage = 32
 	armor_penetration = 15
 	can_ricochet = TRUE
+	step_delay = 0.75
 
 /obj/item/projectile/bullet/a357/hv
 	damage = 35
 	armor_penetration = 20
 	penetrating = 1
-	step_delay = 0.75
+	step_delay = 0.5
 
 /obj/item/projectile/bullet/c38
 	damage = 36
 	armor_penetration = 10
 	can_ricochet = TRUE
+	step_delay = 0.75
 
 /obj/item/projectile/bullet/c38/rubber
 	name = "rubber bullet"
 	damage = 8
 	agony = 32
+	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	can_ricochet = TRUE
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/cl44
 	damage = 36
 	armor_penetration = 10
 	can_ricochet = TRUE
+	step_delay = 0.75
 
 /obj/item/projectile/bullet/cl44/rubber
 	name = "rubber bullet"
 	damage = 8
 	agony = 32
+	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	can_ricochet = TRUE
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/a50
 	damage = 36
 	armor_penetration = 10
 	can_ricochet = TRUE
+	step_delay = 0.75
 
 /obj/item/projectile/bullet/a50/rubber
 	name = "rubber bullet"
 	damage = 8
 	agony = 32
+	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	can_ricochet = TRUE
+	step_delay = 0.9
 
 //Sniper rifles
 /obj/item/projectile/bullet/a145
@@ -247,7 +292,7 @@
 	damage = 54
 	armor_penetration = 10
 	knockback = 1
-	step_delay = 1.65
+	step_delay = 0.9
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
