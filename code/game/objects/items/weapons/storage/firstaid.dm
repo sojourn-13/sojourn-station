@@ -108,7 +108,7 @@
 	name = "combat medical kit"
 	desc = "Contains advanced medical treatments."
 	icon_state = "bezerk"
-	item_state = "firstaid-advanced"
+	item_state = "bezerk"
 
 /obj/item/weapon/storage/firstaid/combat/populate_contents()
 	if (empty) return
