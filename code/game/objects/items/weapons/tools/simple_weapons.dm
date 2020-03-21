@@ -213,7 +213,7 @@
 	name = "sledgehammer"
 	desc = "Once a tool used to nail rivets, now a tool used to crush skulls."
 	icon_state = "sledgehammer"
-	item_state = "sledgehammer"
+	item_state = "sledgehammer0"
 	force = WEAPON_FORCE_LETHAL
 	armor_penetration = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_PAINFUL
