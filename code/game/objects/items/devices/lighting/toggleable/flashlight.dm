@@ -1,6 +1,6 @@
 /obj/item/device/lighting/toggleable/flashlight
 	action_button_name = "Toggle Flashlight"
-	var/tick_cost = 0.4
+	var/tick_cost = 0.2
 	var/obj/item/weapon/cell/cell = null
 	var/suitable_cell = /obj/item/weapon/cell/small
 	dir = WEST
@@ -329,7 +329,7 @@
 	light_spot_radius = 4
 	light_spot_power = 3
 	light_spot_range = 4
-	tick_cost = 0.8
+	tick_cost = 0.4
 	suitable_cell = /obj/item/weapon/cell/medium
 
 /obj/item/device/lighting/toggleable/flashlight/seclite
