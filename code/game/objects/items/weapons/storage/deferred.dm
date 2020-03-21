@@ -56,6 +56,7 @@
 	name = "infantryman's rations kit"
 	icon_state = "irp_box"
 	item_state = "irp_box"
+	w_class = ITEM_SIZE_HUGE
 	desc = "A box of preserved, ready-to-eat food for soldiers and spacefarers on the go."
 	initial_contents = list(/obj/item/weapon/storage/ration_pack = 7)
 
@@ -95,7 +96,7 @@
 	name = "combat surgery kit"
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport."
 	icon_state = "combat_surgery_kit"
-	item_state = "combat_medical_kit"
+	item_state = "combat_surgery_kit"
 	initial_contents = list(
 		/obj/item/weapon/tool/bonesetter,
 		/obj/item/weapon/tool/cautery,
