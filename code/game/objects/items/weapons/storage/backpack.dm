@@ -151,6 +151,16 @@
 	desc = "It's a very robust backpack."
 	icon_state = "backpack_security"
 
+/obj/item/weapon/storage/backpack/militia
+	name = "Militia backpack"
+	desc = "A robust military backpack with crudely added IFF stripes of the Blackshield Militia."
+	icon_state = "backpack_mil"
+
+/obj/item/weapon/storage/backpack/corpsman
+	name = "Corpsman backpack"
+	desc = "A robust military backpack with medical liverly."
+	icon_state = "backpack_corps"
+
 /obj/item/weapon/storage/backpack/clown
 	name = "Giggles von Honkerton"
 	desc = "It's a backpack made by Honk! Co."

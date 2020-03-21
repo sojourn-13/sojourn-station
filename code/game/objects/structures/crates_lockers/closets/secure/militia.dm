@@ -9,7 +9,6 @@
 	else
 		new /obj/item/ammo_magazine/c10mm/hv(src)
 	new /obj/item/ammo_magazine/c10mm/lethal(src)
-	new /obj/item/weapon/storage/backpack/security(src)
 	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/clothing/head/rank/milcom/beret(src)
 	new /obj/item/clothing/head/rank/milcom(src)
@@ -31,6 +30,10 @@
 	new /obj/item/weapon/storage/pouch/ammo(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
+	if(prob(50))
+		new /obj/item/weapon/storage/backpack/security(src)
+	else
+		new /obj/item/weapon/storage/backpack/militia(src)
 
 /obj/structure/closet/secure_closet/armorer
 	name = "supply specialist's locker"
@@ -75,6 +78,10 @@
 	new /obj/item/clothing/under/rank/armorer/green(src)
 	new /obj/item/clothing/suit/armor/flackvest/militia(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
+	if(prob(50))
+		new /obj/item/weapon/storage/backpack/security(src)
+	else
+		new /obj/item/weapon/storage/backpack/militia(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
@@ -92,15 +99,9 @@
 	else
 		new /obj/item/clothing/head/helmet/ballistic(src)
 	if(prob(50))
-		new /obj/item/weapon/storage/backpack/military(src)
-	else
-		new /obj/item/weapon/storage/backpack/security(src)
-	if(prob(5))
-		new /obj/item/weapon/gun/projectile/automatic/omnirifle(src)
-	else if(prob(70))
 		new /obj/item/weapon/gun/projectile/automatic/omnirifle/standard(src)
 	else
-		new /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped(src)
+		new /obj/item/weapon/gun/projectile/automatic/omnirifle(src)
 	if(prob(50))
 		new /obj/item/ammo_magazine/c10mm/lethal(src)
 	else
@@ -113,6 +114,10 @@
 		new /obj/item/clothing/under/rank/trooper/green(src)
 	else
 		new /obj/item/clothing/under/rank/trooper/tan(src)
+	if(prob(50))
+		new /obj/item/weapon/storage/backpack/security(src)
+	else
+		new /obj/item/weapon/storage/backpack/militia(src)
 	new /obj/item/ammo_magazine/c10mm(src)
 	new /obj/item/ammo_magazine/c10mm(src)
 	new /obj/item/clothing/under/rank/trooper(src)

@@ -304,12 +304,10 @@
 			to_chat(user, SPAN_WARNING("You need more paper."))
 	else
 		to_chat(user, "\blue The object you are trying to wrap is unsuitable for the sorting machinery!")
+	return
 	if (src.amount <= 0)
-		new /obj/item/weapon/c_tube( src.loc )
 		qdel(src)
 		return
-	return
-
 /obj/item/weapon/packageWrap/examine(mob/user)
 	if(..(user, 0))
 		to_chat(user, "\blue There are [amount] units of package wrap left!")
