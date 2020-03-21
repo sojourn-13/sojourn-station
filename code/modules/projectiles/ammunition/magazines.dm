@@ -299,6 +299,14 @@
 	max_ammo = 80
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/a762/pk/pickup(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/magmove.ogg',60,3)
+
+/obj/item/ammo_magazine/a762/pk/dropped(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
+
 /obj/item/ammo_magazine/ammobox/a762/pk/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "pk_box-0"
@@ -361,6 +369,14 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 96
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/maxim/pickup(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/magmove.ogg',60,3)
+
+/obj/item/ammo_magazine/maxim/dropped(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
 
 /obj/item/ammo_magazine/sl357
 	name = "speed loader (.357)"

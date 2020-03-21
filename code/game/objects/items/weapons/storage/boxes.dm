@@ -255,7 +255,7 @@
 	name = "box of pepperspray grenades"
 	desc = "A box containing 6 tear gas grenades. A gas mask is printed on the label.<br> WARNING: Exposure carries risk of serious injury or death. Keep away from persons with lung conditions."
 	icon_state = "box_security"
-	illustration = "flashbang"
+	illustration = "gas"
 
 /obj/item/weapon/storage/box/teargas/populate_contents()
 	for(var/i in 1 to 6)
@@ -277,7 +277,7 @@
 	name = "box of fragmentation grenades"
 	desc = "A box containing 4 fragmentation grenades. Designed for use on enemies in the open."
 	icon_state = "box_security"
-	illustration = "flashbang"
+	illustration = "frag"
 
 /obj/item/weapon/storage/box/frag/populate_contents()
 	for(var/i in 1 to 4)
@@ -287,7 +287,7 @@
 	name = "box of blast grenades"
 	desc = "A box containing 4 blast grenades. Designed for assaulting strongpoints."
 	icon_state = "box_security"
-	illustration = "flashbang"
+	illustration = "blast"
 
 /obj/item/weapon/storage/box/explosive/populate_contents()
 	for(var/i in 1 to 4)
