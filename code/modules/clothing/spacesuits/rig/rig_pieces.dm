@@ -34,9 +34,9 @@
 /obj/item/clothing/suit/space/rig
 	name = "chestpiece"
 
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	heat_protection =    UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	cold_protection =    UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	heat_protection =    UPPER_TORSO|LOWER_TORSO
+	cold_protection =    UPPER_TORSO|LOWER_TORSO
 	flags_inv =          HIDEJUMPSUIT|HIDETAIL
 	item_flags =         STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	slowdown = 0
@@ -82,9 +82,9 @@
 /obj/item/clothing/suit/lightrig
 	name = "suit"
 	allowed = list(/obj/item/device/lighting/toggleable/flashlight)
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	heat_protection =    UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	cold_protection =    UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	heat_protection =    UPPER_TORSO|LOWER_TORSO
+	cold_protection =    UPPER_TORSO|LOWER_TORSO
 	flags_inv =          HIDEJUMPSUIT
 	flags =              THICKMATERIAL|COVER_PREVENT_MANIPULATION
 
@@ -99,8 +99,8 @@
 /obj/item/clothing/gloves/lightrig
 	name = "gloves"
 	flags = THICKMATERIAL
-	body_parts_covered = LEGS
-	heat_protection =    LEGS
-	cold_protection =    LEGS
+	body_parts_covered = ARMS
+	heat_protection =    ARMS
+	cold_protection =    ARMS
 	species_restricted = null
 	gender = PLURAL
