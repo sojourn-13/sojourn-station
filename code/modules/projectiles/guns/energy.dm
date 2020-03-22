@@ -157,3 +157,11 @@
 		data["shots_remaining"] = round(C.charge/charge_cost)
 		data["max_shots"] = round(C.maxcharge/charge_cost)
 	return data
+
+/obj/item/weapon/gun/energy/pickup(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/smg_cock.ogg',20,4)
+
+/obj/item/weapon/gun/energy/dropped(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/lmg_magin.ogg',20,4)

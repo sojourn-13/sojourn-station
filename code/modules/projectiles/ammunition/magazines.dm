@@ -1,3 +1,15 @@
+/obj/item/ammo_magazine/
+	name = "not a magazine"
+	icon_state = "10l"
+
+/obj/item/ammo_magazine/pickup(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/pistol_magout.ogg',20,3)
+
+/obj/item/ammo_magazine/dropped(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/hpistol_magout.ogg',20,3)
+
 /obj/item/ammo_magazine/a10mm
 	name = "magazine (10mm)"
 	icon_state = "10l"
