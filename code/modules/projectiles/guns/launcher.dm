@@ -12,6 +12,7 @@
 	muzzle_flash = 0
 	fire_sound_text = "a launcher firing"
 
+
 //This normally uses a proc on projectiles and our ammo is not strictly speaking a projectile.
 /obj/item/weapon/gun/launcher/can_hit(var/mob/living/target as mob, var/mob/living/user as mob)
 	return 1
@@ -29,3 +30,11 @@
 	projectile.loc = get_turf(user)
 	projectile.throw_at(target, throw_distance, release_force, user)
 	return 1
+
+/obj/item/weapon/gun/launcher/pickup(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/smg_cock.ogg',20,4)
+
+/obj/item/weapon/gun/launcher/dropped(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/lmg_magin.ogg',20,4)

@@ -365,3 +365,11 @@
 	data["max_shells"] = get_max_ammo()
 
 	return data
+
+/obj/item/weapon/gun/projectile/pickup(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/smg_cock.ogg',20,4)
+
+/obj/item/weapon/gun/projectile/dropped(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/lmg_magin.ogg',20,4)
