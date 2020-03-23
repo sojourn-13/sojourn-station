@@ -79,12 +79,11 @@
 				/obj/item/clothing/head/costume/misc/rainbow,\
 				/obj/item/clothing/head/costume/history/jester,\
 				/obj/item/clothing/head/costume/history/jester/court,\
-				/obj/item/clothing/head/costume/history/philosopher,\
 				/obj/item/clothing/head/costume/history/pirate,\
 				/obj/item/clothing/head/costume/history/piratecap,\
 				/obj/item/clothing/head/costume/history/plaguedoctor,\
 				/obj/item/clothing/head/costume/history/powdered,\
-				/obj/item/clothing/head/costume/history/redcoat)
+				/obj/item/clothing/head/costume/history/napoleonic)
 
 /obj/random/costume/head_halloween
 	name = "random halloween head"
@@ -98,6 +97,8 @@
 				/obj/item/clothing/mask/costume/halloween/scarecrow,\
 				/obj/item/clothing/head/costume/halloween/cardborg,\
 				/obj/item/clothing/head/costume/halloween/deathofficer,\
+				/obj/item/clothing/head/costume/halloween/flash,\
+				/obj/item/clothing/head/costume/halloween/mad,\
 				/obj/item/clothing/head/costume/halloween/mummy,\
 				/obj/item/clothing/head/costume/halloween/pumpkin,\
 				/obj/item/clothing/head/costume/halloween/scarecrow,\
@@ -107,8 +108,6 @@
 				/obj/item/clothing/head/costume/halloween/xenos)
 
 /*Random Suits, Uniforms, and Shoes*/
-
-
 
 /obj/random/costume/body_animals
 	name = "random animal body"
@@ -153,7 +152,6 @@
 				/obj/item/clothing/under/costume/history/jester/court,\
 				/obj/item/clothing/under/costume/history/napoleonic,\
 				/obj/item/clothing/under/costume/history/pirate,\
-				/obj/item/clothing/under/costume/history/redcoat,\
 				/obj/item/clothing/under/costume/history/sailor,\
 				/obj/item/clothing/under/costume/history/soviet,\
 				/obj/item/clothing/under/costume/job/clown,\

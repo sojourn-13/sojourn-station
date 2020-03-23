@@ -213,7 +213,7 @@
 				/obj/item/clothing/head/firefighter/chief = 5,
 				/obj/item/clothing/head/hardhat = 5,
 				/obj/item/clothing/head/costume/job/nun = 5,
-				/obj/item/clothing/head/costume/history/philosopher = 5,
+				/obj/item/clothing/head/costume/halloween/mad = 5,
 				/obj/item/clothing/head/bandana/orange = 5,
 				/obj/item/clothing/head/bandana/green = 5,
 				/obj/item/clothing/head/costume/job/nun = 5,

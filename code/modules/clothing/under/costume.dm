@@ -43,13 +43,6 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "roman"
 	item_state = "roman"
 
-/obj/item/clothing/under/costume/history/redcoat
-	name = "redcoat uniform"
-	desc = "A red military outfit of quite old-fashioned design."
-	icon_state = "redcoat"
-	item_state_slots = list(slot_r_hand_str = "red", slot_l_hand_str = "red")
-	body_parts_covered = LOWER_TORSO
-
 /obj/item/clothing/under/costume/history/jester
 	name = "street jester suit"
 	desc = "The merry outfit of a medieval street jester."

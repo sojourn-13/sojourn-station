@@ -1,6 +1,16 @@
 /obj/item/weapon/storage/box/costume
 	illustration = "actor"
 
+/obj/item/weapon/storage/box/costume/bandit
+	name = "bandit costume kit"
+	desc = "A box containing a bandit costume."
+
+/obj/item/weapon/storage/box/costume/bandit/populate_contents()
+	new /obj/item/clothing/head/cowboy/bandit(src)
+	new /obj/item/clothing/mask/bandana/red(src)
+	new /obj/item/clothing/under/top/outfitgambler(src)
+	new /obj/item/clothing/shoes/cowboy/snakeskin(src)
+
 /obj/item/weapon/storage/box/costume/bunny
 	name = "bunny costume kit"
 	desc = "A box containing a bunny costume."
@@ -12,13 +22,14 @@
 	new /obj/item/clothing/under/color/white(src)
 	new /obj/item/clothing/shoes/color/black(src)
 
-/obj/item/weapon/storage/box/costume/chicken
-	name = "chicken costume kit"
-	desc = "A box containing a chicken costume."
+/obj/item/weapon/storage/box/costume/cardborg
+	name = "cardborg costume kit"
+	desc = "A box containing a cardborg costume."
 
-/obj/item/weapon/storage/box/costume/chicken/populate_contents()
-	new /obj/item/clothing/head/costume/animal/chicken(src)
-	new /obj/item/clothing/suit/costume/animal/chicken(src)
+/obj/item/weapon/storage/box/costume/cardborg/populate_contents()
+	new /obj/item/clothing/head/costume/halloween/cardborg(src)
+	new /obj/item/clothing/suit/costume/halloween/cardborg(src)
+	new /obj/item/clothing/under/color/grey(src)
 
 /obj/item/weapon/storage/box/costume/carp
 	name = "carp costume kit"
@@ -27,6 +38,16 @@
 /obj/item/weapon/storage/box/costume/carp/populate_contents()
 	new /obj/item/clothing/head/costume/animal/carp(src)
 	new /obj/item/clothing/suit/costume/animal/carp(src)
+	new /obj/item/clothing/under/color/lightblue(src)
+
+/obj/item/weapon/storage/box/costume/chicken
+	name = "chicken costume kit"
+	desc = "A box containing a chicken costume."
+
+/obj/item/weapon/storage/box/costume/chicken/populate_contents()
+	new /obj/item/clothing/head/costume/animal/chicken(src)
+	new /obj/item/clothing/suit/costume/animal/chicken(src)
+	new /obj/item/clothing/under/color/lightbrown(src)
 
 /obj/item/weapon/storage/box/costume/clownblue
 	name = "clown (blue) costume kit"
@@ -88,6 +109,33 @@
 	new /obj/item/clothing/under/costume/job/clown/yellow(src)
 	new /obj/item/clothing/shoes/costume/job/clown(src)
 
+/obj/item/weapon/storage/box/costume/cowboy
+	name = "cowboy costume kit"
+	desc = "A box containing a cowboy costume."
+
+/obj/item/weapon/storage/box/costume/cowboy/populate_contents()
+	new /obj/item/clothing/head/cowboy(src)
+	new /obj/item/clothing/mask/bandana/orange(src)
+	new /obj/item/clothing/under/top/outfitrancher(src)
+	new /obj/item/clothing/shoes/cowboy/classic(src)
+
+/obj/item/weapon/storage/box/costume/deathofficer
+	name = "death officer costume kit"
+	desc = "A box containing a death officer costume."
+
+/obj/item/weapon/storage/box/costume/deathofficer/populate_contents()
+	new /obj/item/clothing/head/costume/halloween/deathofficer(src)
+	new /obj/item/clothing/under/costume/halloween/deathofficer(src)
+
+/obj/item/weapon/storage/box/costume/flash
+	name = "flash costume kit"
+	desc = "A box containing a flash costume."
+
+/obj/item/weapon/storage/box/costume/flash/populate_contents()
+	new /obj/item/clothing/head/costume/halloween/flash(src)
+	new /obj/item/clothing/suit/costume/halloween/flash(src)
+	new /obj/item/clothing/under/color/grey(src)
+
 /obj/item/weapon/storage/box/costume/gladiator
 	name = "gladiator costume kit"
 	desc = "A box containing a gladiator costume."
@@ -113,6 +161,17 @@
 /obj/item/weapon/storage/box/costume/ian/populate_contents()
 	new /obj/item/clothing/head/costume/animal/ian(src)
 	new /obj/item/clothing/suit/costume/animal/ian(src)
+	new /obj/item/clothing/under/color/lightbrown(src)
+
+/obj/item/weapon/storage/box/costume/imperiummonk
+	name = "imperium monk costume kit"
+	desc = "A box containing a imperium costume."
+
+/obj/item/weapon/storage/box/costume/imperiummonk/populate_contents()
+	new /obj/item/clothing/gloves/color/yellow(src)
+	new /obj/item/clothing/suit/costume/job/imperium_monk(src)
+	new /obj/item/clothing/under/color/red(src)
+	new /obj/item/clothing/shoes/sandal(src)
 
 /obj/item/weapon/storage/box/costume/jester
 	name = "jester costume kit"
@@ -123,6 +182,15 @@
 	new /obj/item/clothing/under/costume/history/jester/court(src)
 	new /obj/item/clothing/shoes/costume/history/jester(src)
 
+/obj/item/weapon/storage/box/costume/judge
+	name = "judge costume kit"
+	desc = "A box containing a judge costume."
+
+/obj/item/weapon/storage/box/costume/judge/populate_contents()
+	new /obj/item/clothing/head/costume/history/powdered(src)
+	new /obj/item/clothing/suit/costume/job/judge(src)
+	new /obj/item/clothing/under/color/black(src)
+
 /obj/item/weapon/storage/box/costume/lobster
 	name = "lobster costume kit"
 	desc = "A box containing a lobster costume."
@@ -130,6 +198,15 @@
 /obj/item/weapon/storage/box/costume/lobster/populate_contents()
 	new /obj/item/clothing/head/costume/animal/lobster(src)
 	new /obj/item/clothing/under/costume/animal/lobster(src)
+
+/obj/item/weapon/storage/box/costume/madscientist
+	name = "mad scientist costume kit"
+	desc = "A box containing a mad scientist costume."
+
+/obj/item/weapon/storage/box/costume/madscientist/populate_contents()
+	new /obj/item/clothing/head/costume/halloween/mad
+	new /obj/item/clothing/suit/costume/halloween/madscientist
+	new /obj/item/clothing/under/scrubs/purple
 
 /obj/item/weapon/storage/box/costume/mailman
 	name = "mailman costume kit"
@@ -147,6 +224,7 @@
 /obj/item/weapon/storage/box/costume/monkey/populate_contents()
 	new /obj/item/clothing/mask/costume/animal/monkey(src)
 	new /obj/item/clothing/suit/costume/animal/monkey(src)
+	new /obj/item/clothing/under/color/brown(src)
 
 /obj/item/weapon/storage/box/costume/mime
 	name = "mime costume kit"
@@ -158,6 +236,34 @@
 	new /obj/item/clothing/under/costume/job/mime(src)
 	new /obj/item/clothing/shoes/costume/job/mime(src)
 
+/obj/item/weapon/storage/box/costume/mummy
+	name = "mummy costume kit"
+	desc = "A box containing a mummy costume."
+
+/obj/item/weapon/storage/box/costume/mummy/populate_contents()
+	new /obj/item/clothing/head/costume/halloween/mummy(src)
+	new /obj/item/clothing/mask/costume/halloween/mummy(src)
+	new /obj/item/clothing/suit/costume/halloween/mummy(src)
+	new /obj/item/clothing/under/costume/halloween/mummy(src)
+
+/obj/item/weapon/storage/box/costume/napoleonic
+	name = "napoleonic costume kit"
+	desc = "A box containing a napoleonic costume."
+
+/obj/item/weapon/storage/box/costume/napoleonic/populate_contents()
+	new /obj/item/clothing/head/costume/history/napoleonic(src)
+	new /obj/item/clothing/gloves/color/white(src)
+	new /obj/item/clothing/under/costume/history/napoleonic(src)
+
+/obj/item/weapon/storage/box/costume/nekomaid
+	name = "neko maid costume kit"
+	desc = "A box containing a neko maid costume."
+
+/obj/item/weapon/storage/box/costume/nekomaid/populate_contents()
+	new /obj/item/clothing/head/costume/animal/kitty(src)
+	new /obj/item/clothing/head/costume/animal/rabbitears(src)
+	new /obj/item/clothing/under/plaid/maid(src)
+
 /obj/item/weapon/storage/box/costume/nurse
 	name = "nurse costume kit"
 	desc = "A box containing a nurse costume."
@@ -167,6 +273,15 @@
 	new /obj/item/clothing/gloves/color/white(src)
 	new /obj/item/clothing/under/costume/job/nurse(src)
 	new /obj/item/clothing/shoes/highheels(src)
+
+/obj/item/weapon/storage/box/costume/nun
+	name = "nun costume kit"
+	desc = "A box containing a nun costume."
+
+/obj/item/weapon/storage/box/costume/nun/populate_contents()
+	new /obj/item/clothing/head/costume/job/nun(src)
+	new /obj/item/clothing/suit/costume/job/nun(src)
+	new /obj/item/clothing/under/color/black(src)
 
 /obj/item/weapon/storage/box/costume/police
 	name = "police costume kit"
@@ -208,6 +323,44 @@
 	new /obj/item/clothing/mask/costume/animal/owl(src)
 	new /obj/item/clothing/under/costume/animal/owl(src)
 
+/obj/item/weapon/storage/box/costume/santa
+	name = "santa costume kit"
+	desc = "A box containing a santa costume, and two hats for his elves."
+
+/obj/item/weapon/storage/box/costume/santa/populate_contents()
+	new /obj/item/clothing/head/costume/misc/santa(src)
+	new /obj/item/clothing/suit/costume/misc/santa(src)
+	new /obj/item/clothing/under/color/red(src)
+	new /obj/item/clothing/head/costume/misc/santa/elf(src)
+	new /obj/item/clothing/head/costume/misc/santa/elf(src)
+
+/obj/item/weapon/storage/box/costume/scarecrow
+	name = "scarecrow costume kit"
+	desc = "A box containing a scarecrow costume."
+
+/obj/item/weapon/storage/box/costume/scarecrow/populate_contents()
+	new /obj/item/clothing/head/costume/halloween/scarecrow(src)
+	new /obj/item/clothing/mask/costume/halloween/scarecrow(src)
+	new /obj/item/clothing/under/costume/halloween/scarecrow(src)
+
+/obj/item/weapon/storage/box/costume/skeleton
+	name = "skeleton costume kit"
+	desc = "A box containing a skeleton costume."
+
+/obj/item/weapon/storage/box/costume/skeleton/populate_contents()
+	new /obj/item/clothing/head/costume/halloween/skeleton(src)
+	new /obj/item/clothing/suit/costume/halloween/skeleton(src)
+	new /obj/item/clothing/under/costume/halloween/skeleton(src)
+
+/obj/item/weapon/storage/box/costume/snowman
+	name = "snowman costume kit"
+	desc = "A box containing a snowman costume."
+
+/obj/item/weapon/storage/box/costume/snowman/populate_contents()
+	new /obj/item/clothing/head/costume/misc/snowman(src)
+	new /obj/item/clothing/suit/costume/misc/snowman(src)
+	new /obj/item/clothing/under/color/white(src)
+
 /obj/item/weapon/storage/box/costume/soviet
 	name = "soviet costume kit"
 	desc = "A box containing a soviet costume."
@@ -218,3 +371,93 @@
 	new /obj/item/clothing/under/costume/history/soviet(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 
+/obj/item/weapon/storage/box/costume/syndicate
+	name = "syndicate costume kit"
+	desc = "A box containing a syndicate costume."
+
+/obj/item/weapon/storage/box/costume/syndicate/populate_contents()
+	new /obj/item/clothing/head/costume/halloween/syndicate(src)
+	new /obj/item/clothing/suit/costume/halloween/syndicate(src)
+	new /obj/item/clothing/under/color/red(src)
+
+/obj/item/weapon/storage/box/costume/xeno
+	name = "xeno costume kit"
+	desc = "A box containing a xeno costume."
+
+/obj/item/weapon/storage/box/costume/syndicate/populate_contents()
+	new /obj/item/clothing/head/costume/halloween/xenos(src)
+	new /obj/item/clothing/suit/costume/halloween/xenos(src)
+	new /obj/item/clothing/under/color/purple(src)
+
+/obj/item/weapon/storage/box/costume/surplusanimal
+	name = "animal surplus kit"
+	desc = "A box containing a bunch of animal costume pieces."
+
+/obj/item/weapon/storage/box/costume/surplusanimal/populate_contents()
+	new /obj/item/clothing/head/costume/animal/rooster(src)
+	new /obj/item/clothing/mask/costume/animal/bat(src)
+	new /obj/item/clothing/mask/costume/animal/bear(src)
+	new /obj/item/clothing/mask/costume/animal/bee(src)
+	new /obj/item/clothing/mask/costume/animal/dolphin(src)
+	new /obj/item/clothing/mask/costume/animal/fox(src)
+	new /obj/item/clothing/mask/costume/animal/frog(src)
+	new /obj/item/clothing/mask/costume/animal/horse(src)
+	new /obj/item/clothing/mask/costume/animal/jackal(src)
+	new /obj/item/clothing/mask/costume/animal/pig(src)
+	new /obj/item/clothing/mask/costume/animal/rat(src)
+	new /obj/item/clothing/mask/costume/animal/raven(src)
+	new /obj/item/clothing/mask/costume/animal/shark(src)
+
+/obj/item/weapon/storage/box/costume/surplusgeneric
+	name = "generic surplus kit"
+	desc = "A box containing a bunch of generic costume pieces."
+
+/obj/item/weapon/storage/box/costume/surplusgeneric/populate_contents()
+	new /obj/item/clothing/head/costume/misc/cake(src)
+	new /obj/item/clothing/head/costume/misc/cueball(src)
+	new /obj/item/clothing/head/costume/misc/fishbowl(src)
+	new /obj/item/clothing/head/costume/misc/paper(src)
+	new /obj/item/clothing/mask/costume/misc/fakemoustache(src)
+	new /obj/item/clothing/mask/costume/misc/guy(src)
+	new /obj/item/clothing/mask/costume/misc/tiki(src)
+	new /obj/item/clothing/mask/costume/misc/tiki/angry(src)
+	new /obj/item/clothing/mask/costume/misc/tiki/confused(src)
+	new /obj/item/clothing/mask/costume/misc/tiki/happy(src)
+
+/obj/item/weapon/storage/box/costume/surplushalloween
+	name = "halloween surplus kit"
+	desc = "A box containing a bunch of scary costume pieces."
+
+/obj/item/weapon/storage/box/costume/surplushalloween/populate_contents()
+	new /obj/item/clothing/under/costume/halloween/apocalypse(src)
+	new /obj/item/clothing/under/costume/halloween/femvampire(src)
+	new /obj/item/clothing/under/costume/halloween/ragged(src)
+	new /obj/item/clothing/under/costume/halloween/villain(src)
+	new /obj/item/clothing/suit/costume/halloween/web_bindings(src)
+	new /obj/item/clothing/suit/costume/halloween/vampire(src)
+	new /obj/item/clothing/mask/costume/halloween/demon(src)
+	new /obj/item/clothing/mask/costume/halloween/goblin(src)
+	new /obj/item/clothing/head/costume/halloween/pumpkin(src)
+
+/obj/item/weapon/storage/box/costume/bonusjustice
+	name = "justice bonus kit"
+	desc = "A box containing the full five set of justice helms."
+
+/obj/item/weapon/storage/box/costume/bonusjustice/populate_contents()
+	new /obj/item/clothing/head/costume/misc/justice(src)
+	new /obj/item/clothing/head/costume/misc/justice/blue(src)
+	new /obj/item/clothing/head/costume/misc/justice/green(src)
+	new /obj/item/clothing/head/costume/misc/justice/pink(src)
+	new /obj/item/clothing/head/costume/misc/justice/yellow(src)
+
+/obj/item/weapon/storage/box/costume/bonuswrestling
+	name = "wrestling bonus kit"
+	desc = "A box containing three sets of themed wrestling gear."
+
+/obj/item/weapon/storage/box/costume/bonuswrestling/populate_contents()
+	new /obj/item/clothing/mask/costume/job/luchador(src)
+	new /obj/item/clothing/mask/costume/job/luchador/rudos(src)
+	new /obj/item/clothing/mask/costume/job/luchador/tecnicos(src)
+	new /obj/item/clothing/under/shorts/athleticred(src)
+	new /obj/item/clothing/under/shorts/athleticblue(src)
+	new /obj/item/clothing/under/shorts/athleticblack(src)
