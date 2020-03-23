@@ -9,8 +9,6 @@
 		/datum/job/rd,
 		/datum/job/cmo,
 		/datum/job/chief_engineer,
-		/datum/job/pro,
-		/datum/job/salvager,
 		/datum/job/supsec,
 		/datum/job/inspector,
 		/datum/job/officer,

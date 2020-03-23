@@ -37,6 +37,20 @@
 	item_flags = STOPPRESSUREDAMAGE
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 5 //luminosity when on
+	light_overlay = "hardhat_light"
+	armor = list(
+		melee = 20,
+		bullet = 15,
+		energy = 10,
+		bomb = 15,
+		bio = 10,
+		rad = 25
+	)
+	siemens_coefficient = 0.8
+	w_class = ITEM_SIZE_NORMAL
+	price_tag = 100
 
 /obj/item/clothing/head/hardhat/dblue
 	name = "blue hard hat"
