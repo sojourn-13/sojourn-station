@@ -308,6 +308,7 @@
 	if(dir == 1)
 		buckle_dir = NORTH
 		plane = -15
+		layer = OBJ_LAYER
 	if(dir == 2)
 		buckle_dir = SOUTH
 	if(dir == 4)
