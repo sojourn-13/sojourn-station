@@ -92,6 +92,14 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = HEAD|FACE|EYES
 
+/obj/item/clothing/head/costume/halloween/flash
+	name = "flash button"
+	desc = "You will learn to fear the flash."
+	icon_state = "flashsuit"
+	item_state = "flashsuit"
+	body_parts_covered = HEAD
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	body_parts_covered = HEAD|FACE|EYES
 /obj/item/clothing/head/costume/halloween/skeleton
 	name = "skeleton head"
 	desc = "A hollow skull that covers the head. Hopefully fake."
@@ -104,6 +112,18 @@
 	name = "death officer cap"
 	desc = "A sinister military cap that feels darkly authoritative."
 	icon_state = "enclave"
+
+/obj/item/clothing/head/costume/halloween/mad
+	name = "mad scientist's wig"
+	desc = "A hairstyle for only the truly insane."
+	icon_state = "philosopher_wig"
+	item_state_slots = list(
+		slot_l_hand_str = "pwig",
+		slot_r_hand_str = "pwig",
+		)
+	flags_inv = BLOCKHAIR
+	siemens_coefficient = 2.0 //why is it so conductive?!
+	body_parts_covered = 0
 
 /obj/item/clothing/head/costume/halloween/pumpkin
 	name = "carved pumpkin"
@@ -161,19 +181,6 @@
 
 /*History*/
 
-/obj/item/clothing/head/costume/history/philosopher
-	name = "natural philosopher's wig"
-	desc = "A stylish and distinguished renaissance wig."
-	icon_state = "philosopher_wig"
-	item_state_slots = list(
-		slot_l_hand_str = "pwig",
-		slot_r_hand_str = "pwig",
-		)
-	flags_inv = BLOCKHAIR
-	siemens_coefficient = 2.0 //why is it so conductive?!
-	body_parts_covered = 0
-
-
 /obj/item/clothing/head/costume/history/pirate
 	name = "pirate hat"
 	desc = "Yarr."
@@ -200,8 +207,8 @@
 	icon_state = "pwig"
 	item_state = "pwig"
 
-/obj/item/clothing/head/costume/history/redcoat
-	name = "redcoat tricorne"
+/obj/item/clothing/head/costume/history/napoleonic
+	name = "napoleonic tricorne"
 	icon_state = "redcoat"
 	desc = "A triangular cap of quite old-fashioned design."
 
@@ -308,14 +315,14 @@
 	icon_state = "cueballelectric"
 	item_state= "cueballelectric"
 	body_parts_covered = HEAD
-	
+
 /obj/item/clothing/head/costume/misc/fishbowl
 	name = "fishbowl helmet"
 	desc = "A large, featureless clear orb worn on the head. Reminds you of fish!"
 	icon_state = "fishbowl"
 	item_state= "fishbowl"
 	body_parts_covered = HEAD
-	
+
 /obj/item/clothing/head/costume/misc/justice
 	name = "red justice helm"
 	desc = "The helm of the heroic red justice ranger."
