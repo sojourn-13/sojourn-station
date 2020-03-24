@@ -15,6 +15,7 @@
 	ears_icon = 		'icons/inventory/teshari/teshari_ears.dmi'
 	icon_fallback = null
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+	playable = FALSE
 
 /datum/species_form/vox
 	playable =			 TRUE
