@@ -23,7 +23,7 @@
 
 /obj/item/weapon/tool/saw/improvised
 	name = "choppa"
-	desc = "A wicked serrated blade made of whatever nasty sharp things you could find. It would make a pretty decent weapon"
+	desc = "An improvised saw made of twisted, wicked metal. The serrated blade is great for cutting."
 	icon_state = "impro_saw"
 	force = WEAPON_FORCE_PAINFUL
 	tool_qualities = list(QUALITY_SAWING = 15, QUALITY_CUTTING = 10, QUALITY_WIRE_CUTTING = 10)
@@ -87,7 +87,7 @@
 	icon_state = "hypersaw"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
-	force = WEAPON_FORCE_BRUTAL 
+	force = WEAPON_FORCE_BRUTAL
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 8, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20)
 	max_upgrades = 4

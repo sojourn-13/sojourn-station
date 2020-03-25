@@ -1,5 +1,6 @@
 /obj/machinery/portable_atmospherics/canister
 	name = "canister"
+	desc = "A secure container for all manner of gas."
 	icon = 'icons/obj/atmos.dmi'
 	icon_state = "yellow"
 	density = 1

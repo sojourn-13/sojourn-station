@@ -1,5 +1,6 @@
 /obj/structure/door_assembly
 	name = "airlock assembly"
+	desc = "The frame for an airlock. It's clearly inoperational."
 	icon = 'icons/obj/doors/door_assembly.dmi'
 	icon_state = "door_as_0"
 	anchored = 0

@@ -206,7 +206,7 @@ Frequency:
 
 /obj/item/weapon/hand_tele/handmade
 	name = "Handmade hand-teleporter"
-	desc = "Handmade version of hand-tele. Woah, that's was they call an experimental science!"
+	desc = "An improvised hand-teleporter. Highly experimental and unstable."
 	icon_state = "hm_hand-tele"
 	portal_type = /obj/effect/portal/unstable
 	portal_fail_chance = 50
