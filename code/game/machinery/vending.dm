@@ -1294,7 +1294,6 @@
 					/obj/item/seeds/appleseed = 3,
 					/obj/item/seeds/poppyseed = 3,
 					/obj/item/seeds/sugarcaneseed = 3,
-					/obj/item/seeds/ambrosiavulgarisseed = 3,
 					/obj/item/seeds/peanutseed = 3,
 					/obj/item/seeds/whitebeetseed = 3,
 					/obj/item/seeds/watermelonseed = 3,
@@ -1312,6 +1311,7 @@
 					/obj/item/seeds/riceseed = 3)
 	contraband = list(/obj/item/seeds/amanitamycelium = 2,
 					/obj/item/seeds/glowshroom = 2,
+					/obj/item/seeds/ambrosiavulgarisseed = 2,
 					/obj/item/seeds/libertymycelium = 2,
 					/obj/item/seeds/mtearseed = 2,
 					/obj/item/seeds/nettleseed = 2,

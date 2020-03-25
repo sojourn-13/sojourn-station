@@ -48,19 +48,6 @@
 	deform = 'icons/mob/human_races/r_def_tajaran_white.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
-/* //For sablekyne to be selectable, commented out because it doesn't add any of the species/sablekyne stats.
-/datum/species_form/sablekyne
-	playable = TRUE
-	name = "Sablekyne"
-	base = 'icons/mob/human_races/r_tajaran_white.dmi'
-	deform = 'icons/mob/human_races/r_def_tajaran_white.dmi'
-	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
-	flesh_color = "#AFA59E"
-	base_color = "#333333"
-	tail = "tajtail"
-	tail_animation = 'icons/mob/sprite_accessory/tails.dmi'
-*/
-
 /datum/species_form/shark
 	playable = TRUE
 	name = FORM_SHARK
@@ -156,3 +143,15 @@
 	base = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
 	deform = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
 
+///* //For sablekyne to be selectable, commented out because it doesn't add any of the species/sablekyne stats.
+/datum/species_form/sablekyne
+	playable = TRUE
+	name = FORM_SABLEKYNE
+	base = 'icons/mob/human_races/r_tajaran_white.dmi'
+	deform = 'icons/mob/human_races/r_def_tajaran_white.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+	flesh_color = "#AFA59E"
+	base_color = "#333333"
+	tail = "tajtail"
+	tail_animation = 'icons/mob/sprite_accessory/tails.dmi'
+//*/

@@ -2,7 +2,7 @@
 	name = "Human"
 	name_plural = "Humans"
 	default_form = FORM_HUMAN
-	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
+	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/punch, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "Humanity originated in the Sol system, and over the last five centuries has spread \
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
 	While the central Sol Federation maintains control of much of the known star space \
@@ -24,8 +24,8 @@
 /datum/species/sablekyne
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
-	default_form = FORM_FELINE
-	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws/strong, /datum/unarmed_attack/bite/sharp)
+	default_form = FORM_SABLEKYNE
+	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/claws/strong, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/sharp)
 	darksight = 8
 	num_alternate_languages = 2
 	name_language = null
@@ -37,8 +37,6 @@
 	ethnicities, something that permeates even to today's times. Northlander sablekyne perfer colder winter enviroments while \
 	southlanders prefer hot dry areas. Both groups are stocky, strong, and thickly built and few have the lithe feline qualities \
 	one would expect."
-
-	body_temperature = 320.15	//Even more cold resistant, even more flammable
 
 	cold_level_1 = 200 //Default 260
 	cold_level_2 = 140 //Default 200
@@ -64,4 +62,4 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/sablekyne/get_bodytype()
-	return "Sablekyne"
+	return FORM_SABLEKYNE

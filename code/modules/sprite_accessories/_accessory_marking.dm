@@ -367,7 +367,7 @@
 		body_parts = list(BP_HEAD)
 
 	otie_face
-		name = "Otie face"
+		name = "Hound face"
 		icon_state = "otieface"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
@@ -379,7 +379,7 @@
 		body_parts = list(BP_HEAD)
 
 	otienose_lite
-		name = "Short otie nose"
+		name = "Short hound nose"
 		icon_state = "otienose_lite"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)

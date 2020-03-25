@@ -370,7 +370,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/tajaranhc
-	name = "Feline Tail"
+	name = "Sablekyne Tail"
 	desc = ""
 	icon_state = "tajtail_hc_s"
 	colored_layers = 1

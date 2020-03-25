@@ -229,7 +229,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/kittyhc
-	name = "Kitty Ears"
+	name = "Sablekyne Ears"
 	desc = ""
 	icon_state = "kitty"
 	colored_layers = 2
@@ -257,7 +257,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/otie
-	name = "Otie Ears"
+	name = "Hound Ears"
 	desc = ""
 	icon_state = "otie"
 	colored_layers = 2

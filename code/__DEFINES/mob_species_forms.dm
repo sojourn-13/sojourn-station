@@ -71,6 +71,7 @@
 #define FORM_STATIONXENO_HUNTER	"Xenohybrid Hunter"
 #define FORM_STATIONXENO_QUEEN	"Xenohybrid Queen"
 #define FORM_STATIONXENO_SENTI  "Xenohybrid Sentinel"
+#define FORM_SABLEKYNE			"Sablekyne"
 
 #define FORM_BIRD				"Avian"
 

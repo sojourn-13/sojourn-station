@@ -6,6 +6,7 @@
 	item_state = "analyzer"
 	throw_speed = 5
 	throw_range = 10
+	charge_per_use = 2
 
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_MAGNET = 1, TECH_BIO = 1)
