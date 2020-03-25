@@ -35,20 +35,6 @@
 	)
 	related_stats = list(STAT_MEC)
 
-/datum/craft_recipe/appliance/handmade_handtele
-	name = "handmade hand-teleporter"
-	result = /obj/item/weapon/hand_tele/handmade
-	steps = list(
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 30),
-		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
-		list(/obj/item/weapon/circuitboard, 1, "time" = 20),
-		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
-		list(/obj/item/weapon/stock_parts/capacitor, 1),
-		list(/obj/item/weapon/cell/small, 1),
-		list(/obj/item/stack/cable_coil, 5, "time" = 20)
-	)
-	related_stats = list(STAT_COG)
-
 //You build a frame from rods, add metal shelves, plastic wheels and handles
 /datum/craft_recipe/appliance/janicart
 	name = "janitorial cart"
