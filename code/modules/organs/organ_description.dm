@@ -13,8 +13,7 @@
 	var/joint = "neck"
 	var/parent_organ = null
 	var/icon_position = null
-	var/can_grasp = FALSE
-	var/can_stand = FALSE
+	var/functions = NONE
 	var/list/drop_on_remove = null
 
 /datum/organ_description/proc/create_organ(var/mob/living/carbon/human/H)
@@ -60,12 +59,14 @@
 	amputation_point = "neck"
 	parent_organ = BP_CHEST
 	drop_on_remove = list(slot_glasses,slot_head,slot_l_ear,slot_r_ear,slot_wear_mask)
+	functions = BODYPART_REAGENT_INTAKE | BODYPART_GAS_INTAKE
 
 /datum/organ_description/arm
 	max_damage = 50
 	min_broken_damage = 50
 	w_class = ITEM_SIZE_NORMAL
 	parent_organ = BP_CHEST
+	functions = BODYPART_GRASP
 
 /datum/organ_description/arm/left
 	name = "left arm"
@@ -75,7 +76,6 @@
 	amputation_point = "left shoulder"
 
 /datum/organ_description/arm/left/full
-	can_grasp = TRUE
 	additional_limb_parts = BP_L_ARM_EXTRA
 
 /datum/organ_description/arm/right
@@ -86,7 +86,6 @@
 	amputation_point = "right shoulder"
 
 /datum/organ_description/arm/right/full
-	can_grasp = TRUE
 	additional_limb_parts = BP_R_ARM_EXTRA
 
 /datum/organ_description/leg
@@ -94,6 +93,7 @@
 	min_broken_damage = 50
 	w_class = ITEM_SIZE_NORMAL
 	parent_organ = BP_GROIN
+	functions = BODYPART_STAND
 
 /datum/organ_description/leg/left
 	name = "left leg"
@@ -104,7 +104,6 @@
 	amputation_point = "left hip"
 
 /datum/organ_description/leg/left/full
-	can_stand = TRUE
 	additional_limb_parts = BP_L_LEG_EXTRA
 
 /datum/organ_description/leg/right
@@ -116,14 +115,12 @@
 	amputation_point = "right hip"
 
 /datum/organ_description/leg/right/full
-	can_stand = TRUE
 	additional_limb_parts = BP_R_LEG_EXTRA
 
 /datum/organ_description/hand
 	max_damage = 30
 	min_broken_damage = 20
 	w_class = ITEM_SIZE_SMALL
-	can_grasp = TRUE
 
 /datum/organ_description/hand/left
 	name = "left hand"
@@ -143,7 +140,6 @@
 	max_damage = 40
 	min_broken_damage = 30
 	w_class = ITEM_SIZE_SMALL
-	can_stand = TRUE
 
 /datum/organ_description/foot/left
 	name = "left foot"

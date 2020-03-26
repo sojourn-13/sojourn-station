@@ -186,7 +186,7 @@ abbr {
 }
 
 .redButton {
-    background: #ea0000;
+    background: #b00e0e;
 }
 
 .yellowButton {
@@ -508,7 +508,7 @@ div.notice {
 
 .displayBarFill.bad {
     color: #ffffff;
-    background: #ee0000;
+    background: #b00e0e;
 }
 
 .displayBarFill.highlight {
@@ -935,3 +935,4 @@ img.sciTechTreeIconToolTip {
     width: 300px;
     float: left;
 }
+
