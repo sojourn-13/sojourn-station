@@ -277,3 +277,18 @@
 	icon_state = "maska"
 	armor = list(melee = 65, bullet = 65, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
 	tint = TINT_HEAVY
+
+/obj/item/clothing/head/helmet/visor/cyberpunkgoggle
+	name = "34c neo goggles"
+	desc = "An old model of industrial helmet. Not armored, but has a sturdy neo-laminated fabric lining."
+	icon_state = "cyberpunkgoggle"
+	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
+	siemens_coefficient = 0.9	//More conductive than most helmets
+	armor = list(
+		melee = 5,
+		bullet = 20,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)

@@ -86,7 +86,8 @@
 				/obj/item/clothing/suit/storage/toggle/labcoat/medspec = 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/science = 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/virologist = 3,
-				/obj/item/clothing/suit/storage/rank/qm_coat = 2))
+				/obj/item/clothing/suit/storage/rank/qm_coat = 2,
+				/obj/item/clothing/suit/storage/toggle/leather/cyberpunk = 8))
 
 /obj/random/cloth/suit/low_chance
 	name = "low chance random suit"
@@ -186,9 +187,6 @@
 	name = "low chance random helmet"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
 
 /obj/random/cloth/head
 	name = "random head"
