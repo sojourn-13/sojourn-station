@@ -25,18 +25,18 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 	)
 
-/datum/craft_recipe/storage/crate/plasteel
-	name = "crate, plasteel"
-	result = /obj/structure/closet/crate
-	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
-	)
-
 /datum/craft_recipe/storage/crate/plastic
 	name = "crate, plastic"
 	result = /obj/structure/closet/crate/plastic
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+	)
+
+/datum/craft_recipe/storage/crate/steel
+	name = "crate, steel"
+	result = /obj/structure/closet/crate
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
 	)
 
 /datum/craft_recipe/storage/rack
