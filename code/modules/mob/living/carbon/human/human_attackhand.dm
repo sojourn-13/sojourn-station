@@ -55,6 +55,8 @@
 
 	switch(M.a_intent)
 		if(I_HELP)
+			if(can_operate(src, M) && do_surgery(src, M, null))
+				return 1
 			if(istype(H) && health < HEALTH_THRESHOLD_CRIT && health > HEALTH_THRESHOLD_DEAD)
 				if(!H.check_has_mouth())
 					to_chat(H, SPAN_DANGER("You don't have a mouth, you cannot perform CPR!"))
