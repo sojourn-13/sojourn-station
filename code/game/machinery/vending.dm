@@ -1399,7 +1399,8 @@
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cola = 20)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
-	/obj/machinery/vending/sovietsoda/postvend_effect()
+
+/obj/machinery/vending/sovietsoda/postvend_effect()
 	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
 	return
 
