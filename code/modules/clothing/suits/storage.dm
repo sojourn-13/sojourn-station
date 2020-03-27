@@ -337,6 +337,12 @@
 	icon_open = "brown_jacket_sleeveless_open"
 	icon_closed = "brown_jacket_sleeveless"
 
+/obj/item/clothing/suit/storage/toggle/leather/cyberpunk
+	name = "cyberpunk jacket"
+	desc = "A sleek overcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek"
+	item_state = "brown_jacket"
+
 /obj/item/clothing/suit/storage/toggle/leather/denimjacket
 	name = "denim jacket"
 	desc = "A smart blue jacket made out of denim."
