@@ -198,7 +198,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	w_class = ITEM_SIZE_BULKY
 
-/obj/item/weapon/tool/sword/katana //slightly less penetration, slightly more damage
+/obj/item/weapon/tool/sword/katana
 	name = "katana"
 	desc = "Modern japanese-style blade that has no curve to it. This one looks pretty sharp."
 	icon_state = "katana"
@@ -206,7 +206,7 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_METAL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_SHALLOW
 
 /obj/item/weapon/tool/sword/crusader
 	name = "crusader greatsword"
