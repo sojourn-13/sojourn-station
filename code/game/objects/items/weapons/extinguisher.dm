@@ -14,7 +14,6 @@
 	force = WEAPON_FORCE_DANGEROUS
 	matter = list(MATERIAL_STEEL = 3)
 	attack_verb = list("slammed", "whacked", "bashed", "thunked", "battered", "bludgeoned", "thrashed")
-	drop_sound = 'sound/items/drop/gascan.ogg'
 
 	var/spray_particles = 3
 	var/spray_amount = 9	//units of liquid per particle

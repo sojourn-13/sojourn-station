@@ -34,7 +34,6 @@
 	origin_tech = "materials=2;combat=1"
 	attack_verb = list("chopped", "torn", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 20)
-	drop_sound = 'sound/items/drop/axe.ogg'
 
 /obj/item/weapon/tool/fireaxe  // DEM AXES MAN, marker -Agouri
 	icon = 'icons/obj/weapons.dmi'
@@ -42,7 +41,6 @@
 	wielded_icon = "fireaxe1"
 	name = "fire axe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
-	drop_sound = 'sound/items/drop/axe.ogg'
 	sharp = 1
 	edge = 1
 	armor_penetration = ARMOR_PEN_MODERATE
@@ -99,7 +97,6 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	slot_flags = SLOT_BELT
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
-	drop_sound = 'sound/items/drop/knife.ogg'
 
 /obj/item/weapon/tool/knife/boot
 	name = "boot knife"
@@ -193,7 +190,6 @@
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	w_class = ITEM_SIZE_BULKY
-	drop_sound = 'sound/items/drop/sword.ogg'
 
 /obj/item/weapon/tool/sword/katana
 	name = "katana"

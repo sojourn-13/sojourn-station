@@ -12,7 +12,6 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 16
 	matter = list(MATERIAL_BIOMATTER = 8, MATERIAL_PLASTIC = 4)
-	drop_sound = 'sound/items/drop/backpack.ogg'
 
 /obj/item/weapon/storage/briefcase/rifle
 	name = "gun case"

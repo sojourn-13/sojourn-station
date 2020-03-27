@@ -4,7 +4,6 @@
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book"
 	var/has_reference = FALSE
-	drop_sound = 'sound/bureaucracy/bookclose.ogg'
 
 	var/expanded_group = null
 	var/current_category = "Common"

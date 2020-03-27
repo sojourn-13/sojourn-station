@@ -10,10 +10,6 @@
 /*
  * Oxygen
  */
-
- /obj/item/weapon/tank
- 	drop_sound = 'sound/items/drop/gascan.ogg'
-
 /obj/item/weapon/tank/oxygen
 	name = "oxygen tank"
 	desc = "A tank of oxygen."

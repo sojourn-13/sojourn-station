@@ -1,7 +1,4 @@
 // COLOR GLOVES
-/obj/item/clothing/gloves
-	drop_sound = 'sound/items/drop/gloves.ogg'
-
 /obj/item/clothing/gloves/color
 	name = "black gloves"
 	initial_name = "black gloves"

@@ -16,7 +16,6 @@
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 10)
-	drop_sound = 'sound/items/drop/knife.ogg'
 
 /obj/item/weapon/tool/scalpel/advanced
 	name = "advanced scalpel"

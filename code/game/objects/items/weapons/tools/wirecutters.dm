@@ -13,7 +13,6 @@
 	sharp = TRUE
 	edge = TRUE
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 30, QUALITY_RETRACTING = 15, QUALITY_BONE_SETTING = 15)
-	drop_sound = 'sound/items/drop/knife.ogg'
 
 /obj/item/weapon/tool/wirecutters/bs
 	name = "bluespace wirecutters"

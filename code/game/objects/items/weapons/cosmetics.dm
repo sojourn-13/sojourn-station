@@ -7,7 +7,6 @@
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 	matter = list(MATERIAL_BIOMATTER = 2)
-	drop_sound = 'sound/items/drop/glass.ogg'
 	var/colour = "red"
 	var/open = 0
 

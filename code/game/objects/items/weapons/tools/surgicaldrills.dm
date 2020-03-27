@@ -12,7 +12,6 @@
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	attack_verb = list("drilled")
 	tool_qualities = list(QUALITY_DRILLING = 30)
-	drop_sound = 'sound/items/drop/accessory.ogg'
 
 	use_power_cost = 0.24
 	suitable_cell = /obj/item/weapon/cell/small

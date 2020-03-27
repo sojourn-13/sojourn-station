@@ -7,7 +7,6 @@
 	throw_speed = 3
 	throw_range = 3
 	max_amount = 120
-	drop_sound = 'sound/items/drop/axe.ogg'
 
 	var/default_type = MATERIAL_STEEL
 	var/material/material
@@ -103,20 +102,17 @@
 	icon_state = "sheet-sandstone"
 	default_type = MATERIAL_SANDSTONE
 	price_tag = 1
-	drop_sound = 'sound/items/drop/boots.ogg'
 
 /obj/item/stack/material/marble
 	name = "marble brick"
 	icon_state = "sheet-marble"
 	default_type = MATERIAL_MARBLE
-	drop_sound = 'sound/items/drop/boots.ogg'
 
 /obj/item/stack/material/diamond
 	name = "diamond"
 	icon_state = "sheet-diamond"
 	default_type = MATERIAL_DIAMOND
 	price_tag = 100
-	drop_sound = 'sound/items/drop/glass.ogg'
 
 /obj/item/stack/material/durasteel
 	name = "durasteel"
@@ -143,7 +139,6 @@
 	icon_state = "sheet-plasma"
 	default_type = MATERIAL_PLASMA
 	price_tag = 30
-	drop_sound = 'sound/items/drop/glass.ogg'
 
 /obj/item/stack/material/plasma/random
 	rand_min = 3
@@ -245,7 +240,6 @@
 	icon_state = "sheet-wood"
 	default_type = MATERIAL_WOOD
 	price_tag = 20
-	drop_sound = 'sound/items/drop/glass.ogg'
 
 /obj/item/stack/material/wood/random
 	rand_min = 3
@@ -279,7 +273,6 @@
 	icon_state = "sheet-glass"
 	default_type = MATERIAL_GLASS
 	price_tag = 2
-	drop_sound = 'sound/items/drop/glass.ogg'
 
 /obj/item/stack/material/glass/random
 	rand_min = 3

@@ -73,8 +73,6 @@
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
 
-	var/drop_sound = 'sound/items/drop/device.ogg' // drop sound - this is the default
-
 /obj/item/Destroy()
 	QDEL_NULL(hidden_uplink)
 	QDEL_NULL(blood_overlay)
@@ -180,11 +178,6 @@
 
 /obj/item/proc/moved(mob/user as mob, old_loc as turf)
 	return
-
-/obj/item/throw_impact(atom/hit_atom)
-	..()
-	if(drop_sound)
-		playsound(src, drop_sound, 50, 0, preference = /datum/client_preference/drop_sounds)
 
 // Called whenever an object is moved out of a mob's equip slot. Possibly into another slot, possibly to elsewhere
 // Linker proc: mob/proc/prepare_for_slotmove, which is referenced in proc/handle_item_insertion and obj/item/attack_hand.

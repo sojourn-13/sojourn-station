@@ -23,7 +23,6 @@
 	throw_speed = 4
 	throw_range = 20
 	force = 0
-	drop_sound = 'sound/items/drop/gloves.ogg'
 
 
 /*
@@ -35,7 +34,6 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "waterballoon-e"
 	item_state = "balloon-empty"
-	drop_sound = 'sound/items/drop/rubber.ogg'
 
 /obj/item/toy/junk/balloon/New()
 	var/datum/reagents/R = new/datum/reagents(10)
@@ -116,7 +114,6 @@
 	desc = "Tiny cute Christmas tree."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "tinyxmastree"
-	drop_sound = 'sound/items/drop/box.ogg'
 
 /*
  * Toy crossbow
@@ -135,7 +132,6 @@
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("attacked", "struck", "hit")
 	var/bullets = 5
-	drop_sound = 'sound/items/drop/gun.ogg'
 
 	examine(mob/user)
 		if(..(user, 2) && bullets)
@@ -231,7 +227,6 @@
 	icon_state = "foamdart"
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
-	drop_sound = 'sound/items/drop/food.ogg'
 
 /obj/effect/foam_dart_dummy
 	name = ""
@@ -250,7 +245,6 @@
 	icon_state = "sword0"
 	item_state = "sword0"
 	var/active = 0.0
-	drop_sound = 'sound/items/drop/gun.ogg'
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("attacked", "struck", "hit")
 
@@ -305,7 +299,6 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snappop"
 	w_class = ITEM_SIZE_TINY
-	drop_sound = null
 
 	throw_impact(atom/hit_atom)
 		..()
@@ -341,7 +334,6 @@
 	icon_state = "sunflower"
 	item_state = "sunflower"
 	var/empty = 0
-	drop_sound = 'sound/items/drop/food.ogg'
 	flags
 
 /obj/item/toy/weapon/waterflower/New()
@@ -410,7 +402,6 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "bosunwhistle"
 	var/cooldown = 0
-	drop_sound = 'sound/items/drop/card.ogg'
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 
@@ -427,7 +418,6 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "blank"
 	var/cooldown = 0
-	drop_sound = 'sound/mecha/mechstep.ogg'
 
 //all credit to skasi for toy mech fun ideas
 /obj/item/toy/figure/mecha/attack_self(mob/user as mob)
@@ -509,7 +499,6 @@
 	icon = 'icons/obj/toy.dmi'
 	var/cooldown = 0
 	var/toysay = "What the fuck did you do?"
-	drop_sound = 'sound/items/drop/accessory.ogg'
 
 /obj/item/toy/figure/character/attack_self(mob/user as mob)
 	if(cooldown < world.time)
@@ -874,7 +863,6 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "nymphplushie"
 	var/phrase = "I don't want to exist anymore!"
-	drop_sound = 'sound/items/drop/plushie.ogg'
 
 /obj/item/toy/plushie/attack_self(mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -886,7 +874,6 @@
 		user.visible_message(SPAN_WARNING("<b>\The [user]</b> attempts to strangle [src]!"),SPAN_WARNING("You attempt to strangle [src]!"))
 	else
 		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> pokes the [src]."),SPAN_NOTICE("You poke the [src]."))
-		playsound(src, 'sound/items/drop/plushie.ogg', 25, 0)
 		visible_message("[src] says, \"[phrase]\"")
 
 /obj/item/toy/plushie/verb/rename_plushie()
@@ -1217,7 +1204,6 @@
 	icon_state = "inflatable"
 	item_state = "inflatable"
 	icon = 'icons/inventory/belt/icon.dmi'
-	drop_sound = 'sound/items/drop/rubber.ogg'
 	slot_flags = SLOT_BELT
 
 

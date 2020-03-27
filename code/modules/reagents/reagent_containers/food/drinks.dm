@@ -11,7 +11,6 @@
 	volume = 50
 	var/base_name = null // Name to put in front of drinks, i.e. "[base_name] of [contents]"
 	var/base_icon = null // Base icon name for fill states
-	drop_sound = 'sound/items/drop/bottle.ogg'
 
 /obj/item/weapon/reagent_containers/food/drinks/Initialize()
 	. = ..()
@@ -135,7 +134,6 @@
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
 	preloaded_reagents = list("milk" = 50)
-	drop_sound = 'sound/items/drop/box.ogg'
 
 /obj/item/weapon/reagent_containers/food/drinks/soymilk
 	name = "soy milk carton"
@@ -144,7 +142,6 @@
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
 	preloaded_reagents = list("soymilk" = 50)
-	drop_sound = 'sound/items/drop/box.ogg'
 
 /obj/item/weapon/reagent_containers/food/drinks/milk/small
 	name = "small milk carton"
@@ -204,7 +201,6 @@
 	possible_transfer_amounts = null
 	volume = 10
 	center_of_mass = list("x"=16, "y"=12)
-	drop_sound = 'sound/items/drop/paper.ogg'
 
 /obj/item/weapon/reagent_containers/food/drinks/sillycup/update_icon()
 	if(reagents.total_volume)

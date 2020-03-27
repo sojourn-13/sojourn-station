@@ -19,7 +19,6 @@
 	)
 	siemens_coefficient = 0 // DAMN BOI
 	//This armor only applies to legs
-	drop_sound = 'sound/items/drop/boots.ogg'
 
 /obj/item/clothing/shoes/magboots/proc/set_slowdown()
 	var/obj/item/clothing/shoes/shoes = overslot_contents
@@ -41,7 +40,6 @@
 		set_slowdown()
 		force = WEAPON_FORCE_PAINFUL
 		if(icon_base) icon_state = "[icon_base]1"
-		playsound(get_turf(src), 'sound/effects/magnetclamp.ogg', 20)
 		to_chat(user, "You enable the mag-pulse traction system.")
 	user.update_inv_shoes()	//so our mob-overlays update
 	user.update_action_buttons()

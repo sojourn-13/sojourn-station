@@ -89,11 +89,9 @@
 	var/obj/item/gift = null
 	item_state = "gift"
 	w_class = ITEM_SIZE_BULKY
-	drop_sound = 'sound/items/drop/box.ogg'
 
 /obj/item/weapon/gift/attack_self(mob/user as mob)
 	user.drop_item()
-	playsound(src.loc, 'sound/items/package_unwrap.ogg', 50,1)
 	if(src.gift && src.gift in src.contents)
 		user.put_in_active_hand(gift)
 		src.gift.add_fingerprint(user)

@@ -24,7 +24,6 @@
 	. = ..()
 	if(isGlass)
 		unacidable = TRUE
-		drop_sound = 'sound/items/drop/bottle.ogg'
 
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/Destroy()

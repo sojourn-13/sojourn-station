@@ -1,7 +1,4 @@
 //replaces our stun baton code with /tg/station's code
-/obj/item/weapon/melee
-	drop_sound = 'sound/items/drop/metalweapon.ogg'
-
 /obj/item/weapon/melee/baton
 	name = "stunbaton"
 	desc = "A stun baton for incapacitating people with."

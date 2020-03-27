@@ -24,7 +24,6 @@
 	siemens_coefficient = 0.7
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 100
-	drop_sound = 'sound/items/drop/helm.ogg'
 
 //Blackshield helmets
 /obj/item/clothing/head/helmet/ballistic

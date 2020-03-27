@@ -11,7 +11,6 @@
 	var/hitcost = 100
 	var/obj/item/weapon/cell/cell = null
 	var/suitable_cell = /obj/item/weapon/cell/medium
-	drop_sound = 'sound/items/drop/metalboots.ogg'
 
 /obj/item/clothing/gloves/stungloves/Initialize()
 	. = ..()

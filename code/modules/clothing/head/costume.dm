@@ -259,7 +259,6 @@
 	desc = "A flimsy paper hat. Probably better than nothing."
 	flags_inv = 0
 	body_parts_covered = 0
-	drop_sound = 'sound/items/drop/paper.ogg'
 
 /obj/item/clothing/head/costume/misc/santa
 	name = "santa hat"

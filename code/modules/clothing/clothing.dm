@@ -7,7 +7,6 @@
 	var/list/species_restricted = null				// Only these species can wear this kit.
 	var/gunshot_residue								// Used by forensics.
 	var/initial_name = "clothing"					// For coloring
-	drop_sound = 'sound/items/drop/clothing.ogg'
 
 	var/list/accessories = list()
 	var/list/valid_accessory_slots
@@ -485,7 +484,6 @@ BLIND     // can't see anything
 
 	if(usr.put_in_hands(holding))
 		usr.visible_message(SPAN_DANGER("\The [usr] pulls a knife out of their boot!"))
-		playsound(get_turf(src), 'sound/weapons/holster/sheathout.ogg', 25)
 		holding = null
 	else
 		to_chat(usr, SPAN_WARNING("You need an empty, unbroken hand to do that."))

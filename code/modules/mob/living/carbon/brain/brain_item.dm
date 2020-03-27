@@ -1,6 +1,3 @@
-/obj/item/organ/
-	drop_sound = 'sound/items/drop/flesh.ogg'
-
 /obj/item/organ/internal/brain
 	name = "brain"
 	health = 400 //They need to live awhile longer than other organs. Is this even used by organ code anymore?

@@ -52,7 +52,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	slot_flags = SLOT_EARS
 	attack_verb = list("burnt", "singed")
 	preloaded_reagents = list("sulfur" = 3, "potassium" = 3, "hydrazine" = 3, "carbon" = 5)
-	drop_sound = null
 
 /obj/item/weapon/flame/match/Process()
 	if(isliving(loc))
@@ -109,7 +108,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/weldermes = "USER lights NAME with FLAME"
 	var/ignitermes = "USER lights NAME with FLAME"
 	preloaded_reagents = list("nicotine" = 5)
-	drop_sound = 'sound/items/cigs_lighters/cig_snuff.ogg'
 
 /obj/item/clothing/mask/smokable/Initialize()
 	reagent_flags |= NO_REACT // so it doesn't react until you light it
@@ -138,7 +136,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/smokable/proc/light(var/flavor_text = "[usr] lights the [name].")
 	if(!src.lit)
 		src.lit = 1
-		playsound(src, 'sound/items/cigs_lighters/cig_light.ogg', 75, 1, -1)
 		damtype = "fire"
 		if(reagents.get_reagent_amount("plasma")) // the plasma explodes when exposed to fire
 			var/datum/effect/effect/system/reagents_explosion/e = new()
@@ -165,7 +162,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/smokable/proc/die(var/nomessage = 0)
 	var/turf/T = get_turf(src)
 	set_light(0)
-	playsound(src.loc, 'sound/items/cigs_lighters/cig_snuff.ogg', 50, 1)
 	if (type_butt)
 		var/obj/item/butt = new type_butt(T)
 		transfer_fingerprints_to(butt)
@@ -185,7 +181,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			var/mob/living/M = loc
 			if (!nomessage)
 				to_chat(M, SPAN_NOTICE("Your [name] goes out, and you empty the ash."))
-				playsound(src.loc, 'sound/items/cigs_lighters/cig_snuff.ogg', 50, 1)
 			lit = 0
 			icon_state = icon_off
 			item_state = icon_off
@@ -271,7 +266,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/smokable/cigarette/attack_self(mob/user as mob)
 	if(lit == 1)
 		user.visible_message(SPAN_NOTICE("[user] calmly drops and treads on the lit [src], putting it out instantly."))
-		playsound(src.loc, 'sound/items/cigs_lighters/cig_snuff.ogg', 50, 1)
 		die(1)
 	return ..()
 
@@ -371,7 +365,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/smokable/pipe/attack_self(mob/user as mob)
 	if(lit == 1)
 		user.visible_message(SPAN_NOTICE("[user] puts out [src]."), SPAN_NOTICE("You put out [src]."))
-		playsound(src.loc, 'sound/items/cigs_lighters/cig_snuff.ogg', 50, 1)
 		lit = 0
 		icon_state = icon_off
 		item_state = icon_off
@@ -379,7 +372,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else if (smoketime)
 		var/turf/location = get_turf(user)
 		user.visible_message(SPAN_NOTICE("[user] empties out [src]."), SPAN_NOTICE("You empty out [src]."))
-		playsound(src.loc, 'sound/items/cigs_lighters/cig_snuff.ogg', 50, 1)
 		new /obj/effect/decal/cleanable/ash(location)
 		smoketime = 0
 		reagents.clear_reagents()

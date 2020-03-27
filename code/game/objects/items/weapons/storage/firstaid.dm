@@ -15,7 +15,6 @@
 	throw_speed = 2
 	throw_range = 8
 	var/empty = 0
-	drop_sound = 'sound/items/drop/box.ogg'
 
 
 /obj/item/weapon/storage/firstaid/fire
@@ -247,7 +246,6 @@
 	use_sound = null
 	matter = list(MATERIAL_PLASTIC = 1)
 	max_storage_space = 12
-	drop_sound = 'sound/items/drop/pillbottle.ogg'
 
 /obj/item/weapon/storage/pill_bottle/antitox
 	name = "bottle of Dylovene pills"

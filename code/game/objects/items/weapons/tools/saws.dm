@@ -15,7 +15,6 @@
 	edge = TRUE
 	tool_qualities = list(QUALITY_SAWING = 30, QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 20)
 	embed_mult = 1 //Serrated blades catch on bone more easily
-	drop_sound = 'sound/items/drop/accessory.ogg'
 
 /obj/item/weapon/tool/saw/bs
 	name = "bluespace metal saw"

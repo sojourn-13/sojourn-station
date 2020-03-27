@@ -3,7 +3,6 @@
 	w_class = ITEM_SIZE_SMALL
 	icon = 'icons/obj/inflatable.dmi'
 	var/deploy_path = null
-	drop_sound = 'sound/items/drop/rubber.ogg'
 
 /obj/item/inflatable/attack_self(mob/user)
 	if(!deploy_path)

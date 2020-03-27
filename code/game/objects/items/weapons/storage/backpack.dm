@@ -15,7 +15,6 @@
 	max_storage_space = DEFAULT_HUGE_STORAGE
 	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 2)
 	var/worn_access = FALSE
-	drop_sound = 'sound/items/drop/backpack.ogg'
 
 /obj/item/weapon/storage/backpack/Initialize()
 	. = ..()
