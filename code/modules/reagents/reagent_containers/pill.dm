@@ -12,7 +12,6 @@
 	slot_flags = SLOT_EARS
 	volume = 60
 	matter = list(MATERIAL_BIOMATTER = 1)
-	drop_sound = 'sound/items/drop/food.ogg'
 
 /obj/item/weapon/reagent_containers/pill/Initialize()
 	. = ..()

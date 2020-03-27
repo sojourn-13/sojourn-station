@@ -12,7 +12,6 @@
 	slot_flags = SLOT_EARS
 	volume = 5
 	reagent_flags = TRANSPARENT
-	drop_sound = 'sound/items/drop/glass.ogg'
 
 /obj/item/weapon/reagent_containers/dropper/afterattack(atom/target, mob/user, proximity)
 	if(!target.reagents || !proximity)
