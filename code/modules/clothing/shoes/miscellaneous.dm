@@ -34,6 +34,7 @@
 	armor = list(melee = 80, bullet = 60, energy = 25, bomb = 50, bio = 10, rad = 0)
 	item_flags = NOSLIP
 	siemens_coefficient = 0.4
+	drop_sound = 'sound/items/drop/boots.ogg'
 
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain, wooden sandals."
@@ -77,6 +78,7 @@
 	force = 0
 	species_restricted = null
 	w_class = ITEM_SIZE_SMALL
+	drop_sound = 'sound/items/drop/clothing.ogg'
 
 /obj/item/clothing/shoes/slippers/worn
 	name = "worn bunny slippers"
@@ -98,11 +100,13 @@
 	name = "leather shoes"
 	desc = "A sturdy pair of leather shoes."
 	icon_state = "leather"
+	drop_sound = 'sound/items/drop/leather.ogg'
 
 /obj/item/clothing/shoes/laceup
 	name = "black dress shoes"
 	desc = "A pair of sleek black polished shoes."
 	icon_state = "laceups"
+	drop_sound = 'sound/items/drop/clothing.ogg'
 
 /obj/item/clothing/shoes/laceup/white
 	name = "white dress shoes"

@@ -11,6 +11,7 @@
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	tool_qualities = list(QUALITY_PRYING = 25, QUALITY_DIGGING = 10)
+	drop_sound = 'sound/items/drop/sword.ogg'
 
 /obj/item/weapon/tool/crowbar/bs
 	name = "bluespace crowbar"

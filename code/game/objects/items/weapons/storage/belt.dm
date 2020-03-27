@@ -10,6 +10,7 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_BIOMATTER = 4, MATERIAL_PLASTIC = 5)
 	attack_verb = list("whipped", "lashed", "disciplined")
+	drop_sound = 'sound/items/drop/leather.ogg'
 
 	var/show_above_suit = 0
 

@@ -6,6 +6,7 @@
 	flags = CONDUCT
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	tool_qualities = list(QUALITY_RETRACTING = 30)
+	drop_sound = 'sound/items/drop/scrap.ogg'
 
 /obj/item/weapon/tool/retractor/adv
 	name = "extended retractor"

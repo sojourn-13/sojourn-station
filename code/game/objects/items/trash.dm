@@ -7,6 +7,7 @@
 	icon = 'icons/obj/trash.dmi'
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTIC = 1)
+	drop_sound = 'sound/items/drop/wrapper.ogg'
 
 /obj/item/trash/attack(mob/M, mob/living/user)
 	return
@@ -55,6 +56,7 @@
 	name = "waffles"
 	desc = "An empty tray of waffles. Trash."
 	icon_state = "waffles"
+	drop_sound = 'sound/items/trayhit1.ogg'
 
 /obj/item/trash/pistachios
 	name = "pistachios pack"
@@ -83,6 +85,7 @@
 	desc = "An empty tray."
 	icon_state = "tray"
 	matter = list(MATERIAL_STEEL = 1)
+	drop_sound = 'sound/items/trayhit1.ogg'
 
 /obj/item/trash/candle
 	name = "candle"

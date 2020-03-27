@@ -1,4 +1,8 @@
 // COLOR SHOES
+
+/obj/item/clothing/shoes/
+	drop_sound = 'sound/items/drop/shoes.ogg'
+
 /obj/item/clothing/shoes/color/black
 	name = "black shoes"
 	desc = "A pair of black shoes."

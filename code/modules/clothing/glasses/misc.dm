@@ -4,6 +4,7 @@
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 	body_parts_covered = 0
+	drop_sound = 'sound/items/drop/gloves.ogg'
 
 /obj/item/clothing/glasses/eyepatch/attack_self()
 	adjust()
@@ -140,6 +141,7 @@
 	icon_state = "blindfold"
 	item_state = "blindfold"
 	tint = TINT_BLIND
+	drop_sound = 'sound/items/drop/gloves.ogg'
 
 /obj/item/clothing/glasses/blindfold/tape
 	name = "length of tape"

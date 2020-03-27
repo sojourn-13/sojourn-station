@@ -1,4 +1,6 @@
 /*Flower Pins*/
+/obj/item/clothing/head/
+	drop_sound = 'sound/items/drop/hat.ogg'
 
 /obj/item/clothing/head/hairflower
 	name = "red flower pin"
@@ -6,6 +8,7 @@
 	desc = "A hair flower pin. It smells nice."
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
+	drop_sound = 'sound/items/drop/herb.ogg'
 
 /obj/item/clothing/head/hairflower/blue
 	icon_state = "hairflower_blue"

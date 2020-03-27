@@ -279,7 +279,6 @@ LINEN BINS
 	var/list/sheets = list()
 	var/obj/item/hidden = null
 
-
 /obj/structure/bedsheetbin/examine(mob/user)
 	..(user)
 

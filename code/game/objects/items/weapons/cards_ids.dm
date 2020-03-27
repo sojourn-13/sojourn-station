@@ -16,6 +16,7 @@
 	desc = "Does card things."
 	icon = 'icons/obj/card.dmi'
 	w_class = ITEM_SIZE_TINY
+	drop_sound = 'sound/items/drop/card.ogg'
 
 	var/list/files = list(  )
 

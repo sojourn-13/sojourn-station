@@ -22,6 +22,7 @@
 	display_contents_with_number = TRUE
 	use_to_pickup = TRUE
 	slot_flags = SLOT_BELT
+	drop_sound = 'sound/items/drop/backpack.ogg'
 
 // -----------------------------
 //          Trash bag
@@ -32,6 +33,7 @@
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "trashbag0"
 	item_state = "trashbag"
+	drop_sound = 'sound/items/drop/wrapper.ogg'
 
 	w_class = ITEM_SIZE_BULKY
 	max_w_class = ITEM_SIZE_SMALL
@@ -75,6 +77,7 @@
 	icon = 'icons/obj/trash.dmi'
 	icon_state = "plasticbag"
 	item_state = "plasticbag"
+	drop_sound = 'sound/items/drop/wrapper.ogg'
 
 	w_class = ITEM_SIZE_BULKY
 	max_w_class = ITEM_SIZE_SMALL

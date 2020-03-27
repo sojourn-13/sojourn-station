@@ -26,6 +26,7 @@
 	throw_speed = 4
 	throw_range = 20
 	matter = list(MATERIAL_BIOMATTER = 12)
+	drop_sound = 'sound/misc/slip.ogg'
 
 /obj/item/weapon/soap/New()
 	..()

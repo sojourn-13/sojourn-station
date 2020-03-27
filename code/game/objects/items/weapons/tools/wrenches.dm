@@ -10,6 +10,7 @@
 	matter = list(MATERIAL_STEEL = 3)
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 	tool_qualities = list(QUALITY_BOLT_TURNING = 30)
+	drop_sound = 'sound/items/drop/sword.ogg'
 
 /obj/item/weapon/tool/wrench/bs
 	name = "bluespace wrench"

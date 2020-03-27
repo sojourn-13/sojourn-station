@@ -31,6 +31,7 @@
 	var/illustration = "writing"
 	contained_sprite = TRUE
 	health = 20
+	drop_sound = 'sound/items/drop/box.ogg'
 
 /obj/item/weapon/storage/box/Initialize(mapload)
 	. = ..()
@@ -87,6 +88,7 @@
 
 	// Now make the cardboard
 	to_chat(user, SPAN_NOTICE("You fold [src] flat."))
+	playsound(src.loc, 'sound/items/storage/boxfold.ogg', 30, 1)
 	new src.foldable(get_turf(src))
 	qdel(src)
 

@@ -7,6 +7,7 @@
 	item_flags = NOSLIP
 	slowdown = SHOES_SLOWDOWN+1
 	species_restricted = null
+	drop_sound = 'sound/items/drop/rubber.ogg'
 
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
@@ -24,6 +25,7 @@
 	)
 	siemens_coefficient = 0.6
 	can_hold_knife = 1
+	drop_sound = 'sound/items/drop/boots.ogg'
 
 /obj/item/clothing/shoes/reinforced
 	name = "reinforced boots"
@@ -39,6 +41,7 @@
 		rad = 0
 	)
 	siemens_coefficient = 0.5
+	drop_sound = 'sound/items/drop/boots.ogg'
 
 /obj/item/clothing/shoes/workboots
 	name = "workboots"
@@ -55,6 +58,7 @@
 	)
 	siemens_coefficient = 0
 	can_hold_knife = 1
+	drop_sound = 'sound/items/drop/boots.ogg'
 
 /obj/item/clothing/shoes/jackboots/toeless
 	name = "toeless jackboots"

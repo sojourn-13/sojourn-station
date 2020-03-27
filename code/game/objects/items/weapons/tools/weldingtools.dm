@@ -7,6 +7,7 @@
 	switched_on_force = WEAPON_FORCE_PAINFUL
 	throwforce = WEAPON_FORCE_WEAK
 	worksound = WORKSOUND_WELDING
+	drop_sound = 'sound/items/drop/scrap.ogg'
 	throw_speed = 1
 	throw_range = 5
 	matter = list(MATERIAL_STEEL = 5)

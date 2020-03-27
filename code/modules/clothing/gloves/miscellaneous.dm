@@ -20,6 +20,7 @@
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	price_tag = 200
+	drop_sound = 'sound/items/drop/rubber.ogg'
 
 /obj/item/clothing/gloves/insulated/cheap                          //Cheap Chinese Crap
 	desc = "A pair of cheaply-made insulated gloves. Not known for reliability."
@@ -40,6 +41,7 @@
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	price_tag = 100
+	drop_sound = 'sound/items/drop/leather.ogg'
 
 	cold_protection = ARMS
 	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
@@ -102,6 +104,7 @@
 	permeability_coefficient = 0.01
 	germ_level = 0
 	price_tag = 50
+	drop_sound = 'sound/items/drop/rubber.ogg'
 
 /obj/item/clothing/gloves/botanic_leather
 	desc = "A pair of leather work gloves that protect against floral dangers such as thorns and barbs."

@@ -16,6 +16,7 @@
 	siemens_coefficient = 0.8
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 30
+	drop_sound = 'sound/items/drop/helm.ogg'
 
 /obj/item/clothing/head/hardhat/orange
 	name = "orange hard hat"

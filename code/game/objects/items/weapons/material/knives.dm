@@ -10,6 +10,7 @@
 	force_divisor = 0.25 // 15 when wielded with hardness 60 (steel)
 	thrown_force_divisor = 0.25 // 5 when thrown with weight 20 (steel)
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
+	drop_sound = 'sound/items/drop/knife.ogg'
 
 /obj/item/weapon/material/butterfly/update_force()
 	if(active)

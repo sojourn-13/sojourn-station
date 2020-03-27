@@ -12,6 +12,7 @@
 	degradation = 0 //its consumable anyway
 	flags = NOBLUDGEON //Its not a weapon
 	max_upgrades = 0 //These are consumable, so no wasting upgrades on them
+	drop_sound = 'sound/items/drop/box.ogg'
 
 /obj/item/weapon/tool/tape_roll/web
 	name = "web tape"

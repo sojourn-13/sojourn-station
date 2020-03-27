@@ -123,6 +123,12 @@ var/list/_client_preferences_by_type
 	description = "Display Language Names"
 	key = "LANGUAGE_DISPLAY"
 	options = list(GLOB.PREF_FULL, GLOB.PREF_SHORTHAND, GLOB.PREF_OFF)
+
+/datum/client_preference/drop_sounds
+	description = "Dropped Item Sounds"
+	key = "SOUND_DROPPED"
+	options = list(GLOB.PREF_FULL, GLOB.PREF_SHORTHAND, GLOB.PREF_OFF)
+
 /*
 /datum/client_preference/ghost_follow_link_length
 	description ="Ghost Follow Links"

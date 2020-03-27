@@ -7,6 +7,7 @@
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "hit", "bludgeoned")
 	tool_qualities = list(QUALITY_BONE_SETTING = 30)
+	drop_sound = 'sound/items/drop/scrap.ogg'
 
 /obj/item/weapon/tool/bonesetter/adv
 	name = "clamp bone setter"

@@ -7,6 +7,7 @@
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	attack_verb = list("burnt")
 	tool_qualities = list(QUALITY_CAUTERIZING = 30)
+	drop_sound = 'sound/items/drop/scrap.ogg'
 
 /obj/item/weapon/tool/cautery/adv
 	name = "high powered cautery"
