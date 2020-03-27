@@ -110,3 +110,15 @@
 	name = "Advanced burn kit"
 	build_path = /obj/item/stack/medical/advanced/ointment
 //[/MED]
+
+/datum/design/bioprinter/bioimplant
+	materials = list("biomatter" = 30)
+
+/datum/design/bioprinter/bioimplant/oscythe
+	name = "Organic arm scythe implant"
+	build_path = /obj/item/organ_module/active/simple/armscythe
+
+/datum/design/bioprinter/bioimplant/osurgical
+	name = "Organic surgery omnitool implant"
+	build_path = /obj/item/organ_module/active/simple/surgical/organic
+//[/IMPLANT]

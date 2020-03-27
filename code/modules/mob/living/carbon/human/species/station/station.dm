@@ -25,6 +25,7 @@
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
+	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/claws/strong, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/sharp)
 	darksight = 8
 	num_alternate_languages = 2

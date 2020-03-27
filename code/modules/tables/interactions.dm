@@ -33,7 +33,7 @@
 				chance += 20				//Lying down lets you catch less bullets
 		if(flipped==1)
 			if(get_dir(loc, from) == dir)	//Flipped tables catch mroe bullets
-				chance += 20
+				chance += 50
 			else
 				return 1					//But only from one side
 		if(prob(chance))
@@ -72,7 +72,7 @@
 			if( src_location == over_location )
 				set_pixel_click_offset(O, params, animate = TRUE)
 				return
-				
+
 		else if (A.CanMouseDrop(loc, user))
 			//Mice can push around pens and paper, but not heavy tools
 			if (O.w_class <= user.can_pull_size)

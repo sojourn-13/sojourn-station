@@ -76,6 +76,16 @@
 
 	var/list/subforms = null
 
+	//Helper proc that verifies if the current form has a given form as ancestor.
+/datum/species_form/proc/has_ancestor(var/ancestor_form, var/start_form = null)
+	if(!istext(ancestor_form))
+		return FALSE //We don't know what you gave us and we don't care. Alternatively you just did a full loop.
+	if(ancestor_form == name)
+		return TRUE
+	if(!variantof || variantof == name || name == start_form)
+		return FALSE
+	return GLOB.all_species_form_list[variantof]?.has_ancestor(ancestor_form, start_form ? start_form : name)
+
 /datum/species_form/proc/get_mob_icon(var/slot, var/icon_state)
 	var/icon/I
 	switch(slot)

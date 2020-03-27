@@ -1,10 +1,9 @@
 /obj/item/weapon/tool/armblade
-	icon_state = "armblade"
-	item_state = null
 	name = "armblade"
 	desc = "A mechanical blade deployed from your arm. The favourite hidden weapon of many criminal types."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "armblade"
+	item_state = null
 	worksound = WORKSOUND_HARD_SLASH
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
@@ -35,3 +34,28 @@
 	icon_state = "wolverine"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/weapon/tool/armblade/claws
+
+
+/obj/item/weapon/tool/armscythe
+	name = "organic scythe"
+	desc = "An organic blade deployed from your arm. The favourite augment for those who prefer alternatives to metal."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "oscythe"
+	item_state = null
+	worksound = WORKSOUND_HARD_SLASH
+	force = WEAPON_FORCE_ROBUST
+	throwforce = WEAPON_FORCE_WEAK
+	w_class = ITEM_SIZE_SMALL
+	attack_verb = list("stabbed", "chopped", "cut")
+	tool_qualities = list(QUALITY_CUTTING = 25)
+	degradation = 0
+	max_upgrades = 0
+
+/obj/item/organ_module/active/simple/armscythe
+	name = "embedded scythe"
+	desc = "An organic scythe deployed from your arm. The favourite augment for those who prefer alternatives to metal."
+	verb_name = "Deploy scythe"
+	icon_state = "oscythe"
+	matter = list(MATERIAL_BIOMATTER = 20)
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/weapon/tool/armscythe

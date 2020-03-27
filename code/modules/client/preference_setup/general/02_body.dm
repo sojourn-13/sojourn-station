@@ -60,11 +60,15 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	pref.skin_color		= iscolor(pref.skin_color) ? pref.skin_color : "#FFE0D0"
 	pref.eyes_color		= iscolor(pref.eyes_color) ? pref.eyes_color : "#000000"
 
-	if(!pref.species || !(pref.species in playable_species))
+	var/datum/species/cspecies = global.all_species[pref.species]
+	if(!pref.species || !(pref.species in global.playable_species))
 		pref.species = SPECIES_HUMAN
 
-	if(!pref.species_form || !(pref.species_form in GLOB.playable_species_form_list))
-		pref.species_form = FORM_HUMAN
+	var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form]
+	if( !pref.species_form || !(pref.species_form in GLOB.playable_species_form_list) || (cspecies.obligate_form && cspecies.default_form != cform.name) )
+		pref.species_form = cspecies.default_form
+		if(!pref.species_form)
+			pref.species_form = FORM_HUMAN
 
 	sanitize_integer(pref.s_tone, -185, 34, initial(pref.s_tone))
 
@@ -84,14 +88,24 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	. += "<table><tr style='vertical-align:top; width: 100%'><td width=65%><b>Body</b> "
 	. += "(<a href='?src=\ref[src];random=1'>&reg;</A>)"
 	. += "<br>"
+	var/speciesstring
+	var/datum/species/cspecies = global.all_species[pref.species]
+	speciesstring = "<b>Species:</b> <a href='?src=\ref[src];select_species=[cspecies.name]'>[cspecies.name]</a>"
+	. += speciesstring
+	. += "<br>"
 	var/formstring = ""
 	var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form]
-	if(istype(cform) && cform.variants && cform.variants.len)
-		formstring = "<a href='?src=\ref[src];select_variant=[cform.name]'>&#707;</a>" + formstring
+	if(istype(cform) && cform.variants && cform.variants.len && !cspecies.obligate_form)
+		formstring = "<a href='?src=\ref[src];select_form_variant=[cform.name]'>&#707;</a>" + formstring
 	while(istype(cform))
 		var/mode = (!cform.variantof || cform.name == cform.variantof) ? "select_form=1" : "select_variant=[cform.variantof]"
-		formstring = "<a href='?src=\ref[src];[mode]'>[cform.name]</a>" + formstring
-		if(cform.name == cform.variantof) break
+		var/prefix = ""
+		if(cform.name == cspecies.default_form && cspecies.obligate_form)
+			mode = "reset_form=1"
+			prefix = "&#8634; "
+		else if(cspecies.obligate_form) continue
+		formstring = "<a href='?src=\ref[src];[mode]'>[prefix][cform.name]</a>" + formstring
+		if(cform.name == cform.variantof || cform.name == cspecies.default_form && cspecies.obligate_form) break
 		cform = GLOB.all_species_form_list[cform.variantof]
 	formstring = "<b>Form:</b> " + formstring
 	. += formstring
@@ -139,12 +153,22 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		pref.randomize_appearance_and_body_for()
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
+	else if(href_list["select_species"])
+		var/new_species = input(user, "Choose your character's species:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species) as null|anything in global.playable_species
+		if(new_species && CanUseTopic(user))
+			pref.species = new_species
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+
+	else if(href_list["reset_form"])
+		pref.species_form = GLOB.all_species_form_list[pref.species].default_form
 	else if(href_list["select_form"])
+		if(global.all_species[pref.species].obligate_form)
+			return TOPIC_NOACTION
 		var/new_form = input(user, "Choose your character's form:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species_form) as null|anything in GLOB.selectable_species_form_list
 		if(new_form && CanUseTopic(user))
 			pref.species_form = new_form
 			return TOPIC_REFRESH_UPDATE_PREVIEW
-	else if(href_list["select_variant"])
+	else if(href_list["select_form_variant"])
 		var/datum/species_form/old_base = GLOB.playable_species_form_list[href_list["select_variant"]]
 		if(istype(old_base))
 			var/new_form = input(user, "Choose your character's form:", CHARACTER_PREFERENCE_INPUT_TITLE, href_list["select_variant"]) as null|anything in old_base.variants

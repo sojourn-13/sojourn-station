@@ -503,6 +503,8 @@
 		/datum/design/bioprinter/medical/ointment,
 		/datum/design/bioprinter/medical/advanced/bruise,
 		/datum/design/bioprinter/medical/advanced/ointment,
+		/datum/design/bioprinter/bioimplant/osurgical,
+		/datum/design/bioprinter/bioimplant/oscythe,
 	)
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
@@ -858,7 +860,9 @@
 		/datum/design/bioprinter/medical/splints,
 		/datum/design/bioprinter/medical/ointment,
 		/datum/design/bioprinter/medical/advanced/bruise,
-		/datum/design/bioprinter/medical/advanced/ointment
+		/datum/design/bioprinter/medical/advanced/ointment,
+		/datum/design/bioprinter/bioimplant/osurgical,
+		/datum/design/bioprinter/bioimplant/oscythe
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
@@ -893,7 +897,7 @@
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
-	disk_name = "Church of Absolute Bioprinter Pack"
+	disk_name = "Church of Absolute Basic Bioprinter Pack"
 	icon_state = "neotheology"
 
 	license = -1
