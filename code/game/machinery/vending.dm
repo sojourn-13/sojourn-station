@@ -998,6 +998,10 @@
 					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 3)
 
+/obj/machinery/vending/coffee/postvend_effect()
+	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
+	return
+
 /obj/machinery/vending/snack
 	name = "Getmore Chocolate Corp"
 	desc = "A snack machine courtesy of the Getmore Chocolate Corporation."
@@ -1150,6 +1154,10 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 50,
 					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 60)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
+
+/obj/machinery/vending/cola/postvend_effect()
+	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
+	return
 
 /obj/machinery/vending/cigarette
 	name = "Smooth Cigarettes" //OCD had to be uppercase to look nice with the new formating
@@ -1391,6 +1399,10 @@
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cola = 20)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
+
+/obj/machinery/vending/sovietsoda/postvend_effect()
+	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
+	return
 
 /obj/machinery/vending/tool
 	name = "YouTool"
