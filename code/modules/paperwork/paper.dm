@@ -20,6 +20,7 @@
 	body_parts_covered = HEAD
 	attack_verb = list("bapped")
 	matter = list(MATERIAL_BIOMATTER = 1)
+	drop_sound = 'sound/items/drop/paper.ogg'
 
 	var/info		//What's actually written on the paper.
 	var/info_links	//A different version of the paper which includes html links at fields and EOF
@@ -293,6 +294,7 @@
 
 		user.visible_message("<span class='[class]'>[user] holds \the [P] up to \the [src], it looks like \he's trying to burn it!</span>", \
 		"<span class='[class]'>You hold \the [P] up to \the [src], burning it slowly.</span>")
+		playsound(src.loc, 'sound/bureaucracy/paperburn.ogg', 50, 1)
 
 		spawn(20)
 			if(get_dist(src, user) < 2 && user.get_active_hand() == P && P.lit)
@@ -361,7 +363,7 @@
 		update_space(t)
 
 		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
-
+		playsound(src, pick('sound/bureaucracy/pen1.ogg','sound/bureaucracy/pen2.ogg'), 10)
 		update_icon()
 
 
@@ -442,6 +444,7 @@
 		playsound(src,'sound/effects/Stamp.ogg',40,1)
 		stamp(S.stamp_text ? S.stamp_text : "This paper has been stamped with the [P.name].", "paper_[P.icon_state]", S.xplus, S.xminus, S.yplus, S.yminus)
 		stamped &= S.stamp_flags
+		playsound(src, 'sound/bureaucracy/stamp.ogg', 50, 1)
 		user << SPAN_NOTICE("You stamp the paper with your [S.name].")
 
 	else if(istype(P, /obj/item/weapon/flame))

@@ -5,6 +5,7 @@
 	icon_state = "folder"
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_BIOMATTER = 2)
+	drop_sound = 'sound/items/drop/paper.ogg'
 
 /obj/item/weapon/folder/blue
 	name = "blue folder"

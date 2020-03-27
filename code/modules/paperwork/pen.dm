@@ -22,6 +22,7 @@
 	throw_range = 15
 	matter = list(MATERIAL_STEEL = 1)
 	var/colour = "black"	//what colour the ink is!
+	drop_sound = 'sound/items/drop/accessory.ogg'
 
 
 /obj/item/weapon/pen/blue

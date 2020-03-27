@@ -7,6 +7,7 @@
 	slot_flags = SLOT_BELT | SLOT_EARS
 	throwforce = 1
 	w_class = ITEM_SIZE_TINY
+	drop_sound = 'sound/items/drop/ring.ogg'
 
 	var/leaves_residue = 1
 	var/is_caseless = FALSE

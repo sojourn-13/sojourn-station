@@ -21,6 +21,7 @@
 	reagent_flags = OPENCONTAINER
 	filling_states = "-10;10;25;50;75;80;100"
 	var/blood_type = null
+	drop_sound = 'sound/items/drop/food.ogg'
 
 /obj/item/weapon/reagent_containers/blood/Initialize()
 	. = ..()
