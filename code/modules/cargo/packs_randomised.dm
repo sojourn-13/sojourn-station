@@ -68,6 +68,18 @@
 	containertype = /obj/structure/closet/crate/secure/weapon
 	group = "Security"
 
+/datum/supply_pack/randomised/holsters
+	num_contained = 4
+	contains = list(/obj/random/cloth/holster,
+					/obj/random/cloth/holster,
+					/obj/random/cloth/holster,
+					/obj/random/cloth/holster)
+	name = "Surplus Uniform Holsters"
+	cost = 1000
+	crate_name = "Surplus Uniform Holsters Crate"
+	containertype = /obj/structure/closet/crate
+	group = "Operations"
+
 /datum/supply_pack/randomised/pouches
 	num_contained = 5
 	contains = list(/obj/random/pouch,
