@@ -509,14 +509,26 @@
 		/datum/design/bioprinter/leather/holster/armpit,
 		/datum/design/bioprinter/leather/holster/waist,
 		/datum/design/bioprinter/leather/holster/hip,
+		/datum/design/bioprinter/leather/holster/leg,
 
 		/datum/design/bioprinter/medical/bruise,
 		/datum/design/bioprinter/medical/splints,
 		/datum/design/bioprinter/medical/ointment,
 		/datum/design/bioprinter/medical/advanced/bruise,
 		/datum/design/bioprinter/medical/advanced/ointment,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioaugment
+	disk_name = "Church of Absolute Bioaugmentation Disk"
+	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
+	icon_state = "neotheology"
+
+	license = -1
+	designs = list(
 		/datum/design/bioprinter/bioimplant/osurgical,
 		/datum/design/bioprinter/bioimplant/oscythe,
+		/datum/design/bioprinter/bioimplant/oarmor,
+		/datum/design/bioprinter/bioimplant/omuscle,
 	)
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
@@ -550,6 +562,7 @@
 		/datum/design/bioprinter/leather/holster/armpit,
 		/datum/design/bioprinter/leather/holster/waist,
 		/datum/design/bioprinter/leather/holster/hip,
+		/datum/design/bioprinter/leather/holster/leg,
 
 		/datum/design/autolathe/gun/nt_sprayer
 	)

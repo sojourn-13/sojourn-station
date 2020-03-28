@@ -13,7 +13,7 @@
 	tool_qualities = list(QUALITY_HAMMERING = 30)
 
 /obj/item/weapon/tool/hammer/powered_hammer
-	name = "powered Hammer"
+	name = "powered hammer"
 	desc = "Used for applying excessive blunt force to a surface."
 	icon_state = "powered_hammer"
 	item_state = "powered_hammer"

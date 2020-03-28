@@ -51,7 +51,6 @@
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
-	workspeed = 0.7
 	max_upgrades = 0
 	matter = list(MATERIAL_BIOMATTER = 10)
 

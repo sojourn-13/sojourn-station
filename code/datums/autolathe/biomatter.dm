@@ -72,6 +72,10 @@
 	name = "hip holster"
 	build_path = /obj/item/clothing/accessory/holster/hip
 
+/datum/design/bioprinter/leather/holster/leg
+	name = "leg holster"
+	build_path = /obj/item/clothing/accessory/holster/leg
+
 /datum/design/bioprinter/belt
 	materials = list("biomatter" = 30)
 
@@ -135,13 +139,21 @@
 //[/MED]
 
 /datum/design/bioprinter/bioimplant
-	materials = list("biomatter" = 30)
+	materials = list("biomatter" = 50)
 
 /datum/design/bioprinter/bioimplant/oscythe
 	name = "Organic arm scythe implant"
-	build_path = /obj/item/organ_module/active/simple/armscythe
+	build_path = /obj/item/weapon/biogoop/armscythe
 
 /datum/design/bioprinter/bioimplant/osurgical
 	name = "Organic surgery omnitool implant"
-	build_path = /obj/item/organ_module/active/simple/surgical/organic
+	build_path = /obj/item/weapon/biogoop/surgical
+
+/datum/design/bioprinter/bioimplant/oarmor
+	name = "Organic exoskeleton implant"
+	build_path = /obj/item/weapon/biogoop/armor
+
+/datum/design/bioprinter/bioimplant/omuscle
+	name = "Organic muscle implant"
+	build_path = /obj/item/weapon/biogoop/muscle
 //[/IMPLANT]
