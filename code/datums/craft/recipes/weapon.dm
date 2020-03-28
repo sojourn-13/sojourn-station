@@ -117,6 +117,18 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
 	)
 
+/datum/craft_recipe/weapon/laser_sabre
+	name = "laser sabre"
+	result = /obj/item/weapon/melee/energy/sword/sabre
+	steps = list(
+		list(/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip, 1, "time" = 5),
+		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
+		list(/obj/item/weapon/gun/energy/gun, 1, "time" = 5),
+		list(/obj/item/weapon/cell/medium/moebius/nuclear, 1),
+		list(/obj/item/stack/cable_coil, 10, "time" = 5),
+		list(QUALITY_ADHESIVE, 15, 70)
+	)
+
 /datum/craft_recipe/weapon/nailed_bat
 	name = "nailed bat"
 	result = /obj/item/weapon/melee/nailstick

@@ -3,7 +3,8 @@
 	desc = "A leather weapon holster mounted around the shoulder."
 	icon_state = "holster"
 	slot = "utility"
-	price_tag = 100
+	matter = list(MATERIAL_BIOMATTER = 5)
+	price_tag = 200
 	var/obj/item/holstered = null
 	var/sound_in = 'sound/effects/holsterin.ogg'
 	var/sound_out = 'sound/effects/holsterout.ogg'
