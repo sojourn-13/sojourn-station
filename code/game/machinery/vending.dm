@@ -969,7 +969,7 @@
 	products = list(
 		/obj/item/device/assembly/prox_sensor = 5,
 		/obj/item/device/assembly/igniter = 3,
-		/obj/item/device/assembly/signaler = 4,
+		/obj/item/device/assembly/signaler = 6,
 		/obj/item/weapon/tool/wirecutters = 1,
 		/obj/item/weapon/tool/wirecutters/pliers = 1,
 		/obj/item/weapon/cartridge/signal = 4)
