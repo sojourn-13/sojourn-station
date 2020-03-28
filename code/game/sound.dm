@@ -386,7 +386,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 			pressure_factor = max(pressure_factor, 0.15)	//hearing through contact
 
 		S.volume *= pressure_factor
-		
+
 		if (S.volume <= 0)
 			return //no volume means no sound
 
@@ -419,7 +419,8 @@ var/const/FALLOFF_SOUNDS = 0.5
 				S.environment = SPACE
 			else
 				var/area/A = get_area(src)
-				S.environment = A.sound_env
+				if(istype(A))
+					S.environment = A.sound_env
 
 		else if (pressure_factor < 0.5)
 			S.environment = SPACE
