@@ -12,7 +12,7 @@
 	icon_state = "brace_bar"
 
 	price_tag = 120
-	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 1)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 1)
 
 //list/upgrades, list/required_qualities, list/negative_qualities, prefix, req_fuel, req_cell
 
@@ -49,7 +49,7 @@
 	name = "reinforced plating"
 	desc = "A sturdy bit of plasteel that can be bolted onto any tool to protect it. Tough, but bulky."
 	icon_state = "plate"
-	matter = list(MATERIAL_PLASTEEL = 4)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 2) //steel to compensate for metal rods used in crafting
 
 /obj/item/weapon/tool_upgrade/reinforcement/plating/New()
 	..()
@@ -349,7 +349,7 @@
 	name = "spikes"
 	icon_state = "spike"
 	desc = "An array of sharp bits of plasteel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity."
-	matter = list(MATERIAL_PLASTEEL = 3)
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_STEEL = 2)
 
 /obj/item/weapon/tool_upgrade/augment/spikes/New()
 	..()
@@ -365,16 +365,15 @@
 	I.prefix = "spiked"
 
 /obj/item/weapon/tool_upgrade/augment/hammer_addon
-	name = "hammer addon"
+	name = "flat surface"
 	icon_state = "hammer_addon"
 	desc = "A attachment that fits on almost everything to create a simple flat surface for hammering."
-	matter = list(MATERIAL_STEEL = 2)
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_STEEL = 2)
 
 /obj/item/weapon/tool_upgrade/augment/hammer_addon/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.upgrades = list(
-	UPGRADE_FORCE_MOD = 4,
 	UPGRADE_WORKSPEED = -0.5,
 	UPGRADE_HEALTH_THRESHOLD = 5,
 	tool_qualities = list(QUALITY_HAMMERING = 10)

@@ -72,14 +72,13 @@
 		return
 
 /obj/structure/closet/body_bag/update_icon()
-	if(opened)
-		icon_state = "bodybag_open"
-	else
-		if(contains_body > 0)
-			icon_state = "bodybag_full"
-		else
-			icon_state = "bodybag_closed"
-
+    if(opened)
+        icon_state = "bodybag_open"
+    else
+        if(contains_body > 0)
+            icon_state = "bodybag_full"
+        else
+            icon_state = "bodybag_closed"
 
 /obj/item/bodybag/cryobag
 	name = "stasis bag"
