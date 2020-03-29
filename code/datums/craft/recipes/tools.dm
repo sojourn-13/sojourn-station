@@ -45,7 +45,7 @@
 		list(/obj/item/weapon/tank/emergency_oxygen),
 		list(QUALITY_ADHESIVE, 15, 100),
 		list(QUALITY_SCREW_DRIVING, 10, 40)
-	)		)
+	)
 
 /datum/craft_recipe/tool/makeshift_centrifuge
 	name = "manual centrifuge"
