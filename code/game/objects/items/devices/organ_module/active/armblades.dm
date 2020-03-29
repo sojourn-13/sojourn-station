@@ -47,7 +47,7 @@
 	throwforce = WEAPON_FORCE_WEAK
 	armor_penetration = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_SMALL
-	attack_verb = list("stabbed", "chopped", "cut")
+	attack_verb = list("stabbed", "chopped", "cut", "sliced", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 30)
 	degradation = 0
 	max_upgrades = 0

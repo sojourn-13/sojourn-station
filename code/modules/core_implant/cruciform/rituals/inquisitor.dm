@@ -397,5 +397,6 @@
 	new /obj/item/weapon/tool/sword/crusader(usr.loc)
 	new /obj/item/clothing/accessory/holster/saber/greatsword(usr.loc)
 	new /obj/item/weapon/shield/riot/crusader(usr.loc)
+	new /obj/item/weapon/storage/belt/security/neotheology(usr.loc)
 	set_personal_cooldown(user)
 

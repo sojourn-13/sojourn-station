@@ -32,7 +32,7 @@
 
 /obj/item/clothing/under/rank/cargotech
 	name = "lonestar cargo uniform"
-	desc = "A dull guild turtleneck complete with sturdy work jeans."
+	desc = "A dull lonestar turtleneck complete with sturdy work jeans."
 	icon_state = "cargotech"
 	item_state = "lb_suit"
 
