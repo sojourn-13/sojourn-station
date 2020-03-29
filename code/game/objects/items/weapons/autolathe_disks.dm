@@ -516,6 +516,7 @@
 		/datum/design/bioprinter/medical/ointment,
 		/datum/design/bioprinter/medical/advanced/bruise,
 		/datum/design/bioprinter/medical/advanced/ointment,
+		/datum/design/autolathe/gun/nt_sprayer,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioaugment
@@ -564,7 +565,7 @@
 		/datum/design/bioprinter/leather/holster/hip,
 		/datum/design/bioprinter/leather/holster/leg,
 
-		/datum/design/autolathe/gun/nt_sprayer
+		/datum/design/autolathe/gun/nt_sprayer,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_boards
