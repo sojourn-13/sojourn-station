@@ -616,7 +616,7 @@
 "lR" = (/obj/structure/table/standard,/obj/item/weapon/virusdish/random,/obj/item/weapon/virusdish/random{pixel_x = -2; pixel_y = 10},/obj/item/weapon/virusdish/random{pixel_x = -8; pixel_y = -5},/obj/item/weapon/storage/lockbox/vials,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/maintenance/outside/zoo)
 "lS" = (/obj/machinery/computer/curer{dir = 1},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/maintenance/outside/zoo)
 "lT" = (/obj/machinery/computer/diseasesplicer{dir = 1},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/maintenance/outside/zoo)
-"lU" = (/obj/structure/table/standard,/obj/item/weapon/reagent_containers/spray/cleaner,/obj/item/weapon/reagent_containers/syringe/antiviral,/obj/item/weapon/disk/data/monkey,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/maintenance/outside/zoo)
+"lU" = (/obj/structure/table/standard,/obj/item/weapon/reagent_containers/spray/cleaner,/obj/item/weapon/reagent_containers/syringe/spaceacillin,/obj/item/weapon/disk/data/monkey,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/maintenance/outside/zoo)
 "lV" = (/obj/structure/table/standard,/obj/item/clothing/gloves/latex,/obj/item/clothing/gloves/latex,/obj/item/device/antibody_scanner,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/maintenance/outside/zoo)
 "lW" = (/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/maintenance/outside/zoo)
 "lX" = (/obj/machinery/smartfridge/seeds,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/maintenance/outside/zoo)
