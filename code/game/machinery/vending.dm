@@ -1589,7 +1589,8 @@
 					/obj/item/weapon/storage/box/costume/surplusgeneric = 2,
 					/obj/item/weapon/storage/box/costume/surplushalloween = 2,
 					/obj/item/weapon/storage/box/costume/bonusjustice = 2,
-					/obj/item/weapon/storage/box/costume/bonuswrestling = 2)
+					/obj/item/weapon/storage/box/costume/bonuswrestling = 2,
+					/obj/item/clothing/suit/hooded/costume/techpriest  = 2)
 	prices = list(/obj/item/weapon/storage/box/costume/bandit = 200,
 					/obj/item/weapon/storage/box/costume/bunny = 200,
 					/obj/item/weapon/storage/box/costume/cardborg = 200,
@@ -1635,7 +1636,8 @@
 					/obj/item/weapon/storage/box/costume/surplusgeneric = 400,
 					/obj/item/weapon/storage/box/costume/surplushalloween = 400,
 					/obj/item/weapon/storage/box/costume/bonusjustice = 300,
-					/obj/item/weapon/storage/box/costume/bonuswrestling = 300)
+					/obj/item/weapon/storage/box/costume/bonuswrestling = 300,
+					/obj/item/clothing/suit/hooded/costume/techpriest = 200)
 
 
 
@@ -1653,17 +1655,47 @@
 	name = "Church of Absolute Theo-Mat"
 	desc = "A church dispensary for disciples and new converts."
 	product_slogans = "Find peace through faith.;Help humanity ascend, join your brethren today!;Come and seek a new life!;Safety in brotherhood!"
-	product_ads = "Praise!;Pray!;Only for the faithful!;Ascend!;Seek a new life!"
+	product_ads = "Praise!;Pray!;Only for the faithful!;Ascend!;Seek a new life!;Better living through technology!"
 	icon_state = "teomat"
 	vendor_department = DEPARTMENT_CHURCH
 	products = list(/obj/item/weapon/book/ritual/cruciform = 10,
 					/obj/item/weapon/storage/fancy/candle_box = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 20)
-	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 3)
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 20,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns = 2,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 3,
+					/obj/item/weapon/soap = 5,
+					/obj/item/weapon/storage/wallet = 5,
+					/obj/item/weapon/storage/backpack/satchel = 5,
+					/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 5,
+					/obj/item/stack/medical/bruise_pack = 8,
+					/obj/item/stack/medical/ointment = 8,
+					/obj/item/stack/medical/splint = 5,
+					/obj/item/stack/medical/advanced/bruise_pack = 4,
+					/obj/item/stack/medical/advanced/ointment = 4)
+	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 3,
+					/obj/item/weapon/tool/knife/neotritual = 3,
+					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 3)
+
+
 	prices = list(/obj/item/weapon/book/ritual/cruciform = 500,
 					/obj/item/weapon/storage/fancy/candle_box = 200,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 250,
-					/obj/item/weapon/implant/core_implant/cruciform = 1000)
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns = 8000,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns = 7000,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 1000,
+					/obj/item/weapon/soap = 200,
+					/obj/item/weapon/storage/wallet = 150,
+					/obj/item/weapon/storage/backpack/satchel = 300,
+					/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 300,
+					/obj/item/stack/medical/bruise_pack = 200,
+					/obj/item/stack/medical/ointment = 200,
+					/obj/item/stack/medical/splint = 300,
+					/obj/item/stack/medical/advanced/bruise_pack = 400,
+					/obj/item/stack/medical/advanced/ointment = 400,
+					/obj/item/weapon/implant/core_implant/cruciform = 1000,
+					/obj/item/weapon/tool/knife/neotritual = 1000,
+					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 1500)
 
 /obj/machinery/vending/powermat
 	name = "Lonestar Power-Mat"

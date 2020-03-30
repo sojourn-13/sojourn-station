@@ -622,7 +622,7 @@
 		add_overlay(image(icon, "[icon_state]_panel"))
 
 	if(stat & NOPOWER)
-		return
+		icon_state = "[initial(icon_state)]_off"
 
 	if(working) // if paused, work animation looks awkward.
 		if(paused || error)

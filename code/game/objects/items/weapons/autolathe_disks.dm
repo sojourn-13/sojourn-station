@@ -452,6 +452,7 @@
 // NeoTheology
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns
 	disk_name = "Absolute Armory of the Old Testament"
+	desc = "A rare and expensive disk containing designs for highly advanced energy and ballistic weaponry from the Old Testament, the Absolutes arms division."
 	icon_state = "neotheology"
 	license = 3
 	designs = list(
@@ -467,6 +468,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns
 	disk_name = "Absolute Armory of the New Testament"
+	desc = "A rare and expensive disk containing designs for highly advanced energy weapons from the Old Testament, the Absolutes arms division. Nicknamed the new testament for containing its latest weaponry designs."
 	icon_state = "neotheology"
 	license = 3
 	designs = list(
@@ -534,10 +536,10 @@
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
-	disk_name = "Soteria Bioprinter Pack"
+	disk_name = "Church of Absolute Public Bioprinter Pack"
 	icon_state = "neotheology"
 
-	license = -1
+	license = 20
 	designs = list(
 		/datum/design/bioprinter/meat,
 		/datum/design/bioprinter/milk,

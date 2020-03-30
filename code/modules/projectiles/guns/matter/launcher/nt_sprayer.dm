@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/matter/launcher/nt_sprayer
-	name = "GP BCR \"Purity\""
-	desc = "\"Greyson Positronic\" brand cleansing carbine. Uses solid biomass as ammo and dispense cleansing liquid on hit. Despite many attempts, nobody is quite sure how it works."
+	name = "OT BCR \"Purity\""
+	desc = "\"Old Testament\" brand cleansing carbine. Uses solid biomass as ammo and dispense cleansing liquid on hit. Despite many attempts, nobody is quite sure how it works."
 	icon_state = "nt_sprayer"
 	icon = 'icons/obj/guns/matter/nt_sprayer.dmi'
 	slot_flags = SLOT_BACK

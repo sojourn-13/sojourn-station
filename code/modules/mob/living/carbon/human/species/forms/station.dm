@@ -145,7 +145,7 @@
 
 ///* //For sablekyne to be selectable, commented out because it doesn't add any of the species/sablekyne stats.
 /datum/species_form/sablekyne
-	playable = TRUE
+	playable = FALSE
 	name = FORM_SABLEKYNE
 	base = 'icons/mob/human_races/r_tajaran_white.dmi'
 	deform = 'icons/mob/human_races/r_def_tajaran_white.dmi'

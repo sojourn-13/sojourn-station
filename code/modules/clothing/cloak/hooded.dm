@@ -120,7 +120,7 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter
+	//hoodtype = /obj/item/clothing/head/hood/winter
 	allowed = list (/obj/item/device/flash, /obj/item/weapon/pen, /obj/item/weapon/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/weapon/tank/emergency_oxygen, /obj/item/weapon/storage/fancy/cigarettes, /obj/item/weapon/storage/box/matches, /obj/item/weapon/reagent_containers/food/drinks/flask)
 
 /obj/item/clothing/suit/hooded/wintercoat/captain
@@ -129,7 +129,7 @@
 	icon_state = "coatcaptain"
 	item_state_slots = list(slot_r_hand_str = "coatcaptain", slot_l_hand_str = "coatcaptain")
 	armor = list(melee = 20, bullet = 15, laser = 20, energy = 10, bomb = 15, bio = 0, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/captain
+	//hoodtype = /obj/item/clothing/head/hood/winter/captain
 
 /obj/item/clothing/suit/hooded/wintercoat/security
 	name = "security winter coat"
@@ -137,7 +137,7 @@
 	icon_state = "coatsecurity"
 	item_state_slots = list(slot_r_hand_str = "coatsecurity", slot_l_hand_str = "coatsecurity")
 	armor = list(melee = 25, bullet = 20, laser = 20, energy = 15, bomb = 20, bio = 0, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/security
+	//hoodtype = /obj/item/clothing/head/hood/winter/security
 
 /obj/item/clothing/suit/hooded/wintercoat/medical
 	name = "medical winter coat"
@@ -145,7 +145,7 @@
 	icon_state = "coatmedical"
 	item_state_slots = list(slot_r_hand_str = "coatmedical", slot_l_hand_str = "coatmedical")
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/medical
+	//hoodtype = /obj/item/clothing/head/hood/winter/medical
 
 /obj/item/clothing/suit/hooded/wintercoat/science
 	name = "science winter coat"
@@ -153,7 +153,7 @@
 	icon_state = "coatscience"
 	item_state_slots = list(slot_r_hand_str = "coatscience", slot_l_hand_str = "coatscience")
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 10, bio = 0, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/science
+	//hoodtype = /obj/item/clothing/head/hood/winter/science
 
 /obj/item/clothing/suit/hooded/wintercoat/engineering
 	name = "artificer winter coat"
@@ -161,28 +161,28 @@
 	icon_state = "coatengineer"
 	item_state_slots = list(slot_r_hand_str = "coatengineer", slot_l_hand_str = "coatengineer")
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 20)
-	hoodtype = /obj/item/clothing/head/hood/winter/engineering
+	//hoodtype = /obj/item/clothing/head/hood/winter/engineering
 
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
 	name = "atmospherics winter coat"
 	desc = "A heavy atmospherics jacket designed for cold environments. This coat is quite old and doesn't seem to belong anywhere."
 	icon_state = "coatatmos"
 	item_state_slots = list(slot_r_hand_str = "coatatmos", slot_l_hand_str = "coatatmos")
-	hoodtype = /obj/item/clothing/head/hood/winter/engineering/atmos
+	//hoodtype = /obj/item/clothing/head/hood/winter/engineering/atmos
 
 /obj/item/clothing/suit/hooded/wintercoat/botany
 	name = "botany winter coat"
 	desc = "A heavy botany jacket designed for cold environments."
 	icon_state = "coathydro"
 	item_state_slots = list(slot_r_hand_str = "coathydro", slot_l_hand_str = "coathydro")
-	hoodtype = /obj/item/clothing/head/hood/winter/botany
+	//hoodtype = /obj/item/clothing/head/hood/winter/botany
 
 /obj/item/clothing/suit/hooded/wintercoat/cargo
 	name = "cargo winter coat"
 	desc = "A heavy cargo jacket designed for cold environments."
 	icon_state = "coatcargo"
 	item_state_slots = list(slot_r_hand_str = "coatcargo", slot_l_hand_str = "coatcargo")
-	hoodtype = /obj/item/clothing/head/hood/winter/cargo
+	//hoodtype = /obj/item/clothing/head/hood/winter/cargo
 
 /obj/item/clothing/suit/hooded/wintercoat/cargo/miner
 	name = "mining winter coat"
@@ -190,4 +190,11 @@
 	icon_state = "coatminer"
 	item_state_slots = list(slot_r_hand_str = "coatminer", slot_l_hand_str = "coatminer")
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/cargo/miner
+	//hoodtype = /obj/item/clothing/head/hood/winter/cargo/miner
+
+/obj/item/clothing/suit/hooded/costume/techpriest
+	name = "techpriest cloak"
+	desc = "For larping as the other techno cult."
+	icon_state = "techpriest"
+	item_state = "techpriest"
+	hoodtype = /obj/item/clothing/head/hood/techpriest
