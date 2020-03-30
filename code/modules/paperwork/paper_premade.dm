@@ -190,26 +190,9 @@
 	icon_state = "fortunecard"
 	desc = "A small card emblazoned with the wisdom of Zoltan."
 
-	var/list/fortune_mystical = list("fortunes","fate","doom","life","death","rewards","secrets","omens",
-	"portents","aura","heart","soul","mind","mysteries","destiny","signs","essence","runes")
+	var/list/fortune_read = list("beheld","determined","discovered","foreseen","observed","read","witnessed")
 
-	var/list/fortune_nouns = list("curse","crime", "wizard", "station","traitor", "treasure","gold","monster",
-	"beast","machine","ghost","spirit","station","friend","enemy","captain","doctor","assistant","chef","priest",
-	"cat","skull","skeleton","phantasm","aeon","cenotaph","monument","planet","ritual","ceremony","sound","color",
-	"reward","owl","key","buddy","bee","god","gods","sun","stars","crypt","cave","grave","potion","elixir","spectre",
-	"clown","moon","crystals","keys","robot","cyborg","book","orb","cube","apparition","oracle","king","crown","rumpus",
-	"throne","light","darkness","abyss","void","fire","entity","horde","swarm","horrors","legions","nightmare","vampire",
-	"ossuary","portal","shade","stone","talisman","statue","artifact","tomb","urn","pit","depths","blood","ruckus","abomination",
-	"tome","relic","serum","instrument","fungus","garden","cult","implement","device","engine","manuscript","tablet","ambrosia",
-	"watcher","asteroid","drone","servant","blade","coins","amulet","sigil","symbol","coven","pact","sanctuary","grove",
-	"ruin","guide","mirror","pool","chalice","bones","ashes")
-
-	var/list/fortune_verbs = list("murder","kill","hug","meet","greet","punish","devour","exsanguinate","find","destroy","sacrifice",
-	"dehumanize","reveal","cuddle","haunt","frighten","harm","sass","respect","obey","worship","revere",
-	"fear","smash","banish","corrupt","profane","exhume","purge","torment","betray","eradicate","obliterate",
-	"immolate","slay","confront","exalt","sing praises to","abhor","denounce","condemn","venerate","glorify",
-	"deface","debase","consecrate","desecrate","summon","expunge","invoke","rebuke","awaken","consume","vilify",
-	"forsake","consecrate","mourn","butcher","illuminate")
+	var/list/fortune_mystical = list("fortune","fate","future","destiny")
 
 	var/list/fortune_adjectives = list("grumpy","zesty","omniscient","golden","mystical","forgotten","lost","ancient","metal","brass",
 	"eldritch","warped","frozen","martian","robotic","burning","copper","dead","undying","unholy","fabulous","mighty",
@@ -233,35 +216,34 @@
 	"quirky","unnerving","abnormal","peculiar","astral","chaotic","spherical","swirling","deathless","archaic",
 	"atomic","elemental","invisible","awesome","awful","apocalyptic","righteous")
 
-	var/list/fortune_read = list("read","seen","foreseen","inscribed","beheld","witnessed")
+	var/list/fortune = list("An impulsive decision will bring rewards, but with it, complications.",
+	"Temptation may prove too much for you to handle.",
+	"You are the subject of some gossip, but can turn it to your advantage.",
+	"The difficulties in your life will be overcome through a little imagination.",
+	"Looking out for your friends will prove especially important soon.",
+	"You will soon find great fortune, but at great cost.",
+	"Remember that this is the time to pull together, not push apart.",
+	"Concern yourself with worries of the emotional rather than financial kind.",
+	"Try not to push too hard. Express yourself with measure.",
+	"Thinking outside of the box will show an exciting new opportunity.",
+	"You will soon find ample time to make the most of things.",
+	"This may be the perfect time to try something new and unusual.",
+	"That old saying applies - every cloud has a silver lining.",
+	"Romance will blossom with someone you met through work recently.",
+	"Maintaining some familiar habits may soon prove beneficial.",
+	"Prepare to receive a visit by someone from the distant past.",
+	"Disappointment looms, but stay strong by remaining true to yourself.",
+	"Take comfort from the fact that everyone is in the same boat.",
+	"A heart-to-heart with a recent enemy will foster greater understanding.",
+	"Look on the bright side: maybe it'll be quick and painless.",
+	"Believe me when I tell you, I wouldn't want to be in your shoes.",
+	"Let me tell you this: I wouldn't bet on you.",
+	"Better luck next life.")
 
 	New()
-		var/sentence_1 = "You shall soon [pick(fortune_verbs)] the [pick(fortune_adjectives)] [pick(fortune_nouns)]"
-		var/sentence_2 = "remember to drink more grones"
-		var/sentence_3 = "for reals"
-
-		var/rand2 = rand(1,3)
-		var/rand3 = rand(1,3)
-
-		switch(rand2)
-			if(1)
-				sentence_2 = "but beware, lest the [pick(fortune_adjectives)] [pick(fortune_nouns)] [pick(fortune_verbs)] you"
-			if(2)
-				sentence_2 = "but take heed, for the [pick(fortune_adjectives)] [pick(fortune_nouns)] might [pick(fortune_verbs)] you"
-			else
-				sentence_2 = "but rejoice, for the [pick(fortune_adjectives)] [pick(fortune_nouns)] shall [pick(fortune_verbs)] you"
-
-		switch(rand3)
-			if(1)
-				sentence_3 = "Seek the [pick(fortune_mystical)] of the [pick(fortune_adjectives)] [pick(fortune_nouns)] and [pick(fortune_verbs)] yourself"
-			if(2)
-				sentence_3 = "Remember to [pick(fortune_verbs)] the [pick(fortune_adjectives)] [pick(fortune_nouns)] and you will surely [pick(fortune_verbs)] your [pick(fortune_adjectives)] [pick(fortune_mystical)]"
-			else
-				sentence_3 = "You must [pick(fortune_verbs)] the [pick(fortune_adjectives)] [pick(fortune_nouns)] or the [pick(fortune_nouns)] will surely [pick(fortune_verbs)] your [pick(fortune_adjectives)] [pick(fortune_mystical)]"
-
 		info = {"<font face='System' size='3'><center>YOUR FORTUNE</center><br><br>
 		The great and [pick(fortune_adjectives)] Zoltan has [pick(fortune_read)] your [pick(fortune_mystical)]!<br><br>
-		[sentence_1]... [sentence_2]! [sentence_3].</font>"}
+		[pick(fortune)]</font>"}
 		return ..() // moving the
 
 /obj/item/weapon/paper/fortune/update_icon()
