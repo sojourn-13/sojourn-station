@@ -6,6 +6,14 @@
 	parent_organ = BP_GROIN
 	price_tag = 600
 
+/obj/item/organ/internal/kidneys
+	name = "kidneys"
+	icon_state = "kidneys"
+
+/obj/item/organ/internal/kidneys/prosthetic
+	name = "prosthetic kidneys"
+	icon_state = "kidneys-prosthetic"
+
 /obj/item/organ/internal/kidneys/Process()
 	..()
 
@@ -23,4 +31,4 @@
 		if(status & ORGAN_DEAD)
 			owner.adjustToxLoss(1)
 
-			
+

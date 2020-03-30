@@ -9,6 +9,10 @@
 	var/robo_color = "#000000"
 	var/cache_key = BP_EYES
 
+/obj/item/organ/internal/eyes/prosthetic
+	name = "prosthetic eyes"
+	icon_state = "eyes-prosthetic"
+
 /obj/item/organ/internal/eyes/proc/get_icon()
 	var/icon/eyes_icon = new/icon('icons/mob/human_face.dmi', "eye_l")
 	eyes_icon.Blend(icon('icons/mob/human_face.dmi', "eye_r"), ICON_OVERLAY)
