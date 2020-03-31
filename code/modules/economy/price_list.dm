@@ -942,23 +942,23 @@
 /obj/item/weapon/storage/fancy/cigarettes
 	price_tag = 150
 
-/obj/item/weapon/storage/fancy/cigarettes/luckystars
+/obj/item/weapon/storage/fancy/cigarettes/oblast
+	price_tag = 160
+
+/obj/item/weapon/storage/fancy/cigarettes/volga
 	price_tag = 170
 
-/obj/item/weapon/storage/fancy/cigarettes/jerichos
-	price_tag = 220
-
-/obj/item/weapon/storage/fancy/cigarettes/menthols
+/obj/item/weapon/storage/fancy/cigarettes/lena
 	price_tag = 180
+
+/obj/item/weapon/storage/fancy/cigarettes/severnaya
+	price_tag  = 190
+
+/obj/item/weapon/storage/fancy/cigarettes/federal
+	price_tag = 200
 
 /obj/item/weapon/storage/fancy/cigar
 	price_tag = 270
-
-/obj/item/weapon/storage/fancy/cigarettes/carcinomas
-	price_tag  = 230
-
-/obj/item/weapon/storage/fancy/cigarettes/professionals
-	price_tag = 250
 
 /obj/item/weapon/storage/box/matches
 	price_tag = 10
