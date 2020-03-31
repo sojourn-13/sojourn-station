@@ -256,16 +256,29 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 			GLOB.all_stash_datums[L.base_type][L] = L.weight
 
 
-//Languages and species.
-    paths = subtypesof(/datum/language)
-    for(var/T in paths)
-        var/datum/language/L = new T
-        all_languages[L.name] = L
+	//Languages and species.
+	paths = subtypesof(/datum/language)
+	for(var/T in paths)
+		var/datum/language/L = new T
+		all_languages[L.name] = L
 
 	for (var/language_name in all_languages)
 		var/datum/language/L = all_languages[language_name]
 		if(!(L.flags & NONGLOBAL))
 			language_keys[lowertext(L.key)] = L
+
+	var/rkey = 0
+	paths = subtypesof(/datum/species)
+	for(var/T in paths)
+		rkey++
+		var/datum/species/S = new T
+		S.race_key = rkey //Used in mob icon caching.
+		all_species[S.name] = S
+
+		if(!(S.spawn_flags & IS_RESTRICTED))
+			playable_species += S.name
+		if(S.spawn_flags & IS_WHITELISTED)
+			whitelisted_species += S.name
 
 	//var/rkey = 0
 	paths = typesof(/datum/species)-/datum/species

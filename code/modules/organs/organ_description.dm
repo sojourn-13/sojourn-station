@@ -107,9 +107,6 @@
 	joint = "left elbow"
 	amputation_point = "left shoulder"
 
-/datum/organ_description/arm/left/full
-	additional_limb_parts = BP_L_ARM_EXTRA
-
 /datum/organ_description/arm/right
 	name = "right arm"
 	organ_tag = BP_R_ARM
@@ -117,9 +114,6 @@
 
 	joint = "right elbow"
 	amputation_point = "right shoulder"
-
-/datum/organ_description/arm/right/full
-	additional_limb_parts = BP_R_ARM_EXTRA
 
 /datum/organ_description/leg
 	parent_organ = BP_GROIN
@@ -140,9 +134,6 @@
 	joint = "left knee"
 	amputation_point = "left hip"
 
-/datum/organ_description/leg/left/full
-	additional_limb_parts = BP_L_LEG_EXTRA
-
 /datum/organ_description/leg/right
 	name = "right leg"
 	organ_tag = BP_R_LEG
@@ -151,47 +142,6 @@
 
 	joint = "right knee"
 	amputation_point = "right hip"
-
-/datum/organ_description/leg/right/full
-	additional_limb_parts = BP_R_LEG_EXTRA
-
-/datum/organ_description/hand
-	max_damage = 30
-	min_broken_damage = 20
-	w_class = ITEM_SIZE_SMALL
-
-/datum/organ_description/hand/left
-	name = "left hand"
-	organ_tag = BP_L_HAND
-	icon_position = LEFT
-	joint = "left wrist"
-	amputation_point = "left wrist"
-
-/datum/organ_description/hand/right
-	name = "right hand"
-	organ_tag = BP_R_HAND
-	icon_position = RIGHT
-	joint = "right wrist"
-	amputation_point = "right wrist"
-
-/datum/organ_description/foot
-	max_damage = 40
-	min_broken_damage = 30
-	w_class = ITEM_SIZE_SMALL
-
-/datum/organ_description/foot/left
-	name = "left foot"
-	organ_tag = BP_L_FOOT
-	icon_position = LEFT
-	joint = "left ankle"
-	amputation_point = "left ankle"
-
-/datum/organ_description/foot/right
-	name = "right foot"
-	organ_tag = BP_R_FOOT
-	icon_position = LEFT
-	joint = "right ankle"
-	amputation_point = "right ankle"
 
 ////SLIME////
 /datum/organ_description/chest/slime

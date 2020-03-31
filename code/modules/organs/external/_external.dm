@@ -118,7 +118,11 @@
 /obj/item/organ/external/proc/set_description(datum/organ_description/desc)
 	src.name = desc.name
 	src.surgery_name = desc.surgery_name
-	src.organ_tag = desc.organ_tag	src.max_damage = desc.max_damage
+	src.organ_tag = desc.organ_tag
+	src.body_part = desc.body_part
+	src.parent_organ = desc.parent_organ
+
+	src.max_damage = desc.max_damage
 	src.min_broken_damage = desc.min_broken_damage
 	src.dislocated = desc.dislocated
 	src.vital = desc.vital
@@ -132,6 +136,7 @@
 	src.encased = desc.encased
 	src.cavity_name = desc.cavity_name
 
+	src.functions = desc.functions
 	if(desc.drop_on_remove)
 		src.drop_on_remove = desc.drop_on_remove.Copy()
 
@@ -317,13 +322,14 @@ B
 		owner.shock_stage += 20
 		for(var/obj/item/organ/external/limb in owner.organs)
 			if(limb.dislocated == 2)
-        return
+				return
 		owner.verbs -= /mob/living/carbon/human/proc/undislocate
+
 
 /obj/item/organ/external/proc/setBleeding()
 	if(!owner) return FALSE
 	if(BP_IS_ROBOTIC(src) || !owner || (owner.species.flags & NO_BLOOD))
-    return FALSE
+		return FALSE
 
 	status |= ORGAN_BLEEDING
 	return TRUE
@@ -690,8 +696,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 	else
 		tbrute = 3
 	return "[tbrute][tburn]"
-			   HELPERS
-****************************************************/
+
+//			   HELPERS
+//****************************************************/
 
 /obj/item/organ/external/proc/is_stump()
 	return 0

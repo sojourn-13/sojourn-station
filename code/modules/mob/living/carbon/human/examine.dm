@@ -39,7 +39,6 @@
 
 	var/He   = gender_word("He",  T)
 	var/he   = gender_word("he",  T)
-	var/His  = gender_word("His", T)
 	var/his  = gender_word("his", T)
 	var/him  = gender_word("him", T)
 	var/is   = gender_word("is",  T)
