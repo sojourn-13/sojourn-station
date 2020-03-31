@@ -136,8 +136,8 @@
 //CIG PACK//
 ////////////
 /obj/item/weapon/storage/fancy/cigarettes
-	name = "cigarette packet"
-	desc = "The most popular brand of Space Cigarettes, sponsors of the Space Olympics."
+	name = "Kholat Pass packet"
+	desc = "A packet of six Kholat Pass cigarettes."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cigpacket"
 	item_state = "cigpacket"
@@ -181,21 +181,35 @@
 	else
 		..()
 
-/obj/item/weapon/storage/fancy/cigarettes/dromedaryco
-	name = "\improper DromedaryCo packet"
-	desc = "A packet of six imported DromedaryCo cancer sticks. A label on the packaging reads, \"Wouldn't a slow death make a change?\""
+/obj/item/weapon/storage/fancy/cigarettes/oblast
+	name = "\improper Oblast Gold packet"
+	desc = "A packet of six Kholat Pass cigarettes."
+	icon_state = "cigpacket"
+	item_state = "cigpacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/volga
+	name = "\improper Volga Imported packet"
+	desc = "A packet of six Volga Imported cigarettes."
+	icon_state = "Bpacket"
+	item_state = "Bpacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/lena
+	name = "\improper Lena Sunrise packet"
+	desc = "A packet of six Lena Sunrise cigarettes."
+	icon_state = "Bpacket"
+	item_state = "Bpacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/severnaya
+	name = "\improper Severnaya Special packet"
+	desc = "A packet of six Severnaya Special cigarettes."
 	icon_state = "Dpacket"
 	item_state = "Dpacket"
 
-/obj/item/weapon/storage/fancy/cigarettes/killthroat
-	name = "\improper AcmeCo packet"
-	desc = "A packet of six AcmeCo cigarettes. For those who somehow want to obtain the record for the most amount of cancerous tumors."
-	icon_state = "Bpacket"
-	item_state = "Bpacket" //Doesn't have an inhand state, but neither does dromedary, so, ya know..
-
-/obj/item/weapon/storage/fancy/cigarettes/killthroat/Initialize()
-	. = ..()
-	fill_cigarre_package(src, list("fuel" = 15))
+/obj/item/weapon/storage/fancy/cigarettes/federal
+	name = "\improper Federal Star packet"
+	desc = "A packet of six Federal Star cigarettes."
+	icon_state = "Dpacket"
+	item_state = "Dpacket"
 
 /obj/item/weapon/storage/fancy/cigar
 	name = "cigar case"

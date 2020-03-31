@@ -1166,12 +1166,16 @@
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs.;Cigars avalible for premium customers.;Best taste in space!"
 	vend_delay = 34
 	icon_state = "cigs"
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10,
-					/obj/item/weapon/storage/box/matches = 10,
-					/obj/item/weapon/flame/lighter/random = 4)
-	contraband = list(/obj/item/weapon/flame/lighter/zippo = 4,
-						/obj/item/weapon/storage/fancy/cigar = 5,
-						/obj/item/weapon/storage/fancy/cigarettes/killthroat = 5)
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/oblast = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/volga = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/lena = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/severnaya = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/federal = 7,
+				/obj/item/weapon/storage/box/matches = 10,
+				/obj/item/weapon/flame/lighter/random = 4,
+				/obj/item/weapon/flame/lighter/zippo = 4,)
+	contraband = list(/obj/item/weapon/storage/fancy/cigar = 5)
 	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 300,
 					/obj/item/weapon/storage/box/matches = 100,
 					/obj/item/weapon/flame/lighter/random = 150,
