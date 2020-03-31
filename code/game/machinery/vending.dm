@@ -1873,7 +1873,7 @@
 	"Learn your fate!")
 	product_ads = "Pick a card, any card..."
 	products = list(
-					/obj/item/weapon/paper/fortune = 30)
+					/obj/item/weapon/paper/fortune = 100)
 	prices = list(
 					/obj/item/weapon/paper/fortune = 50)
 
