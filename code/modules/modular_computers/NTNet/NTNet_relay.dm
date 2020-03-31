@@ -32,9 +32,9 @@
 
 /obj/machinery/ntnet_relay/update_icon()
 	if(operable())
-		icon_state = "bus"
+		icon_state = "router"
 	else
-		icon_state = "bus_off"
+		icon_state = "router_off"
 
 /obj/machinery/ntnet_relay/Process()
 	if(operable())
