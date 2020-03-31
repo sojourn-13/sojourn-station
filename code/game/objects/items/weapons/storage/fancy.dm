@@ -136,11 +136,11 @@
 //CIG PACK//
 ////////////
 /obj/item/weapon/storage/fancy/cigarettes
-	name = "Kholat Pass packet"
-	desc = "A packet of six Kholat Pass cigarettes."
+	name = "\improper Roach Eyes packet"
+	desc = "A packet of six Roach Eyes cigarettes. The cheapest brand of smokes on the market favored by the type of people who see roaches of all sizes as often as they smoke."
 	icon = 'icons/obj/cigarettes.dmi'
-	icon_state = "cigpacket"
-	item_state = "cigpacket"
+	icon_state = "RoachEyesCigPacket"
+	item_state = "RoachEyesCigPacket"
 	w_class = ITEM_SIZE_TINY
 	throwforce = WEAPON_FORCE_HARMLESS
 	slot_flags = SLOT_BELT
@@ -152,7 +152,7 @@
 /obj/item/weapon/storage/fancy/cigarettes/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette(src)
-	create_reagents(15 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 /obj/item/weapon/storage/fancy/cigarettes/update_icon()
 	icon_state = "[initial(icon_state)][contents.len]"
@@ -181,35 +181,59 @@
 	else
 		..()
 
-/obj/item/weapon/storage/fancy/cigarettes/oblast
-	name = "\improper Oblast Gold packet"
-	desc = "A packet of six Kholat Pass cigarettes."
+/obj/item/weapon/storage/fancy/cigarettes/ishimura
+	name = "\improper Ishimura Special packet"
+	desc = "A packet of six Ishimura Special cigarettes. A favored and common smoke among researchers and scientists, often considered the more refined choice for the social smoker."
+	icon_state = "IshimuraSpecialCigPack"
+	item_state = "IshimuraSpecialCigPack"
+
+/obj/item/weapon/storage/fancy/cigarettes/tannhauser
+	name = "\improper Tannhauser Gate packet"
+	desc = "A packet of six Tannhauser Gate cigarettes. An often overlooked brand of smokes that rarely sells well with anyone who isn't quite old or quite cheap. Tastes like burning rusted metal but survives due to being the number one brand for spacers."
+	icon_state = "TannhauserGateCigPacket"
+	item_state = "TannhauserGateCigPacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/brouzouf
+	name = "\improper Brouzouf Message packet"
+	desc = "A packet of six Brouzouf Message cigarettes. You gain Brouzouf. Your legs are OK."
+	icon_state = "BrouzoufMessageCigPacket"
+	item_state = "BrouzoufMessageCigPacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/frozen
+	name = "\improper Frozen Nova packet"
+	desc = "A packet of six Frozen Nova cigarettes. A popular brand for frontier mercenaries and soldiers, often traded commonly by pirates for its deep throat scratching taste."
+	icon_state = "FrozenNovaCigPack"
+	item_state = "FrozenNovaCigPack"
+
+/obj/item/weapon/storage/fancy/cigarettes/shodan
+	name = "\improper Shodans packet"
+	desc = "A packet of six Shodans cigarettes. Smokes often used by those with cybernetic implants in body and brain as its said it relaxes the synapse connections, though it is commonly said that is just marketing speak."
+	icon_state = "Dpacket"
+	item_state = "Dpacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/toha
+	name = "\improper TOHA Heavy Industries packet"
+	desc = "A packet of six TOHA Heavy Industries cigarettes. The pack of choice for the engineer, the mechanic, and the technician. A special import as requested by many in the Artificer's Guild with a price to match."
+	icon_state = "TOHAHeavyIndustriesCigPacket"
+	item_state = "TOHAHeavyIndustriesCigPacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/fortress
+	name = "\improper Fortress Classic packet"
+	desc = "A packet of six Fortress Classic cigarettes. A standard classic pack that many smokers start with, often in the teen years, reasonably priced and well liked."
 	icon_state = "cigpacket"
 	item_state = "cigpacket"
 
-/obj/item/weapon/storage/fancy/cigarettes/volga
-	name = "\improper Volga Imported packet"
-	desc = "A packet of six Volga Imported cigarettes."
-	icon_state = "Bpacket"
-	item_state = "Bpacket"
-
-/obj/item/weapon/storage/fancy/cigarettes/lena
-	name = "\improper Lena Sunrise packet"
-	desc = "A packet of six Lena Sunrise cigarettes."
-	icon_state = "Bpacket"
-	item_state = "Bpacket"
-
-/obj/item/weapon/storage/fancy/cigarettes/severnaya
-	name = "\improper Severnaya Special packet"
-	desc = "A packet of six Severnaya Special cigarettes."
+/obj/item/weapon/storage/fancy/cigarettes/fortressred
+	name = "\improper Fortress RED menthols packet"
+	desc = "A packet of six Fortress RED menthols cigarettes. A standard classic pack that for the smoker that prefers a cool minty taste."
 	icon_state = "Dpacket"
 	item_state = "Dpacket"
 
-/obj/item/weapon/storage/fancy/cigarettes/federal
-	name = "\improper Federal Star packet"
-	desc = "A packet of six Federal Star cigarettes."
-	icon_state = "Dpacket"
-	item_state = "Dpacket"
+/obj/item/weapon/storage/fancy/cigarettes/fortressblue
+	name = "\improper Fortress BLU light packet"
+	desc = "A packet of six Fortress BLU light cigarettes. A standard classic pack for the smoker that wants to kick his habit at his own pace."
+	icon_state = "Bpacket"
+	item_state = "Bpacket"
 
 /obj/item/weapon/storage/fancy/cigar
 	name = "cigar case"

@@ -220,6 +220,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else
 		return ..()
 
+
+
+////////////////
+// CIGARETTES //
+////////////////
 /obj/item/clothing/mask/smokable/cigarette
 	name = "cigarette"
 	desc = "A roll of tobacco and nicotine."
@@ -232,14 +237,23 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "cigon"  //Note - these are in masks.dmi not in cigarette.dmi
 	icon_off = "cigoff"
 	type_butt = /obj/item/trash/cigbutt
-	chem_volume = 15
-	smoketime = 300
+	chem_volume = 20
+	smoketime = 360
 	preloaded_reagents = list("nicotine" = 6)
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
 	lightermes = "<span class='notice'>USER manages to light their NAME with FLAME.</span>"
 	zippomes = "<span class='rose'>With a flick of their wrist, USER lights their NAME with their FLAME.</span>"
 	weldermes = "<span class='notice'>USER casually lights the NAME with FLAME.</span>"
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME.</span>"
+
+
+/obj/item/clothing/mask/smokable/cigarette
+	name = "\improper Cohiba Robusto cigar"
+	desc = "There's little more you could want from a cigar."
+	icon_state = "cigar2off"
+	icon_on = "cigar2on"
+	icon_off = "cigar2off"
+
 
 /obj/item/clothing/mask/smokable/cigarette/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
@@ -283,8 +297,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt/cigarbutt
 	throw_speed = 0.5
 	item_state = "cigaroff"
-	smoketime = 700
-	chem_volume = 20
+	smoketime = 800
+	chem_volume = 25
 	preloaded_reagents = list("nicotine" = 14)
 	quality_multiplier = 2
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
@@ -306,8 +320,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "cigar2off"
 	icon_on = "cigar2on"
 	icon_off = "cigar2off"
-	smoketime = 1000
-	chem_volume = 30
+	smoketime = 1100
+	chem_volume = 35
 	preloaded_reagents = list("nicotine" = 20)
 	quality_multiplier = 3
 

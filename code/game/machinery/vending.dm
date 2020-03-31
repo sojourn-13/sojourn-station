@@ -1167,19 +1167,32 @@
 	vend_delay = 34
 	icon_state = "cigs"
 	products = list(/obj/item/weapon/storage/fancy/cigarettes = 7,
-				/obj/item/weapon/storage/fancy/cigarettes/oblast = 7,
-				/obj/item/weapon/storage/fancy/cigarettes/volga = 7,
-				/obj/item/weapon/storage/fancy/cigarettes/lena = 7,
-				/obj/item/weapon/storage/fancy/cigarettes/severnaya = 7,
-				/obj/item/weapon/storage/fancy/cigarettes/federal = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/brouzouf = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/frozen = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/shodan = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/toha = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/fortress = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 7,
 				/obj/item/weapon/storage/box/matches = 10,
 				/obj/item/weapon/flame/lighter/random = 4,
 				/obj/item/weapon/flame/lighter/zippo = 4,)
 	contraband = list(/obj/item/weapon/storage/fancy/cigar = 5)
-	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 300,
-					/obj/item/weapon/storage/box/matches = 100,
-					/obj/item/weapon/flame/lighter/random = 150,
-					/obj/item/weapon/flame/lighter/zippo = 250)
+	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 80,
+				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 140,
+				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 90,
+				/obj/item/weapon/storage/fancy/cigarettes/brouzouf = 110,
+				/obj/item/weapon/storage/fancy/cigarettes/frozen = 125,
+				/obj/item/weapon/storage/fancy/cigarettes/shodan = 150,
+				/obj/item/weapon/storage/fancy/cigarettes/toha = 200,
+				/obj/item/weapon/storage/fancy/cigarettes/fortress = 100,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 100,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 100,
+				/obj/item/weapon/storage/box/matches = 25,
+				/obj/item/weapon/flame/lighter/random = 50,
+				/obj/item/weapon/flame/lighter/zippo = 100)
 
 /obj/machinery/vending/medical
 	name = "MiniPharma Plus"
