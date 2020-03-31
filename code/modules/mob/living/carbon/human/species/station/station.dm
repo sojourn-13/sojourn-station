@@ -63,7 +63,7 @@
 		"You shiver suddenly.",
 		"Your chilly flesh stands out in goosebumps."
 		)
-	spawn_flags = CAN_JOIN
+	spawn_flags = null
 
 
 /datum/species/sablekyne/get_bodytype()
