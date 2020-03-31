@@ -65,7 +65,7 @@
 
 		var/list/connect_action
 
-		if(BP_IS_ROBOTIC(organ))
+		if(BP_IS_ROBOTIC(src))
 			connect_action = list(
 				"name" = (organ.status & ORGAN_CUT_AWAY) ? "Connect" : "Disconnect",
 				"organ" = "\ref[organ]",
