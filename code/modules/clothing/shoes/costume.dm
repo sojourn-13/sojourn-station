@@ -29,11 +29,11 @@
 	item_state = "jester_shoes"
 
 /obj/item/clothing/shoes/costume/job/clown
-	desc = "The prankster's standard-issue clowning shoes. They're huge."
+	desc = "The prankster's standard-issue clowning shoes. Damn they're huge!"
 	name = "clown shoes"
 	icon_state = "clown"
 	item_state = "clown_shoes"
-	slowdown = SHOES_SLOWDOWN+1
+	slowdown = SHOES_SLOWDOWN+0.4
 	force = 0
 	var/footstep = 1	//used for squeeks whilst walking
 	species_restricted = null

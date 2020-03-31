@@ -13,6 +13,11 @@
 /obj/item/organ/internal/heart/open
 	open = 1
 
+/obj/item/organ/internal/heart/prosthetic
+	name = "prosthetic heart"
+	icon_state = "heart-prosthetic"
+	dead_icon = "heart-prosthetic"
+
 /obj/item/organ/internal/heart/Process()
 	if(owner)
 		handle_pulse()

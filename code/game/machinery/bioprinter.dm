@@ -33,6 +33,13 @@
 	..()
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		stored_matter = 200
+	products = list(
+		BP_HEART =   list(/obj/item/organ/internal/heart/prosthetic,  50),
+		BP_LUNGS =   list(/obj/item/organ/internal/lungs/prosthetic,  40),
+		BP_KIDNEYS = list(/obj/item/organ/internal/kidneys/prosthetic,20),
+		BP_EYES =    list(/obj/item/organ/internal/eyes/prosthetic,   30),
+		BP_LIVER =   list(/obj/item/organ/internal/liver/prosthetic,  50)
+		)
 
 
 /obj/machinery/bioprinter/attack_hand(mob/user)

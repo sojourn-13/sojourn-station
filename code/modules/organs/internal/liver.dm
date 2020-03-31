@@ -5,6 +5,10 @@
 	parent_organ = BP_GROIN
 	price_tag = 900
 
+/obj/item/organ/internal/liver/prosthetic
+	name = "prosthetic liver"
+	icon_state = "liver-prosthetic"
+
 /obj/item/organ/internal/liver/Process()
 
 	..()
@@ -47,7 +51,7 @@
 	if(owner.chem_effects[CE_ALCOHOL_TOXIC])
 		take_internal_damage(owner.chem_effects[CE_ALCOHOL_TOXIC], prob(90)) // Chance to warn them
 
-	
+
 
 	//Blood regeneration if there is some space
 	owner.regenerate_blood(0.1 + owner.chem_effects[CE_BLOODRESTORE])

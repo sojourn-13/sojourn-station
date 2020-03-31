@@ -41,6 +41,7 @@
 		/datum/design/autolathe/tool/wirecutters,
 		/datum/design/autolathe/tool/pliers,
 		/datum/design/autolathe/tool/wrench,
+		/datum/design/autolathe/tool/hammer,
 		/datum/design/autolathe/tool/saw,
 		/datum/design/autolathe/tool/multitool,
 		/datum/design/autolathe/tool/pickaxe,
@@ -231,7 +232,9 @@
 		/datum/design/autolathe/tool/pickaxe_excavation,
 		/datum/design/autolathe/tool/shovel/power,
 		/datum/design/autolathe/tool/circularsaw,
+		/datum/design/autolathe/tool/powered_hammer,
 		/datum/design/autolathe/tool/chainsaw,
+		/datum/design/autolathe/tool/hypersaw,
 		/datum/design/autolathe/tool/rcd,
 		/datum/design/autolathe/tool/electric_screwdriver,
 		/datum/design/autolathe/tool/combi_driver,
@@ -431,6 +434,8 @@
 		/datum/design/research/item/computer_part/portabledrive/basic,
 		/datum/design/research/item/computer_part/portabledrive/normal,
 		/datum/design/research/item/computer_part/printer,
+		/datum/design/research/item/computer_part/led,
+		/datum/design/research/item/computer_part/led/adv,
 		/datum/design/autolathe/computer_part/gps,
 		/datum/design/autolathe/part/heatsink,
 		/datum/design/autolathe/part/motor,
@@ -447,6 +452,7 @@
 // NeoTheology
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns
 	disk_name = "Absolute Armory of the Old Testament"
+	desc = "A rare and expensive disk containing designs for highly advanced energy and ballistic weaponry from the Old Testament, the Absolutes arms division."
 	icon_state = "neotheology"
 	license = 3
 	designs = list(
@@ -462,6 +468,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns
 	disk_name = "Absolute Armory of the New Testament"
+	desc = "A rare and expensive disk containing designs for highly advanced energy weapons from the Old Testament, the Absolutes arms division. Nicknamed the new testament for containing its latest weaponry designs."
 	icon_state = "neotheology"
 	license = 3
 	designs = list(
@@ -493,24 +500,46 @@
 		/datum/design/bioprinter/leather/leather_jacket,
 		/datum/design/bioprinter/leather/cash_bag,
 		/datum/design/bioprinter/belt/utility,
+		/datum/design/bioprinter/belt/utility/neotheology,
 		/datum/design/bioprinter/belt/medical,
 		/datum/design/bioprinter/belt/security,
+		/datum/design/bioprinter/belt/security/neotheology,
 		/datum/design/bioprinter/belt/medical/emt,
 		/datum/design/bioprinter/belt/misc/champion,
+
+		/datum/design/bioprinter/leather/holster,
+		/datum/design/bioprinter/leather/holster/armpit,
+		/datum/design/bioprinter/leather/holster/waist,
+		/datum/design/bioprinter/leather/holster/hip,
+		/datum/design/bioprinter/leather/holster/leg,
 
 		/datum/design/bioprinter/medical/bruise,
 		/datum/design/bioprinter/medical/splints,
 		/datum/design/bioprinter/medical/ointment,
 		/datum/design/bioprinter/medical/advanced/bruise,
 		/datum/design/bioprinter/medical/advanced/ointment,
+		/datum/design/autolathe/gun/nt_sprayer,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioaugment
+	disk_name = "Church of Absolute Bioaugmentation Disk"
+	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
+	icon_state = "neotheology"
+
+	license = -1
+	designs = list(
+		/datum/design/bioprinter/bioimplant/osurgical,
+		/datum/design/bioprinter/bioimplant/oscythe,
+		/datum/design/bioprinter/bioimplant/oarmor,
+		/datum/design/bioprinter/bioimplant/omuscle,
 	)
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
-	disk_name = "Soteria Bioprinter Pack"
+	disk_name = "Church of Absolute Public Bioprinter Pack"
 	icon_state = "neotheology"
 
-	license = -1
+	license = 20
 	designs = list(
 		/datum/design/bioprinter/meat,
 		/datum/design/bioprinter/milk,
@@ -525,12 +554,20 @@
 		/datum/design/bioprinter/leather/leather_jacket,
 		/datum/design/bioprinter/leather/cash_bag,
 		/datum/design/bioprinter/belt/utility,
+		/datum/design/bioprinter/belt/utility/neotheology,
 		/datum/design/bioprinter/belt/medical,
 		/datum/design/bioprinter/belt/security,
+		/datum/design/bioprinter/belt/security/neotheology,
 		/datum/design/bioprinter/belt/medical/emt,
 		/datum/design/bioprinter/belt/misc/champion,
 
-		/datum/design/autolathe/gun/nt_sprayer
+		/datum/design/bioprinter/leather/holster,
+		/datum/design/bioprinter/leather/holster/armpit,
+		/datum/design/bioprinter/leather/holster/waist,
+		/datum/design/bioprinter/leather/holster/hip,
+		/datum/design/bioprinter/leather/holster/leg,
+
+		/datum/design/autolathe/gun/nt_sprayer,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_boards
@@ -858,7 +895,9 @@
 		/datum/design/bioprinter/medical/splints,
 		/datum/design/bioprinter/medical/ointment,
 		/datum/design/bioprinter/medical/advanced/bruise,
-		/datum/design/bioprinter/medical/advanced/ointment
+		/datum/design/bioprinter/medical/advanced/ointment,
+		/datum/design/bioprinter/bioimplant/osurgical,
+		/datum/design/bioprinter/bioimplant/oscythe
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
@@ -893,7 +932,7 @@
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
-	disk_name = "Church of Absolute Bioprinter Pack"
+	disk_name = "Church of Absolute Basic Bioprinter Pack"
 	icon_state = "neotheology"
 
 	license = -1

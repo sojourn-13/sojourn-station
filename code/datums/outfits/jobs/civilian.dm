@@ -13,7 +13,6 @@
 	head = /obj/item/clothing/head/tophat
 	id_type = /obj/item/weapon/card/id/white
 	pda_type = /obj/item/modular_computer/pda/club_worker
-	backpack_contents = list(/obj/item/ammo_casing/shotgun/beanbag = 4)
 
 /decl/hierarchy/outfit/job/service/waiter
 	name = OUTFIT_JOB_NAME("Lonestar - Waiter")

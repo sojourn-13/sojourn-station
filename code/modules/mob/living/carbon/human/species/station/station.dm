@@ -25,8 +25,10 @@
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
+	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/claws/strong, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/sharp)
 	darksight = 8
+	burn_mod = 1.15
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
@@ -59,7 +61,7 @@
 		"You shiver suddenly.",
 		"Your chilly flesh stands out in goosebumps."
 		)
-	spawn_flags = CAN_JOIN
+	spawn_flags = null
 
 /datum/species/sablekyne/get_bodytype()
 	return FORM_SABLEKYNE

@@ -622,7 +622,7 @@
 		add_overlay(image(icon, "[icon_state]_panel"))
 
 	if(stat & NOPOWER)
-		return
+		icon_state = "[initial(icon_state)]_off"
 
 	if(working) // if paused, work animation looks awkward.
 		if(paused || error)
@@ -863,6 +863,20 @@
 #undef ERR_NOREAGENT
 #undef ERR_NOLICENSE
 #undef SANITIZE_LATHE_COST
+
+
+// A version with some materials already loaded, to be used on map spawn
+/obj/machinery/autolathe/loaded
+	stored_material = list(
+		MATERIAL_STEEL = 60,
+		MATERIAL_PLASTIC = 60,
+		MATERIAL_GLASS = 60,
+		)
+
+/obj/machinery/autolathe/loaded/Initialize()
+	. = ..()
+	container = new /obj/item/weapon/reagent_containers/glass/beaker(src)
+
 
 // You (still) can't flicker overlays in BYOND, and this is a vis_contents hack to provide the same functionality.
 // Used for materials loading animation.

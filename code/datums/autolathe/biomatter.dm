@@ -56,6 +56,25 @@
 	name = "Cash Bag"
 	build_path = /obj/item/weapon/storage/bag/money
 
+/datum/design/bioprinter/leather/holster
+	name = "shoulder holster"
+	build_path = /obj/item/clothing/accessory/holster
+
+/datum/design/bioprinter/leather/holster/armpit
+	name = "armpit holster"
+	build_path = /obj/item/clothing/accessory/holster/armpit
+
+/datum/design/bioprinter/leather/holster/waist
+	name = "waist holster"
+	build_path = /obj/item/clothing/accessory/holster/waist
+
+/datum/design/bioprinter/leather/holster/hip
+	name = "hip holster"
+	build_path = /obj/item/clothing/accessory/holster/hip
+
+/datum/design/bioprinter/leather/holster/leg
+	name = "leg holster"
+	build_path = /obj/item/clothing/accessory/holster/leg
 
 /datum/design/bioprinter/belt
 	materials = list("biomatter" = 30)
@@ -64,13 +83,21 @@
 	name = "Utility belt"
 	build_path = /obj/item/weapon/storage/belt/utility
 
+/datum/design/bioprinter/belt/utility/neotheology
+	name = "Absolutism utility belt"
+	build_path = /obj/item/weapon/storage/belt/utility/neotheology
+
 /datum/design/bioprinter/belt/medical
 	name = "Medical belt"
 	build_path = /obj/item/weapon/storage/belt/medical
 
 /datum/design/bioprinter/belt/security
-	name = "Security belt"
+	name = "Tactical belt"
 	build_path = /obj/item/weapon/storage/belt/security
+
+/datum/design/bioprinter/belt/security/neotheology
+	name = "Absolutism tactical belt"
+	build_path = /obj/item/weapon/storage/belt/security/neotheology
 
 /datum/design/bioprinter/belt/medical/emt
 	name = "EMT belt"
@@ -110,3 +137,23 @@
 	name = "Advanced burn kit"
 	build_path = /obj/item/stack/medical/advanced/ointment
 //[/MED]
+
+/datum/design/bioprinter/bioimplant
+	materials = list("biomatter" = 50)
+
+/datum/design/bioprinter/bioimplant/oscythe
+	name = "Organic arm scythe implant"
+	build_path = /obj/item/weapon/biogoop/armscythe
+
+/datum/design/bioprinter/bioimplant/osurgical
+	name = "Organic surgery omnitool implant"
+	build_path = /obj/item/weapon/biogoop/surgical
+
+/datum/design/bioprinter/bioimplant/oarmor
+	name = "Organic exoskeleton implant"
+	build_path = /obj/item/weapon/biogoop/armor
+
+/datum/design/bioprinter/bioimplant/omuscle
+	name = "Organic muscle implant"
+	build_path = /obj/item/weapon/biogoop/muscle
+//[/IMPLANT]

@@ -29,7 +29,7 @@
 	access_occupy = list()
 
 /obj/structure/closet/secure_closet/personal/agrolyte
-	name = "botanist's locker"
+	name = "agrolyte's locker"
 	req_access = list(access_hydroponics)
 	icon_state = "botanist"
 

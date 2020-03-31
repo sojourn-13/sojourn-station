@@ -291,19 +291,19 @@ B
 		owner.shock_stage += 20
 		for(var/obj/item/organ/external/limb in owner.organs)
 			if(limb.dislocated == 2)
-				return
+        return
 		owner.verbs -= /mob/living/carbon/human/proc/undislocate
 
 /obj/item/organ/external/proc/setBleeding()
 	if(!owner) return FALSE
 	if(BP_IS_ROBOTIC(src) || !owner || (owner.species.flags & NO_BLOOD))
-	return FALSE
+    return FALSE
+
 	status |= ORGAN_BLEEDING
 	return TRUE
 
 /obj/item/organ/external/proc/stopBleeding()
 	status &= ~ORGAN_BLEEDING
-
 
 /obj/item/organ/external/update_health()
 	damage = min(max_damage, (brute_dam + burn_dam))

@@ -160,7 +160,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/use_overmap = 0
 
 	// Event settings
-	var/expected_round_length = 3 * 60 * 60 * 10 // 3 hours
+	var/expected_round_length	= 3 * 60 * 60 * 10 // 3 hours
+	var/round_end_time			= 0 //0 means no round end
+	var/round_end_grace_period	= 0 //0 means the round will not insist on ending.
 	// If the first delay has a custom start time
 	// No custom time, no custom time, between 80 to 100 minutes respectively.
 	var/list/event_first_run   = list(
@@ -607,6 +609,12 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("expected_round_length")
 					config.expected_round_length = MinutesToTicks(text2num(value))
+
+				if("round_end_time")
+					config.round_end_time = MinutesToTicks(text2num(value))
+
+				if("round_end_grace_period")
+					config.round_end_grace_period = MinutesToTicks(text2num(value))
 
 				if("disable_welder_vision")
 					config.welder_vision = 0

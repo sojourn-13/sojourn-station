@@ -11,6 +11,7 @@
 	var/mobtype = "/mob/living/carbon/human"			// The mob type that should be spawned for this. TODO: Make spawn code use it.
 
 	var/default_form = FORM_HUMAN	//If nothing else sets it, what do we look like.
+	var/obligate_form = FALSE //If true, character creation will force the use of either this form or its subforms.
 
 	var/mob_size	= MOB_MEDIUM
 	var/blood_volume = 560                               // Initial blood volume.

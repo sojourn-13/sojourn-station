@@ -18,7 +18,7 @@ var/list/VVckey_edit = list("key", "ckey")
 
 /client/proc/mod_list_add_ass()
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object","restore to default")
+	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object","restore to default", "null")
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
 		if(marked_datum)
@@ -57,6 +57,9 @@ var/list/VVckey_edit = list("key", "ckey")
 		if("icon")
 			var_value = input("Pick icon:","Icon") as null|icon
 
+		if("null")
+			var_value = null
+
 		if("marked datum")
 			var_value = holder.marked_datum()
 
@@ -68,7 +71,7 @@ var/list/VVckey_edit = list("key", "ckey")
 /client/proc/mod_list_add(var/list/L, atom/O, original_name, objectvar)
 
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object","restore to default")
+	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object","restore to default", "null")
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
 		if(marked_datum)
@@ -107,6 +110,9 @@ var/list/VVckey_edit = list("key", "ckey")
 		if("icon")
 			var_value = input("Pick icon:","Icon") as icon
 
+		if("null")
+			var_value = null
+
 		if("marked datum")
 			var_value = holder.marked_datum()
 
@@ -139,26 +145,26 @@ var/list/VVckey_edit = list("key", "ckey")
 			assoc = 1 //This is pretty weak test but i can't think of anything else
 			to_chat(usr, "List appears to be associative.")
 
-	var/list/names = null
-	if(!assoc)
-		names = sortList(L)
-
 	var/variable
-	var/assoc_key
-	if(assoc)
-		variable = input("Which var?","Var") as null|anything in L + "(ADD VAR)"
-	else
-		variable = input("Which var?","Var") as null|anything in names + "(ADD VAR)"
+	var/list/selector = list()
+	for(var/i in 1 to LAZYLEN(L))
+		selector["[i]: [L[i]][assoc ? "-- [L[L[i]]]" : ""]"] = i
+
+	var/index = input("Which var?","Var") as null|anything in selector + list("(ADD VAR)" = "(ADD VAR)")
+	var/position
 
 	if(variable == "(ADD VAR)")
 		mod_list_add(L, O, original_name, objectvar)
 		return
 
 	if(assoc)
-		assoc_key = variable
-		variable = L[assoc_key]
+		position = L[index]
+		variable = L[position]
+	else
+		position = index
+		variable = L[position]
 
-	if(!assoc && !variable || assoc && !assoc_key)
+	if(!position || assoc && !istext(position))
 		return
 
 	var/default
@@ -238,7 +244,7 @@ var/list/VVckey_edit = list("key", "ckey")
 			to_chat(usr, "If a direction, direction is: [dir]")
 
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object","restore to default")
+	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object")
 
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
@@ -255,25 +261,18 @@ var/list/VVckey_edit = list("key", "ckey")
 	if(marked_datum && class == "marked datum ([marked_datum.type])")
 		class = "marked datum"
 
-	var/original_var
-	if(assoc)
-		original_var = L[assoc_key]
-	else
-		original_var = L[L.Find(variable)]
+	var/original_var = L[position]
 
 	var/new_var
 	switch(class) //Spits a runtime error if you try to modify an entry in the contents list. Dunno how to fix it, yet.
 
 		if("list")
 			mod_list(variable, O, original_name, objectvar)
-
+/*
 		if("restore to default")
 			new_var = initial(variable)
-			if(assoc)
-				L[assoc_key] = new_var
-			else
-				L[L.Find(variable)] = new_var
-
+			L[variable] = new_var //This makes no sense, a list element has no real default, or initial.
+*/
 		if("edit referenced object")
 			modify_variables(variable)
 
@@ -281,66 +280,42 @@ var/list/VVckey_edit = list("key", "ckey")
 			log_world("### ListVarEdit by [src]: [O.type] [objectvar]: REMOVED=[html_encode("[variable]")]")
 			log_admin("[key_name(src)] modified [original_name]'s [objectvar]: REMOVED=[variable]")
 			message_admins("[key_name_admin(src)] modified [original_name]'s [objectvar]: REMOVED=[variable]")
-			L -= variable
+			L.Cut(index, index+1)
 			return
 
 		if("text")
 			new_var = input("Enter new text:","Text") as text
-			if(assoc)
-				L[assoc_key] = new_var
-			else
-				L[L.Find(variable)] = new_var
+			L[position] = new_var
 
 		if("num")
 			new_var = input("Enter new number:","Num") as num
-			if(assoc)
-				L[assoc_key] = new_var
-			else
-				L[L.Find(variable)] = new_var
+			L[position] = new_var
 
 		if("type")
 			new_var = input("Enter type:","Type") in typesof(/obj,/mob,/area,/turf)
-			if(assoc)
-				L[assoc_key] = new_var
-			else
-				L[L.Find(variable)] = new_var
+			L[position] = new_var
 
 		if("reference")
 			new_var = input("Select reference:","Reference") as mob|obj|turf|area in world
-			if(assoc)
-				L[assoc_key] = new_var
-			else
-				L[L.Find(variable)] = new_var
+			L[position] = new_var
 
 		if("mob reference")
 			new_var = input("Select reference:","Reference") as mob in world
-			if(assoc)
-				L[assoc_key] = new_var
-			else
-				L[L.Find(variable)] = new_var
+			L[position] = new_var
 
 		if("file")
 			new_var = input("Pick file:","File") as file
-			if(assoc)
-				L[assoc_key] = new_var
-			else
-				L[L.Find(variable)] = new_var
+			L[position] = new_var
 
 		if("icon")
 			new_var = input("Pick icon:","Icon") as icon
-			if(assoc)
-				L[assoc_key] = new_var
-			else
-				L[L.Find(variable)] = new_var
+			L[position] = new_var
 
 		if("marked datum")
 			new_var = holder.marked_datum()
 			if(!new_var)
 				return
-			if(assoc)
-				L[assoc_key] = new_var
-			else
-				L[L.Find(variable)] = new_var
+			L[position] = new_var
 
 	log_world("### ListVarEdit by [src]: [O.type] [objectvar]: [original_var]=[new_var]")
 	log_admin("[key_name(src)] modified [original_name]'s [objectvar]: [original_var]=[new_var]")

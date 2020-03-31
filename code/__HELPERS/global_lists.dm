@@ -255,11 +255,11 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 			GLOB.all_stash_datums[L.base_type][L] = L.weight
 
 
-	//Languages and species.
-	paths = subtypesof(/datum/species)
-	for(var/T in paths)
-		var/datum/language/L = new T
-		all_languages[L.name] = L
+//Languages and species.
+    paths = subtypesof(/datum/language)
+    for(var/T in paths)
+        var/datum/language/L = new T
+        all_languages[L.name] = L
 
 	for (var/language_name in all_languages)
 		var/datum/language/L = all_languages[language_name]

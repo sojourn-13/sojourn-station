@@ -1,6 +1,6 @@
 /obj/item/weapon/tool/omnitool
 	name = "Lonestars \"Munchkin 5000\""
-	desc = "Fuel powered monster of a tool. Its weldier part is most advanced one, capable of welding things without harmfull glow and sparks, so no protection needed."
+	desc = "A fuel powered monster of a tool. Its welding attachment is capable of welding things without an eye-damaging flash, so no eye protection is required."
 	icon_state = "omnitool"
 	w_class = ITEM_SIZE_NORMAL
 	worksound = WORKSOUND_DRIVER_TOOL
@@ -11,7 +11,7 @@
 	toggleable = TRUE
 	create_hot_spot = TRUE
 	glow_color = COLOR_ORANGE
-	max_upgrades = 5
+	max_upgrades = 2
 
 /obj/item/weapon/tool/medmultitool
 	name = "greyson positronic medmultitool"
@@ -43,6 +43,16 @@
 	suitable_cell = /obj/item/weapon/cell/medium
 
 	max_upgrades = 1
+
+/obj/item/weapon/tool/medmultitool/medimplant/organic
+	name = "Organic Medical Omnitool"
+	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels. This version is made of entirely organic materials and doesn't require a power cell, sadly it cannot be upgraded and work takes slightly longer, but at least it is self repairing."
+	icon_state = "organicmedimplant"
+	use_power_cost = 0
+	suitable_cell = null
+	degradation = 0
+	max_upgrades = 0
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/tool/engimplant
 	name = "Engineering Omnitool"

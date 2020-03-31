@@ -149,7 +149,7 @@ var/global/list/limb_icon_cache = list()
 
 	if(!is_stump())
 		for(var/subicon in additional_limb_parts)
-			var/gender = "_m"
+			gender = "_m"
 			if((dna && dna.GetUIState(DNA_UI_GENDER)) || (owner && owner.gender == FEMALE))
 				gender = "_f"
 			if(!("[subicon][gender]" in icon_states(icon)))

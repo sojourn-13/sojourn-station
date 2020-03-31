@@ -67,7 +67,8 @@
 		return
 
 	for(var/obj/item/organ/external/E in organs_by_name)
-		if(!E.can_stand) continue
+		if(!E.functions & BODYPART_STAND)
+			continue
 		//should just be !E.is_usable() here but dislocation screws that up.
 		if(!E || (E.status & (ORGAN_MUTATED|ORGAN_DEAD)) || E.is_stump())
 			stance_damage += 2 // let it fail even if just foot&leg

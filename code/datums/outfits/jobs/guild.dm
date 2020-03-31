@@ -23,7 +23,7 @@
 /decl/hierarchy/outfit/job/cargo/mining
 	name = OUTFIT_JOB_NAME("Lonestar - Lonestar Miner")
 	uniform = /obj/item/clothing/under/rank/miner
-	pda_type = /obj/item/modular_computer/pda/moebius/science
+	pda_type = /obj/item/modular_computer/pda/science/science
 	belt = /obj/item/weapon/storage/belt/utility
 	backpack_contents = list(/obj/item/weapon/tool/crowbar = 1, /obj/item/weapon/storage/bag/ore = 1)
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL

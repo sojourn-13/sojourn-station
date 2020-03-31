@@ -969,7 +969,7 @@
 	products = list(
 		/obj/item/device/assembly/prox_sensor = 5,
 		/obj/item/device/assembly/igniter = 3,
-		/obj/item/device/assembly/signaler = 4,
+		/obj/item/device/assembly/signaler = 6,
 		/obj/item/weapon/tool/wirecutters = 1,
 		/obj/item/weapon/tool/wirecutters/pliers = 1,
 		/obj/item/weapon/cartridge/signal = 4)
@@ -997,6 +997,10 @@
 					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 3)
+
+/obj/machinery/vending/coffee/postvend_effect()
+	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
+	return
 
 /obj/machinery/vending/snack
 	name = "Getmore Chocolate Corp"
@@ -1151,6 +1155,10 @@
 					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 60)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
+/obj/machinery/vending/cola/postvend_effect()
+	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
+	return
+
 /obj/machinery/vending/cigarette
 	name = "Smooth Cigarettes" //OCD had to be uppercase to look nice with the new formating
 	desc = "If you want to get cancer, might as well do it in style!"
@@ -1170,7 +1178,7 @@
 					/obj/item/weapon/flame/lighter/zippo = 250)
 
 /obj/machinery/vending/medical
-	name = "NanoMed Plus"
+	name = "MiniPharma Plus"
 	desc = "Medical drug dispenser."
 	icon_state = "med"
 	icon_deny = "med-deny"
@@ -1178,7 +1186,7 @@
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!;You do know how to use those, right?"
 	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
 					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/toxin = 4,
-					/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/syringe = 12,
+					/obj/item/weapon/reagent_containers/syringe/spaceacillin = 4,/obj/item/weapon/reagent_containers/syringe = 12,
 					/obj/item/device/scanner/health = 5,/obj/item/weapon/reagent_containers/glass/beaker = 4, /obj/item/weapon/reagent_containers/dropper = 2,
 					/obj/item/stack/medical/advanced/bruise_pack = 3, /obj/item/stack/medical/advanced/ointment = 3, /obj/item/stack/medical/splint = 2)
 	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3,/obj/item/weapon/reagent_containers/pill/stox = 4,/obj/item/weapon/reagent_containers/pill/antitox = 6)
@@ -1200,28 +1208,65 @@
 					/obj/item/device/assembly/igniter = 6)
 	auto_price = FALSE
 
-/obj/machinery/vending/wallmed1
-	name = "NanoMed"
-	desc = "Wall-mounted Medical Equipment dispenser."
-	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;I hope you know what you're doing."
+/obj/machinery/vending/wallmed
+	name = "MicroMed"
+	desc = "Wall-mounted medical dispenser."
+	density = FALSE //It is wall-mounted, and thus, not dense. --Superxpdude
 	icon_state = "wallmed"
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 	icon_deny = "wallmed-deny"
-	density = 0 //It is wall-mounted, and thus, not dense. --Superxpdude
-	products = list(/obj/item/stack/medical/bruise_pack = 2,/obj/item/stack/medical/ointment = 2,/obj/item/weapon/reagent_containers/hypospray/autoinjector = 4,/obj/item/device/scanner/health = 1)
-	contraband = list(/obj/item/weapon/reagent_containers/syringe/antitoxin = 4,/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/pill/tox = 1)
+	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;I hope you know what you're doing."
+
+/obj/machinery/vending/wallmed/minor
+	products = list(
+		/obj/item/stack/medical/bruise_pack = 2, /obj/item/stack/medical/ointment = 2,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector = 4,
+		/obj/item/device/scanner/health = 1
+		)
+	contraband = list(
+		/obj/item/weapon/reagent_containers/syringe/antitoxin = 2,
+		/obj/item/weapon/reagent_containers/syringe/spaceacillin = 2,
+		/obj/item/weapon/reagent_containers/pill/tox = 1
+		)
 	auto_price = FALSE
 
-/obj/machinery/vending/wallmed2
-	name = "NanoMed"
-	desc = "Wall-mounted Medical Equipment dispenser."
-	icon_state = "wallmed"
-	light_color = COLOR_LIGHTING_GREEN_BRIGHT
-	icon_deny = "wallmed-deny"
-	density = 0 //It is wall-mounted, and thus, not dense. --Superxpdude
-	products = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector = 5,/obj/item/weapon/reagent_containers/syringe/antitoxin = 3,/obj/item/stack/medical/bruise_pack = 3,
-					/obj/item/stack/medical/ointment =3,/obj/item/device/scanner/health = 3)
-	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3)
+/obj/machinery/vending/wallmed/lobby
+	products = list(
+		/obj/item/device/scanner/health = 6,
+
+		/obj/item/stack/medical/bruise_pack = 2, /obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/advanced/bruise_pack = 1, /obj/item/stack/medical/advanced/ointment = 1,
+		/obj/item/stack/nanopaste = 1,
+
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin = 5, /obj/item/weapon/reagent_containers/syringe/antitoxin = 5,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricordrazine = 5, /obj/item/weapon/reagent_containers/syringe/tricordrazine = 5,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/spaceacillin = 1, /obj/item/weapon/reagent_containers/syringe/spaceacillin = 1,
+
+		/obj/item/weapon/implantcase/death_alarm = 2,
+		/obj/item/weapon/implanter = 2
+		)
+	contraband = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/hyperzine = 2,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs = 2,
+		)
+	prices = list(
+		/obj/item/device/scanner/health = 50,
+
+		/obj/item/stack/medical/bruise_pack = 100, /obj/item/stack/medical/ointment = 100,
+		/obj/item/stack/medical/advanced/bruise_pack = 200, /obj/item/stack/medical/advanced/ointment = 200,
+		/obj/item/stack/nanopaste = 300,
+
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin = 100, /obj/item/weapon/reagent_containers/syringe/antitoxin = 200,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricordrazine = 150, /obj/item/weapon/reagent_containers/syringe/tricordrazine = 300,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/spaceacillin = 100, /obj/item/weapon/reagent_containers/syringe/spaceacillin = 200,
+
+		/obj/item/weapon/implantcase/death_alarm = 500,
+		/obj/item/weapon/implanter = 50,
+
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/hyperzine = 500,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs = 500,
+		)
+	vendor_department = DEPARTMENT_MEDICAL
 	auto_price = FALSE
 
 /obj/machinery/vending/security
@@ -1392,6 +1437,10 @@
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
 
+/obj/machinery/vending/sovietsoda/postvend_effect()
+	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
+	return
+
 /obj/machinery/vending/tool
 	name = "YouTool"
 	desc = "Tools for tools."
@@ -1400,9 +1449,9 @@
 	icon_state = "tool"
 	icon_deny = "tool-deny"
 	products = list(/obj/item/stack/cable_coil/random = 10,/obj/item/weapon/tool/crowbar = 5,/obj/item/weapon/tool/weldingtool = 5,/obj/item/weapon/tool/wirecutters = 3, /obj/item/weapon/tool/wirecutters/pliers = 3,
-					/obj/item/weapon/tool/wrench = 5,/obj/item/device/scanner/gas = 5,/obj/item/device/t_scanner = 5, /obj/item/weapon/tool/screwdriver = 5, /obj/item/clothing/gloves/insulated/cheap  = 2, /obj/item/clothing/gloves/insulated = 1,
+					/obj/item/weapon/tool/wrench = 5,/obj/item/weapon/tool/hammer = 5,/obj/item/device/scanner/gas = 5,/obj/item/device/t_scanner = 5, /obj/item/weapon/tool/screwdriver = 5, /obj/item/clothing/gloves/insulated/cheap  = 2, /obj/item/clothing/gloves/insulated = 1,
 					/obj/item/weapon/storage/pouch/engineering_tools = 2, /obj/item/weapon/storage/pouch/engineering_supply = 2)
-	prices = list(/obj/item/stack/cable_coil/random = 100,/obj/item/weapon/tool/crowbar = 30,/obj/item/weapon/tool/weldingtool = 50,/obj/item/weapon/tool/wirecutters = 30, /obj/item/weapon/tool/wirecutters/pliers = 30,
+	prices = list(/obj/item/weapon/tool/hammer = 30,/obj/item/stack/cable_coil/random = 100,/obj/item/weapon/tool/crowbar = 30,/obj/item/weapon/tool/weldingtool = 50,/obj/item/weapon/tool/wirecutters = 30, /obj/item/weapon/tool/wirecutters/pliers = 30,
 					/obj/item/weapon/tool/wrench = 30,/obj/item/device/scanner/gas = 50,/obj/item/device/t_scanner = 50, /obj/item/weapon/tool/screwdriver = 30, /obj/item/clothing/gloves/insulated/cheap  = 80, /obj/item/clothing/gloves/insulated = 600,
 					/obj/item/weapon/storage/pouch/engineering_tools = 300, /obj/item/weapon/storage/pouch/engineering_supply = 600)
 
@@ -1439,6 +1488,7 @@
 					/obj/item/weapon/tool/wirecutters = 12,
 					/obj/item/weapon/tool/wirecutters/pliers = 6,
 					/obj/item/weapon/tool/multitool = 12,
+					/obj/item/weapon/tool/hammer = 10,
 					/obj/item/weapon/tool/wrench = 12,
 					/obj/item/device/t_scanner = 12,
 					/obj/item/weapon/cell/large = 8,
@@ -1460,6 +1510,7 @@
 					/obj/item/weapon/tool/wirecutters = 30,
 					/obj/item/weapon/tool/wirecutters/pliers = 30,
 					/obj/item/weapon/tool/multitool = 40,
+					/obj/item/weapon/tool/hammer = 30,
 					/obj/item/weapon/tool/wrench = 40,
 					/obj/item/device/t_scanner = 50,
 					/obj/item/weapon/cell/large = 500,
@@ -1538,7 +1589,8 @@
 					/obj/item/weapon/storage/box/costume/surplusgeneric = 2,
 					/obj/item/weapon/storage/box/costume/surplushalloween = 2,
 					/obj/item/weapon/storage/box/costume/bonusjustice = 2,
-					/obj/item/weapon/storage/box/costume/bonuswrestling = 2)
+					/obj/item/weapon/storage/box/costume/bonuswrestling = 2,
+					/obj/item/clothing/suit/hooded/costume/techpriest  = 2)
 	prices = list(/obj/item/weapon/storage/box/costume/bandit = 200,
 					/obj/item/weapon/storage/box/costume/bunny = 200,
 					/obj/item/weapon/storage/box/costume/cardborg = 200,
@@ -1584,7 +1636,8 @@
 					/obj/item/weapon/storage/box/costume/surplusgeneric = 400,
 					/obj/item/weapon/storage/box/costume/surplushalloween = 400,
 					/obj/item/weapon/storage/box/costume/bonusjustice = 300,
-					/obj/item/weapon/storage/box/costume/bonuswrestling = 300)
+					/obj/item/weapon/storage/box/costume/bonuswrestling = 300,
+					/obj/item/clothing/suit/hooded/costume/techpriest = 200)
 
 
 
@@ -1602,17 +1655,47 @@
 	name = "Church of Absolute Theo-Mat"
 	desc = "A church dispensary for disciples and new converts."
 	product_slogans = "Find peace through faith.;Help humanity ascend, join your brethren today!;Come and seek a new life!;Safety in brotherhood!"
-	product_ads = "Praise!;Pray!;Only for the faithful!;Ascend!;Seek a new life!"
+	product_ads = "Praise!;Pray!;Only for the faithful!;Ascend!;Seek a new life!;Better living through technology!"
 	icon_state = "teomat"
 	vendor_department = DEPARTMENT_CHURCH
 	products = list(/obj/item/weapon/book/ritual/cruciform = 10,
 					/obj/item/weapon/storage/fancy/candle_box = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 20)
-	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 3)
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 20,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns = 2,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 3,
+					/obj/item/weapon/soap = 5,
+					/obj/item/weapon/storage/wallet = 5,
+					/obj/item/weapon/storage/backpack/satchel = 5,
+					/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 5,
+					/obj/item/stack/medical/bruise_pack = 8,
+					/obj/item/stack/medical/ointment = 8,
+					/obj/item/stack/medical/splint = 5,
+					/obj/item/stack/medical/advanced/bruise_pack = 4,
+					/obj/item/stack/medical/advanced/ointment = 4)
+	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 3,
+					/obj/item/weapon/tool/knife/neotritual = 3,
+					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 3)
+
+
 	prices = list(/obj/item/weapon/book/ritual/cruciform = 500,
 					/obj/item/weapon/storage/fancy/candle_box = 200,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 250,
-					/obj/item/weapon/implant/core_implant/cruciform = 1000)
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns = 8000,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns = 7000,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 1000,
+					/obj/item/weapon/soap = 200,
+					/obj/item/weapon/storage/wallet = 150,
+					/obj/item/weapon/storage/backpack/satchel = 300,
+					/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 300,
+					/obj/item/stack/medical/bruise_pack = 200,
+					/obj/item/stack/medical/ointment = 200,
+					/obj/item/stack/medical/splint = 300,
+					/obj/item/stack/medical/advanced/bruise_pack = 400,
+					/obj/item/stack/medical/advanced/ointment = 400,
+					/obj/item/weapon/implant/core_implant/cruciform = 1000,
+					/obj/item/weapon/tool/knife/neotritual = 1000,
+					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 1500)
 
 /obj/machinery/vending/powermat
 	name = "Lonestar Power-Mat"

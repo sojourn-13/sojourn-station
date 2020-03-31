@@ -19,10 +19,12 @@
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
-	zoom_factor = 0.2
-	damage_multiplier = 1.1
-	recoil_buildup = 6
-	one_hand_penalty = 20
+	damage_multiplier = 1
+	penetration_multiplier = 1.5 //7.5 with regular lethal ammo, 15 with HV, seems legit
+	zoom_factor = 0.4
+	recoil_buildup = 3
+	one_hand_penalty = 5 //smg level
+
 	silencer_type = /obj/item/weapon/silencer
 
 	firemodes = list(
