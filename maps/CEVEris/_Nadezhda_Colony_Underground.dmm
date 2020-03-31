@@ -6874,7 +6874,7 @@
 "cCj" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9; pixel_y = 0},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/structure/cable/green{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/techmaint,/area/nadezhda/engineering/construction)
 "cCk" = (/obj/structure/bed/chair/wood,/turf/simulated/floor/carpet/oracarpet,/area/nadezhda/crew_quarters/bar)
 "cCl" = (/obj/structure/table/marble,/turf/simulated/floor/tiled/steel/gray_perforated,/area/nadezhda/crew_quarters/bar)
-"cCm" = (/obj/structure/table/marble,/obj/item/weapon/storage/fancy/cigarettes/professionals,/turf/simulated/floor/tiled/white/gray_platform,/area/nadezhda/crew_quarters/bar)
+"cCm" = (/obj/structure/table/marble,/obj/item/weapon/storage/fancy/cigarettes/federal,/turf/simulated/floor/tiled/white/gray_platform,/area/nadezhda/crew_quarters/bar)
 "cCn" = (/obj/structure/table/marble,/turf/simulated/floor/tiled/white/gray_platform,/area/nadezhda/crew_quarters/bar)
 "cCo" = (/obj/machinery/cryopod/robot{dir = 4},/obj/effect/floor_decal/industrial/outline/red,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/white/gray_platform,/area/nadezhda/rnd/chargebay)
 "cCp" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating/under,/area/nadezhda/maintenance/undergroundfloor2east)
