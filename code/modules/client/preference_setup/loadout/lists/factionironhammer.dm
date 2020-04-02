@@ -40,24 +40,24 @@
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/capinspector
-	display_name = "cap, ranger"
+/datum/gear/factionsecurity/capfield
+	display_name = "cap, field"
+	path = /obj/item/clothing/head/soft/sec2soft
+	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/cappatrolblack
+	display_name = "cap, patrol black"
 	path = /obj/item/clothing/head/seccorp
-	allowed_roles = list("Ranger")
+	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_head
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/capSecurity
-	display_name = "cap, security"
+/datum/gear/factionsecurity/cappatrolblue
+	display_name = "cap, patrol blue"
 	path = /obj/item/clothing/head/seccap
 	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_head
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/capfield
-	display_name = "cap, SEC field"
-	path = /obj/item/clothing/head/soft/sec2soft
-	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/capsarge
@@ -130,9 +130,9 @@
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/inspector
-	display_name = "inspectors uniform"
+	display_name = "uniform, patrol"
 	path = /obj/item/clothing/under/rank/inspector/uniform
-	allowed_roles = list("Ranger")
+	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
