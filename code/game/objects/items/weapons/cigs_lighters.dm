@@ -226,16 +226,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 // CIGARETTES //
 ////////////////
 /obj/item/clothing/mask/smokable/cigarette
-	name = "cigarette"
+	name = "Roach Eyes cigarette"
 	desc = "A roll of tobacco and nicotine."
-	icon_state = "cigoff"
+	icon_state = "roachoff"
 	throw_speed = 0.5
 	item_state = "cigoff"
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS | SLOT_MASK
 	attack_verb = list("burnt", "singed")
-	icon_on = "cigon"  //Note - these are in masks.dmi not in cigarette.dmi
-	icon_off = "cigoff"
+	icon_on = "roachon"  //Note - these are in masks.dmi not in cigarette.dmi
+	icon_off = "roachoff"
 	type_butt = /obj/item/trash/cigbutt
 	chem_volume = 20
 	smoketime = 360
@@ -246,6 +246,68 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	weldermes = "<span class='notice'>USER casually lights the NAME with FLAME.</span>"
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME.</span>"
 
+/obj/item/clothing/mask/smokable/cigarette/ishimura
+	name = "Ishimura Special cigarette"
+	icon_state = "ishimuraoff"
+	icon_on = "ishimuraon"
+	icon_off = "ishimuraoff"
+	type_butt = /obj/item/trash/cigbutt/ishimura
+
+/obj/item/clothing/mask/smokable/tannhauser
+	name = "Tannhauser Gate cigarette"
+	icon_state = "tannhauseroff"
+	icon_on = "tannhauseron"
+	icon_off = "tannhauseroff"
+	type_butt = /obj/item/trash/cigbutt/tannhauser
+
+/obj/item/clothing/mask/smokable/brouzouf
+	name = "Brouzouf Message cigarette"
+	icon_state = "brouzoufoff"
+	icon_on = "brouzoufon"
+	icon_off = "brouzoufoff"
+	type_butt = /obj/item/trash/cigbutt/brouzouf
+
+/obj/item/clothing/mask/smokable/frozen
+	name = "\improper Frozen Nova cigarette"
+	icon_state = "frozenoff"
+	icon_on = "frozenon"
+	icon_off = "frozenoff"
+	type_butt = /obj/item/trash/cigbutt/frozen
+
+/obj/item/clothing/mask/smokable/shodan
+	name = "\improper Shodans cigarette"
+	icon_state = "shodanoff"
+	icon_on = "shodanon"
+	icon_off = "shodanoff"
+	type_butt = /obj/item/trash/cigbutt/shodan
+
+/obj/item/clothing/mask/smokable/toha
+	name = "\improper TOHA Heavy Industries cigarette"
+	icon_state = "tohaoff"
+	icon_on = "tohaon"
+	icon_off = "tohaoff"
+	type_butt = /obj/item/trash/cigbutt/toha
+
+/obj/item/clothing/mask/smokable/fortress
+	name = "\improper Fortress Classic cigarette"
+	icon_state = "tohaoff"
+	icon_on = "tohaon"
+	icon_off = "tohaoff"
+	type_butt = /obj/item/trash/cigbutt/fortress
+
+/obj/item/clothing/mask/smokable/fortressred
+	name = "\improper Fortress RED menthols cigarette"
+	icon_state = "tohaoff"
+	icon_on = "tohaon"
+	icon_off = "tohaoff"
+	type_butt = /obj/item/trash/cigbutt/fortressred
+
+/obj/item/clothing/mask/smokable/fortressblue
+	name = "\improper Fortress BLU menthols packet"
+	icon_state = "tohaoff"
+	icon_on = "tohaon"
+	icon_off = "tohaoff"
+	type_butt = /obj/item/trash/cigbutt/fortressblue
 
 /obj/item/clothing/mask/smokable/cigarette
 	name = "\improper Cohiba Robusto cigar"
@@ -326,14 +388,50 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	quality_multiplier = 3
 
 /obj/item/trash/cigbutt
-	name = "cigarette butt"
+	name = "Roach Eyes cigarette butt"
 	desc = "A decayed cigarette butt."
 	icon = 'icons/inventory/face/icon.dmi'
-	icon_state = "cigbutt"
+	icon_state = "roachbutt"
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 	matter = list(MATERIAL_BIOMATTER = 1)
 	throwforce = 1
+
+/obj/item/trash/cigbutt/ishimura
+	name = "Ishimura Special cigarette butt"
+	icon_state = "ishimurabutt"
+
+/obj/item/trash/cigbutt/tannhauser
+	name = "Tannhauser Gate cigarette butt"
+	icon_state = "tannhauserbutt"
+
+/obj/item/trash/cigbutt/brouzouf
+	name = "Brouzouf Message cigarette butt"
+	icon_state = "brouzoufbutt"
+
+/obj/item/trash/cigbutt/shodan
+	name = "Shodans cigarette butt"
+	icon_state = "shodanbutt"
+
+/obj/item/trash/cigbutt/toha
+	name = "TOHA Heavy Industries cigarette butt"
+	icon_state = "tohabutt"
+
+/obj/item/trash/cigbutt/frozen
+	name = "Frozen Nova cigarette butt"
+	icon_state = "frozenbutt"
+
+/obj/item/trash/cigbutt/fortress
+	name = "Fortress Classic cigarette butt"
+	icon_state = "shodanbutt"
+
+/obj/item/trash/cigbutt/fortressred
+	name = "Fortress RED menthols cigarette butt"
+	icon_state = "tohabutt"
+
+/obj/item/trash/cigbutt/fortressblue
+	name = "Fortress BLU menthols cigarette butt"
+	icon_state = "frozenbutt"
 
 /obj/item/trash/cigbutt/New()
 	..()
