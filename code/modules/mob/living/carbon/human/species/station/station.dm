@@ -2,6 +2,7 @@
 	name = "Human"
 	name_plural = "Humans"
 	default_form = FORM_HUMAN
+	obligate_name = FALSE
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/punch, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "Humanity originated in the Sol system, and over the last five centuries has spread \
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
@@ -21,6 +22,7 @@
 
 // To Do: Get it to boot these qualities when selected, basically you can't spawn as these yet, add the +5 TGH/ROB and
 // add in the custom racial perk.
+/*
 /datum/species/sablekyne
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
@@ -68,3 +70,4 @@
 
 /datum/species/sablekyne/get_bodytype()
 	return FORM_SABLEKYNE
+*/

@@ -43,9 +43,9 @@ SUBSYSTEM_DEF(overlays)
 		count = 0 //so if we runtime on the Cut, we don't try again.
 		queue.Cut(1,c+1)
 
-	for (var/thing in queue)
+	for (var/atom/thing in queue)
 		count++
-		if(thing)
+		if(thing && (thing.flags & OVERLAY_QUEUED)) //Don't compile something if it's dequeued itself. -kfive
 			STAT_START_STOPWATCH
 			var/atom/A = thing
 			COMPILE_OVERLAYS(A)

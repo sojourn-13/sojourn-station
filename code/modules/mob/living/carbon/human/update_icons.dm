@@ -170,6 +170,9 @@ Please contact me on #coderbus IRC. ~Carn x
 		M.Scale(size_multiplier)
 		M.Translate(0, 16*(size_multiplier-1))
 		src.transform = M
+
+	COMPILE_OVERLAYS(src)
+
 	..()
 
 var/global/list/damage_icon_parts = list()
@@ -313,10 +316,10 @@ var/global/list/wings_icon_cache = list()
 		stand_icon.Blend(base_icon,ICON_OVERLAY)
 
 	//ears, wings and tail
-	update_marking()
-	update_ears()
-	update_tail()
-	update_wings()
+	update_marking(0)
+	update_ears(0)
+	update_tail(0)
+	update_wings(0)
 
 	appearance_test.Log("EXIT update_body()")
 	if(update_icons)

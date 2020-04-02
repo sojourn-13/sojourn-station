@@ -54,25 +54,25 @@
 
 	if(!LD) return; //TODO: analyze why things can have no level here.
 
-	var/local_z = z-(LD.original_level-1)
-	for(var/zi in 1 to local_z)
+	for(var/zi in LD.original_level to z)
+		var/relative_level = zi - LD.original_level + 1
 		for(var/mytype in subtypesof(/obj/screen/plane_master))
 			var/obj/screen/plane_master/instance = new mytype()
 
 			instance.plane = calculate_plane(zi,instance.plane)
 
-			plane_masters["[zi]-[mytype]"] = instance
+			plane_masters["[zi]-[relative_level]-[instance.plane]-[mytype]"] = instance
 			mymob.client.screen += instance
 			instance.backdrop(mymob)
 
 		for(var/pl in list(GAME_PLANE,FLOOR_PLANE))
-			if(zi < local_z)
-				var/zdiff = local_z-(zi-1)
+			if(zi < z)
+				var/zdiff = z-(zi-1)
 
 				var/obj/screen/openspace_overlay/oover = new
 				oover.plane = calculate_plane(zi,pl)
 				oover.alpha = min(255,zdiff*50 + 30)
-				openspace_overlays["[zi]-[oover.plane]"] = oover
+				openspace_overlays["[zi]-[relative_level]-[oover.plane]"] = oover
 				mymob.client.screen += oover
 
 

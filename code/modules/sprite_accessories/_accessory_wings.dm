@@ -98,7 +98,7 @@
 	icon_state = "liquidfirefly-eyestalks"
 
 /datum/sprite_accessory/wings/greentaj
-	name = "Green Taj Wings"
+	name = "Green Wings"
 	desc = ""
 	icon_state = "scree-wings"
 
@@ -139,11 +139,6 @@
 	icon_state = "nevrean_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
-
-/datum/sprite_accessory/wings/pharoah
-	name = "Pharoah Hound Tail"
-	desc = ""
-	icon_state = "shock"
 
 /datum/sprite_accessory/wings/spider_legs
 	name = "Spider Legs"
@@ -186,8 +181,3 @@
 	icon_state = "spines_short_membrane"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
-
-/datum/sprite_accessory/wings/xenomorph
-	name = "Xenomorph Backplate"
-	desc = ""
-	icon_state = "snag-backplate"
