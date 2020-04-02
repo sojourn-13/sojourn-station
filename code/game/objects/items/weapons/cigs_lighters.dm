@@ -253,61 +253,69 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "ishimuraoff"
 	type_butt = /obj/item/trash/cigbutt/ishimura
 
-/obj/item/clothing/mask/smokable/cigarette/tannhauser
+/obj/item/clothing/mask/smokable/tannhauser
 	name = "Tannhauser Gate cigarette"
 	icon_state = "tannhauseroff"
 	icon_on = "tannhauseron"
 	icon_off = "tannhauseroff"
 	type_butt = /obj/item/trash/cigbutt/tannhauser
 
-/obj/item/clothing/mask/smokable/cigarette/brouzouf
+/obj/item/clothing/mask/smokable/brouzouf
 	name = "Brouzouf Message cigarette"
 	icon_state = "brouzoufoff"
 	icon_on = "brouzoufon"
 	icon_off = "brouzoufoff"
 	type_butt = /obj/item/trash/cigbutt/brouzouf
 
-/obj/item/clothing/mask/smokable/cigarette/frozen
+/obj/item/clothing/mask/smokable/frozen
 	name = "\improper Frozen Nova cigarette"
 	icon_state = "frozenoff"
 	icon_on = "frozenon"
 	icon_off = "frozenoff"
 	type_butt = /obj/item/trash/cigbutt/frozen
 
-/obj/item/clothing/mask/smokable/cigarette/shodan
+/obj/item/clothing/mask/smokable/shodan
 	name = "\improper Shodans cigarette"
 	icon_state = "shodanoff"
 	icon_on = "shodanon"
 	icon_off = "shodanoff"
 	type_butt = /obj/item/trash/cigbutt/shodan
 
-/obj/item/clothing/mask/smokable/cigarette/toha
+/obj/item/clothing/mask/smokable/toha
 	name = "\improper TOHA Heavy Industries cigarette"
 	icon_state = "tohaoff"
 	icon_on = "tohaon"
 	icon_off = "tohaoff"
 	type_butt = /obj/item/trash/cigbutt/toha
 
-/obj/item/clothing/mask/smokable/cigarette/fortress
+/obj/item/clothing/mask/smokable/fortress
 	name = "\improper Fortress Classic cigarette"
 	icon_state = "tohaoff"
 	icon_on = "tohaon"
 	icon_off = "tohaoff"
 	type_butt = /obj/item/trash/cigbutt/fortress
 
-/obj/item/clothing/mask/smokable/cigarette/fortressred
+/obj/item/clothing/mask/smokable/fortressred
 	name = "\improper Fortress RED menthols cigarette"
 	icon_state = "tohaoff"
 	icon_on = "tohaon"
 	icon_off = "tohaoff"
 	type_butt = /obj/item/trash/cigbutt/fortressred
 
-/obj/item/clothing/mask/smokable/cigarette/fortressblue
+/obj/item/clothing/mask/smokable/fortressblue
 	name = "\improper Fortress BLU light packet"
 	icon_state = "tohaoff"
 	icon_on = "tohaon"
 	icon_off = "tohaoff"
 	type_butt = /obj/item/trash/cigbutt/fortressblue
+
+/obj/item/clothing/mask/smokable/cigarette
+	name = "\improper Cohiba Robusto cigar"
+	desc = "There's little more you could want from a cigar."
+	icon_state = "cigar2off"
+	icon_on = "cigar2on"
+	icon_off = "cigar2off"
+
 
 /obj/item/clothing/mask/smokable/cigarette/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
