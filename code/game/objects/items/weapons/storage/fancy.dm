@@ -187,11 +187,23 @@
 	icon_state = "IshimuraSpecialCigPack"
 	item_state = "IshimuraSpecialCigPack"
 
+/obj/item/weapon/storage/fancy/cigarettes/ishimura/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/ishimura(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
+
 /obj/item/weapon/storage/fancy/cigarettes/tannhauser
 	name = "\improper Tannhauser Gate packet"
 	desc = "A packet of six Tannhauser Gate cigarettes. An often overlooked brand of smokes that rarely sells well with anyone who isn't quite old or quite cheap. Tastes like burning rusted metal but survives due to being the number one brand for spacers."
 	icon_state = "TannhauserGateCigPacket"
 	item_state = "TannhauserGateCigPacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/tannhauser/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/tannhauser(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
 
 /obj/item/weapon/storage/fancy/cigarettes/brouzouf
 	name = "\improper Brouzouf Message packet"
@@ -199,17 +211,35 @@
 	icon_state = "BrouzoufMessageCigPacket"
 	item_state = "BrouzoufMessageCigPacket"
 
+/obj/item/weapon/storage/fancy/cigarettes/brouzouf/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/brouzouf(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
+
 /obj/item/weapon/storage/fancy/cigarettes/frozen
 	name = "\improper Frozen Nova packet"
 	desc = "A packet of six Frozen Nova cigarettes. A popular brand for frontier mercenaries and soldiers, often traded commonly by pirates for its deep throat scratching taste."
 	icon_state = "FrozenNovaCigPack"
 	item_state = "FrozenNovaCigPack"
 
+/obj/item/weapon/storage/fancy/cigarettes/frozen/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/frozen(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
+
 /obj/item/weapon/storage/fancy/cigarettes/shodan
 	name = "\improper Shodans packet"
 	desc = "A packet of six Shodans cigarettes. Smokes often used by those with cybernetic implants in body and brain as its said it relaxes the synapse connections, though it is commonly said that is just marketing speak."
-	icon_state = "Dpacket"
-	item_state = "Dpacket"
+	icon_state = "ShodansCigPacket"
+	item_state = "ShodansCigPacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/shodan/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/shodan(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
 
 /obj/item/weapon/storage/fancy/cigarettes/toha
 	name = "\improper TOHA Heavy Industries packet"
@@ -217,11 +247,23 @@
 	icon_state = "TOHAHeavyIndustriesCigPacket"
 	item_state = "TOHAHeavyIndustriesCigPacket"
 
+/obj/item/weapon/storage/fancy/cigarettes/toha/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/toha(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
+
 /obj/item/weapon/storage/fancy/cigarettes/fortress
 	name = "\improper Fortress Classic packet"
 	desc = "A packet of six Fortress Classic cigarettes. A standard classic pack that many smokers start with, often in the teen years, reasonably priced and well liked."
 	icon_state = "cigpacket"
 	item_state = "cigpacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/fortress/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/fortress(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
 
 /obj/item/weapon/storage/fancy/cigarettes/fortressred
 	name = "\improper Fortress RED menthols packet"
@@ -229,11 +271,23 @@
 	icon_state = "Dpacket"
 	item_state = "Dpacket"
 
+/obj/item/weapon/storage/fancy/cigarettes/fortressred/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/fortressred(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
+
 /obj/item/weapon/storage/fancy/cigarettes/fortressblue
 	name = "\improper Fortress BLU light packet"
 	desc = "A packet of six Fortress BLU light cigarettes. A standard classic pack for the smoker that wants to kick his habit at his own pace."
 	icon_state = "Bpacket"
 	item_state = "Bpacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/fortressblue/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/fortressblue(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
 
 /obj/item/weapon/storage/fancy/cigar
 	name = "cigar case"
