@@ -56,7 +56,7 @@
 		/obj/item/stack/rods = 4,
 		/obj/item/weapon/paper = 3,
 		/obj/item/remains/robot = 1,
-		/obj/item/trash/cigbutt = 3,
+		/obj/random/junk/cigbutt = 3,
 		/obj/effect/decal/cleanable/blood/gibs/robot = 1,
 		/obj/effect/decal/cleanable/blood/oil = 1,
 		/obj/effect/decal/cleanable/blood/oil/streak = 1,
@@ -82,3 +82,20 @@
 	name = "low chance random junk"
 	icon_state = "junk-black-low"
 	spawn_nothing_percentage = 60
+
+/obj/random/junk/cigbutt
+	name = "random cigarette butt"
+	icon_state = "junk-black"
+
+/obj/random/junk/cigbutt/item_to_spawn()
+	return pick(/obj/item/trash/cigbutt,\
+		/obj/item/trash/cigbutt/brouzouf,\
+		/obj/item/trash/cigbutt/cigarbutt,\
+		/obj/item/trash/cigbutt/fortress,\
+		/obj/item/trash/cigbutt/fortressblue,\
+		/obj/item/trash/cigbutt/fortressred,\
+		/obj/item/trash/cigbutt/frozen,\
+		/obj/item/trash/cigbutt/ishimura,\
+		/obj/item/trash/cigbutt/shodan,\
+		/obj/item/trash/cigbutt/tannhauser,\
+		/obj/item/trash/cigbutt/toha)
