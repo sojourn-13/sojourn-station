@@ -113,6 +113,13 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/tail/fennechc
+	name = "Fennec Tail"
+	desc = ""
+	icon_state = "fentail_hc_s"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/tail/fennecsune
 	name = "Fennecsune Tails"
 	desc = ""
@@ -124,27 +131,17 @@
 	icon_state = "ketraitail"
 	ani_state = "ketraitail_w"
 
-/datum/sprite_accessory/tail/fennechc
-	name = "Flatland Zorren Tail"
-	desc = ""
-	icon_state = "fentail_hc_s"
-	colored_layers = 1
-	blend = ICON_MULTIPLY
-
 /datum/sprite_accessory/tail/fluffdragon
 	name = "Fluffdragon Tail"
 	desc = ""
 	icon_state = "miria-fluffdragontail"
 
-/datum/sprite_accessory/tail/foxtailbeewings
-	name = "Fox Tail And Beewings"
+/datum/sprite_accessory/tail/foxhc
+	name = "Fox Tail"
 	desc = ""
-	icon_state = "reika"
-
-/datum/sprite_accessory/tail/greentaj
-	name = "Green Taj Tail"
-	desc = ""
-	icon_state = "scree"
+	icon_state = "foxtail_hc_s"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/satyr
 	name = "Goat Legs"
@@ -152,13 +149,6 @@
 	icon_state = "satyr"
 	blend = ICON_MULTIPLY
 	colored_layers = 1
-
-/datum/sprite_accessory/tail/foxhc
-	name = "Highlander Zorren Tail"
-	desc = ""
-	icon_state = "foxtail_hc_s"
-	colored_layers = 1
-	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/horse
 	name = "Horse Tail"
@@ -332,23 +322,8 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/tail/squirrel_orange
-	name = "Squirrel Tail, Orange"
-	desc = ""
-	icon_state = "squirrel-orange"
-
-/datum/sprite_accessory/tail/squirrel_red
-	name = "Squirrel Tail, Red"
-	desc = ""
-	icon_state = "squirrel-red"
-
-/datum/sprite_accessory/tail/stripeytail_brown
-	name = "Stripey Taj Tail"
-	desc = ""
-	icon_state = "stripeytail-brown"
-
 /datum/sprite_accessory/tail/stripey
-	name = "Stripey Taj Tail, Colorable"
+	name = "Stripey Taj Tail"
 	desc = ""
 	icon_state = "stripeytail"
 	colored_layers = 2
@@ -431,26 +406,6 @@
 	icon_state = "wolf"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
-
-/datum/sprite_accessory/tail/wolfblack
-	name = "Wolf Tail, Black"
-	desc = ""
-	icon_state = "wolf"
-
-/datum/sprite_accessory/tail/wolf_grey
-	name = "Wolf Tail, Grey"
-	desc = ""
-	icon_state = "wolf-grey"
-
-/datum/sprite_accessory/tail/wolf_green
-	name = "Wolf Tail, Green"
-	desc = ""
-	icon_state = "wolf-green"
-
-/datum/sprite_accessory/tail/wolfwise
-	name = "Wolf Tail, Wise"
-	desc = ""
-	icon_state = "wolf-wise"
 
 /datum/sprite_accessory/tail/unathihc
 	name = "Unathi Tail"
