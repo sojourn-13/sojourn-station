@@ -290,24 +290,32 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/smokable/cigarette/fortress
 	name = "\improper Fortress Classic cigarette"
-	icon_state = "tohaoff"
-	icon_on = "tohaon"
-	icon_off = "tohaoff"
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
 	type_butt = /obj/item/trash/cigbutt/fortress
 
 /obj/item/clothing/mask/smokable/cigarette/fortressred
 	name = "\improper Fortress RED menthols cigarette"
-	icon_state = "tohaoff"
-	icon_on = "tohaon"
-	icon_off = "tohaoff"
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
 	type_butt = /obj/item/trash/cigbutt/fortressred
 
 /obj/item/clothing/mask/smokable/cigarette/fortressblue
-	name = "\improper Fortress BLU light packet"
-	icon_state = "tohaoff"
-	icon_on = "tohaon"
-	icon_off = "tohaoff"
+	name = "\improper Fortress BLU light cigarette"
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
 	type_butt = /obj/item/trash/cigbutt/fortressblue
+
+/obj/item/clothing/mask/smokable/cigarette/khi
+	name = "\improper Kitsuhana Singularity cigarette"
+	icon_state = "khioff"
+	icon_on = "khion"
+	icon_off = "khioff"
+	type_butt = /obj/item/trash/cigbutt/khi
+	preloaded_reagents = list("mindbreaker" = 20)
 
 /obj/item/clothing/mask/smokable/cigarette/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
@@ -415,15 +423,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/trash/cigbutt/fortress
 	name = "Fortress Classic cigarette butt"
-	icon_state = "tohabutt"
+	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/fortressred
 	name = "Fortress RED menthols cigarette butt"
-	icon_state = "tohabutt"
+	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/fortressblue
 	name = "Fortress BLU light cigarette butt"
-	icon_state = "tohabutt"
+	icon_state = "cigbutt"
+
+/obj/item/trash/cigbutt/khi
+	name = "KHI cigarette butt"
+	icon_state = "khibutt"
 
 /obj/item/trash/cigbutt/New()
 	..()
@@ -622,3 +634,65 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(location)
 		location.hotspot_expose(700, 5)
 	return
+
+
+/obj/item/weapon/flame/lighter/zippo/black
+	name = "\improper holy Zippo lighter"
+	desc = "For lighting the holy spirit."
+	icon_state = "blackzippo"
+
+/obj/item/weapon/flame/lighter/zippo/blue
+	name = "\improper blue Zippo lighter"
+	icon_state = "bluezippo"
+
+/obj/item/weapon/flame/lighter/zippo/engraved
+	name = "\improper engraved Zippo lighter"
+	icon_state = "engravedzippo"
+	item_state = "zippo"
+
+/obj/item/weapon/flame/lighter/zippo/gold
+	name = "\improper golden Zippo lighter"
+	icon_state = "goldzippo"
+
+/obj/item/weapon/flame/lighter/zippo/moff
+	name = "\improper moth Zippo lighter"
+	desc = "Too cute to be a Tymisian."
+	icon_state = "moffzippo"
+
+/obj/item/weapon/flame/lighter/zippo/red
+	name = "\improper red Zippo lighter"
+	icon_state = "redzippo"
+
+/obj/item/weapon/flame/lighter/zippo/ironic
+	name = "\improper ironic Zippo lighter"
+	desc = "How funny."
+	icon_state = "ironiczippo"
+
+/obj/item/weapon/flame/lighter/zippo/capitalist
+	name = "\improper capitalist Zippo lighter"
+	desc = "Made of gold and obsidian, this is truly not worth however much you spent on it."
+	icon_state = "cappiezippo"
+
+/obj/item/weapon/flame/lighter/zippo/communist
+	name = "\improper communist Zippo lighter"
+	desc = "The preferred lighter for degenerates, idiots, and losers."
+	icon_state = "commiezippo"
+
+/obj/item/weapon/flame/lighter/zippo/royal
+	name = "\improper royal Zippo lighter"
+	desc = "An incredibly fancy lighter, gilded and covered in the color of royalty."
+	icon_state = "royalzippo"
+
+/obj/item/weapon/flame/lighter/zippo/gonzo
+	name = "\improper Gonzo Zippo lighter"
+	desc = "A lighter with the iconic Gonzo fist painted on it."
+	icon_state = "gonzozippo"
+
+/obj/item/weapon/flame/lighter/zippo/rainbow
+	name = "\improper rainbow Zippo lighter"
+	icon_state = "rainbowzippo"
+
+/obj/item/weapon/flame/lighter/zippo/bullet
+	name = "\improper bullet lighter"
+	desc = "A lighter fashioned out of an old bullet casing."
+	icon_state = "bulletlighter"

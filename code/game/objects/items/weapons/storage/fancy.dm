@@ -288,6 +288,17 @@
 		new /obj/item/clothing/mask/smokable/cigarette/fortressblue(src)
 	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
+/obj/item/weapon/storage/fancy/cigarettes/khi
+	name = "\improper Kitsuhana Singularity packet"
+	desc = "A packet of six Kitsuhana Singularity cigarettes. A brand made by LSD abusers who overdosed one night and invented these smokes, still finds popularity among retards with no sense of quality. WARNING: Contains the kind of chemicals needed to enjoy this type of brand."
+	icon_state = "KhiCigPacket"
+	item_state = "KhiCigPacket"
+
+/obj/item/weapon/storage/fancy/cigarettes/khi/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/khi(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
 
 /obj/item/weapon/storage/fancy/cigar
 	name = "cigar case"

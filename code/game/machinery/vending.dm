@@ -1162,7 +1162,7 @@
 /obj/machinery/vending/cigarette
 	name = "Smooth Cigarettes" //OCD had to be uppercase to look nice with the new formating
 	desc = "If you want to get cancer, might as well do it in style!"
-	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!;Who belives in Cancer?;Cancer? Better get it in style!;I'm willing to bet you that those Scientists did not smoke Space Cigs!;Don't stop smoking now, You'll get fat!"
+	product_slogans = "Many brands, many lighters, find the right one for you.;But it wasn't REAL lung cancer!;Smoke'em if you got'em!;Don't believe the reports - smoke today!;Only the best chemistry goes in our brands, ignore those doctors!;Don't stop smoking now, You'll get fat!"
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs.;Cigars avalible for premium customers.;Best taste in space!"
 	vend_delay = 34
 	icon_state = "cigs"
@@ -1176,10 +1176,24 @@
 				/obj/item/weapon/storage/fancy/cigarettes/fortress = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 7,
+				/obj/item/weapon/storage/fancy/cigar = 2,
 				/obj/item/weapon/storage/box/matches = 10,
 				/obj/item/weapon/flame/lighter/random = 4,
-				/obj/item/weapon/flame/lighter/zippo = 4,)
-	contraband = list(/obj/item/weapon/storage/fancy/cigar = 5)
+				/obj/item/weapon/flame/lighter/zippo = 4,
+				/obj/item/weapon/flame/lighter/zippo/blue = 4,
+				/obj/item/weapon/flame/lighter/zippo/red = 4,
+				/obj/item/weapon/flame/lighter/zippo/gold = 4,
+				/obj/item/weapon/flame/lighter/zippo/rainbow = 4,
+				/obj/item/weapon/flame/lighter/zippo/engraved = 4,
+				/obj/item/weapon/flame/lighter/zippo/black = 4,
+				/obj/item/weapon/flame/lighter/zippo/moff = 4,
+				/obj/item/weapon/flame/lighter/zippo/ironic = 4,
+				/obj/item/weapon/flame/lighter/zippo/capitalist = 4,
+				/obj/item/weapon/flame/lighter/zippo/royal = 4,
+				/obj/item/weapon/flame/lighter/zippo/gonzo = 4,
+				/obj/item/weapon/flame/lighter/zippo/bullet = 4,)
+	contraband = list(/obj/item/weapon/flame/lighter/zippo/communist = 2,
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 2)
 	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 80,
 				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 140,
 				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 90,
@@ -1192,7 +1206,22 @@
 				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 100,
 				/obj/item/weapon/storage/box/matches = 25,
 				/obj/item/weapon/flame/lighter/random = 50,
-				/obj/item/weapon/flame/lighter/zippo = 100)
+				/obj/item/weapon/flame/lighter/zippo = 100,
+				/obj/item/weapon/flame/lighter/zippo/blue = 100,
+				/obj/item/weapon/flame/lighter/zippo/red = 100,
+				/obj/item/weapon/flame/lighter/zippo/gold = 100,
+				/obj/item/weapon/flame/lighter/zippo/rainbow = 100,
+				/obj/item/weapon/flame/lighter/zippo/engraved = 100,
+				/obj/item/weapon/flame/lighter/zippo/black = 100,
+				/obj/item/weapon/flame/lighter/zippo/moff = 100,
+				/obj/item/weapon/flame/lighter/zippo/ironic = 100,
+				/obj/item/weapon/flame/lighter/zippo/capitalist = 100,
+				/obj/item/weapon/flame/lighter/zippo/royal = 100,
+				/obj/item/weapon/flame/lighter/zippo/gonzo = 100,
+				/obj/item/weapon/flame/lighter/zippo/bullet = 100,
+				/obj/item/weapon/flame/lighter/zippo/communist = 500,
+				/obj/item/weapon/storage/fancy/cigar = 500,
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 500)
 
 /obj/machinery/vending/medical
 	name = "MiniPharma Plus"
