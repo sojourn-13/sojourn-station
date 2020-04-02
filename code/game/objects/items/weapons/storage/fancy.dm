@@ -208,8 +208,8 @@
 /obj/item/weapon/storage/fancy/cigarettes/shodan
 	name = "\improper Shodans packet"
 	desc = "A packet of six Shodans cigarettes. Smokes often used by those with cybernetic implants in body and brain as its said it relaxes the synapse connections, though it is commonly said that is just marketing speak."
-	icon_state = "Dpacket"
-	item_state = "Dpacket"
+	icon_state = "ShodansCigPacket"
+	item_state = "ShodansCigPacket"
 
 /obj/item/weapon/storage/fancy/cigarettes/toha
 	name = "\improper TOHA Heavy Industries packet"
