@@ -166,7 +166,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/flask/barflask,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/patron,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/goldschlager,
-					/obj/item/weapon/storage/fancy/cigarettes/oblast,
+					/obj/item/weapon/storage/fancy/cigarettes/fortress,
 					/obj/item/weapon/lipstick/jade,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale,
