@@ -303,7 +303,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt/fortressred
 
 /obj/item/clothing/mask/smokable/fortressblue
-	name = "\improper Fortress BLU menthols packet"
+	name = "\improper Fortress BLU light packet"
 	icon_state = "tohaoff"
 	icon_on = "tohaon"
 	icon_off = "tohaoff"
@@ -423,15 +423,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/trash/cigbutt/fortress
 	name = "Fortress Classic cigarette butt"
-	icon_state = "shodanbutt"
+	icon_state = "tohabutt"
 
 /obj/item/trash/cigbutt/fortressred
 	name = "Fortress RED menthols cigarette butt"
 	icon_state = "tohabutt"
 
 /obj/item/trash/cigbutt/fortressblue
-	name = "Fortress BLU menthols cigarette butt"
-	icon_state = "frozenbutt"
+	name = "Fortress BLU light cigarette butt"
+	icon_state = "tohabutt"
 
 /obj/item/trash/cigbutt/New()
 	..()
