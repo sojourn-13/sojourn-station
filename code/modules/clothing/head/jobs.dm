@@ -85,15 +85,14 @@
 	desc = "A dark and imposing black beret."
 	icon_state = "beretblack"
 
-
 /obj/item/clothing/head/seccap
-	name = "security cap"
+	name = "blue patrol cap"
 	desc = "A blue patrol cap worn by security personnel."
 	icon_state = "secsoft"
 
 /obj/item/clothing/head/seccorp
-	name = "ranger inspector cap"
-	desc = "A black field cap worn by ranger."
+	name = "black patrol cap"
+	desc = "A black patrol cap worn by security personnel."
 	icon_state = "corpsoft"
 
 //Medical

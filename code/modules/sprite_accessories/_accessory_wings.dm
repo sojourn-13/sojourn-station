@@ -33,13 +33,8 @@
 	desc = ""
 	icon_state = "citheronia_wings"
 
-/datum/sprite_accessory/wings/cyberdragon_red
-	name = "Cyberdragon Wings"
-	desc = ""
-	icon_state = "cyberdragon_red_s"
-
 /datum/sprite_accessory/wings/cyberdragon
-	name = "Cyberdragon Wings, Colorable"
+	name = "Cyberdragon Wings"
 	desc = ""
 	icon_state = "cyberdragon_s"
 	colored_layers = 1
@@ -116,13 +111,8 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/Moth_royal
-	name = "Moth Wings, Royal"
-	desc = ""
-	icon_state = "Moth_royal"
-
 /datum/sprite_accessory/wings/Moth_royal_colorable
-	name = "Moth Wings, Royal Colorable"
+	name = "Moth Wings"
 	desc = ""
 	icon_state = "Moth_royal_colorable"
 	colored_layers = 1
@@ -132,6 +122,8 @@
 	name = "Moth Wings, With Antenna"
 	desc = ""
 	icon_state = "moth_full"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/nevrean
 	name = "Nevrean Wings/Fantail"
