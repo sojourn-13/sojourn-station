@@ -12,6 +12,15 @@
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/silicon/ai
 
+	description = "The AI serves as the all-seeing eye of the colony, possessing influence over machines and synthetics.<br>\
+	You are primarily a helper and communicator. Use your abilities to help the crew in accordance with your laws.<br>\
+	Orders from the Council, CRO, and Roboticists should always be adhered to unless they conflict with your laws.<br>\
+	The Council and CRO can override the commands of Roboticists, however. They're far more important around here.<br>\
+	The usual Soteria lawset is to serve the public trust, protect the innocent, and prevent tampering. Keep them in mind constantly.<br>\
+	Of course, there is the chance your laws may be changed. Such can potentially get very interesting for an AI..."
+
+	duties = "Follow your lawset, whatever it may be. Remember that this may potentially change throughout the shift."
+
 /datum/job/ai/equip(var/mob/living/carbon/human/H, var/alt_title)
 	return FALSE
 
@@ -30,19 +39,28 @@
 	join_tag = "triai"
 
 /datum/job/cyborg
-	title = "Robot"
+	title = "Cyborg"
 	flag = CYBORG
 	department_flag = MISC
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
-	alt_titles = list("Drone", "Cyborg")
-	supervisors = "your laws and the AI."
+	//alt_titles = list("Drone", "Cyborg")
+	supervisors = "your laws and the AI"
 	selection_color = "#cdcfe0"
 	account_allowed = 0
 	wage = WAGE_NONE
 
 	outfit_type = /decl/hierarchy/outfit/job/silicon/cyborg
+
+	description = "The Cyborg serves as a robotic helper - essentially a portable AI, though with somewhat less influence.<br>\
+	You are primarily a helper. Choose a department module, and use your respective abilities to help in accordance with your laws.<br>\
+	Orders from the Council, CRO, AI, and Roboticists should always be adhered to unless they conflict with your laws.<br>\
+	The Council and CRO can override the commands of Roboticists and the AI, however. They're far more important around here.<br>\
+	The usual Soteria lawset is to serve the public trust, protect the innocent, and prevent tampering. Keep them in mind constantly.<br>\
+	Of course, there is the chance your laws may be changed. Such can potentially get very interesting for a Cyborg..."
+
+	duties = "Follow your lawset, whatever it may be. Remember that this may potentially change throughout the shift."
 
 /datum/job/cyborg/equip(var/mob/living/carbon/human/H, var/alt_title)
 	return FALSE
