@@ -200,7 +200,7 @@
 
 /datum/sprite_accessory/hair/elize
 	name = "Elize"
-	icon_state = "hair_elize"
+	icon_state = "elize"
 
 /datum/sprite_accessory/hair/emo
 	name = "Emo"
@@ -216,7 +216,7 @@
 
 /datum/sprite_accessory/hair/familyman
 	name = "Family Man"
-	icon_state = "thefamilyman"
+	icon_state = "familyman"
 
 /datum/sprite_accessory/hair/father
 	name = "Father"
@@ -232,7 +232,7 @@
 
 /datum/sprite_accessory/hair/flipped
 	name = "Flipped"
-	icon_state = "hair_flipped"
+	icon_state = "flipped"
 
 /datum/sprite_accessory/hair/floorlength
 	name = "Floorlength Braid"
@@ -256,7 +256,7 @@
 
 /datum/sprite_accessory/hair/gumshoe
 	name = "Gumshoe"
-	icon_state = "hair_gumshoe"
+	icon_state = "gumshoe"
 
 /datum/sprite_accessory/hair/halfbang
 	name = "Half-Banged"
@@ -308,7 +308,7 @@
 
 /datum/sprite_accessory/hair/kanaya
 	name = "Kanaya"
-	icon_state = "hair_kanaya"
+	icon_state = "kanaya"
 
 /datum/sprite_accessory/hair/kare
 	name = "Kare"
@@ -337,6 +337,10 @@
 /datum/sprite_accessory/hair/longeralt2
 	name = "Long 2"
 	icon_state = "longeralt2"
+
+/datum/sprite_accessory/hair/longeralt3
+	name = "Long 3"
+	icon_state = "longeralt3"
 
 /datum/sprite_accessory/hair/longest
 	name = "Longer"
@@ -404,11 +408,11 @@
 
 /datum/sprite_accessory/hair/mia
 	name = "Mia"
-	icon_state = "hair_mia"
+	icon_state = "mia"
 
 /datum/sprite_accessory/hair/miles
 	name = "Miles"
-	icon_state = "hair_miles"
+	icon_state = "miles"
 
 /datum/sprite_accessory/hair/modern
 	name = "Modern"
@@ -670,7 +674,7 @@
 
 /datum/sprite_accessory/hair/vivi
 	name = "Vivi"
-	icon_state = "hair_vivi"
+	icon_state = "vivi"
 
 /datum/sprite_accessory/hair/volaju
 	name = "Volaju"
