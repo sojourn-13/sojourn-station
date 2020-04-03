@@ -342,7 +342,7 @@
 	if(job.alt_titles)
 		job_desc += "<i><b>Alternative titles:</b> [english_list(job.alt_titles)].</i>"
 	if(job.department)
-		job_desc += "<b>Department:</b> [job.department]. <br>"
+		job_desc += "<b>Department:</b> [job.department]. <b>Difficulty:</b> [job.difficulty]<br>"
 		if(job.head_position)
 			job_desc += "You are in charge of this department."
 	job_desc += "<br>"

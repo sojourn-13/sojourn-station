@@ -1,12 +1,14 @@
 /datum/job/ai
 	title = "AI"
 	flag = AI
+	department = "Station-Bound"
 	department_flag = COMMAND
 	faction = MAP_FACTION
 	total_positions = 0 // Not used for AI, see is_position_available below and modules/mob/living/silicon/ai/latejoin.dm
 	spawn_positions = 1
 	selection_color = "#b5b7cb"
 	supervisors = "your laws and the Soteria Research Overseer"
+	difficulty = "Extremely Hard."
 	req_admin_notify = 1
 	account_allowed = 0
 	wage = WAGE_NONE
@@ -41,12 +43,14 @@
 /datum/job/cyborg
 	title = "Cyborg"
 	flag = CYBORG
+	department = "Station-Bound"
 	department_flag = MISC
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
 	//alt_titles = list("Drone", "Cyborg")
 	supervisors = "your laws and the AI"
+	difficulty = "Medium to Hard."
 	selection_color = "#cdcfe0"
 	account_allowed = 0
 	wage = WAGE_NONE
