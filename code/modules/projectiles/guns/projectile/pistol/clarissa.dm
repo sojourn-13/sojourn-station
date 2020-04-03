@@ -1,11 +1,11 @@
 /obj/item/weapon/gun/projectile/clarissa
-	name = "\"Clarissa\" pistol"
-	desc = "A small, easily concealable, but somewhat underpowered gun. Uses .35 rounds."
+	name = "HS HG 9x19 \"Clarissa\""
+	desc = "A small, easily concealable, but somewhat underpowered gun. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
 	icon_state = "clarissa"
 	item_state = "clarissa"
 	w_class = ITEM_SIZE_SMALL
-	caliber = CAL_PISTOL
+	caliber = "9mm"
 	can_dual = 1
 	silenced = 0
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
@@ -40,8 +40,8 @@
 
 
 /obj/item/weapon/gun/projectile/clarissa/makarov
-	name = "\"Makarov\" pistol"
-	desc = "Old-designed pistol used by space communists. Small and easily concealable. Uses .35 rounds."
+	name = "Excelsior 9x19 \"Makarov\""
+	desc = "Old-designed pistol used by space communists. Small and easily concealable. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/makarov.dmi'
 	icon_state = "makarov"
 	damage_multiplier = 1.2

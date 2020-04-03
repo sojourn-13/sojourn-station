@@ -1,17 +1,18 @@
-/obj/item/weapon/gun/projectile/firefly
-	name = "\"Firefly\" pistol"
-	desc = "A simple and reliable sidearm produced by Holland & Sullivan Arms for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses .35 Auto."
-	icon = 'icons/obj/guns/projectile/firefly.dmi'
-	icon_state = "firefly"
-	item_state = "firefly"
+/obj/item/weapon/gun/projectile/IH_sidearm
+	name = "HS HG \"Paco\""
+	desc = "A modern and reliable sidearm for the soldier in the field. Commonly issued as a sidearm by police forces and troopers. Uses 10mm rounds."
+	icon = 'icons/obj/guns/projectile/IH_sidearm.dmi'
+	icon_state = "IH_sidearm"
+	item_state = "IH_sidearm"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = CAL_PISTOL
+	caliber = "10mm"
 	can_dual = 1
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	ammo_type = "/obj/item/ammo_casing/a10mm"
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	magazine_type = /obj/item/ammo_magazine/hpistol
+	magazine_type = /obj/item/ammo_magazine/a10mm
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_PLASTIC = 4)
 	price_tag = 1500
@@ -19,10 +20,10 @@
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	silencer_type = /obj/item/weapon/silencer
 	damage_multiplier = 1.1
-	recoil_buildup = 15
+	recoil_buildup = 20
 	one_hand_penalty = 10
 
-/obj/item/weapon/gun/projectile/firefly/update_icon()
+/obj/item/weapon/gun/projectile/IH_sidearm/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -41,6 +42,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/firefly/Initialize()
+/obj/item/weapon/gun/projectile/IH_sidearm/Initialize()
 	. = ..()
 	update_icon()

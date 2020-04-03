@@ -1,7 +1,8 @@
 /obj/item/weapon/gun/projectile/rpg
-	name = "RPG"
-	desc = "A simple, reloadable launcher with roots back to the beginings of anti-armor warfare. \
-			This particular variant is sligtly less devastating, however that's a small price to pay for negligible back-blast."
+	name = "RPG-7"
+	desc = "A modified ancient rocket-propelled grenade launcher, this design is centuries old, but well preserved. \
+			Modification have altered the gun mechanism to make it much more compact, but sligtly less devastating in close quarters while removing potential backfire. \
+			Their priming and proplusion was altered too for more robust speed, so it has strong recoil."
 	icon = 'icons/obj/guns/projectile/rocket.dmi'
 	icon_state = "launcher" //placeholder, needs new sprites
 	item_state = "launcher" //placeholder, needs new sprites
@@ -9,7 +10,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
-	caliber = CAL_ROCKET
+	caliber = "rocket"
 	fire_sound = 'sound/effects/bang.ogg' //placeholder, needs new sound
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 5)
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5)

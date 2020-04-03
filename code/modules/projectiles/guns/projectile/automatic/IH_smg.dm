@@ -1,33 +1,30 @@
-/obj/item/weapon/gun/projectile/automatic/wirbelwind
-	name = "\"Wirbelwind\" SMG"
-	desc = "A compact and lightweight law enforcement PDW produced by Seinemetall. Uses .35 Auto."
-	icon = 'icons/obj/guns/projectile/wirbelwind.dmi'
-	icon_state = "wirbelwind"
-	item_state = "wirbelwind"
+/obj/item/weapon/gun/projectile/automatic/IH_smg
+	name = "HS SMG 9x19 \"Straylight\""
+	desc = "A compact and lightweight submachinegun that sprays small rounds rapidly. Sacrifices a fire selector to cut mass, so it requires a careful hand. Uses 9mm rounds."
+	icon = 'icons/obj/guns/projectile/IH_smg.dmi'
+	icon_state = "IH_smg"
+	item_state = "IH_smg"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = CAL_PISTOL
+	caliber = "9mm"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
+	ammo_type = "/obj/item/ammo_casing/c9mm"
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_SMG
-	magazine_type = /obj/item/ammo_magazine/smg
+	magazine_type = /obj/item/ammo_magazine/smg9mm
 	auto_eject = 1
-	can_dual = 1
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
-	price_tag = 3000 //good smg with normal recoil and silencer possibility
+	price_tag = 2500 //good smg with normal recoil and silencer possibility
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	damage_multiplier = 0.8
+	damage_multiplier = 0.7
 	recoil_buildup = 2.5
 	one_hand_penalty = 20
 	silencer_type = /obj/item/weapon/silencer
 
 	firemodes = list(
-		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
-		FULL_AUTO_600
-		)
+		FULL_AUTO_600)
 
-/obj/item/weapon/gun/projectile/automatic/wirbelwind/update_icon()
+/obj/item/weapon/gun/projectile/automatic/IH_smg/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -47,6 +44,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/wirbelwind/Initialize()
+/obj/item/weapon/gun/projectile/automatic/IH_smg/Initialize()
 	. = ..()
 	update_icon()

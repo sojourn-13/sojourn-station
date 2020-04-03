@@ -1,20 +1,21 @@
 /obj/item/weapon/gun/projectile/automatic/ak47
-	name = "Excelsior \"Kalashnikov\" carbine"
+	name = "Excelsior 7.62x39 AKMS"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-		 A poor copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in 6.5x39mm. If it won't fire, percussive maintenance should get it working again. \
+		 This is a copy of an ancient semi-automatic rifle chambered for 7.62x39. If it won't fire, percussive maintenance should get it working again. \
 		 It is known for its easy maintenance and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents. \
-		 This is an abysmal, printed copy."
+		 This is a high-quality copy, which has an automatic fire mode."
 	icon = 'icons/obj/guns/projectile/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
 	var/item_suffix = ""
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_LRIFLE
+	caliber = "a762"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_ROCKIN
+	mag_well = MAG_WELL_AK|MAG_WELL_CIVI_RIFLE
+	magazine_type = /obj/item/ammo_magazine/c762_long
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 3500
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
@@ -27,6 +28,7 @@
 	firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
+		BURST_5_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/ak47/update_icon()
@@ -52,19 +54,19 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/ak47/sa
-	name = "\"Kalashnikov\" carbine"
+/obj/item/weapon/gun/projectile/automatic/ak47/fs
+	name = "SA AR 7.62x39 \"Kalashnikov\""
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-		 A poor copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in 6.5x39mm. If it won't fire, percussive maintenance should get it working again. \
+		 This is a copy of an ancient semi-automatic rifle chambered for 7.62x39. If it won't fire, percussive maintenance should get it working again. \
 		 It is known for its easy maintenance, and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents. \
-		 This particular copy is fitted with a burst fire trigger group."
+		 This copy, in fact, is a reverse-engineered poor-quality copy of a more perfect copy of an ancient rifle, therefore it can fire only in bursts instead of auto-fire."
 	icon_state = "AK_wood"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 3000
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	firemodes = list(
 	SEMI_AUTO_NODELAY,
-	BURST_3_ROUND
+	BURST_5_ROUND
 	)
 
 	item_suffix = "_wood"

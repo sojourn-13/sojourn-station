@@ -1,16 +1,17 @@
 /obj/item/weapon/gun/projectile/shotgun/pug
-	name = "\"Pug\" auto-shotgun"
-	desc = "It's magazine-fed shotgun designed for close quarters combat, nicknamed 'Striker' by boarding parties. \
+	name = "SA SG \"Bojevic\""
+	desc = "Semi-auto, half polymer, all serbian. \
+			It's magazine-fed shotgun designed for close quarters combat, nicknamed 'Striker' by boarding parties. \
 			Robust and reliable design allows you to swap magazines on the go and dump as many shells at your foes as you want... \
 			if you could manage recoil, of course. Compatible only with special M12 8-round drum magazines."
 	icon = 'icons/obj/guns/projectile/pug.dmi'
 	icon_state = "pug"
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_SHOTGUN
+	caliber = "shotgun"
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_GENERIC
+	mag_well = MAG_WELL_CIVI_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 5000
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
@@ -37,8 +38,8 @@
 	if(wielded)//I hate this snowflake bullshit but I don't feel like messing with it.
 		if(ammo_magazine)
 			item_state = wielded_item_state + "_mag"
-		else
-			item_state = wielded_item_state
+		else 
+			item_state = wielded_item_state		
 	else
 		item_state = initial(item_state)
 

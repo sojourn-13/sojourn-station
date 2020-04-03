@@ -8,8 +8,9 @@
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = 0
 	max_shells = 96
-	caliber = CAL_HRIFLE
+	caliber = "a762"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	ammo_type = "/obj/item/ammo_casing/a762"
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PAN
 	tac_reloads = FALSE

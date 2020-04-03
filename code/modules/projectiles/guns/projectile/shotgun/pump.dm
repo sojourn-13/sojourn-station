@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/shotgun/pump
-	name = "\"Grizzly\" shotgun"
-	desc = "A common open-source pump-action shotgun, a bastard child of the three primary pump shotguns on the market, all rolled together once their patents expired."
+	name = "HS SG \"Kammerer\""
+	desc = "When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds."
 	icon = 'icons/obj/guns/projectile/shotgun.dmi'
 	icon_state = "shotgun"
 	item_state = "shotgun"
@@ -9,7 +9,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
-	caliber = CAL_SHOTGUN
+	caliber = "shotgun"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	load_method = SINGLE_CASING
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
@@ -17,8 +17,7 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
-	price_tag = 1000
-	damage_multiplier = 1.3
+	price_tag = 2200
 	recoil_buildup = 20
 	one_hand_penalty = 15 //full sized shotgun level
 
