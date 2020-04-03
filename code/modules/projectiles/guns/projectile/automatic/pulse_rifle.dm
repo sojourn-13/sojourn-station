@@ -1,8 +1,8 @@
 //It's a good day to die
 
 /obj/item/weapon/gun/projectile/automatic/dallas
-	name = "PAR 10x24 \"Dallas\""
-	desc = "The Dallas is a pulse-action air-cooled automatic assault rifle made by an unknown manufacturer. This weapon is very rare, but deadly efficient. \
+	name = "Pulse Rifle"
+	desc = "A pulse-action air-cooled, caseless, automatic assault rifle made by an unknown manufacturer. This weapon is very rare, but deadly efficient. \
 		It's used by elite mercenaries, assassins, or bald marines. Makes you feel like a space marine when you hold it."
 	icon = 'icons/obj/guns/projectile/dallas.dmi'
 	icon_state = "dallas"
@@ -12,7 +12,7 @@
 	caliber = "10x24"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_CIVI_RIFLE
+	mag_well = MAG_WELL_GENERIC
 	auto_eject = 1
 	magazine_type = /obj/item/ammo_magazine/c10x24
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 15)
@@ -21,12 +21,12 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/m41_reload.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/m41_cocked.ogg'
-	damage_multiplier = 1.7
+	damage_multiplier = 1
 	recoil_buildup = 6
 	one_hand_penalty = 10 //heavy, but very advanced, so bullpup rifle level despite not being bullpup
 
 	firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)

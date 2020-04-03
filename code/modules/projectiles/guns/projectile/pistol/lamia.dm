@@ -1,12 +1,11 @@
 /obj/item/weapon/gun/projectile/lamia
-	name = "HS HG .44 \"Lamia\""
-	desc = "The \"Lamia\", a heavy pistol of high ranking enforcers. Uses .44 rounds."
+	name = "\"Lamia\" magnum pistol"
+	desc = "The \"Lamia\", a heavy pistol based on the core mechanism of the \"Naga\" heavy pistol, simplified for law enforcement and exploration in hostile environments. Produced by Holland & Sullivan Arms. Uses .40 Magnum rounds."
 	icon = 'icons/obj/guns/projectile/lamia.dmi'
 	icon_state = "lamia"
 	item_state = "lamia"
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
-	caliber = ".44"
-	ammo_mag = "mag_cl44"
+	caliber = CAL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	can_dual = 1
 	load_method = MAGAZINE
@@ -34,20 +33,20 @@
 		icon_state = initial(icon_state) + "_full"
 
 /obj/item/weapon/gun/projectile/lamia/scoped_lamia
-	name = "HS HG .44 \"Lamia\" Advanced"
-	desc = "HS HG .44 \"Lamia\", a heavy pistol fit for high ranking enforcers, fitted with a smart-linked optic and stabilizer. Uses .44 rounds."
+	name = "\"Lamia\" advanced magnum pistol"
+	desc = "H&S HG .40 \"Lamia\" Based on the \"Naga\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .40 Magnum rounds."
 	icon_state = "scoped_lamia"
 	item_state = "scoped_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5)
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	zoom_factor = 0.4
-	recoil_buildup = 0.7
+	recoil_buildup = 15
 	price_tag = 2500
 
 /obj/item/weapon/gun/projectile/lamia/dark_lamia
-	name = "HS HG .44 \"Naga\""
-	desc = "The \"Naga\", a heavy pistol given only to SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .44 rounds."
+	name = "\"Naga\" advanced magnum pistol"
+	desc = "The \"Naga\", a heavy pistol manufactured on Mars and given only to SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .40 Magnum rounds."
 	icon_state = "dark_lamia"
 	item_state = "dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)

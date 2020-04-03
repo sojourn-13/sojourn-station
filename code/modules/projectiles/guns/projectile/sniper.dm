@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/heavysniper
-	name = "SA AMR \"Hristov\""
-	desc = "A portable anti-armour rifle, fitted with a scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing 14.5mm shells. Alt click it to access the chamber."
+	name = "Anti-Materiel Rifle"
+	desc = "A heavy anti-material rifle fitted with a scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing .60-06 shells."
 	icon = 'icons/obj/guns/projectile/heavysniper.dmi'
 	icon_state = "heavysniper"
 	item_state = "heavysniper"
@@ -8,17 +8,17 @@
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
-	caliber = "14.5mm"
+	caliber = CAL_ANTIM
 	recoil_buildup = 75
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING
 	max_shells = 1
-	ammo_type = /obj/item/ammo_casing/a145
+	ammo_type = /obj/item/ammo_casing/antim
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20)
 	price_tag = 5000
-	one_hand_penalty = 10
+	one_hand_penalty = 100
 	var/bolt_open = 0
 	var/item_suffix = ""
 	zoom_factor = 2.0
