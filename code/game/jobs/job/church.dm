@@ -7,6 +7,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Nadezhda Council"
+	difficulty = "Medium."
 	selection_color = "#ecd37d"
 	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 25)
 	ideal_character_age = 40
@@ -63,6 +64,7 @@
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Prime"
+	difficulty = "Easy to Medium."
 	selection_color = "#ecd37d"
 	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
 	access = list(access_morgue, access_crematorium, access_maint_tunnels, access_hydroponics)

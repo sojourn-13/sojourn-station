@@ -15,6 +15,7 @@
 	var/supervisors = null					// Supervisors, who this person answers to directly
 	var/selection_color = "#ffffff"			// Selection screen color
 	var/list/alt_titles
+	var/difficulty = "Null"
 
 	var/req_admin_notify					// If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
 	var/department = null					// Does this position have a department tag?
