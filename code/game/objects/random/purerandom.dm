@@ -66,7 +66,7 @@
 				/obj/item/weapon/tool/retractor = 2,
 				/obj/item/weapon/tool/saw/circular = 2,
 				/obj/item/weapon/mop = 3,
-				/obj/item/weapon/lipstick/random = 3,
+//				/obj/item/weapon/lipstick/random = 3,
 				/obj/item/weapon/inflatable_dispenser = 2,
 				/obj/item/weapon/grenade/chem_grenade/cleaner = 2,
 				/obj/item/weapon/stock_parts/smes_coil = 2,

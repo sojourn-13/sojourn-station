@@ -1,7 +1,8 @@
 /obj/item/weapon/storage/box/bloodpacks
 	name = "blood packs bags"
 	desc = "This box contains blood packs."
-	icon_state = "sterile"
+	icon_state = "box"
+	illustration = "sterile"
 
 /obj/item/weapon/storage/box/bloodpacks/populate_contents()
 	new /obj/item/weapon/reagent_containers/blood(src)

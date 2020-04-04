@@ -377,7 +377,8 @@
 /obj/item/weapon/storage/box/flares
 	name = "box of flares"
 	desc = "Box that contains some flares."
-	icon_state = "flare"
+	icon_state = "box"
+	illustration = "flare"
 
 	New()
 		..()

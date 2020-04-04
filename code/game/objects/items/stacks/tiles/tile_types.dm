@@ -12,7 +12,8 @@
 	name = "broken tile"
 	singular_name = "broken tile"
 	icon = 'icons/obj/stack/tile.dmi'
-	desc = "This should not exist."
+	icon_state = "broken_tile"
+	desc = "A tile that's been broken and rendered useless. You could probably salvage this."
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_HARMLESS
 	throwforce = WEAPON_FORCE_WEAK

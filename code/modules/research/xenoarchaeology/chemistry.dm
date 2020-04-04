@@ -15,7 +15,8 @@
 
 /obj/item/weapon/storage/box/solution_trays
 	name = "solution tray box"
-	icon_state = "solution_trays"
+	icon_state = "box"
+	illustration = "solution_trays"
 
 /obj/item/weapon/storage/box/solution_trays/populate_contents()
 	new /obj/item/weapon/reagent_containers/glass/solution_tray(src)

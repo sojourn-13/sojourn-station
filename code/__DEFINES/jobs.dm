@@ -5,7 +5,7 @@
 #define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Chemist","Soteria Paramedic"
 #define JOBS_SCIENCE "Chief Research Overseer","Soteria Scientist","Soteria Roboticist"
 #define JOBS_CARGO "Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor"
-#define JOBS_CIVILIAN "Assistant"
+#define JOBS_CIVILIAN "Colonist"
 #define JOBS_CHURCH	"Prime", "Vector"
 #define JOBS_PROSPECTOR	"Foreman","Salvager","Prospector"
 #define JOBS_NONHUMAN "AI","Robot","pAI"
