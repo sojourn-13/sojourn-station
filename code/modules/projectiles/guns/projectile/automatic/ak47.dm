@@ -26,7 +26,7 @@
 
 	firemodes = list(
 		FULL_AUTO_400,
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO_NODELAY
 		)
 
 /obj/item/weapon/gun/projectile/automatic/ak47/update_icon()
@@ -34,9 +34,6 @@
 
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
-
-	if (item_suffix)
-		itemstring += "[item_suffix]"
 
 	if (ammo_magazine)
 		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
@@ -52,20 +49,28 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/ak47/sa
+/obj/item/weapon/gun/projectile/automatic/ak47_sa
 	name = "\"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
 		 A poor copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in 6.5x39mm. If it won't fire, percussive maintenance should get it working again. \
-		 It is known for its easy maintenance, and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents. \
-		 This particular copy is fitted with a burst fire trigger group."
+		 It is known for its easy maintenance, and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents."
 	icon_state = "AK_wood"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 3000
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	firemodes = list(
-	SEMI_AUTO_NODELAY,
-	BURST_3_ROUND
-	)
 
-	item_suffix = "_wood"
-	wielded_item_state = "_doble_wood"
+/obj/item/weapon/gun/projectile/automatic/ak47_sa/update_icon()
+	..()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		itemstring += "_wood_full"
+
+	if(wielded)
+		itemstring += "_wood_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)

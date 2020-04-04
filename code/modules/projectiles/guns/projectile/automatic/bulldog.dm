@@ -41,7 +41,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/bulldog/rds
+/obj/item/weapon/gun/projectile/automatic/bulldog_rds
 	desc = "A common carry gun for security and police far and wide Compact and reliable. Uses 6.5 Carbine rounds. This one comes with red dot sight."
 	icon_state = "bulldog-rds"
 	price_tag = 2350

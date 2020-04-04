@@ -19,10 +19,10 @@
 	item_cost = 6
 	path = /obj/item/weapon/melee/energy/sword
 
-/datum/uplink_item/item/visible_weapons/g9mm
-	name = "Silenced 9mm"
+/datum/uplink_item/item/visible_weapons/rafale
+	name = "Silenced pistol"
 	item_cost = 6
-	path = /obj/item/weapon/storage/box/syndie_kit/g9mm
+	path = /obj/item/weapon/storage/box/syndie_kit/pistol
 
 /datum/uplink_item/item/visible_weapons/riggedlaser
 	name = "Exosuit (APLU) Rigged Laser"
@@ -43,7 +43,7 @@
 /datum/uplink_item/item/visible_weapons/assaultrifle
 	name = "Assault Rifle"
 	item_cost = 8
-	path = /obj/item/weapon/storage/box/syndie_kit/sts35
+	path = /obj/item/weapon/storage/box/syndie_kit/sts
 
 /datum/uplink_item/item/visible_weapons/pug
 	name = "Pug Shotgun"

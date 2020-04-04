@@ -5,35 +5,35 @@
 	item_cost = 4
 	category = /datum/uplink_category/ammunition
 
-/datum/uplink_item/item/ammo/mc9mm
-	name = "9mm"
+/datum/uplink_item/item/ammo/pistol
+	name = ".35"
 	item_cost = 1
-	path = /obj/item/ammo_magazine/mc9mm/highvelocity
+	path = /obj/item/ammo_magazine/pistol/highvelocity
 
 /datum/uplink_item/item/ammo/a10mm
-	name = "10mm"
+	name = "10mm Auto"
 	item_cost = 1
 	path = /obj/item/ammo_magazine/a10mm/hv
 
-/datum/uplink_item/item/ammo/smg10mm
-	name = "smg 10mm"
+/datum/uplink_item/item/ammo/smg
+	name = ".35 SMG"
 	item_cost = 2
-	path = /obj/item/ammo_magazine/smg10mm/hv
+	path = /obj/item/ammo_magazine/smg/hv
 
 /datum/uplink_item/item/ammo/darts
 	name = "Darts"
 	item_cost = 1
 	path = /obj/item/ammo_magazine/chemdart
 
-/datum/uplink_item/item/ammo/a357
-	name = ".357"
+/datum/uplink_item/item/ammo/magnum
+	name = "..40 Magnum"
 	item_cost = 1
-	path = /obj/item/ammo_magazine/sl357/highvelocity
+	path = /obj/item/ammo_magazine/slmagnum/highvelocity
 
-/datum/uplink_item/item/ammo/a762
-	name = "7.62mm"
+/datum/uplink_item/item/ammo/lrifle
+	name = "6.5 Carbine"
 	item_cost = 3
-	path = /obj/item/ammo_magazine/c762_long/highvelocity
+	path = /obj/item/ammo_magazine/lrifle/highvelocity
 
 /datum/uplink_item/item/ammo/m12
 	name = "M12 shotgun mag with slugs"
@@ -54,11 +54,6 @@
 	name = "M12 shotgun mag with slugs"
 	item_cost = 2
 	path = /obj/item/ammo_magazine/m12
-
-/datum/uplink_item/item/ammo/m12/stun
-	name = "M12 shotgun mag with taser shells"
-	item_cost = 4
-	path = /obj/item/ammo_magazine/m12/stun
 
 /datum/uplink_item/item/ammo/m12/empty
 	name = "empty M12 shotgun mag"
