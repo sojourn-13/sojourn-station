@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/automatic/lmg
-	name = "SA L6 SAW"
+	name = "SAW"
 	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. This one has a steel plate that reads \
-	\"Scarborough Arms: Gloriam intus sine\". Uses 7.62x39 rounds."
+	\"Scarborough Arms: Gloriam intus sine\". Uses 7.6mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
 	icon_base = "l6"
@@ -10,12 +10,12 @@
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = 0
-	caliber = "a762"
+	caliber = CAL_HRIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_BOX
-	magazine_type = /obj/item/ammo_magazine/a762
+	magazine_type = /obj/item/ammo_magazine/hrifle/pk
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
 	price_tag = 5000
@@ -89,6 +89,11 @@
 	icon_base = "pk"
 	icon_state = "pkclosed-empty"
 	item_state = "pkclosedmag"
+	firemodes = list(
+		FULL_AUTO_400,
+		BURST_5_ROUND,
+		BURST_8_ROUND
+		)
 
 /obj/item/weapon/gun/projectile/automatic/lmg/pk/update_icon()
 	icon_state = "[icon_base][cover_open ? "open" : "closed"][ammo_magazine ? round(ammo_magazine.stored_ammo.len, 25) : "-empty"]"

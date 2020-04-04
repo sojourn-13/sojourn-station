@@ -1,18 +1,17 @@
-/obj/item/weapon/gun/projectile/automatic/IH_machinepistol
-	name = "HS MP 9x19 \"Molly\""
-	desc = "An experimental fully automatic pistol. Compact and flexible, but somewhat underpowered. Issued to non-combatants among Sol Federation forces as powerful self-protection sidearm. Custom magwell allows it to feed both from pistol and SMG magazines. Uses 9mm rounds."
-	icon = 'icons/obj/guns/projectile/IH_mp.dmi'
-	icon_state = "IH_mp"
-	item_state = "IH_mp"
+/obj/item/weapon/gun/projectile/automatic/straylight
+	name = "\"Straylight\" auto-pistol"
+	desc = "A select-fire pistol made by H&S as a variant of the Firefly. Compact and flexible, but somewhat underpowered. Custom magwell allows it to feed both from pistol and SMG magazines. Uses .35 rounds."
+	icon = 'icons/obj/guns/projectile/straylight.dmi'
+	icon_state = "straylight"
+	item_state = "straylight"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = "9mm"
+	caliber = CAL_PISTOL
 	can_dual = 1
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	ammo_type = "/obj/item/ammo_casing/c9mm"
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG
-	magazine_type = /obj/item/ammo_magazine/smg9mm
+	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG|MAG_WELL_H_PISTOL
+	magazine_type = /obj/item/ammo_magazine/smg
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 3)
 	price_tag = 1700
@@ -20,15 +19,15 @@
 	silencer_type = /obj/item/weapon/silencer
 	damage_multiplier = 0.8
 	recoil_buildup = 3
-	one_hand_penalty = 20
+	one_hand_penalty = 40
 
 	firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/IH_machinepistol/update_icon()
+/obj/item/weapon/gun/projectile/automatic/straylight/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -47,6 +46,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/IH_machinepistol/Initialize()
+/obj/item/weapon/gun/projectile/automatic/straylight/Initialize()
 	. = ..()
 	update_icon()

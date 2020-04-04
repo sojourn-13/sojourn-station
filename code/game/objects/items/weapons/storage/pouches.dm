@@ -231,7 +231,6 @@
 	can_hold = list(
 		/obj/item/weapon/gun/projectile/clarissa,
 		/obj/item/weapon/gun/projectile/colt,
-		/obj/item/weapon/gun/projectile/deagle,
 		/obj/item/weapon/gun/projectile/giskard,
 		/obj/item/weapon/gun/projectile/gyropistol,
 		/obj/item/weapon/gun/projectile/handmade_pistol,
@@ -244,8 +243,6 @@
 		//obj/item/weapon/gun/energy/captain, //too unwieldy, use belt/suit slot or other storage
 		/obj/item/weapon/gun/energy/stunrevolver,
 		/obj/item/weapon/gun/projectile/revolver,
-		/obj/item/weapon/gun/projectile/automatic/IH_machinepistol,
-		/obj/item/weapon/gun/projectile/IH_sidearm,
 		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn, //short enough to fit in
 		/obj/item/weapon/gun/launcher/syringe
 		)

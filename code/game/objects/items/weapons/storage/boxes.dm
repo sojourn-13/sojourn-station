@@ -232,12 +232,12 @@
 
 	New()
 		..()
-		new /obj/item/ammo_casing/a145/prespawned(src)
+		new /obj/item/ammo_casing/antim/prespawned(src)
 		for(var/obj/item/ammo_casing/temp_casing in src)
 			temp_casing.update_icon()
 
 /obj/item/weapon/storage/box/sniperammo/populate_contents()
-	new /obj/item/ammo_casing/a145/prespawned(src)
+	new /obj/item/ammo_casing/antim/prespawned(src)
 	for(var/obj/item/ammo_casing/temp_casing in src)
 		temp_casing.update_icon()
 

@@ -1,21 +1,19 @@
-/obj/item/weapon/gun/projectile/automatic/z8
-	name = "SA CAR 5.56x45mm \"Z8 Bulldog\""
-	desc = "The Z8 Pug is an older bullpup carbine model, made by \"Scarborough Arms\". It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses .20 Rifle rounds."
-	icon = 'icons/obj/guns/projectile/carabine.dmi'
-	icon_state = "z8"
-	item_state = "z8"
+/obj/item/weapon/gun/projectile/automatic/pitbull
+	name = "\"Pitbull\" compact assault rifle"
+	desc = "The M7 Pitbull is an older bullpup rifle model manufactured by \"Holland & Sullivan\" primarily for planetary defense forces and private military firms. It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses .208 Rifle rounds."
+	icon = 'icons/obj/guns/projectile/pitbull.dmi'
+	icon_state = "pitbull"
+	item_state = "pitbull"
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	caliber = "a556"
+	caliber = CAL_SRIFLE
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 3)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
-	price_tag = 3200 //old but gold, decent AP caliber, underbarrel GL, mild recoil and 20-round mags. Better than FS AK.
-	ammo_type = "/obj/item/ammo_casing/a556"
+	price_tag = 3200
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_CIVI_RIFLE
-	magazine_type = /obj/item/ammo_magazine/a556
+	mag_well = MAG_WELL_STANMAG
 	unload_sound 	= 'sound/weapons/guns/interact/batrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/batrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
@@ -33,17 +31,17 @@
 
 	var/obj/item/weapon/gun/launcher/grenade/underslung/launcher
 
-/obj/item/weapon/gun/projectile/automatic/z8/Initialize()
+/obj/item/weapon/gun/projectile/automatic/pitbull/Initialize()
 	. = ..()
 	launcher = new(src)
 
-/obj/item/weapon/gun/projectile/automatic/z8/attackby(obj/item/I, mob/user)
+/obj/item/weapon/gun/projectile/automatic/pitbull/attackby(obj/item/I, mob/user)
 	if((istype(I, /obj/item/weapon/grenade)))
 		launcher.load(I, user)
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/z8/attack_hand(mob/user)
+/obj/item/weapon/gun/projectile/automatic/pitbull/attack_hand(mob/user)
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(user.get_inactive_hand() == src && cur_mode.settings["use_launcher"])
@@ -51,7 +49,7 @@
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/z8/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
+/obj/item/weapon/gun/projectile/automatic/pitbull/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(cur_mode.settings["use_launcher"])
@@ -61,24 +59,27 @@
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/z8/update_icon()
+/obj/item/weapon/gun/projectile/automatic/pitbull/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
+	var/itemstring = ""
 
 	if (ammo_magazine)
-		iconstring += "_mag"
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
 	icon_state = iconstring
+	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/z8/Initialize()
+/obj/item/weapon/gun/projectile/automatic/pitbull/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/z8/examine(mob/user)
+
+/obj/item/weapon/gun/projectile/automatic/pitbull/examine(mob/user)
 	..()
 	if(launcher.chambered)
 		to_chat(user, "\The [launcher] has \a [launcher.chambered] loaded.")

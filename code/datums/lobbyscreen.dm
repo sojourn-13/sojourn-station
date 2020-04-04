@@ -21,12 +21,12 @@
 	musicTrack = pick(possibleMusic)
 	return ..()
 
-/datum/lobbyscreen/ship
-	image_file = 'icons/title_screens/ship.png'
-	possibleMusic = list(
-		'sound/music/lobby/Duke_Gneiss-Bluespace.ogg',
-		'sound/music/lobby/Duke_Gneiss-Exploring.ogg'
-		)
+//datum/lobbyscreen/ship
+//	image_file = 'icons/title_screens/ship.png'
+//	possibleMusic = list(
+//		'sound/music/lobby/Duke_Gneiss-Bluespace.ogg',
+//		'sound/music/lobby/Duke_Gneiss-Exploring.ogg'
+//		)
 
 /datum/lobbyscreen/ironhammer
 	image_file = 'icons/title_screens/ironhammer.png'
@@ -35,16 +35,23 @@
 		'sound/music/lobby/Duke_Gneiss-Metropolis.ogg'
 		)
 
-/datum/lobbyscreen/onestar
-	image_file = 'icons/title_screens/onestar.png'
+/datum/lobbyscreen/transit
+	image_file = 'icons/title_screens/transit.png'
 	possibleMusic = list(
-		'sound/music/lobby/Duke_Gneiss-Downtown_2.ogg'
+		'sound/music/lobby/transit.ogg',
+		'sound/music/lobby/Duke_Gneiss-Metropolis.ogg'
 		)
 
-/datum/lobbyscreen/neotheology
-	image_file = 'icons/title_screens/neotheology.png'
-	possibleMusic = list(
-		'sound/music/lobby/Duke_Gneiss-Neotheology.ogg')
+//datum/lobbyscreen/onestar
+//	image_file = 'icons/title_screens/onestar.png'
+//	possibleMusic = list(
+//		'sound/music/lobby/Duke_Gneiss-Downtown_2.ogg'
+//		)
+
+//datum/lobbyscreen/neotheology
+//	image_file = 'icons/title_screens/neotheology.png'
+//	possibleMusic = list(
+//		'sound/music/lobby/Duke_Gneiss-Neotheology.ogg')
 
 /datum/lobbyscreen/proc/play_music(client/C)
 	if(!musicTrack)
