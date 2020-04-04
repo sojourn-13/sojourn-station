@@ -628,36 +628,6 @@
 	)
 
 
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter
-	disk_name = "Absolutism Bioprinter Production"
-	icon_state = "neotheology"
-
-	license = -1
-	designs = list(
-		/datum/design/bioprinter/meat,
-		/datum/design/bioprinter/milk,
-		/datum/design/bioprinter/soap,
-		/datum/design/bioprinter/ez,
-		/datum/design/bioprinter/l4z,
-		/datum/design/bioprinter/rh,
-		/datum/design/bioprinter/wallet,
-		/datum/design/bioprinter/botanic_leather,
-		/datum/design/bioprinter/leather/satchel,
-		/datum/design/bioprinter/leather/leather_jacket,
-		/datum/design/bioprinter/leather/cash_bag,
-		/datum/design/bioprinter/belt/utility,
-		/datum/design/bioprinter/belt/medical,
-		/datum/design/bioprinter/belt/security,
-		/datum/design/bioprinter/belt/medical/emt,
-		/datum/design/bioprinter/belt/misc/champion,
-		/datum/design/bioprinter/medical/bruise,
-		/datum/design/bioprinter/medical/splints,
-		/datum/design/bioprinter/medical/ointment,
-		/datum/design/bioprinter/medical/advanced/bruise,
-		/datum/design/bioprinter/medical/advanced/ointment
-		)
-
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
 	disk_name = "Blackshield Sovereignty Pack"
 	icon_state = "onestar"
