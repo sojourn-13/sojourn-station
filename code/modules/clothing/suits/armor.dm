@@ -351,6 +351,12 @@ obj/item/clothing/suit/armor/commander/militia
 	icon_state = "commander_mil"
 	item_state = "commander_mil"
 
+obj/item/clothing/suit/armor/commander/militia_overcoat
+	name = "blackshield milita armored overcoat"
+	desc = "Blackshield Milita greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
+	icon_state = "overcoat_bm"
+	item_state = "overcoat_bm"
+
 //Reactive armor
 
 //Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
