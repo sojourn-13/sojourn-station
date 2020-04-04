@@ -63,18 +63,21 @@
 	..()
 
 	var/iconstring = initial(icon_state)
+	var/itemstring = ""
 
 	if (ammo_magazine)
-		iconstring += "_mag"
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
 	icon_state = iconstring
+	set_item_state(itemstring)
 
 /obj/item/weapon/gun/projectile/automatic/pitbull/Initialize()
 	. = ..()
 	update_icon()
+
 
 /obj/item/weapon/gun/projectile/automatic/pitbull/examine(mob/user)
 	..()

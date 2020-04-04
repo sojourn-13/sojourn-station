@@ -3,7 +3,7 @@
 	desc = "A high-end European revolver produced by Seinemetall Defense GmbH on Earth using hand-fitted parts. Carried by the most respected of gunslingers and counter-terror specialists. Uses .40 Magnum rounds."
 	icon = 'icons/obj/guns/projectile/mistral.dmi'
 	icon_state = "mistral"
-	item_state = "revolver"
+	item_state = "mistral"
 	drawChargeMeter = FALSE
 	caliber = CAL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)

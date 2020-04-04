@@ -181,7 +181,7 @@
 	name = "shotgun slug"
 	desc = "A 20mm sabot slug."
 	icon_state = "slshell"
-	caliber = "shotgun"
+	caliber = CAL_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5

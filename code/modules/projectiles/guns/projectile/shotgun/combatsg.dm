@@ -5,6 +5,7 @@
 	icon = 'icons/obj/guns/projectile/cshotgun.dmi'
 	icon_state = "cshotgun"
 	item_state = "cshotgun"
+	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 6 //less ammo and regular recoil, decided not to give 1.2 because Gladstone would be anyhow better in this case
 	ammo_type = /obj/item/ammo_casing/shotgun

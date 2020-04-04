@@ -154,7 +154,7 @@
 /obj/item/ammo_magazine/srifle
 	name = "rifle magazine"
 	desc = "a 30 round magazine marked for .208 rifle."
-	icon_state = "srifle_l"
+	icon_state = "srifle_long"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_STANMAG
@@ -165,18 +165,18 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/srifle/empty
-	icon_state = "srifle"
+	icon_state = "srifle_long"
 	matter = list(MATERIAL_STEEL = 3)
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/srifle/practice
 	name = "rifle magazine (practice)"
-	icon_state = "srifle_p"
+	icon_state = "srifle_long_p"
 	ammo_type = /obj/item/ammo_casing/srifle/practice
 
 /obj/item/ammo_magazine/srifle/rubber
 	name = "rifle magazine (rubber)"
-	icon_state = "srifle_r"
+	icon_state = "srifle_long_r"
 	ammo_type = /obj/item/ammo_casing/srifle/rubber
 
 ////s h o r t////
@@ -184,30 +184,30 @@
 /obj/item/ammo_magazine/srifle_short
 	name = "short rifle magazine"
 	desc = "a 20 round magazine marked for .208 rifle."
-	icon_state = "srifle_l"
+	icon_state = "srifle_short"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	caliber = CAL_SRIFLE
 	matter = list(MATERIAL_STEEL = 6)
 	ammo_type = /obj/item/ammo_casing/srifle
-	max_ammo = 30
+	max_ammo = 20
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/srifle/short/empty
-	icon_state = "srifle"
+	icon_state = "srifle_short"
 	matter = list(MATERIAL_STEEL = 3)
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/srifle_short/practice
 	name = "short rifle magazine (practice)"
-	icon_state = "srifle_p"
+	icon_state = "srifle_short_p"
 	ammo_type = /obj/item/ammo_casing/srifle/practice
 
 
 /obj/item/ammo_magazine/srifle_short/rubber
 	name = "short rifle magazine (rubber)"
-	icon_state = "srifle_r"
+	icon_state = "srifle_short_r"
 	ammo_type = /obj/item/ammo_casing/srifle/rubber
 
 ////6.5x39mm////

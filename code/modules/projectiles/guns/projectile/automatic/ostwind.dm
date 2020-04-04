@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/ostwind
 	name = "\"Ostwind\" assault rifle"
-	desc = "An \"Ostwind\" high-end police grade assault rifle manufactured by Seinemetall Defense. Primarily used by law enforcement, counter-terror units, and private security. Uses .208 Rifle rounds."
+	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense. Primarily used by law enforcement, counter-terror units, and private security. Uses .208 Rifle rounds."
 	icon = 'icons/obj/guns/projectile/ostwind.dmi'
 	icon_state = "ostwind"
 	item_state = "ostwind"
@@ -36,8 +36,7 @@
 	var/itemstring = ""
 
 	if (ammo_magazine)
-		iconstring += "_mag"
-		itemstring += "_mag"
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"

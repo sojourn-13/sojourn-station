@@ -94,8 +94,8 @@
 	desc = "Weapon for hunting, or endless trench warfare. \
 			If you're on a budget, it's a darn good rifle for just about everything. \
 			This copy, in fact, is a reverse-engineered poor-quality copy of a more perfect copy of an ancient rifle"
-	icon_state = "boltgun_wood"
-	item_state = "boltgun_wood"
+	icon = 'icons/obj/guns/projectile/boltgun_wood.dmi'
+	icon_state = "boltgun"
+	item_state = "boltgun"
 	recoil_buildup = 0.4 // Double the excel variant
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
-	wielded_item_state = "_wood_doble"
