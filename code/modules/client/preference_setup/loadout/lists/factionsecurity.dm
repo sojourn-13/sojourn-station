@@ -1,4 +1,4 @@
-/datum/gear/factionironhammer
+/datum/gear/factionsecurity
 	display_name = "winter coat, security"
 	path = /obj/item/clothing/suit/hooded/wintercoat/security
 	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")

@@ -2,7 +2,7 @@
 	name = "classified research"
 	desc = "This folder contains highly confidential scientific research."
 	icon = 'icons/obj/oddities.dmi'
-	icon_state = "folder"
+	icon_state = "paper_omega"
 	price_tag = 5000
 
 	oddity_stats = list(

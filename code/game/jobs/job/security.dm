@@ -8,6 +8,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Council"
+	difficulty = "Very Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
@@ -63,6 +64,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Council"
+	difficulty = "Very Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
@@ -117,6 +119,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Warrant Officer"
+	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
@@ -165,6 +168,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Warrant Officer"
+	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	also_known_languages = list(LANGUAGE_CYRILLIC = 50, LANGUAGE_SERBIAN = 50)
@@ -214,6 +218,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Militia Commander"
+	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	also_known_languages = list(LANGUAGE_CYRILLIC = 5)
@@ -262,6 +267,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Militia Commander"
+	difficulty = "Hard."
 	//alt_titles = list("Blackshield Junior Trooper")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
@@ -310,6 +316,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Warrant Officer"
+	difficulty = "Hard."
 	//alt_titles = list("Marshal Junior Operative")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
