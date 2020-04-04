@@ -655,9 +655,7 @@
 		/datum/design/bioprinter/medical/splints,
 		/datum/design/bioprinter/medical/ointment,
 		/datum/design/bioprinter/medical/advanced/bruise,
-		/datum/design/bioprinter/medical/advanced/ointment,
-		/datum/design/bioprinter/bioimplant/osurgical,
-		/datum/design/bioprinter/bioimplant/oscythe
+		/datum/design/bioprinter/medical/advanced/ointment
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
