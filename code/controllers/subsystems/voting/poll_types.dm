@@ -8,6 +8,7 @@
 	question = "Restart Round"
 	time = 60
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
+	next_vote = 180 MINUTES //Minimum round length before it can be called for the first time
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
@@ -246,8 +247,9 @@
 /datum/poll/custom
 	name = "Custom"
 	question = "Why is there no text here?"
-	time = 60
+	time = 120
 	choice_types = list()
+	next_vote = 10 MINUTES //Minimum round length before it can be called for the first time
 
 	only_admin = TRUE
 
