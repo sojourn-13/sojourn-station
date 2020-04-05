@@ -8,7 +8,7 @@
 	question = "Restart Round"
 	time = 60
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
-	next_vote = 180 MINUTES //Minimum round length before it can be called for the first time
+	next_vote = 300 MINUTES //Minimum round length before it can be called for the first time
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
