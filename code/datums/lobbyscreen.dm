@@ -28,12 +28,6 @@
 //		'sound/music/lobby/Duke_Gneiss-Exploring.ogg'
 //		)
 
-/datum/lobbyscreen/ironhammer
-	image_file = 'icons/title_screens/ironhammer.png'
-	possibleMusic = list(
-		'sound/music/lobby/Duke_Gneiss-The_Runner_in_motion.ogg',
-		'sound/music/lobby/Duke_Gneiss-Metropolis.ogg'
-		)
 
 /datum/lobbyscreen/transit
 	image_file = 'icons/title_screens/transit.png'
@@ -41,6 +35,14 @@
 		'sound/music/lobby/transit.ogg',
 		'sound/music/lobby/Duke_Gneiss-Metropolis.ogg'
 		)
+
+/datum/lobbyscreen/ironhammer
+	image_file = 'icons/title_screens/ironhammer.png'
+	possibleMusic = list(
+		'sound/music/lobby/Duke_Gneiss-The_Runner_in_motion.ogg',
+		'sound/music/lobby/Duke_Gneiss-Metropolis.ogg'
+		)
+
 
 //datum/lobbyscreen/onestar
 //	image_file = 'icons/title_screens/onestar.png'
