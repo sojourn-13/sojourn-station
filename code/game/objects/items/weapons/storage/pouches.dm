@@ -37,7 +37,7 @@
 
 /obj/item/weapon/storage/pouch/small_generic
 	name = "small generic pouch"
-	desc = "Can hold anything in it, but only about once."
+	desc = "Can hold anything in it, but only a small amount."
 	icon_state = "small_generic"
 	item_state = "small_generic"
 	storage_slots = null //Uses generic capacity
@@ -50,7 +50,7 @@
 
 /obj/item/weapon/storage/pouch/medium_generic
 	name = "medium generic pouch"
-	desc = "Can hold anything in it, but only about twice."
+	desc = "Can hold anything in it, but only a moderate amount."
 	icon_state = "medium_generic"
 	item_state = "medium_generic"
 	storage_slots = null //Uses generic capacity
@@ -231,7 +231,6 @@
 	can_hold = list(
 		/obj/item/weapon/gun/projectile/clarissa,
 		/obj/item/weapon/gun/projectile/colt,
-		/obj/item/weapon/gun/projectile/deagle,
 		/obj/item/weapon/gun/projectile/giskard,
 		/obj/item/weapon/gun/projectile/gyropistol,
 		/obj/item/weapon/gun/projectile/handmade_pistol,
@@ -244,8 +243,6 @@
 		//obj/item/weapon/gun/energy/captain, //too unwieldy, use belt/suit slot or other storage
 		/obj/item/weapon/gun/energy/stunrevolver,
 		/obj/item/weapon/gun/projectile/revolver,
-		/obj/item/weapon/gun/projectile/automatic/IH_machinepistol,
-		/obj/item/weapon/gun/projectile/IH_sidearm,
 		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn, //short enough to fit in
 		/obj/item/weapon/gun/launcher/syringe
 		)

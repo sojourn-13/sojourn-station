@@ -1,12 +1,12 @@
-/datum/gear/utility
+/datum/gear/utility/zippo
 	display_name = "zippo selection"
 	path = /obj/item/weapon/flame/lighter/zippo
-	sort_category = "Utility"
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/utility/briefcase
+/datum/gear/utility
 	display_name = "briefcase"
 	path = /obj/item/weapon/storage/briefcase
+	sort_category = "Utility"
 
 /datum/gear/utility/briefcasesecure
 	display_name = "briefcase, secure"

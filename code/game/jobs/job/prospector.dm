@@ -55,8 +55,8 @@
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	selection_color = "#a7bbc6"
@@ -98,8 +98,8 @@
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
 	faction = MAP_FACTION
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	selection_color = "#a7bbc6"

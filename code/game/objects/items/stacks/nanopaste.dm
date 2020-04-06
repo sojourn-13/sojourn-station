@@ -6,7 +6,7 @@
 	icon_state = "nanopaste"
 	matter = list(MATERIAL_PLASTIC = 2)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3)
-	amount = 10
+	amount = 5
 	w_class = ITEM_SIZE_SMALL //just so you can place same places that a brute pack would be
 	price_tag = 15
 

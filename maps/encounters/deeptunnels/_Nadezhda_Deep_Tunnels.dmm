@@ -242,7 +242,7 @@
 "eH" = (/obj/effect/floor_decal/industrial/loading{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/mine/processing)
 "eI" = (/obj/landmark/machinery/input,/obj/effect/floor_decal/industrial/hatch/yellow,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/rubble,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/steel,/area/mine/processing)
 "eJ" = (/obj/machinery/mineral/unloading_machine,/turf/simulated/floor/tiled/steel/gray_platform,/area/mine/processing)
-"eK" = (/obj/machinery/conveyor/southeast,/obj/landmark/machinery/output,/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/tiled/steel/gray_platform,/area/mine/processing)
+"eK" = (/obj/machinery/conveyor/southeast{id = "mining_internal"},/obj/landmark/machinery/output,/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/tiled/steel/gray_platform,/area/mine/processing)
 "eL" = (/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/plating,/area/mine/processing)
 "eM" = (/obj/effect/decal/cleanable/rubble,/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/industrial/warningdust{dir = 4},/turf/simulated/floor/plating,/area/mine/processing)
 "eN" = (/obj/structure/boulder,/turf/simulated/floor/asteroid,/area/mine/lockers)

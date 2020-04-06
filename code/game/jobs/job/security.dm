@@ -165,8 +165,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
@@ -178,7 +178,7 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels,
-		access_external_airlocks, access_prospector
+		access_external_airlocks, access_prospector, access_brig
 	)
 
 	stat_modifiers = list(
@@ -226,7 +226,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
 	access = list(
-		access_security, access_moebius, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
+		access_security, access_moebius, access_chemistry, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
 		access_medical_equip, access_prospector, access_engine, access_mailsorting, access_eva, access_brig, access_external_airlocks
 	)
 
@@ -313,8 +313,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
 	//alt_titles = list("Marshal Junior Operative")

@@ -1,21 +1,19 @@
-//Primary AR of IH. Has supreme AP to deal with those pesky Serbs (guildsmans actually) in armored hardsuits.
-/obj/item/weapon/gun/projectile/automatic/IH_heavyrifle
-	name = "HS AR 5.56x45 \"Wintermute\""
-	desc = "A high end military grade assault rifle, designed as a modern ballistic infantry weapon. Primarily used by and produced for Sol Federation troops. Uses 5.56mm rounds."
-	icon = 'icons/obj/guns/projectile/IH_heavyrifle.dmi'
-	icon_state = "IH_heavyrifle"
-	item_state = "IH_heavyrifle"
+/obj/item/weapon/gun/projectile/automatic/ostwind
+	name = "\"Ostwind\" assault rifle"
+	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense. Primarily used by law enforcement, counter-terror units, and private security. Uses .208 Rifle rounds."
+	icon = 'icons/obj/guns/projectile/ostwind.dmi'
+	icon_state = "ostwind"
+	item_state = "ostwind"
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
-	caliber = "a556"
+	caliber = CAL_SRIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_IH
-	magazine_type = /obj/item/ammo_magazine/ih556
+	mag_well = MAG_WELL_STANMAG
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 3500
+	price_tag = 4000
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
@@ -31,15 +29,14 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/IH_heavyrifle/update_icon()
+/obj/item/weapon/gun/projectile/automatic/ostwind/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
 	if (ammo_magazine)
-		iconstring += "_mag"
-		itemstring += "_mag"
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
@@ -47,6 +44,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/IH_heavyrifle/Initialize()
+/obj/item/weapon/gun/projectile/automatic/ostwind/Initialize()
 	. = ..()
 	update_icon()

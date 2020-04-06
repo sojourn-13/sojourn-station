@@ -458,9 +458,7 @@
 	designs = list(
 		/datum/design/autolathe/gun/mk58,
 		/datum/design/autolathe/gun/mk58_wood,
-		/datum/design/autolathe/gun/combat_shotgun,
-		/datum/design/autolathe/gun/heavysniper,
-		/datum/design/autolathe/gun/grenade_launcher,
+		/datum/design/autolathe/gun/regulator,
 		/datum/design/research/item/weapon/stunrevolver,
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/gun/sniperrifle
@@ -616,244 +614,6 @@
 	disk_name = "Security Miscellaneous Factory"
 	license = -1
 
-// Frozen Star
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns
-	disk_name = "Heckler and Sons Basic Civilian Pack"
-	icon_state = "frozenstar"
-	license = 7
-	designs = list(
-		/datum/design/autolathe/gun/giskard,
-		/datum/design/autolathe/gun/olivaw,
-		/datum/design/autolathe/gun/clarissa,
-		/datum/design/autolathe/gun/colt,
-		/datum/design/autolathe/gun/revolver_detective,
-		/datum/design/autolathe/gun/doublebarrel,
-		/datum/design/autolathe/gun/pump_shotgun,
-	)
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_kinetic_guns //please, maintain general order (pistol>revolver>SMG>Other>Shotgun>GLs)+(smaller/less damaging caliber>bigger/more damaging caliber)
-	disk_name = "Heckler and Sons Ultimate Protection Pack"
-	icon_state = "frozenstar"
-	license = 5
-	designs = list(
-		/datum/design/autolathe/gun/IH_sidearm, //pistols
-		/datum/design/autolathe/gun/IH_colt,
-		/datum/design/autolathe/gun/IH_machinepistol,
-		/datum/design/autolathe/gun/lamia,
-		/datum/design/autolathe/gun/scoped_lamia,
-		/datum/design/autolathe/gun/deagle,
-		/datum/design/autolathe/gun/revolver_consul, //revolvers
-		/datum/design/autolathe/gun/revolver_deckard,
-		/datum/design/autolathe/gun/revolver,
-		/datum/design/autolathe/gun/idaho, //smgs
-		/datum/design/autolathe/gun/IH_smg,
-		/datum/design/autolathe/gun/atreides,
-		/datum/design/autolathe/gun/smg_sol, //other
-		/datum/design/autolathe/gun/smg_sol_rds,
-		/datum/design/autolathe/gun/z8,
-		/datum/design/autolathe/gun/IH_heavyrifle,
-		/datum/design/autolathe/gun/ak47_fs,
-		/datum/design/autolathe/gun/grenade_launcher_lenar, //GLs
-	)
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns
-	disk_name = "Heckler and Sons Void Warrior Pack"
-	icon_state = "frozenstar"
-	license = 3
-	designs = list(
-		/datum/design/autolathe/gun/energygun_martin,
-		/datum/design/autolathe/gun/energygun,
-		/datum/design/autolathe/gun/pulse_cassad,
-	)
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
-	disk_name = "Heckler and Sons Nonlethal Ammo Pack"
-	icon_state = "frozenstar"
-	license = 20
-	designs = list(
-		/datum/design/autolathe/ammo/mg_cl32_rubber, //pistol mags
-		/datum/design/autolathe/ammo/magazine_mc9mm_rubber,
-		/datum/design/autolathe/ammo/magazine_c45m_rubber,
-		/datum/design/autolathe/ammo/magazine_a10mm_rubber,
-		/datum/design/autolathe/ammo/mg_cl44_rubber,
-		/datum/design/autolathe/ammo/mg_a50_rubber,
-		/datum/design/autolathe/ammo/sl_c138_rubber, //speed loaders
-		/datum/design/autolathe/ammo/sl_cl44_rubber,
-		/datum/design/autolathe/ammo/smg9mm_rubber, //smg mags
-		/datum/design/autolathe/ammo/c45smg_rubber,
-		/datum/design/autolathe/ammo/SMG_sol_rubber, //other mags
-		/datum/design/autolathe/ammo/a556_practice,
-		/datum/design/autolathe/ammo/shotgun_blanks, //shells
-		/datum/design/autolathe/ammo/shotgun_flash,
-		/datum/design/autolathe/ammo/stunshell,
-		/datum/design/autolathe/ammo/shotgun_beanbag
-	)
-	..()
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammoboxs
-	name = "Heckler and Sons Nonlethal Ammo Box Pack"
-	icon_state = "frozenstar"
-	license = 30
-	designs = list(
-		/datum/design/autolathe/ammo/box_a10mm/rubber,
-		/datum/design/autolathe/ammo/box_c9mm/flash,
-		/datum/design/autolathe/ammo/box_c9mm/rubber,
-		/datum/design/autolathe/ammo/box_c9mm/practice,
-		/datum/design/autolathe/ammo/box_cl32/rubber,
-		/datum/design/autolathe/ammo/box_c45/flash,
-		/datum/design/autolathe/ammo/box_c45/rubber,
-		/datum/design/autolathe/ammo/box_c45/practice,
-		/datum/design/autolathe/ammo/box_c65mm/rubber,
-		/datum/design/autolathe/ammo/box_c44/rubber,
-		/datum/design/autolathe/ammo/box_c50/rubber,
-	)
-	..()
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
-	disk_name = "Heckler and Sons Lethal Ammo Pack"
-	icon_state = "frozenstar"
-	license = 20
-	designs = list(
-		/datum/design/autolathe/ammo/mg_cl32_brute, //pistol mags
-		/datum/design/autolathe/ammo/magazine_mc9mm,
-		/datum/design/autolathe/ammo/magazine_c45m,
-		/datum/design/autolathe/ammo/magazine_a10mm,
-		/datum/design/autolathe/ammo/mg_cl44_brute,
-		/datum/design/autolathe/ammo/mg_a50,
-		/datum/design/autolathe/ammo/sl_c138_brute, //speed loaders
-		/datum/design/autolathe/ammo/sl_cl44_brute,
-		/datum/design/autolathe/ammo/magazine_sl357,
-		/datum/design/autolathe/ammo/smg9mm_brute, //smg mags
-		/datum/design/autolathe/ammo/c45smg_brute,
-		/datum/design/autolathe/ammo/magazine_smg10mm,
-		/datum/design/autolathe/ammo/SMG_sol_brute, //other mags
-		/datum/design/autolathe/ammo/a556,
-		/datum/design/autolathe/ammo/ih556,
-		/datum/design/autolathe/ammo/c762_short,
-		/datum/design/autolathe/ammo/c762_long,
-		/datum/design/autolathe/ammo/shotgun_pellet, //shells
-		/datum/design/autolathe/ammo/shotgun
-	)
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammoboxs
-	name = "Heckler and Sons Lethal Ammo Boxes Pack"
-	icon_state = "frozenstar"
-	license = 30
-	designs = list(
-		/datum/design/autolathe/ammo/box_a762,
-		/datum/design/autolathe/ammo/box_a10mm,
-		/datum/design/autolathe/ammo/box_a9mm,
-		/datum/design/autolathe/ammo/box_cl32,
-		/datum/design/autolathe/ammo/box_c45,
-		/datum/design/autolathe/ammo/box_c10x24,
-		/datum/design/autolathe/ammo/box_a556,
-		/datum/design/autolathe/ammo/box_c65mm,
-		/datum/design/autolathe/ammo/box_c357,
-		/datum/design/autolathe/ammo/box_c38,
-		/datum/design/autolathe/ammo/box_c44,
-		/datum/design/autolathe/ammo/box_c50,
-		/datum/design/autolathe/ammo/box_a145,
-	)
-	..()
-
-// Excelsior
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior
-	disk_name = "Excelsior Means of Production"
-	desc = "Seize it."
-	icon_state = "excelsior"
-	license = -1
-	designs = list(
-		/datum/design/autolathe/circuit/autolathe_excelsior,
-		/datum/design/autolathe/circuit/shieldgen_excelsior,
-		/datum/design/autolathe/circuit/reconstructor_excelsior,
-		/datum/design/autolathe/circuit/teleporter_excelsior,
-		/datum/design/autolathe/circuit/diesel_excelsior,
-		/datum/design/autolathe/circuit/turret_excelsior,
-		/datum/design/autolathe/circuit/autolathe_disk_cloner,
-		/datum/design/autolathe/device/implanter,
-		/datum/design/autolathe/gun/makarov,
-		/datum/design/autolathe/gun/drozd,
-		/datum/design/autolathe/sec/silencer,
-		/datum/design/autolathe/ammo/magazine_mc9mm,
-		/datum/design/autolathe/gun/ak47,
-		/datum/design/autolathe/ammo/c762_long,
-		/datum/design/autolathe/ammo/box_a762,
-		/datum/design/autolathe/gun/boltgun,
-		/datum/design/autolathe/gun/vintorez,
-		/datum/design/autolathe/device/excelsiormine,
-		/datum/design/autolathe/sec/beartrap,
-		/datum/design/autolathe/clothing/excelsior_armor,
-		/datum/design/autolathe/cell/large/excelsior,
-		/datum/design/autolathe/cell/medium/excelsior,
-		/datum/design/autolathe/cell/small/excelsior,
-		/datum/design/research/item/part/micro_mani,
-		/datum/design/research/item/part/subspace_amplifier,
-		/datum/design/research/item/part/subspace_crystal,
-		/datum/design/research/item/part/subspace_transmitter,
-		/datum/design/autolathe/part/igniter,
-		/datum/design/autolathe/part/signaler,
-		/datum/design/autolathe/part/sensor_prox,
-		/datum/design/research/item/part/basic_capacitor,
-		/datum/design/autolathe/device/excelbaton,
-		/datum/design/autolathe/part/camera_assembly
-	)
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_weapons
-	disk_name = "Excelsior Means of Revolution"
-	desc = "The back has a machine etching: \"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\""
-	icon_state = "excelsior"
-	license = -1
-	designs = list(
-		/datum/design/autolathe/gun/makarov,
-		/datum/design/autolathe/gun/drozd,
-		/datum/design/autolathe/sec/silencer,
-		/datum/design/autolathe/ammo/magazine_mc9mm,
-		/datum/design/autolathe/gun/ak47,
-		/datum/design/autolathe/ammo/c762_long,
-		/datum/design/autolathe/ammo/box_a762,
-		/datum/design/autolathe/gun/boltgun,
-		/datum/design/autolathe/gun/vintorez,
-		/datum/design/autolathe/device/excelsiormine,
-		/datum/design/autolathe/sec/beartrap,
-		/datum/design/autolathe/clothing/excelsior_armor,
-	)
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_rusted
-	disk_name = "Excelsior Means of Resolution"
-	desc = "A little rusty, but you can still seize it."
-	icon_state = "excelsior"
-
-	license = 0
-	designs = list(
-		/datum/design/autolathe/circuit/autolathe_excelsior,
-		/datum/design/autolathe/circuit/shieldgen_excelsior,
-		/datum/design/autolathe/circuit/teleporter_excelsior,
-		/datum/design/autolathe/circuit/diesel_excelsior,
-		/datum/design/autolathe/circuit/turret_excelsior,
-		/datum/design/autolathe/circuit/autolathe_disk_cloner,
-		/datum/design/autolathe/gun/makarov,
-		/datum/design/autolathe/sec/silencer,
-		/datum/design/autolathe/ammo/magazine_mc9mm,
-		/datum/design/autolathe/gun/ak47,
-		/datum/design/autolathe/ammo/c762_long,
-		/datum/design/autolathe/ammo/box_a762,
-		/datum/design/autolathe/device/excelsiormine,
-		/datum/design/autolathe/sec/beartrap,
-		/datum/design/autolathe/clothing/excelsior_armor,
-		/datum/design/autolathe/cell/large/excelsior,
-		/datum/design/autolathe/cell/medium/excelsior,
-		/datum/design/autolathe/cell/small/excelsior,
-		/datum/design/research/item/part/micro_mani,
-		/datum/design/research/item/part/subspace_amplifier,
-		/datum/design/research/item/part/subspace_crystal,
-		/datum/design/research/item/part/subspace_transmitter,
-		/datum/design/autolathe/part/igniter,
-		/datum/design/autolathe/part/signaler,
-		/datum/design/autolathe/part/sensor_prox,
-		/datum/design/research/item/part/basic_capacitor,
-		/datum/design/autolathe/part/camera_assembly
-	)
-
 // greyson positronic
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar
 	disk_name = "Greyson Positronics Tool Pack"
@@ -868,38 +628,6 @@
 	)
 
 
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter
-	disk_name = "Absolutism Bioprinter Production"
-	icon_state = "neotheology"
-
-	license = -1
-	designs = list(
-		/datum/design/bioprinter/meat,
-		/datum/design/bioprinter/milk,
-		/datum/design/bioprinter/soap,
-		/datum/design/bioprinter/ez,
-		/datum/design/bioprinter/l4z,
-		/datum/design/bioprinter/rh,
-		/datum/design/bioprinter/wallet,
-		/datum/design/bioprinter/botanic_leather,
-		/datum/design/bioprinter/leather/satchel,
-		/datum/design/bioprinter/leather/leather_jacket,
-		/datum/design/bioprinter/leather/cash_bag,
-		/datum/design/bioprinter/belt/utility,
-		/datum/design/bioprinter/belt/medical,
-		/datum/design/bioprinter/belt/security,
-		/datum/design/bioprinter/belt/medical/emt,
-		/datum/design/bioprinter/belt/misc/champion,
-		/datum/design/bioprinter/medical/bruise,
-		/datum/design/bioprinter/medical/splints,
-		/datum/design/bioprinter/medical/ointment,
-		/datum/design/bioprinter/medical/advanced/bruise,
-		/datum/design/bioprinter/medical/advanced/ointment,
-		/datum/design/bioprinter/bioimplant/osurgical,
-		/datum/design/bioprinter/bioimplant/oscythe
-		)
-
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
 	disk_name = "Blackshield Sovereignty Pack"
 	icon_state = "onestar"
@@ -910,8 +638,6 @@
 		/datum/design/autolathe/gun/ten_dark,
 		/datum/design/autolathe/gun/omnirifle,//rifles
 		/datum/design/autolathe/gun/standard_omnirifle,
-		/datum/design/autolathe/gun/fancy_omnirifle,
-		/datum/design/autolathe/gun/scoped_omnirifle,
 		/datum/design/autolathe/gun/omnicarbine,
 		/datum/design/autolathe/gun/rds_omnicarbine,
 		/datum/design/autolathe/device/gps,//misc gear
@@ -919,15 +645,13 @@
 		/datum/design/autolathe/tool/tacknife,
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/ammo/magazine_a10mm,//ammo
-		/datum/design/autolathe/ammo/magazine_a10mm_rubber,
+		/datum/design/autolathe/ammo/magazine_a10mm/rubber,
 		/datum/design/autolathe/ammo/magazine_c10mm,
 		/datum/design/autolathe/ammo/magazine_c10mm_rubber,
-		/datum/design/autolathe/ammo/magazine_c10mm_hv,
 		/datum/design/autolathe/ammo/magazine_c10mm_lethal,
 		/datum/design/autolathe/ammo/box_c10mm,
 		/datum/design/autolathe/ammo/box_c10mm/lethal,
 		/datum/design/autolathe/ammo/box_c10mm/rubber,
-		/datum/design/autolathe/ammo/box_c10mm/hv
 		)
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
@@ -976,4 +700,639 @@
 		/datum/design/autolathe/circuit/biogen,
 		/datum/design/autolathe/circuit/biogen_port,
 		/datum/design/autolathe/circuit/biogen_console,
+	)
+
+
+// Excelsior
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior
+	disk_name = "Excelsior Means of Production"
+	desc = "The back has a machine etching: \"This struggle must be organised, according to \"all the rules of the art\", by people who are professionally engaged in revolutionary activity.\""
+	icon_state = "excelsior"
+
+	license = -1
+	designs = list(
+		/datum/design/autolathe/gun/makarov,						//guns
+		/datum/design/autolathe/gun/drozd,
+		/datum/design/autolathe/gun/vintorez,
+		/datum/design/autolathe/gun/boltgun,
+		/datum/design/autolathe/gun/ak47,
+		/datum/design/autolathe/ammo/pistol,				//makarov ammo
+		/datum/design/autolathe/ammo/pistol/rubber,
+		/datum/design/autolathe/ammo/pistol_ammobox,
+		/datum/design/autolathe/ammo/pistol_ammobox/rubber,
+		/datum/design/autolathe/ammo/smg,							//drozd ammo
+		/datum/design/autolathe/ammo/smg/rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox,
+		/datum/design/autolathe/ammo/magnum_ammobox/rubber,
+		/datum/design/autolathe/ammo/srifle_short,						//vintorez ammo
+		/datum/design/autolathe/ammo/srifle_short_rubber,
+		/datum/design/autolathe/ammo/srifle_ammobox,
+		/datum/design/autolathe/ammo/srifle_ammobox/rubber,
+		/datum/design/autolathe/ammo/sl_hrifle,						//boltgun ammo
+		/datum/design/autolathe/ammo/lrifle,						//AK ammo
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/circuit/autolathe_excelsior,		//circuits
+		/datum/design/autolathe/circuit/shieldgen_excelsior,
+		/datum/design/autolathe/circuit/reconstructor_excelsior,
+		/datum/design/autolathe/circuit/diesel_excelsior,
+		/datum/design/autolathe/circuit/turret_excelsior,
+		/datum/design/autolathe/circuit/autolathe_disk_cloner,
+		/datum/design/research/item/part/micro_mani,				//machine parts
+		/datum/design/research/item/part/subspace_amplifier,
+		/datum/design/research/item/part/subspace_crystal,
+		/datum/design/research/item/part/subspace_transmitter,
+		/datum/design/autolathe/part/igniter,						//regular parts
+		/datum/design/autolathe/part/signaler,
+		/datum/design/autolathe/part/sensor_prox,
+		/datum/design/research/item/part/basic_capacitor,
+		/datum/design/autolathe/cell/large/excelsior,				//power cells
+		/datum/design/autolathe/cell/medium/excelsior,
+		/datum/design/autolathe/cell/small/excelsior,
+		/datum/design/autolathe/device/excelsiormine,				//security
+		/datum/design/autolathe/sec/beartrap,
+		/datum/design/autolathe/device/implanter,					//misc
+		/datum/design/autolathe/clothing/excelsior_armor,
+		/datum/design/autolathe/device/excelbaton,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_weapons
+	disk_name = "Excelsior Means of Revolution"
+	desc = "The back has a machine etching: \"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\""
+	icon_state = "excelsior"
+
+	license = -1
+	designs = list(
+		/datum/design/autolathe/gun/makarov,
+		/datum/design/autolathe/gun/drozd,
+		/datum/design/autolathe/gun/vintorez,
+		/datum/design/autolathe/gun/boltgun,
+		/datum/design/autolathe/gun/ak47,
+		/datum/design/autolathe/ammo/pistol,				//makarov ammo
+		/datum/design/autolathe/ammo/pistol/rubber,
+		/datum/design/autolathe/ammo/pistol_ammobox,
+		/datum/design/autolathe/ammo/pistol_ammobox/rubber,
+		/datum/design/autolathe/ammo/smg,							//drozd ammo
+		/datum/design/autolathe/ammo/smg/rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox,
+		/datum/design/autolathe/ammo/magnum_ammobox/rubber,
+		/datum/design/autolathe/ammo/srifle_short,						//vintorez ammo
+		/datum/design/autolathe/ammo/srifle_short_rubber,
+		/datum/design/autolathe/ammo/srifle_ammobox,
+		/datum/design/autolathe/ammo/srifle_ammobox/rubber,
+		/datum/design/autolathe/ammo/sl_hrifle,						//boltgun ammo
+		/datum/design/autolathe/ammo/lrifle,						//AK ammo
+		/datum/design/autolathe/ammo/lrifle_rubber,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/sec/silencer,						//misc
+		/datum/design/autolathe/clothing/excelsior_armor,
+	)
+
+
+// Magazines and ammo
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
+	disk_name = "H&S Nonlethal Magazines Pack"
+	icon_state = "frozenstar"
+
+	license = 20
+	designs = list(
+		//pistol mags
+		/datum/design/autolathe/ammo/pistol/rubber,
+		/datum/design/autolathe/ammo/magnum/rubber,
+		//speed loaders
+		/datum/design/autolathe/ammo/slpistol/rubber,
+		/datum/design/autolathe/ammo/slmagnum/rubber,
+		//smg mags
+		/datum/design/autolathe/ammo/smg/rubber,
+		// rifles
+		/datum/design/autolathe/ammo/srifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		//shells
+		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_flash,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
+	disk_name = "SA Lethal Magazines Pack"
+	icon_state = "black"
+
+	license = 20
+	designs = list(
+		//pistol mags
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/magnum,
+		//speed loaders
+		/datum/design/autolathe/ammo/slpistol,
+		/datum/design/autolathe/ammo/slmagnum,
+		//smg mags
+		/datum/design/autolathe/ammo/smg,
+		// rifles
+		/datum/design/autolathe/ammo/srifle,
+		/datum/design/autolathe/ammo/lrifle,
+		/datum/design/autolathe/ammo/srifle_short,
+		/datum/design/autolathe/ammo/lrifle_short,
+		//shells
+		/datum/design/autolathe/ammo/shotgun_pellet,
+		/datum/design/autolathe/ammo/shotgun,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms
+	disk_name = "SA .35 and .40 Ammunition"
+	icon_state = "black"
+
+	license = 20
+	designs = list(
+		/datum/design/autolathe/ammo/pistol_ammobox,
+		/datum/design/autolathe/ammo/pistol_ammobox/practice,
+		/datum/design/autolathe/ammo/pistol_ammobox/rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox,
+		/datum/design/autolathe/ammo/magnum_ammobox/practice,
+		/datum/design/autolathe/ammo/magnum_ammobox/rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle
+	disk_name = "SA Rifle Ammunition"
+	icon_state = "black"
+
+	license = 20
+	designs = list(
+		/datum/design/autolathe/ammo/srifle_ammobox_small,
+		/datum/design/autolathe/ammo/srifle_ammobox_small/practice,
+		/datum/design/autolathe/ammo/srifle_ammobox_small/rubber,
+		/datum/design/autolathe/ammo/srifle_ammobox,
+		/datum/design/autolathe/ammo/srifle_ammobox/rubber,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small/practice,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small/rubber,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
+	)
+
+
+// G U N S (minus excelsior and research)
+// Pack is used when there is more than one gun on the disk
+
+// .35 PISTOLS + REVOLVERS
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cheap_guns
+	disk_name = "H&S - .35 Economy Pack"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/giskard,
+		/datum/design/autolathe/gun/olivaw,
+		/datum/design/autolathe/gun/clarissa,
+		/datum/design/autolathe/gun/detective,
+		/datum/design/autolathe/ammo/pistol/practice,
+		/datum/design/autolathe/ammo/pistol/rubber,
+		/datum/design/autolathe/ammo/slpistol/practice,
+		/datum/design/autolathe/ammo/slpistol/rubber,
+		)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58
+	disk_name = "Absolute Armory - 10mm MK58 Handgun Pack"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/mk58,
+		/datum/design/autolathe/gun/mk58_wood,
+		/datum/design/autolathe/ammo/magazine_a10mm/practice,
+		/datum/design/autolathe/ammo/magazine_a10mm/rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/colt
+	disk_name = "SA - .35 M1911"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/colt,
+		/datum/design/autolathe/ammo/pistol/practice,
+		/datum/design/autolathe/ammo/pistol/rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rafale
+	disk_name = "SM - 10mm Rafale"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/rafale,
+		/datum/design/autolathe/ammo/magazine_a10mm,
+		/datum/design/autolathe/ammo/magazine_a10mm/practice,
+	)
+
+// .40 REVOLVERS
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/revolver
+	disk_name = "H&S - .40 Minotaur Revolver"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/revolver,
+		/datum/design/autolathe/ammo/slmagnum/practice,
+		/datum/design/autolathe/ammo/slmagnum/rubber,
+		)
+
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/revolver_mateba
+	disk_name = "H&S - .50 Mateba Revolver"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/revolver/mateba,
+		/datum/design/autolathe/ammo/sl50,
+		/datum/design/autolathe/ammo/sl50/rubber,
+		)
+
+// .40 PISTOLS
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lamia
+	disk_name = "H&S - .40 Lamia Handgun"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/lamia,
+		/datum/design/autolathe/ammo/magnum/practice,
+		/datum/design/autolathe/ammo/magnum/rubber,
+		)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/basilisk
+	disk_name = "H&S - .50 Basilisk Handgun"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/basilisk,
+		/datum/design/autolathe/ammo/mg_a50_rubber,
+		/datum/design/autolathe/ammo/mg_a50,
+		)
+
+// SHOTGUNS
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/doublebarrel
+	disk_name = "SA - 20mm Double Barrel Shotgun"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/doublebarrel,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_flash,
+		)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly
+	disk_name = "SA - 20mm Grizly Shotgun"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/pump_shotgun,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_flash,
+		)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator
+	disk_name = "Absolute Armory - 20mm Regulator Shotgun"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/regulator,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_flash,
+		)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/gladstone
+	disk_name = "H&S - 20mm Gladstone Shotgun"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/gladstone,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_flash,
+		)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pug
+	disk_name = "SA - 20mm Pug Auto Shotgun"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/pug,
+		/datum/design/autolathe/ammo/m12beanbag, // Never add tazershells, for love of god
+		/datum/design/autolathe/ammo/m12pellet,
+		/datum/design/autolathe/ammo/m12slug,
+		)
+
+// SMGs
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firefly
+	disk_name = "H&S - .35 Firefly Pistol"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/firefly,
+		/datum/design/autolathe/ammo/hpistol/practice,
+		/datum/design/autolathe/ammo/hpistol/rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/wirbelwind
+	disk_name = "SM - .35 Wirbelwind SMG"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/wirbelwind,
+		/datum/design/autolathe/ammo/smg/practice,
+		/datum/design/autolathe/ammo/smg/rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/straylight
+	disk_name = "H&S - .35 Straylight SMG"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/straylight,
+		/datum/design/autolathe/ammo/smg/practice,
+		/datum/design/autolathe/ammo/smg/rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/texan
+	disk_name = "SA - .35 Texan SMG"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/texan,
+		/datum/design/autolathe/ammo/smg/practice,
+		/datum/design/autolathe/ammo/smg/rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mac
+	disk_name = "SA - .35 MAC SMG"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/mac,
+		/datum/design/autolathe/ammo/smg/practice,
+		/datum/design/autolathe/ammo/smg/rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_drozd
+	disk_name = "Excelsior - .35 Drozd SMG"
+	desc = "The back has a machine etching: \"Nobody is to be blamed for being born a slave; but a slave who not only eschews a striving for freedom but justifies and eulogies his slavery - such a slave is a lickspittle and a boor, who arouses a legitimate feeling of indignation, contempt, and loathing..\""
+	icon_state = "excelsior"
+
+	license = -1
+	designs = list(
+		/datum/design/autolathe/gun/drozd,
+		/datum/design/autolathe/ammo/smg,
+		/datum/design/autolathe/ammo/smg/rubber
+	)
+
+// .208 Rifles
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pitbull
+	disk_name = "H&S - .208 Pitbull Compact Assault Rifle"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/pitbull,
+		/datum/design/autolathe/ammo/srifle,
+		/datum/design/autolathe/ammo/srifle_short_rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ostwind
+	disk_name = "SM - .208 Ostwind Assault Rifle"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ostwind,
+		/datum/design/autolathe/ammo/srifle_short_practice,
+		/datum/design/autolathe/ammo/srifle_short_rubber,
+	)
+
+//6.5 Carbines
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bulldog
+	disk_name = "H&S - 6.5mm Bulldog Carbine"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/bulldog,
+		/datum/design/autolathe/gun/bulldog_rds,
+		/datum/design/autolathe/ammo/lrifle_short_practice,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pulse_rifle
+	disk_name = "PAR - 10mm Caseless Pulse Rifle"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/pulse_rifle,
+		/datum/design/autolathe/ammo/c10x24,
+		/datum/design/autolathe/ammo/box_10x24,
+	)
+
+// .30 Rifles
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/boltgun_sa
+	disk_name = "SA - 7.62mm Novakovic Rifle"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/boltgun_sa,
+		/datum/design/autolathe/ammo/sl_hrifle,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov
+	disk_name = "SA - 6.5mm Kalashnikov Rifle"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ak47_sa,
+		/datum/design/autolathe/ammo/lrifle,
+		/datum/design/autolathe/ammo/lrifle_short_practice,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+	)
+
+// Heavy
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/heavysniper
+	disk_name = "SA - .60-06 Penetrator AMR"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/heavysniper,
+		/datum/design/autolathe/ammo/antim,
+		/datum/design/autolathe/ammo/box_antim,
+	)
+
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_pk
+	disk_name = "SA - 7.62mm Pulemyot Kalashnikova MG"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/mg_pk,
+		/datum/design/autolathe/ammo/hrifle/pk,
+	)
+
+// Grenade Launchers
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/protector
+	disk_name = "SA - Grenade Launcher"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/grenade_launcher, // "NT GL \"Protector\""
+	)
+
+obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
+	disk_name = "H&S - Lenar Grenade Launcher"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/grenade_launcher_lenar, // "FS GL \"Lenar\""
+	)
+
+// ENERGY SMALL ARMS
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/counselor
+	disk_name = "Absolute Armory - Councelor PDW E"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/taser,
+		/datum/design/autolathe/cell/small/high,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/spiderrose
+	disk_name = "H&S - Spider Rose PDW E"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/energygun,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/martin
+	disk_name = "H&S - Martin PDW E"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/energygun_martin,
+		/datum/design/autolathe/cell/small/high,
+	)
+
+// ENERGY ARMS
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/nemesis
+	disk_name = "Absolute Armory - Nemesis Energy Crossbow"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/energy_crossbow,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/themis
+	disk_name = "Absolute Armory - Themis Energy Crossbow"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/large_energy_crossbow,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lightfall
+	disk_name = "Absolute Armory - Lightfall Laser Gun"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/laser,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/valkirye
+	disk_name = "Absolute Armory - Valkyrie Energy Rifle"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/sniperrifle,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/halicon
+	disk_name = "Absolute Armory - Halicon Ion Rifle"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ionrifle,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+// PLASMA ARMS
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/dominion
+	disk_name = "Absolute Armory - Dominion Plasma Rifle"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/pulse,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/purger
+	disk_name = "Absolute Armory - Purger Plasma Rifle"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/pulse_destroyer,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cassad
+	disk_name = "H&S - Cassad Plasma Rifle"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/pulse_cassad,
+		/datum/design/autolathe/cell/medium/high,
 	)

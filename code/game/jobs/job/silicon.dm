@@ -41,7 +41,7 @@
 	join_tag = "triai"
 
 /datum/job/cyborg
-	title = "Cyborg"
+	title = "Robot"
 	flag = CYBORG
 	department = "Station-Bound"
 	department_flag = MISC
@@ -57,7 +57,7 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/silicon/cyborg
 
-	description = "The Cyborg serves as a robotic helper - essentially a portable AI, though with somewhat less influence.<br>\
+	description = "The robots serves as a robotic helper - essentially a portable AI, though with somewhat less influence.<br>\
 	You are primarily a helper. Choose a department module, and use your respective abilities to help in accordance with your laws.<br>\
 	Orders from the Council, CRO, AI, and Roboticists should always be adhered to unless they conflict with your laws.<br>\
 	The Council and CRO can override the commands of Roboticists and the AI, however. They're far more important around here.<br>\

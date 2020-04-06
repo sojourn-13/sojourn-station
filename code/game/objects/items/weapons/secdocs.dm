@@ -2,7 +2,6 @@
 	name = "classified research"
 	desc = "This folder contains highly confidential scientific research."
 	icon = 'icons/obj/oddities.dmi'
-	icon_state = "paper_omega"
 	price_tag = 5000
 
 	oddity_stats = list(
@@ -14,7 +13,7 @@
 	//var/static/inv_spawn_count = 3
 
 /obj/item/weapon/oddity/secdocs/Initialize()
-	icon_state = "folder-[pick("omega","psi","theta")]"
+	icon_state = "paper_[pick("omega","psi","theta")]"
 	desc = pick("It's labelled 'Attractor Fields Theory'.",
 				"It's labelled 'World Lines Theory'.",
 				"It's labelled 'The Door Phenomenon'.",

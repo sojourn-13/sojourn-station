@@ -23,7 +23,7 @@
 	id_type = /obj/item/weapon/card/id/hos
 	head = /obj/item/clothing/head/rank/commander
 	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/cl44/rubber = 1,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/magnum/rubber = 1,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 /decl/hierarchy/outfit/job/security/smc
 	name = OUTFIT_JOB_NAME("Blackshield - Militia Commander")
@@ -37,7 +37,7 @@
 	id_type = /obj/item/weapon/card/id/hos
 	head = /obj/item/clothing/head/rank/milcom/beret
 	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/cl44/rubber = 1,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/magnum = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 
 /decl/hierarchy/outfit/job/security/gunserg
@@ -63,7 +63,7 @@
 	r_hand = /obj/item/weapon/storage/briefcase/crimekit
 	id_type = /obj/item/weapon/card/id/det
 	pda_type = /obj/item/modular_computer/pda/forensics
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/ammo_magazine/sl44/rubber = 2, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2)
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/ammo_magazine/slmagnum/rubber = 2, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2)
 
 /decl/hierarchy/outfit/job/security/detective/New()
 	..()

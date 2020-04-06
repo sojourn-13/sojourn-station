@@ -74,7 +74,8 @@
 
 /obj/item/weapon/storage/box/disks
 	name = "Diskette Box"
-	icon_state = "disk_kit"
+	icon_state = "box"
+	illustration = "disk"
 
 /obj/item/weapon/storage/box/disks/New()
 	..()

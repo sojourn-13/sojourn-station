@@ -190,8 +190,8 @@
 
 /obj/item/clothing/head/helmet/space/void/security/odst_corps
 	name = "blackshield corpsman voidsuit"
-	icon_state = "odst_corps"
-	item_state = "odst_corps"
+	icon_state = "odst_mil"
+	item_state = "odst_mil"
 
 /obj/item/clothing/suit/space/void/security/odst_corps
 	name = "blackshield corpsman voidsuit"

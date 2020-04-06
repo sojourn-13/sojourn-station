@@ -1,7 +1,8 @@
 /obj/item/weapon/gun/projectile/shotgun/bull
-	name = "HS SG \"Bull\""
-	desc = "A \"Heckler and Sons\" double-barreled pump-action shotgun. A marvel of engineering, this gun is often used by police tactical units. \
-			Due to shorter than usual barrels, damages are somewhat lower and recoil kicks slightly harder, but possibility to fire two barrels at once overshadows all bad design flaws."
+	name = "\"Bull\" shotgun"
+	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. A nightmare of engineering, this gun is often regarded as one of the worst firearms ever produced. \
+			Due to shorter than usual barrels, damages are somewhat lower and recoil suffers as a result. The ability to fire both barrels at once seems more of a gimmick than a feature. \
+			A number of scratches marr the finish by the ejection ports."
 	icon = 'icons/obj/guns/projectile/PeaceWalker.dmi'
 	icon_state = "PeaceWalker"
 	item_state = "PW"
@@ -12,7 +13,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
-	caliber = "shotgun"
+	caliber = CAL_SHOTGUN
 	var/reload = 1
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)

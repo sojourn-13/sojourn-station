@@ -148,7 +148,7 @@
 	selection_color = "#dddddd"
 	//alt_titles = list("Custodian","Sanitation Technician")
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
-	access = list(access_janitor, access_maint_tunnels, access_morgue, access_crematorium)
+	access = list(access_janitor, access_maint_tunnels, access_morgue, access_crematorium, access_mailsorting, access_cargo)
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 

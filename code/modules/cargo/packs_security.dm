@@ -30,7 +30,7 @@
 /datum/supply_pack/fssmall
 	name = "FS Sidearms Crate"
 	contains = list(/obj/item/weapon/gun/projectile/colt,
-			/obj/item/weapon/gun/projectile/IH_sidearm,
+
 			/obj/item/weapon/gun/projectile/clarissa,
 			/obj/item/weapon/gun/projectile/olivaw)
 	cost = 3000
@@ -38,21 +38,12 @@
 	crate_name = "FS sidearms crate"
 	group = "Security"
 
-/datum/supply_pack/fsassault
-	name = "FS Assault Weapons Crate"
-	contains = list(/obj/item/weapon/gun/projectile/automatic/ak47/fs,
-			/obj/item/weapon/gun/projectile/automatic/idaho,
-			/obj/item/weapon/gun/projectile/automatic/idaho)
-	cost = 6000
-	containertype = /obj/structure/closet/crate/secure/weapon
-	crate_name = "FS assault weapons crate"
-	group = "Security"
 
 /datum/supply_pack/fsrevolver
 	name = "FS Revolvers Crate"
 	contains = list(/obj/item/weapon/gun/projectile/revolver/detective,
 					/obj/item/weapon/gun/projectile/revolver/detective,
-					/obj/item/weapon/gun/projectile/revolver/consul)
+					/obj/item/weapon/gun/projectile/revolver)
 	cost = 3300
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "FS revolvers crate"
