@@ -167,36 +167,104 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/weapon/tank/jetpack/oxygen
 
-
-/obj/item/clothing/head/helmet/space/void/security/odst
-	name = "sol federation voidsuit"
+/obj/item/clothing/head/helmet/space/void/odst
+	name = "Sol Federation voidsuit helmet"
+	desc = "A helmet designed for military EVA operations, though not direct combat."
 	icon_state = "odst"
 	item_state = "odst"
+	item_state_slots = list(
+		slot_l_hand_str = "sec_helm",
+		slot_r_hand_str = "sec_helm",
+		)
 
-/obj/item/clothing/suit/space/void/security/odst
-	name = "sol federation voidsuit"
+	armor = list(
+		melee = 35,
+		bullet = 40,
+		energy = 30,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	siemens_coefficient = 0.7
+	light_overlay = "helmet_light_ihs"
+
+/obj/item/clothing/suit/space/void/security
+	name = "Sol Federation voidsuit"
+	desc = "A bulky suit that protects against hazardous, low pressure environments in non-combat military applications."
 	icon_state = "odst"
 	item_state = "odst"
+	armor = list(
+		melee = 35,
+		bullet = 40,
+		energy = 30,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	siemens_coefficient = 0.7
 
-/obj/item/clothing/head/helmet/space/void/security/odst_mil
+
+/obj/item/clothing/head/helmet/space/void/odst/mil
 	name = "blackshield voidsuit"
 	icon_state = "odst_mil"
 	item_state = "odst_mil"
 
-/obj/item/clothing/suit/space/void/security/odst_mil
+/obj/item/clothing/suit/space/void/security/odst/mil
 	name = "blackshield voidsuit"
 	icon_state = "odst_mil"
 	item_state = "odst_mil"
 
-/obj/item/clothing/head/helmet/space/void/security/odst_corps
-	name = "blackshield corpsman voidsuit"
+/obj/item/clothing/head/helmet/space/void/odst/corps
+	name = "blackshield corpsman voidsuit helmet"
 	icon_state = "odst_mil"
 	item_state = "odst_mil"
 
-/obj/item/clothing/suit/space/void/security/odst_corps
+/obj/item/clothing/suit/space/void/odst/corps
 	name = "blackshield corpsman voidsuit"
 	icon_state = "odst_corps"
 	item_state = "odst_corps"
+
+/obj/item/clothing/head/helmet/space/void/odst/red
+	name = "military voidsuit helmet"
+	icon_state = "odst_mil"
+	item_state = "odst_mil"
+
+
+/obj/item/clothing/head/helmet/space/void/odst/red
+	name = "military voidsuit"
+	icon_state = "odst_red"
+	item_state = "odst_red"
+
+/obj/item/clothing/suit/space/void/odst/blue
+	name = "military voidsuit"
+	icon_state = "odst_blue"
+	item_state = "odst_blue"
+
+/obj/item/clothing/head/helmet/space/void/odst/blue
+	name = "military voidsuit helmet"
+	icon_state = "odst_mil"
+	item_state = "odst_mil"
+
+/obj/item/clothing/head/helmet/space/void/odst/orange
+	name = "military voidsuit helmet"
+	icon_state = "odst_mil"
+	item_state = "odst_mil"
+
+/obj/item/clothing/suit/space/void/odst/orange
+	name = "military voidsuit"
+	icon_state = "odst_orange"
+	item_state = "odst_orange"
+
+/obj/item/clothing/head/helmet/space/void/odst/purple
+	name = "military voidsuit helmet"
+	icon_state = "odst_purple"
+	item_state = "odst_purple"
+
+/obj/item/clothing/suit/space/void/odst/purple
+	name = "military voidsuit"
+	icon_state = "odst_purple"
+	item_state = "odst_purple"
+
 
 //Atmospherics Rig (BS12)
 /obj/item/clothing/head/helmet/space/void/atmos
