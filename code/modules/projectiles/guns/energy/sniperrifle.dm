@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/sniperrifle
-	name = "OT MER \"Valkyrie\""
+	name = "\"Valkyrie\" laser rifle"
 	desc = "\"Valkyrie\" is an older design of Old Testament, \"Lightfall\" was based on it. A designated marksman rifle capable of shooting powerful ionized beams, this is a weapon for killing from a distance."
 	icon = 'icons/obj/guns/energy/sniper.dmi'
 	icon_state = "sniper"
@@ -22,4 +22,3 @@
 		WEAPON_CHARGE
 	)
 	twohanded = TRUE
-	

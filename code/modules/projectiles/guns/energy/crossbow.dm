@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/crossbow
-	name = "OT EC \"Nemesis\""
+	name = "\"Nemesis\" energy crossbow"
 	desc = "Mini energy crossbow, produced by Old Testament, discontinued now. Highly favored for a backpack for game hunting."
 	icon = 'icons/obj/guns/energy/crossbow.dmi'
 	icon_state = "crossbow"
@@ -25,7 +25,7 @@
 	restrict_safety = TRUE
 
 /obj/item/weapon/gun/energy/crossbow/largecrossbow
-	name = "OT EC \"Themis\""
+	name = "\"Themis\" energy crossbow"
 	desc = "Energy crossbow, produced by old Old Testament, discontinued now. Highly favored for game hunting."
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_NORMAL

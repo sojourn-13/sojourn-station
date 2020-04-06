@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/launcher/grenade
-	name = "SA GL \"Protector\""
+	name = "\"Protector\" rotary grenade launcher"
 	desc = "A bulky pump-action grenade launcher. Holds up to 6 grenades in a revolving magazine."
 	icon = 'icons/obj/guns/launcher/riotgun.dmi'
 	icon_state = "riotgun"
@@ -8,7 +8,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_WOOD = 10)
 
-	fire_sound = 'sound/weapons/empty.ogg'
+	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	fire_sound_text = "a metallic thunk"
 	recoil_buildup = 0
 	throw_distance = 7
@@ -107,6 +107,7 @@
 	max_grenades = 0
 	safety = FALSE
 	twohanded = FALSE
+	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 /obj/item/weapon/gun/launcher/grenade/underslung/attack_self()
 	return
 
@@ -135,7 +136,7 @@
 /* Marshal stuff */
 
 /obj/item/weapon/gun/launcher/grenade/lenar
-	name = "HS GL \"Lenar\""
+	name = "\"Lenar\" rotary grenade launcher"
 	desc = "A more than bulky pump-action grenade launcher. Holds up to 6 grenades in a revolving magazine."
 	icon = 'icons/obj/guns/launcher/grenadelauncher.dmi'
 	icon_state = "Grenadelauncher_PMC"
@@ -143,7 +144,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
-	fire_sound = 'sound/weapons/empty.ogg'
+	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	fire_sound_text = "a metallic thunk"
 	throw_distance = 10
 	release_force = 5

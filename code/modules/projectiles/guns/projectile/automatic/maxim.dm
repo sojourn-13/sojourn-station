@@ -13,7 +13,6 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PAN
 	tac_reloads = FALSE
-	magazine_type = /obj/item/ammo_magazine/maxim
 	matter = list(MATERIAL_PLASTEEL = 42, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
 	price_tag = 5000
 	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'

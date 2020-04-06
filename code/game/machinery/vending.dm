@@ -1840,7 +1840,7 @@
 					/obj/item/weapon/storage/deferred/crate/uniform_green = 4, /obj/item/weapon/storage/deferred/crate/uniform_brown = 4,
 					/obj/item/weapon/storage/deferred/crate/uniform_black = 4, /obj/item/weapon/storage/deferred/crate/uniform_flak = 2,
 					/obj/item/weapon/storage/deferred/crate/uniform_light = 2,
-					/obj/item/weapon/gun/projectile/boltgun_sa = 8,
+					/obj/item/weapon/gun/projectile/boltgun/sa = 8,
 					/obj/item/ammo_magazine/ammobox/hrifle = 30,
 					)
 	prices = list(
@@ -1848,7 +1848,7 @@
           				/obj/item/weapon/storage/deferred/crate/uniform_green = 2000, /obj/item/weapon/storage/deferred/crate/uniform_brown = 2000,
 					/obj/item/weapon/storage/deferred/crate/uniform_black = 2000, /obj/item/weapon/storage/deferred/crate/uniform_flak = 2200,
 					/obj/item/weapon/storage/deferred/crate/uniform_light = 1800,
-					/obj/item/weapon/gun/projectile/boltgun_sa = 1000,
+					/obj/item/weapon/gun/projectile/boltgun/sa = 1000,
 					/obj/item/ammo_magazine/ammobox/hrifle = 300,
 					)
 	idle_power_usage = 211

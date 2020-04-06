@@ -14,7 +14,6 @@
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_OMNI
-	magazine_type = /obj/item/ammo_magazine/c10mm
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 2000
 	recoil_buildup = 25

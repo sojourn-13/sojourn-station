@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/ionrifle
-	name = "OT IR \"Halicon\""
+	name = "\"Halicon\" ion-rifle"
 	desc = "The OT IR Halicon is a man-portable anti-armor weapon designed to disable mechanical threats, produced by Old Testament. Not the best of its type, but gets the job done."
 	icon = 'icons/obj/guns/energy/iongun.dmi'
 	icon_state = "ionrifle"

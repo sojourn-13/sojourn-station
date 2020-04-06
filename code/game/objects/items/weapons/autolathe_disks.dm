@@ -654,6 +654,50 @@
 		/datum/design/autolathe/ammo/box_c10mm/rubber,
 		)
 
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/ammo
+	disk_name = "SA Sovereignty Pack"
+	icon_state = "onestar"
+	license = 25
+
+	designs = list(
+		/datum/design/autolathe/ammo/magazine_a10mm,//ammo
+		/datum/design/autolathe/ammo/magazine_a10mm/rubber,
+		/datum/design/autolathe/ammo/magazine_a10mm/practice,
+		/datum/design/autolathe/ammo/magazine_c10mm,
+		/datum/design/autolathe/ammo/magazine_c10mm_rubber,
+		/datum/design/autolathe/ammo/magazine_c10mm_lethal,
+		/datum/design/autolathe/ammo/magazine_c10mm_practice,
+		/datum/design/autolathe/ammo/box_c10mm,
+		/datum/design/autolathe/ammo/box_c10mm/lethal,
+		/datum/design/autolathe/ammo/box_c10mm/rubber,
+		/datum/design/autolathe/ammo/box_c10mm/practice,
+		/datum/design/autolathe/ammo/pistol/rubber,
+		/datum/design/autolathe/ammo/pistol_ammobox,
+		/datum/design/autolathe/ammo/pistol/practice,
+		/datum/design/autolathe/ammo/magnum_ammobox/rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox/rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox/practice,
+		/datum/design/autolathe/ammo/smg,
+		/datum/design/autolathe/ammo/smg/rubber,
+		/datum/design/autolathe/ammo/smg/practice,
+		/datum/design/autolathe/ammo/magnum_ammobox,
+		/datum/design/autolathe/ammo/magnum_ammobox/rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox/practice,
+		/datum/design/autolathe/ammo/srifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short_practice,
+		/datum/design/autolathe/ammo/srifle_ammobox,
+		/datum/design/autolathe/ammo/srifle_ammobox_practice,
+		/datum/design/autolathe/ammo/lrifle,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short_practice,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/lrifle_practice,
+		)
+
+
+
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
 	disk_name = "Church of Absolute Basic Bioprinter Pack"
@@ -1160,7 +1204,7 @@
 	disk_name = "SA - 7.62mm Novakovic Rifle"
 	icon_state = "black"
 
-	license = 8
+	license = -1
 	designs = list(
 		/datum/design/autolathe/gun/boltgun_sa,
 		/datum/design/autolathe/ammo/sl_hrifle,

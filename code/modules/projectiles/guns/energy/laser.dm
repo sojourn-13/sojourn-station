@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/laser
-	name = "OT LG \"Lightfall\""
+	name = "\"Lightfall\" laser rifle"
 	desc = "\"Old Testament\" brand laser carbine. Deadly and radiant, like the ire of God it represents."
 	icon = 'icons/obj/guns/energy/laser.dmi'
 	icon_state = "laser"
@@ -32,7 +32,7 @@
 	projectile_type = /obj/item/projectile/beam/practice
 
 obj/item/weapon/gun/energy/retro
-	name = "GP LG \"Cog\""
+	name = "\"Cog\" lasgun"
 	icon = 'icons/obj/guns/energy/retro.dmi'
 	icon_state = "retro"
 	item_state = "retro"
@@ -51,7 +51,7 @@ obj/item/weapon/gun/energy/retro
 	)
 	twohanded = TRUE
 /obj/item/weapon/gun/energy/captain
-	name = "GP LG \"Destiny\""
+	name = "\"Destiny\" energy pistol"
 	icon = 'icons/obj/guns/energy/capgun.dmi'
 	icon_state = "caplaser"
 	item_state = "caplaser"
@@ -99,4 +99,3 @@ obj/item/weapon/gun/energy/retro
 	safety = FALSE
 	restrict_safety = TRUE
 	twohanded = FALSE
-	
