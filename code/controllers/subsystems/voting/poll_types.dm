@@ -8,7 +8,7 @@
 	question = "End Shift?"
 	time = 60
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
-	next_vote = 300 MINUTES //Minimum round length before it can be called for the first time
+	next_vote = 240 MINUTES //Minimum round length before it can be called for the first time
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
@@ -31,7 +31,7 @@
 	text = "End Shift"
 
 /datum/vote_choice/restart/on_win()
-	to_chat(world, "<b>The system intercomm announces todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.<b>")
+	to_chat(world, "<b>The colony intercomm announces todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.<b>")
 	sleep(15 MINUTES)
 	to_chat(world, "<b>Restarting world due to shift end...<b>")
 	sleep(50)
