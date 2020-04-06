@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_SMG
+	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
 	price_tag = 2000
 	damage_multiplier = 0.9
@@ -26,10 +26,19 @@
 
 /obj/item/weapon/gun/projectile/automatic/mac/update_icon()
 	..()
-	if(ammo_magazine)
-		icon_state = "[initial(icon_state)]-full"
-		set_item_state("-full")
-	else
-		icon_state = initial(icon_state)
-		set_item_state()
-	return
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		itemstring += "_full"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+/obj/item/weapon/gun/projectile/automatic/mac/Initialize()
+	. = ..()
+	update_icon()

@@ -599,6 +599,9 @@ BLIND     // can't see anything
 	var/list/extra_allowed = list()
 	equip_delay = 1 SECONDS
 
+	valid_accessory_slots = list("armband","decor")
+	restricted_accessory_slots = list("utility", "armband")
+
 /obj/item/clothing/suit/New()
 	allowed |= extra_allowed
 	.=..()

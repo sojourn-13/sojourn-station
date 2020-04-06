@@ -33,7 +33,8 @@
 	var/itemstring = ""
 
 	if (ammo_magazine)
-		iconstring += "_mag"
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		itemstring += "_full"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
