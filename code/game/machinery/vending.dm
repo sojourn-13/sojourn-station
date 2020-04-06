@@ -1185,21 +1185,69 @@
 	return
 
 /obj/machinery/vending/cigarette
+/obj/machinery/vending/cigarette
 	name = "Smooth Cigarettes" //OCD had to be uppercase to look nice with the new formating
 	desc = "If you want to get cancer, might as well do it in style!"
 	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!;Who belives in Cancer?;Cancer? Better get it in style!;I'm willing to bet you that those Scientists did not smoke Space Cigs!;Don't stop smoking now, You'll get fat!"
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs.;Cigars avalible for premium customers.;Best taste in space!"
 	vend_delay = 34
 	icon_state = "cigs"
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10,
-					/obj/item/weapon/storage/box/matches = 10,
-					/obj/item/weapon/flame/lighter/random = 4)
-	contraband = list(/obj/item/weapon/flame/lighter/zippo = 4,
-						/obj/item/weapon/storage/fancy/cigar = 5)
-	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 300,
-					/obj/item/weapon/storage/box/matches = 100,
-					/obj/item/weapon/flame/lighter/random = 150,
-					/obj/item/weapon/flame/lighter/zippo = 250)
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/brouzouf = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/frozen = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/shodan = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/toha = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/fortress = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 7,
+				/obj/item/weapon/storage/fancy/cigar = 2,
+				/obj/item/weapon/storage/box/matches = 10,
+				/obj/item/weapon/flame/lighter/random = 4,
+				/obj/item/weapon/flame/lighter/zippo = 4,
+				/obj/item/weapon/flame/lighter/zippo/blue = 4,
+				/obj/item/weapon/flame/lighter/zippo/red = 4,
+				/obj/item/weapon/flame/lighter/zippo/gold = 4,
+				/obj/item/weapon/flame/lighter/zippo/rainbow = 4,
+				/obj/item/weapon/flame/lighter/zippo/engraved = 4,
+				/obj/item/weapon/flame/lighter/zippo/black = 4,
+				/obj/item/weapon/flame/lighter/zippo/moff = 4,
+				/obj/item/weapon/flame/lighter/zippo/ironic = 4,
+				/obj/item/weapon/flame/lighter/zippo/capitalist = 4,
+				/obj/item/weapon/flame/lighter/zippo/royal = 4,
+				/obj/item/weapon/flame/lighter/zippo/gonzo = 4,
+				/obj/item/weapon/flame/lighter/zippo/bullet = 4,)
+	contraband = list(/obj/item/weapon/flame/lighter/zippo/communist = 2,
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 2)
+	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 80,
+				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 140,
+				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 90,
+				/obj/item/weapon/storage/fancy/cigarettes/brouzouf = 110,
+				/obj/item/weapon/storage/fancy/cigarettes/frozen = 125,
+				/obj/item/weapon/storage/fancy/cigarettes/shodan = 150,
+				/obj/item/weapon/storage/fancy/cigarettes/toha = 200,
+				/obj/item/weapon/storage/fancy/cigarettes/fortress = 100,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 100,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 100,
+				/obj/item/weapon/storage/box/matches = 25,
+				/obj/item/weapon/flame/lighter/random = 50,
+				/obj/item/weapon/flame/lighter/zippo = 100,
+				/obj/item/weapon/flame/lighter/zippo/blue = 100,
+				/obj/item/weapon/flame/lighter/zippo/red = 100,
+				/obj/item/weapon/flame/lighter/zippo/gold = 100,
+				/obj/item/weapon/flame/lighter/zippo/rainbow = 100,
+				/obj/item/weapon/flame/lighter/zippo/engraved = 100,
+				/obj/item/weapon/flame/lighter/zippo/black = 100,
+				/obj/item/weapon/flame/lighter/zippo/moff = 100,
+				/obj/item/weapon/flame/lighter/zippo/ironic = 100,
+				/obj/item/weapon/flame/lighter/zippo/capitalist = 100,
+				/obj/item/weapon/flame/lighter/zippo/royal = 100,
+				/obj/item/weapon/flame/lighter/zippo/gonzo = 100,
+				/obj/item/weapon/flame/lighter/zippo/bullet = 100,
+				/obj/item/weapon/flame/lighter/zippo/communist = 500,
+				/obj/item/weapon/storage/fancy/cigar = 500,
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 500)
 
 /obj/machinery/vending/medical
 	name = "MiniPharma Plus"
@@ -1679,17 +1727,46 @@
 	name = "Church of Absolute Theo-Mat"
 	desc = "A church dispensary for disciples and new converts."
 	product_slogans = "Find peace through faith.;Help humanity ascend, join your brethren today!;Come and seek a new life!;Safety in brotherhood!"
-	product_ads = "Praise!;Pray!;Only for the faithful!;Ascend!;Seek a new life!"
+	product_ads = "Praise!;Pray!;Only for the faithful!;Ascend!;Seek a new life!;Better living through technology!"
 	icon_state = "teomat"
 	vendor_department = DEPARTMENT_CHURCH
 	products = list(/obj/item/weapon/book/ritual/cruciform = 10,
 					/obj/item/weapon/storage/fancy/candle_box = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 20)
-	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 3)
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 20,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns = 2,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 3,
+					/obj/item/weapon/soap = 5,
+					/obj/item/weapon/storage/wallet = 5,
+					/obj/item/weapon/storage/backpack/satchel = 5,
+					/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 5,
+					/obj/item/stack/medical/bruise_pack = 8,
+					/obj/item/stack/medical/ointment = 8,
+					/obj/item/stack/medical/splint = 5,
+					/obj/item/stack/medical/advanced/bruise_pack = 4,
+					/obj/item/stack/medical/advanced/ointment = 4)
+	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 3,
+					/obj/item/weapon/tool/knife/neotritual = 3,
+					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 3)
+
 	prices = list(/obj/item/weapon/book/ritual/cruciform = 500,
 					/obj/item/weapon/storage/fancy/candle_box = 200,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 250,
-					/obj/item/weapon/implant/core_implant/cruciform = 1000)
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns = 8000,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns = 7000,
+					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 1000,
+					/obj/item/weapon/soap = 200,
+					/obj/item/weapon/storage/wallet = 150,
+					/obj/item/weapon/storage/backpack/satchel = 300,
+					/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 300,
+					/obj/item/stack/medical/bruise_pack = 200,
+					/obj/item/stack/medical/ointment = 200,
+					/obj/item/stack/medical/splint = 300,
+					/obj/item/stack/medical/advanced/bruise_pack = 400,
+					/obj/item/stack/medical/advanced/ointment = 400,
+					/obj/item/weapon/implant/core_implant/cruciform = 1000,
+					/obj/item/weapon/tool/knife/neotritual = 1000,
+					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 1500)
 
 /obj/machinery/vending/powermat
 	name = "Lonestar Power-Mat"
@@ -1724,9 +1801,7 @@
 	icon_state = "discomat"
 	products = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 20,
 					 /obj/item/weapon/storage/box/data_disk/basic = 5,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 10,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 10,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 10,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 20,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 5,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 5,
@@ -1742,9 +1817,7 @@
 	contraband = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 3)
 	prices = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 50,
 				  /obj/item/weapon/storage/box/data_disk/basic = 100,
-	 			  /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 300,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 400,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 400,
+	 			  /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 400,
 				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 500,
 				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 1800,
 				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 600,
