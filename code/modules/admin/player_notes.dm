@@ -10,7 +10,7 @@ datum/admins/proc/notes_show(var/ckey)
 
 datum/admins/proc/notes_gethtml(var/ckey)
 	var/savefile/notesfile = new(NOTESFILE)
-	if(!notesfile)	
+	if(!notesfile)
 		return "<font color='red'>Error: Cannot access [NOTESFILE]</font>"
 
 	if(ckey)
@@ -40,11 +40,11 @@ datum/admins/proc/notes_gethtml(var/ckey)
 
 	if(!note)
 		note = html_encode(input(usr,"Enter your note:","Enter some text",null) as message|null)
-		if(!note)	
+		if(!note)
 			return
 
 	var/savefile/notesfile = new(NOTESFILE)
-	if(!notesfile)	
+	if(!notesfile)
 		return
 	notesfile.cd = "/[ckey]"
 	notesfile.eof = 1		//move to the end of the buffer
@@ -86,3 +86,63 @@ datum/admins/proc/notes_gethtml(var/ckey)
 	return
 
 #undef NOTESFILE
+
+
+
+// AdminPM Logging stuff.
+
+datum/admins/proc/adminpmhistory_show(var/ckey)
+	usr << browse("<head><title>Player Admin-PM History</title></head><body>[adminpmhistory_gethtml(ckey)]</body>","window=adminpmhistory;size=700x400")
+
+datum/admins/proc/adminpmhistory_gethtml(var/ckey)
+
+	if(!ckey)
+		return
+
+	var/filePath = "data/player_saves/[copytext(ckey,1,2)]/[ckey]/adminPMHistory.sav"
+	var/savefile/file = new(filePath)
+	if(!file)
+		return "<font color='red'>Error: Cannot access [filePath]</font>"
+
+	. = "<b>AdmimPMHistory for [ckey]</b><br>"
+
+	while( !file.eof )
+		var/note
+		file >> note
+		. += "[note]<br>"
+
+	return
+
+/proc/log_adminPMHistory(var/ckeyTo, var/ckeyFrom, var/message)
+
+	if(!ckeyTo)
+		return
+
+	if(!message)
+		return
+
+	var logMessage = "[time2text(world.realtime,"DD-MMM-YYYY")] - [time_stamp()] | [ckeyFrom]->[ckeyTo] | [message]"
+
+
+	var/ckeyToFile = "data/player_saves/[copytext(ckeyTo,1,2)]/[ckeyTo]/adminPMHistory.sav"
+	var/savefile/ckeyToSavefile = new(ckeyToFile)
+	if(!ckeyToSavefile)
+		return "<font color='red'>Error: Cannot access [ckeyToFile]</font>"
+
+	ckeyToSavefile.eof = 1		//move to the end of the buffer
+	ckeyToSavefile << logMessage
+
+	if(ckeyTo != ckeyFrom)
+		var/ckeyFromFile = "data/player_saves/[copytext(ckeyFrom,1,2)]/[ckeyFrom]/adminPMHistory.sav"
+		var/savefile/ckeyFromSavefile = new(ckeyFromFile)
+		if(!ckeyFromSavefile)
+			return "<font color='red'>Error: Cannot access [ckeyFromFile]</font>"
+
+		ckeyFromSavefile.eof = 1		//move to the end of the buffer
+		ckeyFromSavefile << logMessage
+
+
+
+
+
+	return
