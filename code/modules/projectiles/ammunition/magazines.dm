@@ -343,7 +343,7 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	caliber = "10mm"
+	caliber = CAL_10PISTOL
 	matter = list(MATERIAL_STEEL = 2)
 	ammo_type = /obj/item/ammo_casing/a10mm
 	max_ammo = 8
@@ -377,7 +377,7 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_OMNI
-	caliber = "10x50mm"
+	caliber = CAL_OMNI
 	matter = list(MATERIAL_STEEL = 2)
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 20

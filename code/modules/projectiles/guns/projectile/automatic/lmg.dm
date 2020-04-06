@@ -15,7 +15,6 @@
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_BOX
-	magazine_type = /obj/item/ammo_magazine/hrifle/pk
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
 	price_tag = 5000

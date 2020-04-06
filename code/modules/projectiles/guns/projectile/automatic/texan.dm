@@ -11,7 +11,6 @@
 	slot_flags = SLOT_BELT
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_SMG
-	magazine_type = /obj/item/ammo_magazine/smg
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_WOOD = 4)
 	price_tag = 1600
 	damage_multiplier = 0.9

@@ -49,7 +49,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/ak47_sa
+/obj/item/weapon/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
 		 A poor copy of the AKM pattern, shortened into a mid-length carbine and chambered in 6.5x39mm. If it won't fire, percussive maintenance should get it working again. \
@@ -60,23 +60,3 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 3000
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-
-/obj/item/weapon/gun/projectile/automatic/ak47_sa/update_icon()
-	..()
-
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (ammo_magazine)
-		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
-		itemstring += "_full"
-
-	if(wielded)
-		itemstring += "_doble"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
-
-/obj/item/weapon/gun/projectile/automatic/ak47_sa/Initialize()
-	. = ..()
-	update_icon()

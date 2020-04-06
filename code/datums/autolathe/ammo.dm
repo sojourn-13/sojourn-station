@@ -353,7 +353,7 @@
 	build_path = /obj/item/ammo_magazine/slhrifle
 
 /datum/design/autolathe/ammo/hrifle_ammobox_small
-	name = "stripper clip (7.62 Rifle)"
+	name = "ammunition packet (7.62 Rifle)"
 	build_path = /obj/item/ammo_magazine/ammobox/hrifle_small
 
 //.60-06

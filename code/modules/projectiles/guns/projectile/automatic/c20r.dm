@@ -11,7 +11,6 @@
 	slot_flags = SLOT_BELT|SLOT_BACK
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_SMG
-	magazine_type = /obj/item/ammo_magazine/smg
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
 	price_tag = 3000

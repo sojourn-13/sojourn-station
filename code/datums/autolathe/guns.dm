@@ -80,7 +80,7 @@
 
 /datum/design/autolathe/gun/bulldog_rds
 	name = "H&S CAR 6.5x39 \"Bulldog\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/bulldog_rds
+	build_path = /obj/item/weapon/gun/projectile/automatic/bulldog/rds
 
 /datum/design/autolathe/gun/pulse_rifle
 	name = "PAR - 10mm Caseless Pulse Rifle"
@@ -92,7 +92,7 @@
 
 /datum/design/autolathe/gun/ak47_sa
 	name = "SA CAR 6.5x39 \"Kalashnikov\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/ak47_sa
+	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/sa
 
 /datum/design/autolathe/gun/vintorez
 	name = "Excelsior .208 \"Vintorez\""

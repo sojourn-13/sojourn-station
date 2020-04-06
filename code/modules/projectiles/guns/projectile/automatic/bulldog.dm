@@ -29,9 +29,10 @@
 
 	if (ammo_magazine)
 		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		itemstring += "_full"
 
-	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		iconstring += "_slide"
+	if(wielded)
+		itemstring += "_doble"
 
 	icon_state = iconstring
 	set_item_state(itemstring)
@@ -40,30 +41,12 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/bulldog_rds
+
+/obj/item/weapon/gun/projectile/automatic/bulldog/rds
 	name = "\"Bulldog\" carbine"
-	desc = "A common carry gun manufactured by H&S for security and police far and wide Compact and reliable. Uses 6.5 Carbine rounds. This one comes with red dot sight."
+	desc = "A common carry gun manufactured by H&S for security and police far and wide. Compact and reliable. Uses 6.5 Carbine rounds. This one comes with red dot sight."
 	icon = 'icons/obj/guns/projectile/bulldog_rds.dmi'
 	icon_state = "bulldog_rds"
 	item_state = "bulldog_rds"
 	price_tag = 2350
 	zoom_factor = 0.3
-
-/obj/item/weapon/gun/projectile/automatic/bulldog_rds/update_icon()
-	..()
-
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (ammo_magazine)
-		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
-
-	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		iconstring += "_slide"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
-
-/obj/item/weapon/gun/projectile/automatic/bulldog_rds/Initialize()
-	. = ..()
-	update_icon()

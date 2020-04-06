@@ -9,7 +9,7 @@
 	force = WEAPON_FORCE_ROBUST
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	caliber = CAL_HRIFLE //needs new caliber type?
+	caliber = CAL_LRIFLE
 	fire_delay = 12 // double the standart
 	damage_multiplier = 1.4
 	penetration_multiplier  = 1.5
@@ -17,6 +17,7 @@
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
+	ammo_type = /obj/item/ammo_magazine/lrifle
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
@@ -88,8 +89,7 @@
 		return
 	..()
 
-
-/obj/item/weapon/gun/projectile/boltgun_sa
+/obj/item/weapon/gun/projectile/boltgun/sa
 	name = "\"Novakovic\" boltgun"
 	desc = "Weapon for hunting, or endless trench warfare. \
 			If you're on a budget, it's a darn good rifle for just about everything. \
@@ -97,5 +97,6 @@
 	icon = 'icons/obj/guns/projectile/boltgun_wood.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
+	max_shells = 10
 	recoil_buildup = 0.4 // Double the excel variant
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
