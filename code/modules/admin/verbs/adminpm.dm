@@ -107,6 +107,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_pm_panel, R_ADMIN|R_MOD|R_MENTOR, FALSE)
 		sound_to(C, 'sound/effects/adminhelp.ogg')
 
 	log_admin("PM: [key_name(src)]->[key_name(C)]: [msg]")
+	log_adminPMHistory(C.ckey, src.ckey, msg)
 
 
 	//we don't use message_admins here because the sender/receiver might get it too

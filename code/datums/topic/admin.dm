@@ -1598,3 +1598,14 @@
 			notes_remove(ckey, text2num(input["from"]), text2num(input["to"]))
 
 	source.notes_show(ckey)
+
+
+/datum/admin_topic/adminpmhistory
+	keyword = "adminpmhistory"
+	require_perms = list(R_MOD|R_ADMIN)
+
+/datum/admin_topic/adminpmhistory/Run(list/input)
+
+	var/mob/M = locate(input["adminpmhistory"])
+
+	source.adminpmhistory_show(M.ckey)
