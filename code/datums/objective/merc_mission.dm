@@ -1,3 +1,32 @@
+
+/datum/shuttle/autodock/multi/antag/mercenary
+	name = "Mercenary"
+	warmup_time = 0
+	cloaked = 0
+	destination_tags = list(
+		"nav_merc_northeast",
+		"nav_merc_southwest",
+		"nav_merc_dock",
+		"nav_merc_start",
+		)
+	shuttle_area = /area/shuttle/mercenary
+	default_docking_controller = "merc_shuttle"
+	current_location = "nav_merc_start"
+	landmark_transition = "nav_merc_transition"
+	announcer = "Nadezhda Colony Sensor Array"
+	home_waypoint = "nav_merc_start"
+	arrival_message = "Attention, unidentified vessel detected on long range sensors. \nVessel is approaching on an intercept course. \nHailing frequencies open."
+	departure_message = "Attention, unknown vessel has departed"
+
+
+
+
+
+
+
+
+
+
 //Possible mission states
 #define MISSION_STATUS_SETUP 0	//Mercs are still at their base getting equipped
 #define MISSION_STATUS_IN_PROGRESS	1	//Mission has started, timer is ticking
