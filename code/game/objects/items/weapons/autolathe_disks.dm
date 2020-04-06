@@ -26,11 +26,12 @@
 
 
 // Asters
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/tools
-	disk_name = "Lonestar Basic Tool Pack"
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc
+	disk_name = "Lonestar Miscellaneous Pack"
 	icon_state = "guild"
-	license = -1
+	license = 20
 	designs = list(
+		//Basic Tools
 		/datum/design/autolathe/tool/hatchet,
 		/datum/design/autolathe/tool/minihoe,
 		/datum/design/autolathe/tool/ducttape,
@@ -39,9 +40,7 @@
 		/datum/design/autolathe/tool/crowbar,
 		/datum/design/autolathe/tool/screwdriver,
 		/datum/design/autolathe/tool/wirecutters,
-		/datum/design/autolathe/tool/pliers,
 		/datum/design/autolathe/tool/wrench,
-		/datum/design/autolathe/tool/hammer,
 		/datum/design/autolathe/tool/saw,
 		/datum/design/autolathe/tool/multitool,
 		/datum/design/autolathe/tool/pickaxe,
@@ -52,14 +51,8 @@
 		/datum/design/autolathe/tool/weldertool,
 		/datum/design/autolathe/tool/weldinggoggles,
 		/datum/design/autolathe/tool/weldermask,
-		/datum/design/autolathe/device/flamethrower
-	)
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc
-	disk_name = "Lonestar Miscellaneous Pack"
-	icon_state = "guild"
-	license = -1
-	designs = list(
+		/datum/design/autolathe/device/flamethrower,
+		//Misc
 		/datum/design/autolathe/misc/flashlight,
 		/datum/design/autolathe/tool/ducttape,
 		/datum/design/autolathe/misc/extinguisher,
@@ -81,13 +74,7 @@
 		/datum/design/autolathe/misc/floor_light,
 		/datum/design/autolathe/misc/tube,
 		/datum/design/autolathe/misc/bulb,
-	)
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/devices
-	disk_name = "Lonestar Devices and Instruments"
-	icon_state = "guild"
-	license = 10
-	designs = list(
+		//Devices
 		/datum/design/autolathe/misc/flashlight,
 		/datum/design/autolathe/device/analyzer,
 		/datum/design/autolathe/device/plant_analyzer,
@@ -104,7 +91,8 @@
 		/datum/design/autolathe/device/export_scanner,
 		/datum/design/autolathe/device/implanter,
 		/datum/design/autolathe/device/hand_labeler,
-		/datum/design/research/item/light_replacer
+		/datum/design/research/item/light_replacer,
+
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/robustcells
