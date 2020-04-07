@@ -9,7 +9,7 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	can_dual = 1
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
+	mag_well = MAG_WELL_PISTOL|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 800
 	damage_multiplier = 1.1
