@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/mac
 	name = "\"MAC\" SMG"
-	desc = "A conceptual replica of an old and incredibly simple SMG. However, ergonomics were never good on the original, and recoil is rather significant. Uses .35 Auto."
+	desc = "A conceptual replica of an old and incredibly simple SMG. However, ergonomics were never good on the original, and recoil is rather significant. Essentially disposable. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/mac.dmi'
 	icon_state = "mac"
 	item_state = "mac"
@@ -21,6 +21,7 @@
 
 	firemodes = list(
 		FULL_AUTO_600,
+		BURST_8_ROUND,
 		SEMI_AUTO_NODELAY
 		)
 
