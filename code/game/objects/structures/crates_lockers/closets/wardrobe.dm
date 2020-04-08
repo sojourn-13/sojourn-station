@@ -341,7 +341,7 @@
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/suit/costume/job/nun(src)
 	new /obj/item/clothing/head/costume/job/nun(src)
-	new /obj/item/clothing/suit/rank/chaplain(src)
+	new /obj/item/clothing/suit/storage/chaplain(src)
 	new /obj/item/clothing/head/rank/chaplain(src)
 	new /obj/item/clothing/under/bride_white(src)
 	new /obj/item/weapon/storage/fancy/candle_box(src)

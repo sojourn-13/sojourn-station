@@ -59,6 +59,7 @@
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/taperoll/police(src)
 	new /obj/item/clothing/suit/armor/hos(src)
+	new /obj/item/clothing/suit/armor/platecarrier/hos(src)
 	new /obj/item/clothing/under/rank/ih_commander(src)
 	new /obj/item/device/radio/headset/heads/hos(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
@@ -74,6 +75,7 @@
 	new /obj/item/weapon/gun/energy/gun/martin(src)
 	new /obj/item/clothing/accessory/holster/waist(src)
 	new /obj/item/weapon/melee/telebaton(src)
+	new /obj/item/weapon/melee/classic_baton(src)
 	new /obj/item/clothing/accessory/badge/hos(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
@@ -196,9 +198,9 @@
 	new /obj/item/device/taperecorder(src)
 	new /obj/item/weapon/gun/projectile/revolver/deckard(src)
 	new /obj/item/clothing/accessory/holster/armpit(src)
-	new /obj/item/ammo_magazine/magnum/rubber(src)
-	new /obj/item/ammo_magazine/magnum/rubber(src)
-	new /obj/item/ammo_magazine/magnum/rubber(src)
+	new /obj/item/ammo_magazine/slmagnum/rubber(src)
+	new /obj/item/ammo_magazine/slmagnum/rubber(src)
+	new /obj/item/ammo_magazine/slmagnum/rubber(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 
 /obj/structure/closet/secure_closet/injection

@@ -137,14 +137,14 @@
 		list(QUALITY_SCREW_DRIVING, 10, 70),
 	)
 
-//Metal rods reinforced with fiber tape
+//Metal rods reinforced with regular tape
 /datum/craft_recipe/tool/brace
 	name = "tool mod: brace bar"
 	result = /obj/item/weapon/tool_upgrade/reinforcement/stick
 	steps = list(
 		list(/obj/item/stack/rods, 3, 30),
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
-		list(QUALITY_ADHESIVE, 50, 150)
+		list(QUALITY_ADHESIVE, 30, 150)
 	)
 
 //Welding backpack disassembled into a smaller tank
@@ -205,9 +205,6 @@
 	steps = list(
 		list(/obj/item/stack/rods, 2, 30),
 		list(QUALITY_WELDING, 10, 150),
-		list(/obj/item/weapon/material/shard/shrapnel, 1, "time" = 30),
-		list(/obj/item/weapon/material/shard/shrapnel, 1, "time" = 30),
-		list(/obj/item/weapon/material/shard/shrapnel, 1, "time" = 30),
-		list(/obj/item/weapon/material/shard/shrapnel, 1, "time" = 30),
-		list(QUALITY_WELDING, 10, 150),
+		list(QUALITY_DRILLING, 20, 150),
+		list(QUALITY_SAWING, 20, 150),
 	)

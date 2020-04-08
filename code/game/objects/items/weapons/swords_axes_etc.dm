@@ -20,14 +20,17 @@
 /obj/item/weapon/melee/classic_baton/attack(mob/M as mob, mob/living/user as mob)
 	if ((CLUMSY in user.mutations) && prob(50))
 		to_chat(user, SPAN_WARNING("You club yourself over the head."))
+		playsound(src.loc, 'sound/effects/woodhit.ogg', 50, 1, -1)
 		user.Weaken(3 * force)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.damage_through_armor(2 * force, BRUTE, BP_HEAD, ARMOR_MELEE)
 		else
 			user.take_organ_damage(2 * force)
+			playsound(src.loc, 'sound/effects/woodhit.ogg', 50, 1, -1)
 		return
 	return ..()
+
 
 //Telescopic baton
 /obj/item/weapon/melee/telebaton
@@ -97,7 +100,7 @@
 				user.take_organ_damage(2*force)
 			return
 		if(..())
-			//playsound(src.loc, "swing_hit", 50, 1, -1)
+			playsound(src.loc, 'sound/effects/woodhit.ogg', 50, 1, -1)
 			return
 	else
 		return ..()

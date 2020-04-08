@@ -13,6 +13,7 @@
 	new /obj/item/clothing/head/rank/milcom/beret(src)
 	new /obj/item/clothing/head/rank/milcom(src)
 	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/clothing/suit/armor/flackvest/commander(src)
 	new /obj/item/clothing/suit/armor/commander/militia(src)
 	new /obj/item/clothing/under/rank/commander(src)
 	new /obj/item/clothing/under/rank/commander/formal(src)
