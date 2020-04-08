@@ -154,7 +154,7 @@
 
 
 /datum/core_module/rituals/cruciform/priest
-	access = list(access_nt_preacher, access_nt_custodian, access_nt_agrolyte)
+	access = list(access_nt_disciple, access_nt_custodian, access_nt_agrolyte)
 	ritual_types = list(/datum/ritual/cruciform/priest,
 	/datum/ritual/targeted/cruciform/priest)
 

@@ -1260,7 +1260,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "quartoffice"
 
 /area/nadezhda/quartermaster/pods
-	name = "\improper Loenstar Pod Dorms"
+	name = "\improper Lonestar Pod Dorms"
 	icon_state = "quartoffice"
 
 /area/nadezhda/quartermaster/storage
@@ -1335,7 +1335,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "robotics"
 
 /area/nadezhda/rnd/rdoffice
-	name = "\improper Moebius Expedition Overseer's Office"
+	name = "\improper Soteria Expedition Overseer's Office"
 	icon_state = "head_quarters"
 
 /area/nadezhda/rnd/supermatter

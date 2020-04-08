@@ -1283,6 +1283,18 @@
 	icon_deny = "wallmed-deny"
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;I hope you know what you're doing."
 
+	products = list(
+		/obj/item/stack/medical/bruise_pack = 2, /obj/item/stack/medical/ointment = 2,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector = 4,
+		/obj/item/device/scanner/health = 1
+		)
+	contraband = list(
+		/obj/item/weapon/reagent_containers/syringe/antitoxin = 2,
+		/obj/item/weapon/reagent_containers/syringe/spaceacillin = 2,
+		/obj/item/weapon/reagent_containers/pill/tox = 1
+		)
+	auto_price = FALSE
+
 /obj/machinery/vending/wallmed/minor
 	products = list(
 		/obj/item/stack/medical/bruise_pack = 2, /obj/item/stack/medical/ointment = 2,
