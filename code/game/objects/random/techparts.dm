@@ -42,8 +42,6 @@
 				/obj/item/weapon/stock_parts/subspace/transmitter = 3,
 				/obj/item/weapon/stock_parts/subspace/treatment = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 3,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 3,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 2,

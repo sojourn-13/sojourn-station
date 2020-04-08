@@ -5,8 +5,6 @@
 /obj/random/lathe_disk/item_to_spawn() // pickweight is calculated from advanced list = / 2 - 1. If lower than 1 - delete from the list;
 	return pickweight(list(
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 20,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 16,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors = 10,

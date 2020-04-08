@@ -88,7 +88,7 @@
 /obj/item/clothing/head/seccap
 	name = "blue patrol cap"
 	desc = "A blue patrol cap worn by security personnel."
-	icon_state = "secsoft"
+	icon_state = "sec2soft"
 
 /obj/item/clothing/head/seccorp
 	name = "black patrol cap"
