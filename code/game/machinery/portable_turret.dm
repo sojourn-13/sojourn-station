@@ -615,6 +615,11 @@ var/list/turret_icons
 		return TURRET_NOT_TARGET
 	return 	..()
 
+/obj/machinery/porta_turret/stationary/assess_living(var/mob/living/L)
+	if(L.faction == "onestar")
+		return TURRET_NOT_TARGET
+	return 	..()
+
 /obj/machinery/porta_turret/proc/assess_perp(var/mob/living/carbon/human/H)
 	if(!H || !istype(H))
 		return 0
