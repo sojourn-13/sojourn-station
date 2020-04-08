@@ -14,7 +14,7 @@
 	minimum_character_age = 30
 
 	access = list(
-		access_morgue, access_chapel_office, access_crematorium, access_hydroponics, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors
+		access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_hydroponics, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors
 	)
 
 	wage = WAGE_PROFESSIONAL //The church has deep pockets
@@ -67,7 +67,7 @@
 	difficulty = "Easy to Medium."
 	selection_color = "#ecd37d"
 	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
-	access = list(access_morgue, access_crematorium, access_maint_tunnels, access_hydroponics)
+	access = list(access_morgue, access_crematorium, access_maint_tunnels, access_hydroponics, access_nt_disciple)
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/church/acolyte
 
