@@ -3119,10 +3119,6 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/triage)
-"agG" = (
-/obj/random/closet_tech/low_chance,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/barracks)
 "agH" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = -25
@@ -4172,10 +4168,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/pros/shuttle)
-"aiU" = (
-/obj/random/mob/roaches/low_chance,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/barracks)
 "aiV" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -4183,7 +4175,9 @@
 	},
 /obj/random/junk/low_chance,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/barracks)
+/area/nadezhda/maintenance{
+	name = "Surface Maintenance"
+	})
 "aiW" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
@@ -4252,9 +4246,6 @@
 /obj/machinery/autolathe,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/prep)
-"ajg" = (
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/barracks)
 "ajh" = (
 /obj/structure/table/rack/shelf,
 /obj/random/material/low_chance,
@@ -4308,7 +4299,9 @@
 /obj/random/junkfood/low_chance,
 /obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/barracks)
+/area/nadezhda/maintenance{
+	name = "Surface Maintenance"
+	})
 "ajn" = (
 /obj/machinery/suit_storage_unit/security,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -16227,8 +16220,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/meadow)
 "aMl" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/decal/cleanable/dirt,
@@ -16244,14 +16237,9 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/nadezhda/hallway/surface/section2)
 "aMm" = (
-/obj/machinery/door/airlock{
-	id_tag = null;
-	name = "Church Commons";
-	req_access = list(70)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/wood/wild3,
+/turf/simulated/wall,
 /area/nadezhda/absolutism/vectorrooms)
 "aMn" = (
 /obj/structure/cable{
@@ -16264,7 +16252,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/turf/simulated/floor/wood,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/absolutism/vectorrooms)
 "aMo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -16648,9 +16636,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/door/airlock{
-	name = "Church";
-	req_access = list(70)
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
@@ -16912,22 +16899,6 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
-"aNA" = (
-/obj/machinery/door/airlock{
-	id_tag = "chudorm2";
-	name = "Church Dorm 2";
-	req_access = list(70)
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
-"aNB" = (
-/obj/machinery/door/airlock{
-	id_tag = "chudorm1";
-	name = "Church Dorm 1";
-	req_access = list(70)
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
 "aNC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -17020,26 +16991,6 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/prime)
-"aNP" = (
-/obj/machinery/button/remote/airlock{
-	id = "chudorm2";
-	name = "Door Bolt Control";
-	pixel_x = -28;
-	pixel_y = 0;
-	specialfunctions = 4
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
-"aNQ" = (
-/obj/machinery/button/remote/airlock{
-	id = "chudorm1";
-	name = "Door Bolt Control";
-	pixel_x = -28;
-	pixel_y = 0;
-	specialfunctions = 4
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
 "aNR" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -17498,9 +17449,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
 "aOZ" = (
-/obj/machinery/door/blast/regular/open{
-	id = "Colony Lockdown"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -17515,8 +17463,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external,
-/turf/simulated/floor/tiled/dark/golden,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/absolutism/vectorrooms)
 "aPa" = (
 /obj/structure/cable{
@@ -17533,11 +17480,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "aPb" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -18914,10 +18858,6 @@
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/maintenance/outside/burned_outpost)
-"aUs" = (
-/obj/machinery/light,
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
 "aUt" = (
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/asteroid/grass,
@@ -27155,11 +27095,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/vectorrooms)
-"bvU" = (
-/obj/structure/table/woodentable,
-/obj/random/toy/plushie_onlylarge,
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
 "bvV" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -27269,11 +27204,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
-"bwe" = (
-/obj/structure/table/woodentable,
-/obj/random/toy/action_figure,
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
 "bwf" = (
 /obj/machinery/door/airlock{
 	name = "Bathroom"
@@ -29536,6 +29466,10 @@
 "bAT" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/industrial/hatch,
+/obj/item/clothing/gloves/thick,
+/obj/item/clothing/gloves/thick,
+/obj/item/clothing/gloves/thick,
+/obj/item/clothing/gloves/thick,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bAU" = (
@@ -29594,10 +29528,36 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
+"eoI" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/absolutism/vectorrooms)
 "fcW" = (
 /obj/effect/floor_decal/industrial/arrows,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/maintenance/junk)
+"gin" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/tree/jungle/variant2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "hjM" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/floor_decal/industrial/loading/white,
@@ -29625,6 +29585,14 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/maintenance/junk)
+"pnE" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/tree/jungle/variant3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
+"pDF" = (
+/turf/simulated/wall,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "udp" = (
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 4
@@ -51481,9 +51449,9 @@ abx
 abx
 abx
 abx
-agG
-aiU
-ajg
+bxQ
+bxN
+aak
 aeJ
 acR
 buE
@@ -51683,7 +51651,7 @@ acT
 acT
 adz
 abx
-agG
+bxQ
 aiV
 ajm
 adg
@@ -53765,12 +53733,12 @@ aCE
 aCE
 aMP
 aQg
-aFI
+aFJ
 aFJ
 aTk
 aFJ
 aFJ
-aFI
+aFJ
 aIM
 aIM
 aIM
@@ -53979,7 +53947,7 @@ aIm
 aJb
 aKi
 aQf
-aFI
+aIM
 aQR
 aIm
 aFJ
@@ -54181,7 +54149,7 @@ aFJ
 aMc
 aFJ
 aMc
-aFI
+aIM
 aIm
 aMc
 aIm
@@ -54370,20 +54338,20 @@ aHw
 aLU
 aCE
 aOZ
-aKx
-aKx
-aKx
-aKx
-aKx
-aKx
-aKx
+bnt
+aIM
+bqA
+aFJ
+aIm
+aFJ
+aFJ
 aOi
 aJb
 aFJ
 aFJ
 aFJ
 aFJ
-aFI
+aIM
 aFJ
 aFJ
 aIm
@@ -54571,21 +54539,21 @@ aKC
 aHw
 aMh
 aEx
-aMk
-aHw
-aEx
-aEx
-aEx
-aEx
-aCE
-aKx
+aOZ
+aIm
+aIM
+bnx
+aIm
+aMc
+aFJ
+aIm
 aIm
 aFJ
 aPd
 aKi
 aIm
 aNY
-aFI
+aIM
 aOB
 aJb
 aJb
@@ -54773,21 +54741,21 @@ aKC
 aKT
 aMi
 aEx
-aMk
-aHw
-aNA
-aNP
-aHw
-bvU
-aCE
-aKx
+aOZ
+aFJ
+aIM
+aFJ
+aFJ
+aFJ
+bqA
+aOB
 aIm
 aFJ
 aPf
 aIm
 aIm
 aNY
-aFI
+aIM
 aIm
 aIm
 aXa
@@ -54975,21 +54943,21 @@ aKC
 aHw
 aMj
 aEx
-aPa
-aHw
-aEx
-aHX
-aHw
-aJz
-aCE
-aKx
+aOZ
+aFJ
+aIM
+aIm
+aFJ
+aFJ
+pnE
+aFJ
 aOB
 aFJ
 aFJ
 aJb
 aIm
 aOB
-aFI
+aIM
 aFJ
 aIm
 aIm
@@ -55178,20 +55146,20 @@ aLp
 aLp
 aMm
 aMn
-aHw
-aEx
-aHC
-aHw
-aIU
-aCE
-aKx
+aFJ
+aIM
+aFJ
+aFJ
+aIm
+aOB
+aIm
 aOB
 aFJ
 aFJ
 aPf
 aPO
 aOO
-aFI
+aIM
 aIm
 aJb
 aJb
@@ -55379,21 +55347,21 @@ aHv
 aHv
 bwm
 aEx
-aMk
-aHw
-aEx
-aHY
-aID
-aJA
-aCE
-aKx
+aOZ
+aFJ
+aIM
+aFJ
+aMc
+bqA
+aFJ
+aOB
 aPP
 aFJ
 aFJ
 aFJ
 aFJ
 aPf
-aFI
+aIM
 aFJ
 aMc
 aOB
@@ -55581,21 +55549,21 @@ aKp
 aHv
 aKV
 aEx
-aMk
-aUs
-aEx
-aEx
-aEx
-aEx
-aCE
-aKx
+aOZ
+bqA
+aIM
+bqA
+aFJ
+aFJ
+aIm
+aFJ
 aOC
 aIm
 aOB
 aJb
 aFJ
 aFJ
-aFI
+aIM
 aFJ
 aFJ
 aIm
@@ -55783,21 +55751,21 @@ bwg
 aHv
 aKW
 aEx
-aMk
-aHw
-aNB
-aNQ
-aHw
-bwe
-aCE
-aKx
+aOZ
+bnt
+aIM
+aFJ
+aIm
+aFJ
+aIm
+aPf
 aNY
 aON
 aIm
 aFJ
 aMc
 aJb
-aFI
+aIM
 aOO
 aIm
 aXb
@@ -55985,21 +55953,21 @@ aEx
 aEx
 aCE
 aCE
-aMk
-aHw
-aEx
-aHX
-aHw
-aJz
-aCE
-aKx
+aOZ
+aIm
+aIM
 aFJ
+aFJ
+aIm
+aOB
+aFJ
+aIm
 aOO
 aOC
 aFJ
 aFJ
 aIm
-aFI
+aIM
 aIm
 aIm
 aIm
@@ -56186,18 +56154,18 @@ aKm
 aKR
 aEx
 aCE
-aCE
+aPc
 aPa
-aHw
-aEx
-aHC
-aHw
-aIU
-aCE
-aKx
-aFI
+aFJ
+aIM
+bqA
 aFJ
 aFJ
+aFJ
+gin
+aFJ
+aFJ
+aIm
 aIm
 aOB
 aFI
@@ -56388,15 +56356,15 @@ aHw
 aIU
 aEx
 aCE
-aCE
+aOM
 aMk
-aHw
-aEx
-aHY
-aID
-aJA
-aCE
-aHg
+aIM
+aIM
+aFJ
+aFJ
+aMc
+aFJ
+aOk
 aOk
 aOk
 aOk
@@ -56591,14 +56559,14 @@ aJz
 aEx
 aCE
 aCE
-aMk
-aHw
-aEx
+eoI
 aCE
 aCE
 aCE
-aCE
-aHg
+aFJ
+aFJ
+aIm
+aOk
 aOD
 aOD
 aOD
@@ -56791,11 +56759,11 @@ aHY
 aID
 aJA
 aGw
-aBM
-aBM
+aGw
+aGw
 aMU
-aBM
-aHg
+aGw
+pDF
 aHg
 aHg
 aHg
