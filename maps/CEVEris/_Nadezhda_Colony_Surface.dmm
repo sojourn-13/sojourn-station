@@ -16493,6 +16493,9 @@
 /area/colony/exposedsun)
 "aMG" = (
 /obj/structure/closet/crate/trashcart,
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "aMH" = (
@@ -16509,6 +16512,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "aMJ" = (
@@ -16903,6 +16907,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
+/obj/effect/floor_decal/industrial/caution{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
 "aNA" = (
@@ -16943,7 +16950,13 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/prime)
 "aNG" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "aNH" = (
@@ -17043,9 +17056,10 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/prime)
 "aNT" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 8
 	},
+/obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "aNU" = (
@@ -17235,6 +17249,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "aOp" = (
@@ -17243,6 +17258,7 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "aOq" = (
@@ -17750,6 +17766,7 @@
 "aPQ" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/light,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "aPR" = (
@@ -19934,8 +19951,8 @@
 	dir = 4
 	},
 /obj/structure/sign/faction/derelict1{
-	desc = "Attention: The junk beacon is a dangerous device, it pulls floating debris from space down from orbit, the impact will turn you to gibs should any land on you. Additionally, beware of roaches hidden in the trash. Use at your own risk!";
-	name = "NOTICE: Dangerous Device";
+	desc = "Attention: The SB (Scrap Beacon) is an advanced gravitational mechanism that pulls space debris down from orbit. This process is highly hazardous and likely lethal to anyone impacted. Obey the stand clear signs, watch out for roaches hidden within the trash, and use at your own risk!";
+	name = "NOTICE: Beacon Usage";
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/golden,
@@ -21419,6 +21436,7 @@
 /obj/structure/table/steel,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bdq" = (
@@ -24760,6 +24778,7 @@
 /obj/machinery/camera/network/third_section{
 	dir = 4
 	},
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bpI" = (
@@ -26402,6 +26421,7 @@
 /obj/structure/table/steel,
 /obj/item/weapon/tool/shovel,
 /obj/item/weapon/tool/shovel,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "buo" = (
@@ -26409,6 +26429,7 @@
 	dir = 1
 	},
 /obj/machinery/power/nt_obelisk,
+/obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bup" = (
@@ -26767,6 +26788,7 @@
 /area/nadezhda/hallway/surface/section2)
 "bvd" = (
 /obj/machinery/power/nt_obelisk,
+/obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bve" = (
@@ -27069,6 +27091,12 @@
 /obj/machinery/camera/network/cev_eris{
 	dir = 8
 	},
+/obj/structure/sign/faction/derelict1{
+	desc = "Attention: The SB (Scrap Beacon) is an advanced gravitational mechanism that pulls space debris down from orbit. This process is highly hazardous and likely lethal to anyone impacted. Obey the stand clear signs, watch out for roaches hidden within the trash, and use at your own risk!";
+	name = "NOTICE: Beacon Usage";
+	pixel_x = 32;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bvO" = (
@@ -27082,6 +27110,7 @@
 /obj/structure/table/steel,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bvP" = (
@@ -27323,6 +27352,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
+/obj/effect/floor_decal/industrial/caution,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/maintenance/junk)
 "bwo" = (
@@ -29281,7 +29311,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel,
+/obj/effect/floor_decal/industrial/box/red,
+/turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bAd" = (
 /obj/effect/step_trigger/teleporter{
@@ -29485,6 +29516,7 @@
 /obj/structure/table/steel,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bAR" = (
@@ -29503,11 +29535,13 @@
 /area/nadezhda/command/prime)
 "bAT" = (
 /obj/structure/table/steel,
+/obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bAU" = (
 /obj/machinery/light,
 /obj/machinery/power/nt_obelisk,
+/obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "bAV" = (
@@ -29543,6 +29577,78 @@
 /obj/item/weapon/mop,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
+"bSH" = (
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/maintenance/junk)
+"cqA" = (
+/obj/effect/floor_decal/industrial/loading/white,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
+"cyF" = (
+/obj/structure/closet/crate/trashcart,
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
+"fcW" = (
+/obj/effect/floor_decal/industrial/arrows,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/maintenance/junk)
+"hjM" = (
+/obj/structure/closet/crate/trashcart,
+/obj/effect/floor_decal/industrial/loading/white,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
+"jAf" = (
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/maintenance/junk)
+"kHJ" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/maintenance/junk)
+"nfd" = (
+/obj/effect/floor_decal/industrial/stand_clear,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/maintenance/junk)
+"onx" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/maintenance/junk)
+"udp" = (
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
+"wdz" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/maintenance/junk)
+"wvs" = (
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/maintenance/junk)
+"wKf" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
 
 (1,1,1) = {"
 aab
@@ -59721,6 +59827,7 @@ aBM
 aBM
 aYu
 aNo
+wKf
 aNr
 aNr
 aNr
@@ -59728,8 +59835,7 @@ aNr
 aNr
 aNr
 aNr
-aNr
-aNr
+bAT
 aNm
 bAW
 bwx
@@ -59931,7 +60037,7 @@ aNr
 aNr
 aNr
 aNr
-aNr
+cqA
 aNm
 bAW
 bwC
@@ -60128,12 +60234,12 @@ aNp
 aNr
 aNU
 aNU
-aNU
+kHJ
 aNU
 aNU
 aNr
 aNr
-aMG
+hjM
 aNm
 bAW
 bwx
@@ -60330,7 +60436,7 @@ aNq
 aNr
 aNU
 aNU
-aNU
+bSH
 aNU
 aNU
 aNr
@@ -60530,11 +60636,11 @@ aBM
 buo
 aNr
 aNr
-aNU
-aNU
+wdz
+jAf
 aOu
-aNU
-aNU
+fcW
+nfd
 aNr
 aNr
 bAU
@@ -60734,12 +60840,12 @@ aNr
 aNr
 aNU
 aNU
-aNU
+wvs
 aNU
 aNU
 aNr
 aNr
-aMG
+hjM
 aNm
 bAW
 bwC
@@ -60936,7 +61042,7 @@ aNr
 aNr
 aNU
 aNU
-aNU
+onx
 aNU
 aNU
 aNr
@@ -61539,12 +61645,12 @@ aBM
 aBM
 bvO
 bun
-aMG
-aMG
+udp
+cyF
 aOp
 aOp
 bvd
-aMG
+cyF
 bAT
 aPy
 bvN
