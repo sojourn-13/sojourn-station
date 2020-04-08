@@ -197,9 +197,6 @@
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
-"L" = (
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
 "M" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark/panels,
@@ -265,7 +262,7 @@ o
 v
 C
 F
-L
+q
 O
 a
 "}
