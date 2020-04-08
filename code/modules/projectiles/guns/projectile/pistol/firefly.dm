@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/firefly
 	name = "\"Firefly\" pistol"
-	desc = "A simple and reliable sidearm produced by Holland & Sullivan Arms for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses .35 Auto."
+	desc = "A simple and reliable sidearm produced by Holland & Sullivan Arms for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses .35 Auto in high-capacity magazines.."
 	icon = 'icons/obj/guns/projectile/firefly.dmi'
 	icon_state = "firefly"
 	item_state = "firefly"
@@ -10,8 +10,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
-	magazine_type = /obj/item/ammo_magazine/hpistol
+	mag_well = MAG_WELL_H_PISTOL
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_PLASTIC = 4)
 	price_tag = 1500

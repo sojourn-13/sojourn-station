@@ -225,7 +225,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
-	/obj/item/clothing/suit/armor/bulletproof/serbian/green = 1,
+	/obj/item/clothing/suit/armor/platecarrier/green = 1,
 	/obj/item/clothing/head/helmet/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -238,7 +238,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/brown = 1,
 	/obj/item/clothing/head/soft/tan2soft = 1,
-	/obj/item/clothing/suit/armor/bulletproof/serbian/tan = 1,
+	/obj/item/clothing/suit/armor/platecarrier/tan = 1,
 	/obj/item/clothing/head/helmet/altyn/brown = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -250,7 +250,7 @@
 	icon_state = "serbcrate_deferred_black"
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/black = 1,
-	/obj/item/clothing/suit/armor/bulletproof/serbian = 1,
+/obj/item/clothing/suit/armor/platecarrier = 1,
 	/obj/item/clothing/head/helmet/altyn/black = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -263,7 +263,7 @@
 	icon_state = "serbcrate_deferred_worn"
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
-	/obj/item/clothing/suit/armor/flak/green = 1,
+	/obj/item/clothing/suit/armor/flackvest/green = 1,
 	/obj/item/clothing/head/helmet/altyn/maska = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -277,7 +277,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
-	/obj/item/clothing/suit/armor/flak = 1,
+	/obj/item/clothing/suit/armor/flackvest = 1,
 	/obj/item/clothing/head/helmet/steelpot = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,

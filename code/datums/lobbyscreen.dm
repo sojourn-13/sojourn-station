@@ -29,7 +29,7 @@
 //		)
 
 
-/datum/lobbyscreen/transit
+/datum/lobbyscreen/enroute
 	image_file = 'icons/title_screens/transit.png'
 	possibleMusic = list(
 		'sound/music/lobby/transit.ogg',

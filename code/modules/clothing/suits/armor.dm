@@ -82,27 +82,6 @@
 	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
-// Serbian flak vests
-/obj/item/clothing/suit/armor/flak
-	name = "black flakvest vest"
-	desc = "An armored vest that protects against high-velocity solid projectiles."
-	icon_state = "flakvest"
-	item_state = "armor"
-	blood_overlay_type = "armor"
-	armor = list(
-		melee = 35,
-		bullet = 35,
-		energy = 0,
-		bomb = 20,
-		bio = 0,
-		rad = 0
-	)
-
-/obj/item/clothing/suit/armor/flak/green
-	name = "green flakvest vest"
-	icon_state = "flakvest_green"
-
-
 /obj/item/clothing/suit/armor/bulletproof
 	name = "bulletproof vest"
 	desc = "A vest that excels in protecting the wearer against high-velocity solid projectiles."
@@ -122,27 +101,6 @@
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
 	icon_state = "bulletproof_ironhammer"
-
-/obj/item/clothing/suit/armor/bulletproof/serbian
-	name = "black platecarrier vest"
-	icon_state = "platecarrier"
-	armor = list(
-		melee = 25,
-		bullet = 60,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
-	price_tag = 400
-
-/obj/item/clothing/suit/armor/bulletproof/serbian/green
-	name = "green platecarrier vest"
-	icon_state = "platecarrier_green"
-
-/obj/item/clothing/suit/armor/bulletproof/serbian/tan
-	name = "tan platecarrier vest"
-	icon_state = "platecarrier_tan"
 
 /obj/item/clothing/suit/armor/laserproof
 	name = "ablative armor vest"
@@ -275,7 +233,7 @@
 	icon_state = "platecarrier"
 	item_state = "platecarrier"
 	blood_overlay_type = "armor"
-	armor = list(melee = 35, bullet = 50, energy = 15, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 60, energy = 15, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/ih
 	name = "plate carrier"
@@ -308,6 +266,16 @@ obj/item/clothing/suit/armor/platecarrier/tan
 	icon_state = "platecarrier_tan"
 	item_state = "platecarrier_tan"
 
+/obj/item/clothing/suit/armor/platecarrier/hos
+	name = "advanced plate carrier"
+	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes."
+	icon_state = "platecarrier_ih"
+	item_state = "platecarrier_ih"
+	blood_overlay_type = "armor"
+	slowdown = 0.15
+	armor = list(melee = 40, bullet = 60, energy = 20, bomb = 10, bio = 0, rad = 0)
+
+
 obj/item/clothing/suit/armor/flackvest
 	name = "flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel."
@@ -315,7 +283,7 @@ obj/item/clothing/suit/armor/flackvest
 	item_state = "flakvest"
 	blood_overlay_type = "armor"
 	slowdown = 0.5
-	armor = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 50, energy = 20, bomb = 50, bio = 0, rad = 0)
 
 obj/item/clothing/suit/armor/flackvest/militia
 	name = "militia flak vest"
@@ -330,6 +298,15 @@ obj/item/clothing/suit/armor/flackvest/green
 			Some folks are born made to wave the flag."
 	icon_state = "flakvest_green"
 	item_state = "flakvest_green"
+
+obj/item/clothing/suit/armor/flackvest/commander
+	name = "commander's flak vest"
+	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. Smells of napalm and the sea."
+	icon_state = "flakvest_green"
+	item_state = "flakvest_green"
+	blood_overlay_type = "armor"
+	slowdown = 0.2
+	armor = list(melee = 50, bullet = 55, energy = 30, bomb = 50, bio = 0, rad = 0)
 
 obj/item/clothing/suit/armor/commander
 	name = "commander's armored coat"
