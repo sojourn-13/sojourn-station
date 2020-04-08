@@ -4285,16 +4285,16 @@
 /area/nadezhda/pros/prep)
 "ajk" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/space/void/security/odst_corps,
-/obj/item/clothing/suit/space/void/security/odst_mil,
-/obj/item/clothing/suit/space/void/security/odst_mil,
+/obj/item/clothing/suit/space/void/odst/corps,
+/obj/item/clothing/suit/space/void/security/odst/mil,
+/obj/item/clothing/suit/space/void/security/odst/mil,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/tactical)
 "ajl" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet/space/void/security/odst_mil,
-/obj/item/clothing/head/helmet/space/void/security/odst_mil,
-/obj/item/clothing/head/helmet/space/void/security/odst_mil,
+/obj/item/clothing/head/helmet/space/void/odst/mil,
+/obj/item/clothing/head/helmet/space/void/odst/mil,
+/obj/item/clothing/head/helmet/space/void/odst/mil,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/tactical)
 "ajm" = (

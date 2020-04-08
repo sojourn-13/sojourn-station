@@ -1104,7 +1104,7 @@
 	/obj/item/ammo_magazine/ammobox/magnum/rubber = 550,
 	/obj/item/ammo_magazine/slmagnum/practice = 50,
 	/obj/item/ammo_magazine/ammobox/magnum/practice = 225,
-	/obj/item/ammo_magazine/c10mm = 20
+	/obj/item/ammo_magazine/c10mm = 20,
 	/obj/item/ammo_magazine/ammobox/c10mm/rubber = 420,
 	/obj/item/weapon/storage/box/shotgunammo/beanbags = 800,
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 400,
