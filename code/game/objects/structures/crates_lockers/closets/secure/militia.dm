@@ -30,6 +30,8 @@
 	new /obj/item/clothing/accessory/holster/hip(src)
 	new /obj/item/weapon/melee/telebaton(src)
 	new /obj/item/weapon/storage/pouch/ammo(src)
+	new /obj/item/clothing/suit/greatcoat/ihc/bmc(src)
+	new /obj/item/clothing/suit/greatcoat/ihc/bmc_cloaked(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	if(prob(50))

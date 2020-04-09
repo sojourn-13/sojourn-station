@@ -11971,7 +11971,6 @@
 /area/nadezhda/hallway/surface/section2)
 "aBo" = (
 /obj/structure/closet/secure_closet/reinforced/hos,
-/obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "aBp" = (
