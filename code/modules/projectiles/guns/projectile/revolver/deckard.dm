@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/revolver/deckard
-	name = "\"Deckard\" cyber-revolver"
-	desc = "A rare, custom-built revolver formerly used on Earth by early Turing Police, less than 20 examples exist in this side of the galaxy. Use when there is no time for the Voight-Kampff test. Uses .40 Magnum rounds."
+	name = "\"Deckard\" magnum"
+	desc = "A rare, custom-built revolver formerly used on Earth by early Turing Police, less than 100 examples exist in this side of the galaxy. Use when there is no time for the Voight-Kampff test. Uses .40 Magnum rounds."
 	icon = 'icons/obj/guns/projectile/deckard.dmi'
 	icon_state = "deckard"
 	caliber = CAL_MAGNUM
