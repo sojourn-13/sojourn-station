@@ -65,7 +65,6 @@ Counsel the council on directing the colony towards profitable opportunities."
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#c3b9a6"
-	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_SERBIAN = 5, LANGUAGE_JIVE = 80)
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech

@@ -184,7 +184,7 @@ Sword holsters
 	desc = "A sturdy brown leather scabbard with gold trim. It's made for a crusader's greatsword. Deus Vult."
 	icon_state = "crusader_holster"
 	overlay_state = "crusader"
-	can_hold = list(/obj/item/weapon/tool/sword/crusader)
+	can_hold = list(/obj/item/weapon/tool/sword)
 
 /obj/item/clothing/accessory/holster/saber/greatsword/update_icon()
 	..()

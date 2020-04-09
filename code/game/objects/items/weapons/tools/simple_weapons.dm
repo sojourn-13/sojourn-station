@@ -220,10 +220,10 @@
 	price_tag = 10000
 
 /obj/item/weapon/melee/sledgehammer
-	name = "sledgehammer"
-	desc = "Once a tool used to nail rivets, now a tool used to crush skulls."
-	icon_state = "sledgehammer"
-	item_state = "sledgehammer0"
+	name = "foreman's sledgehammer"
+	desc = "Once a tool used to nail rivets, now a tool used to crush skulls. The signature weapon of the prospector's foreman."
+	icon_state = "sledgehammer0"
+	item_state = "sledgehammer1"
 	force = WEAPON_FORCE_LETHAL
 	armor_penetration = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_PAINFUL
