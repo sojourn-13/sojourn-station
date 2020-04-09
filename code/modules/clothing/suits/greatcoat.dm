@@ -50,7 +50,7 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/ihc
+/obj/item/clothing/suit/greatcoat/ihc/bmc
 	name = "militia commander's greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style."
 	icon_state = "mc_coat"
@@ -63,7 +63,7 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/ihc
+/obj/item/clothing/suit/greatcoat/ihc/bmc_cloaked
 	name = "militia commander's cloaked greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style, this time wrapped in a fancy cloak."
 	icon_state = "mc_coat_cloak"

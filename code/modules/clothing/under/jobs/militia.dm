@@ -77,6 +77,7 @@
 	name = "Milita Commander's dress uniform"
 	desc = "It's a uniform worn by those few with the dedication to achieve the position of \"Blackshield Commander\"."
 	icon_state = "commander"
+	item_state = "commander"
 
 /obj/item/clothing/suit/armor/commander/militia
 	name = "Militia Commander's armored coat"
