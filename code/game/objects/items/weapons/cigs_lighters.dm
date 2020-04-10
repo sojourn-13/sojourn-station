@@ -239,7 +239,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt
 	chem_volume = 20
 	smoketime = 360
-	preloaded_reagents = list("nicotine" = 6)
+	preloaded_reagents = list("nicotine" = 5)
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
 	lightermes = "<span class='notice'>USER manages to light their NAME with FLAME.</span>"
 	zippomes = "<span class='rose'>With a flick of their wrist, USER lights their NAME with their FLAME.</span>"
@@ -252,6 +252,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "ishimuraon"
 	icon_off = "ishimuraoff"
 	type_butt = /obj/item/trash/cigbutt/ishimura
+	preloaded_reagents = list("nicotine" = 5, "grapejuice" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/tannhauser
 	name = "Tannhauser Gate cigarette"
@@ -259,6 +260,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "tannhauseron"
 	icon_off = "tannhauseroff"
 	type_butt = /obj/item/trash/cigbutt/tannhauser
+	preloaded_reagents = list("nicotine" = 5, "sodiumchloride" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/brouzouf
 	name = "Brouzouf Message cigarette"
@@ -266,6 +268,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "brouzoufon"
 	icon_off = "brouzoufoff"
 	type_butt = /obj/item/trash/cigbutt/brouzouf
+	preloaded_reagents = list("nicotine" = 5, "tea" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/frozen
 	name = "\improper Frozen Nova cigarette"
@@ -273,6 +276,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "frozenon"
 	icon_off = "frozenoff"
 	type_butt = /obj/item/trash/cigbutt/frozen
+	preloaded_reagents = list("nicotine" = 5, "coffee" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/shodan
 	name = "\improper Shodans cigarette"
@@ -280,6 +284,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "shodanon"
 	icon_off = "shodanoff"
 	type_butt = /obj/item/trash/cigbutt/shodan
+	preloaded_reagents = list("nicotine" = 5, "greentea" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/toha
 	name = "\improper TOHA Heavy Industries cigarette"
@@ -287,6 +292,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "tohaon"
 	icon_off = "tohaoff"
 	type_butt = /obj/item/trash/cigbutt/toha
+	preloaded_reagents = list("nicotine" = 5, "enzyme" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/fortress
 	name = "\improper Fortress Classic cigarette"
@@ -294,20 +300,23 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "cigon"
 	icon_off = "cigoff"
 	type_butt = /obj/item/trash/cigbutt/fortress
+	preloaded_reagents = list("nicotine" = 5, "tonic" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/fortressred
-	name = "\improper Fortress RED menthols cigarette"
+	name = "\improper Fortress RED light cigarette"
 	icon_state = "cigoff"
 	icon_on = "cigon"
 	icon_off = "cigoff"
 	type_butt = /obj/item/trash/cigbutt/fortressred
+	preloaded_reagents = list("nicotine" = 2, "cherryjelly" = 8)
 
 /obj/item/clothing/mask/smokable/cigarette/fortressblue
-	name = "\improper Fortress BLU light cigarette"
+	name = "\improper Fortress BLU menthol cigarette"
 	icon_state = "cigoff"
 	icon_on = "cigon"
 	icon_off = "cigoff"
 	type_butt = /obj/item/trash/cigbutt/fortressblue
+	preloaded_reagents = list("nicotine" = 5,  "mint" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/khi
 	name = "\improper Kitsuhana Singularity cigarette"
@@ -315,7 +324,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "khion"
 	icon_off = "khioff"
 	type_butt = /obj/item/trash/cigbutt/khi
-	preloaded_reagents = list("mindbreaker" = 20)
+	preloaded_reagents = list("mindbreaker" = 5, "serotrotium" = 5, "impedrezene" = 5, "space_drugs" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()

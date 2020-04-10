@@ -223,7 +223,7 @@ obj/item/ammo_magazine/ammobox/c10mm/lethal/update_icon()
 /obj/item/ammo_magazine/ammobox/srifle
 	name = "ammunition box (.208 Rifle FMJ)"
 	icon_state = "box_srifle_l"
-	matter = list(MATERIAL_STEEL = 60)
+	matter = list(MATERIAL_STEEL = 30)
 	w_class = ITEM_SIZE_BULKY
 	caliber = "srifle"
 	caliber = CAL_SRIFLE
@@ -271,7 +271,7 @@ obj/item/ammo_magazine/ammobox/c10mm/lethal/update_icon()
 obj/item/ammo_magazine/ammobox/lrifle
 	name = "ammunition box (6.5x39mm FMJ)"
 	icon_state = "box_lrifle_l"
-	matter = list(MATERIAL_STEEL = 60)
+	matter = list(MATERIAL_STEEL = 30)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_LRIFLE
 	ammo_type = /obj/item/ammo_casing/lrifle
@@ -321,7 +321,7 @@ obj/item/ammo_magazine/ammobox/lrifle
 obj/item/ammo_magazine/ammobox/hrifle
 	name = "ammunition box (7.62mm Rifle lethal)"
 	icon_state = "box762mm"
-	matter = list(MATERIAL_STEEL = 60)
+	matter = list(MATERIAL_STEEL = 30)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_HRIFLE
 	ammo_type = /obj/item/ammo_casing/hrifle
@@ -367,7 +367,7 @@ obj/item/ammo_magazine/ammobox/hrifle
 /obj/item/ammo_magazine/ammobox/antim
 	name = "ammunition box (.60-06 AP)"
 	icon_state = "box145mm"
-	matter = list(MATERIAL_STEEL = 30)
+	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTEEL = 30)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_ANTIM
 	ammo_type = /obj/item/ammo_casing/antim
