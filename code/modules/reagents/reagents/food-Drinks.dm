@@ -91,6 +91,10 @@
 	nutriment_factor = 4
 	color = "#FFFF00"
 
+/datum/reagent/organic/nutriment/honey/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
+	M.adjustToxLoss(-0.05 * effect_multiplier)
+
 /datum/reagent/organic/nutriment/flour
 	name = "flour"
 	id = "flour"

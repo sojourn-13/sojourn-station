@@ -252,7 +252,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "ishimuraon"
 	icon_off = "ishimuraoff"
 	type_butt = /obj/item/trash/cigbutt/ishimura
-	preloaded_reagents = list("nicotine" = 5, "grapejuice" = 5)
+	preloaded_reagents = list("nicotine" = 5, "ishispec" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/tannhauser
 	name = "Tannhauser Gate cigarette"
@@ -292,7 +292,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_on = "tohaon"
 	icon_off = "tohaoff"
 	type_butt = /obj/item/trash/cigbutt/toha
-	preloaded_reagents = list("nicotine" = 5, "enzyme" = 5)
+	preloaded_reagents = list("nicotine" = 5, "honey" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/fortress
 	name = "\improper Fortress Classic cigarette"

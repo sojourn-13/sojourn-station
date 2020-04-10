@@ -33,6 +33,24 @@
 		if (istype(L))
 			L.take_damage(3, 0)
 
+/datum/reagent/stim/ishigrape
+	name = "Ishimura Special"
+	id = "ishispec"
+	description = "A non-addictive stimulent found in Ishimura cigarettes. It aids in clearing the mind and focusing, a favorite by researchers and scientists."
+	taste_description = "grapes"
+	reagent_state = LIQUID
+	color = "#863333"
+	overdose = REAGENTS_OVERDOSE + 5
+	nerve_system_accumulations = 5
+	addiction_chance = 0
+
+/datum/reagent/stim/ishigrape/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.stats.addTempStat(STAT_COG, 2, STIM_TIME, "ishispec")
+	M.stats.addTempStat(STAT_MEC, 2, STIM_TIME, "ishispec")
+
+/datum/reagent/stim/ishigrape/overdose(var/mob/living/carbon/M, var/alien)
+	M.apply_effect(3, STUTTER)
+
 /datum/reagent/stim/cherrydrops
 	name = "Cherry Drops"
 	id = "cherry drops"
