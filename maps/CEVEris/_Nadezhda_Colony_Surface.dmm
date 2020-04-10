@@ -4643,9 +4643,6 @@
 /obj/item/remains/unathi,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
-"ajW" = (
-/turf/unsimulated/mineral,
-/area/colony/exposedsun)
 "ajX" = (
 /obj/machinery/vending/sovietsoda,
 /turf/simulated/floor/tiled/steel/brown_perforated,
@@ -14640,11 +14637,6 @@
 /obj/landmark/join/start/acolyte,
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/vectorrooms)
-"aHT" = (
-/obj/structure/bed/chair/wood,
-/obj/structure/bed/chair/wood,
-/turf/simulated/floor/carpet,
-/area/nadezhda/absolutism/vectorrooms)
 "aHU" = (
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/carpet,
@@ -14755,7 +14747,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
 /obj/item/weapon/reagent_containers/food/snacks/meat/bearmeat,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/maintenance/outside/hunter_cabin)
 "aIj" = (
 /obj/machinery/light{
 	dir = 8
@@ -21563,13 +21555,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/weapon/gun/launcher/crossbow,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/maintenance/outside/hunter_cabin)
 "beg" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp/green,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/maintenance/outside/hunter_cabin)
 "beh" = (
 /obj/structure/table/woodentable,
 /obj/random/gun_shotgun/low_chance,
@@ -21578,7 +21570,7 @@
 /obj/item/weapon/tool/knife/butch,
 /obj/item/weapon/handcuffs,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/maintenance/outside/hunter_cabin)
 "bei" = (
 /obj/machinery/camera/network/third_section{
 	dir = 4
@@ -29102,9 +29094,6 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
-"cOQ" = (
-/turf/simulated/wall/wood_old,
-/area/nadezhda/outside/forest)
 "dqv" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt,
@@ -29341,10 +29330,6 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
-"xEW" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
 
 (1,1,1) = {"
 aab
@@ -29445,7 +29430,7 @@ aab
 aab
 aab
 aab
-ajW
+aab
 bdH
 bdH
 bdH
@@ -29647,8 +29632,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 bdH
 bdH
 aPg
@@ -29849,8 +29834,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 aPg
 aPg
 aPg
@@ -30051,8 +30036,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 aPg
 aPg
 aPg
@@ -30253,8 +30238,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 aPg
 aPg
 aPg
@@ -30455,8 +30440,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 aPg
 aPg
 aPg
@@ -30657,8 +30642,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 bdH
 aPg
 aPg
@@ -30859,8 +30844,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 bdH
 aPg
 aPg
@@ -31061,8 +31046,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 aPg
 aPg
 aPg
@@ -31263,8 +31248,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 bdH
 aPg
 aPg
@@ -31465,8 +31450,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 bdH
 aPg
 aPg
@@ -31667,8 +31652,8 @@ aaf
 aaf
 aab
 aab
-ajW
-ajW
+aab
+aab
 aPg
 aPg
 aPg
@@ -31869,8 +31854,8 @@ aab
 aab
 aab
 aab
-ajW
-ajW
+aab
+aab
 bdH
 aPg
 bdH
@@ -32070,9 +32055,9 @@ aFH
 aFH
 aFH
 aFH
-ajW
-ajW
-ajW
+aab
+aab
+aab
 bdH
 aPg
 aPg
@@ -32272,8 +32257,8 @@ aFH
 aFG
 aFG
 aFG
-ajW
-ajW
+aab
+aab
 aPg
 aPg
 aPg
@@ -54460,7 +54445,7 @@ aFf
 aCE
 aGV
 aBC
-aHT
+aHU
 aGQ
 aGQ
 aJL
@@ -64593,7 +64578,7 @@ aFH
 aFH
 aFH
 aFH
-ajW
+aab
 bdH
 bdH
 aNs
@@ -64795,7 +64780,7 @@ aFH
 aFH
 aFH
 aFH
-ajW
+aab
 bdH
 bek
 aOv
@@ -64997,7 +64982,7 @@ aFH
 aFH
 aab
 aab
-ajW
+aab
 bdH
 aOv
 bey
@@ -65199,7 +65184,7 @@ aFH
 aab
 aab
 aab
-ajW
+aab
 aQE
 aQE
 bez
@@ -65401,7 +65386,7 @@ aab
 aab
 aab
 aab
-ajW
+aab
 aQE
 aQj
 aPA
@@ -65603,7 +65588,7 @@ aab
 aab
 aab
 aab
-ajW
+aab
 aQE
 aQj
 aOv
@@ -65805,7 +65790,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aOv
@@ -66007,7 +65992,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 bey
@@ -66209,7 +66194,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 beA
@@ -66411,7 +66396,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -66613,7 +66598,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQj
@@ -66815,7 +66800,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -67017,7 +67002,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -67219,7 +67204,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -67421,7 +67406,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -67623,7 +67608,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -67825,7 +67810,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -68027,7 +68012,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -68126,8 +68111,8 @@ aQC
 bAH
 bAH
 bAH
-cOQ
-cOQ
+bAH
+bAH
 bdH
 "}
 (193,1,1) = {"
@@ -68229,7 +68214,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -68329,7 +68314,7 @@ bAH
 aIb
 aId
 aIi
-cOQ
+bAH
 bdH
 "}
 (194,1,1) = {"
@@ -68431,7 +68416,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -68531,7 +68516,7 @@ bAH
 bbJ
 bdQ
 bef
-cOQ
+bAH
 bdH
 "}
 (195,1,1) = {"
@@ -68633,7 +68618,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -68732,8 +68717,8 @@ aOv
 bAH
 bbK
 bdR
-xEW
-cOQ
+bdS
+bAH
 bdH
 "}
 (196,1,1) = {"
@@ -68835,7 +68820,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -68934,8 +68919,8 @@ aNs
 bAH
 bbL
 bdQ
-xEW
-cOQ
+bdS
+bAH
 bdH
 "}
 (197,1,1) = {"
@@ -69037,7 +69022,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -69137,7 +69122,7 @@ bbC
 bbJ
 bdQ
 beg
-cOQ
+bAH
 bdH
 "}
 (198,1,1) = {"
@@ -69239,7 +69224,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -69339,7 +69324,7 @@ bAH
 bbM
 bdS
 beh
-cOQ
+bAH
 bdH
 "}
 (199,1,1) = {"
@@ -69441,7 +69426,7 @@ aaf
 aaf
 aaf
 aab
-ajW
+aab
 aQE
 aQE
 aQE
@@ -69540,8 +69525,8 @@ aPY
 bAH
 bAH
 bAH
-cOQ
-cOQ
+bAH
+bAH
 bdH
 "}
 (200,1,1) = {"
@@ -69643,7 +69628,7 @@ aab
 aab
 aab
 aab
-ajW
+aab
 bdH
 bdH
 bdH
