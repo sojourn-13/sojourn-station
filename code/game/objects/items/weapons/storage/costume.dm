@@ -380,6 +380,14 @@
 	new /obj/item/clothing/suit/costume/halloween/syndicate(src)
 	new /obj/item/clothing/under/color/red(src)
 
+/obj/item/weapon/storage/box/costume/techpriest
+	name = "techpriest costume kit"
+	desc = "A box containing a techpriest costume."
+
+/obj/item/weapon/storage/box/costume/techpriest/populate_contents()
+	new /obj/item/clothing/head/hood/techpriest(src)
+	new /obj/item/clothing/suit/hooded/costume/techpriest(src)
+
 /obj/item/weapon/storage/box/costume/xeno
 	name = "xeno costume kit"
 	desc = "A box containing a xeno costume."

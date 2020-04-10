@@ -111,7 +111,7 @@
 		chassis.use_power(energy_drain)
 		chassis.visible_message(SPAN_DANGER("\The [chassis] starts to drill \the [target]"), SPAN_WARNING("You hear a large drill."))
 		occupant_message(SPAN_DANGER("You start to drill \the [target]"))
-		playsound(src,'sound/mecha/mechdrill.ogg',100,1)
+		playsound(src,'sound/mecha/mechdrill.ogg',40,1)
 		var/T = chassis.loc
 		var/C = target.loc	//why are these backwards? we may never know -Pete
 		if(do_after_cooldown(target))
@@ -168,7 +168,7 @@
 		chassis.use_power(energy_drain)
 		chassis.visible_message(SPAN_DANGER("\The [chassis] starts to drill \the [target]"), SPAN_WARNING("You hear a large drill."))
 		occupant_message(SPAN_DANGER("You start to drill \the [target]"))
-		playsound(src,'sound/mecha/mechdrill.ogg',100,1)
+		playsound(src,'sound/mecha/mechdrill.ogg',40,1)
 		var/T = chassis.loc
 		var/C = target.loc	//why are these backwards? we may never know -Pete
 		if(do_after_cooldown(target))

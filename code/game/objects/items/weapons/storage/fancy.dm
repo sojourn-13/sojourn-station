@@ -152,7 +152,7 @@
 /obj/item/weapon/storage/fancy/cigarettes/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 /obj/item/weapon/storage/fancy/cigarettes/update_icon()
 	icon_state = "[initial(icon_state)][contents.len]"
@@ -190,7 +190,7 @@
 /obj/item/weapon/storage/fancy/cigarettes/ishimura/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette/ishimura(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 
 /obj/item/weapon/storage/fancy/cigarettes/tannhauser
@@ -202,7 +202,7 @@
 /obj/item/weapon/storage/fancy/cigarettes/tannhauser/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette/tannhauser(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 
 /obj/item/weapon/storage/fancy/cigarettes/brouzouf
@@ -214,7 +214,7 @@
 /obj/item/weapon/storage/fancy/cigarettes/brouzouf/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette/brouzouf(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 
 /obj/item/weapon/storage/fancy/cigarettes/frozen
@@ -226,7 +226,7 @@
 /obj/item/weapon/storage/fancy/cigarettes/frozen/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette/frozen(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 
 /obj/item/weapon/storage/fancy/cigarettes/shodan
@@ -238,7 +238,7 @@
 /obj/item/weapon/storage/fancy/cigarettes/shodan/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette/shodan(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 
 /obj/item/weapon/storage/fancy/cigarettes/toha
@@ -250,7 +250,7 @@
 /obj/item/weapon/storage/fancy/cigarettes/toha/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette/toha(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 
 /obj/item/weapon/storage/fancy/cigarettes/fortress
@@ -262,31 +262,31 @@
 /obj/item/weapon/storage/fancy/cigarettes/fortress/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette/fortress(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 
 /obj/item/weapon/storage/fancy/cigarettes/fortressred
-	name = "\improper Fortress RED menthols packet"
-	desc = "A packet of six Fortress RED menthols cigarettes. A standard classic pack that for the smoker that prefers a cool minty taste."
+	name = "\improper Fortress RED lights packet"
+	desc = "A packet of six Fortress RED light cigarettes. A standard classic pack for the smoker that wants to kick his habit at his own pace. Has a cherry taste."
 	icon_state = "Dpacket"
 	item_state = "Dpacket"
 
 /obj/item/weapon/storage/fancy/cigarettes/fortressred/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette/fortressred(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 
 /obj/item/weapon/storage/fancy/cigarettes/fortressblue
-	name = "\improper Fortress BLU light packet"
-	desc = "A packet of six Fortress BLU light cigarettes. A standard classic pack for the smoker that wants to kick his habit at his own pace."
+	name = "\improper Fortress BLU menthol packet"
+	desc = "A packet of six Fortress BLU menthol cigarettes. A standard classic pack that for the smoker that prefers a cool minty taste."
 	icon_state = "Bpacket"
 	item_state = "Bpacket"
 
 /obj/item/weapon/storage/fancy/cigarettes/fortressblue/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/clothing/mask/smokable/cigarette/fortressblue(src)
-	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 /obj/item/weapon/storage/fancy/cigarettes/khi
 	name = "\improper Kitsuhana Singularity packet"

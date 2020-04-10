@@ -122,13 +122,6 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/holster
-	display_name = "holster selection"
-	path = /obj/item/clothing/accessory/holster
-	flags = GEAR_HAS_TYPE_SELECTION
-	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Premier","Steward","Foreman","Salvager","Prospector")
-	sort_category = "Faction: Security"
-
 /datum/gear/factionsecurity/inspector
 	display_name = "uniform, patrol"
 	path = /obj/item/clothing/under/rank/inspector/uniform

@@ -171,7 +171,7 @@
 	spent_icon = "lcasing-spent"
 	caliber = CAL_ANTIM
 	projectile_type = /obj/item/projectile/bullet/antim
-	matter = list(MATERIAL_STEEL = 2)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 1)
 	maxamount = 5
 
 /obj/item/ammo_casing/antim/prespawned

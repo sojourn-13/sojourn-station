@@ -24,7 +24,7 @@
 	icon_living = "deathclaw"
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
-	speed = 16
+	speed = 24
 	move_to_delay = 4
 	turns_per_move = 5
 	attacktext = "mauled"

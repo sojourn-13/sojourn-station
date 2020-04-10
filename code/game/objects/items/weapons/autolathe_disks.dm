@@ -480,6 +480,7 @@
 		/datum/design/bioprinter/l4z,
 		/datum/design/bioprinter/rh,
 
+		/datum/design/bioprinter/cardboard,
 		/datum/design/bioprinter/wallet,
 		/datum/design/bioprinter/botanic_leather,
 		/datum/design/bioprinter/leather/satchel,

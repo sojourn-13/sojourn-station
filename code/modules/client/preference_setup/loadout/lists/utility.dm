@@ -13,6 +13,12 @@
 	path = /obj/item/weapon/storage/secure/briefcase
 	cost = 2
 
+/datum/gear/utility/holster
+	display_name = "holster selection"
+	path = /obj/item/clothing/accessory/holster
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Utility"
+
 /datum/gear/utility/cane
 	display_name = "cane"
 	path = /obj/item/weapon/cane
