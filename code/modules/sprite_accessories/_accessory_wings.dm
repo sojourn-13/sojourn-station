@@ -41,23 +41,39 @@
 	name = "Cybernetic Wings"
 	desc = ""
 	icon_state = "cyberdragon_s"
-	colored_layers = 1
+	colored_layers = 2
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/demon
-	name = "Demon Wings"
-	desc = ""
-	icon_state = "sepulchre_wings"
-
 /datum/sprite_accessory/wings/devil
-	name = "Devil Wings"
+	name = "Demon Wings, Small"
 	desc = ""
 	icon_state = "bat-red"
+
+/datum/sprite_accessory/wings/demon
+	name = "Demon Wings, Large"
+	desc = ""
+	icon_state = "sepulchre_wings"
+	colored_layers = 1
+
+/datum/sprite_accessory/wings/dragon
+	name = "Dragon Wings"
+	desc = ""
+	icon_state = "miria-fluffwings"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/dragonfly
 	name = "Dragonfly Wings"
 	desc = ""
 	icon_state = "dragonfly"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/fantail
+	name = "Fantail Wings"
+	desc = ""
+	icon_state = "nevrean_s"
+	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/feathered
@@ -81,20 +97,10 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/fluffdragon
-	name = "Fluffdragon Wings"
-	desc = ""
-	icon_state = "miria-fluffdragontail"
-
 /datum/sprite_accessory/wings/gazer
 	name = "Gazer Eyestalks"
 	desc = ""
 	icon_state = "liquidfirefly-eyestalks"
-
-/datum/sprite_accessory/wings/greentaj
-	name = "Green Wings"
-	desc = ""
-	icon_state = "scree-wings"
 
 /datum/sprite_accessory/wings/harpywings
 	name = "Harpy Wings"
@@ -207,16 +213,9 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/moth_full
-	name = "Moth Wings, With Antenna"
+	name = "Moth Wings, Worker"
 	desc = ""
 	icon_state = "moth_full"
-	colored_layers = 1
-	blend = ICON_MULTIPLY
-
-/datum/sprite_accessory/wings/nevrean
-	name = "Nevrean Wings/Fantail"
-	desc = ""
-	icon_state = "nevrean_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
