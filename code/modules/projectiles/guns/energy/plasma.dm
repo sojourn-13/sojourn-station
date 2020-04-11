@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/plasma
-	name = "OT PR \"Dominion\""
+	name = "\"Dominion\" plasma rifle"
 	desc = "A weapon that uses advanced plasma generation technology to emit powerful blasts of energized matter. Due to its complexity and cost, it is rarely seen in use, except by specialists."
 	icon = 'icons/obj/guns/energy/pulse.dmi'
 	icon_state = "pulse"
@@ -30,7 +30,7 @@
 	use_external_power = TRUE
 
 /obj/item/weapon/gun/energy/plasma/destroyer
-	name = "OT PR \"Purger\""
+	name = "\"Purger\" plasma rifle"
 	desc = "A more recent \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design."
 	icon = 'icons/obj/guns/energy/destroyer.dmi'
 	fire_sound = 'sound/weapons/pulse.ogg'
@@ -45,8 +45,8 @@
 	)
 
 /obj/item/weapon/gun/energy/pulse/cassad
-	name = "HS PR \"Cassad\""
-	desc = "\"Heckler and Sons\" brand energy assault rifle, capable of prolonged combat. When surrender is not an option."
+	name = "\"Cassad\" energy rifle"
+	desc = "\"Holland & Sullivan\" brand energy assault rifle, capable of prolonged combat. When surrender is not an option."
 	icon = 'icons/obj/guns/energy/cassad.dmi'
 	icon_state = "cassad"
 	item_state = "cassad"

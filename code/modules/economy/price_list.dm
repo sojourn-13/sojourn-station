@@ -942,23 +942,35 @@
 /obj/item/weapon/storage/fancy/cigarettes
 	price_tag = 150
 
-/obj/item/weapon/storage/fancy/cigarettes/luckystars
+/obj/item/weapon/storage/fancy/cigarettes/ishimura
+	price_tag = 150
+
+/obj/item/weapon/storage/fancy/cigarettes/tannhauser
+	price_tag = 150
+
+/obj/item/weapon/storage/fancy/cigarettes/brouzouf
+	price_tag = 160
+
+/obj/item/weapon/storage/fancy/cigarettes/frozen
+	price_tag  = 160
+
+/obj/item/weapon/storage/fancy/cigarettes/shodan
 	price_tag = 170
 
-/obj/item/weapon/storage/fancy/cigarettes/jerichos
-	price_tag = 220
+/obj/item/weapon/storage/fancy/cigarettes/toha
+	price_tag = 170
 
-/obj/item/weapon/storage/fancy/cigarettes/menthols
+/obj/item/weapon/storage/fancy/cigarettes/fortress
+	price_tag = 180
+
+/obj/item/weapon/storage/fancy/cigarettes/fortressred
+	price_tag = 180
+
+/obj/item/weapon/storage/fancy/cigarettes/fortressblue
 	price_tag = 180
 
 /obj/item/weapon/storage/fancy/cigar
 	price_tag = 270
-
-/obj/item/weapon/storage/fancy/cigarettes/carcinomas
-	price_tag  = 230
-
-/obj/item/weapon/storage/fancy/cigarettes/professionals
-	price_tag = 250
 
 /obj/item/weapon/storage/box/matches
 	price_tag = 10

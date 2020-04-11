@@ -283,7 +283,7 @@
 //onestar
 /obj/structure/bed/chair/custom/onestar
 	name = "greyson chair"
-	desc = "A duranium chair manufactured by OneStar. Doesn't look very comfortable."
+	desc = "A duranium chair manufactured by Greyson Positronics. Doesn't look very comfortable."
 	icon_state = "onestar_chair_grey"
 
 /obj/structure/bed/chair/custom/onestar/red

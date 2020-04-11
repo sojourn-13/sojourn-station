@@ -1,12 +1,12 @@
 /datum/gear/factioncommand
-	display_name = "winter coat, Premier"
+	display_name = "winter coat, premier"
 	path = /obj/item/clothing/suit/hooded/wintercoat/captain
 	allowed_roles = list("Premier")
 	slot = slot_wear_suit
 	sort_category = "Faction: Command"
 
 /datum/gear/factioncommand/cloakcaptain
-	display_name = "cloak, Premier"
+	display_name = "cloak, premier"
 	path = /obj/item/clothing/suit/hooded/cloak/job/captain
 	allowed_roles = list("Premier")
 	slot = slot_wear_suit

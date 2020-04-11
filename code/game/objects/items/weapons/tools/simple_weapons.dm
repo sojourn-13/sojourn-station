@@ -203,7 +203,7 @@
 	desc = "Modern japanese-style blade that has no curve to it. This one looks pretty sharp."
 	icon_state = "katana"
 	item_state = "katana"
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_METAL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_SHALLOW
@@ -220,10 +220,10 @@
 	price_tag = 10000
 
 /obj/item/weapon/melee/sledgehammer
-	name = "sledgehammer"
-	desc = "Once a tool used to nail rivets, now a tool used to crush skulls."
-	icon_state = "sledgehammer"
-	item_state = "sledgehammer0"
+	name = "foreman's sledgehammer"
+	desc = "Once a tool used to nail rivets, now a tool used to crush skulls. The signature weapon of the prospector's foreman."
+	icon_state = "sledgehammer0"
+	item_state = "sledgehammer1"
 	force = WEAPON_FORCE_LETHAL
 	armor_penetration = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_PAINFUL

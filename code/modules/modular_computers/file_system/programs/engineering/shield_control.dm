@@ -11,10 +11,9 @@
 	nanomodule_path = /datum/nano_module/shield_control
 	program_icon_state = "engine"
 	extended_desc = "This program allows remote management of the hull shield generator. Cannot be run on tablet computers."
-	required_access = access_atmospherics
+	required_access = access_syndicate //disabled for now, change to engine when fixed
 	requires_ntnet = 1
 	network_destination = "shield control system"
-	required_access = access_engine //Restricted to engineering and the bridge
 	requires_ntnet_feature = NTNET_SYSTEMCONTROL
 	usage_flags = PROGRAM_LAPTOP | PROGRAM_CONSOLE
 	size = 24

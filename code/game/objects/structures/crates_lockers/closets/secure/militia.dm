@@ -13,6 +13,7 @@
 	new /obj/item/clothing/head/rank/milcom/beret(src)
 	new /obj/item/clothing/head/rank/milcom(src)
 	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/clothing/suit/armor/flackvest/commander(src)
 	new /obj/item/clothing/suit/armor/commander/militia(src)
 	new /obj/item/clothing/under/rank/commander(src)
 	new /obj/item/clothing/under/rank/commander/formal(src)
@@ -23,11 +24,14 @@
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/clothing/accessory/armband/militia(src)
 	new /obj/item/weapon/gun/projectile/lamia/dark_lamia(src)
-	new /obj/item/ammo_magazine/cl44(src)
-	new /obj/item/ammo_magazine/cl44(src)
+	new /obj/item/ammo_magazine/magnum(src)
+	new /obj/item/ammo_magazine/magnum(src)
+	new /obj/item/ammo_magazine/magnum(src)
 	new /obj/item/clothing/accessory/holster/hip(src)
 	new /obj/item/weapon/melee/telebaton(src)
 	new /obj/item/weapon/storage/pouch/ammo(src)
+	new /obj/item/clothing/suit/greatcoat/ihc/bmc(src)
+	new /obj/item/clothing/suit/greatcoat/ihc/bmc_cloaked(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	if(prob(50))
@@ -139,6 +143,7 @@
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
+	new /obj/item/clothing/suit/armor/commander/militia_overcoat(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"

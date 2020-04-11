@@ -143,7 +143,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 /datum/category_item/player_setup_item/physical/body/OnTopic(var/href,var/list/href_list, var/mob/user)
 
-	//var/datum/species/mob_species = all_species[pref.species]
+	var/datum/species/mob_species = all_species[pref.species]
 	var/datum/species_form/mob_species_form = GLOB.all_species_form_list[pref.species_form]
 	if(href_list["toggle_species_verbose"])
 		hide_species = !hide_species
@@ -162,7 +162,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(href_list["reset_form"])
 		pref.species_form = GLOB.all_species_form_list[pref.species].default_form
 	else if(href_list["select_form"])
-		if(global.all_species[pref.species].obligate_form)
+		if(mob_species.obligate_form)
 			return TOPIC_NOACTION
 		var/new_form = input(user, "Choose your character's form:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species_form) as null|anything in GLOB.selectable_species_form_list
 		if(new_form && CanUseTopic(user))
@@ -320,12 +320,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			if(old_pos + 1 > valid_hairstyles.len)
 				return TOPIC_NOACTION
 			new_h_style = valid_hairstyles[old_pos+1]
-		mob_species_form = all_species[pref.species]
 		if(new_h_style && CanUseTopic(user) && (new_h_style in mob_species_form.get_hair_styles()))
 			pref.h_style = new_h_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	else if(href_list["cycle_facial_hair"])
-		var/list/valid_facialhairstyles = mob_species_form.get_facial_hair_styles(pref.gender)
+		var/list/valid_facialhairstyles = mob_species_form.get_facial_hair_styles()
 		var/old_pos = valid_facialhairstyles.Find(pref.f_style)
 		var/new_f_style
 		if(href_list["cycle_facial_hair"] == "right")
@@ -336,7 +335,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			if(old_pos + 1 > valid_facialhairstyles.len)
 				return TOPIC_NOACTION
 			new_f_style = valid_facialhairstyles[old_pos+1]
-		if(new_f_style && CanUseTopic(user) && mob_species_form.get_facial_hair_styles(pref.gender))
+		if(new_f_style && CanUseTopic(user) && mob_species_form.get_facial_hair_styles())
 			pref.f_style = new_f_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 

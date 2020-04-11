@@ -230,7 +230,7 @@
 
 /area/nadezhda/outside/forest
 	name = "Forest"
-	icon_state = "erisgreen"
+	icon_state = "forest"
 	sound_env = FOREST
 	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
 
@@ -242,7 +242,7 @@
 
 /area/nadezhda/outside/meadow
     name = "Meadow"
-    icon_state = "green"
+    icon_state = "meadow"
     sound_env = MOUNTAINS
     forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 
@@ -1260,7 +1260,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "quartoffice"
 
 /area/nadezhda/quartermaster/pods
-	name = "\improper Loenstar Pod Dorms"
+	name = "\improper Lonestar Pod Dorms"
 	icon_state = "quartoffice"
 
 /area/nadezhda/quartermaster/storage
@@ -1335,7 +1335,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "robotics"
 
 /area/nadezhda/rnd/rdoffice
-	name = "\improper Moebius Expedition Overseer's Office"
+	name = "\improper Soteria Expedition Overseer's Office"
 	icon_state = "head_quarters"
 
 /area/nadezhda/rnd/supermatter

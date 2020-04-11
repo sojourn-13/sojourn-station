@@ -69,7 +69,7 @@
 	)
 
 //Chaplain
-/obj/item/clothing/suit/rank/chaplain
+/obj/item/clothing/suit/storage/chaplain
 	name = "prime jacket"
 	desc = "A long, lightly armoured jacket. Dark, stylish and authoritarian."
 	icon_state = "chaplain_hoodie"
@@ -85,13 +85,13 @@
 		rad = 100
 	)
 
-/obj/item/clothing/suit/rank/chaplain/holiday
+/obj/item/clothing/suit/storage/chaplain/holiday
 	name = "holiday priest"
 	desc = "A garment worn seasonally by chaplains."
 	icon_state = "holidaypriest"
 	item_state_slots = list(slot_r_hand_str = "labcoat", slot_l_hand_str = "labcoat")
 
-/obj/item/clothing/suit/rank/chaplain/coat
+/obj/item/clothing/suit/storage/chaplain/coat
 	name = "preacher coat"
 	desc = "A snugly fitting, lightly armoured brown coat."
 	icon_state = "church_coat"

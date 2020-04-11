@@ -220,26 +220,111 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else
 		return ..()
 
+
+
+////////////////
+// CIGARETTES //
+////////////////
 /obj/item/clothing/mask/smokable/cigarette
-	name = "cigarette"
+	name = "Roach Eyes cigarette"
 	desc = "A roll of tobacco and nicotine."
-	icon_state = "cigoff"
+	icon_state = "roachoff"
 	throw_speed = 0.5
 	item_state = "cigoff"
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS | SLOT_MASK
 	attack_verb = list("burnt", "singed")
-	icon_on = "cigon"  //Note - these are in masks.dmi not in cigarette.dmi
-	icon_off = "cigoff"
+	icon_on = "roachon"  //Note - these are in masks.dmi not in cigarette.dmi
+	icon_off = "roachoff"
 	type_butt = /obj/item/trash/cigbutt
-	chem_volume = 15
-	smoketime = 300
-	preloaded_reagents = list("nicotine" = 6)
+	chem_volume = 20
+	smoketime = 360
+	preloaded_reagents = list("nicotine" = 5)
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
 	lightermes = "<span class='notice'>USER manages to light their NAME with FLAME.</span>"
 	zippomes = "<span class='rose'>With a flick of their wrist, USER lights their NAME with their FLAME.</span>"
 	weldermes = "<span class='notice'>USER casually lights the NAME with FLAME.</span>"
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME.</span>"
+
+/obj/item/clothing/mask/smokable/cigarette/ishimura
+	name = "Ishimura Special cigarette"
+	icon_state = "ishimuraoff"
+	icon_on = "ishimuraon"
+	icon_off = "ishimuraoff"
+	type_butt = /obj/item/trash/cigbutt/ishimura
+	preloaded_reagents = list("nicotine" = 5, "ishispec" = 5)
+
+/obj/item/clothing/mask/smokable/cigarette/tannhauser
+	name = "Tannhauser Gate cigarette"
+	icon_state = "tannhauseroff"
+	icon_on = "tannhauseron"
+	icon_off = "tannhauseroff"
+	type_butt = /obj/item/trash/cigbutt/tannhauser
+	preloaded_reagents = list("nicotine" = 5, "sodiumchloride" = 5)
+
+/obj/item/clothing/mask/smokable/cigarette/brouzouf
+	name = "Brouzouf Message cigarette"
+	icon_state = "brouzoufoff"
+	icon_on = "brouzoufon"
+	icon_off = "brouzoufoff"
+	type_butt = /obj/item/trash/cigbutt/brouzouf
+	preloaded_reagents = list("nicotine" = 5, "tea" = 5)
+
+/obj/item/clothing/mask/smokable/cigarette/frozen
+	name = "\improper Frozen Nova cigarette"
+	icon_state = "frozenoff"
+	icon_on = "frozenon"
+	icon_off = "frozenoff"
+	type_butt = /obj/item/trash/cigbutt/frozen
+	preloaded_reagents = list("nicotine" = 5, "coffee" = 5)
+
+/obj/item/clothing/mask/smokable/cigarette/shodan
+	name = "\improper Shodans cigarette"
+	icon_state = "shodanoff"
+	icon_on = "shodanon"
+	icon_off = "shodanoff"
+	type_butt = /obj/item/trash/cigbutt/shodan
+	preloaded_reagents = list("nicotine" = 5, "greentea" = 5)
+
+/obj/item/clothing/mask/smokable/cigarette/toha
+	name = "\improper TOHA Heavy Industries cigarette"
+	icon_state = "tohaoff"
+	icon_on = "tohaon"
+	icon_off = "tohaoff"
+	type_butt = /obj/item/trash/cigbutt/toha
+	preloaded_reagents = list("nicotine" = 5, "honey" = 5)
+
+/obj/item/clothing/mask/smokable/cigarette/fortress
+	name = "\improper Fortress Classic cigarette"
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
+	type_butt = /obj/item/trash/cigbutt/fortress
+	preloaded_reagents = list("nicotine" = 5, "tonic" = 5)
+
+/obj/item/clothing/mask/smokable/cigarette/fortressred
+	name = "\improper Fortress RED light cigarette"
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
+	type_butt = /obj/item/trash/cigbutt/fortressred
+	preloaded_reagents = list("nicotine" = 2, "cherryjelly" = 8)
+
+/obj/item/clothing/mask/smokable/cigarette/fortressblue
+	name = "\improper Fortress BLU menthol cigarette"
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
+	type_butt = /obj/item/trash/cigbutt/fortressblue
+	preloaded_reagents = list("nicotine" = 5,  "mint" = 5)
+
+/obj/item/clothing/mask/smokable/cigarette/khi
+	name = "\improper Kitsuhana Singularity cigarette"
+	icon_state = "khioff"
+	icon_on = "khion"
+	icon_off = "khioff"
+	type_butt = /obj/item/trash/cigbutt/khi
+	preloaded_reagents = list("mindbreaker" = 5, "serotrotium" = 5, "impedrezene" = 5, "space_drugs" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
@@ -283,8 +368,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt/cigarbutt
 	throw_speed = 0.5
 	item_state = "cigaroff"
-	smoketime = 700
-	chem_volume = 20
+	smoketime = 800
+	chem_volume = 25
 	preloaded_reagents = list("nicotine" = 14)
 	quality_multiplier = 2
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
@@ -306,20 +391,60 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "cigar2off"
 	icon_on = "cigar2on"
 	icon_off = "cigar2off"
-	smoketime = 1000
-	chem_volume = 30
+	smoketime = 1100
+	chem_volume = 35
 	preloaded_reagents = list("nicotine" = 20)
 	quality_multiplier = 3
 
 /obj/item/trash/cigbutt
-	name = "cigarette butt"
+	name = "Roach Eyes cigarette butt"
 	desc = "A decayed cigarette butt."
 	icon = 'icons/inventory/face/icon.dmi'
-	icon_state = "cigbutt"
+	icon_state = "roachbutt"
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 	matter = list(MATERIAL_BIOMATTER = 1)
 	throwforce = 1
+
+/obj/item/trash/cigbutt/ishimura
+	name = "Ishimura Special cigarette butt"
+	icon_state = "ishimurabutt"
+
+/obj/item/trash/cigbutt/tannhauser
+	name = "Tannhauser Gate cigarette butt"
+	icon_state = "tannhauserbutt"
+
+/obj/item/trash/cigbutt/brouzouf
+	name = "Brouzouf Message cigarette butt"
+	icon_state = "brouzoufbutt"
+
+/obj/item/trash/cigbutt/shodan
+	name = "Shodans cigarette butt"
+	icon_state = "shodanbutt"
+
+/obj/item/trash/cigbutt/toha
+	name = "TOHA Heavy Industries cigarette butt"
+	icon_state = "tohabutt"
+
+/obj/item/trash/cigbutt/frozen
+	name = "Frozen Nova cigarette butt"
+	icon_state = "frozenbutt"
+
+/obj/item/trash/cigbutt/fortress
+	name = "Fortress Classic cigarette butt"
+	icon_state = "cigbutt"
+
+/obj/item/trash/cigbutt/fortressred
+	name = "Fortress RED menthols cigarette butt"
+	icon_state = "cigbutt"
+
+/obj/item/trash/cigbutt/fortressblue
+	name = "Fortress BLU light cigarette butt"
+	icon_state = "cigbutt"
+
+/obj/item/trash/cigbutt/khi
+	name = "KHI cigarette butt"
+	icon_state = "khibutt"
 
 /obj/item/trash/cigbutt/New()
 	..()
@@ -518,3 +643,65 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(location)
 		location.hotspot_expose(700, 5)
 	return
+
+
+/obj/item/weapon/flame/lighter/zippo/black
+	name = "\improper holy Zippo lighter"
+	desc = "For lighting the holy spirit."
+	icon_state = "blackzippo"
+
+/obj/item/weapon/flame/lighter/zippo/blue
+	name = "\improper blue Zippo lighter"
+	icon_state = "bluezippo"
+
+/obj/item/weapon/flame/lighter/zippo/engraved
+	name = "\improper engraved Zippo lighter"
+	icon_state = "engravedzippo"
+	item_state = "zippo"
+
+/obj/item/weapon/flame/lighter/zippo/gold
+	name = "\improper golden Zippo lighter"
+	icon_state = "goldzippo"
+
+/obj/item/weapon/flame/lighter/zippo/moff
+	name = "\improper moth Zippo lighter"
+	desc = "Too cute to be a Tymisian."
+	icon_state = "moffzippo"
+
+/obj/item/weapon/flame/lighter/zippo/red
+	name = "\improper red Zippo lighter"
+	icon_state = "redzippo"
+
+/obj/item/weapon/flame/lighter/zippo/ironic
+	name = "\improper ironic Zippo lighter"
+	desc = "How funny."
+	icon_state = "ironiczippo"
+
+/obj/item/weapon/flame/lighter/zippo/capitalist
+	name = "\improper capitalist Zippo lighter"
+	desc = "Made of gold and obsidian, this is truly not worth however much you spent on it."
+	icon_state = "cappiezippo"
+
+/obj/item/weapon/flame/lighter/zippo/communist
+	name = "\improper communist Zippo lighter"
+	desc = "The preferred lighter for degenerates, idiots, and losers."
+	icon_state = "commiezippo"
+
+/obj/item/weapon/flame/lighter/zippo/royal
+	name = "\improper royal Zippo lighter"
+	desc = "An incredibly fancy lighter, gilded and covered in the color of royalty."
+	icon_state = "royalzippo"
+
+/obj/item/weapon/flame/lighter/zippo/gonzo
+	name = "\improper Gonzo Zippo lighter"
+	desc = "A lighter with the iconic Gonzo fist painted on it."
+	icon_state = "gonzozippo"
+
+/obj/item/weapon/flame/lighter/zippo/rainbow
+	name = "\improper rainbow Zippo lighter"
+	icon_state = "rainbowzippo"
+
+/obj/item/weapon/flame/lighter/zippo/bullet
+	name = "\improper bullet lighter"
+	desc = "A lighter fashioned out of an old bullet casing."
+	icon_state = "bulletlighter"

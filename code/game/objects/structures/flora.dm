@@ -585,6 +585,9 @@
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassb5"
 
+/obj/structure/flora/big
+	layer = ABOVE_MOB_LAYER
+
 /obj/structure/flora/big/bush1
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush1"

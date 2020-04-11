@@ -5,10 +5,10 @@
 	icon_state = "muscle"
 
 /obj/item/organ_module/muscle/onInstall(obj/item/organ/external/E)
-	E.tally -= 0.15
+	E.tally -= 0.25
 
 /obj/item/organ_module/muscle/onRemove(obj/item/organ/external/E)
-	E.tally += 0.15
+	E.tally += 0.25
 
 
 
@@ -20,12 +20,12 @@
 	matter = list(MATERIAL_BIOMATTER = 15)
 
 /obj/item/organ_module/muscle/organic/onInstall(obj/item/organ/external/E)
-	E.tally -= 0.15
+	E.tally -= 0.25
 
 /obj/item/organ_module/muscle/organic/onRemove(obj/item/organ/external/E)
-	E.tally += 0.15
+	E.tally += 0.25
 
-//Putting this here because fuck it.
+//Putting this here because blargh it.
 //Not like it needs to be anywhere in particular and I don't want to make an entire new file for a small parent.
 /obj/item/weapon/biogoop
 	icon = 'icons/obj/surgery.dmi'

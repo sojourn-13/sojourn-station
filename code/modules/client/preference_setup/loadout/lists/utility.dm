@@ -1,16 +1,23 @@
-/datum/gear/utility
-	display_name = "zippo"
+/datum/gear/utility/zippo
+	display_name = "zippo selection"
 	path = /obj/item/weapon/flame/lighter/zippo
-	sort_category = "Utility"
+	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/utility/briefcase
+/datum/gear/utility
 	display_name = "briefcase"
 	path = /obj/item/weapon/storage/briefcase
+	sort_category = "Utility"
 
 /datum/gear/utility/briefcasesecure
 	display_name = "briefcase, secure"
 	path = /obj/item/weapon/storage/secure/briefcase
 	cost = 2
+
+/datum/gear/utility/holster
+	display_name = "holster selection"
+	path = /obj/item/clothing/accessory/holster
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Utility"
 
 /datum/gear/utility/cane
 	display_name = "cane"

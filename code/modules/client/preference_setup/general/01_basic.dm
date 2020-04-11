@@ -49,6 +49,10 @@
 /datum/category_item/player_setup_item/physical/basic/sanitize_character()
 	var/datum/species/S = all_species[pref.species ? pref.species : SPECIES_HUMAN]
 	if(!S) S = all_species[SPECIES_HUMAN]
+	if(S.obligate_name)
+		pref.custom_species = S.name
+		pref.species_aan = S.aan
+		pref.species_color = S.light_color
 	pref.age                = sanitize_integer(pref.age, S.min_age, S.max_age, initial(pref.age))
 	pref.b_type				= sanitize_text(pref.b_type, initial(pref.b_type))
 	pref.disabilities		= sanitize_integer(pref.disabilities, 0, 65535, initial(pref.disabilities))
@@ -179,6 +183,8 @@
 		return TOPIC_REFRESH
 
 	else if(href_list["species_name"])
+		if(global.all_species[pref.species]?.obligate_name)
+			return TOPIC_NOACTION
 		var/new_species_name = input(user, "Choose your character's species name. This is cosmetic.") as text|null
 		if(CanUseTopic(user))
 			new_species_name = sanitizeName(new_species_name)
@@ -189,10 +195,14 @@
 				to_chat(user, SPAN_WARNING("Invalid species name. Either it's a single character, or more than [MAX_NAME_LEN] characters long. Aside from letters, it can only contain _, ' and ."))
 				return TOPIC_NOACTION
 	else if(href_list["species_aan"])
+		if(global.all_species[pref.species]?.obligate_name)
+			return TOPIC_NOACTION
 		if(CanUseTopic(user))
 			pref.species_aan = pref.species_aan == "n" ? "" : "n"
 			return TOPIC_REFRESH
 	else if(href_list["species_name_color"])
+		if(global.all_species[pref.species]?.obligate_name)
+			return TOPIC_NOACTION
 		var/new_color = input(user, "Choose your species name's color. This should be shared with others using that species if you propagate it.", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species_color) as color|null
 		if(new_color && CanUseTopic(user))
 			var/adjusted = FALSE

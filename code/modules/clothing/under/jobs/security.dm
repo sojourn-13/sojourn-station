@@ -77,8 +77,8 @@
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/inspector/uniform
-	name = "rangers uniform"
-	desc = "A tidy black uniform adorned with a ranger insignia."
+	name = "patrol uniform"
+	desc = "A tidy black uniform worn by security personnel, typically during formal occasions."
 	icon_state = "det_corporate"
 	item_state = "det_corporate"
 

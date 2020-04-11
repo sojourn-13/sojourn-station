@@ -7,6 +7,7 @@
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "anyone who pays you"
+	difficulty = "Very Easy."
 	selection_color = "#dddddd"
 	initial_balance	= 800
 	wage = WAGE_NONE //Get a job ya lazy bum

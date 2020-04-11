@@ -32,6 +32,11 @@
 //[/NUTRIMENTS]
 
 //[THINGS]
+/datum/design/bioprinter/cardboard
+	name = "Cardboard"
+	build_path = /obj/item/stack/material/cardboard
+
+
 /datum/design/bioprinter/wallet
 	name = "Wallet"
 	build_path = /obj/item/weapon/storage/wallet
@@ -39,10 +44,10 @@
 /datum/design/bioprinter/botanic_leather
 	name = "Botanical gloves"
 	build_path = /obj/item/clothing/gloves/botanic_leather
-	materials = list("biomatter" = 25)
+	materials = list("biomatter" = 15)
 
 /datum/design/bioprinter/leather
-	materials = list("biomatter" = 40)
+	materials = list("biomatter" = 20)
 
 /datum/design/bioprinter/leather/satchel
 	name = "Leather Satchel"
@@ -77,7 +82,7 @@
 	build_path = /obj/item/clothing/accessory/holster/leg
 
 /datum/design/bioprinter/belt
-	materials = list("biomatter" = 30)
+	materials = list("biomatter" = 20)
 
 /datum/design/bioprinter/belt/utility
 	name = "Utility belt"
@@ -111,7 +116,7 @@
 
 //[MED]
 /datum/design/bioprinter/medical
-	materials = list("biomatter" = 10)
+	materials = list("biomatter" = 2)
 
 /datum/design/bioprinter/medical/bruise
 	name = "Roll of gauze"
@@ -127,7 +132,7 @@
 
 
 /datum/design/bioprinter/medical/advanced
-	materials = list("biomatter" = 20)
+	materials = list("biomatter" = 2)
 
 /datum/design/bioprinter/medical/advanced/bruise
 	name = "Advanced trauma kit"

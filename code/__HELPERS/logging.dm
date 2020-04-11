@@ -29,6 +29,7 @@
 
 /proc/log_admin(text)
 	admin_log.Add(text)
+	lobby_message(message = text, color = "#FFA500")
 	if (config.log_admin)
 		game_log("ADMIN", text)
 

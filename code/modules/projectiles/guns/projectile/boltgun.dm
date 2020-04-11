@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/boltgun
-	name = "Excelsior BR .30 \"Kardashev-Mosin\""
+	name = "\"Kardashev-Mosin\" boltgun"
 	desc = "Weapon for hunting or endless trench warfare. \
 			If you're on a budget, it's a darn good rifle for just about everything."
 	icon = 'icons/obj/guns/projectile/boltgun.dmi'
@@ -9,7 +9,7 @@
 	force = WEAPON_FORCE_ROBUST
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	caliber = "a762" //needs new caliber type?
+	caliber = CAL_HRIFLE
 	fire_delay = 12 // double the standart
 	damage_multiplier = 1.4
 	penetration_multiplier  = 1.5
@@ -17,7 +17,7 @@
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
-	ammo_type = /obj/item/ammo_magazine/c762_long //needs new ammunition type?
+	ammo_type = /obj/item/ammo_magazine/lrifle
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
@@ -89,13 +89,14 @@
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/boltgun/serbian
-	name = "SA BR .30 \"Novakovic\""
+/obj/item/weapon/gun/projectile/boltgun/sa
+	name = "\"Novakovic\" boltgun"
 	desc = "Weapon for hunting, or endless trench warfare. \
 			If you're on a budget, it's a darn good rifle for just about everything. \
 			This copy, in fact, is a reverse-engineered poor-quality copy of a more perfect copy of an ancient rifle"
-	icon_state = "boltgun_wood"
-	item_suffix  = "_wood"
+	icon = 'icons/obj/guns/projectile/boltgun_wood.dmi'
+	icon_state = "boltgun"
+	item_state = "boltgun"
+	max_shells = 5
 	recoil_buildup = 0.4 // Double the excel variant
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
-	wielded_item_state = "_doble_wood"

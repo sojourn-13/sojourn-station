@@ -42,6 +42,13 @@
 	affect_ingest(M, alien, effect_multiplier * 1.2)
 
 /datum/reagent/organic/nutriment/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/*
+	Commented out because its bugged.
+	if (IS_SABLEKYNE)
+		M.adjustNutrition(nutriment_factor * 0.25)
+		return
+*/
+
 	// Small bodymass, more effect from lower volume.
 	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier)) // For hunger and fatness
 	M.add_chemical_effect(CE_BLOODRESTORE, 0.1 * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
@@ -61,6 +68,13 @@
 	description = "Essential nutrient for the human body."
 	color = "#440000"
 
+//	Commented out because its bugged.
+/*
+/datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if (IS_SABLEKYNE)
+		M.adjustNutrition(nutriment_factor * 1.25)
+		return
+*/
 
 /datum/reagent/organic/nutriment/protein/egg
 	name = "Egg Yolk"
@@ -76,6 +90,10 @@
 	taste_description = "sweetness"
 	nutriment_factor = 4
 	color = "#FFFF00"
+
+/datum/reagent/organic/nutriment/honey/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
+	M.adjustToxLoss(-0.05 * effect_multiplier)
 
 /datum/reagent/organic/nutriment/flour
 	name = "flour"

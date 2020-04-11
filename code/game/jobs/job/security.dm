@@ -8,6 +8,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Council"
+	difficulty = "Very Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
@@ -63,6 +64,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Council"
+	difficulty = "Very Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
@@ -117,6 +119,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Warrant Officer"
+	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
@@ -162,9 +165,10 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Warrant Officer"
+	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	also_known_languages = list(LANGUAGE_CYRILLIC = 50, LANGUAGE_SERBIAN = 50)
@@ -174,7 +178,7 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels,
-		access_external_airlocks, access_prospector
+		access_external_airlocks, access_prospector, access_brig
 	)
 
 	stat_modifiers = list(
@@ -214,6 +218,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Militia Commander"
+	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	also_known_languages = list(LANGUAGE_CYRILLIC = 5)
@@ -221,7 +226,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
 	access = list(
-		access_security, access_moebius, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
+		access_security, access_moebius, access_chemistry, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
 		access_medical_equip, access_prospector, access_engine, access_mailsorting, access_eva, access_brig, access_external_airlocks
 	)
 
@@ -262,6 +267,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Militia Commander"
+	difficulty = "Hard."
 	//alt_titles = list("Blackshield Junior Trooper")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
@@ -307,9 +313,10 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "the Warrant Officer"
+	difficulty = "Hard."
 	//alt_titles = list("Marshal Junior Operative")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD

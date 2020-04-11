@@ -151,14 +151,14 @@
 	desc = "A crate containing two Pulemyot Kalashnikova light machine guns, and 640 rounds of 7.62mm ammunition."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/weapon/gun/projectile/automatic/lmg/pk = 2,
-	/obj/item/ammo_magazine/a762/pk = 8)
+	/obj/item/ammo_magazine/hrifle/pk = 8)
 
 /obj/item/weapon/storage/deferred/crate/ak
 	name = "rifleman crate"
-	desc = "A crate containing six FS AK-47 rifles, and plenty of magazines."
+	desc = "A crate containing six AKM rifles, and plenty of magazines."
 	icon_state = "serbcrate_deferred_green"
-	initial_contents = list(/obj/item/weapon/gun/projectile/automatic/ak47/fs  = 6,
-	/obj/item/ammo_magazine/c762_long = 18)
+	initial_contents = list(/obj/item/weapon/gun/projectile/automatic/ak47/sa  = 6,
+	/obj/item/ammo_magazine/lrifle = 18)
 
 /obj/item/weapon/storage/deferred/crate/grenadier
 	name = "grenadier crate"
@@ -198,10 +198,10 @@
 
 /obj/item/weapon/storage/deferred/crate/sidearm
 	name = "sidearm crate"
-	desc = "A crate containing six Makarov .35 pistols, 200 rounds of 9mm ammunition, and six fixed-blade combat knives."
+	desc = "A crate containing six Makarov .35 pistols, 200 rounds of ammunition, and six fixed-blade combat knives."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/weapon/gun/projectile/clarissa/makarov = 6,
-	/obj/item/ammo_magazine/mc9mm  = 20,
+	/obj/item/ammo_magazine/pistol  = 20,
 	/obj/item/weapon/tool/knife/boot = 6)
 
 /obj/item/weapon/storage/deferred/crate/cells
@@ -225,7 +225,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
-	/obj/item/clothing/suit/armor/bulletproof/serbian/green = 1,
+	/obj/item/clothing/suit/armor/platecarrier/green = 1,
 	/obj/item/clothing/head/helmet/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -238,7 +238,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/brown = 1,
 	/obj/item/clothing/head/soft/tan2soft = 1,
-	/obj/item/clothing/suit/armor/bulletproof/serbian/tan = 1,
+	/obj/item/clothing/suit/armor/platecarrier/tan = 1,
 	/obj/item/clothing/head/helmet/altyn/brown = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -250,7 +250,7 @@
 	icon_state = "serbcrate_deferred_black"
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/black = 1,
-	/obj/item/clothing/suit/armor/bulletproof/serbian = 1,
+/obj/item/clothing/suit/armor/platecarrier = 1,
 	/obj/item/clothing/head/helmet/altyn/black = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -263,7 +263,7 @@
 	icon_state = "serbcrate_deferred_worn"
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
-	/obj/item/clothing/suit/armor/flak/green = 1,
+	/obj/item/clothing/suit/armor/flackvest/green = 1,
 	/obj/item/clothing/head/helmet/altyn/maska = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -277,7 +277,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
-	/obj/item/clothing/suit/armor/flak = 1,
+	/obj/item/clothing/suit/armor/flackvest = 1,
 	/obj/item/clothing/head/helmet/steelpot = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,

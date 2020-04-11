@@ -28,7 +28,7 @@
 
 /obj/item/clothing/shoes/combat //Basically SWAT shoes combined with galoshes.
 	name = "combat boots"
-	desc = "When you REALLY want to turn up the heat"
+	desc = "When you REALLY want to turn up the heat."
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
 	armor = list(melee = 80, bullet = 60, energy = 25, bomb = 50, bio = 10, rad = 0)

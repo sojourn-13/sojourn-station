@@ -114,6 +114,8 @@ datum/preferences
 		. += "<a href='?src=\ref[src];marking=[counter]'>[pref.body_markings[counter]]</a><br>"
 
 /datum/category_item/player_setup_item/physical/furry/OnTopic(var/href,var/list/href_list, var/mob/user)
+	var/datum/species/cspecies = global.all_species[pref.species]
+	var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form]
 	if(href_list["blood_color"])
 		var/color = input(user, "Choose your character's blood color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.blood_color) as color|null
 		if(color && CanUseTopic(user))
@@ -121,10 +123,11 @@ datum/preferences
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["blood_reset"])
 		if(CanUseTopic(user))
-			pref.blood_color = (GLOB.all_species_form_list[pref.species_form] && GLOB.all_species_form_list[pref.species_form].blood_color) ? GLOB.all_species_form_list[pref.species_form].blood_color : "A10808"
+			pref.blood_color = (cform && cform.blood_color) ? cform.blood_color : "A10808"
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["ears_type"])
-		var/new_e_style = input(user, "Choose your character's ears:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.ears_style)   as null|anything in (list("Default" = null) + GLOB.ears_styles_list)
+		var/valid_ears = cspecies.permitted_ears ? cspecies.permitted_ears : GLOB.ears_styles_list
+		var/new_e_style = input(user, "Choose your character's ears:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.ears_style)   as null|anything in (list("Default" = null) + valid_ears)
 		if(new_e_style && CanUseTopic(user))
 			pref.ears_style = new_e_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW
@@ -136,7 +139,8 @@ datum/preferences
 				pref.ears_colors[colornum] = color
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["tail_type"])
-		var/new_t_style = input(user, "Choose your character's tail:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.tail_style)   as null|anything in (list("Default" = null) + GLOB.tail_styles_list)
+		var/valid_tails = cspecies.permitted_tail ? cspecies.permitted_tail : GLOB.tail_styles_list
+		var/new_t_style = input(user, "Choose your character's tail:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.tail_style)   as null|anything in (list("Default" = null) + valid_tails)
 		if(new_t_style && CanUseTopic(user))
 			pref.tail_style = new_t_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW
@@ -148,7 +152,8 @@ datum/preferences
 				pref.tail_colors[colornum] = color
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["wings_type"])
-		var/new_w_style = input(user, "Choose your character's wings:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.wings_style) as null|anything in (list("Default" = null) + GLOB.wings_styles_list)
+		var/valid_wings = cspecies.permitted_wings ? cspecies.permitted_wings : GLOB.wings_styles_list
+		var/new_w_style = input(user, "Choose your character's wings:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.wings_style) as null|anything in (list("Default" = null) + valid_wings)
 		if(new_w_style && CanUseTopic(user))
 			pref.wings_style = new_w_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW

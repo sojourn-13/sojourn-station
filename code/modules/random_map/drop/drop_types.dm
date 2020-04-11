@@ -42,8 +42,8 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/weapon/gun/projectile/mk58,
 		/obj/item/weapon/gun/projectile/shotgun/doublebarrel,
 		/obj/item/weapon/gun/projectile/shotgun/pump/combat,
-		/obj/item/weapon/gun/projectile/automatic/idaho,
-		/obj/item/weapon/gun/projectile/automatic/z8)
+		/obj/item/weapon/gun/projectile/automatic/texan,
+		/obj/item/weapon/gun/projectile/automatic/pitbull)
 
 /datum/supply_drop_loot/seeds
 	name = "Seeds"

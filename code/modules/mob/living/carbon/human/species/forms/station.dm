@@ -143,7 +143,7 @@
 	base = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
 	deform = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
 
-///* //For sablekyne to be selectable, commented out because it doesn't add any of the species/sablekyne stats.
+/* //For sablekyne to be selectable, commented out because it doesn't add any of the species/sablekyne stats.
 /datum/species_form/sablekyne
 	playable = FALSE
 	name = FORM_SABLEKYNE
@@ -154,4 +154,4 @@
 	base_color = "#333333"
 	tail = "tajtail"
 	tail_animation = 'icons/mob/sprite_accessory/tails.dmi'
-//*/
+*/

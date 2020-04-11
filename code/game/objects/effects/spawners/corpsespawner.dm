@@ -93,6 +93,15 @@
 	corpseuniform = /obj/item/clothing/under/orange
 	corpseshoes = /obj/item/clothing/shoes/orange
 
+/obj/landmark/corpse/generic/hunter
+	name = "Hunter"
+	corpseuniform = /obj/item/clothing/under/gorka/camo
+	corpsesuit = /obj/item/clothing/suit/gorka/toggle/gorka/camo
+	corpseshoes = /obj/item/clothing/shoes/cowboy/classic
+	corpsemask = /obj/item/clothing/mask/gas/old
+	corpsehelmet = /obj/item/clothing/head/cowboy/longhorn
+	corpsegloves = /obj/item/clothing/gloves/thick
+
 /////////////////Enemies//////////////////////
 
 /obj/landmark/corpse/antagonist/syndicate

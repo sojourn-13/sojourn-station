@@ -37,11 +37,11 @@
 /mob/living/simple_animal/hostile/russian/ranged
 	icon_state = "russianranged"
 	corpse = /obj/landmark/corpse/antagonist/russian/ranged
-	weapon1 = /obj/item/weapon/gun/projectile/revolver/mateba
+	weapon1 = /obj/item/weapon/gun/projectile/revolver
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet
 	projectilesound = 'sound/weapons/Gunshot.ogg'
-	casingtype = /obj/item/ammo_casing/a357
+	casingtype = /obj/item/ammo_casing/magnum
 
 
 /mob/living/simple_animal/hostile/russian/death()

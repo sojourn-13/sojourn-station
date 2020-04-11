@@ -1,16 +1,15 @@
 /obj/item/weapon/gun/projectile/olivaw
-	name = "HS HG .32 \"Olivaw\""
-	desc = "That's a \"Heckler and Son\" made pistol, its second most popular model. This one seems to have a two-round burst-fire mode. Uses .32 rounds."
+	name = "\"Olivaw\" burst pistol"
+	desc = "That's the second most popular model of civilian pistols produced by H&S. This one seems to have a two-round burst-fire mode. Uses .35 auto."
 	icon = 'icons/obj/guns/projectile/olivawcivil.dmi'
 	icon_state = "olivawcivil"
 	item_state = "pistol"
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	caliber = ".32"
-	ammo_mag = "mag_cl32"
+	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	can_dual = 1
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
+	mag_well = MAG_WELL_PISTOL|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 800
 	damage_multiplier = 1.1

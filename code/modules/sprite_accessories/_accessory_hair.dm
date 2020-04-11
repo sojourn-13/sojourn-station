@@ -25,9 +25,13 @@
 	name = "Afro 3"
 	icon_state = "bigafro"
 
+/datum/sprite_accessory/hair/amazon
+	name = "Amazon"
+	icon_state = "amazon"
+
 /datum/sprite_accessory/hair/angelique
 	name = "Angelique"
-	icon_state = "hair_angelique"
+	icon_state = "angelique"
 
 /datum/sprite_accessory/hair/asymmetrical
 	name = "Asymmetrical Bob"
@@ -81,10 +85,6 @@
 	name = "Bowl 2"
 	icon_state = "bowlcut2"
 
-/datum/sprite_accessory/hair/braid
-	name = "Floorlength Braid"
-	icon_state = "braid"
-
 /datum/sprite_accessory/hair/bookish
 	name = "Bookish"
 	icon_state = "lem"
@@ -124,6 +124,10 @@
 /datum/sprite_accessory/hair/buzz
 	name = "Buzzcut"
 	icon_state = "buzzcut"
+
+/datum/sprite_accessory/hair/celebcurls
+	name = "Celeb Curls"
+	icon_state = "celebcurls"
 
 /datum/sprite_accessory/hair/chop
 	name = "Chop"
@@ -195,12 +199,16 @@
 	icon_state = "80s"
 
 /datum/sprite_accessory/hair/elize
-		name = "Elize"
-		icon_state = "hair_elize"
+	name = "Elize"
+	icon_state = "elize"
 
 /datum/sprite_accessory/hair/emo
 	name = "Emo"
 	icon_state = "emo"
+
+/datum/sprite_accessory/hair/fringeemo
+	name = "Emo Fringe"
+	icon_state = "emofringe"
 
 /datum/sprite_accessory/hair/fag
 	name = "Flow"
@@ -208,7 +216,7 @@
 
 /datum/sprite_accessory/hair/familyman
 	name = "Family Man"
-	icon_state = "thefamilyman"
+	icon_state = "familyman"
 
 /datum/sprite_accessory/hair/father
 	name = "Father"
@@ -224,11 +232,11 @@
 
 /datum/sprite_accessory/hair/flipped
 	name = "Flipped"
-	icon_state = "hair_flipped"
+	icon_state = "flipped"
 
-/datum/sprite_accessory/hair/fringeemo
-	name = "Emo Fringe"
-	icon_state = "emofringe"
+/datum/sprite_accessory/hair/floorlength
+	name = "Floorlength Braid"
+	icon_state = "braid"
 
 /datum/sprite_accessory/hair/fringetail
 	name = "Fringetail"
@@ -242,9 +250,13 @@
 	name = "Gentle"
 	icon_state = "gentle"
 
+/datum/sprite_accessory/hair/glossy
+	name = "Glossy"
+	icon_state = "glossy"
+
 /datum/sprite_accessory/hair/gumshoe
 	name = "Gumshoe"
-	icon_state = "hair_gumshoe"
+	icon_state = "gumshoe"
 
 /datum/sprite_accessory/hair/halfbang
 	name = "Half-Banged"
@@ -296,7 +308,7 @@
 
 /datum/sprite_accessory/hair/kanaya
 	name = "Kanaya"
-	icon_state = "hair_kanaya"
+	icon_state = "kanaya"
 
 /datum/sprite_accessory/hair/kare
 	name = "Kare"
@@ -326,6 +338,10 @@
 	name = "Long 2"
 	icon_state = "longeralt2"
 
+/datum/sprite_accessory/hair/longeralt3
+	name = "Long 3"
+	icon_state = "longeralt3"
+
 /datum/sprite_accessory/hair/longest
 	name = "Longer"
 	icon_state = "longest"
@@ -349,6 +365,10 @@
 /datum/sprite_accessory/hair/manbun
 	name = "Man Bun"
 	icon_state = "manbun"
+
+/datum/sprite_accessory/hair/marysue
+	name = "Mary Sue"
+	icon_state = "marysue"
 
 /datum/sprite_accessory/hair/mbraid
 	name = "Medium Braid"
@@ -388,11 +408,11 @@
 
 /datum/sprite_accessory/hair/mia
 	name = "Mia"
-	icon_state = "hair_mia"
+	icon_state = "mia"
 
 /datum/sprite_accessory/hair/miles
 	name = "Miles"
-	icon_state = "hair_miles"
+	icon_state = "miles"
 
 /datum/sprite_accessory/hair/modern
 	name = "Modern"
@@ -409,6 +429,10 @@
 /datum/sprite_accessory/hair/myopia
 	name = "Myopia"
 	icon_state = "overeyebowl"
+
+/datum/sprite_accessory/hair/newyou
+	name = "New You"
+	icon_state = "newyou"
 
 /datum/sprite_accessory/hair/nia
 	name = "Nia"
@@ -515,6 +539,10 @@
 /datum/sprite_accessory/hair/scully
 	name = "Scully"
 	icon_state = "scully"
+
+/datum/sprite_accessory/hair/sharppony
+	name = "Sharp Ponytail"
+	icon_state = "sharp_ponytail"
 
 /datum/sprite_accessory/hair/shavedmohawk
 	name = "Shaved Mohawk"
@@ -646,7 +674,7 @@
 
 /datum/sprite_accessory/hair/vivi
 	name = "Vivi"
-	icon_state = "hair_vivi"
+	icon_state = "vivi"
 
 /datum/sprite_accessory/hair/volaju
 	name = "Volaju"

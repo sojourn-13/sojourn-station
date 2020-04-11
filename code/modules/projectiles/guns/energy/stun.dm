@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/taser
-	name = "SA SP \"Counselor\""
+	name = "\"Counselor\" stun gun"
 	desc = "The SA SP \"Counselor\" is a taser gun used for non-lethal takedowns. Originally produced by Scarborough Arms for outer rim police forces."
 	icon = 'icons/obj/guns/energy/taser.dmi'
 	icon_state = "taser"
@@ -22,7 +22,7 @@
 	recharge_time = 10 //Time it takes for shots to recharge (in ticks)
 
 /obj/item/weapon/gun/energy/stunrevolver
-	name = "HS SP \"Zeus\""
+	name = "\"Zeus\" stun revolver"
 	desc = "Also know as stunrevolver. Older and less precise Heckler and Sons solution for non-lethal takedowns. This gun has smaller capacity in exchange for S-cells use."
 	icon = 'icons/obj/guns/energy/stunrevolver.dmi'
 	icon_state = "stunrevolver"

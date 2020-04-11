@@ -8,6 +8,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Nadezhda Council"
+	difficulty = "Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_NONE
@@ -54,9 +55,10 @@
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Foreman"
+	difficulty = "Medium."
 	selection_color = "#a7bbc6"
 	wage = WAGE_NONE
 	also_known_languages = list(LANGUAGE_CYRILLIC = 30)
@@ -96,9 +98,10 @@
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
 	faction = MAP_FACTION
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Foreman"
+	difficulty = "Medium."
 	selection_color = "#a7bbc6"
 	wage = WAGE_NONE
 	also_known_languages = list(LANGUAGE_CYRILLIC = 30)

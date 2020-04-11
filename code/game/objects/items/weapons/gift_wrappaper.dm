@@ -37,7 +37,7 @@
 		/obj/item/weapon/storage/belt/champion,
 		/obj/item/weapon/soap/deluxe,
 		/obj/item/weapon/pen/invisible,
-		/obj/item/weapon/lipstick/jade,
+//		/obj/item/weapon/lipstick/jade,
 		/obj/item/weapon/grenade/smokebomb,
 		/obj/item/weapon/corncob,
 		/obj/item/weapon/contraband/poster,

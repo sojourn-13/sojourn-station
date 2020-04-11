@@ -2,6 +2,7 @@
 	name = "Human"
 	name_plural = "Humans"
 	default_form = FORM_HUMAN
+	obligate_name = FALSE
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/punch, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "Humanity originated in the Sol system, and over the last five centuries has spread \
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
@@ -21,23 +22,26 @@
 
 // To Do: Get it to boot these qualities when selected, basically you can't spawn as these yet, add the +5 TGH/ROB and
 // add in the custom racial perk.
+/*
 /datum/species/sablekyne
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
 	obligate_form = TRUE
+	reagent_tag = IS_SABLEKYNE
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/claws/strong, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/sharp)
 	darksight = 8
 	burn_mod = 1.15
+	gluttonous = GLUT_TINY
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
 	max_age = 110
-	blurb = "The Sablekyne are a mammalian abhuman species resembling roughly felines, hailing from Onkarth in the Gamma Minoris system. \
+	blurb = "The Sablekyne are a mammalian abhuman species roughly resembling felines once thought to be aliens, hailing from Onkarth in the Gamma Minoris system. \
 	Sablekyne were originally uplifted by the aid of human colonization and human corporations, aiding them by \
 	accelerating the fledgling culture into the interstellar age. Their history is full of war and highly fractious \
-	ethnicities, something that permeates even to today's times. Northlander sablekyne perfer colder winter enviroments while \
-	southlanders prefer hot dry areas. Both groups are stocky, strong, and thickly built and few have the lithe feline qualities \
+	ethnicities, something that permeates even to today's times. Northlander sablekyne perfer colder winter enviroments and speak with gaelic influences while \
+	southlanders prefer hot dry deserts and speak with japanese influences. Both groups are stocky, strong, and thickly built and few have the lithe feline qualities \
 	one would expect."
 
 	cold_level_1 = 200 //Default 260
@@ -63,5 +67,7 @@
 		)
 	spawn_flags = null
 
+
 /datum/species/sablekyne/get_bodytype()
 	return FORM_SABLEKYNE
+*/

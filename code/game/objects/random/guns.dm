@@ -24,17 +24,16 @@
 
 /obj/random/gun_normal/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/projectile/lamia = 2,\
-				/obj/item/weapon/gun/projectile/automatic/idaho = 1,\
-				/obj/item/weapon/gun/projectile/automatic/atreides = 1,\
-				/obj/item/weapon/gun/projectile/deagle = 2,\
+				/obj/item/weapon/gun/projectile/automatic/texan = 1,\
+				/obj/item/weapon/gun/projectile/automatic/mac = 1,\
+				/obj/item/weapon/gun/projectile/basilisk = 2,\
 				/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 2,\
 				/obj/item/weapon/gun/projectile/colt = 4,\
-				/obj/item/weapon/gun/projectile/revolver/consul = 4,\
 				/obj/item/weapon/gun/projectile/revolver = 4,\
-				/obj/item/weapon/gun/projectile/automatic/IH_heavyrifle = 1,\
-				/obj/item/weapon/gun/projectile/IH_sidearm = 2,\
-				/obj/item/weapon/gun/projectile/automatic/IH_machinepistol = 2,\
-				/obj/item/weapon/gun/projectile/automatic/IH_smg = 1))
+				/obj/item/weapon/gun/projectile/automatic/ostwind = 1,\
+				/obj/item/weapon/gun/projectile/firefly = 2,\
+				/obj/item/weapon/gun/projectile/automatic/straylight = 2,\
+				/obj/item/weapon/gun/projectile/automatic/wirbelwind = 1))
 
 /obj/random/gun_normal/low_chance
 	name = "low chance random normal gun"

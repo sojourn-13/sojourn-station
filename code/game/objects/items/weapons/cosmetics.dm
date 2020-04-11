@@ -1,3 +1,4 @@
+/*
 /obj/item/weapon/lipstick
 	gender = PLURAL
 	name = "red lipstick"
@@ -69,7 +70,7 @@
 		to_chat(user, SPAN_NOTICE("Where are the lips on that?"))
 
 //you can wipe off lipstick with paper! see code/modules/paperwork/paper.dm, paper/attack()
-
+*/
 
 /obj/item/weapon/haircomb //sparklysheep's comb
 	name = "purple comb"

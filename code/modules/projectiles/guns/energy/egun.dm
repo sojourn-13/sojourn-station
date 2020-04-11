@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/gun
-	name = "HS PDW E \"Spider Rose\""
+	name = "\"Spider Rose\" energy pistol"
 	desc = "Spider Rose is a versatile energy based sidearm, capable of switching between low and high capacity projectile settings. In other words: Stun or Kill."
 	icon = 'icons/obj/guns/energy/egun.dmi'
 	icon_state = "energystun100"
@@ -30,7 +30,7 @@
 	restrict_safety = TRUE
 
 /obj/item/weapon/gun/energy/gun/martin
-	name = "HS PDW E \"Martin\""
+	name = "\"Martin\" energy pistol"
 	desc = "Martin is essentialy downscaled Spider Rose, made for security employees and civilians to use it as personal self defence weapon."
 	icon = 'icons/obj/guns/energy/pdw.dmi'
 	icon_state = "PDW"

@@ -42,8 +42,6 @@
 				/obj/item/weapon/stock_parts/subspace/transmitter = 3,
 				/obj/item/weapon/stock_parts/subspace/treatment = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 3,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/devices = 3,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/tools = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 2,
@@ -51,11 +49,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/robustcells = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 2,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_cheap_guns = 2,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_kinetic_guns = 1,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/fs_energy_guns = 1,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns = 1,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 2))
 

@@ -16,14 +16,14 @@
 	break_stuff_probability = 95
 	stop_automated_movement = 1
 
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	melee_damage_lower = 40
+	melee_damage_upper = 50
 	megafauna_min_cooldown = 30
 	megafauna_max_cooldown = 60
 
 	wander = FALSE //No more sleepwalking
 
-	projectiletype = /obj/item/projectile/bullet/a556/nomuzzle
+	projectiletype = /obj/item/projectile/bullet/srifle/nomuzzle
 
 /mob/living/simple_animal/hostile/megafauna/one_star/death()
 	..()

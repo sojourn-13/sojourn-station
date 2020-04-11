@@ -7,11 +7,19 @@
 	// Descriptors and strings.
 	var/name                                            // Species name.
 	var/name_plural                                     // Pluralized name (since "[name]s" is not always valid)
+	var/aan = ""										// Whether to use an "a", an "an" or "the" to describe a species. Right now, only "" for a and "n" for an work.
 	var/blurb = "A completely nondescript species."		// A brief lore summary for use in the chargen screen.
 	var/mobtype = "/mob/living/carbon/human"			// The mob type that should be spawned for this. TODO: Make spawn code use it.
+	var/dark_color = "#ffffff"	//The color of the species name by default in a dark theme.
+	var/light_color = "#000000"	//The color of the species name by default in a light theme.
 
 	var/default_form = FORM_HUMAN	//If nothing else sets it, what do we look like.
-	var/obligate_form = FALSE //If true, character creation will force the use of either this form or its subforms.
+	var/obligate_form = FALSE		//If true, character creation will force the use of either this form or its subforms.
+	var/obligate_name = TRUE		//If true, forces the character's species name and name color to conform.
+
+	var/list/permitted_ears  = null
+	var/list/permitted_tail  = null
+	var/list/permitted_wings = null
 
 	var/min_age = 18
 	var/max_age = 90

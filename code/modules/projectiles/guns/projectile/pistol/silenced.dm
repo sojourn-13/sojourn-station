@@ -1,11 +1,11 @@
 /obj/item/weapon/gun/projectile/silenced
-	name = "SA HG .45 \"Mandella\""
-	desc = "A small, quiet,  easily concealable gun. Uses .45 rounds. Has an integrated silencer which can't be removed."
-	icon = 'icons/obj/guns/projectile/mandella.dmi'
-	icon_state = "mandella"
-	item_state = "pistol_s"
+	name = "\"Rafale\" silenced pistol"
+	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Uses 10mm Auto. Has an integrated silencer which cannot be removed."
+	icon = 'icons/obj/guns/projectile/rafale.dmi'
+	icon_state = "rafale"
+	item_state = "rafale"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = ".45"
+	caliber = CAL_10PISTOL
 	can_dual = 1
 	silencer_type = /obj/item/weapon/silencer/integrated
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
@@ -13,10 +13,10 @@
 	price_tag = 1500
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	magazine_type = /obj/item/ammo_magazine/c45m
 	damage_multiplier = 1.1
 	recoil_buildup = 14
 	one_hand_penalty = 10
+	penetration_multiplier = 0.8
 
 //This comes with a preinstalled silencer
 /obj/item/weapon/gun/projectile/silenced/Initialize()

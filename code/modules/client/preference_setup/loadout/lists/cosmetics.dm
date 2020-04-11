@@ -3,11 +3,13 @@
 	sort_category = "Cosmetics"
 	path = /obj/item/weapon/mirror
 
+/*
 /datum/gear/cosmetic/lipstick
 	display_name = "lipstick selection"
 	sort_category = "Cosmetics"
 	path = /obj/item/weapon/lipstick
 	flags = GEAR_HAS_TYPE_SELECTION
+*/
 
 /datum/gear/cosmetic/comb
 	display_name = "plastic comb"

@@ -10,6 +10,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "your heart and wisdom"
+	difficulty = "Very Hard."
 	selection_color = "#ccccff"
 	req_admin_notify = 1
 	wage = WAGE_NONE //The captain doesn't get paid, he's the one who does the paying
@@ -72,6 +73,7 @@ Treat your command officers with respect, and listen to their council. Try not t
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Premier"
+	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND

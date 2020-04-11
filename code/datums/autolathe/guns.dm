@@ -3,31 +3,35 @@
 	build_path = /obj/item/weapon/gun/launcher/syringe
 
 /datum/design/autolathe/gun/olivaw
-	name = "HS HG .32 \"Olivaw\""
+	name = "H&S HG .35 \"Olivaw\""
 	build_path = /obj/item/weapon/gun/projectile/olivaw
 
 /datum/design/autolathe/gun/giskard
-	name = "HS HG .32 \"Giskard\""
+	name = "H&S HG .35 \"Giskard\""
 	build_path = /obj/item/weapon/gun/projectile/giskard
 
 /datum/design/autolathe/gun/clarissa
-	name = "HS HG 9x19 \"Clarissa\""
+	name = "SA HG .35 \"Clarissa\""
 	build_path = /obj/item/weapon/gun/projectile/clarissa
 
 /datum/design/autolathe/gun/makarov
-	name = "Excelsior 9x19 \"Makarov\""
+	name = "Excelsior .35 \"Makarov\""
 	build_path = /obj/item/weapon/gun/projectile/clarissa/makarov
 
+/datum/design/autolathe/gun/rafale
+	name = "SM SHG 10mm \"Rafale\""
+	build_path = /obj/item/weapon/gun/projectile/silenced
+
 /datum/design/autolathe/gun/mk58
-	name = "OT HG .45 \"Mk58\""
+	name = "OT HG 10mm \"Mk58\""
 	build_path = /obj/item/weapon/gun/projectile/mk58
 
 /datum/design/autolathe/gun/mk58_wood
-	name = "OT HG .45 \"Mk58\""
+	name = "OT HG 10mm \"Mk58\""
 	build_path = /obj/item/weapon/gun/projectile/mk58/wood
 
-/datum/design/autolathe/gun/revolver_detective
-	name = "HS REV .38 \"Havelock\""
+/datum/design/autolathe/gun/detective
+	name = "H&S REV ..35 \"Havelock\""
 	build_path = /obj/item/weapon/gun/projectile/revolver/detective
 
 /datum/design/autolathe/gun/doublebarrel
@@ -35,144 +39,148 @@
 	build_path = /obj/item/weapon/gun/projectile/shotgun/doublebarrel
 
 /datum/design/autolathe/gun/pump_shotgun
-	name = "HS SG \"Kammerer\""
+	name = "H&S SG \"Grizzly\""
 	build_path = /obj/item/weapon/gun/projectile/shotgun/pump
 
-/datum/design/autolathe/gun/combat_shotgun
-	name = "OT SG \"Regulator 1000\""
+/datum/design/autolathe/gun/regulator
+	name = "OT SG \"Regulator\""
 	build_path = /obj/item/weapon/gun/projectile/shotgun/pump/combat
 
+/datum/design/autolathe/gun/pug
+	name = "SA SG \"Pug\""
+	build_path = /obj/item/weapon/gun/projectile/shotgun/pug
+
 /datum/design/autolathe/gun/gladstone
-	name = "HS SG \"Gladstone\""
+	name = "H&S SG \"Gladstone\""
 	build_path = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone
 
 /datum/design/autolathe/gun/revolver
-	name = "HS REV .357 \"Miller\""
+	name = "H&S REV .40 Magnum \"Minotaur\""
 	build_path = /obj/item/weapon/gun/projectile/revolver
 
-/datum/design/autolathe/gun/revolver_consul
-	name = "HS REV .44 \"Consul\""
-	build_path = /obj/item/weapon/gun/projectile/revolver/consul
-
-/datum/design/autolathe/gun/revolver_deckard
-	name = "HS REV .44 \"Deckard\""
-	build_path = /obj/item/weapon/gun/projectile/revolver/deckard
+/datum/design/autolathe/gun/revolver/mateba
+	name = "SA REV .50 Kurtz \"Mateba\""
+	build_path = /obj/item/weapon/gun/projectile/revolver/mateba
 
 /datum/design/autolathe/gun/lamia
-	name = "HS HG .44 \"Lamia\""
+	name = "H&S HG .40 Magnum \"Lamia\""
 	build_path = /obj/item/weapon/gun/projectile/lamia
 
 /datum/design/autolathe/gun/scoped_lamia
-	name = "HS HG .44 \"Lamia\" Advanced"
+	name = "H&S HG .40 \"Lamia\" Advanced"
 	build_path = /obj/item/weapon/gun/projectile/lamia/scoped_lamia
 
-/datum/design/autolathe/gun/dark_lamia
-	name = "HS HG .44 \"Naga\""
-	build_path = /obj/item/weapon/gun/projectile/lamia/dark_lamia
+/datum/design/autolathe/gun/basilisk
+	name = "H&S HG .50 \"Basilisk\""
+	build_path = /obj/item/weapon/gun/projectile/basilisk
 
-/datum/design/autolathe/gun/deagle
-	name = "HS HG .50 \"Bolter\""
-	build_path = /obj/item/weapon/gun/projectile/deagle
+/datum/design/autolathe/gun/bulldog
+	name = "H&S CAR 6.5x39 \"Bulldog\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/bulldog
 
-/datum/design/autolathe/gun/smg_sol
-	name = "HS CAR 6.5x39 \"Sol\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/sol
+/datum/design/autolathe/gun/bulldog_rds
+	name = "H&S CAR 6.5x39 \"Bulldog\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/bulldog/rds
 
-/datum/design/autolathe/gun/smg_sol_rds
-	name = "HS CAR 6.5x39 \"Sol\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/sol/rds
+/datum/design/autolathe/gun/pulse_rifle
+	name = "PAR - 10mm Caseless Pulse Rifle"
+	build_path = /obj/item/weapon/gun/projectile/automatic/pulse_rifle
 
 /datum/design/autolathe/gun/ak47
-	name = "Excelsior 7.62x39 AK-47"
+	name = "Excelsior 6.5x39 AK"
 	build_path = /obj/item/weapon/gun/projectile/automatic/ak47
 
-/datum/design/autolathe/gun/ak47_fs
-	name = "HS AR 7.62x39 \"Kalashnikov\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/fs
+/datum/design/autolathe/gun/ak47_sa
+	name = "SA CAR 6.5x39 \"Kalashnikov\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/sa
 
 /datum/design/autolathe/gun/vintorez
-	name = "Excelsior .20 \"Vintorez\""
+	name = "Excelsior .208 \"Vintorez\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/vintorez
 
-/datum/design/autolathe/gun/idaho
-	name = "HS SMG 9x19 \"Idaho\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/idaho
+/datum/design/autolathe/gun/mg_pk
+	name = "SA - 7.62mm Pulemyot Kalashnikova MG"
+	build_path = /obj/item/weapon/gun/projectile/automatic/lmg/pk
 
-/datum/design/autolathe/gun/atreides
-	name = "HS SMG .45 \"Atreides\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/atreides
+/datum/design/autolathe/gun/texan
+	name = "SA SMG .35 \"Texan\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/texan
+
+/datum/design/autolathe/gun/mac
+	name = "SA SMG .35 \"MAC\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/mac
 
 /datum/design/autolathe/gun/boltgun
-	name = "Excelsior .30 \"Kardashev-Mosin\""
+	name = "Excelsior 7.62 \"Kardashev-Mosin\""
+	build_path = /obj/item/weapon/gun/projectile/boltgun
+
+/datum/design/autolathe/gun/boltgun_sa
+	name = "SA BR 7.62 \"Novakovic\""
 	build_path = /obj/item/weapon/gun/projectile/boltgun
 
 /datum/design/autolathe/gun/heavysniper
-	name = "OT AMR .60 \"Penetrator\""
+	name = "SA AMR .60-06 \"Penetrator\""
 	build_path = /obj/item/weapon/gun/projectile/heavysniper
 
-/datum/design/autolathe/gun/IH_sidearm
-	name = "HS HG 10mm \"Paco\""
-	build_path = /obj/item/weapon/gun/projectile/IH_sidearm
+/datum/design/autolathe/gun/firefly
+	name = "H&S HG .35 \"Firefly\""
+	build_path = /obj/item/weapon/gun/projectile/firefly
 
 /datum/design/autolathe/gun/colt
-	name = "HS HG .45 \"Colt\""
+	name = "SA HG .35 \"M1911\""
 	build_path = /obj/item/weapon/gun/projectile/colt
 
 /datum/design/autolathe/gun/IH_colt
-	name = "HS HG .45 \"Bronco\""
-	build_path = /obj/item/weapon/gun/projectile/colt/IH_colt
+	name = "HG .35 \"Bronco\""
+	build_path = /obj/item/weapon/gun/projectile/colt/NM_colt
 
 /datum/design/autolathe/gun/ten
-	name = "HS HG 10mm \"Delta Elite\""
+	name = "H&S HG 10mm \"Delta Elite\""
 	build_path = /obj/item/weapon/gun/projectile/colt/ten
 
 /datum/design/autolathe/gun/ten_dark
-	name = "HS HG 10mm \"Stallion\""
+	name = "HG 10mm \"Stallion\""
 	build_path = /obj/item/weapon/gun/projectile/colt/ten/dark
 
 /datum/design/autolathe/gun/standard_omnirifle
-	name = "HS BR 10x50mm \"Omnirifle\""
+	name = "BR 10x50mm \"Omnirifle\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/standard
 
 /datum/design/autolathe/gun/scoped_omnirifle
-	name = "HS BR 10x50mm \"Longarm\""
+	name = "H&S BR 10x50mm \"Longarm\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped
 
-/datum/design/autolathe/gun/fancy_omnirifle
-	name = "HS BR 10x50mm \"Osprey\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/fancy
-
 /datum/design/autolathe/gun/omnirifle
-	name = "HS BR 10x50mm \"Hustler\""
+	name = "SA BR 10x50mm \"Hustler\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/
 
 /datum/design/autolathe/gun/omnicarbine
-	name = "HS BR 10x50mm \"Boar\""
+	name = "H&S BR 10x50mm \"Boar\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine
 
 /datum/design/autolathe/gun/rds_omnicarbine
-	name = "HS BR 10x50mm \"Boar\" RDS"
+	name = "H&S BR 10x50mm \"Boar\" RDS"
 	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds
 
-/datum/design/autolathe/gun/IH_smg
-	name = "HS SMG 9x19 \"Straylight\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/IH_smg
+/datum/design/autolathe/gun/straylight
+	name = "H&S SMG .35 \"Straylight\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/straylight
 
-/datum/design/autolathe/gun/IH_machinepistol
-	name = "HS MP 9x19 \"Molly\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/IH_machinepistol
+/datum/design/autolathe/gun/wirbelwind
+	name = "SM SMG ,35 \"Wirbelwind\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/wirbelwind
 
 /datum/design/autolathe/gun/drozd
-	name = "Excelsior 9x19 \"Drozd\""
+	name = "Excelsior .35 \"Drozd\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/drozd
 
-/datum/design/autolathe/gun/z8
-	name = "HS CAR 5.56x45mm \"Z8 Bulldog\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/z8
+/datum/design/autolathe/gun/pitbull
+	name = "H&S AR .208 \"Pitbull\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/pitbull
 
-/datum/design/autolathe/gun/IH_heavyrifle
-	name = "HS BR 5.56x45 \"Wintermute\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/IH_heavyrifle
+/datum/design/autolathe/gun/ostwind
+	name = "SM AR .208 \"Ostwind\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/ostwind
 
 /datum/design/autolathe/gun/grenade_launcher
 	name = "OT GL \"Protector\""
@@ -187,11 +195,11 @@
 	build_path = /obj/item/weapon/gun/energy/taser
 
 /datum/design/autolathe/gun/energygun
-	name = "HS PDW E \"Spider Rose\""
+	name = "H&S PDW E \"Spider Rose\""
 	build_path = /obj/item/weapon/gun/energy/gun
 
 /datum/design/autolathe/gun/energygun_martin
-	name = "HS PDW E \"Martin\""
+	name = "H&S PDW E \"Martin\""
 	build_path = /obj/item/weapon/gun/energy/gun/martin
 
 /datum/design/autolathe/gun/energy_crossbow
@@ -219,7 +227,7 @@
 	build_path = /obj/item/weapon/gun/energy/plasma/destroyer
 
 /datum/design/autolathe/gun/pulse_cassad
-	name = "HS PR \"Cassad\""
+	name = "H&S PR \"Cassad\""
 	build_path = /obj/item/weapon/gun/energy/plasma/cassad
 
 /datum/design/autolathe/gun/sniperrifle

@@ -25,7 +25,7 @@
 
 		if("guns")
 			new /obj/item/weapon/gun/projectile/revolver(src)
-			new /obj/item/ammo_magazine/cl44(src)
+			new /obj/item/ammo_magazine/slmagnum(src)
 			new /obj/item/weapon/card/emag(src)
 			new /obj/item/weapon/plastique(src)
 			new /obj/item/weapon/plastique(src)
@@ -63,7 +63,7 @@
 */
 
 			if("smoothoperator")
-				new /obj/item/weapon/storage/box/syndie_kit/g9mm(src)
+				new /obj/item/weapon/storage/box/syndie_kit/pistol(src)
 				new /obj/item/weapon/storage/bag/trash(src)
 				new /obj/item/weapon/soap/syndie(src)
 				new /obj/item/bodybag(src)
@@ -171,14 +171,17 @@
 	new /obj/item/weapon/gun/projectile/dartgun(src)
 	new /obj/item/ammo_magazine/chemdart(src)
 
-/obj/item/weapon/storage/box/syndie_kit/g9mm
+/obj/item/weapon/storage/box/syndie_kit/pistol
 	name = "\improper smooth operator kit"
-	desc = "9mm with silencer kit."
+	desc = "10mm suppressed handgun and its kit.."
 
-/obj/item/weapon/storage/box/syndie_kit/g9mm/populate_contents()
-	new /obj/item/weapon/gun/projectile/clarissa(src)
-	new /obj/item/weapon/silencer(src)
-	new /obj/item/ammo_magazine/mc9mm(src)
+/obj/item/weapon/storage/box/syndie_kit/pistol/populate_contents()
+	new /obj/item/weapon/gun/projectile/silenced(src)
+	new /obj/item/ammo_magazine/a10mm/hv(src)
+	new /obj/item/ammo_magazine/a10mm/hv(src)
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/clothing/mask/balaclava(src)
+
 
 /obj/item/weapon/storage/box/syndie_kit/c20r
 	name = "C-20r box"
@@ -186,7 +189,7 @@
 
 /obj/item/weapon/storage/box/syndie_kit/c20r/populate_contents()
 	new /obj/item/weapon/gun/projectile/automatic/c20r(src)
-	new /obj/item/ammo_magazine/smg10mm(src)
+	new /obj/item/ammo_magazine/smg(src)
 
 /obj/item/weapon/storage/box/syndie_kit/revolver
 	name = "revolver box"
@@ -194,17 +197,19 @@
 
 /obj/item/weapon/storage/box/syndie_kit/revolver/populate_contents()
 	new /obj/item/weapon/gun/projectile/revolver(src)
-	new /obj/item/ammo_magazine/sl357(src)
+	new /obj/item/ammo_magazine/slmagnum(src)
 
-/obj/item/weapon/storage/box/syndie_kit/sts35
+/obj/item/weapon/storage/box/syndie_kit/sts
 	name = "assault rifle box"
 	desc = "Assault rifle kit"
 	icon_state = "box_of_doom_big"
 	w_class = ITEM_SIZE_HUGE
 
-/obj/item/weapon/storage/box/syndie_kit/sts35/populate_contents()
-	new /obj/item/weapon/gun/projectile/automatic/sts35(src)
-	new /obj/item/ammo_magazine/c762_short(src)
+/obj/item/weapon/storage/box/syndie_kit/sts/populate_contents()
+	new /obj/item/weapon/gun/projectile/automatic/sts(src)
+	new /obj/item/ammo_magazine/lrifle(src)
+	new /obj/item/ammo_magazine/lrifle_short(src)
+	new /obj/item/clothing/suit/storage/toggle/leather/blackjacket(src)
 
 /obj/item/weapon/storage/box/syndie_kit/pug
 	name = "Pug box"
@@ -223,7 +228,7 @@
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/weapon/storage/box/syndie_kit/antimaterial_rifle/populate_contents()
-	new /obj/item/ammo_casing/a145(src)
+	new /obj/item/ammo_casing/antim(src)
 	new /obj/item/weapon/weaponparts/heavysniper/stock(src)
 	new /obj/item/weapon/weaponparts/heavysniper/reciever(src)
 	new /obj/item/weapon/weaponparts/heavysniper/barrel(src)
