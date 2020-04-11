@@ -261,8 +261,3 @@
 	desc = ""
 	icon_state = "succubus"
 	colored_layers = 3
-
-/datum/sprite_accessory/wings/xenobackplate
-	name = "Xeno Backplate"
-	desc = ""
-	icon_state = "xenobackplate"
