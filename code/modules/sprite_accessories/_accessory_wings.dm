@@ -20,7 +20,7 @@
 /datum/sprite_accessory/wings/bat_color
 	name = "Bat Wings"
 	desc = ""
-	icon_state = "bat-color"
+	icon_state = "bat-black"
 	colored_layers = 1
 
 /datum/sprite_accessory/wings/bee
@@ -44,13 +44,8 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/devil
-	name = "Demon Wings, Small"
-	desc = ""
-	icon_state = "bat-red"
-
 /datum/sprite_accessory/wings/demon
-	name = "Demon Wings, Large"
+	name = "Demon Wings"
 	desc = ""
 	icon_state = "sepulchre_wings"
 	colored_layers = 1
@@ -170,17 +165,17 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/moth_red
-	name = "Moth Wings, Red"
-	desc = ""
-	icon_state = "moth_red"
-	colored_layers = 1
-	blend = ICON_MULTIPLY
-
 /datum/sprite_accessory/wings/moth_ragged
 	name = "Moth Wings, Ragged"
 	desc = ""
 	icon_state = "moth_ragged"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_red
+	name = "Moth Wings, Red"
+	desc = ""
+	icon_state = "moth_red"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
@@ -260,3 +255,9 @@
 	icon_state = "spines_short_membrane"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/succubus
+	name = "Succubus Wings"
+	desc = ""
+	icon_state = "succubus"
+	colored_layers = 1
