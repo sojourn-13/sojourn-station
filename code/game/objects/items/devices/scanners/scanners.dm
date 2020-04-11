@@ -126,6 +126,8 @@
 
 /obj/item/device/scanner/OnTopic(var/user, var/list/href_list)
 	if(href_list["print"])
+		to_chat(user, "The [src] hums as it begins printing a report.")
+		sleep(50)
 		print_report(user)
 		return 1
 	if(href_list["clear"])

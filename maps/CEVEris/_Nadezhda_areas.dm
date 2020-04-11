@@ -1150,6 +1150,7 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Security - Main Gate"
 	icon_state = "security"
 	dynamic_lighting = FALSE
+	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 
 /area/nadezhda/security/checkpoint/supply
 	name = "Security Post - Cargo Bay"

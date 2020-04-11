@@ -36,7 +36,7 @@
 	interface_name = "health scanner"
 	interface_desc = "Shows an informative health readout when used on a subject."
 
-	device_type = /obj/item/device/scanner/health
+	device_type = /obj/item/device/scanner/health/rig
 
 
 /obj/item/rig_module/device/drill
