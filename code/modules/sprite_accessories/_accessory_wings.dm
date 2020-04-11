@@ -260,4 +260,4 @@
 	name = "Succubus Wings"
 	desc = ""
 	icon_state = "succubus"
-	colored_layers = 1
+	colored_layers = 3
