@@ -27,23 +27,22 @@
 	name = "Bee Wings"
 	desc = ""
 	icon_state = "beewings"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/citheroniamoth
-	name = "Citheronia Wings"
+/datum/sprite_accessory/wings/butterfly
+	name = "Butterfly Wings"
 	desc = ""
-	icon_state = "citheronia_wings"
+	icon_state = "moth"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/cyberdragon
-	name = "Cyberdragon Wings"
+	name = "Cybernetic Wings"
 	desc = ""
 	icon_state = "cyberdragon_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
-
-/datum/sprite_accessory/wings/cyberdoe
-	name = "Cyberdoe Wings"
-	desc = ""
-	icon_state = "cyberdoe_s"
 
 /datum/sprite_accessory/wings/demon
 	name = "Demon Wings"
@@ -104,19 +103,17 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/mothc
-	name = "Moth Wings"
-	desc = ""
-	icon_state = "moth"
-	colored_layers = 1
-	blend = ICON_MULTIPLY
-
 /datum/sprite_accessory/wings/moth_burned
 	name = "Moth Wings, Burned"
 	desc = ""
 	icon_state = "moth_burned"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_citheronia
+	name = "Moth Wings, Citheronia"
+	desc = ""
+	icon_state = "citheronia_wings"
 
 /datum/sprite_accessory/wings/moth_deathhead
 	name = "Moth Wings, Deathhead"
