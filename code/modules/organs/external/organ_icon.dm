@@ -119,6 +119,20 @@ var/global/list/limb_icon_cache = list()
 /obj/item/organ/external/update_icon(regenerate = 0)
 	var/gender = "_m"
 
+	if(!appearance_test.get_species_sprite)
+		icon = 'icons/mob/human_races/r_human.dmi'
+	else
+		if(src.force_icon)
+			icon = src.force_icon
+		else if(!form && !dna)
+			icon = 'icons/mob/human_races/r_human_white.dmi'
+		else if(BP_IS_ROBOTIC(src))
+			icon = 'icons/mob/human_races/cyberlimbs/generic.dmi'
+		else if(status & ORGAN_MUTATED)
+			icon = form.deform
+		else
+			icon = form.base
+
 	if(appearance_test.simple_setup)
 		gender = owner.gender == FEMALE ? "_f" : "_m"
 		icon_state = "[organ_tag][gender]"
@@ -127,37 +141,33 @@ var/global/list/limb_icon_cache = list()
 			gender = "_f"
 		else if(owner && owner.gender == FEMALE)
 			gender = "_f"
+		if(!("[organ_tag][gender][is_stump()?"_s":""]" in icon_states(icon)))
+			gender = ""
 
 		icon_state = "[organ_tag][gender][is_stump()?"_s":""]"
 
-	if(!appearance_test.get_species_sprite)
-		icon = 'icons/mob/human_races/r_human.dmi'
-	else
-		if(src.force_icon)
-			icon = src.force_icon
-		else if(!dna)
-			icon = 'icons/mob/human_races/r_human.dmi'
-		else if(BP_IS_ROBOTIC(src))
-			icon = 'icons/mob/human_races/cyberlimbs/generic.dmi'
-		else if(status & ORGAN_MUTATED)
-			icon = species.deform
-		else
-			icon = species.icobase
-
 	mob_icon = new/icon(icon, icon_state)
+
+	if(!is_stump())
+		for(var/subicon in additional_limb_parts)
+			var/subgender = gender
+			if(!("[subicon][subgender]" in icon_states(icon)))
+				subgender = ""
+			if("[subicon][subgender]" in icon_states(icon))
+				var/icon/L = new(icon, "[subicon][subgender]")
+				mob_icon.Blend(L, ICON_OVERLAY)
 
 	if(appearance_test.colorize_organ)
 		if(status & ORGAN_DEAD)
 			mob_icon.ColorTone(rgb(10,50,0))
 			mob_icon.SetIntensity(0.7)
-		if(skin_tone)
+		if(skin_col)
+			mob_icon.Blend(skin_col, ICON_MULTIPLY)
+		else if(skin_tone)
 			if(skin_tone >= 0)
 				mob_icon.Blend(rgb(skin_tone, skin_tone, skin_tone), ICON_ADD)
 			else
 				mob_icon.Blend(rgb(-skin_tone,  -skin_tone,  -skin_tone), ICON_SUBTRACT)
-		else
-			if(skin_col)
-				mob_icon.Blend(skin_col, ICON_ADD)
 
 
 	dir = EAST

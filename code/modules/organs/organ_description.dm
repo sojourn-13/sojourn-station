@@ -2,6 +2,7 @@
 	var/name = "limb"
 	var/surgery_name
 	var/organ_tag = "limb"
+	var/additional_limb_parts = list() //Other parts to put on top of limbs.
 	var/body_part = null
 	var/parent_organ = null
 	var/default_type = /obj/item/organ/external
@@ -107,6 +108,9 @@
 	joint = "left elbow"
 	amputation_point = "left shoulder"
 
+/datum/organ_description/arm/left/full
+	additional_limb_parts = BP_L_ARM_EXTRA
+
 /datum/organ_description/arm/right
 	name = "right arm"
 	organ_tag = BP_R_ARM
@@ -114,6 +118,9 @@
 
 	joint = "right elbow"
 	amputation_point = "right shoulder"
+
+/datum/organ_description/arm/right/full
+	additional_limb_parts = BP_R_ARM_EXTRA
 
 /datum/organ_description/leg
 	parent_organ = BP_GROIN
@@ -134,6 +141,9 @@
 	joint = "left knee"
 	amputation_point = "left hip"
 
+/datum/organ_description/leg/left/full
+	additional_limb_parts = BP_L_LEG_EXTRA
+
 /datum/organ_description/leg/right
 	name = "right leg"
 	organ_tag = BP_R_LEG
@@ -142,6 +152,9 @@
 
 	joint = "right knee"
 	amputation_point = "right hip"
+
+/datum/organ_description/leg/right/full
+	additional_limb_parts = BP_R_LEG_EXTRA
 
 ////SLIME////
 /datum/organ_description/chest/slime

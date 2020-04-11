@@ -6,8 +6,8 @@
 	// Strings.
 	var/surgery_name					// A special name that replaces item name in surgery messages
 	var/organ_tag = "organ"				// Unique identifier.
-	var/additional_limb_parts		  // Other parts to put on top, if the limb is incomplete.
-	var/parent_organ = BP_CHEST       // Organ holding this object.
+	var/additional_limb_parts = list()  // Other parts to put on top, if the limb is incomplete.
+	var/parent_organ = BP_CHEST			// Organ holding this object.
 	var/dead_icon
 
 	// Status tracking.

@@ -16,29 +16,7 @@
 	var/min_age = 18
 	var/max_age = 90
 
-	// Damage overlay and masks.
-	var/damage_overlays = 'icons/mob/human_races/masks/dam_human.dmi'
-	var/damage_mask = 'icons/mob/human_races/masks/dam_mask_human.dmi'
-	var/blood_mask = 'icons/mob/human_races/masks/blood_human.dmi'
-
-	// Icon/appearance vars.
-	var/base = 'icons/mob/human_races/r_human.dmi'    // Normal icon set.
-	var/deform = 'icons/mob/human_races/r_def_human.dmi' // Mutated icon set.
-	var/face = 'icons/mob/human_face.dmi'
-	var/icobase = 'icons/mob/human_races/r_human.dmi'    // Normal icon set.
-
-	var/prone_icon                                       // If set, draws this from icobase when mob is prone.
-	var/eyes = "eyes_s"                                  // Icon for eyes.
-	var/has_floating_eyes                                // Eyes will overlay over darkness (glow)
-	var/blood_color = "#A10808"                          // Red.
-	var/flesh_color = "#FFC896"                          // Pink.
-	var/base_color                                       // Used by changelings. Should also be used for icon previes..
-	var/tail                                             // Name of tail state in species effects icon file.
-	var/tail_animation                                   // If set, the icon to obtain tail animation states from.
-	var/race_key = 0       	                             // Used for mob icon cache string.
-	var/icon/icon_template                               // Used for mob icon generation for non-32x32 species.
 	var/mob_size	= MOB_MEDIUM
-	var/show_ssd = "fast asleep"
 	var/virus_immune
 	var/blood_volume = 560                               // Initial blood volume.
 	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
@@ -68,18 +46,6 @@
 	var/flash_mod =     1                    // Stun from blindness modifier.
 	var/vision_flags = SEE_SELF              // Same flags as glasses.
 
-	// Death vars.
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
-	var/gibber_type = /obj/effect/gibspawner/human
-	var/single_gib_type = /obj/effect/decal/cleanable/blood/gibs
-	var/remains_type = /obj/item/remains/xeno
-	var/gibbed_anim = "gibbed-h"
-	var/dusted_anim = "dust-h"
-	var/death_sound
-	var/death_message = "seizes up and falls limp, their eyes dead and lifeless..."
-	var/knockout_message = "has been knocked unconscious!"
-	var/halloss_message = "slumps to the ground, too weak to continue fighting."
-	var/halloss_message_self = "You're in too much pain to keep going..."
 	var/list/hair_styles
 	var/list/facial_hair_styles
 
@@ -148,10 +114,10 @@
 		BP_CHEST =  new /datum/organ_description/chest,
 		BP_GROIN =  new /datum/organ_description/groin,
 		BP_HEAD =   new /datum/organ_description/head,
-		BP_L_ARM =  new /datum/organ_description/arm/left,
-		BP_R_ARM =  new /datum/organ_description/arm/right,
-		BP_L_LEG =  new /datum/organ_description/leg/left,
-		BP_R_LEG =  new /datum/organ_description/leg/right
+		BP_L_ARM =  new /datum/organ_description/arm/left/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/full
 		)
 
 	// Misc

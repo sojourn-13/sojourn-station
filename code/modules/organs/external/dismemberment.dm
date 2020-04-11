@@ -77,11 +77,11 @@
 					I.forceMove(get_turf(src))
 			qdel(src)
 		if(DROPLIMB_BLUNT)
-			var/obj/effect/decal/cleanable/blood/gibs/gore = new victim.species.single_gib_type(get_turf(victim))
-			if(victim.species.flesh_color)
-				gore.fleshcolor = victim.species.flesh_color
-			if(victim.species.blood_color)
-				gore.basecolor = victim.species.blood_color
+			var/obj/effect/decal/cleanable/blood/gibs/gore = new victim.form.single_gib_type(get_turf(victim))
+			if(victim.form.flesh_color)
+				gore.fleshcolor = victim.form.flesh_color
+			if(victim.form.blood_color)
+				gore.basecolor = victim.form.blood_color
 			gore.update_icon()
 			gore.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,3),30)
 

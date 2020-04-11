@@ -39,6 +39,7 @@
 
 	var/He   = gender_word("He",  T)
 	var/he   = gender_word("he",  T)
+	var/His  = gender_word("His", T)
 	var/his  = gender_word("his", T)
 	var/him  = gender_word("him", T)
 	var/is   = gender_word("is",  T)
@@ -253,24 +254,24 @@
 				part_display_name = "a robot [temp.name]"
 
 			if(!(temp.brute_dam + temp.burn_dam))
-				wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [part_display_name]!</span>\n"
+				wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [part_display_name]!</span>\n"
 			else
-				wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [part_display_name]. It has [temp.get_wounds_desc()]!</span>\n"
+				wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [part_display_name]. It has [temp.get_wounds_desc()]!</span>\n"
 			continue
 		else if(temp.wounds.len > 0 || temp.open)
 			if(temp.is_stump() && temp.parent_organ && organs_by_name[temp.parent_organ])
 				var/obj/item/organ/external/parent = organs_by_name[temp.parent_organ]
-				wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [parent.name].</span><br>"
+				wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [temp.get_wounds_desc()] on [his] [parent.name].</span><br>"
 			else
-				wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [temp.name].</span><br>"
+				wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [temp.get_wounds_desc()] on [his] [temp.name].</span><br>"
 			if(temp.status & ORGAN_BLEEDING)
-				is_bleeding["[temp.name]"] = "<span class='danger'>[T.His] [temp.name] is bleeding!</span><br>"
+				is_bleeding["[temp.name]"] = "<span class='danger'>[His] [temp.name] is bleeding!</span><br>"
 		else
 			wound_flavor_text["[temp.name]"] = ""
 		if(temp.dislocated == 2)
-			wound_flavor_text["[temp.name]"] += "<span class='warning'>[T.His] [temp.joint] is dislocated!</span><br>"
+			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.joint] is dislocated!</span><br>"
 		if(((temp.status & ORGAN_BROKEN) && temp.brute_dam > temp.min_broken_damage) || (temp.status & ORGAN_MUTATED))
-			wound_flavor_text["[temp.name]"] += "<span class='warning'>[T.His] [temp.name] is dented and swollen!</span><br>"
+			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is dented and swollen!</span><br>"
 
 	//Handles the text strings being added to the actual description.
 	//If they have something that covers the limb, and it is not missing, put flavortext.  If it is covered but bleeding, add other flavortext.

@@ -267,19 +267,6 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 		if(!(L.flags & NONGLOBAL))
 			language_keys[lowertext(L.key)] = L
 
-	var/rkey = 0
-	paths = subtypesof(/datum/species)
-	for(var/T in paths)
-		rkey++
-		var/datum/species/S = new T
-		S.race_key = rkey //Used in mob icon caching.
-		all_species[S.name] = S
-
-		if(!(S.spawn_flags & IS_RESTRICTED))
-			playable_species += S.name
-		if(S.spawn_flags & IS_WHITELISTED)
-			whitelisted_species += S.name
-
 	//var/rkey = 0
 	paths = typesof(/datum/species)-/datum/species
 	for(var/T in paths)
