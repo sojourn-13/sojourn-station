@@ -20,45 +20,55 @@
 /datum/sprite_accessory/wings/bat_color
 	name = "Bat Wings"
 	desc = ""
-	icon_state = "bat-color"
+	icon_state = "bat"
 	colored_layers = 1
 
 /datum/sprite_accessory/wings/bee
 	name = "Bee Wings"
 	desc = ""
-	icon_state = "beewings"
-
-/datum/sprite_accessory/wings/citheroniamoth
-	name = "Citheronia Wings"
-	desc = ""
-	icon_state = "citheronia_wings"
-
-/datum/sprite_accessory/wings/cyberdragon
-	name = "Cyberdragon Wings"
-	desc = ""
-	icon_state = "cyberdragon_s"
+	icon_state = "bee"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/cyberdoe
-	name = "Cyberdoe Wings"
+/datum/sprite_accessory/wings/butterfly
+	name = "Butterfly Wings"
 	desc = ""
-	icon_state = "cyberdoe_s"
+	icon_state = "butterfly"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/cyberdragon
+	name = "Cybernetic Wings"
+	desc = ""
+	icon_state = "cyber"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/demon
 	name = "Demon Wings"
 	desc = ""
-	icon_state = "sepulchre_wings"
+	icon_state = "demon"
+	colored_layers = 1
 
-/datum/sprite_accessory/wings/devil
-	name = "Devil Wings"
+/datum/sprite_accessory/wings/dragon
+	name = "Dragon Wings"
 	desc = ""
-	icon_state = "bat-red"
+	icon_state = "dragon"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/dragonfly
 	name = "Dragonfly Wings"
 	desc = ""
 	icon_state = "dragonfly"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/fantail
+	name = "Fantail Wings"
+	desc = ""
+	icon_state = "fantail"
+	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/feathered
@@ -82,53 +92,125 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/fluffdragon
-	name = "Fluffdragon Wings"
-	desc = ""
-	icon_state = "miria-fluffdragontail"
-
 /datum/sprite_accessory/wings/gazer
 	name = "Gazer Eyestalks"
 	desc = ""
-	icon_state = "liquidfirefly-eyestalks"
-
-/datum/sprite_accessory/wings/greentaj
-	name = "Green Wings"
-	desc = ""
-	icon_state = "scree-wings"
+	icon_state = "eyestalk"
 
 /datum/sprite_accessory/wings/harpywings
 	name = "Harpy Wings"
 	desc = ""
-	icon_state = "harpywings"
+	icon_state = "harpy"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/mothc
-	name = "Moth Wings"
+/datum/sprite_accessory/wings/moth_burned
+	name = "Moth Wings, Burned"
 	desc = ""
-	icon_state = "moth"
+	icon_state = "moth_burned"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_citheronia
+	name = "Moth Wings, Citheronia"
+	desc = ""
+	icon_state = "citheronia_wings"
+
+/datum/sprite_accessory/wings/moth_deathhead
+	name = "Moth Wings, Deathhead"
+	desc = ""
+	icon_state = "moth_deathhead"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_firewatch
+	name = "Moth Wings, Firewatch"
+	desc = ""
+	icon_state = "moth_firewatch"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_gothic
+	name = "Moth Wings, Gothic"
+	desc = ""
+	icon_state = "moth_gothic"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_lover
+	name = "Moth Wings, Lover"
+	desc = ""
+	icon_state = "moth_lover"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_monarch
+	name = "Moth Wings, Monarch"
+	desc = ""
+	icon_state = "moth_monarch"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_moonfly
+	name = "Moth Wings, Moonfly"
+	desc = ""
+	icon_state = "moth_moonfly"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_poison
+	name = "Moth Wings, Poison"
+	desc = ""
+	icon_state = "moth_poison"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_ragged
+	name = "Moth Wings, Ragged"
+	desc = ""
+	icon_state = "moth_ragged"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_red
+	name = "Moth Wings, Red"
+	desc = ""
+	icon_state = "moth_red"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/Moth_royal_colorable
-	name = "Moth Wings"
+	name = "Moth Wings, Royal"
 	desc = ""
 	icon_state = "Moth_royal_colorable"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/moth_full
-	name = "Moth Wings, With Antenna"
+/datum/sprite_accessory/wings/moth_royal_unfluff
+	name = "Moth Wings, Royal Unfluffed"
 	desc = ""
-	icon_state = "moth_full"
+	icon_state = "moth_royal_unfluff"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/wings/nevrean
-	name = "Nevrean Wings/Fantail"
+/datum/sprite_accessory/wings/moth_snowy
+	name = "Moth Wings, Snowy"
 	desc = ""
-	icon_state = "nevrean_s"
+	icon_state = "moth_snowy"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_white
+	name = "Moth Wings, White"
+	desc = ""
+	icon_state = "moth_white"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/moth_full
+	name = "Moth Wings, Worker"
+	desc = ""
+	icon_state = "moth_worker"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
@@ -173,3 +255,9 @@
 	icon_state = "spines_short_membrane"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/wings/succubus
+	name = "Succubus Wings"
+	desc = ""
+	icon_state = "succubus"
+	colored_layers = 3
