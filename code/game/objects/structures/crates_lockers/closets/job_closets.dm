@@ -76,7 +76,7 @@
 	new /obj/item/weapon/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
 
 /obj/structure/closet/custodial
-	name = "custodial closet"
+	name = "church custodial closet"
 	desc = "It's a storage unit for janitorial clothes and gear."
 	icon_state = "custodian"
 

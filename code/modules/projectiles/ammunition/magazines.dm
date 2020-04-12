@@ -543,7 +543,7 @@
 
 /obj/item/ammo_magazine/a75
 	name = "ammo magazine (.70 gyro)"
-	icon_state = "75"
+	icon_state = "darts"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	caliber = CAL_70

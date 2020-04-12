@@ -181,7 +181,7 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/greatsword
 	name = "greatsword scabbard"
-	desc = "A sturdy brown leather scabbard with gold trim. It's made for a crusader's greatsword. Deus Vult."
+	desc = "A sturdy brown leather scabbard with gold trim. It's made for a massive sword. Deus Vult."
 	icon_state = "crusader_holster"
 	overlay_state = "crusader"
 	can_hold = list(/obj/item/weapon/tool/sword)
@@ -229,7 +229,7 @@ Sword holsters
 	icon_state = "cutlass_holster"
 	overlay_state = "cutlass"
 	slot = "utility"
-	can_hold = list(/obj/item/weapon/tool/sword/saber)
+	can_hold = list(/obj/item/weapon/tool/sword/saber, /obj/item/weapon/tool/sword/katana)
 	price_tag = 200
 	sound_in = 'sound/effects/sheathin.ogg'
 	sound_out = 'sound/effects/sheathout.ogg'

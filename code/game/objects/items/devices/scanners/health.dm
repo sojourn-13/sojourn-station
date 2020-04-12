@@ -16,6 +16,9 @@
 	window_width = 600
 	window_height = 400
 
+/obj/item/device/scanner/health/rig
+	charge_per_use = 0
+
 /obj/item/device/scanner/health/is_valid_scan_target(atom/O)
 	return istype(O, /mob/living) || istype(O, /obj/structure/closet/body_bag)
 

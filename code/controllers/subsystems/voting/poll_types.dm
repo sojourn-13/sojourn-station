@@ -32,7 +32,7 @@
 	text = "End Shift"
 
 /datum/vote_choice/restart/on_win()
-	to_chat(world, "<b>The colony intercomm announces todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.<b>")
+	to_chat(world, "<b><font size='3px'>The colony intercomm announces todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.<b>")
 	sleep(15 MINUTES)
 	to_chat(world, "<b>Restarting world due to shift end...<b>")
 	sleep(50)

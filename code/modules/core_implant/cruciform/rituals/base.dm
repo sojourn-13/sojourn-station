@@ -16,7 +16,7 @@
 
 /datum/ritual/cruciform/base/relief
 	name = "Relief"
-	phrase = "Et si ambulavero in medio umbrae mortis non timebo mala"
+	phrase = "Et si ambulavero in medio umbrae mortis non timebo mala."
 	desc = "A short litany to relieve pain of the afflicted."
 	power = 50
 	chance = 33
@@ -28,7 +28,7 @@
 
 /datum/ritual/cruciform/base/soul_hunger
 	name = "Soul Hunger"
-	phrase = "Panem nostrum cotidianum da nobis hodie"
+	phrase = "Panem nostrum cotidianum da nobis hodie."
 	desc = "Litany of pilgrims that helps better withstand hunger."
 	power = 50
 	chance = 33
@@ -41,7 +41,7 @@
 
 /datum/ritual/cruciform/base/entreaty
 	name = "Entreaty"
-	phrase = "Deus meus ut quid dereliquisti me"
+	phrase = "Deus meus ut quid dereliquisti me."
 	desc = "Call for help, allowing other cruciform bearers to hear your cries."
 	power = 50
 	chance = 60

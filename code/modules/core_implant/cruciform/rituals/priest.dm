@@ -53,7 +53,7 @@
 */
 /datum/ritual/cruciform/priest/selfheal
 	name = "Convalescence"
-	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia Christi"
+	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia deus."
 	desc = "Recover from the ravages of wounds and pain."
 	cooldown = TRUE
 	cooldown_time = 300
@@ -74,7 +74,7 @@
 
 /datum/ritual/cruciform/priest/heal_other
 	name = "Succour"
-	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos"
+	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos."
 	desc = "Heal another nearby disciple."
 	cooldown = TRUE
 	cooldown_time = 300
@@ -102,7 +102,7 @@
 		return
 
 
-	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of convalescence")
+	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of succor")
 	if (do_after(user, 40, H, TRUE))
 		T = get_turf(user)
 		if (!(T.Adjacent(get_turf(H))))
@@ -118,6 +118,46 @@
 		H.updatehealth()
 		set_personal_cooldown(user)
 		return TRUE
+
+
+
+
+/datum/ritual/cruciform/priest/heal_heathen
+	name = "Relief"
+	phrase = "Ora pro nobis, qui non noverunt viam, hi sunt amissa, sed quia dilexit."
+	desc = "Heal everyone around you without a cruciform for a small amount. Can only be done every quarter hour and requires alot of power."
+	cooldown = TRUE
+	cooldown_time = 15 MINUTES
+	power = 80
+
+/datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	var/list/people_around = list()
+	for(var/mob/living/carbon/human/H in view(user))
+		if(H != user && !isdeaf(H))
+			people_around.Add(H)
+
+	if(people_around.len > 0)
+		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration."))
+		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
+		for(var/mob/living/carbon/human/participant in people_around)
+			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
+			heal_other(participant)
+		set_global_cooldown()
+		return TRUE
+	else
+		fail("Your cruciform sings, alone, unto the void.", user, C)
+		return FALSE
+
+
+/datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
+		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain</span>")
+		participant.add_chemical_effect(CE_PAINKILLER, 10)
+		participant.adjustBruteLoss(-10)
+		participant.adjustFireLoss(-10)
+		participant.adjustToxLoss(-10)
+		participant.adjustOxyLoss(-20)
+		participant.adjustBrainLoss(-5)
+		participant.updatehealth()
 
 
 /*
@@ -168,7 +208,7 @@
 
 /datum/ritual/cruciform/priest/epiphany
 	name = "Epiphany"
-	phrase = "In nomine Patris et Filii et Spiritus sancti"
+	phrase = "In nomine Patris et Filii et Spiritus sancti."
 	desc = "The Absolute's principal sacrament is a ritual of baptism and merging with cruciform. A body, relieved of clothes should be placed on Absolute's special altar."
 
 /datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -261,7 +301,7 @@
 
 /datum/ritual/cruciform/priest/install
 	name = "Commitment"
-	phrase = "Unde ipse Dominus dabit vobis signum"
+	phrase = "Unde ipse Dominus dabit vobis signum."
 	desc = "This litany will command a cruciform attach to person so you can perform an epiphany. Cruciform must lay near them."
 
 /datum/ritual/cruciform/priest/install/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -323,7 +363,7 @@
 
 /datum/ritual/cruciform/priest/ejection
 	name = "Deprivation"
-	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum"
+	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum."
 	desc = "This litany will command cruciform to detach from bearer, if the one bearing it is dead."
 
 /datum/ritual/cruciform/priest/ejection/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -360,7 +400,7 @@
 
 /datum/ritual/cruciform/priest/unupgrade
 	name = "Asacris"
-	phrase = "A caelo usque ad centrum"
+	phrase = "A caelo usque ad centrum."
 	desc = "This litany will remove any upgrade from the target's cruciform implant"
 
 /datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -429,7 +469,7 @@
 		participant.stats.changeStat(stat, amount)
 		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
 	spawn(30)
-		to_chat(participant, SPAN_NOTICE("A wave of dizziness washes over you, and your mind is filled with a sudden insight into [get_stats_to_text()]."))
+		to_chat(participant, SPAN_NOTICE("A wave of dizziness washes over you and your mind is filled with a sudden insight into [get_stats_to_text()]."))
 
 
 /datum/ritual/cruciform/priest/short_boost/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
@@ -454,27 +494,27 @@
 
 /datum/ritual/cruciform/priest/short_boost/mechanical
 	name = "Pounding Whisper"
-	phrase = "Vocavitque nomen eius Noe dicens iste consolabitur nos ab operibus et laboribus manuum nostrarum in terra cui maledixit Dominus"
+	phrase = "Vocavitque nomen eius Noe dicens iste consolabitur nos ab operibus et laboribus manuum nostrarum in terra cui maledixit Dominus."
 	stats_to_boost = list(STAT_MEC = 10)
 
 /datum/ritual/cruciform/priest/short_boost/cognition
 	name = "Revelation of Secrets"
-	phrase = "Quia Dominus dat sapientiam et ex ore eius scientia et prudentia"
+	phrase = "Quia Dominus dat sapientiam et ex ore eius scientia et prudentia."
 	stats_to_boost = list(STAT_COG = 10)
 
 /datum/ritual/cruciform/priest/short_boost/biology
 	name = "Lisp of Vitae"
-	phrase = "Ecce ego obducam ei cicatricem et sanitatem et curabo eos et revelabo illis deprecationem pacis et veritatis"
+	phrase = "Ecce ego obducam ei cicatricem et sanitatem et curabo eos et revelabo illis deprecationem pacis et veritatis."
 	stats_to_boost = list(STAT_BIO = 10)
 
 /datum/ritual/cruciform/priest/short_boost/courage
 	name = "Canto of Courage"
-	phrase = "Huic David ad te Domine clamabo Deus meus ne sileas a me nequando taceas a me et adsimilabor descendentibus in lacum"
+	phrase = "Huic David ad te Domine clamabo Deus meus ne sileas a me nequando taceas a me et adsimilabor descendentibus in lacum."
 	stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10)
 
 /datum/ritual/cruciform/priest/short_boost/vigilance
 	name = "Commitment to Determination"
-	phrase = "Cor meum et caro mea, potest deficere, sed non in viribus Deus cordis mei et pars mea Deus in aeternum"
+	phrase = "Cor meum et caro mea, potest deficere, sed non in viribus Deus cordis mei et pars mea Deus in aeternum."
 	stats_to_boost = list(STAT_VIG = 10)
 
 /datum/ritual/targeted/cruciform/priest/atonement
