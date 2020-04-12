@@ -385,7 +385,7 @@
 */
 /datum/ritual/targeted/cruciform/inquisitor/spawn_item
 	name = "Litany of Armaments"
-	phrase = "Supra Domini, bona de te peto. Audi me, et libera vocationem ad me munera tua"
+	phrase = "Supra Domini, bona de te peto. Audi me, et libera vocationem ad me munera tua."
 	desc = "Request a greatsword and tower shield from the church armory to become a real crusader. Establishing the connection takes a lot of power and this litany may only be used once every hour."
 	power = 100
 	cooldown = TRUE
