@@ -297,7 +297,7 @@ obj/item/ammo_magazine/ammobox/lrifle
 
 /obj/item/ammo_magazine/ammobox/lrifle/hv
 	name = "ammunition box (6.5x39mm rubber)"
-	icon_state = "box_lrifle_hv"
+	icon_state = "box_lrifle_l"
 	ammo_type = /obj/item/ammo_casing/lrifle/hv
 
 /obj/item/ammo_magazine/ammobox/lrifle_small/practice
@@ -320,7 +320,7 @@ obj/item/ammo_magazine/ammobox/lrifle
 
 obj/item/ammo_magazine/ammobox/hrifle
 	name = "ammunition box (7.62mm Rifle lethal)"
-	icon_state = "box762mm"
+	icon_state = "box10x50mm"
 	matter = list(MATERIAL_STEEL = 30)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_HRIFLE
@@ -366,7 +366,7 @@ obj/item/ammo_magazine/ammobox/hrifle
 
 /obj/item/ammo_magazine/ammobox/antim
 	name = "ammunition box (.60-06 AP)"
-	icon_state = "box145mm"
+	icon_state = "antim"
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTEEL = 30)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_ANTIM

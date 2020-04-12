@@ -282,7 +282,7 @@
 
 /obj/item/ammo_magazine/hrifle
 	name = "magazine box (7.62mm Rifle)"
-	icon_state = "hrifle_box"
+	icon_state = "a762"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_BOX
@@ -532,7 +532,7 @@
 
 /obj/item/ammo_magazine/caps
 	name = "speed loader (caps)"
-	icon_state = "38r"
+	icon_state = "slpistol_l"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_CAP
 	color = "#FF0000"
