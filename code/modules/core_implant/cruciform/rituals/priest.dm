@@ -123,7 +123,7 @@
 
 
 /datum/ritual/cruciform/priest/heal_heathen
-	name = "Relief"
+	name = "Divine Hymn"
 	phrase = "Ora pro nobis, qui non noverunt viam, hi sunt amissa, sed quia dilexit."
 	desc = "Heal everyone around you without a cruciform for a small amount. Can only be done every quarter hour and requires alot of power."
 	cooldown = TRUE

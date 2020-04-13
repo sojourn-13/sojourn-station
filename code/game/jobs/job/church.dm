@@ -4,6 +4,7 @@
 	department = DEPARTMENT_CHURCH
 	department_flag = CHURCH
 	faction = MAP_FACTION
+	head_position = 1
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Nadezhda Council"
