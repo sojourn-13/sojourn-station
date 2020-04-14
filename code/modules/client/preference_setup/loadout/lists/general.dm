@@ -22,6 +22,11 @@
 	path = /obj/item/clothing/mask/smokable/cigarette/cigar
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/cigarette
+	display_name = "cigarette pack selection"
+	path = /obj/item/weapon/storage/fancy/cigarettes
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/cigarcase
 	display_name = "cigar case"
 	path = /obj/item/weapon/storage/fancy/cigar

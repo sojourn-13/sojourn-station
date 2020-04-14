@@ -157,16 +157,13 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0.05
+	addiction_chance = 0
 	nerve_system_accumulations = 10
 
 /datum/reagent/drug/nicotine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.add_chemical_effect(CE_PULSE, 1)
 	M.add_chemical_effect(CE_PAINKILLER, 5 * effect_multiplier)
-
-/datum/reagent/drug/nicotine/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "nicotine_w")
 
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)

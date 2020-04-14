@@ -36,7 +36,7 @@
 
 //Chaplain
 /obj/item/clothing/head/rank/chaplain
-	name = "prime's hood"
+	name = "chaplain's hood"
 	desc = "It's hood that covers the head. It keeps you warm during the space winters."
 	icon_state = "chaplain_hood"
 	flags_inv = BLOCKHAIR
