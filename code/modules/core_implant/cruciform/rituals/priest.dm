@@ -125,7 +125,7 @@
 /datum/ritual/cruciform/priest/heal_heathen
 	name = "Divine Hymn"
 	phrase = "Ora pro nobis, qui non noverunt viam, hi sunt amissa, sed quia dilexit."
-	desc = "Heal everyone around you without a cruciform for a small amount. Can only be done every quarter hour and requires alot of power."
+	desc = "Heal every person who can see and hear for a small amount, even if they do not have a cruciform. Can only be done every quarter hour and requires alot of power. Using this prayer prevents other similar prayers from being used for awhile."
 	cooldown = TRUE
 	cooldown_time = 15 MINUTES
 	power = 80
@@ -151,11 +151,11 @@
 
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain</span>")
-		participant.add_chemical_effect(CE_PAINKILLER, 10)
-		participant.adjustBruteLoss(-10)
-		participant.adjustFireLoss(-10)
-		participant.adjustToxLoss(-10)
-		participant.adjustOxyLoss(-20)
+		participant.add_chemical_effect(CE_PAINKILLER, 15)
+		participant.adjustBruteLoss(-15)
+		participant.adjustFireLoss(-15)
+		participant.adjustToxLoss(-15)
+		participant.adjustOxyLoss(-30)
 		participant.adjustBrainLoss(-5)
 		participant.updatehealth()
 

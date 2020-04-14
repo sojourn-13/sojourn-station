@@ -1171,7 +1171,7 @@
 	filling_color = "#631212"
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=9)
-	preloaded_reagents = list("protein" = 4, "ammonia" = 2)
+	preloaded_reagents = list("protein" = 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/no_raisin
 	name = "4No Raisins"
@@ -2052,7 +2052,6 @@
 	for(var/reagent in heated_reagents)
 		reagents.add_reagent(reagent, heated_reagents[reagent])
 	bitesize = 6
-	name = "warm " + name
 	icon_state = "[initial(icon_state)]_hot"
 
 /obj/item/weapon/reagent_containers/food/snacks/mre/proc/open(mob/user)

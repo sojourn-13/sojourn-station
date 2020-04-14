@@ -35,7 +35,7 @@
 
 /obj/effect/decal/cleanable/solid_biomass
 	name = "solid biomass"
-	desc = "It's good to do not touch this. And better to kill it with fire. Very toxic."
+	desc = "An incredibly toxic and highly dangerous solidified biomass. Better not touch it, unless you want to die from toxic shock."
 	icon = 'icons/obj/bioreactor_misc.dmi'
 	icon_state = "biomass-1"
 	anchored = TRUE

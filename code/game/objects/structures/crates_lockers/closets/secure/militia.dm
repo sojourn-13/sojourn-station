@@ -151,10 +151,7 @@
 	icon_state = "corpsman"
 /obj/item/clothing/glasses/hud/health
 /obj/structure/closet/secure_closet/personal/corpsman/populate_contents()
-	if(prob(50))
-		new /obj/item/weapon/storage/belt/webbing/black(src)
-	else
-		new /obj/item/weapon/storage/belt/webbing
+	new /obj/item/weapon/storage/belt/webbing/black(src)
 	if(prob(60))
 		new /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine(src)
 	else
