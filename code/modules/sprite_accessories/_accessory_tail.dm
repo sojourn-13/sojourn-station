@@ -97,7 +97,9 @@
 /datum/sprite_accessory/tail/cyberfeline
 	name = "Cybernetic Feline Tail"
 	desc = ""
-	icon_state = "zenghu_taj"
+	icon_state = "cybertail_feline"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/deertail
 	name = "Deer Tail"
