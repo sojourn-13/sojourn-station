@@ -232,6 +232,7 @@
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "industrial_dispenser"
 	ui_title = "Industrial Dispenser 4835"
+	circuit = /obj/item/weapon/circuitboard/chemical_dispenser/industrial
 	dispensable_reagents = list(
 		"acetone","aluminum","ammonia",
 		"copper","ethanol","hydrazine",

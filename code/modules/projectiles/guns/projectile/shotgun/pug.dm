@@ -10,7 +10,7 @@
 	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_GENERIC
+	mag_well = MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 5000
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
