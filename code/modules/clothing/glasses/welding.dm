@@ -43,4 +43,4 @@
 	icon_state = "rwelding-g"
 	item_state = "rwelding-g"
 	prescription = TRUE
-	tint = TINT_MODERATE
+	tint = TINT_NONE
