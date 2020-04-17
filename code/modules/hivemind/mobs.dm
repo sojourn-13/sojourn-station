@@ -546,15 +546,15 @@
 	icon = 'icons/mob/hivemind.dmi'
 	icon_state = "mechiver-closed"
 	icon_dead = "mechiver-dead"
-	health = 450
-	maxHealth = 450
-	melee_damage_lower = 10
-	melee_damage_upper = 15
+	health = 1000
+	maxHealth = 1000
+	melee_damage_lower = 30
+	melee_damage_upper = 40
 	mob_size = MOB_LARGE
 	attacktext = "crushes"
 	ability_cooldown = 1 MINUTES
 	speak_chance = 5
-	speed = 16
+	speed = 20
 	//internals
 	var/pilot						//Yes, there's no pilot, so we just use var
 	var/mob/living/passenger
@@ -607,8 +607,8 @@
 
 	//when we have passenger, we torture him
 	//I'd like to tidy this up so the damage type is linked to specific speech arrays.
-	if(passenger && prob(15))
-		passenger.damage_through_armor(rand(10,15), pick(BRUTE, BURN, TOX), attack_flag = ARMOR_MELEE)
+	if(passenger && prob(40))
+		passenger.damage_through_armor(rand(20,30), pick(BRUTE, BURN, TOX), attack_flag = ARMOR_MELEE)
 		to_chat(passenger, SPAN_DANGER(pick(
 								"A woman's arm grabs your neck!", "Lips whisper, \" This is the womb of your rebirth... \"", "Hot breath flows over your ear, \" You will enjoy bliss when this is over... \"",
 								"A whirring drill bit bores through your chest!", "Something is crushing your ribs!", "Some blood-hot liquid covers you!",

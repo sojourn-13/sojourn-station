@@ -25,7 +25,7 @@
 /datum/stat_holder/proc/changeStat(statName, Value)
 	var/datum/stat/S = stat_list[statName]
 	S.changeValue(Value)
-	
+
 /datum/stat_holder/proc/setStat(statName, Value)
 	var/datum/stat/S = stat_list[statName]
 	S.setValue(Value)
@@ -85,6 +85,7 @@
     return 1 - max(0,min(1,getStat(statName, pure)/statCap))
 
 /datum/stat_holder/proc/getPerk(perkType)
+	RETURN_TYPE(/datum/perk)
 	return locate(perkType) in perks
 
 /datum/stat_holder/proc/Clone()

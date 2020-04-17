@@ -110,7 +110,7 @@
 /obj/item/device/encryptionkey/heads/merchant
 	name = "Lonestar executive radio encryption key"
 	icon_state = "qm_cypherkey"
-	channels = list("Supply" = 1, "Command" = 1)
+	channels = list("Supply" = 1, "Command" = 1, "Service" = 1)
 
 /obj/item/device/encryptionkey/heads/preacher
 	name = "Prime's radio encryption key"

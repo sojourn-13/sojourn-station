@@ -281,8 +281,6 @@ update_flag
 		src.add_fingerprint(user)
 		healthCheck()
 
-	return
-
 	SSnano.update_uis(src) // Update all NanoUIs attached to src
 
 /obj/machinery/portable_atmospherics/canister/attack_ai(var/mob/user as mob)
