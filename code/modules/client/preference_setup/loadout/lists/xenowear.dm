@@ -89,7 +89,7 @@
 	slot = slot_shoes
 	sort_category = "Xenowear"
 
-/datum/gear/xenowear
+/datum/gear/xenowear/toelessworkboots
 	display_name = "toeless workboots"
 	path = /obj/item/clothing/shoes/workboots/toeless
 	slot = slot_shoes
