@@ -70,6 +70,12 @@
 	path = /obj/item/clothing/under/permit
 	slot = slot_w_uniform
 	sort_category = "Xenowear"
+	
+/datum/gear/xenowear/voxcivassistant
+	display_name = "vox pressure suit"
+	path = /obj/item/clothing/under/vox-civ-assistant
+	slot = slot_w_uniform
+	sort_category = "Xenowear"
 
 /datum/gear/xenowear/roughspun
 	display_name = "roughspun robes"
