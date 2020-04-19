@@ -78,6 +78,12 @@
 	name = "Frog (Taur)"
 	icon_state = "frog_s"
 
+/datum/sprite_accessory/tail/taur/goat
+	name = "Goat Legs"
+	icon_state = "satyr"
+	blend = ICON_MULTIPLY
+	colored_layers = 1
+
 /datum/sprite_accessory/tail/taur/horse
 	name = "Horse (Taur)"
 	icon_state = "horse_s"

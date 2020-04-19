@@ -2071,6 +2071,11 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
 "fL" = (
@@ -2307,9 +2312,17 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
+/obj/machinery/door/airlock/glass{
+	name = "Break Room";
+	req_access = list(48)
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel/cargo,
+/area/mine/livingarea)
 "gj" = (
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 2;
@@ -2402,14 +2415,17 @@
 /turf/simulated/floor/plating,
 /area/mine/livingarea)
 "gx" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass{
-	name = "Break Room";
-	req_access = list(48)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel/cargo,
+/turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "gy" = (
 /obj/machinery/light/small{
@@ -2575,11 +2591,12 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "gW" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "gX" = (
@@ -4939,13 +4956,15 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpostbotany)
 "mm" = (
-/obj/structure/table/standard,
-/obj/item/device/scanner/plant,
-/obj/machinery/light{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostbotany)
+/turf/simulated/floor/tiled/cafe,
+/area/mine/livingarea)
 "mn" = (
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
@@ -7469,8 +7488,8 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sa" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel_reinforced,
+/obj/machinery/reagentgrinder/portable,
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sb" = (
@@ -7627,6 +7646,11 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sq" = (
@@ -7644,9 +7668,19 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "ss" = (
-/obj/structure/table/steel_reinforced,
-/obj/machinery/reagentgrinder{
-	pixel_y = 6
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green,
+/obj/machinery/power/apc{
+	dir = 2;
+	locked = 0;
+	name = "South APC";
+	operating = 1;
+	pixel_y = -28
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
@@ -7766,14 +7800,14 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sG" = (
-/obj/structure/bed/chair{
+/obj/structure/table/standard,
+/obj/item/device/scanner/plant,
+/obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/mine/livingarea)
+/obj/machinery/reagentgrinder/portable,
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "sH" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -8328,6 +8362,37 @@
 /obj/item/clothing/head/helmet/space/anomaly,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
+"tZ" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/obj/structure/reagent_dispensers/coolanttank,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/anomal)
+"ua" = (
+/obj/structure/reagent_dispensers/coolanttank,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/anomal)
+"ub" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/structure/table/standard,
+/obj/item/weapon/reagent_containers/glass/bucket,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/rnd/anomal)
+"uc" = (
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/obj/machinery/mining/brace,
+/turf/simulated/floor/asteroid,
+/area/mine/prep)
+"ud" = (
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/obj/machinery/mining/drill,
+/turf/simulated/floor/asteroid,
+/area/mine/prep)
 
 (1,1,1) = {"
 aa
@@ -8910,8 +8975,8 @@ jO
 kb
 kB
 kO
-ls
-lB
+tZ
+ua
 lC
 mV
 nq
@@ -10127,7 +10192,7 @@ mb
 mB
 mc
 tU
-ns
+ub
 ns
 mc
 pn
@@ -14365,7 +14430,7 @@ ko
 kK
 li
 lH
-mm
+sG
 mK
 nb
 nF
@@ -36662,9 +36727,9 @@ ed
 cz
 gw
 gV
-rZ
+gW
 sp
-sG
+ss
 gt
 sQ
 gV
@@ -36861,10 +36926,10 @@ ew
 eR
 fq
 fK
+da
 gi
 gx
-gW
-sa
+mm
 sq
 sH
 gt
@@ -37470,8 +37535,8 @@ fM
 cz
 gt
 gZ
+sa
 sb
-ss
 sK
 gt
 gt
@@ -42706,8 +42771,8 @@ ks
 ks
 at
 aQ
-bc
-bc
+uc
+uc
 bc
 bc
 bc
@@ -42908,8 +42973,8 @@ ti
 ks
 am
 aQ
-bc
-bc
+ud
+ud
 bc
 bc
 bc
@@ -43110,8 +43175,8 @@ ab
 ks
 am
 aQ
-bc
-bc
+uc
+uc
 bc
 bc
 bc

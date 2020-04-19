@@ -215,8 +215,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Militia Commander"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"

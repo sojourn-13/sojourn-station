@@ -4182,6 +4182,14 @@
 "pm" = (
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/one_star)
+"pn" = (
+/obj/machinery/light{
+	icon_state = "tube1";
+	dir = 8
+	},
+/obj/machinery/porta_turret/prepper,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/maintenance/outside/smuggler_zone_u)
 "po" = (
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/beach/sand/desert,
@@ -4203,6 +4211,14 @@
 /obj/structure/flora/rock,
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/maintenance/outside/zoo)
+"ps" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/obj/machinery/porta_turret/prepper,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/maintenance/outside/smuggler_zone_u)
 "pt" = (
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/maintenance/outside/zoo)
@@ -4815,12 +4831,6 @@
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/one_star)
-"rF" = (
-/obj/machinery/door/airlock/multi_tile/metal{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "rG" = (
 /obj/structure/table/onestar,
@@ -21570,7 +21580,7 @@ aR
 aX
 bf
 bw
-aX
+pn
 by
 bm
 bm
@@ -22984,7 +22994,7 @@ aR
 aY
 bg
 bx
-aY
+ps
 bQ
 bm
 bm
@@ -55721,7 +55731,7 @@ aQ
 sK
 sK
 aQ
-bu
+ve
 bu
 aQ
 sJ
@@ -60156,7 +60166,7 @@ tG
 tM
 tR
 tU
-tN
+tV
 bu
 bu
 bu
@@ -60358,7 +60368,7 @@ tH
 tM
 tI
 tU
-tV
+tN
 aQ
 bu
 bu
@@ -60616,8 +60626,8 @@ fD
 fD
 fD
 fD
-fD
-fD
+fF
+fF
 fF
 fE
 fE
@@ -68764,7 +68774,7 @@ ao
 rD
 af
 ao
-rF
+rD
 af
 af
 af

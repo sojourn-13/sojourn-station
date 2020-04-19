@@ -16,10 +16,9 @@
 
 /datum/ritual/cruciform/base/relief
 	name = "Relief"
-	phrase = "Et si ambulavero in medio umbrae mortis non timebo mala"
+	phrase = "Et si ambulavero in medio umbrae mortis non timebo mala."
 	desc = "A short litany to relieve pain of the afflicted."
 	power = 50
-	chance = 33
 
 /datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.add_chemical_effect(CE_PAINKILLER, 10)
@@ -28,10 +27,9 @@
 
 /datum/ritual/cruciform/base/soul_hunger
 	name = "Soul Hunger"
-	phrase = "Panem nostrum cotidianum da nobis hodie"
+	phrase = "Panem nostrum cotidianum da nobis hodie."
 	desc = "Litany of pilgrims that helps better withstand hunger."
 	power = 50
-	chance = 33
 
 /datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.nutrition += 100
@@ -41,10 +39,9 @@
 
 /datum/ritual/cruciform/base/entreaty
 	name = "Entreaty"
-	phrase = "Deus meus ut quid dereliquisti me"
+	phrase = "Deus meus ut quid dereliquisti me."
 	desc = "Call for help, allowing other cruciform bearers to hear your cries."
 	power = 50
-	chance = 60
 
 /datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	for(var/mob/living/carbon/human/target in disciples)

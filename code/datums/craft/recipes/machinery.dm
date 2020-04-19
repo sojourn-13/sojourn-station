@@ -18,10 +18,16 @@
 /datum/craft_recipe/machinery/wall/air_alarm
 	name = "air alarm frame"
 	result = /obj/item/frame/air_alarm
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+	)
 
 /datum/craft_recipe/machinery/wall/apc
 	name = "apc frame"
 	result = /obj/item/frame/apc
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+	)
 
 /datum/craft_recipe/machinery/computer/computer_frame
 	name = "computer frame"
@@ -33,14 +39,23 @@
 /datum/craft_recipe/machinery/wall/fire_alarm
 	name = "fire alarm frame"
 	result = /obj/item/frame/fire_alarm
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+	)
 
 /datum/craft_recipe/machinery/wall/lightfixture
 	name = "light fixture frame"
 	result = /obj/item/frame/light
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+	)
 
 /datum/craft_recipe/machinery/wall/lightfixture/small
 	name = "light fixture frame, small"
 	result = /obj/item/frame/light/small
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
+	)
 
 /datum/craft_recipe/machinery/machine_frame
 	name = "machine frame"

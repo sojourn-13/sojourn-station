@@ -282,7 +282,7 @@
 
 /obj/item/ammo_magazine/hrifle
 	name = "magazine box (7.62mm Rifle)"
-	icon_state = "hrifle_box"
+	icon_state = "a762"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_BOX
@@ -532,7 +532,7 @@
 
 /obj/item/ammo_magazine/caps
 	name = "speed loader (caps)"
-	icon_state = "38r"
+	icon_state = "slpistol_l"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_CAP
 	color = "#FF0000"
@@ -543,7 +543,7 @@
 
 /obj/item/ammo_magazine/a75
 	name = "ammo magazine (.70 gyro)"
-	icon_state = "75"
+	icon_state = "darts"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	caliber = CAL_70
@@ -560,7 +560,7 @@
 	name = "20mm ammo drum (sabot slug)"
 	icon_state = "m12_slug"
 	mag_type = MAGAZINE
-	mag_well =  MAG_WELL_GENERIC
+	mag_well =  MAG_WELL_DRUM
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 6)

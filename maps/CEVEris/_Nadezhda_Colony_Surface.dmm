@@ -754,6 +754,7 @@
 "ace" = (
 /obj/machinery/smelter{
 	input_side = 8;
+	name = "surface smelter";
 	output_side = 2;
 	refuse_output_side = 4
 	},
@@ -4643,6 +4644,10 @@
 /obj/item/remains/unathi,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
+"ajW" = (
+/obj/structure/railing,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/absolutism/bioreactor)
 "ajX" = (
 /obj/machinery/vending/sovietsoda,
 /turf/simulated/floor/tiled/steel/brown_perforated,
@@ -5116,19 +5121,22 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/tactical)
 "aln" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock{
-	id_tag = null;
-	name = "Church Commons";
-	req_access = list(70)
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/absolutism/vectorrooms)
+/turf/simulated/floor/tiled/steel/golden,
+/area/nadezhda/hallway/surface/section2)
 "alo" = (
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
@@ -10314,14 +10322,12 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/security/prisoncells)
 "axp" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	tag = "icon-railing0 (EAST)";
-	icon_state = "railing0";
-	dir = 4
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/absolutism/bioreactor)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/hallway/surface/section2)
 "axq" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -11786,6 +11792,8 @@
 /obj/item/stack/cable_coil/yellow,
 /obj/item/stack/cable_coil/yellow,
 /obj/item/clothing/head/welding,
+/obj/item/weapon/tool/wirecutters,
+/obj/item/weapon/tool/weldingtool,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/bioreactor)
 "aAQ" = (
@@ -12530,12 +12538,18 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
 "aCx" = (
-/obj/machinery/door/blast/regular/open{
-	id = "Colony Lockdown"
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/external,
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/outside/meadow)
+/obj/structure/disposalpipe/junction{
+	tag = "icon-pipe-j2 (NORTH)";
+	icon_state = "pipe-j2";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/hallway/surface/section2)
 "aCy" = (
 /obj/structure/table/bench/padded,
 /turf/simulated/floor/carpet,
@@ -13357,13 +13371,9 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/security/inspectors_office)
 "aEw" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
+/obj/machinery/vending/engineering,
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/hallway/surface/section2)
 "aEx" = (
 /turf/simulated/wall,
@@ -13472,8 +13482,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/surface/section2)
 "aEO" = (
-/obj/machinery/vending/engineering,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/r_wall,
 /area/nadezhda/hallway/surface/section2)
 "aEP" = (
 /obj/machinery/disposal,
@@ -13504,7 +13517,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel/danger,
+/turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/absolutism/vectorrooms)
 "aEV" = (
 /obj/machinery/atmospherics/binary/pump,
@@ -14105,9 +14118,17 @@
 	name = "Science Expedition prep"
 	})
 "aGA" = (
-/obj/structure/flora/small/lavarock3,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/absolutism/vectorrooms)
+/obj/structure/closet/crate/hydroponics,
+/obj/item/weapon/tool/shovel/spade,
+/obj/item/weapon/reagent_containers/spray/plantbgone,
+/obj/item/weapon/tool/wirecutters,
+/obj/item/weapon/plantspray/pests,
+/obj/item/weapon/reagent_containers/glass/bucket,
+/obj/item/device/scanner/plant,
+/obj/item/weapon/storage/bag/produce,
+/obj/item/weapon/tool/minihoe,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/absolutism/storage)
 "aGB" = (
 /obj/structure/bookcase,
 /obj/item/weapon/book/ritual/cruciform,
@@ -14249,15 +14270,11 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
 "aGV" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/storage/box/donkpockets,
-/obj/item/weapon/storage/box/donkpockets,
-/obj/item/weapon/storage/box/donkpockets,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/absolutism/vectorrooms)
+/obj/structure/table/standard,
+/obj/item/weapon/soap/deluxe,
+/obj/item/weapon/tool/screwdriver,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/absolutism/bioreactor)
 "aGW" = (
 /obj/structure/table/woodentable,
 /obj/machinery/microwave,
@@ -14393,21 +14410,12 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/prisoncells)
 "aHn" = (
-/obj/effect/floor_decal/industrial/loading/white{
-	dir = 1
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/blast/regular/open{
-	id = "Colony Lockdown"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/invislight,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/outside/meadow)
+/turf/simulated/wall/r_wall,
+/area/nadezhda/hallway/surface/section2)
 "aHo" = (
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 1
@@ -14592,20 +14600,9 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/meadow)
 "aHO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/industrial/warningwhite{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningwhite{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/outside/meadow)
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/hallway/surface/section2)
 "aHP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -14637,6 +14634,11 @@
 /obj/landmark/join/start/acolyte,
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/vectorrooms)
+"aHT" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/meadow)
 "aHU" = (
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/carpet,
@@ -14668,9 +14670,12 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "aHZ" = (
-/obj/structure/reagent_dispensers/cahorsbarrel,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/absolutism/storage)
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/hallway/surface/section2)
 "aIa" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -14967,17 +14972,13 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
 "aIP" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warningwhite/corner{
+	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warningwhite,
-/obj/effect/floor_decal/industrial/warningwhite{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/outside/meadow)
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/hallway/surface/section2)
 "aIQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warningwhite,
@@ -15024,25 +15025,16 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/prime)
 "aIX" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/table/steel,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/item/clothing/gloves/thick,
-/obj/item/clothing/gloves/thick,
-/obj/item/clothing/gloves/thick,
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/maintenance/junk)
+/obj/effect/floor_decal/industrial/warningwhite,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/hallway/surface/section2)
 "aIY" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/machinery/light{
@@ -15104,22 +15096,10 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/hallway/surface/section2)
 "aJh" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/obj/structure/sign/faction/neotheology_cross{
-	pixel_y = 30
-	},
-/obj/structure/table/steel,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/item/clothing/gloves/thick,
-/obj/item/clothing/gloves/thick,
-/obj/item/clothing/gloves/thick,
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/maintenance/junk)
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/meadow)
 "aJi" = (
 /obj/structure/flora/big/rocks3,
 /turf/simulated/floor/asteroid/dirt,
@@ -15132,40 +15112,41 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/outside/meadow)
 "aJk" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 1
+/obj/machinery/door/airlock/external,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/outside/meadow)
-"aJl" = (
-/obj/machinery/bodyscanner,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/medical/medeva)
-"aJm" = (
+/obj/machinery/door/firedoor/multi_tile,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
+/turf/simulated/floor/tiled/steel/cargo,
+/area/nadezhda/hallway/surface/section2)
+"aJl" = (
+/obj/machinery/bodyscanner,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/medical/medeva)
+"aJm" = (
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
 	},
 /obj/structure/cable{
+	d1 = 1;
 	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/absolutism/vectorrooms)
+/obj/structure/invislight,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/meadow)
 "aJn" = (
 /obj/machinery/body_scanconsole,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -15527,9 +15508,9 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
 "aKk" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -28
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
@@ -15773,11 +15754,19 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "aKS" = (
-/obj/machinery/vending/cola,
+/obj/machinery/alarm{
+	icon_state = "alarm0";
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "aKT" = (
-/obj/machinery/light/floor,
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/machinery/light,
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "aKU" = (
@@ -16281,21 +16270,25 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
 "aLU" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/storage/firstaid,
-/obj/machinery/light,
-/turf/simulated/floor/wood,
-/area/nadezhda/absolutism/vectorrooms)
+/obj/structure/closet/secure_closet/personal/agrolyte,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/absolutism/storage)
 "aLV" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/maintenance/junk)
 "aLW" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock{
 	id_tag = null;
 	name = "Church Commons";
 	req_access = list(70)
 	},
-/turf/simulated/floor/wood/wild1,
+/turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "aLX" = (
 /obj/machinery/door/airlock/glass_security{
@@ -16379,24 +16372,16 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/bioreactor)
 "aMh" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/storage/fancy/crayons,
-/obj/item/weapon/storage/fancy/crayons,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -28
+/obj/machinery/vending/cola,
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "aMi" = (
 /obj/structure/table/woodentable,
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -23
-	},
-/obj/item/weapon/hand_labeler,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/weapon/storage/fancy/crayons,
+/obj/item/weapon/storage/fancy/crayons,
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "aMj" = (
@@ -16419,40 +16404,35 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/asteroid/dirt/dust,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/meadow)
 "aMl" = (
-/obj/machinery/door/airlock/external,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/blast/regular/open{
-	id = "Colony Lockdown"
-	},
-/obj/machinery/door/firedoor/multi_tile,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel/cargo,
-/area/nadezhda/hallway/surface/section2)
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/meadow)
 "aMm" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/wall,
+/obj/structure/table/woodentable,
+/obj/item/weapon/hand_labeler,
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen,
+/turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "aMn" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/outside/meadow)
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/carpet,
+/area/nadezhda/absolutism/vectorrooms)
 "aMo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -16762,16 +16742,18 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
 "aMN" = (
-/obj/structure/closet/crate/hydroponics,
-/obj/item/weapon/tool/shovel/spade,
-/obj/item/weapon/reagent_containers/spray/plantbgone,
-/obj/item/weapon/tool/wirecutters,
-/obj/item/weapon/plantspray/pests,
-/obj/item/weapon/reagent_containers/glass/bucket,
-/obj/item/device/scanner/plant,
-/obj/item/weapon/storage/bag/produce,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/absolutism/storage)
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/warningwhite,
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/meadow)
 "aMO" = (
 /obj/structure/flora/small/rock5,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -16991,39 +16973,28 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/junk)
 "aNn" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/maintenance/junk)
+/obj/structure/closet/custodial,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/absolutism/storage)
 "aNo" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/maintenance/junk)
-"aNp" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 1
 	},
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/maintenance/junk)
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/meadow)
+"aNp" = (
+/obj/structure/disposalpipe/junction{
+	dir = 8;
+	icon_state = "pipe-j2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/pros/shuttle)
 "aNq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -17226,8 +17197,10 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "aNS" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/crew_quarters/hydroponics/garden)
+/obj/machinery/light,
+/obj/item/weapon/storage/firstaid/regular,
+/turf/simulated/floor/wood,
+/area/nadezhda/absolutism/vectorrooms)
 "aNT" = (
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 8
@@ -17293,6 +17266,44 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/prime)
+"aOc" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/crew_quarters/hydroponics/garden)
+"aOd" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/obj/structure/sign/faction/neotheology_cross{
+	pixel_y = 30
+	},
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/conveyor_switch/oneway{
+	convdir = -1;
+	id = "scrapbeaconCon"
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
+"aOe" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/structure/invislight,
+/obj/machinery/conveyor_switch/oneway{
+	convdir = -1;
+	id = "churchgardenCon"
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "aOf" = (
 /obj/machinery/door/blast/shutters/glass{
 	id = "churcharm1";
@@ -17306,6 +17317,18 @@
 /obj/item/weapon/gun/energy/plasma/destroyer,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
+"aOg" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
+"aOh" = (
+/obj/machinery/conveyor/north{
+	id = "scrapbeaconCon"
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
 "aOi" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -17457,6 +17480,23 @@
 /obj/item/weapon/implant/core_implant/cruciform,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
+"aOH" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/hydroponics/garden)
+"aOI" = (
+/obj/machinery/conveyor/north{
+	id = "churchgardenCon"
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "aOJ" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -17529,6 +17569,18 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"aOS" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/hydroponics/garden)
+"aOT" = (
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
 "aOU" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/grassb1,
@@ -17580,22 +17632,11 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/outside/meadow)
 "aPa" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 1
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "aPb" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -17629,6 +17670,13 @@
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/meadow)
+"aPi" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/tool/minihoe,
+/obj/item/weapon/tool/minihoe,
+/obj/item/weapon/tool/minihoe,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "aPj" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
@@ -17644,6 +17692,24 @@
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"aPn" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/invislight,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/outside/meadow)
 "aPo" = (
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/asteroid/dirt,
@@ -17691,11 +17757,26 @@
 /obj/machinery/optable/altar,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
+"aPv" = (
+/obj/machinery/door/airlock{
+	id_tag = null;
+	name = "Church Commons";
+	req_access = list(70)
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/absolutism/vectorrooms)
 "aPw" = (
 /obj/structure/table/marble,
 /obj/item/weapon/tool/knife/neotritual,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
+"aPx" = (
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/obj/machinery/door/airlock/external,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/absolutism/chapel)
 "aPy" = (
 /obj/machinery/light{
 	dir = 4;
@@ -17711,6 +17792,45 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"aPB" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/absolutism/storage)
+"aPC" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/light,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/absolutism/storage)
 "aPD" = (
 /turf/simulated/wall,
 /area/nadezhda/outside/forest)
@@ -17735,6 +17855,17 @@
 /obj/item/clothing/ears/earmuffs,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"aPH" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/storage/box/donkpockets,
+/obj/item/weapon/storage/box/donkpockets,
+/obj/item/weapon/storage/box/donkpockets,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
+/obj/machinery/reagentgrinder/portable,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/absolutism/vectorrooms)
 "aPI" = (
 /obj/structure/flora/small/bushc2,
 /turf/simulated/floor/asteroid/grass,
@@ -17743,6 +17874,23 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"aPK" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/crew_quarters/hydroponics/garden)
+"aPL" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "aPM" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -17995,6 +18143,16 @@
 /obj/structure/flora/small/grassb1,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"aQz" = (
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/obj/machinery/door/airlock/external,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "aQA" = (
 /obj/machinery/door/airlock{
 	name = "Prime's Quarters";
@@ -18215,6 +18373,12 @@
 /obj/structure/scrap/food/large,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
+"aRe" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "aRf" = (
 /obj/random/costume/body_halloween,
 /obj/random/costume/body_halloween,
@@ -18275,6 +18439,13 @@
 /obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/outside/meadow)
+"aRs" = (
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/maintenance/junk)
 "aRt" = (
 /obj/random/junk,
 /obj/random/junk,
@@ -18293,10 +18464,43 @@
 /obj/random/gun_shotgun/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
+"aRx" = (
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/obj/structure/table/steel,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/item/clothing/gloves/thick,
+/obj/item/clothing/gloves/thick,
+/obj/item/clothing/gloves/thick,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
 "aRy" = (
 /obj/random/furniture,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
+"aRz" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/junk)
 "aRA" = (
 /obj/item/remains/ribcage,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -18305,6 +18509,21 @@
 /obj/random/junkfood/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
+"aRC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
 "aRD" = (
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -18317,6 +18536,20 @@
 /obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
+"aRG" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
 "aRH" = (
 /obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -18347,29 +18580,30 @@
 "aRO" = (
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/dcave)
+"aRP" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/maintenance/junk)
 "aRQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/meadow)
 "aRR" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/light,
-/obj/structure/disposalpipe/junction{
-	dir = 8;
-	icon_state = "pipe-j2"
-	},
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/obj/structure/table/steel_reinforced,
+/obj/item/weapon/storage/firstaid/regular,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/security/maingate)
 "aRS" = (
 /mob/living/simple_animal/hostile/diyaab,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -18909,6 +19143,36 @@
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/maintenance/outside/burned_outpost)
+"aUs" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/security/maingate)
+"aUt" = (
+/obj/machinery/door/airlock/multi_tile/glass{
+	id_tag = "checkpoint2";
+	name = "Colony Airlock";
+	req_one_access = list(78,19,1)
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "checkpointlockdown";
+	layer = 2.6;
+	name = "Checkpoint Blast Doors";
+	opacity = 0
+	},
+/obj/effect/floor_decal/industrial/stand_clear/white{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/nadezhda/security/maingate)
 "aUu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/bin,
@@ -18984,6 +19248,26 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"aUI" = (
+/obj/machinery/door/airlock/multi_tile/glass{
+	id_tag = "checkpoint1";
+	name = "Forest Airlock";
+	req_access = newlist();
+	req_one_access = list(78,19,1)
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "checkpointlockdown";
+	layer = 2.6;
+	name = "Checkpoint Blast Doors";
+	opacity = 0
+	},
+/obj/effect/floor_decal/industrial/stand_clear/white,
+/obj/effect/floor_decal/industrial/warningwhite,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/nadezhda/security/maingate)
 "aUJ" = (
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/techmaint,
@@ -19125,6 +19409,13 @@
 /obj/random/closet_tech/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/outside/burned_outpost)
+"aVn" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/absolutism/vectorrooms)
 "aVo" = (
 /obj/structure/table/rack,
 /obj/random/cloth/gloves/low_chance,
@@ -19176,7 +19467,13 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/absolutism/storage)
 "aVx" = (
-/turf/simulated/floor/asteroid/grass,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/vectorrooms)
 "aVy" = (
 /obj/effect/decal/cleanable/dirt,
@@ -19207,6 +19504,27 @@
 /obj/random/material/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/outside/burned_outpost)
+"aVE" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/meadow)
 "aVF" = (
 /obj/structure/table/standard,
 /obj/item/weapon/circuitboard/broken,
@@ -19218,6 +19536,23 @@
 /obj/random/rig_module/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/outside/burned_outpost)
+"aVH" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/meadow)
 "aVI" = (
 /obj/structure/fireaxecabinet,
 /obj/random/mob/roaches/low_chance,
@@ -19244,6 +19579,11 @@
 /obj/random/material_resources/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/outside/burned_outpost)
+"aVM" = (
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "aVN" = (
 /obj/structure/grille/broken,
 /turf/simulated/floor/tiled/steel,
@@ -19256,6 +19596,11 @@
 /obj/effect/damagedfloor/rust,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/outside/burned_outpost)
+"aVQ" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "aVR" = (
 /obj/structure/salvageable/server,
 /turf/simulated/floor/tiled/steel,
@@ -19269,6 +19614,11 @@
 /obj/structure/door_assembly/door_assembly_eng,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/outside/burned_outpost)
+"aVU" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "aVV" = (
 /obj/structure/salvageable/autolathe,
 /turf/simulated/floor/tiled/steel,
@@ -19561,13 +19911,6 @@
 "aXd" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/crew_quarters/hydroponics/garden)
-"aXe" = (
-/obj/machinery/door/blast/regular/open{
-	id = "Colony Lockdown"
-	},
-/obj/machinery/door/airlock/external,
-/turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "aXf" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -19972,18 +20315,6 @@
 /obj/random/scrap/sparse_even/low_chance,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/outside/abandoned_outpost)
-"aYL" = (
-/obj/machinery/door/blast/regular/open{
-	id = "Colony Lockdown"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
 "aYM" = (
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/outside/abandoned_outpost)
@@ -20741,10 +21072,6 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/meadow)
-"bbB" = (
-/obj/structure/flora/small/grassb4,
-/turf/simulated/wall,
-/area/nadezhda/outside/forest)
 "bbC" = (
 /obj/random/traps/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -20979,20 +21306,6 @@
 /obj/structure/invislight,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/hydroponics/garden)
-"bcs" = (
-/obj/machinery/smartfridge/seeds,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular/open{
-	id = "Colony Lockdown"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	pixel_y = 0
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/crew_quarters/hydroponics/garden)
 "bct" = (
 /obj/machinery/seed_extractor,
 /obj/structure/invislight,
@@ -21094,16 +21407,6 @@
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/meadow)
-"bcP" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	pixel_y = 0
-	},
-/obj/structure/invislight,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/crew_quarters/hydroponics/garden)
 "bcQ" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/asteroid/grass,
@@ -21281,33 +21584,6 @@
 	opacity = 0
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate)
-"bdt" = (
-/obj/structure/table/steel_reinforced,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate)
-"bdu" = (
-/obj/machinery/door/airlock/multi_tile/glass{
-	id_tag = "checkpoint2";
-	name = "Colony Airlock";
-	req_access = list(78)
-	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id = "checkpointlockdown";
-	layer = 2.6;
-	name = "Checkpoint Blast Doors";
-	opacity = 0
-	},
-/obj/effect/floor_decal/industrial/stand_clear/white{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningwhite{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
 "bdv" = (
 /obj/structure/railing,
@@ -21542,14 +21818,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/maintenance/outside/campground)
-"bee" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/crew_quarters/hydroponics/garden)
 "bef" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -21718,14 +21986,6 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
-"beJ" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/weapon/storage/firstaid,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate)
 "beK" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/remote/blast_door{
@@ -23987,10 +24247,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"bnt" = (
-/obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
 "bnu" = (
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/asteroid/grass,
@@ -25473,12 +25729,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/surface/section1)
-"btb" = (
-/obj/effect/floor_decal/industrial/warningwhite{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/hallway/surface/section2)
 "btc" = (
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 4
@@ -26921,11 +27171,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/chapel)
-"bwm" = (
-/obj/machinery/vending/coffee,
-/obj/machinery/light,
-/turf/simulated/floor/carpet,
-/area/nadezhda/absolutism/vectorrooms)
 "bwn" = (
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
@@ -27923,13 +28168,6 @@
 /obj/machinery/camera/network/third_section,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/hallway/surface/section2)
-"bys" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/warningwhite/corner{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/hallway/surface/section2)
 "byt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -28306,25 +28544,6 @@
 /obj/structure/railing,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
-"bzc" = (
-/obj/machinery/door/airlock/multi_tile/glass{
-	id_tag = "checkpoint1";
-	name = "Forest Airlock";
-	req_access = list(78)
-	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id = "checkpointlockdown";
-	layer = 2.6;
-	name = "Checkpoint Blast Doors";
-	opacity = 0
-	},
-/obj/effect/floor_decal/industrial/stand_clear/white,
-/obj/effect/floor_decal/industrial/warningwhite,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate)
 "bzd" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -28606,16 +28825,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/surface/section2)
-"bzC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/effect/floor_decal/industrial/warningwhite,
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/hallway/surface/section2)
 "bzD" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/steel,
@@ -28844,10 +29053,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/surface/section1)
-"bAf" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/crew_quarters/hydroponics/garden)
 "bAg" = (
 /obj/structure/flora/ausbushes/palebush,
 /obj/structure/flora/ausbushes/stalkybush,
@@ -29061,11 +29266,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/junk)
-"bAY" = (
-/obj/structure/table/standard,
-/obj/item/weapon/soap/deluxe,
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/bioreactor)
 "bAZ" = (
 /obj/structure/table/standard,
 /obj/item/weapon/reagent_containers/glass/bucket,
@@ -29098,27 +29298,6 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/lakeside)
-"eoI" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external,
-/obj/machinery/door/blast/regular/open{
-	id = "Colony Lockdown"
-	},
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/absolutism/vectorrooms)
 "eSC" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/grassb1,
@@ -29279,12 +29458,6 @@
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
-"udp" = (
-/obj/effect/floor_decal/industrial/loading/white{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/maintenance/junk)
 "ugh" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/bush,
@@ -32324,7 +32497,7 @@ aVi
 aVR
 aTC
 aTC
-bbB
+aPD
 aOv
 bmp
 bkm
@@ -44557,7 +44730,7 @@ aab
 aFH
 aFH
 aFH
-aGA
+aGI
 aFI
 aFJ
 aFJ
@@ -44947,7 +45120,7 @@ aak
 aak
 aai
 aKx
-aFG
+aFH
 aGa
 aGF
 aFH
@@ -45149,7 +45322,7 @@ aai
 aai
 aai
 aKx
-aFG
+aFH
 aGa
 aFI
 aGK
@@ -45362,7 +45535,7 @@ aFH
 aFH
 aFH
 aFG
-aVx
+aFJ
 aGd
 aGJ
 aLr
@@ -47573,7 +47746,7 @@ bxm
 aha
 ajx
 ajx
-aFG
+aFH
 aFG
 aFG
 aFG
@@ -47609,8 +47782,8 @@ bfp
 aac
 bcE
 bda
-bdt
-beJ
+aRR
+aUs
 beK
 bvg
 bcq
@@ -47776,10 +47949,10 @@ aEL
 ajx
 ajx
 aFH
-aFG
-aFG
-aFG
-aFG
+aFH
+aFH
+aFH
+aFH
 aFI
 aGK
 aJb
@@ -48783,16 +48956,16 @@ bxc
 bxi
 bxn
 ajx
-ajx
-ajx
-btb
-bys
-bzC
-aMl
-aHn
+aEO
 aHO
+aHZ
 aIP
+aIX
 aJk
+aJm
+aMl
+aMN
+aNo
 aLa
 aLa
 aLa
@@ -48983,9 +49156,9 @@ ajx
 ajx
 aDE
 aBF
-arh
-aEO
-ajx
+axp
+aEw
+aHn
 ajx
 buS
 arh
@@ -49185,7 +49358,7 @@ ajx
 ajx
 aDF
 aDZ
-aEw
+aCx
 aMB
 ajx
 ajx
@@ -49225,12 +49398,12 @@ aLR
 aLR
 aLR
 bdh
-bdu
+aUt
 bdD
 bdM
 bdM
 bvK
-bzc
+aUI
 beY
 bfl
 bvb
@@ -50406,7 +50579,7 @@ ajx
 ajx
 aKx
 aKx
-aIO
+aKx
 aIO
 aMy
 aNa
@@ -50607,7 +50780,7 @@ aBA
 aBA
 aBA
 aBA
-aKx
+aBA
 aKx
 aKx
 aCs
@@ -50616,7 +50789,7 @@ aKx
 aKx
 aKx
 aKx
-aCx
+aPx
 aIc
 aIc
 aIc
@@ -53234,13 +53407,13 @@ aCE
 aGQ
 bvm
 aHR
-aHw
+aKk
 aJM
 aJW
 aKc
-aln
+aLW
 aIN
-aJm
+aIN
 aKn
 aMq
 aKx
@@ -53422,7 +53595,7 @@ ajx
 ajx
 ajx
 aGM
-buN
+aln
 aBA
 aBA
 aBA
@@ -53439,7 +53612,7 @@ aHv
 aHw
 aHw
 aHw
-aKk
+aKT
 aCE
 aCE
 aCE
@@ -53643,7 +53816,7 @@ aHw
 aHw
 aHw
 aKr
-aKS
+aMh
 aLt
 aCE
 aMu
@@ -53847,7 +54020,7 @@ aHw
 aHw
 aHw
 aHw
-aLW
+aPv
 aMP
 aQh
 aIM
@@ -54048,10 +54221,10 @@ aJE
 aHw
 aKB
 aHw
-aLU
+aNS
 aCE
 aOZ
-bnt
+aVM
 aIM
 bqA
 aFJ
@@ -54250,10 +54423,10 @@ aJL
 aHw
 aKC
 aHw
-aMh
-aEx
-aOZ
-aIm
+aMi
+aVn
+aVE
+aVQ
 aIM
 bnx
 aIm
@@ -54443,7 +54616,7 @@ aEx
 aFv
 aFf
 aCE
-aGV
+aPH
 aBC
 aHU
 aGQ
@@ -54451,11 +54624,11 @@ aGQ
 aJL
 aHw
 aKC
-aKT
-aMi
-aEx
-aOZ
-aFJ
+aHw
+aMm
+aVn
+aVE
+bel
 aIM
 aFJ
 aFJ
@@ -54655,9 +54828,9 @@ aHw
 aKC
 aHw
 aMj
-aEx
-aOZ
-aFJ
+aVn
+aVE
+bel
 aIM
 aIm
 aFJ
@@ -54857,9 +55030,9 @@ aKl
 aKP
 aLp
 aLp
-aMm
-aMn
-aFJ
+aVx
+aVH
+bel
 aIM
 aFJ
 aFJ
@@ -55058,17 +55231,17 @@ aHw
 aHw
 aHv
 aHv
-bwm
-aEx
-aOZ
-aFJ
+aMn
+aVn
+aVE
+bel
 aIM
 aFJ
 aMc
 bqA
 aFJ
 aOB
-aPP
+aIm
 aFJ
 aFJ
 aFJ
@@ -55261,9 +55434,9 @@ aHw
 aKp
 aHv
 aKV
-aEx
-aOZ
-bqA
+aVn
+aVE
+aVU
 aIM
 bqA
 aFJ
@@ -55457,15 +55630,15 @@ aHx
 aHw
 aIA
 aHw
-aHw
+aKS
 aHw
 aIU
 bwg
 aHv
 aKW
-aEx
+bnX
 aOZ
-bnt
+aVM
 aIM
 aFJ
 aIm
@@ -55867,8 +56040,8 @@ aKm
 aKR
 aEx
 aKx
-aPc
-aPa
+aHT
+aMk
 aFJ
 aIM
 bqA
@@ -56069,8 +56242,8 @@ aHw
 aIU
 aEx
 aKx
-aOM
-aMk
+aJh
+aPn
 aIM
 aIM
 aFJ
@@ -56272,10 +56445,10 @@ aJz
 aEx
 aKx
 aKx
-eoI
-aKx
-aKx
-aKx
+aPB
+aHg
+aHg
+aHg
 aFJ
 aFJ
 aIm
@@ -56458,7 +56631,7 @@ aDj
 aDO
 aEi
 aBZ
-bAY
+aGV
 aFk
 aFx
 arH
@@ -56475,7 +56648,7 @@ aGw
 aGw
 aGw
 aMU
-aGw
+pDF
 pDF
 aHg
 aHg
@@ -56869,9 +57042,9 @@ arH
 aBM
 aBM
 aBM
-aHZ
+aLU
 aIF
-aHZ
+aNn
 aBM
 aBM
 aBM
@@ -57078,7 +57251,7 @@ aHI
 aKd
 aBM
 aBM
-aMN
+aGA
 aHI
 aQB
 aVw
@@ -57280,10 +57453,10 @@ aHI
 aKe
 aBM
 aBM
-aMN
+aGA
 aHI
 aNw
-aBM
+aHg
 aHg
 aNe
 bdI
@@ -57485,13 +57658,13 @@ aBM
 aNg
 aHI
 aOP
-aYL
-bcs
-bcP
-bee
+aOc
+aOc
+aOe
+aOH
 aNh
 aNh
-aNS
+aPi
 aOD
 aOQ
 aOQ
@@ -57686,12 +57859,12 @@ aBM
 aBM
 aNk
 aHI
-aRR
-aND
-bAf
+aPC
+aHg
+aPK
 bbO
-aNh
-aNh
+aOI
+aPa
 aNh
 aNQ
 aOD
@@ -57890,9 +58063,9 @@ aMM
 aHI
 aQB
 aVw
-aOJ
+aPL
 bdb
-aNh
+aOS
 aNh
 aNh
 aNQ
@@ -58092,7 +58265,7 @@ aNl
 aHf
 aQU
 aVw
-aOJ
+aPL
 bdb
 aNh
 aNh
@@ -58269,8 +58442,8 @@ aia
 aJC
 aai
 ajg
-ajg
-axp
+aBZ
+ajW
 ayR
 aAX
 aCw
@@ -58294,7 +58467,7 @@ bwa
 bwa
 aQZ
 aWn
-aXe
+aQz
 bdd
 aNh
 aNh
@@ -58496,7 +58669,7 @@ aBM
 aLM
 aRa
 aWn
-aXe
+aQz
 bdd
 aNh
 aNh
@@ -58670,8 +58843,8 @@ auU
 auU
 auU
 auU
-aai
 adE
+aai
 arH
 arH
 arH
@@ -58697,8 +58870,8 @@ aBM
 aBM
 aHI
 aRa
-aBM
 aHg
+aRe
 bdr
 aNh
 aNh
@@ -58899,8 +59072,8 @@ azr
 aBM
 aHI
 aRa
-aBM
 aHg
+aRe
 bvP
 bvP
 bvP
@@ -59101,9 +59274,9 @@ aKD
 aBM
 aHI
 aRa
-aBM
-aLV
-aNm
+aHg
+aRs
+aRz
 aNm
 aNm
 aLV
@@ -59305,7 +59478,7 @@ aLM
 aNz
 aWo
 aOF
-aNn
+aRC
 aNG
 aNT
 aOo
@@ -59507,7 +59680,7 @@ aBM
 aBM
 aBM
 aYu
-aNo
+aRG
 wKf
 aNr
 aNr
@@ -59709,7 +59882,7 @@ aBM
 aBM
 aBM
 aMH
-aNo
+aRG
 aNr
 aNr
 aNr
@@ -59905,13 +60078,13 @@ azr
 azr
 azr
 azr
-aKE
-azr
-avc
-aBM
-aBM
-aIX
 aNp
+aHl
+aLq
+aND
+aND
+aRx
+aRP
 aNr
 aNU
 aNU
@@ -60921,7 +61094,7 @@ avc
 aBM
 aBM
 aMG
-aNr
+aOg
 aNr
 aNr
 aNr
@@ -61123,8 +61296,8 @@ aLq
 aND
 aND
 bAc
-aNr
-aNr
+aOh
+aOT
 aNr
 aNr
 aNr
@@ -61324,10 +61497,10 @@ azr
 avc
 aBM
 aBM
-aJh
-bun
-udp
-cyF
+aOd
+aNr
+aNr
+aNr
 aOp
 aOp
 bvd

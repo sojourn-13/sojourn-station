@@ -31,3 +31,4 @@
 #define MAG_WELL_PAN		128	//Lmgs with pan mags
 #define MAG_WELL_DART       256 //Dartgun mag
 #define MAG_WELL_OMNI		512 //10mm rifle mags
+#define MAG_WELL_DRUM		1024 //Drum-fed i.e. shotguns

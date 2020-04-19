@@ -316,10 +316,10 @@
 //**Chameleon Gun**
 //*****************
 /obj/item/weapon/gun/energy/chameleon
-	name = "desert eagle"
+	name = "\"Basilisk\" heavy pistol"
 	desc = "A hologram projector in the shape of a gun. There is a dial on the side to change the gun's disguise."
 	icon = 'icons/obj/guns/projectile/basilisk.dmi'
-	icon_state = "deagle"
+	icon_state = "basilisk"
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 	matter = list()
