@@ -28,7 +28,7 @@
 	//ic_name = "radiation"
 
 /datum/event/radiation_storm/announce()
-	command_announcement.Announce("High levels of radiation detected in a nearby anomalous storm. Please remain indoors until the event has passed.", "Anomaly Alert", new_sound = 'sound/AI/radiation.ogg')
+	command_announcement.Announce("High levels of radiation detected in a nearby anomalous storm. Radiation will begin flooding the vents soon, all colonist are suggested to move to the more secure maintenance areas.", "Anomaly Alert", new_sound = 'sound/AI/radiation.ogg')
 
 /datum/event/radiation_storm/start()
 	make_maint_all_access()
@@ -36,7 +36,7 @@
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		command_announcement.Announce("The radiation blow out has begun out side colony walls. Please remain in a sheltered area until the storm has passed.", "Anomaly Alert")
+		command_announcement.Announce("The rad-storm blow out has begun outside colony walls. Please remain in a sheltered area until the storm has passed.", "Anomaly Alert")
 		radiate()
 		for(var/datum/weather/rad_storm/R in SSweather.processing)
 			R.start()
@@ -51,7 +51,7 @@
 	else if(activeFor == leaveBelt)
 		for(var/datum/weather/rad_storm/R in SSweather.processing)
 			R.wind_down()
-		command_announcement.Announce("The radiation blow out has passed. Please report to medbay if you experience any unusual symptoms.", "Anomaly Alert")
+		command_announcement.Announce("The rad-storm blow out has passed and all remaining radiation has been filtered out by the colony scrubbers. Please report to medbay if you experience any unusual symptoms.", "Anomaly Alert")
 
 /datum/event/radiation_storm/proc/radiate()
 	for(var/mob/living/carbon/C in GLOB.living_mob_list)

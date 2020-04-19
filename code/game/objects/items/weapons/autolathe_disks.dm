@@ -833,6 +833,7 @@
 		//pistol mags
 		/datum/design/autolathe/ammo/pistol/rubber,
 		/datum/design/autolathe/ammo/magnum/rubber,
+		/datum/design/autolathe/ammo/a50/rubber,
 		//speed loaders
 		/datum/design/autolathe/ammo/slpistol/rubber,
 		/datum/design/autolathe/ammo/slmagnum/rubber,
@@ -856,6 +857,7 @@
 		//pistol mags
 		/datum/design/autolathe/ammo/pistol,
 		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/a50,
 		//speed loaders
 		/datum/design/autolathe/ammo/slpistol,
 		/datum/design/autolathe/ammo/slmagnum,

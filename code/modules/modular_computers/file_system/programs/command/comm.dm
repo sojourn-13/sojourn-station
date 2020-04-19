@@ -84,7 +84,7 @@
 	data["message_current_id"] = current_viewing_message_id
 	if(current_viewing_message)
 		data["message_current"] = current_viewing_message
-*/
+
 	var/list/processed_evac_options = list()
 	if(!isnull(evacuation_controller))
 		for (var/datum/evacuation_option/EO in evacuation_controller.available_evac_options())
@@ -95,7 +95,7 @@
 			option["silicon_allowed"] = EO.silicon_allowed
 			processed_evac_options[++processed_evac_options.len] = option
 	data["evac_options"] = processed_evac_options
-
+*/
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "communication.tmpl", name, 550, 420, state = state)
