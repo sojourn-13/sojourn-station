@@ -94,3 +94,5 @@
 	path = /obj/item/clothing/shoes/workboots/toeless
 	slot = slot_shoes
 	sort_category = "Xenowear"
+	
+	
