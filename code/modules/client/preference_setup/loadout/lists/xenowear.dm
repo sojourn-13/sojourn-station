@@ -95,4 +95,4 @@
 	slot = slot_shoes
 	sort_category = "Xenowear"
 	
-	
+*/
