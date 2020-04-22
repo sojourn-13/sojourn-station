@@ -57,6 +57,14 @@
 			return 1
 	return 1
 
+/obj/structure/table/Crossed(var/atom/movable/am as mob|obj)
+	..()
+	if(ishuman(am))
+		var/mob/living/carbon/human/H = am
+		if(H.a_intent != I_HELP)
+			throw_things(H)
+	else if((isliving(am) && !issmall(am)) || isslime(am))
+		throw_things(am)
 //Drag and drop onto tables
 //This is mainly so that janiborg can put things on tables
 /obj/structure/table/MouseDrop_T(atom/A, mob/user, src_location, over_location, src_control, over_control, params)
@@ -151,3 +159,47 @@
 	if (user.unEquip(W, loc))
 		set_pixel_click_offset(W, params)
 /obj/structure/table/attack_tk() // no telehulk sorry
+
+/obj/structure/table/do_climb(var/mob/living/user)
+	if (!can_climb(user))
+		return
+
+	usr.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
+	climbers |= user
+
+	var/delay = (issmall(user) ? 20 : 34)
+	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
+	if(!do_after(user, duration, src))
+		climbers -= user
+		return
+
+	if (!can_climb(user, post_climb_check=1))
+		climbers -= user
+		return
+
+	usr.forceMove(get_turf(src))
+
+	if (get_turf(user) == get_turf(src))
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			if(H.a_intent != I_HELP)
+				throw_things(H)
+		usr.visible_message(SPAN_WARNING("[user] climbs onto \the [src]!"))
+	climbers -= user
+
+
+/obj/structure/table/proc/throw_things(var/mob/living/user)
+	var/list/targets = list(get_step(src,dir),get_step(src,turn(dir, 45)),get_step(src,turn(dir, -45)))
+	var/turf/T = get_turf(src)
+	var/anything_moved = FALSE
+	for (var/obj/item/I in T)
+		if (I.simulated && !I.anchored)
+			INVOKE_ASYNC(I, /atom/movable/.proc/throw_at, pick(targets), 1, 1)
+			anything_moved = TRUE
+		CHECK_TICK
+
+	if (user && anything_moved)
+		user.visible_message(
+		"<span class='notice'>[user] kicks everything off [src].</span>",
+		"<span class='notice'>You kick everything off [src].</span>"
+		)

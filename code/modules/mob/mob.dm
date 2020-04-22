@@ -113,7 +113,8 @@
 	if(lying) //Crawling, it's slower
 		. += 14 + (weakened)
 	. += move_intent.move_delay
-
+	if(facing_dir)
+		. += 2
 
 /mob/proc/Life()
 	SEND_SIGNAL(src, COMSIG_MOB_LIFE)
