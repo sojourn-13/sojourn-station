@@ -68,11 +68,11 @@ var/list/channel_to_radio_key = new
 		verb = pick("yells", "roars", "hollers")
 		speech_problem_flag = 1
 	if(slurring)
-		message = slur(message)
+	//	message = slur(message)
 		verb = pick("slobbers", "slurs")
 		speech_problem_flag = 1
 	if(stuttering)
-		message = stutter(message)
+	//	message = stutter(message)
 		verb = pick("stammers", "stutters")
 		speech_problem_flag = 1
 
