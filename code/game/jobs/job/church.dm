@@ -38,16 +38,15 @@
 		CRUCIFORM_REDLIGHT
 	)
 
-	description = "The Prime serves as the head of the local branch of the Church of the Absolute. <br>\
-	You represent the interest of the church and its disciples within the colony - identified by the cruciform implant upon their breast.<br>\
-	Your most pressing duty is as a spiritual leader. Preach to the flock, inspire faith and strength, and convert those seeking salvation.<br>\
-	While you are no trained psychologist, you can provide support and guidance to all - in both bright and dark times.<br>\
-	More practically, you can use your cloner to revive those who cannot be saved by medical science, and hold funerals for the truly lost.<br>\
-	The Crusader protocol may also be enacted under your command when facing a Hivemind threat. Use this boost, and your ritual book, to defeat evil."
+	description = "Вы ялвяетесь главой местого отделения церкви Абсолюта.<br>\
+	Вы представляете интересы церкви и ее учеников на колонии. Ваши ученики обозначенны крестообразным имплантатом на их груди.<br>\
+	Ваша самая насущная обязанность как духовного лидера - проповедь перед стадом, внушай веру и силу и обращай тех, кто ищет спасения.<br>\
+	Хотя вы и не являетесь квалифицированным психологом, вы можете оказывать поддержку всем - как в светлое, так и в темное время<br>\
+	На практике вы можете использовать свою веру, чтобы возродить тех, кто не может быть спасен медицинской наукой, и провести похороны по-настоящему потерянных."
 
-	duties = "Represent the interests of church disciples on the colony. Protect them from persecution and speak for them.<br>\
-		Hold mass, give sermons, preach to the faithful, and lead group ritual sessions.<br>\
-		Recover and clone the faithful dead. Hold funerals for those who cannot be saved."
+	duties = "Представлять интересы учеников церкви на колонии. Защищать их от преследований и говорить за них. <br>\
+		Обращайте массы, проповедуйте верующим и проводите групповые ритуалы. <br>\
+		Спасайте и клонируйте мертвых. Проводите похороны для тех, кого невозможно спасти."
 
 	setup_restricted = TRUE
 
@@ -83,13 +82,12 @@
 		CRUCIFORM_PRIEST
 	)
 
-	description = "The Vector serves the Prime, and more generally the church, as a disciple of the Faith.<br>\
-	The sacred duties of operating the bioreactor and managing biomass for the church machines are your main priority.<br>\
-	You should also work to present the Faith in a positive light to all colonists. The Vector may issue you with further duties."
+	description = "Вы самый настоящий аколит, вы прислуживайте главе церкви и служите своей вере.<br>\
+	Ваша основная задача - служить церкви и защищать её интересы. Вы выполняете все приказы своего начальника."
 
-	duties = "Operate the bioreactor and manage biomass for the church machines.<br>\
-		Maintain areas owned by the church, keeping the facilities functional and in good order.<br>\
-		Offer assistance to the faithful and non-faithful alike."
+	duties = "dutiesйте над биореактором и прислуживайте церкви.<br>\
+		Вы обязаны следить за чистотой церкви и своевременно убирать её.<br>\
+		Вы так же обязаны выполнять все приказы своего начальника и проповедовать веру всем колонистам.."
 
 	setup_restricted = TRUE
 

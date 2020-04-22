@@ -19,19 +19,19 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	also_known_languages = list(LANGUAGE_CYRILLIC = 20, LANGUAGE_SERBIAN = 20)
 
 	ideal_character_age = 50 // Old geezer captains ftw
-	minimum_character_age = 35
+	minimum_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/captain
 
-	description = "The Premier is the prime mediator of the colony itself, acting as a trusted advisor amongst their peers.<br>\
-You are trusted with control of the colony primary accounts, and are also able to control access within the colony.<br>\
-Your primary objective is to oversee council decisions, change access levels, and act as both lawyer and consultant in various decisions.<br>\
-You are not the supreme leader of the colony and your word is only an advisement. The only person you can give legal orders to is the Steward.<br>\
-The heads of the factions which make up the council each have their own agendas. Their interests must be served to avoid issues.<br>\
-Treat your command officers with respect, and listen to their council. Try not to micromanage their departments or interfere in their affairs."
+	description = "Вы главный управляющий колонией, на ваши плечи выпадает очень тяжелая duties.<br>\
+Вы имеете полное управление на колонии, вы можете изменять доступ другого экипажа, вы можете управлять банковскими счетами.<br>\
+Ваша главная задача следить за работой колонии и сделать все, чтобы она функционировала.<br>\
+Следуйте закону, помогайте экипажу советами, следите за работой и выполняйте приказы Совета.<br>\
+Но помните, что с большой властью приходит огромная ответственность. Если вы будете показывать себя с плохой стороны, экипажу может это не понравится.<br>\
+Относитесь к главам других компаний с уважением и прислушивайтесь к Совету."
 
-	duties = "Work between the varying interests of council members to achieve colony stability.<br>\
-	Offer advise and counsel when approached, particularly during important decisions.<br>\
-	Manage the colony primary accounts and access levels accordingly."
+	duties = "Ваша duties заключается в том, чтобы следовать интересам Совета.<br>\
+	Помните, что интересы Совета находятся на первом месте, а вы - его единственное доверенное лицо.<br>\
+	Управляйте колонией с гордо поднятной головой!"
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -79,17 +79,16 @@ Treat your command officers with respect, and listen to their council. Try not t
 	wage = WAGE_COMMAND
 	also_known_languages = list(LANGUAGE_CYRILLIC = 20, LANGUAGE_SERBIAN = 15)
 	ideal_character_age = 35
-	minimum_character_age = 30
+	minimum_character_age = 25
 
-	description = "Стюард - это правая рука Премьера. Вы целиком и полностью ему лояльны и фактически - являетесь его личной охраной.<br>\
-	Ваша задача любой ценой защитить Премьера. Вы готовы умереть за премьера, это одна из ваших задач. <br>\
+	description = "Вы правая рука Премьер-Министра. Вы целиком и полностью ему лояльны и фактически - являетесь его личной охраной.<br>\
+	Ваша задача любой ценой защитить Премьера. Вы не должны бояться умереть за него, ведь это одна из ваших задач. <br>\
 	В любом случае, Вы так же являетесь и его советником. Осторожно сообщите ему об ошибках. Убедитесь, что он следует закону и все ещё получает поддержку народа.<br>\
 	Вы так же выполняете любой его приказ, не смотря на его сложность или абсурдность.<br>\
 	Не позорьте его и не портите его отношения с другими фракциями. Чаще следите за своими словами."
 
-	duties = "Отыгрывайте будто бы вы самый настоящий бодигвард Премьера.<br>\
-	Выполняйте задачи, назначенные Премьер-министром, такие как заполнение документов или переназначение должностей.<br>\
-	Perform tasks as assigned by the Premier - such as filling paperwork or reassigning roles.<br>\
+	duties = "Вы в праве отыгрывать как настоящего охранника Премьер-Министра, так и его советника.<br>\
+	Выполняй задания данные тебе министром, такие как заполнение документов или переназначение должностей.<br>\
 	Продемонстрируй истинную преданность и не подведи своего начальника."
 
 	outfit_type = /decl/hierarchy/outfit/job/hop

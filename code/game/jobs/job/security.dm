@@ -37,16 +37,16 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	description = "The Militia Commander serves as the commander of the local regiment of the Blackshield Militia.<br>\
-	Contracted to protect and serve the colony, your militia serves as a voluntary first (and hopefully last) line of defense.<br>\
-	Your goal is to keep everyone living on the colony as safe as possible and to eliminate any threats to safety.<br>\
-	The Warrant Officer is your ally and you should work closely with them, they handle the upholding of the law."
+	description = "Вы - коммандир ЧВК Черный Щит. Вы командуете своими бойцами и следите за безопасностью на колонии.<br>\
+	Ваша компания была нанята, чтобы защищать экипаж от любых проблем. Помните, вы не служба безопасности.<br>\
+	Ваша цель - обеспечить максимальную безопасность всех проживающих в колонии и устранить любые угрозы безопасности<br>\
+	Вы и ваша компания фактически является спецназом, который в свободное время помогает dutiesть офицерам."
 
-	duties = "Coordinate operatives in the field, assigning them to threats and distress calls as needed.<br>\
-		Work with the Warrant Officer to allocate funds to supply your teams with whatever munitions or equipment they need.<br>\
-		Plan assaults on entrenched threats, ensure each operative knows their roles and carries them out precisely.<br>\
-		Oversee performance of the operatives under your command and punish any that are insubordinate or incompetent.<br>\
-		Advise the council on threats to colony security and advise them towards choices that will minimise exposure to threats."
+	duties = "Координируйте бойцов на поле боя и следите за безопасностью на судне.<br>\
+		dutiesйте с Уорент-офицером в свободное от работы время. Кооперируйтесь с ним, чтобы добиться успеха.<br>\
+		Планируйте атаки на укоренившиеся угрозы, убедитесь, что каждый оперативник знает свои роли и выполняет их точно. <br>\
+		Наблюдайте за действиями оперативников под вашим командованием и наказывайте тех, кто не подчиняется или некомпетентен. <br>\
+		Служите совету и всегда советуйтесь с ним, когда собираетесь сделать какое-либо решение."
 
 /obj/landmark/join/start/smc
 	name = "Militia Commander"
@@ -93,16 +93,14 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	description = "The Warrant Officer serves as the head officer of the local regiment of the Marshals.<br>\
-	Contracted to protect and serve the colony, your internal police force is dedicated to the fight against criminal elements.<br>\
-	Your main objective is to keep everyone safe by maintining order, and upholding laws of all manner within the colony.<br>\
-	The Militia Commander is your ally and you should work closely with them - they provide the muscle and guns to defend the colony."
+	description = "Вы - Уорент-офицер, вы служите закону и ваша задача сделать так, чтобы колонисты этот закон соблюдали.<br>\
+	Вы как и ЧВК Черный Щит были наняты, чтобы защищать колонию от любых угроз.<br>\
+	Но в отличие от Черного Щита, вы впервую очередь следите за исполнением закона на колонии.<br>\
+	Коммандер Черного Щита - ваш главный союзник. Кооперируйтесь с ним, чтобы устранять особо опасных преступников."
 
-	duties = "Coordinate officers around the colony, assigning them to tasks and distress calls as needed.<br>\
-		Work with the Militia Commander to allocate funds to supply your teams with whatever armor, supplies, weapons, munitions, or tools they need.<br>\
-		Keep the peace around the station and ensure each officer knows their roles and carries them out precisely.<br>\
-		Oversee performance of the officers under your command and punish any that are insubordinate or incompetent.<br>\
-		Advise the council on threats to colony security and advise them towards choices that will uphold the public trust."
+	duties = "Координируйте офицеров безопасности, помогайте им с поимкой преступников.<br>\
+		dutiesйте вместе с коммандиром Черного щита, чтобы добиться максимального успеха.<br>\
+		Следите за порядком на судне и убедитесь, что все ваши офицеры знают свое дело."
 
 /obj/landmark/join/start/swo
 	name = "Warrant Officer"
@@ -142,16 +140,13 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Supply Specialist is the second-in-command of the Marshals and the defacto controller of the armory and armory shop. <br>\
-	Your role is mainly a desk job - with duties rarely taking you outside of the colony or even the armory.<br>\
-	You will often be called to sell weaponry and armory to colonists, maintaining the stock of the equipment and tracking who has what.<br>\
-	You will also be often asked to watch or process prisoners. Perform regular checkups on anyone locked in the brig - breakouts are intolerable.<br>\
-	In quieter times, you serve as the onsite weapons instructor. Take the initiative to offer a variety of training drills, especially to junior operatives.<br>\
-	Remember that any Warrant Officer duties may be delegated to you if they wish, and will automatically be given if they are not present."
+	description = "Специалист по снабжению является вторым командиром маршалов и управляющим оружейной и оружейной мастерской.<br>\
+	Ваша роль - в основном сидение в арсенале - с обязанностями, которые редко выводят вас за пределы колонии или даже арсенала.<br>\
+	Вас часто будут призывать продавать оружие и вооружение колонистам, поддерживать запас оборудования и отслеживать, наличие оружия у экипажа.<br>\
+	Вас также часто просят наблюдать или обслуживать заключенных. Регулярно проверяйте всех, кто содержится в бриге - побеги недопустимы.<br>\
+	В более спокойные времена вы служите инструктором по оружию на месте. Возьмите на себя инициативу, чтобы предложить различные учебные тренировки, особенно для младших оперативников.<br>\
+	Помните, вы не имеете право продавать оружие членам экипажа, у которых нет на него полученного разрешения у Премьера."
 
-	duties = "Manage a good balance of armory stock, and dispense responsibly with a paper trail and fair price.<br>\
-	Monitor prisoners in the brig to ensure their health and safety.<br>\
-	Perform training drills and other exercises to bring the Marshals up to standard."
 
 /obj/landmark/join/start/supsec
 	name = "Supply Specialist"
@@ -192,16 +187,14 @@
 							 /datum/computer_file/program/audio,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Ranger is the colony detective and field agent, taking on cases and suspects that aren't always what they seem.<br>\
-	Your job is to interrogate suspects, gather witness statements,  harvest evidence and reach a conclusion about the nature and culprit of a crime.<br>\
-	You are a higher ranking position than officers and operatives and can determine if charges are valid and may release individuals for lack of evidence. <br>\
-	However, you cannot give orders outside those pertaining to charges and arrests. The warrant officer still outranks you - bring all conflicts to them.<br>\
-	When there are no outstanding cases, look for them. Mingle with civilians, interact and converse, sniff out leads about potential criminal activity."
+	description = "Вы - настоящий детектив на колонии. Расследуйте преступления, выкуривайте ваши легкие, и страдайте от клинической депрессии. <br>\
+	Не смотря на то, что вы детектив, вы выше по званию, чем офицеры. Но это не дает вам права выполнять их работу. <br>\
+	Вы также не имеете права раздавать им приказы, а ваш начальник имеет право уволить вас за конфликты с ними..<br>\
+	Ваша основаная задача - это расследование преступлений, но никак не поимка преступников. Помните об этом."
 
-	duties = "Interview suspects and witnesses after a crime. Record important details of their statements, and look for inconsistencies.<br>\
-		Gather evidence and bring it back for processing.<br>\
-		Send out officers to bring suspects in for questioning.<br>\
-		Interact with civilians and be on the lookout for criminal activity."
+	duties = "Допрашивать подозреваемых. Записывать все детали дела.<br>\
+		Сохранять каждую улику и прикладывать её к делу.<br>\
+		dutiesть сообща с офицерами, помогая им расследовать преступления."
 
 /obj/landmark/join/start/inspector
 	name = "Ranger"
@@ -242,15 +235,10 @@
 							 /datum/computer_file/program/chem_catalog,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Corpsman is a highly trained medical specialist within the Blackshield Militia - a mixture of combatant and doctor.<br>\
-	Your first duty is that of a field medic. Serve on the backlines of any combat situations, treating the wounded and evacuating the critical.<br>\
-	Your second duty is to treat any prisoners and suspects in custody. Wounds from escape and suicide attempts will test your surgical skills.<br>\
-	Your third duty, when faced with strange crimes, is to serve as a scientific analyst - scanning traces and conducting autopsies.<br>\
-	Remember that although you can be armed, the combat is better left to your colleagues. Focus on the tasks only you can do."
-
-	duties = "Minimize casualties in combat situations and treat all related wounds.<br>\
-	Treat any prisoners and suspects, and thoroughly monitor their health.<br>\
-	Work with the Ranger to solve crimes through collecting forensic evidence and conducting autopsies."
+	description = "Вы высоко натренированный мед-специалист. Вы являетесь частью Черного Щита и служите Коммандеру.<br>\
+	В первую очередь - вы полевой медик. Ваша основная задача лечить бойцов на поле боя, но вы так же можете и держать оружие в руках.<br>\
+	Ваша вторая задача - это лечить заключенных в бриге. Если они попытаются сбежать и получат ранения - вы должны будете их вылечить.<br>\
+	Помните, что вы в первую очередь полевой медик, а во вторую боец."
 
 /obj/landmark/join/start/medspec
 	name = "Corpsman"
@@ -289,17 +277,14 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Trooper forms the base of the Blackshield Militia, the frontline against pirates, terrorists, and xenos.<br>\
-	You are the closest thing to a professional soldier the colony has. Employ your talents to bring an end to threats and conflict situations.<br>\
-	Tactics and teamwork are vital. You are paid to follow orders, not to think. Remember your focus on external threats - leave otherwise to Marshals.<br>\
-	When there are no standing orders, your ongoing task is to patrol and be on the lookout for threats or problems. Help the Marshals if explicitly asked. <br>\
-	Watch the main gate and perimeter. You have access to most places to help with your duties - do not abuse this."
+	description = "Труперы формируют всю мощь Черного Щита на фронту. Вы невероятно опытный солдат, с отличными навыками ведения боя.<br>\
+	Вы являетесь солдатом Черного Щита и основная ваша задача - выполнять приказы вышестоящего офицера. Вы не имеете никакого отношения к Маршалам.<br>\
+	В свободное время от работы, вы можете патрулировать колонию и изредка оказывать помощь Маршалам, если те попросят.<br>\
+	Внимательно следите за центральными воротами и за периметром вокруг колонии."
 
-	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\
-		Deal with external threats to the colony such as pirates, hostile xenos, and anything that endangers colonists.<br>\
-		Exterminate monsters, giant vermin and hostile machines.<br>\
-		Follow orders from the chain of command.<br>\
-		Obey the law. You are not above it."
+	duties = "Патрулируйте колонию и следите за безопасностью колонии.<br>\
+		Уничтожайте любых пиратов, монстров, пауков и прочих опасных существ, которые могут проникнуть на колонию<br>\
+		Исполняйте приказы командования и следуйте закону, вы не выше его."
 
 /obj/landmark/join/start/trooper
 	name = "Blackshield Trooper"
@@ -338,17 +323,10 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Marshal Officer forms the brunt of the Marshals, internally enforcing law and keeping the peace.<br>\
-	You are expected to be a problem solver who can descalate situations, reach peaceful agreements, and maintain public trust.<br>\
-	Keep your weapons holstered unless the situation demands otherwise - exercise good judgment and follow Blackshield orders.<br>\
-	When there are no standing orders, your ongoing task is to patrol the colony and be on the lookout for threats or problems. <br>\
-	Check in at departments and watch the main gate. You have access to most places to help with your duties  - do not abuse this."
-
-	duties = "Patrol the colony, provide a security presence, and look for trouble.<br>\
-		Deal with internal threats to the colony such as criminals, saboteurs, and anything that endangers colonists.<br>\
-		Ensure that people follow the law and SoP to maintain order.<br>\
-		Follow orders from the chain of command.<br>\
-		Obey the law. You are not above it."
+	description = "Маршал Офицер следит за порядком на колонии и представляет из себя обычного офицера службы безопасности.<br>\
+	Вы должны решать любые проблемы, стычки и драки экипажа колонии. Используйте свои знания закона, чтобы решать любые конфликты.<br>\
+	Вы обязаны держать свое оружие в кобуре в мирное время и выполнять любые приказы выше стоящих офицеров, в том числе офицеров Черного Щита.<br>\
+	Если вам надоело патрулировать колонию - вы можете сесть в блокпост на центральных воротах и контролировать любых выходящих. Но не забывайте во время реагировать на вызовы."
 
 /obj/landmark/join/start/officer
 	name = "Marshal Officer"
