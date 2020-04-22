@@ -31,6 +31,6 @@
 
 /obj/item/clothing/accessory/bs_silk/examine()
 	..()
-	var/s_id = silk_id != "" ? silk_id : "NOT SETTED"
+	var/s_id = silk_id != "" ? silk_id : "NOT SET"
 	to_chat(usr, "<br>On small display you can notice label that mean: \"DEVICE ID: <b>[s_id]</b>\".")
 	//to_chat(usr, "<br>It[removable ? " can be removed" : "'s locked by access: " + locking_access].")

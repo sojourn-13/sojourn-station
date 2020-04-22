@@ -80,7 +80,7 @@
 
 /obj/item/ammo_magazine/smg
 	name = "smg magazine"
-	desc = "a 32 round magazine marked for .35 Auro."
+	desc = "A 32 round magazine marked for .35 auto."
 	icon_state = "smg_l"
 	ammo_color = "-l"
 	origin_tech = list(TECH_COMBAT = 2)
@@ -407,10 +407,10 @@
 
 /obj/item/ammo_magazine/c10x24
 	name = "caseless magazine"
-	desc = "An unsual magazine, marked for 10x24mm caseles."
+	desc = "An unsual magazine, marked for 10x24mm caseless."
 	icon_state = "10x24"
 	mag_type = MAGAZINE
-	mag_well = MAG_WELL_GENERIC
+	mag_well = MAG_WELL_PULSE
 	caliber = "10x24"
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 1)
 	ammo_type = /obj/item/ammo_casing/c10x24

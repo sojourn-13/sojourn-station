@@ -86,14 +86,6 @@
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
 
-/obj/item/clothing/under/permit
-	name = "public nudity permit"
-	desc = "A clothes-free permit only issued for crew with no visible genitalia."
-	icon = 'icons/obj/card.dmi'
-	icon_state = "nudity"
-	body_parts_covered = 0
-	item_state = "nudity"
-
 /*Antagonist Spawn Gear*/
 
 /obj/item/clothing/under/rank/mercenary

@@ -177,7 +177,7 @@
 
 /obj/item/device/radio/headset/heads/merchant
 	name = "executive officer's headset"
-	desc = "The headset of the guy who knowa the price for everything."
+	desc = "The headset of the guy who knows the price for everything."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/merchant

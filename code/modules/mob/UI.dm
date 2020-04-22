@@ -49,7 +49,7 @@ TODO: LATER
 	calculate offsets based on saved in prefs
 	scaling UI
 	colorize proc for UI element
-		
+
 */
 
 /datum/interface
@@ -57,9 +57,9 @@ TODO: LATER
 	var/styleName = "ErisStyle"
 
 	var/list/HUD_element/_elements = list()		//	list of all ui elements
-	var/client/_observer	
+	var/client/_observer
 
-	var/list/storageData = list()					
+	var/list/storageData = list()
 
 /datum/interface/New(var/client/observer)
 	if(!observer || !istype(observer))
@@ -70,7 +70,7 @@ TODO: LATER
 
 	buildUI()
 	validate()
-	
+
 	. = ..()
 
 /datum/interface/Destroy()
@@ -91,20 +91,21 @@ TODO: LATER
 		iconData["color"] = _observer.prefs.UI_style_color
 		iconData["alpha"] = 80
 		iconData["is_plain"] = TRUE
-		
+
 		E.setHoveredInteraction(TRUE, iconData)
 		E.setClickedInteraction(TRUE, iconData, 2)
-		
+
 
 /datum/interface/proc/getElementByID(var/id)
-	for(var/list/HUD_element/element in _elements)
+	RETURN_TYPE(/HUD_element)
+	for(var/HUD_element/element in _elements)
 		if(element.getIdentifier() == id)
 			return element
 	error("No element found with id \"[id]\".")
 
 /datum/interface/proc/hide(var/id)
 	if (!id)
-		for(var/list/HUD_element/element in _elements)
+		for(var/HUD_element/element in _elements)
 			element.hide()
 	else
 		var/HUD_element/E = getElementByID(id)
@@ -118,7 +119,7 @@ TODO: LATER
 		error("Interface has no observer.")
 		return FALSE
 	if (!id)
-		for(var/list/HUD_element/element in _elements)
+		for(var/HUD_element/element in _elements)
 			element.show(_observer)
 	else
 		var/HUD_element/E = getElementByID(id)
@@ -189,7 +190,7 @@ TODO: LATER
 			element.setIcon(iconData)
 		else
 			error("UI element has incorrect IconData.")
-		
+
 	element.setPosition(x,y)
 
 	if(icon_overlays)

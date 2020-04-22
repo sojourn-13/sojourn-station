@@ -19,7 +19,7 @@
 /datum/event/wormholes
 	//The duration ranges from fairly long, to basically forever
 	var/min_duration = 5 MINUTES
-	var/max_duration = 3 HOURS
+	var/max_duration = 30 MINUTES
 
 	var/number_of_wormholes
 

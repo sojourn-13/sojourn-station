@@ -199,7 +199,7 @@
 	if(!recipe)
 		return
 
-	if(!"allow_multiple" in recipe)
+	if(!("allow_multiple" in recipe))
 		amount = 1
 	else
 		amount = max(amount, 1)

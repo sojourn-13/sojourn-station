@@ -1063,7 +1063,6 @@
 	if(cell.checked_use(CELLRATE * power_use))
 		used_power_this_tick += power_use
 		return 1
-	return 0
 
 /mob/living/silicon/robot/binarycheck()
 	if(is_component_functioning("comms"))
