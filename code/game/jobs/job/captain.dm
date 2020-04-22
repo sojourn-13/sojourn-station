@@ -81,16 +81,16 @@ Treat your command officers with respect, and listen to their council. Try not t
 	ideal_character_age = 35
 	minimum_character_age = 30
 
-	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow him wherever he goes.<br>\
-	Your primary, and perhaps only, responsibility is to ensure the safety of the Premier at all costs - even your own life if necessary.<br>\
-	However, you are an advisor as well as a bodyguard. Discreetly inform him of mistakes. Make sure he follows the law and remains popular.<br>\
-	You may be assigned special tasks by the Premier for whatever reason. Ensure these orders are fulfilled.<br>\
-	Do not embarass him, and especially do not harm his relations with faction leaders. You may not do much talking, but you have great impact."
+	description = "Стюард - это правая рука Премьера. Вы целиком и полностью ему лояльны и фактически - являетесь его личной охраной.<br>\
+	Ваша задача любой ценой защитить Премьера. Вы готовы умереть за премьера, это одна из ваших задач. <br>\
+	В любом случае, Вы так же являетесь и его советником. Осторожно сообщите ему об ошибках. Убедитесь, что он следует закону и все ещё получает поддержку народа.<br>\
+	Вы так же выполняете любой его приказ, не смотря на его сложность или абсурдность.<br>\
+	Не позорьте его и не портите его отношения с другими фракциями. Чаще следите за своими словами."
 
-	duties = "Act as a bodyguard, advisor, and confidant to the Premier.<br>\
-	Remain conscious of any potential threats to the safety of the Premier.<br>\
+	duties = "Отыгрывайте будто бы вы самый настоящий бодигвард Премьера.<br>\
+	Выполняйте задачи, назначенные Премьер-министром, такие как заполнение документов или переназначение должностей.<br>\
 	Perform tasks as assigned by the Premier - such as filling paperwork or reassigning roles.<br>\
-	Demonstrate true loyalty and do not let your superior down."
+	Продемонстрируй истинную преданность и не подведи своего начальника."
 
 	outfit_type = /decl/hierarchy/outfit/job/hop
 

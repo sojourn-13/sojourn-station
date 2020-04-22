@@ -38,7 +38,7 @@
 
 	if(!msg_sanitized)
 		message = sanitize(message, extra = 0)
-	message_title = html_encode(message_title)
+	message_title = sanitizeSafe(message_title)
 
 	Message(message, message_title)
 	if(do_newscast)
