@@ -9,6 +9,9 @@ SUBSYSTEM_DEF(vote)
 	var/datum/poll/active_vote = null
 	var/vote_start_time = 0
 
+/datum/controller/subsystem/vote/Initialize()
+	. = ..()
+
 /datum/controller/subsystem/vote/PreInit()
 	for(var/T in subtypesof(/datum/poll))
 		var/datum/poll/P = new T
