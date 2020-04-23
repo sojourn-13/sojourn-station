@@ -134,6 +134,7 @@
 	desc = "Heal every person who can see and hear for a small amount, even if they do not have a cruciform. Can only be done every quarter hour and requires alot of power. Using this prayer prevents other similar prayers from being used for awhile."
 	cooldown = TRUE
 	cooldown_time = 15 MINUTES
+	cooldown_category = "dhymn"
 	power = 80
 
 /datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -148,7 +149,7 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
-		set_global_cooldown()
+		set_personal_cooldown(user)
 		return TRUE
 	else
 		fail("Your cruciform sings, alone, unto the void.", user, C)
@@ -174,7 +175,7 @@
 	name = "Scrying"
 	phrase = "Ecce ego ad te et ad caelum. Scio omnes absconditis tuis. Vos can abscondere, tu es coram me: nudus."
 	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom."
-	power = 100
+	power = 80
 
 /datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 
@@ -429,6 +430,46 @@
 		log_and_message_admins("removed upgrade from [C] cruciform with asacris litany")
 
 	return TRUE
+
+/datum/ritual/targeted/cruciform/priest/upgrade_kit
+	name = "Curaverunt"
+	phrase = "Dominus manum meam pro damnato in ovile redire voluerit."
+	desc = "Request an upgrade kit to restore a vector or prime's cruciform to its devout stage."
+	power = 80
+
+/datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+	new /obj/item/weapon/coreimplant_upgrade/cruciform/priest(usr.loc)
+	set_personal_cooldown(user)
+
+/datum/ritual/cruciform/priest/initiation
+	name = "Initiation"
+	phrase = "Habe fiduciam in Domino ex toto corde tuo et ne innitaris prudentiae tuae, in omnibus viis tuis cogita illum et ipse diriget gressus tuos."
+	desc = "The second stage of granting a promotion to a disciple, upgrading them to a devout. The devout ascension kit is the first step."
+	power = 80
+
+/datum/ritual/cruciform/priest/initiation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+	var/obj/item/weapon/implant/core_implant/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
+
+	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
+		fail("Cruciform not found",user,C)
+		return FALSE
+
+
+	if(CI.get_module(CRUCIFORM_PRIEST) || CI.get_module(CRUCIFORM_INQUISITOR))
+		fail("The target is already a preacher.",user,C)
+		return FALSE
+
+	var/datum/core_module/activatable/cruciform/priest_convert/PC = CI.get_module(CRUCIFORM_PRIEST_CONVERT)
+
+	if(!PC)
+		fail("Target must have preacher upgrade inside his cruciform.",user,C)
+		return FALSE
+
+	PC.activate()
+	log_and_message_admins("promoted disciple [C] to Preacher with initiation litany")
+
+	return TRUE
+
 
 
 ///////////////////////////////////////

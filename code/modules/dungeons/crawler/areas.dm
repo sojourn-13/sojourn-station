@@ -4,3 +4,4 @@
 	has_gravity = 1
 	requires_power = 0
 	var/room_controllers = list()
+	dynamic_lighting = FALSE

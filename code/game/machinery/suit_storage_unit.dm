@@ -472,7 +472,7 @@
 
 /obj/machinery/suit_storage_unit/security
 	overlay_color = "#50649A"
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/security
+	SUIT_TYPE = /obj/item/clothing/suit/space/void/security/equipped
 
 
 /obj/machinery/suit_storage_unit/engineering
