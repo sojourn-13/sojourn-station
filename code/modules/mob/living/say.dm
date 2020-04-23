@@ -18,6 +18,16 @@ var/list/department_radio_keys = list(
 	"k" = "Prospector"
 )
 
+/mob/living/proc/dot_sanitize(message)
+  if(!message)
+    return
+
+  message = html_decode(message)
+  var/end_char = copytext(message, length(message), length(message) + 1)
+  if(!(end_char in list(".", "?", "!", "-", "~")))
+    message += "."
+
+  return html_encode(message)
 
 var/list/channel_to_radio_key = new
 /proc/get_radio_key_from_channel(var/channel)
@@ -143,6 +153,7 @@ var/list/channel_to_radio_key = new
 			message = copytext(message,3)
 
 	message = trim_left(message)
+	message = dot_sanitize(message)
 
 	//parse the language code and consume it
 	if(!speaking)
@@ -418,3 +429,4 @@ var/list/channel_to_radio_key = new
 		heard = "<span class = 'game_say'>...<i>You almost hear someone talking</i>...</span>"
 
 	to_chat(src, heard)
+
