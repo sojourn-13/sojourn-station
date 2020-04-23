@@ -10,4 +10,4 @@
 /obj/random/flora/low_chance
 	name = "low chance random flora"
 	icon_state = "nature-purple-low"
-	spawn_nothing_percentage = 83
+	spawn_nothing_percentage = 90

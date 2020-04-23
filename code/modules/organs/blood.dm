@@ -53,10 +53,9 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 /mob/living/carbon/human/proc/fixblood()
 	for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
 		if(B.id == "blood")
-			var/isling = player_is_antag_id(src.mind,ROLE_CHANGELING) ? TRUE : null
-			B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
-							"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list(), "ling" = isling)
-			B.initialize_data(get_blood_data())
+			var/data = list("donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
+							"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list())
+			B.initialize_data(data)
 
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
@@ -229,7 +228,7 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 
 	var/obj/effect/decal/cleanable/blood/drip/drop = B
 	if(istype(drop) && drips && drips.len && !large)
-		drop.add_overlay(drips)
+		drop.overlays |= drips
 		drop.drips |= drips
 
 	// If there's no data to copy, call it quits here.
