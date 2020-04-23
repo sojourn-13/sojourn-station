@@ -17,6 +17,7 @@
 	new /obj/item/clothing/suit/armor/commander/militia(src)
 	new /obj/item/clothing/under/rank/commander(src)
 	new /obj/item/clothing/under/rank/commander/formal(src)
+	new /obj/item/clothing/head/rank/mcommander(src)
 	new /obj/item/clothing/head/rank/instructor_hat(src)
 	new /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped(src)
 	new /obj/item/clothing/glasses/ballistic(src)
