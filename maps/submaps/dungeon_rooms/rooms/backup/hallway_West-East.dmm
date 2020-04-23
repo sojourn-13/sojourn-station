@@ -3,54 +3,48 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "b" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
+/obj/crawler/crawler_wallbreaker,
+/turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "c" = (
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/grass,
 /area/crawler)
 "d" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
+/obj/structure/railing/grey,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "e" = (
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"f" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
-"g" = (
 /turf/simulated/wall/untinted/onestar,
 /area/crawler)
+"f" = (
+/obj/crawler/crawler_wallbreaker/vertical,
+/turf/simulated/wall/untinted/onestar_reinforced,
+/area/crawler)
+"g" = (
+/obj/machinery/light/floor,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
 "h" = (
-/obj/random/mob/roomba,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "i" = (
 /obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
-"j" = (
-/obj/crawler/crawler_wallbreaker/vertical,
-/turf/simulated/wall/untinted/onestar_reinforced,
-/area/crawler)
-"k" = (
-/obj/crawler/crawler_wallbreaker,
-/turf/simulated/wall/untinted/onestar_reinforced,
+"l" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 
 (1,1,1) = {"
 a
 a
 a
-a
-a
-j
+f
+f
+f
 a
 a
 a
@@ -58,132 +52,132 @@ a
 (2,1,1) = {"
 a
 c
-c
-c
+d
 h
-c
-c
+h
+h
+l
 c
 a
 "}
 (3,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+d
+h
+h
+h
+l
 c
 a
 "}
 (4,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+e
+g
+h
+g
+e
 c
 a
 "}
 (5,1,1) = {"
 a
+c
 d
-g
-d
-g
-d
-g
-d
-k
+h
+i
+h
+l
+c
+b
 "}
 (6,1,1) = {"
-k
-e
 b
-e
+c
+d
+h
+h
+h
+l
+c
 b
-e
-b
-e
-k
 "}
 (7,1,1) = {"
-k
+b
+c
 e
+g
+h
+g
 e
-e
-i
-e
-e
-e
-k
+c
+b
 "}
 (8,1,1) = {"
-k
-e
 b
-e
+c
+d
+h
+h
+h
+l
+c
 b
-e
-b
-e
-k
 "}
 (9,1,1) = {"
 a
-f
-g
-f
-g
-f
-g
-f
-k
+c
+d
+h
+i
+h
+l
+c
+b
 "}
 (10,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+e
+g
+h
+g
+e
 c
 a
 "}
 (11,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+d
+h
+h
+h
+l
 c
 a
 "}
 (12,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+d
+h
+h
+h
+l
 c
 a
 "}
 (13,1,1) = {"
 a
 a
-j
-j
-j
-j
-j
+f
+f
+f
+f
+f
 a
 a
 "}

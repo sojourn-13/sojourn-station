@@ -55,7 +55,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/jager
 	preloaded_reagents = list("protein" = 6, "blattedin" = 6, "gewaltine" = 8, "diplopterum" = 2)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/kraftwerk 
+/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/kraftwerk
 	preloaded_reagents = list("protein" = 6, "blattedin" = 6, "gewaltine" = 6, "uncap nanites" = 2, "nanites" = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/spider
@@ -78,7 +78,7 @@
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
-	
+
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8)
 
@@ -99,6 +99,15 @@
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("protein" = 12, "hyperzine" = 5)
+
+/obj/item/weapon/reagent_containers/food/snacks/meat/primal
+	name = "meat"
+	desc = "A massive slab of meat containing a metric ton of protein and chemicals natural to a render."
+	icon_state = "bearmeat"
+	filling_color = "#DB0000"
+	bitesize = 6
+	center_of_mass = list("x"=16, "y"=10)
+	preloaded_reagents = list("protein" = 25, "tramadol" = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/xenomeat
 	name = "meat"

@@ -47,8 +47,17 @@
 /obj/machinery/smartfridge/kitchen
 	name = "\improper Agro-Club Fridge"
 	desc = "The panel says it won't allow anyone without access to the kitchen or hydroponics."
-	req_one_access = list(access_hydroponics,access_kitchen)
+	req_one_access = list(access_hydroponics, access_kitchen)
 
+/obj/machinery/smartfridge/kitchen/church
+	name = "\improper Church Fridge"
+	desc = "The panel says it won't allow anyone without access to the church."
+	req_one_access = list(access_nt_disciple)
+
+/obj/machinery/smartfridge/kitchen/church/public
+	name = "\improper Public Church Fridge"
+	desc = "The panel says anyone may take what they like."
+	req_one_access = null
 
 
 /*******************

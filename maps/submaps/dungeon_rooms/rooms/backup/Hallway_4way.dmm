@@ -7,7 +7,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "c" = (
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/grass,
 /area/crawler)
 "d" = (
 /obj/structure/railing/grey{
@@ -25,13 +25,10 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "g" = (
-/turf/simulated/wall/untinted/onestar,
+/obj/structure/railing/grey,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "h" = (
-/obj/random/mob/roomba,
-/turf/simulated/floor/asteroid/grass,
-/area/crawler)
-"i" = (
 /obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
@@ -39,7 +36,13 @@
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"k" = (
+"o" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"p" = (
 /obj/crawler/crawler_wallbreaker,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
@@ -48,8 +51,8 @@
 a
 a
 a
-a
-a
+j
+j
 j
 a
 a
@@ -58,121 +61,121 @@ a
 (2,1,1) = {"
 a
 c
-c
-c
-h
-c
-c
+g
+e
+e
+e
+o
 c
 a
 "}
 (3,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+g
+e
+e
+e
+o
 c
 a
 "}
 (4,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+g
+e
+h
+e
+o
 c
 a
 "}
 (5,1,1) = {"
 a
 d
-g
+a
+b
+e
+b
+a
 d
-g
-d
-g
-d
-k
+p
 "}
 (6,1,1) = {"
-k
+p
 e
 b
 e
-b
+h
 e
 b
 e
-k
+p
 "}
 (7,1,1) = {"
-k
+p
 e
 e
 e
-i
 e
 e
 e
-k
+e
+p
 "}
 (8,1,1) = {"
-k
+p
 e
 b
 e
-b
+e
 e
 b
 e
-k
+p
 "}
 (9,1,1) = {"
 a
 f
-g
+a
+b
+e
+b
+a
 f
-g
-f
-g
-f
-k
+p
 "}
 (10,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+g
+e
+e
+e
+o
 c
 a
 "}
 (11,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+g
+e
+h
+e
+o
 c
 a
 "}
 (12,1,1) = {"
 a
 c
-c
-c
-c
-c
-c
+g
+e
+e
+e
+o
 c
 a
 "}
