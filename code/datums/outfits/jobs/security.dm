@@ -54,7 +54,7 @@
 	name = OUTFIT_JOB_NAME("Marshal - Ranger")
 	head = /obj/item/clothing/head/rank/inspector
 	uniform = /obj/item/clothing/under/rank/inspector
-	suit = /obj/item/clothing/suit/storage/detective/ironhammer
+	suit = /obj/item/clothing/suit/storage/rank/insp_trench
 	head = /obj/item/clothing/head/fedora/brown
 	gloves = /obj/item/clothing/gloves/stungloves
 	l_pocket = /obj/item/device/flash

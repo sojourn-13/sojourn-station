@@ -126,6 +126,14 @@
 	name = "magazine (.40 Magnum hollow point)"
 	build_path = /obj/item/ammo_magazine/magnum
 
+/datum/design/autolathe/ammo/a50/rubber
+	name = "magazine (.50 kurtz rubber)"
+	build_path = /obj/item/ammo_magazine/a50/rubber
+
+/datum/design/autolathe/ammo/a50
+	name = "magazine (.50 kurtz hollow point)"
+	build_path = /obj/item/ammo_magazine/a50
+
 //.40 boxes
 /datum/design/autolathe/ammo/magnum_ammobox
 	name = "ammunition box (.40 Magnum)"

@@ -352,8 +352,8 @@
 
 
 
-	if(config.wikiurl)
-		job_desc += "<a href='?src=\ref[src];job_info_selected_rank_wiki=[job_info_selected_rank]'>Open wiki page in browser</a>"
+//	if(config.wikiurl)
+//		job_desc += "<a href='?src=\ref[src];job_info_selected_rank_wiki=[job_info_selected_rank]'>Open wiki page in browser</a>"
 	var/description = job.get_description_blurb()
 	/*if(job.required_education)
 	description = "[description ? "[description]\n\n" : ""]"*/

@@ -797,7 +797,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	var/mob/living/carbon/C = M
 	if(istype(C) && C.metabolism_effects.addiction_list.len)
 		if(prob(5 * effect_multiplier + dose))
-			var/list/datum/reagent/R = pick(C.metabolism_effects.addiction_list)
+			var/datum/reagent/R = pick(C.metabolism_effects.addiction_list)
 			to_chat(C, SPAN_NOTICE("You dont crave for [R.name] anymore."))
 			C.metabolism_effects.addiction_list.Remove(R)
 			qdel(R)

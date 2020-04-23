@@ -2,7 +2,7 @@
 	title = "Prime"
 	flag = CHAPLAIN
 	department = DEPARTMENT_CHURCH
-	department_flag = CHURCH
+	department_flag = CHURCH | COMMAND
 	faction = MAP_FACTION
 	head_position = 1
 	total_positions = 1

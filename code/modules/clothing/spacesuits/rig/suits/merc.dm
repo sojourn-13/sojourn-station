@@ -32,7 +32,8 @@
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/chem_dispenser/combat,
-		/obj/item/rig_module/fabricator/energy_net
+		/obj/item/rig_module/fabricator/energy_net,
+		/obj/item/rig_module/storage
 		)
 
 //Has most of the modules removed

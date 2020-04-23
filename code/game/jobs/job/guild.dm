@@ -16,7 +16,7 @@
 	access = list(
 		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_merchant, access_mining,
 		access_heads, access_mining_station, access_RC_announce, access_keycard_auth, access_sec_doors,
-		access_eva, access_external_airlocks
+		access_eva, access_external_airlocks, access_hydroponics, access_bar, access_kitchen, access_theatre
 	)
 	ideal_character_age = 40
 	minimum_character_age = 30

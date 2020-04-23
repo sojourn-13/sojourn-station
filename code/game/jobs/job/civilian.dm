@@ -10,7 +10,7 @@
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 15, LANGUAGE_JIVE = 80)
-	access = list(access_bar, access_kitchen)
+	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
 	initial_balance = 3000
 	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks
 	stat_modifiers = list(
@@ -44,7 +44,7 @@
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	also_known_languages = list(LANGUAGE_CYRILLIC = 10, LANGUAGE_JIVE = 60)
-	access = list(access_bar, access_kitchen)
+	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
 	initial_balance = 750
 	wage = WAGE_LABOUR_DUMB //They should get paid by making food.
 	stat_modifiers = list(
@@ -80,7 +80,7 @@
 	selection_color = "#dddddd"
 	//alt_titles = list("Hydroponicist")
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
-	access = list(access_hydroponics, access_morgue, access_crematorium, access_maint_tunnels)
+	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
 	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
 
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
@@ -159,7 +159,7 @@
 		STAT_BIO = 10,
 	)
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
-	description = "The lowly Janitor, terribly paid and rarely respected, nevertheless provides a valuable service.<br>\
+	description = "The lowly Janitor, well paid but rarely respected, nevertheless provides a valuable service.<br>\
 	You will trundle around the colony, armed with your trusty janicart full of cleaning supplies, disposing of trash and pests.<br>\
 	Some minor maintenance also falls within your duties. Fix lights, correct broken vendors, replace floor tiles - ease the guild burden.<br>\
 	Although your wage is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."

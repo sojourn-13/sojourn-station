@@ -65,12 +65,6 @@
 	slot = slot_wear_suit
 	sort_category = "Xenowear"
 
-/datum/gear/xenowear/nuditypermit
-	display_name = "nudity permit"
-	path = /obj/item/clothing/under/permit
-	slot = slot_w_uniform
-	sort_category = "Xenowear"
-
 /datum/gear/xenowear/roughspun
 	display_name = "roughspun robes"
 	path = /obj/item/clothing/suit/lizard/robe

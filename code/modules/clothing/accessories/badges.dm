@@ -80,7 +80,6 @@
 	else
 		to_chat(user, "[src] rejects your insufficient access rights.")
 	return
-	..()
 
 /obj/item/weapon/storage/box/holobadge
 	name = "holobadge box"

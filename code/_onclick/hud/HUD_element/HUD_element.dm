@@ -1,7 +1,6 @@
 /*
 all vars and procs starting with _ are meant to be used only internally
 see external_procs.dm for usable procs and documentation on how to use them
-
 each element can only be seen by 1 client
 element identifiers are used to manage different hud parts for clients, f.e. there can be only one "storage" identifier element displayed for a client
 */
@@ -51,7 +50,7 @@ element identifiers are used to manage different hud parts for clients, f.e. the
 	var/_hideParentOnHide = FALSE
 	var/_passClickToParent = FALSE
 
-	var/proc/_clickProc //called when element is clicked
+	var/_clickProc //called when element is clicked
 	var/_holder	//object that used with called proc
 	var/list/_procArguments	//arguments that can be passed to proc
 
@@ -90,11 +89,12 @@ element identifiers are used to manage different hud parts for clients, f.e. the
 	var/list/HUD_element/elements = getElements()
 	for(var/HUD_element/E in elements)
 		elements -= E
-			qdel(E)
+		qdel(E)
 
 	var/HUD_element/parent = getParent()
 	if (parent)
-		parent.getElements().Remove(src)
+		var/list/HUD_element/elementRemove = parent.getElements()
+		elementRemove.Remove(src)
 		_setParent()
 
 	for(var/name in _iconsBuffer)
@@ -133,4 +133,3 @@ element identifiers are used to manage different hud parts for clients, f.e. the
 
 /HUD_element/set_plane(var/np)
 	plane = np
-

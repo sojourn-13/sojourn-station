@@ -403,7 +403,7 @@ var/global/list/default_medbay_channels = list(
 			R.receive_signal(signal)
 
 		// Receiving code can be located in Telecommunications.dm
-		if(signal.data["done"] && position.z in signal.data["level"])
+		if(signal.data["done"] && (position.z in signal.data["level"]))
 			return TRUE //Huzzah, sent via subspace
 
 
@@ -462,7 +462,7 @@ var/global/list/default_medbay_channels = list(
 
 	sleep(rand(10,25)) // wait a little...
 
-	if(signal.data["done"] && position.z in signal.data["level"])
+	if(signal.data["done"] && (position.z in signal.data["level"]))
 		if(adhoc_fallback)
 			to_chat(loc,"<span class='notice'>\The [src] pings as it reestablishes subspace communications.</span>")
 			subspace_transmission = TRUE
@@ -594,7 +594,7 @@ var/global/list/default_medbay_channels = list(
 /obj/item/device/radio/borg/list_channels(var/mob/user)
 	return list_secure_channels(user)
 
-/obj/item/device/radio/borg/talk_into()
+/obj/item/device/radio/borg/talk_into(mob/living/M, message, channel, var/verb = "says", var/datum/language/speaking = null, var/speech_volume)
 	. = ..()
 	if (isrobot(src.loc))
 		var/mob/living/silicon/robot/R = src.loc
