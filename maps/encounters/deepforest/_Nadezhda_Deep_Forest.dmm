@@ -9,6 +9,7 @@
 "ai" = (/obj/structure/closet/onestar/tier3/medical,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "aj" = (/obj/structure/closet/onestar/tier3/special,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "ak" = (/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
+"al" = (/obj/item/weapon/material/shard,/obj/structure/salvageable/implant_container_os,/turf/simulated/floor/tiled/white,/area/nadezhda/maintenance/outside/zoo)
 "am" = (/obj/machinery/power/apc{cell_type = /obj/item/weapon/cell/large/moebius/nuclear; dir = 1; name = "North APC"; pixel_y = 28},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/maintenance/outside/smuggler_zone_u)
 "an" = (/obj/structure/closet/onestar/tier2/medical,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "ao" = (/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
@@ -146,6 +147,7 @@
 "cQ" = (/obj/random/cluster/spiders/low_chance,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "cR" = (/obj/random/tank,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
 "cS" = (/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/wood/wild5,/area/nadezhda/maintenance/outside/smuggler_zone)
+"cT" = (/obj/item/weapon/material/shard,/obj/structure/salvageable/data_os,/turf/simulated/floor/tiled/white,/area/nadezhda/maintenance/outside/zoo)
 "cU" = (/obj/machinery/light/small{dir = 4; pixel_y = 0},/turf/simulated/floor/tiled/dark,/area/nadezhda/maintenance/outside/smuggler_zone_u)
 "cV" = (/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/maintenance/outside/smuggler_zone)
 "cW" = (/obj/machinery/porta_turret/prepper,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/maintenance/outside/smuggler_zone_u)
@@ -393,6 +395,7 @@
 "hE" = (/obj/structure/flora/big/bush1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
 "hF" = (/obj/structure/table/standard,/obj/item/weapon/oddity/common/old_radio,/turf/simulated/floor/tiled,/area/nadezhda/maintenance/outside/zoo)
 "hG" = (/obj/effect/decal/cleanable/dirt,/obj/structure/bed/chair{dir = 1},/turf/simulated/floor/tiled,/area/nadezhda/maintenance/outside/zoo)
+"hH" = (/obj/structure/salvageable/computer_os,/turf/simulated/floor/tiled/white,/area/nadezhda/maintenance/outside/zoo)
 "hI" = (/obj/random/closet_wardrobe,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/maintenance/outside/prepper)
 "hJ" = (/obj/random/scrap/moderate_weighted/low_chance,/turf/simulated/floor/tiled/dark,/area/nadezhda/maintenance/outside/prepper)
 "hK" = (/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/maintenance/outside/prepper)
@@ -698,7 +701,7 @@
 "ny" = (/obj/machinery/door/airlock/freezer,/turf/simulated/floor/tiled/techmaint_cargo,/area/nadezhda/maintenance/outside/zoo)
 "nz" = (/obj/structure/table/standard,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/maintenance/outside/zoo)
 "nA" = (/obj/item/weapon/material/shard,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/maintenance/outside/zoo)
-"nB" = (/obj/item/weapon/material/shard,/obj/item/weapon/material/shard,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/maintenance/outside/zoo)
+"nB" = (/obj/item/weapon/material/shard,/obj/item/weapon/material/shard,/obj/effect/decal/cleanable/dirt,/obj/structure/salvageable/server_os,/turf/simulated/floor/tiled/white,/area/nadezhda/maintenance/outside/zoo)
 "nC" = (/obj/structure/flora/small/bushb1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
 "nD" = (/obj/machinery/door/window/southright,/obj/machinery/door/window/northleft,/turf/simulated/floor/tiled/techmaint_cargo,/area/nadezhda/maintenance/outside/zoo)
 "nE" = (/turf/simulated/wall/r_wall,/area/nadezhda/maintenance/outside/zoo)
@@ -814,6 +817,7 @@
 "pK" = (/obj/structure/table/rack/shelf,/obj/random/tool/advanced/onestar/low_chance,/obj/random/common_oddities/low_chance,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "pL" = (/obj/structure/flora/small/bushb1,/obj/structure/flora/small/bushb1,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
 "pM" = (/obj/structure/cyberplant,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
+"pN" = (/obj/effect/decal/cleanable/dirt,/obj/structure/salvageable/machine_os,/turf/simulated/floor/tiled/white,/area/nadezhda/maintenance/outside/zoo)
 "pO" = (/obj/structure/table/rack/shelf,/obj/random/tool/advanced/onestar/low_chance,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "pP" = (/obj/structure/bed/chair/custom/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "pQ" = (/obj/machinery/light/floor,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
@@ -2092,13 +2096,13 @@ fFfEfEBLBQAeAeAeAehWhWBLBLBLBLBLBLBLBLBLBLBLBLBLBLfEfEfEfEfEfEfEfEgfgfgfgfgfgfgf
 fFfEfEAeAeAeAeAehWhWhWhWhWBLBLBLhWhWhWBLBLBLBLhAhAgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgdvOzOgdyjgdBqililzjhkhkhkhkBDBaBailililililBahkzbhzililililBazihkhkhkhkBGilztilhkhkhkhkhkhkvUililililvThkhkhkhAhWhWAavJBUhWuRhWhWhWhAhAhAhAAdCbAdCdysystatailttilCehkhkhkhkhktaAcilhlhkhkhkhkhkhkhkhkhkjrililililtatailhkhkfFfFgtmjmjmzmjmjgtmmmmmmmmmmgtmqmqmAmomqgtgtgtmBlxlxkngtknmCmsmDmEmEmEmEgtfFfFfFfFfFfF
 fFfEfEBLBLBLAeAehWhWhWhWhWhWhWhWhWhWhWBLBLBLhAhAhAgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfzVgdgdzOzOzZzZvLilililhkvmhkhkhkzPBRBailililBaBahkhkhkhkililvRBahkhkhkhkhkyNililysBxhkhkhkhkhkvUilililhChlhkhkhkCfirCghWhWhWhWhWhWhWChhWhAhAhAhAhAAdAdhkyrBKCiysilyKCjyNjrhlhkhlililhkhkhkhkhkhkhkhkhkhkAQysAwililtailtailhkhkfFfFgtmFmjmjmjmjgtmmmmmmmmmmgtmomqmomomqgtgtgtmGknlxkngtknlxlxwElWmHmImJgtfFfFfFfFfFfF
 fFfEfEBLBLBLAeAehWhWhWvJhWhWhWhWvJhWhWClBLBLhAhAhAgfgfgfgfgfgfgfgfgdvCvCgfgfgfgfgfgfgfgfgfgfgfgdgdAhzOgfgfzZztililAbysyshkhkhkzPysilBaBaArilhzhkhkhkilililtthkhkhkhkhkjrysililCmhkhkhkhkhkhkilhzhkhlhkhkhkBFhWCfhWhWhWhWhWzLhWhWhWhWhWhAhAhAhAhAhAhlhlhBhCCnCoiltailvRililililhkhkhkhkhkhkhkhkhkhkjrysilttililtaililBChkhkfFfFgtmKmLmMibmNgtibmKkemLmKgtibibmOibibgtgtgtmPknmdlxkelxlxlxlxmQmRmSmTgtfFfFfFfFfFfF
-fFfEfEBLBLBLBLAehWhWhWhWhWhWhWhWhWhWhWClCpBLhAhAhAhAhAhAhAhAhWhWCrCsCrhWhWCtCthWhAhAhAhAhAgfyCgdklyEAhgfgfgfhkyKilililiEjrhkhkAihkCuBaBaililzbhkhkhkilttiltthkhkhkhkhkzjysilCvilCwArhkhkhkililhkhkhkhkhkhkAOhWvJhWhWhWhWCxCxvJhWhWhWhWhWhAhAhAhAhAhkhkhBCyhBjrCotaCzActaCAhkhkhzhkhkhkhkhkhkhkhkhkhkiltailzkCBtailBZilhkhkfFfFgtknlxlxmUmVmUknknknknmWlxmUknknmUmUmUmUknknknlxlxmXlxlxmYknknmImemZgtfFfFfFfFfFfF
+fFfEfEBLBLBLBLAehWhWhWhWhWhWhWhWhWhWhWClCpBLhAhAhAhAhAhAhAhAhWhWCrCsCrhWhWCtCthWhAhAhAhAhAgfyCgdklyEAhgfgfgfhkyKilililiEjrhkhkAihkCuBaBaililzbhkhkhkilttiltthkhkhkhkhkzjysilCvilCwArhkhkhkililhkhkhkhkhkhkAOhWvJhWhWhWhWCxCxvJhWhWhWhWhWhAhAhAhAhAhkhkhBCyhBjrCotaCzActaCAhkhkhzhkhkhkhkhkhkhkhkhkhkiltailzkCBtailBZilhkhkfFfFgtknlxlxmUmValknknknknmWlxcThHknmUmUmUmUknknknlxlxmXlxlxmYknknmImemZgtfFfFfFfFfFfF
 fFfEfEBLBLBLBLBLhWhWhWhWhWhWhWhWhWhWhWhWCChACCCCCDCChAhACEClhWAnCrCFCrCFCGCHAnvMhWhAhAhAhAgfAhgdgdgdgfgfgfgfhkhkilililttCIhkhkhkhkhkCJBailhkhkhkzaBCililililhkhkhkhkhkvUCKztilBaCLCmhkhkhkililhkhkhkhkhkhWhWhWhWhWhWCxhWCxhWhWhWCMCNCxCxhWAIhAhAhAhkhkhkhkhkhlBBysililtaActailhkhkhkhkhkhkhkhkhkhkhkzktatailtaofilililBFhkfFfFgtknknknknknknlxknlxknlxlxlxknknknlxknlxmdlxlxlxkngtmtnananbncndknnegtfFfFfFfFfFfF
 fFfEfEBLBLBLBLBLBLBLhWhWhWhWhWhWhWhWhWhWhWClhWClClhWhWCtCOCPChCFAnCQCRCSAnCTCFCUCrhWhAhAhAgfyZvOgdgdgdgfgfgfhkhkhkilililysCWhkhkhkAWiEBailhkhkhkhkBZililililhkhkhkhkhkhkyNCYttBailyshkhkhkBFilhYhkhkhkhkhWhWzLhWhWCxCZCxDahWhWhWCxhWCxDbhWhWDdDehAhkhkhkhkhkhkhkhlhkhmsPilililhkhkhkhkhkhkhkhkhkhkhkililtattililililhkhkhkfFfFgtknknnfngngnglxknngngngnfknknnfnfngnglxlxlxmdlxnhgtgtgtgtgtgtgtgtgtgtfFfFfFfFfFfF
 fFfEfEBLBLBLBLBLhAhACChWhWhWhWvJhWhWhWDfhWhWhWvJhWhWDgCtCtCtCtCtDhCtCtDiDiDiAnDjCUDkCrhAhAgfgfzOgdgdgdgdyZgfhkhkhkvUzbililyshkhkhkhBiEilhzhkhkhkhkilililililyKhkhkhkhkhkhkyNililzttthkhkhkhkiEiEBbhkhkhkhWhWhWhWhWhWCxhWDahWDaDlhWhWhWCxCxwXhWCxCxhkhkhkhkhkhkhkhkhkhmilvRilDnhkjrhkhkhkhkhkhkhkhkhkililtatailililAJhkhkhkfFfFgtnjxSnknlnlnmknknnnnlnlnoknlxnlnpnlnlknlxlxlxlxkngtnqnqnqnrnsntgtfEfEfFfFfFfFfFfF
 fFfEfEBLBLBLBLBLhAhACCCCCCClhWhWhWClDohACChWhWhWClClhWhWhWDhhWhWCghWhWhWhWCtCtCtCtCFCrDphAgfgfzOvOgdgdjTgdyZhkhkhkhkhZililysjrhkhkhkiEilhkhkhkhkhkilililililttjrhkhkhkhkhkhkilBaililhkhkhkhkzRiEiEilhkhzhWhWhWBUhWhWhWhWvJhWhWDlvJhWhWhWDlDlhWhWhWDqhmhkhkhkhkhkhkhkhmtaililysysjrhkhkhkhkhkhkhkhkhzililililililililhkhkhkfFfFgtknknnfnunfnfknknnfnfnfnfknlxnfnfnfnfknknlxlxknkngtnvnvnwnsnsntgtfEfEfFfFfFfFfFfF
 fFfEfEBLBLBLBLBLhAhAhAhACCCCClDrCCDsDthACCCChWhWClhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWAnCtCtDphAgfgfyZvOgdgdgdgdgfhkhkhkhkhkilililDuhkhkhBililhzhkhkhkvmililyKilililysilhkhkhkhkhkhkBaililhkhkhkhkzPiEilililAbhWvJhWDlDlDahWwXhWhWDlhWhWhWhWvJvJDlDlhWhWhWhWAehkhkhkhkhkhkDvililhzzpysysilililttysysysDwililililililBCililhkhkhkfFfFgtknknknlxlxlxlxlxknknknknlxmdlxknknknlxknlxknlxlxnynsnvnsnsnsnzgtfEfEfFfFfFfFfFfF
-fFfEfEBLBLBLBLBLhAhAhAhAhAhACCCCDtDthAhAhAhAhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWCtDyDtgfgfgfzOgdFVklgdzVhkhkhkhkhkilililhYhkhkhkilililhkhkhkhkililililAJilysililhkhkhkhkhkilBailhkhkhkzPzPiEDzilhkzPDACxhWhWDlhWhWhWhWDlDlDBzLhWhWhWhWhWDlhWhWhWhWChvUhkhkvmtatahmilvUhkhkhkjrjrvmhkzpDCzphkhkAihzililBmiltaByhkhkhkhkfFfFgtmUmUknlxknlxlxknlxnAlxnBlxlxlxlxnAlxnAknlxlxlxkngtgtgtgtgtgtgtgtfEfEfFfFfFfFfFfF
+fFfEfEBLBLBLBLBLhAhAhAhAhAhACCCCDtDthAhAhAhAhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWCtDyDtgfgfgfzOgdFVklgdzVhkhkhkhkhkilililhYhkhkhkilililhkhkhkhkililililAJilysililhkhkhkhkhkilBailhkhkhkzPzPiEDzilhkzPDACxhWhWDlhWhWhWhWDlDlDBzLhWhWhWhWhWDlhWhWhWhWChvUhkhkvmtatahmilvUhkhkhkjrjrvmhkzpDCzphkhkAihzililBmiltaByhkhkhkhkfFfFgtmUmUknlxknlxlxknlxnAlxnBpNlxlxlxnAlxnAknlxlxlxkngtgtgtgtgtgtgtgtfEfEfFfFfFfFfFfF
 fFfEhwhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhAhAhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWvJhWhWhWCtDDAhgfgfgfATgdgdgdgdhZhkhkhkhkilililiEhYhZhkilililhkhkhkhkililttililililysCahChlhkhkhlilililhzhkhkhYiEiEAbhzhkhkhADevJCxhWDlhWCxhWhWhWhWhWhWCxhWhWhWhWDlhWhWhWhWilhkhkiltahmhmvUvUhkhkhkhkhkhkjrjrysjrhkhkAiAiBytatatataAihkhkhkhkfFfFgtmKmLnDmKmKgtibibkemLmLgtmKmLkeibmLgtgtgtlxlxknknnEnEnEnEnEnEnEnEfEfEfFfFfFfFfFfF
 fFfEhwhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhAhAzJhWhWhWhWvJhWhWhWhWhWhWhWhWhWhWEWhWhWhWhWhWDBAhgfgfyCvLCkgdgdgdvUhkhkhkhkhzBattilDEvyDGililttvmhkhkvmilililililililiEysCmhChlDHysilililililililiEzPzPhkhkhkhkhkDtCxhWhWhWhWhWhWhWhWhWCxCxhWCxhWvJhWhWhWhWhWilililAcililhzhkhkhkhkhkhkysDIysysDJhkhkhkhkhkhktatailAohkhkyvhkhkfFfFgtmmmmmmmmmmgtnFnFnGnGnGgtnHnHnHnHnHgtgtgtlxlxknnEnEnEnEnEnEnEnEnEnEfEfFfFfFfFfFfF
 fFfEhwhkhkhkhkhkhkhkhkhkhfhfAEhfzPahzPhkhAhADthWhWhWhWhWhWhWhWhWhWhWhWvJhWhWhWhWhWhWhWhWDBgfgfgfgfyEvLgdgdgdhkhkhkhkhkhBBaBaililililililililhZhkzjilttAoililyKililvRiEysDKysysilililhkhzhkhYzPzPhkhkhkhkhkhkhADeCxhWhWhWhWhWvJhWDBCxDBCxhWhWhWhWhWBVAIAIvUililDLzszshkhkhkhkhkhkysyshkhkhkhkhkhkhkhkhkhktailAoAohkhkhkhkhkfFfFgtmmmmnImmmmgtnFnFnFnJnGgtnHnKnHnLnKgtgtgtnjknknnEnEnMnNnNnNnOnOnEnEfEfFfFfFfFfFfF
