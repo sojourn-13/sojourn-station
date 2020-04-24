@@ -595,6 +595,7 @@
 #include "code\game\jobs\job\guild.dm"
 #include "code\game\jobs\job\job.dm"
 #include "code\game\jobs\job\medical.dm"
+#include "code\game\jobs\job\nonstation.dm"
 #include "code\game\jobs\job\offduty.dm"
 #include "code\game\jobs\job\prospector.dm"
 #include "code\game\jobs\job\science.dm"
