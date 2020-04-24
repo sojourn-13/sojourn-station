@@ -4,7 +4,7 @@
 //////////////////////////////////////////////
 
 /datum/poll/restart
-	name = "End Round"
+	name = "Restart"
 	question = "End Shift?"
 	time = 60
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
@@ -29,11 +29,11 @@
 
 
 /datum/vote_choice/restart
-	text = "End Shift"
+	text = "RESTART"
 
 /datum/vote_choice/restart/on_win()
-	to_chat(world, "<b><font size='3px'>The colony intercomm announces todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.<b>")
-	sleep(15 MINUTES)
+	to_chat(world, "<b><font size='3px'>The colony intercomm announces todays shift will be ending in 1 minutes. Please finish up all tasks and return department equipment.<b>")
+	sleep(1 MINUTES)
 	to_chat(world, "<b>Restarting world due to shift end...<b>")
 	sleep(50)
 	log_game("Rebooting due to restart vote")
@@ -167,8 +167,8 @@
 	Evacuate Ship
 **********************/
 /datum/poll/evac
-	name = "Evacuate Colony"
-	question = "Do you want to call evacuation and restart the round?"
+	name = "END SHIFT"
+	question = "Do you want to end shift and restart the round?"
 	time = 120
 	minimum_win_percentage = 0.6
 	cooldown = 20 MINUTES
@@ -235,13 +235,13 @@
 #undef MINIMUM_VOTE_LIFETIME
 
 /datum/vote_choice/evac
-	text = "Abandon ship!"
+	text = "END SHIFT!!"
 
 /datum/vote_choice/evac/on_win()
 	evacuation_controller.call_evacuation(null, TRUE, TRUE, FALSE, TRUE)
 
 /datum/vote_choice/noevac
-	text = "Stay aboard"
+	text = "WORK!"
 
 
 

@@ -16,9 +16,9 @@ var/datum/evacuation_controller/evacuation_controller
 	var/auto_recall_time
 	var/emergency_evacuation
 
-	var/evac_prep_delay =   10 MINUTES
-	var/evac_launch_delay =  3 MINUTES
-	var/evac_transit_delay = 2 MINUTES
+	var/evac_prep_delay =   3 MINUTES
+	var/evac_launch_delay =  1 MINUTES
+	var/evac_transit_delay = 1 MINUTES
 
 	var/autotransfer_prep_additional_delay = 0 MINUTES
 	var/emergency_prep_additional_delay = 0 MINUTES
@@ -129,7 +129,7 @@ var/datum/evacuation_controller/evacuation_controller
 	else
 		priority_announcement.Announce(replacetext(replacetext(maps_data.shuttle_docked_message, "%dock_name%", "[dock_name]"),  "%ETD%", "[estimated_time] minute\s"))
 	if(config.announce_shuttle_dock_to_irc)
-		send2mainirc("The shuttle has docked with the station. It will depart in approximately [estimated_time] minute\s.")
+		send2mainirc("Скоро конец смены, завершите все свои дела! До конца смены осталось [estimated_time] минут..")
 
 /datum/evacuation_controller/proc/launch_evacuation()
 
