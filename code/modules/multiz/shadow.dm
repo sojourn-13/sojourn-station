@@ -4,7 +4,6 @@
 	var/mob/shadow/shadow
 
 /mob/shadow
-	plane = OPENSPACE_PLANE
 	name = "shadow"
 	desc = "Z-level shadow"
 	anchored = 1
