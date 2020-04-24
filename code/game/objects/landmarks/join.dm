@@ -23,7 +23,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	name = "late"
 	icon_state = "player-blue-cluster"
 	join_tag = ""
-	var/message = "has completed cryogenic revival"
+	var/message
 	var/restrict_job = null
 	var/disallow_job = null
 
@@ -38,7 +38,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	join_tag = "aft_late_cryo"
 	message = "has completed cryogenic revival"
 	spawn_datum_type = /datum/spawnpoint/cryo
-	disallow_job = list("Robot")
+	disallow_job = list("Robot", "Aborigine")
 
 /obj/landmark/join/late/cryo/starboard
 	name = "Starboard Cryogenic Storage"
@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	join_tag = "starboard_late_cryo"
 	message = "has completed cryogenic revival"
 	spawn_datum_type = /datum/spawnpoint/cryo/starboard
-	disallow_job = list("Robot")
+	disallow_job = list("Robot", "Aborigine")
 
 /obj/landmark/join/late/dormitory
 	name = "Dormitory"
@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	join_tag = "late_dormitory"
 	message = "has awoken in the dormitory"
 	spawn_datum_type = /datum/spawnpoint/dormitory
-	disallow_job = list("Robot")
+	disallow_job = list("Robot", "Aborigine")
 
 /obj/landmark/join/late/cyborg
 	name = "Cyborg Storage"
@@ -67,6 +67,12 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	name = "Observer"
 	icon_state = "player-grey-cluster"
 	join_tag = /mob/observer
+
+/obj/landmark/join/late/aborigine
+	name = "Aborigine"
+	icon_state = "player-grey"
+	join_tag = /datum/job/aborigine
+	restrict_job = list("Aborigine")
 
 /obj/landmark/join/start
 	name = "start"
