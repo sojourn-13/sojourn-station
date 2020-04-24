@@ -21,7 +21,7 @@
 	. = ..()
 
 /obj/mecha/working/ripley/firefighter
-	desc = "Standart APLU chassis was refitted with additional thermal protection and cistern."
+	desc = "Standard APLU chassis that has been refitted with additional thermal protection."
 	name = "APLU \"Firefighter\""
 	icon_state = "firefighter"
 	initial_icon = "firefighter"

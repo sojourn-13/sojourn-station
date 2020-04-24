@@ -5,8 +5,8 @@
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform
 
 /obj/item/weapon/coreimplant_upgrade/cruciform/priest
-	name = "Prime Ascension Kit"
-	desc = "The first stage of promoting a disciple into a prime. Requires a ritual from an crusader to complete."
+	name = "Devout Ascension Kit"
+	desc = "The first stage of restoring a disciple to his proper status. Requires a ritual from a prime or vector to complete."
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform
 
 /obj/item/weapon/coreimplant_upgrade/cruciform/priest/set_up()
