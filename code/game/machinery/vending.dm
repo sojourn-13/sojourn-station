@@ -1746,8 +1746,11 @@
 					/obj/item/stack/medical/ointment = 8,
 					/obj/item/stack/medical/splint = 5,
 					/obj/item/stack/medical/advanced/bruise_pack = 4,
-					/obj/item/stack/medical/advanced/ointment = 4)
-	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 3,
+					/obj/item/stack/medical/advanced/ointment = 4,
+					/obj/item/weapon/storage/pouch/small_generic = 2,
+					/obj/item/weapon/storage/pouch/medium_generic = 2,
+					/obj/item/weapon/storage/pouch/medical_supply = 2)
+	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 1,
 					/obj/item/weapon/tool/knife/neotritual = 3,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 3)
 
@@ -1766,6 +1769,9 @@
 					/obj/item/stack/medical/splint = 200,
 					/obj/item/stack/medical/advanced/bruise_pack = 400,
 					/obj/item/stack/medical/advanced/ointment = 400,
+					/obj/item/weapon/storage/pouch/small_generic = 800,
+					/obj/item/weapon/storage/pouch/medium_generic = 1000,
+					/obj/item/weapon/storage/pouch/medical_supply = 600,
 					/obj/item/weapon/implant/core_implant/cruciform = 1000,
 					/obj/item/weapon/tool/knife/neotritual = 1000,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 1500)

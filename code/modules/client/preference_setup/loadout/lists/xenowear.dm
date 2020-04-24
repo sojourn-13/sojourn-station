@@ -40,13 +40,6 @@
 	slot = slot_gloves
 	sort_category = "Xenowear"
 
-/datum/gear/xenowear/gearharness
-	display_name = "gear harness selection"
-	path = /obj/item/clothing/under/harness
-	flags = GEAR_HAS_TYPE_SELECTION
-	slot = slot_w_uniform
-	sort_category = "Xenowear"
-
 /datum/gear/xenowear/loincloth
 	display_name = "loincloth"
 	path = /obj/item/clothing/under/loincloth
