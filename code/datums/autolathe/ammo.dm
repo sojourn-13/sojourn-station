@@ -134,6 +134,14 @@
 	name = "magazine (.50 kurtz hollow point)"
 	build_path = /obj/item/ammo_magazine/a50
 
+/datum/design/autolathe/ammo/s150/rubber
+	name = "speed loader (.50 kurtz rubber)"
+	build_path = /obj/item/ammo_magazine/sl50/rubber
+
+/datum/design/autolathe/ammo/s150
+	name = "speed loader (.50 kurtz hollow point)"
+	build_path = /obj/item/ammo_magazine/sl50
+
 //.40 boxes
 /datum/design/autolathe/ammo/magnum_ammobox
 	name = "ammunition box (.40 Magnum)"

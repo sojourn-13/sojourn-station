@@ -70,17 +70,6 @@
 
 /*Xenowear*/
 
-/obj/item/clothing/under/harness
-	name = "black gear harness"
-	desc = "A black gear harness worn around the body."
-	icon_state = "gear_harness"
-
-/obj/item/clothing/under/harness/brown
-	name = "brown gear harness"
-	desc = "A brown gear harness worn around the body."
-	icon_state = "gear_harnessbrown"
-	item_state = "gear_harnessbrown"
-
 /obj/item/clothing/under/loincloth
 	name = "loincloth"
 	desc = "A sturdy cloth that covers the private areas."
