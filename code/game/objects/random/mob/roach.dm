@@ -15,7 +15,7 @@
 /obj/random/mob/roaches/low_chance
 	name = "low chance random roach"
 	icon_state = "hostilemob-brown-low"
-	spawn_nothing_percentage = 80
+	spawn_nothing_percentage = 90
 
 /obj/random/cluster/roaches
 	name = "cluster of roaches"
@@ -31,8 +31,23 @@
 /obj/random/cluster/roaches/low_chance
 	name = "low chance cluster of roaches"
 	icon_state = "hostilemob-brown-cluster-low"
-	spawn_nothing_percentage = 80
+	spawn_nothing_percentage = 90
 
 // For Scrap Beacon
 /obj/random/cluster/roaches/beacon/item_to_spawn()
 	return /mob/living/carbon/superior_animal/roach/nanite
+
+
+
+/obj/random/mob/render
+	name = "random render"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/render/item_to_spawn()
+	return pickweight(list(/mob/living/simple_animal/hostile/deathclaw))
+
+/obj/random/mob/render/low_chance
+	name = "low chance random roach"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 90

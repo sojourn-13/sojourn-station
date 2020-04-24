@@ -7,22 +7,22 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "c" = (
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "d" = (
 /obj/structure/inflatable/wall,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "e" = (
-/turf/simulated/floor/dirt,
+/turf/simulated/floor/asteroid/dirt,
 /area/crawler)
 "f" = (
 /obj/structure/railing/grey,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "g" = (
 /obj/machinery/light/floor,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "h" = (
 /obj/crawler/crawler_wallbreaker/vertical,
@@ -53,7 +53,7 @@
 /area/crawler)
 "m" = (
 /obj/structure/inflatable/door,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "n" = (
 /turf/simulated/floor/tiled/derelict,
@@ -66,7 +66,7 @@
 /obj/structure/railing/grey{
 	dir = 8
 	},
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "q" = (
 /obj/crawler/crawler_wallbreaker/vertical,
@@ -88,14 +88,14 @@
 	},
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "v" = (
 /obj/structure/railing/grey{
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "w" = (
 /obj/structure/railing/grey{
@@ -103,27 +103,27 @@
 	},
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "y" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "z" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "A" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "B" = (
 /obj/structure/railing/grey{
 	dir = 4
 	},
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "C" = (
 /obj/effect/floor_decal/spline/grass_edge{

@@ -24,7 +24,7 @@
 	var/emote_see = list() //chat emotes
 	var/speak_chance = 2 //percentage chance of speaking a line from 'emote_see'
 
-	var/turns_per_move = 3 //number of life ticks per random movement
+	var/turns_per_move = 10 //number of life ticks per random movement
 	var/turns_since_move = 0 //number of life ticks since last random movement
 	var/wander = 1 //perform automated random movement when idle
 	var/stop_automated_movement = 0 //use this to temporarely stop random movement
