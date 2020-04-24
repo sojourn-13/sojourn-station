@@ -116,49 +116,45 @@ var/global/list/limb_icon_cache = list()
 
 	return mob_icon
 
-/obj/item/organ/external/update_icon(var/regenerate = 0)
-	if (!owner)//special check
-		qdel(src)
-		return
+/obj/item/organ/external/update_icon(regenerate = 0)
+	var/gender = "_m"
 
-	if(FALSE && !appearance_test.get_species_sprite)
+	if(!appearance_test.get_species_sprite)
 		icon = 'icons/mob/human_races/r_human.dmi'
 	else
 		if(src.force_icon)
 			icon = src.force_icon
 		else if(!form && !dna)
-			icon = 'icons/mob/human_races/r_human.dmi'
+			icon = 'icons/mob/human_races/r_human_white.dmi'
 		else if(BP_IS_ROBOTIC(src))
-			icon = 'icons/mob/human_races/robotic.dmi'
-		else if(status & ORGAN_MUTATED && form.deform)
+			icon = 'icons/mob/human_races/cyberlimbs/generic.dmi'
+		else if(status & ORGAN_MUTATED)
 			icon = form.deform
 		else
 			icon = form.base
 
 	if(appearance_test.simple_setup)
-		var/gender = owner.gender == FEMALE ? "_f" : "_m"
+		gender = owner.gender == FEMALE ? "_f" : "_m"
 		icon_state = "[organ_tag][gender]"
 	else
-		var/gender = "_m"
 		if (dna && dna.GetUIState(DNA_UI_GENDER))
 			gender = "_f"
 		else if(owner && owner.gender == FEMALE)
 			gender = "_f"
 		if(!("[organ_tag][gender][is_stump()?"_s":""]" in icon_states(icon)))
 			gender = ""
+
 		icon_state = "[organ_tag][gender][is_stump()?"_s":""]"
 
 	mob_icon = new/icon(icon, icon_state)
 
 	if(!is_stump())
 		for(var/subicon in additional_limb_parts)
-			var/gender = "_m"
-			if((dna && dna.GetUIState(DNA_UI_GENDER)) || (owner && owner.gender == FEMALE))
-				gender = "_f"
-			if(!("[subicon][gender]" in icon_states(icon)))
-				gender = ""
-			if("[subicon][gender]" in icon_states(icon))
-				var/icon/L = new(icon, "[subicon][gender]")
+			var/subgender = gender
+			if(!("[subicon][subgender]" in icon_states(icon)))
+				subgender = ""
+			if("[subicon][subgender]" in icon_states(icon))
+				var/icon/L = new(icon, "[subicon][subgender]")
 				mob_icon.Blend(L, ICON_OVERLAY)
 
 	if(appearance_test.colorize_organ)
@@ -172,7 +168,6 @@ var/global/list/limb_icon_cache = list()
 				mob_icon.Blend(rgb(skin_tone, skin_tone, skin_tone), ICON_ADD)
 			else
 				mob_icon.Blend(rgb(-skin_tone,  -skin_tone,  -skin_tone), ICON_SUBTRACT)
-
 
 
 	dir = EAST

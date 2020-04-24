@@ -21,13 +21,14 @@
 	var/list/permitted_tail  = null
 	var/list/permitted_wings = null
 
+	var/min_age = 18
+	var/max_age = 90
+
 	var/mob_size	= MOB_MEDIUM
+	var/virus_immune
 	var/blood_volume = 560                               // Initial blood volume.
 	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
 	var/taste_sensitivity = TASTE_NORMAL                 // How sensitive the species is to minute tastes.
-
-	var/min_age = 18
-	var/max_age = 90
 
 	// Language/culture vars.
 	var/default_language = LANGUAGE_COMMON   // Default language is used when 'say' is used without modifiers.
@@ -125,10 +126,6 @@
 		BP_R_ARM =  new /datum/organ_description/arm/right/full,
 		BP_L_LEG =  new /datum/organ_description/leg/left/full,
 		BP_R_LEG =  new /datum/organ_description/leg/right/full
-/*		BP_L_HAND = new /datum/organ_description/hand/left,
-		BP_R_HAND = new /datum/organ_description/hand/right,
-		BP_L_FOOT = new /datum/organ_description/foot/left,
-		BP_R_FOOT = new /datum/organ_description/foot/right*/
 		)
 
 	// Misc

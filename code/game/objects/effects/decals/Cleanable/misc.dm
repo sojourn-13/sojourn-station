@@ -63,8 +63,6 @@
 	if(reagents_to_add && reagents_to_add.total_volume)
 		reagents = reagents_to_add
 		color = reagents.get_color()
-	if(!color)
-		color = "#ffffff"
 
 /obj/effect/decal/cleanable/reagents/splashed
 	name = "splashed liquid"
