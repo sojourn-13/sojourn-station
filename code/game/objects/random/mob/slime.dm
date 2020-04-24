@@ -33,7 +33,7 @@
 /obj/random/cluster/slimes/low_chance
 	name = "low chance cluster of slimes"
 	icon_state = "hostilemob-cyan-cluster-low"
-	spawn_nothing_percentage = 60
+	spawn_nothing_percentage = 80
 
 //Single Spawners
 /obj/random/slime

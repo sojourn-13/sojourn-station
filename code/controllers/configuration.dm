@@ -100,6 +100,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/forumurl
 	var/githuburl
 	var/discordurl
+	var/rules
 
 	//Alert level description
 	var/alert_desc_green = "All threats to the colony have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
@@ -418,6 +419,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("discordurl")
 					config.discordurl = value
+
+				if ("rules")
+					config.rules = value
 
 				if ("forumurl")
 					config.forumurl = value

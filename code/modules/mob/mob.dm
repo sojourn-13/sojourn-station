@@ -113,7 +113,8 @@
 	if(lying) //Crawling, it's slower
 		. += 14 + (weakened)
 	. += move_intent.move_delay
-
+	if(facing_dir)
+		. += 2
 
 /mob/proc/Life()
 	SEND_SIGNAL(src, COMSIG_MOB_LIFE)
@@ -467,13 +468,17 @@
 
 	if(href_list["flavor_more"])
 		//if(src in view(usr)) //Flavor at any range
-		var/dat = {"
-			<html><head><title>[name]</title></head>
-			<body><tt>[replacetext(flavor_text, "\n", "<br>")]</tt></body>
-			</html>
-		"}
-		usr << browse(dat, "window=[name]_flavor;size=500x200")
-		onclose(usr, "[name]")
+		if(src in view(usr))
+			var/dat = {"
+				<html><head><title>[name]</title></head>
+				<body><tt>[replacetext(flavor_text, "\n", "<br>")]</tt></body>
+				</html>
+			"}
+			usr << browse(dat, "window=[name];size=500x200")
+			var/datum/browser/popup = new(usr, "[name]","[name]", 500, 200, src)
+			popup.set_content(dat)
+			popup.open()
+
 	if(href_list["flavor_change"])
 		update_flavor_text()
 	if(href_list["ooc_text"])

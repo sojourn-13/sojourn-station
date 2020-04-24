@@ -26,18 +26,15 @@
 		STAT_COG = 8
 	)
 
-	description = "The ideal newcomer role. You have no official position within the colony. You will not be paid a wage.<br>\
-Where did you come from? Why are you here? These things are up to you.<br>\
+	description = "Идеальная роль для новичков. Вы не имеете официальной работы на колонии. У вас нет никаких задач, но вы и не получаете зарплату.<br>\
+Откуда вы? Почему вы здесь? Ответьте себе на эти вопросы и придумайте интересную историю.<br>\
 <br>\
-Perhaps you're a new arrival, who paid for transit. What are you seeking, or what are you running from?<br>\
-Perhaps you're a young apprentice or intern. What new and exciting career are you pursuing?<br>\
-Perhaps you're a friend, relative, spouse or lover of an existing colonist. How can you support them in their work?<br>\
-Perhaps you're a former prisoner, ready to join the crew after your served time. What was your crime?<br>\
-Perhaps you're a refugee, stranded in the wilderness and rescued by the colony. Why were you out there?<br>\
+Возможно, вы просто оплатили билет на колонию. Что вы тут ищите или от чего вы убегаете?<br>\
+Возможно, вы молодой ученик или стажер. Какую карьеру вы хотите построить?<br>\
+Возможно вы друг одного из рабочих и пришли ему помочь по работе? <br>\
 <br>\
-Your story is yours to write. What matters is that you're here now - find some purpose.<br>\
-To form connections, strive to help out anyone you can. Or at least, anyone who offers you a paying job.<br>\
-Find a way to make money, stay out of trouble, and survive."
+Вы вправе отыгрывать своего персонажа как вам пожелается. Вы сами пишите свою историю.<br>\
+Попытайтесь получить работу на колонии, найдите себе новых друзей... Или просто получайте удовольствие от безделия!"
 
 /obj/landmark/join/start/assistant
 	name = "Colonist"

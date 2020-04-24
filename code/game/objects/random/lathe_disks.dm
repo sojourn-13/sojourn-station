@@ -52,7 +52,7 @@
 /obj/random/lathe_disk/low_chance
 	name = "low chance random lathe disk"
 	icon_state = "tech-green-low"
-	spawn_nothing_percentage = 80
+	spawn_nothing_percentage = 95
 
 
 
@@ -123,4 +123,4 @@
 /obj/random/lathe_disk/advanced/low_chance
 	name = "low chance advanced lathe disk"
 	icon_state = "tech-green-low"
-	spawn_nothing_percentage = 80
+	spawn_nothing_percentage = 98

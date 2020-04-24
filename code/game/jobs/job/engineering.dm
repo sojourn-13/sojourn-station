@@ -43,15 +43,15 @@
 							 /datum/computer_file/program/shield_control,
 							 /datum/computer_file/program/reports)
 
-	description = "The Guild Master is the head of the Artificers Guild, a group of skilled engineers. This colony is your pride.<br>\
-	You are to keep the colony running and constantly improve it as much as you are able. Let none question the efficacy of your labours.<br>\
-	As a leader, it is far more efficient for you to delegate work than attempting to solve everything yourself - spread the labour.<br>\
-	Machinery across the station is your responsibility. Let no outsiders interfere or intrude into your domain - even Command staff are no exception.<br>\
-	Treat every Guild member like your family. Keep them paid, fed, and safe. You may be a part of the wider colony, but your own come first."
+	description = "Мастер гильдии является главой гильдии ремесленников, группы опытных инженеров. Эта колония твоя гордость.<br>\
+	Вы должны поддерживать колонию в рабочем состоянии и постоянно улучшать ее, насколько это возможно. Пусть никто не ставит под сомнение эффективность ваших трудов <br>\
+	Как руководитель, вам гораздо эффективнее делегировать работу, чем пытаться решить все самостоятельно - распределите труд.<br>\
+	Техника всей станции ​​- ваша ответственность. Не позволяйте посторонним вмешиваться или вторгаться в ваш домен - даже сотрудники командования не являются исключеем.<br>\
+	Относитесь к каждому члену гильдии как к своей семье. Держите их при деньгах, накормленными и в безопасности."
 
-	duties = "Manage the Guild Adepts - set tasks and areas of focus.<br>\
-	Strive to protect the rights of your Adepts, as well as their safety and health.<br>\
-	Conduct your own repairs and projects as required - especially when low staffed. "
+	duties = "Управляй адептами гильдии - ставь задачи и распредели их по разным отделам.<br>\
+	Стремитесь защищать права ваших адептов, а также их безопасность и здоровье.<br>\
+	Проводите собственные ремонтные работы и проекты по мере необходимости - особенно при маленьком онлайне "
 
 	perks = list(/datum/perk/inspiration)
 
@@ -97,16 +97,16 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shield_control)
 
-	description = "The Guild Adept is a member of one of the greatest engineering guilds in the galaxy, contracted to maintain this colony.<br>\
-Your main priority is ensuring the setup and maintenance of the supermatter engine. Seek guidance on this complex machine if untrained.<br>\
-Outside of this, you should devote time to learning and configuring various systems. Everything can be improved, and new constructs can be made.<br>\
-This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, or purchased from Lonestar or the Prospectors.<br>\
-Do not let outsiders, even Command Staff, interfere with the duties of the Guild. And remember - be ready to respond to emergency calls at any time."
+	description = "Адепт Гильдии является членом одной из величайших инженерных гильдий в галактике, с которой заключен контракт на содержание этой колонии..<br>\
+Ваш главный приоритет - обеспечение и обслуживания двигателя суперматерии. Обратитесь к руководству по этой сложной машине, если не обучены.<br>\
+Помимо этого, вы должны посвятить время изучению и настройке различных систем. Все может быть улучшено, и новые конструкции могут быть построены.<br>\
+Эта культура обновления распространяется на ваш собственный арсенал - модифицируйте и обновляйте свои инструменты с частями с техов или приобретенных у Lonestar или исследователей.<br>\
+Не позволяйте посторонним, даже командному штабу, вмешиваться в обязанности гильдии. И помните - будьте готовы отвечать на экстренные запросы в любое время."
 
-	duties = "Start up the supermatter.<br>\
-	Repair anything and anyone that needs some maintenance.<br>\
-	Respond to distress calls and patch breaches in the walls.<br>\
-	Keep every part of the colony powered, oxygenated, and ready to use."
+	duties = "Запустить суперматерию.<br>\
+	Чините всех и все кто выглядит поврежденым.<br>\
+	Отвечайте на запросы о брешах в стене.<br>\
+    Держите все части колонии в тепле, с воздухом, и с энергией."
 
 	perks = list(/datum/perk/inspiration)
 

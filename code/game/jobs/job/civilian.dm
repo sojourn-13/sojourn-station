@@ -122,13 +122,15 @@
 	stat_modifiers = list(
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
-	description = "The Actor serves as a versatile performance artist here to entertain the colony.<br>\
-	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
-	The CEO pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations."
+	description = "Будучи актером, ваша основная задача развлекать экипаж.<br>\
+	Шутите над экипажем, делайте постановки возле бара. Рассказывайте шутки и надоедайте всем свои присутствием.<br>\
+	Ваш начальник платит вам очень мало, поэтому не стесняйтесь просить деньги у колонистов за свою работу.<br>\
+	Старайтесь отыгрывать максимально интересно, сделайте постановку какой-нибудь комедии и продавайте экипажу билеты за вход.<br>\
+	Помните, чем интереснее вы отыгрываете - тем сильнее вас будет любить экипаж. Но никто вам не запрещает быть просто надоедливым клоуном."
 
-	duties = "Provide (family-friendly) entertainment to the crew with your varied talents.<br>\
-		Host shows, busk in the corridors, perform harmless pranks, or whatever else you think will be well-received.<br>\
-		Try to be a successful rather than starving artist. The costume vendor and equipment in your cramped studio may prove useful."
+	duties = "Развлекайте экипаж используя свой актерский талант.<br>\
+		Устраивайте шоу! Разыгрывайте экипаж в коридорах, делайте постановки в театре!<br>\
+		Ваша основная задача разбавлять чай на судне и вы должны делать это любыми способами."
 
 /obj/landmark/join/start/actor
 	name = "Actor"

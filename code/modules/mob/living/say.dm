@@ -18,6 +18,16 @@ var/list/department_radio_keys = list(
 	"k" = "Prospector"
 )
 
+/mob/living/proc/dot_sanitize(message)
+  if(!message)
+    return
+
+  message = html_decode(message)
+  var/end_char = copytext(message, length(message), length(message) + 1)
+  if(!(end_char in list(".", "?", "!", "-", "~")))
+    message += "."
+
+  return html_encode(message)
 
 var/list/channel_to_radio_key = new
 /proc/get_radio_key_from_channel(var/channel)
@@ -68,11 +78,11 @@ var/list/channel_to_radio_key = new
 		verb = pick("yells", "roars", "hollers")
 		speech_problem_flag = 1
 	if(slurring)
-		message = slur(message)
+	//	message = slur(message)
 		verb = pick("slobbers", "slurs")
 		speech_problem_flag = 1
 	if(stuttering)
-		message = stutter(message)
+	//	message = stutter(message)
 		verb = pick("stammers", "stutters")
 		speech_problem_flag = 1
 
@@ -143,6 +153,7 @@ var/list/channel_to_radio_key = new
 			message = copytext(message,3)
 
 	message = trim_left(message)
+	message = dot_sanitize(message)
 
 	//parse the language code and consume it
 	if(!speaking)
@@ -152,7 +163,6 @@ var/list/channel_to_radio_key = new
 	else
 		speaking = get_default_language()
 
-	message = capitalize(message)
 	// This is broadcast to all mobs with the language,
 	// irrespective of distance or anything else.
 	if(speaking && speaking.flags&HIVEMIND)
@@ -419,3 +429,4 @@ var/list/channel_to_radio_key = new
 		heard = "<span class = 'game_say'>...<i>You almost hear someone talking</i>...</span>"
 
 	to_chat(src, heard)
+

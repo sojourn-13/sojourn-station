@@ -41,7 +41,14 @@
 	set name = "Rules"
 	set desc = "Show Server Rules."
 	set hidden = 1
-	src << browse(file(RULES_FILE), "window=rules;size=480x320")
+	if( config.rules )
+		if(alert("This will open the Rules page in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		src << link(config.rules)
+	else
+		to_chat(src, SPAN_WARNING("The Rules is not set in the server configuration."))
+	return
+//	src << browse(file(RULES_FILE), "window=rules;size=480x320")
 #undef RULES_FILE
 
 /client/verb/hotkeys_help()
