@@ -193,7 +193,7 @@ DISCORDURL https://discord.gg/FH3q5t7
 BANAPPEALS http://sovietstation.ru
 
 ##Github address
-GITHUBURL https://github.com/Endless-Horizon/CEV-Eris
+GITHUBURL https://github.com/bloodyanarchy/soviet-station
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
