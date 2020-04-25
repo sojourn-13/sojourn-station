@@ -792,7 +792,7 @@ default behaviour is:
 		var/mob/pulled = AM
 		pulled.inertia_dir = 0
 
-// Static Overlays and Stats
+// Static over-lays and Stats
 
 /mob/living/proc/generate_static_overlay()
 	static_overlay = image(get_static_icon(new/icon(icon, icon_state)), loc = src)

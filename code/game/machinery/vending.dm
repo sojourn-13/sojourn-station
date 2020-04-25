@@ -86,7 +86,7 @@
 
 	var/icon_vend //Icon_state when vending
 	var/icon_deny //Icon_state when denying access
-	var/icon_type //For overlays after remodeling a custom vending machine
+	var/icon_type //For over-lays after remodeling a custom vending machine
 
 	// Power
 	use_power = 1

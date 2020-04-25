@@ -36,7 +36,7 @@
 	var/model                          // Used when caching robolimb icons.
 	//var/default_icon	// Used to force override of species-specific limb icons (for prosthetics).
 	var/force_icon
-	var/icon/mob_icon                  // Cached icon for use in mob overlays.
+	var/icon/mob_icon                  // Cached icon for use in mob over-lays.
 	var/gendered = null
 	var/skin_tone			// Skin tone.
 	var/skin_col			// skin colour

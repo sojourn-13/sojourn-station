@@ -287,7 +287,7 @@ var/list/holder_mob_icon_cache = list()
 	color = M.color
 	name = M.name
 	desc = M.desc
-	add_overlay(M.overlays)
+	add_overlay(M.get_overlays())
 	last_holder = loc
 	update_wear_icon()
 

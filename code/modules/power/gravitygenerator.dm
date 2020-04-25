@@ -341,7 +341,7 @@ var/const/GRAV_NEEDS_WRENCH = 3
 			A.update_gravity()
 
 // Charge/Discharge and turn on/off gravity when you reach 0/100 percent.
-// Also emit radiation and handle the overlays.
+// Also emit radiation and handle the over-lays.
 /obj/machinery/gravity_generator/main/Process()
 	if(stat & BROKEN)
 		return

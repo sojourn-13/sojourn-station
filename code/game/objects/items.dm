@@ -48,7 +48,7 @@
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
 	var/zoom = 0 //1 if item is actively being used to zoom. For scoped guns and binoculars.
 
-	var/contained_sprite = FALSE //TRUE if object icon and related mob overlays are all in one dmi
+	var/contained_sprite = FALSE //TRUE if object icon and related mob over-lays are all in one dmi
 
 	var/icon_override = null  //Used to override hardcoded clothing dmis in human clothing proc.
 
@@ -331,7 +331,7 @@
 /obj/item/clean_blood()
 	. = ..()
 	if(blood_overlay)
-		overlays.Remove(blood_overlay)
+		cut_overlay(blood_overlay)
 
 /obj/item/clothing/gloves/clean_blood()
 	.=..()

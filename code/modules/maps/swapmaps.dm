@@ -464,7 +464,7 @@ atom
 		// do not save mobs with keys; do save other mobs
 		var/mob/M
 		for(M in src) if(M.key) break
-		if(overlays.len) S["overlays"]<<overlays
+		if(get_overlays().len) S["overlays"]<<get_overlays()
 		if(underlays.len) S["underlays"]<<underlays
 		if(contents.len && !isarea(src))
 			var/list/l=contents

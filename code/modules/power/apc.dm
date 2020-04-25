@@ -267,7 +267,7 @@
 
 
 // update the APC icon to show the three base states
-// also add overlays for indicator lights
+// also add over-lays for indicator lights
 /obj/machinery/power/apc/update_icon()
 	if (!status_overlays)
 		status_overlays = 1
@@ -307,7 +307,7 @@
 
 	var/update = check_updates() 		//returns 0 if no need to update icons.
 						// 1 if we need to update the icon_state
-						// 2 if we need to update the overlays
+						// 2 if we need to update the over-lays
 	if(!update)
 		return
 
@@ -346,12 +346,12 @@
 			set_light(0)
 
 	if(!(update_state & UPDATE_ALLGOOD))
-		if(overlays.len)
+		if(get_overlays().len)
 			cut_overlays()
 			return
 
 	if(update > 1)
-		if(overlays.len)
+		if(get_overlays().len)
 			cut_overlays()
 		if(!(stat & (BROKEN|MAINT)) && update_state & UPDATE_ALLGOOD)
 			add_overlay(status_overlays_lock[locked+1])

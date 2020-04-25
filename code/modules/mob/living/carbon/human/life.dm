@@ -727,7 +727,7 @@
 		overlays_cache[22] = image('icons/mob/screen1_full.dmi', "icon_state" = "brutedamageoverlay5")
 		overlays_cache[23] = image('icons/mob/screen1_full.dmi', "icon_state" = "brutedamageoverlay6")
 
-	if(hud_updateflag) // update our mob's hud overlays, AKA what others see flaoting above our head
+	if(hud_updateflag) // update our mob's hud over-lays, AKA what others see flaoting above our head
 		handle_hud_list()
 
 	// now handle what we see on our screen

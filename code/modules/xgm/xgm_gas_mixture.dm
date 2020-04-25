@@ -12,7 +12,7 @@
 	//Size of the group this gas_mixture is representing.  1 for singletons.
 	var/group_multiplier = 1
 
-	//List of active tile overlays for this gas_mixture.  Updated by check_tile_graphic()
+	//List of active tile over-lays for this gas_mixture.  Updated by check_tile_graphic()
 	var/list/graphic = list()
 
 /datum/gas_mixture/New(vol = CELL_VOLUME)
