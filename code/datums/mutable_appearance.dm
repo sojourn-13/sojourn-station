@@ -1,5 +1,5 @@
 // Mutable appearances are an inbuilt byond datastructure. Read the documentation on them by hitting F1 in DM.
-// Basically use them instead of images for overlays/underlays and when changing an object's appearance if you're doing so with any regularity.
+// Basically use them instead of images for over-lays/underlays and when changing an object's appearance if you're doing so with any regularity.
 // Unless you need the overlay/underlay to have a different direction than the base object. Then you have to use an image due to a bug.
 
 // Mutable appearances are children of images, just so you know.

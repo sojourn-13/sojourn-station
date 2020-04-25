@@ -176,7 +176,7 @@
 /obj/machinery/power/smes/batteryrack/makeshift/Process()
 	if(stat & BROKEN)	return
 
-	//store machine state to see if we need to update the icon overlays
+	//store machine state to see if we need to update the icon over-lays
 	var/last_disp = chargedisplay()
 	var/last_chrg = inputting
 	var/last_onln = output_attempt

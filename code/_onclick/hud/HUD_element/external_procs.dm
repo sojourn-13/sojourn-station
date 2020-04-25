@@ -78,12 +78,12 @@ hide() -> src || null
 - hides element from client
 - returns null if element deleted itself
 setIconOverlays(var/icon/iconOverlays)
-- sets icon overlays
-- overlays must be named list
+- sets icon over-lays
+- over-lays must be named list
 - accepts only associative list
--	for overlay names see HUD_defines
+-	for over-lay names see HUD_defines
 updateIcon()
-- Updates icon using overlays
+- Updates icon using over-lays
 getIconOverlays() -> _iconOverlays
 - gets icon overlays
 getChildElementWithID(var/id) -> /HUD_element || null
@@ -260,7 +260,7 @@ alignElements(var/horizontal, var/vertical, var/list/HUD_element/targets) -> /HU
 	dir = A.dir
 	color = A.color
 	alpha = A.alpha
-	overlays = A.overlays
+	copy_overlays(A.overlays, TRUE)
 	underlays = A.underlays
 
 	updateIconInformation()

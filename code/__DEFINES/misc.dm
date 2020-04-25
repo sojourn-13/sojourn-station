@@ -239,10 +239,6 @@
 
 #define attack_animation(A) if(istype(A)) A.do_attack_animation(src)
 
-// Overlays
-// (placeholders for if/when TG overlays system is ported)
-// #define cut_overlays(...)			overlays.Cut()
-
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 
 #define random_id(key,min_id,max_id) uniqueness_repository.Generate(/datum/uniqueness_generator/id_random, key, min_id, max_id)
@@ -299,7 +295,7 @@
 
 
 
-// Macro defining the actual code applying our overlays lists to the BYOND overlays list. (I guess a macro for speed)
+// Macro defining the actual code applying our overlays lists to the BYOND over-lays list. (I guess a macro for speed)
 // TODO - I don't really like the location of this macro define.  Consider it. ~Leshana
 #define COMPILE_OVERLAYS(A)\
 	if (TRUE) {\

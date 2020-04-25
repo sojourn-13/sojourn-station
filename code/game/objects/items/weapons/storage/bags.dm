@@ -182,7 +182,7 @@
 
 	if(!inserted || !S.amount)
 		usr.remove_from_mob(S)
-		usr.update_icons() //update our overlays
+		usr.update_icons() //update our over-lays
 		if (usr.client)
 			usr.client.screen -= S
 		S.dropped(usr)

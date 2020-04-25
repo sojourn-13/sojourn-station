@@ -48,7 +48,7 @@
 	equipment_vision_flags = 0
 	equipment_prescription = 0
 	equipment_darkness_modifier = 0
-//	equipment_cut_overlays()
+//	equipment_cut_over-lays()
 
 	if(istype(src.head, /obj/item/clothing/head))
 		add_clothing_protection(head)

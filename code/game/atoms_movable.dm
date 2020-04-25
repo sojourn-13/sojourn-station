@@ -13,7 +13,7 @@
 	var/throw_range = 7
 	var/moved_recently = 0
 	var/mob/pulledby = null
-	var/item_state = null // Used to specify the item state for the on-mob overlays.
+	var/item_state = null // Used to specify the item state for the on-mob over-lays.
 	var/inertia_dir = 0
 
 /atom/movable/Del()
@@ -239,7 +239,7 @@
 	src.throw_source = null
 
 
-//Overlays
+//over-lays
 /atom/movable/overlay
 	var/atom/master = null
 	anchored = 1

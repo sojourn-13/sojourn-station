@@ -175,7 +175,7 @@
 
 	var/image/I
 
-	//Make the wall overlays
+	//Make the wall over-lays
 	for(var/i = 1 to 4)
 		I = image(icon, "[icon_state]_[connections[i]]", dir = 1<<(i-1))
 		I.color = wall_color

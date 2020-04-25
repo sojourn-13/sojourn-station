@@ -14,7 +14,7 @@
 	var/pass_flags = 0
 	var/throwpass = 0
 	var/germ_level = GERM_LEVEL_AMBIENT // The higher the germ level, the more germ on the atom.
-	var/simulated = TRUE //filter for actions - used by lighting overlays
+	var/simulated = TRUE //filter for actions - used by lighting over-lays
 	var/fluorescent // Shows up under a UV light.
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
@@ -34,9 +34,9 @@
 
 	var/sanity_damage = 0
 
-	// Overlays
-	var/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSoverlays to manipulate
-	var/list/priority_overlays	//overlays that should remain on top and not normally removed when using cut_overlay functions, like c4.
+	// over-lays
+	var/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSover-lays to manipulate
+	var/list/priority_overlays	//over-lays that should remain on top and not normally removed when using cut_overlay functions, like c4.
 
 	// All physical objects that exist have a somewhat metaphysical representation of their integrity
     // Why are areas derived from /atom instead of /datum?  They're abstracts!

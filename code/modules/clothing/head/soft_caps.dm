@@ -24,7 +24,7 @@
 	else
 		src.icon_state = initial(icon_state)
 		to_chat(user, "You flip the hat back in normal position.")
-	update_wear_icon()	//so our mob-overlays update
+	update_wear_icon()	//so our mob-over-lays update
 
 /obj/item/clothing/head/soft/red
 	name = "red cap"
