@@ -2,6 +2,7 @@
 	name = "random spider"
 	icon_state = "hostilemob-black"
 	alpha = 128
+	spawn_nothing_percentage = 90
 
 /obj/random/mob/spiders/item_to_spawn()
 	return pickweight(list(/obj/effect/spider/spiderling = 30,\
@@ -21,6 +22,7 @@
 	min_amount = 1
 	max_amount = 5
 	spread_range = 0
+	spawn_nothing_percentage = 90
 
 /obj/random/cluster/spiders/item_to_spawn()
 	return /obj/random/mob/spiders
