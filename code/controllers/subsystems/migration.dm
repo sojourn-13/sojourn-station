@@ -1,8 +1,10 @@
 /*
 	The migration subsystem handles burrows and the movement of various NPC mobs aboard Eris.
+
 	It allows mobs to move between burrows, dispatches reinforcements to distress calls from mobs under attack,
 	and keeps track of all the burrows, negating any need for them to process individually most of the time
 	This subsystem also handles spreading plants through burrows
+
 */
 
 var/list/global/all_burrows = list()
@@ -28,10 +30,10 @@ SUBSYSTEM_DEF(migration)
 	var/migrate_chance = 15 //The chance, during each migration, for each populated burrow, that mobs will move from there to somewhere else
 
 
-	var/roundstart_burrows = 5
-	var/migrate_time = 30 SECONDS //How long it takes to move mobs from one burrow to another
-	var/reinforcement_time = 10 SECONDS //How long it takes for reinforcements to arrive
-	var/plantspread_burrows_num = 1 //How many other burrows will each one with plants send them to
+	var/roundstart_burrows = 120
+	var/migrate_time = 80 SECONDS //How long it takes to move mobs from one burrow to another
+	var/reinforcement_time = 20 SECONDS //How long it takes for reinforcements to arrive
+	var/plantspread_burrows_num = 3 //How many other burrows will each one with plants send them to
 
 
 
@@ -319,7 +321,6 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 	This proc allows plants like maintshrooms to spread through burrows
 	Run every 10 minutes
 */
-
 /datum/controller/subsystem/migration/proc/handle_plant_spreading()
 	next_plantspread = world.time + burrow_plantspread_interval//Setup the next spread tick
 
@@ -407,8 +408,6 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 		C.plantspread_burrows.Add("\ref[B]")
 		C.plant = B.plant //Make them share the same seed
 		C.spread_plants() //And make some plants at the new burrow
-
-
 
 /*************************************************
 	Burrow Finding and Sorting

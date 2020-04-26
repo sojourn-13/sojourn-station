@@ -126,8 +126,16 @@
 		del(src)
 		return
 
+	// Change the way they should download resources.
+	if(config.resource_urls)
+		src.preload_rsc = pick(config.resource_urls)
+	else src.preload_rsc = 1 // If config.resource_urls is not set, preload like normal.
+
+	to_chat(src, "\red If the title screen is black, resources are still downloading. Please be patient until the title screen appears.")
 
 
+	clients += src
+	directory[ckey] = src
 
 	//Admin Authorisation
 	holder = admin_datums[ckey]
@@ -140,26 +148,6 @@
 		holder = new /datum/admins("!localhost!", R_HOST, ckey)
 		holder.associate(src)
 
-
-/*  We're going to allow them to connect, but not play.
-	if(!BC_IsKeyAllowedToConnect(key) && !holder)
-		message_admins("<span class='adminnotice'>Failed Login: [key] - New account attempting to connect during border control</span>")
-		to_chat(src, "Sorry but the server is currently not accepting connections from never before seen players.")
-		del(src)
-		return
-*/
-
-
-	// Change the way they should download resources.
-	if(config.resource_urls)
-		src.preload_rsc = pick(config.resource_urls)
-	else src.preload_rsc = 1 // If config.resource_urls is not set, preload like normal.
-
-	to_chat(src, "\red If the title screen is black, resources are still downloading. Please be patient until the title screen appears.")
-
-
-	clients += src
-	directory[ckey] = src
 
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
 	prefs = SScharacter_setup.preferences_datums[ckey]
@@ -184,7 +172,7 @@
 		add_admin_verbs()
 		admin_memo_show()
 
-	// Forcibly enable hardware-accelerated graphics, as we need them for the lighting over-lays.
+	// Forcibly enable hardware-accelerated graphics, as we need them for the lighting overlays.
 	// (but turn them off first, since sometimes BYOND doesn't turn them on properly otherwise)
 	spawn(5) // And wait a half-second, since it sounds like you can do this too fast.
 		if(src)
