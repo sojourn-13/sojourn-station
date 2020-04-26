@@ -6,7 +6,7 @@
 	var/off_state = "degoggles"
 	var/active = TRUE
 	var/activation_sound = 'sound/items/goggles_charge.ogg'
-	var/obj/screen/overlay = null
+	var/obj/screen/screenOverlay = null
 	var/obj/item/clothing/glasses/hud/hud = null	// Hud glasses, if any
 
 /obj/item/clothing/glasses/attack_self(mob/user)

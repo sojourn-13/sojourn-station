@@ -56,7 +56,7 @@
 
 /obj/item/clothing/glasses/powered/science/Initialize()
 	. = ..()
-	overlay = global_hud.science
+	screenOverlay = global_hud.science
 
 /obj/item/clothing/glasses/powered/meson
 	name = "optical meson scanner"
@@ -73,7 +73,7 @@
 
 /obj/item/clothing/glasses/powered/meson/Initialize()
 	. = ..()
-	overlay = global_hud.meson
+	screenOverlay = global_hud.meson
 
 /obj/item/clothing/glasses/powered/night
 	name = "night vision goggles"
@@ -90,6 +90,6 @@
 
 /obj/item/clothing/glasses/powered/night/Initialize()
 	. = ..()
-	overlay = global_hud.nvg
+	screenOverlay = global_hud.nvg
 
 
