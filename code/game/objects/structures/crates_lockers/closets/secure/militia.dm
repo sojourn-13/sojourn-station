@@ -41,7 +41,7 @@
 		new /obj/item/weapon/storage/backpack/militia(src)
 
 /obj/structure/closet/secure_closet/armorer
-	name = "supply specialist's locker"
+	name = "sergeant's locker"
 	req_access = list(access_armory)
 	icon_state = "armorer"
 
@@ -63,7 +63,6 @@
 	else
 		new /obj/item/ammo_magazine/c10mm/hv(src)
 	new /obj/item/ammo_magazine/c10mm(src)
-	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/clothing/under/rank/armorer(src)
 	new /obj/item/clothing/head/rank/armorer/beret(src)
 	new /obj/item/clothing/head/rank/instructor_hat(src)
@@ -144,7 +143,6 @@
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
-	new /obj/item/clothing/suit/armor/commander/militia_overcoat(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"

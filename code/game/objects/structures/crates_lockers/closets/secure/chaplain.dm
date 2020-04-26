@@ -30,7 +30,7 @@
 	new /obj/item/ammo_magazine/a10mm(src)
 	new /obj/item/ammo_magazine/a10mm/rubber(src)
 	new /obj/item/ammo_magazine/a10mm/rubber(src)
-	for (var/i in 1 to 3)
+	for (var/i in 1 to 5)
 		new /obj/item/weapon/implant/core_implant/cruciform(src)
 	new /obj/item/weapon/tool/knife/neotritual(src)
 	new /obj/item/clothing/suit/space/void/prime(src)
