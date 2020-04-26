@@ -49,7 +49,7 @@
 	<tr class='head'><th>Name</th><th>Position</th><th>Activity</th></tr>
 	"}
 	// sort mobs
-	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
+	for(var/datum/computer_file/report/crew_record/CR in GLOB.active_crew_records)
 		var/name = CR.get_name()
 		var/rank = CR.get_job()
 
