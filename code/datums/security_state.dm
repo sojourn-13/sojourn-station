@@ -135,7 +135,7 @@
 	var/icon
 	var/name
 
-	// These values are primarily for station alarms and status displays, and which light colors and overlays to use
+	// These values are primarily for station alarms and status displays, and which light colors and over-lays to use
 	var/light_max_bright = 0.5
 	var/light_inner_range = 0.1
 	var/light_outer_range = 1

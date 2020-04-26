@@ -140,7 +140,7 @@
 	stored_energy -= lastgen1
 	effective_gen = (lastgen1 + lastgen2) / 2
 
-	// update icon overlays and power usage only when necessary
+	// update icon over-lays and power usage only when necessary
 	var/genlev = max(0, min( round(11*effective_gen / max_power), 11))
 	if(effective_gen > 100 && genlev == 0)
 		genlev = 1

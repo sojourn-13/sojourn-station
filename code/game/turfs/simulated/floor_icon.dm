@@ -317,7 +317,7 @@ var/list/flooring_cache = list()
 		I.plane = src.plane
 
 
-		//External overlays will be offsetted out of this tile
+		//External over-lays will be offsetted out of this tile
 		if (external)
 			if (icon_dir & NORTH)
 				I.pixel_y = 32

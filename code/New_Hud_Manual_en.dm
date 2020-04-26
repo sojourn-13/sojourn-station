@@ -1,4 +1,4 @@
-//existing overlays: flash, pain, blind, damageoverlay, blurry, druggy, nvg, thermal, meson, science
+//existing over-lays: flash, pain, blind, damageoverlay, blurry, druggy, nvg, thermal, meson, science
 Used global variables:
 global.HUDdatums - here datums with subtype /datum/hud are contained, using association datum's name = datum itself
 

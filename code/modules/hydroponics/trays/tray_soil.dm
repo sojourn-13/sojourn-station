@@ -24,7 +24,7 @@
 	return 1
 
 // Holder for vine plants.
-// Icons for plants are generated as overlays, so setting it to invisible wouldn't work.
+// Icons for plants are generated as over-lays, so setting it to invisible wouldn't work.
 // Hence using a blank icon.
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible
 	name = "plant"

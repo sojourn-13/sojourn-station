@@ -37,7 +37,7 @@
 
 /obj/item/weapon/storage/pouch/small_generic
 	name = "small generic pouch"
-	desc = "Can hold anything in it, but only a small amount."
+	desc = "Can hold nearly anything in it, but only a small amount."
 	icon_state = "small_generic"
 	item_state = "small_generic"
 	storage_slots = null //Uses generic capacity
@@ -50,7 +50,7 @@
 
 /obj/item/weapon/storage/pouch/medium_generic
 	name = "medium generic pouch"
-	desc = "Can hold anything in it, but only a moderate amount."
+	desc = "Can hold nearly anything in it, but only a moderate amount."
 	icon_state = "medium_generic"
 	item_state = "medium_generic"
 	storage_slots = null //Uses generic capacity

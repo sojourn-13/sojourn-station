@@ -166,7 +166,7 @@ var/datum/controller/process/open_space/OS_controller = null
 		icon_state = below.icon_state
 		dir = below.dir
 		color = below.color//rgb(127,127,127)
-		add_overlay(below.overlays)
+		add_overlay(below.get_overlays())
 
 		if(!istype(below,/turf/simulated/open))
 			// get objects
@@ -178,7 +178,7 @@ var/datum/controller/process/open_space/OS_controller = null
 				var/image/temp2 = image(o, dir=o.dir, layer = o.layer)
 				temp2.plane = plane
 				temp2.color = o.color//rgb(127,127,127)
-				temp2.add_overlay(o.overlays)
+				temp2.add_overlay(o.get_overlays())
 				o_img += temp2
 			add_overlay(o_img)
 

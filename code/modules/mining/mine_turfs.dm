@@ -180,7 +180,7 @@
 
 					excavation_level += excavation_amount
 
-					//archaeo overlays
+					//archaeo over-lays
 					if(!archaeo_overlay && finds && finds.len)
 						var/datum/find/F = finds[1]
 						if(F.excavation_required <= excavation_level + F.view_range)
@@ -199,7 +199,7 @@
 						if(excavation_level - excavation_amount < 25)
 							update_excav_overlay = 1
 
-					//update overlays displaying excavation level
+					//update over-lays displaying excavation level
 					if( !(excav_overlay && excavation_level > 0) || update_excav_overlay )
 						var/excav_quadrant = round(excavation_level / 25) + 1
 						excav_overlay = "overlay_excv[excav_quadrant]_[rand(1,3)]"

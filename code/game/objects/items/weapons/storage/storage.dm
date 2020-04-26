@@ -334,7 +334,7 @@
 	if (!istype(W)) return 0
 	if (usr)
 		usr.prepare_for_slotmove(W)
-		usr.update_icons() //update our overlays
+		usr.update_icons() //update our over-lays
 
 	W.loc = src
 	W.on_enter_storage(src)

@@ -260,7 +260,7 @@ var/list/tape_roll_applications = list()
 		if(tape_roll_applications[F] == null)
 			tape_roll_applications[F] = 0
 
-		if(tape_roll_applications[F] & direction) // hazard_overlay in F.overlays wouldn't work.
+		if(tape_roll_applications[F] & direction) // hazard_overlay in F.over-lays wouldn't work.
 			user.visible_message("\The [user] uses the adhesive of \the [src] to remove area markings from \the [F].", "You use the adhesive of \the [src] to remove area markings from \the [F].")
 			F.cut_overlay(hazard_overlay)
 			tape_roll_applications[F] &= ~direction

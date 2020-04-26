@@ -159,7 +159,7 @@
 
 
 //careful with this proc, it's used to 'transform' corpses into our mobs.
-//it takes appearence, gives hive-like overlays and makes stats a little better
+//it takes appearence, gives hive-like over-lays and makes stats a little better
 //this also should add random special abilities, so they can be more individual, but it's in future
 //how to use: Make hive mob, then just use this one and don't forget to delete victim
 

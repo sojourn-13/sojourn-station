@@ -12,8 +12,8 @@
 	metaltag = "plasteel"
 	requires = list(
 		"plasma" = 1,
-		"carbon" = 2,
-		"hematite" = 2
+		"carbon" = 1,
+		"hematite" = 1
 		)
 	product_mod = 0.3
 	product = /obj/item/stack/material/plasteel
@@ -30,6 +30,6 @@
 	metaltag = MATERIAL_PLASMAGLASS
 	requires = list(
 		"plasma" = 1,
-		"sand" = 2
+		"sand" = 1
 		)
 	product = /obj/item/stack/material/glass/plasmaglass

@@ -29,6 +29,8 @@
 	/obj/item/weapon/storage/backpack,
 	/obj/item/weapon/rig)
 
+	var/washTime = 600
+
 /obj/machinery/washing_machine/Destroy()
 	qdel(crayon)
 	crayon = null
@@ -62,7 +64,7 @@
 	else
 		state = 5
 	update_icon()
-	sleep(600)
+	sleep(washTime)
 	for(var/atom/A in contents)
 		sleep(50)
 		wash(A)

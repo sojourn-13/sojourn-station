@@ -11,7 +11,7 @@
 	var/heal_burn = 0
 	price_tag = 10
 	matter = list(MATERIAL_BIOMATTER = 5)
-	var/automatic_charge_overlays = FALSE	//Do we handle overlays with base update_icon()? | Stolen from TG egun code
+	var/automatic_charge_overlays = FALSE	//Do we handle over-lays with base update_icon()? | Stolen from TG egun code
 	var/charge_sections = 5		// How many indicator blips are there?
 	var/charge_x_offset = 2		//The spacing between each charge indicator. Should be 2 to leave a 1px gap between each blip.
 
@@ -99,7 +99,7 @@
 	cut_overlays()
 	var/iconState = "[icon_state]_charge"
 	if(!amount)	//Checks if there are still charges left in the item
-		return //If it does not, do nothing, as the overlays have been cut before this already.
+		return //If it does not, do nothing, as the over-lays have been cut before this already.
 	else
 		var/mutable_appearance/charge_overlay = mutable_appearance(icon, iconState)
 		for(var/i = ratio, i >= 1, i--)

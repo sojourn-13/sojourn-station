@@ -103,7 +103,7 @@
 		else //in case some goofy admin switches icon states around without switching the icon_open or icon_closed
 			to_chat(usr, "You attempt to button-up the velcro on your [src], before promptly realising how silly you are.")
 			return
-		update_wear_icon()	//so our overlays update
+		update_wear_icon()	//so our over-lays update
 
 //Haveing them hold shit
 

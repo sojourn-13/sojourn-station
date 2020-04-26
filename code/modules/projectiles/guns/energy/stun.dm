@@ -23,7 +23,7 @@
 
 /obj/item/weapon/gun/energy/stunrevolver
 	name = "\"Zeus\" stun revolver"
-	desc = "Also know as stunrevolver. Older and less precise Heckler and Sons solution for non-lethal takedowns. This gun has smaller capacity in exchange for S-cells use."
+	desc = "Also know as stunrevolver. Older and less precise H&S solution for non-lethal takedowns. This gun has a smaller capacity in exchange for S-cells use."
 	icon = 'icons/obj/guns/energy/stunrevolver.dmi'
 	icon_state = "stunrevolver"
 	item_state = "stunrevolver"
