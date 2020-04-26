@@ -191,6 +191,11 @@
 	set name = "Examine"
 	set category = "IC"
 
+	// No examining metaphysical things, please!
+	// These use a different proc for examining.  
+	if(isHUDobj(A))
+		return 1
+
 	if((is_blind(src) || usr.stat) && !isobserver(src))
 		to_chat(src, "<span class='notice'>Something is there but you can't see it.</span>")
 		return 1
