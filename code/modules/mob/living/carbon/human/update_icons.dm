@@ -1271,9 +1271,13 @@ mob/living/carbon/human/proc/get_wings_image()
 
 /mob/living/carbon/human/proc/update_surgery(var/update_icons=1)
 	overlays_standing[SURGERY_LAYER] = null
-	var/image/total = new
+	var/image/total = null
+
 	for(var/obj/item/organ/external/E in organs)
 		if(E.open)
+			if(total == null)
+				total = new
+
 			var/image/I = image("icon"='icons/mob/surgery.dmi', "icon_state"="[E.name][round(E.open)]", "layer"=-SURGERY_LAYER)
 			total.add_overlay(I)
 	overlays_standing[SURGERY_LAYER] = total
