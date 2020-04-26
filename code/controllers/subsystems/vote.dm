@@ -1,7 +1,7 @@
 SUBSYSTEM_DEF(vote)
-	name = "Voting"
+	name = "Vote"
 	wait = 1 SECONDS
-	flags = SS_KEEP_TIMING
+	flags = SS_KEEP_TIMING | SS_NO_INIT
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
 	var/list/votes = list()
@@ -9,16 +9,12 @@ SUBSYSTEM_DEF(vote)
 	var/datum/poll/active_vote = null
 	var/vote_start_time = 0
 
-///datum/controller/subsystem/vote/PreInit()
-//	for(var/T in subtypesof(/datum/poll))
-//		var/datum/poll/P = new T
-//		votes[T] = P
-
 /datum/controller/subsystem/vote/Initialize()
 	. = ..()
+
+/datum/controller/subsystem/vote/PreInit()
 	for(var/T in subtypesof(/datum/poll))
 		var/datum/poll/P = new T
-		P.only_admin = P.IsAdminOnly()
 		votes[T] = P
 
 /datum/controller/subsystem/vote/proc/update_voters()
@@ -50,7 +46,7 @@ SUBSYSTEM_DEF(vote)
 
 	var/datum/poll/poll = null
 
-	if(ispath(newvote) && (newvote in votes))
+	if(ispath(newvote) && newvote in votes)
 		poll = votes[newvote]
 
 	//can_start check is done before calling this so that admins can skip it
