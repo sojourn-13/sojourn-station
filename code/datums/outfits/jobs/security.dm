@@ -50,6 +50,15 @@
 	gloves = /obj/item/clothing/gloves/stungloves
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
+/decl/hierarchy/outfit/job/security/serg
+	name = OUTFIT_JOB_NAME("Blackshield - Sergeant")
+	uniform = /obj/item/clothing/under/instructor
+	head = /obj/item/clothing/head/rank/instructor_hat
+	glasses = /obj/item/clothing/glasses/ballistic
+	l_pocket = /obj/item/device/flash
+	gloves = /obj/item/clothing/gloves/thick
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+
 /decl/hierarchy/outfit/job/security/inspector
 	name = OUTFIT_JOB_NAME("Marshal - Ranger")
 	head = /obj/item/clothing/head/rank/inspector

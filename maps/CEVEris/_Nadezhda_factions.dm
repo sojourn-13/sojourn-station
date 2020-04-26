@@ -26,7 +26,7 @@
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/militia
-	name = "Blackshield Militia - Blackguard"
+	name = "Blackshield Militia - Brigadier Ayana Mwangi "
 
 	fax_alert = "BLACKSHIELD COMMUNIQUE"
 	fax_response = "Blackshield Order"
@@ -35,7 +35,7 @@
 	darkcolor = "#00580a"
 	lightcolor = "#47c156"
 
-	stamptext = "This paper has been authorized with the Blackguard's Insignia"
+	stamptext = "This paper has been authorized with the Brigadier's Insignia"
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/soteria

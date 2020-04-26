@@ -111,7 +111,7 @@
 //A shard of glass wrapped in tape makes a crude sort of knife
 /datum/craft_recipe/tool/shiv
 	name = "shiv"
-	result = /obj/item/weapon/tool/shiv
+	result = /obj/item/weapon/tool/knife/shiv
 	steps = list(
 		list(/obj/item/weapon/material/shard, 1, "time" = 30),
 		list(QUALITY_ADHESIVE, 15, 70)

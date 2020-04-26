@@ -24,6 +24,7 @@ var/const/AI				=(1<<8)
 var/const/CYBORG			=(1<<9)
 var/const/SWO				=(1<<10)
 var/const/OFFICER			=(1<<11)
+var/const/SERG				=(1<<12)
 
 
 var/const/MEDSCI			=(1<<1)

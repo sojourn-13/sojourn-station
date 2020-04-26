@@ -59,7 +59,7 @@
 	var/datum/feed_message/wanted_issue
 
 /datum/feed_network/New()
-	CreateFeedChannel("Ship Announcements", "SS13", 1, 1, "New Station Announcement Available")
+	CreateFeedChannel("Colony Announcements", "SS13", 1, 1, "New Colony Announcement Available")
 
 /datum/feed_network/proc/CreateFeedChannel(var/channel_name, var/author, var/locked, var/adminChannel = 0, var/announcement_message)
 	var/datum/feed_channel/newChannel = new /datum/feed_channel

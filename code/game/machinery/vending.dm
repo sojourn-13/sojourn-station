@@ -1750,8 +1750,7 @@
 					/obj/item/weapon/storage/pouch/small_generic = 2,
 					/obj/item/weapon/storage/pouch/medium_generic = 2,
 					/obj/item/weapon/storage/pouch/medical_supply = 2)
-	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 1,
-					/obj/item/weapon/tool/knife/neotritual = 3,
+	contraband = list(/obj/item/weapon/tool/knife/neotritual = 3,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 3)
 
 	prices = list(/obj/item/weapon/book/ritual/cruciform = 500,
@@ -1772,7 +1771,6 @@
 					/obj/item/weapon/storage/pouch/small_generic = 800,
 					/obj/item/weapon/storage/pouch/medium_generic = 1000,
 					/obj/item/weapon/storage/pouch/medical_supply = 600,
-					/obj/item/weapon/implant/core_implant/cruciform = 1000,
 					/obj/item/weapon/tool/knife/neotritual = 1000,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 1500)
 
