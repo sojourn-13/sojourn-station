@@ -133,7 +133,7 @@ var/global/list/image/fluidtrack_cache=list()
 		color = "#FFFFFF"
 		var/truedir=0
 
-		// Update ONLY the overlays that have changed.
+		// Update ONLY the over-lays that have changed.
 		for(var/datum/fluidtrack/track in stack)
 			var/stack_idx=setdirs["[track.direction]"]
 			var/state=coming_state

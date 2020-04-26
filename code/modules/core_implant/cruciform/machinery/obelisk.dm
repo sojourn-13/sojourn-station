@@ -14,6 +14,7 @@
 	idle_power_usage = 30
 	active_power_usage = 2500
 
+	var/overrideFaithfulCheck = FALSE
 	var/active = FALSE
 	var/area_radius = 7
 	var/damage = 20
@@ -35,7 +36,7 @@
 	if(stat)
 		return
 	var/list/affected = range(area_radius, src)
-	active = check_for_faithful(affected)
+	active = check_for_faithful(affected) || overrideFaithfulCheck
 	update_icon()
 	if(!active)
 		use_power = 1

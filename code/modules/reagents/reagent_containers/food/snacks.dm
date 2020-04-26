@@ -2709,7 +2709,7 @@
 		if( boxtag != "" )
 			desc = "[desc] The box has a tag, it reads: '[boxtag]'."
 
-	// Icon states and overlays
+	// Icon states and over-lays
 	if( open )
 		if( ismessy )
 			icon_state = "pizzabox_messy"

@@ -693,7 +693,7 @@ There are 9 wires.
 			if(overlays.len)
 				cut_overlays()
 			if(p_open)
-				flick("o_door_opening", src)  //can not use flick due to BYOND bug updating overlays right before flicking
+				flick("o_door_opening", src)  //can not use flick due to BYOND bug updating over-lays right before flicking
 				update_icon()
 			else
 				flick("door_opening", src)//[stat ? "_stat":]

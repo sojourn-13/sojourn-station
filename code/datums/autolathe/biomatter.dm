@@ -162,3 +162,54 @@
 	name = "Organic muscle implant"
 	build_path = /obj/item/weapon/biogoop/muscle
 //[/IMPLANT]
+
+
+
+//[/POUCHES]
+/datum/design/bioprinter/pouch/ammo
+	name = "Ammo pouch"
+	build_path = /obj/item/weapon/storage/pouch/ammo
+
+/datum/design/bioprinter/pouch/baton_holster
+	name = "Baton pouch"
+	build_path = /obj/item/weapon/storage/pouch/baton_holster
+
+/datum/design/bioprinter/pouch/pistol_holster
+	name = "Pistol holster pouch"
+	build_path = /obj/item/weapon/storage/pouch/pistol_holster
+
+/datum/design/bioprinter/pouch/engineering_supply
+	name = "Engineering supply pouch"
+	build_path = /obj/item/weapon/storage/pouch/engineering_supply
+
+/datum/design/bioprinter/pouch/engineering_tools
+	name = "Engineering tools pouch"
+	build_path = /obj/item/weapon/storage/pouch/engineering_tools
+
+/datum/design/bioprinter/pouch/janitor_supply
+	name = "Janitor supply pouch"
+	build_path = /obj/item/weapon/storage/pouch/janitor_supply
+
+/datum/design/bioprinter/pouch/small_generic/purple
+	name = "Small generic purple pouch"
+	build_path = /obj/item/weapon/storage/pouch/small_generic/purple
+
+/datum/design/bioprinter/pouch/small_generic
+	name = "Small generic pouch"
+	build_path = /obj/item/weapon/storage/pouch/small_generic
+
+/datum/design/bioprinter/pouch/medium_generic
+	name = "Medium generic pouch"
+	build_path = /obj/item/weapon/storage/pouch/medium_generic
+
+/datum/design/bioprinter/pouch/large_generic
+	name = "Large generic pouch"
+	build_path = /obj/item/weapon/storage/pouch/large_generic
+
+/datum/design/bioprinter/pouch/tubular
+	name = "Tubular pouch"
+	build_path = /obj/item/weapon/storage/pouch/tubular
+
+/datum/design/bioprinter/pouch/tubular/vial
+	name = "Tubular vial pouch"
+	build_path = /obj/item/weapon/storage/pouch/tubular/vial

@@ -1,4 +1,4 @@
-// Create lighting overlays on all turfs with dynamic lighting in areas with dynamic lighting.
+// Create lighting over-lays on all turfs with dynamic lighting in areas with dynamic lighting.
 /proc/create_all_lighting_overlays()
 	for(var/area/A in all_areas)
 		if(!A.dynamic_lighting)

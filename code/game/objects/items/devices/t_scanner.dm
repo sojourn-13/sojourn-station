@@ -44,10 +44,10 @@
 	var/active
 
 	var/list/active_scanned = list() //assoc list of objects being scanned, mapped to their overlay
-	var/client/user_client //since making sure overlays are properly added and removed is pretty important, so we track the current user explicitly
+	var/client/user_client //since making sure over-lays are properly added and removed is pretty important, so we track the current user explicitly
 
 
-	var/global/list/overlay_cache = list() //cache recent overlays
+	var/global/list/overlay_cache = list() //cache recent over-lays
 	var/datum/event_source //When listening for movement, this is the source we're listening to
 	var/mob/current_user //The last mob who interacted with us. We'll try to fetch the client from them
 
@@ -86,7 +86,7 @@
 	var/list/update_add = scanned - active_scanned
 	var/list/update_remove = active_scanned - scanned
 
-	//Add new overlays
+	//Add new over-lays
 	for(var/obj/O in update_add)
 		var/mutable_appearance/overlay = get_overlay(O)
 		//var/image/overlay = get_overlay(O)
@@ -94,7 +94,7 @@
 		active_scanned[O] = overlay
 		user_client.images += overlay
 
-	//Remove stale overlays
+	//Remove stale over-lays
 	for(var/obj/O in update_remove)
 		user_client.images -= active_scanned[O]
 		active_scanned -= O

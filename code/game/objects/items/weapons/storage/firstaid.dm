@@ -154,7 +154,7 @@
 	if (empty) return
 	new /obj/item/weapon/tool/bonesetter(src)
 	new /obj/item/weapon/tool/cautery(src)
-	new /obj/item/weapon/tool/saw/advanced_circular(src)
+	new /obj/item/weapon/tool/saw/circular/advanced(src)
 	new /obj/item/weapon/tool/hemostat(src)
 	new /obj/item/weapon/tool/retractor(src)
 	new /obj/item/weapon/tool/scalpel/advanced(src)
@@ -179,6 +179,23 @@
 	max_storage_space = DEFAULT_SMALL_STORAGE
 	matter = list(MATERIAL_BIOMATTER = 12)
 	attack_verb = list("pouched")
+
+	can_hold = list(
+		/obj/item/device/scanner/health,
+		/obj/item/weapon/dnainjector,
+		/obj/item/weapon/reagent_containers/dropper,
+		/obj/item/weapon/reagent_containers/glass/beaker,
+		/obj/item/weapon/reagent_containers/glass/bottle,
+		/obj/item/weapon/reagent_containers/pill,
+		/obj/item/weapon/reagent_containers/syringe,
+		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/stack/medical,
+		/obj/item/clothing/mask/surgical,
+		/obj/item/clothing/head/surgery,
+		/obj/item/clothing/gloves/latex,
+		/obj/item/weapon/reagent_containers/hypospray,
+		/obj/item/clothing/glasses/hud/health,
+		)
 
 	var/sliding_behavior = FALSE
 

@@ -14,8 +14,8 @@ var/list/flooring_types
 // [icon_base]_broken: damaged overlay.
 // if has_damage_range is set, append 0-damage_range for state ie.
 //   [icon_base]_broken[has_damage_range]
-// [icon_base]_edges: directional overlays for edges.
-// [icon_base]_corners: directional overlays for non-edge corners.
+// [icon_base]_edges: directional over-lays for edges.
+// [icon_base]_corners: directional over-lays for non-edge corners.
 
 /decl/flooring
 	var/name = "floor"

@@ -178,9 +178,9 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 			src.add_overlay(image(src.icon, "crack3"))
 		return
 
-	src.cut_overlays() //reset overlays
+	src.cut_overlays() //reset over-lays
 
-	if(news_network.wanted_issue) //wanted icon state, there can be no overlays on it as it's a priority message
+	if(news_network.wanted_issue) //wanted icon state, there can be no over-lays on it as it's a priority message
 		icon_state = "newscaster_wanted"
 		return
 

@@ -113,23 +113,23 @@ mob
 		underlays += image(icon='old_or_unused.dmi',icon_state="red")
 		underlays += image(icon='old_or_unused.dmi',icon_state="red", pixel_x = 32)
 		underlays += image(icon='old_or_unused.dmi',icon_state="red", pixel_x = -32)
-		// Testing image overlays
-		overlays += image(icon='old_or_unused.dmi',icon_state="green", pixel_x = 32, pixel_y = -32)
-		overlays += image(icon='old_or_unused.dmi',icon_state="green", pixel_x = 32, pixel_y = 32)
-		overlays += image(icon='old_or_unused.dmi',icon_state="green", pixel_x = -32, pixel_y = -32)
-		// Testing icon file overlays (defaults to mob's state)
-		overlays += '_flat_demoIcons2.dmi'
-		// Testing icon_state overlays (defaults to mob's icon)
-		overlays += "white"
-		// Testing dynamic icon overlays
+		// Testing image over-lays
+		over-lays += image(icon='old_or_unused.dmi',icon_state="green", pixel_x = 32, pixel_y = -32)
+		over-lays += image(icon='old_or_unused.dmi',icon_state="green", pixel_x = 32, pixel_y = 32)
+		over-lays += image(icon='old_or_unused.dmi',icon_state="green", pixel_x = -32, pixel_y = -32)
+		// Testing icon file over-lays (defaults to mob's state)
+		over-lays += '_flat_demoIcons2.dmi'
+		// Testing icon_state over-lays (defaults to mob's icon)
+		over-lays += "white"
+		// Testing dynamic icon over-lays
 		var/icon/I = icon('old_or_unused.dmi', icon_state="aqua")
 		I.Shift(NORTH, 16, 1)
-		overlays+=I
-		// Testing dynamic image overlays
+		over-lays+=I
+		// Testing dynamic image over-lays
 		I=image(icon=I, pixel_x = -32, pixel_y = 32)
-		overlays+=I
+		over-lays+=I
 		// Testing object types (and layers)
-		overlays+=/obj/effect/overlayTest
+		over-lays+=/obj/effect/overlayTest
 		loc = locate (10, 10, 1)
 	verb
 		Browse_Icon()
@@ -155,7 +155,7 @@ mob
 			winset(src, "imageLabel", "image='\ref[I]'");
 		Add_Overlay()
 			set name = "4. Add Overlay"
-			overlays += image(icon='old_or_unused.dmi',icon_state="yellow", pixel_x = rand(-64, 32), pixel_y = rand(-64, 32))
+			over-lays += image(icon='old_or_unused.dmi',icon_state="yellow", pixel_x = rand(-64, 32), pixel_y = rand(-64, 32))
 		Stress_Test()
 			set name = "5. Stress Test"
 			for(var/i = 0 to 1000)
@@ -174,7 +174,7 @@ obj/effect/overlayTest
 	icon_state = "blue"
 	pixel_x = -24
 	pixel_y = 24
-	layer = TURF_LAYER // Should appear below the rest of the overlays
+	layer = TURF_LAYER // Should appear below the rest of the over-lays
 world
 	view = "7x7"
 	maxx = 20
@@ -599,8 +599,8 @@ proc/ColorTone(rgb, tone)
 
 
 /*
-Get flat icon by DarkCampainger. As it says on the tin, will return an icon with all the overlays
-as a single icon. Useful for when you want to manipulate an icon via the above as overlays are not normally included.
+Get flat icon by DarkCampainger. As it says on the tin, will return an icon with all the over-lays
+as a single icon. Useful for when you want to manipulate an icon via the above as over-lays are not normally included.
 The _flatIcons list is a cache for generated icon files.
 */
 
@@ -658,7 +658,7 @@ proc
 		else
 			curblend = A.blend_mode
 
-		// Layers will be a sorted list of icons/overlays, based on the order in which they are displayed
+		// Layers will be a sorted list of icons/over-lays, based on the order in which they are displayed
 		var/list/layers = list()
 		var/image/copy
 		// Add the atom's icon itself, without pixel_x/y offsets.
@@ -669,9 +669,9 @@ proc
 			copy.blend_mode = curblend
 			layers[copy] = A.layer
 
-		// Loop through the underlays, then overlays, sorting them into the layers list
+		// Loop through the underlays, then over-lays, sorting them into the layers list
 		var/list/process = A.underlays // Current list being processed
-		var/pSet=0 // Which list is being processed: 0 = underlays, 1 = overlays
+		var/pSet=0 // Which list is being processed: 0 = underlays, 1 = over-lays
 		var/curIndex=1 // index of 'current' in list being processed
 		var/current // Current overlay being sorted
 		var/currentLayer // Calculated layer that overlay appears on (special case for FLOAT_LAYER)
@@ -700,7 +700,7 @@ proc
 						layers[current]=currentLayer // Place at end
 
 				curIndex++
-			else if(pSet == 0) // Switch to overlays
+			else if(pSet == 0) // Switch to over-lays
 				curIndex = 1
 				pSet = 1
 				process = A.overlays
@@ -784,7 +784,7 @@ proc
 
 	getIconMask(atom/A)//By yours truly. Creates a dynamic mask for a mob/whatever. /N
 		var/icon/alpha_mask = new(A.icon, A.icon_state)//So we want the default icon and icon state of A.
-		for(var/I in A.overlays)//For every image in overlays. var/image/I will not work, don't try it.
+		for(var/I in A.get_overlays())//For every image in over-lays. var/image/I will not work, don't try it.
 			if(I:layer>A.layer)	continue//If layer is greater than what we need, skip it.
 			var/icon/image_overlay = new(I:icon, I:icon_state)//Blend only works with icon objects.
 			//Also, icons cannot directly set icon_state. Slower than changing variables but whatever.
@@ -792,20 +792,21 @@ proc
 		return alpha_mask//And now return the mask.
 
 /mob/proc/AddCamoOverlay(atom/A)//A is the atom which we are using as the overlay.
-	var/icon/opacity_icon = new(A.icon, A.icon_state)//Don't really care for overlays/underlays.
-	//Now we need to culculate overlays+underlays and add them together to form an image for a mask.
+	var/icon/opacity_icon = new(A.icon, A.icon_state)//Don't really care for over-lays/underlays.
+	//Now we need to culculate over-lays+underlays and add them together to form an image for a mask.
 	//var/icon/alpha_mask = getFlatIcon(src)//Accurate but SLOW. Not designed for running each tick. Could have other uses I guess.
 	var/icon/alpha_mask = getIconMask(src)//Which is why I created that proc. Also a little slow since it's blending a bunch of icons together but good enough.
 	opacity_icon.AddAlphaMask(alpha_mask)//Likely the main source of lag for this proc. Probably not designed to run each tick.
 	opacity_icon.ChangeOpacity(0.4)//Front end for MapColors so it's fast. 0.5 means half opacity and looks the best in my opinion.
-	for(var/i=0, i<5, i++)//And now we add it as overlays. It's faster than creating an icon and then merging it.
+	for(var/i=0, i<5, i++)//And now we add it as over-lays. It's faster than creating an icon and then merging it.
 		var/image/I = image("icon" = opacity_icon, "icon_state" = A.icon_state, "layer" = layer+0.8)//So it's above other stuff but below weapons and the like.
 		switch(i)//Now to determine offset so the result is somewhat blurred.
 			if(1)	I.pixel_x--
 			if(2)	I.pixel_x++
 			if(3)	I.pixel_y--
 			if(4)	I.pixel_y++
-		overlays += I//And finally add the overlay.
+		add_overlay(I)
+
 
 /proc/getHologramIcon(icon/A, safety=1, var/hologram_opacity = 0.5, var/hologram_color)//If safety is on, a new icon is not created.
 	var/icon/flat_icon = safety ? A : new(A)//Has to be a new icon to not constantly change the same icon.
@@ -818,7 +819,7 @@ proc
 //For photo camera.
 /proc/build_composite_icon(atom/A)
 	var/icon/composite = icon(A.icon, A.icon_state, A.dir, 1)
-	for(var/O in A.overlays)
+	for(var/O in A.get_overlays())
 		var/image/I = O
 		composite.Blend(icon(I.icon, I.icon_state, I.dir, 1), ICON_OVERLAY)
 	return composite

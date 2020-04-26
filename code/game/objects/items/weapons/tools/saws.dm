@@ -53,19 +53,15 @@
 	degradation = 2.65
 	suitable_cell = /obj/item/weapon/cell/small
 
-/obj/item/weapon/tool/saw/advanced_circular
+/obj/item/weapon/tool/saw/circular/advanced
 	name = "advanced circular saw"
 	desc = "You think you can cut anything with it."
 	icon_state = "advanced_saw"
-	hitsound = WORKSOUND_CIRCULAR_SAW
-	worksound = WORKSOUND_CIRCULAR_SAW
-	force = WEAPON_FORCE_ROBUST
 	armor_penetration = ARMOR_PEN_DEEP
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 50, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
 	degradation = 0.7
 	use_power_cost = 0.22
-	suitable_cell = /obj/item/weapon/cell/small
 	max_upgrades = 4
 
 /obj/item/weapon/tool/saw/chain //tier 4, focusing on damage, fuel variant

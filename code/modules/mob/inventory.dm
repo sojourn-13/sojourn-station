@@ -11,7 +11,7 @@
 		equip_to_slot_if_possible(W, slot)
 
 //These procs handle putting s tuff in your hand. It's probably best to use these rather than setting l_hand = ...etc
-//as they handle all relevant stuff like adding it to the player's screen and updating their overlays.
+//as they handle all relevant stuff like adding it to the player's screen and updating their over-lays.
 
 //Returns the thing in our active hand
 /mob/proc/get_active_hand()

@@ -4,7 +4,6 @@
 	var/mob/shadow/shadow
 
 /mob/shadow
-	plane = OPENSPACE_PLANE
 	name = "shadow"
 	desc = "Z-level shadow"
 	anchored = 1
@@ -40,7 +39,7 @@
 	icon = M.icon
 	icon_state = M.icon_state
 	color = M.color
-	copy_overlays(M.overlays, TRUE)
+	copy_overlays(M.get_overlays(), TRUE)
 	transform = M.transform
 	dir = M.dir
 	if(shadow)

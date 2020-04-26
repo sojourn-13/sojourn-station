@@ -135,7 +135,6 @@ var/list/flooring_cache = list()
 			F.update_icon()
 	update_openspace()
 
-
 //Tests whether this flooring will smooth with the specified turf
 //You can override this if you want a flooring to have super special snowflake smoothing behaviour
 /decl/flooring/proc/test_link(var/turf/origin, var/turf/T, var/countercheck = FALSE)
@@ -200,9 +199,6 @@ var/list/flooring_cache = list()
 							//Found a match on the list
 							is_linked = FALSE
 							break
-
-
-
 
 	//Alright now we have a preliminary answer about smoothing, however that answer may change with the following
 	//Atom lists!
@@ -321,7 +317,7 @@ var/list/flooring_cache = list()
 		I.plane = src.plane
 
 
-		//External overlays will be offsetted out of this tile
+		//External over-lays will be offsetted out of this tile
 		if (external)
 			if (icon_dir & NORTH)
 				I.pixel_y = 32

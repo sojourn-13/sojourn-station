@@ -822,11 +822,11 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 //EXTRA FUNCTIONS===================================
 
-	if (mode == 2||mode == 21)//To clear message overlays.
+	if (mode == 2||mode == 21)//To clear message over-lays.
 		new_message = 0
 		update_icon()
 
-	if (mode == 6||mode == 61)//To clear news overlays.
+	if (mode == 6||mode == 61)//To clear news over-lays.
 		new_news = 0
 		update_icon()
 

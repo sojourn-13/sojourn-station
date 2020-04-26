@@ -88,7 +88,7 @@
 	if(inoperable())
 		add_overlay("nopower")
 	else
-		// Add lights overlays
+		// Add lights over-lays
 		if(HELMET)
 			add_overlay("light1")
 		if(SUIT)

@@ -178,7 +178,7 @@
 
 	H.ChangeToHusk()
 
-	var/obj/item/organ/borer/B = new(H)
+	var/obj/item/organ/internal/borer/B = new(H)
 	H.internal_organs_by_name[BP_BRAIN] = B
 	H.internal_organs |= B
 

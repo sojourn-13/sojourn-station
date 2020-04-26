@@ -47,7 +47,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		else
 			icon = body.icon
 			icon_state = body.icon_state
-			copy_overlays(body.overlays, TRUE)
+			copy_overlays(body.get_overlays(), TRUE)
 
 		alpha = 127
 

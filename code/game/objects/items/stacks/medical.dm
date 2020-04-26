@@ -11,7 +11,7 @@
 	var/heal_burn = 0
 	price_tag = 10
 	matter = list(MATERIAL_BIOMATTER = 5)
-	var/automatic_charge_overlays = FALSE	//Do we handle overlays with base update_icon()? | Stolen from TG egun code
+	var/automatic_charge_overlays = FALSE	//Do we handle over-lays with base update_icon()? | Stolen from TG egun code
 	var/charge_sections = 5		// How many indicator blips are there?
 	var/charge_x_offset = 2		//The spacing between each charge indicator. Should be 2 to leave a 1px gap between each blip.
 
@@ -99,7 +99,7 @@
 	cut_overlays()
 	var/iconState = "[icon_state]_charge"
 	if(!amount)	//Checks if there are still charges left in the item
-		return //If it does not, do nothing, as the overlays have been cut before this already.
+		return //If it does not, do nothing, as the over-lays have been cut before this already.
 	else
 		var/mutable_appearance/charge_overlay = mutable_appearance(icon, iconState)
 		for(var/i = ratio, i >= 1, i--)
@@ -174,10 +174,10 @@
 							var/pain = rand(min(30,affecting.get_damage()), max(affecting.get_damage() + 30,60) - user.stats.getStat(STAT_BIO))
 							H.pain(affecting, pain)
 							if(user != H)
-								to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "alot of " : ""]pain.</span>")
-								to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "alot of " : ""]pain."))
+								to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
+								to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "a lot of " : ""]pain."))
 							else
-								to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "alot of " : ""]pain.</span>")
+								to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
 					if(prob(10 + user.stats.getStat(STAT_BIO)))
 						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 					else
@@ -190,7 +190,7 @@
 						to_chat(user, SPAN_WARNING("\The [src] is used up, but there are more wounds to treat on \the [affecting.name]."))
 				use(used)
 		else
-			if (can_operate(H))        //Checks if mob is lying down on table for surgery
+			if (can_operate(H, user))        //Checks if mob is lying down on table for surgery
 				if (do_surgery(H,user,src))
 					return
 			else
@@ -251,12 +251,12 @@
 						var/pain = rand(min(30,affecting.get_damage()), max(affecting.get_damage() + 30,60) - user.stats.getStat(STAT_BIO))
 						H.pain(affecting, pain)
 						if(user != H)
-							to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "alot of " : ""]pain.</span>")
-							to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "alot of " : ""]pain."))
+							to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
+							to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "a lot of " : ""]pain."))
 						else
-							to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "alot of " : ""]pain.</span>")
+							to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
 		else
-			if (can_operate(H))        //Checks if mob is lying down on table for surgery
+			if (can_operate(H, user))        //Checks if mob is lying down on table for surgery
 				if (do_surgery(H,user,src))
 					return
 			else
@@ -340,10 +340,10 @@
 					var/pain = rand(min(30,affecting.get_damage()), max(affecting.get_damage() + 30,60) - user.stats.getStat(STAT_BIO))
 					H.pain(affecting, pain)
 					if(user != H)
-						to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "alot of " : ""]pain.</span>")
-						to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "alot of " : ""]pain."))
+						to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
+						to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "a lot of " : ""]pain."))
 					else
-						to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "alot of " : ""]pain.</span>")
+						to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
 			if(used == amount)
 				if(affecting.is_bandaged())
 					to_chat(user, SPAN_WARNING("\The [src] is used up."))
@@ -352,7 +352,7 @@
 			use(used)
 			update_icon()
 	else
-		if (can_operate(H))        //Checks if mob is lying down on table for surgery
+		if (can_operate(H, user))        //Checks if mob is lying down on table for surgery
 			if (do_surgery(H,user,src))
 				return
 		else
@@ -414,12 +414,12 @@
 						var/pain = rand(min(30,affecting.get_damage()), max(affecting.get_damage() + 30,60) - user.stats.getStat(STAT_BIO))
 						H.pain(affecting, pain)
 						if(user != H)
-							to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "alot of " : ""]pain.</span>")
-							to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "alot of " : ""]pain."))
+							to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
+							to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "a lot of " : ""]pain."))
 						else
-							to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "alot of " : ""]pain.</span>")
+							to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
 		else
-			if (can_operate(H))        //Checks if mob is lying down on table for surgery
+			if (can_operate(H, user))        //Checks if mob is lying down on table for surgery
 				if (do_surgery(H,user,src))
 					return
 			else

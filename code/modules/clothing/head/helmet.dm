@@ -257,7 +257,7 @@
 			icon_state = "[base_state]_up"
 			armor = list(melee = 15, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
 			to_chat(usr, "You push the [src] up out of your face.")
-		update_wear_icon()	//so our mob-overlays
+		update_wear_icon()	//so our mob-over-lays
 		usr.update_action_buttons()
 
 
