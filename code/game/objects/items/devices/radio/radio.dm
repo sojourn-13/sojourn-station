@@ -758,3 +758,12 @@ var/global/list/default_medbay_channels = list(
 /obj/item/device/radio/phone/medbay/New()
 	..()
 	internal_channels = default_medbay_channels.Copy()
+
+/obj/item/device/radio/aborigen
+	listening = 0
+	frequency = 1465
+	broadcasting = 0
+	canhear_range = 2
+	name = "old radio"
+	icon_state = "walkietalkie"
+	item_state = "walkietalkie"
