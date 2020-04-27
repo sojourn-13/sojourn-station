@@ -77,3 +77,7 @@
 	name = "chicken crate"
 	held_count = 5
 	held_type = /mob/living/simple_animal/chick
+
+/obj/structure/largecrate/animal/loadout/petcrate/corgi
+	name = "corgi crate"
+	held_type = /mob/living/simple_animal/hostile/commanded/pet
