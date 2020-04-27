@@ -1,13 +1,13 @@
 //Jobs depatment lists for use in constant expressions
-#define JOBS_SECURITY "Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer"
+#define JOBS_SECURITY "Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant"
 #define JOBS_COMMAND "Premier","Steward","Militia Commander","Warrant Officer","Chief Executive Officer","Guild Master","Chief Biolab Overseer","Chief Research Overseer","Prime"
 #define JOBS_ENGINEERING "Guild Master","Guild Adept"
 #define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Chemist","Soteria Paramedic"
 #define JOBS_SCIENCE "Chief Research Overseer","Soteria Scientist","Soteria Roboticist"
 #define JOBS_CARGO "Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor"
 #define JOBS_CIVILIAN "Colonist"
-#define JOBS_CHURCH	"Prime", "Vector"
-#define JOBS_PROSPECTOR	"Foreman","Salvager","Prospector"
+#define JOBS_CHURCH "Prime", "Vector"
+#define JOBS_PROSPECTOR "Foreman","Salvager","Prospector"
 #define JOBS_NONHUMAN "AI","Robot","pAI"
 
 #define CREDITS "&cent;"
