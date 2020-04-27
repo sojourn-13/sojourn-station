@@ -28,7 +28,7 @@
 
 /obj/item/clothing/glasses/powered/thermal/Initialize()
 	. = ..()
-	overlay = global_hud.thermal
+	screenOverlay = global_hud.thermal
 
 /obj/item/clothing/glasses/powered/thermal/syndi	//These are now a traitor item, concealed as mesons.	-Pete
 	name = "optical meson scanner"
@@ -80,7 +80,7 @@
 /obj/item/clothing/glasses/attackby(var/obj/item/Z, var/mob/user)
 
 	if (istype(Z,/obj/item/clothing/glasses/powered/thermal/lens))
-		overlay = global_hud.thermal
+		screenOverlay = global_hud.thermal
 		vision_flags = SEE_MOBS
 		see_invisible = SEE_INVISIBLE_NOLIGHTING
 		protection = flash_protection
@@ -106,7 +106,7 @@
 		vision_flags = 0;
 		origin_tech = 0;
 		have_lenses = 0;
-		overlay = 0;
+		screenOverlay = 0;
 		to_chat(usr, "You detach lenses from your glasses");
 		var/obj/item/clothing/glasses/powered/thermal/lens/THL = new()
 		usr.put_in_hands(THL)

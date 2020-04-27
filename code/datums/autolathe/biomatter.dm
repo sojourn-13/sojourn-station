@@ -34,7 +34,7 @@
 //[THINGS]
 /datum/design/bioprinter/cardboard
 	name = "Cardboard"
-	build_path = /obj/item/stack/material/cardboard
+	build_path = /obj/item/stack/material/cardboard/random // I guess it depends on the protein content.
 
 
 /datum/design/bioprinter/wallet

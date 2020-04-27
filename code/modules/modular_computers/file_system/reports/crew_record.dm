@@ -1,4 +1,6 @@
-GLOBAL_LIST_EMPTY(all_crew_records)
+GLOBAL_LIST_EMPTY(all_crew_records)		// All crew members who have existed
+GLOBAL_LIST_EMPTY(active_crew_records)	// All crew members who haven't cryoed or otherwise exited the round.
+
 GLOBAL_LIST_INIT(blood_types, list("A-", "A+", "B-", "B+", "AB-", "AB+", "O-", "O+"))
 GLOBAL_LIST_INIT(physical_statuses, list("Active", "Disabled", "SSD", "Deceased", "MIA"))
 GLOBAL_VAR_INIT(default_physical_status, "Active")
@@ -6,12 +8,18 @@ GLOBAL_LIST_INIT(security_statuses, list("None", "Released", "Parolled", "Incarc
 GLOBAL_VAR_INIT(default_security_status, "None")
 GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 
+#define CREW_RECORD_EMPLOYEE_STATUS_INACTIVE				0
+#define CREW_RECORD_EMPLOYEE_STATUS_ACTIVE_GOOD_STATUS		1
+
+
 // Kept as a computer file for possible future expansion into servers.
 /datum/computer_file/report/crew_record
 	filetype = "CDB"
 	size = 2
 	var/icon/photo_front = null
 	var/icon/photo_side = null
+
+	var/employeeStatus = CREW_RECORD_EMPLOYEE_STATUS_ACTIVE_GOOD_STATUS
 	//More variables below.
 
 /datum/computer_file/report/crew_record/New()
@@ -21,6 +29,9 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 /datum/computer_file/report/crew_record/Destroy()
 	. = ..()
 	GLOB.all_crew_records.Remove(src)
+	if(LAZYISIN(GLOB.active_crew_records, src))
+		GLOB.active_crew_records.Remove(src)
+
 
 /datum/computer_file/report/crew_record/proc/load_from_mob(var/mob/living/carbon/human/H)
 
@@ -111,28 +122,35 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 /proc/CreateModularRecord(var/mob/living/carbon/human/H)
 	var/datum/computer_file/report/crew_record/CR = new/datum/computer_file/report/crew_record()
 	GLOB.all_crew_records.Add(CR)
+	GLOB.active_crew_records.Add(CR)
 	CR.load_from_mob(H)
 	SortModularRecords()
 	return CR
 
 /proc/SortModularRecords()
+	SortModularRecords(GLOB.all_crew_records)
+	SortModularRecords(GLOB.active_crew_records)
+
+
+/proc/SortModularRecordsHelper(var/list/x)
 	// improved bubble sort
-	if(GLOB.all_crew_records.len > 1)
-		for(var/i = 1, i <= GLOB.all_crew_records.len, i++)
+	if(x.len > 1)
+		for(var/i = 1, i <= x.len, i++)
 			var/flag = FALSE
-			for(var/j = 1, j <= GLOB.all_crew_records.len - 1, j++)
-				var/datum/computer_file/report/crew_record/CR = GLOB.all_crew_records[j]
-				var/datum/computer_file/report/crew_record/CR_NEXT = GLOB.all_crew_records[j+1]
+			for(var/j = 1, j <= x.len - 1, j++)
+				var/datum/computer_file/report/crew_record/CR = x[j]
+				var/datum/computer_file/report/crew_record/CR_NEXT = x[j+1]
 				if(sorttext(CR.get_name(), CR_NEXT.get_name()) == -1)
 					flag = TRUE
-					GLOB.all_crew_records.Swap(j,j+1)
+					x.Swap(j,j+1)
 			if(!flag)
 				break
+
 
 // Gets crew records filtered by set of positions
 /proc/department_crew_manifest(var/list/filter_positions, var/blacklist = FALSE)
 	var/list/matches = list()
-	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
+	for(var/datum/computer_file/report/crew_record/CR in GLOB.active_crew_records)
 		var/rank = CR.get_job()
 		if(blacklist)
 			if(!(rank in filter_positions))
@@ -156,8 +174,9 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	dat += "</tt>"
 	return dat
 
-/proc/get_crewmember_record(var/name)
-	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
+/proc/get_crewmember_record(var/name, var/getActiveRecordsOnly = TRUE)
+	var/list/targetList = getActiveRecordsOnly ? GLOB.active_crew_records : GLOB.all_crew_records
+	for(var/datum/computer_file/report/crew_record/CR in targetList)
 		if(CR.get_name() == name)
 			return CR
 	return null

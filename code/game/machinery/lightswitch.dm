@@ -15,7 +15,6 @@
 	var/on = 1
 	var/area/area = null
 	var/otherarea = null
-	var/next_check = 0 // A time at which another mob check will occure.
 
 /obj/machinery/light_switch/New()
 	..()
@@ -33,19 +32,6 @@
 
 		if(area.are_living_present())
 			set_on(TRUE)
-
-/obj/machinery/light_switch/Process()
-	if(next_check <= world.time)
-		next_check = world.time + 10 SECONDS // Each 10 seconds it checks if anyone is in the area, but also whether the light wasn't switched on recently.
-		if(area.are_living_present())
-			if(!on)
-				spawn(0)
-					if(!on)
-						dramatic_turning()
-			else
-				next_check = world.time + 10 MINUTES
-		else
-			set_on(FALSE, FALSE)
 
 /obj/machinery/light_switch/proc/updateicon()
 	if(stat & NOPOWER)
@@ -94,9 +80,6 @@
 	for(var/obj/machinery/light_switch/L in area)
 		L.on = on_
 		L.update_icon()
-
-	if(on_)
-		next_check = world.time + 10 MINUTES
 
 	area.power_change()
 
