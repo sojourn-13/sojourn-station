@@ -2552,6 +2552,7 @@
 #include "code\modules\surgery\slimes.dm"
 #include "code\modules\surgery\surgery.dm"
 #include "code\modules\surgery\surgery_ui.dm"
+#include "code\modules\surgery\wound_repair.dm"
 #include "code\modules\surgery\~defines.dm"
 #include "code\modules\synthesized_instruments\echo_editor.dm"
 #include "code\modules\synthesized_instruments\env_editor.dm"
