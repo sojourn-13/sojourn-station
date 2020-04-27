@@ -979,3 +979,133 @@ var/list/datum/dna/hivemind_bank = list()
 	if(T.species && !(T.species.name in changeling.absorbed_species))
 		changeling.absorbed_species += T.species.name
 	return 1
+
+/obj/item/weapon/melee/changeling
+	name = "arm weapon"
+	desc = "A grotesque weapon made out of bone and flesh that cleaves through people as a hot knife through butter."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "arm_blade"
+	w_class = ITEM_SIZE_HUGE
+	force = 5
+	throwforce = 0 //Just to be on the safe side
+	throw_range = 0
+	throw_speed = 0
+	var/mob/living/creator //This is just like ninja swords, needed to make sure dumb shit that removes the sword doesn't make it stay around.
+	var/weapType = "weapon"
+	var/weapLocation = "arm"
+
+
+
+/obj/item/weapon/melee/changeling/New(location)
+	..()
+	if(ismob(loc))
+		visible_message("<span class='warning'>A grotesque weapon forms around [loc.name]\'s arm!</span>",
+		"<span class='warning'>Our arm twists and mutates, transforming it into a deadly weapon.</span>",
+		"<span class='italics'>You hear organic matter ripping and tearing!</span>")
+		src.creator = loc
+
+/obj/item/weapon/melee/changeling/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/weapon/melee/changeling/dropped(mob/user)
+	visible_message("<span class='warning'>With a sickening crunch, [creator] reforms their arm!</span>",
+	"<span class='notice'>We assimilate the weapon back into our body.</span>",
+	"<span class='italics'>You hear organic matter ripping and tearing!</span>")
+	playsound(src, 'sound/effects/blobattack.ogg', 30, 1)
+	spawn(1)
+		if(src)
+			qdel(src)
+
+/obj/item/weapon/melee/changeling/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+/obj/item/weapon/melee/changeling/Process()  //Stolen from ninja swords.
+	if(!creator || loc != creator ||(creator.l_hand != src && creator.r_hand != src))
+		// Tidy up a bit.
+		if(istype(loc,/mob/living))
+			var/mob/living/carbon/human/host = loc
+			if(istype(host))
+				for(var/obj/item/organ/external/organ in host.organs)
+					for(var/obj/item/O in organ.implants)
+						if(O == src)
+							organ.implants -= src
+			host.pinned -= src
+			host.embedded -= src
+			host.drop_from_inventory(src)
+		spawn(1)
+			if(src)
+				qdel(src)
+
+
+/obj/item/weapon/melee/changeling/arm_blade
+	name = "arm blade"
+	desc = "A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter."
+	icon_state = "arm_blade"
+	force = 25
+	armor_penetration = 15
+	sharp = 1
+	edge = 1
+	anchored = 1
+	canremove = 1
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+
+/obj/item/weapon/melee/changeling/claw
+	name = "hand claw"
+	desc = "A grotesque claw made out of bone and flesh that cleaves through people as a hot knife through butter."
+	icon_state = "ling_claw"
+	armor_penetration = 20
+	force = 15
+	sharp = 1
+	edge = 1
+	canremove = 1
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+
+
+/mob/proc/changeling_generic_weapon(weapon_type, loud = TRUE as num, required_chems = 20 as num)
+	var/datum/changeling/changeling = changeling_power(required_chems, 1)
+	if(!changeling)
+		return
+
+	if(!ishuman(src))
+		return FALSE
+
+	..()
+
+	var/mob/living/M = src
+
+	if(M.l_hand && M.r_hand)
+		to_chat(M, "<span class='danger'>Your hands are full.</span>")
+		return
+
+	var/obj/item/weapon/W = new weapon_type(src)
+	src.put_in_hands(W)
+
+	changeling.chem_charges -= required_chems
+	if(loud)
+		playsound(src, 'sound/effects/blobattack.ogg', 30, 1)
+	return TRUE
+
+/mob/proc/changeling_arm_blade()
+	set category = "Changeling"
+	set name = "Arm Blade (20)"
+	visible_message("<span class='warning'>The flesh is torn around the [src.name]\'s arm!</span>",
+		"<span class='warning'>The flesh of our hand is transforming.</span>",
+		"<span class='italics'>You hear organic matter ripping and tearing!</span>")
+	var/mob/living/carbon/human/M = src
+	if(M.handcuffed)
+		var/cuffs = M.handcuffed
+		M.u_equip(M.handcuffed)
+		qdel(cuffs)
+	spawn(4 SECONDS)
+		playsound(src, 'sound/effects/blobattack.ogg', 30, 1)
+		if(changeling_generic_weapon(/obj/item/weapon/melee/changeling/arm_blade))
+			return 1
+		return 0
+
+/mob/proc/changeling_claw()
+	set category = "Changeling"
+	set name = "Claw (15)"
+	if(changeling_generic_weapon(/obj/item/weapon/melee/changeling/claw, 1, 15))
+		return 1
+	return 0
