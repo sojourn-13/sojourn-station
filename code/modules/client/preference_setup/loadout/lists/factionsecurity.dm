@@ -206,11 +206,3 @@
 	allowed_roles = list("Warrant Officer")
 	slot = slot_head
 	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/ihccap
-	display_name= "cap, commander"
-	path = /obj/item/clothing/head/rank/commander/cap
-	allowed_roles = list("Warrant Officer")
-	slot = slot_head
-	sort_category = "Faction: Security"
-	
