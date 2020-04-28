@@ -58,6 +58,10 @@
 	path = /obj/item/clothing/head/hardhat/
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/head/weldhelm
+	display_name = "welding helmet"
+	path = /obj/item/clothing/head/welding
+
 /datum/gear/head/sombrero
 	display_name = "sombrero"
 	path = /obj/item/clothing/head/sombrero
@@ -70,7 +74,37 @@
 /datum/gear/head/turban
 	display_name = "turban"
 	path = /obj/item/clothing/head/turban
-	
+
 /datum/gear/head/fishbowl
 	display_name = "fishbowl helmet"
 	path = /obj/item/clothing/head/costume/misc/fishbowl
+
+/datum/gear/mask
+	display_name = "sterile mask"
+	path = /obj/item/clothing/mask/surgical
+	slot = slot_wear_mask
+	sort_category = "Hats and Headwear"
+
+/datum/gear/mask/bandana
+	display_name = "bandana mask selection"
+	path = /obj/item/clothing/mask/bandana
+	slot = slot_wear_mask
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/mask/gasmask
+	display_name = "gas mask"
+	path = /obj/item/clothing/mask/gas
+	slot = slot_wear_mask
+	cost = 2
+
+/datum/gear/mask/gasmaskenviro
+	display_name = "gas mask, enviro"
+	path = /obj/item/clothing/mask/gas/old
+	slot = slot_wear_mask
+	cost = 2
+
+/datum/gear/mask/gasmaskindustrial
+	display_name = "gas mask, industrial"
+	path = /obj/item/clothing/mask/gas/industrial
+	slot = slot_wear_mask
+	cost = 2
