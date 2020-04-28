@@ -1,4 +1,4 @@
-/datum/gear/pets/nocrate/corgi
+/datum/gear/pets/nocrate
 	display_name = "corgi"
 	cost = 6
 	path = /mob/living/simple_animal/hostile/commanded/pet/corgi
