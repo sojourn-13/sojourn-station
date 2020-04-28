@@ -40,9 +40,3 @@
 		icon_state = initial(icon_state)
 		set_item_state()
 	return
-
-/obj/item/weapon/gun/projectile/automatic/maxim/special_check(mob/user)
-	if(!(user.get_active_hand() == src && user.get_inactive_hand() == null))
-		to_chat(user, SPAN_WARNING("You can't fire \the [src] with [user.get_inactive_hand()] in the other hand."))
-		return FALSE
-	return ..()

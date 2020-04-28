@@ -52,7 +52,7 @@
 		else //in case some goofy admin switches icon states around without switching the icon_open or icon_closed
 			to_chat(usr, "This coat cannot be opened or closed.")
 			return
-		update_wear_icon()	//so our overlays update
+		update_wear_icon()	//so our over-lays update
 
 
 /obj/item/clothing/suit/storage/vest/merc/New()

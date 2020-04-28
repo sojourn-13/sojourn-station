@@ -293,6 +293,7 @@
 /area/nadezhda/hallway
 	sound_env = LARGE_ENCLOSED
 	icon_state = "erisgreen"
+	flags = AREA_FLAG_RAD_SHIELDED
 
 /area/nadezhda/hallway/main/f1section1
 	name = "Floor One Hallway One"

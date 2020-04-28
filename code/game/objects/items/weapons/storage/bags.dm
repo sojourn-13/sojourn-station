@@ -97,6 +97,15 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	can_hold = list(/obj/item/weapon/ore)
 
+// -----------------------------
+//    Mining Satchel (Cyborg)
+// -----------------------------
+
+/obj/item/weapon/storage/bag/ore/borg
+	name = "mining satchel compactor"
+	max_storage_space = 500//Borgs get more because >specialization
+	can_hold_extra = list(/obj/item/weapon/ore)
+
 
 // -----------------------------
 //          Produce bag
@@ -109,6 +118,7 @@
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL
 	w_class = ITEM_SIZE_NORMAL
+	display_contents_with_number = FALSE
 	can_hold = list(/obj/item/weapon/reagent_containers/food/snacks/grown,
 		/obj/item/seeds,
 		/obj/item/weapon/grown,
@@ -172,7 +182,7 @@
 
 	if(!inserted || !S.amount)
 		usr.remove_from_mob(S)
-		usr.update_icons() //update our overlays
+		usr.update_icons() //update our over-lays
 		if (usr.client)
 			usr.client.screen -= S
 		S.dropped(usr)

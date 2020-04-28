@@ -117,7 +117,7 @@ SUBSYSTEM_DEF(overlays)
 /**
  * Cut all of atom's normal overlays.  Usually leaves "priority" overlays untouched.
  *
- *  @param priority If true, also will cut priority overlays.
+ *  @param priority If true, also will cut priority over-lays.
  */
 /atom/proc/cut_overlays(priority = FALSE)
 	var/list/cached_overlays = our_overlays
@@ -125,8 +125,8 @@ SUBSYSTEM_DEF(overlays)
 
 	var/need_compile = FALSE
 
-	if(LAZYLEN(cached_overlays)) //don't queue empty lists, don't cut priority overlays
-		cached_overlays.Cut()  //clear regular overlays
+	if(LAZYLEN(cached_overlays)) //don't queue empty lists, don't cut priority over-lays
+		cached_overlays.Cut()  //clear regular over-lays
 		need_compile = TRUE
 
 	if(priority && LAZYLEN(cached_priority))
@@ -137,7 +137,7 @@ SUBSYSTEM_DEF(overlays)
 		QUEUE_FOR_COMPILE
 
 /**
- * Removes specific overlay(s) from the atom.  Usually does not remove them from "priority" overlays.
+ * Removes specific overlay(s) from the atom.  Usually does not remove them from "priority" over-lays.
  *
  * @param overlays The overlays to removed, type can be anything that is allowed for add_overlay().
  * @param priority If true, also will remove them from the "priority" overlays.
@@ -205,7 +205,7 @@ SUBSYSTEM_DEF(overlays)
  * @param other The atom to copy overlays from.
  * @param cut_old If true, all of our overlays will be *replaced* by the other's. If other is null, that means cutting all ours.
  */
-/atom/proc/copy_overlays(atom/other, cut_old)	//copys our_overlays from another atom
+/atom/proc/copy_overlays(atom/other, cut_old)	//copys our_over-lays from another atom
 	if(!other)
 		if(cut_old)
 			cut_overlays()
@@ -221,6 +221,9 @@ SUBSYSTEM_DEF(overlays)
 			QUEUE_FOR_COMPILE
 	else if(cut_old)
 		cut_overlays()
+
+/atom/proc/get_overlays()
+	return overlays
 
 #undef NOT_QUEUED_ALREADY
 #undef QUEUE_FOR_COMPILE

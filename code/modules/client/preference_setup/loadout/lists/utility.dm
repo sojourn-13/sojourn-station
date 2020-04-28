@@ -129,3 +129,8 @@
 	display_name = "wheelchair"
 	path = /obj/item/wheelchair
 	cost = 2
+
+/datum/gear/utility/sling
+	display_name = "universal sling"
+	path = 	/obj/item/clothing/suit/sling
+	cost = 2

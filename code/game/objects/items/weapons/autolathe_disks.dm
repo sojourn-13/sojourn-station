@@ -506,6 +506,21 @@
 		/datum/design/bioprinter/medical/advanced/bruise,
 		/datum/design/bioprinter/medical/advanced/ointment,
 		/datum/design/autolathe/gun/nt_sprayer,
+
+		/datum/design/bioprinter/pouch/ammo,
+		/datum/design/bioprinter/pouch/baton_holster,
+		/datum/design/bioprinter/pouch/pistol_holster,
+		/datum/design/bioprinter/pouch/engineering_supply,
+		/datum/design/bioprinter/pouch/engineering_tools,
+		/datum/design/bioprinter/pouch/janitor_supply,
+		/datum/design/bioprinter/pouch/small_generic/purple,
+		/datum/design/bioprinter/pouch/small_generic,
+		/datum/design/bioprinter/pouch/medium_generic,
+		/datum/design/bioprinter/pouch/large_generic,
+		/datum/design/bioprinter/pouch/tubular,
+		/datum/design/bioprinter/pouch/tubular/vial
+
+
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioaugment
@@ -833,9 +848,11 @@
 		//pistol mags
 		/datum/design/autolathe/ammo/pistol/rubber,
 		/datum/design/autolathe/ammo/magnum/rubber,
+		/datum/design/autolathe/ammo/a50/rubber,
 		//speed loaders
 		/datum/design/autolathe/ammo/slpistol/rubber,
 		/datum/design/autolathe/ammo/slmagnum/rubber,
+		/datum/design/autolathe/ammo/s150/rubber,
 		//smg mags
 		/datum/design/autolathe/ammo/smg/rubber,
 		// rifles
@@ -856,9 +873,11 @@
 		//pistol mags
 		/datum/design/autolathe/ammo/pistol,
 		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/a50,
 		//speed loaders
 		/datum/design/autolathe/ammo/slpistol,
 		/datum/design/autolathe/ammo/slmagnum,
+		/datum/design/autolathe/ammo/s150,
 		//smg mags
 		/datum/design/autolathe/ammo/smg,
 		// rifles

@@ -152,7 +152,7 @@
 	if(last_disp != chargedisplay() || last_chrg != inputting || last_onln != outputting)
 		update_icon()
 
-	//store machine state to see if we need to update the icon overlays
+	//store machine state to see if we need to update the icon over-lays
 	last_disp = chargedisplay()
 	last_chrg = inputting
 	last_onln = outputting

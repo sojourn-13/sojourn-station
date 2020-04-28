@@ -319,9 +319,6 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 	This proc allows plants like maintshrooms to spread through burrows
 	Run every 10 minutes
 */
-#define TRAIT_SPREAD			30
-//I don't know why plant traits are defined only inside their specific folder
-//Moving them out to main defines doesn't seem necessary for now
 
 /datum/controller/subsystem/migration/proc/handle_plant_spreading()
 	next_plantspread = world.time + burrow_plantspread_interval//Setup the next spread tick
@@ -372,8 +369,6 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 			//If people cut down all the plants near us, but didn't collapse this burrow, they're in for a bad time
 			//Plants are back baby!
 
-
-
 /*
 	Finds burrows near to the specified one, and sends plants from it to them
 */
@@ -414,7 +409,6 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 		C.spread_plants() //And make some plants at the new burrow
 
 
-#undef TRAIT_SPREAD
 
 /*************************************************
 	Burrow Finding and Sorting

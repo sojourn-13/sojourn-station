@@ -1,4 +1,4 @@
-//EX act uses new damage type blast, which allows it to get burn AND damage overlays simultaneously
+//EX act uses new damage type blast, which allows it to get burn AND damage over-lays simultaneously
 /turf/simulated/floor/ex_act(severity)
 	//set src in oview(1)
 	var/obj/effect/shield/turf_shield = getEffectShield()

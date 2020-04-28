@@ -25,13 +25,17 @@
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
 	speed = 24
-	move_to_delay = 4
-	turns_per_move = 5
+	move_to_delay = 2
+	turns_per_move = 2
+	vision_range = 12
+	aggro_vision_range = 12
+	environment_smash = 2
+	break_stuff_probability = 95
 	attacktext = "mauled"
 	faction = "deathclaw"
-	maxHealth = 600
-	health = 600
-	melee_damage_lower = 30
+	maxHealth = 900
+	health = 900
+	melee_damage_lower = 35
 	melee_damage_upper = 40
 	old_x = -16
 	old_y = 0
@@ -39,12 +43,22 @@
 	pixel_x = -16
 	pixel_y = 0
 	attack_sound = 'sound/weapons/deathclawattack.ogg'
+	meat_amount = 6
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
+	can_burrow = FALSE
 
 /mob/living/simple_animal/hostile/deathclaw/FindTarget()
 	. = ..()
 	if(.)
 		visible_emote("lets out a deafening roar and charges at [.]!")
 		playsound(src, 'sound/voice/deathclaw_roar.ogg', 200, 3, 8, 1)
+
+/mob/living/simple_animal/hostile/deathclaw/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
+	walk_to(src,0)
+	movement_target = null
+	icon_state = icon_dead
+	density = 0
+	return ..(gibbed,deathmessage)
 
 
 /mob/living/simple_animal/hostile/deathclaw/chunks

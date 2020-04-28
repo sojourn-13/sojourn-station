@@ -219,20 +219,26 @@
 	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_PLASTIC = 3)
 	price_tag = 10000
 
-/obj/item/weapon/melee/sledgehammer
+/obj/item/weapon/tool/foremansledge
 	name = "foreman's sledgehammer"
 	desc = "Once a tool used to nail rivets, now a tool used to crush skulls. The signature weapon of the prospector's foreman."
+	icon = 'icons/obj/weapons.dmi'
 	icon_state = "sledgehammer0"
 	item_state = "sledgehammer1"
 	force = WEAPON_FORCE_LETHAL
+	slot_flags = SLOT_BELT
 	armor_penetration = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_PAINFUL
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5)
 	throw_speed = 1
 	throw_range = 4
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_COMBAT = 3)
-	attack_verb = list("robusted", "slammed", "struck", "crushed")
+	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
+	tool_qualities = list(QUALITY_HAMMERING = 60)
+	worksound = WORKSOUND_HAMMER
+	price_tag = 4000
 
 /obj/item/weapon/tool/sword/saber
 	name = "premier's saber"

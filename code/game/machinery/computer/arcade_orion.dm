@@ -486,6 +486,7 @@
 		to_chat(user, SPAN_NOTICE("There's a little switch on the bottom. It's flipped down."))
 	else
 		to_chat(user, SPAN_NOTICE("There's a little switch on the bottom. It's flipped up."))
+
 /obj/item/weapon/orion_ship/attack_self(mob/user)
 	if(active)
 		return
@@ -495,12 +496,12 @@
 	active = 1
 	src.visible_message(SPAN_NOTICE("[src] softly beeps and whirs to life!"))
 	src.audible_message("<b>\The [src]</b> says, 'This is ship ID #[rand(1,1000)] to Chromin 8 Port Authority. We're coming in for landing, over.'")
-	sleep(20)
-	src.visible_message(SPAN_WARNING("[src] begins to vibrate..."))
+	sleep(40)
+	src.visible_message(SPAN_WARNING("[src] begins to vibrate dangerously! You better throw it!"))
 	src.audible_message("<b>\The [src]</b> says, 'Uh, Port? Having some issues with our reactor, could you check it out? Over.'")
-	sleep(30)
+	sleep(60)
 	src.audible_message("<b>\The [src]</b> says, 'Oh, God! Code Eight! CODE EIGHT! IT'S GONNA BL-'")
-	sleep(3.6)
+	sleep(20)
 	src.visible_message(SPAN_DANGER("[src] explodes!"))
 	explosion(src.loc, 1,2,4)
 	qdel(src)

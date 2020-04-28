@@ -878,7 +878,7 @@
 	container = new /obj/item/weapon/reagent_containers/glass/beaker(src)
 
 
-// You (still) can't flicker overlays in BYOND, and this is a vis_contents hack to provide the same functionality.
+// You (still) can't flicker over-lays in BYOND, and this is a vis_contents hack to provide the same functionality.
 // Used for materials loading animation.
 /obj/effect/flicker_overlay
 	name = ""

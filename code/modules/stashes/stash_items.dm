@@ -7,5 +7,5 @@
 	desc = "A suspiciously lumpy sack full of mystery."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "sack"
-	item_state = "trashbag"
+	item_state = "sack"
 	max_w_class = ITEM_SIZE_HUGE

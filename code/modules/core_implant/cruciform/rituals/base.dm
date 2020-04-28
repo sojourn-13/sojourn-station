@@ -19,7 +19,6 @@
 	phrase = "Et si ambulavero in medio umbrae mortis non timebo mala."
 	desc = "A short litany to relieve pain of the afflicted."
 	power = 50
-	chance = 33
 
 /datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.add_chemical_effect(CE_PAINKILLER, 10)
@@ -31,7 +30,6 @@
 	phrase = "Panem nostrum cotidianum da nobis hodie."
 	desc = "Litany of pilgrims that helps better withstand hunger."
 	power = 50
-	chance = 33
 
 /datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.nutrition += 100
@@ -44,7 +42,6 @@
 	phrase = "Deus meus ut quid dereliquisti me."
 	desc = "Call for help, allowing other cruciform bearers to hear your cries."
 	power = 50
-	chance = 60
 
 /datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	for(var/mob/living/carbon/human/target in disciples)
@@ -109,7 +106,9 @@
 		fail("You feel stupid.",user,C,targets)
 		return FALSE
 
-	var/text = input(user, "What message will you send to the target? The message will be recieved telepathically and they will not know who it is from unless you reveal yourself.", "Sending a message") as (text|null)
+	var/text = input(user, "What message will you send to the target? The message will be recieved telepathically and they will not know who it is from unless you reveal yourself.", "Sending a message") as text|null
 	if (!text)
 		return
-	to_chat(H, "<span class='notice'>A voice speaks in your mind: \"[text]\"</span>")
+	to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>A voice speaks in your mind: \"[text]\"</font><b></span>")
+	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
+	playsound(H, 'sound/machines/signal.ogg', 50, 1)

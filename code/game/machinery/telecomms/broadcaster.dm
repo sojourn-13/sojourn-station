@@ -3,7 +3,6 @@
 /*
 	The broadcaster sends processed messages to all radio devices in the game. They
 	do not have to be headsets; intercoms and station-bounced radios suffice.
-
 	They receive their message from a server after the message has been logged.
 */
 
@@ -161,60 +160,44 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 
 
 /**
-
 	Here is the big, bad function that broadcasts a message given the appropriate
 	parameters.
-
 	@param connection:
 		The datum generated in radio.dm, stored in signal.data["connection"].
-
 	@param M:
 		Reference to the mob/speaker, stored in signal.data["mob"]
-
 	@param vmask:
 		Boolean value if the mob is "hiding" its identity via voice mask, stored in
 		signal.data["vmask"]
-
 	@param vmessage:
 		If specified, will display this as the message; such as "chimpering"
 		for monkies if the mob is not understood. Stored in signal.data["vmessage"].
-
 	@param radio:
 		Reference to the radio broadcasting the message, stored in signal.data["radio"]
-
 	@param message:
 		The actual string message to display to mobs who understood mob M. Stored in
 		signal.data["message"]
-
 	@param name:
 		The name to display when a mob receives the message. signal.data["name"]
-
 	@param job:
 		The name job to display for the AI when it receives the message. signal.data["job"]
-
 	@param realname:
 		The "real" name associated with the mob. signal.data["realname"]
-
 	@param vname:
 		If specified, will use this name when mob M is not understood. signal.data["vname"]
-
 	@param data:
 		If specified:
 				1 -- Will only broadcast to intercoms
 				2 -- Will only broadcast to intercoms and station-bounced radios
 				3 -- Broadcast to syndicate frequency
 				4 -- AI can't track down this person. Useful for imitation broadcasts where you can't find the actual mob
-
 	@param compression:
 		If 0, the signal is audible
 		If nonzero, the signal may be partially inaudible or just complete gibberish.
-
 	@param level:
 		The list of Z levels that the sending radio is broadcasting to. Having 0 in the list broadcasts on all levels
-
 	@param freq
 		The frequency of the signal
-
 **/
 
 /proc/Broadcast_Message(var/datum/radio_frequency/connection, var/mob/M,
@@ -626,4 +609,3 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	//log_world("Level: [signal.data["level"]] - Done: [signal.data["done"]]")
 
 	return signal
-

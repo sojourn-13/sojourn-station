@@ -36,7 +36,7 @@
 	var/model                          // Used when caching robolimb icons.
 	//var/default_icon	// Used to force override of species-specific limb icons (for prosthetics).
 	var/force_icon
-	var/icon/mob_icon                  // Cached icon for use in mob overlays.
+	var/icon/mob_icon                  // Cached icon for use in mob over-lays.
 	var/gendered = null
 	var/skin_tone			// Skin tone.
 	var/skin_col			// skin colour
@@ -198,9 +198,11 @@
 /obj/item/organ/external/proc/update_bionics_hud()
 	switch(organ_tag)
 		if(BP_L_ARM)
-			owner?.HUDneed["left arm bionics"]?.update_icon()
+			var/obj/item/organ/external/organ = owner?.HUDneed["left arm bionics"]
+			organ?.update_icon()
 		if(BP_R_ARM)
-			owner?.HUDneed["right arm bionics"]?.update_icon()
+			var/obj/item/organ/external/organ = owner?.HUDneed["right arm bionics"]
+			organ?.update_icon()
 
 /obj/item/organ/external/proc/activate_module()
 	set name = "Activate module"
@@ -787,12 +789,12 @@ Note that amputating the affected organ does in fact remove the infection from t
 		holder = owner
 	if(!holder)
 		return
-	if (holder.handcuffed && body_part in list(ARM_LEFT, ARM_RIGHT))
+	if (holder.handcuffed && (body_part in list(ARM_LEFT, ARM_RIGHT)))
 		holder.visible_message(\
 			"\The [holder.handcuffed.name] falls off of [holder.name].",\
 			"\The [holder.handcuffed.name] falls off you.")
 		holder.drop_from_inventory(holder.handcuffed)
-	if (holder.legcuffed && body_part in list(LEG_LEFT, LEG_RIGHT))
+	if (holder.legcuffed && (body_part in list(LEG_LEFT, LEG_RIGHT)))
 		holder.visible_message(\
 			"\The [holder.legcuffed.name] falls off of [holder.name].",\
 			"\The [holder.legcuffed.name] falls off you.")

@@ -399,7 +399,7 @@
 				on = has_power()
 				update()
 
-				user.drop_item()	//drop the item to update overlays and such
+				user.drop_item()	//drop the item to update over-lays and such
 				qdel(L)
 
 				if(on && rigged)

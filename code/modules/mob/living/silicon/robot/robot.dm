@@ -1039,7 +1039,7 @@
 /mob/living/silicon/robot/proc/sensor_mode() //Medical/Security HUD controller for borgs
 	set name = "Set Sensor Augmentation"
 	set category = "Silicon Commands"
-	set desc = "Augment visual feed with internal sensor overlays."
+	set desc = "Augment visual feed with an internal sensor overlay."
 	toggle_sensor_mode()
 
 /mob/living/silicon/robot/proc/add_robot_verbs()
@@ -1063,7 +1063,6 @@
 	if(cell.checked_use(CELLRATE * power_use))
 		used_power_this_tick += power_use
 		return 1
-	return 0
 
 /mob/living/silicon/robot/binarycheck()
 	if(is_component_functioning("comms"))

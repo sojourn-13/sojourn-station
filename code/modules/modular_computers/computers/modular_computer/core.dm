@@ -114,7 +114,7 @@
 			set_light(0, skip_screen_check = TRUE)
 			return
 		if(active_program)
-			overlays.Add(active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
+			add_overlay(active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
 			var/target_color = get_average_color(icon,active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu)
 			set_light(screen_light_range, screen_light_strength, target_color, skip_screen_check = TRUE)
 			if(active_program.program_key_state)

@@ -143,13 +143,6 @@
 	)
 	price_tag = 250
 
-/obj/item/clothing/suit/storage/detective/ironhammer
-	name = "ranger's armored trenchcoat"
-	desc = "Brown and armored trenchcoat, designed and created by Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
-	icon_state = "rangercoat"
-	item_state = "rangercoat"
-	blood_overlay_type = "coat"
-
 //Engineering
 /obj/item/clothing/suit/storage/hazardvest
 	name = "hazard vest"

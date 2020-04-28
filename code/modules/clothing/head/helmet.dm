@@ -257,7 +257,7 @@
 			icon_state = "[base_state]_up"
 			armor = list(melee = 15, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
 			to_chat(usr, "You push the [src] up out of your face.")
-		update_wear_icon()	//so our mob-overlays
+		update_wear_icon()	//so our mob-over-lays
 		usr.update_action_buttons()
 
 
@@ -273,7 +273,7 @@
 
 /obj/item/clothing/head/helmet/altyn/maska
 	name = "maska helmet"
-	desc = "I do not know who I am I, don\'t know why I\'m here. All I know is that I must kill."
+	desc = "I do not know who I am, don\'t know why I\'m here. All I know is that I must kill."
 	icon_state = "maska"
 	armor = list(melee = 65, bullet = 65, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
 	tint = TINT_HEAVY

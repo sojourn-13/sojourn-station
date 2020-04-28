@@ -62,7 +62,7 @@
 
 	var/job = null//Living
 
-	var/image/static_overlay // For static overlays on living mobs
+	var/image/static_overlay // For static over-lays on living mobs
 	mob_classification = CLASSIFICATION_ORGANIC
 
 	var/list/chem_effects = list()

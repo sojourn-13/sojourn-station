@@ -56,7 +56,7 @@
 			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 			icon_state = "[base_state]up"
 			to_chat(usr, "You push the [src] up out of your face.")
-		update_wear_icon()	//so our mob-overlays
+		update_wear_icon()	//so our mob-over-lays
 		usr.update_action_buttons()
 
 /obj/item/clothing/head/welding/demon

@@ -1,9 +1,3 @@
-#define CAT_NORMAL 1
-#define CAT_HIDDEN 2  // also used in corresponding wires/vending.dm
-#define CAT_COIN   4
-
-#define CUSTOM_VENDOMAT_MODELS list("Generic" = "generic", "Security" = "sec", "Electronics" = "cart", "Research" = "robotics", "Medical" = "med", "Engineering" = "engivend", "Engineering 2" = "engi", "Tools" = "tool", "Shady" = "sovietsoda", "Fridge" = "smartfridge", "Alcohol" = "boozeomat", "Frozen Star" = "weapon", "NeoTheo" = "teomat", "Asters Power Cells" = "powermat", "Asters Disks" = "discomat")
-
 /**
  *  Datum used to hold information about a product in a vending machine
  */
@@ -92,7 +86,7 @@
 
 	var/icon_vend //Icon_state when vending
 	var/icon_deny //Icon_state when denying access
-	var/icon_type //For overlays after remodeling a custom vending machine
+	var/icon_type //For over-lays after remodeling a custom vending machine
 
 	// Power
 	use_power = 1
@@ -1182,7 +1176,7 @@
 /obj/machinery/vending/cigarette
 	name = "Smooth Cigarettes" //OCD had to be uppercase to look nice with the new formating
 	desc = "If you want to get cancer, might as well do it in style!"
-	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!;Who belives in Cancer?;Cancer? Better get it in style!;I'm willing to bet you that those Scientists did not smoke Space Cigs!;Don't stop smoking now, You'll get fat!"
+	product_slogans = "Brand name cigarettes taste good like a cigarette should.;Don't believe the reports - smoke today!;Almost no negative side effects;Addiction? Better get it in style!;A brand for every man!;Don't stop smoking now, You'll get fat!"
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs.;Cigars avalible for premium customers.;Best taste in space!"
 	vend_delay = 34
 	icon_state = "cigs"
@@ -1397,7 +1391,7 @@
 /obj/machinery/vending/hydroseeds
 	name = "MegaSeed Servitor"
 	desc = "When you need seeds fast!"
-	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!;Seeds? We got you covered.;Remember: Glowshrooms are bad for you.;I'm legally advised to tell you that Nettles are poisonous.;Grow food, but keep Ambrosia handy."
+	product_slogans = "This is where the seeds live, git you some!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!;Seeds? We got you covered.;Remember: Glowshrooms are bad for you.;I'm legally advised to tell you that Nettles are poisonous."
 	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!;Just like your ancestors!"
 	icon_state = "seeds"
 	always_open = TRUE
@@ -1752,9 +1746,11 @@
 					/obj/item/stack/medical/ointment = 8,
 					/obj/item/stack/medical/splint = 5,
 					/obj/item/stack/medical/advanced/bruise_pack = 4,
-					/obj/item/stack/medical/advanced/ointment = 4)
-	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 3,
-					/obj/item/weapon/tool/knife/neotritual = 3,
+					/obj/item/stack/medical/advanced/ointment = 4,
+					/obj/item/weapon/storage/pouch/small_generic = 2,
+					/obj/item/weapon/storage/pouch/medium_generic = 2,
+					/obj/item/weapon/storage/pouch/medical_supply = 2)
+	contraband = list(/obj/item/weapon/tool/knife/neotritual = 3,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 3)
 
 	prices = list(/obj/item/weapon/book/ritual/cruciform = 500,
@@ -1772,7 +1768,9 @@
 					/obj/item/stack/medical/splint = 200,
 					/obj/item/stack/medical/advanced/bruise_pack = 400,
 					/obj/item/stack/medical/advanced/ointment = 400,
-					/obj/item/weapon/implant/core_implant/cruciform = 1000,
+					/obj/item/weapon/storage/pouch/small_generic = 800,
+					/obj/item/weapon/storage/pouch/medium_generic = 1000,
+					/obj/item/weapon/storage/pouch/medical_supply = 600,
 					/obj/item/weapon/tool/knife/neotritual = 1000,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 1500)
 

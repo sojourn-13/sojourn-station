@@ -24,11 +24,12 @@
 
 	var/list/allowed_types = list(/obj/item/clothing,
 	/obj/item/weapon/storage/pouch,
-	/obj/item/stack/material/hairlesshide,
 	/obj/item/weapon/bedsheet,
 	/obj/item/weapon/storage/belt,
 	/obj/item/weapon/storage/backpack,
 	/obj/item/weapon/rig)
+
+	var/washTime = 600
 
 /obj/machinery/washing_machine/Destroy()
 	qdel(crayon)
@@ -63,7 +64,7 @@
 	else
 		state = 5
 	update_icon()
-	sleep(600)
+	sleep(washTime)
 	for(var/atom/A in contents)
 		sleep(50)
 		wash(A)
@@ -76,11 +77,6 @@
 				C.color = CR.colour
 				C.name = "[CR.colourName] dyed [C.initial_name]"
 
-	//Tanning!
-	for(var/obj/item/stack/material/hairlesshide/HH in contents)
-		var/obj/item/stack/material/wetleather/WL = new(src)
-		WL.amount = HH.amount
-		qdel(HH)
 
 	if( locate(/mob,contents) )
 		state = 7

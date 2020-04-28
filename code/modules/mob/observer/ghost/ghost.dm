@@ -47,7 +47,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		else
 			icon = body.icon
 			icon_state = body.icon_state
-			copy_overlays(body.overlays, TRUE)
+			copy_overlays(body.get_overlays(), TRUE)
 
 		alpha = 127
 
@@ -715,8 +715,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/timedifference_text = time2text(respawn_time  - timedifference,"mm:ss")
 			to_chat(src, "<span class='warning'>You must have been dead for [respawn_time / 600] minute\s to respawn. You have [timedifference_text] left.</span>")
 		return 0
-
-	return 1
 
 /atom/proc/extra_ghost_link()
 	return

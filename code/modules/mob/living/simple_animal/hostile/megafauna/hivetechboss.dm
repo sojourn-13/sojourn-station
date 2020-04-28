@@ -19,6 +19,8 @@
 	melee_damage_upper = 50
 	megafauna_min_cooldown = 50
 	megafauna_max_cooldown = 80
+	vision_range = 16
+	aggro_vision_range = 16
 
 
 	var/health_marker_1 = 0//1700
