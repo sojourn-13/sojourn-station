@@ -19,12 +19,15 @@
 	response_harm = "bites"
 	response_disarm = "pushes"
 	var/name_changed = 0
-	holder_type = /obj/item/weapon/holder/corgi
+	holder_type
 	var/obj/item/inventory_head
 	var/obj/item/inventory_back
+	var/iconheadpath = 'icons/mob/corgi_head.dmi'
+	var/iconbackpath = 'icons/mob/corgi_back.dmi'
 
 	speak_emote = list("barks", "woofs")
 	emote_see = list("shakes its head", "shivers")
+	var/friendsaylog = "Bark!"
 	speak_chance = 1
 	turns_per_move = 10
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi
@@ -66,15 +69,15 @@
 		src.emote("roars in rage!")
 
 /mob/living/simple_animal/hostile/commanded/pet/verb/befriend()
-	set name = "Befriend Dog"
-	set category = "IC"
+	set name = "Befriend Pet"
+	set category = "Pets"
 	set src in view(1)
 
 	if(!master)
 		var/mob/living/carbon/human/H = usr
 		if(istype(H))
 			master = usr
-			say("Bark!")
+			say(friendsaylog)
 //			playsound(src,'sound/effects/creatures/dog_bark.ogg',100, 1)
 			. = 1
 	else if(usr == master)
@@ -86,8 +89,8 @@
 	return
 
 /mob/living/simple_animal/hostile/commanded/pet/verb/change_name()
-	set name = "Name Dog"
-	set category = "IC"
+	set name = "Name Pet"
+	set category = "Pets"
 	set src in view(1)
 
 	var/mob/M = usr
@@ -106,8 +109,17 @@
 	else
 		to_chat(usr, "<span class='notice'>[src] already has a name!</span>")
 		return
+/mob/living/simple_animal/hostile/commanded/pet/corgi
+	name = "small corgi"
+	holder_type = /obj/item/weapon/holder/corgi
 
-/mob/living/simple_animal/hostile/commanded/pet/regenerate_icons()
+/mob/living/simple_animal/hostile/commanded/pet/corgipuppy
+	name = "\improper corgi puppy"
+	real_name = "corgi"
+	desc = "It's a corgi puppy."
+	icon_state = "puppy"
+
+/mob/living/simple_animal/hostile/commanded/pet/corgi/regenerate_icons()
 	cut_overlays()
 
 	if(inventory_head)
@@ -115,7 +127,7 @@
 		if(health <= 0)
 			head_icon_state += "2"
 
-		var/icon/head_icon = image('icons/mob/corgi_head.dmi',head_icon_state)
+		var/icon/head_icon = image(iconheadpath,head_icon_state)
 		if(head_icon)
 			add_overlay(head_icon)
 
@@ -124,7 +136,102 @@
 		if(health <= 0)
 			back_icon_state += "2"
 
-		var/icon/back_icon = image('icons/mob/corgi_back.dmi',back_icon_state)
+		var/icon/back_icon = image(iconbackpath,back_icon_state)
 		if(back_icon)
 			add_overlay(back_icon)
 	return
+
+/mob/living/simple_animal/hostile/commanded/pet/cat
+	name = "cat"
+	desc = "A domesticated, feline pet. Has a tendency to adopt crewmembers."
+	icon_state = "cat2"
+	item_state = "cat2"
+	speak_emote = list("purrs", "meows")
+	emote_see = list("shakes their head", "shivers")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "kicks"
+	friendsaylog = "Meow!"
+	var/mob/flee_target
+	holder_type = /obj/item/weapon/holder/cat
+
+	var/mob/living/simple_animal/mouse/mousetarget = null
+
+/mob/living/simple_animal/hostile/commanded/pet/Life()
+	..()
+
+	spawn(2)
+		attack_mice()
+
+/mob/living/simple_animal/hostile/commanded/pet/proc/attack_mice()
+	if((loc) && isturf(loc))
+		if(!incapacitated())
+			for(var/mob/living/simple_animal/hostile/commanded/pet/mouse/M  in oview(src,1))
+				if(M.stat != DEAD)
+					M.splat()
+					visible_emote(pick("bites \the [M]!","toys with \the [M].","chomps on \the [M]!"))
+					movement_target = null
+					stop_automated_movement = 0
+					if (prob(75))
+						break//usually only kill one mouse per proc
+
+//Cats always land on their feet
+/mob/living/simple_animal/hostile/commanded/pet/cat/get_fall_damage()
+	return 0
+
+/mob/living/simple_animal/hostile/commanded/pet/cat/blackcat
+	name = "black cat"
+	desc = "Her fur has the look and feel of velvet, and her tail quivers occasionally."
+	icon_state = "cat"
+	item_state = "cat"
+
+/mob/living/simple_animal/hostile/commanded/pet/cat/kitten
+	name = "kitten"
+	desc = "D'aaawwww"
+	icon_state = "kitten"
+	item_state = "kitten"
+///MOUSEPETS WTF HE HAVE A REAL MOUSE PET?!
+/mob/living/simple_animal/hostile/commanded/pet/mouse
+	name = "brown mouse"
+	desc = "It's a fuzzy little critter."
+	icon = 'icons/mob/mobs-mouse.dmi'
+	icon_state = "mouse_brown"
+	item_state = "mouse_brown"
+	speak_emote = list("squeeks","squeeks","squiks")
+	emote_see = list("squeeks","squeaks","squiks")
+	speak_chance = 5
+	turns_per_move = 5
+	see_in_dark = 6
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_amount = 1
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "stomps on"
+	friendsaylog = "squeeks!"
+	var/mob/flee_target
+	var/body_color = "brown"
+	holder_type = /obj/item/weapon/holder/mouse/brown
+
+	var/mob/living/simple_animal/mouse/mousetarget = null
+
+/mob/living/simple_animal/hostile/commanded/pet/mouse/proc/splat()
+	src.health = 0
+	src.death()
+	src.icon_dead = "mouse_[body_color]_splat"
+	src.icon_state = "mouse_[body_color]_splat"
+
+/mob/living/simple_animal/hostile/commanded/pet/mouse/white
+	icon_state = "mouse_white"
+	icon_rest = "mouse_white_sleep"
+	body_color = "white"
+	holder_type = /obj/item/weapon/holder/mouse/white
+
+/mob/living/simple_animal/hostile/commanded/pet/mouse/gray
+	icon_state = "mouse_gray"
+	icon_rest = "mouse_gray_sleep"
+	body_color = "white"
+	holder_type = /obj/item/weapon/holder/mouse/gray
