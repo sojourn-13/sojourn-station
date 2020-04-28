@@ -37,7 +37,7 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak
+/obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak_blue
 	name = "warrant officer's blue cloaked greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style. This blue one has a cloak attached to it."
 	icon_state = "ihc_coat_cloak_blue"
