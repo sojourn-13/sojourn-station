@@ -186,9 +186,31 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/ihcgreatcoatblue
+	display_name= "blue greatcoat, commander"
+	path = /obj/item/clothing/suit/greatcoat/ihc_blue
+	allowed_roles = list("Warrant Officer")
+	slot = slot_wear_suit
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/ihcgreatcoatblue_cloak
+	display_name= "blue cloaked greatcoat, commander"
+	path = /obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak
+	allowed_roles = list("Warrant Officer")
+	slot = slot_wear_suit
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/ihccap
 	display_name= "cap, commander"
 	path = /obj/item/clothing/head/rank/commander/cap
 	allowed_roles = list("Warrant Officer")
 	slot = slot_head
 	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/ihccap
+	display_name= "cap, commander"
+	path = /obj/item/clothing/head/rank/commander/cap
+	allowed_roles = list("Warrant Officer")
+	slot = slot_head
+	sort_category = "Faction: Security"
+	
