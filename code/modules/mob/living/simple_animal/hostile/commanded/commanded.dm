@@ -5,6 +5,7 @@
 	name = "commanded"
 	stance = COMMANDED_STOP
 	melee_damage_lower = 0
+	var/short_name = null
 	melee_damage_upper = 0
 	density = 0
 	attacktext = "swarmed"

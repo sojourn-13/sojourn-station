@@ -145,6 +145,22 @@ var/list/datum/power/changeling/powerinstances = list()
 	genomecost = 4
 	isVerb = 0
 	verbpath = /mob/proc/changeling_fastchemical
+//Changeling melee weapons
+/datum/power/changeling/ArmBlade
+	name = "Arm Blade"
+	desc = "We reform one of our arms into a deadly blade"
+	helptext = "We may retract our armblade by dropping it. "
+	genomecost = 8
+	verbpath = /mob/proc/changeling_arm_blade
+
+/datum/power/changeling/Claw
+	name = "Claw"
+	desc = "We reform one of our arms into a deadly claw."
+	helptext = "We may retract our claw by dropping it."
+	helptext = "The claw would have armor peneratration."
+	genomecost = 6
+	verbpath = /mob/proc/changeling_claw
+
 /*
 /datum/power/changeling/AdvChemicalSynth
 	name = "Advanced Chemical-Synthesis"

@@ -70,3 +70,8 @@
 /datum/gear/vacflask
 	display_name = "vacuum flask"
 	path = /obj/item/weapon/reagent_containers/food/drinks/flask/vacuumflask
+
+/datum/gear/petcrate
+	display_name = "corgi pet"
+	cost = 6
+	path = /obj/structure/largecrate/animal/loadout/petcrate/corgi

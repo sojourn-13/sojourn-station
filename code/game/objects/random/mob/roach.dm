@@ -2,6 +2,7 @@
 	name = "random roach"
 	icon_state = "hostilemob-brown"
 	alpha = 128
+	spawn_nothing_percentage = 90
 
 /obj/random/mob/roaches/item_to_spawn()
 	return pickweight(list(/mob/living/carbon/superior_animal/roach = 9,
@@ -24,6 +25,7 @@
 	min_amount = 3
 	max_amount = 9
 	spread_range = 0
+	spawn_nothing_percentage = 90
 
 /obj/random/cluster/roaches/item_to_spawn()
 	return /obj/random/mob/roaches

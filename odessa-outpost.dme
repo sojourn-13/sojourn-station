@@ -1947,6 +1947,7 @@
 #include "code\modules\mob\living\simple_animal\friendly\farm_animals.dm"
 #include "code\modules\mob\living\simple_animal\friendly\mouse.dm"
 #include "code\modules\mob\living\simple_animal\friendly\mushroom.dm"
+#include "code\modules\mob\living\simple_animal\friendly\pets.dm"
 #include "code\modules\mob\living\simple_animal\friendly\slime.dm"
 #include "code\modules\mob\living\simple_animal\friendly\spiderbot.dm"
 #include "code\modules\mob\living\simple_animal\hostile\alien.dm"

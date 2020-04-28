@@ -11,7 +11,6 @@
 	supervisors = "nobody! Enjoy your time off"
 	selection_color = "#9b633e"
 //	minimal_access = list(access_maint_tunnels)
-	latejoin_only = TRUE
 	outfit_type = /decl/hierarchy/outfit/aborigine
 
 	stat_modifiers = list(
