@@ -192,3 +192,24 @@
 	allowed_roles = list("Warrant Officer")
 	slot = slot_head
 	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/helmet
+	display_name= "helmet"
+	path = /obj/item/clothing/head/helmet/ballistic
+	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_head
+	sort_category = "Faction: Security"
+	cost = 2
+
+/datum/gear/factionsecurity/helmet/militia
+	display_name= "militia helmet"
+	path = /obj/item/clothing/head/helmet/ballistic/militia
+
+/datum/gear/factionsecurity/helmet/steelpot
+	display_name= "steelpot helmet"
+	path = /obj/item/clothing/head/helmet/steelpot
+
+/datum/gear/factionsecurity/helmet/maska
+	display_name= "maska helmet"
+	path = /obj/item/clothing/head/helmet/altyn/maska
+	cost = 4

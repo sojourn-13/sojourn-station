@@ -54,10 +54,6 @@
 	display_name = "corporate regulations"
 	path = /obj/item/weapon/book/manual/security_space_law
 
-/datum/gear/utility/crowbar
-	display_name = "crowbar"
-	path = /obj/item/weapon/tool/crowbar
-
 /datum/gear/utility/flashlight
 	display_name = "flashlight"
 	path = /obj/item/device/lighting/toggleable/flashlight
