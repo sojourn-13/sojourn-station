@@ -172,8 +172,9 @@
 	time = 120
 	minimum_win_percentage = 0.6
 	cooldown = 20 MINUTES
-	next_vote = 90 MINUTES //Minimum round length before it can be called for the first time
+	next_vote = 20 MINUTES //Minimum round length before it can be called for the first time
 	choice_types = list()
+	only_admin = FALSE
 	description = "You will have more voting power if you are head of staff or antag, less if you are observing or dead."
 
 /*To prevent abuse and rule-by-salt, the evac vote weights each player's vote based on a few parameters

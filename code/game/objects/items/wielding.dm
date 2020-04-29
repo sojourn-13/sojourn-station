@@ -147,4 +147,5 @@
 
 /mob/living/verb/wield_hotkey()//For the hotkeys. Not sure where this should be put. But it pertains to two-handing so *shrug*.
 	set name = ".wield"
+	set category = "IC"
 	do_wield()

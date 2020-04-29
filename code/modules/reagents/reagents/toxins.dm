@@ -641,3 +641,46 @@
 			spill_biomass(T)
 		remove_self(volume)
 		return TRUE
+
+/datum/reagent/toxin/combat
+	name = "Tetraricide"
+	id = "chemweapon1"
+	description = "A powerful chemical weapon, sometimes called as \"Sweet Death\". Only absolute psychopaths and REALLY desperete mercenaries utilize this chemical."
+	taste_description = "sweetness"
+	reagent_state = LIQUID
+	strength = 0.8
+	overdose = REAGENTS_OVERDOSE/2
+
+/datum/reagent/toxin/combat/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
+	if(M.losebreath < 15)
+		M.losebreath++
+	M.apply_damages(0,0,0,1.5,0,20)				//Asphyxia and pain
+	if(prob(5 - (4 * M.stats.getMult(STAT_TGH))))
+		M.vomit()
+
+/datum/reagent/toxin/combat/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
+	if(M.losebreath < 15)
+		M.losebreath++
+	M.apply_damages(0,0,0,0.5,0,20)				//Asphyxia and pain
+	if(prob(5 - (5 * M.stats.getMult(STAT_TGH))))
+		M.vomit()
+
+/datum/reagent/toxin/combat/affect_touch(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
+	if(M.losebreath < 15)
+		M.losebreath++
+	M.apply_damages(0,0,0,2.5,0,10)				//Asphyxia and pain
+	if(prob(5 - (4 * M.stats.getMult(STAT_TGH))))
+		M.vomit()
+
+/datum/reagent/toxin/combat/overdose(var/mob/living/carbon/M, var/alien)
+	..()
+	M.adjustHalLoss(20)
+	M.adjustOxyLoss(5)
+
+/datum/reagent/toxin/combat/touch_mob(var/mob/living/L, var/amount)
+	if(istype(L))
+		L.adjustHalLoss(50)
+		L.adjustToxLoss(20)

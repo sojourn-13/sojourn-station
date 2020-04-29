@@ -1436,6 +1436,7 @@
 #include "code\modules\client\preference_setup\loadout\lists\general.dm"
 #include "code\modules\client\preference_setup\loadout\lists\gloves.dm"
 #include "code\modules\client\preference_setup\loadout\lists\headwear.dm"
+#include "code\modules\client\preference_setup\loadout\lists\pets.dm"
 #include "code\modules\client\preference_setup\loadout\lists\suits.dm"
 #include "code\modules\client\preference_setup\loadout\lists\tools.dm"
 #include "code\modules\client\preference_setup\loadout\lists\uniforms.dm"
