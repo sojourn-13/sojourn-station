@@ -70,7 +70,7 @@
 
 /mob/living/simple_animal/hostile/commanded/pet/verb/befriend()
 	set name = "Befriend Pet"
-	set category = "Pets"
+	set category = "IC"
 	set src in view(1)
 
 	if(!master)
@@ -90,7 +90,7 @@
 
 /mob/living/simple_animal/hostile/commanded/pet/verb/change_name()
 	set name = "Name Pet"
-	set category = "Pets"
+	set category = "IC"
 	set src in view(1)
 
 	var/mob/M = usr
