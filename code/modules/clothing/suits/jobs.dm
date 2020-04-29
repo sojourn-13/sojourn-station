@@ -68,9 +68,9 @@
 		/obj/item/weedkiller
 	)
 
-//Chaplain
+//Chaplain and Vector
 /obj/item/clothing/suit/storage/chaplain
-	name = "prime jacket"
+	name = "vector jacket"
 	desc = "A long, lightly armoured jacket. Dark, stylish and authoritarian."
 	icon_state = "chaplain_hoodie"
 	item_state = "chaplain_hoodie"

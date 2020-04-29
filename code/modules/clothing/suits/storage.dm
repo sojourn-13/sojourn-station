@@ -343,6 +343,12 @@
 	icon_state = "cyberpunksleek"
 	item_state = "brown_jacket"
 
+/obj/item/clothing/suit/storage/toggle/leather/cyberpunk_long
+	name = "cyberpunk coat"
+	desc = "A sleek long coat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long"
+	item_state = "cyberpunksleek_long"
+
 /obj/item/clothing/suit/storage/toggle/leather/denimjacket
 	name = "denim jacket"
 	desc = "A smart blue jacket made out of denim."

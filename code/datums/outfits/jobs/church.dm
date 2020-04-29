@@ -22,5 +22,6 @@
 /decl/hierarchy/outfit/job/church/acolyte
 	name = OUTFIT_JOB_NAME("Church - Vector")
 	uniform = /obj/item/clothing/under/rank/acolyte
+	suit = /obj/item/clothing/suit/storage/chaplain
 	shoes = /obj/item/clothing/shoes/reinforced
 	gloves = /obj/item/clothing/gloves/thick
