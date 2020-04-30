@@ -28,7 +28,7 @@
 	else
 		var/list/all_records = list()
 
-		for(var/datum/computer_file/report/crew_record/R in GLOB.active_crew_records)
+		for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
 			all_records.Add(list(list(
 				"name" = R.get_name(),
 				"rank" = R.get_job(),
@@ -80,7 +80,7 @@
 		return 1
 	if(href_list["set_active"])
 		var/ID = text2num(href_list["set_active"])
-		for(var/datum/computer_file/report/crew_record/R in GLOB.active_crew_records)
+		for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
 			if(R.uid == ID)
 				active_record = R
 				break
@@ -91,7 +91,7 @@
 			return
 		active_record = new/datum/computer_file/report/crew_record()
 		GLOB.all_crew_records.Add(active_record)
-		GLOB.active_crew_records.Add(active_record)
+		//GLOB.active_crew_records.Add(active_record)
 		return 1
 	if(href_list["print_active"])
 		if(!active_record)
