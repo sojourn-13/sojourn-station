@@ -161,13 +161,13 @@
 
 	var/mob/living/simple_animal/mouse/mousetarget = null
 
-/mob/living/simple_animal/hostile/commanded/pet/Life()
+/mob/living/simple_animal/hostile/commanded/pet/cat/Life()
 	..()
 
 	spawn(2)
 		attack_mice()
 
-/mob/living/simple_animal/hostile/commanded/pet/proc/attack_mice()
+/mob/living/simple_animal/hostile/commanded/pet/cat/proc/attack_mice()
 	if((loc) && isturf(loc))
 		if(!incapacitated())
 			for(var/mob/living/simple_animal/hostile/commanded/pet/mouse/M  in oview(src,1))
