@@ -137,7 +137,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	if(href_list["editwarrantname"])
 		. = 1
 		var/namelist = list()
-		for(var/datum/computer_file/report/crew_record/CR in GLOB.active_crew_records)
+		for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
 			namelist += "[CR.get_name()] \[[CR.get_job()]\]"
 		var/new_person = sanitize(input(usr, "Please input name") as null|anything in namelist)
 		if(CanInteract(user, GLOB.default_state))
@@ -192,7 +192,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 		if(!J)
 			to_chat(user, "Lookup error: Unable to locate specified job in access database.")
 			return
-		for(var/datum/computer_file/report/crew_record/CR in GLOB.active_crew_records)
+		for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
 			if(CR.get_name() == activewarrant.fields["namewarrant"] && CR.get_job() == J.title)
 				warrant_subject = CR
 

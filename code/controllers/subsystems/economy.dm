@@ -57,7 +57,7 @@ SUBSYSTEM_DEF(economy)
 
 	//First gather the data for crew wages
 	//Each record covers a specific crewman
-	for(var/datum/computer_file/report/crew_record/R in GLOB.active_crew_records)
+	for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
 
 		/* TODO: Add in checks for suspension, dead, etc */
 
