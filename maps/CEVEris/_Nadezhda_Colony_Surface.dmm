@@ -1501,7 +1501,7 @@
 "aCS" = (/obj/structure/railing,/obj/structure/railing{icon_state = "railing0"; dir = 8},/turf/simulated/floor/plating/under,/area/nadezhda/maintenance{name = "Surface Maintenance"})
 "aCT" = (/obj/machinery/conveyor/south{id = "junk_to_bioreactor"},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/absolutism/bioreactor)
 "aCU" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/steel,/area/nadezhda/pros/shuttle)
-"aCV" = (/obj/machinery/door/airlock{name = "Chapel Office"; req_access = list(74)},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/disposalpipe/segment,/turf/simulated/floor/wood/wild3,/area/nadezhda/command/prime)
+"aCV" = (/obj/machinery/door/airlock{name = "Chapel Office"; req_access = list(74)},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/wood/wild3,/area/nadezhda/command/prime)
 "aCW" = (/obj/structure/window/reinforced,/turf/simulated/floor/tiled/cafe,/area/nadezhda/command/smc/quarters)
 "aCX" = (/obj/machinery/door/window/southleft,/turf/simulated/floor/tiled/cafe,/area/nadezhda/command/smc/quarters)
 "aCY" = (/obj/structure/window/reinforced,/turf/simulated/floor/tiled/cafe,/area/nadezhda/command/swo/quarters)
