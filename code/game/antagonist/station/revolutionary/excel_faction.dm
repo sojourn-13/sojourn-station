@@ -37,7 +37,7 @@
 
 	var/turf/LM = landmark.get_loc()
 
-	var/obj/structure/closet/crate/excelsior/CR = new /obj/structure/closet/crate(LM)
+	var/obj/structure/closet/crate/excelsior/CR = new /obj/structure/closet/crate/excelsior(LM)
 
 	new /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior(CR)
 	new /obj/item/weapon/circuitboard/excelsiorautolathe(CR)
