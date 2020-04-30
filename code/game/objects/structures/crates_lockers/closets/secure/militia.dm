@@ -141,6 +141,7 @@
 	new /obj/item/clothing/head/rank/trooper/beret(src)
 	new /obj/item/clothing/head/rank/trooper/cap(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
+	new /obj/item/clothing/suit/armor/commander/militia_overcoat(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
 
