@@ -400,6 +400,11 @@
 	inhibitors = list("sugar" = 1) // Messes up with inaprovaline
 	result_amount = 2
 
+/datum/chemical_reaction/bicaridine/blatteridine
+	result = "bicaridine"
+	required_reagents = list("inaprovaline" = 1, "blattedin" = 1)
+	result_amount = 2
+
 /datum/chemical_reaction/vermicetol
 	result = "vermicetol"
 	required_reagents = list("kelotane" = 1, "dermaline" = 1, "blattedin" = 1, "cryoxadone" = 0.5, "clonexadone" = 0.5)
