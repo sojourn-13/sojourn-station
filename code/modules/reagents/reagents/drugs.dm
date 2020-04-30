@@ -156,14 +156,17 @@
 	taste_description = "pepper"
 	reagent_state = LIQUID
 	color = "#181818"
-	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0
+	overdose = REAGENTS_OVERDOSE/2
+	addiction_chance = 20
 	nerve_system_accumulations = 10
 
 /datum/reagent/drug/nicotine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.add_chemical_effect(CE_PULSE, 1)
 	M.add_chemical_effect(CE_PAINKILLER, 5 * effect_multiplier)
+
+/datum/reagent/drug/nicotine/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "nicotine_w")
 
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
@@ -217,17 +220,3 @@
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
-
-/datum/reagent/drug/sanguinum/overdose(var/mob/living/carbon/M, var/alien)
-	var/mob/living/carbon/human/H = M
-	if(istype(H))
-		var/list/obj/item/organ/external/bodyParts = locate(/obj/item/organ/external) in H.organs_by_name
-		var/chanceToRupture = 30
-		for(var/obj/item/organ/external/E in bodyParts)
-			if(E.has_internal_bleeding())
-				chanceToRupture -= 10
-		chanceToRupture = max(0,chanceToRupture)
-		if(prob(chanceToRupture))
-			var/list/obj/item/organ/external/unluckyPart = pick(bodyParts)
-			var/datum/wound/internal_bleeding/I = new (15)
-			unluckyPart.wounds += I

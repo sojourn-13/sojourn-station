@@ -193,7 +193,7 @@
 	set category = "IC"
 
 	// No examining metaphysical things, please!
-	// These use a different proc for examining.  
+	// These use a different proc for examining.
 	if(isHUDobj(A))
 		return 1
 
@@ -969,11 +969,6 @@ mob/proc/yank_out_object()
 		affected.embedded -= selection
 		H.shock_stage+=20
 		affected.take_damage((selection.w_class * 3), 0, 0, 1, "Embedded object extraction")
-
-		if(prob(selection.w_class * 5)) //I'M SO ANEMIC I COULD JUST -DIE-.
-			var/datum/wound/internal_bleeding/I = new (min(selection.w_class * 5, 15))
-			affected.wounds += I
-			H.custom_pain("Something tears wetly in your [affected] as [selection] is pulled free!", 1)
 
 		if (ishuman(U))
 			var/mob/living/carbon/human/human_user = U
