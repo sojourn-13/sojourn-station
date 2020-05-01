@@ -119,8 +119,8 @@
 			chassis.occupant << browse(get_occupant_stats(),"window=msleeper")
 			onclose(chassis.occupant, "msleeper")
 			return
-		if(m_filter.get("inject"))
-			inject_reagent(m_filter.getType("inject",/datum/reagent),m_filter.getObj("source"))
+//		if(m_filter.get("inject"))
+//			inject_reagent(m_filter.getType("inject",/datum/reagent),m_filter.getObj("source"))
 		return
 
 	proc/get_occupant_stats()
@@ -145,9 +145,6 @@
 					<h3>Reagents in bloodstream</h3>
 					<div id="reagents">
 					[get_occupant_reagents()]
-					</div>
-					<div id="injectwith">
-					[get_available_reagents()]
 					</div>
 					</body>
 					</html>"}
@@ -178,6 +175,7 @@
 					. += "[R]: [round(R.volume,0.01)]<br />"
 		return . || "None"
 
+/*
 	proc/get_available_reagents()
 		var/output
 		var/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/SG = locate(/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun) in chassis
@@ -198,12 +196,13 @@
 			SG.reagents.trans_id_to(occupant,R.id,to_inject)
 			update_equip_info()
 		return
+*/
 
 	update_equip_info()
 		if(..())
 			send_byjax(chassis.occupant,"msleeper.browser","lossinfo",get_occupant_dam())
 			send_byjax(chassis.occupant,"msleeper.browser","reagents",get_occupant_reagents())
-			send_byjax(chassis.occupant,"msleeper.browser","injectwith",get_available_reagents())
+//			send_byjax(chassis.occupant,"msleeper.browser","injectwith",get_available_reagents())
 			return 1
 		return
 
@@ -230,10 +229,16 @@
 		M.Paralyse(2)
 		M.Weaken(2)
 		M.Stun(2)
-		if(M.reagents.get_reagent_amount("inaprovaline") < 5)
+		if(M.reagents.get_reagent_amount("inaprovaline") < 1)
 			M.reagents.add_reagent("inaprovaline", 5)
-		if(M.reagents.get_reagent_amount("tricordizine") < 5)
-			M.reagents.add_reagent("tricordizine", 5)
+		if(M.reagents.get_reagent_amount("bicaridine") < 1)
+			M.reagents.add_reagent("bicaridine", 5)
+		if(M.reagents.get_reagent_amount("dermaline") < 1)
+			M.reagents.add_reagent("dermaline", 5)
+		if(M.reagents.get_reagent_amount("dexalinp") < 1)
+			M.reagents.add_reagent("dexalinp", 5)
+		if(M.reagents.get_reagent_amount("tricordrazine") < 1)
+			M.reagents.add_reagent("tricordrazine", 5)
 		S.chassis.use_power(S.energy_drain)
 		S.update_equip_info()
 		return
