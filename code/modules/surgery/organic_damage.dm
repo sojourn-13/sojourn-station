@@ -82,7 +82,6 @@
 	organ.take_damage(10, 0, sharp=TRUE)
 
 
-
 /datum/surgery_step/fix_bone
 	required_tool_quality = QUALITY_BONE_SETTING
 	duration = 100
