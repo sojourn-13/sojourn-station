@@ -334,6 +334,18 @@ obj/item/clothing/suit/armor/commander/militia_overcoat
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
+obj/item/clothing/suit/armor/commander/marshal_coat
+	name= "marshal officers greatcoat"
+	desc= "marshal officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
+	icon_state = "marshal_coat"
+	item_state = "marshal_coat"
+
+obj/item/clothing/suit/armor/commander/marshal_coat_ss
+	name= "supply specialist's greatcoat"
+	desc= "supply specialist's greatcoat with armor weave. Part of the formal uniform of the security marshals."
+	icon_state = "marshal_coat_ss"
+	item_state = "marshal_coat_ss"
+
 //Reactive armor
 
 //Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
