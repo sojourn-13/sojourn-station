@@ -1,6 +1,6 @@
-/obj/mecha/combat/marauder
+/obj/mecha/combat/dreadnought
 	desc = "Heavy-duty, combat exosuit, developed after the Durand model. Rarely found among civilian populations."
-	name = "Marauder"
+	name = "Dreadnought"
 	icon_state = "marauder"
 	initial_icon = "marauder"
 	step_in = 3
@@ -16,19 +16,17 @@
 	var/smoke_ready = 1
 	var/smoke_cooldown = 100
 	var/datum/effect/effect/system/smoke_spread/smoke_system = new
-	operation_req_access = list(access_cent_specops)
 	wreckage = /obj/effect/decal/mecha_wreckage/marauder
 	add_req_access = 0
 	internal_damage_threshold = 25
 	force = 45
 	max_equip = 10
 
-/obj/mecha/combat/marauder/seraph
+/obj/mecha/combat/dreadnought/seraph
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
 	name = "Seraph"
 	icon_state = "seraph"
 	initial_icon = "seraph"
-	operation_req_access = list(access_cent_creed)
 	step_in = 2
 	step_energy_drain = 1
 	health = 1200
@@ -38,35 +36,49 @@
 	max_equip = 10
 	cargo_capacity = 10
 
-/obj/mecha/combat/marauder/mauler
-	desc = "Heavy-duty, combat exosuit, developed off of the existing Marauder model."
-	name = "Mauler"
+/obj/mecha/combat/dreadnought/seraph/hellbrute
+	desc = "Heavy-duty, combat exosuit, developed off of the existing seraph model. Usually found in the hands of a void wolf reavers. As rare as it is powerful."
+	name = "Hell Brute"
 	icon_state = "mauler"
 	initial_icon = "mauler"
-	operation_req_access = list(access_syndicate)
 	wreckage = /obj/effect/decal/mecha_wreckage/mauler
 
-/obj/mecha/combat/marauder/New()
+/obj/mecha/combat/dreadnought/New()
 	..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(src)
 	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/drill(src)
+	ME.attach(src)
 	src.smoke_system.set_up(3, 0, src)
 	src.smoke_system.attach(src)
 	return
 
-/obj/mecha/combat/marauder/seraph/New()
+
+/obj/mecha/combat/dreadnought/seraph/New()
 	..()//Let it equip whatever is needed.
 	var/obj/item/mecha_parts/mecha_equipment/ME
 	if(equipment.len)//Now to remove it and equip anew.
 		for(ME in equipment)
 			ME.detach(src)
 			qdel(ME)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg(src)
+	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive(src)
@@ -77,13 +89,19 @@
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(src)
 	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill(src)
+	ME.attach(src)
 	return
 
-/obj/mecha/combat/marauder/Destroy()
+/obj/mecha/combat/dreadnought/Destroy()
 	qdel(smoke_system)
 	. = ..()
 
-/obj/mecha/combat/marauder/relaymove(mob/user,direction)
+/obj/mecha/combat/dreadnought/relaymove(mob/user,direction)
 	if(user != src.occupant) //While not "realistic", this piece is player friendly.
 		user.loc = get_turf(src)
 		to_chat(user, "You climb out from [src]")
@@ -130,7 +148,7 @@
 	return 0
 
 
-/obj/mecha/combat/marauder/verb/toggle_thrusters()
+/obj/mecha/combat/dreadnought/verb/toggle_thrusters()
 	set category = "Exosuit Interface"
 	set name = "Toggle thrusters"
 	set src = usr.loc
@@ -145,7 +163,7 @@
 	return
 
 
-/obj/mecha/combat/marauder/verb/smoke()
+/obj/mecha/combat/dreadnought/verb/smoke()
 	set category = "Exosuit Interface"
 	set name = "Smoke"
 	set src = usr.loc
@@ -161,7 +179,7 @@
 	return
 
 //TODO replace this with zoom code that doesn't increase peripherial vision
-/obj/mecha/combat/marauder/verb/zoom()
+/obj/mecha/combat/dreadnought/verb/zoom()
 	set category = "Exosuit Interface"
 	set name = "Zoom"
 	set src = usr.loc
@@ -180,7 +198,7 @@
 	return
 
 
-/obj/mecha/combat/marauder/go_out()
+/obj/mecha/combat/dreadnought/go_out()
 	if(src.occupant && src.occupant.client)
 		src.occupant.client.view = world.view
 		src.zoom = 0
@@ -188,7 +206,7 @@
 	return
 
 
-/obj/mecha/combat/marauder/get_stats_part()
+/obj/mecha/combat/dreadnought/get_stats_part()
 	var/output = ..()
 	output += {"<b>Smoke:</b> [smoke]
 					<br>
@@ -197,7 +215,7 @@
 	return output
 
 
-/obj/mecha/combat/marauder/get_commands()
+/obj/mecha/combat/dreadnought/get_commands()
 	var/output = {"<div class='wr'>
 						<div class='header'>Special</div>
 						<div class='links'>
@@ -210,7 +228,7 @@
 	output += ..()
 	return output
 
-/obj/mecha/combat/marauder/Topic(href, href_list)
+/obj/mecha/combat/dreadnought/Topic(href, href_list)
 	..()
 	if (href_list["toggle_thrusters"])
 		src.toggle_thrusters()

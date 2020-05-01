@@ -392,7 +392,7 @@
 	name = "xeno costume kit"
 	desc = "A box containing a xeno costume."
 
-/obj/item/weapon/storage/box/costume/syndicate/populate_contents()
+/obj/item/weapon/storage/box/costume/xeno/populate_contents()
 	new /obj/item/clothing/head/costume/halloween/xenos(src)
 	new /obj/item/clothing/suit/costume/halloween/xenos(src)
 	new /obj/item/clothing/under/color/purple(src)

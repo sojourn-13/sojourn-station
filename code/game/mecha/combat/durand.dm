@@ -13,7 +13,7 @@
 	infra_luminosity = 8
 	force = 40
 	var/defence = 0
-	var/def_boost = 15
+	var/def_boost = 30
 	wreckage = /obj/effect/decal/mecha_wreckage/durand
 	max_equip = 5
 	internal_damage_threshold = 30

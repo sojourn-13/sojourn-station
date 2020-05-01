@@ -13,7 +13,7 @@
 		/obj/mecha/medical/odysseus/loaded = 5,
 		/obj/mecha/combat/durand = 1,//comes unarmed
 		/obj/mecha/combat/gygax = 1.5,//comes unarmed
-		/obj/mecha/combat/marauder = 0.1,
+		/obj/mecha/combat/dreadnought = 0.1,
 		/obj/mecha/combat/phazon = 0.6)
 
 /obj/random/mecha/item_to_spawn()
