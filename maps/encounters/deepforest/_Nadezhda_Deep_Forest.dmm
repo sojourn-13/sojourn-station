@@ -1920,7 +1920,7 @@
 "KX" = (/obj/structure/bed,/obj/landmark/join/start/aborigine,/turf/simulated/floor/wood/wild4,/area/nadezhda/outside/meadow)
 "KY" = (/obj/structure/flora/ausbushes/fullgrass,/obj/structure/bed,/obj/landmark/join/start/aborigine,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "KZ" = (/obj/structure/bed/chair{dir = 4; name = "bailiff chair"},/obj/landmark/join/late/aborigine,/turf/simulated/floor/wood/wild4,/area/nadezhda/outside/meadow)
-"La" = (/obj/structure/table/woodentable,/obj/item/weapon/tool/shiv,/obj/item/weapon/gun/launcher/crossbow,/obj/item/weapon/arrow/rod,/obj/item/weapon/arrow/rod,/obj/random/pouch/low_chance,/turf/simulated/floor/wood/wild4,/area/nadezhda/outside/meadow)
+"La" = (/obj/structure/table/woodentable,/obj/item/weapon/tool/knife/shiv,/obj/item/weapon/gun/launcher/crossbow,/obj/item/weapon/arrow/rod,/obj/item/weapon/arrow/rod,/obj/random/pouch/low_chance,/turf/simulated/floor/wood/wild4,/area/nadezhda/outside/meadow)
 "Lb" = (/obj/random/scrap/sparse_even/low_chance,/obj/random/scrap/sparse_even/low_chance,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "Lc" = (/obj/structure/bed,/obj/landmark/join/start/aborigine,/turf/simulated/floor/plating/under,/area/nadezhda/outside/meadow)
 "Ld" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
