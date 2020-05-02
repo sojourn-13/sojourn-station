@@ -1909,7 +1909,7 @@ assassination method if you time it right*/
 		src.log_message("Recalibration of coordination system started.")
 		usr << sound('sound/mecha/UI_SCI-FI_Compute_01_Wet_stereo.ogg',channel=4, volume=100)
 		var/T = src.loc
-		if(do_after(10 SECONDS))
+		if(do_after(usr, 10 SECONDS))
 			if(T == src.loc)
 				src.clearInternalDamage(MECHA_INT_CONTROL_LOST)
 				src.occupant_message("<font color='blue'>Recalibration successful.</font>")

@@ -621,3 +621,24 @@
 	if(altar)
 		new /obj/item/weapon/paper/neopaper(altar.loc, disciples.Join("\n"), "Church Record")
 	return TRUE
+
+/datum/ritual/cruciform/priest/new_cruciform
+	name = "Prayer of Reunion"
+	phrase = "Ego enim scio cogitationes quas cogito super vos, ait Dominus Deus: Non est nocere consilia, ut bene sit tibi, et tu non adflictionis ut dem vobis finem et patientiam. Requires the speaker to stand next to an altar."
+	desc = "Request a new cruciform in the event someone wishes to join the fold or the one they had was destroyed."
+	power = 50
+	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a new cruciform slips out."
+
+/datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	var/list/OBJS = get_front(user)
+
+	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
+
+	if(!altar)
+		fail("This is not your altar, the litany is useless.", user, C)
+		return FALSE
+
+	if(altar)
+		new /obj/item/weapon/implant/core_implant/cruciform(altar.loc)
+	return TRUE
+

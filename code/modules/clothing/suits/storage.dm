@@ -127,6 +127,12 @@
 	item_state = "soldiercoat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
+/obj/item/clothing/suit/storage/duster/cyberpunklong
+	name = "cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long"
+	item_state = "cyberpunksleek_long"
+
 /*Military Jackets*/
 
 /obj/item/clothing/suit/storage/miljacket/field

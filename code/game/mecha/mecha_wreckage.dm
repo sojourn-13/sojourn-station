@@ -10,6 +10,7 @@
 	density = 1
 	anchored = 0
 	opacity = 0
+	layer = BELOW_MOB_LAYER
 	var/list/welder_salvage = list(/obj/item/stack/material/plasteel,/obj/item/stack/material/steel,/obj/item/stack/rods)
 	var/list/wirecutters_salvage = list(/obj/item/stack/cable_coil)
 	var/list/crowbar_salvage

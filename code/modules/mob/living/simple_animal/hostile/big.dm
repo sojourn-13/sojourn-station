@@ -45,6 +45,7 @@
 	attack_sound = 'sound/weapons/deathclawattack.ogg'
 	meat_amount = 6
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
+	can_burrow = FALSE
 
 /mob/living/simple_animal/hostile/deathclaw/FindTarget()
 	. = ..()

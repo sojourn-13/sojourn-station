@@ -79,6 +79,8 @@
 	new /obj/item/clothing/accessory/badge/hos(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
+	new /obj/item/clothing/suit/greatcoat/ihc(src)
+	new /obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "supply specialist's locker"
@@ -108,6 +110,7 @@
 	new /obj/item/clothing/accessory/badge/warden(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
+	new /obj/item/clothing/suit/armor/commander/marshal_coat_ss(src)
 
 /obj/structure/closet/secure_closet/personal/security
 	name = "marshal officer's locker"
@@ -151,6 +154,7 @@
 	new /obj/item/clothing/suit/armor/platecarrier/ih(src)
 	new /obj/item/taperoll/police(src)
 	new /obj/item/clothing/head/seccap(src)
+	new /obj/item/clothing/suit/armor/commander/marshal_coat(src)
 
 /obj/structure/closet/secure_closet/medspec
 	name = "corpsman's locker"

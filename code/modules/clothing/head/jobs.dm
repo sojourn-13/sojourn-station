@@ -133,13 +133,13 @@
 	icon_state = "beret_militia"
 
 /obj/item/clothing/head/rank/armorer/cap
-	name = "Supply Specialist's cap"
-	desc = "A faded black cap with the badge of a Blackshield Master-at-Arms."
+	name = "Sergeant's cap"
+	desc = "A faded black cap with the badge of a Blackshield Sergeant."
 	icon_state = "milsoft"
 
 /obj/item/clothing/head/rank/armorer/beret
-	name = "Supply Specialist's beret"
-	desc = "A faded black beret with the badge of a Blackshield Master-at-Arms."
+	name = "Sergeant's beret"
+	desc = "A faded black beret with the badge of a Blackshield Sergeant."
 	icon_state = "beret_militia"
 
 /obj/item/clothing/head/rank/milcom/beret

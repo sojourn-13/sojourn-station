@@ -110,7 +110,7 @@
 /obj/item/weapon/rig/light/ninja
 	name = "ominous suit control module"
 	suit_type = "ominous"
-	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for Spider Clan assassins."
+	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for assassins."
 	icon_state = "ninja_rig"
 	armor = list(
 		melee = 40,
@@ -154,7 +154,7 @@
 	name = "stealth suit control module"
 	suit_type = "stealth"
 	desc = "A highly advanced and expensive suit designed for covert operations."
-	icon_state = "stealth_rig"
+	icon_state = "ninja_rig"
 
 	req_access = list(access_syndicate)
 

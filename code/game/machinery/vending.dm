@@ -955,7 +955,7 @@
 						/obj/item/weapon/reagent_containers/food/drinks/tea/black = 10)
 	vend_delay = 15
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
-	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?;Care for a cup of coffe? It's Irish.;Whiskey for your sorrows, Beer for your break."
+	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?;Care for a cup of coffee? It's Irish.;Whiskey for your sorrows, Beer for your break."
 	product_ads = "Drink up!;Booze is good for you!;Alcohol is humanity's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 2053!;Award-winning wine!;Maximum alcohol!;Man loves beer.;A toast for progress!"
 	auto_price = FALSE
 
@@ -1477,6 +1477,8 @@
 					/obj/item/weapon/tool/knife = 6,
 					/obj/item/weapon/material/kitchen/utensil/spoon = 6,
 					/obj/item/weapon/tool/knife = 3,
+					/obj/item/weapon/material/kitchen/rollingpin = 3,
+					/obj/item/weapon/reagent_containers/glass/rag = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 8,
 					/obj/item/clothing/suit/rank/chef/classic = 2,
 					/obj/item/weapon/storage/lunchbox = 3,
@@ -1496,8 +1498,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/mug/brit = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/mug/moebius = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/mug/teacup = 10)
-	contraband = list(/obj/item/weapon/material/kitchen/rollingpin = 2,
-						/obj/item/weapon/tool/knife/butch = 2)
+	contraband = list(/obj/item/weapon/tool/knife/butch = 2)
 	auto_price = FALSE
 
 /obj/machinery/vending/sovietsoda
@@ -1750,8 +1751,7 @@
 					/obj/item/weapon/storage/pouch/small_generic = 2,
 					/obj/item/weapon/storage/pouch/medium_generic = 2,
 					/obj/item/weapon/storage/pouch/medical_supply = 2)
-	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 1,
-					/obj/item/weapon/tool/knife/neotritual = 3,
+	contraband = list(/obj/item/weapon/tool/knife/neotritual = 3,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 3)
 
 	prices = list(/obj/item/weapon/book/ritual/cruciform = 500,
@@ -1772,7 +1772,6 @@
 					/obj/item/weapon/storage/pouch/small_generic = 800,
 					/obj/item/weapon/storage/pouch/medium_generic = 1000,
 					/obj/item/weapon/storage/pouch/medical_supply = 600,
-					/obj/item/weapon/implant/core_implant/cruciform = 1000,
 					/obj/item/weapon/tool/knife/neotritual = 1000,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 1500)
 
