@@ -42,3 +42,16 @@
 /obj/item/weapon/gun/projectile/giskard/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/weapon/gun/projectile/giskard/loaded
+/obj/item/weapon/gun/projectile/giskard/loaded_rubber
+
+/obj/item/weapon/gun/projectile/giskard/loaded/New()
+	..()
+	src.self_load(new /obj/item/ammo_magazine/pistol)
+	src.update_icon()
+
+/obj/item/weapon/gun/projectile/giskard/loaded_rubber/New()
+	..()
+	src.self_load(new /obj/item/ammo_magazine/pistol/rubber)
+	src.update_icon()
