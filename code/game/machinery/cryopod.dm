@@ -374,7 +374,6 @@
 	announce.autosay("[occupant.real_name], [occupant.mind.assigned_role], [on_store_message]", "[on_store_name]")
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>")
 
-
 	//When the occupant is put into storage, their respawn time is reduced.
 	//This check exists for the benefit of people who get put into cryostorage while SSD and come back later
 	if (occupant.in_perfect_health())
