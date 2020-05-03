@@ -200,12 +200,8 @@
 			to_chat(user, SPAN_WARNING("The lock seems to be broken!"))
 			return
 		if(src.allowed(user))
-			if(active)
-				src.locked = !src.locked
-				to_chat(user, "The controls are now [src.locked ? "locked." : "unlocked."]")
-			else
-				src.locked = 0 //just in case it somehow gets locked
-				to_chat(user, SPAN_WARNING("The controls can only be locked when [src] is online."))
+			src.locked = !src.locked
+			to_chat(user, "The controls are now [src.locked ? "locked." : "unlocked."]")
 		else
 			to_chat(user, SPAN_WARNING("Access denied."))
 		return

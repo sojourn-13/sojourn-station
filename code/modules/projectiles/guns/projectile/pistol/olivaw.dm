@@ -28,3 +28,16 @@
 		icon_state = "olivawcivil"
 	else
 		icon_state = "olivawcivil_empty"
+
+/obj/item/weapon/gun/projectile/olivaw/loaded
+/obj/item/weapon/gun/projectile/olivaw/loaded_rubber
+
+/obj/item/weapon/gun/projectile/olivaw/loaded/New()
+	..()
+	src.self_load(new /obj/item/ammo_magazine/pistol)
+	src.update_icon()
+
+/obj/item/weapon/gun/projectile/olivaw/loaded_rubber/New()
+	..()
+	src.self_load(new /obj/item/ammo_magazine/pistol/rubber)
+	src.update_icon()

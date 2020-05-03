@@ -15,3 +15,16 @@
 	penetration_multiplier = 1.2
 	recoil_buildup = 18
 	one_hand_penalty = 15
+
+/obj/item/weapon/gun/projectile/revolver/detective/loaded
+/obj/item/weapon/gun/projectile/revolver/detective/loaded_rubber
+
+/obj/item/weapon/gun/projectile/revolver/detective/loaded/New()
+	..()
+	src.self_load(new /obj/item/ammo_magazine/slpistol)
+	src.update_icon()
+
+/obj/item/weapon/gun/projectile/revolver/detective/loaded_rubber/New()
+	..()
+	src.self_load(new /obj/item/ammo_magazine/slpistol/rubber)
+	src.update_icon()

@@ -51,3 +51,16 @@
 	firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
+
+/obj/item/weapon/gun/projectile/clarissa/loaded
+/obj/item/weapon/gun/projectile/clarissa/loaded_rubber
+
+/obj/item/weapon/gun/projectile/clarissa/loaded/New()
+	..()
+	src.self_load(new /obj/item/ammo_magazine/pistol)
+	src.update_icon()
+
+/obj/item/weapon/gun/projectile/clarissa/loaded_rubber/New()
+	..()
+	src.self_load(new /obj/item/ammo_magazine/pistol/rubber)
+	src.update_icon()

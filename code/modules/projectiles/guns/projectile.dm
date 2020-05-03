@@ -226,6 +226,84 @@
 
 	update_icon()
 
+/obj/item/weapon/gun/projectile/proc/self_load(var/obj/item/A)
+	if(istype(A, /obj/item/ammo_magazine))
+		var/obj/item/ammo_magazine/AM = A
+		if(!(load_method & AM.mag_type) || caliber != AM.caliber)
+			return //incompatible
+
+		//How are we trying to apply this magazine to this gun?
+		//Its possible for both magazines and guns to support multiple load methods.
+		//In the case of that, we use a fixed order to determine whats most desireable
+		var/method_for_this_load = 0
+
+		//Magazine loading takes precedence first
+		if ((load_method & AM.mag_type) & MAGAZINE)
+			method_for_this_load = MAGAZINE
+		//Speedloading second
+		else if ((load_method & AM.mag_type) & SPEEDLOADER)
+			method_for_this_load = SPEEDLOADER
+		else if ((load_method & AM.mag_type) & SINGLE_CASING)
+			method_for_this_load = SINGLE_CASING
+		else
+			//Not sure how this could happen, sanity check. Abort and return if none of the above were true
+			return
+
+		switch(method_for_this_load)
+			if(MAGAZINE)
+				if(AM.ammo_mag != ammo_mag && ammo_mag != "default")
+					return
+				if(tac_reloads && ammo_magazine)
+				else if(ammo_magazine)
+					return
+				if(!(AM.mag_well & mag_well))
+					return
+				AM.loc = src
+				ammo_magazine = AM
+
+				if(reload_sound) playsound(src.loc, reload_sound, 75, 1)
+				update_firemode()
+			if(SPEEDLOADER)
+				var/count = 0
+				for(var/obj/item/ammo_casing/C in AM.stored_ammo)
+					if(loaded.len >= max_shells)
+						break
+					if(C.caliber == caliber)
+						C.forceMove(src)
+						loaded += C
+						AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
+						count++
+				if(count)
+					if(reload_sound) playsound(src.loc, reload_sound, 75, 1)
+				update_firemode()
+		AM.update_icon()
+	else if(istype(A, /obj/item/ammo_casing))
+		var/obj/item/ammo_casing/C = A
+		if(!(load_method & SINGLE_CASING) || caliber != C.caliber)
+			return //incompatible
+		if(loaded.len >= max_shells)
+			return
+		if(C.amount > 1)
+			C.amount -= 1
+			var/obj/item/ammo_casing/inserted_casing = new /obj/item/ammo_casing(src)
+			inserted_casing.desc = C.desc
+			inserted_casing.caliber = C.caliber
+			inserted_casing.projectile_type = C.projectile_type
+			inserted_casing.icon_state = C.icon_state
+			inserted_casing.spent_icon = C.spent_icon
+			inserted_casing.maxamount = C.maxamount
+			if(ispath(inserted_casing.projectile_type) && C.BB)
+				inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
+			C.update_icon()
+			inserted_casing.update_icon()
+			loaded.Insert(1, inserted_casing)
+		else
+			C.forceMove(src)
+			loaded.Insert(1, C) //add to the head of the list
+		update_firemode()
+		if(bulletinsert_sound) playsound(src.loc, bulletinsert_sound, 75, 1)
+	update_icon()
+
 //attempts to unload src. If allow_dump is set to 0, the speedloader unloading method will be disabled
 /obj/item/weapon/gun/projectile/proc/unload_ammo(mob/user, var/allow_dump=1)
 	if(ammo_magazine)
