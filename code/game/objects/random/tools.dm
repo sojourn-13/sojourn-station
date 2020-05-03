@@ -139,6 +139,7 @@
 						/obj/item/weapon/tool/pickaxe/onestar = 1,
 						/obj/item/weapon/tool/pickaxe/jackhammer/onestar = 1,
 						/obj/item/weapon/tool/pickaxe/drill/onestar = 1,
+						/obj/item/weapon/tool/hammer/powered_hammer/onestar_hammer = 0.5,
 						/obj/item/weapon/tool/screwdriver/combi_driver/onestar = 1,
 						/obj/item/weapon/tool/weldingtool/onestar = 1))
 
