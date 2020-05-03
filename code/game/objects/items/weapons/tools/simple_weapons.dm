@@ -226,8 +226,7 @@
 	icon_state = "sledgehammer0"
 	item_state = "sledgehammer1"
 	force = WEAPON_FORCE_LETHAL
-	flags = CONDUCT
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = SLOT_BELT
 	armor_penetration = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5)

@@ -226,6 +226,7 @@ SUBSYSTEM_DEF(ticker)
 	equip_characters()
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !SSjob.ShouldCreateRecords(H.mind.assigned_role))
+			log_debug("Skipping creating records for [H.mind]")
 			continue
 		CreateModularRecord(H)
 	data_core.manifest()

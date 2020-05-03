@@ -380,6 +380,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	for (var/thing in subsystemstocheck)
 		if (!thing)
 			subsystemstocheck -= thing
+			continue
 		SS = thing
 		if (SS.state != SS_IDLE)
 			continue

@@ -41,9 +41,10 @@
 
 
 //A makeshift knife, for doing all manner of cutting and stabbing tasks in a half-assed manner
-/obj/item/weapon/tool/shiv
+/obj/item/weapon/tool/knife/shiv
 	name = "shiv"
 	desc = "A pointy piece of glass, abraded to an edge and wrapped in tape for a handle. Could become a decent tool or weapon with right tool mods."
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "impro_shiv"
 	worksound = WORKSOUND_HARD_SLASH
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
