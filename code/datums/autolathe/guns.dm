@@ -238,10 +238,6 @@
 	name = "OT cleansing carbine"
 	build_path = /obj/item/weapon/gun/matter/launcher/nt_sprayer
 
-/datum/design/autolathe/gun/vintorez_wood
+/datum/design/autolathe/gun/vintorez/wood
 	name = "FS 6.5mm \"Vintorez\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/vintorez_wood
-
-/datum/design/autolathe/gun/rpk
-	name = "FS 76.2mm \"Ruchnoy\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/rpk
