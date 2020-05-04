@@ -31,6 +31,11 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	var/assembly_type = /obj/structure/door_assembly
 	var/mineral = null
 	var/justzap = 0
+	var/connected = TRUE
+	var/roundstart = FALSE
+	var/list/connections = list("0", "0", "0", "0")
+	var/list/wall_connections = list("0", "0", "0", "0")
+	var/construction_stage
 	var/safe = 1
 	normalspeed = 1
 	var/obj/item/weapon/airlock_electronics/electronics = null
@@ -170,6 +175,8 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	assembly_type = /obj/structure/door_assembly/door_assembly_eng
 	glass = 1
 
+/obj/machinery/door/airlock/glass_engineering/vertical
+	icon = 'icons/obj/doors/doorengglassvert.dmi'
 /obj/machinery/door/airlock/glass_security
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doorsecglass.dmi'
@@ -1399,4 +1406,5 @@ There are 9 wires.
 		damage *= 0.66 //The bolts reinforce the door, reducing damage taken
 
 	return ..(damage)
+
 

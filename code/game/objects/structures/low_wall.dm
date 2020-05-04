@@ -187,8 +187,6 @@
 			W.update_icon()
 
 
-
-
 	for(var/i = 1 to 4)
 		I = image(icon, "[icon_state]_over_[wall_connections[i]]", dir = 1<<(i-1))
 		I.color = wall_color
@@ -244,6 +242,7 @@
 
 			for(var/turf/simulated/wall/T in trange(1, src) - src)
 				T.update_connections()
+
 		return
 
 	//A list of directions to nearby low walls
@@ -268,6 +267,12 @@
 				T.update_connections()
 				T.update_icon()
 
+	for(var/obj/machinery/door/airlock/T in orange(src, 1))
+		if (!T.connected)
+			continue
+
+		var/T_dir = get_dir(src, T)
+		connection_dirs |= T_dir
 		//If this low wall is in a cardinal direction to us,
 		//then we will grab full walls that are cardinal to IT
 		//These walls all meet condition 2b

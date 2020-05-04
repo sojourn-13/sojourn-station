@@ -123,6 +123,13 @@
 		if(can_join_with(W))
 			dirs += get_dir(src, W)
 
+	for(var/obj/machinery/door/airlock/T in orange(src, 1))
+		if (!T.connected)
+			continue
+
+		var/T_dir = get_dir(src, T)
+		dirs |= T_dir
+
 	for(var/obj/structure/low_wall/T in orange(src, 1))
 		if (!T.connected)
 			continue
