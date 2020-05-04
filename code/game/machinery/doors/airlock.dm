@@ -175,8 +175,6 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	assembly_type = /obj/structure/door_assembly/door_assembly_eng
 	glass = 1
 
-/obj/machinery/door/airlock/glass_engineering/vertical
-	icon = 'icons/obj/doors/doorengglassvert.dmi'
 /obj/machinery/door/airlock/glass_security
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doorsecglass.dmi'
