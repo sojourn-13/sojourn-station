@@ -23,7 +23,7 @@
 		access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
 		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway,
-		access_external_airlocks, access_research_equipment, access_prospector, access_medical
+		access_external_airlocks, access_research_equipment, access_prospector, access_medical, access_kitchen
 	)
 
 	stat_modifiers = list(
@@ -79,7 +79,7 @@
 		access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
 		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway,
-		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat
+		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat, access_kitchen
 	)
 
 	stat_modifiers = list(
@@ -131,7 +131,7 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
 	)
 
 	stat_modifiers = list(
@@ -180,7 +180,7 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
 	)
 
 	stat_modifiers = list(
@@ -228,7 +228,7 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels,
-		access_external_airlocks, access_prospector, access_brig
+		access_external_airlocks, access_prospector, access_brig, access_kitchen
 	)
 
 	stat_modifiers = list(
@@ -276,8 +276,8 @@
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
 	access = list(
-		access_security, access_moebius, access_chemistry, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
-		access_medical_equip, access_prospector, access_engine, access_mailsorting, access_eva, access_brig, access_external_airlocks
+		access_security, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
+		access_medical_equip, access_eva, access_brig, access_external_airlocks, access_surgery
 	)
 
 	stat_modifiers = list(
@@ -326,8 +326,8 @@
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
 	access = list(
-		access_security, access_moebius, access_engine, access_mailsorting, access_eva,
-		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector
+		access_security, access_eva,
+		access_sec_doors, access_brig, access_maint_tunnels, access_external_airlocks
 	)
 
 	stat_modifiers = list(
@@ -376,7 +376,7 @@
 
 	access = list(
 		access_security, access_moebius, access_engine, access_mailsorting,access_eva,
-		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector
+		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector, access_kitchen
 	)
 
 	stat_modifiers = list(
