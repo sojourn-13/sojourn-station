@@ -83,7 +83,7 @@
 	item_state = "mc_coat"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 35, bullet = 70, energy = 20, bomb = 15, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
+	armor = list(melee = 50, bullet = 50, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -96,7 +96,7 @@
 	item_state = "mc_coat_cloak"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 35, bullet = 70, energy = 20, bomb = 15, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
+	armor = list(melee = 50, bullet = 50, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20

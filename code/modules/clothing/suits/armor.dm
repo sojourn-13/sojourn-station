@@ -306,7 +306,7 @@ obj/item/clothing/suit/armor/flackvest/commander
 	item_state = "flakvest_green"
 	blood_overlay_type = "armor"
 	slowdown = 0.2
-	armor = list(melee = 50, bullet = 55, energy = 30, bomb = 50, bio = 0, rad = 0)
+	armor = list(melee = 50, bullet = 60, energy = 30, bomb = 50, bio = 0, rad = 0)
 
 obj/item/clothing/suit/armor/commander
 	name = "commander's armored coat"
@@ -315,8 +315,7 @@ obj/item/clothing/suit/armor/commander
 	item_state = "commander"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 55, bullet = 60, energy = 30, bomb = 30, bio = 0, rad = 0)
-	slowdown = 0.2
+	armor = list(melee = 50, bullet = 50, energy = 25, bomb = 30, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
