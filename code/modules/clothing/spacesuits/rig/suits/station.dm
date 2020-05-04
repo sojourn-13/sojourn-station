@@ -49,7 +49,8 @@
 		/obj/item/device/t_scanner,
 		/obj/item/weapon/storage/bag/ore,
 		/obj/item/weapon/tool/pickaxe,
-		/obj/item/weapon/rcd
+		/obj/item/weapon/rcd,
+		/obj/item/rig_module/storage
 	)
 
 	req_access = list()
@@ -85,7 +86,10 @@
 	offline_slowdown = 1
 	offline_vision_restriction = 1
 
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+
 	helm_type = /obj/item/clothing/head/helmet/space/rig/eva
+	glove_type = /obj/item/clothing/gloves/rig/eng
 
 	extra_allowed = list(
 		/obj/item/weapon/storage/toolbox,
@@ -101,9 +105,13 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/rcd,
-		/obj/item/rig_module/vision/meson
+		/obj/item/rig_module/vision/meson,
+		/obj/item/rig_module/storage
 		)
 
+/obj/item/clothing/gloves/rig/eng
+	name = "insulated gloves"
+	siemens_coefficient = 0
 
 /***************************************
 Advanced Voidsuit: Guild Master
@@ -285,5 +293,6 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rig_module/vision/sechud,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/grenade_launcher,
-		/obj/item/rig_module/mounted/taser
+		/obj/item/rig_module/mounted/taser,
+		/obj/item/rig_module/storage
 		)

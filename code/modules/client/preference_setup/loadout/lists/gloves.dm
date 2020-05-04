@@ -35,3 +35,17 @@
 	path = /obj/item/clothing/gloves/latex
 	slot = slot_gloves
 	cost = 1
+
+/datum/gear/gloves/insulated
+	display_name = "insulated gloves"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/insulated
+	slot = slot_gloves
+	cost = 6
+
+/datum/gear/gloves/latex
+	display_name = "budget insulated gloves"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/insulated/cheap
+	slot = slot_gloves
+	cost = 2
