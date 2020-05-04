@@ -21,6 +21,7 @@
 	switched_on_force = WEAPON_FORCE_BRUTAL
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	w_class = ITEM_SIZE_BULKY
+	slot_flags = SLOT_BELT | SLOT_BACK
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 1)
 	switched_on_qualities = list(QUALITY_HAMMERING = 45)
 	switched_off_qualities = list(QUALITY_HAMMERING = 30)
@@ -39,13 +40,10 @@
 	wielded_icon = "onehammer_on"
 	switched_on_force = WEAPON_FORCE_LETHAL
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
-	w_class = ITEM_SIZE_HUGE
-	slot_flags = SLOT_BACK
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 3, MATERIAL_DIAMOND = 3)
 	switched_on_qualities = list(QUALITY_HAMMERING = 60)
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)
 	toggleable = TRUE
-	armor_penetration = ARMOR_PEN_EXTREME
 	degradation = 0.6
 	use_power_cost = 1.5
 	workspeed = 1.5
