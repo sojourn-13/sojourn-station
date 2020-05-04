@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/sts
 	name = "\"STS\" carbine"
-	desc = "The rugged STS-25, the right left arm of the unfree world. Uses 6.5mm Carbine rounds. This one is unmarked."
+	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds. This one is unmarked."
 	icon = 'icons/obj/guns/projectile/sts.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_ROCKIN
+	mag_well = MAG_WELL_STANMAG
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
 	price_tag = 3300
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
@@ -47,3 +47,35 @@
 /obj/item/weapon/gun/projectile/automatic/sts/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/weapon/gun/projectile/automatic/sts/rifle
+	name = "\"STS\" battle rifle"
+	desc = "A rugged STS-30. We'll keep our land a free land, stop the enemy coming in. Uses 7.5mm rifle rounds. This one is unmarked."
+	icon = 'icons/obj/guns/projectile/sts30.dmi'
+	icon_state = "sts"
+	item_state = "sts"
+	caliber = CAL_RIFLE
+	mag_well = MAG_WELL_RIFLE
+	damage_multiplier = 0.8
+	recoil_buildup = 15
+	one_hand_penalty = 15 //automatic rifle level
+
+	firemodes = list(
+		SEMI_AUTO_NODELAY,
+		FULL_AUTO_400
+		)
+
+/obj/item/weapon/gun/projectile/automatic/sts/hrifle
+	name = "\"STS\" heavy rifle"
+	desc = "A rugged STS-40. If we have to go alone, we'll go alone with pride. Uses .408 heavy rifle rounds. This one is unmarked."
+	icon = 'icons/obj/guns/projectile/sts40.dmi'
+	icon_state = "sts"
+	item_state = "sts"
+	caliber = CAL_HRIFLE
+	mag_well = MAG_WELL_HRIFLE
+	damage_multiplier = 1.3
+	recoil_buildup = 20
+	one_hand_penalty = 30
+	firemodes = list(
+		SEMI_AUTO_NODELAY
+		)

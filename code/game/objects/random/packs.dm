@@ -90,6 +90,8 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/gun_cheap = 3,
 					/obj/random/gun_normal = 1,
 					/obj/random/gun_energy_cheap = 3,
+					/obj/random/gun_combat = 1,
+					/obj/random/gun_fancy =1,
 					/obj/random/gun_shotgun = 2,
 					/obj/random/knife = 3,
 					/obj/random/ammo = 8,

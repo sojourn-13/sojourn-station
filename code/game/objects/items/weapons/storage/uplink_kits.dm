@@ -173,15 +173,26 @@
 
 /obj/item/weapon/storage/box/syndie_kit/pistol
 	name = "\improper smooth operator kit"
-	desc = "10mm suppressed handgun and its kit.."
+	desc = ".40 suppressed handgun and its kit."
 
 /obj/item/weapon/storage/box/syndie_kit/pistol/populate_contents()
 	new /obj/item/weapon/gun/projectile/silenced(src)
-	new /obj/item/ammo_magazine/a10mm/hv(src)
-	new /obj/item/ammo_magazine/a10mm/hv(src)
+	new /obj/item/ammo_magazine/magnum/hv(src)
+	new /obj/item/ammo_magazine/magnum/hv(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/mask/balaclava(src)
 
+
+/obj/item/weapon/storage/box/syndie_kit/hpistol
+	name = "\improper gunfighter kit"
+	desc = ".50 suppressed handgun and its kit."
+
+/obj/item/weapon/storage/box/syndie_kit/hpistol/populate_contents()
+	new /obj/item/weapon/gun/projectile/lamia/akurra(src)
+	new /obj/item/ammo_magazine/kurtz/hv(src)
+	new /obj/item/ammo_magazine/kurtz/hv(src)
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/clothing/mask/balaclava(src)
 
 /obj/item/weapon/storage/box/syndie_kit/c20r
 	name = "C-20r box"
@@ -196,7 +207,7 @@
 	desc = "Revolver kit"
 
 /obj/item/weapon/storage/box/syndie_kit/revolver/populate_contents()
-	new /obj/item/weapon/gun/projectile/revolver(src)
+	new /obj/item/weapon/gun/projectile/revolver/mistral(src)
 	new /obj/item/ammo_magazine/slmagnum(src)
 
 /obj/item/weapon/storage/box/syndie_kit/sts

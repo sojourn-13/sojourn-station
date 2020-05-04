@@ -50,6 +50,12 @@
 				/obj/item/clothing/suit/armor/heavy = 2,
 				/obj/item/clothing/suit/armor/heavy/riot = 4,
 				/obj/item/clothing/suit/armor/laserproof = 2,
+				/obj/item/clothing/suit/armor/vest/ironhammer  = 10,
+				/obj/item/clothing/suit/armor/platecarrier  = 10,
+				/obj/item/clothing/suit/armor/platecarrier/green  = 10,
+				/obj/item/clothing/suit/armor/platecarrier/tan  = 10,
+				/obj/item/clothing/suit/armor/flackvest  = 5,
+				/obj/item/clothing/suit/armor/flackvest/green  = 5,
 				/obj/item/clothing/suit/armor/vest/detective  = 10,
 				/obj/item/clothing/suit/armor/vest/handmade = 20,
 				/obj/item/clothing/suit/space/void/SCAF = 1,
@@ -181,6 +187,15 @@
 /obj/random/cloth/helmet/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/head/helmet = 5,
 				/obj/item/clothing/head/helmet/riot = 5,
+				/obj/item/clothing/head/helmet/ballistic = 5,
+				/obj/item/clothing/head/helmet/ballistic/green = 5,
+				/obj/item/clothing/head/helmet/ballistic/tan = 5,
+				/obj/item/clothing/head/helmet/handmade = 5,
+				/obj/item/clothing/head/helmet/steelpot = 8,
+				/obj/item/clothing/head/helmet/altyn = 2,
+				/obj/item/clothing/head/helmet/altyn/brown = 2,
+				/obj/item/clothing/head/helmet/altyn/black = 2,
+				/obj/item/clothing/head/helmet/altyn/maska = 1,
 				/obj/item/clothing/head/helmet/space/void/SCAF = 1))
 
 /obj/random/cloth/helmet/low_chance
@@ -390,6 +405,10 @@
 	return pickweight(list(/obj/item/weapon/storage/belt/medical = 8,
 				/obj/item/weapon/storage/belt/medical/emt = 8,
 				/obj/item/weapon/storage/belt/security = 4,
+				/obj/item/weapon/storage/belt/webbing = 2,
+				/obj/item/weapon/storage/belt/webbing/green = 2,
+				/obj/item/weapon/storage/belt/webbing/black = 2,
+				/obj/item/weapon/storage/belt/webbing/ih = 2,
 				/obj/item/weapon/storage/belt/security/neotheology = 2,
 				/obj/item/weapon/storage/belt/utility = 8,
 				/obj/item/weapon/storage/belt/utility/neotheology = 4))

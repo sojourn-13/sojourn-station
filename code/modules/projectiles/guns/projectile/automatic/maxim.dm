@@ -8,7 +8,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = 0
 	max_shells = 96
-	caliber = CAL_HRIFLE
+	caliber = CAL_RIFLE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PAN

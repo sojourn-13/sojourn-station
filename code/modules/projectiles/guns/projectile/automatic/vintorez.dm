@@ -1,16 +1,17 @@
 /obj/item/weapon/gun/projectile/automatic/vintorez
 	name = "Excelsior \"Vintorez\" silenced carbine"
-	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 6.5 Carbine."
+	desc = "\"We have no compassion and we ask no compassion from you. When our turn comes, we shall not make excuses for the terror.\"\
+	A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/vintorez.dmi'
 	icon_state = "vintorez"
 	item_state = "vintorez"
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_LRIFLE //needs a new caliber type?
+	caliber = CAL_RIFLE //needs a new caliber type?
 	origin_tech = list(TECH_COMBAT = 6, TECH_ILLEGAL = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_ROCKIN //need a new magwell type?
+	mag_well = MAG_WELL_RIFLE //need a new magwell type?
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5)
 	price_tag = 4000
 	zoom_factor = 0.8 // double as IH_heavy

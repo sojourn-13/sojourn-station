@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/automatic/lmg
 	name = "SAW"
 	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. This one has a steel plate that reads \
-	\"Scarborough Arms: Gloriam intus sine\". Uses 7.6mm Rifle rounds."
+	\"Scarborough Arms: Gloriam intus sine\". Uses 7.5mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
 	icon_base = "l6"
@@ -10,11 +10,11 @@
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = 0
-	caliber = CAL_HRIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_BOX
+	caliber = CAL_RIFLE
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
 	price_tag = 5000
@@ -83,7 +83,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/lmg/pk
 	name = "Pulemyot Kalashnikova"
-	desc = "\"Kalashnikov's Machinegun\", a well preserved and maintained antique weapon of war."
+	desc = "\"Kalashnikov's Machinegun\", a well-made copy of what many consider to be the best traditional machinegun ever designed."
 	icon = 'icons/obj/guns/projectile/pk.dmi'
 	icon_base = "pk"
 	icon_state = "pkclosed-empty"

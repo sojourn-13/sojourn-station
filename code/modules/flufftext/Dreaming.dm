@@ -20,14 +20,14 @@ var/list/dreams = list(
 //Weapons
 	"a bullet casing","an ammo magazine","a missile","a flamethrower","a pistol","a sniper rifle","a laser cannon","a knife",
 	"a crossbow","an improvised weapon","a landmine","a baton","a pair of handcuffs","a pair of legcuffs", "a SA C-20r","a dart gun",
-	"a Excelsior 7.62x39 AKMS","a Excelsior 9mm Drozd","a Excelsior 9x19 Makarov","a FS AR 5.56x45 Wintermute",
-	"a SA AR 7.62x39 Kalashnikov","a HS BR 10x50mm Hustler","a HS BR 10x50mm Longarm","a HS BR 10x50mm Omnirifle","a HS BR 10x50mm Osprey",
-	"a HS CAR 10x50mm Boar","a SA CAR 5.56x45mm Z8 Bulldog","a HS CAR 6.5x39 Sol","a HS HG .32 Giskard","a HS HG .32 Olivaw",
-	"a HS HG .44 Lamia","a FS HG .44 Naga","a FS HG .45 Bronco","a HS HG .45 Colt","a HS HG .45 Mandella","a HS HG .50 Bolter",
-	"a HS HG 10mm Delta Elite","a HS HG 10mm Stallion","a HS HG 9x19 Clarissa","a HS HG Paco","a HS MP 9x19 Molly","a HS REV .357 Mateba",
-	"a HS REV .357 Miller","a HS REV .38 Havelock","a HS REV .44 Consul","a HS REV .44 Deckard","a HS SG Bull","a SA SMG .45 Atreides",
-	"a HS SMG 9x19 Idaho","a HS SMG 9x19 Straylight","a handmade pistol","a L6 SAW","a OT AMR Penetrator","a OT GP Zeus",
-	"a OT HG .45 Mk58","a OT SG Regulator 1000","a PAR 10x24 Dallas","a RPG-7","a STS-35",
+	"an AKMS","a Drozd","a Makarov","an Ostwind",
+	"a Kalashnikov","aHustler","a Longarm","an Omnirifle","a Osprey",
+	"a Boar","a Bulldog","a Pitbull","a Giskard","an Olivaw",
+	"a Lamia","a Naga","a Bronco","a Colt","a Mandella","a Basilisk",
+	"a Delta Elite","a Stallion","a Clarissa","a Firefly","a Molly","a Mateba",
+	"a Mistral","a Havelock","a Deckard","a Bull","a MAC",
+	"a Texan","a Straylight","a handmade pistol","a L6 SAW","a Penetrator","a Zeus",
+	"a Rose","a Regulator","a Pulse Rifle","an RPG","a STS",
 
 
 //Clothing
@@ -60,17 +60,17 @@ var/list/dreams = list(
 
 //Ranks
 	"the Steward","the Warrant Officer","the Militia Commander","the Guild Master","the Soteria Research Overseer",
-	"the Soteria Biolab Overseer","the Chief Executive Officer","a Assistant","a Bartender","a Janitor","a Gardener",
-	"a Prime","a Entertainer","a Chef","a Soteria Medical Doctor","a Soteria Psychologist","a Soteria Paramedic",
+	"the Soteria Biolab Overseer","the Chief Executive Officer","an Assistant","a Bartender","a Janitor","a Gardener",
+	"a Prime","an Entertainer","a Chef","a Doctor","a Psychologist","a Soteria Paramedic",
 	"a Soteria Chemist","a Soteria Scientist","a Soteria Roboticist","a Cyborg","a Cargo Technician","a Lonestar Miner",
-	"a Guild Adept", "a Marshal Officer","a Marshal Supply Specialist","a Marshal Ranger", "the Premier",
-	"a Blackshield Corpsman", "a Blackshield Trooper",
+	"a Guild Adept", "a Marshal Officer","a Supply Specialist","a Ranger", "the Premier",
+	"a Corpsman", "a Trooper",
 
 //Races (Check Creatures Before Adding Stuff Here, There's Some Overlap!)
-	"an abhuman","an agudner","an akula","an angel","a bird","a bunny","a cht'mant","a coyote","a crocodile","a deer","a demon",
-	"a dogborg","a dragon","a fox","a goblin","a human","a husky","a kobold","a kriosan","a lamia","a lion","a mar'qua","a nevrean",
-	"a polar bear",,"a sablekyne","a seelie","a sergal","a shark","a siberian spacebat","a slime","a squid",
-	"a squirrel","a strange hybrid","a synth","a synx","a vox","a wabbite","a wolf",
+	"an abhuman","an akula","an angel","a bird","a bunny","a cht'mant","a coyote","a crocodile","a deer","a demon",
+	"a dogborg","a dragon","a fox","a goblin","a human","a husky","a kobold","a kriosan","a lion","a mar'qua",
+	"a polar bear",,"a sablekyne","a seelie","a sergal","a shark","a slime","a squid",
+	"a squirrel","a strange hybrid","a synth","a wabbite","a wolf",
 
 //People
 	"a friend","an enemy","a loved one","an acquaintance","a stranger","an unknown individual","a hidden figure",
