@@ -124,6 +124,10 @@
 	rand_min = 1
 	rand_max = 8
 
+/obj/item/stack/material/diamond/tenstack
+	rand_min = 10
+	rand_max = 12
+
 /obj/item/stack/material/uranium
 	name = MATERIAL_URANIUM
 	icon_state = "sheet-uranium"
