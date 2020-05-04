@@ -240,4 +240,4 @@
 
 /datum/design/autolathe/gun/vintorez/wood
 	name = "FS 6.5mm \"Vintorez\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/vintorez_wood
+	build_path = /obj/item/weapon/gun/projectile/automatic/vintorez/wood
