@@ -4,12 +4,12 @@
 	icon = 'icons/obj/decals-faction.dmi'
 
 /obj/structure/sign/faction/ironhammer
-	name = "Ironhammer Security"
+	name = "Ironhammer Mercenaries"
 	desc = "A sign depicting the insignia of the Ironhammer Security, a mercenary group. This poster looks quite old, this group likely isn't around anymore."
 	icon_state = "ironhammer"
 
 /obj/structure/sign/faction/ironhammer_banner
-	name = "Ironhammer Security"
+	name = "Ironhammer Mercenaries"
 	desc = "A banner depicting the insignia of Ironhammer Security, a mercenary group. This poster looks quite old, this group likely isn't around anymore."
 	icon_state = "ironhammerold"
 
@@ -53,23 +53,23 @@
 	icon_state = "wall_cross_gold"
 
 /obj/structure/sign/faction/astersguild
-	name = "Lonestar Guild"
+	name = "Lonestar Corporation"
 	desc = "A sign depicting the insignia of Lonestar Shipping Solutions, LLC; the transport monopolists."
 	icon_state = "astersguild"
 
 /obj/structure/sign/faction/technomancers
-	name = "Technomancer League"
+	name = "Artificer's Guild"
 	desc = "A sign depicting the insignia of the Technomancer League, the clan of mechanists."
 	icon_state = "technomancers"
 
 /obj/structure/sign/faction/excelsior
 	name = "Excelsior"
-	desc = "A sign depicting the insignia of Excelsior, the communist mining union."
+	desc = "A sign depicting the insignia of Excelsior, the communist cult."
 	icon_state = "excelsior"
 
 /obj/structure/sign/faction/excelsior_old
 	name = "Excelsior"
-	desc = "A decaying sign depicting the insignia of Excelsior, the communist mining union."
+	desc = "A decaying sign depicting the insignia of Excelsior, the communist cult."
 	icon_state = "excelsior-old"
 
 /obj/structure/sign/faction/nanotrasen
@@ -78,7 +78,7 @@
 	icon_state = "NT"
 
 /obj/structure/sign/faction/solgov
-	name = "\improper SolGov"
+	name = "\improper Sol Federation"
 	desc = "A blue metal banner with a Sol Federation insignia."
 	icon_state = "solgovseal"
 
