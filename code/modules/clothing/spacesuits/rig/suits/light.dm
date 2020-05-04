@@ -89,6 +89,7 @@
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/voice,
 		/obj/item/rig_module/vision,
+		/obj/item/rig_module/storage
 		)
 
 //The cybersuit is not space-proof. It does however, have good siemens_coefficient values
@@ -140,7 +141,8 @@
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/datajack,
-		/obj/item/rig_module/self_destruct
+		/obj/item/rig_module/self_destruct,
+		/obj/item/rig_module/storage
 		)
 
 /obj/item/clothing/gloves/rig/light/ninja
