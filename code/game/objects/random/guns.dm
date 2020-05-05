@@ -9,7 +9,6 @@
 				/obj/item/weapon/gun/projectile/giskard = 4,\
 				/obj/item/weapon/gun/projectile/boltgun/sa = 3,\
 				/obj/item/weapon/gun/projectile/shotgun/pump = 2,\
-				/obj/item/weapon/gun/projectile/handmade_pistol 2,\
 				/obj/item/weapon/gun/projectile/ladon/sa = 1,\
 				/obj/item/weapon/gun/projectile/olivaw = 2))
 
@@ -68,7 +67,7 @@
 				/obj/item/weapon/gun/projectile/automatic/ak47/sa = 3,\
 				/obj/item/weapon/gun/projectile/automatic/ostwind = 1,\
 				/obj/item/weapon/gun/projectile/automatic/bulldog = 3,\
-				/obj/item/weapon/gun/projectile/automatic/bulldog\rds = 1,\
+				/obj/item/weapon/gun/projectile/automatic/bulldog/rds = 1,\
 				/obj/item/weapon/gun/projectile/automatic/omnirifle/standard = 1,\
 				/obj/item/weapon/gun/projectile/automatic/omnirifle = 2,\
 				/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine = 2,\
@@ -101,8 +100,8 @@
 				/obj/item/weapon/gun/projectile/colt/NM_colt = 2,\
 				/obj/item/weapon/gun/projectile/colt/ten = 2,\
 				/obj/item/weapon/gun/projectile/colt/ten/dark = 1,\
-				/obj/item/weapon/gun/projectile/lamia/scoped_lamia 1,\
-				/obj/item/weapon/gun/projectile/lamia/scoped/dark 1,\
+				/obj/item/weapon/gun/projectile/lamia/scoped = 1,\
+				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 1,\
 				/obj/item/weapon/gun/projectile/revolver/deckard = 0.8,\
 				/obj/item/weapon/gun/projectile/automatic/nordwind = 1,\
 				/obj/item/weapon/gun/projectile/boltgun/scout = 1,\

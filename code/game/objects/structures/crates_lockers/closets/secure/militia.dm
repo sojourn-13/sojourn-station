@@ -24,7 +24,7 @@
 	new /obj/item/weapon/storage/belt/security(src)
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/clothing/accessory/armband/militia(src)
-	new /obj/item/weapon/gun/projectile/lamia/dark_lamia(src)
+	new /obj/item/weapon/gun/projectile/lamia/scoped/dark(src)
 	new /obj/item/ammo_magazine/kurtz(src)
 	new /obj/item/ammo_magazine/kurtz(src)
 	new /obj/item/ammo_magazine/kurtz(src)

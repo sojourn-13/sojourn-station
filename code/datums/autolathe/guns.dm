@@ -44,11 +44,11 @@
 	name = "HG .40 \"Ladon\""
 	build_path = /obj/item/weapon/gun/projectile/ladon
 
-/datum/design/autolathe/gun/ladon/hs
+/datum/design/autolathe/gun/ladon_hs
 	name = "H&S HG .40 \"Ladon\""
 	build_path = /obj/item/weapon/gun/projectile/ladon/hs
 
-/datum/design/autolathe/gun/ladon/sa
+/datum/design/autolathe/gun/ladon_sa
 	name = "SA HG .40 \"Ladon\""
 	build_path = /obj/item/weapon/gun/projectile/ladon/sa
 
@@ -204,7 +204,9 @@
 	name = "Excelsior 7.5mm \"Kardashev-Mosin\""
 	build_path = /obj/item/weapon/gun/projectile/boltgun
 
-	zoom_factor = 2.0
+/datum/design/autolathe/gun/boltgun_sa
+	name = "SA BR 7.5mm \"Novakovic\""
+	build_path = /obj/item/weapon/gun/projectile/boltgun/sa
 
 // . 4 0 8 H E A V Y  R I F L E S
 

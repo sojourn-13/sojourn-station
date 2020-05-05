@@ -20,7 +20,7 @@
 	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
 
-/obj/item/ammo_casing/pistol
+/obj/item/ammo_casing/pistol/lethal
 	desc = "A .35 Auto hollow-point bullet casing."
 	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol/lethal
@@ -147,8 +147,7 @@
 	projectile_type = /obj/item/projectile/bullet/c10x24
 	is_caseless = TRUE
 
-
-
+//.50 K U R T Z
 
 /obj/item/ammo_casing/kurtz
 	desc = "A .50 Kurtz bullet casing."
@@ -159,6 +158,21 @@
 	desc = "A .50 Kurtz rubber bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz/rubber
+
+/obj/item/ammo_casing/kurtz/practice
+	desc = "A .50 Kurtz practice bullet casing."
+	caliber = CAL_50
+	projectile_type = /obj/item/projectile/bullet/kurtz/practice
+
+/obj/item/ammo_casing/kurtz/hv
+	desc = "A .50 Kurtz high-velocity bullet casing."
+	caliber = CAL_50
+	projectile_type = /obj/item/projectile/bullet/kurtz/hv
+
+/obj/item/ammo_casing/kurtz/lethal
+	desc = "A .50 Kurtz hollow point bullet casing."
+	caliber = CAL_50
+	projectile_type = /obj/item/projectile/bullet/kurtz/lethal
 
 //// .60-06 ////
 /obj/item/ammo_casing/antim

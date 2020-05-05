@@ -136,6 +136,17 @@ obj/item/projectile/bullet/kurtz
 	sharp = TRUE
 	step_delay = 0.8
 
+/obj/item/projectile/bullet/kurtz/hv
+	name = "AP bullet"
+	damage = 25
+	armor_penetration = 20
+	penetrating = 2
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+	step_delay = 0.5
+
+
 //Carbines and rifles
 //*********************************//
 

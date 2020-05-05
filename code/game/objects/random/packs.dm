@@ -94,6 +94,7 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/gun_fancy =1,
 					/obj/random/gun_shotgun = 2,
 					/obj/random/knife = 3,
+					/obj/random/melee = 3,
 					/obj/random/ammo = 8,
 					/obj/random/ammo/shotgun = 8,
 					/obj/random/ammo_lowcost = 10,

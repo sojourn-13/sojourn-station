@@ -67,7 +67,7 @@
 	new /obj/item/weapon/storage/belt/security(src)
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/weapon/cell/medium/high(src)
-	new /obj/item/weapon/gun/projectile/lamia/scoped_lamia(src)
+	new /obj/item/weapon/gun/projectile/lamia/scoped(src)
 	new /obj/item/ammo_magazine/kurtz/rubber(src)
 	new /obj/item/ammo_magazine/kurtz/rubber(src)
 	new /obj/item/ammo_magazine/kurtz/rubber(src)
@@ -145,7 +145,7 @@
 		new /obj/item/ammo_magazine/lrifle_short/rubber(src)
 	else
 		new /obj/item/weapon/gun/projectile/automatic/bulldog/rds(src)
-		new /obj/item/ammo_magazine/lrifle/short(src)
+		new /obj/item/ammo_magazine/lrifle_short(src)
 		new /obj/item/ammo_magazine/lrifle(src)
 		new /obj/item/ammo_magazine/lrifle_short/rubber(src)
 		new /obj/item/ammo_magazine/lrifle_short/rubber(src)

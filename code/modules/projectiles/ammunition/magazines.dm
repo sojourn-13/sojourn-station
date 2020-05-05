@@ -506,6 +506,11 @@
 	icon_state = "slpistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol/rubber
 
+/obj/item/ammo_magazine/slpistol/lethal
+	name = "speed loader (.35 Special hollow point)"
+	icon_state = "slpistol_r"
+	ammo_type = /obj/item/ammo_casing/pistol/lethal
+
 //////// .40 SPEEDLOADERS //////////
 
 /obj/item/ammo_magazine/slmagnum

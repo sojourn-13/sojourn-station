@@ -59,6 +59,9 @@
 				/obj/item/clothing/suit/armor/vest/detective  = 10,
 				/obj/item/clothing/suit/armor/vest/handmade = 20,
 				/obj/item/clothing/suit/space/void/SCAF = 1,
+				/obj/item/clothing/suit/space/void/odst/red = 1,
+				/obj/item/clothing/suit/space/void/odst/blue = 1,
+				/obj/item/clothing/suit/space/void/odst/orange = 1,
 				/obj/item/clothing/suit/armor/vest/security = 20))
 
 /obj/random/cloth/armor/low_chance
@@ -86,6 +89,18 @@
 				/obj/item/clothing/suit/storage/toggle/bomber = 5,
 				/obj/item/clothing/suit/storage/toggle/hoodie = 5,
 				/obj/item/clothing/suit/storage/toggle/hoodie/black = 5,
+				/obj/item/clothing/suit/gorka/toggle/gorka_ih/ih_med_g = 2,
+				/obj/item/clothing/suit/gorka/toggle/crew_med = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka/standard = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka/camo = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka/crew = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka/crew_b = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka/crew_g = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka/crew_light = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka/crew_light_b = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka/crew_o = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka/crew_y = 2,
+				/obj/item/clothing/suit/gorka/toggle/gorka = 2,
 				/obj/item/clothing/suit/storage/toggle/labcoat = 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/chemist= 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/cmo = 3,
@@ -159,6 +174,15 @@
 				/obj/item/clothing/under/color/lightpurple = 5,
 				/obj/item/clothing/under/color/lightred = 5,
 				/obj/item/clothing/under/overalls = 5,
+				/obj/item/clothing/under/gorka/camo = 2,
+				/obj/item/clothing/under/gorka/crew = 2,
+				/obj/item/clothing/under/gorka/crewblue = 2,
+				/obj/item/clothing/under/gorka/crewgreen = 2,
+				/obj/item/clothing/under/gorka/crewlight = 2,
+				/obj/item/clothing/under/gorka/crewlightblue = 2,
+				/obj/item/clothing/under/gorka/creworange = 2,
+				/obj/item/clothing/under/gorka/crewyellow = 2,
+				/obj/item/clothing/under/gorka/standard = 2,
 				/obj/item/clothing/under/costume/history/pirate = 5,
 				/obj/item/clothing/under/color/purple = 5,
 				/obj/item/clothing/under/costume/misc/rainbowjumpsuit = 5,
@@ -195,7 +219,10 @@
 				/obj/item/clothing/head/helmet/altyn = 2,
 				/obj/item/clothing/head/helmet/altyn/brown = 2,
 				/obj/item/clothing/head/helmet/altyn/black = 2,
-				/obj/item/clothing/head/helmet/altyn/maska = 1,
+				/obj/item/clothing/head/helmet/altyn/maska = 2,
+				/obj/item/clothing/head/helmet/space/void/odst/red = 1,
+				/obj/item/clothing/head/helmet/space/void/odst/blue = 1,
+				/obj/item/clothing/head/helmet/space/void/odst/orange = 1,
 				/obj/item/clothing/head/helmet/space/void/SCAF = 1))
 
 /obj/random/cloth/helmet/low_chance
@@ -242,6 +269,10 @@
 				/obj/item/clothing/head/soft/green = 1,
 				/obj/item/clothing/head/soft/blue = 1,
 				/obj/item/clothing/head/soft = 5,
+				/obj/item/clothing/head/soft/green2soft = 1,
+				/obj/item/clothing/head/soft/tan2soft = 1,
+				/obj/item/clothing/head/soft/sec2soft = 1,
+				/obj/item/clothing/head/soft/sec/corp = 1,
 				/obj/item/clothing/head/tophat = 5,
 				/obj/item/clothing/head/ushanka = 3,
 				/obj/item/clothing/head/welding = 5))
@@ -427,6 +458,10 @@
 	return pickweight(list(/obj/item/clothing/accessory/holster = 1,
 				/obj/item/clothing/accessory/holster/armpit = 1,
 				/obj/item/clothing/accessory/holster/waist = 1,
+				/obj/item/clothing/accessory/holster/saber = 1,
+				/obj/item/clothing/accessory/holster/saber/greatsword = 1,
+				/obj/item/clothing/accessory/holster/saber/machete = 1,
+				/obj/item/clothing/accessory/holster/saber/cutlass = 1,
 				/obj/item/clothing/accessory/holster/hip = 1,))
 
 /obj/random/cloth/holster/low_chance
