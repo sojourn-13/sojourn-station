@@ -32,15 +32,20 @@
 	apply_silencer(new /obj/item/weapon/silencer/integrated(src), null)
 
 /obj/item/weapon/gun/projectile/automatic/vintorez/update_icon()
+	..()
+
 	var/iconstring = initial(icon_state)
-	var/itemstring = initial(item_state)
+	var/itemstring = ""
 
 	if (ammo_magazine)
-		iconstring += "_mag"
-		itemstring += "_mag"
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
 	icon_state = iconstring
-	item_state = itemstring
+	set_item_state(itemstring)
+
+/obj/item/weapon/gun/projectile/automatic/vintorez/Initialize()
+	. = ..()
+	update_icon()

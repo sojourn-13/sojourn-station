@@ -32,8 +32,7 @@
 	var/itemstring = ""
 
 	if (ammo_magazine)
-		iconstring += "_mag"
-		itemstring += "_mag"
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
@@ -44,27 +43,3 @@
 
 	icon_state = iconstring
 	item_state = itemstring
-
-/obj/item/weapon/gun/projectile/automatic/drozd/Initialize()
-	. = ..()
-	update_icon()
-
-/obj/item/weapon/gun/projectile/automatic/bulldog/update_icon()
-	..()
-
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (ammo_magazine)
-		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
-		itemstring += "_full"
-
-	if(wielded)
-		itemstring += "_doble"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
-
-/obj/item/weapon/gun/projectile/automatic/bulldog/Initialize()
-	. = ..()
-	update_icon()

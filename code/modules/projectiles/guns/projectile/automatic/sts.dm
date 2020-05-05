@@ -50,7 +50,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/sts/rifle
 	name = "\"STS\" battle rifle"
-	desc = "A rugged STS-30. We'll keep our land a free land, stop the enemy coming in. Uses 7.5mm rifle rounds. This one is unmarked."
+	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
 	icon = 'icons/obj/guns/projectile/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -59,6 +59,7 @@
 	damage_multiplier = 0.8
 	recoil_buildup = 15
 	one_hand_penalty = 15 //automatic rifle level
+	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 
 	firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -67,15 +68,19 @@
 
 /obj/item/weapon/gun/projectile/automatic/sts/hrifle
 	name = "\"STS\" heavy rifle"
-	desc = "A rugged STS-40. If we have to go alone, we'll go alone with pride. Uses .408 heavy rifle rounds. This one is unmarked."
+	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. If we have to go alone, we'll go alone with pride."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
 	caliber = CAL_HRIFLE
 	mag_well = MAG_WELL_HRIFLE
+	penetration_multiplier = 1.2
 	damage_multiplier = 1.3
 	recoil_buildup = 20
 	one_hand_penalty = 30
+	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
+
 	firemodes = list(
 		SEMI_AUTO_NODELAY
 		)

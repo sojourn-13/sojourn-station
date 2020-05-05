@@ -296,14 +296,14 @@
 /obj/item/ammo_magazine/rifle_short
 	name = "short rifle magazine"
 	desc = "A 10 round magazine marked for .7.5mm Rifle."
-	icon_state = "lrifle_short"
+	icon_state = "rifle_short"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	caliber = "rifle_short"
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 5)
 	ammo_type = /obj/item/ammo_casing/rifle
-	max_ammo = 20
+	max_ammo = 10
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/rifle_short/empty
@@ -346,7 +346,7 @@
 /obj/item/ammo_magazine/rifle_box/empty
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/rifle/pk
+/obj/item/ammo_magazine/rifle_pk
 	name = "PK munitions box (7.5mm Rifle)"
 	icon_state = "pk_box"
 	origin_tech = list(TECH_COMBAT = 2)
@@ -371,7 +371,7 @@
 		number = round(percent, 25)
 	icon_state = "pk_box-[number]"
 
-/obj/item/ammo_magazine/rifle/pk/empty
+/obj/item/ammo_magazine/rifle_pk/empty
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/maxim
@@ -406,7 +406,7 @@
 
 /obj/item/ammo_magazine/hrifle/rubber
 	name = "heavy rifle magazine (rubber)"
-	icon_state = "hrifle_rubber"
+	icon_state = "hrifle_r"
 	ammo_type = /obj/item/ammo_casing/hrifle/rubber
 
 /obj/item/ammo_magazine/hrifle/practice

@@ -57,7 +57,7 @@
 	name = "random assault weapon"
 	icon_state = "gun-green"
 
-/obj/random/gun_normal/item_to_spawn()
+/obj/random/gun_combat/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/projectile/automatic/texan = 3,\
 				/obj/item/weapon/gun/projectile/automatic/mac = 4,\
 				/obj/item/weapon/gun/projectile/automatic/sts = 2,\
@@ -84,11 +84,10 @@
 	name = "random fancy gun"
 	icon_state = "gun-blue"
 
-/obj/random/gun_normal/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/gun/projectile/automatic/wirbelwind = 2,\
-				/obj/item/weapon/gun/projectile/automatic/pulse_rifle = 1,\
-				/obj/item/weapon/gun/projectile/automatic/ostwind = 2,\
-				/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds = 2,\
+/obj/random/gun_fancy/item_to_spawn()
+	return pickweight(list(/obj/item/weapon/gun/projectile/automatic/wirbelwind = 3,\
+				/obj/item/weapon/gun/projectile/automatic/ostwind = 3,\
+				/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds = 3,\
 				/obj/item/weapon/gun/projectile/automatic/omnirifle/fancy = 1,\
 				/obj/item/weapon/gun/projectile/ladon = 1,\
 				/obj/item/weapon/gun/projectile/lamia/akurra = 1,\
@@ -103,11 +102,11 @@
 				/obj/item/weapon/gun/projectile/lamia/scoped = 1,\
 				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 1,\
 				/obj/item/weapon/gun/projectile/revolver/deckard = 0.8,\
-				/obj/item/weapon/gun/projectile/automatic/nordwind = 1,\
+				/obj/item/weapon/gun/projectile/automatic/nordwind = 2,\
 				/obj/item/weapon/gun/projectile/boltgun/scout = 1,\
-				/obj/item/weapon/gun/projectile/automatic/c20r = 1))
+				/obj/item/weapon/gun/projectile/automatic/c20r = 2))
 
-/obj/random/gun_combat/low_chance
+/obj/random/gun_fancy/low_chance
 	name = "low chance fancy gun"
 	icon_state = "gun-blue-low"
 	spawn_nothing_percentage = 80

@@ -50,8 +50,7 @@
 /obj/item/weapon/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-		 A poor copy of the AKM pattern, shortened into a mid-length carbine and chambered in .257. If it won't fire, percussive maintenance should get it working again. \
-		 It is known for its easy maintenance, and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents."
+		 A poor copy of the AKM pattern, shortened into a mid-length carbine and chambered in .257. The left arm of the unfree world."
 	icon = 'icons/obj/guns/projectile/ak_wood.dmi'
 	icon_state = "AK"
 	item_state = "AK"

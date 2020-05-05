@@ -107,10 +107,11 @@
 	icon = 'icons/obj/guns/projectile/heavyboltgun.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
-	damage_multiplier = 1.5
-	penetration_multiplier  = 1.5
+	force = WEAPON_FORCE_PAINFUL
+	damage_multiplier = 1.6
+	penetration_multiplier  = 1.6
 	recoil_buildup = 50
-	max_shells = 10
+	max_shells = 5
 	zoom_factor = 2.0
 	price_tag = 3000
 	caliber = CAL_HRIFLE

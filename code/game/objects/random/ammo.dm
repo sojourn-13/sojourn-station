@@ -53,7 +53,7 @@
 	name = "random advanced ammunition"
 	icon_state = "ammo-blue"
 
-/obj/random/ammo_ihs/item_to_spawn()
+/obj/random/ammo_fancy/item_to_spawn()
 	return pick(/obj/item/ammo_magazine/rifle/rubber,
 				/obj/item/ammo_magazine/rifle,
 				/obj/item/ammo_magazine/hrifle,
@@ -83,7 +83,7 @@
 				/obj/item/ammo_magazine/magnum,
 				/obj/item/weapon/cell/medium/high)
 
-/obj/random/ammo_ihs/low_chance
+/obj/random/ammo_fancy/low_chance
 	name = "low chance random random ironhammer ammunition"
 	icon_state = "ammo-blue-low"
 	spawn_nothing_percentage = 60

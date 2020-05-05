@@ -72,10 +72,11 @@
 /obj/item/weapon/gun/projectile/lamia/socom
 	name = "\"SOCOM\" silenced heavy pistol"
 	desc = "The M6C SOCOM, a variant of the M6 \"Naga\", it's a highly specialized and advanced handgun developed for the Solar Federation Special Operations Command. This one is fitted with a smart-linked optic and integrated suppressor. Uses .50 Kurtz."
-	icon_state = "dark_lamia"
-	item_state = "dark_lamia"
+	icon_state = "socom"
+	item_state = "socom"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.5
+	silencer_type = /obj/item/weapon/silencer/integrated
 	recoil_buildup = 8 //highly OP SolFed specwar weapon
 	damage_multiplier = 0.95
 	penetration_multiplier = 1.2
@@ -89,10 +90,11 @@
 /obj/item/weapon/gun/projectile/lamia/akurra
 	name = "\"Akurra\" silenced heavy pistol"
 	desc = "The \"Akurra\", a specialized and heavily modified Lamia-pattern pistol that's been shaved down to a sleek gunfighter's tool.  This one is fitted with an integrated suppressor and gutter-sights. Uses .50 Kurtz."
-	icon_state = "dark_lamia"
-	item_state = "dark_lamia"
+	icon_state = "akurra"
+	item_state = "akurra"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	recoil_buildup = 15
+	silencer_type = /obj/item/weapon/silencer/integrated
 	damage_multiplier = 0.95
 	penetration_multiplier = 1.2
 	price_tag = 2500

@@ -131,7 +131,7 @@ obj/item/ammo_magazine/ammobox/lrifle
 
 obj/item/ammo_magazine/ammobox/lrifle_small
 	name = "ammunition box (.257 Carbine FMJ)"
-	icon_state = "box_lrifle"
+	icon_state = "lrifle"
 	matter = list(MATERIAL_STEEL = 15)
 	caliber = CAL_LRIFLE
 	ammo_type = /obj/item/ammo_casing/lrifle
@@ -292,26 +292,26 @@ obj/item/ammo_magazine/ammobox/rifle
 	max_ammo = 40
 
 /obj/item/ammo_magazine/ammobox/hrifle_small/rubber
-	name = "ammunition box (10x50mm rubber)"
+	name = "ammunition box (.408 rubber)"
 	icon_state = "hrifle_r"
 	desc = "A box of .408 heavy rifle ammunition. 40ct, 10mm deforming traumatic rounds."
 	ammo_type = /obj/item/ammo_casing/hrifle/rubber
 
 /obj/item/ammo_magazine/ammobox/hrifle_small/practice
-	name = "ammunition box (10x50mm rubber)"
+	name = "ammunition box (.408 practice)"
 	icon_state = "hrifle_p"
 	desc = "A box of .408 heavy rifle ammunition. 40ct, 7mm subcaliber frangible training rounds."
 	ammo_type = /obj/item/ammo_casing/hrifle/practice
 
 /obj/item/ammo_magazine/ammobox/hrifle_small/hv
-	name = "ammunition box (10x50mm rubber)"
+	name = "ammunition box (.408 SLAP)"
 	icon_state = "hrifle_hv"
 	desc = "A box of .408 heavy rifle ammunition. 40ct, 5mm Saboted Light Armor Penetrators, spoon-tipped."
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
 	ammo_type = /obj/item/ammo_casing/hrifle/hv
 
 /obj/item/ammo_magazine/ammobox/hrifle_small/lethal
-	name = "ammunition box (10x50mm rubber)"
+	name = "ammunition box (.408 hollow point)"
 	icon_state = "hrifle_l"
 	desc = "A box of .408 heavy rifle ammunition. 40ct, 10mm hollow-tipped full-caliber."
 	ammo_type = /obj/item/ammo_casing/hrifle/lethal

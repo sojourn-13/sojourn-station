@@ -1,9 +1,9 @@
 /obj/item/weapon/gun/projectile/automatic/nordwind
 	name = "\"Nordwind\" precision rifle"
 	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.5mm Rifle rounds."
-	icon = 'icons/obj/guns/projectile/ostwind.dmi'
-	icon_state = "ostwind"
-	item_state = "ostwind"
+	icon = 'icons/obj/guns/projectile/nordwind.dmi'
+	icon_state = "nordwind"
+	item_state = "nordwind"
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_RIFLE

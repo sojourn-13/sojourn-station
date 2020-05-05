@@ -648,6 +648,7 @@
 		/datum/design/autolathe/gun/omnirifle,//rifles
 		/datum/design/autolathe/gun/standard_omnirifle,
 		/datum/design/autolathe/gun/omnicarbine,
+		/datum/design/autolathe/gun/sts40,
 		/datum/design/autolathe/gun/rds_omnicarbine,
 		/datum/design/autolathe/device/gps,//misc gear
 		/datum/design/autolathe/misc/heavyflashlight,

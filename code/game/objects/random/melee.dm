@@ -56,7 +56,7 @@
 	name = "random bludgeon"
 	icon_state = "tool-red"
 
-/obj/random/knife/item_to_spawn()
+/obj/random/melee/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/tool/homewrecker = 1,
 				/obj/item/weapon/melee/telebaton = 2,
 				/obj/item/weapon/melee/nailstick = 2,
@@ -69,7 +69,7 @@
 				/obj/item/weapon/shield/riot/handmade/lid = 0.2,
 				/obj/item/weapon/material/baseballbat = 2))
 
-/obj/random/knife/low_chance
+/obj/random/melee/low_chance
 	name = "low chance random bludgeon"
 	icon_state = "tool-red-low"
 	spawn_nothing_percentage = 80
