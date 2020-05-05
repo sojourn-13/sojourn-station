@@ -1004,10 +1004,6 @@ var/list/datum/dna/hivemind_bank = list()
 		"<span class='italics'>You hear organic matter ripping and tearing!</span>")
 		src.creator = loc
 
-/obj/item/weapon/melee/changeling/Initialize()
-	. = ..()
-	START_PROCESSING(SSobj, src)
-
 /obj/item/weapon/melee/changeling/dropped(mob/user)
 	visible_message("<span class='warning'>With a sickening crunch, [creator] reforms their arm!</span>",
 	"<span class='notice'>We assimilate the weapon back into our body.</span>",
@@ -1016,27 +1012,6 @@ var/list/datum/dna/hivemind_bank = list()
 	spawn(1)
 		if(src)
 			qdel(src)
-
-/obj/item/weapon/melee/changeling/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	. = ..()
-/obj/item/weapon/melee/changeling/Process()  //Stolen from ninja swords.
-	if(!creator || loc != creator ||(creator.l_hand != src && creator.r_hand != src))
-		// Tidy up a bit.
-		if(istype(loc,/mob/living))
-			var/mob/living/carbon/human/host = loc
-			if(istype(host))
-				for(var/obj/item/organ/external/organ in host.organs)
-					for(var/obj/item/O in organ.implants)
-						if(O == src)
-							organ.implants -= src
-			host.pinned -= src
-			host.embedded -= src
-			host.drop_from_inventory(src)
-		spawn(1)
-			if(src)
-				qdel(src)
-
 
 /obj/item/weapon/melee/changeling/arm_blade
 	name = "arm blade"
