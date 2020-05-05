@@ -11,7 +11,7 @@
 	var/datum/mind/owner
 
 /obj/item/weapon/storage/bsdm/proc/can_launch()
-	return owner && (locate(/area/space) in view(get_turf(src)))
+	return owner && (locate(/area/nadezhda/outside/lakeside) in view(get_turf(src)))
 
 /obj/item/weapon/storage/bsdm/attack_self(mob/user)
 	ui_interact(user)
@@ -57,6 +57,8 @@
 
 		if(ismob(loc))
 			to_chat(loc, SPAN_NOTICE("[src] flickers away in a brief flash of light."))
+
+		playsound(get_turf(src), 'sound/machines/defib_zap.ogg', 50, 1, -1)
 
 		for(var/datum/antag_contract/item/C in GLOB.all_antag_contracts)
 			if(C.completed)
