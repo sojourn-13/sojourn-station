@@ -39,3 +39,8 @@
 # kit_icon: salvage
 # }
 ##
+{
+ckey: Armolitskiy
+character_name: Blagoslav Petrovic
+item_path: /obj/item/weapon/gun/projectile/mk58/Blagojevic
+}
