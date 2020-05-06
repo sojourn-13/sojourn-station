@@ -123,8 +123,12 @@
 	if(!forceshow && istype(user,/mob/living/silicon/ai))
 		var/mob/living/silicon/ai/AI = user
 		can_read = get_dist(src, AI.camera) < 2
-	user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[can_read ? info : stars(info)][stamps]</BODY></HTML>", "window=[name]")
-	onclose(user, "[name]")
+
+	var/output = "<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[can_read ? info : stars(info)][stamps]</BODY></HTML>"
+
+	var/datum/browser/popup = new(user, "[name]","[name]", 370, 470)
+	popup.set_content(output)
+	popup.open()
 
 /obj/item/weapon/paper/verb/rename()
 	set name = "Rename paper"
@@ -267,9 +271,9 @@
 		t = replacetext(t, "\[logo\]", "")
 
 	if (iscrayon)
-		t = "<font face=\"[crayonfont]\" color=[P ? P.colour : "black"]><b>[t]</b></font>"
+		t = "<font face=\"[crayonfont]\" color=[P ? P.colour : "white"]><b>[t]</b></font>"
 	else
-		t = "<font face=\"[deffont]\" color=[P ? P.colour : "black"]>[t]</font>"
+		t = "<font face=\"[deffont]\" color=[P ? P.colour : "white"]>[t]</font>"
 
 	t = pencode2html(t)
 
@@ -360,8 +364,11 @@
 		playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
 		update_space(t)
 
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
+		var/output = "<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>"
 
+		var/datum/browser/popup = new(usr, "[name]","[name]", 370, 470)
+		popup.set_content(output)
+		popup.open()
 		update_icon()
 
 
@@ -432,8 +439,13 @@
 		if ( istype(RP) && RP.mode == 2 )
 			RP.RenamePaper(user,src)
 		else
-			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]")
+			var/output = "<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>"
+
+			var/datum/browser/popup = new(user, "[name]","[name]", 370, 470)
+			popup.set_content(output)
+			popup.open()
 		return
+
 
 	else if(istype(P, /obj/item/weapon/stamp))
 		if((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/clipboard) ) && loc.loc != user && user.get_active_hand() != P))

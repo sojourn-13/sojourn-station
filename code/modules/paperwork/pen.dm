@@ -21,7 +21,7 @@
 	throw_speed = 7
 	throw_range = 15
 	matter = list(MATERIAL_STEEL = 1)
-	var/colour = "black"	//what colour the ink is!
+	var/colour = "white"	//what colour the ink is!
 
 
 /obj/item/weapon/pen/blue
@@ -37,7 +37,7 @@
 /obj/item/weapon/pen/multi
 	desc = "It's a pen with multiple colors of ink!"
 	var/selectedColor = 1
-	var/colors = list("black","blue","red")
+	var/colors = list("white","blue","red")
 
 /obj/item/weapon/pen/multi/attack_self(mob/user)
 	if(++selectedColor > 3)
@@ -55,7 +55,7 @@
 /obj/item/weapon/pen/invisible
 	desc = "It's an invisble pen marker."
 	icon_state = "pen"
-	colour = "white"
+	colour = "black"
 
 
 /obj/item/weapon/pen/attack(mob/M as mob, mob/user as mob)
@@ -168,9 +168,9 @@
 			if("Red")
 				colour = COLOR_RED
 			if("Invisible")
-				colour = COLOR_WHITE
-			else
 				colour = COLOR_BLACK
+			else
+				colour = COLOR_WHITE
 		to_chat(usr, "<span class='info'>You select the [lowertext(selected_type)] ink container.</span>")
 
 

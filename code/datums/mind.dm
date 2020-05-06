@@ -126,7 +126,9 @@
 			output += "<br><b>Your [A.role_text] objectives:</b>"
 		output += "[A.print_objectives(FALSE)]"
 
-	recipient << browse(output, "window=memory")
+	var/datum/browser/popup = new(recipient, "memory","Память", 370, 470)
+	popup.set_content(output)
+	popup.open()
 
 /datum/mind/proc/edit_memory()
 	if(SSticker.current_state != GAME_STATE_PLAYING)

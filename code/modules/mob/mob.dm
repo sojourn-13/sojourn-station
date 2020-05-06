@@ -487,13 +487,17 @@
 	if(href_list["flavor_change"])
 		update_flavor_text()
 	if(href_list["ooc_text"])
-		var/dat = {"
+		if(src in view(usr))
+			var/dat = {"
 				<html><head><title>[name]</title></head>
 				<body><tt>[replacetext(ooc_text, "\n", "<br>")]</tt></body>
 				</html>
 			"}
-		usr << browse(dat, "window=[name]_ooc;size=500x200")
-		onclose(usr, "[name]")
+			usr << browse(dat, "window=[name];size=500x200")
+			var/datum/browser/popup = new(usr, "[name]","[name]", 500, 200, src)
+			popup.set_content(dat)
+			popup.open()
+
 //	..()
 	return
 
