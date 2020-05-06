@@ -4,14 +4,14 @@
 
 /obj/machinery/porta_turret/excelsior
 	icon = 'icons/obj/machines/excelsior/turret.dmi'
-	desc = "A fully automated anti infantry platform. Fires 7.62mm rounds."
+	desc = "A fully automated anti infantry platform. Fires 7.5mm rounds."
 	icon_state = "turret_legs"
 	density = TRUE
 	lethal = TRUE
 	raised = TRUE
 	circuit = /obj/item/weapon/circuitboard/excelsior_turret
 	installation = null
-	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/hrifle
+	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
 	var/working_range = 30 // how far this turret operates from excelsior teleporter

@@ -191,7 +191,7 @@
 
 /obj/item/clothing/suit/space/void/security/odst
 	name = "Sol Federation voidsuit"
-	desc = "A bulky suit that protects against hazardous, low pressure environments in non-combat military applications."
+	desc = "Do you wanna be a hero in the sky? High adventure, higher pay, join the Space Marines today."
 	icon_state = "odst"
 	item_state = "odst"
 	slowdown = 1
@@ -234,8 +234,8 @@
 //Colored military suits//
 /obj/item/clothing/head/helmet/space/void/odst/red
 	name = "military voidsuit helmet"
-	icon_state = "odst_mil"
-	item_state = "odst_mil"
+	icon_state = "odst_red"
+	item_state = "odst_red"
 
 /obj/item/clothing/suit/space/void/odst/red
 	name = "military voidsuit"
@@ -251,13 +251,13 @@
 
 /obj/item/clothing/head/helmet/space/void/odst/blue
 	name = "military voidsuit helmet"
-	icon_state = "odst_mil"
-	item_state = "odst_mil"
+	icon_state = "odst_blue"
+	item_state = "odst_blue"
 
 /obj/item/clothing/head/helmet/space/void/odst/orange
 	name = "military voidsuit helmet"
-	icon_state = "odst_mil"
-	item_state = "odst_mil"
+	icon_state = "odst_orange"
+	item_state = "odst_orange"
 
 /obj/item/clothing/suit/space/void/odst/orange
 	name = "military voidsuit"

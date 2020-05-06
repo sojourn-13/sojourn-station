@@ -1,6 +1,6 @@
-//----------------------------------------------
-//------------MEDICAL / SCIENCE-----------------
-//----------------------------------------------
+//-----------------------------------------------
+//------------MEDICAL / SCIENCE------------------
+//-----------------------------------------------
 
 /datum/supply_pack/medical
 	name = "Medical Crate"
@@ -150,3 +150,13 @@
 	group = "Medical / Science"
 	contraband = TRUE
 	containertype = /obj/structure/closet/crate/medical
+
+/datum/supply_pack/diamondsheets
+	name = "Diamond sheet crate"
+	contains = list(
+		/obj/item/stack/material/diamond/tenstack
+	)
+	cost = 10000
+	crate_name = "diamond sheet crate"
+	group = "Medical / Science"
+	containertype = /obj/structure/closet/crate

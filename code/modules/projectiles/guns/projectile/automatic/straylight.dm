@@ -23,7 +23,7 @@
 	firemodes = list(
 		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
+		BURST_2_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/straylight/update_icon()

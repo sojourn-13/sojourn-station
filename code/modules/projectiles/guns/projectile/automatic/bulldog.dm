@@ -1,12 +1,12 @@
 /obj/item/weapon/gun/projectile/automatic/bulldog
 	name = "\"Bulldog\" carbine"
-	desc = "An economy-class carbine manufactured by H&S and used as a common carry gun for security and police far and wide, though also popular with various adventurous sorts as a semi-disposable option in the bush. Compact and reliable. Uses 6.5 Carbine rounds."
+	desc = "An economy-class carbine manufactured by H&S and used as a common carry gun for security and police far and wide, though also popular with various adventurous sorts as a semi-disposable option in the bush. Compact and reliable. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/bulldog.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
 	w_class = ITEM_SIZE_BULKY
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_ROCKIN
+	mag_well = MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
@@ -44,7 +44,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/bulldog/rds
 	name = "\"Bulldog\" carbine"
-	desc = "A common carry gun manufactured by H&S for security and police far and wide. Compact and reliable. Uses 6.5 Carbine rounds. This one comes with red dot sight."
+	desc = "A common carry gun manufactured by H&S for security and police far and wide. Compact and reliable. Uses .257 Carbine rounds. This one comes with red dot sight."
 	icon = 'icons/obj/guns/projectile/bulldog_rds.dmi'
 	icon_state = "bulldog_rds"
 	item_state = "bulldog_rds"
