@@ -208,7 +208,7 @@
 
 /obj/item/clothing/head/helmet/steelpot
 	name = "steelpot helmet"
-	desc = " Titanium helmet of void wolf origin. Still widely used despite of its discontinued production."
+	desc = "Traditional combat helmet, still blocks shrapnel all the same."
 	icon_state = "steelpot"
 	armor = list(melee = 40, bullet = 40, energy = 0, bomb = 40, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
 	flags_inv = BLOCKHAIR
@@ -217,9 +217,9 @@
 
 /obj/item/clothing/head/helmet/altyn
 	name = "green altyn helmet"
-	desc = "Green titanium helmet of void wolf origin. Still widely used despite of its discontinued production."
+	desc = "Green titanium blast helmet, not exactly cutting edge."
 	icon_state = "altyn"
-	armor = list(melee = 45, bullet = 55, energy = 0, bomb = 35, bio = 0, rad = 0) // slightly better than usual due to mask
+	armor = list(melee = 45, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // slightly better than usual due to mask
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	siemens_coefficient = 1
@@ -255,7 +255,7 @@
 			tint = TINT_NONE
 			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 			icon_state = "[base_state]_up"
-			armor = list(melee = 15, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
+			armor = list(melee = 40, bullet = 40, energy = 0, bomb = 40, bio = 0, rad = 0)
 			to_chat(usr, "You push the [src] up out of your face.")
 		update_wear_icon()	//so our mob-over-lays
 		usr.update_action_buttons()
@@ -263,12 +263,12 @@
 
 /obj/item/clothing/head/helmet/altyn/brown
 	name = "brown altyn helmet"
-	desc = "Brown titanium helmet of void wolf origin. Still widely used despite of its discontinued production."
+	desc = "Brown titanium blast helmet, not exactly cutting edge."
 	icon_state = "altyn_brown"
 
 /obj/item/clothing/head/helmet/altyn/black
 	name = "black altyn helmet"
-	desc = "Black titanium helmet of void wolf origin. Still widely used despite of its discontinued production."
+	desc = "Black titanium blast helmet, not exactly cutting edge."
 	icon_state = "altyn_black"
 
 /obj/item/clothing/head/helmet/altyn/maska

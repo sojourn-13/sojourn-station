@@ -9,7 +9,7 @@
 	force = WEAPON_FORCE_ROBUST
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	caliber = CAL_HRIFLE
+	caliber = CAL_RIFLE
 	fire_delay = 12 // double the standart
 	damage_multiplier = 1.4
 	penetration_multiplier  = 1.5
@@ -17,11 +17,10 @@
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
-	ammo_type = /obj/item/ammo_magazine/lrifle
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 1000
+	price_tag = 500
 	one_hand_penalty = 20 //full sized rifle with bayonet is hard to keep on target
 	var/bolt_open = 0
 	var/item_suffix = ""
@@ -98,6 +97,24 @@
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	max_shells = 5
-	price_tag = 500
-	recoil_buildup = 0.4 // Double the excel variant
+	price_tag = 300
+	recoil_buildup = 40
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
+
+/obj/item/weapon/gun/projectile/boltgun/scout
+	name = "\"Scout\" heavy boltgun"
+	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .408 Heavy Rifle rounds, it packs the reach and accuracy for every occasion."
+	icon = 'icons/obj/guns/projectile/heavyboltgun.dmi'
+	icon_state = "boltgun"
+	item_state = "boltgun"
+	force = WEAPON_FORCE_PAINFUL
+	damage_multiplier = 1.6
+	penetration_multiplier  = 1.6
+	recoil_buildup = 50
+	max_shells = 5
+	zoom_factor = 2.0
+	price_tag = 3000
+	caliber = CAL_HRIFLE
+	load_method = SINGLE_CASING
+	one_hand_penalty = 50 //No trick shots
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)

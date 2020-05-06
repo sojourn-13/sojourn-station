@@ -1,12 +1,12 @@
 /obj/item/weapon/gun/projectile/automatic/pitbull
-	name = "\"Pitbull\" compact assault rifle"
-	desc = "The M7 Pitbull is an older bullpup rifle model manufactured by \"Holland & Sullivan\" primarily for planetary defense forces and private military firms. It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses .208 Rifle rounds."
+	name = "\"Pitbull\" carbine rifle"
+	desc = "The M7 Pitbull is an older bullpup rifle model manufactured by \"Holland & Sullivan\" primarily for planetary defense forces and private military firms. It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/pitbull.dmi'
 	icon_state = "pitbull"
 	item_state = "pitbull"
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_SRIFLE
+	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 3)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
 	price_tag = 3200

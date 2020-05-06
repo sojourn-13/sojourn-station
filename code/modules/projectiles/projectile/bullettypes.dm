@@ -10,7 +10,7 @@
 //*********************************//
 ///.35 Auto///
 /obj/item/projectile/bullet/pistol
-	damage = 22
+	damage = 20
 	armor_penetration = 5
 	step_delay = 0.75
 	can_ricochet = TRUE
@@ -39,47 +39,24 @@
 	step_delay = 0.75
 	can_ricochet = FALSE
 
-///10mm Auto///
-
-/obj/item/projectile/bullet/a10mm
-	damage = 28
-	armor_penetration = 5
-	can_ricochet = TRUE
-	step_delay = 0.75
-
-/obj/item/projectile/bullet/a10mm/rubber
-	name = "rubber bullet"
-	damage = 3
-	agony = 22
-	check_armour = ARMOR_MELEE
-	armor_penetration = 0
-	embed = FALSE
-	sharp = FALSE
-	can_ricochet = TRUE
-	step_delay = 0.9
-
-/obj/item/projectile/bullet/a10mm/hv
-	damage = 28
+/obj/item/projectile/bullet/pistol/lethal
+	name = "hollow-point bullet"
+	damage = 20
+	agony = 20
 	armor_penetration = 10
-	penetrating = 1
-	step_delay = 0.5
-
-/obj/item/projectile/bullet/a10mm/practice
-	name = "practice bullet"
-	damage = 2
-	agony = 3
-	armor_penetration = 0
-	embed = FALSE
-	sharp = FALSE
-	step_delay = 0.75
+	penetrating = 0
 	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+	step_delay = 0.55
+
 
 //Revolvers and high-caliber pistols
 //*********************************//
 /// .40 Magnum ///
 
 /obj/item/projectile/bullet/magnum
-	damage = 32
+	damage = 28
 	armor_penetration = 15
 	can_ricochet = TRUE
 	step_delay = 0.75
@@ -95,28 +72,39 @@
 	step_delay = 0.75
 
 /obj/item/projectile/bullet/magnum/hv
-	damage = 35
-	armor_penetration = 20
+	damage = 28
+	armor_penetration = 25
 	penetrating = 1
 	step_delay = 0.5
 
 /obj/item/projectile/bullet/magnum/rubber
 	name = "rubber bullet"
 	damage = 8
-	agony = 32
+	agony = 30
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.9
 
+/obj/item/projectile/bullet/magnum/lethal
+	name = "hollow-point bullet"
+	damage = 26
+	agony = 32
+	armor_penetration = 8
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+	step_delay = 0.5
+
 /// .50 Kurtz ///
-obj/item/projectile/bullet/a50
+obj/item/projectile/bullet/kurtz
 	damage = 36
 	armor_penetration = 10
 	can_ricochet = TRUE
 	step_delay = 0.75
 
-/obj/item/projectile/bullet/a50/rubber
+/obj/item/projectile/bullet/kurtz/rubber
 	name = "rubber bullet"
 	damage = 8
 	agony = 32
@@ -127,46 +115,46 @@ obj/item/projectile/bullet/a50
 	can_ricochet = TRUE
 	step_delay = 0.9
 
-//Carbines and rifles
-//*********************************//
-///.208 rifle///
-
-/obj/item/projectile/bullet/srifle
-	damage = 22
-	armor_penetration = 22
-	penetrating = 2
-	can_ricochet = TRUE
-	hitscan = TRUE
-
-/obj/item/projectile/bullet/srifle/nomuzzle
-	muzzle_type = null
-
-/obj/item/projectile/bullet/srifle/practice
+/obj/item/projectile/bullet/kurtz/practice
 	name = "practice bullet"
 	damage = 2
-	agony = 2
+	agony = 3
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
 	can_ricochet = FALSE
-	step_delay = 0.3
+	step_delay = 0.75
 
-/obj/item/projectile/bullet/srifle/rubber
-	name = "rubber bullet"
-	damage = 3
-	agony = 20
-	check_armour = ARMOR_MELEE
-	armor_penetration = 0
-	embed = FALSE
-	sharp = FALSE
-	can_ricochet = TRUE
-	step_delay = 0.9
+/obj/item/projectile/bullet/kurtz/lethal
+	name = "hollow-point bullet"
+	damage = 32
+	agony = 32
+	armor_penetration = 5
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+	step_delay = 0.8
 
-/// 6.5x39mm Carbine///
+/obj/item/projectile/bullet/kurtz/hv
+	name = "AP bullet"
+	damage = 25
+	armor_penetration = 20
+	penetrating = 2
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+	step_delay = 0.5
+
+
+//Carbines and rifles
+//*********************************//
+
+/// .257 Carbine///
 
 /obj/item/projectile/bullet/lrifle
-	damage = 22
-	armor_penetration = 18
+	damage = 20
+	armor_penetration = 20
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.3
@@ -182,8 +170,8 @@ obj/item/projectile/bullet/a50
 	step_delay = 0.5
 
 /obj/item/projectile/bullet/lrifle/hv
-	damage = 22
-	armor_penetration = 22
+	damage = 18
+	armor_penetration = 24
 	penetrating = 2
 	hitscan = TRUE
 
@@ -198,23 +186,37 @@ obj/item/projectile/bullet/a50
 	can_ricochet = TRUE
 	step_delay = 0.9
 
-///7.62 Rifle///
+/obj/item/projectile/bullet/lrifle/lethal
+	name = "hollow-point bullet"
+	damage = 18
+	agony = 20
+	armor_penetration = 10
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+	step_delay = 0.6
 
-/obj/item/projectile/bullet/hrifle
+/obj/item/projectile/bullet/lrifle/nomuzzle
+	muzzle_type = null
+
+///7.5 Rifle///
+
+/obj/item/projectile/bullet/rifle
 	damage = 28
 	armor_penetration = 24
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.5
 
-/obj/item/projectile/bullet/hrifle/hv
+/obj/item/projectile/bullet/rifle/hv
 	damage = 25
 	armor_penetration = 30
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
 
-/obj/item/projectile/bullet/hrifle/practice
+/obj/item/projectile/bullet/rifle/practice
 	name = "practice bullet"
 	damage = 2
 	agony = 2
@@ -223,7 +225,7 @@ obj/item/projectile/bullet/a50
 	sharp = FALSE
 	can_ricochet = FALSE
 
-/obj/item/projectile/bullet/hrifle/rubber
+/obj/item/projectile/bullet/rifle/rubber
 	name = "rubber bullet"
 	damage = 4
 	agony = 26
@@ -234,16 +236,27 @@ obj/item/projectile/bullet/a50
 	can_ricochet = TRUE
 	step_delay = 0.9
 
-/// 10x50mm OMNI ///
+/obj/item/projectile/bullet/rifle/lethal
+	name = "hollow-point bullet"
+	damage = 23
+	agony = 28
+	armor_penetration = 10
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+	step_delay = 0.8
 
-/obj/item/projectile/bullet/c10mm
+/// .408 OMNI ///
+
+/obj/item/projectile/bullet/hrifle
 	damage = 28
 	armor_penetration = 30
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
 
-/obj/item/projectile/bullet/c10mm/rubber
+/obj/item/projectile/bullet/hrifle/rubber
 	name = "rubber bullet"
 	damage = 8
 	agony = 32
@@ -254,7 +267,7 @@ obj/item/projectile/bullet/a50
 	can_ricochet = TRUE
 	step_delay = 0.9
 
-/obj/item/projectile/bullet/c10mm/practice
+/obj/item/projectile/bullet/hrifle/practice
 	name = "practice bullet"
 	damage = 2
 	agony = 2
@@ -264,23 +277,23 @@ obj/item/projectile/bullet/a50
 	can_ricochet = FALSE
 	step_delay = 0.5
 
-/obj/item/projectile/bullet/c10mm/hv
+/obj/item/projectile/bullet/hrifle/hv
 	name = "sabot penetrator"
-	damage = 20
+	damage = 24
 	armor_penetration = 40
 	penetrating = 3
 	hitscan = TRUE
 
-/obj/item/projectile/bullet/c10mm/lethal
+/obj/item/projectile/bullet/hrifle/lethal
 	name = "hollow-point bullet"
-	damage = 25
+	damage = 32
 	agony = 32
 	armor_penetration = 10
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
 	sharp = TRUE
-	step_delay = 0.9
+	step_delay = 0.5
 
 ///Snowflake caseless///
 
@@ -304,7 +317,6 @@ obj/item/projectile/bullet/a50
 //Shotguns
 //*********************************//
 
-//Shotguns .50
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	icon_state = "slug"

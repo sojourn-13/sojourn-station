@@ -20,32 +20,15 @@
 	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
 
-////10mm pistol////
-
-/obj/item/ammo_casing/a10mm
-	desc = "A 10mm bullet casing."
-	caliber = CAL_10PISTOL
-	projectile_type = /obj/item/projectile/bullet/a10mm
-
-/obj/item/ammo_casing/a10mm/rubber
-	desc = "A 10mm rubber bullet casing."
-	caliber = CAL_10PISTOL
-	projectile_type = /obj/item/projectile/bullet/a10mm/rubber
-
-/obj/item/ammo_casing/a10mm/practice
-	desc = "A 10mm practice bullet casing."
-	caliber = CAL_10PISTOL
-	projectile_type = /obj/item/projectile/bullet/a10mm/practice
-
-/obj/item/ammo_casing/a10mm/hv
-	desc = "A 10mm high-velocity bullet casing."
-	caliber = CAL_10PISTOL
-	projectile_type = /obj/item/projectile/bullet/a10mm/hv
+/obj/item/ammo_casing/pistol/lethal
+	desc = "A .35 Auto hollow-point bullet casing."
+	caliber = CAL_PISTOL
+	projectile_type = /obj/item/projectile/bullet/pistol/lethal
 
 //// .40 ////
 
 /obj/item/ammo_casing/magnum
-	desc = "A .40 Magnum hollow point bullet casing."
+	desc = "A .40 Magnum bullet casing."
 	caliber = CAL_MAGNUM
 	projectile_type = /obj/item/projectile/bullet/magnum
 
@@ -65,103 +48,131 @@
 	caliber = CAL_MAGNUM
 	projectile_type = /obj/item/projectile/bullet/magnum/rubber
 
-//// .208 Rifle ////
+/obj/item/ammo_casing/magnum/lethal
+	desc = "A .40 Magnum hollow point bullet casing."
+	caliber = CAL_MAGNUM
+	projectile_type = /obj/item/projectile/bullet/magnum/lethal
 
-/obj/item/ammo_casing/srifle
-	desc = "A .208 Rifle bullet casing."
-	caliber = CAL_SRIFLE
-	projectile_type = /obj/item/projectile/bullet/srifle
-
-/obj/item/ammo_casing/srifle/practice
-	desc = "A .208 Rifle practice bullet casing."
-	caliber = "srifle"
-	caliber = CAL_SRIFLE
-	projectile_type = /obj/item/projectile/bullet/srifle/practice
-
-/obj/item/ammo_casing/srifle/rubber
-	desc = "A .208 Rifle rubber bullet casing."
-	caliber = CAL_SRIFLE
-	projectile_type = /obj/item/projectile/bullet/srifle/rubber
-
-//// 6.5x39mm ////
+//// .257 carbine ////
 
 /obj/item/ammo_casing/lrifle
-	desc = "A 6.5x39mm bullet casing."
+	desc = "A .257 bullet casing."
 	caliber = "lrifle"
 	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/bullet/lrifle
 
 /obj/item/ammo_casing/lrifle/practice
-	desc = "A 6.5x39mm practice bullet casing."
+	desc = "A .257 practice bullet casing."
 	caliber = "lrifle"
 	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/bullet/lrifle/practice
 
 /obj/item/ammo_casing/lrifle/hv
-	desc = "A 6.5x39mm high-velocity bullet casing."
+	desc = "A .257 high-velocity bullet casing."
 	caliber = "lrifle"
 	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/bullet/lrifle/hv
 
 /obj/item/ammo_casing/lrifle/rubber
-	desc = "A 6.5x39mm rubber bullet casing."
+	desc = "A .257 rubber bullet casing."
 	caliber = "lrifle"
 	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/bullet/lrifle/rubber
 
-////10mm rifle////
+/obj/item/ammo_casing/lrifle/lethal
+	desc = "A .257 hollow-point bullet casing."
+	caliber = "lrifle"
+	caliber = CAL_LRIFLE
+	projectile_type = /obj/item/projectile/bullet/lrifle/lethal
 
-/obj/item/ammo_casing/c10mm
-	desc = "A 10x50mm bullet casing."
-	caliber = CAL_OMNI
-	projectile_type = /obj/item/projectile/bullet/c10mm
+//// 7.5 Rifle ////
 
-/obj/item/ammo_casing/c10mm/rubber
-	desc = "A 10x50mm rubber bullet casing."
-	caliber = CAL_OMNI
-	projectile_type = /obj/item/projectile/bullet/c10mm/rubber
+/obj/item/ammo_casing/rifle
+	desc = "A 7.5mm bullet casing."
+	caliber = CAL_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle
 
-/obj/item/ammo_casing/c10mm/practice
-	desc = "A 10x50mm training bullet casing."
-	caliber = CAL_OMNI
-	projectile_type = /obj/item/projectile/bullet/c10mm/practice
+/obj/item/ammo_casing/rifle/hv
+	desc = "A 7.5mm high-velocity bullet casing."
+	caliber = CAL_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle/hv
 
-/obj/item/ammo_casing/c10mm/hv
-	desc = "A 10x50mm high-velocity bullet casing."
-	caliber = CAL_OMNI
-	projectile_type = /obj/item/projectile/bullet/c10mm/hv
+/obj/item/ammo_casing/rifle/rubber
+	desc = "A 7.5mm rubber bullet casing."
+	caliber = CAL_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle/rubber
 
-/obj/item/ammo_casing/c10mm/lethal
-	desc = "A 10x50mm bullet casing."
-	caliber = CAL_OMNI
-	projectile_type = /obj/item/projectile/bullet/c10mm/lethal
+/obj/item/ammo_casing/rifle/practice
+	desc = "A 7.5mm practice bullet casing."
+	caliber = CAL_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle/practice
 
+/obj/item/ammo_casing/rifle/lethal
+	desc = "A 7.5mm hollow-point bullet casing."
+	caliber = CAL_RIFLE
+	projectile_type = /obj/item/projectile/bullet/rifle/lethal
+
+
+////.408 rifle////
+
+/obj/item/ammo_casing/hrifle
+	desc = "A .408 Omni bullet casing."
+	caliber = CAL_HRIFLE
+	projectile_type = /obj/item/projectile/bullet/hrifle
+
+/obj/item/ammo_casing/hrifle/rubber
+	desc = "A .408 Omni rubber bullet casing."
+	caliber = CAL_HRIFLE
+	projectile_type = /obj/item/projectile/bullet/hrifle/rubber
+
+/obj/item/ammo_casing/hrifle/practice
+	desc = "A .408 Omni training bullet casing."
+	caliber = CAL_HRIFLE
+	projectile_type = /obj/item/projectile/bullet/hrifle/practice
+
+/obj/item/ammo_casing/hrifle/hv
+	desc = "A .408 Omni high-velocity bullet casing."
+	caliber = CAL_HRIFLE
+	projectile_type = /obj/item/projectile/bullet/hrifle/hv
+
+/obj/item/ammo_casing/hrifle/lethal
+	desc = "A .408 Omni bullet casing."
+	caliber = CAL_HRIFLE
+	projectile_type = /obj/item/projectile/bullet/hrifle/lethal
+
+///snowflake caseless
 /obj/item/ammo_casing/c10x24
 	desc = "A 10mm x 24 caseless cartidge."
 	caliber = "10x24"
 	projectile_type = /obj/item/projectile/bullet/c10x24
 	is_caseless = TRUE
 
-/obj/item/ammo_casing/hrifle
-	desc = "A 7.62mm bullet casing."
-	caliber = CAL_HRIFLE
-	projectile_type = /obj/item/projectile/bullet/hrifle
+//.50 K U R T Z
 
-/obj/item/ammo_casing/hrifle/hv
-	desc = "A 7.62mm high-velocity bullet casing."
-	caliber = CAL_HRIFLE
-	projectile_type = /obj/item/projectile/bullet/hrifle/hv
-
-
-/obj/item/ammo_casing/a50
-	desc = "A .50AE bullet casing."
+/obj/item/ammo_casing/kurtz
+	desc = "A .50 Kurtz bullet casing."
 	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/a50
+	projectile_type = /obj/item/projectile/bullet/kurtz
 
-/obj/item/ammo_casing/a50/rubber
-	desc = "A .50AE rubber bullet casing."
+/obj/item/ammo_casing/kurtz/rubber
+	desc = "A .50 Kurtz rubber bullet casing."
 	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/a50/rubber
+	projectile_type = /obj/item/projectile/bullet/kurtz/rubber
+
+/obj/item/ammo_casing/kurtz/practice
+	desc = "A .50 Kurtz practice bullet casing."
+	caliber = CAL_50
+	projectile_type = /obj/item/projectile/bullet/kurtz/practice
+
+/obj/item/ammo_casing/kurtz/hv
+	desc = "A .50 Kurtz high-velocity bullet casing."
+	caliber = CAL_50
+	projectile_type = /obj/item/projectile/bullet/kurtz/hv
+
+/obj/item/ammo_casing/kurtz/lethal
+	desc = "A .50 Kurtz hollow point bullet casing."
+	caliber = CAL_50
+	projectile_type = /obj/item/projectile/bullet/kurtz/lethal
 
 //// .60-06 ////
 /obj/item/ammo_casing/antim

@@ -147,22 +147,6 @@
 	if (!BB)
 		to_chat(user, "[(amount == 1)? "This one is" : "These ones are"] spent.")
 
-//Gun loading types
-#define SINGLE_CASING 	1	//The gun only accepts ammo_casings. ammo_magazines should never have this as their mag_type.
-#define SPEEDLOADER 	2	//Transfers casings from the mag to the gun when used.
-#define MAGAZINE 		4	//The magazine item itself goes inside the gun
-
-#define MAG_WELL_GENERIC	0	//Guns without special magwells
-#define MAG_WELL_PISTOL		1	//Pistols
-#define MAG_WELL_SMG		2	//smgs
-#define MAG_WELL_CIVI_RIFLE	4	//Normal non IH or AK rifles
-#define MAG_WELL_OMNI		6	//10mm omnirifles
-#define MAG_WELL_IH			8	//IH guns
-#define MAG_WELL_AK			16	//AKs
-#define MAG_WELL_BOX		32	//Lmgs with box mags
-#define MAG_WELL_PAN		64	//Lmgs with pan mags
-#define MAG_WELL_DART       128 //Dartgun mag
-
 //An item that holds casings and can be used to put them inside guns
 /obj/item/ammo_magazine
 	name = "magazine"

@@ -225,8 +225,8 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "sledgehammer0"
 	item_state = "sledgehammer1"
-	force = WEAPON_FORCE_LETHAL
-	slot_flags = SLOT_BELT
+	force = WEAPON_FORCE_BRUTAL
+	slot_flags = SLOT_BELT | SLOT_BACK
 	armor_penetration = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5)
@@ -235,10 +235,10 @@
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_COMBAT = 3)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
-	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
-	tool_qualities = list(QUALITY_HAMMERING = 60)
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	tool_qualities = list(QUALITY_HAMMERING = 45)
 	worksound = WORKSOUND_HAMMER
-	price_tag = 4000
+	price_tag = 2000
 
 /obj/item/weapon/tool/sword/saber
 	name = "premier's saber"
@@ -272,10 +272,11 @@
 	icon_state = "homewrecker0"
 	wielded_icon = "homewrecker1"
 	armor_penetration = ARMOR_PEN_EXTREME
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_NORMAL
 	force_unwielded = WEAPON_FORCE_NORMAL
 	force_wielded = WEAPON_FORCE_DANGEROUS
 	tool_qualities = list(QUALITY_HAMMERING = 15)
 	attack_verb = list("attacked", "smashed", "bludgeoned", "beaten")
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	max_upgrades = 5

@@ -7,7 +7,7 @@
 	desc = "It seems rather.. gooey. Is that thing organic?"
 	icon = 'icons/mob/mobs-monster.dmi'
 	//icon_state = "trashcart_mimic"
-	icon_dead = "trashcart_mimic_dead"
+	icon_dead = "mimic_dead"
 
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
 	response_help = "touches"

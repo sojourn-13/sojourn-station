@@ -20,9 +20,14 @@
 	path = /obj/item/weapon/melee/energy/sword
 
 /datum/uplink_item/item/visible_weapons/rafale
-	name = "Silenced pistol"
+	name = "Silenced .40 pistol"
 	item_cost = 6
 	path = /obj/item/weapon/storage/box/syndie_kit/pistol
+
+/datum/uplink_item/item/visible_weapons/akurra
+	name = "Silenced .50 pistol"
+	item_cost = 8
+	path = /obj/item/weapon/storage/box/syndie_kit/hpistol
 
 /datum/uplink_item/item/visible_weapons/riggedlaser
 	name = "Exosuit (APLU) Rigged Laser"
