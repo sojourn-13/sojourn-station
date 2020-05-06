@@ -2,7 +2,7 @@
 	name = "random spider"
 	icon_state = "hostilemob-black"
 	alpha = 128
-	spawn_nothing_percentage = 90
+	spawn_nothing_percentage = 70
 
 /obj/random/mob/spiders/item_to_spawn()
 	return pickweight(list(/obj/effect/spider/spiderling = 30,\
@@ -13,7 +13,7 @@
 /obj/random/mob/spiders/low_chance
 	name = "low chance random spider"
 	icon_state = "hostilemob-black-low"
-	spawn_nothing_percentage = 80
+	spawn_nothing_percentage = 70
 
 /obj/random/cluster/spiders
 	name = "cluster of spiders"
@@ -22,7 +22,7 @@
 	min_amount = 1
 	max_amount = 5
 	spread_range = 0
-	spawn_nothing_percentage = 90
+	spawn_nothing_percentage = 70
 
 /obj/random/cluster/spiders/item_to_spawn()
 	return /obj/random/mob/spiders
@@ -30,4 +30,4 @@
 /obj/random/cluster/spiders/low_chance
 	name = "low chance cluster of spiders"
 	icon_state = "hostilemob-black-cluster-low"
-	spawn_nothing_percentage = 90
+	spawn_nothing_percentage = 70
