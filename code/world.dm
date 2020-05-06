@@ -114,8 +114,6 @@ var/game_id = null
 
 	Master.Initialize(10, FALSE)
 
-	call_restart_webhook()
-
 #ifdef UNIT_TEST
 	initialize_unit_tests()
 #endif
