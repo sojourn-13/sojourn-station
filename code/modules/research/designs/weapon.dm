@@ -24,7 +24,7 @@
 
 /datum/design/research/item/weapon/c20r
 	name = "C20R-prototype"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses 10mm rounds."
+	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 rounds."
 	build_path = /obj/item/weapon/gun/projectile/automatic/c20r
 	sort_string = "TAAAF"
 

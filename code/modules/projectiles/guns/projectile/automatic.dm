@@ -20,6 +20,7 @@
 	firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
+		BURST_2_ROUND,
 		BURST_3_ROUND,
 		BURST_5_ROUND
 		)

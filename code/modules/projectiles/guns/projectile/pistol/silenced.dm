@@ -1,11 +1,11 @@
 /obj/item/weapon/gun/projectile/silenced
 	name = "\"Rafale\" silenced pistol"
-	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Uses 10mm Auto. Has an integrated silencer which cannot be removed."
+	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Uses .40 Auto-Mag. Has an integrated silencer which cannot be removed."
 	icon = 'icons/obj/guns/projectile/rafale.dmi'
 	icon_state = "rafale"
 	item_state = "rafale"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = CAL_10PISTOL
+	caliber = CAL_MAGNUM
 	can_dual = 1
 	silencer_type = /obj/item/weapon/silencer/integrated
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
