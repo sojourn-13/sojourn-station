@@ -152,17 +152,17 @@
 	icon_state = "7oclockmoustache"
 
 /datum/sprite_accessory/facial_hair/teshari_beard
-	name = "Teshari Beard"
+	name = "Avali Beard"
 	icon_state = "teshari_chin"
 	gender = NEUTER
 
 /datum/sprite_accessory/facial_hair/teshari_scraggly
-	name = "Teshari Scraggly"
+	name = "Avali Scraggly"
 	icon_state = "teshari_scraggly"
 	gender = NEUTER
 
 /datum/sprite_accessory/facial_hair/teshari_chops
-	name = "Teshari Chops"
+	name = "Avali Chops"
 	icon_state = "teshari_gap"
 	gender = NEUTER
 

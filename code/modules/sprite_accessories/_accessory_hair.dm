@@ -710,63 +710,62 @@
 	name = "Zone Braid"
 	icon_state = "zone"
 
-/*
+
 /datum/sprite_accessory/hair/teshari_default
-	name = "Teshari default"
+	name = "Avali default"
 	icon_state = "teshari_default_s"
 
 /datum/sprite_accessory/hair/teshari_upright
-	name = "Teshari upright"
+	name = "Avali upright"
 	icon_state = "teshari_upright_s"
 
 /datum/sprite_accessory/hair/teshari_burst_short
-	name = "Teshari burst short"
+	name = "Avali burst short"
 	icon_state = "teshari_burst_short_s"
 
 /datum/sprite_accessory/hair/teshari_burst
-	name = "Teshari burst"
+	name = "Avali burst"
 	icon_state = "teshari_burst_s"
 
 /datum/sprite_accessory/hair/teshari_pointy
-	name = "Teshari pointy"
+	name = "Avali pointy"
 	icon_state = "teshari_pointy_s"
 
 /datum/sprite_accessory/hair/teshari_mushroom
-	name = "Teshari mushroom"
+	name = "Avali mushroom"
 	icon_state = "teshari_mushroom_s"
 
 /datum/sprite_accessory/hair/teshari_droopy
-	name = "Teshari droopy"
+	name = "Avali droopy"
 	icon_state = "teshari_droopy_s"
 
 /datum/sprite_accessory/hair/teshari_mane
-	name = "Teshari mane"
+	name = "Avali mane"
 	icon_state = "teshari_mane_s"
 
 /datum/sprite_accessory/hair/teshari_ears
-	name = "Teshari ears"
+	name = "Avali ears"
 	icon_state = "teshari_ears_s"
 
 /datum/sprite_accessory/hair/teshari_spike
-	name = "Teshari spike"
+	name = "Avali spike"
 	icon_state = "teshari_spike_s"
 
 /datum/sprite_accessory/hair/teshari_tight
-	name = "Teshari tight"
+	name = "Avali tight"
 	icon_state = "teshari_tight_s"
 
 /datum/sprite_accessory/hair/teshari_long
-	name = "Teshari long"
+	name = "Avali long"
 	icon_state = "teshari_long_s"
 
 /datum/sprite_accessory/hair/teshari_mohawk
-	name = "Teshari mohawk"
+	name = "Avali mohawk"
 	icon_state = "teshari_mohawk_s"
 
 /datum/sprite_accessory/hair/teshari_spiky
-	name = "Teshari spiky"
+	name = "Avali spiky"
 	icon_state = "teshari_spiky_s"
-*/
 
 /datum/sprite_accessory/hair/una_hood
 	name = "Lizard Hood"

@@ -336,7 +336,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/teshari_fluffytail
-	name = "Teshari Tail"
+	name = "Avali Tail"
 	desc = ""
 	icon_state = "teshari_fluffytail"
 	colored_layers = 2

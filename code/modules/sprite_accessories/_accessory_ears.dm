@@ -312,21 +312,21 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/teshari
-	name = "Teshari Fluff"
+	name = "Avali Fluff"
 	desc = ""
 	icon_state = "teshari"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/tesharilow
-	name = "Teshari Fluff, Lower Ear"
+	name = "Avali Fluff, Lower Ear"
 	desc = ""
 	icon_state = "tesharilow"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/tesharihigh
-	name = "Teshari Fluff, Upper Ear"
+	name = "Avali Fluff, Upper Ear"
 	desc = ""
 	icon_state = "tesharihigh"
 	colored_layers = 2

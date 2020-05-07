@@ -1,5 +1,5 @@
 /datum/species_form/bird
-	playable = FALSE
+	playable = TRUE
 	name = FORM_BIRD
 	base = 			'icons/mob/human_races/r_seromi_white.dmi'
 	deform = null
@@ -14,7 +14,11 @@
 	belt_icon = 		'icons/inventory/teshari/teshari_belts.dmi'
 	ears_icon = 		'icons/inventory/teshari/teshari_ears.dmi'
 	icon_fallback = null
-	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+	damage_overlays = 'icons/mob/human_races/masks/dam_seromi.dmi'
+	damage_mask = 'icons/mob/human_races/masks/dam_mask_seromi.dmi'
+	eyes = "blank_eyes"
+	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+	colorable = TRUE
 
 /datum/species_form/vox
 	playable =			 TRUE

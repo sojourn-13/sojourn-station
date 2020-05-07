@@ -537,19 +537,19 @@
 /*Tesh*/
 
 	tesh_feathers
-		name = "Teshari Feathers"
+		name = "Avali Feathers"
 		icon_state = "tesh-feathers"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_HAND,BP_R_HAND)
 
 	teshi_fluff
-		name = "Teshari Underfluff"
+		name = "Avali Underfluff"
 		icon_state = "teshi_fluff"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_GROIN,BP_TORSO,BP_HEAD)
 
 	teshi_small_feathers
-		name = "Teshari Small Wingfeathers"
+		name = "Avali Small Wingfeathers"
 		icon_state = "teshi_sf"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_HAND,BP_R_HAND,BP_TORSO)
