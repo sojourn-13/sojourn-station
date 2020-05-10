@@ -397,6 +397,7 @@
 #include "code\datums\perks\combat.dm"
 #include "code\datums\perks\job.dm"
 #include "code\datums\perks\perk.dm"
+#include "code\datums\perks\racial.dm"
 #include "code\datums\proximity_trigger\proximity_trigger.dm"
 #include "code\datums\proximity_trigger\turf_selection.dm"
 #include "code\datums\repositories\cameras.dm"

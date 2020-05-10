@@ -3,7 +3,7 @@
 	name_plural = "Humans"
 	default_form = FORM_HUMAN
 	obligate_name = FALSE
-	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/punch, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "Humanity originated in the Sol system, and over the last five centuries has spread \
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
 	While the central Sol Federation maintains control of much of the known star space \
@@ -14,35 +14,42 @@
 	min_age = 18
 	max_age = 110
 
+	stat_modifiers = list(
+		STAT_BIO = 5,
+		STAT_COG = 5,
+		STAT_MEC = 5,
+		STAT_ROB = 5,
+		STAT_TGH = 5,
+		STAT_VIG = 5
+	)
+
+
+	perks = list(/datum/perk/tenacity, /datum/perk/gutsandglory)
+
 	spawn_flags = CAN_JOIN
 
 /datum/species/human/get_bodytype()
 	return "Human"
 
-
-// To Do: Get it to boot these qualities when selected, basically you can't spawn as these yet, add the +5 TGH/ROB and
-// add in the custom racial perk.
-/*
 /datum/species/sablekyne
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
 	obligate_form = TRUE
 	reagent_tag = IS_SABLEKYNE
-	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/claws/strong, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/sharp)
+	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/stomp, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
-	burn_mod = 1.15
-	gluttonous = GLUT_TINY
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
 	max_age = 110
-	blurb = "The Sablekyne are a mammalian abhuman species roughly resembling felines once thought to be aliens, hailing from Onkarth in the Gamma Minoris system. \
+	blurb = "The Sablekyne are a mammalian alien species vaguely resembling felines with horns, hailing from Onkarth in the Gamma Minoris system. \
 	Sablekyne were originally uplifted by the aid of human colonization and human corporations, aiding them by \
 	accelerating the fledgling culture into the interstellar age. Their history is full of war and highly fractious \
 	ethnicities, something that permeates even to today's times. Northlander sablekyne perfer colder winter enviroments and speak with gaelic influences while \
 	southlanders prefer hot dry deserts and speak with japanese influences. Both groups are stocky, strong, and thickly built and few have the lithe feline qualities \
 	one would expect."
+	taste_sensitivity = TASTE_SENSITIVE                 // How sensitive the species is to minute tastes.
 
 	cold_level_1 = 200 //Default 260
 	cold_level_2 = 140 //Default 200
@@ -65,9 +72,362 @@
 		"You shiver suddenly.",
 		"Your chilly flesh stands out in goosebumps."
 		)
-	spawn_flags = null
+	spawn_flags = CAN_JOIN
 
+	stat_modifiers = list(
+		STAT_ROB = 10,
+		STAT_TGH = 10
+	)
+
+	permitted_ears  = list("Sablekyne Large Horns",
+		"Sablekyne Curled Horns",
+		"Sablekyne Curled Horns (small)",
+		"Sablekyne Small Horns 1",
+		"Sablekyne Small Horns 2",
+		"Sablekyne Small Horns 3"
+		)
+	permitted_tail  = list("Sablekyne Tail")
+	permitted_wings = list()
+
+	perks = list(/datum/perk/laststand)
 
 /datum/species/sablekyne/get_bodytype()
-	return FORM_SABLEKYNE
-*/
+	return "Sablekyne"
+
+/datum/species/marqua
+	name = "Mar'Qua"
+	name_plural = "Mar'quas"
+	default_form = FORM_MARQUA
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick)
+	darksight = 4
+	num_alternate_languages = 2
+	name_language = null
+	min_age = 18
+	max_age = 160
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	hunger_factor = DEFAULT_HUNGER_FACTOR/2
+	taste_sensitivity = TASTE_HYPERSENSITIVE
+
+	cold_level_1 = 140 //Default 260
+	cold_level_2 = 80 //Default 200
+	cold_level_3 = 20  //Default 120
+
+	cold_discomfort_level = 200
+	list/cold_discomfort_strings = list(
+		"You feel chilly.",
+		"You shiver suddenly.",
+		"Your chilly flesh stands out in goosebumps."
+		)
+	spawn_flags = CAN_JOIN
+
+	stat_modifiers = list(
+		STAT_BIO = 15,
+		STAT_COG = 15,
+		STAT_MEC = 15
+	)
+
+	permitted_ears  = list()
+	permitted_tail  = list()
+	permitted_wings = list()
+
+	perks = list(/datum/perk/suddenbrilliance)
+
+/datum/species/marqua/get_bodytype()
+	return "Mar'qua"
+
+/datum/species/kriosan
+	name = "Kriosan"
+	name_plural = "Kriosans"
+	default_form = FORM_KRIOSAN
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	darksight = 8
+	num_alternate_languages = 2
+	name_language = null
+	min_age = 18
+	max_age = 110
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	taste_sensitivity = TASTE_HYPERSENSITIVE
+
+	spawn_flags = CAN_JOIN
+
+	stat_modifiers = list(
+		STAT_TGH = 10,
+		STAT_VIG = 10
+	)
+
+	permitted_ears  = list("Fennec Ears",
+		"Fox Ears",
+		"Hound Ears",
+		"Jagged Ears",
+		"Kitsune Ears",
+		"Doberman Ears",
+		"Sleek Ears",
+		"Vulpkanin Ears",
+		"Wolf Ears"
+		)
+	permitted_tail  = list("Cross Fox Tail",
+		"Curly Tail",
+		"Fennec Tail, Downwards",
+		"Fennec Tail, Upwards",
+		"Fennecsune Tails",
+		"Fennix Tail",
+		"Fox Tail, Downwards",
+		"Fox Tail, Upwards",
+		"Otie Tail",
+		"Vulpkanin Tail",
+		"Vulpkanin Tail 2",
+		"Vulpkanin Tail 3",
+		"Wolf Tail"
+		)
+	permitted_wings = list()
+
+	perks = list(/datum/perk/jaegermarch)
+
+/datum/species/kriosan/get_bodytype()
+	return "Kriosan"
+
+/datum/species/akula
+	name = "Akula"
+	name_plural = "Akulas"
+	default_form = FORM_AKULA
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/tail, /datum/unarmed_attack/bite/strong)
+	darksight = 4
+	num_alternate_languages = 2
+	name_language = null
+	min_age = 18
+	max_age = 130
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	taste_sensitivity = TASTE_DULL
+	hunger_factor = DEFAULT_HUNGER_FACTOR*2
+
+	cold_level_1 = 200 //Default 260
+	cold_level_2 = 140 //Default 200
+	cold_level_3 = 80  //Default 120
+
+	cold_discomfort_level = 200
+	list/cold_discomfort_strings = list(
+		"You feel chilly.",
+		"You shiver suddenly.",
+		"Your chilly flesh stands out in goosebumps."
+		)
+	spawn_flags = CAN_JOIN
+
+	stat_modifiers = list(
+		STAT_TGH = 20
+	)
+
+	permitted_ears  = list("Sleek Ears")
+	permitted_tail  = list("Akula Tail")
+	permitted_wings = list()
+
+	perks = list(/datum/perk/recklessfrenzy)
+
+/datum/species/akula/get_bodytype()
+	return "Akula"
+
+/datum/species/sergal
+	name = "Sergal"
+	name_plural = "Sergals"
+	default_form = FORM_SERGALINE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong)
+	num_alternate_languages = 0
+	name_language = null
+	min_age = 18
+	max_age = 60
+	slowdown = -0.5
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+
+	spawn_flags = CAN_JOIN
+
+	stat_modifiers = list(
+		STAT_TGH = 20,
+		STAT_ROB = 20,
+		STAT_VIG = -20,
+		STAT_COG = -20
+	)
+
+	permitted_ears  = list("Sergal Ears")
+	permitted_tail  = list("Sergal Tail", "Sergal Tail 2")
+	permitted_wings = list()
+
+	perks = list(/datum/perk/adrenalineburst)
+
+/datum/species/sergal/get_bodytype()
+	return "Sergal"
+
+/datum/species/vox
+	name = "Vox Populi"
+	name_plural = "Voxes"
+	default_form = FORM_SOJVOX
+	obligate_form = TRUE
+	reagent_tag = IS_VOX
+	unarmed_types = list(/datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	num_alternate_languages = 2
+	name_language = null
+	min_age = 18
+	max_age = 80
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	breath_type = "nitrogen"                        // Non-oxygen gas breathed, if any.
+	poison_type = "oxygen"                        // Poisonous air.
+	exhale_type = "carbon_dioxide"
+	siemens_coefficient = 0.5
+	spawn_flags = CAN_JOIN
+	hunger_factor = DEFAULT_HUNGER_FACTOR/2
+
+	stat_modifiers = list(
+		STAT_MEC = 10,
+		STAT_COG = 10
+	)
+
+	permitted_ears  = list()
+	permitted_tail  = list("Avian Wagtail", "Avian Fantail")
+	permitted_wings = list("Harpy Wings",
+		"Fantail Wings",
+		"Feathered Wings, Small",
+		"Feathered Wings, Medium",
+		"Feathered Wings, Large"
+		)
+
+	perks = list(/datum/perk/backup)
+
+/datum/species/vox/get_bodytype()
+	return "Vox Populi"
+
+/datum/species/chtmant
+	name = "Cht'mant"
+	name_plural = "Cht'mants"
+	default_form = FORM_CHTMANT
+	obligate_form = TRUE
+	reagent_tag = IS_CHTMANT
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	num_alternate_languages = 2
+	name_language = null
+	min_age = 18
+	max_age = 120
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	flags = NO_PAIN
+	spawn_flags = CAN_JOIN
+	taste_sensitivity = TASTE_HYPERSENSITIVE
+
+	brute_mod =     1.25                    // Physical damage multiplier.
+	burn_mod =      0.85                    // Burn damage multiplier.
+	flash_mod =     3
+
+	stat_modifiers = list(
+		STAT_BIO = 10,
+		STAT_COG = 10
+	)
+
+	permitted_ears  = list("Bee Antennae",
+		"Citheronia Antennae",
+		"Curly Antennae"
+		)
+	permitted_tail  = list("Bug Abdomen",
+		"Bug Abdomen, Bee Top",
+		"Bug Abdomen, Bee Full",
+		"Bug Abdomen, Underside",
+		"Bug Abdomen, Firefly",
+		"Large Bug Abdomen",
+		"Large Bug Abdomen, Bee Top",
+		"Large Bug Abdomen, Bee Full",
+		"Large Bug Abdomen, Underside",
+		"Large Bug Abdomen, Firefly",
+		"Alternate Bug Abdomen",
+		"Alternate Bug Abdomen, Bee Top",
+		"Alternate Bug Abdomen, Bee Full",
+		"Alternate Bug Abdomen, Underside",
+		"Alternate Bug Abdomen, Firefly",
+		"Alternate Bug Abdomen 2",
+		"Alternate Bug Abdomen 2, Bee Top",
+		"Alternate Bug Abdomen 2, Bee Full",
+		"Alternate Bug Abdomen 2, Underside",
+		"Alternate Bug Abdomen 2, Firefly",
+		"Alternate Large Bug Abdomen",
+		"Alternate Large Bug Abdomen, Bee Top",
+		"Alternate Large Bug Abdomen, Bee Full",
+		"Alternate Large Bug Abdomen, Underside",
+		"Alternate Large Bug Abdomen, Firefly",
+		"Alternate Bug Abdomen 3",
+		"Alternate Bug Abdomen 3, Bee Top",
+		"Alternate Bug Abdomen 3, Bee Full",
+		"Alternate Bug Abdomen 3, Underside",
+		"Alternate Bug Abdomen 3, Firefly"
+		)
+	permitted_wings = list("Bee Wings",
+		"Butterfly Wings",
+		"Dragonfly Wings",
+		"Moth Wings, Burned",
+		"Moth Wings, Citheronia",
+		"Moth Wings, Deathhead",
+		"Moth Wings, Firewatch",
+		"Moth Wings, Gothic",
+		"Moth Wings, Lover",
+		"Moth Wings, Monarch",
+		"Moth Wings, Moonfly",
+		"Moth Wings, Poison",
+		"Moth Wings, Ragged",
+		"Moth Wings, Red",
+		"Moth Wings, Royal",
+		"Moth Wings, Royal Unfluffed",
+		"Moth Wings, Snowy",
+		"Moth Wings, White",
+		"Moth Wings, Worker",
+		"Spider Legs"
+		)
+
+/datum/species/chtmant/get_bodytype()
+	return "Cht'mant"
+
+/datum/species/cindarite
+	name = "Cindarite"
+	name_plural = "Cindarites"
+	default_form = FORM_CINDAR
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite, /datum/unarmed_attack/tail)
+	num_alternate_languages = 2
+	name_language = null
+	min_age = 18
+	max_age = 90
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	spawn_flags = CAN_JOIN
+	burn_mod = 0.85                    // Burn damage multiplier.
+	radiation_mod = 0
+	toxins_mod = 0.5
+
+	stat_modifiers = list(
+		STAT_BIO = 5,
+		STAT_COG = 5,
+		STAT_MEC = 5,
+		STAT_TGH = 5
+	)
+
+	has_organ = list(    // which required-organ checks are conducted.
+		BP_HEART =    /obj/item/organ/internal/heart,
+		BP_LUNGS =    /obj/item/organ/internal/lungs,
+		BP_LIVER =    /obj/item/organ/internal/liver,
+		BP_KIDNEYS =  /obj/item/organ/internal/kidneys/quad,
+		BP_BRAIN =    /obj/item/organ/internal/brain,
+		BP_APPENDIX = /obj/item/organ/internal/appendix,
+		BP_EYES =     /obj/item/organ/internal/eyes
+		)
+
+	permitted_ears  = list("Frills, Aquatic",
+		"Frills, Drake",
+		"Frills, Short",
+		"Frills, Simple"
+		)
+	permitted_tail  = list("Render Tail",
+		"Snake Tail",
+		"Lizard Tail",
+		"Lizard Tail, Short"
+		)
+	permitted_wings = list()
+
+	perks = list(/datum/perk/purgetoxins)
+
+/datum/species/cindarite/get_bodytype()
+	return "Cindarite"

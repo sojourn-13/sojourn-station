@@ -157,6 +157,9 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/new_species = input(user, "Choose your character's species:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species) as null|anything in global.playable_species
 		if(new_species && CanUseTopic(user))
 			pref.species = new_species
+			pref.ears_style = null
+			pref.tail_style = null
+			pref.wings_style = null
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["reset_form"])

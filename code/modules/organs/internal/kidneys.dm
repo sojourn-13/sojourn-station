@@ -32,3 +32,7 @@
 			owner.adjustToxLoss(1)
 
 
+/obj/item/organ/internal/kidneys/quad
+	name = "cindarite kidneys"
+	desc = "A dense set of tightly packed kidneys that work four times better than a standard kidney."
+	price_tag = 2000

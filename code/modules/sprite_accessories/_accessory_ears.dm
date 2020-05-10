@@ -229,7 +229,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/kittyhc
-	name = "Sablekyne Ears"
+	name = "Feline Ears"
 	desc = ""
 	icon_state = "kitty"
 	colored_layers = 2
@@ -257,7 +257,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/otie
-	name = "Hound Ears"
+	name = "Doberman Ears"
 	desc = ""
 	icon_state = "otie"
 	colored_layers = 2
@@ -311,6 +311,49 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/shforward
+	name = "Sablekyne Large Horns"
+	desc = ""
+	icon_state = "sh_forward"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shcurled
+	name = "Sablekyne Curled Horns"
+	desc = ""
+	icon_state = "sh_curled"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shcurledS
+	name = "Sablekyne Curled Horns (small)"
+	desc = ""
+	icon_state = "sh_curledS"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shsmall
+	name = "Sablekyne Small Horns 1"
+	desc = ""
+	icon_state = "sh_small"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shsmall2
+	name = "Sablekyne Small Horns 2"
+	desc = ""
+	icon_state = "sh_small2"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/shsmall3
+	name = "Sablekyne Small Horns 3"
+	desc = ""
+	icon_state = "sh_small3"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/*
 /datum/sprite_accessory/ears/teshari
 	name = "Teshari Fluff"
 	desc = ""
@@ -331,6 +374,7 @@
 	icon_state = "tesharihigh"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
+*/
 
 /datum/sprite_accessory/ears/tigress
 	name = "Tigress Ears"

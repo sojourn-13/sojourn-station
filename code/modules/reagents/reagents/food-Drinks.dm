@@ -9,7 +9,7 @@
 	taste_mult = 4
 	reagent_state = SOLID
 	metabolism = REM * 2
-	var/nutriment_factor = 12 // Per metabolism tick
+	var/nutriment_factor = 6 // Per metabolism tick
 	var/regen_factor = 0.8 //Used for simple animal health regeneration
 	var/injectable = 0
 	color = "#664330"
@@ -42,12 +42,9 @@
 	affect_ingest(M, alien, effect_multiplier * 1.2)
 
 /datum/reagent/organic/nutriment/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-/*
-	Commented out because its bugged.
-	if (IS_SABLEKYNE)
+	if(M.species.reagent_tag == IS_SABLEKYNE)
 		M.adjustNutrition(nutriment_factor * 0.25)
 		return
-*/
 
 	// Small bodymass, more effect from lower volume.
 	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier)) // For hunger and fatness
@@ -68,13 +65,11 @@
 	description = "Essential nutrient for the human body."
 	color = "#440000"
 
-//	Commented out because its bugged.
-/*
 /datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if (IS_SABLEKYNE)
-		M.adjustNutrition(nutriment_factor * 1.25)
-		return
-*/
+	if(M.species.reagent_tag == IS_SABLEKYNE)
+		M.adjustNutrition(nutriment_factor * 1.50)
+	return ..()
+
 
 /datum/reagent/organic/nutriment/protein/egg
 	name = "Egg Yolk"

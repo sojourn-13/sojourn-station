@@ -322,7 +322,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/stripey
-	name = "Stripey Taj Tail"
+	name = "Stripey Cat Tail"
 	desc = ""
 	icon_state = "stripeytail"
 	colored_layers = 2
@@ -333,13 +333,6 @@
 	desc = ""
 	icon_state = "tajtail_hc_s"
 	colored_layers = 1
-	blend = ICON_MULTIPLY
-
-/datum/sprite_accessory/tail/teshari_fluffytail
-	name = "Teshari Tail"
-	desc = ""
-	icon_state = "teshari_fluffytail"
-	colored_layers = 2
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/tiger_white
