@@ -91,8 +91,8 @@
 	shorthand = "CT"
 
 /datum/language/vox
-	name = LANGUAGE_VOX
-	desc = "The chants of the vox, the incomprehensible garbling of birds."
+	name = LANGUAGE_OPIFEXEE
+	desc = "The chants of the opifex, the incomprehensible garbling of birds."
 	speech_verb = list("squawks")
 	ask_verb = list("chirps")
 	exclaim_verb = list("screeches")

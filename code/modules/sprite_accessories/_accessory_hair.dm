@@ -8,6 +8,16 @@
 
 /datum/sprite_accessory/hair
 	icon = 'icons/mob/human_races/species/human/hair.dmi'
+	species_allowed = list(
+		SPECIES_HUMAN,
+		FORM_MARQUA,
+		FORM_SABLEKYNE,
+		FORM_KRIOSAN,
+		FORM_AKULA,
+		FORM_CHTMANT,
+		FORM_CINDAR,
+		FORM_OPIFEX
+		)
 
 /datum/sprite_accessory/hair/bald
 	name = "Bald"

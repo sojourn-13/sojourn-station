@@ -76,7 +76,7 @@
 #define FORM_AKULA				"Akula"
 #define FORM_CHTMANT			"Cht'mant"
 #define FORM_CINDAR				"Cindarite"
-#define FORM_SOJVOX				"Vox Populi"
+#define FORM_OPIFEX				"Opifex"
 
 
 #define FORM_BIRD				"Avian"

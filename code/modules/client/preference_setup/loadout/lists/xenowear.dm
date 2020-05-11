@@ -28,6 +28,12 @@
 	sort_category = "Xenowear"
 */
 
+/datum/gear/xenowear/opifexgasmask
+	display_name = "opifex gas mask"
+	path = /obj/item/clothing/mask/gas/opifex
+	slot = slot_wear_mask
+	sort_category = "Xenowear"
+
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"
 	path = /obj/item/clothing/shoes/footwraps

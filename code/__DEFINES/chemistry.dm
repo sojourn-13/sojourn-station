@@ -40,7 +40,7 @@
 #define IS_XENOS   1
 #define IS_SABLEKYNE   2
 #define IS_CHTMANT 3
-#define IS_VOX 4
+#define IS_OPIFEX 4
 
 #define CE_STABLE "stable" // Inaprovaline
 #define CE_ANTIBIOTIC "antibiotic" // Spaceacilin

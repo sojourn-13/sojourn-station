@@ -392,6 +392,6 @@
 	if(H.species.reagent_tag == IS_CHTMANT)
 		H.faction = "roach"
 		H.add_language(LANGUAGE_CHTMANT)
-	if(H.species.reagent_tag == IS_VOX)
+	if(H.species.reagent_tag == IS_OPIFEX)
 		H.faction = "vox"
-		H.add_language(LANGUAGE_VOX)
+		H.add_language(LANGUAGE_OPIFEXEE)

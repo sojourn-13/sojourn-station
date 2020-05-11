@@ -260,11 +260,11 @@
 	return "Sergal"
 
 /datum/species/vox
-	name = "Vox Populi"
-	name_plural = "Voxes"
-	default_form = FORM_SOJVOX
+	name = "Opifex"
+	name_plural = "Opifexi"
+	default_form = FORM_OPIFEX
 	obligate_form = TRUE
-	reagent_tag = IS_VOX
+	reagent_tag = IS_OPIFEX
 	unarmed_types = list(/datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	num_alternate_languages = 2
 	name_language = null
@@ -295,7 +295,7 @@
 	perks = list(/datum/perk/backup)
 
 /datum/species/vox/get_bodytype()
-	return "Vox Populi"
+	return "Opifex"
 
 /datum/species/chtmant
 	name = "Cht'mant"
