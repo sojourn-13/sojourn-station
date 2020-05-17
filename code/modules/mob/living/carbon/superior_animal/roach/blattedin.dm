@@ -23,3 +23,17 @@
 			bug.heal_organ_damage(heal_strength*removed)
 	else
 		.=..()
+
+/datum/reagent/toxin/blattedin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(M.species.reagent_tag == IS_CHTMANT)
+		M.adjustOxyLoss(-0.6)
+		M.heal_organ_damage(0.3)
+		M.adjustToxLoss(-0.3)
+		M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+
+/datum/reagent/toxin/blattedin/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	if(M.species.reagent_tag == IS_CHTMANT)
+		M.adjustOxyLoss(-0.6)
+		M.heal_organ_damage(0.3)
+		M.adjustToxLoss(-0.3)
+		M.add_chemical_effect(CE_BLOODCLOT, 0.1)

@@ -76,6 +76,16 @@
 	var/light_dam                                     // If set, mob will be damaged in light over this value and heal in light below its negative.
 	var/body_temperature = 310.15	                  // Non-IS_SYNTHETIC species will try to stabilize at this temperature.
 	                                                  // (also affects temperature processing)
+	var/list/stat_modifiers = list(
+		STAT_BIO = 0,
+		STAT_COG = 0,
+		STAT_MEC = 0,
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0
+	)
+
+	var/list/perks = list()
 
 	var/heat_discomfort_level = 315                   // Aesthetic messages about feeling warm.
 	var/cold_discomfort_level = 285                   // Aesthetic messages about feeling chilly.
@@ -157,6 +167,7 @@
 	unarmed_attacks = list()
 	for(var/u_type in unarmed_types)
 		unarmed_attacks += new u_type()
+
 
 /datum/species/proc/get_station_variant()
 	return name
@@ -371,3 +382,16 @@
 		if(!(slot in hud.equip_slots))
 			return FALSE
 	return TRUE
+
+/datum/species/proc/add_stats(var/mob/living/carbon/human/H)
+	for(var/name in stat_modifiers)
+		H.stats.changeStat(name, stat_modifiers[name])
+	for(var/perk in perks)
+		var/datum/perk/P = new perk
+		P.teach(H.stats)
+	if(H.species.reagent_tag == IS_CHTMANT)
+		H.faction = "roach"
+		H.add_language(LANGUAGE_CHTMANT)
+	if(H.species.reagent_tag == IS_OPIFEX)
+		H.faction = "vox"
+		H.add_language(LANGUAGE_OPIFEXEE)

@@ -3,6 +3,9 @@
 //Nadezhda//
 ////////////
 
+/area/colony
+	base_turf = /turf/simulated/floor/asteroid
+
 /area/colony/exposedsun
 	ship_area = TRUE
 	icon_state = "asteroid"

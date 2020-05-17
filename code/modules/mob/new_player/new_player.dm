@@ -351,6 +351,8 @@
 
 	if(!new_character)
 		new_character = new(loc)
+	if(chosen_species)
+		chosen_species.add_stats(new_character)
 
 	new_character.lastarea = get_area(loc)
 
