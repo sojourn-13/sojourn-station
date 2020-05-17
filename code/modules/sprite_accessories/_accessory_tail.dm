@@ -258,15 +258,15 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/tail/sergaltaildc
-	name = "Sergal Tail"
+/datum/sprite_accessory/tail/naramadtaildc
+	name = "Naramad Tail"
 	desc = ""
 	icon_state = "sergal"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/tail/sergalhc
-	name = "Sergal Tail 2"
+/datum/sprite_accessory/tail/naramadtailhc
+	name = "Naramad Tail 2"
 	desc = ""
 	icon_state = "sergtail_hc_s"
 	colored_layers = 1

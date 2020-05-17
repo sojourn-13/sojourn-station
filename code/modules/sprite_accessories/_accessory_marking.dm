@@ -369,23 +369,23 @@
 /*Sergal*/
 
 	sergaleyes
-		name = "Sergal Eyes"
+		name = "Naramad Eyes"
 		icon_state = "eyes_sergal"
 		body_parts = list(BP_HEAD)
 
 	sergal_full
-		name = "Sergal Markings"
+		name = "Naramad Markings"
 		icon_state = "sergal_full"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
-		species_allowed = list("Sergal")
+		species_allowed = list("Naramad")
 
 	sergal_full_female
-		name = "Sergal Markings (Female)"
+		name = "Naramad Markings (Female)"
 		icon_state = "sergal_full_female"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
-		species_allowed = list("Sergal")
+		species_allowed = list("Naramad")
 
 	shaggy_mane
 		name = "Shaggy Mane/Feathers"

@@ -50,8 +50,14 @@
 /datum/unarmed_attack/bite/strong
 	damage = 3
 
+/datum/unarmed_attack/needle
+	attack_verb = list("stabbed", "jabbed", "shanked")
+	attack_noun = list("stab", "jab", "shank")
+	damage = 1
+	armor_penetration = 10
+
 /datum/unarmed_attack/horns
-	deal_halloss = 10
+	deal_halloss = 9
 	attack_noun = list("ram","headbutt")
 	attack_verb = list("rammed", "headbutted")
 	damage = 1

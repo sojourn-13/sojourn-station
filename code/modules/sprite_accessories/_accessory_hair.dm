@@ -814,16 +814,16 @@
 	name = "Lizard Ram Horns"
 	icon_state = "unathi_ramhorn_s"
 
-/datum/sprite_accessory/hair/sergal_fairytail
-	name = "Sergal Fairytail"
+/datum/sprite_accessory/hair/naramad_fairytail
+	name = "Naramad Fairytail"
 	icon_state = "serg_fairytail_s"
 
-/datum/sprite_accessory/hair/sergal_medicore
-	name = "Sergal Medicore"
+/datum/sprite_accessory/hair/naramad_medicore
+	name = "Naramad Medicore"
 	icon_state = "serg_medicore_s"
 
-/datum/sprite_accessory/hair/sergal_tapered
-	name = "Sergal Tapered"
+/datum/sprite_accessory/hair/naramad_tapered
+	name = "Naramad Tapered"
 	icon_state = "serg_tapered_s"
 
 /datum/sprite_accessory/hair/afroquill

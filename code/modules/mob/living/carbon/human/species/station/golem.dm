@@ -10,7 +10,7 @@
 	siemens_coefficient = 0
 	total_health = 500
 	brute_mod =     0.1                    // Physical damage multiplier.
-	burn_mod =      1                    // Burn damage multiplier.
+	burn_mod =      0.75                    // Burn damage multiplier.
 	oxy_mod =       0                   // Oxyloss modifier
 	toxins_mod =    0                  // Toxloss modifier
 	radiation_mod = 0                    // Radiation modifier

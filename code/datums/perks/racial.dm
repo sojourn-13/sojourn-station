@@ -1,7 +1,3 @@
-// FIX THESE!!
-// The sound for the sergal and akula perks don't play when used.
-// The perks that add stats don't work, possibly because they need to be made stimulents.
-
 /datum/perk/laststand //Sablekyne perk, allows them to ignore pain for roughly a minute.
 	name = "Last Stand"
 	desc = "As a sablekyne your body is a tank, through will and biology you can ignore pain entirely for a short amount of time."
@@ -82,14 +78,14 @@
 	user.reagents.add_reagent("hustim", 5)
 	return ..()
 
-/datum/perk/jaegermarch //Kriosan perk that gives them a boost to toughness and vigilance.
-	name = "Jaegermarch"
+/datum/perk/enhancedsenses //Kriosan perk that gives them a boost to toughness and vigilance.
+	name = "Enhance Senses"
 	desc = "You're a predator at heart and have the senses to match, for a short time your body toughens and your aim improves drastically as your senses enhance."
 	var/cooldown_time = 0
 	active = FALSE
 	toggleable = TRUE
 
-/datum/perk/jaegermarch/activate()
+/datum/perk/enhancedsenses/activate()
 	var/mob/living/carbon/human/user = usr
 	if(!istype(user))
 		return ..()
@@ -123,9 +119,9 @@
 	user.reagents.add_reagent("robustitol", 5)
 	return ..()
 
-/datum/perk/adrenalineburst //Sergal perk that gives them the zoomies.
+/datum/perk/adrenalineburst //Naramad perk that gives them the zoomies.
 	name = "Adrenaline Burst"
-	desc = "Sergals are built for extreme speed, be it for charging forward and retreating back."
+	desc = "Naramads are built for extreme speed, be it for charging forward and retreating back."
 	var/cooldown_time = 0
 	active = FALSE
 	toggleable = TRUE
@@ -141,7 +137,7 @@
 	user.visible_message("[user] begins breathing much quicker as they let out a merp!", "You feel your heart rate increasing rapidly as everything seems to speed up and you let out an excited merp!", "You hear a loud merp...")
 	playsound(usr.loc, 'sound/voice/merp.ogg', 50, 1)
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("sergatonin", 5)
+	user.reagents.add_reagent("naratonin", 5)
 	return ..()
 
 /datum/perk/purgetoxins //Cindarite perk that purges the blood of toxins and removes addiction.
@@ -179,7 +175,29 @@
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up tools. You didn't lose them, did you?"))
 		return FALSE
 	cooldown_time = world.time + 8 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up tools out from their hiding place, unfolding the belt for use."))
+	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up tools out from their hiding place, the belt unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/weapon/storage/belt/utility/handmade/full(usr.loc)
 	return ..()
+
+/* //This has balance and code issues, commenting it out for now for later revision.
+/datum/perk/nightvision //A universal perk for races that can see in the dark.
+	name = "Night Vision"
+	desc = "Due to the biology of your race you're capable of seeing in the dark. You need to stand still to focus and pick apart the light."
+	var/cooldown_time = 0
+	active = FALSE
+	toggleable = TRUE
+
+/datum/perk/nightvision/toggle()
+	var/mob/living/carbon/human/user = usr
+	if(is_active() && deactivate(holder))
+		to_chat(usr, "You deactivate [src]")
+		to_chat(usr, SPAN_NOTICE("You come to a stand still and begin letting your eyes adjust to the lighting, focusing on the darker areas and ignoring the light."))
+		usr.see_invisible = SEE_INVISIBLE_NOLIGHTING
+	else if(activate(holder))
+		to_chat(usr, "You activate [src]")
+		to_chat(usr, SPAN_NOTICE("You come to a stand still and begin letting your eyes adjust to the lighting, focusing on the darker areas and ignoring the light."))
+		usr.see_invisible = SEE_INVISIBLE_NOLIGHTING
+		log_and_message_admins("used their [src] perk.")
+	return ..()
+*/

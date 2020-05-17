@@ -14,7 +14,7 @@
 #define FORM_LIZARD				"Lizard"
 #define FORM_VULPINE			"Vulpine"
 #define FORM_FENNEC				"Fennec"
-#define FORM_SERGALINE			"Sergal"
+#define FORM_NARAMAD			"Naramad"
 #define FORM_SLIME				"Slime"
 #define FORM_AVIAN				"Avian"
 #define FORM_SPIDER				"Arachnoid"
@@ -104,7 +104,7 @@
 
 
 /datum/species_form/stationxeno
-	playable = TRUE
+	playable = FALSE
 	name = FORM_STATIONXENO
 	base = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_drone.dmi'
@@ -155,9 +155,9 @@
 	deform = 'icons/mob/human_races/r_def_akula.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
-/datum/species_form/sergal
+/datum/species_form/naramad
 	playable = FALSE
-	name = FORM_SERGALINE
+	name = FORM_NARAMAD
 	base = 'icons/mob/human_races/r_sergal.dmi'
 	deform = 'icons/mob/human_races/r_def_sergal.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR

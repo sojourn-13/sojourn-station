@@ -37,7 +37,7 @@
 	default_form = FORM_SABLEKYNE
 	obligate_form = TRUE
 	reagent_tag = IS_SABLEKYNE
-	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/stomp, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
+	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
 	num_alternate_languages = 2
 	name_language = null
@@ -141,7 +141,7 @@
 	name_plural = "Kriosans"
 	default_form = FORM_KRIOSAN
 	obligate_form = TRUE
-	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite, /datum/unarmed_attack/needle)
 	darksight = 8
 	num_alternate_languages = 2
 	name_language = null
@@ -149,6 +149,9 @@
 	max_age = 110
 	blurb = "How did you find this? Report this to Kazkin if you're reading it."
 	taste_sensitivity = TASTE_HYPERSENSITIVE
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
+	radiation_mod = 0.5
+	toxins_mod = 0.75
 
 	spawn_flags = CAN_JOIN
 
@@ -183,7 +186,7 @@
 		)
 	permitted_wings = list()
 
-	perks = list(/datum/perk/jaegermarch)
+	perks = list(/datum/perk/enhancedsenses)
 
 /datum/species/kriosan/get_bodytype()
 	return "Kriosan"
@@ -228,12 +231,12 @@
 /datum/species/akula/get_bodytype()
 	return "Akula"
 
-/datum/species/sergal
-	name = "Sergal"
-	name_plural = "Sergals"
-	default_form = FORM_SERGALINE
+/datum/species/naramad
+	name = "Naramad"
+	name_plural = "Naramadi"
+	default_form = FORM_NARAMAD
 	obligate_form = TRUE
-	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong)
+	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/tail)
 	num_alternate_languages = 0
 	name_language = null
 	min_age = 18
@@ -250,14 +253,14 @@
 		STAT_COG = -20
 	)
 
-	permitted_ears  = list("Sergal Ears")
-	permitted_tail  = list("Sergal Tail", "Sergal Tail 2")
+	permitted_ears  = list("Naramad Ears")
+	permitted_tail  = list("Naramad Tail", "Naramad Tail 2")
 	permitted_wings = list()
 
 	perks = list(/datum/perk/adrenalineburst)
 
-/datum/species/sergal/get_bodytype()
-	return "Sergal"
+/datum/species/naramad/get_bodytype()
+	return "Naramad"
 
 /datum/species/vox
 	name = "Opifex"
@@ -404,6 +407,28 @@
 		STAT_MEC = 5,
 		STAT_TGH = 5
 	)
+
+	cold_level_1 = 280 //Default 260
+	cold_level_2 = 220 //Default 200
+	cold_level_3 = 140  //Default 120
+
+	heat_level_1 = 450 //Default 360
+	heat_level_2 = 520 //Default 400
+	heat_level_3 = 1400 //Default 1000
+
+	heat_discomfort_level = 400
+	heat_discomfort_strings = list(
+		"Your scales prickles in the heat.",
+		"You feel uncomfortably warm.",
+		"Your overheated scales itch."
+		)
+
+	cold_discomfort_level = 300
+	list/cold_discomfort_strings = list(
+		"You feel chilly.",
+		"You shiver suddenly.",
+		"Your chilly scales stands out in goosebumps."
+		)
 
 	has_organ = list(    // which required-organ checks are conducted.
 		BP_HEART =    /obj/item/organ/internal/heart,

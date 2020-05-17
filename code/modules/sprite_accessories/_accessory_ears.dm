@@ -270,8 +270,8 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/ears/sergal
-	name = "Sergal Ears"
+/datum/sprite_accessory/ears/naramad
+	name = "Naramad Ears"
 	icon_state = "serg_plain_s"
 	colored_layers = 1
 	blend = ICON_MULTIPLY

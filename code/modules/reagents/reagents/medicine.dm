@@ -999,9 +999,9 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	M.stats.addTempStat(STAT_MEC, -100, STIM_TIME, "robustitol")
 
 /datum/reagent/medicine/sergatonin
-	name = "Sergatonin"
-	id = "sergatonin"
-	description = "Sergatonin is a highly effective, long lasting, muscle stimulant naturally produced by sergals when under stress."
+	name = "Naratonin"
+	id = "naraatonin"
+	description = "Naratonin is a highly effective, short term, muscle stimulant naturally produced by naramadi when under stress."
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#FF3300"
