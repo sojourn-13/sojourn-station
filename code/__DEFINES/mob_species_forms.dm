@@ -14,7 +14,7 @@
 #define SPECIES_NEVREAN			"Avian"
 #define SPECIES_PROTEAN			"Protean"
 #define SPECIES_RAPALA			"Harpy"
-#define SPECIES_SERGAL			"Sergal"
+#define SPECIES_NARAMAD			"Naramad"
 #define SPECIES_VASILISSAN		"Cht'Mant"
 #define SPECIES_VULPKANIN		"Fox"
 #define SPECIES_XENOCHIMERA		"Xenochimera"
@@ -62,8 +62,7 @@
 #define FORM_LIZARD_TGSMOOTH    "Smooth-Snouted Lizard"
 #define FORM_VULPINE			"Vulpine"
 #define FORM_FENNEC				"Fennec"
-#define FORM_SERGALINE			"Sergal"
-#define FORM_MARQUA				"Mar'Qua"
+#define FORM_NARAMAD			"Naramad"
 #define FORM_SLIME				"Slime"
 #define FORM_AVIAN				"Avian"
 #define FORM_SPIDER				"Arachnoid"
@@ -72,6 +71,13 @@
 #define FORM_STATIONXENO_QUEEN	"Xenohybrid Queen"
 #define FORM_STATIONXENO_SENTI  "Xenohybrid Sentinel"
 #define FORM_SABLEKYNE			"Sablekyne"
+#define FORM_MARQUA				"Mar'Qua"
+#define FORM_KRIOSAN  			"Kriosan"
+#define FORM_AKULA				"Akula"
+#define FORM_CHTMANT			"Cht'mant"
+#define FORM_CINDAR				"Cindarite"
+#define FORM_OPIFEX				"Opifex"
+
 
 #define FORM_BIRD				"Avian"
 

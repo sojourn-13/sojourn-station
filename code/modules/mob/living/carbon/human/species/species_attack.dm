@@ -45,14 +45,28 @@
 				if(5)		user.visible_message("<span class='danger'>[user] tears \his [pick(attack_noun)] [pick("deep into", "into", "across")] [target]'s [affecting.name]!</span>")
 
 /datum/unarmed_attack/claws/strong
-	attack_verb = list("slashed")
-	damage = 8
-	shredding = 1
+	damage = 3
 
 /datum/unarmed_attack/bite/strong
-	attack_verb = list("mauled")
-	damage = 15
-	shredding = 1
+	damage = 3
+
+/datum/unarmed_attack/needle
+	attack_verb = list("stabbed", "jabbed", "shanked")
+	attack_noun = list("stab", "jab", "shank")
+	damage = 1
+	armor_penetration = 10
+
+/datum/unarmed_attack/horns
+	deal_halloss = 9
+	attack_noun = list("ram","headbutt")
+	attack_verb = list("rammed", "headbutted")
+	damage = 1
+
+/datum/unarmed_attack/tail
+	deal_halloss = 6
+	attack_noun = list("smack","lash")
+	attack_verb = list("smacked", "lashed")
+	damage = 0
 
 /datum/unarmed_attack/slime_glomp
 	attack_verb = list("glomped")

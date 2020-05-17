@@ -9,9 +9,9 @@
 	spawn_flags = IS_RESTRICTED
 	siemens_coefficient = 0
 	total_health = 200
-	brute_mod =     0.5                    // Physical damage multiplier.
-	burn_mod =      0.75                    // Burn damage multiplier.
-	oxy_mod =       1                    // Oxyloss modifier
+	brute_mod =     0.25                    // Physical damage multiplier.
+	burn_mod =      0.25                    // Burn damage multiplier.
+	oxy_mod =       0                    // Oxyloss modifier
 	toxins_mod =    0                  // Toxloss modifier
 	radiation_mod = 0                    // Radiation modifier
 	flash_mod =     0

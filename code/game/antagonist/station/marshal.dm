@@ -6,7 +6,7 @@
 	protected_jobs = list(JOBS_COMMAND, JOBS_SECURITY)
 	antaghud_indicator = "huddeathsquad"
 
-	stat_modifiers = list(\
+	stat_modifiers = list(
 		STAT_TGH = 10,
 		STAT_ROB = 10,
 		STAT_VIG = 20

@@ -389,6 +389,7 @@ area/space/atmosalert()
 	icon_state = "asteroid"
 	requires_power = 0
 	sound_env = ASTEROID
+	base_turf = /turf/simulated/floor/asteroid
 
 /area/asteroid/cave				// -- TLE
 	name = "\improper Moon - Underground"
@@ -939,7 +940,7 @@ var/list/centcom_areas = list (
 //Rouguelike Mining
 /area/asteroid/rogue
 	icon_state = "away"
-	name = "Asteroid Belt"
+	name = "Deep Forest Underground"
 	var/asteroid_spawns = list()
 	var/mob_spawns = list()
 	var/teleporter_spawns = list()

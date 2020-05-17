@@ -812,7 +812,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/aminazine
 	name = "Aminazine"
 	id = "aminazine"
-	description = "Medication designed to opresses withdrawal effects for some time."
+	description = "Medication designed to opresse withdrawal effects for some time."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#88336f"
@@ -873,3 +873,186 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/vomitol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(prob(10 * effect_multiplier))
 		M.vomit()
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Racial chemicals used for perks.
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/datum/reagent/medicine/sabledone
+	name = "Sabledone"
+	id = "sabledone"
+	description = "A very effective and immensely powerful painkiller naturally produced by sablekyne when under severe stress."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#800080"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 1
+
+/datum/reagent/medicine/sabledone/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 10000, TRUE)
+	M.apply_effect(-200, AGONY, 0)
+
+/datum/reagent/stim/marquatol
+	name = "Marquatol"
+	id = "marquatol"
+	description = "A chemical naturally produced by the mar'qua that allows them to focus."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#5f95e2"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	metabolism = REM/5
+
+/datum/reagent/stim/marquatol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "marquatol")
+	M.stats.addTempStat(STAT_BIO, STAT_LEVEL_BASIC, STIM_TIME, "marquatol")
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_BASIC, STIM_TIME, "marquatol")
+
+/datum/reagent/medicine/hadrenol
+	name = "Hadrenol"
+	id = "adrenol"
+	description = "A chemical naturally produced by humans when they are at deaths door, allowing them to recover from things that would kill lesser people."
+	taste_description = "grossness"
+	reagent_state = LIQUID
+	color = "#8040FF"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 1
+
+/datum/reagent/medicine/hadrenol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.adjustOxyLoss(-0.6)
+	M.heal_organ_damage(0.3, 0.3)
+	M.adjustToxLoss(-0.3)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)
+
+/datum/reagent/medicine/hustim
+	name = "Hustimdol"
+	id = "hustim"
+	description = "A chemical naturally produced by humans when they are at deaths door, allowing them to recover from things that would kill lesser people."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#ded890"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 1
+
+/datum/reagent/medicine/hustim/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.heal_organ_damage(0.2, 0, 3)
+	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.1))
+	M.add_chemical_effect(CE_STABLE)
+	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)
+	M.add_chemical_effect(CE_PULSE, 1)
+	var/effective_dose = dose
+	if(issmall(M))
+		effective_dose *= 2
+
+	if(effective_dose < 1)
+		if(effective_dose == metabolism * 2 || prob(5))
+			M.emote("yawn")
+	else if(effective_dose < 3)
+		M.eye_blurry = max(M.eye_blurry, 10)
+	else if(effective_dose < 4)
+		if(prob(50))
+			M.Weaken(2)
+		M.drowsyness = max(M.drowsyness, 20)
+	else
+		M.sleeping = max(M.sleeping, 20)
+		M.drowsyness = max(M.drowsyness, 60)
+	M.add_chemical_effect(CE_PULSE, -1)
+
+/datum/reagent/stim/kriotol
+	name = "Kriotol"
+	id = "kriotol"
+	description = "A chemical naturally produced by the kriosan that works like a form of adrenaline to enhance their bodies."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#5f95e2"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+
+/datum/reagent/stim/kriotol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.stats.addTempStat(STAT_TGH, 10, STIM_TIME, "kriotol")
+	M.stats.addTempStat(STAT_VIG, 20, STIM_TIME, "kriotol")
+
+/datum/reagent/stim/robustitol
+	name = "Robustitol"
+	id = "robustitol"
+	description = "A chemical naturally produced by the akula that sends them into an all consuming frenzy."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#5f95e2"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+
+/datum/reagent/stim/robustitol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.stats.addTempStat(STAT_TGH, 60, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_ROB, 60, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_COG, -100, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_BIO, -100, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_VIG, -100, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_MEC, -100, STIM_TIME, "robustitol")
+
+/datum/reagent/medicine/sergatonin
+	name = "Naratonin"
+	id = "naraatonin"
+	description = "Naratonin is a highly effective, short term, muscle stimulant naturally produced by naramadi when under stress."
+	taste_description = "acid"
+	reagent_state = LIQUID
+	color = "#FF3300"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 1
+
+/datum/reagent/medicine/sergatonin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_PULSE, 2)
+
+/datum/reagent/medicine/cindpetamol
+	name = "Cindpetamol"
+	id = "cindpetamol"
+	description = "Cindpetamol is a highly specialized chemical made by cindarites that purges the blood stream of toxins and addictions."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#FF3300"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 1
+
+/datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	var/mob/living/carbon/C = M
+	if(istype(C) && C.metabolism_effects.addiction_list.len)
+		if(prob(90 + dose))
+			var/datum/reagent/R = pick(C.metabolism_effects.addiction_list)
+			to_chat(C, SPAN_NOTICE("You dont crave for [R.name] anymore."))
+			C.metabolism_effects.addiction_list.Remove(R)
+			qdel(R)
+	if(M.bloodstr)
+		for(var/current in M.bloodstr.reagent_list)
+			var/datum/reagent/toxin/R = current
+			if(!istype(R, src))
+				R.remove_self(pick(list(1,2,3)))
+	var/effective_dose = dose
+	if(issmall(M))
+		effective_dose *= 2
+
+	if(effective_dose < 1)
+		if(effective_dose == metabolism * 2 || prob(5))
+			M.emote("yawn")
+	else if(effective_dose < 3)
+		M.eye_blurry = max(M.eye_blurry, 10)
+	else if(effective_dose < 4)
+		if(prob(50))
+			M.Weaken(2)
+		M.drowsyness = max(M.drowsyness, 20)
+	else
+		M.sleeping = max(M.sleeping, 20)
+		M.drowsyness = max(M.drowsyness, 60)
+	M.add_chemical_effect(CE_PULSE, -1)
