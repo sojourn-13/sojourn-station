@@ -69,7 +69,7 @@ var/list/dreams = list(
 //Races (Check Creatures Before Adding Stuff Here, There's Some Overlap!)
 	"an abhuman","an agudner","an akula","an angel","a bird","a bunny","a cht'mant","a coyote","a crocodile","a deer","a demon",
 	"a dogborg","a dragon","a fox","a goblin","a human","a husky","a kobold","a kriosan","a lamia","a lion","a mar'qua","a nevrean",
-	"a polar bear",,"a sablekyne","a seelie","a naramad","a shark","a slime","a squid",
+	"a polar bear",,"a sablekyne","a seelie","a sergal","a shark","a siberian spacebat","a slime","a squid",
 	"a squirrel","a strange hybrid","a synth","a synx","a vox","a wabbite","a wolf",
 
 //People
