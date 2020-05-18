@@ -24,7 +24,7 @@
 	if(prob(33))
 		spawn_type = pick(\
 		/mob/living/simple_animal/hostile/tomato,\
-		/mob/living/simple_animal/hostile/deathclaw,\
+		/mob/living/simple_animal/hostile/render,\
 		/mob/living/simple_animal/hostile/jelly,\
 		/mob/living/simple_animal/hostile/creature\
 		)

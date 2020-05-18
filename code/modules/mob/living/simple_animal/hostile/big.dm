@@ -16,7 +16,7 @@
 	pixel_x = -16
 	pixel_y = -16
 
-/mob/living/simple_animal/hostile/deathclaw
+/mob/living/simple_animal/hostile/render
 	name = "primal render"
 	desc = "A hulking monster out of a living nightmare. Its powerful hide can shrug off advanced lasers with ease and its heavily armored skin requires powerful ballistics to pierce."
 	icon = 'icons/mob/deathclaw.dmi'
@@ -24,8 +24,8 @@
 	icon_living = "deathclaw"
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
-	speed = 24
-	move_to_delay = 2
+	speed = 18
+	move_to_delay = 8
 	turns_per_move = 2
 	vision_range = 12
 	aggro_vision_range = 12
@@ -47,13 +47,13 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
 
-/mob/living/simple_animal/hostile/deathclaw/FindTarget()
+/mob/living/simple_animal/hostile/render/FindTarget()
 	. = ..()
 	if(.)
 		visible_emote("lets out a deafening roar and charges at [.]!")
 		playsound(src, 'sound/voice/deathclaw_roar.ogg', 200, 3, 8, 1)
 
-/mob/living/simple_animal/hostile/deathclaw/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
+/mob/living/simple_animal/hostile/render/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
 	walk_to(src,0)
 	movement_target = null
 	icon_state = icon_dead
@@ -61,7 +61,7 @@
 	return ..(gibbed,deathmessage)
 
 
-/mob/living/simple_animal/hostile/deathclaw/chunks
+/mob/living/simple_animal/hostile/render/chunks
 	name = "Chunks"
 	desc = "An absolute unit of a primal render. Somehow maintains his speed despite being severely malformed and ugly as sin."
 	icon = 'icons/mob/64x64.dmi'

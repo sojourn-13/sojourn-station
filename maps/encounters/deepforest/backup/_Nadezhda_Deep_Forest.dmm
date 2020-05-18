@@ -793,13 +793,13 @@
 "pm" = (/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/one_star)
 "pn" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/machinery/porta_turret/prepper,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/maintenance/outside/smuggler_zone_u)
 "po" = (/obj/structure/flora/small/rock4,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/maintenance/outside/zoo)
-"pp" = (/obj/item/weapon/gun/energy/sniperrifle{desc = "This looks like an Old Testament rifle but its dirty, rusted, and looks quite old. A designated marksman rifle capable of shooting powerful ionized beams, this is a weapon for killing from a distance."; name = "OT MER \"Saint\""},/obj/item/remains/human,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
-"pq" = (/mob/living/carbon/superior_animal/render,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/maintenance/outside/zoo)
+"pp" = (/obj/item/weapon/gun/energy/sniperrifle{desc = "This looks like an Old Testament rifle but its dirty, rusted, and looks quite old. A designated marksman rifle capable of shooting powerful ionized beams, this is a weapon for killing from a distance."; name = "\"Saint\""},/obj/item/remains/human,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
+"pq" = (/mob/living/simple_animal/hostile/deathclaw,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/maintenance/outside/zoo)
 "pr" = (/obj/structure/flora/rock,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/maintenance/outside/zoo)
 "ps" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/machinery/porta_turret/prepper,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/maintenance/outside/smuggler_zone_u)
 "pt" = (/turf/simulated/floor/beach/sand/desert,/area/nadezhda/maintenance/outside/zoo)
 "pu" = (/obj/effect/decal/cleanable/blood/gibs,/obj/effect/decal/cleanable/blood/gibs,/obj/item/weapon/gun/projectile/automatic/pulse_rifle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
-"pv" = (/obj/item/remains/deer,/obj/item/weapon/gun/projectile/automatic/maxim{desc = "An old weapon more commonly used by certain traitorous factions. This model appears to be a replica and a damn good one at that. Suited for crowd control or suppresion fire."; name = "SA 'Maxim'"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
+"pv" = (/obj/item/remains/deer,/obj/item/weapon/gun/projectile/automatic/maxim{desc = "An old weapon more commonly used by certain traitorous factions. This model appears to be a replica and a damn good one at that. Suited for crowd control or suppresion fire."; name = "'Maxim'"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
 "pw" = (/obj/structure/flora/rock/variant1,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/maintenance/outside/zoo)
 "px" = (/obj/structure/flora/small/rock3,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/maintenance/outside/zoo)
 "py" = (/obj/structure/flora/rock/variant2,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/maintenance/outside/zoo)
@@ -997,7 +997,7 @@
 "ti" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating/under,/area/nadezhda/outside/meadow)
 "tj" = (/obj/item/remains/tajaran,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
 "tk" = (/obj/effect/decal/cleanable/cobweb2,/obj/effect/decal/cleanable/rubble,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
-"tl" = (/mob/living/carbon/superior_animal/render,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
+"tl" = (/mob/living/simple_animal/hostile/deathclaw,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
 "tm" = (/obj/item/remains/lizard,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
 "tn" = (/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/machinery/power/solar,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating/under,/area/nadezhda/outside/meadow)
 "to" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating/under,/area/nadezhda/outside/meadow)
@@ -1245,7 +1245,7 @@
 "xW" = (/obj/random/closet/low_chance,/obj/machinery/light/small,/turf/simulated/floor/wood/wild5,/area/nadezhda/maintenance/outside/smuggler_zone)
 "xX" = (/obj/structure/railing,/turf/simulated/floor/wood/wild5,/area/nadezhda/maintenance/outside/smuggler_zone)
 "xY" = (/obj/structure/flora/ausbushes/leafybush,/turf/unsimulated/mineral,/area/colony/exposedsun/pastgate)
-"xZ" = (/obj/effect/decal/cleanable/blood/gibs,/obj/effect/decal/cleanable/blood/gibs,/mob/living/carbon/superior_animal/render,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
+"xZ" = (/obj/effect/decal/cleanable/blood/gibs,/obj/effect/decal/cleanable/blood/gibs,/mob/living/simple_animal/hostile/deathclaw,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
 "ya" = (/obj/effect/decal/cleanable/blood/gibs,/obj/effect/decal/cleanable/blood,/obj/random/gun_energy_cheap/low_chance,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
 "yb" = (/obj/random/cloth/armor,/obj/random/gun_energy_cheap/low_chance,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
 "yc" = (/obj/random/scrap/dense_weighted,/obj/item/ammo_magazine/c10x24,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/maintenance/outside/monster_cave)
@@ -1608,7 +1608,7 @@
 "EV" = (/obj/random/junk,/obj/effect/mine,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "EW" = (/obj/random/mob/render/low_chance,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "EX" = (/turf/simulated/floor/wood/wild5,/area/asteroid/rogue)
-"EY" = (/obj/structure/invislight,/mob/living/carbon/superior_animal/render,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
+"EY" = (/obj/structure/invislight,/mob/living/simple_animal/hostile/deathclaw,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
 "EZ" = (/obj/random/junk,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Fa" = (/obj/item/ammo_magazine/maxim,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Fb" = (/obj/effect/decal/cleanable/rubble,/turf/simulated/floor/wood/wild5,/area/asteroid/rogue)
@@ -1666,9 +1666,8 @@
 "Gb" = (/obj/structure/flora/tree/jungle/variant4,/obj/structure/flora/small/bushb2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
 "Gc" = (/obj/structure/flora/ausbushes/stalkybush,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "Gd" = (/obj/structure/flora/small/busha2,/obj/structure/flora/big/bush2,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
-"Ge" = (/obj/random/mob/roomba,/turf/simulated/floor/wood/wild4,/area/asteroid/rogue)
-"Gf" = (/obj/random/mob/roomba,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
-"Gg" = (/obj/effect/decal/cleanable/rubble,/obj/random/mob/roomba,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
+"Ge" = (/obj/random/cluster/spiders/low_chance,/turf/simulated/floor/wood/wild4,/area/asteroid/rogue)
+"Gf" = (/obj/effect/decal/cleanable/rubble,/obj/random/cluster/spiders/low_chance,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Gh" = (/obj/structure/flora/small/rock3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "Gi" = (/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/meadow)
 "Gj" = (/obj/structure/flora/ausbushes/reedbush,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
@@ -1903,10 +1902,10 @@ abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaV
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVFrFsFlFlaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERERaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVFmjjbHjjFtFuaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVFvFEFlFlFvaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVjjFxjjjjFyFmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESaVaVaVaVaVERERERaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
-abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESERAVaVaVaVaVaVaVaVaVaVaVEZFIjjjjjjjjaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESERERaVaVaVaVaVaVaVaVaVaVaVaVaVFzjjjjFAFBFCFlaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESESERERERERERERERaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
-abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVESERERERERaVaVaVaVaVaVaVFDESFIFmFEaHFmAVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESESaVaVaVaVaVaVaVaVaVaVaVaVERERjjjjFGjjjjFlaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVAVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
-abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESGfERERERERERERERERERERESGeFlFlFlFlERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVESFHESAVaVaVaVaVaVaVaVaVERESERAVjjjjjjbHjjFlaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
-abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVFdFdERESGgERERERERERERESERjjjjGejjjjESERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESFdESERaVaVaVaVaVaVERERESESAVFIjjjjjjjjjjaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESERAVaVaVaVaVaVaVaVaVaVaVEZFIjjGejjjjaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESERERaVaVaVaVaVaVaVaVaVaVaVaVaVFzjjjjFAFBFCFlaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESESERERERERERERERaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVESERcQERERaVaVaVaVaVaVaVFDESFIFmFEaHFmAVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESESaVaVaVaVaVaVaVaVaVaVaVaVERERjjjjFGjjjjFlaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVAVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVEREScQERERERERERERERERERcQESjjFlFlFlFlERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVESFHESAVaVaVaVaVaVaVaVaVERESERAVjjjjjjbHjjFlaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVFdFdERGfESERERERcQERERESERjjjjjjGejjESERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESFdESERaVaVaVaVaVaVERERESESAVFIjjjjjjjjjjaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESFhERERERERERaVaVaVaVaVjjFlFlFlFlESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESERERERERERERcQERERERESESFIFBFlFvjjjjaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESESERERERERERERERERERERERERERFkESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVERERERERESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESESESERERERERERAVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVETETaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERAVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVab

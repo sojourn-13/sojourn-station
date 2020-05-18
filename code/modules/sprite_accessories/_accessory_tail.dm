@@ -108,6 +108,13 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/tail/dockedtail
+	name = "Docked Tail"
+	desc = ""
+	icon_state = "deertail"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/tail/dragon
 	name = "Dragon Tail"
 	desc = ""

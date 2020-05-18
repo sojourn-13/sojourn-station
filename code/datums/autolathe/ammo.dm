@@ -173,7 +173,7 @@
 	build_path = /obj/item/ammo_magazine/ammobox/magnum
 
 /datum/design/autolathe/ammo/magnum_ammobox_lethal
-	name = "ammunition box (.40 Auto-Mag rubber)"
+	name = "ammunition box (.40 Auto-Mag)"
 	build_path = /obj/item/ammo_magazine/ammobox/magnum/lethal
 
 /datum/design/autolathe/ammo/magnum_ammobox_rubber
