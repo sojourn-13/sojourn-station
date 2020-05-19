@@ -38,16 +38,35 @@
 	return /mob/living/carbon/superior_animal/roach/nanite
 
 
-
+//Putting this here because fuck making a new file just for 1 spawner
 /obj/random/mob/render
 	name = "random render"
 	icon_state = "hostilemob-brown"
 	alpha = 128
 
 /obj/random/mob/render/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/deathclaw))
+	return pickweight(list(/mob/living/simple_animal/hostile/render))
 
 /obj/random/mob/render/low_chance
-	name = "low chance random roach"
+	name = "low chance render"
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 90
+
+//Putting this here because fuck making a new file just for 1 spawner
+/obj/random/mob/voidwolf
+	name = "random void wolf"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/voidwolf/item_to_spawn()
+	return pickweight(list(/mob/living/simple_animal/hostile/voidwolf = 9,
+		/mob/living/simple_animal/hostile/voidwolf/fieldtech = 2,
+		/mob/living/simple_animal/hostile/voidwolf/ranged = 4,
+		/mob/living/simple_animal/hostile/voidwolf/fieldtech_ranged = 4,
+		/mob/living/simple_animal/hostile/voidwolf/captain = 0.5
+		))
+
+/obj/random/mob/voidwolf/low_chance
+	name = "low chance random void wolf"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60

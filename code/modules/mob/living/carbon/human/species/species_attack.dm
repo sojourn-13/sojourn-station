@@ -51,9 +51,10 @@
 	damage = 3
 
 /datum/unarmed_attack/needle
+	attack_name = "Knuckle Spines"
 	attack_verb = list("stabbed", "jabbed", "shanked")
 	attack_noun = list("stab", "jab", "shank")
-	damage = 1
+	damage = 2
 	armor_penetration = 10
 
 /datum/unarmed_attack/horns

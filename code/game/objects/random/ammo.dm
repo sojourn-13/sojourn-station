@@ -81,7 +81,10 @@
 				/obj/item/ammo_magazine/ammobox/kurtz,
 				/obj/item/ammo_magazine/magnum/rubber,
 				/obj/item/ammo_magazine/magnum,
-				/obj/item/weapon/cell/medium/high)
+				/obj/item/weapon/cell/medium/high,
+				/obj/item/ammo_magazine/m12,
+				 /obj/item/ammo_magazine/m12/pellet,
+				/obj/item/ammo_magazine/m12/beanbag)
 
 /obj/random/ammo_fancy/low_chance
 	name = "low chance random random ironhammer ammunition"
@@ -99,7 +102,8 @@
 				/obj/item/weapon/storage/box/shotgunammo/beanbags = 4,
 				/obj/item/weapon/storage/box/shotgunammo/slug = 2,
 				/obj/item/weapon/storage/box/shotgunammo/stunshells = 1,
-				/obj/item/weapon/storage/box/shotgunammo/buckshot = 3))
+				/obj/item/weapon/storage/box/shotgunammo/buckshot = 3,
+				/obj/item/ammo_magazine/m12/empty = 0.3))
 
 /obj/random/ammo/shotgun/low_chance
 	name = "low chance random shotgun ammunition"

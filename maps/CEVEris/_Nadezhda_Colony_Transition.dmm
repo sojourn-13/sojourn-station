@@ -162,21 +162,31 @@
 "df" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "dg" = (/obj/structure/sign/levels/stairsdown{pixel_y = -30},/obj/machinery/light,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "dh" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"di" = (/obj/structure/flora/small/trailrockb5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"dj" = (/obj/structure/flora/small/busha1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dk" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "dl" = (/obj/structure/table/woodentable,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "dm" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
+"dn" = (/turf/simulated/shuttle/wall/mining{icon_state = "13,15"},/area/turbolift/ElevatorTwo/midlevelOne)
+"do" = (/obj/structure/flora/small/grassa4,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"dp" = (/obj/structure/flora/small/trailrockb2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"dq" = (/obj/structure/flora/small/rock3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"dr" = (/obj/structure/flora/small/trailrocka3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"ds" = (/turf/simulated/shuttle/wall/mining{icon_state = "13,15"},/area/turbolift/ElevatorTwo/midlevelTwo)
+"dt" = (/obj/structure/flora/small/rock2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"du" = (/obj/structure/flora/small/grassb2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"dv" = (/obj/structure/flora/grass/brown,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"dw" = (/turf/simulated/shuttle/wall/mining{icon_state = "13,15"},/area/turbolift/ElevatorTwo/midlevelThree)
+"dx" = (/obj/structure/flora/grass/both,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"dy" = (/obj/structure/flora/grass/green,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dC" = (/turf/simulated/shuttle/wall/mining{icon_state = "10,18"},/area/nadezhda/hallway/main/stairwell)
 "dD" = (/turf/simulated/floor/tiled/steel,/area/turbolift/ElevatorTwo/midlevelOne)
 "dE" = (/turf/simulated/shuttle/wall/mining{icon_state = "13,15"},/area/nadezhda/hallway/main/stairwell)
 "dF" = (/turf/simulated/shuttle/wall/mining{icon_state = "7,18"},/area/nadezhda/hallway/main/stairwell)
-"dG" = (/turf/simulated/shuttle/wall/mining{icon_state = "7,16"},/area/nadezhda/hallway/main/stairwell)
 "dH" = (/turf/simulated/floor/tiled/steel,/area/turbolift/ElevatorTwo/midlevelTwo)
 "dI" = (/turf/simulated/floor/tiled/steel,/area/turbolift/ElevatorTwo/midlevelThree)
 "dJ" = (/obj/structure/flora/small/rock5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dK" = (/turf/simulated/shuttle/wall/mining{icon_state = "15,6"; opacity = 0},/area/nadezhda/hallway/main/stairwell)
-"dL" = (/obj/structure/flora/small/grassb5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
-"dM" = (/obj/structure/flora/rock/variant1,/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
-"dN" = (/obj/structure/flora/small/rock1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dO" = (/obj/structure/flora/small/bushc2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dP" = (/obj/structure/flora/ausbushes/reedbush,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dQ" = (/obj/structure/flora/small/bushc1,/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
@@ -187,13 +197,9 @@
 "dV" = (/obj/structure/flora/small/grassa5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dW" = (/obj/structure/flora/small/rock4,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dX" = (/obj/structure/flora/small/busha3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
-"dY" = (/obj/structure/flora/small/grassa1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dZ" = (/obj/structure/flora/small/bushb2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "ea" = (/obj/structure/flora/small/trailrockb4,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "eb" = (/obj/structure/flora/small/bushc3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
-"ec" = (/obj/structure/flora/ausbushes/sunnybush,/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
-"ed" = (/obj/structure/flora/ausbushes/sparsegrass,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
-"ee" = (/obj/structure/flora/ausbushes/grassybush,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "ef" = (/obj/structure/flora/ausbushes/lavendergrass,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "eg" = (/obj/structure/flora/ausbushes/ppflowers,/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "eh" = (/obj/structure/flora/ausbushes/brflowers,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
@@ -215,22 +221,22 @@ aaaaaaaaaaaaabababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeaeaeafagahahaiafababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababamanaeajajajajajajababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauakalalaGdgalalababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeauabadadababcCcCababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaebUabcLcLababaNaPababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeauabababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNabababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababamaYbccOcOcPcNcNcNcQabababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeaeaeaxcIbdcSdkdldmabababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaabababababababazabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeauabadadababcCcCababababaaaaabababababababababaaaaaa
+aaaaaaaaaaaaababaebUabcLcLababaNaPababababaaaaabdCdEdEdEdEdFdiabaaaaaa
+aaaaaaaaaaaaababaeauabababababababababababaaaaabdKaeaeaeaedKdjabaaaaaa
+aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNabababaaaaabdKaeaeaeaedKdQabaaaaaa
+aaaaaaaaaaaaababamaYbccOcOcPcNcNcNcQabababaaaaabdKaeaeaeaedKdXabaaaaaa
+aaaaaaaaaaaaababaeaeaeaxcIbdcSdkdldmabababaaaaabdRdEdEdEdEdSdWabaaaaaa
+aaaaaaaaaaaaabababababababazabababababababaaaaabababababababababaaaaaa
 aaaaaaaaaaaaabababababababaAabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaababaAbeababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababaAbeababababaaaaaaaaabdCdEdEdEdEdFdJaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababbAaCaDaEababaaaaaaaaabdGdDdDdDdDdKdLaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababcDaLaDaEababaaaaaaaaabdGdDdDdDdDdKdMabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdGdDdDdDdDdKdLaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdRdEdEdEdEdSdNaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababaAbeababababaaaaaaaaabababababababababaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababbAaCaDaEababaaaaaaaaabdCdndndndndFdoabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababcDaLaDaEababaaaaaaaaabdKdDdDdDdDdKdZabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdKdDdDdDdDdKdQabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdKaeaeaeaedKdpabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSeaabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
@@ -258,22 +264,22 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabababacacababcTcTababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabababaMaMababaRaRababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababapaqaqarasaqaqatabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababdhawavawawawawayabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababbZaBaJaKawawawawabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababaoawawaOaSaTaUaVabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabababababbfabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabababacacababcTcTababaaaaaaaaabababababababababaaaaaa
+aaaaaaaaaaaaaaaaabababaMaMababaRaRababaaaaaaaaabdCdEdEdEdEdFdqabaaaaaa
+aaaaaaaaaaaaaaaaababapaqaqarasaqaqatabaaaaaaaaabdKaeaeaeaedKdrabaaaaaa
+aaaaaaaaaaaaaaaaababdhawavawawawawayabaaaaaaaaabdKaeaeaeaedKdQabaaaaaa
+aaaaaaaaaaaaaaaaababbZaBaJaKawawawawabaaaaaaaaabdKaeaeaeaedKdJabaaaaaa
+aaaaaaaaaaaaaaaaababaoawawaOaSaTaUaVabaaaaaaaaabdRdEdEdEdEdSdWabaaaaaa
+aaaaaaaaaaaaaaaaabababababbfabababababaaaaaaaaabababababababababaaaaaa
 abababababababababababababbgabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 abababababababababababababbhbiaDaEababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-abbjbjbkblbmbnbobJbpbqababaFbsaDaEababaaaaaaaaabdCdEdEdEdEdFdOaaaaaaaa
-abbtbubvbvbvbwbxbybzcaababcybibBbCababaaaaaaaaabdGdHdHdHdHdKdXaaaaaaaa
-abbtbDbEbFbGbHbIbybKbRababbrbsbBbCababaaaaaaaaabdGdHdHdHdHdKdQabaaaaaa
-abbMbMbNbObObObLbPbQbTababbgabababababaaaaaaaaabdGdHdHdHdHdKdYaaaaaaaa
-ababababababababbSababababbgabababababaaaaaaaaabdRdEdEdEdEdSdZaaaaaaaa
-ababababababaHaIbVcVbXababbgababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaababbYcWabcccbckcdceababcocrczababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+abbjbjbkblbmbnbobJbpbqababaFbsaDaEababaaaaaaaaabababababababababaaaaaa
+abbtbubvbvbvbwbxbybzcaababcybibBbCababaaaaaaaaabdCdsdsdsdsdFdtabaaaaaa
+abbtbDbEbFbGbHbIbybKbRababbrbsbBbCababaaaaaaaaabdKdHdHdHdHdKdVabaaaaaa
+abbMbMbNbObObObLbPbQbTababbgabababababaaaaaaaaabdKdHdHdHdHdKdQabaaaaaa
+ababababababababbSababababbgabababababaaaaaaaaabdKaeaeaeaedKdoabaaaaaa
+ababababababaHaIbVcVbXababbgababababaaaaaaaaaaabdRdEdEdEdEdSduabaaaaaa
+aaababbYcWabcccbckcdceababcocrczababaaaaaaaaaaabababababababababaaaaaa
 aaababcfcgchcicjcAclbXababcBababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaababcmcnabcqcpcMcscvababcRababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaabababababctcucXcwcxababcYcrcZababaaaaaaaaaaabababababababababaaaaaa
@@ -301,22 +307,22 @@ aaaaaaaaaaaaababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeaeaeafagahahaiafabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababamaeaeajajajajajajabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeanakalalaGdgalalabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeauabadadababcCcCabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaebUabbabbababcUcUabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeauababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababamaYbccOcOcPcNcNcNcQababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeaecEaxcIcFcSdkdldmababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaabababababababcHababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeauabadadababcCcCabababaaaaaaabababababababababaaaaaa
+aaaaaaaaaaaaababaebUabbabbababcUcUabababaaaaaaabdCdEdEdEdEdFefabaaaaaa
+aaaaaaaaaaaaababaeauababababababababababaaaaaaabdKaeaeaeaedKdvabaaaaaa
+aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNababaaaaaaabdKaeaeaeaedKegabaaaaaa
+aaaaaaaaaaaaababamaYbccOcOcPcNcNcNcQababaaaaaaabdKaeaeaeaedKdvabaaaaaa
+aaaaaaaaaaaaababaeaecEaxcIcFcSdkdldmababaaaaaaabdRdEdEdEdEdSehabaaaaaa
+aaaaaaaaaaaaabababababababcHababababababaaaaaaabababababababababaaaaaa
 aaaaaaaaaaaaabababababababcJababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaababcKaCaDbCababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababcDaLaDbCababaaaaaaaaabdCdEdEdEdEdFeaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdGdIdIdIdIdKdVaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdGdIdIdIdIdKecabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdGdIdIdIdIdKedaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSeeaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababcDaLaDbCababaaaaaaaaabababababababababaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdCdwdwdwdwdFdxabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdKdIdIdIdIdKefabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKdIdIdIdIdKegabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKaeaeaeaedKdyabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSehabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa

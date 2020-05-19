@@ -167,7 +167,7 @@
 	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/outside/zoo
-	name = "The Zoo"
+	name = "Abandoned Research Lab"
 	icon_state = "erisgreen"
 	dynamic_lighting = TRUE
 
@@ -176,6 +176,7 @@
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
 	dynamic_lighting = TRUE
+	requires_power = 0
 
 /area/nadezhda/maintenance/outside/monster_cave
 	name = "Monster Cave"
@@ -188,11 +189,13 @@
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
 	dynamic_lighting = TRUE
+	requires_power = 0
 
 /area/nadezhda/maintenance/outside/smuggler_zone_u
 	name = "Smuggler Base Underground"
 	icon_state = "erisgreen"
 	dynamic_lighting = TRUE
+	requires_power = 0
 
 //Outside natural areas
 
@@ -396,7 +399,7 @@
 	sound_env = MEDIUM_SOFTFLOOR
 
 /area/nadezhda/command/armory
-	name = "\improper Bridge Armory"
+	name = "\improper Command Center Armory"
 	icon_state = "bridge"
 	sound_env = SMALL_ENCLOSED
 

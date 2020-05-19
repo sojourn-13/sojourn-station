@@ -258,7 +258,6 @@
 		/datum/design/autolathe/part/spikes,
 		/datum/design/autolathe/part/dampener,
 	)
-	..()
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits
 	disk_name = "Artificer's ESPO-830 Circuits"

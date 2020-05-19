@@ -141,7 +141,7 @@
 	name_plural = "Kriosans"
 	default_form = FORM_KRIOSAN
 	obligate_form = TRUE
-	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite, /datum/unarmed_attack/needle)
+	unarmed_types = list(/datum/unarmed_attack/needle, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	darksight = 8
 	num_alternate_languages = 2
 	name_language = null
@@ -174,6 +174,7 @@
 		)
 	permitted_tail  = list("Cross Fox Tail",
 		"Curly Tail",
+		"Docked Tail",
 		"Fennec Tail, Downwards",
 		"Fennec Tail, Upwards",
 		"Fennecsune Tails",
@@ -255,7 +256,7 @@
 		STAT_COG = -20
 	)
 
-	permitted_ears  = list("Naramad Ears")
+	permitted_ears  = list("Naramad Ears", "Sleek Ears")
 	permitted_tail  = list("Naramad Tail", "Naramad Tail 2")
 	permitted_wings = list()
 
