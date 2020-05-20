@@ -25,7 +25,7 @@
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
 	speed = 18
-	move_to_delay = 8
+	move_to_delay = 2
 	turns_per_move = 2
 	vision_range = 12
 	aggro_vision_range = 12
