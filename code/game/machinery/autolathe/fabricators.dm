@@ -16,11 +16,9 @@
 
 
 	var/list/recipes = list(
-		/datum/craft_recipe/weapon/improvised_maul,
-		/datum/craft_recipe/weapon/rxd,
-		/datum/craft_recipe/weapon/nailed_bat,
-		list(name="Milk, 30u", cost=60, reagent="milk"),
-		list(name="Slab of meat", cost=50, path=/obj/item/weapon/reagent_containers/food/snacks/meat)
+		/obj/item/weapon/tool/knife,
+		/obj/item/weapon/crossbowframe,
+		/obj/item/weapon/melee/nailstick
 	)
 
 
