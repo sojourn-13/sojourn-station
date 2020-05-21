@@ -12,7 +12,6 @@
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_NONE
-	also_known_languages = list(LANGUAGE_CYRILLIC = 60, LANGUAGE_SERBIAN = 100)
 
 	outfit_type = /decl/hierarchy/outfit/job/foreman
 
@@ -61,7 +60,6 @@
 	difficulty = "Medium."
 	selection_color = "#a7bbc6"
 	wage = WAGE_NONE
-	also_known_languages = list(LANGUAGE_CYRILLIC = 30)
 
 	outfit_type = /decl/hierarchy/outfit/job/salv
 
@@ -104,7 +102,6 @@
 	difficulty = "Medium."
 	selection_color = "#a7bbc6"
 	wage = WAGE_NONE
-	also_known_languages = list(LANGUAGE_CYRILLIC = 30)
 
 	outfit_type = /decl/hierarchy/outfit/job/pro
 

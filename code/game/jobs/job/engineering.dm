@@ -11,7 +11,6 @@
 	difficulty = "Medium."
 	selection_color = "#c7b97b"
 	req_admin_notify = 1
-	also_known_languages = list(LANGUAGE_CYRILLIC = 100, LANGUAGE_SERBIAN = 25)
 	wage = WAGE_COMMAND
 	ideal_character_age = 50
 	minimum_character_age = 30
@@ -72,7 +71,6 @@
 	supervisors = "the Guild Master"
 	difficulty = "Medium."
 	selection_color = "#d5c88f"
-	also_known_languages = list(LANGUAGE_CYRILLIC = 100, LANGUAGE_SERBIAN = 5)
 	wage = WAGE_PROFESSIONAL
 
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer

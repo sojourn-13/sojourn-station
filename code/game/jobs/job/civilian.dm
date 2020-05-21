@@ -9,7 +9,6 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 15, LANGUAGE_JIVE = 80)
 	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
 	initial_balance = 3000
 	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks

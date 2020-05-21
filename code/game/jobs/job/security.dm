@@ -12,7 +12,6 @@
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
-	also_known_languages = list(LANGUAGE_CYRILLIC = 60, LANGUAGE_SERBIAN = 60)
 	ideal_character_age = 40
 	minimum_character_age = 30
 
@@ -68,7 +67,6 @@
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
-	also_known_languages = list(LANGUAGE_CYRILLIC = 60, LANGUAGE_SERBIAN = 60)
 	ideal_character_age = 40
 	minimum_character_age = 30
 
@@ -123,7 +121,6 @@
 	selection_color = "#a7bbc6"
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
-	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 25)
 	minimum_character_age = 25
 
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
@@ -172,7 +169,6 @@
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
-	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 25)
 	minimum_character_age = 25
 
 	outfit_type = /decl/hierarchy/outfit/job/security/serg
@@ -221,7 +217,6 @@
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
-	also_known_languages = list(LANGUAGE_CYRILLIC = 50, LANGUAGE_SERBIAN = 50)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/inspector
 
@@ -271,7 +266,6 @@
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
-	also_known_languages = list(LANGUAGE_CYRILLIC = 5)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
@@ -321,7 +315,6 @@
 	//alt_titles = list("Blackshield Junior Trooper")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
-	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 25)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
@@ -370,7 +363,6 @@
 	//alt_titles = list("Marshal Junior Operative")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
-	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 25)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 
