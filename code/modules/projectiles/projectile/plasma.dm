@@ -26,3 +26,4 @@
 	damage = 0
 	stun = 1
 	weaken = 5
+	knockback = 2
