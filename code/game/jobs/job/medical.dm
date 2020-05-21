@@ -11,7 +11,6 @@
 	difficulty = "Hard."
 	selection_color = "#94a87f"
 	req_admin_notify = 1
-	also_known_languages = list(LANGUAGE_CYRILLIC = 10, LANGUAGE_SERBIAN = 5)
 	wage = WAGE_COMMAND
 	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
 
@@ -67,7 +66,6 @@
 	difficulty = "Medium."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
-	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
 	minimum_character_age = 25
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
@@ -101,9 +99,9 @@
 	icon_state = "player-green"
 	join_tag = /datum/job/doctor
 
-/datum/job/chemist
-	title = "Soteria Chemist"
-	flag = CHEMIST
+/datum/job/orderly
+	title = "Soteria Orderly"
+	flag = ORDERLY
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
 	faction = MAP_FACTION
@@ -113,39 +111,39 @@
 	difficulty = "Medium."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
-	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
 
-	outfit_type = /decl/hierarchy/outfit/job/medical/chemist
+	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology
 	)
 
 	stat_modifiers = list(
-		STAT_COG = 10,
-		STAT_MEC = 10,
-		STAT_BIO = 30
+		STAT_TGH = 20,
+		STAT_ROB = 20,
+		STAT_VIG = 10,
+		STAT_BIO = 15
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/scanner)
 
-	description = "The Chemist is both man of medicine and science, mixing colorful liquids to make other similarly colorful, but more useful, liquids.<br>\
-	Your primary role is that of a pharmacist. Prepare medicines for use by the medical staff, so that they can capably treat a broad variety of conditions.<br>\
-	Your secondary responsibility is that of a chemical manufacturer. Efficiently fulfill requests for your Soteria colleagues. Don't question why, it's above your paygrade.<br>\
-	Your third duty is to run a chemical sales outlet. You may get requests from other colonists to make acid, chemical grenades, smoke, napalm, or perhaps even just medicines.<br>\
+	description = "The Orderly is not a man of science nor medicine, they are strictly in charge of enforcing the chief biolabs orders and sometimes the chief research overseer's orders.<br>\
+	Your primary role is that of a thug for medical. You make sure that medical remains safe by ensuring people don't trespass or steal items and remove those who shouldn't be there, by force if necessary.<br>\
+	Your secondary responsibility is that of an soteria enforcer. Actions that require in house enforcement such as aiding doctors and security with violent patients in medical, securing the virology lab during an outbreak, and aiding in the destruction of escape slimes or kudzu from science.<br>\
+	Your third duty is to aid medical doctors and paramedics in fixing patients, this can include retrieving chemicals, doing basic triage, and accompanying paramedics to aid them in getting injured patients.<br>\
 	You are fully licensed to sell any and all chemicals to all colonists. If someone isn't an employee of Soteria Institute, charge them for their chemicals.<br>\
-	It's worth noting that you don't always have everything you need on hand. Some recipes will require external ingredients - acquire these however you can."
+	It's worth noting that you function heavily as a nurse when not acting as muscle and treatment of patients should be priority, in particular when assisting doctors."
 
-	duties = "Mix medicines for doctors.<br>\
-		Maintain a good stock of bicaridine, dexalin, peridaxon, and alkysine.<br>\
-		Fill chemical requests for soteria staff.<br>\
-		Sell chemicals and chem grenades to outsiders."
+	duties = "Act as a guard for medical, ensuring unneeded colonist leave and nothing is stolen.<br>\
+		Aid medical doctors and paramedics in any way you can.<br>\
+		Act as a nurse for minor injuries, treating patients that a doctor needn't bother with.<br>\
+		Ensure that any outbreaks are contained, such as slimes, infected monkies, or kudzu."
 
-/obj/landmark/join/start/chemist
-	name = "Soteria Chemist"
+/obj/landmark/join/start/chemist //This says chemist so I didn't have to edit the map shit when I changed this. Fix later.
+	name = "Soteria Orderly"
 	icon_state = "player-green"
-	join_tag = /datum/job/chemist
+	join_tag = /datum/job/orderly
 
 /datum/job/psychiatrist
 	title = "Soteria Psychiatrist"
@@ -159,7 +157,6 @@
 	supervisors = "the Soteria Biolab Overseer"
 	difficulty = "Easy To Medium."
 	selection_color = "#a8b69a"
-	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
 
@@ -204,7 +201,6 @@
 	difficulty = "Medium."
 	selection_color = "#a8b69a"
 	wage = WAGE_LABOUR_HAZARD
-	also_known_languages = list(LANGUAGE_CYRILLIC = 20, LANGUAGE_SERBIAN = 15)
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/paramedic
 	access = list(

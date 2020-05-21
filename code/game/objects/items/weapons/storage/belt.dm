@@ -118,7 +118,9 @@
 		/obj/item/clothing/glasses,
 		/obj/item/weapon/tool/crowbar,
 		/obj/item/device/lighting/toggleable/flashlight,
-		/obj/item/weapon/extinguisher/mini
+		/obj/item/weapon/extinguisher/mini,
+		/obj/item/tape/medical,
+		/obj/item/device/flash
 	)
 
 /obj/item/weapon/storage/belt/medical/emt

@@ -31,7 +31,7 @@ var/const/MEDSCI			=(1<<1)
 
 var/const/CRO				=(1<<0)
 var/const/SCIENTIST			=(1<<1)
-var/const/CHEMIST			=(1<<2)
+var/const/ORDERLY			=(1<<2)
 var/const/CBO				=(1<<3)
 var/const/DOCTOR			=(1<<4)
 var/const/PSYCHIATRIST		=(1<<5)

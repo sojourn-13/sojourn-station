@@ -27,18 +27,18 @@
 	l_hand = /obj/item/weapon/storage/firstaid/adv
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
 
-/decl/hierarchy/outfit/job/medical/chemist
-	name = OUTFIT_JOB_NAME("Soteria - Chemist")
-	uniform = /obj/item/clothing/under/rank/chemist
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/chemist
-	id_type = /obj/item/weapon/card/id/chem
-	pda_type = /obj/item/modular_computer/pda/science/chemistry
+/decl/hierarchy/outfit/job/medical/orderly
+	name = OUTFIT_JOB_NAME("Soteria - Orderly")
+	uniform = /obj/item/clothing/under/scrubs
+	id_type = /obj/item/weapon/card/id/med
+	pda_type = /obj/item/modular_computer/pda/science/medical
+	suit =  /obj/item/clothing/suit/armor/vest
+	head = /obj/item/clothing/head/surgery
+	backpack_contents = list(/obj/item/weapon/gun/energy/stunrevolver = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/handcuffs = 2, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/device/flash = 1)
 
-/decl/hierarchy/outfit/job/medical/chemist/New()
+/decl/hierarchy/outfit/job/medical/orderly/New()
 	..()
-	backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/weapon/storage/backpack/orange/chemist;
-	backpack_overrides[/decl/backpack_outfit/backsport]     = /obj/item/weapon/storage/backpack/sport/orange;
-	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/weapon/storage/backpack/satchel/orange/chemist;
+	BACKPACK_OVERRIDE_MEDICAL
 
 /decl/hierarchy/outfit/job/medical/psychiatrist
 	name = OUTFIT_JOB_NAME("Soteria - Psychiatrist")
