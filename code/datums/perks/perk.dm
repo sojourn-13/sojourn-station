@@ -42,9 +42,9 @@
 		toggle(usr)
 
 /datum/perk/proc/toggle()
-	if(is_active() && deactivate(holder))
-		to_chat(usr, "You deactivate [src]")
-	else if(activate(holder))
+	//if(is_active() && deactivate(holder))
+		//to_chat(usr, "You deactivate [src]")
+	if(activate(holder))
 		to_chat(usr, "You activate [src]")
 
 /datum/perk/proc/teach(datum/stat_holder/S)

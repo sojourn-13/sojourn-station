@@ -1000,7 +1000,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 
 /datum/reagent/medicine/sergatonin
 	name = "Naratonin"
-	id = "naraatonin"
+	id = "naratonin"
 	description = "Naratonin is a highly effective, short term, muscle stimulant naturally produced by naramadi when under stress."
 	taste_description = "acid"
 	reagent_state = LIQUID
