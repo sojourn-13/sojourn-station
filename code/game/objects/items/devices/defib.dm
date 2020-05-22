@@ -65,7 +65,7 @@
 		new_overlays += "[initial(icon_state)]-nocell"
 
 	cut_overlays()
-	add_overlays(new_overlays)
+	add_overlay(new_overlays)
 
 /obj/item/device/defib_kit/ui_action_click()
 	toggle_paddles()
