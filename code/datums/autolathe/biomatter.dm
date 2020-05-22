@@ -32,10 +32,11 @@
 //[/NUTRIMENTS]
 
 //[THINGS]
+/*  //Commented out because broke.
 /datum/design/bioprinter/cardboard
 	name = "Cardboard"
 	build_path = /obj/item/stack/material/cardboard/random // I guess it depends on the protein content.
-
+*/
 
 /datum/design/bioprinter/wallet
 	name = "Wallet"
@@ -213,3 +214,7 @@
 /datum/design/bioprinter/pouch/tubular/vial
 	name = "Tubular vial pouch"
 	build_path = /obj/item/weapon/storage/pouch/tubular/vial
+
+/datum/design/bioprinter/sling
+	name = "Universal sling"
+	build_path = /obj/item/clothing/suit/sling

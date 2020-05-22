@@ -479,7 +479,7 @@
 		/datum/design/bioprinter/l4z,
 		/datum/design/bioprinter/rh,
 
-		/datum/design/bioprinter/cardboard,
+		//datum/design/bioprinter/cardboard,
 		/datum/design/bioprinter/wallet,
 		/datum/design/bioprinter/botanic_leather,
 		/datum/design/bioprinter/leather/satchel,
@@ -517,7 +517,8 @@
 		/datum/design/bioprinter/pouch/medium_generic,
 		/datum/design/bioprinter/pouch/large_generic,
 		/datum/design/bioprinter/pouch/tubular,
-		/datum/design/bioprinter/pouch/tubular/vial
+		/datum/design/bioprinter/pouch/tubular/vial,
+		/datum/design/bioprinter/sling
 
 
 	)
