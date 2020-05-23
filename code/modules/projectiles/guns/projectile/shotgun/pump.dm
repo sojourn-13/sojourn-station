@@ -56,7 +56,6 @@
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	w_class = ITEM_SIZE_BULKY
-	force = WEAPON_FORCE_PAINFUL
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 10)
 	price_tag = 900
@@ -76,7 +75,6 @@
 	max_shells = 3
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_PAINFUL
-	flags =  CONDUCT
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5)
 	price_tag = 500
