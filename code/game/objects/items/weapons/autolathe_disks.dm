@@ -933,7 +933,7 @@
 	)
 
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/exotic_ammo
 	disk_name = "SA Exotic Ammunition Pack"
 	icon_state = "black"
 	license = 20

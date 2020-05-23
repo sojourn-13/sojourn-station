@@ -15,7 +15,7 @@
 	recoil_buildup = 14
 	one_hand_penalty = 15 //full sized shotgun level
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone_sawn
+	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn
 
 
 /obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn
