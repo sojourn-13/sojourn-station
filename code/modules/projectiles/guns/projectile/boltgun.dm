@@ -167,7 +167,7 @@
 	sharp = 0
 	recoil_buildup = 60
 	penetration_multiplier = 0.5
-	damage_multiplier = 0.6
+	damage_multiplier = 1.1
 	fire_delay = 18
 	one_hand_penalty = 10
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
