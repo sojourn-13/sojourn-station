@@ -375,6 +375,28 @@ obj/item/projectile/bullet/kurtz
 	. = ..()
 	icon_state = "birdshot-[rand(1,4)]"
 
+//For the love of God don't make this common.
+/obj/item/projectile/bullet/shotgun/payload
+	name = "explosive bolt"
+	icon_state = "bolter"
+	damage = 40
+	agony = 5
+	knockback = 1
+	var/fire_stacks = 2
+	armor_penetration = 10
+	check_armour = ARMOR_BOMB
+	sharp = TRUE
+	edge = TRUE
+	step_delay = 0.9
+
+/obj/item/projectile/bullet/shotgun/payload/on_hit(atom/target)
+	explosion(target, -1, 0, 2)
+	return TRUE
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+
 //Miscellaneous
 /obj/item/projectile/bullet/blank
 	invisibility = 101

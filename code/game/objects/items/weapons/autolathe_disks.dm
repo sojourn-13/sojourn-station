@@ -933,6 +933,29 @@
 	)
 
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/exotic_ammo
+	disk_name = "SA Exotic Ammunition Pack"
+	icon_state = "black"
+	license = 20
+
+	designs = list(
+		/datum/design/autolathe/ammo/m12empty,
+		/datum/design/autolathe/ammo/sbaw_empty,
+		/datum/design/autolathe/ammo/hrifle_drum_empty,
+		/datum/design/autolathe/ammo/rifle_pk_empty,
+		/datum/design/autolathe/ammo/lrifle_belt_empty,
+		/datum/design/autolathe/ammo/maxim_empty,
+		/datum/design/autolathe/ammo/c10x24,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/rifle_ammobox,
+		/datum/design/autolathe/ammo/hrifle_ammobox,
+		/datum/design/autolathe/ammo/shotgun,
+		/datum/design/autolathe/ammo/shotgun_pellet,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/box_10x24,
+		/datum/design/autolathe/ammo/box_antim,
+		)
+
 // G U N S (minus excelsior and research)
 // Pack is used when there is more than one gun on the disk
 
@@ -1145,6 +1168,19 @@
 		/datum/design/autolathe/ammo/shotgun_flash,
 		)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sbaw
+	disk_name = "20mm SBAW disk"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/sbaw,
+		/datum/design/autolathe/ammo/sbaw_slug,
+		/datum/design/autolathe/ammo/sbaw_pellet,
+		/datum/design/autolathe/ammo/sbaw_beanbag,
+		/datum/design/autolathe/ammo/sbaw_payload,
+		)
+
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator
 	disk_name = "Absolute Armory - 20mm Regulator Shotgun"
 	icon_state = "neotheology"
@@ -1298,6 +1334,42 @@
 		/datum/design/autolathe/ammo/lrifle_short_practice,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/saw
+	disk_name = "SA - .257 Pegasus LMG"
+	icon_state = "black"
+
+	license = 4
+	designs = list(
+		/datum/design/autolathe/gun/saw,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/lrifle_belt,
+		/datum/design/autolathe/ammo/lrifle_short_practice,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sika
+	disk_name = "SA - .257 Sika Rifle"
+	icon_state = "black"
+
+	license = 4
+	designs = list(
+		/datum/design/autolathe/gun/sika,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/roe
+	disk_name = "H&S - .257 Roe Rifle"
+	icon_state = "frozenstar"
+
+	license = 4
+	designs = list(
+		/datum/design/autolathe/gun/sika,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice,
+	)
+
 
 // .30 Rifles
 

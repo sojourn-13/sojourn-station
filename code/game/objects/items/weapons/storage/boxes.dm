@@ -168,47 +168,47 @@
 	new /obj/item/weapon/dnainjector/m2h(src)
 
 /obj/item/weapon/storage/box/shotgunammo
-	name = "box of shotgun slugs"
+	name = "box of 20mm shotgun slugs"
 	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
 	illustration = "ammo"
 
 /obj/item/weapon/storage/box/shotgunammo/slug
-	name = "box of shotgun slugs"
+	name = "box of 20mm shotgun slugs"
 
 /obj/item/weapon/storage/box/shotgunammo/slug/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 
 /obj/item/weapon/storage/box/shotgunammo/blanks
-	name = "box of blank shells"
+	name = "box of blank 20mm shells"
 
 /obj/item/weapon/storage/box/shotgunammo/blanks/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/blank/prespawned(src)
 
 /obj/item/weapon/storage/box/shotgunammo/beanbags
-	name = "box of beanbag shells"
+	name = "box of 20mm beanbag shells"
 
 /obj/item/weapon/storage/box/shotgunammo/beanbags/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/beanbag/prespawned(src)
 
 /obj/item/weapon/storage/box/shotgunammo/buckshot
-	name = "box of shotgun shells"
+	name = "box of 20mm shotgun shells"
 
 /obj/item/weapon/storage/box/shotgunammo/buckshot/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 
 /obj/item/weapon/storage/box/shotgunammo/flashshells
-	name = "box of illumination shells"
+	name = "box of 20mm illumination shells"
 
 /obj/item/weapon/storage/box/shotgunammo/flashshells/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/flash/prespawned(src)
 
 /obj/item/weapon/storage/box/shotgunammo/stunshells
-	name = "box of stun shells"
+	name = "box of 20mm stun shells"
 
 /obj/item/weapon/storage/box/shotgunammo/stunshells/populate_contents()
 	new /obj/item/ammo_casing/shotgun/stunshell/prespawned(src)
@@ -220,14 +220,21 @@
 	new /obj/item/ammo_casing/shotgun/stunshell/prespawned(src)
 
 /obj/item/weapon/storage/box/shotgunammo/practiceshells
-	name = "box of practice shells"
+	name = "box of 20mm practice shells"
 
 /obj/item/weapon/storage/box/shotgunammo/practiceshells/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/practice/prespawned(src)
 
+/obj/item/weapon/storage/box/shotgunammo/payload
+	name = "box of 20mm explosive shells"
+
+/obj/item/weapon/storage/box/shotgunammo/payload/populate_contents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun/payload/prespawned(src)
+
 /obj/item/weapon/storage/box/sniperammo
-	name = "box of 14.5mm shells"
+	name = "box of .60-06 shells"
 	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
 	illustration = "ammo"
 

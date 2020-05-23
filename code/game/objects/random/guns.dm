@@ -42,7 +42,10 @@
 				/obj/item/weapon/gun/projectile/automatic/ostwind = 0.5,\
 				/obj/item/weapon/gun/projectile/automatic/omnirifle = 0.5,\
 				/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine = 0.5,\
-				/obj/item/weapon/gun/projectile/boltgun= 3,\
+				/obj/item/weapon/gun/projectile/boltgun = 3,\
+				/obj/item/weapon/gun/projectile/boltgun/sa = 3,\
+				/obj/item/weapon/gun/projectile/boltgun/scout/light = 2,\
+				/obj/item/weapon/gun/projectile/boltgun/scout/light/wood = 3,\
 				/obj/item/weapon/gun/projectile/firefly = 2,\
 				/obj/item/weapon/gun/projectile/automatic/straylight = 2,\
 				/obj/item/weapon/gun/projectile/automatic/wirbelwind = 1))
@@ -60,11 +63,14 @@
 /obj/random/gun_combat/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/projectile/automatic/texan = 3,\
 				/obj/item/weapon/gun/projectile/automatic/mac = 4,\
-				/obj/item/weapon/gun/projectile/automatic/sts = 3,\
+				/obj/item/weapon/gun/projectile/automatic/sts/lrifle = 3,\
+				/obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn = 1,\
 				/obj/item/weapon/gun/projectile/automatic/sts/rifle = 1,\
 				/obj/item/weapon/gun/projectile/automatic/sts/hrifle = 1,\
+				/obj/item/weapon/gun/projectile/automatic/lmg/saw = 1,\
 				/obj/item/weapon/gun/projectile/automatic/pitbull = 1,\
 				/obj/item/weapon/gun/projectile/automatic/ak47/sa = 3,\
+				/obj/item/weapon/gun/projectile/automatic/ak47/sawn = 1,\
 				/obj/item/weapon/gun/projectile/automatic/ostwind = 1,\
 				/obj/item/weapon/gun/projectile/automatic/bulldog = 3,\
 				/obj/item/weapon/gun/projectile/automatic/bulldog/rds = 2,\
@@ -99,6 +105,7 @@
 				/obj/item/weapon/gun/projectile/colt/NM_colt = 2,\
 				/obj/item/weapon/gun/projectile/colt/ten = 2,\
 				/obj/item/weapon/gun/projectile/colt/ten/dark = 1,\
+				/obj/item/weapon/gun/projectile/automatic/lmg/saw = 1,\
 				/obj/item/weapon/gun/projectile/lamia/scoped = 1,\
 				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 1,\
 				/obj/item/weapon/gun/projectile/revolver/deckard = 0.8,\
