@@ -67,6 +67,7 @@
 				/obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn = 1,\
 				/obj/item/weapon/gun/projectile/automatic/sts/rifle = 1,\
 				/obj/item/weapon/gun/projectile/automatic/sts/hrifle = 1,\
+				/obj/item/weapon/gun/projectile/automatic/lmg/saw = 1,\
 				/obj/item/weapon/gun/projectile/automatic/pitbull = 1,\
 				/obj/item/weapon/gun/projectile/automatic/ak47/sa = 3,\
 				/obj/item/weapon/gun/projectile/automatic/ak47/sawn = 1,\
@@ -104,6 +105,7 @@
 				/obj/item/weapon/gun/projectile/colt/NM_colt = 2,\
 				/obj/item/weapon/gun/projectile/colt/ten = 2,\
 				/obj/item/weapon/gun/projectile/colt/ten/dark = 1,\
+				/obj/item/weapon/gun/projectile/automatic/lmg/saw = 1,\
 				/obj/item/weapon/gun/projectile/lamia/scoped = 1,\
 				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 1,\
 				/obj/item/weapon/gun/projectile/revolver/deckard = 0.8,\
