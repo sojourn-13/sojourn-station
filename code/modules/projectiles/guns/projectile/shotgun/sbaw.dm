@@ -59,6 +59,7 @@
 	penetration_multiplier = 1.5
 	damage_multiplier = 1.5
 	recoil_buildup = 5
+	fire_delay = 0.5
 	firemodes = list(
 	SEMI_AUTO_NODELAY,
 	FULL_AUTO_400,
