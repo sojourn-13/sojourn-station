@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/shotgun/pump
 	name = "\"Grizzly\" shotgun"
-	desc = "A common open-source pump-action shotgun, a bastard child of the three primary pump shotguns on the market, all rolled together once their patents expired. Uses 20mm Smoothbore shells."
+	desc = "A common open-source pump-action shotgun, a bastard child of the three primary pump shotguns on the market, all rolled together once their patents expired. Can hold up to 4+1 20mm shells in its tube magazine."
 	icon = 'icons/obj/guns/projectile/shotgun.dmi'
 	icon_state = "shotgun"
 	item_state = "shotgun"
@@ -68,7 +68,7 @@
 
 /obj/item/weapon/gun/projectile/shotgun/pump/obrez
 	name = "sawn-off \"Grizzly\" shotgun"
-	desc = "A common open-source pump-action shotgun,hacked up, sawn down, and ready to rob a liquor store."
+	desc = "A common open-source pump-action shotgun, hacked up, sawn down, and ready to rob a liquor store."
 	icon = 'icons/obj/guns/projectile/sawnoff/shotgunobrez.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"

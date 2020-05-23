@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/shotgun/pump/gladstone
 	name = "\"Gladstone\" combat shotgun"
 	desc = "A venerable shotgun with incredibly dubious patent claims by H&S Arms, it serves as a common shotgun alongside a number of virtually ideantical weapons across the galaxy. \
-	Has a 7+1 20mm shell tube magazine."
+	Can hold up to 7+1 20mm shells in its tube magazine."
 	icon = 'icons/obj/guns/projectile/gladstone.dmi'
 	icon_state = "gladstone"
 	item_state = "gladstone"
@@ -20,7 +20,7 @@
 
 /obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn
 	name = "\"Gladstone\" stakeout shotgun"
-	desc = "A venerable shotgun that's been destroyed by some sort of heartless monster. Has a 4+1 shell tube magazine."
+	desc = "A venerable shotgun that's been destroyed by some sort of heartless monster. Can hold up to 4+1 20mm shells in its tube magazine."
 	icon = 'icons/obj/guns/projectile/sawnoff/gladstone.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"

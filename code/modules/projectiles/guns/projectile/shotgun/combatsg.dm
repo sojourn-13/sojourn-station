@@ -22,7 +22,7 @@
 /obj/item/weapon/gun/projectile/shotgun/pump/combat/short
 	name = "\"Regulator\" stakeout shotgun"
 	desc = "Designed for close encounters, the Regulator is widely regarded as a weapon of choice for protecting against boarders. \
-	Without its stock, it's much more compact, but much harder to use. Can hold up to 6+1 shells in tube magazine."
+	Without its stock, it's much more compact, but much harder to use. Can hold up to 6+1 20mm shells in its tube magazine."
 	icon = 'icons/obj/guns/projectile/sawnoff/cshotgun.dmi'
 	icon_state = "short"
 	item_state = "short"
