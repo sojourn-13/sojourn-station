@@ -21,7 +21,7 @@
 	new /obj/random/pack/cloth/low_chance(src)
 	new /obj/random/pack/cloth/low_chance(src)
 	new /obj/random/pack/gun_loot/low_chance(src)
-
+	new /obj/random/cluster/roaches/lower_chance(src)
 
 
 
@@ -43,7 +43,7 @@
 	new /obj/random/pack/tech_loot(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
-
+	new /obj/random/cluster/roaches/lower_chance(src)
 
 
 
@@ -72,7 +72,7 @@
 	new /obj/random/lathe_disk/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
-
+	new /obj/random/cluster/roaches/lower_chance(src)
 
 
 
@@ -104,7 +104,7 @@
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/medical/low_chance(src)
-
+	new /obj/random/cluster/roaches/lower_chance(src)
 
 
 
@@ -129,7 +129,7 @@
 	new /obj/random/medical(src)
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/medical/low_chance(src)
-
+	new /obj/random/cluster/roaches/lower_chance(src)
 
 
 
@@ -149,7 +149,7 @@
 	new /obj/random/pack/gun_loot(src)
 	new /obj/random/pack/gun_loot(src)
 	new /obj/random/pack/gun_loot(src)
-
+	new /obj/random/cluster/roaches/lower_chance(src)
 
 
 //Closet with unfair bullshit inside

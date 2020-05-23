@@ -127,6 +127,8 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/rig/damaged = 1.5,
 					/obj/random/voidsuit = 4,
 					/obj/random/pouch = 2,
+					/obj/random/gun_combat = 0.5,
+					/obj/random/gun_fancy 0.5,
 					/obj/random/tool_upgrade/rare = 4,
 					/obj/random/rig_module/rare = 4,
 					/obj/random/credits/c1000 = 3,

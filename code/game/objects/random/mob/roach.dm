@@ -33,6 +33,11 @@
 	icon_state = "hostilemob-brown-cluster-low"
 	spawn_nothing_percentage = 60
 
+/obj/random/cluster/roaches/lower_chance
+	name = "lower chance cluster of roaches"
+	icon_state = "hostilemob-brown-cluster-low"
+	spawn_nothing_percentage = 80
+
 // For Scrap Beacon
 /obj/random/cluster/roaches/beacon/item_to_spawn()
 	return /mob/living/carbon/superior_animal/roach/nanite
