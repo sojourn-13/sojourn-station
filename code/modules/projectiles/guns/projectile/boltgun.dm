@@ -137,6 +137,7 @@
 	price_tag = 2000
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
+	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/light
 
@@ -205,6 +206,7 @@
 	load_method = SINGLE_CASING
 	fire_delay = 18
 	one_hand_penalty = 15
+	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	saw_off = FALSE
 
 /obj/item/weapon/gun/projectile/boltgun/sawn/light/wood
