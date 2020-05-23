@@ -143,7 +143,7 @@
 /obj/item/weapon/gun/projectile/boltgun/scout/light/wood
 	name = "\"Roe\" light boltgun"
 	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
-	icon = 'icons/obj/guns/projectile/lightboltgun.dmi'
+	icon = 'icons/obj/guns/projectile/lightboltgun_wood.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	max_shells = 10
@@ -210,7 +210,7 @@
 /obj/item/weapon/gun/projectile/boltgun/sawn/light/wood
 	name = "\"obrez\" light boltgun"
 	desc = "A crudly mangled and sawn-down .257 bolt action rifle. Rifle was fine."
-	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
+	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"
 	caliber = CAL_LRIFLE
