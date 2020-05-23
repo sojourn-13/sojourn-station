@@ -16,9 +16,10 @@
 	price_tag = 3000
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.3
+	zoom_factor = 0.3
 	fire_delay = 12
-	recoil_buildup = 20
-	one_hand_penalty = 30
+	recoil_buildup = 25
+	one_hand_penalty = 50
 	fire_sound = 'sound/weapons/guns/fire/heavy_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
