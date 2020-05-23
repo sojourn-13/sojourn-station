@@ -20,7 +20,6 @@
 	price_tag = 20000
 	one_hand_penalty = 100
 	var/bolt_open = 0
-	var/item_suffix = ""
 	zoom_factor = 2.0
 	twohanded = TRUE
 

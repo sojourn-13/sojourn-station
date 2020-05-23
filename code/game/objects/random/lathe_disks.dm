@@ -24,6 +24,9 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/gladstone = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sbaw = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/roe = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sika = 2,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firefly = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/straylight = 1,

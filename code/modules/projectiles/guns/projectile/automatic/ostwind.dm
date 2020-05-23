@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/automatic/ostwind
-	name = "\"Ostwind\" assault rifle"
+	name = "\"Ostwind\" carbine"
 	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense. Primarily used by law enforcement, counter-terror units, and private security. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/ostwind.dmi'
 	icon_state = "ostwind"

@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/automatic/pitbull
-	name = "\"Pitbull\" carbine rifle"
+	name = "\"Pitbull\" carbine"
 	desc = "The M7 Pitbull is an older bullpup rifle model manufactured by \"Holland & Sullivan\" primarily for planetary defense forces and private military firms. It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/pitbull.dmi'
 	icon_state = "pitbull"

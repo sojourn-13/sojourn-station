@@ -151,6 +151,10 @@
 	name = "H&S SG \"Gladstone\""
 	build_path = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone
 
+/datum/design/autolathe/gun/sbaw
+	name = "SF ASG \"Mjolnir\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/sbaw
+
 //C A R B I N E S
 
 /datum/design/autolathe/gun/bulldog
@@ -180,6 +184,19 @@
 /datum/design/autolathe/gun/sts25
 	name = "SA AR .257 \"STS-25\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/sts
+
+/datum/design/autolathe/gun/saw
+	name = "SA LMG .257 \"Pegasus\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/lmg/saw
+
+/datum/design/autolathe/gun/sika
+	name = "SA BR .257 \"Sika\""
+	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/light
+
+/datum/design/autolathe/gun/roe
+	name = "HS BR .257 \"Roe\""
+	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/light/wood
+
 
 ///R I F L E S
 //7 . 5 m m

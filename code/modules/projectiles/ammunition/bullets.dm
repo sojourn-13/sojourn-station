@@ -202,7 +202,7 @@
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag shell"
-	desc = "A beanbag shell."
+	desc = "A 20mm beanbag shell."
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag
 	matter = list(MATERIAL_STEEL = 1)
@@ -224,7 +224,7 @@
 
 /obj/item/ammo_casing/shotgun/blank
 	name = "shotgun shell"
-	desc = "A blank shell."
+	desc = "A blank 20mm shell."
 	icon_state = "blshell"
 	projectile_type = /obj/item/projectile/bullet/blank
 	matter = list(MATERIAL_STEEL = 1)
@@ -235,13 +235,25 @@
 
 /obj/item/ammo_casing/shotgun/practice
 	name = "shotgun shell"
-	desc = "A practice shell."
+	desc = "A 20mm practice shell."
 	icon_state = "pshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun/practice
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/practice/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/shotgun/payload
+	name = "explosive shell"
+	desc = "A 20mm explosive shell."
+	icon_state = "glshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun/payload
+	matter = list(MATERIAL_STEEL = 1)
+	maxamount = 5
+	is_caseless = TRUE
+
+/obj/item/ammo_casing/shotgun/payload/prespawned
 	amount = 5
 
 //Can stun in one hit if aimed at the head, but
@@ -286,7 +298,7 @@
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/ammo_casing/a75
-	desc = "A 20mm bullet casing."
+	desc = "A 20mm gyrojet casing."
 	caliber = CAL_70
 	projectile_type = /obj/item/projectile/bullet/gyro
 
