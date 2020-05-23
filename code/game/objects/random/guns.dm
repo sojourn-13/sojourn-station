@@ -16,7 +16,7 @@
 				/obj/item/weapon/gun/projectile/boltgun/sawn/light/wood = 1,\
 				/obj/item/weapon/gun/projectile/boltgun/sawn/light = 1,\
 				/obj/item/weapon/gun/projectile/boltgun/sawn = 1,\
-				/obj/item/weapon/gun/projectile/boltgun/sawn/wood = 1,\
+				/obj/item/weapon/gun/projectile/boltgun/sawn/sa = 1,\
 				/obj/item/weapon/gun/projectile/boltgun/sawn/scout = 1,\
 				/obj/item/weapon/gun/projectile/handmade_pistol = 2,\
 				/obj/item/weapon/gun/projectile/ladon/sa = 1,\
