@@ -63,7 +63,7 @@
 	icon_open = "labcoat_medspec_open"
 	icon_closed = "labcoat_medspec"
 
-/obj/item/clothing/suit/storage/labcoat
+/obj/item/clothing/suit/storage/membrane
 	name = "membrane labcoat"
 	desc = "Longer labcoat with buttons on the side.  Has a significantly larger collar than the standard lab coat, to help protect your face from your mistakes."
 	icon_state = "labcoat_membrane"

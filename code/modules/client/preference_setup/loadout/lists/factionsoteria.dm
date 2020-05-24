@@ -136,9 +136,14 @@
 
 /datum/gear/factionsoteria/labcoatmembrane
 	display_name = "labcoat, membrane"
-	path = /obj/item/clothing/suit/storage/labcoat
-	allowed_roles = list("Soteria Psychiatrist","Soteria Doctor","Chief Biolab Overseer","Chief Research Overseer","Soteria Scientist","Soteria Roboticist")
+	path = /obj/item/clothing/suit/storage/membrane
+	allowed_roles = list("Chief Research Overseer","Soteria Scientist","Soteria Roboticist")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
-
+/datum/gear/factionsoteria/glovesscience
+	display_name = "gloves, scientific"
+	path = /obj/item/clothing/gloves/membrane
+	allowed_roles = list("Chief Research Overseer","Soteria Scientist","Soteria Roboticist")
+	slot = slot_gloves
+	sort_category = "Faction: Soteria"
