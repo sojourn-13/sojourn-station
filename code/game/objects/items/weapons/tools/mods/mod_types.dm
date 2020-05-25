@@ -432,3 +432,22 @@
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
 	I.prefix = "self-healing"
+
+//Armor mods
+/*
+/obj/item/weapon/tool_upgrade/reinforcement/melee
+	name = "melee plating"
+	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its melee resistance."
+	icon_state = "plate"
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 2) //steel to compensate for metal rods used in crafting
+
+
+/obj/item/weapon/tool_upgrade/reinforcement/melee/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.upgrades = list(
+	UPGRADE_BULK = 1
+	)
+	I.prefix = "reinforced"
+	I.required_qualities = list(QUALITY_ARMOR)
+*/

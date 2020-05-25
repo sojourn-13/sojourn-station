@@ -246,7 +246,9 @@
 		/obj/item/weapon/gun/energy/stunrevolver,
 		/obj/item/weapon/gun/projectile/revolver,
 		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn, //short enough to fit in
-		/obj/item/weapon/gun/launcher/syringe
+		/obj/item/weapon/gun/launcher/syringe,
+		/obj/item/weapon/gun/energy/plasma/brigador,
+		/obj/item/weapon/gun/energy/toxgun
 		)
 
 	sliding_behavior = TRUE

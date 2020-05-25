@@ -59,7 +59,7 @@
 
 /obj/structure/sign/faction/technomancers
 	name = "Artificer's Guild"
-	desc = "A sign depicting the insignia of the Technomancer League, the clan of mechanists."
+	desc = "A sign depicting the insignia of the Artificer Guild, the clan of mechanists, engineers, and technicians."
 	icon_state = "technomancers"
 
 /obj/structure/sign/faction/excelsior

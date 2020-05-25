@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/energy/toxgun
-	name = "Prototype: plasma pistol"
-	desc = "A specialized firearm designed to fire lethal plasma rounds or a slow high impact stun shot."
+	name = "\"Centurio\" plasma pistol"
+	desc = "A specialized firearm designed to fire lethal plasma rounds or a slow yet high impact stun shot."
 	icon = 'icons/obj/guns/energy/toxgun.dmi'
 	icon_state = "toxgun"
 	w_class = ITEM_SIZE_NORMAL
@@ -13,6 +13,6 @@
 	damage_multiplier = 1.2
 
 	firemodes = list(
-		list(mode_name="melt", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/lasercannonfire.ogg', fire_delay = 9, projectile_color = "#006633", charge_cost=150),
-		list(mode_name="impact stun", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay = 25, projectile_color = "#ff7f24", charge_cost=400),
+		list(mode_name="melt", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/lasercannonfire.ogg', fire_delay = 9, icon="destroy", projectile_color = "#006633", charge_cost=150),
+		list(mode_name="impact stun", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay = 25, icon="stun", projectile_color = "#ff7f24", charge_cost=400),
 		)

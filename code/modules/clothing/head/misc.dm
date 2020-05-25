@@ -213,7 +213,7 @@
 	name = "bear pelt hat"
 	desc = "Fuzzy."
 	icon_state = "bearpelt"
-	flags_inv = BLOCKHAIR
+	flags_inv = BLOCKHEADHAIR
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/head/turban

@@ -10,6 +10,10 @@
 #define UPGRADE_FORCE_MOD "force_mod"
 #define UPGRADE_FUELCOST_MULT "fuelcost_mult"
 #define UPGRADE_POWERCOST_MULT "powercost_mult"
+#define UPGRADE_MELEE_ARMOR "melee_armor"
+#define UPGRADE_BALLISTIC_ARMOR "ballistic_armor"
+#define UPGRADE_ENERGY_ARMOR "energy_armor"
+#define UPGRADE_BOMB_ARMOR "bomb_armor"
 
 #define UPGRADE_BULK "bulk_mod"
 

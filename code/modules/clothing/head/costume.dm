@@ -152,7 +152,7 @@
 	name = "witch costume wig"
 	desc = "Eeeee~heheheheheheh!"
 	icon_state = "witch"
-	flags_inv = BLOCKHAIR
+	flags_inv = BLOCKHEADHAIR
 	siemens_coefficient = 2.0
 
 /obj/item/clothing/head/costume/halloween/mummy

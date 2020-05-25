@@ -21,7 +21,7 @@
 	switched_on_force = WEAPON_FORCE_BRUTAL
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	w_class = ITEM_SIZE_BULKY
-	slot_flags = SLOT_BELT | SLOT_BACK
+	slot_flags = SLOT_BELT|SLOT_BACK
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 1)
 	switched_on_qualities = list(QUALITY_HAMMERING = 45)
 	switched_off_qualities = list(QUALITY_HAMMERING = 30)

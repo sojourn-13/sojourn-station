@@ -70,8 +70,8 @@
 	desc = "Commie rechargeable L-standardized power cell. Power to the people!"
 	icon_state = "exs_l"
 	origin_tech = list(TECH_POWER = 3)
-	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 3)
-	maxcharge = 8000
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 2)
+	maxcharge = 18000
 
 //Meme cells - for fun and cancer
 
@@ -170,8 +170,8 @@
 	desc = "Commie rechargeable M-standardized power cell. Power to the people!"
 	icon_state = "exs_m"
 	origin_tech = list(TECH_POWER = 3)
-	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 2)
-	maxcharge = 800
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
+	maxcharge = 1100
 
 //SMALL CELLS - for small devices, such as flashlights, analyzers and HUDs.
 
@@ -261,5 +261,5 @@
 	desc = "Commie rechargeable S-standardized power cell. Power to the people!"
 	icon_state = "exs_s"
 	origin_tech = list(TECH_POWER = 3)
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1)
-	maxcharge = 250
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
+	maxcharge = 400
