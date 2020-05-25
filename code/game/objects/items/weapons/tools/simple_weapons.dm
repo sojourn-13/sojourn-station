@@ -226,7 +226,7 @@
 	icon_state = "sledgehammer0"
 	item_state = "sledgehammer1"
 	force = WEAPON_FORCE_BRUTAL
-	slot_flags = SLOT_BELT | SLOT_BACK
+	slot_flags = SLOT_BELT|SLOT_BACK
 	armor_penetration = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5)
@@ -273,10 +273,11 @@
 	wielded_icon = "homewrecker1"
 	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
+	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_NORMAL
 	force_unwielded = WEAPON_FORCE_NORMAL
-	force_wielded = WEAPON_FORCE_DANGEROUS
+	force_wielded = WEAPON_FORCE_ROBUST
 	tool_qualities = list(QUALITY_HAMMERING = 15)
 	attack_verb = list("attacked", "smashed", "bludgeoned", "beaten")
-	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_upgrades = 5
