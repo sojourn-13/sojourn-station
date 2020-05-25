@@ -65,7 +65,7 @@
 
 /obj/item/clothing/suit/storage/membrane
 	name = "membrane labcoat"
-	desc = "Longer labcoat with buttons on the side.  Has a significantly larger collar than the standard lab coat, to help protect your face from your mistakes."
+	desc = "A longer labcoat with buttons on the side. It has a significantly larger collar than the standard lab coat, to help protect your face from your mistakes."
 	icon_state = "labcoat_membrane"
 	item_state = "labcoat_membrane" //Is this even used for anything?
 	blood_overlay_type = "coat"

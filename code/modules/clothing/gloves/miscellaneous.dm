@@ -125,7 +125,7 @@ obj/item/clothing/gloves/fingerless
 
 /obj/item/clothing/gloves/membrane
 	name = "scientific gloves"
-	desc = "Heavy gloves to keep you hands intact for future experiments."
+	desc = "Heavy gloves to keep your hands intact for future experiments."
 	icon_state = "science"
 	item_state = "science"
 	siemens_coefficient = 0.5
