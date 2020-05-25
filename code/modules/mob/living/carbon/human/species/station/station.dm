@@ -134,7 +134,7 @@
 	perks = list(/datum/perk/suddenbrilliance)
 
 /datum/species/marqua/get_bodytype()
-	return "Mar'qua"
+	return "Mar'Qua"
 
 /datum/species/kriosan
 	name = "Kriosan"
