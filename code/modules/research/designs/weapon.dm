@@ -32,9 +32,13 @@
 	build_path = /obj/item/weapon/gun/energy/toxgun
 	sort_string = "TAAAD"
 
+/datum/design/research/item/weapon/brigador
+	build_path = /obj/item/weapon/gun/energy/plasma/brigador
+	sort_string = "TAAAE"
+
 /datum/design/research/item/weapon/decloner
 	build_path = /obj/item/weapon/gun/energy/decloner
-	sort_string = "TAAAE"
+	sort_string = "TAAAF"
 
 /datum/design/research/item/weapon/chemsprayer
 	desc = "An advanced chem spraying device."

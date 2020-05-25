@@ -98,9 +98,18 @@
 			if (I.type == parent.type)
 				to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
 				return FALSE
-
+	/*if (istype(A, /obj/item/clothing/suit/armor))
+		var/obj/item/clothing/suit/armor/T = A
+		if (T.item_upgrades.len >= T.max_upgrades)
+			to_chat(user, SPAN_WARNING("This armor can't fit anymore modifications!"))
+			return FALSE
+		for (var/obj/item/I in T.item_upgrades)
+			if (I.type == parent.type)
+				to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
+				return FALSE
+*/
 		return TRUE
-	to_chat(user, SPAN_WARNING("This can only be applied to a tool!"))
+	to_chat(user, SPAN_WARNING("This can't be applied to this item!"))
 	return FALSE
 
 /datum/component/item_upgrade/proc/apply(var/obj/item/A, var/mob/living/user)

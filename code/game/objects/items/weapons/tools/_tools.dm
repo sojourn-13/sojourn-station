@@ -1044,6 +1044,7 @@
 
 /obj/item/weapon/tool/admin_debug
 	name = "Electric Boogaloo 3000"
+	desc = "Either god has a sense of humor or this item should have never been..."
 	icon_state = "omnitool"
 	item_state = "omnitool"
 	tool_qualities = list(QUALITY_BOLT_TURNING = 100,

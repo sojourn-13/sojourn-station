@@ -42,6 +42,11 @@
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
 
+/obj/item/clothing/head/preacher
+	name = "preacher hat"
+	desc = "Useful for hiding disdainful eyes from the godless masses."
+	icon_state = "church_hat"
+
 //Mime
 /obj/item/clothing/head/beret
 	name = "red beret"

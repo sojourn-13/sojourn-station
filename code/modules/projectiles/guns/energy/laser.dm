@@ -73,7 +73,7 @@ obj/item/weapon/gun/energy/retro
 	twohanded = FALSE
 
 /obj/item/weapon/gun/energy/lasercannon
-	name = "Prototype: laser cannon"
+	name = "\"Titanica\" laser canon"
 	desc = "A new design for an energy weapon. The lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
 	icon = 'icons/obj/guns/energy/lascannon.dmi'
 	icon_state = "lasercannon"

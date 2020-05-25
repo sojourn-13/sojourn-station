@@ -29,6 +29,8 @@
 
 //Other Qualities
 #define QUALITY_ELECTROCUTION			"electroshock"
+#define QUALITY_ARMOR					"armor"
+
 
 //Time for a work for tool system calculated in that way: basic time - tool level - stat check..
 //It means that basic tools will give -30 on time, and people on right job should have -20 at least, or even more.

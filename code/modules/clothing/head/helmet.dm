@@ -220,7 +220,7 @@
 	desc = "Green titanium blast helmet, not exactly cutting edge."
 	icon_state = "altyn"
 	armor = list(melee = 45, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // slightly better than usual due to mask
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHEADHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	siemens_coefficient = 1
 
@@ -282,7 +282,7 @@
 	name = "34c neo goggles"
 	desc = "An old model of industrial helmet. Not armored, but has a sturdy neo-laminated fabric lining."
 	icon_state = "cyberpunkgoggle"
-	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
+	flags_inv = HIDEEARS|HIDEEYES|BLOCKHEADHAIR
 	siemens_coefficient = 0.9	//More conductive than most helmets
 	armor = list(
 		melee = 5,
