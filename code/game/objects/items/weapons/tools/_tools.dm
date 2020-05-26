@@ -294,7 +294,7 @@
 
 //Simple form ideal for basic use. That proc will return TRUE only when everything was done right, and FALSE if something went wrong, ot user was unlucky.
 //Editionaly, handle_failure proc will be called for a critical failure roll.
-/obj/item/proc/use_tool(var/mob/living/user, var/atom/target, var/base_time, var/required_quality, var/fail_chance, var/required_stat, var/instant_finish_tier = 110, forced_sound = null, var/sound_repeat = 2.5)
+/obj/item/proc/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
 	var/obj/item/weapon/tool/T
 	if (istool(src))
 		T = src
@@ -315,8 +315,7 @@
 			return TRUE
 
 //Use this proc if you want to handle all types of failure yourself. It used in surgery, for example, to deal damage to patient.
-/obj/item/proc/use_tool_extended(var/mob/living/user, var/atom/target, base_time, required_quality, fail_chance, required_stat = null, instant_finish_tier = 110, forced_sound = null, var/sound_repeat = 2.5 SECONDS)
-
+/obj/item/proc/use_tool_extended(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
 	var/obj/item/weapon/tool/T
 	if(istool(src))
 		T = src
@@ -468,7 +467,7 @@
 		if(fail_chance < 5)
 			chanceMessage = "great"
 		else if(fail_chance < 25)
-			chanceMessage = "big"
+			chanceMessage = "good"
 		else if(fail_chance < 50)
 			chanceMessage = "moderate"
 		else if(fail_chance < 75)
@@ -661,7 +660,7 @@
 	return null
 
 //We are cheking if our item got required qualities. If we require several qualities, and item posses more than one of those, we ask user to choose how that item should be used
-/obj/item/proc/get_tool_type(var/mob/living/user, var/list/required_qualities, var/atom/use_on, var/datum/callback/CB)
+/obj/item/proc/get_tool_type(mob/living/user, list/required_qualities, atom/use_on, datum/callback/CB)
 	var/list/L = required_qualities & tool_qualities
 
 	if(!L.len)

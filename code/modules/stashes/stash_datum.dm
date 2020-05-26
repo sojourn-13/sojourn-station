@@ -124,6 +124,7 @@ This file contains the underlying code for stash datums
 
 
 
+
 //This proc selects the turf where the stash will be spawned
 /datum/stash/proc/select_location()
 	select_direction()
