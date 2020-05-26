@@ -434,7 +434,7 @@
 	I.prefix = "self-healing"
 
 //Armor mods
-/*
+
 /obj/item/weapon/tool_upgrade/reinforcement/melee
 	name = "melee plating"
 	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its melee resistance."
@@ -446,8 +446,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.upgrades = list(
-	UPGRADE_BULK = 1
+	UPGRADE_BULK = 1,
+	UPGRADE_MELEE_ARMOR = 20
 	)
 	I.prefix = "reinforced"
 	I.required_qualities = list(QUALITY_ARMOR)
-*/

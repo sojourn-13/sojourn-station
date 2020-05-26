@@ -72,7 +72,7 @@
 		/obj/item/weapon/stock_parts/micro_laser = 1,
 		/obj/item/weapon/stock_parts/console_screen = 1
 	)
-/*
+/* //Leaving this here for when its made into the bullet fab.
 /obj/item/weapon/circuitboard/armorfabricator
 	name = "Circuit board (Armor Fabricator)"
 	build_path = /obj/machinery/autolathe/armorfabricator
