@@ -78,13 +78,13 @@
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	twohanded = FALSE
 	suitable_cell = /obj/item/weapon/cell/small
-	charge_cost = 10
+	charge_cost = 20
 
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
 
 	firemodes = list(
 		list(mode_name="plasma", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser4.ogg', fire_delay=1, icon="destroy", projectile_color = "#00FFFF"),
-		list(mode_name="laser", projectile_type=/obj/item/projectile/beam/xray, fire_sound='sound/weapons/laser3.ogg', fire_delay=1, icon="kill", projectile_color = "#00AAFF"),
+		list(mode_name="laser", projectile_type=/obj/item/projectile/beam/xray, fire_sound='sound/weapons/Taser3.ogg', fire_delay=1, icon="kill", projectile_color = "#00AAFF"),
 	)
 
 /obj/item/weapon/gun/energy/plasma/brigador/update_icon()
