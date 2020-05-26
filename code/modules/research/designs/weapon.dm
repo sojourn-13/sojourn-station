@@ -28,12 +28,12 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/c20r
 	sort_string = "TAAAF"
 
-/datum/design/research/item/weapon/plasmapistol
-	build_path = /obj/item/weapon/gun/energy/toxgun
+/datum/design/research/item/weapon/centurio
+	build_path = /obj/item/weapon/gun/energy/centurio
 	sort_string = "TAAAD"
 
-/datum/design/research/item/weapon/brigador
-	build_path = /obj/item/weapon/gun/energy/plasma/brigador
+/datum/design/research/item/weapon/auretian
+	build_path = /obj/item/weapon/gun/energy/plasma/auretian
 	sort_string = "TAAAE"
 
 /datum/design/research/item/weapon/decloner

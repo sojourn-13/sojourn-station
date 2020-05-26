@@ -68,8 +68,8 @@
 	..()
 	set_item_state(null, back = TRUE)
 
-/obj/item/weapon/gun/energy/plasma/brigador
-	name = "\"Brigador\" energy pistol"
+/obj/item/weapon/gun/energy/plasma/auretian
+	name = "\"Auretian\" energy pistol"
 	desc = "\"Soteria\" brand energy pistol, for personal overprotection. It can change between laser and plasma, with the former penetrating armor better and the latter dealing more raw damage."
 	icon = 'icons/obj/guns/energy/brigador.dmi'
 	icon_state = "brigador"
@@ -87,7 +87,7 @@
 		list(mode_name="laser", projectile_type=/obj/item/projectile/beam/xray, fire_sound='sound/weapons/Taser3.ogg', fire_delay=1, icon="kill", projectile_color = "#00AAFF"),
 	)
 
-/obj/item/weapon/gun/energy/plasma/brigador/update_icon()
+/obj/item/weapon/gun/energy/plasma/auretian/update_icon()
 	overlays.Cut()
 	..()
 	if(cell)

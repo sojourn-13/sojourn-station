@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/toxgun
+/obj/item/weapon/gun/energy/centurio
 	name = "\"Centurio\" plasma pistol"
 	desc = "A specialized firearm designed to fire lethal plasma rounds or a slow yet high impact stun shot."
 	icon = 'icons/obj/guns/energy/toxgun.dmi'
