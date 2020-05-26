@@ -125,8 +125,8 @@
 	cost = 5000
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/decloner,
-							/datum/design/research/item/weapon/plasmapistol,
-							/datum/design/research/item/weapon/brigador
+							/datum/design/research/item/weapon/centurio,
+							/datum/design/research/item/weapon/auretian
 						)
 
 /datum/technology/adv_lethal
