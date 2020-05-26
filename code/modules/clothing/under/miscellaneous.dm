@@ -70,29 +70,10 @@
 
 /*Xenowear*/
 
-/obj/item/clothing/under/harness
-	name = "black gear harness"
-	desc = "A black gear harness worn around the body."
-	icon_state = "gear_harness"
-
-/obj/item/clothing/under/harness/brown
-	name = "brown gear harness"
-	desc = "A brown gear harness worn around the body."
-	icon_state = "gear_harnessbrown"
-	item_state = "gear_harnessbrown"
-
 /obj/item/clothing/under/loincloth
 	name = "loincloth"
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
-
-/obj/item/clothing/under/permit
-	name = "public nudity permit"
-	desc = "A clothes-free permit only issued for crew with no visible genitalia."
-	icon = 'icons/obj/card.dmi'
-	icon_state = "nudity"
-	body_parts_covered = 0
-	item_state = "nudity"
 
 /*Antagonist Spawn Gear*/
 

@@ -12,14 +12,13 @@
 	selection_color = "#b39aaf"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
-	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 25)
 
 	outfit_type = /decl/hierarchy/outfit/job/science/rd
 
 	access = list(
 		access_rd, access_heads, access_tox, access_genetics, access_morgue,
 		access_tox_storage, access_teleporter, access_sec_doors,
-		access_moebius, access_medical_equip, access_chemistry, access_virology, access_cmo, access_surgery, access_psychiatrist,
+		access_moebius, access_medical_equip, access_chemistry, access_virology, access_surgery, access_psychiatrist,
 		access_robotics, access_xenobiology, access_ai_upload, access_tech_storage, access_eva, access_external_airlocks,
 		access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_maint_tunnels, access_research_equipment
 
@@ -70,7 +69,6 @@
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
-	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
 
 	//alt_titles = list("Moebius Xenobiologist")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
@@ -116,7 +114,6 @@
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
-	also_known_languages = list(LANGUAGE_CYRILLIC = 10)
 
 	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
 

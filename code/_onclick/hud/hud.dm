@@ -31,7 +31,7 @@ var/list/global_huds
 	blurry = new /obj/screen/fullscreen/tile("blurry")
 
 	nvg = new /obj/screen/fullscreen("nvg_hud")
-	nvg.plane = LIGHTING_PLANE
+	//nvg.plane = LIGHTING_PLANE
 	thermal = new /obj/screen/fullscreen("thermal_hud")
 	meson = new /obj/screen/fullscreen("meson_hud")
 	science = new /obj/screen/fullscreen("science_hud")

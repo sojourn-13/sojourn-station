@@ -21,5 +21,8 @@
 				bug.rejuvenate()
 		else
 			bug.heal_organ_damage(heal_strength*removed)
-	else
-		.=..()
+	if(M.species.reagent_tag == IS_CHTMANT)
+		M.adjustOxyLoss(-0.6)
+		M.heal_organ_damage(0.3)
+		M.adjustToxLoss(-0.3)
+		M.add_chemical_effect(CE_BLOODCLOT, 0.1)

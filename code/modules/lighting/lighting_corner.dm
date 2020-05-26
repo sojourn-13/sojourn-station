@@ -98,7 +98,7 @@
 		lighting_update_corners += src
 
 /datum/lighting_corner/proc/update_overlays()
-	// Cache these values a head of time so 4 individual lighting overlays don't all calculate them individually.
+	// Cache these values a head of time so 4 individual lighting over-lays don't all calculate them individually.
 	var/lum_r = src.lum_r
 	var/lum_g = src.lum_g
 	var/lum_b = src.lum_b

@@ -62,3 +62,20 @@
 	item_state = "labcoat_medspec"
 	icon_open = "labcoat_medspec_open"
 	icon_closed = "labcoat_medspec"
+
+/obj/item/clothing/suit/storage/membrane
+	name = "membrane labcoat"
+	desc = "A longer labcoat with buttons on the side. It has a significantly larger collar than the standard lab coat, to help protect your face from your mistakes."
+	icon_state = "labcoat_membrane"
+	item_state = "labcoat_membrane" //Is this even used for anything?
+	blood_overlay_type = "coat"
+	body_parts_covered = UPPER_TORSO|ARMS
+	armor = list(
+		melee = 0,
+		bullet = 0,
+		bomb = 0,
+		bio = 50,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)

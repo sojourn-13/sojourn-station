@@ -84,7 +84,7 @@
 	data["message_current_id"] = current_viewing_message_id
 	if(current_viewing_message)
 		data["message_current"] = current_viewing_message
-*/
+
 	var/list/processed_evac_options = list()
 	if(!isnull(evacuation_controller))
 		for (var/datum/evacuation_option/EO in evacuation_controller.available_evac_options())
@@ -95,7 +95,7 @@
 			option["silicon_allowed"] = EO.silicon_allowed
 			processed_evac_options[++processed_evac_options.len] = option
 	data["evac_options"] = processed_evac_options
-
+*/
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "communication.tmpl", name, 550, 420, state = state)
@@ -301,7 +301,6 @@ var/last_message_id = 0
 	if(!frequency) return
 
 	var/datum/signal/status_signal = new
-	status_signal.source = src
 	status_signal.transmission_method = 1
 	status_signal.data["command"] = command
 
@@ -309,11 +308,11 @@ var/last_message_id = 0
 		if("message")
 			status_signal.data["msg1"] = data1
 			status_signal.data["msg2"] = data2
-			log_admin("STATUS: [key_name(usr)] set status screen message with [src]: [data1] [data2]")
+			log_admin("STATUS: [key_name(usr)] set status screen message with : [data1] [data2]")
 		if("image")
 			status_signal.data["picture_state"] = data1
 
-	frequency.post_signal(src, status_signal)
+	frequency.post_signal( signal = status_signal )
 
 /proc/cancel_call_proc(var/mob/user)
 	if (!SSticker || !evacuation_controller)

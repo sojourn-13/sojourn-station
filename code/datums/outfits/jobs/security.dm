@@ -23,7 +23,7 @@
 	id_type = /obj/item/weapon/card/id/hos
 	head = /obj/item/clothing/head/rank/commander
 	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/magnum/rubber = 1,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz/rubber = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 /decl/hierarchy/outfit/job/security/smc
 	name = OUTFIT_JOB_NAME("Blackshield - Militia Commander")
@@ -37,7 +37,7 @@
 	id_type = /obj/item/weapon/card/id/hos
 	head = /obj/item/clothing/head/rank/milcom/beret
 	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/magnum = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 
 /decl/hierarchy/outfit/job/security/gunserg
@@ -50,11 +50,20 @@
 	gloves = /obj/item/clothing/gloves/stungloves
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
+/decl/hierarchy/outfit/job/security/serg
+	name = OUTFIT_JOB_NAME("Blackshield - Sergeant")
+	uniform = /obj/item/clothing/under/instructor
+	head = /obj/item/clothing/head/rank/instructor_hat
+	glasses = /obj/item/clothing/glasses/ballistic
+	l_pocket = /obj/item/device/flash
+	gloves = /obj/item/clothing/gloves/thick
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+
 /decl/hierarchy/outfit/job/security/inspector
 	name = OUTFIT_JOB_NAME("Marshal - Ranger")
 	head = /obj/item/clothing/head/rank/inspector
 	uniform = /obj/item/clothing/under/rank/inspector
-	suit = /obj/item/clothing/suit/storage/detective/ironhammer
+	suit = /obj/item/clothing/suit/storage/rank/insp_trench
 	head = /obj/item/clothing/head/fedora/brown
 	gloves = /obj/item/clothing/gloves/stungloves
 	l_pocket = /obj/item/device/flash

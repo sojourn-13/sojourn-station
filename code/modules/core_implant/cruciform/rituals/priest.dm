@@ -35,6 +35,7 @@
 
 	var/mob/living/M = CI.wearer
 
+	log_and_message_admins(" inflicted pain on [CI.wearer] with penance litany")
 	to_chat(M, SPAN_DANGER("A wave of agony washes over you, the cruciform in your chest searing like a star for a few moments of eternity."))
 
 
@@ -46,6 +47,11 @@
 
 	return TRUE
 
+/datum/ritual/targeted/cruciform/priest/penance/process_target(var/index, var/obj/item/weapon/implant/core_implant/target, var/text)
+	target.update_address()
+	if(index == 1 && target.address == text)
+		if(target.wearer && (target.loc && (target.locs[1] in view())))
+			return target
 
 /*
 	Convalescence
@@ -53,7 +59,7 @@
 */
 /datum/ritual/cruciform/priest/selfheal
 	name = "Convalescence"
-	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia Christi"
+	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia deus."
 	desc = "Recover from the ravages of wounds and pain."
 	cooldown = TRUE
 	cooldown_time = 300
@@ -74,7 +80,7 @@
 
 /datum/ritual/cruciform/priest/heal_other
 	name = "Succour"
-	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos"
+	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos."
 	desc = "Heal another nearby disciple."
 	cooldown = TRUE
 	cooldown_time = 300
@@ -102,7 +108,7 @@
 		return
 
 
-	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of convalescence")
+	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of succor")
 	if (do_after(user, 40, H, TRUE))
 		T = get_turf(user)
 		if (!(T.Adjacent(get_turf(H))))
@@ -120,6 +126,47 @@
 		return TRUE
 
 
+
+
+/datum/ritual/cruciform/priest/heal_heathen
+	name = "Divine Hymn"
+	phrase = "Ora pro nobis, qui non noverunt viam, hi sunt amissa, sed quia dilexit."
+	desc = "Heal every person who can see and hear for a small amount, even if they do not have a cruciform. Can only be done every quarter hour and requires alot of power. Using this prayer prevents other similar prayers from being used for awhile."
+	cooldown = TRUE
+	cooldown_time = 15 MINUTES
+	cooldown_category = "dhymn"
+	power = 50
+
+/datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	var/list/people_around = list()
+	for(var/mob/living/carbon/human/H in view(user))
+		if(H != user && !isdeaf(H))
+			people_around.Add(H)
+
+	if(people_around.len > 0)
+		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration."))
+		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
+		for(var/mob/living/carbon/human/participant in people_around)
+			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
+			heal_other(participant)
+		set_personal_cooldown(user)
+		return TRUE
+	else
+		fail("Your cruciform sings, alone, unto the void.", user, C)
+		return FALSE
+
+
+/datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
+		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain</span>")
+		participant.add_chemical_effect(CE_PAINKILLER, 15)
+		participant.adjustBruteLoss(-15)
+		participant.adjustFireLoss(-15)
+		participant.adjustToxLoss(-15)
+		participant.adjustOxyLoss(-30)
+		participant.adjustBrainLoss(-5)
+		participant.updatehealth()
+
+
 /*
 	Scrying: Remotely look through someone's eyes. Global range, useful to find fugitives or corpses
 	Uses all of your power and has a limited duration
@@ -127,8 +174,8 @@
 /datum/ritual/cruciform/priest/scrying
 	name = "Scrying"
 	phrase = "Ecce ego ad te et ad caelum. Scio omnes absconditis tuis. Vos can abscondere, tu es coram me: nudus."
-	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom."
-	power = 100
+	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom. This prayer requires power only primes and crusaders have."
+	power = 80
 
 /datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 
@@ -168,7 +215,7 @@
 
 /datum/ritual/cruciform/priest/epiphany
 	name = "Epiphany"
-	phrase = "In nomine Patris et Filii et Spiritus sancti"
+	phrase = "In nomine Patris et Filii et Spiritus sancti."
 	desc = "The Absolute's principal sacrament is a ritual of baptism and merging with cruciform. A body, relieved of clothes should be placed on Absolute's special altar."
 
 /datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -261,7 +308,7 @@
 
 /datum/ritual/cruciform/priest/install
 	name = "Commitment"
-	phrase = "Unde ipse Dominus dabit vobis signum"
+	phrase = "Unde ipse Dominus dabit vobis signum."
 	desc = "This litany will command a cruciform attach to person so you can perform an epiphany. Cruciform must lay near them."
 
 /datum/ritual/cruciform/priest/install/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -323,7 +370,7 @@
 
 /datum/ritual/cruciform/priest/ejection
 	name = "Deprivation"
-	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum"
+	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum."
 	desc = "This litany will command cruciform to detach from bearer, if the one bearing it is dead."
 
 /datum/ritual/cruciform/priest/ejection/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -360,8 +407,9 @@
 
 /datum/ritual/cruciform/priest/unupgrade
 	name = "Asacris"
-	phrase = "A caelo usque ad centrum"
-	desc = "This litany will remove any upgrade from the target's cruciform implant"
+	phrase = "A caelo usque ad centrum."
+	desc = "This litany will remove any upgrade from the target's cruciform implant. Usuable only by primes and crusaders."
+	power = 80
 
 /datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -383,6 +431,46 @@
 		log_and_message_admins("removed upgrade from [C] cruciform with asacris litany")
 
 	return TRUE
+
+/datum/ritual/targeted/cruciform/priest/upgrade_kit
+	name = "Curaverunt"
+	phrase = "Dominus manum meam pro damnato in ovile redire voluerit."
+	desc = "Request an upgrade kit to restore a vector or prime's cruciform to its devout stage."
+	power = 50
+
+/datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+	new /obj/item/weapon/coreimplant_upgrade/cruciform/priest(usr.loc)
+	set_personal_cooldown(user)
+
+/datum/ritual/cruciform/priest/initiation
+	name = "Initiation"
+	phrase = "Habe fiduciam in Domino ex toto corde tuo et ne innitaris prudentiae tuae, in omnibus viis tuis cogita illum et ipse diriget gressus tuos."
+	desc = "The second stage of granting a promotion to a disciple, upgrading them to a devout. The devout ascension kit is the first step."
+	power = 50
+
+/datum/ritual/cruciform/priest/initiation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+	var/obj/item/weapon/implant/core_implant/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
+
+	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
+		fail("Cruciform not found",user,C)
+		return FALSE
+
+
+	if(CI.get_module(CRUCIFORM_PRIEST) || CI.get_module(CRUCIFORM_INQUISITOR))
+		fail("The target is already a devout.",user,C)
+		return FALSE
+
+	var/datum/core_module/activatable/cruciform/priest_convert/PC = CI.get_module(CRUCIFORM_PRIEST_CONVERT)
+
+	if(!PC)
+		fail("Target must have devout upgrade inside his cruciform.",user,C)
+		return FALSE
+
+	PC.activate()
+	log_and_message_admins("promoted disciple [C] to devout with initiation litany")
+
+	return TRUE
+
 
 
 ///////////////////////////////////////
@@ -429,7 +517,7 @@
 		participant.stats.changeStat(stat, amount)
 		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
 	spawn(30)
-		to_chat(participant, SPAN_NOTICE("A wave of dizziness washes over you, and your mind is filled with a sudden insight into [get_stats_to_text()]."))
+		to_chat(participant, SPAN_NOTICE("A wave of dizziness washes over you and your mind is filled with a sudden insight into [get_stats_to_text()]."))
 
 
 /datum/ritual/cruciform/priest/short_boost/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
@@ -454,27 +542,27 @@
 
 /datum/ritual/cruciform/priest/short_boost/mechanical
 	name = "Pounding Whisper"
-	phrase = "Vocavitque nomen eius Noe dicens iste consolabitur nos ab operibus et laboribus manuum nostrarum in terra cui maledixit Dominus"
+	phrase = "Vocavitque nomen eius Noe dicens iste consolabitur nos ab operibus et laboribus manuum nostrarum in terra cui maledixit Dominus."
 	stats_to_boost = list(STAT_MEC = 10)
 
 /datum/ritual/cruciform/priest/short_boost/cognition
 	name = "Revelation of Secrets"
-	phrase = "Quia Dominus dat sapientiam et ex ore eius scientia et prudentia"
+	phrase = "Quia Dominus dat sapientiam et ex ore eius scientia et prudentia."
 	stats_to_boost = list(STAT_COG = 10)
 
 /datum/ritual/cruciform/priest/short_boost/biology
 	name = "Lisp of Vitae"
-	phrase = "Ecce ego obducam ei cicatricem et sanitatem et curabo eos et revelabo illis deprecationem pacis et veritatis"
+	phrase = "Ecce ego obducam ei cicatricem et sanitatem et curabo eos et revelabo illis deprecationem pacis et veritatis."
 	stats_to_boost = list(STAT_BIO = 10)
 
 /datum/ritual/cruciform/priest/short_boost/courage
 	name = "Canto of Courage"
-	phrase = "Huic David ad te Domine clamabo Deus meus ne sileas a me nequando taceas a me et adsimilabor descendentibus in lacum"
+	phrase = "Huic David ad te Domine clamabo Deus meus ne sileas a me nequando taceas a me et adsimilabor descendentibus in lacum."
 	stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10)
 
 /datum/ritual/cruciform/priest/short_boost/vigilance
 	name = "Commitment to Determination"
-	phrase = "Cor meum et caro mea, potest deficere, sed non in viribus Deus cordis mei et pars mea Deus in aeternum"
+	phrase = "Cor meum et caro mea, potest deficere, sed non in viribus Deus cordis mei et pars mea Deus in aeternum."
 	stats_to_boost = list(STAT_VIG = 10)
 
 /datum/ritual/targeted/cruciform/priest/atonement
@@ -511,7 +599,7 @@
 /datum/ritual/targeted/cruciform/priest/atonement/process_target(var/index, var/obj/item/weapon/implant/core_implant/target, var/text)
 	target.update_address()
 	if(index == 1 && target.address == text)
-		if(target.wearer && (target.loc && target.locs[1] in view()))
+		if(target.wearer && (target.loc && (target.locs[1] in view())))
 			return target
 
 /datum/ritual/cruciform/priest/records
@@ -533,3 +621,24 @@
 	if(altar)
 		new /obj/item/weapon/paper/neopaper(altar.loc, disciples.Join("\n"), "Church Record")
 	return TRUE
+
+/datum/ritual/cruciform/priest/new_cruciform
+	name = "Prayer of Reunion"
+	phrase = "Ego enim scio cogitationes quas cogito super vos, ait Dominus Deus: Non est nocere consilia, ut bene sit tibi, et tu non adflictionis ut dem vobis finem et patientiam. Requires the speaker to stand next to an altar."
+	desc = "Request a new cruciform in the event someone wishes to join the fold or the one they had was destroyed."
+	power = 50
+	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a new cruciform slips out."
+
+/datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	var/list/OBJS = get_front(user)
+
+	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
+
+	if(!altar)
+		fail("This is not your altar, the litany is useless.", user, C)
+		return FALSE
+
+	if(altar)
+		new /obj/item/weapon/implant/core_implant/cruciform(altar.loc)
+	return TRUE
+

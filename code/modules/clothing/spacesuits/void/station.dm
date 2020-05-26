@@ -57,8 +57,8 @@
 		)
 	armor = list(
 		melee = 50,
-		bullet = 35,
-		energy = 30,
+		bullet = 25,
+		energy = 25,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -73,8 +73,8 @@
 	slowdown = 0.35
 	armor = list(
 		melee = 50,
-		bullet = 35,
-		energy = 30,
+		bullet = 25,
+		energy = 25,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -137,10 +137,10 @@
 		)
 
 	armor = list(
-		melee = 35,
+		melee = 50,
 		bullet = 40,
-		energy = 30,
-		bomb = 25,
+		energy = 40,
+		bomb = 40,
 		bio = 100,
 		rad = 75
 	)
@@ -152,11 +152,12 @@
 	icon_state = "ihvoidsuit"
 	desc = "A bulky suit that protects against hazardous, low pressure environments. Sacrifices mobility for protection"
 	item_state = "ihvoidsuit"
+	slowdown = 1
 	armor = list(
-		melee = 35,
+		melee = 50,
 		bullet = 40,
-		energy = 30,
-		bomb = 25,
+		energy = 40,
+		bomb = 40,
 		bio = 100,
 		rad = 75
 	)
@@ -178,34 +179,36 @@
 		)
 
 	armor = list(
-		melee = 35,
+		melee = 50,
 		bullet = 40,
-		energy = 30,
-		bomb = 25,
+		energy = 40,
+		bomb = 40,
 		bio = 100,
 		rad = 75
 	)
 	siemens_coefficient = 0.7
 	light_overlay = "helmet_light_ihs"
 
-/obj/item/clothing/suit/space/void/security
+/obj/item/clothing/suit/space/void/security/odst
 	name = "Sol Federation voidsuit"
-	desc = "A bulky suit that protects against hazardous, low pressure environments in non-combat military applications."
+	desc = "Do you wanna be a hero in the sky? High adventure, higher pay, join the Space Marines today."
 	icon_state = "odst"
 	item_state = "odst"
+	slowdown = 1
 	armor = list(
-		melee = 35,
+		melee = 50,
 		bullet = 40,
-		energy = 30,
-		bomb = 25,
+		energy = 40,
+		bomb = 40,
 		bio = 100,
 		rad = 75
 	)
 	siemens_coefficient = 0.7
+	helmet = /obj/item/clothing/head/helmet/space/void/odst
 
 
 /obj/item/clothing/head/helmet/space/void/odst/mil
-	name = "blackshield voidsuit"
+	name = "blackshield voidsuit helmet"
 	icon_state = "odst_mil"
 	item_state = "odst_mil"
 
@@ -213,6 +216,7 @@
 	name = "blackshield voidsuit"
 	icon_state = "odst_mil"
 	item_state = "odst_mil"
+	helmet = /obj/item/clothing/head/helmet/space/void/odst/mil
 
 /obj/item/clothing/head/helmet/space/void/odst/corps
 	name = "blackshield corpsman voidsuit helmet"
@@ -223,37 +227,43 @@
 	name = "blackshield corpsman voidsuit"
 	icon_state = "odst_corps"
 	item_state = "odst_corps"
+	helmet = /obj/item/clothing/head/helmet/space/void/odst/corps
 
+
+
+//Colored military suits//
 /obj/item/clothing/head/helmet/space/void/odst/red
 	name = "military voidsuit helmet"
-	icon_state = "odst_mil"
-	item_state = "odst_mil"
+	icon_state = "odst_red"
+	item_state = "odst_red"
 
-
-/obj/item/clothing/head/helmet/space/void/odst/red
+/obj/item/clothing/suit/space/void/odst/red
 	name = "military voidsuit"
 	icon_state = "odst_red"
 	item_state = "odst_red"
+	helmet = /obj/item/clothing/head/helmet/space/void/odst/red
 
 /obj/item/clothing/suit/space/void/odst/blue
 	name = "military voidsuit"
 	icon_state = "odst_blue"
 	item_state = "odst_blue"
+	helmet = /obj/item/clothing/head/helmet/space/void/odst/blue
 
 /obj/item/clothing/head/helmet/space/void/odst/blue
 	name = "military voidsuit helmet"
-	icon_state = "odst_mil"
-	item_state = "odst_mil"
+	icon_state = "odst_blue"
+	item_state = "odst_blue"
 
 /obj/item/clothing/head/helmet/space/void/odst/orange
 	name = "military voidsuit helmet"
-	icon_state = "odst_mil"
-	item_state = "odst_mil"
+	icon_state = "odst_orange"
+	item_state = "odst_orange"
 
 /obj/item/clothing/suit/space/void/odst/orange
 	name = "military voidsuit"
 	icon_state = "odst_orange"
 	item_state = "odst_orange"
+	helmet = /obj/item/clothing/head/helmet/space/void/odst/orange
 
 /obj/item/clothing/head/helmet/space/void/odst/purple
 	name = "military voidsuit helmet"
@@ -264,7 +274,7 @@
 	name = "military voidsuit"
 	icon_state = "odst_purple"
 	item_state = "odst_purple"
-
+	helmet = /obj/item/clothing/head/helmet/space/void/odst/purple
 
 //Atmospherics Rig (BS12)
 /obj/item/clothing/head/helmet/space/void/atmos

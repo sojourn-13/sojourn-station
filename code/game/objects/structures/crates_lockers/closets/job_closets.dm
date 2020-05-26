@@ -72,11 +72,11 @@
 	new /obj/item/weapon/storage/bag/trash(src)
 	new /obj/item/clothing/shoes/galoshes(src)
 	new /obj/item/weapon/mop(src)
-	new /obj/item/weapon/soap/nanotrasen(src)
+	new /obj/item/weapon/soap/deluxe(src)
 	new /obj/item/weapon/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
 
 /obj/structure/closet/custodial
-	name = "custodial closet"
+	name = "church custodial closet"
 	desc = "It's a storage unit for janitorial clothes and gear."
 	icon_state = "custodian"
 
@@ -104,7 +104,7 @@
 	new /obj/item/weapon/storage/bag/trash(src)
 	new /obj/item/clothing/shoes/galoshes(src)
 	new /obj/item/weapon/mop(src)
-	new /obj/item/weapon/soap/nanotrasen(src)
+	new /obj/item/weapon/soap/deluxe(src)
 	new /obj/item/weapon/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
 
 /obj/structure/closet/acolyte

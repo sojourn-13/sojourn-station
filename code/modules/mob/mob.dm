@@ -191,6 +191,11 @@
 	set name = "Examine"
 	set category = "IC"
 
+	// No examining metaphysical things, please!
+	// These use a different proc for examining.  
+	if(isHUDobj(A))
+		return 1
+
 	if((is_blind(src) || usr.stat) && !isobserver(src))
 		to_chat(src, "<span class='notice'>Something is there but you can't see it.</span>")
 		return 1
@@ -497,8 +502,8 @@
 				if(e && H.lying)
 					if(((e.status & ORGAN_BROKEN && !(e.status & ORGAN_SPLINTED)) || e.status & ORGAN_BLEEDING) && (H.getBruteLoss() + H.getFireLoss() >= 100))
 						return 1
-						break
-		return 0
+		else
+			return 0
 
 /mob/MouseDrop(mob/M as mob)
 	..()

@@ -20,6 +20,7 @@
 	name = "donut box"
 	max_storage_space = 8
 	var/icon_type = "donut"
+	matter = list(MATERIAL_BIOMATTER = 1)
 
 /obj/item/weapon/storage/fancy/update_icon(var/itemremoved = 0)
 	var/total_contents = src.contents.len - itemremoved

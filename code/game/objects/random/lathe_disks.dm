@@ -24,6 +24,9 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/gladstone = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sbaw = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/roe = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sika = 2,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firefly = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/straylight = 1,
@@ -35,6 +38,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pitbull = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/boltgun_sa = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/saw = 1,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/counselor = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/spiderrose = 1,
@@ -45,6 +49,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/halicon = 2,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 6,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/exotic_ammo = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle = 4,))
@@ -81,6 +86,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/gladstone = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pug = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sbaw = 1,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firefly = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/straylight = 4,

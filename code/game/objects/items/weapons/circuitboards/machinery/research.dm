@@ -72,7 +72,19 @@
 		/obj/item/weapon/stock_parts/micro_laser = 1,
 		/obj/item/weapon/stock_parts/console_screen = 1
 	)
-
+/*
+/obj/item/weapon/circuitboard/armorfabricator
+	name = "Circuit board (Armor Fabricator)"
+	build_path = /obj/machinery/autolathe/armorfabricator
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 3)
+	req_components = list(
+		/obj/item/weapon/stock_parts/matter_bin = 3,
+		/obj/item/weapon/stock_parts/manipulator = 1,
+		/obj/item/weapon/stock_parts/micro_laser = 1,
+		/obj/item/weapon/stock_parts/console_screen = 1
+	)
+*/
 obj/item/weapon/circuitboard/ntnet_relay
 	name = "Circuit board (NTNet Quantum Relay)"
 	build_path = /obj/machinery/ntnet_relay

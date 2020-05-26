@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"
-	desc = "An immortal classic."
+	desc = "An immortal classic in 20mm smoothbore."
 	icon = 'icons/obj/guns/projectile/dshotgun.dmi'
 	icon_state = "dshotgun"
 	item_state = "dshotgun"

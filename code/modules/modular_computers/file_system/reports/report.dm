@@ -22,7 +22,7 @@
 /*
 Access stuff. The report's access/access_edit should control whether it can be opened/submitted.
 For field editing or viewing, use the field's access/access_edit permission instead.
-The access system is based on "access patterns", lists of access values. 
+The access system is based on "access patterns", lists of access values.
 A user needs all access values in a pattern to be granted access.
 A user needs to only match one of the potentially several stored access patterns to be granted access.
 You must have access to have edit access.
@@ -62,6 +62,7 @@ If the override option is set to 0, the access supplied will instead be added as
 			return field
 
 /datum/computer_file/report/proc/field_from_name(name)
+	RETURN_TYPE(/datum/report_field)
 	for(var/datum/report_field/field in fields)
 		if(field.display_name() == name)
 			return field

@@ -14,7 +14,7 @@
 #define FORM_LIZARD				"Lizard"
 #define FORM_VULPINE			"Vulpine"
 #define FORM_FENNEC				"Fennec"
-#define FORM_SERGALINE			"Sergal"
+#define FORM_NARAMAD			"Naramad"
 #define FORM_SLIME				"Slime"
 #define FORM_AVIAN				"Avian"
 #define FORM_SPIDER				"Arachnoid"
@@ -87,13 +87,6 @@
 	deform = null //'icons/mob/human_races/r_def_fennec_white.dmi' //TODO: White fennec deformed sprites.
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
-/datum/species_form/sergal
-	playable = TRUE
-	name = FORM_SERGALINE
-	base = 'icons/mob/human_races/r_sergal.dmi'
-	deform = 'icons/mob/human_races/r_def_sergal.dmi'
-	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
-
 /datum/species_form/avian
 	playable = FALSE
 	name = FORM_AVIAN
@@ -111,22 +104,13 @@
 
 
 /datum/species_form/stationxeno
-	playable = TRUE
+	playable = FALSE
 	name = FORM_STATIONXENO
 	base = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	variantof = FORM_STATIONXENO
 	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR
 	playable = FALSE
-
-
-/datum/species_form/marqua
-	playable = TRUE
-	name = FORM_MARQUA
-	base = 'icons/mob/human_races/r_marqua_vr.dmi'
-	deform = 'icons/mob/human_races/r_def_marqua.dmi'
-	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
-
 
 /datum/species_form/stationxeno/hunter
 	name = FORM_STATIONXENO_HUNTER
@@ -143,15 +127,58 @@
 	base = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
 	deform = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
 
-/* //For sablekyne to be selectable, commented out because it doesn't add any of the species/sablekyne stats.
 /datum/species_form/sablekyne
 	playable = FALSE
 	name = FORM_SABLEKYNE
-	base = 'icons/mob/human_races/r_tajaran_white.dmi'
-	deform = 'icons/mob/human_races/r_def_tajaran_white.dmi'
+	base = 'icons/mob/human_races/r_sablekyne_white.dmi'
+	deform = 'icons/mob/human_races/r_def_sablekyne_white.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
-	flesh_color = "#AFA59E"
-	base_color = "#333333"
-	tail = "tajtail"
-	tail_animation = 'icons/mob/sprite_accessory/tails.dmi'
-*/
+
+/datum/species_form/marqua
+	playable = FALSE
+	name = FORM_MARQUA
+	base = 'icons/mob/human_races/r_marqua_vr.dmi'
+	deform = 'icons/mob/human_races/r_def_marqua.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
+/datum/species_form/kriosan
+	playable = FALSE
+	name = FORM_KRIOSAN
+	base = 'icons/mob/human_races/r_vulpkanin.dmi'
+	deform = null	//TODO: White vulp deformed sprites. There aren't even regular ones here.
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
+/datum/species_form/akula
+	playable = FALSE
+	name = FORM_AKULA
+	base = 'icons/mob/human_races/r_akula.dmi'
+	deform = 'icons/mob/human_races/r_def_akula.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
+/datum/species_form/naramad
+	playable = FALSE
+	name = FORM_NARAMAD
+	base = 'icons/mob/human_races/r_sergal.dmi'
+	deform = 'icons/mob/human_races/r_def_sergal.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
+/datum/species_form/chtmant
+	playable = FALSE
+	name = FORM_CHTMANT
+	base = 'icons/mob/human_races/r_spider.dmi'
+	deform = 'icons/mob/human_races/r_def_spider.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
+/datum/species_form/cindarite
+	playable = FALSE
+	name = FORM_CINDAR
+	base = 'icons/mob/human_races/r_lizard_white.dmi'
+	deform = 'icons/mob/human_races/r_def_lizard_white.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
+/datum/species_form/sojvox
+	playable = FALSE
+	name = FORM_OPIFEX
+	base = 'icons/mob/human_races/r_nevrean.dmi'
+	deform = 'icons/mob/human_races/r_def_nevrean.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR

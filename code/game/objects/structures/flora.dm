@@ -76,7 +76,7 @@
 	name = "potted plant"
 	icon = 'icons/obj/plants.dmi'
 	icon_state = "plant-26"
-	layer = ABOVE_MOB_LAYER
+	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 
 /obj/structure/flora/pottedplant
 	name = "potted plant"
@@ -603,14 +603,17 @@
 /obj/structure/flora/big/rocks1
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "rocks1"
+	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 
 /obj/structure/flora/big/rocks2
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "rocks2"
+	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 
 /obj/structure/flora/big/rocks3
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "rocks3"
+	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 
 
 
@@ -659,6 +662,7 @@
 	icon_state = "basalt1"
 	desc = "A dull and sturdy rock."
 	anchored = 1
+	density = 1
 
 /obj/structure/flora/rock/variant1
 	name = "rock"

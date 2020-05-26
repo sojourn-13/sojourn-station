@@ -23,11 +23,18 @@
 
 	wander = FALSE //No more sleepwalking
 
-	projectiletype = /obj/item/projectile/bullet/srifle/nomuzzle
+	projectiletype = /obj/item/projectile/bullet/lrifle/nomuzzle
 
-/mob/living/simple_animal/hostile/megafauna/one_star/death()
-	..()
-	walk(src, 0)
+/mob/living/simple_animal/hostile/megafauna/death(gibbed, var/list/force_grant)
+	if(health <= 0)
+		visible_message("<b>[src]</b> blows apart in an explosion!")
+		explosion(src.loc, 0,1,3)
+		new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+		s.set_up(3, 1, src)
+		s.start()
+		..()
+
 
 /mob/living/simple_animal/hostile/megafauna/one_star/LoseTarget()
 	..()

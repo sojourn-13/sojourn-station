@@ -10,6 +10,7 @@ var/global/list/sparring_attack_cache = list()
 	var/shredding = 0 // Calls the old attack_alien() behavior on objects/mobs when on harm intent.
 	var/sharp = 0
 	var/edge = 0
+	var/armor_penetration = 0
 
 	var/deal_halloss
 	var/sparring_variant_type = /datum/unarmed_attack/light_strike
@@ -126,7 +127,7 @@ var/global/list/sparring_attack_cache = list()
 
 	if (user.wear_mask && (istype(user.wear_mask, /obj/item/clothing/mask/muzzle) || istype(user.wear_mask, /obj/item/weapon/grenade)))
 		return 0
-	if (user == target && zone in list(BP_HEAD, "eyes", BP_MOUTH))
+	if (user == target && (zone in list(BP_HEAD, BP_EYES, BP_MOUTH)))
 		return 0
 	return 1
 
@@ -192,7 +193,7 @@ var/global/list/sparring_attack_cache = list()
 	if (user.legcuffed)
 		return 0
 
-	if(!zone in (BP_LEGS + BP_GROIN))
+	if(!(zone in (BP_LEGS + BP_GROIN)))
 		return 0
 
 	var/obj/item/organ/external/E = user.organs_by_name[BP_L_LEG]

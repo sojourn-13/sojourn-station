@@ -234,7 +234,7 @@
 					to_chat(user, "You slice up \the [src].")
 					var/slices = rand(3,5)
 					var/reagents_to_transfer = round(reagents.total_volume/slices)
-					for(var/i=i;i<=slices;i++)
+					for(var/i=0; i<=slices; i++)
 						var/obj/item/weapon/reagent_containers/food/snacks/fruit_slice/F = new(get_turf(src),seed)
 						if(reagents_to_transfer) reagents.trans_to_obj(F,reagents_to_transfer)
 					qdel(src)
@@ -297,18 +297,18 @@
 		return
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/pre_pickup(mob/user)
-	if(!seed)
-		return FALSE
-	if(seed.get_trait(TRAIT_STINGS))
-		var/mob/living/carbon/human/H = user
-		if(istype(H) && H.gloves)
-			return FALSE
-		if(!reagents || reagents.total_volume <= 0)
-			return FALSE
-		reagents.remove_any(rand(1,3)) //Todo, make it actually remove the reagents the seed uses.
-		seed.do_thorns(H,src)
-		seed.do_sting(H,src,pick(BP_R_ARM, BP_L_ARM))
-	return ..()
+    if(!seed)
+        return FALSE
+    if(seed.get_trait(TRAIT_STINGS))
+        var/mob/living/carbon/human/H = user
+        if(istype(H) && H.gloves)
+            return  ..()
+        if(!reagents || reagents.total_volume <= 0)
+            return  ..()
+        reagents.remove_any(rand(1,3)) //Todo, make it actually remove the reagents the seed uses.
+        seed.do_thorns(H,src)
+        seed.do_sting(H,src,pick(BP_R_ARM, BP_L_ARM))
+    return ..()
 
 // Predefined types for placing on the map.
 /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/libertycap

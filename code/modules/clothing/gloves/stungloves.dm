@@ -1,6 +1,6 @@
 /obj/item/clothing/gloves/stungloves
-	name = "FS Power Gloves"
-	desc = "Frozen Star solution for police operations. Punch criminals right in the face instead of prodding them with some feeble rod."
+	name = "HS Power Gloves"
+	desc = "\"Holland & Sullivan's\" solution for police operations. Punch criminals right in the face instead of prodding them with some feeble rod."
 	icon_state = "powerglove"
 	item_state = "powerglove"
 	action_button_name = "Toggle Power Glove"

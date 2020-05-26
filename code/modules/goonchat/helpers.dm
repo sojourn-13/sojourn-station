@@ -130,7 +130,7 @@ GLOBAL_LIST_INIT(symbols_unicode_keys, list(
 
 	return "<img class='icon icon-[A.icon_state]' src='data:image/png;base64,[bicon_cache[key]]'>"
 
-//Costlier version of icon2html() that uses getFlatIcon() to account for overlays, underlays, etc. Use with extreme moderation, ESPECIALLY on mobs.
+//Costlier version of icon2html() that uses getFlatIcon() to account for over-lays, underlays, etc. Use with extreme moderation, ESPECIALLY on mobs.
 /proc/costly_icon2html(thing, target)
 	if (!thing)
 		return

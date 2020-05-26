@@ -148,10 +148,10 @@
 
 /obj/item/weapon/storage/deferred/crate/saw
 	name = "infantry support crate"
-	desc = "A crate containing two Pulemyot Kalashnikova light machine guns, and 640 rounds of 7.62mm ammunition."
+	desc = "A crate containing two Pulemyot Kalashnikova light machine guns, and 640 rounds of 7.5mm ammunition."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/weapon/gun/projectile/automatic/lmg/pk = 2,
-	/obj/item/ammo_magazine/hrifle/pk = 8)
+	/obj/item/ammo_magazine/rifle_pk = 8)
 
 /obj/item/weapon/storage/deferred/crate/ak
 	name = "rifleman crate"

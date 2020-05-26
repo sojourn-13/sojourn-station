@@ -40,10 +40,10 @@
 /datum/event/meteor_wave/announce()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce("Meteors have been detected on collision course with the ship. ETA 3 minutes until impact. Crew are advised to raise shields and stay away from the outer hull", "Meteor Alert", new_sound = 'sound/AI/meteors.ogg')
+			command_announcement.Announce("Meteors have been detected on collision course with the colony. ETA 3 minutes until impact. Colonist are advised to seek shelter, be advised, objects coming from orbit may penetrate the ground and hit lower colony levels.", "Meteor Alert", new_sound = 'sound/AI/meteors.ogg')
 
 		else
-			command_announcement.Announce("Meteors have been detected on collision course with the ship.ETA 3 minutes until impact.", "Meteor Alert", new_sound = 'sound/AI/meteors.ogg')
+			command_announcement.Announce("Meteors have been detected on collision course with the colony. ETA 3 minutes until impact. Colonist are advised to seek shelter, be advised, objects coming from orbit may penetrate the ground and hit lower colony levels.", "Meteor Alert", new_sound = 'sound/AI/meteors.ogg')
 
 /datum/event/meteor_wave/tick()
 	if(activeFor >= next_meteor)
@@ -56,9 +56,9 @@
 /datum/event/meteor_wave/end()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce("The ship has cleared the meteor storm.", "Meteor Alert")
+			command_announcement.Announce("The meteor storm has ended.", "Meteor Alert")
 		else
-			command_announcement.Announce("The ship has cleared the meteor shower", "Meteor Alert")
+			command_announcement.Announce("The meteor storm has ended.", "Meteor Alert")
 
 /datum/event/meteor_wave/proc/get_meteors()
 	switch(severity)
@@ -83,7 +83,7 @@
 	. = ..()
 
 /datum/event/meteor_wave/overmap/announce()
-	command_announcement.Announce("Alert: The ship is now passing through an asteroid field. Brace for impact", "Asteroid Alert", new_sound = 'sound/AI/meteors.ogg')
+	command_announcement.Announce("Alert: Meteors are about to hit the colony. Brace for impact", "Asteroid Alert", new_sound = 'sound/AI/meteors.ogg')
 
 
 /*

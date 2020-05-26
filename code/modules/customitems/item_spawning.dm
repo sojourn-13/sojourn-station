@@ -20,7 +20,7 @@
 /datum/custom_item
 	var/assoc_key
 	var/character_name
-	var/inherit_inhands = 1 //if unset, and inhands are not provided, then the inhand overlays will be invisible.
+	var/inherit_inhands = 1 //if unset, and inhands are not provided, then the inhand over-lays will be invisible.
 	var/item_icon
 	var/item_desc
 	var/name

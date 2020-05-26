@@ -375,7 +375,7 @@ default behaviour is:
 	return FALSE
 
 
-/mob/living/proc/can_inject()
+/mob/living/proc/can_inject(var/mob/user, var/error_msg, var/target_zone)
 	return TRUE
 
 /mob/living/is_injectable(allowmobs = TRUE)
@@ -792,7 +792,7 @@ default behaviour is:
 		var/mob/pulled = AM
 		pulled.inertia_dir = 0
 
-// Static Overlays and Stats
+// Static over-lays and Stats
 
 /mob/living/proc/generate_static_overlay()
 	static_overlay = image(get_static_icon(new/icon(icon, icon_state)), loc = src)

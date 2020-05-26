@@ -24,6 +24,32 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/greatcoat/ihc_blue
+	name = "warrant officer's blue greatcoat"
+	desc = "A durable greatcoat, designed for protecion and style. This one is blue and fits the Warrant officer's uniform."
+	icon_state = "ihc_coat_blue"
+	item_state = "ihc_coat_blue"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(melee = 50, bullet = 50, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak_blue
+	name = "warrant officer's blue cloaked greatcoat"
+	desc = "A durable greatcoat, designed for protecion and style. This blue one has a cloak attached to it."
+	icon_state = "ihc_coat_cloak_blue"
+	item_state = "ihc_coat_cloak_blue"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(melee = 50, bullet = 50, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
 /obj/item/clothing/suit/greatcoat/cap
 	name = "premier's greatcoat"
 	desc = "A green greatcoat. Makes you feel like the leader you are supposed to be."
@@ -57,7 +83,7 @@
 	item_state = "mc_coat"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 35, bullet = 70, energy = 20, bomb = 15, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
+	armor = list(melee = 50, bullet = 50, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -70,7 +96,7 @@
 	item_state = "mc_coat_cloak"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 35, bullet = 70, energy = 20, bomb = 15, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
+	armor = list(melee = 50, bullet = 50, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20

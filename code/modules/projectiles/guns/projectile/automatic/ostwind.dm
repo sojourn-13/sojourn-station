@@ -1,12 +1,12 @@
 /obj/item/weapon/gun/projectile/automatic/ostwind
-	name = "\"Ostwind\" assault rifle"
-	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense. Primarily used by law enforcement, counter-terror units, and private security. Uses .208 Rifle rounds."
+	name = "\"Ostwind\" carbine"
+	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense. Primarily used by law enforcement, counter-terror units, and private security. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/ostwind.dmi'
 	icon_state = "ostwind"
 	item_state = "ostwind"
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_SRIFLE
+	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
@@ -20,13 +20,15 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	zoom_factor = 0.4
+	penetration_multiplier = 1.2
+	damage_multiplier = 0.9
 	recoil_buildup = 7
 	one_hand_penalty = 15 //automatic rifle level
 
 	firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
+		BURST_2_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/ostwind/update_icon()

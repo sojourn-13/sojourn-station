@@ -77,6 +77,21 @@
 		/obj/item/weapon/implant/core_implant/cruciform
 	)
 
+/obj/item/weapon/storage/belt/utility/handmade
+	name = "handmade tool belt"
+	desc = "Can hold various tools, its made from wire. It somehow always ends up the same color no matter what it is made from."
+	icon_state = "handmade_utility"
+	item_state = "handmande_utility"
+
+/obj/item/weapon/storage/belt/utility/handmade/full/populate_contents()
+	new /obj/item/weapon/tool/screwdriver/improvised(src)
+	new /obj/item/weapon/tool/wrench/improvised(src)
+	new /obj/item/weapon/tool/weldingtool/improvised(src)
+	new /obj/item/weapon/tool/crowbar/improvised(src)
+	new /obj/item/weapon/tool/wirecutters/improvised(src)
+	new /obj/item/stack/cable_coil/random(src)
+	new /obj/item/weapon/tool/saw/improvised(src)
+
 /obj/item/weapon/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
@@ -103,7 +118,9 @@
 		/obj/item/clothing/glasses,
 		/obj/item/weapon/tool/crowbar,
 		/obj/item/device/lighting/toggleable/flashlight,
-		/obj/item/weapon/extinguisher/mini
+		/obj/item/weapon/extinguisher/mini,
+		/obj/item/tape/medical,
+		/obj/item/device/flash
 	)
 
 /obj/item/weapon/storage/belt/medical/emt

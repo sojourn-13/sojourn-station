@@ -40,6 +40,10 @@
 	name = "guild master's rubber stamp"
 	icon_state = "stamp-ce"
 
+/obj/item/weapon/stamp/pr
+	name = "prime's rubber stamp"
+	icon_state = "stamp-pr"
+
 /obj/item/weapon/stamp/rd
 	name = "chief research overseer's rubber stamp"
 	icon_state = "stamp-rd"
@@ -62,6 +66,10 @@
 	name = "chief executive officer's stamp"
 	icon_state = "stamp-qm"
 
+/obj/item/weapon/stamp/fr
+	name = "foreman's stamp"
+	icon_state = "stamp-fr"
+
 // Syndicate stamp to forge documents.
 /obj/item/weapon/stamp/chameleon/attack_self(mob/user as mob)
 
@@ -77,7 +85,7 @@
 
 	var/input_stamp = input(user, "Choose a stamp to disguise as.", "Choose a stamp.") in show_stamps
 
-	if(user && src in user.contents)
+	if(user && (src in user.contents))
 
 		var/obj/item/weapon/stamp/chosen_stamp = stamps[capitalize(input_stamp)]
 

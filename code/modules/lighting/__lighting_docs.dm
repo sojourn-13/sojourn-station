@@ -49,16 +49,16 @@ turf: (lighting_turf.dm)
 	  - Force all light sources shining onto this turf to update
 
   - proc/lighting_clear_overlays():
-	  - Delete (manual GC) all light overlays on this turf, used when changing turf to space
+	  - Delete (manual GC) all light over-lays on this turf, used when changing turf to space
   - proc/lighting_build_overlays():
-	  - Create lighting overlays for this turf
+	  - Create lighting over-lays for this turf
 
 
 atom/movable/lighting_overlay: (lighting_overlay.dm)
   - var/lum_r, var/lum_g, var/lum_b; lumcounts of each colour
   - var/needs_update; set on update_lumcount, checked by lighting process
 
-  - var/xoffset, var/yoffset; (only present when using sub-tile overlays) fractional offset of this overlay in the tile
+  - var/xoffset, var/yoffset; (only present when using sub-tile over-lays) fractional offset of this overlay in the tile
 
   - proc/update_lumcount(delta_r, delta_g, delta_b):
       - Change the lumcount vars and queue the overlay for update

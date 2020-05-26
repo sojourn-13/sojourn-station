@@ -29,28 +29,26 @@
 	recoil_buildup = 12
 
 /obj/item/weapon/gun/projectile/colt/ten
-	name = "\"Delta Elite\" pistol"
-	desc = "A classy civilian high-powered automatic based on the M1911 series handguns, with significant reinforcements produded by Holland & Sullivan Arms. Uses 10mm Auto."
+	name = "\"Delta Elite\" magnum pistol"
+	desc = "A classy civilian high-powered automatic based on the M1911 series handguns, with significant reinforcements produded by Holland & Sullivan Arms. Uses .40 Auto-Mag."
 	icon_state = "delta"
 	item_state = "colt"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = CAL_10PISTOL
+	caliber = CAL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	ammo_type = "/obj/item/ammo_casing/a10mm"
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	magazine_type = /obj/item/ammo_magazine/a10mm
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8)
 	price_tag = 2000
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	recoil_buildup = 0.6
-	damage_multiplier = 1.4
+	recoil_buildup = 15
+	damage_multiplier = 1.1
 
 /obj/item/weapon/gun/projectile/colt/ten/dark
-	name = "\"Stallion\" pistol"
-	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard and produced by SolFed armories across the galaxy, this one bears  defaced serial numbers and the insignia of the Blackshield Militia. Uses 10mm Auto."
+	name = "\"Stallion\" magnum pistol"
+	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard and produced by SolFed armories across the galaxy, this one bears  defaced serial numbers and the insignia of the Blackshield Militia. Uses .40 Auto-Mag."
 	icon_state = "dark_delta"
 	item_state = "colt"
 	auto_eject = 1

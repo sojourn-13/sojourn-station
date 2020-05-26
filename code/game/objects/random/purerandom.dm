@@ -25,6 +25,9 @@
 				/obj/item/weapon/tool/pickaxe = 3,
 				/obj/item/weapon/pen = 3,
 				/obj/item/weapon/storage/box/donkpockets = 3,
+				/obj/item/weapon/storage/firstaid/adv = 6,
+				/obj/item/weapon/storage/firstaid/surgery = 6,
+				/obj/item/weapon/storage/ration_pack = 6,
 				/obj/item/weapon/locator = 2,
 				/obj/item/weapon/dice = 3,
 				/obj/item/weapon/clipboard = 2,
@@ -65,6 +68,8 @@
 				/obj/item/weapon/tool/cautery = 2,
 				/obj/item/weapon/tool/retractor = 2,
 				/obj/item/weapon/tool/saw/circular = 2,
+				/obj/item/weapon/storage/pill_bottle/dylovene = 2,
+				/obj/item/weapon/storage/pill_bottle/tramadol = 2,
 				/obj/item/weapon/mop = 3,
 //				/obj/item/weapon/lipstick/random = 3,
 				/obj/item/weapon/inflatable_dispenser = 2,
@@ -125,7 +130,7 @@
 				/obj/item/weapon/gun/projectile/giskard = 1,
 				/obj/item/weapon/gun/projectile/revolver/deckard = 1,
 				/obj/item/weapon/gun/projectile/revolver/detective = 1,
-				/obj/item/clothing/accessory/badge/marshal = 0.1, //Antag item
+				//obj/item/clothing/accessory/badge/marshal = 0.1, //Antag item
 				/obj/item/stash_spawner = 12))
 
 /obj/random/lowkeyrandom/low_chance

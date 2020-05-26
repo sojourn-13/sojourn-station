@@ -249,12 +249,8 @@ var/world_topic_spam_protect_time = world.timeofday
 		s += "<b>[config.server_name]</b> &#8212; "
 
 	s += "<b>[station_name()]</b>";
-	s += " ("
-	s += "<a href=\"http://\">" //Change this to wherever you want the hub to link to.
-//	s += "[game_version]"
-	s += "Default"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
-	s += "</a>"
-	s += ")"
+	s += "\]" 
+	s += "<br><small>+18, High Roleplay, colony map, ERIS downstream, weekly events, 4+ hour rounds. Custom character creator, tons of guns, and PvE.  Furry friendly!</small><br>" 
 
 	var/list/features = list()
 
@@ -264,16 +260,6 @@ var/world_topic_spam_protect_time = world.timeofday
 	else
 		features += "<b>STARTING</b>"
 
-	if (!config.enter_allowed)
-		features += "closed"
-
-	features += config.abandon_allowed ? "respawn" : "no respawn"
-
-	if (config && config.allow_vote_mode)
-		features += "vote"
-
-	if (config && config.allow_ai)
-		features += "AI allowed"
 
 	var/n = 0
 	for (var/mob/M in GLOB.player_list)
@@ -290,7 +276,7 @@ var/world_topic_spam_protect_time = world.timeofday
 		features += "hosted by <b>[config.hostedby]</b>"
 
 	if (features)
-		s += ": [jointext(features, ", ")]"
+		s += "\[[jointext(features, ", ")]"	
 
 	/* does this help? I do not know */
 	if (src.status != s)

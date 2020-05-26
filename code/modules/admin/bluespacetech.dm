@@ -326,6 +326,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	item_state = "utility"
 
 /obj/item/weapon/storage/belt/utility/full/bst/populate_contents()
+	..()
 	new /obj/item/weapon/tool/screwdriver/bs(src)
 	new /obj/item/weapon/tool/saw/bs(src)
 	new /obj/item/weapon/tool/wrench/bs(src)

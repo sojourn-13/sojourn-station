@@ -37,12 +37,13 @@
 
 /obj/item/weapon/storage/pouch/small_generic
 	name = "small generic pouch"
-	desc = "Can hold anything in it, but only a small amount."
+	desc = "Can hold nearly anything in it, but only a small amount."
 	icon_state = "small_generic"
 	item_state = "small_generic"
 	storage_slots = null //Uses generic capacity
 	max_storage_space = DEFAULT_SMALL_STORAGE * 0.5
 	max_w_class = ITEM_SIZE_SMALL
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/storage/pouch/small_generic/purple
 	icon_state = "small_generic_p"
@@ -50,7 +51,7 @@
 
 /obj/item/weapon/storage/pouch/medium_generic
 	name = "medium generic pouch"
-	desc = "Can hold anything in it, but only a moderate amount."
+	desc = "Can hold nearly anything in it, but only a moderate amount."
 	icon_state = "medium_generic"
 	item_state = "medium_generic"
 	storage_slots = null //Uses generic capacity
@@ -67,6 +68,7 @@
 	storage_slots = null //Uses generic capacity
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
+	matter = list(MATERIAL_BIOMATTER = 20)
 
 /obj/item/weapon/storage/pouch/medical_supply
 	name = "medical supply pouch"
@@ -244,7 +246,9 @@
 		/obj/item/weapon/gun/energy/stunrevolver,
 		/obj/item/weapon/gun/projectile/revolver,
 		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn, //short enough to fit in
-		/obj/item/weapon/gun/launcher/syringe
+		/obj/item/weapon/gun/launcher/syringe,
+		/obj/item/weapon/gun/energy/plasma/brigador,
+		/obj/item/weapon/gun/energy/toxgun
 		)
 
 	sliding_behavior = TRUE

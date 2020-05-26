@@ -5,10 +5,10 @@
 
 /obj/structure/closet/secure_closet/reinforced/commander/populate_contents()
 	if(prob(50))
-		new /obj/item/ammo_magazine/c10mm/lethal(src)
+		new /obj/item/ammo_magazine/hrifle/lethal(src)
 	else
-		new /obj/item/ammo_magazine/c10mm/hv(src)
-	new /obj/item/ammo_magazine/c10mm/lethal(src)
+		new /obj/item/ammo_magazine/hrifle/hv(src)
+	new /obj/item/ammo_magazine/hrifle/lethal(src)
 	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/clothing/head/rank/milcom/beret(src)
 	new /obj/item/clothing/head/rank/milcom(src)
@@ -17,16 +17,17 @@
 	new /obj/item/clothing/suit/armor/commander/militia(src)
 	new /obj/item/clothing/under/rank/commander(src)
 	new /obj/item/clothing/under/rank/commander/formal(src)
+	new /obj/item/clothing/head/rank/mcommander(src)
 	new /obj/item/clothing/head/rank/instructor_hat(src)
 	new /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped(src)
 	new /obj/item/clothing/glasses/ballistic(src)
 	new /obj/item/weapon/storage/belt/security(src)
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/clothing/accessory/armband/militia(src)
-	new /obj/item/weapon/gun/projectile/lamia/dark_lamia(src)
-	new /obj/item/ammo_magazine/magnum(src)
-	new /obj/item/ammo_magazine/magnum(src)
-	new /obj/item/ammo_magazine/magnum(src)
+	new /obj/item/weapon/gun/projectile/lamia/scoped/dark(src)
+	new /obj/item/ammo_magazine/kurtz(src)
+	new /obj/item/ammo_magazine/kurtz(src)
+	new /obj/item/ammo_magazine/kurtz(src)
 	new /obj/item/clothing/accessory/holster/hip(src)
 	new /obj/item/weapon/melee/telebaton(src)
 	new /obj/item/weapon/storage/pouch/ammo(src)
@@ -40,7 +41,7 @@
 		new /obj/item/weapon/storage/backpack/militia(src)
 
 /obj/structure/closet/secure_closet/armorer
-	name = "supply specialist's locker"
+	name = "sergeant's locker"
 	req_access = list(access_armory)
 	icon_state = "armorer"
 
@@ -58,21 +59,26 @@
 	else
 		new /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped(src)
 	if(prob(50))
-		new /obj/item/ammo_magazine/c10mm/lethal(src)
+		new /obj/item/ammo_magazine/hrifle/lethal(src)
 	else
-		new /obj/item/ammo_magazine/c10mm/hv(src)
-	new /obj/item/ammo_magazine/c10mm(src)
-	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
+		new /obj/item/ammo_magazine/hrifle/hv(src)
+	if(prob(50))
+		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
+		new /obj/item/ammo_magazine/magnum(src)
+		new /obj/item/ammo_magazine/magnum/lethal(src)
+	else
+		new /obj/item/weapon/gun/projectile/lamia/dark(src)
+		new /obj/item/ammo_magazine/kurtz(src)
+		new /obj/item/ammo_magazine/kurtz/lethal(src)
+	new /obj/item/ammo_magazine/hrifle(src)
 	new /obj/item/clothing/under/rank/armorer(src)
 	new /obj/item/clothing/head/rank/armorer/beret(src)
 	new /obj/item/clothing/head/rank/instructor_hat(src)
+	new /obj/item/clothing/accessory/dogtags(src)
 	new /obj/item/clothing/under/instructor(src)
 	new /obj/item/clothing/head/rank/armorer/cap(src)
 	new /obj/item/weapon/storage/belt/security(src)
 	new /obj/item/clothing/mask/gas(src)
-	new /obj/item/ammo_magazine/a10mm(src)
-	new /obj/item/ammo_magazine/a10mm(src)
-	new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
 	new /obj/item/clothing/accessory/holster/leg(src)
 	new /obj/item/weapon/melee/telebaton(src)
@@ -80,12 +86,9 @@
 	new /obj/item/clothing/glasses/ballistic(src)
 	new /obj/item/clothing/accessory/armband/militia(src)
 	new /obj/item/clothing/under/rank/armorer/green(src)
+	new /obj/item/weapon/storage/belt/webbing/black(src)
 	new /obj/item/clothing/suit/armor/flackvest/militia(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
-	if(prob(50))
-		new /obj/item/weapon/storage/backpack/security(src)
-	else
-		new /obj/item/weapon/storage/backpack/militia(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
@@ -102,14 +105,15 @@
 		new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	else
 		new /obj/item/clothing/head/helmet/ballistic(src)
-	if(prob(50))
-		new /obj/item/weapon/gun/projectile/automatic/omnirifle/standard(src)
-	else
-		new /obj/item/weapon/gun/projectile/automatic/omnirifle(src)
-	if(prob(50))
-		new /obj/item/ammo_magazine/c10mm/lethal(src)
-	else
-		new /obj/item/ammo_magazine/c10mm/hv(src)
+	switch(pick("omni", "hustler", "sts"))
+		if ("omni")
+			new /obj/item/weapon/gun/projectile/automatic/omnirifle/standard(src)
+		if ("hustler")
+			new /obj/item/weapon/gun/projectile/automatic/omnirifle(src)
+		if ("sts")
+			new /obj/item/weapon/gun/projectile/automatic/sts/hrifle(src)
+			new /obj/item/clothing/under/shorts/khaki(src)
+			new /obj/item/clothing/glasses/aviator(src)
 	if(prob(50))
 		new /obj/item/weapon/storage/pouch/medium_generic(src)
 	else
@@ -122,17 +126,28 @@
 		new /obj/item/weapon/storage/backpack/security(src)
 	else
 		new /obj/item/weapon/storage/backpack/militia(src)
-	new /obj/item/ammo_magazine/c10mm(src)
-	new /obj/item/ammo_magazine/c10mm(src)
+	if(prob(50))
+		new /obj/item/weapon/storage/belt/webbing/black(src)
+	else
+		new /obj/item/weapon/storage/belt/webbing/green(src)
+	if(prob(50))
+		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
+		new /obj/item/ammo_magazine/magnum(src)
+		new /obj/item/ammo_magazine/magnum/lethal(src)
+	else
+		new /obj/item/weapon/gun/projectile/ladon(src)
+		new /obj/item/ammo_magazine/magnum(src)
+		new /obj/item/ammo_magazine/magnum/lethal(src)
+	new /obj/item/ammo_magazine/hrifle(src)
+	new /obj/item/ammo_magazine/hrifle(src)
+	new /obj/item/ammo_magazine/hrifle/lethal(src)
+	new /obj/item/clothing/accessory/dogtags(src)
 	new /obj/item/clothing/under/rank/trooper(src)
 	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/weapon/storage/belt/security(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/mask/balaclava/tactical(src)
-	new /obj/item/ammo_magazine/a10mm(src)
-	new /obj/item/ammo_magazine/a10mm(src)
-	new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
 	new /obj/item/clothing/accessory/holster/leg(src)
 	new /obj/item/weapon/melee/telebaton(src)
@@ -141,9 +156,9 @@
 	new /obj/item/clothing/head/rank/trooper/beret(src)
 	new /obj/item/clothing/head/rank/trooper/cap(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
-	new /obj/item/weapon/grenade/smokebomb(src)
-	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/clothing/suit/armor/commander/militia_overcoat(src)
+	new /obj/item/weapon/grenade/smokebomb(src)
+	new /obj/item/weapon/grenade/smokebomb(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
@@ -151,10 +166,7 @@
 	icon_state = "corpsman"
 /obj/item/clothing/glasses/hud/health
 /obj/structure/closet/secure_closet/personal/corpsman/populate_contents()
-	if(prob(50))
-		new /obj/item/weapon/storage/belt/webbing/black(src)
-	else
-		new /obj/item/weapon/storage/belt/webbing
+	new /obj/item/weapon/storage/belt/webbing/black(src)
 	if(prob(60))
 		new /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine(src)
 	else
@@ -164,18 +176,24 @@
 	else
 		new /obj/item/weapon/storage/backpack/security(src)
 	if(prob(50))
-		new /obj/item/ammo_magazine/c10mm/lethal(src)
+		new /obj/item/ammo_magazine/hrifle/lethal(src)
 	else
-		new /obj/item/ammo_magazine/c10mm/hv(src)
-	new /obj/item/ammo_magazine/c10mm(src)
+		new /obj/item/ammo_magazine/hrifle/hv(src)
+	if(prob(50))
+		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
+		new /obj/item/ammo_magazine/magnum(src)
+		new /obj/item/ammo_magazine/magnum/lethal(src)
+	else
+		new /obj/item/weapon/gun/projectile/ladon(src)
+		new /obj/item/ammo_magazine/magnum(src)
+		new /obj/item/ammo_magazine/magnum/lethal(src)
+	new /obj/item/ammo_magazine/hrifle(src)
 	new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/under/rank/corpsman(src)
 	new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	new /obj/item/clothing/mask/balaclava/tactical(src)
-	new /obj/item/ammo_magazine/a10mm(src)
-	new /obj/item/ammo_magazine/a10mm(src)
-	new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
+	new /obj/item/clothing/accessory/dogtags(src)
 	new /obj/item/clothing/accessory/holster/leg(src)
 	new /obj/item/weapon/storage/belt/medical/emt(src)
 	new /obj/item/device/scanner/health(src)

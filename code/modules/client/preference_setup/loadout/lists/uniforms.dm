@@ -53,7 +53,7 @@
 /datum/gear/uniform/jumpskirt2
 	display_name = "jumpskirt, customized"
 	path = /obj/item/clothing/under/customskirt
-	flags = GEAR_HAS_TYPE_SELECTION
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/latex_maid
 	display_name = "latex maid dress"

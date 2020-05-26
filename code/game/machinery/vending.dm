@@ -1,9 +1,3 @@
-#define CAT_NORMAL 1
-#define CAT_HIDDEN 2  // also used in corresponding wires/vending.dm
-#define CAT_COIN   4
-
-#define CUSTOM_VENDOMAT_MODELS list("Generic" = "generic", "Security" = "sec", "Electronics" = "cart", "Research" = "robotics", "Medical" = "med", "Engineering" = "engivend", "Engineering 2" = "engi", "Tools" = "tool", "Shady" = "sovietsoda", "Fridge" = "smartfridge", "Alcohol" = "boozeomat", "Frozen Star" = "weapon", "NeoTheo" = "teomat", "Asters Power Cells" = "powermat", "Asters Disks" = "discomat")
-
 /**
  *  Datum used to hold information about a product in a vending machine
  */
@@ -92,7 +86,7 @@
 
 	var/icon_vend //Icon_state when vending
 	var/icon_deny //Icon_state when denying access
-	var/icon_type //For overlays after remodeling a custom vending machine
+	var/icon_type //For over-lays after remodeling a custom vending machine
 
 	// Power
 	use_power = 1
@@ -961,7 +955,7 @@
 						/obj/item/weapon/reagent_containers/food/drinks/tea/black = 10)
 	vend_delay = 15
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
-	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?;Care for a cup of coffe? It's Irish.;Whiskey for your sorrows, Beer for your break."
+	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?;Care for a cup of coffee? It's Irish.;Whiskey for your sorrows, Beer for your break."
 	product_ads = "Drink up!;Booze is good for you!;Alcohol is humanity's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 2053!;Award-winning wine!;Maximum alcohol!;Man loves beer.;A toast for progress!"
 	auto_price = FALSE
 
@@ -1050,8 +1044,6 @@
 	/obj/item/ammo_magazine/pistol/practice = 10,
 	/obj/item/ammo_magazine/hpistol/practice = 10,
 	/obj/item/ammo_magazine/ammobox/pistol/practice = 15,
-	/obj/item/ammo_magazine/a10mm/rubber = 10,
-	/obj/item/ammo_magazine/ammobox/a10mm/rubber = 10,
 	/obj/item/ammo_magazine/slmagnum/rubber = 10,
 	/obj/item/ammo_magazine/ammobox/magnum/rubber = 10,
 	/obj/item/ammo_magazine/slmagnum/practice = 10,
@@ -1067,8 +1059,6 @@
 	/obj/item/ammo_magazine/slpistol = 20,
 	/obj/item/ammo_magazine/smg = 15,
 	/obj/item/ammo_magazine/ammobox/pistol =20,
-	/obj/item/ammo_magazine/a10mm = 20,
-	/obj/item/ammo_magazine/ammobox/a10mm = 20,
 	/obj/item/ammo_magazine/slmagnum = 15,
 	/obj/item/ammo_magazine/ammobox/magnum = 15,
 	/obj/item/weapon/gun/projectile/automatic/mac = 2,
@@ -1081,8 +1071,8 @@
 
 	prices = list(/obj/item/device/flash = 200,
 	/obj/item/weapon/reagent_containers/spray/pepper = 100,
-	/obj/item/weapon/gun/projectile/olivaw = 500,
-	/obj/item/weapon/gun/projectile/giskard = 600,
+	/obj/item/weapon/gun/projectile/olivaw = 700,
+	/obj/item/weapon/gun/projectile/giskard = 500,
 	/obj/item/weapon/gun/projectile/colt = 700,
 	/obj/item/weapon/gun/energy/gun/martin = 500,
 	/obj/item/weapon/gun/projectile/revolver/detective = 400,
@@ -1098,14 +1088,10 @@
 	/obj/item/ammo_magazine/pistol/practice = 50,
 	/obj/item/ammo_magazine/hpistol/practice = 80,
 	/obj/item/ammo_magazine/ammobox/pistol/practice = 140,
-	/obj/item/ammo_magazine/a10mm/rubber = 80,
-	/obj/item/ammo_magazine/ammobox/a10mm/rubber = 300,
 	/obj/item/ammo_magazine/slmagnum/rubber = 100,
 	/obj/item/ammo_magazine/ammobox/magnum/rubber = 550,
 	/obj/item/ammo_magazine/slmagnum/practice = 50,
 	/obj/item/ammo_magazine/ammobox/magnum/practice = 225,
-	/obj/item/ammo_magazine/c10mm = 20,
-	/obj/item/ammo_magazine/ammobox/c10mm/rubber = 420,
 	/obj/item/weapon/storage/box/shotgunammo/beanbags = 800,
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 400,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 50,
@@ -1118,12 +1104,8 @@
 	/obj/item/ammo_magazine/hpistol = 180,
 	/obj/item/ammo_magazine/smg = 360,
 	/obj/item/ammo_magazine/ammobox/pistol = 300,
-	/obj/item/ammo_magazine/a10mm = 100,
-	/obj/item/ammo_magazine/ammobox/a10mm = 350,
 	/obj/item/ammo_magazine/slmagnum = 130,
 	/obj/item/ammo_magazine/ammobox/magnum = 500,
-	/obj/item/ammo_magazine/c10mm = 200,
-	/obj/item/ammo_magazine/ammobox/c10mm = 800,
 	/obj/item/weapon/storage/box/shotgunammo/slug = 800,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 800,
 
@@ -1182,7 +1164,7 @@
 /obj/machinery/vending/cigarette
 	name = "Smooth Cigarettes" //OCD had to be uppercase to look nice with the new formating
 	desc = "If you want to get cancer, might as well do it in style!"
-	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!;Who belives in Cancer?;Cancer? Better get it in style!;I'm willing to bet you that those Scientists did not smoke Space Cigs!;Don't stop smoking now, You'll get fat!"
+	product_slogans = "Brand name cigarettes taste good like a cigarette should.;Don't believe the reports - smoke today!;Almost no negative side effects;Addiction? Better get it in style!;A brand for every man!;Don't stop smoking now, You'll get fat!"
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs.;Cigars avalible for premium customers.;Best taste in space!"
 	vend_delay = 34
 	icon_state = "cigs"
@@ -1365,9 +1347,11 @@
 					/obj/item/ammo_magazine/pistol/rubber = 8,
 					/obj/item/ammo_magazine/hpistol/rubber = 8,
 					/obj/item/ammo_magazine/smg/rubber = 8,
-					/obj/item/ammo_magazine/a10mm/rubber = 8,
+					/obj/item/ammo_magazine/lrifle_short/rubber = 8,
+					/obj/item/ammo_magazine/rifle/rubber = 8,
+					/obj/item/ammo_magazine/hrifle/rubber = 8,
+					/obj/item/ammo_magazine/magnum/rubber = 8,
 					/obj/item/ammo_magazine/slmagnum/rubber = 6,
-					/obj/item/ammo_magazine/magnum/rubber = 6,
 					/obj/item/weapon/storage/box/shotgunammo/beanbags = 2,
 					/obj/item/device/hailer = 8,
 					/obj/item/taperoll/police = 8,
@@ -1397,7 +1381,7 @@
 /obj/machinery/vending/hydroseeds
 	name = "MegaSeed Servitor"
 	desc = "When you need seeds fast!"
-	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!;Seeds? We got you covered.;Remember: Glowshrooms are bad for you.;I'm legally advised to tell you that Nettles are poisonous.;Grow food, but keep Ambrosia handy."
+	product_slogans = "This is where the seeds live, git you some!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!;Seeds? We got you covered.;Remember: Glowshrooms are bad for you.;I'm legally advised to tell you that Nettles are poisonous."
 	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!;Just like your ancestors!"
 	icon_state = "seeds"
 	always_open = TRUE
@@ -1483,6 +1467,8 @@
 					/obj/item/weapon/tool/knife = 6,
 					/obj/item/weapon/material/kitchen/utensil/spoon = 6,
 					/obj/item/weapon/tool/knife = 3,
+					/obj/item/weapon/material/kitchen/rollingpin = 3,
+					/obj/item/weapon/reagent_containers/glass/rag = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 8,
 					/obj/item/clothing/suit/rank/chef/classic = 2,
 					/obj/item/weapon/storage/lunchbox = 3,
@@ -1502,8 +1488,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/mug/brit = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/mug/moebius = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/mug/teacup = 10)
-	contraband = list(/obj/item/weapon/material/kitchen/rollingpin = 2,
-						/obj/item/weapon/tool/knife/butch = 2)
+	contraband = list(/obj/item/weapon/tool/knife/butch = 2)
 	auto_price = FALSE
 
 /obj/machinery/vending/sovietsoda
@@ -1752,9 +1737,11 @@
 					/obj/item/stack/medical/ointment = 8,
 					/obj/item/stack/medical/splint = 5,
 					/obj/item/stack/medical/advanced/bruise_pack = 4,
-					/obj/item/stack/medical/advanced/ointment = 4)
-	contraband = list(/obj/item/weapon/implant/core_implant/cruciform = 3,
-					/obj/item/weapon/tool/knife/neotritual = 3,
+					/obj/item/stack/medical/advanced/ointment = 4,
+					/obj/item/weapon/storage/pouch/small_generic = 2,
+					/obj/item/weapon/storage/pouch/medium_generic = 2,
+					/obj/item/weapon/storage/pouch/medical_supply = 2)
+	contraband = list(/obj/item/weapon/tool/knife/neotritual = 3,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 3)
 
 	prices = list(/obj/item/weapon/book/ritual/cruciform = 500,
@@ -1772,14 +1759,16 @@
 					/obj/item/stack/medical/splint = 200,
 					/obj/item/stack/medical/advanced/bruise_pack = 400,
 					/obj/item/stack/medical/advanced/ointment = 400,
-					/obj/item/weapon/implant/core_implant/cruciform = 1000,
+					/obj/item/weapon/storage/pouch/small_generic = 800,
+					/obj/item/weapon/storage/pouch/medium_generic = 1000,
+					/obj/item/weapon/storage/pouch/medical_supply = 600,
 					/obj/item/weapon/tool/knife/neotritual = 1000,
 					/obj/item/weapon/gun/matter/launcher/nt_sprayer = 1500)
 
 /obj/machinery/vending/powermat
 	name = "Lonestar Power-Mat"
 	desc = "Trust is power, and there's no power you can trust like Robustcell."
-	product_slogans = "Trust is power, and there's no cell you can trust like Robustcell.;No battery is stronger nor lasts longer.;One that Lasts!;You can't top the copper top!;Tesla doesn't have anything on us!;Don't belive the competitors, Our cells last longer!"
+	product_slogans = "Trust is power, and there's no cell you can trust like Robustcell.;No battery is stronger nor lasts longer.;One that Lasts!;You can't top the copper top!;Tesla doesn't have anything on us!;Don't believe the competitors, Our cells last longer!"
 	product_ads = "Robust!;Trustworthy!;Durable!;Robustcell - For your power needs!;Better than the others!;Stronger than the others!"
 	icon_state = "powermat"
 	products = list(/obj/item/weapon/cell/large = 10,

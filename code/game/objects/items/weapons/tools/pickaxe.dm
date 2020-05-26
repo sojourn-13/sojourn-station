@@ -17,7 +17,7 @@
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
 	sharp = TRUE
-	structure_damage_factor = STRUCTURE_DAMAGE_BORING //Drills and picks are made for getting through hard materials
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY //Drills and picks are made for getting through hard materials
 	//They are the best anti-structure melee weapons
 	embed_mult = 1.2 //Digs deep
 	mode = EXCAVATE //Mode should be whatever is the starting tool and off quality.

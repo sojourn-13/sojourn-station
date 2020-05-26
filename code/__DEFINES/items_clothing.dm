@@ -70,7 +70,7 @@
 #define PROXMOVE           	0x20  	// Does this object require proximity checking in Enter()?
 #define SILENT				0x40 	// Sneaky shoes and silenced tools
 // 0x80 not used for no reason, feel free
-#define OVERLAY_QUEUED      0x100 // Atom queued to SSoverlay for COMPILE_OVERLAYS
+#define OVERLAY_QUEUED      0x100 // Atom queued to SSoverlay for COMPILE_over-lays
 #define INITIALIZED			0x200
 #define ADMIN_SPAWNED		0x400
 

@@ -12,7 +12,7 @@ var/global/list/light_overlay_cache = list()
 	///////////////////////
 /*
 Calling this  a system is perhaps a bit trumped up. It is essentially update_clothing dismantled into its
-core parts. The key difference is that when we generate overlays we do not generate either lying or standing
+core parts. The key difference is that when we generate over-lays we do not generate either lying or standing
 versions. Instead, we generate both and store them in two fixed-length lists, both using the same list-index
 (The indexes are in update_icons.dm): Each list for humans is (at the time of writing) of length 19.
 This will hopefully be reduced as the system is refined.
@@ -20,17 +20,17 @@ This will hopefully be reduced as the system is refined.
 	var/overlays_lying[19]			//For the lying down stance
 	var/overlays_standing[19]		//For the standing stance
 
-When we call update_icons, the 'lying' variable is checked and then the appropriate list is assigned to our overlays!
+When we call update_icons, the 'lying' variable is checked and then the appropriate list is assigned to our over-lays!
 That in itself uses a tiny bit more memory (no more than all the ridiculous lists the game has already mind you).
 
 On the other-hand, it should be very CPU cheap in comparison to the old system.
-In the old system, we updated all our overlays every life() call, even if we were standing still inside a crate!
-or dead!. 25ish overlays, all generated from scratch every second for every xeno/human/monkey and then applied.
+In the old system, we updated all our over-lays every life() call, even if we were standing still inside a crate!
+or dead!. 25ish over-lays, all generated from scratch every second for every xeno/human/monkey and then applied.
 More often than not update_clothing was being called a few times in addition to that! CPU was not the only issue,
 all those icons had to be sent to every client. So really the cost was extremely cumulative. To the point where
 update_clothing would frequently appear in the top 10 most CPU intensive procs during profiling.
 
-Another feature of this new system is that our lists are indexed. This means we can update specific overlays!
+Another feature of this new system is that our lists are indexed. This means we can update specific over-lays!
 So we only regenerate icons when we need them to be updated! This is the main saving for this system.
 
 In practice this means that:
@@ -68,14 +68,14 @@ There are several things that need to be remembered:
 
 >	There are also these special cases:
 		update_mutations()	//handles updating your appearance for certain mutations.  e.g TK head-glows
-		UpdateDamageIcon()	//handles damage overlays for brute/burn damage //(will rename this when I geta round to it)
+		UpdateDamageIcon()	//handles damage over-lays for brute/burn damage //(will rename this when I geta round to it)
 		update_body()	//Handles updating your mob's icon to reflect their gender/race/complexion etc
 		update_hair()	//Handles updating your hair overlay (used to be update_face, but mouth and
 																			...eyes were merged into update_body)
 		update_targeted() // Updates the target overlay when someone points a gun at you
 
 >	All of these procs update our overlays_lying and overlays_standing, and then call update_icons() by default.
-	If you wish to update several overlays at once, you can set the argument to 0 to disable the update and call
+	If you wish to update several over-lays at once, you can set the argument to 0 to disable the update and call
 	it manually:
 		e.g.
 		update_inv_head(0)
@@ -88,7 +88,7 @@ There are several things that need to be remembered:
 		update_inv_r_hand(0)
 		update_icons()
 
->	If you need to update all overlays you can use regenerate_icons(). it works exactly like update_clothing used to.
+>	If you need to update all over-lays you can use regenerate_icons(). it works exactly like update_clothing used to.
 
 >	I reimplimented an old unused variable which was in the code called (coincidentally) var/update_icon
 	It can be used as another method of triggering regenerate_icons(). It's basically a flag that when set to non-zero
@@ -104,7 +104,7 @@ If you have any questions/constructive-comments/bugs-to-report/or have a massivl
 Please contact me on #coderbus IRC. ~Carn x
 */
 
-//Human Overlays Indexes/////////
+//Human over-lays Indexes/////////
 #define MARKINGS_LAYER			1
 #define MUTATIONS_LAYER			2
 #define DAMAGE_LAYER			3
@@ -144,11 +144,11 @@ Please contact me on #coderbus IRC. ~Carn x
 	var/list/overlays_standing[TOTAL_LAYERS]
 	var/previous_damage_appearance // store what the body last looked like, so we only have to update it if something changed
 
-//UPDATES OVERLAYS FROM OVERLAYS_LYING/OVERLAYS_STANDING
+//UPDATES OVER-LAYS FROM OVERLAYS_LYING/over-lays_STANDING
 //this proc is messy as I was forced to include some old laggy cloaking code to it so that I don't break cloakers
 //I'll work on removing that stuff by rewriting some of the cloaking stuff at a later date.
 /mob/living/carbon/human/update_icons()
-	lying_prev = lying	//so we don't update overlays for lying/standing unless our stance changes again
+	lying_prev = lying	//so we don't update over-lays for lying/standing unless our stance changes again
 //	update_hud()		//TODO: remove the need for this
 	cut_overlays()
 
@@ -182,8 +182,8 @@ var/global/list/ears_icon_cache = list()
 var/global/list/tail_icon_cache = list()
 var/global/list/wings_icon_cache = list()
 
-//DAMAGE OVERLAYS
-//constructs damage icon for each organ from mask * damage field and saves it in our overlays_ lists
+//DAMAGE over-lays
+//constructs damage icon for each organ from mask * damage field and saves it in our over-lays_ lists
 /mob/living/carbon/human/UpdateDamageIcon(var/update_icons=1)
 	// first check whether something actually changed about damage appearance
 	var/damage_appearance = ""
@@ -1016,7 +1016,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		var/obj/item/clothing/suit/suit = wear_suit
 		if(istype(suit) && suit.accessories.len)
 			for(var/obj/item/clothing/accessory/A in suit.accessories)
-				standing.overlays |= A.get_mob_overlay()
+				standing.add_overlay(A.get_mob_overlay())
 
 		overlays_standing[SUIT_LAYER]	= standing
 
@@ -1273,11 +1273,15 @@ mob/living/carbon/human/proc/get_wings_image()
 
 /mob/living/carbon/human/proc/update_surgery(var/update_icons=1)
 	overlays_standing[SURGERY_LAYER] = null
-	var/image/total = new
+	var/image/total = null
+
 	for(var/obj/item/organ/external/E in organs)
 		if(E.open)
+			if(total == null)
+				total = new
+
 			var/image/I = image("icon"='icons/mob/surgery.dmi', "icon_state"="[E.name][round(E.open)]", "layer"=-SURGERY_LAYER)
-			total.overlays += I
+			total.add_overlay(I)
 	overlays_standing[SURGERY_LAYER] = total
 	if(update_icons)   update_icons()
 
@@ -1364,7 +1368,7 @@ mob/living/carbon/human/proc/get_wings_image()
 #undef WORN_ID
 #undef WORN_MASK
 
-//Human Overlays Indexes/////////
+//Human over-lays Indexes/////////
 #undef MARKINGS_LAYER
 #undef MUTATIONS_LAYER
 #undef DAMAGE_LAYER

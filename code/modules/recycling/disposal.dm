@@ -353,7 +353,7 @@
 		AM.pipe_eject(0)
 	update()
 
-// update the icon & overlays to reflect mode & status
+// update the icon & over-lays to reflect mode & status
 /obj/machinery/disposal/proc/update()
 	cut_overlays()
 	if(stat & BROKEN)
@@ -1272,7 +1272,6 @@
 		return checkTag in sortType
 	else
 		return checkTag == sortType
-	return FALSE
 
 	// next direction to move
 	// if coming in from negdir, then next is primary dir or sortdir

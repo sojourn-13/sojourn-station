@@ -48,7 +48,7 @@
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
 	var/zoom = 0 //1 if item is actively being used to zoom. For scoped guns and binoculars.
 
-	var/contained_sprite = FALSE //TRUE if object icon and related mob overlays are all in one dmi
+	var/contained_sprite = FALSE //TRUE if object icon and related mob over-lays are all in one dmi
 
 	var/icon_override = null  //Used to override hardcoded clothing dmis in human clothing proc.
 
@@ -331,7 +331,7 @@
 /obj/item/clean_blood()
 	. = ..()
 	if(blood_overlay)
-		overlays.Remove(blood_overlay)
+		cut_overlay(blood_overlay)
 
 /obj/item/clothing/gloves/clean_blood()
 	.=..()
@@ -414,7 +414,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	if(usr.stat || !(ishuman(usr)))
 		to_chat(usr, "You are unable to focus through the [devicename]")
 		cannotzoom = 1
-	else if(!zoom && global_hud.darkMask[1] in usr.client.screen)
+	else if(!zoom && (global_hud.darkMask[1] in usr.client.screen))
 		to_chat(usr, "Your visor gets in the way of looking through the [devicename]")
 		cannotzoom = 1
 	else if(!zoom && usr.get_active_hand() != src)

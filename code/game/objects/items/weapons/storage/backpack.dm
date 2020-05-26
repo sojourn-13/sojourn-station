@@ -310,7 +310,7 @@
 //Faction-specific satchels
 /obj/item/weapon/storage/backpack/satchel/ironhammer
 	name = "operator's satchel"
-	desc = "Done in a complementing shade for IronHammer Security forces, for the itinerant military contractor."
+	desc = "Done in a complementing shade for Nadezhda security forces, for the itinerant military contractor."
 	icon_state = "satchel_ironhammer"
 
 /obj/item/weapon/storage/backpack/satchel/neotheology

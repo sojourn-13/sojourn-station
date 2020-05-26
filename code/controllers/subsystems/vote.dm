@@ -21,8 +21,6 @@ SUBSYSTEM_DEF(vote)
 		P.only_admin = P.IsAdminOnly()
 		votes[T] = P
 
-
-
 /datum/controller/subsystem/vote/proc/update_voters()
 	for(var/client/C in voters)
 		interface_client(C)
@@ -52,7 +50,7 @@ SUBSYSTEM_DEF(vote)
 
 	var/datum/poll/poll = null
 
-	if(ispath(newvote) && newvote in votes)
+	if(ispath(newvote) && (newvote in votes))
 		poll = votes[newvote]
 
 	//can_start check is done before calling this so that admins can skip it
@@ -160,6 +158,7 @@ SUBSYSTEM_DEF(vote)
 		data += "</ul><hr>"
 	data += "<a href='?src=\ref[src];close=1' style='position:absolute;right:50px'>Close</a></body></html>"
 	return data
+
 
 /datum/controller/subsystem/vote/Topic(href,href_list[],hsrc)
 	if(href_list["vote"])

@@ -52,7 +52,7 @@
 		else //in case some goofy admin switches icon states around without switching the icon_open or icon_closed
 			to_chat(usr, "This coat cannot be opened or closed.")
 			return
-		update_wear_icon()	//so our overlays update
+		update_wear_icon()	//so our over-lays update
 
 
 /obj/item/clothing/suit/storage/vest/merc/New()
@@ -126,6 +126,12 @@
 	icon_state = "soldiercoat"
 	item_state = "soldiercoat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/duster/cyberpunklong
+	name = "cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long"
+	item_state = "cyberpunksleek_long"
 
 /*Military Jackets*/
 

@@ -28,7 +28,7 @@
 	verbs.Cut()
 	total_lighting_overlays++
 
-	var/turf/T = loc //If this runtimes atleast we'll know what's creating overlays outside of turfs.
+	var/turf/T = loc //If this runtimes atleast we'll know what's creating over-lays outside of turfs.
 	T.lighting_overlay = src
 	T.luminosity = 0
 	if(no_update)
@@ -108,7 +108,7 @@
 
 	luminosity = set_luminosity
 
-// Variety of overrides so the overlays don't get affected by weird things.
+// Variety of overrides so the over-lays don't get affected by weird things.
 /atom/movable/lighting_overlay/ex_act()
 	return
 

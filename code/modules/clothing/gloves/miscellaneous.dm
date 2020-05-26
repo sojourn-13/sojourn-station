@@ -122,3 +122,13 @@ obj/item/clothing/gloves/fingerless
 	heat_protection = ARMS
 	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
 	price_tag = 10
+
+/obj/item/clothing/gloves/membrane
+	name = "scientific gloves"
+	desc = "Heavy gloves to keep your hands intact for future experiments."
+	icon_state = "science"
+	item_state = "science"
+	siemens_coefficient = 0.5
+	permeability_coefficient = 0.05
+	germ_level = 0
+	price_tag = 50

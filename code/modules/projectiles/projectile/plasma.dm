@@ -20,3 +20,10 @@
 	name = "heavy plasma bolt"
 	damage = 33
 	armor_penetration = 50
+
+/obj/item/projectile/plasma/impact
+	name = "plasma impact bolt"
+	damage = 0
+	stun = 1
+	weaken = 5
+	knockback = 2

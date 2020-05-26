@@ -113,7 +113,7 @@
 	if(..())
 		return 0
 
-	R.speed_factor += 0.1
+	R.speed_factor += 0.5
 	return 1
 
 

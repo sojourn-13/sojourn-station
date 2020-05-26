@@ -42,9 +42,9 @@
 	result = /obj/item/weapon/tool/weldingtool/improvised
 	steps = list(
 		list(/obj/item/device/assembly/igniter, 1),
-		list(/obj/item/weapon/tank/emergency_oxygen),
-		list(QUALITY_ADHESIVE, 15, 100),
-		list(QUALITY_SCREW_DRIVING, 10, 40)
+		list(QUALITY_SCREW_DRIVING, 10, 40),
+		list(/obj/item/weapon/tank/emergency_oxygen, 1),
+		list(QUALITY_ADHESIVE, 15, 100)
 	)
 
 /datum/craft_recipe/tool/makeshift_centrifuge
@@ -111,7 +111,7 @@
 //A shard of glass wrapped in tape makes a crude sort of knife
 /datum/craft_recipe/tool/shiv
 	name = "shiv"
-	result = /obj/item/weapon/tool/shiv
+	result = /obj/item/weapon/tool/knife/shiv
 	steps = list(
 		list(/obj/item/weapon/material/shard, 1, "time" = 30),
 		list(QUALITY_ADHESIVE, 15, 70)

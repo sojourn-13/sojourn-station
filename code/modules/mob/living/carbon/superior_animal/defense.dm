@@ -200,6 +200,10 @@
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
+	for(var/obj/item/I in src)
+		drop_from_inventory(I)
+		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
+
 	playsound(src.loc, 'sound/effects/splat.ogg', max(10,min(50,maxHealth)), 1)
 	. = ..(anim,do_gibs)
 
@@ -265,8 +269,9 @@
 			loc_temp =  M.return_temperature()
 			loc_pressure =  M.return_pressure()
 		else if(istype(loc, /obj/machinery/atmospherics/unary/cryo_cell))
-			loc_temp = loc:air_contents.temperature
-			loc_pressure = loc:air_contents.return_pressure()
+			var/obj/machinery/atmospherics/unary/cryo_cell/M = loc
+			loc_temp = M.air_contents.temperature
+			loc_pressure = M.air_contents.return_pressure()
 		else
 			loc_temp = environment.temperature
 			loc_pressure = environment.return_pressure()

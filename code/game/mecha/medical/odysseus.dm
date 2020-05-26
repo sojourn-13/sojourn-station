@@ -1,5 +1,5 @@
 /obj/mecha/medical/odysseus
-	desc = "These exosuits are developed and produced by the Excelsior. (&copy; All rights reserved)."
+	desc = "These exosuits are developed and produced by the Soteria. (&copy; All rights reserved)."
 	name = "Odysseus"
 	icon_state = "odysseus"
 	initial_icon = "odysseus"

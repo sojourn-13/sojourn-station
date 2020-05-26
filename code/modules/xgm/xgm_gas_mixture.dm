@@ -12,7 +12,7 @@
 	//Size of the group this gas_mixture is representing.  1 for singletons.
 	var/group_multiplier = 1
 
-	//List of active tile overlays for this gas_mixture.  Updated by check_tile_graphic()
+	//List of active tile over-lays for this gas_mixture.  Updated by check_tile_graphic()
 	var/list/graphic = list()
 
 /datum/gas_mixture/New(vol = CELL_VOLUME)
@@ -440,7 +440,7 @@
 
 
 //Equalizes a list of gas mixtures.  Used for pipe networks.
-/proc/equalize_gases(datum/gas_mixture/list/gases)
+/proc/equalize_gases(list/datum/gas_mixture/gases)
 	//Calculate totals from individual components
 	var/total_volume = 0
 	var/total_thermal_energy = 0

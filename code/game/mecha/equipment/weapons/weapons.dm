@@ -124,7 +124,7 @@
 	icon_state = "pulse1_bl"
 	var/life = 20
 
-	Bump(atom/A)
+	Bump(atom/A, var/forced)
 		A.bullet_act(src, def_zone)
 		src.life -= 10
 		if(life <= 0)
@@ -214,8 +214,8 @@
 	name = "\improper LBX AC 10 \"Scattershot\""
 	icon_state = "mecha_scatter"
 	equip_cooldown = 20
-	projectile = /obj/item/projectile/bullet/a10mm
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	projectile = /obj/item/projectile/bullet/magnum
+	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 40
 	projectiles_per_shot = 4
@@ -227,8 +227,8 @@
 	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
 	icon_state = "mecha_scatter"
 	equip_cooldown = 20
-	projectile = /obj/item/projectile/bullet/a10mm
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	projectile = /obj/item/projectile/bullet/magnum
+	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 30
 	projectiles_per_shot = 6
@@ -240,8 +240,8 @@
 	name = "\improper Ultra AC 2"
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
-	projectile = /obj/item/projectile/bullet/a10mm
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	projectile = /obj/item/projectile/bullet/rifle
+	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	projectiles = 300
 	projectiles_per_shot = 3
 	deviation = 0.3
@@ -253,8 +253,8 @@
 	desc = "Few would call this weapon reliable, fewer know just how valuable it is."
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
-	projectile = /obj/item/projectile/bullet/a10mm
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	projectile = /obj/item/projectile/bullet/pistol
+	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiles = 60
 	projectiles_per_shot = 3
 	deviation = 0.4

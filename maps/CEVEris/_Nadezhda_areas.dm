@@ -3,6 +3,9 @@
 //Nadezhda//
 ////////////
 
+/area/colony
+	base_turf = /turf/simulated/floor/asteroid
+
 /area/colony/exposedsun
 	ship_area = TRUE
 	icon_state = "asteroid"
@@ -164,7 +167,7 @@
 	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/outside/zoo
-	name = "The Zoo"
+	name = "Abandoned Research Lab"
 	icon_state = "erisgreen"
 	dynamic_lighting = TRUE
 
@@ -173,6 +176,7 @@
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
 	dynamic_lighting = TRUE
+	requires_power = 0
 
 /area/nadezhda/maintenance/outside/monster_cave
 	name = "Monster Cave"
@@ -185,11 +189,13 @@
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
 	dynamic_lighting = TRUE
+	requires_power = 0
 
 /area/nadezhda/maintenance/outside/smuggler_zone_u
 	name = "Smuggler Base Underground"
 	icon_state = "erisgreen"
 	dynamic_lighting = TRUE
+	requires_power = 0
 
 //Outside natural areas
 
@@ -293,6 +299,7 @@
 /area/nadezhda/hallway
 	sound_env = LARGE_ENCLOSED
 	icon_state = "erisgreen"
+	flags = AREA_FLAG_RAD_SHIELDED
 
 /area/nadezhda/hallway/main/f1section1
 	name = "Floor One Hallway One"
@@ -392,7 +399,7 @@
 	sound_env = MEDIUM_SOFTFLOOR
 
 /area/nadezhda/command/armory
-	name = "\improper Bridge Armory"
+	name = "\improper Command Center Armory"
 	icon_state = "bridge"
 	sound_env = SMALL_ENCLOSED
 
@@ -1150,6 +1157,7 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Security - Main Gate"
 	icon_state = "security"
 	dynamic_lighting = FALSE
+	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 
 /area/nadezhda/security/checkpoint/supply
 	name = "Security Post - Cargo Bay"

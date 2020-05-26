@@ -79,3 +79,28 @@
 	desc = "An archaic gas mask still widely available due to its mass production."
 	icon_state = "gas_old"
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 70, rad = 0)
+
+/obj/item/clothing/mask/gas/opifex
+	name = "opifex gas mask"
+	desc = "An archaic gas mask used commonly by opifex to filter out oxygen and other biohazards. They'll slowly die without wearing this, as will any other race that dons this mask."
+	icon_state = "gas_mask_opi"
+	item_state = "gas_mask_opi"
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 80, rad = 0)
+	filtered_gases = list("plasma", "sleeping_agent", "oxygen")
+	var/mask_open = FALSE	// Controls if the Opifex can eat through this mask
+	action_button_name = "Toggle Feeding Port"
+
+/obj/item/clothing/mask/gas/opifex/proc/feeding_port(mob/user)
+	if(user.canmove && !user.stat)
+		mask_open = !mask_open
+		if(mask_open)
+			body_parts_covered = EYES
+			to_chat(user, "Your mask moves to allow you to eat.")
+		else
+			body_parts_covered = FACE|EYES
+			to_chat(user, "Your mask moves to cover your mouth.")
+	return
+
+/obj/item/clothing/mask/gas/opifex/attack_self(mob/user)
+	feeding_port(user)
+	..()

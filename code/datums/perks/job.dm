@@ -24,6 +24,7 @@
 
 /datum/perk/timeismoney/activate()
 	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You feel tired, you will need to rest for a bit before using this ability again."))
 		return FALSE
 	cooldown_time = world.time + 7 MINUTES
 	addtimer(CALLBACK(src, .proc/deactivate), 1 MINUTES)

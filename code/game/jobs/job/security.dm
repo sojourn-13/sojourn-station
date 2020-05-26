@@ -12,7 +12,6 @@
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
-	also_known_languages = list(LANGUAGE_CYRILLIC = 60, LANGUAGE_SERBIAN = 60)
 	ideal_character_age = 40
 	minimum_character_age = 30
 
@@ -23,7 +22,7 @@
 		access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
 		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway,
-		access_external_airlocks, access_research_equipment, access_prospector, access_medical
+		access_external_airlocks, access_research_equipment, access_prospector, access_medical, access_kitchen
 	)
 
 	stat_modifiers = list(
@@ -68,7 +67,6 @@
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
-	also_known_languages = list(LANGUAGE_CYRILLIC = 60, LANGUAGE_SERBIAN = 60)
 	ideal_character_age = 40
 	minimum_character_age = 30
 
@@ -79,7 +77,7 @@
 		access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
 		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway,
-		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat
+		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat, access_kitchen
 	)
 
 	stat_modifiers = list(
@@ -123,14 +121,14 @@
 	selection_color = "#a7bbc6"
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
-	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 25)
+	minimum_character_age = 25
 
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
 
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
 	)
 
 	stat_modifiers = list(
@@ -159,6 +157,54 @@
 	join_tag = /datum/job/supsec
 
 
+/datum/job/serg
+	title = "Sergeant"
+	flag = SERG
+	department = DEPARTMENT_SECURITY
+	department_flag = SECURITY
+	faction = MAP_FACTION
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Militia Commander"
+	difficulty = "Hard."
+	selection_color = "#a7bbc6"
+	wage = WAGE_LABOUR_HAZARD
+	minimum_character_age = 25
+
+	outfit_type = /decl/hierarchy/outfit/job/security/serg
+
+	access = list(
+		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
+		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
+	)
+
+	stat_modifiers = list(
+		STAT_ROB = 25,
+		STAT_TGH = 25,
+		STAT_VIG = 25,
+	)
+
+	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
+							 /datum/computer_file/program/camera_monitor)
+
+	description = "The Sergeant is the second-in-command of the Blackshield and the defacto commanding officer if the militia commander isn't around or injured. <br>\
+	Your role is mainly keeping order among the militia troopers and corpsman and ensuring they do not act like a pack of thugs.<br>\
+	You will often be maintaining discipline and order within the ranks and fulfilling orders from the militia commander.<br>\
+	You will also the secondary squad leader during conflicts, often times leading troopers independent of the militia commander, but usually under his explicit orders.<br>\
+	In quieter times, you serve as a form of military police and drill instructor. Take the initiative to offer a variety of training drills, especially to junior operatives and report behavior that should have a member of security removed from their post.<br>\
+	Remember that any Militia Commander duties may be delegated to you if they wish, and will automatically be given if they are not present."
+
+	duties = "Manage good ethics among security, including the militia and marshals with a record of everything responsibly and recorded.<br>\
+	Give training and instruction to troopers. Run drills and ensure they are prepared for firing lines, kill zones, and breach tactics.<br>\
+	Follow the orders of the Militia Commander and in his absence keep security in line."
+
+/obj/landmark/join/start/serg
+	name = "Sergeant"
+	icon_state = "player-blue"
+	join_tag = /datum/job/serg
+
+
 /datum/job/inspector
 	title = "Ranger"
 	flag = INSPECTOR
@@ -171,14 +217,13 @@
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
-	also_known_languages = list(LANGUAGE_CYRILLIC = 50, LANGUAGE_SERBIAN = 50)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/inspector
 
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels,
-		access_external_airlocks, access_prospector, access_brig
+		access_external_airlocks, access_prospector, access_brig, access_kitchen
 	)
 
 	stat_modifiers = list(
@@ -221,13 +266,12 @@
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
-	also_known_languages = list(LANGUAGE_CYRILLIC = 5)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
 	access = list(
-		access_security, access_moebius, access_chemistry, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
-		access_medical_equip, access_prospector, access_engine, access_mailsorting, access_eva, access_brig, access_external_airlocks
+		access_security, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
+		access_medical_equip, access_eva, access_brig, access_external_airlocks, access_surgery
 	)
 
 	stat_modifiers = list(
@@ -264,20 +308,19 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Militia Commander"
 	difficulty = "Hard."
 	//alt_titles = list("Blackshield Junior Trooper")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
-	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 25)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
 	access = list(
-		access_security, access_moebius, access_engine, access_mailsorting,access_eva,
-		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector
+		access_security, access_eva,
+		access_sec_doors, access_brig, access_maint_tunnels, access_external_airlocks
 	)
 
 	stat_modifiers = list(
@@ -320,13 +363,12 @@
 	//alt_titles = list("Marshal Junior Operative")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
-	also_known_languages = list(LANGUAGE_CYRILLIC = 25, LANGUAGE_SERBIAN = 25)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 
 	access = list(
 		access_security, access_moebius, access_engine, access_mailsorting,access_eva,
-		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector
+		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector, access_kitchen
 	)
 
 	stat_modifiers = list(

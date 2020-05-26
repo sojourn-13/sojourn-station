@@ -8,6 +8,8 @@
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.6
 	price_tag = 200
+	//tool_qualities = list(QUALITY_ARMOR = 100)
+	//max_upgrades = 1
 
 /*
  * Vests
@@ -159,7 +161,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	slowdown = 1
+	slowdown = 0.7
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	armor = list(
 		melee = 35,
@@ -306,7 +308,7 @@ obj/item/clothing/suit/armor/flackvest/commander
 	item_state = "flakvest_green"
 	blood_overlay_type = "armor"
 	slowdown = 0.2
-	armor = list(melee = 50, bullet = 55, energy = 30, bomb = 50, bio = 0, rad = 0)
+	armor = list(melee = 50, bullet = 60, energy = 30, bomb = 50, bio = 0, rad = 0)
 
 obj/item/clothing/suit/armor/commander
 	name = "commander's armored coat"
@@ -315,8 +317,7 @@ obj/item/clothing/suit/armor/commander
 	item_state = "commander"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 55, bullet = 60, energy = 30, bomb = 30, bio = 0, rad = 0)
-	slowdown = 0.2
+	armor = list(melee = 50, bullet = 50, energy = 25, bomb = 30, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -333,6 +334,18 @@ obj/item/clothing/suit/armor/commander/militia_overcoat
 	desc = "Blackshield Milita greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
+
+obj/item/clothing/suit/armor/commander/marshal_coat
+	name= "marshal officers greatcoat"
+	desc= "marshal officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
+	icon_state = "marshal_coat"
+	item_state = "marshal_coat"
+
+obj/item/clothing/suit/armor/commander/marshal_coat_ss
+	name= "supply specialist's greatcoat"
+	desc= "supply specialist's greatcoat with armor weave. Part of the formal uniform of the security marshals."
+	icon_state = "marshal_coat_ss"
+	item_state = "marshal_coat_ss"
 
 //Reactive armor
 

@@ -135,7 +135,7 @@
 	var/icon
 	var/name
 
-	// These values are primarily for station alarms and status displays, and which light colors and overlays to use
+	// These values are primarily for station alarms and status displays, and which light colors and over-lays to use
 	var/light_max_bright = 0.5
 	var/light_inner_range = 0.1
 	var/light_outer_range = 1
@@ -261,5 +261,5 @@
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 
 /decl/security_level/default/code_delta/switching_up_to()
-	security_announcement_delta.Announce("The self-destruct mechanism has been engaged. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.", "Attention! Delta security level reached!")
+	security_announcement_delta.Announce("The threat of colony destruction has been declared. All colonist are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.", "Attention! Delta security level reached!")
 	notify_station()

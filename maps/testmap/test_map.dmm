@@ -250,10 +250,6 @@
 /obj/item/weapon/grenade/frag,
 /turf/simulated/floor,
 /area/testing/first)
-"aS" = (
-/obj/item/weapon/grenade/frag/explosive,
-/turf/simulated/floor,
-/area/testing/first)
 "aT" = (
 /turf/simulated/floor,
 /area/testing/first)
@@ -1437,8 +1433,8 @@ ao
 ao
 aE
 aT
-aS
-aS
+aT
+aT
 ab
 be
 be

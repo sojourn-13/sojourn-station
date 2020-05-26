@@ -325,7 +325,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/auto_update = 1
 	if(mode in no_auto_update)
 		auto_update = 0
-	if(old_ui && (mode == lastmode && ui_tick % 5 && mode in update_every_five))
+	if(old_ui && (mode == lastmode && ui_tick % 5 && (mode in update_every_five)))
 		return
 
 	lastmode = mode
@@ -822,11 +822,11 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 //EXTRA FUNCTIONS===================================
 
-	if (mode == 2||mode == 21)//To clear message overlays.
+	if (mode == 2||mode == 21)//To clear message over-lays.
 		new_message = 0
 		update_icon()
 
-	if (mode == 6||mode == 61)//To clear news overlays.
+	if (mode == 6||mode == 61)//To clear news over-lays.
 		new_news = 0
 		update_icon()
 
@@ -1212,7 +1212,8 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				if (!istype(C:dna, /datum/dna))
 					to_chat(user, SPAN_NOTICE("No fingerprints found on [C]"))
 				else
-					to_chat(user, text(SPAN_NOTICE("\The [C]'s Fingerprints: [md5(C:dna.uni_identity)]")))
+					var/datum/dna/value = C.dna
+					to_chat(user, text(SPAN_NOTICE("\The [C]'s Fingerprints: [md5(value.uni_identity)]")))
 				if ( !(C:blood_DNA) )
 					to_chat(user, SPAN_NOTICE("No blood found on [C]"))
 					if(C:blood_DNA)

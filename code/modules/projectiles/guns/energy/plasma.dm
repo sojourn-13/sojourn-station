@@ -67,3 +67,28 @@
 /obj/item/weapon/gun/energy/plasma/cassad/update_icon()
 	..()
 	set_item_state(null, back = TRUE)
+
+/obj/item/weapon/gun/energy/plasma/brigador
+	name = "\"Brigador\" energy pistol"
+	desc = "\"Soteria\" brand energy pistol, for personal overprotection. It can change between laser and plasma, with the former penetrating armor better and the latter dealing more raw damage."
+	icon = 'icons/obj/guns/energy/brigador.dmi'
+	icon_state = "brigador"
+	charge_meter = FALSE
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
+	twohanded = FALSE
+	suitable_cell = /obj/item/weapon/cell/small
+	charge_cost = 10
+
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
+
+	firemodes = list(
+		list(mode_name="plasma", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser4.ogg', fire_delay=1, icon="destroy", projectile_color = "#00FFFF"),
+		list(mode_name="laser", projectile_type=/obj/item/projectile/beam/xray, fire_sound='sound/weapons/laser3.ogg', fire_delay=1, icon="kill", projectile_color = "#00AAFF"),
+	)
+
+/obj/item/weapon/gun/energy/plasma/brigador/update_icon()
+	overlays.Cut()
+	..()
+	if(cell)
+		overlays += image(icon, "cell_guild")
