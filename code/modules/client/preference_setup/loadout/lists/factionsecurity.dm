@@ -63,7 +63,7 @@
 /datum/gear/factionsecurity/capsarge
 	display_name = "cap, supply specialist"
 	path = /obj/item/clothing/head/soft/sarge2soft
-	allowed_roles = list("Supply Specialist"."Sergeant")
+	allowed_roles = list("Supply Specialist","Sergeant")
 	sort_category = "Faction: Security"
 
 /datum/gear/factionSecurity/gorka_ih
