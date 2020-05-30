@@ -289,6 +289,7 @@
 #include "code\datums\craft\recipes\clothing.dm"
 #include "code\datums\craft\recipes\floor.dm"
 #include "code\datums\craft\recipes\furniture.dm"
+#include "code\datums\craft\recipes\guild.dm"
 #include "code\datums\craft\recipes\machinery.dm"
 #include "code\datums\craft\recipes\medical.dm"
 #include "code\datums\craft\recipes\misc.dm"

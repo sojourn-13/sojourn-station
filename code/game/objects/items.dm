@@ -72,6 +72,7 @@
 
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
+	var/list/prefixes = list()
 
 /obj/item/Destroy()
 	QDEL_NULL(hidden_uplink)
@@ -497,6 +498,21 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		action.update_icon()
 
 /obj/item/proc/refresh_upgrades()
+	force = initial(force)
+	item_flags = initial(item_flags)
+	name = initial(name)
+	max_upgrades = initial(max_upgrades)
+	color = initial(color)
+	sharp = initial(sharp)
+	prefixes = list()
+
+	//Now lets have each upgrade reapply its modifications
+	SEND_SIGNAL(src, COMSIG_APPVAL, src)
+
+	for (var/prefix in prefixes)
+		name = "[prefix] [name]"
+	SSnano.update_uis(src)
+
 	return
 
 

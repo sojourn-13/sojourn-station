@@ -11,7 +11,7 @@
 #define UPGRADE_FUELCOST_MULT "fuelcost_mult"
 #define UPGRADE_POWERCOST_MULT "powercost_mult"
 #define UPGRADE_MELEE_ARMOR "melee"
-#define UPGRADE_BALLISTIC_ARMOR "ballistic"
+#define UPGRADE_BALLISTIC_ARMOR "bullet"
 #define UPGRADE_ENERGY_ARMOR "energy"
 #define UPGRADE_BOMB_ARMOR "bomb"
 

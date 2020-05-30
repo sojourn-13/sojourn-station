@@ -93,6 +93,7 @@
 			if(T.cell)
 				to_chat(user, SPAN_WARNING("Remove the cell from the tool first!"))
 				return FALSE
+		return TRUE
 		//No using multiples of the same upgrade
 		for (var/obj/item/I in T.item_upgrades)
 			if (I.type == parent.type)
@@ -177,8 +178,17 @@
 				if(/obj/item/weapon/cell/small)
 					T.suitable_cell = /obj/item/weapon/cell/medium
 		T.prefixes |= prefix
+	if(istype(holder, /obj/item/clothing/suit/armor))
+		var/obj/item/clothing/suit/armor/T = holder
 		if(upgrades[UPGRADE_MELEE_ARMOR])
-			T.armor = upgrades[UPGRADE_MELEE_ARMOR]
+			T.armor["melee"] += upgrades[UPGRADE_MELEE_ARMOR]
+		if(upgrades[UPGRADE_BALLISTIC_ARMOR])
+			T.armor["bullet"] += upgrades[UPGRADE_BALLISTIC_ARMOR]
+		if(upgrades[UPGRADE_ENERGY_ARMOR])
+			T.armor["energy"] += upgrades[UPGRADE_ENERGY_ARMOR]
+		if(upgrades[UPGRADE_BOMB_ARMOR])
+			T.armor["bomb"] += upgrades[UPGRADE_BOMB_ARMOR]
+		T.prefixes |= prefix
 	return TRUE
 
 /datum/component/item_upgrade/proc/on_examine(var/mob/user)
@@ -205,7 +215,7 @@
 	if (upgrades[UPGRADE_MAXFUEL])
 		to_chat(user, SPAN_NOTICE("Modifies fuel storage by [upgrades[UPGRADE_MAXFUEL]] units."))
 	if (upgrades[UPGRADE_BULK])
-		to_chat(user, SPAN_WARNING("Increases tool size by [upgrades[UPGRADE_BULK]]"))
+		to_chat(user, SPAN_WARNING("Increases item size by [upgrades[UPGRADE_BULK]]"))
 	if (upgrades[UPGRADE_MELEE_ARMOR])
 		to_chat(user, SPAN_WARNING("Increases melee defense by [upgrades[UPGRADE_MELEE_ARMOR]]"))
 

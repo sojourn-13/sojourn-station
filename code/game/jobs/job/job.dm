@@ -50,6 +50,9 @@
 	//Every hour playing this role gains this much time off. (Can be negative for off duty jobs!)
 	var/timeoff_factor = 3
 
+	//Crafting recipes unique to specific jobs.
+	var/list/known_recipes = list()
+
 	// End Sojourn Additions
 
 	var/list/perks = list()
@@ -93,6 +96,11 @@
 			H.add_language(i)
 
 	return TRUE
+
+/datum/job/proc/add_knownCraftRecipes(var/mob/living/carbon/human/target)
+	if(!ishuman(target))
+		return FALSE
+	target.mind.knownCraftRecipes.Add(known_recipes)
 
 /datum/job/proc/setup_account(var/mob/living/carbon/human/H)
 	if(!account_allowed || (H.mind && H.mind.initial_account))
