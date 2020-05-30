@@ -1,4 +1,4 @@
-/*
+/* //Leaving this here for when its made into the bullet fab.
 /obj/machinery/autolathe/armorfabricator
 	name = "armor fabricator"
 	desc = "It produces items using metal and glass."

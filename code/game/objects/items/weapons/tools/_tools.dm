@@ -60,7 +60,6 @@
 	var/precision = 0	//Subtracted from failure rates
 	var/workspeed = 1	//Worktimes are divided by this
 	var/extra_bulk = 0 	//Extra physicial volume added by certain mods
-	var/list/prefixes = list()
 
 /******************************
 	/* Core Procs */
@@ -185,6 +184,33 @@
 		return
 	.=..()
 
+/obj/item/clothing/suit/armor/attackby(obj/item/C, mob/living/user)
+	//Removing upgrades from armor. Very difficult, but passing the check only gets you the perfect result
+	//You can also get a lesser success (remove the upgrade but break it in the process) if you fail
+	//Using a laser guided stabilised screwdriver is recommended. Precision mods will make this easier
+	if (item_upgrades.len && C.has_quality(QUALITY_SCREW_DRIVING))
+		var/list/possibles = item_upgrades.Copy()
+		possibles += "Cancel"
+		var/obj/item/weapon/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
+		if (toremove == "Cancel")
+			return
+
+		if (C.use_tool(user = user, target =  src, base_time = WORKTIME_SLOW, required_quality = QUALITY_SCREW_DRIVING, fail_chance = FAILCHANCE_CHALLENGING, required_stat = STAT_MEC))
+			//If you pass the check, then you manage to remove the upgrade intact
+			to_chat(user, SPAN_NOTICE("You successfully remove [toremove] while leaving it intact."))
+			SEND_SIGNAL(toremove, COMSIG_REMOVE, src)
+			refresh_upgrades()
+			return 1
+		else
+			//You failed the check, lets see what happens
+			if (prob(50))
+				//50% chance to break the upgrade and remove it
+				to_chat(user, SPAN_DANGER("You successfully remove [toremove], but destroy it in the process."))
+				SEND_SIGNAL(toremove, COMSIG_REMOVE, src)
+				QDEL_NULL(toremove)
+				refresh_upgrades()
+				return 1
+	.=..()
 
 //Turning it on/off
 /obj/item/weapon/tool/attack_self(mob/user)
@@ -801,29 +827,17 @@
 
 	use_fuel_cost = initial(use_fuel_cost)
 	use_power_cost = initial(use_power_cost)
-	force = initial(force)
+
 	switched_on_force = initial(switched_on_force)
 	extra_bulk = initial(extra_bulk)
-	item_flags = initial(item_flags)
-	name = initial(name)
-	max_upgrades = initial(max_upgrades)
-	color = initial(color)
-	sharp = initial(sharp)
-	prefixes = list()
-
-	//Now lets have each upgrade reapply its modifications
-	SEND_SIGNAL(src, COMSIG_APPVAL, src)
-
-	for (var/prefix in prefixes)
-		name = "[prefix] [name]"
 
 	health_threshold = max(0, health_threshold)
 
 	//Set the fuel volume, incase any mods altered our max fuel
 	if (reagents)
 		reagents.maximum_volume = max_fuel
-	SSnano.update_uis(src)
 
+	return ..()
 
 /obj/item/weapon/tool/examine(mob/user)
 	if(!..(user,2))

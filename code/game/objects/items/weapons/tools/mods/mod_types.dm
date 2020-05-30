@@ -61,6 +61,7 @@
 	UPGRADE_BULK = 1,
 	UPGRADE_HEALTH_THRESHOLD = 10)
 	I.prefix = "reinforced"
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
 /obj/item/weapon/tool_upgrade/reinforcement/guard
 	name = "metal guard"
@@ -93,6 +94,7 @@
 	I.upgrades = list(
 	UPGRADE_WORKSPEED = 0.15
 	)
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 	I.prefix = "ergonomic"
 
 /obj/item/weapon/tool_upgrade/productivity/ratchet
@@ -112,7 +114,7 @@
 
 /obj/item/weapon/tool_upgrade/productivity/red_paint
 	name = "red paint"
-	desc = "Do red tools really work faster, or is the effect purely psychological?"
+	desc = "Do red tools really work faster or is the effect purely psychological?"
 	icon_state = "paint_red"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 
@@ -125,6 +127,7 @@
 	UPGRADE_COLOR = "#FF4444"
 	)
 	I.prefix = "red"
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
 /obj/item/weapon/tool_upgrade/productivity/whetstone
 	name = "sharpening block"
@@ -344,6 +347,7 @@
 	UPGRADE_MAXUPGRADES = 3
 	)
 	I.prefix = "custom"
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
 /obj/item/weapon/tool_upgrade/augment/spikes
 	name = "spikes"
@@ -363,6 +367,7 @@
 	UPGRADE_SHARP = TRUE
 	)
 	I.prefix = "spiked"
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
 /obj/item/weapon/tool_upgrade/augment/hammer_addon
 	name = "flat surface"
@@ -379,8 +384,7 @@
 	tool_qualities = list(QUALITY_HAMMERING = 10)
 	)
 	I.prefix = "flattened"
-
-
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
 //Vastly reduces tool sounds, for stealthy hacking
 /obj/item/weapon/tool_upgrade/augment/dampener
@@ -398,11 +402,12 @@
 	UPGRADE_ITEMFLAGPLUS = SILENT
 	)
 	I.prefix = "silenced"
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
 /obj/item/weapon/tool_upgrade/augment/ai_tool
 	name = "nanointegrated AI"
 	desc = "A forgotten Greyson Positronic tech. Due to its unique installation method of \"slapping it hard enough onto anything should do the trick\", it is highly sought after. \
-		A powerful AI will integrate itself into this tool with the aid of nanotechnology, and improve it in every way possible."
+		A powerful AI will integrate itself into this tool with the aid of nanotechnology and improve it in every way possible."
 	icon_state = "ai_tool"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 1)
 
@@ -434,20 +439,66 @@
 	I.prefix = "self-healing"
 
 //Armor mods
-/*
 /obj/item/weapon/tool_upgrade/reinforcement/melee
 	name = "melee plating"
 	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its melee resistance."
-	icon_state = "plate"
-	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 2) //steel to compensate for metal rods used in crafting
-
+	icon_state = "melee"
+	matter = list(MATERIAL_STEEL = 30)
 
 /obj/item/weapon/tool_upgrade/reinforcement/melee/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.upgrades = list(
-	UPGRADE_BULK = 1
+	UPGRADE_BULK = 1,
+	UPGRADE_MELEE_ARMOR = 20
 	)
 	I.prefix = "reinforced"
 	I.required_qualities = list(QUALITY_ARMOR)
-*/
+
+/obj/item/weapon/tool_upgrade/reinforcement/bullet
+	name = "ballistic plating"
+	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its ballistic resistance."
+	icon_state = "bullet"
+	matter = list(MATERIAL_PLASTEEL = 30)
+
+/obj/item/weapon/tool_upgrade/reinforcement/bullet/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.upgrades = list(
+	UPGRADE_BULK = 1,
+	UPGRADE_BALLISTIC_ARMOR = 20
+	)
+	I.prefix = "kevlar-plated"
+	I.required_qualities = list(QUALITY_ARMOR)
+
+/obj/item/weapon/tool_upgrade/reinforcement/energy
+	name = "energy plating"
+	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its energy resistance."
+	icon_state = "energy"
+	matter = list(MATERIAL_PLATINUM = 30)
+
+/obj/item/weapon/tool_upgrade/reinforcement/energy/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.upgrades = list(
+	UPGRADE_BULK = 1,
+	UPGRADE_ENERGY_ARMOR = 20
+	)
+	I.prefix = "ablative-plated"
+	I.required_qualities = list(QUALITY_ARMOR)
+
+/obj/item/weapon/tool_upgrade/reinforcement/bomb
+	name = "bomb proofing"
+	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its bomb resistance."
+	icon_state = "bomb"
+	matter = list(MATERIAL_CLOTH = 5, MATERIAL_PLASTEEL = 20)
+
+/obj/item/weapon/tool_upgrade/reinforcement/bomb/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.upgrades = list(
+	UPGRADE_BULK = 1,
+	UPGRADE_BOMB_ARMOR = 40
+	)
+	I.prefix = "bomb-proofed"
+	I.required_qualities = list(QUALITY_ARMOR)

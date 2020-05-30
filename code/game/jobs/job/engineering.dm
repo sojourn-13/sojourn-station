@@ -31,6 +31,13 @@
 		STAT_VIG = 15,
 	)
 
+	known_recipes = list(
+			/datum/craft_recipe/guild/melee,
+			/datum/craft_recipe/guild/bullet,
+			/datum/craft_recipe/guild/energy,
+			/datum/craft_recipe/guild/bomb
+			)
+
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/ntnetmonitor,
 							 /datum/computer_file/program/power_monitor,
@@ -86,6 +93,13 @@
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 	)
+
+	known_recipes = list(
+			/datum/craft_recipe/guild/melee,
+			/datum/craft_recipe/guild/bullet,
+			/datum/craft_recipe/guild/energy,
+			/datum/craft_recipe/guild/bomb
+			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,

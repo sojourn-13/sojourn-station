@@ -8,8 +8,8 @@
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.6
 	price_tag = 200
-	//tool_qualities = list(QUALITY_ARMOR = 100)
-	//max_upgrades = 1
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
 
 /*
  * Vests
