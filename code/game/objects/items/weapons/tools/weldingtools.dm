@@ -76,6 +76,7 @@
 	glow_color = COLOR_BLUE_LIGHT
 	switched_on_qualities = list(QUALITY_WELDING = 40, QUALITY_CAUTERIZING = 15, QUALITY_WIRE_CUTTING = 15)
 	max_fuel = 40
+	matter = list(MATERIAL_PLASTEEL = 5)
 	switched_on_force = WEAPON_FORCE_PAINFUL * 1.15 //Slightly more powerful, not much more so
 	heat = 3773
 	degradation = 0.7

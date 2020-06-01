@@ -836,7 +836,6 @@
 	//Set the fuel volume, incase any mods altered our max fuel
 	if (reagents)
 		reagents.maximum_volume = max_fuel
-
 	return ..()
 
 /obj/item/weapon/tool/examine(mob/user)
