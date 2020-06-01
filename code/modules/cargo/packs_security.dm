@@ -231,10 +231,9 @@
 
 /datum/supply_pack/voidwolfarmor
 	name = "Void Wolf Red Armor Crate"
-	contains = list(/obj/item/clothing/suit/space/syndicate/xanaroth,
-					/obj/item/clothing/suit/space/syndicate/xanaroth,
-					/obj/item/clothing/head/helmet/space/syndicate/xanaroth,
-					/obj/item/clothing/head/helmet/space/syndicate/xanaroth)
+	contains = list(/obj/item/clothing/suit/space/void/merc/xanaroth,
+					/obj/item/clothing/suit/space/void/merc/xanaroth,
+					/obj/item/clothing/suit/space/void/merc/xanaroth)
 	cost = 3500
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Red Armor Crate"
