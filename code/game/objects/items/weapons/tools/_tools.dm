@@ -831,12 +831,22 @@
 	switched_on_force = initial(switched_on_force)
 	extra_bulk = initial(extra_bulk)
 
+	..()
+
 	health_threshold = max(0, health_threshold)
 
 	//Set the fuel volume, incase any mods altered our max fuel
 	if (reagents)
 		reagents.maximum_volume = max_fuel
-	return ..()
+
+		if(reagents.total_volume > reagents.maximum_volume)
+			// Oh fuck.  You fucked up now.
+			var/delta = reagents.total_volume - reagents.maximum_volume
+
+			reagents.trans_to_turf(get_turf(src), delta)
+			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, spilling its contents onto the floor!"), \
+								SPAN_WARNING("You remove the extended fuel tank, spilling its contents onto the floor!"))
+	return
 
 /obj/item/weapon/tool/examine(mob/user)
 	if(!..(user,2))

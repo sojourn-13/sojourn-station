@@ -20,7 +20,7 @@
 	return pickweight(randsuits)
 
 /obj/random/mecha/low_chance
-	name = "low chance random lathe disk"
+	name = "low chance random mecha"
 	icon_state = "machine-red-low"
 	spawn_nothing_percentage = 90
 

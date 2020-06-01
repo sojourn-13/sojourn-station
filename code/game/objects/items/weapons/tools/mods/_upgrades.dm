@@ -93,12 +93,12 @@
 			if(T.cell)
 				to_chat(user, SPAN_WARNING("Remove the cell from the tool first!"))
 				return FALSE
-		return TRUE
 		//No using multiples of the same upgrade
 		for (var/obj/item/I in T.item_upgrades)
 			if (I.type == parent.type)
 				to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
 				return FALSE
+		return TRUE
 	if (istype(A, /obj/item/clothing/suit/armor))
 		var/obj/item/clothing/suit/armor/T = A
 		if (T.item_upgrades.len >= T.max_upgrades)
@@ -115,6 +115,7 @@
 			if (!qmatch)
 				to_chat(user, SPAN_WARNING("Why are you trying to attach tool mods to armor?"))
 				return FALSE
+
 		for (var/obj/item/I in T.item_upgrades)
 			if (I.type == parent.type)
 				to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
@@ -189,8 +190,7 @@
 				if(/obj/item/weapon/cell/small)
 					T.suitable_cell = /obj/item/weapon/cell/medium
 		T.prefixes |= prefix
-	return TRUE
-	if(istype(holder, /obj/item/clothing/suit/armor))
+	else if(istype(holder, /obj/item/clothing/suit/armor))
 		var/obj/item/clothing/suit/armor/T = holder
 		if(upgrades[UPGRADE_MELEE_ARMOR])
 			T.armor["melee"] += upgrades[UPGRADE_MELEE_ARMOR]
@@ -230,6 +230,12 @@
 		to_chat(user, SPAN_WARNING("Increases item size by [upgrades[UPGRADE_BULK]]"))
 	if (upgrades[UPGRADE_MELEE_ARMOR])
 		to_chat(user, SPAN_WARNING("Increases melee defense by [upgrades[UPGRADE_MELEE_ARMOR]]"))
+	if (upgrades[UPGRADE_BALLISTIC_ARMOR])
+		to_chat(user, SPAN_WARNING("Increases bullet defense by [upgrades[UPGRADE_BALLISTIC_ARMOR]]"))
+	if (upgrades[UPGRADE_ENERGY_ARMOR])
+		to_chat(user, SPAN_WARNING("Increases energy defense by [upgrades[UPGRADE_ENERGY_ARMOR]]"))
+	if (upgrades[UPGRADE_BOMB_ARMOR])
+		to_chat(user, SPAN_WARNING("Increases explosive defense by [upgrades[UPGRADE_BOMB_ARMOR]]"))
 
 	if (required_qualities.len)
 		to_chat(user, SPAN_WARNING("Requires a tool with one of the following qualities:"))

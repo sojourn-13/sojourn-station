@@ -26,7 +26,7 @@
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/militia
-	name = "Blackshield Militia - Brigadier Ayana Mwangi "
+	name = "Blackshield Militia - Brigadier Ayana Mwangi"
 
 	fax_alert = "BLACKSHIELD COMMUNIQUE"
 	fax_response = "Blackshield Order"
@@ -35,11 +35,11 @@
 	darkcolor = "#00580a"
 	lightcolor = "#47c156"
 
-	stamptext = "This paper has been authorized with the Brigadier's Insignia"
+	stamptext = "This paper has been authorized with the Brigadier Ayana Mwangi's Insignia."
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/soteria
-	name = "Soteria Institute - Nakharan Mkne "
+	name = "Soteria Institute - Nakharan Mkne"
 
 	fax_alert = "SOTERIA FAX"
 	fax_response = "Soteria Transmission"
@@ -48,9 +48,8 @@
 	darkcolor = "#870481"
 	lightcolor = "#ff8afa"
 
-	stamptext = "This paper has been embossed with the seal of Nakharan Mkne ."
+	stamptext = "This paper has been embossed with the seal of Nakharan Mkne."
 	stampshape = "paper_stamp-dots"
-
 
 /datum/faction/nadezhda/lonestar
 	name = "Lonestar Shipping Solutions, LLC - Robert Ryan"
@@ -75,7 +74,7 @@
 	darkcolor = "#ac0101"
 	lightcolor = "#fb5b4d"
 
-	stamptext = "This paper has been stamped with the notary of Jeremiah Hogg.."
+	stamptext = "This paper has been stamped with the notary of Jeremiah Hogg."
 	stampshape = "paper_stamp-dots"
 
 /datum/faction/nadezhda/artificer
@@ -104,3 +103,15 @@
 	stamptext = "This paper has been stamped with the sanctified symbol of Cartographer Augustine Browne."
 	stampshape = "paper_stamp-dots"
 
+/datum/faction/nadezhda/voidwolves
+	name = "Colony Allies - Void Wolf Coalition"
+
+	fax_alert = "VOID WOLF FAX"
+	fax_response = "Encrypted Transmission"
+
+	color = "#009912"
+	darkcolor = "#00580a"
+	lightcolor = "#47c156"
+
+	stamptext = "This paper has been stamped with the seal of a void wolf captain."
+	stampshape = "paper_stamp-dots"

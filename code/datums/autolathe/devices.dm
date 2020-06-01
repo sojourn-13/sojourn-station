@@ -54,6 +54,10 @@
 	name = "flamethrower"
 	build_path = /obj/item/weapon/flamethrower
 
+/datum/design/autolathe/device/proxsensor
+	name = "proximity sensor"
+	build_path = /obj/item/device/assembly/prox_sensor
+
 /datum/design/autolathe/device/excelbaton
 	name = "Expropriator"
-	build_path = /obj/item/weapon/melee/baton/excelbaton 
+	build_path = /obj/item/weapon/melee/baton/excelbaton
