@@ -15,7 +15,7 @@
 
 /obj/item/prosthesis/l_arm
 	name = "Unbranded left arm"
-	icon_state = BP_L_ARM
+	icon_state = "l_arm"
 	part = list(
 		BP_L_ARM = /obj/item/organ/external/robotic/limb,
 	)

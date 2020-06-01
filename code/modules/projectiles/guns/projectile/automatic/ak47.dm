@@ -55,5 +55,5 @@
 	icon_state = "AK"
 	item_state = "AK"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
-	price_tag = 3000
+	price_tag = 1500
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)

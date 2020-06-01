@@ -33,6 +33,13 @@
 	path = /obj/item/clothing/mask/gas/opifex
 	slot = slot_wear_mask
 	sort_category = "Xenowear"
+	cost = 0
+
+/datum/gear/xenowear/opifexemergencytank
+	display_name = "opifex nitrogen tanks"
+	path = /obj/item/weapon/tank/emergency_nitgen
+	sort_category = "Xenowear"
+	cost = 0
 
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"

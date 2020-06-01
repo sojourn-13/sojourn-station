@@ -8,7 +8,7 @@
 					/obj/item/clothing/shoes/leather,
 					/obj/item/clothing/suit/storage/wcoat/black)
 	name = "Formalwear Crate"
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet
 	crate_name = "formalwear crate"
 	group = "Clothing"

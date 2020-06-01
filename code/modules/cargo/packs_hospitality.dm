@@ -73,7 +73,7 @@
 					/obj/item/weapon/paper/card/flower,
 					/obj/item/weapon/paper/card/flower,
 					/obj/item/clothing/head/costume/misc/cake)
-	cost = 1400
+	cost = 1120
 	containertype = /obj/structure/closet/crate
 	crate_name = "birthday catering crate"
 	group = "Hospitality"
@@ -85,7 +85,7 @@
 					/obj/random/junkfood/onlyburger,
 					/obj/random/junkfood/onlyburger,
 					/obj/random/junkfood/onlyburger)
-	cost = 1000
+	cost = 800
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "burger crate"
 	group = "Hospitality"
@@ -94,7 +94,7 @@
 	name = "Cake Surprise Crate (x2)"
 	contains = list(/obj/random/junkfood/onlycake,
 					/obj/random/junkfood/onlycake)
-	cost = 1000
+	cost = 800
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "cake crate"
 	group = "Hospitality"
@@ -116,7 +116,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/mint,
 					/obj/item/weapon/reagent_containers/food/snacks/mint,
 					/obj/item/weapon/reagent_containers/food/snacks/mint)
-	cost = 1200
+	cost = 960
 	containertype = /obj/structure/closet/crate
 	crate_name = "corporate catering crate"
 	group = "Hospitality"
@@ -135,7 +135,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/meat,
 					/obj/item/weapon/reagent_containers/food/snacks/meat)
 
-	cost = 900
+	cost = 720
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "kitchen supply crate"
 	group = "Hospitality"
@@ -154,7 +154,7 @@
 					/obj/item/weapon/storage/lunchbox/rainbow,
 					/obj/item/weapon/storage/lunchbox/rainbow,
 					/obj/item/weapon/storage/lunchbox/rainbow)
-	cost = 400
+	cost = 320
 	containertype = /obj/structure/closet/crate
 	crate_name  = "lunchbox crate"
 	group = "Hospitality"
@@ -174,7 +174,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer)
-	cost = 1200
+	cost = 960
 	containertype = /obj/structure/closet/crate
 	crate_name = "party catering crate"
 	group = "Hospitality"
@@ -186,7 +186,7 @@
 					/obj/random/junkfood/onlypizza,
 					/obj/random/junkfood/onlypizza,
 					/obj/random/junkfood/onlypizza)
-	cost = 1000
+	cost = 800
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "pizza crate"
 	group = "Hospitality"

@@ -709,7 +709,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/kyphotorin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
-		if(prob(5 * effect_multiplier + dose) || dose == overdose)
+		if(prob(0.5 * effect_multiplier + dose) || dose == overdose)
 			var/list/missingLimbs = list()
 			for(var/name in BP_ALL_LIMBS)
 				if(!H.has_appendage(name))

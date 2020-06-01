@@ -1071,9 +1071,9 @@
 
 	prices = list(/obj/item/device/flash = 200,
 	/obj/item/weapon/reagent_containers/spray/pepper = 100,
-	/obj/item/weapon/gun/projectile/olivaw = 700,
+	/obj/item/weapon/gun/projectile/olivaw = 600,
 	/obj/item/weapon/gun/projectile/giskard = 500,
-	/obj/item/weapon/gun/projectile/colt = 700,
+	/obj/item/weapon/gun/projectile/colt = 900,
 	/obj/item/weapon/gun/energy/gun/martin = 500,
 	/obj/item/weapon/gun/projectile/revolver/detective = 400,
 	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1500,

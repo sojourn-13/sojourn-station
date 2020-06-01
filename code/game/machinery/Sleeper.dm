@@ -15,6 +15,15 @@
 	idle_power_usage = 15
 	active_power_usage = 200 //builtin health analyzer, dialysis machine, injectors.
 
+/obj/machinery/sleeper/hyper
+	name = "hyper-sleeper"
+	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner. Unlike standard sleepers this one comes with additional chemical synthesizers but is one of a kind."
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_0"
+	color = "#a4bdba"
+	circuit = /obj/item/weapon/circuitboard/sleeper/hyper
+	available_chemicals = list("inaprovaline" = "Inaprovaline", "chloralhydrate" = "Chloral Hydrate", "tramadol" = "Tramadol", "carthatoline" = "Carthatoline", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline")
+
 /obj/machinery/sleeper/New()
 	..()
 	beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)

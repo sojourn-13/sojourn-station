@@ -22,6 +22,40 @@
 	force = 45
 	max_equip = 10
 
+//Iron Lords gift, will remove this if destroyed in game.
+/obj/mecha/combat/dreadnought/security
+	desc = "Heavy-duty, combat exosuit, developed after the Durand model. Rarely found among civilian populations. Anyone who kept up with colony news would know this one was gifted by the Iron Lord void wolves as apart of a trade agreement and unfortunately is the only one of its kind. If destroyed, it would disappear forever."
+	name = "Iron Tyrant"
+
+/obj/mecha/combat/dreadnought/security/New()
+	..()//Let it equip whatever is needed.
+	var/obj/item/mecha_parts/mecha_equipment/ME
+	if(equipment.len)//Now to remove it and equip anew.
+		for(ME in equipment)
+			ME.detach(src)
+			qdel(ME)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/drill(src)
+	ME.attach(src)
+	src.smoke_system.set_up(3, 0, src)
+	src.smoke_system.attach(src)
+	return
+
 /obj/mecha/combat/dreadnought/seraph
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
 	name = "Seraph"

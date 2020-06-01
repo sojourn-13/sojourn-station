@@ -10,7 +10,7 @@
 					/obj/item/weapon/tank/air,
 					/obj/item/weapon/tank/air,
 					/obj/item/weapon/tank/air)
-	cost = 600
+	cost = 480
 	containertype = /obj/structure/closet/crate/internals
 	crate_name = "internals crate"
 	group = "Engineering"
@@ -18,7 +18,7 @@
 /datum/supply_pack/sleeping_agent
 	name = "Canister: \[N2O\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/sleeping_agent)
-	cost = 2000
+	cost = 1800
 	containertype = /obj/structure/largecrate
 	crate_name = "N2O crate"
 	group = "Engineering"
@@ -26,7 +26,7 @@
 /datum/supply_pack/oxygen
 	name = "Canister: \[O2\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/oxygen)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/largecrate
 	crate_name = "O2 crate"
 	group = "Engineering"
@@ -34,7 +34,7 @@
 /datum/supply_pack/nitrogen
 	name = "Canister: \[N2\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/nitrogen)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/largecrate
 	crate_name = "N2 crate"
 	group = "Engineering"
@@ -42,7 +42,7 @@
 /datum/supply_pack/air
 	name = "Canister \[Air\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/air)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/largecrate
 	crate_name = "air crate"
 	group = "Engineering"
@@ -63,7 +63,7 @@
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas)
-	cost = 1000
+	cost = 800
 	containertype = /obj/structure/closet/crate/internals
 	crate_name = "emergency equipment crate"
 	group = "Engineering"
@@ -75,7 +75,7 @@
 					/obj/item/weapon/storage/briefcase/inflatable,
 					/obj/item/weapon/storage/briefcase/inflatable,
 					/obj/item/weapon/storage/briefcase/inflatable)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "inflatable barriers crate"
 	group = "Engineering"
@@ -86,7 +86,7 @@
 					/obj/item/weapon/storage/box/lights/mixed,
 					/obj/item/weapon/storage/box/lights/mixed,
 					/obj/item/weapon/storage/box/lights/mixed)
-	cost = 700
+	cost = 560
 	containertype = /obj/structure/closet/crate
 	crate_name = "replacement lights crate"
 	group = "Engineering"
@@ -95,7 +95,7 @@
 	name = "Metal Sheets Crate (120)"
 	contains = list(/obj/item/stack/material/steel)
 	amount = 120
-	cost = 500
+	cost = 400
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "metal sheets crate"
 	group = "Engineering"
@@ -106,7 +106,7 @@
 	/obj/item/stack/material/steel/full,
 	/obj/item/stack/material/steel/full,
 	/obj/item/stack/material/steel/full)
-	cost = 1200
+	cost = 960
 	containertype = /obj/structure/largecrate
 	crate_name = "Bulk metal crate"
 	group = "Engineering"
@@ -115,7 +115,7 @@
 	name = "Glass Sheets Crate (120)"
 	contains = list(/obj/item/stack/material/glass)
 	amount = 120
-	cost = 500
+	cost = 400
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "glass sheet crate"
 	group = "Engineering"
@@ -124,7 +124,7 @@
 	name = "Wooden Planks Crate (120)"
 	contains = list(/obj/item/stack/material/wood)
 	amount = 120
-	cost = 2500
+	cost = 2000
 	containertype = /obj/structure/closet/crate
 	crate_name = "wooden planks crate"
 	group = "Engineering"
@@ -133,7 +133,7 @@
 	name = "Plasteel Sheets Crate (60)"
 	contains = list(/obj/item/stack/material/plasteel)
 	amount = 60
-	cost = 3000
+	cost = 2400
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "plasteel sheets crate"
 	group = "Engineering"
@@ -148,7 +148,7 @@
 					/obj/item/weapon/cell/large,
 					/obj/item/weapon/cell/large/high,
 					/obj/item/weapon/cell/large/high)
-	cost = 1200
+	cost = 960
 	containertype = /obj/structure/closet/crate
 	crate_name = "electrical maintenance crate"
 	group = "Engineering"
@@ -164,7 +164,7 @@
 					/obj/item/clothing/head/welding,
 					/obj/item/clothing/head/welding,
 					/obj/item/clothing/head/hardhat)
-	cost = 1000
+	cost = 800
 	containertype = /obj/structure/closet/crate
 	crate_name = "mechanical maintenance crate"
 	group = "Engineering"
@@ -179,7 +179,7 @@
 					/obj/random/tool_upgrade,
 					/obj/random/tool_upgrade)
 	name = "Tool Upgrade Assortment Crate"
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate
 	crate_name = "tool upgrade crate"
 	group = "Engineering"
@@ -188,7 +188,7 @@
 	contains = list(/obj/item/weapon/tool/omnitool,
 					/obj/item/weapon/tool/omnitool)
 	name = "Omnitool Crate"
-	cost = 2500
+	cost = 2000
 	containertype = /obj/structure/closet/crate
 	crate_name = "omnitool crate"
 	group = "Engineering"
@@ -196,7 +196,7 @@
 /datum/supply_pack/fueltank
 	name = "Fuel Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
-	cost = 1000
+	cost = 800
 	containertype = /obj/structure/largecrate
 	crate_name = "fuel tank crate"
 	group = "Engineering"
@@ -208,7 +208,7 @@
 			/obj/item/weapon/weldpack/canister,
 			/obj/item/weapon/weldpack/canister,
 			/obj/item/weapon/weldpack/canister,)
-	cost = 2500
+	cost = 2000
 	access = FALSE
 	containertype = /obj/structure/closet/crate
 	crate_name = "fuel crate"
@@ -240,7 +240,7 @@
 					/obj/item/weapon/circuitboard/solar_control,
 					/obj/item/weapon/tracker_electronics,
 					/obj/item/weapon/paper/solar)
-	cost = 2000
+	cost = 1600
 	containertype = /obj/structure/closet/crate
 	crate_name = "solar pack crate"
 	group = "Engineering"
@@ -249,7 +249,7 @@
 	name = "Emitters Crate"
 	contains = list(/obj/machinery/power/emitter,
 					/obj/machinery/power/emitter)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "emitter crate"
 	group = "Engineering"
@@ -277,7 +277,7 @@
 
 /datum/supply_pack/engine/PA
 	name = "Particle Accelerator Crate"
-	cost = 4000
+	cost = 3200
 	contains = list(/obj/structure/particle_accelerator/fuel_chamber,
 					/obj/machinery/particle_accelerator/control_box,
 					/obj/structure/particle_accelerator/particle_emitter/center,
@@ -301,7 +301,7 @@
 		/obj/item/mecha_parts/part/ripley_right_arm,
 		/obj/item/mecha_parts/part/ripley_left_leg,
 		/obj/item/mecha_parts/part/ripley_right_leg)
-	cost = 3000
+	cost = 2400
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
 	crate_name = "Exosuit Assembly Crate (\"Ripley\" APLU)"
 	group = "Engineering"
@@ -320,7 +320,7 @@
 		/obj/item/mecha_parts/part/odysseus_right_arm,
 		/obj/item/mecha_parts/part/odysseus_left_leg,
 		/obj/item/mecha_parts/part/odysseus_right_leg)
-	cost = 3000
+	cost = 2400
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
 	crate_name = "Exosuit Assembly Crate (\"Odysseus\")"
 	group = "Engineering"
@@ -337,7 +337,7 @@
 					/obj/item/device/flash,
 					/obj/item/weapon/cell/large/high,
 					/obj/item/weapon/cell/large/high)
-	cost = 1000
+	cost = 800
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
 	crate_name = "robotics assembly crate"
 	access = access_robotics
@@ -353,7 +353,7 @@
 	/obj/item/weapon/circuitboard/shield_diffuser,
 	/obj/item/weapon/circuitboard/shield_diffuser)
 	name = "Shield Diffuser Circuitry Crate"
-	cost = 3000
+	cost = 2400
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "shield diffuser circuitry crate"
 	group = "Engineering"
@@ -365,23 +365,25 @@
 	/obj/item/weapon/hatton_magazine)
 	name = "Hatton Gas Tubes Crate"
 	crate_name = "hatton gas tubes crate"
-	cost = 5000
+	cost = 4000
 	containertype = /obj/structure/closet/crate/secure
 	group = "Engineering"
 	access = access_ce
 
+/*
 /datum/supply_pack/shield_gen
 	contains = list(/obj/item/weapon/circuitboard/shield_generator)
 	name = "Hull Shield Generator Circuitry Crate"
-	cost = 5000
+	cost = 4000
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "hull shield generator circuitry crate"
 	group = "Engineering"
+*/
 
 /datum/supply_pack/smbig
 	name = "Supermatter Core Crate (CAUTION)"
 	contains = list(/obj/machinery/power/supermatter)
-	cost = 20000
+	cost = 16000
 	containertype = /obj/structure/closet/crate/secure/woodseccrate
 	crate_name = "supermatter core crate (CAUTION)"
 	group = "Engineering"
@@ -390,7 +392,7 @@
 /datum/supply_pack/teg
 	contains = list(/obj/machinery/power/generator)
 	name = "Mark I Thermoelectric Generator Crate"
-	cost = 3000
+	cost = 2400
 	containertype = /obj/structure/closet/crate/secure/large
 	crate_name = "Mark I thermoelectric generator crate"
 	group = "Engineering"
@@ -398,7 +400,7 @@
 /datum/supply_pack/circulator
 	contains = list(/obj/machinery/atmospherics/binary/circulator)
 	name = "Binary Atmospheric Circulator Crate"
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate/secure/large
 	crate_name = "binary atmospheric circulator crate"
 	group = "Engineering"
@@ -406,7 +408,7 @@
 /datum/supply_pack/air_dispenser
 	contains = list(/obj/machinery/pipedispenser/orderable)
 	name = "Pipe Dispenser Crate"
-	cost = 900
+	cost = 720
 	containertype = /obj/structure/closet/crate/secure/large
 	crate_name = "pipe dispenser crate"
 	group = "Engineering"
@@ -414,7 +416,7 @@
 /datum/supply_pack/disposals_dispenser
 	contains = list(/obj/machinery/pipedispenser/disposal/orderable)
 	name = "Disposal Pipe Dispenser Crate"
-	cost = 900
+	cost = 720
 	containertype = /obj/structure/closet/crate/secure/large
 	crate_name = "disposal pipe dispenser Crate"
 	group = "Engineering"

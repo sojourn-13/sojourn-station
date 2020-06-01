@@ -28,8 +28,13 @@
 	internal_damage_threshold = 40
 
 /obj/mecha/combat/durand/security/New()
-	..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
+	..()//Let it equip whatever is needed.
+	var/obj/item/mecha_parts/mecha_equipment/ME
+	if(equipment.len)//Now to remove it and equip anew.
+		for(ME in equipment)
+			ME.detach(src)
+			qdel(ME)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
 	ME.attach(src)
@@ -37,14 +42,15 @@
 	ME.attach(src)
 	return
 
-/*
+
 /obj/mecha/combat/durand/New()
 	..()
-	weapons += new /datum/mecha_weapon/ballistic/lmg(src)
-	weapons += new /datum/mecha_weapon/ballistic/scattershot(src)
-	selected_weapon = weapons[1]
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot(src)
+	ME.attach(src)
 	return
-*/
+
 
 /obj/mecha/combat/durand/relaymove(mob/user,direction)
 	if(defence)

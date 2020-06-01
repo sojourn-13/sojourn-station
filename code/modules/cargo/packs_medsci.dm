@@ -14,7 +14,7 @@
 					/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
 					/obj/item/weapon/storage/box/syringes,
 					/obj/item/weapon/storage/box/autoinjectors)
-	cost = 1000
+	cost = 800
 	containertype = /obj/structure/closet/crate/medical
 	crate_name = "medical crate"
 	group = "Medical / Science"
@@ -25,7 +25,7 @@
 					/obj/item/weapon/virusdish/random,
 					/obj/item/weapon/virusdish/random,
 					/obj/item/weapon/virusdish/random)
-	cost = 2500
+	cost = 2000
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "virus sample crate"
 	access = access_cmo
@@ -34,7 +34,7 @@
 /datum/supply_pack/coolanttank
 	name = "Coolant Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/coolanttank)
-	cost = 1600
+	cost = 1280
 	containertype = /obj/structure/largecrate
 	crate_name = "coolant tank crate"
 	group = "Medical / Science"
@@ -53,7 +53,7 @@
 					/obj/item/device/assembly/timer,
 					/obj/item/device/assembly/timer,
 					/obj/item/device/assembly/timer)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
 	crate_name = "plasma assembly crate"
 	access = access_tox_storage
@@ -70,7 +70,7 @@
 					/obj/item/weapon/tool/retractor,
 					/obj/item/weapon/tool/bonesetter,
 					/obj/item/weapon/tool/saw/circular)
-	cost = 1200
+	cost = 960
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "surgery crate"
 	access = access_moebius
@@ -84,14 +84,14 @@
 					/obj/item/clothing/head/surgery/green,
 					/obj/item/weapon/storage/box/masks,
 					/obj/item/weapon/storage/box/gloves)
-	cost = 900
+	cost = 720
 	containertype = /obj/structure/closet/crate
 	crate_name = "sterile equipment crate"
 	group = "Medical / Science"
 
 /datum/supply_pack/bloodpacks
 	name = "Blood Pack Variety Crate"
-	cost = 1500
+	cost = 1200
 	contains = list(/obj/item/weapon/reagent_containers/blood/empty,
 					/obj/item/weapon/reagent_containers/blood/empty,
 					/obj/item/weapon/reagent_containers/blood/APlus,
@@ -106,7 +106,7 @@
 
 /datum/supply_pack/medical_stand
 	name = "Medical Stand Crate"
-	cost = 700
+	cost = 560
 	contains = list(/obj/structure/medical_stand)
 	containertype = /obj/structure/closet/crate/medical
 	crate_name = "medical stand crate"
@@ -114,7 +114,7 @@
 
 /datum/supply_pack/body_bags
 	name = "Body Bags Crate"
-	cost = 600
+	cost = 480
 	contains = list(/obj/item/weapon/storage/box/bodybags,
 					/obj/item/weapon/storage/box/bodybags,
 					/obj/item/weapon/storage/box/bodybags,
@@ -124,7 +124,7 @@
 
 /datum/supply_pack/suspension_gen
 	name = "Suspension Field Generator Crate"
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/machinery/suspension_gen)
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
 	crate_name = "suspension field generator crate"
@@ -135,7 +135,7 @@
 	contains = list(
 		/obj/item/weapon/reagent_containers/glass/beaker/vial/nanites
 	)
-	cost = 1500
+	cost = 1200
 	crate_name = "raw nanites crate"
 	group = "Medical / Science"
 	containertype = /obj/structure/closet/crate/medical
@@ -145,7 +145,7 @@
 	contains = list(
 		/obj/item/weapon/reagent_containers/glass/beaker/vial/uncapnanites
 	)
-	cost = 2000
+	cost = 1600
 	crate_name = "raw uncapped nanites crate"
 	group = "Medical / Science"
 	contraband = TRUE
@@ -156,7 +156,7 @@
 	contains = list(
 		/obj/item/stack/material/diamond/tenstack
 	)
-	cost = 10000
+	cost = 8000
 	crate_name = "diamond sheet crate"
 	group = "Medical / Science"
 	containertype = /obj/structure/closet/crate
