@@ -230,6 +230,12 @@
 		to_chat(user, SPAN_WARNING("Increases item size by [upgrades[UPGRADE_BULK]]"))
 	if (upgrades[UPGRADE_MELEE_ARMOR])
 		to_chat(user, SPAN_WARNING("Increases melee defense by [upgrades[UPGRADE_MELEE_ARMOR]]"))
+	if (upgrades[UPGRADE_BALLISTIC_ARMOR])
+		to_chat(user, SPAN_WARNING("Increases bullet defense by [upgrades[UPGRADE_BALLISTIC_ARMOR]]"))
+	if (upgrades[UPGRADE_ENERGY_ARMOR])
+		to_chat(user, SPAN_WARNING("Increases energy defense by [upgrades[UPGRADE_ENERGY_ARMOR]]"))
+	if (upgrades[UPGRADE_BOMB_ARMOR])
+		to_chat(user, SPAN_WARNING("Increases explosive defense by [upgrades[UPGRADE_BOMB_ARMOR]]"))
 
 	if (required_qualities.len)
 		to_chat(user, SPAN_WARNING("Requires a tool with one of the following qualities:"))
