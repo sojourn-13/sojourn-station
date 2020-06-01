@@ -52,6 +52,7 @@
 		/datum/design/autolathe/tool/weldinggoggles,
 		/datum/design/autolathe/tool/weldermask,
 		/datum/design/autolathe/device/flamethrower,
+		/datum/design/autolathe/device/proxsensor,
 		//Misc
 		/datum/design/autolathe/misc/flashlight,
 		/datum/design/autolathe/tool/ducttape,
@@ -135,6 +136,7 @@
 		/datum/design/autolathe/tool/weldinggoggles,
 		/datum/design/autolathe/tool/weldermask,
 		/datum/design/autolathe/device/flamethrower,
+		/datum/design/autolathe/device/proxsensor,
 		//Misc
 		/datum/design/autolathe/misc/flashlight,
 		/datum/design/autolathe/tool/ducttape,

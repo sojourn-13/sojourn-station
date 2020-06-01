@@ -23,7 +23,7 @@
 "w" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/tiled/derelict,/area/crawler)
 "x" = (/obj/effect/floor_decal/industrial/warning,/obj/machinery/door/window/southright,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 "y" = (/obj/structure/bed,/turf/simulated/floor/tiled/dark/brown_platform,/area/crawler)
-"z" = (/obj/structure/window/reinforced{dir = 1},/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
+"z" = (/obj/effect/floor_decal/industrial/warning,/obj/structure/window/reinforced,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 "A" = (/obj/effect/floor_decal/industrial/warning,/obj/machinery/door/window/southleft,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 "C" = (/obj/structure/low_wall/onestar,/obj/effect/window_lwall_spawn/smartspawn/onestar,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 
