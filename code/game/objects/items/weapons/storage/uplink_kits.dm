@@ -217,7 +217,7 @@
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/weapon/storage/box/syndie_kit/sts/populate_contents()
-	new /obj/item/weapon/gun/projectile/automatic/sts(src)
+	new /obj/item/weapon/gun/projectile/automatic/sts/lrifle(src)
 	new /obj/item/ammo_magazine/lrifle(src)
 	new /obj/item/ammo_magazine/lrifle_short(src)
 	new /obj/item/clothing/suit/storage/toggle/leather/blackjacket(src)

@@ -37,10 +37,6 @@
 				to_chat(owner, SPAN_DANGER("Your abdomen is a world of pain!"))
 				owner.Weaken(10)
 
-				var/obj/item/organ/external/E = owner.get_organ(parent_organ)
-				var/datum/wound/W = new /datum/wound/internal_bleeding(20)
-				E.wounds += W
-				E.germ_level = max(INFECTION_LEVEL_TWO, E.germ_level)
 				owner.adjustToxLoss(25)
 				removed()
 				qdel(src)

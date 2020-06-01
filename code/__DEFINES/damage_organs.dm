@@ -114,6 +114,12 @@
 #define BP_L_ARM_EXTRA	list(BP_L_HAND)
 #define BP_R_ARM_EXTRA	list(BP_R_HAND)
 
+// Body part functions
+#define BODYPART_GRASP				(1<<0)
+#define BODYPART_STAND				(1<<1)
+#define BODYPART_REAGENT_INTAKE		(1<<2)
+#define BODYPART_GAS_INTAKE			(1<<3)
+
 // Organs helpers.
 #define BP_IS_ORGANIC(org)  (org.nature == MODIFICATION_ORGANIC)
 #define BP_IS_ROBOTIC(org) (org.nature == MODIFICATION_SILICON || org.nature == MODIFICATION_LIFELIKE)
@@ -154,4 +160,3 @@
 #define INFECTION_LEVEL_THREE 1000
 
 #define ORGAN_RECOVERY_THRESHOLD (5 MINUTES)
-

@@ -23,9 +23,10 @@
 	price_tag = 500
 	one_hand_penalty = 20 //full sized rifle with bayonet is hard to keep on target
 	var/bolt_open = 0
-	var/item_suffix = ""
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") // Considering attached bayonet
 	sharp = 1
+	saw_off = TRUE
+	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn
 
 /obj/item/weapon/gun/projectile/boltgun/update_icon()
 	..()
@@ -88,6 +89,7 @@
 		return
 	..()
 
+
 /obj/item/weapon/gun/projectile/boltgun/sa
 	name = "\"Novakovic\" boltgun"
 	desc = "Weapon for hunting, or endless trench warfare. \
@@ -100,6 +102,9 @@
 	price_tag = 300
 	recoil_buildup = 40
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
+	saw_off = TRUE
+	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/sa
+
 
 /obj/item/weapon/gun/projectile/boltgun/scout
 	name = "\"Scout\" heavy boltgun"
@@ -114,7 +119,105 @@
 	max_shells = 5
 	zoom_factor = 2.0
 	price_tag = 3000
+	sharp = 0
 	caliber = CAL_HRIFLE
 	load_method = SINGLE_CASING
 	one_hand_penalty = 50 //No trick shots
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
+	saw_off = TRUE
+	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/scout
+
+/obj/item/weapon/gun/projectile/boltgun/scout/light
+	name = "\"Sika\" light boltgun"
+	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
+	icon = 'icons/obj/guns/projectile/lightboltgun.dmi'
+	icon_state = "boltgun"
+	item_state = "boltgun"
+	max_shells = 10
+	price_tag = 2000
+	caliber = CAL_LRIFLE
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
+	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
+	saw_off = TRUE
+	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/light
+
+/obj/item/weapon/gun/projectile/boltgun/scout/light/wood
+	name = "\"Roe\" light boltgun"
+	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
+	icon = 'icons/obj/guns/projectile/lightboltgun_wood.dmi'
+	icon_state = "boltgun"
+	item_state = "boltgun"
+	max_shells = 10
+	price_tag = 2000
+	caliber = CAL_LRIFLE
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 10, MATERIAL_GLASS = 10)
+	saw_off = TRUE
+	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/light/wood
+
+/obj/item/weapon/gun/projectile/boltgun/sawn
+	name = "\"obrez\" boltgun"
+	desc = "A crudly mangled and sawn-down 7.5mm bolt action rifle. Rifle was fine."
+	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
+	icon_state = "obrez"
+	item_state = "obrez"
+	force = WEAPON_FORCE_NORMAL
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	price_tag = 150
+	sharp = 0
+	recoil_buildup = 60
+	penetration_multiplier = 0.5
+	damage_multiplier = 1.1
+	fire_delay = 18
+	one_hand_penalty = 10
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
+	saw_off = FALSE
+
+/obj/item/weapon/gun/projectile/boltgun/sawn/sa
+	name = "\"obrez\" boltgun"
+	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
+	icon_state = "obrez"
+	item_state = "obrez"
+	max_shells = 5
+	one_hand_penalty = 10
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_WOOD = 4)
+	saw_off = FALSE
+
+/obj/item/weapon/gun/projectile/boltgun/sawn/scout
+	name = "\"obrez\" heavy boltgun"
+	desc = "A crudly mangled and sawn-down .408 bolt action rifle. Rifle was fine."
+	icon = 'icons/obj/guns/projectile/sawnoff/heavyboltgun.dmi'
+	icon_state = "obrez"
+	item_state = "obrez"
+	caliber = CAL_HRIFLE
+	load_method = SINGLE_CASING
+	fire_delay = 18
+	max_shells = 5
+	one_hand_penalty = 15
+	saw_off = FALSE
+
+/obj/item/weapon/gun/projectile/boltgun/sawn/light
+	name = "\"obrez\" light boltgun"
+	desc = "A crudly mangled and sawn-down .257 bolt action rifle. Rifle was fine."
+	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
+	icon_state = "obrez"
+	item_state = "obrez"
+	caliber = CAL_LRIFLE
+	load_method = SINGLE_CASING
+	fire_delay = 18
+	one_hand_penalty = 15
+	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
+	saw_off = FALSE
+
+/obj/item/weapon/gun/projectile/boltgun/sawn/light/wood
+	name = "\"obrez\" light boltgun"
+	desc = "A crudly mangled and sawn-down .257 bolt action rifle. Rifle was fine."
+	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
+	icon_state = "obrez"
+	item_state = "obrez"
+	caliber = CAL_LRIFLE
+	load_method = SINGLE_CASING
+	fire_delay = 18
+	max_shells = 10
+	one_hand_penalty = 15
+	saw_off = FALSE

@@ -148,15 +148,16 @@ var/list/VVckey_edit = list("key", "ckey")
 	var/variable
 	var/list/selector = list()
 	for(var/i in 1 to LAZYLEN(L))
-		selector["[i]: [L[i]][assoc ? "-- [L[L[i]]]" : ""]"] = i
+		selector["[i]: [L[i]][assoc ? " -- [L[L[i]]]" : ""]"] = i
 
 	var/index = input("Which var?","Var") as null|anything in selector + list("(ADD VAR)" = "(ADD VAR)")
 	var/position
 
-	if(variable == "(ADD VAR)")
+	if(index == "(ADD VAR)")
 		mod_list_add(L, O, original_name, objectvar)
 		return
 
+	index = selector[index]
 	if(assoc)
 		position = L[index]
 		variable = L[position]
@@ -171,13 +172,13 @@ var/list/VVckey_edit = list("key", "ckey")
 
 	var/dir
 
-	if(variable in VVlocked)
+	if(objectvar in VVlocked)
 		if(!check_rights(R_DEBUG))
 			return
-	if(variable in VVckey_edit)
+	if(objectvar in VVckey_edit)
 		if(!check_rights(R_FUN|R_DEBUG))
 			return
-	if(variable in VVicon_edit_lock)
+	if(objectvar in VVicon_edit_lock)
 		if(!check_rights(R_FUN|R_DEBUG))
 			return
 
@@ -245,6 +246,8 @@ var/list/VVckey_edit = list("key", "ckey")
 
 	var/class = "text"
 	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object")
+	if(!assoc)
+		class_input += "null"
 
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
@@ -309,6 +312,10 @@ var/list/VVckey_edit = list("key", "ckey")
 
 		if("icon")
 			new_var = input("Pick icon:","Icon") as icon
+			L[position] = new_var
+
+		if("null")
+			new_var = null
 			L[position] = new_var
 
 		if("marked datum")

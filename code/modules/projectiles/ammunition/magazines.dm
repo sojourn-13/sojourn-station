@@ -331,23 +331,9 @@
 	ammo_type = /obj/item/ammo_casing/rifle/lethal
 
 ///unused?
-/obj/item/ammo_magazine/rifle_box
-	name = "magazine box (7.5mm Rifle)"
-	icon_state = "a762"
-	origin_tech = list(TECH_COMBAT = 2)
-	mag_type = MAGAZINE
-	mag_well = MAG_WELL_BOX
-	caliber = CAL_RIFLE
-	matter = list(MATERIAL_STEEL = 8)
-	ammo_type = /obj/item/ammo_casing/rifle
-	max_ammo = 50
-	multiple_sprites = 1
-
-/obj/item/ammo_magazine/rifle_box/empty
-	initial_ammo = 0
 
 /obj/item/ammo_magazine/rifle_pk
-	name = "PK munitions box (7.5mm Rifle)"
+	name = "linked ammunition box (7.5mm Rifle)"
 	icon_state = "pk_box"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -358,7 +344,7 @@
 	max_ammo = 100
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/ammobox/rifle/pk/update_icon()
+/obj/item/ammo_magazine/rifle_pk/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "pk_box-0"
 		return
@@ -372,6 +358,19 @@
 	icon_state = "pk_box-[number]"
 
 /obj/item/ammo_magazine/rifle_pk/empty
+	matter = list(MATERIAL_STEEL = 2)
+	initial_ammo = 0
+
+///easiest to make it a child
+/obj/item/ammo_magazine/rifle_pk/lrifle
+	name = "linked ammunition box (.257 Carbine)"
+	icon_state = "pk_box"
+	caliber = CAL_LRIFLE
+	ammo_type = /obj/item/ammo_casing/lrifle
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/rifle_pk/lrifle/empty
+	matter = list(MATERIAL_STEEL = 2)
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/maxim
@@ -384,6 +383,10 @@
 	ammo_type = /obj/item/ammo_casing/rifle
 	max_ammo = 96
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/maxim/empty
+	matter = list(MATERIAL_STEEL = 2)
+	initial_ammo = 0
 
 ////.408 rifle////
 
@@ -423,6 +426,27 @@
 	name = "heavy rifle magazine (HP)"
 	icon_state = "hrifle_l"
 	ammo_type = /obj/item/ammo_casing/hrifle/lethal
+
+/obj/item/ammo_magazine/hrifle_drum
+	name = "heavy rifle magazine"
+	icon_state = "hdrum"
+	desc = "A 64 round drum magazine marked for .408 Heavy Rifle."
+	origin_tech = list(TECH_COMBAT = 2)
+	w_class = ITEM_SIZE_NORMAL
+	mag_type = MAGAZINE
+	mag_well =  MAG_WELL_DRUM
+	caliber = CAL_HRIFLE
+	matter = list(MATERIAL_STEEL = 15)
+	ammo_type = /obj/item/ammo_casing/hrifle
+	max_ammo = 64
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/hrifle_drum/empty
+	name = "heavy rifle magazine"
+	icon_state = "hdrum"
+	matter = list(MATERIAL_STEEL = 4)
+	icon_state = "hdrum"
+	initial_ammo = 0
 
 ////10mm caseless////
 
@@ -642,7 +666,7 @@
 
 /obj/item/ammo_magazine/m12/empty
 	icon_state = "m12"
-	ammo_color = ""
+	matter = list(MATERIAL_STEEL = 2)
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/m12/pellet
@@ -656,3 +680,35 @@
 	icon_state = "m12_beanbag"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	ammo_color = "-beanbag"
+
+/obj/item/ammo_magazine/sbaw
+	name = "20mm SBAW magazine (sabot slug)"
+	icon_state = "sbaw"
+	mag_type = MAGAZINE
+	mag_well =  MAG_WELL_DRUM
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_STEEL = 10)
+	multiple_sprites = 1
+	max_ammo = 10
+
+/obj/item/ammo_magazine/sbaw/empty
+	icon_state = "sbaw"
+	matter = list(MATERIAL_STEEL = 1)
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/sbaw/beanbag
+	name = "20mm SBAW magazine (beanbag)"
+	icon_state = "sbaw_bb"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+
+/obj/item/ammo_magazine/sbaw/pellet
+	name = "20mm SBAW magazine (buckshot)"
+	icon_state = "sbaw_buck"
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+
+/obj/item/ammo_magazine/sbaw/he
+	name = "20mm SBAW magazine (HEFI)"
+	icon_state = "sbaw_he"
+	matter = list(MATERIAL_STEEL = 10, "phosphorus" = 2)
+	ammo_type = /obj/item/ammo_casing/shotgun/payload

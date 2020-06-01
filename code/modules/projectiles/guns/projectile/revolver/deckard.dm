@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/revolver/deckard
-	name = "\"Deckard\" magnum"
+	name = "\"Deckard\" heavy cyber-revolver"
 	desc = "A rare, custom-built revolver formerly used on Earth by early Turing Police, less than 100 examples exist in this side of the galaxy. Use when there is no time for the Voight-Kampff test. Uses .50 Kurtz."
 	icon = 'icons/obj/guns/projectile/deckard.dmi'
 	icon_state = "deckard"
@@ -12,4 +12,5 @@
 	penetration_multiplier = 1.65
 	recoil_buildup = 30
 	one_hand_penalty = 25
+	zoom_factor = 0.4
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'

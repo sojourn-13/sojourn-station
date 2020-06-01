@@ -20,6 +20,14 @@
 	name = "shotgun shells (flash)"
 	build_path = /obj/item/ammo_casing/shotgun/flash/prespawned
 
+/datum/design/autolathe/ammo/shotgun_he
+	name = "20mm shells (HEFI)"
+	build_path = /obj/item/ammo_casing/shotgun/payload/prespawned
+
+/datum/design/autolathe/ammo/m12empty
+	name = "20mm ammo drum (empty)"
+	build_path = /obj/item/ammo_magazine/m12/empty
+
 /datum/design/autolathe/ammo/m12beanbag
 	name = "ammo drum (20mm beanbag)"
 	build_path = /obj/item/ammo_magazine/m12/beanbag
@@ -31,6 +39,28 @@
 /datum/design/autolathe/ammo/m12slug
 	name = "ammo drum (20mm slug)"
 	build_path = /obj/item/ammo_magazine/m12
+
+/datum/design/autolathe/ammo/sbaw_slug
+	name = "SBAW magazine (20mm slug)"
+	build_path = /obj/item/ammo_magazine/sbaw
+
+/datum/design/autolathe/ammo/sbaw_pellet
+	name = "SBAW magazine (20mm buckshot)"
+	build_path = /obj/item/ammo_magazine/sbaw/pellet
+
+/datum/design/autolathe/ammo/sbaw_beanbag
+	name = "SBAW magazine (20mm beanbag)"
+	build_path = /obj/item/ammo_magazine/sbaw/beanbag
+
+/datum/design/autolathe/ammo/sbaw_payload
+	name = "SBAW magazine (20mm HEFI)"
+	build_path = /obj/item/ammo_magazine/sbaw/he
+
+/datum/design/autolathe/ammo/sbaw_empty
+	name = "SBAW magazine (empty)"
+	build_path = /obj/item/ammo_magazine/sbaw/empty
+
+
 
 //.35 mags
 /datum/design/autolathe/ammo/pistol
@@ -313,6 +343,14 @@
 	name = "ammunition box .257 Carbine (practice)"
 	build_path = /obj/item/ammo_magazine/ammobox/lrifle_small/lethal
 
+/datum/design/autolathe/ammo/lrifle_belt
+	name = "linked ammunition box .257 Carbine (ball)"
+	build_path = /obj/item/ammo_magazine/rifle_pk/lrifle
+
+/datum/design/autolathe/ammo/lrifle_belt_empty
+	name = "linked ammunition box .257 Carbine (empty)"
+	build_path = /obj/item/ammo_magazine/rifle_pk/lrifle/empty
+
 //7.62 rifle
 //mags
 
@@ -366,7 +404,7 @@
 
 /datum/design/autolathe/ammo/rifle_pk
 	name = "linked ammunition box 7.5mm Rifle (ball)"
-	build_path = /obj/item/ammo_magazine/ammobox/rifle/pk
+	build_path = /obj/item/ammo_magazine/rifle_pk
 
 /datum/design/autolathe/ammo/sl_rifle
 	name = "stripper clip 7.5mm Rifle (ball)"
@@ -392,6 +430,24 @@
 	name = "ammunition packet 7.5mm Rifle (AP)"
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_small/hv
 
+/datum/design/autolathe/ammo/rifle_pk
+	name = "linked ammunition box 7.5mm Rifle (ball)"
+	build_path = /obj/item/ammo_magazine/rifle_pk
+
+/datum/design/autolathe/ammo/rifle_pk_empty
+	name = "linked ammunition box 7.5mm Rifle (empty)"
+	build_path = /obj/item/ammo_magazine/rifle_pk/empty
+
+/datum/design/autolathe/ammo/maxim
+	name = "pan magazine 7.5mm Rifle (ball)"
+	build_path = /obj/item/ammo_magazine/maxim
+
+/datum/design/autolathe/ammo/maxim_empty
+	name = "pan magazine 7.5mm Rifle (empty)"
+	build_path = /obj/item/ammo_magazine/maxim/empty
+
+
+
 //.408 rifle
 
 /datum/design/autolathe/ammo/hrifle
@@ -413,6 +469,14 @@
 /datum/design/autolathe/ammo/hrifle_lethal
 	name = ".408 heavy rifle magazine (hollow point)"
 	build_path = /obj/item/ammo_magazine/hrifle/lethal
+
+/datum/design/autolathe/ammo/hrifle_drum
+	name = ".408 heavy rifle drum (ball)"
+	build_path = /obj/item/ammo_magazine/hrifle_drum
+
+/datum/design/autolathe/ammo/hrifle_drum_empty
+	name = ".408 heavy rifle drum (empty)"
+	build_path = /obj/item/ammo_magazine/hrifle_drum/empty
 
 //.408 rifle boxes
 /datum/design/autolathe/ammo/hrifle_ammobox

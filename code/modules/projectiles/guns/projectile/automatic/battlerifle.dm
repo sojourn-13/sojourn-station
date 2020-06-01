@@ -18,7 +18,7 @@
 	price_tag = 2000
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.3
-	recoil_buildup = 20
+	recoil_buildup = 15
 	one_hand_penalty = 15
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
@@ -35,9 +35,11 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if (ammo_magazine)
-		iconstring += "_mag"
-		itemstring += "_mag"
+	if(ammo_magazine)
+		add_overlay("_mag[ammo_magazine.max_ammo]")
+	else
+		cut_overlays()
+		return
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"

@@ -107,9 +107,11 @@ obj/item/ammo_magazine/ammobox/lrifle
 	icon_state = "box_lrifle"
 	matter = list(MATERIAL_STEEL = 30)
 	w_class = ITEM_SIZE_BULKY
+	mag_type = MAGAZINE
+	mag_well =  MAG_WELL_BOX
 	caliber = CAL_LRIFLE
 	ammo_type = /obj/item/ammo_casing/lrifle
-	max_ammo = 240
+	max_ammo = 200
 
 /obj/item/ammo_magazine/ammobox/lrifle/pickup(mob/user)
 	..()
@@ -167,6 +169,8 @@ obj/item/ammo_magazine/ammobox/rifle
 	matter = list(MATERIAL_STEEL = 30)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_RIFLE
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_BOX
 	ammo_type = /obj/item/ammo_casing/rifle
 	mag_type = SPEEDLOADER | MAGAZINE
 	max_ammo = 180
@@ -323,7 +327,9 @@ obj/item/ammo_magazine/ammobox/rifle
 	desc = "A box of .408 heavy rifle ammunition. 120ct, 7mm FMJ subcaliber sabots."
 	matter = list(MATERIAL_STEEL = 30)
 	w_class = ITEM_SIZE_BULKY
-	caliber = "10x50mm"
+	mag_type = MAGAZINE
+	mag_well =  MAG_WELL_BOX
+	caliber = CAL_HRIFLE
 	ammo_type = /obj/item/ammo_casing/hrifle
 	max_ammo = 120
 
