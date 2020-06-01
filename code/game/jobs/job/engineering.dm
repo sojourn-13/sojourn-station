@@ -35,7 +35,8 @@
 			/datum/craft_recipe/guild/melee,
 			/datum/craft_recipe/guild/bullet,
 			/datum/craft_recipe/guild/energy,
-			/datum/craft_recipe/guild/bomb
+			/datum/craft_recipe/guild/bomb,
+			/datum/craft_recipe/guild/arcwelder
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -98,7 +99,8 @@
 			/datum/craft_recipe/guild/melee,
 			/datum/craft_recipe/guild/bullet,
 			/datum/craft_recipe/guild/energy,
-			/datum/craft_recipe/guild/bomb
+			/datum/craft_recipe/guild/bomb,
+			/datum/craft_recipe/guild/arcwelder
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
