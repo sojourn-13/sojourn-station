@@ -5,7 +5,7 @@
 	icon = 'icons/obj/guns/projectile/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
-	var/item_suffix = ""
+	item_suffix = ""
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_LRIFLE
@@ -57,3 +57,20 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 1500
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	saw_off = TRUE
+	sawn = /obj/item/weapon/gun/projectile/automatic/ak47/sawn
+
+/obj/item/weapon/gun/projectile/automatic/ak47/sawn
+	name = "sawn-off \"Kalashnikov\" carbine"
+	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
+	A poor copy of the AKM pattern chambered in .257 and crudely sawed down to a shadow of its former self. Rifle was fine. Was."
+	icon = 'icons/obj/guns/projectile/sawnoff/ak.dmi'
+	icon_state = "AK"
+	item_state = "AK"
+	w_class = ITEM_SIZE_NORMAL
+	force = WEAPON_FORCE_NORMAL
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
+	price_tag = 1000
+	recoil_buildup = 15
+	one_hand_penalty = 25
+	saw_off = FALSE
