@@ -9,7 +9,7 @@
 					/obj/item/weapon/contraband/poster,
 					/obj/item/weapon/contraband/poster,
 					/obj/item/weapon/contraband/poster)
-	cost = 700
+	cost = 560
 	crate_name = "corporate posters crate"
 	group = "Supply"
 
@@ -25,6 +25,6 @@
 	/obj/item/weapon/storage/box,
 	/obj/item/weapon/storage/box,
 	/obj/item/weapon/storage/box)
-	cost = 800
+	cost = 640
 	crate_name = "empty boxes crate"
 	group = "Supply"

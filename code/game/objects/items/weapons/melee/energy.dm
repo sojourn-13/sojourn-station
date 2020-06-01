@@ -99,6 +99,7 @@
 	throw_speed = 1
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
+	price_tag = 1000
 	flags = NOBLOODY
 	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	sharp = 1
@@ -126,7 +127,7 @@
 
 /obj/item/weapon/melee/energy/sword/pirate/New()
 	blade_color = "cutlass"
-	
+
 /obj/item/weapon/melee/energy/sword/sabre/New()
 	blade_color = "green"
 

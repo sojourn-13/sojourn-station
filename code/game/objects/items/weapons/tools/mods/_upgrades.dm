@@ -104,6 +104,17 @@
 		if (T.item_upgrades.len >= T.max_upgrades)
 			to_chat(user, SPAN_WARNING("This armor can't fit anymore modifications!"))
 			return FALSE
+
+		if (required_qualities.len)
+			var/qmatch = FALSE
+			for (var/q in required_qualities)
+				if (T.has_quality(q))
+					qmatch = TRUE
+					break
+
+			if (!qmatch)
+				to_chat(user, SPAN_WARNING("Why are you trying to attach tool mods to armor?"))
+				return FALSE
 		for (var/obj/item/I in T.item_upgrades)
 			if (I.type == parent.type)
 				to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
@@ -178,6 +189,7 @@
 				if(/obj/item/weapon/cell/small)
 					T.suitable_cell = /obj/item/weapon/cell/medium
 		T.prefixes |= prefix
+	return TRUE
 	if(istype(holder, /obj/item/clothing/suit/armor))
 		var/obj/item/clothing/suit/armor/T = holder
 		if(upgrades[UPGRADE_MELEE_ARMOR])

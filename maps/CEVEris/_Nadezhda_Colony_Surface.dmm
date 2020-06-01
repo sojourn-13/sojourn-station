@@ -19,7 +19,7 @@
 "aas" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating/under,/area/nadezhda/maintenance{name = "Surface Maintenance"})
 "aat" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating/under,/area/nadezhda/maintenance{name = "Surface Maintenance"})
 "aau" = (/obj/machinery/recharge_station,/obj/structure/window/reinforced{dir = 8},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/security/armory)
-"aav" = (/obj/machinery/mech_recharger,/obj/mecha/combat/durand/security,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/security/armory)
+"aav" = (/obj/machinery/mech_recharger,/obj/mecha/combat/dreadnought/security,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/security/armory)
 "aaw" = (/turf/simulated/wall/r_wall,/area/nadezhda/hallway/surface/section1)
 "aax" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/tiled/dark/gray_perforated,/area/nadezhda/security/barracks)
 "aay" = (/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/tiled/techmaint,/area/nadezhda/maintenance{name = "Surface Maintenance"})

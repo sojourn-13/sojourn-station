@@ -110,6 +110,21 @@
 	default_gas = "oxygen"
 	volume = 2 //Tiny. Real life equivalents only have 21 breaths of oxygen in them. They're EMERGENCY tanks anyway -errorage (dangercon 2011)
 
+/obj/item/weapon/tank/emergency_nitgen
+	name = "opifex nitrogen tanks"
+	desc = "A set of double rigged nitrogen tanks used by opifex crew in place of oxygen tanks. Used only by Opifex unless you wish to pass out and die."
+	icon_state = "opifex_double"
+	gauge_icon = "indicator-tank-double"
+	gauge_cap = 4
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+	w_class = ITEM_SIZE_SMALL
+	force = WEAPON_FORCE_NORMAL
+	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
+	default_pressure = 3*ONE_ATMOSPHERE
+	default_gas = "nitrogen"
+	volume = 10
+
 /obj/item/weapon/tank/emergency_oxygen/examine(mob/user)
 	if(..(user, 0) && air_contents.gas["oxygen"] < 0.2 && loc==user)
 		to_chat(user, text(SPAN_DANGER("The meter on the [src.name] indicates you are almost out of air!")))

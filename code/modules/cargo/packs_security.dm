@@ -10,43 +10,42 @@
 					/obj/item/weapon/grenade/smokebomb,
 					/obj/item/weapon/pen/reagent/paralysis,
 					/obj/item/weapon/grenade/chem_grenade/incendiary)
-	cost = 1700
+	cost = 1360
 	crate_name = "special ops crate"
 	group = "Security"
 	hidden = TRUE
 
 /datum/supply_pack/fsenergy
-	name = "FS Energy Weapons Crate"
+	name = "HS Energy Weapons Crate"
 	contains = list(/obj/item/weapon/gun/energy/plasma/cassad,
 				/obj/item/weapon/gun/energy/gun,
 				/obj/item/weapon/gun/energy/gun,
 				/obj/item/weapon/gun/energy/gun/martin,
 				/obj/item/weapon/gun/energy/gun/martin)
-	cost = 6000
+	cost = 4800
 	containertype = /obj/structure/closet/crate/secure/weapon
-	crate_name = "FS energy weapons crate"
+	crate_name = "HS energy weapons crate"
 	group = "Security"
 
 /datum/supply_pack/fssmall
-	name = "FS Sidearms Crate"
+	name = "HS Sidearms Crate"
 	contains = list(/obj/item/weapon/gun/projectile/colt,
-
 			/obj/item/weapon/gun/projectile/clarissa,
 			/obj/item/weapon/gun/projectile/olivaw)
-	cost = 3000
+	cost = 2400
 	containertype = /obj/structure/closet/crate/secure/weapon
-	crate_name = "FS sidearms crate"
+	crate_name = "HS sidearms crate"
 	group = "Security"
 
 
 /datum/supply_pack/fsrevolver
-	name = "FS Revolvers Crate"
+	name = "HS Revolvers Crate"
 	contains = list(/obj/item/weapon/gun/projectile/revolver/detective,
 					/obj/item/weapon/gun/projectile/revolver/detective,
 					/obj/item/weapon/gun/projectile/revolver)
-	cost = 3300
+	cost = 2640
 	containertype = /obj/structure/closet/crate/secure/weapon
-	crate_name = "FS revolvers crate"
+	crate_name = "HS revolvers crate"
 	group = "Security"
 
 /datum/supply_pack/ntweapons
@@ -55,7 +54,7 @@
 				/obj/item/weapon/gun/energy/laser,
 				/obj/item/weapon/gun/energy/taser,
 				/obj/item/weapon/gun/energy/taser)
-	cost = 5000
+	cost = 4000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "CA energy weapons crate"
 	group = "Security"
@@ -69,7 +68,7 @@
 					/obj/item/weapon/grenade/chem_grenade/incendiary,
 					/obj/item/weapon/grenade/chem_grenade/incendiary,
 					/obj/item/weapon/grenade/chem_grenade/incendiary)
-	cost = 2500
+	cost = 2000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "incendiary weapons crate"
 	group = "Security"
@@ -82,7 +81,7 @@
 					/obj/item/clothing/suit/storage/vest,
 					/obj/item/clothing/head/helmet,
 					/obj/item/clothing/head/helmet)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "Marshal surplus armor crate"
 	group = "Security"
@@ -107,7 +106,7 @@
 					/obj/item/clothing/suit/armor/heavy/riot,
 					/obj/item/clothing/head/helmet/riot,
 					/obj/item/clothing/suit/armor/heavy/riot)
-	cost = 6100
+	cost = 4880
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "Marshal riot gear crate"
 	group = "Security"
@@ -118,44 +117,44 @@
 					/obj/item/clothing/suit/armor/bulletproof,
 					/obj/item/clothing/head/helmet,
 					/obj/item/clothing/head/helmet)
-	cost = 3000
+	cost = 2400
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "Marshal ballistic armor crate"
 	group = "Security"
 
 /datum/supply_pack/shotgunammo_beanbag
-	name = "FS Beanbag Shells Crate"
+	name = "HS Beanbag Shells Crate"
 	contains = list(/obj/item/weapon/storage/box/shotgunammo/beanbags,
 					/obj/item/weapon/storage/box/shotgunammo/beanbags,
 					/obj/item/weapon/storage/box/shotgunammo/beanbags,
 					/obj/item/weapon/storage/box/shotgunammo/beanbags,
 					/obj/item/weapon/storage/box/shotgunammo/beanbags)
-	cost = 1000
+	cost = 800
 	crate_name = "FS beanbag shells crate"
 	group = "Security"
 
 /datum/supply_pack/shotgunammo_slug
-	name = "FS Slug Shells Crate"
+	name = "HS Slug Shells Crate"
 	contains = list(/obj/item/weapon/storage/box/shotgunammo/slug,
 					/obj/item/weapon/storage/box/shotgunammo/slug,
 					/obj/item/weapon/storage/box/shotgunammo/slug,
 					/obj/item/weapon/storage/box/shotgunammo/slug,
 					/obj/item/weapon/storage/box/shotgunammo/slug)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "FS slug shells crate"
+	crate_name = "HS slug shells crate"
 	group = "Security"
 
 /datum/supply_pack/shotgunammo_buckshot
-	name = "FS Buckshot Shells Crate"
+	name = "HS Buckshot Shells Crate"
 	contains = list(/obj/item/weapon/storage/box/shotgunammo/buckshot,
 					/obj/item/weapon/storage/box/shotgunammo/buckshot,
 					/obj/item/weapon/storage/box/shotgunammo/buckshot,
 					/obj/item/weapon/storage/box/shotgunammo/buckshot,
 					/obj/item/weapon/storage/box/shotgunammo/buckshot)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "FS buckshot shells crate"
+	crate_name = "HS buckshot shells crate"
 	group = "Security"
 
 
@@ -165,18 +164,18 @@
 					/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/head/helmet,
 					/obj/item/clothing/head/helmet)
-	cost = 3500
+	cost = 2800
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "Marshal ablative armor crate"
 	group = "Security"
 
 /datum/supply_pack/securitybarriers
-	name = "IH Security Barrier Crate"
+	name = "Security Barrier Crate"
 	contains = list(/obj/machinery/deployable/barrier,
 					/obj/machinery/deployable/barrier,
 					/obj/machinery/deployable/barrier,
 					/obj/machinery/deployable/barrier)
-	cost = 2000
+	cost = 1600
 	containertype = /obj/structure/closet/crate/secure/gear
 	crate_name = "Marshal security barrier crate"
 	group = "Security"
@@ -187,7 +186,66 @@
 					/obj/machinery/shieldwallgen,
 					/obj/machinery/shieldwallgen,
 					/obj/machinery/shieldwallgen)
-	cost = 2000
+	cost = 1600
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "wall shield generators crate"
 	group = "Security"
+
+//Putting the void wolf stuff here so its easier to remove later, if needed.
+/datum/supply_pack/voidwolfrifles
+	name = "Void Wolf Rifles Crate"
+	contains = list(/obj/item/weapon/gun/projectile/automatic/ak47/sa,
+					/obj/item/weapon/gun/projectile/automatic/ak47/sa,
+					/obj/item/weapon/gun/projectile/automatic/ak47/sa,
+					/obj/item/weapon/gun/projectile/automatic/ak47/sa)
+	cost = 6500
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Void Wolf Rifles Crate"
+	group = "Xanaroth Syndicate"
+
+/datum/supply_pack/voidwolfdrugs
+	name = "Void Wolf Recreations Crate"
+	contains = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs,
+					/obj/item/weapon/reagent_containers/syringe/drugs,
+					/obj/item/weapon/reagent_containers/syringe/drugs,
+					/obj/item/weapon/reagent_containers/pill/zoom,
+					/obj/item/weapon/reagent_containers/pill/happy,
+					/obj/item/seeds/ambrosiadeusseed,
+					/obj/item/seeds/ambrosiavulgarisseed)
+	cost = 1000
+	containertype = /obj/structure/closet/crate/serbcrate
+	crate_name = "Void Wolf Recreations Crate"
+	group = "Xanaroth Syndicate"
+
+/datum/supply_pack/voidwolfswords
+	name = "Void Wolf Energy Swords Crate"
+	contains = list(/obj/item/weapon/melee/energy/sword/pirate,
+					/obj/item/weapon/melee/energy/sword/pirate,
+					/obj/item/weapon/melee/energy/sword/pirate,
+					/obj/item/weapon/melee/energy/sword/pirate)
+	cost = 4500
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Void Wolf Energy Swords Crate"
+	group = "Xanaroth Syndicate"
+
+/datum/supply_pack/voidwolfarmor
+	name = "Void Wolf Red Armor Crate"
+	contains = list(/obj/item/clothing/suit/space/syndicate/xanaroth,
+					/obj/item/clothing/suit/space/syndicate/xanaroth,
+					/obj/item/clothing/head/helmet/space/syndicate/xanaroth,
+					/obj/item/clothing/head/helmet/space/syndicate/xanaroth)
+	cost = 3500
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Void Wolf Red Armor Crate"
+	group = "Xanaroth Syndicate"
+
+/datum/supply_pack/voidwolfemporer
+	name = "Void Wolf Emporer Crate"
+	contains = list(/obj/item/weapon/gun/projectile/gyropistol,
+					/obj/item/ammo_magazine/a75,
+					/obj/item/ammo_magazine/a75)
+	cost = 20000
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Void Wolf Emporer Crate"
+	group = "Xanaroth Syndicate"

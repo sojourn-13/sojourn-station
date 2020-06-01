@@ -5,7 +5,7 @@
 /datum/supply_pack/monkey
 	name = "Monkey Crate"
 	contains = list (/obj/item/weapon/storage/box/monkeycubes)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "monkey crate"
 	group = "Hydroponics"
@@ -21,7 +21,7 @@
 					/obj/item/device/scanner/plant,
 					/obj/item/clothing/gloves/botanic_leather,
 					/obj/item/clothing/suit/rank/botanist) // Updated with new things
-	cost = 900
+	cost = 720
 	containertype = /obj/structure/closet/crate/hydroponics
 	crate_name = "hydroponics supply crate"
 	group = "Hydroponics"
@@ -29,35 +29,35 @@
 //farm animals - useless and annoying, but potentially a good source of food
 /datum/supply_pack/cow
 	name = "Cow Crate"
-	cost = 3000
+	cost = 2400
 	containertype = /obj/structure/largecrate/animal/cow
 	crate_name = "cow crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/goat
 	name = "Goat Crate"
-	cost = 2500
+	cost = 2000
 	containertype = /obj/structure/largecrate/animal/goat
 	crate_name = "Goat Crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/chicken
 	name = "Chicken Crate"
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/largecrate/animal/chick
 	crate_name = "Chicken Crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/corgi
 	name = "Corgi Crate"
-	cost = 4000
+	cost = 3200
 	containertype = /obj/structure/largecrate/animal/corgi
 	crate_name = "corgi crate"
 	group = "Hydroponics"
 
 /datum/supply_pack/cat
 	name = "Cat Crate"
-	cost = 3000
+	cost = 2400
 	containertype = /obj/structure/largecrate/animal/cat
 	crate_name = "cat crate"
 	group = "Hydroponics"
@@ -81,7 +81,7 @@
 					/obj/item/seeds/chantermycelium,
 					/obj/item/seeds/potatoseed,
 					/obj/item/seeds/sugarcaneseed)
-	cost = 800
+	cost = 640
 	containertype = /obj/structure/closet/crate/hydroponics
 	crate_name = "seeds crate"
 	group = "Hydroponics"
@@ -93,7 +93,7 @@
 					/obj/item/weapon/grenade/chem_grenade/antiweed,
 					/obj/item/weapon/grenade/chem_grenade/antiweed,
 					/obj/item/weapon/grenade/chem_grenade/antiweed)
-	cost = 1000
+	cost = 800
 	containertype = /obj/structure/closet/crate/secure/hydrosec
 	crate_name = "weed control crate"
 	group = "Hydroponics"
@@ -109,7 +109,7 @@
 					/obj/item/seeds/random,
 					/obj/item/seeds/random,
 					/obj/item/seeds/kudzuseed)
-	cost = 1500
+	cost = 1200
 	containertype = /obj/structure/closet/crate/hydroponics
 	crate_name = "exotic seeds crate"
 	group = "Hydroponics"
@@ -117,7 +117,7 @@
 /datum/supply_pack/watertank
 	name = "Water Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/watertank)
-	cost = 800
+	cost = 640
 	containertype = /obj/structure/largecrate
 	crate_name = "water tank crate"
 	group = "Hydroponics"
