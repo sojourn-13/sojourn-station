@@ -11,7 +11,7 @@
 
 /obj/machinery/computer/cryopod
 	name = "cryogenic oversight console"
-	desc = "An interface between crew and the cryogenic storage oversight systems."
+	desc = "An interface between colonists and the cryogenic storage oversight systems."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "cellconsole"
 	light_power = 1.5
@@ -32,7 +32,7 @@
 
 /obj/machinery/computer/cryopod/robot
 	name = "robotic storage console"
-	desc = "An interface between crew and the robotic storage systems"
+	desc = "An interface between crew and the robotic storage systems."
 	icon = 'icons/obj/robot_storage.dmi'
 	icon_state = "console"
 	circuit = /obj/item/weapon/circuitboard/robotstoragecontrol
@@ -40,6 +40,11 @@
 	storage_type = "cyborgs"
 	storage_name = "Robotic Storage Control"
 	allow_items = 0
+
+/obj/machinery/computer/cryopod/elevator
+	name = "elevator oversight console"
+	desc = "An interface between crew and the elevator storage systems."
+	storage_name = "Elevator Storage Control"
 
 /obj/machinery/computer/cryopod/attack_hand(mob/user = usr)
 	if(stat & (NOPOWER|BROKEN))
@@ -201,6 +206,23 @@
 	allow_occupant_types = list(/mob/living/silicon/robot)
 	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
 	applies_stasis = 0
+
+/obj/machinery/cryopod/elevator
+	name = "Elevator to the Lower Colony"
+	desc = "An elevator that takes you to the lower colony districts. You do have an apartment down there, don't you?"
+	icon = 'icons/obj/doors/Doorhatchele.dmi'
+	icon_state = "door_closed"
+	base_icon_state = "door_closed"
+	occupied_icon_state = "door_closed"
+	on_store_message = "has taken the elevator down to the lower colony districts."
+	on_store_name = "Residential Oversight"
+	on_enter_occupant_message = "The elevator closes behind you, the lift ready to take you below shortly."
+	opacity = 1
+
+	time_till_despawn = 600 //1 minute. We want to be much faster then normal cryo, since waiting in an elevator for half an hour is a special kind of hell.
+
+	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
+	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
 
 /obj/machinery/cryopod/New()
 	announce = new /obj/item/device/radio/intercom(src)
@@ -527,7 +549,7 @@
 	set_occupant(null)
 
 	spawn(30)
-		state("Please remember to check inside the cryopod if any belongings are missing.")
+		state("Please remember to check inside if any belongings are missing.")
 		playsound(loc, "robot_talk_light", 100, 0, 0)
 
 //Notifications is set false when someone spawns in here

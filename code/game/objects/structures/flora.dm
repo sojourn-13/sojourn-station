@@ -587,6 +587,7 @@
 
 /obj/structure/flora/big
 	layer = ABOVE_MOB_LAYER
+	anchored = 1
 
 /obj/structure/flora/big/bush1
 	icon = 'icons/obj/flora/largejungleflora.dmi'

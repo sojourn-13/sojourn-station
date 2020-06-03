@@ -167,24 +167,24 @@
 "dk" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "dl" = (/obj/structure/table/woodentable,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "dm" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
-"dn" = (/turf/simulated/shuttle/wall/mining{icon_state = "13,15"},/area/turbolift/ElevatorTwo/midlevelOne)
+"dn" = (/turf/simulated/floor/tiled/steel,/area/turbolift/Research/midlevelOne)
 "do" = (/obj/structure/flora/small/grassa4,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dp" = (/obj/structure/flora/small/trailrockb2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dq" = (/obj/structure/flora/small/rock3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dr" = (/obj/structure/flora/small/trailrocka3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
-"ds" = (/turf/simulated/shuttle/wall/mining{icon_state = "13,15"},/area/turbolift/ElevatorTwo/midlevelTwo)
+"ds" = (/turf/simulated/floor/tiled/steel,/area/turbolift/Mining/midlevelOne)
 "dt" = (/obj/structure/flora/small/rock2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "du" = (/obj/structure/flora/small/grassb2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dv" = (/obj/structure/flora/grass/brown,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
-"dw" = (/turf/simulated/shuttle/wall/mining{icon_state = "13,15"},/area/turbolift/ElevatorTwo/midlevelThree)
+"dw" = (/turf/simulated/floor/tiled/steel,/area/turbolift/Research/midlevelTwo)
 "dx" = (/obj/structure/flora/grass/both,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dy" = (/obj/structure/flora/grass/green,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
+"dz" = (/turf/simulated/floor/tiled/steel,/area/turbolift/Mining/midlevelTwo)
+"dA" = (/turf/simulated/floor/tiled/steel,/area/turbolift/Research/midlevelThree)
+"dB" = (/turf/simulated/floor/tiled/steel,/area/turbolift/Mining/midlevelThree)
 "dC" = (/turf/simulated/shuttle/wall/mining{icon_state = "10,18"},/area/nadezhda/hallway/main/stairwell)
-"dD" = (/turf/simulated/floor/tiled/steel,/area/turbolift/ElevatorTwo/midlevelOne)
 "dE" = (/turf/simulated/shuttle/wall/mining{icon_state = "13,15"},/area/nadezhda/hallway/main/stairwell)
 "dF" = (/turf/simulated/shuttle/wall/mining{icon_state = "7,18"},/area/nadezhda/hallway/main/stairwell)
-"dH" = (/turf/simulated/floor/tiled/steel,/area/turbolift/ElevatorTwo/midlevelTwo)
-"dI" = (/turf/simulated/floor/tiled/steel,/area/turbolift/ElevatorTwo/midlevelThree)
 "dJ" = (/obj/structure/flora/small/rock5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dK" = (/turf/simulated/shuttle/wall/mining{icon_state = "15,6"; opacity = 0},/area/nadezhda/hallway/main/stairwell)
 "dO" = (/obj/structure/flora/small/bushc2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
@@ -223,18 +223,18 @@ aaaaaaaaaaaaababamanaeajajajajajajababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauakalalaGdgalalababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauabadadababcCcCababababaaaaabababababababababaaaaaa
 aaaaaaaaaaaaababaebUabcLcLababaNaPababababaaaaabdCdEdEdEdEdFdiabaaaaaa
-aaaaaaaaaaaaababaeauabababababababababababaaaaabdKaeaeaeaedKdjabaaaaaa
-aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNabababaaaaabdKaeaeaeaedKdQabaaaaaa
-aaaaaaaaaaaaababamaYbccOcOcPcNcNcNcQabababaaaaabdKaeaeaeaedKdXabaaaaaa
+aaaaaaaaaaaaababaeauabababababababababababaaaaabdKdndndndndKdjabaaaaaa
+aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNabababaaaaabdKdndndndndKdQabaaaaaa
+aaaaaaaaaaaaababamaYbccOcOcPcNcNcNcQabababaaaaabdKdndndndndKdXabaaaaaa
 aaaaaaaaaaaaababaeaeaeaxcIbdcSdkdldmabababaaaaabdRdEdEdEdEdSdWabaaaaaa
 aaaaaaaaaaaaabababababababazabababababababaaaaabababababababababaaaaaa
 aaaaaaaaaaaaabababababababaAabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaababaAbeababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaababaAbeababababaaaaaaaaabababababababababaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababbAaCaDaEababaaaaaaaaabdCdndndndndFdoabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababcDaLaDaEababaaaaaaaaabdKdDdDdDdDdKdZabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdKdDdDdDdDdKdQabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdKaeaeaeaedKdpabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababbAaCaDaEababaaaaaaaaabdCdEdEdEdEdFdoabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababcDaLaDaEababaaaaaaaaabdKdsdsdsdsdKdZabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdKdsdsdsdsdKdQabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdKdsdsdsdsdKdpabaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSeaabaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -266,18 +266,18 @@ aaaaaaaaaaaaaaaaabababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababacacababcTcTababaaaaaaaaabababababababababaaaaaa
 aaaaaaaaaaaaaaaaabababaMaMababaRaRababaaaaaaaaabdCdEdEdEdEdFdqabaaaaaa
-aaaaaaaaaaaaaaaaababapaqaqarasaqaqatabaaaaaaaaabdKaeaeaeaedKdrabaaaaaa
-aaaaaaaaaaaaaaaaababdhawavawawawawayabaaaaaaaaabdKaeaeaeaedKdQabaaaaaa
-aaaaaaaaaaaaaaaaababbZaBaJaKawawawawabaaaaaaaaabdKaeaeaeaedKdJabaaaaaa
+aaaaaaaaaaaaaaaaababapaqaqarasaqaqatabaaaaaaaaabdKdwdwdwdwdKdrabaaaaaa
+aaaaaaaaaaaaaaaaababdhawavawawawawayabaaaaaaaaabdKdwdwdwdwdKdQabaaaaaa
+aaaaaaaaaaaaaaaaababbZaBaJaKawawawawabaaaaaaaaabdKdwdwdwdwdKdJabaaaaaa
 aaaaaaaaaaaaaaaaababaoawawaOaSaTaUaVabaaaaaaaaabdRdEdEdEdEdSdWabaaaaaa
 aaaaaaaaaaaaaaaaabababababbfabababababaaaaaaaaabababababababababaaaaaa
 abababababababababababababbgabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 abababababababababababababbhbiaDaEababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 abbjbjbkblbmbnbobJbpbqababaFbsaDaEababaaaaaaaaabababababababababaaaaaa
-abbtbubvbvbvbwbxbybzcaababcybibBbCababaaaaaaaaabdCdsdsdsdsdFdtabaaaaaa
-abbtbDbEbFbGbHbIbybKbRababbrbsbBbCababaaaaaaaaabdKdHdHdHdHdKdVabaaaaaa
-abbMbMbNbObObObLbPbQbTababbgabababababaaaaaaaaabdKdHdHdHdHdKdQabaaaaaa
-ababababababababbSababababbgabababababaaaaaaaaabdKaeaeaeaedKdoabaaaaaa
+abbtbubvbvbvbwbxbybzcaababcybibBbCababaaaaaaaaabdCdEdEdEdEdFdtabaaaaaa
+abbtbDbEbFbGbHbIbybKbRababbrbsbBbCababaaaaaaaaabdKdzdzdzdzdKdVabaaaaaa
+abbMbMbNbObObObLbPbQbTababbgabababababaaaaaaaaabdKdzdzdzdzdKdQabaaaaaa
+ababababababababbSababababbgabababababaaaaaaaaabdKdzdzdzdzdKdoabaaaaaa
 ababababababaHaIbVcVbXababbgababababaaaaaaaaaaabdRdEdEdEdEdSduabaaaaaa
 aaababbYcWabcccbckcdceababcocrczababaaaaaaaaaaabababababababababaaaaaa
 aaababcfcgchcicjcAclbXababcBababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -309,18 +309,18 @@ aaaaaaaaaaaaababamaeaeajajajajajajabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeanakalalaGdgalalabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauabadadababcCcCabababaaaaaaabababababababababaaaaaa
 aaaaaaaaaaaaababaebUabbabbababcUcUabababaaaaaaabdCdEdEdEdEdFefabaaaaaa
-aaaaaaaaaaaaababaeauababababababababababaaaaaaabdKaeaeaeaedKdvabaaaaaa
-aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNababaaaaaaabdKaeaeaeaedKegabaaaaaa
-aaaaaaaaaaaaababamaYbccOcOcPcNcNcNcQababaaaaaaabdKaeaeaeaedKdvabaaaaaa
+aaaaaaaaaaaaababaeauababababababababababaaaaaaabdKdAdAdAdAdKdvabaaaaaa
+aaaaaaaaaaaaababaeauaeaQcGaWbWcNaXcNababaaaaaaabdKdAdAdAdAdKegabaaaaaa
+aaaaaaaaaaaaababamaYbccOcOcPcNcNcNcQababaaaaaaabdKdAdAdAdAdKdvabaaaaaa
 aaaaaaaaaaaaababaeaecEaxcIcFcSdkdldmababaaaaaaabdRdEdEdEdEdSehabaaaaaa
 aaaaaaaaaaaaabababababababcHababababababaaaaaaabababababababababaaaaaa
 aaaaaaaaaaaaabababababababcJababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaababcKaCaDbCababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaababcDaLaDbCababaaaaaaaaabababababababababaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdCdwdwdwdwdFdxabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdKdIdIdIdIdKefabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKdIdIdIdIdKegabaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKaeaeaeaedKdyabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdCdEdEdEdEdFdxabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaabdKdBdBdBdBdKefabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKdBdBdBdBdKegabaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKdBdBdBdBdKdyabaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSehabaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

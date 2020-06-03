@@ -48,6 +48,14 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	spawn_datum_type = /datum/spawnpoint/cryo/starboard
 	disallow_job = list("Robot")
 
+/obj/landmark/join/late/cryo/elevator
+	name = "Lower Colony Elevator"
+	icon_state = "player-blue-cluster"
+	join_tag = "late_elevator"
+	message = "has arrived from the lower level residential district."
+	spawn_datum_type = /datum/spawnpoint/cryo/elevator
+
+/*
 /obj/landmark/join/late/dormitory
 	name = "Dormitory"
 	icon_state = "player-blue-cluster"
@@ -55,6 +63,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	message = "has awoken in the dormitory"
 	spawn_datum_type = /datum/spawnpoint/dormitory
 	disallow_job = list("Robot")
+*/
 
 /obj/landmark/join/late/cyborg
 	name = "Cyborg Storage"
