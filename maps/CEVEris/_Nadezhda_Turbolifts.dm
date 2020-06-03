@@ -48,6 +48,9 @@
 
 	turbolift_stops = list(
 		/area/turbolift/Mining/underground,
+		/area/turbolift/Mining/midlevelOne,
+		/area/turbolift/Mining/midlevelTwo,
+		/area/turbolift/Mining/midlevelThree,
 		/area/turbolift/Mining/colony,
 		)
 
@@ -57,6 +60,21 @@
 	lift_floor_label = "Nadezhda Mining"
 	lift_floor_name = "Mining"
 	lift_announce_str = "Transition complete.  Welcome to Mining.  Please stay safe!"
+	base_turf = /turf/simulated/shuttle/floor/mining
+
+/area/turbolift/Mining/midlevelOne
+	name = "Transition One"
+	lift_announce_str = "Transition complete.  Welcome to Base Level 1."
+	base_turf = /turf/simulated/shuttle/floor/mining
+
+/area/turbolift/Mining/midlevelTwo
+	name = "Transition Two"
+	lift_announce_str = "Transition complete.  Welcome to Base Level 2."
+	base_turf = /turf/simulated/shuttle/floor/mining
+
+/area/turbolift/Mining/midlevelThree
+	name = "Transition Three"
+	lift_announce_str = "Transition complete.  Welcome to Base Level 3."
 	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/Mining/colony
@@ -82,6 +100,9 @@
 
 	turbolift_stops = list(
 		/area/turbolift/Research/underground,
+		/area/turbolift/Research/midlevelOne,
+		/area/turbolift/Research/midlevelTwo,
+		/area/turbolift/Research/midlevelThree,
 		/area/turbolift/Research/colony,
 		)
 
@@ -91,6 +112,21 @@
 	lift_floor_label = "Nadezhda Research"
 	lift_floor_name = "Research Underground"
 	lift_announce_str = "Transition complete"
+	base_turf = /turf/simulated/shuttle/floor/mining
+
+/area/turbolift/Research/midlevelOne
+	name = "Transition One"
+	lift_announce_str = "Transition complete.  Welcome to Base Level 1."
+	base_turf = /turf/simulated/shuttle/floor/mining
+
+/area/turbolift/Research/midlevelTwo
+	name = "Transition Two"
+	lift_announce_str = "Transition complete.  Welcome to Base Level 2."
+	base_turf = /turf/simulated/shuttle/floor/mining
+
+/area/turbolift/Research/midlevelThree
+	name = "Transition Three"
+	lift_announce_str = "Transition complete.  Welcome to Base Level 3."
 	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/Research/colony
