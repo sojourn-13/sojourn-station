@@ -27,7 +27,7 @@ Engine water turfs
 */
 /turf/simulated/floor/fixed/hydrotile
 	name = "freezing cold rushing water"
-	desc = "Not safe to stand in."
+	desc = "It's freezing cold and moving quite fast, but it only comes up past the knees to the average person. Bit uncomfortable, but safe to stand in."
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_state = "coolant"
 	initial_flooring = /decl/flooring/beach/water/flooded
