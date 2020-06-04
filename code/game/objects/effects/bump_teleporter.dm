@@ -31,3 +31,11 @@ var/list/obj/effect/bump_teleporter/BUMP_TELEPORTERS = list()
 		if(BT.id == src.id_target)
 			usr.loc = BT.loc	//Teleport to location with correct id.
 			return
+
+/obj/effect/bump_teleporter/AFentrance
+	id = "abentrance"
+	id_target = "abexit"
+
+/obj/effect/bump_teleporter/AFexit
+	id = "abexit"
+	id_target = "abentrance"

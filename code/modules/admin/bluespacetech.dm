@@ -320,7 +320,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 
 /obj/item/weapon/storage/belt/utility/full/bst
 	name = "bluespace technician's belt"
-	storage_slots = 14
+	storage_slots = 24
 	icon = 'icons/inventory/belt/icon.dmi'
 	icon_state = "utility"
 	item_state = "utility"
