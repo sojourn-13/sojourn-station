@@ -52,7 +52,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	name = "Lower Colony Elevator"
 	icon_state = "player-blue-cluster"
 	join_tag = "late_elevator"
-	message = "has arrived from the lower level residential district."
+	message = "has arrived from the lower level residential district"
 	spawn_datum_type = /datum/spawnpoint/cryo/elevator
 
 /*
