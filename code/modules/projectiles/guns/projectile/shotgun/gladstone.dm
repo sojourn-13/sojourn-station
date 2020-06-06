@@ -25,6 +25,7 @@
 	icon_state = "obrez"
 	item_state = "obrez"
 	max_shells = 4
+	w_class = ITEM_SIZE_BULKY
 	damage_multiplier = 0.8
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 800

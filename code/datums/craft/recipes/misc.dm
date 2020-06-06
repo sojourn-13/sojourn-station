@@ -14,6 +14,13 @@
 	)
 	related_stats = list(STAT_COG)
 
+/datum/craft_recipe/medical/rag
+	name = "rag"
+	result = /obj/item/weapon/reagent_containers/glass/rag
+	steps = list(
+		list(/obj/item/clothing, 1, time = 30)
+	)
+
 /datum/craft_recipe/tray
 	name = "dinner tray"
 	result = /obj/item/weapon/tray

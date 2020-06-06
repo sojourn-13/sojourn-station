@@ -208,30 +208,37 @@
 
 /obj/item/clothing/head/helmet/steelpot
 	name = "steelpot helmet"
-	desc = "Traditional combat helmet, still blocks shrapnel all the same."
+	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "steelpot"
-	armor = list(melee = 40, bullet = 40, energy = 0, bomb = 40, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
+	armor = list(melee = 40, bullet = 35, energy = 0, bomb = 30, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|EARS
 	siemens_coefficient = 1
 
 /obj/item/clothing/head/helmet/altyn
-	name = "green altyn helmet"
-	desc = "Green titanium blast helmet, not exactly cutting edge."
+	name = "altyn helmet"
+	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
-	armor = list(melee = 45, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // slightly better than usual due to mask
+	var/list/armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
+	var/list/armor_down = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0) // slightly better than usual due to mask
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHEADHAIR
+	flash_protection = FLASH_PROTECTION_MAJOR
 	body_parts_covered = HEAD|FACE|EARS
 	siemens_coefficient = 1
 
-	tint = TINT_MODERATE
 	action_button_name = "Flip Face Shield"
-	var/up = 0
-	var/base_state
+	var/up = TRUE
+
+
+/obj/item/clothing/head/helmet/altyn/Initialize()
+	. = ..()
+	armor = up ? armor_up : armor_down
+	update_icon()
+
+/obj/item/clothing/head/helmet/altyn/update_icon()
+	icon_state = up ? "[initial(icon_state)]_up" : initial(icon_state)
 
 /obj/item/clothing/head/helmet/altyn/attack_self()
-	if(!base_state)
-		base_state = icon_state
 	toggle()
 
 
@@ -241,48 +248,43 @@
 	set src in usr
 
 	if(!usr.incapacitated())
+		src.up = !src.up
+
 		if(src.up)
-			src.up = !src.up
+			body_parts_covered &= ~(EYES|FACE)
+			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			flash_protection = FLASH_PROTECTION_NONE
+			armor = armor_up
+			to_chat(usr, "You push the [src] up out of your face.")
+		else
 			body_parts_covered |= (EYES|FACE)
 			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
-			tint = initial(tint)
-			icon_state = base_state
-			armor = initial(armor)
+			flash_protection = initial(flash_protection)
+			armor = armor_down
 			to_chat(usr, "You flip the [src] down to protect your face.")
-		else
-			src.up = !src.up
-			body_parts_covered &= ~(EYES|FACE)
-			tint = TINT_NONE
-			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
-			icon_state = "[base_state]_up"
-			armor = list(melee = 40, bullet = 40, energy = 0, bomb = 40, bio = 0, rad = 0)
-			to_chat(usr, "You push the [src] up out of your face.")
-		update_wear_icon()	//so our mob-over-lays
+
+		update_icon()
+		update_wear_icon()	//update our mob overlays
 		usr.update_action_buttons()
 
 
 /obj/item/clothing/head/helmet/altyn/brown
-	name = "brown altyn helmet"
-	desc = "Brown titanium blast helmet, not exactly cutting edge."
 	icon_state = "altyn_brown"
 
 /obj/item/clothing/head/helmet/altyn/black
-	name = "black altyn helmet"
-	desc = "Black titanium blast helmet, not exactly cutting edge."
 	icon_state = "altyn_black"
 
 /obj/item/clothing/head/helmet/altyn/maska
 	name = "maska helmet"
-	desc = "I do not know who I am, don\'t know why I\'m here. All I know is that I must kill."
+	desc = "\"I do not know who I am, I don\'t know why I\'m here. All I know is that I must kill.\""
 	icon_state = "maska"
-	armor = list(melee = 65, bullet = 65, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
-	tint = TINT_HEAVY
+	armor_down = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
 
-/obj/item/clothing/head/helmet/visor/cyberpunkgoggle
-	name = "34c neo goggles"
-	desc = "An old model of industrial helmet. Not armored, but has a sturdy neo-laminated fabric lining."
+/obj/item/clothing/head/helmet/helmet/visor/cyberpunkgoggle
+	name = "\improper Type-34C Semi-Enclosed Headwear"
+	desc = "Civilian model of a popular helmet used by certain law enforcement agencies. It does not have any armor plating, but has a neo-laminated fabric lining."
 	icon_state = "cyberpunkgoggle"
-	flags_inv = HIDEEARS|HIDEEYES|BLOCKHEADHAIR
+	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
 	siemens_coefficient = 0.9	//More conductive than most helmets
 	armor = list(
 		melee = 5,

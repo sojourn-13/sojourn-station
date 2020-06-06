@@ -47,6 +47,7 @@
 	name = "handmade armor vest"
 	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap."
 	icon_state = "armor_handmade"
+	max_upgrades = 2
 	armor = list(
 		melee = 30,
 		bullet = 20,
