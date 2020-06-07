@@ -102,17 +102,17 @@ var/global/list/organ_structure = list(
 	chest = list(name= "Chest", children=list()),
 	groin = list(name= "Groin",     parent=BP_CHEST, children=list()),
 	head  = list(name= "Head",      parent=BP_CHEST, children=list()),
-	r_arm = list(name= "Right arm", parent=BP_CHEST, children=list()),
-	l_arm = list(name= "Left arm",  parent=BP_CHEST, children=list()),
-	r_leg = list(name= "Right leg", parent=BP_GROIN, children=list()),
-	l_leg = list(name= "Left leg",  parent=BP_GROIN, children=list()),
+	r_arm = list(name= "Right Arm", parent=BP_CHEST, children=list()),
+	l_arm = list(name= "Left Arm",  parent=BP_CHEST, children=list()),
+	r_leg = list(name= "Right Leg", parent=BP_GROIN, children=list()),
+	l_leg = list(name= "Left Leg",  parent=BP_GROIN, children=list()),
 	)
 
 var/global/list/organ_tag_to_name = list(
 
-	head  = "Head" ,r_arm = "Right arm",
+	head  = "Head" ,r_arm = "Right Arm",
 	chest = "Body" ,r_leg = "Right Leg",
-	eyes  = "Eyes" ,l_arm = "Left arm",
+	eyes  = "Eyes" ,l_arm = "Left Arm",
 	groin = "Groin",l_leg = "Left Leg",
 	torso = "Body" ,heart = "Heart",
 	lungs = "Lungs",liver = "Liver",

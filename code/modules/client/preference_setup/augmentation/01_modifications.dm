@@ -66,7 +66,6 @@
 
 			dat += "<a class='Organs_active' href='?src=\ref[src];organ=[organ]'><b>[organ_tag_to_name[organ]]</b></a>"
 		else
-			dat += "<a href='?src=\ref[src];organ=[organ]'><b>[organ_tag_to_name[organ]]</b></a>"
 			dat += "<a href='?src=\ref[src];organ=[organ]'><b>[organ_name]</b></a>"
 		if(mod.hascolor)
 			dat += "<a href='?src=\ref[src];color=[organ]'><span class='color_holder_box' style='background-color:[pref.modifications_colors[organ]]'></span></a>"
