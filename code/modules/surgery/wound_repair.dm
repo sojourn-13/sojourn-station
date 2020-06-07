@@ -11,7 +11,7 @@ datum/old_surgery_step/external
 		return 0
 
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	return affected && affected.open >= 2
+	return affected && affected.open >= 1
 
 //////////////////////////////////////////////////////////////////
 //					WOUND REPAIR SURGERY						//
@@ -211,7 +211,7 @@ datum/old_surgery_step/external
 		internal_bleeding = 1
 		break
 
-	return affected.open >= 2 && internal_bleeding
+	return affected.open >= 1 && internal_bleeding
 
 /datum/old_surgery_step/fix_vein/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)

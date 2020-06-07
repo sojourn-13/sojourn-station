@@ -163,7 +163,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["reset_form"])
-		pref.species_form = GLOB.all_species_form_list[pref.species].default_form
+		pref.species_form = mob_species.default_form
 	else if(href_list["select_form"])
 		if(mob_species.obligate_form)
 			return TOPIC_NOACTION

@@ -140,7 +140,7 @@ GLOBAL_LIST_EMPTY(faction_types)
 	return FALSE
 
 /proc/player_is_antag_id(var/datum/mind/player, var/a_id)
-	for(var/datum/antagonist/antag in player.antagonist)
+	for(var/datum/antagonist/antag in player?.antagonist)
 		if(!a_id || antag.id == a_id)
 			return TRUE
 	return FALSE

@@ -32,8 +32,8 @@
 	icon_state = "[initial(icon_state)]"
 	if(ammo_magazine)
 		add_overlay("m12[ammo_magazine.ammo_color]")
-	if(ammo_magazine.max_ammo==10)
-		add_overlay("sbaw")
+		if(ammo_magazine.max_ammo==10)
+			add_overlay("sbaw")
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		add_overlay("slide")
 	if(wielded)//I hate this snowflake bullshit but I don't feel like messing with it.

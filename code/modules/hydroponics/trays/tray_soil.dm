@@ -38,7 +38,8 @@
 	seed = newseed
 	dead = 0
 	age = 1
-	health = seed.get_trait(TRAIT_ENDURANCE)
+	if(seed)
+		health = seed.get_trait(TRAIT_ENDURANCE)
 	lastcycle = world.time
 	pixel_y = rand(-5,5)
 	check_health()

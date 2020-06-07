@@ -134,7 +134,8 @@
 
 		for(var/material in materials)
 			var/material/material_datum = get_material_by_name(material)
-			RS.Add(list(list("id" = material, "name" = material_datum.display_name, "req" = materials[material])))
+			if(material_datum)
+				RS.Add(list(list("id" = material, "name" = material_datum.display_name, "req" = materials[material])))
 
 		ui_data["materials"] = RS
 
@@ -143,7 +144,8 @@
 
 		for(var/reagent in chemicals)
 			var/datum/reagent/reagent_datum = chemical_reagents_list[reagent]
-			RS.Add(list(list("id" = reagent, "name" = reagent_datum.name, "req" = chemicals[reagent])))
+			if(reagent_datum)
+				RS.Add(list(list("id" = reagent, "name" = reagent_datum.name, "req" = chemicals[reagent])))
 
 		ui_data["chemicals"] = RS
 

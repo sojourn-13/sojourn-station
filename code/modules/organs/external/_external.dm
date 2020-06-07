@@ -120,6 +120,7 @@
 	src.name = desc.name
 	src.surgery_name = desc.surgery_name
 	src.organ_tag = desc.organ_tag
+	src.icon_position = desc.icon_position
 	src.body_part = desc.body_part
 	src.additional_limb_parts = desc.additional_limb_parts
 	src.parent_organ = desc.parent_organ

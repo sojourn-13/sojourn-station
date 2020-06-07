@@ -38,8 +38,7 @@
 		list("impedrezene" = 15)						= 2,
 		list("zombiepowder" = 10)						= 1)
 
-
-/obj/item/weapon/reagent_containers/glass/beaker/vial/random/New()
+/obj/item/weapon/reagent_containers/glass/beaker/vial/random/Initialize()
 	..()
 
 	var/list/picked_reagents = pickweight(random_reagent_list)

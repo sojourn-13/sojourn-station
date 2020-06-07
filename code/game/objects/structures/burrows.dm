@@ -201,6 +201,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 //Summons some or all of the nearby population to this hole, where they will enter it and travel
 /obj/structure/burrow/proc/summon_mobs(var/percentage = 1)
 	var/list/candidates = population.Copy() //Make a copy of the population list so we can modify it
+	if(!LAZYLEN(candidates)) return //Skip the whole process if there isn't anyone to pull.
 	var/step = 1 / candidates.len //What percentage of the population is each mob worth?
 	sending_mobs = list()
 	for (var/v in candidates)
