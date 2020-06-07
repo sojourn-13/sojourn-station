@@ -104,6 +104,7 @@
 	name = "left arm"
 	organ_tag = BP_L_ARM
 	body_part = ARM_LEFT
+	icon_position = LEFT
 
 	joint = "left elbow"
 	amputation_point = "left shoulder"
@@ -115,6 +116,7 @@
 	name = "right arm"
 	organ_tag = BP_R_ARM
 	body_part = ARM_RIGHT
+	icon_position = RIGHT
 
 	joint = "right elbow"
 	amputation_point = "right shoulder"
