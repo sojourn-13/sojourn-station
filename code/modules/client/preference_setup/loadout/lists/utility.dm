@@ -46,6 +46,10 @@
 	display_name = "cane, white"
 	path = /obj/item/weapon/cane/whitecane
 
+/datum/gear/utility/crutch
+	display_name = "crutch"
+	path = /obj/item/weapon/cane/crutch
+
 /datum/gear/utility/clipboard
 	display_name = "clipboard"
 	path = /obj/item/weapon/clipboard
