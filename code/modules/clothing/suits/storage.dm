@@ -133,6 +133,30 @@
 	icon_state = "cyberpunksleek_long"
 	item_state = "cyberpunksleek_long"
 
+/obj/item/clothing/suit/storage/duster/cyberpunklong/green
+	name = "green cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_green"
+	item_state = "cyberpunksleek_long_green"
+
+/obj/item/clothing/suit/storage/duster/cyberpunklong/black
+	name = "black cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_black"
+	item_state = "cyberpunksleek_long_black"
+
+/obj/item/clothing/suit/storage/duster/cyberpunklong/white
+	name = "white cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_white"
+	item_state = "cyberpunksleek_long_white"
+
+/obj/item/clothing/suit/storage/duster/bladerunner
+	name = "runner coat"
+	desc = "A sleek longcoat perfectly made for a driven person."
+	icon_state = "bladerunner_coat"
+	item_state = "bladerunner_coat"
+
 /*Military Jackets*/
 
 /obj/item/clothing/suit/storage/miljacket/field
@@ -347,7 +371,43 @@
 	name = "cyberpunk jacket"
 	desc = "A sleek overcoat made of neo-laminated fabric."
 	icon_state = "cyberpunksleek"
-	item_state = "brown_jacket"
+	item_state = "cyberpunksleek"
+
+/obj/item/clothing/suit/storage/toggle/leather/cyberpunk/black
+	name = "black cyberpunk jacket"
+	desc = "A sleek overcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_black"
+	item_state = "cyberpunksleek_black"
+
+/obj/item/clothing/suit/storage/toggle/leather/cyberpunk/white
+	name = "white cyberpunk jacket"
+	desc = "A sleek overcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_white"
+	item_state = "cyberpunksleek_white"
+
+/obj/item/clothing/suit/storage/toggle/leather/cyberpunk/green
+	name = "green cyberpunk jacket"
+	desc = "A sleek overcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_green"
+	item_state = "cyberpunksleek_green"
+
+/obj/item/clothing/suit/storage/toggle/leather/drive
+	name = "drive jacket"
+	desc = "The perfect coat for driving fast and killing faster."
+	icon_state = "drive_jacket"
+	item_state = "drive_jacket"
+
+/obj/item/clothing/suit/storage/toggle/leather/violetjacket
+	name = "violet jacket"
+	desc = "The perfect coat for driving fast and killing faster, this one is in stylish violet."
+	icon_state = "violet_jacket"
+	item_state = "violet_jacket"
+
+/obj/item/clothing/suit/storage/toggle/leather/tunnelsnake
+	name = "snake jacket"
+	desc = "You know wearing this makes you RULE!"
+	icon_state = "tunnelsnake"
+	item_state = "tunnelsnake"
 
 /obj/item/clothing/suit/storage/toggle/leather/denimjacket
 	name = "denim jacket"

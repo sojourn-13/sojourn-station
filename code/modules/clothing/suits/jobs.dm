@@ -154,6 +154,16 @@
 	body_parts_covered = UPPER_TORSO
 	price_tag = 50
 
+/obj/item/clothing/suit/storage/hazardvest_black
+	name = "black hazard vest"
+	desc = "A high-visibility vest used in work zones. This one is in stylish black."
+	icon_state = "hazard_black"
+	item_state = "hazard_nlack"
+	blood_overlay_type = "armor"
+	extra_allowed = list(/obj/item/weapon/tool)
+	body_parts_covered = UPPER_TORSO
+	price_tag = 50
+
 //Roboticist
 /obj/item/clothing/suit/storage/rank/robotech_jacket
 	name = "robotech jacket"

@@ -58,6 +58,21 @@
 	)
 	price_tag = 150
 
+/obj/item/clothing/suit/armor/vest/handmade_black
+	name = "handmade black armor vest"
+	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap. This one is black."
+	icon_state = "armor_handmade_black"
+	max_upgrades = 2
+	armor = list(
+		melee = 30,
+		bullet = 20,
+		energy = 15,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	)
+	price_tag = 150
+
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
 	desc = "Every rose has its thorns."
@@ -84,6 +99,16 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/vest/technomancersuit
+	name = "'Mark V' enviromental protection suit"
+	desc = "For working in hazardous enviroments. While its built for most enviroments, one of those is not space."
+	icon_state = "technosuit"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 80, bio = 100, rad = 100)
+	flags_inv = HIDEJUMPSUIT
+	max_upgrades = 4
 
 /obj/item/clothing/suit/armor/bulletproof
 	name = "bulletproof vest"

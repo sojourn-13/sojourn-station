@@ -87,6 +87,10 @@
 
 	last_charge_status = charge_status
 
+/obj/item/weapon/cell/proc/empty()
+	if(charge <= 0)
+		return TRUE
+	return FALSE
 
 /obj/item/weapon/cell/proc/percent()		// return % charge of cell
 	return 100.0*charge/maxcharge

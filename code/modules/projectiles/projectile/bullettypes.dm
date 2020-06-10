@@ -98,7 +98,7 @@
 	step_delay = 0.5
 
 /// .50 Kurtz ///
-obj/item/projectile/bullet/kurtz
+/obj/item/projectile/bullet/kurtz
 	damage = 36
 	armor_penetration = 10
 	can_ricochet = TRUE
@@ -353,6 +353,37 @@ obj/item/projectile/bullet/kurtz
 	var/fire_stacks = 4
 
 /obj/item/projectile/bullet/shotgun/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+
+//Railgun
+/obj/item/projectile/bullet/shotgun/railgun
+	hitscan = TRUE
+
+/obj/item/projectile/bullet/shotgun/beanbag/railgun
+	hitscan = TRUE
+
+/obj/item/projectile/bullet/shotgun/incendiary/railgun
+	hitscan = TRUE
+
+/obj/item/projectile/bullet/kurtz/railgun
+	hitscan = TRUE
+
+/obj/item/projectile/bullet/kurtz/rubber/railgun
+	hitscan = TRUE
+
+/obj/item/projectile/bullet/kurtz/incendiary
+	damage = 10
+	agony = 5
+	armor_penetration = 0
+	embed = FALSE
+	knockback = 0
+	var/fire_stacks = 4
+
+/obj/item/projectile/bullet/kurtz/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target

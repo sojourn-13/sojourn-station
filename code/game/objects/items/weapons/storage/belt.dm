@@ -163,6 +163,12 @@
 		/obj/item/taperoll
 	)
 
+/obj/item/weapon/storage/belt/security/tactical
+	name = "professional tactical belt"
+	desc = "Can hold various military and security equipment, more so than a standard belt."
+	icon_state = "tactical"
+	storage_slots = 9
+
 /obj/item/weapon/storage/belt/security/neotheology
 	name = "tactical crusader belt"
 	desc = "Can hold various military and security equipment for the awakened crusader. Deus Vult."

@@ -17,7 +17,7 @@
 	animation.master = src
 
 	flick(anim, animation)
-	if(do_gibs) gibs(loc, dna)
+	if(do_gibs) gibs(loc, dna, gibspawner)
 
 
 

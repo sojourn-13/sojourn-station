@@ -15,7 +15,7 @@
 
 /obj/item/weapon/tool/arcwelder
 	name = "arc welder"
-	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, multitool, and incredibly painful taser."
+	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, multitool, and incredibly painful taser. Due to its complex design it doesn't require welding goggles nor conduct shocks."
 	icon_state = "arc_welder"
 	item_state = "arc_welder"
 	w_class = ITEM_SIZE_NORMAL

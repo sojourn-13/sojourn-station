@@ -74,6 +74,14 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/technomancersuit
+	name = "'Mark V' enviromental protection helmet"
+	desc = "You feel like this helmet is rare, for some reason."
+	icon_state = "technohelmet"
+	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 80, bio = 100, rad = 100)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
 	desc = "These are often used by highly trained Swat Members."
