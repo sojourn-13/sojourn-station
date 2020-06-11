@@ -1883,6 +1883,8 @@
 #include "code\modules\mob\living\carbon\superior_animal\xenomorph\attack.dm"
 #include "code\modules\mob\living\carbon\superior_animal\xenomorph\drone.dm"
 #include "code\modules\mob\living\carbon\superior_animal\xenomorph\life.dm"
+#include "code\modules\mob\living\carbon\superior_animal\xenomorph\types\XenoImpressive.dm"
+#include "code\modules\mob\living\carbon\superior_animal\xenomorph\types\XenoMega.dm"
 #include "code\modules\mob\living\carbon\superior_animal\xenomorph\types\XenoRobust.dm"
 #include "code\modules\mob\living\carbon\superior_animal\xenomorph\types\XenoTrash.dm"
 #include "code\modules\mob\living\silicon\death.dm"

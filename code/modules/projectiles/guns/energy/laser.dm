@@ -26,22 +26,26 @@
 	item_state = "railgun"
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/rail.ogg'
-	suitable_cell = /obj/item/weapon/cell/large
-	slot_flags = SLOT_BELT|SLOT_BACK
-	w_class = ITEM_SIZE_NORMAL
+	item_charge_meter = TRUE
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 4)
+	twohanded = TRUE
+	flags =  CONDUCT
+	slot_flags = SLOT_BACK
+	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
-	fire_delay = 14
-	charge_cost = 1000
-	recoil_buildup = 1 //pulse weapons have a bit more recoil
-	price_tag = 3500
+	charge_cost = 2000
+	suitable_cell = /obj/item/weapon/cell/large
+	one_hand_penalty = 15 //full sized shotgun level
+	fire_delay = 14 //Equivalent to a pump then fire time
+	recoil_buildup = 1.5
 	firemodes = list(
-		list(mode_name="pellet", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
+		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
 		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
 		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/shotgun/incendiary/railgun, icon="destroy"),
 	)
 	var/consume_cell = TRUE
+	price_tag = 3500
 
 /obj/item/weapon/gun/energy/laser/railgun/consume_next_projectile()
 	.=..()
@@ -61,49 +65,48 @@
 	item_state = "railpistol"
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/rail.ogg'
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/weapon/cell/medium
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
-	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 4)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 4, TECH_ENGINEERING = 4)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
 	fire_delay = 12
-	charge_cost = 100
+	charge_cost = 200
 	recoil_buildup = 1
 	can_dual = 1
-	price_tag = 2500
+	twohanded = FALSE
 	firemodes = list(
-		list(mode_name="pellet", projectile_type=/obj/item/projectile/bullet/kurtz/railgun, icon="kill"),
+		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/kurtz/railgun, icon="kill"),
 		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/kurtz/rubber/railgun, icon="stun"),
 		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/kurtz/incendiary, icon="destroy"),
 	)
 	consume_cell = TRUE
+	price_tag = 2500
 
 /obj/item/weapon/gun/energy/shrapnel
-	name = "\"Shellshock\" energy shotgun gun"
-	desc = "A slapped together junk design made by as a copy of the far superior reductor rail gun. It's projectiles fire slower and it has a wider delay between shots with the same issue of burning batteries out."
+	name = "\"Shellshock\" scrap rifle"
+	desc = "A slapped together junk design made as a copy of the far superior Reductor rail gun. It's projectiles fire slower and it has a wider delay between shots with the same issue of burning batteries out."
 	icon = 'icons/obj/guns/energy/energyshotgun.dmi'
 	icon_state = "eshotgun"
 	item_state = "eshotgun"
 	item_charge_meter = TRUE
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
+	twohanded = TRUE
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
-	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2, TECH_ENGINEERING = 4)
+	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8)
-	charge_cost = 100
-	suitable_cell = /obj/item/weapon/cell/small
-	cell_type = /obj/item/weapon/cell/small
-	projectile_type = /obj/item/projectile/bullet/shotgun
+	charge_cost = 200
+	suitable_cell = /obj/item/weapon/cell/medium
 	one_hand_penalty = 15 //full sized shotgun level
 	fire_delay = 18 //Equivalent to a pump then fire time
 	recoil_buildup = 1.5
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
 	firemodes = list(
-		list(mode_name="pellet", projectile_type=/obj/item/projectile/bullet/shotgun, charge_cost=null, icon="kill"),
-		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, charge_cost=75, icon="stun"),
-		list(mode_name="blast", projectile_type=/obj/item/projectile/bullet/pellet/shotgun, charge_cost=150, icon="destroy"),
+		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/lrifle/railgun, icon="kill"),
+		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/lrifle/incendiary, icon="destroy"),
 	)
 	var/consume_cell = TRUE
 	price_tag = 1000

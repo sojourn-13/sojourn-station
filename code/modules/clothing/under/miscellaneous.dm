@@ -217,3 +217,25 @@
 	desc = "A durable, baggy grey uniform sporting research and development patches, and antiseptic coating."
 	icon_state = "gorka_crew_sci"
 	item_state = "gorka_crew_sci"
+
+//Excelsior
+/obj/item/clothing/under/excelsior
+	name = "white excelsior jumpsuit"
+	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution"
+	icon_state = "excelsior_white"
+	item_state = "bl_suit"
+	has_sensor = 0
+
+/obj/item/clothing/under/excelsior/mixed
+	name = "mixed excelsior jumpsuit"
+	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution"
+	icon_state = "excelsior_mixed"
+	item_state = "bl_suit"
+	has_sensor = 0
+
+/obj/item/clothing/under/excelsior/orange
+	name = "orange excelsior jumpsuit"
+	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution"
+	icon_state = "excelsior_orange"
+	item_state = "bl_suit"
+	has_sensor = 0

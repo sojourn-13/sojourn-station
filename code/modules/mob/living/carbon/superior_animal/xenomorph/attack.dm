@@ -15,6 +15,15 @@
 
 	. = ..()
 
+/mob/living/carbon/superior_animal/xenomorph/warrior/bull/crusher/UnarmedAttack(var/atom/A, var/proximity)
+	if(isliving(A))
+		var/mob/living/L = A
+		if(istype(L) && !L.weakened && prob(30))
+			L.Weaken(8)
+			L.visible_message(SPAN_DANGER("\the [src] rams \the [L] off there feet!"))
+
+	. = ..()
+
 /mob/living/carbon/superior_animal/xenomorph/spitter/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 

@@ -13,6 +13,18 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
+/mob/living/carbon/superior_animal/xenomorph/defender
+	name = "defender"
+	desc = "A xenomorph defender, while not as lethal as a warrior it makes up for it in being hellishly sturdy."
+	icon = 'icons/mob/Xenos_2x2.dmi'
+	icon_state = "defender"
+	icon_living = "defender"
+	icon_dead = "defender_dead"
+	icon_rest = "defender_stunned"
+
+	maxHealth = 200
+	health = 200
+
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike
 	name = "shrike"
 	desc = "A xenomorph shrike, what it loses in defense and power it makes up for in its power shriek."
@@ -35,6 +47,8 @@ var/datum/xenomorph/xeno_morph_ai
 	var/list/global_abilities_cooldown = list()
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike/Life()
+	if((src.stat != CONSCIOUS)||!canmove||resting||lying||stasis||AI_inactive)
+		return // Shrikes don't get to scream when passed out or dead
 	.=..()
 	if (world.time - cooldown_time < cooldown)
 		return
@@ -51,7 +65,7 @@ var/datum/xenomorph/xeno_morph_ai
 				use_ability(target)
 				can_scream = TRUE
 	if(can_scream)
-		flick("[icon_state]-shriek", src)
+		flick("[icon_state]_shriek", src)
 		playsound(src, 'sound/xenomorph/4_xeno_roars.ogg', 200, 1)
 		cooldown = world.time
 
@@ -59,13 +73,13 @@ var/datum/xenomorph/xeno_morph_ai
 
 	var/mob/living/carbon/human/H = target
 	if(istype(H))
-		if(prob(50 - H.stats.getStat(STAT_VIG)))
-			H.Weaken(8)
+		if(prob(100 - H.stats.getStat(STAT_VIG)))
+			H.Weaken(4)
 			to_chat(H, SPAN_WARNING("A horrifying roar of primal soul-less terror sears through your mind!"))
 		else
 			to_chat(H, SPAN_NOTICE("You hear the horrifying roar of a soul-less monster but block out any fear!"))
 	else
-		target.Weaken(8)
+		target.Weaken(4)
 		to_chat(target, SPAN_WARNING("A horrifying roar of primal soul-less terror sears through your mind!"))
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike/proc/targets_in_range(var/range = world.view, var/in_hear_range = FALSE)

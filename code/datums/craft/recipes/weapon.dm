@@ -64,7 +64,7 @@
 	)
 
 /datum/craft_recipe/weapon/shrapnelcannon
-	name = "shellshock energy shotgun"
+	name = "\"Shellshock\" scrap rifle"
 	result = /obj/item/weapon/gun/energy/shrapnel
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),

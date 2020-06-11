@@ -12,7 +12,7 @@ var/datum/xenomorph/xenomorph_ai
 	icon_gib = "drone_gibbed"
 	pass_flags = PASSTABLE
 
-	mob_size = MOB_MEDIUM
+	mob_size = MOB_LARGE
 	viewRange = 12
 
 	maxHealth = 30

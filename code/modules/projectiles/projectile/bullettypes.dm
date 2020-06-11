@@ -362,28 +362,55 @@
 //Railgun
 /obj/item/projectile/bullet/shotgun/railgun
 	hitscan = TRUE
+	can_ricochet = FALSE
 
 /obj/item/projectile/bullet/shotgun/beanbag/railgun
 	hitscan = TRUE
+	can_ricochet = FALSE
 
 /obj/item/projectile/bullet/shotgun/incendiary/railgun
 	hitscan = TRUE
+	can_ricochet = FALSE
 
 /obj/item/projectile/bullet/kurtz/railgun
 	hitscan = TRUE
+	can_ricochet = FALSE
 
 /obj/item/projectile/bullet/kurtz/rubber/railgun
 	hitscan = TRUE
+	can_ricochet = FALSE
 
 /obj/item/projectile/bullet/kurtz/incendiary
 	damage = 10
 	agony = 5
 	armor_penetration = 0
 	embed = FALSE
+	can_ricochet = FALSE
 	knockback = 0
 	var/fire_stacks = 4
 
 /obj/item/projectile/bullet/kurtz/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+
+/obj/item/projectile/bullet/lrifle/railgun
+	can_ricochet = FALSE
+	icon_state = "toxin"
+
+/obj/item/projectile/bullet/lrifle/incendiary
+	icon_state = "fireball"
+	damage = 10
+	agony = 5
+	armor_penetration = 0
+	embed = FALSE
+	can_ricochet = FALSE
+	knockback = 0
+	var/fire_stacks = 4
+
+/obj/item/projectile/bullet/lrifle/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
