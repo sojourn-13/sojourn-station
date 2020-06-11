@@ -198,3 +198,5 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/forbid_seeing_deadchat = FALSE // Used for lings to not see deadchat, and to have ghosting behave as if they were not really dead.
 
 	var/list/planes_visible = null	// List of atom planes that are logically visible/interactable (list of actual plane numbers).
+
+	var/obj/effect/gibspawner/gibspawner = /obj/effect/gibspawner/generic // for xeno gibs, originally

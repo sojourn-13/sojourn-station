@@ -27,6 +27,12 @@
 	suit_store = /obj/item/weapon/tank/jetpack/oxygen
 	back = /obj/item/weapon/storage/backpack/military
 
+/decl/hierarchy/outfit/antagonist/mercenary/excelsior
+	name = "excelsior fatigues"
+	uniform = /obj/item/clothing/under/excelsior/mixed
 
-
-
+/decl/hierarchy/outfit/antagonist/mercenary/excelsior/equipped
+	name = "excelsior combat gear"
+	uniform = /obj/item/clothing/under/excelsior
+	suit = /obj/item/clothing/suit/space/void/excelsior
+	back = /obj/item/weapon/storage/backpack/military

@@ -12,6 +12,15 @@
 		list(/obj/item/stack/cable_coil, 4)
 	)
 
+/datum/craft_recipe/clothing/armorvest_black
+	name = "black armor vest"
+	result = /obj/item/clothing/suit/armor/vest/handmade_black
+	steps = list(
+		list(/obj/item/clothing/suit/storage/hazardvest_black, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
+		list(/obj/item/stack/cable_coil, 4)
+	)
+
 /datum/craft_recipe/clothing/balaclava
 	name = "balaclava"
 	result = /obj/item/clothing/mask/balaclava

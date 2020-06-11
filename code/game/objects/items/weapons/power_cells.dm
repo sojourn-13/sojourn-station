@@ -1,26 +1,26 @@
 //BIG CELLS - for APC, borgs and machinery.
 
 /obj/item/weapon/cell/large
-	name = "Lonestar \"Robustcell 1000L\""
+	name = "Lonestar \"Robustcell 2000L\""
 	desc = "Lonestar branded rechargeable L-standardized power cell. This one is the cheapest you can find."
 	icon_state = "b_st"
-	maxcharge = 1000
+	maxcharge = 2000
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3)
 	price_tag = 200
 
 /obj/item/weapon/cell/large/high
-	name = "Lonestar \"Robustcell 5000L\""
+	name = "Lonestar \"Robustcell 6000L\""
 	desc = "Lonestar branded rechargeable L-standardized power cell. Popular and reliable version."
 	icon_state = "b_hi"
 	origin_tech = list(TECH_POWER = 2)
-	maxcharge = 5000
+	maxcharge = 6000
 
 /obj/item/weapon/cell/large/super
-	name = "Lonestar \"Robustcell 15000L\""
+	name = "Lonestar \"Robustcell 16000L\""
 	desc = "Lonestar branded rechargeable L-standardized power cell. This advanced version can store even more energy."
 	icon_state = "b_sup"
 	origin_tech = list(TECH_POWER = 5)
-	maxcharge = 15000
+	maxcharge = 16000
 
 /obj/item/weapon/cell/large/hyper
 	name = "Lonestar \"Robustcell-X 20000L\""
@@ -36,18 +36,18 @@
 	maxcharge = 2000
 
 /obj/item/weapon/cell/large/moebius/high
-	name = "Soteria \"Power-Geyser 7000L\""
+	name = "Soteria \"Power-Geyser 8000L\""
 	desc = "Soteria Laboratories branded rechargeable L-standardized power cell. Popular and reliable version."
 	icon_state = "meb_b_hi"
 	origin_tech = list(TECH_POWER = 2)
-	maxcharge = 7000
+	maxcharge = 8000
 
 /obj/item/weapon/cell/large/moebius/super
-	name = "Soteria \"Power-Geyser 13000L\""
+	name = "Soteria \"Power-Geyser 14000L\""
 	desc = "Soteria Institute branded rechargeable L-standardized power cell. This advanced version can store even more energy."
 	icon_state = "meb_b_sup"
 	origin_tech = list(TECH_POWER = 5)
-	maxcharge = 13000
+	maxcharge = 14000
 
 /obj/item/weapon/cell/large/moebius/hyper
 	name = "Soteria \"Power-Geyser 18000L\""
@@ -57,16 +57,16 @@
 	maxcharge = 18000
 
 /obj/item/weapon/cell/large/moebius/nuclear
-	name = "Soteria \"Atomcell 13000L\""
+	name = "Soteria \"Atomcell 14000L\""
 	desc = "Soteria Institute branded rechargeable L-standardized power cell. This version able to recharge itself over time."
 	icon_state = "meb_b_nu"
 	autorecharging = TRUE
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 6)
-	maxcharge = 13000
+	maxcharge = 14000
 
 /obj/item/weapon/cell/large/excelsior
-	name = "Excelsior \"Zarya 8000L\""
+	name = "Excelsior \"Zarya 18000L\""
 	desc = "Commie rechargeable L-standardized power cell. Power to the people!"
 	icon_state = "exs_l"
 	origin_tech = list(TECH_POWER = 3)
@@ -123,24 +123,24 @@
 	maxcharge = 1000
 
 /obj/item/weapon/cell/medium/hyper
-	name = "Lonestar \"Robustcell-X 1500M\""
+	name = "Lonestar \"Robustcell-X 1600M\""
 	desc = "Lonestar branded rechargeable M-standardized power cell. Looks like this is a rare and powerful prototype."
 	icon_state = "m_hy"
 	origin_tech = list(TECH_POWER = 6)
-	maxcharge = 1500
+	maxcharge = 1600
 
 /obj/item/weapon/cell/medium/moebius
-	name = "Lonestar \"Power-Geyser 700M\""
+	name = "Lonestar \"Power-Geyser 800M\""
 	desc = "Lonestar branded rechargeable M-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
 	icon_state = "meb_m_st"
-	maxcharge = 700
+	maxcharge = 800
 
 /obj/item/weapon/cell/medium/moebius/high
-	name = "Soteria \"Power-Geyser 900M\""
+	name = "Soteria \"Power-Geyser 1000M\""
 	desc = "Soteria Institute branded rechargeable M-standardized power cell. Popular and reliable version."
 	icon_state = "meb_m_hi"
 	origin_tech = list(TECH_POWER = 2)
-	maxcharge = 900
+	maxcharge = 1000
 
 /obj/item/weapon/cell/medium/moebius/super
 	name = "Soteria \"Power-Geyser 1000M\""
@@ -150,11 +150,11 @@
 	maxcharge = 1000
 
 /obj/item/weapon/cell/medium/moebius/hyper
-	name = "Soteria \"Power-Geyser 1300M\""
+	name = "Soteria \"Power-Geyser 1400M\""
 	desc = "Soteria Institute branded rechargeable M-standardized power cell. Looks like this is rare and powerful prototype."
 	icon_state = "meb_m_hy"
 	origin_tech = list(TECH_POWER = 6)
-	maxcharge = 1300
+	maxcharge = 1400
 
 /obj/item/weapon/cell/medium/moebius/nuclear
 	name = "Soteria \"Atomcell 1000M\""
@@ -166,7 +166,7 @@
 	maxcharge = 1000
 
 /obj/item/weapon/cell/medium/excelsior
-	name = "Excelsior \"Zarya 800M\""
+	name = "Excelsior \"Zarya 1100M\""
 	desc = "Commie rechargeable M-standardized power cell. Power to the people!"
 	icon_state = "exs_m"
 	origin_tech = list(TECH_POWER = 3)
@@ -257,7 +257,7 @@
 	recharge_time = 1
 
 /obj/item/weapon/cell/small/excelsior
-	name = "Excelsior \"Zarya 250S\""
+	name = "Excelsior \"Zarya 400S\""
 	desc = "Commie rechargeable S-standardized power cell. Power to the people!"
 	icon_state = "exs_s"
 	origin_tech = list(TECH_POWER = 3)

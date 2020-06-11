@@ -97,7 +97,7 @@
 	item_state = "welder"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2)
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_MATERIAL = 3)
-	switched_on_qualities = list(QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 10, QUALITY_WIRE_CUTTING = 10)
+	switched_on_qualities = list(QUALITY_WELDING = 40, QUALITY_CAUTERIZING = 20, QUALITY_WIRE_CUTTING = 20)
 	glow_color = COLOR_RED_LIGHT
 	use_fuel_cost = 0.15
 	max_fuel = 20

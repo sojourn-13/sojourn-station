@@ -153,22 +153,22 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/magnum/practice
-	name = "magazine (40 Magnum practice)"
+	name = "magazine (.40 Magnum practice)"
 	icon_state = "magnum_p"
 	ammo_type = /obj/item/ammo_casing/magnum/practice
 
 /obj/item/ammo_magazine/magnum/hv
-	name = "magazine (40 Magnum high-velocity)"
+	name = "magazine (.40 Magnum high-velocity)"
 	icon_state = "magnum_hv"
 	ammo_type = /obj/item/ammo_casing/magnum/hv
 
 /obj/item/ammo_magazine/magnum/rubber
-	name = "magazine (40 Magnum rubber)"
+	name = "magazine (.40 Magnum rubber)"
 	icon_state = "magnum_r"
 	ammo_type = /obj/item/ammo_casing/magnum/rubber
 
 /obj/item/ammo_magazine/magnum/lethal
-	name = "magazine (40 Magnum hollow-point)"
+	name = "magazine (.40 Magnum hollow-point)"
 	icon_state = "magnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum/lethal
 
@@ -413,7 +413,7 @@
 	ammo_type = /obj/item/ammo_casing/hrifle/rubber
 
 /obj/item/ammo_magazine/hrifle/practice
-	name = "heavy rifle magazine (training)"
+	name = "heavy rifle magazine (practice)"
 	icon_state = "hrifle_p"
 	ammo_type = /obj/item/ammo_casing/hrifle/practice
 
@@ -428,7 +428,7 @@
 	ammo_type = /obj/item/ammo_casing/hrifle/lethal
 
 /obj/item/ammo_magazine/hrifle_drum
-	name = "heavy rifle magazine"
+	name = "heavy rifle drum magazine"
 	icon_state = "hdrum"
 	desc = "A 64 round drum magazine marked for .408 Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)

@@ -125,3 +125,25 @@
 /datum/design/autolathe/part/oxyjet
 	name = "Oxyjet Canister"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/oxyjet
+
+
+//Excelsior shit
+/datum/design/autolathe/excelsior/laser
+	name = "excelsior micro-laser"
+	build_path = /obj/item/weapon/stock_parts/micro_laser/excelsior
+
+/datum/design/autolathe/excelsior/matter
+	name = "excelsior matter bin"
+	build_path = /obj/item/weapon/stock_parts/matter_bin/excelsior
+
+/datum/design/autolathe/excelsior/module
+	name = "excelsior scanning module"
+	build_path = /obj/item/weapon/stock_parts/scanning_module/excelsior
+
+/datum/design/autolathe/excelsior/capacitor
+	name = "excelsior capacitor"
+	build_path = /obj/item/weapon/stock_parts/capacitor/excelsior
+
+/datum/design/autolathe/excelsior/manipulator
+	name = "excelsior manipulator"
+	build_path = /obj/item/weapon/stock_parts/manipulator/excelsior

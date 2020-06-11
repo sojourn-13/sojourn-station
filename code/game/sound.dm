@@ -319,6 +319,9 @@ var/list/rummage_sound = list(\
 		error("[source] is an area and is trying to make the sound: [soundin]")
 		return
 
+	if(islist(soundin))
+		soundin = pick(soundin)
+
 	soundin = get_sfx(soundin) // same sound for everyone
 	frequency = vary && isnull(frequency) ? get_rand_frequency() : frequency // Same frequency for everybody
 

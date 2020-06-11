@@ -63,6 +63,20 @@
 		list(/obj/item/weapon/crossbowframe, 1, "time" = 20)
 	)
 
+/datum/craft_recipe/weapon/shrapnelcannon
+	name = "\"Shellshock\" scrap rifle"
+	result = /obj/item/weapon/gun/energy/shrapnel
+	steps = list(
+		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
+		list(/obj/item/stack/material/steel, 8, "time" = 20),
+		list(QUALITY_CUTTING, 20, "time" = 40),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 20, 30),
+		list(QUALITY_SCREW_DRIVING, 20, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
+	)
+
 /datum/craft_recipe/weapon/handmade_shield
 	name = "handmade shield"
 	result = /obj/item/weapon/shield/riot/handmade

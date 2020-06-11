@@ -51,7 +51,7 @@
 	. = ..()
 	if(.)
 		visible_emote("lets out a deafening roar and charges at [.]!")
-		playsound(src, 'sound/voice/deathclaw_roar.ogg', 200, 3, 8, 1)
+		playsound(src, 'sound/voice/deathclaw_roar.ogg', 200, 1, -3)
 
 /mob/living/simple_animal/hostile/render/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
 	walk_to(src,0)
