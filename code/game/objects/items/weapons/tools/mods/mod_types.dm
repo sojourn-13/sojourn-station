@@ -439,65 +439,61 @@
 	I.prefix = "self-healing"
 
 //Armor mods
-/obj/item/weapon/tool_upgrade/reinforcement/melee
+/obj/item/weapon/tool_upgrade/armor/melee
 	name = "melee plating"
 	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its melee resistance."
 	icon_state = "melee"
 	matter = list(MATERIAL_STEEL = 30)
 
-/obj/item/weapon/tool_upgrade/reinforcement/melee/New()
+/obj/item/weapon/tool_upgrade/armor/melee/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.upgrades = list(
-	UPGRADE_BULK = 1,
 	UPGRADE_MELEE_ARMOR = 20
 	)
 	I.prefix = "reinforced"
 	I.required_qualities = list(QUALITY_ARMOR)
 
-/obj/item/weapon/tool_upgrade/reinforcement/bullet
+/obj/item/weapon/tool_upgrade/armor/bullet
 	name = "ballistic plating"
 	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its ballistic resistance."
 	icon_state = "bullet"
 	matter = list(MATERIAL_PLASTEEL = 30)
 
-/obj/item/weapon/tool_upgrade/reinforcement/bullet/New()
+/obj/item/weapon/tool_upgrade/armor/bullet/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.upgrades = list(
-	UPGRADE_BULK = 1,
 	UPGRADE_BALLISTIC_ARMOR = 20
 	)
 	I.prefix = "kevlar-plated"
 	I.required_qualities = list(QUALITY_ARMOR)
 
-/obj/item/weapon/tool_upgrade/reinforcement/energy
+/obj/item/weapon/tool_upgrade/armor/energy
 	name = "energy plating"
 	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its energy resistance."
 	icon_state = "energy"
 	matter = list(MATERIAL_PLATINUM = 30)
 
-/obj/item/weapon/tool_upgrade/reinforcement/energy/New()
+/obj/item/weapon/tool_upgrade/armor/energy/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.upgrades = list(
-	UPGRADE_BULK = 1,
 	UPGRADE_ENERGY_ARMOR = 20
 	)
 	I.prefix = "ablative-plated"
 	I.required_qualities = list(QUALITY_ARMOR)
 
-/obj/item/weapon/tool_upgrade/reinforcement/bomb
+/obj/item/weapon/tool_upgrade/armor/bomb
 	name = "bomb proofing"
 	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its bomb resistance."
 	icon_state = "bomb"
-	matter = list(MATERIAL_CLOTH = 5, MATERIAL_PLASTEEL = 20)
+	matter = list(MATERIAL_PLASTEEL = 20)
 
-/obj/item/weapon/tool_upgrade/reinforcement/bomb/New()
+/obj/item/weapon/tool_upgrade/armor/bomb/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.upgrades = list(
-	UPGRADE_BULK = 1,
 	UPGRADE_BOMB_ARMOR = 40
 	)
 	I.prefix = "bomb-proofed"

@@ -308,8 +308,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Militia Commander"
 	difficulty = "Hard."
 	//alt_titles = list("Blackshield Junior Trooper")

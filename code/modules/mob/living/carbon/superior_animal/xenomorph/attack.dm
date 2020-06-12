@@ -32,5 +32,5 @@
 		if(istype(L) && prob(50))
 			var/damage = rand(melee_damage_lower, melee_damage_upper)
 			L.damage_through_armor(damage, TOX)
-			playsound(src, 'sound/xenomorph/alien_help1.ogg', 30, 1, -3)
+			playsound(src, 'sound/xenomorph/alien_help1.ogg', 50, 1, -3)
 			L.visible_message(SPAN_DANGER("\the [src] vomits up some toxic bile all over \the [L]!"))

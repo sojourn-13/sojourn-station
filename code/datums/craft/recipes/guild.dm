@@ -6,7 +6,7 @@
 
 /datum/craft_recipe/guild/melee
 	name = "melee plating"
-	result = /obj/item/weapon/tool_upgrade/reinforcement/melee
+	result = /obj/item/weapon/tool_upgrade/armor/melee
 	steps = list(
 		list(CRAFT_MATERIAL, 30, MATERIAL_STEEL, "time" = 60),
 		list(QUALITY_WELDING, 40, "time" = 60),
@@ -19,7 +19,7 @@
 
 /datum/craft_recipe/guild/bullet
 	name = "ballistic plating"
-	result = /obj/item/weapon/tool_upgrade/reinforcement/bullet
+	result = /obj/item/weapon/tool_upgrade/armor/bullet
 	steps = list(
 		list(CRAFT_MATERIAL, 30, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_WELDING, 40, "time" = 60),
@@ -32,7 +32,7 @@
 
 /datum/craft_recipe/guild/energy
 	name = "energy plating"
-	result = /obj/item/weapon/tool_upgrade/reinforcement/energy
+	result = /obj/item/weapon/tool_upgrade/armor/energy
 	steps = list(
 		list(CRAFT_MATERIAL, 30, MATERIAL_PLATINUM, "time" = 60),
 		list(QUALITY_WELDING, 40, "time" = 60),
@@ -45,7 +45,7 @@
 
 /datum/craft_recipe/guild/bomb
 	name = "bomb proofing"
-	result = /obj/item/weapon/tool_upgrade/reinforcement/bomb
+	result = /obj/item/weapon/tool_upgrade/armor/bomb
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_WELDING, 40, "time" = 60),

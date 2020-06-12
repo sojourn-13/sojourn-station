@@ -78,7 +78,7 @@
 	name = "'Mark V' enviromental protection helmet"
 	desc = "You feel like this helmet is rare, for some reason."
 	icon_state = "technohelmet"
-	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 80, bio = 100, rad = 100)
+	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 

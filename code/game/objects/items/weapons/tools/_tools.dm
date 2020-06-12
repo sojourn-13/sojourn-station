@@ -189,27 +189,8 @@
 	//You can also get a lesser success (remove the upgrade but break it in the process) if you fail
 	//Using a laser guided stabilised screwdriver is recommended. Precision mods will make this easier
 	if (item_upgrades.len && C.has_quality(QUALITY_SCREW_DRIVING))
-		var/list/possibles = item_upgrades.Copy()
-		possibles += "Cancel"
-		var/obj/item/weapon/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
-		if (toremove == "Cancel")
-			return
-
-		if (C.use_tool(user = user, target =  src, base_time = WORKTIME_SLOW, required_quality = QUALITY_SCREW_DRIVING, fail_chance = FAILCHANCE_CHALLENGING, required_stat = STAT_MEC))
-			//If you pass the check, then you manage to remove the upgrade intact
-			to_chat(user, SPAN_NOTICE("You successfully remove [toremove] while leaving it intact."))
-			SEND_SIGNAL(toremove, COMSIG_REMOVE, src)
-			refresh_upgrades()
-			return 1
-		else
-			//You failed the check, lets see what happens
-			if (prob(50))
-				//50% chance to break the upgrade and remove it
-				to_chat(user, SPAN_DANGER("You successfully remove [toremove], but destroy it in the process."))
-				SEND_SIGNAL(toremove, COMSIG_REMOVE, src)
-				QDEL_NULL(toremove)
-				refresh_upgrades()
-				return 1
+		to_chat(user, SPAN_DANGER("You cannot remove armor upgrades once they've been installed!"))
+		return 1
 	.=..()
 
 //Turning it on/off

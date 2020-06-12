@@ -47,7 +47,6 @@
 	name = "handmade armor vest"
 	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap."
 	icon_state = "armor_handmade"
-	max_upgrades = 2
 	armor = list(
 		melee = 30,
 		bullet = 20,
@@ -61,8 +60,7 @@
 /obj/item/clothing/suit/armor/vest/handmade_black
 	name = "handmade black armor vest"
 	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap. This one is black."
-	icon_state = "armor_handmade_black"
-	max_upgrades = 2
+	icon_state = "hm_armorvest_black"
 	armor = list(
 		melee = 30,
 		bullet = 20,
@@ -106,9 +104,8 @@
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 80, bio = 100, rad = 100)
+	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
-	max_upgrades = 4
 
 /obj/item/clothing/suit/armor/bulletproof
 	name = "bulletproof vest"

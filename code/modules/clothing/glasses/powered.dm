@@ -63,6 +63,7 @@
 	desc = "Used for seeing walls, floors, and stuff through anything."
 	icon_state = "meson"
 	item_state = "glasses"
+	off_state = "demeson"
 	vision_flags = SEE_TURFS
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	origin_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)
