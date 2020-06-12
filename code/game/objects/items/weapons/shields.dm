@@ -119,6 +119,7 @@
 	name = "round handmade shield"
 	desc = "A handmade stout shield, but with a small size."
 	icon_state = "buckler"
+	item_state = "buckler"
 	flags = null
 	throw_speed = 2
 	throw_range = 6
@@ -140,6 +141,7 @@
 	name = "tray shield"
 	desc = "This one is thin, but compensate it with a good size."
 	icon_state = "tray_shield"
+	item_state = "tray_shield"
 	flags = CONDUCT
 	throw_speed = 2
 	throw_range = 4
