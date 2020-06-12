@@ -505,6 +505,10 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	color = initial(color)
 	sharp = initial(sharp)
 	prefixes = list()
+	armor = initial(armor)
+	//armor["bullet"] = 0
+	//armor["energy"] = 0
+	//armor["bomb"] = 0
 
 	//Now lets have each upgrade reapply its modifications
 	SEND_SIGNAL(src, COMSIG_APPVAL, src)

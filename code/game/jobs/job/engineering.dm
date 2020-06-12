@@ -36,7 +36,11 @@
 			/datum/craft_recipe/guild/bullet,
 			/datum/craft_recipe/guild/energy,
 			/datum/craft_recipe/guild/bomb,
-			/datum/craft_recipe/guild/arcwelder
+			/datum/craft_recipe/guild/arcwelder,
+			/datum/craft_recipe/guild/railgunpistol,
+			/datum/craft_recipe/guild/railgunrifle,
+			/datum/craft_recipe/guild/technosuit,
+			/datum/craft_recipe/guild/technohelmet
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -100,7 +104,11 @@
 			/datum/craft_recipe/guild/bullet,
 			/datum/craft_recipe/guild/energy,
 			/datum/craft_recipe/guild/bomb,
-			/datum/craft_recipe/guild/arcwelder
+			/datum/craft_recipe/guild/arcwelder,
+			/datum/craft_recipe/guild/railgunpistol,
+			/datum/craft_recipe/guild/railgunrifle,
+			/datum/craft_recipe/guild/technosuit,
+			/datum/craft_recipe/guild/technohelmet
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,

@@ -25,7 +25,7 @@
 	return TRUE
 
 
-// Asters
+// Lonestar
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc
 	disk_name = "Lonestar Miscellaneous Pack"
 	icon_state = "guild"

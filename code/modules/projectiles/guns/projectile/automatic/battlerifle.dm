@@ -121,7 +121,7 @@
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine
 	name = "\"Boar\" heavy carbine"
 	desc = "A heavy second-line carbine manufactured by H&S Arms, as well as number of state arsenals. Designed for close range encounters and support fire. \
-		 A rifle fashioned for cover fire and cramped enviroments, taking influence from the MK-12 Omnicarbine, chambered in 10x50mm Omni. \
+		 A rifle fashioned for cover fire and cramped enviroments, taking influence from the MK-12 Omnicarbine, chambered in .408 caliber. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 Despite the blinding muzzle flash and agonizing recoil, its small size arguably makes up for the disadvantages."
 	icon = 'icons/obj/guns/projectile/Boar.dmi'

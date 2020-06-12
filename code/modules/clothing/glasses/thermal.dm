@@ -34,6 +34,7 @@
 	name = "optical meson scanner"
 	desc = "Used for seeing walls, floors, and stuff through anything."
 	icon_state = "meson"
+	off_state = "demeson"
 	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 
 /obj/item/clothing/glasses/powered/thermal/onestar

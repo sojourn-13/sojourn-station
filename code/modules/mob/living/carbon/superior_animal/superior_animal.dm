@@ -50,7 +50,7 @@
 	var/attacktext = "bitten"
 	var/list/attack_sound = 'sound/weapons/spiderlunge.ogg'
 	var/attack_sound_chance = 33
-	var/attack_sound_volume = 30
+	var/attack_sound_volume = 90
 
 	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
 	var/meat_amount = 3
