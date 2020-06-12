@@ -61,7 +61,13 @@
 
 /obj/item/weapon/cane/whitecane
 	name = "white cane"
-	desc = "A cane used by the blind."
+	desc = "A white cane. They are commonly used by the blind or visually impaired as a mobility tool or as a courtesy to others."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "whitecane"
 	item_state = "whitecane"
+
+/obj/item/weapon/cane/crutch
+	name ="crutch"
+	desc = "A long stick with a crosspiece at the top, used to help with walking."
+	icon_state = "crutch"
+	item_state = "crutch"
