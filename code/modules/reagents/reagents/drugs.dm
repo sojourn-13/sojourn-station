@@ -227,7 +227,7 @@
 			if(E.has_internal_bleeding())
 				chanceToRupture -= 10
 		chanceToRupture = max(0,chanceToRupture)
-		if(prob(chanceToRupture))
-			var/list/obj/item/organ/external/unluckyPart = pick(bodyParts)
-			var/datum/wound/internal_bleeding/I = new (15)
-			unluckyPart.wounds += I
+		//if(prob(chanceToRupture))
+			//var/list/obj/item/organ/external/unluckyPart = pick(bodyParts)
+			//var/datum/wound/internal_bleeding/I = new (15)
+			//unluckyPart.wounds += I

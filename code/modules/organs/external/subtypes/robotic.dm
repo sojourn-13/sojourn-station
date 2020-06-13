@@ -69,15 +69,25 @@
 
 /obj/item/organ/external/robotic/l_arm
 	default_description = /datum/organ_description/arm/left
+	max_damage = 60
+	min_broken_damage = 40
 
 /obj/item/organ/external/robotic/r_arm
 	default_description = /datum/organ_description/arm/right
+	max_damage = 60
+	min_broken_damage = 40
 
 /obj/item/organ/external/robotic/l_leg
 	default_description = /datum/organ_description/leg/left
+	max_damage = 60
+	min_broken_damage = 40
 
 /obj/item/organ/external/robotic/r_leg
 	default_description = /datum/organ_description/leg/right
+	max_damage = 60
+	min_broken_damage = 40
 
 /obj/item/organ/external/robotic/groin
 	default_description = /datum/organ_description/groin
+	max_damage = 60
+	min_broken_damage = 40

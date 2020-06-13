@@ -368,11 +368,11 @@ datum/wound/puncture/massive
 	damage_type = BURN
 
 /** INTERNAL BLEEDING **/
-/datum/wound/internal_bleeding
-	internal = 1
-	stages = list("severed artery" = 30, "cut artery" = 20, "damaged artery" = 10, "bruised artery" = 5)
-	autoheal_cutoff = 5
-	max_bleeding_stage = 4	//all stages bleed. It's called internal bleeding after all.
+//datum/wound/internal_bleeding
+	//internal = 1
+	//stages = list("severed artery" = 30, "cut artery" = 20, "damaged artery" = 10, "bruised artery" = 5)
+	//autoheal_cutoff = 5
+	//max_bleeding_stage = 4	//all stages bleed. It's called internal bleeding after all.
 
 /** EXTERNAL ORGAN LOSS **/
 /datum/wound/lost_limb

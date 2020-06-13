@@ -196,9 +196,9 @@
 		for(var/obj/item/organ/external/e in H.organs)
 			if(!e)
 				continue
-			for(var/datum/wound/W in e.wounds) if(W.internal)
-				dat += text(SPAN_WARNING("Internal bleeding detected. Advanced scanner required for location."))
-				break
+			//for(var/datum/wound/W in e.wounds) if(W.internal)
+				//dat += text(SPAN_WARNING("Internal bleeding detected. Advanced scanner required for location."))
+				//break
 		if(H.vessel)
 			var/blood_volume = H.vessel.get_reagent_amount("blood")
 			var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
