@@ -79,8 +79,8 @@
 		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
-		list(QUALITY_WIRE_CUTTING, 30, 30),
-		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
@@ -94,8 +94,8 @@
 		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
-		list(QUALITY_WIRE_CUTTING, 30, 30),
-		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
@@ -104,14 +104,14 @@
 	result = /obj/item/clothing/suit/armor/vest/technomancersuit
 	steps = list(
 		list(CRAFT_MATERIAL, 40, MATERIAL_PLASTEEL, "time" = 60),
-		list(QUALITY_SAWING, 70, "time" = 60),
-		list(QUALITY_WELDING, 60, "time" = 60),
-		list(QUALITY_CUTTING, 40, "time" = 40),
+		list(QUALITY_SAWING, 60, "time" = 60),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 45, "time" = 40),
 		list(/obj/item/stack/cable_coil, 30, "time" = 20),
-		list(QUALITY_WIRE_CUTTING, 50, 30),
-		list(QUALITY_SCREW_DRIVING, 60, "time" = 60),
-		list(QUALITY_BOLT_TURNING, 60, "time" = 40)
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
 /datum/craft_recipe/guild/technohelmet
@@ -119,12 +119,12 @@
 	result = /obj/item/clothing/head/helmet/technomancersuit
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
-		list(QUALITY_SAWING, 70, "time" = 60),
-		list(QUALITY_WELDING, 60, "time" = 60),
-		list(QUALITY_CUTTING, 40, "time" = 40),
+		list(QUALITY_SAWING, 60, "time" = 60),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 45, "time" = 40),
 		list(/obj/item/stack/cable_coil, 30, "time" = 20),
-		list(QUALITY_WIRE_CUTTING, 50, 30),
-		list(QUALITY_SCREW_DRIVING, 60, "time" = 60),
-		list(QUALITY_BOLT_TURNING, 60, "time" = 40)
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
