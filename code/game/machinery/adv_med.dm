@@ -306,7 +306,7 @@
 		dat += "<tr>"
 
 		for(var/datum/wound/W in e.wounds) if(W.internal)
-			internal_bleeding = "<br>Internal bleeding"
+			//internal_bleeding = "<br>Internal bleeding"
 			break
 		if(e.organ_tag == BP_CHEST && occ["lung_ruptured"])
 			lung_ruptured = "Lung ruptured:"
