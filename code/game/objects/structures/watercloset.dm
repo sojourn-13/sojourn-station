@@ -46,6 +46,7 @@
 
 /obj/structure/toilet/update_icon()
 	icon_state = "toilet[open][cistern]"
+	layer = LOW_OBJ_LAYER
 
 /obj/structure/toilet/attackby(obj/item/I as obj, mob/living/user as mob)
 	if(QUALITY_PRYING in I.tool_qualities)

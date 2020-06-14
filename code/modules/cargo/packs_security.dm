@@ -201,7 +201,7 @@
 	cost = 6500
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Rifles Crate"
-	group = "Xanoroth Syndicate"
+	group = "Xanorath Syndicate"
 
 /datum/supply_pack/voidwolfdrugs
 	name = "Void Wolf Recreations Crate"
@@ -216,7 +216,7 @@
 	cost = 1000
 	containertype = /obj/structure/closet/crate/serbcrate
 	crate_name = "Void Wolf Recreations Crate"
-	group = "Xanoroth Syndicate"
+	group = "Xanorath Syndicate"
 
 /datum/supply_pack/voidwolfswords
 	name = "Void Wolf Energy Swords Crate"
@@ -227,17 +227,17 @@
 	cost = 4500
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Energy Swords Crate"
-	group = "Xanoroth Syndicate"
+	group = "Xanorath Syndicate"
 
 /datum/supply_pack/voidwolfarmor
 	name = "Void Wolf Red Armor Crate"
-	contains = list(/obj/item/clothing/suit/space/void/merc/xanoroth,
-					/obj/item/clothing/suit/space/void/merc/xanoroth,
-					/obj/item/clothing/suit/space/void/merc/xanoroth)
+	contains = list(/obj/item/clothing/suit/space/void/merc/xanorath,
+					/obj/item/clothing/suit/space/void/merc/xanorath,
+					/obj/item/clothing/suit/space/void/merc/xanorath)
 	cost = 3500
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Red Armor Crate"
-	group = "Xanoroth Syndicate"
+	group = "Xanorath Syndicate"
 
 /datum/supply_pack/voidwolfemporer
 	name = "Void Wolf Emporer Crate"
@@ -247,4 +247,4 @@
 	cost = 20000
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Emporer Crate"
-	group = "Xanoroth Syndicate"
+	group = "Xanorath Syndicate"
