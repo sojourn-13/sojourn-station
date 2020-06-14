@@ -132,3 +132,21 @@
 				user.equip_to_slot_if_possible(HS, equip_slot)
 		qdel(W)
 		qdel(src)
+
+/obj/item/weapon/gun/projectile/revolver/little_comet
+	name = "\"Little Comet\" pistol"
+	desc = "A special pistol developed to be as flashy and over priced as the businessmen that carry them. Uses .35 special rounds."
+	icon = 'icons/obj/guns/projectile/little_comet.dmi'
+	icon_state = "little_comet"
+	item_state = "little_comet"
+	drawChargeMeter = FALSE
+	max_shells = 5
+	caliber = CAL_PISTOL
+	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/pistol
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
+	price_tag = 10000
+	damage_multiplier = 1.1 //because pistol round
+	penetration_multiplier = 20
+	pierce_multiplier =  5
+	recoil_buildup = 50

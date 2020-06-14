@@ -945,7 +945,7 @@
 
 	if (prob(50))
 		cell.charge = rand(0, cell.charge*0.5)
-	else if (prob(15))
+	else if (prob(1))
 		cell.rigged = 1
 	else
 		cell = null

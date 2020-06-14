@@ -80,7 +80,16 @@
 	check_weapons = 1
 	check_anomalies = 1
 
-
+/obj/machinery/porta_turret/gate
+	name = "colony defense turret"
+	desc = "Decent firepower, slow rate of fire, only has a lethal mode. The kind of defense the colony can afford."
+	check_synth	 = 0
+	check_access = 0
+	check_arrest = 1
+	check_records = 0
+	check_weapons = 0
+	check_anomalies = 1
+	installation = /obj/item/weapon/gun/energy/laser
 
 /obj/machinery/porta_turret/stationary
 	ailock = 1
