@@ -66,6 +66,21 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/prime
+	name = "prime hood"
+	desc = "A visored helmet with a cloth hood covering it."
+	icon_state = "prime"
+	armor = list(
+		melee = 40,
+		bullet = 40,
+		energy = 30,
+		bomb = 50,
+		bio = 100,
+		rad = 100
+	)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+
 /obj/item/clothing/head/helmet/custodian
 	name = "custodian helmet"
 	desc = "Cleaning floors is more dangerous than it looks."

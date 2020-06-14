@@ -87,12 +87,12 @@
 /obj/item/clothing/suit/space/void/merc/boxed
 	tank = /obj/item/weapon/tank/emergency_oxygen/double
 
-/obj/item/clothing/head/helmet/space/void/merc/xanoroth
-	name = "xanoroth voidsuit helmet"
-	desc = "A crimson helmet sporting clean lines and durable plating. Engineered to look menacing. This one is branded with a small rune at the back of the neck noting it was made by the Xanoroth Syndicate."
+/obj/item/clothing/head/helmet/space/void/merc/xanorath
+	name = "xanorath voidsuit helmet"
+	desc = "A crimson helmet sporting clean lines and durable plating. Engineered to look menacing. This one is branded with a small rune at the back of the neck noting it was made by the Xanorath Syndicate."
 
-/obj/item/clothing/suit/space/void/merc/xanoroth
-	name = "xanoroth voidsuit"
-	desc = "A crimson spacesuit sporting clean lines and durable plating. Robust, reliable, and slightly suspicious. This one is branded with a small rune at the collar noting it was made by the Xanoroth Syndicate."
-	helmet = /obj/item/clothing/head/helmet/space/void/merc/xanoroth
+/obj/item/clothing/suit/space/void/merc/xanorath
+	name = "xanorath voidsuit"
+	desc = "A crimson spacesuit sporting clean lines and durable plating. Robust, reliable, and slightly suspicious. This one is branded with a small rune at the collar noting it was made by the Xanorath Syndicate."
+	helmet = /obj/item/clothing/head/helmet/space/void/merc/xanorath
 	price_tag = 650

@@ -98,6 +98,22 @@
 	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
+/obj/item/clothing/suit/armor/vest/prime
+	name = "prime armor"
+	desc = "Trust in god but keep your armor on."
+	icon_state = "prime"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(
+		melee = 40,
+		bullet = 40,
+		energy = 30,
+		bomb = 50,
+		bio = 100,
+		rad = 100
+	)
+	flags_inv = HIDEJUMPSUIT
+
 /obj/item/clothing/suit/armor/vest/technomancersuit
 	name = "'Mark V' enviromental protection suit"
 	desc = "For working in hazardous enviroments. While its built for most enviroments, one of those is not space."

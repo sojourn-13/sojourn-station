@@ -91,7 +91,6 @@
 	new /obj/item/weapon/storage/belt/utility/neotheology(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/suit/space/void/custodian(src)
 	new /obj/item/clothing/head/soft/purple(src)
 	new /obj/item/clothing/head/beret/purple(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
@@ -106,6 +105,8 @@
 	new /obj/item/weapon/mop(src)
 	new /obj/item/weapon/soap/deluxe(src)
 	new /obj/item/weapon/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
+	new /obj/item/clothing/suit/armor/vest/custodian(src)
+	new /obj/item/clothing/head/helmet/custodian(src)
 
 /obj/structure/closet/acolyte
 	name = "vector closet"
@@ -124,4 +125,5 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/suit/space/void/acolyte(src)
+	new /obj/item/clothing/suit/armor/vest/acolyte(src)
+	new /obj/item/clothing/head/helmet/acolyte(src)
