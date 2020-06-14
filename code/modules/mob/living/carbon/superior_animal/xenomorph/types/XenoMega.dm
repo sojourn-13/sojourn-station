@@ -16,7 +16,7 @@
 	move_to_delay = 2
 	turns_per_move = 12
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/praetorian/queen
+/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen
 	name = "queen"
 	desc = "The xenomorph queen, the apex of the xenomorphs and the source of all infestations. A living avatar of millions of worlds left in ruin."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -34,3 +34,12 @@
 
 	move_to_delay = 2
 	turns_per_move = 12
+
+/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen/UnarmedAttack(var/atom/A, var/proximity)
+	if(isliving(A))
+		var/mob/living/L = A
+		if(istype(L) && !L.weakened && prob(30))
+			L.Weaken(8)
+			L.visible_message(SPAN_DANGER("\the [src] rams \the [L] off there feet!"))
+
+	. = ..()

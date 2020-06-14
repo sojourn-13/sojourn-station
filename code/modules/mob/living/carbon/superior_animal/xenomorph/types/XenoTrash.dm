@@ -1,6 +1,6 @@
-/mob/living/carbon/superior_animal/xenomorph/sentinal
-	name = "sentinal"
-	desc = "A basic xenomorph sentinal, slightly tougher than a drone but not by much."
+/mob/living/carbon/superior_animal/xenomorph/sentinel
+	name = "sentinel"
+	desc = "A basic xenomorph sentinel, slightly tougher than a drone but not by much."
 	icon_state = "sentinal"
 	icon_living = "sentinal"
 	icon_dead = "sentinal_dead"

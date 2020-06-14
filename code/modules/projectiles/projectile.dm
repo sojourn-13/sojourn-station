@@ -97,6 +97,9 @@
 		playsound(src, hitsound_wall, 50, 1, -2)
 	return
 
+/obj/item/projectile/multiply_pierce_penetration(newmult)
+	penetrating = initial(penetrating) + newmult
+
 //Checks if the projectile is eligible for embedding. Not that it necessarily will.
 /obj/item/projectile/proc/can_embed()
 	//embed must be enabled and damage type must be brute

@@ -33,3 +33,6 @@
 	new /obj/item/ammo_casing/shotgun/beanbag(src)
 	new /obj/item/ammo_casing/shotgun/beanbag(src)
 	new /obj/item/device/scanner/price(src)
+	new /obj/item/weapon/gun/projectile/revolver/little_comet(src)
+	new /obj/item/ammo_magazine/ammobox/pistol(src)
+	new /obj/item/ammo_magazine/ammobox/pistol/rubber(src)
