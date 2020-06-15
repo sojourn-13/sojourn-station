@@ -17,7 +17,7 @@
 		access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_hydroponics, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors
 	)
 
-	wage = WAGE_PROFESSIONAL //The church has deep pockets
+	wage = WAGE_COMMAND //The church has deep pockets
 	department_account_access = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/church/chaplain
 
