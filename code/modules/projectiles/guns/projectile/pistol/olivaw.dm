@@ -24,7 +24,10 @@
 
 /obj/item/weapon/gun/projectile/olivaw/update_icon()
 	..()
-	if(ammo_magazine && ammo_magazine.stored_ammo.len)
-		icon_state = "olivawcivil"
+
+	if(!ammo_magazine)
+		icon_state = initial(icon_state)
+	else if(!ammo_magazine.stored_ammo.len)
+		icon_state = initial(icon_state) + "_empty"
 	else
-		icon_state = "olivawcivil_empty"
+		icon_state = initial(icon_state) + "_full"
