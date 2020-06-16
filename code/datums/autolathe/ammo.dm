@@ -340,7 +340,7 @@
 	build_path = /obj/item/ammo_magazine/ammobox/lrifle_small/rubber
 
 /datum/design/autolathe/ammo/lrifle_ammobox_small_lethal
-	name = "ammunition box .257 Carbine (practice)"
+	name = "ammunition box .257 Carbine (hollow-point)"
 	build_path = /obj/item/ammo_magazine/ammobox/lrifle_small/lethal
 
 /datum/design/autolathe/ammo/lrifle_belt
