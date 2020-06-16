@@ -1052,7 +1052,8 @@
 	/obj/item/clothing/accessory/holster/armpit = 5,
 	/obj/item/clothing/accessory/holster/leg = 5,
 	/obj/item/weapon/storage/pouch/pistol_holster = 5,
-	/obj/item/weapon/storage/pouch/ammo = 5)
+	/obj/item/weapon/storage/pouch/ammo = 5,
+	/obj/item/weapon/storage/briefcase/rifle = 15) //SoJ Edit, adds in 15 rifle cases
 
 	contraband = list(/obj/item/ammo_magazine/pistol = 20,
 	/obj/item/ammo_magazine/hpistol = 20,
@@ -1108,7 +1109,7 @@
 	/obj/item/ammo_magazine/ammobox/magnum = 500,
 	/obj/item/weapon/storage/box/shotgunammo/slug = 800,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 800,
-
+	/obj/item/weapon/storage/briefcase/rifle = 150, //SoJ change makes rifle cases 150 credits
 	/obj/item/weapon/tool/knife/tacknife = 200,)
 
 //This one's from bay12
