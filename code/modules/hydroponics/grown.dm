@@ -63,6 +63,9 @@
 	if(reagents.total_volume > 0)
 		bitesize = 1+round(reagents.total_volume / 2, 1)
 
+/obj/item/weapon/reagent_containers/food/snacks/grown/New()
+	..()
+
 /obj/item/weapon/reagent_containers/food/snacks/grown/proc/update_desc()
 
 	if(!seed)
