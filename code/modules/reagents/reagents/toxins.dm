@@ -641,3 +641,40 @@
 			spill_biomass(T)
 		remove_self(volume)
 		return TRUE
+
+/datum/reagent/toxin/xenotoxin
+	name = "Xenomorph Toxin"
+	id = "xenotoxin"
+	description = "A highly toxic chemical that causes a complete neural weakening of the body in both mind and muscle."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#ffb3b7"
+	nerve_system_accumulations = 5
+	addiction_chance = 10
+	scannable = 1
+	metabolism = REM/4
+	constant_metabolism = TRUE
+
+/datum/reagent/toxin/xenotoxin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
+	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
+
+/datum/reagent/toxin/xenotoxin/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
+	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
+	if(prob(25 - (5 * M.stats.getMult(STAT_TGH))))
+		M.shake_animation(8)
+
+/datum/reagent/toxin/xenotoxin/overdose(var/mob/living/carbon/M, var/alien)
+	M.adjustBrainLoss(2)
+	M.slurring = max(M.slurring, 30)
+	if(prob(5))
+		M.vomit()
