@@ -14,7 +14,8 @@
 	max_w_class = ITEM_SIZE_BULKY
 	max_storage_space = DEFAULT_HUGE_STORAGE
 	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 2)
-	var/worn_access = FALSE
+	var/worn_access = FALSE // If the object may be accessed while equipped in a storage slot.
+	var/equip_access = TRUE // If the object may be accessed while equipped anywhere on a charcter, including hands.
 
 /obj/item/weapon/storage/backpack/Initialize()
 	. = ..()
@@ -51,7 +52,16 @@
 
 
 /obj/item/weapon/storage/backpack/proc/worn_check(var/no_message = FALSE)
-	if(!worn_access && is_worn())
+	if(!equip_access && is_equipped())
+		var/mob/living/L = loc
+		if (istype(L))
+			if(!no_message)
+				to_chat(L, "<span class='warning'>The [src] is too cumbersome to handle with one hand, you're going to have to set it down somewhere!</span>")
+		if (!no_message && use_sound)
+			playsound(loc, use_sound, 50, 1, -5)
+		return FALSE
+
+	else if(!worn_access && is_worn())
 		var/mob/living/L = loc
 		if (istype(L))
 			if(!no_message)
@@ -317,3 +327,14 @@
 	name = "cruciformed satchel"
 	desc = "Slightly more accessible means for your holy goods."
 	icon_state = "satchel_neotheology"
+
+/*
+ * Duffelbag Types
+ */
+/obj/item/weapon/storage/backpack/duffelbag
+	name = "grey duffel bag"
+	desc = "You wear this on your back and put items into it."
+	icon_state = "duffel"
+	max_storage_space = DEFAULT_HUGE_STORAGE * 1.5
+	matter = list(MATERIAL_BIOMATTER = 15, MATERIAL_PLASTIC = 2)
+	equip_access = FALSE

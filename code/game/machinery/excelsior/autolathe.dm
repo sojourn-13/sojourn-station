@@ -22,7 +22,7 @@
 //Putting this here because fuck making a new .dm for a single antag device
 /obj/machinery/excelsior_boombox
 	name = "excelsior boombox"
-	desc = "A music player that boosts the morale of communists and demorilize its enemies."
+	desc = "A powerful sound propagation system designed to boost Excelsior and lower enemy morale. Plays some sick tunes."
 	density = TRUE
 	anchored = TRUE
 	icon = 'icons/obj/machines/excelsior/boombox.dmi'

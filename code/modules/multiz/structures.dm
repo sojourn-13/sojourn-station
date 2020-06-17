@@ -240,3 +240,29 @@
 	icon_state = "rampup"
 	istop = FALSE
 
+/obj/structure/multiz/ladder/burrow_hole
+	name = "ancient maintenance tunnel"
+	desc = "A deep metal tunnel. You wonder where it leads."
+	icon = 'icons/obj/burrows.dmi'
+	icon_state = "maint_hole"
+
+
+/obj/structure/multiz/ladder/up/deepmaint
+	name = "maintenance ladder"
+
+/obj/structure/multiz/ladder/up/deepmaint/climb()
+	if(!target)
+		var/obj/structure/burrow/my_burrow = pick(all_burrows)
+		var/obj/structure/multiz/ladder/burrow_hole/my_hole = new /obj/structure/multiz/ladder/burrow_hole(my_burrow.loc)
+		my_burrow.deepmaint_entry_point = FALSE
+		target = my_hole
+		my_hole.target = src
+		var/list/seen = viewers(7, my_burrow.loc)
+		my_burrow.audio("crumble", 80)
+		for(var/mob/M in seen)
+			M.show_message(SPAN_NOTICE("The burrow collapses inwards!"), 1)
+
+		free_deepmaint_ladders -= src
+		my_burrow.collapse()
+
+	..()
