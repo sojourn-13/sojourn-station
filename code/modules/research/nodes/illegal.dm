@@ -28,7 +28,7 @@
 	cost = 3000
 
 	unlocks_designs = list(/datum/design/research/item/night_goggles,
-							)
+							/datum/design/research/item/rig_nvgoggles)
 
 
 /datum/technology/chameleon_kit
