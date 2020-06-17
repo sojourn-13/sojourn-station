@@ -89,7 +89,7 @@
 		maintenance = TRUE
 		break_open(TRUE)
 
-	if(prob(10))
+	if(prob(5))
 		deepmaint_entry_point = TRUE
 
 //Lets remove ourselves from the global list and cleanup any held references
