@@ -58,6 +58,8 @@
 
 	var/reinforcements = 2 //Maximum number of times this burrow may recieve reinforcements
 
+	var/deepmaint_entry_point = FALSE //Will this burrow turn into a deep maint entry point upon getting collapsed?
+
 /obj/structure/burrow/New(var/loc, var/turf/anchor)
 	.=..()
 	var/obj/machinery/power/nt_obelisk/obelisk = locate(/obj/machinery/power/nt_obelisk) in range(7, src)
@@ -86,6 +88,9 @@
 	if (A && A.is_maintenance)
 		maintenance = TRUE
 		break_open(TRUE)
+
+	if(prob(10))
+		deepmaint_entry_point = TRUE
 
 //Lets remove ourselves from the global list and cleanup any held references
 /obj/structure/burrow/Destroy()
@@ -552,6 +557,16 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 /obj/structure/burrow/proc/collapse(var/clean = FALSE)
 	if(!clean)
 		spawn_rubble(loc, 0, 100)
+	if(deepmaint_entry_point)
+		if(free_deepmaint_ladders.len > 0)
+			var/obj/structure/multiz/ladder/up/my_ladder = pick(free_deepmaint_ladders)
+			free_deepmaint_ladders -= my_ladder
+			var/obj/structure/multiz/ladder/burrow_hole/my_hole = new /obj/structure/multiz/ladder/burrow_hole(loc)
+			my_hole.target = my_ladder
+			my_ladder.targeted_by = my_hole
+			my_ladder.target = my_hole
+			qdel(src)
+			return
 	isSealed = TRUE
 	icon_state = initial(icon_state)
 	name = initial(name)
