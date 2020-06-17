@@ -32,6 +32,23 @@
 	suitable_cell = /obj/item/weapon/cell/medium
 	max_upgrades = 3
 
+/obj/item/weapon/tool/hammer/powered_hammer/turn_on(mob/user)
+
+	if (cell && cell.charge > 0)
+		item_state = "[initial(item_state)]_on"
+		to_chat(user, SPAN_NOTICE("You switch [src] on."))
+		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+		..()
+	else
+		item_state = initial(item_state)
+		to_chat(user, SPAN_WARNING("[src] has no power!"))
+
+/obj/item/weapon/tool/hammer/powered_hammer/turn_off(mob/user)
+	item_state = initial(item_state)
+	playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+	to_chat(user, SPAN_NOTICE("You switch [src] off."))
+	..()
+
 /obj/item/weapon/tool/hammer/powered_hammer/onestar_hammer
 	name = "greyson sledgehammer"
 	desc = "Used for applying immeasurable blunt force to anything in your way."

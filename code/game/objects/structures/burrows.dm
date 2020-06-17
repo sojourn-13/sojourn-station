@@ -56,7 +56,7 @@
 	//Animation
 	var/max_shake_intensity = 20
 
-	var/reinforcements = 2 //Maximum number of times this burrow may recieve reinforcements
+	var/reinforcements = 10 //Maximum number of times this burrow may recieve reinforcements
 
 	var/deepmaint_entry_point = FALSE //Will this burrow turn into a deep maint entry point upon getting collapsed?
 
