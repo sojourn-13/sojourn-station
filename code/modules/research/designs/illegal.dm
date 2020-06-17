@@ -18,3 +18,10 @@
 	desc = "RIG linked goggles that allow the user to see in darkness as if it was day."
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_PLASTIC = 10, MATERIAL_URANIUM = 2) //Sheet for each eye!
 	build_path = /obj/item/rig_module/vision/nvg
+
+/datum/design/research/item/glowstick
+	name = "Undark Glowstick"
+	desc = "A refined cocktail of all the needed things to glow in the dark!"
+	build_path = /obj/item/device/lighting/glowstick/undark //Yes 1920s were a wild time
+	chemicals = list("radium" = 5, "phosphorus" = 10)
+	materials = list(MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 15)
