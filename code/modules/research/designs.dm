@@ -23,6 +23,7 @@ other types of metals and chemistry for reagents).
 
 /datum/design/research/item
 	build_type = AUTOLATHE | PROTOLATHE
+	category = "Misc" //No more unsorted things
 
 /datum/design/research/item/mechfab
 	build_type = MECHFAB
@@ -59,6 +60,7 @@ other types of metals and chemistry for reagents).
 
 /datum/design/research/item/medical
 	name_category = "biotech device prototype"
+	category = "Medical"
 
 /datum/design/research/item/medical/robot_scanner
 	desc = "A hand-held scanner able to diagnose robotic injuries."
@@ -89,14 +91,17 @@ other types of metals and chemistry for reagents).
 	desc = "Large paddles that get charged via a cell to give a controlled shock for revival."
 	build_path = /obj/item/device/defib_kit
 	sort_string = "MACCA"
+	category = "Medical"
 
 /datum/design/research/item/medical/compact_defibs
 	desc = "Much smaller defibulators build into a belt, to more easily carry."
 	build_path = /obj/item/device/defib_kit/compact
 	sort_string = "MACCB"
+	category = "Medical"
 
 /datum/design/research/item/beaker
 	name_category = "beaker prototype"
+	category = "Medical"
 
 /datum/design/research/item/beaker/noreact
 	name = "cryostasis"
@@ -119,12 +124,14 @@ other types of metals and chemistry for reagents).
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field."
 	build_path = /obj/item/weapon/tool/scalpel/laser
 	sort_string = "MBBAA"
+	category = "Medical"
 
 /datum/design/research/item/makeshift_centrifuge
 	name = "Portable centrifuge"
 	desc = "A centrifuge with manual mechanism."
 	build_path = /obj/item/device/makeshift_centrifuge
 	sort_string = "MBBAA"
+	category = "Medical"
 
 /datum/design/research/item/bonesetter_adv
 	name = "Bone Clamp Settler"
@@ -161,46 +168,51 @@ other types of metals and chemistry for reagents).
 	desc = "A device to automatically replace lights. Refill with working lightbulbs."
 	build_path = /obj/item/device/lightreplacer
 	sort_string = "VAAAH"
+	category = "Misc"
 
 /datum/design/research/item/paicard
 	name = "'pAI', personal artificial intelligence device"
 	build_path = /obj/item/device/paicard
 	sort_string = "VABAI"
+	category = "Misc"
 
 /datum/design/research/item/intellicard
 	name = "'intelliCard', AI preservation and transportation system"
 	desc = "Allows for the construction of an intelliCard."
 	build_path = /obj/item/device/aicard
 	sort_string = "VACAA"
+	category = "Misc"
 
 /datum/design/research/item/posibrain
 	name = "Positronic brain"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/device/mmi/digital/posibrain
-	category = "Misc"
+	category = "Medical"
 	sort_string = "VACAB"
 
 /datum/design/research/item/mmi
 	name = "Man-machine interface"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/device/mmi
-	category = "Misc"
+	category = "Medical"
 	sort_string = "VACBA"
 
 /datum/design/research/item/mmi_radio
 	name = "Radio-enabled man-machine interface"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/device/mmi/radio_enabled
-	category = "Misc"
+	category = "Medical"
 	sort_string = "VACBB"
 
 /datum/design/research/item/beacon
 	name = "Bluespace tracking beacon design"
 	build_path = /obj/item/device/radio/beacon
 	sort_string = "VADAA"
+	category = "Misc"
 
 /datum/design/research/item/bag_holding
 	name = "'Bag of Holding', an infinite capacity bag prototype"
 	desc = "Using localized pockets of bluespace this bag prototype offers incredible storage capacity with the contents weighting nothing. It's a shame the bag itself is pretty heavy."
 	build_path = /obj/item/weapon/storage/backpack/holding
 	sort_string = "VAEAA"
+	category = "Misc"

@@ -857,6 +857,18 @@
 	next_file()
 
 
+
+//Second level autolathe
+
+/obj/machinery/autolathe/industrial
+	name = "industrial autolathe"
+	desc = "It produces items using metal and glass."
+	idle_power_usage = 100
+	active_power_usage = 8000
+	circuit = /obj/item/weapon/circuitboard/autolathe_industrial
+	speed = 4
+	storage_capacity = 240
+
 #undef ERR_OK
 #undef ERR_NOTFOUND
 #undef ERR_NOMATERIAL

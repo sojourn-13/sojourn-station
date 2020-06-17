@@ -224,7 +224,7 @@
 
 	x = 0.7
 	y = 0.5
-	icon = "jawsoflife"
+	icon = "Moebius_box1"
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
@@ -309,6 +309,22 @@
 	cost = 1500
 
 	unlocks_designs = list(/datum/design/research/item/part/RPED, /datum/design/research/circuit/secure_airlock)
+
+/datum/technology/super_adv_engineering
+	name = "Industrial Printing"
+	desc = "An industrial printer with many parts and compackter internals allow for grater speed"
+	tech_type = RESEARCH_ENGINEERING
+
+	x = 0.9
+	y = 0.5
+	icon = "autolathe"
+
+	required_technologies = list(/datum/technology/super_adv_engineering)
+	required_tech_levels = list(RESEARCH_ENGINEERING = 7)
+	cost = 3500
+
+	unlocks_designs = list(/datum/design/research/circuit/industrial_printer)
+
 
 /*
 /datum/technology/bluespace_parts
