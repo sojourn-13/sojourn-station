@@ -13,6 +13,6 @@
 	build_path = /obj/item/clothing/glasses/powered/night
 
 /datum/design/research/item/rig_nvgoggles
-	name = "Binary encryption key"
+	name = "Night Vison RIG Goggles"
 	desc = "RIG linked goggles that allow the user to see in darkness as if it was day."
 	build_path = /obj/item/rig_module/vision/nvg

@@ -310,7 +310,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/part/RPED, /datum/design/research/circuit/secure_airlock)
 
-/datum/technology/super_adv_engineering
+/datum/technology/industrial_printing
 	name = "Industrial Printing"
 	desc = "An industrial printer with many parts and compackter internals allow for grater speed"
 	tech_type = RESEARCH_ENGINEERING

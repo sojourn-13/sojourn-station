@@ -27,7 +27,8 @@
 	required_tech_levels = list(RESEARCH_ENGINEERING = 5)
 	cost = 3000
 
-	unlocks_designs = list(/datum/design/research/item/binaryencrypt)
+	unlocks_designs = list(/datum/design/research/item/night_goggles,
+							)
 
 
 /datum/technology/chameleon_kit
