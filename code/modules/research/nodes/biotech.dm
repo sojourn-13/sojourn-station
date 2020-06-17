@@ -192,7 +192,8 @@
 							/datum/design/research/item/autodoc_commercial,
 							/datum/design/research/item/chem_dispenser,
 							/datum/design/research/item/medhud,
-							/datum/design/research/structure/bidonadv
+							/datum/design/research/structure/bidonadv,
+							/datum/design/research/item/medical/compact_defibs
 							)
 
 /*
