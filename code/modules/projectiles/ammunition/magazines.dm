@@ -710,5 +710,5 @@
 /obj/item/ammo_magazine/sbaw/he
 	name = "20mm SBAW magazine (HEFI)"
 	icon_state = "sbaw_he"
-	matter = list(MATERIAL_STEEL = 10, "phosphorus" = 2)
+	matter = list(MATERIAL_STEEL = 10)
 	ammo_type = /obj/item/ammo_casing/shotgun/payload

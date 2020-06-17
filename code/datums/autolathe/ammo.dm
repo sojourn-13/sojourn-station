@@ -23,6 +23,7 @@
 /datum/design/autolathe/ammo/shotgun_he
 	name = "20mm shells (HEFI)"
 	build_path = /obj/item/ammo_casing/shotgun/payload/prespawned
+	chemicals = list("phosphorus" = 2)
 
 /datum/design/autolathe/ammo/m12empty
 	name = "20mm ammo drum (empty)"
