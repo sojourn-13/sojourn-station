@@ -24,6 +24,10 @@
 	var/min_age = 18
 	var/max_age = 90
 
+	var/blood_color = "#A10808"                          // Red.
+	var/flesh_color = "#FFC896"                          // Pink.
+	var/gibbed_anim = "gibbed-h"
+
 	var/mob_size	= MOB_MEDIUM
 	var/virus_immune
 	var/blood_volume = 560                               // Initial blood volume.

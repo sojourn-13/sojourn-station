@@ -14,6 +14,9 @@
 	min_age = 18
 	max_age = 110
 
+	dark_color = "#ffffff"
+	light_color = "#000000"
+
 	stat_modifiers = list(
 		STAT_BIO = 5,
 		STAT_COG = 5,
@@ -50,6 +53,9 @@
 	southlanders prefer hot dry deserts and speak with japanese influences. Both groups are stocky, strong, and thickly built and few have the lithe feline qualities \
 	one would expect."
 	taste_sensitivity = TASTE_SENSITIVE                 // How sensitive the species is to minute tastes.
+
+	dark_color = "#00ff00"
+	light_color = "#008000"
 
 	cold_level_1 = 200 //Default 260
 	cold_level_2 = 140 //Default 200
@@ -109,6 +115,9 @@
 	hunger_factor = DEFAULT_HUNGER_FACTOR/2
 	taste_sensitivity = TASTE_HYPERSENSITIVE
 
+	dark_color = "#afeeee"
+	light_color = "#20b2aa"
+
 	cold_level_1 = 140 //Default 260
 	cold_level_2 = 80 //Default 200
 	cold_level_3 = 20  //Default 120
@@ -154,6 +163,9 @@
 	toxins_mod = 0.75
 	brute_mod = 0.75
 	siemens_coefficient = 2
+
+	dark_color = "#ff0000"
+	light_color = "#990000"
 
 	spawn_flags = CAN_JOIN
 
@@ -221,6 +233,9 @@
 		)
 	spawn_flags = CAN_JOIN
 
+	dark_color = "#0000ff"
+	light_color = "#0000ff"
+
 	stat_modifiers = list(
 		STAT_TGH = 20
 	)
@@ -256,6 +271,9 @@
 		STAT_COG = -20
 	)
 
+	dark_color = "#ffff00"
+	light_color = "#ffff00"
+
 	permitted_ears  = list("Naramad Ears", "Sleek Ears")
 	permitted_tail  = list("Naramad Tail", "Naramad Tail 2")
 	permitted_wings = list()
@@ -288,6 +306,9 @@
 		STAT_MEC = 10,
 		STAT_COG = 10
 	)
+
+	dark_color = "#dddddd"
+	light_color = "#dddddd"
 
 	permitted_ears  = list()
 	permitted_tail  = list("Avian Wagtail", "Avian Fantail")
@@ -327,6 +348,9 @@
 		STAT_BIO = 10,
 		STAT_COG = 10
 	)
+
+	dark_color = "#5ac18e"
+	light_color = "#5ac18e"
 
 	permitted_ears  = list("Bee Antennae",
 		"Citheronia Antennae",
@@ -425,6 +449,9 @@
 		"You feel uncomfortably warm.",
 		"Your overheated scales itch."
 		)
+
+	dark_color = "#660066"
+	light_color = "#660066"
 
 	cold_discomfort_level = 300
 	list/cold_discomfort_strings = list(
