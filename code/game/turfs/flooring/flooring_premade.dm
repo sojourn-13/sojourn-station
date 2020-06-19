@@ -724,3 +724,54 @@
 	icon_state = "road_1"
 	initial_flooring = /decl/flooring/rock/manmade/road
 
+/*POOL*/
+/turf/simulated/floor/pool
+	name = "poolwater"
+	icon = 'icons/turf/flooring/tiles_white.dmi'
+	icon_state = "tiles"
+	initial_flooring = /decl/flooring/pool
+	color = "#38e4ff"
+	var/filled = TRUE
+	var/next_splash = 0
+	var/obj/effect/overlay/water/watereffect
+	var/obj/effect/overlay/water/top/watertop
+
+/turf/simulated/floor/pool/blank
+	name = "poolwater"
+	initial_flooring = /decl/flooring/pool
+	icon_state = "tiles"
+	color = "#38e4ff"
+
+/*
+/turf/simulated/floor/pool/Initialize(mapload)
+	. = ..()
+	update_icon()
+
+/turf/simulated/floor/pool/update_icon()
+	. = ..()
+	if(!filled)
+		name = "drained pool"
+		desc = "No diving!"
+		QDEL_NULL(watereffect)
+		QDEL_NULL(watertop)
+	else
+		name = "poolwater"
+		desc = "You're safer here than in the deep."
+		watereffect = new /obj/effect/overlay/water(src)
+		watertop = new /obj/effect/overlay/water/top(src)
+		color = "#38e4ff"
+*/
+
+/turf/simulated/floor/pool/attack_hand(mob/living/user)
+	. = ..()
+	if(.)
+		return
+	if((user.loc != src) && !user.incapacitated() && Adjacent(user) && filled && (next_splash < world.time))
+		playsound(src, 'sound/effects/watersplash.ogg', 100, TRUE, 1)
+		next_splash = world.time + 25
+		var/obj/effect/splash/S = new(src)
+		animate(S, alpha = 0, time = 8)
+		QDEL_IN(S, 10)
+		for(var/mob/living/carbon/human/H in src)
+			if(!H.wear_mask && (H.stat == CONSCIOUS))
+				H.emote("cough")
