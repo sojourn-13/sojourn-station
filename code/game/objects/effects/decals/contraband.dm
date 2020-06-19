@@ -738,7 +738,7 @@
 
 /obj/item/weapon/contraband/poster/placed/pinup/xeno
 	name = "xenomorph pinup"
-	desc = "A heretical poster depicting the titular star of an equally heretical book."
+	desc = "What the fuck..."
 	icon_state = "posterlusty"
 
 
