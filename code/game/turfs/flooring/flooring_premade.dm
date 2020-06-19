@@ -737,7 +737,7 @@
 	. = ..()
 	if(.)
 		return
-	if((user.loc != src) && !user.incapacitated() && Adjacent(user) && filled && (next_splash < world.time))
+	if((user.loc != src) && !user.incapacitated() && Adjacent(user) && (next_splash < world.time))
 		playsound(src, 'sound/effects/watersplash.ogg', 100, TRUE, 1)
 		next_splash = world.time + 25
 		var/obj/effect/splash/S = new(src)
