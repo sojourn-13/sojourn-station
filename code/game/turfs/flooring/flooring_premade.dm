@@ -724,43 +724,14 @@
 	icon_state = "road_1"
 	initial_flooring = /decl/flooring/rock/manmade/road
 
-/*POOL*/
+/*POOL - new pool tile and the splash code to go with it*/
 /turf/simulated/floor/pool
 	name = "poolwater"
 	icon = 'icons/turf/flooring/tiles_white.dmi'
 	icon_state = "tiles"
 	initial_flooring = /decl/flooring/pool
 	color = "#38e4ff"
-	var/filled = TRUE
 	var/next_splash = 0
-	var/obj/effect/overlay/water/watereffect
-	var/obj/effect/overlay/water/top/watertop
-
-/turf/simulated/floor/pool/blank
-	name = "poolwater"
-	initial_flooring = /decl/flooring/pool
-	icon_state = "tiles"
-	color = "#38e4ff"
-
-/*
-/turf/simulated/floor/pool/Initialize(mapload)
-	. = ..()
-	update_icon()
-
-/turf/simulated/floor/pool/update_icon()
-	. = ..()
-	if(!filled)
-		name = "drained pool"
-		desc = "No diving!"
-		QDEL_NULL(watereffect)
-		QDEL_NULL(watertop)
-	else
-		name = "poolwater"
-		desc = "You're safer here than in the deep."
-		watereffect = new /obj/effect/overlay/water(src)
-		watertop = new /obj/effect/overlay/water/top(src)
-		color = "#38e4ff"
-*/
 
 /turf/simulated/floor/pool/attack_hand(mob/living/user)
 	. = ..()

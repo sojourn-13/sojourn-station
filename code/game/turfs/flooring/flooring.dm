@@ -928,7 +928,7 @@ var/list/flooring_types
 /decl/flooring/rock/manmade/road
 	icon_base = "road_1"
 
-/*POOL*/
+/*POOL - basic pool tile details*/
 /decl/flooring/pool
 	name = "poolwater"
 	icon = 'icons/turf/flooring/tiles_white.dmi'
@@ -937,21 +937,3 @@ var/list/flooring_types
 	footstep_sound = "water"
 	resistance = RESISTANCE_TOUGH
 	health = 9999999
-/*
-/turf/simulated/floor/pool/Initialize(mapload)
-	. = ..()
-	update_icon()
-
-/turf/simulated/floor/pool/update_icon()
-	. = ..()
-	if(!filled)
-		name = "drained pool"
-		desc = "No diving!"
-		QDEL_NULL(watereffect)
-		QDEL_NULL(watertop)
-	else
-		name = "poolwater"
-		desc = "You're safer here than in the deep."
-		watereffect = new /obj/effect/overlay/water(src)
-		watertop = new /obj/effect/overlay/water/top(src)
-*/

@@ -1,3 +1,4 @@
+//contains some of the base code that the pool tiles themselves are based off of. Also cotains the water and water/top overlay effects.
 /turf/open/
 	var/footstep_sound = "water"
 /turf/open/pool
@@ -56,6 +57,7 @@
 		for(var/mob/living/carbon/human/H in src)
 			if(!H.wear_mask && (H.stat == CONSCIOUS))
 				H.emote("cough")
+//code saved for potential use in future projects
 /*
 /turf/open/pool/Entered(atom/A, atom/OL)
 	if(movement_disabled && usr.ckey != movement_disabled_exception)

@@ -1,3 +1,4 @@
+//contains the effects used for the splashing effects when in the pool, also has effects for use in other water applications.
 /obj/effect/splash
 	name = "splash"
 	desc = "Wataaa!."
