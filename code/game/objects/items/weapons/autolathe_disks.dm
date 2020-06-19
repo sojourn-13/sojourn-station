@@ -93,6 +93,8 @@
 		/datum/design/autolathe/device/implanter,
 		/datum/design/autolathe/device/hand_labeler,
 		/datum/design/research/item/light_replacer,
+		/datum/design/autolathe/device/camera,
+		/datum/design/autolathe/device/camerafilm,
 
 	)
 
@@ -177,6 +179,8 @@
 		/datum/design/autolathe/device/implanter,
 		/datum/design/autolathe/device/hand_labeler,
 		/datum/design/research/item/light_replacer,
+		/datum/design/autolathe/device/camera,
+		/datum/design/autolathe/device/camerafilm,
 		//Cells
 		/datum/design/autolathe/cell/large,
 		/datum/design/autolathe/cell/large/high,
@@ -199,6 +203,8 @@
 		/datum/design/research/item/part/micro_mani,
 		/datum/design/research/item/part/basic_micro_laser,
 		/datum/design/research/item/part/basic_matter_bin,
+		/datum/design/autolathe/device/camera,
+		/datum/design/autolathe/device/camerafilm,
 		/datum/design/autolathe/part/igniter,
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_infra,
@@ -425,6 +431,8 @@
 		/datum/design/research/item/computer_part/printer,
 		/datum/design/research/item/computer_part/led,
 		/datum/design/research/item/computer_part/led/adv,
+		/datum/design/autolathe/device/camera,
+		/datum/design/autolathe/device/camerafilm,
 		/datum/design/autolathe/computer_part/gps,
 		/datum/design/autolathe/part/heatsink,
 		/datum/design/autolathe/part/motor,
@@ -614,6 +622,7 @@
 		/datum/design/autolathe/tool/tacknife,
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/sec/silencer,
+		/datum/design/autolathe/sec/gun_case,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security/hos

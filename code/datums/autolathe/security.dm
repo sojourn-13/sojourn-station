@@ -29,3 +29,8 @@
 /datum/design/autolathe/sec/silencer
 	name = "silencer"
 	build_path = /obj/item/weapon/silencer
+
+/datum/design/autolathe/sec/gun_case
+	name = "gun case"
+	build_path = /obj/item/weapon/storage/briefcase/rifle
+	materials = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 10)
