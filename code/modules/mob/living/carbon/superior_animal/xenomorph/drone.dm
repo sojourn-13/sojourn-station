@@ -48,7 +48,9 @@ var/datum/xenomorph/xenomorph_ai
 	var/poison_type = "xenotoxin"
 	pass_flags = PASSTABLE
 	faction = "xenomorph"
-	var/busy = 0
+
+	fleshcolor = "#00ff00"
+	bloodcolor = "#00ff00"
 
 /mob/living/carbon/superior_animal/xenomorph/slip(var/slipped_on,stun_duration=8)
 	return FALSE
