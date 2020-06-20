@@ -12,8 +12,8 @@
 	response_harm = "hits"
 	speed = 4
 	stop_automated_movement_when_pulled = 0
-	maxHealth = 100
-	health = 100
+	maxHealth = 150
+	health = 150
 	vision_range = 12
 	harm_intent_damage = 5
 	melee_damage_lower = 10
@@ -48,7 +48,7 @@
 	return
 
 ///////////////Sword and shield////////////
-
+/*
 /mob/living/simple_animal/hostile/syndicate/melee
 	melee_damage_lower = 20
 	melee_damage_upper = 25
@@ -81,7 +81,7 @@
 	else
 		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
 	return 0
-
+*/
 
 /mob/living/simple_animal/hostile/syndicate/melee/space
 	min_oxy = 0
@@ -143,7 +143,7 @@
 	melee_damage_upper = 15
 	attacktext = "cut"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
-	faction = "syndicate"
+	faction = "pirate"
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0
