@@ -1006,6 +1006,11 @@ var/list/rank_prefix = list(\
 					organ.take_damage(rand(1,3), 0, 0)
 					if(organ.setBleeding())
 						src.adjustToxLoss(rand(1,3))
+					if(species.reagent_tag == IS_CHTMANT)
+						src.hallucination(30, 50)
+						src.adjustHalLoss(3)
+						src.adjustToxLoss(1)
+
 
 /mob/living/carbon/human/verb/check_pulse()
 	set category = "Object"
@@ -1495,6 +1500,15 @@ var/list/rank_prefix = list(\
 		return
 
 	to_chat(src, SPAN_NOTICE("You check yourself for injuries."))
+
+	if(species.reagent_tag == IS_CHTMANT)
+		switch(toxloss)
+			if(10 to 35)
+				to_chat(src, "<span class='average	'>You feel something is off.</span>")
+			if(35 to 45)
+				to_chat(src, "<span class='danger'>You feel something is not well within.</span>")
+			if(45 to INFINITY)
+				to_chat(src, "<span class='danger'>You feel the need to purge something from your body!</span>")
 
 	for(var/obj/item/organ/external/org in organs)
 		var/list/status = list()
