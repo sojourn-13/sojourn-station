@@ -270,6 +270,12 @@ var/list/footstep_tile = list(\
 		'sound/effects/footstep/tile3.wav',\
 		'sound/effects/footstep/tile4.wav')
 
+var/list/footstep_water = list(\
+		'sound/effects/footstep/water1.ogg',\
+		'sound/effects/footstep/water2.ogg',\
+		'sound/effects/footstep/water3.ogg',\
+		'sound/effects/footstep/water4.ogg')
+
 var/list/footstep_wood = list(\
 		'sound/effects/footstep/wood1.ogg',\
 		'sound/effects/footstep/wood2.ogg',\
@@ -308,6 +314,8 @@ var/list/rummage_sound = list(\
 			toplay = pick(footstep_plating)
 		if ("tile")
 			toplay = pick(footstep_tile)
+		if ("water")
+			toplay = pick(footstep_water)
 		if ("wood")
 			toplay = pick(footstep_wood)
 
