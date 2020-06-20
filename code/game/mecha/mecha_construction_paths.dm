@@ -137,7 +137,7 @@
 
 		if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
 			to_chat(user, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
-		return
+			return
 
 		//TODO: better messages.
 		switch(index)

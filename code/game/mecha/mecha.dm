@@ -891,7 +891,7 @@ assassination method if you time it right*/
 /obj/mecha/attackby(obj/item/I, mob/user)
 	if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
 		to_chat(user, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
-	return
+		return
 
 	var/list/usable_qualities = list()
 	if(state == 1 || state == 2)

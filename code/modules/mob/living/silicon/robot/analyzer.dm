@@ -29,7 +29,7 @@
 		return
 	if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
 		to_chat(usr, SPAN_WARNING("Your mechanical understanding isn't high enough to use this!"))
-	return
+		return
 	if((CLUMSY in user.mutations) && prob(50))
 		to_chat(user, text("\red You try to analyze the floor's vitals!"))
 		for(var/mob/O in viewers(M, null))
