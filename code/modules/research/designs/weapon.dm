@@ -87,6 +87,11 @@
 	build_path = /obj/item/weapon/hatton_magazine/moebius
 	sort_string = "TAACC"
 
+/datum/design/research/item/ammo/rapidsyringe
+	name = "syringe revolver cartridge"
+	build_path = /obj/item/weapon/syringe_cartridge
+	sort_string = "TAACD"
+
 //Disks
 /datum/design/research/item/disk/blackshield
 	name = "Blackshield Sovereignty Disk"
