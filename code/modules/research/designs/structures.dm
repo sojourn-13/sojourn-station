@@ -7,9 +7,11 @@
 	desc = "Bulk Industrial Dispenser Omnitech-Nanochem. A canister with acid-resistant linings intended for handling big volumes."
 	build_path = /obj/structure/reagent_dispensers/bidon
 	sort_string = "VAAAK"
+	category = "Medical"
 
 /datum/design/research/structure/bidonadv
 	name = "stasis B.I.D.O.N. canister"
 	desc = "An advanced B.I.D.O.N. canister with stasis function."
 	build_path = /obj/structure/reagent_dispensers/bidon/advanced
 	sort_string = "VAAAL"
+	category = "Medical"

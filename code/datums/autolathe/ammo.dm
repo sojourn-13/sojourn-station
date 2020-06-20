@@ -329,7 +329,7 @@
 	build_path = /obj/item/ammo_magazine/ammobox/lrifle/rubber
 
 /datum/design/autolathe/ammo/lrifle_ammobox_small
-	name = "ammunition box .257 Carbine (practice)"
+	name = "ammunition box .257 Carbine (ball)"
 	build_path = /obj/item/ammo_magazine/ammobox/lrifle_small
 
 /datum/design/autolathe/ammo/lrifle_ammobox_small_practice
