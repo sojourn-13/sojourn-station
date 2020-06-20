@@ -238,6 +238,11 @@
 /obj/machinery/chem_master/attack_hand(mob/user)
 	if(inoperable())
 		return
+
+	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
+		return
+
 	user.set_machine(src)
 	if(!(user.client in has_sprites))
 		spawn()

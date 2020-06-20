@@ -101,6 +101,10 @@
 	..()
 
 /obj/machinery/chem_heater/attack_hand(mob/user)
+	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
+		return
+
 	if(..())
 		return TRUE
 

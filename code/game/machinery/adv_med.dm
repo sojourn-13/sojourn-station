@@ -175,6 +175,9 @@
 	if(!ishuman(connected.occupant))
 		to_chat(user, SPAN_WARNING("This device can only scan compatible lifeforms."))
 		return
+	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT))
+		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
+		return
 
 	var/dat
 	if (src.delete && src.temphtml) //Window in buffer but its just simple message, so nothing

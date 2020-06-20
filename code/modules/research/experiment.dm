@@ -244,6 +244,10 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	experiments = new
 
 /obj/item/device/science_tool/attack(mob/living/M, mob/living/user)
+	if(!user.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
+		to_chat(user, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
+	return
+
 	return
 
 /obj/item/device/science_tool/afterattack(obj/O, mob/living/user)
