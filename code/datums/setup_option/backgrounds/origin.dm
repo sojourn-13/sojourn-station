@@ -22,6 +22,8 @@
 		STAT_COG = -7
 	)
 
+	restricted_to_species = list(SPECIES_TAJ)
+
 /datum/category_item/setup_option/background/origin/southlander
 	name = "Sablekyne - Southlander"
 	desc = "The southlander sablekyne are a people who consider themselves simply better than anyone else, be it through martial or mental tasks. \
@@ -38,6 +40,8 @@
 		STAT_COG = 5
 	)
 
+	restricted_to_species = list(SPECIES_TAJ)
+
 /datum/category_item/setup_option/background/origin/maunkyne
 	name = "Sablekyne - Maunkyne"
 	desc = "The maunkyne are the absolute lowest dregs of sablekyne society, users of a highly addictive drug they are permanately enslaved to. \
@@ -49,6 +53,7 @@
 
 	restricted_depts = SECURITY | COMMAND
 	restricted_jobs = list(/datum/job/chaplain)
+	
 
 	stat_modifiers = list(
 		STAT_ROB = -10,
