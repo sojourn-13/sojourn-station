@@ -150,7 +150,7 @@
 /datum/sprite_accessory/facial_hair/sevenOclockstache
 	name = "7 O'clock Shadow and Moustache"
 	icon_state = "7oclockmoustache"
-
+/*
 /datum/sprite_accessory/facial_hair/teshari_beard
 	name = "Teshari Beard"
 	icon_state = "teshari_chin"
@@ -165,24 +165,24 @@
 	name = "Teshari Chops"
 	icon_state = "teshari_gap"
 	gender = NEUTER
-
+*/
 /datum/sprite_accessory/facial_hair/una_chinhorn
-	name = "Unathi Chin Horn"
+	name = "Cindarite Chin Horn"
 	icon_state = "facial_chinhorns_s"
 	gender = NEUTER
 
 /datum/sprite_accessory/facial_hair/una_hornadorns
-	name = "Unathi Horn Adorns"
+	name = "Cindarite Horn Adorns"
 	icon_state = "facial_hornadorns_s"
 	gender = NEUTER
 
 /datum/sprite_accessory/facial_hair/una_spinespikes
-	name = "Unathi Spine Spikes"
+	name = "Cindarite Spine Spikes"
 	icon_state = "facial_spikes_s"
 	gender = NEUTER
 
 /datum/sprite_accessory/facial_hair/una_dorsalfrill
-	name = "Unathi Dorsal Frill"
+	name = "Cindarite Dorsal Frill"
 	icon_state = "facial_dorsalfrill_s"
 	gender = NEUTER
 
