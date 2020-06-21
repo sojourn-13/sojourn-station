@@ -1,5 +1,6 @@
 /datum/perk/inspiration
 	name = "Exotic Inspiration"
+	desc = "The best ideas come from a mind not entirely sober, any alcohol will give you that much needed boost."
 	active = FALSE
 
 /datum/perk/inspiration/activate()
@@ -18,6 +19,7 @@
 
 /datum/perk/timeismoney
 	name = "Time is Money"
+	desc = "Sometimes you just need to run away from a bad deal, so fast you forget how to use your hands as you sprint."
 	var/cooldown_time = 0
 	active = FALSE
 	toggleable = TRUE

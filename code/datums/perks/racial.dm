@@ -142,7 +142,7 @@
 
 /datum/perk/purgetoxins //Cindarite perk that purges the blood of toxins and removes addiction.
 	name = "Purge Toxins"
-	desc = "You force your body to begin the process of removing poisons from your blood. All toxins and addictions are slowly purged but the effect leaves you exhausted."
+	desc = "You force your body to begin the process of removing toxins from your blood. All toxins and addictions are slowly purged but the effect leaves you exhausted."
 	var/cooldown_time = 0
 	active = FALSE
 	toggleable = TRUE

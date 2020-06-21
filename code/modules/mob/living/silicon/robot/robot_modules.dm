@@ -31,6 +31,7 @@ var/global/list/robot_modules = list(
 					LANGUAGE_COMMON = 1,
 					LANGUAGE_SERBIAN = 1,
 					LANGUAGE_CYRILLIC = 1,
+					LANGUAGE_GERMAN = 1,
 					LANGUAGE_JIVE = 0
 					)
 	var/sprites = list()

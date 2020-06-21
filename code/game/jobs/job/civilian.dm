@@ -42,7 +42,6 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	also_known_languages = list(LANGUAGE_CYRILLIC = 10, LANGUAGE_JIVE = 60)
 	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
 	initial_balance = 750
 	wage = WAGE_LABOUR_DUMB //They should get paid by making food.
@@ -113,7 +112,6 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_SERBIAN = 5, LANGUAGE_JIVE = 80)
 	access = list(access_maint_tunnels, access_theatre)
 	outfit_type = /decl/hierarchy/outfit/job/service/actor
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
@@ -146,7 +144,6 @@
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	//alt_titles = list("Custodian","Sanitation Technician")
-	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_janitor, access_maint_tunnels, access_morgue, access_crematorium, access_mailsorting, access_cargo)
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
