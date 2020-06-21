@@ -13,7 +13,7 @@
 /obj/item/device/scanner/gas/is_valid_scan_target(atom/O)
 	if(!usr.stat_check(STAT_MEC, STAT_LEVEL_BASIC))
 		to_chat(usr, SPAN_WARNING("Your understanding of the mechanical isn't enough to operate this!"))
-	return
+		return
 
 	return istype(O)
 

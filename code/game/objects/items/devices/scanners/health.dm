@@ -44,8 +44,8 @@
 		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
 		return
 
-	if(!user.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
-		to_chat(user, SPAN_WARNING("Your biological understanding isn't enough to use this."))
+	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
 	if ((CLUMSY in user.mutations) && prob(50))

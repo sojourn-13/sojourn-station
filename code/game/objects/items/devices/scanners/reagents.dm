@@ -14,7 +14,7 @@
 /obj/item/device/scanner/reagent/is_valid_scan_target(obj/O)
 	if(!usr.stat_check(STAT_COG, STAT_LEVEL_BASIC))
 		to_chat(usr, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
-	return
+		return
 
 	return istype(O)
 
