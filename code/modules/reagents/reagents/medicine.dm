@@ -988,6 +988,8 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	reagent_state = LIQUID
 	color = "#5f95e2"
 	nerve_system_accumulations = 0
+	addiction_chance = 100
+
 	appear_in_default_catalog = FALSE
 
 /datum/reagent/stim/robustitol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -997,6 +999,10 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	M.stats.addTempStat(STAT_BIO, -100, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_VIG, -100, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_MEC, -100, STIM_TIME, "robustitol")
+
+/datum/reagent/drug/robustitol/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")
+	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")
 
 /datum/reagent/medicine/sergatonin
 	name = "Naratonin"

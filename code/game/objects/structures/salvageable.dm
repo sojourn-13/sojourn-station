@@ -235,7 +235,7 @@ obj/structure/salvageable/personal/Initialize()
 		/obj/item/weapon/computer_hardware/hard_drive/cluster = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/advanced/shady = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/advanced/nuke = 50,
-		/obj/item/weapon/stock_parts/capacitor/alien_capacitor
+		/obj/item/weapon/stock_parts/capacitor/alien_capacitor = 40,
 		/obj/item/weapon/stock_parts/scanning_module/alien = 40,
 		/obj/item/weapon/stock_parts/manipulator/alien = 40,
 		/obj/item/weapon/stock_parts/micro_laser/alien = 40,

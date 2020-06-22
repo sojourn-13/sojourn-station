@@ -19,17 +19,23 @@
 	..()
 
 /datum/perk/timeismoney
-	name = "Time is Money"
-	desc = "Sometimes you just need to run away from a bad deal, so fast you forget how to use your hands as you sprint."
+	name = "Hyperzine Implant"
+	desc = "A standard issue implant designed for chief executive officers that contains a small on demand injection of hyperzine. The implant itself is hidden from prying scanners and comes in both \
+	metal and organic material designs to aid in remaining hidden. While useful, the chemical storage takes time to recharge after use."
 	active = FALSE
 	passivePerk = FALSE
 
 /datum/perk/timeismoney/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("You feel tired, you will need to rest for a bit before using this ability again."))
+		to_chat(usr, SPAN_NOTICE("Your chemical implant is still recharging, you'll need to wait longer."))
 		return FALSE
-	cooldown_time = world.time + 7 MINUTES
-	addtimer(CALLBACK(src, .proc/deactivate), 1 MINUTES)
+	cooldown_time = world.time + 15 MINUTES
+	user.visible_message("[user] begins twitching and breathing much quicker!", "You feel your heart rate increasing rapidly as everything seems to speed up!", "You hear someone breathing rapidly...")
+	log_and_message_admins("used their [src] perk.")
+	user.reagents.add_reagent("hyperzine", 5)
 	return ..()
 
 /datum/perk/selfmedicated
@@ -49,7 +55,7 @@
 
 /datum/perk/solborn
 	name = "Sol Born"
-	desc = "Clean living in the Sol System has prevented you from building up a tolerance to most chemicals, your body can't handle the more hardcore drugs that most can and you find yourself getting \
+	desc = "Clean living in the Sol system has prevented you from building up a tolerance to most chemicals, your body can't handle the more hardcore drugs that most can and you find yourself getting \
 	addicted slightly easier."
 	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
@@ -61,6 +67,19 @@
 /datum/perk/solborn/remove()
 	holder.metabolism_effects.addiction_chance_multiplier = 1
 	holder.metabolism_effects.nsa_threshold += 15
+	..()
+
+/datum/perk/klutz
+	name = "Klutz"
+	desc = "You find a lot of tasks a little beyond your ability to perform, but being accident prone has at least made you used to getting hurt."
+	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+
+/datum/perk/klutz/assign(mob/living/carbon/human/H)
+	..()
+	holder.mutations.Add(CLUMSY)
+
+/datum/perk/klutz/remove()
+	holder.mutations.Remove(CLUMSY)
 	..()
 
 /datum/perk/addict

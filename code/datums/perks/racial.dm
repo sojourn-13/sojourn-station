@@ -95,7 +95,8 @@
 
 /datum/perk/recklessfrenzy //Akula perk that dumps all stats in favor of upping melee through the roof.
 	name = "Reckless Frenzy"
-	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time."
+	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time. The rush of chemicals is also highly adddictive \
+	and often times will leave your body weaker for a short time."
 	active = FALSE
 	passivePerk = FALSE
 
