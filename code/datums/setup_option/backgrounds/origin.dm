@@ -22,7 +22,7 @@
 		STAT_COG = -7
 	)
 
-	restricted_to_species = list(SPECIES_TAJ)
+	restricted_to_species = list(FORM_SABLEKYNE)
 
 /datum/category_item/setup_option/background/origin/southlander
 	name = "Sablekyne - Southlander"
@@ -40,7 +40,7 @@
 		STAT_COG = 5
 	)
 
-	restricted_to_species = list(SPECIES_TAJ)
+	restricted_to_species = list(FORM_SABLEKYNE)
 
 /datum/category_item/setup_option/background/origin/maunkyne
 	name = "Sablekyne - Maunkyne"
@@ -53,7 +53,8 @@
 
 	restricted_depts = SECURITY | COMMAND
 	restricted_jobs = list(/datum/job/chaplain)
-	
+
+	restricted_to_species = list(FORM_SABLEKYNE)
 
 	stat_modifiers = list(
 		STAT_ROB = -10,
@@ -71,6 +72,8 @@
 			While to outsiders most jaegers come across as gun obsessed hermits, a fact not helped with their penchant for trophy taking, none can deny their skill with rifles. \
 			Unfortunately all that time at the range hasn't improved much else."
 
+	restricted_to_species = list(FORM_KRIOSAN)
+
 	stat_modifiers = list(
 		STAT_ROB = -2,
 		STAT_TGH = 3,
@@ -87,6 +90,8 @@
 			Castellens are widely known for their considerable size and physical merit but lack the practical training in most areas compared to others. \
 			A lifetime of being trained for the realm of politics has made them quick to understand new things but abyssmal at more practical pursuits. \
 			On top of all that, a castellens political affiliations, be it present or former, bar them from command roles due to the very obvious conflict of interests."
+
+	restricted_to_species = list(FORM_KRIOSAN)
 
 	restricted_depts = COMMAND
 	restricted_jobs = list(/datum/job/chaplain)
@@ -109,6 +114,8 @@
 			While criminal backgrounds are often overlooked, yours is one of public record and far more brutal than most, made known by either your boasting, tattoos, or records. \
 			Because of that security has no interest in hiring you, even as a militia grunt."
 
+	restricted_to_species = list(FORM_AKULA)
+
 	restricted_depts = SECURITY
 
 	stat_modifiers = list(
@@ -128,6 +135,8 @@
 			Service in the military, however, has its draw backs. Much of an akula's training is steeped solely in marksmenship as they cannot keep pace with the faster naramads and must take \
 			great care not to cause a friendly fire incident."
 
+	restricted_to_species = list(FORM_AKULA)
+
 	stat_modifiers = list(
 		STAT_ROB = -4,
 		STAT_TGH = 0,
@@ -145,6 +154,8 @@
 			something that further dulls their already blunted minds. Training is also exclusive, focused entirely on melee as a hulking charging akula rushing a position attracts more concentrated \
 			fire, thus freeing up the soldiers in the back to make clear picked shots."
 
+	restricted_to_species = list(FORM_AKULA)
+
 	stat_modifiers = list(
 		STAT_ROB = 20,
 		STAT_TGH = 10,
@@ -159,6 +170,8 @@
 	desc = "The intelligensia of the mar'qua are the formally trained and 'think-tank' of mar'qua society, making up most of their scientists in the fields of biology and mathematics. \
 			As someone who has left the higher folds of the intelligensia you are one of skilled rapport but a life of easy living has made you quite physically weak. \
 			You lack of physically capability also makes you inelligable for the colony security forces, further locking you into your role as an intellectual."
+
+	restricted_to_species = list(FORM_MARQUA)
 
 	restricted_depts = SECURITY
 
@@ -178,6 +191,8 @@
 			Meanials are trained from early childhood to be pragmatic above all else and enjoy the simple toil of their work. Appearence and taste is secondary to function, always. \
 			As a meanial you lack the higher training of most mar'qua but a life of labour has made you toughened to the rigours of life, the sole benefit of heavy labour."
 
+	restricted_to_species = list(FORM_MARQUA)
+
 	stat_modifiers = list(
 		STAT_ROB = 6,
 		STAT_TGH = 7,
@@ -194,6 +209,8 @@
 			The martial caste is strong, decisive, and extremely focused on the here and now of a situation to ensure the best choices are made. \
 			While the martial caste is intelligent, after all they are still mar'qua, they lack the formal education even a menial is afforded, but a life of disciplined training has \
 			improved their physical ability quite well."
+
+	restricted_to_species = list(FORM_MARQUA)
 
 	stat_modifiers = list(
 		STAT_ROB = 4,
@@ -213,6 +230,8 @@
 			Such a focus on mental pursuits have made southern naramad a little more adept at technology then others of their kind, but the technophilia has made them poorly adapted to \
 			the workings of the body."
 
+	restricted_to_species = list(FORM_NARAMAD)
+
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
@@ -228,6 +247,8 @@
 			An eastern naramads focus on physical combat improves their already impressive strength and tough bodies but does little improve much else. \
 			Even among their own kind the eastern naramads are considered luddites, their brash natures and complete ignorance of things unrelated to combat bar them from science, medical \
 			engineering, and command roles."
+
+	restricted_to_species = list(FORM_NARAMAD)
 
 	restricted_depts = SCIENCE | MEDICAL | ENGINEERING | COMMAND
 	restricted_jobs = list(/datum/job/chaplain, /datum/job/salvager)
@@ -248,6 +269,8 @@
 			physically imposing than the rough raised tribals. Unfortunately for the space born naramads not even they escape military conscription and often times, due to their relative intelligence, \
 			act as desk workers for akula commanders or in logistical roles for naramadi squads and ships."
 
+	restricted_to_species = list(FORM_NARAMAD)
+
 	stat_modifiers = list(
 		STAT_ROB = -15,
 		STAT_TGH = -15,
@@ -263,6 +286,8 @@
 			This training is usually towards the goal of maintaining the biomechanical augmentations used by the opifex, from installing nano-gates to replacing lost limbs with synthetic copies. \
 			The additional biological training, while helpful, does hamper the average opifexes ability to study machines, lessening their ability to quickly adapt to situations and new \
 			technology. After all, to the average opifex a biological entity is far less complex and nuisanced than even the most basic of robots."
+
+	restricted_to_species = list(FORM_OPIFEX)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -280,6 +305,8 @@
 			times supported by combat drones with which they lead into conflict. Their skills towards repairing and salvaging technology isn't as good as the average opifex, but their concern \
 			is only on making areas safe for the lesser technicians to do the grunt labours."
 
+	restricted_to_species = list(FORM_OPIFEX)
+
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 4,
@@ -295,6 +322,8 @@
 			chosen at birth and their bodies altered to fit whatever best aids in this goal. Their tasks ranged from cutting through \
 			tough rock, processing raw ore into mineral rich gels for consumption, to even simple crop and animal care. They only \
 			knew what was needed for their purpose and literally nothing else."
+
+	restricted_to_species = list(FORM_CHTMANT)
 
 	stat_modifiers = list(
 		STAT_ROB = 4,
@@ -313,6 +342,8 @@
 			everything to unravel its genetic code. Because of this the Ru brain and body was, and still is, a complex mystery. \
 			Due to the physical weakness of the Ru caste they are barred from taking roles as security and due to their importance to their respective hive restricted from work as prospectors."
 
+	restricted_to_species = list(FORM_CHTMANT)
+
 	restricted_depts = SECURITY | PROSPECTOR
 
 	stat_modifiers = list(
@@ -330,6 +361,8 @@
 			most workers, the Ro. Their bodies were highly adapted to fight and they knew only loyalty unto death for the good of \
 			the hive’s. Due to this, and the existence of the Ru, they often heavily lacked any cognitive thinking skills and would \
 			rely on winning battles by sheer weight of numbers or attrition. The severe lack of intelligence they exibit also bars them from medical, science, engineering, and command roles."
+
+	restricted_to_species = list(FORM_CHTMANT)
 
 	restricted_depts = SCIENCE | ENGINEERING | COMMAND
 	restricted_jobs = list(/datum/job/chaplain, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
@@ -350,6 +383,8 @@
 			After all, even a single breach could spell the end for the dwellers despite their in-born resistance to their toxic homeworld. Such a confined life style though spells poorly for \
 			their physical health, so biological maintenance is just as important as physical."
 
+	restricted_to_species = list(FORM_CINDAR)
+
 	stat_modifiers = list(
 		STAT_ROB = -5,
 		STAT_TGH = -5,
@@ -364,6 +399,8 @@
 	desc = "Many cindarites choose to leave the confines of their deathworld of Cindar and instead choose to become spacers, spending ther entire lives living on traveling ships. \
 			Spacers often take work as engineers, merchants, and sometimes pirates as work is rarely ever steady. This broadens the already wide range of skills that most cindarites have, but \
 			most of this knowledge is learned practically, making them poor studies on more advanced careers that can't be as easily learned from a hands on approach."
+
+	restricted_to_species = list(FORM_CINDAR)
 
 	stat_modifiers = list(
 		STAT_ROB = 5,
@@ -421,12 +458,12 @@
 	highly adept swimmers, and usually very business minded."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 4,
-		STAT_VIG = -9,
-		STAT_BIO = 2,
+		STAT_ROB = -8,
+		STAT_TGH = -6,
+		STAT_VIG = 3,
+		STAT_BIO = 4,
 		STAT_MEC = 4,
-		STAT_COG = 5
+		STAT_COG = 3
 	)
 
 /datum/category_item/setup_option/background/origin/kurilskaya
@@ -438,12 +475,12 @@
 	are very secretive about where Kurilskaya is actually located."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
+		STAT_ROB = 5,
 		STAT_TGH = 4,
-		STAT_VIG = -9,
-		STAT_BIO = 2,
-		STAT_MEC = 4,
-		STAT_COG = 5
+		STAT_VIG = 3,
+		STAT_BIO = -2,
+		STAT_MEC = -6,
+		STAT_COG = -4
 	)
 
 /datum/category_item/setup_option/background/origin/thalatta
@@ -456,12 +493,12 @@
 	tech savvy, reverent towards fellow believers, and skeptical of outside authority- especially when it's perceived as being luddic or atheistic."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 4,
-		STAT_VIG = -9,
-		STAT_BIO = 2,
-		STAT_MEC = 4,
-		STAT_COG = 5
+		STAT_ROB = -8,
+		STAT_TGH = -3,
+		STAT_VIG = -5,
+		STAT_BIO = 3,
+		STAT_MEC = 9,
+		STAT_COG = 4
 	)
 
 /datum/category_item/setup_option/background/origin/madinatyunan
@@ -470,16 +507,17 @@
 	the gaseous mixture of the atmosphere being poor for fuel production and the trade lane never materializing. The initial colonization efforts soon dried up, and the thousands of colonists \
 	that had been shipped to the low orbit habitats soon found themselves stranded without supplies and had only just begun requesting evacuation when the Bluespace Crash occurred. As contact \
 	was made with the planet again it was discovered that the habitats were destroyed or abandoned and yet the colonists had found a way to survive and thrive. Forming a symbiotic relationship \
-	with a bizarre species of whale-like creature, the human colonists had taken to living within the large floating creatures, establishing whole towns and settlements within the porous rib \
-	cages of these leviathans. Individuals from Madinat Yunan are often enthusiastic biologists, have a reputation for thinking outside the box, and often derided as being social deviants."
+	with a bizarre species of titanic whale-like creature, the colonists had taken to hunting and slaughtering them for food only to discover they were sapiant but incapable of communication. \
+	The whale-like creatures saw feeding the struggling colonists as a neccessity and had offered their weakest for slaughter for reasons yet unknown. The grizzly almost sacrifical nature of it \
+	makes many outsiders few madinat's as monsters, but their focus on medical pursuits help belay some suspicions."
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 4,
-		STAT_VIG = -9,
-		STAT_BIO = 2,
-		STAT_MEC = 4,
-		STAT_COG = 5
+		STAT_TGH = -3,
+		STAT_VIG = -2,
+		STAT_BIO = 8,
+		STAT_MEC = -6,
+		STAT_COG = 3
 	)
 
 /datum/category_item/setup_option/background/origin/earthandmars
@@ -500,156 +538,153 @@
 
 /datum/category_item/setup_option/background/origin/pirate
 	name = "Career - Former Pirate"
-	desc = ""
+	desc = "Early on in your life you became a pirate for personal reasons. You may have been a void wolf or apart of a named group of space raiders, regardless of your decisions you spent a \
+	period attacking other ships, frontier colonies, and looting the after effects of the battles for anything of value. For whatever reason you gave up that life to become an honest \
+	(or dishonest) citizen of the colony."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 0,
+		STAT_ROB = 4,
+		STAT_TGH = 3,
+		STAT_VIG = 6,
+		STAT_BIO = -4,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = -9
 	)
 
 /datum/category_item/setup_option/background/origin/military
 	name = "Career - Former Military"
-	desc = ""
+	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
+	to serve their empire. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
+	physical conditioning and some degree of medical training, but the stamping out of the individual makes most lose their creativity."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_ROB = 3,
+		STAT_TGH = 4,
+		STAT_VIG = 4,
+		STAT_BIO = 3,
+		STAT_MEC = -6,
+		STAT_COG = -8
 	)
 
-/datum/category_item/setup_option/background/origin/military
+/datum/category_item/setup_option/background/origin/criminal
 	name = "Career - Former Criminal"
-	desc = ""
+	desc = "Maybe you were a ganger, a mafiaso, or a professional with a criminal syndicate. Whatever you were it wasn't honest, nor was it something any good person could take pride in. \
+	Your former connections, for they are former as you've left that life behind, still haunt you as your record is known by security. As such you are barred from security or command positions. \
+	But that life has at least gifted you with some broad if boorish skills."
+
+	restricted_depts = COMMAND | SECURITY
+	restricted_jobs = list(/datum/job/chaplain)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_ROB = 3,
+		STAT_TGH = 4,
+		STAT_VIG = 3,
 		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_MEC = -4,
+		STAT_COG = -3
 	)
 
-/datum/category_item/setup_option/background/origin/military
+/datum/category_item/setup_option/background/origin/asteroid
 	name = "Career - Former Asteroid Miner"
-	desc = ""
+	desc = "As an asteroid miner you spent many years in remote locations digging through airless enviroments for nothing more than a palm's worth of precious ores. So far from civilization you \
+	developed a hearty constituion and self reliant attitude. Yet the boredom of being cut off from the general population and the lack of more intellectual stimulation did a number on your \
+	creativity."
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_TGH = 7,
+		STAT_VIG = -6,
+		STAT_BIO = 4,
+		STAT_MEC = 5,
+		STAT_COG = -10
 	)
 
-/datum/category_item/setup_option/background/origin/military
+/datum/category_item/setup_option/background/origin/social
 	name = "Career - Former Social Worker"
-	desc = ""
+	desc = "As a former social worker you spent a great deal of time helping the dregs of society, be it from mental illness, drug addiction, or them just being a completely inept loser. \
+	Whatever your case loads, you learned to come up with creative solutions to the problems people faced and directed them to where they could get help as they tried to escape the \
+	system of bureaucracy. All that time spent at a desk though didn't help you much."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_ROB = -4,
+		STAT_TGH = -4,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = 8
 	)
 
-/datum/category_item/setup_option/background/origin/military
-	name = "Career - Former Service Worker"
-	desc = ""
+
+/datum/category_item/setup_option/background/origin/scavenger
+	name = "Career - Former Scavenger"
+	desc = "As an scavenger you spent a great deal of time charting pathways through the unexplored areas of space, scanning planets for life and looking for civilization in any form. \
+	Sometimes it was more localized, crawling to the abandoned tunnels of destroyed and long forgotten ships looking for valuables and answers to why they were brought to this state. \
+	Life as an scavenger was rough, but it did let you adjust to frontier work comfortably."
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_TGH = 2,
+		STAT_VIG = -7,
 		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_MEC = 6,
+		STAT_COG = 4
 	)
 
-/datum/category_item/setup_option/background/origin/military
+/datum/category_item/setup_option/background/origin/poor
 	name = "Background - Poor Upbringing"
-	desc = ""
+	desc = "Your early life was spent in a poor enviroment, be it from your family's economical position or the place you lived in. This barred access to education, but it let you learn fast \
+	that desperate people will use force as commonly as they'll beg for aid."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_ROB = 4,
+		STAT_TGH = 6,
+		STAT_VIG = 2,
+		STAT_BIO = -2,
+		STAT_MEC = -4,
+		STAT_COG = -6
 	)
 
-/datum/category_item/setup_option/background/origin/military
+/datum/category_item/setup_option/background/origin/wealthy
 	name = "Background - Wealthy Upbringing"
-	desc = ""
+	desc = "You grew up with a silver spoon in your mouth all your life. Education, leisure time, and relaxation allowed you to indulge in scholarly pursuits to a degree, letting you pick up a few \
+	randomly useful facts about many things. A shame that easy living left you a bit naive and physically weak."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_ROB = -4,
+		STAT_TGH = -2,
+		STAT_VIG = -6,
+		STAT_BIO = 2,
+		STAT_MEC = 4,
+		STAT_COG = 6
 	)
 
-/datum/category_item/setup_option/background/origin/military
-	name = "Background - Spacer"
-	desc = ""
-
-	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
-	)
-
-/datum/category_item/setup_option/background/origin/military
+/datum/category_item/setup_option/background/origin/refugee
 	name = "Background - Refugee"
-	desc = ""
+	desc = "Where ever you came from is no more, torn apart by conflict and war. It may have been a civil war or conquest by the Terran Federation, whatever the reason it has long since lost much \
+	meaning after the destruction of your homeworld. Somehow you escaped it, but the experience has left you extremely resiliant if a bit locked in your ways."
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_TGH = 10,
+		STAT_VIG = -10,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/origin/military
-	name = "Background - Low Gravity Homeworld"
-	desc = ""
-
-	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
-	)
-
-/datum/category_item/setup_option/background/origin/military
+/datum/category_item/setup_option/background/origin/drugaddict
 	name = "Background - Drug Addict"
-	desc = ""
+	desc = "For whatever reason, be it from and early age and bad parenting or personal choice you became a devout user of illicit drugs. The constant use over the years has weakened your body \
+	and made you extra paranoid, which can be a good thing when evading the law. Your experience with your own body has also let you learn a few medical tricks over the years, along with tolerance \
+	to most drugs so you can inject more than others."
+
+	//perks = list(/datum/perk/addict)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 0,
+		STAT_ROB = -8,
+		STAT_TGH = -8,
+		STAT_VIG = 4,
+		STAT_BIO = 6,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)

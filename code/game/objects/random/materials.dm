@@ -1,6 +1,7 @@
 /obj/random/material
 	name = "random building material"
 	icon_state = "material-grey"
+	spawn_nothing_percentage = 20
 
 //This stuff can't be easily converted to pickweight because of these amount fields
 /obj/random/material/item_to_spawn()
@@ -20,13 +21,14 @@
 /obj/random/material_resources
 	name = "random resource material"
 	icon_state = "material-green"
+	spawn_nothing_percentage = 20
 
 /obj/random/material_resources/item_to_spawn()
 	return pickweight(list(/obj/item/stack/material/steel/random = 5,\
 				/obj/item/stack/material/glass/random = 4,\
 				/obj/item/stack/material/glass/plasmaglass/random = 3,\
 				/obj/item/stack/material/iron/random = 2,\
-				/obj/item/stack/material/diamond/random = 1,\
+				/obj/item/stack/material/diamond/random = 0.5,\
 				/obj/item/stack/material/plasma/random = 3,\
 				/obj/item/stack/material/gold/random = 2,\
 				/obj/item/stack/material/uranium/random = 1,\
@@ -40,6 +42,7 @@
 /obj/random/material_rare
 	name = "random rare material"
 	icon_state = "material-orange"
+	spawn_nothing_percentage = 20
 
 /obj/random/material_rare/item_to_spawn()
 	return pickweight(list(/obj/item/stack/material/diamond/random = 1,\
@@ -56,6 +59,7 @@
 /obj/random/material_ore
 	name = "random ore"
 	icon_state = "material-black"
+	spawn_nothing_percentage = 20
 
 
 /obj/random/material_ore/item_to_spawn()
