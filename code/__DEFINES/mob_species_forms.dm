@@ -94,7 +94,7 @@
 //
 #define FORM_MONKEY				"Monkey"
 #define FORM_GOLEM				"Golem"
-#define FORM_HIVEMIND				"Hivelord"
+#define FORM_HIVEMIND			"Hivelord"
 #define FORM_ALIEN_DRONE		"Xenomorph Drone"
 #define FORM_ALIEN_SENTINEL		"Xenomorph Sentinel"
 #define FORM_ALIEN_HUNTER		"Xenomorph Hunter"

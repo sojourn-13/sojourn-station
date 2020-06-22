@@ -107,13 +107,13 @@ obj/structure/salvageable/computer/Initialize()
 		/obj/item/weapon/stock_parts/matter_bin/adv = 20,
 		/obj/item/weapon/stock_parts/matter_bin/adv = 20,
 		/obj/item/weapon/circuitboard/autolathe = 5,
-		/obj/item/stack/material/steel{amount = 20} = 40,
-		/obj/item/stack/material/glass{amount = 20} = 40,
-		/obj/item/stack/material/plastic{amount = 20} = 40,
-		/obj/item/stack/material/plasteel{amount = 10} = 40,
-		/obj/item/stack/material/silver{amount = 10} = 20,
-		/obj/item/stack/material/gold{amount = 10} = 20,
-		/obj/item/stack/material/plasma{amount = 10} = 20,
+		/obj/item/stack/material/steel{amount = 10} = 40,
+		/obj/item/stack/material/glass{amount = 10} = 40,
+		/obj/item/stack/material/plastic{amount = 10} = 40,
+		/obj/item/stack/material/plasteel{amount = 5} = 40,
+		/obj/item/stack/material/silver{amount = 5} = 20,
+		/obj/item/stack/material/gold{amount = 5} = 20,
+		/obj/item/stack/material/plasma{amount = 5} = 20,
 		/obj/item/stack/material/uranium{amount = 3} = 5,
 		/obj/item/stack/material/diamond{amount = 1} = 1
 	)
@@ -140,7 +140,7 @@ obj/structure/salvageable/computer/Initialize()
 		/obj/item/weapon/implanter = 30,
 		/obj/item/stack/material/steel{amount = 10} = 30,
 		/obj/item/stack/material/glass{amount = 10} = 30,
-		/obj/item/stack/material/silver{amount = 10} = 30
+		/obj/item/stack/material/silver{amount = 5} = 30
 	)
 
 obj/structure/salvageable/implant_container/Initialize()

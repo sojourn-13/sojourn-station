@@ -12,6 +12,7 @@
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_NONE
+	department_account_access = TRUE
 
 	outfit_type = /decl/hierarchy/outfit/job/foreman
 

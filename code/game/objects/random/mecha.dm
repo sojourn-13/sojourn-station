@@ -1,6 +1,7 @@
 /obj/random/mecha
 	name = "random mecha"
 	icon_state = "machine-red"
+	spawn_nothing_percentage = 20
 	var/list/randsuits = list(
 		/obj/mecha/working/hoverpod = 5,
 		/obj/mecha/working/hoverpod/combatpod = 0.5,//Comes with weapons
@@ -14,7 +15,7 @@
 		/obj/mecha/combat/durand = 1,//comes unarmed
 		/obj/mecha/combat/gygax = 1.5,//comes unarmed
 		/obj/mecha/combat/dreadnought = 0.1,
-		/obj/mecha/combat/phazon = 0.6)
+		/obj/mecha/combat/phazon = 0.1)
 
 /obj/random/mecha/item_to_spawn()
 	return pickweight(randsuits)
@@ -30,6 +31,7 @@
 	name = "random damaged mecha"
 	icon_state = "machine-red"
 	has_postspawn = TRUE
+	spawn_nothing_percentage = 20
 
 /obj/random/mecha/damaged/post_spawn(var/list/things)
 	for (var/obj/a in things)
@@ -47,6 +49,7 @@
 /obj/random/mecha_equipment
 	name = "random mecha equipment"
 	icon_state = "tech-red"
+	spawn_nothing_percentage = 80
 
 /obj/random/mecha_equipment/item_to_spawn()
 	return pickweight(list(/obj/item/mecha_parts/mecha_equipment/tool/ai_holder,
@@ -87,4 +90,4 @@
 /obj/random/mecha_equipment/low_chance
 	name = "low chance random mecha equipment"
 	icon_state = "tech-red-low"
-	spawn_nothing_percentage = 80
+	spawn_nothing_percentage = 95

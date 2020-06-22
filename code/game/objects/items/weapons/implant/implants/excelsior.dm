@@ -99,9 +99,9 @@
 		if(A.id == antag_id)
 			A.remove_antagonist()
 
-	if(prob(66))
-		wearer.adjustBrainLoss(200)
-		part.droplimb(FALSE, DROPLIMB_BLUNT)
+	//if(prob(66))
+	//	wearer.adjustBrainLoss(200)
+	//	part.droplimb(FALSE, DROPLIMB_BLUNT)
 
 //The leader version of the implant is the one given to antags spawned by the storyteller.
 //It has no special gameplay properties and is not attainable in normal gameplay, it just exists to

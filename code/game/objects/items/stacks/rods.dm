@@ -17,7 +17,7 @@
 
 /obj/item/stack/rods/random
 	rand_min = 2
-	rand_max = 30
+	rand_max = 5
 
 /obj/item/stack/rods/cyborg
 	name = "metal rod synthesizer"
