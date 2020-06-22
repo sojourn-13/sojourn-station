@@ -138,30 +138,35 @@ other types of metals and chemistry for reagents).
 	desc = "A more powerful yet still rather small bone fixing tool."
 	build_path = /obj/item/weapon/tool/bonesetter/adv
 	sort_string = "MBBBA"
+	category = "Medical"
 
 /datum/design/research/item/cautery_adv
 	name = "High Power Cautery"
 	desc = "A Cautery that has been perfected in heat transfer."
 	build_path = /obj/item/weapon/tool/cautery/adv
 	sort_string = "MBBBB"
+	category = "Medical"
 
 /datum/design/research/item/hemostat_adv
 	name = "Precise Hemostat"
 	desc = "A much more precise hemostat with finer grip."
 	build_path = /obj/item/weapon/tool/hemostat/adv
 	sort_string = "MCAAA"
+	category = "Medical"
 
 /datum/design/research/item/retractor_adv
 	name = "Extended Retractor"
 	desc = "Retracts with greater force and length then normal."
 	build_path = /obj/item/weapon/tool/retractor/adv
 	sort_string = "MCBAA"
+	category = "Medical"
 
 /datum/design/research/item/medsaw_circular
 	name = "Medical Cirular Saw"
 	desc = "For clean bone cutting but dosnt seem all that durable. Spins slower then the normal saw as well."
 	build_path = /obj/item/weapon/tool/saw/circular/medical
 	sort_string = "MCBBA"
+	category = "Medical"
 
 /datum/design/research/item/light_replacer
 	name = "light replacer"

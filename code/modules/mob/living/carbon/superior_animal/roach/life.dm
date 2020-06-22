@@ -36,8 +36,8 @@
 					stop_automated_movement = 1
 					src.visible_message(SPAN_NOTICE("\The [src] begins to eat \the [eat_target]."))
 					walk(src,0)
-					spawn(3000) // how much time it takes to it a corpse, in tenths of second
-					    // Set to 5 minutes to let the crew enough time to get the corpse
+					spawn(9000) // how much time it takes to it a corpse, in tenths of second
+					    // Set to 15 minutes to let the crew enough time to get the corpse
 						// Several roaches eating at the same time do not speed up the process
 						// If disturbed the roach has to start back from 0
 						if(busy == EATING_TARGET)

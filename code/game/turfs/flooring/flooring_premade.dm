@@ -724,3 +724,25 @@
 	icon_state = "road_1"
 	initial_flooring = /decl/flooring/rock/manmade/road
 
+/*POOL - new pool tile and the splash code to go with it*/
+/turf/simulated/floor/pool
+	name = "poolwater"
+	icon = 'icons/turf/flooring/tiles_white.dmi'
+	icon_state = "tiles"
+	initial_flooring = /decl/flooring/pool
+	color = "#38e4ff"
+	var/next_splash = 0
+
+/turf/simulated/floor/pool/attack_hand(mob/living/user)
+	. = ..()
+	if(.)
+		return
+	if((user.loc != src) && !user.incapacitated() && Adjacent(user) && (next_splash < world.time))
+		playsound(src, 'sound/effects/watersplash.ogg', 100, TRUE, 1)
+		next_splash = world.time + 25
+		var/obj/effect/splash/S = new(src)
+		animate(S, alpha = 0, time = 8)
+		QDEL_IN(S, 10)
+		for(var/mob/living/carbon/human/H in src)
+			if(!H.wear_mask && (H.stat == CONSCIOUS))
+				H.emote("cough")

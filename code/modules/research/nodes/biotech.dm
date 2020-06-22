@@ -230,7 +230,8 @@
 							/datum/design/research/item/medical/adv_mass_spectrometer,
 							/datum/design/research/item/medical/adv_reagent_scanner,
 							/datum/design/research/item/weapon/chemsprayer,
-							/datum/design/research/item/weapon/rapidsyringe
+							/datum/design/research/item/weapon/rapidsyringe,
+							/datum/design/research/item/ammo/rapidsyringe
 							)
 
 /datum/technology/top_biotech

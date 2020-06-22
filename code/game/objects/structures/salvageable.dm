@@ -45,8 +45,13 @@
 		/obj/item/weapon/stock_parts/scanning_module/adv = 20,
 		/obj/item/weapon/stock_parts/manipulator/nano = 20,
 		/obj/item/weapon/stock_parts/micro_laser/high = 20,
-		/obj/item/weapon/stock_parts/matter_bin/adv = 20
+		/obj/item/weapon/stock_parts/matter_bin/adv = 20,
+		/obj/item/weapon/stock_parts/manipulator/pico = 5,
+		/obj/item/weapon/stock_parts/matter_bin/super = 5,
+		/obj/item/weapon/stock_parts/micro_laser/ultra = 5,
+		/obj/item/weapon/stock_parts/scanning_module/phasic = 5
 	)
+
 
 /obj/structure/salvageable/machine/Initialize()
 	. = ..()
@@ -70,8 +75,10 @@
 		/obj/item/weapon/computer_hardware/card_slot = 40,
 		/obj/item/weapon/computer_hardware/card_slot = 40,
 		/obj/item/weapon/stock_parts/capacitor/adv = 30,
-		/obj/item/weapon/computer_hardware/network_card/advanced = 20
+		/obj/item/weapon/computer_hardware/network_card/advanced = 20,
+		/obj/item/weapon/stock_parts/capacitor/super = 5
 	)
+
 obj/structure/salvageable/computer/Initialize()
 	. = ..()
 	icon_state = "computer[rand(0,7)]"
@@ -99,13 +106,16 @@ obj/structure/salvageable/computer/Initialize()
 		/obj/item/weapon/stock_parts/micro_laser/high = 20,
 		/obj/item/weapon/stock_parts/matter_bin/adv = 20,
 		/obj/item/weapon/stock_parts/matter_bin/adv = 20,
+		/obj/item/weapon/circuitboard/autolathe = 5,
 		/obj/item/stack/material/steel{amount = 10} = 40,
 		/obj/item/stack/material/glass{amount = 10} = 40,
 		/obj/item/stack/material/plastic{amount = 10} = 40,
 		/obj/item/stack/material/plasteel{amount = 5} = 40,
 		/obj/item/stack/material/silver{amount = 5} = 20,
 		/obj/item/stack/material/gold{amount = 5} = 20,
-		/obj/item/stack/material/plasma{amount = 5} = 20
+		/obj/item/stack/material/plasma{amount = 5} = 20,
+		/obj/item/stack/material/uranium{amount = 3} = 5,
+		/obj/item/stack/material/diamond{amount = 1} = 1
 	)
 
 /obj/structure/salvageable/implant_container
@@ -235,11 +245,10 @@ obj/structure/salvageable/personal/Initialize()
 		/obj/item/weapon/computer_hardware/hard_drive/cluster = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/advanced/shady = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/advanced/nuke = 50,
-		/obj/item/weapon/stock_parts/capacitor/alien_capacitor = 40,
-		/obj/item/weapon/stock_parts/scanning_module/alien = 40,
-		/obj/item/weapon/stock_parts/manipulator/alien = 40,
-		/obj/item/weapon/stock_parts/micro_laser/alien = 40,
-		/obj/item/weapon/stock_parts/matter_bin/alien = 40,
+		/obj/item/weapon/stock_parts/capacitor/excelsior = 20,
+		/obj/item/weapon/stock_parts/scanning_module/excelsior = 20,
+		/obj/item/weapon/stock_parts/manipulator/excelsior = 20,
+		/obj/item/weapon/stock_parts/micro_laser/excelsior = 20
 	)
 
 obj/structure/salvageable/bliss/Initialize()
