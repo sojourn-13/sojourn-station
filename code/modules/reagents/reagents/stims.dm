@@ -394,7 +394,7 @@
 	reagent_state = LIQUID
 	color = "#ffb3b7"
 	overdose = REAGENTS_OVERDOSE - 21
-	nerve_system_accumulations = 90
+	nerve_system_accumulations = 70
 	addiction_chance = 70
 
 /datum/reagent/stim/menace/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)

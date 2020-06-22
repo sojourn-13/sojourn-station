@@ -56,6 +56,8 @@
 
 	restricted_to_species = list(FORM_SABLEKYNE)
 
+	perks = list(/datum/perk/addict)
+
 	stat_modifiers = list(
 		STAT_ROB = -10,
 		STAT_TGH = -10,
@@ -525,7 +527,10 @@
 	desc = "Earth and Mars are the political seat of power for the Terran Federation and considered the wealthiest and most heavily protected planets in the known universe. \
 	People from earth and mars are almost universally wealthy and worldly, with access to broad educations and understandings in philisophies that help them at every step in life. \
 	The melting pot of cultures have made Sol born extremely knowledgable of other cultures and varied even among themselves, anyone of any race could have once been born and bred in the \
-	Sol system. However, most are still commonly human or abhuman even with the numerous exceptions."
+	Sol system. However, most are still commonly human or abhuman even with the numerous exceptions. As a result of your clean living you rarely had the chance to partake in any sort of \
+	chemical escapade. As a result your body can't handle as many drugs are other people and you find yourself getting addicted slightly easier."
+
+	perks = list(/datum/perk/solborn)
 
 	stat_modifiers = list(
 		STAT_ROB = 2,
@@ -539,7 +544,7 @@
 /datum/category_item/setup_option/background/origin/pirate
 	name = "Career - Former Pirate"
 	desc = "Early on in your life you became a pirate for personal reasons. You may have been a void wolf or apart of a named group of space raiders, regardless of your decisions you spent a \
-	period attacking other ships, frontier colonies, and looting the after effects of the battles for anything of value. For whatever reason you gave up that life to become an honest \
+	period attacking other ships, frontier colonies, and looting the after effects of battles for anything of value. For whatever reason you gave up that life to become an honest \
 	(or dishonest) citizen of the colony."
 
 	stat_modifiers = list(
@@ -678,7 +683,7 @@
 	and made you extra paranoid, which can be a good thing when evading the law. Your experience with your own body has also let you learn a few medical tricks over the years, along with tolerance \
 	to most drugs so you can inject more than others."
 
-	//perks = list(/datum/perk/addict)
+	perks = list(/datum/perk/addict)
 
 	stat_modifiers = list(
 		STAT_ROB = -8,

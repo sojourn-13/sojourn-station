@@ -35,7 +35,7 @@
 
 /datum/perk/selfmedicated
 	name = "Medical Expertise"
-	desc = "You've been trained in the art of Soteria medicine, applying chemicals in the most efficient ways to lessen addiction chance and prevent as much nerve shock. "
+	desc = "You've been trained in the art of Soteria medicine, applying chemicals in the most efficient ways to lessen addiction chance and prevent as much nerve shock."
 	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/selfmedicated/assign(mob/living/carbon/human/H)
@@ -44,6 +44,38 @@
 	holder.metabolism_effects.nsa_threshold += 10
 
 /datum/perk/selfmedicated/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 1
+	holder.metabolism_effects.nsa_threshold -= 10
+	..()
+
+/datum/perk/solborn
+	name = "Sol Born"
+	desc = "Clean living in the Sol System has prevented you from building up a tolerance to most chemicals, your body can't handle the more hardcore drugs that most can and you find yourself getting \
+	addicted slightly easier."
+	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+
+/datum/perk/solborn/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 1.2
+	holder.metabolism_effects.nsa_threshold -= 15
+
+/datum/perk/solborn/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 1
+	holder.metabolism_effects.nsa_threshold += 15
+	..()
+
+/datum/perk/addict
+	name = "Chem Addict"
+	desc = "You've been an addict all your life, for whatever piss poor reason you've told yourself. Your body is able to handle a variety of drugs, more than the average person, but you get \
+	easily addicted to most of them."
+	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+
+/datum/perk/addict/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 2
+	holder.metabolism_effects.nsa_threshold += 50
+
+/datum/perk/addict/remove()
 	holder.metabolism_effects.addiction_chance_multiplier = 1
 	holder.metabolism_effects.nsa_threshold -= 10
 	..()
