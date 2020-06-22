@@ -32,6 +32,8 @@
 		STAT_BIO = 25,
 	)
 
+	perks = list(/datum/perk/selfmedicated)
+
 	// TODO: enable after baymed
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							///datum/computer_file/program/aidiag,
@@ -79,6 +81,8 @@
 		access_robotics, access_tox, access_tox_storage, access_moebius, access_xenobiology, access_xenoarch, access_research_equipment,
 		access_genetics
 	)
+
+	perks = list(/datum/perk/selfmedicated)
 
 	stat_modifiers = list(
 		STAT_MEC = 20,
@@ -128,6 +132,8 @@
 		STAT_COG = 20,
 		STAT_BIO = 25,
 	)
+
+	perks = list(/datum/perk/selfmedicated)
 
 	description = "The Roboticist is a specialised scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
 	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\

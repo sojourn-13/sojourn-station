@@ -13,7 +13,6 @@
 	var/list/stat_modifiers = list()  //STAT = number
 	var/list/perks = list()           //perk paths
 	var/allow_modifications = TRUE
-	var/list/restricted_to_species = list()
 
 /datum/category_item/setup_option/New()
 	. = ..()
@@ -30,18 +29,11 @@
 				restricted_jobs -= J.type
 			else if(J.department_flag & allowed_depts)
 				allowed_jobs |= J.type
-	/*for(var/race in playable_species)
-		var/datum/species/S = playable_species[species]
-		if(!S.setup_restricted)
-			if(S.type in allowed_race)
-				allowed_race -= S.type
-			else if
-*/
+
 /datum/category_item/setup_option/proc/apply(mob/living/carbon/human/character)
 	for(var/stat in src.stat_modifiers)
 		character.stats.changeStat(stat, stat_modifiers[stat])
 	for(var/perk in src.perks)
-		var/datum/perk/P = new perk
-		P.teach(character.stats)
+		character.stats.addPerk(perk)
 
 /datum/category_item/setup_option/proc/get_icon()
