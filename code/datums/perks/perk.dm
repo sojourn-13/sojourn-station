@@ -8,6 +8,29 @@
   * Perks are stored in a list within a stat_holder datum.
   */
 
+/obj/effect/statclick/perk
+	var/datum/perk/target_perk
+
+/obj/effect/statclick/perk/Initialize(_, datum/perk/perk)
+	target_perk = perk
+	return ..(_, perk.name, perk)
+
+/obj/effect/statclick/perk/update()
+	if(target_perk.cooldown_time > world.time)
+		name = "[target_perk.name] ([(target_perk.cooldown_time - world.time)/10] seconds)"
+	else if (target_perk.passivePerk)
+		name = "\[PASSIVE\] [target_perk.name]"
+	else
+		name = target_perk.name
+
+	desc = target_perk.desc
+	icon = target_perk.icon
+	icon_state = target_perk.icon_state + (target_perk.active ? "-on" : "-off")
+
+/obj/effect/statclick/perk/Click()
+	if(!target_perk.passivePerk)
+		target_perk.invoke()
+
 /datum/perk
 	var/name = "Perk"
 	var/desc = ""
@@ -15,6 +38,16 @@
 	var/icon_state = ""
 	var/mob/living/carbon/human/holder
 	var/active = TRUE
+	var/passivePerk = TRUE
+	var/obj/effect/statclick/perk/statclick
+	var/cooldown_time = 0
+
+/datum/perk/proc/update_stat()
+	statclick.update()
+
+/datum/perk/New()
+	..()
+	statclick = new(null, src)
 
 /datum/perk/Destroy()
 	holder = null
@@ -29,8 +62,18 @@
 	SHOULD_CALL_PARENT(TRUE)
 	qdel(src)
 
-/datum/perk/proc/activate()
-	if(is_active() && deactivate(holder))
+/datum/perk/proc/invoke()
+	if(passivePerk)
+		log_debug("[usr] attempted to invoke a passive perk [src] - how?")
+		return
+
+	if(active && deactivate(holder))
 		to_chat(usr, "You deactivate [src]")
 	else if(activate(holder))
 		to_chat(usr, "You activate [src]")
+
+/datum/perk/proc/activate()
+	//log_debug("Ah, fuck, I can't believe you've done this.  Perk [src] without a custom defined activate called")
+
+/datum/perk/proc/deactivate()
+	//log_debug("Ah, fuck, I can't believe you've done this.  Perk [src] without a custom defined deactivate called")
