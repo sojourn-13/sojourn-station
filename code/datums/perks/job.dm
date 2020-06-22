@@ -73,11 +73,11 @@
 /datum/perk/addict/assign(mob/living/carbon/human/H)
 	..()
 	holder.metabolism_effects.addiction_chance_multiplier = 2
-	holder.metabolism_effects.nsa_threshold += 50
+	holder.metabolism_effects.nsa_threshold += 20
 
 /datum/perk/addict/remove()
 	holder.metabolism_effects.addiction_chance_multiplier = 1
-	holder.metabolism_effects.nsa_threshold -= 10
+	holder.metabolism_effects.nsa_threshold -= 20
 	..()
 
 /datum/perk/merchant

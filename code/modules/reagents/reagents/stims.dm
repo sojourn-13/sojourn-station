@@ -395,7 +395,7 @@
 	color = "#ffb3b7"
 	overdose = REAGENTS_OVERDOSE - 21
 	nerve_system_accumulations = 70
-	addiction_chance = 70
+	addiction_chance = 90
 
 /datum/reagent/stim/menace/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "menace")
