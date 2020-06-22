@@ -99,13 +99,13 @@ obj/structure/salvageable/computer/Initialize()
 		/obj/item/weapon/stock_parts/micro_laser/high = 20,
 		/obj/item/weapon/stock_parts/matter_bin/adv = 20,
 		/obj/item/weapon/stock_parts/matter_bin/adv = 20,
-		/obj/item/stack/material/steel{amount = 20} = 40,
-		/obj/item/stack/material/glass{amount = 20} = 40,
-		/obj/item/stack/material/plastic{amount = 20} = 40,
-		/obj/item/stack/material/plasteel{amount = 10} = 40,
-		/obj/item/stack/material/silver{amount = 10} = 20,
-		/obj/item/stack/material/gold{amount = 10} = 20,
-		/obj/item/stack/material/plasma{amount = 10} = 20
+		/obj/item/stack/material/steel{amount = 10} = 40,
+		/obj/item/stack/material/glass{amount = 10} = 40,
+		/obj/item/stack/material/plastic{amount = 10} = 40,
+		/obj/item/stack/material/plasteel{amount = 5} = 40,
+		/obj/item/stack/material/silver{amount = 5} = 20,
+		/obj/item/stack/material/gold{amount = 5} = 20,
+		/obj/item/stack/material/plasma{amount = 5} = 20
 	)
 
 /obj/structure/salvageable/implant_container
@@ -130,7 +130,7 @@ obj/structure/salvageable/computer/Initialize()
 		/obj/item/weapon/implanter = 30,
 		/obj/item/stack/material/steel{amount = 10} = 30,
 		/obj/item/stack/material/glass{amount = 10} = 30,
-		/obj/item/stack/material/silver{amount = 10} = 30
+		/obj/item/stack/material/silver{amount = 5} = 30
 	)
 
 obj/structure/salvageable/implant_container/Initialize()
@@ -234,7 +234,12 @@ obj/structure/salvageable/personal/Initialize()
 		/obj/item/weapon/computer_hardware/processor_unit/adv = 60,
 		/obj/item/weapon/computer_hardware/hard_drive/cluster = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/advanced/shady = 50,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/advanced/nuke = 50
+		/obj/item/weapon/computer_hardware/hard_drive/portable/advanced/nuke = 50,
+		/obj/item/weapon/stock_parts/capacitor/alien_capacitor
+		/obj/item/weapon/stock_parts/scanning_module/alien = 40,
+		/obj/item/weapon/stock_parts/manipulator/alien = 40,
+		/obj/item/weapon/stock_parts/micro_laser/alien = 40,
+		/obj/item/weapon/stock_parts/matter_bin/alien = 40,
 	)
 
 obj/structure/salvageable/bliss/Initialize()

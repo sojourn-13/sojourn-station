@@ -47,7 +47,7 @@
 	desc = "The maunkyne are the absolute lowest dregs of sablekyne society, users of a highly addictive drug they are permanately enslaved to. \
 			On their homeplanet maunkyne are outcasts, executed in the north for the crime of existing and exiled in the south to the unforgiving desert wastes. \
 			As a maunkyne you might be able to pass as a normal sablekyne, even amoung your more aware kin, but the colonies strict regulation on demon powder has left you without your fix. \
-			Without it, your body is weak, extremely so but your upbringing in the criminal underworld of Onkarth has left you with a feral cunning. \
+			Without it, your body is weak and prone to further addiction but your upbringing in the criminal underworld of Onkarth has left you with a feral cunning and tolerance to most drugs. \
 			Even the most 'noble' maunkyne knows much about medicine, in particular the creation of highly profitable and illegal drugs. \
 			Due to maunkyne's innate addictions they are barred from command and security roles."
 
@@ -88,9 +88,9 @@
 
 /datum/category_item/setup_option/background/origin/castallen
 	name = "Kriosan - Castellen"
-	desc = "The castellen are the noble elite of the kriosan, genetically superior to the common folk they rule over but rarely found outside their own empire. \
-			Castellens are widely known for their considerable size and physical merit but lack the practical training in most areas compared to others. \
-			A lifetime of being trained for the realm of politics has made them quick to understand new things but abyssmal at more practical pursuits. \
+	desc = "The castellen are the noble elite and highborn of the kriosan, genetically superior to the common folk they rule over but rarely found outside their own empire. \
+			Castellens are widely known for their considerable size and physical merit but lack the practical training in most areas compared to others, in particular those dealing with people or \
+			kriosans trademark rifles. A lifetime of being trained for the realm of politics and artisanship has made them quick to understand new things but abyssmal at more other pursuits. \
 			On top of all that, a castellens political affiliations, be it present or former, bar them from command roles due to the very obvious conflict of interests."
 
 	restricted_to_species = list(FORM_KRIOSAN)
@@ -101,9 +101,9 @@
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
-		STAT_VIG = 0,
-		STAT_BIO = -10,
-		STAT_MEC = -20,
+		STAT_VIG = -20,
+		STAT_BIO = -20,
+		STAT_MEC = 10,
 		STAT_COG = 10
 	)
 
