@@ -21,9 +21,8 @@
 /datum/perk/timeismoney
 	name = "Time is Money"
 	desc = "Sometimes you just need to run away from a bad deal, so fast you forget how to use your hands as you sprint."
-	var/cooldown_time = 0
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/timeismoney/activate()
 	if(world.time < cooldown_time)

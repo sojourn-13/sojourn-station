@@ -388,8 +388,7 @@
 	for(var/name in stat_modifiers)
 		H.stats.changeStat(name, stat_modifiers[name])
 	for(var/perk in perks)
-		var/datum/perk/P = new perk
-		P.teach(H.stats)
+		H.stats.addPerk(perk)
 	if(H.species.reagent_tag == IS_CHTMANT)
 		H.faction = "roach"
 		H.add_language(LANGUAGE_CHTMANT)

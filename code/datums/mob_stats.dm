@@ -100,6 +100,7 @@
 		var/datum/perk/P = new perkType
 		perks += P
 		P.assign(holder)
+		perk_stats += P.statclick
 
 
 /// The main, public proc to remove a perk from a mob. Accepts a path or a stringified path.

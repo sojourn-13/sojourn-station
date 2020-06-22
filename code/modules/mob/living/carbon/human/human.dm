@@ -97,9 +97,17 @@
 				stat("Chemical Storage", mind.changeling.chem_charges)
 				stat("Genetic Damage Time", mind.changeling.geneticdamage)
 
+
 		var/obj/item/weapon/implant/core_implant/cruciform/C = get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
 		if (C)
 			stat("Cruciform", "[C.power]/[C.max_power]")
+
+	else if(statpanel("Perks"))
+		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
+			perkHolder.update()
+
+	if(mind)
+		statpanel("Perks",src.stats.perk_stats)
 
 /mob/living/carbon/human/ex_act(severity)
 	if(!blinded)
