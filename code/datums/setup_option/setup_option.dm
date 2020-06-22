@@ -13,7 +13,7 @@
 	var/list/stat_modifiers = list()  //STAT = number
 	var/list/perks = list()           //perk paths
 	var/allow_modifications = TRUE
-	//var/list/species_allowed = list()
+	var/list/restricted_to_species = list()
 
 /datum/category_item/setup_option/New()
 	. = ..()

@@ -61,6 +61,10 @@
 	var/dat = "<table><tr style='vertical-align:top'><td style='padding-right:10px'>"
 
 	for(var/datum/category_item/setup_option/option in get_options())
+		if(LAZYLEN(option.restricted_to_species) > 0)
+			if(!LAZYISIN(option.restricted_to_species, pref.species))
+				continue
+
 		var/icon/I = option.get_icon()
 		var/img
 		if(I)
