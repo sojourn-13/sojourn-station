@@ -7,6 +7,7 @@
 	layer = BELOW_OBJ_LAYER
 	use_power = IDLE_POWER_USE
 	var/obj/machinery/computer/rdconsole/linked_console
+	unsuitable_materials = list() //So we can use biomatter and others
 
 /obj/machinery/r_n_d/attack_hand(mob/user)
 	return
