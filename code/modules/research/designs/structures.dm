@@ -1,6 +1,9 @@
 // For items that are not pickable
 /datum/design/research/structure/bidon
-	build_type = AUTOLATHE | PROTOLATHE	// here should be machine that prints structures
+	build_type = AUTOLATHE | PROTOLATHE// here should be machine that prints structures
+
+/datum/design/research/structure/bidonadv
+	build_type = AUTOLATHE | PROTOLATHE
 
 /datum/design/research/structure/bidon
 	name = "B.I.D.O.N. canister"
