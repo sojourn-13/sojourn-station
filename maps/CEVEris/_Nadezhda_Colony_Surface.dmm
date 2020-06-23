@@ -4962,6 +4962,7 @@
 "akJ" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/industrial/hatch,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/junk)
 "akK" = (
@@ -9875,7 +9876,6 @@
 /obj/item/weapon/folder/black,
 /obj/item/weapon/folder/black,
 /obj/item/weapon/folder/black,
-/obj/item/weapon/stamp/hos2,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/smc/quarters)
 "avM" = (
@@ -11030,6 +11030,7 @@
 	desc = "Never forget their name. Never.";
 	oldified = 1
 	},
+/obj/item/weapon/stamp/hos2,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/smc/quarters)
 "ayC" = (
