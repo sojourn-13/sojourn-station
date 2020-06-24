@@ -69917,8 +69917,14 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc{
+	pixel_x = 5;
+	pixel_y = 8
+	},
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/storage/primary)

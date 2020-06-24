@@ -6509,6 +6509,9 @@
 	icon_state = "tube1"
 	},
 /obj/structure/closet/secure_closet/armorer,
+/obj/item/ammo_magazine/ammobox/hrifle_small,
+/obj/item/ammo_magazine/hrifle/rubber,
+/obj/item/ammo_magazine/hrifle,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/security/tactical)
 "anF" = (
