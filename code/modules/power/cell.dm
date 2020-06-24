@@ -185,9 +185,13 @@
 	explosion(T, devastation_range, heavy_impact_range, light_impact_range, flash_range)
 
 /obj/item/weapon/cell/proc/corrupt()
-	charge /= 2
-	maxcharge /= 2
-	if (prob(10))
+	if(charge<2)
+		charge = 0
+		return
+	else
+		charge = charge/2
+		maxcharge = maxcharge/2
+	if (prob(5))
 		rigged = 1 //broken batterys are dangerous
 
 /obj/item/weapon/cell/emp_act(severity)

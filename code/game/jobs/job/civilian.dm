@@ -9,7 +9,7 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
+	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 3000
 	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks
 	stat_modifiers = list(
@@ -45,7 +45,7 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
+	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 750
 	wage = WAGE_LABOUR_DUMB //They should get paid by making food.
 	stat_modifiers = list(
@@ -84,7 +84,7 @@
 	selection_color = "#dddddd"
 	//alt_titles = list("Hydroponicist")
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
-	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
+	access = list(access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
 
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
@@ -121,7 +121,7 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	access = list(access_maint_tunnels, access_theatre)
+	access = list(access_theatre)
 	outfit_type = /decl/hierarchy/outfit/job/service/actor
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
 	//alt_titles = list("Artist","Clown","Entertainer","Mime")

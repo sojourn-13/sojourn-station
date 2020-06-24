@@ -159,6 +159,7 @@
 	)
 
 //just a clamp with a flat surface to hammer something
+/*
 /datum/craft_recipe/tool/hammer_addon
 	name = "tool mod: flat surface"
 	result = /obj/item/weapon/tool_upgrade/augment/hammer_addon
@@ -168,7 +169,7 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
 		list(QUALITY_WELDING, 10, 150),
 	)
-
+*/
 //An improvised adapter to fit a larger power cell. This is pretty fancy as crafted items go
 //Requires an APC frame, a fuckton of wires, a large cell, and several tools
 /datum/craft_recipe/tool/cell_mount

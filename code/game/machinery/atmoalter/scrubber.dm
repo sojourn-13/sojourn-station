@@ -249,6 +249,7 @@
 	desc = "You feel warm being near the tree that holds up the heavens."
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree"
+	anchored = 1
 
 	use_power = 0
 	idle_power_usage = 0

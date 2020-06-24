@@ -33,7 +33,7 @@
 	minbodytemp = 0
 
 	faction = "mimic"
-	move_to_delay = 24
+	move_to_delay = 6
 
 /mob/living/simple_animal/hostile/mimic/crate/Initialize()
 	icon_state = "mimic_[pick("trashcart","crate","bin","steel","wood","med","freezer","wep","stool","body","ore")]"

@@ -292,7 +292,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors
-	disk_name = "Technomancers LAT-018 Conveyors"
+	disk_name = "Artificer's LAT-018 Conveyors"
 	icon_state = "technomancers"
 
 	license = -1

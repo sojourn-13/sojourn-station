@@ -20,6 +20,57 @@
 
 	see_votes = TRUE
 
+/*To prevent abuse and rule-by-salt, the evac vote weights each player's vote based on a few parameters
+	If you are alive and have been for a while, then you have the normal 1 vote
+	If you are dead, or just spawned, you get only 0.3 votes
+	If you are an antag or a head of staff, you get 2 votes
+*/
+#define VOTE_WEIGHT_LOW	0.3
+#define VOTE_WEIGHT_NORMAL	1
+#define VOTE_WEIGHT_HIGH	2
+#define MINIMUM_VOTE_LIFETIME	15 MINUTES
+
+/datum/poll/restart/get_vote_power(var/client/C)
+	if (!istype(C))
+		return 0 //Shouldnt be possible, but safety
+
+	var/mob/M = C.mob
+	if (!M || isghost(M) || isnewplayer(M) || ismouse(M) || isdrone(M))
+		return VOTE_WEIGHT_LOW
+
+	var/datum/mind/mind = M.mind
+	if (!mind)
+		//If you don't have a mind in your mob, you arent really alive
+		return VOTE_WEIGHT_LOW
+
+	//Antags control the story of the round, they should be able to delay evac in order to enact their
+	//fun and interesting plans
+	if (player_is_antag(mind))
+		return VOTE_WEIGHT_HIGH
+
+	//How long has this player been alive
+	//This comes after the antag check because that's more important
+	var/lifetime = world.time - mind.creation_time
+	if (lifetime <= MINIMUM_VOTE_LIFETIME)
+		//If you just spawned for the vote, your weight is still low
+		return VOTE_WEIGHT_LOW
+
+
+	//Heads of staff are in a better position to understand the state of the ship and round,
+	//their vote is more important.
+	//This is after the lifetime check to prevent exploits of instaspawning as a head when a vote is called
+	if (M.is_head_role())
+		return VOTE_WEIGHT_HIGH
+
+
+
+	//If we get here, its just a normal player who's been playing for at least 15 minutes. Normal weight
+	return VOTE_WEIGHT_NORMAL
+
+#undef VOTE_WEIGHT_LOW
+#undef VOTE_WEIGHT_NORMAL
+#undef VOTE_WEIGHT_HIGH
+#undef MINIMUM_VOTE_LIFETIME
 
 /datum/poll/restart/IsAdminOnly()
 	if(config.allow_vote_restart)
