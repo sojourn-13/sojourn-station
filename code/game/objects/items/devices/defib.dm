@@ -181,13 +181,11 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 7, MATERIAL_GLASS = 2, MATERIAL_GOLD = 7.75, MATERIAL_SILVER = 12.75) //Glass for the lights
 	origin_tech = list(TECH_BIO = 5, TECH_POWER = 3)
-
+	suitable_cell = /obj/item/weapon/cell/medium
 	oxygain = 20
 
 /obj/item/device/defib_kit/compact/loaded
-	suitable_cell = /obj/item/weapon/cell/medium
 	cell_type = /obj/item/weapon/cell/medium
-
 
 /obj/item/device/defib_kit/compact/combat
 	name = "combat defibrillator"
