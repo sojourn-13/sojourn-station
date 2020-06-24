@@ -11,11 +11,11 @@
 	name = "Night Vison Goggles"
 	desc = "Goggles that use a small cell to allow you to see in the dark."
 	materials = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2) //Sheet for each eye!
-	build_path = /obj/item/clothing/glasses/powered/night
+	build_path = /obj/item/clothing/glasses/powered/night //Also takes biomatter so work with the church!
 
 /datum/design/research/item/rig_nvgoggles
-	name = "Night Vison RIG Goggles"
-	desc = "RIG linked goggles that allow the user to see in darkness as if it was day."
+	name = "Night Vison Hardsuit Goggles"
+	desc = "Hardsuit linked goggles that allow the user to see in darkness as if it was day."
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_PLASTIC = 10, MATERIAL_URANIUM = 2) //Sheet for each eye!
 	build_path = /obj/item/rig_module/vision/nvg
 

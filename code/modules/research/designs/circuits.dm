@@ -381,7 +381,7 @@
 	name = "NTNet Quantum Relay"
 	build_path = /obj/item/weapon/circuitboard/ntnet_relay
 	sort_string = "WAAAA"
-
+	category = CAT_TCOM
 
 // Shield Generators
 /datum/design/research/circuit/shield
@@ -427,6 +427,7 @@
 //Industeral Printing
 
 /datum/design/research/circuit/industrial_printer
+	name = "Industrial Printer"
 	build_path = /obj/item/weapon/circuitboard/autolathe_industrial
 	sort_string = "VAAAH"
 	category = CAT_MACHINE
