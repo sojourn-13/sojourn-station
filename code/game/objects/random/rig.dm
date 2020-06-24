@@ -1,6 +1,7 @@
 /obj/random/rig
 	name = "random rig suit"
 	icon_state = "armor-blue"
+	spawn_nothing_percentage = 20
 
 /obj/random/rig/item_to_spawn()
 	return pickweight(list(
@@ -14,20 +15,20 @@
 	/obj/item/weapon/rig/industrial/equipped = 10,
 
 	//Head of staff
-	/obj/item/weapon/rig/ce = 10,
-	/obj/item/weapon/rig/ce/equipped = 5,
-	/obj/item/weapon/rig/hazmat = 10,
-	/obj/item/weapon/rig/hazmat/equipped = 5,
+	//obj/item/weapon/rig/ce = 10,
+	//obj/item/weapon/rig/ce/equipped = 5,
+	/obj/item/weapon/rig/hazmat = 5,
+	/obj/item/weapon/rig/hazmat/equipped = 2,
 
 	//Heavy armor
-	/obj/item/weapon/rig/combat = 10,
-	/obj/item/weapon/rig/combat/ironhammer = 10,
-	/obj/item/weapon/rig/hazard = 10,
+	//obj/item/weapon/rig/combat = 10,
+	//obj/item/weapon/rig/combat/ironhammer = 10,
+	/obj/item/weapon/rig/hazard = 5,
 
 	//The ones below here come with built in weapons
-	/obj/item/weapon/rig/combat/equipped = 4,
-	/obj/item/weapon/rig/combat/ironhammer/equipped = 4,
-	/obj/item/weapon/rig/hazard/equipped = 4,
+	//obj/item/weapon/rig/combat/equipped = 4,
+	//obj/item/weapon/rig/combat/ironhammer/equipped = 4,
+	/obj/item/weapon/rig/hazard/equipped = 2,
 	))
 
 /obj/random/rig/low_chance
@@ -66,6 +67,7 @@
 /obj/random/rig_module
 	name = "random hardsuit module"
 	icon_state = "box-orange"
+	spawn_nothing_percentage = 40
 
 /obj/random/rig_module/item_to_spawn()
 	return pickweight(list(
@@ -127,6 +129,7 @@
 /obj/random/rig_module/rare
 	name = "random rare hardsuit module"
 	icon_state = "box-red"
+	spawn_nothing_percentage = 60
 
 /obj/random/rig_module/rare/item_to_spawn()
 	return pickweight(list(

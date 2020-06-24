@@ -35,12 +35,12 @@
 
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible/New(var/newloc,var/datum/seed/newseed)
 	..()
-	seed = newseed
-	dead = 0
-	age = 1
-	if(seed)
+	if(newseed != null)
+		seed = newseed
+		dead = 0
+		age = 1
 		health = seed.get_trait(TRAIT_ENDURANCE)
-	lastcycle = world.time
+		lastcycle = world.time
 	pixel_y = rand(-5,5)
 	check_health()
 

@@ -1,19 +1,20 @@
 /mob/living/simple_animal/hostile/syndicate
 	name = "\improper Syndicate operative"
-	desc = "Death to the Company."
+	desc = "A mercenary working for some cladestine group."
 	icon = 'icons/mob/mobs-humanoid.dmi'
 	icon_state = "syndicate"
 	icon_dead = "syndicate_dead" //TODO: That icon doesn't exist
 	icon_gib = "syndicate_gib"
-	speak_chance = 0
+	speak_chance = 5
 	turns_per_move = 5
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "hits"
 	speed = 4
 	stop_automated_movement_when_pulled = 0
-	maxHealth = 100
-	health = 100
+	maxHealth = 150
+	health = 150
+	vision_range = 12
 	harm_intent_damage = 5
 	melee_damage_lower = 10
 	melee_damage_upper = 10
@@ -32,7 +33,7 @@
 	max_n2 = 0
 	unsuitable_atoms_damage = 15
 	environment_smash = 1
-	faction = "syndicate"
+	faction = "pirate"
 	status_flags = CANPUSH
 
 /mob/living/simple_animal/hostile/syndicate/death()
@@ -47,7 +48,7 @@
 	return
 
 ///////////////Sword and shield////////////
-
+/*
 /mob/living/simple_animal/hostile/syndicate/melee
 	melee_damage_lower = 20
 	melee_damage_upper = 25
@@ -80,7 +81,7 @@
 	else
 		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
 	return 0
-
+*/
 
 /mob/living/simple_animal/hostile/syndicate/melee/space
 	min_oxy = 0
@@ -142,7 +143,7 @@
 	melee_damage_upper = 15
 	attacktext = "cut"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
-	faction = "syndicate"
+	faction = "pirate"
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0

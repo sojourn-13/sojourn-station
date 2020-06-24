@@ -1,3 +1,4 @@
+/*
 /datum/perk/combat
 	var/streak = ""
 	var/max_streak_length = 6
@@ -42,3 +43,4 @@
 /datum/perk/combat/proc/reset_streak(mob/living/new_target)
 	current_target = new_target
 	streak = ""
+*/

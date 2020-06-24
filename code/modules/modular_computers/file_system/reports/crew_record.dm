@@ -58,9 +58,9 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_account((H && H.mind) ? H.mind.initial_account.account_number : "000000")
 
 	// TODO: enable after baymed
-	//set_species(H ? H.get_species() : SPECIES_HUMAN)
+	set_species(H ? H.get_species() : SPECIES_HUMAN)
 
-	set_species("Human")
+	//set_species(/datum/species)
 	//set_branch(H ? (H.char_branch && H.char_branch.name) : "None")
 	//set_rank(H ? (H.char_rank && H.char_rank.name) : "None")
 

@@ -1,9 +1,8 @@
 /datum/perk/laststand //Sablekyne perk, allows them to ignore pain for roughly a minute.
 	name = "Last Stand"
 	desc = "As a sablekyne your body is a tank, through will and biology you can ignore pain entirely for a short amount of time."
-	var/cooldown_time = 0
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/laststand/activate()
 	var/mob/living/carbon/human/user = usr
@@ -21,9 +20,8 @@
 /datum/perk/suddenbrilliance //Mar'qua perk that increases there mental stats across the board.
 	name = "Sudden Brilliance"
 	desc = "Your intelligence is above the 'lesser races' and even the humblest of Mar'qua can prove it easily in moments of focus. Use this to center your thoughts and increase all your mental abilities."
-	var/cooldown_time = 0
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/suddenbrilliance/activate()
 	var/mob/living/carbon/human/user = usr
@@ -41,9 +39,8 @@
 /datum/perk/tenacity //Human perk that functions as an at will tricord.
 	name = "Tenacity"
 	desc = "You pull what made your ancestors conquer the stars from your will, recovering from a small amount of injuries and potentially stabilizing yourself to live a bit longer."
-	var/cooldown_time = 0
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/tenacity/activate()
 	var/mob/living/carbon/human/user = usr
@@ -61,9 +58,8 @@
 /datum/perk/gutsandglory //Human perk that functions as an at will organ/internal bleeding heal.
 	name = "Guts and Glory"
 	desc = "You pull what made your ancestors conquer the stars from your will, letting your body recover somewhat from any internal damage at the cost of becoming exhausted while it works."
-	var/cooldown_time = 0
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/gutsandglory/activate()
 	var/mob/living/carbon/human/user = usr
@@ -81,9 +77,8 @@
 /datum/perk/enhancedsenses //Kriosan perk that gives them a boost to toughness and vigilance.
 	name = "Enhance Senses"
 	desc = "You're a predator at heart and have the senses to match, for a short time your body toughens and your aim improves drastically as your senses enhance."
-	var/cooldown_time = 0
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/enhancedsenses/activate()
 	var/mob/living/carbon/human/user = usr
@@ -100,10 +95,10 @@
 
 /datum/perk/recklessfrenzy //Akula perk that dumps all stats in favor of upping melee through the roof.
 	name = "Reckless Frenzy"
-	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time."
-	var/cooldown_time = 0
+	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time. The rush of chemicals is also highly adddictive \
+	and often times will leave your body weaker for a short time."
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/recklessfrenzy/activate()
 	var/mob/living/carbon/human/user = usr
@@ -122,9 +117,8 @@
 /datum/perk/adrenalineburst //Naramad perk that gives them the zoomies.
 	name = "Adrenaline Burst"
 	desc = "Naramads are built for extreme speed, be it for charging forward and retreating back."
-	var/cooldown_time = 0
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/adrenalineburst/activate()
 	var/mob/living/carbon/human/user = usr
@@ -142,10 +136,9 @@
 
 /datum/perk/purgetoxins //Cindarite perk that purges the blood of toxins and removes addiction.
 	name = "Purge Toxins"
-	desc = "You force your body to begin the process of removing poisons from your blood. All toxins and addictions are slowly purged but the effect leaves you exhausted."
-	var/cooldown_time = 0
+	desc = "You force your body to begin the process of removing toxins from your blood. All toxins and addictions are slowly purged but the effect leaves you exhausted."
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/purgetoxins/activate()
 	var/mob/living/carbon/human/user = usr
@@ -163,9 +156,8 @@
 /datum/perk/backup //Cindarite perk that purges the blood of toxins and removes addiction.
 	name = "Back Up"
 	desc = "You retrieve your custom made back up tools hidden on your person somewhere, along with the tied coils that form a make shift belt."
-	var/cooldown_time = 0
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/backup/activate()
 	var/mob/living/carbon/human/user = usr
@@ -184,9 +176,8 @@
 /datum/perk/nightvision //A universal perk for races that can see in the dark.
 	name = "Night Vision"
 	desc = "Due to the biology of your race you're capable of seeing in the dark. You need to stand still to focus and pick apart the light."
-	var/cooldown_time = 0
 	active = FALSE
-	toggleable = TRUE
+	passivePerk = FALSE
 
 /datum/perk/nightvision/toggle()
 	var/mob/living/carbon/human/user = usr

@@ -46,7 +46,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 
 	outfit_type = /decl/hierarchy/outfit/job/cargo/merchant
 
-	perks = list(/datum/perk/timeismoney)
+	perks = list(/datum/perk/timeismoney, /datum/perk/merchant)
 
 /obj/landmark/join/start/merchant
 	name = "Chief Executive Officer"
@@ -69,9 +69,11 @@ Counsel the council on directing the colony towards profitable opportunities."
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
 
 	access = list(
-		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mining,
+		access_mailsorting, access_cargo, access_cargo_bot, access_mining,
 		access_mining_station
 	)
+
+	perks = list(/datum/perk/merchant)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
@@ -130,6 +132,7 @@ The deep tunnels are far less dangerous than the wilderness, but pack well - dis
 		access_mining_station
 	)
 
+	perks = list(/datum/perk/merchant)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,

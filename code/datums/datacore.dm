@@ -75,6 +75,9 @@ var/global/ManifestJSON
 		if(real_rank in cargo_positions)
 			car[name] = rank
 			department = 1
+		if(real_rank in prospector_positions)
+			car[name] = rank
+			department = 1
 		if(real_rank in church_positions)
 			chr[name] = rank
 			department = 1
@@ -422,6 +425,12 @@ var/global/ManifestJSON
 				sci.Swap(1, sci.len)
 
 		if(real_rank in church_positions)
+			chr[++chr.len] = list("name" = name, "rank" = rank, "active" = isactive)
+			department = 1
+			if(depthead && chr.len != 1)
+				chr.Swap(1, chr.len)
+
+		if(real_rank in prospector_positions)
 			chr[++chr.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			if(depthead && chr.len != 1)

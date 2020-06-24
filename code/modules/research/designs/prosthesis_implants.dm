@@ -65,3 +65,8 @@
 	name = "freedom"
 	build_path = /obj/item/weapon/implantcase/freedom
 	sort_string = "MFAAB"
+
+/datum/design/research/item/implant/alarm
+	name = "death alarm"
+	build_path = /obj/item/weapon/implantcase/death_alarm
+	sort_string = "MFAAD"

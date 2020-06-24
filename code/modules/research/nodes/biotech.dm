@@ -193,7 +193,8 @@
 							/datum/design/research/item/chem_dispenser,
 							/datum/design/research/item/medhud,
 							/datum/design/research/structure/bidonadv,
-							/datum/design/research/item/medical/compact_defibs
+							/datum/design/research/item/medical/compact_defibs,
+							/datum/design/research/item/implant/alarm
 							)
 
 /*
@@ -230,7 +231,8 @@
 							/datum/design/research/item/medical/adv_mass_spectrometer,
 							/datum/design/research/item/medical/adv_reagent_scanner,
 							/datum/design/research/item/weapon/chemsprayer,
-							/datum/design/research/item/weapon/rapidsyringe
+							/datum/design/research/item/weapon/rapidsyringe,
+							/datum/design/research/item/ammo/rapidsyringe
 							)
 
 /datum/technology/top_biotech

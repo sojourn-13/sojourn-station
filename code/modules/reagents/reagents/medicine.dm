@@ -215,12 +215,20 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	reagent_state = LIQUID
 	color = "#8040FF"
 	scannable = 1
+	overdose = REAGENTS_OVERDOSE
 
 /datum/reagent/medicine/tricordrazine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.adjustOxyLoss(-0.6 * effect_multiplier)
 	M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
 	M.adjustToxLoss(-0.3 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+
+/datum/reagent/medicine/tricordrazine/overdose(var/mob/living/carbon/M, var/alien)
+	. = ..()
+	M.adjustToxLoss(10)
+	M.adjustBrainLoss(1)
+	if(M.losebreath < 15)
+		M.losebreath++
 
 /datum/reagent/medicine/cryoxadone
 	name = "Cryoxadone"
@@ -988,6 +996,8 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	reagent_state = LIQUID
 	color = "#5f95e2"
 	nerve_system_accumulations = 0
+	addiction_chance = 100
+
 	appear_in_default_catalog = FALSE
 
 /datum/reagent/stim/robustitol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -997,6 +1007,10 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	M.stats.addTempStat(STAT_BIO, -100, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_VIG, -100, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_MEC, -100, STIM_TIME, "robustitol")
+
+/datum/reagent/drug/robustitol/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")
+	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")
 
 /datum/reagent/medicine/sergatonin
 	name = "Naratonin"

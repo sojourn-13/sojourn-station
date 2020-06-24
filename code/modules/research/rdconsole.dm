@@ -379,6 +379,10 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	return designs_list
 
 /obj/machinery/computer/rdconsole/attack_hand(mob/user)
+	if(!usr.stat_check(STAT_COG, 20))
+		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		return
+
 	if(..())
 		return
 	ui_interact(user)

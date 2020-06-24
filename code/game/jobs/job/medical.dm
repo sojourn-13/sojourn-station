@@ -30,6 +30,8 @@
 		STAT_COG = 25
 	)
 
+	perks = list(/datum/perk/selfmedicated)
+
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor,
@@ -72,13 +74,15 @@
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
-		access_genetics, access_maint_tunnels, access_external_airlocks, access_research_equipment
+		access_genetics, access_external_airlocks, access_research_equipment
 	)
 
 	stat_modifiers = list(
 		STAT_BIO = 40,
 		STAT_COG = 10
 	)
+
+	perks = list(/datum/perk/selfmedicated)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -117,6 +121,8 @@
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology
 	)
+
+	perks = list(/datum/perk/selfmedicated)
 
 	stat_modifiers = list(
 		STAT_TGH = 20,
@@ -170,6 +176,8 @@
 		STAT_VIG = 5
 	)
 
+	perks = list(/datum/perk/selfmedicated)
+
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/camera_monitor)
@@ -213,6 +221,8 @@
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 	)
+
+	perks = list(/datum/perk/selfmedicated)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,

@@ -1,6 +1,7 @@
 /obj/random/ammo
 	name = "random ammunition"
 	icon_state = "ammo-green"
+	spawn_nothing_percentage = 40
 
 /obj/random/ammo/item_to_spawn()
 	return pickweight(list(
@@ -52,6 +53,7 @@
 /obj/random/ammo_fancy
 	name = "random advanced ammunition"
 	icon_state = "ammo-blue"
+	spawn_nothing_percentage = 60
 
 /obj/random/ammo_fancy/item_to_spawn()
 	return pick(/obj/item/ammo_magazine/rifle/rubber,
@@ -96,6 +98,7 @@
 /obj/random/ammo/shotgun
 	name = "random shotgun ammunition"
 	icon_state = "ammo-orange"
+	spawn_nothing_percentage = 60
 
 /obj/random/ammo/shotgun/item_to_spawn()
 	return pickweight(list(
@@ -113,6 +116,7 @@
 /obj/random/ammo_lowcost
 	name = "random low tier ammunition"
 	icon_state = "ammo-grey"
+	spawn_nothing_percentage = 40
 
 /obj/random/ammo_lowcost/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/storage/box/shotgunammo/beanbags = 4,

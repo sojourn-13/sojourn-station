@@ -189,7 +189,7 @@
 	siemens_coefficient = 0.7
 	light_overlay = "helmet_light_ihs"
 
-/obj/item/clothing/suit/space/void/security/odst
+/obj/item/clothing/suit/space/void/odst
 	name = "Sol Federation voidsuit"
 	desc = "Do you wanna be a hero in the sky? High adventure, higher pay, join the Space Marines today."
 	icon_state = "odst"

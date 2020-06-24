@@ -66,6 +66,24 @@
 						)
 
 
+/datum/technology/hardsuit_nonlethal
+	name = "Mounted Non-Lethal"
+	desc = "Electrical-shock weapon for hardsuits."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.3
+	y = 0.3
+	icon = "rigtaser"
+
+	required_technologies = list(/datum/technology/advanced_nonlethal)
+	required_tech_levels = list()
+	cost = 4500
+
+	unlocks_designs = list(	/datum/design/research/item/rig_grenade_launcher,
+							/datum/design/research/item/rig_flash,
+							/datum/design/research/item/tasermount
+						)
+
 /*/datum/technology/sec_computers
 	name = "Security Computers"
 	desc = "Security Computers"
@@ -160,4 +178,19 @@
 	cost = 5000
 
 	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun, /datum/design/research/item/weapon/lasercannon)
+
+/datum/technology/riglaser_weaponry
+	name = "Hardsuit Laser Weaponry"
+	desc = "Hardsuit Laser Weaponry"
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.8
+	y = 0.5
+	icon = "riglethals"
+
+	required_technologies = list(/datum/technology/laser_weaponry)
+	required_tech_levels = list()
+	cost = 7500
+
+	unlocks_designs = list(/datum/design/research/item/lasercannon, /datum/design/research/item/lasermount)
 

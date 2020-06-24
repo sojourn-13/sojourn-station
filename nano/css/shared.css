@@ -931,6 +931,9 @@ img.sciTechTreeIconToolTip {
 .icon-rigscanner { background-position: -160px -256px; }
 .icon-rigtaser { background-position: -192px -256px; }
 .icon-rignuclearreactor { background-position: -224px -256px; }
+.icon-riglethals { background-position: -256px -96px; }
+.icon-rigstorage { background-position: -256px -224px; }
+.icon-rigmining { background-position: -256px -160px; }
 
 .icon-shield { background-position: 0px -288px; }
 .icon-fusion { background-position: -32px -288px; }

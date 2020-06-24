@@ -132,6 +132,10 @@
 	)
 
 	custom_action(index, diff, atom/used_atom, mob/user)
+		if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+			return
+
 		if(!..())
 			return 0
 
