@@ -2143,3 +2143,8 @@
 	result = "balloon"
 	required_reagents = list("cream" = 1, "bluecuracao" = 1)
 	result_amount = 2
+
+/datum/chemical_reaction/combat
+	result = "chemweapon1"
+	required_reagents = list("hydrazine" = 1, "cyanide" = 1, "potassium_chloride" = 1, "lexorin" = 1)
+	result_amount = 2

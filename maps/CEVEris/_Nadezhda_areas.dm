@@ -623,6 +623,10 @@
 	name = "\improper Fitness Room"
 	icon_state = "fitness"
 
+/area/nadezhda/crew_quarters/pool
+	name = "\improper Public Pool"
+	icon_state = "fitness"
+
 /area/nadezhda/crew_quarters/cafeteria
 	name = "\improper Cafeteria"
 	icon_state = "cafeteria"

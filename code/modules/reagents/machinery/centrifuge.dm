@@ -188,9 +188,16 @@
 		var/data = mainBeaker.reagents.get_data("blood")
 		if (data)
 			var/list/datum/disease2/disease/virus = data["virus2"]
-			for (var/ID in virus)
-				var/obj/item/weapon/virusdish/dish = new (loc)
-				dish.virus2 = virus[ID].getcopy()
+			//visible_message("Virus data: [virus]")
+			if(virus)
+				for (var/ID in virus)
+					if(virus[ID])
+						//visible_message("Virus data: [virus] - [ID]")
+						var/obj/item/weapon/virusdish/dish = new (loc)
+						dish.virus2 = virus[ID].getcopy()
+					else
+						visible_message("\icon[src]\The [src] states: Nothing to isolate!")
+						break
 	stop()
 	playsound(src.loc, 'sound/machines/ping.ogg', 50, 1 -3)
 	visible_message("\icon[src]\The [src] pings indicating that cycle is complete.")

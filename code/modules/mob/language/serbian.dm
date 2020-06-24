@@ -1,7 +1,7 @@
 
 /datum/language/serbian
 	name = LANGUAGE_SERBIAN
-	desc = "Language popular among Serbian mercenaries, pirates and habitants of Predstraza planet."
+	desc = "Language popular among Serbian mercenaries, pirates, and criminals."
 	colour = "serbian"
 	key = "x"
 	space_chance = 80
