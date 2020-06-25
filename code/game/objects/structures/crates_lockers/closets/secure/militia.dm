@@ -89,6 +89,9 @@
 	new /obj/item/weapon/storage/belt/webbing/black(src)
 	new /obj/item/clothing/suit/armor/flackvest/militia(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
+	new /obj/item/ammo_magazine/ammobox/hrifle_small(src)
+	new /obj/item/ammo_magazine/hrifle/rubber(src)
+	new /obj/item/ammo_magazine/hrifle(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
