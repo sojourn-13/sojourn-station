@@ -16,7 +16,7 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 	desc = "A conveyor belt, commonly used to transport large numbers of items elsewhere quite quickly."
 	layer = BELOW_OPEN_DOOR_LAYER
 	anchored = TRUE
-	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 4)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2)
 
 	var/operating = FALSE	// NB: this can be TRUE while the belt doesn't go
 	var/forwards			// The direction the conveyor sends you in

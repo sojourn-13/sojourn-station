@@ -13,6 +13,8 @@
 	var/obj/effect/overlay/water/top/watertop
 	color = "#38e4ff"
 	footstep_sound = "water"
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/open/pool/Initialize(mapload)
 	. = ..()
@@ -72,7 +74,7 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 
-			//Footstep sounds. This proc is in footsteps.dm	
+			//Footstep sounds. This proc is in footsteps.dm
 			H.handle_footstep(src)
 	..()
 */
