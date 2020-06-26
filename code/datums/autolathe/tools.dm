@@ -177,3 +177,7 @@
 /datum/design/autolathe/tool/pneumatic_crowbar
 	name = "pneumatic crowbar"
 	build_path = /obj/item/weapon/tool/crowbar/pneumatic
+
+/datum/design/autolathe/tool/restoration
+	name = "restoration kit"
+	build_path = /obj/item/device/restoration

@@ -11,6 +11,7 @@
 	build_path = /obj/structure/reagent_dispensers/bidon
 	sort_string = "VAAAK"
 	category = "Medical"
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 5)
 
 /datum/design/research/structure/bidonadv
 	name = "stasis B.I.D.O.N. canister"
@@ -18,3 +19,4 @@
 	build_path = /obj/structure/reagent_dispensers/bidon/advanced
 	sort_string = "VAAAL"
 	category = "Medical"
+	materials = list(MATERIAL_STEEL = 25, MATERIAL_GLASS = 15)

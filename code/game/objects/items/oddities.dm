@@ -98,7 +98,7 @@
 	)
 
 /obj/item/weapon/oddity/common/old_newspaper
-	name = "old newspaper"
+	name = "odd newspaper clipping" //Old old news papers are a good joke
 	desc = "It contains a report on some old and strange phenomenon. Maybe it's lies, maybe it's corporate experiments gone wrong."
 	icon_state = "old_newspaper"
 	oddity_stats = list(
