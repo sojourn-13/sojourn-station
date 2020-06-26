@@ -30,6 +30,23 @@
 	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
 	var/overcharge_max = 10
 
+/obj/item/weapon/gun/energy/loadAmmoBestGuess()
+	var/obj/item/weapon/cell/chosenCell = null
+
+	if(cell == null)
+		for(var/potentialCell in typesof(suitable_cell))
+			var/obj/item/weapon/cell/potential = potentialCell
+
+			if(!chosenCell)
+				chosenCell = potential
+			else if (initial(potential.maxcharge) > initial(chosenCell.maxcharge))
+				chosenCell = potential
+
+		if(chosenCell)
+			cell = new chosenCell
+			cell.loc = src
+
+
 /obj/item/weapon/gun/energy/switch_firemodes()
 	. = ..()
 	if(.)

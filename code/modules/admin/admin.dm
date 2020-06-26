@@ -920,7 +920,12 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_atom, R_DEBUG, FALSE)
 		var/turf/T = get_turf(usr.loc)
 		T.ChangeTurf(chosen)
 	else
-		new chosen(usr.loc)
+		var/newItem = new chosen(usr.loc)
+
+		if(istype(newItem, /obj/item/weapon/gun))
+			var/obj/item/weapon/gun/weapon = newItem
+			weapon.loadAmmoBestGuess()
+
 
 	log_and_message_admins("spawned [chosen] at ([usr.x],[usr.y],[usr.z])")
 
