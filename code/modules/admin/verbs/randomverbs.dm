@@ -383,8 +383,8 @@ ADMIN_VERB_ADD(/client/proc/spawn_character, R_ADMIN, FALSE)
 	var/admin = key_name_admin(src)
 	var/player_key = picked_client.key
 	//VOREStation Add - Needed for persistence
-	var/picked_ckey = picked_client.ckey
-	var/picked_slot = picked_client.prefs.default_slot
+	//var/picked_ckey = picked_client.ckey
+	//var/picked_slot = picked_client.prefs.default_slot
 	//VOREStation Add End
 
 	var/mob/living/carbon/human/new_character
@@ -1007,3 +1007,94 @@ ADMIN_VERB_ADD(/client/proc/toggle_random_events, R_SERVER, FALSE)
 		to_chat(usr, "Random events disabled")
 		message_admins("Admin [key_name_admin(usr)] has disabled random events.", 1)
 
+ADMIN_VERB_ADD(/client/proc/spawn_mob_template, R_ADMIN, FALSE)
+/client/proc/spawn_mob_template()
+	set category = "Fun"
+	set name = "Spawn mob template"
+
+	set desc = "Spawns a pre-saved mob template"
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	var/validTemplates = flist("data/mobTemplates/")
+
+	var/chosenTemplate = input(usr, "Template") as null|anything in validTemplates + "Cancel"
+
+
+
+	if(!chosenTemplate || chosenTemplate == "Cancel")
+		return
+
+	log_debug("Spawning [chosenTemplate]...")
+
+	var/mob/living/carbon/human/M = new
+	M.loc = usr.loc
+
+	var/savefile/F = new("data/mobTemplates/" + chosenTemplate)
+
+	var/contentsVar
+	F["Contents"] >> contentsVar
+	var/list/contents = params2list(contentsVar)
+
+	var/namesVar
+	F["names"] >> namesVar
+	var/list/names = params2list(namesVar)
+
+	var/descsVar
+	F["descs"] >> descsVar
+	var/list/descs = params2list(descsVar)
+
+	var/parentsVar
+	F["parents"] >> parentsVar
+	var/list/parents = params2list(parentsVar)
+
+	var/list/createdObjects = list()
+	createdObjects.len = contents.len
+
+	for(var/i in 1 to contents.len)
+		var/iAsText = "[i]"
+		var/objText = contents[iAsText]
+		var/objPath = text2path(objText)
+		if(!objPath)
+			log_debug("Failed to desereralize [objText]")
+		else
+			//log_debug("Desseralized [i] - [objText]")
+			var/obj/obj = new objPath
+			createdObjects[i] = obj
+
+			if(istype(obj, /obj/item/weapon/gun))
+				var/obj/item/weapon/gun/weapon = obj
+				weapon.loadAmmoBestGuess()
+
+
+			if(parents[iAsText] != "0")
+				var/parentAsNum = text2num(parents[iAsText])
+				//log_debug("Moving [obj] to [createdObjects[parentAsNum]]")
+				obj.loc = createdObjects[parentAsNum]
+			else
+				//log_debug("Equipping [obj]")
+				M.equip_to_mob_best_effort(obj)
+			obj.name = names[iAsText]
+			obj.desc = descs[iAsText]
+
+
+
+	F["Name"] >> M.name
+
+	F["DNA"] >> M.dna
+	F["stats"] >> M.stats
+	M.stats.holder = M
+	F["form"] >> M.form
+	F["species"] >> M.species
+	F["species_name"] >> M.species_name
+
+	M.dna.UpdateSE()
+	M.dna.UpdateUI()
+	M.sync_organ_dna()
+	M.UpdateAppearance()//Now we configure their appearance based on their unique identity, same as with a DNA machine or somesuch.
+
+		//A redraw for good measure
+	M.update_icons()
+
+	log_debug("Done")
