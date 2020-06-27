@@ -425,10 +425,10 @@
 		if(!check_rights(R_ADMIN))
 			return
 
-		var/mob/living/carbon/H = locate(href_list["saveTemplate"])
+		var/mob/living/carbon/human/H = locate(href_list["saveTemplate"])
 
 		if(!istype(H))
-			to_chat(usr, "This can only be done to instances of type /mob/living/carbon")
+			to_chat(usr, "This can only be done to instances of type /mob/living/carbon/human")
 			return
 
 		var/templateName = input("Please select name for template.","Template name",null) as null|text
@@ -506,6 +506,10 @@
 			F["form"] << H.form
 			F["species_name"] << H.species_name
 			F["species"] << H.species
+			F["flavor_text"] << H.flavor_text
+			F["faction"] << H.faction
+			F["body_markings"] << H.body_markings
+
 			//log_debug("Done!  [contentsList.len],[names.len],[descs.len],[parents.len]")
 
 			//F << H

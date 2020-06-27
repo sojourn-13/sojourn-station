@@ -441,6 +441,10 @@ ADMIN_VERB_ADD(/client/proc/spawn_character, R_ADMIN, FALSE)
 	//If desired, apply equipment.
 	if(equipment)
 		if(charjob)
+			new_character.mind_initialize()
+			new_character.mind.assigned_role = charjob//If they somehow got a null assigned role.
+
+			log_debug("[new_character.mind.assigned_role]")
 			SSjob.EquipRank(new_character, charjob, 1)
 		//equip_custom_items(new_character)	//VOREStation Removal
 
@@ -1080,7 +1084,10 @@ ADMIN_VERB_ADD(/client/proc/spawn_mob_template, R_ADMIN, FALSE)
 
 
 
-	F["Name"] >> M.name
+	var/name
+	F["Name"] >> name
+	M.fully_replace_character_name("Unknown", name)
+
 
 	F["DNA"] >> M.dna
 	F["stats"] >> M.stats
@@ -1088,13 +1095,16 @@ ADMIN_VERB_ADD(/client/proc/spawn_mob_template, R_ADMIN, FALSE)
 	F["form"] >> M.form
 	F["species"] >> M.species
 	F["species_name"] >> M.species_name
+	F["flavor_text"] >> M.flavor_text
+	F["faction"] >> M.faction
+	F["body_markings"] >> M.body_markings
 
 	M.dna.UpdateSE()
 	M.dna.UpdateUI()
 	M.sync_organ_dna()
 	M.UpdateAppearance()//Now we configure their appearance based on their unique identity, same as with a DNA machine or somesuch.
 
-		//A redraw for good measure
+	//A redraw for good measure
 	M.update_icons()
 
 	log_debug("Done")

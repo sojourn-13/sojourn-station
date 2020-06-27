@@ -167,6 +167,8 @@
 	var/list/all_bits = internal_organs|organs
 	for(var/obj/item/organ/O in all_bits)
 		O.set_dna(dna)
+		O.species = species
+		O.form = form
 
 /mob/living/carbon/human/is_asystole()
 	if(isSynthetic())
