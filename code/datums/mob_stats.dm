@@ -1,5 +1,5 @@
 /datum/stat_holder
-	var/mob/living/holder
+	var/tmp/mob/living/holder
 	var/list/stat_list = list()
 	var/list/datum/perk/perks = list()
 	var/list/obj/effect/perk_stats = list() // Holds effects representing perks, to display them in stat()

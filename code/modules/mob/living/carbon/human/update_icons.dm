@@ -141,8 +141,8 @@ Please contact me on #coderbus IRC. ~Carn x
 //////////////////////////////////
 
 /mob/living/carbon/human
-	var/list/overlays_standing[TOTAL_LAYERS]
-	var/previous_damage_appearance // store what the body last looked like, so we only have to update it if something changed
+	var/tmp/list/overlays_standing[TOTAL_LAYERS]
+	var/tmp/previous_damage_appearance // store what the body last looked like, so we only have to update it if something changed
 
 //UPDATES OVER-LAYS FROM OVERLAYS_LYING/over-lays_STANDING
 //this proc is messy as I was forced to include some old laggy cloaking code to it so that I don't break cloakers

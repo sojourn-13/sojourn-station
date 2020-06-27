@@ -420,6 +420,101 @@
 		else
 			H.verbs -= verb
 
+
+	else if(href_list["saveTemplate"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		var/mob/living/carbon/H = locate(href_list["saveTemplate"])
+
+		if(!istype(H))
+			to_chat(usr, "This can only be done to instances of type /mob/living/carbon")
+			return
+
+		var/templateName = input("Please select name for template.","Template name",null) as null|text
+
+		if(!templateName)
+			to_chat(usr, "Mob doesn't exist anymore")
+			return
+		else if (H.ckey)
+			to_chat(usr, "Mob must not have a ckey associated with it")
+		else if(!templateName)
+			return
+		else
+			var/savefile/F = new("data/mobTemplates/" + templateName)
+
+			var/list/contentsList = list()
+			var/list/names = list()
+			var/list/descs = list()
+			var/list/parents = list()
+			var/itemCount =0
+
+			for(var/atom/obj in H.contents)
+				if(istype(obj, /obj/item))
+					if(istype(obj, /obj/item/underwear))
+						continue // no
+					if(istype(obj, /obj/item/organ))
+						continue // no
+
+					itemCount += 1
+					parents["[itemCount]"] = "0"
+
+					names["[itemCount]"] = obj.name
+					descs["[itemCount]"] =obj.desc
+					contentsList["[itemCount]"] = obj.type
+					//log_debug("logged [itemCount] - [obj.type] to file")
+
+					if(istype(obj, /obj/item/weapon/storage))
+						var/storageItemCount = itemCount
+						var/obj/item/weapon/storage/bag = obj
+						for(var/atom/bagObj in bag.contents)
+							itemCount += 1
+							parents["[itemCount]"] = "[storageItemCount]"
+
+							contentsList["[itemCount]"] = bagObj.type
+							names["[itemCount]"] = bagObj.name
+							descs["[itemCount]"] = bagObj.desc
+							//log_debug("logged [itemCount] - [bagObj.type] to file")
+
+							if(istype(bagObj, /obj/item/weapon/storage))
+								var/storageItemCount2 = itemCount
+								var/obj/item/weapon/storage/bag2 = bagObj
+								for(var/atom/bagObj2 in bag2.contents)
+									itemCount += 1
+									parents["[itemCount]"] = "[storageItemCount2]"
+
+									contentsList["[itemCount]"] = bagObj2.type
+									names["[itemCount]"] = bagObj2.name
+									descs["[itemCount]"] = bagObj2.desc
+
+									//log_debug("logged [itemCount] -  [bagObj2.type] to file")
+
+
+
+
+
+
+			F["Name"] << H.name
+
+
+			F["Contents"] << list2params(contentsList)
+			F["names"] << list2params(names)
+			F["descs"] << list2params(descs)
+			F["parents"] << list2params(parents)
+			F["DNA"] << H.dna
+			F["stats"] << H.stats
+			F["form"] << H.form
+			F["species_name"] << H.species_name
+			F["species"] << H.species
+			//log_debug("Done!  [contentsList.len],[names.len],[descs.len],[parents.len]")
+
+			//F << H
+
+			//var/txtfile = file("data/mobTemplates/[templateName].txt")
+			//F.ExportText("/",txtfile)
+
+			to_chat(usr, "Template '[templateName]' saved successfully")
+
 	else if(href_list["addorgan"])
 		if(!check_rights(R_FUN))
 			return
