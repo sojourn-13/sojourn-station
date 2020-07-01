@@ -165,7 +165,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	if(stat & (BROKEN|NOPOWER))
 		return 0
 
-//	if(department == "Unknown")
+	if(department == "Unknown")
 		return 0	//You can't send faxes to "Unknown"*/ //Yeah you can.
 
 	flick("faxreceive", src)

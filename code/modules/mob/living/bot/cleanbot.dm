@@ -9,20 +9,14 @@
 
 	var/obj/effect/decal/cleanable/target
 	var/list/path = list()
-	var/list/patrol_path = list()
 	var/list/ignorelist = list()
 
 	var/obj/cleanbot_listener/listener = null
-	var/beacon_freq = 1445 // navigation beacon frequency
-	var/signal_sent = 0
-	var/closest_dist
-	var/next_dest
-	var/next_dest_loc
+
 
 	var/cleaning = 0
 	var/screwloose = 0
 	var/oddbutton = 0
-	var/should_patrol = 0
 	var/blood = 1
 	var/list/target_types = list()
 
@@ -32,11 +26,6 @@
 /mob/living/bot/cleanbot/New()
 	..()
 	get_targets()
-
-	listener = new /obj/cleanbot_listener(src)
-	listener.cleanbot = src
-
-	SSradio.add_object(listener, beacon_freq, filter = RADIO_NAVBEACONS)
 
 /mob/living/bot/cleanbot/proc/handle_target()
 	if(loc == target.loc)
@@ -85,7 +74,6 @@
 		// Find a target
 
 	if(pulledby) // Don't wiggle if someone pulls you
-		patrol_path = list()
 		return
 
 	var/found_spot
@@ -97,7 +85,6 @@
 					continue
 				for(var/T in target_types)
 					if(istype(D, T))
-						patrol_path = list()
 						target = D
 						found_spot = handle_target()
 						if (found_spot)
@@ -110,41 +97,6 @@
 	if(!found_spot && target_in_view && world.time > give_up_cooldown)
 		visible_message("[src] can't reach the target and is giving up.")
 		give_up_cooldown = world.time + 300
-
-
-	if(!found_spot && !target) // No targets in range
-		if(!patrol_path || !patrol_path.len)
-			if(!signal_sent || signal_sent > world.time + 200) // Waited enough or didn't send yet
-				var/datum/radio_frequency/frequency = SSradio.return_frequency(beacon_freq)
-				if(!frequency)
-					return
-
-				closest_dist = 9999
-				next_dest = null
-				next_dest_loc = null
-
-				var/datum/signal/signal = new()
-				signal.source = src
-				signal.transmission_method = 1
-				signal.data = list("findbeakon" = "patrol")
-				frequency.post_signal(src, signal, filter = RADIO_NAVBEACONS)
-				signal_sent = world.time
-			else
-				if(next_dest)
-					next_dest_loc = listener.memorized[next_dest]
-					if(next_dest_loc)
-						patrol_path = AStar(loc, next_dest_loc, /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance, 0, 120, id = botcard, exclude = null)
-						signal_sent = 0
-		else
-			if(pulledby) // Don't wiggle if someone pulls you
-				patrol_path = list()
-				return
-			if(patrol_path[1] == loc)
-				patrol_path -= patrol_path[1]
-			var/moved = step_towards(src, patrol_path[1])
-			if(moved)
-				patrol_path -= patrol_path[1]
-
 
 
 /mob/living/bot/cleanbot/UnarmedAttack(var/obj/effect/decal/cleanable/D, var/proximity)
@@ -201,7 +153,6 @@
 	..()
 	target = null
 	path = list()
-	patrol_path = list()
 
 /mob/living/bot/cleanbot/attack_hand(var/mob/user)
 	var/dat
@@ -211,7 +162,6 @@
 	dat += "Maintenance panel is [open ? "opened" : "closed"]"
 	if(!locked || issilicon(user))
 		dat += "<BR>Cleans Blood: <A href='?src=\ref[src];operation=blood'>[blood ? "Yes" : "No"]</A><BR>"
-		dat += "<BR>Patrol station: <A href='?src=\ref[src];operation=patrol'>[should_patrol ? "Yes" : "No"]</A><BR>"
 	if(open && !locked)
 		dat += "Odd looking screw twiddled: <A href='?src=\ref[src];operation=screw'>[screwloose ? "Yes" : "No"]</A><BR>"
 		dat += "Weird button pressed: <A href='?src=\ref[src];operation=oddbutton'>[oddbutton ? "Yes" : "No"]</A>"
@@ -234,13 +184,6 @@
 		if("blood")
 			blood = !blood
 			get_targets()
-		if("patrol")
-			should_patrol = !should_patrol
-			patrol_path = null
-		if("freq")
-			var/freq = text2num(input("Select frequency for  navigation beacons", "Frequnecy", num2text(beacon_freq / 10))) * 10
-			if (freq > 0)
-				beacon_freq = freq
 		if("screw")
 			screwloose = !screwloose
 			to_chat(usr, SPAN_NOTICE("You twiddle the screw."))
@@ -269,28 +212,10 @@
 	target_types += /obj/effect/decal/cleanable/mucus
 	target_types += /obj/effect/decal/cleanable/dirt
 	target_types += /obj/effect/decal/cleanable/rubble
+	target_types += /obj/effect/decal/cleanable/mucus
 
 	if(blood)
 		target_types += /obj/effect/decal/cleanable/blood
-
-/* Radio object that listens to signals */
-
-/obj/cleanbot_listener
-	var/mob/living/bot/cleanbot/cleanbot = null
-	var/list/memorized = list()
-
-/obj/cleanbot_listener/receive_signal(var/datum/signal/signal)
-	var/recv = signal.data["beacon"]
-	var/valid = signal.data["patrol"]
-	if(!recv || !valid || !cleanbot)
-		return
-
-	var/dist = get_dist(cleanbot, signal.source.loc)
-	memorized[recv] = signal.source.loc
-
-	if(dist < cleanbot.closest_dist) // We check all signals, choosing the closest beakon; then we move to the NEXT one after the closest one
-		cleanbot.closest_dist = dist
-		cleanbot.next_dest = signal.data["next_patrol"]
 
 /* Assembly */
 

@@ -203,6 +203,12 @@
 	sort_string = "HACAA"
 	category = CAT_MACHINE
 
+/datum/design/research/circuit/repair_station
+	name = "cyborg auto-repair platform"
+	build_path = /obj/item/weapon/circuitboard/repair_station
+	sort_string = "HACAE"
+	category = CAT_MACHINE
+
 /datum/design/research/circuit/recharge_station
 	name = "cyborg recharge station"
 	build_path = /obj/item/weapon/circuitboard/recharge_station

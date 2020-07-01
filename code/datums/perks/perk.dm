@@ -25,7 +25,7 @@
 
 	desc = target_perk.desc
 	icon = target_perk.icon
-	icon_state = target_perk.icon_state + (target_perk.active ? "-on" : "-off")
+	//icon_state = target_perk.icon_state + (target_perk.active ? "-on" : "-off")
 
 /obj/effect/statclick/perk/Click()
 	if(!target_perk.passivePerk)

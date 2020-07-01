@@ -26,7 +26,7 @@ just stuff it here for now, and he can go stuff himself. %D"
 
 /datum/stash/junk/illicit_trade
 	story_type = STORY_CRIME
-	lore =  "Hey jackass! The ship's computer monitors the emails, the radios, and probably turns on \
+	lore =  "Hey jackass! The colony's computer monitors the emails, the radios, and probably turns on \
 	the fucking microphones when we aren't looking. So here, let me help you out. That shit you wanted\
 	 is HERE.<br>%D <br>\
 	 <br>\

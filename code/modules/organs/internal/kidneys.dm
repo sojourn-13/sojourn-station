@@ -4,7 +4,7 @@
 	gender = PLURAL
 	organ_tag = BP_KIDNEYS
 	parent_organ = BP_GROIN
-	price_tag = 600
+	price_tag = 1500
 
 /obj/item/organ/internal/kidneys
 	name = "kidneys"
@@ -13,6 +13,7 @@
 /obj/item/organ/internal/kidneys/prosthetic
 	name = "prosthetic kidneys"
 	icon_state = "kidneys-prosthetic"
+	price_tag = 100
 
 /obj/item/organ/internal/kidneys/Process()
 	..()
@@ -35,4 +36,4 @@
 /obj/item/organ/internal/kidneys/quad
 	name = "cindarite kidneys"
 	desc = "A dense set of tightly packed kidneys that work four times better than a standard kidney."
-	price_tag = 2000
+	price_tag = 5000

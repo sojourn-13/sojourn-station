@@ -388,7 +388,7 @@
 	//Church (Gold)
 	body += source.formatJobGroup(M, "Church Positions", "ecd37d", "churchdept", church_positions)
 	//Prospector (Brown)
-	body += source.formatJobGroup(M, "Prospector Positions", "8B4513", "churchdept", prospector_positions)
+	body += source.formatJobGroup(M, "Prospector Positions", "8B4513", "prospectordept", prospector_positions)
 	//Civilian (Grey)
 	body += source.formatJobGroup(M, "Civilian Positions", "dddddd", "civiliandept", civilian_positions)
 	//Non-Human (Green)
