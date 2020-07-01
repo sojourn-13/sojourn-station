@@ -13,7 +13,7 @@
 	sort_string = "KAAAC"
 	category = CAT_MINING
 
-/datum/design/research/item/weapon/mining/ore_scanner
-	build_path = /obj/item/device/scanner/mining
+/datum/design/research/item/weapon/mining/scanner
+	build_path = /obj/item/device/scanner/mining/advanced
 	sort_string = "KAAAD"
 	category = CAT_MINING

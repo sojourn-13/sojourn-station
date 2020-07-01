@@ -4,7 +4,7 @@
 	organ_tag = BP_HEART
 	parent_organ = BP_CHEST
 	dead_icon = "heart-off"
-	price_tag = 1000
+	price_tag = 3000
 	var/pulse = PULSE_NORM
 	var/heartbeat = 0
 	var/efficiency = 1
@@ -17,6 +17,7 @@
 	name = "prosthetic heart"
 	icon_state = "heart-prosthetic"
 	dead_icon = "heart-prosthetic"
+	price_tag = 100
 
 /obj/item/organ/internal/heart/Process()
 	if(owner)

@@ -195,7 +195,7 @@
 							/datum/design/research/circuit/miningdrillbrace,
 							/datum/design/research/item/weapon/mining/drill_diamond,
 							/datum/design/research/item/weapon/mining/jackhammer,
-							/datum/design/research/item/weapon/mining/ore_scanner
+							/datum/design/research/item/weapon/mining/scanner
 							)
 
 /datum/technology/adv_tools

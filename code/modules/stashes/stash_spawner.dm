@@ -26,7 +26,7 @@
 		return INITIALIZE_HINT_QDEL
 
 	datum.spawn_stash()
-	datum.spawn_note(loc)
+	//datum.spawn_note(loc)
 
 	//Aaaand we are done -- would've never guessed that
 	return INITIALIZE_HINT_QDEL

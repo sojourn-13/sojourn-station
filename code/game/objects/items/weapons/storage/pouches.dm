@@ -233,6 +233,8 @@
 	can_hold = list(
 		/obj/item/weapon/gun/projectile/clarissa,
 		/obj/item/weapon/gun/projectile/colt,
+		/obj/item/weapon/gun/projectile/firefly,
+		/obj/item/weapon/gun/projectile/basilisk,
 		/obj/item/weapon/gun/projectile/giskard,
 		/obj/item/weapon/gun/projectile/gyropistol,
 		/obj/item/weapon/gun/projectile/handmade_pistol,

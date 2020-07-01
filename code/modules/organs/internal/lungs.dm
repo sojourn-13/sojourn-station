@@ -4,7 +4,7 @@
 	gender = PLURAL
 	organ_tag = BP_LUNGS
 	parent_organ = BP_CHEST
-	price_tag = 300
+	price_tag = 1500
 
 	var/breath_type
 	var/poison_type
@@ -20,6 +20,7 @@
 /obj/item/organ/internal/lungs/prosthetic
 	name = "prosthetic lungs"
 	icon_state = "lungs-prosthetic"
+	price_tag = 100
 
 /obj/item/organ/internal/lungs/set_dna(var/datum/dna/new_dna)
 	..()

@@ -18,12 +18,12 @@
 	light_color = "#000000"
 
 	stat_modifiers = list(
-		STAT_BIO = 5,
-		STAT_COG = 5,
-		STAT_MEC = 5,
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_VIG = 5
+		STAT_BIO = 2,
+		STAT_COG = 2,
+		STAT_MEC = 2,
+		STAT_ROB = 2,
+		STAT_TGH = 2,
+		STAT_VIG = 2
 	)
 
 
@@ -81,8 +81,8 @@
 	spawn_flags = CAN_JOIN
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 10
+		STAT_ROB = 5,
+		STAT_TGH = 5
 	)
 
 	permitted_ears  = list("Sablekyne Large Horns",
@@ -131,9 +131,9 @@
 	spawn_flags = CAN_JOIN
 
 	stat_modifiers = list(
-		STAT_BIO = 15,
-		STAT_COG = 15,
-		STAT_MEC = 15
+		STAT_BIO = 10,
+		STAT_COG = 10,
+		STAT_MEC = 10
 	)
 
 	permitted_ears  = list()
@@ -170,8 +170,8 @@
 	spawn_flags = CAN_JOIN
 
 	stat_modifiers = list(
-		STAT_TGH = 10,
-		STAT_VIG = 10
+		STAT_TGH = 5,
+		STAT_VIG = 5
 	)
 
 	permitted_ears  = list("Fennec Ears",
@@ -237,7 +237,7 @@
 	light_color = "#0000ff"
 
 	stat_modifiers = list(
-		STAT_TGH = 20
+		STAT_TGH = 10
 	)
 
 	permitted_ears  = list("Sleek Ears")
@@ -265,10 +265,10 @@
 	spawn_flags = CAN_JOIN
 
 	stat_modifiers = list(
-		STAT_TGH = 20,
-		STAT_ROB = 20,
-		STAT_VIG = -20,
-		STAT_COG = -20
+		STAT_TGH = 10,
+		STAT_ROB = 10,
+		STAT_VIG = -10,
+		STAT_COG = -10
 	)
 
 	dark_color = "#ffff00"
@@ -303,8 +303,8 @@
 	hunger_factor = DEFAULT_HUNGER_FACTOR/2
 
 	stat_modifiers = list(
-		STAT_MEC = 10,
-		STAT_COG = 10
+		STAT_MEC = 5,
+		STAT_COG = 5
 	)
 
 	dark_color = "#dddddd"
@@ -345,8 +345,8 @@
 	flash_mod =     3
 
 	stat_modifiers = list(
-		STAT_BIO = 10,
-		STAT_COG = 10
+		STAT_BIO = 5,
+		STAT_COG = 5
 	)
 
 	dark_color = "#5ac18e"
@@ -429,10 +429,10 @@
 	toxins_mod = 0.5
 
 	stat_modifiers = list(
-		STAT_BIO = 5,
-		STAT_COG = 5,
-		STAT_MEC = 5,
-		STAT_TGH = 5
+		STAT_BIO = 2,
+		STAT_COG = 2,
+		STAT_MEC = 2,
+		STAT_TGH = 2
 	)
 
 	cold_level_1 = 280 //Default 260
