@@ -33,7 +33,6 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	var/list/ways = list("pokes around in", "searches", "scours", "digs through", "rummages through", "goes through","picks through")
 	var/beacon = FALSE // If this junk pile is getting pulled by the junk beacon or not.
 	sanity_damage = 0.1
-	var/rare_item_chance = 25
 	var/rare_item = FALSE
 
 /obj/structure/scrap/proc/make_cube()
@@ -235,7 +234,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		var/mob/living/carbon/human/victim = user
 		if(victim.species.flags & NO_MINOR_CUT)
 			return FALSE
-		if(victim.gloves && prob(90))
+		if(victim.gloves && prob(95))
 			return FALSE
 		var/obj/item/organ/external/BP = victim.get_organ(victim.hand ? BP_L_ARM : BP_R_ARM)
 		if(!BP)
@@ -293,10 +292,10 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		visible_message("<span class='notice'>\A hidden [big_item] is uncovered from beneath the [src]!</span>")
 		big_item.forceMove(get_turf(src))
 		big_item = null
-	else if(rare_item && prob(rare_item_chance))
+	else if(rare_item && prob(25))
 		var/obj/O = pickweight(RANDOM_RARE_ITEM - /obj/item/stash_spawner)
-		O = new O(get_turf(src))
-		visible_message("<span class='notice'>\A hidden [O] is uncovered from beneath the [src]!</span>")
+		visible_message("<span class='notice'>\A hidden [O.name] is uncovered from beneath the [src]!</span>")
+		new O(get_turf(src))
 	qdel(src)
 
 /obj/structure/scrap/attackby(obj/item/W, mob/living/carbon/human/user)
