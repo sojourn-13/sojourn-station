@@ -55,7 +55,7 @@
 	data["service_jobs"] = format_jobs(civilian_positions)
 	data["supply_jobs"] = format_jobs(cargo_positions)
 	data["church_jobs"] = format_jobs(church_positions)
-	data["civilian_jobs"] = format_jobs(civilian_positions)
+	//data["civilian_jobs"] = format_jobs(civilian_positions)
 	data["centcom_jobs"] = format_jobs(get_all_centcom_jobs())
 
 	data["all_centcom_access"] = is_centcom

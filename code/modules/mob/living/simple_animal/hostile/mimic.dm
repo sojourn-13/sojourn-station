@@ -3,7 +3,7 @@
 //
 
 /mob/living/simple_animal/hostile/mimic/crate
-	name = "trash cart"
+	name = "suspicious object"
 	desc = "It seems rather.. gooey. Is that thing organic?"
 	icon = 'icons/mob/mobs-monster.dmi'
 	//icon_state = "trashcart_mimic"

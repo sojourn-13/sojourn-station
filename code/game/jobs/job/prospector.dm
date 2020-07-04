@@ -55,8 +55,8 @@
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
 	faction = MAP_FACTION
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	selection_color = "#a7bbc6"
@@ -77,9 +77,11 @@
 		STAT_ROB = 10,
 	)
 
+	perks = list(/datum/perk/junkborn)
+
 	description = "The Salvager is an informally trained specialist for the prospectors who functions as both an engineer and a doctor.<br>\
 	Your primary role is that of a field medic. Treat and stabilize the wounded on the combat backlines, and evacuate the critically injured.<br>\
-	Your secondary task is providing technical support to the team by breaching walls, building FOBs, repairing broken equipment, and extracting resources.<br>\
+	Your secondary task is providing technical support to the team by breaching walls, building FOBs, repairing broken equipment, and extracting valuables from junk piles.<br>\
 	Remember that you are here to gain riches from the abandoned wilds. Don't waste time and resources mindlessly hunting creatures."
 
 	duties = "Extract resources for your employer. Use equipment to access new areas and gain a foothold in the wilderness.<br>\

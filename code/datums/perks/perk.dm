@@ -37,6 +37,8 @@
 	var/icon// = 'icons/effects/perks.dmi'
 	var/icon_state = ""
 	var/mob/living/carbon/human/holder
+	var/gain_text
+	var/lose_text
 	var/active = TRUE
 	var/passivePerk = TRUE
 	var/obj/effect/statclick/perk/statclick
@@ -50,13 +52,25 @@
 	statclick = new(null, src)
 
 /datum/perk/Destroy()
+	if(holder)
+		to_chat(holder, SPAN_NOTICE("[lose_text]"))
 	holder = null
 	return ..()
+
+/datum/perk/proc/on_process()
+	SHOULD_CALL_PARENT(TRUE)
+	if(!holder)
+		return FALSE
+	if(holder.stat == DEAD)
+		return FALSE
+	return TRUE
 
 /// Proc called when the perk is assigned to a human. Should be the first thing to be called.
 /datum/perk/proc/assign(mob/living/carbon/human/H)
 	SHOULD_CALL_PARENT(TRUE)
 	holder = H
+	RegisterSignal(holder, COMSIG_MOB_LIFE, .proc/on_process)
+	to_chat(holder, SPAN_NOTICE("[gain_text]"))
 
 /datum/perk/proc/remove()
 	SHOULD_CALL_PARENT(TRUE)

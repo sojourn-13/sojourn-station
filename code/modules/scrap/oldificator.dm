@@ -133,9 +133,9 @@
 		if(!autorecharging)
 			charge = min(charge, RAND_DECIMAL(0, maxcharge))
 
-		if(prob(10))
+		if(prob(5))
 			rigged = TRUE
-			if(prob(80))
+			if(prob(60))
 				charge = maxcharge  //make it BOOM hard
 		update_icon()
 

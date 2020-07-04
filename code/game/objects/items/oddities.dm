@@ -17,11 +17,20 @@
 	var/list/oddity_stats
 
 	var/sanity_value = 1
+	var/datum/perk/oddity/perk
 
 
 /obj/item/weapon/oddity/Initialize()
 	. = ..()
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
+	if(!perk)
+		perk = pick(subtypesof(/datum/perk/oddity))
+
+/obj/item/weapon/oddity/examine(user)
+	..()
+	if(perk)
+		var/datum/perk/oddity/OD = GLOB.all_perks[perk]
+		to_chat(user, SPAN_NOTICE("Strange words echo in your head: <span style='color:orange'>[OD]. [OD.desc]</span>."))
 
 	if(oddity_stats)
 		for(var/stat in oddity_stats)

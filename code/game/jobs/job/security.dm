@@ -32,6 +32,8 @@
 		STAT_VIG = 40,
 	)
 
+	perks = list(/datum/perk/ass_of_concrete)
+
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor,
@@ -87,6 +89,8 @@
 		STAT_TGH = 40,
 		STAT_VIG = 30,
 	)
+
+	perks = list(/datum/perk/ass_of_concrete)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -227,6 +231,8 @@
 		access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels,
 		access_external_airlocks, access_prospector, access_brig, access_kitchen
 	)
+
+	perks = list(/datum/perk/ear_of_quicksilver)
 
 	stat_modifiers = list(
 		STAT_BIO = 15,

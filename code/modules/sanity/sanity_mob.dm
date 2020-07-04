@@ -226,6 +226,10 @@
 			var/stat_up = L[stat] * multiplier
 			to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_up]"))
 			owner.stats.changeStat(stat, stat_up)
+		if(istype(O, /obj/item/weapon/oddity))
+			var/obj/item/weapon/oddity/OD = O
+			if(OD.perk)
+				owner.stats.addPerk(OD.perk)
 
 /datum/sanity/proc/onDamage(amount)
 	changeLevel(-SANITY_DAMAGE_HURT(amount, owner.stats.getStat(STAT_VIG)))
