@@ -21,9 +21,8 @@
 		list("names" = list(), "header" = "Soteria Research", "flag" = SCIENCE),
 		list("names" = list(), "header" = "Church of the Absolute", "flag" = CHURCH),
 		list("names" = list(), "header" = "Lonestar Shipping Solutions", "flag" = LSS),
-		list("names" = list(), "header" = "Artificers Guild", "flag" = ENGINEERING),
-		list("names" = list(), "header" = "Prospector", "flag" = PROSPECTORS),
 		list("names" = list(), "header" = "Civilian", "flag" = CIVILIAN),
+		list("names" = list(), "header" = "Artificers Guild", "flag" = ENGINEERING),
 		list("names" = list(), "header" = "Miscellaneous", "flag" = MISC),
 		list("names" = list(), "header" = "Silicon")
 	)
@@ -144,7 +143,6 @@
 		"med" = filtered_nano_crew_manifest(medical_positions),\
 		"sup" = filtered_nano_crew_manifest(cargo_positions),\
 		"chr" = filtered_nano_crew_manifest(church_positions),\
-		"pro" = filtered_nano_crew_manifest(prospector_positions),\
 		"bot" = silicon_nano_crew_manifest(nonhuman_positions),\
 		"civ" = filtered_nano_crew_manifest(civilian_positions)\
 		)
