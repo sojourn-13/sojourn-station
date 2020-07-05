@@ -74,6 +74,8 @@ GLOBAL_LIST_EMPTY(all_stash_datums)
 	datum = weight)
 */
 
+//PERKS
+GLOBAL_LIST_EMPTY(all_perks)
 
 //NeoTheology
 GLOBAL_LIST_EMPTY(all_rituals)//List of all rituals
@@ -213,6 +215,12 @@ var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_
 		var/datum/old_surgery_step/S = new T
 		old_surgery_steps += S
 	sort_surgeries()
+
+	//perkS - Initialise all /datum/perks into a list
+	paths = subtypesof(/datum/perk)
+	for(var/path in paths)
+		var/datum/perk/P = new path
+		GLOB.all_perks[path] = P
 
 	//List of job department datums
 	paths = subtypesof(/datum/department)

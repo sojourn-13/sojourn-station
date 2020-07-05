@@ -19,6 +19,7 @@ var/list/disciples = list()
 	. = ..()
 	if(.)
 		target.stats.addPerk(/datum/perk/sanityboost)
+		target.stats.addPerk(/datum/perk/unfinished_delivery)
 
 /obj/item/weapon/implant/core_implant/cruciform/uninstall()
 	wearer.stats.removePerk(/datum/perk/sanityboost)

@@ -270,12 +270,12 @@
 	desc = "Of naramad tribals the eastern tribes are the most primitive and most brutalistic of them. They live for hunting and fighting, making them popular conscripts for military service. \
 			An eastern naramads focus on physical combat improves their already impressive strength and tough bodies but does little improve much else. \
 			Even among their own kind the eastern naramads are considered Luddites, their brash natures and complete ignorance of things unrelated to combat bar them from science, medical \
-			engineering, and command roles."
+			engineering, command roles, and many more complex jobs within security and prospectors."
 
 	restricted_to_species = list(FORM_NARAMAD)
 
 	restricted_depts = SCIENCE | MEDICAL | ENGINEERING | COMMAND
-	restricted_jobs = list(/datum/job/salvager)
+	restricted_jobs = list(/datum/job/salvager, /datum/job/supsec, /datum/job/serg, /datum/job/inspector, /datum/job/medspec, /datum/job/officer)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
@@ -436,10 +436,10 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/humancolony
-	name = "Colony Born"
+	name = "Colony Ancestry"
 	desc = "A catch all term to describe Humans and Abhumans born within Terran Colonies. Those born here have access to much more prestigious and advanced education facilities, \
 	along with various military pathways to choose from. Colony born humans tend to be widely skilled and physically better off than most as a result of clean living and access to \
-	beffter form of education than most."
+	beffter form of education than most. You may have been born on a colony world or be the child of those that were, in either case you still reap the benefits of good genetics."
 
 	restricted_to_species = list(FORM_HUMAN)
 
@@ -453,9 +453,10 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/humanfrontier
-	name = "Frontier Born"
+	name = "Frontier Ancestry"
 	desc = "Frontier Space is the term for the fringes of known space and are often not as advanced as core world colonies. As a result, Frontier colonies are often beset upon by Void Wolves \
-	and hostile fauna. Only the strong survive out here, thus Frontier Space is often populated by the toughest of humanity, yet such living rarely comes with a proper education."
+	and hostile fauna. Only the strong survive out here, thus Frontier Space is often populated by the toughest of humanity, yet such living rarely comes with a proper education. \
+	You may not have been born on the frontier but your parents were and they gave you a what you needed to be tough and independent like them."
 
 	restricted_to_species = list(FORM_HUMAN)
 
@@ -469,10 +470,11 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/humanspacer
-	name = "Space Born"
+	name = "Space Ancestry"
 	desc = "Spacers have no planets nor lands to call their own, instead being born on ships and orbital stations. Due to such areas needing constant upkeep to remain functioning (and habitable), \
 	a solid comprehension of engineering is required, which leads to Spacers quickly coming to learn their enviroment and technology exceptionally well. Living in a confined and enviromentally \
-	controlled space, however, weakens the body."
+	controlled space, however, weakens the body. You might have been born to spacers who finally put down roots on a planet or stayed in space, in either case they made sure to pass along \
+	their technical skills to you."
 
 	restricted_to_species = list(FORM_HUMAN)
 
@@ -494,7 +496,7 @@
 
 /datum/category_item/setup_option/background/homeworld/newdamascus
 	name = "New Damascus"
-	desc = "Once a bustling forge world that was rich in oxygen and low in moisture, New Damascus is an arid world slowly bringing itself back from the brink of economic collapse. \
+	desc = "Once a bustling manufacturing world that was rich in oxygen and low in moisture, New Damascus is an arid world slowly bringing itself back from the brink of economic collapse. \
 	Originally boasting three resource rich moons, this world produced a large amount of ships, weapons, and other metallic goods for the Terran Federation. Unfortunately the mines eventually \
 	ran dry and it left New Damascus in a state of stagnation with local rulers growing more draconian and desperate as they watched their reserves and their populations slowly drop. Since \
 	the bluespace crash however, New Damascus has seen a resurgence in it's forges with neighboring systems diverting resources to them due to their proximity. Today, New Damascus has tried to \
@@ -553,15 +555,18 @@
 	and an overbearing prerogative of secrecy. The people of this rusting, dust filled facility are ruled by a kleptocracy council of ship captains, marine officers, and ore barons. The \
 	pathways and housing habs are often prone to tremors from mining operations, the landing bays are often turned into impromptu market bazaars, and the local restaurants often serve a \
 	variety of seafood which is gathered directly from the station's water filtration systems. Individuals from Kurilskaya are often cut throat, roguish, share a grim sense of humor, and \
-	are very secretive about where Kurilskaya is actually located."
+	are very secretive about where Kurilskaya is actually located. A benefit of living in a dangerous world is you knew how not to draw attention to yourself, taking care so often to keep yourself \
+	quiet that its become second nature to you now."
+
+	perks = list(/datum/perk/quiet_as_mouse)
 
 	stat_modifiers = list(
 		STAT_ROB = 5,
 		STAT_TGH = 4,
 		STAT_VIG = 3,
-		STAT_BIO = -2,
-		STAT_MEC = -6,
-		STAT_COG = -4
+		STAT_BIO = -4,
+		STAT_MEC = -8,
+		STAT_COG = -6
 	)
 
 /datum/category_item/setup_option/background/homeworld/thalatta
@@ -599,6 +604,46 @@
 		STAT_BIO = 8,
 		STAT_MEC = -6,
 		STAT_COG = 3
+	)
+
+/datum/category_item/setup_option/background/homeworld/rankorin
+	name = "Rankorin"
+	desc = "Rankorin was originally classified as a death world due to its highly toxic atmosphere caused by a combination of natural flora and common storms of poisonous dusts clouds. \
+	However the discovery of immense diamonds deposits lured potential companies to establish colonies on the planet for a highly lucrative mining operation. Much to misfortune of the first \
+	people to settle there the toxic nature of the world proved most disastrous to kriosans and cindarites despite their usual tolerance to such conditions. Through a quirk of biology the flora of \
+	Rankorin developed toxins that attacked the immune system and turned it against the body, as such, races normally suited for this world avoided it as much as possible. \
+	The remaining people who choose to settle here and work the mines adapted over several generations to thrive in bad atmosphere and have almost become dependent on it. \
+	This adaptation, coupled with working the diamond mines, have made them physically strong but comparably weak to people of other home-worlds."
+
+	perks = list(/datum/perk/chaingun_smoker)
+
+	stat_modifiers = list(
+		STAT_ROB = -6,
+		STAT_TGH = 2,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/homeworld/sanperitor
+	name = "Sanperitor"
+	desc = "Sanperitor is a low atmosphere world closer to its systems star then most species are comfortable living with. The intense solar radiation of the planet has caused those who reside their to \
+	naturally adapt to the toxins present in every day life. Sanperitor itself first came to be colonized due to its larger than normal core and already lightly radioactive atmosphere that allowed \
+	for massive thermonuclear power generators to be built. The planet itself supplies a great number of worlds with super charged power cores, artificially crafted super matters, and \
+	technology used to produce star ship engines or planetary nuclear reactors. People from this planet tend to be physically weaker than most but cheerfully resolute and have naturally \
+	evolved to resist most forms of toxins."
+
+	restricted_to_species = list(FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
+	perks = list(/datum/perk/blood_of_lead)
+
+	stat_modifiers = list(
+		STAT_ROB = -5,
+		STAT_TGH = -4,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/homeworld/earthandmars
@@ -659,12 +704,12 @@
 	)
 
 /datum/category_item/setup_option/background/homeworld/marquahomeworlds
-	name = "Mar'qua Hiveworlds"
-	desc = "The mar'qua hiveworlds are a massive collection of varied star systems controlled by the mar'qua empire and its allies within the Terran Federation. While the mar'qua hiveworlds are \
+	name = "Marqua Homeworlds"
+	desc = "The mar'qua homeworlds are a massive collection of varied star systems controlled by the mar'qua empire and its allies within the Terran Federation. While the mar'qua homeworlds are \
 	largely self sufficient they follow a strict caste system and each world is largely similar to one another. Concepts of family, friendship, and leisure time are foreign ideas to  \
 	worlds controlled by the mar'qua empire and people growing up here may be relocated by the government to new areas or even new worlds far from family or friends at a moments notice. \
 	Mar'qua are practical above all else and as such employ the use of humans and cindarites greatly for their broader skills, allowing them to live within their borders, yet they refuse \
-	citizenship to any other race. Life in the hiveworlds is one of monotany, but such living enhances the intelligence of denizens as toil and reassignment happen often enough to \
+	citizenship to any other race. Life in the homeworlds is one of monotany, but such living enhances the intelligence of denizens as toil and reassignment happen often enough to \
 	broaden your skill sets."
 
 	restricted_to_species = list(FORM_MARQUA, FORM_HUMAN, FORM_CINDAR)
@@ -679,7 +724,7 @@
 	)
 
 /datum/category_item/setup_option/background/homeworld/marquawanderer
-	name = "Wanderer's Armada"
+	name = "Wanderers Armada"
 	desc = "The Wanderer's Armada is a group of nearly a hundred repourposed ships, ranging from small corvettes to the largest Dreadnought that began the Armada. While the size of this fleet \
 	rivals certain Federation fleets, it focuses on being the wandering black market, visiting each system and recruiting those that wish to join them. While originally it was composed of \
 	Mar'Qua exiles, currently nearly every race in the known space has it's part in the Armada."
@@ -777,17 +822,63 @@
 	name = "Former Pirate"
 	desc = "Early on in your life you became a pirate for personal reasons. You may have been a void wolf or apart of a named group of space raiders, regardless of your decisions you spent a \
 	period attacking other ships, frontier colonies, and looting the aftermaths of battles for anything of value. For whatever reason you gave up that life to become an honest \
-	(or dishonest) citizen of the colony."
+	(or dishonest) citizen of the colony. One benefit at least of your raider life style is you got good at getting in and out quickly, regardless of any barriers in your way."
 
 	restricted_depts = COMMAND | SECURITY
+	perks = list(/datum/perk/parkour)
 
 	stat_modifiers = list(
 		STAT_ROB = 4,
 		STAT_TGH = 3,
 		STAT_VIG = 6,
-		STAT_BIO = -4,
+		STAT_BIO = -6,
 		STAT_MEC = 0,
-		STAT_COG = -9
+		STAT_COG = -11
+	)
+
+/datum/category_item/setup_option/background/career/laborer
+	name = "Former Laborer"
+	desc = "Unlike the rest of these special snowflakes wandering around the colony you worked for a long period as a laborer, doing some simple heavy work with your hands. \
+	It certainly wasn't glamorous or special but hey, it was a living and it was good work experience for the job you have now. The years working with your muscles has left you quite hardy \
+	but it wasn't exactly stimulating."
+
+	stat_modifiers = list(
+		STAT_ROB = 4,
+		STAT_TGH = 4,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = -8
+	)
+
+/datum/category_item/setup_option/background/career/mechanic
+	name = "Former Mechanic"
+	desc = "You like mechanics, from cars to hover bikes to electrical equipment you've worked on them all. Maybe you were a minor technician, working on general maintenance for a few vehicles \
+	or basic electrical equipment. Maybe you were a full licensed mechanic with plenty of experience. Whatever you were you picked up quite a few tricks over the years with various bits of tech \
+	ranging from robots, autolathes, and other fancy machines."
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = -7,
+		STAT_MEC = 5,
+		STAT_COG = 2
+	)
+
+/datum/category_item/setup_option/background/career/medtech
+	name = "Former Medical Intern"
+	desc = "At one point you served as a medical intern, this can range from a paramedic, nurse, orderly, and even a field medic. Your training wasn't exactly advanced but had the benefit of \
+	teaching you how to properly set a bandage and spot the differences and uses of various medical chemicals. Later on in life you might have taken your medical career further or chosen a different path. \
+	Whatever happened, you haven't forgotten the few tricks you learned."
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 5,
+		STAT_MEC = -7,
+		STAT_COG = 2
 	)
 
 /datum/category_item/setup_option/background/career/military
@@ -809,29 +900,32 @@
 	name = "Former Criminal"
 	desc = "Maybe you were a low tier ganger, a mafioso, or a professional with a criminal syndicate. Whatever you were it wasn't honest, nor was it something any good person could take pride in. \
 	Your former connections, for they are former as you've left that life behind, still haunt you as your record is known by security. As such you are barred from security or command positions. \
-	But that life has at least gifted you with some broad if boorish skills."
+	But that life has at least gifted you with some broad if boorish skills and a quick fingered disposition for snatching objects off of people without them noticing."
 
 	restricted_depts = COMMAND | SECURITY
+	perks = list(/datum/perk/fast_fingers)
 
 	stat_modifiers = list(
 		STAT_ROB = 3,
 		STAT_TGH = 4,
 		STAT_VIG = 3,
-		STAT_BIO = 0,
-		STAT_MEC = -4,
-		STAT_COG = -3
+		STAT_BIO = -3,
+		STAT_MEC = -3,
+		STAT_COG = -5
 	)
 
 /datum/category_item/setup_option/background/career/asteroid
-	name = "Former Asteroid Miner"
-	desc = "As an asteroid miner you spent many years in remote locations digging through airless environments for nothing more than a palm's worth of precious ores. So far from civilization you \
+	name = "Former Space Contractor"
+	desc = "Maybe you were an asteroid miner, hull repair technician, or simply worked a job where oxygen was a rarity. Whatever your job, it was so far from civilization and people you \
 	developed a hearty constitution and self reliant attitude. Yet the boredom of being cut off from the general population and the lack of more intellectual stimulation did a number on your \
-	creativity."
+	creativity. All that time spent working in low oxygen enviroments and the occassional oxygen breach has adapted you to dealing with such events, your lungs may as well be made of metal now."
+
+	perks = list(/datum/perk/lungs_of_iron)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 7,
-		STAT_VIG = -6,
+		STAT_VIG = -9,
 		STAT_BIO = 4,
 		STAT_MEC = 5,
 		STAT_COG = -10
@@ -841,7 +935,7 @@
 	name = "Former Social Worker"
 	desc = "As a former social worker you spent a great deal of time helping the dregs of society, be it from mental illness, drug addiction, or them just being a completely inept loser. \
 	Whatever your case loads, you learned to come up with creative solutions to the problems people faced and directed them to where they could get help as they tried to escape the \
-	system of bureaucracy. All that time spent at a desk though didn't improve your health."
+	system of bureaucracy. All that time spent at a office desk though didn't exactly improve your health however."
 
 	stat_modifiers = list(
 		STAT_ROB = -4,
@@ -857,12 +951,15 @@
 	name = "Former Scavenger"
 	desc = "As a scavenger you spent a great deal of time charting pathways through the unexplored areas of space, scanning planets for old ruins that might have valuables, or exploring forgotten battlefields. \
 	Sometimes it was more localized, crawling to the abandoned tunnels of destroyed and long forgotten ship looking for valuables and answers to why they were brought to this state. \
-	Life as a scavenger was rough, but it did let you adjust to frontier work comfortably."
+	Life as a scavenger was rough, but it did let you adjust to frontier work comfortably. Your life of avoiding hazards be they incidental or made with malcontent has at least made you more ready \
+	to dodge potential traps."
+
+	perks = list(/datum/perk/sure_step)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 2,
-		STAT_VIG = -7,
+		STAT_VIG = -9,
 		STAT_BIO = 0,
 		STAT_MEC = 6,
 		STAT_COG = 4
@@ -909,9 +1006,11 @@
 	desc = "Where ever you came from is no more, torn apart by conflict and war. It may have been a civil war or conquest by the Terran Federation, whatever the reason it has long since lost any \
 	meaning after the destruction of your home-world. Somehow you escaped it, but the experience has left you extremely resilient if a bit locked in your ways."
 
+	perks = list(/datum/perk/space_asshole)
+
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 10,
+		STAT_TGH = 5,
 		STAT_VIG = -10,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -925,6 +1024,7 @@
 	to most drugs so you can inject more varied amounts than others."
 
 	perks = list(/datum/perk/addict)
+	restricted_to_species = list(FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_CINDAR)
 
 	stat_modifiers = list(
 		STAT_ROB = -8,
@@ -944,9 +1044,56 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 15,
+		STAT_TGH = 20,
 		STAT_VIG = -5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/bckgrnd/no_light
+	name = "Achromatic Lifestyle"
+	desc = "Much of your early life was spent in areas which did not have much, if any, natural light. This may have been planetary where stretches of time hid your world from the sun's light \
+	or you lived in an area where light wasn't a feasible resource due to economic, biological, or local reasons. Whatever the specifics, you've gotten highly adapted to finding your way through the \
+	dark and used to bumping into the occasional object. Sadly this living didn't sharpen your eyesight as much as you'd have liked."
+
+	perks = list(/datum/perk/nightcrawler)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 3,
+		STAT_VIG = -7,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/bckgrnd/gifted
+	name = "Gifted"
+	desc = "You were a smart child, gifted in any particular area you wished to embark upon be it intellectual or physical. Unfortunately this approach made you a jack of all trades and severely  \
+	hampered your ability to master any one discipline. Sure, you're smart, but without the experience and discipline of practical application it doesn't help you as much as anyone could hope."
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = -2,
+		STAT_BIO = -4,
+		STAT_MEC = -4,
+		STAT_COG = 10
+	)
+
+
+/datum/category_item/setup_option/background/bckgrnd/idiotsavant
+	name = "Idiot Savant"
+	desc = "You're an idiot, no really, you're just a complete brainlet when it comes to anything you're not hyper focused on. You have an innate knack and understanding with the most conceptual  \
+	applications of technology, medicine, and even firearms. The problem is this understanding is instinctual, not intellectual, you have no idea how you know, you just do. You're stuck in the odd \
+	position of being able to do complex difficult tasks related to your areas of interest but completely incapable of doing the most basic things in other areas."
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 3,
+		STAT_BIO = 6,
+		STAT_MEC = 6,
+		STAT_COG = -15
 	)

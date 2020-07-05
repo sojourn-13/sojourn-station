@@ -129,3 +129,102 @@
 	holder.adjustToxLoss(-0.3)
 	holder.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	..()
+
+/datum/perk/sure_step
+	name = "Sure step"
+	desc = " You are more likely to avoid traps."
+	//icon_state = "mantrap"
+
+/datum/perk/ear_of_quicksilver
+	name = "Ear of Quicksilver"
+	desc = "Training (and an ear implant) given to you as a ranger makes it hard for secrets to escape your ears. Beware, loud noises are especially dangerous to you as a side effect."
+	//icon_state = "ear" // https://game-icons.net
+
+/datum/perk/unfinished_delivery
+	name = "Lazarus Protocol"
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish it will attempt an emergency revival that may restore your body after a short time in which you'll be unconcious."
+	//icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
+
+/datum/perk/lungs_of_iron
+	name = "Lungs of Iron"
+	desc = "For whatever reason, be it natural evolution or simply spending too much time in space or low oxygen worlds your lungs are adapted to surviving with less oxygen."
+	//icon_state = "lungs" // https://game-icons.net/1x1/lorc/one-eyed.html
+
+/datum/perk/blood_of_lead
+	name = "Lead Blood"
+	desc = "Maybe you grew up on a world with a toxic atmosphere, maybe solar radiation was common, or maybe its just genetics but you're adapted well to dealing with toxins."
+	//icon_state = "liver" // https://game-icons.net
+
+/datum/perk/space_asshole
+	name = "Rough Life"
+	desc = "Coming from a world consumed with war has made you a lot more used to dealing with bad terrain and explosives."
+	//icon_state = "bomb" // https://game-icons.net
+
+/datum/perk/space_asshole/assign(mob/living/carbon/human/H)
+	..()
+	holder.mob_bomb_defense += 25
+	holder.falls_mod -= 0.4
+
+/datum/perk/space_asshole/remove()
+	holder.mob_bomb_defense -= 25
+	holder.falls_mod += 0.4
+	..()
+
+/datum/perk/parkour
+	name = "Raiders Leap"
+	desc = "You can climb some objects faster than normal thanks to a life of raiding ships, settlements, and anywhere plunder was."
+	//icon_state = "parkour" //https://game-icons.net/1x1/delapouite/jump-across.html
+
+/datum/perk/parkour/assign(mob/living/carbon/human/H)
+	..()
+	holder.mod_climb_delay -= -0.5
+
+/datum/perk/parkour/remove()
+	holder.mod_climb_delay += 0.5
+	..()
+
+/datum/perk/chaingun_smoker
+	name = "Unclean Living"
+	desc = "The bad conditions of your birth have led you to thrive in toxic enviroments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and less sick when smoking."
+	//icon_state = "cigarette" // https://game-icons.net
+
+/datum/perk/nightcrawler
+	name = "Nightcrawler"
+	desc = "You are faster in the darkness due to being used to it."
+	//icon_state = "night" // https://game-icons.net/1x1/lorc/night-sky.html
+
+/datum/perk/fast_fingers
+	name = "Fast fingers"
+	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary!"
+	//icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
+
+/datum/perk/quiet_as_mouse
+	name = "Quiet as a mouse"
+	desc = "Being deadly, easy. Silent? Even easier now."
+	//icon_state = "footsteps" // https://game-icons.net
+
+/datum/perk/quiet_as_mouse/assign(mob/living/carbon/human/H)
+	..()
+	holder.noise_coeff -= 0.5
+
+/datum/perk/quiet_as_mouse/remove()
+	holder.noise_coeff += 0.5
+	..()
+
+/datum/perk/junkborn
+	name = "Expert Scavenger"
+	desc = "They say theirs diamonds in the rough and you can prove it."
+	//icon_state = "treasure" // https://game-icons.net
+
+/datum/perk/ass_of_concrete
+	name = "Expert Defensive Training"
+	desc = "Your position requires you to be unstoppable. Slowing down to a walking pace lets you center your gravity and few things can knock you down."
+	//icon_state = "muscular" // https://game-icons.net
+
+/datum/perk/ass_of_concrete/assign(mob/living/carbon/human/H)
+	..()
+	holder.mob_bump_flag = HEAVY
+
+/datum/perk/ass_of_concrete/remove()
+	holder.mob_bump_flag = ~HEAVY
+	..()

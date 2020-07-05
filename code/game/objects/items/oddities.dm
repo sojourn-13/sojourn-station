@@ -17,11 +17,19 @@
 	var/list/oddity_stats
 
 	var/sanity_value = 1
+	var/datum/perk/oddity/perk
 
 
 /obj/item/weapon/oddity/Initialize()
 	. = ..()
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
+	if(!perk && prob(25))
+		perk = pick(subtypesof(/datum/perk/oddity))
+
+/obj/item/weapon/oddity/examine(user)
+	..()
+	if(perk)
+		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>."))
 
 	if(oddity_stats)
 		for(var/stat in oddity_stats)

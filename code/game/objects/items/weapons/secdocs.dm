@@ -56,18 +56,3 @@
 	if(istype(owner))
 		to_chat(owner, SPAN_NOTICE("The Soteria Institute has entrusted you with valuable research data. It is essential that you do not let it fall into the wrong hands."))
 
-/hook/roundstart/proc/place_docs()
-	var/list/obj/landmark/storyevent/midgame_stash_spawn/L = list()
-	for(var/obj/landmark/storyevent/midgame_stash_spawn/S in landmarks_list)
-		L.Add(S)
-
-	L = shuffle(L)
-
-	if(L.len < 3)
-		warning("Failed to place secret documents: not enough landmarks.")
-		return FALSE
-
-	for(var/i in 1 to 3)
-		new /obj/item/weapon/oddity/secdocs(L[i].get_loc())
-
-	return TRUE

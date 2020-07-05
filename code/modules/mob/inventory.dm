@@ -189,6 +189,8 @@
 /mob/proc/get_equipped_items()
 	return list()
 
+/mob/proc/get_max_w_class()
+	return 0 //zero
 
 //Returns the inventory slot for the current hand
 /mob/proc/get_active_hand_slot()

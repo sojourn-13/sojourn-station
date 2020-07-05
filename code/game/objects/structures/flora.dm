@@ -13,10 +13,10 @@
 	var/list/usable_qualities = list(QUALITY_SAWING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_SAWING)
-		to_chat(user, SPAN_NOTICE("You started to cut the tree..."))
+		to_chat(user, SPAN_NOTICE("You started to cut the tree, felling it and turning it into planks..."))
 		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			playsound(loc, 'sound/items/tree_fall.ogg', 80, 1)
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 120 : 2)
+			new /obj/item/stack/material/wood(get_turf(src), 1 ? 30 : 2)
 			to_chat(user, SPAN_NOTICE("You cut down a tree."))
 			qdel(src)
 			return
