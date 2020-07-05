@@ -46,5 +46,4 @@
 					/obj/random/tool_upgrade/rare = 4,\
 					/obj/random/rig_module/rare = 4,\
 					/obj/random/credits/c1000 = 3,\
-					/obj/random/cloth/holster = 4,\
-					/obj/item/stash_spawner = 2)
+					/obj/item/stash_spawner = 1)

@@ -6,7 +6,7 @@
 	desc = "You've been cursed by the latent effects of an oddity and now emit toxins harmful to you and everyone around you. It will be a long time before this wears off..."
 	gain_text = "You feel a terrible aching pain in your lungs, the anomalous radiation from an oddity has infused your body with accursed toxins!"
 	//icon_state = "Hazmat" // https://game-icons.net
-	var/cooldown = 5 MINUTES
+	var/cooldown = 10 MINUTES
 	var/initial_time
 
 /datum/perk/oddity/toxic_revenger/assign(mob/living/carbon/human/H)

@@ -615,7 +615,6 @@
 			return 1
 		if(health <= HEALTH_THRESHOLD_DEAD) //No health = death
 			if(stats.getPerk(PERK_UNFINISHED_DELIVERY) && prob(33)) //Unless you have this perk
-				mob_playsound(get_turf(src), 'sound/machines/defib_success.ogg', 50, 0)
 				heal_organ_damage(100, 100)
 				adjustOxyLoss(-200)
 				adjustToxLoss(-200)
