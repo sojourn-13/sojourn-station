@@ -128,3 +128,22 @@
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
+
+/datum/craft_recipe/guild/belt
+	name = "Blet"
+	result = /obj/item/weapon/storage/belt
+	steps = list(
+		list(/obj/item/weapon/storage/belt/utility, 1, "time" = 60),
+		list(/obj/item/stack/cable_coil, 10, "time" = 30),
+		list(/obj/item/weapon/storage/pouch/medium_generic, 1, "time" = 40)
+	)
+
+/datum/craft_recipe/guild/webbing
+	name = "Webbing"
+	result = /obj/item/weapon/storage/belt/webbing
+	steps = list(
+		list(/obj/item/weapon/storage/belt, 1, "time" = 30),
+		list(/obj/item/weapon/storage/belt, 1, "time" = 30),
+		list(/obj/item/stack/cable_coil, 30, "time" = 30),
+		list(/obj/item/weapon/storage/pouch/medium_generic, 1, "time" = 40)
+	)
