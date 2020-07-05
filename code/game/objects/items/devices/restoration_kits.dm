@@ -11,11 +11,11 @@
 /obj/item/device/restoration/afterattack(atom/target, mob/user as mob, proximity)
 	if(!proximity) return
 
-	else if(istype(target) && oldified == FALSE)
+	else if(istype(target) && target.oldified == FALSE)
 		to_chat(user, "<span class='notice'>This doesn't need to be resorted!</span>")
 		return
 
-	else if(istype(target) && oldified == TRUE)
+	else if(istype(target) && target.oldified == TRUE)
 		to_chat(user, "You start restoring the [target.name]")
 		if(do_after(user, 150, target))
 			to_chat(user, "<span class='notice'>You start to restore \the [target.name].</span>")

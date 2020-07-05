@@ -162,7 +162,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/bulldog
 
 /datum/design/autolathe/gun/bulldog_rds
-	name = "H&S CAR .257 \"Bulldog\""
+	name = "H&S CAR .257 \"Bulldog\" Dot Sight"
 	build_path = /obj/item/weapon/gun/projectile/automatic/bulldog/rds
 
 /datum/design/autolathe/gun/ak47

@@ -1200,6 +1200,7 @@
 	/obj/item/weapon/gun/projectile/colt = 5,
 	/obj/item/weapon/gun/energy/gun/martin = 5,
 	/obj/item/weapon/gun/projectile/revolver/detective = 5,
+	/obj/item/weapon/gun/projectile/clarissa = 5, // SoJ edit
 	/obj/item/ammo_magazine/slpistol/rubber = 10,
 	/obj/item/ammo_magazine/pistol/rubber = 15,
 	/obj/item/ammo_magazine/hpistol/rubber = 10,
@@ -1241,6 +1242,7 @@
 	/obj/item/weapon/gun/projectile/colt = 900,
 	/obj/item/weapon/gun/energy/gun/martin = 500,
 	/obj/item/weapon/gun/projectile/revolver/detective = 400,
+	/obj/item/weapon/gun/projectile/clarissa = 450, //Weakest gun in the game - SoJ Edit
 	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1500,
 	/obj/item/weapon/gun/projectile/shotgun/pump = 1300,
 	/obj/item/weapon/gun/projectile/automatic/mac = 2000,
