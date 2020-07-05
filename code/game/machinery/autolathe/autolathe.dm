@@ -226,9 +226,6 @@
 		ui.open()
 
 /obj/machinery/autolathe/attackby(obj/item/I, mob/user)
-	if(!usr.stat_check(STAT_COG, 0))
-		to_chat(usr, SPAN_WARNING("Your stupidity is so great you have no idea how to operate this!"))
-		return
 
 	if(default_deconstruction(I, user))
 		wires?.Interact(user)
@@ -254,10 +251,6 @@
 
 
 /obj/machinery/autolathe/attack_hand(mob/user)
-	if(!usr.stat_check(STAT_COG, 0))
-		to_chat(usr, SPAN_WARNING("Your stupidity is so great you have no idea how to operate this!"))
-		return
-
 	if(..())
 		return TRUE
 
