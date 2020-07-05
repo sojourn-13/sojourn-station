@@ -1,4 +1,4 @@
-#define CASH_PER_STAT 1000 // The cost of a single level of a statistic
+//#define CASH_PER_STAT 1000 // The cost of a single level of a statistic
 
 /obj/item/weapon/spacecash
 	name = "0 credit"
@@ -190,4 +190,4 @@ proc/spawn_money(var/sum, spawnloc, mob/living/carbon/human/human_user as mob)
 	if (!(user in view(2)) && user!=src.loc) return
 	to_chat(user, "\blue Charge card's owner: [src.owner_name]. Credits remaining: [src.worth].")
 
-#undef CASH_PER_STAT
+//#undef CASH_PER_STAT
