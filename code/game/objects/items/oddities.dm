@@ -25,19 +25,14 @@
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
 	if(!perk && prob(25))
 		perk = pick(subtypesof(/datum/perk/oddity))
+	if(oddity_stats)
+		for(var/stat in oddity_stats)
+			oddity_stats[stat] = rand(1, oddity_stats[stat])
 
 /obj/item/weapon/oddity/examine(user)
 	..()
 	if(perk)
 		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>."))
-
-	if(oddity_stats)
-		for(var/stat in oddity_stats)
-			oddity_stats[stat] = rand(1, oddity_stats[stat])
-
-
-/obj/item/weapon/oddity/examine(user)
-	..()
 	for(var/stat in oddity_stats)
 		var/aspect
 		switch(oddity_stats[stat])

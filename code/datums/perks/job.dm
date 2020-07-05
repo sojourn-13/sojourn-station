@@ -97,7 +97,7 @@
 	holder.metabolism_effects.addiction_chance_multiplier = 1
 	holder.metabolism_effects.nsa_threshold -= 20
 	..()
-
+/*
 /datum/perk/merchant
 	name = "Greedy at Heart"
 	desc = "Money is what matters for you, and it's so powerful it lets you improve your skills the more you have on your person."
@@ -110,7 +110,7 @@
 /datum/perk/merchant/remove()
 	holder.sanity.valid_inspirations -= /obj/item/weapon/spacecash/bundle
 	..()
-
+*/
 /datum/perk/sanityboost
 	name = "True Faith"
 	desc = "When near an obelisk, you feel your mind at ease. You slowly heal due to its latent effects."
