@@ -257,3 +257,23 @@
 							/datum/design/research/item/mechfab/modules/multitool/engineer,
 							/datum/design/research/item/mechfab/modules/multitool/miner
 							)
+
+/datum/technology/top_biotech
+	name = "RIG Medical Addaptation"
+	desc = "Augmentations for body, this tech using almost all previous technologies."
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.85
+	y = 0.5
+	icon = "riginjector"
+
+	required_technologies = list(	/datum/technology/top_biotech,
+									/datum/technology/rig_industeral
+								)
+	required_tech_levels = list()
+	cost = 5000
+
+	unlocks_designs = list(	/datum/design/research/item/chem_injector,
+							/datum/design/research/item/healthscanner,
+							/datum/design/research/item/combat_injector,
+							)

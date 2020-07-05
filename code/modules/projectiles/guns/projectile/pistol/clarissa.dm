@@ -17,7 +17,6 @@
 	silencer_type = /obj/item/weapon/silencer
 	damage_multiplier = 0.7
 	recoil_buildup = 19
-	one_hand_penalty = 10
 
 /obj/item/weapon/gun/projectile/clarissa/update_icon()
 	..()

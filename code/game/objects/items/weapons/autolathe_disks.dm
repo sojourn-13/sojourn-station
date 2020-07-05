@@ -380,7 +380,7 @@
 		)
 
 
-// Moebius
+// Soteria
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical
 	disk_name = "Soteria Medical Designs"
 	icon_state = "moebius"
@@ -450,6 +450,34 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer/rd
 	disk_name = "Soteria Computer Factory"
+	license = -1
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/rped
+	disk_name = "Soteria RnD Stock Parts Desgins"
+	icon_state = "moebius"
+	license = 20
+	designs = list(
+		/datum/design/research/item/part/RPED,
+		/datum/design/research/item/part/basic_capacitor,
+		/datum/design/research/item/part/adv_capacitor,
+		/datum/design/research/item/part/super_capacitor,
+		/datum/design/research/item/part/micro_mani,
+		/datum/design/research/item/part/nano_mani,
+		/datum/design/research/item/part/pico_mani,
+		/datum/design/research/item/part/basic_matter_bin,
+		/datum/design/research/item/part/adv_matter_bin,
+		/datum/design/research/item/part/super_matter_bin,
+		/datum/design/research/item/part/basic_micro_laser,
+		/datum/design/research/item/part/high_micro_laser,
+		/datum/design/research/item/part/ultra_micro_laser,
+		/datum/design/research/item/part/basic_sensor,
+		/datum/design/research/item/part/adv_sensor,
+		/datum/design/research/item/part/phasic_sensor,
+		/datum/design/autolathe/part/consolescreen
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/rped/rd
+	disk_name = "Soteria Stock Parts Factory"
 	license = -1
 
 // NeoTheology
@@ -1073,6 +1101,7 @@
 		/datum/design/autolathe/gun/ladon_sa,
 		/datum/design/autolathe/ammo/magnum,
 		/datum/design/autolathe/ammo/magnum_lethal,
+		/datum/design/autolathe/ammo/magnum_rubber,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ladon/dark
@@ -1084,6 +1113,7 @@
 		/datum/design/autolathe/gun/ladon,
 		/datum/design/autolathe/ammo/magnum,
 		/datum/design/autolathe/ammo/magnum_lethal,
+		/datum/design/autolathe/ammo/magnum_rubber,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58
@@ -1118,6 +1148,7 @@
 		/datum/design/autolathe/gun/rafale,
 		/datum/design/autolathe/ammo/magnum_lethal,
 		/datum/design/autolathe/ammo/magnum_practice,
+		/datum/design/autolathe/ammo/magnum_rubber,
 		)
 
 // .50 PISTOLS
@@ -1129,6 +1160,7 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/lamia,
+		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz_practice,
 		/datum/design/autolathe/ammo/kurtz_rubber,
 		)
@@ -1151,6 +1183,7 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/naga,
+		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz,
 		/datum/design/autolathe/ammo/kurtz_lethal,
 		)
@@ -1162,6 +1195,7 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/akurra,
+		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz_practice,
 		/datum/design/autolathe/ammo/kurtz_lethal,
 		)
@@ -1378,9 +1412,10 @@
 
 	license = 4
 	designs = list(
-		/datum/design/autolathe/gun/sika,
+		/datum/design/autolathe/gun/roe,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/roe
@@ -1392,6 +1427,7 @@
 		/datum/design/autolathe/gun/sika,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
 	)
 
 
@@ -1429,6 +1465,7 @@
 	license = 6
 	designs = list(
 		/datum/design/autolathe/gun/omnicarbine,
+		/datum/design/autolathe/ammo/hrifle,
 		/datum/design/autolathe/ammo/hrifle_practice,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 	)

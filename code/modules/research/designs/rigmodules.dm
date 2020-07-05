@@ -20,7 +20,30 @@
 	name = "mounted chemical dispenser"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
 	build_path = /obj/item/rig_module/chem_dispenser
-	sort_string = "VDAAD"
+	sort_string = "VDAAH"
+	category = "Medical"
+
+/datum/design/research/item/chem_injector
+	name = "mounted chemical injector"
+	desc = "A complex web of tubing and needles suitable for hardsuit use."
+	build_path = /obj/item/rig_module/chem_dispenser/injector
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 10, MATERIAL_PLASTIC = 10, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1, MATERIAL_DIAMOND = 1)
+	sort_string = "VDAAI"
+	category = "Medical"
+
+/datum/design/research/item/healthscanner
+	name = "mounted health scanner"
+	desc = "A hardsuit-mounted health scanner."
+	build_path = /obj/item/rig_module/device/healthscanner
+	sort_string = "VDAAJ"
+	category = "Medical"
+
+/datum/design/research/item/combat_injector
+	name = "mounted combat injector"
+	desc = "A complex web of tubing and needles suitable for hardsuit use."
+	build_path = /obj/item/rig_module/chem_dispenser/combat
+	materials = list(MATERIAL_STEEL = 25, MATERIAL_GLASS = 15, MATERIAL_PLASTIC = 15, MATERIAL_GOLD = 2, MATERIAL_SILVER = 2, MATERIAL_DIAMOND = 1)
+	sort_string = "VDAAk"
 	category = "Medical"
 
 /datum/design/research/item/medhud
