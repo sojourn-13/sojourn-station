@@ -385,7 +385,7 @@
 "hu" = (/obj/machinery/atmospherics/pipe/tank/carbon_dioxide,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostmachineroom)
 "hv" = (/obj/machinery/atmospherics/pipe/tank/nitrogen,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostmachineroom)
 "hw" = (/obj/machinery/atmospherics/pipe/tank/plasma,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostmachineroom)
-"hx" = (/obj/machinery/atmospherics/portables_connector,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostmachineroom)
+"hx" = (/obj/machinery/atmospherics/portables_connector,/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostmachineroom)
 "hy" = (/obj/random/structures,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/rnd/outpostmachineroom)
 "hz" = (/obj/machinery/atmospherics/unary/vent_pump/on,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/rnd/outpostmachineroom)
 "hA" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/wall/r_wall,/area/mine/power)
@@ -412,7 +412,7 @@
 "hV" = (/obj/machinery/portable_atmospherics/canister/air,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostmachineroom)
 "hW" = (/obj/effect/decal/cleanable/liquid_fuel,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/techmaint_perforated,/area/mine/power)
 "hX" = (/obj/structure/reagent_dispensers/fueltank,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/mine/power)
-"hY" = (/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -22},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/rnd/outpostmachineroom)
+"hY" = (/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -22},/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/rnd/outpostmachineroom)
 "hZ" = (/obj/structure/closet/crate,/obj/random/science/low_chance,/obj/random/science/low_chance,/obj/random/science/low_chance,/obj/random/science/low_chance,/obj/random/science/low_chance,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/rnd/outpostmachineroom)
 "ia" = (/obj/machinery/door/airlock{name = "Bathroom"; req_access = list(48)},/turf/simulated/floor/tiled/steel/cargo,/area/mine/livingarea)
 "ib" = (/obj/structure/cable/ender{id = "research outpost to engine"; name = "surface power cable"},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/rnd/outpostmachineroom)
@@ -449,7 +449,7 @@
 "iG" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/door/firedoor,/obj/machinery/door/airlock/science{name = "Machine Room"; req_access = list(5)},/turf/simulated/floor/tiled/white,/area/nadezhda/rnd/outpostmachineroom)
 "iH" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/rnd/outpostmachineroom)
 "iI" = (/obj/machinery/portable_atmospherics/canister/air,/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostmachineroom)
-"iJ" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/rnd/outpostmachineroom)
+"iJ" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/space_heater,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/rnd/outpostmachineroom)
 "iK" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (EAST)"; icon_state = "danger"; dir = 4},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/rnd/outpostmachineroom)
 "iL" = (/turf/simulated/floor/tiled/white/gray_platform,/area/nadezhda/rnd/outpoststorage)
 "iM" = (/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/white,/area/nadezhda/rnd/outpoststorage)
@@ -773,7 +773,7 @@
 "oS" = (/obj/machinery/firealarm{dir = 1; pixel_y = -28},/obj/machinery/vending/fitness,/turf/simulated/floor/wood,/area/nadezhda/rnd/outpostbreakroom)
 "oT" = (/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -22},/obj/structure/table/woodentable,/obj/item/weapon/storage/box/donkpockets,/turf/simulated/floor/wood,/area/nadezhda/rnd/outpostbreakroom)
 "oU" = (/obj/machinery/light,/obj/structure/table/woodentable,/obj/machinery/microwave,/turf/simulated/floor/wood,/area/nadezhda/rnd/outpostbreakroom)
-"oV" = (/obj/structure/table/woodentable,/turf/simulated/floor/wood,/area/nadezhda/rnd/outpostbreakroom)
+"oV" = (/obj/structure/reagent_dispensers/water_cooler,/turf/simulated/floor/wood,/area/nadezhda/rnd/outpostbreakroom)
 "oW" = (/obj/machinery/vending/coffee,/turf/simulated/floor/wood,/area/nadezhda/rnd/outpostbreakroom)
 "oX" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/rnd/outpostbreakroom)
 "oY" = (/obj/machinery/light,/obj/structure/bed/chair/comfy/black{dir = 1},/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/rnd/outpostbreakroom)
@@ -885,7 +885,7 @@
 "ra" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/violetcorener,/area/nadezhda/rnd/outpostgeneral)
 "rb" = (/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/white/violetcorener,/area/nadezhda/rnd/outpostgeneral)
 "rc" = (/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/tiled/white/violetcorener,/area/nadezhda/rnd/outpostgeneral)
-"rd" = (/obj/machinery/door/airlock/glass_research{name = "Medical Outpost"},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/nadezhda/rnd/outpostgeneral)
+"rd" = (/obj/machinery/door/airlock/glass_research{name = "Medical Outpost"},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/outpostgeneral)
 "re" = (/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/outpostmedical)
 "rf" = (/obj/machinery/power/apc{cell_type = /obj/item/weapon/cell/large/high; dir = 4; name = "East APC"; pixel_x = 28; pixel_y = 0},/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/outpostmedical)
 "rg" = (/obj/machinery/portable_atmospherics/canister/plasma,/obj/machinery/light,/turf/simulated/floor/tiled/white/violetcorener,/area/nadezhda/rnd/anomal)
@@ -906,7 +906,7 @@
 "rv" = (/obj/structure/disposalpipe/segment,/turf/simulated/wall/r_wall,/area/nadezhda/rnd/outpostgeneral)
 "rw" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/white/violetcorener,/area/nadezhda/rnd/outpostgeneral)
 "rx" = (/obj/structure/disposalpipe/segment,/obj/effect/window_lwall_spawn/smartspawn,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/plating,/area/nadezhda/rnd/outpostgeneral)
-"ry" = (/obj/machinery/door/airlock/glass_research{name = "Medical Outpost"},/turf/simulated/floor/plating,/area/nadezhda/rnd/outpostgeneral)
+"ry" = (/obj/machinery/door/airlock/glass_research{name = "Medical Outpost"},/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/outpostgeneral)
 "rz" = (/obj/machinery/alarm{dir = 4; pixel_x = -26; pixel_y = 0},/obj/item/device/defib_kit/loaded,/obj/structure/table/rack,/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/outpostmedical)
 "rA" = (/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/outpostmedical)
 "rB" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/outpostmedical)
@@ -1006,7 +1006,7 @@
 "tr" = (/obj/machinery/atmospherics/unary/vent_scrubber,/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 8},/obj/machinery/camera/network/research,/turf/simulated/floor/tiled/steel,/area/nadezhda/rnd/anomalisoltwo)
 "ts" = (/obj/machinery/atmospherics/unary/vent_scrubber,/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 8},/obj/machinery/camera/network/research,/turf/simulated/floor/tiled/steel,/area/nadezhda/rnd/anomalisolone)
 "tt" = (/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/camera/network/research{dir = 8},/turf/simulated/floor/tiled/white/violetcorener,/area/nadezhda/rnd/outpostgeneral)
-"tu" = (/obj/machinery/camera/network/research{dir = 1},/turf/simulated/floor/tiled/white/violetcorener,/area/nadezhda/rnd/anomal)
+"tu" = (/obj/machinery/camera/network/research{dir = 1},/obj/machinery/space_heater,/turf/simulated/floor/tiled/white/violetcorener,/area/nadezhda/rnd/anomal)
 "tv" = (/obj/effect/floor_decal/industrial/danger,/obj/machinery/camera/network/research{dir = 8},/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/outpostmedical)
 "tw" = (/obj/structure/table/standard,/obj/random/medical_lowcost/low_chance,/obj/random/medical_lowcost/low_chance,/obj/random/medical_lowcost/low_chance,/obj/random/medical/low_chance,/obj/random/medical/low_chance,/obj/machinery/camera/network/research{dir = 1},/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/outpostmedical)
 "tx" = (/obj/machinery/power/smes/buildable{charge = 5e+006; input_attempt = 1; input_level = 200000; inputting = 0; output_attempt = 1; output_level = 200000; output_level_max = 250000; outputting = 2; RCon_tag = "Substation - RrsOut"},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostmachineroom)
@@ -1016,7 +1016,7 @@
 "tB" = (/obj/machinery/power/terminal{tag = "icon-term (NORTH)"; icon_state = "term"; dir = 1},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/plating/under,/area/nadezhda/rnd/outpostmachineroom)
 "tC" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/rnd/outpostmachineroom)
 "tD" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/rnd/outpostmachineroom)
-"tE" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/catwalk,/obj/machinery/power/apc{dir = 8; name = "West APC"; pixel_x = -28; pixel_y = 0},/obj/structure/cable/yellow,/turf/simulated/floor/plating/under,/area/nadezhda/rnd/outpostmachineroom)
+"tE" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/catwalk,/obj/machinery/power/apc{dir = 8; name = "West APC"; pixel_x = -28; pixel_y = 0},/obj/structure/cable/yellow,/obj/machinery/space_heater,/turf/simulated/floor/plating/under,/area/nadezhda/rnd/outpostmachineroom)
 "tF" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/disposalpipe/segment{dir = 4; icon_state = "pipe-c"},/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/rnd/outpostmachineroom)
 "tG" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/obj/structure/disposalpipe/segment,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/rnd/outpostmachineroom)
 "tH" = (/turf/simulated/mineral/planet,/area/mine/prep)
@@ -1054,6 +1054,7 @@
 "un" = (/obj/machinery/pipelayer,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpoststorage)
 "uo" = (/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (WEST)"; icon_state = "danger"; dir = 8},/obj/machinery/pipedispenser,/turf/simulated/floor/tiled/white,/area/nadezhda/rnd/mixing)
 "up" = (/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (WEST)"; icon_state = "danger"; dir = 8},/obj/machinery/pipedispenser/disposal,/turf/simulated/floor/tiled/white,/area/nadezhda/rnd/mixing)
+"LR" = (/obj/machinery/space_heater,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/rnd/mixing)
 "ZT" = (/obj/item/device/radio/beacon/explosion_watcher,/turf/simulated/floor/tiled/white,/area/nadezhda/rnd/outpoststorage)
 
 (1,1,1) = {"
@@ -1231,7 +1232,7 @@ aatitititititititititititiihihihihihjCihihihihihihjDihihihihihkQihihihihihihtPiD
 aajEjEjEjEjEjFjFjFjFjGjGjGjGjHjIjHjHjJtkjHjHjHjHjHjKjHjHjLjHjHjMjHjNjHihihihtRiDrtrttSjAjAjAjAjAjAjAjAjAjAtititititititititititititititititititititititititititikskskstititititititititititititititititititititititititititititititititititititititititititititititititititisBkskstitititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititiaa
 aajEjOjPjQjEjRjSjTjFjUjVjWjGjHjHjHjHjJjHjHjHjHjHjHjKjHjHjHjHjHjMjHjHjHiDjXiDiDiDtTtTtSjAjAjAjYjZjAjAjAjAjAjAjAjAjAtititititititititititititititititititititititirWkskstititititititititititititititititititititititititititititititititititititititititititititititititititikskskstitititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititiaa
 aajEkbkckdjEkekfkgjFkhkikjjGjHjHkkkmknkokpkpkpkpkokqkpkptlkokpkrktkukukvkvkvkvkwihjAjAjAjAjAkxkykzkAjAjAjAjAjAjAjAjAjAtitititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititiaa
-aajEkBkCkDjEkEkFkGjFkHkIkJjGjHjHjJkKkKkKkKkKkKkKkKkKkKkKkKkKkKkKjJjHkLihihihihihihjAjAjAjAjAkMkMkNkMjAjAjAjAjAjAjAjAjAtitititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititiaa
+aajEkBkCkDjEkEkFkGjFkHkIkJjGjHjHjJkKkKkKkKkKkKkKkKkKkKkKkKkKkKkKjJjHkLihihihihihihjAjAjAjAjALRkMkNkMjAjAjAjAjAjAjAjAjAtitititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititiaa
 aajEkOkPkTjEkRkSkUjFmfkVkWjGtmjHkXkKkYkZlantlcldlelflglhlclikKkKjJjHljjAjAjAjAjAjAjAjAjAjAjAlkkMlllmlnlololplolqjAjAjAtitititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititiaa
 aalrtZltlulvlwlxlylzlylAlBlCjHjHjJkKlDlElFlGlclclclclclclclHkKkKlIjHjHlJuolLlMlNjAlOlPlQlRlJlSkAlTlUlVlVlVlVjAlWjAjAjAtitititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititiaa
 aalrualXlylYlZmambmclBmdlBlCjHjHsvnrmgmhmimjmkmkmkmkmkmllcsGkKkKtnjHjHlJlKmnmnmojAmpmnmqmrlJmsmtmumvlnmwmxmyjAlWjAjAjAtitititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititititiaa
