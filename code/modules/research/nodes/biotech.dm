@@ -258,7 +258,7 @@
 							/datum/design/research/item/mechfab/modules/multitool/miner
 							)
 
-/datum/technology/top_biotech
+/datum/technology/rig_medical_stuff
 	name = "RIG Medical Addaptation"
 	desc = "Augmentations for body, this tech using almost all previous technologies."
 	tech_type = RESEARCH_BIOTECH
