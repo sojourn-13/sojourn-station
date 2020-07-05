@@ -564,9 +564,9 @@
 		STAT_ROB = 5,
 		STAT_TGH = 4,
 		STAT_VIG = 3,
-		STAT_BIO = -2,
-		STAT_MEC = -6,
-		STAT_COG = -4
+		STAT_BIO = -4,
+		STAT_MEC = -8,
+		STAT_COG = -6
 	)
 
 /datum/category_item/setup_option/background/homeworld/thalatta
@@ -609,16 +609,16 @@
 /datum/category_item/setup_option/background/homeworld/rankorin
 	name = "Rankorin"
 	desc = "Rankorin was originally classified as a death world due to its highly toxic atmosphere caused by a combination of natural flora and common storms of poisonous dusts clouds. \
-	However the discovery of immense diamonds deposits lured potential companies to established colonies on the planet for a highly lucrative mining operation. Much to misfortune of the first \
+	However the discovery of immense diamonds deposits lured potential companies to establish colonies on the planet for a highly lucrative mining operation. Much to misfortune of the first \
 	people to settle there the toxic nature of the world proved most disastrous to kriosans and cindarites despite their usual tolerance to such conditions. Through a quirk of biology the flora of \
-	Rankorin developed toxins that attacked the immune system and turned it against the body, as such races normally suited for this world avoided it as much as possible. \
-	The remaining people who choose to settle here and work the mines developed over several generations to thrive in bad atomsphere and have almost become dependent on it. \
-	This adaptation, coupled with working the diamond mines, have made them physically strong but comparably weak to people of other homeworlds."
+	Rankorin developed toxins that attacked the immune system and turned it against the body, as such, races normally suited for this world avoided it as much as possible. \
+	The remaining people who choose to settle here and work the mines adapted over several generations to thrive in bad atmosphere and have almost become dependent on it. \
+	This adaptation, coupled with working the diamond mines, have made them physically strong but comparably weak to people of other home-worlds."
 
 	perks = list(/datum/perk/chaingun_smoker)
 
 	stat_modifiers = list(
-		STAT_ROB = -5,
+		STAT_ROB = -6,
 		STAT_TGH = 2,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
@@ -628,9 +628,9 @@
 
 /datum/category_item/setup_option/background/homeworld/sanperitor
 	name = "Sanperitor"
-	desc = "Sanperitor is a low atmosphere world closer to its systems stars then most species are comfortable with. The intense solar radiation of the planet has caused those who reside their to \
-	naturally adapt to the toxins present in every day life. Sanperitor itself first came to be colonized due to its larger than normal core and already lightly radiactiove atmosphere that allowed \
-	for massive thermo-nuclear power generators to be built. The star itself supplies a great number of worlds with super charged power cores, artificially crafted super matter cores, and \
+	desc = "Sanperitor is a low atmosphere world closer to its systems star then most species are comfortable living with. The intense solar radiation of the planet has caused those who reside their to \
+	naturally adapt to the toxins present in every day life. Sanperitor itself first came to be colonized due to its larger than normal core and already lightly radioactive atmosphere that allowed \
+	for massive thermonuclear power generators to be built. The planet itself supplies a great number of worlds with super charged power cores, artificially crafted super matters, and \
 	technology used to produce star ship engines or planetary nuclear reactors. People from this planet tend to be physically weaker than most but cheerfully resolute and have naturally \
 	evolved to resist most forms of toxins."
 
@@ -831,9 +831,54 @@
 		STAT_ROB = 4,
 		STAT_TGH = 3,
 		STAT_VIG = 6,
-		STAT_BIO = -4,
+		STAT_BIO = -6,
 		STAT_MEC = 0,
-		STAT_COG = -9
+		STAT_COG = -11
+	)
+
+/datum/category_item/setup_option/background/career/laborer
+	name = "Former Laborer"
+	desc = "Unlike the rest of these special snowflakes wandering around the colony you worked for a long period as a laborer, doing some simple heavy work with your hands. \
+	It certainly wasn't glamorous or special but hey, it was a living and it was good work experience for the job you have now. The years working with your muscles has left you quite hardy \
+	but it wasn't exactly stimulating."
+
+	stat_modifiers = list(
+		STAT_ROB = 4,
+		STAT_TGH = 4,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = -8
+	)
+
+/datum/category_item/setup_option/background/career/mechanic
+	name = "Former Mechanic"
+	desc = "You like mechanics, from cars to hover bikes to electrical equipment you've worked on them all. Maybe you were a minor technician, working on general maintenance for a few vehicles \
+	or basic electrical equipment. Maybe you were a full licensed mechanic with plenty of experience. Whatever you were you picked up quite a few tricks over the years with various bits of tech \
+	ranging from robots, autolathes, and other fancy machines."
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = -7,
+		STAT_MEC = 5,
+		STAT_COG = 2
+	)
+
+/datum/category_item/setup_option/background/career/medtech
+	name = "Former Medical Intern"
+	desc = "At one point you served as a medical intern, this can range from a paramedic, nurse, orderly, and even a field medic. Your training wasn't exactly advanced but had the benefit of \
+	teaching you how to properly set a bandage and spot the differences and uses of various medical chemicals. Later on in life you might have taken your medical career further or chosen a different path. \
+	Whatever happened, you haven't forgotten the few tricks you learned."
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 5,
+		STAT_MEC = -7,
+		STAT_COG = 2
 	)
 
 /datum/category_item/setup_option/background/career/military
@@ -864,9 +909,9 @@
 		STAT_ROB = 3,
 		STAT_TGH = 4,
 		STAT_VIG = 3,
-		STAT_BIO = 0,
-		STAT_MEC = -4,
-		STAT_COG = -3
+		STAT_BIO = -3,
+		STAT_MEC = -3,
+		STAT_COG = -5
 	)
 
 /datum/category_item/setup_option/background/career/asteroid
@@ -880,7 +925,7 @@
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 7,
-		STAT_VIG = -6,
+		STAT_VIG = -9,
 		STAT_BIO = 4,
 		STAT_MEC = 5,
 		STAT_COG = -10
@@ -890,7 +935,7 @@
 	name = "Former Social Worker"
 	desc = "As a former social worker you spent a great deal of time helping the dregs of society, be it from mental illness, drug addiction, or them just being a completely inept loser. \
 	Whatever your case loads, you learned to come up with creative solutions to the problems people faced and directed them to where they could get help as they tried to escape the \
-	system of bureaucracy. All that time spent at a desk though didn't improve your health."
+	system of bureaucracy. All that time spent at a office desk though didn't exactly improve your health however."
 
 	stat_modifiers = list(
 		STAT_ROB = -4,
@@ -914,7 +959,7 @@
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 2,
-		STAT_VIG = -7,
+		STAT_VIG = -9,
 		STAT_BIO = 0,
 		STAT_MEC = 6,
 		STAT_COG = 4
@@ -965,7 +1010,7 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 10,
+		STAT_TGH = 5,
 		STAT_VIG = -10,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -999,7 +1044,7 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 15,
+		STAT_TGH = 20,
 		STAT_VIG = -5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -1010,15 +1055,45 @@
 	name = "Achromatic Lifestyle"
 	desc = "Much of your early life was spent in areas which did not have much, if any, natural light. This may have been planetary where stretches of time hid your world from the sun's light \
 	or you lived in an area where light wasn't a feasible resource due to economic, biological, or local reasons. Whatever the specifics, you've gotten highly adapted to finding your way through the \
-	dark and used to bumping into the occassional object. Sadly this living didn't sharpen your eyesight as much as you'd have liked."
+	dark and used to bumping into the occasional object. Sadly this living didn't sharpen your eyesight as much as you'd have liked."
 
 	perks = list(/datum/perk/nightcrawler)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 5,
-		STAT_VIG = -5,
+		STAT_TGH = 3,
+		STAT_VIG = -7,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/bckgrnd/gifted
+	name = "Gifted"
+	desc = "You were a smart child, gifted in any particular area you wished to embark upon be it intellectual or physical. Unfortunately this approach made you a jack of all trades and severely  \
+	hampered your ability to master any one discipline. Sure, you're smart, but without the experience and discipline of practical application it doesn't help you as much as anyone could hope."
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = -2,
+		STAT_BIO = -4,
+		STAT_MEC = -4,
+		STAT_COG = 10
+	)
+
+
+/datum/category_item/setup_option/background/bckgrnd/idiotsavant
+	name = "Idiot Savant"
+	desc = "You're an idiot, no really, you're just a complete brainlet when it comes to anything you're not hyper focused on. You have an innate knack and understanding with the most conceptual  \
+	applications of technology, medicine, and even firearms. The problem is this understanding is instinctual, not intellectual, you have no idea how you know, you just do. You're stuck in the odd \
+	position of being able to do complex difficult tasks related to your areas of interest but completely incapable of doing the most basic things in other areas."
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 3,
+		STAT_BIO = 6,
+		STAT_MEC = 6,
+		STAT_COG = -15
 	)
