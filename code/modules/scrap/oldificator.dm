@@ -133,9 +133,9 @@
 		if(!autorecharging)
 			charge = min(charge, RAND_DECIMAL(0, maxcharge))
 
-		if(prob(5))
+		if(prob(1))
 			rigged = TRUE
-			if(prob(60))
+			if(prob(10))
 				charge = maxcharge  //make it BOOM hard
 		update_icon()
 
@@ -410,7 +410,7 @@
 			//90% chance to lose each equipment
 			//System settings will be randomly configured
 				var/P
-				if (prob(15))
+				if (prob(1))
 					cell.rigged = 1//Powercell will explode if you use it
 				else if (prob(50))//Remove cell
 					QDEL_NULL(cell)
