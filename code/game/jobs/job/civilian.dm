@@ -18,7 +18,7 @@
 		STAT_VIG = 15,
 	)
 
-	perks = list(/datum/perk/merchant)
+	//perks = list(/datum/perk/merchant)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
 	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment.<br>\
@@ -54,7 +54,7 @@
 		STAT_VIG = 5,
 	)
 
-	perks = list(/datum/perk/merchant)
+	//perks = list(/datum/perk/merchant)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
 	description = "The Chef works in the kitchen, ensuring that the colony remains well-fed and energetic.<br>\
@@ -94,7 +94,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/merchant)
+	//perks = list(/datum/perk/merchant)
 
 	description = "The Gardener toils in hydroponics - utilising seeds, tools, and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
@@ -129,7 +129,7 @@
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
 
-	perks = list(/datum/perk/merchant)
+	//perks = list(/datum/perk/merchant)
 
 	description = "The Actor serves as a versatile performance artist here to entertain the colony.<br>\
 	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
@@ -165,7 +165,7 @@
 		STAT_BIO = 10,
 	)
 
-	perks = list(/datum/perk/merchant)
+	//perks = list(/datum/perk/merchant)
 
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
 	description = "The lowly Janitor, well paid but rarely respected, nevertheless provides a valuable service.<br>\

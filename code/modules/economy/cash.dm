@@ -99,9 +99,10 @@
 
 /obj/item/weapon/spacecash/bundle/Initialize()
 	. = ..()
-	AddComponent(/datum/component/inspiration, CALLBACK(src, .proc/return_stats))
+	//AddComponent(/datum/component/inspiration, CALLBACK(src, .proc/return_stats))
 
 /// Returns a list to use with inspirations. It can be empty if there's not enough money in the bundle. Important side-effects: converts worth to points, thus reducing worth.
+/*
 /obj/item/weapon/spacecash/bundle/proc/return_stats()
 	RETURN_TYPE(/list)
 	var/points = min(worth/CASH_PER_STAT, 10) // capped at 10 points per bundle, costs 10k
@@ -115,7 +116,7 @@
 	if(!worth)
 		qdel(src)
 	return stats
-
+*/
 /obj/item/weapon/spacecash/bundle/c1
 	name = "1 credit"
 	icon_state = "spacecash1"
