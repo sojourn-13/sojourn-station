@@ -18,8 +18,10 @@
 	else if(istype(target) && target.oldified == TRUE)
 		to_chat(user, "You start restoring the [target.name]")
 		if(do_after(user, 150, target))
-			to_chat(user, "<span class='notice'>You start to restore \the [target.name].</span>")
-			make_young(target)
+			to_chat(user, "<span class='notice'>You start to restore \the [target.name].If only you could fix it...</span>")
+			name = initial(name)
+			color = initial(color)
+			//oldified = FALSE We look nice, but are not young again...
 			return
 		else
 			to_chat(user, "<span class='notice'>You need to stand still to restore \the [target.name]!</span>")
