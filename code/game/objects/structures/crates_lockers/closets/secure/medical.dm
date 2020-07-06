@@ -107,6 +107,38 @@
 	new /obj/item/clothing/suit/storage/hazardvest(src)
 	new /obj/item/weapon/storage/pouch/medical_supply(src)
 
+/obj/structure/closet/secure_closet/personal/orderly
+	name = "soteria orderly locker"
+	req_access = list(access_cmo)
+	access_occupy = list(access_orderly)
+	icon_state = "med"
+
+/obj/structure/closet/secure_closet/personal/orderly/populate_contents()
+	if(prob(50))
+		new /obj/item/weapon/storage/backpack/medical(src)
+	else
+		new /obj/item/weapon/storage/backpack/satchel/medical(src)
+	switch(pick("blue", "green", "purple"))
+		if ("blue")
+			new /obj/item/clothing/under/scrubs(src)
+			new /obj/item/clothing/head/surgery(src)
+		if ("green")
+			new /obj/item/clothing/under/scrubs/green(src)
+			new /obj/item/clothing/head/surgery/green(src)
+		if ("purple")
+			new /obj/item/clothing/under/scrubs/purple(src)
+			new /obj/item/clothing/head/surgery/purple(src)
+	new /obj/item/device/lighting/toggleable/flashlight(src)
+	new /obj/item/device/radio(src)
+	new /obj/item/weapon/tool/crowbar(src)
+	new /obj/item/weapon/extinguisher/mini(src)
+	new /obj/item/clothing/shoes/reinforced(src)
+	new /obj/item/device/radio/headset/headset_med(src)
+	new /obj/item/taperoll/medical(src)
+	new /obj/item/weapon/storage/belt/medical/emt(src)
+	new /obj/item/clothing/suit/storage/hazardvest_black(src)
+	new /obj/item/weapon/storage/pouch/medical_supply(src)
+
 /obj/structure/closet/secure_closet/reinforced/CMO
 	name = "soteria biolab overseer's locker"
 	req_access = list(access_cmo)

@@ -119,7 +119,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
 
 	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology
+		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly
 	)
 
 	perks = list(/datum/perk/selfmedicated)
