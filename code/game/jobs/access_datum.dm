@@ -272,7 +272,11 @@
 	desc = "Surgery"
 	region = ACCESS_REGION_MEDBAY
 
-// /var/const/free_access_id = 46
+/var/const/access_orderly = 46
+/datum/access/orderly
+	id = access_orderly
+	desc = "Orderly"
+	region = ACCESS_REGION_MEDBAY
 
 // /var/const/free_access_id = 47
 
