@@ -121,6 +121,14 @@
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100)
+	extra_allowed = list(/obj/item/weapon/extinguisher,
+						 /obj/item/weapon/tool,
+						 /obj/item/weapon/tool_upgrade,
+						 /obj/item/stack/cable_coil,
+						 /obj/item/device/t_scanner,
+						 /obj/item/device/scanner/gas,
+						 /obj/item/taperoll/engineering,
+						 /obj/item/weapon/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/bulletproof

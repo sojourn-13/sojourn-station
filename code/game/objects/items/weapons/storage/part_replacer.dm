@@ -12,5 +12,13 @@
 	collection_mode = TRUE
 	display_contents_with_number = TRUE
 	max_w_class = ITEM_SIZE_NORMAL
-	max_storage_space = 100
+	max_storage_space = 200
 	matter = list(MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 2)
+
+/obj/item/weapon/storage/part_replacer/mini //Todo make a different sprite
+	name = "compack rapid part exchange device"
+	desc = "Special mechanical module made to store, sort, and apply standard machine parts. This one is compack making it easyer to handle, but hold less."
+	w_class = ITEM_SIZE_NORMAL
+	storage_slots = 20
+	max_storage_space = 80
+	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_STEEL = 2)

@@ -6,14 +6,6 @@
 	)
 	related_stats = list(STAT_COG)
 
-/datum/craft_recipe/box
-	name = "box"
-	result = /obj/item/weapon/storage/box
-	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
-	)
-	related_stats = list(STAT_COG)
-
 /datum/craft_recipe/medical/rag
 	name = "rag"
 	result = /obj/item/weapon/reagent_containers/glass/rag
