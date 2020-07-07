@@ -18,10 +18,10 @@
 	stat_modifiers = list(
 		STAT_ROB = 5,
 		STAT_TGH = 5,
-		STAT_VIG = -5,
+		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = -5
+		STAT_COG = 0
 	)
 
 	restricted_to_species = list(FORM_SABLEKYNE)
@@ -34,11 +34,11 @@
 			After all, only a brute needs to resort to violence when so many other options exists."
 
 	stat_modifiers = list(
-		STAT_ROB = -5,
-		STAT_TGH = -5,
-		STAT_VIG = -5,
-		STAT_BIO = 5,
-		STAT_MEC = 5,
+		STAT_ROB = 0,
+		STAT_TGH = 5,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
 		STAT_COG = 5
 	)
 
@@ -73,17 +73,17 @@
 	desc = "The jaegers are a group of frontier kriosan who plot the course for the spread of the kriosan civilization. \
 			Jaegers are practical, individualistic, and self reliant with a rigid set of personal beliefs and stubbornness to the point of coming off as arrogant. \
 			While to outsiders most jaegers come across as gun obsessed hermits, a fact not helped with their penchant for trophy taking, none can deny their skill with rifles. \
-			Unfortunately all that time at the range hasn't improved much else."
+			Unfortunately all that time at the range and tinkering with their rifles hasn't improved much else."
 
 	restricted_to_species = list(FORM_KRIOSAN)
 
 	stat_modifiers = list(
-		STAT_ROB = -2,
-		STAT_TGH = 3,
-		STAT_VIG = 10,
-		STAT_BIO = -3,
-		STAT_MEC = -3,
-		STAT_COG = -5
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 5,
+		STAT_BIO = 0,
+		STAT_MEC = 5,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/ethnicity/vorhut
@@ -161,10 +161,10 @@
 	restricted_to_species = list(FORM_AKULA)
 
 	stat_modifiers = list(
-		STAT_ROB = -4,
+		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 9,
-		STAT_BIO = -4,
+		STAT_BIO = 0,
 		STAT_MEC = -5,
 		STAT_COG = 4
 	)
@@ -192,7 +192,7 @@
 	name = "Intelligensia"
 	desc = "The intelligensia of the mar'qua are the formally trained and 'think-tank' of mar'qua society, making up most of their scientists in the fields of biology and mathematics. \
 			As someone who has left the higher folds of the intelligensia you are one of skilled rapport but a life of easy living has made you quite physically weak. \
-			You lack of physically capability also makes you ineligible for the colony security forces, further locking you into your role as an intellectual."
+			You lack of physically capability also makes you ineligible for the colony security forces or as a prospector (except salvager), further locking you into your role as an intellectual."
 
 	restricted_to_species = list(FORM_MARQUA)
 
@@ -218,12 +218,12 @@
 	restricted_to_species = list(FORM_MARQUA)
 
 	stat_modifiers = list(
-		STAT_ROB = 6,
-		STAT_TGH = 7,
+		STAT_ROB = 2,
+		STAT_TGH = 5,
 		STAT_VIG = 0,
-		STAT_BIO = -5,
-		STAT_MEC = -3,
-		STAT_COG = -5
+		STAT_BIO = 2,
+		STAT_MEC = 0,
+		STAT_COG = 1
 	)
 
 
@@ -296,8 +296,8 @@
 	restricted_to_species = list(FORM_NARAMAD)
 
 	stat_modifiers = list(
-		STAT_ROB = -15,
-		STAT_TGH = -15,
+		STAT_ROB = -10,
+		STAT_TGH = -10,
 		STAT_VIG = 0,
 		STAT_BIO = 5,
 		STAT_MEC = 5,
@@ -429,9 +429,9 @@
 	stat_modifiers = list(
 		STAT_ROB = 5,
 		STAT_TGH = 0,
-		STAT_VIG = 5,
+		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 0,
+		STAT_MEC = 5,
 		STAT_COG = -10
 	)
 
@@ -504,12 +504,12 @@
 	New Damascus are often diligent, resourceful, rough mannered, and seeking a better future."
 
 	stat_modifiers = list(
-		STAT_ROB = 2,
-		STAT_TGH = 4,
-		STAT_VIG = -5,
-		STAT_BIO = -2,
-		STAT_MEC = 4,
-		STAT_COG = -3
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 5,
+		STAT_BIO = -5,
+		STAT_MEC = 5,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/homeworld/neapolis
@@ -522,12 +522,12 @@
 	idealistic, artistic, and sometimes a little naive."
 
 	stat_modifiers = list(
-		STAT_ROB = -3,
-		STAT_TGH = -3,
-		STAT_VIG = -6,
-		STAT_BIO = 3,
-		STAT_MEC = 3,
-		STAT_COG = 6
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 5
 	)
 
 /datum/category_item/setup_option/background/homeworld/aquafria
@@ -541,12 +541,12 @@
 	highly adept swimmers, and usually very business minded."
 
 	stat_modifiers = list(
-		STAT_ROB = -8,
-		STAT_TGH = -6,
-		STAT_VIG = 3,
-		STAT_BIO = 4,
-		STAT_MEC = 4,
-		STAT_COG = 3
+		STAT_ROB = 0,
+		STAT_TGH = 5,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = -5,
+		STAT_COG = 5
 	)
 
 /datum/category_item/setup_option/background/homeworld/kurilskaya
@@ -561,12 +561,12 @@
 	perks = list(/datum/perk/quiet_as_mouse)
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 4,
-		STAT_VIG = 3,
-		STAT_BIO = -4,
-		STAT_MEC = -8,
-		STAT_COG = -6
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/homeworld/thalatta
@@ -579,12 +579,12 @@
 	tech savvy, reverent towards fellow believers, and skeptical of outside authority- especially when it's perceived as being luddic or atheistic."
 
 	stat_modifiers = list(
-		STAT_ROB = -8,
-		STAT_TGH = -3,
-		STAT_VIG = -5,
-		STAT_BIO = 3,
-		STAT_MEC = 9,
-		STAT_COG = 4
+		STAT_ROB = -5,
+		STAT_TGH = 0,
+		STAT_VIG = 5,
+		STAT_BIO = 0,
+		STAT_MEC = 5,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/homeworld/madinatyunan
@@ -599,11 +599,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = -3,
-		STAT_VIG = -2,
-		STAT_BIO = 8,
-		STAT_MEC = -6,
-		STAT_COG = 3
+		STAT_TGH = 0,
+		STAT_VIG = -5,
+		STAT_BIO = 10,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/homeworld/rankorin
@@ -618,8 +618,8 @@
 	perks = list(/datum/perk/chaingun_smoker)
 
 	stat_modifiers = list(
-		STAT_ROB = -6,
-		STAT_TGH = 2,
+		STAT_ROB = 0,
+		STAT_TGH = 0,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -638,8 +638,8 @@
 	perks = list(/datum/perk/blood_of_lead)
 
 	stat_modifiers = list(
-		STAT_ROB = -5,
-		STAT_TGH = -4,
+		STAT_ROB = 0,
+		STAT_TGH = 0,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -692,7 +692,7 @@
 	that make it an appealing place both to live and visit. Donbettyr is largely home to those well adapted to living in wet enviroments, with humans, abhumans, akula, and very rarely mar'qua \
 	choosing to live there. The harsh storms and weather, coupled with swimming being the most common leisure activity, toughens most who spend there lives here."
 
-	restricted_to_species = list(FORM_AKULA, FORM_HUMAN, FORM_MARQUA)
+	restricted_to_species = list(FORM_AKULA, FORM_HUMAN, FORM_MARQUA, FORM_SABLEKYNE)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -743,10 +743,10 @@
 	desc = "The world of Norian is home to the physically powerful race of the Naramadi. The naramad live amoungst the ruins of another civilzation long forgotten with the passage of time \
 	who's only remaining mark on the world is many dangerous ruins dotting the landscape. Many areas of Norian remain largely unplundered and often treated as sacred locations by the local \
 	naramad tribes who often plunder the location at great risk for what they consider worthwhile rewards. Norian does boast a decent human, abhuman, and sablekyne population as those races of \
-	the Terran Federation are uniquely capable of adapting to the harsh world. Unfortunately Norian has next to nothing in the way of proper education, even among the Terran plentary defence forces. \
+	the Terran Federation are uniquely capable of adapting to the harsh world. Unfortunately Norian has next to nothing in the way of proper education, even among the Terran plantary defence forces. \
 	People from this planet tend to be the hardiest of individuals, but just as often they prove to be dull and lacking in attention to detail."
 
-	restricted_to_species = list(FORM_NARAMAD, FORM_HUMAN)
+	restricted_to_species = list(FORM_NARAMAD, FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
@@ -822,32 +822,33 @@
 	name = "Former Pirate"
 	desc = "Early on in your life you became a pirate for personal reasons. You may have been a void wolf or apart of a named group of space raiders, regardless of your decisions you spent a \
 	period attacking other ships, frontier colonies, and looting the aftermaths of battles for anything of value. For whatever reason you gave up that life to become an honest \
-	(or dishonest) citizen of the colony. One benefit at least of your raider life style is you got good at getting in and out quickly, regardless of any barriers in your way."
+	(or dishonest) citizen of the colony. One benefit at least of your raider life style is you got good at getting in and out quickly, regardless of any barriers in your way. Sadly your past is \
+	a known factor and while here on the frontier security can overlook a checkered past, command positions are still barred for you."
 
-	restricted_depts = COMMAND | SECURITY
+	restricted_depts = COMMAND
 	perks = list(/datum/perk/parkour)
 
 	stat_modifiers = list(
-		STAT_ROB = 4,
-		STAT_TGH = 3,
-		STAT_VIG = 6,
-		STAT_BIO = -6,
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = -11
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/career/laborer
 	name = "Former Laborer"
 	desc = "Unlike the rest of these special snowflakes wandering around the colony you worked for a long period as a laborer, doing some simple heavy work with your hands. \
 	It certainly wasn't glamorous or special but hey, it was a living and it was good work experience for the job you have now. The years working with your muscles has left you quite hardy \
-	but it wasn't exactly stimulating."
+	but it wasn't exactly stimulating for more then the practical things needed in life."
 
 	stat_modifiers = list(
 		STAT_ROB = 4,
-		STAT_TGH = 4,
+		STAT_TGH = 5,
 		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
+		STAT_BIO = 2,
+		STAT_MEC = 2,
 		STAT_COG = -8
 	)
 
@@ -862,7 +863,7 @@
 		STAT_TGH = 0,
 		STAT_VIG = 0,
 		STAT_BIO = -7,
-		STAT_MEC = 5,
+		STAT_MEC = 10,
 		STAT_COG = 2
 	)
 
@@ -876,7 +877,7 @@
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 5,
+		STAT_BIO = 10,
 		STAT_MEC = -7,
 		STAT_COG = 2
 	)
@@ -885,33 +886,64 @@
 	name = "Former Military"
 	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
-	of physical conditioning and some degree of medical training, but the stamping out of the individual makes most lose their creativity."
+	of physical conditioning and marksmenship training, but the stamping out of the individual makes most lose their creativity."
 
 	stat_modifiers = list(
-		STAT_ROB = 3,
+		STAT_ROB = 2,
 		STAT_TGH = 4,
 		STAT_VIG = 4,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = -5
+	)
+
+/datum/category_item/setup_option/background/career/military
+	name = "Former Military (Medical)"
+	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
+	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
+	of physical conditioning and as a combat medic you got the benefit of additional medical training, though not as good as what you'd get in a hospital, it has its benefits."
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 2,
+		STAT_VIG = 1,
 		STAT_BIO = 3,
-		STAT_MEC = -6,
-		STAT_COG = -8
+		STAT_MEC = -5,
+		STAT_COG = 4
+	)
+
+/datum/category_item/setup_option/background/career/military
+	name = "Former Military (Engineering)"
+	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
+	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
+	of physical conditioning and as a member of the logistics/armor core you've gained a few tips and tricks when dealing with machines."
+
+	stat_modifiers = list(
+		STAT_ROB = 1,
+		STAT_TGH = 2,
+		STAT_VIG = 0,
+		STAT_BIO = -5,
+		STAT_MEC = 3,
+		STAT_COG = 4
 	)
 
 /datum/category_item/setup_option/background/career/criminal
 	name = "Former Criminal"
 	desc = "Maybe you were a low tier ganger, a mafioso, or a professional with a criminal syndicate. Whatever you were it wasn't honest, nor was it something any good person could take pride in. \
-	Your former connections, for they are former as you've left that life behind, still haunt you as your record is known by security. As such you are barred from security or command positions. \
-	But that life has at least gifted you with some broad if boorish skills and a quick fingered disposition for snatching objects off of people without them noticing."
+	Your former connections, for they are former as you've left that life behind, still haunt you as your record is known by security. As such you are barred from command positions, though not from \
+	security itself, after all, its the frontier and the colony can't be as picky as bigger empires. But that life has at least gifted you with some broad if boorish skills and a quick fingered \
+	disposition for snatching objects off of people without them noticing."
 
-	restricted_depts = COMMAND | SECURITY
+	restricted_depts = COMMAND
 	perks = list(/datum/perk/fast_fingers)
 
 	stat_modifiers = list(
-		STAT_ROB = 3,
-		STAT_TGH = 4,
-		STAT_VIG = 3,
-		STAT_BIO = -3,
-		STAT_MEC = -3,
-		STAT_COG = -5
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/career/asteroid
@@ -924,11 +956,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 7,
-		STAT_VIG = -9,
-		STAT_BIO = 4,
-		STAT_MEC = 5,
-		STAT_COG = -10
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/career/social
@@ -943,7 +975,7 @@
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 8
+		STAT_COG = 13
 	)
 
 
@@ -958,11 +990,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 2,
-		STAT_VIG = -9,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 6,
-		STAT_COG = 4
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 
@@ -976,42 +1008,45 @@
 /datum/category_item/setup_option/background/bckgrnd/poor
 	name = "Poor Upbringing"
 	desc = "Your early life was spent in a poor environment, be it from your family's economical position or the place you lived in. This barred access to education, but it let you learn fast \
-	that desperate people will use force as commonly as they'll beg for aid."
+	that desperate people will use force as commonly as they'll beg for aid. A sharp eye and careful or creative thinking let you avoid getting hurt and allowed you to thrive, so at least you got \
+	that going for you."
 
 	stat_modifiers = list(
-		STAT_ROB = 4,
-		STAT_TGH = 6,
-		STAT_VIG = 2,
-		STAT_BIO = -2,
-		STAT_MEC = -4,
-		STAT_COG = -6
+		STAT_ROB = 0,
+		STAT_TGH = 3,
+		STAT_VIG = 5,
+		STAT_BIO = 0,
+		STAT_MEC = -8,
+		STAT_COG = 5
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/wealthy
 	name = "Wealthy Upbringing"
 	desc = "You grew up with a silver spoon in your mouth all your life. Education, leisure time, and relaxation allowed you to indulge in scholarly pursuits to a degree, letting you pick up a few \
-	randomly useful facts about many things. A shame that easy living left you a bit naive and physically weak."
+	randomly useful facts about many things. A shame that easy living left you a bit naive and physically weak albiet healthier than most. Not to mention you never quite developed the sense of when \
+	danger is present. This certainly made switching to regular life a bit of a culture shock."
 
 	stat_modifiers = list(
-		STAT_ROB = -4,
-		STAT_TGH = -2,
-		STAT_VIG = -6,
-		STAT_BIO = 2,
-		STAT_MEC = 4,
-		STAT_COG = 6
+		STAT_ROB = 0,
+		STAT_TGH = 2,
+		STAT_VIG = -4,
+		STAT_BIO = 5,
+		STAT_MEC = 5,
+		STAT_COG = -3
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/refugee
 	name = "Refugee"
 	desc = "Where ever you came from is no more, torn apart by conflict and war. It may have been a civil war or conquest by the Terran Federation, whatever the reason it has long since lost any \
-	meaning after the destruction of your home-world. Somehow you escaped it, but the experience has left you extremely resilient if a bit locked in your ways."
+	meaning after the destruction of your home-world. Or maybe it wasn't your homeworld that was destoyed, maybe it was just your way of life. Regardless, you've left a burned bridge behind you and \
+	can no longer go back. Your rough life has hardened you to the worst troubles you may face."
 
 	perks = list(/datum/perk/space_asshole)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 5,
-		STAT_VIG = -10,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -1027,12 +1062,12 @@
 	restricted_to_species = list(FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_CINDAR)
 
 	stat_modifiers = list(
-		STAT_ROB = -8,
-		STAT_TGH = -8,
+		STAT_ROB = -5,
+		STAT_TGH = -5,
 		STAT_VIG = 4,
 		STAT_BIO = 6,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = 5
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/klutz
@@ -1055,14 +1090,14 @@
 	name = "Achromatic Lifestyle"
 	desc = "Much of your early life was spent in areas which did not have much, if any, natural light. This may have been planetary where stretches of time hid your world from the sun's light \
 	or you lived in an area where light wasn't a feasible resource due to economic, biological, or local reasons. Whatever the specifics, you've gotten highly adapted to finding your way through the \
-	dark and used to bumping into the occasional object. Sadly this living didn't sharpen your eyesight as much as you'd have liked."
+	dark, a shame this lifestyle didn't sharpen your eyesight as much as you'd have liked."
 
 	perks = list(/datum/perk/nightcrawler)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 3,
-		STAT_VIG = -7,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -1079,7 +1114,7 @@
 		STAT_VIG = -2,
 		STAT_BIO = -4,
 		STAT_MEC = -4,
-		STAT_COG = 10
+		STAT_COG = 15
 	)
 
 
@@ -1092,8 +1127,8 @@
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 3,
-		STAT_BIO = 6,
-		STAT_MEC = 6,
+		STAT_VIG = 4,
+		STAT_BIO = 8,
+		STAT_MEC = 8,
 		STAT_COG = -15
 	)
