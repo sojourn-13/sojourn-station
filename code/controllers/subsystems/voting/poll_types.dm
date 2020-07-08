@@ -83,10 +83,10 @@
 	text = "End Shift"
 
 /datum/vote_choice/restart/on_win()
-	to_chat(world, "<b><font size='3px'>The colony intercomm announces todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.<b>")
+	command_announcement.Announce("Todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.", "Shift End Call", new_sound = 'sound/misc/notice3.ogg')
 	sleep(15 MINUTES)
-	to_chat(world, "<b>Restarting world due to shift end...<b>")
-	sleep(50)
+	to_chat(world, "<b>Restarting world due to shift end...</b>")
+	sleep(60)
 	log_game("Rebooting due to restart vote")
 	world.Reboot()
 
