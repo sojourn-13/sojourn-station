@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/syndicate
-	name = "\improper Syndicate operative"
+	name = "\improper Mercenary operative"
 	desc = "A mercenary working for some cladestine group."
 	icon = 'icons/mob/mobs-humanoid.dmi'
 	icon_state = "syndicate"
@@ -113,7 +113,7 @@
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space
 	icon_state = "syndicaterangedpsace"
-	name = "Syndicate Commando"
+	name = "Mercenary Commando"
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0
