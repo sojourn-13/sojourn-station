@@ -111,7 +111,7 @@
 
 	cleaning = 1
 	visible_message("[src] begins to clean up \the [D]")
-	var/message = pick("Cleaning a new canvas.", "Happy little dots.", "The joy of art.", "Fresh paint needed here.", "One day I will paint again.", "Hope you had fun with paint.", "Make sure to clean your brushes!", "Beep!")
+	var/message = pick("Cleaning a new canvas.", "Happy little dots.", "The joy of art.", "Fresh paint needed here.", "One day I will paint again.", "Hope you had fun painting.", "Make sure to clean your brushes!", "Beep!", "I wish to be an artbot, to write poems, create music.")
 	say(message)
 	playsound(loc, "robot_talk_light", 100, 0, 0)
 	update_icons()
