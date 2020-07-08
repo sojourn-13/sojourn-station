@@ -74,6 +74,12 @@
 	build_path = /obj/item/weapon/hatton/moebius
 	sort_string = "TBAAD"
 
+//Starstriker - The gun thats able to strike the stars!
+/datum/design/research/item/weapon/starstriker
+	name = "\"Star Striker\" laser boltgun"
+	desc = "A mix of the lighter version of the Sike point 257 hunting rifle, but with the twist of using laser based casings rather then normal bullet based projectiles."
+	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/sci
+	sort_string = "TBAAE"
 
 // Ammo
 /datum/design/research/item/ammo
@@ -95,6 +101,28 @@
 	name = "syringe revolver cartridge"
 	build_path = /obj/item/weapon/syringe_cartridge
 	sort_string = "TAACD"
+
+/datum/design/research/item/ammo/laser
+	name = "\"Star Striker\" casing"
+	desc = "A single casing for the Star Striker laser rifle."
+	build_path = /obj/item/ammo_casing/beam
+	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_SILVER = 0.5) //Takes silver
+	sort_string = "TAACF"
+
+/datum/design/research/item/ammo/laser/ap
+	name = "\"Star Striker\" piercing laser casing."
+	desc = "A single casing for the Star Striker laser rifle. Meant for penetration of armor."
+	build_path = /obj/item/ammo_casing/beam/ap
+	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_GOLD = 0.5) //Takes gold
+	sort_string = "TAACF"
+
+/datum/design/research/item/ammo/laser/lethal
+	name = "\"Star Striker\" dence laser casing."
+	desc = "A single casing for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor."
+	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_PLASMA = 0.5) //Takes plasma
+	build_path = /obj/item/ammo_casing/beam/lethal
+	sort_string = "TAACF"
+
 
 //Disks
 /datum/design/research/item/disk/blackshield
