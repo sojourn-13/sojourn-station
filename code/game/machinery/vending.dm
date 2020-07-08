@@ -1682,10 +1682,10 @@
 	icon_deny = "tool-deny"
 	products = list(/obj/item/stack/cable_coil/random = 10,/obj/item/weapon/tool/crowbar = 5,/obj/item/weapon/tool/weldingtool = 5,/obj/item/weapon/tool/wirecutters = 3, /obj/item/weapon/tool/wirecutters/pliers = 3,
 					/obj/item/weapon/tool/wrench = 5,/obj/item/weapon/tool/hammer = 5,/obj/item/device/scanner/gas = 5,/obj/item/device/t_scanner = 5, /obj/item/weapon/tool/screwdriver = 5, /obj/item/clothing/gloves/insulated/cheap  = 2, /obj/item/clothing/gloves/insulated = 1,
-					/obj/item/weapon/storage/pouch/engineering_tools = 2, /obj/item/weapon/storage/pouch/engineering_supply = 2)
+					/obj/item/weapon/storage/pouch/engineering_tools = 2, /obj/item/weapon/storage/pouch/engineering_supply = 2, /obj/item/weapon/weldpack/canister = 4, /obj/item/weapon/weldpack = 2)
 	prices = list(/obj/item/weapon/tool/hammer = 30,/obj/item/stack/cable_coil/random = 100,/obj/item/weapon/tool/crowbar = 30,/obj/item/weapon/tool/weldingtool = 50,/obj/item/weapon/tool/wirecutters = 30, /obj/item/weapon/tool/wirecutters/pliers = 30,
 					/obj/item/weapon/tool/wrench = 30,/obj/item/device/scanner/gas = 50,/obj/item/device/t_scanner = 50, /obj/item/weapon/tool/screwdriver = 30, /obj/item/clothing/gloves/insulated/cheap  = 80, /obj/item/clothing/gloves/insulated = 600,
-					/obj/item/weapon/storage/pouch/engineering_tools = 300, /obj/item/weapon/storage/pouch/engineering_supply = 600)
+					/obj/item/weapon/storage/pouch/engineering_tools = 300, /obj/item/weapon/storage/pouch/engineering_supply = 600, /obj/item/weapon/weldpack/canister = 300, /obj/item/weapon/weldpack/canister = 675)
 
 /obj/machinery/vending/engivend
 	name = "Guild-Vend"
@@ -1699,7 +1699,9 @@
 					/obj/item/weapon/circuitboard/apc = 10,
 					/obj/item/weapon/airalarm_electronics = 10,
 					/obj/item/weapon/cell/large/high = 10,
-					/obj/item/weapon/storage/belt/utility = 3)
+					/obj/item/weapon/storage/belt/utility = 3,
+					/obj/item/weapon/weldpack/canister = 4,
+					/obj/item/weapon/weldpack = 2)
 	contraband = list(/obj/item/weapon/cell/large/potato = 3)
 	auto_price = FALSE
 
@@ -1726,6 +1728,8 @@
 					/obj/item/weapon/cell/large = 8,
 					/obj/item/weapon/tool/weldingtool = 8,
 					/obj/item/clothing/head/welding = 8,
+					/obj/item/weapon/weldpack/canister = 4,
+					/obj/item/weapon/weldpack = 2,
 					/obj/item/weapon/light/tube = 10,
 					/obj/item/clothing/suit/fire = 4,
 					/obj/item/weapon/stock_parts/scanning_module = 5,
@@ -1748,6 +1752,8 @@
 					/obj/item/weapon/cell/large = 500,
 					/obj/item/weapon/tool/weldingtool = 40,
 					/obj/item/clothing/head/welding = 80,
+					/obj/item/weapon/weldpack/canister = 300,
+					/obj/item/weapon/weldpack = 675,
 					/obj/item/weapon/light/tube = 10,
 					/obj/item/clothing/suit/fire = 150,
 					/obj/item/weapon/stock_parts/scanning_module = 40,
@@ -1766,7 +1772,7 @@
 	products = list(/obj/item/clothing/suit/storage/toggle/labcoat = 4,/obj/item/clothing/under/rank/roboticist = 4,/obj/item/stack/cable_coil = 4,/obj/item/device/flash = 4,
 					/obj/item/weapon/cell/large/high = 12, /obj/item/device/assembly/prox_sensor = 3,/obj/item/device/assembly/signaler = 3,/obj/item/device/scanner/health = 3,
 					/obj/item/weapon/tool/scalpel = 2,/obj/item/weapon/tool/saw/circular = 2,/obj/item/weapon/tank/anesthetic = 2,/obj/item/clothing/mask/breath/medical = 5,
-					/obj/item/weapon/tool/screwdriver = 5,/obj/item/weapon/tool/crowbar = 5)
+					/obj/item/weapon/tool/screwdriver = 5,/obj/item/weapon/tool/crowbar = 5, /obj/item/weapon/weldpack/canister = 2, /obj/item/weapon/weldpack = 1)
 	auto_price = FALSE
 
 //FOR ACTORS GUILD - mainly props that cannot be spawned otherwise
