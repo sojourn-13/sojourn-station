@@ -234,5 +234,5 @@
 	price_tag = 500 //no...
 	caliber = CAL_SCI
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_MAGNET = 3, TECH_POWER = 6)
-	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
+	fire_sound = 'sound/weapons/Laser.ogg'
 	saw_off = FALSE
