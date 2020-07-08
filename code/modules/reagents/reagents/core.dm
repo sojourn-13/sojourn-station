@@ -7,6 +7,7 @@
 	color = "#C80000"
 	taste_description = "iron"
 	taste_mult = 1.3
+	scannable = 1
 	glass_icon_state = "glass_red"
 	glass_name = "tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
@@ -17,7 +18,7 @@
 	if(data && data["blood_colour"])
 		color = data["blood_colour"]
 	return
-	
+
 /datum/reagent/organic/blood/get_data() // Just in case you have a reagent that handles data differently.
 	var/t = data.Copy()
 	if(t["virus2"])
@@ -96,7 +97,7 @@
 	glass_desc = "The father of all refreshments."
 	nerve_system_accumulations = 0
 	reagent_type = "Water"
-	
+
 /datum/reagent/water/touch_turf(var/turf/simulated/T)
 	if(!istype(T))
 		return TRUE

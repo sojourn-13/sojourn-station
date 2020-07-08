@@ -55,7 +55,7 @@
 	id = "glucose"
 	description = "Most important source of energy in all organisms."
 	color = "#FFFFFF"
-
+	scannable = 1
 	injectable = 1
 
 /datum/reagent/organic/nutriment/protein
@@ -213,6 +213,7 @@
 	reagent_state = LIQUID
 	color = "#BBEDA4"
 	overdose = REAGENTS_OVERDOSE
+	scannable = 1
 
 /datum/reagent/other/lipozine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
@@ -227,6 +228,7 @@
 	reagent_state = SOLID
 	color = "#FFFFFF"
 	overdose = REAGENTS_OVERDOSE
+	scannable = 1
 
 /datum/reagent/organic/blackpepper
 	name = "Black Pepper"

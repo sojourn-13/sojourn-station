@@ -99,6 +99,25 @@ other types of metals and chemistry for reagents).
 	sort_string = "MACCB"
 	category = "Medical"
 
+/datum/design/research/item/medical/cryobag
+	desc = "A body bag for a dieing or dead body to stablize them using cryo tech."
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 3, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 1)
+	build_path = /obj/item/bodybag/cryobag
+	sort_string = "MACCD"
+	category = "Medical"
+
+/datum/design/research/item/medical/red
+	desc = "A mini-cryo box for holding foods and organs. This one comes in blue."
+	build_path = /obj/item/weapon/storage/freezer
+	sort_string = "MACCE"
+	category = "Medical"
+
+/datum/design/research/item/medical/blue
+	desc = "A thicker red box for only holding organs."
+	build_path = /obj/item/weapon/storage/freezer/medical
+	sort_string = "MACCD"
+	category = "Medical"
+
 /datum/design/research/item/beaker
 	name_category = "beaker prototype"
 	category = "Medical"
