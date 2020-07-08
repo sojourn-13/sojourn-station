@@ -897,7 +897,7 @@
 		STAT_COG = -5
 	)
 
-/datum/category_item/setup_option/background/career/military
+/datum/category_item/setup_option/background/career/militarymedical
 	name = "Former Military (Medical)"
 	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
@@ -912,7 +912,7 @@
 		STAT_COG = 4
 	)
 
-/datum/category_item/setup_option/background/career/military
+/datum/category_item/setup_option/background/career/militaryengineer
 	name = "Former Military (Engineering)"
 	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
