@@ -15,6 +15,7 @@
 	default_pixel_y = -16
 	pixel_x = -16
 	pixel_y = -16
+	meat_amount = 8
 
 /mob/living/simple_animal/hostile/render
 	name = "primal render"
@@ -71,6 +72,7 @@
 	health = 1000
 	melee_damage_lower = 30
 	melee_damage_upper = 40
+	meat_amount = 8
 
 /mob/living/simple_animal/hostile/panther
 	name = "panther"
@@ -94,6 +96,7 @@
 	default_pixel_x = -16
 	pixel_x = -16
 	pixel_y = 0
+	meat_amount = 4 //Kitty no!
 
 /mob/living/simple_animal/hostile/retaliate/gaslamp
 	name = "gaslamp"

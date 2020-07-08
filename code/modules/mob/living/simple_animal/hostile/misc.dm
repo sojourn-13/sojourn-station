@@ -18,6 +18,7 @@
 	speak = list("Hruuugh!","Hrunnph")
 	emote_see = list("paws the ground","shakes its mane","stomps")
 	emote_hear = list("snuffles")
+	meat_amount = 3
 	mob_size = 10
 	resistance = 8
 
@@ -64,6 +65,7 @@
 	emote_see = list("scratches the ground","shakes out it's mane","tinkles gently")
 	mob_size = 5
 	resistance = 3
+	meat_amount = 6 //Pigs are known for giving meat
 
 /mob/living/simple_animal/yithian
 	name = "yithian"
