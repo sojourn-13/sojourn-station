@@ -149,7 +149,7 @@
 
 /datum/technology/adv_lethal
 	name = "Advanced Lethal Weapons"
-	desc = "Advanced machinegun system"
+	desc = "Improvements on already lethal weapons to be a more advanced version of itself."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.7
@@ -162,6 +162,10 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
+							/datum/design/research/item/weapon/starstriker,
+							/datum/design/research/item/ammo/laser,
+							/datum/design/research/item/ammo/laser/ap,
+							/datum/design/research/item/ammo/laser/lethal
 						)
 
 /datum/technology/laser_weaponry

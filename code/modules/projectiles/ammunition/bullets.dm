@@ -308,3 +308,19 @@
 	caliber = CAL_CAP
 	color = "#FF0000"
 	projectile_type = /obj/item/projectile/bullet/cap
+
+/obj/item/ammo_casing/beam
+	name = "laser casing"
+	desc = "A laser casing."
+	caliber = CAL_SCI
+	projectile_type = /obj/item/projectile/beam/weak
+
+/obj/item/ammo_casing/beam/ap
+	desc = "A piercing laser casing. Meant for penetration of armor."
+	caliber = CAL_SCI
+	projectile_type = /obj/item/projectile/beam/weak/ap
+
+/obj/item/ammo_casing/beam/lethal
+	desc = "A dence laser casing. Compact laser that is easily blocked by armor."
+	caliber = CAL_SCI
+	projectile_type = /obj/item/projectile/beam/weak/lethal
