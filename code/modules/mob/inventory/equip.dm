@@ -125,3 +125,17 @@ var/list/slot_equipment_priority = list(
 			Item.forceMove(src.back)
 			return backpack
 	return ..()
+
+/mob/proc/equip_to_mob_best_effort(obj/item/Item)
+	if(!Item)
+		return
+
+	if(equip_to_appropriate_slot(Item))
+		return Item
+
+	if(src.equip_to_storage(Item))
+		return Item
+
+	Item.loc = get_turf(src.loc)
+
+	return Item

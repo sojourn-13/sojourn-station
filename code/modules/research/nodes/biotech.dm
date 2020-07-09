@@ -15,6 +15,24 @@
 							/datum/design/research/item/part/basic_sensor
 						)
 
+/datum/technology/medical_cooling
+	name = "Medical Cooling"
+	desc = "Using cryo based tech in more equipment based gear."
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.1
+	y = 0.5
+	icon = "cryobag"
+
+	required_technologies = list(/datum/technology/ice_and_fire, /datum/technology/basic_biotech)
+	required_tech_levels = list()
+	cost = 500 //
+
+	unlocks_designs = list(	/datum/design/research/item/medical/cryobag,
+							/datum/design/research/item/medical/red,
+							/datum/design/research/item/medical/blue
+						)
+
 /datum/technology/basic_med_machines
 	name = "Basic Medical Machines"
 	desc = "Basic medical databases and surgical monitoring."

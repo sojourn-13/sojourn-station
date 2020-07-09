@@ -28,6 +28,21 @@
 	. = ..()
 	beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	update_icon()
+	RefreshParts()
+
+/obj/machinery/sleeper/RefreshParts()
+	..()
+	var/rating = 1
+	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
+		rating += B.rating - 1
+	if(rating > 1) //Level 2 manipulator unlocks Tricordrazine
+		available_chemicals += list("tricordrazine" ="Tricordrazine")
+	if(rating > 2) //Level 3 manipulator unlocks Spacesilicon
+		available_chemicals += list("spaceacillin" = "Spaceacillin")
+	if(rating > 3) //Level 4 manipulator unlocks Alkysine
+		available_chemicals += list("alkysine" = "Alkysine")
+	if(rating > 4) //Level 5 manipulator unlocks Leporazine
+		available_chemicals += list("leporazine" = "Leporazine")
 
 /obj/machinery/sleeper/Process()
 	if(stat & (NOPOWER|BROKEN))
@@ -141,6 +156,13 @@
 		else
 			to_chat(user, SPAN_WARNING("\The [src] has a beaker already."))
 		return
+
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
 
 /obj/machinery/sleeper/affect_grab(var/mob/user, var/mob/target)
 	go_in(target, user)

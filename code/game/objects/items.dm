@@ -59,7 +59,7 @@
 	// Used to specify the icon file to be used when the item is worn. If not set the default icon for that slot will be used.
 	// If icon_override or sprite_sheets are set they will take precendence over this, assuming they apply to the slot in question.
 	// Only slot_l_hand/slot_r_hand are implemented at the moment. Others to be implemented as needed.
-	var/list/item_icons = list()
+	var/tmp/list/item_icons = list()
 
 	// HUD action buttons. Only used by guns atm.
 	var/list/hud_actions

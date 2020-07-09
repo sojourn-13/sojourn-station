@@ -51,6 +51,8 @@
 /mob/living/simple_animal/hostile/voidwolf/fieldtech
 	name = "Void Wolf Field Tech"
 	desc = "A Void Wolf mercenary wielding an industrial welder."
+	melee_damage_lower = 20
+	melee_damage_upper = 22
 	icon_state = "voidengie"
 	icon_dead = "voidengie_dead"
 	attacktext = "burnt"
@@ -65,12 +67,14 @@
 	icon_state = "voidwolf"
 	icon_dead = "voidwolf_dead"
 	projectilesound = 'sound/weapons/laser.ogg'
+	melee_damage_lower = 10 //We dont like melee
+	melee_damage_upper = 15
 	maxHealth = 100
 	health = 100
 	ranged = 1
 	rapid = 1
 	projectiletype = /obj/item/projectile/beam
-	weapon1 = /obj/item/weapon/gun/energy/laser
+	weapon1 = /obj/item/weapon/gun/energy/retro
 	weapon2 = null
 
 /mob/living/simple_animal/hostile/voidwolf/fieldtech_ranged
@@ -78,6 +82,10 @@
 	desc = "A Void Wolf mercenary wielding an industrial welder and energy pistol."
 	icon_state = "voidengie_ranged"
 	icon_dead = "voidengie_ranged_dead"
+	melee_damage_lower = 20
+	melee_damage_upper = 22
+	ranged = 1
+	rapid = 1
 	weapon2 = /obj/item/weapon/gun/energy/gun/martin
 
 /mob/living/simple_animal/hostile/voidwolf/aerotrooper
@@ -85,18 +93,24 @@
 	desc = "A Void Wolf mercenary wielding an energy rifle and jetpack."
 	icon_state = "voidwolf_flying"
 	icon_dead = "voidwolf_flying_dead"
-	weapon1 = /obj/item/weapon/gun/energy/laser
+	melee_damage_lower = 10 //We dont like melee
+	melee_damage_upper = 15
+	ranged = 1
+	rapid = 1
+	weapon1 = /obj/item/weapon/gun/energy/retro
 	weapon2 = null
 
 /mob/living/simple_animal/hostile/voidwolf/captain
 	name = "Void Wolf Captain"
-	desc = "A Void Wolf field commander wielding an energy sword and pistol combo. "
+	desc = "A Void Wolf field commander wielding an energy sword and Spider Rose combo. "
 	icon_state = "voidwolfcap"
 	icon_dead = "voidwolfcap_dead"
+	melee_damage_lower = 30
+	melee_damage_upper = 35
 	maxHealth = 200
 	health = 200
 	ranged = 1
 	rapid = 1
 	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/melee/energy/sword/pirate
-	weapon2 = /obj/item/weapon/gun/energy/laser
+	weapon2 = /obj/item/weapon/gun/energy/gun

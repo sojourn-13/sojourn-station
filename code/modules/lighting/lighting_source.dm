@@ -3,10 +3,10 @@
 // These are the main datums that emit light.
 
 /datum/light_source
-	var/atom/top_atom        // The atom we're emitting light from(for example a mob if we're from a flashlight that's being held).
-	var/atom/source_atom     // The atom that we belong to.
+	var/tmp/atom/top_atom        // The atom we're emitting light from(for example a mob if we're from a flashlight that's being held).
+	var/tmp/atom/source_atom     // The atom that we belong to.
 
-	var/turf/source_turf     // The turf under the above.
+	var/tmp/turf/source_turf     // The turf under the above.
 	var/light_power    // Intensity of the emitter light.
 	var/light_range      // The range of the emitted light.
 	var/light_color    // The colour of the light, string, decomposed by parse_light_color()

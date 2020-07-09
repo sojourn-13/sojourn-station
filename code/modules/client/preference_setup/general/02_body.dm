@@ -60,10 +60,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	pref.skin_color		= iscolor(pref.skin_color) ? pref.skin_color : "#FFE0D0"
 	pref.eyes_color		= iscolor(pref.eyes_color) ? pref.eyes_color : "#000000"
 
-	var/datum/species/cspecies = global.all_species[pref.species]
 	if(!pref.species || !(pref.species in global.playable_species))
 		pref.species = SPECIES_HUMAN
 
+
+	var/datum/species/cspecies = global.all_species[pref.species]
 	var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form]
 	if( !pref.species_form || !(pref.species_form in GLOB.playable_species_form_list) || (cspecies.obligate_form && cspecies.default_form != cform.name) )
 		pref.species_form = cspecies.default_form
