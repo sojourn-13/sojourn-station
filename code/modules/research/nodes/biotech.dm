@@ -28,8 +28,9 @@
 	required_tech_levels = list()
 	cost = 500 //
 
-	unlocks_designs = list(	/datum/design/research/item/part/micro_mani,
-							/datum/design/research/item/part/basic_sensor
+	unlocks_designs = list(	/datum/design/research/item/medical/cryobag,
+							/datum/design/research/item/medical/red,
+							/datum/design/research/item/medical/blue
 						)
 
 /datum/technology/basic_med_machines

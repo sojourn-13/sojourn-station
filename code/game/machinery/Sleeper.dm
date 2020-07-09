@@ -36,13 +36,13 @@
 	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
 		rating += B.rating - 1
 	if(rating > 1) //Level 2 manipulator unlocks Tricordrazine
-		available_chemicals += list("tricordrazine")
+		available_chemicals += list("tricordrazine" ="Tricordrazine")
 	if(rating > 2) //Level 3 manipulator unlocks Spacesilicon
-		available_chemicals += list("spaceacillin")
+		available_chemicals += list("spaceacillin" = "Spaceacillin")
 	if(rating > 3) //Level 4 manipulator unlocks Alkysine
-		available_chemicals += list("alkysine")
+		available_chemicals += list("alkysine" = "Alkysine")
 	if(rating > 4) //Level 5 manipulator unlocks Leporazine
-		available_chemicals += list("leporazine")
+		available_chemicals += list("leporazine" = "Leporazine")
 
 /obj/machinery/sleeper/Process()
 	if(stat & (NOPOWER|BROKEN))
