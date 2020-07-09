@@ -62,6 +62,8 @@
 
 		<option value='?_src_=vars;addverb=\ref[src]'>Add Verb</option>
 		<option value='?_src_=vars;remverb=\ref[src]'>Remove Verb</option>
+		<option value='?_src_=vars;saveTemplate=\ref[src]'>Save as Template</option>
+
 		<option>---</option>
 		<option value='?_src_=vars;gib=\ref[src]'>Gib</option>
 	"}

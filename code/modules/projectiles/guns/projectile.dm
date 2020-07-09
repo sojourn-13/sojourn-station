@@ -42,6 +42,40 @@
 	var/ammo_mag = "default" // magazines + gun itself. if set to default, then not used
 	var/tac_reloads = TRUE	// Enables guns to eject mag and insert new magazine.
 
+/obj/item/weapon/gun/projectile/loadAmmoBestGuess()
+	var/obj/item/ammo_magazine/chosenMag = null
+
+	if(magazine_type)
+		return // This gun specifies what it starts with
+
+	for(var/mag in typesof(/obj/item/ammo_magazine))
+		var/obj/item/ammo_magazine/castMag = mag
+
+		//log_debug("[mag] - [initial(castMag.mag_well)] , [initial(castMag.caliber)], '[initial(castMag.initial_ammo)]'")
+
+		if(initial(castMag.mag_well) == mag_well && initial(castMag.caliber) == caliber && initial(castMag.initial_ammo) == null)
+			if(!chosenMag)
+				chosenMag = castMag
+			else
+				var/obj/item/ammo_casing/casing1      = initial(castMag.ammo_type)
+				var/obj/item/projectile/bullet/proj1 = initial(casing1.projectile_type)
+
+				var/obj/item/ammo_casing/casing2      = initial(chosenMag.ammo_type)
+				var/obj/item/projectile/bullet/proj2 = initial(casing2.projectile_type)
+
+				if(initial(proj1.damage) > initial(proj2.damage) && initial(castMag.max_ammo) >= initial(chosenMag.max_ammo))
+					//log_debug ("updated, replaced [casing2] with [casing1] because [initial(proj2.damage)] > [initial(proj1.damage)]")
+					chosenMag = castMag
+
+	if(chosenMag)
+		var/obj/item/ammo_magazine/newMag = new chosenMag
+		newMag.loc = src
+		ammo_magazine = newMag
+		update_firemode()
+		update_icon()
+
+	return
+
 /obj/item/weapon/gun/projectile/Destroy()
 	QDEL_NULL(chambered)
 	QDEL_NULL(ammo_magazine)
