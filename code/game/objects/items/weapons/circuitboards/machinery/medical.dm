@@ -19,6 +19,7 @@
 		/obj/item/weapon/stock_parts/manipulator = 2,
 		/obj/item/weapon/stock_parts/console_screen = 1,
 		/obj/item/weapon/stock_parts/micro_laser = 2,
+		/obj/item/weapon/stock_parts/matter_bin = 1,
 		/obj/item/weapon/reagent_containers/glass/beaker/large = 1
 		)
 
@@ -32,5 +33,6 @@
 		/obj/item/weapon/stock_parts/manipulator = 5,
 		/obj/item/weapon/stock_parts/console_screen = 1,
 		/obj/item/weapon/stock_parts/micro_laser = 3,
+		/obj/item/weapon/stock_parts/matter_bin = 1,
 		/obj/item/weapon/reagent_containers/glass/beaker/large = 1
 		)
