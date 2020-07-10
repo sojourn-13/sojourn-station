@@ -617,3 +617,23 @@
 		new /obj/item/clothing/suit/rank/commander/dress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
+		
+/obj/item/weapon/storage/box/blankranks
+	name = "Box of Blank Ranks"
+	desc = "A box full of solid red, "blank" Blackshield ranks, for distribution to volunteers and cadets."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
