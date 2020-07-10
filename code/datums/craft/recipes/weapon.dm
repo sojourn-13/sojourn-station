@@ -142,6 +142,19 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
+/datum/craft_recipe/weapon/laser_dagger
+	name = "laser dagger"
+	result = /obj/item/weapon/melee/energy/sword/sabre/dagger
+	steps = list(
+		list(/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip, 1, "time" = 5),
+		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
+		list(/obj/item/weapon/gun/energy/gun/martin, 1, "time" = 5),
+		list(/obj/item/weapon/cell/small/moebius/nuclear, 1),
+		list(/obj/item/stack/cable_coil, 5, "time" = 5),
+		list(QUALITY_ADHESIVE, 15, 70)
+	)
+
+
 /datum/craft_recipe/weapon/nailed_bat
 	name = "nailed bat"
 	result = /obj/item/weapon/melee/nailstick
