@@ -10,6 +10,7 @@
 		new /obj/item/ammo_magazine/hrifle/hv(src)
 	new /obj/item/clothing/accessory/ranks/commander(src)
 	new /obj/item/weapon/storage/box/commanderuniform(src)
+	new /obj/item/weapon/storage/box/blankranks(src)
 	new /obj/item/ammo_magazine/hrifle/lethal(src)
 	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/clothing/head/rank/milcom/beret(src)
