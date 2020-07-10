@@ -47,8 +47,8 @@
 /obj/item/clothing/suit/rank/trooper/dress
 	name = "Blackshield dress jacket"
 	desc = "A modern dark blue uniform jacket. Fit for a trooper, even one on the frontier."
-	icon_state = "trooper_service"
-	item_state = "trooper_service"
+	icon_state = "trooper_dress"
+	item_state = "trooper_dress"
 
 /obj/item/clothing/under/rank/corpsman
 	name = "Medical Corpsman uniform"
@@ -98,8 +98,8 @@
 /obj/item/clothing/suit/rank/armorer/dress
 	name = "Blackshield NCO dress jacket"
 	desc = "A modern dark blue uniform jacket with silver trimmings. Fit for a mid-level trooper, even one on the frontier."
-	icon_state = "sergeant_service"
-	item_state = "sergeant_service"
+	icon_state = "sergeant_dress"
+	item_state = "sergeant_dress"
 	
 
 /*
