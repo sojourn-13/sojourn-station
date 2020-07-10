@@ -448,7 +448,7 @@ obj/item/clothing/accessory/scarf/green
 /*Ranks*/
 
 /obj/item/clothing/accessory/ranks/blank
-	name = "Shoulderboards (Trooper)"
+	name = "Shoulderboards (Blank)"
 	desc = "Blank red shoulderboards denoting a Blackshield cadet, or, rarely, an emergency volunteer or an off-duty Blackshield Trooper given provisional duty in an emergency."
 	icon_state = "blank_tabs"
 	item_state = "blank_tabs"
