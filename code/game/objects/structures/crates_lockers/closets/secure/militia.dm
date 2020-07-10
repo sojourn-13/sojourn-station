@@ -73,7 +73,7 @@
 		new /obj/item/ammo_magazine/kurtz(src)
 		new /obj/item/ammo_magazine/kurtz/lethal(src)
 	new /obj/item/clothing/accessory/ranks/sergeant(src)
-	new /obj/item/weapon/storage/box/sergeantuniform9src)
+	new /obj/item/weapon/storage/box/sergeantuniform(src)
 	new /obj/item/ammo_magazine/hrifle(src)
 	new /obj/item/clothing/under/rank/armorer(src)
 	new /obj/item/clothing/head/rank/armorer/beret(src)
