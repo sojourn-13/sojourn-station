@@ -161,3 +161,15 @@
 	name = "campaign cover"
 	desc = "Mama, mama, can't you see what this Corps has done to me?"
 	icon_state = "instructor"
+	
+/obj/item/clothing/head/rank/commanderdress
+	name = "Blackshield command cover"
+	desc = "A white wheel cover with gold trim, fit for a commander."
+	icon_state = "commander_dress"
+	item_state = "commander_dress"
+	
+/obj/item/clothing/head/rank/trooperdress
+	name = "Blackshield cover"
+	desc = "A white wheel cover, fit for a soldier."
+	icon_state = "trooper_dress"
+	item_state = "trooper_dress"
