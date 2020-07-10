@@ -444,3 +444,41 @@ obj/item/clothing/accessory/scarf/green
 	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
 	icon_state = "neckbrace"
 	item_state = "neckbrace"
+	
+/*Ranks*/
+
+/obj/item/clothing/accessory/ranks/blank
+	name = "Shoulderboards (Trooper)"
+	desc = "Blank red shoulderboards denoting a Blackshield cadet, or, rarely, an emergency volunteer or an off-duty Blackshield Trooper given provisional duty in an emergency."
+	icon_state = "blank_tabs"
+	item_state = "blank_tabs"
+
+/obj/item/clothing/accessory/ranks/trooper
+	name = "Shoulderboards (Trooper)"
+	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Trooper."
+	icon_state = "trooper_tabs"
+	item_state = "trooper_tabs"
+	
+/obj/item/clothing/accessory/ranks/corpsman
+	name = "Shoulderboards (Corpsman)"
+	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Corpsman."
+	icon_state = "corps_tabs"
+	item_state = "corps_tabs"
+
+/obj/item/clothing/accessory/ranks/sergeant
+	name = "Shoulderboards (Sergeant)"
+	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Sergeant."
+	icon_state = "sergeant_tabs"
+	item_state = "sergeant_tabs"
+
+/obj/item/clothing/accessory/ranks/commander
+	name = "Shoulderboards (Commander)"
+	desc = "Red and gold shoulderboards denoting a Blackshield soldier with the rank of Commander."
+	icon_state = "commander_tabs"
+	item_state = "commander_tabs"
+	
+/obj/item/clothing/accessory/ranks/brigadier
+	name = "Shoulderboards (Brigadier)"
+	desc = "Red, gold, and silver shoulderboards denoting the Brigadier."
+	icon_state = "brigadier_tabs"
+	item_state = "brigadier_tabs"
