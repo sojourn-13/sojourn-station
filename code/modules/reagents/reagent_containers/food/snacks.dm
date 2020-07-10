@@ -2021,12 +2021,12 @@
 	filling_color = "#948051"
 	nutriment_desc = list("heartiness" = 1, "beans" = 3)
 	nutriment_amt = 6
-	preloaded_reagents = list("protein" = 3, "iron" = 10)
+	preloaded_reagents = list("protein" = 3, "sodiumchloride" = 5)
 	cooked = TRUE
 	reagent_flags = NONE
 	var/warm = FALSE
 	var/open = FALSE
-	var/list/heated_reagents = list("tricordrazine" = 10)
+	var/list/heated_reagents = list("tricordrazine" = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/mre/attack_self(mob/user)
 	if(!open)
@@ -2080,7 +2080,7 @@
 	nutriment_desc = list("acrid peaches" = 2)
 	bitesize = 2
 	nutriment_amt = 3
-	preloaded_reagents = list("hyperzine" = 8, "paracetamol" = 5)
+	preloaded_reagents = list("hyperzine" = 2, "paracetamol" = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/mre_cracker
 	name = "enriched cracker"
@@ -2091,14 +2091,14 @@
 	nutriment_desc = list("salt" = 1, "cracker" = 2)
 	bitesize = 2
 	nutriment_amt = 1
-	preloaded_reagents = list("dexalinp" = 1, "steady" = 1, "nicotine" = 1)
+	preloaded_reagents = list("dexalin " = 1, "nicotine" = 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/mre
 	name = "morale bar"
 	desc = "Some brand of non-melting military chocolate."
 	icon_state = "mre_candy"
 	trash = /obj/item/trash/mre_candy
-	preloaded_reagents = list("sugar" = 3, "serotrotium" = 2)
+	preloaded_reagents = list("sugar" = 3, "coco" = 2)
 	var/open = FALSE
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/mre/attack_self(mob/user)
