@@ -14,7 +14,8 @@
  *		ID and security PDA cart boxes,
  *		Handcuff, mousetrap, and pillbottle boxes,
  *		Snap-pops and matchboxes,
- *		Replacement light boxes.
+ *		Replacement light boxes,
+ *		Blackshield uniform boxes.
  *
  *		For syndicate call-ins see uplink_kits.dm
  */
@@ -580,3 +581,59 @@
 /obj/item/weapon/storage/box/data_disk/basic/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/weapon/computer_hardware/hard_drive/portable/basic(src)
+		
+/obj/item/weapon/storage/box/trooperuniform
+	name = "Trooper/Corpsman Service and Dress Kit"
+	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they probably won't fit again."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/clothing/under/rank/trooper/service(src)
+		new /obj/item/clothing/suit/rank/trooper/dress(src)
+		new /obj/item/clothing/accessory/tie/navy(src)
+		new /obj/item/clothing/shoes/laceup(src)
+		
+/obj/item/weapon/storage/box/sergeantuniform
+	name = "Sergeant Service and Dress Kit"
+	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they probably won't fit again."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/clothing/under/rank/armorer/service(src)
+		new /obj/item/clothing/suit/rank/armorer/dress(src)
+		new /obj/item/clothing/accessory/tie/navy(src)
+		new /obj/item/clothing/shoes/laceup(src)
+		
+/obj/item/weapon/storage/box/commanderuniform
+	name = "Commander Service and Dress Kit"
+	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they probably won't fit again."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/clothing/under/rank/commander/service(src)
+		new /obj/item/clothing/suit/rank/commander/dress(src)
+		new /obj/item/clothing/accessory/tie/navy(src)
+		new /obj/item/clothing/shoes/laceup(src)
+		
+/obj/item/weapon/storage/box/blankranks
+	name = "Box of Blank Ranks"
+	desc = "A box full of solid red, "blank" Blackshield ranks, for distribution to volunteers and cadets."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
