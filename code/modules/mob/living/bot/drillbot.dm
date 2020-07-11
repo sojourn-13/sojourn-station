@@ -21,7 +21,7 @@
 
 /mob/living/bot/miningonestar/death()
 	loot.forceMove(loc)
-	explode()
+	qdel(scr)
 
 /mob/living/bot/miningonestar/resources/Initialize()
 	..()
