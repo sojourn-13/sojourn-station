@@ -173,3 +173,21 @@
 	desc = "A white wheel cover, fit for a soldier."
 	icon_state = "trooper_dress"
 	item_state = "trooper_dress"
+	
+/obj/item/clothing/head/rank/fatigue/green
+	name = "Green utility cover"
+	desc = "A green camo cover, fit for a soldier. The markings of a removed patch linger."
+	icon_state = "greenutility"
+	item_state = "greenutility"
+	
+/obj/item/clothing/head/rank/fatigue/grey
+	name = "Green utility cover"
+	desc = "A grey camo cover, fit for a soldier. The markings of a removed patch linger."
+	icon_state = "greyutility"
+	item_state = "greyutility"
+
+/obj/item/clothing/head/rank/fatigue/navy
+	name = "Green utility cover"
+	desc = "A navy camo cover, fit for a soldier. The markings of a removed patch linger."
+	icon_state = "navyutility"
+	item_state = "navyutility"
