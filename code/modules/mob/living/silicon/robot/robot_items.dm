@@ -1,4 +1,4 @@
-item//A portable analyzer, for research borgs.  This is better then giving them a gripper which can hold anything and letting them use the normal analyzer.
+//A portable analyzer, for research borgs.  This is better then giving them a gripper which can hold anything and letting them use the normal analyzer.
 /obj/item/weapon/portable_destructive_analyzer
 	name = "Portable Destructive Analyzer"
 	icon = 'icons/obj/items.dmi'
@@ -441,7 +441,7 @@ item//A portable analyzer, for research borgs.  This is better then giving them 
 
 /obj/item/weapon/storage/bag/robotic
 	name = "robotic bag"
-	desc = "If you see this, something went very, very wrong. Report this to your local admeme."
+	desc = "A bag for robots. It seems more complicated then it needs to be."
 	var/used_storage_space = 0 //Used to keep track of total amount of items, it's here for stacks.
 
 /obj/item/weapon/storage/bag/robotic/attack_self(mob/user as mob)
