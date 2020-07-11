@@ -483,7 +483,7 @@ obj/item/clothing/accessory/scarf/green
 	icon_state = "commander_tabs"
 	item_state = "commander_tabs"
 	
-/obj/item/clothing/accessory/ranks/commander
+/obj/item/clothing/accessory/ranks/major
 	name = "Shoulderboards (Major)"
 	desc = "Red and gold shoulderboards denoting a Blackshield soldier with the rank of Major."
 	icon_state = "major_tabs"
