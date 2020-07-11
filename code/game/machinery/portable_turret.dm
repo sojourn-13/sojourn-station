@@ -69,7 +69,7 @@
 
 /obj/machinery/porta_turret/One_star
 	name = "greyson positronic turret"
-	installation = /obj/item/weapon/gun/energy/laser/retro
+	installation = /obj/item/weapon/gun/energy/retro
 
 /obj/machinery/porta_turret/crescent
 	enabled = 0
