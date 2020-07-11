@@ -49,22 +49,6 @@
 	else
 		icon_state = "trashbag3"
 
-
-//The custodial robot gets a larger bag since it only has one and no cart
-/obj/item/weapon/storage/bag/trash/robot
-	max_storage_space = DEFAULT_BULKY_STORAGE * 2
-
-/obj/item/weapon/storage/bag/trash/robot/update_icon()
-	if(contents.len == 0)
-		icon_state = "trashbag0"
-	else if(contents.len < 24)
-		icon_state = "trashbag1"
-	else if(contents.len < 42)
-		icon_state = "trashbag2"
-	else
-		icon_state = "trashbag3"
-
-
 // -----------------------------
 //        Plastic Bag
 // -----------------------------
@@ -96,16 +80,8 @@
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL
 	can_hold = list(/obj/item/weapon/ore)
-
-// -----------------------------
-//    Mining Satchel (Cyborg)
-// -----------------------------
-
-/obj/item/weapon/storage/bag/ore/borg
-	name = "mining satchel compactor"
-	max_storage_space = 500//Borgs get more because >specialization
-	can_hold_extra = list(/obj/item/weapon/ore)
-
+	var/stored_ore = list()
+	var/last_update = 0
 
 // -----------------------------
 //          Produce bag
@@ -226,14 +202,6 @@
 		S.amount = S.max_amount
 
 	return ..(S,new_location)
-
-// -----------------------------
-//    Sheet Snatcher (Cyborg)
-// -----------------------------
-
-/obj/item/weapon/storage/bag/sheetsnatcher/borg
-	name = "sheet snatcher 9000"
-	capacity = 500//Borgs get more because >specialization
 
 // -----------------------------
 //           Cash Bag

@@ -171,7 +171,7 @@
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/weapon/gripper/service(src)
 	src.modules += new /obj/item/weapon/soap/deluxe(src)
-	src.modules += new /obj/item/weapon/storage/bag/trash/robot(src)
+	src.modules += new /obj/item/weapon/storage/bag/robotic/trash(src)
 	src.modules += new /obj/item/weapon/mop(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src) // a hydroponist's bucket
