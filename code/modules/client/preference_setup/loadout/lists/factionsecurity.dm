@@ -172,7 +172,7 @@
 	sort_category = "Faction: Security"
 	
 /datum/gear/factionsecurity/fatigueselection
-	display_name = "Fatigue Selection"
+	display_name = "fatigue selection"
 	path = /obj/item/clothing/under/rank/fatigues/
 	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_w_uniform
@@ -180,7 +180,7 @@
 	sort_category = "Faction: Security"
 	
 /datum/gear/factionsecurity/fatiguecoverselection
-	display_name = "Fatigue Cover Selection"
+	display_name = "satigue cover selection"
 	path = /obj/item/clothing/head/rank/fatigue/
 	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_head
