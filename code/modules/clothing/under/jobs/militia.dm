@@ -21,7 +21,7 @@
  * Extra Fatigues
  */
 
-/obj/item/clothing/under/rank/all/fatigues/green
+/obj/item/clothing/under/rank/fatigues/green
 	name = "green utility uniform"
 	desc = "A green utility uniform, bearing the old marks of patches long since removed."
 	icon_state = "greenutility"
