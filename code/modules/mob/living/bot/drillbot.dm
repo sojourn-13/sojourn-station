@@ -3,9 +3,10 @@
 	desc = "it looks like a drillbot. Ancient drillbot"
 	health = 20
 	maxHealth = 20
-	icon = 'icons/obj/aibots.dmi'
+	icon = 'icons/mob/build_a_drone.dmi'
+	icon_state = "drone_os"
+	faction = "onestar"
 	layer = MOB_LAYER
-	icon_state = "mining_drone"
 	var/obj/item/loot
 	var/attacktext = "drills"
 	var/environment_smash = 1
