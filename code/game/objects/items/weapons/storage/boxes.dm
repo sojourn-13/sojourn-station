@@ -620,7 +620,7 @@
 		
 /obj/item/weapon/storage/box/blankranks
 	name = "Box of Blank Ranks"
-	desc = "A box full of solid red, "blank" Blackshield ranks, for distribution to volunteers and cadets."
+	desc = "A box full of solid red, blank Blackshield ranks, for distribution to volunteers and cadets."
 	icon_state = "box"
 
 	New()
