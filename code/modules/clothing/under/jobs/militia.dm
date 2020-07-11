@@ -16,6 +16,28 @@
 	desc = "A rugged, baggy, one-size-fits-all set of militant and quite slavic two-tone clothes for volunteers, cadets, and conscripts."
 	icon_state = "gorka"
 	item_state = "gorka"
+	
+/*
+ * Extra Fatigues
+ */
+
+/obj/item/clothing/under/rank/fatigues/green
+	name = "green utility uniform"
+	desc = "A green utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "greenutility"
+	item_state = "greenutility"
+
+/obj/item/clothing/under/rank/fatigues/grey
+	name = "grey utility uniform"
+	desc = "A grey utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "greyutility"
+	item_state = "greyutility"
+
+/obj/item/clothing/under/rank/fatigues/navy
+	name = "navy utility uniform"
+	desc = "A navy utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "navyutility"
+	item_state = "navyutility"
 
 /*
  * Trooper/Corpsman
@@ -136,3 +158,15 @@
 	desc = "A modern dark blue uniform jacket with gold trimmings. Fit for a command officer, even one on the frontier."
 	icon_state = "commander_dress"
 	item_state = "commander_dress"
+	
+/obj/item/clothing/under/rank/commander/brigservice
+	name = "Blackshield general's service uniform"
+	desc = "A modern uniform with red trimmings on the dark blue pants, with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
+	icon_state = "brigadier_service"
+	item_state = "brigadier_service"
+
+/obj/item/clothing/suit/rank/commander/brigdress
+	name = "Blackshield general's dress jacket"
+	desc = "A modern dark blue uniform jacket with red trimmings. Fit for a general officer, even one on the frontier."
+	icon_state = "brigadier_dress"
+	item_state = "brigadier_dress"

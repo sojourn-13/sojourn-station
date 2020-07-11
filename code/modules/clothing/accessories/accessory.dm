@@ -470,12 +470,24 @@ obj/item/clothing/accessory/scarf/green
 	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Sergeant."
 	icon_state = "sergeant_tabs"
 	item_state = "sergeant_tabs"
+	
+/obj/item/clothing/accessory/ranks/sergeantmajor
+	name = "Shoulderboards (Sergeant Major)"
+	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Sergeant Major."
+	icon_state = "sergeantm_tabs"
+	item_state = "sergeantm_tabs"
 
 /obj/item/clothing/accessory/ranks/commander
 	name = "Shoulderboards (Commander)"
 	desc = "Red and gold shoulderboards denoting a Blackshield soldier with the rank of Commander."
 	icon_state = "commander_tabs"
 	item_state = "commander_tabs"
+	
+/obj/item/clothing/accessory/ranks/major
+	name = "Shoulderboards (Major)"
+	desc = "Red and gold shoulderboards denoting a Blackshield soldier with the rank of Major."
+	icon_state = "major_tabs"
+	item_state = "major_tabs"
 	
 /obj/item/clothing/accessory/ranks/brigadier
 	name = "Shoulderboards (Brigadier)"

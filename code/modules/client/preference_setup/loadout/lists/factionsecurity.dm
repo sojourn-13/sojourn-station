@@ -170,6 +170,22 @@
 	allowed_roles = list(JOBS_SECURITY)
 	slot = slot_glasses
 	sort_category = "Faction: Security"
+	
+/datum/gear/factionsecurity/fatigueselection
+	display_name = "fatigue selection"
+	path = /obj/item/clothing/under/rank/fatigues/
+	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_w_uniform
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Faction: Security"
+	
+/datum/gear/factionsecurity/fatiguecoverselection
+	display_name = "fatigue cover selection"
+	path = /obj/item/clothing/head/rank/fatigue/
+	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_head
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/snowsuitsecurity
 	display_name = "snowsuit, security"
