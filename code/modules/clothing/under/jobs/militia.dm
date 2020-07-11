@@ -136,3 +136,15 @@
 	desc = "A modern dark blue uniform jacket with gold trimmings. Fit for a command officer, even one on the frontier."
 	icon_state = "commander_dress"
 	item_state = "commander_dress"
+	
+/obj/item/clothing/under/rank/commander/brigservice
+	name = "Blackshield general's service uniform"
+	desc = "A modern uniform with red trimmings on the dark blue pants, with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
+	icon_state = "brigadier_service"
+	item_state = "brigadier_service"
+
+/obj/item/clothing/suit/rank/commander/brigdress
+	name = "Blackshield general's dress jacket"
+	desc = "A modern dark blue uniform jacket with red trimmings. Fit for a general officer, even one on the frontier."
+	icon_state = "brigadier_dress"
+	item_state = "brigadier_dress"
