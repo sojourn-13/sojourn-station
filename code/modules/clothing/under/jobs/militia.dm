@@ -16,6 +16,28 @@
 	desc = "A rugged, baggy, one-size-fits-all set of militant and quite slavic two-tone clothes for volunteers, cadets, and conscripts."
 	icon_state = "gorka"
 	item_state = "gorka"
+	
+/*
+ * Extra Fatigues
+ */
+
+/obj/item/clothing/under/rank/fatigues/green
+	name = "green utility uniform"
+	desc = "A green utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "greenutility"
+	item_state = "greenutility"
+
+/obj/item/clothing/under/rank/fatigues/grey
+	name = "grey utility uniform"
+	desc = "A grey utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "greyutility"
+	item_state = "greyutility"
+
+/obj/item/clothing/under/rank/fatigues/navy
+	name = "navy utility uniform"
+	desc = "A navy utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "navyutility"
+	item_state = "navyutility"
 
 /*
  * Trooper/Corpsman
