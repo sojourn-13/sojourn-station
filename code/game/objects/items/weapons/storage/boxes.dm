@@ -632,8 +632,3 @@
 		new /obj/item/clothing/accessory/ranks/blank(src)
 		new /obj/item/clothing/accessory/ranks/blank(src)
 		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
