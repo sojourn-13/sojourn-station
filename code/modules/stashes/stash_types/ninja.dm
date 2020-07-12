@@ -11,7 +11,10 @@
 	contents_list_random = list(
 		/obj/item/weapon/storage/box/anti_photons = 60,
 		/obj/item/weapon/gun/projectile/silenced = 50,
-		/obj/item/weapon/material/star/uranium = 70)
+		/obj/item/weapon/material/star/uranium = 70,
+		/obj/item/weapon/tool/sword/katana = 20,
+		/obj/item/rig_module/chem_dispenser/ninja = 90, //Weakest chem dispenser rig
+		/obj/item/weapon/reagent_containers/food/drinks/bottle/pwine = 70,)
 
 /datum/stash/ninja/haiku
 	lore = "Swift electric ghost<br>\
