@@ -23,7 +23,6 @@
 	/obj/item/clothing/mask/smokable/cigarette/cigar/havana = 15,
 	/obj/item/modular_computer/tablet/lease/preset/command = 25,
 	/obj/item/weapon/stamp/captain = 35,
-	/obj/item/weapon/disk/nuclear = 15,
 	/obj/item/weapon/hand_tele = 25,
 	/obj/item/weapon/bluespace_harpoon = 15,
 	/obj/item/weapon/reagent_containers/hypospray = 15,

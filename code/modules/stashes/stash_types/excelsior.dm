@@ -15,9 +15,19 @@
 	/obj/item/weapon/implantcase/excelsior/broken = 40,
 	/obj/item/clothing/suit/space/void/excelsior = 70,
 	/obj/item/weapon/gun/projectile/automatic/ak47 = 30,
-	/obj/item/weapon/gun/projectile/automatic/ak47 = 30,
+	/obj/item/weapon/gun/projectile/automatic/vintorez = 10,
+	/obj/item/weapon/gun/projectile/clarissa/makarov = 50,
+	/obj/item/weapon/gun/projectile/clarissa/makarov = 50,
 	/obj/item/ammo_magazine/lrifle = 50,
-	/obj/item/ammo_magazine/lrifle = 50,)
+	/obj/item/ammo_magazine/lrifle = 50,
+	/obj/item/weapon/stock_parts/capacitor/excelsior = 70,
+	/obj/item/weapon/stock_parts/scanning_module/excelsior = 70,
+	/obj/item/weapon/stock_parts/manipulator/excelsior = 70,
+	/obj/item/weapon/stock_parts/micro_laser/excelsior = 70,
+	/obj/item/weapon/stock_parts/matter_bin/excelsior = 70,
+	/obj/item/weapon/cell/large/excelsior = 60,
+	/obj/item/weapon/cell/medium/excelsior = 60,
+	/obj/item/weapon/cell/small/excelsior = 60,)
 	weight = 0.5
 
 /datum/stash/excelsior/shipyard
