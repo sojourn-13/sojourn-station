@@ -11679,6 +11679,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/random/junkfood/onlyburger,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "aFk" = (
@@ -11976,6 +11977,7 @@
 /area/nadezhda/medical/medbreak)
 "aFX" = (
 /obj/machinery/atmospherics/binary/pump,
+/obj/random/junkfood,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "aFY" = (
@@ -12089,6 +12091,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "aGk" = (
@@ -12383,6 +12386,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/random/junkfood,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "aGO" = (
@@ -12393,6 +12397,7 @@
 	dir = 4;
 	pixel_y = 0
 	},
+/obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "aGP" = (
@@ -12467,6 +12472,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology)
 "aGX" = (
+/obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "aGY" = (
@@ -12476,6 +12482,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "aGZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/random/junkfood,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "aHa" = (
@@ -12722,6 +12729,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/random/junkfood,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "aHE" = (
@@ -49573,11 +49581,9 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/bar)
 "csH" = (
-/obj/machinery/door/blast/regular/open{
-	id = "xenobio4";
-	name = "containment blast door"
-	},
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/binary/pump,
+/obj/random/junkfood/low_chance,
+/turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "csI" = (
 /obj/machinery/vending/cigarette,
@@ -79633,6 +79639,7 @@
 /area/nadezhda/rnd/lab)
 "nTy" = (
 /mob/living/simple_animal/mouse/white,
+/obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "ocD" = (
@@ -90909,7 +90916,7 @@ aYI
 baK
 aUo
 bdY
-csH
+bff
 aSD
 aTG
 aSD
@@ -96359,7 +96366,7 @@ aVi
 aVi
 aRK
 aEY
-aFX
+csH
 aGO
 aHa
 aHE
