@@ -591,6 +591,7 @@
 		..()
 		new /obj/item/clothing/under/rank/trooper/service(src)
 		new /obj/item/clothing/suit/rank/trooper/dress(src)
+		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
 		
@@ -603,6 +604,7 @@
 		..()
 		new /obj/item/clothing/under/rank/armorer/service(src)
 		new /obj/item/clothing/suit/rank/armorer/dress(src)
+		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
 		
@@ -615,6 +617,7 @@
 		..()
 		new /obj/item/clothing/under/rank/commander/service(src)
 		new /obj/item/clothing/suit/rank/commander/dress(src)
+		new /obj/item/clothing/head/rank/commanderdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
 		
