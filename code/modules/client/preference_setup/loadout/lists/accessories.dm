@@ -38,3 +38,7 @@
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory/tie
 	flags = GEAR_HAS_TYPE_SELECTION
+	
+/datum/gear/accessory/blackshieldpatch
+	display_name = "Blackshield arm patch"
+	path = /obj/item/clothing/accessory/patches/blackshield

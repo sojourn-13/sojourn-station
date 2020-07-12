@@ -494,3 +494,9 @@ obj/item/clothing/accessory/scarf/green
 	desc = "Red, gold, and silver shoulderboards denoting the Brigadier."
 	icon_state = "brigadier_tabs"
 	item_state = "brigadier_tabs"
+
+/obj/item/clothing/accessory/patches/blackshield
+	name = "Blackshield Patch"
+	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	icon_state = "blackshieldpatch"
+	item_state = "blackshieldpatch"
