@@ -72,7 +72,7 @@
 
 /mob/living/bot/miningonestar/resources/in_work/Life()
 	..()
-	if(health <= 0)
+	if(health < 1)
 		death()
 		return
 	weakened = 0
