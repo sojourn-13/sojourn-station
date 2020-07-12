@@ -65,6 +65,12 @@
 	desc = "A modern uniform with dark blue pants, with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
 	icon_state = "trooper_service"
 	item_state = "trooper_service"
+	
+/obj/item/clothing/suit/rank/armorer/service
+	name = "Blackshield service jacket"
+	desc = "A modern dark blue uniform jacket. Fit for a trooper, even one on the frontier."
+	icon_state = "trooper_service"
+	item_state = "trooper_service"
 
 /obj/item/clothing/suit/rank/trooper/dress
 	name = "Blackshield dress jacket"
@@ -116,6 +122,12 @@
 	desc = "A modern uniform with silver trimmings on the dark blue pants, with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
 	icon_state = "sergeant_service"
 	item_state = "sergeant_service"
+	
+/obj/item/clothing/suit/rank/armorer/service
+	name = "Blackshield NCO service jacket"
+	desc = "A modern dark blue uniform jacket with silver trimmings. Fit for a mid-level trooper, even one on the frontier."
+	icon_state = "sergeant_service"
+	item_state = "sergeant_service"
 
 /obj/item/clothing/suit/rank/armorer/dress
 	name = "Blackshield NCO dress jacket"
@@ -150,6 +162,12 @@
 /obj/item/clothing/under/rank/commander/service
 	name = "Blackshield command service uniform"
 	desc = "A modern uniform with gold trimmings on the dark blue pants, with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
+	icon_state = "commander_service"
+	item_state = "commander_service"
+	
+/obj/item/clothing/suit/rank/commander/service
+	name = "Blackshield command service jacket"
+	desc = "A modern dark blue uniform jacket with gold trimmings. Fit for a command officer, even one on the frontier."
 	icon_state = "commander_service"
 	item_state = "commander_service"
 
