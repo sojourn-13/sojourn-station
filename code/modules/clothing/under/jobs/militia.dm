@@ -66,7 +66,7 @@
 	icon_state = "trooper_service"
 	item_state = "trooper_service"
 	
-/obj/item/clothing/suit/rank/armorer/service
+/obj/item/clothing/suit/rank/trooper/service
 	name = "Blackshield service jacket"
 	desc = "A modern dark blue uniform jacket. Fit for a trooper, even one on the frontier."
 	icon_state = "trooper_service"
@@ -180,6 +180,12 @@
 /obj/item/clothing/under/rank/commander/brigservice
 	name = "Blackshield general's service uniform"
 	desc = "A modern uniform with red trimmings on the dark blue pants, with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
+	icon_state = "brigadier_service"
+	item_state = "brigadier_service"
+	
+/obj/item/clothing/suit/rank/command/brigservice
+	name = "Blackshield general's service jacket"
+	desc = "A modern dark blue uniform jacket with red trimmings. Fit for a general officer, even one on the frontier."
 	icon_state = "brigadier_service"
 	item_state = "brigadier_service"
 
