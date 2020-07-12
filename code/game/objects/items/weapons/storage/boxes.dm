@@ -584,12 +584,13 @@
 		
 /obj/item/weapon/storage/box/trooperuniform
 	name = "Trooper/Corpsman Service and Dress Kit"
-	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they probably won't fit again."
+	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
 	New()
 		..()
 		new /obj/item/clothing/under/rank/trooper/service(src)
+		new /obj/item/clothing/suit/rank/trooper/service(src)
 		new /obj/item/clothing/suit/rank/trooper/dress(src)
 		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
@@ -597,12 +598,13 @@
 		
 /obj/item/weapon/storage/box/sergeantuniform
 	name = "Sergeant Service and Dress Kit"
-	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they probably won't fit again."
+	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
 	New()
 		..()
 		new /obj/item/clothing/under/rank/armorer/service(src)
+		new /obj/item/clothing/suit/rank/armorer/service(src)
 		new /obj/item/clothing/suit/rank/armorer/dress(src)
 		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
@@ -610,12 +612,13 @@
 		
 /obj/item/weapon/storage/box/commanderuniform
 	name = "Commander Service and Dress Kit"
-	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they probably won't fit again."
+	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
 	New()
 		..()
 		new /obj/item/clothing/under/rank/commander/service(src)
+		new /obj/item/clothing/suit/rank/commander/service(Src)
 		new /obj/item/clothing/suit/rank/commander/dress(src)
 		new /obj/item/clothing/head/rank/commanderdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
