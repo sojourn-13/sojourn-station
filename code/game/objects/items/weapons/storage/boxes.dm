@@ -618,7 +618,7 @@
 	New()
 		..()
 		new /obj/item/clothing/under/rank/commander/service(src)
-		new /obj/item/clothing/suit/rank/commander/service(Src)
+		new /obj/item/clothing/suit/rank/commander/service(src)
 		new /obj/item/clothing/suit/rank/commander/dress(src)
 		new /obj/item/clothing/head/rank/commanderdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
