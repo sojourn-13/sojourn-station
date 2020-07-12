@@ -19,12 +19,12 @@
 				"It's labelled 'The Door Phenomenon'.",
 				"It's labelled 'FTL Related Mutations'.",
 				"It's labelled 'Mass Hallucinations or Timeline Convergence?'.",
-				"It's labelled 'The Existence of Alternate Realities'.",
+				//"It's labelled 'The Existence of Alternate Realities'.", Paradox
 				"It's labelled 'Humane Applications of Mind Fryers'.",
 				"It's labelled 'Summary of Faction Capabilities'.",
 				"It's labelled 'The Technology Behind Absolutism'.",
 				"It's labelled 'Sol Federation Research Ethics'.",
-				"It's labelled 'The Collapse of Greyson Positronics'.",
+				//"It's labelled 'The Collapse of Greyson Positronics'.", they are not collapsed yet
 				"It's labelled 'Wanderer - A Dossier'.",
 				"It's labelled 'Ironhammer's Legacy: Our Potential Gain'.",
 				"It's labelled 'Evaluation of Nadezhda Council Efficiency'.",
@@ -48,6 +48,11 @@
 				"It's labelled 'Quarterly Overseer Meeting Minutes'.",
 				"It's labelled 'Unabridged Expense Report - Do Not Publish'.",
 				"It's labelled 'For The Attention of Director Mkne'.",
+				"It's labelled 'Human Enhancement Test Results'.",
+				"It's labelled 'New Uses Of Soild Plasma'.",
+				"It's labelled 'Prototype: Liquid Fuels For Generators'.",
+				"It's labelled 'Eletric Welders And Cold Welding'.",
+				"It's labelled 'Improvements On Cryogenic Technologies'.",
 				"It's labelled 'The Future of the Soteria Institute'.",
 				"The label has been censored with permanent marker. Mysterious.",
 				"The label has been torn off. Maybe it's best not to pry.")
