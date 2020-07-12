@@ -183,7 +183,7 @@
 /obj/item/weapon/melee/energy/sword/sabre/dagger/activate(mob/living/user)
 	if(!active)
 		to_chat(user, SPAN_NOTICE("\The [src] is now energized."))
-	icon_state = "dagger[blade_color]" //So we dont use sword icons
+	icon_state = "daggergreen" //So we dont use sword icons
 	..()
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "strikes", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 35,  QUALITY_WIRE_CUTTING = 25, QUALITY_LASER_CUTTING = 25, QUALITY_WELDING = 20, QUALITY_CAUTERIZING = 30)
