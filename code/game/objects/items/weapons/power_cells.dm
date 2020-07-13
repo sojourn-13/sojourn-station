@@ -300,7 +300,7 @@
 
 /obj/item/device/makeshift_centrifuge/attack_self(mob/user)
 	var/obj/item/weapon/cell/cell
-	if(do_after(user, 60 - (30 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
+	if(do_after(user, 60 - (1 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
 			return
 		if(cell.charge >= cell.maxcharge)
