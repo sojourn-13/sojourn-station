@@ -45,7 +45,7 @@
 
 /obj/item/weapon/tool/pickaxe/onestar //TODO: Add sound to /turn_on proc
 	name = "greyson positronic pickaxe"
-	desc = "A standard Greyson Positronic basic tool. There used energy technologies what makes it enough powerful and cheap at the same time."
+	desc = "A standard Greyson Positronic digging tool. Whatever secrets they used to make this so powerful and cheap is a mystery."
 	icon_state = "one_star_pickaxe"
 	item_state = "pickaxe"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2, MATERIAL_DIAMOND = 2)

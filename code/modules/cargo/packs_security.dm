@@ -191,6 +191,15 @@
 	crate_name = "wall shield generators crate"
 	group = "Security"
 
+//This crate is unaffected by price changes since its from krios, not pirates.
+/datum/supply_pack/assaultsuit
+	name = "Assault Armor"
+	contains = list(/obj/item/clothing/suit/space/void/assault)
+	cost = 20000
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "assault armor crate"
+	group = "Security"
+
 //Putting the void wolf stuff here so its easier to remove later, if needed.
 /datum/supply_pack/voidwolfrifles
 	name = "Void Wolf Rifles Crate"
@@ -212,7 +221,13 @@
 					/obj/item/weapon/reagent_containers/pill/zoom,
 					/obj/item/weapon/reagent_containers/pill/happy,
 					/obj/item/seeds/ambrosiadeusseed,
-					/obj/item/seeds/ambrosiavulgarisseed)
+					/obj/item/seeds/ambrosiavulgarisseed,
+					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
+					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
+					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
+					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
+					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
+					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris)
 	cost = 1000
 	containertype = /obj/structure/closet/crate/serbcrate
 	crate_name = "Void Wolf Recreations Crate"

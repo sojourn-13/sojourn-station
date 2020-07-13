@@ -189,12 +189,16 @@ obj/item/weapon/gun/energy/retro
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BELT|SLOT_BACK
 	projectile_type = /obj/item/projectile/beam/heavylaser
-	charge_cost = 250
+	charge_cost = 100
 	fire_delay = 20
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 4, MATERIAL_URANIUM = 1)
 	price_tag = 3000
 	one_hand_penalty = 5
 	twohanded = TRUE
+	firemodes = list(
+		WEAPON_NORMAL,
+		WEAPON_CHARGE
+		)
 
 /obj/item/weapon/gun/energy/lasercannon/mounted
 	name = "mounted laser cannon"

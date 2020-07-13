@@ -3,7 +3,8 @@
 	var/list/silicon_subsystems = list(
 		/datum/nano_module/alarm_monitor/all,
 		/datum/nano_module/law_manager,
-		/datum/nano_module/email_client
+		/datum/nano_module/email_client,
+		/datum/nano_module/crew_monitor
 	)
 
 /mob/living/silicon/ai/New()
@@ -87,7 +88,7 @@
 
 	var/subsystem = input(src, "Choose a sybsystem:", "Subsystems") as null|anything in silicon_subsystems_by_name
 	var/stat_silicon_subsystem/SSS = silicon_subsystems_by_name[subsystem]
-	
+
 	if(istype(SSS))
 		SSS.Click()
 

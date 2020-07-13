@@ -1,6 +1,6 @@
 /mob/living/bot/miningonestar
 	name = "Greyson Positronic Bot"
-	desc = "it looks like a drillbot. Ancient drillbot"
+	desc = "It looks like a drillbot. An ancient drillbot"
 	health = 20
 	maxHealth = 20
 	icon = 'icons/mob/build_a_drone.dmi'

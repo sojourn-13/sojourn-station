@@ -198,3 +198,33 @@
 
 	unlocks_designs = list(/datum/design/research/item/lasercannon, /datum/design/research/item/lasermount)
 
+//Armor
+/datum/technology/basic_armor
+	name = "Basic Armor Designs"
+	desc = "Basic armor designs and integration of suit power systems."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.1
+	y = 0.8
+	icon = "shield"
+
+	required_technologies = list()
+	required_tech_levels = list()
+	cost = 1000
+
+	unlocks_designs = list(/datum/design/research/item/weapon/soteriaarmorchest, /datum/design/research/item/weapon/soteriaarmorhead)
+
+/datum/technology/advanced_armor
+	name = "Advanced Armor Designs"
+	desc = "Basic armor designs and integration of suit power systems."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.3
+	y = 0.8
+	icon = "shield"
+
+	required_technologies = list(/datum/technology/basic_armor)
+	required_tech_levels = list()
+	cost = 5000
+
+	unlocks_designs = list(/datum/design/research/item/weapon/medarmor)

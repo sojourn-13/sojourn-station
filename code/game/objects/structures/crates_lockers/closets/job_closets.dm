@@ -20,12 +20,14 @@
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/clothing/head/hairflower
+	new /obj/item/clothing/suit/storage/toggle/club(src)
 	new /obj/item/clothing/under/rank/bartender(src)
 	new /obj/item/clothing/under/rank/bartender(src)
 	new /obj/item/clothing/suit/storage/wcoat/black(src)
 	new /obj/item/clothing/suit/storage/wcoat/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
+	new /obj/item/clothing/under/rank/bartender/skirt(src)
 
 /*
  * Chef
@@ -38,6 +40,7 @@
 /obj/structure/closet/chefcloset/populate_contents()
 	new /obj/item/clothing/under/costume/job/waiter(src)
 	new /obj/item/clothing/under/costume/job/waiter(src)
+	new /obj/item/clothing/under/waiter/skirt(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/weapon/storage/box/mousetraps(src)
@@ -127,3 +130,5 @@
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/suit/armor/vest/acolyte(src)
 	new /obj/item/clothing/head/helmet/acolyte(src)
+	new /obj/item/clothing/under/rank/church/sport(src)
+	new /obj/item/clothing/suit/storage/neotheosports(src)
