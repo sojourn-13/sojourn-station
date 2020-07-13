@@ -154,14 +154,14 @@
 
 	unlocks_designs = list()//"fusion_core_control", "fusion_fuel_compressor", "fusion_fuel_control", "gyrotron_control", "fusion_core", "fusion_injector", "gyrotron")
 
-/datum/technology/bluespace_power
+/datum/technology/omega_power
 	name = "Fusion Based Power"
-	desc = "Power cells based on bluespace and fusion power."
+	desc = "The last steps into packing in power into a cell."
 	tech_type = RESEARCH_POWERSTORAGE
 
-	x = 0.8
+	x = 0.6
 	y = 0.5
-	icon = "bluespacecell"
+	icon = "omegacell"
 
 	required_technologies = list(
 									/datum/technology/super_power,
@@ -170,10 +170,71 @@
 								)
 
 	required_tech_levels = list()
-	cost = 3000
+	cost = 1000
 
 	unlocks_designs = list(
-							/datum/design/research/item/powercell/large/nuclear,
-							/datum/design/research/item/powercell/medium/nuclear,
+							/datum/design/research/item/powercell/large/omega,
+							/datum/design/research/item/powercell/medium/omega,
+							/datum/design/research/item/powercell/small/omega
+						)
+
+/datum/technology/atom_small_power
+	name = "Atomic Based Cell"
+	desc = "The first steps into nuclear based cells."
+	tech_type = RESEARCH_POWERSTORAGE
+
+	x = 0.5
+	y = 0.5
+	icon = "atomsmall"
+
+	required_technologies = list(
+									/datum/technology/omega_power
+								)
+
+	required_tech_levels = list()
+	cost = 1000
+
+	unlocks_designs = list(
+							/datum/design/research/item/powercell/small/nuclear/pda,
 							/datum/design/research/item/powercell/small/nuclear
+						)
+
+/datum/technology/atom_m_power
+	name = "Medium Atom Based Cell"
+	desc = "The larger verson of the small Atom Cell."
+	tech_type = RESEARCH_POWERSTORAGE
+
+	x = 0.4
+	y = 0.5
+	icon = "bluespacecell"
+
+	required_technologies = list(
+									/datum/technology/omega_power
+								)
+
+	required_tech_levels = list()
+	cost = 1000
+
+	unlocks_designs = list(
+							/datum/design/research/item/powercell/medium/nuclear
+						)
+
+/datum/technology/atom_l_power
+	name = "Large Atom Based Cell"
+	desc = "The larger verson of the small Atom Cell."
+	tech_type = RESEARCH_POWERSTORAGE
+
+	x = 0.3
+	y = 0.5
+	icon = "atomlarge"
+
+	required_technologies = list(
+									/datum/technology/atom_m_power
+								)
+
+	required_tech_levels = list()
+	cost = 1000
+
+	unlocks_designs = list(
+							/datum/design/research/item/powercell/large/nuclear
 						)

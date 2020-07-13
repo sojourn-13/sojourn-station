@@ -313,7 +313,7 @@
 
 /datum/technology/industrial_printing
 	name = "Industrial Printing"
-	desc = "An industrial printer with many parts and compackter internals allow for grater speed"
+	desc = "An industrial printer with many parts and compacter internals allow for grater speed."
 	tech_type = RESEARCH_ENGINEERING
 
 	x = 0.9
@@ -324,7 +324,8 @@
 	required_tech_levels = list(RESEARCH_ENGINEERING = 7)
 	cost = 3500
 
-	unlocks_designs = list(/datum/design/research/circuit/industrial_printer)
+	unlocks_designs = list(/datum/design/research/circuit/industrial_printer,
+							/datum/design/research/circuit/recharger_industrial)
 
 
 /datum/technology/rig_industeral

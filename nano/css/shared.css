@@ -899,7 +899,10 @@ img.sciTechTreeIconToolTip {
 
 .icon-supercell { background-position: 0px -160px; }
 .icon-hypercell { background-position: -32px -160px; }
+.icon-omegacell { background-position: -256px -224px; }
+.icon-atomsmall { background-position: -256px -256px; }
 .icon-bluespacecell { background-position: -64px -160px; }
+.icon-atomlarge { background-position: -256px -288px; }
 .icon-solarcontrol { background-position: -96px -160px; }
 .icon-generator { background-position: -128px -160px; }
 .icon-supergenerator { background-position: -160px -160px; }

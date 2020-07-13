@@ -29,7 +29,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/flash)
 
-/datum/technology/weapon_recharging
+/datum/technology/weapon_recharging //You know... Its really not logical that this is even here...
 	name = "Weapon Recharging"
 	desc = "Weapon Recharging"
 	tech_type = RESEARCH_COMBAT
@@ -46,6 +46,7 @@
 
 	unlocks_designs = list(
 							/datum/design/research/circuit/recharger
+							///datum/design/research/item/hand_charger //Not yet
 							)
 
 /datum/technology/advanced_nonlethal
