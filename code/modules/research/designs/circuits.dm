@@ -219,6 +219,7 @@
 	name = "recharger"
 	build_path = /obj/item/weapon/circuitboard/recharger
 	sort_string = "HACAD"
+	category = CAT_POWER
 
 /datum/design/research/circuit/atmosalerts
 	name = "atmosphere alert console"
@@ -437,3 +438,9 @@
 	build_path = /obj/item/weapon/circuitboard/autolathe_industrial
 	sort_string = "VAAAH"
 	category = CAT_MACHINE
+
+/datum/design/research/circuit/recharger_industrial
+	name = "Industrial Printer"
+	build_path = /obj/machinery/recharger/industrial
+	sort_string = "VAAAH"
+	category = CAT_POWER

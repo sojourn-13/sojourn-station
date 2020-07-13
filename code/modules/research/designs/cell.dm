@@ -73,17 +73,43 @@
 	build_path = /obj/item/weapon/cell/small/moebius/hyper
 	sort_string = "DAAAX"
 
-/datum/design/research/item/powercell/large/nuclear
-	name = "Soteria \"Atomcell 13000L\""
-	build_path = /obj/item/weapon/cell/large/moebius/nuclear
+/datum/design/research/item/powercell/large/omega
+	name = "Soteria \"Omega-Geyser 13000L\""
+	build_path = /obj/item/weapon/cell/large/moebius/omega
 	sort_string = "DAAAZ"
+
+/datum/design/research/item/powercell/medium/omega
+	name = "Soteria \"Omega-Geyser 1000M\""
+	build_path = /obj/item/weapon/cell/medium/moebius/omega
+	sort_string = "DAABA"
+
+/datum/design/research/item/powercell/small/omega
+	name = "Soteria \"Omega-Geyser 300S\""
+	build_path = /obj/item/weapon/cell/small/moebius/omega
+	sort_string = "DAABB"
+
+/datum/design/research/item/powercell/large/nuclear
+	name = "Soteria \"Atomcell 14000L\""
+	build_path = /obj/item/weapon/cell/large/moebius/nuclear
+	sort_string = "DAABC"
 
 /datum/design/research/item/powercell/medium/nuclear
 	name = "Soteria \"Atomcell 1000M\""
 	build_path = /obj/item/weapon/cell/medium/moebius/nuclear
-	sort_string = "DAABA"
+	sort_string = "DAABD"
 
 /datum/design/research/item/powercell/small/nuclear
 	name = "Soteria \"Atomcell 300S\""
 	build_path = /obj/item/weapon/cell/small/moebius/nuclear
-	sort_string = "DAABB"
+	sort_string = "DAABE"
+
+/datum/design/research/item/powercell/small/nuclear/pda
+	name = "Soteria \"Atomcell 50S\""
+	build_path = /obj/item/weapon/cell/small/moebius/pda
+	sort_string = "DAABF"
+//Hand crank for cells
+/datum/design/research/item/hand_charger
+	name = "Soteria \"Hand Crank\""
+	build_path = /obj/item/device/manual_charger
+	category = CAT_POWER
+	sort_string = "DAABG"
