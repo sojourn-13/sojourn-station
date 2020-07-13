@@ -614,7 +614,7 @@
 			silent = 0
 			return 1
 		if(health <= HEALTH_THRESHOLD_DEAD) //No health = death
-			if(stats.getPerk(PERK_UNFINISHED_DELIVERY) && prob(33)) //Unless you have this perk
+			if(stats.getPerk(PERK_UNFINISHED_DELIVERY) && prob(50)) //Unless you have this perk
 				heal_organ_damage(100, 100)
 				adjustOxyLoss(-200)
 				adjustToxLoss(-200)

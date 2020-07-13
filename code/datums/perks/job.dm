@@ -114,6 +114,7 @@
 /datum/perk/sanityboost
 	name = "True Faith"
 	desc = "When near an obelisk, you feel your mind at ease. You slowly heal due to its latent effects."
+	gain_text = "You feel the protection of the nearby obelisk."
 	//icon_state = "sanityboost" // https://game-icons.net/1x1/lorc/templar-eye.html
 
 /datum/perk/sanityboost/assign(mob/living/carbon/human/H)
