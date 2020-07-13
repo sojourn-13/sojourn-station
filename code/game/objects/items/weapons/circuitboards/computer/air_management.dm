@@ -1,9 +1,5 @@
-#ifndef T_BOARD
-#error T_BOARD macro is not defined but we need it!
-#endif
-
 /obj/item/weapon/circuitboard/air_management
-	name = T_BOARD("atmosphere monitoring console")
+	build_name = "atmosphere monitoring console"
 	build_path = /obj/machinery/computer/general_air_control
 	var/console_name
 	var/frequency = 1439
@@ -11,7 +7,7 @@
 	var/list/sensor_information = list()
 
 /obj/item/weapon/circuitboard/air_management/tank_control
-	name = T_BOARD("tank control")
+	build_name = "tank control"
 	build_path = /obj/machinery/computer/general_air_control/large_tank_control
 	frequency = 1441
 	var/input_tag
@@ -24,7 +20,7 @@
 	var/pressure_setting = ONE_ATMOSPHERE * 45
 
 /obj/item/weapon/circuitboard/air_management/supermatter_core
-	name = T_BOARD("core control")
+	build_name = "core control"
 	build_path = /obj/machinery/computer/general_air_control/supermatter_core
 	frequency = 1438
 	var/input_tag
@@ -37,7 +33,7 @@
 	var/pressure_setting = 100
 
 /obj/item/weapon/circuitboard/air_management/injector_control
-	name = T_BOARD("injector control")
+	build_name = "injector control"
 	build_path = /obj/machinery/computer/general_air_control/fuel_injection
 	var/device_tag
 	var/list/device_info

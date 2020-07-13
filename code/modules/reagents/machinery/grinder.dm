@@ -169,7 +169,7 @@
 
 
 /obj/item/weapon/circuitboard/reagentgrinder
-	name = T_BOARD("reagent grinder")
+	build_name = "reagent grinder"
 	board_type = "machine"
 	build_path = /obj/machinery/reagentgrinder/portable
 	origin_tech = list(TECH_BIO = 1)
@@ -263,7 +263,7 @@
 	nano_template = "industrial_grinder.tmpl"
 
 /obj/item/weapon/circuitboard/industrial_grinder
-	name = T_BOARD("industrial grinder")
+	build_name = "industrial grinder"
 	board_type = "machine"
 	build_path = /obj/machinery/reagentgrinder/industrial
 	origin_tech = list(TECH_BIO = 1)

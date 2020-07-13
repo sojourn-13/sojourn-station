@@ -1,5 +1,5 @@
 /obj/item/weapon/circuitboard/smelter
-	name = T_BOARD("smelter")
+	build_name = "smelter"
 	build_path = /obj/machinery/smelter
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2)

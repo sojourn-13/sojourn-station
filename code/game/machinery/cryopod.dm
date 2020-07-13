@@ -131,12 +131,12 @@
 	return
 
 /obj/item/weapon/circuitboard/cryopodcontrol
-	name = "Circuit board (Cryogenic Oversight Console)"
+	build_name = "cryogenic oversight console"
 	build_path = /obj/machinery/computer/cryopod
 	origin_tech = list(TECH_DATA = 3)
 
 /obj/item/weapon/circuitboard/robotstoragecontrol
-	name = "Circuit board (Robotic Storage Console)"
+	build_name = "robotic storage console"
 	build_path = /obj/machinery/computer/cryopod/robot
 	origin_tech = list(TECH_DATA = 3)
 

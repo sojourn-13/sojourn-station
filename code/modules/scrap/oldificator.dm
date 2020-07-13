@@ -169,7 +169,7 @@
 	.=..()
 	if (.)
 		if(prob(75))
-			name = T_BOARD("unknown")
+			name = "unknown board"
 			build_path = pick(/obj/machinery/washing_machine, /obj/machinery/broken, /obj/machinery/shower, /obj/machinery/holoposter, /obj/machinery/holosign)
 
 

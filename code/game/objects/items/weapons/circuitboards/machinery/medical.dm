@@ -1,5 +1,5 @@
 /*/obj/item/weapon/circuitboard/autodoc
-	name = T_BOARD("autodoc")
+	build_name = "autodoc"
 	build_path = /obj/machinery/autodoc
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 3, TECH_BIO = 3)
@@ -10,7 +10,7 @@
 		/obj/item/weapon/stock_parts/micro_laser = 2
 )*/
 /obj/item/weapon/circuitboard/sleeper
-	name = T_BOARD("sleeper")
+	build_name = "sleeper"
 	build_path = /obj/machinery/sleeper
 	board_type = "machine"
 	origin_tech = list(TECH_BIO = 4)
@@ -24,7 +24,7 @@
 		)
 
 /obj/item/weapon/circuitboard/sleeper/hyper
-	name = T_BOARD("hyper-sleeper")
+	build_name = "hyper-sleeper"
 	build_path = /obj/machinery/sleeper/hyper
 	board_type = "machine"
 	origin_tech = list(TECH_BIO = 7)
