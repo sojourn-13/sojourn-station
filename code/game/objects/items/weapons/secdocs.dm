@@ -19,12 +19,12 @@
 				"It's labelled 'The Door Phenomenon'.",
 				"It's labelled 'FTL Related Mutations'.",
 				"It's labelled 'Mass Hallucinations or Timeline Convergence?'.",
-				//"It's labelled 'The Existence of Alternate Realities'.", Paradox
+				"It's labelled 'The Existence of Alternate Realities'.",
 				"It's labelled 'Humane Applications of Mind Fryers'.",
 				"It's labelled 'Summary of Faction Capabilities'.",
 				"It's labelled 'The Technology Behind Absolutism'.",
 				"It's labelled 'Sol Federation Research Ethics'.",
-				//"It's labelled 'The Collapse of Greyson Positronics'.", they are not collapsed yet
+				"It's labelled 'The Collapse of Greyson Positronics'.",
 				"It's labelled 'Wanderer - A Dossier'.",
 				"It's labelled 'Ironhammer's Legacy: Our Potential Gain'.",
 				"It's labelled 'Evaluation of Nadezhda Council Efficiency'.",
