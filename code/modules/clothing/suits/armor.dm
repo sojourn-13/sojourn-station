@@ -131,6 +131,25 @@
 						 /obj/item/weapon/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
 
+/obj/item/clothing/suit/armor/vest/soteriasuit
+	name = "'Mark II' enviromental protection suit"
+	desc = "For working in hazardous enviroments. While its built for most enviroments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
+	Unlike its superior, it offers alot less armor but it is made out of basic steel, making it a cheaper, easier alternative to build."
+	icon_state = "armor_engineering"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(melee = 20, bullet = 20, energy = 20, bomb = 30, bio = 50, rad = 50)
+	extra_allowed = list(/obj/item/weapon/extinguisher,
+						 /obj/item/weapon/tool,
+						 /obj/item/weapon/tool_upgrade,
+						 /obj/item/stack/cable_coil,
+						 /obj/item/device/t_scanner,
+						 /obj/item/device/scanner/gas,
+						 /obj/item/taperoll/engineering,
+						 /obj/item/weapon/storage/toolbox)
+	flags_inv = HIDEJUMPSUIT
+	matter = list(MATERIAL_STEEL = 40)
+
 /obj/item/clothing/suit/armor/bulletproof
 	name = "bulletproof vest"
 	desc = "A vest that excels in protecting the wearer against high-velocity solid projectiles."

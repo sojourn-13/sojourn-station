@@ -21,6 +21,8 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	minimum_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/captain
 
+	perks = list(/datum/perk/sommelier)
+
 	description = "The Premier is the prime mediator of the colony itself, acting as a trusted advisor amongst their peers.<br>\
 You are trusted with control of the colony primary accounts, and are also able to control access within the colony.<br>\
 Your primary objective is to oversee council decisions, change access levels, and act as both lawyer and consultant in various decisions.<br>\
@@ -91,6 +93,8 @@ Treat your command officers with respect, and listen to their council. Try not t
 	Demonstrate true loyalty and do not let your superior down."
 
 	outfit_type = /decl/hierarchy/outfit/job/hop
+
+	perks = list(/datum/perk/sommelier)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,

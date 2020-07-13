@@ -66,6 +66,25 @@
 	build_path = /obj/item/weapon/bluespace_harpoon
 	sort_string = "TBAAB"
 
+/datum/design/research/item/weapon/soteriaarmorchest
+	name = "'Mark II' enviromental protection suit"
+	desc = "For working in hazardous enviroments. While its built for most enviroments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
+	Unlike its superior, it offers alot less armor but it is made out of basic steel, making it a cheaper, easier alternative to build."
+	build_path = /obj/item/clothing/suit/armor/vest/soteriasuit
+	sort_string = "TBAAC"
+
+/datum/design/research/item/weapon/soteriaarmorhead
+	name = "'Mark II' enviromental protection helmet"
+	desc = "You feel like this helmet is cheap, for some reason."
+	build_path = /obj/item/clothing/head/helmet/soteriasuit
+	sort_string = "TBAAD"
+
+/datum/design/research/item/weapon/medarmor
+	name = "soteria medical void armor"
+	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
+	build_path = /obj/item/clothing/suit/space/void/medarmor
+	sort_string = "TBAAE"
+
 /datum/design/research/item/weapon/hatton
 	name = "Soteria BT \"Q-del\""
 	desc = "This breaching tool was reverse engineered from the \"Hatton\" design. \

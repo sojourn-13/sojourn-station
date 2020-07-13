@@ -244,16 +244,17 @@ var/global/list/robot_modules = list(
 					"Default" = "robot_old",
 					"Sleek" = "sleekstandard",
 					"Drone" = "drone-standard",
-					"Spider" = "spider"
+					"Spider" = "spider",
+					"Miss" = "missm_sd"
 				  )
 
 	desc = "The baseline, jack of all trades. Can do a little of everything. Some DIY, some healing, some combat."
 	stat_modifiers = list(
-		STAT_BIO = 15,
-		STAT_COG = 15,
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_MEC = 15
+		STAT_BIO = 30,
+		STAT_COG = 30,
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_MEC = 30
 	)
 
 
@@ -302,7 +303,9 @@ var/global/list/robot_modules = list(
 				"Drone - Medical" = "drone-surgery",
 				"Drone - Chemistry" = "drone-chemistry",
 				"Sleek - Medical" = "sleekmedic",
-				"Sleek - Chemistry" = "sleekchemistry"
+				"Sleek - Chemistry" = "sleekchemistry",
+				"Miss" = "missm_med",
+				"Medical Junkbot" = "qualified_doctor"
 				)
 
 	desc = "A versatile medical droid, equipped with all the tools necessary for surgery, chemistry, and \
@@ -317,8 +320,8 @@ var/global/list/robot_modules = list(
 	power_efficiency = 0.6 //Very poor, shackled to a charger
 
 	stat_modifiers = list(
-		STAT_BIO = 50,
-		STAT_COG = 10
+		STAT_BIO = 60,
+		STAT_COG = 30
 	)
 
 /obj/item/weapon/robot_module/medical/general/New(var/mob/living/silicon/robot/R)
@@ -394,7 +397,9 @@ var/global/list/robot_modules = list(
 			"Sleek" = "sleekrescue",
 			"Needles" = "medicalrobot",
 			"Drone" = "drone-medical",
-			"Heavy" = "heavymed"
+			"Heavy" = "heavymed",
+			"Miss" = "missm_med",
+			"Medical Junkbot" = "qualified_doctor"
 			)
 
 	//Rescue module has built in crew monitor
@@ -407,9 +412,10 @@ var/global/list/robot_modules = list(
 	power_efficiency = 1.2 //Good for long journeys
 
 	stat_modifiers = list(
-		STAT_BIO = 20,
-		STAT_ROB = 20,
-		STAT_TGH = 20
+		STAT_BIO = 40,
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_COG = 30
 	)
 
 	desc = "The rescue borg fills the role of paramedic. \
@@ -479,7 +485,8 @@ var/global/list/robot_modules = list(
 					"Sleek" = "sleekengineer",
 					"Spider" = "spidereng",
 					"Plated" = "ceborg",
-					"Heavy" = "heavyeng"
+					"Heavy" = "heavyeng",
+					"Miss" = "missm_eng"
 					)
 	health = 240 //Slightly above average
 	speed_factor = 1.1 //Slightly above average
@@ -490,8 +497,9 @@ var/global/list/robot_modules = list(
 	engineering tasks."
 
 	stat_modifiers = list(
-		STAT_COG = 20,
-		STAT_MEC = 40
+		STAT_COG = 40,
+		STAT_MEC = 40,
+		STAT_BIO = 25
 	)
 
 /obj/item/weapon/robot_module/engineering/construction
@@ -677,8 +685,10 @@ var/global/list/robot_modules = list(
 	heavily armored, though lightly armed battle unit."
 
 	stat_modifiers = list(
-		STAT_ROB = 30,
-		STAT_TGH = 20
+		STAT_ROB = 60,
+		STAT_TGH = 60,
+		STAT_BIO = 25,
+		STAT_COG = 25
 	)
 
 /obj/item/weapon/robot_module/security/general
@@ -691,7 +701,8 @@ var/global/list/robot_modules = list(
 					"Drone" = "drone-sec",
 					"Classic" = "secborg",
 					"Spider" = "spidersec",
-					"Heavy" = "heavysec"
+					"Heavy" = "heavysec",
+					"Miss" = "missm_security"
 				)
 
 /obj/item/weapon/robot_module/security/general/New(var/mob/living/silicon/robot/R)
@@ -731,14 +742,18 @@ var/global/list/robot_modules = list(
 					"Classic" = "janbot2",
 					"Buffer" = "mechaduster",
 					"Sleek" = "sleekjanitor",
-					"Maid" = "maidbot"
+					"Maid" = "maidbot",
+					"Miss" = "missm_janitor"
 					)
 	health = 250 //Bulky
 	speed_factor = 1.15 //Fast
 	power_efficiency = 0.8 //Poor
 
 	stat_modifiers = list(
-		STAT_ROB = 20
+		STAT_ROB = 25,
+		STAT_TGH = 25,
+		STAT_BIO = 25,
+		STAT_COG = 25
 	)
 
 	desc = "A vast machine designed for cleaning up trash and scrubbing floors. A fairly specialised task, \
@@ -796,7 +811,8 @@ var/global/list/robot_modules = list(
 					"Gardener" = "botany",
 					"Mobile Bar" = "heavyserv",
 					"Sleek" = "sleekservice",
-					"Maid" = "maidbot"
+					"Maid" = "maidbot",
+					"Miss" = "missm_service"
 				  	)
 
 	health = 80 //Ultra fragile
@@ -807,6 +823,13 @@ var/global/list/robot_modules = list(
 	 gardening, secreterial and similar personal service roles. Their work does not necessitate any \
 	 significant durability, and they are typically constructed from civilian grade plastics."
 
+	stat_modifiers = list(
+		STAT_BIO = 30,
+		STAT_COG = 30,
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_MEC = 30
+	)
 
 /obj/item/weapon/robot_module/service/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
@@ -873,15 +896,18 @@ var/global/list/robot_modules = list(
 					"Drone" = "drone-miner",
 					"Classic" = "miner_old",
 					"Heavy" = "heavymine",
-					"Spider" = "spidermining"
+					"Spider" = "spidermining",
+					"Miss" = "missm_miner"
 				)
 	health = 250 //Pretty tough
 	speed_factor = 0.9 //meh
 	power_efficiency = 1.5 //Best efficiency
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 20
+		STAT_ROB = 40,
+		STAT_TGH = 40,
+		STAT_BIO = 25,
+		STAT_COG = 25
 	)
 
 	desc = "Built for digging anywhere, excavating the ores and materials to keep the colony running, \
@@ -913,7 +939,8 @@ var/global/list/robot_modules = list(
 					"Drone" = "drone-science",
 					"Classic" = "robotjani",
 					"Sleek" = "sleekscience",
-					"Heavy" = "heavysci"
+					"Heavy" = "heavysci",
+					"Miss" = "missm_med"
 					)
 
 	health = 160 //Weak
@@ -979,8 +1006,17 @@ var/global/list/robot_modules = list(
 					"Treadhound" = "syndie_treadhound",
 					"Precision" = "syndi-medi",
 					"Heavy" = "syndi-heavy",
-					"Artillery" = "spidersyndi"
+					"Artillery" = "spidersyndi",
+					"Miss" = "missm_syndie"
 					)
+
+	stat_modifiers = list(
+		STAT_BIO = 60,
+		STAT_COG = 60,
+		STAT_ROB = 60,
+		STAT_TGH = 60,
+		STAT_MEC = 60
+	)
 
 /obj/item/weapon/robot_module/syndicate/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)

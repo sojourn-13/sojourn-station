@@ -23,6 +23,7 @@
 	new /obj/item/weapon/storage/fancy/candle_box(src)
 	new /obj/item/weapon/deck/tarot(src)
 	new /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_boards(src)
+	new /obj/item/weapon/storage/pouch/nt_sheath(src)
 	new /obj/item/weapon/gun/projectile/mk58/wood(src)
 	new /obj/item/ammo_magazine/magnum(src)
 	new /obj/item/ammo_magazine/magnum(src)
@@ -31,3 +32,5 @@
 	new /obj/item/weapon/tool/knife/neotritual(src)
 	new /obj/item/clothing/suit/armor/vest/prime(src)
 	new /obj/item/clothing/head/helmet/prime(src)
+	new /obj/item/clothing/under/rank/church/sport(src)
+	new /obj/item/clothing/suit/storage/neotheosports(src)

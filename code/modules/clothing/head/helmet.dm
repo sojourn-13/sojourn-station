@@ -97,6 +97,15 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/soteriasuit
+	name = "'Mark II' enviromental protection helmet"
+	desc = "You feel like this helmet is cheap, for some reason."
+	icon_state = "armor_engineering"
+	armor = list(melee = 20, bullet = 20, energy = 20, bomb = 30, bio = 50, rad = 50)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	matter = list(MATERIAL_STEEL = 20)
+
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
 	desc = "These are often used by highly trained Swat Members."
@@ -234,7 +243,7 @@
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "steelpot"
 	armor = list(melee = 40, bullet = 35, energy = 0, bomb = 30, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
-	flags_inv = BLOCKHAIR
+	flags_inv = BLOCKHEADHAIR
 	body_parts_covered = HEAD|EARS
 	siemens_coefficient = 1
 

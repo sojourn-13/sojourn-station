@@ -48,6 +48,11 @@
 				"It's labelled 'Quarterly Overseer Meeting Minutes'.",
 				"It's labelled 'Unabridged Expense Report - Do Not Publish'.",
 				"It's labelled 'For The Attention of Director Mkne'.",
+				"It's labelled 'Human Enhancement Test Results'.",
+				"It's labelled 'New Uses Of Soild Plasma'.",
+				"It's labelled 'Prototype: Liquid Fuels For Generators'.",
+				"It's labelled 'Eletric Welders And Cold Welding'.",
+				"It's labelled 'Improvements On Cryogenic Technologies'.",
 				"It's labelled 'The Future of the Soteria Institute'.",
 				"The label has been censored with permanent marker. Mysterious.",
 				"The label has been torn off. Maybe it's best not to pry.")

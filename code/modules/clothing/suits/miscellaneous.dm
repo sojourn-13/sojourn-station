@@ -146,6 +146,11 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "redponcho"
 	item_state = "redponcho"
 
+/obj/item/clothing/suit/poncho/tactical
+	name = "blue poncho"
+	desc = "A simple, comfortable poncho in blue colors."
+	icon_state = "tacticalponcho"
+	item_state = "tacticalponcho"
 
 /*Shirts*/
 
