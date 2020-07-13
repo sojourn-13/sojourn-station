@@ -228,3 +228,8 @@
 /datum/perk/ass_of_concrete/remove()
 	holder.mob_bump_flag = ~HEAVY
 	..()
+
+/datum/perk/sommelier
+	name = "Sommelier"
+	desc = "You know how to handle even strongest alcohol in the universe."
+	//icon_state = "inspiration"

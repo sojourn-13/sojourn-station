@@ -96,6 +96,12 @@
 	icon_state = "battlecoat"
 	item_state = "battlecoat"
 
+/obj/item/clothing/suit/storage/duster/bloodred
+	name = "blood red duster"
+	desc = "A deep red duster coat with black trim padding."
+	icon_state = "te_coat"
+	item_state = "te_coat"
+
 /obj/item/clothing/suit/storage/duster/gauntlet
 	name = "gauntlet duster"
 	desc = "A thick brown duster with a tough but comfortable design."

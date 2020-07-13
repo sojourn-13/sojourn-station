@@ -236,6 +236,15 @@
 		STAT_VIG = 9,
 	)
 
+/obj/item/weapon/oddity/techno
+	name = "Unknown technological part"
+	desc = "A technological part maded by Artificer Perfection Cube."
+	icon_state = "techno_part1"
+
+/obj/item/weapon/oddity/techno/Initialize()
+	icon_state = "techno_part[rand(1,7)]"
+	.=..()
+
 /obj/item/weapon/oddity/common/old_radio
 	name = "old radio"
 	desc = "Close your eyes, bring it closer and listen. You can almost hear it, in the edge of your consciousness. The world is ticking."

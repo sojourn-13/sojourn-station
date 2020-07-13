@@ -56,6 +56,16 @@
 	siemens_coefficient = 0
 	can_hold_knife = 1
 
+/obj/item/clothing/shoes/jackboots/janitor
+	name = "custodian's jackboots"
+	desc = "Specially altered jackboots for custodians to prevent them from slipping."
+	icon_state = "jackboots"
+	item_state = "jackboots"
+	force = WEAPON_FORCE_HARMLESS
+	siemens_coefficient = 0.3
+	item_flags = NOSLIP
+	can_hold_knife = TRUE
+
 /obj/item/clothing/shoes/jackboots/toeless
 	name = "toeless jackboots"
 	desc = "A modified pair of jackboots, designed for species with clawed feet."

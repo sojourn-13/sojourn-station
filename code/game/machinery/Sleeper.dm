@@ -221,6 +221,17 @@
 		occupant = M
 		update_icon()
 
+/obj/machinery/sleeper/verb/eject_occupant_verb()
+	set name = "Eject Occupant"
+	set desc = "Force eject occupant."
+	set category = "Object"
+	set src in view(1)
+
+	if (usr.incapacitated() || occupant == usr)
+		return
+
+	go_out()
+
 /obj/machinery/sleeper/proc/go_out()
 	if(!occupant)
 		return

@@ -108,6 +108,9 @@ SUBSYSTEM_DEF(job)
 		if(job in command_positions) //If you want a command position, select it!
 			continue
 
+		if(job.is_restricted(player.client.prefs))
+			continue
+
 		if(jobban_isbanned(player, job.title))
 			Debug("GRJ isbanned failed, Player: [player], Job: [job.title]")
 			continue

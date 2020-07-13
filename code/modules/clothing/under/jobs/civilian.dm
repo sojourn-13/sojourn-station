@@ -13,10 +13,22 @@
 	item_state = "gy_suit"
 
 /obj/item/clothing/under/rank/bartender
-	desc = "A smart bartender's suit adorned with a bow tie."
+	desc = "An expensive shirt and tie with tailored pants."
 	name = "bartender's uniform"
 	icon_state = "ba_suit"
 	item_state = "ba_suit"
+
+/obj/item/clothing/under/rank/bartender/skirt
+	desc = "Expensive shirt and tie with a tailored skirt."
+	name = "bartender's skirtsuit"
+	icon_state = "ba_skirt"
+	item_state = "ba_skirt"
+
+/obj/item/clothing/under/waiter/skirt
+	name = "waiter's skirtsuit"
+	desc = "It's a very smart uniform with a special pocket for tips and a skirt for female waiters."
+	icon_state = "waiter_skirt"
+	item_state = "waiter_skirt"
 
 /obj/item/clothing/under/rank/captain //Alright, technically not a 'civilian' but its better then giving a .dm file for a single define.
 	desc = "An authoritative green uniform with gold flair denoting the rank of premier."
@@ -49,6 +61,12 @@
 	name = "vector's vestments"
 	icon_state = "acolyte"
 	item_state = "acolyte"
+
+/obj/item/clothing/under/rank/church/sport
+	desc = "smells like lilac."
+	name = "church sports vestment"
+	icon_state = "nt_sports"
+	item_state = "nt_sports"
 
 /obj/item/clothing/under/rank/church
 	desc = "Smells like incense."
