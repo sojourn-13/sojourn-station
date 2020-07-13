@@ -441,6 +441,6 @@
 
 /datum/design/research/circuit/recharger_industrial
 	name = "Industrial Printer"
-	build_path = /obj/machinery/recharger/industrial
+	build_path = /obj/item/weapon/circuitboard/recharger/industrial
 	sort_string = "VAAAH"
 	category = CAT_POWER

@@ -195,8 +195,8 @@
 	cost = 1000
 
 	unlocks_designs = list(
-							/datum/design/research/item/powercell/small/nuclear/pda,
-							/datum/design/research/item/powercell/small/nuclear
+							/datum/design/research/item/powercell/small/nuclear,
+							/datum/design/research/item/powercell/small/nuclear/pda
 						)
 
 /datum/technology/atom_m_power

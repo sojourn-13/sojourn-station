@@ -207,7 +207,7 @@
 
 	x = 0.1
 	y = 0.8
-	icon = "shield"
+	icon = "armor"
 
 	required_technologies = list()
 	required_tech_levels = list()
@@ -222,7 +222,7 @@
 
 	x = 0.3
 	y = 0.8
-	icon = "shield"
+	icon = "void_suit"
 
 	required_technologies = list(/datum/technology/basic_armor)
 	required_tech_levels = list()

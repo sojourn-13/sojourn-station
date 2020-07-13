@@ -107,6 +107,7 @@
 	name = "Soteria \"Atomcell 50S\""
 	build_path = /obj/item/weapon/cell/small/moebius/pda
 	sort_string = "DAABF"
+
 //Hand crank for cells
 /datum/design/research/item/hand_charger
 	name = "Soteria \"Hand Crank\""

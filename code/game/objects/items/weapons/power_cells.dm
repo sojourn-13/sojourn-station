@@ -167,7 +167,7 @@
 /obj/item/weapon/cell/medium/moebius/omega
 	name = "Soteria \"Omega-Geyser 1600M\""
 	desc = "Soteria branded rechargeable M-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
-	icon_state = "meb_b_omega"
+	icon_state = "meb_m_omega"
 	matter = list(MATERIAL_STEEL = 9, MATERIAL_PLASTIC = 9, MATERIAL_SILVER = 6, MATERIAL_GOLD = 3) //DEAR LOAD WHAT ARE THOSE COSTS?
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 1600
@@ -254,7 +254,7 @@
 /obj/item/weapon/cell/small/moebius/omega
 	name = "Soteria \"Omega-Geyser 500S\""
 	desc = "Soteria branded rechargeable S-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
-	icon_state = "meb_b_omega"
+	icon_state = "meb_s_omega"
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 1) //DEAR LOAD WHAT ARE THOSE COSTS?
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 500
