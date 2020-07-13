@@ -1,5 +1,5 @@
 /obj/item/weapon/circuitboard/recycler
-	name = T_BOARD("Recycler")
+	build_name = "Recycler"
 	build_path = /obj/machinery/recycler
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 3)
