@@ -76,19 +76,16 @@
 /datum/design/research/item/powercell/large/omega
 	name = "Soteria \"Omega-Geyser 13000L\""
 	build_path = /obj/item/weapon/cell/large/moebius/omega
-	materials = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_SILVER = 9, MATERIAL_GOLD = 6) 
 	sort_string = "DAAAZ"
 
 /datum/design/research/item/powercell/medium/omega
 	name = "Soteria \"Omega-Geyser 1000M\""
 	build_path = /obj/item/weapon/cell/medium/moebius/omega
-	materials = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_SILVER = 9, MATERIAL_GOLD = 3) 
 	sort_string = "DAABA"
 
 /datum/design/research/item/powercell/small/omega
 	name = "Soteria \"Omega-Geyser 300S\""
 	build_path = /obj/item/weapon/cell/small/moebius/omega
-	materials = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_SILVER = 9, MATERIAL_GOLD = 2) 
 	sort_string = "DAABB"
 
 /datum/design/research/item/powercell/large/nuclear
