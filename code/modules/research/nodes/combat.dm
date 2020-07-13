@@ -45,8 +45,8 @@
 	cost = 1000
 
 	unlocks_designs = list(
-							/datum/design/research/circuit/recharger,
-							/datum/design/research/item/hand_charger
+							/datum/design/research/circuit/recharger
+							///datum/design/research/item/hand_charger //Not yet
 							)
 
 /datum/technology/advanced_nonlethal
