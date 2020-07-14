@@ -30,6 +30,9 @@
 	scannable = 1
 
 /datum/reagent/medicine/bicaridine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		M.heal_organ_damage(0.3 * effect_multiplier, 0, 5 * effect_multiplier)
+		return
 	M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
 
@@ -87,6 +90,8 @@
 	scannable = 1
 
 /datum/reagent/medicine/kelotane/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
 
 /datum/reagent/medicine/dermaline
@@ -168,6 +173,8 @@
 	scannable = 1
 
 /datum/reagent/medicine/dexalin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.adjustOxyLoss(-1.5 * effect_multiplier)
 	M.add_chemical_effect(CE_OXYGENATED, 1)
 	holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
@@ -218,6 +225,8 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	overdose = REAGENTS_OVERDOSE
 
 /datum/reagent/medicine/tricordrazine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.adjustOxyLoss(-0.6 * effect_multiplier)
 	M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
 	M.adjustToxLoss(-0.3 * effect_multiplier)
@@ -406,6 +415,8 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	scannable = 1
 
 /datum/reagent/medicine/peridaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 
