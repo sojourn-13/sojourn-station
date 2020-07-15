@@ -234,7 +234,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 
 /datum/reagent/medicine/tricordrazine/overdose(var/mob/living/carbon/M, var/alien)
 	. = ..()
-	M.adjustToxLoss(10)
+	M.adjustToxLoss(5)
 	M.adjustBrainLoss(1)
 	if(M.losebreath < 15)
 		M.losebreath++

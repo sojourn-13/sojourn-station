@@ -62,6 +62,7 @@ var/global/list/ore_data = list()
 	display_name = "sand"
 	smelts_to = MATERIAL_GLASS
 	compresses_to = MATERIAL_SANDSTONE
+	alloy = 1
 
 /ore/plasma
 	name = "plasma"
