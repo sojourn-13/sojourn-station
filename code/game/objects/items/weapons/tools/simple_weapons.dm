@@ -32,7 +32,7 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 1)
 	attack_verb = list("chopped", "torn", "cut")
-	tool_qualities = list(QUALITY_CUTTING = 20)
+	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_SAWING = 15)
 
 /obj/item/weapon/tool/fireaxe
 	name = "fire axe"
@@ -43,7 +43,7 @@
 	sharp = TRUE
 	edge = TRUE
 	armor_penetration = ARMOR_PEN_MODERATE
-	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_PRYING = 20)
+	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_PRYING = 20, QUALITY_SAWING = 15)
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_NORMAL
@@ -155,6 +155,7 @@
 	item_state = "knife"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_PAINFUL
+	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
 	armor_penetration = ARMOR_PEN_MODERATE
 	max_upgrades = 3
 
@@ -172,7 +173,7 @@
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
-	tool_qualities = list(QUALITY_CUTTING = 15)
+	tool_qualities = list(QUALITY_CUTTING = 15, QUALITY_SAWING = 10)
 
 //Swords
 
@@ -194,7 +195,7 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	tool_qualities = list(QUALITY_CUTTING = 10)
+	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	w_class = ITEM_SIZE_BULKY
 
@@ -260,6 +261,7 @@
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "machete"
 	item_state = "machete"
+	tool_qualities = list(QUALITY_CUTTING = 10,  QUALITY_SAWING = 20) //So we can cut down trees
 	force = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
 
