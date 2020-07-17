@@ -32,7 +32,7 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 1)
 	attack_verb = list("chopped", "torn", "cut")
-	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_SAWING = 10)
+	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_SAWING = 15)
 
 /obj/item/weapon/tool/fireaxe
 	name = "fire axe"
@@ -43,7 +43,7 @@
 	sharp = TRUE
 	edge = TRUE
 	armor_penetration = ARMOR_PEN_MODERATE
-	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_PRYING = 20, QUALITY_SAWING = 5)
+	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_PRYING = 20, QUALITY_SAWING = 15)
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_NORMAL
@@ -195,7 +195,7 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	tool_qualities = list(QUALITY_CUTTING = 10)
+	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	w_class = ITEM_SIZE_BULKY
 
