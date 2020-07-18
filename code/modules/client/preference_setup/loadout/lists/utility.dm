@@ -13,6 +13,11 @@
 	path = /obj/item/weapon/storage/secure/briefcase
 	cost = 2
 
+/datum/gear/utility/hand_radio
+	display_name = "station bound radio"
+	path = /obj/item/device/radio
+	sort_category = "Utility"
+
 /datum/gear/utility/holster/armpit
 	display_name = "armpit holster"
 	path = /obj/item/clothing/accessory/holster/armpit
