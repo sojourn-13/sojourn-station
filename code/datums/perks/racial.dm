@@ -192,3 +192,36 @@
 		log_and_message_admins("used their [src] perk.")
 	return ..()
 */
+
+/datum/perk/spiderfriend //a perk that makes you friendly with spiders and immune to web slowdown
+	name = "Kin to the Spiders"
+	desc = "Through a combination of pheramones, appearence, and an innate understanding of spider behaviour all spiders are friendly to you, they won't attack you even if you attack them. This change \
+	in your biology and pheramones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
+	//icon_state = "muscular" // https://game-icons.net
+
+/datum/perk/spiderfriend/assign(mob/living/carbon/human/H)
+	..()
+	holder.faction = "spiders"
+
+/datum/perk/spiderfriend/remove()
+	holder.faction = "neutral"
+	..()
+
+/datum/perk/webmaker //chtmant perk that lets you make webs... somehow
+	name = "Spin Webs"
+	desc = "You can spin webs, spreading them around a location as a form of snaring barricade."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/webmaker/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You need a bit more time to build up your web reserves!"))
+		return FALSE
+	cooldown_time = world.time + 5 SECONDS
+	user.visible_message("[user] begins secreting and spreading web material around them.", "You begin secreting and spreading your webbing around.", "You hear an uncomfortable chitter noise.")
+	log_and_message_admins("used their [src] perk.")
+	new /obj/effect/spider/stickyweb(usr.loc)
+	return ..()
