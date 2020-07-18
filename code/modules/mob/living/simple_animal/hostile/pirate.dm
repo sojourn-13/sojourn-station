@@ -86,6 +86,7 @@
 	melee_damage_upper = 22
 	ranged = 1
 	rapid = 1
+	weapon1 = /obj/item/weapon/tool/weldingtool/advanced
 	weapon2 = /obj/item/weapon/gun/energy/gun/martin
 
 /mob/living/simple_animal/hostile/voidwolf/aerotrooper

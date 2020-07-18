@@ -95,7 +95,6 @@
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/device/camera,
 		/datum/design/autolathe/device/camerafilm,
-		/datum/design/autolathe/tool/restoration,
 
 	)
 
@@ -182,7 +181,6 @@
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/device/camera,
 		/datum/design/autolathe/device/camerafilm,
-		/datum/design/autolathe/tool/restoration,
 		//Cells
 		/datum/design/autolathe/cell/large,
 		/datum/design/autolathe/cell/large/high,
@@ -215,7 +213,6 @@
 		/datum/design/autolathe/part/sensor_prox,
 		/datum/design/autolathe/part/camera_assembly,
 		/datum/design/autolathe/part/laserguide,
-		/datum/design/autolathe/tool/restoration,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools
@@ -338,7 +335,6 @@
 		/datum/design/autolathe/tool/combi_driver,
 		/datum/design/autolathe/tool/armature_cutter,
 		/datum/design/autolathe/tool/weldingtool/advanced,
-		/datum/design/autolathe/tool/restoration,
 		// From Circuits
 		/datum/design/autolathe/circuit/airlockmodule,
 		/datum/design/autolathe/circuit/airalarm,
@@ -445,7 +441,6 @@
 		/datum/design/autolathe/part/cell_mout,
 		/datum/design/autolathe/computer_part/scanner/paper,
 		/datum/design/autolathe/computer_part/scanner/atmos,
-		/datum/design/autolathe/tool/restoration,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer/rd
