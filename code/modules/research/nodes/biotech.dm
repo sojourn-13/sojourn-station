@@ -295,3 +295,20 @@
 							/datum/design/research/item/healthscanner,
 							/datum/design/research/item/combat_injector,
 							)
+
+/datum/technology/omnisurgery
+	name = "Omnitool Surgery Tool"
+	desc = "An all in one tool for surgery based on those that are found in legendary Greyson Positronic models."
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.85
+	y = 0.4
+	icon = "omnisurgery"
+
+	required_technologies = list(	/datum/technology/rig_medical_stuff
+								)
+	required_tech_levels = list()
+	cost = 300
+
+	unlocks_designs = list(	/datum/design/research/item/medical/medimplant_sci
+							)

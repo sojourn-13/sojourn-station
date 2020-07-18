@@ -125,7 +125,7 @@
 
 /obj/item/weapon/tool/medmultitool/medimplant
 	name = "Medical Omnitool"
-	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a power cell."
+	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a medium power cell."
 	icon_state = "medimplant"
 	matter = null
 	force = WEAPON_FORCE_PAINFUL
@@ -142,6 +142,18 @@
 
 	max_upgrades = 1
 
+/obj/item/weapon/tool/medmultitool/medimplant/sci
+	name = "Medical Omnitool"
+	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one was a cheap copy of of a buch better verson."
+	icon_state = "medimplant_sci"
+	matter = null //Nope
+	degradation = 1
+	workspeed = 0.2 //SLOW
+
+	suitable_cell = /obj/item/weapon/cell/small
+
+	max_upgrades = 0 //NO
+
 /obj/item/weapon/tool/medmultitool/medimplant/organic
 	name = "Organic Medical Omnitool"
 	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels. This version is made of entirely organic materials and doesn't require a power cell, sadly it cannot be upgraded and work takes slightly longer, but at least it is self repairing."
@@ -150,7 +162,7 @@
 	suitable_cell = null
 	degradation = 0
 	max_upgrades = 0
-	matter = list(MATERIAL_BIOMATTER = 10)
+	//matter = list(MATERIAL_BIOMATTER = 10) No
 
 /obj/item/weapon/tool/engimplant
 	name = "Engineering Omnitool"

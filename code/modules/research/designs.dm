@@ -99,6 +99,12 @@ other types of metals and chemistry for reagents).
 	sort_string = "MACCB"
 	category = "Medical"
 
+/datum/design/research/item/medical/combat_defibs
+	desc = "Much smaller defibulators build into a belt, to more easily carry. This one has no safeties..."
+	build_path = /obj/item/device/defib_kit/compact/combat
+	sort_string = "MACCG"
+	category = "Medical"
+
 /datum/design/research/item/medical/cryobag
 	desc = "A body bag for a dieing or dead body to stablize them using cryo tech."
 	materials = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 3, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 1)
@@ -115,7 +121,7 @@ other types of metals and chemistry for reagents).
 /datum/design/research/item/medical/blue
 	desc = "A thicker red box for only holding organs."
 	build_path = /obj/item/weapon/storage/freezer/medical
-	sort_string = "MACCD"
+	sort_string = "MACCF"
 	category = "Medical"
 
 /datum/design/research/item/beaker
@@ -138,6 +144,12 @@ other types of metals and chemistry for reagents).
 	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing robotic machinery."
 	build_path = /obj/item/stack/nanopaste
 	sort_string = "MBAAA"
+
+/datum/design/research/item/medical/medimplant_sci
+	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model."
+	build_path = /obj/item/weapon/tool/medmultitool/medimplant/sci
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 15, MATERIAL_GOLD = 3, MATERIAL_SILVER = 5)
+	sort_string = "MBAAB"
 
 /datum/design/research/item/scalpel_laser
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field."
