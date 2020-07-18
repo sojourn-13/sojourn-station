@@ -325,7 +325,8 @@
 	cost = 3500
 
 	unlocks_designs = list(/datum/design/research/circuit/industrial_printer,
-							/datum/design/research/circuit/recharger_industrial.
+							/datum/design/research/circuit/recharger_industrial,
+							/datum/design/research/circuit/industrial_grinder
 							)
 
 
