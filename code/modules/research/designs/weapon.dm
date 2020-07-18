@@ -136,7 +136,7 @@
 	sort_string = "TAACF"
 
 /datum/design/research/item/ammo/laser/lethal
-	name = "\"Star Striker\" dence laser casing."
+	name = "\"Star Striker\" dense laser casing."
 	desc = "A single casing for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor."
 	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_PLASMA = 0.5) //Takes plasma
 	build_path = /obj/item/ammo_casing/beam/lethal

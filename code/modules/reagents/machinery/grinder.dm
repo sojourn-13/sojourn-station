@@ -41,6 +41,12 @@
 		return
 	return insert(I, user)
 
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
 /obj/machinery/reagentgrinder/proc/insert(obj/item/I, mob/user)
 	if(!istype(I))
 		return
@@ -197,6 +203,12 @@
 		update_icon()
 		return 0
 
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
 	return ..()
 
 /obj/machinery/reagentgrinder/portable/ui_data()
@@ -326,8 +338,6 @@
 			bottle(R.id)
 
 	SSnano.update_uis(src)
-
-
 
 /obj/item/weapon/storage/makeshift_grinder
 	name = "makeshift grinder"

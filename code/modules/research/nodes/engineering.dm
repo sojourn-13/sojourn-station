@@ -320,12 +320,14 @@
 	y = 0.5
 	icon = "autolathe"
 
-	required_technologies = list(/datum/technology/super_adv_engineering)
+	required_technologies = list(/datum/technology/super_adv_engineering, /datum/technology/weapon_recharging)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 7)
 	cost = 3500
 
 	unlocks_designs = list(/datum/design/research/circuit/industrial_printer,
-							/datum/design/research/circuit/recharger_industrial)
+							/datum/design/research/circuit/recharger_industrial,
+							/datum/design/research/circuit/industrial_grinder
+							)
 
 
 /datum/technology/rig_industeral
