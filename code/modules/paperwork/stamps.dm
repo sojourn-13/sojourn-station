@@ -33,7 +33,7 @@
 	icon_state = "stamp-hos"
 
 /obj/item/weapon/stamp/hos2
-	name = "militia commander's rubber stamp"
+	name = "blackshield commander's rubber stamp"
 	icon_state = "stamp-hos"
 
 /obj/item/weapon/stamp/ce

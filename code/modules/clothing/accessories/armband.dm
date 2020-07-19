@@ -35,7 +35,7 @@
 	slot = "armband"
 
 /obj/item/clothing/accessory/armband/militia
-	name = "militia armband"
+	name = "blackshield armband"
 	desc = "A blue and white armband signifying a militiaman position."
 	icon_state = "blackshield"
 	slot = "armband"

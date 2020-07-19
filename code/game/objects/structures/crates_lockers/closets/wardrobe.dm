@@ -204,7 +204,7 @@
 	new /obj/item/clothing/head/rank/ironhammer(src)
 
 /obj/structure/closet/wardrobe/militia
-	name = "militia wardrobe"
+	name = "blackshield wardrobe"
 	icon_door = "militia"
 
 /obj/structure/closet/wardrobe/militia/populate_contents()
@@ -228,7 +228,7 @@
 	new /obj/item/clothing/mask/balaclava/tactical(src)
 
 /obj/structure/closet/wardrobe/militia/accessory
-	name = "militia accessory wardrobe"
+	name = "blackshield accessory wardrobe"
 	icon_door = "militia"
 
 /obj/structure/closet/wardrobe/militia/accessory/populate_contents()

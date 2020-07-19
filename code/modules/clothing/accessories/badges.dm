@@ -109,8 +109,8 @@
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/badge/smc
-	name = "Militia Commander's badge"
-	desc = "An immaculately polished gold Militia Commander badge."
+	name = "blackshield commander's badge"
+	desc = "An immaculately polished gold blackshield commander badge."
 	icon_state = "goldbadge"
 	badge_string = "Blackshield"
 	slot_flags = SLOT_ACCESSORY_BUFFER

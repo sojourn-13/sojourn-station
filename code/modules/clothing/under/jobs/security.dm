@@ -135,10 +135,10 @@
 	icon_state = "hoshat"
 	body_parts_covered = 0
 	siemens_coefficient = 0.6
-	
+
 /obj/item/clothing/head/rank/mcommander
-	name = "Commander's Hat"
-	desc = "The hat of the Militia Commander. Has a scent of napalm. Smells like victory."
+	name = "commander's Hat"
+	desc = "The hat of the blackshield commander. Has a scent of napalm. Smells like victory."
 	icon_state = "hoshat"
 	body_parts_covered = 0
 	siemens_coefficient = 0.6
