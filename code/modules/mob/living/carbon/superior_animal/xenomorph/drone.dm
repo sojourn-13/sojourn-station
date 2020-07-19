@@ -41,8 +41,9 @@ var/datum/xenomorph/xenomorph_ai
 	can_burrow = FALSE
 	acceptableTargetDistance = 5
 
-	min_breath_required_type = 3
-	min_air_pressure = 15 //below this, brute damage is dealt
+	min_breath_required_type = 0
+	min_air_pressure = 0 //below this, brute damage is dealt
+	min_breath_poison_type = 0
 
 	var/poison_per_bite = 0
 	var/poison_type = "xenotoxin"

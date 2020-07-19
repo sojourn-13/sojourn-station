@@ -76,3 +76,7 @@
 	var/mob_bomb_defense = 0	// protection from explosives
 	var/mod_climb_delay = 1 // delay for climb
 	var/noise_coeff = 1 //noise coefficient
+	var/brute_mod_perk = 1 //this and the ones below adjust various damages via perks
+	var/burn_mod_perk = 1
+	var/toxin_mod_perk = 1
+	var/oxy_mod_perk = 1

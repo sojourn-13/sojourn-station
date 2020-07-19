@@ -2,13 +2,13 @@
 	name = "priest"
 	phrase = null
 	desc = ""
-	category = "Devout"
+	category = "Initiation"
 
 /datum/ritual/targeted/cruciform/priest
 	name = "priest targeted"
 	phrase = null
 	desc = ""
-	category = "Devout"
+	category = "Initiation"
 
 
 /*
@@ -20,6 +20,7 @@
 	phrase = "Mihi vindicta \[Target human]"
 	desc = "Imparts extreme pain on the target disciple. Does no actual harm."
 	power = 35
+	category = "Vitae"
 
 /datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	if(!targets.len)
@@ -64,6 +65,7 @@
 	cooldown = TRUE
 	cooldown_time = 300
 	power = 35 //Healing yourself is slightly easier than healing someone else
+	category = "Vitae"
 
 /datum/ritual/cruciform/priest/selfheal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C,list/targets)
 	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
@@ -85,6 +87,7 @@
 	cooldown = TRUE
 	cooldown_time = 300
 	power = 45
+	category = "Vitae"
 
 /datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -136,6 +139,7 @@
 	cooldown_time = 15 MINUTES
 	cooldown_category = "dhymn"
 	power = 50
+	category = "Vitae"
 
 /datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
@@ -176,6 +180,7 @@
 	phrase = "Ecce ego ad te et ad caelum. Scio omnes absconditis tuis. Vos can abscondere, tu es coram me: nudus."
 	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom. This prayer requires power only primes and crusaders have."
 	power = 80
+	category = "Devotion"
 
 /datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 
@@ -410,6 +415,7 @@
 	phrase = "A caelo usque ad centrum."
 	desc = "This litany will remove any upgrade from the target's cruciform implant. Usuable only by primes and crusaders."
 	power = 80
+	category = "Devotion"
 
 /datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -485,6 +491,7 @@
 	cooldown_time = 2 MINUTES
 	effect_time = 10 MINUTES
 	cooldown_category = "short_boost"
+	category = "Words of Power"
 	var/list/stats_to_boost = list()
 
 	New()
@@ -570,6 +577,7 @@
 	phrase = "Piaculo sit \[Target human]!"
 	desc = "Imparts extreme pain on the target disciple, but does no actual harm. Use this if someone who performs a heretical act."
 	power = 45
+	category = "Vitae"
 
 /datum/ritual/targeted/cruciform/priest/atonement/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	if(!targets.len)
