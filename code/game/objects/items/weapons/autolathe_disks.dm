@@ -652,7 +652,6 @@
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/sec/silencer,
 		/datum/design/autolathe/sec/gun_case,
-		/datum/design/autolathe/tool/restoration,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security/hos
@@ -663,13 +662,41 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar
 	disk_name = "Greyson Positronics Tool Pack"
 	icon_state = "onestar"
-	license = 2
+	license = 5
 	designs = list(
 		/datum/design/autolathe/tool/crowbar_onestar,
 		/datum/design/autolathe/tool/combi_driver_onestar,
 		/datum/design/autolathe/tool/jackhammer_onestar,
 		/datum/design/autolathe/tool/drill_onestar,
-		/datum/design/autolathe/tool/weldertool_onestar
+		/datum/design/autolathe/tool/weldertool_onestar,
+		/datum/design/autolathe/tool/hammer_onestar,
+		/datum/design/autolathe/tool/omni_surgery_onestar,
+		/datum/design/autolathe/tool/pickaxe_onestar,
+		/datum/design/autolathe/part/greyson/ai,
+
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/cog
+	disk_name = "Greyson Positronics - Cog"
+	icon_state = "onestar"
+	license = 3
+	designs = list(
+		/datum/design/autolathe/gun/greyson_cog,
+		/datum/design/autolathe/cell/medium/high,
+
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/stockparts
+	disk_name = "Greyson Positronics Stockpart Pack"
+	icon_state = "onestar"
+	license = 8
+	designs = list(
+		/datum/design/autolathe/greyson/laser,
+		/datum/design/autolathe/greyson/matter,
+		/datum/design/autolathe/greyson/module,
+		/datum/design/autolathe/greyson/capacitor,
+		/datum/design/autolathe/greyson/manipulator,
+
 	)
 
 
@@ -1407,7 +1434,7 @@
 
 	license = 4
 	designs = list(
-		/datum/design/autolathe/gun/roe,
+		/datum/design/autolathe/gun/sika,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
@@ -1419,7 +1446,7 @@
 
 	license = 4
 	designs = list(
-		/datum/design/autolathe/gun/sika,
+		/datum/design/autolathe/gun/roe,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
