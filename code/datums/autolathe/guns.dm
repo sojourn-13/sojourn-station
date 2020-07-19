@@ -329,3 +329,7 @@
 /datum/design/autolathe/gun/nt_sprayer
 	name = "OT cleansing carbine"
 	build_path = /obj/item/weapon/gun/matter/launcher/nt_sprayer
+
+/datum/design/autolathe/gun/greyson_cog
+	name = "GP \"Cog\" lasegun"
+	build_path = /obj/item/weapon/gun/energy/retro

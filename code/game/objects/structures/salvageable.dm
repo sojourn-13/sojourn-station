@@ -283,7 +283,8 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/stock_parts/micro_laser/one_star = 40,
 		/obj/item/weapon/stock_parts/micro_laser/one_star = 40,
 		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
-		/obj/item/weapon/stock_parts/matter_bin/one_star = 40
+		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
+		/obj/random/lathe_disk/advanced/onestar = 5
 	)
 
 /obj/structure/salvageable/computer_os
@@ -299,7 +300,8 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/computer_hardware/processor_unit/super = 40,
 		/obj/item/weapon/computer_hardware/card_slot = 40,
 		/obj/item/weapon/computer_hardware/card_slot = 40,
-		/obj/item/weapon/computer_hardware/network_card/advanced = 40
+		/obj/item/weapon/computer_hardware/network_card/advanced = 40,
+		/obj/random/lathe_disk/advanced/onestar = 5
 	)
 
 /obj/structure/salvageable/implant_container_os
@@ -334,7 +336,8 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/computer_hardware/hard_drive/super = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/super = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/cluster = 50,
-		/obj/item/weapon/computer_hardware/network_card/wired = 40
+		/obj/item/weapon/computer_hardware/network_card/wired = 40,
+		/obj/random/lathe_disk/advanced/onestar = 10
 	)
 
 /obj/structure/salvageable/server_os
@@ -376,7 +379,8 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/computer_hardware/processor_unit/super = 40,
 		/obj/item/weapon/computer_hardware/card_slot = 40,
 		/obj/item/weapon/computer_hardware/card_slot = 40,
-		/obj/item/weapon/computer_hardware/network_card/advanced = 40
+		/obj/item/weapon/computer_hardware/network_card/advanced = 40,
+		/obj/random/lathe_disk/advanced/onestar = 10
 	)
 
 /obj/structure/salvageable/console_broken_os
@@ -393,5 +397,6 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/computer_hardware/processor_unit/super = 40,
 		/obj/item/weapon/computer_hardware/card_slot = 40,
 		/obj/item/weapon/computer_hardware/card_slot = 40,
-		/obj/item/weapon/computer_hardware/network_card/advanced = 40
+		/obj/item/weapon/computer_hardware/network_card/advanced = 40,
+		/obj/random/lathe_disk/advanced/onestar = 5
 	)

@@ -440,7 +440,7 @@
 	category = CAT_MACHINE
 
 /datum/design/research/circuit/recharger_industrial
-	name = "Industrial Printer"
+	name = "Industrial Recharger"
 	build_path = /obj/item/weapon/circuitboard/recharger/industrial
 	sort_string = "VAAAJ"
 	category = CAT_POWER
