@@ -238,11 +238,13 @@
 /datum/perk/rezsickness
 	name = "Revival Sickness"
 	desc = "You've recently died and have been brought back to life, the experience has left you weakened and thus unable to be fighting fit for awhile."
+	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
 	var/initial_time
 
 /datum/perk/rezsickness/assign(mob/living/carbon/human/H)
-	log_debug("[H] and [holder]")
 	..()
+	initial_time = world.time
+	cooldown_time = world.time + 30 MINUTES
 	holder.brute_mod_perk += 0.15
 	holder.burn_mod_perk += 0.15
 	holder.oxy_mod_perk += 0.15
@@ -250,7 +252,6 @@
 	holder.stats.changeStat(STAT_ROB, -15)
 	holder.stats.changeStat(STAT_TGH, -15)
 	holder.stats.changeStat(STAT_VIG, -15)
-	log_debug("A")
 
 /datum/perk/rezsickness/remove()
 	holder.brute_mod_perk -= 0.15
@@ -261,26 +262,20 @@
 	holder.stats.changeStat(STAT_TGH, 15)
 	holder.stats.changeStat(STAT_VIG, 15)
 	..()
-	log_debug("A+")
 
 /datum/perk/rezsickness/severe
 	name = "Severe Revival Sickness"
 	desc = "You've recently died and have been brought back to life, the experience has left severely weakened to the point where you struggle to do even basic tasks."
 
 /datum/perk/rezsickness/severe/assign(mob/living/carbon/human/H)
-	log_debug("[H] and [holder]")
 	..()
-	holder.brute_mod_perk += 0.25
-	holder.burn_mod_perk += 0.25
-	holder.oxy_mod_perk += 0.25
-	holder.toxin_mod_perk += 0.25
-	holder.stats.changeStat(STAT_ROB, -15)
-	holder.stats.changeStat(STAT_TGH, -15)
-	holder.stats.changeStat(STAT_VIG, -15)
+	holder.brute_mod_perk += 0.10
+	holder.burn_mod_perk += 0.10
+	holder.oxy_mod_perk += 0.10
+	holder.toxin_mod_perk += 0.10
 	holder.stats.changeStat(STAT_COG, -15)
 	holder.stats.changeStat(STAT_MEC, -15)
 	holder.stats.changeStat(STAT_BIO, -15)
-	log_debug("B")
 
 /datum/perk/rezsickness/severe/remove()
 	holder.brute_mod_perk -= 0.25
@@ -294,26 +289,23 @@
 	holder.stats.changeStat(STAT_MEC, 15)
 	holder.stats.changeStat(STAT_BIO, 15)
 	..()
-	log_debug("B+")
 
 /datum/perk/rezsickness/severe/fatal
 	name = "Fatal Revival Sickness"
 	desc = "You've recently died and have been brought back to life, the experience has left you utterly physically and mentally wrecked, you better find a bed to recover in..."
 
 /datum/perk/rezsickness/severe/fatal/assign(mob/living/carbon/human/H)
-	log_debug("[H] and [holder]")
 	..()
-	holder.brute_mod_perk += 0.50
-	holder.burn_mod_perk += 0.50
-	holder.oxy_mod_perk += 0.50
-	holder.toxin_mod_perk += 0.50
-	holder.stats.changeStat(STAT_ROB, -30)
-	holder.stats.changeStat(STAT_TGH, -30)
-	holder.stats.changeStat(STAT_VIG, -30)
-	holder.stats.changeStat(STAT_COG, -30)
-	holder.stats.changeStat(STAT_MEC, -30)
-	holder.stats.changeStat(STAT_BIO, -30)
-	log_debug("C")
+	holder.brute_mod_perk += 0.25
+	holder.burn_mod_perk += 0.25
+	holder.oxy_mod_perk += 0.25
+	holder.toxin_mod_perk += 0.25
+	holder.stats.changeStat(STAT_ROB, -15)
+	holder.stats.changeStat(STAT_TGH, -15)
+	holder.stats.changeStat(STAT_VIG, -15)
+	holder.stats.changeStat(STAT_COG, -15)
+	holder.stats.changeStat(STAT_MEC, -15)
+	holder.stats.changeStat(STAT_BIO, -15)
 
 /datum/perk/rezsickness/severe/fatal/remove()
 	holder.brute_mod_perk -= 0.50
@@ -327,17 +319,10 @@
 	holder.stats.changeStat(STAT_MEC, 30)
 	holder.stats.changeStat(STAT_BIO, 30)
 	..()
-	log_debug("C+")
-
-/datum/perk/rezsickness/assign(mob/living/carbon/human/H)
-	initial_time = world.time
-	cooldown_time = world.time + 30 MINUTES
 
 /datum/perk/rezsickness/on_process()
-	log_debug("Attempting rez sickness processing.")
 	if(cooldown_time < world.time)
 		src.remove()
 		return
 	if(holder.buckled)
 		cooldown_time -= 2 SECONDS
-		log_debug("Removing 2 seconds from cooldown time.")
