@@ -278,13 +278,10 @@
 	holder.stats.changeStat(STAT_BIO, -15)
 
 /datum/perk/rezsickness/severe/remove()
-	holder.brute_mod_perk -= 0.25
-	holder.burn_mod_perk -= 0.25
-	holder.oxy_mod_perk -= 0.25
-	holder.toxin_mod_perk -= 0.25
-	holder.stats.changeStat(STAT_ROB, 15)
-	holder.stats.changeStat(STAT_TGH, 15)
-	holder.stats.changeStat(STAT_VIG, 15)
+	holder.brute_mod_perk -= 0.10
+	holder.burn_mod_perk -= 0.10
+	holder.oxy_mod_perk -= 0.10
+	holder.toxin_mod_perk -= 0.10
 	holder.stats.changeStat(STAT_COG, 15)
 	holder.stats.changeStat(STAT_MEC, 15)
 	holder.stats.changeStat(STAT_BIO, 15)
@@ -308,16 +305,16 @@
 	holder.stats.changeStat(STAT_BIO, -15)
 
 /datum/perk/rezsickness/severe/fatal/remove()
-	holder.brute_mod_perk -= 0.50
-	holder.burn_mod_perk -= 0.50
-	holder.oxy_mod_perk -= 0.50
-	holder.toxin_mod_perk -= 0.50
-	holder.stats.changeStat(STAT_ROB, 30)
-	holder.stats.changeStat(STAT_TGH, 30)
-	holder.stats.changeStat(STAT_VIG, 30)
-	holder.stats.changeStat(STAT_COG, 30)
-	holder.stats.changeStat(STAT_MEC, 30)
-	holder.stats.changeStat(STAT_BIO, 30)
+	holder.brute_mod_perk -= 0.25
+	holder.burn_mod_perk -= 0.25
+	holder.oxy_mod_perk -= 0.25
+	holder.toxin_mod_perk -= 0.25
+	holder.stats.changeStat(STAT_ROB, 15)
+	holder.stats.changeStat(STAT_TGH, 15)
+	holder.stats.changeStat(STAT_VIG, 15)
+	holder.stats.changeStat(STAT_COG, 15)
+	holder.stats.changeStat(STAT_MEC, 15)
+	holder.stats.changeStat(STAT_BIO, 15)
 	..()
 
 /datum/perk/rezsickness/on_process()
