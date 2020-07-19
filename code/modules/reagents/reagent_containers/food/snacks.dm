@@ -2035,7 +2035,7 @@
 		return
 	user.visible_message(
 		SPAN_NOTICE("[user] crushes \the [src] package."),
-		"You crush \the [src] package and feel a comfortable heat build up."
+		"You crush \the [src] package and feel a comfortable heat build up.",
 	)
 	spawn(300)
 		to_chat(user, "You think \the [src] is ready to eat about now.")
@@ -2048,6 +2048,9 @@
 		to_chat(user, SPAN_WARNING("You viciously open \the [src] with your teeth, you animal."))
 
 /obj/item/weapon/reagent_containers/food/snacks/mre/proc/heat()
+	if(warm == TRUE)
+		to_chat(usr, SPAN_WARNING("You already crushed this!"))
+		return
 	warm = TRUE
 	for(var/reagent in heated_reagents)
 		reagents.add_reagent(reagent, heated_reagents[reagent])
@@ -2091,7 +2094,7 @@
 	nutriment_desc = list("salt" = 1, "cracker" = 2)
 	bitesize = 2
 	nutriment_amt = 1
-	preloaded_reagents = list("dexalin " = 1, "nicotine" = 1)
+	preloaded_reagents = list("dexalin" = 1, "nicotine" = 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/mre
 	name = "morale bar"

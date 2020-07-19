@@ -67,6 +67,7 @@
 
 /// Proc called when the perk is assigned to a human. Should be the first thing to be called.
 /datum/perk/proc/assign(mob/living/carbon/human/H)
+	log_debug("[H]")
 	SHOULD_CALL_PARENT(TRUE)
 	holder = H
 	RegisterSignal(holder, COMSIG_MOB_LIFE, .proc/on_process)

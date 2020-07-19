@@ -37,3 +37,4 @@
 //#define PERK_ABSOLUTE_GRAB /datum/perk/oddity/absolute_grab
 #define PERK_SURE_STEP /datum/perk/sure_step
 #define PERK_SPIDER_FRIEND /datum/perk/spiderfriend
+#define PERK_REZ_SICKNESS /datum/perk/rezsickness
