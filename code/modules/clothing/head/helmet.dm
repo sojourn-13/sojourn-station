@@ -33,9 +33,9 @@
 	armor = list(melee = 35, bullet = 45,energy = 30, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/ballistic/militia
-	name = "Militia helmet"
+	name = "blackshield helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
-			This one bears the IFF stripes of the Blackshield Militia."
+			This one bears the IFF stripes of the Blackshield."
 	icon_state = "helmet_mil_alt"
 
 /obj/item/clothing/head/helmet/ballistic/green

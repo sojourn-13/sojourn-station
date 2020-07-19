@@ -118,13 +118,13 @@
 	icon_state = "surgcap_green"
 
 /obj/item/clothing/head/rank/trooper/beret //blackshield hats
-	name = "Militia beret"
-	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield Militia."
+	name = "blackshield beret"
+	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield."
 	icon_state = "beret_militia"
 
 /obj/item/clothing/head/rank/trooper/cap
-	name = "Militia cap"
-	desc = "A faded black cap with the badge of the Blackshield Militia."
+	name = "blackshield cap"
+	desc = "A faded black cap with the badge of the Blackshield."
 	icon_state = "milsoft"
 
 /obj/item/clothing/head/rank/corpsman/cap
@@ -148,38 +148,38 @@
 	icon_state = "beret_militia"
 
 /obj/item/clothing/head/rank/milcom/beret
-	name = "Militia Commander's beret"
-	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield Militia Commander."
+	name = "blackshield commander's beret"
+	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield Commander."
 	icon_state = "beret_militia"
 
 /obj/item/clothing/head/rank/milcom
-	name = "Militia Commander's cap"
-	desc = "A crisp peaked cap signifying the distinguished martial position of the Commander of the Blackshield Militia."
+	name = "blackshield commander's cap"
+	desc = "A crisp peaked cap signifying the distinguished martial position of the Commander of the Blackshield."
 	icon_state = "commander_cap"
 
 /obj/item/clothing/head/rank/instructor_hat
 	name = "campaign cover"
 	desc = "Mama, mama, can't you see what this Corps has done to me?"
 	icon_state = "instructor"
-	
+
 /obj/item/clothing/head/rank/commanderdress
 	name = "Blackshield command cover"
 	desc = "A white wheel cover with gold trim, fit for a commander."
 	icon_state = "commander_dress"
 	item_state = "commander_dress"
-	
+
 /obj/item/clothing/head/rank/trooperdress
 	name = "Blackshield cover"
 	desc = "A white wheel cover, fit for a soldier."
 	icon_state = "trooper_dress"
 	item_state = "trooper_dress"
-	
+
 /obj/item/clothing/head/rank/fatigue/green
 	name = "green utility cover"
 	desc = "A green camo cover, fit for a soldier. The markings of a removed patch linger."
 	icon_state = "greenutility"
 	item_state = "greenutility"
-	
+
 /obj/item/clothing/head/rank/fatigue/grey
 	name = "grey utility cover"
 	desc = "A grey camo cover, fit for a soldier. The markings of a removed patch linger."

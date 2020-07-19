@@ -26,7 +26,7 @@
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz/rubber = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 /decl/hierarchy/outfit/job/security/smc
-	name = OUTFIT_JOB_NAME("Blackshield - Militia Commander")
+	name = OUTFIT_JOB_NAME("Blackshield - Blackshield Commander")
 	l_ear = /obj/item/device/radio/headset/heads/hos
 	uniform = /obj/item/clothing/under/rank/commander
 	suit = /obj/item/clothing/suit/armor/commander/militia

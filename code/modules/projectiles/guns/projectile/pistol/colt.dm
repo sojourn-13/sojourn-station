@@ -48,7 +48,7 @@
 
 /obj/item/weapon/gun/projectile/colt/ten/dark
 	name = "\"Stallion\" magnum pistol"
-	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard and produced by SolFed armories across the galaxy, this one bears  defaced serial numbers and the insignia of the Blackshield Militia. Uses .40 Auto-Mag."
+	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard and produced by SolFed armories across the galaxy, this one bears  defaced serial numbers and the insignia of the Blackshield. Uses .40 Auto-Mag."
 	icon_state = "dark_delta"
 	item_state = "colt"
 	auto_eject = 1

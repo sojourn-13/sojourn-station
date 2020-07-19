@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/commander
-	name = "militia commander's locker"
+	name = "blackshield commander's locker"
 	req_access = list(access_hos)
 	icon_state = "mc"
 

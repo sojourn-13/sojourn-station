@@ -45,8 +45,8 @@
 	info = {"<B>Roles:</B>
 	<BR>\nThe Ranger is basically the investigator and prosecutor.
 	<BR>\nThe Staff Assistant can perform these functions with written authority from the Ranger.
-	<BR>\nThe warrant officer/militia commander/premier is ct as the judicial authority.
-	<BR>\nThe Marshal Officers (or if none present militia troopers) are responsible for executing warrants, security during trial, and prisoner transport.
+	<BR>\nThe warrant officer/blackshield commander/premier is ct as the judicial authority.
+	<BR>\nThe Marshal Officers (or if none present blackshield troopers) are responsible for executing warrants, security during trial, and prisoner transport.
 	<BR>\n
 	<BR>\n<B>Investigative Phase:</B>
 	<BR>\nAfter the crime has been committed the Ranger's job is to gather evidence and try to ascertain not only who did it but what happened. He must take special care to catalogue everything and don't leave anything out. Write out all the evidence on paper. Make sure you take an appropriate number of fingerprints. If he must ask someone questions he has permission to confront them. If the person refuses he can ask a judicial authority to write a subpoena for questioning. If again he fails to respond then that person is to be jailed as insubordinate and obstructing justice. Said person will be released after he cooperates.

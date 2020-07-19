@@ -1,5 +1,5 @@
 /datum/job/smc
-	title = "Militia Commander"
+	title = "Blackshield Commander"
 	flag = SMC
 	head_position = 1
 	department = DEPARTMENT_SECURITY
@@ -39,8 +39,8 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	description = "The Militia Commander serves as the commander of the local regiment of the Blackshield Militia.<br>\
-	Contracted to protect and serve the colony, your militia serves as a voluntary first (and hopefully last) line of defense.<br>\
+	description = "The Blackshield Commander serves as the commander of the local regiment of the Blackshield.<br>\
+	Contracted to protect and serve the colony, your faction serves as a voluntary first (and hopefully last) line of defense.<br>\
 	Your goal is to keep everyone living on the colony as safe as possible and to eliminate any threats to safety.<br>\
 	The Warrant Officer is your ally and you should work closely with them, they handle the upholding of the law."
 
@@ -51,7 +51,7 @@
 		Advise the council on threats to colony security and advise them towards choices that will minimise exposure to threats."
 
 /obj/landmark/join/start/smc
-	name = "Militia Commander"
+	name = "Blackshield Commander"
 	icon_state = "player-blue-officer"
 	join_tag = /datum/job/smc
 
@@ -100,10 +100,10 @@
 	description = "The Warrant Officer serves as the head officer of the local regiment of the Marshals.<br>\
 	Contracted to protect and serve the colony, your internal police force is dedicated to the fight against criminal elements.<br>\
 	Your main objective is to keep everyone safe by maintining order, and upholding laws of all manner within the colony.<br>\
-	The Militia Commander is your ally and you should work closely with them - they provide the muscle and guns to defend the colony."
+	The Blackshield Commander is your ally and you should work closely with them - they provide the muscle and guns to defend the colony."
 
 	duties = "Coordinate officers around the colony, assigning them to tasks and distress calls as needed.<br>\
-		Work with the Militia Commander to allocate funds to supply your teams with whatever armor, supplies, weapons, munitions, or tools they need.<br>\
+		Work with the Blackshield Commander to allocate funds to supply your teams with whatever armor, supplies, weapons, munitions, or tools they need.<br>\
 		Keep the peace around the station and ensure each officer knows their roles and carries them out precisely.<br>\
 		Oversee performance of the officers under your command and punish any that are insubordinate or incompetent.<br>\
 		Advise the council on threats to colony security and advise them towards choices that will uphold the public trust."
@@ -146,12 +146,12 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Supply Specialist is the second-in-command of the Marshals and the defacto controller of the armory and armory shop. <br>\
+	description = "The Supply Specialist is the right hand of the warrant officer and the defacto controller of the armory and armory shop. <br>\
 	Your role is mainly a desk job - with duties rarely taking you outside of the colony or even the armory.<br>\
 	You will often be called to sell weaponry and armory to colonists, maintaining the stock of the equipment and tracking who has what.<br>\
 	You will also be often asked to watch or process prisoners. Perform regular checkups on anyone locked in the brig - breakouts are intolerable.<br>\
 	In quieter times, you serve as the onsite weapons instructor. Take the initiative to offer a variety of training drills, especially to junior operatives.<br>\
-	Remember that any Warrant Officer duties may be delegated to you if they wish, and will automatically be given if they are not present."
+	Remember that any Warrant Officer duties may be delegated to you if they wish and internal tasks will fall to you at times."
 
 	duties = "Manage a good balance of armory stock, and dispense responsibly with a paper trail and fair price.<br>\
 	Monitor prisoners in the brig to ensure their health and safety.<br>\
@@ -171,7 +171,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Militia Commander"
+	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
@@ -194,16 +194,16 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Sergeant is the second-in-command of the Blackshield and the defacto commanding officer if the militia commander isn't around or injured. <br>\
-	Your role is mainly keeping order among the militia troopers and corpsman and ensuring they do not act like a pack of thugs.<br>\
-	You will often be maintaining discipline and order within the ranks and fulfilling orders from the militia commander.<br>\
-	You will also the secondary squad leader during conflicts, often times leading troopers independent of the militia commander, but usually under his explicit orders.<br>\
+	description = "The Sergeant is the second-in-command of the Blackshield and the defacto commanding officer if the Blackshield commander isn't around or injured. <br>\
+	Your role is mainly keeping order among the Blackshield troopers and corpsman and ensuring they do not act like a pack of thugs.<br>\
+	You will often be maintaining discipline and order within the ranks and fulfilling orders from the Blackshield commander.<br>\
+	You will also the secondary squad leader during conflicts, often times leading troopers independent of the Blackshield commander, but usually under his explicit orders.<br>\
 	In quieter times, you serve as a form of military police and drill instructor. Take the initiative to offer a variety of training drills, especially to junior operatives and report behavior that should have a member of security removed from their post.<br>\
-	Remember that any Militia Commander duties may be delegated to you if they wish, and will automatically be given if they are not present."
+	Remember that any Blackshield Commander duties may be delegated to you if they wish, and will automatically be given if they are not present."
 
-	duties = "Manage good ethics among security, including the militia and marshals with a record of everything responsibly and recorded.<br>\
+	duties = "Manage good ethics among security, including the blackshield and marshals with a record of everything responsibly and recorded.<br>\
 	Give training and instruction to troopers. Run drills and ensure they are prepared for firing lines, kill zones, and breach tactics.<br>\
-	Follow the orders of the Militia Commander and in his absence keep security in line."
+	Follow the orders of the Blackshield Commander and in his absence keep security in line."
 
 /obj/landmark/join/start/serg
 	name = "Sergeant"
@@ -270,7 +270,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Militia Commander"
+	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
@@ -294,7 +294,7 @@
 							 /datum/computer_file/program/chem_catalog,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Corpsman is a highly trained medical specialist within the Blackshield Militia - a mixture of combatant and doctor.<br>\
+	description = "The Corpsman is a highly trained medical specialist within the Blackshield - a mixture of combatant and doctor.<br>\
 	Your first duty is that of a field medic. Serve on the backlines of any combat situations, treating the wounded and evacuating the critical.<br>\
 	Your second duty is to treat any prisoners and suspects in custody. Wounds from escape and suicide attempts will test your surgical skills.<br>\
 	Your third duty, when faced with strange crimes, is to serve as a scientific analyst - scanning traces and conducting autopsies.<br>\
@@ -318,7 +318,7 @@
 	faction = MAP_FACTION
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Militia Commander"
+	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	//alt_titles = list("Blackshield Junior Trooper")
 	selection_color = "#a7bbc6"
@@ -340,7 +340,7 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Trooper forms the base of the Blackshield Militia, the frontline against pirates, terrorists, and xenos.<br>\
+	description = "The Trooper forms the base of the Blackshield, the frontline against pirates, terrorists, and xenos.<br>\
 	You are the closest thing to a professional soldier the colony has. Employ your talents to bring an end to threats and conflict situations.<br>\
 	Tactics and teamwork are vital. You are paid to follow orders, not to think. Remember your focus on external threats - leave otherwise to Marshals.<br>\
 	When there are no standing orders, your ongoing task is to patrol and be on the lookout for threats or problems. Help the Marshals if explicitly asked. <br>\

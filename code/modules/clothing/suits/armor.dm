@@ -310,8 +310,8 @@
 	item_state = "platecarrier_ih"
 
 /obj/item/clothing/suit/armor/platecarrier/militia
-	name = "militia plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one ears the distinct IFF stripes of the Blackshield Militia."
+	name = "blackshield plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one ears the distinct IFF stripes of the Blackshield."
 	icon_state = "platecarrier_mil"
 	item_state = "platecarrier_mil"
 
@@ -354,9 +354,9 @@ obj/item/clothing/suit/armor/flackvest
 	armor = list(melee = 40, bullet = 50, energy = 20, bomb = 50, bio = 0, rad = 0)
 
 obj/item/clothing/suit/armor/flackvest/militia
-	name = "militia flak vest"
+	name = "blackshield flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
-			This one is marked with the distinct IFF stripes of the Blackshield Militia."
+			This one is marked with the distinct IFF stripes of the Blackshield."
 	icon_state = "flakvest_mil"
 	item_state = "flakvest_mil"
 
@@ -390,14 +390,14 @@ obj/item/clothing/suit/armor/commander
 	siemens_coefficient = 0.7
 
 obj/item/clothing/suit/armor/commander/militia
-	name = "militia commander's armored coat"
-	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Militia Commander.."
+	name = "blackshield commander's armored coat"
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander.."
 	icon_state = "commander_mil"
 	item_state = "commander_mil"
 
 obj/item/clothing/suit/armor/commander/militia_overcoat
-	name = "blackshield milita armored overcoat"
-	desc = "Blackshield Milita greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
+	name = "blackshield armored overcoat"
+	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
