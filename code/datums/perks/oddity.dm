@@ -93,7 +93,7 @@
 	name = "Thin Skin"
 	desc = "The anomaly has weaken your skin making you less resistant to blunt trauma."
 	gain_text = "After such a rest you can't help but feel much more sensitive then normal."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+	//icon_state = "" // - No icon, suggestion - Paper?
 
 /datum/perk/oddity/thin_skin/assign(mob/living/carbon/human/H)
 	..()
