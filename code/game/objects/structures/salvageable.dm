@@ -366,8 +366,8 @@ obj/structure/salvageable/bliss/Initialize()
 	desc = "Despite being in pristine condition this console doesn't respond to anything, but looks like you can still salvage something from this."
 	icon_state = "os_console"
 	salvageable_parts = list(
-		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points = 90,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points/rare = 45,
+		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points = 60,
+		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points/rare = 25,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/weapon/stock_parts/capacitor/one_star = 60,
@@ -383,8 +383,8 @@ obj/structure/salvageable/bliss/Initialize()
 	name = "broken console"
 	icon_state = "os_console_broken"
 	salvageable_parts = list(
-		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points = 50,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points/rare = 25,
+		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points = 30,
+		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points/rare = 15,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/weapon/stock_parts/capacitor/one_star = 60,
