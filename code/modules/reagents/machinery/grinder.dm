@@ -35,17 +35,14 @@
 /obj/machinery/reagentgrinder/attackby(obj/item/I, mob/user)
 	if(default_deconstruction(I, user))
 		return
+
+	if(default_part_replacement(I, user))
+		return
 	//Useability tweak for borgs
 	if (istype(I,/obj/item/weapon/gripper))
 		ui_interact(user)
 		return
 	return insert(I, user)
-
-	if(default_deconstruction(I, user))
-		return
-
-	if(default_part_replacement(I, user))
-		return
 
 /obj/machinery/reagentgrinder/proc/insert(obj/item/I, mob/user)
 	if(!istype(I))
