@@ -74,8 +74,9 @@
 /obj/item/weapon/shield/riot/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
-		//thin metal shields do not stop bullets or lasers, even in space. Will block beanbags, rubber bullets, and stunshots at normal rates tho.
-		if((is_sharp(P) && damage > 15)) //Theirs not a single laser in the game that deals less then 16 damage 
+		//thin metal shields do not stop bullets or most lasers, even in space. Will block beanbags, rubber bullets, and stunshots at normal rates tho.
+		//Lasers it can block - AP weak laser beams, laser tag, taser bolts, emitter and practic
+		if((is_sharp(P) && damage > 15))
 			return 0
 	return base_block_chance
 
