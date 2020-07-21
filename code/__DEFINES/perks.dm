@@ -19,7 +19,6 @@
 #define PERK_GUNSLINGER /datum/perk/oddity/gunslinger
 #define PERK_TOXIC_REVENGER /datum/perk/oddity/toxic_revenger
 #define PERK_BALLS_OF_PLASTEEL /datum/perk/oddity/balls_of_plasteel
-#define PERK_BAD_KNEES /datum/perk/oddity/bad_knees
 #define PERK_WEAK_MIND /datum/perk/oddity/weak_mind
 #define PERK_HARDEN /datum/perk/oddity/harden
 #define PERK_THIN_SKIN /datum/perk/oddity/thin_skin
