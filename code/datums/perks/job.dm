@@ -239,6 +239,7 @@
 	name = "Revival Sickness"
 	desc = "You've recently died and have been brought back to life, the experience has left you weakened and thus unable to be fighting fit for awhile."
 	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
+	lose_text = "Your body has rested well and made a full recovery."
 	var/initial_time
 
 /datum/perk/rezsickness/assign(mob/living/carbon/human/H)
@@ -318,8 +319,9 @@
 	..()
 
 /datum/perk/rezsickness/on_process()
-	if(cooldown_time < world.time)
-		src.remove()
+	if(cooldown_time =< world.time)
+		src.remove() //We use are "remove" procs we have
+		src.Destroy() //So we remove the passive trait
 		return
 	if(holder.buckled)
 		cooldown_time -= 2 SECONDS
