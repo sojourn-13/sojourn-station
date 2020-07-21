@@ -1,4 +1,4 @@
-//#define CASH_PER_STAT 1000 // The cost of a single level of a statistic
+#define CASH_PER_STAT 1000 // The cost of a single level of a statistic
 
 /obj/item/weapon/spacecash
 	name = "0 credit"
@@ -99,24 +99,25 @@
 
 /obj/item/weapon/spacecash/bundle/Initialize()
 	. = ..()
-	//AddComponent(/datum/component/inspiration, CALLBACK(src, .proc/return_stats))
+	AddComponent(/datum/component/inspiration, CALLBACK(src, .proc/return_stats))
 
 /// Returns a list to use with inspirations. It can be empty if there's not enough money in the bundle. Important side-effects: converts worth to points, thus reducing worth.
-/*
+
 /obj/item/weapon/spacecash/bundle/proc/return_stats()
 	RETURN_TYPE(/list)
-	var/points = min(worth/CASH_PER_STAT, 10) // capped at 10 points per bundle, costs 10k
+	var/points = clamp(worth/CASH_PER_STAT, 0, 10) // capped at 10 points per bundle, costs 10k
 	var/list/stats = list()
 	// Distribute points evenly with random statistics. Just skips the loop if there's not enough money in the bundle, resulting in an empty list.
-	while(points)
-		stats[pick(ALL_STATS)] += 1 // Picks a random stat, if not present it adds it with a value of 1, else it increases the value by 1
-		points--
-	worth -= points*CASH_PER_STAT
+	//worth -= points*CASH_PER_STAT //point cost: disabled
+	while(points--)
+		var/selected_stat = pick(ALL_STATS)
+		if(stats[selected_stat] == null) stats[selected_stat] = 0
+		stats[selected_stat] += 1 // Picks a random stat, if not present it adds it with a value of 1, else it increases the value by 1
 	update_icon()
 	if(!worth)
 		qdel(src)
 	return stats
-*/
+
 /obj/item/weapon/spacecash/bundle/c1
 	name = "1 credit"
 	icon_state = "spacecash1"
@@ -190,4 +191,4 @@ proc/spawn_money(var/sum, spawnloc, mob/living/carbon/human/human_user as mob)
 	if (!(user in view(2)) && user!=src.loc) return
 	to_chat(user, "\blue Charge card's owner: [src.owner_name]. Credits remaining: [src.worth].")
 
-//#undef CASH_PER_STAT
+#undef CASH_PER_STAT

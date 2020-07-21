@@ -608,9 +608,10 @@ its easier to just keep the beam vertical.
 // Use for objects performing visible actions
 // message is output to anyone who can see, e.g. "The [src] does something!"
 // blind_message (optional) is what blind people will hear e.g. "You hear something!"
-/atom/proc/visible_message(var/message, var/blind_message)
+/atom/proc/visible_message(var/message, var/blind_message, var/viewing_distance)
 
-	var/list/see = get_mobs_and_objs_in_view_fast(get_turf(src),world.view,remote_ghosts = FALSE)
+	var/range = viewing_distance || world.view
+	var/list/see = get_mobs_and_objs_in_view_fast(get_turf(src),range,remote_ghosts = FALSE)
 
 
 	var/list/seeing_mobs = see["mobs"]
@@ -757,9 +758,11 @@ its easier to just keep the beam vertical.
 	if(istype(gen, /datum/gender))
 		//Use as given.
 		G = gen
+		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite type match") //TODO: REMOVE THIS ONCE FIXED
 	else if(istext(gen))
 		G = GLOB.gender_datums[gen] //Convert to the gender using the name given.
+		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite list extraction") //TODO: REMOVE THIS ONCE FIXED
 	else
 		G = get_gender() //Otherwise, default to this thing's gender.
-	if(istext(G)) CRASH("gender_word has somehow resulted in a text gender") //TODO: REMOVE THIS ONCE FIXED
+		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite get_gender result") //TODO: REMOVE THIS ONCE FIXED
 	return G.word(position)

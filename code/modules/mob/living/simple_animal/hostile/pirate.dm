@@ -77,7 +77,7 @@
 	weapon1 = /obj/item/weapon/gun/energy/retro
 	weapon2 = null
 
-/mob/living/simple_animal/hostile/voidwolf/fieldtech_ranged
+/mob/living/simple_animal/hostile/voidwolf/fieldtech/ranged
 	name = "Void Wolf Field Tech"
 	desc = "A Void Wolf mercenary wielding an industrial welder and energy pistol."
 	icon_state = "voidengie_ranged"
@@ -86,7 +86,8 @@
 	melee_damage_upper = 22
 	ranged = 1
 	rapid = 1
-	weapon1 = /obj/item/weapon/tool/weldingtool/advanced
+	projectiletype = /obj/item/projectile/beam
+	projectilesound = 'sound/weapons/laser.ogg'
 	weapon2 = /obj/item/weapon/gun/energy/gun/martin
 
 /mob/living/simple_animal/hostile/voidwolf/aerotrooper

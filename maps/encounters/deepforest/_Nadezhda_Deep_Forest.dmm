@@ -1844,7 +1844,7 @@
 "JO" = (/obj/crawler/teleport_marker,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/asteroid/rogue)
 "JP" = (/obj/structure/table/rack/shelf,/obj/random/common_oddities/low_chance,/obj/random/common_oddities/low_chance,/obj/random/common_oddities/low_chance,/obj/random/common_oddities/low_chance,/turf/simulated/floor/wood/wild5,/area/nadezhda/maintenance/outside/smuggler_zone_u)
 "JQ" = (/mob/living/simple_animal/hostile/voidwolf/fieldtech,/turf/simulated/floor/wood/wild5,/area/nadezhda/maintenance/outside/smuggler_zone_u)
-"JR" = (/mob/living/simple_animal/hostile/voidwolf/fieldtech_ranged,/turf/simulated/floor/wood/wild5,/area/nadezhda/maintenance/outside/smuggler_zone_u)
+"JR" = (/mob/living/simple_animal/hostile/voidwolf/fieldtech/ranged,/turf/simulated/floor/wood/wild5,/area/nadezhda/maintenance/outside/smuggler_zone_u)
 "JS" = (/obj/random/mob/voidwolf/low_chance,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "JT" = (/obj/random/mob/voidwolf/low_chance,/turf/simulated/floor/wood/wild5,/area/nadezhda/outside/meadow)
 "JU" = (/obj/random/mob/voidwolf/low_chance,/turf/simulated/floor/tiled/cafe,/area/nadezhda/maintenance/outside/smuggler_zone)

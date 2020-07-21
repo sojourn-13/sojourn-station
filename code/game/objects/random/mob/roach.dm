@@ -67,7 +67,7 @@
 	return pickweight(list(/mob/living/simple_animal/hostile/voidwolf = 9,
 		/mob/living/simple_animal/hostile/voidwolf/fieldtech = 2,
 		/mob/living/simple_animal/hostile/voidwolf/ranged = 4,
-		/mob/living/simple_animal/hostile/voidwolf/fieldtech_ranged = 4,
+		/mob/living/simple_animal/hostile/voidwolf/fieldtech/ranged = 4,
 		/mob/living/simple_animal/hostile/voidwolf/captain = 0.5
 		))
 
