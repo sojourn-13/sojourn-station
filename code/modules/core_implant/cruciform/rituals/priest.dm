@@ -179,7 +179,7 @@
 	name = "Scrying"
 	phrase = "Ecce ego ad te et ad caelum. Scio omnes absconditis tuis. Vos can abscondere, tu es coram me: nudus."
 	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom. This prayer requires power only primes and crusaders have."
-	power = 80
+	power = 100
 	category = "Devotion"
 
 /datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
@@ -414,7 +414,7 @@
 	name = "Asacris"
 	phrase = "A caelo usque ad centrum."
 	desc = "This litany will remove any upgrade from the target's cruciform implant. Usuable only by primes and crusaders."
-	power = 80
+	power = 100
 	category = "Devotion"
 
 /datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
