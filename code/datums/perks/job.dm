@@ -113,27 +113,27 @@
 */
 /datum/perk/sanityboost
 	name = "True Faith"
-	desc = "When near an obelisk, you feel your mind at ease. You slowly heal due to its latent effects."
+	desc = "When near an obelisk, you feel your mind at ease. You're body is strengthed by its presence, resisting all forms of damage."
 	gain_text = "You feel the protection of the nearby obelisk."
 	//icon_state = "sanityboost" // https://game-icons.net/1x1/lorc/templar-eye.html
 
 /datum/perk/sanityboost/assign(mob/living/carbon/human/H)
 	..()
-	H.adjustOxyLoss(-0.6)
-	H.heal_organ_damage(0.3)
-	H.adjustToxLoss(-0.3)
-	H.add_chemical_effect(CE_BLOODCLOT, 0.1)
+	holder.brute_mod_perk /= 1.2
+	holder.burn_mod_perk /= 1.2
+	holder.oxy_mod_perk /= 1.2
+	holder.toxin_mod_perk /= 1.2
 
 /datum/perk/sanityboost/remove()
-	holder.adjustOxyLoss(-0.6)
-	holder.heal_organ_damage(0.3)
-	holder.adjustToxLoss(-0.3)
-	holder.add_chemical_effect(CE_BLOODCLOT, 0.1)
+	holder.brute_mod_perk *= 1.2
+	holder.burn_mod_perk *= 1.2
+	holder.oxy_mod_perk *= 1.2
+	holder.toxin_mod_perk *= 1.2
 	..()
 
 /datum/perk/sure_step
 	name = "Sure step"
-	desc = " You are more likely to avoid traps."
+	desc = "Years spent in hazardous areas have made you sure on your footing, you are more likely to avoid traps and don't trip while running on underplating."
 	//icon_state = "mantrap"
 
 /datum/perk/ear_of_quicksilver
@@ -239,6 +239,7 @@
 	name = "Revival Sickness"
 	desc = "You've recently died and have been brought back to life, the experience has left you weakened and thus unable to be fighting fit for awhile."
 	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
+	lose_text = "You finally feel like you recovered from the ravages of your body."
 	var/initial_time
 
 /datum/perk/rezsickness/assign(mob/living/carbon/human/H)
@@ -318,8 +319,9 @@
 	..()
 
 /datum/perk/rezsickness/on_process()
-	if(cooldown_time < world.time)
-		src.remove()
+	if(cooldown_time <= world.time)
+		holder.stats.removePerk(type)
+		to_chat(holder, SPAN_NOTICE("[lose_text]"))
 		return
 	if(holder.buckled)
 		cooldown_time -= 2 SECONDS

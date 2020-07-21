@@ -47,6 +47,6 @@
 
 /datum/perk/oddity/fast_walker
 	name = "Springheel"
-	desc = "Your sure of your movements now, slow and steady may win the race but you can prove them wrong."
+	desc = "You're sure of your movements now, slow and steady may win the race but you can prove them wrong."
 	gain_text = "You feel your pace quickening, your thoughts barely catching up with your stride. The oddity your carrying has changed you, for now."
 	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html

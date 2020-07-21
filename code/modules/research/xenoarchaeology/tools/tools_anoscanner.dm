@@ -471,6 +471,7 @@
 	slot_flags = FALSE
 	origin_tech = list(TECH_COMBAT = 9, TECH_POWER = 9, TECH_MATERIAL = 9)
 	price_tag = 20000
+	degradation = 0
 	var/flash_cooldown = 1 MINUTES
 	var/last_use = 0
 
