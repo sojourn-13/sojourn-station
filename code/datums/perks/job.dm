@@ -319,7 +319,7 @@
 	..()
 
 /datum/perk/rezsickness/on_process()
-	if(cooldown_time =< world.time)
+	if(cooldown_time <= world.time)
 		src.remove() //We use are "remove" procs we have
 		src.Destroy() //So we remove the passive trait
 		return
