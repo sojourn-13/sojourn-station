@@ -21,7 +21,8 @@
 		tally -= 0.5
 	if(stats.getPerk(PERK_REZ_SICKNESS))
 		tally += 0.90
-
+	if(stats.getPerk(PERK_BAD_KNEES))
+		tally += 0.5
 
 	var/health_deficiency = (maxHealth - health)
 	var/hunger_deficiency = (max_nutrition - nutrition) //400 = max for humans.

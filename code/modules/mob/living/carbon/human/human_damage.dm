@@ -218,7 +218,7 @@
 		toxloss = 0
 	else
 		amount = amount*species.toxins_mod*src.toxin_mod_perk
-		if(stats.getPerk(PERK_BLOOD_OF_LEAD) && amount > 0)
+		if(stats.getPerk(PERK_BLOOD_OF_LEAD || PERK_BETTER_TOXINS) && amount > 0)
 			amount *= 0.5
 		..(amount)
 
