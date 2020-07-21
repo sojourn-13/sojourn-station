@@ -144,7 +144,7 @@
 
 /obj/item/weapon/tool/medmultitool/medimplant/sci
 	name = "Medical Omnitool"
-	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one was a cheap copy of of a buch better verson."
+	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
 	icon_state = "medimplant_sci"
 	matter = null //Nope
 	degradation = 1
