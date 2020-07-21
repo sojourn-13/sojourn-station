@@ -74,8 +74,9 @@
 /obj/item/weapon/shield/riot/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
-		//plastic shields do not stop bullets or lasers, even in space. Will block beanbags, rubber bullets, and stunshots just fine though.
-		if((is_sharp(P) && damage > 10) || istype(P, /obj/item/projectile/beam))
+		//thin metal shields do not stop bullets or most lasers, even in space. Will block beanbags, rubber bullets, and stunshots at normal rates tho.
+		//Lasers it can block - AP weak laser beams, laser tag, taser bolts, emitter and practic
+		if((is_sharp(P) && damage > 15))
 			return 0
 	return base_block_chance
 
@@ -107,7 +108,7 @@
 /obj/item/weapon/shield/riot/crusader/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
-		if((is_sharp(P) && damage > 10) || istype(P, /obj/item/projectile/beam))
+		if((is_sharp(P) && damage > 15) || istype(P, /obj/item/projectile/beam))
 			return (base_block_chance - round(damage / 3)) //block bullets and beams using the old block chance
 	return base_block_chance
 
@@ -146,13 +147,13 @@
 	throw_speed = 2
 	throw_range = 4
 	matter = list(MATERIAL_STEEL = 4)
-	base_block_chance = 35
+	base_block_chance = 30
 
 
 /obj/item/weapon/shield/riot/handmade/tray/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item))
 		var/obj/item/I = damage_source
-		if((is_sharp(I) && damage > 10) || istype(damage_source, /obj/item/projectile/beam))
+		if((is_sharp(I) && damage > 15) || istype(damage_source, /obj/item/projectile/beam))
 			return 20
 	return base_block_chance
 
@@ -200,7 +201,7 @@
 /obj/item/weapon/shield/energy/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
-		if((is_sharp(P) && damage > 10) || istype(P, /obj/item/projectile/beam))
+		if((is_sharp(P) && damage > 15) || istype(P, /obj/item/projectile/beam))
 			return (base_block_chance - round(damage / 3)) //block bullets and beams using the old block chance
 	return base_block_chance
 
