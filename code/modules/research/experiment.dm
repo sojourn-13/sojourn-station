@@ -8,15 +8,15 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/saved_best_explosion = 0
 
 	var/static/list/tech_points = list(
-		TECH_MATERIAL = 200,
-		TECH_ENGINEERING = 250,
-		TECH_PLASMA = 500,
-		TECH_POWER = 300,
+		TECH_MATERIAL = 250,
+		TECH_ENGINEERING = 300,
+		TECH_PLASMA = 600, //Harder to get in higher levels, Rnd gets 2-3-4
+		TECH_POWER = 350,
 		TECH_BLUESPACE = 1000,
-		TECH_BIO = 300,
-		TECH_COMBAT = 500,
+		TECH_BIO = 350,
+		TECH_COMBAT = 550,
 		TECH_MAGNET = 350,
-		TECH_DATA = 400,
+		TECH_DATA = 450,
 		TECH_ILLEGAL = 5000,
 	)
 
@@ -40,20 +40,20 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/static/list/special_weapons = list(
 		"large organic needle" = 10000,
 		"Hulk Foot" = 10000,
-		"Explosive blast" = 5000,
-		"Electronics meltdown" = 4000,
-		"Low Pressure" = 3000,
+		"Explosive blast" = 7500,
+		"Electronics meltdown" = 5000,
+		"Low Pressure" = 8000, //Kinda hard when were on a planet
 		"Facepalm" = 2000,
 	)
 	// Points for each symptom level, from 1 to 5
 	var/static/list/level_to_points = list(200,500,1000,2500,10000)
 	// Points for special slime cores
 	var/static/list/core_points = list(
-		/obj/item/slime_extract/grey = 100,
-		/obj/item/slime_extract/gold = 2000,
-		/obj/item/slime_extract/adamantine = 3000,
-		/obj/item/slime_extract/bluespace = 5000,
-		/obj/item/slime_extract/rainbow = 10000
+		/obj/item/slime_extract/grey = 400,
+		/obj/item/slime_extract/gold = 2500,
+		/obj/item/slime_extract/adamantine = 3500,
+		/obj/item/slime_extract/bluespace = 7500,
+		/obj/item/slime_extract/rainbow = 15000
 	)
 
 /*

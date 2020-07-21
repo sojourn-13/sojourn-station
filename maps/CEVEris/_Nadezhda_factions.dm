@@ -22,11 +22,11 @@
 	darkcolor = "#026685"
 	lightcolor = "#7cdffe"
 
-	stamptext = "This paper has been authorized with Advisor Boris's Insignia"
+	stamptext = "This paper has been authorized with the Provost Marshal Boris's Insignia"
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/militia
-	name = "Blackshield Militia - Brigadier Ayana Mwangi"
+	name = "Blackshield - Brigadier Ayana Mwangi"
 
 	fax_alert = "BLACKSHIELD COMMUNIQUE"
 	fax_response = "Blackshield Order"

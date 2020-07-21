@@ -511,6 +511,17 @@
 	M.updatehealth()
 	apply_brain_damage(M, deadtime)
 
+	switch(M.stats.getStat(STAT_TGH))
+		if(0 to 40)
+			M.stats.addPerk(/datum/perk/rezsickness/severe/fatal)
+			log_debug("Try to add mild rez sickness.")
+		if(40 to 60)
+			M.stats.addPerk(/datum/perk/rezsickness/severe)
+			log_debug("Try to add moderate rez sickness.")
+		if(60 to INFINITY)
+			M.stats.addPerk(/datum/perk/rezsickness)
+			log_debug("Try to add severe rez sickness.")
+
 /obj/item/weapon/shockpaddles/proc/apply_brain_damage(mob/living/carbon/human/H, var/deadtime)
 	if(deadtime < DEFIB_TIME_LOSS) return
 

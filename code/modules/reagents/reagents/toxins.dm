@@ -471,7 +471,7 @@
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#c9bed2"
-	overdose = REAGENTS_OVERDOSE * 0.66
+	overdose = 16
 	strength = 0.1
 	addiction_chance = 10
 	nerve_system_accumulations = 5
@@ -488,7 +488,10 @@
 		holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
 		M.adjustToxLoss(-0.1)
 		return
+
 /datum/reagent/toxin/diplopterum/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
 
@@ -509,7 +512,7 @@
 	taste_description = "plague"
 	reagent_state = LIQUID
 	color = "#6d33b4"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 16
 	addiction_chance = 10
 	nerve_system_accumulations = 5
 	heating_point = 573
@@ -524,7 +527,10 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
 		return
+
 /datum/reagent/toxin/seligitillin/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, STIM_TIME, "seligitillin_w")
 
 /datum/reagent/toxin/seligitillin/overdose(var/mob/living/carbon/M, var/alien)
@@ -543,7 +549,7 @@
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#736bbe"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 16
 	addiction_chance = 15
 	nerve_system_accumulations = 5
 	heating_point = 573
@@ -558,7 +564,10 @@
 		M.add_chemical_effect(CE_BLOODCLOT, 0.15)
 		M.adjustToxLoss(-0.1)
 		return
+
 /datum/reagent/toxin/starkellin/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
 
@@ -569,7 +578,7 @@
 	taste_description = "raw meat"
 	reagent_state = LIQUID
 	color = "#9452ba"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 16
 	addiction_chance = 20
 	nerve_system_accumulations = 5
 	strength = 0.2
@@ -588,7 +597,10 @@
 		M.add_chemical_effect(CE_ANTITOX, 1)
 		holder.remove_reagent("pararein", 0.4 * effect_multiplier)
 		return
+
 /datum/reagent/toxin/gewaltine/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, STIM_TIME, "gewaltine_w")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "gewaltine_w")
 
@@ -602,7 +614,7 @@
 	taste_description = "third reich"
 	reagent_state = LIQUID
 	color = "#a6b85b"
-	overdose = 8
+	overdose = 16
 	addiction_chance = 30
 	nerve_system_accumulations = 4
 	heating_point = 573
@@ -614,16 +626,18 @@
 	M.faction = "roach"
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		var/mob/living/carbon/human/H = M
-
 		for(var/obj/item/organ/I in H.internal_organs)
 			if((I.damage > 0) && !BP_IS_ROBOTIC(I)) //Peridaxon heals only non-robotic organs
 				I.heal_damage(((0.2 + I.damage * 0.05) * effect_multiplier), FALSE)
 		return
+
 /datum/reagent/toxin/fuhrerole/on_mob_delete(mob/living/L)
 	..()
 	L.faction = initial(L.faction)
 
 /datum/reagent/toxin/fuhrerole/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
 

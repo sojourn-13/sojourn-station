@@ -94,3 +94,18 @@
 	cost = 5000
 
 	unlocks_designs = list(/datum/design/research/item/robot_upgrade/syndicate)
+
+/datum/technology/combat_defibs
+	name = "Unregulated Defibulator"
+	desc = "A defibulator that has no safeties and an overclocked set of paddles, making it ideal to pernitrate even armor."
+	tech_type = RESEARCH_ILLEGAL
+
+	x = 0.9
+	y = 0.3
+	icon = "combatdefib"
+
+	required_technologies = list(/datum/technology/borg_syndicate_module)
+	required_tech_levels = list(RESEARCH_BIOTECH = 10)
+	cost = 5000
+
+	unlocks_designs = list(/datum/design/research/item/medical/combat_defibs)

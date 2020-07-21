@@ -85,7 +85,7 @@
 
 
 /mob/living/carbon/human/adjustBruteLoss(var/amount)
-	amount = amount*species.brute_mod
+	amount = amount*species.brute_mod*src.brute_mod_perk
 	if(amount > 0)
 		take_overall_damage(amount, 0)
 	else
@@ -93,7 +93,7 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/adjustFireLoss(var/amount)
-	amount = amount*species.burn_mod
+	amount = amount*species.burn_mod*src.burn_mod_perk
 	if(amount > 0)
 		take_overall_damage(0, amount)
 	else
@@ -101,7 +101,7 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/proc/adjustBruteLossByPart(var/amount, var/organ_name, var/obj/damage_source = null)
-	amount = amount*species.brute_mod
+	amount = amount*species.brute_mod*src.burn_mod_perk
 	if (organ_name in organs_by_name)
 		var/obj/item/organ/external/O = get_organ(organ_name)
 
@@ -114,7 +114,7 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/proc/adjustFireLossByPart(var/amount, var/organ_name, var/obj/damage_source = null)
-	amount = amount*species.burn_mod
+	amount = amount*species.burn_mod*src.burn_mod_perk
 	if (organ_name in organs_by_name)
 		var/obj/item/organ/external/O = get_organ(organ_name)
 
@@ -197,7 +197,7 @@
 	if(species.flags & NO_BREATHE)
 		oxyloss = 0
 	else
-		amount = amount*species.oxy_mod
+		amount = amount*species.oxy_mod*src.oxy_mod_perk
 		if(stats.getPerk(PERK_LUNGS_OF_IRON) && amount > 0)
 			amount *= 0.5
 		..(amount)
@@ -217,7 +217,7 @@
 	if(species.flags & NO_POISON)
 		toxloss = 0
 	else
-		amount = amount*species.toxins_mod
+		amount = amount*species.toxins_mod*src.toxin_mod_perk
 		if(stats.getPerk(PERK_BLOOD_OF_LEAD) && amount > 0)
 			amount *= 0.5
 		..(amount)

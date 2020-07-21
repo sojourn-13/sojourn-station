@@ -74,17 +74,17 @@
 	sort_string = "DAAAX"
 
 /datum/design/research/item/powercell/large/omega
-	name = "Soteria \"Omega-Geyser 13000L\""
+	name = "Soteria \"Omega-Geyser 20000L\""
 	build_path = /obj/item/weapon/cell/large/moebius/omega
 	sort_string = "DAAAZ"
 
 /datum/design/research/item/powercell/medium/omega
-	name = "Soteria \"Omega-Geyser 1000M\""
+	name = "Soteria \"Omega-Geyser 1600M\""
 	build_path = /obj/item/weapon/cell/medium/moebius/omega
 	sort_string = "DAABA"
 
 /datum/design/research/item/powercell/small/omega
-	name = "Soteria \"Omega-Geyser 300S\""
+	name = "Soteria \"Omega-Geyser 500S\""
 	build_path = /obj/item/weapon/cell/small/moebius/omega
 	sort_string = "DAABB"
 

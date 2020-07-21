@@ -887,6 +887,7 @@ img.sciTechTreeIconToolTip {
 .icon-scalpelmanager { background-position: -192px -96px; }
 .icon-stunbaton { background-position: -224px -96px; }
 .icon-cryobag { background-position: -256px -256px; }
+.icon-omnisurgery { background-position: -288px -96px; }
 
 .icon-seccomputer { background-position: 0px -128px; }
 .icon-flash { background-position: -32px -128px; }
@@ -901,10 +902,10 @@ img.sciTechTreeIconToolTip {
 
 .icon-supercell { background-position: 0px -160px; }
 .icon-hypercell { background-position: -32px -160px; }
-.icon-omegacell { background-position: -288px -192px; }
-.icon-atomsmall { background-position: -288px -256px; }
+.icon-omegacell { background-position: -288px -224px; }
+.icon-atomsmall { background-position: -288px -160px; }
 .icon-bluespacecell { background-position: -64px -160px; }
-.icon-atomlarge { background-position: -288px -224px; }
+.icon-atomlarge { background-position: -288px -192px; }
 .icon-solarcontrol { background-position: -96px -160px; }
 .icon-generator { background-position: -128px -160px; }
 .icon-supergenerator { background-position: -160px -160px; }
@@ -951,6 +952,7 @@ img.sciTechTreeIconToolTip {
 .icon-freedom { background-position: -160px -288px; }
 .icon-module { background-position: -192px -288px; }
 .icon-borgmodule { background-position: -224px -288px; }
+.icon-combatdefib { background-position: -288px -64px; }
 
 .sciMenuButton {
     width: 300px;

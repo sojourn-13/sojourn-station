@@ -232,7 +232,7 @@
 	You are trained but lack seniority. Follow the guidance of other doctors - and transport patients back for specialist treatments.<br>\
 	Remember that you must often respond to emergencies. Pack your gear carefully and bring a breaching tool - be ready to run at short notice.<br>\
 	Your other duties include transporting patients between rooms, running errands, and generally saving time for other doctors.<br>\
-	Corpse recovery may also fall within your duties. If the body is in a dangerous location, enlist the help of the Blackshield Militia."
+	Corpse recovery may also fall within your duties. If the body is in a dangerous location, enlist the help of the Blackshield."
 
 	duties = "Respond to distress calls and extract wounded people from dangerous situations.<br>\
 	Watch the crew monitor for signs of injuries or deaths and respond accordingly.<br>\

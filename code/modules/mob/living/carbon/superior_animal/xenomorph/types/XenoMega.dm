@@ -24,6 +24,7 @@
 	icon_living = "queen"
 	icon_dead = "queen_dead"
 	icon_rest = "queen_stunned"
+	status_flags = 0
 
 	maxHealth = 3000
 	health = 3000

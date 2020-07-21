@@ -474,13 +474,13 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/smc
-	name = "Militia Commander's Office"
+	name = "Blackshield Commander's Office"
 	icon_state = "hammerred"
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/smc/quarters
-	name = "Militia Commander's Quarters"
+	name = "Blackshield Commander's Quarters"
 	icon_state = "hammerred"
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT

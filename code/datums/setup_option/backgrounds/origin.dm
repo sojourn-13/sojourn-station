@@ -367,7 +367,6 @@
 			Due to the physical weakness of the Ru caste they are barred from taking roles as security and due to their importance to their respective hive restricted from work as prospectors."
 
 	restricted_to_species = list(FORM_CHTMANT)
-
 	restricted_depts = SECURITY | PROSPECTOR
 
 	stat_modifiers = list(
@@ -997,7 +996,6 @@
 		STAT_COG = 0
 	)
 
-
 //Backgrounds are usually representations of childhoods or how a person grew up, not where. This ranges from being wealthy, poor, a refugee, or having specific influences.
 /datum/category_group/setup_option_category/background/bckgrnd
 	name = "Upbringing"
@@ -1131,4 +1129,23 @@
 		STAT_BIO = 8,
 		STAT_MEC = 8,
 		STAT_COG = -15
+	)
+
+/datum/category_item/setup_option/background/bckgrnd/chtmantspider
+	name = "Eight-Legged Ally"
+	desc = "As a cht'mant you have an innate understanding towards insects and crawling things. While most of your kin are naturally adapted to roaches you've developed a sense of  \
+	control and understanding to spiders. Over time a subtle shift in your pheramones allowed you to interact with spiders much in the same way your kin do with roaches. \
+	Unfortunately this shift in biology has made roaches innately hostile to you, viewing you as a spider from the smell alone. A secondary side effect of your biological adjustment has \
+	given you the ability to generate webs like a spider."
+
+	restricted_to_species = list(FORM_CHTMANT)
+	perks = list(/datum/perk/spiderfriend, /datum/perk/webmaker)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)

@@ -135,7 +135,7 @@
 	price_tag = 1000
 	projectile_type = /obj/item/projectile/beam/practice
 
-obj/item/weapon/gun/energy/retro
+/obj/item/weapon/gun/energy/retro
 	name = "\"Cog\" lasgun"
 	icon = 'icons/obj/guns/energy/retro.dmi'
 	icon_state = "retro"

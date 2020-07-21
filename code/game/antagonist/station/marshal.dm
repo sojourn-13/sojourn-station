@@ -12,9 +12,9 @@
 		STAT_VIG = 20
 	)
 
-	welcome_text = "You are a specially promoted member of the colony under orders of the black guard to accomplish a specific objective.\n\
-	Local members of the militia and marshals are unaware of your presence and should remain so if possible, you are to accomplish your objectives \n\
-	discretely and quietly."
+	welcome_text = "You are a specially promoted member of the colony under orders of the provost marshal and brigadier to accomplish a specific objective.\n\
+	Local members of the blackshield and marshals are unaware of your presence and should remain so if possible, you are to accomplish your objectives \n\
+	discretely and quietly unless orders dictate otherwise."
 
 /datum/antagonist/marshal/can_become_antag(var/datum/mind/M)
 	if(!..())

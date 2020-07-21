@@ -436,11 +436,17 @@
 /datum/design/research/circuit/industrial_printer
 	name = "Industrial Printer"
 	build_path = /obj/item/weapon/circuitboard/autolathe_industrial
-	sort_string = "VAAAH"
+	sort_string = "VAAAI"
 	category = CAT_MACHINE
 
 /datum/design/research/circuit/recharger_industrial
-	name = "Industrial Printer"
+	name = "Industrial Recharger"
 	build_path = /obj/item/weapon/circuitboard/recharger/industrial
-	sort_string = "VAAAH"
+	sort_string = "VAAAJ"
 	category = CAT_POWER
+
+/datum/design/research/circuit/industrial_grinder
+	name = "Industrial Grinder"
+	build_path = /obj/item/weapon/circuitboard/industrial_grinder
+	sort_string = "VAAAK"
+	category = CAT_MACHINE

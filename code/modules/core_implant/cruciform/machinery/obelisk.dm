@@ -89,7 +89,7 @@
 		var/obj/item/weapon/implant/core_implant/I = mob.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
 		if(I && I.active && I.wearer)
 			if(!(mob in currently_affected)) // the mob just entered the range of the obelisk
-				mob.stats.addPerk(/datum/perk/sanityboost)
+				//mob.stats.addPerk(/datum/perk/sanityboost)
 				currently_affected += mob
 			if(I.power < I.max_power)	I.power += nt_buff_power
 			for(var/r_tag in mob.personal_ritual_cooldowns)

@@ -469,18 +469,18 @@
 	icon_state = "nt_sword"
 	item_state = "nt_sword"
 	slot_flags = FALSE
-	origin_tech = list(TECH_COMBAT = 5, TECH_POWER = 4, TECH_MATERIAL = 8)
+	origin_tech = list(TECH_COMBAT = 9, TECH_POWER = 9, TECH_MATERIAL = 9)
 	price_tag = 20000
 	var/flash_cooldown = 1 MINUTES
 	var/last_use = 0
 
 /obj/item/weapon/tool/sword/crusader/nt_sword/wield(mob/living/user)
 	..()
-	set_light(l_range = 1.7, l_power = 1.3, l_color = COLOR_YELLOW)
+	set_light(l_range = 4, l_power = 3)
 
-/obj/item/weapon/tool/sword/nt_sword/unwield(mob/living/user)
+/obj/item/weapon/tool/sword/crusader/nt_sword/unwield(mob/living/user)
 	..()
-	set_light(l_range = 0, l_power = 0, l_color = COLOR_YELLOW)
+	set_light(l_range = 0, l_power = 0)
 
 /obj/item/weapon/tool/sword/crusader/nt_sword/attack_self(mob/user)
 	if(isBroken)
@@ -594,7 +594,7 @@
 	anchored = TRUE
 	density = TRUE
 	breakable = FALSE
-	var/obj/item/weapon/tool/sword/nt_sword/sword = null
+	var/obj/item/weapon/tool/sword/crusader/nt_sword/sword = null
 
 /obj/structure/nt_pedestal/New(var/loc, var/turf/anchor)
 	..()
