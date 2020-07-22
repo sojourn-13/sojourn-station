@@ -109,6 +109,7 @@
 	if(P)
 		perks -= P
 		P.remove()
+		perk_stats -= P.statclick
 
 /datum/stat_mod
 	var/time = 0

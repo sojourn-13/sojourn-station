@@ -17,6 +17,18 @@
 // oddity perks
 #define PERK_FAST_WALKER /datum/perk/oddity/fast_walker
 #define PERK_GUNSLINGER /datum/perk/oddity/gunslinger
+#define PERK_TOXIC_REVENGER /datum/perk/oddity/toxic_revenger
+#define PERK_BALLS_OF_PLASTEEL /datum/perk/oddity/balls_of_plasteel
+#define PERK_WEAK_MIND /datum/perk/oddity/weak_mind
+#define PERK_HARDEN /datum/perk/oddity/harden
+#define PERK_THIN_SKIN /datum/perk/oddity/thin_skin
+#define PERK_DRUG_CONSUMER /datum/perk/oddity/drug_consumer
+#define PERK_BETTER_TOXINS /datum/perk/oddity/better_toxins
+#define PERK_SHELL_SHOCK /datum/perk/oddity/shell_shock
+#define PERK_FAILING_MIND /datum/perk/oddity/failing_mind
+#define PERK_SHARP_MIND /datum/perk/oddity/sharp_mind
+#define PERK_STRANGTH /datum/perk/oddity/strangth
+
 //#define PERK_TERRIBLE_FATE /datum/perk/oddity/terrible_fate
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
@@ -30,11 +42,11 @@
 #define PERK_FAST_FINGERS /datum/perk/fast_fingers
 #define PERK_QUIET_AS_MOUSE /datum/perk/quiet_as_mouse
 #define PERK_EAR_OF_QUICKSILVER /datum/perk/ear_of_quicksilver
-#define PERK_BALLS_OF_PLASTEEL /datum/perk/oddity/balls_of_plasteel
 #define PERK_JUNKBORN /datum/perk/junkborn
 #define PERK_ASS_OF_CONCRETE /datum/perk/ass_of_concrete
-#define PERK_TOXIC_REVENGER /datum/perk/oddity/toxic_revenger
 //#define PERK_ABSOLUTE_GRAB /datum/perk/oddity/absolute_grab
 #define PERK_SURE_STEP /datum/perk/sure_step
 #define PERK_SPIDER_FRIEND /datum/perk/spiderfriend
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
+
+

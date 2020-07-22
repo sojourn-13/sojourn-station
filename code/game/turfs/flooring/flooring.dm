@@ -232,6 +232,8 @@ var/list/flooring_types
 	if(!ishuman(M)|| M.incorporeal_move || !has_gravity(get_turf(M)))
 		return
 	if(MOVING_QUICKLY(M))
+		if(M.stats.getPerk(PERK_SURE_STEP))
+			return
 		if(prob(5))
 			M.adjustBruteLoss(5)
 			M.slip(null, 6)

@@ -2,9 +2,9 @@
 	gain_text = "You feel different. Exposure to oddities has changed you. Now you can't go back."
 
 /datum/perk/oddity/toxic_revenger
-	name = "Anomalous Radioactivity"
-	desc = "You've been cursed by the latent effects of an oddity and now emit toxins harmful to you and everyone around you. It will be a long time before this wears off..."
-	gain_text = "You feel a terrible aching pain in your lungs, the anomalous radiation from an oddity has infused your body with accursed toxins!"
+	name = "Fungal Host"
+	desc = "A small hostile fungal spores were on the oddity, hijacking your lungs and forcing them to emit toxins harmful to everyone around you. It will be a long time before your body can fight this off..."
+	gain_text = "You feel a terrible aching pain in your lungs, an anomalous fungus on the oddity has infused your body!"
 	//icon_state = "Hazmat" // https://game-icons.net
 	var/cooldown = 10 MINUTES
 	var/initial_time
@@ -30,7 +30,7 @@
 				continue
 		L.reagents.add_reagent("toxin", 5)
 		L.emote("cough")
-		to_chat(L, SPAN_WARNING("[holder] emits a strange smell."))
+		to_chat(L, SPAN_WARNING("[holder] emits a fungal smell."))
 		usr.reagents.add_reagent("toxin", 5)
 
 /datum/perk/oddity/gunslinger
@@ -47,6 +47,128 @@
 
 /datum/perk/oddity/fast_walker
 	name = "Springheel"
-	desc = "Your sure of your movements now, slow and steady may win the race but you can prove them wrong."
+	desc = "You're sure of your movements now, slow and steady may win the race but you can prove them wrong."
 	gain_text = "You feel your pace quickening, your thoughts barely catching up with your stride. The oddity your carrying has changed you, for now."
 	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+
+/datum/perk/oddity/harden
+	name = "Natural Armor"
+	desc = "Your skin has become harder, more durable, able to accept blunt force and endure."
+	gain_text = "After such a rest you can't help but feel tougher then normal, your skin feels like iron."
+	//icon_state = "" // - No icon, suggestion - Riot Shield?
+
+/datum/perk/oddity/harden/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk -= 0.1 // One third of subdermal armor
+	holder.mob_bomb_defense += 5
+	holder.falls_mod -= 0.2
+
+/datum/perk/oddity/harden/remove()
+	holder.brute_mod_perk += 0.1
+	holder.mob_bomb_defense -= 5
+	holder.falls_mod += 0.2
+	..()
+
+/datum/perk/oddity/thin_skin
+	name = "Thin Skin"
+	desc = "The anomaly has weakened your skin, making you less resistant to blunt trauma."
+	gain_text = "After such a rest you can't help but feel much more sensitive then normal."
+	//icon_state = "" // - No icon, suggestion - Paper?
+
+/datum/perk/oddity/thin_skin/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk += 0.1
+	holder.mob_bomb_defense -= 5
+	holder.falls_mod += 0.2
+
+/datum/perk/oddity/thin_skin/remove()
+	holder.brute_mod_perk -= 0.1 // One third of subdermal armor
+	holder.mob_bomb_defense += 5
+	holder.falls_mod -= 0.2
+	..()
+
+/datum/perk/oddity/better_toxins
+	name = "Toxic Resistance"
+	desc = "You've been exposed to something toxic, yet your body fought it off and is now strengethed against toxins as a result."
+	gain_text = "Fresh air, healthy living, and a bit of "
+	//icon_state = "" // - No icon, suggestion - Anti toxin needle?
+
+/datum/perk/oddity/drug_consumer/assign(mob/living/carbon/human/H)
+	..()
+	holder.toxin_mod_perk -= 0.1 //Might be to high...
+
+/datum/perk/oddity/drug_consumer/remove()
+	holder.toxin_mod_perk += 0.1
+	..()
+
+/datum/perk/oddity/shell_shock
+	name = "Shell Shock"
+	desc = "Why fight the world when it has such horrors? Your body is weakened by self doubt and despair..."
+	gain_text = "Things just get harder and harder..."
+	//icon_state = "" // - No icon, suggestion, old knife?
+
+/datum/perk/oddity/shell_shock/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_ROB, -5)
+	holder.stats.changeStat(STAT_TGH, -5)
+	holder.stats.changeStat(STAT_VIG, -5)
+
+/datum/perk/oddity/shell_shock/remove()
+	holder.stats.changeStat(STAT_ROB, 5)
+	holder.stats.changeStat(STAT_TGH, 5)
+	holder.stats.changeStat(STAT_VIG, 5)
+	..()
+
+/datum/perk/oddity/failing_mind
+	name = "Failing Mind"
+	desc = "The mind fogs, blanking out, always distracted."
+	gain_text = "The world is not as clear as it once was."
+	//icon_state = "" // - No icon, suggestion, old newspaper?
+
+/datum/perk/oddity/failing_mind/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_COG, -5)
+	holder.stats.changeStat(STAT_MEC, -5)
+	holder.stats.changeStat(STAT_BIO, -5)
+
+/datum/perk/oddity/failing_mind/remove()
+	holder.stats.changeStat(STAT_COG, 5)
+	holder.stats.changeStat(STAT_MEC, 5)
+	holder.stats.changeStat(STAT_BIO, 5)
+	..()
+
+/datum/perk/oddity/sharp_mind
+	name = "Sharpened Mind"
+	desc = "Narrowing in and extrapolating the workings of the world has never felt so much easier."
+	gain_text = "The mind can over come any puzzle thrown at it."
+	//icon_state = "" // - No icon, suggestion, detective glass?
+
+/datum/perk/oddity/sharp_mind/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_COG, 5)
+	holder.stats.changeStat(STAT_MEC, 5)
+	holder.stats.changeStat(STAT_BIO, 5)
+
+/datum/perk/oddity/sharp_mind/remove()
+	holder.stats.changeStat(STAT_COG, -5)
+	holder.stats.changeStat(STAT_MEC, -5)
+	holder.stats.changeStat(STAT_BIO, -5)
+	..()
+
+/datum/perk/oddity/strangth
+	name = "Inner Strength"
+	desc = "Maybe its the planets gravity or your body is all warmed up, none the less you feel much more physically capable."
+	gain_text = "Nothing like a rest good after a good work out."
+	//icon_state = "" // - No icon, suggestion, detective glass?
+
+/datum/perk/oddity/strangth/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_ROB, 5)
+	holder.stats.changeStat(STAT_TGH, 5)
+	holder.stats.changeStat(STAT_VIG, 5)
+
+/datum/perk/oddity/strangth/remove()
+	holder.stats.changeStat(STAT_ROB, -5)
+	holder.stats.changeStat(STAT_TGH, -5)
+	holder.stats.changeStat(STAT_VIG, -5)
+	..()

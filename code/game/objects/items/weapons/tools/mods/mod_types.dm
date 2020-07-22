@@ -352,8 +352,8 @@
 /obj/item/weapon/tool_upgrade/augment/spikes
 	name = "spikes"
 	icon_state = "spike"
-	desc = "An array of sharp bits of plasteel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity."
-	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_STEEL = 2)
+	desc = "An array of sharp bits of steel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity."
+	matter = list(MATERIAL_STEEL = 2)
 
 /obj/item/weapon/tool_upgrade/augment/spikes/New()
 	..()

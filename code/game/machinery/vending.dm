@@ -1214,6 +1214,7 @@
 	/obj/item/ammo_magazine/slmagnum/practice = 10,
 	/obj/item/ammo_magazine/ammobox/magnum/practice = 5,
 	/obj/item/weapon/storage/box/shotgunammo/beanbags = 5,
+	/obj/item/ammo_magazine/lrifle/rubber = 10,
 	/obj/item/clothing/accessory/holster/armpit = 5,
 	/obj/item/clothing/accessory/holster/leg = 5,
 	/obj/item/weapon/storage/pouch/pistol_holster = 5,
@@ -1233,6 +1234,7 @@
 	/obj/item/weapon/storage/box/shotgunammo/slug = 10,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 10,
 	/obj/item/ammo_magazine/ammobox/hrifle_small = 10,
+	/obj/item/ammo_magazine/lrifle = 10,
 	/obj/item/weapon/tool/knife/tacknife = 6)
 
 	prices = list(/obj/item/device/flash = 200,
@@ -1260,6 +1262,7 @@
 	/obj/item/ammo_magazine/slmagnum/practice = 50,
 	/obj/item/ammo_magazine/ammobox/magnum/practice = 225,
 	/obj/item/weapon/storage/box/shotgunammo/beanbags = 800,
+	/obj/item/ammo_magazine/lrifle/rubber = 350,
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 400,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 50,
 	/obj/item/clothing/accessory/holster = 150,
@@ -1275,6 +1278,7 @@
 	/obj/item/ammo_magazine/ammobox/magnum = 500,
 	/obj/item/weapon/storage/box/shotgunammo/slug = 800,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 800,
+	/obj/item/ammo_magazine/lrifle = 350,
 	/obj/item/weapon/storage/briefcase/rifle = 150, //SoJ change makes rifle cases 150 credits
 	/obj/item/weapon/tool/knife/tacknife = 200,)
 
