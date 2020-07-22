@@ -115,6 +115,7 @@
 	name = "True Faith"
 	desc = "When near an obelisk, you feel your mind at ease. You're body is strengthed by its presence, resisting all forms of damage."
 	gain_text = "You feel the protection of the nearby obelisk."
+	lose_text = "You no longer feel the protection of an obelisk."
 	//icon_state = "sanityboost" // https://game-icons.net/1x1/lorc/templar-eye.html
 
 /datum/perk/sanityboost/assign(mob/living/carbon/human/H)

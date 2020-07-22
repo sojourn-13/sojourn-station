@@ -99,11 +99,10 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 			big_item = CATCH.get_item(/obj/random/pack/junk_machine/beacon)
 		else
 			big_item = CATCH.get_item(/obj/random/pack/junk_machine)
-		qdel(CATCH)
-	if(big_item)
 		big_item.forceMove(src)
 		if(prob(66))
 			big_item.make_old()
+		qdel(CATCH)
 
 /obj/structure/scrap/proc/try_make_loot()
 	if(loot_generated)
