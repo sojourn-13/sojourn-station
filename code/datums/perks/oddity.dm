@@ -93,11 +93,11 @@
 	gain_text = "Fresh air, healthy living, and a bit of "
 	//icon_state = "" // - No icon, suggestion - Anti toxin needle?
 
-/datum/perk/oddity/drug_consumer/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/better_toxins/assign(mob/living/carbon/human/H)
 	..()
 	holder.toxin_mod_perk -= 0.1 //Might be to high...
 
-/datum/perk/oddity/drug_consumer/remove()
+/datum/perk/oddity/better_toxins/remove()
 	holder.toxin_mod_perk += 0.1
 	..()
 

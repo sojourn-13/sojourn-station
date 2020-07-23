@@ -38,6 +38,10 @@
 	name = "H&S REV ..35 \"Havelock\""
 	build_path = /obj/item/weapon/gun/projectile/revolver/detective
 
+/datum/design/autolathe/gun/mk58
+	name = "OT HG .35 \"Mk58\""
+	build_path = /obj/item/weapon/gun/projectile/mk58
+
 ///. 4 0 M A G N U M
 
 /datum/design/autolathe/gun/ladon
@@ -55,10 +59,6 @@
 /datum/design/autolathe/gun/rafale
 	name = "SM SHG .40 \"Rafale\""
 	build_path = /obj/item/weapon/gun/projectile/silenced
-
-/datum/design/autolathe/gun/mk58
-	name = "OT HG .40 \"Mk58\""
-	build_path = /obj/item/weapon/gun/projectile/mk58
 
 /datum/design/autolathe/gun/mk58_wood
 	name = "OT HG .40 \"Mk58\""
