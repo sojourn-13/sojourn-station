@@ -22,7 +22,6 @@
 #define PERK_WEAK_MIND /datum/perk/oddity/weak_mind
 #define PERK_HARDEN /datum/perk/oddity/harden
 #define PERK_THIN_SKIN /datum/perk/oddity/thin_skin
-#define PERK_DRUG_CONSUMER /datum/perk/oddity/drug_consumer
 #define PERK_BETTER_TOXINS /datum/perk/oddity/better_toxins
 #define PERK_SHELL_SHOCK /datum/perk/oddity/shell_shock
 #define PERK_FAILING_MIND /datum/perk/oddity/failing_mind
