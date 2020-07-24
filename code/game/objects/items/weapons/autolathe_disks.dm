@@ -1075,6 +1075,21 @@
 		/datum/design/autolathe/ammo/hpistol_rubber,
 	)
 
+// Thorn and Rose Pack - both .40 and .35
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58
+	disk_name = "Absolute Armory - Thron and Rose Handgun Pack"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/mk58,
+		/datum/design/autolathe/gun/mk58_wood,
+		/datum/design/autolathe/ammo/pistol_practice,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/magnum_practice,
+		/datum/design/autolathe/ammo/magnum_rubber,
+		)
+
 
 // .40 REVOLVERS
 
@@ -1135,18 +1150,6 @@
 		/datum/design/autolathe/gun/ladon,
 		/datum/design/autolathe/ammo/magnum,
 		/datum/design/autolathe/ammo/magnum_lethal,
-		/datum/design/autolathe/ammo/magnum_rubber,
-		)
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58
-	disk_name = "Absolute Armory - .40 Auto-Mag MK58 Handgun Pack"
-	icon_state = "neotheology"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/mk58,
-		/datum/design/autolathe/gun/mk58_wood,
-		/datum/design/autolathe/ammo/magnum_practice,
 		/datum/design/autolathe/ammo/magnum_rubber,
 		)
 
