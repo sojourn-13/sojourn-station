@@ -103,21 +103,6 @@
 				del(src)
 				return
 
-/obj/machinery/chemical_dispenser/attackby(obj/item/I, mob/living/user)
-	..()
-	if(istype(I, /obj/item/weapon/tool/multitool) && length(hacked_reagents))
-		hackedcheck = !hackedcheck
-		if(!hackedcheck)
-			to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
-			dispensable_reagents += hacked_reagents
-			SSnano.update_uis(src)
-
-		else
-			to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
-			dispensable_reagents -= hacked_reagents
-			SSnano.update_uis(src)
-
-
 /obj/machinery/chemical_dispenser/ui_data()
 	var/list/data = list()
 	data["amount"] = amount
@@ -197,6 +182,21 @@
 
 	if(default_part_replacement(I, user))
 		return
+
+	if(istype(I, /obj/item/weapon/tool/multitool) && length(hacked_reagents))
+		hackedcheck = !hackedcheck
+		if(!hackedcheck)
+			to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
+			dispensable_reagents += hacked_reagents
+			SSnano.update_uis(src)
+			return
+
+		else
+			to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
+			dispensable_reagents -= hacked_reagents
+			SSnano.update_uis(src)
+			return
+
 
 	var/obj/item/weapon/reagent_containers/B = I
 	if(beaker)
