@@ -109,13 +109,11 @@
 		hackedcheck = !hackedcheck
 		if(!hackedcheck)
 			to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
-			ui_title = "Chem Dispenser 5000+" //So we can tell
 			dispensable_reagents += hacked_reagents
 			SSnano.update_uis(src)
 
 		else
 			to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
-			ui_title = "Chem Dispenser 5000"
 			dispensable_reagents -= hacked_reagents
 			SSnano.update_uis(src)
 
@@ -319,13 +317,11 @@
 		hackedcheck = !hackedcheck
 		if(!hackedcheck)
 			to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
-			ui_title = "Chem Dispenser 9000+" //So we can tell
 			dispensable_reagents += hacked_reagents
 			SSnano.update_uis(src)
 
 		else
 			to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
-			ui_title = "Chem Dispenser 9000"
 			dispensable_reagents -= hacked_reagents
 			SSnano.update_uis(src)
 
@@ -345,18 +341,16 @@
 
 	hacked_reagents = list("fuel","cleaner","silicate","coolant") //So we have a reason to keep you
 
-/obj/machinery/chemical_dispenser/meds/attackby(obj/item/I, mob/living/user)
+/obj/machinery/chemical_dispenser/industrial/attackby(obj/item/I, mob/living/user)
 	..()
 	if(istype(I, /obj/item/weapon/tool/multitool) && length(hacked_reagents))
 		hackedcheck = !hackedcheck
 		if(!hackedcheck)
 			to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
-			ui_title = "Industrial Dispenser 5000" //So we can tell
 			dispensable_reagents += hacked_reagents
 			SSnano.update_uis(src)
 
 		else
 			to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
-			ui_title = "Industrial Dispenser 4835"
 			dispensable_reagents -= hacked_reagents
 			SSnano.update_uis(src)
