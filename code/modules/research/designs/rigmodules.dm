@@ -6,21 +6,18 @@
 	name = "trial autodoc module"
 	desc = "A complex surgery system for almost all your needs."
 	build_path = /obj/item/rig_module/autodoc
-	sort_string = "VDAAF"
 	category = "Medical"
 
 /datum/design/research/item/autodoc_commercial
 	name = "commercial autodoc module"
 	desc = "A complex surgery system for almost all your needs."
 	build_path = /obj/item/rig_module/autodoc/commercial
-	sort_string = "VDAAG"
 	category = "Medical"
 
 /datum/design/research/item/chem_dispenser
 	name = "mounted chemical dispenser"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
 	build_path = /obj/item/rig_module/chem_dispenser
-	sort_string = "VDAAH"
 	category = "Medical"
 
 /datum/design/research/item/chem_injector
@@ -28,14 +25,12 @@
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
 	build_path = /obj/item/rig_module/chem_dispenser/injector
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 10, MATERIAL_PLASTIC = 10, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1, MATERIAL_DIAMOND = 1)
-	sort_string = "VDAAI"
 	category = "Medical"
 
 /datum/design/research/item/healthscanner
 	name = "mounted health scanner"
 	desc = "A hardsuit-mounted health scanner."
 	build_path = /obj/item/rig_module/device/healthscanner
-	sort_string = "VDAAJ"
 	category = "Medical"
 
 /datum/design/research/item/combat_injector
@@ -43,14 +38,12 @@
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
 	build_path = /obj/item/rig_module/chem_dispenser/combat
 	materials = list(MATERIAL_STEEL = 25, MATERIAL_GLASS = 15, MATERIAL_PLASTIC = 15, MATERIAL_GOLD = 2, MATERIAL_SILVER = 2, MATERIAL_DIAMOND = 1)
-	sort_string = "VDAAk"
 	category = "Medical"
 
 /datum/design/research/item/medhud
 	name = "hardsuit medical hud"
 	desc = "A simple medical status indicator for a hardsuit."
 	build_path = /obj/item/rig_module/vision/medhud
-	sort_string = "VDAAE"
 	category = "Medical"
 
 // Hardsuit weapons are balanced around its costs in a both points, time and costs of mats.
