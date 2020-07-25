@@ -163,25 +163,25 @@
 		//obj/item/weapon/gun/projectile/olivaw, //too big, use holster
 		//obj/item/weapon/gun/projectile/revolver/detective, //too big, use holster
 		/obj/item/weapon/gun/energy/gun/martin,
-		//obj/item/weapon/gun/energy/taser, //too big, use holster
 		/obj/item/taperoll
 	)
 
 /obj/item/weapon/storage/belt/security/tactical
 	name = "professional tactical belt"
-	desc = "Can hold various military and security equipment, more so than a standard belt."
+	desc = "Can hold various military and security equipment, more so than a standard belt or web harness."
 	icon_state = "tactical"
-	storage_slots = 9
+	storage_slots = 12
 
 /obj/item/weapon/storage/belt/security/neotheology
-	name = "tactical crusader belt"
-	desc = "Can hold various military and security equipment for the awakened crusader. Deus Vult."
+	name = "tactical absolutism belt"
+	desc = "Can hold various military and security equipment for the awakened crusader or skilled divisor. Deus Vult."
 	icon_state = "tactical_neotheology"
 	can_hold_extra = list(
 		/obj/item/weapon/book/ritual/cruciform,
 		/obj/item/weapon/implant/core_implant/cruciform,
 		/obj/item/weapon/tool/knife/neotritual,
-		/obj/item/weapon/gun/energy/crossbow
+		/obj/item/weapon/gun/energy/crossbow,
+		/obj/item/weapon/gun/energy/taser, //specially fitted to hold the counselor
 	)
 
 /obj/item/weapon/storage/belt/champion
@@ -195,7 +195,7 @@
 		)
 
 /obj/item/weapon/storage/belt/church
-	name = "Absolutism belt"
+	name = "absolutism belt"
 	desc = "Waist-held holy items."
 	icon_state = "ntbelt"
 

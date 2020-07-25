@@ -402,6 +402,7 @@ SUBSYSTEM_DEF(job)
 	if(C)
 		C.install_default_modules_by_job(job)
 		C.access.Add(job.cruciform_access)
+		C.install_default_modules_by_path(job)
 
 	BITSET(H.hud_updateflag, ID_HUD)
 	BITSET(H.hud_updateflag, SPECIALROLE_HUD)

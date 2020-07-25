@@ -23,6 +23,7 @@ var/list/disciples = list()
 
 /obj/item/weapon/implant/core_implant/cruciform/uninstall()
 	wearer.stats.removePerk(/datum/perk/sanityboost)
+	wearer.stats.addPerk(/datum/perk/unfinished_delivery)
 	return ..()
 
 /obj/item/weapon/implant/core_implant/cruciform/get_mob_overlay(gender, form)
@@ -160,21 +161,34 @@ var/list/disciples = list()
 	power = 60
 	max_power = 60
 	power_regen = 0.8
+	path = "tess"
 
 /obj/item/weapon/implant/core_implant/cruciform/lemniscate
 	name = "lemniscate cruciform"
 	icon_state = "cruciform_red"
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/tessellate
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/lemniscate
 	power = 50
 	max_power = 50
 	power_regen = 1.5
+	path = "lemn"
 
 /obj/item/weapon/implant/core_implant/cruciform/monomial
 	name = "monomial cruciform"
 	icon_state = "cruciform_yellow"
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/tessellate
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/monomial
 	power = 90
 	max_power = 90
 	power_regen = 0.1
+	path = "mono"
+
+/obj/item/weapon/implant/core_implant/cruciform/divisor
+	name = "divisor cruciform"
+	icon_state = "cruciform_orange"
+	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/divisor
+	power = 50
+	max_power = 50
+	power_regen = 0.4
+	path = "divi"

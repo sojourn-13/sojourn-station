@@ -89,6 +89,8 @@
 	item_state = "chaplain_hoodie"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	permeability_coefficient = 0.50
+	siemens_coefficient = 0.7
 	armor = list(
 		melee = 30,
 		bullet = 30,

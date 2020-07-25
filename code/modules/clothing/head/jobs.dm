@@ -191,3 +191,9 @@
 	desc = "A navy camo cover, fit for a soldier. The markings of a removed patch linger."
 	icon_state = "navyutility"
 	item_state = "navyutility"
+
+/obj/item/clothing/head/rank/divisor
+	name = "divisor cap"
+	desc = "A styled black divisor cap for showing everyone you are so steadfast in the name of god you don't need a helmet."
+	icon_state = "divisor_cap"
+	item_state = "divisor_cap"

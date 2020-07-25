@@ -1051,7 +1051,16 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	constant_metabolism = TRUE
 	scannable = 1
 
-/datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
+	M.adjustToxLoss(-8 * removed)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		if(istype(L))
+			if(BP_IS_ROBOTIC(L))
+				return
+			if(L.damage > 0)
+				L.damage = max(L.damage - 2 * removed, 0)
 	var/mob/living/carbon/C = M
 	if(istype(C) && C.metabolism_effects.addiction_list.len)
 		if(prob(90 + dose))

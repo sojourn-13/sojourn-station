@@ -20,6 +20,7 @@
 	var/list/upgrades = list()
 
 	var/list/access = list()	// Core implant can grant access levels to its user
+	var/path = ""
 
 /obj/item/weapon/implant/core_implant/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -199,6 +200,16 @@
 /obj/item/weapon/implant/core_implant/proc/install_default_modules_by_job(datum/job/J)
 	for(var/module_type in J.core_upgrades)
 		add_module(new module_type)
+
+/obj/item/weapon/implant/core_implant/proc/install_default_modules_by_path(/obj/item/weapon/implant/core_implant/cruciform)
+	if(path == "tess")
+		add_module(new CRUCIFORM_TESS)
+	else if(path == "lemn")
+		add_module(new CRUCIFORM_LEMN)
+	else if(path == "mono")
+		add_module(new CRUCIFORM_MONO)
+	else if(path == "divi")
+		add_module(new CRUCIFORM_DIVI)
 
 /obj/item/weapon/implant/core_implant/proc/process_modules()
 	for(var/datum/core_module/CM in modules)

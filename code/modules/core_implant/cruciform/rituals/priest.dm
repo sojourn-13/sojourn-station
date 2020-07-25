@@ -631,11 +631,12 @@
 	return TRUE
 
 /datum/ritual/cruciform/priest/new_cruciform
-	name = "Prayer of Reunion"
+	name = "Prayer of Reunion: Vinculum"
 	phrase = "Ego enim scio cogitationes quas cogito super vos, ait Dominus Deus: Non est nocere consilia, ut bene sit tibi, et tu non adflictionis ut dem vobis finem et patientiam. Requires the speaker to stand next to an altar."
-	desc = "Request a new cruciform in the event someone wishes to join the fold or the one they had was destroyed."
+	desc = "Request a new vinculum cruciform in the event someone wishes to join the fold or the one they had was destroyed."
 	power = 50
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a new cruciform slips out."
+	var/cruciform_type = /obj/item/weapon/implant/core_implant/cruciform
 
 /datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
@@ -647,6 +648,25 @@
 		return FALSE
 
 	if(altar)
-		new /obj/item/weapon/implant/core_implant/cruciform(altar.loc)
+		new cruciform_type(altar.loc)
 	return TRUE
 
+/datum/ritual/cruciform/priest/new_cruciform/tessellate
+	name = "Prayer of Reunion: Tessellate"
+	cruciform_type = /obj/item/weapon/implant/core_implant/cruciform/tessellate
+	desc = "Request a new tessellate cruciform in the event someone wishes to join the fold or the one they had was destroyed."
+
+/datum/ritual/cruciform/priest/new_cruciform/lemniscate
+	name = "Prayer of Reunion: Lemniscate"
+	cruciform_type = /obj/item/weapon/implant/core_implant/cruciform/lemniscate
+	desc = "Request a new lemniscate cruciform in the event someone wishes to join the fold or the one they had was destroyed."
+
+/datum/ritual/cruciform/priest/new_cruciform/monomial
+	name = "Prayer of Reunion: Monomial"
+	cruciform_type = /obj/item/weapon/implant/core_implant/cruciform/monomial
+	desc = "Request a new monomial cruciform in the event someone wishes to join the fold or the one they had was destroyed."
+
+/datum/ritual/cruciform/priest/new_cruciform/divisor
+	name = "Prayer of Reunion: Divisor"
+	cruciform_type = /obj/item/weapon/implant/core_implant/cruciform/divisor
+	desc = "Request a new divisor cruciform in the event someone wishes to join the fold or the one they had was destroyed."

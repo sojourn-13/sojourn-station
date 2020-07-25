@@ -5,7 +5,13 @@
 	icon_state = "optable-idle"
 	y_offset = 10
 
-	var/list/acceptable_items = list(/obj/item/weapon/implant/core_implant/cruciform)
+	var/list/acceptable_items = list(
+	/obj/item/weapon/implant/core_implant/cruciform,
+	/obj/item/weapon/implant/core_implant/cruciform/tessellate,
+	/obj/item/weapon/implant/core_implant/cruciform/lemniscate,
+	/obj/item/weapon/implant/core_implant/cruciform/monomial,
+	/obj/item/weapon/implant/core_implant/cruciform/divisor
+	)
 	var/list/available_slots = list()
 
 /obj/machinery/optable/altar/New()
