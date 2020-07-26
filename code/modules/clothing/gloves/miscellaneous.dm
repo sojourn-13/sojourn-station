@@ -103,6 +103,12 @@
 	germ_level = 0
 	price_tag = 50
 
+/obj/item/clothing/gloves/latex/nitrile
+	name = "nitrile gloves"
+	desc = "A pair of sterile nitrile gloves."
+	icon_state = "nitrile"
+	item_state = "nitrile"
+
 /obj/item/clothing/gloves/botanic_leather
 	desc = "A pair of leather work gloves that protect against floral dangers such as thorns and barbs."
 	name = "botanist's leather gloves"

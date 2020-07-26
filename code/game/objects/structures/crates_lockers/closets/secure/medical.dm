@@ -63,6 +63,9 @@
 			new /obj/item/clothing/under/scrubs/purple(src)
 			new /obj/item/clothing/head/surgery/purple(src)
 	new /obj/item/clothing/under/rank/medical(src)
+	new /obj/item/clothing/gloves/latex/nitrile(src)
+	new /obj/item/clothing/shoes/reinforced/medical(src)
+	new /obj/item/clothing/head/soft/medical(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
 	new /obj/item/clothing/shoes/color(src)
 	new /obj/item/device/radio/headset/headset_med(src)
@@ -95,7 +98,10 @@
 			new /obj/item/clothing/under/scrubs/purple(src)
 			new /obj/item/clothing/head/surgery/purple(src)
 	new /obj/item/clothing/under/rank/paramedic(src)
+	new /obj/item/clothing/shoes/reinforced/medical(src)
+	new /obj/item/clothing/head/soft/medical(src)
 	new /obj/item/device/flash(src)
+	new /obj/item/clothing/gloves/latex/nitrile(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/device/radio(src)
 	new /obj/item/weapon/tool/crowbar(src)
@@ -171,6 +177,8 @@
 	new /obj/item/device/flash(src)
 	new /obj/item/weapon/reagent_containers/hypospray(src)
 	new /obj/item/weapon/storage/pouch/medical_supply(src)
+	new /obj/item/clothing/shoes/reinforced/medical(src)
+	new /obj/item/clothing/gloves/latex/nitrile(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"
