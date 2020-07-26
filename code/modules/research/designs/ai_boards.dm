@@ -4,6 +4,18 @@
 	sort_string = "XAAAA"
 	category = CAT_AI
 
+//AI hand held stuff
+/datum/design/research/item/paicard
+	name = "'pAI', personal artificial intelligence device"
+	build_path = /obj/item/device/paicard
+	category = "Misc"
+
+/datum/design/research/item/intellicard
+	name = "'intelliCard', AI preservation and transportation system"
+	desc = "Allows for the construction of an intelliCard."
+	build_path = /obj/item/device/aicard
+	category = "Misc"
+
 
 /datum/design/research/aimodule
 	build_type = IMPRINTER

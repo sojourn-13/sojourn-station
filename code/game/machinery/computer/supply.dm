@@ -63,7 +63,7 @@
 
 		if(!requestonly)
 			dat += "<HR>\n"
-			dat += "<b>Guild Credits: [get_account_credits(department_accounts[DEPARTMENT_LSS])][CREDS]</b><BR><BR>"
+			dat += "<b>One-Star Credits: [get_account_credits(department_accounts[DEPARTMENT_LSS])][CREDS]</b><BR><BR>"
 
 		dat += "<A href='?src=\ref[src];order=categories'>[requestonly ? "Request" : "Order"] items</A><BR>"
 
