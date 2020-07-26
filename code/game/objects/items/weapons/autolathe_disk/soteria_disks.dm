@@ -15,6 +15,7 @@
 		/datum/design/autolathe/tool/hemostat,
 		/datum/design/autolathe/tool/bonesetter,
 		/datum/design/autolathe/container/syringe,
+		/datum/design/autolathe/container/syringe/large,
 		/datum/design/autolathe/container/vial,
 		/datum/design/autolathe/container/beaker,
 		/datum/design/autolathe/container/beaker_large,

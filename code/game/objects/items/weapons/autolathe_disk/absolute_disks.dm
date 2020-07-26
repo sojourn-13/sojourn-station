@@ -125,7 +125,7 @@
 
 // Thorn and Rose Pack - both .40 and .35
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58
-	disk_name = "Absolute Armory - Thron and Rose Handgun Pack"
+	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack"
 	icon_state = "neotheology"
 
 	license = 8
@@ -160,7 +160,7 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/taser,
-		/datum/design/autolathe/cell/small/high,
+		/datum/design/autolathe/cell/medium/high,
 	)
 
 // ENERGY ARMS

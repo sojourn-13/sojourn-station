@@ -19,6 +19,8 @@
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
 	id_type = /obj/item/weapon/card/id/cmo
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
+	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
+	belt = /obj/item/weapon/storage/belt/medical/
 
 /decl/hierarchy/outfit/job/medical/doctor
 	name = OUTFIT_JOB_NAME("Soteria - Medical Doctor")
@@ -26,6 +28,8 @@
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	l_hand = /obj/item/weapon/storage/firstaid/adv
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
+	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
+	belt = /obj/item/weapon/storage/belt/medical/
 
 /decl/hierarchy/outfit/job/medical/orderly
 	name = OUTFIT_JOB_NAME("Soteria - Orderly")
@@ -34,6 +38,7 @@
 	pda_type = /obj/item/modular_computer/pda/science/medical
 	suit =  /obj/item/clothing/suit/armor/vest
 	head = /obj/item/clothing/head/surgery
+	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
 	backpack_contents = list(/obj/item/weapon/gun/energy/stunrevolver = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/handcuffs = 2, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/device/flash = 1)
 
 /decl/hierarchy/outfit/job/medical/orderly/New()
@@ -44,6 +49,7 @@
 	name = OUTFIT_JOB_NAME("Soteria - Psychiatrist")
 	uniform = /obj/item/clothing/under/rank/psych
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
 
 /decl/hierarchy/outfit/job/medical/paramedic
 	name = OUTFIT_JOB_NAME("Soteria - Paramedic")
@@ -52,3 +58,4 @@
 	l_hand = /obj/item/weapon/storage/firstaid/adv
 	belt = /obj/item/weapon/storage/belt/medical/emt
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
