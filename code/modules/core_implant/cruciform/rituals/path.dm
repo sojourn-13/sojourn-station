@@ -262,7 +262,7 @@
 /datum/ritual/targeted/cruciform/divisor/spawn_con
 	name = "Canticle of Defense"
 	phrase = "Sed Dominus autem mihi astitit, et confortavit me, ut per me prædicatio impleatur, et nuntius ut audirent eum omnes gentes."
-	desc = "Request a taser, absolutism combat belt, and divisor garb from the church armory for defending yourself and your fellow disciples. Establishing the connection takes a lot of power and this litany may only be used once every four hours."
+	desc = "Request a taser, absolutism tactical belt, and divisor garb from the church armory for defending yourself and your fellow disciples. Establishing the connection takes a lot of power and this litany may only be used once every four hours."
 	power = 50
 	cooldown = TRUE
 	cooldown_time = 4 HOURS
