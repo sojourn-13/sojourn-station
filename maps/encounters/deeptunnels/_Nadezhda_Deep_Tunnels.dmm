@@ -533,7 +533,7 @@
 "km" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/violetcorener,/area/nadezhda/rnd/outpostgeneral)
 "kn" = (/obj/machinery/smartfridge,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/rnd/outpostbotany)
 "ko" = (/obj/structure/table/reinforced,/obj/machinery/centrifuge,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostbotany)
-"kp" = (/obj/machinery/chemical_dispenser/meds,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostbotany)
+"kp" = (/obj/machinery/chemical_dispenser,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostbotany)
 "kq" = (/obj/machinery/chem_master,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/rnd/outpostbotany)
 "kr" = (/obj/machinery/atmospherics/pipe/manifold/visible{dir = 8},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/rnd/outpostbotany)
 "ks" = (/turf/simulated/floor/asteroid,/area/mine/explored)

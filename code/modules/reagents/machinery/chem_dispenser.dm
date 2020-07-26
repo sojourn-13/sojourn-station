@@ -289,7 +289,7 @@
 			dispensable_reagents -= hacked_reagents
 			SSnano.update_uis(src)
 
-/obj/machinery/chemical_dispenser/meds
+/obj/machinery/chemical_dispenser/meds_admin_debug
 	name = "chem dispenser magic"
 	ui_title = "Chem Dispenser 9000"
 //Admin dispender gets nuffen
@@ -311,7 +311,7 @@
 		"clonexadone"
 	)
 
-/obj/machinery/chemical_dispenser/meds/attackby(obj/item/I, mob/living/user)
+/obj/machinery/chemical_dispenser/meds_admin_debug/attackby(obj/item/I, mob/living/user)
 	..()
 	if(istype(I, /obj/item/weapon/tool/multitool) && length(hacked_reagents))
 		hackedcheck = !hackedcheck
