@@ -647,5 +647,5 @@
 		return FALSE
 
 	if(altar)
-		new /obj/item/weapon/implant/core_implant/cruciform/vinculum(altar.loc)
+		new /obj/item/weapon/implant/core_implant/cruciform(altar.loc)
 	return TRUE
