@@ -190,3 +190,19 @@
 
 /datum/core_module/rituals/cruciform/crusader
 	ritual_types = list(/datum/ritual/cruciform/crusader)
+
+/datum/core_module/rituals/cruciform/tessellate
+	ritual_types = list(/datum/ritual/cruciform/tessellate,
+	/datum/ritual/targeted/cruciform/tessellate)
+
+/datum/core_module/rituals/cruciform/lemniscate
+	ritual_types = list(/datum/ritual/cruciform/lemniscate,
+	/datum/ritual/targeted/cruciform/lemniscate)
+
+/datum/core_module/rituals/cruciform/monomial
+	ritual_types = list(/datum/ritual/cruciform/monomial,
+	/datum/ritual/targeted/cruciform/monomial)
+
+/datum/core_module/rituals/cruciform/divisor
+	ritual_types = list(/datum/ritual/cruciform/divisor,
+	/datum/ritual/targeted/cruciform/divisor)

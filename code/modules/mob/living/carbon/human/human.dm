@@ -1192,6 +1192,7 @@ var/list/rank_prefix = list(\
 			if(mind)
 				C.install_default_modules_by_job(mind.assigned_job)
 				C.access.Add(mind.assigned_job.cruciform_access)
+				C.install_default_modules_by_path(mind.assigned_job)
 
 	else
 		var/organ_type = null
@@ -1212,6 +1213,7 @@ var/list/rank_prefix = list(\
 				C.activate()
 				C.install_default_modules_by_job(mind.assigned_job)
 				C.access.Add(mind.assigned_job.cruciform_access)
+				C.install_default_modules_by_path(mind.assigned_job)
 
 	species.organs_spawned(src)
 

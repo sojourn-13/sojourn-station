@@ -494,7 +494,7 @@
 		to_chat(user, SPAN_WARNING("[src] still charging!"))
 		return
 	if(!do_after(user, 2.5 SECONDS))
-		to_chat(src, SPAN_DANGER("You was interrupted!"))
+		to_chat(src, SPAN_DANGER("You were interrupted!"))
 		return
 
 	for(var/obj/structure/closet/L in hear(7, get_turf(src)))
@@ -649,7 +649,7 @@
 
 /obj/item/weapon/storage/pouch/nt_sheath
 	name = "Joyeuse sheath"
-	desc = "Can hold a Sword of Truth."
+	desc = "A specially designed sheathe for the joyeuse, of which is the only object that shall fit in it."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "nt_sheath0"
 	item_state = "nt_sheath0"

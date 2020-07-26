@@ -26,7 +26,7 @@
 /datum/category_item/setup_option/core_implant/cruciform/lemniscate
 	name = "Lemniscate Cruciform"
 	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Lemniscate, disciples who promote the idea that change is itself circular in \
-	nature. This has the smallest power reserves but the fastest charge of any cruciform."
+	nature and only through team work and the desire to work together can people prosper. This has the smallest power reserves but the fastest charge of any cruciform."
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/lemniscate
 
 /datum/category_item/setup_option/core_implant/cruciform/monomial
@@ -34,3 +34,9 @@
 	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Monomial, disciples who promote personal improvement and aesthetic living, \
 	focusing more on personal self improvement. This has the largest power reserves of any cruciform but has an incredibly slow charge."
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/monomial
+
+/datum/category_item/setup_option/core_implant/cruciform/divisor
+	name = "Divisor Cruciform"
+	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Divisor, disciples who promote security of the church and its members, \
+	those who walk this path desire to protect the flock through arms, functioning as an internal guard to the Absolute."
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/divisor

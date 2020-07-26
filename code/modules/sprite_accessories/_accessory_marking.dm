@@ -432,55 +432,55 @@
 /*Taj*/
 
 	taj_belly
-		name = "Taj Belly Fur"
+		name = "Feline Belly Fur"
 		icon_state = "taj_belly"
 		body_parts = list(BP_TORSO)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_bellyfull
-		name = "Taj Belly Fur Wide"
+		name = "Feline Belly Fur Wide"
 		icon_state = "taj_bellyfull"
 		body_parts = list(BP_TORSO)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_earsout
-		name = "Taj Outer Ear"
+		name = "Feline Outer Ear"
 		icon_state = "taj_earsout"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_earsin
-		name = "Taj Inner Ear"
+		name = "Feline Inner Ear"
 		icon_state = "taj_earsin"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_nose
-		name = "Taj Nose Color"
+		name = "Feline Nose Color"
 		icon_state = "taj_nose"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_crest
-		name = "Taj Chest Fur Crest"
+		name = "Feline Chest Fur Crest"
 		icon_state = "taj_crest"
 		body_parts = list(BP_TORSO)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_muzzle
-		name = "Taj Muzzle Color"
+		name = "Feline Muzzle Color"
 		icon_state = "taj_muzzle"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_face
-		name = "Taj Cheeks Color"
+		name = "Feline Cheeks Color"
 		icon_state = "taj_face"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)
 
 	taj_all
-		name = "Taj All Head"
+		name = "Feline All Head"
 		icon_state = "taj_all"
 		body_parts = list(BP_HEAD)
 		species_allowed = list(SPECIES_TAJ)

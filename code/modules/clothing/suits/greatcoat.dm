@@ -102,6 +102,26 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/greatcoat/divisor
+	name = "divisor greatcoat"
+	desc = "A durable greatcoat designed for protection in mind. It has armor plating woven into the interior and comes with the same protection other church armor does."
+	icon_state = "divisor_coat"
+	item_state = "divisor_coat"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(
+		melee = 30,
+		bullet = 30,
+		energy = 10,
+		bomb = 30,
+		bio = 100,
+		rad = 100
+	)
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
 /obj/item/clothing/suit/greatcoat/general
 	name = "grey greatcoat"
 	desc = "A grey greatcoat. It's thick and insulated with furs, it makes you feel snug and warm."
