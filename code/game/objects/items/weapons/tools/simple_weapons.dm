@@ -17,6 +17,21 @@
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	var/icon/broken_outline = icon('icons/obj/drinks.dmi', "broken")
 
+/obj/item/weapon/tool/nailstick
+	name = "nailed stick"
+	desc = "Stick with some nails in it. Looks sharp enough."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "hm_spikeclub"
+	item_state = "hm_spikeclub"
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_PAINFUL
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 2)
+	attack_verb = list("beaten", "slammed", "smacked", "struck", "battered")
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
+	max_upgrades = 5
+	tool_qualities = list(QUALITY_HAMMERING = 10)
+
 /obj/item/weapon/tool/hatchet
 	name = "hatchet"
 	desc = "A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood."
@@ -174,6 +189,23 @@
 	slot_flags = SLOT_BACK
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 15, QUALITY_SAWING = 10)
+
+//Flails
+/obj/item/weapon/tool/chainofcommand
+	name = "chain of command"
+	desc = "A tool used by great men to placate the frothing masses."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "chain"
+	item_state = "chain"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_DANGEROUS
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 4)
+	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
+	max_upgrades = 2
+	tool_qualities = list(QUALITY_HAMMERING = 5)
 
 //Swords
 

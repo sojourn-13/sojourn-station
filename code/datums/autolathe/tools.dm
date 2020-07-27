@@ -111,6 +111,10 @@
 	name = "hatchet"
 	build_path = /obj/item/weapon/tool/hatchet
 
+/datum/design/autolathe/tool/hammer
+	name = "hammer"
+	build_path = /obj/item/weapon/tool/hammer
+
 /datum/design/autolathe/tool/minihoe
 	name = "mini hoe"
 	build_path = /obj/item/weapon/tool/minihoe

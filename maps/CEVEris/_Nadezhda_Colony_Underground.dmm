@@ -7574,7 +7574,7 @@
 "cPH" = (/obj/machinery/power/apc{dir = 8; name = "West APC"; pixel_x = -28; pixel_y = 0},/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/robotics)
 "cPI" = (/obj/machinery/computer/aifixer{dir = 8},/obj/machinery/camera/network/command{dir = 8},/turf/simulated/floor/tiled/steel/gray_platform,/area/turret_protected/ai_upload)
 "cPJ" = (/obj/structure/table/reinforced,/obj/item/weapon/aiModule/eris,/turf/simulated/floor/bluegrid,/area/turret_protected/ai_server_room)
-"cPK" = (/obj/structure/closet/secure_closet/reinforced/captains,/obj/item/weapon/pinpointer,/obj/item/weapon/melee/chainofcommand,/obj/item/weapon/tool/sword/saber,/obj/item/clothing/accessory/holster/saber,/turf/simulated/floor/carpet/turcarpet,/area/nadezhda/command/captain/quarters)
+"cPK" = (/obj/structure/closet/secure_closet/reinforced/captains,/obj/item/weapon/pinpointer,/obj/item/weapon/tool/chainofcommand,/obj/item/weapon/tool/sword/saber,/obj/item/clothing/accessory/holster/saber,/turf/simulated/floor/carpet/turcarpet,/area/nadezhda/command/captain/quarters)
 "cPL" = (/obj/structure/table/reinforced,/obj/item/weapon/aiModule/corp,/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/bluegrid,/area/turret_protected/ai_server_room)
 "cPM" = (/obj/machinery/ai_slipper{icon_state = "motion0"},/turf/simulated/wall/r_wall,/area/turret_protected/ai_server_room)
 "cPN" = (/obj/machinery/cryopod,/turf/simulated/floor/tiled/steel/gray_platform,/area/nadezhda/crew_quarters/sleep/cryo)

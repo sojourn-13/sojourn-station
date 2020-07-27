@@ -7,6 +7,7 @@
 	designs = list(
 		//Basic Tools
 		/datum/design/autolathe/tool/hatchet,
+		/datum/design/autolathe/tool/hammer,
 		/datum/design/autolathe/tool/minihoe,
 		/datum/design/autolathe/tool/ducttape,
 		/datum/design/autolathe/tool/knife,

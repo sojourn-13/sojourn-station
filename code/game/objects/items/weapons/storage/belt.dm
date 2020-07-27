@@ -123,7 +123,21 @@
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/weapon/extinguisher/mini,
 		/obj/item/tape/medical,
-		/obj/item/device/flash
+		/obj/item/device/flash,
+		/obj/item/weapon/extinguisher/mini,
+		/obj/item/stack/nanopaste,
+		/obj/item/bodybag,
+		/obj/item/weapon/tool/bonesetter,
+		/obj/item/weapon/tool/scalpel,
+		/obj/item/weapon/tool/scalpel/advanced,
+		/obj/item/weapon/tool/scalpel/laser,
+		/obj/item/weapon/tool/surgicaldrill,
+		/obj/item/weapon/tool/cautery,
+		/obj/item/weapon/tool/retractor,
+		/obj/item/weapon/tool/saw/circular,
+		/obj/item/weapon/tool/hemostat,
+		/obj/item/weapon/reagent_containers/pill,
+		/obj/item/weapon/storage/pill_bottle,
 	)
 
 /obj/item/weapon/storage/belt/medical/emt

@@ -396,7 +396,7 @@
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
-/obj/item/projectile/bullet/lrifle/railgun
+/obj/item/projectile/bullet/hrifle/railgun
 	can_ricochet = FALSE
 	icon_state = "toxin"
 

@@ -34,6 +34,10 @@
 	name = "syringe"
 	build_path = /obj/item/weapon/reagent_containers/syringe
 
+/datum/design/autolathe/container/syringe/large
+	name = "large syringe"
+	build_path = /obj/item/weapon/reagent_containers/syringe/large
+
 /datum/design/autolathe/container/syringegun_ammo
 	name = "syringe gun cartridge"
 	build_path = /obj/item/weapon/syringe_cartridge
