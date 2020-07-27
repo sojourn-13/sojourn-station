@@ -80,7 +80,7 @@
 
 
 /obj/random/mob/roomba
-	name = "random roomba"
+	name = "random greyson bot"
 	icon_state = "hostilemob-black"
 	has_postspawn = TRUE
 	alpha = 128
