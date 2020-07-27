@@ -259,14 +259,15 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 		M.add_chemical_effect(CE_PULSE, -2)
 
 /datum/reagent/medicine/clonexadone
-	name = "Clonexadone"
+	name = "Cronexidone"
 	id = "clonexadone"
-	description = "A liquid compound similar to that used in the cloning process. Can be used to 'finish' the cloning process when used in conjunction with a cryo tube."
+	description = "A liquid compound sthat is in all ways superior to cryoxadone. Can be used to treat severe clone damage, enetic mutation, and repair even dead bodies when used in conjunction with a cryo tube."
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#80BFFF"
 	metabolism = REM * 0.5
 	scannable = 1
+	affects_dead = 1 //This can even heal dead people.
 
 /datum/reagent/medicine/clonexadone/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(M.bodytemperature < 170)
@@ -719,7 +720,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/kyphotorin
 	name = "Kyphotorin"
 	id = "kyphotorin"
-	description = "Allows patient to grow back limbs. Extremely painful to user and needs constant medical attention when applied."
+	description = "A strange chemical that allows a patient to regrow organic limbs, it may take awhile to work and requires use of a cryo pod. The process is extremely painful and may damage the body."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#7d88e6"
@@ -727,7 +728,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 
 /datum/reagent/medicine/kyphotorin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	var/mob/living/carbon/human/H = M
-	if(istype(H))
+	if(istype(H) && (M.bodytemperature < 170))
 		if(prob(0.5 * effect_multiplier + dose) || dose == overdose)
 			var/list/missingLimbs = list()
 			for(var/name in BP_ALL_LIMBS)
@@ -739,7 +740,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 				M.pain(luckyLimbName, 100, TRUE)
 				dose = 0
 	if(prob(10))
-		M.take_organ_damage(pick(0,5))
+		M.take_organ_damage(pick(0,15))
 
 /datum/reagent/medicine/kyphotorin/overdose(var/mob/living/carbon/M, var/alien)
 	M.adjustCloneLoss(4)

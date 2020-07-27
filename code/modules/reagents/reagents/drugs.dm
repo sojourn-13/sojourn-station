@@ -1,6 +1,7 @@
 /* Drugs */
 /datum/reagent/drug
 	reagent_type = "Drug"
+	scannable = 1
 
 	var/sanity_gain
 

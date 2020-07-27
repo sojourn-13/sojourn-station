@@ -69,6 +69,9 @@
 		go_out()
 
 /obj/machinery/atmospherics/unary/cryo_cell/attack_hand(mob/user)
+	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT))
+		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
+		return
 	ui_interact(user)
 
  /**

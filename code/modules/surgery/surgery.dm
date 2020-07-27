@@ -6,7 +6,7 @@
 	var/required_tool_quality = null
 	var/target_organ_type = /obj/item/organ/external
 
-	var/difficulty = FAILCHANCE_NORMAL
+	var/difficulty = FAILCHANCE_HARD
 	var/required_stat = STAT_BIO
 	var/duration = 60
 
