@@ -637,7 +637,7 @@
 	power = 50
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a new cruciform slips out."
 
-/datum/ritual/cruciform/priest/new_cruciform_vinculum/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
 
 	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS

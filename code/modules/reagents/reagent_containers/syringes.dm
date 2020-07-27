@@ -224,7 +224,7 @@
 		return
 
 	var/rounded_vol
-	if( name == "syringe")
+	if(/obj/item/weapon/reagent_containers/syringe)
 		if(reagents && reagents.total_volume)
 			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)
 			var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe[rounded_vol]")
@@ -245,7 +245,8 @@
 					injoverlay = "inject"
 			add_overlay(injoverlay)
 			update_wear_icon()
-	if( name == "Large syringe")
+
+	else if(/obj/item/weapon/reagent_containers/syringe/large)
 		if(reagents && reagents.total_volume)
 			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)
 			var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe-[rounded_vol]")
@@ -339,7 +340,7 @@
 	..()
 
 /obj/item/weapon/reagent_containers/syringe/large
-	name = "Large syringe"
+	name = "large syringe"
 	desc = "A large syringe for those patients who needs a little more"
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_-0"

@@ -11,6 +11,7 @@
 	metabolism = REM * 0.05 // 0.01 by default. They last a while and slowly kill you.
 	var/strength = 0.05 // How much damage it deals per unit
 	reagent_type = "Toxin"
+	scannable = 1
 
 /datum/reagent/toxin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(strength)
