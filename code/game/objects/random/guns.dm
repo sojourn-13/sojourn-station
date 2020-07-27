@@ -7,6 +7,8 @@
 	return pickweight(list(/obj/item/weapon/gun/projectile/mk58 = 1,\
 				//obj/item/weapon/gun/projectile/mk58/wood = 1,
 				//obj/item/weapon/gun/projectile/revolver/detective = 4,
+				/obj/item/weapon/gun/energy/shrapnel = 4,
+				/obj/item/weapon/gun/energy/lasersmg = 3,
 				/obj/item/weapon/gun/projectile/giskard = 2,\
 				/obj/item/weapon/gun/projectile/boltgun/sa = 3,\
 				//obj/item/weapon/gun/projectile/boltgun/scout/light = 2,

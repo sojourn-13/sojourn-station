@@ -21,6 +21,9 @@
 /obj/item/projectile/beam/weak
 	damage = 20
 
+/obj/item/projectile/beam/weak/smg
+	damage = 10
+
 /obj/item/projectile/beam/weak/lethal
 	damage = 30
 	armor_penetration = -25
