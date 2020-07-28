@@ -122,7 +122,7 @@
 		var/datum/category_item/setup_option/option = get_option(category)
 		if(!option)
 			CRASH("Option [category] could not be found through get_option()")
-		if(option.allow_modifications)
+		if(!option.allow_modifications)
 			return FALSE
 	return TRUE
 
