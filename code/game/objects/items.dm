@@ -71,6 +71,7 @@
 	//Does not affect damage dealt to mobs
 
 	var/list/item_upgrades = list()
+	var/list/upgrade_type = list()
 	var/max_upgrades = 3
 	var/list/prefixes = list()
 
