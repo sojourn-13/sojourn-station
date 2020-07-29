@@ -22,8 +22,9 @@
 	I.upgrades = list(
 		UPGRADE_DEGRADATION_MULT = 0.65,
 		UPGRADE_FORCE_MOD = 1,
+		upgrade_type = list("stick")
 		)
-	I.upgrade_type = list("stick")
+
 	I.required_qualities = list(QUALITY_BOLT_TURNING,QUALITY_PRYING, QUALITY_SAWING,QUALITY_SHOVELING,QUALITY_DIGGING,QUALITY_EXCAVATION)
 	I.prefix = "braced"
 
@@ -49,6 +50,7 @@
 	name = "reinforced plating"
 	desc = "A sturdy bit of plasteel that can be bolted onto any tool to protect it. Tough, but bulky."
 	icon_state = "plate"
+
 
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 2) //steel to compensate for metal rods used in crafting
 
@@ -134,7 +136,6 @@
 	UPGRADE_COLOR = "#FF4444",
 	upgrade_type = list("red_paint")
 	)
-	I.bolt = TRUE
 	I.prefix = "red"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
@@ -153,7 +154,6 @@
 	UPGRADE_FORCE_MULT = 1.15,
 	upgrade_type = list("whetstone")
 	)
-	I.bolt = TRUE
 	I.required_qualities = list(QUALITY_CUTTING,QUALITY_SAWING, QUALITY_SHOVELING, QUALITY_WIRE_CUTTING)
 	I.prefix = "sharpened"
 
@@ -370,8 +370,8 @@
 	UPGRADE_HEALTH_THRESHOLD = -20,
 	UPGRADE_MAXUPGRADES = 3,
 	upgrade_type = list("expansion"),
+	bolt = TRUE
 	)
-	I.bolt = TRUE
 	I.prefix = "custom"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 

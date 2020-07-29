@@ -105,9 +105,10 @@
 
 		//No using multiples types of the same upgrade
 		for (var/obj/item/I in T.upgrade_type)
-			if (I.type == parent.type)
+			if (I.upgrade_type == parent.upgrade_type)
 				to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
 				return FALSE
+
 
 		return TRUE
 	if (istype(A, /obj/item/clothing/suit/armor))
@@ -168,10 +169,6 @@
 		return
 	if(istype(holder, /obj/item/weapon/tool))
 		var/obj/item/weapon/tool/T = holder
-
-		if(upgrades[upgrade_type])
-			T.upgrade_added += upgrades[upgrade_added]
-
 		if(upgrades[UPGRADE_PRECISION])
 			T.precision += upgrades[UPGRADE_PRECISION]
 		if(upgrades[UPGRADE_WORKSPEED])
@@ -269,5 +266,4 @@
 	w_class = ITEM_SIZE_SMALL
 	price_tag = 200
 	//What type of upgrade is this? - Used to prevent same type mixing
-	var/list/upgrade_added = list()
-
+	var/list/upgrade_type = list()
