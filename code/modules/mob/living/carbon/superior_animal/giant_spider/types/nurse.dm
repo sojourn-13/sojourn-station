@@ -130,12 +130,9 @@
 										continue
 									large_cocoon = 1
 
-									if (istype(M, /mob/living/carbon/human))
-										var/mob/living/carbon/human/H = M
-										if (H.get_blood_volume() >= 1)
-											src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
-											H.drip_blood(H.species.blood_volume)
-											fed++
+									if (istype(M, /mob/living))
+										src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
+										fed++
 
 									C = C || new(targetTurf)
 									M.forceMove(C)

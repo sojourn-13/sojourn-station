@@ -261,7 +261,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/clonexadone
 	name = "Cronexidone"
 	id = "clonexadone"
-	description = "A liquid compound sthat is in all ways superior to cryoxadone. Can be used to treat severe clone damage, enetic mutation, and repair even dead bodies when used in conjunction with a cryo tube."
+	description = "A liquid compound that is in all ways superior to cryoxadone. Can be used to treat severe clone damage, genetic mutation, and repair even dead bodies when used in conjunction with a cryo tube."
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#80BFFF"

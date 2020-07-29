@@ -19,7 +19,7 @@ Used In File(s): \code\game\machinery\cryo.dm
 			{{/if}}
 		</div>
 	
-		{{if data.occupant.stat < 2}}
+		{{if data.occupant.stat}}
 			<div class="line">
 				<div class="statusLabel">Health:</div>
 				{{:helper.displayBar(data.occupant.health, 0, data.occupant.maxHealth, data.occupant.health >= 0 ? 'good' : 'average', helper.round(data.occupant.health))}}

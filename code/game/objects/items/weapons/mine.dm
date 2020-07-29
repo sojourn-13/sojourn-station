@@ -6,6 +6,7 @@
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 30)
 	matter_reagents = list("fuel" = 40)
+	layer = ABOVE_OBJ_LAYER
 
 	//var/obj/item/device/assembly_holder/detonator = null
 
