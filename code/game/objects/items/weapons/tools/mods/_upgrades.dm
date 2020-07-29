@@ -26,6 +26,12 @@
 	//Actual effects of upgrades
 	var/list/upgrades = list() //variable name(string) -> num
 
+//What type of mod we are, used in checking.
+	var/list/tool_mod_type = list()
+
+	//If the tool mod cant be removed
+	var/bolt = FALSE
+
 /datum/component/item_upgrade/Initialize()
 	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
 	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
@@ -93,11 +99,20 @@
 			if(T.cell)
 				to_chat(user, SPAN_WARNING("Remove the cell from the tool first!"))
 				return FALSE
+
 		//No using multiples of the same upgrade
 		for (var/obj/item/I in T.item_upgrades)
-			if (I.type == parent.type)
+			if (I. == parent.type)
 				to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
 				return FALSE
+
+		//No using multiples of the same upgrade
+		var/list/mods_overlap = T.tool_mod_index & tool_mod_type
+		if(mods_overlap.len)
+			to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
+			return FALSE
+
+
 		return TRUE
 	if (istype(A, /obj/item/clothing/suit/armor))
 		var/obj/item/clothing/suit/armor/T = A
@@ -141,8 +156,13 @@
 	A.refresh_upgrades()
 	return TRUE
 
-/datum/component/item_upgrade/proc/uninstall(var/obj/item/I)
+/datum/component/item_upgrade/proc/uninstall(var/obj/item/I, var/mob/living/user)
 	var/obj/item/P = parent
+
+	if(bolt)
+		to_chat(user, SPAN_WARNING("This tool mod is bolted to the tool!"))
+		return FALSE
+
 	I.item_upgrades -= P
 	P.forceMove(get_turf(I))
 	UnregisterSignal(I, COMSIG_APPVAL)
@@ -189,6 +209,9 @@
 					prefix = "large-cell"
 				if(/obj/item/weapon/cell/small)
 					T.suitable_cell = /obj/item/weapon/cell/medium
+
+		T.tool_mod_index += tool_mod_type
+
 		T.prefixes |= prefix
 	else if(istype(holder, /obj/item/clothing/suit/armor))
 		var/obj/item/clothing/suit/armor/T = holder

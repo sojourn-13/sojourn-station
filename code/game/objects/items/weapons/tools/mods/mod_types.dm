@@ -23,7 +23,7 @@
 		UPGRADE_DEGRADATION_MULT = 0.65,
 		UPGRADE_FORCE_MOD = 1,
 		)
-
+	I.tool_mod_type = list("stick")
 	I.required_qualities = list(QUALITY_BOLT_TURNING,QUALITY_PRYING, QUALITY_SAWING,QUALITY_SHOVELING,QUALITY_DIGGING,QUALITY_EXCAVATION)
 	I.prefix = "braced"
 
@@ -41,6 +41,7 @@
 		UPGRADE_DEGRADATION_MULT = 0.65,
 		UPGRADE_HEALTH_THRESHOLD = 10
 		)
+	I.tool_mod_type = list("heatsink")
 	I.prefix = "heatsunk"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
@@ -60,6 +61,7 @@
 	UPGRADE_PRECISION = -5,
 	UPGRADE_BULK = 1,
 	UPGRADE_HEALTH_THRESHOLD = 10)
+	I.tool_mod_type = list("plating")
 	I.prefix = "reinforced"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
@@ -77,6 +79,7 @@
 	UPGRADE_PRECISION = 5,
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
+	I.tool_mod_type = list("guard")
 	I.required_qualities = list(QUALITY_CUTTING,QUALITY_DRILLING, QUALITY_SAWING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_WELDING, QUALITY_HAMMERING)
 	I.prefix = "shielded"
 
@@ -94,6 +97,7 @@
 	I.upgrades = list(
 	UPGRADE_WORKSPEED = 0.15
 	)
+	I.tool_mod_type = list("ergomomic_grip")
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 	I.prefix = "ergonomic"
 
@@ -109,6 +113,7 @@
 	I.upgrades = list(
 	UPGRADE_WORKSPEED = 0.25
 	)
+	I.tool_mod_type = list("ratchet")
 	I.required_qualities = list(QUALITY_BOLT_TURNING,QUALITY_SCREW_DRIVING)
 	I.prefix = "ratcheting"
 
@@ -126,6 +131,8 @@
 	UPGRADE_PRECISION = -10,
 	UPGRADE_COLOR = "#FF4444"
 	)
+	I.tool_mod_type = list("paint")
+	I.bolt = TRUE
 	I.prefix = "red"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
@@ -143,6 +150,8 @@
 	UPGRADE_PRECISION = 5,
 	UPGRADE_FORCE_MULT = 1.15
 	)
+	I.tool_mod_type = list("whetstone")
+	I.bolt = TRUE
 	I.required_qualities = list(QUALITY_CUTTING,QUALITY_SAWING, QUALITY_SHOVELING, QUALITY_WIRE_CUTTING)
 	I.prefix = "sharpened"
 
@@ -161,6 +170,7 @@
 	UPGRADE_DEGRADATION_MULT = 0.85,
 	UPGRADE_FORCE_MULT = 1.10,
 	)
+	I.tool_mod_type = list("diamond_blade")
 	I.required_qualities = list(QUALITY_CUTTING, QUALITY_SHOVELING, QUALITY_SAWING, QUALITY_WIRE_CUTTING, QUALITY_PRYING)
 	I.negative_qualities = list(QUALITY_WELDING, QUALITY_LASER_CUTTING)
 	I.prefix = "diamond-edged"
@@ -180,6 +190,7 @@
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_HEALTH_THRESHOLD = -10
 	)
+	I.tool_mod_type = list("oxyjet")
 	I.required_qualities = list(QUALITY_WELDING)
 	I.prefix = "oxyjet"
 
@@ -202,6 +213,7 @@
 	UPGRADE_PRECISION = -10,
 	UPGRADE_HEALTH_THRESHOLD = -10
 	)
+	I.tool_mod_type = list("moter") //Brrrrr
 	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_DRILLING, QUALITY_SAWING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_HAMMERING)
 	I.prefix = "high-power"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
@@ -218,7 +230,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.upgrades = list(
-	UPGRADE_PRECISION = 10)
+	UPGRADE_PRECISION = 10
+	)
+	I.tool_mod_type = list("laserpointer")
 	I.prefix = "laser-guided"
 
 //Fits onto generally small tools that require precision, especially surgical tools
@@ -235,6 +249,7 @@
 	I.upgrades = list(
 	UPGRADE_PRECISION = 10,
 	UPGRADE_HEALTH_THRESHOLD = 10)
+	I.tool_mod_type = list("stabilized_grip")
 	I.required_qualities = list(QUALITY_CUTTING,QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING)
 	I.prefix = "stabilized"
 
@@ -250,6 +265,7 @@
 	I.upgrades = list(
 	UPGRADE_PRECISION = 10
 	)
+	I.tool_mod_type = list("magbit")
 	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING)
 	I.prefix = "magnetic"
 
@@ -267,6 +283,7 @@
 	UPGRADE_BULK = 1,
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
+	I.tool_mod_type = list("ported_barrel")
 	I.required_qualities = list(QUALITY_WELDING)
 	I.prefix = "ported"
 
@@ -289,6 +306,7 @@
 	UPGRADE_HEALTH_THRESHOLD = -10,
 	UPGRADE_CELLPLUS = 1
 	)
+	I.tool_mod_type = list("cell_sizer")
 	I.prefix = "medium-cell"
 	I.req_fuel_cell = REQ_CELL
 
@@ -307,6 +325,7 @@
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_HEALTH_THRESHOLD = -10,
 	UPGRADE_MAXFUEL = 100)
+	I.tool_mod_type = list("fuel_tank", "fuel_holder")
 	I.prefix = "expanded"
 	I.req_fuel_cell = REQ_FUEL
 
@@ -326,6 +345,7 @@
 	UPGRADE_HEALTH_THRESHOLD = -20,
 	UPGRADE_MAXFUEL = 600
 	)
+	I.tool_mod_type = list("fuel_holder", "fuel_tank")
 	I.prefix = "holding"
 	I.req_fuel_cell = REQ_FUEL
 
@@ -346,6 +366,8 @@
 	UPGRADE_HEALTH_THRESHOLD = -20,
 	UPGRADE_MAXUPGRADES = 3
 	)
+	I.bolt = TRUE
+	I.tool_mod_type = list("expansionport")
 	I.prefix = "custom"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
@@ -366,6 +388,7 @@
 	UPGRADE_HEALTH_THRESHOLD = -10,
 	UPGRADE_SHARP = TRUE
 	)
+	I.tool_mod_type = list("spikes")
 	I.prefix = "spiked"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
@@ -384,9 +407,11 @@
 	UPGRADE_HEALTH_THRESHOLD = 5,
 	tool_qualities = list(QUALITY_HAMMERING = 10)
 	)
+	I.tool_mod_type = list("hammer")
 	I.prefix = "flattened"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 */
+
 //Vastly reduces tool sounds, for stealthy hacking
 /obj/item/weapon/tool_upgrade/augment/dampener
 	name = "aural dampener"
@@ -402,6 +427,7 @@
 	UPGRADE_HEALTH_THRESHOLD = -10,
 	UPGRADE_ITEMFLAGPLUS = SILENT
 	)
+	I.tool_mod_type = list("dampener")
 	I.prefix = "silenced"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
@@ -421,7 +447,30 @@
 	UPGRADE_WORKSPEED = 14,
 	UPGRADE_HEALTH_THRESHOLD = -10,
 	)
+	I.tool_mod_type = list("ai", "nano")
 	I.prefix = "intelligent"
+	I.req_fuel_cell = REQ_CELL
+
+/obj/item/weapon/tool_upgrade/augment/guild_ai_tool
+	name = "micro-integrated AI"
+	desc = "Smart AI will integrate itself into this tool with the aid of micro-technology and improve it.\
+	Do to its integrated laws, it fights against its user in combat."
+	icon_state = "ai_tool"
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 1)
+
+/obj/item/weapon/tool_upgrade/augment/guild_ai_tool/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.upgrades = list(
+	UPGRADE_BULK = 1,
+	UPGRADE_POWERCOST_MULT = 3.20,
+	UPGRADE_PRECISION = 5,
+	UPGRADE_WORKSPEED = 2,
+	UPGRADE_HEALTH_THRESHOLD = -60,
+	UPGRADE_FORCE_MULT = 0.10, //These AIs hate harm...
+	)
+	I.tool_mod_type = list("ai", "nano")
+	I.prefix = "smart"
 	I.req_fuel_cell = REQ_CELL
 
 /obj/item/weapon/tool_upgrade/augment/repair_nano
@@ -437,7 +486,67 @@
 	UPGRADE_DEGRADATION_MULT = 0.01,
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
+	I.tool_mod_type = list("nano", "ai")
 	I.prefix = "self-healing"
+
+// COMBO MODS
+// Two mods that are hacked together to save space but at a cost!
+/obj/item/weapon/tool_upgrade/combo/sound_sink
+	name = "sound-sunk"
+	desc = "An array of plasteel fins which dissipates heat mixed in with an aural dampener to both make the tool more quiet well helping with tool life."
+	icon_state = "heatsink"
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 6, MATERIAL_PLATINUM = 1)
+
+/obj/item/weapon/tool_upgrade/augment/sound_sink/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.upgrades = list(
+	UPGRADE_DEGRADATION_MULT = 0.75,
+	UPGRADE_WORKSPEED = -0.05, //Balance
+	UPGRADE_HEALTH_THRESHOLD = -3,
+	UPGRADE_COLOR = "#AAAAAA",
+	UPGRADE_ITEMFLAGPLUS = SILENT
+	)
+	I.tool_mod_type = list("heatsink", "dampener")
+	I.prefix = "soundsunk"
+
+/obj/item/weapon/tool_upgrade/combo/oxy_fuel
+	name = "oxy fuel"
+	desc = "Combing fuel storage with a oxyjet tank."
+	icon_state = "oxyjet"
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 6)
+
+/obj/item/weapon/tool_upgrade/augment/oxy_fuel/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.upgrades = list(
+	UPGRADE_BULK = 2,
+	UPGRADE_DEGRADATION_MULT = 3.15,
+	UPGRADE_FORCE_MULT = 1.10,
+	UPGRADE_WORKSPEED = 0.15,
+	UPGRADE_HEALTH_THRESHOLD = -30,
+	UPGRADE_MAXFUEL = 60) //40/60
+	I.tool_mod_type = list("fuel_tank", "fuel_holder", "oxyjet")
+	I.prefix = "oxyjet expanded"
+	I.req_fuel_cell = REQ_FUEL
+
+/obj/item/weapon/tool_upgrade/combo/supper_grip
+	name = "stabled ergonomic grip"
+	desc = "Combing fuel storage with a oxyjet tank."
+	icon_state = "ergonomic"
+	matter = list(MATERIAL_PLASTIC = 8)
+
+/obj/item/weapon/tool_upgrade/augment/supper_grip/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.upgrades = list(
+	UPGRADE_WORKSPEED = 0.15,
+	UPGRADE_PRECISION = 3,
+	UPGRADE_HEALTH_THRESHOLD = 3
+	)
+	I.tool_mod_type = list("ergomomic_grip", "stabilized_grip")
+	I.prefix = "stabled gripped"
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
 //Armor mods
 /obj/item/weapon/tool_upgrade/armor/melee

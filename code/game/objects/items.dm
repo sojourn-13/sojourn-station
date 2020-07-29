@@ -70,6 +70,9 @@
 	var/structure_damage_factor = STRUCTURE_DAMAGE_NORMAL	//Multiplier applied to the damage when attacking structures and machinery
 	//Does not affect damage dealt to mobs
 
+//What type of mod we are holding, used in checking.
+	var/list/tool_mod_index = list()
+
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
 	var/list/prefixes = list()

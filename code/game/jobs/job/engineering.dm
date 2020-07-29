@@ -32,6 +32,10 @@
 	)
 
 	known_recipes = list(
+			/datum/craft_recipe/guild/ai_tool,
+			/datum/craft_recipe/guild/oxy_fuel,
+			/datum/craft_recipe/guild/sound_sink,
+			/datum/craft_recipe/guild/grip,
 			/datum/craft_recipe/guild/melee,
 			/datum/craft_recipe/guild/bullet,
 			/datum/craft_recipe/guild/energy,
@@ -101,6 +105,10 @@
 	)
 
 	known_recipes = list(
+			//datum/craft_recipe/guild/ai_tool, //Only CRO and GM know this one
+			/datum/craft_recipe/guild/oxy_fuel,
+			/datum/craft_recipe/guild/sound_sink,
+			/datum/craft_recipe/guild/grip,
 			/datum/craft_recipe/guild/melee,
 			/datum/craft_recipe/guild/bullet,
 			/datum/craft_recipe/guild/energy,
@@ -112,6 +120,7 @@
 			/datum/craft_recipe/guild/technohelmet,
 			/datum/craft_recipe/guild/webbing
 			)
+
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,

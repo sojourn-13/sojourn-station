@@ -169,7 +169,6 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
-
 /datum/craft_recipe/weapon/nailed_bat
 	name = "nailed bat"
 	result = /obj/item/weapon/tool/nailstick

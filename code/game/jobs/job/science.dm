@@ -32,6 +32,11 @@
 		STAT_BIO = 25,
 	)
 
+	known_recipes = list(
+			/datum/craft_recipe/guild/ai_tool //Yes its "guild" but it fits for CRO
+			)
+
+
 	perks = list(/datum/perk/selfmedicated)
 
 	// TODO: enable after baymed
