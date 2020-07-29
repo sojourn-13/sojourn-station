@@ -124,3 +124,19 @@
 		"Red Dress"				=	/obj/item/clothing/under/dress/red
 	)
 	gear_tweaks += new /datum/gear_tweak/path(dress)
+
+/datum/gear/uniform/cyber
+	display_name = "augmented jumpsuit"
+	path = /obj/item/clothing/under/cyber
+
+/datum/gear/uniform/jersey
+	display_name = "church overalls"
+	path = /obj/item/clothing/under/jersey
+
+/datum/gear/uniform/churchsport
+	display_name = "church sport clothes"
+	path = /obj/item/clothing/under/rank/church/sport
+
+/datum/gear/uniform/churchnonrank
+	display_name = "church clothes"
+	path = /obj/item/clothing/under/rank/church

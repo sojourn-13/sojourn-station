@@ -858,8 +858,8 @@
 
 //Small plushies.
 /obj/item/toy/plushie
-	name = "diona nymph plushie"
-	desc = "A plushie of an adorable diona nymph!"
+	name = "bug plushie"
+	desc = "A plushie of an 'adorable' bug!"
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "nymphplushie"
 	var/phrase = "I don't want to exist anymore!"
