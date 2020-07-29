@@ -26,9 +26,6 @@
 	//Actual effects of upgrades
 	var/list/upgrades = list() //variable name(string) -> num
 
-	//If the tool mod cant be removed
-	var/bolt = FALSE
-
 /datum/component/item_upgrade/Initialize()
 	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
 	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
@@ -96,20 +93,11 @@
 			if(T.cell)
 				to_chat(user, SPAN_WARNING("Remove the cell from the tool first!"))
 				return FALSE
-
 		//No using multiples of the same upgrade
 		for (var/obj/item/I in T.item_upgrades)
 			if (I.type == parent.type)
 				to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
 				return FALSE
-
-		//No using multiples types of the same upgrade
-		for (var/obj/item/I in T.upgrade_type)
-			if (I.upgrade_type == parent.upgrade_type)
-				to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
-				return FALSE
-
-
 		return TRUE
 	if (istype(A, /obj/item/clothing/suit/armor))
 		var/obj/item/clothing/suit/armor/T = A
@@ -153,13 +141,8 @@
 	A.refresh_upgrades()
 	return TRUE
 
-/datum/component/item_upgrade/proc/uninstall(var/obj/item/I, var/mob/living/user)
+/datum/component/item_upgrade/proc/uninstall(var/obj/item/I)
 	var/obj/item/P = parent
-
-	if(bolt)
-		to_chat(user, SPAN_WARNING("This tool mod is bolted to the tool!"))
-		return FALSE
-
 	I.item_upgrades -= P
 	P.forceMove(get_turf(I))
 	UnregisterSignal(I, COMSIG_APPVAL)
@@ -265,5 +248,3 @@
 	force = WEAPON_FORCE_HARMLESS
 	w_class = ITEM_SIZE_SMALL
 	price_tag = 200
-	//What type of upgrade is this? - Used to prevent same type mixing
-	var/list/upgrade_type = list()
