@@ -14,10 +14,20 @@
 	melee_damage_upper = 10
 	poison_per_bite = 2
 	var/atom/cocoon_target
-	poison_type = "pararein"
+	poison_type = "stoxin"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
 	meat_amount = 3
 	var/fed = 0
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/midwife
+	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes and purple stripes on the back."
+	icon_state = "midwife"
+	icon_living = "midwife"
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	poison_type = "mutagen"
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/attemptAttackOnTarget()
 	var/target = ..()
