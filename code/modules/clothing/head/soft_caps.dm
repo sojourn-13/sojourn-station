@@ -120,7 +120,7 @@
 	desc = "It's a field cap for officers."
 	icon_state = "sargesoft"
 
-// S O T E R I A //m
+// S O T E R I A //
 
 /obj/item/clothing/head/soft/medical
 	name = "medical cap"
