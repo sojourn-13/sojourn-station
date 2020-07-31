@@ -227,7 +227,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord
 	name = "croaker lord"
-	desc = "Though physically imposing, it prefers to ambush its prey who draw close using a chameleon capable chitin."
+	desc = "The thing the 'frogs' eventually grow into, proving beyond doubt their alien nature. While one of the strongest monsters on the planet it isn't normally hostile unless it has a reason."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "leaper"
 	icon_living = "leaper"
