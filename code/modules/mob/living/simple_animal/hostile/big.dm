@@ -180,7 +180,7 @@
 
 /mob/living/simple_animal/hostile/nightmare
 	name = "nightmare stalker"
-	desc = "Though physically imposing, it prefers to ambush its prey who draw close using a chameleon capable chitin."
+	desc = "Though physically imposing, it prefers to ambush its prey who draw close using its chameleonic chitin and sound mimicry."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "arachnid"
 	icon_living = "arachnid"
@@ -196,9 +196,18 @@
 	pixel_x = -16
 	move_to_delay = 2
 	speak_emote = list("chitters", "sharpens its claws")
-	attack_sound = 'sound/weapons/slash.ogg'
+	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 	alpha = 15
 	faction = "stalker"
+
+/mob/living/simple_animal/hostile/nightmare/MoveToTarget()
+	..()
+	playsound(src, pick('sound/hallucinations/i_see_you2.ogg',
+						'sound/hallucinations/im_here1.ogg',
+						'sound/hallucinations/behind_you1.ogg',
+						'sound/hallucinations/over_here3.ogg',
+						'sound/hallucinations/over_here3.ogg',
+						 ), 200, 1)
 
 /mob/living/simple_animal/hostile/nightmare/AttackingTarget()
 	..()
@@ -236,7 +245,7 @@
 	move_to_delay = 4
 	speak_emote = list("looses a rumbling croak", "grumbles quietly")
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
-	faction = "lake"
+	faction = "pond"
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/AttackingTarget()
 	..()
