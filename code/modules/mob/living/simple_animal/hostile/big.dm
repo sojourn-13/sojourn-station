@@ -206,7 +206,7 @@
 						'sound/hallucinations/im_here1.ogg',
 						'sound/hallucinations/behind_you1.ogg',
 						'sound/hallucinations/over_here3.ogg',
-						'sound/hallucinations/over_here3.ogg',
+						'sound/hallucinations/turn_around1.ogg',
 						 ), 200, 1)
 
 /mob/living/simple_animal/hostile/nightmare/AttackingTarget()
