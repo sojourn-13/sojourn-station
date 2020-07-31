@@ -102,6 +102,7 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+//Credit to Drawsstuff for the coat mob icon only. The coat item icon, hat mob icon, and hat item icon were created by Kazkin via recoloring ERIS sprites.
 /obj/item/clothing/suit/greatcoat/divisor
 	name = "divisor greatcoat"
 	desc = "A durable greatcoat designed for protection in mind. It has armor plating woven into the interior and comes with the same protection other church armor does."
