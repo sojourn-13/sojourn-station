@@ -123,8 +123,8 @@
 		The LSS account represents the holdings of the local branch, and CEO.
 		He recieves no funding, infact later he will pay guild fees out of his earnings
 	*/
-	account_initial_balance = 7500
-	funding_type = FUNDING_NONE
+	account_initial_balance = 15000
+	funding_type = FUNDING_EXTERNAL
 
 /datum/department/prospector
 	name = "Prospectors"
