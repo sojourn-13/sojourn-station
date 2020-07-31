@@ -109,7 +109,7 @@
 	attacktext = "bitten"
 	attack_sound = 'sound/weapons/bite.ogg'
 	break_stuff_probability = 4
-	faction = "lake"
+	faction = "pond"
 	var/attack_reagent = "toxin"
 
 /mob/living/simple_animal/hostile/snake/AttackingTarget()
