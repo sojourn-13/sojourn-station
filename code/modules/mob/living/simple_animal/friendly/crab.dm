@@ -38,3 +38,37 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
+
+/mob/living/simple_animal/frog
+	name = "frog"
+	desc = "Ribbit!"
+	icon_state = "tinyfrog"
+	mob_size = MOB_TINY
+	speak_emote = list("ribbits")
+	emote_see = list("ribbits")
+	speak_chance = 1
+	turns_per_move = 5
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "stomps"
+	stop_automated_movement = 1
+	mob_size = 3
+	faction = "lake"
+
+/mob/living/simple_animal/frog/rare
+	name = "Pepe"
+	desc = "It's quite colorful but you can't help but feel he is incredibly smug."
+	icon_state = "rare_frog"
+	mob_size = MOB_TINY
+	speak_emote = list("ribbits smugly")
+	emote_see = list("ribbits smugly")
+	speak_chance = 1
+	turns_per_move = 5
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "stomps"
+	stop_automated_movement = 1
+	mob_size = 3
+	faction = "lake"
