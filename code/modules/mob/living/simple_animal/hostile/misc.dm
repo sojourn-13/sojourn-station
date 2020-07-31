@@ -86,3 +86,35 @@
 	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 1.5
+
+/mob/living/simple_animal/hostile/snake
+	name = "viper"
+	desc = "A ferocious, fang-bearing creature that resembles a snake. Surprisingly not venomous."
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "snake"
+	speak_chance = 0
+	turns_per_move = 5
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
+	response_help = "pets the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	speed = 12
+	maxHealth = 25
+	health = 25
+	aggro_vision_range = 1
+	vision_range = 1
+	harm_intent_damage = 8
+	melee_damage_lower = 4
+	melee_damage_upper = 7
+	attacktext = "bitten"
+	attack_sound = 'sound/weapons/bite.ogg'
+	break_stuff_probability = 4
+	faction = "lake"
+	var/attack_reagent = "toxin"
+
+/mob/living/simple_animal/hostile/snake/AttackingTarget()
+	. = ..()
+	if(attack_reagent && . && isliving(target_mob))
+		var/mob/living/L = target_mob
+		if(L.reagents)
+			L.reagents.add_reagent(attack_reagent, rand(3,5))

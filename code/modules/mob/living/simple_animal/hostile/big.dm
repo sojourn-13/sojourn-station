@@ -177,3 +177,78 @@
 	emote_see = list("shakes its head")
 	meat_amount = 10 //Infinite meat!
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+
+/mob/living/simple_animal/hostile/nightmare
+	name = "nightmare stalker"
+	desc = "Though physically imposing, it prefers to ambush its prey who draw close using a chameleon capable chitin."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "arachnid"
+	icon_living = "arachnid"
+	icon_dead = "arachnid_dead"
+	melee_damage_lower = 30
+	melee_damage_upper = 35
+	maxHealth = 600
+	health = 600
+	move_to_delay = 2
+	turns_per_move = 2
+	vision_range = 5
+	aggro_vision_range = 16
+	pixel_x = -16
+	move_to_delay = 2
+	speak_emote = list("chitters", "sharpens its claws")
+	attack_sound = 'sound/weapons/slash.ogg'
+	alpha = 15
+	faction = "stalker"
+
+/mob/living/simple_animal/hostile/nightmare/AttackingTarget()
+	..()
+	alpha = 255
+
+/mob/living/simple_animal/hostile/nightmare/LoseTarget()
+	..()
+	alpha = 15
+
+/mob/living/simple_animal/hostile/nightmare/LostTarget()
+	..()
+	alpha = 15
+
+/mob/living/simple_animal/hostile/nightmare/death()
+	..()
+	alpha = 255
+
+/mob/living/simple_animal/hostile/retaliate/croakerlord
+	name = "croaker lord"
+	desc = "Though physically imposing, it prefers to ambush its prey who draw close using a chameleon capable chitin."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "leaper"
+	icon_living = "leaper"
+	icon_dead = "leaper_dead"
+	melee_damage_lower = 50
+	melee_damage_upper = 60
+	maxHealth = 1200
+	health = 1200
+	move_to_delay = 4
+	turns_per_move = 4
+	vision_range = 16
+	aggro_vision_range = 16
+	stop_automated_movement_when_pulled = 0
+	pixel_x = -16
+	move_to_delay = 4
+	speak_emote = list("looses a rumbling croak", "grumbles quietly")
+	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
+	faction = "lake"
+
+/mob/living/simple_animal/hostile/retaliate/croakerlord/AttackingTarget()
+	..()
+	icon_state = "leaper_alert"
+	icon_living = "leaper_alert"
+
+/mob/living/simple_animal/hostile/retaliate/croakerlord/LoseTarget()
+	..()
+	icon_state = "leaper"
+	icon_living = "leaper"
+
+/mob/living/simple_animal/hostile/retaliate/croakerlord/LostTarget()
+	..()
+	icon_state = "leaper"
+	icon_living = "leaper"
