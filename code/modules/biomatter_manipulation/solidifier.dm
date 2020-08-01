@@ -16,6 +16,8 @@
 	idle_power_usage = 15
 	active_power_usage = 300
 
+	var/biomatter_per_sheet = BIOMATTER_PER_SHEET
+
 	circuit = /obj/item/weapon/circuitboard/neotheology/solidifier
 	var/active = FALSE
 	var/port_dir = NORTH
@@ -28,7 +30,7 @@
 
 /obj/machinery/biomatter_solidifier/RefreshParts()
 	for(var/obj/item/weapon/stock_parts/micro_laser/L in component_parts)
-		BIOMATTER_PER_SHEET -= (L.rating - 1) //So were back to 0
+		biomatter_per_sheet -= (L.rating - 1) //So were back to 0
 		//Alien parts would half the costs
 
 	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
@@ -51,10 +53,10 @@
 		if(!container)
 			abort("Container of liquid biomatter required.")
 		else
-			if(!container.reagents.has_reagent("biomatter", BIOMATTER_PER_SHEET))
+			if(!container.reagents.has_reagent("biomatter", biomatter_per_sheet))
 				abort("Insufficient amount of biomatter.")
 			else
-				container.reagents.remove_reagent("biomatter", BIOMATTER_PER_SHEET)
+				container.reagents.remove_reagent("biomatter", biomatter_per_sheet)
 				var/obj/item/stack/material/biomatter/current_stack
 				//if there any stacks here, let's check them
 				if(locate(/obj/item/stack/material/biomatter) in loc)
