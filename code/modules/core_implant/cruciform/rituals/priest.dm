@@ -632,8 +632,8 @@
 
 /datum/ritual/cruciform/priest/new_cruciform
 	name = "Prayer of Reunion"
-	phrase = "Ego enim scio cogitationes quas cogito super vos, ait Dominus Deus: Non est nocere consilia, ut bene sit tibi, et tu non adflictionis ut dem vobis finem et patientiam. Requires the speaker to stand next to an altar."
-	desc = "Request a new vinculum cruciform in the event someone wishes to join the fold or the one they had was destroyed. If the person followed a path, they'll need to wait return to the lower colony or wait until after the shift is over to be fully upgraded again."
+	phrase = "Ego enim scio cogitationes quas cogito super vos, ait Dominus Deus: Non est nocere consilia, ut bene sit tibi, et tu non adflictionis ut dem vobis finem et patientiam."
+	desc = "Request a new vinculum cruciform in the event someone wishes to join the fold or the one they had was destroyed. Requires the speaker to stand next to an altar. If the person followed a path, they'll need to wait return to the lower colony or wait until after the shift is over to be fully upgraded again."
 	power = 50
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a new cruciform slips out."
 
