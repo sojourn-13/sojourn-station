@@ -35,7 +35,7 @@
 		idle_power_usage -= (M.rating) //Has 2 manipulators
 
 	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
-		active_power_usage -= (B.rating x 10) //Has 2 bins, so level 1s are 280 and level 5s are 200 active power
+		active_power_usage -= (B.rating * 10) //Has 2 bins, so level 1s are 280 and level 5s are 200 active power
 
 /obj/machinery/biomatter_solidifier/update_icon()
 	if(active)
