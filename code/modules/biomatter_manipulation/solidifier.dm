@@ -13,7 +13,7 @@
 	density = TRUE
 	anchored = TRUE
 	use_power = 1
-	idle_power_usage = 5
+	idle_power_usage = 15
 	active_power_usage = 300
 
 	circuit = /obj/item/weapon/circuitboard/neotheology/solidifier
