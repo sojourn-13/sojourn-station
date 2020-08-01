@@ -26,6 +26,17 @@
 	. = ..()
 	add_overlay(image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir))
 
+/obj/machinery/biomatter_solidifier/RefreshParts()
+	for(var/obj/item/weapon/stock_parts/micro_laser/L in component_parts)
+		BIOMATTER_PER_SHEET -= (L.rating - 1) //So were back to 0
+		//Alien parts would half the costs
+
+	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+		idle_power_usage -= (M.rating) //Has 2 manipulators
+
+	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
+		active_power_usage -= (B.rating x 10) //Has 2 bins, so level 1s are 280 and level 5s are 200 active power
+
 /obj/machinery/biomatter_solidifier/update_icon()
 	if(active)
 		icon_state = initial(icon_state) + "_on"
@@ -102,6 +113,13 @@
 		to_chat(user, SPAN_NOTICE("You [active ? "turn [src] on" : "turn [src] off"]."))
 		playsound(src, 'sound/machines/click.ogg', 80, 1)
 		update_icon()
+
+/obj/machinery/biomatter_solidifier/attackby(obj/item/I, mob/user)
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
 
 
 /obj/machinery/biomatter_solidifier/proc/abort(var/msg)
