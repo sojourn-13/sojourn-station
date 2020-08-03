@@ -108,6 +108,9 @@ SUBSYSTEM_DEF(job)
 		if(job in command_positions) //If you want a command position, select it!
 			continue
 
+		if(job.is_restricted(player.client.prefs))
+			continue
+
 		if(jobban_isbanned(player, job.title))
 			Debug("GRJ isbanned failed, Player: [player], Job: [job.title]")
 			continue
@@ -347,10 +350,11 @@ SUBSYSTEM_DEF(job)
 			remembered_info += "<b>Your department's account number is:</b> #[department_account.account_number]<br>"
 			remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"
 			remembered_info += "<b>Your department's account funds are:</b> [department_account.money][CREDS]<br>"
-		if(job.head_position)
-			//remembered_info += "<b>Your part of nuke code:</b> [SSticker.get_next_nuke_code_part()]<br>"
-			//we dont have a station nuke so this isn't needed
-			department_account.owner_name = H.real_name //Register them as the point of contact for this account
+
+			if(job.head_position)
+				//remembered_info += "<b>Your part of nuke code:</b> [SSticker.get_next_nuke_code_part()]<br>"
+				//we dont have a station nuke so this isn't needed
+				department_account.owner_name = H.real_name //Register them as the point of contact for this account
 
 		H.mind.store_memory(remembered_info)
 
@@ -398,6 +402,7 @@ SUBSYSTEM_DEF(job)
 	if(C)
 		C.install_default_modules_by_job(job)
 		C.access.Add(job.cruciform_access)
+		C.install_default_modules_by_path(job)
 
 	BITSET(H.hud_updateflag, ID_HUD)
 	BITSET(H.hud_updateflag, SPECIALROLE_HUD)

@@ -1,5 +1,5 @@
 /obj/item/weapon/circuitboard/chemmaster
-	name = T_BOARD("ChemMaster 3000")
+	build_name = "ChemMaster 3000"
 	build_path = /obj/machinery/chem_master
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
@@ -10,7 +10,7 @@
 	)
 
 /obj/item/weapon/circuitboard/chem_heater
-	name = T_BOARD("Chemical Heater")
+	build_name = "Chemical Heater"
 	build_path = /obj/machinery/chem_heater
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
@@ -20,7 +20,7 @@
 	)
 
 /obj/item/weapon/circuitboard/chemical_dispenser
-	name = T_BOARD("Chemical Dispenser")
+	build_name = "Chemical Dispenser"
 	build_path = /obj/machinery/chemical_dispenser
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
@@ -33,7 +33,7 @@
 	)
 
 /obj/item/weapon/circuitboard/chemical_dispenser/soda
-	name = T_BOARD("Chemical Dispenser")
+	build_name = "Chemical Dispenser"
 	build_path = /obj/machinery/chemical_dispenser/soda
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
@@ -46,7 +46,7 @@
 	)
 
 /obj/item/weapon/circuitboard/chemical_dispenser/beer
-	name = T_BOARD("Chemical Dispenser")
+	build_name = "Chemical Dispenser"
 	build_path = /obj/machinery/chemical_dispenser/beer
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
@@ -59,7 +59,7 @@
 	)
 
 /obj/item/weapon/circuitboard/chemical_dispenser/industrial
-	name = T_BOARD("Industrial Chemical Dispenser")
+	build_name = "Industrial Chemical Dispenser"
 	build_path = /obj/machinery/chemical_dispenser/industrial
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
@@ -72,11 +72,10 @@
 	)
 
 /obj/item/weapon/circuitboard/electrolyzer
-	name = T_BOARD("Electrolyzer")
+	build_name = "Electrolyzer"
 	build_path = /obj/machinery/electrolyzer
 	board_type = "machine"
 	origin_tech = list(TECH_BIO = 3)
 	req_components = list(
 		/obj/item/weapon/stock_parts/capacitor = 1,
 	)
-

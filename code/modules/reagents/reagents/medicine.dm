@@ -30,6 +30,9 @@
 	scannable = 1
 
 /datum/reagent/medicine/bicaridine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		M.heal_organ_damage(0.3 * effect_multiplier, 0, 5 * effect_multiplier)
+		return
 	M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
 
@@ -87,6 +90,8 @@
 	scannable = 1
 
 /datum/reagent/medicine/kelotane/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
 
 /datum/reagent/medicine/dermaline
@@ -168,6 +173,8 @@
 	scannable = 1
 
 /datum/reagent/medicine/dexalin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.adjustOxyLoss(-1.5 * effect_multiplier)
 	M.add_chemical_effect(CE_OXYGENATED, 1)
 	holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
@@ -215,12 +222,22 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	reagent_state = LIQUID
 	color = "#8040FF"
 	scannable = 1
+	overdose = REAGENTS_OVERDOSE
 
 /datum/reagent/medicine/tricordrazine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.adjustOxyLoss(-0.6 * effect_multiplier)
 	M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
 	M.adjustToxLoss(-0.3 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+
+/datum/reagent/medicine/tricordrazine/overdose(var/mob/living/carbon/M, var/alien)
+	. = ..()
+	M.adjustToxLoss(5)
+	M.adjustBrainLoss(1)
+	if(M.losebreath < 15)
+		M.losebreath++
 
 /datum/reagent/medicine/cryoxadone
 	name = "Cryoxadone"
@@ -242,14 +259,15 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 		M.add_chemical_effect(CE_PULSE, -2)
 
 /datum/reagent/medicine/clonexadone
-	name = "Clonexadone"
+	name = "Cronexidone"
 	id = "clonexadone"
-	description = "A liquid compound similar to that used in the cloning process. Can be used to 'finish' the cloning process when used in conjunction with a cryo tube."
+	description = "A liquid compound that is in all ways superior to cryoxadone. Can be used to treat severe clone damage, genetic mutation, and repair even dead bodies when used in conjunction with a cryo tube."
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#80BFFF"
 	metabolism = REM * 0.5
 	scannable = 1
+	affects_dead = 1 //This can even heal dead people.
 
 /datum/reagent/medicine/clonexadone/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(M.bodytemperature < 170)
@@ -398,6 +416,8 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	scannable = 1
 
 /datum/reagent/medicine/peridaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 
@@ -700,7 +720,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/kyphotorin
 	name = "Kyphotorin"
 	id = "kyphotorin"
-	description = "Allows patient to grow back limbs. Extremely painful to user and needs constant medical attention when applied."
+	description = "A strange chemical that allows a patient to regrow organic limbs, it may take awhile to work and requires use of a cryo pod. The process is extremely painful and may damage the body."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#7d88e6"
@@ -708,7 +728,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 
 /datum/reagent/medicine/kyphotorin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	var/mob/living/carbon/human/H = M
-	if(istype(H))
+	if(istype(H) && (M.bodytemperature < 170))
 		if(prob(0.5 * effect_multiplier + dose) || dose == overdose)
 			var/list/missingLimbs = list()
 			for(var/name in BP_ALL_LIMBS)
@@ -720,7 +740,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 				M.pain(luckyLimbName, 100, TRUE)
 				dose = 0
 	if(prob(10))
-		M.take_organ_damage(pick(0,5))
+		M.take_organ_damage(pick(0,15))
 
 /datum/reagent/medicine/kyphotorin/overdose(var/mob/living/carbon/M, var/alien)
 	M.adjustCloneLoss(4)
@@ -988,6 +1008,8 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	reagent_state = LIQUID
 	color = "#5f95e2"
 	nerve_system_accumulations = 0
+	addiction_chance = 100
+
 	appear_in_default_catalog = FALSE
 
 /datum/reagent/stim/robustitol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -997,6 +1019,10 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	M.stats.addTempStat(STAT_BIO, -100, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_VIG, -100, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_MEC, -100, STIM_TIME, "robustitol")
+
+/datum/reagent/drug/robustitol/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")
+	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")
 
 /datum/reagent/medicine/sergatonin
 	name = "Naratonin"
@@ -1026,7 +1052,16 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	constant_metabolism = TRUE
 	scannable = 1
 
-/datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
+	M.adjustToxLoss(-8 * removed)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		if(istype(L))
+			if(BP_IS_ROBOTIC(L))
+				return
+			if(L.damage > 0)
+				L.damage = max(L.damage - 2 * removed, 0)
 	var/mob/living/carbon/C = M
 	if(istype(C) && C.metabolism_effects.addiction_list.len)
 		if(prob(90 + dose))

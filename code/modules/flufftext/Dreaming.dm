@@ -59,7 +59,7 @@ var/list/dreams = list(
 	"like a dream","this isn't a dream","are you ready","amazing chest ahead",
 
 //Ranks
-	"the Steward","the Warrant Officer","the Militia Commander","the Guild Master","the Soteria Research Overseer",
+	"the Steward","the Warrant Officer","the Blackshield Commander","the Guild Master","the Soteria Research Overseer",
 	"the Soteria Biolab Overseer","the Chief Executive Officer","an Assistant","a Bartender","a Janitor","a Gardener",
 	"a Prime","an Entertainer","a Chef","a Doctor","a Psychologist","a Soteria Paramedic",
 	"a Soteria Chemist","a Soteria Scientist","a Soteria Roboticist","a Cyborg","a Cargo Technician","a Lonestar Miner",
@@ -89,7 +89,7 @@ var/list/dreams = list(
 	"a seuche roach","a panzer roach","a gestrahlte roach","a disembodied brain","a monkey","a shadekin",
 
 //Factions/Groups
-	"the marshals","the blackshield militia","the prospectors","the excelsior institute","lonestar shipping solutions",
+	"the marshals","the blackshield","the prospectors","the excelsior institute","lonestar shipping solutions",
 	"the artificers guild","the nadezhda council","mercenary groups","scavenger gangs","terrorist groups","outside forces",
 
 //Station Locations

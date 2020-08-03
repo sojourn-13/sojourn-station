@@ -31,8 +31,9 @@ Engine water turfs
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_state = "coolant"
 	initial_flooring = /decl/flooring/beach/water/flooded
-	temperature = T20C
+	temperature = T0C
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
+	wet = 1
 
 /turf/simulated/floor/fixed/hydrotile/shallowcoolant
 	name = "cold river water"

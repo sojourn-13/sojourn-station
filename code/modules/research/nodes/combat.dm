@@ -29,7 +29,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/flash)
 
-/datum/technology/weapon_recharging
+/datum/technology/weapon_recharging //You know... Its really not logical that this is even here...
 	name = "Weapon Recharging"
 	desc = "Weapon Recharging"
 	tech_type = RESEARCH_COMBAT
@@ -46,6 +46,7 @@
 
 	unlocks_designs = list(
 							/datum/design/research/circuit/recharger
+							///datum/design/research/item/hand_charger //Not yet
 							)
 
 /datum/technology/advanced_nonlethal
@@ -65,6 +66,24 @@
 							/datum/design/research/item/ammo/shotgun_stun
 						)
 
+
+/datum/technology/hardsuit_nonlethal
+	name = "Mounted Non-Lethal"
+	desc = "Electrical-shock weapon for hardsuits."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.3
+	y = 0.3
+	icon = "rigtaser"
+
+	required_technologies = list(/datum/technology/advanced_nonlethal)
+	required_tech_levels = list()
+	cost = 4500
+
+	unlocks_designs = list(	/datum/design/research/item/rig_grenade_launcher,
+							/datum/design/research/item/rig_flash,
+							/datum/design/research/item/tasermount
+						)
 
 /*/datum/technology/sec_computers
 	name = "Security Computers"
@@ -131,7 +150,7 @@
 
 /datum/technology/adv_lethal
 	name = "Advanced Lethal Weapons"
-	desc = "Advanced machinegun system"
+	desc = "Improvements on already lethal weapons to be a more advanced version of itself."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.7
@@ -144,6 +163,10 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
+							/datum/design/research/item/weapon/starstriker,
+							/datum/design/research/item/ammo/laser,
+							/datum/design/research/item/ammo/laser/ap,
+							/datum/design/research/item/ammo/laser/lethal
 						)
 
 /datum/technology/laser_weaponry
@@ -161,3 +184,48 @@
 
 	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun, /datum/design/research/item/weapon/lasercannon)
 
+/datum/technology/riglaser_weaponry
+	name = "Hardsuit Laser Weaponry"
+	desc = "Hardsuit Laser Weaponry"
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.8
+	y = 0.5
+	icon = "riglethals"
+
+	required_technologies = list(/datum/technology/laser_weaponry)
+	required_tech_levels = list()
+	cost = 7500
+
+	unlocks_designs = list(/datum/design/research/item/lasercannon, /datum/design/research/item/lasermount)
+
+//Armor
+/datum/technology/basic_armor
+	name = "Basic Armor Designs"
+	desc = "Basic armor designs and integration of suit power systems."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.1
+	y = 0.8
+	icon = "armor"
+
+	required_technologies = list()
+	required_tech_levels = list()
+	cost = 1000
+
+	unlocks_designs = list(/datum/design/research/item/weapon/soteriaarmorchest, /datum/design/research/item/weapon/soteriaarmorhead)
+
+/datum/technology/advanced_armor
+	name = "Advanced Armor Designs"
+	desc = "Basic armor designs and integration of suit power systems."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.3
+	y = 0.8
+	icon = "void_suit"
+
+	required_technologies = list(/datum/technology/basic_armor)
+	required_tech_levels = list()
+	cost = 5000
+
+	unlocks_designs = list(/datum/design/research/item/weapon/medarmor)

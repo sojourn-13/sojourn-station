@@ -2,8 +2,8 @@
 
 
 /datum/core_module/cruciform/red_light/install()
-	implant.icon_state = "cruciform_red"
-	implant.max_power += 30
+	implant.icon_state = "cruciform_purple"
+	implant.max_power += 50
 	implant.power_regen += 0.3
 
 	if(ishuman(implant.wearer))
@@ -12,7 +12,7 @@
 
 /datum/core_module/cruciform/red_light/uninstall()
 	implant.icon_state = "cruciform_green"
-	implant.max_power -= 30
+	implant.max_power -= 50
 	implant.power_regen -= 0.3
 
 	if(ishuman(implant.wearer))
@@ -60,6 +60,16 @@
 	var/datum/mind/mind = null
 	var/languages = list()
 	var/flavor = ""
+	var/datum/stat_holder/stats
+
+/datum/core_module/cruciform/cloning/proc/write_wearer(var/mob/living/carbon/human/H)
+	dna = H.dna
+	ckey = H.ckey
+	mind = H.mind
+	languages = H.languages
+	flavor = H.flavor_text
+	age = H.age
+	stats = H.stats
 
 /datum/core_module/cruciform/cloning/preinstall()
 	if(ishuman(implant.wearer))
@@ -74,7 +84,7 @@
 		languages = H.languages
 		flavor = H.flavor_text
 		age = H.age
-
+		stats = H.stats
 
 /datum/core_module/cruciform/obey/install()
 	var/laws = list("You are enslaved. You must obey the laws below.",
@@ -180,3 +190,19 @@
 
 /datum/core_module/rituals/cruciform/crusader
 	ritual_types = list(/datum/ritual/cruciform/crusader)
+
+/datum/core_module/rituals/cruciform/tessellate
+	ritual_types = list(/datum/ritual/cruciform/tessellate,
+	/datum/ritual/targeted/cruciform/tessellate)
+
+/datum/core_module/rituals/cruciform/lemniscate
+	ritual_types = list(/datum/ritual/cruciform/lemniscate,
+	/datum/ritual/targeted/cruciform/lemniscate)
+
+/datum/core_module/rituals/cruciform/monomial
+	ritual_types = list(/datum/ritual/cruciform/monomial,
+	/datum/ritual/targeted/cruciform/monomial)
+
+/datum/core_module/rituals/cruciform/divisor
+	ritual_types = list(/datum/ritual/cruciform/divisor,
+	/datum/ritual/targeted/cruciform/divisor)

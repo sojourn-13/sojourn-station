@@ -61,6 +61,13 @@
 	if (.)
 		adjustToolHealth(-(rand(40, 150) * degradation))
 
+/obj/item/weapon/gun/make_old()
+	. = ..()
+	fire_delay+=2
+	recoil_buildup+=10
+	damage_multiplier = max(0.2, damage_multiplier - rand(0.5, 1))
+	penetration_multiplier = max(0.2, penetration_multiplier - rand(0.5, 1))
+
 /obj/item/weapon/storage/make_old()
 	.=..()
 	if (.)
@@ -126,9 +133,9 @@
 		if(!autorecharging)
 			charge = min(charge, RAND_DECIMAL(0, maxcharge))
 
-		if(prob(10))
+		if(prob(1))
 			rigged = TRUE
-			if(prob(80))
+			if(prob(10))
 				charge = maxcharge  //make it BOOM hard
 		update_icon()
 
@@ -162,7 +169,7 @@
 	.=..()
 	if (.)
 		if(prob(75))
-			name = T_BOARD("unknown")
+			name = "unknown board"
 			build_path = pick(/obj/machinery/washing_machine, /obj/machinery/broken, /obj/machinery/shower, /obj/machinery/holoposter, /obj/machinery/holosign)
 
 
@@ -403,7 +410,7 @@
 			//90% chance to lose each equipment
 			//System settings will be randomly configured
 				var/P
-				if (prob(15))
+				if (prob(1))
 					cell.rigged = 1//Powercell will explode if you use it
 				else if (prob(50))//Remove cell
 					QDEL_NULL(cell)

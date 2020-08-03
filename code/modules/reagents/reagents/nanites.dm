@@ -1,5 +1,7 @@
 // Nanobots blood drain per unit
 #define NANOBOTS_BLOOD_DRAIN 0.003
+#define NANOBOTS_HEAVY_BLOOD_DRAIN 0.01 //.007 more then normal
+//Chtmans lose more
 
 /datum/reagent/nanites
 	name = ""
@@ -17,8 +19,11 @@
 /datum/reagent/nanites/proc/eat_blood(var/mob/living/carbon/M) // Yam !
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	// blood regeneratin 0.1 u every tick so with NANOBOTS_BLOOD_DRAIN = 0.003 human can sustain 30u nanobots without losing blood
-	if(B && B.volume)
+	if(B && B.volume && !M.species.reagent_tag == IS_CHTMANT)
 		B.remove_self(volume * NANOBOTS_BLOOD_DRAIN)
+	else
+		B.remove_self(volume * NANOBOTS_HEAVY_BLOOD_DRAIN) //If we are a Chtmant we lose more
+		M.adjustToxLoss(0.1) //We also take toxin damage
 
 /datum/reagent/nanites/proc/will_occur(var/mob/living/carbon/M, var/alien, var/location)
 	if(location == CHEM_BLOOD)
@@ -70,6 +75,8 @@
 /datum/reagent/nanites/dead/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(..())
 		M.adjustToxLoss(0.2 * effect_multiplier)
+	if(M.species.reagent_tag == IS_CHTMANT) //If we are a Chtmant we take double the affect
+		M.adjustToxLoss(0.2 * effect_multiplier) //All and all this is 0.4 x effect mult + 0.1! REALLY lethal to Chtmants
 
 /datum/reagent/nanites/uncapped
 	name = "Raw Uncapped Nanobots"
@@ -91,12 +98,12 @@
 /datum/reagent/nanites/arad/will_occur(var/mob/living/carbon/M, var/alien, var/location)
 	if(..() && M.radiation)
 		return TRUE
-		
+
 
 /datum/reagent/nanites/arad/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(..())
 		M.radiation = max(M.radiation - (5 + M.radiation * 0.10) * effect_multiplier, 0)
-		
+
 
 /datum/reagent/nanites/implant_medics
 	name = "Implantoids"
@@ -119,7 +126,7 @@
 						metabolism = 1
 						constant_metabolism = TRUE
 						return TRUE
-			
+
 
 /datum/reagent/nanites/implant_medics/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(..())
@@ -138,7 +145,7 @@
 				else if (istype(organ, /obj/item/organ/internal) && organ.damage > 0 && BP_IS_ROBOTIC(organ))
 					organ.heal_damage((2 + organ.damage * 0.05)* effect_multiplier)
 					return
-				
+
 
 /datum/reagent/nanites/nantidotes
 	name = "Nantidotes"
@@ -171,9 +178,10 @@
 /datum/reagent/nanites/nanosymbiotes/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(..())
 		M.heal_organ_damage(1 * effect_multiplier, 1 * effect_multiplier, 3 * effect_multiplier, 3 * effect_multiplier)
-		M.adjustToxLoss(-((1 + (M.getToxLoss() * 0.03)) * effect_multiplier))
 		M.adjustCloneLoss(-(1 + (M.getCloneLoss() * 0.03)) * effect_multiplier)
 		M.adjustBrainLoss(-(1 + (M.getBrainLoss() * 0.03)) * effect_multiplier)
+	if(!M.species.reagent_tag == IS_CHTMANT) //If we are a Chtmant we dont heal are toxloss from nanites
+		M.adjustToxLoss(-((1 + (M.getToxLoss() * 0.03)) * effect_multiplier))
 
 /datum/reagent/nanites/oxyrush
 	name = "Oxyrush"

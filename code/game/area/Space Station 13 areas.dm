@@ -385,20 +385,20 @@ area/space/atmosalert()
 //EXTRA
 
 /area/asteroid					// -- TLE
-	name = "\improper Moon"
+	name = "\improper Underground"
 	icon_state = "asteroid"
 	requires_power = 0
 	sound_env = ASTEROID
 	base_turf = /turf/simulated/floor/asteroid
 
 /area/asteroid/cave				// -- TLE
-	name = "\improper Moon - Underground"
+	name = "\improper Underground"
 	icon_state = "cave"
 	requires_power = 0
 	sound_env = ASTEROID
 
 /area/asteroid/artifactroom
-	name = "\improper Moon - Artifact"
+	name = "\improper Artifact Cave"
 	icon_state = "cave"
 	sound_env = SMALL_ENCLOSED
 

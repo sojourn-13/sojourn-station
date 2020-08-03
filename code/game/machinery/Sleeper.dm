@@ -6,10 +6,16 @@
 	density = 1
 	anchored = 1
 	circuit = /obj/item/weapon/circuitboard/sleeper
+	var/scanning = 2 // How many units are we removing per filter cycle? - Basic has 2 Scanners
 	var/mob/living/carbon/human/occupant = null
 	var/list/available_chemicals = list("inaprovaline" = "Inaprovaline", "stoxin" = "Soporific", "paracetamol" = "Paracetamol", "anti_toxin" = "Dylovene", "dexalin" = "Dexalin")
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
-	var/filtering = 0
+	var/filtering = 0 //FALSE
+
+	var/list/level1 = list("tricordrazine" ="Tricordrazine")
+	var/list/level2 = list("spaceacillin" = "Spaceacillin")
+	var/list/level3 = list("alkysine" = "Alkysine")
+	var/list/level4 = list("leporazine" = "Leporazine")
 
 	use_power = 1
 	idle_power_usage = 15
@@ -20,6 +26,7 @@
 	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner. Unlike standard sleepers this one comes with additional chemical synthesizers but is one of a kind."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_0"
+	scanning = 4 //Hyper has 4 scanners.
 	color = "#a4bdba"
 	circuit = /obj/item/weapon/circuitboard/sleeper/hyper
 	available_chemicals = list("inaprovaline" = "Inaprovaline", "chloralhydrate" = "Chloral Hydrate", "tramadol" = "Tramadol", "carthatoline" = "Carthatoline", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline")
@@ -28,6 +35,29 @@
 	. = ..()
 	beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	update_icon()
+	RefreshParts()
+
+/obj/machinery/sleeper/RefreshParts()
+	..()
+	var/rating = 1
+	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
+		rating += B.rating - 1
+
+	for(var/obj/item/weapon/stock_parts/scanning_module/S in component_parts)
+		scanning = S.rating //Used in filters
+
+	if(rating > 1) //Level 2 Matter Bin unlocks Tricordrazine
+		available_chemicals += level1
+
+	if(rating > 2) //Level 3 Matter Bin unlocks Spacesilicon
+		available_chemicals += level2
+
+	if(rating > 3) //Level 4 Matter Bin unlocks Alkysine
+		available_chemicals += level3
+
+	if(rating > 4) //Level 5 Matter Bin unlocks Leporazine
+		available_chemicals += level4
+
 
 /obj/machinery/sleeper/Process()
 	if(stat & (NOPOWER|BROKEN))
@@ -38,7 +68,7 @@
 			if(beaker.reagents.total_volume < beaker.reagents.maximum_volume)
 				var/pumped = 0
 				for(var/datum/reagent/x in occupant.reagents.reagent_list)
-					occupant.reagents.trans_to_obj(beaker, 3)
+					occupant.reagents.trans_to_obj(beaker, scanning)
 					pumped++
 				if(ishuman(occupant))
 					occupant.vessel.trans_to_obj(beaker, pumped + 1)
@@ -49,6 +79,10 @@
 	icon_state = "sleeper_[occupant ? "1" : "0"]"
 
 /obj/machinery/sleeper/attack_hand(var/mob/user)
+	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT))
+		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
+		return
+
 	if(..())
 		return 1
 
@@ -138,6 +172,13 @@
 			to_chat(user, SPAN_WARNING("\The [src] has a beaker already."))
 		return
 
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
+
 /obj/machinery/sleeper/affect_grab(var/mob/user, var/mob/target)
 	go_in(target, user)
 
@@ -194,6 +235,17 @@
 		update_use_power(2)
 		occupant = M
 		update_icon()
+
+/obj/machinery/sleeper/verb/eject_occupant_verb()
+	set name = "Eject Occupant"
+	set desc = "Force eject occupant."
+	set category = "Object"
+	set src in view(1)
+
+	if (usr.incapacitated() || occupant == usr)
+		return
+
+	go_out()
 
 /obj/machinery/sleeper/proc/go_out()
 	if(!occupant)

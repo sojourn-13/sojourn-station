@@ -1,5 +1,5 @@
 /obj/item/weapon/circuitboard/atmoscontrol
-	name = "\improper Central Atmospherics Computer Circuitboard"
+	build_name = "central atmospherics computer"
 	build_path = /obj/machinery/computer/atmoscontrol
 
 /obj/machinery/computer/atmoscontrol

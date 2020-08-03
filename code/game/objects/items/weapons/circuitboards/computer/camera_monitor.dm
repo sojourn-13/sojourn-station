@@ -1,9 +1,5 @@
-#ifndef T_BOARD
-#error T_BOARD macro is not defined but we need it!
-#endif
-
 /obj/item/weapon/circuitboard/security
-	name = T_BOARD("security camera monitor")
+	build_name = "security camera monitor"
 	build_path = /obj/machinery/computer/security
 	req_access = list(access_security)
 	var/list/network
@@ -15,7 +11,7 @@
 	network = station_networks
 
 /obj/item/weapon/circuitboard/security/engineering
-	name = T_BOARD("engineering camera monitor")
+	build_name = "engineering camera monitor"
 	build_path = /obj/machinery/computer/security/engineering
 	req_access = list()
 
@@ -24,7 +20,7 @@
 	network = engineering_networks
 
 /obj/item/weapon/circuitboard/security/mining
-	name = T_BOARD("mining camera monitor")
+	build_name = "mining camera monitor"
 	build_path = /obj/machinery/computer/security/mining
 	network = list("MINE")
 	req_access = list()

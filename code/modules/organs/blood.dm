@@ -41,7 +41,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 	data["blood_type"] = dna.b_type
 	data["species"] = species.name
 	var/list/temp_chem = list()
-	for(var/datum/reagent/R in reagents.reagent_list)
+	for(var/datum/reagent/R in reagents?.reagent_list) //TODO: Remove "?." operations.
 		temp_chem[R.type] = R.volume
 	data["trace_chem"] = temp_chem
 	data["blood_colour"] = blood_color

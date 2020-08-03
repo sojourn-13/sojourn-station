@@ -352,8 +352,8 @@
 /obj/item/weapon/tool_upgrade/augment/spikes
 	name = "spikes"
 	icon_state = "spike"
-	desc = "An array of sharp bits of plasteel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity."
-	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_STEEL = 2)
+	desc = "An array of sharp bits of steel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity."
+	matter = list(MATERIAL_STEEL = 2)
 
 /obj/item/weapon/tool_upgrade/augment/spikes/New()
 	..()
@@ -369,6 +369,7 @@
 	I.prefix = "spiked"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
+/*
 /obj/item/weapon/tool_upgrade/augment/hammer_addon
 	name = "flat surface"
 	icon_state = "hammer_addon"
@@ -385,7 +386,7 @@
 	)
 	I.prefix = "flattened"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
-
+*/
 //Vastly reduces tool sounds, for stealthy hacking
 /obj/item/weapon/tool_upgrade/augment/dampener
 	name = "aural dampener"

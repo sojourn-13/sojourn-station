@@ -55,7 +55,7 @@
 	id = "glucose"
 	description = "Most important source of energy in all organisms."
 	color = "#FFFFFF"
-
+	scannable = 1
 	injectable = 1
 
 /datum/reagent/organic/nutriment/protein
@@ -213,6 +213,7 @@
 	reagent_state = LIQUID
 	color = "#BBEDA4"
 	overdose = REAGENTS_OVERDOSE
+	scannable = 1
 
 /datum/reagent/other/lipozine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
@@ -227,6 +228,7 @@
 	reagent_state = SOLID
 	color = "#FFFFFF"
 	overdose = REAGENTS_OVERDOSE
+	scannable = 1
 
 /datum/reagent/organic/blackpepper
 	name = "Black Pepper"
@@ -2144,6 +2146,26 @@
 	glass_name = "whiskey soda"
 	glass_desc = "Ultimate refreshment."
 	glass_center_of_mass = list("x"=16, "y"=9)
+
+/datum/reagent/ethanol/atomic_vodka
+	name = "Atomic Vodka"
+	id = "atomvodka"
+	description = "Clear distilled alcoholic beverage that originates from Poland and Russia, now with nuclear taste!"
+	taste_description = "strong grain alcohol"
+	color = "#0064C8" // rgb: 0, 100, 200
+	strength = 5
+	strength_mod = 10
+	toxicity = 10
+
+	glass_icon_state = "ginvodkaglass"
+	glass_name = "atomic vodka"
+	glass_desc = "Booze for true drunkers."
+	glass_center_of_mass = list("x"=16, "y"=12)
+
+/datum/reagent/ethanol/atomic_vodka/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
+	if(!M.stats.getTempStat(STAT_TGH, "atomvodka") && M.stats.getPerk(/datum/perk/sommelier))
+		M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 10 MINUTES, "atomvodka")
 
 /datum/reagent/ethanol/specialwhiskey // I have no idea what this is and where it comes from
 	name = "Special Blend Whiskey"

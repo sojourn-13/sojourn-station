@@ -59,10 +59,10 @@
 /obj/random/melee/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/tool/homewrecker = 1,
 				/obj/item/weapon/melee/telebaton = 2,
-				/obj/item/weapon/melee/nailstick = 2,
+				/obj/item/weapon/tool/nailstick = 2,
 				/obj/item/weapon/melee/toolbox_maul = 2,
 				/obj/item/weapon/melee/classic_baton = 1,
-				/obj/item/weapon/melee/chainofcommand = 0.3,
+				/obj/item/weapon/tool/chainofcommand = 0.3,
 				/obj/item/weapon/shield/riot = 0.2,
 				/obj/item/weapon/shield/riot/handmade = 0.5,
 				/obj/item/weapon/shield/riot/handmade/tray = 0.2,

@@ -35,8 +35,8 @@
 	var/sanity_damage = 0
 
 	// over-lays
-	var/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSover-lays to manipulate
-	var/list/priority_overlays	//over-lays that should remain on top and not normally removed when using cut_overlay functions, like c4.
+	var/tmp/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSover-lays to manipulate
+	var/tmp/list/priority_overlays	//over-lays that should remain on top and not normally removed when using cut_overlay functions, like c4.
 
 	// All physical objects that exist have a somewhat metaphysical representation of their integrity
     // Why are areas derived from /atom instead of /datum?  They're abstracts!
@@ -505,7 +505,7 @@ its easier to just keep the beam vertical.
 
 	//Cleaning up shit.
 	if(fingerprints && !fingerprints.len)
-		qdel(fingerprints)
+		fingerprints = null
 	return
 
 
@@ -608,9 +608,10 @@ its easier to just keep the beam vertical.
 // Use for objects performing visible actions
 // message is output to anyone who can see, e.g. "The [src] does something!"
 // blind_message (optional) is what blind people will hear e.g. "You hear something!"
-/atom/proc/visible_message(var/message, var/blind_message)
+/atom/proc/visible_message(var/message, var/blind_message, var/viewing_distance)
 
-	var/list/see = get_mobs_and_objs_in_view_fast(get_turf(src),world.view,remote_ghosts = FALSE)
+	var/range = viewing_distance || world.view
+	var/list/see = get_mobs_and_objs_in_view_fast(get_turf(src),range,remote_ghosts = FALSE)
 
 
 	var/list/seeing_mobs = see["mobs"]
@@ -757,9 +758,11 @@ its easier to just keep the beam vertical.
 	if(istype(gen, /datum/gender))
 		//Use as given.
 		G = gen
+		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite type match") //TODO: REMOVE THIS ONCE FIXED
 	else if(istext(gen))
 		G = GLOB.gender_datums[gen] //Convert to the gender using the name given.
+		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite list extraction") //TODO: REMOVE THIS ONCE FIXED
 	else
 		G = get_gender() //Otherwise, default to this thing's gender.
-	if(istext(G)) CRASH("gender_word has somehow resulted in a text gender") //TODO: REMOVE THIS ONCE FIXED
+		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite get_gender result") //TODO: REMOVE THIS ONCE FIXED
 	return G.word(position)

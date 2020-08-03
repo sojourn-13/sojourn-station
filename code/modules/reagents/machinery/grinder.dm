@@ -35,6 +35,9 @@
 /obj/machinery/reagentgrinder/attackby(obj/item/I, mob/user)
 	if(default_deconstruction(I, user))
 		return
+
+	if(default_part_replacement(I, user))
+		return
 	//Useability tweak for borgs
 	if (istype(I,/obj/item/weapon/gripper))
 		ui_interact(user)
@@ -169,7 +172,7 @@
 
 
 /obj/item/weapon/circuitboard/reagentgrinder
-	name = T_BOARD("reagent grinder")
+	build_name = "reagent grinder"
 	board_type = "machine"
 	build_path = /obj/machinery/reagentgrinder/portable
 	origin_tech = list(TECH_BIO = 1)
@@ -196,6 +199,12 @@
 		SSnano.update_uis(src)
 		update_icon()
 		return 0
+
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
 
 	return ..()
 
@@ -263,7 +272,7 @@
 	nano_template = "industrial_grinder.tmpl"
 
 /obj/item/weapon/circuitboard/industrial_grinder
-	name = T_BOARD("industrial grinder")
+	build_name = "industrial grinder"
 	board_type = "machine"
 	build_path = /obj/machinery/reagentgrinder/industrial
 	origin_tech = list(TECH_BIO = 1)
@@ -326,8 +335,6 @@
 			bottle(R.id)
 
 	SSnano.update_uis(src)
-
-
 
 /obj/item/weapon/storage/makeshift_grinder
 	name = "makeshift grinder"

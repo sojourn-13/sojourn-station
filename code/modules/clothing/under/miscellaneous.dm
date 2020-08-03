@@ -239,3 +239,51 @@
 	icon_state = "excelsior_orange"
 	item_state = "bl_suit"
 	has_sensor = 0
+
+/obj/item/clothing/under/dress
+	name = "gray summerdress"
+	desc = "Gray summerdress only worn by the bravest individuals in the cold of space."
+	icon_state = "summerdress"
+	item_state = "summerdress"
+
+/obj/item/clothing/under/dress/blue
+	name = "blue summerdress"
+	desc = "a blue dress worn by mostly those of east asian descendance"
+	icon_state = "summerdress2"
+	item_state = "summerdress2"
+
+/obj/item/clothing/under/dress/red
+	name = "red summerdress"
+	desc = "A red dress worn mostly by those of east asian descendance."
+	icon_state = "summerdress3"
+	item_state = "summerdress3"
+
+/obj/item/clothing/under/leisure
+	name = "leisure outfit"
+	desc = "A leisure outfit with brown jacket. Sometimes you just want to wear what is comfortable."
+	icon_state = "leisuroutfit"
+	item_state = "leisuroutfit"
+
+/obj/item/clothing/under/leisure/white
+	name = "white blouse"
+	desc = "A white blouse with a red shirt underneath. You look like a hallway ornament with this."
+	icon_state = "shirtsuit"
+	item_state = "shirtsuit"
+
+/obj/item/clothing/under/leisure/pullover
+	name = "patterned pullover"
+	desc = "Brown pullover with indeterminable pattern."
+	icon_state = "pullover"
+	item_state = "pullover"
+
+/obj/item/clothing/under/jersey
+	name = "church overalls"
+	desc = "For showing your devotion to god through labor or the opposite for that matter if you forgot an undershirt."
+	icon_state = "jersey"
+	item_state = "jersey"
+
+/obj/item/clothing/under/cyber
+	name = "augmented jumpsuit"
+	desc = "I wanted a jumpsuit. It gave me THIS."
+	icon_state = "cyber"
+	item_state = "cyber"

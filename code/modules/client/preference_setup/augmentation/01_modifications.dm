@@ -96,7 +96,6 @@
 	dat += "<tr align='center'>"
 	var/counter = 0
 	for(var/organ in pref.internal_organs)
-		if(!(organ in body_modifications)) continue
 
 		var/datum/body_modification/mod = pref.get_modification(organ)
 		var/organ_name = capitalize(organ_tag_to_name[organ])
@@ -120,7 +119,10 @@
 
 /datum/preferences/proc/modifications_allowed()
 	for(var/category in setup_options)
-		if(!get_option(category).allow_modifications)
+		var/datum/category_item/setup_option/option = get_option(category)
+		if(!option)
+			CRASH("Option [category] could not be found through get_option()")
+		if(!option.allow_modifications)
 			return FALSE
 	return TRUE
 

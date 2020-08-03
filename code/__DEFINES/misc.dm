@@ -201,6 +201,12 @@
 #define CRUCIFORM_REDLIGHT /datum/core_module/cruciform/red_light
 #define CRUCIFORM_CLONING /datum/core_module/cruciform/cloning
 
+//cruciform paths
+#define CRUCIFORM_TESS /datum/core_module/rituals/cruciform/tessellate
+#define CRUCIFORM_LEMN /datum/core_module/rituals/cruciform/lemniscate
+#define CRUCIFORM_MONO /datum/core_module/rituals/cruciform/monomial
+#define CRUCIFORM_DIVI /datum/core_module/rituals/cruciform/divisor
+
 #define CRUCIFORM_OBEY /datum/core_module/cruciform/obey
 #define CRUCIFORM_PRIEST_CONVERT /datum/core_module/activatable/cruciform/priest_convert
 #define CRUCIFORM_OBEY_ACTIVATOR /datum/core_module/activatable/cruciform/obey_activator

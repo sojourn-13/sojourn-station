@@ -109,7 +109,7 @@
 	affected.fracture()
 
 /datum/old_surgery_step/open_encased/close
-	requedQuality = QUALITY_RETRACTING
+	required_tool_quality = QUALITY_RETRACTING
 
 	duration = 30
 

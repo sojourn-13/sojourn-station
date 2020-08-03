@@ -1,5 +1,5 @@
 /obj/item/weapon/circuitboard/clonepod
-	name = T_BOARD("clone pod")
+	build_name = "clone pod"
 	build_path = /obj/machinery/clonepod
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 3, TECH_BIO = 3)
@@ -11,7 +11,7 @@
 	)
 
 /obj/item/weapon/circuitboard/clonescanner
-	name = T_BOARD("cloning scanner")
+	build_name = "cloning scanner"
 	build_path = /obj/machinery/dna_scannernew
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)

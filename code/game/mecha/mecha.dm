@@ -889,6 +889,9 @@ assassination method if you time it right*/
 //////////////////////
 
 /obj/mecha/attackby(obj/item/I, mob/user)
+	if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+		to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+		return
 
 	var/list/usable_qualities = list()
 	if(state == 1 || state == 2)
@@ -1208,61 +1211,68 @@ assassination method if you time it right*/
 	src.log_message("Now taking air from [use_internal_tank?"internal airtank":"environment"].")
 	return
 
-
-/obj/mecha/verb/move_inside()
+/obj/mecha/verb/attempt_enter()
 	set category = "Object"
 	set name = "Enter Exosuit"
 	set src in oview(1)
 
-	if (usr.stat || !ishuman(usr))
+	move_inside(usr)
+
+/obj/mecha/MouseDrop_T(var/mob/target, var/mob/user)
+	if(istype(user) && target == user)
+		move_inside(user)
+
+/obj/mecha/proc/move_inside(mob/user)
+
+	if (user.stat || !ishuman(user))
 		return
 
-	if (usr.buckled)
-		to_chat(usr, SPAN_WARNING("You can't climb into the exosuit while buckled!"))
+	if (user.buckled)
+		to_chat(user, SPAN_WARNING("You can't climb into the exosuit while buckled!"))
 		return
 
-	src.log_message("[usr] tries to move in.")
-	if(iscarbon(usr))
-		var/mob/living/carbon/C = usr
+	src.log_message("[user] tries to move in.")
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
 		if(C.handcuffed)
-			to_chat(usr, SPAN_DANGER("Kinda hard to climb in while handcuffed don't you think?"))
+			to_chat(user, SPAN_DANGER("Kinda hard to climb in while handcuffed don't you think?"))
 			return
 	if (src.occupant)
-		usr << sound('sound/mecha/UI_SCI-FI_Tone_Deep_Wet_15_stereo_error.ogg',channel = 4, volume = 100)
-		to_chat(usr, SPAN_DANGER("The [src.name] is already occupied!"))
+		user << sound('sound/mecha/UI_SCI-FI_Tone_Deep_Wet_15_stereo_error.ogg',channel = 4, volume = 100)
+		to_chat(user, SPAN_DANGER("The [src.name] is already occupied!"))
 		src.log_append_to_last("Permission denied.")
 		return
 /*
 	if (usr.abiotic())
-		to_chat(usr, SPAN_NOTICE("Subject cannot have abiotic items on."))
+		to_chat(user, SPAN_NOTICE("Subject cannot have abiotic items on."))
 		return
 */
 	var/passed
 	if(src.dna)
-		if(usr.dna.unique_enzymes==src.dna)
+		if(user.dna.unique_enzymes==src.dna)
 			passed = 1
-	else if(src.operation_allowed(usr))
+	else if(src.operation_allowed(user))
 		passed = 1
 	if(!passed)
-		usr << sound('sound/mecha/UI_SCI-FI_Tone_Deep_Wet_15_stereo_error.ogg',channel = 4, volume = 100)
-		to_chat(usr, SPAN_WARNING("Access denied"))
+		user << sound('sound/mecha/UI_SCI-FI_Tone_Deep_Wet_15_stereo_error.ogg',channel = 4, volume = 100)
+		to_chat(user, SPAN_WARNING("Access denied"))
 		src.log_append_to_last("Permission denied.")
 		return
-	for(var/mob/living/carbon/slime/M in range(1,usr))
-		if(M.Victim == usr)
-			to_chat(usr, "You're too busy getting your life sucked out of you.")
+	for(var/mob/living/carbon/slime/M in range(1,user))
+		if(M.Victim == user)
+			to_chat(user, "You're too busy getting your life sucked out of you.")
 			return
 //	usr << "You start climbing into [src.name]"
 
-	visible_message(SPAN_NOTICE("\The [usr] starts to climb into [src.name]"))
+	visible_message(SPAN_NOTICE("\The [user] starts to climb into [src.name]"))
 
 	if(enter_after(40,usr))
 		if(!src.occupant)
-			moved_inside(usr)
-		else if(src.occupant!=usr)
-			to_chat(usr, "[src.occupant] was faster. Try better next time, loser.")
+			moved_inside(user)
+		else if(src.occupant!=user)
+			to_chat(user, "[src.occupant] was faster. Try better next time, loser.")
 	else
-		to_chat(usr, "You stop entering the exosuit.")
+		to_chat(user, "You stop entering the exosuit.")
 	return
 
 /obj/mecha/proc/moved_inside(var/mob/living/carbon/human/H as mob)

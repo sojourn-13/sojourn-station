@@ -13,6 +13,7 @@
 	var/menustat = "menu"
 	var/build_eff = 1
 	var/eat_eff = 1
+	var/storage_space = 10
 
 
 	var/list/recipes = list(
@@ -62,14 +63,19 @@
 		icon_state = "biogen-work"
 	return
 
-/obj/machinery/biogenerator/attackby(var/obj/item/I, var/mob/user)
+/obj/machinery/biogenerator/attackby(obj/item/I, mob/user)
 
-	if(default_deconstruction(I, user))
+	if(processing) //We are working, thus we prevent all other actions
+		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
 		return
 
-	if(default_part_replacement(I, user))
+	if(default_deconstruction(I, user)) //So we can open the pannle and take it apart
 		return
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
+
+	if(default_part_replacement(I, user)) //This makes it so we can upgrade the bio-gene
+		return
+
+	if(istype(I, /obj/item/weapon/reagent_containers/glass)) //Loading a beaker into the biogene
 		if(beaker)
 			to_chat(user, SPAN_NOTICE("The [src] is already loaded."))
 		else
@@ -77,37 +83,37 @@
 			I.loc = src
 			beaker = I
 			updateUsrDialog()
-	else if(processing)
-		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
-	else if(istype(I, /obj/item/weapon/storage/bag/produce))
-		var/i = 0
-		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
-			i++
-		if(i >= 10)
+
+	if(istype(I, /obj/item/weapon/storage/bag/produce)) //We allow you to quick load from produce bags
+		var/i = 0 //I is the Biogenerators contents
+		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents) //We are only taking the grown food items from the bag
+			i++ //For every food item added we add it to the Biogenerators contents
+		if(i >= storage_space) //Biogene can only hold as much as 10 + bin rating.
 			to_chat(user, SPAN_NOTICE("\The [src] is already full! Activate it."))
 		else
-			for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in I.contents)
-				G.loc = src
-				i++
-				if(i >= 10)
+			for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in I.contents) //This is looking in the produce bag for grown foods
+				G.loc = src //This takes the grown food item
+				i++  //For every food item added we add it to the Biogenerators contents
+				if(i >= storage_space) //Biogene can only hold as much as 10 + bin rating.
 					to_chat(user, SPAN_NOTICE("You fill \the [src] to its capacity."))
 					break
-			if(i < 10)
+			if(i < storage_space) //Feedback if you dont fill the biogenerator to full using the produce baggie
 				to_chat(user, SPAN_NOTICE("You empty \the [I] into \the [src]."))
 
-
-	else if(!istype(I, /obj/item/weapon/reagent_containers/food/snacks/grown))
+	//If we are not grown things, we dont want you
+	if(!istype(I, /obj/item/weapon/reagent_containers/food/snacks/grown))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
+		return
 	else
-		var/i = 0
+		var/i = 0 //I is the Biogenerators contents
 		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
-			i++
-		if(i >= 10)
+			i++ //For every food item added we add it to the Biogenerators contents
+		if(i >= storage_space) //Biogene can only hold as much as 10 + bin rating.
 			to_chat(user, SPAN_NOTICE("\The [src] is full! Activate it."))
 		else
-			user.remove_from_mob(I)
-			I.loc = src
-			to_chat(user, SPAN_NOTICE("You put \the [I] in \the [src]"))
+			user.remove_from_mob(I) //This takes the grown food item
+			I.loc = src // This places it in the bioreactor
+			to_chat(user, SPAN_NOTICE("You put \the [I] in \the [src]")) //Feedback for players
 	update_icon()
 	return
 
@@ -255,9 +261,10 @@
 
 	for(var/obj/item/weapon/stock_parts/P in component_parts)
 		if(istype(P, /obj/item/weapon/stock_parts/matter_bin))
-			bin_rating += P.rating
+			bin_rating += P.rating //Better bins lets us print cheaper
+			storage_space += P.rating //Better bins lets us hold more
 		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
-			man_rating += P.rating
+			man_rating += P.rating //Better manipulators let us get more bio-points from nutriments 
 
 	build_eff = man_rating
 	eat_eff = bin_rating

@@ -45,7 +45,7 @@
 
 /obj/item/weapon/tool/pickaxe/onestar //TODO: Add sound to /turn_on proc
 	name = "greyson positronic pickaxe"
-	desc = "A standard Greyson Positronic basic tool. There used energy technologies what makes it enough powerful and cheap at the same time."
+	desc = "A standard Greyson Positronic digging tool. Whatever secrets they used to make this so powerful and cheap is a mystery."
 	icon_state = "one_star_pickaxe"
 	item_state = "pickaxe"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2, MATERIAL_DIAMOND = 2)
@@ -76,10 +76,11 @@
 	icon_state = "jackhammer"
 	item_state = "jackhammer"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2)
-	tool_qualities = list(QUALITY_EXCAVATION = 10)
-	switched_off_qualities = list(QUALITY_EXCAVATION = 10)
-	switched_on_qualities = list(QUALITY_DIGGING = 35)
+	tool_qualities = list(QUALITY_EXCAVATION = 30)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 30)
+	switched_on_qualities = list(QUALITY_DIGGING = 45)
 	origin_tech = list(TECH_MATERIAL = 3, TECH_POWER = 2, TECH_ENGINEERING = 2)
+	workspeed = 1.4
 	degradation = 0.7
 	use_power_cost = 0.6
 	suitable_cell = /obj/item/weapon/cell/medium
@@ -90,9 +91,9 @@
 	icon_state = "one_star_jackhammer"
 	item_state = "jackhammer"
 	matter = list(MATERIAL_STEEL = 7, MATERIAL_PLATINUM = 2)
-	tool_qualities = list(QUALITY_EXCAVATION = 10)
-	switched_off_qualities = list(QUALITY_EXCAVATION = 10)
-	switched_on_qualities = list(QUALITY_DIGGING = 35)
+	tool_qualities = list(QUALITY_EXCAVATION = 30)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 30)
+	switched_on_qualities = list(QUALITY_DIGGING = 55)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_POWER = 2, TECH_ENGINEERING = 3)
 	degradation = 0.6
 	workspeed = 1.7
@@ -154,8 +155,8 @@
 	icon_state = "pick_hand"
 	item_state = "syringe_0"
 	force = WEAPON_FORCE_PAINFUL //It's smaller
-	tool_qualities = list(QUALITY_EXCAVATION = 30, QUALITY_PRYING = 15)
-	switched_off_qualities = list(QUALITY_EXCAVATION = 30, QUALITY_PRYING = 15)
+	tool_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 15)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 15)
 	switched_on_qualities = list(QUALITY_DIGGING = 15, QUALITY_PRYING = 15)
 	w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_STEEL = 3)

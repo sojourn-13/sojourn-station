@@ -92,9 +92,6 @@
 		charging = I
 		update_icon()
 
-
-
-
 /obj/machinery/recharger/attack_hand(mob/user)
 	if(issilicon(user))
 		return
@@ -166,7 +163,14 @@
 	max_power_usage = initial(max_power_usage) * rating
 	efficiency = min(initial(efficiency) + (0.5 * (rating - 1)), 0.99)
 
-
+/obj/machinery/recharger/industrial
+	name = "industrial recharger"
+	desc = "A charging dock for power cells, power tools, computer devices and energy based weaponry. This is the bigger industrial version that likely will blackout your APC."
+	max_power_usage = 120000	//120 kW. This is the highest power the charger can draw and use,
+	//though it may draw less when charging weak cells due to their charging rate limits
+	active_power_usage = 120000//The actual power the charger uses right now. This is recalculated based on the cell when it's inserted
+	circuit = /obj/item/weapon/circuitboard/recharger/industrial
+	efficiency = 0.50
 
 /obj/machinery/recharger/wallcharger
 	name = "wall recharger"

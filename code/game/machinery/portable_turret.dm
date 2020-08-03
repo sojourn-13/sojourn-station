@@ -69,6 +69,7 @@
 
 /obj/machinery/porta_turret/One_star
 	name = "greyson positronic turret"
+	installation = /obj/item/weapon/gun/energy/retro
 
 /obj/machinery/porta_turret/crescent
 	enabled = 0
@@ -306,7 +307,7 @@ var/list/turret_icons
 						to_chat(user, SPAN_NOTICE("You remove the turret and salvage some components."))
 						if(installation)
 							var/obj/item/weapon/gun/energy/Gun = new installation(loc)
-							Gun.cell.charge = gun_charge
+							Gun.cell?.charge = gun_charge //TODO: Get rid of ugly ?. call
 							Gun.update_icon()
 						if(prob(50))
 							new /obj/item/stack/material/steel(loc, rand(1,4))

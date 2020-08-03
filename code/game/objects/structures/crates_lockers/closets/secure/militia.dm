@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/commander
-	name = "militia commander's locker"
+	name = "blackshield commander's locker"
 	req_access = list(access_hos)
 	icon_state = "mc"
 
@@ -8,6 +8,9 @@
 		new /obj/item/ammo_magazine/hrifle/lethal(src)
 	else
 		new /obj/item/ammo_magazine/hrifle/hv(src)
+	new /obj/item/clothing/accessory/ranks/commander(src)
+	new /obj/item/weapon/storage/box/commanderuniform(src)
+	new /obj/item/weapon/storage/box/blankranks(src)
 	new /obj/item/ammo_magazine/hrifle/lethal(src)
 	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/clothing/head/rank/milcom/beret(src)
@@ -70,6 +73,8 @@
 		new /obj/item/weapon/gun/projectile/lamia/dark(src)
 		new /obj/item/ammo_magazine/kurtz(src)
 		new /obj/item/ammo_magazine/kurtz/lethal(src)
+	new /obj/item/clothing/accessory/ranks/sergeant(src)
+	new /obj/item/weapon/storage/box/sergeantuniform(src)
 	new /obj/item/ammo_magazine/hrifle(src)
 	new /obj/item/clothing/under/rank/armorer(src)
 	new /obj/item/clothing/head/rank/armorer/beret(src)
@@ -89,6 +94,9 @@
 	new /obj/item/weapon/storage/belt/webbing/black(src)
 	new /obj/item/clothing/suit/armor/flackvest/militia(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
+	new /obj/item/ammo_magazine/ammobox/hrifle_small(src)
+	new /obj/item/ammo_magazine/hrifle/rubber(src)
+	new /obj/item/ammo_magazine/hrifle(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
@@ -138,6 +146,8 @@
 		new /obj/item/weapon/gun/projectile/ladon(src)
 		new /obj/item/ammo_magazine/magnum(src)
 		new /obj/item/ammo_magazine/magnum/lethal(src)
+	new /obj/item/clothing/accessory/ranks/trooper(src)
+	new /obj/item/weapon/storage/box/trooperuniform(src)
 	new /obj/item/ammo_magazine/hrifle(src)
 	new /obj/item/ammo_magazine/hrifle(src)
 	new /obj/item/ammo_magazine/hrifle/lethal(src)
@@ -187,6 +197,8 @@
 		new /obj/item/weapon/gun/projectile/ladon(src)
 		new /obj/item/ammo_magazine/magnum(src)
 		new /obj/item/ammo_magazine/magnum/lethal(src)
+	new /obj/item/clothing/accessory/ranks/corpsman(src)
+	new /obj/item/weapon/storage/box/trooperuniform(src)
 	new /obj/item/ammo_magazine/hrifle(src)
 	new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
 	new /obj/item/clothing/mask/gas(src)

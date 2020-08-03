@@ -17,19 +17,23 @@
 	var/list/oddity_stats
 
 	var/sanity_value = 1
+	var/datum/perk/oddity/perk
 
 
 /obj/item/weapon/oddity/Initialize()
 	. = ..()
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
-
 	if(oddity_stats)
 		for(var/stat in oddity_stats)
 			oddity_stats[stat] = rand(1, oddity_stats[stat])
-
+	AddComponent(/datum/component/inspiration, oddity_stats)
+	if(!perk && prob(25))
+		perk = pick(subtypesof(/datum/perk/oddity))
 
 /obj/item/weapon/oddity/examine(user)
 	..()
+	if(perk)
+		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>."))
 	for(var/stat in oddity_stats)
 		var/aspect
 		switch(oddity_stats[stat])
@@ -98,7 +102,7 @@
 	)
 
 /obj/item/weapon/oddity/common/old_newspaper
-	name = "old newspaper"
+	name = "odd newspaper clipping" //Old old news papers are a good joke
 	desc = "It contains a report on some old and strange phenomenon. Maybe it's lies, maybe it's corporate experiments gone wrong."
 	icon_state = "old_newspaper"
 	oddity_stats = list(
@@ -231,6 +235,15 @@
 	oddity_stats = list(
 		STAT_VIG = 9,
 	)
+
+/obj/item/weapon/oddity/techno
+	name = "Unknown technological part"
+	desc = "A technological part maded by Artificer Perfection Cube."
+	icon_state = "techno_part1"
+
+/obj/item/weapon/oddity/techno/Initialize()
+	icon_state = "techno_part[rand(1,7)]"
+	.=..()
 
 /obj/item/weapon/oddity/common/old_radio
 	name = "old radio"

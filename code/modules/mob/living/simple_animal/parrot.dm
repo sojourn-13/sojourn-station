@@ -763,3 +763,25 @@
 	parrot_state = PARROT_SWOOP | PARROT_ATTACK //Attack other animals regardless
 	icon_state = "parrot_fly"
 	return success
+
+/mob/living/simple_animal/jungle_bird
+	name = "bird"
+	desc = "One of the local birds, looks uncannily like the ones from earth save that they can mimic anything they hear and have a habit of stealing things."
+	pass_flags = PASSTABLE
+	mob_size = MOB_SMALL
+	faction = "pond"
+
+	speak_emote = list("squawks","says","yells")
+	emote_see = list("flutters its wings","squawks","bawks")
+
+	speak_chance = 1//1% (1 in 100) chance every tick; So about once per 150 seconds, assuming an average tick is 1.5s
+	turns_per_move = 5
+
+	response_help  = "pets"
+	response_disarm = "gently moves aside"
+	response_harm   = "swats"
+	universal_speak = 1
+
+/mob/living/simple_animal/jungle_bird/Initialize()
+	icon_state = "bird-[rand(1, 17)]"
+	icon_dead = (icon_state + "_dead")

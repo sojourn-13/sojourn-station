@@ -69,7 +69,7 @@
 
 /tipsAndTricks/jobs/tric
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/orderly, /datum/job/psychiatrist, /datum/job/paramedic)
-    tipText = "Inaprovaline and dylovene can be mixed together in a container to produce tricordazine - a mild regenerative compound that can treat brute/burns/toxin damage and even suffocation. Best of all, it has no overdose risk."
+    tipText = "Inaprovaline and dylovene can be mixed together in a container to produce tricordazine - a mild regenerative compound that can treat brute/burns/toxin damage and even suffocation. Be careful though, more than thirty units will cause a deadly overdose!"
 
 /tipsAndTricks/jobs/reagent_scanner_pda
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/orderly, /datum/job/psychiatrist, /datum/job/paramedic)

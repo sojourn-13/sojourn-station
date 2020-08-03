@@ -68,6 +68,9 @@
 	var/twohanded = FALSE //If TRUE, gun can only be fired when wileded
 	var/recentwield = 0 // to prevent spammage
 
+/obj/item/weapon/gun/proc/loadAmmoBestGuess()
+	return
+
 /obj/item/weapon/gun/get_item_cost(export)
 	if(export)
 		return ..() * 0.5 //Guns should be sold in the player market.
@@ -270,8 +273,6 @@
 	if(!special_check(user))
 		return
 
-	user.stats.getPerk(/datum/perk/timeismoney)?.deactivate()
-
 	var/shoot_time = (burst - 1)* burst_delay
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
 	next_fire_time = world.time + shoot_time
@@ -311,7 +312,10 @@
 	//update timing
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	user.set_move_cooldown(move_delay)
-	next_fire_time = world.time + fire_delay
+	if(!twohanded && user.stats.getPerk(PERK_GUNSLINGER))
+		next_fire_time = world.time + fire_delay - fire_delay * 0.33
+	else
+		next_fire_time = world.time + fire_delay
 
 	if(muzzle_flash)
 		set_light(0)

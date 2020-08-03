@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/energy/taser
 	name = "\"Counselor\" stun gun"
-	desc = "The SA SP \"Counselor\" is a taser gun used for non-lethal takedowns. Originally produced by Scarborough Arms for outer rim police forces."
+	desc = "The OT SP \"Counselor\" is a taser gun used for non-lethal takedowns. Originally produced by the Old Testament as a non-lethal and safe alternative to plasma or ballistics."
 	icon = 'icons/obj/guns/energy/taser.dmi'
 	icon_state = "taser"
 	item_state = null	//so the human update icon uses the icon_state instead.

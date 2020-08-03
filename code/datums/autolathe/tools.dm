@@ -72,6 +72,9 @@
 /datum/design/autolathe/tool/powered_hammer
 	build_path = /obj/item/weapon/tool/hammer/powered_hammer
 
+/datum/design/autolathe/tool/hammer_onestar
+	build_path = /obj/item/weapon/tool/hammer/powered_hammer/onestar_hammer
+
 /datum/design/autolathe/tool/big_wrench
 	name = "big wrench"
 	build_path = /obj/item/weapon/tool/wrench/big_wrench
@@ -92,6 +95,10 @@
 	name = "excavation pick"
 	build_path = /obj/item/weapon/tool/pickaxe/excavation
 
+/datum/design/autolathe/tool/pickaxe_onestar
+	name = "greyson positronic pickaxe"
+	build_path = /obj/item/weapon/tool/pickaxe/onestar
+
 /datum/design/autolathe/tool/knife
 	name = "kitchen knife"
 	build_path = /obj/item/weapon/tool/knife
@@ -103,6 +110,10 @@
 /datum/design/autolathe/tool/hatchet
 	name = "hatchet"
 	build_path = /obj/item/weapon/tool/hatchet
+
+/datum/design/autolathe/tool/hammer
+	name = "hammer"
+	build_path = /obj/item/weapon/tool/hammer
 
 /datum/design/autolathe/tool/minihoe
 	name = "mini hoe"
@@ -177,3 +188,7 @@
 /datum/design/autolathe/tool/pneumatic_crowbar
 	name = "pneumatic crowbar"
 	build_path = /obj/item/weapon/tool/crowbar/pneumatic
+
+/datum/design/autolathe/tool/omni_surgery_onestar
+	name = "greyson positronic medmultitool"
+	build_path = /obj/item/weapon/tool/medmultitool

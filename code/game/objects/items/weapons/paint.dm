@@ -67,3 +67,24 @@ var/global/list/cached_icons = list()
 		icon_state = "paint_white"
 		paint_type = "white"
 
+//Subtypes for admins
+/obj/item/weapon/reagent_containers/glass/paint/white
+	paint_type = "white"
+
+/obj/item/weapon/reagent_containers/glass/paint/black
+	paint_type = "black"
+
+/obj/item/weapon/reagent_containers/glass/paint/yellow
+	paint_type = "yellow"
+
+/obj/item/weapon/reagent_containers/glass/paint/green
+	paint_type = "green"
+
+/obj/item/weapon/reagent_containers/glass/paint/blue
+	paint_type = "blue"
+
+/obj/item/weapon/reagent_containers/glass/paint/red
+//Yes the parent is red by default. This is for admins to spawn in the red type without second guessing.
+
+/obj/item/weapon/reagent_containers/glass/paint/purple
+	paint_type = "purple" // Not even a real colour but what ever

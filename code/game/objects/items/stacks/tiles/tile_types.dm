@@ -9,11 +9,11 @@
  */
 
 /obj/item/stack/tile
-	name = "broken tile"
-	singular_name = "broken tile"
+	name = "scrap metal"
+	singular_name = "scrap metal"
 	icon = 'icons/obj/stack/tile.dmi'
 	icon_state = "broken_tile"
-	desc = "A tile that's been broken and rendered useless. You could probably salvage this."
+	desc = "A useless bit of scrap metal. You could probably salvage this."
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_HARMLESS
 	throwforce = WEAPON_FORCE_WEAK

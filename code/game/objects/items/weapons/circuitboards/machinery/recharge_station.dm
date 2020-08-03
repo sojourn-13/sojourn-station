@@ -1,5 +1,5 @@
 /obj/item/weapon/circuitboard/recharge_station
-	name = T_BOARD("cyborg recharging station")
+	build_name = "cyborg recharging station"
 	build_path = /obj/machinery/recharge_station
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 3, TECH_POWER = 3)
@@ -8,4 +8,14 @@
 		/obj/item/weapon/stock_parts/capacitor = 2,
 		/obj/item/weapon/stock_parts/manipulator = 2,
 		/obj/item/weapon/cell/large = 1
+	)
+
+/obj/item/weapon/circuitboard/repair_station
+	build_name = "cyborg auto-repair platform"
+	build_path = /obj/machinery/repair_station
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 4)
+	req_components = list(
+		/obj/item/weapon/stock_parts/manipulator = 3,
+		/obj/item/weapon/stock_parts/scanning_module = 1,
 	)

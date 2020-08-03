@@ -244,6 +244,18 @@
 					else if(prob(15))
 						//empty boulder
 						B = new(src)
+				if(mineral && istype(user.get_inactive_hand(), /obj/item/weapon/storage/bag/ore)) //This entire segment can be done better.
+					var/obj/structure/ore_box/box = istype(user.pulling, /obj/structure/ore_box) ? user.pulling : FALSE
+					var/obj/item/weapon/storage/bag/ore/bag = user.get_inactive_hand()
+					for (, mined_ore < mineral.result_amount, mined_ore++)
+						var/obj/item/weapon/ore/O = DropMineral()
+						if(box)
+							box.contents += O
+						else
+							if(bag.can_be_inserted(O, TRUE))
+								bag.handle_item_insertion(O, TRUE)
+							else break
+					if(box) box.update_ore_count()
 				if(B)
 					GetDrilled(0)
 				else

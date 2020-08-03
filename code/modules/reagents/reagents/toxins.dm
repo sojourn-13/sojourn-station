@@ -11,6 +11,7 @@
 	metabolism = REM * 0.05 // 0.01 by default. They last a while and slowly kill you.
 	var/strength = 0.05 // How much damage it deals per unit
 	reagent_type = "Toxin"
+	scannable = 1
 
 /datum/reagent/toxin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(strength)
@@ -471,7 +472,7 @@
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#c9bed2"
-	overdose = REAGENTS_OVERDOSE * 0.66
+	overdose = 16
 	strength = 0.1
 	addiction_chance = 10
 	nerve_system_accumulations = 5
@@ -482,8 +483,16 @@
 /datum/reagent/toxin/diplopterum/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
 	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "diplopterum")
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		M.adjustOxyLoss(-1.5 * effect_multiplier)
+		M.add_chemical_effect(CE_OXYGENATED, 1)
+		holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
+		M.adjustToxLoss(-0.1)
+		return
 
 /datum/reagent/toxin/diplopterum/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
 
@@ -504,22 +513,25 @@
 	taste_description = "plague"
 	reagent_state = LIQUID
 	color = "#6d33b4"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 16
 	addiction_chance = 10
 	nerve_system_accumulations = 5
 	heating_point = 573
 	heating_products = list("radium", "ammonia", "sulfur", "nutriment")
 
 /datum/reagent/toxin/seligitillin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.add_chemical_effect(CE_BLOODCLOT, 0.2)
-	M.heal_organ_damage(0.2 * effect_multiplier, 0, 3)
 	var/mob/living/carbon/human/H = M
 	for(var/obj/item/organ/external/E in H.organs)
 		for(var/datum/wound/W in E.wounds)
 			if(W.internal)
 				W.heal_damage(1 * effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
+		return
 
 /datum/reagent/toxin/seligitillin/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, STIM_TIME, "seligitillin_w")
 
 /datum/reagent/toxin/seligitillin/overdose(var/mob/living/carbon/M, var/alien)
@@ -538,7 +550,7 @@
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#736bbe"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 16
 	addiction_chance = 15
 	nerve_system_accumulations = 5
 	heating_point = 573
@@ -548,8 +560,15 @@
 /datum/reagent/toxin/starkellin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "starkellin")
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
+		M.add_chemical_effect(CE_BLOODCLOT, 0.15)
+		M.adjustToxLoss(-0.1)
+		return
 
 /datum/reagent/toxin/starkellin/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
 
@@ -560,7 +579,7 @@
 	taste_description = "raw meat"
 	reagent_state = LIQUID
 	color = "#9452ba"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 16
 	addiction_chance = 20
 	nerve_system_accumulations = 5
 	strength = 0.2
@@ -572,8 +591,17 @@
 	..()
 	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC, STIM_TIME, "gewaltine")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "gewaltine")
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
+		M.adjust_hallucination(-0.9 * effect_multiplier)
+		M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
+		M.add_chemical_effect(CE_ANTITOX, 1)
+		holder.remove_reagent("pararein", 0.4 * effect_multiplier)
+		return
 
 /datum/reagent/toxin/gewaltine/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, STIM_TIME, "gewaltine_w")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "gewaltine_w")
 
@@ -587,20 +615,30 @@
 	taste_description = "third reich"
 	reagent_state = LIQUID
 	color = "#a6b85b"
-	overdose = 8
+	overdose = 16
 	addiction_chance = 30
 	nerve_system_accumulations = 4
 	heating_point = 573
 	heating_products = list("radium", "mercury", "lithium", "nutriment")
 
+
+
 /datum/reagent/toxin/fuhrerole/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.faction = "roach"
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		var/mob/living/carbon/human/H = M
+		for(var/obj/item/organ/I in H.internal_organs)
+			if((I.damage > 0) && !BP_IS_ROBOTIC(I)) //Peridaxon heals only non-robotic organs
+				I.heal_damage(((0.2 + I.damage * 0.05) * effect_multiplier), FALSE)
+		return
 
 /datum/reagent/toxin/fuhrerole/on_mob_delete(mob/living/L)
 	..()
 	L.faction = initial(L.faction)
 
 /datum/reagent/toxin/fuhrerole/withdrawal_act(mob/living/carbon/M)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
 
@@ -678,3 +716,46 @@
 	M.slurring = max(M.slurring, 30)
 	if(prob(5))
 		M.vomit()
+
+/datum/reagent/toxin/combat
+	name = "Tetraricide"
+	id = "chemweapon1"
+	description = "A powerful chemical weapon, sometimes called as \"Sweet Death\". Only absolute psychopaths and REALLY desperete mercenaries utilize this chemical."
+	taste_description = "sweetness"
+	reagent_state = LIQUID
+	strength = 0.8
+	overdose = REAGENTS_OVERDOSE/2
+
+/datum/reagent/toxin/combat/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
+	if(M.losebreath < 15)
+		M.losebreath++
+	M.apply_damages(0,0,0,1.5,0,20)				//Asphyxia and pain
+	if(prob(5 - (4 * M.stats.getMult(STAT_TGH))))
+		M.vomit()
+
+/datum/reagent/toxin/combat/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
+	if(M.losebreath < 15)
+		M.losebreath++
+	M.apply_damages(0,0,0,0.5,0,20)				//Asphyxia and pain
+	if(prob(5 - (5 * M.stats.getMult(STAT_TGH))))
+		M.vomit()
+
+/datum/reagent/toxin/combat/affect_touch(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
+	if(M.losebreath < 15)
+		M.losebreath++
+	M.apply_damages(0,0,0,2.5,0,10)				//Asphyxia and pain
+	if(prob(5 - (4 * M.stats.getMult(STAT_TGH))))
+		M.vomit()
+
+/datum/reagent/toxin/combat/overdose(var/mob/living/carbon/M, var/alien)
+	..()
+	M.adjustHalLoss(20)
+	M.adjustOxyLoss(5)
+
+/datum/reagent/toxin/combat/touch_mob(var/mob/living/L, var/amount)
+	if(istype(L))
+		L.adjustHalLoss(50)
+		L.adjustToxLoss(20)

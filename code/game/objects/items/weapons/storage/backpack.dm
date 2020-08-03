@@ -162,8 +162,8 @@
 	icon_state = "backpack_security"
 
 /obj/item/weapon/storage/backpack/militia
-	name = "Militia backpack"
-	desc = "A robust military backpack with crudely added IFF stripes of the Blackshield Militia."
+	name = "blackshield backpack"
+	desc = "A robust military backpack with crudely added IFF stripes of the Blackshield."
 	icon_state = "backpack_mil"
 
 /obj/item/weapon/storage/backpack/corpsman

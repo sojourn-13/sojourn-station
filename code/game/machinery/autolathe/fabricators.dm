@@ -1,37 +1,8 @@
-/* //Leaving this here for when its made into the bullet fab.
-/obj/machinery/autolathe/armorfabricator
-	name = "armor fabricator"
-	desc = "It produces items using metal and glass."
-	icon = 'icons/obj/machines/autolathe.dmi'
-	icon_state = "autolathe"
-	circuit = /obj/item/weapon/circuitboard/armorfabricator
-	build_type = AUTOLATHE
-	have_disk = FALSE
-	have_reagents = FALSE
-	have_materials = TRUE
-	have_recycling = FALSE
-	have_design_selector = TRUE
-
-	default_disk = /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
-
-
-	var/list/recipes = list(
-		/obj/item/weapon/tool/knife,
-		/obj/item/weapon/crossbowframe,
-		/obj/item/weapon/melee/nailstick
-	)
-
-
-/obj/machinery/autolathe/armorfabricator/loaded
-	stored_material = list(
-		MATERIAL_STEEL = 60,
-		MATERIAL_PLASTIC = 60,
-		MATERIAL_GLASS = 60,
-		)
-
+/* // Going to finish this at some point, the template and menu is mostly set, might have a spacing issue, then I just need to set the machine to accept any material type, even in a stack, while also \
+meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 /obj/machinery/bulletfabricator
-	name = "biogenerator"
-	desc = "A machine for processing biomass."
+	name = "Bullet Fabricator"
+	desc = "A machine for producing ammo magazines, speed loaders, and exotic munitions."
 	icon = 'icons/obj/biogenerator.dmi'
 	icon_state = "biogen-stand"
 	density = 1
@@ -150,7 +121,6 @@
 	create_reagents(1000)
 	beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 
-
 /obj/machinery/biogenerator/on_reagent_change()			//When the reagents change, change the icon as well.
 	update_icon()
 
@@ -170,40 +140,15 @@
 
 	if(default_part_replacement(I, user))
 		return
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
-		if(beaker)
-			to_chat(user, SPAN_NOTICE("The [src] is already loaded."))
-		else
-			user.remove_from_mob(I)
-			I.loc = src
-			beaker = I
-			updateUsrDialog()
-	else if(processing)
+	if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
-	else if(istype(I, /obj/item/weapon/storage/bag/produce))
-		var/i = 0
-		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
-			i++
-		if(i >= 10)
-			to_chat(user, SPAN_NOTICE("\The [src] is already full! Activate it."))
-		else
-			for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in I.contents)
-				G.loc = src
-				i++
-				if(i >= 10)
-					to_chat(user, SPAN_NOTICE("You fill \the [src] to its capacity."))
-					break
-			if(i < 10)
-				to_chat(user, SPAN_NOTICE("You empty \the [I] into \the [src]."))
-
-
-	else if(!istype(I, /obj/item/weapon/reagent_containers/food/snacks/grown))
+	else if(!istype(I, /obj/item/stack/material))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
 	else
 		var/i = 0
-		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
+		for(var/obj/item/stack/material/G in contents)
 			i++
-		if(i >= 10)
+		if(i >= 120)
 			to_chat(user, SPAN_NOTICE("\The [src] is full! Activate it."))
 		else
 			user.remove_from_mob(I)
@@ -247,7 +192,7 @@
 	if (!ui)
 		// the ui does not exist, so we'll create a new() one
 		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "biogenerator.tmpl", "Biogenerator", 550, 655)
+		ui = new(user, src, ui_key, "bulletfabricator.tmpl", "Biogenerator", 550, 655)
 		// when the ui is first opened this is the data it will use
 		ui.set_initial_data(data)
 		// open the new ui window
@@ -266,10 +211,10 @@
 	if (stat) //NOPOWER etc
 		return
 	if(processing)
-		to_chat(usr, SPAN_NOTICE("The biogenerator is in the process of working."))
+		to_chat(usr, SPAN_NOTICE("The bullet fabricator is in the process of working."))
 		return
 	var/S = 0
-	for(var/obj/item/weapon/reagent_containers/food/snacks/grown/I in contents)
+	for(var/obj/item/stack/material/I in contents)
 		S += 5
 		if(I.reagents.get_reagent_amount("nutriment") < 0.1)
 			points += 1

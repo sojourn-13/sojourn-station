@@ -37,6 +37,6 @@
 
 /tipsAndTricks/roles/siliconLaws
     roles_list = list(/datum/antagonist)
-    tipText = "The AI of the ship can do your bidding if you update its laws accordingly. It can also affect cyborgs if they are in sync with the AI."
+    tipText = "The AI of the colony can do your bidding if you update its laws accordingly. It can also affect cyborgs if they are in sync with the AI."
 
 

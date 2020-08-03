@@ -2021,12 +2021,12 @@
 	filling_color = "#948051"
 	nutriment_desc = list("heartiness" = 1, "beans" = 3)
 	nutriment_amt = 6
-	preloaded_reagents = list("protein" = 3, "iron" = 10)
+	preloaded_reagents = list("protein" = 3, "sodiumchloride" = 5)
 	cooked = TRUE
 	reagent_flags = NONE
 	var/warm = FALSE
 	var/open = FALSE
-	var/list/heated_reagents = list("tricordrazine" = 10)
+	var/list/heated_reagents = list("tricordrazine" = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/mre/attack_self(mob/user)
 	if(!open)
@@ -2035,7 +2035,7 @@
 		return
 	user.visible_message(
 		SPAN_NOTICE("[user] crushes \the [src] package."),
-		"You crush \the [src] package and feel a comfortable heat build up."
+		"You crush \the [src] package and feel a comfortable heat build up.",
 	)
 	spawn(300)
 		to_chat(user, "You think \the [src] is ready to eat about now.")
@@ -2048,6 +2048,9 @@
 		to_chat(user, SPAN_WARNING("You viciously open \the [src] with your teeth, you animal."))
 
 /obj/item/weapon/reagent_containers/food/snacks/mre/proc/heat()
+	if(warm == TRUE)
+		to_chat(usr, SPAN_WARNING("You already crushed this!"))
+		return
 	warm = TRUE
 	for(var/reagent in heated_reagents)
 		reagents.add_reagent(reagent, heated_reagents[reagent])
@@ -2080,7 +2083,7 @@
 	nutriment_desc = list("acrid peaches" = 2)
 	bitesize = 2
 	nutriment_amt = 3
-	preloaded_reagents = list("hyperzine" = 8, "paracetamol" = 5)
+	preloaded_reagents = list("hyperzine" = 2, "paracetamol" = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/mre_cracker
 	name = "enriched cracker"
@@ -2091,14 +2094,14 @@
 	nutriment_desc = list("salt" = 1, "cracker" = 2)
 	bitesize = 2
 	nutriment_amt = 1
-	preloaded_reagents = list("dexalinp" = 1, "steady" = 1, "nicotine" = 1)
+	preloaded_reagents = list("dexalin" = 1, "nicotine" = 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/mre
 	name = "morale bar"
 	desc = "Some brand of non-melting military chocolate."
 	icon_state = "mre_candy"
 	trash = /obj/item/trash/mre_candy
-	preloaded_reagents = list("sugar" = 3, "serotrotium" = 2)
+	preloaded_reagents = list("sugar" = 3, "coco" = 2)
 	var/open = FALSE
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/mre/attack_self(mob/user)

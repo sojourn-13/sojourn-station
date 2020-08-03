@@ -1,9 +1,3 @@
-//Define a macro that we can use to assemble all the circuit board names
-#ifdef T_BOARD
-#error T_BOARD already defined elsewhere, we can't use it.
-#endif
-#define T_BOARD(name)	"circuit board (" + (name) + ")"
-
 /obj/item/weapon/circuitboard
 	name = "circuit board"
 	icon = 'icons/obj/module.dmi'
@@ -21,10 +15,16 @@
 	throw_speed = 3
 	throw_range = 15
 
+	var/build_name = null
 	var/build_path = null
 	var/frame_type = FRAME_DEFAULT
 	var/board_type = "computer"
 	var/list/req_components = null
+
+/obj/item/weapon/circuitboard/New() //Using this to automate names on each board.
+	..()
+	if(build_name && build_name != null) //This check here is only because not all boards use automated names, apparently.
+		name = "[build_name] board"
 
 //Called when the circuitboard is used to contruct a new machine.
 /obj/item/weapon/circuitboard/proc/construct(var/obj/machinery/M)

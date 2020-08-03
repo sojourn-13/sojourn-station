@@ -59,9 +59,11 @@
 /datum/design/research/item/implant/chemical
 	name = "chemical"
 	build_path = /obj/item/weapon/implantcase/chem
-	sort_string = "MFAAA"
 
 /datum/design/research/item/implant/freedom
 	name = "freedom"
 	build_path = /obj/item/weapon/implantcase/freedom
-	sort_string = "MFAAB"
+
+/datum/design/research/item/implant/alarm
+	name = "death alarm"
+	build_path = /obj/item/weapon/implantcase/death_alarm

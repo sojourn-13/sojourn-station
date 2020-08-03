@@ -6,11 +6,9 @@
 	contents_list_base = list(/obj/random/credits/c5000 = 1)
 
 	contents_list_random = list(/obj/item/stack/material/diamond/random = 10,
-	/obj/item/stack/telecrystal/random = 5,
 	/obj/item/stack/material/platinum/random = 10,
 	/obj/item/stack/material/gold/random = 15,
 	/obj/item/stack/material/silver/random = 25,
-	/obj/item/weapon/moneybag/vault = 15,
 	/obj/random/credits/c5000 = 30,
 	/obj/random/credits/c1000 = 60,
 	/obj/random/credits/c500 = 90)

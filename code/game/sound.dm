@@ -270,6 +270,12 @@ var/list/footstep_tile = list(\
 		'sound/effects/footstep/tile3.wav',\
 		'sound/effects/footstep/tile4.wav')
 
+var/list/footstep_water = list(\
+		'sound/effects/footstep/water1.ogg',\
+		'sound/effects/footstep/water2.ogg',\
+		'sound/effects/footstep/water3.ogg',\
+		'sound/effects/footstep/water4.ogg')
+
 var/list/footstep_wood = list(\
 		'sound/effects/footstep/wood1.ogg',\
 		'sound/effects/footstep/wood2.ogg',\
@@ -308,6 +314,8 @@ var/list/rummage_sound = list(\
 			toplay = pick(footstep_plating)
 		if ("tile")
 			toplay = pick(footstep_tile)
+		if ("water")
+			toplay = pick(footstep_water)
 		if ("wood")
 			toplay = pick(footstep_wood)
 
@@ -337,8 +345,13 @@ var/list/rummage_sound = list(\
 		var/mob/M = P
 		if(!M || !M.client)
 			continue
-
-		if(get_dist(M, turf_source) <= maxdistance)
+		var/dist = get_dist(M, turf_source)
+		if(dist <= maxdistance + 3)
+			if(dist > maxdistance)
+				if(!ishuman(M))
+					continue
+				else if(!M.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
+					continue
 			var/turf/T = get_turf(M)
 
 			if(T && (T.z == turf_source.z || zrange && abs(T.z - turf_source.z) <= zrange))

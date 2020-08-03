@@ -33,9 +33,9 @@
 	armor = list(melee = 35, bullet = 45,energy = 30, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/ballistic/militia
-	name = "Militia helmet"
+	name = "blackshield helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
-			This one bears the IFF stripes of the Blackshield Militia."
+			This one bears the IFF stripes of the Blackshield."
 	icon_state = "helmet_mil_alt"
 
 /obj/item/clothing/head/helmet/ballistic/green
@@ -96,6 +96,15 @@
 	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
+
+/obj/item/clothing/head/helmet/soteriasuit
+	name = "'Mark II' enviromental protection helmet"
+	desc = "You feel like this helmet is cheap, for some reason."
+	icon_state = "armor_engineering"
+	armor = list(melee = 20, bullet = 20, energy = 20, bomb = 30, bio = 50, rad = 50)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	matter = list(MATERIAL_STEEL = 20)
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
@@ -234,7 +243,7 @@
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "steelpot"
 	armor = list(melee = 40, bullet = 35, energy = 0, bomb = 30, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
-	flags_inv = BLOCKHAIR
+	flags_inv = BLOCKHEADHAIR
 	body_parts_covered = HEAD|EARS
 	siemens_coefficient = 1
 

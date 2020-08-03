@@ -50,6 +50,7 @@
 	var/silent = 0 		// Can't talk. Value goes down every life proc.
 	var/on_fire = 0 //The "Are we on fire?" var
 	var/fire_stacks
+	var/next_onfire_hal = 0 //burn
 
 	var/failed_last_breath = 0 //This is used to determine if the mob failed a breath. If they did fail a brath, they will attempt to breathe each tick, otherwise just once per 4 ticks.
 	var/possession_candidate // Can be possessed by ghosts if unplayed.
@@ -71,3 +72,11 @@
 	var/recoil = 0 //What our current recoil level is
 	var/last_recoil_update = 0 //When our last recoil update was
 	var/recoil_timer //Holds the timer ID
+	var/falls_mod = 1
+	var/mob_bomb_defense = 0	// protection from explosives
+	var/mod_climb_delay = 1 // delay for climb
+	var/noise_coeff = 1 //noise coefficient
+	var/brute_mod_perk = 1 //this and the ones below adjust various damages via perks
+	var/burn_mod_perk = 1
+	var/toxin_mod_perk = 1
+	var/oxy_mod_perk = 1

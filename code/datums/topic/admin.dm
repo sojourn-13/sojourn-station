@@ -387,6 +387,8 @@
 	body += source.formatJobGroup(M, "Science Positions", "e79fff", "sciencedept", science_positions)
 	//Church (Gold)
 	body += source.formatJobGroup(M, "Church Positions", "ecd37d", "churchdept", church_positions)
+	//Prospector (Brown)
+	body += source.formatJobGroup(M, "Prospector Positions", "8B4513", "prospectordept", prospector_positions)
 	//Civilian (Grey)
 	body += source.formatJobGroup(M, "Civilian Positions", "dddddd", "civiliandept", civilian_positions)
 	//Non-Human (Green)
@@ -453,6 +455,11 @@
 				joblist += temp.title
 		if("churchdept")
 			for(var/jobPos in church_positions)
+				var/datum/job/temp = SSjob.GetJob(jobPos)
+				if(!temp) continue
+				joblist += temp.title
+		if("prospectordept")
+			for(var/jobPos in prospector_positions)
 				var/datum/job/temp = SSjob.GetJob(jobPos)
 				if(!temp) continue
 				joblist += temp.title

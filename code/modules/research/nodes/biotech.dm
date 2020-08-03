@@ -15,6 +15,24 @@
 							/datum/design/research/item/part/basic_sensor
 						)
 
+/datum/technology/medical_cooling
+	name = "Medical Cooling"
+	desc = "Using cryo based tech in more equipment based gear."
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.1
+	y = 0.5
+	icon = "cryobag"
+
+	required_technologies = list(/datum/technology/ice_and_fire, /datum/technology/basic_biotech)
+	required_tech_levels = list()
+	cost = 500 //
+
+	unlocks_designs = list(	/datum/design/research/item/medical/cryobag,
+							/datum/design/research/item/medical/red,
+							/datum/design/research/item/medical/blue
+						)
+
 /datum/technology/basic_med_machines
 	name = "Basic Medical Machines"
 	desc = "Basic medical databases and surgical monitoring."
@@ -193,7 +211,8 @@
 							/datum/design/research/item/chem_dispenser,
 							/datum/design/research/item/medhud,
 							/datum/design/research/structure/bidonadv,
-							/datum/design/research/item/medical/compact_defibs
+							/datum/design/research/item/medical/compact_defibs,
+							/datum/design/research/item/implant/alarm
 							)
 
 /*
@@ -230,7 +249,8 @@
 							/datum/design/research/item/medical/adv_mass_spectrometer,
 							/datum/design/research/item/medical/adv_reagent_scanner,
 							/datum/design/research/item/weapon/chemsprayer,
-							/datum/design/research/item/weapon/rapidsyringe
+							/datum/design/research/item/weapon/rapidsyringe,
+							/datum/design/research/item/ammo/rapidsyringe
 							)
 
 /datum/technology/top_biotech
@@ -254,4 +274,41 @@
 							/datum/design/research/item/mechfab/modules/multitool/surgical,
 							/datum/design/research/item/mechfab/modules/multitool/engineer,
 							/datum/design/research/item/mechfab/modules/multitool/miner
+							)
+
+/datum/technology/rig_medical_stuff
+	name = "RIG Medical Addaptation"
+	desc = "Augmentations for body, this tech using almost all previous technologies."
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.85
+	y = 0.5
+	icon = "riginjector"
+
+	required_technologies = list(	/datum/technology/top_biotech,
+									/datum/technology/rig_industeral
+								)
+	required_tech_levels = list()
+	cost = 5000
+
+	unlocks_designs = list(	/datum/design/research/item/chem_injector,
+							/datum/design/research/item/healthscanner,
+							/datum/design/research/item/combat_injector,
+							)
+
+/datum/technology/omnisurgery
+	name = "Omnitool Surgery Tool"
+	desc = "An all in one tool for surgery based on those that are found in legendary Greyson Positronic models."
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.85
+	y = 0.4
+	icon = "omnisurgery"
+
+	required_technologies = list(	/datum/technology/rig_medical_stuff
+								)
+	required_tech_levels = list()
+	cost = 300
+
+	unlocks_designs = list(	/datum/design/research/item/medical/medimplant_sci
 							)

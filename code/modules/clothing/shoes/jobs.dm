@@ -40,6 +40,12 @@
 	)
 	siemens_coefficient = 0.5
 
+/obj/item/clothing/shoes/reinforced/medical
+	name = "soteria reinforced shoes"
+	desc = "Slightly reinforced shoes for soteria medical personnel."
+	icon_state = "medshoes"
+	item_state = "medshoes"
+
 /obj/item/clothing/shoes/workboots
 	name = "workboots"
 	desc = "A pair of steel-toed utility workboots."
@@ -55,6 +61,16 @@
 	)
 	siemens_coefficient = 0
 	can_hold_knife = 1
+
+/obj/item/clothing/shoes/jackboots/janitor
+	name = "custodian's jackboots"
+	desc = "Specially altered jackboots for custodians to prevent them from slipping."
+	icon_state = "jackboots"
+	item_state = "jackboots"
+	force = WEAPON_FORCE_HARMLESS
+	siemens_coefficient = 0.3
+	item_flags = NOSLIP
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/jackboots/toeless
 	name = "toeless jackboots"

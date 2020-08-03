@@ -28,6 +28,15 @@
 /datum/reagent/metal
 	reagent_type = "Metal"
 
+/datum/reagent/metal/affect_ingest(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_CHTMANT)
+		M.adjustToxLoss(0.01) //Small damage to Chtmants nothing too too lethal
+
+/datum/reagent/metal/affect_blood(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_CHTMANT)
+		M.adjustToxLoss(0.2)
+
+
 /datum/reagent/metal/aluminum
 	name = "Aluminum"
 	id = "aluminum"
@@ -97,6 +106,7 @@
 	touch_met = 5
 	var/nutriment_factor = 0
 	var/strength = 10 // This is, essentially, units between stages - the lower, the stronger. Less fine tuning, more clarity.
+	var/strength_mod = 1
 	var/toxicity = 1
 
 	var/druggy = 0
@@ -212,6 +222,7 @@
 
 
 /datum/reagent/metal/iron/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
 	M.add_chemical_effect(CE_BLOODRESTORE, 0.8 * effect_multiplier)
 
 /datum/reagent/metal/lithium
@@ -223,6 +234,7 @@
 	color = "#808080"
 
 /datum/reagent/metal/lithium/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
 	if(M.canmove && !M.restrained() && istype(M.loc, /turf/space))
 		step(M, pick(cardinal))
 	if(prob(5))
@@ -237,6 +249,7 @@
 	color = "#484848"
 
 /datum/reagent/metal/mercury/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
 	if(M.canmove && !M.restrained() && istype(M.loc, /turf/space))
 		step(M, pick(cardinal))
 	if(prob(5))
@@ -262,6 +275,7 @@
 	color = "#A0A0A0"
 
 /datum/reagent/metal/potassium/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
 	if(volume > 3)
 		M.add_chemical_effect(CE_PULSE, 1)
 	if(volume > 10)
@@ -276,6 +290,7 @@
 	color = "#C7C7C7"
 
 /datum/reagent/metal/radium/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
 	M.apply_effect(1 * (issmall(M) ? effect_multiplier * 2 : effect_multiplier), IRRADIATE, 0) // Radium may increase your chances to cure a disease
 	if(M.virus2.len)
 		for(var/ID in M.virus2)

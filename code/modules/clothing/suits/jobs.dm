@@ -68,6 +68,19 @@
 		/obj/item/weedkiller
 	)
 
+//Civillian
+/obj/item/clothing/suit/storage/toggle/club
+	name = "executive officer's jacket"
+	desc = "A well tailored and rich jacket of the executive officer."
+	icon_state = "cm_coat"
+	item_state = "cm_coat"
+	icon_open = "cm_coat_open"
+	icon_closed = "cm_coat"
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
 //Chaplain
 /obj/item/clothing/suit/storage/chaplain
 	name = "prime jacket"
@@ -76,6 +89,8 @@
 	item_state = "chaplain_hoodie"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	permeability_coefficient = 0.50
+	siemens_coefficient = 0.7
 	armor = list(
 		melee = 30,
 		bullet = 30,
@@ -83,6 +98,21 @@
 		bomb = 30,
 		bio = 100,
 		rad = 100
+	)
+
+/obj/item/clothing/suit/storage/neotheosports
+	name = "church sports jacket"
+	desc = "Absolutism styled sports jacket to keep the faithful always on their feet."
+	icon_state = "nt_sportsjacket"
+	item_state = "nt_sportsjacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 0,
+		bomb = 10,
+		bio = 100,
+		rad = 75
 	)
 
 /obj/item/clothing/suit/storage/chaplain/holiday

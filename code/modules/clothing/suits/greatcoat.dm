@@ -77,7 +77,7 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/greatcoat/ihc/bmc
-	name = "militia commander's greatcoat"
+	name = "blackshield commander's greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style."
 	icon_state = "mc_coat"
 	item_state = "mc_coat"
@@ -90,7 +90,7 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/greatcoat/ihc/bmc_cloaked
-	name = "militia commander's cloaked greatcoat"
+	name = "blackshield commander's cloaked greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style, this time wrapped in a fancy cloak."
 	icon_state = "mc_coat_cloak"
 	item_state = "mc_coat_cloak"
@@ -99,6 +99,27 @@
 	armor = list(melee = 50, bullet = 50, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+//Credit to Drawsstuff for the coat mob icon only. The coat item icon, hat mob icon, and hat item icon were created by Kazkin via recoloring ERIS sprites.
+/obj/item/clothing/suit/greatcoat/divisor
+	name = "divisor greatcoat"
+	desc = "A durable greatcoat designed for protection in mind. It has armor plating woven into the interior and comes with the same protection other church armor does."
+	icon_state = "divisor_coat"
+	item_state = "divisor_coat"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(
+		melee = 30,
+		bullet = 30,
+		energy = 10,
+		bomb = 30,
+		bio = 100,
+		rad = 100
+	)
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 

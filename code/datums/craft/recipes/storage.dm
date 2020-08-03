@@ -4,6 +4,14 @@
 	related_stats = list(STAT_MEC)
 	time = 80
 
+/datum/craft_recipe/box
+	name = "box"
+	result = /obj/item/weapon/storage/box
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
+	)
+	related_stats = list(STAT_COG)
+
 /datum/craft_recipe/storage/bookshelf
 	name = "book shelf"
 	result = /obj/structure/bookcase

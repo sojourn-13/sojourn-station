@@ -194,7 +194,8 @@
 	unlocks_designs = list(	/datum/design/research/circuit/miningdrill,
 							/datum/design/research/circuit/miningdrillbrace,
 							/datum/design/research/item/weapon/mining/drill_diamond,
-							/datum/design/research/item/weapon/mining/jackhammer
+							/datum/design/research/item/weapon/mining/jackhammer,
+							/datum/design/research/item/weapon/mining/scanner
 							)
 
 /datum/technology/adv_tools
@@ -308,22 +309,64 @@
 	required_tech_levels = list()
 	cost = 1500
 
-	unlocks_designs = list(/datum/design/research/item/part/RPED, /datum/design/research/circuit/secure_airlock)
+	unlocks_designs = list(/datum/design/research/item/part/RPED, /datum/design/research/circuit/secure_airlock, /datum/design/research/item/part/RPED/mini)
 
 /datum/technology/industrial_printing
 	name = "Industrial Printing"
-	desc = "An industrial printer with many parts and compackter internals allow for grater speed"
+	desc = "An industrial printer with many parts and compacter internals allow for grater speed."
 	tech_type = RESEARCH_ENGINEERING
 
 	x = 0.9
 	y = 0.5
 	icon = "autolathe"
 
-	required_technologies = list(/datum/technology/super_adv_engineering)
+	required_technologies = list(/datum/technology/super_adv_engineering, /datum/technology/weapon_recharging)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 7)
 	cost = 3500
 
-	unlocks_designs = list(/datum/design/research/circuit/industrial_printer)
+	unlocks_designs = list(/datum/design/research/circuit/industrial_printer,
+							/datum/design/research/circuit/recharger_industrial,
+							/datum/design/research/circuit/industrial_grinder
+							)
+
+
+/datum/technology/rig_industeral
+	name = "Hardsuit Integration"
+	desc = "Integrated tools and gear used by hardsuit rigs for day to day work."
+	tech_type = RESEARCH_ENGINEERING
+
+	x = 0.9
+	y = 0.3
+	icon = "rigstorage"
+
+	required_technologies = list(/datum/technology/super_adv_engineering)
+	required_tech_levels = list(RESEARCH_ENGINEERING = 10)
+	cost = 2500
+
+	unlocks_designs = list(	/datum/design/research/item/storage,
+							/datum/design/research/item/ai_container,
+							/datum/design/research/item/rigjets,
+							/datum/design/research/item/rigrcd
+							)
+
+
+/datum/technology/rig_mining
+	name = "Hardsuit Mining"
+	desc = "Integrated tools and gear used by hardsuit rigs for busting up rocks and getting ore."
+	tech_type = RESEARCH_ENGINEERING
+
+	x = 0.9
+	y = 0.2
+	icon = "rigmining"
+
+	required_technologies = list(/datum/technology/rig_industeral)
+	required_tech_levels = list()
+	cost = 2500
+
+	unlocks_designs = list(	/datum/design/research/item/rig_drill,
+							/datum/design/research/item/rig_anomaly_scanner,
+							/datum/design/research/item/rig_ore_scanner
+							)
 
 
 /*
@@ -333,7 +376,7 @@
 	tech_type = RESEARCH_ENGINEERING
 
 	x = 0.9
-	y = 0.5
+	y = 0.3
 	icon = "bluespacematterbin"
 
 	required_technologies = list(/datum/technology/ultra_parts)

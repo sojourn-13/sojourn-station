@@ -78,6 +78,40 @@
 	crate_name = "birthday catering crate"
 	group = "Hospitality"
 
+/datum/supply_pack/bardrinks
+	name = "Bartending resupply crate"
+	contains = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/gin = 2,/obj/item/weapon/reagent_containers/food/drinks/bottle/whiskey = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla = 2,/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth = 2,/obj/item/weapon/reagent_containers/food/drinks/bottle/rum = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/wine = 3,/obj/item/weapon/reagent_containers/food/drinks/bottle/cognac = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/kahlua = 3,/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale = 6,/obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/tomatojuice = 2,/obj/item/weapon/reagent_containers/food/drinks/bottle/limejuice = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/cream = 2,/obj/item/weapon/reagent_containers/food/drinks/cans/tonic = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/cola = 5,/obj/item/weapon/reagent_containers/food/drinks/bottle/space_up = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/space_mountain_wind = 5,/obj/item/weapon/reagent_containers/food/drinks/cans/sodawater = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/flask/barflask = 2,/obj/item/weapon/reagent_containers/food/drinks/bottle/bluecuracao = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 30,/obj/item/weapon/reagent_containers/food/drinks/bottle/grenadine = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/melonliquor = 2,/obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe = 1)
+	cost = 1120
+	containertype = /obj/structure/closet/crate/freezer
+	crate_name = "bartending resupply crate"
+	group = "Hospitality"
+
+/datum/supply_pack/cakes
+	name = "Party Cakes"
+	contains = list(/obj/item/weapon/reagent_containers/food/snacks/sliceable/carrotcake,
+					/obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesecake,
+					/obj/item/weapon/reagent_containers/food/snacks/sliceable/plaincake,
+					/obj/item/weapon/reagent_containers/food/snacks/sliceable/orangecake,
+					/obj/item/weapon/reagent_containers/food/snacks/sliceable/limecake,
+					/obj/item/weapon/reagent_containers/food/snacks/sliceable/lemoncake,
+					/obj/item/weapon/reagent_containers/food/snacks/sliceable/chocolatecake,)
+	cost = 800
+	containertype = /obj/structure/closet/crate
+	crate_name = "Party Cake Box"
+	group = "Hospitality"
+
 /datum/supply_pack/burgersurprise
 	name = "Burger Surprise Crate (x5)"
 	contains = list(/obj/random/junkfood/onlyburger,

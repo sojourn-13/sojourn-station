@@ -97,11 +97,17 @@
 				stat("Chemical Storage", mind.changeling.chem_charges)
 				stat("Genetic Damage Time", mind.changeling.geneticdamage)
 
+
 		var/obj/item/weapon/implant/core_implant/cruciform/C = get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
 		if (C)
 			stat("Cruciform", "[C.power]/[C.max_power]")
-	else if(mind)
-		statpanel("Perks",src.stats.perk_stat)
+
+	else if(statpanel("Perks"))
+		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
+			perkHolder.update()
+
+	if(mind)
+		statpanel("Perks",src.stats.perk_stats)
 
 /mob/living/carbon/human/ex_act(severity)
 	if(!blinded)
@@ -111,7 +117,7 @@
 	var/shielded = 0
 	var/b_loss = null
 	var/f_loss = null
-	var/bomb_defense = getarmor(null, ARMOR_BOMB)
+	var/bomb_defense = getarmor(null, ARMOR_BOMB) + mob_bomb_defense
 	switch (severity)
 		if (1.0)
 			b_loss += 500
@@ -255,7 +261,7 @@ var/list/rank_prefix = list(\
 	"Supply Specialist" = "Specialist",\
 	"Sergeant" = "Sergeant",\
 	"Marshal Warrant Officer" = "Warrant Officer",\
-	"Militia Commander" = "Commander",\
+	"Blackshield Commander" = "Commander",\
 	"Corpsman" = "Corpsman",\
 	"Blackshield Trooper" = "Trooper",\
 	"Premier" = "Premier",\
@@ -1186,6 +1192,7 @@ var/list/rank_prefix = list(\
 			if(mind)
 				C.install_default_modules_by_job(mind.assigned_job)
 				C.access.Add(mind.assigned_job.cruciform_access)
+				C.install_default_modules_by_path(mind.assigned_job)
 
 	else
 		var/organ_type = null
@@ -1206,6 +1213,7 @@ var/list/rank_prefix = list(\
 				C.activate()
 				C.install_default_modules_by_job(mind.assigned_job)
 				C.access.Add(mind.assigned_job.cruciform_access)
+				C.install_default_modules_by_path(mind.assigned_job)
 
 	species.organs_spawned(src)
 

@@ -30,6 +30,8 @@
 		STAT_COG = 25
 	)
 
+	perks = list(/datum/perk/selfmedicated)
+
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor,
@@ -72,13 +74,15 @@
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
-		access_genetics, access_maint_tunnels, access_external_airlocks, access_research_equipment
+		access_genetics, access_external_airlocks, access_research_equipment
 	)
 
 	stat_modifiers = list(
 		STAT_BIO = 40,
 		STAT_COG = 10
 	)
+
+	perks = list(/datum/perk/selfmedicated)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -115,8 +119,10 @@
 	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
 
 	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology
+		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly
 	)
+
+	perks = list(/datum/perk/selfmedicated)
 
 	stat_modifiers = list(
 		STAT_TGH = 20,
@@ -170,6 +176,8 @@
 		STAT_VIG = 5
 	)
 
+	perks = list(/datum/perk/selfmedicated)
+
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/camera_monitor)
@@ -214,6 +222,8 @@
 		STAT_VIG = 10,
 	)
 
+	perks = list(/datum/perk/selfmedicated)
+
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
 							 /datum/computer_file/program/camera_monitor)
@@ -222,7 +232,7 @@
 	You are trained but lack seniority. Follow the guidance of other doctors - and transport patients back for specialist treatments.<br>\
 	Remember that you must often respond to emergencies. Pack your gear carefully and bring a breaching tool - be ready to run at short notice.<br>\
 	Your other duties include transporting patients between rooms, running errands, and generally saving time for other doctors.<br>\
-	Corpse recovery may also fall within your duties. If the body is in a dangerous location, enlist the help of the Blackshield Militia."
+	Corpse recovery may also fall within your duties. If the body is in a dangerous location, enlist the help of the Blackshield."
 
 	duties = "Respond to distress calls and extract wounded people from dangerous situations.<br>\
 	Watch the crew monitor for signs of injuries or deaths and respond accordingly.<br>\

@@ -4,7 +4,7 @@
 	gender = PLURAL
 	organ_tag = BP_EYES
 	parent_organ = BP_HEAD
-	price_tag = 100
+	price_tag = 1000
 	var/eyes_color = "#000000"
 	var/robo_color = "#000000"
 	var/cache_key = BP_EYES
@@ -12,6 +12,7 @@
 /obj/item/organ/internal/eyes/prosthetic
 	name = "prosthetic eyes"
 	icon_state = "eyes-prosthetic"
+	price_tag = 100
 
 /obj/item/organ/internal/eyes/proc/get_icon()
 	var/icon/eyes_icon = new/icon('icons/mob/human_face.dmi', "eye_l")

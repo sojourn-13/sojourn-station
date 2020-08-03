@@ -203,6 +203,12 @@
 	sort_string = "HACAA"
 	category = CAT_MACHINE
 
+/datum/design/research/circuit/repair_station
+	name = "cyborg auto-repair platform"
+	build_path = /obj/item/weapon/circuitboard/repair_station
+	sort_string = "HACAE"
+	category = CAT_MACHINE
+
 /datum/design/research/circuit/recharge_station
 	name = "cyborg recharge station"
 	build_path = /obj/item/weapon/circuitboard/recharge_station
@@ -213,6 +219,7 @@
 	name = "recharger"
 	build_path = /obj/item/weapon/circuitboard/recharger
 	sort_string = "HACAD"
+	category = CAT_POWER
 
 /datum/design/research/circuit/atmosalerts
 	name = "atmosphere alert console"
@@ -381,7 +388,7 @@
 	name = "NTNet Quantum Relay"
 	build_path = /obj/item/weapon/circuitboard/ntnet_relay
 	sort_string = "WAAAA"
-
+	category = CAT_TCOM
 
 // Shield Generators
 /datum/design/research/circuit/shield
@@ -427,6 +434,19 @@
 //Industeral Printing
 
 /datum/design/research/circuit/industrial_printer
+	name = "Industrial Printer"
 	build_path = /obj/item/weapon/circuitboard/autolathe_industrial
-	sort_string = "VAAAH"
+	sort_string = "VAAAI"
+	category = CAT_MACHINE
+
+/datum/design/research/circuit/recharger_industrial
+	name = "Industrial Recharger"
+	build_path = /obj/item/weapon/circuitboard/recharger/industrial
+	sort_string = "VAAAJ"
+	category = CAT_POWER
+
+/datum/design/research/circuit/industrial_grinder
+	name = "Industrial Grinder"
+	build_path = /obj/item/weapon/circuitboard/industrial_grinder
+	sort_string = "VAAAK"
 	category = CAT_MACHINE

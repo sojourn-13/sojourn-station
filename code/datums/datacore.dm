@@ -22,6 +22,7 @@ var/global/ManifestJSON
 	var/list/sci = new()
 	var/list/car = new()
 	var/list/chr = new()
+	var/list/pro = new()
 	var/list/civ = new()
 	var/list/bot = new()
 	var/list/misc = new()
@@ -74,6 +75,9 @@ var/global/ManifestJSON
 			department = 1
 		if(real_rank in cargo_positions)
 			car[name] = rank
+			department = 1
+		if(real_rank in prospector_positions)
+			pro[name] = rank
 			department = 1
 		if(real_rank in church_positions)
 			chr[name] = rank
@@ -135,6 +139,11 @@ var/global/ManifestJSON
 		dat += "<tr><th colspan=3>Church</th></tr>"
 		for(name in chr)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[chr[name]]</td><td>[isactive[name]]</td></tr>"
+			even = !even
+	if(pro.len > 0)
+		dat += "<tr><th colspan=3>Prospector</th></tr>"
+		for(name in pro)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[pro[name]]</td><td>[isactive[name]]</td></tr>"
 			even = !even
 	if(civ.len > 0)
 		dat += "<tr><th colspan=3>Civilian</th></tr>"
@@ -379,6 +388,7 @@ var/global/ManifestJSON
 	var/med[0]
 	var/sci[0]
 	var/chr[0]
+	var/pro[0]
 	var/civ[0]
 	var/bot[0]
 	var/misc[0]
@@ -394,7 +404,7 @@ var/global/ManifestJSON
 			heads[++heads.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			depthead = 1
-			if(rank=="Captain" && heads.len != 1)
+			if(rank=="Premier" && heads.len != 1)
 				heads.Swap(1, heads.len)
 
 		if(real_rank in security_positions)
@@ -427,6 +437,12 @@ var/global/ManifestJSON
 			if(depthead && chr.len != 1)
 				chr.Swap(1, chr.len)
 
+		if(real_rank in prospector_positions)
+			pro[++pro.len] = list("name" = name, "rank" = rank, "active" = isactive)
+			department = 1
+			if(depthead && pro.len != 1)
+				pro.Swap(1, pro.len)
+
 		if(real_rank in civilian_positions)
 			civ[++civ.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
@@ -448,6 +464,7 @@ var/global/ManifestJSON
 		"med" = med,
 		"sci" = sci,
 		"chr" = chr,
+		"pro" = pro,
 		"civ" = civ,
 		"bot" = bot,
 		"misc" = misc

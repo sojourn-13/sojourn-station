@@ -11,7 +11,6 @@
 	department = "Civilian"
 	supervisors = "nobody! Enjoy your time off"
 	selection_color = "#9b633e"
-	access = list(access_maint_tunnels)
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
@@ -33,7 +32,6 @@
 	department = "Cargo"
 	supervisors = "nobody! Enjoy your time off"
 	selection_color = "#9b633e"
-	access = list(access_maint_tunnels)
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
@@ -52,7 +50,6 @@
 	department = "Engineering"
 	supervisors = "nobody! Enjoy your time off"
 	selection_color = "#5B4D20"
-	access = list(access_maint_tunnels, access_external_airlocks, access_construction)
 //	minimal_access = list(access_maint_tunnels, access_external_airlocks)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
@@ -71,7 +68,6 @@
 	department = "Medical"
 	supervisors = "nobody! Enjoy your time off"
 	selection_color = "#013D3B"
-	access = list(access_maint_tunnels, access_external_airlocks)
 //	minimal_access = list(access_maint_tunnels, access_external_airlocks)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
@@ -102,7 +98,6 @@
 	department = "Security"
 	supervisors = "nobody! Enjoy your time off"
 	selection_color = "#601C1C"
-	access = list(access_maint_tunnels)
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
@@ -121,7 +116,6 @@
 	department = "Command"
 	supervisors = "nobody! Enjoy your time off"
 	selection_color = "#2F2F7F"
-	access = list(access_maint_tunnels, access_external_airlocks)
 //	minimal_access = list(access_maint_tunnels, access_external_airlocks)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 

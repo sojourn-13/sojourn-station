@@ -98,3 +98,45 @@
 	display_name = "turtleneck selection"
 	path = /obj/item/clothing/under/turtleneck
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/leisure
+    display_name = "leisure suits"
+    path = /obj/item/clothing/under/leisure
+
+/datum/gear/uniform/leisure/New()
+	..()
+	var/leisure = list(
+		"Brown Jacket"			=	/obj/item/clothing/under/leisure,
+		"White Blazer"			=	/obj/item/clothing/under/leisure/white,
+		"Patterned Pullover"	=	/obj/item/clothing/under/leisure/pullover
+	)
+	gear_tweaks += new /datum/gear_tweak/path(leisure)
+
+/datum/gear/uniform/dress
+    display_name = "dresses"
+    path = /obj/item/clothing/under/dress
+
+/datum/gear/uniform/dress/New()
+	..()
+	var/dress = list(
+		"Gray Dress"			=	/obj/item/clothing/under/dress,
+		"Blue Dress"			=	/obj/item/clothing/under/dress/blue,
+		"Red Dress"				=	/obj/item/clothing/under/dress/red
+	)
+	gear_tweaks += new /datum/gear_tweak/path(dress)
+
+/datum/gear/uniform/cyber
+	display_name = "augmented jumpsuit"
+	path = /obj/item/clothing/under/cyber
+
+/datum/gear/uniform/jersey
+	display_name = "church overalls"
+	path = /obj/item/clothing/under/jersey
+
+/datum/gear/uniform/churchsport
+	display_name = "church sport clothes"
+	path = /obj/item/clothing/under/rank/church/sport
+
+/datum/gear/uniform/churchnonrank
+	display_name = "church clothes"
+	path = /obj/item/clothing/under/rank/church

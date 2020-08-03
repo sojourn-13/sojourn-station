@@ -126,7 +126,6 @@
 	name = "Oxyjet Canister"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/oxyjet
 
-
 //Excelsior shit
 /datum/design/autolathe/excelsior/laser
 	name = "excelsior micro-laser"
@@ -147,3 +146,29 @@
 /datum/design/autolathe/excelsior/manipulator
 	name = "excelsior manipulator"
 	build_path = /obj/item/weapon/stock_parts/manipulator/excelsior
+
+//Greyson Positronics
+
+/datum/design/autolathe/part/greyson/ai
+	name = "Nanointegrated AI"
+	build_path = /obj/item/weapon/tool_upgrade/augment/ai_tool
+
+/datum/design/autolathe/greyson/laser
+	name = "greyson positronic micro-laser"
+	build_path = /obj/item/weapon/stock_parts/micro_laser/one_star
+
+/datum/design/autolathe/greyson/matter
+	name = "greyson positronic matter bin"
+	build_path = /obj/item/weapon/stock_parts/matter_bin/one_star
+
+/datum/design/autolathe/greyson/module
+	name = "greyson positronic scanning module"
+	build_path = /obj/item/weapon/stock_parts/scanning_module/one_star
+
+/datum/design/autolathe/greyson/capacitor
+	name = "greyson positronic capacitor"
+	build_path = /obj/item/weapon/stock_parts/capacitor/one_star
+
+/datum/design/autolathe/greyson/manipulator
+	name = "greyson positronic manipulator"
+	build_path = /obj/item/weapon/stock_parts/manipulator/one_star

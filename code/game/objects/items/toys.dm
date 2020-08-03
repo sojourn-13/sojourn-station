@@ -635,20 +635,20 @@
 /*Guild*/
 
 /obj/item/toy/figure/character/guild/qm
-	name = "merchant action figure"
-	desc = "The money-minded manager of all cargo affairs. Guild 1/3."
+	name = "CEO action figure"
+	desc = "The money-minded manager of all cargo affairs. Lonestar 1/3."
 	icon_state = "qm"
 	toysay = "Watch our budget!"
 
 /obj/item/toy/figure/character/guild/cargotech
 	name = "technician action figure"
-	desc = "Noone is more experienced at moving crates. Guild 2/3."
+	desc = "Noone is more experienced at moving crates. Lonestar 2/3."
 	icon_state = "cargotech"
 	toysay = "My back hurts."
 
 /obj/item/toy/figure/character/guild/miner
 	name = "miner action figure"
-	desc = "Will they find minerals, treasure, or monsters? Guild 3/3."
+	desc = "Will they find minerals, treasure, or monsters? Lonestar 3/3."
 	icon_state = "miner"
 	toysay = "So this is how it ends."
 
@@ -858,8 +858,8 @@
 
 //Small plushies.
 /obj/item/toy/plushie
-	name = "diona nymph plushie"
-	desc = "A plushie of an adorable diona nymph!"
+	name = "bug plushie"
+	desc = "A plushie of an 'adorable' bug!"
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "nymphplushie"
 	var/phrase = "I don't want to exist anymore!"

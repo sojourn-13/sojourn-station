@@ -21,7 +21,8 @@
 	power = 50
 
 /datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
-	H.add_chemical_effect(CE_PAINKILLER, 10)
+	H.add_chemical_effect(CE_PAINKILLER, 30, TRUE)
+	H.apply_effect(-30, AGONY, 0)
 	return TRUE
 
 

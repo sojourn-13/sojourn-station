@@ -23,10 +23,11 @@
 #define HAS_HAIR_COLOR    0x20   // Hair colour selectable in chargen. (RGB)
 
 // Languages.
-#define LANGUAGE_COMMON "English Common"
-#define LANGUAGE_CYRILLIC "Techno-Russian"
-#define LANGUAGE_SERBIAN "Serbian"
-#define LANGUAGE_JIVE	"Jive"
+#define LANGUAGE_COMMON		"English Common"
+#define LANGUAGE_CYRILLIC	"Techno-Russian"
+#define LANGUAGE_SERBIAN	"Serbian"
+#define LANGUAGE_JIVE		"Jive"
+#define LANGUAGE_GERMAN		"German"
 
 #define LANGUAGE_ROBOT "Robot Talk"
 #define LANGUAGE_DRONE "Drone Talk"

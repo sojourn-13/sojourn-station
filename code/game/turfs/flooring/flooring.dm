@@ -232,6 +232,8 @@ var/list/flooring_types
 	if(!ishuman(M)|| M.incorporeal_move || !has_gravity(get_turf(M)))
 		return
 	if(MOVING_QUICKLY(M))
+		if(M.stats.getPerk(PERK_SURE_STEP))
+			return
 		if(prob(5))
 			M.adjustBruteLoss(5)
 			M.slip(null, 6)
@@ -740,30 +742,37 @@ var/list/flooring_types
 /decl/flooring/beach/water/swamp
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow_swamp"
+	footstep_sound = "water"
 
 /decl/flooring/beach/water/jungle
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow_jungle1"
+	footstep_sound = "water"
 
 /decl/flooring/beach/water/flooded
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow_jungle2"
+	footstep_sound = "water"
 
 /decl/flooring/beach/water/ice
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow_frozen"
+	footstep_sound = "water"
 
 /decl/flooring/beach/water/ocean
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seadeep"
+	footstep_sound = "water"
 
 /decl/flooring/beach/water/jungledeep
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow_jungle3"
+	footstep_sound = "water"
 
 /decl/flooring/beach/water/shallow
 	icon = 'icons/turf/flooring/beach.dmi'
 	icon_base = "seashallow"
+	footstep_sound = "water"
 
 /*Grass*/
 /decl/flooring/grass
@@ -920,3 +929,13 @@ var/list/flooring_types
 
 /decl/flooring/rock/manmade/road
 	icon_base = "road_1"
+
+/*POOL - basic pool tile details*/
+/decl/flooring/pool
+	name = "poolwater"
+	icon = 'icons/turf/flooring/tiles_white.dmi'
+	icon_base = "tiles"
+	build_type = null
+	footstep_sound = "water"
+	resistance = RESISTANCE_TOUGH
+	health = 9999999

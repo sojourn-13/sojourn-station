@@ -121,7 +121,34 @@
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100)
+	extra_allowed = list(/obj/item/weapon/extinguisher,
+						 /obj/item/weapon/tool,
+						 /obj/item/weapon/tool_upgrade,
+						 /obj/item/stack/cable_coil,
+						 /obj/item/device/t_scanner,
+						 /obj/item/device/scanner/gas,
+						 /obj/item/taperoll/engineering,
+						 /obj/item/weapon/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/vest/soteriasuit
+	name = "'Mark II' enviromental protection suit"
+	desc = "For working in hazardous enviroments. While its built for most enviroments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
+	Unlike its superior, it offers alot less armor but it is made out of basic steel, making it a cheaper, easier alternative to build."
+	icon_state = "armor_engineering"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(melee = 20, bullet = 20, energy = 20, bomb = 30, bio = 50, rad = 50)
+	extra_allowed = list(/obj/item/weapon/extinguisher,
+						 /obj/item/weapon/tool,
+						 /obj/item/weapon/tool_upgrade,
+						 /obj/item/stack/cable_coil,
+						 /obj/item/device/t_scanner,
+						 /obj/item/device/scanner/gas,
+						 /obj/item/taperoll/engineering,
+						 /obj/item/weapon/storage/toolbox)
+	flags_inv = HIDEJUMPSUIT
+	matter = list(MATERIAL_STEEL = 40)
 
 /obj/item/clothing/suit/armor/bulletproof
 	name = "bulletproof vest"
@@ -283,8 +310,8 @@
 	item_state = "platecarrier_ih"
 
 /obj/item/clothing/suit/armor/platecarrier/militia
-	name = "militia plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one ears the distinct IFF stripes of the Blackshield Militia."
+	name = "blackshield plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one ears the distinct IFF stripes of the Blackshield."
 	icon_state = "platecarrier_mil"
 	item_state = "platecarrier_mil"
 
@@ -327,9 +354,9 @@ obj/item/clothing/suit/armor/flackvest
 	armor = list(melee = 40, bullet = 50, energy = 20, bomb = 50, bio = 0, rad = 0)
 
 obj/item/clothing/suit/armor/flackvest/militia
-	name = "militia flak vest"
+	name = "blackshield flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
-			This one is marked with the distinct IFF stripes of the Blackshield Militia."
+			This one is marked with the distinct IFF stripes of the Blackshield."
 	icon_state = "flakvest_mil"
 	item_state = "flakvest_mil"
 
@@ -363,14 +390,14 @@ obj/item/clothing/suit/armor/commander
 	siemens_coefficient = 0.7
 
 obj/item/clothing/suit/armor/commander/militia
-	name = "militia commander's armored coat"
-	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Militia Commander.."
+	name = "blackshield commander's armored coat"
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander.."
 	icon_state = "commander_mil"
 	item_state = "commander_mil"
 
 obj/item/clothing/suit/armor/commander/militia_overcoat
-	name = "blackshield milita armored overcoat"
-	desc = "Blackshield Milita greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
+	name = "blackshield armored overcoat"
+	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 

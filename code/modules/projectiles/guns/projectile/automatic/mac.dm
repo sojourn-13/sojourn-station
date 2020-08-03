@@ -15,7 +15,6 @@
 	price_tag = 2000
 	damage_multiplier = 0.9
 	recoil_buildup = 5
-	one_hand_penalty = 20
 	silencer_type = /obj/item/weapon/silencer
 	one_hand_penalty = 5 //smg level
 

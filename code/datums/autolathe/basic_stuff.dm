@@ -45,3 +45,7 @@
 /datum/design/autolathe/misc/cane
 	name = "cane"
 	build_path = /obj/item/weapon/cane
+
+/datum/design/autolathe/misc/bodybag
+	name = "body bag"
+	build_path = /obj/item/bodybag

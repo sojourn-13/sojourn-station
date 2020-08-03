@@ -56,6 +56,14 @@
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 18000
 
+/obj/item/weapon/cell/large/moebius/omega
+	name = "Soteria \"Omega-Geyser 20000L\""
+	desc = "Soteria branded rechargeable L-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
+	icon_state = "meb_b_omega"
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_SILVER = 9, MATERIAL_GOLD = 6) //DEAR LOAD WHAT ARE THOSE COSTS?
+	origin_tech = list(TECH_POWER = 7)
+	maxcharge = 20000
+
 /obj/item/weapon/cell/large/moebius/nuclear
 	name = "Soteria \"Atomcell 14000L\""
 	desc = "Soteria Institute branded rechargeable L-standardized power cell. This version able to recharge itself over time."
@@ -156,6 +164,14 @@
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1400
 
+/obj/item/weapon/cell/medium/moebius/omega
+	name = "Soteria \"Omega-Geyser 1600M\""
+	desc = "Soteria branded rechargeable M-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
+	icon_state = "meb_m_omega"
+	matter = list(MATERIAL_STEEL = 9, MATERIAL_PLASTIC = 9, MATERIAL_SILVER = 6, MATERIAL_GOLD = 3) //DEAR LOAD WHAT ARE THOSE COSTS?
+	origin_tech = list(TECH_POWER = 7)
+	maxcharge = 1600
+
 /obj/item/weapon/cell/medium/moebius/nuclear
 	name = "Soteria \"Atomcell 1000M\""
 	desc = "Soteria Institute branded rechargeable M-standardized power cell. This version able to recharge itself over time."
@@ -235,6 +251,14 @@
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 400
 
+/obj/item/weapon/cell/small/moebius/omega
+	name = "Soteria \"Omega-Geyser 500S\""
+	desc = "Soteria branded rechargeable S-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
+	icon_state = "meb_s_omega"
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 1) //DEAR LOAD WHAT ARE THOSE COSTS?
+	origin_tech = list(TECH_POWER = 7)
+	maxcharge = 500
+
 /obj/item/weapon/cell/small/moebius/nuclear
 	name = "Soteria \"Atomcell 300S\""
 	desc = "Soteria Institute branded rechargeable S-standardized microreactor cell. Recharges itself over time."
@@ -263,3 +287,26 @@
 	origin_tech = list(TECH_POWER = 3)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
 	maxcharge = 400
+
+// Hand crank
+/obj/item/device/manual_charger
+	name = "manual recharger"
+	desc = "A basic hand crank recharger utilising a manual mechanism."
+	icon = 'icons/obj/machines/chemistry.dmi'
+	icon_state = "centrifuge_makeshift"
+	matter = list(MATERIAL_STEEL = 30)
+	var/obj/item/weapon/cell/cell = null
+	var/suitable_cell = /obj/item/weapon/cell
+
+/obj/item/device/makeshift_centrifuge/attack_self(mob/user)
+	var/obj/item/weapon/cell/cell
+	if(do_after(user, 60 - (1 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
+		if(!cell)
+			return
+		if(cell.charge >= cell.maxcharge)
+			user.visible_message(SPAN_NOTICE("The cell can not be charged any more!"))
+			return
+		else
+			user.visible_message(SPAN_NOTICE("[user] have started to turn handle on \the [src]."), SPAN_NOTICE("You started to turn handle on \the [src]."))
+			cell.charge += 100
+			return //Stafy Return

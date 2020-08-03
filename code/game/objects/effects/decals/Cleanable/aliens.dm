@@ -32,3 +32,38 @@
 
 /obj/effect/decal/cleanable/blood/xtracks
 	basecolor = "#05EE05"
+
+/obj/effect/decal/cleanable/blood/clown
+	name = "clown blood"
+	desc = "It's yellow and smells of bananas. It looks like... <i>blood?</i>"
+	icon = 'icons/effects/blood.dmi'
+	basecolor = "#05EE05"
+
+/obj/effect/decal/cleanable/blood/gibs/clown
+	name = "clown gibs"
+	desc = "Honk..."
+	icon_state = "gib1"
+	layer = LOW_OBJ_LAYER
+	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6")
+	basecolor = "#ECEE05"
+
+/obj/effect/decal/cleanable/blood/gibs/clown/update_icon()
+	color = "#ECEE05"
+
+/obj/effect/decal/cleanable/blood/gibs/clown/up
+	random_icon_states = list("gib1", "gib2", "gib3", "gib5", "gib6","gibup1","gibup1","gibup1")
+
+/obj/effect/decal/cleanable/blood/gibs/clown/down
+	random_icon_states = list("gib1", "gib2", "gib3", "gib5", "gib6","gibdown1","gibdown1","gibdown1")
+
+/obj/effect/decal/cleanable/blood/gibs/clown/body
+	random_icon_states = list("gibhead", "gibtorso")
+
+/obj/effect/decal/cleanable/blood/gibs/clown/limb
+	random_icon_states = list("gibleg", "gibarm")
+
+/obj/effect/decal/cleanable/blood/gibs/clown/core
+	random_icon_states = list("gibmid1", "gibmid2", "gibmid3")
+
+/obj/effect/decal/cleanable/blood/xtracks
+	basecolor = "#ECEE05"

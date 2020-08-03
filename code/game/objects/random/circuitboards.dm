@@ -38,6 +38,7 @@
 				/obj/item/weapon/circuitboard/ordercomp = 1,
 				/obj/item/weapon/circuitboard/pacman = 4,
 				/obj/item/weapon/circuitboard/powermonitor = 2,
+				/obj/item/weapon/circuitboard/repair_station = 2,
 				/obj/item/weapon/circuitboard/protolathe = 2,
 				/obj/item/weapon/circuitboard/rdconsole = 2,
 				/obj/item/weapon/circuitboard/rdserver = 2,

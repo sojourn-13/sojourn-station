@@ -1,17 +1,30 @@
+#define OBELISK_UPDATE_TIME 5 SECONDS
+
 var/list/disciples = list()
 
 /obj/item/weapon/implant/core_implant/cruciform
-	name = "cruciform"
+	name = "vinculum cruciform"
 	icon_state = "cruciform_green"
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
 	allowed_organs = list(BP_CHEST)
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform
 	layer = ABOVE_MOB_LAYER
-	access = list(access_nt_disciple)
-	power = 50
-	max_power = 50
+	access = list(access_morgue, access_crematorium, access_maint_tunnels, access_hydroponics, access_nt_disciple)
+	power = 60
+	max_power = 60
 	power_regen = 0.5
 	price_tag = 10000
+
+/obj/item/weapon/implant/core_implant/cruciform/install(mob/living/target, organ, mob/user)
+	. = ..()
+	if(.)
+		target.stats.addPerk(/datum/perk/sanityboost)
+		target.stats.addPerk(/datum/perk/unfinished_delivery)
+
+/obj/item/weapon/implant/core_implant/cruciform/uninstall()
+	wearer.stats.removePerk(/datum/perk/sanityboost)
+	wearer.stats.addPerk(/datum/perk/unfinished_delivery)
+	return ..()
 
 /obj/item/weapon/implant/core_implant/cruciform/get_mob_overlay(gender, form)
 	gender = (gender == MALE) ? "m" : "f"
@@ -138,3 +151,44 @@ var/list/disciples = list()
 	add_module(new CRUCIFORM_INQUISITOR)
 	//add_module(new /datum/core_module/cruciform/uplink())
 	remove_modules(/datum/core_module/cruciform/red_light)
+
+//Path based cruciforms, these grant additional powers based on what path a cultist walks
+/obj/item/weapon/implant/core_implant/cruciform/tessellate
+	name = "tessellate cruciform"
+	icon_state = "cruciform_blue"
+	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/tessellate
+	power = 60
+	max_power = 60
+	power_regen = 0.8
+	path = "tess"
+
+/obj/item/weapon/implant/core_implant/cruciform/lemniscate
+	name = "lemniscate cruciform"
+	icon_state = "cruciform_red"
+	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/lemniscate
+	power = 50
+	max_power = 50
+	power_regen = 1.5
+	path = "lemn"
+
+/obj/item/weapon/implant/core_implant/cruciform/monomial
+	name = "monomial cruciform"
+	icon_state = "cruciform_yellow"
+	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/monomial
+	power = 90
+	max_power = 90
+	power_regen = 0.1
+	path = "mono"
+
+/obj/item/weapon/implant/core_implant/cruciform/divisor
+	name = "divisor cruciform"
+	icon_state = "cruciform_orange"
+	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/divisor
+	power = 50
+	max_power = 50
+	power_regen = 0.4
+	path = "divi"

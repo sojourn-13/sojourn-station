@@ -15,6 +15,10 @@ var/global/list/default_internal_channels = list(
 	num2text(PRO_FREQ) = list(access_prospector)
 )
 
+var/global/list/unique_internal_channels = list(
+	num2text(DTH_FREQ) = list(access_cent_specops)
+)
+
 var/global/list/default_medbay_channels = list(
 	num2text(PUB_FREQ) = list(),
 	num2text(MED_FREQ) = list(access_medical_equip),
@@ -64,6 +68,8 @@ var/global/list/default_medbay_channels = list(
 	..()
 	wires = new(src)
 	internal_channels = default_internal_channels.Copy()
+	if(syndie)
+		internal_channels += unique_internal_channels.Copy()
 	add_hearing()
 
 /obj/item/device/radio/Destroy()
@@ -758,3 +764,102 @@ var/global/list/default_medbay_channels = list(
 /obj/item/device/radio/phone/medbay/New()
 	..()
 	internal_channels = default_medbay_channels.Copy()
+
+/obj/item/device/radio/random_radio
+	name = "Random wave radio"
+	desc = "A radio that has a small chance to pick up random messages on any frequency, even securely encrypted ones. Rumor has it that this odd machine sometimes spits out random useful information, \
+	especially if its been repaired with the right equipment."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "random_radio"
+	item_state = "random_radio"
+	slot_flags = FALSE
+	canhear_range = 4
+	var/random_hear = 20
+	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Prospector" = 1)
+	price_tag = 20000
+	origin_tech = list(TECH_DATA = 7, TECH_ENGINEERING = 7, TECH_ILLEGAL = 7)
+	var/list/obj/item/weapon/oddity/used_oddity = list()
+	var/last_produce = 0
+	var/cooldown = 40 MINUTES
+	var/max_cooldown = 40 MINUTES
+	var/min_cooldown = 15 MINUTES
+	w_class = ITEM_SIZE_BULKY
+
+/obj/item/device/radio/random_radio/New()
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/device/radio/random_radio/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/device/radio/random_radio/receive_range(freq, level)
+
+	if (wires.IsIndexCut(WIRE_RECEIVE))
+		return -1
+	if(!listening)
+		return -1
+	if(!(0 in level))
+		var/turf/position = get_turf(src)
+		if(!position || !(position.z in level))
+			return -1
+	if(freq in ANTAG_FREQS)
+		if(!(src.syndie))//Checks to see if it's allowed on that frequency, based on the encryption keys
+			return -1
+	if (!on)
+		return -1
+
+	if(random_hear)
+		if(prob(random_hear))
+			return canhear_range
+
+/obj/item/device/radio/random_radio/emag_act(mob/user)
+	if(!syndie)
+		syndie = TRUE
+		channels |= list("Mercenary" = 1)
+		playsound(loc, "sparks", 75, 1, -1)
+		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [name]."))
+	else
+		to_chat(user, SPAN_NOTICE("The [name] has already been emaged."))
+		return NO_EMAG_ACT
+
+/obj/item/device/radio/random_radio/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	user.set_machine(src)
+
+	if(istype(W, /obj/item/weapon/oddity))
+		var/obj/item/weapon/oddity/D = W
+		if(D.oddity_stats)
+			var/usefull = FALSE
+			if(D in used_oddity)
+				to_chat(user, SPAN_WARNING("You already used [D] to repair [src]"))
+				return
+
+			if(random_hear >= 100)
+				to_chat(user, SPAN_WARNING("The [src] are repaired at it's maximum."))
+				return
+
+			to_chat(user, SPAN_NOTICE("You starting repairing [src] using [D]."))
+
+			if(!do_after(user, 20 SECONDS, src))
+				to_chat(user, SPAN_WARNING("You stoped repairing [src]."))
+				return
+
+			for(var/stat in D.oddity_stats)
+				if(stat == STAT_MEC)
+					var/increece = D.oddity_stats[stat] * 3
+					random_hear += increece
+					if(random_hear > 100)
+						random_hear = 100
+					cooldown -= (D.oddity_stats[stat]) MINUTES
+					if(cooldown < min_cooldown)
+						cooldown = min_cooldown
+					to_chat(user, SPAN_NOTICE("You make use of [D], and repaired [src] by [increece]%."))
+					usefull = TRUE
+					used_oddity += D
+					return
+
+
+			if(!usefull)
+				to_chat(user, SPAN_WARNING("You cannot find any use of [D], maybe you need something related to mechanics to repair this?"))
+		else
+			to_chat(user, SPAN_WARNING("The [D] is useless here. Try to find another one."))

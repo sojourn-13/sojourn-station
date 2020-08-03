@@ -62,6 +62,9 @@
 	if(istype(mover, /mob/living/carbon/superior_animal/giant_spider))
 		return 1
 	else if(isliving(mover))
+		var/mob/living/carbon/human/H = mover
+		if(H.stats.getPerk(PERK_SPIDER_FRIEND))
+			return 1
 		if(prob(50))
 			to_chat(mover, SPAN_WARNING("You get stuck in \the [src] for a moment."))
 			return 0
@@ -93,7 +96,7 @@
 /obj/effect/spider/eggcluster/Process()
 	amount_grown += rand(0,2)
 	if(amount_grown >= 100)
-		var/num = rand(6,24)
+		var/num = rand(2,5)
 		var/obj/item/organ/external/O = null
 		if(istype(loc, /obj/item/organ/external))
 			O = loc

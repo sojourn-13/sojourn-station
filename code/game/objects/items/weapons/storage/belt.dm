@@ -36,6 +36,7 @@
 	item_state = "utility"
 	can_hold = list(
 		/obj/item/weapon/tool,
+		/obj/item/weapon/tool_upgrade,
 		/obj/item/device/lightreplacer,
 		/obj/item/weapon/rcd,
 		/obj/item/device/lighting/toggleable/flashlight,
@@ -74,7 +75,9 @@
 	icon_state = "utility_neotheology"
 	can_hold_extra = list(
 		/obj/item/weapon/book/ritual/cruciform,
-		/obj/item/weapon/implant/core_implant/cruciform
+		/obj/item/weapon/implant/core_implant/cruciform,
+		/obj/item/weapon/soap,
+		/obj/item/weapon/reagent_containers/spray/cleaner
 	)
 
 /obj/item/weapon/storage/belt/utility/handmade
@@ -120,7 +123,21 @@
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/weapon/extinguisher/mini,
 		/obj/item/tape/medical,
-		/obj/item/device/flash
+		/obj/item/device/flash,
+		/obj/item/weapon/extinguisher/mini,
+		/obj/item/stack/nanopaste,
+		/obj/item/bodybag,
+		/obj/item/weapon/tool/bonesetter,
+		/obj/item/weapon/tool/scalpel,
+		/obj/item/weapon/tool/scalpel/advanced,
+		/obj/item/weapon/tool/scalpel/laser,
+		/obj/item/weapon/tool/surgicaldrill,
+		/obj/item/weapon/tool/cautery,
+		/obj/item/weapon/tool/retractor,
+		/obj/item/weapon/tool/saw/circular,
+		/obj/item/weapon/tool/hemostat,
+		/obj/item/weapon/reagent_containers/pill,
+		/obj/item/weapon/storage/pill_bottle,
 	)
 
 /obj/item/weapon/storage/belt/medical/emt
@@ -160,25 +177,25 @@
 		//obj/item/weapon/gun/projectile/olivaw, //too big, use holster
 		//obj/item/weapon/gun/projectile/revolver/detective, //too big, use holster
 		/obj/item/weapon/gun/energy/gun/martin,
-		//obj/item/weapon/gun/energy/taser, //too big, use holster
 		/obj/item/taperoll
 	)
 
 /obj/item/weapon/storage/belt/security/tactical
 	name = "professional tactical belt"
-	desc = "Can hold various military and security equipment, more so than a standard belt."
+	desc = "Can hold various military and security equipment, more so than a standard belt or web harness."
 	icon_state = "tactical"
-	storage_slots = 9
+	storage_slots = 12
 
 /obj/item/weapon/storage/belt/security/neotheology
-	name = "tactical crusader belt"
-	desc = "Can hold various military and security equipment for the awakened crusader. Deus Vult."
+	name = "tactical absolutism belt"
+	desc = "Can hold various military and security equipment for the awakened crusader or skilled divisor. Deus Vult."
 	icon_state = "tactical_neotheology"
 	can_hold_extra = list(
 		/obj/item/weapon/book/ritual/cruciform,
 		/obj/item/weapon/implant/core_implant/cruciform,
 		/obj/item/weapon/tool/knife/neotritual,
-		/obj/item/weapon/gun/energy/crossbow
+		/obj/item/weapon/gun/energy/crossbow,
+		/obj/item/weapon/gun/energy/taser, //specially fitted to hold the counselor
 	)
 
 /obj/item/weapon/storage/belt/champion
@@ -192,7 +209,7 @@
 		)
 
 /obj/item/weapon/storage/belt/church
-	name = "Absolutism belt"
+	name = "absolutism belt"
 	desc = "Waist-held holy items."
 	icon_state = "ntbelt"
 

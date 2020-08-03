@@ -75,8 +75,7 @@
 	for(var/name in src.stat_modifiers)
 		target.stats.changeStat(name, stat_modifiers[name])
 	for(var/perk in perks)
-		var/datum/perk/P = new perk
-		P.teach(target.stats)
+		target.stats.addPerk(perk)
 
 	return TRUE
 
@@ -178,6 +177,8 @@
 	. = setup_restricted
 	for(var/category in options)
 		var/datum/category_item/setup_option/option = SScharacter_setup.setup_options[category][options[category]]
+		if(!option)
+			warning("Option [options[category]] could not be found in SScharacter category [category]")
 		if(type in option.restricted_jobs)
 			return TRUE
 		if(type in option.allowed_jobs)

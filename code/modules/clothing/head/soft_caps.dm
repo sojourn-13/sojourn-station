@@ -119,3 +119,11 @@
 	initial_name = "sergeant cap"
 	desc = "It's a field cap for officers."
 	icon_state = "sargesoft"
+
+// S O T E R I A //
+
+/obj/item/clothing/head/soft/medical
+	name = "medical cap"
+	desc = "Cap worn by soteria medical personnel."
+	icon_state = "medcap"
+	item_state = "medcap"

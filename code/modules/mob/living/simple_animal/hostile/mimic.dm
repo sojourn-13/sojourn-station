@@ -3,7 +3,7 @@
 //
 
 /mob/living/simple_animal/hostile/mimic/crate
-	name = "trash cart"
+	name = "suspicious object"
 	desc = "It seems rather.. gooey. Is that thing organic?"
 	icon = 'icons/mob/mobs-monster.dmi'
 	//icon_state = "trashcart_mimic"
@@ -33,7 +33,7 @@
 	minbodytemp = 0
 
 	faction = "mimic"
-	move_to_delay = 24
+	move_to_delay = 6
 
 /mob/living/simple_animal/hostile/mimic/crate/Initialize()
 	icon_state = "mimic_[pick("trashcart","crate","bin","steel","wood","med","freezer","wep","stool","body","ore")]"

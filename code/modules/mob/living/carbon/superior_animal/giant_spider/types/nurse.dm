@@ -14,10 +14,34 @@
 	melee_damage_upper = 10
 	poison_per_bite = 2
 	var/atom/cocoon_target
-	poison_type = "pararein"
+	poison_type = "stoxin"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
 	meat_amount = 3
 	var/fed = 0
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/midwife
+	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes and purple stripes on the back."
+	icon_state = "midwife"
+	icon_living = "midwife"
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	poison_type = "mutagen"
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/queen
+	name = "spider queen"
+	desc = "Furry and black, it makes you shudder to look at it. This one is a huge chittering brood queen with large fangs of dripping venom."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "spider_queen"
+	icon_living = "spider_queen"
+	maxHealth = 500
+	health = 500
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	poison_per_bite = 4
+	poison_type = "menace"
+	pixel_x = -20
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/attemptAttackOnTarget()
 	var/target = ..()
@@ -130,12 +154,9 @@
 										continue
 									large_cocoon = 1
 
-									if (istype(M, /mob/living/carbon/human))
-										var/mob/living/carbon/human/H = M
-										if (H.get_blood_volume() >= 1)
-											src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
-											H.drip_blood(H.species.blood_volume)
-											fed++
+									if (istype(M, /mob/living))
+										src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
+										fed++
 
 									C = C || new(targetTurf)
 									M.forceMove(C)

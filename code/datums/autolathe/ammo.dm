@@ -204,7 +204,7 @@
 	build_path = /obj/item/ammo_magazine/ammobox/magnum
 
 /datum/design/autolathe/ammo/magnum_ammobox_lethal
-	name = "ammunition box (.40 Auto-Mag)"
+	name = "ammunition box (.40 Auto-Mag hollow point)"
 	build_path = /obj/item/ammo_magazine/ammobox/magnum/lethal
 
 /datum/design/autolathe/ammo/magnum_ammobox_rubber
@@ -329,7 +329,7 @@
 	build_path = /obj/item/ammo_magazine/ammobox/lrifle/rubber
 
 /datum/design/autolathe/ammo/lrifle_ammobox_small
-	name = "ammunition box .257 Carbine (practice)"
+	name = "ammunition box .257 Carbine (ball)"
 	build_path = /obj/item/ammo_magazine/ammobox/lrifle_small
 
 /datum/design/autolathe/ammo/lrifle_ammobox_small_practice
@@ -489,7 +489,7 @@
 	build_path = /obj/item/ammo_magazine/ammobox/hrifle/rubber
 
 /datum/design/autolathe/ammo/hrifle_ammobox_practice
-	name = "ammunition box (training)"
+	name = "ammunition box  .408 (training)"
 	build_path = /obj/item/ammo_magazine/ammobox/hrifle/practice
 
 /datum/design/autolathe/ammo/hrifle_ammobox_hv

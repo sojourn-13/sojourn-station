@@ -77,6 +77,21 @@
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
 	)
 
+/datum/craft_recipe/weapon/lasersmg
+	name = "Lasblender"
+	result = /obj/item/weapon/gun/energy/lasersmg
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/automatic/texan, 1),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL, "time" = 10),
+		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
+		list(/obj/item/weapon/computer_hardware/led, 1),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(/obj/item/weapon/stock_parts/capacitor, 1, "time" = 5),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
+		list(QUALITY_ADHESIVE, 15, 70)
+	)
+
 /datum/craft_recipe/weapon/handmade_shield
 	name = "handmade shield"
 	result = /obj/item/weapon/shield/riot/handmade
@@ -142,9 +157,22 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
+/datum/craft_recipe/weapon/laser_dagger
+	name = "laser dagger"
+	result = /obj/item/weapon/melee/energy/sword/sabre/dagger
+	steps = list(
+		list(/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip, 1, "time" = 5),
+		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
+		list(/obj/item/weapon/gun/energy/gun/martin, 1, "time" = 5),
+		list(/obj/item/weapon/cell/small/moebius/nuclear, 1),
+		list(/obj/item/stack/cable_coil, 5, "time" = 5),
+		list(QUALITY_ADHESIVE, 15, 70)
+	)
+
+
 /datum/craft_recipe/weapon/nailed_bat
 	name = "nailed bat"
-	result = /obj/item/weapon/melee/nailstick
+	result = /obj/item/weapon/tool/nailstick
 	steps = list(
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(/obj/item/stack/rods, 3, "time" = 50)

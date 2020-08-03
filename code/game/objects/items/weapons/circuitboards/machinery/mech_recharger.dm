@@ -1,5 +1,5 @@
 /obj/item/weapon/circuitboard/mech_recharger
-	name = T_BOARD("mech recharger")
+	build_name = "mech recharger"
 	build_path = /obj/machinery/mech_recharger
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_POWER = 2, TECH_ENGINEERING = 2)

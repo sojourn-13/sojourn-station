@@ -168,8 +168,25 @@
 	name = "laser sabre"
 	desc = "You feel the radiant glow below your skin."
 	origin_tech = list(TECH_MAGNET = 5, TECH_POWER = 6, TECH_COMBAT = 3)
-	active_force = WEAPON_FORCE_ROBUST
-	active_throwforce = WEAPON_FORCE_ROBUST
+	active_force =  WEAPON_FORCE_ROBUST
+	active_throwforce =  WEAPON_FORCE_ROBUST
+
+/obj/item/weapon/melee/energy/sword/sabre/dagger
+	blade_color = "green"
+	name = "laser dagger"
+	desc = "A much smaller but still usefull energy based short blade."
+	armor_penetration = ARMOR_PEN_EXTREME
+	active_force =  WEAPON_FORCE_DANGEROUS
+	active_throwforce =  WEAPON_FORCE_DANGEROUS
+	icon_state = "dagger0"
+
+/obj/item/weapon/melee/energy/sword/sabre/dagger/activate(mob/living/user)
+	if(!active)
+		to_chat(user, SPAN_NOTICE("\The [src] is now energized."))
+	icon_state = "daggergreen" //So we dont use sword icons
+	..()
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "strikes", "cut")
+	tool_qualities = list(QUALITY_CUTTING = 35,  QUALITY_WIRE_CUTTING = 25, QUALITY_LASER_CUTTING = 25, QUALITY_WELDING = 20, QUALITY_CAUTERIZING = 30)
 
 /*
  *Energy Blade

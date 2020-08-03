@@ -37,6 +37,7 @@
 	desc = "A machine used for construction of advanced prototypes. Operated from an R\&D console."
 	icon_state = "protolathe"
 	circuit = /obj/item/weapon/circuitboard/protolathe
+	unsuitable_materials = list() //So we can use biomatter and others
 
 	build_type = PROTOLATHE
 	storage_capacity = 120

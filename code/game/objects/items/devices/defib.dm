@@ -181,13 +181,11 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 7, MATERIAL_GLASS = 2, MATERIAL_GOLD = 7.75, MATERIAL_SILVER = 12.75) //Glass for the lights
 	origin_tech = list(TECH_BIO = 5, TECH_POWER = 3)
-
+	suitable_cell = /obj/item/weapon/cell/medium
 	oxygain = 20
 
 /obj/item/device/defib_kit/compact/loaded
-	suitable_cell = /obj/item/weapon/cell/medium
 	cell_type = /obj/item/weapon/cell/medium
-
 
 /obj/item/device/defib_kit/compact/combat
 	name = "combat defibrillator"
@@ -512,6 +510,17 @@
 	M.Weaken(rand(10,25))
 	M.updatehealth()
 	apply_brain_damage(M, deadtime)
+
+	switch(M.stats.getStat(STAT_TGH))
+		if(0 to 40)
+			M.stats.addPerk(/datum/perk/rezsickness/severe/fatal)
+			log_debug("Try to add mild rez sickness.")
+		if(40 to 60)
+			M.stats.addPerk(/datum/perk/rezsickness/severe)
+			log_debug("Try to add moderate rez sickness.")
+		if(60 to INFINITY)
+			M.stats.addPerk(/datum/perk/rezsickness)
+			log_debug("Try to add severe rez sickness.")
 
 /obj/item/weapon/shockpaddles/proc/apply_brain_damage(mob/living/carbon/human/H, var/deadtime)
 	if(deadtime < DEFIB_TIME_LOSS) return

@@ -26,7 +26,7 @@
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz/rubber = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 /decl/hierarchy/outfit/job/security/smc
-	name = OUTFIT_JOB_NAME("Blackshield - Militia Commander")
+	name = OUTFIT_JOB_NAME("Blackshield - Blackshield Commander")
 	l_ear = /obj/item/device/radio/headset/heads/hos
 	uniform = /obj/item/clothing/under/rank/commander
 	suit = /obj/item/clothing/suit/armor/commander/militia
@@ -72,7 +72,7 @@
 	r_hand = /obj/item/weapon/storage/briefcase/crimekit
 	id_type = /obj/item/weapon/card/id/det
 	pda_type = /obj/item/modular_computer/pda/forensics
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/ammo_magazine/slmagnum/rubber = 2, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2)
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/ammo_magazine/slkurtz/rubber = 2, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2)
 
 /decl/hierarchy/outfit/job/security/detective/New()
 	..()
@@ -96,7 +96,7 @@
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	head = /obj/item/clothing/head/helmet
-	gloves = /obj/item/clothing/gloves/thick
+	gloves = /obj/item/clothing/gloves/stungloves
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 /decl/hierarchy/outfit/job/security/troop

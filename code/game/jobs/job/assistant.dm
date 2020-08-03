@@ -12,9 +12,7 @@
 	initial_balance	= 800
 	wage = WAGE_NONE //Get a job ya lazy bum
 	//alt_titles = list("Visitor", "Refugee","Guild Novice","Soteria Intern","Lonestar Intern")
-	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_SERBIAN = 5)
 
-	access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
 	stat_modifiers = list(

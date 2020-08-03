@@ -622,6 +622,25 @@
 	new /obj/item/stack/material/plastic(get_turf(holder.my_atom), created_volume)
 	return
 
+
+/datum/chemical_reaction/goldsolidification
+	result = null
+	required_reagents = list("iron" = 5, "frostoil" = 5, MATERIAL_GOLD = 20)
+	result_amount = 1
+
+/datum/chemical_reaction/goldsolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
+	new /obj/item/stack/material/gold(get_turf(holder.my_atom), created_volume)
+	return
+
+/datum/chemical_reaction/uraniumsolidification
+	result = null
+	required_reagents = list("phosphorus" = 5, "frostoil" = 5, MATERIAL_URANIUM = 20)
+	result_amount = 1
+
+/datum/chemical_reaction/uraniumsolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
+	new /obj/item/stack/material/uranium(get_turf(holder.my_atom), created_volume)
+	return
+
 /* Grenade reactions */
 
 /datum/chemical_reaction/explosion_potassium
@@ -2142,4 +2161,9 @@
 /datum/chemical_reaction/drinks/balloon
 	result = "balloon"
 	required_reagents = list("cream" = 1, "bluecuracao" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/combat
+	result = "chemweapon1"
+	required_reagents = list("hydrazine" = 1, "cyanide" = 1, "potassium_chloride" = 1, "lexorin" = 1)
 	result_amount = 2

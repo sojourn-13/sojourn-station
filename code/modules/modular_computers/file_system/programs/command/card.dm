@@ -51,7 +51,7 @@
 	data["medical_jobs"] = format_jobs(medical_positions)
 	data["science_jobs"] = format_jobs(science_positions)
 	data["security_jobs"] = format_jobs(security_positions)
-	//data["exploration_jobs"] = format_jobs(exploration_positions)
+	data["prospector_jobs"] = format_jobs(prospector_positions)
 	data["service_jobs"] = format_jobs(civilian_positions)
 	data["supply_jobs"] = format_jobs(cargo_positions)
 	data["church_jobs"] = format_jobs(church_positions)

@@ -38,6 +38,10 @@
 	name = "H&S REV ..35 \"Havelock\""
 	build_path = /obj/item/weapon/gun/projectile/revolver/detective
 
+/datum/design/autolathe/gun/mk58
+	name = "OT HG .35 \"Mk58\""
+	build_path = /obj/item/weapon/gun/projectile/mk58
+
 ///. 4 0 M A G N U M
 
 /datum/design/autolathe/gun/ladon
@@ -55,10 +59,6 @@
 /datum/design/autolathe/gun/rafale
 	name = "SM SHG .40 \"Rafale\""
 	build_path = /obj/item/weapon/gun/projectile/silenced
-
-/datum/design/autolathe/gun/mk58
-	name = "OT HG .40 \"Mk58\""
-	build_path = /obj/item/weapon/gun/projectile/mk58
 
 /datum/design/autolathe/gun/mk58_wood
 	name = "OT HG .40 \"Mk58\""
@@ -162,7 +162,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/bulldog
 
 /datum/design/autolathe/gun/bulldog_rds
-	name = "H&S CAR .257 \"Bulldog\""
+	name = "H&S CAR .257 \"Bulldog\" Dot Sight"
 	build_path = /obj/item/weapon/gun/projectile/automatic/bulldog/rds
 
 /datum/design/autolathe/gun/ak47
@@ -329,3 +329,7 @@
 /datum/design/autolathe/gun/nt_sprayer
 	name = "OT cleansing carbine"
 	build_path = /obj/item/weapon/gun/matter/launcher/nt_sprayer
+
+/datum/design/autolathe/gun/greyson_cog
+	name = "GP \"Cog\" lasegun"
+	build_path = /obj/item/weapon/gun/energy/retro

@@ -1,6 +1,7 @@
 /* Drugs */
 /datum/reagent/drug
 	reagent_type = "Drug"
+	scannable = 1
 
 	var/sanity_gain
 
@@ -164,6 +165,9 @@
 	..()
 	M.add_chemical_effect(CE_PULSE, 1)
 	M.add_chemical_effect(CE_PAINKILLER, 5 * effect_multiplier)
+	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
+		M.add_chemical_effect(CE_ANTITOX, 5 * effect_multiplier)
+		M.heal_organ_damage(0.1 * effect_multiplier, 0.1 * effect_multiplier)
 
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)

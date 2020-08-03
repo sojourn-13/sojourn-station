@@ -28,8 +28,8 @@
 	var/turns_per_move = 1
 	var/turns_since_move = 0
 	universal_speak = 0		//No, just no.
-	var/meat_amount = 0
-	var/meat_type
+	var/meat_amount = 1
+	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat //all mobs now can be butchered into meat
 	var/stop_automated_movement = FALSE //Use this to temporarely stop random movement or to if you write special movement code for animals.
 	var/wander = TRUE	// Does the mob wander around when idle?
 	var/stop_automated_movement_when_pulled = TRUE //When set to 1 this stops the animal from moving when someone is pulling it.

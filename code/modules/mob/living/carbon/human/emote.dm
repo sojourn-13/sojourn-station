@@ -102,7 +102,6 @@
 				return
 			return custom_emote(m_type, "<I>[message]</I>", 1)
 
-
 		if("pain")
 			if(!message)
 				if(miming)
@@ -113,6 +112,14 @@
 					m_type = 1
 
 			cloud_emote = "cloud-pain"
+			
+		if("medic")
+			if(!message)
+				if(miming)
+					message = "calls out for a medic!"
+					m_type = 1 // Can't we get defines for these?
+
+			cloud_emote = "cloud-medic"
 
 		if ("salute")
 			if (!src.buckled)
@@ -578,7 +585,7 @@
 		if ("help")
 			to_chat(src, {"blink, blink_r, blush, bow-(none)/mob, burp, choke, chuckle, clap, collapse, cough,
 cry, custom, deathgasp, drool, eyebrow, frown, gasp, giggle, groan, grumble, handshake, hug-(none)/mob, glare-(none)/mob,
-grin, laugh, look-(none)/mob, moan, mumble, nod, pale, point-atom, raise, salute, shake, shiver, shrug,
+grin, laugh, look-(none)/mob, medic, moan, mumble, nod, pale, point-atom, raise, salute, shake, shiver, shrug,
 sigh, signal-#1-10, smile, sneeze, sniff, snore, stare-(none)/mob, tremble, twitch, twitch_s, whimper,
 wink, yawn, swish, sway/wag, fastsway/qwag, stopsway/swag"})
 

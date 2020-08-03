@@ -18,6 +18,7 @@
 	speak = list("Hruuugh!","Hrunnph")
 	emote_see = list("paws the ground","shakes its mane","stomps")
 	emote_hear = list("snuffles")
+	meat_amount = 3
 	mob_size = 10
 	resistance = 8
 
@@ -64,6 +65,7 @@
 	emote_see = list("scratches the ground","shakes out it's mane","tinkles gently")
 	mob_size = 5
 	resistance = 3
+	meat_amount = 6 //Pigs are known for giving meat
 
 /mob/living/simple_animal/yithian
 	name = "yithian"
@@ -84,3 +86,35 @@
 	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 1.5
+
+/mob/living/simple_animal/hostile/snake
+	name = "viper"
+	desc = "A ferocious, fang-bearing creature that resembles a snake. Surprisingly not venomous."
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "snake"
+	speak_chance = 0
+	turns_per_move = 5
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
+	response_help = "pets the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	speed = 12
+	maxHealth = 25
+	health = 25
+	aggro_vision_range = 1
+	vision_range = 1
+	harm_intent_damage = 8
+	melee_damage_lower = 4
+	melee_damage_upper = 7
+	attacktext = "bitten"
+	attack_sound = 'sound/weapons/bite.ogg'
+	break_stuff_probability = 4
+	faction = "pond"
+	var/attack_reagent = "toxin"
+
+/mob/living/simple_animal/hostile/snake/AttackingTarget()
+	. = ..()
+	if(attack_reagent && . && isliving(target_mob))
+		var/mob/living/L = target_mob
+		if(L.reagents)
+			L.reagents.add_reagent(attack_reagent, rand(3,5))

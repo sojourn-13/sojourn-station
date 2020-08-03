@@ -40,7 +40,8 @@
 			/datum/craft_recipe/guild/railgunpistol,
 			/datum/craft_recipe/guild/railgunrifle,
 			/datum/craft_recipe/guild/technosuit,
-			/datum/craft_recipe/guild/technohelmet
+			/datum/craft_recipe/guild/technohelmet,
+			/datum/craft_recipe/guild/webbing
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -108,7 +109,8 @@
 			/datum/craft_recipe/guild/railgunpistol,
 			/datum/craft_recipe/guild/railgunrifle,
 			/datum/craft_recipe/guild/technosuit,
-			/datum/craft_recipe/guild/technohelmet
+			/datum/craft_recipe/guild/technohelmet,
+			/datum/craft_recipe/guild/webbing
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,

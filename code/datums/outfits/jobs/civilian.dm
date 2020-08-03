@@ -47,6 +47,7 @@
 	name = OUTFIT_JOB_NAME("Lonestar - Janitor")
 	uniform = /obj/item/clothing/under/rank/janitor
 	pda_type = /obj/item/modular_computer/pda
+	shoes = /obj/item/clothing/shoes/jackboots/janitor
 
 /decl/hierarchy/outfit/job/service/actor
 	name = OUTFIT_JOB_NAME("Lonestar - Actor")

@@ -1,11 +1,12 @@
 /mob/living/bot/miningonestar
 	name = "Greyson Positronic Bot"
-	desc = "it looks like a drillbot. Ancient drillbot"
+	desc = "It looks like a drillbot. An ancient drillbot"
 	health = 20
 	maxHealth = 20
-	icon = 'icons/obj/aibots.dmi'
+	icon = 'icons/mob/build_a_drone.dmi'
+	icon_state = "drone_os"
+	faction = "onestar"
 	layer = MOB_LAYER
-	icon_state = "mining_drone"
 	var/obj/item/loot
 	var/attacktext = "drills"
 	var/environment_smash = 1
@@ -20,7 +21,7 @@
 
 /mob/living/bot/miningonestar/death()
 	loot.forceMove(loc)
-	explode()
+	qdel(src)
 
 /mob/living/bot/miningonestar/resources/Initialize()
 	..()
@@ -71,7 +72,7 @@
 
 /mob/living/bot/miningonestar/resources/in_work/Life()
 	..()
-	if(health <= 0)
+	if(health < 1)
 		death()
 		return
 	weakened = 0

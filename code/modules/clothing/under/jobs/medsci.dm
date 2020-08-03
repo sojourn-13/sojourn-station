@@ -22,7 +22,7 @@
 	desc = "A orange chemist's shirt complete with tan pants. The fiber offers minor biohazard protection."
 	name = "soteria chemist's uniform"
 	icon_state = "chemistry"
-	item_state = "w_suit"
+	item_state = "chemistry"
 
 	permeability_coefficient = 0.50
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
@@ -34,7 +34,7 @@
 	desc = "A white biolab overseer's shirt complete with tan pants. The fiber offers minor biohazard protection."
 	name = "biolab overseer's uniform"
 	icon_state = "cmo"
-	item_state = "w_suit"
+	item_state = "cmo"
 
 	permeability_coefficient = 0.50
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
@@ -52,7 +52,7 @@
 	desc = "A blue doctor's shirt complete with tan pants. The fiber offers minor biohazard protection."
 	name = "sotera doctor's uniform"
 	icon_state = "medical"
-	item_state = "w_suit"
+	item_state = "medical"
 
 	permeability_coefficient = 0.50
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
@@ -67,7 +67,7 @@
 	name = "green scrubs"
 	desc = "A sterile green uniform designed to protect against contamination."
 	icon_state = "scrubsgreen"
-	item_state = "g_suit"
+	item_state = "scrubsgreen"
 
 /obj/item/clothing/under/scrubs/purple
 	name = "purple scrubs"
@@ -80,3 +80,18 @@
 	name = "soteria psychologist's turtleneck"
 	icon_state = "psychturtle"
 	item_state = "b_suit"
+
+/obj/item/clothing/under/rank/paramedic
+	desc = "A jumpsuit of the soteria medical paramedics. It's made with reinforced fiber to offer more protection for recovery operators."
+	name = "soteria paramedic's jumpsuit"
+	icon_state = "paramedic"
+	item_state = "paramedic"
+	permeability_coefficient = 0.50
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 30,
+		rad = 0
+	)

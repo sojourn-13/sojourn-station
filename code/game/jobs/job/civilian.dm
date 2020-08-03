@@ -9,7 +9,7 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
+	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 3000
 	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks
 	stat_modifiers = list(
@@ -17,6 +17,7 @@
 		STAT_TGH = 15,
 		STAT_VIG = 15,
 	)
+
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
 	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment.<br>\
 	Working with the Chef and Gardener, you make the big decisions. Run your business well - perhaps seek to maximise profits.<br>\
@@ -42,8 +43,7 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	also_known_languages = list(LANGUAGE_CYRILLIC = 10, LANGUAGE_JIVE = 60)
-	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
+	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 750
 	wage = WAGE_LABOUR_DUMB //They should get paid by making food.
 	stat_modifiers = list(
@@ -51,6 +51,7 @@
 		STAT_TGH = 10,
 		STAT_VIG = 5,
 	)
+
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
 	description = "The Chef works in the kitchen, ensuring that the colony remains well-fed and energetic.<br>\
 	You will typically work closely with a Bartender while cooking, cleaning, serving, and perhaps entertaining.<br>\
@@ -79,7 +80,7 @@
 	selection_color = "#dddddd"
 	//alt_titles = list("Hydroponicist")
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
-	access = list(access_hydroponics, access_maint_tunnels, access_bar, access_kitchen)
+	access = list(access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
 
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
@@ -88,6 +89,7 @@
 		STAT_TGH = 15,
 		STAT_ROB = 10,
 	)
+
 	description = "The Gardener toils in hydroponics - utilising seeds, tools, and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
 	You are the go-to expert for flora destruction - use shovels and hatchets, or seek more advanced equipment like flamethrowers and chainsaws.<br>\
@@ -113,14 +115,14 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_SERBIAN = 5, LANGUAGE_JIVE = 80)
-	access = list(access_maint_tunnels, access_theatre)
+	access = list(access_theatre)
 	outfit_type = /decl/hierarchy/outfit/job/service/actor
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
 	//alt_titles = list("Artist","Clown","Entertainer","Mime")
 	stat_modifiers = list(
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
+
 	description = "The Actor serves as a versatile performance artist here to entertain the colony.<br>\
 	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
 	The CEO pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations."
@@ -146,7 +148,6 @@
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	//alt_titles = list("Custodian","Sanitation Technician")
-	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_janitor, access_maint_tunnels, access_morgue, access_crematorium, access_mailsorting, access_cargo)
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
@@ -155,6 +156,7 @@
 		STAT_ROB = 10,
 		STAT_BIO = 10,
 	)
+
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
 	description = "The lowly Janitor, well paid but rarely respected, nevertheless provides a valuable service.<br>\
 	You will trundle around the colony, armed with your trusty janicart full of cleaning supplies, disposing of trash and pests.<br>\
