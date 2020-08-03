@@ -96,6 +96,7 @@
 	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
+	flash_protection = FLASH_PROTECTION_MAJOR
 
 /obj/item/clothing/head/helmet/soteriasuit
 	name = "'Mark II' enviromental protection helmet"
@@ -105,6 +106,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_STEEL = 20)
+	flash_protection = FLASH_PROTECTION_MODERATE
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
