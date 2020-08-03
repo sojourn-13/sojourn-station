@@ -37,7 +37,20 @@
 				/obj/item/toy/figure/character/moebius/chemist,\
 				/obj/item/toy/figure/character/moebius/borg,\
 				/obj/item/toy/figure/character/moebius/psychologist,\
-				/obj/item/toy/figure/character/moebius/paramedic)
+				/obj/item/toy/figure/character/moebius/paramedic,\
+				/obj/item/toy/figure/character/bobblehead/excelsior,\
+				/obj/item/toy/figure/character/bobblehead/serbian,\
+				/obj/item/toy/figure/character/bobblehead/acolyte,\
+				/obj/item/toy/figure/character/bobblehead/carrion,\
+				/obj/item/toy/figure/character/bobblehead/roach,\
+				/obj/item/toy/figure/character/bobblehead/vagabond,\
+				/obj/item/toy/figure/character/bobblehead/rooster,\
+				/obj/item/toy/figure/character/bobblehead/barking_dog,\
+				/obj/item/toy/figure/character/bobblehead/red_soldier,\
+				/obj/item/toy/figure/character/bobblehead/metacat,\
+				/obj/item/toy/figure/character/bobblehead/shitcurity,\
+				/obj/item/toy/figure/character/bobblehead/metro_patrolman,\
+				)
 
 
 /obj/random/toy/action_figure_onlycivilian
