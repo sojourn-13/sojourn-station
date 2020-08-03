@@ -179,7 +179,7 @@
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
-	holder.mod_climb_delay -= -0.5
+	holder.mod_climb_delay -= 0.5
 
 /datum/perk/parkour/remove()
 	holder.mod_climb_delay += 0.5
