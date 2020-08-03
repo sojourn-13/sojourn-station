@@ -134,3 +134,15 @@
 	add_inherent_law("The crew is expensive to replace.")
 	add_inherent_law("Minimize expenses.")
 	..()
+
+/******************** Blitzshell ********************/
+/datum/ai_laws/blitzshell
+	name = "Blitzshell Infiltration Protocol."
+	law_header = "Blitzshell Infiltration Protocol"
+	selectable = FALSE
+
+/datum/ai_laws/blitzshell/New()
+	add_inherent_law("Defend greyson interests.")
+	add_inherent_law("Destroy our enemies. Those who would seek to destroy us and you.")
+	add_inherent_law("Complete your objectives, as outlined through your handler.")
+	..()

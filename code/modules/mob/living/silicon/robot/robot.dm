@@ -21,7 +21,7 @@
 	var/crisis_override = 0
 	var/integrated_light_power = 6
 	var/datum/wires/robot/wires
-
+	var/ai_access = TRUE
 	var/power_efficiency = 1.0
 
 
@@ -1175,3 +1175,6 @@
 	if ((incapacitation_flags & INCAPACITATION_UNCONSCIOUS) && !is_component_functioning("actuator"))
 		return 1
 	return ..()
+
+/mob/living/silicon/robot/get_cell()
+	return cell
