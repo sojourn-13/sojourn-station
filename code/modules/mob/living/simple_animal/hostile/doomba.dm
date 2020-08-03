@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/roomba
 	name = "Greyson Positronic RMB-A unit"
-	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless"
+	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
 	icon = 'icons/mob/battle_roomba.dmi'
 	icon_state = "roomba"
 	faction = "onestar"
@@ -78,7 +78,45 @@
 	melee_damage_upper = 10
 	ranged = 1
 
+/mob/living/simple_animal/hostile/roomba/synthetic
+	name = "Greyson Positronic FBP-Utility unit"
+	desc = "A full body positronic, tasked with carrying out a variety of duties. This one is unarmed."
+	icon = 'icons/mob/mobs-humanoid.dmi'
+	icon_state = "nanotrasen"
+	attacktext = "punched"
+	move_to_delay = 2
+	turns_per_move = 7
+	speed = 6
+	move_to_delay = 4
+	health = 125
+	maxHealth = 125
 
+/mob/living/simple_animal/hostile/roomba/synthetic/epistol
+	name = "Greyson Positronic FBP-SEC Mark I unit"
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has an old style energy pistol built into its arm."
+	icon_state = "nanotrasenranged"
+	ranged = 1
+
+/mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg
+	name = "Greyson Positronic FBP-SEC Mark II unit"
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified burst fire cog laser rifle built into its arm."
+	icon_state = "nanotrasenrangedsmg"
+	rapid = 1
+	projectiletype = /obj/item/projectile/beam/pulse/drone
+
+/mob/living/simple_animal/hostile/roomba/synthetic/epistol/rifle
+	name = "Greyson Positronic FBP-SEC Mark III unit"
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified heavy duty cog carbine built into its arm."
+	icon_state = "nanotrasenrangedassault"
+	projectiletype = /obj/item/projectile/beam/midlaser
+
+/mob/living/simple_animal/hostile/roomba/synthetic/epistol/heavy
+	name = "Greyson Positronic FBP-SEC Heavy unit"
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has an overclocked super cog laser rifle built in his arm."
+	icon_state = "nanotrasen_ert"
+	projectiletype = /obj/item/projectile/beam/heavylaser
+
+//spawners
 /obj/random/mob/roomba
 	name = "random greyson bot"
 	icon_state = "hostilemob-black"
@@ -93,6 +131,11 @@
 				/mob/living/simple_animal/hostile/onestar_custodian = 25,
 				/mob/living/simple_animal/hostile/onestar_custodian/chef = 10,
 				/mob/living/simple_animal/hostile/onestar_custodian/engineer = 15,
+				/mob/living/simple_animal/hostile/roomba/synthetic = 10,
+				/mob/living/simple_animal/hostile/roomba/synthetic/epistol = 15,
+				/mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg = 12,
+				/mob/living/simple_animal/hostile/roomba/synthetic/epistol/rifle = 9,
+				/mob/living/simple_animal/hostile/roomba/synthetic/epistol/heavy = 4,
 				))
 
 /obj/random/mob/roomba/post_spawn(var/list/spawns)

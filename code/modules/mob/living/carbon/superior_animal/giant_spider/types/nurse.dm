@@ -29,6 +29,20 @@
 	melee_damage_upper = 15
 	poison_type = "mutagen"
 
+/mob/living/carbon/superior_animal/giant_spider/nurse/queen
+	name = "spider queen"
+	desc = "Furry and black, it makes you shudder to look at it. This one is a huge chittering brood queen with large fangs of dripping venom."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "spider_queen"
+	icon_living = "spider_queen"
+	maxHealth = 500
+	health = 500
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	poison_per_bite = 4
+	poison_type = "menace"
+	pixel_x = -20
+
 /mob/living/carbon/superior_animal/giant_spider/nurse/attemptAttackOnTarget()
 	var/target = ..()
 	if(ishuman(target))
