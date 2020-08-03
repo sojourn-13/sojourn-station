@@ -59,7 +59,7 @@
 /mob/living/simple_animal/hostile/retaliate/clown/death()
 	..()
 	visible_message("<b>[src]</b> explodes in a shower of banana guts!")
-	new /obj/effect/decal/cleanable/blood/gibs/clown(src.loc)
+	new /obj/effect/gibspawner/clown(src.loc)
 	new /obj/item/weapon/bananapeel(src.loc)
 	qdel(src)
 	return
@@ -74,7 +74,7 @@
 	response_help = "dips a finger into"
 	response_disarm = "dip a finger into"
 	response_harm = "splats"
-	emote_see = list("bubbles", "oozes")
+	emote_see = list("bubbles.", "oozes.")
 	attack_reagent = "arectine"
 
 /mob/living/simple_animal/hostile/retaliate/clown/giggles
@@ -93,7 +93,7 @@
 	response_harm = "peels"
 	turns_per_move = 1
 	speak = list("HONK", "Honk!", "YA-HONK!!!")
-	emote_see = list("honks", "bites into the banana", "plucks a banana off its head", "photosynthesizes")
+	emote_see = list("honks.", "bites into the banana.", "plucks a banana off its head.", "photosynthesizes.")
 	maxHealth = 250
 	health = 250
 	speed = -10
@@ -106,7 +106,7 @@
 	icon_living = "pie spewer"
 	turns_per_move = 1
 	speak = list("HONK", "Honk!", "YA-HONK!!!")
-	emote_see = list("honks", "sticks his fingers in a pie", "smears pie on his face", "creams")
+	emote_see = list("honks.", "sticks his fingers in a pie.", "smears pie on his face.", "creams.")
 	maxHealth = 250
 	health = 250
 	speed = -10
@@ -151,7 +151,7 @@
 	response_disarm = "reluctantly pokes"
 	response_harm = "cleanse the world of"
 	speak = list("HONK", "Honk!", "I didn't ask for this", "I feel constant and horrible pain", "YA-HONK!!!", "this body is a merciless and unforgiving prison", "I was born out of mirthful pranking but I live in suffering")
-	emote_see = list("honks", "sweats", "jiggles", "contemplates its existence")
+	emote_see = list("honks.", "sweats.", "jiggles.", "contemplates its existence.")
 	speak_chance = 15
 	maxHealth = 300
 	health = 300
@@ -169,7 +169,7 @@
 	response_disarm = "pushes the unwieldy frame of"
 	response_harm = "tries to shut up"
 	speak = list("YA-HONK!!!")
-	emote_see = list("honks", "squeaks")
+	emote_see = list("honks.", "squeaks.")
 	speak_chance = 60
 	maxHealth = 400
 	health = 400
@@ -188,12 +188,11 @@
 	response_help = "tries to meme"
 	response_disarm = "hates"
 	response_harm = "tries to cover up"
-	speak = list("Hiya Georgie", "Nobody tell Stephen I'm here!", "Well all float down here...", "I'm contractually obligated to tell you that I'm not a reference to any existing clowns.")
+	speak = list("Hiya Georgie!", "Nobody tell Stephen I'm here!", "Well all float down here...", "I'm contractually obligated to tell you that I'm not a reference to any existing clowns.")
 	emote_see = list("honks", "squeaks")
 	speak_chance = 60
 	maxHealth = 50
 	health = 50
-	pixel_x = -16
 	speed = 10
 	harm_intent_damage = 30
 	melee_damage_lower = 40
@@ -208,7 +207,7 @@
 	response_disarm = "foolishly pushes"
 	response_harm = "angers"
 	speak = list("HONK", "Honk!", "HAUAUANK!!!", "GUUURRRRAAAHHH!!!")
-	emote_see = list("honks", "sweats", "grunts")
+	emote_see = list("honks.", "sweats.", "grunts.")
 	speak_chance = 5
 	maxHealth = 900
 	health = 900
@@ -227,7 +226,7 @@
 	response_disarm = "tries to assert dominance over"
 	response_harm = "makes a weak beta attack at"
 	speak = list("HONK", "Honk!", "Bruh", "cheeaaaahhh?")
-	emote_see = list("asserts his dominance", "emasculates everyone implicitly")
+	emote_see = list("asserts his dominance.", "emasculates everyone implicitly.")
 	maxHealth = 2000
 	health = 2000
 	speed = -2
@@ -244,7 +243,7 @@
 	response_help = "skeptically pokes"
 	response_disarm = "pushes the unwieldy frame of"
 	speak = list("honk")
-	emote_see = list("squirms", "writhes")
+	emote_see = list("squirms.", "writhes.")
 	speak_chance = 1
 	maxHealth = 300
 	health = 300
@@ -261,7 +260,7 @@
 	icon_living = "destroyer"
 	response_disarm = "bounces off of"
 	response_harm = "bounces off of"
-	speak = list("HONK!!!", "The Honkmother is merciful, so I must act out her wrath.", "parce mihi ad beatus honkmother placet mihi ut peccata committere,", "DIE!!!")
+	speak = list("HONK!!!", "The Honkmother is merciful, so I must act out her wrath.", "parce mihi ad beatus honkmother placet mihi ut peccata committere.", "DIE!!!")
 	maxHealth = 1200
 	health = 1200
 	speed = 5
@@ -279,7 +278,7 @@
 	response_disarm = "squishes into"
 	response_harm = "squishes into"
 	speak = list("aaaaaahhhhuuhhhuhhhaaaaa", "AAAaaauuuaaAAAaauuhhh", "huuuuuh... hhhhuuuooooonnnnkk", "HuaUAAAnKKKK")
-	emote_see = list("squirms", "writhes", "pulsates", "froths", "oozes")
+	emote_see = list("squirms.", "writhes.", "pulsates.", "froths.", "oozes.")
 	speak_chance = 10
 	maxHealth = 200
 	health = 200
@@ -295,7 +294,7 @@
 	icon_state = "blob"
 	icon_living = "blob"
 	speak = list("hey, buddy", "HONK!!!", "H-h-h-H-HOOOOONK!!!!", "HONKHONKHONK!!!", "HEY, BUCKO, GET BACK HERE!!!", "HOOOOOOOONK!!!")
-	emote_see = list("jiggles", "wobbles")
+	emote_see = list("jiggles.", "wobbles.")
 	maxHealth = 400
 	health = 400
 	mob_size = MOB_SIZE_LARGE

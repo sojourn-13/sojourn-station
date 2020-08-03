@@ -240,12 +240,13 @@
 	turns_per_move = 4
 	vision_range = 16
 	aggro_vision_range = 16
-	stop_automated_movement_when_pulled = 0
+	stop_automated_movement_when_pulled = 1
 	pixel_x = -16
 	move_to_delay = 4
 	speak_emote = list("looses a rumbling croak", "grumbles quietly")
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "pond"
+	wander = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/AttackingTarget()
 	..()

@@ -59,6 +59,49 @@
 	melee_damage_upper = 40
 	attacktext = "hits"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+
+/mob/living/simple_animal/hostile/madminer
+	name = "thing"
+	desc = "It isn't a person."
+	icon = 'icons/mob/mobs-humanoid.dmi'
+	icon_state = "plasma_miner"
+	response_help = "pokes"
+	response_disarm = "gently pushes aside"
+	response_harm = "punches"
+	health = 100
+	maxHealth = 100
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	attacktext = "hits"
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	attack_sound = 'sound/weapons/rapierhit.ogg'
+
+/mob/living/simple_animal/hostile/madminer/armed
+	desc = "It isn't a person and its armed."
+	melee_damage_lower = 20
+	melee_damage_upper = 25
+
+/mob/living/simple_animal/hostile/madminer/death(gibbed, deathmessage = "vanishes with a scream of agony!")
+	..()
+	playsound(src, 'sound/hallucinations/wail.ogg', 75, 1, -3)
+	qdel(src)
+
+/mob/living/simple_animal/hostile/madminer/faceless
+	name = "faceless"
+	desc = "Nothing is right."
+	icon_state = "faceless"
+	health = 1000
+	maxHealth = 1000
+
+/mob/living/simple_animal/hostile/madminer/cultist
+	name = "cultist"
+	desc = "Some things are older than we can ever understand."
+	icon_state = "cultist"
+	melee_damage_lower = 20
+	melee_damage_upper = 25
+	health = 150
+	maxHealth = 150
+
 /*
 #define MOOK_ATTACK_NEUTRAL 0
 #define MOOK_ATTACK_WARMUP 1
