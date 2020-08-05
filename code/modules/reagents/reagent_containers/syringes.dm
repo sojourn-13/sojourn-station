@@ -21,6 +21,7 @@
 	unacidable = 1 //glass
 	reagent_flags = TRANSPARENT
 	var/mode = SYRINGE_DRAW
+	var/breakable = TRUE
 	var/image/filling //holds a reference to the current filling overlay
 	var/visible_name = "a syringe"
 	var/time = 30
@@ -246,7 +247,7 @@
 			add_overlay(injoverlay)
 			update_wear_icon()
 
-	else if(/obj/item/weapon/reagent_containers/syringe/large)
+	if(/obj/item/weapon/reagent_containers/syringe/large)
 		if(reagents && reagents.total_volume)
 			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)
 			var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe-[rounded_vol]")
@@ -267,6 +268,11 @@
 					injoverlay = "inject"
 			add_overlay(injoverlay)
 			update_wear_icon()
+
+/obj/item/weapon/reagent_containers/syringe/blitzshell
+	name = "blitzshell syringe"
+	desc = "A blitzshell syringe."
+	breakable = FALSE
 
 /obj/item/weapon/reagent_containers/syringe/proc/syringestab(mob/living/carbon/target as mob, mob/living/carbon/user as mob)
 	if(ishuman(target))
@@ -314,6 +320,8 @@
 	break_syringe(target, user)
 
 /obj/item/weapon/reagent_containers/syringe/proc/break_syringe(mob/living/carbon/target, mob/living/carbon/user)
+	if(!breakable)
+		return
 	desc += " It is broken."
 	mode = SYRINGE_BROKEN
 	if(target)

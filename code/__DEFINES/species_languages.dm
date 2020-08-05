@@ -39,6 +39,7 @@
 #define LANGUAGE_CORTICAL "Cortical Link"
 #define LANGUAGE_CULT "Cult"
 #define LANGUAGE_OCCULT "Occult"
+#define LANGUAGE_BLITZ "Blitzshell Communique"
 #define LANGUAGE_OPIFEXEE "Opifexee"
 #define LANGUAGE_CHTMANT "Cht'Hive"
 

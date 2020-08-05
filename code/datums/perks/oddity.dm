@@ -3,10 +3,10 @@
 
 /datum/perk/oddity/toxic_revenger
 	name = "Fungal Host"
-	desc = "A small hostile fungal spores were on the oddity, hijacking your lungs and forcing them to emit toxins harmful to everyone around you. It will be a long time before your body can fight this off..."
+	desc = "A small hostile fungal spores were on the oddity, hijacking your lungs and forcing them to emit toxins harmful to everyone around you every half hour. It will be a long time before your body can fight this off..."
 	gain_text = "You feel a terrible aching pain in your lungs, an anomalous fungus on the oddity has infused your body!"
 	//icon_state = "Hazmat" // https://game-icons.net
-	var/cooldown = 10 MINUTES
+	var/cooldown = 30 MINUTES
 	var/initial_time
 
 /datum/perk/oddity/toxic_revenger/assign(mob/living/carbon/human/H)

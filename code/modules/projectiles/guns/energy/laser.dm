@@ -270,3 +270,20 @@
 	safety = FALSE
 	restrict_safety = TRUE
 	twohanded = FALSE
+
+/obj/item/weapon/gun/energy/laser/mounted/blitz
+	name = "SDF LR \"Strahl\""
+	desc = "A miniaturized laser rifle, remounted for robotic use only."
+	icon_state = "laser_turret"
+	charge_meter = FALSE
+
+/obj/item/weapon/gun/energy/laser/railgun/mounted
+	name = "SDF SC \"Schrapnell\""
+	desc = "An energy-based railgun, employing a matter fabricator to pull shotgun rounds from thin air and energy before launching them at faster than light speeds."
+	icon_state = "shrapnel"
+	self_recharge = 1
+	use_external_power = 1
+	safety = FALSE
+	restrict_safety = TRUE
+	consume_cell = FALSE
+	cell_type = /obj/item/weapon/cell/small/high //Two shots

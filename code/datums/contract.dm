@@ -1,5 +1,24 @@
 GLOBAL_LIST_EMPTY(all_antag_contracts)
-
+GLOBAL_LIST_INIT(antag_item_targets,list(
+		"the premier's antique laser gun" = /obj/item/weapon/gun/energy/captain,
+		"a hand teleporter" = /obj/item/weapon/hand_tele,
+		"an RCD" = /obj/item/weapon/rcd,
+		"a jetpack" = /obj/item/weapon/tank/jetpack,
+		"a premier's jumpsuit" = /obj/item/clothing/under/rank/captain,
+		"a functional AI" = /obj/item/device/aicard,
+		"the Guild Master's advanced voidsuit control module" = /obj/item/weapon/rig/ce,
+		"the colony blueprints" = /obj/item/blueprints,
+		"a sample of slime extract" = /obj/item/slime_extract,
+		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
+		"a Soteria research overseer's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
+		"a guild master's jumpsuit" = /obj/item/clothing/under/rank/exultant,
+		"a Soteria biolab overseer's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,
+		"a warrant officer's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
+		"a steward's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
+		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
+		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
+		"an marshal hardsuit control module" = /obj/item/weapon/rig/combat/ironhammer
+	))
 /datum/antag_contract
 	var/name
 	var/desc

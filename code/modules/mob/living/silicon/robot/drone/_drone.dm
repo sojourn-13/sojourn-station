@@ -32,7 +32,7 @@ var/list/mob_hat_cache = list()
 	pass_flags = PASSTABLE
 	braintype = "Robot"
 	lawupdate = 0
-	density = 0
+	density = FALSE
 	req_access = list(access_engine, access_robotics)
 	integrated_light_power = 3
 	local_transmit = 1
@@ -60,6 +60,8 @@ var/list/mob_hat_cache = list()
 	var/hat_y_offset = -13
 	var/eyecolor = "blue"
 	var/armguard = ""
+	var/communication_channel = LANGUAGE_DRONE
+	var/station_drone = TRUE
 
 	holder_type = /obj/item/weapon/holder/drone
 
@@ -94,6 +96,7 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/Destroy()
 	if(hat)
 		hat.loc = get_turf(src)
+	GLOB.drones.Remove(src)
 	. = ..()
 
 /mob/living/silicon/robot/drone/construction
@@ -108,6 +111,9 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/New()
 
 	..()
+
+	//Stats must be initialised before creating the module
+	if(!module) module = new module_type(src)
 
 	verbs += /mob/living/proc/hide
 	remove_language(LANGUAGE_ROBOT)
@@ -126,12 +132,12 @@ var/list/mob_hat_cache = list()
 		var/datum/robot_component/C = components[V]
 		C.max_damage = 10
 
-	//Stats must be initialised before creating the module
-	if(!module) module = new module_type(src)
-
 	verbs -= /mob/living/silicon/robot/verb/Namepick
 	//choose_overlay()
 	updateicon()
+
+	if(station_drone)
+		GLOB.drones |= src
 
 /mob/living/silicon/robot/drone/init()
 	aiCamera = new/obj/item/device/camera/siliconcam/drone_camera(src)
@@ -153,15 +159,15 @@ var/list/mob_hat_cache = list()
 
 /mob/living/silicon/robot/drone/updateicon()
 
-	cut_overlays()
-	if(stat == CONSCIOUS)
-		add_overlay("eyes-drone[eyecolor]")
+	overlays.Cut()
+	if(stat == CONSCIOUS && eyecolor)
+		overlays += "eyes-drone[eyecolor]"
 
 	if(armguard)
-		add_overlay("model-[armguard]")
+		overlays += "model-[armguard]"
 
 	if(hat) // Let the drones wear hats.
-		add_overlay(get_hat_icon(hat, hat_x_offset, hat_y_offset))
+		overlays |= get_hat_icon(hat, hat_x_offset, hat_y_offset)
 
 /mob/living/silicon/robot/drone/choose_icon()
 	return
@@ -338,7 +344,7 @@ var/list/mob_hat_cache = list()
 
 /mob/living/silicon/robot/drone/construction/welcome_drone()
 	to_chat(src, "<b>You are a construction drone, an autonomous engineering and fabrication system.</b>.")
-	to_chat(src, "You are assigned to a RRROR! FILE NOT FOUND! The name is irrelevant. Your task is to complete construction and subsystem integration as soon as possible.")
+	to_chat(src, "You are assigned to a Sol Central construction project. The name is irrelevant. Your task is to complete construction and subsystem integration as soon as possible.")
 	to_chat(src, "Use <b>:d</b> to talk to other drones and <b>say</b> to speak silently to your nearby fellows.")
 	to_chat(src, "<b>You do not follow orders from anyone; not the AI, not humans, and not other synthetics.</b>.")
 
@@ -351,9 +357,9 @@ var/list/mob_hat_cache = list()
 	name = real_name
 
 /mob/living/silicon/robot/drone/construction/updateicon()
-	cut_overlays()
+	overlays.Cut()
 	if(stat == CONSCIOUS)
-		add_overlay("eyes-[module_sprites[icontype]]")
+		overlays += "eyes-[module_sprites[icontype]]"
 
 /proc/too_many_active_drones()
 	var/drones = 0
