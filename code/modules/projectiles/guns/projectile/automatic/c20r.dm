@@ -43,3 +43,12 @@
 /obj/item/weapon/gun/projectile/automatic/c20r/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/weapon/gun/projectile/automatic/c20r/sci
+	name = "bullpip SMG"
+	desc = "A C-20r is a lightweight and rapid-firing SMG, this one is caliber in 10mm Auto. This seems to be a more outdated version produced by Soteria."
+	caliber = CAL_LIGHT_PISTOL
+	load_method = MAGAZINE
+	mag_well = MAG_WELL_SMG
+	auto_eject = FALSE
+	price_tag = 600

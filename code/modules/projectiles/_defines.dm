@@ -1,4 +1,5 @@
 //Caliber Defines
+#define CAL_LIGHT_PISTOL ".10"
 #define CAL_PISTOL ".35"
 #define CAL_35A ".35 auto"
 #define CAL_MAGNUM ".40 magnum"

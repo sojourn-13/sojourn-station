@@ -26,9 +26,14 @@
 	build_path = /obj/item/weapon/gun/energy/lasercannon
 
 /datum/design/research/item/weapon/c20r
-	name = "C20R-prototype"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 rounds."
-	build_path = /obj/item/weapon/gun/projectile/automatic/c20r
+	name = "Lightweight C20R"
+	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses 10mm rounds."
+	build_path = /obj/item/weapon/gun/projectile/automatic/c20r/sci
+
+/datum/design/research/item/weapon/light_pistol
+	name = "\"Elmerth\" 10mm Pistol"
+	desc = "The \"Elmerth\" light pistol is a small handgun that uses 10mm rounds."
+	build_path = /obj/item/weapon/gun/projectile/clarissa/sci
 
 /datum/design/research/item/weapon/centurio
 	build_path = /obj/item/weapon/gun/energy/centurio
@@ -94,10 +99,48 @@
 	name_category = "ammunition"
 	category = CAT_WEAPON
 
+/datum/design/research/item/ammo/light_pistol/mag
+	name = "magazine 10mm Auto"
+	desc = "A magazine for 10mm Auto, used in pistols."
+	build_path = /obj/item/ammo_magazine/pistol/light/empty
+
+/datum/design/research/item/ammo/light_pistol/smg_mag
+	name = "smg magazine 10mm Auto"
+	desc = "A magazine for 10mm Auto, used in smgs."
+	build_path = /obj/item/ammo_magazine/smg/light/empty
+
+/datum/design/research/item/ammo/light_pistol
+	name = "ammo box, 10mm Auto"
+	desc = "A ammo box full of 10mm Auto."
+	build_path = /obj/item/ammo_magazine/ammobox/lpistol
+	materials = list(MATERIAL_STEEL = 30)
+
+/datum/design/research/item/ammo/light_pistol/rubber
+	name = "ammo box, 10mm rubber"
+	desc = "A ammo box full of 10mm rubber."
+	build_path = /obj/item/ammo_magazine/ammobox/lpistol/rubber
+	materials = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 20)
+
+/datum/design/research/item/ammo/light_pistol/hp
+	name = "ammo box, 10mm Auto hollow point"
+	desc = "A ammo box full of 10mm Auto hollow point."
+	build_path = /obj/item/ammo_magazine/ammobox/lpistol/hp
+	materials = list(MATERIAL_STEEL = 90)
+	//Why does it take more if its making a hollowed verson of itself? - Balance
+
+// Shotgun Ammo
+
 /datum/design/research/item/ammo/shotgun_stun
 	name = "shotgun, stun"
 	desc = "A stunning shell for a shotgun."
-	build_path = /obj/item/ammo_casing/shotgun/stunshell
+	build_path = /obj/item/ammo_casing/shotgun/stunshell //We print one at a time fore balance
+
+/datum/design/research/item/ammo/shotgun_fire
+	name = "shotgun, incendiary"
+	desc = "A incendiary shell for a shotgun."
+	build_path = /obj/item/projectile/bullet/shotgun/incendiary //We print one at a time fore balance
+
+// Misc Ammo
 
 /datum/design/research/item/ammo/hatton
 	name = "Soteria BT \"Q-del\" gas tube"

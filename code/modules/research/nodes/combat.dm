@@ -102,7 +102,7 @@
 
 /datum/technology/basic_lethal
 	name = "Basic Lethal Weapons"
-	desc = "Chemical grenade design with anti-acid coating inside."
+	desc = "Chemical grenade design with anti-acid coating inside. As well as a lighter verson of classic 35 Auto hangun."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.6
@@ -113,7 +113,11 @@
 	required_tech_levels = list()
 	cost = 2000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade)
+	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
+							/datum/design/research/item/weapon/light_pistol,
+							/datum/design/research/item/ammo/light_pistol/mag,
+							/datum/design/research/item/ammo/light_pistol,
+							/datum/design/research/item/ammo/light_pistol/rubber)
 
 /datum/technology/exotic_weaponry
 	name = "Experemental Weaponry"
@@ -128,7 +132,8 @@
 	required_tech_levels = list()
 	cost = 3000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun)
+	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun,
+							/datum/design/research/item/ammo/shotgun_fire)
 
 /datum/technology/adv_exotic_weaponry
 	name = "Advanced Experemental Weaponry"
@@ -163,10 +168,12 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
+							/datum/design/research/item/ammo/light_pistol/smg_mag,
 							/datum/design/research/item/weapon/starstriker,
 							/datum/design/research/item/ammo/laser,
 							/datum/design/research/item/ammo/laser/ap,
-							/datum/design/research/item/ammo/laser/lethal
+							/datum/design/research/item/ammo/laser/lethal,
+							/datum/design/research/item/ammo/light_pistol/hp
 						)
 
 /datum/technology/laser_weaponry

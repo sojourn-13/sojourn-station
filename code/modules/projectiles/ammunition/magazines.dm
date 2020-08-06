@@ -49,6 +49,31 @@
 	ammo_type = /obj/item/ammo_casing/pistol/lethal
 
 
+/////////////Light/////////////
+/obj/item/ammo_magazine/pistol/light
+	name = "standard magazine (10mm Auto)"
+	desc = "a 10 round magazine marked for 10mm Auto."
+	icon_state = "pistol"
+	origin_tech = list(TECH_COMBAT = 1)
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_PISTOL
+	matter = list(MATERIAL_STEEL = 3)
+	caliber = CAL_LIGHT_PISTOL
+	ammo_type = /obj/item/ammo_casing/light_pistol
+	max_ammo = 10
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/pistol/light/empty
+	icon_state = "pistol"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/smg/light/empty
+	desc = "A 32 round magazine marked for 10mm auto."
+	caliber = CAL_LIGHT_PISTOL
+	icon_state = "smg"
+	ammo_color = ""
+	initial_ammo = 0
+
 /////////////HighCap/////////////
 /obj/item/ammo_magazine/hpistol
 	name = "highcap pistol magazine"

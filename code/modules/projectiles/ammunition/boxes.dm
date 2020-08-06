@@ -36,6 +36,35 @@
 			to_chat(user, SPAN_NOTICE("You fail to pick anything up with \the [src]."))
 	update_icon()
 
+//// .10 ////
+/obj/item/ammo_magazine/ammobox/lpistol
+	name = "ammunition box (10mm Auto)"
+	icon_state = "box_lrifle"
+	matter = list(MATERIAL_STEEL = 30)
+	w_class = ITEM_SIZE_BULKY
+	mag_type = MAGAZINE
+	mag_well =  MAG_WELL_BOX
+	caliber = CAL_LIGHT_PISTOL
+	ammo_type = /obj/item/ammo_casing/light_pistol
+	max_ammo = 200
+
+/obj/item/ammo_magazine/ammobox/lpistol/pickup(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/magmove.ogg',60,3)
+
+/obj/item/ammo_magazine/ammobox/lpistol/dropped(mob/user)
+	..()
+	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
+
+/obj/item/ammo_magazine/ammobox/lpistol/rubber
+	name = "ammunition box (10mm Auto rubber)"
+	icon_state = "box_lrifle_r"
+	ammo_type = /obj/item/ammo_casing/light_pistol/rubber
+
+/obj/item/ammo_magazine/ammobox/lpistol/hp
+	name = "ammunition box (10mm Auto HP)"
+	icon_state = "box_lrifle_p"
+	ammo_type = /obj/item/ammo_casing/light_pistol/lethal
 
 //// .35 ////
 
@@ -102,7 +131,7 @@
 
 //// .257 carbine ////
 
-obj/item/ammo_magazine/ammobox/lrifle
+/obj/item/ammo_magazine/ammobox/lrifle
 	name = "ammunition box (.257 Carbine FMJ)"
 	icon_state = "box_lrifle"
 	matter = list(MATERIAL_STEEL = 30)
@@ -131,7 +160,7 @@ obj/item/ammo_magazine/ammobox/lrifle
 	icon_state = "box_lrifle_p"
 	ammo_type = /obj/item/ammo_casing/lrifle/practice
 
-obj/item/ammo_magazine/ammobox/lrifle_small
+/obj/item/ammo_magazine/ammobox/lrifle_small
 	name = "ammunition box (.257 Carbine FMJ)"
 	icon_state = "lrifle"
 	matter = list(MATERIAL_STEEL = 15)
@@ -162,7 +191,7 @@ obj/item/ammo_magazine/ammobox/lrifle_small
 
 ////7.5 Rifle////
 
-obj/item/ammo_magazine/ammobox/rifle
+/obj/item/ammo_magazine/ammobox/rifle
 	name = "ammunition box (7.5mm Rifle ball)"
 	icon_state = "boxhrifle"
 	desc = "A box of 7.5mm rifle ammunition. 180ct, Full Metal Jacket rounds."
@@ -381,7 +410,7 @@ obj/item/ammo_magazine/ammobox/rifle
 	desc = "A box of .408 heavy rifle ammunition. 80ct, 7mm subcaliber frangible training rounds."
 	ammo_type = /obj/item/ammo_casing/hrifle/practice
 
-obj/item/ammo_magazine/ammobox/hrifle/practice/update_icon()
+/obj/item/ammo_magazine/ammobox/hrifle/practice/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "boxhrifle-practice-0"
 		return
@@ -402,7 +431,7 @@ obj/item/ammo_magazine/ammobox/hrifle/practice/update_icon()
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
 	ammo_type = /obj/item/ammo_casing/hrifle/hv
 
-obj/item/ammo_magazine/ammobox/hrifle/hv/update_icon()
+/obj/item/ammo_magazine/ammobox/hrifle/hv/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "boxhrifle-hv-0"
 		return
@@ -422,7 +451,7 @@ obj/item/ammo_magazine/ammobox/hrifle/hv/update_icon()
 	desc = "A box of .408 heavy rifle ammunition. 120ct, 10mm hollow-tipped full-caliber."
 	ammo_type = /obj/item/ammo_casing/hrifle/lethal
 
-obj/item/ammo_magazine/ammobox/hrifle/lethal/update_icon()
+/obj/item/ammo_magazine/ammobox/hrifle/lethal/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "boxhrifle-lethal-0"
 		return
