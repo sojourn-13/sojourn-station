@@ -18,6 +18,7 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
 	meat_amount = 3
 	var/fed = 0
+	emote_see = list("chitters","rubs its legs","trails webs through its hairs","screeches")
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes and purple stripes on the back."
@@ -35,13 +36,17 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "spider_queen"
 	icon_living = "spider_queen"
-	maxHealth = 500
-	health = 500
+	maxHealth = 400
+	health = 400
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "menace"
-	pixel_x = -20
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
+	..()
+	pixel_x = -16
+	pixel_y = null
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/attemptAttackOnTarget()
 	var/target = ..()
