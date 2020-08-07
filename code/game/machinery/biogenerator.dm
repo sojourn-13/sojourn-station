@@ -18,6 +18,13 @@
 	var/list/recipes = list(
 		"Food",
 			list(name="Milk, 30u", cost=60, reagent="milk"),
+			list(name="Soy Milk, 30u", cost=60, reagent="soymilk"),
+			list(name="Black Pepper, 30u", cost=60, reagent="blackpepper"),
+			list(name="2 Eggs", cost=600, reagent="egg"), //Got to be really lazy
+			list(name="Flour, 30u", cost=600, reagent="flour"), //Got to be really lazy
+			list(name="Rice, 30u", cost=600, reagent="rice"), //Got to be really lazy
+			list(name="Salt, 30u", cost=600, reagent="sodiumchloride"), //Got to be really lazy
+			list(name="Sugar, 30u", cost=30, reagent="sugar"),
 			list(name="Slab of meat", cost=50, path=/obj/item/weapon/reagent_containers/food/snacks/meat),
 		"Nutrient",
 			list(name="EZ-Nutrient, 30u", cost=30, reagent="eznutrient"),
@@ -41,6 +48,17 @@
 			list(name="Ointment", cost=100, path=/obj/item/stack/medical/ointment),
 			list(name="Advanced trauma kit", cost=200, path=/obj/item/stack/medical/advanced/bruise_pack),
 			list(name="Advanced burn kit", cost=200, path=/obj/item/stack/medical/advanced/ointment),
+		"Carpet",
+			list(name="Red Carpet", cost=12, path=/obj/item/stack/tile/carpet),
+			list(name="Black Carpet", cost=12, path=/obj/item/stack/tile/carpet/bcarpet),
+			list(name="Blue Carpet", cost=12, path=/obj/item/stack/tile/carpet/blucarpet),
+			list(name="Turquoise Carpet", cost=12, path=/obj/item/stack/tile/carpet/turcarpet),
+			list(name="Silver Carpet", cost=12, path=/obj/item/stack/tile/carpet/sblucarpet),
+			list(name="Purple Carpet", cost=12, path=/obj/item/stack/tile/carpet/purcarpet),
+			list(name="Orange Carpet", cost=12, path=/obj/item/stack/tile/carpet/oracarpet),
+		"Misc",
+			list(name="Cardboard", cost=60, path=/obj/item/stack/material/cardboard),
+			list(name="Crayon Box", cost=120, path=/obj/item/weapon/storage/fancy/crayons),
 	)
 
 
