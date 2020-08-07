@@ -59,9 +59,11 @@
 
 /obj/effect/spider/stickyweb/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0)) return 1
-	if(istype(mover, /mob/living/carbon/superior_animal/giant_spider))
-		return 1
-	else if(isliving(mover))
+	var/mob/M = mover
+	if(istype(M))
+		if(M.faction == "spiders")
+			return 1
+	if(isliving(mover))
 		var/mob/living/carbon/human/H = mover
 		if(H.stats.getPerk(PERK_SPIDER_FRIEND))
 			return 1
@@ -96,7 +98,7 @@
 /obj/effect/spider/eggcluster/Process()
 	amount_grown += rand(0,2)
 	if(amount_grown >= 100)
-		var/num = rand(2,5)
+		var/num = rand(1,3)
 		var/obj/item/organ/external/O = null
 		if(istype(loc, /obj/item/organ/external))
 			O = loc
@@ -220,7 +222,7 @@
 					break
 
 		if(amount_grown >= 100)
-			var/spawn_type = pick(typesof(/mob/living/carbon/superior_animal/giant_spider))
+			var/spawn_type = /obj/random/mob/spiders
 			new spawn_type(src.loc, src)
 			qdel(src)
 	else if(isorgan(loc))

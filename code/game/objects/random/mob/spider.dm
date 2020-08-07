@@ -4,10 +4,15 @@
 	alpha = 128
 
 /obj/random/mob/spiders/item_to_spawn()
-	return pickweight(list(/obj/effect/spider/spiderling = 30,\
-				/mob/living/carbon/superior_animal/giant_spider = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse = 2,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter = 2))
+	return pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 30,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse = 30,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 5,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter = 30,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 10,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula = 15,\
+				))
 
 /obj/random/mob/spiders/low_chance
 	name = "low chance random spider"

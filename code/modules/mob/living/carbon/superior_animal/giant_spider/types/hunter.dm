@@ -11,6 +11,7 @@
 	move_to_delay = 4
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/hunter
 	meat_amount = 4
+	emote_see = list("chitters","rubs its legs","bounces in place")
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/cloaker
 	desc = "Furry and black, it makes you shudder to look at it. This one has a chameleonic chitin that makes it hard to see."
@@ -33,3 +34,4 @@
 	health = 300
 	melee_damage_lower = 20
 	melee_damage_upper = 25
+	emote_see = list("chitters","rubs its legs","thumps its many legs on the ground")
