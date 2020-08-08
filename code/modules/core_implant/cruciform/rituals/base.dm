@@ -84,9 +84,11 @@
 		was_triggired = TRUE
 	if (prob(20))
 		for(var/mob/living/carbon/human/target in range(14, H))
-			if(target.mind && target.mind.changeling)
-				to_chat(H, SPAN_DANGER("Something's ire is upon you! A twisted and evil mind touches you for a moment, leaving you in cold sweat."))
+			for(var/organ in target.organs)
+				if (organ in subtypesof(/obj/item/organ/internal/carrion))
+					to_chat(H, SPAN_DANGER("A black terrible evil brushes against your mind suddenly, a horrible monstrous entity who's mere glancing ire is enough to leave you in a breathless cold sweat..."))
 				was_triggired = TRUE
+				break
 	if (!was_triggired)
 		to_chat(H, SPAN_NOTICE("There is nothing here. You feel safe."))
 	return TRUE

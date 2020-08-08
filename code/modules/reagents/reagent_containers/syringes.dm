@@ -247,6 +247,14 @@
 			add_overlay(injoverlay)
 			update_wear_icon()
 
+/obj/item/weapon/reagent_containers/syringe/large/update_icon()
+	cut_overlays()
+
+	if(mode == SYRINGE_BROKEN)
+		icon_state = "broken"
+		return
+
+	var/rounded_vol
 	if(/obj/item/weapon/reagent_containers/syringe/large)
 		if(reagents && reagents.total_volume)
 			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)

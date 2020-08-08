@@ -11,7 +11,7 @@
 #define LEAPING     0x10
 #define PASSEMOTES  0x32    // Mob has a cortical borer or holders inside of it that need to see emotes.
 #define GODMODE     0x1000
-#define FAKEDEATH   0x2000  // Replaces stuff like changeling.changeling_fakedeath.
+#define FAKEDEATH   0x2000  // Replaces stuff like carrion.carrion_fakedeath.
 #define DISFIGURED  0x4000  // Set but never checked. Remove this sometime and replace occurences with the appropriate organ code
 #define XENO_HOST   0x8000  // Tracks whether we're gonna be a baby alien's mummy.
 

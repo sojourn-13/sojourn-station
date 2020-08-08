@@ -27,6 +27,7 @@
 
 /obj/item/organ/external/stump/removed()
 	..()
+	owner = null //To stop infinate deletion loop.
 	qdel(src)
 
 /obj/item/organ/external/stump/is_usable()
