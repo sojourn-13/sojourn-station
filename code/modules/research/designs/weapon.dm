@@ -27,13 +27,8 @@
 
 /datum/design/research/item/weapon/c20r
 	name = "Lightweight C20R"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses 10mm rounds."
+	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 Auto rounds."
 	build_path = /obj/item/weapon/gun/projectile/automatic/c20r/sci
-
-/datum/design/research/item/weapon/light_pistol
-	name = "\"Elmerth\" 10mm Pistol"
-	desc = "The \"Elmerth\" light pistol is a small handgun that uses 10mm rounds."
-	build_path = /obj/item/weapon/gun/projectile/clarissa/sci
 
 /datum/design/research/item/weapon/centurio
 	build_path = /obj/item/weapon/gun/energy/centurio
@@ -99,34 +94,23 @@
 	name_category = "ammunition"
 	category = CAT_WEAPON
 
-/datum/design/research/item/ammo/light_pistol/mag
-	name = "magazine 10mm Auto"
-	desc = "A magazine for 10mm Auto, used in pistols."
-	build_path = /obj/item/ammo_magazine/pistol/light/empty
+/datum/design/research/item/ammo/smg_mag
+	name = "smg magazine .35 Auto (Empty) "
+	desc = "A magazine for .35 Auto, used in smgs."
+	build_path = /obj/item/ammo_magazine/smg/empty
+	materials = list(MATERIAL_STEEL = 15)
 
-/datum/design/research/item/ammo/light_pistol/smg_mag
-	name = "smg magazine 10mm Auto"
-	desc = "A magazine for 10mm Auto, used in smgs."
-	build_path = /obj/item/ammo_magazine/smg/light/empty
-
-/datum/design/research/item/ammo/light_pistol
-	name = "ammo box, 10mm Auto"
-	desc = "A ammo box full of 10mm Auto."
-	build_path = /obj/item/ammo_magazine/ammobox/lpistol
+/datum/design/research/item/ammo/smg_mag/lethal
+	name = "smg magazine .35 Auto"
+	desc = "A magazine for .35 auto, used in smgs."
+	build_path = /obj/item/ammo_magazine/smg
 	materials = list(MATERIAL_STEEL = 30)
 
-/datum/design/research/item/ammo/light_pistol/rubber
-	name = "ammo box, 10mm rubber"
-	desc = "A ammo box full of 10mm rubber."
-	build_path = /obj/item/ammo_magazine/ammobox/lpistol/rubber
-	materials = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 20)
-
-/datum/design/research/item/ammo/light_pistol/hp
-	name = "ammo box, 10mm Auto hollow point"
-	desc = "A ammo box full of 10mm Auto hollow point."
-	build_path = /obj/item/ammo_magazine/ammobox/lpistol/hp
-	materials = list(MATERIAL_STEEL = 90)
-	//Why does it take more if its making a hollowed verson of itself? - Balance
+/datum/design/research/item/ammo/smg_mag/rubber
+	name = "smg magazine .35 Auto (Rubber)"
+	desc = "A magazine for .35 Auto (Rubber), used in smgs."
+	build_path = /obj/item/ammo_magazine/smg/rubber
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
 
 // Shotgun Ammo
 

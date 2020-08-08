@@ -36,36 +36,6 @@
 			to_chat(user, SPAN_NOTICE("You fail to pick anything up with \the [src]."))
 	update_icon()
 
-//// .10 ////
-/obj/item/ammo_magazine/ammobox/lpistol
-	name = "ammunition box (10mm Auto)"
-	icon_state = "box_lrifle"
-	matter = list(MATERIAL_STEEL = 30)
-	w_class = ITEM_SIZE_BULKY
-	mag_type = MAGAZINE
-	mag_well =  MAG_WELL_BOX
-	caliber = CAL_LIGHT_PISTOL
-	ammo_type = /obj/item/ammo_casing/light_pistol
-	max_ammo = 200
-
-/obj/item/ammo_magazine/ammobox/lpistol/pickup(mob/user)
-	..()
-	playsound(src,'sound/weapons/guns/interact/magmove.ogg',60,3)
-
-/obj/item/ammo_magazine/ammobox/lpistol/dropped(mob/user)
-	..()
-	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
-
-/obj/item/ammo_magazine/ammobox/lpistol/rubber
-	name = "ammunition box (10mm Auto rubber)"
-	icon_state = "box_lrifle_r"
-	ammo_type = /obj/item/ammo_casing/light_pistol/rubber
-
-/obj/item/ammo_magazine/ammobox/lpistol/hp
-	name = "ammunition box (10mm Auto HP)"
-	icon_state = "box_lrifle_p"
-	ammo_type = /obj/item/ammo_casing/light_pistol/lethal
-
 //// .35 ////
 
 /obj/item/ammo_magazine/ammobox/pistol

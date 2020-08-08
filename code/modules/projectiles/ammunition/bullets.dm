@@ -1,21 +1,3 @@
-//// .10 ////
-
-/obj/item/ammo_casing/light_pistol
-	desc = "A 10mm Auto bullet casing."
-	caliber = CAL_LIGHT_PISTOL
-	projectile_type = /obj/item/projectile/bullet/light_pistol
-
-/obj/item/ammo_casing/light_pistol/rubber
-	desc = "A 10mm rubber bullet casing."
-	caliber = CAL_LIGHT_PISTOL
-	projectile_type = /obj/item/projectile/bullet/light_pistol/rubber
-
-/obj/item/ammo_casing/light_pistol/lethal
-	desc = "A 10mm Auto hollow-point bullet casing."
-	caliber = CAL_PISTOL
-	projectile_type = /obj/item/projectile/bullet/light_pistol/lethal
-
-
 //// .35 ////
 
 /obj/item/ammo_casing/pistol

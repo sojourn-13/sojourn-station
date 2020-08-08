@@ -37,18 +37,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/clarissa/sci
-	name = "\"Elmerth\" light pistol"
-	desc = "A lighter verson of the \"Makarov\" uses 10mm for reduced recoil buildup."
-	caliber = CAL_LIGHT_PISTOL
-	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 2)
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4)
-	price_tag = 300
-	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
-	damage_multiplier = 1
-	recoil_buildup = 10
-
 /obj/item/weapon/gun/projectile/clarissa/makarov
 	name = "\"Makarov\" pistol"
 	desc = "Old-designed pistol used by space communists. Small and easily concealable. Uses .35 rounds."

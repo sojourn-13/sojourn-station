@@ -4,34 +4,6 @@
 //HV exist as antag option for better ammo.
 //* Step delays - default value is 1. Lower value makes bullet go faster, higher value makes bullet go slower.
 
-
-//Low-caliber for RnD pistols and SMGs
-//*********************************//
-///10mm Auto///
-/obj/item/projectile/bullet/light_pistol
-	damage = 12
-	penetrating = 0
-	armor_penetration = 0
-	step_delay = 0.75
-	can_ricochet = FALSE
-
-/obj/item/projectile/bullet/light_pistol/rubber
-	name = "rubber bullet"
-	damage = 1
-	agony = 22
-	armor_penetration = -10
-	embed = FALSE
-	sharp = FALSE
-
-/obj/item/projectile/bullet/light_pistol/lethal
-	name = "hollow-point bullet"
-	damage = 10
-	agony = 16
-	armor_penetration = 5
-	embed = TRUE
-	sharp = TRUE
-
-
 //Low-caliber pistols and SMGs
 //*********************************//
 ///.35 Auto///

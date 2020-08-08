@@ -102,7 +102,7 @@
 
 /datum/technology/basic_lethal
 	name = "Basic Lethal Weapons"
-	desc = "Chemical grenade design with anti-acid coating inside. As well as a lighter verson of classic 35 Auto hangun."
+	desc = "Chemical grenade design with anti-acid coating inside."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.6
@@ -114,10 +114,7 @@
 	cost = 2000
 
 	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
-							/datum/design/research/item/weapon/light_pistol,
-							/datum/design/research/item/ammo/light_pistol/mag,
-							/datum/design/research/item/ammo/light_pistol,
-							/datum/design/research/item/ammo/light_pistol/rubber)
+							/datum/design/research/item/ammo/smg_mag)
 
 /datum/technology/exotic_weaponry
 	name = "Experemental Weaponry"
@@ -168,12 +165,8 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
-							/datum/design/research/item/ammo/light_pistol/smg_mag,
-							/datum/design/research/item/weapon/starstriker,
-							/datum/design/research/item/ammo/laser,
-							/datum/design/research/item/ammo/laser/ap,
-							/datum/design/research/item/ammo/laser/lethal,
-							/datum/design/research/item/ammo/light_pistol/hp
+							/datum/design/research/item/ammo/smg_mag/lethal,
+							/datum/design/research/item/ammo/smg_mag/rubber
 						)
 
 /datum/technology/laser_weaponry
