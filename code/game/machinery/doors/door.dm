@@ -469,8 +469,8 @@
 	if(visible && !glass)
 		set_opacity(1)	//caaaaarn!
 	if(istype(src, /obj/machinery/door/airlock/multi_tile/metal))
-		f5.set_opacity(1)
-		f6.set_opacity(1)
+		f5?.set_opacity(1)
+		f6?.set_opacity(1)
 
 	operating = 0
 

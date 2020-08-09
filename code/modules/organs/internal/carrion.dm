@@ -478,8 +478,14 @@
 
 /obj/structure/spider_nest/proc/spawn_spider()
 	var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 4,\
-		/mob/living/carbon/superior_animal/giant_spider/nurse = 2,\
-		/mob/living/carbon/superior_animal/giant_spider/hunter = 2))
+				/mob/living/carbon/superior_animal/giant_spider/nurse = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 2,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 3,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula = 3,\
+				))
 	new spider_to_spawn(loc)
 	visible_message(SPAN_WARNING("A spider spews out of \The [src]"))
 	spider_spawns--

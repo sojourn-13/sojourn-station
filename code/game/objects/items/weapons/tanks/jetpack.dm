@@ -188,7 +188,7 @@
 *****************************/
 //Attempts to use up gas and returns true if it can
 //Stabilization check is a somewhat hacky mechanic to handle an extra burst of gas for stabilizing, read below
-/obj/item/weapon/tank/jetpack/proc/allow_thrust(num, mob/living/user as mob, var/stabilization_check = FALSE)
+/obj/item/weapon/tank/jetpack/proc/allow_thrust(num, mob/living/user, stabilization_check = FALSE)
 
 	if(!(src.on))
 		return FALSE
@@ -239,7 +239,7 @@
 */
 
 
-/obj/item/weapon/tank/jetpack/proc/stabilize(var/mob/living/user, var/schedule_time, var/enable_stabilize = FALSE)
+/obj/item/weapon/tank/jetpack/proc/stabilize(mob/living/user, schedule_time, enable_stabilize = FALSE)
 	//First up, lets check we still have the user and they're still wearing this jetpack
 
 	if (!operational_safety(user))
@@ -323,7 +323,7 @@
 
 
 //Safety checks for thrust and stabilisation are seperated into a seperate proc, for overriding
-/obj/item/weapon/tank/jetpack/proc/operational_safety(var/mob/living/user)
+/obj/item/weapon/tank/jetpack/proc/operational_safety(mob/living/user)
 	if (!user || loc != user)
 		return FALSE
 	return TRUE
@@ -345,7 +345,7 @@
 
 
 
-/obj/item/weapon/tank/jetpack/rig/operational_safety(var/mob/living/user)
+/obj/item/weapon/tank/jetpack/rig/operational_safety(mob/living/user)
 	if (!user || holder.loc != user)
 		return FALSE
 	return TRUE
@@ -391,7 +391,7 @@
 	.=..()
 
 //Whenever we call a function that might use gas, we'll check if its time to start processing
-/obj/item/weapon/tank/jetpack/synthetic/allow_thrust(num, mob/living/user as mob, var/stabilization_check = FALSE)
+/obj/item/weapon/tank/jetpack/synthetic/allow_thrust(num, mob/living/user, stabilization_check = FALSE)
 	.=..(num, user, stabilization_check)
 	if (!processing)
 		//We'll allow a 5% leeway before we go into sucking mode, to prevent constant turning on and off
@@ -399,7 +399,7 @@
 			processing = TRUE
 			START_PROCESSING(SSobj, src)
 
-/obj/item/weapon/tank/jetpack/synthetic/stabilize(var/mob/living/user, var/schedule_time, var/enable_stabilize = FALSE)
+/obj/item/weapon/tank/jetpack/synthetic/stabilize(mob/living/user, schedule_time, enable_stabilize = FALSE)
 	.=..(user, schedule_time, enable_stabilize)
 	if (!processing)
 		if (get_gas().total_moles < (default_pressure*volume/(R_IDEAL_GAS_EQUATION*T20C)) * 0.95)
@@ -411,7 +411,7 @@
 	if (!draw_air())
 		stop_drawing()
 
-/obj/item/weapon/tank/jetpack/synthetic/operational_safety(var/mob/living/user)
+/obj/item/weapon/tank/jetpack/synthetic/operational_safety(mob/living/user)
 	if (!component || !component.powered)
 		return FALSE
 	return TRUE
@@ -457,7 +457,7 @@
 	return TRUE
 
 //Called whenever compression fails for some reason, or when it finishes and the tank is full
-/obj/item/weapon/tank/jetpack/synthetic/proc/stop_drawing(var/complete = FALSE)
+/obj/item/weapon/tank/jetpack/synthetic/proc/stop_drawing(complete = FALSE)
 	if (compressing)
 		playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		var/mob/living/silicon/robot/R = get_holding_mob()
@@ -474,15 +474,15 @@
 //Being an atom proc allows it to be overridden by non mob types, like mechas
 //The user proc optionally allows us to state who we're getting it for.
 	//This allows mechas to return a jetpack for the driver, but not the passengers
-/atom/proc/get_jetpack(var/mob/user)
+/atom/proc/get_jetpack(mob/user)
 	return
 
-/mob/living/carbon/human/get_jetpack(var/mob/user)
+/mob/living/carbon/human/get_jetpack(mob/user)
 
 	//If we're inside something that's not a turf, then ask that thing for its jetpack instead
 		//This generally means vehicles/mechs
 	if (!istype(loc, /turf))
-		return loc.get_jetpack(src)
+		return loc?.get_jetpack(src)
 
 	// Search the human for a jetpack. Either on back or on a RIG that's on
 	// on their back.
@@ -496,6 +496,5 @@
 			return module.jets
 
 
-/mob/living/silicon/robot/get_jetpack(var/mob/user)
+/mob/living/silicon/robot/get_jetpack(mob/user)
 	return jetpack
-
