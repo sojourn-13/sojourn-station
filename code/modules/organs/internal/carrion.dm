@@ -61,7 +61,7 @@
 	var/list/purchasedpowers = list()
 	var/list/spiderlist = list()
 	var/list/active_spiders = list()
-	var/geneticpoints = 100
+	var/geneticpoints = 30
 
 	var/mob/living/simple_animal/spider_core/associated_spider = null
 
@@ -358,13 +358,19 @@
 		playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 		spawn(2)
 			playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8) //Same trick as with the fuhrer
-		visible_message(SPAN_DANGER("[owner] emits a frightening screech as you feel the ground tramble!"))
+		visible_message(SPAN_DANGER("[owner] emits a frightening screech as you feel the ground tremble!"))
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			for(var/i = 1, i <= 4 ,i++) //4 per burrow
 				var/obj/structure/burrow/origin = SSmigration.choose_burrow_target(null, TRUE, 100)
 				var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 4,\
-					/mob/living/carbon/superior_animal/giant_spider/nurse = 2,\
-					/mob/living/carbon/superior_animal/giant_spider/hunter = 2))
+				/mob/living/carbon/superior_animal/giant_spider/nurse = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 2,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 3,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula = 3,\
+				))
 				new spider_to_spawn(B)
 				origin.migrate_to(B, 3 SECONDS, 0)
 		last_call = world.time

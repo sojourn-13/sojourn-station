@@ -1,3 +1,4 @@
+/*
 GLOBAL_LIST_EMPTY(active_mindboil_spiders)
 
 /obj/item/weapon/implant/carrion_spider/mindboil
@@ -69,3 +70,4 @@ GLOBAL_LIST_EMPTY(active_mindboil_spiders)
 				return
 			contract.complete(owner_mob.mind)
 			contract = null
+*/

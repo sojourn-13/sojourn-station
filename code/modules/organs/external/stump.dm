@@ -25,10 +25,14 @@
 /obj/item/organ/external/stump/is_stump()
 	return TRUE
 
+/obj/item/organ/external/stump/update_icon()
+	return
+
 /obj/item/organ/external/stump/removed()
 	..()
+	if(owner)
+		qdel(src)
 	owner = null //To stop infinate deletion loop.
-	qdel(src)
 
 /obj/item/organ/external/stump/is_usable()
 	return FALSE

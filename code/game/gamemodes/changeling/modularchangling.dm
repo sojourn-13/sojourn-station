@@ -26,7 +26,7 @@ var/list/datum/power/carrion/powerinstances = list()
 /datum/power/carrion/infection_spider
 	name = "Infection spider"
 	desc = "Creates a miniature spider, with spider core inside it capable of making more carrions."
-	helptext = "Requires 5 evolution points to produce."
+	helptext = "Requires 7 evolution points to produce."
 	genomecost = 0
 	spiderpath = /obj/item/weapon/implant/carrion_spider/infection
 
@@ -53,14 +53,14 @@ var/list/datum/power/carrion/powerinstances = list()
 	desc = "Creates a spider filled with dangerous lexorin gas, explodes on activation."
 	genomecost = 5
 	spiderpath = /obj/item/weapon/implant/carrion_spider/toxicbomb
-
+/*
 /datum/power/carrion/mindboil_spider
 	name = "Mindboil spider"
 	desc = "Creates a horrible spider able to drive everyone around him insane."
 	helptext = "Used to complete derail contracts"
 	genomecost = 5
 	spiderpath = /obj/item/weapon/implant/carrion_spider/mindboil
-
+*/
 /datum/power/carrion/observer_spider
 	name = "Observer spider"
 	desc = "Creates a spider with a large monocular eye, useful for spying on others."

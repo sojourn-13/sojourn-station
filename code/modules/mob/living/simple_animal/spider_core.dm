@@ -8,8 +8,8 @@
 	icon = 'icons/mob/mobs-spider.dmi'
 	icon_state = "spider_core"
 
-	health = 150
-	maxHealth = 150 //Same as blitz
+	health = 60
+	maxHealth = 60 //Really low as they have a body normally
 
 	speed = -1
 	see_in_dark = 8
@@ -24,7 +24,7 @@
 	hunger_enabled = FALSE
 	pass_flags = PASSTABLE
 	universal_understand = 1
-	density = 0 //Should be 0, but then these things would be a nightmare to kill.
+	density = 0 //This makes them a nightmare to kill, fun fun.
 	faction = "spiders"
 
 /mob/living/simple_animal/spider_core/New()
@@ -72,8 +72,8 @@
 			for(var/P in powers)
 				powerinstances += new P()
 
-		//var/obj/item/organ/external/chest/chest = H.get_organ(BP_CHEST) // get_organ with no arguments defaults to BP_CHEST, but it makes it less readable
-		core.install(H)
+		var/obj/item/organ/external/chest/chest = H.get_organ(BP_CHEST) // get_organ with no arguments defaults to BP_CHEST, but it makes it less readable
+		core.replaced(chest)
 		for(var/item in core.active_spiders)
 			var/obj/item/weapon/implant/carrion_spider/CS = item
 			if(istype(CS))
