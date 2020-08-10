@@ -277,6 +277,8 @@ var/global/list/wings_icon_cache = list()
 
 			for(var/obj/item/organ/external/part in organs)
 				var/icon/temp = part.get_icon(skeleton)
+				if(!temp)
+					continue
 				//That part makes left and right legs drawn topmost and lowermost when human looks WEST or EAST
 				//And no change in rendering for other parts (they icon_position is 0, so goes to 'else' part)
 				if(part.icon_position&(LEFT|RIGHT))

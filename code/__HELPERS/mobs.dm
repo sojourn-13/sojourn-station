@@ -288,6 +288,12 @@ Proc for attack log creation, because really why not
 	. |= CLASSIFICATION_ORGANIC | CLASSIFICATION_HUMANOID
 
 
+/proc/is_carrion(mob/living/carbon/human/H)
+	if(istype(H) && H.internal_organs_by_name[BP_SPCORE])
+		return TRUE
+
+	return FALSE
+
 // Returns true if M was not already in the dead mob list
 /mob/proc/switch_from_living_to_dead_mob_list()
 	remove_from_living_mob_list()

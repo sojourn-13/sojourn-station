@@ -112,6 +112,11 @@
 	if(owner && user == owner)
 		difficulty_adjust = 20
 
+		// ...unless you are a carrion
+		// It makes sense that carrions have a way of making their flesh cooperate
+		if(is_carrion(user))
+			difficulty_adjust = -50
+
 	var/atom/surgery_target = get_surgery_target()
 	if(S.required_tool_quality)
 		success = tool.use_tool_extended(
@@ -267,6 +272,10 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 
 /obj/item/organ/external/proc/try_autodiagnose(mob/living/user)
 	if(istype(user) && user.stats)
+		// Carrions control their whole body so they auto base this check
+		if(!BP_IS_ROBOTIC(src) && user == owner && is_carrion(user))
+			diagnosed = TRUE
+			return TRUE
 		if(user.stats.getStat(BP_IS_ROBOTIC(src) ? STAT_MEC : STAT_BIO) >= STAT_LEVEL_EXPERT)
 			to_chat(user, SPAN_NOTICE("One brief look at [get_surgery_name()] is enough for you to see all the issues immediately."))
 			diagnosed = TRUE
@@ -277,6 +286,12 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 //check if mob is lying down on something we can operate him on.
 /proc/can_operate(mob/living/carbon/M, mob/living/user)
 	if(M == user)	// Self-surgery
+
+		//Carrions dont need a chair to do self surgery
+		if(is_carrion(user))
+			return TRUE
+
+		//normal humans do
 		var/atom/chair = locate(/obj/structure/bed/chair, M.loc)
 		return chair && chair.buckled_mob == M
 
