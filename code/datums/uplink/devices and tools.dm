@@ -110,7 +110,7 @@
 			The device owner is immune to this effect."
 	item_cost = 3
 	path = /obj/item/device/mind_fryer
-	antag_roles = list()
+	antag_roles = list(ROLE_TRAITOR, ROLE_BLITZ)
 
 /datum/uplink_item/item/tools/mind_fryer/buy(obj/item/device/uplink/U)
 	. = ..()
@@ -168,6 +168,7 @@
 	name = "Mental Imprinter"
 	item_cost = 5
 	path = /obj/item/device/mental_imprinter
+	antag_roles = list(ROLE_TRAITOR,ROLE_MARSHAL,ROLE_INQUISITOR,ROLE_MERCENARY,ROLE_CARRION)
 
 //********** Blitzshell unique uplink items **********//
 

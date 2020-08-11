@@ -28,10 +28,9 @@
 			var/mob/living/carbon/human/H = L
 			if(H.stat == DEAD || H.internal || H.stats.getPerk(PERK_TOXIC_REVENGER) || (H.species.flags & NO_BREATHE))
 				continue
-		L.reagents.add_reagent("toxin", 5)
 		L.emote("cough")
 		to_chat(L, SPAN_WARNING("[holder] emits a fungal smell."))
-		usr.reagents.add_reagent("toxin", 5)
+		usr.reagents?.add_reagent("toxin", 5)
 
 /datum/perk/oddity/gunslinger
 	name = "Gunslinger"

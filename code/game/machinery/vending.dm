@@ -1832,7 +1832,11 @@
 					/obj/item/weapon/storage/box/costume/surplusgeneric = 2,
 					/obj/item/weapon/storage/box/costume/surplushalloween = 2,
 					/obj/item/weapon/storage/box/costume/bonusjustice = 2,
-					/obj/item/weapon/storage/box/costume/bonuswrestling = 2)
+					/obj/item/weapon/storage/box/costume/bonuswrestling = 2,
+					/obj/item/clothing/mask/gas/dal = 1,
+					/obj/item/clothing/mask/gas/wolf = 1,
+					/obj/item/clothing/mask/gas/hox = 1,
+					/obj/item/clothing/mask/gas/cha = 1)
 	prices = list(/obj/item/weapon/storage/box/costume/bandit = 200,
 					/obj/item/weapon/storage/box/costume/bunny = 200,
 					/obj/item/weapon/storage/box/costume/cardborg = 200,
@@ -1879,7 +1883,11 @@
 					/obj/item/weapon/storage/box/costume/surplusgeneric = 400,
 					/obj/item/weapon/storage/box/costume/surplushalloween = 400,
 					/obj/item/weapon/storage/box/costume/bonusjustice = 300,
-					/obj/item/weapon/storage/box/costume/bonuswrestling = 300)
+					/obj/item/weapon/storage/box/costume/bonuswrestling = 300,
+					/obj/item/clothing/mask/gas/dal = 200,
+					/obj/item/clothing/mask/gas/wolf = 200,
+					/obj/item/clothing/mask/gas/hox = 200,
+					/obj/item/clothing/mask/gas/cha = 200)
 
 
 

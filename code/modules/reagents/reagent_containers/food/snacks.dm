@@ -697,7 +697,7 @@
 	proc/heat()
 		warm = 1
 		for(var/reagent in heated_reagents)
-			reagents.add_reagent(reagent, heated_reagents[reagent])
+			reagents?.add_reagent(reagent, heated_reagents[reagent])
 		bitesize = 6
 		name = "Warm " + name
 		cooltime()
@@ -921,6 +921,17 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 8, "Fuhrole" = 3)
+	cooked = TRUE
+
+/obj/item/weapon/reagent_containers/food/snacks/kaiserburger
+	name = "kaiser Burger"
+	desc = "The rare experience for your taste buds"
+	icon_state = "kaiserburger"
+	bitesize = 3
+	center_of_mass = list("x"=16, "y"=11)
+	nutriment_desc = list("bun" = 2)
+	nutriment_amt = 3
+	preloaded_reagents = list("protein" = 10)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/omelette

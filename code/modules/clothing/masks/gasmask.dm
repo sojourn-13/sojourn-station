@@ -35,6 +35,27 @@
 
 	return filtered
 
+//Payday masks, clown alternatives, they function as gas masks.
+/obj/item/clothing/mask/gas/dal
+	name = "professional clown mask"
+	desc = "A face-covering clown mask that hides your identity and functions as a gas mask. This one inspires great experience and cunning intelligence."
+	icon_state = "dal"
+
+/obj/item/clothing/mask/gas/wolf
+	name = "psychopathic clown mask"
+	desc = "A face-covering clown mask that hides your identity and functions as a gas mask. This one inspires mood shifts and a desires to use explosives."
+	icon_state = "wolf"
+
+/obj/item/clothing/mask/gas/hox
+	name = "prisoner clown mask"
+	desc = "A face-covering clown mask that hides your identity and functions as a gas mask. This one makes you feel as if your shackled yet always capable of escaping."
+	icon_state = "hox"
+
+/obj/item/clothing/mask/gas/cha
+	name = "daredevil clown mask"
+	desc = "A face-covering clown mask that hides your identity and functions as a gas mask. This one makes you feel like you should use bullets, a fuckton of bullets and probably a boot knife too."
+	icon_state = "cha"
+
 //Plague Dr suit can be found in clothing/suits/bio.dm
 /obj/item/clothing/mask/costume/history/plaguedoctor
 	name = "plague doctor mask"

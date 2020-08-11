@@ -362,7 +362,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 
 /mob/living/carbon/human/get_max_w_class()
 	var/get_max_w_class = 0
-	for(var/obj/item/clothing/C in get_equipped_items())
+	for(var/obj/item/clothing/C in get_equipped_items(TRUE))
 		if(C)
 			if(C.w_class > get_max_w_class)
 				get_max_w_class = C.w_class
