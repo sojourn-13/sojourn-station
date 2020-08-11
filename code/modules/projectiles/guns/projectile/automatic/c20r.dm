@@ -46,7 +46,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/c20r/sci
 	name = "bullpip SMG"
-	desc = "A C-20r is a lightweight and rapid-firing SMG, this one is caliber in 10mm Auto. This seems to be a more outdated version produced by Soteria."
+	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 Auto."
 	damage_multiplier = 1
 	penetration_multiplier = 0
 	price_tag = 600
