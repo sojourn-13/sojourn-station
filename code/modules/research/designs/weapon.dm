@@ -26,9 +26,9 @@
 	build_path = /obj/item/weapon/gun/energy/lasercannon
 
 /datum/design/research/item/weapon/c20r
-	name = "C20R-prototype"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 rounds."
-	build_path = /obj/item/weapon/gun/projectile/automatic/c20r
+	name = "Lightweight C20R"
+	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 Auto rounds."
+	build_path = /obj/item/weapon/gun/projectile/automatic/c20r/sci
 
 /datum/design/research/item/weapon/centurio
 	build_path = /obj/item/weapon/gun/energy/centurio
@@ -94,10 +94,37 @@
 	name_category = "ammunition"
 	category = CAT_WEAPON
 
+/datum/design/research/item/ammo/smg_mag
+	name = "smg magazine .35 Auto (Empty) "
+	desc = "A magazine for .35 Auto, used in smgs."
+	build_path = /obj/item/ammo_magazine/smg/empty
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/research/item/ammo/smg_mag/lethal
+	name = "smg magazine .35 Auto"
+	desc = "A magazine for .35 auto, used in smgs."
+	build_path = /obj/item/ammo_magazine/smg
+	materials = list(MATERIAL_STEEL = 30)
+
+/datum/design/research/item/ammo/smg_mag/rubber
+	name = "smg magazine .35 Auto (Rubber)"
+	desc = "A magazine for .35 Auto (Rubber), used in smgs."
+	build_path = /obj/item/ammo_magazine/smg/rubber
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
+
+// Shotgun Ammo
+
 /datum/design/research/item/ammo/shotgun_stun
 	name = "shotgun, stun"
 	desc = "A stunning shell for a shotgun."
-	build_path = /obj/item/ammo_casing/shotgun/stunshell
+	build_path = /obj/item/ammo_casing/shotgun/stunshell //We print one at a time fore balance
+
+/datum/design/research/item/ammo/shotgun_fire
+	name = "shotgun, incendiary"
+	desc = "A incendiary shell for a shotgun."
+	build_path = /obj/item/projectile/bullet/shotgun/incendiary //We print one at a time fore balance
+
+// Misc Ammo
 
 /datum/design/research/item/ammo/hatton
 	name = "Soteria BT \"Q-del\" gas tube"

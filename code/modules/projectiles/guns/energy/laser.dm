@@ -150,7 +150,11 @@
 		BURST_8_ROUND
 		)
 
-
+/obj/item/weapon/gun/energy/lasersmg/alt
+	name = "Disco Vazer \"Lasblender\""
+	desc = "This conversion of the \"MAC\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions.\
+                        While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
+                        Sometimes jokingly called the \"Disco Vazer\"."
 
 /obj/item/weapon/gun/energy/lasersmg/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
 	projectile_color = pick(list("#FF0000", "#0000FF", "#00FF00", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"))

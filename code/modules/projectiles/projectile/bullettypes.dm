@@ -4,8 +4,6 @@
 //HV exist as antag option for better ammo.
 //* Step delays - default value is 1. Lower value makes bullet go faster, higher value makes bullet go slower.
 
-
-
 //Low-caliber pistols and SMGs
 //*********************************//
 ///.35 Auto///

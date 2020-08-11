@@ -113,7 +113,8 @@
 	required_tech_levels = list()
 	cost = 2000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade)
+	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
+							/datum/design/research/item/ammo/smg_mag)
 
 /datum/technology/exotic_weaponry
 	name = "Experemental Weaponry"
@@ -128,7 +129,8 @@
 	required_tech_levels = list()
 	cost = 3000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun)
+	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun,
+							/datum/design/research/item/ammo/shotgun_fire)
 
 /datum/technology/adv_exotic_weaponry
 	name = "Advanced Experemental Weaponry"
@@ -163,10 +165,8 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
-							/datum/design/research/item/weapon/starstriker,
-							/datum/design/research/item/ammo/laser,
-							/datum/design/research/item/ammo/laser/ap,
-							/datum/design/research/item/ammo/laser/lethal
+							/datum/design/research/item/ammo/smg_mag/lethal,
+							/datum/design/research/item/ammo/smg_mag/rubber
 						)
 
 /datum/technology/laser_weaponry
