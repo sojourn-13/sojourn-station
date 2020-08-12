@@ -12,5 +12,3 @@
 			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
 
 	. = ..()
-
-

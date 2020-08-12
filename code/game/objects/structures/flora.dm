@@ -5,6 +5,7 @@
 	density = 1
 	pixel_x = -16
 	layer = ABOVE_MOB_LAYER
+	mouse_opacity = MOUSE_OPACITY_ICON
 
 /obj/structure/flora/tree/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -447,6 +448,9 @@
 	icon_state = "tree6"
 	pixel_x = -30
 	pixel_y = -16
+
+/obj/structure/flora/small
+	anchored = 1
 
 /obj/structure/flora/small/rock1
 	name = "rocks"

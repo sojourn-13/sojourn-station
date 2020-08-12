@@ -243,7 +243,7 @@
 	name = "wooden plank"
 	icon_state = "sheet-wood"
 	default_type = MATERIAL_WOOD
-	price_tag = 20
+	price_tag = 5
 
 /obj/item/stack/material/wood/random
 	rand_min = 3
