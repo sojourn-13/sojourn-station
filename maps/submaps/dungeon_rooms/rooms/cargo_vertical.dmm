@@ -34,6 +34,7 @@
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/crawler)
 "h" = (
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/crawler)
 "i" = (
@@ -127,6 +128,15 @@
 /obj/structure/closet/onestar/tier1,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/crawler)
+"I" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/crawler)
+"K" = (
+/obj/structure/catwalk,
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/crawler)
 
 (1,1,1) = {"
 a
@@ -158,7 +168,7 @@ h
 h
 c
 c
-c
+I
 a
 "}
 (4,1,1) = {"
@@ -188,7 +198,7 @@ a
 e
 x
 k
-k
+K
 s
 c
 c
@@ -210,7 +220,7 @@ a
 e
 l
 k
-k
+K
 s
 c
 c
@@ -246,7 +256,7 @@ h
 h
 c
 c
-c
+I
 a
 "}
 (12,1,1) = {"

@@ -103,6 +103,23 @@
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
+"y" = (
+/obj/structure/railing/grey,
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/crawler)
+"W" = (
+/obj/structure/catwalk,
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/crawler)
+"Y" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/crawler)
 
 (1,1,1) = {"
 b
@@ -117,13 +134,13 @@ b
 "}
 (2,1,1) = {"
 b
-a
+y
 d
 g
 g
 g
 d
-r
+Y
 b
 "}
 (3,1,1) = {"
@@ -178,7 +195,7 @@ i
 k
 i
 p
-g
+b
 m
 "}
 (8,1,1) = {"
@@ -187,7 +204,7 @@ c
 f
 u
 n
-n
+W
 q
 c
 m
@@ -209,7 +226,7 @@ c
 f
 o
 n
-n
+W
 q
 c
 b

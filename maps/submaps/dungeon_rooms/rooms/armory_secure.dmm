@@ -11,7 +11,7 @@
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "d" = (
-/obj/machinery/porta_turret/stationary,
+/obj/machinery/porta_turret/One_star,
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "e" = (
@@ -44,6 +44,7 @@
 /obj/machinery/light/built{
 	dir = 4
 	},
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "k" = (

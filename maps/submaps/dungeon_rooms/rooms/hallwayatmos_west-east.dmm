@@ -31,6 +31,7 @@
 /area/crawler)
 "h" = (
 /obj/structure/railing/grey,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "i" = (
@@ -202,6 +203,7 @@
 /obj/structure/railing/grey{
 	dir = 1
 	},
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "I" = (

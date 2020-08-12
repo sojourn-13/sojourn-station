@@ -35,14 +35,16 @@
 "I" = (/obj/structure/table/onestar,/obj/random/ammo/low_chance,/obj/random/ammo/low_chance,/obj/random/ammo/low_chance,/obj/random/ammo/shotgun/low_chance,/obj/random/powercell/low_chance,/obj/random/powercell/low_chance,/obj/random/powercell/low_chance,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 "J" = (/obj/structure/table/rack,/obj/random/gun_shotgun/low_chance,/obj/random/gun_energy_cheap/low_chance,/obj/random/gun_energy_cheap/low_chance,/obj/random/gun_energy_cheap/low_chance,/obj/random/gun_combat/low_chance,/obj/random/gun_combat/low_chance,/obj/random/ammo/low_chance,/obj/random/ammo/low_chance,/obj/random/ammo/shotgun/low_chance,/obj/random/ammo/shotgun/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_lowcost/low_chance,/obj/random/ammo_lowcost/low_chance,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 "K" = (/obj/structure/table/rack,/obj/random/gun_shotgun/low_chance,/obj/random/gun_normal/low_chance,/obj/random/gun_energy_cheap/low_chance,/obj/random/gun_energy_cheap/low_chance,/obj/random/gun_combat/low_chance,/obj/random/gun_combat/low_chance,/obj/random/ammo/low_chance,/obj/random/ammo/low_chance,/obj/random/ammo/shotgun/low_chance,/obj/random/ammo/shotgun/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_lowcost/low_chance,/obj/random/ammo_lowcost/low_chance,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
+"O" = (/obj/random/structures/os,/turf/simulated/floor/tiled/dark/gray_perforated,/area/crawler)
+"V" = (/obj/random/structures/os,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/crawler)
 
 (1,1,1) = {"
 aaaaasssaaaaa
 acduabtbauvca
 afffgooogfffj
 aklwaoooaxzAj
-aaaatbabtaaaj
-jyBamitnmaCDj
+aaaatbVbtaaaj
+jyBaOitnOaCDj
 apfqmebhmqfrj
 aEFaGHaIIaJKa
 aaaasssssaaaa

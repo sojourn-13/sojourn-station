@@ -46,6 +46,10 @@
 /obj/crawler/crawler_wallbreaker,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
+"Y" = (
+/obj/random/structures/os,
+/turf/simulated/floor/asteroid/grass,
+/area/crawler)
 
 (1,1,1) = {"
 a
@@ -71,13 +75,13 @@ a
 "}
 (3,1,1) = {"
 a
-c
+Y
 g
 e
 e
 e
 o
-c
+Y
 a
 "}
 (4,1,1) = {"
@@ -159,13 +163,13 @@ a
 "}
 (11,1,1) = {"
 a
-c
+Y
 g
 e
 h
 e
 o
-c
+Y
 a
 "}
 (12,1,1) = {"

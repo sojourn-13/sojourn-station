@@ -32,10 +32,11 @@
 /area/crawler)
 "h" = (
 /obj/machinery/power/breakerbox/activated,
+/obj/item/weapon/tool_upgrade/augment/cell_mount,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/crawler)
 "i" = (
-/obj/structure/computerframe,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/crawler)
 "j" = (
@@ -138,6 +139,10 @@
 /obj/structure/grille,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
+"B" = (
+/obj/random/powercell,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
 "C" = (
 /obj/crawler/crawler_wallbreaker,
 /turf/simulated/floor/bluegrid,
@@ -147,6 +152,37 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"H" = (
+/obj/machinery/power/terminal,
+/obj/structure/catwalk,
+/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"N" = (
+/obj/machinery/power/terminal,
+/obj/structure/catwalk,
+/obj/random/powercell,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"R" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/random/powercell,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"T" = (
+/obj/random/powercell,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"Z" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/lattice,
+/obj/random/powercell,
+/turf/simulated/floor/plating/under,
 /area/crawler)
 
 (1,1,1) = {"
@@ -179,7 +215,7 @@ n
 t
 t
 A
-k
+Z
 a
 "}
 (4,1,1) = {"
@@ -188,9 +224,9 @@ e
 l
 n
 t
-t
+B
 A
-k
+Z
 a
 "}
 (5,1,1) = {"
@@ -220,7 +256,7 @@ b
 e
 l
 p
-t
+B
 t
 t
 t
@@ -234,7 +270,7 @@ a
 u
 y
 y
-y
+R
 C
 "}
 (9,1,1) = {"
@@ -252,9 +288,9 @@ b
 a
 d
 h
-r
+N
 s
-r
+N
 s
 c
 a
@@ -265,20 +301,20 @@ d
 i
 r
 s
-r
+H
 s
 c
 a
 "}
 (12,1,1) = {"
 a
-c
+T
 j
 c
 w
 c
 j
-c
+T
 a
 "}
 (13,1,1) = {"
