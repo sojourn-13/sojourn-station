@@ -40,7 +40,7 @@
 	matter = list(MATERIAL_GLASS = 2)
 	volume = 120
 	amount_per_transfer_from_this = 10
-	possible_transfer_amounts = list(5,10,15,25,30,60,120)
+	possible_transfer_amounts = list(5,10,15,25,30,60,100,120)
 
 /obj/item/weapon/reagent_containers/glass/beaker/noreact
 	name = "cryostasis beaker"
@@ -58,7 +58,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASMA = 1)
 	volume = 300
 	amount_per_transfer_from_this = 10
-	possible_transfer_amounts = list(5,10,15,25,30,60,120,300)
+	possible_transfer_amounts = list(5,10,15,25,30,60,100,120,300)
 	lid_icon_state = "lid_beakerlarge"
 
 /obj/item/weapon/reagent_containers/glass/beaker/vial
@@ -93,7 +93,7 @@
 	matter = list(MATERIAL_PLASTIC = 2)
 	w_class = ITEM_SIZE_NORMAL
 	amount_per_transfer_from_this = 20
-	possible_transfer_amounts = list(10,20,30,60,120,200)
+	possible_transfer_amounts = list(10,20,30,60,100,120,200)
 	volume = 200
 	unacidable = 0
 
