@@ -5,7 +5,7 @@
 	icon = 'icons/obj/guns/matter/nt_sprayer.dmi'
 	slot_flags = SLOT_BACK | SLOT_BELT
 	fire_sound = 'sound/weapons/Genhit.ogg'
-
+	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1, TECH_BIO = 4)
 	matter_type = MATERIAL_BIOMATTER
 
 	projectile_cost = 0.5

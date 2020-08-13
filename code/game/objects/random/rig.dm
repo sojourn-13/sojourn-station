@@ -36,8 +36,18 @@
 	icon_state = "armor-blue-low"
 	spawn_nothing_percentage = 80
 
+/obj/random/rig/engi
+	name = "random engi rig suit"
 
-
+/obj/random/rig/engi/item_to_spawn()
+	return pickweight(list(
+	//Uncommon/civilian ones. These should make up most of the rig spawns
+	/obj/item/weapon/rig/eva = 30,
+	/obj/item/weapon/rig/eva/equipped = 10,
+	/obj/item/weapon/rig/light = 20,
+	/obj/item/weapon/rig/industrial = 30,
+	/obj/item/weapon/rig/industrial/equipped = 10
+	))
 
 
 /obj/random/rig/damaged
