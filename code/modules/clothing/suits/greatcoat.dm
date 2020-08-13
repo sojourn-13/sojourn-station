@@ -158,3 +158,9 @@
 	desc = "A sturdy overcoat that harkens back to a simpler time."
 	icon_state = "overcoat_brown"
 	item_state = "overcoat_brown"
+
+/obj/item/clothing/suit/greatcoat/general/overcoatblack/german
+	name = "thalatta overcoat"
+	desc = "A sturdy overcoat from thalatta, the city-ship filled with people of faith and technology. Not related to the local church, strangely enough."
+	icon_state = "germancoat"
+	item_state = "germancoat"

@@ -103,7 +103,7 @@
 /datum/click_handler/fullauto/MouseDown(object,location,control,params)
 	if(!isturf(owner.mob.loc)) // This stops from firing full auto weapons inside closets or in /obj/effect/dummy/chameleon chameleon projector
 		return FALSE
-	
+
 	object = resolve_world_target(object)
 	if (object)
 		target = object
@@ -145,91 +145,3 @@
 
 /datum/click_handler/human/use_ability(mob/living/carbon/human/user,atom/target)
 	return
-
-//Changeling CH
-
-/datum/click_handler/changeling
-	mouse_icon = icon ('icons/changeling_mouse_icons.dmi')
-
-/datum/click_handler/changeling/mob_check(mob/living/carbon/human/user)
-	if(ishuman(user) && user.mind && user.mind.changeling)
-		return 1
-	return 0
-
-/datum/click_handler/changeling/use_ability(mob/living/carbon/human/user,atom/target) //Check can mob use a ability
-	if (user.stat == DEAD)
-		to_chat(user, "No! You dead!")
-		user.kill_CH()
-		return 0
-	if (istype(user.loc, /obj/mecha))
-		to_chat(user, "Cannot use [handler_name] in mecha!")
-		user.kill_CH()
-		return 0
-
-/datum/click_handler/changeling/changeling_lsdsting
-	handler_name = "Hallucination Sting"
-
-/datum/click_handler/changeling/changeling_lsdsting/use_ability(mob/living/carbon/human/user,atom/target)
-	..()
-	return user.changeling_lsdsting(target)
-
-/datum/click_handler/changeling/changeling_silence_sting
-	handler_name = "Silence Sting"
-
-/datum/click_handler/changeling/changeling_silence_sting/use_ability(mob/living/carbon/human/user,atom/target)
-	..()
-	return user.changeling_silence_sting(target)
-
-/datum/click_handler/changeling/changeling_blind_sting
-	handler_name = "Blind Sting"
-
-/datum/click_handler/changeling/changeling_blind_sting/use_ability(mob/living/carbon/human/user,atom/target)
-	..()
-	return user.changeling_blind_sting(target)
-
-/datum/click_handler/changeling/changeling_deaf_sting
-	handler_name = "Deaf Sting"
-
-/datum/click_handler/changeling/changeling_deaf_sting/use_ability(mob/living/carbon/human/user,atom/target)
-	..()
-	return user.changeling_deaf_sting(target)
-
-/datum/click_handler/changeling/changeling_paralysis_sting
-	handler_name = "Paralysis Sting"
-
-/datum/click_handler/changeling/changeling_paralysis_sting/use_ability(mob/living/carbon/human/user,atom/target)
-	..()
-	return user.changeling_paralysis_sting(target)
-
-/datum/click_handler/changeling/changeling_transformation_sting
-	handler_name = "Transformation Sting"
-	var/datum/dna/chosen_dna
-
-/datum/click_handler/changeling/changeling_transformation_sting/New(client/_owner, var/datum/dna/sended_dna)
-	..()
-	chosen_dna = sended_dna
-
-/datum/click_handler/changeling/changeling_transformation_sting/use_ability(mob/living/carbon/human/user,atom/target)
-	..()
-	return user.changeling_transformation_sting(target, chosen_dna)
-
-/datum/click_handler/changeling/changeling_unfat_sting
-	handler_name = "Unfat Sting"
-
-/datum/click_handler/changeling/changeling_unfat_sting/use_ability(mob/living/carbon/human/user,atom/target)
-	..()
-	return user.changeling_unfat_sting(target)
-
-/datum/click_handler/changeling/changeling_DEATHsting
-	handler_name = "Death Sting"
-
-/datum/click_handler/changeling/changeling_DEATHsting/use_ability(mob/living/carbon/human/user,atom/target)
-	..()
-	return user.changeling_DEATHsting(target)
-
-/datum/click_handler/changeling/changeling_extract_dna_sting
-	handler_name = "Extract DNA Sting"
-
-/datum/click_handler/changeling/changeling_extract_dna_sting/use_ability(mob/living/carbon/human/user,atom/target)
-	..()
-	return user.changeling_extract_dna_sting(target)

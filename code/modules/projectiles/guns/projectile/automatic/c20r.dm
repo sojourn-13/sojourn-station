@@ -43,3 +43,10 @@
 /obj/item/weapon/gun/projectile/automatic/c20r/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/weapon/gun/projectile/automatic/c20r/sci
+	name = "bullpip SMG"
+	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 Auto."
+	damage_multiplier = 1
+	penetration_multiplier = 0
+	price_tag = 600

@@ -55,6 +55,7 @@
 /area/crawler)
 "m" = (
 /obj/structure/bed/chair/office/dark,
+/obj/random/material,
 /turf/simulated/floor/plating,
 /area/crawler)
 "n" = (
@@ -63,6 +64,9 @@
 	},
 /obj/structure/railing/grey,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/salvageable/console_os{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "o" = (
@@ -92,6 +96,7 @@
 /obj/machinery/conveyor/northeast/ccw{
 	id = 1
 	},
+/obj/random/material_rare,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "u" = (
@@ -123,6 +128,7 @@
 /obj/structure/railing/grey{
 	dir = 8
 	},
+/obj/random/material,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "z" = (
@@ -137,6 +143,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
+/obj/random/material_resources,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "C" = (
@@ -176,10 +183,12 @@
 /obj/machinery/conveyor/southwest{
 	id = 1
 	},
+/obj/random/material_rare,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "J" = (
 /obj/structure/table/onestar,
+/obj/random/structures/os,
 /turf/simulated/floor/plating,
 /area/crawler)
 "K" = (
@@ -195,10 +204,34 @@
 "L" = (
 /obj/structure/table/onestar,
 /obj/machinery/light/floor,
+/obj/random/material,
+/obj/random/material,
+/obj/random/material,
 /turf/simulated/floor/plating,
 /area/crawler)
 "M" = (
 /obj/random/mob/roomba,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/crawler)
+"Q" = (
+/obj/random/material_resources,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/crawler)
+"R" = (
+/obj/random/material,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/crawler)
+"S" = (
+/obj/random/material_resources,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"T" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"V" = (
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 
@@ -221,7 +254,7 @@ q
 q
 q
 F
-F
+T
 a
 "}
 (3,1,1) = {"
@@ -241,7 +274,7 @@ d
 d
 M
 q
-q
+Q
 F
 F
 a
@@ -249,7 +282,7 @@ a
 (5,1,1) = {"
 b
 f
-f
+S
 r
 M
 D
@@ -318,7 +351,7 @@ g
 m
 q
 q
-q
+R
 J
 a
 a
@@ -327,7 +360,7 @@ a
 a
 h
 v
-q
+V
 A
 E
 L

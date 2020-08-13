@@ -71,6 +71,9 @@
 			O.forceMove(loc)
 		embedded = list()
 
+	for(var/obj/item/weapon/implant/carrion_spider/control/C in src)
+		C.return_mind()
+
 	for(var/mob/living/carbon/human/H in oviewers(src))
 		H.sanity.onSeeDeath(src)
 

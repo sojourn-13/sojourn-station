@@ -155,6 +155,9 @@
 		if(isanimal(user) && target != user)
 			return
 
+		if (target.mob_size == 3)
+			return
+
 		src.add_fingerprint(user)
 		var/target_loc = target.loc
 		var/msg

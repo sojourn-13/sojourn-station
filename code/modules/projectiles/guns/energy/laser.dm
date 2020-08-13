@@ -150,7 +150,11 @@
 		BURST_8_ROUND
 		)
 
-
+/obj/item/weapon/gun/energy/lasersmg/alt
+	name = "Disco Vazer \"Lasblender\""
+	desc = "This conversion of the \"MAC\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions.\
+                        While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
+                        Sometimes jokingly called the \"Disco Vazer\"."
 
 /obj/item/weapon/gun/energy/lasersmg/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
 	projectile_color = pick(list("#FF0000", "#0000FF", "#00FF00", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"))
@@ -201,15 +205,16 @@
 	name = "\"Cog\" lasgun"
 	icon = 'icons/obj/guns/energy/retro.dmi'
 	icon_state = "retro"
-	item_state = "retro"
+	item_state = null	//so the human update icon uses the icon_state instead.
+	item_charge_meter = TRUE
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous."
 	fire_sound = 'sound/weapons/Laser.ogg'
-	slot_flags = SLOT_BELT
-	w_class = ITEM_SIZE_NORMAL
-	can_dual = 1
+	slot_flags = SLOT_BELT|SLOT_BACK
+	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_STEEL = 12)
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
+	one_hand_penalty = 10
 	price_tag = 2000
 	firemodes = list(
 		WEAPON_NORMAL,

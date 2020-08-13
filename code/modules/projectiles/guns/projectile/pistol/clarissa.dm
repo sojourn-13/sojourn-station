@@ -37,7 +37,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-
 /obj/item/weapon/gun/projectile/clarissa/makarov
 	name = "\"Makarov\" pistol"
 	desc = "Old-designed pistol used by space communists. Small and easily concealable. Uses .35 rounds."

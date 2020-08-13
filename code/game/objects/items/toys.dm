@@ -22,6 +22,7 @@
 	throwforce = NONE
 	throw_speed = 4
 	throw_range = 20
+	matter = list(MATERIAL_PLASTIC = 3)
 	force = NONE
 
 

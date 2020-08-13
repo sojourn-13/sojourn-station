@@ -4,8 +4,6 @@
 //HV exist as antag option for better ammo.
 //* Step delays - default value is 1. Lower value makes bullet go faster, higher value makes bullet go slower.
 
-
-
 //Low-caliber pistols and SMGs
 //*********************************//
 ///.35 Auto///
@@ -17,6 +15,7 @@
 
 /obj/item/projectile/bullet/pistol/rubber
 	name = "rubber bullet"
+	icon_state = "rubber"
 	damage = 3
 	agony = 22
 	armor_penetration = 0
@@ -79,6 +78,7 @@
 
 /obj/item/projectile/bullet/magnum/rubber
 	name = "rubber bullet"
+	icon_state = "rubber"
 	damage = 8
 	agony = 30
 	armor_penetration = 0
@@ -106,6 +106,7 @@
 
 /obj/item/projectile/bullet/kurtz/rubber
 	name = "rubber bullet"
+	icon_state = "rubber"
 	damage = 8
 	agony = 32
 	check_armour = ARMOR_MELEE
@@ -177,6 +178,7 @@
 
 /obj/item/projectile/bullet/lrifle/rubber
 	name = "rubber bullet"
+	icon_state = "rubber"
 	damage = 3
 	agony = 20
 	check_armour = ARMOR_MELEE
@@ -227,6 +229,7 @@
 
 /obj/item/projectile/bullet/rifle/rubber
 	name = "rubber bullet"
+	icon_state = "rubber"
 	damage = 4
 	agony = 26
 	check_armour = ARMOR_MELEE
@@ -258,6 +261,7 @@
 
 /obj/item/projectile/bullet/hrifle/rubber
 	name = "rubber bullet"
+	icon_state = "rubber"
 	damage = 8
 	agony = 32
 	check_armour = ARMOR_MELEE
@@ -327,7 +331,7 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-	icon_state = "buckshot"
+	icon_state = "rubber"
 	check_armour = ARMOR_MELEE
 	damage = 12
 	agony = 60

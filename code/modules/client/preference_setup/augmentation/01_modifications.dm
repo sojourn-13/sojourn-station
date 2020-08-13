@@ -119,6 +119,8 @@
 
 /datum/preferences/proc/modifications_allowed()
 	for(var/category in setup_options)
+		if(!get_option(category))
+			continue
 		var/datum/category_item/setup_option/option = get_option(category)
 		if(!option)
 			CRASH("Option [category] could not be found through get_option()")

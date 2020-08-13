@@ -15,7 +15,7 @@
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/cloaker
 	desc = "Furry and black, it makes you shudder to look at it. This one has a chameleonic chitin that makes it hard to see."
-	alpha = 50
+	alpha = 80
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/viper
 	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes and a large red splotch on its abdomen."
@@ -35,3 +35,15 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	emote_see = list("chitters","rubs its legs","thumps its many legs on the ground")
+
+/mob/living/carbon/superior_animal/giant_spider/tarantula/UnarmedAttack(var/atom/A, var/proximity)
+	if(isliving(A))
+		var/mob/living/L = A
+		if(istype(L) && L.reagents)
+			L.reagents.add_reagent(poison_type, poison_per_bite)
+
+		if(istype(L) && !L.weakened && prob(15))
+			L.Weaken(3)
+			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
+
+	. = ..()

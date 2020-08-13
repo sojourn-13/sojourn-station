@@ -244,6 +244,17 @@
 /obj/item/ammo_casing/shotgun/practice/prespawned
 	amount = 5
 
+/obj/item/ammo_casing/shotgun/incendiary
+	name = "incendiary shell"
+	desc = "A 20mm chemical shell with highly flammable load."
+	icon_state = "ishell"
+	spent_icon = "ishell-spent"
+	projectile_type = /obj/item/projectile/bullet/shotgun/incendiary
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASMA = 0.5)
+
+/obj/item/ammo_casing/shotgun/incendiary/prespawned
+	amount = 5
+
 /obj/item/ammo_casing/shotgun/payload
 	name = "explosive shell"
 	desc = "A 20mm explosive shell."
