@@ -17,7 +17,6 @@
 	/obj/item/weapon/storage/backpack/satchel/captain = 40,
 	/obj/item/clothing/mask/smokable/cigarette/cigar/havana = 15,
 	/obj/item/modular_computer/tablet/lease/preset/command = 25,
-	/obj/item/weapon/stamp/captain = 35,
 	/obj/item/weapon/hand_tele = 25,
 	/obj/item/weapon/bluespace_harpoon = 15,
 	/obj/item/weapon/reagent_containers/hypospray = 15,
@@ -25,7 +24,7 @@
 	/obj/item/weapon/rcd = 15,
 	/obj/item/weapon/melee/telebaton = 15,
 	/obj/item/clothing/suit/armor/hos = 15)
-	weight = 0.2
+	weight = 0.1 //Rarest
 
 
 /datum/stash/command/kismet
