@@ -122,7 +122,7 @@
 /datum/design/research/item/ammo/shotgun_fire
 	name = "shotgun, incendiary"
 	desc = "A incendiary shell for a shotgun."
-	build_path = /obj/item/projectile/bullet/shotgun/incendiary //We print one at a time fore balance
+	build_path = /obj/item/ammo_casing/shotgun/incendiary //We print one at a time fore balance
 
 // Misc Ammo
 
