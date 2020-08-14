@@ -4,7 +4,7 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 30
+	damage = 20
 	damage_type = BURN
 	check_armour = ARMOR_ENERGY
 	eyeblur = 4
@@ -19,18 +19,18 @@
 	heat = 100
 
 /obj/item/projectile/beam/weak
-	damage = 20
+	damage = 16
 
 /obj/item/projectile/beam/weak/smg
 	damage = 10
 
 /obj/item/projectile/beam/weak/lethal
-	damage = 30
+	damage = 20
 	armor_penetration = -25
 
 /obj/item/projectile/beam/weak/ap
 	damage = 15
-	armor_penetration = 40
+	armor_penetration = 20
 
 /obj/item/projectile/beam/practice
 	name = "laser"
@@ -42,14 +42,14 @@
 	eyeblur = 2
 
 /obj/item/projectile/beam/midlaser
-	damage = 30
+	damage = 20
 	armor_penetration = 10
 
 /obj/item/projectile/beam/heavylaser
 	name = "heavy laser"
 	icon_state = "heavylaser"
-	damage = 50
-	armor_penetration = 20
+	damage = 35
+	armor_penetration = 25
 
 	muzzle_type = /obj/effect/projectile/laser_heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser_heavy/tracer
@@ -69,7 +69,7 @@
 	name = "pulse"
 	icon_state = "u_laser"
 	damage = 40
-	armor_penetration = 20
+	armor_penetration = 25
 
 	muzzle_type = /obj/effect/projectile/laser_pulse/muzzle
 	tracer_type = /obj/effect/projectile/laser_pulse/tracer
@@ -147,8 +147,8 @@
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
 	icon_state = "xray"
-	damage = 60
-	armor_penetration = 50
+	damage = 50
+	armor_penetration = 40
 	stun = 3
 	weaken = 3
 	stutter = 3

@@ -5,8 +5,8 @@
 	item_state = "capspace"
 	desc = "A special helmet designed for work in a hazardous, low-pressure environment. Only for the most fashionable of figureheads."
 	armor = list(
-		melee = 50,
-		bullet = 40,
+		melee = 40,
+		bullet = 30,
 		energy = 40,
 		bomb = 50,
 		bio = 100,
@@ -21,9 +21,9 @@
 	item_state = "capspacesuit"
 	slowdown = 1.5
 	armor = list(
-		melee = 50,
-		bullet = 40,
-		energy = 40,
+		melee = 40,
+		bullet = 30,
+		energy = 50,
 		bomb = 50,
 		bio = 100,
 		rad = 50

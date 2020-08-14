@@ -15,7 +15,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5)
 	price_tag = 4000
 	zoom_factor = 0.8 // double as IH_heavy
-	penetration_multiplier = 1.5
+	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	recoil_buildup = 8
 	silencer_type = /obj/item/weapon/silencer

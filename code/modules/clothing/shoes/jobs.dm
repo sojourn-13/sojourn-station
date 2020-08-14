@@ -15,10 +15,10 @@
 	item_state = "jackboots"
 	force = WEAPON_FORCE_HARMLESS
 	armor = list(
-		melee = 20,
-		bullet = 10,
+		melee = 10,
+		bullet = 0,
 		energy = 10,
-		bomb = 10,
+		bomb = 5,
 		bio = 0,
 		rad = 0
 	)
@@ -31,10 +31,10 @@
 	icon_state = "reinforced"
 	item_state = "reinforced"
 	armor = list(
-		melee = 20,
-		bullet = 10,
+		melee = 10,
+		bullet = 0,
 		energy = 10,
-		bomb = 0,
+		bomb = 10,
 		bio = 0,
 		rad = 0
 	)
@@ -52,10 +52,10 @@
 	icon_state = "workboots"
 	item_state = "workboots"
 	armor = list(
-		melee = 20,
-		bullet = 10,
+		melee = 10,
+		bullet = 0,
 		energy = 10,
-		bomb = 10,
+		bomb = 5,
 		bio = 0,
 		rad = 25
 	)

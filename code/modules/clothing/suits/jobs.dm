@@ -11,9 +11,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 5,
+		bullet = 5,
+		energy = 5,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -28,9 +28,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 5,
+		bullet = 5,
+		energy = 5,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -45,9 +45,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor = list(
-		melee = 30,
-		bullet = 20,
-		energy = 10,
+		melee = 20,
+		bullet = 10,
+		energy = 5,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -92,8 +92,8 @@
 	permeability_coefficient = 0.50
 	siemens_coefficient = 0.7
 	armor = list(
-		melee = 30,
-		bullet = 30,
+		melee = 20,
+		bullet = 20,
 		energy = 10,
 		bomb = 30,
 		bio = 100,
@@ -153,7 +153,7 @@
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(melee = 40, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
 /obj/item/clothing/suit/storage/rank/det_trench
@@ -164,7 +164,7 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor = list(
-		melee = 30,
+		melee = 20,
 		bullet = 20,
 		energy = 20,
 		bomb = 0,

@@ -1,5 +1,5 @@
 /obj/item/projectile/bullet/pellet/fragment
-	damage = 10
+	damage = 7
 	range_step = 2
 
 	base_spread = 0 //causes it to be treated as a shrapnel explosion instead of cone
@@ -10,14 +10,14 @@
 	muzzle_type = null
 
 /obj/item/projectile/bullet/pellet/fragment/strong
-	damage = 15
+	damage = 13
 
 /obj/item/projectile/bullet/pellet/fragment/weak
-	damage = 5
+	damage = 3
 
 /obj/item/projectile/bullet/pellet/fragment/invisible
 	name = "explosion"
 	icon_state = "invisible"
 	embed = 0
-	damage = 20
+	damage = 16
 	check_armour = ARMOR_BOMB

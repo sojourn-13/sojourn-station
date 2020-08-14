@@ -17,7 +17,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	silencer_type = /obj/item/weapon/silencer
-	damage_multiplier = 1.1
+	damage_multiplier = 1
 	recoil_buildup = 15
 	one_hand_penalty = 10
 

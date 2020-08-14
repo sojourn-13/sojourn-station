@@ -39,6 +39,7 @@
 	one_hand_penalty = 15 //full sized shotgun level
 	fire_delay = 14 //Equivalent to a pump then fire time
 	recoil_buildup = 1.5
+	damage_multiplier = 0.9
 	firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
 		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
@@ -74,6 +75,7 @@
 	fire_delay = 12
 	charge_cost = 200
 	recoil_buildup = 1
+	damage_multiplier = 0.8
 	can_dual = 1
 	twohanded = FALSE
 	firemodes = list(
@@ -103,6 +105,7 @@
 	one_hand_penalty = 15 //full sized shotgun level
 	fire_delay = 14 //Equivalent to a pump then fire time
 	recoil_buildup = 1.5
+	damage_multiplier = 0.8
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
 	firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/hrifle/railgun, icon="kill"),
@@ -192,6 +195,7 @@
 	use_external_power = TRUE
 	safety = FALSE
 	restrict_safety = TRUE
+	damage_multiplier = 0.7
 	twohanded = FALSE
 
 /obj/item/weapon/gun/energy/laser/practice
@@ -271,6 +275,7 @@
 	name = "mounted laser cannon"
 	self_recharge = TRUE
 	use_external_power = TRUE
+	damage_multiplier = 0.7 //Mounted cannon deals less do to being a mini-verson
 	recharge_time = 10
 	safety = FALSE
 	restrict_safety = TRUE
@@ -280,6 +285,7 @@
 	name = "SDF LR \"Strahl\""
 	desc = "A miniaturized laser rifle, remounted for robotic use only."
 	icon_state = "laser_turret"
+	damage_multiplier = 0.9
 	charge_meter = FALSE
 
 /obj/item/weapon/gun/energy/laser/railgun/mounted

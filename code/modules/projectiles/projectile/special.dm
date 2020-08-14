@@ -13,7 +13,7 @@
 /obj/item/projectile/bullet/gyro
 	name = "explosive bolt"
 	icon_state = "bolter"
-	damage = 50
+	damage = 40
 	check_armour = ARMOR_BULLET
 	sharp = TRUE
 	edge = TRUE
@@ -25,7 +25,7 @@
 /obj/item/projectile/bullet/rocket
 	name = "high explosive rocket"
 	icon_state = "rocket"
-	damage = 70
+	damage = 60
 	armor_penetration = 100
 	check_armour = ARMOR_BULLET
 
@@ -158,7 +158,7 @@
 /obj/item/projectile/flamer_lob
 	name = "blob of fuel"
 	icon_state = "fireball"
-	damage = 20
+	damage = 16
 	damage_type = BURN
 	check_armour = ARMOR_MELEE
 	var/life = 3

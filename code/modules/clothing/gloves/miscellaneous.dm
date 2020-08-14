@@ -76,8 +76,8 @@
 	icon_state = "black"
 	item_state = "black"
 	armor = list(
-		melee = 30,
-		bullet = 20,
+		melee = 20,
+		bullet = 10,
 		energy = 20,
 		bomb = 25,
 		bio = 0,

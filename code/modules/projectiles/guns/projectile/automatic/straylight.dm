@@ -16,7 +16,7 @@
 	price_tag = 1700
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	silencer_type = /obj/item/weapon/silencer
-	damage_multiplier = 0.8
+	damage_multiplier = 0.9
 	recoil_buildup = 3
 	one_hand_penalty = 40
 
