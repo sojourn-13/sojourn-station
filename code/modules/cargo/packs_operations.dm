@@ -65,6 +65,22 @@
 	crate_name = "janitorial supplies crate"
 	group = "Operations"
 
+/datum/supply_pack/chemgrenade
+	name = "Cleaner Grenade Crate"
+	contains = list(/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner,
+					/obj/item/weapon/grenade/chem_grenade/cleaner)
+	cost = 500
+	crate_name = "cleaner grenade crate"
+	group = "Operations"
+
 /datum/supply_pack/toner
 	name = "Toner Cartridges Crate"
 	contains = list(/obj/item/device/toner,
