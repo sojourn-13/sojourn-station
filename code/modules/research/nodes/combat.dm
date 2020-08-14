@@ -166,7 +166,11 @@
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
 							/datum/design/research/item/ammo/smg_mag/lethal,
-							/datum/design/research/item/ammo/smg_mag/rubber
+							/datum/design/research/item/ammo/smg_mag/rubber,
+							/datum/design/research/item/weapon/starstriker,
+							/datum/design/research/item/ammo/laser,
+							/datum/design/research/item/ammo/laser/ap,
+							/datum/design/research/item/ammo/laser/lethal
 						)
 
 /datum/technology/laser_weaponry
