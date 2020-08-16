@@ -216,6 +216,14 @@
 		data["beaker"] = beaker.reagents.ui_data()
 	return data
 
+/obj/machinery/reagentgrinder/portable/AltClick(mob/living/user)
+	if(user.incapacitated())
+		to_chat(user, SPAN_WARNING("You can't do that right now!"))
+		return
+	if(!in_range(src, user))
+		return
+	src.detach()
+
 /obj/machinery/reagentgrinder/portable/Topic(href, href_list)
 	if(..())
 		return 1
