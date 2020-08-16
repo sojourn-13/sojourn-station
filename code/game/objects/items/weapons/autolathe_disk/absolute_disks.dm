@@ -164,6 +164,17 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/nt_counselor
+	disk_name = "Absolute Armory - NT LP \"Serenity\""
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/obj/item/weapon/gun/energy/ntpistol,
+		/datum/design/autolathe/cell/small/high,
+	)
+
+
 // ENERGY ARMS
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/nemesis

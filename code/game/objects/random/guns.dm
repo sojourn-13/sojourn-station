@@ -144,6 +144,7 @@
 
 /obj/random/gun_energy_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/energy/gun/martin = 2,\
+				/obj/item/weapon/gun/energy/ntpistol = 2,\
 				/obj/item/weapon/gun/energy/gun = 2,\
 				/obj/item/weapon/gun/energy/retro = 1))
 
