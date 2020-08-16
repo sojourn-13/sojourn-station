@@ -116,9 +116,10 @@
 	. = ..()
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
-		if(QUALITY_DIGGING in H?.get_active_hand()?.tool_qualities) //TODO: This check is pretty clear and won't runtime, but it could be cleaner. Remove "?." operations
-			attackby(H.get_active_hand(),H)
-
+		if(!H.hand && H.l_hand && (QUALITY_DIGGING in H.l_hand.tool_qualities))
+			attackby(H.l_hand,H)
+		else if(H.hand && H.r_hand && (QUALITY_DIGGING in H.r_hand.tool_qualities))
+			attackby(H.r_hand,H)
 
 	else if(isrobot(AM))
 		var/mob/living/silicon/robot/R = AM

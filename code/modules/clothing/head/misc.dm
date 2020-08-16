@@ -73,7 +73,7 @@
 	name = "red bandana"
 	desc = "A red bandana fashioned from a piece of cloth."
 	icon_state = "bandana"
-	flags_inv = BLOCKHAIR
+	flags_inv = BLOCKHEADHAIR
 
 /*Bowler Hats*/
 
