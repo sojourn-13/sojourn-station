@@ -17,7 +17,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	damage_multiplier = 1.3
+	damage_multiplier = 1.1
 	recoil_buildup = 8
 	one_hand_penalty = 15 //automatic rifle level
 
@@ -104,7 +104,7 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
-	damage_multiplier = 0.95
+	damage_multiplier = 1
 	recoil_buildup = 11
 	one_hand_penalty = 20
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -145,7 +145,7 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_HRIFLE
 	mag_well = MAG_WELL_HRIFLE
-	penetration_multiplier = 1.2
+	penetration_multiplier = 1
 	damage_multiplier = 1.3
 	recoil_buildup = 15
 	one_hand_penalty = 30
@@ -163,7 +163,7 @@
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	penetration_multiplier = 1
+	penetration_multiplier = 0.8
 	damage_multiplier = 1
 	recoil_buildup = 20
 	one_hand_penalty = 30

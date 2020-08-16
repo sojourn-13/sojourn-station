@@ -18,7 +18,7 @@
 	recoil_buildup = 1 //pulse weapons have a bit more recoil
 	one_hand_penalty = 10
 	twohanded = TRUE
-
+	damage_multiplier = 0.9
 	firemodes = list(
 		list(mode_name="burn", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, charge_cost=null, icon="stun", projectile_color = "#0000FF"),
 		list(mode_name="melt", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, charge_cost=25, icon="kill", projectile_color = "#FF0000"),
@@ -31,6 +31,7 @@
 	safety = FALSE
 	twohanded = FALSE
 	one_hand_penalty = 0
+	damage_multiplier = 0.7
 
 
 /obj/item/weapon/gun/energy/plasma/mounted/blitz
@@ -48,7 +49,7 @@
 	sel_mode = 1
 	projectile_type = /obj/item/projectile/beam/pulse
 	fire_delay = 15
-
+	damage_multiplier = 1
 	firemodes = list(
 		list(mode_name="INCINERATE", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=null, charge_cost=30, icon="kill", projectile_color = "#FFFF00"),
 		list(mode_name="VAPORIZE", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, charge_cost=70, icon="destroy", projectile_color = "#FF0000", recoil_buildup=3),
@@ -68,7 +69,7 @@
 	fire_delay = 12
 	price_tag = 3000
 	zoom_factor = null
-
+	damage_multiplier = 1.1
 	firemodes = list(
 		list(mode_name="burn", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, charge_cost=15, icon="stun", projectile_color = "#00FFFF"),
 		list(mode_name="melt", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=null, charge_cost=null, icon="kill", projectile_color = "#00AAFF"),
@@ -91,7 +92,7 @@
 	sel_mode = 1
 	suitable_cell = /obj/item/weapon/cell/small
 	charge_cost = 20
-
+	damage_multiplier = 0.9
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
 
 	firemodes = list(

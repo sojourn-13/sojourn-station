@@ -62,8 +62,8 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.4
 	recoil_buildup = 10
-	damage_multiplier = 1.4
-	penetration_multiplier = 1.4
+	damage_multiplier = 1.3
+	penetration_multiplier = 1.2
 	price_tag = 2200
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
@@ -78,7 +78,7 @@
 	zoom_factor = 0.5
 	silencer_type = /obj/item/weapon/silencer/integrated
 	recoil_buildup = 8 //highly OP SolFed specwar weapon
-	damage_multiplier = 0.95
+	damage_multiplier = 0.9
 	penetration_multiplier = 1.2
 	price_tag = 2500
 

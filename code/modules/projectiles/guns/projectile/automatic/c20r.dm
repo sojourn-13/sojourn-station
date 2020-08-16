@@ -18,7 +18,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
-	damage_multiplier = 1.25
+	damage_multiplier = 1.2
 	penetration_multiplier = 1.5
 	zoom_factor = 0.4
 	recoil_buildup = 3

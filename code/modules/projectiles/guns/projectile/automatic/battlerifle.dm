@@ -17,7 +17,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 2000
 	penetration_multiplier = 1.2
-	damage_multiplier = 1.3
+	damage_multiplier = 1.1
 	recoil_buildup = 15
 	one_hand_penalty = 15
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'

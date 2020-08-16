@@ -11,7 +11,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	caliber = CAL_RIFLE
 	fire_delay = 12 // double the standart
-	damage_multiplier = 1.4
+	damage_multiplier = 1.1
 	penetration_multiplier  = 1.5
 	recoil_buildup = 40 //same as AMR
 	handle_casings = HOLD_CASINGS
@@ -101,6 +101,7 @@
 	max_shells = 5
 	price_tag = 300
 	recoil_buildup = 40
+	damage_multiplier = 1
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/sa
@@ -113,7 +114,7 @@
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	force = WEAPON_FORCE_PAINFUL
-	damage_multiplier = 1.6
+	damage_multiplier = 1.3
 	penetration_multiplier  = 1.6
 	recoil_buildup = 50
 	max_shells = 5
@@ -136,6 +137,7 @@
 	item_state = "boltgun"
 	max_shells = 10
 	price_tag = 2000
+	damage_multiplier = 1
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
@@ -168,7 +170,7 @@
 	sharp = 0
 	recoil_buildup = 60
 	penetration_multiplier = 0.5
-	damage_multiplier = 1.1
+	damage_multiplier = 0.9
 	fire_delay = 18
 	one_hand_penalty = 10
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
@@ -232,6 +234,7 @@
 	item_state = "starstriker"
 	max_shells = 10
 	price_tag = 500 //no...
+	damage_multiplier = 1
 	caliber = CAL_SCI
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_MAGNET = 3, TECH_POWER = 6)
 	fire_sound = 'sound/weapons/Laser.ogg'

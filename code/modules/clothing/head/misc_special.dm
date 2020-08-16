@@ -13,9 +13,9 @@
 	var/up = 0
 	armor = list(
 		melee = 20,
-		bullet = 10,
+		bullet = 5,
 		energy = 10,
-		bomb = 0,
+		bomb = 5,
 		bio = 0,
 		rad = 0
 	)

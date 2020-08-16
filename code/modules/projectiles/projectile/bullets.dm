@@ -1,7 +1,7 @@
 /obj/item/projectile/bullet
 	name = "bullet"
 	icon_state = "bullet"
-	damage = 40
+	damage = 20
 	damage_type = BRUTE
 	nodamage = 0
 	check_armour = ARMOR_BULLET

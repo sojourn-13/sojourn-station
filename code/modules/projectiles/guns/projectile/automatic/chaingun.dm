@@ -21,7 +21,7 @@
 	caliber = CAL_HRIFLE
 	tac_reloads = FALSE
 	penetration_multiplier = 0.85
-	damage_multiplier = 1.2
+	damage_multiplier = 1
 	slowdown = 0.15
 	matter = list(MATERIAL_PLASTEEL = 50, MATERIAL_PLASTIC = 20)
 	price_tag = 5000
