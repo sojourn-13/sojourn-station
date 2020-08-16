@@ -36,3 +36,10 @@
 	uniform = /obj/item/clothing/under/excelsior
 	suit = /obj/item/clothing/suit/space/void/excelsior
 	back = /obj/item/weapon/storage/backpack/military
+
+/obj/item/clothing/under/kriosansuit
+	name = "Kriosan Battle Dress Uniform"
+	desc = "A tough, wear-resistant battle dress uniform in brown colors. Typically worn underneath armour."
+	icon_state = "germansuit_brown"
+	item_state = "germansuit_brown"
+	has_sensor = 0
