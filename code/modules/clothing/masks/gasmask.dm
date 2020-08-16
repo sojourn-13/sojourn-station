@@ -1,12 +1,12 @@
 /obj/item/clothing/mask/gas
 	name = "gas mask"
 	desc = "A face-covering mask that can be connected to an air supply. Filters harmful gases from the air."
-	icon_state = "gas_alt"
+	icon_state = "gas_mask"
 	item_flags = BLOCK_GAS_SMOKE_EFFECT | AIRTIGHT
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = FACE|EYES
 	w_class = ITEM_SIZE_NORMAL
-	item_state = "gas_alt"
+	item_state = "gas_mask"
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	siemens_coefficient = 0.9
@@ -61,7 +61,7 @@
 	name = "plague doctor mask"
 	desc = "A modernised version of the classic design, this mask will not only filter out plasma but it can also be connected to an air supply."
 	icon_state = "plaguedoctor"
-	item_state = "gas_mask"
+	item_state = "plaguedoctor"
 	body_parts_covered = HEAD|FACE|EYES
 
 /obj/item/clothing/mask/gas/ihs
@@ -78,11 +78,23 @@
 	siemens_coefficient = 0.7
 	price_tag = 50
 
+/obj/item/clothing/mask/gas/germanmask
+	name = "traditional mask"
+	desc = "A close-fitting tactical mask that can be connected to an air supply. Best for when you need to get out of here."
+	icon_state = "germangasmask"
+	siemens_coefficient = 0.7
+	price_tag = 50
+
 /obj/item/clothing/mask/gas/death_commando
 	name = "death commando mask"
 	icon_state = "death_commando_mask"
 	item_state = "death_commando_mask"
 	siemens_coefficient = 0.2
+
+/obj/item/clothing/mask/gas/alternate
+	name = "standard gas mask"
+	desc = "A face-covering mask that can be connected to an air supply. Filters harmful gases from the air. This one is a close fitting style."
+	icon_state = "gas_alt"
 
 /obj/item/clothing/mask/gas/cyborg
 	name = "cyborg visor"

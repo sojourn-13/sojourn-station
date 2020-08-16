@@ -34,6 +34,18 @@
 	icon_state = "clown"
 	item_state = "clown_hat"
 
+/obj/item/clothing/mask/costume/job/clown/rainbow
+	name = "rainbow clown mask"
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
+	icon_state = "rainbow"
+	item_state = "rainbow"
+
+/obj/item/clothing/mask/costume/job/clown/joker
+	name = "joker mask"
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."
+	icon_state = "joker"
+	item_state = "joker"
+
 /obj/item/clothing/mask/costume/job/clown/blue
 	name = "blue clown mask"
 	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."

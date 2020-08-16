@@ -1350,6 +1350,7 @@
 				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 7,
 				/obj/item/weapon/storage/fancy/cigar = 2,
+				/obj/item/clothing/mask/vape = 5,
 				/obj/item/weapon/storage/box/matches = 10,
 				/obj/item/weapon/flame/lighter/random = 4,
 				/obj/item/weapon/flame/lighter/zippo = 4,
@@ -1394,6 +1395,7 @@
 				/obj/item/weapon/flame/lighter/zippo/bullet = 100,
 				/obj/item/weapon/flame/lighter/zippo/communist = 500,
 				/obj/item/weapon/storage/fancy/cigar = 500,
+				/obj/item/clothing/mask/vape = 300,
 				/obj/item/weapon/storage/fancy/cigarettes/khi = 500)
 
 /obj/machinery/vending/medical
