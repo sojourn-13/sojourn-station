@@ -333,3 +333,7 @@
 /datum/design/autolathe/gun/greyson_cog
 	name = "GP \"Cog\" lasegun"
 	build_path = /obj/item/weapon/gun/energy/retro
+
+/datum/design/autolathe/gun/plasma/martyr
+	name = "NT PR \"Martyr\""
+	build_path = /obj/item/weapon/gun/energy/plasma/martyr

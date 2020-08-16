@@ -40,6 +40,7 @@
 		/datum/design/bioprinter/medical/advanced/bruise,
 		/datum/design/bioprinter/medical/advanced/ointment,
 		/datum/design/autolathe/gun/nt_sprayer,
+		/datum/design/autolathe/gun/plasma/martyr,
 
 		/datum/design/bioprinter/pouch/ammo,
 		/datum/design/bioprinter/pouch/baton_holster,
