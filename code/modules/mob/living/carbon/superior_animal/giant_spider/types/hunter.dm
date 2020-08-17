@@ -17,6 +17,10 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one has a chameleonic chitin that makes it hard to see."
 	alpha = 50
 
+/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker/death() //We are now unable to chameleonic chitin do to being dead
+	..()
+	alpha = 255
+
 /mob/living/carbon/superior_animal/giant_spider/hunter/viper
 	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes and a large red splotch on its abdomen."
 	icon_state = "viper"
