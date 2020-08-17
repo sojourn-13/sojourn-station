@@ -53,7 +53,9 @@
 	contains = list(/obj/item/weapon/gun/energy/laser,
 				/obj/item/weapon/gun/energy/laser,
 				/obj/item/weapon/gun/energy/taser,
-				/obj/item/weapon/gun/energy/taser)
+				/obj/item/weapon/gun/energy/taser,
+				/obj/item/weapon/gun/energy/ntpistol,
+				/obj/item/weapon/gun/energy/ntpistol)
 	cost = 4000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "CA energy weapons crate"

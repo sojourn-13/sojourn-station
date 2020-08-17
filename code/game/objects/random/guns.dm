@@ -144,6 +144,7 @@
 
 /obj/random/gun_energy_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/energy/gun/martin = 2,\
+				/obj/item/weapon/gun/energy/ntpistol = 2,\
 				/obj/item/weapon/gun/energy/gun = 2,\
 				/obj/item/weapon/gun/energy/retro = 1))
 
@@ -174,5 +175,50 @@
 
 /obj/random/gun_shotgun/low_chance
 	name = "low chance random shotgun"
+	icon_state = "gun-red-low"
+	spawn_nothing_percentage = 80
+
+
+//Dungeon based random spawners (use these only in dungeons, not maint)
+/obj/random/dungeon_gun_ballistic
+	name = "random special ballistic gun"
+	icon_state = "gun-red"
+
+/obj/random/dungeon_gun_ballistic/item_to_spawn()
+	return pickweight(list(/obj/item/weapon/gun/projectile/automatic/pulse_rifle = 2,
+				/obj/item/weapon/gun/projectile/automatic/sbaw = 3,
+				/obj/item/weapon/gun/projectile/automatic/chaingun = 2,
+				/obj/item/weapon/gun/projectile/automatic/lmg/pk = 3,
+				/obj/item/weapon/gun/projectile/automatic/mac/croon = 1,
+				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 3,
+				/obj/item/weapon/gun/projectile/shotgun/pump/combat = 3,
+				/obj/item/weapon/gun/projectile/shotgun/pug = 3,
+				/obj/item/weapon/gun/projectile/gyropistol = 1,
+				/obj/item/weapon/gun/projectile/automatic/sts/hrifle = 2,
+				/obj/item/weapon/gun/projectile/automatic/c20r = 3,
+				/obj/item/weapon/gun/projectile/basilisk = 3))
+
+/obj/random/dungeon_gun_ballistic/low_chance
+	name = "low chance random special ballistic gun"
+	icon_state = "gun-red-low"
+	spawn_nothing_percentage = 80
+
+/obj/random/dungeon_gun_energy
+	name = "random special energy gun"
+	icon_state = "gun-red"
+
+/obj/random/dungeon_gun_energy/item_to_spawn()
+	return pickweight(list(/obj/item/weapon/gun/energy/mindflayer = 2,
+				/obj/item/weapon/gun/energy/xray = 2,
+				/obj/item/weapon/gun/energy/sniperrifle = 2,
+				/obj/item/weapon/gun/energy/laser/railgun = 1,
+				/obj/item/weapon/gun/energy/laser/railgun/pistol = 1,
+				/obj/item/weapon/gun/energy/plasma/auretian = 1,
+				/obj/item/weapon/gun/energy/centurio = 2,
+				/obj/item/weapon/gun/energy/gun/nuclear = 2,
+				/obj/item/weapon/gun/energy/plasma/destroyer = 1))
+
+/obj/random/dungeon_gun_energy/low_chance
+	name = "low chance random special energy gun"
 	icon_state = "gun-red-low"
 	spawn_nothing_percentage = 80

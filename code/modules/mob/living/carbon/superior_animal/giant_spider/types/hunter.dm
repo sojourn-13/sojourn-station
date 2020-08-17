@@ -15,7 +15,7 @@
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/cloaker
 	desc = "Furry and black, it makes you shudder to look at it. This one has a chameleonic chitin that makes it hard to see."
-	alpha = 80
+	alpha = 50
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/viper
 	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes and a large red splotch on its abdomen."
@@ -43,6 +43,8 @@
 			L.reagents.add_reagent(poison_type, poison_per_bite)
 
 		if(istype(L) && !L.weakened && prob(15))
+			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE))
+				return
 			L.Weaken(3)
 			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
 

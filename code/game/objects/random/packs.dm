@@ -72,11 +72,12 @@ They generally give more random result and can provide more divercity in spawn.
 	desc = "This is a random technical loot."
 
 /obj/random/pack/tech_loot/onestar/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/stock_parts/capacitor/one_star = 1,
-	/obj/item/weapon/stock_parts/scanning_module/one_star = 1,
-	/obj/item/weapon/stock_parts/manipulator/one_star = 1,
-	/obj/item/weapon/stock_parts/micro_laser/one_star = 1,
-	/obj/item/weapon/stock_parts/matter_bin/one_star = 1))
+	return pickweight(list(/obj/item/weapon/stock_parts/capacitor/one_star = 2,
+	/obj/item/weapon/stock_parts/scanning_module/one_star = 2,
+	/obj/item/weapon/stock_parts/manipulator/one_star = 2,
+	/obj/item/weapon/stock_parts/micro_laser/one_star = 2,
+	/obj/item/weapon/stock_parts/matter_bin/one_star = 2,
+	/obj/random/prothesis/one_star = 1))
 
 
 //This will be spawned in rare closets
@@ -202,3 +203,19 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/closet_wardrobe = 2,
 					/obj/random/mecha/damaged = 1, //Some dangerous shit can be found there
 				))
+
+
+/obj/random/prothesis
+	name = "random prosthesis"
+	icon_state = "meds-green"
+
+/obj/random/prothesis/one_star
+	name = "random one star prosthesis"
+
+/obj/random/prothesis/one_star/item_to_spawn()
+	return pick(list(
+	/obj/item/organ/external/robotic/one_star/l_arm,\
+	/obj/item/organ/external/robotic/one_star/r_arm,\
+	/obj/item/organ/external/robotic/one_star/l_leg,\
+	/obj/item/organ/external/robotic/one_star/r_leg
+	))

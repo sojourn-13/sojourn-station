@@ -3,6 +3,7 @@
 	name = "premier's gloves"
 	icon_state = "captain"
 	item_state = "captain"
+	armor = list(melee = 25, bullet = 10, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 500
 
 /obj/item/clothing/gloves/cyborg
@@ -17,6 +18,7 @@
 	name = "insulated gloves"
 	icon_state = "yellow"
 	item_state = "yellow"
+	armor = list(melee = 0, bullet = 0, energy = 15, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	price_tag = 200
@@ -37,6 +39,7 @@
 	name = "thick gloves"
 	icon_state = "black"
 	item_state = "black"
+	armor = list(melee = 20, bullet = 0, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	price_tag = 100
@@ -51,7 +54,7 @@
 	desc = "A pair of modified work gloves with some steel."
 	icon_state = "hm_combat"
 	item_state = "hm_combat"
-	armor = list(melee = 25, bullet = 15, laser = 15,energy = 12, bomb = 25, bio = 5, rad = 0)
+	armor = list(melee = 25, bullet = 5, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.6
 	price_tag = 150
 
@@ -60,29 +63,15 @@
 	name = "combat gloves"
 	icon_state = "ihscombat"
 	item_state = "ihscombat"
-	armor = list(
-		melee = 30,
-		bullet = 20,
-		energy = 20,
-		bomb = 25,
-		bio = 0,
-		rad = 0
-	)
+	armor = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	price_tag = 300
 
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
-	desc = "A pair of fire and impact-resistant combat gloves."
+	desc = "A pair of fire, shock-proof, and impact-resistant combat gloves."
 	name = "combat gloves"
 	icon_state = "black"
 	item_state = "black"
-	armor = list(
-		melee = 20,
-		bullet = 10,
-		energy = 20,
-		bomb = 25,
-		bio = 0,
-		rad = 0
-	)
+	armor = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	price_tag = 500
 
@@ -134,6 +123,7 @@ obj/item/clothing/gloves/fingerless
 	desc = "Heavy gloves to keep your hands intact for future experiments."
 	icon_state = "science"
 	item_state = "science"
+	armor = list(melee = 25, bullet = 5, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	germ_level = 0

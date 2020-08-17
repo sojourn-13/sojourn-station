@@ -40,6 +40,7 @@
 		/datum/design/bioprinter/medical/advanced/bruise,
 		/datum/design/bioprinter/medical/advanced/ointment,
 		/datum/design/autolathe/gun/nt_sprayer,
+		/datum/design/autolathe/gun/plasma/martyr,
 
 		/datum/design/bioprinter/pouch/ammo,
 		/datum/design/bioprinter/pouch/baton_holster,
@@ -162,6 +163,17 @@
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/cell/medium/high,
 	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/nt_counselor
+	disk_name = "Absolute Armory - NT LP \"Serenity\""
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/obj/item/weapon/gun/energy/ntpistol,
+		/datum/design/autolathe/cell/small/high,
+	)
+
 
 // ENERGY ARMS
 

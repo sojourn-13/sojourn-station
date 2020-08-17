@@ -218,3 +218,8 @@
 /datum/design/bioprinter/sling
 	name = "Universal sling"
 	build_path = /obj/item/clothing/suit/sling
+
+//[/THINGS]
+/datum/design/autolathe/gun/plasma/martyr
+	name = "NT PR \"Martyr\""
+	build_path = /obj/item/weapon/gun/energy/plasma/martyr

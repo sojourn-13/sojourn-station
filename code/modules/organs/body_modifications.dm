@@ -144,6 +144,26 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/external/robotic/xion
 	icon = 'icons/mob/human_races/cyberlimbs/xion.dmi'
 
+/datum/body_modification/limb/prosthesis/asters
+	id = "prosthesis_asters"
+	replace_limb = /obj/item/organ/external/robotic/asters
+	icon = 'icons/mob/human_races/cyberlimbs/asters.dmi'
+
+/datum/body_modification/limb/prosthesis/serbian
+	id = "prosthesis_serbian"
+	replace_limb = /obj/item/organ/external/robotic/serbian
+	icon = 'icons/mob/human_races/cyberlimbs/serbian.dmi'
+
+/datum/body_modification/limb/prosthesis/frozen_star
+	id = "prosthesis_frozen_star"
+	replace_limb = /obj/item/organ/external/robotic/frozen_star
+	icon = 'icons/mob/human_races/cyberlimbs/frozen_star.dmi'
+
+/datum/body_modification/limb/prosthesis/technomancer
+	id = "prosthesis_technomancer"
+	replace_limb = /obj/item/organ/external/robotic/technomancer
+	icon = 'icons/mob/human_races/cyberlimbs/technomancer.dmi'
+
 /datum/body_modification/limb/mutation/New()
 	short_name = "M: [name]"
 	name = "Mutation: [name]"

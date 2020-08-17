@@ -561,6 +561,7 @@
 	slot_flags = SLOT_BELT
 	price_tag = 1000
 	storage_slots = 1
+	w_class = ITEM_SIZE_NORMAL
 	max_w_class = ITEM_SIZE_BULKY
 
 	can_hold = list(

@@ -126,9 +126,9 @@
 
 /obj/item/weapon/gun/energy/lasersmg
 	name = "Disco Vazer \"Lasblender\""
-	desc = "This conversion of the \"Texan\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions.\
-                        While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
-                        Sometimes jokingly called the \"Disco Vazer\"."
+	desc = "This conversion of the \"Texan\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
+	While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
+	Sometimes jokingly called the \"Disco Vazer\"."
 	icon = 'icons/obj/guns/energy/lasersmg-1.dmi'
 	icon_state = "lasersmg"
 	item_state = "lasersmg"
@@ -142,27 +142,28 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 11, MATERIAL_STEEL = 13, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1, MATERIAL_GLASS = 2)
 	price_tag = 1000
-	damage_multiplier = 0.9 //makeshift laser
-	recoil_buildup = 4
-	one_hand_penalty = 3
+	damage_multiplier = 0.5 //makeshift laser
+	recoil_buildup = 3
+	one_hand_penalty = 4
 	projectile_type = /obj/item/projectile/beam
 	suitable_cell = /obj/item/weapon/cell/medium
-	charge_cost = 50 // 2 bursts with a 800m cell
+	charge_cost = 25 // 4 bursts with a 800m cell
 
 	firemodes = list(
-		BURST_8_ROUND
+		BURST_8_ROUND,
+		FULL_AUTO_400
 		)
 
 /obj/item/weapon/gun/energy/lasersmg/alt
 	name = "Disco Vazer \"Lasblender\""
-	desc = "This conversion of the \"MAC\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions.\
-                        While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
-                        Sometimes jokingly called the \"Disco Vazer\"."
+	desc = "This conversion of the \"MAC\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
+	While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
+	Sometimes jokingly called the \"Disco Vazer\"."
 
 /obj/item/weapon/gun/energy/lasersmg/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
 	projectile_color = pick(list("#FF0000", "#0000FF", "#00FF00", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"))
 	..()
-	return..()
+	return ..()
 
 /obj/item/weapon/gun/energy/lasersmg/update_icon()
 	..()

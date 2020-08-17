@@ -27,3 +27,10 @@
 	stun = 1
 	weaken = 5
 	knockback = 2
+
+/obj/item/projectile/plasma/stun
+	name = "stun plasma bolt"
+	taser_effect = 1
+	agony = 30
+	damage_type = HALLOSS
+	impact_type = /obj/effect/projectile/stun/impact

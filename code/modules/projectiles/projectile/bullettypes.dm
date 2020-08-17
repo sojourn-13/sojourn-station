@@ -329,10 +329,10 @@
 	knockback = 1
 	step_delay = 0.9
 
-/obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
+/obj/item/projectile/bullet/shotgun/beanbag
 	name = "beanbag"
 	icon_state = "rubber"
-	check_armour = ARMOR_MELEE
+	check_armour = ARMOR_BULLET //neverforget
 	damage = 10
 	agony = 60
 	armor_penetration = 0

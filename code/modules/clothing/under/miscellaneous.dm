@@ -287,3 +287,27 @@
 	desc = "I wanted a jumpsuit. It gave me THIS."
 	icon_state = "cyber"
 	item_state = "cyber"
+
+obj/item/clothing/under/neon
+	name = "green neon tracksuit"
+	desc = "A tracksuit lined with green neon fibers. Slightly luminescent."
+	icon_state = "neon"
+	item_state = "bl_suit"
+
+obj/item/clothing/under/neon/yellow
+	name = "yellow neon tracksuit"
+	desc = "A tracksuit lined with yellow neon fibers. Slightly luminescent."
+	icon_state = "neony"
+	item_state = "bl_suit"
+
+obj/item/clothing/under/neon/blue
+	name = "blue neon tracksuit"
+	desc = "A tracksuit lined with blue neon fibers. Slightly luminescent."
+	icon_state = "neonb"
+	item_state = "bl_suit"
+
+obj/item/clothing/under/neon/red
+	name = "red neon tracksuit"
+	desc = "A tracksuit lined with red neon fibers. Slightly luminescent."
+	icon_state = "neonr"
+	item_state = "bl_suit"
