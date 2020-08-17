@@ -170,7 +170,8 @@
 							/datum/design/research/item/weapon/starstriker,
 							/datum/design/research/item/ammo/laser,
 							/datum/design/research/item/ammo/laser/ap,
-							/datum/design/research/item/ammo/laser/lethal
+							/datum/design/research/item/ammo/laser/lethal,
+							/datum/design/research/item/weapon/katana
 						)
 
 /datum/technology/laser_weaponry

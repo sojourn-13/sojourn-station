@@ -32,5 +32,10 @@
 
 /datum/uplink_item/item/stealthy_weapons/boot_knife
 	name = "Boot Knife"
-	item_cost = 3
+	item_cost = 1
 	path = /obj/item/weapon/tool/knife/boot
+
+/datum/uplink_item/item/stealthy_weapons/assassin_dagger
+	name = "Assassin's Dagger"
+	item_cost = 2
+	path = /obj/item/weapon/tool/knife/dagger/assassin

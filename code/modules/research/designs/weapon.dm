@@ -71,6 +71,14 @@
 	desc = "You feel like this helmet is cheap, for some reason."
 	build_path = /obj/item/clothing/head/helmet/soteriasuit
 
+/datum/design/research/item/weapon/katana
+	name = "Soteria \"Muramasa\" Katana"
+	build_path = /obj/item/weapon/tool/sword/katana/nano
+
+/datum/design/research/item/weapon/bluespace_dagger
+	name = "Soteria \"Displacement Dagger\""
+	build_path = /obj/item/weapon/tool/knife/dagger/bluespace
+
 /datum/design/research/item/weapon/medarmor
 	name = "soteria medical void armor"
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
