@@ -77,7 +77,7 @@
  */
 /obj/item/weapon/storage/backpack/holding
 	name = "bag of holding"
-	desc = "A backpack that opens into a localized pocket of Blue Space."
+	desc = "A backpack that opens into a localized pocket of bluespace. One of the few examples of stable bluespace left after the crash, as long as it doesn't interact with other bluespace items."
 	origin_tech = list(TECH_BLUESPACE = 4)
 	icon_state = "holdingpack"
 	max_w_class = ITEM_SIZE_BULKY
