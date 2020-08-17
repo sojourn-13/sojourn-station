@@ -43,6 +43,8 @@
 			L.reagents.add_reagent(poison_type, poison_per_bite)
 
 		if(istype(L) && !L.weakened && prob(15))
+			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE))
+				return
 			L.Weaken(3)
 			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
 
