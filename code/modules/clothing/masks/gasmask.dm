@@ -92,7 +92,7 @@
 	siemens_coefficient = 0.2
 
 /obj/item/clothing/mask/gas/alternate
-	name = "standard gas mask"
+	name = "sleek gas mask"
 	desc = "A face-covering mask that can be connected to an air supply. Filters harmful gases from the air. This one is a close fitting style."
 	icon_state = "gas_alt"
 

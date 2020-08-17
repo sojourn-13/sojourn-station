@@ -123,7 +123,7 @@
 
 //Outside abandoned structures
 
-/area/nadezhda/maintenance/outside
+/area/nadezhda/dungeon/outside
 	is_maintenance = TRUE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
@@ -133,65 +133,65 @@
 	dynamic_lighting = FALSE
 
 
-/area/nadezhda/maintenance/outside/trashcave
+/area/nadezhda/dungeon/outside/trashcave
 	name = "Trash Cave"
 	icon_state = "nadezhdagreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 	dynamic_lighting = TRUE
 
-/area/nadezhda/maintenance/outside/abandoned_solars
+/area/nadezhda/dungeon/outside/abandoned_solars
 	name = "Abandoned Solars"
 	icon_state = "erisgreen"
 
-/area/nadezhda/maintenance/outside/burned_outpost
+/area/nadezhda/dungeon/outside/burned_outpost
 	name = "Burned Outpost"
 	icon_state = "erisgreen"
 
-/area/nadezhda/maintenance/outside/hunter_cabin
+/area/nadezhda/dungeon/outside/hunter_cabin
 	name = "Hunter Cabin"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 
-/area/nadezhda/maintenance/outside/campground
+/area/nadezhda/dungeon/outside/campground
 	name = "Campground"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 
-/area/nadezhda/maintenance/outside/farm
+/area/nadezhda/dungeon/outside/farm
 	name = "Lost Farm"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 
-/area/nadezhda/maintenance/outside/abandoned_outpost
+/area/nadezhda/dungeon/outside/abandoned_outpost
 	name = "Lost Outpost"
 	icon_state = "erisgreen"
 
-/area/nadezhda/maintenance/outside/zoo
+/area/nadezhda/dungeon/outside/zoo
 	name = "Abandoned Research Lab"
 	icon_state = "erisgreen"
 	dynamic_lighting = TRUE
 
-/area/nadezhda/maintenance/outside/prepper
+/area/nadezhda/dungeon/outside/prepper
 	name = "Prepper Base"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
 	dynamic_lighting = TRUE
 	requires_power = 0
 
-/area/nadezhda/maintenance/outside/monster_cave
+/area/nadezhda/dungeon/outside/monster_cave
 	name = "Monster Cave"
 	icon_state = "erisgreen"
 	forced_ambience = list('sound/ambience/ambisin1.ogg', 'sound/ambience/ambisin2.ogg', 'sound/ambience/ambisin3.ogg', 'sound/ambience/ambisin4.ogg')
 	dynamic_lighting = TRUE
 
-/area/nadezhda/maintenance/outside/smuggler_zone
+/area/nadezhda/dungeon/outside/smuggler_zone
 	name = "Smuggler Base"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambimo1.ogg', 'sound/ambience/ambimo2.ogg')
 	dynamic_lighting = TRUE
 	requires_power = 0
 
-/area/nadezhda/maintenance/outside/smuggler_zone_u
+/area/nadezhda/dungeon/outside/smuggler_zone_u
 	name = "Smuggler Base Underground"
 	icon_state = "erisgreen"
 	dynamic_lighting = TRUE
