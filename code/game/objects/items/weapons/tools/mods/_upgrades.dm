@@ -193,13 +193,13 @@
 	else if(istype(holder, /obj/item/clothing/suit/armor))
 		var/obj/item/clothing/suit/armor/T = holder
 		if(upgrades[UPGRADE_MELEE_ARMOR])
-			T.armor["melee"] += upgrades[UPGRADE_MELEE_ARMOR]
+			T.armor.melee += upgrades[UPGRADE_MELEE_ARMOR]
 		if(upgrades[UPGRADE_BALLISTIC_ARMOR])
-			T.armor["bullet"] += upgrades[UPGRADE_BALLISTIC_ARMOR]
+			T.armor.bullet += upgrades[UPGRADE_BALLISTIC_ARMOR]
 		if(upgrades[UPGRADE_ENERGY_ARMOR])
-			T.armor["energy"] += upgrades[UPGRADE_ENERGY_ARMOR]
+			T.armor.energy += upgrades[UPGRADE_ENERGY_ARMOR]
 		if(upgrades[UPGRADE_BOMB_ARMOR])
-			T.armor["bomb"] += upgrades[UPGRADE_BOMB_ARMOR]
+			T.armor.bomb += upgrades[UPGRADE_BOMB_ARMOR]
 		T.prefixes |= prefix
 	return TRUE
 

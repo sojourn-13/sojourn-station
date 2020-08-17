@@ -3,6 +3,7 @@
 	desc = "\"Holland & Sullivan's\" solution for police operations. Punch criminals right in the face instead of prodding them with some feeble rod."
 	icon_state = "powerglove"
 	item_state = "powerglove"
+	armor = list(melee = 25, bullet = 10, energy = 20, bomb = 0, bio = 0, rad = 0)
 	action_button_name = "Toggle Power Glove"
 	price_tag = 500
 	var/stunforce = 0

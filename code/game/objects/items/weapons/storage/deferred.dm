@@ -250,7 +250,7 @@
 	icon_state = "serbcrate_deferred_black"
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/black = 1,
-/obj/item/clothing/suit/armor/platecarrier = 1,
+	/obj/item/clothing/suit/armor/platecarrier = 1,
 	/obj/item/clothing/head/helmet/altyn/black = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
