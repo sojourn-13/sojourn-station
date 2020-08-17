@@ -59,7 +59,7 @@
 		update_mode()
 
 /obj/item/weapon/gun/energy/ntpistol
-	name = "NT LP \"Serenity\""
+	name = "\"Serenity\" energy pistol"
 	desc = "\"New Testament\" brand laser pistol. Small and easily concealable, it's still a reasonable punch for a laser weapon."
 	icon = 'icons/obj/guns/energy/ntpistol.dmi'
 	icon_state = "ntpistol"

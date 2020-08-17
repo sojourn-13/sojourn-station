@@ -107,8 +107,8 @@
 		overlays += image(icon, "cell_guild")
 
 /obj/item/weapon/gun/energy/plasma/martyr // or should it be  Zealot
-	name = "NT PR \"Martyr\""
-	desc = "An \"New Testament\" weapon that uses advanced biomass-converted blasts of energized matter. It is a disposable side arm, good enough to save you and be recycled."
+	name = "\"Martyr\" holdout pistol"
+	desc = "An \"New Testament\" weapon that uses advanced biomass-converted blasts of energized matter. It is a disposable holdout side arm, good enough to save you and be recycled."
 	icon = 'icons/obj/guns/energy/martyr.dmi'
 	icon_state = "martyr"
 	suitable_cell = /obj/item/weapon/cell/small    //so if people manage to get the cell out. shouldn't be a huge deal
