@@ -12,6 +12,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5)
 	price_tag = 2500
 	projectile_type = /obj/item/projectile/beam/midlaser
+	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
@@ -145,6 +146,7 @@
 	damage_multiplier = 0.5 //makeshift laser
 	recoil_buildup = 3
 	one_hand_penalty = 4
+	init_offset = 7 //makeshift laser
 	projectile_type = /obj/item/projectile/beam
 	suitable_cell = /obj/item/weapon/cell/medium
 	charge_cost = 25 // 4 bursts with a 800m cell
