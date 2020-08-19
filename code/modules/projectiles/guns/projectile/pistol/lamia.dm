@@ -76,16 +76,11 @@
 	item_state = "socom"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.5
-	silencer_type = /obj/item/weapon/silencer/integrated
+	silenced = TRUE
 	recoil_buildup = 8 //highly OP SolFed specwar weapon
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.2
 	price_tag = 2500
-
-	//This comes with a preinstalled silencer
-/obj/item/weapon/gun/projectile/lamia/socom/Initialize()
-	.=..()
-	apply_silencer(new /obj/item/weapon/silencer/integrated(src), null)
 
 /obj/item/weapon/gun/projectile/lamia/akurra
 	name = "\"Akurra\" silenced heavy pistol"
@@ -94,12 +89,7 @@
 	item_state = "akurra"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	recoil_buildup = 15
-	silencer_type = /obj/item/weapon/silencer/integrated
+	silenced = TRUE
 	damage_multiplier = 0.95
 	penetration_multiplier = 1.2
 	price_tag = 2500
-
-	//This comes with a preinstalled silencer
-/obj/item/weapon/gun/projectile/lamia/akurra/Initialize()
-	.=..()
-	apply_silencer(new /obj/item/weapon/silencer/integrated(src), null)

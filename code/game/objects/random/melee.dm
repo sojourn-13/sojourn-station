@@ -15,7 +15,8 @@
 				/obj/item/weapon/tool/sword/saber/cutlass = 0.2,
 				/obj/item/weapon/tool/sword/saber = 0.2,
 				/obj/item/weapon/tool/sword/katana = 0.2,
-				/obj/item/weapon/tool/knife/butch = 2))
+				/obj/item/weapon/tool/knife/butch = 2,
+				/obj/item/weapon/tool/knife/dagger = 0.8))
 
 /obj/random/knife/low_chance
 	name = "low chance random knife"
@@ -57,7 +58,9 @@
 	icon_state = "tool-red"
 
 /obj/random/melee/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/tool/homewrecker = 1,
+	return pickweight(list(/obj/item/weapon/tool/hammer/homewrecker = 1,
+				/obj/item/weapon/tool/hammer/mace = 1,
+				/obj/item/weapon/tool/hammer/mace/makeshift = 2,
 				/obj/item/weapon/melee/telebaton = 2,
 				/obj/item/weapon/tool/nailstick = 2,
 				/obj/item/weapon/melee/toolbox_maul = 2,

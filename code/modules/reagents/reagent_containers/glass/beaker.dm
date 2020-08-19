@@ -61,6 +61,10 @@
 	possible_transfer_amounts = list(5,10,15,25,30,60,100,120,300)
 	lid_icon_state = "lid_beakerlarge"
 
+/obj/item/weapon/reagent_containers/glass/beaker/bluespace/New()
+	..()
+	item_flags |= BLUESPACE
+
 /obj/item/weapon/reagent_containers/glass/beaker/vial
 	name = "vial"
 	desc = "A small glass vial."

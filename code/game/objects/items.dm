@@ -361,6 +361,9 @@
 	if(istype(src, /obj/item/weapon/melee/energy))
 		return
 
+	if((flags & NOBLOODY)||(item_flags & NOBLOODY))
+		return
+
 	//if we haven't made our blood_overlay already
 	if( !blood_overlay )
 		generate_blood_overlay()
@@ -498,6 +501,15 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		return
 	if(!hud_actions || !user.client)
 		return
+
+	for(var/action in hud_actions)
+		user.client.screen -= action
+
+/obj/item/proc/on_embed(mob/user)
+	return
+
+/obj/item/proc/on_embed_removal(mob/living/user)
+	return
 
 	for(var/action in hud_actions)
 		user.client.screen -= action

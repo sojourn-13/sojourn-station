@@ -16,7 +16,7 @@
 	modifystate = "energystun"
 	item_modifystate = "stun"
 
-	firemodes = list(
+	init_firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="energystun", item_modifystate="stun", fire_sound='sound/weapons/Taser.ogg', icon="stun"),
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="energykill", item_modifystate="kill", fire_sound='sound/weapons/Laser.ogg', icon="kill"),
 		WEAPON_CHARGE,
@@ -59,7 +59,7 @@
 		update_mode()
 
 /obj/item/weapon/gun/energy/ntpistol
-	name = "NT LP \"Serenity\""
+	name = "\"Serenity\" energy pistol"
 	desc = "\"New Testament\" brand laser pistol. Small and easily concealable, it's still a reasonable punch for a laser weapon."
 	icon = 'icons/obj/guns/energy/ntpistol.dmi'
 	icon_state = "ntpistol"
@@ -75,7 +75,7 @@
 	damage_multiplier = 1
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_WOOD = 4, MATERIAL_SILVER = 2)
 	price_tag = 500
-	firemodes = list(
+	init_firemodes = list(
 		WEAPON_NORMAL,
  		WEAPON_CHARGE
 	)

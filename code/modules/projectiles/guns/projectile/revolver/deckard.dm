@@ -14,3 +14,4 @@
 	one_hand_penalty = 25
 	zoom_factor = 0.4
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)

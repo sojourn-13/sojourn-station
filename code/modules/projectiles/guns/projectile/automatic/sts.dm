@@ -22,7 +22,7 @@
 	one_hand_penalty = 15 //automatic rifle level
 
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
@@ -54,7 +54,7 @@
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	silencer_type = /obj/item/weapon/silencer
+	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn
 
@@ -112,7 +112,7 @@
 	sawn = /obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn
 
 
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_400
 		)
@@ -131,7 +131,7 @@
 	one_hand_penalty = 25 //automatic rifle level
 	saw_off = FALSE
 
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_400
 		)
@@ -153,7 +153,7 @@
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/sts/hrifle/sawn
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
 

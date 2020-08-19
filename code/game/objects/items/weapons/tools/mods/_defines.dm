@@ -10,10 +10,13 @@
 #define UPGRADE_FORCE_MOD "force_mod"
 #define UPGRADE_FUELCOST_MULT "fuelcost_mult"
 #define UPGRADE_POWERCOST_MULT "powercost_mult"
+
+//Soj changes ------- -Kaz
 #define UPGRADE_MELEE_ARMOR "melee"
 #define UPGRADE_BALLISTIC_ARMOR "bullet"
 #define UPGRADE_ENERGY_ARMOR "energy"
 #define UPGRADE_BOMB_ARMOR "bomb"
+// ------------------
 
 #define UPGRADE_BULK "bulk_mod"
 
@@ -31,6 +34,8 @@
 
 #define UPGRADE_CELLPLUS "cell_hold_upgrade"
 
+
+//Salvager perk define, got stuck here because fuck making a new file for something so small. -Kaz
 #define RANDOM_RARE_ITEM list(\
 					/obj/random/common_oddities = 8,\
 					/obj/random/material_rare = 3,\
@@ -47,3 +52,62 @@
 					/obj/random/rig_module/rare = 4,\
 					/obj/random/credits/c1000 = 3,\
 					/obj/item/stash_spawner = 1)
+
+//Weapon upgrade defines
+
+//Int multiplier
+#define GUN_UPGRADE_DAMAGE_MULT "damage_mult"
+#define GUN_UPGRADE_PEN_MULT "penetration_mult"
+#define GUN_UPGRADE_PIERC_MULT "pierce_mult"
+#define GUN_UPGRADE_FIRE_DELAY_MULT "fire_delay_mult"
+#define GUN_UPGRADE_MOVE_DELAY_MULT "move_delay_mult"
+#define GUN_UPGRADE_RECOIL "recoil_mult"
+#define GUN_UPGRADE_MUZZLEFLASH "muzzleflash_mult"
+#define GUN_UPGRADE_STEPDELAY_MULT "stepdelay_mult"
+#define GUN_UPGRADE_CHARGECOST "chargecost_mult"
+#define GUN_UPGRADE_OVERCHARGE_MAX "overcharge_max_mult"
+#define GUN_UPGRADE_OVERCHARGE_RATE "overcharge_rate_mult"
+
+//Int additive
+#define GUN_UPGRADE_DAMAGEMOD_PLUS "damage_plus"
+#define GUN_UPGRADE_MAGUP "magazine_addition"
+
+#define GUN_UPGRADE_DAMAGE_BRUTE "brute_damage"
+#define GUN_UPGRADE_DAMAGE_BURN "burn_damage"
+#define GUN_UPGRADE_DAMAGE_TOX "toxin_damage"
+#define GUN_UPGRADE_DAMAGE_OXY "oxygen_damage"
+#define GUN_UPGRADE_DAMAGE_CLONE "clone_damage"
+#define GUN_UPGRADE_DAMAGE_HALLOSS "hallucination_damage"
+#define GUN_UPGRADE_DAMAGE_RADIATION "radiation_damage"
+
+#define GUN_UPGRADE_OFFSET "offset" //Constant offset, in degrees
+
+
+
+//boolean
+#define GUN_UPGRADE_SILENCER "silencable"
+#define GUN_UPGRADE_FORCESAFETY "safety force"
+#define GUN_UPGRADE_HONK "why"
+#define GUN_UPGRADE_FULLAUTO "full auto"
+#define GUN_UPGRADE_EXPLODE "self destruct"
+#define GUN_UPGRADE_RIGGED "rigged"
+
+//Location Tag defines
+
+#define GUN_UNDERBARREL "underbarrel slot"
+#define GUN_BARREL "barrel slot"
+#define GUN_TRIGGER "trigger slot"
+#define GUN_MUZZLE "muzzle slot"
+#define GUN_SCOPE "scope slot"
+#define GUN_MECHANISM "misc slot"
+#define GUN_GRIP "grip slot"
+
+//Whitelist Tag defines
+#define GUN_SILENCABLE "silencable"
+#define GUN_PROJECTILE "projectile firing"
+#define GUN_ENERGY "energy firing"
+#define GUN_LASER "laser firing"
+#define GUN_REVOLVER "revolver"
+#define GUN_INTERNAL_MAG "internal mag"
+
+#define GUN_CALIBRE_35 "caliber .35"

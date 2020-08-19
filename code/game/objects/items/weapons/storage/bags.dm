@@ -49,6 +49,36 @@
 	else
 		icon_state = "trashbag3"
 
+/obj/item/weapon/storage/bag/trash/holding
+	name = "trash bag of holding"
+	desc = "The latest and greatest in custodial convenience, a trashbag that is capable of holding vast quantities of garbage. Why someone used highly dangerous bluespace for this is a question left unanswered."
+	icon_state = "bluetrashbag"
+	max_w_class = ITEM_SIZE_BULKY
+	max_storage_space = DEFAULT_HUGE_STORAGE * 1.25
+
+/obj/item/weapon/storage/bag/trash/holding/New()
+	..()
+	item_flags |= BLUESPACE
+
+/obj/item/weapon/storage/bag/trash/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(W.item_flags & BLUESPACE)
+		to_chat(user, SPAN_WARNING("The bluespace interfaces of the two devices conflict and malfunction, producing a loud explosion."))
+		if (ishuman(user))
+			var/mob/living/carbon/human/H = user
+			var/held = W.get_equip_slot()
+			if (held == slot_l_hand)
+				var/obj/item/organ/external/E = H.get_organ(BP_L_ARM)
+				E.droplimb(0, DROPLIMB_BLUNT)
+			else if (held == slot_r_hand)
+				var/obj/item/organ/external/E = H.get_organ(BP_R_ARM)
+				E.droplimb(0, DROPLIMB_BLUNT)
+		user.drop_item()
+		return
+	..()
+
+/obj/item/weapon/storage/bag/trash/holding/update_icon()
+	return
+
 // -----------------------------
 //        Plastic Bag
 // -----------------------------
@@ -82,6 +112,41 @@
 	can_hold = list(/obj/item/weapon/ore)
 	var/stored_ore = list()
 	var/last_update = 0
+
+/obj/item/weapon/storage/bag/ore/holding
+	name = "satchel of holding"
+	desc = "A revolution in convenience, this satchel allows for immense ore or produce storage. It's been outfitted with anti-malfunction safety measures."
+	icon_state = "satchel_bspace"
+	max_storage_space = DEFAULT_HUGE_STORAGE * 10
+	max_w_class = ITEM_SIZE_BULKY
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
+	origin_tech = list(TECH_BLUESPACE = 4)
+	can_hold = list(/obj/item/weapon/ore,
+	                /obj/item/weapon/reagent_containers/food/snacks/grown,
+	                /obj/item/seeds,
+	                /obj/item/weapon/grown,
+	                /obj/item/weapon/reagent_containers/food/snacks/egg,
+	                /obj/item/weapon/reagent_containers/food/snacks/meat)
+
+/obj/item/weapon/storage/bag/ore/holding/New()
+	..()
+	item_flags |= BLUESPACE
+
+/obj/item/weapon/storage/bag/ore/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(W.item_flags & BLUESPACE)
+		to_chat(user, SPAN_WARNING("The bluespace interfaces of the two devices conflict and malfunction, producing a loud explosion."))
+		if (ishuman(user))
+			var/mob/living/carbon/human/H = user
+			var/held = W.get_equip_slot()
+			if (held == slot_l_hand)
+				var/obj/item/organ/external/E = H.get_organ(BP_L_ARM)
+				E.droplimb(0, DROPLIMB_BLUNT)
+			else if (held == slot_r_hand)
+				var/obj/item/organ/external/E = H.get_organ(BP_R_ARM)
+				E.droplimb(0, DROPLIMB_BLUNT)
+		user.drop_item()
+		return
+	..()
 
 // -----------------------------
 //          Produce bag

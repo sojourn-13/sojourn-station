@@ -25,6 +25,7 @@
 	var/use_external_power = 0 //if set, the weapon will look for an external power source to draw from, otherwise it recharges magically
 	var/recharge_time = 4
 	var/charge_tick = 0
+	gun_tags = list(GUN_ENERGY)
 
 	var/overcharge_timer //Holds ref to the timer used for overcharging
 	var/overcharge_rate = 1 //Base overcharge additive rate for the gun
@@ -183,6 +184,13 @@
 		data["shots_remaining"] = round(C.charge/charge_cost)
 		data["max_shots"] = round(C.maxcharge/charge_cost)
 	return data
+
+/obj/item/weapon/gun/energy/refresh_upgrades()
+	//refresh our unique variables before applying upgrades too
+	charge_cost = initial(charge_cost)
+	overcharge_max = initial(overcharge_max)
+	overcharge_rate = initial(overcharge_rate)
+	..()
 
 /obj/item/weapon/gun/energy/pickup(mob/user)
 	..()

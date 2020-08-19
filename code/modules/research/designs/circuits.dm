@@ -431,6 +431,13 @@
 	sort_string = "VAAAG"
 	category = CAT_BLUE
 
+//Experimental devices
+/datum/design/research/circuit/mindswapper
+	name = "experimental mind swapper"
+	build_path = /obj/item/weapon/circuitboard/mindswapper
+	sort_string = "WAAAA"
+	category = CAT_MACHINE
+
 //Industeral Printing
 
 /datum/design/research/circuit/industrial_printer

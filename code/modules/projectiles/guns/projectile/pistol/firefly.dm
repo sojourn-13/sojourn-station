@@ -16,10 +16,10 @@
 	price_tag = 1500
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	silencer_type = /obj/item/weapon/silencer
 	damage_multiplier = 1
 	recoil_buildup = 15
 	one_hand_penalty = 10
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE)
 
 /obj/item/weapon/gun/projectile/firefly/update_icon()
 	..()

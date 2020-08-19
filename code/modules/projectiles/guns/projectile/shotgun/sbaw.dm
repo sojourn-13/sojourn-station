@@ -25,7 +25,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
 
-	firemodes = list(
+	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
 
@@ -61,7 +61,7 @@
 	damage_multiplier = 1.5
 	recoil_buildup = 5
 	fire_delay = 0.5
-	firemodes = list(
+	init_firemodes = list(
 	SEMI_AUTO_NODELAY,
 	FULL_AUTO_400,
 	)

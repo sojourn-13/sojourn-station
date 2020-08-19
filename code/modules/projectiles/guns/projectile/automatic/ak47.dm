@@ -22,7 +22,7 @@
 	recoil_buildup = 10
 	one_hand_penalty = 15 //automatic rifle level
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 		)
