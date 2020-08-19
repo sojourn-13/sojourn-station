@@ -235,10 +235,10 @@
 					/obj/random/tool_upgrade,
 					/obj/random/tool_upgrade,
 					/obj/random/tool_upgrade,
-					/obj/random/tool_upgrade,
-					/obj/random/tool_upgrade,
-					/obj/random/tool_upgrade,
-					/obj/random/tool_upgrade)
+					/obj/random/tool_upgrade/rare,
+					/obj/random/tool_upgrade/rare,
+					/obj/random/tool_upgrade/rare,
+					/obj/random/tool_upgrade/rare)
 	name = "Tool-Mod Random Assortment Crate"
 	cost = 1200
 	containertype = /obj/structure/closet/crate

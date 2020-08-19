@@ -195,8 +195,12 @@
 
 /datum/supply_pack/gunmods
 	name = "Random Gun Mod Crate"
-	contains = list(/obj/item/weapon/storage/box/gun_upgrades)
-	cost = 2000
+	contains = list(/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods)
+	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "gun mod crate"
 	group = "Security"
