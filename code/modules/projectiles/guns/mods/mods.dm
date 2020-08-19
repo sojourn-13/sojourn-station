@@ -80,7 +80,7 @@
 //Meme mod that swaps the firing sound for a bike horn noises at the cost of making every single thing about the gun shitty. Too funny not to put in, takes 2 minutes to remove since its a prank item.
 /obj/item/weapon/gun_upgrade/mechanism/bikehorn
 	name = "Boogaloo bike horn"
-	desc = "A strange weapon augment made by someone with a sense of humor. The bulk of the item, not to mention its bolted attachment style, make it a pranksters tool only."
+	desc = "A strange weapon augment made by someone with a sense of humor. The bulk of the item, not to mention its bolted attachment style, make it a pranksters tool only as it is annoying to use and remove."
 	icon_state = "bike_horn"
 
 /obj/item/weapon/gun_upgrade/mechanism/bikehorn/New()

@@ -226,3 +226,47 @@
 	name = "low chance random special energy gun"
 	icon_state = "gun-red-low"
 	spawn_nothing_percentage = 80
+
+
+//Gun Mod Spawners
+/obj/random/dungeon_gun_mods
+	name = "random gun mod"
+	icon_state = "gun-red"
+/obj/random/dungeon_gun_mods/item_to_spawn()
+	return pickweight(list(/obj/item/weapon/gun_upgrade/barrel/silencer = 1,
+				/obj/item/weapon/gun_upgrade/barrel/forged = 1,
+				/obj/item/weapon/gun_upgrade/barrel/mag_accel = 1,
+				/obj/item/weapon/gun_upgrade/barrel/overheat = 1,
+				/obj/item/weapon/gun_upgrade/mechanism/bikehorn = 0.1,
+				/obj/item/weapon/gun_upgrade/barrel/excruciator = 1,
+				/obj/item/weapon/gun_upgrade/trigger/dangerzone = 1,
+				/obj/item/weapon/gun_upgrade/trigger/cop_block = 0.5,
+				/obj/item/weapon/gun_upgrade/mechanism/overshooter = 1,
+				/obj/item/weapon/gun_upgrade/mechanism/weintraub = 1,
+				/obj/item/weapon/gun_upgrade/mechanism/reverse_loader = 0.5,
+				/obj/item/weapon/gun_upgrade/mechanism/battery_shunt = 1,
+				/obj/item/weapon/gun_upgrade/mechanism/overdrive = 1,
+				/obj/item/weapon/gun_upgrade/trigger/honker = 0.1,
+				/obj/item/weapon/gun_upgrade/barrel/toxin_coater = 1))
+
+/obj/random/dungeon_gun_mods/low_chance
+	name = "low chance random gun  mod"
+	icon_state = "gun-red-low"
+	spawn_nothing_percentage = 80
+
+/* //Commented out until armor mods are fixed. -Kaz
+//Gun Mod Spawners
+/obj/random/dungeon_armor_mods
+	name = "random armor mod"
+	icon_state = "gun-red"
+/obj/random/dungeon_armor_mods/item_to_spawn()
+	return pickweight(list(/obj/item/weapon/tool_upgrade/armor/bomb = 1,
+				/obj/item/weapon/tool_upgrade/armor/melee = 1,
+				/obj/item/weapon/tool_upgrade/armor/bullet = 1,
+				/obj/item/weapon/tool_upgrade/armor/energy = 1))
+
+/obj/random/dungeon_armor_mods/low_chance
+	name = "low chance random armor mod"
+	icon_state = "gun-red-low"
+	spawn_nothing_percentage = 80
+*/
