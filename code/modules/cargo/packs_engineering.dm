@@ -169,6 +169,67 @@
 	crate_name = "mechanical maintenance crate"
 	group = "Engineering"
 
+/datum/supply_pack/toolmods_reinforcement
+	contains = list(/obj/item/weapon/tool_upgrade/reinforcement/heatsink,
+					/obj/item/weapon/tool_upgrade/reinforcement/heatsink,
+					/obj/item/weapon/tool_upgrade/reinforcement/plating,
+					/obj/item/weapon/tool_upgrade/reinforcement/plating,
+					/obj/item/weapon/tool_upgrade/reinforcement/guard,
+					/obj/item/weapon/tool_upgrade/reinforcement/guard,
+					/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh,
+					/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh)
+	name = "Tool-Mod Reinforcement Crate"
+	cost = 1000
+	containertype = /obj/structure/closet/crate
+	crate_name = "tool upgrade crate"
+	group = "Engineering"
+
+/datum/supply_pack/toolmods_productivity
+	contains = list(/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip,
+					/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip,
+					/obj/item/weapon/tool_upgrade/productivity/ratchet,
+					/obj/item/weapon/tool_upgrade/productivity/ratchet,
+					/obj/item/weapon/tool_upgrade/productivity/red_paint,
+					/obj/item/weapon/tool_upgrade/productivity/oxyjet,
+					/obj/item/weapon/tool_upgrade/productivity/whetstone,
+					/obj/item/weapon/tool_upgrade/productivity/whetstone,
+					/obj/item/weapon/tool_upgrade/productivity/motor)
+	name = "Tool-Mod Productivity Crate"
+	cost = 1000
+	containertype = /obj/structure/closet/crate
+	crate_name = "tool upgrade crate"
+	group = "Engineering"
+
+/datum/supply_pack/toolmods_refinement
+	contains = list(/obj/item/weapon/tool_upgrade/refinement/laserguide,
+					/obj/item/weapon/tool_upgrade/refinement/laserguide,
+					/obj/item/weapon/tool_upgrade/refinement/stabilized_grip,
+					/obj/item/weapon/tool_upgrade/refinement/stabilized_grip,
+					/obj/item/weapon/tool_upgrade/refinement/magbit,
+					/obj/item/weapon/tool_upgrade/refinement/magbit,
+					/obj/item/weapon/tool_upgrade/refinement/ported_barrel,
+					/obj/item/weapon/tool_upgrade/refinement/ported_barrel)
+	name = "Tool-Mod Refinement Crate"
+	cost = 1000
+	containertype = /obj/structure/closet/crate
+	crate_name = "tool upgrade crate"
+	group = "Engineering"
+
+/datum/supply_pack/toolmods_utility
+	contains = list(/obj/item/weapon/tool_upgrade/augment/cell_mount,
+					/obj/item/weapon/tool_upgrade/augment/cell_mount,
+					/obj/item/weapon/tool_upgrade/augment/fuel_tank,
+					/obj/item/weapon/tool_upgrade/augment/fuel_tank,
+					/obj/item/weapon/tool_upgrade/augment/expansion,
+					/obj/item/weapon/tool_upgrade/augment/expansion,
+					/obj/item/weapon/tool_upgrade/augment/dampener,
+					/obj/item/weapon/tool_upgrade/augment/dampener)
+	name = "Tool-Mod Utility Crate"
+	cost = 1000
+	containertype = /obj/structure/closet/crate
+	crate_name = "tool upgrade crate"
+	group = "Engineering"
+
 /datum/supply_pack/toolmods
 	contains = list(/obj/random/tool_upgrade,
 					/obj/random/tool_upgrade,
@@ -178,7 +239,7 @@
 					/obj/random/tool_upgrade,
 					/obj/random/tool_upgrade,
 					/obj/random/tool_upgrade)
-	name = "Tool Upgrade Assortment Crate"
+	name = "Tool-Mod Random Assortment Crate"
 	cost = 1200
 	containertype = /obj/structure/closet/crate
 	crate_name = "tool upgrade crate"

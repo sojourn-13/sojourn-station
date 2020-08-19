@@ -132,7 +132,7 @@
 					/obj/item/weapon/storage/box/shotgunammo/beanbags,
 					/obj/item/weapon/storage/box/shotgunammo/beanbags)
 	cost = 800
-	crate_name = "FS beanbag shells crate"
+	crate_name = "HS beanbag shells crate"
 	group = "Security"
 
 /datum/supply_pack/shotgunammo_slug
@@ -191,6 +191,14 @@
 	cost = 1600
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "wall shield generators crate"
+	group = "Security"
+
+/datum/supply_pack/gunmods
+	name = "Random Gun Mod Crate"
+	contains = list(/obj/item/weapon/storage/box/gun_upgrades)
+	cost = 2000
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "gun mod crate"
 	group = "Security"
 
 //This crate is unaffected by price changes since its from krios, not pirates.

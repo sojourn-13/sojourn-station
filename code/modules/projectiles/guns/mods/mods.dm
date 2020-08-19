@@ -227,10 +227,8 @@
 		var/obj/test = i
 		if(initial(test.icon_state))
 			new i(src)
-	new /obj/item/weapon/gun_upgrade/mechanism/bikehorn(src)
 	new /obj/item/weapon/tool_upgrade/productivity/ergonomic_grip(src)
 	new /obj/item/weapon/tool_upgrade/refinement/laserguide(src)
-	new /obj/item/weapon/tool_upgrade/augment/ai_tool(src)
 
 // 	 EXPERIMENTAL WEAPON MODS
 //------------------------------------------------
