@@ -207,6 +207,10 @@
 	var/mob/living/embedded
 	var/last_teleport
 
+/obj/item/weapon/tool/knife/dagger/bluespace/New()
+	..()
+	item_flags |= BLUESPACE
+
 /obj/item/weapon/tool/knife/dagger/bluespace/on_embed(var/mob/user)
 	embedded = user
 

@@ -334,6 +334,7 @@
 	)
 	I.prefix = "holding"
 	I.req_fuel_cell = REQ_FUEL
+	item_flags |= BLUESPACE
 
 //Penalises the tool, but unlocks several more augment slots.
 /obj/item/weapon/tool_upgrade/augment/expansion
