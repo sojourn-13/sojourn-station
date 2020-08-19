@@ -165,3 +165,16 @@
 	name = "Blackshield Sovereignty Disk"
 	desc = "A unique disk for printing and creating Blackshield arms and ammunition."
 	build_path = /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
+
+//Weapon mods
+/datum/design/research/item/weapon_upgrade
+	name_category = "weapon upgrades"
+	category = CAT_WEAPON
+
+/datum/design/research/item/weapon_upgrade/penetrator
+	name = "Moebius \"Penetrator\" magnetic accelerator barrel"
+	build_path = /obj/item/weapon/gun_upgrade/barrel/mag_accel
+
+/datum/design/research/item/weapon_upgrade/overheat
+	name = "Moebius \"Caster\" magnetic overheat barrel"
+	build_path = /obj/item/weapon/gun_upgrade/barrel/overheat

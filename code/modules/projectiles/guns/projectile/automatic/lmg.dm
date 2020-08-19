@@ -24,7 +24,7 @@
 	recoil_buildup = 3.5
 	one_hand_penalty = 30 //you're not Stallone. LMG level.
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_5_ROUND,
 		BURST_8_ROUND
@@ -102,7 +102,7 @@
 	icon_base = "pk"
 	icon_state = "pk_closed"
 	item_state = "pk_closed"
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_5_ROUND,
 		BURST_8_ROUND
@@ -126,6 +126,6 @@
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
 	recoil_buildup = 3.5
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_600,
 		)

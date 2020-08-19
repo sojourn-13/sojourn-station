@@ -34,7 +34,7 @@
 	one_hand_penalty = 100
 	zoom_factor = 0.4
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		list(mode_name="hyper-burst", burst=3,    burst_delay=0.5, move_delay=2,  icon="burst"),
 		)

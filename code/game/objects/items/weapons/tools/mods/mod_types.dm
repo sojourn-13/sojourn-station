@@ -14,12 +14,12 @@
 	price_tag = 120
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 1)
 
-//list/upgrades, list/required_qualities, list/negative_qualities, prefix, req_fuel, req_cell
+//list/tool_upgrades, list/required_qualities, list/negative_qualities, prefix, req_fuel, req_cell
 
 /obj/item/weapon/tool_upgrade/reinforcement/stick/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 		UPGRADE_DEGRADATION_MULT = 0.65,
 		UPGRADE_FORCE_MOD = 1,
 		)
@@ -37,7 +37,7 @@
 /obj/item/weapon/tool_upgrade/reinforcement/heatsink/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 		UPGRADE_DEGRADATION_MULT = 0.65,
 		UPGRADE_HEALTH_THRESHOLD = 10
 		)
@@ -54,7 +54,7 @@
 /obj/item/weapon/tool_upgrade/reinforcement/plating/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_DEGRADATION_MULT = 0.55,
 	UPGRADE_FORCE_MOD = 1,
 	UPGRADE_PRECISION = -5,
@@ -72,7 +72,7 @@
 /obj/item/weapon/tool_upgrade/reinforcement/guard/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_DEGRADATION_MULT = 0.75,
 	UPGRADE_PRECISION = 5,
 	UPGRADE_HEALTH_THRESHOLD = 10
@@ -91,9 +91,13 @@
 /obj/item/weapon/tool_upgrade/productivity/ergonomic_grip/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.15
 	)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL = 0.9,
+	)
+	I.gun_loc_tag = GUN_GRIP
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 	I.prefix = "ergonomic"
 
@@ -106,7 +110,7 @@
 /obj/item/weapon/tool_upgrade/productivity/ratchet/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.25
 	)
 	I.required_qualities = list(QUALITY_BOLT_TURNING,QUALITY_SCREW_DRIVING)
@@ -121,7 +125,7 @@
 /obj/item/weapon/tool_upgrade/productivity/red_paint/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.20,
 	UPGRADE_PRECISION = -10,
 	UPGRADE_COLOR = "#FF4444"
@@ -138,7 +142,7 @@
 /obj/item/weapon/tool_upgrade/productivity/whetstone/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.15,
 	UPGRADE_PRECISION = 5,
 	UPGRADE_FORCE_MULT = 1.15
@@ -156,7 +160,7 @@
 /obj/item/weapon/tool_upgrade/productivity/diamond_blade/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.25,
 	UPGRADE_DEGRADATION_MULT = 0.85,
 	UPGRADE_FORCE_MULT = 1.10,
@@ -174,7 +178,7 @@
 /obj/item/weapon/tool_upgrade/productivity/oxyjet/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.20,
 	UPGRADE_FORCE_MULT = 1.15,
 	UPGRADE_DEGRADATION_MULT = 1.15,
@@ -193,7 +197,7 @@
 /obj/item/weapon/tool_upgrade/productivity/motor/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.5,
 	UPGRADE_FORCE_MULT = 1.15,
 	UPGRADE_DEGRADATION_MULT = 1.15,
@@ -217,8 +221,10 @@
 /obj/item/weapon/tool_upgrade/refinement/laserguide/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 0.9)
 	I.prefix = "laser-guided"
 
 //Fits onto generally small tools that require precision, especially surgical tools
@@ -232,7 +238,7 @@
 /obj/item/weapon/tool_upgrade/refinement/stabilized_grip/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10,
 	UPGRADE_HEALTH_THRESHOLD = 10)
 	I.required_qualities = list(QUALITY_CUTTING,QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING)
@@ -247,7 +253,7 @@
 /obj/item/weapon/tool_upgrade/refinement/magbit/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10
 	)
 	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING)
@@ -261,7 +267,7 @@
 /obj/item/weapon/tool_upgrade/refinement/ported_barrel/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 12,
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_BULK = 1,
@@ -283,7 +289,7 @@
 /obj/item/weapon/tool_upgrade/augment/cell_mount/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_BULK = 1,
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_HEALTH_THRESHOLD = -10,
@@ -302,7 +308,7 @@
 /obj/item/weapon/tool_upgrade/augment/fuel_tank/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_BULK = 1,
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_HEALTH_THRESHOLD = -10,
@@ -320,7 +326,7 @@
 /obj/item/weapon/tool_upgrade/augment/holding_tank/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_BULK = 1,
 	UPGRADE_DEGRADATION_MULT = 1.30,
 	UPGRADE_HEALTH_THRESHOLD = -20,
@@ -339,7 +345,7 @@
 /obj/item/weapon/tool_upgrade/augment/expansion/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_BULK = 2,
 	UPGRADE_DEGRADATION_MULT = 1.3,
 	UPGRADE_PRECISION = -10,
@@ -358,7 +364,7 @@
 /obj/item/weapon/tool_upgrade/augment/spikes/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_FORCE_MOD = 4,
 	UPGRADE_PRECISION = -5,
 	UPGRADE_DEGRADATION_MULT = 1.15,
@@ -379,7 +385,7 @@
 /obj/item/weapon/tool_upgrade/augment/hammer_addon/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = -0.5,
 	UPGRADE_HEALTH_THRESHOLD = 5,
 	tool_qualities = list(QUALITY_HAMMERING = 10)
@@ -397,7 +403,7 @@
 /obj/item/weapon/tool_upgrade/augment/dampener/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_COLOR = "#AAAAAA",
 	UPGRADE_HEALTH_THRESHOLD = -10,
 	UPGRADE_ITEMFLAGPLUS = SILENT
@@ -410,17 +416,27 @@
 	desc = "A forgotten Greyson Positronic tech. Due to its unique installation method of \"slapping it hard enough onto anything should do the trick\", it is highly sought after. \
 		A powerful AI will integrate itself into this tool with the aid of nanotechnology and improve it in every way possible."
 	icon_state = "ai_tool"
-	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 1)
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 3, MATERIAL_GOLD = 3, MATERIAL_DIAMOND = 1)
 
 /obj/item/weapon/tool_upgrade/augment/ai_tool/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_POWERCOST_MULT = 1.20,
 	UPGRADE_PRECISION = 14,
 	UPGRADE_WORKSPEED = 14,
 	UPGRADE_HEALTH_THRESHOLD = -10,
 	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 0.8,
+	GUN_UPGRADE_DAMAGE_MULT = 1.2,
+	GUN_UPGRADE_PEN_MULT = 1.2,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
+	GUN_UPGRADE_MOVE_DELAY_MULT = 0.8,
+	GUN_UPGRADE_MUZZLEFLASH = 0.8,
+	GUN_UPGRADE_CHARGECOST = 0.8,
+	GUN_UPGRADE_OVERCHARGE_MAX = 0.8,
+	GUN_UPGRADE_OVERCHARGE_RATE = 1.2)
 	I.prefix = "intelligent"
 	I.req_fuel_cell = REQ_CELL
 
@@ -433,7 +449,7 @@
 /obj/item/weapon/tool_upgrade/augment/repair_nano/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_DEGRADATION_MULT = 0.01,
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
@@ -449,7 +465,7 @@
 /obj/item/weapon/tool_upgrade/armor/melee/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_MELEE_ARMOR = 20
 	)
 	I.prefix = "reinforced"
@@ -464,7 +480,7 @@
 /obj/item/weapon/tool_upgrade/armor/bullet/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_BALLISTIC_ARMOR = 20
 	)
 	I.prefix = "kevlar-plated"
@@ -479,7 +495,7 @@
 /obj/item/weapon/tool_upgrade/armor/energy/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_ENERGY_ARMOR = 20
 	)
 	I.prefix = "ablative-plated"
@@ -494,7 +510,7 @@
 /obj/item/weapon/tool_upgrade/armor/bomb/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.upgrades = list(
+	I.tool_upgrades = list(
 	UPGRADE_BOMB_ARMOR = 40
 	)
 	I.prefix = "bomb-proofed"

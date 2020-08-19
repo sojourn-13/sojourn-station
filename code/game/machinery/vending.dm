@@ -1217,6 +1217,7 @@
 	/obj/item/ammo_magazine/lrifle/rubber = 10,
 	/obj/item/clothing/accessory/holster/armpit = 5,
 	/obj/item/clothing/accessory/holster/leg = 5,
+	/obj/item/weapon/gun_upgrade/mechanism/weintraub = 3,
 	/obj/item/weapon/storage/pouch/pistol_holster = 5,
 	/obj/item/weapon/storage/pouch/ammo = 5,
 	/obj/item/weapon/storage/briefcase/rifle = 15) //SoJ Edit, adds in 15 rifle cases
@@ -1267,6 +1268,7 @@
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 50,
 	/obj/item/clothing/accessory/holster = 150,
 	/obj/item/weapon/storage/pouch/pistol_holster =150,
+	/obj/item/weapon/gun_upgrade/mechanism/weintraub = 1000,
 	/obj/item/weapon/storage/pouch/ammo = 100,
 	/obj/item/ammo_magazine/ammobox/hrifle_small = 100,
 	/obj/item/ammo_magazine/slpistol = 80,

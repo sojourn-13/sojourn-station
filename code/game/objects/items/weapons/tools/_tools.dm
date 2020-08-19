@@ -153,6 +153,17 @@
 		update_icon()
 		return
 
+	if(isBroken)
+		to_chat(user, SPAN_WARNING("\The [src] is broken."))
+		return
+	.=..()
+
+/* //ERIS DELETED THIS, COMMENTING IT OUT FOR NOW. -Kaz
+	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
+		src.cell = C
+		update_icon()
+		return
+
 	//Removing upgrades from a tool. Very difficult, but passing the check only gets you the perfect result
 	//You can also get a lesser success (remove the upgrade but break it in the process) if you fail
 	//Using a laser guided stabilised screwdriver is recommended. Precision mods will make this easier
@@ -184,6 +195,7 @@
 				adjustToolHealth(-(5 * degradation), user) // inflicting 4 times use damage
 				refresh_upgrades()
 				return 1
+
 	if(isBroken)
 		to_chat(user, SPAN_WARNING("\The [src] is broken."))
 		return
@@ -197,7 +209,7 @@
 		to_chat(user, SPAN_DANGER("You cannot remove armor upgrades once they've been installed!"))
 		return 1
 	.=..()
-
+*/ //--------------------------------------------------------------------------------------
 //Turning it on/off
 /obj/item/weapon/tool/attack_self(mob/user)
 	if(isBroken)

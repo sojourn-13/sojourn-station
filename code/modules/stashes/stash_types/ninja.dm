@@ -26,7 +26,6 @@
 		/obj/item/device/spy_bug = 70,
 		/obj/item/device/spy_bug = 60,
 		/obj/item/device/spy_bug = 50,
-		/obj/item/weapon/silencer = 70,
 		/obj/item/weapon/pen/reagent = 20,)
 
 /datum/stash/ninja/haiku

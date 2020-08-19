@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_MAGNUM
 	can_dual = 1
-	silencer_type = /obj/item/weapon/silencer/integrated
+	silenced = TRUE
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	price_tag = 1500
@@ -17,11 +17,6 @@
 	recoil_buildup = 14
 	one_hand_penalty = 10
 	penetration_multiplier = 0.8
-
-//This comes with a preinstalled silencer
-/obj/item/weapon/gun/projectile/silenced/Initialize()
-	.=..()
-	apply_silencer(new /obj/item/weapon/silencer/integrated(src), null)
 
 /obj/item/weapon/gun/projectile/silenced/update_icon()
 	..()

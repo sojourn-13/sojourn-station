@@ -12,7 +12,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5)
 	price_tag = 2500
 	projectile_type = /obj/item/projectile/beam/midlaser
-	firemodes = list(
+	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 	)
@@ -40,7 +40,7 @@
 	fire_delay = 14 //Equivalent to a pump then fire time
 	recoil_buildup = 1.5
 	damage_multiplier = 0.9
-	firemodes = list(
+	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
 		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
 		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/shotgun/incendiary/railgun, icon="destroy"),
@@ -78,7 +78,7 @@
 	damage_multiplier = 0.8
 	can_dual = 1
 	twohanded = FALSE
-	firemodes = list(
+	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/kurtz/railgun, icon="kill"),
 		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/kurtz/rubber/railgun, icon="stun"),
 		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/kurtz/incendiary, icon="destroy"),
@@ -107,7 +107,7 @@
 	recoil_buildup = 1.5
 	damage_multiplier = 0.8
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
-	firemodes = list(
+	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/hrifle/railgun, icon="kill"),
 		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/lrifle/incendiary, icon="destroy"),
 	)
@@ -149,7 +149,7 @@
 	suitable_cell = /obj/item/weapon/cell/medium
 	charge_cost = 25 // 4 bursts with a 800m cell
 
-	firemodes = list(
+	init_firemodes = list(
 		BURST_8_ROUND,
 		FULL_AUTO_400
 		)
@@ -221,7 +221,7 @@
 	fire_delay = 10 //old technology
 	one_hand_penalty = 10
 	price_tag = 2000
-	firemodes = list(
+	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 	)
@@ -243,7 +243,7 @@
 	origin_tech = null
 	self_recharge = TRUE
 	price_tag = 4500
-	firemodes = list(
+	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 	)
@@ -267,7 +267,7 @@
 	price_tag = 3000
 	one_hand_penalty = 5
 	twohanded = TRUE
-	firemodes = list(
+	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 		)

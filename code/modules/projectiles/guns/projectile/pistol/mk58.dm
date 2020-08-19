@@ -15,6 +15,7 @@
 	damage_multiplier = 1.1
 	penetration_multiplier = 0.9
 	recoil_buildup = 3
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	one_hand_penalty = 10
 
 /obj/item/weapon/gun/projectile/mk58/update_icon()
@@ -40,6 +41,7 @@
 	caliber = CAL_MAGNUM
 	damage_multiplier = 0.9
 	recoil_buildup = 6
+	gun_tags = list(GUN_PROJECTILE)
 
 /obj/item/weapon/gun/projectile/mk58/wood/update_icon()
 	..()

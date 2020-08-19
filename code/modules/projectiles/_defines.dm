@@ -32,3 +32,11 @@
 #define MAG_WELL_HRIFLE		512 //.408 rifle mags
 #define MAG_WELL_DRUM		1024 //Drum-fed i.e. shotguns
 #define MAG_WELL_PULSE		2048 //Mary sue ammo for the pulse rifle
+
+#define SLOT_BARREL "barrel"
+#define SLOT_GRIP "grip"
+#define SLOT_TRIGGER "trigger"
+#define SLOT_MUZZLE "muzzle"
+#define SLOT_SCOPE "scope"
+#define SLOT_UNDERBARREL "underbarrel"
+#define SLOT_MECHANICS "mechanics"

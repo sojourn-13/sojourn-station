@@ -23,7 +23,8 @@
 				/obj/item/weapon/gun/projectile/boltgun/sawn/scout = 0.5,\
 				/obj/item/weapon/gun/projectile/handmade_pistol = 2,\
 				//obj/item/weapon/gun/projectile/ladon/sa = 1,
-				/obj/item/weapon/gun/projectile/olivaw = 2))
+				/obj/item/weapon/gun/projectile/olivaw = 2,
+				/obj/item/weapon/gun_upgrade/barrel/forged = 2))
 
 /obj/random/gun_cheap/low_chance
 	name = "low chance random cheap gun"
@@ -61,7 +62,10 @@
 				/obj/item/weapon/gun/projectile/boltgun/sa = 2,\
 				//obj/item/weapon/gun/projectile/boltgun/scout/light = 2,
 				//obj/item/weapon/gun/projectile/boltgun/scout/light/wood = 2,
-				/obj/item/weapon/gun/projectile/firefly = 2))
+				/obj/item/weapon/gun/projectile/firefly = 2,
+				/obj/item/weapon/gun_upgrade/trigger/dangerzone = 1,
+				/obj/item/weapon/gun_upgrade/trigger/cop_block = 1,
+				/obj/item/weapon/gun_upgrade/mechanism/overshooter = 1))
 				//obj/item/weapon/gun/projectile/automatic/straylight = 2,
 				//obj/item/weapon/gun/projectile/automatic/wirbelwind = 0.5))
 

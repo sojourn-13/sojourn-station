@@ -41,6 +41,7 @@
 	var/auto_eject_sound = null
 	var/ammo_mag = "default" // magazines + gun itself. if set to default, then not used
 	var/tac_reloads = TRUE	// Enables guns to eject mag and insert new magazine.
+	gun_tags = list(GUN_PROJECTILE)
 
 /obj/item/weapon/gun/projectile/loadAmmoBestGuess()
 	var/obj/item/ammo_magazine/chosenMag = null
@@ -63,7 +64,7 @@
 				var/obj/item/ammo_casing/casing2      = initial(chosenMag.ammo_type)
 				var/obj/item/projectile/bullet/proj2 = initial(casing2.projectile_type)
 
-				if(initial(proj1.damage) > initial(proj2.damage) && initial(castMag.max_ammo) >= initial(chosenMag.max_ammo))
+				if(initial(proj1.damage_types[BRUTE]) > initial(proj2.damage_types[BRUTE]) && initial(castMag.max_ammo) >= initial(chosenMag.max_ammo))
 					//log_debug ("updated, replaced [casing2] with [casing1] because [initial(proj2.damage)] > [initial(proj1.damage)]")
 					chosenMag = castMag
 
@@ -376,6 +377,10 @@
 	data["max_shells"] = get_max_ammo()
 
 	return data
+
+/obj/item/weapon/gun/projectile/refresh_upgrades()
+	max_shells = initial(max_shells)
+	..()
 
 /obj/item/weapon/gun/projectile/pickup(mob/user)
 	..()

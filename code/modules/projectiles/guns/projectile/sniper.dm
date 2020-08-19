@@ -22,6 +22,7 @@
 	var/bolt_open = 0
 	zoom_factor = 2.0
 	twohanded = TRUE
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
 /obj/item/weapon/gun/projectile/heavysniper/update_icon()
 	..()
@@ -134,8 +135,9 @@
 		qdel(src)
 
 /obj/item/weapon/gun/projectile/revolver/little_comet
-	name = "\"Little Comet\" pistol"
-	desc = "A special pistol developed to be as flashy and over priced as the businessmen that carry them. Uses .35 special rounds."
+	name = "\"Little Comet\" revolver"
+	desc = "A special revolver developed to be as flashy and over priced as the businessmen that carry them. A special gravity based modification in the cylinder allows for it to over penetrate \
+	even solid steel walls despite its low caliber, the weapons value derived from said gravitonic modification being old tech from greyson that can no longer be reproduced. Uses .35 special rounds."
 	icon = 'icons/obj/guns/projectile/little_comet.dmi'
 	icon_state = "little_comet"
 	item_state = "little_comet"
@@ -150,3 +152,4 @@
 	penetration_multiplier = 20
 	pierce_multiplier =  5
 	recoil_buildup = 50
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER)
