@@ -72,3 +72,15 @@
 		/obj/item/device/assembly/prox_sensor = 1,
 		/obj/item/weapon/cell/medium = 1
 	)
+
+//Putting this here since its an antag type item and making a full .dm for 9 lines of code is.. dumb. -Kaz
+/obj/item/weapon/circuitboard/mindswapper
+	build_name = "mind swapper"
+	build_path = /obj/machinery/mindswapper
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_POWER = 2, TECH_ENGINEERING = 2)
+	req_components = list(
+		/obj/item/weapon/stock_parts/capacitor = 5,
+		/obj/item/weapon/stock_parts/scanning_module = 3,
+		/obj/item/weapon/stock_parts/manipulator = 4
+	)

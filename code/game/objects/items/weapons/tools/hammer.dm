@@ -88,6 +88,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "mace"
 	item_state = "mace"
+	matter = list(MATERIAL_STEEL = 10)
 
 	armor_penetration = ARMOR_PEN_DEEP
 	force = WEAPON_FORCE_DANGEROUS
