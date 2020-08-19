@@ -386,7 +386,7 @@
 
 /obj/item/weapon/tool_upgrade/refinement/vibcompensator
 	name = "vibration compensator"
-	desc = "A ground-breaking innovation that dampens the vibration of a tool by emitting sound waves in a specific pattern. It does not make any sense but neither do you by installing that on your tool."
+	desc = "A ground-breaking innovation that dampens the vibration of a tool by emitting sound waves in a frequency nobody can hear. It does not make any sense but neither will you by installing that on your tool."
 	icon_state = "vibcompensator"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1, MATERIAL_GOLD = 1)
 
@@ -396,7 +396,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 15,
 	UPGRADE_HEALTH_THRESHOLD = 5,
-	UPGRADE_ITEMFLAGPLUS = HONKING
+	UPGRADE_ITEMFLAGPLUS = SILENT
 	)
 	I.required_qualities = list(QUALITY_CUTTING, QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING ,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING)
 	I.prefix = "vibration-compensated"

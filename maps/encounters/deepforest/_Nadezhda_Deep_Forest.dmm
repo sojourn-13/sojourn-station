@@ -43,7 +43,7 @@
 "aQ" = (/turf/simulated/wall/r_wall,/area/nadezhda/dungeon/outside/smuggler_zone)
 "aR" = (/obj/machinery/porta_turret/prepper,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "aS" = (/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"aT" = (/obj/structure/catwalk,/obj/structure/table/steel_reinforced,/obj/random/toolbox,/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"aT" = (/obj/structure/catwalk,/obj/structure/table/steel_reinforced,/obj/random/toolbox,/obj/random/dungeon_gun_mods,/obj/random/dungeon_gun_mods,/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "aU" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/rig/merc,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "aV" = (/turf/simulated/mineral/random/rogue,/area/asteroid/rogue)
 "aW" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/rig/light/stealth,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -111,7 +111,7 @@
 "cg" = (/obj/structure/window/reinforced,/obj/structure/table/standard,/obj/item/weapon/oddity/common/healthscanner,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ch" = (/obj/effect/mine{layer = 2.6},/turf/simulated/floor/tiled/techmaint,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ci" = (/obj/structure/table/steel_reinforced,/obj/item/noslipmodule,/obj/item/noslipmodule,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"cj" = (/obj/structure/catwalk,/obj/structure/table/steel_reinforced,/obj/random/toolbox,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"cj" = (/obj/structure/catwalk,/obj/structure/table/steel_reinforced,/obj/random/toolbox,/obj/machinery/light/small{dir = 1},/obj/random/dungeon_gun_mods,/obj/random/dungeon_gun_mods,/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ck" = (/obj/random/cloth/armor/low_chance,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/dungeon/outside/monster_cave)
 "cl" = (/obj/random/cloth/armor/low_chance,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
 "cm" = (/obj/random/lathe_disk/low_chance,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
@@ -227,7 +227,7 @@
 "es" = (/obj/structure/table/standard,/obj/item/weapon/oddity/common/towel,/turf/simulated/floor/tiled/cafe,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "et" = (/obj/machinery/shower{icon_state = "shower"; dir = 8},/obj/machinery/door/window{dir = 8},/obj/structure/window/reinforced{dir = 1},/turf/simulated/floor/tiled/techmaint,/area/nadezhda/dungeon/outside/smuggler_zone)
 "eu" = (/obj/machinery/light/small{dir = 4; pixel_y = 0},/turf/simulated/floor/tiled/white/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"ev" = (/obj/structure/table/steel_reinforced,/obj/structure/sign/department/rnd{pixel_y = 30},/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"ev" = (/obj/structure/table/steel_reinforced,/obj/structure/sign/department/rnd{pixel_y = 30},/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ew" = (/obj/machinery/light/small,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ex" = (/obj/structure/table/standard,/obj/item/weapon/oddity/common/towel,/turf/simulated/floor/tiled/cafe,/area/nadezhda/dungeon/outside/smuggler_zone)
 "ey" = (/obj/structure/table/standard,/obj/item/weapon/tool/medmultitool,/turf/simulated/floor/tiled/white/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -238,7 +238,7 @@
 "eD" = (/obj/structure/table/standard,/obj/item/weapon/secbot_assembly/ed209_assembly,/turf/simulated/floor/tiled/white/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "eE" = (/obj/structure/table/standard,/obj/item/weapon/secbot_assembly,/turf/simulated/floor/tiled/white/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "eF" = (/obj/structure/sign/departmentold/science/variant1{pixel_x = -30},/turf/simulated/floor/tiled/white/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"eG" = (/obj/structure/table/steel_reinforced,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"eG" = (/obj/structure/table/steel_reinforced,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "eH" = (/obj/random/mob/voidwolf/low_chance,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "eI" = (/obj/structure/table/rack/shelf,/obj/random/knife/low_chance,/obj/random/knife/low_chance,/obj/random/knife/low_chance,/obj/random/knife/low_chance,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "eJ" = (/obj/machinery/light/small{dir = 8},/obj/machinery/porta_turret_construct,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -301,12 +301,12 @@
 "fO" = (/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
 "fP" = (/obj/machinery/porta_turret/prepper,/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
 "fQ" = (/mob/living/simple_animal/hostile/hivebot/range,/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
-"fR" = (/obj/structure/table/rack/shelf,/obj/random/gun_cheap,/obj/random/gun_cheap,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
-"fS" = (/obj/structure/table/rack/shelf,/obj/random/gun_shotgun,/obj/random/gun_shotgun,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
+"fR" = (/obj/structure/table/steel_reinforced,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"fS" = (/obj/structure/table/rack/shelf,/obj/random/gun_cheap,/obj/random/gun_cheap,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
 "fT" = (/obj/structure/table/rack/shelf,/obj/random/gun_energy_cheap,/obj/random/gun_energy_cheap,/obj/item/weapon/oddity/common/old_knife,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
 "fU" = (/obj/structure/sign/security/preproom{pixel_y = 30},/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "fV" = (/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/prepper)
-"fW" = (/obj/structure/table/rack,/obj/random/gun_normal,/obj/random/gun_normal,/obj/random/gun_normal,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
+"fW" = (/obj/structure/table/rack/shelf,/obj/random/gun_shotgun,/obj/random/gun_shotgun,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
 "fX" = (/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "fY" = (/obj/structure/table/rack/shelf,/obj/random/ammo,/obj/random/ammo,/obj/random/ammo,/obj/random/ammo,/obj/random/ammo,/obj/random/ammo,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
 "fZ" = (/obj/random/scrap/sparse_even/low_chance,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
@@ -336,7 +336,7 @@
 "gx" = (/obj/effect/mine,/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
 "gy" = (/obj/machinery/door/airlock/highsecurity{locked = 1},/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper)
 "gz" = (/obj/machinery/door/airlock/highsecurity{locked = 1},/obj/random/traps/low_chance,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper)
-"gA" = (/obj/structure/table/rack/shelf,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
+"gA" = (/obj/structure/table/rack/shelf,/obj/random/gun_shotgun,/obj/random/gun_shotgun,/obj/machinery/light{dir = 1},/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
 "gB" = (/obj/random/junk,/obj/random/traps/low_chance,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "gC" = (/turf/simulated/floor/asteroid/dirt/dust,/area/asteroid/rogue)
 "gD" = (/obj/structure/closet/crate/solar,/turf/simulated/floor/tiled,/area/nadezhda/dungeon/outside/zoo)
@@ -345,7 +345,7 @@
 "gG" = (/turf/simulated/floor/tiled,/area/nadezhda/dungeon/outside/zoo)
 "gH" = (/obj/random/closet_tech/low_chance,/turf/simulated/floor/tiled,/area/nadezhda/dungeon/outside/zoo)
 "gI" = (/obj/structure/closet/secure_closet/freezer/meat,/obj/item/weapon/oddity/common/old_money,/turf/simulated/floor/tiled/dark/brown_perforated,/area/nadezhda/dungeon/outside/prepper)
-"gJ" = (/obj/structure/table/rack/shelf,/obj/random/gun_shotgun,/obj/random/gun_shotgun,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
+"gJ" = (/obj/structure/table/rack,/obj/random/gun_normal,/obj/random/gun_normal,/obj/random/gun_normal,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
 "gK" = (/obj/structure/reagent_dispensers/beerkeg,/turf/simulated/floor/tiled/dark/brown_perforated,/area/nadezhda/dungeon/outside/prepper)
 "gL" = (/obj/item/modular_computer/console/preset/civilian/professional{dir = 1},/turf/simulated/floor/wood,/area/nadezhda/dungeon/outside/prepper)
 "gM" = (/obj/machinery/porta_turret/prepper,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
@@ -1927,9 +1927,11 @@
 "Lc" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol/rifle,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "Ld" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol/heavy,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Le" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
+"Lf" = (/obj/structure/table/rack/shelf,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
 "Lg" = (/obj/structure/bed/chair/custom/onestar/red{dir = 8},/obj/item/weapon/storage/fancy/cigarettes/shodan,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "Lh" = (/obj/structure/flora/small/grassb5,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/meadow)
 "Li" = (/obj/machinery/door/airlock/glass,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
+"Lj" = (/obj/structure/table/rack,/obj/random/gun_normal,/obj/random/gun_normal,/obj/random/gun_normal,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper)
 "Ln" = (/obj/structure/table/onestar,/obj/item/weapon/storage/photo_album,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "Lr" = (/obj/item/weapon/storage/toolbox/electrical,/obj/item/weapon/storage/toolbox/electrical,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "Ls" = (/obj/structure/sink/puddle,/obj/item/toy/desk/dippingbird,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
@@ -2268,7 +2270,7 @@ abaVaVaVaVaVaVbmcfcgcqcFcdcdcdcGbLbLbmbmbmbmbmbmbLbLbmbmcHbLcIdibLcHbLdjdnbLcHbm
 abaVaVaVaVaVaVbmdodpdqdpdpdpdGbmdHbLbmaVaVaVaVbmbLbLbmbmcHbLcIdjbLcHbRdjdnbLcHbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbmbmbmbmbmbTbVbmbmbmbmbmbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVdcbadccldcdcaVaVdcdcbZdcdcdcdcaVdcaVdcdcbabcaVaVaVaVcmdcdcbacncodcaVaVaVdcacaVdcbddcaVbcbcdcctdcdcdcdcdcdcaVaVdcdcdccbdccudcaVaVaVaVaVaVab
 abaVaVaVaVaVaVbmdpdpezdpdpezdIbmbLbLbmaVaVaVaVbmbLbWbmbmbXbLdidjbLcHbLdidnbLcHbmbmbmbmbmbmbmbmbmbmbmbmbmbmaVaVbmbmbmbmbmbmbVbVbmbmbmbmbmbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVdcdccwdccxdcaVaVdccydcczcAdccBbcdccCdcdccDdcdcdcdcaVdccEdcdcdcdcdcaVaVacdcdcdcdcdcbbaVaVaVaVdcdcaVcPdccRdccZaKdcdcbCdcdccbdcaFacacaVaVaVab
 abaVaVaVaVaVaVbmdJdKwadpdpdpwbbmbLbLbmaVaVaVaVbmbLbLbmbmcHbLcIdjbLcHbLdicIbLcHbmbmbmbmbmcievcrcscJcKcLbmbmbmaVaVbmbmbmbmbmbVbVbmbmbmbmbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVdbdcdcdcdcdcaVdcbZdcdcdcdcdcdcdcdcdcdcdcdcdccndcaVdcdcdcaVaVaVaVdcaVaVacdcaVaVaVaVdcaVaVaVaVdcdcaVaVacdcdcdcdcaOdcpFaOdcdcacaVaVacaVaVaVab
-abaVaVaVaVaVaVbmdpdpdpdpdpdpdpbmbLwcbmaVaVaVaVbmbLbLbmbmcHbLcIdibLcHbLcIcIbRcHbmbmbmcMeGcOeHcOcOcOeHcOeGeGbmbmaVaVaVaVaVbmbVcUbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVdcdcaVaVdcdcdcdddcaZbadcbkbZdeaVaVaVaVdcdcdccnaVbkdcdcdcdfdcdfdcdgdcdcdcdhaVdmdcdcdcctdydcdccPaVaVaVdcaKcRdzdcdcdcdcdcdcacaVaVaVaVaVaVab
+abaVaVaVaVaVaVbmdpdpdpdpdpdpdpbmbLwcbmaVaVaVaVbmbLbLbmbmcHbLcIdibLcHbLcIcIbRcHbmbmbmcMeGcOeHcOcOcOeHcOfRfRbmbmaVaVaVaVaVbmbVcUbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVdcdcaVaVdcdcdcdddcaZbadcbkbZdeaVaVaVaVdcdcdccnaVbkdcdcdcdfdcdfdcdgdcdcdcdhaVdmdcdcdcctdydcdccPaVaVaVdcaKcRdzdcdcdcdcdcdcacaVaVaVaVaVaVab
 abaVaVaVaVaVaVbmwdcdcdcdwecccccGbLbLbmbmbmbmaVbmbLbLbmbmbLbLbRbLbLbLbLbLbLbLbLbmbmeJcOcOcOcOcOcOcOcOcOcOcOeLbmaVaVaVaVaVbmbVbVbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVdcaVaVdcdcdcdcdcdcdcdcdccAdcdcdcaVaVdcdcaVaVaVaVaVdcdcdccmdcdcdcdcdcdcdcaVdcdcdcdcdcdcbadcdcaVaVaVdcxNdcdcdcbadcaOdcdccRaVaVaVaVaVaVab
 abaVaVaVaVaVaVbmwefdwgfdwdccwhbmtVcXbmcYdkbmaVbmbLbLbmbmbLbLbLbLdlbLbNbLbLdlbObmbmcOcOcOcOdrdrdsdudvcOcOcOcObmaVaVaVaVaVbmbVbVbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVdcaVaVaVaVdcaVdBaVaVdcdCdcdcaVdcdcbkdcdcaVaVaVdDaVdEdcbadcdcdFdcdgdcaVdcdcdcdPdcaVaVdcaVdccPaVaVdQdQdcdRdcdcdcdcdcdccuaVaVaVaVaVaVaVab
 abaVaVaVaVaVaVbmwjwkwlwmwjwnwnbmbLbLcGchKxbmaVbmbLbLbmbmbmbmcGbmbmcGbmbmcGbmbmbmbmdMdMdMdMbmbmbmbmbmdMdMdMdMbmbmaVaVaVaVbmbVbVbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVdcaVaVaVaVaVdcbbdcaVdSdcdcdcczdcdTdcdcdccndcdcdcdUdcdcdcdcaVdcdydcdcdcdYdcdcdcdcaVaVefdcdcctdceodcdccRdcdcdcdcaVaVaVaVaVaVab
@@ -2298,10 +2300,10 @@ aaababababababababababababababababababababababababababababababababababababababab
 (1,1,2) = {"
 fFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFhehfhghhhihjhkhehefFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
 fFfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfDfDfDfDfDfDfFfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEhehlhmhmhmhvhlhehwfHfHfHfHfHfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEgffFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
-fFfCfIfJfKfLfMfNfCfOfPfCfCfQfQfQfCfRfSgJfTfUfVgMfVfWfWfWgSfXfYfCfZfZfXfXfZfZfXgafXfXgbfCfCfCfDfDfDfDfDfDfFfEfEfEfEgfgfgfgfgfgfgffEgfyTfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEgcfEfEfEfEfEfEfEhkhfhmhmhmhxhkhkhkggsMgfgfuBuBgfuEgfghghghfEgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgffFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
+fFfCfIfJfKfLfMfNfCfOfPfCfCfQfQfQfCfSfWgAfTfUfVgMfVgJgJgJgSfXfYfCfZfZfXfXfZfZfXgafXfXgbfCfCfCfDfDfDfDfDfDfFfEfEfEfEgfgfgfgfgfgfgffEgfyTfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEgcfEfEfEfEfEfEfEhkhfhmhmhmhxhkhkhkggsMgfgfuBuBgfuEgfghghghfEgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgffFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
 fFfCgigigigjgjgjgkfOfOfCfCfVfVfVfCfXglfXfXfXfXfXfXglfXfXfXfXfYfCfZfXgmfXfXfXfXfZiOfXgbfCfCfCfCfDfDfDgnfDfFfFgfgfgfgfgfgfgfgfgfyTgfyTyXDxfEfEfEfEfEfEfEfEfEfEDxDxDxDxDxfEfEfEfEfEfEgdDxDxDxDxfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfhkhkhmhmhmhyhzhkhkgfgfgfgfgfgfgfgfgfgffEgfhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAhAgtgtgtgtgtgtgtgtfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
-fFfCgigigigwgjgjfCjzfOgxgyfXfXfXgzfXfXfXfXfXfXfXfXfXfXfXglfXgAfCfXgBfXfXfCfCfCfCfCfCfCfCfCfCfCfCfDfDfDfDfFgfgfgfgfvDgdyTgfyTgfgfgfDxDxDxDxfEfEfEfEfEfEfEfEDxDxDxDxDxDxDxfEfEfEgdgdgqgdgdgdDxDxfEfEfEfEfEfEfEfEfEfEfEfEfEfEgfgfhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhBhChmhmhmhDhEhkhkhkgfgfgfgfgfgfgfgfgfgfgfhQhAhAhAhAhAhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhAhAhAgtgDgEgFgFgGgHgtfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
-fFfCgIjRgKgLkfgNfCfPfOfCfCgOfXgPfCgQgRjogTglfVfPfVfWfWfWfXfXgUfClmgagBlpfCfQfVfXgVgVfCfCfCfCfCfCfCfCfCfCgfgfgfgdagDxgdgdgdgdgdgdgdgdgdgdDxDxfEfEfEfEfEfEDxDxDxDxDxDxDxDxfEfEfEgdgdgdgdgdgdgdgdgdfEfEfEfEfEfEfEfEfEfEfEfEfEhkhkhkhkhXhYhlhZhkhkhkhkhkhkhkhkhkhkhkhkikilhmhmhmiqhEhkhkhkhkhkhkhkhkhkhkhkhkhkhkhQhWirhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhAgtgDgGgGgGgGhagtfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
+fFfCgigigigwgjgjfCjzfOgxgyfXfXfXgzfXfXfXfXfXfXfXfXfXfXfXglfXLffCfXgBfXfXfCfCfCfCfCfCfCfCfCfCfCfCfDfDfDfDfFgfgfgfgfvDgdyTgfyTgfgfgfDxDxDxDxfEfEfEfEfEfEfEfEDxDxDxDxDxDxDxfEfEfEgdgdgqgdgdgdDxDxfEfEfEfEfEfEfEfEfEfEfEfEfEfEgfgfhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhBhChmhmhmhDhEhkhkhkgfgfgfgfgfgfgfgfgfgfgfhQhAhAhAhAhAhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhAhAhAgtgDgEgFgFgGgHgtfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
+fFfCgIjRgKgLkfgNfCfPfOfCfCgOfXgPfCgQgRjogTglfVfPfVgJgJLjfXfXgUfClmgagBlpfCfQfVfXgVgVfCfCfCfCfCfCfCfCfCfCgfgfgfgdagDxgdgdgdgdgdgdgdgdgdgdDxDxfEfEfEfEfEfEDxDxDxDxDxDxDxDxfEfEfEgdgdgdgdgdgdgdgdgdfEfEfEfEfEfEfEfEfEfEfEfEfEhkhkhkhkhXhYhlhZhkhkhkhkhkhkhkhkhkhkhkhkikilhmhmhmiqhEhkhkhkhkhkhkhkhkhkhkhkhkhkhkhQhWirhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhAgtgDgGgGgGgGhagtfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
 fFfCfCfCfCfCfCfCfCfCfCfCfCwCfXfXfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfCfXfXglfXfCfVfVfXfXgVfCfCfCfCfCfCfCfCfCfCgfgfgdgdgdDxgdDxgdgdgdgdgdgdgdgdgdgdfEfEfEfEfEfEDxDxDxDxDxDxDxfEfEgdgdgdgdgdgdgdgdgdgdgdgdfEfEfEfEfEfEfEfEfEfEfEfEhkhkhkiwiliEiRhYiShkhkhkhkhkhkhkhkhkhkhlilhmhmhmhmhmiTiUhzhkhkhkhkiSiSjrjshkjrhkhkhAhWhWhWhWhWjtjSktlFlFlFlPlFlFlFmblFmhmhnilFnxjSiVhnhohphqgGgGgtfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
 fFfCfCfCfCfCfCfCfCfCfCfCfCfXfXfXfCfPfVfXfXfXfXfVfXfXfXfXfXfChrhrfXfXglfXfCwCfXfXglfXfCfQfVgSfXhsgSfXfCgohtDxDxDxgdgdgdDxDxgdgdgdgdgdgdgdgdgdfEfEfEfEfEfEDxDxgdgdleDxDxDxDxgdgdgdgdgdgdgdgdgdgdgdgdfEfEfEfEfEfEfEfEfEfEfEgfhkhkhknCilofililnCiSpLiShkhkhkhkhkhksOiEhmhmhziwhzilhmsPsQsVhkhkhkiStatatatajrhkhkhAtbhWhWhWhWjStctdtejStctdtejStftdtetgthtitntotriVhFhGgGhHgGgGgtfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
 fFfChIhrwDhJhJhJfXhrhrhIfCfXfXfXfCfVfVfXhKhKfXfVfXhKhKhKfXfChLfXgBglglfXhMfXglfXfXfXfCfVfVglfXfXfXfXfGDxDxDxDxDxDxgdgdgdDxgdgdgdgdgdgdgdgdgdgfgfgffEfEfEgdgdgqgdgdgdgdgdgdgdgdvDgqvDgdgdgdgdgdgdgdfEfEfEfEfEfEfEfEfEfEfEgfhkhkililnCilililililiEtsiShkhkhkhkhkiEiTiTiliwhkiwilhmhmttnCnCililtwtahkjstxtzhkhkhWhWhWuRhWhWtguXtitntgtctdtejStctdtejSthtitetotriVhOgGhRhRhRgGgtfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
