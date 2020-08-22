@@ -192,7 +192,7 @@
 
 	if(!wear_suit && !w_uniform && !(T == src))
 		if(locate(/obj/item/weapon/implant/carrion_spider) in src)
-			msg += SPAN_DANGER("[T.He] [T.has] a strange growth on [T.his] chest!") + "\n"
+			msg += SPAN_DANGER("[He] [has] a strange growth on [his] chest!") + "\n"
 
 	var/distance = get_dist(usr,src)
 	if(isghost(usr) || usr.stat == DEAD) // ghosts can see anything
@@ -205,7 +205,7 @@
 			usr.visible_message("<b>[usr]</b> checks [src]'s pulse.", "You check [src]'s pulse.")
 		if(distance<=1 && do_mob(usr,src,15,progress=0))
 			if(status_flags & FAKEDEATH)
-				to_chat(usr, "<span class='deadsay'>[T.He] [T.has] no pulse and [T.his] soul has departed...</span>")
+				to_chat(usr, "<span class='deadsay'>[He] [has] no pulse and [his] soul has departed...</span>")
 			else if(pulse() == PULSE_NONE)
 				to_chat(usr, "<span class='deadsay'>[He] [has] no pulse[src.client ? "" : " and [his] soul has departed"]...</span>")
 			else
