@@ -126,7 +126,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_WORKSPEED = 0.15
+	UPGRADE_WORKSPEED = 0.10
 	)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL = 0.9,
@@ -254,7 +254,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_WORKSPEED = 0.30,
+	UPGRADE_WORKSPEED = 0.10,
 	UPGRADE_PRECISION = 5,
 	UPGRADE_ITEMFLAGPLUS = NOBLOODY
 	)
@@ -270,7 +270,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_WORKSPEED = 0.35,
+	UPGRADE_WORKSPEED = 0.15,
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_POWERCOST_MULT = 1.25,
 	UPGRADE_FUELCOST_MULT = 1.25
@@ -288,7 +288,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_WORKSPEED = 0.75,
+	UPGRADE_WORKSPEED = 0.85,
 	UPGRADE_DEGRADATION_MULT = 1.3,
 	UPGRADE_POWERCOST_MULT = 1.3,
 	UPGRADE_FUELCOST_MULT = 1.3,
@@ -374,7 +374,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_PRECISION = 20,
+	UPGRADE_PRECISION = 15,
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_POWERCOST_MULT = 1.05,
 	UPGRADE_FUELCOST_MULT = 1.05,
@@ -394,7 +394,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_PRECISION = 15,
+	UPGRADE_PRECISION = 10,
 	UPGRADE_HEALTH_THRESHOLD = 5,
 	UPGRADE_ITEMFLAGPLUS = SILENT
 	)
@@ -555,12 +555,12 @@
 	)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 0.8,
-	GUN_UPGRADE_DAMAGE_MULT = 1.2,
-	GUN_UPGRADE_PEN_MULT = 1.2,
+	GUN_UPGRADE_DAMAGE_MULT = 1.1,
+	GUN_UPGRADE_PEN_MULT = 1.1,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
 	GUN_UPGRADE_MOVE_DELAY_MULT = 0.8,
 	GUN_UPGRADE_MUZZLEFLASH = 0.8,
-	GUN_UPGRADE_CHARGECOST = 0.8,
+	GUN_UPGRADE_CHARGECOST = 1.2,
 	GUN_UPGRADE_OVERCHARGE_MAX = 0.8,
 	GUN_UPGRADE_OVERCHARGE_RATE = 1.2)
 	I.prefix = "intelligent"
@@ -592,7 +592,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 1.0,
-	UPGRADE_PRECISION = 10,
+	UPGRADE_PRECISION = 5,
 	UPGRADE_ITEMFLAGPLUS = LOUD
 	)
 	I.prefix = "hydraulic"
