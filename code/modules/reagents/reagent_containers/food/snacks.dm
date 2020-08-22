@@ -198,18 +198,6 @@
 	if (is_sliceable())
 		//these are used to allow hiding edge items in food that is not on a table/tray
 		var/can_slice_here = isturf(src.loc) && ((locate(/obj/structure/table) in src.loc) || (locate(/obj/machinery/optable) in src.loc) || (locate(/obj/item/weapon/tray) in src.loc))
-		var/hide_item = !has_edge(W) || !can_slice_here
-
-		if (hide_item)
-			if (W.w_class >= src.w_class || is_robot_module(W))
-				return
-
-			to_chat(user, SPAN_WARNING("You slip \the [W] inside \the [src]."))
-			user.remove_from_mob(W)
-			W.dropped(user)
-			add_fingerprint(user)
-			contents += W
-			return
 
 		if (has_edge(W))
 			if (!can_slice_here)

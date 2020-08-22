@@ -849,7 +849,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 		owner.verbs += /mob/proc/yank_out_object
 
 	owner.embedded_flag = 1
-	W.add_blood(owner)
+	W.on_embed(owner)
+	if(!((W.flags & NOBLOODY)||(W.item_flags & NOBLOODY)))
+		W.add_blood(owner)
 	W.loc = owner
 
 /obj/item/organ/external/proc/disfigure(var/type = "brute")

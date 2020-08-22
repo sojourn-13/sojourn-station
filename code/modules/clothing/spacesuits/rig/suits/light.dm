@@ -5,7 +5,7 @@
 	icon_state = "ninja_rig"
 	suit_type = "light suit"
 	armor = list(
-		melee = 30,
+		melee = 25,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
@@ -42,8 +42,8 @@
 	name = "SI 'Retainer' control module"
 	desc = "A Soteria Institute modification of the traditional light rig built for equal parts utility and defense."
 	armor = list(
-		melee = 40,
-		bullet = 30,
+		melee = 30,
+		bullet = 25,
 		energy = 30,
 		bomb = 30,
 		bio = 100,
@@ -113,7 +113,7 @@
 	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for assassins."
 	icon_state = "ninja_rig"
 	armor = list(
-		melee = 40,
+		melee = 30,
 		bullet = 30,
 		energy = 20,
 		bomb = 25,

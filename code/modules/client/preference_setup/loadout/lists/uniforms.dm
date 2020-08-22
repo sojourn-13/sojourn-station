@@ -140,3 +140,8 @@
 /datum/gear/uniform/churchnonrank
 	display_name = "church clothes"
 	path = /obj/item/clothing/under/rank/church
+
+/datum/gear/uniform/neon
+	display_name = "neon tracksuits, color presets"
+	path = /obj/item/clothing/under/neon
+	flags = GEAR_HAS_TYPE_SELECTION

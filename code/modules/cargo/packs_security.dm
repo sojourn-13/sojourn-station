@@ -53,7 +53,9 @@
 	contains = list(/obj/item/weapon/gun/energy/laser,
 				/obj/item/weapon/gun/energy/laser,
 				/obj/item/weapon/gun/energy/taser,
-				/obj/item/weapon/gun/energy/taser)
+				/obj/item/weapon/gun/energy/taser,
+				/obj/item/weapon/gun/energy/ntpistol,
+				/obj/item/weapon/gun/energy/ntpistol)
 	cost = 4000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "CA energy weapons crate"
@@ -130,7 +132,7 @@
 					/obj/item/weapon/storage/box/shotgunammo/beanbags,
 					/obj/item/weapon/storage/box/shotgunammo/beanbags)
 	cost = 800
-	crate_name = "FS beanbag shells crate"
+	crate_name = "HS beanbag shells crate"
 	group = "Security"
 
 /datum/supply_pack/shotgunammo_slug
@@ -189,6 +191,18 @@
 	cost = 1600
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "wall shield generators crate"
+	group = "Security"
+
+/datum/supply_pack/gunmods
+	name = "Random Gun Mod Crate"
+	contains = list(/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods)
+	cost = 1200
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "gun mod crate"
 	group = "Security"
 
 //This crate is unaffected by price changes since its from krios, not pirates.

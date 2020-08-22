@@ -24,7 +24,7 @@
 	recoil_buildup = 6
 	one_hand_penalty = 10 //heavy, but very advanced, so bullpup rifle level despite not being bullpup
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND

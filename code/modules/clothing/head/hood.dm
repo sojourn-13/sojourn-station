@@ -55,7 +55,7 @@
 	flags = THICKMATERIAL
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.9
-	armor = list(melee = 30, bullet = 20, laser = 20, energy = 20, bomb = 35, bio = 75, rad = 35)
+	armor = list(melee = 20, bullet = 20, laser = 20, energy = 20, bomb = 35, bio = 75, rad = 35)
 
 // Costumes
 /obj/item/clothing/head/hood/carp_hood

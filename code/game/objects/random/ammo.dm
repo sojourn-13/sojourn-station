@@ -136,3 +136,27 @@
 	name = "low chance random low tier ammunition"
 	icon_state = "ammo-grey-low"
 	spawn_nothing_percentage = 60
+
+
+//Dungeon based random spawners (use these only in dungeons, not maint)
+/obj/random/dungeon_ammo
+	name = "random special ammunition"
+	icon_state = "ammo-grey"
+
+/obj/random/dungeon_ammo/item_to_spawn()
+	return pickweight(list(/obj/item/ammo_magazine/c10x24 = 1,
+				/obj/item/ammo_magazine/a75 = 1,
+				/obj/item/ammo_magazine/hrifle_drum = 1,
+				/obj/item/ammo_magazine/m12/pellet = 2,
+				/obj/item/ammo_magazine/ammobox/rifle/lethal = 2,
+				/obj/item/ammo_magazine/smg/lethal = 3,
+				/obj/item/ammo_magazine/pistol/lethal = 3,
+				/obj/item/ammo_magazine/kurtz/lethal = 1,
+				/obj/item/weapon/storage/box/shotgunammo/payload = 1,
+				/obj/item/weapon/storage/box/shotgunammo/buckshot = 2,
+				/obj/item/ammo_magazine/ammobox/hrifle/hv = 2))
+
+/obj/random/dungeon_ammo/low_chance
+	name = "low chance random special ammunition"
+	icon_state = "ammo-grey-low"
+	spawn_nothing_percentage = 60

@@ -14,30 +14,21 @@
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	force = WEAPON_FORCE_HARMLESS
-	armor = list(
-		melee = 20,
-		bullet = 10,
-		energy = 10,
-		bomb = 10,
-		bio = 0,
-		rad = 0
-	)
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 25, rad = 0)
 	siemens_coefficient = 0.6
 	can_hold_knife = 1
+
+/obj/item/clothing/shoes/jackboots/german
+	name = "brown jackboots"
+	desc = "A pair of brown boots."
+	icon_state = "germanboots"
 
 /obj/item/clothing/shoes/reinforced
 	name = "reinforced boots"
 	desc = "A pair of metallic boots designed for industrial environments."
 	icon_state = "reinforced"
 	item_state = "reinforced"
-	armor = list(
-		melee = 20,
-		bullet = 10,
-		energy = 10,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 
 /obj/item/clothing/shoes/reinforced/medical
@@ -51,14 +42,7 @@
 	desc = "A pair of steel-toed utility workboots."
 	icon_state = "workboots"
 	item_state = "workboots"
-	armor = list(
-		melee = 20,
-		bullet = 10,
-		energy = 10,
-		bomb = 10,
-		bio = 0,
-		rad = 25
-	)
+	armor = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	can_hold_knife = 1
 

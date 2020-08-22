@@ -294,6 +294,10 @@
 	name = "H&S PDW E \"Martin\""
 	build_path = /obj/item/weapon/gun/energy/gun/martin
 
+/datum/design/autolathe/gun/ntpistol
+	name = "NT LP \"Serenity\""
+	build_path = /obj/item/weapon/gun/energy/ntpistol
+
 /datum/design/autolathe/gun/energy_crossbow
 	name = "OT EC \"Nemesis\""
 	build_path = /obj/item/weapon/gun/energy/crossbow
@@ -333,3 +337,7 @@
 /datum/design/autolathe/gun/greyson_cog
 	name = "GP \"Cog\" lasegun"
 	build_path = /obj/item/weapon/gun/energy/retro
+
+/datum/design/autolathe/gun/plasma/martyr
+	name = "NT PR \"Martyr\""
+	build_path = /obj/item/weapon/gun/energy/plasma/martyr

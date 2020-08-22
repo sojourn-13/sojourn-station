@@ -103,6 +103,10 @@
 	name = "bluespace slime extract"
 	icon_state = "bluespace slime extract"
 
+/obj/item/slime_extract/bluespace/New()
+	..()
+	item_flags |= BLUESPACE
+
 /obj/item/slime_extract/pyrite
 	name = "pyrite slime extract"
 	icon_state = "pyrite slime extract"

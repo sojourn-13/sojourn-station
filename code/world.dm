@@ -81,6 +81,8 @@ var/game_id = null
 	diary << "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(start_time, "hh:mm.ss")][log_end]\n---------------------[log_end]"
 	changelog_hash = md5('html/changelog.html')					//used for telling if the changelog has changed recently
 
+	world_qdel_log = file("data/logs/[date_string] qdel.log")	// GC Shutdown log
+
 	if(byond_version < RECOMMENDED_VERSION)
 		log_world("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
 
@@ -249,8 +251,8 @@ var/world_topic_spam_protect_time = world.timeofday
 		s += "<b>[config.server_name]</b> &#8212; "
 
 	s += "<b>[station_name()]</b>";
-	s += "\]" 
-	s += "<br><small>+18, High Roleplay, colony map, ERIS downstream, weekly events, 4+ hour rounds. Custom character creator, tons of guns, and PvE.  Furry friendly!</small><br>" 
+	s += "\]"
+	s += "<br><small>+18, High Roleplay, colony map, ERIS downstream, weekly events, 4+ hour rounds. Custom character creator, tons of guns, and PvE.  Furry friendly!</small><br>"
 
 	var/list/features = list()
 
@@ -276,7 +278,7 @@ var/world_topic_spam_protect_time = world.timeofday
 		features += "hosted by <b>[config.hostedby]</b>"
 
 	if (features)
-		s += "\[[jointext(features, ", ")]"	
+		s += "\[[jointext(features, ", ")]"
 
 	/* does this help? I do not know */
 	if (src.status != s)

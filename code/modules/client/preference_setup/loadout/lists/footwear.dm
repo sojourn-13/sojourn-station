@@ -48,6 +48,10 @@
 	display_name = "jackboots"
 	path = /obj/item/clothing/shoes/jackboots
 
+/datum/gear/shoes/brownjackboots
+	display_name = "brown jackboots"
+	path = /obj/item/clothing/shoes/jackboots/german
+
 /datum/gear/shoes/leather
 	display_name = "leather shoes"
 	path = /obj/item/clothing/shoes/leather

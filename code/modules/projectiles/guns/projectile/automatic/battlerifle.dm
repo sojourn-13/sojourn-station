@@ -17,7 +17,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 2000
 	penetration_multiplier = 1.2
-	damage_multiplier = 1.3
+	damage_multiplier = 1.1
 	recoil_buildup = 15
 	one_hand_penalty = 15
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -25,7 +25,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/rifle_boltforward.ogg'
 
-	firemodes = list(
+	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
 
@@ -71,7 +71,7 @@
 	damage_multiplier = 1
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
 		FULL_AUTO_400
@@ -96,7 +96,7 @@
 	recoil_buildup = 15
 	penetration_multiplier = 1.2
 	one_hand_penalty = 20
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND
 		)
@@ -135,7 +135,7 @@
 	recoil_buildup = 22
 	penetration_multiplier = 0.8
 	one_hand_penalty = 30
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_600
 		)
@@ -155,7 +155,7 @@
 	recoil_buildup = 20
 	one_hand_penalty = 25
 	zoom_factor = 0.3
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)

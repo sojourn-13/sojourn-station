@@ -57,7 +57,7 @@
 //Common - you can find those everywhere
 /obj/item/weapon/oddity/common/blueprint
 	name = "strange blueprint"
-	desc = "There's no telling what this design is supposed to be. Whatever could be built from this likely wouldn't work."
+	desc = "There's no telling what this design is supposed to be. Whatever could be built from this likely wouldn't work yet the greyson positronic logo near the top makes one wonder."
 	icon_state = "blueprint"
 	oddity_stats = list(
 		STAT_COG = 5,
@@ -103,7 +103,7 @@
 
 /obj/item/weapon/oddity/common/old_newspaper
 	name = "odd newspaper clipping" //Old old news papers are a good joke
-	desc = "It contains a report on some old and strange phenomenon. Maybe it's lies, maybe it's corporate experiments gone wrong."
+	desc = "It contains a report on some old and strange phenomenon. Maybe it's lies, maybe it's corporate experiments gone wrong. The date listed on it is impossible, yet it bears the stamp of the Nadezhda."
 	icon_state = "old_newspaper"
 	oddity_stats = list(
 		STAT_MEC = 4,
@@ -113,7 +113,7 @@
 
 /obj/item/weapon/oddity/common/paper_crumpled
 	name = "turn-out page"
-	desc = "This ALMOST makes sense."
+	desc = "This ALMOST makes sense, it details connections and similarities between groups, yet the nonsensical phrasing makes it seem like one huge conspiracy."
 	icon_state = "paper_crumpled"
 	oddity_stats = list(
 		STAT_MEC = 6,
@@ -123,7 +123,7 @@
 
 /obj/item/weapon/oddity/common/paper_omega
 	name = "collection of obscure reports"
-	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar."
+	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was greyson, soteria, or an independent group."
 	icon_state = "paper_omega"
 	oddity_stats = list(
 		STAT_MEC = 8,
@@ -133,7 +133,7 @@
 
 /obj/item/weapon/oddity/common/book_eyes
 	name = "observer book"
-	desc = "This book details information on some cyber creatures. Who did this, how this is even possible?"
+	desc = "This book details information on some cybernetic creatures. Who did this? How is this even possible? The illustrations bear unconformtable likeness to hivemind abominations."
 	icon_state = "book_eyes"
 	oddity_stats = list(
 		STAT_ROB = 9,
@@ -143,7 +143,7 @@
 
 /obj/item/weapon/oddity/common/book_omega
 	name = "occult book"
-	desc = "Most of the stories in this book seem to be the writings of madmen, but at least the stories are interesting."
+	desc = "Most of the stories in this book seem to be the writings of madmen, but at least the stories are interesting. Some of the phrases are written in latin, an odd thing in this day and age."
 	icon_state = "book_omega"
 	oddity_stats = list(
 		STAT_BIO = 6,
@@ -230,7 +230,7 @@
 
 /obj/item/weapon/oddity/common/old_id
 	name = "old id"
-	desc = "There is a story behind this name. Untold, and cruel in fate."
+	desc = "There is a story behind this name. Untold and cruel in fate."
 	icon_state = "old_id"
 	oddity_stats = list(
 		STAT_VIG = 9,

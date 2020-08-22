@@ -770,6 +770,7 @@
 	pass_flags = PASSTABLE
 	mob_size = MOB_SMALL
 	faction = "pond"
+	speak_chance = 5
 
 	speak_emote = list("squawks","says","yells")
 	emote_see = list("flutters its wings","squawks","bawks")

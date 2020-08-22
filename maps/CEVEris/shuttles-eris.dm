@@ -225,13 +225,13 @@
 	landmark_tag = "nav_merc_dock"
 	dock_target = "second_sec_1_access_console"
 
-/obj/effect/shuttle_landmark/merc/northeast
-	name = "Northeast of the Vessel"
+/obj/effect/shuttle_landmark/merc/outsidecolony
+	name = "Outside the Colony"
 	icon_state = "shuttle-red"
 	landmark_tag = "nav_merc_northeast"
 
-/obj/effect/shuttle_landmark/merc/southwest
-	name = "Southwest of the Vessel"
+/obj/effect/shuttle_landmark/merc/deepforest
+	name = "Deep Forest"
 	icon_state = "shuttle-red"
 	landmark_tag = "nav_merc_southwest"
 

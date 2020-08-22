@@ -315,7 +315,7 @@
 	default_type = MATERIAL_BIOMATTER
 	max_amount = 60
 	price_tag = 10
-	var/biomatter_in_sheet = 10
+	var/biomatter_in_sheet = 1
 
 /obj/item/stack/material/biomatter/random
 	rand_min = 5

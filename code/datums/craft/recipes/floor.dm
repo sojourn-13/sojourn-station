@@ -259,3 +259,13 @@
 	name = "dark monofloor tile"
 	result = /obj/item/stack/tile/floor/dark/monofloor
 
+/datum/craft_recipe/floor/lighttile
+	name = "light tile"
+	result = /obj/machinery/floor_light
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_GLASS, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 10, 80),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_PULSING, 30, 80)
+	)

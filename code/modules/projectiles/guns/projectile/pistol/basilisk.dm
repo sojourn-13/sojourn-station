@@ -11,7 +11,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1600
 	can_dual = 1
-	damage_multiplier = 1.3
+	damage_multiplier = 1.1
 	penetration_multiplier = 1.2
 	recoil_buildup = 33
 	one_hand_penalty = 30

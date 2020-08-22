@@ -21,7 +21,7 @@
 	caliber = CAL_HRIFLE
 	tac_reloads = FALSE
 	penetration_multiplier = 0.85
-	damage_multiplier = 1.2
+	damage_multiplier = 1
 	slowdown = 0.15
 	matter = list(MATERIAL_PLASTEEL = 50, MATERIAL_PLASTIC = 20)
 	price_tag = 5000
@@ -34,7 +34,7 @@
 	one_hand_penalty = 100
 	zoom_factor = 0.4
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		list(mode_name="hyper-burst", burst=3,    burst_delay=0.5, move_delay=2,  icon="burst"),
 		)

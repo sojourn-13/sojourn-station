@@ -11,7 +11,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 2600
-	damage_multiplier = 1.2
+	damage_multiplier = 1.1
 	penetration_multiplier = 1
 	recoil_buildup = 16
 	one_hand_penalty = 15 //full sized shotgun level
@@ -31,6 +31,7 @@
 	price_tag = 2000
 	recoil_buildup = 50
 	one_hand_penalty = 100 //Just in case
+	damage_multiplier = 0.9
 	fire_delay = 12
 	saw_off = FALSE
 

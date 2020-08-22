@@ -15,7 +15,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 3000
 	penetration_multiplier = 1.2
-	damage_multiplier = 1.3
+	damage_multiplier = 1
 	zoom_factor = 0.3
 	fire_delay = 12
 	recoil_buildup = 25
@@ -25,7 +25,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
 
-	firemodes = list(
+	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
 
@@ -61,7 +61,7 @@
 	damage_multiplier = 1.5
 	recoil_buildup = 5
 	fire_delay = 0.5
-	firemodes = list(
+	init_firemodes = list(
 	SEMI_AUTO_NODELAY,
 	FULL_AUTO_400,
 	)

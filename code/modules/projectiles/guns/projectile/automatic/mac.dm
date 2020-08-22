@@ -15,10 +15,10 @@
 	price_tag = 2000
 	damage_multiplier = 0.9
 	recoil_buildup = 5
-	silencer_type = /obj/item/weapon/silencer
+	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE)
 	one_hand_penalty = 5 //smg level
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_600,
 		BURST_8_ROUND,
 		SEMI_AUTO_NODELAY
@@ -61,11 +61,11 @@
 	price_tag = 2000
 	damage_multiplier = 0.75
 	recoil_buildup = 2
-	silencer_type = null
+	gun_tags = list(GUN_PROJECTILE)
 	one_hand_penalty = 5 //smg level
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_600,
 		list(mode_name="fuller auto", mode_type = /datum/firemode/automatic, fire_delay=0.5, icon="auto"),
 		)

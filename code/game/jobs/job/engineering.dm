@@ -39,9 +39,18 @@
 			/datum/craft_recipe/guild/arcwelder,
 			/datum/craft_recipe/guild/railgunpistol,
 			/datum/craft_recipe/guild/railgunrifle,
+			/datum/craft_recipe/guild/mace,
+			/datum/craft_recipe/guild/katana,
 			/datum/craft_recipe/guild/technosuit,
 			/datum/craft_recipe/guild/technohelmet,
-			/datum/craft_recipe/guild/webbing
+			/datum/craft_recipe/guild/webbing,
+			/datum/craft_recipe/guild/plasmablock,
+			/datum/craft_recipe/guild/rubbermesh,
+			/datum/craft_recipe/guild/booster,
+			/datum/craft_recipe/guild/injector,
+			/datum/craft_recipe/guild/weintraub,
+			/datum/craft_recipe/guild/forged,
+			/datum/craft_recipe/guild/silencer
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -108,9 +117,18 @@
 			/datum/craft_recipe/guild/arcwelder,
 			/datum/craft_recipe/guild/railgunpistol,
 			/datum/craft_recipe/guild/railgunrifle,
+			/datum/craft_recipe/guild/mace,
+			/datum/craft_recipe/guild/katana,
 			/datum/craft_recipe/guild/technosuit,
 			/datum/craft_recipe/guild/technohelmet,
-			/datum/craft_recipe/guild/webbing
+			/datum/craft_recipe/guild/webbing,
+			/datum/craft_recipe/guild/plasmablock,
+			/datum/craft_recipe/guild/rubbermesh,
+			/datum/craft_recipe/guild/booster,
+			/datum/craft_recipe/guild/injector,
+			/datum/craft_recipe/guild/weintraub,
+			/datum/craft_recipe/guild/forged,
+			/datum/craft_recipe/guild/silencer
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
