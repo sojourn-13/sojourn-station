@@ -1,7 +1,7 @@
 /obj/item/weapon/gun_upgrade
 	icon = 'icons/obj/guns/mods.dmi'
 	w_class = ITEM_SIZE_TINY
-	price_tag = 500
+	price_tag = 100 //These should be sold in the player market.
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
 
 /obj/item/weapon/gun_upgrade/barrel
@@ -112,9 +112,9 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.3,
-		GUN_UPGRADE_CHARGECOST = 2
+		GUN_UPGRADE_CHARGECOST = 1.5
 		)
-	I.gun_loc_tag = GUN_BARREL
+	I.gun_loc_tag = GUN_MECHANISM
 	I.req_gun_tags = list(GUN_ENERGY)
 
 /obj/item/weapon/gun_upgrade/trigger
@@ -167,22 +167,24 @@
 	I.gun_loc_tag = GUN_MECHANISM
 
 /* //This mod works fine but if a bullet hits an object it run times, my theory is its trying to make an effect work via rads that isn't coded properly either by ERIS or my bad porting.
-//Either way, keeping this commented out for now, will fix later. -Kaz
+//For now this has been modified to not use rad damage since that has issues.
+*/
 //Adds radiation damage to .35 rounds. Acquired through raiding grayson machines.
 /obj/item/weapon/gun_upgrade/mechanism/glass_widow
 	name = "Grayson \"Glass Widow\" infuser"
-	desc = "An old technology from the grayson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal."
+	desc = "An old technology from the grayson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
 	icon_state = "Glass_Widow"
 
 /obj/item/weapon/gun_upgrade/mechanism/glass_widow/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_RADIATION = 5
+		GUN_UPGRADE_DAMAGE_BURN = 10,
+		GUN_UPGRADE_DAMAGE_TOX = 10,
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	I.gun_loc_tag = GUN_MECHANISM
-*/
+
 
 //Lets any revolver be made into a fully automatic weapon, but increases recoil. Acquirable through guild crafters.
 /obj/item/weapon/gun_upgrade/mechanism/weintraub
@@ -313,7 +315,7 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_BARREL
 
-//We don't use sanity damage and sanity damaging effects, but I'm keeping this commented out in case as some day do.
+//We don't use sanity damage and sanity damaging effects, but I'm keeping this commented out in case we some day do.
 // Add psy damage to your weapon
 /obj/item/weapon/gun_upgrade/mechanism/psionic_catalyst
 	name = "Moebius \"Mastermind\" psionic catalyst"

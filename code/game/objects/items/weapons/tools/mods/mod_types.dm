@@ -328,6 +328,10 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10,
 	UPGRADE_HEALTH_THRESHOLD = 10)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+	)
+	I.gun_loc_tag = GUN_GRIP
 	I.required_qualities = list(QUALITY_CUTTING,QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING)
 	I.prefix = "stabilized"
 
@@ -348,7 +352,7 @@
 
 /obj/item/weapon/tool_upgrade/refinement/ported_barrel
 	name = "ported barrel"
-	desc = "A barrel extension for a welding tool which helps manage gas pressure and keep the torch steady."
+	desc = "A barrel extension for a welding tool (or gun) which helps manage gas pressure and keep the torch (or barrel) steady. When attached to a gun it allows for greater recoil control and a smaller flash at the cost of stopping power."
 	icon_state = "ported_barrel"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 2)
 
@@ -361,12 +365,19 @@
 	UPGRADE_BULK = 1,
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_MUZZLEFLASH = 0.8,
+		GUN_UPGRADE_RECOIL = 0.8,
+		GUN_UPGRADE_DAMAGE_MULT = 0.8
+		)
+	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.gun_loc_tag = GUN_BARREL
 	I.required_qualities = list(QUALITY_WELDING)
 	I.prefix = "ported"
 
 /obj/item/weapon/tool_upgrade/refinement/compensatedbarrel
 	name = "gravity compensated barrel"
-	desc = "A barrel extension for welding tools that integrates a miniaturized gravity generator that help keep the torch steady by compensating the weight of the tool."
+	desc = "A barrel extension for welding tools that integrates a miniaturized gravity generator that help keep the torch steady by compensating the weight of the tool. It can also be attached to guns both energy and projectile to offer greater recoil control at the cost of stopping power."
 	icon_state = "compensatedbarrel"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GOLD = 1)
 
@@ -380,6 +391,11 @@
 	UPGRADE_FUELCOST_MULT = 1.05,
 	UPGRADE_BULK = 1
 	)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL = 0.6,
+		GUN_UPGRADE_DAMAGE_MULT = 0.8
+		)
+	I.gun_loc_tag = GUN_BARREL
 	I.required_qualities = list(QUALITY_WELDING)
 	I.prefix = "gravity-compensated"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
@@ -565,6 +581,33 @@
 	GUN_UPGRADE_OVERCHARGE_RATE = 1.2)
 	I.prefix = "intelligent"
 	I.req_fuel_cell = REQ_CELL
+
+/obj/item/weapon/tool_upgrade/augment/ai_tool_excelsior
+	name = "excelsior nanointegrated AI"
+	desc = "An attempt by the excelsior to copy the superior grayson nano-AI for their weaponry. It isn't nearly as good, but its cheaper to produce and can fit any weapon, not just energy based, as it draws its power from excelsior teleporation technology."
+	icon_state = "ai_tool_excelsior"
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_GOLD = 3)
+
+/obj/item/weapon/tool_upgrade/augment/ai_tool_excelsior/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_POWERCOST_MULT = 1.10,
+	UPGRADE_PRECISION = 7,
+	UPGRADE_WORKSPEED = 7,
+	UPGRADE_HEALTH_THRESHOLD = -20,
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 0.9,
+	GUN_UPGRADE_DAMAGE_MULT = 1.1,
+	GUN_UPGRADE_PEN_MULT = 1.1,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+	GUN_UPGRADE_MOVE_DELAY_MULT = 0.9,
+	GUN_UPGRADE_MUZZLEFLASH = 0.9,
+	GUN_UPGRADE_CHARGECOST = 0.9,
+	GUN_UPGRADE_OVERCHARGE_MAX = 0.9,
+	GUN_UPGRADE_OVERCHARGE_RATE = 1.1)
+	I.prefix = "collective"
 
 /obj/item/weapon/tool_upgrade/augment/repair_nano
 	name = "repair nano"
