@@ -15,12 +15,12 @@
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
 	price_tag = 3000 //good smg with normal recoil and silencer possibility
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	damage_multiplier = 0.8
+	damage_multiplier = 0.9
 	recoil_buildup = 2.5
 	one_hand_penalty = 20
-	silencer_type = /obj/item/weapon/silencer
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE)
 
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
 		FULL_AUTO_600

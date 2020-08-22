@@ -8,6 +8,9 @@
 /area/crawler)
 "c" = (
 /obj/structure/table/rack,
+/obj/random/material_rare,
+/obj/random/material_resources,
+/obj/random/material,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/crawler)
 "d" = (
@@ -23,6 +26,7 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/crawler)
 "g" = (
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/crawler)
 "h" = (
@@ -43,6 +47,9 @@
 /area/crawler)
 "m" = (
 /obj/structure/table/onestar,
+/obj/random/material_resources,
+/obj/random/material_resources,
+/obj/random/material_resources,
 /turf/simulated/floor/tiled/dark/danger,
 /area/crawler)
 "n" = (
@@ -55,6 +62,7 @@
 /area/crawler)
 "p" = (
 /obj/structure/table/onestar,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/crawler)
 "q" = (
@@ -62,12 +70,13 @@
 /area/crawler)
 "r" = (
 /obj/structure/table/reinforced,
+/obj/random/material,
+/obj/random/material,
+/obj/random/material,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/crawler)
 "s" = (
-/obj/item/modular_computer/console{
-	dir = 1
-	},
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/crawler)
 "t" = (
@@ -79,11 +88,13 @@
 /area/crawler)
 "v" = (
 /obj/structure/table/onestar,
+/obj/random/booze,
 /turf/simulated/floor/carpet/bcarpet,
 /area/crawler)
 "w" = (
 /obj/item/weapon/bedsheet/brown,
 /obj/structure/bed,
+/obj/random/credits,
 /turf/simulated/floor/carpet/bcarpet,
 /area/crawler)
 "x" = (
@@ -105,6 +116,7 @@
 /obj/machinery/light/built{
 	dir = 1
 	},
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/crawler)
 "C" = (
@@ -113,6 +125,7 @@
 /area/crawler)
 "D" = (
 /obj/machinery/light/built,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/crawler)
 "E" = (
@@ -129,7 +142,25 @@
 /area/crawler)
 "H" = (
 /obj/structure/closet/onestar/tier3,
+/obj/random/booze/low_chance,
+/obj/random/booze/low_chance,
+/obj/random/booze/low_chance,
 /turf/simulated/floor/carpet/bcarpet,
+/area/crawler)
+"U" = (
+/obj/random/lathe_disk/advanced/onestar,
+/turf/simulated/floor/tiled/dark/danger,
+/area/crawler)
+"V" = (
+/obj/structure/table/rack,
+/obj/random/material_rare,
+/obj/random/material_rare,
+/obj/random/material_rare,
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/crawler)
+"Y" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/white/gray_platform,
 /area/crawler)
 
 (1,1,1) = {"
@@ -157,7 +188,7 @@ a
 (3,1,1) = {"
 a
 e
-i
+U
 i
 q
 k
@@ -178,7 +209,7 @@ a
 "}
 (5,1,1) = {"
 a
-d
+Y
 x
 j
 r
@@ -203,7 +234,7 @@ b
 F
 j
 j
-c
+V
 A
 f
 f

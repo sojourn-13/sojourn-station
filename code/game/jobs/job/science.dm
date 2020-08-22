@@ -87,7 +87,7 @@
 	stat_modifiers = list(
 		STAT_MEC = 20,
 		STAT_COG = 30,
-		STAT_BIO = 20,
+		STAT_BIO = 10,
 	)
 
 	description = "The Scientist is a researcher representing the Soteria Institute, standing at the frontier of human advancement.<br>\

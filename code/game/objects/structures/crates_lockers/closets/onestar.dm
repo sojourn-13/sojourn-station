@@ -5,7 +5,7 @@
 /obj/structure/closet/onestar/tier1
 	name = "\improper Greyson forgotten closet"
 	desc = "It's an old Greyson closet. Doesn't seem like it contains anything worthwhile. Probably."
-	icon_state = "syndicate"
+	icon_state = "lootcloset"
 
 /obj/structure/closet/onestar/tier1/populate_contents()
 	new /obj/random/contraband/low_chance(src)
@@ -27,7 +27,7 @@
 /obj/structure/closet/onestar/tier2
 	name = "\improper Greyson forgotten closet"
 	desc = "It's an old Greyson closet. Looks like there might be some decent stuff inside."
-	icon_state = "syndicate"
+	icon_state = "lootcloset1"
 
 /obj/structure/closet/onestar/tier2/populate_contents()
 	new /obj/random/contraband/low_chance(src)
@@ -49,7 +49,7 @@
 /obj/structure/closet/onestar/tier3
 	name = "\improper Greyson forgotten closet"
 	desc = "It's an old Greyson closet. Might contain something very valuable, or so you hope."
-	icon_state = "syndicate"
+	icon_state = "lootcloset2"
 
 /obj/structure/closet/onestar/tier3/populate_contents()
 	new /obj/random/contraband/low_chance(src)
@@ -76,7 +76,7 @@
 //Tier 1
 /obj/structure/closet/onestar/tier1/normal
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "lootcloset"
 	old_chance = 70
 
 // Empty
@@ -86,7 +86,7 @@
 //Tier 2
 /obj/structure/closet/onestar/tier2/normal
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "lootcloset1"
 	old_chance = 30
 
 // Empty
@@ -96,7 +96,7 @@
 //Tier 3
 /obj/structure/closet/onestar/tier3/normal
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "lootcloset2"
 	old_chance = 10
 
 // Empty
@@ -108,7 +108,7 @@
 //Tier 1
 /obj/structure/closet/onestar/tier1/special
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "special_lootcloset"
 	old_chance = 70
 
 /obj/structure/closet/onestar/tier1/special/populate_contents()
@@ -123,7 +123,7 @@
 //Tier 2
 /obj/structure/closet/onestar/tier2/special
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "special_lootcloset1"
 	old_chance = 30
 
 /obj/structure/closet/onestar/tier2/special/populate_contents()
@@ -138,7 +138,7 @@
 //Tier 3
 /obj/structure/closet/onestar/tier3/special
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "special_lootcloset2"
 	old_chance = 10
 
 /obj/structure/closet/onestar/tier3/special/populate_contents()
@@ -154,7 +154,7 @@
 //Tier 1
 /obj/structure/closet/onestar/tier1/mineral
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "mineral_lootcloset"
 	old_chance = 70
 
 /obj/structure/closet/onestar/tier1/mineral/populate_contents()
@@ -169,7 +169,7 @@
 //Tier 2
 /obj/structure/closet/onestar/tier2/mineral
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "mineral_lootcloset1"
 	old_chance = 30
 
 /obj/structure/closet/onestar/tier2/mineral/populate_contents()
@@ -184,7 +184,7 @@
 //Tier 3
 /obj/structure/closet/onestar/tier3/mineral
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "mineral_lootcloset2"
 	old_chance = 10
 
 /obj/structure/closet/onestar/tier3/mineral/populate_contents()
@@ -200,7 +200,7 @@
 //Tier 1
 /obj/structure/closet/onestar/tier1/medical
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "medical_lootcloset"
 	old_chance = 70
 
 /obj/structure/closet/onestar/tier1/medical/populate_contents()
@@ -215,7 +215,7 @@
 //Tier 2
 /obj/structure/closet/onestar/tier2/medical
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "medical_lootcloset1"
 	old_chance = 30
 
 /obj/structure/closet/onestar/tier2/medical/populate_contents()
@@ -230,7 +230,7 @@
 //Tier 3
 /obj/structure/closet/onestar/tier3/medical
 	name = "\improper Greyson forgotten closet"
-	icon_state = "syndicate"
+	icon_state = "medical_lootcloset2"
 	old_chance = 10
 
 /obj/structure/closet/onestar/tier3/medical/populate_contents()

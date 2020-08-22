@@ -12,7 +12,8 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5)
 	price_tag = 2500
 	projectile_type = /obj/item/projectile/beam/midlaser
-	firemodes = list(
+	gun_tags = list(GUN_LASER, GUN_ENERGY)
+	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 	)
@@ -39,7 +40,8 @@
 	one_hand_penalty = 15 //full sized shotgun level
 	fire_delay = 14 //Equivalent to a pump then fire time
 	recoil_buildup = 1.5
-	firemodes = list(
+	damage_multiplier = 0.9
+	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
 		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
 		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/shotgun/incendiary/railgun, icon="destroy"),
@@ -74,9 +76,10 @@
 	fire_delay = 12
 	charge_cost = 200
 	recoil_buildup = 1
+	damage_multiplier = 0.8
 	can_dual = 1
 	twohanded = FALSE
-	firemodes = list(
+	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/kurtz/railgun, icon="kill"),
 		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/kurtz/rubber/railgun, icon="stun"),
 		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/kurtz/incendiary, icon="destroy"),
@@ -103,8 +106,9 @@
 	one_hand_penalty = 15 //full sized shotgun level
 	fire_delay = 14 //Equivalent to a pump then fire time
 	recoil_buildup = 1.5
+	damage_multiplier = 0.8
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
-	firemodes = list(
+	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/hrifle/railgun, icon="kill"),
 		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/lrifle/incendiary, icon="destroy"),
 	)
@@ -123,9 +127,9 @@
 
 /obj/item/weapon/gun/energy/lasersmg
 	name = "Disco Vazer \"Lasblender\""
-	desc = "This conversion of the \"Texan\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions.\
-                        While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
-                        Sometimes jokingly called the \"Disco Vazer\"."
+	desc = "This conversion of the \"Texan\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
+	While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
+	Sometimes jokingly called the \"Disco Vazer\"."
 	icon = 'icons/obj/guns/energy/lasersmg-1.dmi'
 	icon_state = "lasersmg"
 	item_state = "lasersmg"
@@ -139,23 +143,29 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 11, MATERIAL_STEEL = 13, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1, MATERIAL_GLASS = 2)
 	price_tag = 1000
-	damage_multiplier = 0.9 //makeshift laser
-	recoil_buildup = 4
-	one_hand_penalty = 3
+	damage_multiplier = 0.5 //makeshift laser
+	recoil_buildup = 3
+	one_hand_penalty = 4
+	init_offset = 7 //makeshift laser
 	projectile_type = /obj/item/projectile/beam
 	suitable_cell = /obj/item/weapon/cell/medium
-	charge_cost = 50 // 2 bursts with a 800m cell
+	charge_cost = 25 // 4 bursts with a 800m cell
 
-	firemodes = list(
-		BURST_8_ROUND
+	init_firemodes = list(
+		BURST_8_ROUND,
+		FULL_AUTO_400
 		)
 
-
+/obj/item/weapon/gun/energy/lasersmg/alt
+	name = "Disco Vazer \"Lasblender\""
+	desc = "This conversion of the \"MAC\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
+	While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
+	Sometimes jokingly called the \"Disco Vazer\"."
 
 /obj/item/weapon/gun/energy/lasersmg/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
 	projectile_color = pick(list("#FF0000", "#0000FF", "#00FF00", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"))
 	..()
-	return..()
+	return ..()
 
 /obj/item/weapon/gun/energy/lasersmg/update_icon()
 	..()
@@ -188,6 +198,7 @@
 	use_external_power = TRUE
 	safety = FALSE
 	restrict_safety = TRUE
+	damage_multiplier = 0.7
 	twohanded = FALSE
 
 /obj/item/weapon/gun/energy/laser/practice
@@ -201,17 +212,18 @@
 	name = "\"Cog\" lasgun"
 	icon = 'icons/obj/guns/energy/retro.dmi'
 	icon_state = "retro"
-	item_state = "retro"
+	item_state = null	//so the human update icon uses the icon_state instead.
+	item_charge_meter = TRUE
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous."
 	fire_sound = 'sound/weapons/Laser.ogg'
-	slot_flags = SLOT_BELT
-	w_class = ITEM_SIZE_NORMAL
-	can_dual = 1
+	slot_flags = SLOT_BELT|SLOT_BACK
+	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_STEEL = 12)
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
+	one_hand_penalty = 10
 	price_tag = 2000
-	firemodes = list(
+	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 	)
@@ -233,7 +245,7 @@
 	origin_tech = null
 	self_recharge = TRUE
 	price_tag = 4500
-	firemodes = list(
+	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 	)
@@ -257,7 +269,7 @@
 	price_tag = 3000
 	one_hand_penalty = 5
 	twohanded = TRUE
-	firemodes = list(
+	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 		)
@@ -266,6 +278,7 @@
 	name = "mounted laser cannon"
 	self_recharge = TRUE
 	use_external_power = TRUE
+	damage_multiplier = 0.7 //Mounted cannon deals less do to being a mini-verson
 	recharge_time = 10
 	safety = FALSE
 	restrict_safety = TRUE
@@ -275,6 +288,7 @@
 	name = "SDF LR \"Strahl\""
 	desc = "A miniaturized laser rifle, remounted for robotic use only."
 	icon_state = "laser_turret"
+	damage_multiplier = 0.9
 	charge_meter = FALSE
 
 /obj/item/weapon/gun/energy/laser/railgun/mounted

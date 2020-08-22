@@ -77,7 +77,7 @@
 	icon_state = "botanist"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
+	armor = list(melee = 30, bullet = 20, energy = 15, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/acolyte
@@ -86,7 +86,7 @@
 	icon_state = "acolyte"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
+	armor = list(melee = 30, bullet = 20, energy = 15, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/custodian
@@ -95,7 +95,7 @@
 	icon_state = "custodian"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
+	armor = list(melee = 30, bullet = 20, energy = 15, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/prime
@@ -120,7 +120,7 @@
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100)
+	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
 	extra_allowed = list(/obj/item/weapon/extinguisher,
 						 /obj/item/weapon/tool,
 						 /obj/item/weapon/tool_upgrade,
@@ -159,7 +159,7 @@
 	slowdown = 0.5
 	armor = list(
 		melee = 25,
-		bullet = 75,
+		bullet = 60,
 		energy = 25,
 		bomb = 10,
 		bio = 0,
@@ -180,7 +180,7 @@
 	armor = list(
 		melee = 25,
 		bullet = 25,
-		energy = 75,
+		energy = 60,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -227,7 +227,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	slowdown = 0.7
+	slowdown = 0.9
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	armor = list(
 		melee = 35,
@@ -262,7 +262,7 @@
 	item_state = "swat_suit"
 	flags_inv = HIDEJUMPSUIT
 	armor = list(
-		melee = 75,
+		melee = 60,
 		bullet = 25,
 		energy = 25,
 		bomb = 25,
@@ -301,7 +301,7 @@
 	icon_state = "platecarrier"
 	item_state = "platecarrier"
 	blood_overlay_type = "armor"
-	armor = list(melee = 35, bullet = 60, energy = 15, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 45, energy = 15, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/ih
 	name = "plate carrier"
@@ -320,7 +320,7 @@
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman liverly and has a stain resistant coating."
 	icon_state = "platecarrier_corpsman"
 	item_state = "platecarrier_corpsman"
-	armor = list(melee = 35, bullet = 50, energy = 15, bomb = 10, bio = 20, rad = 0)
+	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 10, bio = 20, rad = 0)
 
 obj/item/clothing/suit/armor/platecarrier/green
 	name = "green plate carrier"
@@ -341,7 +341,7 @@ obj/item/clothing/suit/armor/platecarrier/tan
 	item_state = "platecarrier_ih"
 	blood_overlay_type = "armor"
 	slowdown = 0.15
-	armor = list(melee = 40, bullet = 60, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 50, energy = 20, bomb = 10, bio = 0, rad = 0)
 
 
 obj/item/clothing/suit/armor/flackvest
@@ -351,7 +351,7 @@ obj/item/clothing/suit/armor/flackvest
 	item_state = "flakvest"
 	blood_overlay_type = "armor"
 	slowdown = 0.5
-	armor = list(melee = 40, bullet = 50, energy = 20, bomb = 50, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
 
 obj/item/clothing/suit/armor/flackvest/militia
 	name = "blackshield flak vest"
@@ -374,7 +374,7 @@ obj/item/clothing/suit/armor/flackvest/commander
 	item_state = "flakvest_green"
 	blood_overlay_type = "armor"
 	slowdown = 0.2
-	armor = list(melee = 50, bullet = 60, energy = 30, bomb = 50, bio = 0, rad = 0)
+	armor = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
 
 obj/item/clothing/suit/armor/commander
 	name = "commander's armored coat"
@@ -383,7 +383,7 @@ obj/item/clothing/suit/armor/commander
 	item_state = "commander"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 50, bullet = 50, energy = 25, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = 45, bullet = 50, energy = 25, bomb = 30, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20

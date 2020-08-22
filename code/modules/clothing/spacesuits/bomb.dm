@@ -6,8 +6,8 @@
 	desc = "Use in case of bomb."
 	icon_state = "bombsuit"
 	armor = list(
-		melee = 30,
-		bullet = 30,
+		melee = 20,
+		bullet = 20,
 		energy = 30,
 		bomb = 100,
 		bio = 100,
@@ -26,8 +26,8 @@
 	permeability_coefficient = 0.01
 	slowdown = 2
 	armor = list(
-		melee = 30,
-		bullet = 30,
+		melee = 20,
+		bullet = 20,
 		energy = 30,
 		bomb = 100,
 		bio = 100,

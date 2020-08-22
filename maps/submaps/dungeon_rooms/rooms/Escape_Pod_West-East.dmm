@@ -34,6 +34,10 @@
 /obj/random/mob/roomba,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
+"Z" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
 
 (1,1,1) = {"
 e
@@ -82,11 +86,11 @@ e
 (5,1,1) = {"
 e
 c
-c
+Z
 e
 j
 e
-c
+Z
 c
 a
 "}
@@ -126,11 +130,11 @@ a
 (9,1,1) = {"
 e
 c
-c
+Z
 e
 j
 e
-c
+Z
 c
 a
 "}

@@ -326,7 +326,7 @@
 	if(!Proj || Proj.nodamage)
 		return
 
-	adjustBruteLoss(Proj.damage)
+	adjustBruteLoss(Proj.get_total_damage())
 	return 0
 
 /mob/living/simple_animal/rejuvenate()

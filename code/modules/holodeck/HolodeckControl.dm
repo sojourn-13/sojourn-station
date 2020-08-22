@@ -275,6 +275,7 @@
 	holographic_objs = A.copy_contents_to(linkedholodeck , 1)
 	for(var/obj/holo_obj in holographic_objs)
 		holo_obj.alpha *= 0.8 //give holodeck objs a slight transparency
+		//holo_obj.plane = 95 //This makes all objects load on plane 4, set this to plane 2 (where the holodeck would be on Soj instead of Eris). Unsure what the number for plane 2 is, will fix later. This is not dynamic.
 
 	if(HP.ambience)
 		linkedholodeck.forced_ambience = HP.ambience

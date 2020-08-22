@@ -71,6 +71,7 @@
 				/obj/item/weapon/storage/pill_bottle/dylovene = 2,
 				/obj/item/weapon/storage/pill_bottle/tramadol = 2,
 				/obj/item/weapon/mop = 3,
+				/obj/item/clothing/mask/vape/better = 1,
 //				/obj/item/weapon/lipstick/random = 3,
 				/obj/item/weapon/inflatable_dispenser = 2,
 				/obj/item/weapon/grenade/chem_grenade/cleaner = 2,

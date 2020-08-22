@@ -174,6 +174,97 @@
 	armor_penetration = ARMOR_PEN_MODERATE
 	max_upgrades = 3
 
+/obj/item/weapon/tool/knife/dagger
+	name = "dagger"
+	desc = "A sharp implement; difference between this and a knife is it is sharp on both sides. Good for finding holes in armor and exploiting them."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "dagger"
+	item_state = "dagger"
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
+	force = WEAPON_FORCE_NORMAL
+	armor_penetration = ARMOR_PEN_DEEP
+
+/obj/item/weapon/tool/knife/dagger/ceremonial
+	name = "ceremonial dagger"
+	desc = "Given to high ranking officers as a signature of office, while it isn't meant to be a weapon it certainly does the job."
+	icon_state = "fancydagger"
+	item_state = "fancydagger"
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
+
+/obj/item/weapon/tool/knife/dagger/bluespace
+	name = "Soteria \"Displacement Dagger\""
+	desc = "A teleportation matrix attached to a dagger, for sending things you stab it into very far away."
+	icon_state = "bluespace_dagger"
+	item_state = "bluespace_dagger"
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5, MATERIAL_PLASMA = 20)
+	force = WEAPON_FORCE_NORMAL+1
+	embed_mult = 25 //You WANT it to embed
+	suitable_cell = /obj/item/weapon/cell/small
+	toggleable = TRUE
+	use_power_cost = 0.4
+	passive_power_cost = 0.4
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_BLUESPACE = 4)
+	var/mob/living/embedded
+	var/last_teleport
+
+/obj/item/weapon/tool/knife/dagger/bluespace/New()
+	..()
+	item_flags |= BLUESPACE
+
+/obj/item/weapon/tool/knife/dagger/bluespace/on_embed(var/mob/user)
+	embedded = user
+
+/obj/item/weapon/tool/knife/dagger/bluespace/on_embed_removal(var/mob/user)
+	embedded = null
+
+/obj/item/weapon/tool/knife/dagger/bluespace/Process()
+	..()
+	if(switched_on && embedded && cell)
+		if(last_teleport + max(3 SECONDS, embedded.mob_size*(cell.charge/cell.maxcharge)) < world.time)
+			var/area/A = random_ship_area()
+			var/turf/T = A.random_space()
+			if(T && cell.checked_use(use_power_cost*embedded.mob_size))
+				last_teleport = world.time
+				playsound(T, "sparks", 50, 1)
+				anim(T,embedded,'icons/mob/mob.dmi',,"phaseout",,embedded.dir)
+				embedded.forceMove(T)
+				playsound(T, 'sound/effects/phasein.ogg', 25, 1)
+				playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
+				anim(T,embedded,'icons/mob/mob.dmi',,"phasein",,embedded.dir)
+
+/obj/item/weapon/tool/knife/dagger/assassin
+	name = "dagger"
+	desc = "A sharp implement, with a twist; The handle acts as a reservoir for reagents, and the blade injects those that it hits."
+	icon_state = "ass_dagger"
+	item_state = "ass_dagger"
+	reagent_flags = INJECTABLE|TRANSPARENT
+
+/obj/item/weapon/tool/knife/dagger/assassin/New()
+	..()
+	create_reagents(80)
+
+/obj/item/weapon/tool/knife/dagger/assassin/resolve_attackby(atom/target, mob/user)
+	.=..()
+	if(!target.reagents || !isliving(target))
+		return
+
+	if(!reagents.total_volume)
+		return
+
+	if(!target.reagents.get_free_space())
+		return
+	var/modifier = 1
+	var/reagent_modifier = 1
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		modifier += min(30,H.stats.getStat(STAT_ROB))
+		reagent_modifier = CLAMP(round(H.stats.getStat(STAT_BIO)/10), 1, 5)
+	var/mob/living/L = target
+	if(prob(min(100,(100-L.getarmor(user.targeted_organ, ARMOR_MELEE))+modifier)))
+		var/trans = reagents.trans_to_mob(target, rand(1,3)*reagent_modifier, CHEM_BLOOD)
+		admin_inject_log(user, target, src, reagents.log_list(), trans)
+		to_chat(user, SPAN_NOTICE("You inject [trans] units of the solution. [src] now contains [src.reagents.total_volume] units."))
+
 /obj/item/weapon/tool/scythe
 	name = "scythe"
 	desc = "A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow."
@@ -189,6 +280,8 @@
 	slot_flags = SLOT_BACK
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 15, QUALITY_SAWING = 10)
+
+
 
 //Flails
 /obj/item/weapon/tool/chainofcommand
@@ -241,6 +334,42 @@
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_SHALLOW
 
+/obj/item/weapon/tool/sword/katana/nano
+	name = "\improper Soteria \"Muramasa\" katana"
+	desc = "After an extensive binge of ancient animated recordings, a scientist decided to upgrade a recovered katana."
+	icon_state = "eutactic_katana"
+	item_state = "eutactic_katana"
+	toggleable = TRUE
+
+	suitable_cell = /obj/item/weapon/cell/small
+
+	use_power_cost = 0.4
+	passive_power_cost = 0.4
+
+	switched_on_qualities = list(QUALITY_CUTTING = 25)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 6)
+	switched_on_force = WEAPON_FORCE_LETHAL
+
+/obj/item/weapon/tool/sword/katana/nano/turn_on(mob/user)
+	.=..()
+	if(.)
+		embed_mult = 0
+		playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
+
+/obj/item/weapon/tool/sword/katana/nano/turn_off(mob/user)
+	..()
+	embed_mult = initial(embed_mult)
+	playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
+
+/obj/item/weapon/tool/sword/katana/nano/update_icon()
+	..()
+	if(cell)
+		overlays += "[icon_state]_cell"
+	if(switched_on)
+		overlays += "[icon_state]_power_on"
+	else
+		overlays += "[icon_state]_power_off"
+
 /obj/item/weapon/tool/sword/crusader
 	name = "crusader greatsword"
 	desc = "A traditional blade meeting the materials and design of the future. It's made from durasteel and the craftmenship is of the highest quality. It bears the insignia of the Church. Deus Vult."
@@ -258,7 +387,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "sledgehammer0"
 	item_state = "sledgehammer1"
-	force = WEAPON_FORCE_BRUTAL
+	force = WEAPON_FORCE_LETHAL
 	slot_flags = SLOT_BELT|SLOT_BACK
 	armor_penetration = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_PAINFUL

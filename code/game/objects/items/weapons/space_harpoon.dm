@@ -25,6 +25,10 @@
 	if(!cell && suitable_cell)
 		cell = new suitable_cell(src)
 
+/obj/item/weapon/bluespace_harpoon/New()
+	..()
+	item_flags |= BLUESPACE
+
 /obj/item/weapon/bluespace_harpoon/get_cell()
 	return cell
 

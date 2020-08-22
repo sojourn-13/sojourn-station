@@ -197,7 +197,7 @@
 	move_to_delay = 2
 	speak_emote = list("chitters", "sharpens its claws")
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
-	alpha = 15
+	alpha = 50
 	faction = "stalker"
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
@@ -215,11 +215,7 @@
 
 /mob/living/simple_animal/hostile/nightmare/LoseTarget()
 	..()
-	alpha = 15
-
-/mob/living/simple_animal/hostile/nightmare/LostTarget()
-	..()
-	alpha = 15
+	alpha = 50
 
 /mob/living/simple_animal/hostile/nightmare/death()
 	..()

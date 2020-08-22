@@ -43,6 +43,7 @@
 /area/crawler)
 "l" = (
 /obj/structure/closet/onestar/tier1,
+/obj/random/medical,
 /turf/simulated/floor/tiled/dark/golden,
 /area/crawler)
 "m" = (
@@ -100,6 +101,8 @@
 /area/crawler)
 "x" = (
 /obj/structure/table/onestar,
+/obj/random/medical,
+/obj/random/medical,
 /turf/simulated/floor/tiled/white,
 /area/crawler)
 "y" = (
@@ -109,11 +112,21 @@
 "z" = (
 /obj/structure/table/onestar,
 /obj/structure/window/reinforced,
+/obj/random/medical,
+/obj/random/medical,
 /turf/simulated/floor/tiled/white,
 /area/crawler)
 "B" = (
 /obj/effect/decal/cleanable/ash,
 /turf/simulated/floor/tiled/dark/golden,
+/area/crawler)
+"I" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/dark/golden,
+/area/crawler)
+"V" = (
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 
 (1,1,1) = {"
@@ -154,7 +167,7 @@ a
 e
 c
 k
-k
+V
 k
 c
 c
@@ -195,7 +208,7 @@ b
 "}
 (8,1,1) = {"
 b
-f
+I
 f
 f
 k
@@ -221,7 +234,7 @@ w
 c
 k
 k
-k
+V
 c
 c
 a

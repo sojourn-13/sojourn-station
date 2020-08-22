@@ -54,11 +54,11 @@
 	response_harm   = "stomps"
 	stop_automated_movement = 1
 	mob_size = 3
-	faction = "lake"
+	faction = "pond"
 
 /mob/living/simple_animal/frog/rare
 	name = "Pepe"
-	desc = "It's quite colorful but you can't help but feel he is incredibly smug."
+	desc = "It's quite colorful but you can't help but feel he is incredibly smug and super rare."
 	icon_state = "rare_frog"
 	mob_size = MOB_TINY
 	speak_emote = list("ribbits smugly")
@@ -71,4 +71,4 @@
 	response_harm   = "stomps"
 	stop_automated_movement = 1
 	mob_size = 3
-	faction = "lake"
+	faction = "pond"

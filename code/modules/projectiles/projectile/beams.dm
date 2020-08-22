@@ -4,8 +4,7 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 30
-	damage_type = BURN
+	damage_types = list(BURN = 20)
 	check_armour = ARMOR_ENERGY
 	eyeblur = 4
 	var/frequency = 1
@@ -19,37 +18,36 @@
 	heat = 100
 
 /obj/item/projectile/beam/weak
-	damage = 20
+	damage_types = list(BURN = 16)
 
 /obj/item/projectile/beam/weak/smg
-	damage = 10
+	damage_types = list(BURN = 10)
 
 /obj/item/projectile/beam/weak/lethal
-	damage = 30
+	damage_types = list(BURN = 20)
 	armor_penetration = -25
 
 /obj/item/projectile/beam/weak/ap
-	damage = 15
-	armor_penetration = 40
+	damage_types = list(BURN = 15)
+	armor_penetration = 20
 
 /obj/item/projectile/beam/practice
 	name = "laser"
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 0
-	damage_type = BURN
+	damage_types = list(BURN = 0)
 	check_armour = ARMOR_ENERGY
 	eyeblur = 2
 
 /obj/item/projectile/beam/midlaser
-	damage = 30
+	damage_types = list(BURN = 20)
 	armor_penetration = 10
 
 /obj/item/projectile/beam/heavylaser
 	name = "heavy laser"
 	icon_state = "heavylaser"
-	damage = 50
-	armor_penetration = 20
+	damage_types = list(BURN = 35)
+	armor_penetration = 25
 
 	muzzle_type = /obj/effect/projectile/laser_heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser_heavy/tracer
@@ -58,7 +56,7 @@
 /obj/item/projectile/beam/xray
 	name = "xray beam"
 	icon_state = "xray"
-	damage = 25
+	damage_types = list(BURN = 25)
 	armor_penetration = 40
 
 	muzzle_type = /obj/effect/projectile/xray/muzzle
@@ -68,8 +66,8 @@
 /obj/item/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
-	damage = 40
-	armor_penetration = 20
+	damage_types = list(BURN = 40)
+	armor_penetration = 25
 
 	muzzle_type = /obj/effect/projectile/laser_pulse/muzzle
 	tracer_type = /obj/effect/projectile/laser_pulse/tracer
@@ -83,7 +81,7 @@
 /obj/item/projectile/beam/emitter
 	name = "emitter beam"
 	icon_state = "emitter"
-	damage = 0 // The actual damage is computed in /code/modules/power/singularity/emitter.dm
+	damage_types = list(BURN = 0) // The actual damage is computed in /code/modules/power/singularity/emitter.dm
 
 	muzzle_type = /obj/effect/projectile/emitter/muzzle
 	tracer_type = /obj/effect/projectile/emitter/tracer
@@ -93,9 +91,8 @@
 	name = "lasertag beam"
 	icon_state = "bluelaser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 0
+	damage_types = list(BURN = 0)
 	no_attack_log = 1
-	damage_type = BURN
 	check_armour = ARMOR_ENERGY
 
 	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
@@ -113,9 +110,8 @@
 	name = "lasertag beam"
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 0
+	damage_types = list(BURN = 0)
 	no_attack_log = 1
-	damage_type = BURN
 	check_armour = ARMOR_ENERGY
 
 /obj/item/projectile/beam/lastertag/red/on_hit(atom/target)
@@ -129,8 +125,7 @@
 	name = "lasertag beam"
 	icon_state = "omnilaser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 0
-	damage_type = BURN
+	damage_types = list(BURN = 0)
 	check_armour = ARMOR_ENERGY
 
 	muzzle_type = /obj/effect/projectile/laser_omni/muzzle
@@ -147,8 +142,8 @@
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
 	icon_state = "xray"
-	damage = 60
-	armor_penetration = 50
+	damage_types = list(BURN = 50)
+	armor_penetration = 40
 	stun = 3
 	weaken = 3
 	stutter = 3
@@ -163,7 +158,7 @@
 	nodamage = 1
 	taser_effect = 1
 	agony = 30
-	damage_type = HALLOSS
+	damage_types = list(HALLOSS = 30)
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer

@@ -16,8 +16,9 @@
 	penetration_multiplier = 1.1
 	recoil_buildup = 6
 	one_hand_penalty = 8
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 
-	firemodes = list(
+	init_firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),
 		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)

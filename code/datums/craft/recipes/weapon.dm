@@ -78,10 +78,25 @@
 	)
 
 /datum/craft_recipe/weapon/lasersmg
-	name = "Lasblender"
+	name = "Lasblender - Texin"
 	result = /obj/item/weapon/gun/energy/lasersmg
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/automatic/texan, 1),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL, "time" = 10),
+		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
+		list(/obj/item/weapon/computer_hardware/led, 1),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(/obj/item/weapon/stock_parts/capacitor, 1, "time" = 5),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
+		list(QUALITY_ADHESIVE, 15, 70)
+	)
+
+/datum/craft_recipe/weapon/lasersmg_alt
+	name = "Lasblender - Mac"
+	result = /obj/item/weapon/gun/energy/lasersmg/alt
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/automatic/mac, 1),
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL, "time" = 10),
 		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
@@ -120,7 +135,7 @@
 
 /datum/craft_recipe/weapon/homewrecker
 	name = "homewrecker"
-	result = /obj/item/weapon/tool/homewrecker
+	result = /obj/item/weapon/tool/hammer/homewrecker
 	steps = list(
 		list(/obj/item/stack/rods, 12, "time" = 30),
 		list(CRAFT_MATERIAL, 30, MATERIAL_STEEL),
@@ -169,6 +184,16 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
+/datum/craft_recipe/weapon/mace
+	name = "makeshift mace"
+	result = /obj/item/weapon/tool/hammer/mace/makeshift
+	steps = list(
+		list(/obj/item/stack/rods, 5, "time" = 15),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10)
+	)
 
 /datum/craft_recipe/weapon/nailed_bat
 	name = "nailed bat"

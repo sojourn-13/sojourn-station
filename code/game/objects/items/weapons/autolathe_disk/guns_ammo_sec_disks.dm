@@ -541,16 +541,7 @@
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pulse_rifle
-	disk_name = "PAR - 10mm Caseless Pulse Rifle"
-	icon_state = "black"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/pulse_rifle,
-		/datum/design/autolathe/ammo/c10x24,
-		/datum/design/autolathe/ammo/box_10x24,
-	)
+// .257
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov
 	disk_name = "SA - .257 Kalashnikov Rifle"
@@ -602,7 +593,7 @@
 	)
 
 
-// .30 Rifles
+// 7.5 Rifles
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/boltgun_sa
 	disk_name = "SA - 7.5mm Novakovic Rifle"
@@ -742,4 +733,17 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 	designs = list(
 		/datum/design/autolathe/gun/pulse_cassad,
 		/datum/design/autolathe/cell/medium/high,
+	)
+
+//Pulse Rifle
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pulse_rifle
+	disk_name = "PAR - 10mm Caseless Pulse Rifle"
+	icon_state = "black"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/pulse_rifle,
+		/datum/design/autolathe/ammo/c10x24,
+		/datum/design/autolathe/ammo/box_10x24,
 	)

@@ -72,6 +72,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/random/booze,
+/obj/random/booze,
 /turf/simulated/floor/wood,
 /area/crawler)
 "r" = (
@@ -82,6 +84,8 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/random/ammo_fancy,
+/obj/random/ammo_fancy,
 /turf/simulated/floor/wood,
 /area/crawler)
 "s" = (
@@ -107,6 +111,7 @@
 "y" = (
 /obj/structure/table/onestar,
 /obj/item/device/lighting/toggleable/lamp/green,
+/obj/random/booze,
 /turf/simulated/floor/wood,
 /area/crawler)
 "z" = (
@@ -118,6 +123,7 @@
 /area/crawler)
 "A" = (
 /obj/structure/table/onestar,
+/obj/random/structures/os,
 /turf/simulated/floor/wood,
 /area/crawler)
 "B" = (
@@ -161,6 +167,35 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/crawler)
+"I" = (
+/obj/random/structures/os,
+/turf/simulated/floor/wood,
+/area/crawler)
+"N" = (
+/obj/structure/table/onestar,
+/obj/random/structures/os,
+/turf/simulated/floor/carpet/bcarpet,
+/area/crawler)
+"O" = (
+/obj/random/credits,
+/turf/simulated/floor/tiled/cafe,
+/area/crawler)
+"W" = (
+/obj/random/credits,
+/turf/simulated/floor/wood,
+/area/crawler)
+"Y" = (
+/obj/structure/table/rack,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/random/gun_fancy,
+/obj/random/gun_fancy,
+/turf/simulated/floor/wood,
+/area/crawler)
 
 (1,1,1) = {"
 a
@@ -180,7 +215,7 @@ y
 A
 c
 v
-p
+O
 G
 a
 "}
@@ -199,7 +234,7 @@ a
 a
 g
 s
-c
+W
 c
 a
 F
@@ -234,7 +269,7 @@ c
 c
 C
 E
-k
+N
 c
 r
 b
@@ -243,11 +278,11 @@ b
 b
 e
 c
+N
 k
-k
-k
+N
 c
-q
+Y
 b
 "}
 (9,1,1) = {"
@@ -257,7 +292,7 @@ n
 D
 D
 j
-c
+W
 c
 b
 "}
@@ -269,7 +304,7 @@ c
 c
 c
 d
-c
+I
 a
 "}
 (11,1,1) = {"

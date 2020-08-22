@@ -28,7 +28,6 @@
 		opened = !opened
 	update_icon()
 
-
 /obj/structure/extinguisher_cabinet/attack_hand(mob/user)
 	if(isrobot(user))
 		return
@@ -59,6 +58,28 @@
 	else
 		opened = !opened
 	update_icon()
+
+/obj/structure/extinguisher_cabinet/proc/toggle_open(mob/user)
+	if(isrobot(user))
+		return
+	if(user.incapacitated())
+		to_chat(user, SPAN_WARNING("You can't do that right now!"))
+		return
+	if(!in_range(src, user))
+		return
+	else
+		playsound(src.loc, 'sound/machines/Custom_extin.ogg', 50, 0)
+		opened = !opened
+		update_icon()
+
+/obj/structure/extinguisher_cabinet/AltClick(mob/living/user)
+	src.toggle_open(user)
+
+/obj/structure/extinguisher_cabinet/verb/toggle(mob/living/usr)
+	set name = "Open/Close"
+	set category = "Object"
+	set src in oview(1)
+	src.toggle_open(usr)
 
 /obj/structure/extinguisher_cabinet/update_icon()
 	if(!opened)

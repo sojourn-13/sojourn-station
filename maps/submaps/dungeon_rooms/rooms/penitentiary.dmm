@@ -8,8 +8,8 @@
 "h" = (/obj/machinery/light/floor,/turf/simulated/floor/tiled/dark/brown_platform,/area/crawler)
 "i" = (/obj/structure/table/onestar,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 "j" = (/turf/simulated/floor/plating/under,/area/crawler)
-"k" = (/obj/structure/railing/grey,/obj/structure/railing/grey{dir = 4},/turf/simulated/floor/plating/under,/area/crawler)
-"l" = (/obj/machinery/computer/prisoner{dir = 4},/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
+"k" = (/obj/structure/railing/grey,/obj/structure/railing/grey{dir = 4},/obj/random/structures/os,/turf/simulated/floor/plating/under,/area/crawler)
+"l" = (/obj/structure/salvageable/console_os{dir = 4},/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 "m" = (/obj/structure/bed/chair/custom/onestar/red,/turf/simulated/floor/tiled/dark/brown_platform,/area/crawler)
 "n" = (/obj/structure/railing/grey,/turf/simulated/floor/plating/under,/area/crawler)
 "o" = (/obj/crawler/crawler_wallbreaker/vertical,/turf/simulated/wall/untinted/onestar_reinforced,/area/crawler)
@@ -26,10 +26,12 @@
 "z" = (/obj/effect/floor_decal/industrial/warning,/obj/structure/window/reinforced,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 "A" = (/obj/effect/floor_decal/industrial/warning,/obj/machinery/door/window/southleft,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
 "C" = (/obj/structure/low_wall/onestar,/obj/effect/window_lwall_spawn/smartspawn/onestar,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
+"M" = (/obj/structure/table/onestar,/obj/random/structures/os,/turf/simulated/floor/tiled/dark/brown_perforated,/area/crawler)
+"X" = (/obj/random/structures/os,/turf/simulated/floor/plating/under,/area/crawler)
 
 (1,1,1) = {"
 aaaaabbbaaaaa
-acdefghgiajja
+acdefghgMajXa
 akdalgmgianno
 bqrsaCCCasuub
 bvwuuuuutuuub

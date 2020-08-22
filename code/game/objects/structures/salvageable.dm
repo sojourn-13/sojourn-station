@@ -136,6 +136,15 @@ obj/structure/salvageable/computer/Initialize()
 		/obj/item/organ/external/robotic/l_leg = 20,
 		/obj/item/organ/external/robotic/r_leg = 20,
 		/obj/item/organ/external/robotic/groin = 10,
+		/obj/item/organ/external/robotic/moebius/l_arm = 5,
+		/obj/item/organ/external/robotic/moebius/r_arm = 5,
+		/obj/item/organ/external/robotic/moebius/l_leg = 5,
+		/obj/item/organ/external/robotic/moebius/r_leg = 5,
+		/obj/item/organ/external/robotic/moebius/groin = 3,
+		/obj/item/organ/external/robotic/excelsior/l_arm = 1,
+		/obj/item/organ/external/robotic/excelsior/r_arm = 1,
+		/obj/item/organ/external/robotic/excelsior/l_leg = 1,
+		/obj/item/organ/external/robotic/excelsior/r_leg = 1,
 		/obj/item/weapon/implantcase = 30,
 		/obj/item/weapon/implanter = 30,
 		/obj/item/stack/material/steel{amount = 10} = 30,
@@ -284,7 +293,9 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/stock_parts/micro_laser/one_star = 40,
 		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
 		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
-		/obj/random/lathe_disk/advanced/onestar = 5
+		/obj/random/lathe_disk/advanced/onestar = 5,
+		/obj/random/prothesis/one_star = 20,
+		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20
 	)
 
 /obj/structure/salvageable/computer_os
@@ -320,6 +331,10 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/organ/external/robotic/l_leg = 20,
 		/obj/item/organ/external/robotic/r_leg = 20,
 		/obj/item/organ/external/robotic/groin = 10,
+		/obj/item/organ/external/robotic/one_star/l_arm = 1,
+		/obj/item/organ/external/robotic/one_star/r_arm = 1,
+		/obj/item/organ/external/robotic/one_star/l_leg = 1,
+		/obj/item/organ/external/robotic/one_star/r_leg = 1,
 		/obj/item/weapon/implantcase = 30,
 		/obj/item/weapon/implanter = 30
 	)

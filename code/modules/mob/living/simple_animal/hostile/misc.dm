@@ -89,10 +89,13 @@
 
 /mob/living/simple_animal/hostile/snake
 	name = "viper"
-	desc = "A ferocious, fang-bearing creature that resembles a snake. Surprisingly not venomous."
+	desc = "A ferocious, fang-bearing creature that resembles a snake. Rather calm, unless you get close."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "snake"
 	speak_chance = 0
+	pass_flags = PASSTABLE
+	layer = HIDE_LAYER
+	density = 0
 	turns_per_move = 5
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
 	response_help = "pets the"

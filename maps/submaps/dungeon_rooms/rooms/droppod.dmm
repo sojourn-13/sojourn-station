@@ -16,15 +16,16 @@
 "p" = (/obj/structure/railing/grey{dir = 4},/obj/structure/railing/grey,/turf/simulated/floor/plating/under,/area/crawler)
 "q" = (/obj/structure/railing/grey{dir = 4},/obj/structure/railing/grey{dir = 1},/turf/simulated/floor/plating/under,/area/crawler)
 "r" = (/turf/simulated/floor/tiled/derelict,/area/crawler)
+"P" = (/obj/random/structures/os,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/crawler)
 
 (1,1,1) = {"
 aaaaabbbaaaaa
-acddddddoejea
+acddddddoPjPa
 adafffaapeeeg
 adfhhhifrrrrk
 adfhhhlmrrrrk
 gdfhhhnfrrrrk
 adafffaaqeeeg
-acddddddoejea
+acddddddoPjPa
 aaaabbbbbaaaa
 "}

@@ -22,7 +22,7 @@
 "av" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "aw" = (/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "ax" = (/obj/machinery/vending/cigarette,/turf/simulated/floor/tiled/steel/monofloor,/area/nadezhda/hallway/main/stairwell)
-"ay" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"ay" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "az" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/window_lwall_spawn,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "aA" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "aB" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
@@ -63,7 +63,7 @@
 "bk" = (/obj/machinery/atmospherics/pipe/tank/carbon_dioxide,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "bl" = (/obj/machinery/atmospherics/pipe/tank/nitrogen,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "bm" = (/obj/machinery/atmospherics/pipe/tank/plasma,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
-"bn" = (/obj/machinery/atmospherics/portables_connector,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
+"bn" = (/obj/machinery/atmospherics/portables_connector,/obj/structure/extinguisher_cabinet{pixel_y = 30},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "bo" = (/obj/machinery/computer/general_air_control,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bp" = (/obj/machinery/atmospherics/unary/vent_pump/on,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bq" = (/obj/structure/table/rack/shelf,/obj/random/toolbox,/obj/random/toolbox/low_chance,/obj/random/toolbox/low_chance,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
@@ -98,7 +98,7 @@
 "bT" = (/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -22},/obj/machinery/computer/general_air_control{dir = 8; frequency = 1441; name = "Tank Monitor"; sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous Oxide", "waste_sensor" = "Gas Mix Tank")},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bU" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/camera/network/cev_eris{dir = 8},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
 "bV" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
-"bW" = (/obj/machinery/camera/network/cev_eris,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
+"bW" = (/obj/machinery/camera/network/cev_eris,/obj/structure/extinguisher_cabinet{pixel_y = 30},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "bX" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "bY" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/machinery/alarm{dir = 4; pixel_x = -26; pixel_y = 0},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
 "bZ" = (/obj/machinery/camera/network/cev_eris{dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
@@ -161,7 +161,7 @@
 "de" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/light/small,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "df" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "dg" = (/obj/structure/sign/levels/stairsdown{pixel_y = -30},/obj/machinery/light,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
-"dh" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"dh" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/extinguisher_cabinet{pixel_x = -27; pixel_y = 0},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "di" = (/obj/structure/flora/small/trailrockb5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dj" = (/obj/structure/flora/small/busha1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dk" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
@@ -205,6 +205,7 @@
 "eh" = (/obj/structure/flora/ausbushes/brflowers,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "er" = (/turf/simulated/floor/tiled/steel,/area/turbolift/ElevatorOne/midlevelThree)
 "gk" = (/obj/landmark/storyevent/midgame_stash_spawn,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"QR" = (/obj/structure/table/woodentable,/obj/structure/extinguisher_cabinet{pixel_y = 30},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -219,7 +220,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaabababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaabababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeaeaeafagahahaiafababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeaeaeafagahQRaiafababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababamanaeajajajajajajababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauakalalaGdgalalababababaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauabadadababcCcCababababaaaaabababababababababaaaaaa
@@ -303,7 +304,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaeaeaeafagahahaiafabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaeaeaeafagahQRaiafabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababamaeaeajajajajajajabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeanakalalaGdgalalabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauabadadababcCcCabababaaaaaaabababababababababaaaaaa

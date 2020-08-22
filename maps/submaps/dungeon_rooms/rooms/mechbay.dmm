@@ -42,15 +42,17 @@
 "Q" = (/obj/random/mob/roomba,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/crawler)
 "R" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/tiled/dark/panels,/area/crawler)
 "S" = (/obj/random/mob/roomba,/turf/simulated/floor/tiled/derelict,/area/crawler)
+"X" = (/obj/structure/table/onestar,/obj/random/structures/os,/turf/simulated/floor/tiled/derelict,/area/crawler)
+"Z" = (/obj/random/structures/os,/turf/simulated/floor/tiled/dark/panels,/area/crawler)
 
 (1,1,1) = {"
 aaaaabbbaaaaa
 acdegimjkhpsa
-aloQqimjqrtwf
+aloQqXmjqrtwf
 auvqqnaxzAzzf
 aBCSCCECSCSCf
 fDFqqyaGIJIJf
 aHqQqimMrqrMf
-aNOPiimMkKkRa
+aNOPXimMZKZRa
 aaaabbbbbaaaa
 "}

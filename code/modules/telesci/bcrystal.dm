@@ -23,11 +23,11 @@
 	matter = list(MATERIAL_GOLD = 30, MATERIAL_DIAMOND = 35, MATERIAL_PLASMA = 30)
 	var/blink_range = 8 // The teleport range when crushed/thrown at someone.
 
-
 /obj/item/bluespace_crystal/New()
 	..()
 	pixel_x = rand(-5, 5)
 	pixel_y = rand(-5, 5)
+	item_flags |= BLUESPACE
 //	create_reagents(10)
 //	reagents.add_reagent("bluespace_dust", blink_range)
 

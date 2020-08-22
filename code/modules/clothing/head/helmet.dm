@@ -9,8 +9,8 @@
 	item_flags = THICKMATERIAL
 	body_parts_covered = HEAD | EARS
 	armor = list(
-		melee = 30,
-		bullet = 30,
+		melee = 35,
+		bullet = 25,
 		energy = 20,
 		bomb = 25,
 		bio = 0,
@@ -30,7 +30,7 @@
 	name = "helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel."
 	icon_state = "helmet_mil"
-	armor = list(melee = 35, bullet = 45,energy = 30, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/ballistic/militia
 	name = "blackshield helmet"
@@ -54,7 +54,7 @@
 	name = "botanist hood"
 	desc = "Don't want anything getting in your eyes."
 	icon_state = "botanist"
-	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
+	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
@@ -62,7 +62,7 @@
 	name = "vector hood"
 	desc = "Even the most devout deserve head protection."
 	icon_state = "acolyte"
-	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
+	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
@@ -71,8 +71,8 @@
 	desc = "A visored helmet with a cloth hood covering it."
 	icon_state = "prime"
 	armor = list(
-		melee = 40,
-		bullet = 40,
+		melee = 30,
+		bullet = 30,
 		energy = 30,
 		bomb = 50,
 		bio = 100,
@@ -85,7 +85,7 @@
 	name = "custodian helmet"
 	desc = "Cleaning floors is more dangerous than it looks."
 	icon_state = "custodian"
-	armor = list(melee = 35, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
+	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
@@ -93,7 +93,7 @@
 	name = "'Mark V' enviromental protection helmet"
 	desc = "You feel like this helmet is rare, for some reason."
 	icon_state = "technohelmet"
-	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100)
+	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100) //Cant have armor mods
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	flash_protection = FLASH_PROTECTION_MAJOR
@@ -102,7 +102,7 @@
 	name = "'Mark II' enviromental protection helmet"
 	desc = "You feel like this helmet is cheap, for some reason."
 	icon_state = "armor_engineering"
-	armor = list(melee = 20, bullet = 20, energy = 20, bomb = 30, bio = 50, rad = 50)
+	armor = list(melee = 15, bullet = 15, energy = 25, bomb = 35, bio = 50, rad = 50)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_STEEL = 20)
@@ -124,7 +124,7 @@
 	desc = "It looks like it was made from a bucket and some steel. Uncomfortable and heavy but better than nothing."
 	icon_state = "hm_helmet"
 	armor = list(
-		melee = 30,
+		melee = 25,
 		bullet = 10,
 		energy = 20,
 		bomb = 10,
@@ -137,7 +137,7 @@
 	name = "bucket-helm"
 	desc = "A bucket with two holes for eyes and some smaller ones for ventilation, with steel added to gain some protection. One may say, <i>'Situla Vult!'</i>."
 	icon_state = "hm_greathelm"
-	armor = list(melee = 47, bullet = 32, laser = 32,energy = 27, bomb = 3, bio = 1, rad = 0)
+	armor = list(melee = 27, bullet = 29, laser = 29,energy = 27, bomb = 3, bio = 1, rad = 0) //Laser?
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS|EYES
 	siemens_coefficient = 0.6
@@ -173,7 +173,7 @@
 	icon_state = "light_riot"
 	body_parts_covered = HEAD|FACE|EARS
 	armor = list(
-		melee = 75,
+		melee = 60,
 		bullet = 30,
 		energy = 30,
 		bomb = 25,
@@ -244,7 +244,7 @@
 	name = "steelpot helmet"
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "steelpot"
-	armor = list(melee = 40, bullet = 35, energy = 0, bomb = 30, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
+	armor = list(melee = 35, bullet = 30, energy = 0, bomb = 30, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
 	flags_inv = BLOCKHEADHAIR
 	body_parts_covered = HEAD|EARS
 	siemens_coefficient = 1
@@ -254,7 +254,7 @@
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
 	var/list/armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
-	var/list/armor_down = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0) // slightly better than usual due to mask
+	var/list/armor_down = list(melee = 35, bullet = 30, energy = 0, bomb = 30, bio = 0, rad = 0) // slightly better than usual due to mask
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHEADHAIR
 	flash_protection = FLASH_PROTECTION_MAJOR
 	body_parts_covered = HEAD|FACE|EARS
@@ -312,7 +312,7 @@
 	name = "maska helmet"
 	desc = "\"I do not know who I am, I don\'t know why I\'m here. All I know is that I must kill.\""
 	icon_state = "maska"
-	armor_down = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
+	armor_down = list(melee = 40, bullet = 40, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
 
 /obj/item/clothing/head/helmet/helmet/visor/cyberpunkgoggle
 	name = "\improper Type-34C Semi-Enclosed Headwear"

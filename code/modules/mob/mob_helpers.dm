@@ -620,6 +620,9 @@ proc/is_blind(A)
 	for(var/obj/A in embedded)
 		if (A.loc == src)
 			A.forceMove(loc)
+			if(isitem(A))
+				var/obj/item/I = A
+				I.on_embed_removal(src)
 			A.tumble()
 	embedded = list()
 

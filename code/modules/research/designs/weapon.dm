@@ -26,9 +26,9 @@
 	build_path = /obj/item/weapon/gun/energy/lasercannon
 
 /datum/design/research/item/weapon/c20r
-	name = "C20R-prototype"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 rounds."
-	build_path = /obj/item/weapon/gun/projectile/automatic/c20r
+	name = "Lightweight C20R"
+	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 Auto rounds."
+	build_path = /obj/item/weapon/gun/projectile/automatic/c20r/sci
 
 /datum/design/research/item/weapon/centurio
 	build_path = /obj/item/weapon/gun/energy/centurio
@@ -71,6 +71,14 @@
 	desc = "You feel like this helmet is cheap, for some reason."
 	build_path = /obj/item/clothing/head/helmet/soteriasuit
 
+/datum/design/research/item/weapon/katana
+	name = "Soteria \"Muramasa\" Katana"
+	build_path = /obj/item/weapon/tool/sword/katana/nano
+
+/datum/design/research/item/weapon/bluespace_dagger
+	name = "Soteria \"Displacement Dagger\""
+	build_path = /obj/item/weapon/tool/knife/dagger/bluespace
+
 /datum/design/research/item/weapon/medarmor
 	name = "soteria medical void armor"
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
@@ -94,10 +102,37 @@
 	name_category = "ammunition"
 	category = CAT_WEAPON
 
+/datum/design/research/item/ammo/smg_mag
+	name = "smg magazine .35 Auto (Empty) "
+	desc = "A magazine for .35 Auto, used in smgs."
+	build_path = /obj/item/ammo_magazine/smg/empty
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/research/item/ammo/smg_mag/lethal
+	name = "smg magazine .35 Auto"
+	desc = "A magazine for .35 auto, used in smgs."
+	build_path = /obj/item/ammo_magazine/smg
+	materials = list(MATERIAL_STEEL = 30)
+
+/datum/design/research/item/ammo/smg_mag/rubber
+	name = "smg magazine .35 Auto (Rubber)"
+	desc = "A magazine for .35 Auto (Rubber), used in smgs."
+	build_path = /obj/item/ammo_magazine/smg/rubber
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
+
+// Shotgun Ammo
+
 /datum/design/research/item/ammo/shotgun_stun
 	name = "shotgun, stun"
 	desc = "A stunning shell for a shotgun."
-	build_path = /obj/item/ammo_casing/shotgun/stunshell
+	build_path = /obj/item/ammo_casing/shotgun/stunshell //We print one at a time fore balance
+
+/datum/design/research/item/ammo/shotgun_fire
+	name = "shotgun, incendiary"
+	desc = "A incendiary shell for a shotgun."
+	build_path = /obj/item/ammo_casing/shotgun/incendiary //We print one at a time fore balance
+
+// Misc Ammo
 
 /datum/design/research/item/ammo/hatton
 	name = "Soteria BT \"Q-del\" gas tube"
@@ -130,3 +165,194 @@
 	name = "Blackshield Sovereignty Disk"
 	desc = "A unique disk for printing and creating Blackshield arms and ammunition."
 	build_path = /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
+
+//Weapon mods
+/datum/design/research/item/weapon_upgrade
+	name_category = "weapon upgrades"
+	category = CAT_WEAPON
+
+/datum/design/research/item/weapon_upgrade/penetrator
+	name = "Soteria \"Penetrator\" magnetic accelerator barrel"
+	build_path = /obj/item/weapon/gun_upgrade/barrel/mag_accel
+
+/datum/design/research/item/weapon_upgrade/overheat
+	name = "Soteria \"Caster\" magnetic overheat barrel"
+	build_path = /obj/item/weapon/gun_upgrade/barrel/overheat
+
+// HIGH-TECH GUNMODS
+/datum/design/research/item/weapon/gunmod/penetrator
+	build_path = /obj/item/weapon/gun_upgrade/barrel/mag_accel
+	sort_string = "GAAAA"
+	category = CAT_GUNMODS
+
+/datum/design/research/item/weapon/gunmod/overheat
+	build_path = /obj/item/weapon/gun_upgrade/barrel/overheat
+	sort_string = "GAAAB"
+	category = CAT_GUNMODS
+
+/datum/design/research/item/weapon/gunmod/battery_shunt
+	build_path = /obj/item/weapon/gun_upgrade/mechanism/battery_shunt
+	sort_string = "GAAAC"
+	category = CAT_GUNMODS
+
+/datum/design/research/item/weapon/gunmod/overdrive
+	build_path = /obj/item/weapon/gun_upgrade/mechanism/overdrive
+	sort_string = "GAAAD"
+	category = CAT_GUNMODS
+
+/datum/design/research/item/weapon/gunmod/toxin_coater
+	build_path = /obj/item/weapon/gun_upgrade/barrel/toxin_coater
+	sort_string = "GAAAF"
+	category = CAT_GUNMODS
+/*
+/datum/design/research/item/weapon/gunmod/isotope_diffuser
+	build_path = /obj/item/weapon/gun_upgrade/barrel/isotope_diffuser
+	sort_string = "GAAAG"
+	category = CAT_GUNMODS
+
+/datum/design/research/item/weapon/gunmod/psionic_catalyst
+	build_path = /obj/item/weapon/gun_upgrade/mechanism/psionic_catalyst
+	sort_string = "GAAAH"
+	category = CAT_GUNMODS
+*/
+
+// HIGH-TECH TOOLMODS
+/datum/design/research/item/weapon/toolmod/stick
+	build_path = /obj/item/weapon/tool_upgrade/reinforcement/stick
+	sort_string = "TAAAA"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/heatsink
+	build_path = /obj/item/weapon/tool_upgrade/reinforcement/heatsink
+	sort_string = "TAAAB"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/plating
+	build_path = /obj/item/weapon/tool_upgrade/reinforcement/plating
+	sort_string = "TAAAC"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/guard
+	build_path = /obj/item/weapon/tool_upgrade/reinforcement/guard
+	sort_string = "TAAAD"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/plasmablock
+	build_path = /obj/item/weapon/tool_upgrade/reinforcement/plasmablock
+	sort_string = "TAAAE"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/rubbermesh
+	build_path = /obj/item/weapon/tool_upgrade/reinforcement/rubbermesh
+	sort_string = "TAAAF"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/ergonomicgrip
+	build_path = /obj/item/weapon/tool_upgrade/productivity/ergonomic_grip
+	sort_string = "TAAAG"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/ratchet
+	build_path = /obj/item/weapon/tool_upgrade/productivity/ratchet
+	sort_string = "TAAAH"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/redpaint
+	build_path = /obj/item/weapon/tool_upgrade/productivity/red_paint
+	sort_string = "TAAAI"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/whetstone
+	build_path = /obj/item/weapon/tool_upgrade/productivity/whetstone
+	sort_string = "TAAAJ"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/dblade
+	build_path = /obj/item/weapon/tool_upgrade/productivity/diamond_blade
+	sort_string = "TAAAK"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/oxyjet
+	build_path = /obj/item/weapon/tool_upgrade/productivity/oxyjet
+	sort_string = "TAAAL"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/motor
+	build_path = /obj/item/weapon/tool_upgrade/productivity/motor
+	sort_string = "TAAAM"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/antistaining
+	build_path = /obj/item/weapon/tool_upgrade/productivity/antistaining
+	sort_string = "TAAAN"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/booster
+	build_path = /obj/item/weapon/tool_upgrade/productivity/booster
+	sort_string = "TAAAO"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/injector
+	build_path = /obj/item/weapon/tool_upgrade/productivity/injector
+	sort_string = "TAAAP"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/laserguide
+	build_path = /obj/item/weapon/tool_upgrade/refinement/laserguide
+	sort_string = "TAAAQ"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/stabilizedgrip
+	build_path = /obj/item/weapon/tool_upgrade/refinement/stabilized_grip
+	sort_string = "TAAAR"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/magbit
+	build_path = /obj/item/weapon/tool_upgrade/refinement/magbit
+	sort_string = "TAAAS"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/portedbarrel
+	build_path = /obj/item/weapon/tool_upgrade/refinement/ported_barrel
+	sort_string = "TAAAT"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/compensatedbarrel
+	build_path = /obj/item/weapon/tool_upgrade/refinement/compensatedbarrel
+	sort_string = "TAAAU"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/vibcompensator
+	build_path = /obj/item/weapon/tool_upgrade/refinement/vibcompensator
+	sort_string = "TAAAV"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/cellmount
+	build_path = /obj/item/weapon/tool_upgrade/augment/cell_mount
+	sort_string = "TAAAW"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/fueltank
+	build_path = /obj/item/weapon/tool_upgrade/augment/fuel_tank
+	sort_string = "TAAAX"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/expansion
+	build_path = /obj/item/weapon/tool_upgrade/augment/expansion
+	sort_string = "TAAAY"
+	category = CAT_TOOLMODS
+
+/datum/design/research/item/weapon/toolmod/spikes
+	build_path = /obj/item/weapon/tool_upgrade/augment/spikes
+	sort_string = "TAAAZ"
+	category = CAT_TOOLMODS
+/*
+/datum/design/research/item/weapon/toolmod/hammeraddon
+	build_path = /obj/item/weapon/tool_upgrade/augment/hammer_addon
+	sort_string = "TAABA"
+	category = CAT_TOOLMODS
+*/
+/datum/design/research/item/weapon/toolmod/hydraulic
+	build_path = /obj/item/weapon/tool_upgrade/augment/hydraulic
+	sort_string = "TAABB"
+	category = CAT_TOOLMODS

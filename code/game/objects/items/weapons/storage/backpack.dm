@@ -77,17 +77,32 @@
  */
 /obj/item/weapon/storage/backpack/holding
 	name = "bag of holding"
-	desc = "A backpack that opens into a localized pocket of Blue Space."
+	desc = "A backpack that opens into a localized pocket of bluespace. One of the few examples of stable bluespace left after the crash, as long as it doesn't interact with other bluespace items."
 	origin_tech = list(TECH_BLUESPACE = 4)
 	icon_state = "holdingpack"
 	max_w_class = ITEM_SIZE_BULKY
 	max_storage_space = DEFAULT_HUGE_STORAGE * 2
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GOLD = 10, MATERIAL_DIAMOND = 5, MATERIAL_URANIUM = 5)
 
+/obj/item/weapon/storage/backpack/holding/New()
+	..()
+	item_flags |= BLUESPACE
+
 /obj/item/weapon/storage/backpack/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/storage/backpack/holding))
-		to_chat(user, SPAN_WARNING("The Bluespace interfaces of the two devices conflict and malfunction."))
-		qdel(W)
+	if(W.item_flags & BLUESPACE)
+		to_chat(user, SPAN_WARNING("The bluespace interfaces of the two devices conflict and malfunction, producing a loud explosion."))
+		if (ishuman(user))
+			var/mob/living/carbon/human/H = user
+			var/held = W.get_equip_slot()
+			if (held == slot_l_hand)
+				var/obj/item/organ/external/E = H.get_organ(BP_L_ARM)
+				E.droplimb(0, DROPLIMB_BLUNT)
+				playsound(src.loc, 'sound/sanity/limb_tear_off.ogg', 100, 1)
+			else if (held == slot_r_hand)
+				var/obj/item/organ/external/E = H.get_organ(BP_R_ARM)
+				E.droplimb(0, DROPLIMB_BLUNT)
+				playsound(src.loc, 'sound/sanity/limb_tear_off.ogg', 100, 1)
+		user.drop_item()
 		return
 	..()
 

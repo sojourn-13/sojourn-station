@@ -243,7 +243,7 @@
 	name = "wooden plank"
 	icon_state = "sheet-wood"
 	default_type = MATERIAL_WOOD
-	price_tag = 20
+	price_tag = 5
 
 /obj/item/stack/material/wood/random
 	rand_min = 3
@@ -315,7 +315,7 @@
 	default_type = MATERIAL_BIOMATTER
 	max_amount = 60
 	price_tag = 10
-	var/biomatter_in_sheet = 10
+	var/biomatter_in_sheet = 1
 
 /obj/item/stack/material/biomatter/random
 	rand_min = 5

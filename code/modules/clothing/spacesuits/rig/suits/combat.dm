@@ -7,9 +7,9 @@
 	icon_state = "security_rig"
 	suit_type = "combat hardsuit"
 	armor = list(
-		melee = 60,
-		bullet = 55,
-		energy = 50,
+		melee = 50,
+		bullet = 45,
+		energy = 30,
 		bomb = 50,
 		bio = 100,
 		rad = 50

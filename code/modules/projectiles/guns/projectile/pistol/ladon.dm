@@ -33,7 +33,7 @@
 	desc = "A popular commercial variant of Mk-68 \"Ladon\" produced by Holland & Sullivan. Often found in police and private use alike. Uses .40 Auto-Mag rounds."
 	icon_state = "ladon"
 	item_state = "ladon"
-	damage_multiplier = 0.9
+	damage_multiplier = 1
 	recoil_buildup = 14
 	one_hand_penalty = 15
 

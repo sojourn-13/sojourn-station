@@ -22,7 +22,7 @@
 	name = "rebar"
 	desc = "A pair of metal rods laboriously twisted into a useful prying and digging tool. Has more space for tool mods because it's hand-made."
 	icon_state = "impro_crowbar"
-	item_state = "crowbar"
+	item_state = "impro_crowbar"
 	tool_qualities = list(QUALITY_PRYING = 10, QUALITY_DIGGING = 10,QUALITY_HAMMERING = 10)
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
@@ -31,7 +31,7 @@
 	name = "greyson positronic crowbar"
 	desc = "Looks like a classic one, but more durable. Has more space for mods too."
 	icon_state = "one_star_crowbar"
-	item_state = "crowbar"
+	item_state = "onestar_crowbar"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLATINUM = 1)
 	tool_qualities = list(QUALITY_PRYING = 25, QUALITY_DIGGING = 10)
 	origin_tech = list(TECH_ENGINEERING = 1, TECH_MATERIAL = 2)
@@ -42,7 +42,7 @@
 	name = "pneumatic crowbar"
 	desc = "When you really need to crack open something."
 	icon_state = "pneumo_crowbar"
-	item_state = "jackhammer"
+	item_state = "pneumo_crowbar"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_DIGGING = 35)
 	degradation = 0.7

@@ -69,6 +69,8 @@
 #define PLASMAGUARD        	0x10 	// Does not get contaminated by plasma.
 #define PROXMOVE           	0x20  	// Does this object require proximity checking in Enter()?
 #define SILENT				0x40 	// Sneaky shoes and silenced tools
+#define LOUD			    0x80 	// Loud as hell tools
+#define HONKING			    0x100 	// Honking tools
 // 0x80 not used for no reason, feel free
 #define OVERLAY_QUEUED      0x100 // Atom queued to SSoverlay for COMPILE_over-lays
 #define INITIALIZED			0x200
@@ -85,7 +87,8 @@
 #define COVER_PREVENT_MANIPULATION 0x40 // Only clothing with this flag will prevent manipulation under it. Its for space suits and such, unlike from usual Bay12 rules of clothing manipulation.
 #define DRAG_AND_DROP_UNEQUIP      0x80 // Allow you put intems in hands with drag and drop
 #define EQUIP_SOUNDS               0x100// Play sound when equipped/unequipped
-#define ABSTRACT			       0x200//For items that don't really exist. Can't be put on tables or interacted with.
+#define ABSTRACT			       0x200// For items that don't really exist. Can't be put on tables or interacted with.
+#define BLUESPACE                  0x400// For items that use bluespace technology
 
 // Flags for pass_flags.
 #define PASSTABLE  0x1

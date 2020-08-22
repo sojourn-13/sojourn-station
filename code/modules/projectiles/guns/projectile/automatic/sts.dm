@@ -17,12 +17,12 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	damage_multiplier = 1.3
+	damage_multiplier = 1.1
 	recoil_buildup = 8
 	one_hand_penalty = 15 //automatic rifle level
 
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
@@ -54,7 +54,7 @@
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	silencer_type = /obj/item/weapon/silencer
+	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn
 
@@ -104,7 +104,7 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
-	damage_multiplier = 0.95
+	damage_multiplier = 1
 	recoil_buildup = 11
 	one_hand_penalty = 20
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -112,7 +112,7 @@
 	sawn = /obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn
 
 
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_400
 		)
@@ -131,7 +131,7 @@
 	one_hand_penalty = 25 //automatic rifle level
 	saw_off = FALSE
 
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_400
 		)
@@ -145,7 +145,7 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_HRIFLE
 	mag_well = MAG_WELL_HRIFLE
-	penetration_multiplier = 1.2
+	penetration_multiplier = 1
 	damage_multiplier = 1.3
 	recoil_buildup = 15
 	one_hand_penalty = 30
@@ -153,7 +153,7 @@
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/sts/hrifle/sawn
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
 
@@ -163,7 +163,7 @@
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	penetration_multiplier = 1
+	penetration_multiplier = 0.8
 	damage_multiplier = 1
 	recoil_buildup = 20
 	one_hand_penalty = 30

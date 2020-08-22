@@ -24,7 +24,11 @@ GLOBAL_LIST_INIT(music_tracks, list(
 	"Exploring" = /music_track/exploring,
 	"The Runner in Motion" = /music_track/runner,
 	"Neotheology" = /music_track/neotheology,
-	"Downtown 2" = /music_track/downtown
+	"Downtown 2" = /music_track/downtown,
+	"Wild Encounters" = /music_track/wildencounters,
+	"Around the Village" = /music_track/aroundthev,
+	"Nuclear" = /music_track/nuclear,
+	"Loners in the Night" = /music_track/loners
 ))
 
 /proc/setup_music_tracks(var/list/tracks)

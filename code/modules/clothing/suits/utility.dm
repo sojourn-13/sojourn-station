@@ -21,7 +21,7 @@
 	armor = list(
 		melee = 10,
 		bullet = 0,
-		energy = 0,
+		energy = 30,
 		bomb = 10,
 		bio = 10,
 		rad = 0
