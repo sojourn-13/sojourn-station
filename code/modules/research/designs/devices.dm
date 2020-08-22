@@ -58,22 +58,22 @@
 	name = "'Belt of Holding', an infinite capacity belt prototype"
 	desc = "Using localized pockets of bluespace this belt prototype offers incredible storage capacity with the contents weighting nothing."
 	build_path = /obj/item/weapon/storage/belt/holding
-	sort_string = "VAEAB"
+	category = "Bluespace Telecoms"
 
 /datum/design/research/item/pouch_holding
 	name = "'Pouch of Holding', an infinite capacity pouch prototype"
 	desc = "Using localized pockets of bluespace this pouch prototype offers incredible storage capacity with the contents weighting nothing."
 	build_path = /obj/item/weapon/storage/pouch/holding
-	sort_string = "VAEAC"
+	category = "Bluespace Telecoms"
 
 /datum/design/research/item/trashbag_holding
 	name = "'Trashbag of Holding', an infinite capacity trashbag prototype"
 	desc = "Using localized pockets of bluespace this trashbag prototype offers incredible storage capacity with the contents weighting nothing."
 	build_path = /obj/item/weapon/storage/bag/trash/holding
-	sort_string = "VAEAD"
+	category = "Bluespace Telecoms"
 
 /datum/design/research/item/oresatchel_holding
 	name = "'Ore satchel of Holding', an infinite capacity ore satchel prototype"
 	desc = "Using localized pockets of bluespace this ore satchel prototype offers incredible storage capacity with the contents weighting nothing."
 	build_path = /obj/item/weapon/storage/bag/ore/holding
-	sort_string = "VAEAE"
+	category = "Bluespace Telecoms"

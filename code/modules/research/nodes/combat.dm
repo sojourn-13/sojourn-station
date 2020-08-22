@@ -180,10 +180,10 @@
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.8
-	y = 0.4
+	y = 0.6
 	icon = "toxincoater"
 
-	required_technologies = list(/datum/technology/exotic_weaponry)
+	required_technologies = list(/datum/technology/adv_lethal)
 	required_tech_levels = list()
 	cost = 4000
 
