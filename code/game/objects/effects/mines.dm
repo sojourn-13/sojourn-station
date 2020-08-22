@@ -23,6 +23,21 @@
 	qdel(s)
 	qdel(src)
 
+/obj/effect/mine/attackby(obj/item/I, mob/user)
+	if(QUALITY_PULSING in I.tool_qualities)
+		user.visible_message(
+		SPAN_DANGER("[user] starts to carefully disarm \the [src]."),
+		SPAN_DANGER("You begin to carefully disarm \the [src].")
+		)
+	if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL,  required_stat = STAT_COG)) //disarming a mine with a multitool should be for smarties
+		user.visible_message(
+			SPAN_DANGER("[user] has disarmed \the [src] and it falls apart."),
+			SPAN_DANGER("You have disarmed \the [src] and it falls apart!")
+			)
+		new /obj/item/weapon/material/shard/shrapnel/scrap(src.loc)
+		new /obj/item/weapon/grenade/explosive(src.loc)
+		qdel(src)
+
 /obj/effect/mine/bullet_act()
 	if(prob(90))
 		explode()

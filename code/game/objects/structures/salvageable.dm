@@ -294,7 +294,8 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
 		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
 		/obj/random/lathe_disk/advanced/onestar = 5,
-		/obj/random/prothesis/one_star = 20
+		/obj/random/prothesis/one_star = 20,
+		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20
 	)
 
 /obj/structure/salvageable/computer_os

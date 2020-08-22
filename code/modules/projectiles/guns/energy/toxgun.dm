@@ -13,6 +13,6 @@
 	price_tag = 2500
 	damage_multiplier = 1
 	init_firemodes = list(
-		list(mode_name="melt", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/lasercannonfire.ogg', fire_delay = 9, icon="destroy", projectile_color = "#006633", charge_cost=150),
-		list(mode_name="impact stun", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay = 25, icon="stun", projectile_color = "#ff7f24", charge_cost=400),
+		list(mode_name="melt", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/lasercannonfire.ogg', fire_delay = 9, icon="destroy", projectile_color = "#006633"),
+		list(mode_name="impact stun", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay = 25, icon="stun", projectile_color = "#ff7f24"),
 		)

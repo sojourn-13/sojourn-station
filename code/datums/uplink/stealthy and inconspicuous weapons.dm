@@ -29,12 +29,11 @@
 	item_cost = 6
 	path = /obj/item/weapon/pen/reagent/paralysis
 
-/* //The gun mod for this is broken so its been commented out.
 /datum/uplink_item/item/stealthy_weapons/infuser
 	name = "\"Glass Widow\" radiation infuser"
 	item_cost = 2
 	path = /obj/item/weapon/gun_upgrade/mechanism/glass_widow
-*/
+
 /datum/uplink_item/item/stealthy_weapons/boot_knife
 	name = "Boot Knife"
 	item_cost = 1

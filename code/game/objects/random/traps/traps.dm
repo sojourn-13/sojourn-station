@@ -5,7 +5,7 @@
 
 /obj/random/traps/item_to_spawn()
 	var/list/possible_traps = list(/obj/structure/wire_splicing = 1,
-	/obj/item/device/assembly/mousetrap/armed = 0.8,
+	/obj/effect/mine = 0.8,
 	/obj/item/weapon/beartrap/armed = 0.30,
 	/obj/item/weapon/beartrap/makeshift/armed = 0.45)
 
