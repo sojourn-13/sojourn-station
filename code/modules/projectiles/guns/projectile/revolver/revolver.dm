@@ -24,7 +24,7 @@
 	armor_penetration = 0.65 // Insanely powerful handcannon, but worthless against heavy armor
 	recoil_buildup = 50
 	one_hand_penalty = 20
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 
 /obj/item/weapon/gun/projectile/revolver/verb/spin_cylinder()
 	set name = "Spin cylinder"
