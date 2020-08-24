@@ -20,7 +20,8 @@
 	src.bomb = bomb
 	src.bio = bio
 	src.rad = rad
-	tag = ARMORID
+	tag = rand(1, 10000) //Soj Edit, having this set to armor ID causes an error with our armor mods, this will show up as null when VV'd in game, but it will prevent \
+						//armor mods from applying globally to all armor with the same ArmorID ERIS made. -Kaz
 
 /datum/armor/proc/modifyRating(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	return getArmor(src.melee+melee, src.bullet+bullet, src.energy+energy, src.bomb+bomb, src.bio+bio, src.rad+rad)

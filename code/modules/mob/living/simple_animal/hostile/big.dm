@@ -223,7 +223,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord
 	name = "croaker lord"
-	desc = "The thing the 'frogs' eventually grow into, proving beyond doubt their alien nature. While one of the strongest monsters on the planet it isn't normally hostile unless it has a reason."
+	desc = "The thing the 'frogs' eventually grow into, proving beyond doubt their alien nature. While one of the strongest monsters on the planet it isn't normally hostile unless it \
+	has a reason and god help you if it finds one, their berserk rages kill everyone when its eyes open."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "leaper"
 	icon_living = "leaper"
@@ -242,9 +243,8 @@
 	speak_emote = list("looses a rumbling croak", "grumbles quietly")
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "pond"
-	wander = FALSE
 
-/mob/living/simple_animal/hostile/retaliate/croakerlord/AttackingTarget()
+/mob/living/simple_animal/hostile/retaliate/adjustBruteLoss(var/damage)
 	..()
 	icon_state = "leaper_alert"
 	icon_living = "leaper_alert"

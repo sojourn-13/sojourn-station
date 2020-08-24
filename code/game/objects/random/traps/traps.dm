@@ -5,8 +5,8 @@
 
 /obj/random/traps/item_to_spawn()
 	var/list/possible_traps = list(/obj/structure/wire_splicing = 1,
-	/obj/effect/mine = 0.8,
-	/obj/item/weapon/beartrap/armed = 0.30,
+	/obj/item/weapon/mine/armed = 0.30,
+	/obj/item/weapon/beartrap/armed = 0.8,
 	/obj/item/weapon/beartrap/makeshift/armed = 0.45)
 
 	//Check that its possible to spawn the chosen trap at this location
