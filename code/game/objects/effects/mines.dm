@@ -1,4 +1,4 @@
-/obj/effect/mine
+/obj/item/weapon/mine_old
 	name = "old land mine"
 	desc = "A small highly dangerous explosive that looks rusted and aged beyond use."
 	density = 0
@@ -10,10 +10,10 @@
 	var/smoke_strength = 3
 	layer = HIDE_LAYER
 
-/obj/effect/mine/New()
+/obj/item/weapon/mine_old/New()
 	icon_state = "mine"
 
-/obj/effect/mine/proc/explode(var/mob/living/M)
+/obj/item/weapon/mine_old/proc/explode(var/mob/living/M)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()
 	triggered = 1
 	s.set_up(3, 1, src)
@@ -23,7 +23,7 @@
 	qdel(s)
 	qdel(src)
 
-/obj/effect/mine/attackby(obj/item/I, mob/user)
+/obj/item/weapon/mine_old/attackby(obj/item/I, mob/user)
 	if(QUALITY_PULSING in I.tool_qualities)
 		user.visible_message(
 		SPAN_DANGER("[user] starts to carefully disarm \the [src]."),
@@ -37,20 +37,26 @@
 		new /obj/item/weapon/material/shard/shrapnel/scrap(src.loc)
 		new /obj/item/weapon/grenade/explosive(src.loc)
 		qdel(src)
+		return
+	else
+		user.visible_message(
+			SPAN_DANGER("[user] has set off \the [src]!"))
+		explode()
+		return
 
-/obj/effect/mine/bullet_act()
+/obj/item/weapon/mine_old/bullet_act()
 	if(prob(90))
 		explode()
 
-/obj/effect/mine/ex_act(severity)
+/obj/item/weapon/mine_old/ex_act(severity)
 	if(severity <= 2 || prob(90))
 		explode()
 	..()
 
-/obj/effect/mine/Crossed(AM as mob|obj)
+/obj/item/weapon/mine_old/Crossed(AM as mob|obj)
 	Bumped(AM)
 
-/obj/effect/mine/Bumped(mob/M as mob|obj)
+/obj/item/weapon/mine_old/Bumped(mob/M as mob|obj)
 
 	if(triggered) return
 
