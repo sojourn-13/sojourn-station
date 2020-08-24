@@ -6,7 +6,7 @@
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 30)
 	matter_reagents = list("fuel" = 40)
-	layer = ABOVE_OBJ_LAYER
+	layer = HIDE_LAYER
 
 	//var/obj/item/device/assembly_holder/detonator = null
 
@@ -81,7 +81,12 @@
 			deployed = FALSE
 			anchored = FALSE
 			update_icon()
-		return
+			return
+		else
+			user.visible_message(
+				SPAN_DANGER("[user] has set off \the [src]!"))
+			explode()
+			return
 
 /obj/item/weapon/mine/Crossed(var/mob/AM)
 	if (armed)
@@ -93,7 +98,7 @@
 
 /obj/item/weapon/mine/armed
 	name = "land mine"
-	desc = "An anti-personnel mine. This one looks new, as if someone placed this here recently."
+	desc = "An anti-personnel mine. This one looks new, as if someone placed this here recently..."
 	armed = TRUE
 	deployed = TRUE
 	anchored = TRUE
