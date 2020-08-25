@@ -13,6 +13,7 @@
 	edge = TRUE
 	sharp = TRUE
 	var/deployed = FALSE
+	var/prob_catch = 100
 
 	var/base_damage = 20
 	var/fail_damage = 5
@@ -311,13 +312,20 @@ Very rarely it might escape
 /obj/item/weapon/beartrap/Crossed(AM as mob|obj)
 	if(deployed && isliving(AM))
 		var/mob/living/L = AM
-		if(("\ref[L]" in aware_mobs) && MOVING_DELIBERATELY(L))
+		var/true_prob_catch = prob_catch - L.skill_to_evade_traps()
+		if("\ref[L]" in aware_mobs)
+			if(MOVING_DELIBERATELY(L))
+				return ..()
+			else
+				true_prob_catch -= 30
+		if(!prob(true_prob_catch))
 			return ..()
 		L.visible_message(
 			SPAN_DANGER("[L] steps on \the [src]."),
 			SPAN_DANGER("You step on \the [src]!"),
 			"<b>You hear a loud metallic snap!</b>"
 			)
+
 		attack_mob(L)
 		if(!buckled_mob)
 			anchored = FALSE

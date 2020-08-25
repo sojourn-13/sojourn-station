@@ -4,7 +4,8 @@
 	icon_state = "mousetrap"
 	origin_tech = list(TECH_COMBAT = 1)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_STEEL = 1)
-	var/armed = 0
+	var/armed = FALSE
+	var/prob_catch = 100
 
 
 	examine(mob/user)
