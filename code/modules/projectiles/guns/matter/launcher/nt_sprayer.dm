@@ -34,16 +34,17 @@
 
 /obj/item/weapon/gun/matter/launcher/nt_sprayer/mini
 	name = "SI \"Spot\" Cleaning Pistol"
-	desc = "The cleaner's choice of cleaner. Uses cellulose based solution to clean upto 99% of dirt grime and oil, even comes with a sling to fit on your back."
+	desc = "The janitor's choice of cleaner. Uses cellulose based solution to clean upto 99% of dirt grime and oil, even comes with a sling to fit on your back."
 	icon_state = "si_sprayer"
 	icon = 'icons/obj/guns/matter/nt_sprayer.dmi'
 	w_class = ITEM_SIZE_SMALL
+	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 	fire_sound = 'sound/weapons/Genhit.ogg'
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1, TECH_BIO = 2)
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_WOOD = 3, MATERIAL_PLASTIC = 15)
 	matter_type = MATERIAL_WOOD
 
-	stored_matter = 3 //Only 3/1 shots
+	stored_matter = 6 //Only 3/1 shots
 	projectile_cost = 1
 
 	init_firemodes = list(
