@@ -6,7 +6,7 @@
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 30)
 	matter_reagents = list("fuel" = 40)
-	layer = ABOVE_OBJ_LAYER
+	layer = HIDE_LAYER
 
 	//var/obj/item/device/assembly_holder/detonator = null
 
@@ -73,7 +73,7 @@
 			SPAN_DANGER("[user] starts to carefully disarm \the [src]."),
 			SPAN_DANGER("You begin to carefully disarm \the [src].")
 			)
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_VERY_EASY,  required_stat = STAT_COG)) //disarming a mine with a multitool should be for smarties
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL,  required_stat = STAT_COG)) //disarming a mine with a multitool should be for smarties
 			user.visible_message(
 				SPAN_DANGER("[user] has disarmed \the [src]."),
 				SPAN_DANGER("You have disarmed \the [src]!")
@@ -81,7 +81,12 @@
 			deployed = FALSE
 			anchored = FALSE
 			update_icon()
-		return
+			return
+		else
+			user.visible_message(
+				SPAN_DANGER("[user] has set off \the [src]!"))
+			explode()
+			return
 
 /obj/item/weapon/mine/Crossed(var/mob/AM)
 	if (armed)
@@ -91,28 +96,9 @@
 				return
 	.=..()
 
-/*
-/obj/item/weapon/mine/attackby(obj/item/I, mob/user)
-	src.add_fingerprint(user)
-	if(detonator && QUALITY_SCREW_DRIVING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_COG))
-			if(detonator)
-				user.visible_message("[user] detaches \the [detonator] from [src].", \
-					"You detach \the [detonator] from [src].")
-				detonator.forceMove(get_turf(src))
-				detonator = null
-
-	if (istype(I,/obj/item/device/assembly_holder))
-		if(detonator)
-			to_chat(user, SPAN_WARNING("There is another device in the way."))
-			return ..()
-
-		user.visible_message("\The [user] begins attaching [I] to \the [src].", "You begin attaching [I] to \the [src]")
-		if(do_after(user, 20, src))
-			user.visible_message("<span class='notice'>The [user] attach [I] to \the [src].", "\blue  You attach [I] to \the [src].</span>")
-
-			detonator = I
-			user.unEquip(I,src)
-
-	return ..()
-*/
+/obj/item/weapon/mine/armed
+	name = "land mine"
+	desc = "An anti-personnel mine. This one looks new, as if someone placed this here recently..."
+	armed = TRUE
+	deployed = TRUE
+	anchored = TRUE

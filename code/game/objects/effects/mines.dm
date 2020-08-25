@@ -1,6 +1,6 @@
-/obj/effect/mine
-	name = "land mine"
-	desc = "A small highly dangerous explosive."
+/obj/item/weapon/mine_old
+	name = "old land mine"
+	desc = "A small highly dangerous explosive that looks rusted and aged beyond use."
 	density = 0
 	anchored = 1
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
@@ -10,10 +10,10 @@
 	var/smoke_strength = 3
 	layer = HIDE_LAYER
 
-/obj/effect/mine/New()
+/obj/item/weapon/mine_old/New()
 	icon_state = "mine"
 
-/obj/effect/mine/proc/explode(var/mob/living/M)
+/obj/item/weapon/mine_old/proc/explode(var/mob/living/M)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()
 	triggered = 1
 	s.set_up(3, 1, src)
@@ -23,19 +23,40 @@
 	qdel(s)
 	qdel(src)
 
-/obj/effect/mine/bullet_act()
+/obj/item/weapon/mine_old/attackby(obj/item/I, mob/user)
+	if(QUALITY_PULSING in I.tool_qualities)
+		user.visible_message(
+		SPAN_DANGER("[user] starts to carefully disarm \the [src]."),
+		SPAN_DANGER("You begin to carefully disarm \the [src].")
+		)
+	if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL,  required_stat = STAT_COG)) //disarming a mine with a multitool should be for smarties
+		user.visible_message(
+			SPAN_DANGER("[user] has disarmed \the [src] and it falls apart."),
+			SPAN_DANGER("You have disarmed \the [src] and it falls apart!")
+			)
+		new /obj/item/weapon/material/shard/shrapnel/scrap(src.loc)
+		new /obj/item/weapon/grenade/explosive(src.loc)
+		qdel(src)
+		return
+	else
+		user.visible_message(
+			SPAN_DANGER("[user] has set off \the [src]!"))
+		explode()
+		return
+
+/obj/item/weapon/mine_old/bullet_act()
 	if(prob(90))
 		explode()
 
-/obj/effect/mine/ex_act(severity)
+/obj/item/weapon/mine_old/ex_act(severity)
 	if(severity <= 2 || prob(90))
 		explode()
 	..()
 
-/obj/effect/mine/Crossed(AM as mob|obj)
+/obj/item/weapon/mine_old/Crossed(AM as mob|obj)
 	Bumped(AM)
 
-/obj/effect/mine/Bumped(mob/M as mob|obj)
+/obj/item/weapon/mine_old/Bumped(mob/M as mob|obj)
 
 	if(triggered) return
 
@@ -45,85 +66,3 @@
 		triggered = 1
 		call(src,triggerproc)(M)
 
-
-
-/*
-/obj/effect/mine/proc/triggerrad(obj)
-	var/datum/effect/effect/system/spark_spread/s = new
-	s.set_up(3, 1, src)
-	s.start()
-	obj:radiation += 50
-	randmutb(obj)
-	domutcheck(obj,null)
-	spawn(0)
-		qdel(src)
-
-/obj/effect/mine/proc/triggerstun(obj)
-	if(ismob(obj))
-		var/mob/M = obj
-		M.Stun(30)
-	var/datum/effect/effect/system/spark_spread/s = new
-	s.set_up(3, 1, src)
-	s.start()
-	spawn(0)
-		qdel(src)
-
-/obj/effect/mine/proc/triggern2o(obj)
-	//example: n2o triggerproc
-	//note: im lazy
-
-	for (var/turf/simulated/floor/target in trange(1,src))
-		if(!target.blocks_air)
-			target.assume_gas("sleeping_agent", 30)
-
-	spawn(0)
-		qdel(src)
-
-/obj/effect/mine/proc/triggerplasma(obj)
-	for (var/turf/simulated/floor/target in trange(1,src))
-		if(!target.blocks_air)
-			target.assume_gas("plasma", 30)
-
-			target.hotspot_expose(1000, CELL_VOLUME)
-
-	spawn(0)
-		qdel(src)
-
-/obj/effect/mine/proc/triggerkick(obj)
-	var/datum/effect/effect/system/spark_spread/s = new
-	s.set_up(3, 1, src)
-	s.start()
-	qdel(obj:client)
-	spawn(0)
-		qdel(src)
-
-/obj/effect/mine/proc/explode(obj)
-	explosion(loc, 0, 1, 2, 3)
-	spawn(0)
-		qdel(src)
-
-/obj/effect/mine/dnascramble
-	name = "Radiation Mine"
-	icon_state = "uglymine"
-	triggerproc = "triggerrad"
-
-/obj/effect/mine/plasma
-	name = "Plasma Mine"
-	icon_state = "uglymine"
-	triggerproc = "triggerplasma"
-
-/obj/effect/mine/kick
-	name = "Kick Mine"
-	icon_state = "uglymine"
-	triggerproc = "triggerkick"
-
-/obj/effect/mine/n2o
-	name = "N2O Mine"
-	icon_state = "uglymine"
-	triggerproc = "triggern2o"
-
-/obj/effect/mine/stun
-	name = "Stun Mine"
-	icon_state = "uglymine"
-	triggerproc = "triggerstun"
-*/

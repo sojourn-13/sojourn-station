@@ -55,6 +55,7 @@
 	icon_state = "bluetrashbag"
 	max_w_class = ITEM_SIZE_BULKY
 	max_storage_space = DEFAULT_HUGE_STORAGE * 1.25
+	matter = list(MATERIAL_PLASTIC = 10, MATERIAL_GOLD = 5, MATERIAL_DIAMOND = 1, MATERIAL_URANIUM = 1)
 
 /obj/item/weapon/storage/bag/trash/holding/New()
 	..()

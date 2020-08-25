@@ -18,7 +18,6 @@
 	damage_multiplier = 1
 	penetration_multiplier = 0.8
 	recoil_buildup = 3
-	one_hand_penalty = 20
 
 /obj/item/weapon/gun/projectile/giskard/update_icon()
 	..()
