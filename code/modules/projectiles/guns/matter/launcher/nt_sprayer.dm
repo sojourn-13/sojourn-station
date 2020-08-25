@@ -33,7 +33,7 @@
 	qdel(src)
 
 /obj/item/weapon/gun/matter/launcher/nt_sprayer/mini
-	name = "SI \"Spot\" Cleaning Pistol"
+	name = "\"Spot\" cleaning pistol"
 	desc = "The janitor's choice of cleaner. Uses cellulose based solution to clean upto 99% of dirt grime and oil, even comes with a sling to fit on your back."
 	icon_state = "si_sprayer"
 	icon = 'icons/obj/guns/matter/nt_sprayer.dmi'
