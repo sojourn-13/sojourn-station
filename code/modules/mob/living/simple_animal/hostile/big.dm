@@ -47,6 +47,7 @@
 	meat_amount = 6
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
+	mob_size =  3  // The same as Hivemind Tyrant
 
 /mob/living/simple_animal/hostile/render/FindTarget()
 	. = ..()
@@ -199,6 +200,7 @@
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 	alpha = 50
 	faction = "stalker"
+	mob_size =  3  // The same as Hivemind Tyrant
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
 	..()
@@ -243,6 +245,7 @@
 	speak_emote = list("looses a rumbling croak", "grumbles quietly")
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "pond"
+	mob_size =  3  // The same as Hivemind Tyrant
 
 /mob/living/simple_animal/hostile/retaliate/adjustBruteLoss(var/damage)
 	..()
