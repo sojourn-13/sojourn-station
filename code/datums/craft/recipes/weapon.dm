@@ -189,8 +189,17 @@
 	result = /obj/item/weapon/tool/hammer/mace/makeshift
 	steps = list(
 		list(/obj/item/stack/rods, 5, "time" = 15),
-		list(QUALITY_WELDING, 10, "time" = 30),
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10)
+	)
+
+/datum/craft_recipe/weapon/katana_makeshift
+	name = "makeshift katana"
+	result = /obj/item/weapon/tool/sword/katana_makeshift
+	steps = list(
+		list(/obj/item/weapon/tool/knife, 1, "time" = 15),
+		list(/obj/item/weapon/tool/knife, 1, "time" = 15),
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
 	)
