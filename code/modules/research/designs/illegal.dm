@@ -25,3 +25,9 @@
 	build_path = /obj/item/device/lighting/glowstick/undark //Yes 1920s were a wild time
 	chemicals = list("radium" = 5, "phosphorus" = 10)
 	materials = list(MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 15)
+
+/datum/design/research/item/cleaner
+	name = "SI \"Spot\" Cleaning Pistol"
+	desc = "After exstive look into both the \"Old Testament\" brand cleansing carbine and the Reclaimer, some clean freaks were able to mix the two into one to make and then cut it down into a small pistol..."
+	materials = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 8, MATERIAL_PLASTIC = 20) //No free refills
+	build_path = /obj/item/weapon/gun/matter/launcher/nt_sprayer/mini

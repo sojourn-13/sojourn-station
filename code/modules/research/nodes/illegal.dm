@@ -13,6 +13,21 @@
 
 	unlocks_designs = list(/datum/design/research/item/binaryencrypt)
 
+/datum/technology/cleaner
+	name = "SI \"Spot\" Cleaning Pistol"
+	desc = "A mix of Excelsior and \"Old Testament\" tech and then cut down to its most minimum state for cleaning."
+	tech_type = RESEARCH_ILLEGAL
+
+	x = 0.1
+	y = 0.3
+	icon = "cleaner"
+
+	required_technologies = list()
+	required_tech_levels = list(RESEARCH_BIOTECH = 3, RESEARCH_ENGINEERING = 5, RESEARCH_ILLEGAL = 2) //Got to get 2 others
+	cost = 1000
+
+	unlocks_designs = list(/datum/design/research/item/cleaner)
+
 
 /datum/technology/night_sight
 	name = "Undark Vision"

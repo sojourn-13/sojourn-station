@@ -7,10 +7,14 @@
 	fire_sound = 'sound/weapons/Genhit.ogg'
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1, TECH_BIO = 4)
 	matter_type = MATERIAL_BIOMATTER
-
+	stored_matter = 60
 	projectile_cost = 0.5
 	projectile_type = /obj/item/weapon/arrow/cleansing
 
+	init_firemodes = list(
+		list(mode_name="small", projectile_type=/obj/item/weapon/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 0.5),
+		list(mode_name="large", projectile_type=/obj/item/weapon/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 1.5),
+	)
 
 /obj/item/weapon/arrow/cleansing
 	icon = 'icons/obj/projectiles.dmi'
@@ -25,5 +29,36 @@
 	reagents.add_reagent("cleaner", 1)
 	reagents.add_reagent("surfactant", 2)
 	reagents.add_reagent("water", 2)
+
+	qdel(src)
+
+/obj/item/weapon/gun/matter/launcher/nt_sprayer/mini
+	name = "SI \"Spot\" Cleaning Pistol"
+	desc = "The cleaner's choice of cleaner. Uses cellulose based solution to clean upto 99% of dirt grime and oil, even comes with a sling to fit on your back."
+	icon_state = "si_sprayer"
+	icon = 'icons/obj/guns/matter/nt_sprayer.dmi'
+	w_class = ITEM_SIZE_SMALL
+	fire_sound = 'sound/weapons/Genhit.ogg'
+	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1, TECH_BIO = 2)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_WOOD = 3, MATERIAL_PLASTIC = 15)
+	matter_type = MATERIAL_WOOD
+
+	stored_matter = 3 //Only 3/1 shots
+	projectile_cost = 1
+
+	init_firemodes = list(
+		list(mode_name="small", projectile_type=/obj/item/weapon/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 1),
+		list(mode_name="large", projectile_type=/obj/item/weapon/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 3),
+	)
+
+/obj/item/weapon/arrow/cleansing/bigger
+
+/obj/item/weapon/arrow/cleansing/bigger/throw_impact()
+	..()
+
+	create_reagents(15)
+	reagents.add_reagent("cleaner", 3)
+	reagents.add_reagent("surfactant", 6)
+	reagents.add_reagent("water", 6)
 
 	qdel(src)
