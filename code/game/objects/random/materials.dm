@@ -61,6 +61,16 @@
 	icon_state = "material-black"
 	spawn_nothing_percentage = 20
 
+/obj/random/material_handyman
+	spawn_nothing_percentage = 0
+
+/obj/random/material_handyman/item_to_spawn()
+	return pickweight(list(/obj/item/stack/material/diamond/random = 1,\
+				/obj/item/stack/material/gold/random = 2,\
+				/obj/item/stack/material/uranium/random = 1,\
+				/obj/item/stack/material/silver/random = 2,\
+				/obj/item/stack/material/platinum/random = 2,\
+				/obj/item/stack/material/plasteel/random = 2))
 
 /obj/random/material_ore/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/ore/coal = 4,\
