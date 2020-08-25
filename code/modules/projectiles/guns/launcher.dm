@@ -45,6 +45,7 @@
 	icon_state = "reclaimer"
 	icon = 'icons/obj/guns/matter/reclaimer.dmi'
 	slot_flags = SLOT_BACK
+	w_class = ITEM_SIZE_BULKY
 	fire_sound = 'sound/weapons/Genhit.ogg'
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3, TECH_BIO = 8, TECH_ILLEGAL = 1)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5, MATERIAL_PLASTIC = 20)
@@ -70,3 +71,19 @@
 	reagents.add_reagent("water", 2)
 
 	qdel(src)
+
+/obj/item/weapon/gun/matter/launcher/breaker
+	name = "Artificer \"Breaker\""
+	desc = "A weapon designed to break down objects and materials to base parts for other uses, a favorite for scavengers and those who hate wasting materials. Uses a cellulose based solution to dissolve matter into its original components, not 100% effective."
+	icon_state = "breaker"
+	icon = 'icons/obj/guns/matter/breaker.dmi'
+	slot_flags = SLOT_BACK
+	w_class = ITEM_SIZE_BULKY
+	fire_sound = 'sound/weapons/Genhit.ogg'
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3, TECH_BIO = 8, TECH_ILLEGAL = 1)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5, MATERIAL_PLASTIC = 20)
+	matter_type = MATERIAL_WOOD
+
+	stored_matter = 0
+	projectile_cost = 1
+	projectile_type = /obj/item/weapon/arrow/reclaiming

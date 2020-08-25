@@ -7,6 +7,7 @@
 	pda_slot = slot_l_store
 	r_pocket = /obj/item/device/t_scanner
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+	backpack_contents = list(/obj/item/weapon/gun/matter/launcher/breaker = 1)
 
 /decl/hierarchy/outfit/job/engineering/New()
 	..()
