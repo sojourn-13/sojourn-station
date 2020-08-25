@@ -15,7 +15,7 @@
 
 /datum/technology/cleaner
 	name = "SI \"Spot\" Cleaning Pistol"
-	desc = "A mix of Excelsior and \"Old Testament\" tech and then cut down to its most minimum state for cleaning."
+	desc = "A mix of less than legal schematics to create a lesser but far more compact version of the cleaning carbine."
 	tech_type = RESEARCH_ILLEGAL
 
 	x = 0.1
