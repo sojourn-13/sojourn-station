@@ -243,12 +243,28 @@ Procs:
 	desc = "Research into the exosuits"
 
 /datum/tech/illegal
-	name = "Illegal Technologies Research"
-	shortname = "Illegal Tech"
+	name = "Covert Technologies Research"
+	shortname = "Covert Tech"
 	desc = "The study of technologies that violate standard scientific regulations."
 	rare = 3
 	shown = FALSE
-	item_tech_req = TECH_ILLEGAL // research any traitor item and this tech will show up
+	item_tech_req = TECH_ILLEGAL // research any merc item and this tech will show up
+
+/datum/tech/os
+	name = "Grayson Technologies Research"
+	shortname = "Grayson Tech"
+	desc = "The study of technologies from a once megacorpation."
+	rare = 2 //Old and still on the closed market
+	shown = FALSE
+	item_tech_req = TECH_OS // research any One-Star item and this tech will show up
+
+/datum/tech/excelsior
+	name = "Unregulated Technologies Research"
+	shortname = "Unregulated Tech"
+	desc = "The study of technologies that are used by unregulated sectors of space. Ever Upward!"
+	rare = 3
+	shown = FALSE
+	item_tech_req = TECH_EXCELSIOR // research any Excelsior item and this tech will show up
 
 /datum/technology
 	var/name = "name"

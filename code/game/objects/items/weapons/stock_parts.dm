@@ -144,7 +144,7 @@
 	name = "excelsior capacitor"
 	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
 	icon_state = "excel_capacitor"
-	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
+	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4, TECH_EXCELSIOR = 1)
 	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 
@@ -152,7 +152,7 @@
 	name = "excelsior scanning module"
 	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "excel_scan_module"
-	origin_tech = list(TECH_MAGNET = 5)
+	origin_tech = list(TECH_MAGNET = 5, TECH_EXCELSIOR = 1)
 	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 
@@ -160,7 +160,7 @@
 	name = "excelsior manipulator"
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "excel_mani"
-	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
+	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2, TECH_EXCELSIOR = 1)
 	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2)
 
@@ -168,7 +168,7 @@
 	name = "excelsior micro-laser"
 	icon_state = "excel_laser"
 	desc = "A tiny laser used in certain devices."
-	origin_tech = list(TECH_MAGNET = 5)
+	origin_tech = list(TECH_MAGNET = 5, TECH_EXCELSIOR = 1)
 	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 
@@ -176,9 +176,50 @@
 	name = "excelsior matter bin"
 	desc = "A container for holding compressed matter awaiting re-construction."
 	icon_state = "excel_matter"
-	origin_tech = list(TECH_MATERIAL = 5)
+	origin_tech = list(TECH_MATERIAL = 5, TECH_EXCELSIOR = 1)
 	rating = 4
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
+
+//copy excelsior stock parts (rating 4)
+/obj/item/weapon/stock_parts/capacitor/copy
+	name = "unregulated capacitor"
+	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
+	icon_state = "excel_copy__capacitor"
+	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
+	rating = 4
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_STEEL = 2, MATERIAL_PLASMAGLASS = 1, )
+
+/obj/item/weapon/stock_parts/scanning_module/copy
+	name = "unregulated scanning module"
+	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
+	icon_state = "excel_copy_scan_module"
+	origin_tech = list(TECH_MAGNET = 5)
+	rating = 4
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_STEEL = 2, MATERIAL_PLASMAGLASS = 1)
+
+/obj/item/weapon/stock_parts/manipulator/copy
+	name = "unregulated manipulator"
+	desc = "A tiny little manipulator used in the construction of certain devices."
+	icon_state = "excel_copy_mani"
+	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
+	rating = 4
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_STEEL = 2)
+
+/obj/item/weapon/stock_parts/micro_laser/copy
+	name = "unregulated micro-laser"
+	icon_state = "excel_copy_laser"
+	desc = "A tiny laser used in certain devices."
+	origin_tech = list(TECH_MAGNET = 5)
+	rating = 4
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_STEEL = 2, MATERIAL_PLASMAGLASS = 1)
+
+/obj/item/weapon/stock_parts/matter_bin/copy
+	name = "unregulated matter bin"
+	desc = "A container for holding compressed matter awaiting re-construction."
+	icon_state = "excel_copy_matter"
+	origin_tech = list(TECH_MATERIAL = 5)
+	rating = 4
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMAGLASS = 1)
 
 //greyson positronic stock parts (rating 5)
 

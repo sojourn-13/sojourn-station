@@ -10,6 +10,8 @@
 #define TECH_MAGNET "magnets"
 #define TECH_DATA "programming"
 #define TECH_ILLEGAL "syndicate"
+#define TECH_OS "grayson"
+#define TECH_EXCELSIOR "excelsior"
 #define TECH_ARCANE "arcane"
 
 //used in design to specify which machine can build it
@@ -30,6 +32,8 @@
 #define RESEARCH_BLUESPACE     /datum/tech/bluespace
 #define RESEARCH_ROBOTICS      /datum/tech/robotics
 #define RESEARCH_ILLEGAL       /datum/tech/illegal
+#define RESEARCH_EXCELSIOR     /datum/tech/excelsior
+#define RESEARCH_OS            /datum/tech/os
 
 
 // Design categories

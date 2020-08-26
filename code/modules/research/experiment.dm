@@ -10,15 +10,18 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/static/list/tech_points = list(
 		TECH_MATERIAL = 250,
 		TECH_ENGINEERING = 300,
-		TECH_PLASMA = 600, //Harder to get in higher levels, Rnd gets 2-3-4
+		TECH_PLASMA = 600, //Harder to get in higher levels, Rnd gets 1-2-3-4
 		TECH_POWER = 350,
 		TECH_BLUESPACE = 1000,
 		TECH_BIO = 350,
 		TECH_COMBAT = 550,
 		TECH_MAGNET = 350,
 		TECH_DATA = 450,
-		TECH_ILLEGAL = 5000,
+		TECH_ILLEGAL = 4000,
+		TECH_OS = 5000,
+		TECH_EXCELSIOR = 2000,
 	)
+
 
 	// So we don't give points for researching non-artifact item
 	var/static/list/artifact_types = list(

@@ -7,7 +7,7 @@
 	matter = list(MATERIAL_STEEL = 30)
 	matter_reagents = list("fuel" = 40)
 	layer = HIDE_LAYER
-
+	origin_tech = list(TECH_COMBAT = 2, TECH_EXCELSIOR = 2)
 	//var/obj/item/device/assembly_holder/detonator = null
 
 	var/fragment_type = /obj/item/projectile/bullet/pellet/fragment/weak
@@ -99,6 +99,7 @@
 /obj/item/weapon/mine/armed
 	name = "land mine"
 	desc = "An anti-personnel mine. This one looks new, as if someone placed this here recently..."
+	origin_tech = list(TECH_COMBAT = 2)
 	armed = TRUE
 	deployed = TRUE
 	anchored = TRUE

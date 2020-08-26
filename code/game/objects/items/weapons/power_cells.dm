@@ -77,7 +77,7 @@
 	name = "Excelsior \"Zarya 18000L\""
 	desc = "Commie rechargeable L-standardized power cell. Power to the people!"
 	icon_state = "exs_l"
-	origin_tech = list(TECH_POWER = 3)
+	origin_tech = list(TECH_POWER = 3, TECH_EXCELSIOR = 1)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 2)
 	maxcharge = 18000
 
@@ -185,7 +185,7 @@
 	name = "Excelsior \"Zarya 1100M\""
 	desc = "Commie rechargeable M-standardized power cell. Power to the people!"
 	icon_state = "exs_m"
-	origin_tech = list(TECH_POWER = 3)
+	origin_tech = list(TECH_POWER = 3, TECH_EXCELSIOR = 1)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	maxcharge = 1100
 
@@ -284,7 +284,7 @@
 	name = "Excelsior \"Zarya 400S\""
 	desc = "Commie rechargeable S-standardized power cell. Power to the people!"
 	icon_state = "exs_s"
-	origin_tech = list(TECH_POWER = 3)
+	origin_tech = list(TECH_POWER = 3, TECH_EXCELSIOR = 1)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
 	maxcharge = 400
 

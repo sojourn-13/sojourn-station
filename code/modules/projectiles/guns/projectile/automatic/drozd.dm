@@ -8,7 +8,7 @@
 	can_dual = 1
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_PISTOL
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_EXCELSIOR = 3)
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 3)

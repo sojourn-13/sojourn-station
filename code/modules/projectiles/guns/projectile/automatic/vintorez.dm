@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_RIFLE //needs a new caliber type?
-	origin_tech = list(TECH_COMBAT = 6, TECH_ILLEGAL = 4, TECH_MATERIAL = 2)
+	origin_tech = list(TECH_COMBAT = 6, TECH_EXCELSIOR = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_RIFLE //need a new magwell type?

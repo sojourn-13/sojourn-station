@@ -586,6 +586,7 @@
 	name = "excelsior nanointegrated AI"
 	desc = "An attempt by the excelsior to copy the superior grayson nano-AI for their weaponry. It isn't nearly as good, but its cheaper to produce and can fit any weapon, not just energy based, as it draws its power from excelsior teleporation technology."
 	icon_state = "ai_tool_excelsior"
+	origin_tech = list(TECH_POWER = 3, TECH_EXCELSIOR = 2)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_GOLD = 3)
 
 /obj/item/weapon/tool_upgrade/augment/ai_tool_excelsior/New()

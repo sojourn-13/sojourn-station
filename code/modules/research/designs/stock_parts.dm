@@ -16,6 +16,9 @@
 /datum/design/research/item/part/super_capacitor
 	build_path = /obj/item/weapon/stock_parts/capacitor/super
 
+/datum/design/research/item/part/copy_capacitor
+	build_path = /obj/item/weapon/stock_parts/capacitor/copy
+
 /datum/design/research/item/part/micro_mani
 	build_path = /obj/item/weapon/stock_parts/manipulator
 
@@ -24,6 +27,9 @@
 
 /datum/design/research/item/part/pico_mani
 	build_path = /obj/item/weapon/stock_parts/manipulator/pico
+
+/datum/design/research/item/part/copy_mani
+	build_path = /obj/item/weapon/stock_parts/manipulator/copy
 
 /datum/design/research/item/part/basic_matter_bin
 	build_path = /obj/item/weapon/stock_parts/matter_bin
@@ -34,6 +40,9 @@
 /datum/design/research/item/part/super_matter_bin
 	build_path = /obj/item/weapon/stock_parts/matter_bin/super
 
+/datum/design/research/item/part/copy_matter_bin
+	build_path = /obj/item/weapon/stock_parts/matter_bin/copy
+
 /datum/design/research/item/part/basic_micro_laser
 	build_path = /obj/item/weapon/stock_parts/micro_laser
 
@@ -43,6 +52,9 @@
 /datum/design/research/item/part/ultra_micro_laser
 	build_path = /obj/item/weapon/stock_parts/micro_laser/ultra
 
+/datum/design/research/item/part/copy_micro_laser
+	build_path = /obj/item/weapon/stock_parts/micro_laser/copy
+
 /datum/design/research/item/part/basic_sensor
 	build_path = /obj/item/weapon/stock_parts/scanning_module
 
@@ -51,6 +63,9 @@
 
 /datum/design/research/item/part/phasic_sensor
 	build_path = /obj/item/weapon/stock_parts/scanning_module/phasic
+
+/datum/design/research/item/part/copy_sensor
+	build_path = /obj/item/weapon/stock_parts/scanning_module/copy
 
 // Telecomm parts
 /datum/design/research/item/part/subspace_ansible
