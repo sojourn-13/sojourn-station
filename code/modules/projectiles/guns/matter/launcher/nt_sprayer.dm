@@ -7,7 +7,7 @@
 	fire_sound = 'sound/weapons/Genhit.ogg'
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1, TECH_BIO = 4)
 	matter_type = MATERIAL_BIOMATTER
-	stored_matter = 60
+	stored_matter = 0 //We do not print with free biomatter
 	projectile_cost = 0.5
 	projectile_type = /obj/item/weapon/arrow/cleansing
 
