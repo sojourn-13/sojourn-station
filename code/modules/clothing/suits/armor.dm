@@ -86,7 +86,7 @@
 	icon_state = "acolyte"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 30, bullet = 20, energy = 15, bomb = 25, bio = 100, rad = 80)
+	armor = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/custodian
@@ -95,7 +95,7 @@
 	icon_state = "custodian"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 30, bullet = 20, energy = 15, bomb = 25, bio = 100, rad = 80)
+	armor = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/prime
@@ -107,7 +107,7 @@
 	armor = list(
 		melee = 40,
 		bullet = 40,
-		energy = 30,
+		energy = 40,
 		bomb = 50,
 		bio = 100,
 		rad = 100
@@ -120,7 +120,7 @@
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
+	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 100)
 	extra_allowed = list(/obj/item/weapon/extinguisher,
 						 /obj/item/weapon/tool,
 						 /obj/item/weapon/tool_upgrade,
@@ -138,7 +138,7 @@
 	icon_state = "armor_engineering"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 20, bullet = 20, energy = 20, bomb = 30, bio = 50, rad = 50)
+	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 30, bio = 50, rad = 50)
 	extra_allowed = list(/obj/item/weapon/extinguisher,
 						 /obj/item/weapon/tool,
 						 /obj/item/weapon/tool_upgrade,

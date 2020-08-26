@@ -334,6 +334,16 @@
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_SHALLOW
 
+/obj/item/weapon/tool/sword/katana_makeshift
+	name = "makeshift katana"
+	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where theirs a will and a weeb theirs a way."
+	icon_state = "katana_improv"
+	item_state = "katana_improv"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2) //twice the value of a kitche knife
+	slot_flags = SLOT_BELT|SLOT_BACK
+	force = WEAPON_FORCE_DANGEROUS
+	armor_penetration = ARMOR_PEN_SHALLOW
+
 /obj/item/weapon/tool/sword/katana/nano
 	name = "\improper Soteria \"Muramasa\" katana"
 	desc = "After an extensive binge of ancient animated recordings, a scientist decided to upgrade a recovered katana."

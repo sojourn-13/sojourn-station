@@ -71,6 +71,7 @@
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
 	force = WEAPON_FORCE_BRUTAL //Rip and tear!
+	w_class = ITEM_SIZE_BULKY
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20) //not the best choice to cut wires
@@ -85,6 +86,7 @@
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
 	force = WEAPON_FORCE_BRUTAL
+	w_class = ITEM_SIZE_BULKY
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20)

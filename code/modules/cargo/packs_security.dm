@@ -48,6 +48,14 @@
 	crate_name = "HS revolvers crate"
 	group = "Security"
 
+/datum/supply_pack/longrevolver
+	name = "Lonestar Long Revolver Novelty Crate"
+	contains = list(/obj/item/weapon/gun/projectile/revolver/longboi)
+	cost = 3000
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "long revolver crate"
+	group = "Security"
+
 /datum/supply_pack/ntweapons
 	name = "CA Energy Weapons Crate"
 	contains = list(/obj/item/weapon/gun/energy/laser,

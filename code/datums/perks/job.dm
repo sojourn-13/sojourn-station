@@ -326,3 +326,7 @@
 		return
 	if(holder.buckled)
 		cooldown_time -= 2 SECONDS
+
+/datum/perk/handyman
+	name = "Handyman"
+	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the best way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."

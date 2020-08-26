@@ -52,7 +52,6 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
-	stop_automated_movement = 1
 	mob_size = 3
 	faction = "pond"
 
@@ -69,6 +68,19 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
-	stop_automated_movement = 1
+	mob_size = 3
+	faction = "pond"
+
+/mob/living/simple_animal/snail
+	name = "snail"
+	desc = "Taking things slowly, one day at a time."
+	icon_state = "snail"
+	mob_size = MOB_TINY
+	speak_chance = 0
+	turns_per_move = 5
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "stomps"
 	mob_size = 3
 	faction = "pond"

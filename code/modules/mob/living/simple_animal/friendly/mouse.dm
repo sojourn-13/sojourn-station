@@ -298,5 +298,18 @@
 /mob/living/simple_animal/mouse/cannot_use_vents()
 	return
 
-
-
+/mob/living/simple_animal/mouse/rat
+	name = "rat"
+	real_name = "rat"
+	icon_state = "rat_brown"
+	item_state = "rat_brown"
+	icon_living = "rat_brown"
+	icon_dead = "mouse_brown_splat"
+	icon_rest = "mouse_brown_sleep"
+	desc = "A large disgusting rodent known for carrying disease and stealing food. The larger tougher cousin of the mouse, the noble rat."
+	can_nap = FALSE
+	maxHealth = 20
+	health = 20
+	melee_damage_upper = 5
+	melee_damage_lower = 3
+	meat_amount = 2
