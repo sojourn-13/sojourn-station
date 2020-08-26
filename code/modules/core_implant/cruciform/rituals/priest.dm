@@ -376,7 +376,7 @@
 /datum/ritual/cruciform/priest/ejection
 	name = "Deprivation"
 	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum."
-	desc = "This litany will command cruciform to detach from bearer, if the one bearing it is dead."
+	desc = "This litany will command a cruciform to detach from its bearer, if the one bearing it is dead."
 
 /datum/ritual/cruciform/priest/ejection/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
