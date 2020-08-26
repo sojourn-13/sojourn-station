@@ -7,7 +7,7 @@
 	fire_sound = 'sound/weapons/Genhit.ogg'
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1, TECH_BIO = 4)
 	matter_type = MATERIAL_BIOMATTER
-	stored_matter = 60
+	stored_matter = 0 //We do not print with free biomatter
 	projectile_cost = 0.5
 	projectile_type = /obj/item/weapon/arrow/cleansing
 
@@ -37,14 +37,16 @@
 	desc = "The janitor's choice of cleaner. Uses cellulose based solution to clean upto 99% of dirt grime and oil, even comes with a sling to fit on your back."
 	icon_state = "si_sprayer"
 	icon = 'icons/obj/guns/matter/nt_sprayer.dmi'
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 	fire_sound = 'sound/weapons/Genhit.ogg'
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1, TECH_BIO = 2)
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_WOOD = 3, MATERIAL_PLASTIC = 15)
 	matter_type = MATERIAL_WOOD
 
-	stored_matter = 6 //Only 3/1 shots
+	max_stored_matter = 3 //Annoying to use do to low ammo
+
+	stored_matter = 0 //When freshly printed we do have ammo
 	projectile_cost = 1
 
 	init_firemodes = list(
