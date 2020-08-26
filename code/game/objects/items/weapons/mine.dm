@@ -92,8 +92,15 @@
 	if (armed)
 		if (isliving(AM))
 			if (!is_excelsior(AM))
-				explode()
-				return
+				if(prob(AM.stats.getStat(STAT_VIG)))
+					AM.visible_message(
+					SPAN_DANGER("[AM] narrowly avoids setting off \the [src] at the last second!"),
+					SPAN_DANGER("Your vigilant observation lets you avoid \the [src] at the last possible second!")
+					)
+					return
+				else
+					explode()
+					return
 	.=..()
 
 /obj/item/weapon/mine/armed
@@ -102,3 +109,43 @@
 	armed = TRUE
 	deployed = TRUE
 	anchored = TRUE
+
+/obj/item/weapon/mine/improvised
+	name = "improvised land mine"
+	desc = "An anti-personnel mine that could only be more ghetto if it was held together by duct tape. It appears to be a makeshift trap with a frag grenade rigged to the trigger mechanism."
+	icon_state = "mine_improvised"
+	spread_radius = 4
+	num_fragments = 10
+	damage_step = 1
+
+	explosion_d_size = -1
+	explosion_h_size = -1
+	explosion_l_size = 1
+	explosion_f_size = 7
+
+	armed = TRUE
+	deployed = TRUE
+	anchored = TRUE
+
+/obj/item/weapon/mine/improvised/attackby(obj/item/I, mob/user)
+	if(QUALITY_PULSING in I.tool_qualities)
+
+		if (deployed)
+			user.visible_message(
+			SPAN_DANGER("[user] starts to carefully disarm \the [src]."),
+			SPAN_DANGER("You begin to carefully disarm \the [src].")
+			)
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_VERY_EASY,  required_stat = STAT_COG)) //disarming a mine with a multitool should be for smarties
+			user.visible_message(
+				SPAN_DANGER("[user] has disarmed \the [src]."),
+				SPAN_DANGER("You have disarmed \the [src]!")
+				)
+			deployed = FALSE
+			anchored = FALSE
+			update_icon()
+			return
+		else
+			user.visible_message(
+				SPAN_DANGER("[user] has set off \the [src]!"))
+			explode()
+			return

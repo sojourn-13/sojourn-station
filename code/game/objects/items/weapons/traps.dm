@@ -15,7 +15,7 @@
 	var/deployed = FALSE
 	var/prob_catch = 100
 
-	var/base_damage = 20
+	var/base_damage = 40
 	var/fail_damage = 5
 	var/base_difficulty = 85
 	var/time_to_escape = 40
@@ -366,6 +366,7 @@ Very rarely it might escape
 	desc = "A wicked looking construct of spiky bits of metal and wires. Will snap shut on anyone who steps in it. It'll do some nasty damage."
 	icon_state = "sawtrap"
 	matter = list(MATERIAL_STEEL = 15)
+	base_damage = 20
 	var/integrity = 100
 
 

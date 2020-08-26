@@ -215,7 +215,7 @@
 
 /datum/perk/junkborn
 	name = "Expert Scavenger"
-	desc = "They say theirs diamonds in the rough and you can prove it."
+	desc = "They say theirs diamonds in the rough and you can prove it. Removing a trash pile has a chance of revealing a valuable item nobody else would find."
 	//icon_state = "treasure" // https://game-icons.net
 
 /datum/perk/ass_of_concrete
