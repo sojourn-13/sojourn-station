@@ -36,6 +36,8 @@ var/list/disciples = list()
 	var/mob/living/carbon/human/H = wearer
 	if(H.stat == DEAD)
 		return
+	if(!active)
+		return
 	H.adjustBrainLoss(55+rand(5))
 	H.adjustOxyLoss(100+rand(50))
 	if(part)
