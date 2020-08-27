@@ -39,9 +39,6 @@
 		/datum/design/bioprinter/medical/ointment,
 		/datum/design/bioprinter/medical/advanced/bruise,
 		/datum/design/bioprinter/medical/advanced/ointment,
-		/datum/design/autolathe/gun/nt_sprayer,
-		/datum/design/autolathe/gun/plasma/martyr,
-		/datum/design/autolathe/gun_upgrade/barrel/excruciator,
 
 		/datum/design/bioprinter/pouch/ammo,
 		/datum/design/bioprinter/pouch/baton_holster,
@@ -55,8 +52,11 @@
 		/datum/design/bioprinter/pouch/large_generic,
 		/datum/design/bioprinter/pouch/tubular,
 		/datum/design/bioprinter/pouch/tubular/vial,
-		/datum/design/bioprinter/sling
+		/datum/design/bioprinter/sling,
 
+		/datum/design/autolathe/gun/nt_sprayer,
+		/datum/design/autolathe/gun/plasma/martyr,
+		/datum/design/autolathe/gun_upgrade/barrel/excruciator
 
 	)
 
@@ -171,7 +171,7 @@
 
 	license = 8
 	designs = list(
-		/obj/item/weapon/gun/energy/ntpistol,
+		/datum/design/autolathe/gun/ntpistol,
 		/datum/design/autolathe/cell/small/high,
 	)
 
@@ -272,6 +272,7 @@
 	designs = list(
 		/datum/design/autolathe/gun/energy_crossbow,
 		/datum/design/autolathe/gun/large_energy_crossbow,
+		/datum/design/autolathe/gun/ntpistol,
 		/datum/design/autolathe/gun/laser,
 		/datum/design/autolathe/gun/pulse,
 		/datum/design/autolathe/gun/pulse_destroyer,
