@@ -679,7 +679,7 @@
 	UPGRADE_FORCE_MULT = 0.10,
 		)
 
-	I.required_qualities = list(QUALITY_HAMMER)
+	I.required_qualities = list(QUALITY_HAMMERING)
 	I.prefix = "padded"
 
 /obj/item/weapon/tool_upgrade/safty/duller
