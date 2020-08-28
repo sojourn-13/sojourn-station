@@ -21,6 +21,7 @@
 	icon_state = "impro_shovel"
 	tool_qualities = list(QUALITY_SHOVELING = 25, QUALITY_DIGGING = 25, QUALITY_EXCAVATION = 10, QUALITY_HAMMERING = 10)
 	degradation = 1.5
+	max_health = 200
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
 /obj/item/weapon/tool/shovel/spade
@@ -46,6 +47,7 @@
 	matter = list(MATERIAL_PLASTEEL = 6,  MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 40, QUALITY_EXCAVATION = 20, QUALITY_HAMMERING = 15)
 	use_power_cost = 0.8
+	max_health = 800
 	degradation = 0.7
 	max_upgrades = 4
 	suitable_cell = /obj/item/weapon/cell/medium

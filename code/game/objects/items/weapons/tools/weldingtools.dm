@@ -53,6 +53,7 @@
 	max_fuel = 15
 	switched_on_qualities = list(QUALITY_WELDING = 15, QUALITY_CAUTERIZING = 10, QUALITY_WIRE_CUTTING = 10)
 	degradation = 1.5
+	max_health = 170
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
 //The improvised welding tool is created with a full tank of fuel.
@@ -71,6 +72,7 @@
 	matter = list(MATERIAL_PLASTEEL = 5)
 	switched_on_force = WEAPON_FORCE_PAINFUL * 1.15 //Slightly more powerful, not much more so
 	heat = 3773
+	max_health = 750
 	degradation = 0.7
 	max_upgrades = 4
 
@@ -94,6 +96,7 @@
 	use_fuel_cost = 0.15
 	max_fuel = 20
 	degradation = 0.6
+	max_health = 900
 	heat = 2750
 	max_upgrades = 2
 	workspeed = 1.7

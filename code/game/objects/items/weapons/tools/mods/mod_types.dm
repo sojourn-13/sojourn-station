@@ -640,6 +640,85 @@
 	)
 	I.prefix = "hydraulic"
 
+
+// 	 SAFTY: REDUCES TOOL Speed and Damage
+//------------------------------------------------
+
+//This can be attached to basically any long tool
+//This includes most mechanical ones
+/obj/item/weapon/tool_upgrade/safty/platic_spikes
+	name = "plastic chain"
+	desc = "A chain of plastic casings for spikes to make the tool much more safer."
+	icon_state = "spike"
+
+	price_tag = 20
+	matter = list(MATERIAL_PLASTIC = 1)
+
+/obj/item/weapon/tool_upgrade/safty/platic_spikes/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_FORCE_MULT = 0.10,
+		)
+
+	I.required_qualities = list(QUALITY_SAWING)
+	I.prefix = "plastic"
+
+/obj/item/weapon/tool_upgrade/safty/padded
+	name = "plastic hammer head"
+	desc = "A safe plastic header for a hammer."
+	icon_state = "stabilizing"
+
+	price_tag = 20
+	matter = list(MATERIAL_PLASTIC = 1)
+
+/obj/item/weapon/tool_upgrade/safty/padded/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_FORCE_MULT = 0.10,
+		)
+
+	I.required_qualities = list(QUALITY_HAMMER)
+	I.prefix = "padded"
+
+/obj/item/weapon/tool_upgrade/safty/duller
+	name = "duller"
+	desc = "Well normally having a tool become dull would be a bad thing, some may wish to use a unsharpen tool for safty reasons."
+	icon_state = "whetstone"
+
+	price_tag = 20
+	matter = list(MATERIAL_PLASTIC = 1)
+
+/obj/item/weapon/tool_upgrade/safty/duller/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_FORCE_MULT = 0.10,
+		)
+
+	I.required_qualities = list(QUALITY_CUTTING,QUALITY_SAWING, QUALITY_SHOVELING, QUALITY_WIRE_CUTTING)
+	I.prefix = "dulled"
+
+/obj/item/weapon/tool_upgrade/safty/slowdown
+	name = "low power motor"
+	desc = "A regulated motor that well helps evade harm to softer matterals will keep its work speed."
+	icon_state = "motor"
+
+	price_tag = 100
+	matter = list(MATERIAL_STEEL = 5)
+
+/obj/item/weapon/tool_upgrade/safty/slowdown/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_FORCE_MULT = 0.10,
+		)
+
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
+	I.prefix = "regulated"
+
+
 //Armor mods
 /obj/item/weapon/tool_upgrade/armor/melee
 	name = "melee plating"

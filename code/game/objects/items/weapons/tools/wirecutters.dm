@@ -24,6 +24,7 @@
 	icon_state = "impro_cutter"
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
+	max_health = 150
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 20, QUALITY_RETRACTING = 10, QUALITY_BONE_SETTING = 10, QUALITY_CLAMPING = 10)
 	degradation = 1.5
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
@@ -38,6 +39,7 @@
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 40, QUALITY_CUTTING = 30)
 	degradation = 0.7
 	max_upgrades = 4
+	max_health = 750
 
 /obj/item/weapon/tool/wirecutters/pliers //hybrid of wirecutters, wrench and cautery
 	name = "pliers"

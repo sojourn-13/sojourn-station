@@ -74,6 +74,16 @@
 		/datum/design/autolathe/part/expansion,
 		/datum/design/autolathe/part/spikes,
 		/datum/design/autolathe/part/dampener,
+		/datum/design/research/item/weapon/toolmod/antistaining,
+		/datum/design/research/item/weapon/toolmod/vibcompensator,
+		/datum/design/research/item/weapon/toolmod/compensatedbarrel,
+		/datum/design/research/item/weapon/toolmod/hydraulic,
+		/datum/design/research/item/weapon/toolmod/injector,
+		/datum/design/research/item/weapon/toolmod/plasmablock,
+		/datum/design/autolathe/part/plastic_chain,
+		/datum/design/autolathe/part/hammer_padding,
+		/datum/design/autolathe/part/duller,
+		/datum/design/autolathe/part/slowdown,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits
@@ -182,5 +192,15 @@
 		/datum/design/autolathe/part/expansion,
 		/datum/design/autolathe/part/spikes,
 		/datum/design/autolathe/part/dampener,
+		/datum/design/autolathe/part/plastic_chain,
+		/datum/design/autolathe/part/hammer_padding,
+		/datum/design/autolathe/part/duller,
+		/datum/design/autolathe/part/slowdown,
+		/datum/design/research/item/weapon/toolmod/antistaining,
+		/datum/design/research/item/weapon/toolmod/vibcompensator,
+		/datum/design/research/item/weapon/toolmod/compensatedbarrel,
+		/datum/design/research/item/weapon/toolmod/hydraulic,
+		/datum/design/research/item/weapon/toolmod/injector,
+		/datum/design/research/item/weapon/toolmod/plasmablock,
 		)
 

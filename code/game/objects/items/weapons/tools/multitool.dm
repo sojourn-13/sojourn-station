@@ -15,7 +15,7 @@
 	worksound = WORKSOUND_PULSING
 	tool_qualities = list(QUALITY_PULSING = 30)
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-
+	max_health = 350 //frail
 	origin_tech = list(TECH_MAGNET = 1, TECH_ENGINEERING = 1)
 
 	var/buffer_name

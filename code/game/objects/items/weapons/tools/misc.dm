@@ -6,6 +6,7 @@
 	worksound = WORKSOUND_DRIVER_TOOL
 	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 50, QUALITY_BOLT_TURNING = 50, QUALITY_DRILLING = 20, QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 10)
 	price_tag = 1000
+	max_health = 600 //Stronk
 	use_fuel_cost = 0.1
 	max_fuel = 50
 	toggleable = TRUE
@@ -23,6 +24,7 @@
 	switched_on_qualities = list(QUALITY_WELDING = 40, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 15, QUALITY_CAUTERIZING = 10)
 	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 3)
 	price_tag = 1000 //valuable given its design
+	max_health = 400 //frail
 	use_power_cost = 1.2
 	sparks_on_use = TRUE
 	force = WEAPON_FORCE_WEAK
@@ -119,7 +121,7 @@
 	flags = CONDUCT
 	origin_tech = list(TECH_MATERIAL = 3, TECH_BIO = 4)
 	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 25)
-
+	max_health = 400 //frail
 	max_upgrades = 2
 	workspeed = 1.2
 
@@ -133,6 +135,7 @@
 	edge = TRUE
 	worksound = WORKSOUND_DRIVER_TOOL
 	flags = CONDUCT
+	max_health = 350 //frail
 	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 15)
 	degradation = 0.5
 	workspeed = 0.8
@@ -149,7 +152,7 @@
 	matter = null //Nope
 	degradation = 1
 	workspeed = 0.2 //SLOW
-
+	max_health = 120 //frail
 	suitable_cell = /obj/item/weapon/cell/small
 
 	max_upgrades = 0 //NO
@@ -174,7 +177,7 @@
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 35, QUALITY_BOLT_TURNING = 35, QUALITY_DRILLING = 15, QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 10, QUALITY_PRYING = 25, QUALITY_DIGGING = 20, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30)
 	degradation = 0.5
 	workspeed = 0.8
-
+	max_health = 350 //frail
 	use_power_cost = 0.8
 	suitable_cell = /obj/item/weapon/cell/medium
 

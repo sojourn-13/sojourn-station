@@ -160,6 +160,7 @@
 	item_state = "knife"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
 	force = WEAPON_FORCE_PAINFUL
+	max_health = 800
 	max_upgrades = 3
 
 /obj/item/weapon/tool/knife/tacknife
@@ -189,6 +190,7 @@
 	desc = "Given to high ranking officers as a signature of office, while it isn't meant to be a weapon it certainly does the job."
 	icon_state = "fancydagger"
 	item_state = "fancydagger"
+	max_health = 800
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
 
 /obj/item/weapon/tool/knife/dagger/bluespace
@@ -298,6 +300,7 @@
 	origin_tech = list(TECH_COMBAT = 4)
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	max_upgrades = 2
+	max_health = 800
 	tool_qualities = list(QUALITY_HAMMERING = 5)
 
 //Swords
@@ -342,6 +345,7 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2) //twice the value of a kitche knife
 	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_DANGEROUS
+	max_health = 200
 	armor_penetration = ARMOR_PEN_SHALLOW
 
 /obj/item/weapon/tool/sword/katana/nano
@@ -350,7 +354,7 @@
 	icon_state = "eutactic_katana"
 	item_state = "eutactic_katana"
 	toggleable = TRUE
-
+	max_health = 100
 	suitable_cell = /obj/item/weapon/cell/small
 
 	use_power_cost = 0.4
@@ -410,6 +414,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	tool_qualities = list(QUALITY_HAMMERING = 45)
 	worksound = WORKSOUND_HAMMER
+	max_health = 1000
 	price_tag = 2000
 
 /obj/item/weapon/tool/sword/saber

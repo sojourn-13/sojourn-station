@@ -27,6 +27,7 @@
 	switched_off_qualities = list(QUALITY_HAMMERING = 30)
 	toggleable = TRUE
 	armor_penetration = ARMOR_PEN_EXTREME
+	max_health = 600 //Stronk
 	degradation = 0.7
 	use_power_cost = 2
 	suitable_cell = /obj/item/weapon/cell/medium
@@ -61,6 +62,7 @@
 	switched_on_qualities = list(QUALITY_HAMMERING = 60)
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)
 	toggleable = TRUE
+	max_health = 600 //Stronk
 	degradation = 0.6
 	use_power_cost = 1.5
 	workspeed = 1.5
@@ -72,6 +74,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "homewrecker0"
 	wielded_icon = "homewrecker1"
+	max_health = 100 //weak
 	armor_penetration = ARMOR_PEN_DEEP
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_NORMAL
@@ -100,7 +103,7 @@
 	desc = "Some metal attached to the end of a stick, for applying blunt force trauma to a roach."
 	icon_state = "ghetto_mace"
 	item_state = "ghetto_mace"
-
+	max_health = 100 //weak
 	force = WEAPON_FORCE_PAINFUL
 
 	tool_qualities = list(QUALITY_HAMMERING = 15)

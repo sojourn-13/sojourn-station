@@ -21,6 +21,7 @@
 	desc = "A piece of metal cut and twisted to grant bolt-turning capabilities. Would perform better than a regular wrench with some tool mods."
 	icon_state = "impro_wrench"
 	degradation = 4
+	max_health = 150
 	force = WEAPON_FORCE_HARMLESS
 	tool_qualities = list(QUALITY_BOLT_TURNING = 20, QUALITY_HAMMERING = 10)
 	matter = list(MATERIAL_STEEL = 1)
@@ -35,5 +36,6 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 1)
 	force = WEAPON_FORCE_NORMAL
 	throwforce = WEAPON_FORCE_NORMAL
+	max_health = 750
 	degradation = 0.7
 	max_upgrades = 4

@@ -126,6 +126,22 @@
 	name = "Oxyjet Canister"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/oxyjet
 
+/datum/design/autolathe/part/plastic_chain
+	name = "Plastic Saw Blades"
+	build_path = /obj/item/weapon/tool_upgrade/safty/platic_spikes
+
+/datum/design/autolathe/part/hammer_padding
+	name = "Hammer Head Padding"
+	build_path = /obj/item/weapon/tool_upgrade/safty/padded
+
+/datum/design/autolathe/part/duller
+	name = "Duller Block"
+	build_path = /obj/item/weapon/tool_upgrade/safty/duller
+
+/datum/design/autolathe/part/slowdown
+	name = "Low Power Motor"
+	build_path = /obj/item/weapon/tool_upgrade/safty/slowdown
+
 //Excelsior shit
 /datum/design/autolathe/excelsior/laser
 	name = "excelsior micro-laser"

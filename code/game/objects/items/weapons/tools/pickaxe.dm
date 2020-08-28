@@ -58,7 +58,7 @@
 	degradation = 0.6
 	workspeed = 1.2
 	use_power_cost = 0
-
+	max_health = 750
 
 /obj/item/weapon/tool/pickaxe/jackhammer
 	name = "jackhammer"
@@ -89,6 +89,7 @@
 	workspeed = 1.7
 	max_upgrades = 2
 	use_power_cost = 0.8
+	max_health = 750
 
 /obj/item/weapon/tool/pickaxe/drill
 	name = "mining drill" // Can dig sand as well!
@@ -115,6 +116,7 @@
 	origin_tech = list(TECH_MATERIAL = 4, TECH_POWER = 3, TECH_ENGINEERING = 2)
 	degradation = 0.6
 	workspeed = 1.7
+	max_health = 750
 	max_upgrades = 2
 	use_fuel_cost = 0.10
 	max_fuel = 90
