@@ -122,8 +122,9 @@
 	M.adjust_hallucination(-0.9 * effect_multiplier)
 	M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
 	M.add_chemical_effect(CE_ANTITOX, 1)
-	holder.remove_reagent("pararein", 0.4 * effect_multiplier)
+	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
 	holder.remove_reagent("blattedin", 0.4 * effect_multiplier)
+	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
 
 /datum/reagent/medicine/carthatoline
 	name = "Carthatoline"
