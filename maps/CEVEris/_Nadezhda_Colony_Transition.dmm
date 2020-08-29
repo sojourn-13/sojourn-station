@@ -3,7 +3,7 @@
 "ac" = (/obj/structure/multiz/stairs/active{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
 "ad" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
 "ae" = (/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
-"af" = (/obj/structure/cyberplant,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"af" = (/obj/random/furniture/pottedplant,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "ag" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/obj/machinery/holoposter{pixel_y = 28},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "ah" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "ai" = (/obj/structure/bed/chair/comfy/brown{dir = 8},/obj/machinery/holoposter{pixel_y = 28},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
