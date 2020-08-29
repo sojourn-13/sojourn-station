@@ -110,7 +110,7 @@
 	icon_state = "hostilemob-brown"
 	alpha = 128
 
-/obj/random/mob/roaches/item_to_spawn()
+/obj/random/mob/xenomorphs/item_to_spawn()
 	return pickweight(list(/mob/living/carbon/superior_animal/xenomorph = 9,
 				//trash
 				/mob/living/carbon/superior_animal/xenomorph/sentinel = 8,
@@ -132,7 +132,7 @@
 				/mob/living/carbon/superior_animal/xenomorph/warrior/hivelord = 4,
 				//mega fauna
 				/mob/living/carbon/superior_animal/xenomorph/warrior/praetorian = 1,
-				/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen = 1))
+				/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen = 0.1))
 
 /obj/random/mob/xenomorphs/low_chance
 	name = "low chance random xenomorph"
