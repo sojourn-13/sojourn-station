@@ -15,7 +15,7 @@
 	return track
 
 /obj/machinery/media/jukebox/
-	name = "space jukebox"
+	name = "jukebox"
 	icon = 'icons/obj/jukebox.dmi'
 	icon_state = "jukebox2-nopower"
 	var/state_base = "jukebox2"

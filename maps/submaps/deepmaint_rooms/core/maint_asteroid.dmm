@@ -30,7 +30,7 @@
 "aD" = (/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "aE" = (/turf/simulated/floor/tiled/steel/cargo,/area/deepmaint)
 "aF" = (/obj/structure/table/standard,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot/low_chance,/turf/simulated/floor/tiled/steel/gray_platform,/area/deepmaint)
-"aG" = (/obj/random/cluster/roaches/low_chance,/turf/simulated/floor/tiled/steel,/area/deepmaint)
+"aG" = (/obj/random/cluster/xenomorphs/low_chance,/turf/simulated/floor/asteroid,/area/deepmaint)
 "aH" = (/obj/machinery/door/airlock/multi_tile/glass{dir = 2},/turf/simulated/floor/tiled/steel/cargo,/area/deepmaint)
 "aI" = (/obj/random/junk,/obj/random/material_ore,/obj/random/material_ore,/turf/simulated/floor/plating,/area/deepmaint)
 "aJ" = (/obj/structure/table/standard,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot/low_chance,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/steel/gray_platform,/area/deepmaint)
@@ -59,6 +59,7 @@
 "bg" = (/obj/random/junk,/turf/simulated/floor/plating/under,/area/deepmaint)
 "bh" = (/obj/random/junk,/turf/simulated/floor/tiled/techmaint_cargo,/area/deepmaint)
 "bi" = (/turf/simulated/floor/tiled/techmaint_cargo,/area/deepmaint)
+"bj" = (/obj/random/cluster/xenomorphs/low_chance,/turf/simulated/floor/tiled/steel,/area/deepmaint)
 
 (1,1,1) = {"
 aaaaabaaacacacadacaeafadaaabaaaaaaabaaabaa
@@ -66,14 +67,14 @@ aaababagahahahahahahahahacagacaiababaaajaa
 ababacahahakakakakakakahahahahadadadadabaa
 aaalahahahakamananaoakapafafahaqafadadadab
 abaiahahahakakakarakakakakafahahafasatafab
-aaabahahahakauauavawaxavakafahahayazadasab
+aaabahahahakauauavawaxavakafahahayaGadasab
 aaabahahahakaAaAaAaAaAaAakafafahahayafadai
 aaaiacahahakaBaAaAaAaAaBakakafahahahahaqab
-aaalacacahakaCaDaDaDaDaDaDaEafafahahahahaa
-abaaazahahakaFaDaDaDaGaDaDaHafafafafayahab
+aaalacacahakaCaDaDbjaDaDaDaEafafahahahahaa
+abaaazahahakaFaDaDaDaDaDaDaHafafafafayahab
 aaaIagahahakaJaDaDaDaDaKakakaLafafafafahab
 aaanahahahakaMaNaOaOaDaDakaPafafaQaQahahab
-abaRahahahakakakakakaSaEakaTazafaTahahahai
+abaRahahahakakakakakaSaEakaTaGafaTahahahai
 aaaUahahahakaVaWaXakaYaYaZaTafafaTahahahal
 aaadahahahakbabababbaYaYaZaTafafaTahahanab
 aaacadahahakbcbdbeakbfaYaZaTafafaTahahbgaa

@@ -121,8 +121,8 @@
 
 //Disables the ability to toggle the safety, toggles the safety permanently off, decreases fire delay. Acquired through loot spawns
 /obj/item/weapon/gun_upgrade/trigger/dangerzone
-	name = "H&S \"Danger Zone\" Trigger"
-	desc = "When you need that extra edge."
+	name = "\"Danger Zone\" Trigger"
+	desc = "A popular design by the Artificer's Guild used on the frontier by mercenary groups who don't care about collateral, overclocking the firing mechanism by disabling the safety function. A void wolf staple."
 	icon_state = "Danger_Zone"
 
 /obj/item/weapon/gun_upgrade/trigger/dangerzone/New()
@@ -153,8 +153,8 @@
 
 //Adds +3 to the internal magazine of a weapon. Acquired through loot spawns.
 /obj/item/weapon/gun_upgrade/mechanism/overshooter
-	name = "H&S \"Overshooter\" internal magazine kit"
-	desc = "A method of overloading a weapon's internal magazine, fitting more ammunition within the weapon."
+	name = "\"Overshooter\" internal magazine kit"
+	desc = "A method of overloading a weapon's internal magazine, fitting more ammunition within the weapon. An Artificer's Guild favorite for revolvers and shotguns."
 	icon_state = "Overshooter"
 
 /obj/item/weapon/gun_upgrade/mechanism/overshooter/New()
@@ -188,7 +188,7 @@
 
 //Lets any revolver be made into a fully automatic weapon, but increases recoil. Acquirable through guild crafters.
 /obj/item/weapon/gun_upgrade/mechanism/weintraub
-	name = "H&S \"Hurricane\" full auto kit"
+	name = "\"Hurricane\" full auto kit"
 	desc = "A specially made custom tooled fully automatic cylinder fit for a revolver, for when you want stopping power AND a bullet storm. Good luck controlling the recoil."
 	icon_state = "Weintraub"
 

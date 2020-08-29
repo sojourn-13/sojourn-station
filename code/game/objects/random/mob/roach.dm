@@ -103,3 +103,59 @@
 	name = "low chance random void wolf"
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 60
+
+//xenomorphs
+/obj/random/mob/xenomorphs
+	name = "random xenomorph"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/roaches/item_to_spawn()
+	return pickweight(list(/mob/living/carbon/superior_animal/xenomorph = 9,
+				//trash
+				/mob/living/carbon/superior_animal/xenomorph/sentinel = 8,
+				/mob/living/carbon/superior_animal/xenomorph/hunter = 8,
+				/mob/living/carbon/superior_animal/xenomorph/runner = 8,
+				/mob/living/carbon/superior_animal/xenomorph/runner/panther = 8,
+				/mob/living/carbon/superior_animal/xenomorph/spitter = 8,
+				//robust
+				/mob/living/carbon/superior_animal/xenomorph/warrior = 6,
+				/mob/living/carbon/superior_animal/xenomorph/defender = 6,
+				/mob/living/carbon/superior_animal/xenomorph/warrior/shrike = 6,
+				/mob/living/carbon/superior_animal/xenomorph/warrior/bull = 6,
+				/mob/living/carbon/superior_animal/xenomorph/spitter/boiler = 6,
+				//impressive
+				/mob/living/carbon/superior_animal/xenomorph/warrior/bull/crusher = 4,
+				/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/screecher = 4,
+				/mob/living/carbon/superior_animal/xenomorph/runner/ravager = 4,
+				/mob/living/carbon/superior_animal/xenomorph/warrior/defiler = 4,
+				/mob/living/carbon/superior_animal/xenomorph/warrior/hivelord = 4,
+				//mega fauna
+				/mob/living/carbon/superior_animal/xenomorph/warrior/praetorian = 1,
+				/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen = 1))
+
+/obj/random/mob/xenomorphs/low_chance
+	name = "low chance random xenomorph"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/cluster/xenomorphs
+	name = "cluster of xenomorphs"
+	icon_state = "hostilemob-brown-cluster"
+	alpha = 128
+	min_amount = 3
+	max_amount = 9
+	spread_range = 0
+
+/obj/random/cluster/xenomorphs/item_to_spawn()
+	return /obj/random/mob/roaches
+
+/obj/random/cluster/xenomorphs/low_chance
+	name = "low chance cluster of xenomorphs"
+	icon_state = "hostilemob-brown-cluster-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/cluster/xenomorphs/lower_chance
+	name = "lower chance cluster of xenomorphs"
+	icon_state = "hostilemob-brown-cluster-low"
+	spawn_nothing_percentage = 80
