@@ -5,7 +5,7 @@
 	icon = 'icons/effects/effects.dmi'
 	anchored = 1
 	density = 0
-	health = 15
+	health = 5
 
 //similar to weeds, but only barfed out by nurses manually
 /obj/effect/spider/ex_act(severity)
@@ -50,7 +50,7 @@
 		healthCheck()
 
 /obj/effect/spider/stickyweb
-	health = 5
+	health = 1
 	icon_state = "stickyweb1"
 	New()
 		if(prob(50))
@@ -255,7 +255,7 @@
 	name = "cocoon"
 	desc = "Something wrapped in silky spider web"
 	icon_state = "cocoon1"
-	health = 5
+	health = 3
 
 	var/is_large_cocoon
 
@@ -264,7 +264,7 @@
 	icon_state = pick("cocoon1","cocoon2","cocoon3")
 
 /obj/effect/spider/cocoon/proc/becomeLarge()
-	health = 20
+	health = 8
 	is_large_cocoon = 1
 	icon_state = pick("cocoon_large1","cocoon_large2","cocoon_large3")
 
