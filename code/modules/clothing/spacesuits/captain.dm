@@ -19,7 +19,7 @@
 	desc = "A bulky, heavy-duty piece of exclusive armor."
 	icon_state = "caparmor"
 	item_state = "capspacesuit"
-	slowdown = 1.5
+	slowdown = 0.3
 	armor = list(
 		melee = 40,
 		bullet = 30,

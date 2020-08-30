@@ -35,6 +35,10 @@
 	if(src)
 		qdel(src)
 
+/obj/item/weapon/mine/bullet_act()
+	if(prob(90))
+		explode()
+
 /obj/item/weapon/mine/update_icon()
 	cut_overlays()
 

@@ -9,6 +9,7 @@
 	var/triggered = 0
 	var/smoke_strength = 3
 	layer = HIDE_LAYER
+	anchored = TRUE
 
 /obj/item/weapon/mine_old/New()
 	icon_state = "mine"
