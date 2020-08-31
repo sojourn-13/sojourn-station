@@ -313,7 +313,7 @@
 
 	if(world.time >= next_onfire_hal)
 		next_onfire_hal = world.time + 50
-		adjustHalLoss(fire_stacks*10 + 3)
+		adjustHalLoss(fire_stacks*5 + 3)
 
 	var/turf/location = get_turf(src)
 	location.hotspot_expose(fire_burn_temperature(), 50, 1)
