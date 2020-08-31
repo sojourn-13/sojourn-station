@@ -93,10 +93,13 @@
 			return
 
 /obj/item/weapon/mine/Crossed(var/mob/AM)
+	var/bonus_evade = 0
 	if (armed)
 		if (isliving(AM))
 			if (!is_excelsior(AM))
-				if(prob(AM.stats.getStat(STAT_VIG)))
+				if(AM.stats.getPerk(PERK_SURE_STEP))
+					bonus_evade += 30
+				if(prob(AM.stats.getStat(STAT_VIG) + bonus_evade))
 					AM.visible_message(
 					SPAN_DANGER("[AM] narrowly avoids setting off \the [src] at the last second!"),
 					SPAN_DANGER("Your vigilant observation lets you avoid \the [src] at the last possible second!")

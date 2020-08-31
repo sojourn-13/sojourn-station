@@ -5,3 +5,27 @@
 	icon_state = "multitool"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/weapon/tool/engimplant
+
+/obj/item/organ_module/active/simple/engineer/organic
+	name = "embedded organic engineering multitool"
+	desc = "An all in one organic engineering tool made of biomass that functions through a set of chemicals, enzymes, and the users will."
+	verb_name = "Deploy organic engineering omnitool"
+	icon_state = "organicengimplant"
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/weapon/tool/engimplant/organic
+	matter = list(MATERIAL_BIOMATTER = 10)
+
+/obj/item/weapon/biogoop/engineer
+	name = "incomplete organic engineering augment"
+
+
+/obj/item/weapon/biogoop/engineer/attackby(obj/item/I, mob/user)
+	if(istype(I,/obj/item/stack/nanopaste))
+		var/obj/item/stack/S = I
+		if(S.use(1))
+			to_chat(user, SPAN_NOTICE("You apply the nanite matrix, shaping the bioaugment into the creator."))
+			playsound(loc, 'sound/items/biotransform.ogg', 50, 1)
+			new /obj/item/organ_module/active/simple/engineer/organic(get_turf(src))
+			qdel(src)
+			return
+	return ..()

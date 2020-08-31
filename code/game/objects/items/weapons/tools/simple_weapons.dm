@@ -400,10 +400,10 @@
 	force = WEAPON_FORCE_LETHAL
 	slot_flags = SLOT_BELT|SLOT_BACK
 	armor_penetration = ARMOR_PEN_EXTREME
-	throwforce = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_LETHAL
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5)
 	throw_speed = 1
-	throw_range = 4
+	throw_range = 7
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_COMBAT = 3)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
@@ -435,8 +435,6 @@
 	tool_qualities = list(QUALITY_CUTTING = 10,  QUALITY_SAWING = 20) //So we can cut down trees
 	force = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
-
-//Hammers (hammer tool quality isnt in yet so they dont have tool qualities) - would need it's own file soon
 
 /obj/item/weapon/tool/homewrecker
 	name = "homewrecker"

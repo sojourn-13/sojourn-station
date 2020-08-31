@@ -313,7 +313,6 @@
 	singular_name = "biomatter sheet"
 	icon_state = "sheet-biomatter"
 	default_type = MATERIAL_BIOMATTER
-	max_amount = 60
 	price_tag = 10
 	var/biomatter_in_sheet = 1
 

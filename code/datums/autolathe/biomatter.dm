@@ -155,6 +155,10 @@
 	name = "Organic surgery omnitool implant"
 	build_path = /obj/item/weapon/biogoop/surgical
 
+/datum/design/bioprinter/bioimplant/oengineering
+	name = "Organic engineering omnitool implant"
+	build_path = /obj/item/weapon/biogoop/engineer
+
 /datum/design/bioprinter/bioimplant/oarmor
 	name = "Organic exoskeleton implant"
 	build_path = /obj/item/weapon/biogoop/armor
