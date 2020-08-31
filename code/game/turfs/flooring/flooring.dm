@@ -620,18 +620,23 @@ var/list/flooring_types
 
 /decl/flooring/wood/wild1
 	icon_base = "wooden_floor_s1"
+	build_type = /obj/item/stack/tile/wood/ashen/red
 
 /decl/flooring/wood/wild2
 	icon_base = "wooden_floor_s2"
+	build_type = /obj/item/stack/tile/wood/ashen/dull
 
 /decl/flooring/wood/wild3
 	icon_base = "wooden_floor_s3"
+	build_type = /obj/item/stack/tile/wood/ashen
 
 /decl/flooring/wood/wild4
 	icon_base = "wooden_floor_s4"
+	build_type = /obj/item/stack/tile/wood/old
 
 /decl/flooring/wood/wild5
 	icon_base = "wooden_floor_s5"
+	build_type = /obj/item/stack/tile/wood/old/veridical
 
 /decl/flooring/reinforced
 	name = "reinforced floor"
