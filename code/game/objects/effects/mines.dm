@@ -1,14 +1,15 @@
 /obj/item/weapon/mine_old
 	name = "old land mine"
-	desc = "A small highly dangerous explosive that looks rusted and aged beyond use."
+	desc = "A small highly dangerous explosive that looks rusted and aged beyond use. Unlike the newer models, this one has a proximity sensor, no amount of fancy footwork will save you here."
 	density = 0
 	anchored = 1
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
-	icon_state = "mine"
+	icon_state = "mine_old"
 	var/triggerproc = "explode" //name of the proc thats called when the mine is triggered
 	var/triggered = 0
 	var/smoke_strength = 3
 	layer = HIDE_LAYER
+	anchored = TRUE
 
 /obj/item/weapon/mine_old/New()
 	icon_state = "mine"

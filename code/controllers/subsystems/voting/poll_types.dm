@@ -115,6 +115,7 @@
 	can_unvote = TRUE
 	cooldown = 30 MINUTES
 	see_votes = TRUE
+	only_admin = TRUE
 
 	var/pregame = FALSE
 

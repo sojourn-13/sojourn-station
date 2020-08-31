@@ -124,7 +124,7 @@
 	workspeed = 1.2
 
 /obj/item/weapon/tool/medmultitool/medimplant
-	name = "Medical Omnitool"
+	name = "soteria medical omnitool"
 	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a medium power cell."
 	icon_state = "medimplant"
 	matter = null
@@ -143,7 +143,7 @@
 	max_upgrades = 1
 
 /obj/item/weapon/tool/medmultitool/medimplant/sci
-	name = "Medical Omnitool"
+	name = "soteria medical omnitool"
 	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
 	icon_state = "medimplant_sci"
 	matter = null //Nope
@@ -155,7 +155,7 @@
 	max_upgrades = 0 //NO
 
 /obj/item/weapon/tool/medmultitool/medimplant/organic
-	name = "Organic Medical Omnitool"
+	name = "organic medical omnitool"
 	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels. This version is made of entirely organic materials and doesn't require a power cell, sadly it cannot be upgraded and work takes slightly longer, but at least it is self repairing."
 	icon_state = "organicmedimplant"
 	use_power_cost = 0
@@ -165,7 +165,7 @@
 	//matter = list(MATERIAL_BIOMATTER = 10) No
 
 /obj/item/weapon/tool/engimplant
-	name = "Engineering Omnitool"
+	name = "engineering omnitool"
 	desc = "An all-in-one engineering tool implant. Convenient to use and more effective than the basics, but much less efficient than customized or more specialized tools."
 	icon_state = "engimplant"
 	force = WEAPON_FORCE_DANGEROUS
@@ -182,6 +182,15 @@
 
 	var/buffer_name
 	var/atom/buffer_object
+
+/obj/item/weapon/tool/engimplant/organic
+	name = "organic engineering omnitool"
+	desc = "An all-in-one engineering tool implant. Convenient to use and more effective than the basics, but much less efficient than customized or more specialized tools. This version is made of entirely organic materials and doesn't require a power cell, sadly it cannot be upgraded and work takes slightly longer, but at least it is self repairing."
+	icon_state = "organicengimplant"
+	use_power_cost = 0
+	suitable_cell = null
+	degradation = 0
+	max_upgrades = 0
 
 /obj/item/weapon/tool/engimplant/Destroy() // code for omnitool buffers was copied from multitools.dm
 	unregister_buffer(buffer_object)
