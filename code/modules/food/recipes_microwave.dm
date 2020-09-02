@@ -567,6 +567,10 @@ I said no!
 	reagents = list("water" = 20)
 	result= /obj/item/weapon/reagent_containers/food/snacks/wishsoup
 
+/datum/recipe/candy_corn
+	reagents = list("sugar" = 5, "cornoil" = 5)
+	result= /obj/item/weapon/reagent_containers/food/snacks/candy_corn
+
 /datum/recipe/hotchili
 	fruit = list("chili" = 1, "tomato" = 1)
 	items = list(/obj/item/weapon/reagent_containers/food/snacks/meat)
