@@ -292,16 +292,22 @@
 	var/obj/item/weapon/reagent_containers/glass/beaker/B1 = new(src)
 	var/obj/item/weapon/reagent_containers/glass/beaker/B2 = new(src)
 
-	B1.reagents.add_reagent("plantbgone", 25)
-	B1.reagents.add_reagent("potassium", 25)
-	B2.reagents.add_reagent("phosphorus", 25)
-	B2.reagents.add_reagent("sugar", 25)
+	B1.reagents.add_reagent("surfactant", 40)
+	B2.reagents.add_reagent("water", 40)
+	B2.reagents.add_reagent("plantbgone", 10)
 
 	detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
 
 	beakers += B1
 	beakers += B2
 	icon_state = "grenade"
+
+/obj/item/weapon/grenade/chem_grenade/antiweed/nt_antiweed
+	name = "Absolute \"Kudzu Killer\""
+	desc = "Church brand weedkiller grenades. Designed to deal with Kudzu infestations. Mixes toxic biomatter with plasticides for great results"
+	icon_state = "foam"
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_BIOMATTER = 5)
+	matter_reagents = list("water" = 30)
 
 /obj/item/weapon/grenade/chem_grenade/cleaner
 	name = "Lonestar \"Shit-Be-Gone\""
@@ -310,6 +316,13 @@
 	can_be_modified = FALSE
 	stage = READY
 	path = 1
+
+/obj/item/weapon/grenade/chem_grenade/cleaner/nt_cleaner
+	name = "Absolutism \"Cleanse Capsule\""
+	desc = "Church brand cleaner grenades. Designed to deal with biogenerator accidents and the aftermaths of wildlife hordes in the colony."
+	icon_state = "foam"
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 5)
+	matter_reagents = list("water" = 30)
 
 /obj/item/weapon/grenade/chem_grenade/cleaner/Initialize()
 	. = ..()

@@ -226,7 +226,7 @@
 /mob/living/simple_animal/hostile/retaliate/croakerlord
 	name = "croaker lord"
 	desc = "The thing the 'frogs' eventually grow into, proving beyond doubt their alien nature. While one of the strongest monsters on the planet it isn't normally hostile unless it \
-	has a reason and god help you if it finds one, their berserk rages kill everyone when its eyes open."
+	has a reason and god help you if it finds one, their berserk rages kill nearly everyone when its eyes open."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "leaper"
 	icon_living = "leaper"
@@ -247,7 +247,7 @@
 	faction = "pond"
 	mob_size =  3  // The same as Hivemind Tyrant
 
-/mob/living/simple_animal/hostile/retaliate/adjustBruteLoss(var/damage)
+/mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
 	..()
 	icon_state = "leaper_alert"
 	icon_living = "leaper_alert"

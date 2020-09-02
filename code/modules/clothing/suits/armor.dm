@@ -91,7 +91,7 @@
 
 /obj/item/clothing/suit/armor/vest/custodian
 	name = "custodian armor"
-	desc = "Someone's gotta clean this mess."
+	desc = "Someone's gotta clean this mess. While this armor is technically church property, lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
 	icon_state = "custodian"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS

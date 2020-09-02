@@ -31,13 +31,12 @@
 	materials = list("biomatter" = 7.5)
 //[/NUTRIMENTS]
 
-//[THINGS]
+//[CLOTHES, ARMOR AND ACCESORIES]
 /*  //Commented out because broke.
 /datum/design/bioprinter/cardboard
 	name = "Cardboard"
 	build_path = /obj/item/stack/material/cardboard/random // I guess it depends on the protein content.
 */
-
 /datum/design/bioprinter/wallet
 	name = "Wallet"
 	build_path = /obj/item/weapon/storage/wallet
@@ -113,7 +112,37 @@
 	name = "Champion belt"
 	build_path = /obj/item/weapon/storage/belt/champion
 	materials = list("biomatter" = 50)
-//[/THINGS]
+
+// This separates regular clothes designs from NT clothes designs //
+
+/datum/design/bioprinter/nt_clothes/acolyte_armor
+	name = "Vector Armor"
+	build_path = /obj/item/clothing/suit/space/void/acolyte
+
+/datum/design/bioprinter/nt_clothes/agrolyte_armor
+	name = "Agrolyte Armor"
+	build_path = /obj/item/clothing/suit/space/void/agrolyte
+
+/datum/design/bioprinter/nt_clothes/custodian_armor
+	name = "Custodian Armor"
+	build_path = /obj/item/clothing/suit/space/void/custodian
+
+/datum/design/bioprinter/nt_clothes/sports_jacket
+	name = "Sports Jacket"
+	build_path = /obj/item/clothing/suit/storage/neotheosports
+
+/datum/design/bioprinter/nt_clothes/acolyte_uniform
+	name = "Vector Garment"
+	build_path = /obj/item/clothing/under/rank/acolyte
+
+/datum/design/bioprinter/nt_clothes/sports_uniform
+	name = "Sport Clothes"
+	build_path = /obj/item/clothing/under/rank/church/sport
+
+/datum/design/bioprinter/nt_clothes/church_uniform
+	name = "Church Garment"
+	build_path = /obj/item/clothing/under/rank/church
+//[CLOTHES, ARMOR AND ACCESORIES]
 
 //[MED]
 /datum/design/bioprinter/medical

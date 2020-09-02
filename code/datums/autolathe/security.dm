@@ -34,3 +34,7 @@
 	name = "gun case"
 	build_path = /obj/item/weapon/storage/briefcase/rifle
 	materials = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/sec/hailer
+	name = "hailer"
+	build_path = /obj/item/device/hailer

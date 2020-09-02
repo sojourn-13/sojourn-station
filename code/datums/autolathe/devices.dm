@@ -46,10 +46,6 @@
 	name = "hand labeler"
 	build_path = /obj/item/weapon/hand_labeler
 
-/datum/design/autolathe/device/excelsiormine
-	name = "excelsior mine"
-	build_path = /obj/item/weapon/mine
-
 /datum/design/autolathe/device/flamethrower
 	name = "flamethrower"
 	build_path = /obj/item/weapon/flamethrower
@@ -71,3 +67,15 @@
 	name = "camera film"
 	build_path = /obj/item/device/camera_film
 	materials = list(MATERIAL_PLASTIC = 1, MATERIAL_STEEL = 0.2)
+
+/datum/design/autolathe/device/excelsiormine
+	name = "excelsior mine"
+	build_path = /obj/item/weapon/mine
+
+/datum/design/autolathe/device/grenade/nt_cleaner
+	name = "\"Cleanse Capsule\""
+	build_path = /obj/item/weapon/grenade/chem_grenade/cleaner/nt_cleaner
+
+/datum/design/autolathe/device/grenade/nt_weedkiller
+	name = "\"Kudzu Killer\""
+	build_path = /obj/item/weapon/grenade/chem_grenade/antiweed/nt_antiweed

@@ -73,7 +73,7 @@
 		/datum/design/autolathe/circuit/reconstructor_excelsior,
 		/datum/design/autolathe/circuit/diesel_excelsior,
 		/datum/design/autolathe/circuit/turret_excelsior,
-		/datum/design/autolathe/circuit/autolathe_disk_cloner,
+		/datum/design/autolathe/circuit/autolathe_disk_cloner = 3,,
 		/datum/design/research/item/part/micro_mani,				//machine parts
 		/datum/design/research/item/part/subspace_amplifier,
 		/datum/design/research/item/part/subspace_crystal,
