@@ -15,6 +15,8 @@
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/sec/silencer,
 		/datum/design/autolathe/sec/gun_case,
+		/datum/design/research/item/light_replacer,
+		/datum/design/autolathe/sec/hailer,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security/hos
@@ -45,7 +47,8 @@
 		/datum/design/autolathe/misc/heavyflashlight,
 		/datum/design/autolathe/tool/tacknife,
 		/datum/design/autolathe/sec/beartrap,
-
+		/datum/design/research/item/light_replacer,
+		/datum/design/autolathe/sec/hailer,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/ammo
