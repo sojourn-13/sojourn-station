@@ -19,9 +19,9 @@
 /datum/reagent/nanites/proc/eat_blood(var/mob/living/carbon/M) // Yam !
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	// blood regeneratin 0.1 u every tick so with NANOBOTS_BLOOD_DRAIN = 0.003 human can sustain 30u nanobots without losing blood
-	if(B && B.volume && !M.species.reagent_tag == IS_CHTMANT)
+	if(B && B.volume)
 		B.remove_self(volume * NANOBOTS_BLOOD_DRAIN)
-	else
+	if(M.species.reagent_tag == IS_CHTMANT)
 		B.remove_self(volume * NANOBOTS_HEAVY_BLOOD_DRAIN) //If we are a Chtmant we lose more
 		M.adjustToxLoss(0.1) //We also take toxin damage
 
