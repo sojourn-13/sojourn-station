@@ -301,8 +301,9 @@
 			SSnano.update_uis(src)
 
 /obj/machinery/chemical_dispenser/meds_admin_debug
-	name = "chem dispenser magic"
-	ui_title = "Chem Dispenser 9000"
+	name = "mysterious chemical dispenser"
+	desc = "A mysterious chemical dispenser that can produce all sorts of highly advanced medicines at the press of a button."
+	ui_title = "Cheat Synthesizer 1337"
 //Admin dispender gets nuffen
 	level1 = list(null)
 	level2 = list(null)
@@ -316,10 +317,13 @@
 		"dexalin","dexalinp","tricordrazine",
 		"anti_toxin","synaptizine","hyronalin",
 		"arithrazine","alkysine","imidazoline",
-		"peridaxon","bicaridine","hyperzine",
+		"peridaxon","bicaridine","meralyne","hyperzine",
 		"rezadone","spaceacillin","ethylredoxrazine",
 		"stoxin","chloralhydrate","cryoxadone",
-		"clonexadone"
+		"clonexadone","ossisine","noexcutite","kyphotorin",
+		"detox","polystem","purger","addictol","aminazine",
+		"vomitol","haloperidol","paroxetine","citalopram",
+		"methylphenidate"
 	)
 
 /obj/machinery/chemical_dispenser/meds_admin_debug/attackby(obj/item/I, mob/living/user)
