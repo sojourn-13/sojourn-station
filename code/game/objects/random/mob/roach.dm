@@ -148,7 +148,7 @@
 	spread_range = 0
 
 /obj/random/cluster/xenomorphs/item_to_spawn()
-	return /obj/random/mob/roaches
+	return /obj/random/mob/xenomorphs
 
 /obj/random/cluster/xenomorphs/low_chance
 	name = "low chance cluster of xenomorphs"

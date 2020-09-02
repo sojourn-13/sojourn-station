@@ -68,6 +68,7 @@
 	license = -1
 	designs = list(
 		/datum/design/bioprinter/bioimplant/osurgical,
+		/datum/design/bioprinter/bioimplant/oengineering,
 		/datum/design/bioprinter/bioimplant/oscythe,
 		/datum/design/bioprinter/bioimplant/oarmor,
 		/datum/design/bioprinter/bioimplant/omuscle,
