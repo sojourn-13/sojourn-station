@@ -77,7 +77,7 @@
 
 /obj/item/clothing/suit/space/void/custodian
 	name = "custodian armor"
-	desc = "Someone's gotta clean this mess. While this armor is technically church property, lonestar custodians use it on loan to protect themselves from the colonies various dangerous pests."
+	desc = "Someone's gotta clean this mess. While this armor is technically church property, lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
 	icon_state = "custodian"
 	item_state = "custodian"
 	slowdown = 0.05

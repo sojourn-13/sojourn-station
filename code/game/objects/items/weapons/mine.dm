@@ -1,6 +1,6 @@
 /obj/item/weapon/mine
 	name = "Excelsior Mine"
-	desc = "An anti-personnel mine. IFF technology grants safe passage to Excelsior agents, and a mercifully brief end to others."
+	desc = "An anti-personnel mine. IFF technology grants safe passage to Excelsior agents, and a mercifully brief end to others unless they can disarm it with a multitool."
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
 	icon_state = "mine"
 	w_class = ITEM_SIZE_BULKY
@@ -46,28 +46,39 @@
 		add_overlay(image(icon,"mine_light"))
 
 /obj/item/weapon/mine/attack_self(var/mob/user)
-	armed = !armed
-	if(!deployed)
+	if(!armed)
 		user.visible_message(
 			SPAN_DANGER("[user] starts to deploy \the [src]."),
-			SPAN_DANGER("You begin deploying \the [src]!"),
-			"You hear the slow creaking of a spring."
+			SPAN_DANGER("You begin deploying \the [src]!")
 			)
 
 		if (do_after(user, 25))
 			user.visible_message(
 				SPAN_DANGER("[user] has deployed \the [src]."),
-				SPAN_DANGER("You have deployed \the [src]!"),
-				"You hear a latch click loudly."
+				SPAN_DANGER("You have deployed \the [src]!")
 				)
 
 			deployed = TRUE
 			user.drop_from_inventory(src)
 			anchored = TRUE
+			armed = TRUE
 			update_icon()
-	if (armed)
-		playsound(loc, 'sound/weapons/armbomb.ogg', 75, 1, -3)
+			playsound(loc, 'sound/weapons/armbomb.ogg', 75, 1, -3)
 	update_icon()
+
+/obj/item/weapon/mine/attack_hand(mob/user as mob)
+	if (deployed)
+		user.visible_message(
+				SPAN_DANGER("[user] extends its hand to reach the [src]!"),
+				SPAN_DANGER("you extend your arms to pick it up, knowing that it will likely blow up when you touch it!")
+				)
+		if (do_after(user, 5))
+			user.visible_message(
+				SPAN_DANGER("[user] attempts to pick up the [src] only to hear a beep as it explodes in your hands!"),
+				SPAN_DANGER("you attempts to pick up the [src] only to hear a beep as it explodes in your hands!")
+				)
+			explode()
+	.=..()
 
 /obj/item/weapon/mine/attackby(obj/item/I, mob/user)
 	if(QUALITY_PULSING in I.tool_qualities)
@@ -84,13 +95,16 @@
 				)
 			deployed = FALSE
 			anchored = FALSE
+			armed = FALSE
 			update_icon()
-			return
-		else
+		return
+	else
+		if (deployed)   //now touching it with stuff that don't pulse will also be a bad idea
 			user.visible_message(
-				SPAN_DANGER("[user] has set off \the [src]!"))
+				SPAN_DANGER("The [src] is hit with [I] and it explodes!"),
+				SPAN_DANGER("You hit the [src] with [I] and it explodes!"))
 			explode()
-			return
+		return
 
 /obj/item/weapon/mine/Crossed(var/mob/AM)
 	var/bonus_evade = 0
@@ -112,14 +126,14 @@
 
 /obj/item/weapon/mine/armed
 	name = "land mine"
-	desc = "An anti-personnel mine. This one looks new, as if someone placed this here recently..."
+	desc = "An anti-personnel mine. This one looks new, as if someone placed this here recently... Better disarm it with a multitool or a bullet."
 	armed = TRUE
 	deployed = TRUE
 	anchored = TRUE
 
 /obj/item/weapon/mine/improvised
 	name = "improvised land mine"
-	desc = "An anti-personnel mine that could only be more ghetto if it was held together by duct tape. It appears to be a makeshift trap with a frag grenade rigged to the trigger mechanism."
+	desc = "An anti-personnel mine that could only be more ghetto if it was held together by duct tape. It appears to be a makeshift trap with a frag grenade rigged to the trigger mechanism, a multitool should easily disarm this."
 	icon_state = "mine_improvised"
 	spread_radius = 4
 	num_fragments = 10
