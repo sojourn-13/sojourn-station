@@ -49,6 +49,34 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	flags = 0
 
+/obj/item/stack/tile/wood/ashen
+	name = "ashen wood floor tile"
+	singular_name = "ashen wood floor tile"
+	desc = "An easy to fit wooden floor tile."
+	icon_state = "ashtile_wood"
+
+/obj/item/stack/tile/wood/ashen/red
+	name = "red ashen wood floor tile"
+	singular_name = "red ashen wood floor tile"
+	desc = "An easy to fit wooden floor tile."
+	icon_state = "ashtile_wood"
+
+/obj/item/stack/tile/wood/ashen/dull
+	name = "dull ashen wood floor tile"
+	singular_name = "dull ashen wood floor tile"
+	desc = "An easy to fit wooden floor tile."
+	icon_state = "ashtile_wood"
+
+/obj/item/stack/tile/wood/old
+	name = "old wood floor tile"
+	singular_name = "old wood floor tile"
+	desc = "An easy to fit wooden floor tile. Mind the splinters."
+	icon_state = "oldtile_wood"
+
+/obj/item/stack/tile/wood/old/veridical
+	name = "old veridical wood floor tile"
+	singular_name = "old veridical wood floor tile"
+
 /obj/item/stack/tile/wood/cyborg
 	name = "wood floor tile synthesizer"
 	desc = "A device that makes wood floor tiles."
