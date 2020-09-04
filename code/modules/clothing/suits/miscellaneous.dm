@@ -21,6 +21,26 @@
 	allowed = list (/obj/item/weapon/gun/energy/lasertag/red)
 	siemens_coefficient = 3.0
 
+/obj/item/clothing/suit/fluff/greentag
+	name = "green laser tag armour"
+	desc = "Started green, ended a legend."
+	icon_state = "greentag"
+	item_state = "greentag"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO
+	allowed = list (/obj/item/weapon/gun/energy/lasertag/green)
+	siemens_coefficient = 3.0
+
+/obj/item/clothing/suit/fluff/yellowtag
+	name = "yellow laser tag armour"
+	desc = "The only thing yellow about you is your armor."
+	icon_state = "yellowtag"
+	item_state = "yellowtag"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO
+	allowed = list (/obj/item/weapon/gun/energy/lasertag/yellow)
+	siemens_coefficient = 3.0
+
 /obj/item/clothing/suit/cyborg_suit
 	name = "cyborg suit"
 	desc = "Suit for a cyborg costume."

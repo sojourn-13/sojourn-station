@@ -450,7 +450,7 @@
 			playsound(user, fire_sound, 10, 1)
 		else
 			playsound(user, fire_sound, 60, 1)
-		if(istype(in_chamber, /obj/item/projectile/beam/lastertag))
+		if(istype(in_chamber, /obj/item/projectile/plasma/lastertag))
 			user.show_message(SPAN_WARNING("You feel rather silly, trying to commit suicide with a toy."))
 			mouthshoot = FALSE
 			return

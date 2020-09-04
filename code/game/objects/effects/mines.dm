@@ -5,6 +5,7 @@
 	anchored = 1
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
 	icon_state = "mine_old"
+	item_state = "mine_old"
 	var/triggerproc = "explode" //name of the proc thats called when the mine is triggered
 	var/triggered = 0
 	var/smoke_strength = 3
@@ -12,7 +13,21 @@
 	anchored = TRUE
 
 /obj/item/weapon/mine_old/New()
-	icon_state = "mine"
+	icon_state = "mine_old"
+
+/obj/item/weapon/mine_old/attack_hand(mob/user as mob)
+	.=..()
+	if(prob(80))
+		user.visible_message(
+				SPAN_DANGER("[user] attempts to pick up \the [src] only to hear a beep as it explodes in your hands!"),
+				SPAN_DANGER("You attempt to pick up \the [src] only to hear a beep as it explodes in your hands!")
+				)
+		explode()
+	else
+		user.visible_message(
+				SPAN_DANGER("[user] attempts to pick up \the [src] and somehow doesn't blow himself up doing it!"),
+				SPAN_DANGER("You attempt to pick up \the [src] and somehow you don't blow yourself up doing it!")
+				)
 
 /obj/item/weapon/mine_old/proc/explode(var/mob/living/M)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()
