@@ -46,9 +46,12 @@
 /obj/structure/closet/lasertag/red/populate_contents()
 	new /obj/item/weapon/gun/energy/lasertag/red(src)
 	new /obj/item/weapon/gun/energy/lasertag/red(src)
+	new /obj/item/weapon/gun/energy/lasertag/red(src)
+	new /obj/item/weapon/gun/energy/lasertag/red(src)
 	new /obj/item/clothing/suit/fluff/redtag(src)
 	new /obj/item/clothing/suit/fluff/redtag(src)
-
+	new /obj/item/clothing/suit/fluff/redtag(src)
+	new /obj/item/clothing/suit/fluff/redtag(src)
 
 /obj/structure/closet/lasertag/blue
 	name = "blue laser tag equipment"
@@ -58,5 +61,39 @@
 /obj/structure/closet/lasertag/blue/populate_contents()
 	new /obj/item/weapon/gun/energy/lasertag/blue(src)
 	new /obj/item/weapon/gun/energy/lasertag/blue(src)
+	new /obj/item/weapon/gun/energy/lasertag/blue(src)
+	new /obj/item/weapon/gun/energy/lasertag/blue(src)
 	new /obj/item/clothing/suit/fluff/bluetag(src)
 	new /obj/item/clothing/suit/fluff/bluetag(src)
+	new /obj/item/clothing/suit/fluff/bluetag(src)
+	new /obj/item/clothing/suit/fluff/bluetag(src)
+
+/obj/structure/closet/lasertag/green
+	name = "green laser tag equipment"
+	desc = "It's a storage unit for laser tag equipment."
+	icon_door = "green"
+
+/obj/structure/closet/lasertag/green/populate_contents()
+	new /obj/item/weapon/gun/energy/lasertag/green(src)
+	new /obj/item/weapon/gun/energy/lasertag/green(src)
+	new /obj/item/weapon/gun/energy/lasertag/green(src)
+	new /obj/item/weapon/gun/energy/lasertag/green(src)
+	new /obj/item/clothing/suit/fluff/greentag(src)
+	new /obj/item/clothing/suit/fluff/greentag(src)
+	new /obj/item/clothing/suit/fluff/greentag(src)
+	new /obj/item/clothing/suit/fluff/greentag(src)
+
+/obj/structure/closet/lasertag/yellow
+	name = "yellow laser tag equipment"
+	desc = "It's a storage unit for laser tag equipment."
+	icon_door = "yellow"
+
+/obj/structure/closet/lasertag/yellow/populate_contents()
+	new /obj/item/weapon/gun/energy/lasertag/yellow(src)
+	new /obj/item/weapon/gun/energy/lasertag/yellow(src)
+	new /obj/item/weapon/gun/energy/lasertag/yellow(src)
+	new /obj/item/weapon/gun/energy/lasertag/yellow(src)
+	new /obj/item/clothing/suit/fluff/yellowtag(src)
+	new /obj/item/clothing/suit/fluff/yellowtag(src)
+	new /obj/item/clothing/suit/fluff/yellowtag(src)
+	new /obj/item/clothing/suit/fluff/yellowtag(src)

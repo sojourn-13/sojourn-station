@@ -34,6 +34,7 @@ var/list/disciples = list()
 	if(!ishuman(wearer))
 		return
 	var/mob/living/carbon/human/H = wearer
+	name = "[H]'s Cruciform" //This is included here to make it obvious who a cruciform belonged to if it was surgically removed
 	if(H.stat == DEAD)
 		return
 	if(!active)
@@ -57,6 +58,14 @@ var/list/disciples = list()
 		return
 	..()
 	add_module(new CRUCIFORM_COMMON)
+	if(path == "tess")
+		add_module(new CRUCIFORM_TESS)
+	if(path == "lemn")
+		add_module(new CRUCIFORM_LEMN)
+	if(path == "mono")
+		add_module(new CRUCIFORM_MONO)
+	if(path == "divi")
+		add_module(new CRUCIFORM_DIVI)
 	update_data()
 	disciples |= wearer
 	return TRUE

@@ -51,7 +51,7 @@
 /datum/ritual/cruciform/tessellate/heal_heathen_improved
 	name = "Healing Word"
 	phrase = "Pastor gregem suum pascet, sive sciens sive ignarus gubernandum."
-	desc = "Heal every person who can see and hear for a fair amount, even if they do not have a cruciform. This prayer uses alot of power."
+	desc = "Heal every person who can see and hear you for a fair amount, even if they do not have a cruciform. This prayer uses alot of power."
 	cooldown = TRUE
 	cooldown_time = 300
 	power = 50
@@ -213,16 +213,17 @@
 /datum/ritual/cruciform/monomial/ironskin/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.add_chemical_effect(CE_PAINKILLER, 10000, TRUE)
 	H.apply_effect(-200, AGONY, 0)
+	H.apply_effect(-200, HALLOSS, 0)
 	return TRUE
 
 /datum/ritual/cruciform/monomial/perfect_self
 	name = "Perfect Self"
 	phrase = "Quaerite primum regnum Dei et iustitiam eius, et haec omnia adicientur vobis."
-	desc = "A solemn prayer, often spoken in a whisper that allows a disciple of the monomial to focus inward and reach their full potential in both body and mind. This litany lasts ten minutes and takes over half an hour before it can be used again."
+	desc = "A solemn prayer, often spoken in a whisper that allows a disciple of the monomial to focus inward and reach their full potential in both body and mind. This litany lasts fifteen minutes and takes over half an hour before it can be used again."
 	cooldown = TRUE
 	cooldown_time = 30 MINUTES
 	cooldown_category = "pself"
-	effect_time = 10 MINUTES
+	effect_time = 15 MINUTES
 	power = 90
 
 /datum/ritual/cruciform/monomial/perfect_self/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)

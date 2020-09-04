@@ -87,58 +87,6 @@
 	tracer_type = /obj/effect/projectile/emitter/tracer
 	impact_type = /obj/effect/projectile/emitter/impact
 
-/obj/item/projectile/beam/lastertag/blue
-	name = "lasertag beam"
-	icon_state = "bluelaser"
-	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage_types = list(BURN = 0)
-	no_attack_log = 1
-	check_armour = ARMOR_ENERGY
-
-	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
-	tracer_type = /obj/effect/projectile/laser_blue/tracer
-	impact_type = /obj/effect/projectile/laser_blue/impact
-
-/obj/item/projectile/beam/lastertag/blue/on_hit(atom/target)
-	if(ishuman(target))
-		var/mob/living/carbon/human/M = target
-		if(istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag))
-			M.Weaken(5)
-	return 1
-
-/obj/item/projectile/beam/lastertag/red
-	name = "lasertag beam"
-	icon_state = "laser"
-	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage_types = list(BURN = 0)
-	no_attack_log = 1
-	check_armour = ARMOR_ENERGY
-
-/obj/item/projectile/beam/lastertag/red/on_hit(atom/target)
-	if(ishuman(target))
-		var/mob/living/carbon/human/M = target
-		if(istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag))
-			M.Weaken(5)
-	return 1
-
-/obj/item/projectile/beam/lastertag/omni//A laser tag bolt that stuns EVERYONE
-	name = "lasertag beam"
-	icon_state = "omnilaser"
-	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage_types = list(BURN = 0)
-	check_armour = ARMOR_ENERGY
-
-	muzzle_type = /obj/effect/projectile/laser_omni/muzzle
-	tracer_type = /obj/effect/projectile/laser_omni/tracer
-	impact_type = /obj/effect/projectile/laser_omni/impact
-
-/obj/item/projectile/beam/lastertag/omni/on_hit(atom/target)
-	if(ishuman(target))
-		var/mob/living/carbon/human/M = target
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
-			M.Weaken(5)
-	return 1
-
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
 	icon_state = "xray"
