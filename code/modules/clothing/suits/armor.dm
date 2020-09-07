@@ -211,6 +211,19 @@
 /obj/item/clothing/suit/armor/laserproof/ironhammer
 	icon_state = "ablative_ironhammer"
 
+/obj/item/clothing/suit/armor/laserproof/rnd
+	icon_state = "ablative_ironhammer"
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
+	armor = list(
+		melee = 20,
+		bullet = 20,
+		energy = 65,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	siemens_coefficient = 0
+	price_tag = 650
 /*
  * Heavy Armor Types
  */
