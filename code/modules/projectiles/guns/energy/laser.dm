@@ -37,6 +37,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
 	charge_cost = 2000
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	suitable_cell = /obj/item/weapon/cell/large
 	one_hand_penalty = 15 //full sized shotgun level
 	fire_delay = 14 //Equivalent to a pump then fire time
@@ -74,6 +75,7 @@
 	force = WEAPON_FORCE_NORMAL
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 4, TECH_ENGINEERING = 4)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	fire_delay = 12
 	charge_cost = 200
 	recoil_buildup = 1
