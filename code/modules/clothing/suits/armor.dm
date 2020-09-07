@@ -212,6 +212,8 @@
 	icon_state = "ablative_ironhammer"
 
 /obj/item/clothing/suit/armor/laserproof/rnd
+	name = "soteria ablative armor vest"
+	desc = "A soteria branded vest that excels in protecting the wearer against energy projectiles. Do to cheaper printing it has less armor for bullets and melee, but has added energy protection comared to the normal reflector vests."
 	icon_state = "ablative_ironhammer"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
 	armor = list(
