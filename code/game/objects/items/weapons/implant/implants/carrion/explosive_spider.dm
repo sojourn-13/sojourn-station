@@ -1,5 +1,4 @@
 /obj/item/weapon/implant/carrion_spider/explosive
-	name = "explosive spider"
 	icon_state = "spiderling_explosive"
 	spider_price = 40
 

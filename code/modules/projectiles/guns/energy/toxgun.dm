@@ -10,7 +10,7 @@
 	sel_mode = 1
 	origin_tech = list(TECH_COMBAT = 5, TECH_PLASMA = 4)
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASMA = 5)
-	price_tag = 2500
+	price_tag = 1250
 	damage_multiplier = 1
 	init_firemodes = list(
 		list(mode_name="melt", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/lasercannonfire.ogg', fire_delay = 9, icon="destroy", projectile_color = "#006633"),

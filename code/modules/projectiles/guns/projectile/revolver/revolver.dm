@@ -17,7 +17,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/rev_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/revolver_fire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
-	price_tag = 2000
+	price_tag = 1000
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
 	fire_delay = 3 //all revolvers can fire faster, but have huge recoil
 	damage_multiplier = 1.2
@@ -72,7 +72,7 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 5
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
-	price_tag = 2500 //It's a novelty item.
+	price_tag = 1250 //It's a novelty item.
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.1
 	recoil_buildup = 10

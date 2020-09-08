@@ -17,7 +17,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20, MATERIAL_DIAMOND = 3, MATERIAL_OSMIUM = 5, MATERIAL_URANIUM = 2)
-	price_tag = 20000
+	price_tag = 10000
 	one_hand_penalty = 100
 	var/bolt_open = 0
 	zoom_factor = 2.0
@@ -142,14 +142,14 @@
 	icon_state = "little_comet"
 	item_state = "little_comet"
 	drawChargeMeter = FALSE
-	max_shells = 5
+	max_shells = 6
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/pistol
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
-	price_tag = 10000
+	price_tag = 5000
 	damage_multiplier = 1.1 //because pistol round
 	penetration_multiplier = 20
 	pierce_multiplier =  5
-	recoil_buildup = 50
+	recoil_buildup = 20
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER)

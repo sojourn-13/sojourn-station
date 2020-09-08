@@ -1,5 +1,4 @@
 /obj/item/weapon/implant/carrion_spider/infection
-	name = "infection spider"
 	icon_state = "spiderling_infection"
 	spider_price = 50
 	gene_price = 7

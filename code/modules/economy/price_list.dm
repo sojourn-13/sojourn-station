@@ -91,70 +91,70 @@
 // Spirituous liquors //
 
 /datum/reagent/ethanol/irish_cream
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/absinthe
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/bluecuracao
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/deadrum
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/gin
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/coffee/kahlua
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/melonliquor
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/rum
 	price_tag = 5
 
 /datum/reagent/ethanol/tequilla
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/thirteenloko
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/vodka
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/whiskey
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/specialwhiskey
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/patron
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/goldschlager
-	price_tag = 50
+	price_tag = 25
 
 /datum/reagent/ethanol/coffee/brave_bull // Not an original liquor in its own. But since it's a mix of purely Tequila
-	price_tag = 50						 // and Kahlua, it's basically just another one and gets the same price.
+	price_tag = 25						 // and Kahlua, it's basically just another one and gets the same price.
 
 
 // Wines //
 
 /datum/reagent/ethanol/wine
-	price_tag = 80
+	price_tag = 40
 
 /datum/reagent/ethanol/cognac
-	price_tag = 80
+	price_tag = 40
 
 /datum/reagent/ethanol/sake
-	price_tag = 80
+	price_tag = 40
 
 /datum/reagent/ethanol/vermouth
-	price_tag = 80
+	price_tag = 40
 
 /datum/reagent/ethanol/pwine
-	price_tag = 80
+	price_tag = 40
 
 
 // Cocktails //

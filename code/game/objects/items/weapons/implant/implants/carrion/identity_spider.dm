@@ -1,5 +1,4 @@
 /obj/item/weapon/implant/carrion_spider/identity
-	name = "identity spider"
 	icon_state = "spiderling_identity"
 	spider_price = 25
 

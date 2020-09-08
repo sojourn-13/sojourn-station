@@ -2,7 +2,6 @@
 GLOBAL_LIST_EMPTY(active_mindboil_spiders)
 
 /obj/item/weapon/implant/carrion_spider/mindboil
-	name = "mindboil spider"
 	icon_state = "spiderling_mindboil"
 	spider_price = 30
 	var/active = FALSE

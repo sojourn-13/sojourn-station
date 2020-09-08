@@ -165,7 +165,7 @@
 		bio = 0,
 		rad = 0
 	)
-	price_tag = 500
+	price_tag = 250
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
 	icon_state = "bulletproof_ironhammer"
@@ -186,7 +186,7 @@
 		rad = 0
 	)
 	siemens_coefficient = 0
-	price_tag = 650
+	price_tag = 325
 
 /obj/item/clothing/suit/armor/laserproof/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))
@@ -238,7 +238,7 @@
 		rad = 0
 	)
 	equip_delay = 2 SECONDS
-	price_tag = 250
+	price_tag = 125
 
 /obj/item/clothing/suit/armor/heavy/red
 	name = "Thunderdome suit (red)"
@@ -269,7 +269,7 @@
 		bio = 0,
 		rad = 0
 	)
-	price_tag = 500
+	price_tag = 250
 
 /obj/item/clothing/suit/armor/heavy/riot/ironhammer
 	icon_state = "riot_ironhammer"

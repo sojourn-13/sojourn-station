@@ -2,7 +2,7 @@
 	name = "classified research"
 	desc = "This folder contains highly confidential scientific research."
 	icon = 'icons/obj/oddities.dmi'
-	price_tag = 5000
+	price_tag = 2500
 
 	oddity_stats = list(
 		STAT_MEC = 8,

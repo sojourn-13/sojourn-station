@@ -58,14 +58,6 @@
 	else
 		new /obj/item/weapon/storage/backpack/security(src)
 	if(prob(50))
-		new /obj/item/weapon/gun/projectile/automatic/omnirifle/standard(src)
-	else
-		new /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped(src)
-	if(prob(50))
-		new /obj/item/ammo_magazine/hrifle/lethal(src)
-	else
-		new /obj/item/ammo_magazine/hrifle/hv(src)
-	if(prob(50))
 		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
 		new /obj/item/ammo_magazine/magnum(src)
 		new /obj/item/ammo_magazine/magnum/lethal(src)
@@ -75,7 +67,6 @@
 		new /obj/item/ammo_magazine/kurtz/lethal(src)
 	new /obj/item/clothing/accessory/ranks/sergeant(src)
 	new /obj/item/weapon/storage/box/sergeantuniform(src)
-	new /obj/item/ammo_magazine/hrifle(src)
 	new /obj/item/clothing/under/rank/armorer(src)
 	new /obj/item/clothing/head/rank/armorer/beret(src)
 	new /obj/item/clothing/head/rank/instructor_hat(src)
@@ -94,9 +85,7 @@
 	new /obj/item/weapon/storage/belt/webbing/black(src)
 	new /obj/item/clothing/suit/armor/flackvest/militia(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
-	new /obj/item/ammo_magazine/ammobox/hrifle_small(src)
-	new /obj/item/ammo_magazine/hrifle/rubber(src)
-	new /obj/item/ammo_magazine/hrifle(src)
+	new /obj/item/weapon/gun/projectile/boltgun(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
@@ -113,15 +102,6 @@
 		new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	else
 		new /obj/item/clothing/head/helmet/ballistic(src)
-	switch(pick("omni", "hustler", "sts"))
-		if ("omni")
-			new /obj/item/weapon/gun/projectile/automatic/omnirifle/standard(src)
-		if ("hustler")
-			new /obj/item/weapon/gun/projectile/automatic/omnirifle(src)
-		if ("sts")
-			new /obj/item/weapon/gun/projectile/automatic/sts/hrifle(src)
-			new /obj/item/clothing/under/shorts/khaki(src)
-			new /obj/item/clothing/glasses/aviator(src)
 	if(prob(50))
 		new /obj/item/weapon/storage/pouch/medium_generic(src)
 	else
@@ -138,7 +118,7 @@
 		new /obj/item/weapon/storage/belt/webbing/black(src)
 	else
 		new /obj/item/weapon/storage/belt/webbing/green(src)
-	if(prob(50))
+	if(prob(90))
 		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
 		new /obj/item/ammo_magazine/magnum(src)
 		new /obj/item/ammo_magazine/magnum/lethal(src)
@@ -169,18 +149,15 @@
 	new /obj/item/clothing/suit/armor/commander/militia_overcoat(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
+	new /obj/item/weapon/gun/projectile/boltgun(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
 	req_access = list(access_medspec)
 	icon_state = "corpsman"
-/obj/item/clothing/glasses/hud/health
+
 /obj/structure/closet/secure_closet/personal/corpsman/populate_contents()
 	new /obj/item/weapon/storage/belt/webbing/black(src)
-	if(prob(60))
-		new /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine(src)
-	else
-		new /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds(src)
 	if(prob(50))
 		new /obj/item/weapon/storage/backpack/military(src)
 	else
@@ -220,6 +197,7 @@
 	new /obj/item/weapon/storage/firstaid/adv(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
+	new /obj/item/weapon/gun/projectile/boltgun(src)
 
 /obj/structure/closet/secure_closet/militia/armor
 	name = "blackshield armor locker"

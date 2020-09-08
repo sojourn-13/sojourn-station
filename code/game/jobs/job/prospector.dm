@@ -11,7 +11,7 @@
 	difficulty = "Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
-	wage = WAGE_NONE
+	wage = WAGE_COMMAND
 	department_account_access = TRUE
 
 	outfit_type = /decl/hierarchy/outfit/job/foreman
@@ -60,7 +60,7 @@
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	selection_color = "#a7bbc6"
-	wage = WAGE_NONE
+	wage = WAGE_LABOUR
 
 	outfit_type = /decl/hierarchy/outfit/job/salv
 
@@ -104,7 +104,7 @@
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	selection_color = "#a7bbc6"
-	wage = WAGE_NONE
+	wage = WAGE_LABOUR_DUMB
 
 	outfit_type = /decl/hierarchy/outfit/job/pro
 

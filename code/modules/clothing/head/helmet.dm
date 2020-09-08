@@ -1,6 +1,6 @@
 /obj/item/clothing/head/helmet
 	name = "helmet"
-	desc = "Standard Security gear. Protects the head from impacts."
+	desc = "Standard operator gear. Protects the head from impacts."
 	icon_state = "helmet"
 	item_state_slots = list(
 		slot_l_hand_str = "helmet",
@@ -117,7 +117,7 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.5
-	price_tag = 250
+	price_tag = 150
 
 /obj/item/clothing/head/helmet/handmade
 	name = "handmade combat helmet"

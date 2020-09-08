@@ -219,7 +219,7 @@
 	name = "silver medal"
 	desc = "A silver medal."
 	icon_state = "silver"
-	price_tag = 500
+	price_tag = 250
 
 /obj/item/clothing/accessory/medal/silver/valor
 	name = "medal of valor"
@@ -233,7 +233,7 @@
 	name = "gold medal"
 	desc = "A prestigious golden medal."
 	icon_state = "gold"
-	price_tag = 1000
+	price_tag = 500
 
 /obj/item/clothing/accessory/medal/gold/captain
 	name = "medal of exceptional statecraft"
@@ -444,7 +444,7 @@ obj/item/clothing/accessory/scarf/green
 	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
 	icon_state = "neckbrace"
 	item_state = "neckbrace"
-	
+
 /*Ranks*/
 
 /obj/item/clothing/accessory/ranks/blank
@@ -458,7 +458,7 @@ obj/item/clothing/accessory/scarf/green
 	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Trooper."
 	icon_state = "trooper_tabs"
 	item_state = "trooper_tabs"
-	
+
 /obj/item/clothing/accessory/ranks/corpsman
 	name = "Shoulderboards (Corpsman)"
 	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Corpsman."
@@ -470,7 +470,7 @@ obj/item/clothing/accessory/scarf/green
 	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Sergeant."
 	icon_state = "sergeant_tabs"
 	item_state = "sergeant_tabs"
-	
+
 /obj/item/clothing/accessory/ranks/sergeantmajor
 	name = "Shoulderboards (Sergeant Major)"
 	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Sergeant Major."
@@ -482,13 +482,13 @@ obj/item/clothing/accessory/scarf/green
 	desc = "Red and gold shoulderboards denoting a Blackshield soldier with the rank of Commander."
 	icon_state = "commander_tabs"
 	item_state = "commander_tabs"
-	
+
 /obj/item/clothing/accessory/ranks/major
 	name = "Shoulderboards (Major)"
 	desc = "Red and gold shoulderboards denoting a Blackshield soldier with the rank of Major."
 	icon_state = "major_tabs"
 	item_state = "major_tabs"
-	
+
 /obj/item/clothing/accessory/ranks/brigadier
 	name = "Shoulderboards (Brigadier)"
 	desc = "Red, gold, and silver shoulderboards denoting the Brigadier."

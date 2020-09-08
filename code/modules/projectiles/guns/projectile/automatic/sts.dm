@@ -12,7 +12,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
-	price_tag = 3300
+	price_tag = 1650
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
@@ -90,7 +90,7 @@
 	item_state = "sts"
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
-	price_tag = 1200
+	price_tag = 600
 	recoil_buildup = 15
 	one_hand_penalty = 25
 	saw_off = FALSE

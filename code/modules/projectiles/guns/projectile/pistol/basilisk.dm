@@ -9,7 +9,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
-	price_tag = 1600
+	price_tag = 800
 	can_dual = 1
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.2

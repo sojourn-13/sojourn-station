@@ -16,7 +16,7 @@
 	caliber = CAL_RIFLE
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
-	price_tag = 5000
+	price_tag = 2500
 	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
@@ -122,7 +122,7 @@
 	penetration_multiplier = 0.85
 	damage_multiplier = 0.6
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
-	price_tag = 3000
+	price_tag = 1500
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
 	recoil_buildup = 3.5
 

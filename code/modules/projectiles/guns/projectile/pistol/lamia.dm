@@ -11,7 +11,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
-	price_tag = 2400
+	price_tag = 1200
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
@@ -52,7 +52,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	zoom_factor = 0.4
 	recoil_buildup = 15
-	price_tag = 2500
+	price_tag = 1250
 
 /obj/item/weapon/gun/projectile/lamia/scoped/dark
 	name = "\"Naga\" advanced heavy pistol"
@@ -64,7 +64,7 @@
 	recoil_buildup = 10
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.2
-	price_tag = 2200
+	price_tag = 1100
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
@@ -80,7 +80,7 @@
 	recoil_buildup = 8 //highly OP SolFed specwar weapon
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.2
-	price_tag = 2500
+	price_tag = 1250
 
 /obj/item/weapon/gun/projectile/lamia/akurra
 	name = "\"Akurra\" silenced heavy pistol"
@@ -92,4 +92,4 @@
 	silenced = TRUE
 	damage_multiplier = 0.95
 	penetration_multiplier = 1.2
-	price_tag = 2500
+	price_tag = 1250

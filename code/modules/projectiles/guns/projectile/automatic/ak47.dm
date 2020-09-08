@@ -14,7 +14,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 3500
+	price_tag = 1750
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
@@ -55,7 +55,7 @@
 	icon_state = "AK"
 	item_state = "AK"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
-	price_tag = 1500
+	price_tag = 750
 	damage_multiplier = 0.9
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
@@ -71,7 +71,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
-	price_tag = 1000
+	price_tag = 500
 	recoil_buildup = 15
 	one_hand_penalty = 25
 	damage_multiplier = 0.8

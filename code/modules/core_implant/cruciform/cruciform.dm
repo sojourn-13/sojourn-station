@@ -79,8 +79,8 @@ var/list/disciples = list()
 
 /obj/item/weapon/implant/core_implant/cruciform/Process()
 	..()
-	//if(active && round(world.time) % 5 == 0)
-	//	remove_cyber()
+	if(active && round(world.time) % 5 == 0)
+		remove_cyber()
 	if(wearer && wearer.stat == DEAD)
 		deactivate()
 
@@ -105,11 +105,12 @@ var/list/disciples = list()
 		if (activate())
 			return TRUE
 
-/*
+
 /obj/item/weapon/implant/core_implant/cruciform/proc/remove_cyber()
 	if(!wearer)
 		return
 	for(var/obj/O in wearer)
+/* //Our lore allows for church members to have synthetics so this area is commented out. -Kazkin
 		if(istype(O, /obj/item/organ/external))
 			var/obj/item/organ/external/R = O
 			if(!BP_IS_ROBOTIC(R))
@@ -120,10 +121,12 @@ var/list/disciples = list()
 			wearer.visible_message(SPAN_DANGER("[wearer]'s [R.name] tears off."),
 			SPAN_DANGER("Your [R.name] tears off."))
 			R.droplimb()
-		if(istype(O, /obj/item/weapon/implant))
+*/
+//This is the function to remove excelsior implants for cruciform bearers. Should only make cruciform bearers react badly to excelsior implants. -Kaz
+		if(istype(O, /obj/item/weapon/implant/excelsior))
 			if(O == src)
 				continue
-			var/obj/item/weapon/implant/R = O
+			var/obj/item/weapon/implant/excelsior/R = O
 			if(R.wearer != wearer)
 				continue
 			if(R.cruciform_resist)
@@ -136,7 +139,7 @@ var/list/disciples = list()
 	if(ishuman(wearer))
 		var/mob/living/carbon/human/H = wearer
 		H.update_implants()
-*/
+
 
 /obj/item/weapon/implant/core_implant/cruciform/proc/update_data()
 	if(!wearer)

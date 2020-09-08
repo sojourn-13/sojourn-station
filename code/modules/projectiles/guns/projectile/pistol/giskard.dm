@@ -14,7 +14,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 4)
-	price_tag = 600
+	price_tag = 300
 	damage_multiplier = 1
 	penetration_multiplier = 0.8
 	recoil_buildup = 3
