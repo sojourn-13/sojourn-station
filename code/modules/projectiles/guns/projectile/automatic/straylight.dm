@@ -13,9 +13,9 @@
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 3)
-	price_tag = 1700
+	price_tag = 850
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35)
 	damage_multiplier = 0.9
 	recoil_buildup = 3
 	one_hand_penalty = 40

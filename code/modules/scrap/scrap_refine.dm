@@ -45,8 +45,12 @@
 
 /obj/item/stack/sheet/refined_scrap
 	name = "refined scrap"
-	desc = "This is ghetto gold! It could be used as fuel or building material. Even lonestar would give cargo points for this."
+	desc = "This is ghetto gold! It could be used as fuel or building material."
 	icon = 'icons/obj/structures/scrap/refine.dmi'
 	icon_state = "refined"
-	max_amount = 20
+	max_amount = 120
 	amount = 1
+
+/obj/item/stack/sheet/refined_scrap/random
+	rand_min = 5
+	rand_max = 20

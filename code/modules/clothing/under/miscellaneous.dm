@@ -110,7 +110,7 @@
 	icon_state = "serbiansuit"
 	item_state = "bl_suit"
 	has_sensor = 0
-	price_tag = 200
+	price_tag = 100
 
 /obj/item/clothing/under/serbiansuit/brown
 	name = "brown battle dress"

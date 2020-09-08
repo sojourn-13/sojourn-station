@@ -112,13 +112,13 @@
 	name = "diamond"
 	icon_state = "sheet-diamond"
 	default_type = MATERIAL_DIAMOND
-	price_tag = 100
+	price_tag = 50
 
 /obj/item/stack/material/durasteel
 	name = "durasteel"
 	icon_state = "sheet-durasteel"
 	default_type = MATERIAL_DURASTEEL
-	price_tag = 200
+	price_tag = 100
 
 /obj/item/stack/material/diamond/random
 	rand_min = 1
@@ -132,7 +132,7 @@
 	name = MATERIAL_URANIUM
 	icon_state = "sheet-uranium"
 	default_type = MATERIAL_URANIUM
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/stack/material/uranium/random
 	rand_min = 2
@@ -142,7 +142,7 @@
 	name = "solid plasma"
 	icon_state = "sheet-plasma"
 	default_type = MATERIAL_PLASMA
-	price_tag = 30
+	price_tag = 15
 
 /obj/item/stack/material/plasma/random
 	rand_min = 3
@@ -163,7 +163,7 @@
 	name = "gold"
 	icon_state = "sheet-gold"
 	default_type = MATERIAL_GOLD
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/stack/material/gold/random
 	rand_min = 2
@@ -173,7 +173,7 @@
 	name = MATERIAL_SILVER
 	icon_state = "sheet-silver"
 	default_type = MATERIAL_SILVER
-	price_tag = 40
+	price_tag = 20
 
 /obj/item/stack/material/silver/random
 	rand_min = 3
@@ -184,7 +184,7 @@
 	name = "platinum"
 	icon_state = "sheet-adamantine"
 	default_type = MATERIAL_PLATINUM
-	price_tag = 80
+	price_tag = 40
 
 /obj/item/stack/material/platinum/random
 	rand_min = 1
@@ -195,7 +195,7 @@
 	name = "metallic hydrogen"
 	icon_state = "sheet-mythril"
 	default_type = MATERIAL_MHYDROGEN
-	price_tag = 50
+	price_tag = 25
 
 //Fuel for MRSPACMAN generator.
 /obj/item/stack/material/tritium
@@ -203,14 +203,14 @@
 	icon_state = "sheet-silver"
 	default_type = MATERIAL_TRITIUM
 	apply_colour = 1
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/stack/material/osmium
 	name = "osmium"
 	icon_state = "sheet-silver"
 	default_type = MATERIAL_OSMIUM
 	apply_colour = 1
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/stack/material/steel
 	name = MATERIAL_STEEL
@@ -232,7 +232,7 @@
 	icon_state = "sheet-plasteel"
 	item_state = "sheet-metal"
 	default_type = MATERIAL_PLASTEEL
-	price_tag = 30
+	price_tag = 15
 	novariants = FALSE
 
 /obj/item/stack/material/plasteel/random
@@ -253,7 +253,7 @@
 	name = "cloth"
 	icon_state = "sheet-cloth"
 	default_type = MATERIAL_CLOTH
-	price_tag = 20
+	price_tag = 10
 
 /obj/item/stack/material/cardboard
 	name = "cardboard"

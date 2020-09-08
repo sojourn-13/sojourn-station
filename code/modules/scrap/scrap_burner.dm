@@ -15,7 +15,7 @@
 	icon_state = "portgen1"                 // Get a spriter to do something with this perhaps.
 	sheet_name = "refined scrap"
 	sheet_path = /obj/item/stack/sheet/refined_scrap
-	power_gen = 5000
+	power_gen = 10000
 	time_per_fuel_unit = 80
 
 /obj/machinery/power/port_gen/pacman/scrap/overheat()

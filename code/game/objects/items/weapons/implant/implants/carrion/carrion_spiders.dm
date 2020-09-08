@@ -1,5 +1,5 @@
 /obj/item/weapon/implant/carrion_spider
-	name = "spooky spider"
+	name = "strange spider"
 	desc = "Small spider filled with some sort of strange fluid."
 	icon = 'icons/obj/carrion_spiders.dmi'
 	icon_state = "spiderling"

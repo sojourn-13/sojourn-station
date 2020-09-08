@@ -1,5 +1,5 @@
-#define SOLAR_MAX_DIST 40
-#define SOLARGENRATE 1500
+#define SOLAR_MAX_DIST 100
+#define SOLARGENRATE 2500
 
 /obj/machinery/power/solar
 	name = "solar panel"
@@ -364,10 +364,11 @@
 		icon_state = "c_unpowered"
 		cut_overlays()
 		return
-	icon_state = "solar"
+	icon_state = "computer"
 	cut_overlays()
-	if(cdir > -1)
-		add_overlay(image('icons/obj/computer.dmi', "solcon-o", FLY_LAYER, angle2dir(cdir)))
+	add_overlay(image('icons/obj/computer.dmi', "solar_screen"))
+	//if(cdir > -1)
+	//	add_overlay(image('icons/obj/computer.dmi', "solar_screen", FLY_LAYER, angle2dir(cdir)))
 	return
 
 /obj/machinery/power/solar_control/attack_hand(mob/user)
@@ -545,9 +546,31 @@
 // MISC
 //
 
+/obj/item/weapon/paper/solarsteup
+	name = "paper- 'Message from Tacitus, guild grand master.'"
+	info = "<h1>Greetings Adept</h1><p>Setting up the solar array is pretty straight forward, you just need to replace the wiring that transmits the most energy at the start of each shift \
+	and then go through all the existing wiring to cut off any frayed spots before recrimping it, this step is important as the frayed wires will cause power loss if not repaired. You'll \
+	notice the solar computer hooked up to the controller already, once you have it wired just perform a scan and the machines will do the rest of the work. If for any reason the solar \
+	array doesn't detect the panels, try resetting the computer by taking it apart and putting it back together. Remember to walk instead of run on the under plating, wear \
+	insulated gloves, and wear some insulated work boots for protection. -Tacitus O'Connar.</p>"
+
+/obj/item/weapon/paper/solarsteupchurch
+	name = "paper- 'Message from Augustine, church cartographer.'"
+	info = "<h1>Greetings</h1><p>For those unaware we have a small solar system set up here to help provide power to the colony, be quite careful as while it is smaller, safer, and easier to \
+	maintain than what the artificer guild uses the wiring under the catwalk will fray over time and may shock you by electrifying the metal. If you find a pair of insulated gloves I \
+	highly suggest cutting any splicings and crimping the wires to make them safe and increase power production.</p>"
+
 /obj/item/weapon/paper/solar
 	name = "paper- 'Going green! Setup your own solar array instructions.'"
-	info = "<h1>Welcome</h1><p>At greencorps we love the environment, and space. With this package you are able to help mother nature and produce energy without any usage of fossil fuel or plasma! Singularity energy is dangerous while solar energy is safe, which is why it's better. Now here is how you setup your own solar array.</p><p>You can make a solar panel by wrenching the solar assembly onto a cable node. Adding a glass panel, reinforced or regular glass will do, will finish the construction of your solar panel. It is that easy!</p><p>Now after setting up 19 more of these solar panels you will want to create a solar tracker to keep track of our mother nature's gift, the sun. These are the same steps as before except you insert the tracker equipment circuit into the assembly before performing the final step of adding the glass. You now have a tracker! Now the last step is to add a computer to calculate the sun's movements and to send commands to the solar panels to change direction with the sun. Setting up the solar computer is the same as setting up any computer, so you should have no trouble in doing that. You do need to put a wire node under the computer, and the wire needs to be connected to the tracker.</p><p>Congratulations, you should have a working solar array. If you are having trouble, here are some tips. Make sure all solar equipment are on a cable node, even the computer. You can always deconstruct your creations if you make a mistake.</p><p>That's all to it, be safe, be green!</p>"
+	info = "<h1>Welcome</h1><p>At greencorps we love the environment, and space. With this package you are able to help mother nature and produce energy without any usage of fossil fuel or \
+	plasma! Singularity energy is dangerous while solar energy is safe, which is why it's better. Now here is how you setup your own solar array.</p><p>You can make a solar panel by wrenching \
+	the solar assembly onto a cable node. Adding a glass panel, reinforced or regular glass will do, will finish the construction of your solar panel. It is that easy!</p><p>Now after setting \
+	up 19 more of these solar panels you will want to create a solar tracker to keep track of our mother nature's gift, the sun. These are the same steps as before except you insert the \
+	tracker equipment circuit into the assembly before performing the final step of adding the glass. You now have a tracker! Now the last step is to add a computer to calculate the sun's \
+	movements and to send commands to the solar panels to change direction with the sun. Setting up the solar computer is the same as setting up any computer, so you should have no trouble \
+	in doing that. You do need to put a wire node under the computer, and the wire needs to be connected to the tracker.</p><p>Congratulations, you should have a working solar array. \
+	If you are having trouble, here are some tips. Make sure all solar equipment are on a cable node, even the computer. You can always deconstruct your creations if you make a \
+	mistake.</p><p>That's all to it, be safe, be green!</p>"
 
 /proc/rate_control(var/S, var/V, var/C, var/Min=1, var/Max=5, var/Limit=null) //How not to name vars
 	var/href = "<A href='?src=\ref[S];rate control=1;[V]"

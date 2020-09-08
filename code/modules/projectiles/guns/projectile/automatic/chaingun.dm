@@ -24,7 +24,7 @@
 	damage_multiplier = 1
 	slowdown = 0.15
 	matter = list(MATERIAL_PLASTEEL = 50, MATERIAL_PLASTIC = 20)
-	price_tag = 5000
+	price_tag = 2500
 	unload_sound 	= 'sound/weapons/guns/interact/chaingun_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/chaingun_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/chaingun_cock.ogg'

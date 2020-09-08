@@ -172,7 +172,7 @@
 		bio = 0,
 		rad = 0
 	)
-	price_tag = 250
+	price_tag = 125
 
 //Engineering
 /obj/item/clothing/suit/storage/hazardvest

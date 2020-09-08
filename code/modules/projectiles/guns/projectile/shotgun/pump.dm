@@ -17,7 +17,7 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
-	price_tag = 1000
+	price_tag = 500
 	damage_multiplier = 1.1
 	recoil_buildup = 20
 	one_hand_penalty = 15 //full sized shotgun level
@@ -58,7 +58,7 @@
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 10)
-	price_tag = 900
+	price_tag = 450
 	damage_multiplier = 1
 	penetration_multiplier = 0.9
 	recoil_buildup = 23
@@ -77,7 +77,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5)
-	price_tag = 500
+	price_tag = 250
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.8
 	recoil_buildup = 26

@@ -116,6 +116,7 @@ var/const/NO_EMAG_ACT = -50
 
 	var/formal_name_prefix
 	var/formal_name_suffix
+	var/claimed_locker = FALSE
 
 /obj/item/weapon/card/id/examine(mob/user)
 	set src in oview(1)

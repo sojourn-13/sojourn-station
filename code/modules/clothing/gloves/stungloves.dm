@@ -5,7 +5,7 @@
 	item_state = "powerglove"
 	armor = list(melee = 25, bullet = 10, energy = 20, bomb = 0, bio = 0, rad = 0)
 	action_button_name = "Toggle Power Glove"
-	price_tag = 500
+	price_tag = 250
 	var/stunforce = 0
 	var/agonyforce = 30
 	var/status = FALSE		//whether the thing is on or not

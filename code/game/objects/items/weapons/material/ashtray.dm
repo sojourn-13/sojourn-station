@@ -7,7 +7,7 @@ var/global/list/ashtray_cache = list()
 	force_divisor = 0.1
 	thrown_force_divisor = 0.1
 	var/image/base_image
-	var/max_butts = 10
+	var/max_butts = 20
 
 /obj/item/weapon/material/ashtray/New(var/newloc, var/material_name)
 	..(newloc, material_name)

@@ -4,7 +4,7 @@
 	icon_state = "captain"
 	item_state = "captain"
 	armor = list(melee = 25, bullet = 10, energy = 25, bomb = 0, bio = 0, rad = 0)
-	price_tag = 500
+	price_tag = 250
 
 /obj/item/clothing/gloves/cyborg
 	desc = "Beep boop."
@@ -64,7 +64,7 @@
 	icon_state = "ihscombat"
 	item_state = "ihscombat"
 	armor = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
-	price_tag = 300
+	price_tag = 150
 
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
 	desc = "A pair of fire, shock-proof, and impact-resistant combat gloves."
@@ -73,7 +73,7 @@
 	item_state = "black"
 	armor = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
-	price_tag = 500
+	price_tag = 250
 
 /obj/item/clothing/gloves/evening
 	name = "evening gloves"

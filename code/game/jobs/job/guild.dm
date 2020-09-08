@@ -11,7 +11,7 @@
 	supervisors = "the Nadezhda Council"
 	difficulty = "Medium."
 	selection_color = "#b3a68c"
-	wage = WAGE_NONE	//Guild merchant draws a salary from the guild account
+	wage = WAGE_COMMAND	//CEO now gets paid the money moola muh [redacted] -Kaz
 	access = list(
 		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_merchant, access_mining,
 		access_heads, access_mining_station, access_RC_announce, access_keycard_auth, access_sec_doors,

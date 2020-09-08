@@ -1,5 +1,5 @@
 /mob/living/simple_animal/spider_core
-	name = "spider core"
+	name = "carrion"
 	desc = "A horrifying face on spider-like legs."
 	speak_emote = list("creaks")
 	response_help  = "pokes"
@@ -8,8 +8,8 @@
 	icon = 'icons/mob/mobs-spider.dmi'
 	icon_state = "spider_core"
 
-	health = 60
-	maxHealth = 60 //Really low as they have a body normally
+	health = 40
+	maxHealth = 40 //Really low as they have a body normally
 
 	speed = -1
 	see_in_dark = 8
