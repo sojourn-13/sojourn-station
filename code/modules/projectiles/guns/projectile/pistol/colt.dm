@@ -14,7 +14,7 @@
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
 	recoil_buildup = 17
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_CALIBRE_35)
 	one_hand_penalty = 20
 
 /obj/item/weapon/gun/projectile/colt/NM_colt
@@ -60,11 +60,17 @@
 	..()
 
 	var/iconstring = initial(icon_state)
+	var/itemstring = ""
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
 	icon_state = iconstring
+	set_item_state(itemstring)
 
 /obj/item/weapon/gun/projectile/colt/Initialize()
 	. = ..()

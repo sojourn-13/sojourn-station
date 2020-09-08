@@ -15,11 +15,13 @@
 	damage_multiplier = 1.1
 	penetration_multiplier = 0.9
 	recoil_buildup = 3
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE)
 	one_hand_penalty = 10
 
 /obj/item/weapon/gun/projectile/mk58/update_icon()
 	..()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
 
 	if(!ammo_magazine)
 		icon_state = initial(icon_state)
@@ -27,6 +29,10 @@
 		icon_state = initial(icon_state) + "_empty"
 	else
 		icon_state = initial(icon_state) + "_full"
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
 
 
 /obj/item/weapon/gun/projectile/mk58/wood
@@ -41,10 +47,13 @@
 	caliber = CAL_MAGNUM
 	damage_multiplier = 0.9
 	recoil_buildup = 6
-	gun_tags = list(GUN_PROJECTILE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE)
 
 /obj/item/weapon/gun/projectile/mk58/wood/update_icon()
 	..()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
 
 	if(!ammo_magazine)
 		icon_state = initial(icon_state)
@@ -52,3 +61,8 @@
 		icon_state = initial(icon_state) + "_empty"
 	else
 		icon_state = initial(icon_state) + "_full"
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
