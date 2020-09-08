@@ -211,6 +211,21 @@
 /obj/item/clothing/suit/armor/laserproof/ironhammer
 	icon_state = "ablative_ironhammer"
 
+/obj/item/clothing/suit/armor/laserproof/rnd
+	name = "soteria ablative armor vest"
+	desc = "A soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets."
+	icon_state = "ablative_ironhammer"
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
+	armor = list(
+		melee = 20,
+		bullet = 20,
+		energy = 65,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	siemens_coefficient = 0
+	price_tag = 650
 /*
  * Heavy Armor Types
  */
