@@ -556,9 +556,10 @@
 
 /obj/item/weapon/paper/solarsteupchurch
 	name = "paper- 'Message from Augustine, church cartographer.'"
-	info = "<h1>Greetings</h1><p>For those unaware we have a small solar system set up here to help provide power to the colony, be quite careful as while it is smaller, safer, and easier to \
+	info = "<h1>Greetings</h1><p>For those unaware we have a small solar system set up here to help provide reserve power to the colony, be quite careful as while it is smaller, safer, and easier to \
 	maintain than what the artificer guild uses the wiring under the catwalk will fray over time and may shock you by electrifying the metal. If you find a pair of insulated gloves I \
-	highly suggest cutting any splicings and crimping the wires to make them safe and increase power production.</p>"
+	highly suggest cutting any splicings and crimping the wires to make them safe and increase power production. If the colony ever has any brown outs or black outs the third SMES unit in the \
+	biogenerator room will charge from these solars and can be hooked up as a temporary solution.</p>"
 
 /obj/item/weapon/paper/solar
 	name = "paper- 'Going green! Setup your own solar array instructions.'"

@@ -19,142 +19,142 @@
 // Juices, soda and similar //
 
 /datum/reagent/water
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/juice
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/toxin/poisonberryjuice
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/milk
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/soda
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/doctor_delight
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/nothing
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/milkshake
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/roy_rogers
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/shirley_temple
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/arnold_palmer
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/drink/collins_mix
-	price_tag = 20
+	price_tag = 10
 
 
 // Beer //
 
 /datum/reagent/ethanol/ale
-	price_tag = 20
+	price_tag = 10
 
 /datum/reagent/ethanol/beer
-	price_tag = 20
+	price_tag = 10
 
 
 // Hot Drinks //
 
 /datum/reagent/drink/rewriter
-	price_tag = 10
+	price_tag = 5
 
 /datum/reagent/drink/tea
-	price_tag = 10
+	price_tag = 5
 
 /datum/reagent/drink/coffee
-	price_tag = 10
+	price_tag = 5
 
 /datum/reagent/drink/hot_coco
-	price_tag = 10
+	price_tag = 5
 
 /obj/item/weapon/reagent_containers/food/drinks/coffee
-	price_tag = 10
+	price_tag = 5
 
 /obj/item/weapon/reagent_containers/food/drinks/tea
-	price_tag = 10
+	price_tag = 5
 
 /obj/item/weapon/reagent_containers/food/drinks/h_chocolate
-	price_tag = 10
+	price_tag = 5
 
 
 // Spirituous liquors //
 
 /datum/reagent/ethanol/irish_cream
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/absinthe
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/bluecuracao
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/deadrum
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/gin
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/coffee/kahlua
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/melonliquor
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/rum
 	price_tag = 5
 
 /datum/reagent/ethanol/tequilla
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/thirteenloko
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/vodka
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/whiskey
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/specialwhiskey
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/patron
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/goldschlager
-	price_tag = 25
+	price_tag = 10
 
 /datum/reagent/ethanol/coffee/brave_bull // Not an original liquor in its own. But since it's a mix of purely Tequila
-	price_tag = 25						 // and Kahlua, it's basically just another one and gets the same price.
+	price_tag = 10						 // and Kahlua, it's basically just another one and gets the same price.
 
 
 // Wines //
 
 /datum/reagent/ethanol/wine
-	price_tag = 40
+	price_tag = 20
 
 /datum/reagent/ethanol/cognac
-	price_tag = 40
+	price_tag = 20
 
 /datum/reagent/ethanol/sake
-	price_tag = 40
+	price_tag = 20
 
 /datum/reagent/ethanol/vermouth
-	price_tag = 40
+	price_tag = 20
 
 /datum/reagent/ethanol/pwine
-	price_tag = 40
+	price_tag = 20
 
 
 // Cocktails //
@@ -369,92 +369,92 @@
 // Juices, soda and similar //
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/cola
-	price_tag = 60
+	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/space_up
-	price_tag = 60
+	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/space_mountain_wind
-	price_tag = 60
+	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice
-	price_tag = 60
+	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/cream
-	price_tag = 60
+	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tomatojuice
-	price_tag = 60
+	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/limejuice
-	price_tag = 60
+	price_tag = 10
 
 
 // Beer //
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer
-	price_tag = 80
+	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale
-	price_tag = 80
+	price_tag = 10
 
 
 // Spirituous Liquors //
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bluecuracao
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/gin
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/kahlua
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/melonliquor
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/rum
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vodka
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/whiskey
-	price_tag = 150
+	price_tag = 50
 
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/patron
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/goldschlager
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/grenadine
-	price_tag = 150
+	price_tag = 50
 
 
 // Wines //
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/wine
-	price_tag = 250
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/cognac
-	price_tag = 250
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth
-	price_tag = 250
+	price_tag = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/pwine
-	price_tag = 250
+	price_tag = 50
 
 
 //***************//
@@ -470,7 +470,7 @@
 	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/unajerky
-	price_tag = 120
+	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers
 	price_tag = 10
@@ -489,7 +489,7 @@
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/drinks/dry_ramen
-	price_tag = 50
+	price_tag = 10
 
 
 // Burger //
@@ -537,10 +537,10 @@
 	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/bigbiteburger
-	price_tag = 40
+	price_tag = 30
 
 /obj/item/weapon/reagent_containers/food/snacks/superbiteburger
-	price_tag = 80
+	price_tag = 40
 
 
 // Sandwiches //
@@ -734,7 +734,7 @@
 	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/meatbread
-	price_tag = 50
+	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/meatbread
 	price_tag = 10
@@ -752,7 +752,7 @@
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/tofubread
-	price_tag = 50
+	price_tag = 1
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/tofubread
 	price_tag = 10
@@ -818,91 +818,91 @@
 // Pies //
 
 /obj/item/weapon/reagent_containers/food/snacks/pie
-	price_tag = 40
+	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/meatpie
-	price_tag = 40
+	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/tofupie
-	price_tag = 40
+	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/plump_pie
-	price_tag = 40
+	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/xemeatpie
-	price_tag = 40
+	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/applepie
-	price_tag = 40
+	price_tag = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/cherrypie
-	price_tag = 40
+	price_tag = 20
 
 
 // Cakes //
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/carrotcake
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/carrotcake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/braincake
-	price_tag = 50
+	price_tag = 5250
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/braincake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesecake
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/cheesecake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/plaincake
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/plaincake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/orangecake
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/orangecake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/limecake
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/limecake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/lemoncake
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/lemoncake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/chocolatecake
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/chocolatecake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/birthdaycake
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/birthdaycake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/applecake
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/applecake
 	price_tag = 10
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pumpkinpie
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/pumpkinpie
 	price_tag = 10
@@ -940,37 +940,37 @@
 //***************//
 
 /obj/item/weapon/storage/fancy/cigarettes
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/storage/fancy/cigarettes/ishimura
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/storage/fancy/cigarettes/tannhauser
-	price_tag = 150
+	price_tag = 50
 
 /obj/item/weapon/storage/fancy/cigarettes/brouzouf
-	price_tag = 160
+	price_tag = 60
 
 /obj/item/weapon/storage/fancy/cigarettes/frozen
-	price_tag  = 160
+	price_tag  = 80
 
 /obj/item/weapon/storage/fancy/cigarettes/shodan
-	price_tag = 170
+	price_tag = 85
 
 /obj/item/weapon/storage/fancy/cigarettes/toha
-	price_tag = 170
+	price_tag = 85
 
 /obj/item/weapon/storage/fancy/cigarettes/fortress
-	price_tag = 180
+	price_tag = 90
 
 /obj/item/weapon/storage/fancy/cigarettes/fortressred
-	price_tag = 180
+	price_tag = 90
 
 /obj/item/weapon/storage/fancy/cigarettes/fortressblue
-	price_tag = 180
+	price_tag = 90
 
 /obj/item/weapon/storage/fancy/cigar
-	price_tag = 270
+	price_tag = 135
 
 /obj/item/weapon/storage/box/matches
 	price_tag = 10
@@ -979,4 +979,4 @@
 	price_tag = 20
 
 /obj/item/weapon/flame/lighter/zippo
-	price_tag = 50
+	price_tag = 30
