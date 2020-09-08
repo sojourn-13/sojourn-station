@@ -197,7 +197,7 @@
 	new /obj/item/weapon/storage/firstaid/adv(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
-	/obj/item/weapon/gun/projectile/boltgun
+	new /obj/item/weapon/gun/projectile/boltgun(src)
 
 /obj/structure/closet/secure_closet/militia/armor
 	name = "blackshield armor locker"
