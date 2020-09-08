@@ -14,7 +14,7 @@
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
 	recoil_buildup = 17
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE)
 	one_hand_penalty = 20
 
 /obj/item/weapon/gun/projectile/colt/NM_colt
