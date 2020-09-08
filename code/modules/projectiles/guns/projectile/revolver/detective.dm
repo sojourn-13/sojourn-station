@@ -15,4 +15,14 @@
 	penetration_multiplier = 1.2
 	recoil_buildup = 18
 	one_hand_penalty = 15
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
+
+/obj/item/weapon/gun/projectile/revolver/detective/update_icon()
+	..()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
