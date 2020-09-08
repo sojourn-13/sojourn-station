@@ -57,7 +57,7 @@
 		new /obj/item/weapon/storage/backpack/military(src)
 	else
 		new /obj/item/weapon/storage/backpack/security(src)
-	if(prob(50))
+	if(prob(90))
 		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
 		new /obj/item/ammo_magazine/magnum(src)
 		new /obj/item/ammo_magazine/magnum/lethal(src)
@@ -86,6 +86,8 @@
 	new /obj/item/clothing/suit/armor/flackvest/militia(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/gun/projectile/boltgun(src)
+	new /obj/item/ammo_magazine/slrifle(src)
+	new /obj/item/ammo_magazine/slrifle(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
@@ -128,9 +130,6 @@
 		new /obj/item/ammo_magazine/magnum/lethal(src)
 	new /obj/item/clothing/accessory/ranks/trooper(src)
 	new /obj/item/weapon/storage/box/trooperuniform(src)
-	new /obj/item/ammo_magazine/hrifle(src)
-	new /obj/item/ammo_magazine/hrifle(src)
-	new /obj/item/ammo_magazine/hrifle/lethal(src)
 	new /obj/item/clothing/accessory/dogtags(src)
 	new /obj/item/clothing/under/rank/trooper(src)
 	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
@@ -150,6 +149,8 @@
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/gun/projectile/boltgun(src)
+	new /obj/item/ammo_magazine/slrifle(src)
+	new /obj/item/ammo_magazine/slrifle(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
@@ -162,11 +163,7 @@
 		new /obj/item/weapon/storage/backpack/military(src)
 	else
 		new /obj/item/weapon/storage/backpack/security(src)
-	if(prob(50))
-		new /obj/item/ammo_magazine/hrifle/lethal(src)
-	else
-		new /obj/item/ammo_magazine/hrifle/hv(src)
-	if(prob(50))
+	if(prob(90))
 		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
 		new /obj/item/ammo_magazine/magnum(src)
 		new /obj/item/ammo_magazine/magnum/lethal(src)
@@ -176,7 +173,6 @@
 		new /obj/item/ammo_magazine/magnum/lethal(src)
 	new /obj/item/clothing/accessory/ranks/corpsman(src)
 	new /obj/item/weapon/storage/box/trooperuniform(src)
-	new /obj/item/ammo_magazine/hrifle(src)
 	new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/under/rank/corpsman(src)
@@ -198,6 +194,8 @@
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
 	new /obj/item/weapon/gun/projectile/boltgun(src)
+	new /obj/item/ammo_magazine/slrifle(src)
+	new /obj/item/ammo_magazine/slrifle(src)
 
 /obj/structure/closet/secure_closet/militia/armor
 	name = "blackshield armor locker"
