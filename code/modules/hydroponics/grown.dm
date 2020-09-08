@@ -320,6 +320,23 @@
 /obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris
 	plantname = "ambrosia"
 
+//Used in clearing things.
+/obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings
+	plantname = "plant cuttings"
+	desc = "Freshly cut plant clippings."
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/flower/poppy/wild
+	plantname = "wild poppy"
+	desc = "Wild grown poppy, domesticated ones are about the same."
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/flower/sunflower/wild
+	plantname = "wild sunflower"
+	desc = "Wild grown sunflower, not as tall as the domesticated ones."
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/flower/harebells/wild
+	plantname = "wild harebell"
+	desc = "Wildly grown harebell, much more blue then domesticated ones."
+
 /obj/item/weapon/reagent_containers/food/snacks/fruit_slice
 	name = "fruit slice"
 	desc = "A slice of some tasty fruit."
