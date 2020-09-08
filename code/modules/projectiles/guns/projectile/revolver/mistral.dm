@@ -14,14 +14,4 @@
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.5
 	recoil_buildup = 35
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
-
-/obj/item/weapon/gun/projectile/revolver/mistral/update_icon()
-	..()
-
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (silenced)
-		iconstring += "_s"
-		itemstring += "_s"
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
