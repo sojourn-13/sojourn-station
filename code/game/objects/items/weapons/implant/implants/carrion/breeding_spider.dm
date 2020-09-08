@@ -1,5 +1,4 @@
 /obj/item/weapon/implant/carrion_spider/breeding
-	name = "breeding spider"
 	icon_state = "spiderling_breeding"
 	spider_price = 30
 	var/number_of_spiders

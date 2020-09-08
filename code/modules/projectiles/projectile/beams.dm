@@ -19,6 +19,19 @@
 
 /obj/item/projectile/beam/weak
 	damage_types = list(BURN = 16)
+	eyeblur = 0 //we do not eyeblur
+
+/obj/item/projectile/beam/weak/pistol
+	damage_types = list(BURN = 12)
+
+/obj/item/projectile/beam/weak/rifle
+	damage_types = list(BURN = 16)
+
+/obj/item/projectile/beam/weak/magnum
+	damage_types = list(BURN = 20)
+
+/obj/item/projectile/beam/weak/kurtz
+	damage_types = list(BURN = 25)
 
 /obj/item/projectile/beam/weak/smg
 	damage_types = list(BURN = 10)
@@ -30,6 +43,10 @@
 /obj/item/projectile/beam/weak/ap
 	damage_types = list(BURN = 15)
 	armor_penetration = 20
+
+/obj/item/projectile/beam/shotgun
+	damage_types = list(BURN = 35) //Normal slugs deal 45
+	armor_penetration = 10
 
 /obj/item/projectile/beam/practice
 	name = "laser"

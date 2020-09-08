@@ -10,7 +10,7 @@
 
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
-	desc = "A pair of standard-issue jackboots typically worn by security personnel."
+	desc = "A pair of standard-issue jackboots typically worn by people who need to stomp things."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	force = WEAPON_FORCE_HARMLESS
@@ -20,7 +20,7 @@
 
 /obj/item/clothing/shoes/jackboots/german
 	name = "brown jackboots"
-	desc = "A pair of brown boots."
+	desc = "A pair of standard-issue jackboots typically worn by people who need to stomp things. These ones are brown."
 	icon_state = "germanboots"
 
 /obj/item/clothing/shoes/reinforced

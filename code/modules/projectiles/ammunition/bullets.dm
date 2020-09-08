@@ -25,6 +25,12 @@
 	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol/lethal
 
+/obj/item/ammo_casing/pistol/laser
+	desc = "A .35 Auto laser casing."
+	caliber = CAL_PISTOL
+	projectile_type = /obj/item/projectile/beam/weak/pistol
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
+
 //// .40 ////
 
 /obj/item/ammo_casing/magnum
@@ -52,6 +58,12 @@
 	desc = "A .40 Magnum hollow point bullet casing."
 	caliber = CAL_MAGNUM
 	projectile_type = /obj/item/projectile/bullet/magnum/lethal
+
+/obj/item/ammo_casing/magnum/laser
+	desc = "A .40 Magnum laser casing."
+	caliber = CAL_MAGNUM
+	projectile_type = /obj/item/projectile/beam/weak/magnum
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 //// .257 carbine ////
 
@@ -140,6 +152,12 @@
 	caliber = CAL_HRIFLE
 	projectile_type = /obj/item/projectile/bullet/hrifle/lethal
 
+/obj/item/ammo_casing/hrifle/laser
+	desc = "A .408 Omni laser casing."
+	caliber = CAL_HRIFLE
+	projectile_type = /obj/item/projectile/beam/weak/rifle
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
+
 ///snowflake caseless
 /obj/item/ammo_casing/c10x24
 	desc = "A 10mm x 24 caseless cartidge."
@@ -173,6 +191,12 @@
 	desc = "A .50 Kurtz hollow point bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz/lethal
+
+/obj/item/ammo_casing/kurtz/laser
+	desc = "A .50 Kurtz laser casing."
+	caliber = CAL_50
+	projectile_type = /obj/item/projectile/beam/weak/kurtz
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 //// .60-06 ////
 /obj/item/ammo_casing/antim
@@ -253,6 +277,17 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASMA = 0.5)
 
 /obj/item/ammo_casing/shotgun/incendiary/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/shotgun/laser
+	name = "laser shell"
+	desc = "A 20mm laser shell."
+	icon_state = "lasershell"
+	projectile_type = /obj/item/projectile/beam/shotgun
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8)
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/laser/prespawned
 	amount = 5
 
 /obj/item/ammo_casing/shotgun/payload

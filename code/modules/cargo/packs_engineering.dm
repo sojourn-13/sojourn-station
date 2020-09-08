@@ -403,7 +403,7 @@
 	crate_name = "robotics assembly crate"
 	access = access_robotics
 	group = "Engineering"
-
+/*
 //Contains six, you'll probably want to build several of these
 /datum/supply_pack/shield_diffuser
 	contains = list(/obj/item/weapon/circuitboard/shield_diffuser,
@@ -419,7 +419,7 @@
 	crate_name = "shield diffuser circuitry crate"
 	group = "Engineering"
 	access = access_ce
-
+*/
 /datum/supply_pack/hatton_tube
 	contains = list(/obj/item/weapon/hatton_magazine,
 	/obj/item/weapon/hatton_magazine,
@@ -444,7 +444,7 @@
 /datum/supply_pack/smbig
 	name = "Supermatter Core Crate (CAUTION)"
 	contains = list(/obj/machinery/power/supermatter)
-	cost = 16000
+	cost = 100000
 	containertype = /obj/structure/closet/crate/secure/woodseccrate
 	crate_name = "supermatter core crate (CAUTION)"
 	group = "Engineering"

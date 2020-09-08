@@ -782,7 +782,7 @@
 	response_disarm = "gently moves aside"
 	response_harm   = "swats"
 	universal_speak = 1
-	wander = TRUE
+	wander = 1
 
 /mob/living/simple_animal/jungle_bird/Initialize()
 	icon_state = "bird-[rand(1, 17)]"

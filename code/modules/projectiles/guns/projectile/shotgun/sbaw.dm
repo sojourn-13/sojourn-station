@@ -13,7 +13,7 @@
 	mag_well = MAG_WELL_DRUM
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 3000
+	price_tag = 1500
 	penetration_multiplier = 1.2
 	damage_multiplier = 1
 	zoom_factor = 0.3

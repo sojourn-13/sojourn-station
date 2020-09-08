@@ -6,7 +6,6 @@
 	var/antag_id = ROLE_EXCELSIOR_REV
 	var/faction_id = FACTION_EXCELSIOR
 	var/global/possible_disguises = list(
-		/obj/item/weapon/implant/chem,
 		/obj/item/weapon/implant/death_alarm
 	)
 	var/disguise

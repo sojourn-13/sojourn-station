@@ -28,11 +28,12 @@
 		return
 
 	var/obj/item/weapon/card/id/I = W.GetIdCard()
-	if(istype(I))
+	if(istype(I) && (I.claimed_locker == FALSE))
 		if(!src.registered_name && has_access(access_occupy, list(), I.GetAccess()))
 			src.registered_name = I.registered_name
 			name = "[initial(name)] ([registered_name])"
 			to_chat(user, SPAN_NOTICE("You occupied [src]."))
+			I.claimed_locker = TRUE
 			return
 
 	return ..()

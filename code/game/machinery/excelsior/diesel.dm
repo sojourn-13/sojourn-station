@@ -23,3 +23,19 @@
 			add_overlay("0")
 	else
 		add_overlay("off")
+
+//Sticking this here because meh. -Kaz
+/obj/machinery/power/port_gen/pacman/diesel/anchored
+	anchored = 1
+
+/obj/machinery/power/port_gen/pacman/mrs/anchored
+	anchored = 1
+
+/obj/machinery/power/port_gen/pacman/super/anchored
+	anchored = 1
+
+/obj/machinery/power/port_gen/pacman/anchored
+	anchored = 1
+
+/obj/machinery/power/port_gen/pacman/scrap/anchored
+	anchored = 1

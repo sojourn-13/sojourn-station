@@ -10,7 +10,7 @@
 	throw_speed = 4
 	throw_range = 20
 	origin_tech = list(TECH_BLUESPACE = 5)
-	price_tag = 4000
+	price_tag = 2000
 	matter = list(MATERIAL_SILVER = 10, MATERIAL_GOLD = 5, MATERIAL_PLASMA = 20, MATERIAL_PLASTIC = 20)
 	var/mode = MODE_TRANSMIT
 	var/transforming = FALSE	// mode changing takes some time

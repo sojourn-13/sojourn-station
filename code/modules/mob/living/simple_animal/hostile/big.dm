@@ -198,7 +198,7 @@
 	move_to_delay = 2
 	speak_emote = list("chitters", "sharpens its claws")
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
-	alpha = 50
+	alpha = 30
 	faction = "stalker"
 	mob_size =  3  // The same as Hivemind Tyrant
 
@@ -246,6 +246,7 @@
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "pond"
 	mob_size =  3  // The same as Hivemind Tyrant
+	wander = 1
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
 	..()

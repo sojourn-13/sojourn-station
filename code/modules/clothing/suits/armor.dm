@@ -165,7 +165,7 @@
 		bio = 0,
 		rad = 0
 	)
-	price_tag = 500
+	price_tag = 250
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
 	icon_state = "bulletproof_ironhammer"
@@ -186,7 +186,7 @@
 		rad = 0
 	)
 	siemens_coefficient = 0
-	price_tag = 650
+	price_tag = 325
 
 /obj/item/clothing/suit/armor/laserproof/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))
@@ -211,6 +211,21 @@
 /obj/item/clothing/suit/armor/laserproof/ironhammer
 	icon_state = "ablative_ironhammer"
 
+/obj/item/clothing/suit/armor/laserproof/rnd
+	name = "soteria ablative armor vest"
+	desc = "A soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets."
+	icon_state = "ablative_ironhammer"
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
+	armor = list(
+		melee = 20,
+		bullet = 20,
+		energy = 65,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	siemens_coefficient = 0
+	price_tag = 650
 /*
  * Heavy Armor Types
  */
@@ -238,7 +253,7 @@
 		rad = 0
 	)
 	equip_delay = 2 SECONDS
-	price_tag = 250
+	price_tag = 125
 
 /obj/item/clothing/suit/armor/heavy/red
 	name = "Thunderdome suit (red)"
@@ -269,7 +284,7 @@
 		bio = 0,
 		rad = 0
 	)
-	price_tag = 500
+	price_tag = 250
 
 /obj/item/clothing/suit/armor/heavy/riot/ironhammer
 	icon_state = "riot_ironhammer"
