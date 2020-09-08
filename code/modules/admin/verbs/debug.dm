@@ -429,7 +429,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 		"soviet admiral",
 		"tunnel clown",
 		"masked killer",
-		"special ops officer"
+		"special ops officer",
+		"the don"
 		)
 	var/dresscode = input("Select dress for [M]", "Robust quick dress shop") as null|anything in dresspacks
 	if (isnull(dresscode))
@@ -719,6 +720,36 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			W.access = get_all_station_access()
 			W.access += get_all_centcom_access()
 			W.assignment = "Admiral"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
+
+
+		if("the don")
+			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/eyepatch(M), slot_glasses)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain(M), slot_l_ear)
+			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick/combat(M), slot_gloves)
+
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(M), slot_back)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full/bst(M), slot_belt)
+
+			var/obj/item/weapon/storage/secure/briefcase/sec_briefcase = new(M)
+			for(var/obj/item/briefcase_item in sec_briefcase)
+				qdel(briefcase_item)
+			for(var/i=3, i>0, i--)
+				sec_briefcase.contents += new /obj/item/weapon/spacecash/bundle/c1000
+			sec_briefcase.contents += new /obj/item/weapon/gun/energy/crossbow
+			sec_briefcase.contents += new /obj/item/weapon/gun/projectile/revolver/mateba
+			sec_briefcase.contents += new /obj/item/ammo_magazine/slkurtz
+			sec_briefcase.contents += new /obj/item/ammo_magazine/slkurtz
+			M.equip_to_slot_or_del(sec_briefcase, slot_l_hand)
+
+			var/obj/item/weapon/card/id/W = new(M)
+			W.name = "[M.real_name]'s ID Card"
+			W.icon_state = "centcom"
+			W.access = get_all_station_access()
+			W.access += get_all_centcom_access()
+			W.assignment = "The Don"
 			W.registered_name = M.real_name
 			M.equip_to_slot_or_del(W, slot_wear_id)
 
