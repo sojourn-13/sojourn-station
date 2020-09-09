@@ -49,6 +49,7 @@
 	if(!anchored)
 		return
 
+
 /obj/machinery/power/port_gen/update_icon()
 	if(!active)
 		icon_state = initial(icon_state)
@@ -280,6 +281,12 @@
 
 /obj/machinery/power/port_gen/pacman/attackby(var/obj/item/I, var/mob/user)
 
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
 	if(!use_reagents_as_fuel && istype(I, sheet_path))
 		var/obj/item/stack/addstack = I
 		var/amount = min((max_fuel_volume - sheets), addstack.amount)
@@ -297,35 +304,10 @@
 
 	else
 
-		var/list/usable_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING)
-		if(open)
-			usable_qualities.Add(QUALITY_PRYING)
+		var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
 
 		var/tool_type = I.get_tool_type(user, usable_qualities, src)
 		switch(tool_type)
-
-			if(QUALITY_PRYING)
-				if(open)
-					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-						var/obj/machinery/constructable_frame/machine_frame/new_frame = new /obj/machinery/constructable_frame/machine_frame(src.loc)
-						for(var/obj/item/CP in component_parts)
-							CP.loc = src.loc
-						while ( sheets > 0 )
-							DropFuel()
-						new_frame.state = 2
-						new_frame.icon_state = "box_1"
-						qdel(src)
-					return
-				return
-
-			if(QUALITY_SCREW_DRIVING)
-				var/used_sound = open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
-					open = !open
-					to_chat(user, SPAN_NOTICE("You [open ? "open" : "close"] the maintenance hatch of \the [src] with [I]."))
-					update_icon()
-					return
-				return
 
 			if(QUALITY_BOLT_TURNING)
 				if(istype(get_turf(src), /turf/space) && !anchored)
