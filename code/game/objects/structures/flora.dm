@@ -64,7 +64,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -275,8 +275,8 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 1 : 2)
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
 			qdel(src)
@@ -363,9 +363,9 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/flower/harebells/wild(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/flower/harebells/wild(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
 			qdel(src)
 			return
@@ -389,9 +389,9 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/flower/sunflower/wild(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/flower/sunflower/wild(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
 			qdel(src)
 			return
@@ -422,9 +422,9 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/flower/poppy/wild(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/flower/poppy/wild(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
 			qdel(src)
 			return
@@ -438,6 +438,22 @@
 	name = "sparse grass"
 	icon_state = "sparsegrass_1"
 
+/obj/structure/flora/ausbushes/sparsegrass/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/ausbushes/sparsegrass/New()
 	..()
 	icon_state = "sparsegrass_[rand(1, 3)]"
@@ -445,6 +461,23 @@
 /obj/structure/flora/ausbushes/fullgrass
 	name = "full grass"
 	icon_state = "fullgrass_1"
+
+/obj/structure/flora/ausbushes/fullgrass/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/ausbushes/fullgrass/New()
 	..()
@@ -545,8 +578,8 @@
 	if(tool_type==QUALITY_HAMMERING)
 		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
 		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/ore/glass(src)
-			new /obj/item/weapon/ore/glass(src)
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/item/weapon/ore/glass(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
 			qdel(src)
 			return
@@ -669,8 +702,8 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src) //We get more
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -690,8 +723,8 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src) //We get more
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -711,8 +744,8 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src) //We get more
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -732,8 +765,8 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src) //We get more
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 1 : 2)
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
 			qdel(src)
@@ -754,8 +787,8 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src) //We get more
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 1 : 2)
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
 			qdel(src)
@@ -776,7 +809,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
 			qdel(src)
@@ -797,7 +830,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
 			qdel(src)
@@ -818,7 +851,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
 			qdel(src)
@@ -839,7 +872,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
 			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
 			qdel(src)
@@ -859,7 +892,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -878,7 +911,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -897,7 +930,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -916,7 +949,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -935,7 +968,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -954,7 +987,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -973,7 +1006,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -992,7 +1025,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -1011,7 +1044,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -1030,7 +1063,7 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -1050,11 +1083,11 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You started to cut the bush away, harvesting some plant clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(src)
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			qdel(src)
 			return
@@ -1087,15 +1120,14 @@
 	if(tool_type==QUALITY_HAMMERING)
 		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
 		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/ore/glass(src)
-			new /obj/item/weapon/ore/glass(src)
-			new /obj/random/material_ore(src)
-			new /obj/random/material_ore(src)
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
 			qdel(src)
 			return
 		return
-
 
 /obj/structure/flora/big/rocks2
 	name = "rock pile"
@@ -1112,15 +1144,14 @@
 	if(tool_type==QUALITY_HAMMERING)
 		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
 		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/ore/glass(src)
-			new /obj/item/weapon/ore/glass(src)
-			new /obj/random/material_ore(src)
-			new /obj/random/material_ore(src)
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
 			qdel(src)
 			return
 		return
-
 
 /obj/structure/flora/big/rocks3
 	name = "rock pile"
@@ -1137,10 +1168,10 @@
 	if(tool_type==QUALITY_HAMMERING)
 		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
 		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/ore/glass(src)
-			new /obj/item/weapon/ore/glass(src)
-			new /obj/random/material_ore(src)
-			new /obj/random/material_ore(src)
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
 			qdel(src)
 			return
@@ -1203,7 +1234,7 @@
 	if(tool_type==QUALITY_HAMMERING)
 		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
 		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/ore/glass(src)
+			new /obj/item/weapon/ore/glass(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
 			qdel(src)
 			return
