@@ -138,7 +138,7 @@
 /datum/design/research/item/ammo/rifle_laser
 	name = "omni .408 laser casing."
 	desc = "A .408 Omni casing fitted with a one time use laser payload."
-	build_path = /obj/item/projectile/beam/weak/rifle
+	build_path = /obj/item/ammo_casing/hrifle/laser
 
 /datum/design/research/item/ammo/kurtz_laser
 	name = "kurtz .50 , laser case"
