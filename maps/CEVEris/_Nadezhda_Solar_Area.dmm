@@ -31,7 +31,7 @@
 "aE" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
 "aF" = (/obj/structure/table/standard,/obj/item/stack/cable_coil,/obj/item/stack/cable_coil,/obj/item/weapon/paper/solarsteup,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/outside/mountainsolars)
 "aG" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/random/traps/wire_splicing/low_chance,/turf/simulated/floor/plating/under,/area/nadezhda/outside/mountainsolars)
-"aH" = (/obj/structure/table/standard,/obj/random/toolbox,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/outside/mountainsolars)
+"aH" = (/obj/effect/decal/cleanable/dirt,/obj/structure/closet/crate/solar,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/mountainsolars)
 "aI" = (/obj/structure/cable{icon_state = "0-2"; d2 = 2},/obj/machinery/power/solar_control,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/outside/mountainsolars)
 "aJ" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
 "aK" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
@@ -105,8 +105,8 @@
 "ca" = (/obj/structure/closet/crate/solar,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/mountainsolars)
 "cb" = (/obj/random/furniture/pottedplant,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/mountainsolars)
 "cc" = (/mob/living/simple_animal/jungle_bird,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/mountainsolars)
-"cd" = (/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/mountainsolars)
-"ce" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/mountainsolars)
+"cd" = (/obj/structure/table/standard,/obj/random/toolbox,/obj/item/stack/cable_coil,/obj/item/stack/cable_coil,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/outside/mountainsolars)
+"ce" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 1; pixel_y = 0},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
 "cf" = (/obj/machinery/light{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/mountainsolars)
 "cg" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/outside/mountainsolars)
 "ch" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
@@ -115,7 +115,7 @@
 "ck" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
 "cl" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
 "cm" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
-"cn" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
+"cn" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/machinery/door/window/northleft,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
 "co" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
 "cp" = (/obj/structure/railing,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/mountainsolars)
 "cq" = (/obj/structure/railing{tag = "icon-railing0 (EAST)"; icon_state = "railing0"; dir = 4; anchored = 1},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/mountainsolars)
@@ -181,6 +181,10 @@
 "dy" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/small/lavarock3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/mountainsolars)
 "dz" = (/obj/structure/flora/small/lavarock3,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/mountainsolars)
 "dA" = (/obj/random/mob/croaker/low_chance,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/mountainsolars)
+"dB" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/structure/window/reinforced{dir = 4; pixel_x = 0},/obj/structure/window/reinforced{dir = 1; pixel_y = 0},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
+"dC" = (/obj/structure/window/reinforced{dir = 8},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
+"dD" = (/obj/machinery/telecomms/relay/preset/telecomms,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
+"dE" = (/obj/structure/window/reinforced{dir = 4; pixel_x = 0},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -217,12 +221,12 @@ aaaaaaaaaaaaaaaaabababababacacalacafagagagagagagagagagagagagagagagagagagagagagag
 aaaaaaaaaaaaaaaaabababababacalalacahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahadacalalacacacacacacaiaiacacacacacacacacacacalalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababacacacalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacalalacajakakakakajajajajajajajajajajajajalalalalalacacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaababacacacalalacacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadacalalacakcacacacbajanaoapajajajaqarasatajacalalalalacacabababababababababababababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababacacalalalacacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadacccacacakcdcecdcfajawaxaxajayazaAaBaAaAakacalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababacacalalalacacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadacccacacakcaaHcacfajawaxaxajayazaAaBaAaAakacalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababacalalalacacahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahadacalalacakaucgcgcgajajaCajajaDaAaEaAaEaBakalalbTalbTalacabababababababababababababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababacacalalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacacacacakaFaIaHaBaAbvaBaJaAaBaKaLaLaMaBakacalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababacacalalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacacacacakaFaIcdaBaAbvaBaJaAaBaKaLaLaMaBakacalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababacalalalacacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadacacacacajaNaOaPaAchaQaAaEaEaAaKaLaLaMaBakacalalalalacacabababababababababababababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabababacalalalacacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadbxaGaGaGaRcicjcickclcmcncocnclcoclaVckaWajaZaZcpcpaZaZacabababababababababababababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababacacacalalacacahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahadacacacacajaXcgcgaAaAaAaBaBaAaAaEchaAaBaYaRbebebebebebabgabababababababababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabababacalalalacacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadbxaGaGaGaRcicjcickclcmcecndBclcoclaVckaWajaZaZcpcpaZaZacabababababababababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababacacacalalacacahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahadacacacacajaXcgcgaAaAaAdCdDdEaAaEchaAaBaYaRbebebebebebabgabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaababacacacalalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacacacbbajakakakbcbdakakakakakbcbdakakakajbwbwbwbwbwbybAaZaZaZaZaZaZaZaZaZaZaZaZaZaZacaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaababacacacacalalacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadacacacacacacaccqauaucralalalcsauauctalalcuaccvcvbCbwbDbebebebebebebebebebebebebebebabEaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababacabacacalacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadacalcwalalalaccqcgcgctaSalaScscgcgctavalccacalalcxbwbwbwbwbwbwbwbwbwbwbwbwbwbwbwbwbGbEaaaaaaaaaaaaaaaaaa
