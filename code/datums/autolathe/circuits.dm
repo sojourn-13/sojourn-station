@@ -49,7 +49,7 @@
 	build_path = /obj/item/weapon/circuitboard/excelsiorreconstructor
 
 /datum/design/autolathe/circuit/diesel_excelsior
-	name = "excelsior diesel generator"
+	name = "diesel generator"
 	build_path = /obj/item/weapon/circuitboard/diesel
 
 /datum/design/autolathe/circuit/teleporter_excelsior

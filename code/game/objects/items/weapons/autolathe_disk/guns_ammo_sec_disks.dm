@@ -26,7 +26,7 @@
 
 //Blackshield
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
-	disk_name = "Blackshield Sovereignty Pack"
+	disk_name = "Blackshield 'Shall-not-be-Infringed' Pack"
 	icon_state = "onestar"
 	license = 20
 
@@ -34,27 +34,17 @@
 		/datum/design/autolathe/gun/ten_dark,
 		/datum/design/autolathe/gun/ladon,
  		/datum/design/autolathe/gun/naga,
- 		/datum/design/autolathe/ammo/magnum,
- 		/datum/design/autolathe/ammo/magnum_lethal,
- 		/datum/design/autolathe/ammo/kurtz,
- 		/datum/design/autolathe/ammo/kurtz_lethal,
 		/datum/design/autolathe/gun/omnirifle,//rifles
 		/datum/design/autolathe/gun/standard_omnirifle,
 		/datum/design/autolathe/gun/omnicarbine,
 		/datum/design/autolathe/gun/sts40,
 		/datum/design/autolathe/gun/rds_omnicarbine,
-		/datum/design/autolathe/device/gps,//misc gear
-		/datum/design/autolathe/misc/heavyflashlight,
-		/datum/design/autolathe/tool/tacknife,
-		/datum/design/autolathe/sec/beartrap,
-		/datum/design/research/item/light_replacer,
-		/datum/design/autolathe/sec/hailer,
 		)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/ammo
-	disk_name = "SA - Sovereignty Pack"
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshieldammo
+	disk_name = "Blackshield Ammo Sovereignty Pack"
 	icon_state = "onestar"
-	license = 25
+	license = 30
 
 	designs = list(
 
