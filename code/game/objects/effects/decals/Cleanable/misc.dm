@@ -56,7 +56,7 @@
 		return
 	if(!reagents) create_reagents(1)
 	var/space_to_add = reagents_to_add.total_volume + reagents.total_volume
-	if(space_to_add > 0)
+	if(space_to_add > reagents.maximum_volume)
 		var/datum/reagents/R = reagents
 		create_reagents(space_to_add, TRUE)
 		R.trans_to_holder(reagents, R.total_volume)
