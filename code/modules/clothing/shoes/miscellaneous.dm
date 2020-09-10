@@ -260,7 +260,7 @@
 	name = "security winter boots"
 	desc = "A pair of reinforced winter boots with a security design."
 	icon_state = "winterboots_sec"
-	armor = list(melee = 10, bullet = 0, laser = 10, energy = 15, bomb = 20, bio = 0, rad = 0) //Laser?
+	armor = list(melee = 10, bullet = 0, energy = 15, bomb = 20, bio = 0, rad = 0) //Laser?
 
 /obj/item/clothing/shoes/winter/science
 	name = "science winter boots"
@@ -306,4 +306,4 @@
 	name = "explorer boots"
 	desc = "A pair of rugged boots designed for hazardous environment exploration."
 	icon_state = "explorer"
-	armor = list(melee = 10, bullet = 0, laser = 10, energy = 15, bomb = 20, bio = 0, rad = 0)
+	armor = list(melee = 10, bullet = 0, energy = 15, bomb = 20, bio = 0, rad = 0)

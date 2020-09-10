@@ -137,7 +137,7 @@
 	name = "bucket-helm"
 	desc = "A bucket with two holes for eyes and some smaller ones for ventilation, with steel added to gain some protection. One may say, <i>'Situla Vult!'</i>."
 	icon_state = "hm_greathelm"
-	armor = list(melee = 27, bullet = 29, laser = 29,energy = 27, bomb = 3, bio = 1, rad = 0) //Laser?
+	armor = list(melee = 27, bullet = 29,energy = 27, bomb = 3, bio = 1, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS|EYES
 	siemens_coefficient = 0.6
