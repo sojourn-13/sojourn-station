@@ -11,6 +11,7 @@
 	use_power = 0
 	idle_power_usage = 0
 	active_power_usage = 0
+	var/glass_power = 1 //How much are more are we getting from the glass?
 	var/id = 0
 	health = 10
 	var/obscured = 0
@@ -53,6 +54,14 @@
 	S.loc = src
 	if(S.glass_type == /obj/item/stack/material/glass/reinforced) //if the panel is in reinforced glass
 		health *= 2 								 //this need to be placed here, because panels already on the map don't have an assembly linked to
+		glass_power = 1.1 //33000
+	if(S.glass_type == /obj/item/stack/material/glass/plasmaglass) //if the panel is in plasma glass
+		health *= 2
+		glass_power = 1.2 //36000
+	if(S.glass_type == /obj/item/stack/material/glass/plasmarglass) //if the panel is in reinforced plasma glass
+		health *= 3
+		glass_power = 1.3 //39000
+
 	update_icon()
 
 
@@ -123,7 +132,7 @@
 		if(powernet == control.powernet)//check if the panel is still connected to the computer
 			if(obscured) //get no light from the sun, so don't generate power
 				return
-			var/sgen = SOLARGENRATE * sunfrac
+			var/sgen = SOLARGENRATE * sunfrac * glass_power
 			add_avail(sgen)
 			control.gen += sgen
 		else //if we're no longer on the same powernet, remove from control computer
@@ -246,7 +255,7 @@
 
 	if(anchored && isturf(loc))
 		log_debug("1")
-		if(istype(I, /obj/item/stack/material) && (I.get_material_name() == "glass" || I.get_material_name() == "rglass"))
+		if(istype(I, /obj/item/stack/material) && (I.get_material_name() == "glass" || I.get_material_name() == "rglass" || I.get_material_name() == "plasmaglass" || I.get_material_name() == "rplasmaglass"))
 			log_debug("2")
 			var/obj/item/stack/material/S = I
 			if(S.use(2))
@@ -549,8 +558,9 @@
 /obj/item/weapon/paper/solarsteup
 	name = "paper- 'Message from Tacitus, guild grand master.'"
 	info = "<h1>Greetings Adept</h1><p>Setting up the solar array is pretty straight forward, you just need to replace the wiring that transmits the most energy at the start of each shift \
-	and then go through all the existing wiring to cut off any frayed spots before recrimping it, this step is important as the frayed wires will cause power loss if not repaired. You'll \
-	notice the solar computer hooked up to the controller already, once you have it wired just perform a scan and the machines will do the rest of the work. If for any reason the solar \
+	and then go through all the existing wiring to cut off any frayed spots before recrimping it, this step is important as the frayed wires will cause power loss if not repaired. \
+	If your feeling fancy you can replace the solar pannles with better glass for more power, reinforced borosilicate glass gets the most power out of the sun well just reinforcing them will only help a little. \
+	You'll notice the solar computer hooked up to the controller already, once you have it wired just perform a scan and the machines will do the rest of the work. If for any reason the solar \
 	array doesn't detect the panels, try resetting the computer by taking it apart and putting it back together. Remember to walk instead of run on the under plating, wear \
 	insulated gloves, and wear some insulated work boots for protection. -Tacitus O'Connar.</p>"
 
@@ -558,8 +568,8 @@
 	name = "paper- 'Message from Augustine, church cartographer.'"
 	info = "<h1>Greetings</h1><p>For those unaware we have a small solar system set up here to help provide reserve power to the colony, be quite careful as while it is smaller, safer, and easier to \
 	maintain than what the artificer guild uses the wiring under the catwalk will fray over time and may shock you by electrifying the metal. If you find a pair of insulated gloves I \
-	highly suggest cutting any splicings and crimping the wires to make them safe and increase power production. If the colony ever has any brown outs or black outs the third SMES unit in the \
-	biogenerator room will charge from these solars and can be hooked up as a temporary solution.</p>"
+	highly suggest cutting any splicings and crimping the wires to make them safe and increase power production. If needed it may be usefull to upgrade the glass inside the pannles to harvest more power. \
+	If the colony ever has any brown outs or black outs the third SMES unit in the biogenerator room will charge from these solars and can be hooked up as a temporary solution.</p>"
 
 /obj/item/weapon/paper/solar
 	name = "paper- 'Going green! Setup your own solar array instructions.'"

@@ -103,6 +103,8 @@
 		/datum/design/autolathe/circuit/centrifuge,
 		/datum/design/autolathe/circuit/electrolyzer,
 		/datum/design/autolathe/circuit/reagentgrinder,
+		/datum/design/research/circuit/pacman,
+		/datum/design/research/circuit/diesel,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors
@@ -194,3 +196,20 @@
 		/datum/design/research/item/weapon/toolmod/plasmablock,
 		)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork
+	disk_name = "Artificer's KW-841 Power Setters"
+	icon_state = "technomancers"
+
+	license = -1
+	designs = list(
+	/datum/design/research/circuit/powermonitor,
+	/datum/design/research/circuit/solarcontrol,
+	/datum/design/research/circuit/miss,
+	/datum/design/research/circuit/superpacman,
+	/datum/design/research/circuit/mrspacman,
+	/datum/design/research/circuit/camp,
+	/datum/design/research/circuit/pacman,
+	/datum/design/research/circuit/diesel,
+	/datum/design/research/circuit/pacman/scrap,
+	/datum/design/research/structure/solar,
+	)

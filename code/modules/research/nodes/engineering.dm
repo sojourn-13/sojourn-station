@@ -367,7 +367,8 @@
 	required_tech_levels = list()
 	cost = 1000
 
-	unlocks_designs = list(/datum/design/research/item/part/high_micro_laser, /datum/design/research/item/part/adv_matter_bin)
+	unlocks_designs = list(/datum/design/research/item/part/high_micro_laser,
+							/datum/design/research/item/part/adv_matter_bin)
 
 /datum/technology/ultra_parts
 	name = "Super Parts"
@@ -382,7 +383,9 @@
 	required_tech_levels = list()
 	cost = 2000
 
-	unlocks_designs = list(/datum/design/research/item/part/ultra_micro_laser, /datum/design/research/item/part/super_matter_bin, /datum/design/research/item/medical/nanopaste)
+	unlocks_designs = list(/datum/design/research/item/part/ultra_micro_laser,
+						/datum/design/research/item/part/super_matter_bin,
+						/datum/design/research/item/medical/nanopaste)
 
 /datum/technology/super_adv_engineering
 	name = "Progressive Engineering"
@@ -397,7 +400,9 @@
 	required_tech_levels = list()
 	cost = 1500
 
-	unlocks_designs = list(/datum/design/research/item/part/RPED, /datum/design/research/circuit/secure_airlock, /datum/design/research/item/part/RPED/mini)
+	unlocks_designs = list(/datum/design/research/item/part/RPED,
+							 /datum/design/research/circuit/secure_airlock,
+							 /datum/design/research/item/part/RPED/mini)
 
 /datum/technology/industrial_printing
 	name = "Industrial Printing"
@@ -414,7 +419,8 @@
 
 	unlocks_designs = list(/datum/design/research/circuit/industrial_printer,
 							/datum/design/research/circuit/recharger_industrial,
-							/datum/design/research/circuit/industrial_grinder
+							/datum/design/research/circuit/industrial_grinder,
+							/datum/design/research/circuit/industrial_chems
 							)
 
 

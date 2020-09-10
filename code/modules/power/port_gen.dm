@@ -143,6 +143,8 @@
 				create_reagents(max_fuel_volume)
 		else if(istype(SP, /obj/item/weapon/stock_parts/micro_laser) || istype(SP, /obj/item/weapon/stock_parts/capacitor))
 			temp_rating += SP.rating
+	desc = "A power generator that runs on [fuel_name]. Rated for [(power_gen * max_safe_output) / 1000] kW max safe output."
+
 
 	power_gen = round(initial(power_gen) * (max(2, temp_rating) / 2))
 
@@ -472,3 +474,40 @@
 	//no special effects, but the explosion is pretty big (same as a supermatter shard).
 	explosion(src.loc, 3, 6, 12, 16, 1)
 	qdel(src)
+
+/obj/machinery/power/port_gen/pacman/camp
+	name = "C.A.M.P.E.R.P.A.C.M.A.N portable generator"
+	desc = "This pacman got its named form its low power rating of burning wood as fuel, tends to be used well people go out camping. Rated for 20 kW maximum safe output!"
+	icon_state = "portgen2"
+	sheet_path = /obj/item/stack/material/wood
+	sheet_name = "Wood Planks Fuel Sheets"
+
+	//Wood is everyware here, this is is rather weak
+	power_gen = 12000 //watts
+	time_per_fuel_unit = 80
+	temperature_gain = 20
+	circuit = /obj/item/weapon/circuitboard/pacman/camp
+
+/obj/machinery/power/port_gen/pacman/camp/explode()
+	//low explosion effects, this is rather safe.
+	explosion(src.loc, 0, 0, 3, 1)
+	qdel(src)
+
+/obj/machinery/power/port_gen/pacman/miss
+	name = "M.I.S.S.P.A.C.M.A.N portable generator"
+	desc = "Using a girls best friend. Rated for 200 kW maximum safe output!"
+	icon_state = "portgen2"
+	sheet_path = /obj/item/stack/material/diamond
+	sheet_name = "Diamond Sheet Fuel Sheets"
+
+	//diamonds are just as common as any other mat*
+	power_gen = 22500 //watts
+	time_per_fuel_unit = 284 //3x longer then plasma
+	temperature_gain = 70
+	circuit = /obj/item/weapon/circuitboard/pacman/miss
+
+/obj/machinery/power/port_gen/pacman/miss/explode()
+	//low explosion effects.
+	explosion(src.loc, 1, 1, 3, 3)
+	qdel(src)
+
