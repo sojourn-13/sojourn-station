@@ -1,5 +1,5 @@
 #define SOLAR_MAX_DIST 100
-#define SOLARGENRATE 3500
+#define SOLARGENRATE 3000
 
 /obj/machinery/power/solar
 	name = "solar panel"

@@ -98,11 +98,11 @@
 	createInnerDoors = 1
 
 	turbolift_stops = list(
-		/area/turbolift/prospector/surface,
+		/area/turbolift/prospector/underground,
 		/area/turbolift/prospector/surlevelOne,
 		/area/turbolift/prospector/surlevelTwo,
 		/area/turbolift/prospector/surlevelThree,
-		/area/turbolift/prospector/underground,
+		/area/turbolift/prospector/surface,
 		)
 
 /area/turbolift/prospector/surlevelOne
@@ -120,18 +120,18 @@
 	lift_announce_str = "Transition complete. Welcome to Base Level 3."
 	base_turf = /turf/simulated/shuttle/floor/mining
 
-/area/turbolift/prospector/surface
-	name = "Lonestar Surface Access"
-	lift_floor_label = "Lonestar Surface Access"
-	lift_floor_name = "Surface"
-	lift_announce_str = "Transition complete. Welcome to the Nadezhda Surface. Be mindful of all longarm firearm regulations."
-	base_turf = /turf/simulated/shuttle/floor/mining
-
 /area/turbolift/prospector/underground
 	name = "Lonestar Underground Access"
 	lift_floor_label = "Lonestar Underground Access"
 	lift_floor_name = "Prospector Prep"
 	lift_announce_str = "Transition complete. Welcome to the Nadezhda Underground. Be mindful of all longarm firearm regulations."
+	base_turf = /turf/simulated/shuttle/floor/mining
+
+/area/turbolift/prospector/surface
+	name = "Lonestar Surface Access"
+	lift_floor_label = "Lonestar Surface Access"
+	lift_floor_name = "Surface"
+	lift_announce_str = "Transition complete. Welcome to the Nadezhda Surface. Be mindful of all longarm firearm regulations."
 	base_turf = /turf/simulated/shuttle/floor/mining
 
 //SOLARS ELEVATOR
@@ -146,20 +146,12 @@
 	createInnerDoors = 1
 
 	turbolift_stops = list(
-		/area/turbolift/mountain/solars,
+		/area/turbolift/mountain/colony,
 		/area/turbolift/mountain/transition1,
 		/area/turbolift/mountain/transition2,
 		/area/turbolift/mountain/transition3,
-		/area/turbolift/mountain/colony,
+		/area/turbolift/mountain/solars,
 		)
-
-
-/area/turbolift/mountain/solars
-	name = "Guild Solars - Mountain Top"
-	lift_floor_label = "Nadezhda Mining"
-	lift_floor_name = "Mountain Top"
-	lift_announce_str = "Transition complete. Welcome to the mountain top. Please stay safe!"
-	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/mountain/transition1
 	name = "Transition One"
@@ -179,10 +171,16 @@
 /area/turbolift/mountain/colony
 	name = "Guild Solars - Colony"
 	lift_floor_label = "Nadezhda Colony"
-	lift_floor_name = "Colony"
+	lift_floor_name = "Engine Room"
 	lift_announce_str = "Transition complete. Welcome to the Nadezhda Colony Underground."
 	base_turf = /turf/simulated/shuttle/floor/mining
 
+/area/turbolift/mountain/solars
+	name = "Guild Solars - Mountain Top"
+	lift_floor_label = "Nadezhda Mountain Top"
+	lift_floor_name = "Solars"
+	lift_announce_str = "Transition complete. Welcome to the mountain top. Please stay safe!"
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 //RESEARCH ELEVATOR
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research
@@ -202,14 +200,6 @@
 		/area/turbolift/Research/midlevelThree,
 		/area/turbolift/Research/colony,
 		)
-
-
-/area/turbolift/Research/underground
-	name = "Nadezhda Research - Underground"
-	lift_floor_label = "Nadezhda Research"
-	lift_floor_name = "Research Underground"
-	lift_announce_str = "Transition complete"
-	base_turf = /turf/simulated/shuttle/floor/mining
 
 /area/turbolift/Research/midlevelOne
 	name = "Transition One"
@@ -233,14 +223,19 @@
 	lift_announce_str = "Transition complete."
 	base_turf = /turf/simulated/shuttle/floor/mining
 
+/area/turbolift/Research/underground
+	name = "Nadezhda Research - Underground"
+	lift_floor_label = "Nadezhda Research"
+	lift_floor_name = "Research Underground"
+	lift_announce_str = "Transition complete"
+	base_turf = /turf/simulated/shuttle/floor/mining
 
 
 
 
 
 
-
-
+//colony
 /area/turbolift/ElevatorOne/underground
 	name = "Nadezhda Underground"
 	lift_floor_label = "Nadezhda Underground"
