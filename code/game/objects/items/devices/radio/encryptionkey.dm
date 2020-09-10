@@ -83,12 +83,12 @@
 	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/moebius
-	name = "Soteria command encryption key"
+	name = "soteria command encryption key"
 	icon_state = "rd_cypherkey"
 	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hos
-	name = "Security commander's encryption key"
+	name = "security commander's encryption key"
 	icon_state = "hos_cypherkey"
 	channels = list("Security" = 1, "Command" = 1)
 
@@ -103,17 +103,17 @@
 	channels = list("Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hop
-	name = "Steward's encryption key"
+	name = "steward's encryption key"
 	icon_state = "hop_cypherkey"
 	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
 
 /obj/item/device/encryptionkey/heads/merchant
-	name = "Lonestar executive radio encryption key"
+	name = "lonestar executive radio encryption key"
 	icon_state = "qm_cypherkey"
-	channels = list("Supply" = 1, "Command" = 1, "Service" = 1)
+	channels = list("Supply" = 1, "Prospector" = 1, "Command" = 1, "Service" = 1)
 
 /obj/item/device/encryptionkey/heads/preacher
-	name = "Prime's radio encryption key"
+	name = "prime's radio encryption key"
 	icon_state = "preach_cypherkey"
 	channels = list("Church" = 1, "Command" = 1)
 
@@ -130,12 +130,12 @@
 /obj/item/device/encryptionkey/headset_pro
 	name = "prospector radio encryption key"
 	icon_state = "srv_cypherkey"
-	channels = list("Prospector" = 1)
+	channels = list("Prospector" = 1, "Supply" = 1)
 
 /obj/item/device/encryptionkey/heads/foreman
 	name = "prospector radio encryption key"
 	icon_state = "qm_cypherkey"
-	channels = list("Prospector" = 1, "Command" = 1)
+	channels = list("Prospector" = 1, "Supply" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/entertainment
 	name = "entertainment radio key"

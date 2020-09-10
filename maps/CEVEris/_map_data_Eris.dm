@@ -49,9 +49,9 @@
 
 /obj/map_data/nadezda_solars
 	name = "Nadezhda Mountain Solars"
-	is_station_level = TRUE
+	is_station_level = FALSE
 	is_player_level = TRUE
-	is_contact_level = TRUE
+	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	height = 1
