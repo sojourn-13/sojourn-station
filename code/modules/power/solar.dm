@@ -64,8 +64,6 @@
 
 	update_icon()
 
-
-
 /obj/machinery/power/solar/attackby(obj/item/weapon/I, mob/user)
 
 	if(QUALITY_PRYING in I.tool_qualities)
