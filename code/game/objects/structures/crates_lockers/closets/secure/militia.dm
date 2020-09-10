@@ -128,6 +128,10 @@
 		new /obj/item/weapon/gun/projectile/ladon(src)
 		new /obj/item/ammo_magazine/magnum(src)
 		new /obj/item/ammo_magazine/magnum/lethal(src)
+	if(prob(90))
+		new /obj/item/ammo_magazine/ammobox/rifle(src) //70 shots
+	else
+		new /obj/item/ammo_magazine/slrifle(src) //bad luck, only 45 shots
 	new /obj/item/clothing/accessory/ranks/trooper(src)
 	new /obj/item/weapon/storage/box/trooperuniform(src)
 	new /obj/item/clothing/accessory/dogtags(src)
@@ -149,6 +153,7 @@
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/gun/projectile/boltgun(src)
+	new /obj/item/ammo_magazine/ammobox/rifle_small/rubber(src) //Anit-Friendly fire
 	new /obj/item/ammo_magazine/slrifle(src)
 	new /obj/item/ammo_magazine/slrifle(src)
 
@@ -171,6 +176,10 @@
 		new /obj/item/weapon/gun/projectile/ladon(src)
 		new /obj/item/ammo_magazine/magnum(src)
 		new /obj/item/ammo_magazine/magnum/lethal(src)
+	if(prob(90))
+		new /obj/item/ammo_magazine/ammobox/rifle(src) //70 shots
+	else
+		new /obj/item/ammo_magazine/slrifle(src) //bad luck, only 45 shots
 	new /obj/item/clothing/accessory/ranks/corpsman(src)
 	new /obj/item/weapon/storage/box/trooperuniform(src)
 	new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
@@ -196,6 +205,7 @@
 	new /obj/item/weapon/gun/projectile/boltgun(src)
 	new /obj/item/ammo_magazine/slrifle(src)
 	new /obj/item/ammo_magazine/slrifle(src)
+	new /obj/item/ammo_magazine/ammobox/rifle_small/rubber(src) //Anit-Friendly fire
 
 /obj/structure/closet/secure_closet/militia/armor
 	name = "blackshield armor locker"
