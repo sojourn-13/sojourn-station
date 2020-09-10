@@ -82,7 +82,7 @@
 	icon_state = "det_corporate"
 	item_state = "det_corporate"
 
-	armor = list(melee = 15, bullet = 10, laser = 10,energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/inspector/black
