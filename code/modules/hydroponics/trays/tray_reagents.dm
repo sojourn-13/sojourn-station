@@ -88,7 +88,7 @@
 	name = "fertilizer bottle"
 	desc = "A small glass bottle. Can hold up to 60 units."
 	icon_state = "bottle16"
-	possible_transfer_amounts = null
+	possible_transfer_amounts = list(2,4,6,8,10)
 	w_class = ITEM_SIZE_SMALL
 	amount_per_transfer_from_this = 2
 	volume = 60
