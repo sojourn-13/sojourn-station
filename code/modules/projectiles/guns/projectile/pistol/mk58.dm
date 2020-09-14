@@ -34,6 +34,8 @@
 		iconstring += "_s"
 		itemstring += "_s"
 
+	icon_state = iconstring
+	set_item_state(itemstring)
 
 /obj/item/weapon/gun/projectile/mk58/wood
 	name = "\"Rose\" magnum pistol"
@@ -66,3 +68,5 @@
 		iconstring += "_s"
 		itemstring += "_s"
 
+	icon_state = iconstring
+	set_item_state(itemstring)
