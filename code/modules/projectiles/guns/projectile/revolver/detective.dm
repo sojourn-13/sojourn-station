@@ -26,3 +26,6 @@
 	if (silenced)
 		iconstring += "_s"
 		itemstring += "_s"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
