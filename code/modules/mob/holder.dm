@@ -545,7 +545,7 @@ var/list/holder_mob_icon_cache = list()
 
 //Holders for mice
 /obj/item/weapon/holder/mouse
-	name = "mouse"
+	name = "rat"
 	desc = "It's a fuzzy little critter."
 	desc_dead = "It's filthy vermin, throw it in the trash."
 	icon = 'icons/mob/mobs-mouse.dmi'
@@ -571,6 +571,16 @@ var/list/holder_mob_icon_cache = list()
 	icon_state = "mouse_brown_sleep"
 	item_state = "mouse_brown"
 	icon_state_dead = "mouse_brown_dead"
+
+/obj/item/weapon/holder/mouse/hooded
+	icon_state = "mouse_hooded_sleep"
+	item_state = "mouse_hooded"
+	icon_state_dead = "mouse_hooded_dead"
+
+/obj/item/weapon/holder/mouse/irish
+	icon_state = "mouse_irish_sleep"
+	item_state = "mouse_irish"
+	icon_state_dead = "mouse_irish_dead"
 
 
 /obj/item/weapon/holder/GetIdCard()

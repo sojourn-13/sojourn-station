@@ -1,6 +1,6 @@
 /mob/living/simple_animal/mouse
-	name = "mouse"
-	real_name = "mouse"
+	name = "rat"
+	real_name = "rat"
 	desc = "It's a small, disgusting rodent, often found being annoying, and aiding in the spread of disease."
 	icon = 'icons/mob/mobs-mouse.dmi'
 	icon_state = "mouse_gray"
@@ -115,7 +115,7 @@
 	real_name = name
 
 	if(!body_color)
-		body_color = pick( list("brown","gray","white") )
+		body_color = pick( list("brown","gray","white","hooded","irish") )
 	icon_state = "mouse_[body_color]"
 	item_state = "mouse_[body_color]"
 	icon_living = "mouse_[body_color]"
@@ -127,6 +127,10 @@
 		holder_type = /obj/item/weapon/holder/mouse/gray
 	if (body_color == "white")
 		holder_type = /obj/item/weapon/holder/mouse/white
+	if (body_color == "hooded")
+		holder_type = /obj/item/weapon/holder/mouse/hooded
+	if (body_color == "irish")
+		holder_type = /obj/item/weapon/holder/mouse/irish
 
 	//verbs += /mob/living/simple_animal/mouse/proc/squeak
 	//verbs += /mob/living/simple_animal/mouse/proc/squeak_soft
@@ -283,6 +287,18 @@
 	icon_state = "mouse_brown"
 	icon_rest = "mouse_brown_sleep"
 	holder_type = /obj/item/weapon/holder/mouse/brown
+
+/mob/living/simple_animal/mouse/hooded
+	body_color = "hooded"
+	icon_state = "mouse_hooded"
+	icon_rest = "mouse_hooded_sleep"
+	holder_type = /obj/item/weapon/holder/mouse/hooded
+
+/mob/living/simple_animal/mouse/irish
+	body_color = "irish"
+	icon_state = "mouse_irish"
+	icon_rest = "mouse_irish_sleep"
+	holder_type = /obj/item/weapon/holder/mouse/irish
 
 /mob/living/simple_animal/mouse/brown/Tom
 	name = "Tom"
