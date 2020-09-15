@@ -103,6 +103,8 @@
 		/datum/design/autolathe/circuit/centrifuge,
 		/datum/design/autolathe/circuit/electrolyzer,
 		/datum/design/autolathe/circuit/reagentgrinder,
+		/datum/design/research/circuit/pacman,
+		/datum/design/research/circuit/diesel,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors
@@ -194,3 +196,31 @@
 		/datum/design/research/item/weapon/toolmod/plasmablock,
 		)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork
+	disk_name = "Artificer's KW-841 Power Setters"
+	icon_state = "technomancers"
+
+	license = 10
+	designs = list(
+	/datum/design/research/circuit/powermonitor,
+	/datum/design/research/circuit/solarcontrol,
+	/datum/design/research/circuit/miss,
+	/datum/design/research/circuit/superpacman,
+	/datum/design/research/circuit/mrspacman,
+	/datum/design/research/circuit/camp,
+	/datum/design/research/circuit/pacman,
+	/datum/design/research/circuit/diesel,
+	/datum/design/research/circuit/pacman/scrap,
+	/datum/design/research/structure/solar,
+	/datum/design/research/circuit/smes_cell,
+	/datum/design/research/circuit/batteryrack,
+	/datum/design/research/circuit/breakerbox,
+	/datum/design/research/item/part/smes_coil,
+	/datum/design/research/item/part/smes_coil/weak,
+	/datum/design/research/item/part/smes_coil/super_io,
+	/datum/design/research/item/part/smes_coil/super_capacity,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork/factory
+	disk_name = "Artificer's MW-841 Power Setters"
+	license = -1

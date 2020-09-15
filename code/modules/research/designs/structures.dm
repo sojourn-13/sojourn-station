@@ -18,3 +18,11 @@
 	build_path = /obj/structure/reagent_dispensers/bidon/advanced
 	category = "Medical"
 	materials = list(MATERIAL_STEEL = 25, MATERIAL_GLASS = 15)
+
+/datum/design/research/structure/solar
+	name = "solar assembly"
+	desc = "Simple but hard to produce solar assembly."
+	build_path = /obj/item/solar_assembly
+	build_type = AUTOLATHE
+	category = CAT_POWER
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5)
