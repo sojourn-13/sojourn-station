@@ -160,6 +160,34 @@
 	mob_size = 10
 	resistance = 5
 
+/mob/living/simple_animal/hostile/tengstalker
+	name = "tengolo stalker"
+	desc = "One of the local fauna native to the planet, peaceful except around insects and insectile creatures. This is one of the males, it looks like a large cat-like creature."
+	faction = "neutral"
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "bigcat"
+	icon_living = "bigcat"
+	icon_dead = "bigcat_dead"
+	response_help = "pets the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	move_to_delay = 5
+	maxHealth = 180
+	health = 180
+	speed = 5
+	melee_damage_lower = 18
+	melee_damage_upper = 24
+	attacktext = "bites"
+	attack_sound = 'sound/weapons/bite.ogg'
+	speak_chance = 5
+	speak = list("Hruuugh!","Hrunnph")
+	emote_see = list("paws the ground.","shakes its mane.","stomps.")
+	emote_hear = list("snuffles")
+	meat_amount = 3
+	mob_size = 10
+	resistance = 5
+	pixel_x = -16
+
 /mob/living/simple_animal/hostile/tengcharge
 	name = "tengolo charger"
 	desc = "One of the local fauna native to the planet, peaceful except around insects and insectile creatures. This is one of the females, it looks like an elk mixed with a warthog."

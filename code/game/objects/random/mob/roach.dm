@@ -159,3 +159,63 @@
 	name = "lower chance cluster of xenomorphs"
 	icon_state = "hostilemob-brown-cluster-low"
 	spawn_nothing_percentage = 80
+
+//local fauna - surface
+/obj/random/mob/tengolo
+	name = "random tengolo"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/tengolo/item_to_spawn()
+	return pickweight(list(/mob/living/simple_animal/hostile/tengbrute = 2,
+		/mob/living/simple_animal/hostile/tengstalker = 1,
+		/mob/living/simple_animal/hostile/tengcharge = 2,
+		))
+
+/obj/random/mob/tengolo/low_chance
+	name = "low chance random tengolo"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/cluster/tengolo
+	name = "cluster of tengolos"
+	icon_state = "hostilemob-brown-cluster"
+	alpha = 128
+	min_amount = 2
+	max_amount = 4
+	spread_range = 0
+
+/obj/random/cluster/tengolo/item_to_spawn()
+	return /obj/random/mob/tengolo
+
+//hakhma beetle
+/obj/random/mob/hakhma
+	name = "random hakhma"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/hakhma/item_to_spawn()
+	return /mob/living/simple_animal/hostile/retaliate/hakhma
+
+/obj/random/mob/hakhma/low_chance
+	name = "low chance hakhma"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
+
+//local fauna - random underground mobs, no clusters for this.
+/obj/random/mob/undergroundmob
+	name = "random underground mob"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/undergroundmob/item_to_spawn()
+	return pickweight(list(/mob/living/simple_animal/hostile/wurm = 2,
+		/mob/living/simple_animal/hostile/wurm/adult = 1,
+		/mob/living/simple_animal/hostile/sargoyle = 2,
+		/mob/living/simple_animal/hostile/helldiver = 1,
+		))
+
+/obj/random/mob/undergroundmob/low_chance
+	name = "low chance random underground mob"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60

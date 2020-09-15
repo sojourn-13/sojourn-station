@@ -31,7 +31,7 @@
 "aE" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
 "aF" = (/obj/structure/table/standard,/obj/item/stack/cable_coil,/obj/item/stack/cable_coil,/obj/item/weapon/paper/solarsteup,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/outside/mountainsolars)
 "aG" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/random/traps/wire_splicing/low_chance,/turf/simulated/floor/plating/under,/area/nadezhda/outside/mountainsolars)
-"aH" = (/obj/effect/decal/cleanable/dirt,/obj/structure/closet/crate/solar,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/mountainsolars)
+"aH" = (/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/mountainsolars)
 "aI" = (/obj/structure/cable{icon_state = "0-2"; d2 = 2},/obj/machinery/power/solar_control,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/outside/mountainsolars)
 "aJ" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
 "aK" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/mountainsolars)
@@ -86,6 +86,7 @@
 "bH" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/plating/under,/area/nadezhda/outside/mountainsolars)
 "bI" = (/obj/structure/cable/ender{id = "mountain to engineering"},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/turf/simulated/floor/plating/under,/area/nadezhda/outside/mountainsolars)
 "bJ" = (/turf/simulated/shuttle/floor/mining,/area/turbolift/mountain/solars)
+"bK" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/mountainsolars)
 "bL" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/mountainsolars)
 "bM" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/flora/tree/jungle_small/variant4,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/mountainsolars)
 "bN" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/mountainsolars)
@@ -219,8 +220,8 @@ aaaaaaaaaaaaaaaaababababababacalacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
 aaaaaaaaaaaaaaaaabababababacacalacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadacalalalacalacalacacacacacacalavavalalacalalalalalalacacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababababacalalacahdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFadacalalacacacacacacaiaiacacacacacacacacacacalalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababacacacalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacalalacajakakakakajajajajajajajajajajajajalalalalalacacabababababababababababababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababacacacalalacacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadacalalacakcacacacbajanaoapajajajaqarasatajacalalalalacacabababababababababababababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababacacalalalacacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadacccacacakcaaHcacfajawaxaxajayazaAaBaAaAakacalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababacacacalalacacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadacalalacakcacaaHcbajanaoapajajajaqarasatajacalalalalacacabababababababababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababacacalalalacacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadacccacacakaHbKaHcfajawaxaxajayazaAaBaAaAakacalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababacalalalacacahdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFadacalalacakaucgcgcgajajaCajajaDaAaEaAaEaBakalalbTalbTalacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaababacacalalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacacacacakaFaIcdaBaAbvaBaJaAaBaKaLaLaMaBakacalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababacalalalacacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadacacacacajaNaOaPaAchaQaAaEaEaAaKaLaLaMaBakacalalalalacacabababababababababababababababaaaaaaaaaaaaaaaaaa

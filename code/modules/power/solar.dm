@@ -557,7 +557,7 @@
 	name = "paper- 'Message from Tacitus, guild grand master.'"
 	info = "<h1>Greetings Adept</h1><p>Setting up the solar array is pretty straight forward, you just need to replace the wiring that transmits the most energy at the start of each shift \
 	and then go through all the existing wiring to cut off any frayed spots before recrimping it, this step is important as the frayed wires will cause power loss if not repaired. \
-	If your feeling fancy you can replace the solar pannles with better glass for more power, reinforced borosilicate glass gets the most power out of the sun well just reinforcing them will only help a little. \
+	If you're feeling fancy you can replace the solar pannels with better glass for more power, reinforced borosilicate glass gets the most power out of the sun. \
 	You'll notice the solar computer hooked up to the controller already, once you have it wired just perform a scan and the machines will do the rest of the work. If for any reason the solar \
 	array doesn't detect the panels, try resetting the computer by taking it apart and putting it back together. Remember to walk instead of run on the under plating, wear \
 	insulated gloves, and wear some insulated work boots for protection. -Tacitus O'Connar.</p>"
@@ -566,7 +566,7 @@
 	name = "paper- 'Message from Augustine, church cartographer.'"
 	info = "<h1>Greetings</h1><p>For those unaware we have a small solar system set up here to help provide reserve power to the colony, be quite careful as while it is smaller, safer, and easier to \
 	maintain than what the artificer guild uses the wiring under the catwalk will fray over time and may shock you by electrifying the metal. If you find a pair of insulated gloves I \
-	highly suggest cutting any splicings and crimping the wires to make them safe and increase power production. If needed it may be usefull to upgrade the glass inside the pannles to harvest more power. \
+	highly suggest cutting any splicings and crimping the wires to make them safe and increase power production. If needed it may be usefull to upgrade the glass inside the pannels to harvest more power, reinforced borosilicate works best. \
 	If the colony ever has any brown outs or black outs the third SMES unit in the biogenerator room will charge from these solars and can be hooked up as a temporary solution.</p>"
 
 /obj/item/weapon/paper/solar
