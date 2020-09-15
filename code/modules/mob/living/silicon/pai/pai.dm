@@ -27,7 +27,9 @@
 		"Drone" = "repairbot",
 		"Cat" = "cat",
 		"Mouse" = "mouse",
-		"Monkey" = "monkey"
+		"Monkey" = "monkey",
+		"Rat" = "rat",
+		"Rabbit" = "rabbit"
 		)
 
 	var/global/list/possible_say_verbs = list(
@@ -35,7 +37,8 @@
 		"Natural" = list("says","yells","asks"),
 		"Beep" = list("beeps","beeps loudly","boops"),
 		"Chirp" = list("chirps","chirrups","cheeps"),
-		"Feline" = list("purrs","yowls","meows")
+		"Feline" = list("purrs","yowls","meows"),
+		"Rodent" = list("squeaks","screams","snuffles")
 		)
 
 	var/obj/item/weapon/pai_cable/cable		// The cable we produce and use when door or camera jacking
@@ -83,7 +86,7 @@
 		radio = card.radio
 
 	//Default languages without universal translator software
-	add_language("Sol Common", 1)
+	add_language("English Common", 1)
 
 	verbs += /mob/living/silicon/pai/proc/choose_chassis
 	verbs += /mob/living/silicon/pai/proc/choose_verbs

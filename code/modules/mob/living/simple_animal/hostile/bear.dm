@@ -69,15 +69,25 @@
 	icon_gib = "brownbear_gib"
 	icon_dead = "polarbear_dead"
 
+/mob/living/simple_animal/hostile/bear/excelsior
+	name = "excelsior armored bear"
+	desc = "A huge bear outfitted with armor and trained by the excelsior judging from the markings on his armor. Who comes up with this shit?"
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "pokes"
+	icon_state = "combatbear"
+	icon_gib = "brownbear_gib"
+	icon_dead = "combatbear_dead"
+	faction = "excelsior"
+	maxHealth = 400
+	health = 400
+	melee_damage_lower = 30
+	melee_damage_upper = 40
+
 /mob/living/simple_animal/hostile/bear/Life()
 	. =..()
 	if(!.)
 		return
-
-	if(loc && istype(loc,/turf/space))
-		icon_state = "bear"
-	else
-		icon_state = "bearfloor"
 
 	switch(stance)
 

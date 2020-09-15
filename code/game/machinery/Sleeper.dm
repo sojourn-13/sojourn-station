@@ -17,7 +17,7 @@
 	var/list/level3 = list("alkysine" = "Alkysine")
 	var/list/level4 = list("leporazine" = "Leporazine")
 
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 15
 	active_power_usage = 200 //builtin health analyzer, dialysis machine, injectors.
 

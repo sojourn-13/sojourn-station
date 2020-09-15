@@ -5,6 +5,7 @@
 
 //nursemaids - these create webs and eggs
 /mob/living/carbon/superior_animal/giant_spider/nurse
+	name = "nurse spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes."
 	icon_state = "nurse"
 	icon_living = "nurse"
@@ -18,9 +19,10 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
 	meat_amount = 3
 	var/fed = 0
-	emote_see = list("chitters","rubs its legs","trails webs through its hairs","screeches")
+	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
+	name = "midwife spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes and purple stripes on the back."
 	icon_state = "midwife"
 	icon_living = "midwife"
@@ -29,6 +31,18 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	poison_type = "mutagen"
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/recluse
+	name = "recluse spider"
+	desc = "Furry and brown, it makes you shudder to look at it. This one has brilliant green eyes and light brown skin."
+	icon_state = "recluse"
+	icon_living = "recluse"
+	maxHealth = 20
+	health = 20
+	poison_per_bite = 4
+	melee_damage_lower = 3
+	melee_damage_upper = 5
+	poison_type = "zombiepowder"
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen
 	name = "spider queen"
@@ -42,6 +56,7 @@
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "menace"
+	mob_size = MOB_LARGE
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
 	..()

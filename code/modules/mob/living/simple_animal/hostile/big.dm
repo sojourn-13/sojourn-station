@@ -132,7 +132,7 @@
 
 /mob/living/simple_animal/hostile/carp/greatwhite
 	name = "great white carp"
-	desc = "A very rare breed of carp- and a very aggressive one."
+	desc = "A very rare breed of carp and a very aggressive one."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "megacarp"
 	icon_dead = "megacarp_dead"
@@ -250,6 +250,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
 	..()
+	visible_emote("slowly begins to open its many eyes as it looses an angered croak...")
 	icon_state = "leaper_alert"
 	icon_living = "leaper_alert"
 

@@ -33,7 +33,7 @@
 	name = "penguin"
 	desc = "An ungainly, waddling, cute, and VERY well-dressed bird."
 	icon_state = "penguin"
-	icon_dead = "penguin_dead"
+	icon_dead = "penguin_dead_blood"
 	maxHealth = 20
 	health = 20
 	turns_per_move = 5
@@ -44,6 +44,17 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = list("pecked")
+
+/mob/living/simple_animal/penguin/baby
+	name = "penguin chick"
+	desc = "An ungainly, waddling, cute, and VERY well-dressed bird. This one is just a baby."
+	icon_state = "penguin_baby"
+	icon_dead = "penguin_baby_dead_blood"
+	maxHealth = 10
+	health = 10
+	harm_intent_damage = 10
+	melee_damage_lower = 3
+	melee_damage_upper = 5
 
 /mob/living/simple_animal/goose
 	name = "goose"

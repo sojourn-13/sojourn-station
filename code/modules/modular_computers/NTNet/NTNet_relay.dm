@@ -40,7 +40,7 @@
 	if(operable())
 		use_power = 2
 	else
-		use_power = 1
+		use_power = IDLE_POWER_USE
 
 	if(dos_overload)
 		dos_overload = max(0, dos_overload - dos_dissipate)

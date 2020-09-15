@@ -1,6 +1,6 @@
 //basic spider mob, these generally guard nests
 /mob/living/carbon/superior_animal/giant_spider
-	name = "giant spider"
+	name = "guardian spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has deep red eyes."
 	icon = 'icons/mob/mobs-spider.dmi'
 	icon_state = "guard"
@@ -14,7 +14,7 @@
 
 	attack_sound = 'sound/weapons/spiderlunge.ogg'
 	speak_emote = list("chitters")
-	emote_see = list("chitters", "rubs its legs")
+	emote_see = list("chitters.", "rubs its legs.")
 	speak_chance = 5
 
 	move_to_delay = 6
@@ -30,7 +30,7 @@
 	min_breath_required_type = 3
 	min_air_pressure = 15 //below this, brute damage is dealt
 
-	var/poison_per_bite = 5
+	var/poison_per_bite = 2
 	var/poison_type = "pararein"
 	pass_flags = PASSTABLE
 	faction = "spiders"

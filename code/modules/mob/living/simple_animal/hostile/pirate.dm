@@ -75,6 +75,7 @@
 	health = 100
 	ranged = 1
 	rapid = 1
+	minimum_distance = 4
 	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/gun/energy/retro
 	weapon2 = null
@@ -88,6 +89,7 @@
 	melee_damage_upper = 22
 	ranged = 1
 	rapid = 1
+	minimum_distance = 4
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/weapons/laser.ogg'
 	weapon2 = /obj/item/weapon/gun/energy/gun/martin
@@ -101,6 +103,7 @@
 	melee_damage_upper = 15
 	ranged = 1
 	rapid = 1
+	minimum_distance = 4
 	weapon1 = /obj/item/weapon/gun/energy/retro
 	weapon2 = null
 
@@ -115,6 +118,7 @@
 	health = 200
 	ranged = 1
 	rapid = 1
+	minimum_distance = 4
 	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/melee/energy/sword/pirate
 	weapon2 = /obj/item/weapon/gun/energy/gun

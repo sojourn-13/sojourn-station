@@ -35,6 +35,18 @@
 
 	faction = "carp"
 
+/mob/living/simple_animal/hostile/carp/baby
+	name = "space carp spawn"
+	desc = "A ferocious, fang-bearing creature that resembles a fish. This one is quite young."
+	icon_state = "babycarp"
+	icon_gib = "carp_gib"
+	maxHealth = 10
+	health = 10
+
+	harm_intent_damage = 8
+	melee_damage_lower = 4
+	melee_damage_upper = 6
+
 /mob/living/simple_animal/hostile/carp/allow_spacemove()
 	return 1	//No drifting in space for space carp!	//original comments do not steal
 

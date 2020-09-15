@@ -16,13 +16,13 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	var/casingtype
 	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
 	var/list/friends = list()
-	var/break_stuff_probability = 10
+	var/break_stuff_probability = 100
 	var/ranged_ignores_vision
 	stop_automated_movement_when_pulled = 0
 	var/destroy_surroundings = 1
 	var/fire_verb = "fires"
 	a_intent = I_HURT
-	can_burrow = TRUE
+	can_burrow = FALSE
 	hunger_enabled = 0//Until automated eating mechanics are enabled, disable hunger for hostile mobs
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles
 	var/atom/targets_from = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such

@@ -18,7 +18,7 @@
 	desc = "A tricky litany that heals the mind and body of esoteric maladies such as genetic malignance or brain damage. However it requires them to be awake and able to hear you. This litany requires alot of power and needs a quarter of an hour to recharge."
 	cooldown = TRUE
 	cooldown_time = 15 MINUTES
-	cooldown_category = "grepose" //It shares a cooldown because it replaces divine hymn, not add atop it.
+	cooldown_category = "grepose"
 	power = 60 //stronger healing higher cost
 
 /datum/ritual/cruciform/tessellate/heal_heathen_special/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -51,10 +51,11 @@
 /datum/ritual/cruciform/tessellate/heal_heathen_improved
 	name = "Healing Word"
 	phrase = "Pastor gregem suum pascet, sive sciens sive ignarus gubernandum."
-	desc = "Heal every person who can see and hear you for a fair amount, even if they do not have a cruciform. This prayer uses alot of power."
+	desc = "Heal every person who can see and hear you for a fair amount, even if they do not have a cruciform. This prayer uses alot of power and requires five minutes to pass before it can be used again."
 	cooldown = TRUE
-	cooldown_time = 300
 	power = 50
+	cooldown_time = 5 MINUTES
+	cooldown_category = "dhymn" //It shares a cooldown because it replaces divine hymn, not add atop it.
 
 /datum/ritual/cruciform/tessellate/heal_heathen_improved/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()

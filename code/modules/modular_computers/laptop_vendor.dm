@@ -331,7 +331,7 @@ obj/machinery/lapvend/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	var/plays = 0
 	var/slots = list()
 	var/icon_type
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	//var/list/fruits = list("Cherry","Apple","Blueberry","Bell","Watermelon","JACKPOT")
 

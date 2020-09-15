@@ -102,6 +102,64 @@
 	health = 150
 	maxHealth = 150
 
+/mob/living/simple_animal/hostile/sargoyle
+	name = "sargoyle"
+	desc = "A large flying creature native to the planet, with leathery wings and a toothy maw. Though blind, this creature uses sonar, making it highly skilled at fighting in the dark ."
+	icon = 'icons/mob/mobs-monster.dmi'
+	speak_emote = list("gibbers")
+	icon_state = "devil"
+	health = 120
+	maxHealth = 120
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	attacktext = "chomped"
+	attack_sound = 'sound/weapons/bite.ogg'
+	faction = "sargoyle"
+	speed = 6
+
+/mob/living/simple_animal/hostile/wurm
+	name = "wurm youngling"
+	desc = "A plasma eating wurm capable of firing volatile globs of electric acid if they spot prey. Hated by lonestar miners as many do not know it is there until they are hit by acid. This one is merely a youngling and not nearly as dangerous as an adult."
+	icon = 'icons/mob/mobs-monster.dmi'
+	speak_emote = list("clicks")
+	icon_state = "worm_hiding"
+	health = 80
+	maxHealth = 80
+	melee_damage_lower = 25
+	melee_damage_upper = 30
+	attacktext = "chomped"
+	attack_sound = 'sound/weapons/bite.ogg'
+	faction = "wurm"
+	speed = 2
+	wander = FALSE
+	fire_verb = "spits"
+	ranged = 1
+	projectilesound = 'sound/effects/blobattack.ogg'
+	projectiletype = /obj/item/projectile/goo
+	minimum_distance = 6
+
+/mob/living/simple_animal/hostile/wurm/death(gibbed, deathmessage = "explodes in a shower of ichor and gore!")
+	..()
+	new /obj/effect/gibspawner/generic(src.loc)
+	qdel(src)
+
+/mob/living/simple_animal/hostile/wurm/FindTarget()
+	. = ..()
+	if(.)
+		icon_state = "worm"
+		icon_living = "worm"
+		wander = 1
+
+/mob/living/simple_animal/hostile/wurm/adult
+	name = "wurm"
+	desc = "A plasma eating wurm capable of firing volatile globs of electric acid if they spot prey. Hated by lonestar miners as many do not know it is there until they are hit by acid. This is fully grown, bulging sacks of acidic goo hang from its jaw."
+	icon = 'icons/mob/64x64.dmi'
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 30
+	melee_damage_upper = 35
+	rapid = 1
+
 /*
 #define MOOK_ATTACK_NEUTRAL 0
 #define MOOK_ATTACK_WARMUP 1
