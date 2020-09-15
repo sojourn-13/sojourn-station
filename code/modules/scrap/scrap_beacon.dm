@@ -7,7 +7,7 @@
 	anchored = TRUE
 	density = TRUE
 	layer = MOB_LAYER + 1
-	var/summon_cooldown = 1200
+	var/summon_cooldown = 2400
 	var/impact_speed = 3
 	var/impact_prob = 100
 	var/impact_range = 2
@@ -43,7 +43,7 @@
 		sleep(impact_speed)
 		var/turf/newloc = pick(flooring_near_beacon)
 		flooring_near_beacon -= newloc
-		if(prob(30))
+		if(prob(70))
 			new /obj/effect/falling_effect(newloc, /obj/random/scrap/beacon/sparse_weighted)
 		else
 			new /obj/effect/falling_effect(newloc, /obj/random/scrap/beacon/moderate_weighted)
