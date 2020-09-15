@@ -166,7 +166,7 @@
 	desc = "A lighting fixture."
 	anchored = 1
 	layer = WALL_OBJ_LAYER
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 1
 	active_power_usage = 5
 	power_channel = LIGHT //Lights are calc'd via area so they dont need to be in the machine list
@@ -340,7 +340,7 @@
 				use_power = 2
 				set_light(brightness_range, brightness_power, brightness_color)
 	else
-		use_power = 1
+		use_power = IDLE_POWER_USE
 		set_light(0)
 
 	active_power_usage = ((light_range + light_power) * 10)

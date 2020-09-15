@@ -34,7 +34,7 @@
 	icon_state = "hydrotray"
 	density = 1
 	anchored = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 
 	var/obj/item/seeds/seed // Currently loaded seed packet.
 	var/obj/item/weapon/disk/botany/loaded_disk //Currently loaded data disk.

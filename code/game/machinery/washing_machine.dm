@@ -80,7 +80,7 @@
 				gibs_ready = 1
 			else
 				state = WASHSTATE_FULLCLOSEDDOOR
-			use_power = 1
+			use_power = IDLE_POWER_USE
 			update_icon()
 
 /obj/machinery/washing_machine/examine(mob/user)

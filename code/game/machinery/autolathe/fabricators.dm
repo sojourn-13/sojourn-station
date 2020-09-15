@@ -7,7 +7,7 @@ meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 	icon_state = "biogen-stand"
 	density = 1
 	anchored = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
 	var/processing = 0
 	var/obj/item/weapon/reagent_containers/glass/beaker = null

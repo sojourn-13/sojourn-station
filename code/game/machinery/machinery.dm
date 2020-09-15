@@ -101,7 +101,7 @@ Class Procs:
 	w_class = ITEM_SIZE_GARGANTUAN
 
 	var/emagged = 0
-	var/use_power = 1
+	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
 		//1 = run auto, use idle
 		//2 = run auto, use active

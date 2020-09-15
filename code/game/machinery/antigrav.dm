@@ -4,7 +4,7 @@
 	icon_state = "GraviMobile"
 	density = 1
 	anchored = 0
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 0
 	active_power_usage = 10000
 	circuit = /obj/item/weapon/circuitboard/antigrav
@@ -53,7 +53,7 @@
 		stop_anim()
 
 	on = FALSE
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	update_icon()
 
 /obj/machinery/antigrav/Process()

@@ -7,7 +7,7 @@
 	density = 1
 	idle_power_usage = 50
 	active_power_usage = 750
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	var/harvesting = 0
 	var/obj/item/weapon/anobattery/inserted_battery
 	var/obj/machinery/artifact/cur_artifact
@@ -81,7 +81,7 @@
 
 		//check if we've finished
 		if(inserted_battery.stored_charge >= inserted_battery.capacity)
-			use_power = 1
+			use_power = IDLE_POWER_USE
 			harvesting = 0
 			cur_artifact.anchored = 0
 			cur_artifact.being_used = 0
@@ -106,7 +106,7 @@
 
 		//if there's no charge left, finish
 		if(inserted_battery.stored_charge <= 0)
-			use_power = 1
+			use_power = IDLE_POWER_USE
 			inserted_battery.stored_charge = 0
 			harvesting = 0
 			if(inserted_battery.battery_effect && inserted_battery.battery_effect.activated)

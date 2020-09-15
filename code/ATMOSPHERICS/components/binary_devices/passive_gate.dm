@@ -10,7 +10,7 @@
 	name = "pressure regulator"
 	desc = "A one-way air valve that can be used to regulate input or output pressure, and flow rate. Does not require power."
 
-	use_power = 0
+	use_power = NO_POWER_USE
 	interact_offline = 1
 	var/unlocked = 0	//If 0, then the valve is locked closed, otherwise it is open(-able, it's a one-way valve so it closes if gas would flow backwards).
 	var/target_pressure = ONE_ATMOSPHERE
@@ -42,7 +42,7 @@
 		add_underlay(T, node2, dir)
 
 /obj/machinery/atmospherics/binary/passive_gate/on
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	icon_state = "map_on"
 
 /obj/machinery/atmospherics/binary/passive_gate/update_icon()
