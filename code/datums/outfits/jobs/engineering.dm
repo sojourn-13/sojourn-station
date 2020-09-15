@@ -6,7 +6,6 @@
 	gloves = /obj/item/clothing/gloves/thick
 	pda_slot = slot_l_store
 	r_pocket = /obj/item/device/t_scanner
-	l_pocket =/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 	backpack_contents = list(/obj/item/weapon/gun/matter/launcher/breaker = 1)
 
@@ -22,7 +21,6 @@
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	l_ear = /obj/item/device/radio/headset/heads/ce
 	id_type = /obj/item/weapon/card/id/ce
-	l_pocket =/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork/factory
 	pda_type = /obj/item/modular_computer/pda/heads/ce
 
 /decl/hierarchy/outfit/job/engineering/engineer
@@ -31,7 +29,6 @@
 	uniform = /obj/item/clothing/under/rank/engineer
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	head = /obj/item/clothing/head/hardhat
-	l_pocket =/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork //We always get a disk too
 	id_type = /obj/item/weapon/card/id/engie
 	pda_type = /obj/item/modular_computer/pda/engineering
 
