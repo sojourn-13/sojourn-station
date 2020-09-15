@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/carp/pike
-	name = "space pike"
+	name = "space shark"
 	desc = "A bigger, angrier cousin of the space carp."
 	icon = 'icons/mob/spaceshark.dmi'
 	icon_state = "shark"
@@ -9,7 +9,7 @@
 	speed = 0
 	mob_size = MOB_LARGE
 
-	pixel_x = -16
+	//pixel_x = -16
 
 	health = 75
 	maxHealth = 75
