@@ -250,6 +250,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
 	..()
+	visible_emote("slowly begins to open its many eyes as it looses an angered croak...")
 	icon_state = "leaper_alert"
 	icon_living = "leaper_alert"
 
