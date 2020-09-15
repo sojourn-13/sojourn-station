@@ -149,8 +149,10 @@
 
 	if("power" in signal.data)
 		unlocked = text2num(signal.data["power"])
+		investigate_log("was [unlocked ? "enabled" : "disabled"] by a remote signal", "atmos")
 
 	if("power_toggle" in signal.data)
+		investigate_log("was [unlocked ? "disabled" : "enabled"] by a remote signal", "atmos")
 		unlocked = !unlocked
 
 	if("set_target_pressure" in signal.data)
@@ -159,6 +161,7 @@
 			text2num(signal.data["set_target_pressure"]),
 			max_pressure_setting
 		)
+		investigate_log("had it's pressure changed to [target_pressure] by a remote signal", "atmos")
 
 	if("set_regulate_mode" in signal.data)
 		regulate_mode = text2num(signal.data["set_regulate_mode"])
@@ -220,6 +223,7 @@
 	if(..()) return 1
 
 	if(href_list["toggle_valve"])
+		investigate_log("was [unlocked ? "disabled" : "enabled"] by [key_name(usr)]", "atmos")
 		unlocked = !unlocked
 
 	if(href_list["regulate_mode"])
@@ -236,6 +240,8 @@
 		if ("set")
 			var/new_pressure = input(usr, "Enter new output pressure (0-[max_pressure_setting]kPa)", "Pressure Control", src.target_pressure) as num
 			src.target_pressure = between(0, new_pressure, max_pressure_setting)
+	if(href_list["set_press"])
+		investigate_log("had it's pressure changed to [target_pressure] by [key_name(usr)]", "atmos")
 
 	switch(href_list["set_flow_rate"])
 		if ("min")
@@ -269,7 +275,8 @@
 		user.visible_message( \
 			SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 			SPAN_NOTICE("You have unfastened \the [src]."), \
-			"You hear ratchet.")
+			"You hear ratcheting.")
+		investigate_log("was unfastened by [key_name(user)]", "atmos")
 		new /obj/item/pipe(loc, make_from=src)
 		qdel(src)
 

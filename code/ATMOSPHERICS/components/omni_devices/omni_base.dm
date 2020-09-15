@@ -95,7 +95,8 @@
 		user.visible_message( \
 			SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 			SPAN_NOTICE("You have unfastened \the [src]."), \
-			"You hear a ratchet.")
+			"You hear a ratcheting.")
+		investigate_log("was unfastened by [key_name(user)]", "atmos")
 		new /obj/item/pipe(loc, make_from=src)
 		qdel(src)
 
