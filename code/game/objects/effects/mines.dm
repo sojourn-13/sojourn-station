@@ -10,7 +10,6 @@
 	var/triggered = 0
 	var/smoke_strength = 3
 	layer = HIDE_LAYER
-	anchored = TRUE
 
 /obj/item/weapon/mine_old/New()
 	icon_state = "mine_old"
@@ -82,3 +81,42 @@
 		triggered = 1
 		call(src,triggerproc)(M)
 
+/obj/item/weapon/spider_shadow_trap
+	name = "odd shadow"
+	desc = "You see an odd shadow, cast by something above you hiding in a crevice. A quick glance and you see eight red eyes filled with hatred glaring at you from the dark..."
+	density = 0
+	anchored = 1
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "spider_emperor_shadow"
+	item_state = "spider_emperor_shadow"
+	var/triggerproc = "ambush" //name of the proc thats called when the mine is triggered
+	var/triggered = 0
+	layer = HIDE_LAYER
+
+/obj/item/weapon/spider_shadow_trap/New()
+	..()
+	pixel_x = -16
+	pixel_y = -12
+
+/obj/item/weapon/spider_shadow_trap/Crossed(AM as mob|obj)
+	Bumped(AM)
+
+/obj/item/weapon/spider_shadow_trap/Bumped(mob/M as mob|obj)
+
+	if(triggered) return
+
+	if(ishuman(M))
+		for(var/mob/O in viewers(world.view, src.loc))
+			M.visible_message(
+				SPAN_DANGER("A gutteral screeching roar is heard right before [M] is knocked down by a huge spider leaping from above!"),
+				SPAN_DANGER("You hear a gutteral screeching roar right before something huge falling from above knocks you down!")
+			)
+		triggered = 1
+		call(src,triggerproc)(M)
+
+/obj/item/weapon/spider_shadow_trap/proc/ambush(var/mob/living/M)
+	triggered = 1
+	playsound(src.loc, 'sound/sanity/screech.ogg', 300, 1)
+	M.Weaken(8)
+	new /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor(src.loc)
+	qdel(src)

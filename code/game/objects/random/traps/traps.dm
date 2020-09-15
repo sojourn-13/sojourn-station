@@ -44,3 +44,16 @@
 		if (locate(/obj/structure/cable) in dview(3, T))
 			return TRUE
 		return FALSE
+
+//Spider trap, knocks a person down and spawns an emporer spider.
+/obj/random/spider_trap
+	name = "spider trap"
+	icon_state = "trap-red"
+	alpha = 128
+
+/obj/random/spider_trap/item_to_spawn()
+	return (/obj/item/weapon/spider_shadow_trap)
+
+/obj/random/spider_trap/low_chance
+	icon_state = "trap-red-low"
+	spawn_nothing_percentage = 80
