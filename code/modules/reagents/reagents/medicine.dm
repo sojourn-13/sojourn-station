@@ -247,16 +247,17 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#8080FF"
-	metabolism = REM * 0.5
+	metabolism = REM
 	scannable = 1
+	affects_dead = 1
 
 /datum/reagent/medicine/cryoxadone/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(M.bodytemperature < 170)
-		M.adjustCloneLoss(-(1 + (M.getCloneLoss() * 0.05)) * effect_multiplier)
-		M.adjustOxyLoss(-(1 + (M.getOxyLoss() * 0.05)) * effect_multiplier)
+		M.adjustCloneLoss(-(20 + (M.getCloneLoss() * effect_multiplier)))
+		M.adjustOxyLoss(-(20 + (M.getOxyLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_OXYGENATED, 1)
-		M.heal_organ_damage(1 * effect_multiplier, 1 * effect_multiplier, 5 * effect_multiplier, 5 * effect_multiplier)
-		M.adjustToxLoss(-(1 + (M.getToxLoss() * 0.05)) * effect_multiplier)
+		M.heal_organ_damage(20 * effect_multiplier, 10 * effect_multiplier, 10 * effect_multiplier, 10 * effect_multiplier)
+		M.adjustToxLoss(-(20 + (M.getToxLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_PULSE, -2)
 
 /datum/reagent/medicine/clonexadone
@@ -266,17 +267,17 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#80BFFF"
-	metabolism = REM * 0.5
+	metabolism = REM
 	scannable = 1
 	affects_dead = 1 //This can even heal dead people.
 
 /datum/reagent/medicine/clonexadone/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(M.bodytemperature < 170)
-		M.adjustCloneLoss(-(3 + (M.getCloneLoss() * 0.05)) * effect_multiplier)
-		M.adjustOxyLoss(-(3 + (M.getOxyLoss() * 0.05)) * effect_multiplier)
+		M.adjustCloneLoss(-(30 + (M.getCloneLoss() * effect_multiplier)))
+		M.adjustOxyLoss(-(30 + (M.getOxyLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_OXYGENATED, 2)
-		M.heal_organ_damage(3 * effect_multiplier, 3 * effect_multiplier, 5 * effect_multiplier, 5 * effect_multiplier)
-		M.adjustToxLoss(-(3 + (M.getToxLoss() * 0.05)) * effect_multiplier)
+		M.heal_organ_damage(30 * effect_multiplier, 30 * effect_multiplier, 30 * effect_multiplier, 30 * effect_multiplier)
+		M.adjustToxLoss(-(30 + (M.getToxLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_PULSE, -2)
 
 /* Painkillers */
