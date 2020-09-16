@@ -9,6 +9,8 @@ This saves us from having to call add_fingerprint() any time something is put in
 
 	var/obj/item/I = get_active_hand()
 	if(!I)
+		if(draw_from_suit_storage())
+			return
 		to_chat(src, SPAN_NOTICE("You are not holding anything to equip."))
 		return
 	if(!equip_to_appropriate_slot(I))
@@ -210,6 +212,15 @@ This saves us from having to call add_fingerprint() any time something is put in
 
 			if(get_holding_hand(W))
 				W.add_hud_actions(src)
+
+//Proc that gets called when the E key is pressed. Checks for a gun in the suit storage slot and draws it in your active hand.
+
+/mob/living/carbon/human/proc/draw_from_suit_storage()
+	var/i = get_equipped_item(slot_s_store)
+	if(!istype(i,/obj/item/weapon/gun))
+		return FALSE
+	put_in_active_hand(i)
+	return TRUE
 
 //This is an UNSAFE proc. Use mob_can_equip() before calling this one! Or rather use equip_to_slot_if_possible()
 //set redraw_mob to 0 if you don't wish the hud to be updated - if you're doing it manually in your own proc.
