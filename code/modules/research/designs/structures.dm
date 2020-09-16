@@ -5,6 +5,9 @@
 /datum/design/research/structure/bidonadv
 	build_type = AUTOLATHE | PROTOLATHE
 
+/datum/design/research/structure/solar
+	build_type = AUTOLATHE | PROTOLATHE
+
 /datum/design/research/structure/bidon
 	name = "B.I.D.O.N. canister"
 	desc = "Bulk Industrial Dispenser Omnitech-Nanochem. A canister with acid-resistant linings intended for handling big volumes."
@@ -23,6 +26,5 @@
 	name = "solar assembly"
 	desc = "Simple but hard to produce solar assembly."
 	build_path = /obj/item/solar_assembly
-	build_type = AUTOLATHE
 	category = CAT_POWER
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5)
