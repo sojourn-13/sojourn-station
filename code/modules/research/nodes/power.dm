@@ -151,8 +151,12 @@
 	icon = "rignuclearreactor"//"fusion"
 
 	required_technologies = list(/datum/technology/advanced_power_generation)
-	required_tech_levels = list(/datum/design/research/circuit/miss,
-								/datum/design/research/structure/solar)
+	required_tech_levels = list()
+	unlocks_designs = list(
+							/datum/design/research/circuit/miss,
+							/datum/design/research/structure/solar
+						)
+
 	cost = 2000//5000
 
 	unlocks_designs = list()//"fusion_core_control", "fusion_fuel_compressor", "fusion_fuel_control", "gyrotron_control", "fusion_core", "fusion_injector", "gyrotron")
