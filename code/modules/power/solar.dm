@@ -54,13 +54,13 @@
 	S.loc = src
 	if(S.glass_type == /obj/item/stack/material/glass/reinforced) //if the panel is in reinforced glass
 		health *= 2 								 //this need to be placed here, because panels already on the map don't have an assembly linked to
-		glass_power = 1.1 //33000
+		glass_power = 1.01 //30300
 	if(S.glass_type == /obj/item/stack/material/glass/plasmaglass) //if the panel is in plasma glass
 		health *= 2
-		glass_power = 1.2 //36000
+		glass_power = 1.02 //30600
 	if(S.glass_type == /obj/item/stack/material/glass/plasmarglass) //if the panel is in reinforced plasma glass
 		health *= 3
-		glass_power = 1.3 //39000
+		glass_power = 1.03 //30900
 
 	update_icon()
 
@@ -253,7 +253,7 @@
 
 	if(anchored && isturf(loc))
 		log_debug("1")
-		if(istype(I, /obj/item/stack/material) && (I.get_material_name() == "glass" || I.get_material_name() == "rglass" || I.get_material_name() == "plasmaglass" || I.get_material_name() == "rplasmaglass"))
+		if(istype(I, /obj/item/stack/material) && (I.get_material_name() == "glass" || I.get_material_name() == "rglass" || I.get_material_name() == "borosilicate glass" || I.get_material_name() == "reinforced borosilicate glass"))
 			log_debug("2")
 			var/obj/item/stack/material/S = I
 			if(S.use(2))
