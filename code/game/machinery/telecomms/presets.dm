@@ -40,7 +40,7 @@
 	id = "Hub"
 	network = "nadezhda"
 	autolinkers = list("hub", "relay", "c_relay", "s_relay", "m_relay", "r_relay", "science", "medical",
-	"supply", "service", "common", "command", "prospector", "engineering", "security", "nt", "unused",
+	"supply", "service", "common", "command", "prospector", "engineering", "security", "blackshield", "marshall", "nt", "unused",
 	"receiverA", "broadcasterA")
 
 /obj/machinery/telecomms/hub/preset_cent
@@ -56,7 +56,7 @@
 	id = "Receiver A"
 	network = "nadezhda"
 	autolinkers = list("receiverA") // link to relay
-	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, NT_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, PRO_FREQ)
+	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, NT_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, BLS_FREQ, MAR_FREQ, PRO_FREQ)
 
 	//Common and other radio frequencies for people to freely use
 	New()
@@ -96,8 +96,8 @@
 /obj/machinery/telecomms/bus/preset_three
 	id = "Bus 3"
 	network = "nadezhda"
-	freq_listening = list(SEC_FREQ, COMM_FREQ)
-	autolinkers = list("processor3", "security", "command")
+	freq_listening = list(SEC_FREQ, BLS_FREQ, MAR_FREQ, COMM_FREQ)
+	autolinkers = list("processor3", "security", "blackshield", "marshall", "command")
 
 /obj/machinery/telecomms/bus/preset_four
 	id = "Bus 4"
@@ -198,6 +198,16 @@
 	id = "security server"
 	freq_listening = list(SEC_FREQ)
 	autolinkers = list("security")
+
+/obj/machinery/telecomms/server/presets/blackshield
+	id = "blackshield server"
+	freq_listening = list(BLS_FREQ)
+	autolinkers = list("blackshield")
+
+/obj/machinery/telecomms/server/presets/marshall
+	id = "marshall server"
+	freq_listening = list(MAR_FREQ)
+	autolinkers = list("marshall")
 
 /obj/machinery/telecomms/server/presets/prospector
 	id = "prospector server"
