@@ -11,6 +11,7 @@
 	var/list/available_chemicals = list("inaprovaline" = "Inaprovaline", "stoxin" = "Soporific", "paracetamol" = "Paracetamol", "anti_toxin" = "Dylovene", "dexalin" = "Dexalin")
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
 	var/filtering = 0 //FALSE
+	var/pump
 
 	var/list/level1 = list("tricordrazine" ="Tricordrazine")
 	var/list/level2 = list("spaceacillin" = "Spaceacillin")
@@ -49,7 +50,7 @@
 	if(rating > 1) //Level 2 Matter Bin unlocks Tricordrazine
 		available_chemicals += level1
 
-	if(rating > 2) //Level 3 Matter Bin unlocks Spacesilicon
+	if(rating > 2) //Level 3 Matter Bin unlocks Spaceacillin
 		available_chemicals += level2
 
 	if(rating > 3) //Level 4 Matter Bin unlocks Alkysine
@@ -74,6 +75,16 @@
 					occupant.vessel.trans_to_obj(beaker, pumped + 1)
 		else
 			toggle_filter()
+			
+	if(pump > 0)
+		if(beaker && istype(occupant))
+			if(beaker.reagents.total_volume < beaker.reagents.maximum_volume)
+				var/datum/reagents/ingested = occupant.get_ingested_reagents()
+				if(ingested)
+					for(var/datum/reagent/x in ingested.reagent_list)
+						ingested.trans_to_obj(beaker, scanning)
+		else
+			toggle_pump()
 
 /obj/machinery/sleeper/update_icon()
 	icon_state = "sleeper_[occupant ? "1" : "0"]"
@@ -152,6 +163,9 @@
 	if(href_list["filter"])
 		if(filtering != text2num(href_list["filter"]))
 			toggle_filter()
+	if(href_list["pump"])
+		if(filtering != text2num(href_list["pump"]))
+			toggle_pump()
 	if(href_list["chemical"] && href_list["amount"])
 		if(occupant && occupant.stat != DEAD)
 			if(href_list["chemical"] in available_chemicals) // Your hacks are bad and you should feel bad
