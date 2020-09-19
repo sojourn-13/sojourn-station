@@ -79,7 +79,7 @@
 	if(pump > 0)
 		if(beaker && istype(occupant))
 			if(beaker.reagents.total_volume < beaker.reagents.maximum_volume)
-				var/datum/reagents/ingested = occupant.get_ingested_reagents()
+				var/datum/reagents/ingested = occupant.ingested.reagent_list()
 				if(ingested)
 					for(var/datum/reagent/x in ingested.reagent_list)
 						ingested.trans_to_obj(beaker, scanning)
@@ -222,6 +222,13 @@
 		filtering = 0
 		return
 	filtering = !filtering
+
+/obj/machinery/sleeper/proc/toggle_pump()
+	if(!occupant || !beaker)
+		pump = 0
+		return
+	pump = !pump
+
 
 /obj/machinery/sleeper/proc/go_in(var/mob/M, var/mob/user)
 	if(!M)
