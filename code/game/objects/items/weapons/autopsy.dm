@@ -53,7 +53,7 @@
 			*/
 
 			// Buffing this stuff up for now!
-			if(prob(min(20 + (user.stats.getMult(STAT_BIO, STAT_LEVEL_EXPERT) * 100 ), 100)))
+			if(prob(min(20 + (user.stats.getMult(STAT_BIO, STAT_LEVEL_ADEPT) * 100 ), 100)))
 				W.pretend_weapon = W.weapon
 			else
 				W.pretend_weapon = pick("mechanical toolbox", "wirecutters", "revolver", "crowbar", "fire extinguisher", "tomato soup", "oxygen tank", "emergency oxygen tank", "laser", "bullet")
