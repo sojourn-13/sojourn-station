@@ -21,8 +21,8 @@
 		///Last character in the message
 		var/last_charachter = copytext(message,length_char(message))
 		if(!(last_charachter in punctuation))
-		message += "."
-		say_verb(message)
+			message += "."
+			say_verb(message)
 
 
 /mob/verb/say_verb(message as text)
@@ -50,8 +50,8 @@
 		///Last character in the message
 		var/last_charachter = copytext(message,length_char(message))
 		if(!(last_charachter in punctuation))
-		message += "."
-		me_verb(message)
+			message += "."
+			me_verb(message)
 
 
 /mob/verb/me_verb(message as text)
