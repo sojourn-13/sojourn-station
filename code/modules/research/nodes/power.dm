@@ -152,9 +152,8 @@
 
 	required_technologies = list(/datum/technology/advanced_power_generation)
 	required_tech_levels = list()
-	unlocks_designs = list(
-							/datum/design/research/circuit/miss,
-							/datum/design/research/structure/solar
+	unlocks_designs = list(/datum/design/research/circuit/miss,
+				/datum/design/research/structure/solar
 						)
 
 	cost = 2000//5000
