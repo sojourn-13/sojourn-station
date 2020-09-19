@@ -16,12 +16,6 @@
 	hud_typing = FALSE
 	set_typing_indicator(FALSE)
 	if(message)
-		///List of symbols that we dont want a dot after
-		var/list/punctuation = list("!","?",".")
-		///Last character in the message
-		var/last_charachter = copytext(message,length_char(message))
-		if(!(last_charachter in punctuation))
-			message += "."
 		say_verb(message)
 
 
@@ -41,16 +35,10 @@
 
 	set_typing_indicator(TRUE)
 	hud_typing = TRUE
-	var/message = input("", "me (text)") as text|null
+	var/message = input("", "me (text)") as text
 	hud_typing = FALSE
 	set_typing_indicator(FALSE)
 	if(message)
-		///List of symbols that we dont want a dot after
-		var/list/punctuation = list("!","?",".")
-		///Last character in the message
-		var/last_charachter = copytext(message,length_char(message))
-		if(!(last_charachter in punctuation))
-			message += "."
 		me_verb(message)
 
 
@@ -74,7 +62,7 @@
 	set name = "Subtle verb"
 	set category = "IC"
 
-	var/message = input("", "subtle (text)") as text|null
+	var/message = input("", "subtle (text)") as text
 	if(message)
 		subtle_verb(message)
 
