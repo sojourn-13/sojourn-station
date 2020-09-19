@@ -35,7 +35,7 @@
 
 	set_typing_indicator(TRUE)
 	hud_typing = TRUE
-	var/message = input("", "me (text)") as text|null
+	var/message = input("", "me (text)") as text
 	hud_typing = FALSE
 	set_typing_indicator(FALSE)
 	if(message)
@@ -62,7 +62,7 @@
 	set name = "Subtle verb"
 	set category = "IC"
 
-	var/message = input("", "subtle (text)") as text|null
+	var/message = input("", "subtle (text)") as text
 	if(message)
 		subtle_verb(message)
 
