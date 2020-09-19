@@ -79,6 +79,14 @@
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
     tipText = "Your PDA has an integrated medical scanner."
 
+/tipsAndTricks/jobs/cryo_bag_scanning
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
+    tipText = "Medical scanners work on cryo bags without opening them."
+
+/tipsAndTricks/jobs/detox_chem_clering
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
+    tipText = "Dylovene when injected will clear toxic chemics like pararein, blattedin, and toxin. Dylovene when eaten does not have this affect."
+
 /tipsAndTricks/jobs/gas_scanner_pda
     jobs_list = list(/datum/job/cmo, /datum/job/technomancer)
     tipText = "Inside of your PDA is an installed gas scanner."
@@ -98,6 +106,10 @@
 /tipsAndTricks/jobs/crewMonitorHelp
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic)
     tipText = "You can use the crew monitoring program on computers to locate injured crew members. It can be downloaded on tablets or laptops for a portable solution. Medical storage always has one tablet for this purpose on roundstart."
+
+/tipsAndTricks/jobs/odysseus_boons
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic)
+    tipText = "The Odysseus is a reliable medical mech that can be used as a paramedic vehicle or mobile medical treatment machine. Well also with a syringe gun will be able to scan, and produce any chem on demand, this also allows you to connect these new chems to the mounted sleeper unit. Loaded with a sleeper will allow for people to be safely transported and auto injected with Inaprovaline."
 
 /tipsAndTricks/jobs/thermite
     jobs_list = list(/datum/job/doctor)
@@ -154,6 +166,10 @@
 /tipsAndTricks/jobs/ripley
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
     tipText = "The Ripley mech is an universal tool for a variety of tasks, be it mining, building, or deconstructing. It also has a rather strong melee attack."
+
+/tipsAndTricks/jobs/firefighter
+    jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
+    tipText = "The Ripley Firefighter is a enhanced version of the Ripley sporting more armor and being almost fire proof."
 
 /tipsAndTricks/jobs/odysseus
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)

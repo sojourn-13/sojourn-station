@@ -12,7 +12,8 @@
 	cost = 0
 
 	unlocks_designs = list(	/datum/design/research/item/part/micro_mani,
-							/datum/design/research/item/part/basic_sensor
+							/datum/design/research/item/part/basic_sensor,
+							/datum/design/research/item/medical/autopsy_scanner
 						)
 
 /datum/technology/medical_cooling
@@ -47,7 +48,8 @@
 	cost = 200
 
 	unlocks_designs = list(	/datum/design/research/circuit/med_data,
-							/datum/design/research/circuit/operating
+							/datum/design/research/circuit/operating,
+							/datum/design/research/item/medical/roller_bed
 						)
 /*
 /datum/technology/virology
@@ -78,7 +80,8 @@
 	required_tech_levels = list()
 	cost = 500
 
-	unlocks_designs = list(/datum/design/research/circuit/sleeper)
+	unlocks_designs = list(/datum/design/research/circuit/sleeper,
+							/datum/design/research/item/medical/compact_roller_bed)
 
 /datum/technology/hydroponics
 	name = "Hydroponics"
