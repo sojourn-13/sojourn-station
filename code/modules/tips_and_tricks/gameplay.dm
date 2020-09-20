@@ -5,8 +5,8 @@
 /tipsAndTricks/gameplay/airlockInteractions
     tipText = "Did you know? You can click on the turf tile where an airlock is located instead of the actual airlock to toggle it."
 
-//tipsAndTricks/gameplay/fightBlob - No its not
-    //tipText = "If you're trying to take on a blob, a flamethrower is your best weapon."
+/tipsAndTricks/gameplay/fightBlob
+    tipText = "If you're trying to take on a blob, a flamethrower is your best weapon."
 
 /tipsAndTricks/gameplay/fuhrerRoachReinforcement
     tipText = "The Fuhrer roach can call for an entire battalion of reinforcement roaches. If you hear it scream, RUN!"
