@@ -81,7 +81,7 @@
 
 /tipsAndTricks/jobs/cryo_bag_scanning
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
-    tipText = "Medical scanners work on cryo bags without opening them."
+    tipText = "Medical scanners work through cryo bags, allowing you to scan people currently inside them, including stasis bags."
 
 /tipsAndTricks/jobs/detox_chem_clering
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
@@ -109,7 +109,7 @@
 
 /tipsAndTricks/jobs/odysseus_boons
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic)
-    tipText = "The Odysseus is a reliable medical mech that can be used as a paramedic vehicle or mobile medical treatment machine. Well also with a syringe gun will be able to scan, and produce any chem on demand, this also allows you to connect these new chems to the mounted sleeper unit. Loaded with a sleeper will allow for people to be safely transported and auto injected with Inaprovaline."
+    tipText = "The Odysseus medical mecha is a reliable and fast transport vehicle used best by paramedics or doctors acting as paramedics. The syringe gun module can scan and produce chemicals to deliver on the fly, provided you load it with syringes and the sleeper modules will put patients in stasis while treating their injuries."
 
 /tipsAndTricks/jobs/thermite
     jobs_list = list(/datum/job/doctor)
@@ -161,15 +161,15 @@
 
 /tipsAndTricks/jobs/upgrade_dispender
     jobs_list = list(/datum/job/clubworker, /datum/job/clubmanager)
-    tipText = "Your booze and soda dispenser can be hacked with a multitool to give more drink options. It also can be upgraded with advanced parts to charge faster, hold more power and even make new drinks or chems."
+    tipText = "Your booze and soda dispenser can be hacked with a multitool to give more drink options. It also can be upgraded with advanced parts to charge faster, hold more power, and even make new drinks or chems."
 
 /tipsAndTricks/jobs/upgrades
     jobs_list = list(/datum/job/rd, /datum/job/scientist)
-    tipText = "There are many machines that can be upgraded, use a RPED on things to learn its parts and if it can be upgraded."
+    tipText = "There are many machines that can be upgraded, use an RPED on things to learn its parts and if it can be upgraded."
 
 /tipsAndTricks/jobs/upgrade_chemdispenders_sleeper
     jobs_list = list(/datum/job/rd, /datum/job/scientist)
-    tipText = "The sleepers, must be deconstructed and remade to upgrade its filtering with better parts similar to chem dispensers cell."
+    tipText = "A sleeper machine must be deconstructed and put back together to upgrade itself properly, similar to replacing a chemical dispencers power cell."
 
 /tipsAndTricks/jobs/bots
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
