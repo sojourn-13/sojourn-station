@@ -23,12 +23,10 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if(!ammo_magazine)
-		icon_state = initial(icon_state)
-	else if(!ammo_magazine.stored_ammo.len)
-		icon_state = initial(icon_state) + "_empty"
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_empty"
 	else
-		icon_state = initial(icon_state) + "_full"
+		iconstring = initial(icon_state) + "_full"
 
 	if (silenced)
 		iconstring += "_s"
@@ -53,16 +51,13 @@
 
 /obj/item/weapon/gun/projectile/mk58/wood/update_icon()
 	..()
-
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if(!ammo_magazine)
-		icon_state = initial(icon_state)
-	else if(!ammo_magazine.stored_ammo.len)
-		icon_state = initial(icon_state) + "_empty"
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_empty"
 	else
-		icon_state = initial(icon_state) + "_full"
+		iconstring = initial(icon_state) + "_full"
 
 	if (silenced)
 		iconstring += "_s"

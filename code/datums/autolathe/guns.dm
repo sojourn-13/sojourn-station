@@ -324,7 +324,7 @@
 
 /datum/design/autolathe/gun/pulse_cassad
 	name = "H&S PR \"Cassad\""
-	build_path = /obj/item/weapon/gun/energy/plasma/cassad
+	build_path = /obj/item/weapon/gun/energy/pulse/cassad
 
 /datum/design/autolathe/gun/sniperrifle
 	name = "OT MER \"Valkyrie\""
