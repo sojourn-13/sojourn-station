@@ -1,5 +1,5 @@
 //Also contains /obj/structure/closet/body_bag because I doubt anyone would think to look for bodybags in /object/structures
-
+// Note that deploying body bags is based on attack self hard coding, well folding themselfs up is modular "item_path"
 /obj/item/bodybag
 	name = "body bag"
 	desc = "A folded bag designed for the storage and transportation of cadavers."
@@ -14,7 +14,6 @@
 		R.add_fingerprint(user)
 		qdel(src)
 
-
 /obj/structure/closet/body_bag
 	name = "body bag"
 	desc = "A plastic bag designed for the storage and transportation of cadavers."
@@ -22,9 +21,9 @@
 	icon_state = "bodybag"
 	open_sound = 'sound/items/zip.ogg'
 	close_sound = 'sound/items/zip.ogg'
-	var/item_path = /obj/item/bodybag
+	var/item_path = /obj/item/bodybag //What item do we get back when folding it up?
 	density = 0
-	storage_capacity = (MOB_MEDIUM * 2) - 1
+	storage_capacity = (MOB_MEDIUM * 2) - 1 //Holds 1 medium size mob or 2 smalls
 	var/contains_body = 0
 	layer = LOW_OBJ_LAYER+0.01
 
