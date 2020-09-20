@@ -24,7 +24,6 @@
 		/datum/design/autolathe/device/implanter,
 		/datum/design/autolathe/container/syringegun_ammo,
 		/datum/design/autolathe/misc/bodybag,
-		/datum/design/research/item/medical/larger_bodybag,
 		/datum/design/research/item/medical/autopsy_scanner,
 		/datum/design/research/item/medical/roller_bed
 	)

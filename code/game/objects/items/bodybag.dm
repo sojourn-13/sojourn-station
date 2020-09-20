@@ -14,17 +14,6 @@
 		R.add_fingerprint(user)
 		qdel(src)
 
-/obj/item/bodybag/larger
-	name = "large body bag"
-	desc = "A folded bag designed for the storage and transportation of many cadavers."
-	w_class = ITEM_SIZE_NORMAL
-	matter = list(MATERIAL_PLASTIC = 20)
-
-/obj/item/bodybag/larger/attack_self(mob/user)
-	var/obj/structure/closet/body_bag/larger/R = new /obj/structure/closet/body_bag/larger(user.loc)
-	R.add_fingerprint(user)
-	qdel(src)
-
 /obj/structure/closet/body_bag
 	name = "body bag"
 	desc = "A plastic bag designed for the storage and transportation of cadavers."
@@ -37,13 +26,6 @@
 	storage_capacity = (MOB_MEDIUM * 2) - 1 //Holds 1 medium size mob or 2 smalls
 	var/contains_body = 0
 	layer = LOW_OBJ_LAYER+0.01
-
-/obj/structure/closet/body_bag/larger
-	name = "large body bag"
-	desc = "A plastic bag designed for the storage and transportation of large cadavers."
-	item_path = /obj/item/bodybag/larger // Holds 3 medium size mobs or 6 smalls
-	storage_capacity = (MOB_MEDIUM * 4) - 1 // Can not hold "LARGE" bodys for balance against closet stunning
-
 
 /obj/structure/closet/body_bag/attackby(W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/pen))

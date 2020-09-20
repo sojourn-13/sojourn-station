@@ -13,11 +13,6 @@
 	build_path = /obj/item/device/makeshift_centrifuge
 	category = "Medical"
 
-/datum/design/research/item/medical/larger_bodybag
-	name = "Larger body bag"
-	desc = "Much bigger body bag for more storage of the dead."
-	build_path = /obj/item/roller
-
 /datum/design/research/item/medical/roller_bed
 	name = "Roller Bed"
 	build_path = /obj/item/roller
