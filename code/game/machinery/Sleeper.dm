@@ -46,7 +46,7 @@
 
 	var/scanning = 0
 	for(var/obj/item/weapon/stock_parts/scanning_module/S in component_parts)
-		scanning += S.rating
+		scanning = S.rating
 
 	if(rating > 1) //Level 2 Matter Bin unlocks Tricordrazine
 		available_chemicals += level1
