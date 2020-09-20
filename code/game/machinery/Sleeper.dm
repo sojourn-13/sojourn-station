@@ -44,7 +44,6 @@
 	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
 		rating += B.rating - 1
 
-	var/scanning = 0
 	for(var/obj/item/weapon/stock_parts/scanning_module/S in component_parts)
 		scanning = S.rating
 
