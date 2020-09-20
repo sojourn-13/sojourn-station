@@ -159,6 +159,18 @@
     jobs_list = list(/datum/job/clubworker, /datum/job/clubmanager)
     tipText = "There is a program in your PDA called Neon Cocktails that can help you with making drinks."
 
+/tipsAndTricks/jobs/upgrade_dispender
+    jobs_list = list(/datum/job/clubworker, /datum/job/clubmanager)
+    tipText = "Your booze and soda dispenser can be hacked with a multitool to give more drink options. It also can be upgraded with advanced parts to charge faster, hold more power and even make new drinks or chems."
+
+/tipsAndTricks/jobs/upgrades
+    jobs_list = list(/datum/job/rd, /datum/job/scientist)
+    tipText = "There are many machines that can be upgraded, use a RPED on things to learn its parts and if it can be upgraded."
+
+/tipsAndTricks/jobs/upgrade_chemdispenders_sleeper
+    jobs_list = list(/datum/job/rd, /datum/job/scientist)
+    tipText = "The sleepers, must be deconstructed and remade to upgrade its filtering with better parts similar to chem dispensers cell."
+
 /tipsAndTricks/jobs/bots
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
     tipText = "Bots are tireless servants that you can create. No janitor? CleanBot to the rescue! Not enough medical staff? MedBot will solve that."
@@ -169,7 +181,7 @@
 
 /tipsAndTricks/jobs/firefighter
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
-    tipText = "The Ripley Firefighter is a enhanced version of the Ripley sporting more armor and being almost fire proof."
+    tipText = "The Ripley Firefighter is an enhanced version of the Ripley sporting more armor and being almost fire proof."
 
 /tipsAndTricks/jobs/odysseus
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
