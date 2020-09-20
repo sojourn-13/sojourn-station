@@ -85,7 +85,7 @@
 
 /tipsAndTricks/jobs/detox_chem_clering
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
-    tipText = "Dylovene when injected will clear toxic chemics like pararein, blattedin, and toxin. Dylovene when eaten does not have this affect."
+    tipText = "Dylovene, when injected, will clear toxic chemicals like pararein, blattedin, and general toxins. Dylovene when eaten does not have this affect."
 
 /tipsAndTricks/jobs/gas_scanner_pda
     jobs_list = list(/datum/job/cmo, /datum/job/technomancer)
