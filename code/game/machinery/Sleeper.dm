@@ -227,7 +227,7 @@
 
 /obj/machinery/sleeper/proc/toggle_pump()
 	if(!occupant || !beaker)
-		pump = 0
+		pump = FALSE
 		return
 	pump = !pump
 
