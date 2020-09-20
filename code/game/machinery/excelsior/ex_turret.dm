@@ -15,7 +15,9 @@
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
 	var/working_range = 30 // how far this turret operates from excelsior teleporter
-	health = 60
+	health = 160
+	auto_repair = 1
+	shot_delay = 0.3
 
 /obj/machinery/porta_turret/excelsior/proc/has_power_source_nearby()
 	for (var/a in excelsior_teleporters)
@@ -139,15 +141,8 @@
 	ammo--
 	..()
 
-#undef TURRET_PRIORITY_TARGET
-#undef TURRET_SECONDARY_TARGET
-#undef TURRET_NOT_TARGET
 
-/*
-#define TURRET_PRIORITY_TARGET 2
-#define TURRET_SECONDARY_TARGET 1
-#define TURRET_NOT_TARGET 0
-
+//Guild brand auto turrets.
 /obj/machinery/porta_turret/artificer
 	icon = 'icons/obj/machines/excelsior/turret.dmi'
 	desc = "A fully automated anti infantry platform. Fires 7.5mm rounds."
@@ -155,17 +150,18 @@
 	density = TRUE
 	lethal = TRUE
 	raised = TRUE
-	circuit = /obj/item/weapon/circuitboard/excelsior_turret
+	circuit = /obj/item/weapon/circuitboard/artificer_turret
 	installation = null
 	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
-	var/working_range = 30 // how far this turret operates from excelsior teleporter
 	var/obj/item/weapon/cell/large/cell = null
 	health = 60
+	auto_repair = 1
+	shot_delay = 3
 
 /obj/machinery/porta_turret/artificer/proc/has_power()
-	if (cell && cell.charge > 0)
+	if (cell && cell.charge > 0 && disabled == FALSE)
 		cell.charge = (cell.charge - 1)
 		return TRUE
 	return FALSE
@@ -199,10 +195,12 @@
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
 	data["enabled"] = enabled
+	data["cellCharge"] = cell ? cell.charge : 0
+	data["cellMaxCharge"] = cell ? cell.maxcharge : 1
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "turret_control.tmpl", "Turret Controls", 500, 300)
+		ui = new(user, src, ui_key, "turret_control_artificer.tmpl", "Turret Controls", 500, 300)
 		ui.set_initial_data(data)
 		ui.open()
 		ui.set_auto_update(1)
@@ -210,7 +208,7 @@
 /obj/machinery/porta_turret/artificer/HasController()
 	return FALSE
 
-/obj/machinery/porta_turret/excelsior/attackby(obj/item/ammo_magazine/I, mob/user)
+/obj/machinery/porta_turret/artificer/attackby(obj/item/ammo_magazine/I, mob/user)
 	if(istype(I, ammo_box) && I.stored_ammo.len)
 		if(ammo >= ammo_max)
 			to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
@@ -225,6 +223,62 @@
 			if(ammo == ammo_max)
 				break
 		to_chat(user, SPAN_NOTICE("You loaded [transfered_ammo] bullets into [src]. It now contains [ammo] ammo."))
+	else
+		..()
+
+/obj/machinery/porta_turret/artificer/attackby(obj/item/I, mob/user)
+	if (user.a_intent != I_HURT)
+		if(stat & BROKEN)
+			if(QUALITY_PRYING in I.tool_qualities)
+				//If the turret is destroyed, you can remove it with a crowbar to
+				//try and salvage its components
+				to_chat(user, SPAN_NOTICE("You begin prying the metal coverings off."))
+				if(do_after(user, 20, src))
+					if(prob(70))
+						to_chat(user, SPAN_NOTICE("You remove the turret and salvage some components."))
+						if(prob(50))
+							new /obj/item/weapon/circuitboard/artificer_turret(loc)
+						if(prob(50))
+							new /obj/item/stack/material/steel(loc, rand(1,4))
+						if(prob(50))
+							new /obj/item/device/assembly/prox_sensor(loc)
+					else
+						to_chat(user, SPAN_NOTICE("You remove the turret but did not manage to salvage anything."))
+					qdel(src) // qdel
+
+		else if(QUALITY_BOLT_TURNING in I.tool_qualities)
+			if(enabled)
+				to_chat(user, SPAN_WARNING("You cannot unsecure an active turret!"))
+				return
+			if(!anchored && isinspace())
+				to_chat(user, SPAN_WARNING("Cannot secure turrets in space!"))
+				return
+
+			user.visible_message( \
+					"<span class='warning'>[user] begins [anchored ? "un" : ""]securing the turret.</span>", \
+					"<span class='notice'>You begin [anchored ? "un" : ""]securing the turret.</span>" \
+				)
+
+			if(do_after(user, 50, src))
+				//This code handles moving the turret around. After all, it's a portable turret!
+				if(!anchored)
+					playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+					anchored = TRUE
+					update_icon()
+					to_chat(user, SPAN_NOTICE("You secure the exterior bolts on the turret."))
+					if(disabled)
+						spawn(200)
+							disabled = FALSE
+				else if(anchored)
+					if(disabled)
+						to_chat(user, SPAN_NOTICE("The turret is still recalibrating. Wait some time before trying to move it."))
+						return
+					playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+					anchored = 0
+					disabled = TRUE
+					to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the turret."))
+					update_icon()
+			wrenching = 0
 	else
 		..()
 
@@ -249,9 +303,6 @@
 
 	if(!check_trajectory(L, src))
 		return TURRET_NOT_TARGET
-
-	if(emagged)		// If emagged not even the dead get a rest
-		return L.stat ? TURRET_SECONDARY_TARGET : TURRET_PRIORITY_TARGET
 
 	if(L.stat == DEAD)
 		return TURRET_NOT_TARGET
@@ -290,4 +341,3 @@
 #undef TURRET_PRIORITY_TARGET
 #undef TURRET_SECONDARY_TARGET
 #undef TURRET_NOT_TARGET
-*/
