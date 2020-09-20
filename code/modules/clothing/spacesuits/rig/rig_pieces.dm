@@ -81,7 +81,6 @@
 
 /obj/item/clothing/suit/lightrig
 	name = "suit"
-	allowed = list(/obj/item/device/lighting/toggleable/flashlight)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	heat_protection =    UPPER_TORSO|LOWER_TORSO
 	cold_protection =    UPPER_TORSO|LOWER_TORSO
