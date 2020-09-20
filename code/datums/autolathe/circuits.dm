@@ -60,6 +60,10 @@
 	name = "excelsior turret"
 	build_path = /obj/item/weapon/circuitboard/excelsior_turret
 
+/datum/design/autolathe/circuit/turret_artificer
+	name = "artificer turret"
+	build_path = /obj/item/weapon/circuitboard/artificer_turret
+
 /datum/design/autolathe/circuit/centrifuge
 	name = "centrifuge"
 	build_path = /obj/item/weapon/circuitboard/centrifuge
