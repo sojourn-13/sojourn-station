@@ -138,6 +138,7 @@
 	else
 		data["beaker"] = -1
 	data["filtering"] = filtering
+	data["pump"] = pump
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -208,6 +209,8 @@
 /obj/machinery/sleeper/emp_act(var/severity)
 	if(filtering)
 		toggle_filter()
+	if(pump)
+		toggle_pump()
 
 	if(stat & (BROKEN|NOPOWER))
 		..(severity)
