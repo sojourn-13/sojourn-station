@@ -106,7 +106,7 @@
 	rapid = 1
 	icon_state = "syndicateranged"
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
-	projectiletype = /obj/item/projectile/bullet/pistol
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
 
@@ -296,7 +296,7 @@
 	rapid = 1
 	icon_state = "syndicate_stormtrooper_smg"
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
-	projectiletype = /obj/item/projectile/bullet/pistol
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
 
 /mob/living/simple_animal/hostile/elitemercenary/range/gunslinger

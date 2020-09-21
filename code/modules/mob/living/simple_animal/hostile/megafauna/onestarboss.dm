@@ -23,7 +23,7 @@
 
 	wander = FALSE //No more sleepwalking
 
-	projectiletype = /obj/item/projectile/bullet/lrifle/nomuzzle
+	projectiletype = /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 
 /mob/living/simple_animal/hostile/megafauna/death(gibbed, var/list/force_grant)
 	if(health <= 0)

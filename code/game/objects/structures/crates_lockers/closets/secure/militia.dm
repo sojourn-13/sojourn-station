@@ -5,13 +5,13 @@
 
 /obj/structure/closet/secure_closet/reinforced/commander/populate_contents()
 	if(prob(50))
-		new /obj/item/ammo_magazine/hrifle/lethal(src)
+		new /obj/item/ammo_magazine/heavy_rifle_408/lethal(src)
 	else
-		new /obj/item/ammo_magazine/hrifle/hv(src)
+		new /obj/item/ammo_magazine/heavy_rifle_408/hv(src)
 	new /obj/item/clothing/accessory/ranks/commander(src)
 	new /obj/item/weapon/storage/box/commanderuniform(src)
 	new /obj/item/weapon/storage/box/blankranks(src)
-	new /obj/item/ammo_magazine/hrifle/lethal(src)
+	new /obj/item/ammo_magazine/heavy_rifle_408/lethal(src)
 	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/clothing/head/rank/milcom/beret(src)
 	new /obj/item/clothing/head/rank/milcom(src)
@@ -28,9 +28,9 @@
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/clothing/accessory/armband/militia(src)
 	new /obj/item/weapon/gun/projectile/lamia/scoped/dark(src)
-	new /obj/item/ammo_magazine/kurtz(src)
-	new /obj/item/ammo_magazine/kurtz(src)
-	new /obj/item/ammo_magazine/kurtz(src)
+	new /obj/item/ammo_magazine/kurtz_50(src)
+	new /obj/item/ammo_magazine/kurtz_50(src)
+	new /obj/item/ammo_magazine/kurtz_50(src)
 	new /obj/item/clothing/accessory/holster/hip(src)
 	new /obj/item/weapon/melee/telebaton(src)
 	new /obj/item/weapon/storage/pouch/ammo(src)
@@ -59,12 +59,12 @@
 		new /obj/item/weapon/storage/backpack/security(src)
 	if(prob(90))
 		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
-		new /obj/item/ammo_magazine/magnum(src)
-		new /obj/item/ammo_magazine/magnum/lethal(src)
+		new /obj/item/ammo_magazine/magnum_40(src)
+		new /obj/item/ammo_magazine/magnum_40/lethal(src)
 	else
 		new /obj/item/weapon/gun/projectile/lamia/dark(src)
-		new /obj/item/ammo_magazine/kurtz(src)
-		new /obj/item/ammo_magazine/kurtz/lethal(src)
+		new /obj/item/ammo_magazine/kurtz_50(src)
+		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 	new /obj/item/clothing/accessory/ranks/sergeant(src)
 	new /obj/item/weapon/storage/box/sergeantuniform(src)
 	new /obj/item/clothing/under/rank/armorer(src)
@@ -86,8 +86,8 @@
 	new /obj/item/clothing/suit/armor/flackvest/militia(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/gun/projectile/boltgun(src)
-	new /obj/item/ammo_magazine/slrifle(src)
-	new /obj/item/ammo_magazine/slrifle(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
@@ -122,12 +122,12 @@
 		new /obj/item/weapon/storage/belt/webbing/green(src)
 	if(prob(90))
 		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
-		new /obj/item/ammo_magazine/magnum(src)
-		new /obj/item/ammo_magazine/magnum/lethal(src)
+		new /obj/item/ammo_magazine/magnum_40(src)
+		new /obj/item/ammo_magazine/magnum_40/lethal(src)
 	else
 		new /obj/item/weapon/gun/projectile/ladon(src)
-		new /obj/item/ammo_magazine/magnum(src)
-		new /obj/item/ammo_magazine/magnum/lethal(src)
+		new /obj/item/ammo_magazine/magnum_40(src)
+		new /obj/item/ammo_magazine/magnum_40/lethal(src)
 	new /obj/item/clothing/accessory/ranks/trooper(src)
 	new /obj/item/weapon/storage/box/trooperuniform(src)
 	new /obj/item/clothing/accessory/dogtags(src)
@@ -149,8 +149,8 @@
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/grenade/smokebomb(src)
 	new /obj/item/weapon/gun/projectile/boltgun(src)
-	new /obj/item/ammo_magazine/slrifle(src)
-	new /obj/item/ammo_magazine/slrifle(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
@@ -165,12 +165,12 @@
 		new /obj/item/weapon/storage/backpack/security(src)
 	if(prob(90))
 		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
-		new /obj/item/ammo_magazine/magnum(src)
-		new /obj/item/ammo_magazine/magnum/lethal(src)
+		new /obj/item/ammo_magazine/magnum_40(src)
+		new /obj/item/ammo_magazine/magnum_40/lethal(src)
 	else
 		new /obj/item/weapon/gun/projectile/ladon(src)
-		new /obj/item/ammo_magazine/magnum(src)
-		new /obj/item/ammo_magazine/magnum/lethal(src)
+		new /obj/item/ammo_magazine/magnum_40(src)
+		new /obj/item/ammo_magazine/magnum_40/lethal(src)
 	new /obj/item/clothing/accessory/ranks/corpsman(src)
 	new /obj/item/weapon/storage/box/trooperuniform(src)
 	new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
@@ -194,8 +194,8 @@
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
 	new /obj/item/weapon/gun/projectile/boltgun(src)
-	new /obj/item/ammo_magazine/slrifle(src)
-	new /obj/item/ammo_magazine/slrifle(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 
 /obj/structure/closet/secure_closet/militia/armor
 	name = "blackshield armor locker"
