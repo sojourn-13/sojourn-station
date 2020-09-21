@@ -21,16 +21,16 @@
 	damage_types = list(BURN = 16)
 	eyeblur = 0 //we do not eyeblur
 
-/obj/item/projectile/beam/weak/pistol
+/obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 12)
 
-/obj/item/projectile/beam/weak/rifle
+/obj/item/projectile/beam/weak/heavy_rifle_408
 	damage_types = list(BURN = 16)
 
-/obj/item/projectile/beam/weak/magnum
+/obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 20)
 
-/obj/item/projectile/beam/weak/kurtz
+/obj/item/projectile/beam/weak/kurtz_50
 	damage_types = list(BURN = 25)
 
 /obj/item/projectile/beam/weak/smg

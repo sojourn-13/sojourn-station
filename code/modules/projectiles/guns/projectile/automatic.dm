@@ -9,7 +9,7 @@
 	caliber = CAL_35A
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
-	ammo_type = /obj/item/ammo_casing/pistol
+	ammo_type = /obj/item/ammo_casing/pistol_35
 	burst_delay = 2
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	unload_sound = 'sound/weapons/guns/interact/smg_magout.ogg'

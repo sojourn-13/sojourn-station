@@ -214,7 +214,7 @@
 	name = "\improper LBX AC 10 \"Scattershot\""
 	icon_state = "mecha_scatter"
 	equip_cooldown = 20
-	projectile = /obj/item/projectile/bullet/magnum
+	projectile = /obj/item/projectile/bullet/magnum_40
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 40
@@ -227,7 +227,7 @@
 	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
 	icon_state = "mecha_scatter"
 	equip_cooldown = 20
-	projectile = /obj/item/projectile/bullet/magnum
+	projectile = /obj/item/projectile/bullet/magnum_40
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 30
@@ -240,7 +240,7 @@
 	name = "\improper Ultra AC 2"
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
-	projectile = /obj/item/projectile/bullet/rifle
+	projectile = /obj/item/projectile/bullet/rifle_75
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	projectiles = 300
 	projectiles_per_shot = 3
@@ -253,7 +253,7 @@
 	desc = "Few would call this weapon reliable, fewer know just how valuable it is."
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
-	projectile = /obj/item/projectile/bullet/pistol
+	projectile = /obj/item/projectile/bullet/pistol_35
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiles = 60
 	projectiles_per_shot = 3

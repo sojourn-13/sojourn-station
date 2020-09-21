@@ -6,19 +6,19 @@
 	category = /datum/uplink_category/ammunition
 
 /datum/uplink_item/item/ammo/pistol
-	name = ".35"
+	name = ".35 HV box"
 	item_cost = 1
-	path = /obj/item/ammo_magazine/pistol/highvelocity
+	path = /obj/item/ammo_magazine/pistol_35/highvelocity
 
 /datum/uplink_item/item/ammo/hpistol
-	name = ".35 high-capacity"
+	name = ".35 HV high-capacity mag"
 	item_cost = 1
-	path = /obj/item/ammo_magazine/hpistol/highvelocity
+	path = /obj/item/ammo_magazine/highcap_pistol_35/highvelocity
 
 /datum/uplink_item/item/ammo/smg
-	name = ".35 SMG"
+	name = ".35 HV SMG mag"
 	item_cost = 2
-	path = /obj/item/ammo_magazine/smg/hv
+	path = /obj/item/ammo_magazine/smg_35/hv
 
 /datum/uplink_item/item/ammo/darts
 	name = "Darts"
@@ -26,29 +26,29 @@
 	path = /obj/item/ammo_magazine/chemdart
 
 /datum/uplink_item/item/ammo/magnum
-	name = ".40 Magnum"
+	name = ".40 HV Magnum Mag"
 	item_cost = 1
-	path = /obj/item/ammo_magazine/magnum/hv
+	path = /obj/item/ammo_magazine/magnum_40/hv
 
 /datum/uplink_item/item/ammo/slmagnum
-	name = ".40 Magnum"
+	name = ".40 HV Magnum Speed Loader"
 	item_cost = 1
-	path = /obj/item/ammo_magazine/slmagnum/highvelocity
+	path = /obj/item/ammo_magazine/speed_loader_magnum_40/highvelocity
 
 /datum/uplink_item/item/ammo/lrifle
-	name = ".257 Carbine"
+	name = ".257 HV Carbine Clip"
 	item_cost = 3
-	path = /obj/item/ammo_magazine/lrifle/highvelocity
+	path = /obj/item/ammo_magazine/light_rifle_257/highvelocity
 
 /datum/uplink_item/item/ammo/rifle
-	name = "7.5mm Rifle"
+	name = "7.5mm HV Rifle Clip"
 	item_cost = 3
-	path = /obj/item/ammo_magazine/rifle/highvelocity
+	path = /obj/item/ammo_magazine/rifle_75/highvelocity
 
 /datum/uplink_item/item/ammo/hrifle
-	name = ".408 Omni Rifle SLAP"
+	name = ".408 Omni Rifle SLAP Mag"
 	item_cost = 3
-	path = /obj/item/ammo_magazine/hrifle/hv
+	path = /obj/item/ammo_magazine/heavy_rifle_408/hv
 
 /datum/uplink_item/item/ammo/m12
 	name = "M12 shotgun mag with slugs"

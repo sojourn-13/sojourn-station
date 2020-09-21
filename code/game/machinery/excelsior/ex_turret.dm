@@ -11,7 +11,7 @@
 	raised = TRUE
 	circuit = /obj/item/weapon/circuitboard/excelsior_turret
 	installation = null
-	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle
+	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
 	var/working_range = 30 // how far this turret operates from excelsior teleporter
@@ -152,7 +152,7 @@
 	raised = TRUE
 	circuit = /obj/item/weapon/circuitboard/artificer_turret
 	installation = null
-	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle
+	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
 	var/obj/item/weapon/cell/large/cell = null

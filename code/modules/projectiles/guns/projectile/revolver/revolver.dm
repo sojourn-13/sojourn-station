@@ -11,7 +11,7 @@
 	handle_casings = CYCLE_CASINGS
 	max_shells = 6
 	var/drawChargeMeter = TRUE
-	ammo_type = /obj/item/ammo_casing/magnum
+	ammo_type = /obj/item/ammo_casing/magnum_40
 	unload_sound 	= 'sound/weapons/guns/interact/rev_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/rev_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/rev_cock.ogg'
