@@ -74,6 +74,10 @@
 		var/obj/machinery/bot/B = target_mob
 		B.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return B
+	if(istype(target_mob,/obj/machinery/porta_turret))
+		var/obj/machinery/porta_turret/P = target_mob
+		P.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+		return P
 
 /mob/living/simple_animal/hostile/megafauna/one_star/proc/shoot_rocket(turf/marker, set_angle)
 	if(!isnum(set_angle) && (!marker || marker == loc))

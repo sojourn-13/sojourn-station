@@ -50,7 +50,7 @@
 	alpha = 128
 
 /obj/random/mob/render/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/nightmare))
+	return pickweight(list(/mob/living/simple_animal/hostile/render))
 
 /obj/random/mob/render/low_chance
 	name = "low chance render"
@@ -64,7 +64,7 @@
 	alpha = 128
 
 /obj/random/mob/nightmare/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/render))
+	return pickweight(list(/mob/living/simple_animal/hostile/nightmare))
 
 /obj/random/mob/nightmare/low_chance
 	name = "low chance nightmare"

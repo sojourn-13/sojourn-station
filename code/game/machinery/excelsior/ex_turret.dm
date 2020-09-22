@@ -145,7 +145,9 @@
 //Guild brand auto turrets.
 /obj/machinery/porta_turret/artificer
 	icon = 'icons/obj/machines/excelsior/turret.dmi'
-	desc = "A fully automated anti infantry platform. Fires 7.5mm rounds."
+	name = "artificer turret"
+	desc = "A fully automated battery powered self-repairing anti-wildlife turret platform built by the Artificer's Guild. It features a three round burst fire automatic and an integrated \
+	non-sapient automated artificial-intelligence diagnostic repair system. In other words, the fanciest bit of forging the guild can make. Fires 7.5mm rounds and holds up to 180."
 	icon_state = "turret_legs"
 	density = TRUE
 	lethal = TRUE
@@ -156,7 +158,7 @@
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 180
 	var/obj/item/weapon/cell/large/cell = null
-	health = 60
+	health = 150
 	auto_repair = 1
 	shot_delay = 3
 	use_power = 1
@@ -186,7 +188,6 @@
 /obj/machinery/porta_turret/artificer/Initialize()
 	. = ..()
 	update_icon()
-	cell = new /obj/item/weapon/cell/large(src)
 
 /obj/machinery/porta_turret/artificer/setup()
 	var/obj/item/ammo_casing/AM = initial(ammo_box.ammo_type)

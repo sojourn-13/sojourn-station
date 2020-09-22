@@ -455,6 +455,10 @@
 		var/obj/machinery/bot/B = target_mob
 		if(B.health > 0)
 			return (0)
+	if (istype(target_mob,/obj/machinery/porta_turret))
+		var/obj/machinery/porta_turret/P = target_mob
+		if(P.health > 0)
+			return (0)
 	return 1
 
 /mob/living/simple_animal/get_speech_ending(verb, var/ending)

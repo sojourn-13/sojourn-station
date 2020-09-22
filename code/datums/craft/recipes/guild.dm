@@ -107,7 +107,27 @@
 	name = "War Mace"
 	result = /obj/item/weapon/tool/hammer/mace
 	steps = list(
-		list(/obj/item/stack/material/steel, 10, "time" = 30),
+		list(/obj/item/stack/material/steel, 15, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 60)
+	)
+
+/datum/craft_recipe/guild/claymore
+	name = "Claymore"
+	result = /obj/item/weapon/tool/sword
+	steps = list(
+		list(/obj/item/stack/material/steel, 15, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 60)
+	)
+
+/datum/craft_recipe/guild/machete
+	name = "Machete"
+	result = /obj/item/weapon/tool/sword/machete
+	steps = list(
+		list(/obj/item/stack/material/steel, 15, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 60)
@@ -168,7 +188,7 @@
 	)
 
 //Tool/Gun Mods ---------------------
-//Reinfrocement
+//Reinforcement
 /datum/craft_recipe/guild/plasmablock
 	name = "Plasma Block"
 	result = /obj/item/weapon/tool_upgrade/reinforcement/plasmablock
@@ -272,4 +292,15 @@
 		list(QUALITY_WELDING, 40, "time" = 40),
 		list(/obj/item/stack/material/plastic, 1, "time" = 30),
 		list(QUALITY_CUTTING, 25, "time" = 90),
+	)
+
+//Machines
+/datum/craft_recipe/guild/turretcircuit
+	name = "Circuit: Artificer Turret"
+	result = /obj/item/weapon/circuitboard/artificer_turret
+	steps = list(
+		list(/obj/item/weapon/computer_hardware/processor_unit/super, 1, "time" = 30),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
+		list(QUALITY_WELDING, 40, "time" = 90),
 	)
