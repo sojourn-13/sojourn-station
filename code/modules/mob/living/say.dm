@@ -163,6 +163,8 @@ var/list/channel_to_radio_key = new
 
 	message = trim_left(message)
 
+	message = format_say_message(message)
+
 	if(!(speaking && speaking.flags&NO_STUTTER))
 
 		var/list/handle_s = handle_speech_problems(message, verb)
@@ -281,6 +283,23 @@ var/list/channel_to_radio_key = new
 
 	log_say("[name]/[key] : [message]")
 	return TRUE
+
+mob/proc/format_say_message(var/message = null)
+
+	///List of symbols that we dont want a dot after
+	var/list/punctuation = list("!","?",".")
+
+	///Last character in the message
+	var/last_character = copytext(message,length_char(message))
+	if(!(last_character in punctuation))
+		message += "."
+	return message
+
+
+
+
+
+
 
 
 /proc/animate_speechbubble(image/I, list/show_to, duration)
