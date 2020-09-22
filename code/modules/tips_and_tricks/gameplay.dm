@@ -50,4 +50,6 @@
 /tipsAndTricks/gameplay/body_gards
     tipText = "Going into danger or feeling not able to handle a foe? Maybe hire a colonist as a body guard or to help with the task. It might just make their day to be useful for once."
 
+/tipsAndTricks/gameplay/guncases
+    tipText = "Gun cases well cumbersome are rather good for storing guns, if your having trouble getting one you can print them in an autolthe with the Security Miscellaneous Pack."
 
