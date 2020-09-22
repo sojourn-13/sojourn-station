@@ -154,23 +154,33 @@
 	installation = null
 	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
 	var/ammo = 0 // number of bullets left.
-	var/ammo_max = 160
+	var/ammo_max = 180
 	var/obj/item/weapon/cell/large/cell = null
 	health = 60
 	auto_repair = 1
 	shot_delay = 3
+	use_power = 1
+	idle_power_usage = 1
+	active_power_usage = 1
 
-/obj/machinery/porta_turret/artificer/proc/has_power()
-	if (cell && cell.charge > 0 && disabled == FALSE)
-		cell.charge = (cell.charge - 1)
+/obj/machinery/porta_turret/artificer/auto_use_power()
+	if(disabled)
+		return
+
+/obj/machinery/porta_turret/artificer/powered(chan=1)
+	if (cell?.check_charge(1))
+		cell.charge = cell.charge - 1
 		return TRUE
 	return FALSE
+
+/obj/machinery/porta_turret/artificer/use_power(amount, chan=1, autocalled)
+	return cell?.checked_use(amount)
 
 /obj/machinery/porta_turret/artificer/examine(mob/user)
 	if(!..(user, 2))
 		return
 	to_chat(user, "There [(ammo == 1) ? "is" : "are"] [ammo] round\s left!")
-	if(!has_power())
+	if(!powered())
 		to_chat(user, "Seems to be powered down. The battery must be dead.")
 
 /obj/machinery/porta_turret/artificer/Initialize()
@@ -195,6 +205,7 @@
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
 	data["enabled"] = enabled
+	data["cell"] = cell ? capitalize(cell.name) : null
 	data["cellCharge"] = cell ? cell.charge : 0
 	data["cellMaxCharge"] = cell ? cell.maxcharge : 1
 
@@ -205,26 +216,15 @@
 		ui.open()
 		ui.set_auto_update(1)
 
+/obj/machinery/porta_turret/artificer/Topic(href, href_list)
+	if(href_list["command"] == "eject_cell")
+		cell.forceMove(src.loc)
+		cell = null
+		return 1
+	.=..()
+
 /obj/machinery/porta_turret/artificer/HasController()
 	return FALSE
-
-/obj/machinery/porta_turret/artificer/attackby(obj/item/ammo_magazine/I, mob/user)
-	if(istype(I, ammo_box) && I.stored_ammo.len)
-		if(ammo >= ammo_max)
-			to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
-			return
-
-		var/transfered_ammo = 0
-		for(var/obj/item/ammo_casing/AC in I.stored_ammo)
-			I.stored_ammo -= AC
-			qdel(AC)
-			ammo++
-			transfered_ammo++
-			if(ammo == ammo_max)
-				break
-		to_chat(user, SPAN_NOTICE("You loaded [transfered_ammo] bullets into [src]. It now contains [ammo] ammo."))
-	else
-		..()
 
 /obj/machinery/porta_turret/artificer/attackby(obj/item/I, mob/user)
 	if (user.a_intent != I_HURT)
@@ -279,11 +279,37 @@
 					to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the turret."))
 					update_icon()
 			wrenching = 0
+
+		else if(istype(I, /obj/item/weapon/cell/large))
+			if(cell)
+				to_chat(user, "<span class='notice'>\the [src] already has a cell.</span>")
+			else
+				user.unEquip(I)
+				I.forceMove(src)
+				cell = I
+				to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
+
+		else if(istype(I, ammo_box) && I:stored_ammo.len)
+			var/obj/item/ammo_magazine/A = I
+			if(ammo >= ammo_max)
+				to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
+				return
+
+			var/transfered_ammo = 0
+			for(var/obj/item/ammo_casing/AC in A.stored_ammo)
+				A.stored_ammo -= AC
+				qdel(AC)
+				ammo++
+				transfered_ammo++
+				if(ammo == ammo_max)
+					break
+			to_chat(user, SPAN_NOTICE("You loaded [transfered_ammo] bullets into [src]. It now contains [ammo] ammo."))
+
 	else
 		..()
 
 /obj/machinery/porta_turret/artificer/Process()
-	if(!has_power())
+	if(!powered())
 		disabled = TRUE
 		popDown()
 		return
@@ -307,6 +333,9 @@
 	if(L.stat == DEAD)
 		return TURRET_NOT_TARGET
 
+	if(emagged)		// If emagged not even the dead get a rest
+		return TURRET_PRIORITY_TARGET
+
 	if(ishuman(L))
 		return TURRET_NOT_TARGET
 
@@ -320,6 +349,21 @@
 		return FALSE
 	..()
 
+/obj/machinery/porta_turret/artificer/shootAt(var/mob/living/target)
+	var/turf/T = get_turf(src)
+	var/turf/U = get_turf(target)
+	if(!istype(T) || !istype(U))
+		return
+
+	if(!raised) //the turret has to be raised in order to fire - makes sense, right?
+		return
+
+	launch_projectile(target)
+	sleep(shot_delay)
+	launch_projectile(target)
+	sleep(shot_delay)
+	launch_projectile(target)
+
 // this turret has no cover, it is always raised
 /obj/machinery/porta_turret/artificer/popUp()
 	raised = TRUE
@@ -332,7 +376,7 @@
 	cut_overlays()
 
 	if(!(stat & BROKEN))
-		add_overlay(image("turret_gun"))
+		add_overlay(image("turret_gun_art"))
 
 /obj/machinery/porta_turret/artificer/launch_projectile()
 	ammo--
