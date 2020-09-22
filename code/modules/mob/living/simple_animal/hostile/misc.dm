@@ -250,6 +250,7 @@
 	metabolic_factor = 0.5//A multiplier on how fast nutrition is lost. used to tweak the rates on a per-animal basis
 	nutrition_step = 0.1 //nutrition lost per tick and per step, calculated from mob_size, 0.2 is a fallback
 	stop_automated_movement_when_pulled = 1 //or just drag it around since it doesn't mind.
+	break_stuff_probability = 0
 
 /mob/living/simple_animal/hostile/helldiver/FindTarget()
 	. = ..()

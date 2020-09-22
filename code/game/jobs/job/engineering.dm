@@ -40,6 +40,8 @@
 			/datum/craft_recipe/guild/railgunpistol,
 			/datum/craft_recipe/guild/railgunrifle,
 			/datum/craft_recipe/guild/mace,
+			/datum/craft_recipe/guild/claymore,
+			/datum/craft_recipe/guild/machete,
 			/datum/craft_recipe/guild/katana,
 			/datum/craft_recipe/guild/technosuit,
 			/datum/craft_recipe/guild/technohelmet,
@@ -52,7 +54,8 @@
 			/datum/craft_recipe/guild/overshooter,
 			/datum/craft_recipe/guild/dangerzone,
 			/datum/craft_recipe/guild/forged,
-			/datum/craft_recipe/guild/silencer
+			/datum/craft_recipe/guild/silencer,
+			/datum/craft_recipe/guild/turretcircuit
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -120,6 +123,8 @@
 			/datum/craft_recipe/guild/railgunpistol,
 			/datum/craft_recipe/guild/railgunrifle,
 			/datum/craft_recipe/guild/mace,
+			/datum/craft_recipe/guild/claymore,
+			/datum/craft_recipe/guild/machete,
 			/datum/craft_recipe/guild/katana,
 			/datum/craft_recipe/guild/technosuit,
 			/datum/craft_recipe/guild/technohelmet,
@@ -132,7 +137,8 @@
 			/datum/craft_recipe/guild/overshooter,
 			/datum/craft_recipe/guild/dangerzone,
 			/datum/craft_recipe/guild/forged,
-			/datum/craft_recipe/guild/silencer
+			/datum/craft_recipe/guild/silencer,
+			/datum/craft_recipe/guild/turretcircuit
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
