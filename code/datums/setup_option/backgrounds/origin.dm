@@ -112,12 +112,9 @@
 	name = "Castellen"
 	desc = "The castellen are the noble elite and highborn of the kriosan, genetically superior to the common folk they rule over but rarely found outside their own empire. \
 			Castellens are widely known for their considerable size and physical merit but lack the practical training in most areas compared to others, in particular those dealing with people or \
-			kriosans trademark rifles. A lifetime of being trained for the realm of politics and artisanship has made them quick to understand new things but abyssal at more other pursuits. \
-			On top of all that, a castellens political affiliations, be it present or former, bar them from command roles due to the very obvious conflict of interests."
+			kriosans trademark rifles. A lifetime of being trained for the realm of politics and artisanship has made them quick to understand new things but abyssal at more other pursuits."
 
 	restricted_to_species = list(FORM_KRIOSAN)
-
-	restricted_depts = COMMAND
 
 	stat_modifiers = list(
 		STAT_ROB = 5,

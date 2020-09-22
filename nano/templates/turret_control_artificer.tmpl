@@ -1,8 +1,3 @@
-<div class="item">
-	<div class="itemLabelWide">
-		Behaviour controls are {{:data.locked ? "locked" : "unlocked"}}.
-	</div>
-</div>
 <br>
 {{if data.access}}
     <div class="item">
@@ -26,14 +21,22 @@
             </div>
         </div>	
     {{/if}}
-    
-<div class="item">
-	<div class="itemLabel">
-		Cell Charge:
-	</div>
-	<div class="itemContent">
-		{{:helper.displayBar(data.cellCharge, 0, data.cellMaxCharge)}}
-	</div>
+
+	<div class="item">
+		<div class="itemLabel">
+			Cell Type:
+		</div>
+		<div class="itemContent">
+			{{:helper.link(data.cell?data.cell:'No Cell', '', { 'command' : 'eject_cell' }, !data.cell?'disabled':null)}}
+		</div>
+</div>
+	<div class="item">
+		<div class="itemLabel">
+			Cell Charge:
+		</div>
+		<div class="itemContent">
+			{{:helper.displayBar(data.cellCharge, 0, data.cellMaxCharge)}}
+		</div>
 </div>
 
     {{for data.settings}}
