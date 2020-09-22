@@ -14,8 +14,9 @@
 		input = sanitize(input(src,"Choose an emote to display.") as text|null)
 	else
 		input = message
+
 	if(input)
-		message = "<B>[src]</B> [input]"
+		message = format_emote(src, input)
 	else
 		return
 
@@ -24,6 +25,18 @@
 		log_emote("[name]/[key] : [message]")
 
 		send_emote(message, m_type, range)
+
+/mob/proc/format_emote(var/emoter = null, var/input = null)
+	var/message = "<B>[src]</B> [input]"
+
+	///List of symbols that we dont want a dot after
+	var/list/punctuation = list("!","?",".")
+
+	///Last character in the message
+	var/last_character = copytext(message,length_char(message))
+	if(!(last_character in punctuation))
+		message += "."
+	return message
 
 /mob/proc/emote_dead(var/message)
 

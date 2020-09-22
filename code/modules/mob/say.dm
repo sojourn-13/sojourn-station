@@ -16,12 +16,6 @@
 	hud_typing = FALSE
 	set_typing_indicator(FALSE)
 	if(message)
-		///List of symbols that we dont want a dot after
-		var/list/punctuation = list("!","?",".")
-		///Last character in the message
-		var/last_character = copytext(message,length_char(message))
-		if(!(last_character in punctuation))
-			message += "."
 		say_verb(message)
 
 
@@ -45,12 +39,6 @@
 	hud_typing = FALSE
 	set_typing_indicator(FALSE)
 	if(message)
-		///List of symbols that we dont want a dot after
-		var/list/punctuation = list("!","?",".")
-		///Last character in the message
-		var/last_character = copytext(message,length_char(message))
-		if(!(last_character in punctuation))
-			message += "."
 		me_verb(message)
 
 
