@@ -37,3 +37,17 @@
 
 /tipsAndTricks/gameplay/cuffHardsuit
     tipText = "People in RIG/Hardsuits need to be cuffed using zipties or cable cuffs. Normal cuffs are not large enough to cover their gauntlets."
+
+/tipsAndTricks/gameplay/dont_hoardcredits
+    tipText = "Credits come in go, hoarding a big stash of credits without any plans to spend them is a waste!"
+
+/tipsAndTricks/gameplay/dont_hoarditems
+    tipText = "Departments and factions are willing to sell many items, you should to."
+
+/tipsAndTricks/gameplay/misc_tasks
+    tipText = "Departments may be understaffed or looking for a hire to do a task, maybe ask around!"
+
+/tipsAndTricks/gameplay/body_gards
+    tipText = "Going into danger or feeling not able to handle a foe? Maybe hire a colonist as a body guard or to help with the task. It might just make their day to be useful for once."
+
+
