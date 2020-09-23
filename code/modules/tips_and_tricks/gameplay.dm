@@ -39,17 +39,17 @@
     tipText = "People in RIG/Hardsuits need to be cuffed using zipties or cable cuffs. Normal cuffs are not large enough to cover their gauntlets."
 
 /tipsAndTricks/gameplay/dont_hoardcredits
-    tipText = "Credits come in go, hoarding a big stash of credits without any plans to spend them is a waste!"
+    tipText = "Credits come and go, hoarding a big stash of credits without any plans to spend them is a waste!"
 
 /tipsAndTricks/gameplay/dont_hoarditems
-    tipText = "Departments and factions are willing to sell many items, you should to."
+    tipText = "Departments and factions are willing to sell many items, you should to. After all what's more useful, a shotgun gathering dust in a locker or the credits you made selling it?"
 
 /tipsAndTricks/gameplay/misc_tasks
     tipText = "Departments may be understaffed or looking for a hire to do a task, maybe ask around!"
 
 /tipsAndTricks/gameplay/body_gards
-    tipText = "Going into danger or feeling not able to handle a foe? Maybe hire a colonist as a body guard or to help with the task. It might just make their day to be useful for once."
+    tipText = "Are you going into danger or risking yourself in combat? Maybe hire a colonist as a body guard or medic. It might just make their day to be useful for once."
 
 /tipsAndTricks/gameplay/guncases
-    tipText = "Gun cases well cumbersome are rather good for storing guns, if your having trouble getting one you can print them in an autolthe with the Security Miscellaneous Pack."
+    tipText = "Gun cases are large and unwieldy but great for transporting rifles and certain weapons in a legal way. Security can supply you with one from their vendor or armory!"
 
