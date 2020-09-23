@@ -40,7 +40,7 @@
 	id = "Hub"
 	network = "nadezhda"
 	autolinkers = list("hub", "relay", "c_relay", "s_relay", "m_relay", "r_relay", "science", "medical",
-	"supply", "service", "common", "command", "prospector", "engineering", "security", "blackshield", "marshall", "nt", "unused",
+	"supply", "service", "common", "command", "prospector", "engineering", "security", "blackshield", "marshal", "nt", "unused",
 	"receiverA", "broadcasterA")
 
 /obj/machinery/telecomms/hub/preset_cent
@@ -66,7 +66,7 @@
 
 /obj/machinery/telecomms/receiver/preset_cent
 	id = "CentComm Receiver"
-	network = "nadezhda"
+	network = "nadezhda"	
 	produces_heat = 0
 	autolinkers = list("receiverCent")
 	freq_listening = list(DTH_FREQ)
@@ -97,7 +97,7 @@
 	id = "Bus 3"
 	network = "nadezhda"
 	freq_listening = list(SEC_FREQ, BLS_FREQ, MAR_FREQ, COMM_FREQ)
-	autolinkers = list("processor3", "security", "blackshield", "marshall", "command")
+	autolinkers = list("processor3", "security", "blackshield", "marshal", "command")
 
 /obj/machinery/telecomms/bus/preset_four
 	id = "Bus 4"
@@ -204,10 +204,10 @@
 	freq_listening = list(BLS_FREQ)
 	autolinkers = list("blackshield")
 
-/obj/machinery/telecomms/server/presets/marshall
-	id = "marshall server"
+/obj/machinery/telecomms/server/presets/marshal
+	id = "marshal server"
 	freq_listening = list(MAR_FREQ)
-	autolinkers = list("marshall")
+	autolinkers = list("marshal")
 
 /obj/machinery/telecomms/server/presets/prospector
 	id = "prospector server"
