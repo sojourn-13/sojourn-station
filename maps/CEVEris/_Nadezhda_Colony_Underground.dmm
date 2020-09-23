@@ -83482,6 +83482,10 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/medical/medbay3)
+"iFc" = (
+/obj/machinery/telecomms/server/presets/marshal,
+/turf/simulated/floor/tiled/steel/bar_light,
+/area/nadezhda/command/tcommsat/chamber)
 "iMA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/extinguisher_cabinet{
@@ -83664,10 +83668,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/server)
-"jCY" = (
-/obj/machinery/telecomms/server/presets/blackshield,
-/turf/simulated/floor/tiled/steel/bar_light,
-/area/nadezhda/command/tcommsat/chamber)
 "jEt" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -84036,10 +84036,6 @@
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/side/cavernhallway)
-"mKE" = (
-/obj/machinery/telecomms/server/presets/marshal,
-/turf/simulated/floor/tiled/steel/bar_light,
-/area/nadezhda/command/tcommsat/chamber)
 "mLo" = (
 /obj/effect/floor_decal/spline/wood,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -84226,6 +84222,10 @@
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
+"ooB" = (
+/obj/machinery/telecomms/server/presets/blackshield,
+/turf/simulated/floor/tiled/steel/bar_light,
+/area/nadezhda/command/tcommsat/chamber)
 "ovl" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/steel/panels,
@@ -119771,9 +119771,9 @@ amS
 ani
 anE
 anY
-mKE
+iFc
 aoT
-jCY
+ooB
 apB
 apU
 aqb
