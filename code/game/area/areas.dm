@@ -140,7 +140,7 @@
 /area/proc/updateicon()
 
 	///////weather
-
+/*
 	var/weather_icon
 	for(var/V in SSweather.processing)
 		var/datum/weather/W = V
@@ -149,7 +149,7 @@
 			weather_icon = TRUE
 	if(!weather_icon)
 		icon_state = null
-
+*/
 	////////////weather
 
 	if ((fire || eject || party || atmosalm == 2) && (!requires_power||power_environ) && !istype(src, /area/space))//If it doesn't require power, can still activate this proc.

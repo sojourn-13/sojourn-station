@@ -33,7 +33,6 @@
 	uniform = /obj/item/clothing/under/rank/botanist
 	suit = /obj/item/clothing/suit/rank/botanist
 	gloves = /obj/item/clothing/gloves/botanic_leather
-	r_pocket = /obj/item/device/scanner/plant
 	id_type = /obj/item/weapon/card/id/hydro
 	pda_type = /obj/item/modular_computer/pda
 
