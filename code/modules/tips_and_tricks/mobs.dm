@@ -6,27 +6,27 @@
 
 /tipsAndTricks/mobs/breathing
     mobs_list = list(/mob/living/carbon/human)
-    tipText = "As a humanoid, you need oxygen and pressure to breathe. Comfortable pressure for a humanoid is around 101kPa. Some gases, like plasma, are toxic to you. Some exceptions exist, like the opifex, who require nitrogen to breathe and treat oxygen as toxic."
+    tipText = "As an average humanoid, you need oxygen and pressure to breathe. Comfortable pressure for a humanoid is around 101kPa. Some gases, like plasma, are toxic to you. Some exceptions exist, like the opifex, who require nitrogen to breathe and treat oxygen as toxic."
 
 /tipsAndTricks/mobs/chtmant_healing
     secondary_langs = list(/datum/language/chtmant)
-    tipText = "As a cht'mant roaches may be your friends, but also delecious and healthy. Just don't indulge in to much raw meat or you'll get sick!"
+    tipText = "As a cht'mant, roaches are often times your friend but carry healing chemicals in their meat. Eating them is always beneficial but make sure you don't eat too much or you'll overdose."
 
 /tipsAndTricks/mobs/chtmant_webbing
     secondary_langs = list(/datum/language/chtmant)
-    tipText = "As a cht'mant that preferred spiders as friends, you can not only cross their webs with ease but also make your own! Stack multiple in the same spot to create pseudo walls and barricades that only you and the spiders can move through."
+    tipText = "As a cht'mant, you may find yourself a friend of spiders. You never get caught in spider webs and can create your own, but make sure not to do that in a public space or security may arrest you!"
 
 /tipsAndTricks/mobs/chtmant_channle
     secondary_langs = list(/datum/language/chtmant)
-    tipText = "As a cht'mant, using '',o'' will talk into a hivemind letting all other cht'mants get your message. This does not need power and works even in deep jungles or down in mines."
-
+    tipText = "As a cht'mant, using ',o' will allow you to speak within your hivemind, allowing all other cht'mants to hear you no matter where you are at, including the deep forest, mines, and mountaintop!"
+    
 /tipsAndTricks/mobs/chtmant_metal_bad
     secondary_langs = list(/datum/language/chtmant)
-    tipText = "As a cht'mant, metal inside you is poision.  Prosthetics, augments and shrapnel will give you toxins and hallucinations, best to avoid them entirely."
+    tipText = "As a cht'mant, metal is toxic when inside you.  Prosthetics, augments, and shrapnel will give you toxins and hallucinations, it is best to avoid them entirely."
 
 /tipsAndTricks/mobs/chtmant_toxic
     secondary_langs = list(/datum/language/chtmant)
-    tipText = "As a cht'mant, you can check yourself and if something feels not well within, that means you have some toxin damage."
+    tipText = "As a cht'mant, you can check yourself and feel if something is wrong, often times alerting you to toxin damage you would otherwise not feel due to your pain immunity."
 
 
 
