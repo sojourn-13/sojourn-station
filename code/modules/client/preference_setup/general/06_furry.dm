@@ -167,7 +167,7 @@ datum/preferences
 	if(href_list["marking_add"])
 		var/new_marking = input(user, "Choose a marking to add:", CHARACTER_PREFERENCE_INPUT_TITLE, null) as null|anything in GLOB.body_marking_list - pref.body_markings
 		if(new_marking && CanUseTopic(user))
-			pref.body_markings.[new_marking] = "#000000"
+			pref.body_markings[new_marking] = "#000000"
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["marking"])
 		if(CanUseTopic(user))

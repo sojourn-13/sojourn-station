@@ -1131,10 +1131,6 @@ var/list/rank_prefix = list(\
 	if(default_color)
 		skin_color = form.base_color
 
-#define MODIFICATION_ORGANIC 1
-#define MODIFICATION_SILICON 2
-#define MODIFICATION_REMOVED 3
-
 //Needed for augmentation
 /mob/living/carbon/human/proc/rebuild_organs(from_preference)
 	if(!species)
