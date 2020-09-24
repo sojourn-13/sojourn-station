@@ -75,7 +75,7 @@
 	ks1type = /obj/item/device/encryptionkey/binary
 
 /obj/item/device/radio/headset/headset_sec
-	name = "security radio headset"
+	name = "marshal radio headset"
 	desc = "This is used by your elite security force. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "sec_headset"
 	item_state = "headset"
@@ -83,7 +83,7 @@
 	ks2type = /obj/item/device/encryptionkey/headset_sec
 
 /obj/item/device/radio/headset/headset_blackshield
-	name = "security radio headset"
+	name = "blackshield radio headset"
 	desc = "This is used by your elite security force. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "bs_headset"
 	item_state = "headset"
@@ -155,7 +155,7 @@
 	ks2type = /obj/item/device/encryptionkey/heads/moebius
 
 /obj/item/device/radio/headset/heads/hos
-	name = "security commander headset"
+	name = "warrant officer headset"
 	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "wo_headset"
 	item_state = "headset"
@@ -163,7 +163,7 @@
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
 /obj/item/device/radio/headset/heads/bscom
-	name = "security commander headset"
+	name = "blackshield commander headset"
 	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "bscom_headset"
 	item_state = "headset"
