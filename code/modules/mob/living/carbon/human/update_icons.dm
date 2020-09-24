@@ -1398,8 +1398,6 @@ mob/living/carbon/human/proc/get_wings_image()
 #undef LEGCUFF_LAYER
 #undef L_HAND_LAYER
 #undef R_HAND_LAYER
-#undef TARGETED_LAYER
 #undef FIRE_LAYER
-#undef CUSTOM_WING_LAYER
 #undef CUSTOM_TAIL_LAYER_ALT
 #undef TOTAL_LAYERS

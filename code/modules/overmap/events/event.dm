@@ -25,9 +25,9 @@
 //			world << "No candidate_tufs"
 			break
 //		var/overmap_event_type = pick(subtypesof(/datum/overmap_event))
-//		if(!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail) && \
-		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_medium) && \
-		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_core))
+//		if(!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail) &&
+//		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_medium) &&
+//		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_core))
 //			var/datum/overmap_event/overmap_event = new overmap_event_type
 
 //			var/list/event_turfs = acquire_event_turfs(overmap_event.count, overmap_event.radius, candidate_turfs, overmap_event.continuous)
@@ -144,9 +144,9 @@
 		admin_notice("<span class='danger'>Event manager not setup.</span>")
 		return
 //	if(victim in victims)
-//		if(!istype(src, /datum/overmap_event/meteor/comet_tail_core) && \
-		!istype(src, /datum/overmap_event/meteor/comet_tail_medium)  && \
-		!istype(src, /datum/overmap_event/meteor/comet_tail))
+//		if(!istype(src, /datum/overmap_event/meteor/comet_tail_core) &&
+//		!istype(src, /datum/overmap_event/meteor/comet_tail_medium)  &&
+//		!istype(src, /datum/overmap_event/meteor/comet_tail))
 //			admin_notice("<span class='danger'>Multiple attempts to trigger the same event by [victim] detected.</span>")
 //			return
 	LAZYADD(victims, victim)

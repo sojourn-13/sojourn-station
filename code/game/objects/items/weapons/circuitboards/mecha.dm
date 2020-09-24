@@ -19,6 +19,3 @@
 	build_name = "weapon control and targeting"
 	icon_state = "mcontroller"
 	origin_tech = list(TECH_DATA = 4, TECH_COMBAT = 4)
-
-//Undef the macro, shouldn't be needed anywhere else
-#undef T_BOARD_MECHA
