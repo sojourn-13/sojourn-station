@@ -27,7 +27,7 @@
 
 /decl/hierarchy/outfit/job/security/smc
 	name = OUTFIT_JOB_NAME("Blackshield - Blackshield Commander")
-	l_ear = /obj/item/device/radio/headset/heads/hos
+	l_ear = /obj/item/device/radio/headset/heads/bscom
 	uniform = /obj/item/clothing/under/rank/commander
 	suit = /obj/item/clothing/suit/armor/commander/militia
 	l_pocket = /obj/item/device/flash
@@ -52,6 +52,7 @@
 
 /decl/hierarchy/outfit/job/security/serg
 	name = OUTFIT_JOB_NAME("Blackshield - Sergeant")
+	l_ear = /obj/item/device/radio/headset/headset_blackshield
 	uniform = /obj/item/clothing/under/instructor
 	head = /obj/item/clothing/head/rank/instructor_hat
 	glasses = /obj/item/clothing/glasses/ballistic
@@ -81,6 +82,7 @@
 /decl/hierarchy/outfit/job/security/medspec
 	name = OUTFIT_JOB_NAME("Blackshield - Corpsman")
 	l_pocket = /obj/item/device/flash
+	l_ear = /obj/item/device/radio/headset/headset_blackshield
 	id_type = /obj/item/weapon/card/id/medcpec
 	uniform = /obj/item/clothing/under/rank/corpsman
 	head = /obj/item/clothing/head/rank/corpsman/beret
@@ -101,6 +103,7 @@
 
 /decl/hierarchy/outfit/job/security/troop
 	name = OUTFIT_JOB_NAME("Blackshield - Trooper")
+	l_ear = /obj/item/device/radio/headset/headset_blackshield
 	l_pocket = /obj/item/device/flash
 	uniform = /obj/item/clothing/under/rank/trooper
 	mask = /obj/item/clothing/mask/balaclava/tactical

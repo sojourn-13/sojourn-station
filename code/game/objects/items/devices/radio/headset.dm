@@ -82,6 +82,14 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_sec
 
+/obj/item/device/radio/headset/headset_blackshield
+	name = "security radio headset"
+	desc = "This is used by your elite security force. This has a small symbol denoting its built in back-up transmitter."
+	icon_state = "bs_headset"
+	item_state = "headset"
+	adhoc_fallback = TRUE
+	ks2type = /obj/item/device/encryptionkey/headset_sec
+
 /obj/item/device/radio/headset/headset_eng
 	name = "guild radio headset"
 	desc = "When the adepts wish to chat like girls."
@@ -149,11 +157,18 @@
 /obj/item/device/radio/headset/heads/hos
 	name = "security commander headset"
 	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
-	icon_state = "com_headset"
+	icon_state = "wo_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
+/obj/item/device/radio/headset/heads/bscom
+	name = "security commander headset"
+	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
+	icon_state = "bscom_headset"
+	item_state = "headset"
+	adhoc_fallback = TRUE
+	ks2type = /obj/item/device/encryptionkey/heads/hos
 /obj/item/device/radio/headset/heads/ce
 	name = "guild master's headset"
 	desc = "The headset of the guy who is in charge of morons"
