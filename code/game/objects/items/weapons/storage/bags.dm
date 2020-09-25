@@ -289,3 +289,21 @@
 	. = ..()
 	if(prob(20))
 		icon_state = "moneybagalt"
+
+// -----------------------------
+//          Chemistry bag
+// -----------------------------
+
+/obj/item/weapon/storage/bag/chemistry
+	name = "chemistry bag"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "chemistry_bag"
+	storage_slots = 50
+	max_storage_space = 100
+	max_w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_NORMAL
+	display_contents_with_number = TRUE
+	can_hold = list(/obj/item/weapon/reagent_containers/pill,
+		/obj/item/weapon/reagent_containers/glass/beaker,
+		/obj/item/weapon/reagent_containers/glass/bottle
+	)
