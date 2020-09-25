@@ -640,7 +640,7 @@
 
 	M.faction = "roach"
 
-/datum/reagent/toxin/fuhrerole/on_mob_delete((mob/living/carbon/L)
+/datum/reagent/toxin/fuhrerole/on_mob_delete(mob/living/carbon/L)
 	..()
 	if(L.species?.reagent_tag == IS_CHTMANT)
 		return
