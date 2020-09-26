@@ -629,18 +629,21 @@
 	heating_products = list("radium", "mercury", "lithium", "nutriment")
 
 
-
 /datum/reagent/toxin/fuhrerole/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.faction = "roach"
+	..()
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		var/mob/living/carbon/human/H = M
 		for(var/obj/item/organ/I in H.internal_organs)
-			if((I.damage > 0) && !BP_IS_ROBOTIC(I)) //Peridaxon heals only non-robotic organs
+			if((I.damage > 0) && !BP_IS_ROBOTIC(I)) //Chtmants are not meant to have robotic organs!
 				I.heal_damage(((0.2 + I.damage * 0.05) * effect_multiplier), FALSE)
 		return
 
-/datum/reagent/toxin/fuhrerole/on_mob_delete(mob/living/L)
+	M.faction = "roach"
+
+/datum/reagent/toxin/fuhrerole/on_mob_delete(mob/living/carbon/L)
 	..()
+	if(L.species?.reagent_tag == IS_CHTMANT)
+		return
 	L.faction = initial(L.faction)
 
 /datum/reagent/toxin/fuhrerole/withdrawal_act(mob/living/carbon/M)
