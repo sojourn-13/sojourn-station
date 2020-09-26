@@ -26,10 +26,16 @@
 	translate_binary = 1
 	origin_tech = list(TECH_ILLEGAL = 3)
 
-/obj/item/device/encryptionkey/headset_sec
+/obj/item/device/encryptionkey/headset_bs
 	name = "security radio encryption key"
 	icon_state = "sec_cypherkey"
 	channels = list( "Blackshield" = 1, "Marshal" = 1)
+
+
+/obj/item/device/encryptionkey/headset_mar
+	name = "security radio encryption key"
+	icon_state = "sec_cypherkey"
+	channels = list( "Marshal" = 1, "Blackshield" = 1)
 
 /obj/item/device/encryptionkey/headset_eng
 	name = "guild radio encryption key"
