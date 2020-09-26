@@ -99,6 +99,7 @@
 	item_charge_meter = TRUE
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	twohanded = TRUE
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
@@ -153,7 +154,7 @@
 	projectile_type = /obj/item/projectile/beam
 	suitable_cell = /obj/item/weapon/cell/medium
 	charge_cost = 25 // 4 bursts with a 800m cell
-
+	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
 		BURST_8_ROUND,
 		FULL_AUTO_400
@@ -224,8 +225,8 @@
 	matter = list(MATERIAL_STEEL = 12)
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
-	one_hand_penalty = 10
 	price_tag = 1000
+	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
