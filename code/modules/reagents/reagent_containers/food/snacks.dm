@@ -3050,3 +3050,11 @@
 	nutriment_desc = list("bread" = 2, "sweetness" = 3)
 	nutriment_amt = 6
 
+/obj/item/weapon/reagent_containers/food/snacks/organ
+	name = "organ"
+	desc = "Technically qualifies as organic."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "appendix"
+	filling_color = "#E00D34"
+	bitesize = 3
+	nutriment_amt = 5
