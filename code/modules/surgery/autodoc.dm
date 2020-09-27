@@ -9,15 +9,15 @@
 #define AUTODOC_DIALYSIS		(1 << 7)
 #define AUTODOC_DIALYSIS_AMOUNT 5
 
-#define AUTODOC_SCAN_COST           200
-#define AUTODOC_DAMAGE_COST         800
-#define AUTODOC_EMBED_OBJECT_COST	1000
-#define AUTODOC_FRACTURE_COST       1200
-#define AUTODOC_IB_COST				1200
-#define AUTODOC_OPEN_WOUNDS_COST    600
-#define AUTODOC_BLOOD_COST          800
-#define AUTODOC_TOXIN_COST			600
-#define AUTODOC_DIALYSIS_COST		1000
+#define AUTODOC_SCAN_COST           50
+#define AUTODOC_DAMAGE_COST         200
+#define AUTODOC_EMBED_OBJECT_COST	500
+#define AUTODOC_FRACTURE_COST       600
+#define AUTODOC_IB_COST				100
+#define AUTODOC_OPEN_WOUNDS_COST    200
+#define AUTODOC_BLOOD_COST          300
+#define AUTODOC_TOXIN_COST			200
+#define AUTODOC_DIALYSIS_COST		250
 
 /datum/autodoc_patchnote
 	var/surgery_operations = 0
