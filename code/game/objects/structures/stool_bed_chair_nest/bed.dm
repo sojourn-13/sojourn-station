@@ -275,7 +275,7 @@
 	slot_flags = NONE
 	w_class = ITEM_SIZE_NORMAL
 	structure_form_type = /obj/structure/bed/roller/compact
-	matter = list(MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1)
+	matter = list(MATERIAL_PLASTIC = 20, MATERIAL_PLASTEEL = 5)
 
 /obj/item/roller/attack_self(mob/user)
 	deploy(user)
