@@ -31424,6 +31424,10 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
+"gSd" = (
+/mob/living/carbon/superior_animal/roach/kaiser,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/dungeon/outside/trashcave)
 "hbU" = (
 /obj/structure/boulder,
 /obj/structure/grille,
@@ -44355,7 +44359,7 @@ bdH
 acK
 aSv
 aSa
-aSa
+gSd
 aSa
 aSp
 bjm
