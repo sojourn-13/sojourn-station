@@ -145,3 +145,16 @@
 	display_name = "neon tracksuits, color presets"
 	path = /obj/item/clothing/under/neon
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/generic
+	display_name = "generic outfit, color presets"
+	path = /obj/item/clothing/under/genericb
+
+/datum/gear/uniform/generic/New()
+	..()
+	var/generic = list(
+		"blue" = /obj/item/clothing/under/genericb,
+		"red" = /obj/item/clothing/under/genericr,
+		"white" = /obj/item/clothing/under/genericw
+	)
+	gear_tweaks += new /datum/gear_tweak/path(generic)
