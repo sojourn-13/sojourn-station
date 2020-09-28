@@ -243,7 +243,7 @@
 	name = "wooden plank"
 	icon_state = "sheet-wood"
 	default_type = MATERIAL_WOOD
-	price_tag = 5
+	price_tag = 1 //Way to easy to get on mass.
 
 /obj/item/stack/material/wood/random
 	rand_min = 3
@@ -313,7 +313,7 @@
 	singular_name = "biomatter sheet"
 	icon_state = "sheet-biomatter"
 	default_type = MATERIAL_BIOMATTER
-	price_tag = 10
+	price_tag = 1 //to keep biomatter in the player economy as the church and science use it.
 	var/biomatter_in_sheet = 1
 
 /obj/item/stack/material/biomatter/random

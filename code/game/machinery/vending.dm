@@ -1231,6 +1231,7 @@
 	/obj/item/ammo_magazine/smg_35 = 5,
 	/obj/item/ammo_magazine/speed_loader_magnum_40 = 5,
 	/obj/item/ammo_magazine/light_rifle_257 = 3,
+	/obj/item/ammo_magazine/speed_loader_rifle_75 = 4,
 	/obj/item/ammo_magazine/ammobox/pistol_35 =3,
 	/obj/item/ammo_magazine/ammobox/magnum_40 = 3,
 	/obj/item/weapon/storage/box/shotgunammo/slug = 2,
@@ -1264,13 +1265,14 @@
 	/obj/item/ammo_magazine/ammobox/magnum_40/practice = 225,
 	/obj/item/weapon/storage/box/shotgunammo/beanbags = 800,
 	/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber = 350,
+	/obj/item/ammo_magazine/light_rifle_257/rubber = 150,
 	/obj/item/weapon/storage/box/shotgunammo/flashshells = 400,
 	/obj/item/weapon/storage/box/shotgunammo/blanks = 50,
 	/obj/item/clothing/accessory/holster = 150,
 	/obj/item/weapon/storage/pouch/pistol_holster =150,
 	/obj/item/weapon/gun_upgrade/mechanism/weintraub = 1000,
 	/obj/item/weapon/storage/pouch/ammo = 100,
-	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 100,
+	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 600,
 	/obj/item/ammo_magazine/speed_loader_pistol_35 = 80,
 	/obj/item/ammo_magazine/pistol_35 = 120,
 	/obj/item/ammo_magazine/highcap_pistol_35 = 180,
@@ -1281,8 +1283,10 @@
 	/obj/item/weapon/storage/box/shotgunammo/slug = 800,
 	/obj/item/weapon/storage/box/shotgunammo/buckshot = 800,
 	/obj/item/ammo_magazine/ammobox/light_rifle_257 = 350,
+	/obj/item/ammo_magazine/speed_loader_rifle_75 = 500,
+	/obj/item/ammo_magazine/light_rifle_257 = 350,
 	/obj/item/weapon/storage/briefcase/rifle = 150, //SoJ change makes rifle cases 150 credits
-	/obj/item/weapon/tool/knife/tacknife = 200,)
+	/obj/item/weapon/tool/knife/tacknife = 200)
 
 //This one's from bay12
 /obj/machinery/vending/cart
