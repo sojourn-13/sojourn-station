@@ -60,7 +60,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/guest_jobban = 1
 	var/usewhitelist = 0
 	var/kick_inactive = 0				//force disconnect for inactive players after this many minutes, if non-0
-	var/show_mods = 0
+	var/show_mods = 1
 	var/show_mentors = 0
 	var/mods_can_tempban = 0
 	var/mods_can_job_tempban = 0
