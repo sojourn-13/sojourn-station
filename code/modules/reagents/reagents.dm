@@ -54,7 +54,8 @@
 
 	// Catalog stuff
 	var/appear_in_default_catalog = TRUE
-	var/reagent_type = "FIX DAT SHIT IMIDIATLY"
+	var/reagent_type = "404: ERROR FILE NOT FOUND!"
+	var/price_per_unit = 1 //por cargo rework
 
 /datum/reagent/proc/remove_self(amount) // Shortcut
 	if(holder) //Apparently it's possible to have holderless reagents.
