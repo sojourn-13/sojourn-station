@@ -46,6 +46,9 @@
 		add_overlay(image(icon,"mine_light"))
 
 /obj/item/weapon/mine/attack_self(var/mob/user)
+	if(locate(/obj/structure/multiz/ladder) in get_turf(user))
+		to_chat(user, SPAN_NOTICE("You cannot place \the [src] here, there is a ladder."))
+		return
 	if(!armed)
 		user.visible_message(
 			SPAN_DANGER("[user] starts to deploy \the [src]."),
