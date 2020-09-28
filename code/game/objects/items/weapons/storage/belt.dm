@@ -138,6 +138,14 @@
 		/obj/item/weapon/tool/hemostat,
 		/obj/item/weapon/reagent_containers/pill,
 		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/bodybag/cryobag,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses,
+		/obj/item/weapon/reagent_containers/blood,
+		/obj/item/taperoll/medical,
+		/obj/item/weapon/tool/crowbar,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses
 	)
 
 /obj/item/weapon/storage/belt/medical/emt
