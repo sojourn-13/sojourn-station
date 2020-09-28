@@ -178,7 +178,7 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_
 	if(frequency == SEC_FREQ)
 		return "secradio"
 	if(frequency == BLS_FREQ)
-		return "secradio"
+		return "bsradio"
 	if(frequency == MAR_FREQ)
 		return "secradio"
 	if (frequency == ENG_FREQ)
