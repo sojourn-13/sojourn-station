@@ -106,3 +106,11 @@
 		list(/obj/item/stack/rods, 3),
 		list(QUALITY_WELDING, 10, 20)
 	)
+
+/datum/craft_recipe/furniture/dryingrack
+	name = "drying rack"
+	result = /obj/machinery/smartfridge/drying_rack
+	time = 90
+	steps = list(
+		list(CRAFT_MATERIAL, 20, MATERIAL_WOOD)
+	)

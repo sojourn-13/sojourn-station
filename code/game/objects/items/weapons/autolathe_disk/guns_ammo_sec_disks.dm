@@ -593,7 +593,7 @@
 	disk_name = "SA - 7.5mm Novakovic Rifle"
 	icon_state = "black"
 
-	license = -1
+	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/boltgun_sa,
 		/datum/design/autolathe/ammo/sl_rifle,

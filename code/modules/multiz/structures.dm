@@ -171,6 +171,33 @@
 		M.forceMove(T)
 		try_resolve_mob_pulling(M, src)
 
+/obj/structure/multiz/ladder/AltClick(var/mob/living/carbon/human/user)
+	if(get_dist(src, user) <= 3)
+		if(!user.is_physically_disabled())
+			if(target)
+				if(user.client)
+					if(user.is_watching == 1)
+						to_chat(user, SPAN_NOTICE("You look [istop ? "down" : "up"] \the [src]."))
+						user.client.eye = user.client.mob
+						user.client.perspective = MOB_PERSPECTIVE
+						user.hud_used.updatePlaneMasters(user)
+						user.is_watching = 0
+					else if(user.is_watching == 0)
+						user.client.eye = target
+						user.client.perspective = EYE_PERSPECTIVE
+						user.hud_used.updatePlaneMasters(user)
+						user.is_watching = 1
+				return
+		else
+			to_chat(user, SPAN_NOTICE("You can't do it right now."))
+		return
+	else
+		user.client.eye = user.client.mob
+		user.client.perspective = MOB_PERSPECTIVE
+		user.hud_used.updatePlaneMasters(user)
+		user.is_watching = 0
+		return
+
 ////STAIRS////
 
 /obj/structure/multiz/stairs
@@ -237,6 +264,33 @@
 /obj/structure/multiz/stairs/active/attack_hand(mob/user)
 	. = ..()
 	Bumped(user)
+
+/obj/structure/multiz/stairs/AltClick(var/mob/living/carbon/human/user)
+	if(get_dist(src, user) <= 7)
+		if(!user.is_physically_disabled())
+			if(target)
+				if(user.client)
+					if(user.is_watching == 1)
+						to_chat(user, SPAN_NOTICE("You look [istop ? "down" : "up"] \the [src]."))
+						user.client.eye = user.client.mob
+						user.client.perspective = MOB_PERSPECTIVE
+						user.hud_used.updatePlaneMasters(user)
+						user.is_watching = 0
+					else if(user.is_watching == 0)
+						user.client.eye = target
+						user.client.perspective = EYE_PERSPECTIVE
+						user.hud_used.updatePlaneMasters(user)
+						user.is_watching = 1
+				return
+		else
+			to_chat(user, SPAN_NOTICE("You can't do it right now."))
+		return
+	else
+		user.client.eye = user.client.mob
+		user.client.perspective = MOB_PERSPECTIVE
+		user.hud_used.updatePlaneMasters(user)
+		user.is_watching = 0
+		return
 
 /obj/structure/multiz/stairs/active/bottom
 	icon_state = "rampup"

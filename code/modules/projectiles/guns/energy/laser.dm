@@ -294,6 +294,7 @@
 	icon_state = "laser_turret"
 	damage_multiplier = 0.9
 	charge_meter = FALSE
+	twohanded = FALSE
 
 /obj/item/weapon/gun/energy/laser/railgun/mounted
 	name = "SDF SC \"Schrapnell\""
@@ -305,3 +306,4 @@
 	restrict_safety = TRUE
 	consume_cell = FALSE
 	cell_type = /obj/item/weapon/cell/small/high //Two shots
+	twohanded = FALSE

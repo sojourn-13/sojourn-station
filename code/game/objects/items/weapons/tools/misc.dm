@@ -162,6 +162,7 @@
 	suitable_cell = null
 	degradation = 0
 	max_upgrades = 0
+	workspeed = 1
 	//matter = list(MATERIAL_BIOMATTER = 10) No
 
 /obj/item/weapon/tool/engimplant
@@ -191,6 +192,7 @@
 	suitable_cell = null
 	degradation = 0
 	max_upgrades = 0
+	workspeed = 1
 
 /obj/item/weapon/tool/engimplant/Destroy() // code for omnitool buffers was copied from multitools.dm
 	unregister_buffer(buffer_object)

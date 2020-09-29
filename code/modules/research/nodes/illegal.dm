@@ -30,7 +30,7 @@
 
 
 /datum/technology/night_sight
-	name = "Undark Vision"
+	name = "Vision Augmentation"
 	desc = "A better look into the shadows that hunt the station, allows for the manufacturing of night vision goggles and RIG night vison huds "
 	tech_type = RESEARCH_ILLEGAL
 
@@ -44,7 +44,9 @@
 
 	unlocks_designs = list(/datum/design/research/item/night_goggles,
 							/datum/design/research/item/rig_nvgoggles,
-							/datum/design/research/item/glowstick)
+							/datum/design/research/item/glowstick,
+							/datum/design/research/item/mechfab/modules/hud/thermal,
+							/datum/design/research/item/mechfab/modules/hud/night)
 
 
 /datum/technology/chameleon_kit
