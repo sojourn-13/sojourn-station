@@ -80,7 +80,7 @@
 	icon_state = "sec_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
-	ks2type = /obj/item/device/encryptionkey/headset_sec
+	ks2type = /obj/item/device/encryptionkey/headset_mar
 
 /obj/item/device/radio/headset/headset_blackshield
 	name = "blackshield radio headset"
@@ -88,7 +88,7 @@
 	icon_state = "bs_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
-	ks2type = /obj/item/device/encryptionkey/headset_sec
+	ks2type = /obj/item/device/encryptionkey/headset_bs
 
 /obj/item/device/radio/headset/headset_eng
 	name = "guild radio headset"
