@@ -459,7 +459,8 @@
 
 	unlocks_designs = list(	/datum/design/research/item/rig_drill,
 							/datum/design/research/item/rig_anomaly_scanner,
-							/datum/design/research/item/rig_ore_scanner
+							/datum/design/research/item/rig_ore_scanner,
+							/datum/design/research/item/rig_meason_goggles
 							)
 
 

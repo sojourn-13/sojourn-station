@@ -249,7 +249,8 @@
 	cost = 1000
 
 	unlocks_designs = list(/datum/design/research/item/weapon/soteriaarmorchest,
-							 /datum/design/research/item/weapon/soteriaarmorhead)
+							 /datum/design/research/item/weapon/soteriaarmorhead,
+							 /datum/design/research/item/rig_cheap)
 
 /datum/technology/advanced_armor
 	name = "Advanced Armor Designs"

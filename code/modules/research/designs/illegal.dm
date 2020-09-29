@@ -16,8 +16,12 @@
 /datum/design/research/item/rig_nvgoggles
 	name = "Night Vison Hardsuit Goggles"
 	desc = "Hardsuit linked goggles that allow the user to see in darkness as if it was day."
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_PLASTIC = 10, MATERIAL_URANIUM = 2) //Sheet for each eye!
 	build_path = /obj/item/rig_module/vision/nvg
+
+/datum/design/research/item/rig_thermalgoggles
+	name = "Thermal Vison Hardsuit Goggles"
+	desc = "Hardsuit linked goggles that allow the user to see in darkness as if it was day."
+	build_path = /obj/item/rig_module/vision/thermal
 
 /datum/design/research/item/glowstick
 	name = "Undark Glowstick"
