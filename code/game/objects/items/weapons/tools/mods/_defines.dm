@@ -67,6 +67,7 @@
 #define GUN_UPGRADE_CHARGECOST "chargecost_mult"
 #define GUN_UPGRADE_OVERCHARGE_MAX "overcharge_max_mult"
 #define GUN_UPGRADE_OVERCHARGE_RATE "overcharge_rate_mult"
+#define GUN_UPGRADE_MELEE_DAMAGE "melee_damage"
 
 //Int additive
 #define GUN_UPGRADE_DAMAGEMOD_PLUS "damage_plus"
@@ -101,6 +102,7 @@
 #define GUN_SCOPE "scope slot"
 #define GUN_MECHANISM "misc slot"
 #define GUN_GRIP "grip slot"
+#define GUN_KNIFE "knife slot"
 
 //Whitelist Tag defines
 #define GUN_SILENCABLE "silencable"
@@ -109,5 +111,5 @@
 #define GUN_LASER "laser firing"
 #define GUN_REVOLVER "revolver"
 #define GUN_INTERNAL_MAG "internal mag"
-
+#define GUN_BAYONET "bayonet"
 #define GUN_CALIBRE_35 "caliber .35"

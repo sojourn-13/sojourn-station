@@ -25,7 +25,7 @@
 	var/bolt_open = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") // Considering attached bayonet
 	sharp = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn
 
@@ -127,6 +127,7 @@
 	one_hand_penalty = 50 //No trick shots
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/scout
 
@@ -174,6 +175,7 @@
 	damage_multiplier = 0.9
 	fire_delay = 18
 	one_hand_penalty = 10
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE
 
