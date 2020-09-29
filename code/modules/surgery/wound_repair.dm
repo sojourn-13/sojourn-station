@@ -29,12 +29,14 @@
 // Brute Heal Surgery
 
 /datum/old_surgery_step/external/brute_heal
-	allowed_tools = list(/obj/item/stack/medical/advanced/bruise_pack = 100)
+	allowed_tools = list(/obj/item/stack/medical/advanced/bruise_pack = 100, /obj/item/stack/medical/advanced/mending_ichor = 100)
 
 /datum/old_surgery_step/external/brute_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
 	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
 		tool_name = "regenerative membrane"
+	if (istype(tool, /obj/item/stack/medical/advanced/mending_ichor))
+		tool_name = "mending ichor"
 
 	if (!hasorgans(target))
 		return
@@ -62,7 +64,7 @@
 			user.visible_message(SPAN_NOTICE("[user] treats the brute damage to [target]'s body with the [tool_name]."), \
 			SPAN_NOTICE("You treat the brute damage to [target]'s body with [tool_name].") )
 			if(tool.use(1))
-				target.adjustBruteLoss(-15)
+				target.adjustBruteLoss(-30)
 
 /datum/old_surgery_step/external/brute_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 
@@ -89,12 +91,14 @@
 // Burn Heal Surgery
 
 /datum/old_surgery_step/external/burn_heal
-	allowed_tools = list(/obj/item/stack/medical/advanced/ointment = 100)
+	allowed_tools = list(/obj/item/stack/medical/advanced/ointment = 100, /obj/item/stack/medical/advanced/regenerative_ichor = 100)
 
 /datum/old_surgery_step/external/burn_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
 	if (istype(tool, /obj/item/stack/medical/advanced/ointment))
 		tool_name = "regenerative graft"
+	if (istype(tool, /obj/item/stack/medical/advanced/regenerative_ichor))
+		tool_name = "regenerative ichor"
 
 	if (!hasorgans(target))
 		return
@@ -122,7 +126,7 @@
 			user.visible_message(SPAN_NOTICE("[user] treats the burn damage to [target]'s body with the [tool_name]."), \
 			SPAN_NOTICE("You treat the burn damage to [target]'s body with [tool_name].") )
 			if(tool.use(1))
-				target.adjustFireLoss(-15)
+				target.adjustFireLoss(-30)
 
 
 /datum/old_surgery_step/external/burn_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
@@ -142,12 +146,14 @@
 // Toxin Heal Surgery
 
 /datum/old_surgery_step/external/tox_heal
-	allowed_tools = list(/obj/item/stack/nanopaste = 100)
+	allowed_tools = list(/obj/item/stack/nanopaste = 100, /obj/item/stack/ichor/purging_ichor = 100)
 
 /datum/old_surgery_step/external/tox_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
 	if (istype(tool, /obj/item/stack/nanopaste))
 		tool_name = "nanite swarm"
+	if (istype(tool, /obj/item/stack/ichor/purging_ichor))
+		tool_name = "purging ichor"
 
 	if (!hasorgans(target))
 		return
@@ -174,9 +180,8 @@
 		if (target.getToxLoss() >= 0)
 			user.visible_message(SPAN_NOTICE("[user] finishess filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
 			SPAN_NOTICE("You finish filtering out any toxins to [target]'s body and repairing any neural degradation with the [tool_name].") )
-			if(tool.use(1))
-				target.adjustToxLoss(-200)
-				target.timeofdeath = 99999999
+			target.adjustToxLoss(-200)
+			target.timeofdeath = 99999999
 
 
 /datum/old_surgery_step/external/tox_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)

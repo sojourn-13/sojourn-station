@@ -2,15 +2,15 @@
 	name = "medical pack"
 	singular_name = "medical pack"
 	icon = 'icons/obj/stack/items.dmi'
-	amount = 5
-	max_amount = 5
+	amount = 10
+	max_amount = 10
 	w_class = ITEM_SIZE_SMALL
 	throw_speed = 4
 	throw_range = 20
 	var/heal_brute = 0
 	var/heal_burn = 0
 	price_tag = 10
-	matter = list(MATERIAL_BIOMATTER = 5)
+	matter = list(MATERIAL_BIOMATTER = 1)
 	var/automatic_charge_overlays = FALSE	//Do we handle over-lays with base update_icon()? | Stolen from TG egun code
 	var/charge_sections = 5		// How many indicator blips are there?
 	var/charge_x_offset = 2		//The spacing between each charge indicator. Should be 2 to leave a 1px gap between each blip.
@@ -273,6 +273,7 @@
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
+	matter = list(MATERIAL_BIOMATTER = 2.5)
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -369,6 +370,7 @@
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
+	matter = list(MATERIAL_BIOMATTER = 2.5)
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -493,3 +495,168 @@
 			else
 				use(1)
 		return
+
+obj/item/stack/medical/advanced/mending_ichor
+	name = "mending ichor"
+	singular_name = "mending ichor"
+	desc = "An ichor that can be used to mend physical trauma."
+	icon_state = "mending_ichor"
+	heal_brute = 8
+	origin_tech = list(TECH_BIO = 2)
+	automatic_charge_overlays = FALSE
+	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
+	splittable = FALSE	// Is the stack capable of being splitted?
+	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
+	matter = list(MATERIAL_BIOMATTER = 2.5)
+
+/obj/item/stack/medical/advanced/mending_ichor/attack(mob/living/carbon/M, mob/living/user)
+	if(..())
+		return 1
+
+	if(amount < 1)
+		return
+
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/H = M
+	var/obj/item/organ/external/affecting = H.get_organ(user.targeted_organ)
+
+	if(!affecting)
+		to_chat(user, SPAN_WARNING("What [user.targeted_organ]?"))
+		return TRUE
+
+	if(affecting.open == 0)
+		if(affecting.is_bandaged() && affecting.is_disinfected())
+			to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been treated."))
+			return 1
+		else
+			user.visible_message(
+				SPAN_NOTICE("\The [user] starts treating [M]'s [affecting.name]."),
+				SPAN_NOTICE("You start treating [M]'s [affecting.name].")
+			)
+			var/used = 0
+			for (var/datum/wound/W in affecting.wounds)
+				if (W.internal)
+					continue
+				if (W.bandaged && W.disinfected)
+					continue
+				if(used == amount)
+					break
+				if(!do_mob(user, M, W.damage/5))
+					to_chat(user, SPAN_NOTICE("You must stand still to bandage wounds."))
+					break
+				if (W.current_stage <= W.max_bleeding_stage)
+					user.visible_message(
+						SPAN_NOTICE("\The [user] cleans \a [W.desc] on [M]'s [affecting.name] and seals the edges with bioglue."),
+						SPAN_NOTICE("You clean and seal \a [W.desc] on [M]'s [affecting.name].")
+					)
+				else if (W.damage_type == BRUISE)
+					user.visible_message(
+						SPAN_NOTICE("\The [user] places a medical patch over \a [W.desc] on [M]'s [affecting.name]."),
+						SPAN_NOTICE("You place a medical patch over \a [W.desc] on [M]'s [affecting.name].")
+					)
+				else
+					user.visible_message(
+						SPAN_NOTICE("\The [user] smears some bioglue over \a [W.desc] on [M]'s [affecting.name]."),
+						SPAN_NOTICE("You smear some bioglue over \a [W.desc] on [M]'s [affecting.name].")
+					)
+				W.bandage()
+				W.disinfect()
+				W.heal_damage(heal_brute)
+				if(prob(10 + user.stats.getStat(STAT_BIO)))
+					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+				else
+					used++
+			affecting.update_damages()
+			// user's stat check that causing pain if they are amateurs
+			if(user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+				if(prob(affecting.get_damage() - user.stats.getStat(STAT_BIO)))
+					var/pain = rand(min(30,affecting.get_damage()), max(affecting.get_damage() + 30,60) - user.stats.getStat(STAT_BIO))
+					H.pain(affecting, pain)
+					if(user != H)
+						to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
+						to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "a lot of " : ""]pain."))
+					else
+						to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
+			if(used == amount)
+				if(affecting.is_bandaged())
+					to_chat(user, SPAN_WARNING("\The [src] is used up."))
+				else
+					to_chat(user, SPAN_WARNING("\The [src] is used up, but there are more wounds to treat on \the [affecting.name]."))
+			use(used)
+			update_icon()
+	else
+		if (can_operate(H, user))        //Checks if mob is lying down on table for surgery
+			if (do_surgery(H,user,src))
+				return
+		else
+			to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a bandage!"))
+
+/obj/item/stack/medical/advanced/regenerative_ichor
+	name = "regenerative ichor"
+	singular_name = "regenerative ichor"
+	desc = "An ichor that regenerates dead cells and fights off bacterial infection."
+	icon_state = "regenerative_ichor"
+	heal_burn = 8
+	origin_tech = list(TECH_BIO = 2)
+	automatic_charge_overlays = FALSE
+	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
+	splittable = FALSE	// Is the stack capable of being splitted?
+	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
+	matter = list(MATERIAL_BIOMATTER = 2.5)
+
+/obj/item/stack/medical/advanced/regenerative_ichor/attack(mob/living/carbon/M, mob/living/user)
+	if(..())
+		return 1
+
+	if(amount < 1)
+		return
+
+	if (ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/external/affecting = H.get_organ(user.targeted_organ)
+
+		if(!affecting)
+			to_chat(user, SPAN_WARNING("What [user.targeted_organ]?"))
+			return TRUE
+
+		if(affecting.open == 0)
+			if(affecting.is_salved())
+				to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been salved."))
+				return 1
+			else
+				user.visible_message(
+					SPAN_NOTICE("\The [user] starts salving wounds on [M]'s [affecting.name]."),
+					SPAN_NOTICE("You start salving the wounds on [M]'s [affecting.name].")
+				)
+				if(!do_mob(user, M, 10))
+					to_chat(user, SPAN_NOTICE("You must stand still to salve wounds."))
+					return 1
+				user.visible_message(
+					SPAN_NOTICE("[user] covers wounds on [M]'s [affecting.name] with regenerative membrane."),
+					SPAN_NOTICE("You cover wounds on [M]'s [affecting.name] with regenerative membrane.")
+				)
+				affecting.heal_damage(0,heal_burn)
+				if(prob(10 + user.stats.getStat(STAT_BIO)))
+					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+				else
+					use(1)
+					update_icon()
+				affecting.salve()
+				// user's stat check that causing pain if they are amateurs
+				if(user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+					if(prob(affecting.get_damage() - user.stats.getStat(STAT_BIO)))
+						var/pain = rand(min(30,affecting.get_damage()), max(affecting.get_damage() + 30,60) - user.stats.getStat(STAT_BIO))
+						H.pain(affecting, pain)
+						if(user != H)
+							to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
+							to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "a lot of " : ""]pain."))
+						else
+							to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
+		else
+			if (can_operate(H, user))        //Checks if mob is lying down on table for surgery
+				if (do_surgery(H,user,src))
+					return
+			else
+				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a bandage!"))
