@@ -55,7 +55,6 @@
 	name = "Mechanical muscles"
 	build_path = /obj/item/organ_module/muscle
 
-
 /datum/design/research/item/mechfab/modules/multitool/surgical
 	build_path = /obj/item/organ_module/active/simple/surgical
 	name = "Embedded surgical multitool"

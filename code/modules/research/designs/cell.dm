@@ -13,12 +13,12 @@
 	build_path = /obj/item/weapon/cell/large/moebius
 
 /datum/design/research/item/powercell/large/high
-	name = "Soteria \"Power-Geyser 7000L\""
+	name = "Soteria \"Power-Geyser 8000L\""
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/weapon/cell/large/moebius/high
 
 /datum/design/research/item/powercell/large/super
-	name = "Soteria \"Power-Geyser 13000L\""
+	name = "Soteria \"Power-Geyser 14000L\""
 	build_path = /obj/item/weapon/cell/large/moebius/super
 
 /datum/design/research/item/powercell/large/hyper
@@ -26,21 +26,21 @@
 	build_path = /obj/item/weapon/cell/large/moebius/hyper
 
 /datum/design/research/item/powercell/medium/basic
-	name = "Soteria \"Power-Geyser 700M\""
+	name = "Soteria \"Power-Geyser 800M\""
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/weapon/cell/medium/moebius
 
 /datum/design/research/item/powercell/medium/high
-	name = "Soteria \"Power-Geyser 900M\""
+	name = "Soteria \"Power-Geyser 1000M\""
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/weapon/cell/medium/moebius/high
 
 /datum/design/research/item/powercell/medium/super
-	name = "Soteria \"Power-Geyser 1000M\""
+	name = "Soteria \"Power-Geyser 1200M\""
 	build_path = /obj/item/weapon/cell/medium/moebius/super
 
 /datum/design/research/item/powercell/medium/hyper
-	name = "Soteria \"Power-Geyser 1300M\""
+	name = "Soteria \"Power-Geyser 1400M\""
 	build_path = /obj/item/weapon/cell/medium/moebius/hyper
 
 /datum/design/research/item/powercell/small/basic

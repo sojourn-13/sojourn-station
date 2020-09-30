@@ -386,14 +386,14 @@
 /datum/design/research/circuit/mindswapper
 	name = "experimental mind swapper"
 	build_path = /obj/item/weapon/circuitboard/mindswapper
-	category = CAT_MACHINE
+	category = CAT_MEDI
 
 //Industeral Printing
 
 /datum/design/research/circuit/industrial_chems
 	name = "Industrial Chem Dispenser"
-	build_path = /obj/item/weapon/circuitboard/industrial_grinder
-	category = CAT_MACHINE
+	build_path = /obj/item/weapon/circuitboard/chemical_dispenser/industrial
+	category = CAT_MEDI
 
 /datum/design/research/circuit/industrial_printer
 	name = "Industrial Printer"
@@ -408,4 +408,4 @@
 /datum/design/research/circuit/industrial_grinder
 	name = "Industrial Grinder"
 	build_path = /obj/item/weapon/circuitboard/industrial_grinder
-	category = CAT_MACHINE
+	category = CAT_MEDI

@@ -30,7 +30,7 @@
 
 
 /datum/technology/night_sight
-	name = "Vision Augmentation"
+	name = "Vision Augmentation" //Undark was a better name
 	desc = "A better look into the shadows that hunt the station, allows for the manufacturing of night vision goggles and RIG night vison huds "
 	tech_type = RESEARCH_ILLEGAL
 
@@ -40,10 +40,11 @@
 
 	required_technologies = list(/datum/technology/binary_encryption_key)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 5)
-	cost = 3000
+	cost = 5000 //now has really good items
 
 	unlocks_designs = list(/datum/design/research/item/night_goggles,
 							/datum/design/research/item/rig_nvgoggles,
+							/datum/design/research/item/rig_thermalgoggles,
 							/datum/design/research/item/glowstick,
 							/datum/design/research/item/mechfab/modules/hud/thermal,
 							/datum/design/research/item/mechfab/modules/hud/night)
