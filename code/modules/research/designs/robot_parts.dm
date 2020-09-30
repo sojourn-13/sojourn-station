@@ -42,7 +42,7 @@
 	build_path = /obj/item/robot_parts/robot_component/binary_communication_device
 
 /datum/design/research/item/mechfab/robot/component/radio
-	name = "Radio"
+	name = "Robot Radio"
 	build_path = /obj/item/robot_parts/robot_component/radio
 
 /datum/design/research/item/mechfab/robot/component/actuator
@@ -54,16 +54,20 @@
 	build_path = /obj/item/robot_parts/robot_component/diagnosis_unit
 
 /datum/design/research/item/mechfab/robot/component/camera
-	name = "Camera"
+	name = "Robot Camera"
 	build_path = /obj/item/robot_parts/robot_component/camera
 
 /datum/design/research/item/mechfab/robot/component/armour
-	name = "Armour plating"
+	name = "Robot Armour plating"
 	build_path = /obj/item/robot_parts/robot_component/armour
+
+/datum/design/research/item/mechfab/robot/component/armour
+	name = "Robot Mark II Armour plating"
+	build_path = /obj/item/robot_parts/robot_component/armour/mkii
 
 
 /datum/design/research/item/mechfab/robot/component/jetpack
-	name = "Jetpack module"
+	name = "Robot Jetpack module"
 	desc = "Self refilling jetpack that makes the unit suitable for EVA work."
 	build_path = /obj/item/robot_parts/robot_component/jetpack
 	starts_unlocked = FALSE
