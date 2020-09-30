@@ -430,7 +430,7 @@
 	pellets = 4
 	range_step = 1
 	spread_step = 10
-	knockback = 1
+	knockback = 0 //We do not knockback do to issues with bullet douping
 	step_delay = 0.9
 
 /obj/item/projectile/bullet/pellet/shotgun/Initialize()
