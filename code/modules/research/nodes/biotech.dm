@@ -284,8 +284,8 @@
 							)
 
 /datum/technology/omega_biotech
-	name = "Advaned Augmentations Biotech"
-	desc = "Refind and end of the line advancements the body and mind can handle."
+	name = "Advanced Augmentations Biotech"
+	desc = "Refined and end of the line advancements that the body and the mind can handle."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.7

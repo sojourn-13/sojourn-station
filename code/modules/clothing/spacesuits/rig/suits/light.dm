@@ -38,7 +38,7 @@
 
 /obj/item/weapon/rig/light/ultra_light
 	name = "SI 'Spacer' control module"
-	desc = "A ultra light, unarmoured rig suit."
+	desc = "An ultra light, unarmoured rig suit."
 	icon_state = "hacker_rig"
 	suit_type = "light suit"
 	armor = list(
@@ -50,7 +50,7 @@
 		rad = 45
 	)
 	emp_protection = 0
-	matter = list(MATERIAL_STEEL = 80, MATERIAL_PLASTIC = 90, MATERIAL_GLASS = 60) //Costsly!
+	matter = list(MATERIAL_STEEL = 80, MATERIAL_PLASTIC = 90, MATERIAL_GLASS = 60) //Costly!
 
 	chest_type = /obj/item/clothing/suit/space/rig/light/ultra_light
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/light/ultra_light
