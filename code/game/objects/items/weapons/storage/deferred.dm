@@ -191,7 +191,7 @@
 
 /obj/item/weapon/storage/deferred/crate/marksman
 	name = "marksman crate"
-	desc = "A crate containing one \"Penetrator\" rifle, and ten 14.5mm AP shells."
+	desc = "A crate containing one \"Penetrator\" rifle, and ten 60-06 shells."
 	icon_state = "serbcrate_deferred_black"
 	initial_contents = list(/obj/item/weapon/gun/projectile/heavysniper = 1,
 	/obj/item/weapon/storage/box/sniperammo = 2)
