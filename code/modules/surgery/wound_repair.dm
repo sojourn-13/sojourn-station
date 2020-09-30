@@ -180,8 +180,9 @@
 		if (target.getToxLoss() >= 0)
 			user.visible_message(SPAN_NOTICE("[user] finishess filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
 			SPAN_NOTICE("You finish filtering out any toxins to [target]'s body and repairing any neural degradation with the [tool_name].") )
-			target.adjustToxLoss(-200)
-			target.timeofdeath = 99999999
+			if(tool.use(1))
+				target.adjustToxLoss(-200)
+				target.timeofdeath = 99999999
 
 
 /datum/old_surgery_step/external/tox_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
