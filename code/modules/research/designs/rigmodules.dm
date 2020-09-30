@@ -143,4 +143,4 @@
 /datum/design/research/item/rig_cheap
 	name = "SI 'Spacer' control module"
 	desc = "An ultra light rig suit that a protolathe is only just able to print off..."
-	build_path = /obj/item/weapon/rig/light/sci
+	build_path = /obj/item/weapon/rig/light/ultra_light
