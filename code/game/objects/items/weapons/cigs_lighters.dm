@@ -470,6 +470,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "pipeoff"
 	smoketime = 0
 	chem_volume = 50
+	w_class = ITEM_SIZE_SMALL
 	preloaded_reagents = list("nicotine" = 1)
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
 	lightermes = "<span class='notice'>USER manages to light their NAME with FLAME.</span>"
