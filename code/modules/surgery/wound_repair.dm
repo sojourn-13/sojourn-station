@@ -64,7 +64,7 @@
 			user.visible_message(SPAN_NOTICE("[user] treats the brute damage to [target]'s body with the [tool_name]."), \
 			SPAN_NOTICE("You treat the brute damage to [target]'s body with [tool_name].") )
 			if(tool.use(1))
-				target.adjustBruteLoss(-30)
+				target.adjustBruteLoss(-15)
 
 /datum/old_surgery_step/external/brute_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 
