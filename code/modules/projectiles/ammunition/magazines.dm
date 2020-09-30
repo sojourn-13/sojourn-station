@@ -293,7 +293,7 @@
 
 /obj/item/ammo_magazine/rifle_75_short
 	name = "short rifle magazine"
-	desc = "A 10 round magazine marked for .7.5mm Rifle."
+	desc = "A 10 round magazine marked for 7.5mm Rifle."
 	icon_state = "rifle_short"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
