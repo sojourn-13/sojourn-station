@@ -37,8 +37,8 @@
 	name = "hood"
 
 /obj/item/weapon/rig/light/ultra_light
-	name = "SI 'Spacer' control module"
-	desc = "An ultra light, unarmoured rig suit."
+	name = "SI 'Proto-Spacer' control module"
+	desc = "An ultra light, unarmoured rig suit. The precursor to the Soteria retainer model, quite lacking in armor and EMP protection but capable of fitting hardsuit modules."
 	icon_state = "hacker_rig"
 	suit_type = "light suit"
 	armor = list(
