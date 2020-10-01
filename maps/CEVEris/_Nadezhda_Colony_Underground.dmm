@@ -234,6 +234,9 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/engineering/atmos)
 "aaS" = (
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/atmos)
 "aaT" = (
@@ -343,9 +346,9 @@
 /area/nadezhda/engineering/atmos)
 "abk" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /obj/structure/disposalpipe/up{
 	dir = 8;
@@ -511,9 +514,9 @@
 /area/nadezhda/engineering/atmos)
 "abE" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /obj/structure/disposalpipe/up{
 	dir = 8;
@@ -698,6 +701,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9;
 	pixel_y = 0
+	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
@@ -1455,6 +1461,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "aea" = (
@@ -1543,6 +1552,9 @@
 	dir = 1
 	},
 /obj/machinery/camera/network/engineering,
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "aen" = (
@@ -3355,9 +3367,9 @@
 /area/nadezhda/command/tcommsat/computer)
 "aiX" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
@@ -4411,6 +4423,9 @@
 /area/nadezhda/engineering/atmos)
 "alL" = (
 /obj/structure/closet/radiation,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_airlock)
 "alM" = (
@@ -8502,6 +8517,9 @@
 "awu" = (
 /obj/structure/table/glass,
 /obj/machinery/microwave,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/medbreak)
 "awv" = (
@@ -9806,6 +9824,9 @@
 /obj/machinery/camera/network/medbay{
 	dir = 4
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/medical/morgue)
 "azV" = (
@@ -11082,6 +11103,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1oldconstruction)
 "aDq" = (
+/obj/structure/closet/wall_mounted{
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "aDr" = (
@@ -11406,9 +11430,8 @@
 /turf/simulated/mineral,
 /area/nadezhda/maintenance/cavehideout)
 "aEg" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 0
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
@@ -13118,6 +13141,9 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/quartermaster/disposaldrop)
 "aIn" = (
@@ -13484,6 +13510,9 @@
 "aJe" = (
 /obj/structure/bed/chair{
 	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/sleep/cryo2)
@@ -14454,9 +14483,9 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "aLN" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
@@ -15134,6 +15163,9 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/substation/section8)
 "aNz" = (
@@ -15224,6 +15256,9 @@
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "aNL" = (
 /obj/structure/cyberplant,
+/obj/structure/closet/wall_mounted{
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "aNM" = (
@@ -15603,6 +15638,9 @@
 "aOG" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/pros/foreman)
@@ -16193,6 +16231,9 @@
 "aQk" = (
 /obj/machinery/camera/network/medbay{
 	dir = 8
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/medical/virology)
@@ -18569,6 +18610,9 @@
 	dir = 8
 	},
 /obj/item/weapon/autopsy_scanner,
+/obj/structure/closet/wall_mounted{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/xenobiology)
 "aXf" = (
@@ -19043,6 +19087,9 @@
 /obj/structure/table/standard,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/medical/genetics)
@@ -20731,6 +20778,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
 "bcI" = (
@@ -21058,6 +21108,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
 "bdx" = (
@@ -21075,6 +21128,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
@@ -21126,6 +21182,9 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
@@ -21224,6 +21283,9 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -23436,6 +23498,9 @@
 "biX" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/machinery/camera/network/cev_eris,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "biY" = (
@@ -27125,6 +27190,9 @@
 /obj/machinery/camera/network/medbay{
 	dir = 8
 	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/medbay3)
 "bta" = (
@@ -28545,9 +28613,9 @@
 /area/nadezhda/command/tcommsat/computer)
 "bwB" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
@@ -31115,6 +31183,9 @@
 "bCC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/furniture/pottedplant,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/engineering/foyer)
 "bCD" = (
@@ -31462,6 +31533,9 @@
 /area/nadezhda/quartermaster/hangarsupply)
 "bDy" = (
 /obj/structure/closet/secure_closet/courtroom,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/command/courtroom)
 "bDz" = (
@@ -33229,6 +33303,18 @@
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/wood,
 /area/nadezhda/engineering/dorm/two)
+"bIr" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section3)
 "bIv" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -33279,6 +33365,9 @@
 "bIK" = (
 /obj/structure/table/marble,
 /obj/machinery/microwave,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/dorm4)
 "bIL" = (
@@ -34195,6 +34284,9 @@
 	dir = 1;
 	pixel_y = -28
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/engineering/dorm/one)
 "bLc" = (
@@ -34364,6 +34456,9 @@
 	icon_state = "sink";
 	pixel_x = -12;
 	pixel_y = 2
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/engineering/dorm/two)
@@ -34900,6 +34995,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/command/gmaster)
 "bMI" = (
@@ -35248,6 +35346,9 @@
 /obj/item/ammo_magazine/light_rifle_257_short,
 /obj/item/ammo_magazine/light_rifle_257_short,
 /obj/item/ammo_magazine/light_rifle_257_short,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "bNt" = (
@@ -36545,6 +36646,9 @@
 "bQg" = (
 /obj/structure/table/woodentable,
 /obj/machinery/microwave,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm3)
 "bQh" = (
@@ -36864,6 +36968,9 @@
 "bQS" = (
 /obj/structure/table/woodentable,
 /obj/machinery/microwave,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm2)
 "bQT" = (
@@ -37802,6 +37909,9 @@
 	icon_state = "intact"
 	},
 /obj/structure/catwalk,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "bSN" = (
@@ -38157,6 +38267,9 @@
 "bTI" = (
 /obj/machinery/light,
 /obj/structure/table/marble,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/gmaster)
 "bTJ" = (
@@ -38343,6 +38456,9 @@
 /area/nadezhda/engineering/workshop)
 "bUh" = (
 /obj/structure/dispenser/oxygen,
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/engineering/workshop)
 "bUi" = (
@@ -38458,6 +38574,9 @@
 "bUx" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/network/research,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/medical/genetics)
 "bUy" = (
@@ -38945,6 +39064,9 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/quartermaster/hangarsupply)
 "bVF" = (
@@ -39069,6 +39191,9 @@
 /obj/structure/table/bench/padded,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/hallway/side/f2section3)
@@ -42306,6 +42431,9 @@
 /area/nadezhda/engineering/workshop)
 "cdE" = (
 /obj/structure/closet/l3closet/janitor,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/janitor)
 "cdF" = (
@@ -42466,6 +42594,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/hangarsupply)
 "cea" = (
@@ -42546,6 +42677,7 @@
 /obj/machinery/conveyor/southwest{
 	id = "cargo unload"
 	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/quartermaster/hangarsupply)
 "cei" = (
@@ -42691,6 +42823,9 @@
 	},
 /obj/item/stack/material/plastic{
 	amount = 120
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/robotics)
@@ -43429,6 +43564,9 @@
 "cgp" = (
 /obj/machinery/camera/network/security{
 	dir = 1
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/steel/panels,
 /area/nadezhda/pros/prep)
@@ -44318,6 +44456,9 @@
 "ciA" = (
 /obj/structure/table/woodentable,
 /obj/machinery/microwave,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm1)
 "ciB" = (
@@ -44353,6 +44494,9 @@
 	},
 /obj/structure/table/woodentable,
 /obj/item/device/toner,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/captain)
 "ciI" = (
@@ -44412,10 +44556,6 @@
 /area/nadezhda/medical/morgue)
 "ciP" = (
 /obj/machinery/light,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 0;
-	pixel_y = -30
-	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/side/f2section2)
 "ciQ" = (
@@ -47304,6 +47444,9 @@
 "cpi" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/floor_decal/industrial/danger,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/hangarsupply)
 "cpj" = (
@@ -47467,6 +47610,9 @@
 	pixel_x = 25;
 	pixel_y = 0
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/hangarsupply)
 "cpB" = (
@@ -47589,6 +47735,9 @@
 	pixel_x = 0;
 	pixel_y = -28
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/chargebay)
 "cpR" = (
@@ -47638,6 +47787,9 @@
 /obj/structure/table/bench/padded,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/hallway/side/f2section4)
@@ -48421,10 +48573,6 @@
 /area/nadezhda/medical/medbay2)
 "crK" = (
 /obj/effect/floor_decal/industrial/danger,
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -48432,6 +48580,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
@@ -48531,11 +48683,18 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "crU" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel,
@@ -48877,6 +49036,9 @@
 	dir = 8
 	},
 /obj/machinery/light,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "csx" = (
@@ -49081,6 +49243,9 @@
 /obj/random/lowkeyrandom/low_chance,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/disposaldrop)
@@ -49406,6 +49571,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/hangarsupply)
 "ctK" = (
@@ -50056,9 +50222,9 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/zpipe/down{
-	dir = 8;
+	tag = "icon-down (WEST)";
 	icon_state = "down";
-	tag = "icon-down (WEST)"
+	dir = 8
 	},
 /turf/simulated/open,
 /area/nadezhda/maintenance/undergroundfloor2west)
@@ -51419,6 +51585,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/hangarsupply)
 "cyL" = (
@@ -52657,6 +52824,9 @@
 "cBs" = (
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
@@ -54104,6 +54274,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/main/stairwell)
 "cEY" = (
@@ -55151,6 +55324,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/bar)
 "cHy" = (
@@ -55792,6 +55968,9 @@
 /area/nadezhda/crew_quarters/sleep/cryo)
 "cJe" = (
 /obj/machinery/photocopier,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
 "cJf" = (
@@ -56079,6 +56258,9 @@
 "cJS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
@@ -56845,6 +57027,9 @@
 	dir = 8;
 	icon_state = "tube1";
 	pixel_y = 0
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/crew_quarters/fitness)
@@ -60120,9 +60305,6 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/crew_quarters/fitness)
 "cTH" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
@@ -60140,6 +60322,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
+	},
+/obj/structure/disposalpipe/junction{
+	dir = 8;
+	icon_state = "pipe-j1";
+	tag = "icon-pipe-j1 (WEST)"
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/hangarsupply)
@@ -61170,6 +61357,9 @@
 "cWb" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/research)
 "cWc" = (
@@ -63089,6 +63279,9 @@
 /area/nadezhda/command/captain/quarters)
 "daW" = (
 /obj/machinery/washing_machine,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/captain/quarters)
 "daX" = (
@@ -64665,6 +64858,12 @@
 	dir = 9;
 	pixel_y = 0
 	},
+/obj/structure/closet/wall_mounted{
+	pixel_y = -25
+	},
+/obj/structure/closet/wall_mounted{
+	pixel_y = -37
+	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo)
 "del" = (
@@ -65394,6 +65593,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
 "dfI" = (
@@ -65859,6 +66061,9 @@
 /obj/machinery/camera/network/command{
 	dir = 1
 	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "dgN" = (
@@ -65946,6 +66151,9 @@
 /area/nadezhda/command/courtroom)
 "dgX" = (
 /obj/machinery/camera/network/cev_eris,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/library)
 "dgY" = (
@@ -66619,6 +66827,9 @@
 /area/nadezhda/crew_quarters/sleep/cryo)
 "diH" = (
 /obj/machinery/camera/network/cev_eris,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/crew_quarters/sleep/cryo)
 "diI" = (
@@ -67217,6 +67428,9 @@
 /obj/machinery/camera/network/command{
 	dir = 8
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai_upload)
 "dkc" = (
@@ -67341,6 +67555,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
+	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = -32
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/captain/quarters)
@@ -67747,6 +67964,9 @@
 	},
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/substation/section3)
@@ -70937,6 +71157,9 @@
 /area/nadezhda/maintenance/substation/section6)
 "dsr" = (
 /obj/machinery/washing_machine,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/cro/quarters)
 "dss" = (
@@ -71210,6 +71433,9 @@
 /turf/simulated/open,
 /area/nadezhda/quartermaster/hangarsupply)
 "dta" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/hull,
 /area/nadezhda/quartermaster/hangarsupply)
 "dtb" = (
@@ -71574,6 +71800,9 @@
 "duc" = (
 /obj/machinery/chemical_dispenser/soda,
 /obj/structure/table/marble,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/bar)
 "dud" = (
@@ -71842,6 +72071,9 @@
 /obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/substation/section7)
@@ -73184,14 +73416,13 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
 "dxu" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/command/merchant)
@@ -73409,6 +73640,9 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/merchant)
@@ -76673,6 +76907,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
@@ -82748,6 +82985,9 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/storage/primary)
 "dTu" = (
@@ -82983,6 +83223,21 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/toilet/public)
+"dZK" = (
+/obj/machinery/camera/network/engineering{
+	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/engineering/engine_room)
+"dZW" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "ebk" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -83004,6 +83259,13 @@
 /obj/machinery/sleeper,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
+"eje" = (
+/obj/machinery/washing_machine,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/crew_quarters/clothingstorage)
 "ekG" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -83092,6 +83354,16 @@
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/surgery)
+"eLC" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/sleep/cryo)
 "eOf" = (
 /obj/machinery/door/airlock/maintenance_interior{
 	name = "Service Maintenance"
@@ -83104,6 +83376,19 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/medbay4)
+"eRu" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/command/tcommsat/computer)
 "eXy" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -83221,6 +83506,14 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/cavernhallway)
+"fAh" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/obj/machinery/door/firedoor/multi_tile{
+	dir = 2
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/nadezhda/quartermaster/hangarsupply)
 "fDF" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -83289,6 +83582,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/captain)
+"gbK" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/command/bridge)
 "gcf" = (
 /mob/living/simple_animal/hostile/roomba/slayer,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -83388,6 +83688,24 @@
 /obj/machinery/light_switch,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
+"gOR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/railing{
+	anchored = 1;
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/engineering/engine_room)
 "gPy" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 0;
@@ -83465,6 +83783,12 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/medbay4)
+"htA" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/maintenance/substation/section1)
 "htZ" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood,
@@ -83479,6 +83803,15 @@
 	},
 /turf/simulated/floor/carpet,
 /area/derelict/medical/chapel)
+"hzy" = (
+/obj/effect/window_lwall_spawn/reinforced/polarized{
+	id = "CEO2"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/command/merchant)
 "hBS" = (
 /obj/machinery/door/firedoor/multi_tile,
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -83486,6 +83819,20 @@
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
+"hDG" = (
+/obj/structure/closet/wall_mounted{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/cyancorner,
+/area/nadezhda/crew_quarters/sleep/cryo2)
+"hNz" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/quartermaster/hangarsupply)
 "hPD" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -83934,6 +84281,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
+"kax" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/enginehallway)
 "kaM" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -84067,6 +84420,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/medical/cryo)
+"luU" = (
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/command/tcommsat/chamber)
 "lvi" = (
 /obj/machinery/light_switch{
 	pixel_y = 30
@@ -84098,6 +84457,12 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/cavernhallway)
+"lCB" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor2south)
 "lCN" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -84347,6 +84712,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/merchant)
+"mMm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/pros/prep)
 "mNZ" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -84394,6 +84767,13 @@
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1oldconstruction)
+"nao" = (
+/obj/structure/catwalk,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/crew_quarters/hydroponics)
 "nbw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -84439,6 +84819,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm4)
+"ngo" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/maintenance/substation/section5)
 "nhu" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -84466,6 +84852,12 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/crew_quarters/podrooms2)
+"noI" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "nqn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -84493,6 +84885,24 @@
 	},
 /turf/simulated/floor/carpet,
 /area/derelict/medical/chapel)
+"nKm" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/command/merchant)
+"nMo" = (
+/obj/structure/table/rack,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/void/medical,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/void/medical,
+/obj/item/weapon/rig/medical/equipped,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/medical/medbay3)
 "nMU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -84545,6 +84955,12 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/rnd/lab)
+"olM" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel/bar_light,
+/area/nadezhda/maintenance/undergroundfloor2south)
 "ong" = (
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/white,
@@ -84563,6 +84979,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/fitness)
+"oES" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/hallway/side/cavernhallway)
 "oFr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -84663,6 +85085,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
+"oXt" = (
+/obj/structure/closet/wardrobe/job/chemistry_white,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/medical/medbay3)
 "oYQ" = (
 /obj/machinery/hologram/holopad{
 	name = "meeting room holopad three"
@@ -84681,6 +85110,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/rnd/xenobiology)
+"pcr" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/nadezhda/crew_quarters/podrooms)
 "pdO" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -84702,6 +85143,9 @@
 /area/nadezhda/engineering/foyer)
 "plo" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/lab)
 "prP" = (
@@ -84739,6 +85183,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
+"pwk" = (
+/obj/structure/table/standard,
+/obj/random/lowkeyrandom,
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/storage)
 "pBV" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/light,
@@ -84912,6 +85364,14 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2south)
+"qob" = (
+/obj/machinery/microwave,
+/obj/structure/table/marble,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/crew_quarters/kitchen)
 "qoT" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -85049,6 +85509,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/merchant)
+"qYk" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/crew_quarters/podrooms2)
 "qZo" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -85090,6 +85556,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/fo)
+"rgB" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/medbay4)
 "rkf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -85101,6 +85573,19 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/turret_protected/ai_upload)
+"rrk" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/crew_quarters/podrooms2)
+"rrZ" = (
+/obj/structure/cyberplant,
+/obj/structure/closet/wall_mounted{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/cyancorner,
+/area/nadezhda/crew_quarters/sleep/cryo2)
 "rsf" = (
 /obj/machinery/light,
 /obj/machinery/light_switch{
@@ -85193,6 +85678,9 @@
 /obj/structure/table/bench/padded,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/hallway/side/f2section2)
@@ -85289,6 +85777,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
+"tdD" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section4)
 "tjM" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -85319,8 +85813,20 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/circuitlab)
+"txr" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/turret_protected/ai)
 "tyj" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -85337,6 +85843,15 @@
 /obj/machinery/telecomms/server/presets/marshal,
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/nadezhda/command/tcommsat/chamber)
+"tAN" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1)
 "tBP" = (
 /obj/machinery/newscaster{
 	pixel_x = 0;
@@ -85433,8 +85948,8 @@
 /area/nadezhda/maintenance/undergroundfloor2south)
 "ujt" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/server)
@@ -85557,6 +86072,13 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/crew_quarters/fitness)
+"vaQ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall,
+/area/nadezhda/quartermaster/hangarsupply)
 "vdI" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/plating,
@@ -85720,6 +86242,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
+"vTo" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/quartermaster/pods)
 "vVq" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/medical,
@@ -85772,6 +86300,12 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/turret_protected/ai)
+"woO" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
+/turf/simulated/floor/carpet/gaycarpet,
+/area/nadezhda/maintenance/undergroundfloor2south)
 "wuB" = (
 /turf/simulated/floor/tiled/steel/cargo,
 /area/nadezhda/engineering/engine_room)
@@ -85779,6 +86313,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro/quarters)
+"wxP" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/crew_quarters/podrooms2)
 "wzJ" = (
 /obj/machinery/door/unpowered/simple/wood{
 	name = "Old Chapel"
@@ -85807,6 +86350,12 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/medbay4)
+"wXk" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/pros/prep)
 "wXA" = (
 /obj/machinery/light_switch{
 	pixel_x = 28
@@ -85831,6 +86380,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/xenobiology/xenoflora)
+"xgv" = (
+/obj/machinery/camera/network/engineering{
+	dir = 1
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/engineering/atmos)
 "xjO" = (
 /obj/machinery/papershredder,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -85855,6 +86413,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/xenobiology/xenoflora)
+"xsk" = (
+/obj/structure/table/standard,
+/obj/random/lowkeyrandom,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/storage)
 "xtc" = (
 /obj/structure/flora/pottedplant/stoutbush,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -85869,6 +86435,9 @@
 "xxY" = (
 /obj/machinery/light_switch{
 	pixel_y = 30
+	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
@@ -93737,7 +94306,7 @@ aug
 aCJ
 aCJ
 cja
-aEE
+hDG
 aHw
 aJe
 aCJ
@@ -94554,7 +95123,7 @@ aNY
 aNY
 clo
 aMD
-aNL
+rrZ
 aCJ
 aRK
 aSC
@@ -96372,7 +96941,7 @@ aJT
 aKZ
 aLV
 aMU
-aNL
+rrZ
 aCJ
 aRK
 aSD
@@ -96737,7 +97306,7 @@ air
 air
 arc
 arc
-arv
+dZK
 asK
 auD
 auD
@@ -101037,7 +101606,7 @@ cgo
 aIg
 aIg
 aRK
-bhi
+rgB
 dDS
 bgH
 dEr
@@ -101445,7 +102014,7 @@ bgc
 bfA
 dEb
 dEs
-dEF
+htA
 dan
 dEb
 dFF
@@ -101622,7 +102191,7 @@ aUE
 aVw
 aRI
 eii
-aVB
+oXt
 aMg
 dJf
 dJm
@@ -103238,7 +103807,7 @@ aUG
 clf
 aRI
 aVw
-aVD
+nMo
 aJD
 aIM
 ctG
@@ -105210,7 +105779,7 @@ alN
 amE
 aiu
 aiR
-ajg
+xgv
 aaE
 adw
 aaE
@@ -106037,7 +106606,7 @@ avq
 avq
 avq
 aza
-awL
+pwk
 aFU
 avK
 axZ
@@ -106239,7 +106808,7 @@ avq
 ayH
 avq
 aza
-awL
+xsk
 aFU
 avK
 ajs
@@ -106717,7 +107286,7 @@ cOQ
 cOQ
 cOQ
 cOQ
-cSn
+lCB
 cYb
 cYb
 cYb
@@ -107644,7 +108213,7 @@ asI
 aCp
 asS
 asS
-asS
+noI
 apt
 apt
 are
@@ -107843,7 +108412,7 @@ asS
 asS
 asS
 asS
-asS
+noI
 asS
 asS
 asS
@@ -107861,7 +108430,7 @@ ain
 aAV
 asS
 anI
-anI
+dZW
 anI
 aEQ
 aKO
@@ -111479,7 +112048,7 @@ alh
 chU
 ahn
 ahn
-alh
+vTo
 bZp
 bZp
 auv
@@ -112474,7 +113043,7 @@ bQV
 bcL
 bcL
 bcL
-bfa
+mMm
 bek
 agR
 ahB
@@ -113484,7 +114053,7 @@ bJG
 aDW
 bzB
 bFd
-bzB
+wXk
 bek
 cmZ
 ciu
@@ -115214,7 +115783,7 @@ cZV
 cZz
 cZO
 cZO
-cZF
+olM
 cXf
 cSn
 cSn
@@ -115794,7 +116363,7 @@ bbD
 bbD
 cVy
 biV
-bki
+wxP
 ayE
 azc
 aVj
@@ -115802,7 +116371,7 @@ bbD
 bbD
 cVP
 dev
-biV
+qYk
 aQZ
 dPn
 dPs
@@ -117529,7 +118098,7 @@ cGD
 aiW
 anc
 aoU
-aoU
+eRu
 aoD
 aol
 aoz
@@ -117725,7 +118294,7 @@ aaF
 aaF
 aaF
 aaF
-amT
+luU
 aaF
 aci
 alE
@@ -118833,7 +119402,7 @@ dPA
 dPy
 dPy
 dPy
-dPy
+rrk
 aQZ
 dPs
 aUP
@@ -132184,7 +132753,7 @@ aac
 bpU
 bpU
 dbA
-dgb
+txr
 dkf
 bpU
 bpU
@@ -133759,7 +134328,7 @@ cem
 cpN
 cJJ
 cKT
-cJJ
+eLC
 cJJ
 cLr
 cLK
@@ -137543,7 +138112,7 @@ ave
 alu
 anL
 alQ
-bKe
+gOR
 air
 air
 bxd
@@ -141628,7 +142197,7 @@ drR
 dub
 dyl
 dvo
-cbZ
+tAN
 cbS
 dCX
 dFN
@@ -142576,7 +143145,7 @@ bss
 bss
 bss
 bss
-bss
+kax
 bsy
 cRi
 bss
@@ -146300,7 +146869,7 @@ deq
 dkN
 cYb
 dol
-doy
+woO
 doy
 doM
 cYb
@@ -147514,7 +148083,7 @@ dnV
 cIy
 cJP
 cKG
-cLY
+ngo
 cLY
 cOd
 cYb
@@ -152147,7 +152716,7 @@ cyr
 czh
 czT
 dgk
-diY
+qob
 diY
 dsb
 dRq
@@ -152553,7 +153122,7 @@ cAx
 dux
 cAx
 cFP
-cBE
+nao
 cFl
 bGH
 csZ
@@ -152922,9 +153491,9 @@ dlo
 bZp
 cbC
 bAv
-atz
-bAv
-bTU
+hNz
+fAh
+vaQ
 cfO
 cFA
 cOY
@@ -153491,7 +154060,7 @@ bwZ
 bjg
 blL
 blL
-bjg
+gbK
 bwZ
 bwZ
 bwZ
@@ -153693,7 +154262,7 @@ bwZ
 bjg
 blL
 ahJ
-bjg
+gbK
 bwZ
 bwZ
 bwZ
@@ -153730,7 +154299,7 @@ dsI
 avP
 dsI
 dsI
-cfQ
+nKm
 cdJ
 cdJ
 cfQ
@@ -153932,7 +154501,7 @@ avP
 avP
 dsI
 dsI
-cdJ
+hzy
 dxC
 dxQ
 dcN
@@ -154134,7 +154703,7 @@ dsI
 dsI
 dsI
 dsI
-cdJ
+hzy
 dxE
 dxQ
 drz
@@ -154336,7 +154905,7 @@ dlB
 dsI
 dsI
 dsI
-cdJ
+hzy
 dxG
 dxQ
 drz
@@ -154538,7 +155107,7 @@ bTU
 bTU
 bTU
 bTU
-cfQ
+nKm
 dxJ
 dxQ
 drz
@@ -154740,7 +155309,7 @@ btL
 btL
 btL
 dxq
-cfQ
+nKm
 dxO
 dxR
 drz
@@ -155791,7 +156360,7 @@ csk
 cuL
 cru
 cru
-cru
+bIr
 drX
 cru
 cSg
@@ -157196,7 +157765,7 @@ dyJ
 dyJ
 dyJ
 dyJ
-dzk
+pcr
 cwD
 cyH
 dsj
@@ -157765,7 +158334,7 @@ cyD
 cyE
 cnN
 chj
-bQO
+tdD
 bXo
 bQO
 bQc
@@ -160201,7 +160770,7 @@ bQO
 bQO
 bQO
 aLl
-aOF
+eje
 aQC
 aQr
 aSQ
@@ -161427,7 +161996,7 @@ cdI
 bUQ
 cqM
 bUQ
-cdI
+oES
 bxL
 cgD
 cgD
@@ -161629,7 +162198,7 @@ cdI
 cqM
 diJ
 cqM
-cdI
+oES
 bxL
 cgD
 cgD

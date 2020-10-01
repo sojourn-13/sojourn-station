@@ -13,11 +13,11 @@
 "am" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
 "an" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
 "ao" = (/obj/machinery/newscaster{dir = 8; pixel_x = -30; pixel_y = 0},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
-"ap" = (/obj/structure/sign/levels/stairsdown{pixel_y = 30},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"ap" = (/obj/structure/sign/levels/stairsdown{pixel_y = 30},/obj/structure/closet/wall_mounted/firecloset{pixel_x = -32},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "aq" = (/obj/effect/floor_decal/industrial/warningwhite{dir = 1},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "ar" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "as" = (/obj/machinery/firealarm{pixel_y = 30},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
-"at" = (/obj/structure/sign/levels/stairsup{pixel_y = 30},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"at" = (/obj/structure/sign/levels/stairsup{pixel_y = 30},/obj/structure/closet/wall_mounted/emcloset{pixel_x = 32},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "au" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/main/stairwell)
 "av" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "aw" = (/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
@@ -30,9 +30,9 @@
 "aD" = (/obj/machinery/atmospherics/pipe/simple/visible/universal{dir = 4},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "aE" = (/obj/machinery/atmospherics/pipe/zpipe/up{tag = "icon-up (WEST)"; icon_state = "up"; dir = 8},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "aF" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
-"aG" = (/obj/machinery/camera/network/cev_eris{dir = 1},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
-"aH" = (/obj/machinery/power/smes/buildable{charge = 2.5e+006; input_attempt = 1; input_level = 250000; inputting = 0; output_attempt = 1; output_level = 250000; RCon_tag = "Substation - Stairs"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
-"aI" = (/obj/machinery/power/breakerbox{RCon_tag = "Stairwell Substation Bypass"},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
+"aG" = (/obj/machinery/camera/network/cev_eris{dir = 1},/obj/structure/closet/wall_mounted/firecloset{pixel_y = -32},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"aH" = (/obj/machinery/power/smes/buildable{charge = 2.5e+006; input_attempt = 1; input_level = 250000; inputting = 0; output_attempt = 1; output_level = 250000; RCon_tag = "Substation - Stairs"},/obj/structure/closet/wall_mounted/emcloset{pixel_y = 32},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
+"aI" = (/obj/machinery/power/breakerbox{RCon_tag = "Stairwell Substation Bypass"},/obj/structure/cable{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "aJ" = (/obj/effect/floor_decal/industrial/warningwhite,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "aK" = (/obj/structure/sign/levels/stairsdown{pixel_y = -30},/obj/machinery/light,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "aL" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
@@ -65,7 +65,7 @@
 "bm" = (/obj/machinery/atmospherics/pipe/tank/plasma,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "bn" = (/obj/machinery/atmospherics/portables_connector,/obj/structure/extinguisher_cabinet{pixel_y = 30},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "bo" = (/obj/machinery/computer/general_air_control,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
-"bp" = (/obj/machinery/atmospherics/unary/vent_pump/on,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
+"bp" = (/obj/machinery/atmospherics/unary/vent_pump/on,/obj/machinery/light{dir = 1},/obj/structure/closet/wall_mounted/firecloset{pixel_y = 32},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bq" = (/obj/structure/table/rack/shelf,/obj/random/toolbox,/obj/random/toolbox/low_chance,/obj/random/toolbox/low_chance,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "br" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "bs" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/effect/window_lwall_spawn,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
@@ -104,8 +104,8 @@
 "bZ" = (/obj/machinery/camera/network/cev_eris{dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "ca" = (/obj/machinery/camera/network/engineering{dir = 8},/mob/living/simple_animal/yithian{desc = "How'd he get in here?"; name = "Jorb"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "cb" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
-"cc" = (/obj/machinery/power/terminal{tag = "icon-term (NORTH)"; icon_state = "term"; dir = 1},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
-"cd" = (/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (EAST)"; icon_state = "danger"; dir = 4},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
+"cc" = (/obj/machinery/power/terminal{dir = 1; icon_state = "term"; tag = "icon-term (NORTH)"},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"cd" = (/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/floor_decal/industrial/danger{dir = 4; icon_state = "danger"; tag = "icon-danger (EAST)"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "ce" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "cf" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/machinery/telecomms/relay/preset/telecomms,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
 "cg" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
@@ -113,17 +113,17 @@
 "ci" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "cj" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "ck" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
-"cl" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (EAST)"; icon_state = "danger"; dir = 4},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
+"cl" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/effect/floor_decal/industrial/danger{dir = 4; icon_state = "danger"; tag = "icon-danger (EAST)"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "cm" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
 "cn" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
 "co" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/light/small{dir = 8},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "cp" = (/obj/machinery/power/sensor{long_range = 1; name = "Powernet Sensor - Stairwell"; name_tag = "Stairwell Subgrid"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "cq" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/catwalk,/obj/machinery/power/apc{dir = 8; name = "West APC"; pixel_x = -28; pixel_y = 0},/obj/structure/cable/yellow,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "cr" = (/obj/effect/window_lwall_spawn,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
-"cs" = (/obj/effect/floor_decal/industrial/danger/corner{tag = "icon-dangercorner (EAST)"; icon_state = "dangercorner"; dir = 4},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
+"cs" = (/obj/effect/floor_decal/industrial/danger/corner{dir = 4; icon_state = "dangercorner"; tag = "icon-dangercorner (EAST)"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "ct" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/toolbox/electrical,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 "cu" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
-"cv" = (/obj/machinery/alarm{dir = 8; pixel_x = 25; pixel_y = 0},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (NORTH)"; icon_state = "danger"; dir = 1},/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
+"cv" = (/obj/machinery/alarm{dir = 8; pixel_x = 25; pixel_y = 0},/obj/effect/floor_decal/industrial/danger{dir = 1; icon_state = "danger"; tag = "icon-danger (NORTH)"},/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "cw" = (/obj/machinery/firealarm{dir = 1; pixel_y = -28},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "cx" = (/obj/structure/closet/crate,/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "cy" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/machinery/camera/network/engineering{dir = 4},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
@@ -149,7 +149,7 @@
 "cS" = (/obj/machinery/light,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/hallway/main/stairwell)
 "cT" = (/obj/structure/multiz/stairs/active/bottom,/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
 "cU" = (/obj/structure/multiz/stairs/active,/turf/simulated/floor/reinforced,/area/nadezhda/hallway/main/stairwell)
-"cV" = (/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/effect/floor_decal/industrial/danger{tag = "icon-danger (EAST)"; icon_state = "danger"; dir = 4},/obj/machinery/camera/network/engineering,/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
+"cV" = (/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/effect/floor_decal/industrial/danger{dir = 4; icon_state = "danger"; tag = "icon-danger (EAST)"},/obj/machinery/camera/network/engineering,/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "cW" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/firealarm{dir = 4; pixel_x = 28},/obj/machinery/camera/network/engineering,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
 "cX" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white/golden,/area/nadezhda/hallway/main/stairwell)
 "cY" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
@@ -204,7 +204,7 @@
 "dV" = (/obj/structure/flora/small/grassa5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dW" = (/obj/structure/flora/small/rock4,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "dX" = (/obj/structure/flora/small/busha3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
-"dY" = (/obj/machinery/camera/network/cev_eris{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
+"dY" = (/obj/machinery/camera/network/cev_eris{dir = 1},/obj/effect/decal/cleanable/dirt,/obj/structure/closet/wall_mounted/firecloset{pixel_y = -32},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "dZ" = (/obj/structure/flora/small/bushb2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "ea" = (/obj/structure/flora/small/trailrockb4,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
 "eb" = (/obj/structure/flora/small/bushc3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/hallway/main/stairwell)
@@ -220,6 +220,7 @@
 "em" = (/turf/simulated/floor/tiled/steel,/area/turbolift/mountain/transition2)
 "en" = (/turf/simulated/floor/tiled/steel,/area/turbolift/mountain/transition3)
 "er" = (/turf/simulated/floor/tiled/steel,/area/turbolift/ElevatorOne/midlevelThree)
+"HG" = (/obj/structure/closet/wall_mounted/emcloset{pixel_x = 32},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 "Nc" = (/obj/machinery/door/airlock/maintenance_interior{name = "Service Maintenance"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "QR" = (/obj/structure/table/woodentable,/obj/structure/extinguisher_cabinet{pixel_y = 30},/turf/simulated/floor/tiled/steel/bluecorner,/area/nadezhda/hallway/main/stairwell)
 
@@ -252,7 +253,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababababababababababababababaaaaaaaaabababababababababaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeaeaeafagahQRaiafabababaaaaaaaaabdCdEdEdEdEdFdiabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababamanaeajararajavajabababaaaaaaaaabdKdndndndndKdjabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababamanaeajararajavHGabababaaaaaaaaabdKdndndndndKdjabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauakaJalaGaKalaJabababaaaaaaaaabdKdndndndndKdQabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauabadadababcCcCabababaaaaaaaaabdKdndndndndKdXabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaebUabcLcLababaNaPabababaaaaaaaaabdRdEdEdEdEdSdWabaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -280,7 +281,6 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdKdTdTdTdTdKdVabaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSdWabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aZaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-
 (1,1,2) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -338,7 +338,6 @@ aaaaaaaaaaaaabababababababababababaaaaaaaaaaaaaaabdKdUdUdUdUdKebabaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabdRdEdEdEdEdSdWabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababNcabaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-
 (1,1,3) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -368,7 +367,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababababababababababababababaaaaaaaaabababababababababaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeaeaeafagahQRaiafabababaaaaaaaaabdCdEdEdEdEdFefabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababamaeaeavajajavavajabababaaaaaaaaabdKdAdAdAdAdKdvabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaababamaeaeavajajavavHGabababaaaaaaaaabdKdAdAdAdAdKdvabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeanakaldNdYecaledabababaaaaaaaaabdKdAdAdAdAdKegabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaeauabadadababcCcCabababaaaaaaaaabdKdAdAdAdAdKdvabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaababaebUabbabbababcUcUabababaaaaaaaaabdRdEdEdEdEdSehabaaaaaaaaaaaaaaaaaaaaaaaaaa
