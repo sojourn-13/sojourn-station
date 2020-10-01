@@ -1,4 +1,4 @@
-
+// Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // Marshal
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security
 	disk_name = "Security Miscellaneous Pack"
@@ -8,7 +8,7 @@
 		/datum/design/autolathe/sec/secflashlight,
 		/datum/design/research/item/flash,
 		/datum/design/autolathe/sec/handcuffs,
-		/datum/design/autolathe/sec/zipties,
+		/datum/design/autolathe/sec/zipties = 0,
 		/datum/design/autolathe/sec/electropack,
 		/datum/design/autolathe/misc/taperecorder,
 		/datum/design/autolathe/tool/tacknife,
@@ -49,13 +49,13 @@
 
 	designs = list(
 
-		/datum/design/autolathe/ammo/pistol_practice,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg_practice,
+		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/magnum,
 		/datum/design/autolathe/ammo/magnum_rubber,
-		/datum/design/autolathe/ammo/magnum_practice,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_lethal,
 		/datum/design/autolathe/ammo/hrifle,
 		/datum/design/autolathe/ammo/hrifle_rubber,
@@ -63,18 +63,18 @@
 		/datum/design/autolathe/ammo/hrifle_lethal,
 		/datum/design/autolathe/ammo/lrifle,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short_practice,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
-		/datum/design/autolathe/ammo/magnum_ammobox_practice,
+		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
 		/datum/design/autolathe/ammo/hrifle_ammobox_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox_rubber,
-		/datum/design/autolathe/ammo/hrifle_ammobox_practice,
+		/datum/design/autolathe/ammo/hrifle_ammobox_practice = 0,
 		)
 
 
@@ -101,7 +101,7 @@
 		/datum/design/autolathe/ammo/rifle_short_rubber,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 		//shells
-		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_flash,
 	)
@@ -150,15 +150,15 @@
 	license = 20
 	designs = list(
 		/datum/design/autolathe/ammo/pistol_ammobox,
-		/datum/design/autolathe/ammo/pistol_ammobox_practice,
+		/datum/design/autolathe/ammo/pistol_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox_lethal,
 		/datum/design/autolathe/ammo/magnum_ammobox,
-		/datum/design/autolathe/ammo/magnum_ammobox_practice,
+		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox_lethal,
 		/datum/design/autolathe/ammo/kurtz_ammobox,
-		/datum/design/autolathe/ammo/kurtz_ammobox_practice,
+		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox_rubber,
 		/datum/design/autolathe/ammo/kurtz_ammobox_lethal,
 	)
@@ -170,17 +170,17 @@
 	license = 20
 	designs = list(
 		/datum/design/autolathe/ammo/rifle_ammobox_small,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_practice,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small,
-		/datum/design/autolathe/ammo/hrifle_ammobox_small_practice,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
@@ -193,21 +193,21 @@
 	license = 20
 
 	designs = list(
-		/datum/design/autolathe/ammo/m12empty,
-		/datum/design/autolathe/ammo/sbaw_empty,
-		/datum/design/autolathe/ammo/hrifle_drum_empty,
-		/datum/design/autolathe/ammo/rifle_pk_empty,
-		/datum/design/autolathe/ammo/lrifle_belt_empty,
-		/datum/design/autolathe/ammo/maxim_empty,
-		/datum/design/autolathe/ammo/c10x24,
+		/datum/design/autolathe/ammo/m12empty = 0,
+		/datum/design/autolathe/ammo/sbaw_empty = 0,
+		/datum/design/autolathe/ammo/hrifle_drum_empty = 0,
+		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
+		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
+		/datum/design/autolathe/ammo/maxim_empty = 0,
+		/datum/design/autolathe/ammo/c10x24 = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
 		/datum/design/autolathe/ammo/shotgun,
 		/datum/design/autolathe/ammo/shotgun_pellet,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
-		/datum/design/autolathe/ammo/box_10x24,
-		/datum/design/autolathe/ammo/box_antim,
+		/datum/design/autolathe/ammo/box_10x24 = 5,
+		/datum/design/autolathe/ammo/box_antim = 5,
 		)
 
 // G U N S (minus excelsior and research)
@@ -221,13 +221,13 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/giskard,
-		/datum/design/autolathe/gun/olivaw,
-		/datum/design/autolathe/gun/clarissa,
+		/datum/design/autolathe/gun/giskard = 2,
+		/datum/design/autolathe/gun/olivaw = 2,
+		/datum/design/autolathe/gun/clarissa = 2,
 		/datum/design/autolathe/gun/detective,
-		/datum/design/autolathe/ammo/pistol_practice,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
 		/datum/design/autolathe/ammo/pistol_rubber,
-		/datum/design/autolathe/ammo/slpistol_practice,
+		/datum/design/autolathe/ammo/slpistol_practice = 0,
 		/datum/design/autolathe/ammo/slpistol_rubber,
 		)
 
@@ -238,9 +238,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/colt,
+		/datum/design/autolathe/gun/colt = 3,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol,
-		/datum/design/autolathe/ammo/pistol_lethal,
+		/datum/design/autolathe/ammo/pistol_lethal = 2,
 	)
 
 
@@ -250,9 +252,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/firefly,
-		/datum/design/autolathe/ammo/hpistol_practice,
+		/datum/design/autolathe/gun/firefly = 3,
+		/datum/design/autolathe/ammo/hpistol_practice = 0,
 		/datum/design/autolathe/ammo/hpistol_rubber,
+		/datum/design/autolathe/ammo/hpistol,
+		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 	)
 
 // .40 REVOLVERS
@@ -263,9 +267,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/revolver,
-		/datum/design/autolathe/ammo/slmagnum_practice,
+		/datum/design/autolathe/gun/revolver = 3,
+		/datum/design/autolathe/ammo/slmagnum_practice = 0,
 		/datum/design/autolathe/ammo/slmagnum_rubber,
+		/datum/design/autolathe/ammo/slmagnum,
+		/datum/design/autolathe/ammo/slmagnum_lethal = 2,
 		)
 
 
@@ -275,9 +281,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/revolver/mateba,
-		/datum/design/autolathe/ammo/slkurtz,
+		/datum/design/autolathe/gun/revolver/mateba = 3,
+		/datum/design/autolathe/ammo/slkurtz_practice = 0,
 		/datum/design/autolathe/ammo/slkurtz_rubber,
+		/datum/design/autolathe/ammo/slkurtz,
+		/datum/design/autolathe/ammo/slkurtz_lethal = 2,
 		)
 
 // .40 pistols
@@ -288,9 +296,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/ladon_hs,
-		/datum/design/autolathe/ammo/magnum_practice,
+		/datum/design/autolathe/gun/ladon_hs = 3,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ladon/sa
@@ -299,10 +309,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/ladon_sa,
-		/datum/design/autolathe/ammo/magnum,
-		/datum/design/autolathe/ammo/magnum_lethal,
+		/datum/design/autolathe/gun/ladon_sa = 3,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ladon/dark
@@ -311,10 +322,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/ladon,
-		/datum/design/autolathe/ammo/magnum,
-		/datum/design/autolathe/ammo/magnum_lethal,
+		/datum/design/autolathe/gun/ladon = 3,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/colt/ten
@@ -323,9 +335,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/ten,
-		/datum/design/autolathe/ammo/magnum_practice,
+		/datum/design/autolathe/gun/ten = 3,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rafale
@@ -334,10 +348,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/rafale,
-		/datum/design/autolathe/ammo/magnum_lethal,
-		/datum/design/autolathe/ammo/magnum_practice,
+		/datum/design/autolathe/gun/rafale = 3,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
 // .50 PISTOLS
@@ -348,10 +363,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/lamia,
+		/datum/design/autolathe/gun/lamia = 3,
+		/datum/design/autolathe/ammo/kurtz_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz_practice,
-		/datum/design/autolathe/ammo/kurtz_rubber,
+		/datum/design/autolathe/ammo/kurtz,
+		/datum/design/autolathe/ammo/kurtz_lethal = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/basilisk
@@ -360,9 +376,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/basilisk,
+		/datum/design/autolathe/gun/basilisk = 3,
+		/datum/design/autolathe/ammo/kurtz_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz,
+		/datum/design/autolathe/ammo/kurtz_lethal = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/naga
@@ -371,10 +389,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/naga,
+		/datum/design/autolathe/gun/naga = 3,
+		/datum/design/autolathe/ammo/kurtz_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal,
+		/datum/design/autolathe/ammo/kurtz_lethal = 2,,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/akurra
@@ -383,10 +402,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/akurra,
+		/datum/design/autolathe/gun/akurra = 3,
+		/datum/design/autolathe/ammo/kurtz_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz_practice,
-		/datum/design/autolathe/ammo/kurtz_lethal,
+		/datum/design/autolathe/ammo/kurtz,
+		/datum/design/autolathe/ammo/kurtz_lethal = 2,
 		)
 
 // SHOTGUNS
@@ -397,9 +417,9 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/doublebarrel,
+		/datum/design/autolathe/gun/doublebarrel = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
-		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_flash,
 		)
 
@@ -409,9 +429,9 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/pump_shotgun,
+		/datum/design/autolathe/gun/pump_shotgun = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
-		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_flash,
 		)
 
@@ -421,11 +441,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/sbaw,
+		/datum/design/autolathe/gun/sbaw = 3,
 		/datum/design/autolathe/ammo/sbaw_slug,
 		/datum/design/autolathe/ammo/sbaw_pellet,
 		/datum/design/autolathe/ammo/sbaw_beanbag,
-		/datum/design/autolathe/ammo/sbaw_payload,
+		/datum/design/autolathe/ammo/sbaw_payload = 3,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/gladstone
@@ -434,9 +454,9 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/gladstone,
+		/datum/design/autolathe/gun/gladstone = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
-		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_flash,
 		)
 
@@ -446,7 +466,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/pug,
+		/datum/design/autolathe/gun/pug = 3,
 		/datum/design/autolathe/ammo/m12beanbag, // Never add tazershells, for love of god
 		/datum/design/autolathe/ammo/m12pellet,
 		/datum/design/autolathe/ammo/m12slug,
@@ -460,9 +480,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/wirbelwind,
-		/datum/design/autolathe/ammo/smg_practice,
+		/datum/design/autolathe/gun/wirbelwind = 3,
+		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg,
+		/datum/design/autolathe/ammo/smg_lethal = 0,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/straylight
@@ -471,9 +493,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/straylight,
-		/datum/design/autolathe/ammo/smg_practice,
+		/datum/design/autolathe/gun/straylight = 3,
+		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg,
+		/datum/design/autolathe/ammo/smg_lethal = 0,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/texan
@@ -482,9 +506,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/texan,
-		/datum/design/autolathe/ammo/smg_practice,
+		/datum/design/autolathe/gun/texan = 3,
+		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg,
+		/datum/design/autolathe/ammo/smg_lethal = 0,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mac
@@ -493,9 +519,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/mac,
-		/datum/design/autolathe/ammo/smg_practice,
+		/datum/design/autolathe/gun/mac = 3,
+		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg,
+		/datum/design/autolathe/ammo/smg_lethal = 0,
 	)
 
 // .257 carbines
@@ -506,7 +534,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/pitbull,
+		/datum/design/autolathe/gun/pitbull = 3,
 		/datum/design/autolathe/ammo/lrifle,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 	)
@@ -515,11 +543,17 @@
 	disk_name = "SM - .257 Ostwind Carbine"
 	icon_state = "frozenstar"
 
-	license = 8
+	license = 16
 	designs = list(
-		/datum/design/autolathe/gun/ostwind,
-		/datum/design/autolathe/ammo/lrifle,
+		/datum/design/autolathe/gun/ostwind = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
 
@@ -527,12 +561,18 @@
 	disk_name = "H&S - .257 Bulldog Carbine"
 	icon_state = "frozenstar"
 
-	license = 8
+	license = 16
 	designs = list(
-		/datum/design/autolathe/gun/bulldog,
-		/datum/design/autolathe/gun/bulldog_rds,
-		/datum/design/autolathe/ammo/lrifle_short_practice,
+		/datum/design/autolathe/gun/bulldog = 6,
+		/datum/design/autolathe/gun/bulldog_rds = 7,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
 // .257
@@ -541,24 +581,29 @@
 	disk_name = "SA - .257 Kalashnikov Rifle"
 	icon_state = "black"
 
-	license = 8
+	license = 16
 	designs = list(
-		/datum/design/autolathe/gun/ak47_sa,
-		/datum/design/autolathe/ammo/lrifle,
-		/datum/design/autolathe/ammo/lrifle_short_practice,
+		/datum/design/autolathe/gun/ak47_sa = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/saw
 	disk_name = "SA - .257 Pegasus LMG"
 	icon_state = "black"
 
-	license = 4
+	license = 6 //So we can print eather 2 or 1 and and some ammo
 	designs = list(
-		/datum/design/autolathe/gun/saw,
-		/datum/design/autolathe/ammo/lrifle_ammobox,
-		/datum/design/autolathe/ammo/lrifle_belt,
-		/datum/design/autolathe/ammo/lrifle_short_practice,
+		/datum/design/autolathe/gun/saw = 3,
+		/datum/design/autolathe/ammo/lrifle_ammobox = 2,
+		/datum/design/autolathe/ammo/lrifle_belt = 2,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 	)
 
@@ -566,24 +611,26 @@
 	disk_name = "SA - .257 Sika Rifle"
 	icon_state = "black"
 
-	license = 4
+	license = 6
 	designs = list(
-		/datum/design/autolathe/gun/sika,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice,
+		/datum/design/autolathe/gun/sika = 3,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/roe
 	disk_name = "H&S - .257 Roe Rifle"
 	icon_state = "frozenstar"
 
-	license = 4
+	license = 6
 	designs = list(
-		/datum/design/autolathe/gun/roe,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice,
+		/datum/design/autolathe/gun/roe =  3,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
 
@@ -595,9 +642,12 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/boltgun_sa,
+		/datum/design/autolathe/gun/boltgun_sa = 3,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
+		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 		/datum/design/autolathe/ammo/sl_rifle,
-		/datum/design/autolathe/ammo/rifle_ammobox_small,
 	)
 
 
@@ -609,9 +659,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/omnirifle,
-		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/gun/omnirifle = 3,
+		/datum/design/autolathe/ammo/hrifle_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_rubber,
+		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/ammo/hrifle_lethal = 2,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/boar
@@ -620,10 +672,11 @@
 
 	license = 6
 	designs = list(
-		/datum/design/autolathe/gun/omnicarbine,
-		/datum/design/autolathe/ammo/hrifle,
-		/datum/design/autolathe/ammo/hrifle_practice,
+		/datum/design/autolathe/gun/omnicarbine = 3,
+		/datum/design/autolathe/ammo/hrifle_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_rubber,
+		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/ammo/hrifle_lethal = 2,,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sts40
@@ -632,9 +685,11 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/sts40,
-		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/gun/sts40 = 3,
+		/datum/design/autolathe/ammo/hrifle_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_rubber,
+		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/ammo/hrifle_lethal = 2,
 	)
 
 
@@ -644,10 +699,12 @@
 
 	license = 6
 	designs = list(
-		/datum/design/autolathe/gun/scout,
+		/datum/design/autolathe/gun/scout = 3,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small,
-		/datum/design/autolathe/ammo/hrifle_ammobox_small_practice,
-		/datum/design/autolathe/ammo/hrifle_ammobox_small_hv,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small_lethal = 2,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small_hv = 3,
 	)
 
 
@@ -659,9 +716,9 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/heavysniper,
+		/datum/design/autolathe/gun/heavysniper = 3,
 		/datum/design/autolathe/ammo/antim,
-		/datum/design/autolathe/ammo/box_antim,
+		/datum/design/autolathe/ammo/box_antim = 2,
 	)
 
 
@@ -671,7 +728,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/mg_pk,
+		/datum/design/autolathe/gun/mg_pk = 3,
 		/datum/design/autolathe/ammo/rifle_pk,
 	)
 
@@ -681,7 +738,7 @@
 	disk_name = "SA - Grenade Launcher"
 	icon_state = "black"
 
-	license = 8
+	license = 3
 	designs = list(
 		/datum/design/autolathe/gun/grenade_launcher, // "NT GL \"Protector\""
 	)
@@ -690,7 +747,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 	disk_name = "H&S - Lenar Grenade Launcher"
 	icon_state = "frozenstar"
 
-	license = 8
+	license = 3
 	designs = list(
 		/datum/design/autolathe/gun/grenade_launcher_lenar, // "FS GL \"Lenar\""
 	)
@@ -703,7 +760,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/energygun,
+		/datum/design/autolathe/gun/energygun = 3,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -713,7 +770,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/energygun_martin,
+		/datum/design/autolathe/gun/energygun_martin = 2,
 		/datum/design/autolathe/cell/small/high,
 	)
 
@@ -725,7 +782,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/pulse_cassad,
+		/datum/design/autolathe/gun/pulse_cassad = 4,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -737,7 +794,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/pulse_rifle,
+		/datum/design/autolathe/gun/pulse_rifle = 3,
 		/datum/design/autolathe/ammo/c10x24,
-		/datum/design/autolathe/ammo/box_10x24,
+		/datum/design/autolathe/ammo/box_10x24 = 2,
 	)

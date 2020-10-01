@@ -7,6 +7,10 @@
 	if(!desc)
 		desc = "A stock part used in the construction of various devices."
 
+/datum/design/research/item/part/consolescreen
+	build_path = /obj/item/weapon/stock_parts/console_screen
+	materials = list(MATERIAL_GLASS = 3) //Balance it costs more for RnD to make
+
 /datum/design/research/item/part/basic_capacitor
 	build_path = /obj/item/weapon/stock_parts/capacitor
 

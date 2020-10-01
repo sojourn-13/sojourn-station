@@ -1,4 +1,4 @@
-
+// Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // greyson positronic
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar
 	disk_name = "Greyson Positronics Tool Pack"
@@ -10,10 +10,10 @@
 		/datum/design/autolathe/tool/jackhammer_onestar,
 		/datum/design/autolathe/tool/drill_onestar,
 		/datum/design/autolathe/tool/weldertool_onestar,
-		/datum/design/autolathe/tool/hammer_onestar,
-		/datum/design/autolathe/tool/omni_surgery_onestar,
+		/datum/design/autolathe/tool/hammer_onestar = 2,
+		/datum/design/autolathe/tool/omni_surgery_onestar = 2,
 		/datum/design/autolathe/tool/pickaxe_onestar,
-		/datum/design/autolathe/part/greyson/ai,
+		/datum/design/autolathe/part/greyson/ai = 3,
 
 	)
 
@@ -34,9 +34,9 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/cog
 	disk_name = "Greyson Positronics - Cog"
 	icon_state = "onestar"
-	license = 3
+	license = 6
 	designs = list(
-		/datum/design/autolathe/gun/greyson_cog,
+		/datum/design/autolathe/gun/greyson_cog = 2,
 		/datum/design/autolathe/cell/medium/high,
 
 	)
@@ -73,7 +73,7 @@
 		/datum/design/autolathe/circuit/reconstructor_excelsior,
 		/datum/design/autolathe/circuit/diesel_excelsior,
 		/datum/design/autolathe/circuit/turret_excelsior,
-		/datum/design/autolathe/circuit/autolathe_disk_cloner = 3,,
+		/datum/design/autolathe/circuit/autolathe_disk_cloner = 3,
 		/datum/design/research/item/part/micro_mani,				//machine parts
 		/datum/design/research/item/part/subspace_amplifier,
 		/datum/design/research/item/part/subspace_crystal,

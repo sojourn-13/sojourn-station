@@ -15,6 +15,7 @@
 	unlocks_designs = list(	/datum/design/research/item/science_tool,
 							/datum/design/research/item/part/basic_micro_laser,
 							/datum/design/research/item/part/basic_matter_bin,
+							/datum/design/research/item/part/consolescreen,
 							/datum/design/research/circuit/arcade_battle,
 							/datum/design/research/circuit/arcade_orion_trail,
 							/datum/design/research/circuit/autolathe,
