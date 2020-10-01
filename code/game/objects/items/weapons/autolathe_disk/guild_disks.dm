@@ -1,4 +1,5 @@
 // Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
+// To make a design unprotect use -1
 // Technomancers
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/components
 	disk_name = "Artificer's ARK-034 Components"
