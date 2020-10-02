@@ -161,6 +161,8 @@
 					/obj/item/weapon/reagent_containers/food/condiment/flour,
 					/obj/item/weapon/reagent_containers/food/condiment/flour,
 					/obj/item/weapon/reagent_containers/food/condiment/flour,
+					/obj/item/weapon/reagent_containers/food/condiment/enzyme,
+					/obj/item/weapon/reagent_containers/food/condiment/sugar,
 					/obj/item/weapon/reagent_containers/food/drinks/milk,
 					/obj/item/weapon/reagent_containers/food/drinks/milk,
 					/obj/item/weapon/storage/fancy/egg_box,
