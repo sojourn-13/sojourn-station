@@ -281,8 +281,6 @@
 	icon_state = "mending_ichor"
 	automatic_charge_overlays = FALSE
 	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
-	splittable = FALSE	// Is the stack capable of being splitted?
-	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
