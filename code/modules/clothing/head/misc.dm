@@ -223,3 +223,9 @@
 	icon_state = "turban"
 	body_parts_covered = 0
 	flags_inv = BLOCKHAIR
+
+/obj/item/clothing/head/rice_hat
+	name = "rice hat"
+	desc = "A hat made out of straw, designed to keep the sun from hurting your face."
+	icon_state = "rice_hat"
+	flags_inv = BLOCKHAIR
