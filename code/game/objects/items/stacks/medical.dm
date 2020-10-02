@@ -279,8 +279,6 @@
 	singular_name = "mending ichor"
 	desc = "An ichor that can be used to mend physical trauma."
 	icon_state = "mending_ichor"
-	heal_brute = 8
-	origin_tech = list(TECH_BIO = 2)
 	automatic_charge_overlays = FALSE
 	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
