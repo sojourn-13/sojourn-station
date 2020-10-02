@@ -5,7 +5,7 @@
 	allowed_tools = list(
 		/obj/item/stack/medical/advanced/bruise_pack = 100,
 		/obj/item/stack/medical/bruise_pack = 20,
-		/obj/item/stack/medical/advanced/mending_ichor = 100,
+		/obj/item/stack/medical/advanced/bruise_pack/mending_ichor = 100,
 	)
 
 	duration = 80
@@ -19,7 +19,7 @@
 		tool_name = "regenerative membrane"
 	if (istype(tool, /obj/item/stack/medical/bruise_pack))
 		tool_name = "the bandaid"
-	if (istype(tool, /obj/item/stack/medical/advanced/mending_ichor))
+	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack/mending_ichor))
 		tool_name = "the mending ichor"
 	return tool_name
 
