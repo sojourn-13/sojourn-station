@@ -19,6 +19,15 @@
 	crate_name = "medical crate"
 	group = "Medical / Science"
 
+/datum/supply_pack/medical_defib
+	name = "Spare Defibrillator Crate"
+	contains = list(/obj/item/device/defib_kit,
+					/obj/item/weapon/cell/large/high)
+	cost = 800
+	containertype = /obj/structure/closet/crate/medical
+	crate_name = "medical crate"
+	group = "Medical / Science"
+
 /datum/supply_pack/virus
 	name = "Virus Sample Crate"
 	contains = list(/obj/item/weapon/virusdish/random,
@@ -34,7 +43,7 @@
 /datum/supply_pack/coolanttank
 	name = "Coolant Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/coolanttank)
-	cost = 1280
+	cost = 1000
 	containertype = /obj/structure/largecrate
 	crate_name = "coolant tank crate"
 	group = "Medical / Science"
@@ -61,16 +70,22 @@
 
 /datum/supply_pack/surgery
 	name = "Surgery Crate"
-	contains = list(/obj/item/weapon/tool/cautery,
-					/obj/item/weapon/tool/surgicaldrill,
-					/obj/item/clothing/mask/breath/medical,
+	contains = list(/obj/item/clothing/mask/breath/medical,
 					/obj/item/weapon/tank/anesthetic,
-					/obj/item/weapon/tool/hemostat,
-					/obj/item/weapon/tool/scalpel,
-					/obj/item/weapon/tool/retractor,
-					/obj/item/weapon/tool/bonesetter,
-					/obj/item/weapon/tool/saw/circular)
+					/obj/item/weapon/storage/firstaid/surgery)
 	cost = 960
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "surgery crate"
+	access = access_moebius
+	group = "Medical / Science"
+
+/datum/supply_pack/adv_surgery
+	contraband = TRUE
+	name = "Advanced Surgery Crate"
+	contains = list(/obj/item/clothing/mask/breath/medical,
+					/obj/item/weapon/tank/anesthetic,
+					/obj/item/weapon/storage/firstaid/surgery/traitor)
+	cost = 1260
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "surgery crate"
 	access = access_moebius
@@ -181,4 +196,11 @@
 	name = "Empty Design Disk Crate"
 	cost = 800
 	crate_name ="Empty disks crate"
+	group = "Miscellaneous"
+
+/datum/supply_pack/rped
+	contains = list(/obj/item/weapon/storage/part_replacer/mini)
+	name = "Compact Rapid Part Exchange Device"
+	cost = 250 //Its STILL cheaper to have rnd print this then buying
+	crate_name ="compact rapid part exchange device crate"
 	group = "Miscellaneous"

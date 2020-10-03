@@ -121,3 +121,11 @@
 	containertype = /obj/structure/largecrate
 	crate_name = "water tank crate"
 	group = "Hydroponics"
+
+/datum/supply_pack/large_watertank
+	name = "Large Water Tank Crate"
+	contains = list(/obj/structure/reagent_dispensers/watertank/huge)
+	cost = 880
+	containertype = /obj/structure/largecrate
+	crate_name = "water tank crate"
+	group = "Hydroponics"
