@@ -29,12 +29,14 @@
 // Brute Heal Surgery
 
 /datum/old_surgery_step/external/brute_heal
-	allowed_tools = list(/obj/item/stack/medical/advanced/bruise_pack = 100)
+	allowed_tools = list(/obj/item/stack/medical/advanced/bruise_pack = 100, /obj/item/stack/medical/advanced/bruise_pack/mending_ichor = 100)
 
 /datum/old_surgery_step/external/brute_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
 	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
 		tool_name = "regenerative membrane"
+	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack/mending_ichor))
+		tool_name = "mending ichor"
 
 	if (!hasorgans(target))
 		return
@@ -89,12 +91,14 @@
 // Burn Heal Surgery
 
 /datum/old_surgery_step/external/burn_heal
-	allowed_tools = list(/obj/item/stack/medical/advanced/ointment = 100)
+	allowed_tools = list(/obj/item/stack/medical/advanced/ointment = 100, /obj/item/stack/medical/advanced/ointment/regenerative_ichor = 100)
 
 /datum/old_surgery_step/external/burn_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
 	if (istype(tool, /obj/item/stack/medical/advanced/ointment))
 		tool_name = "regenerative graft"
+	if (istype(tool, /obj/item/stack/medical/advanced/ointment/regenerative_ichor))
+		tool_name = "regenerative ichor"
 
 	if (!hasorgans(target))
 		return
@@ -142,12 +146,14 @@
 // Toxin Heal Surgery
 
 /datum/old_surgery_step/external/tox_heal
-	allowed_tools = list(/obj/item/stack/nanopaste = 100)
+	allowed_tools = list(/obj/item/stack/nanopaste = 100, /obj/item/stack/ichor/purging_ichor = 100)
 
 /datum/old_surgery_step/external/tox_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
 	if (istype(tool, /obj/item/stack/nanopaste))
 		tool_name = "nanite swarm"
+	if (istype(tool, /obj/item/stack/ichor/purging_ichor))
+		tool_name = "purging ichor"
 
 	if (!hasorgans(target))
 		return
