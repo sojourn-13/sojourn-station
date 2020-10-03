@@ -50,3 +50,4 @@
 #define PERK_HANDYMAN /datum/perk/handyman
 #define PERK_STALKER /datum/perk/stalker
 #define PERK_BONE /datum/perk/bone
+#define PERK_INSPIRED /datum/perk/inspired

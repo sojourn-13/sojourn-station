@@ -521,9 +521,13 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#C1C1C1"
-	metabolism = REM * 0.05
+	metabolism = REM * 0.1
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1
+
+/datum/reagent/medicine/spaceacillin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.adjustToxLoss(-((0.1 + (M.getToxLoss() * 0.01)) * effect_multiplier))
+	M.add_chemical_effect(CE_ANTITOX, 1)
 
 /datum/reagent/medicine/sterilizine
 	name = "Sterilizine"
@@ -1041,6 +1045,12 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/sergatonin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
 	M.add_chemical_effect(CE_PULSE, 2)
+
+/datum/reagent/medicine/spaceacillin/cindicillin
+	name = "Cindicillin"
+	id = "cindicillin"
+	description = "An all-purpose antiviral agent naturally produced by cindarites that functions identically to spaceacillin."
+	constant_metabolism = TRUE
 
 /datum/reagent/medicine/cindpetamol
 	name = "Cindpetamol"

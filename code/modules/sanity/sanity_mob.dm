@@ -111,6 +111,8 @@
 
 /datum/sanity/proc/handle_insight()
 	insight += INSIGHT_GAIN(level_change)
+	if(usr?.stats.getPerk(PERK_INSPIRED))
+		insight += INSIGHT_GAIN(level_change)
 	while(insight >= 100)
 		to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? null : " Now you need to rest and rethink your life choices."]"))
 		++resting

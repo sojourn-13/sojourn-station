@@ -140,7 +140,7 @@
 	permitted_tail  = list()
 	permitted_wings = list()
 
-	perks = list(/datum/perk/suddenbrilliance)
+	perks = list(/datum/perk/suddenbrilliance,/datum/perk/inspired)
 
 /datum/species/marqua/get_bodytype()
 	return "Mar'Qua"
@@ -482,7 +482,7 @@
 		)
 	permitted_wings = list()
 
-	perks = list(/datum/perk/purgetoxins)
+	perks = list(/datum/perk/purgetoxins,/datum/perk/purgeinfections)
 
 /datum/species/cindarite/get_bodytype()
 	return "Cindarite"

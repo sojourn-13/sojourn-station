@@ -47,6 +47,11 @@
 	user.reagents.add_reagent("marquatol", 10)
 	return ..()
 
+/datum/perk/inspired
+	name = "Inspired Intellect"
+	desc = "Even the most humble Mar'qua is capable of study and extrapolation, your natural intellect allows you to become gain inspiration more easily."
+	//icon_state = "" // - No icon, suggestion - Riot Shield?
+
 //////////////////////////////////////Human perks
 /datum/perk/tenacity
 	name = "Tenacity"
@@ -169,6 +174,25 @@
 	user.reagents.add_reagent("cindpetamol", 5)
 	return ..()
 
+/datum/perk/purgeinfections
+	name = "Uncanny Resiliance"
+	desc = "Your body is adept not only at curing toxins and regulating its blood flow but also fighting off infections and disease in any form. All infections within you are slowly cured and diseases progression slowed if not outright cured, similar to as if you were injected with spaceacillin. Severe infections or late stage diseases may still need additional medical aid and this cannot restore necrotic tissue."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/purgeinfections/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your chemical sacks have not refilled yet, you'll need more rest before using this effect again."))
+		return FALSE
+	cooldown_time = world.time + 30 MINUTES
+	user.visible_message("[user] shivers slightly before taking a deep breath.", "You shiver slightly and take a deep breath before willing your bodies chemical sacks to open and begin purging infections.")
+	log_and_message_admins("used their [src] perk.")
+	user.reagents.add_reagent("cindicillin", 5)
+	return ..()
+
 ///////////////////////////////////////////Opifex perks
 /datum/perk/backup
 	name = "Back Up"
@@ -219,6 +243,6 @@
 		return FALSE
 	cooldown_time = world.time + 5 SECONDS
 	user.visible_message("[user] begins secreting and spreading web material around them.", "You begin secreting and spreading your webbing around.", "You hear an uncomfortable chitter noise.")
-	log_and_message_admins("used their [src] perk.")
+	//log_and_message_admins("used their [src] perk.") //commented out due to spam in the logs.
 	new /obj/effect/spider/stickyweb(usr.loc)
 	return ..()
