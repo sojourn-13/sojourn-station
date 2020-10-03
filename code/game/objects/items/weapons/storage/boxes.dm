@@ -101,6 +101,7 @@
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/weapon/tank/emergency_oxygen/engi(src)
 	new /obj/item/weapon/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/weapon/reagent_containers/food/snacks/mre(src)
 	new /obj/item/device/lighting/glowstick/yellow(src)
 
 /obj/item/weapon/storage/box/gloves
@@ -125,6 +126,7 @@
 	name = "box of syringes"
 	desc = "A box full of syringes."
 	illustration = "syringe"
+	use_to_pickup = TRUE // So we can pick up syringes quickly
 
 /obj/item/weapon/storage/box/syringes/populate_contents()
 	for(var/i in 1 to 7)
