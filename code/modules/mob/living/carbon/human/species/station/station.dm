@@ -95,7 +95,7 @@
 	permitted_tail  = list("Sablekyne Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/laststand)
+	perks = list(/datum/perk/laststand,/datum/perk/bone)
 
 /datum/species/sablekyne/get_bodytype()
 	return "Sablekyne"

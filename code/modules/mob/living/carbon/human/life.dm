@@ -794,6 +794,8 @@
 	var/health_threshold_softcrit = HEALTH_THRESHOLD_SOFTCRIT - stats.getStat(STAT_TGH)
 	if(stats.getPerk(PERK_BALLS_OF_PLASTEEL))
 		health_threshold_softcrit -= 20
+	if(stats.getPerk(PERK_BONE))
+		health_threshold_softcrit -= 20
 	if(health < health_threshold_softcrit)// health 0 - stat makes you immediately collapse
 		shock_stage = max(shock_stage, 61)
 	else if(shock_resist)

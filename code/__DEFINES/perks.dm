@@ -49,3 +49,4 @@
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_HANDYMAN /datum/perk/handyman
 #define PERK_STALKER /datum/perk/stalker
+#define PERK_BONE /datum/perk/bone

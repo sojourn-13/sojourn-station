@@ -1,4 +1,9 @@
-/datum/perk/laststand //Sablekyne perk, allows them to ignore pain for roughly a minute.
+//Perks for racial options, make sure to keep this organized.
+//Perks can be both active and passive.
+
+
+/////////////////////////////////////Sablekyne perks
+/datum/perk/laststand
 	name = "Last Stand"
 	desc = "As a sablekyne your body is a tank, through will and biology you can ignore pain entirely for a short amount of time."
 	active = FALSE
@@ -17,7 +22,13 @@
 	user.reagents.add_reagent("sabledone", 5)
 	return ..()
 
-/datum/perk/suddenbrilliance //Mar'qua perk that increases there mental stats across the board.
+/datum/perk/bone
+	name = "Bone Plated"
+	desc = "All sablekyne are covered in bone-like plating across various parts of the body, this layer of natural armor along the shins, thighs, fore-arms, and shoulders allow you to absorb impacts better than anyone, adding a further tolerance to pain."
+	//icon_state = "" // - No icon, suggestion - Riot Shield?
+
+///////////////////////////////////////Mar'qua perks
+/datum/perk/suddenbrilliance
 	name = "Sudden Brilliance"
 	desc = "Your intelligence is above the 'lesser races' and even the humblest of Mar'qua can prove it easily in moments of focus. Use this to center your thoughts and increase all your mental abilities."
 	active = FALSE
@@ -36,7 +47,8 @@
 	user.reagents.add_reagent("marquatol", 10)
 	return ..()
 
-/datum/perk/tenacity //Human perk that functions as an at will tricord.
+//////////////////////////////////////Human perks
+/datum/perk/tenacity
 	name = "Tenacity"
 	desc = "You pull what made your ancestors conquer the stars from your will, recovering from a small amount of injuries and potentially stabilizing yourself to live a bit longer."
 	active = FALSE
@@ -55,7 +67,7 @@
 	user.reagents.add_reagent("adrenol", 5)
 	return ..()
 
-/datum/perk/gutsandglory //Human perk that functions as an at will organ/internal bleeding heal.
+/datum/perk/gutsandglory
 	name = "Guts and Glory"
 	desc = "You pull what made your ancestors conquer the stars from your will, letting your body recover somewhat from any internal damage at the cost of becoming exhausted while it works."
 	active = FALSE
@@ -74,7 +86,8 @@
 	user.reagents.add_reagent("hustim", 5)
 	return ..()
 
-/datum/perk/enhancedsenses //Kriosan perk that gives them a boost to toughness and vigilance.
+//////////////////////////////////////Kriosan perks
+/datum/perk/enhancedsenses
 	name = "Enhance Senses"
 	desc = "You're a predator at heart and have the senses to match, for a short time your body toughens and your aim improves drastically as your senses enhance."
 	active = FALSE
@@ -90,10 +103,11 @@
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("<b><font color='red'>[user] sneers lightly as their pupils dilate and tension builds in their body!</font><b>", "<b><font color='red'>You feel your senses focusing, sound becomes crystal clear and your reflexes as fluid as water.</font><b>")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("kriotol", 5)
+	user.reagents.add_reagent("kriotol", 10)
 	return ..()
 
-/datum/perk/recklessfrenzy //Akula perk that dumps all stats in favor of upping melee through the roof.
+////////////////////////////////////////Akula perks
+/datum/perk/recklessfrenzy
 	name = "Reckless Frenzy"
 	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time. The rush of chemicals is also highly adddictive \
 	and often times will leave your body weaker for a short time."
@@ -111,10 +125,11 @@
 	user.visible_message("<b><font color='red'>[user] lets out deep gutteral growl as their eyes glaze over!</font><b>", "<b><font size='3px'><font color='red'>You abandon all reason as your sink into a blood thirsty frenzy!</font><b>", "<b><font color='red'>You hear a terrifying roar!</font><b>")
 	playsound(usr.loc, 'sound/voice/akularoar.ogg', 50, 1)
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("robustitol", 5)
+	user.reagents.add_reagent("robustitol", 10)
 	return ..()
 
-/datum/perk/adrenalineburst //Naramad perk that gives them the zoomies.
+////////////////////////////////////////Naramad perks
+/datum/perk/adrenalineburst
 	name = "Adrenaline Burst"
 	desc = "Naramads are built for extreme speed, be it for charging forward and retreating back."
 	active = FALSE
@@ -131,10 +146,11 @@
 	user.visible_message("[user] begins breathing much quicker as they let out a merp!", "You feel your heart rate increasing rapidly as everything seems to speed up and you let out an excited merp!", "You hear a loud merp...")
 	playsound(usr.loc, 'sound/voice/merp.ogg', 50, 1)
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("naratonin", 5)
+	user.reagents.add_reagent("naratonin", 10)
 	return ..()
 
-/datum/perk/purgetoxins //Cindarite perk that purges the blood of toxins and removes addiction.
+/////////////////////////////////////////Cindarite perks
+/datum/perk/purgetoxins
 	name = "Purge Toxins"
 	desc = "You force your body to begin the process of removing toxins from your blood. All toxins and addictions are slowly purged while any toxin damage to your liver or body is healed but the effect leaves you exhausted."
 	active = FALSE
@@ -153,7 +169,8 @@
 	user.reagents.add_reagent("cindpetamol", 5)
 	return ..()
 
-/datum/perk/backup //Cindarite perk that purges the blood of toxins and removes addiction.
+///////////////////////////////////////////Opifex perks
+/datum/perk/backup
 	name = "Back Up"
 	desc = "You retrieve your custom made back up tools hidden on your person somewhere, along with the tied coils that form a make shift belt."
 	active = FALSE
@@ -172,28 +189,8 @@
 	new /obj/item/weapon/storage/belt/utility/handmade/full(usr.loc)
 	return ..()
 
-/* //This has balance and code issues, commenting it out for now for later revision.
-/datum/perk/nightvision //A universal perk for races that can see in the dark.
-	name = "Night Vision"
-	desc = "Due to the biology of your race you're capable of seeing in the dark. You need to stand still to focus and pick apart the light."
-	active = FALSE
-	passivePerk = FALSE
-
-/datum/perk/nightvision/toggle()
-	var/mob/living/carbon/human/user = usr
-	if(is_active() && deactivate(holder))
-		to_chat(usr, "You deactivate [src]")
-		to_chat(usr, SPAN_NOTICE("You come to a stand still and begin letting your eyes adjust to the lighting, focusing on the darker areas and ignoring the light."))
-		usr.see_invisible = SEE_INVISIBLE_NOLIGHTING
-	else if(activate(holder))
-		to_chat(usr, "You activate [src]")
-		to_chat(usr, SPAN_NOTICE("You come to a stand still and begin letting your eyes adjust to the lighting, focusing on the darker areas and ignoring the light."))
-		usr.see_invisible = SEE_INVISIBLE_NOLIGHTING
-		log_and_message_admins("used their [src] perk.")
-	return ..()
-*/
-
-/datum/perk/spiderfriend //a perk that makes you friendly with spiders and immune to web slowdown
+////////////////////////////////////////////Cht'mant perks
+/datum/perk/spiderfriend
 	name = "Kin to the Spiders"
 	desc = "Through a combination of pheramones, appearence, and an innate understanding of spider behaviour all spiders are friendly to you, they won't attack you even if you attack them. This change \
 	in your biology and pheramones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
@@ -207,7 +204,7 @@
 	holder.faction = "neutral"
 	..()
 
-/datum/perk/webmaker //chtmant perk that lets you make webs... somehow
+/datum/perk/webmaker
 	name = "Spin Webs"
 	desc = "You can spin webs, spreading them around a location as a form of snaring barricade."
 	active = FALSE
