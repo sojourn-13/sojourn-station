@@ -25,7 +25,7 @@
 
 /obj/item/clothing/shoes/jackboots/laced_jackboots
 	name = "laced jackboots"
-	desc = "old military boots designed to make look you tacticool."
+	desc = "Old military boots designed to make look you tacticool."
 	icon_state = "laced_jackboots"
 
 /obj/item/clothing/shoes/reinforced
