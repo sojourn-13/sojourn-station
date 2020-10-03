@@ -254,7 +254,7 @@
 ////////////////////////////////////////////Cht'mant perks
 /datum/perk/spiderfriend
 	name = "Kin to the Spiders"
-	desc = "Through a combination of pheramones, appearence, and an innate understanding of spider behaviour all spiders are friendly to you, they won't attack you even if you attack them. This change \
+	desc = "Through a combination of pheromones, appearence, and an innate understanding of spider behaviour all spiders are friendly to you, they won't attack you even if you attack them. This change \
 	in your biology and pheramones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
 	//icon_state = "muscular" // https://game-icons.net
 
@@ -283,4 +283,29 @@
 	user.visible_message("[user] begins secreting and spreading web material around them.", "You begin secreting and spreading your webbing around.", "You hear an uncomfortable chitter noise.")
 	//log_and_message_admins("used their [src] perk.") //commented out due to spam in the logs.
 	new /obj/effect/spider/stickyweb(usr.loc)
+	return ..()
+
+/datum/perk/ichor
+	name = "Produce Ichor"
+	desc = "As a member of the Ru caste your ability to produce chemicals is well known, though it takes an hour to recover and much of your nutritional in-take you can produce clumped ichors that function as medical kits."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/ichor/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your body hasn't finished recovering, you will need to wait a bit longer."))
+		return FALSE
+	if(usr.nutrition <= 350)
+		to_chat(usr, SPAN_NOTICE("You do not have enough nutrition to produce more ichor, find things to eat!"))
+		return FALSE
+	cooldown_time = world.time + 1 HOURS
+	usr.nutrition -= 350
+	user.visible_message("[user] vomits different colored slime onto the floor!", "You vomit out your healing ichors onto the floor!", "You hear a wretching noise!")
+	log_and_message_admins("used their [src] perk.")
+	new /obj/item/stack/medical/advanced/bruise_pack/mending_ichor(usr.loc)
+	new /obj/item/stack/medical/advanced/ointment/regenerative_ichor(usr.loc)
+	new /obj/item/stack/ichor/purging_ichor(usr.loc)
 	return ..()

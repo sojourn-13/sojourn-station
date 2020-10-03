@@ -366,6 +366,8 @@
 	restricted_to_species = list(FORM_CHTMANT)
 	restricted_depts = SECURITY | PROSPECTOR
 
+	perks = list(/datum/perk/ichor)
+
 	stat_modifiers = list(
 		STAT_ROB = -8,
 		STAT_TGH = -8,

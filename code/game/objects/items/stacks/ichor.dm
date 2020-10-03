@@ -1,5 +1,5 @@
 /obj/item/stack/ichor/purging_ichor
-	name = "Purging ichor"
+	name = "purging ichor"
 	singular_name = "Dose"
 	desc = "A thin glob of green fluid used for purging toxins from the body."
 	icon = 'icons/obj/stack/items.dmi'
