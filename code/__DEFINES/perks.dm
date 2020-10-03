@@ -48,4 +48,4 @@
 #define PERK_SPIDER_FRIEND /datum/perk/spiderfriend
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_HANDYMAN /datum/perk/handyman
-
+#define PERK_STALKER /datum/perk/stalker

@@ -159,7 +159,7 @@
 
 /datum/perk/space_asshole
 	name = "Rough Life"
-	desc = "Coming from a world consumed with war has made you a lot more used to dealing with bad terrain and explosives."
+	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Enviromental damage from falling or explosives have less of an effect on your toughened body."
 	//icon_state = "bomb" // https://game-icons.net
 
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
@@ -330,3 +330,7 @@
 /datum/perk/handyman
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the best way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
+
+/datum/perk/stalker
+	name = "Anomaly Hunter"
+	desc = "Special training from senior prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examing an oddity that has become an anomaly you can tell what its greater boon or curse may be."
