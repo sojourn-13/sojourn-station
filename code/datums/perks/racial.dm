@@ -195,8 +195,8 @@
 
 ///////////////////////////////////////////Opifex perks
 /datum/perk/backup
-	name = "Back Up"
-	desc = "You retrieve your custom made back up tools hidden on your person somewhere, along with the tied coils that form a make shift belt."
+	name = "Smuggled Tools"
+	desc = "You retrieve your custom made quality tools hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This kit is also yours alone and a specialized suite of tools, unless you're upgrading to new tools you should not ever sell or give these away."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -207,10 +207,48 @@
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up tools. You didn't lose them, did you?"))
 		return FALSE
-	cooldown_time = world.time + 8 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up tools out from their hiding place, the belt unfolds as it quietly flops to the floor."))
+	cooldown_time = world.time + 12 HOURS
+	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up tools out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/storage/belt/utility/handmade/full(usr.loc)
+	new /obj/item/weapon/storage/belt/utility/opifex/full(usr.loc)
+	return ..()
+
+/datum/perk/turret
+	name = "Smuggled Circuit"
+	desc = "Opifex are scavengers at heart and rely heavily on machines and AI as a result, as such, each opifex keeps a specially designed circuit on their person to build a make shift defense platform when needed to secure their safety. Sadly, you only managed to smuggle the circuit on your person."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/turret/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You've already retrieved your scrap circuit. You didn't lose it, did you?"))
+		return FALSE
+	cooldown_time = world.time + 12 HOURS
+	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your smuggled circuit out from their hiding place, the plastic and metal device clattering on the floor."))
+	log_and_message_admins("used their [src] perk.")
+	new /obj/item/weapon/circuitboard/artificer_turret/opifex(usr.loc)
+	return ..()
+
+/datum/perk/medical
+	name = "Smuggled Patch Kit"
+	desc = "Opifex are scavengers at heart and rely heavily on machines and AI as a result, as such, each opifex keeps a specially designed circuit on their person to build a make shift defense platform when needed to secure their safety. Sadly, you only managed to smuggle the circuit on your person."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/medical/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You've already retrieved your patch kit. You didn't lose it, did you?"))
+		return FALSE
+	cooldown_time = world.time + 12 HOURS
+	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your smuggled patch kit out from their hiding place, the cloth pouch clattering on the floor."))
+	log_and_message_admins("used their [src] perk.")
+	new /obj/item/weapon/storage/firstaid/ifak(usr.loc)
 	return ..()
 
 ////////////////////////////////////////////Cht'mant perks

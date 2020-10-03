@@ -85,6 +85,16 @@
 		/obj/item/device/assembly/prox_sensor = 1,
 	)
 
+/obj/item/weapon/circuitboard/artificer_turret/opifex
+	build_name = "opifex turret"
+	build_path = /obj/machinery/porta_turret/artificer/opifex
+	board_type = "machine"
+	origin_tech = list(TECH_COMBAT = 3)
+	req_components = list(
+		/obj/item/weapon/stock_parts/manipulator = 1,
+		/obj/item/device/assembly/prox_sensor = 1,
+	)
+
 //Putting this here since its an antag type item and making a full .dm for 9 lines of code is.. dumb. -Kaz
 /obj/item/weapon/circuitboard/mindswapper
 	build_name = "mind swapper"

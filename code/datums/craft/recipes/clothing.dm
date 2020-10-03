@@ -29,6 +29,13 @@
 		list(QUALITY_CUTTING, 10, 60)
 	)
 
+/datum/craft_recipe/clothing/handmadebelt
+	name = "hand-made toolbelt"
+	result = /obj/item/weapon/storage/belt/utility/handmade
+	steps = list(
+		list(/obj/item/stack/cable_coil, 30, time = 15),
+		list(QUALITY_CUTTING, 10, 60)
+	)
 
 /datum/craft_recipe/clothing/blindfold
 	name = "blindfold"
