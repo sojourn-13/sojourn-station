@@ -1,4 +1,5 @@
-
+// Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
+// To make a design unprotect use -1
 // Lonestar
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc
 	disk_name = "Lonestar Miscellaneous Pack"
@@ -47,9 +48,9 @@
 		/datum/design/autolathe/container/pill_bottle,
 		/datum/design/autolathe/container/spray,
 		/datum/design/autolathe/misc/cane,
-		/datum/design/autolathe/misc/floor_light,
-		/datum/design/autolathe/misc/tube,
-		/datum/design/autolathe/misc/bulb,
+		/datum/design/autolathe/misc/floor_light = 0,
+		/datum/design/autolathe/misc/tube = 0,
+		/datum/design/autolathe/misc/bulb = 0,
 		//Devices
 		/datum/design/autolathe/misc/flashlight,
 		/datum/design/autolathe/device/analyzer,
@@ -79,11 +80,11 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/cell/large,
-		/datum/design/autolathe/cell/large/high,
+		/datum/design/autolathe/cell/large/high = 2,
 		/datum/design/autolathe/cell/medium,
-		/datum/design/autolathe/cell/medium/high,
+		/datum/design/autolathe/cell/medium/high = 2,
 		/datum/design/autolathe/cell/small,
-		/datum/design/autolathe/cell/small/high,
+		/datum/design/autolathe/cell/small/high = 2,
 		/datum/design/autolathe/part/cell_mout,
 	)
 

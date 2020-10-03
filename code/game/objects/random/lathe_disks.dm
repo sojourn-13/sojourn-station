@@ -7,7 +7,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 20,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 4,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors = 10,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/logistics = 10,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 8,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 8,
