@@ -127,7 +127,8 @@ This file contains the underlying code for stash datums
 
 //This proc selects the turf where the stash will be spawned
 /datum/stash/proc/select_location()
-	select_direction()
+	if(!select_direction())
+		return
 
 	if (selected_direction == DIRECTION_LANDMARK)
 		//If we're using landmark spawning then we do that
@@ -163,22 +164,32 @@ This file contains the underlying code for stash datums
 	create_direction()
 
 /datum/stash/proc/select_direction()
+
+	var/possible_landmark
+	if(directions & DIRECTION_LANDMARK)
+		possible_landmark = pick_landmark(/obj/landmark/storyevent/midgame_stash_spawn)
+ 
+
 	//First of all, lets select how we're going to direct the user. This is not purely random
 
 	//If there's only one possible direction, then we take that
-	if (directions == DIRECTION_COORDS || directions == DIRECTION_LANDMARK || directions == DIRECTION_IMAGE)
+	if (directions == DIRECTION_COORDS || (directions == DIRECTION_LANDMARK && possible_landmark) || directions == DIRECTION_IMAGE)
 		selected_direction = directions
-
+		return TRUE
 	else
 		if ((directions & DIRECTION_IMAGE) && prob(50))
 			//Image is interesting, so 50% chance to do that if allowed
 			selected_direction = DIRECTION_IMAGE
-		else if ((directions & DIRECTION_LANDMARK) && prob(75))
+			return TRUE
+		else if ((directions & DIRECTION_LANDMARK) && possible_landmark && prob(75))
 			//Landmark is also interesting, high probability to do that
 			selected_direction = DIRECTION_LANDMARK
+			return TRUE
 		else
 			//Coords is the fallback
 			selected_direction = DIRECTION_COORDS
+			return TRUE
+	return FALSE
 
 
 //This proc is called after location is set, it creates the necessary info to direct the user
