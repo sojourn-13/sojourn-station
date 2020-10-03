@@ -433,7 +433,7 @@
 "kd" = (/obj/structure/table/rack,/obj/item/weapon/storage/deferred/toolmod,/turf/unsimulated/floor{icon_state = "dark"},/area/centcom/merc_base)
 "ke" = (/obj/item/device/radio/electropack,/turf/simulated/shuttle/floor{icon_state = "floor7"},/area/shuttle/mercenary)
 "kf" = (/obj/item/device/radio/intercom/syndicate{dir = 1; pixel_y = -22},/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
-"kg" = (/obj/structure/closet/walllocker/emerglocker{pixel_x = 28},/obj/structure/table/standard,/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
+"kg" = (/obj/structure/table/standard,/turf/simulated/shuttle/floor{icon_state = "floor6"},/area/shuttle/mercenary)
 "kh" = (/obj/structure/window/reinforced/crescent,/turf/space,/area/space)
 "ki" = (/obj/machinery/suit_storage_unit/merc,/turf/unsimulated/floor{icon_state = "dark"},/area/centcom/merc_base)
 "kj" = (/obj/machinery/door/airlock/external{frequency = 1331; id_tag = "merc_base_hatch_outer"; req_access = list(150)},/turf/unsimulated/floor{icon_state = "dark"},/area/centcom/merc_base)
