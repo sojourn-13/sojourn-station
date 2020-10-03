@@ -71,6 +71,8 @@
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
+	if(wielded)
+		itemstring += "_doble"
 	icon_state = iconstring
 	set_item_state(itemstring)
 
