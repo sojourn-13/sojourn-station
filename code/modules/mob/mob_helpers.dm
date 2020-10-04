@@ -220,25 +220,39 @@ proc/slur(phrase)
 	return html_encode(newphrase)
 
 /proc/stutter(phrase)
-	var/n = length(phrase)//length of the entire word
-	var/list/t = list()
-	var/p = 1//1 is the start of any word
-	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
-		var/n_letter = copytext(phrase, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
-		if (prob(80) && (lowertext(n_letter) in LIST_OF_CONSONANT))
-			if (prob(10))
-				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
-			else
-				if (prob(20))
-					n_letter = text("[n_letter]-[n_letter]-[n_letter]")
-				else
-					if (prob(5))
-						n_letter = null
-					else
-						n_letter = text("[n_letter]-[n_letter]")
-		t += n_letter //since the above is ran through for each letter, the text just adds up back to the original word.
-		p++//for each letter p is increased to find where the next letter will be.
-	return sanitize(jointext(t,null))
+	phrase = html_decode(phrase)
+
+	var/list/split_phrase = splittext(phrase," ") //Split it up into words.
+
+	var/list/unstuttered_words = split_phrase.Copy()
+	var/i = rand(1,3)
+	for(,i > 0,i--) //Pick a few words to stutter on.
+
+		if (!unstuttered_words.len)
+			break
+		var/word = pick(unstuttered_words)
+		unstuttered_words -= word //Remove from unstuttered words so we don't stutter it again.
+		var/index = split_phrase.Find(word) //Find the word in the split phrase so we can replace it.
+
+		//Search for dipthongs (two letters that make one sound.)
+		var/first_sound = copytext(word,1,3)
+		var/first_letter = copytext(word,1,2)
+		if(lowertext(first_sound) in list("ch","th","sh"))
+			first_letter = first_sound
+
+		//Repeat the first letter to create a stutter.
+		var/rnum = rand(1,3)
+		switch(rnum)
+			if(1)
+				word = "[first_letter]-[word]"
+			if(2)
+				word = "[first_letter]-[first_letter]-[word]"
+			if(3)
+				word = "[first_letter]-[word]"
+
+		split_phrase[index] = word
+
+	return sanitize(jointext(split_phrase," "))
 
 
 proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
