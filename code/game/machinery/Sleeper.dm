@@ -10,7 +10,9 @@
 	circuit = /obj/item/weapon/circuitboard/sleeper
 	var/scanning = 2 // How many units are we removing per filter cycle? - Basic has 2 Scanners
 	var/mob/living/carbon/human/occupant = null
-	var/list/available_chemicals = list("inaprovaline" = "Inaprovaline", "stoxin" = "Soporific", "paracetamol" = "Paracetamol", "anti_toxin" = "Dylovene", "dexalin" = "Dexalin")
+	var/list/available_chemicals
+	var/list/level0 = list(
+		"inaprovaline" = "Inaprovaline", "stoxin" = "Soporific", "paracetamol" = "Paracetamol", "anti_toxin" = "Dylovene", "dexalin" = "Dexalin")
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
 	var/filtering = 0 //FALSE
 	var/pump
@@ -32,7 +34,8 @@
 	scanning = 4 //Hyper has 4 scanners.
 	color = "#a4bdba"
 	circuit = /obj/item/weapon/circuitboard/sleeper/hyper
-	available_chemicals = list("inaprovaline" = "Inaprovaline", "chloralhydrate" = "Chloral Hydrate", "tramadol" = "Tramadol", "carthatoline" = "Carthatoline", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline")
+	level0 = list(
+		"inaprovaline" = "Inaprovaline", "chloralhydrate" = "Chloral Hydrate", "tramadol" = "Tramadol", "carthatoline" = "Carthatoline", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline")
 
 /obj/machinery/sleeper/Initialize()
 	. = ..()
@@ -49,18 +52,16 @@
 		man_amount++
 	man_rating -= man_amount
 
-	if(man_rating == 2)
-		available_chemicals = initial(available_chemicals) += level1
+	available_chemicals = level0.Copy()
 
-	if(man_rating == 3)
-		available_chemicals = initial(available_chemicals) += level2 += level1
-
-	if(man_rating == 4)
-		available_chemicals = initial(available_chemicals) += level3 += level2 += level1
-
-	if(man_rating == 5)
-		available_chemicals = initial(available_chemicals) += level4 += level3 += level2 += level1
-
+	if(man_rating >= 2)
+		available_chemicals += level1
+	if(man_rating >= 3)
+		available_chemicals += level2
+	if(man_rating >= 4)
+		available_chemicals += level3
+	if(man_rating >= 5)
+		available_chemicals += level4
 
 	var/scanning_rating = 0
 	var/scanning_amount = 0

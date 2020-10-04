@@ -21,7 +21,8 @@
 	var/amount = 30
 	var/accept_beaker = TRUE //At TRUE, ONLY accepts beakers.
 	var/hackedcheck = FALSE
-	var/list/dispensable_reagents = list(
+	var/list/dispensable_reagents
+	var/list/level0 = list(
 		"hydrazine","lithium","carbon",
 		"ammonia","acetone","sodium",
 		"aluminum","silicon","phosphorus",
@@ -31,10 +32,10 @@
 		"sugar","sacid","tungsten"
 	)
 
-	var/level1 = list("oil", "cryptobiolin")
-	var/level2 = list("toxin", "sodiumchloride")
-	var/level3 = list("potassium_chloride", "cryptobiolin")
-	var/level4 = list("inaprovaline")
+	var/list/level1 = list("oil", "cryptobiolin")
+	var/list/level2 = list("toxin", "sodiumchloride")
+	var/list/level3 = list("potassium_chloride", "cryptobiolin")
+	var/list/level4 = list("inaprovaline")
 
 	var/list/hacked_reagents = list("fuel","cleaner") //Basic stuff
 	var/obj/item/weapon/reagent_containers/beaker = null
@@ -49,7 +50,8 @@
 		man_amount++
 	man_rating -= man_amount
 
-	dispensable_reagents = initial(dispensable_reagents)
+	dispensable_reagents = level0.Copy()
+
 	if(man_rating >= 2)
 		dispensable_reagents += level1
 	if(man_rating >= 3)
@@ -223,11 +225,11 @@
 	fancy_hack = TRUE
 	accept_beaker = FALSE
 	density = FALSE
-	dispensable_reagents = list(
-	"water","ice","coffee","cream","tea","greentea","icetea",
-	"icegreentea","cola","spacemountainwind","dr_gibb","space_up",
-	"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice",
-	"watermelonjuice")
+	level0 = list(
+		"water","ice","coffee","cream","tea","greentea","icetea",
+		"icegreentea","cola","spacemountainwind","dr_gibb","space_up",
+		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice",
+		"watermelonjuice")
 
 	level1 = list("capsaicin", "carbon")
 	level2 = list("banana", "berryjuice")
@@ -260,11 +262,11 @@
 	accept_beaker = FALSE
 	density = FALSE
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
-	dispensable_reagents = list(
-	"lemon_lime","sugar","orangejuice","limejuice",
-	"sodawater","tonic","beer","kahlua","whiskey",
-	"wine","vodka","gin","rum","tequilla","vermouth",
-	"cognac","ale","mead")
+	level0 = list(
+		"lemon_lime","sugar","orangejuice","limejuice",
+		"sodawater","tonic","beer","kahlua","whiskey",
+		"wine","vodka","gin","rum","tequilla","vermouth",
+		"cognac","ale","mead")
 
 	level1 = list("melonliquor", "bluecuracao")
 	level2 = list("sake", "irishcream")
@@ -299,7 +301,7 @@
 	level3 = list(null)
 	level4 = list(null)
 
-	dispensable_reagents = list(
+	level0 = list(
 		"inaprovaline","ryetalyn","paracetamol",
 		"tramadol","oxycodone","sterilizine",
 		"leporazine","kelotane","dermaline",
@@ -321,12 +323,13 @@
 	icon_state = "industrial_dispenser"
 	ui_title = "Industrial Dispenser 4835"
 	circuit = /obj/item/weapon/circuitboard/chemical_dispenser/industrial
-	dispensable_reagents = list(
+	level0 = list(
 		"acetone","aluminum","ammonia",
 		"copper","ethanol","hydrazine",
 		"iron","radium","sacid",
 		"hclacid","silicon","tungsten"
 	)
+
 	level1 = list("oil", "cryptobiolin", "sterilizine")
 
 	hacked_reagents = list("fuel","cleaner","silicate","coolant") //So we have a reason to keep you
