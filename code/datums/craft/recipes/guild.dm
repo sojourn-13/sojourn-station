@@ -58,6 +58,20 @@
 		list(QUALITY_SAWING, 30, "time" = 60)
 	)
 
+/datum/craft_recipe/guild/robotmelee //Lots of steps
+	name = "robot mark v armour plating"
+	result = /obj/item/robot_parts/robot_component/armour/mkv
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 90),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(QUALITY_CUTTING, 30, "time" = 180),
+		list(QUALITY_HAMMERING, 30, "time" = 180),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 120),
+		list(QUALITY_SAWING, 30, "time" = 60)
+	)
+
 //Tools --------------------------
 /datum/craft_recipe/guild/arcwelder
 	name = "arc welder"
