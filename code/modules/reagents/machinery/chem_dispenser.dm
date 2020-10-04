@@ -31,10 +31,10 @@
 		"sugar","sacid","tungsten"
 	)
 
-	var/list/level1 = list("oil", "ammonia")
-	var/list/level2 = list("toxin", "sodiumchloride")
-	var/list/level3 = list("potassium_chloride", "cryptobiolin")
-	var/list/level4 = list("inaprovaline")
+	var/level1 = list("oil", "cryptobiolin")
+	var/level2 = list("toxin", "sodiumchloride")
+	var/level3 = list("potassium_chloride", "cryptobiolin")
+	var/level4 = list("inaprovaline")
 
 	var/list/hacked_reagents = list("fuel","cleaner") //Basic stuff
 	var/obj/item/weapon/reagent_containers/beaker = null
@@ -49,18 +49,15 @@
 		man_amount++
 	man_rating -= man_amount
 
-	if(man_rating == 2)
-		dispensable_reagents = initial(dispensable_reagents) += level1
-
-	if(man_rating == 3)
-		dispensable_reagents = initial(dispensable_reagents) += level2 += level1
-
-	if(man_rating == 4)
-		dispensable_reagents = initial(dispensable_reagents) += level3 += level2 += level1
-
-	if(man_rating == 5)
-		dispensable_reagents = initial(dispensable_reagents) += level4 += level3 += level2 += level1
-
+	dispensable_reagents = initial(dispensable_reagents)
+	if(man_rating >= 2)
+		dispensable_reagents += level1
+	if(man_rating >= 3)
+		dispensable_reagents += level2
+	if(man_rating >= 4)
+		dispensable_reagents += level3
+	if(man_rating >= 5)
+		dispensable_reagents += level4
 
 /obj/machinery/chemical_dispenser/proc/recharge()
 	if(stat & (BROKEN|NOPOWER)) return
@@ -330,6 +327,6 @@
 		"iron","radium","sacid",
 		"hclacid","silicon","tungsten"
 	)
-	level1 = list("oil", "ammonia", "sterilizine")
+	level1 = list("oil", "cryptobiolin", "sterilizine")
 
 	hacked_reagents = list("fuel","cleaner","silicate","coolant") //So we have a reason to keep you
