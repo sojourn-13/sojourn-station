@@ -1,3 +1,5 @@
+//To do, make matter bins, do something
+//To do, make micro lasers do something
 /obj/machinery/sleeper
 	name = "sleeper"
 	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."
@@ -40,25 +42,34 @@
 
 /obj/machinery/sleeper/RefreshParts()
 	..()
-	var/rating = 1
-	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
-		rating += B.rating - 1
+	var/man_rating = 0
+	var/man_amount = 0
+	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+		man_amount++
+	man_rating -= man_amount
 
+	if(man_rating == 2)
+		available_chemicals = initial(available_chemicals) += level1
+
+	if(man_rating == 3)
+		available_chemicals = initial(available_chemicals) += level2 += level1
+
+	if(man_rating == 4)
+		available_chemicals = initial(available_chemicals) += level3 += level2 += level1
+
+	if(man_rating == 5)
+		available_chemicals = initial(available_chemicals) += level4 += level3 += level2 += level1
+
+
+	var/scanning_rating = 0
+	var/scanning_amount = 0
 	for(var/obj/item/weapon/stock_parts/scanning_module/S in component_parts)
-		scanning = S.rating
+		scanning_rating += S.rating
+		scanning_amount++
+	scanning_rating -= scanning_amount
 
-	if(rating > 1) //Level 2 Matter Bin unlocks Tricordrazine
-		available_chemicals += level1
-
-	if(rating > 2) //Level 3 Matter Bin unlocks Spaceacillin
-		available_chemicals += level2
-
-	if(rating > 3) //Level 4 Matter Bin unlocks Alkysine
-		available_chemicals += level3
-
-	if(rating > 4) //Level 5 Matter Bin unlocks Leporazine
-		available_chemicals += level4
-
+	scanning = initial(scanning) + scanning_rating
 
 /obj/machinery/sleeper/Process()
 	if(stat & (NOPOWER|BROKEN))
@@ -75,7 +86,7 @@
 					occupant.vessel.trans_to_obj(beaker, pumped + 1)
 		else
 			toggle_filter()
-			
+
 	if(pump > 0)
 		if(beaker && istype(occupant))
 			if(beaker.reagents.total_volume < beaker.reagents.maximum_volume)
