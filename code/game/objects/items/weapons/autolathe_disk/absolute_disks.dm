@@ -143,14 +143,18 @@
 	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack"
 	icon_state = "neotheology"
 
-	license = 8
+	license = 16
 	designs = list(
-		/datum/design/autolathe/gun/mk58,
-		/datum/design/autolathe/gun/mk58_wood,
-		/datum/design/autolathe/ammo/pistol_practice,
+		/datum/design/autolathe/gun/mk58 = 3,
+		/datum/design/autolathe/gun/mk58_wood = 3,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
 		/datum/design/autolathe/ammo/pistol_rubber,
-		/datum/design/autolathe/ammo/magnum_practice,
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/pistol_lethal = 2,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
 //Church shotgun
@@ -160,9 +164,9 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/regulator,
+		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
-		/datum/design/autolathe/ammo/shotgun_blanks,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_flash,
 		)
 
@@ -184,7 +188,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/ntpistol,
+		/datum/design/autolathe/gun/ntpistol = 2,
 		/datum/design/autolathe/cell/small/high,
 	)
 
@@ -195,7 +199,7 @@
 	disk_name = "Absolute Armory - Nemesis Energy Crossbow"
 	icon_state = "neotheology"
 
-	license = 8
+	license = 2
 	designs = list(
 		/datum/design/autolathe/gun/energy_crossbow,
 	)
@@ -204,7 +208,7 @@
 	disk_name = "Absolute Armory - Themis Energy Crossbow"
 	icon_state = "neotheology"
 
-	license = 8
+	license = 1
 	designs = list(
 		/datum/design/autolathe/gun/large_energy_crossbow,
 	)
@@ -215,7 +219,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/laser,
+		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -223,9 +227,9 @@
 	disk_name = "Absolute Armory - Valkyrie Energy Rifle"
 	icon_state = "neotheology"
 
-	license = 8
+	license = 12
 	designs = list(
-		/datum/design/autolathe/gun/sniperrifle,
+		/datum/design/autolathe/gun/sniperrifle = 3,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -235,7 +239,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/ionrifle,
+		/datum/design/autolathe/gun/ionrifle = 2,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -245,9 +249,9 @@
 	disk_name = "Absolute Armory - Dominion Plasma Rifle"
 	icon_state = "neotheology"
 
-	license = 8
+	license = 12
 	designs = list(
-		/datum/design/autolathe/gun/pulse,
+		/datum/design/autolathe/gun/pulse = 3,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -257,7 +261,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/pulse_destroyer,
+		/datum/design/autolathe/gun/pulse_destroyer = 3,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -267,27 +271,27 @@
 	disk_name = "Absolute Armory of the Old Testament"
 	desc = "A rare and expensive disk containing designs for highly advanced energy and ballistic weaponry from the Old Testament, the Absolutes arms division."
 	icon_state = "neotheology"
-	license = 3
+	license = 16
 	designs = list(
 		/datum/design/autolathe/gun/mk58,
-		/datum/design/autolathe/gun/mk58_wood,
-		/datum/design/autolathe/gun/regulator,
+		/datum/design/autolathe/gun/mk58_wood = 2,
+		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/research/item/weapon/stunrevolver,
 		/datum/design/autolathe/gun/taser,
-		/datum/design/autolathe/gun/sniperrifle
+		/datum/design/autolathe/gun/sniperrifle = 6
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns
 	disk_name = "Absolute Armory of the New Testament"
 	desc = "A rare and expensive disk containing designs for highly advanced energy weapons from the Old Testament, the Absolutes arms division. Nicknamed the new testament for containing its latest weaponry designs."
 	icon_state = "neotheology"
-	license = 3
+	license = 16
 	designs = list(
-		/datum/design/autolathe/gun/energy_crossbow,
-		/datum/design/autolathe/gun/large_energy_crossbow,
+		/datum/design/autolathe/gun/energy_crossbow = 10,
+		/datum/design/autolathe/gun/large_energy_crossbow = 12,
 		/datum/design/autolathe/gun/ntpistol,
-		/datum/design/autolathe/gun/laser,
-		/datum/design/autolathe/gun/pulse,
-		/datum/design/autolathe/gun/pulse_destroyer,
-		/datum/design/autolathe/gun/ionrifle,
+		/datum/design/autolathe/gun/laser = 2,
+		/datum/design/autolathe/gun/pulse = 5,
+		/datum/design/autolathe/gun/pulse_destroyer = 8,
+		/datum/design/autolathe/gun/ionrifle = 3,
 	)
