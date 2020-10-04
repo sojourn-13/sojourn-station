@@ -605,7 +605,7 @@
 	disk_name = "SA - .257 Pegasus LMG"
 	icon_state = "black"
 
-	license = 8 //So we can print eather 2 and some ammo
+	license = 8 //So we can print 2 and some ammo
 	designs = list(
 		/datum/design/autolathe/gun/saw = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox = 2,
