@@ -1,3 +1,5 @@
+//To do, make matter bins, do something
+//To do, make micro lasers do something
 /obj/machinery/sleeper
 	name = "sleeper"
 	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."
@@ -8,7 +10,9 @@
 	circuit = /obj/item/weapon/circuitboard/sleeper
 	var/scanning = 2 // How many units are we removing per filter cycle? - Basic has 2 Scanners
 	var/mob/living/carbon/human/occupant = null
-	var/list/available_chemicals = list("inaprovaline" = "Inaprovaline", "stoxin" = "Soporific", "paracetamol" = "Paracetamol", "anti_toxin" = "Dylovene", "dexalin" = "Dexalin")
+	var/list/available_chemicals
+	var/list/level0 = list(
+		"inaprovaline" = "Inaprovaline", "stoxin" = "Soporific", "paracetamol" = "Paracetamol", "anti_toxin" = "Dylovene", "dexalin" = "Dexalin")
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
 	var/filtering = 0 //FALSE
 	var/pump
@@ -30,7 +34,8 @@
 	scanning = 4 //Hyper has 4 scanners.
 	color = "#a4bdba"
 	circuit = /obj/item/weapon/circuitboard/sleeper/hyper
-	available_chemicals = list("inaprovaline" = "Inaprovaline", "chloralhydrate" = "Chloral Hydrate", "tramadol" = "Tramadol", "carthatoline" = "Carthatoline", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline")
+	level0 = list(
+		"inaprovaline" = "Inaprovaline", "chloralhydrate" = "Chloral Hydrate", "tramadol" = "Tramadol", "carthatoline" = "Carthatoline", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline")
 
 /obj/machinery/sleeper/Initialize()
 	. = ..()
@@ -40,25 +45,32 @@
 
 /obj/machinery/sleeper/RefreshParts()
 	..()
-	var/rating = 1
-	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
-		rating += B.rating - 1
+	var/man_rating = 0
+	var/man_amount = 0
+	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+		man_amount++
+	man_rating -= man_amount
 
-	for(var/obj/item/weapon/stock_parts/scanning_module/S in component_parts)
-		scanning = S.rating
+	available_chemicals = level0.Copy()
 
-	if(rating > 1) //Level 2 Matter Bin unlocks Tricordrazine
+	if(man_rating >= 2)
 		available_chemicals += level1
-
-	if(rating > 2) //Level 3 Matter Bin unlocks Spaceacillin
+	if(man_rating >= 3)
 		available_chemicals += level2
-
-	if(rating > 3) //Level 4 Matter Bin unlocks Alkysine
+	if(man_rating >= 4)
 		available_chemicals += level3
-
-	if(rating > 4) //Level 5 Matter Bin unlocks Leporazine
+	if(man_rating >= 5)
 		available_chemicals += level4
 
+	var/scanning_rating = 0
+	var/scanning_amount = 0
+	for(var/obj/item/weapon/stock_parts/scanning_module/S in component_parts)
+		scanning_rating += S.rating
+		scanning_amount++
+	scanning_rating -= scanning_amount
+
+	scanning = initial(scanning) + scanning_rating
 
 /obj/machinery/sleeper/Process()
 	if(stat & (NOPOWER|BROKEN))
@@ -75,7 +87,7 @@
 					occupant.vessel.trans_to_obj(beaker, pumped + 1)
 		else
 			toggle_filter()
-			
+
 	if(pump > 0)
 		if(beaker && istype(occupant))
 			if(beaker.reagents.total_volume < beaker.reagents.maximum_volume)
