@@ -644,12 +644,16 @@
 
 	var/list/L = required_qualities & tool_qualities
 
-	if(L.len > 1)
-		for(var/i in L)
-			L[i] = image(icon = 'icons/mob/radial/tools.dmi', icon_state = i)
-		return show_radial_menu(user, use_on ? use_on : user, L, tooltips = TRUE, require_near = TRUE, custom_check = CB)
-	else
+	if(!(L.len))	//If the tool has none of the required qualities, the list is empty and thus we exit out of the proc
+		return
+
+	if(L.len == 1)
 		return L[1]
+
+	for(var/i in L)
+		L[i] = image(icon = 'icons/mob/radial/tools.dmi', icon_state = i)
+	return show_radial_menu(user, use_on ? use_on : user, L, tooltips = TRUE, require_near = TRUE, custom_check = CB)
+
 
 /obj/item/weapon/tool/proc/turn_on(var/mob/user)
 	if(use_power_cost)
