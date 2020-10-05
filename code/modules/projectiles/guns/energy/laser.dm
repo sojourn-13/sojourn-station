@@ -205,6 +205,11 @@
 	damage_multiplier = 0.7
 	twohanded = FALSE
 
+/obj/item/weapon/gun/energy/laser/mounted/cyborg
+	name = "integrated \"Cog\" lasgun"
+	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made."
+	recharge_time = 10 //Time it takes for shots to recharge (in ticks)
+
 /obj/item/weapon/gun/energy/laser/practice
 	name = "OT LG \"Lightfall\" - P"
 	desc = "A modified version of \"Old Testament\" brand laser carbine, this one fires less concentrated energy bolts, designed for target practice."

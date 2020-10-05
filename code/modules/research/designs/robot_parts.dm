@@ -119,6 +119,11 @@
 	desc = "A rapid construction device module for use during construction operations."
 	build_path = /obj/item/borg/upgrade/rcd
 
+/datum/design/research/item/robot_upgrade/welder_stuff
+	name = "Integrated Arc Welder module"
+	desc = "An electric based, safe welder for a robotic unit."
+	build_path = /obj/item/borg/upgrade/welder_stuff
+
 /datum/design/research/item/robot_upgrade/syndicate
 	name = "Illegal upgrade"
 	desc = "Allows for the construction of lethal upgrades for cyborgs."
