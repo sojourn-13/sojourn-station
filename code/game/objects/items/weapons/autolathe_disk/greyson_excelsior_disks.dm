@@ -133,7 +133,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_parts
 	disk_name = "Excelsior - Stocking Revolution"
-	desc = "The back has a machine etching: \"The everything can be apart of the revolution!\""
+	desc = "The back has a machine etching: \"Everything can be apart of the revolution!\""
 	icon_state = "excelsior"
 
 	license = -1
@@ -191,7 +191,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez
 	disk_name = "Excelsior - Vintorez"
-	desc = "The back has a machine etching: \"The long of revolution.\""
+	desc = "The back has a machine etching: \"The gun of long revolution.\""
 	icon_state = "excelsior"
 
 	license = -1

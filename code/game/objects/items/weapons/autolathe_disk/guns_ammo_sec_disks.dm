@@ -479,7 +479,7 @@
 	disk_name = "SM - .35 Wirbelwind SMG"
 	icon_state = "frozenstar"
 
-	license = 8
+	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/wirbelwind = 3,
 		/datum/design/autolathe/ammo/smg_practice = 0,
@@ -492,7 +492,7 @@
 	disk_name = "H&S - .35 Straylight SMG"
 	icon_state = "frozenstar"
 
-	license = 8
+	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/straylight = 3,
 		/datum/design/autolathe/ammo/smg_practice = 0,
@@ -505,7 +505,7 @@
 	disk_name = "SA - .35 Texan SMG"
 	icon_state = "black"
 
-	license = 8
+	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/texan = 3,
 		/datum/design/autolathe/ammo/smg_practice = 0,
@@ -533,11 +533,17 @@
 	disk_name = "H&S - .257 Pitbull Carbine"
 	icon_state = "frozenstar"
 
-	license = 8
+	license = 16
 	designs = list(
-		/datum/design/autolathe/gun/pitbull = 3,
-		/datum/design/autolathe/ammo/lrifle,
+		/datum/design/autolathe/gun/pitbull = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ostwind
@@ -599,20 +605,20 @@
 	disk_name = "SA - .257 Pegasus LMG"
 	icon_state = "black"
 
-	license = 6 //So we can print eather 2 or 1 and and some ammo
+	license = 8 //So we can print 2 and some ammo
 	designs = list(
 		/datum/design/autolathe/gun/saw = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox = 2,
-		/datum/design/autolathe/ammo/lrifle_belt = 2,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_belt, //This is its linked ammo
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sika
 	disk_name = "SA - .257 Sika Rifle"
 	icon_state = "black"
 
-	license = 6
+	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/sika = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
@@ -625,7 +631,7 @@
 	disk_name = "H&S - .257 Roe Rifle"
 	icon_state = "frozenstar"
 
-	license = 6
+	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/roe =  3,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
@@ -641,7 +647,7 @@
 	disk_name = "SA - 7.5mm Novakovic Rifle"
 	icon_state = "black"
 
-	license = 8
+	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/boltgun_sa = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
@@ -658,7 +664,7 @@
 	disk_name = "SA - .408 Hustler Heavy Rifle"
 	icon_state = "black"
 
-	license = 8
+	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/omnirifle = 3,
 		/datum/design/autolathe/ammo/hrifle_practice = 0,
@@ -727,7 +733,7 @@
 	disk_name = "SA - 7.5mm Pulemyot Kalashnikova MG"
 	icon_state = "black"
 
-	license = 8
+	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/mg_pk = 3,
 		/datum/design/autolathe/ammo/rifle_pk,
@@ -793,7 +799,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 	disk_name = "PAR - 10mm Caseless Pulse Rifle"
 	icon_state = "black"
 
-	license = 8
+	license = 10 //2 guns 2 mags and 1 box
 	designs = list(
 		/datum/design/autolathe/gun/pulse_rifle = 3,
 		/datum/design/autolathe/ammo/c10x24,
