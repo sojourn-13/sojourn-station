@@ -395,8 +395,8 @@
 	build_path = /obj/item/weapon/circuitboard/chemical_dispenser/industrial
 	category = CAT_MEDI
 
-/datum/design/research/circuit/industrial_printer
-	name = "Industrial Printer"
+/datum/design/research/circuit/industrial_autolathe
+	name = "Industrial Autolathe"
 	build_path = /obj/item/weapon/circuitboard/autolathe_industrial
 	category = CAT_MACHINE
 
