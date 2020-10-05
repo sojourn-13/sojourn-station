@@ -103,7 +103,7 @@
 				/obj/item/weapon/tool/saw/hyper = 1,
 				/obj/item/weapon/tool/pickaxe/diamonddrill = 2,
 				/obj/item/weapon/tool/tape_roll/fiber = 2,
-				/obj/item/weapon/tool/tape_roll/flextape = 1,
+				//obj/item/weapon/tool/tape_roll/flextape = 1,
 				/obj/item/weapon/tool/fireaxe = 1))
 
 /obj/random/tool/advanced/low_chance
