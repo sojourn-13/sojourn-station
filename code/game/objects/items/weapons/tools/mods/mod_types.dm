@@ -184,6 +184,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_MELEE_DAMAGE = 1.5,
 	)
+	I.req_gun_tags = list(GUN_BAYONET)
 	I.gun_loc_tag = GUN_KNIFE
 	I.required_qualities = list(QUALITY_CUTTING,QUALITY_SAWING, QUALITY_SHOVELING, QUALITY_WIRE_CUTTING)
 	I.prefix = "sharpened"
@@ -206,6 +207,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_MELEE_DAMAGE = 1.4,
 	)
+	I.req_gun_tags = list(GUN_BAYONET)
 	I.gun_loc_tag = GUN_KNIFE
 	I.required_qualities = list(QUALITY_CUTTING, QUALITY_SHOVELING, QUALITY_SAWING, QUALITY_WIRE_CUTTING, QUALITY_PRYING)
 	I.negative_qualities = list(QUALITY_WELDING, QUALITY_LASER_CUTTING)
