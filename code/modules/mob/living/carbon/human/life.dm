@@ -1046,3 +1046,5 @@
 		return
 	if(XRAY in mutations)
 		sight |= SEE_TURFS|SEE_MOBS|SEE_OBJS
+	if(CE_DARKSIGHT in chem_effects)//TODO: Move this to where it belongs, doesn't work without being right here for now. -Kaz/k5.
+		see_invisible = min(see_invisible, chem_effects[CE_DARKSIGHT])

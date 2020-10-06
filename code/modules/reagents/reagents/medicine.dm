@@ -1007,6 +1007,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/stim/kriotol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.stats.addTempStat(STAT_TGH, 10, STIM_TIME, "kriotol")
 	M.stats.addTempStat(STAT_VIG, 20, STIM_TIME, "kriotol")
+	M.add_chemical_effect(CE_DARKSIGHT, SEE_INVISIBLE_NOLIGHTING)
 
 /datum/reagent/stim/robustitol
 	name = "Robustitol"

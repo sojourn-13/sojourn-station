@@ -108,7 +108,7 @@
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("<b><font color='red'>[user] sneers lightly as their pupils dilate and tension builds in their body!</font><b>", "<b><font color='red'>You feel your senses focusing, sound becomes crystal clear and your reflexes as fluid as water.</font><b>")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("kriotol", 10)
+	user.reagents.add_reagent("kriotol", 5)
 	return ..()
 
 ////////////////////////////////////////Akula perks
@@ -130,7 +130,7 @@
 	user.visible_message("<b><font color='red'>[user] lets out deep gutteral growl as their eyes glaze over!</font><b>", "<b><font size='3px'><font color='red'>You abandon all reason as your sink into a blood thirsty frenzy!</font><b>", "<b><font color='red'>You hear a terrifying roar!</font><b>")
 	playsound(usr.loc, 'sound/voice/akularoar.ogg', 50, 1)
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("robustitol", 10)
+	user.reagents.add_reagent("robustitol", 5)
 	return ..()
 
 ////////////////////////////////////////Naramad perks
@@ -151,7 +151,7 @@
 	user.visible_message("[user] begins breathing much quicker as they let out a merp!", "You feel your heart rate increasing rapidly as everything seems to speed up and you let out an excited merp!", "You hear a loud merp...")
 	playsound(usr.loc, 'sound/voice/merp.ogg', 50, 1)
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("naratonin", 10)
+	user.reagents.add_reagent("naratonin", 5)
 	return ..()
 
 /datum/perk/born_warrior
