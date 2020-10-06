@@ -278,7 +278,7 @@
 	permitted_tail  = list("Naramad Tail", "Naramad Tail 2")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/adrenalineburst)
+	perks = list(/datum/perk/adrenalineburst,/datum/perk/born_warrior)
 
 /datum/species/naramad/get_bodytype()
 	return "Naramad"

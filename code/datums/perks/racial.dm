@@ -154,6 +154,11 @@
 	user.reagents.add_reagent("naratonin", 10)
 	return ..()
 
+/datum/perk/born_warrior
+	name = "Born Warrior"
+	desc = "No matter their background all naramadi are capable bringing any object to bear as a weapon, be it bladed or blunt. Unlike other races your grip is iron and you'll never lose your weapon through embedding it in an enemy."
+	//icon_state = "" // - No icon, suggestion - Riot Shield?
+
 /////////////////////////////////////////Cindarite perks
 /datum/perk/purgetoxins
 	name = "Purge Toxins"
