@@ -20,7 +20,7 @@
 	health = 20
 
 	var/blattedin_revives_left = 3 // how many times blattedin can get us back to life (as num for adminbus fun).
-	//The comman roach, gets to live 4 times, same as a roachling, they have so much ahead of life
+	//The common roach, gets to live 4 times, same as a roachling. They have so much to live for.
 	melee_damage_lower = 3
 	melee_damage_upper = 4
 

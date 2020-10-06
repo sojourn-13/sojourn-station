@@ -41,7 +41,7 @@
 	var/hunger_factor = 0 //0 to disable, how much nutrition is consumed per life tick
 
 	var/waring_faction = "" //What faction do we hate?
-	var/waring_faction_multy = 1 //How much more harm do we do to are waring faction?
+	var/waring_faction_multy = 1 //How much more damage do we do to our ennemy faction?
 
 
 	var/min_air_pressure = 50 //below this, brute damage is dealt

@@ -19,7 +19,7 @@
 
 	waring_faction = "roach"
 	waring_faction_multy = 0.8//We deal 20% LESS harm to roaches
-	//this is to keep bodies for are nests
+	//this is to keep bodies intacts for our nests
 
 
 	move_to_delay = 6
