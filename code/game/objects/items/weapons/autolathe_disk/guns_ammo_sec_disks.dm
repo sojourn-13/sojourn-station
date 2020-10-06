@@ -650,10 +650,10 @@
 	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/boltgun_sa = 3,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber,
+		/datum/design/autolathe/ammo/rifle_ammobox,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 2,
 		/datum/design/autolathe/ammo/sl_rifle,
 	)
 
