@@ -8,6 +8,8 @@
 	maxHealth = 200
 	health = 200
 
+	waring_faction_multy = 1.3 //Battle harden but rusty from the commanding lines (also deals a lot of harm already
+
 	melee_damage_lower = 15
 	melee_damage_upper = 30
 	move_to_delay = 8

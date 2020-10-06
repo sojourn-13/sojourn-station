@@ -16,13 +16,16 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 2
 
-	maxHealth = 10
-	health = 10
+	maxHealth = 20
+	health = 20
 
-	var/blattedin_revives_left = 1 // how many times blattedin can get us back to life (as num for adminbus fun).
-
-	melee_damage_lower = 1
+	var/blattedin_revives_left = 3 // how many times blattedin can get us back to life (as num for adminbus fun).
+	//The comman roach, gets to live 4 times, same as a roachling, they have so much ahead of life
+	melee_damage_lower = 3
 	melee_damage_upper = 4
+
+	waring_faction = "spiders"
+	waring_faction_multy = 1.1//how much more danmage we do to spider factions
 
 	min_breath_required_type = 3
 	min_air_pressure = 15 //below this, brute damage is dealt

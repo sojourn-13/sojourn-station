@@ -12,6 +12,10 @@
 	melee_damage_lower = 1
 	melee_damage_upper = 3 //He's a ranged roach
 
+	waring_faction_multy = 1.3 //We are a metal mess, support
+
+	blattedin_revives_left = 1
+
 	breath_required_type = NONE
 	breath_poison_type = NONE
 	min_breath_required_type = 0
