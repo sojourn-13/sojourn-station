@@ -959,7 +959,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/hustim
 	name = "Hustimdol"
 	id = "hustim"
-	description = "A chemical naturally produced by humans when they are at deaths door, allowing them to recover from things that would kill lesser people."
+	description = "A chemical naturally produced by humans when they are at deaths door, putting them in a recovery coma to heal their wounds."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ded890"
@@ -969,8 +969,10 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	scannable = 1
 
 /datum/reagent/medicine/hustim/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.heal_organ_damage(0.2, 0, 3)
-	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.1))
+	M.heal_organ_damage(0.4, 0, 3)
+	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.4))
+	M.adjustOxyLoss(-0.6)
+	M.adjustToxLoss(-0.3)
 	M.add_chemical_effect(CE_STABLE)
 	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)
 	M.add_chemical_effect(CE_PULSE, 1)
