@@ -64859,10 +64859,7 @@
 	pixel_y = 0
 	},
 /obj/structure/closet/wall_mounted{
-	pixel_y = -25
-	},
-/obj/structure/closet/wall_mounted{
-	pixel_y = -37
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo)
@@ -84853,11 +84850,9 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/crew_quarters/podrooms2)
 "noI" = (
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_y = -32
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/maintenance/undergroundfloor1north)
+/obj/structure/closet/wall_mounted,
+/turf/simulated/mineral,
+/area/nadezhda/engineering/engine_room)
 "nqn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -85972,6 +85967,13 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/exam_room)
+"uwV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/medical/morgue)
 "uwW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -93672,7 +93674,7 @@ aaf
 aaf
 aaf
 aaf
-aaf
+noI
 aaf
 aaf
 aaf
@@ -98337,7 +98339,7 @@ ciS
 azL
 azL
 azL
-ciS
+uwV
 arb
 aAX
 aBH
@@ -108213,7 +108215,7 @@ asI
 aCp
 asS
 asS
-noI
+asS
 apt
 apt
 are
@@ -108412,7 +108414,7 @@ asS
 asS
 asS
 asS
-noI
+asS
 asS
 asS
 asS

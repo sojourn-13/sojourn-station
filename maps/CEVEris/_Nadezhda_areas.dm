@@ -528,7 +528,9 @@
 	name = "\improper Courtroom"
 	icon_state = "courtroom"
 
-
+/area/nadezhda/command/crematorium
+	name = "\improper Crematorium"
+	icon_state = "erisyellow"
 
 //Crew Quarters
 

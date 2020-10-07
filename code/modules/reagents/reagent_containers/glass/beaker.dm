@@ -87,7 +87,6 @@
 /obj/item/weapon/reagent_containers/glass/beaker/sulphuric
 	preloaded_reagents = list("sacid" = 60)
 
-
 /obj/item/weapon/reagent_containers/glass/bucket
 	desc = "It's a bucket."
 	name = "bucket"
@@ -123,3 +122,11 @@
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
 		add_overlay(lid)
 
+/obj/item/weapon/reagent_containers/glass/urn
+	name = "Urn"
+	desc = "A tall, rounded vase with a base, with a short stem, used for storing the ashes of a cremated person."
+	icon_state = "urn"
+	amount_per_transfer_from_this = 1 //No
+	possible_transfer_amounts = list(1) //No
+	volume = 30
+	can_be_placed_into = null
