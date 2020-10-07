@@ -19,6 +19,8 @@
 				tally += 0.5
 	if(stats.getPerk(PERK_FAST_WALKER))
 		tally -= 0.5
+	if(stats.getPerk(PERK_SCUTTLEBUG))
+		tally -= 0.3
 	if(stats.getPerk(PERK_REZ_SICKNESS))
 		tally += 0.90
 

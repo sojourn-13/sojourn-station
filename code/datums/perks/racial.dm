@@ -314,3 +314,25 @@
 	new /obj/item/stack/medical/advanced/ointment/regenerative_ichor(usr.loc)
 	new /obj/item/stack/ichor/purging_ichor(usr.loc)
 	return ..()
+
+/datum/perk/chitinarmor
+	name = "Chitin Armor"
+	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile bretheren."
+	//icon_state = "" // - No icon, suggestion - Riot Shield?
+
+/datum/perk/chitinarmor/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk -= 0.15 // Reduces total brute damage to +10% **taken** instead of +25%
+	holder.mob_bomb_defense += 5
+	holder.falls_mod -= 0.2
+
+/datum/perk/chitinarmor/remove()
+	holder.brute_mod_perk += 0.15
+	holder.mob_bomb_defense -= 5
+	holder.falls_mod += 0.2
+	..()
+
+/datum/perk/scuttlebug
+	name = "Scuttlebug"
+	desc = "While your definitive purpose is not as clearly defined as other castes within the cht'mant hive your constant movement and labors have made you quite used to the hustle and bustle, letting you run faster than most races."
+	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html

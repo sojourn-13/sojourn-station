@@ -52,3 +52,4 @@
 #define PERK_BONE /datum/perk/bone
 #define PERK_INSPIRED /datum/perk/inspired
 #define PERK_BORN_WARRIOR /datum/perk/born_warrior
+#define PERK_SCUTTLEBUG /datum/perk/scuttlebug
