@@ -11,7 +11,7 @@
 	blattedin_revives_left = 2
 
 	melee_damage_lower = 3
-	melee_damage_upper = 8
+	melee_damage_upper = 10
 
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/jager
 	meat_amount = 3
