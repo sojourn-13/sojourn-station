@@ -18610,9 +18610,6 @@
 	dir = 8
 	},
 /obj/item/weapon/autopsy_scanner,
-/obj/structure/closet/wall_mounted{
-	pixel_x = 32
-	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/xenobiology)
 "aXf" = (
@@ -42824,9 +42821,6 @@
 /obj/item/stack/material/plastic{
 	amount = 120
 	},
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_x = 32
-	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/robotics)
 "ceC" = (
@@ -54671,6 +54665,9 @@
 /obj/structure/table/reinforced,
 /obj/machinery/camera/network/research,
 /obj/machinery/recharger,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/robotics)
 "cFV" = (
