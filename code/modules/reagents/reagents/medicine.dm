@@ -309,7 +309,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	color = "#CB68FC"
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1
-	metabolism = 0.02
+	metabolism = 0.1
 	nerve_system_accumulations = 40
 
 /datum/reagent/medicine/tramadol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
