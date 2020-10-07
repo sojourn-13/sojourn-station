@@ -24,9 +24,6 @@
 	melee_damage_lower = 3
 	melee_damage_upper = 4
 
-	waring_faction = "spiders"
-	waring_faction_multy = 1.1//how much more danmage we do to spider factions
-
 	min_breath_required_type = 3
 	min_air_pressure = 15 //below this, brute damage is dealt
 

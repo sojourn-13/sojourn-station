@@ -10,8 +10,6 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/seuche
 	meat_amount = 3
 
-	waring_faction_multy = 1.3
-
 	blattedin_revives_left = 1
 
 /mob/living/carbon/superior_animal/roach/support/New()

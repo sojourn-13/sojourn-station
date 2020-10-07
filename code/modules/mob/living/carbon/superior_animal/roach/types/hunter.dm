@@ -9,7 +9,6 @@
 	move_to_delay = 3.5
 
 	blattedin_revives_left = 2
-	waring_faction_multy = 2 //We are the figher!
 
 	melee_damage_lower = 3
 	melee_damage_upper = 8

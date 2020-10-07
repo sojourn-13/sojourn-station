@@ -17,11 +17,6 @@
 	emote_see = list("chitters.", "rubs its legs.")
 	speak_chance = 5
 
-	waring_faction = "roach"
-	waring_faction_multy = 0.8//We deal 20% LESS harm to roaches
-	//this is to keep bodies intacts for our nests
-
-
 	move_to_delay = 6
 	turns_per_move = 5
 	see_in_dark = 10

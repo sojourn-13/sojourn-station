@@ -11,8 +11,6 @@
 	melee_damage_lower = 2
 	melee_damage_upper = 3
 
-	waring_faction_multy = 1 //Weak and newborn, we don't have the propaganda against the spiders yet
-
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1
 
