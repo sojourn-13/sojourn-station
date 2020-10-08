@@ -199,13 +199,13 @@
 	return ..()
 
 ///////////////////////////////////////////Opifex perks
-/datum/perk/backup
+/datum/perk/opifex_backup
 	name = "Smuggled Tools"
 	desc = "You retrieve your custom made quality tools hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This kit is also yours alone and a specialized suite of tools, unless you're upgrading to new tools you should not ever sell or give these away."
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/backup/activate()
+/datum/perk/opifex_backup/activate()
 	var/mob/living/carbon/human/user = usr
 	if(!istype(user))
 		return ..()
@@ -218,13 +218,13 @@
 	new /obj/item/weapon/storage/belt/utility/opifex/full(usr.loc)
 	return ..()
 
-/datum/perk/turret
+/datum/perk/opifex_turret
 	name = "Smuggled Circuit"
 	desc = "Opifex are scavengers at heart and rely heavily on machines and AI as a result, as such, each opifex keeps a specially designed circuit on their person to build a make shift defense platform when needed to secure their safety. Sadly, you only managed to smuggle the circuit on your person."
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/turret/activate()
+/datum/perk/opifex_turret/activate()
 	var/mob/living/carbon/human/user = usr
 	if(!istype(user))
 		return ..()
@@ -237,13 +237,13 @@
 	new /obj/item/weapon/circuitboard/artificer_turret/opifex(usr.loc)
 	return ..()
 
-/datum/perk/medical
+/datum/perk/opifex_patchkit
 	name = "Smuggled Patch Kit"
-	desc = "Opifex are scavengers at heart and rely heavily on machines and AI as a result, as such, each opifex keeps a specially designed circuit on their person to build a make shift defense platform when needed to secure their safety. Sadly, you only managed to smuggle the circuit on your person."
+	desc = "Every opifex carries his own personal IFAK stashed somewhere. Being practical is the best option, after all, and the colony is a dangerous place."
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/medical/activate()
+/datum/perk/opifex_patchkit/activate()
 	var/mob/living/carbon/human/user = usr
 	if(!istype(user))
 		return ..()
