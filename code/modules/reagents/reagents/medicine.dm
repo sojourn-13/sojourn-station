@@ -309,7 +309,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	color = "#CB68FC"
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1
-	metabolism = 0.02
+	metabolism = 0.1
 	nerve_system_accumulations = 40
 
 /datum/reagent/medicine/tramadol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -521,9 +521,13 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#C1C1C1"
-	metabolism = REM * 0.05
+	metabolism = REM * 0.1
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1
+
+/datum/reagent/medicine/spaceacillin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.adjustToxLoss(-((0.1 + (M.getToxLoss() * 0.01)) * effect_multiplier))
+	M.add_chemical_effect(CE_ANTITOX, 1)
 
 /datum/reagent/medicine/sterilizine
 	name = "Sterilizine"
@@ -955,7 +959,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/hustim
 	name = "Hustimdol"
 	id = "hustim"
-	description = "A chemical naturally produced by humans when they are at deaths door, allowing them to recover from things that would kill lesser people."
+	description = "A chemical naturally produced by humans when they are at deaths door, putting them in a recovery coma to heal their wounds."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ded890"
@@ -965,8 +969,10 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	scannable = 1
 
 /datum/reagent/medicine/hustim/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.heal_organ_damage(0.2, 0, 3)
-	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.1))
+	M.heal_organ_damage(0.4, 0, 3)
+	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.4))
+	M.adjustOxyLoss(-0.6)
+	M.adjustToxLoss(-0.3)
 	M.add_chemical_effect(CE_STABLE)
 	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)
 	M.add_chemical_effect(CE_PULSE, 1)
@@ -1001,6 +1007,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/stim/kriotol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.stats.addTempStat(STAT_TGH, 10, STIM_TIME, "kriotol")
 	M.stats.addTempStat(STAT_VIG, 20, STIM_TIME, "kriotol")
+	M.add_chemical_effect(CE_DARKSIGHT, SEE_INVISIBLE_NOLIGHTING)
 
 /datum/reagent/stim/robustitol
 	name = "Robustitol"
@@ -1041,6 +1048,12 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/sergatonin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
 	M.add_chemical_effect(CE_PULSE, 2)
+
+/datum/reagent/medicine/spaceacillin/cindicillin
+	name = "Cindicillin"
+	id = "cindicillin"
+	description = "An all-purpose antiviral agent naturally produced by cindarites that functions identically to spaceacillin."
+	constant_metabolism = TRUE
 
 /datum/reagent/medicine/cindpetamol
 	name = "Cindpetamol"

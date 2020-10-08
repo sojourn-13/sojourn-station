@@ -61,6 +61,7 @@
 #define CE_NOWITHDRAW "no_withdrawal"
 #define CE_VOICEMIMIC "voice_mimic"
 #define CE_DYNAMICFINGERS "dynfingers"
+#define CE_DARKSIGHT "darksight"	//Vision methods built into a mob.
 
 // Reagent specific heat is not yet implemented, this is here for compatibility reasons
 #define SPECIFIC_HEAT_DEFAULT			200

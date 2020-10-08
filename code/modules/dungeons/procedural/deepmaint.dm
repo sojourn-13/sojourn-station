@@ -74,7 +74,7 @@ var/global/list/big_deepmaint_room_templates = list()
 */
 
 /obj/procedural/jp_DungeonGenerator/deepmaint/proc/makeLadders()
-	var/ladders_to_place = 6
+	var/ladders_to_place = 3
 	if(numRooms < ladders_to_place)
 		return
 	var/list/obj/procedural/jp_DungeonRoom/done_rooms = list()

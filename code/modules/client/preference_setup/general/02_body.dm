@@ -161,7 +161,10 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.ears_style = null
 			pref.tail_style = null
 			pref.wings_style = null
-			pref.setup_options["Origin"] = null 
+			pref.setup_options["Career"] = null
+			pref.setup_options["Homeworld"] = null
+			pref.setup_options["Upbringing"] = null
+			pref.setup_options["Ethnicity"] = null
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["reset_form"])

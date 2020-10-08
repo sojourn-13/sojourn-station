@@ -346,6 +346,8 @@
 
 	restricted_to_species = list(FORM_CHTMANT)
 
+	perks = list(/datum/perk/scuttlebug)
+
 	stat_modifiers = list(
 		STAT_ROB = 4,
 		STAT_TGH = 3,
@@ -366,6 +368,8 @@
 	restricted_to_species = list(FORM_CHTMANT)
 	restricted_depts = SECURITY | PROSPECTOR
 
+	perks = list(/datum/perk/ichor)
+
 	stat_modifiers = list(
 		STAT_ROB = -8,
 		STAT_TGH = -8,
@@ -380,12 +384,14 @@
 	desc = "Ra’s are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ru’s and even \
 			most workers, the Ro. Their bodies were highly adapted to fight and they knew only loyalty unto death for the good of \
 			the hive’s. Due to this, and the existence of the Ru, they often heavily lacked any cognitive thinking skills and would \
-			rely on winning battles by sheer weight of numbers or attrition. The severe lack of intelligence they exibit also bars them from most medicalroles and all of science, engineering, and command roles."
+			rely on winning battles by sheer weight of numbers or pure attrition. The severe lack of intelligence they exibit also bars them from most medical roles and all of science, engineering, and command roles."
 
 	restricted_to_species = list(FORM_CHTMANT)
 
 	restricted_depts = SCIENCE | ENGINEERING | COMMAND
 	restricted_jobs = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
+
+	perks = list(/datum/perk/chitinarmor)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,

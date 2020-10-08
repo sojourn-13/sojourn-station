@@ -794,6 +794,8 @@
 	var/health_threshold_softcrit = HEALTH_THRESHOLD_SOFTCRIT - stats.getStat(STAT_TGH)
 	if(stats.getPerk(PERK_BALLS_OF_PLASTEEL))
 		health_threshold_softcrit -= 20
+	if(stats.getPerk(PERK_BONE))
+		health_threshold_softcrit -= 20
 	if(health < health_threshold_softcrit)// health 0 - stat makes you immediately collapse
 		shock_stage = max(shock_stage, 61)
 	else if(shock_resist)
@@ -1044,3 +1046,5 @@
 		return
 	if(XRAY in mutations)
 		sight |= SEE_TURFS|SEE_MOBS|SEE_OBJS
+	if(CE_DARKSIGHT in chem_effects)//TODO: Move this to where it belongs, doesn't work without being right here for now. -Kaz/k5.
+		see_invisible = min(see_invisible, chem_effects[CE_DARKSIGHT])

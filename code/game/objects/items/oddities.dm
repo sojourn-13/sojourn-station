@@ -33,7 +33,10 @@
 /obj/item/weapon/oddity/examine(user)
 	..()
 	if(perk)
-		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>."))
+		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>"))
+		if(usr.stats.getPerk(PERK_STALKER))
+			var/datum/perk/oddity/OD = GLOB.all_perks[perk]
+			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
 	for(var/stat in oddity_stats)
 		var/aspect
 		switch(oddity_stats[stat])

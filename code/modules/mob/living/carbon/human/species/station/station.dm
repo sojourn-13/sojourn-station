@@ -95,7 +95,7 @@
 	permitted_tail  = list("Sablekyne Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/laststand)
+	perks = list(/datum/perk/laststand,/datum/perk/bone)
 
 /datum/species/sablekyne/get_bodytype()
 	return "Sablekyne"
@@ -140,7 +140,7 @@
 	permitted_tail  = list()
 	permitted_wings = list()
 
-	perks = list(/datum/perk/suddenbrilliance)
+	perks = list(/datum/perk/suddenbrilliance,/datum/perk/inspired)
 
 /datum/species/marqua/get_bodytype()
 	return "Mar'Qua"
@@ -278,7 +278,7 @@
 	permitted_tail  = list("Naramad Tail", "Naramad Tail 2")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/adrenalineburst)
+	perks = list(/datum/perk/adrenalineburst,/datum/perk/born_warrior)
 
 /datum/species/naramad/get_bodytype()
 	return "Naramad"
@@ -319,7 +319,7 @@
 		"Feathered Wings, Large"
 		)
 
-	perks = list(/datum/perk/backup)
+	perks = list(/datum/perk/opifex_backup,/datum/perk/opifex_turret,/datum/perk/opifex_patchkit)
 
 /datum/species/vox/get_bodytype()
 	return "Opifex"
@@ -482,7 +482,7 @@
 		)
 	permitted_wings = list()
 
-	perks = list(/datum/perk/purgetoxins)
+	perks = list(/datum/perk/purgetoxins,/datum/perk/purgeinfections)
 
 /datum/species/cindarite/get_bodytype()
 	return "Cindarite"

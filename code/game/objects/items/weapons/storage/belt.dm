@@ -95,6 +95,27 @@
 	new /obj/item/stack/cable_coil/random(src)
 	new /obj/item/weapon/tool/saw/improvised(src)
 
+/obj/item/weapon/storage/belt/utility/opifex
+	name = "opifex black tool webbing"
+	desc = "A black webbing made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for tools, limiting its versatility."
+	icon_state = "webbing_black"
+	item_state = "webbing_black"
+	storage_slots = 12
+
+/obj/item/weapon/storage/belt/utility/opifex/full/populate_contents()
+	new /obj/item/weapon/tool/crowbar/pneumatic(src)
+	new /obj/item/weapon/tool/hammer(src)
+	new /obj/item/weapon/tool/multitool(src)
+	new /obj/item/weapon/tool/saw/circular/advanced(src)
+	new /obj/item/weapon/tool/screwdriver/electric(src)
+	new /obj/item/stack/cable_coil/random(src)
+	new /obj/item/weapon/tool/shovel/power(src)
+	new /obj/item/weapon/tool/tape_roll/fiber(src)
+	new /obj/item/weapon/tool/weldingtool/advanced(src)
+	new /obj/item/weapon/tool/wirecutters/armature(src)
+	new /obj/item/weapon/tool/wrench/big_wrench(src)
+	new /obj/item/weapon/tool/knife/dagger(src)
+
 /obj/item/weapon/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
