@@ -37,6 +37,11 @@
 	var/agonyforce = 40
 	var/hitcost = 100
 
+/obj/item/weapon/tool/arcwelder/cyborg
+	desc = "A specialized tool designed by the Artificer's Guild. It functions as a battery powered welder and multitool. This version has a regulation on it preventing it to be used as a taser."
+	name = "integrated arc welder"
+	suitable_cell = /obj/item/weapon/cell/medium/moebius/nuclear
+
 /obj/item/weapon/tool/arcwelder/turn_on(mob/user)
 
 	if (cell && cell.charge > 0)

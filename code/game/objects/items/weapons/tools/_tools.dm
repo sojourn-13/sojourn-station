@@ -706,7 +706,15 @@
 	if (timespent < 5)
 		timespent = 5
 
-	if(use_power_cost)
+	if(use_power_cost && isrobot(user))
+		var/mob/living/silicon/robot/R = user
+		if(R.cell)
+			var/cost = use_power_cost
+			if(R.cell.charge >= cost)
+				R.cell.use(cost)
+			return 1
+
+	if(use_power_cost &! isrobot(user))
 		if (!cell?.checked_use(use_power_cost*timespent))
 			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 			return FALSE

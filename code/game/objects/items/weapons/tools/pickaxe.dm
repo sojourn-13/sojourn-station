@@ -59,6 +59,8 @@
 	workspeed = 1.2
 	use_power_cost = 0
 
+/obj/item/weapon/tool/pickaxe/onestar/cyborg
+	workspeed = 1.4
 
 /obj/item/weapon/tool/pickaxe/jackhammer
 	name = "jackhammer"

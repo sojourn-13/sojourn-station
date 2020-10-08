@@ -17,7 +17,6 @@
 		return 1
 	return 0
 
-
 /obj/item/borg/upgrade/reset
 	name = "robotic module reset board"
 	desc = "Used to reset a cyborg's module. Destroys any other upgrades applied to the robot."
@@ -83,7 +82,6 @@
 	icon_state = "cyborg_upgrade1"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 5)
 
-
 /obj/item/borg/upgrade/restart/action(var/mob/living/silicon/robot/R)
 	if(R.health < 0)
 		to_chat(usr, "You have to repair the robot before using this module!")
@@ -101,7 +99,6 @@
 	R.notify_ai(ROBOT_NOTIFICATION_NEW_UNIT)
 	return 1
 
-
 /obj/item/borg/upgrade/vtec
 	name = "robotic VTEC Module"
 	desc = "Used to kick in a robot's VTEC systems, increasing their speed."
@@ -116,14 +113,12 @@
 	R.speed_factor += 0.5
 	return 1
 
-
 /obj/item/borg/upgrade/tasercooler
 	name = "robotic Rapid Taser Cooling Module"
 	desc = "Used to cool a mounted taser, increasing the potential current in it and thus its recharge rate."
 	icon_state = "cyborg_upgrade3"
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_GLASS = 6, MATERIAL_GOLD = 2, MATERIAL_DIAMOND = 2)
 	require_module = TRUE
-
 
 /obj/item/borg/upgrade/tasercooler/action(var/mob/living/silicon/robot/R)
 	if(..()) return 0
@@ -192,7 +187,26 @@
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return 1
 
-/obj/item/borg/upgrade/syndicate/
+/obj/item/borg/upgrade/welder_stuff
+	name = "engineering robot arc welder"
+	desc = "An electric based, safe welder that runs on its own mini reactor. Use during construction operations."
+	icon_state = "cyborg_upgrade3"
+	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASMA = 10, MATERIAL_URANIUM = 10, MATERIAL_GOLD = 5)
+	require_module = TRUE
+
+/obj/item/borg/upgrade/welder_stuff/action(var/mob/living/silicon/robot/R)
+	if(..()) return 0
+
+	if(!R.module || !(type in R.module.supported_upgrades))
+		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
+		to_chat(usr, "There's no mounting point for the module!")
+		return 0
+	else
+		R.module.modules += new/obj/item/weapon/tool/arcwelder/cyborg(R.module)
+		R.module.Initialize() //Fixes layering and possible tool issues
+		return 1
+
+/obj/item/borg/upgrade/syndicate
 	name = "illegal equipment module"
 	desc = "Unlocks the hidden, deadlier functions of a robot"
 	icon_state = "cyborg_upgrade3"
