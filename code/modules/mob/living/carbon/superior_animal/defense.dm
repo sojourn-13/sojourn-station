@@ -353,6 +353,11 @@
 
 	if (thermal_protection < 1 && bodytemperature < burn_temperature)
 		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
+	if(stat == DEAD)
+		spawn(900)//how much time it takes to dust a corpse, in tenths of second
+		//90 seconds || 1min 30seconds
+		if(stat == DEAD) //Double check were not dusting something that has been revived
+			dust()
 
 /mob/living/carbon/superior_animal/update_fire()
 	cut_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
