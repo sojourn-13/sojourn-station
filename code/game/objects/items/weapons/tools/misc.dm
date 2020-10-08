@@ -41,18 +41,6 @@
 	desc = "A specialized tool designed by the Artificer's Guild. It functions as a battery powered welder and multitool. This version has a regulation on it preventing it to be used as a taser."
 	name = "integrated arc welder"
 	suitable_cell = /obj/item/weapon/cell/medium/moebius/nuclear
-	use_power_cost = 10 //uses a lot for a endless welder
-	stunforce = 0
-	agonyforce = 0
-	hitcost = 0
-
-/obj/item/weapon/tool/arcwelder/cyborg/hacked
-	name = "integrated atomic arc welder"
-	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, multitool, and incredibly painful taser. This one runs off its own supercharged mini-reactor."
-	suitable_cell = /obj/item/weapon/cell/medium/moebius/nuclear
-	agonyforce = 40
-	max_upgrades = 0
-	use_power_cost = 0
 
 /obj/item/weapon/tool/arcwelder/turn_on(mob/user)
 

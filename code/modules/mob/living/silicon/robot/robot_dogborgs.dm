@@ -316,7 +316,7 @@
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
-	src.emag = new /obj/item/weapon/tool/arcwelder/cyborg/hacked(src)
+	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(60000)
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass(40000)

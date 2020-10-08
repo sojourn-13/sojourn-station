@@ -529,7 +529,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/pickaxe/drill(src)
 	src.modules += new /obj/item/weapon/hatton/robot(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
-	src.emag = new /obj/item/weapon/tool/arcwelder/cyborg/hacked
+	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
 
 	//src.emag = new /obj/item/weapon/gun/energy/plasmacutter/mounted(src)
 	//src.malfAImodule += new /obj/item/weapon/rtf(src) //We don't have these features
