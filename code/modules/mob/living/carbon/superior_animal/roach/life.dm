@@ -36,8 +36,11 @@
 					stop_automated_movement = 1
 					src.visible_message(SPAN_NOTICE("\The [src] begins to eat \the [eat_target]."))
 					walk(src,0)
-					spawn(9000) // how much time it takes to it a corpse, in tenths of second
-					    // Set to 15 minutes to let the crew enough time to get the corpse
+					spawn(900) // how much time it takes to eat a corpse, in tenths of second
+					if(istype(eat_target, /mob/living/carbon/human))
+						spawn(8100)
+						// Set to 15 minutes to let the crew enough time to get the corpse
+						 //Takes to eat any non-human much shorter of a time, just 1 and a 1/2 min
 						// Several roaches eating at the same time do not speed up the process
 						// If disturbed the roach has to start back from 0
 						if(busy == EATING_TARGET)
@@ -69,7 +72,7 @@
 										src.visible_message(SPAN_WARNING("\The [src] finishes eating \the [eat_target], leaving only bones."))
 
 										// Get fed
-										fed += rand(4,6)
+										fed += rand(8,12)
 
 									else if (istype(M, /mob/living/carbon/superior_animal) && (M.icon)) // Eating a spider or roach
 
@@ -81,7 +84,7 @@
 										src.visible_message(SPAN_WARNING("\The [src] finishes eating \the [eat_target], leaving only bones."))
 
 										// Get fed
-										fed += rand(1,2)
+										fed += rand(4,8)
 
 								eat_target = null
 

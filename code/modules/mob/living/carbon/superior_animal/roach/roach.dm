@@ -16,12 +16,12 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 2
 
-	maxHealth = 10
-	health = 10
+	maxHealth = 15
+	health = 15
 
-	var/blattedin_revives_left = 1 // how many times blattedin can get us back to life (as num for adminbus fun).
-
-	melee_damage_lower = 1
+	var/blattedin_revives_left = 3 // how many times blattedin can get us back to life (as num for adminbus fun).
+	//The common roach, gets to live 4 times, same as a roachling. They have so much to live for.
+	melee_damage_lower = 3
 	melee_damage_upper = 4
 
 	min_breath_required_type = 3

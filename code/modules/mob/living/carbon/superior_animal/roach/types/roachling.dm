@@ -9,7 +9,7 @@
 	move_to_delay = 3.5
 
 	melee_damage_lower = 2
-	melee_damage_upper = 5
+	melee_damage_upper = 3
 
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1
