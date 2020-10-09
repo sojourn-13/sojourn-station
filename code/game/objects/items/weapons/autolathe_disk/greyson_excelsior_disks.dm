@@ -93,6 +93,7 @@
 		/datum/design/autolathe/prosthesis/excelsior/l_leg,
 		/datum/design/autolathe/prosthesis/excelsior/r_leg,
 		/datum/design/autolathe/device/implanter,					//misc
+		/datum/design/autolathe/device/propaganda_chip,
 		/datum/design/autolathe/clothing/excelsior_armor,
 		/datum/design/autolathe/device/excelbaton,
 		/datum/design/autolathe/excelsior/laser,
@@ -141,6 +142,7 @@
 		/datum/design/autolathe/circuit/autolathe_excelsior,//circuits
 		/datum/design/autolathe/circuit/diesel_excelsior,
 		/datum/design/autolathe/circuit/autolathe_disk_cloner,
+		/datum/design/autolathe/device/propaganda_chip,
 		/datum/design/autolathe/part/igniter,//regular parts
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_prox,
