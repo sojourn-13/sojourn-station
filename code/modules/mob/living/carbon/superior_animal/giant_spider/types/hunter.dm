@@ -74,6 +74,9 @@
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "party drops"
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/emperor
+	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4. 
+	meat_amount = 3
 	emote_see = list("chitters.","rubs its legs.","chitters in something that sounds like speech.")
 	mob_size = MOB_LARGE
 
