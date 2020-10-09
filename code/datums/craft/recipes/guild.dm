@@ -160,6 +160,19 @@
 		list(/obj/item/weapon/tool_upgrade/productivity/whetstone, 1, "time" = 30)
 	)
 
+/datum/craft_recipe/guild/firebrand
+	name = "Firebrand"
+	result = /obj/item/weapon/tool/sword/katana/firebrand
+	steps = list(
+	list(/obj/item/stack/material/plasteel, 10, "time" = 30),
+	list(QUALITY_SAWING, 30, "time" = 60),
+	list(/obj/item/stack/material/steel, 5, "time" = 30),
+	list(QUALITY_WELDING, 40, "time"= 60),
+	list(/obj/item/weapon/tool_upgrade/productivity/oxyjet, 1, "time" = 30),
+	list(QUALITY_HAMMERING, 45, "time" = 40),
+	list(/obj/item/weapon/tool_upgrade/augment/fuel_tank, 1, "time" = 30)
+	)
+
 //Wearables =========================
 /datum/craft_recipe/guild/technosuit
 	name = "'Mark V' enviromental protection suit"
