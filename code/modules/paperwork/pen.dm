@@ -198,3 +198,21 @@
 			create_reagents(20)
 			reagents.add_reagent("crayon_dust_[colourName]", 20)
 		..()
+
+/*
+ * Fountain Pen
+*/
+
+/obj/item/weapon/pen/fountain
+	name = "fountain pen"
+	desc = "It's a common fountain pen, with a faux wood body."
+	icon = 'icons/obj/fountain_pens.dmi'
+	icon_state = "pen-fountain"
+	item_state = "pen"
+	slot_flags = SLOT_BELT | SLOT_EARS
+	w_class = ITEM_SIZE_TINY
+	force = 5
+	throw_speed = 7
+	throw_range = 15
+	matter = list(MATERIAL_STEEL = 1)
+	colour = "black"
