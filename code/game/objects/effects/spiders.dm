@@ -57,6 +57,22 @@
 			icon_state = "stickyweb2"
 		..()
 
+/obj/effect/spider/stickyweb/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_WEAVING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_WEAVING)
+		to_chat(user, SPAN_NOTICE("You started to collecting the sticky webs into a ball of silk."))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_COG))
+		//Hard to mess up but takes some time
+			new /obj/item/stack/material/silk(get_turf(src), 1 ? 30 : 2)
+			to_chat(user, SPAN_NOTICE("You bundle up a ball of spider silk."))
+			qdel(src)
+			return
+		return
+
 /obj/effect/spider/stickyweb/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > T0C + 25) //Webs are even weaker to fire
 		health -= 5

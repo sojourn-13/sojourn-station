@@ -28,6 +28,7 @@
 #define QUALITY_LASER_CUTTING			"laser cutting"	//laser scalpels and e-swords - bloodless cutting
 
 //Other Qualities
+#define QUALITY_WEAVING					"weaving"
 #define QUALITY_ELECTROCUTION			"electroshock"
 #define QUALITY_ARMOR					"armor"
 
