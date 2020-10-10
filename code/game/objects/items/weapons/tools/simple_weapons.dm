@@ -111,13 +111,13 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	slot_flags = SLOT_BELT
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
-	var/backstabing = 5
+	var/backstab_damage = 5
 
 /obj/item/weapon/tool/knife/apply_hit_effect(atom/target, blocked=FALSE, mob/user)
 	..()
 	if(iscarbon(target) && target.dir == user.dir)
 		var/mob/living/carbon/M = target
-		M.adjustBruteLoss(backstabing)
+		M.adjustBruteLoss(backstab_damage)
 		visible_message("<span class='danger'>[user] backstabs [target] with [src]!</span>")
 	//Deals more harm then normal, does not get affected by mods nor armor. Flat number
 	//Is affected by mob armor*
@@ -128,7 +128,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "tacknife"
 	item_state = "knife"
-	backstabing = 7
+	backstab_damage = 7
 	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
 	force = WEAPON_FORCE_PAINFUL
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 15)
@@ -141,7 +141,7 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_EXTREME //Should be countered be embedding
-	backstabing = 3
+	backstab_damage = 3
 	embed_mult = 1.5 //This is designed for embedding
 
 /obj/item/weapon/tool/knife/ritual
@@ -149,7 +149,7 @@
 	desc = "The unearthly energies that once powered this blade are now dormant."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
-	backstabing = 10
+	backstab_damage = 10
 	force = WEAPON_FORCE_PAINFUL
 
 /obj/item/weapon/tool/knife/butch
@@ -159,7 +159,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_NORMAL
 	armor_penetration = ARMOR_PEN_MODERATE
-	backstabing = 1
+	backstab_damage = 1
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 1)
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 15)
@@ -172,7 +172,7 @@
 	item_state = "knife"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
 	force = WEAPON_FORCE_PAINFUL
-	backstabing = 12
+	backstab_damage = 12
 	max_upgrades = 3
 
 /obj/item/weapon/tool/knife/tacknife
@@ -181,7 +181,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "tacknife_guard"
 	item_state = "knife"
-	backstabing = 9
+	backstab_damage = 9
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_PAINFUL
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
@@ -196,7 +196,7 @@
 	item_state = "dagger"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_NORMAL
-	backstabing = 10
+	backstab_damage = 10
 	armor_penetration = ARMOR_PEN_DEEP
 
 /obj/item/weapon/tool/knife/dagger/ceremonial
@@ -204,7 +204,7 @@
 	desc = "Given to high ranking officers as a signature of office, while it isn't meant to be a weapon it certainly does the job."
 	icon_state = "fancydagger"
 	item_state = "fancydagger"
-	backstabing = 15
+	backstab_damage = 15
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
 
 /obj/item/weapon/tool/knife/dagger/bluespace
@@ -219,7 +219,7 @@
 	toggleable = TRUE
 	use_power_cost = 0.4
 	passive_power_cost = 0.4
-	backstabing = 11
+	backstab_damage = 11
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_BLUESPACE = 4)
 	var/mob/living/embedded
 	var/last_teleport
