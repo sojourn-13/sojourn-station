@@ -117,12 +117,19 @@
 
 /obj/item/weapon/tool/knife/resolve_attackby(atom/target, mob/user)
 	..()
-	if(iscarbon(target) && get_turf(target) == get_step(user, user.dir) && target.stat!=2 && user.dir == target.dir) //Detect that we're attacking a carbon target, that we're behind it as well.
-		var/mob/living/carbon/M = target
-		M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
-		visible_message("<span class='danger'>[user] backstabs [target] with [src]!</span>")
-		M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been backstabbed by [user.name] ([user.ckey])</font>")
-		user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey])</font>")
+	if(!(iscarbon(target)))
+		return
+	if(get_turf(target) != get_step(user, user.dir))
+		return
+	if(target.stat==2)
+		return
+	if(user.dir != target.dir)
+		return
+	var/mob/living/carbon/M = target
+	M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
+	visible_message("<span class='danger'>[user] backstabs [target] with [src]!</span>")
+	M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been backstabbed by [user.name] ([user.ckey])</font>")
+	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey])</font>")
 	//Uses regular call to deal damage
 	//Is affected by mob armor*
 
