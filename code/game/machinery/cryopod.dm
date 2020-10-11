@@ -360,7 +360,7 @@
 			qdel(O)
 
 	//Same for contract-based objectives.
-	for(var/datum/antag_contract/contract in GLOB.all_antag_contracts)
+	for(var/datum/antag_contract/contract in GLOB.excel_antag_contracts)
 		contract.on_mob_despawned(occupant.mind)
 
 
