@@ -216,3 +216,4 @@
 	throw_range = 15
 	matter = list(MATERIAL_STEEL = 1)
 	colour = "black"
+
