@@ -555,6 +555,26 @@ ADMIN_VERB_ADD(/client/proc/man_up, R_ADMIN, FALSE)
 	log_admin("[key_name(usr)] told [key_name(T)] to man up and deal with it.")
 	message_admins("\blue [key_name_admin(usr)] told [key_name(T)] to man up and deal with it.", 1)
 
+ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
+/client/proc/perkadd(mob/T as mob in SSmobs.mob_list)
+	set category = "Fun"
+	set name = "Add Perk"
+	set desc = "Add a perk to a person."
+	var/perkname = input("What perk do you want to add?")
+	T.stats.addPerk("/datum/perk/[perkname]")
+	T.stats.addPerk("/datum/perk/oddity/[perkname]")
+	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
+
+ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
+/client/proc/perkremove(mob/T as mob in SSmobs.mob_list)
+	set category = "Fun"
+	set name = "Remove Perk"
+	set desc = "Remove a perk from a person."
+	var/perkname = input("What perk do you want to remove?")
+	T.stats.removePerk("/datum/perk/[perkname]")
+	T.stats.removePerk("/datum/perk/oddity/[perkname]")
+	message_admins("\blue [key_name_admin(usr)] removed the perk [perkname] from [key_name(T)].", 1)
+
 ADMIN_VERB_ADD(/client/proc/global_man_up, R_ADMIN, FALSE)
 /client/proc/global_man_up()
 	set category = "Fun"

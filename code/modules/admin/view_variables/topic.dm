@@ -229,6 +229,32 @@
 		src.holder.marked_datum_weak = weakref(D)
 		href_list["datumrefresh"] = href_list["mark_object"]
 
+	else if(href_list["perkadd"])
+		if(!check_rights(0))
+			return
+		var/mob/S = locate (href_list["perkadd"])
+		if(!istype(S))
+			to_chat(usr, "This can only be done to instances of type /mob")
+			return
+		var/perkname = input("What perk do you want to add?")
+		S.stats.addPerk("/datum/perk/[perkname]")
+		S.stats.addPerk("/datum/perk/oddity/[perkname]")
+		message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(S)].", 1)
+		href_list["datumrefresh"] = href_list["perkadd"]
+
+	else if(href_list["perkremove"])
+		if(!check_rights(0))
+			return
+		var/mob/S = locate (href_list["perkremove"])
+		if(!istype(S))
+			to_chat(usr, "This can only be done to instances of type /mob")
+			return
+		var/perkname = input("What perk do you want to remove?")
+		S.stats.removePerk("/datum/perk/[perkname]")
+		S.stats.removePerk("/datum/perk/oddity/[perkname]")
+		message_admins("\blue [key_name_admin(usr)] removed the perk [perkname] from [key_name(S)].", 1)
+		href_list["datumrefresh"] = href_list["perkremove"]
+
 	else if(href_list["rotatedatum"])
 		if(!check_rights(0))	return
 
