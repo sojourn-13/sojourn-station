@@ -236,9 +236,8 @@
 		if(!istype(S))
 			to_chat(usr, "This can only be done to instances of type /mob")
 			return
-		var/perkname = input("What perk do you want to add?")
-		S.stats.addPerk("/datum/perk/[perkname]")
-		S.stats.addPerk("/datum/perk/oddity/[perkname]")
+		var/datum/perk/perkname = input("What perk do you want to add?") in subtypesof(/datum/perk/)
+		S.stats.addPerk(perkname)
 		message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(S)].", 1)
 		href_list["datumrefresh"] = href_list["perkadd"]
 
@@ -249,9 +248,11 @@
 		if(!istype(S))
 			to_chat(usr, "This can only be done to instances of type /mob")
 			return
-		var/perkname = input("What perk do you want to remove?")
-		S.stats.removePerk("/datum/perk/[perkname]")
-		S.stats.removePerk("/datum/perk/oddity/[perkname]")
+		if (S.stats.perks.len ==0)
+			to_chat(usr, "Creature has no perks to remove")
+			return
+		var/datum/perk/perkname = input("What perk do you want to remove?") in S.stats.perks
+		S.stats.removePerk(perkname.type)
 		message_admins("\blue [key_name_admin(usr)] removed the perk [perkname] from [key_name(S)].", 1)
 		href_list["datumrefresh"] = href_list["perkremove"]
 
