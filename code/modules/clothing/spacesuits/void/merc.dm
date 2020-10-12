@@ -115,7 +115,7 @@
 //Church Crusader armor, credit to Valterak for the original sprite.
 /obj/item/clothing/head/helmet/space/void/crusader
 	name = "crusader hood"
-	desc = "An armored helmet with a built in light system allowing you to shine a light on heretics before you purge them."
+	desc = "An armored helmet with a built in light system allowing you to shine heavens grace on heretics before you purge them."
 	icon_state = "inqarmor_hood"
 	item_state = "inqarmor_hood"
 	armor = list(
