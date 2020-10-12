@@ -52,14 +52,24 @@
 /obj/effect/spider/stickyweb
 	health = 1
 	icon_state = "stickyweb1"
+	var/silk_baring = TRUE
 	New()
 		if(prob(50))
 			icon_state = "stickyweb2"
+		if(prob(20))
+			silk_baring = FALSE
 		..()
+
+/obj/effect/spider/stickyweb/chtmant
+	silk_baring = FALSE
 
 /obj/effect/spider/stickyweb/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!istype(user.loc, /turf))
+		return
+	if(!silk_baring)
+		to_chat(user, SPAN_NOTICE("You can not collect anything from these webs."))
+		qdel(src)
 		return
 	var/list/usable_qualities = list(QUALITY_WEAVING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)

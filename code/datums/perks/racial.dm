@@ -287,7 +287,7 @@
 	cooldown_time = world.time + 5 SECONDS
 	user.visible_message("[user] begins secreting and spreading web material around them.", "You begin secreting and spreading your webbing around.", "You hear an uncomfortable chitter noise.")
 	//log_and_message_admins("used their [src] perk.") //commented out due to spam in the logs.
-	new /obj/effect/spider/stickyweb(usr.loc)
+	new /obj/effect/spider/stickyweb/chtmant(usr.loc)
 	return ..()
 
 /datum/perk/ichor
