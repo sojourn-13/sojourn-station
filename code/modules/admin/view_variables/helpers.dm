@@ -53,6 +53,8 @@
 		<option value='?_src_=vars;drop_everything=\ref[src]'>Drop Everything</option>
 
 		<option value='?_src_=vars;regenerateicons=\ref[src]'>Regenerate Icons</option>
+		<option value='?_src_=vars;perkadd=\ref[src]'>Add Perk</option>
+		<option value='?_src_=vars;perkremove=\ref[src]'>Remove Perk</option>
 		<option value='?_src_=vars;addlanguage=\ref[src]'>Add Language</option>
 		<option value='?_src_=vars;remlanguage=\ref[src]'>Remove Language</option>
 		<option value='?_src_=vars;addorgan=\ref[src]'>Add Organ</option>
