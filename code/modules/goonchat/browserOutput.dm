@@ -153,7 +153,10 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		return
 
 	if(cookie != "none")
-		var/list/connData = json_decode(cookie)
+		try
+			connData = json_decode(cookie)
+		catch(var/exception/e)
+			log_and_message_admins("[usr] has sent bad cookie data to analyzeClientData.")
 		if (connData && islist(connData) && connData.len > 0 && connData["connData"])
 			connectionHistory = connData["connData"] //lol fuck
 			var/list/found = new()
