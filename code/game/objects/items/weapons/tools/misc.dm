@@ -243,3 +243,9 @@
 	user.AddTopicPrint(src)
 	MT.interact(src, user)
 	return 1
+
+/obj/item/weapon/tool/silk_wand
+	name = "metal silk weaver"
+	desc = "A small metal two pronged fork used to gather balls of silk."
+	icon_state = "silk_wand"
+	tool_qualities = list(QUALITY_WEAVING = 30)
