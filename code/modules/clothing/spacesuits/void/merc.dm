@@ -35,6 +35,20 @@
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF
 
+/obj/item/clothing/head/helmet/space/void/SCAF/blackshield
+	name = "blackshield SCAF helmet"
+	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet. Features an inbuilt camera feed and helmet light."
+	icon_state = "scaf_mil"
+	item_state = "scaf_mil"
+	camera_networks = list(NETWORK_SECURITY)
+	light_overlay = "helmet_light_white"
+
+/obj/item/clothing/suit/space/void/SCAF/blackshield
+	name = "blackshield SCAF suit"
+	desc = "A bulky antique suit of refurbished into elite infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. The blackshields answers to an all purpose mobile tank suit."
+	icon_state = "scaf_mil"
+	item_state = "scaf_mil"
+	helmet = /obj/item/clothing/head/helmet/space/void/SCAF/blackshield
 
 //Voidsuit for traitors
 /obj/item/clothing/head/helmet/space/void/merc
