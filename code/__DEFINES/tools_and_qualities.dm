@@ -15,13 +15,13 @@
 #define QUALITY_EXCAVATION				"excavation"
 #define QUALITY_ADHESIVE				"adhesive"
 #define QUALITY_SEALING					"sealing"
+#define QUALITY_HAMMERING				"hammering"
 
 //Biological Qualities
 #define QUALITY_CLAMPING				"clamping"
 #define QUALITY_CAUTERIZING				"cauterizing"
 #define QUALITY_RETRACTING				"retracting"
 #define QUALITY_DRILLING				"drilling"
-#define QUALITY_HAMMERING				"hammering"
 #define QUALITY_SAWING					"sawing"
 #define QUALITY_BONE_SETTING			"bone setting"
 #define QUALITY_CUTTING					"cutting"
