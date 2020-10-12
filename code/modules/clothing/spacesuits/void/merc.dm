@@ -110,3 +110,42 @@
 	desc = "A crimson spacesuit sporting clean lines and durable plating. Robust, reliable, and slightly suspicious. This one is branded with a small rune at the collar noting it was made by the Xanorath Syndicate."
 	helmet = /obj/item/clothing/head/helmet/space/void/merc/xanorath
 	price_tag = 650
+
+
+//Church Crusader armor, credit to Valterak for the original sprite.
+/obj/item/clothing/head/helmet/space/void/crusader
+	name = "crusader hood"
+	desc = "An armored helmet with a built in light system allowing you to shine a light on heretics before you purge them."
+	icon_state = "inqarmor_hood"
+	item_state = "inqarmor_hood"
+	armor = list(
+		melee = 75,
+		bullet = 75,
+		energy = 75,
+		bomb = 90,
+		bio = 100,
+		rad = 100
+	)
+	siemens_coefficient = 0
+	species_restricted = list("Human")
+	light_overlay = "helmet_light_white"
+	brightness_on = 10 //luminosity when on
+
+/obj/item/clothing/suit/space/void/crusader
+	name = "crusader 'Deus Vult' power armor"
+	desc = "The church of absolutes most powerful creation, the Mark I 'Deus Vult' power armor, a void capable ablative durasteel-forged suit with built in power systems linked to a wearers cruciform, recharged by its presence to prevent slow down from the armors weight. The only thing they fear is you."
+	icon_state = "inqarmor"
+	item_state = "inqarmor"
+	slowdown = 0
+	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
+	armor = list(
+		melee = 75,
+		bullet = 75,
+		energy = 75,
+		bomb = 90,
+		bio = 100,
+		rad = 100
+	)
+	siemens_coefficient = 0
+	species_restricted = list("Human")
+	helmet = /obj/item/clothing/head/helmet/space/void/crusader
