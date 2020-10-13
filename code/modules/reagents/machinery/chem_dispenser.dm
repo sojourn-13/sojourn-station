@@ -30,13 +30,13 @@
 		"sugar","sacid","tungsten"
 	)
 
-	var/list/level1 = list("oil", "ammonia")
+	var/list/level1 = list("ammonia")
 	var/list/level2 = list("toxin", "sodiumchloride")
 	var/list/level3 = list("potassium_chloride", "cryptobiolin")
 	var/list/level4 = list("inaprovaline")
 
-	var/list/hacked_reagents = list("fuel","cleaner") //Basic stuff
-	var/obj/item/weapon/reagent_containers/beaker = null
+	var/list/hacked_reagents = list("cleaner") //Basic stuff
+	var/obj/item/weapon/reagent_containers/beaker
 
 /obj/machinery/chemical_dispenser/RefreshParts()
 	cell = locate() in component_parts
@@ -180,7 +180,7 @@
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/weapon/reagent_containers) && I.is_open_container() && !beaker)
-		I.forceMove(src)
+		user.unEquip(I, src)
 		I.add_fingerprint(user)
 		beaker = I
 		to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
