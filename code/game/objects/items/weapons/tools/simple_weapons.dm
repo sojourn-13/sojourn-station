@@ -113,11 +113,11 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	slot_flags = SLOT_BELT
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
-	var/backstab_damage = 8
+	var/backstab_damage = 10
 
 /obj/item/weapon/tool/knife/resolve_attackby(atom/target, mob/user)
 	..()
-	if(!(iscarbon(target)))
+	if(!(iscarbon(target) || isanimal(target)))
 		return
 	if(get_turf(target) != get_step(user, user.dir))
 		return
@@ -141,7 +141,7 @@
 	item_state = "knife"
 	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
 	force = WEAPON_FORCE_PAINFUL
-	backstab_damage = 12
+	backstab_damage = 14
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 15)
 
 /obj/item/weapon/tool/knife/hook
@@ -151,7 +151,7 @@
 	item_state = "hook_knife"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_DANGEROUS
-	backstab_damage = 6
+	backstab_damage = 8
 	armor_penetration = ARMOR_PEN_EXTREME //Should be countered be embedding
 	embed_mult = 1.5 //This is designed for embedding
 
@@ -161,7 +161,7 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
 	force = WEAPON_FORCE_PAINFUL
-	backstab_damage = 12
+	backstab_damage = 14
 
 /obj/item/weapon/tool/knife/butch
 	name = "butcher's cleaver"
@@ -169,7 +169,7 @@
 	desc = "A huge thing used for chopping and chopping up meat. This includes roaches and roach-by-products."
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_NORMAL
-	backstab_damage = 6
+	backstab_damage = 8
 	armor_penetration = ARMOR_PEN_MODERATE
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 1)
@@ -191,7 +191,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "tacknife_guard"
 	item_state = "knife"
-	backstab_damage = 12
+	backstab_damage = 14
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_PAINFUL
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
@@ -228,7 +228,7 @@
 	toggleable = TRUE
 	use_power_cost = 0.4
 	passive_power_cost = 0.4
-	backstab_damage = 6
+	backstab_damage = 10
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_BLUESPACE = 4)
 	var/mob/living/embedded
 	var/last_teleport
