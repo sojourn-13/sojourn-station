@@ -68,11 +68,10 @@
 		return
 
 
-/obj/item/weapon/grenade/proc/prime(mob/user as mob)
+/obj/item/weapon/grenade/proc/prime(mob/user)
 	var/turf/T = get_turf(src)
-	if(T)
-		T.hotspot_expose(700,125)
-		user.hud_used.updatePlaneMasters(user)
+	T.hotspot_expose(700,125)
+	user.hud_used.updatePlaneMasters(user)
 
 
 /obj/item/weapon/grenade/attackby(obj/item/I, mob/user as mob)
