@@ -20,7 +20,7 @@ LINEN BINS
 	var/inuse = FALSE
 
 /obj/item/weapon/bedsheet/Initialize(mapload, nfolded=FALSE)
-	.=..()
+	. = ..()
 	folded = nfolded
 	update_icon()
 
