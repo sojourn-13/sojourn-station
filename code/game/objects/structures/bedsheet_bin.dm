@@ -61,7 +61,7 @@ LINEN BINS
 	inuse = FALSE
 	return FALSE
 
-/obj/item/weapon/bedsheet/proc/toggle_fold(mob/user, no_message=FALSE)
+/obj/item/weapon/bedsheet/proc/toggle_fold(mob/user, no_message = FALSE)
 	if(!user)
 		return FALSE
 	if(inuse)
