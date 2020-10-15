@@ -47572,11 +47572,11 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/hallway/side/f2section4)
 "cpw" = (
-/obj/machinery/smartfridge,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white/gray_platform,
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics)
 "cpx" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized{
@@ -50585,7 +50585,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/small/lavarock2,
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/machinery/hologram/holopad,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/rnd/scient)
 "cwn" = (
@@ -52206,6 +52205,7 @@
 	dir = 8;
 	pixel_x = 22
 	},
+/obj/machinery/reagentgrinder/industrial,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "czU" = (
@@ -60774,6 +60774,7 @@
 /obj/machinery/button/windowtint{
 	id = "RD"
 	},
+/obj/item/weapon/stamp/rd,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "cUL" = (
@@ -65856,12 +65857,9 @@
 	},
 /area/nadezhda/hallway/side/f2section2)
 "dgk" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/reagentgrinder/industrial,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/crew_quarters/kitchen)
+/obj/machinery/smartfridge,
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/crew_quarters/hydroponics)
 "dgl" = (
 /obj/machinery/camera/network/command,
 /turf/simulated/floor/tiled/dark,
@@ -68836,11 +68834,8 @@
 	},
 /obj/item/weapon/aiModule/paladin,
 /obj/machinery/door/window{
-	base_state = "left";
-	dir = 4;
-	icon_state = "left";
 	name = "High-Risk Modules";
-	req_access = list(20)
+	req_access = list(16)
 	},
 /obj/item/weapon/aiModule/freeform,
 /obj/item/weapon/aiModule/oxygen,
@@ -70931,7 +70926,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/weapon/stamp/rd,
 /obj/item/device/eftpos{
 	eftpos_name = "Soteria Biolabs EFTPOS scanner"
 	},
@@ -75125,7 +75119,6 @@
 /area/nadezhda/medical/reception)
 "dBr" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/machinery/hologram/holopad,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/side/f2section1)
 "dBs" = (
@@ -85361,6 +85354,9 @@
 /obj/structure/table/marble,
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = 32
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
@@ -152714,7 +152710,7 @@ dSK
 cyr
 czh
 czT
-dgk
+cta
 qob
 diY
 dsb
@@ -152916,7 +152912,7 @@ bGH
 cpw
 cvJ
 bGH
-bGH
+dgk
 bGH
 bGH
 bGH
