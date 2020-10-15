@@ -121,7 +121,7 @@
 		return
 	if(get_turf(target) != get_step(user, user.dir))
 		return
-	if(target.stat==2)
+	if(target.stat == DEAD)
 		return
 	if(user.dir != target.dir)
 		return
