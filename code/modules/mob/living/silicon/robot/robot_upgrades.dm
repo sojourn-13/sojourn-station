@@ -187,7 +187,7 @@
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return 1
 
-/obj/item/borg/upgrade/welder_stuff
+/obj/item/borg/upgrade/arc_welder
 	name = "engineering robot arc welder"
 	desc = "An electric based, safe welder that runs on its own mini reactor. Use during construction operations."
 	icon_state = "cyborg_upgrade3"
@@ -205,6 +205,30 @@
 		R.module.modules += new/obj/item/weapon/tool/arcwelder/cyborg(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return 1
+
+/obj/item/borg/upgrade/hypospray
+	name = "medical cyborg hypospray advanced synthesiser"
+	desc = "An upgrade to the Medical module cyborg's hypospray, allowing it \
+		to produce more advanced and complex medical reagents."
+	require_module = TRUE
+	var/list/additional_reagents = list()
+
+/obj/item/borg/upgrade/hypospray/action(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if(.)
+		for(var/obj/item/weapon/reagent_containers/borghypo/H in R.module.modules)
+			if(H.accepts_reagent_upgrades)
+				H.reagent_ids += additional_reagents
+
+/obj/item/borg/upgrade/hypospray/medical
+	additional_reagents = list("dermaline", "meralyne", "tricordrazine", "dexalinp")
+
+/obj/item/borg/upgrade/hypospray/rescue
+	name = "rescue cyborg hypospray advanced synthesiser"
+	desc = "An upgrade to the Rescue module cyborg's hypospray, allowing it \
+		to produce more advanced and complex medical reagents."
+	additional_reagents = list("bicaridine", "kelotane", "anti_toxin", "dexalin") //Basic stuff
+
 
 /obj/item/borg/upgrade/syndicate
 	name = "illegal equipment module"

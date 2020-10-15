@@ -118,7 +118,9 @@
 							/datum/design/research/circuit/chemical_dispenser,
 							/datum/design/research/circuit/chem_heater,
 							/datum/design/research/item/makeshift_centrifuge,
-							/datum/design/research/structure/bidon
+							/datum/design/research/structure/bidon,
+							/datum/design/research/item/robot_upgrade/medical_hypo_upgrade,
+							/datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
 							)
 /*
 /datum/technology/basic_food_processing
