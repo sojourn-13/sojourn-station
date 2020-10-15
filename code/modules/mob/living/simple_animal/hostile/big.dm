@@ -23,6 +23,7 @@
 	icon = 'icons/mob/deathclaw.dmi'
 	icon_state = "deathclaw"
 	icon_living = "deathclaw"
+	icon_rest = "deathclaw_sleep"
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
 	speed = 18
@@ -185,6 +186,7 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "arachnid"
 	icon_living = "arachnid"
+	icon_rest = "arachnid_sleeping"
 	icon_dead = "arachnid_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35

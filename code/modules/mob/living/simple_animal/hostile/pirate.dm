@@ -104,6 +104,7 @@
 	ranged = 1
 	rapid = 1
 	minimum_distance = 4
+	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/gun/energy/retro
 	weapon2 = null
 
