@@ -116,7 +116,7 @@
 	var/backstab_damage = 10
 
 /obj/item/weapon/tool/knife/resolve_attackby(atom/target, mob/user)
-	..()
+	. = ..()
 	if(!(iscarbon(target) || isanimal(target)))
 		return
 	if(get_turf(target) != get_step(user, user.dir))
