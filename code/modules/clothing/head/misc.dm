@@ -228,4 +228,3 @@
 	name = "rice hat"
 	desc = "A hat made out of straw, designed to keep the sun from hurting your face."
 	icon_state = "rice_hat"
-	flags_inv = BLOCKHAIR

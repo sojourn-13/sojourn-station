@@ -84,6 +84,9 @@
 		/datum/design/bioprinter/bioimplant/oscythe,
 		/datum/design/bioprinter/bioimplant/oarmor,
 		/datum/design/bioprinter/bioimplant/omuscle,
+		/datum/design/research/item/mechfab/modules/hud/welder_bio,
+		/datum/design/research/item/mechfab/modules/hud/night_bio,
+		/datum/design/research/item/mechfab/modules/hud/thermal_bio
 	)
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.

@@ -46,9 +46,9 @@
 	if(!owner)
 		return
 	if(is_bruised())
-		owner.eye_blurry = 20
+		owner.eye_blurry = 1
 	if(is_broken())
-		owner.eye_blind = 20
+		owner.eye_blind = 1
 
 
 
