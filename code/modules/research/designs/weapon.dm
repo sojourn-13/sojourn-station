@@ -135,7 +135,17 @@
 	desc = "A magnum .40 case fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_casing/magnum_40/laser
 
-/datum/design/research/item/ammo/rifle_laser
+/datum/design/research/item/ammo/light_rifle_257
+	name = "light rifle .257 laser casing."
+	desc = "A .257 casing fitted with a one time use laser payload."
+	build_path = /obj/item/ammo_casing/light_rifle_257/laser
+
+/datum/design/research/item/ammo/rifle_75
+	name = "rifle 7.5 laser casing."
+	desc = "A 7.5 casing fitted with a one time use laser payload."
+	build_path = /obj/item/ammo_casing/rifle_75/laser
+
+/datum/design/research/item/ammo/heavy_rifle_408
 	name = "omni .408 laser casing."
 	desc = "A .408 Omni casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_casing/heavy_rifle_408/laser

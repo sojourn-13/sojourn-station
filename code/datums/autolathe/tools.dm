@@ -24,6 +24,7 @@
 
 /datum/design/autolathe/tool/weldermask
 	name = "welding mask"
+	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/clothing/head/welding
 
 /datum/design/autolathe/tool/weldinggoggles
@@ -123,6 +124,11 @@
 	name = "shovel"
 	build_path = /obj/item/weapon/tool/shovel
 
+/datum/design/autolathe/tool/combat_shovel
+	name = "combat shovel"
+	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
+	build_path = /obj/item/weapon/tool/shovel/combat
+
 /datum/design/autolathe/tool/spade
 	name = "spade"
 	build_path = /obj/item/weapon/tool/shovel/spade
@@ -179,14 +185,17 @@
 
 /datum/design/autolathe/tool/rcd
 	name = "rapid construction device"
+	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/weapon/rcd
 
 /datum/design/autolathe/tool/rcd_ammo
 	name = "matter cartridge"
+	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/weapon/rcd_ammo
 
 /datum/design/autolathe/tool/pneumatic_crowbar
 	name = "pneumatic crowbar"
+	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/weapon/tool/crowbar/pneumatic
 
 /datum/design/autolathe/tool/omni_surgery_onestar
