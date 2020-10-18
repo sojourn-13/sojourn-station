@@ -346,7 +346,7 @@
 
 	restricted_to_species = list(FORM_CHTMANT)
 
-	perks = list(/datum/perk/scuttlebug)
+	perks = list(/datum/perk/scuttlebug, /datum/perk/firefly_ultra)
 
 	stat_modifiers = list(
 		STAT_ROB = 4,
@@ -356,6 +356,7 @@
 		STAT_MEC = -7,
 		STAT_COG = -6
 	)
+
 
 /datum/category_item/setup_option/background/ethnicity/chtmantru
 	name = "Ru Caste"
@@ -368,7 +369,7 @@
 	restricted_to_species = list(FORM_CHTMANT)
 	restricted_depts = SECURITY | PROSPECTOR
 
-	perks = list(/datum/perk/ichor)
+	perks = list(/datum/perk/ichor, /datum/perk/firefly)
 
 	stat_modifiers = list(
 		STAT_ROB = -8,
@@ -391,7 +392,7 @@
 	restricted_depts = SCIENCE | ENGINEERING | COMMAND
 	restricted_jobs = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
 
-	perks = list(/datum/perk/chitinarmor)
+	perks = list(/datum/perk/chitinarmor, /datum/perk/firefly)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,

@@ -475,14 +475,29 @@
 	overdose = 25
 	addiction_chance = 5
 
-/datum/reagent/other/arectine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/other/arectine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.set_light(2.5)
 
-/datum/reagent/other/arectine/overdose(var/mob/living/carbon/M, var/alien)
+/datum/reagent/other/arectine/overdose(mob/living/carbon/M, alien)
 	if(prob(10))
 		M.IgniteMob()
 
 /datum/reagent/other/arectine/on_mob_delete(mob/living/L)
+	..()
+	L.set_light(0)
+
+/datum/reagent/other/arectine/chtmant
+	id = "cht_arectine"
+	overdose = 30
+	addiction_chance = 0
+
+/datum/reagent/other/arectine/chtmant/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.set_light(3.5) //small bit better then a PDA light
+
+/datum/reagent/other/arectine/chtmant/overdose(mob/living/carbon/M, alien)
+	M.set_light(5)
+
+/datum/reagent/other/arectine/chtman/on_mob_delete(mob/living/L)
 	..()
 	L.set_light(0)
 

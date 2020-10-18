@@ -337,3 +337,45 @@
 	name = "Scuttlebug"
 	desc = "While your definitive purpose is not as clearly defined as other castes within the cht'mant hive your constant movement and labors have made you quite used to the hustle and bustle, letting you run faster than most races."
 	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+
+/datum/perk/firefly
+	name = "Bioluminescent"
+	desc = "Create a small glow from inside your body to light up your surroundings."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/firefly/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("The body can only make so much, you'll need more time before you've recovered enough to use this again."))
+		return FALSE
+	cooldown_time = world.time + 10 MINUTES
+	user.visible_message("[user] closes their eyes and takes a deep breath, slowing down as they focus on glowing!", "Focusing on controlling your breathing while your body slowly starts to glow for some time.")
+	log_and_message_admins("used their [src] perk.")
+	user.reagents.add_reagent("cht_arectine", 15)
+	return ..()
+
+/datum/perk/firefly_ultra
+	name = "Bioluminescent"
+	desc = "Create a small glow from inside your body to light up your surroundings as a Ro can you produce much more rather quicker at the cost of become rather hungry."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/firefly_ultra/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("The body can only make so much, you'll need more time before you've recovered enough to use this again."))
+		return FALSE
+	if(usr.nutrition <= 200)
+		to_chat(usr, SPAN_NOTICE("You do not have enough nutrition to produce more bioluminescent, find things to eat!"))
+		return FALSE
+	cooldown_time = world.time + 3 MINUTES //So we OD
+	user.visible_message("[user] takes a few sharp breaths as they focus on glowing!", "After a few quick breaths, you start to glow.")
+	log_and_message_admins("used their [src] perk.")
+	user.reagents.add_reagent("cht_arectine", 15)
+	usr.nutrition -= 200 //balance, cant endless for free spam glowstick juices
+	return ..()
