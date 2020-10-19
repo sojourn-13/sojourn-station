@@ -70,6 +70,10 @@
 		to_chat(user, SPAN_NOTICE("You can not collect anything from these webs."))
 		qdel(src)
 		return
+	if(if(user.a_intent == I_HURT))
+		to_chat(user, SPAN_NOTICE("You remove the webs."))
+		qdel(src)
+		return
 	var/list/usable_qualities = list(QUALITY_WEAVING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_WEAVING)
@@ -80,11 +84,6 @@
 			to_chat(user, SPAN_NOTICE("You bundle up a ball of spider silk."))
 			qdel(src)
 			return
-		reture
-
-	if(tool_type!=QUALITY_WEAVING || !tool_type)
-		to_chat(user, SPAN_NOTICE("You remove the webs with \the [src]."))
-		qdel(src)
 		return
 
 
