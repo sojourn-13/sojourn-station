@@ -64,7 +64,6 @@
 	silk_baring = FALSE
 
 /obj/effect/spider/stickyweb/attackby(obj/item/I, mob/user)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!istype(user.loc, /turf))
 		return
 	if(!silk_baring)
@@ -81,7 +80,13 @@
 			to_chat(user, SPAN_NOTICE("You bundle up a ball of spider silk."))
 			qdel(src)
 			return
+		reture
+
+	if(tool_type!=QUALITY_WEAVING || !tool_type)
+		to_chat(user, SPAN_NOTICE("You remove the webs with \the [src]."))
+		qdel(src)
 		return
+
 
 /obj/effect/spider/stickyweb/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > T0C + 25) //Webs are even weaker to fire
