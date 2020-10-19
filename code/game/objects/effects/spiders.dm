@@ -70,7 +70,7 @@
 		to_chat(user, SPAN_NOTICE("You can not collect anything from these webs."))
 		qdel(src)
 		return
-	if(if(user.a_intent == I_HURT))
+	if(user.a_intent == I_HURT))
 		to_chat(user, SPAN_NOTICE("You remove the webs."))
 		qdel(src)
 		return
