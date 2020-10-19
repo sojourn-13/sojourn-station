@@ -23,6 +23,8 @@
 
 /obj/machinery/power/hydroelectric/update_icon()
 	cut_overlays()
+	if(!control)
+		return
 	if(malfstate != 0)
 		add_overlay(image('icons/obj/machines/thermoelectric.dmi', icon_state = "circ-hot", layer = FLY_LAYER))
 	else if (control.working == 1)
