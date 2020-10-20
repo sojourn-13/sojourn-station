@@ -216,7 +216,8 @@
 
 	unlocks_designs = list(	/datum/design/autolathe/tool/pneumatic_crowbar,
 							/datum/design/autolathe/tool/rcd,
-							/datum/design/autolathe/tool/rcd_ammo
+							/datum/design/autolathe/tool/rcd_ammo,
+							/datum/design/autolathe/tool/combat_shovel
 							)
 
 /datum/technology/improved_tools

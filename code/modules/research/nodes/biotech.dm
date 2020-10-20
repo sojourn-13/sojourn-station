@@ -118,7 +118,9 @@
 							/datum/design/research/circuit/chemical_dispenser,
 							/datum/design/research/circuit/chem_heater,
 							/datum/design/research/item/makeshift_centrifuge,
-							/datum/design/research/structure/bidon
+							/datum/design/research/structure/bidon,
+							/datum/design/research/item/robot_upgrade/medical_hypo_upgrade,
+							/datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
 							)
 /*
 /datum/technology/basic_food_processing
@@ -302,7 +304,8 @@
 							/datum/design/research/item/mechfab/modules/armblade,
 							/datum/design/research/item/mechfab/modules/runner,
 							/datum/design/research/item/mechfab/modules/hud/med,
-							/datum/design/research/item/mechfab/modules/hud/sec
+							/datum/design/research/item/mechfab/modules/hud/sec,
+							/datum/design/research/item/mechfab/modules/hud/welder
 							)
 
 

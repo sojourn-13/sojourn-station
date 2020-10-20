@@ -5,11 +5,28 @@
 	item_state = null
 	hitsound = null
 	var/active = 0
+	var/backstab_damage = 10
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("patted", "tapped")
 	force_divisor = 0.25 // 15 when wielded with hardness 60 (steel)
 	thrown_force_divisor = 0.25 // 5 when thrown with weight 20 (steel)
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
+
+/obj/item/weapon/material/butterfly/resolve_attackby(atom/target, mob/user)
+	. = ..()
+	if(!(iscarbon(target) || isanimal(target)))
+		return
+	if(get_turf(target) != get_step(user, user.dir))
+		return
+	if(target.stat == DEAD)
+		return
+	if(user.dir != target.dir)
+		return
+	var/mob/living/carbon/M = target
+	M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
+	visible_message("<span class='danger'>[user] backstabs [target] with [src]!</span>")
+	M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been backstabbed by [user.name] ([user.ckey])</font>")
+	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey])</font>")
 
 /obj/item/weapon/material/butterfly/update_force()
 	if(active)

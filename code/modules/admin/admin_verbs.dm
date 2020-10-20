@@ -555,6 +555,37 @@ ADMIN_VERB_ADD(/client/proc/man_up, R_ADMIN, FALSE)
 	log_admin("[key_name(usr)] told [key_name(T)] to man up and deal with it.")
 	message_admins("\blue [key_name_admin(usr)] told [key_name(T)] to man up and deal with it.", 1)
 
+ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
+/client/proc/perkadd(mob/T as mob in SSmobs.mob_list)
+	set category = "Fun"
+	set name = "Add Perk"
+	set desc = "Add a perk to a person."
+	var/datum/perk/perkname = input("What perk do you want to add?") as null|anything in subtypesof(/datum/perk/)
+	if (!perkname)
+		return
+	if(QDELETED(T))
+		to_chat(usr, "Creature has been delete in the meantime.")
+		return
+	T.stats.addPerk(perkname)
+	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
+
+ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
+/client/proc/perkremove(mob/T as mob in SSmobs.mob_list)
+	set category = "Fun"
+	set name = "Remove Perk"
+	set desc = "Remove a perk from a person."
+	if (T.stats.perks.len ==0)
+		to_chat(usr, "Creature has no perks to remove")
+		return
+	var/datum/perk/perkname = input("What perk do you want to remove?") as null|anything in T.stats.perks
+	if (!perkname)
+		return
+	if(QDELETED(T))
+		to_chat(usr, "Creature has been delete in the meantime.")
+		return
+	T.stats.removePerk(perkname.type)
+	message_admins("\blue [key_name_admin(usr)] removed the perk [perkname] from [key_name(T)].", 1)
+
 ADMIN_VERB_ADD(/client/proc/global_man_up, R_ADMIN, FALSE)
 /client/proc/global_man_up()
 	set category = "Fun"

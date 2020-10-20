@@ -113,6 +113,25 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	slot_flags = SLOT_BELT
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
+	var/backstab_damage = 10
+
+/obj/item/weapon/tool/knife/resolve_attackby(atom/target, mob/user)
+	. = ..()
+	if(!(iscarbon(target) || isanimal(target)))
+		return
+	if(get_turf(target) != get_step(user, user.dir))
+		return
+	if(target.stat == DEAD)
+		return
+	if(user.dir != target.dir)
+		return
+	var/mob/living/carbon/M = target
+	M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
+	visible_message("<span class='danger'>[user] backstabs [target] with [src]!</span>")
+	M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been backstabbed by [user.name] ([user.ckey])</font>")
+	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey])</font>")
+	//Uses regular call to deal damage
+	//Is affected by mob armor*
 
 /obj/item/weapon/tool/knife/boot
 	name = "boot knife"
@@ -122,6 +141,7 @@
 	item_state = "knife"
 	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
 	force = WEAPON_FORCE_PAINFUL
+	backstab_damage = 14
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 15)
 
 /obj/item/weapon/tool/knife/hook
@@ -131,6 +151,7 @@
 	item_state = "hook_knife"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_DANGEROUS
+	backstab_damage = 8
 	armor_penetration = ARMOR_PEN_EXTREME //Should be countered be embedding
 	embed_mult = 1.5 //This is designed for embedding
 
@@ -140,6 +161,7 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
 	force = WEAPON_FORCE_PAINFUL
+	backstab_damage = 14
 
 /obj/item/weapon/tool/knife/butch
 	name = "butcher's cleaver"
@@ -147,6 +169,7 @@
 	desc = "A huge thing used for chopping and chopping up meat. This includes roaches and roach-by-products."
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_NORMAL
+	backstab_damage = 8
 	armor_penetration = ARMOR_PEN_MODERATE
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 1)
@@ -168,6 +191,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "tacknife_guard"
 	item_state = "knife"
+	backstab_damage = 14
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_PAINFUL
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
@@ -182,6 +206,7 @@
 	item_state = "dagger"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_NORMAL
+	backstab_damage = 15
 	armor_penetration = ARMOR_PEN_DEEP
 
 /obj/item/weapon/tool/knife/dagger/ceremonial
@@ -203,6 +228,7 @@
 	toggleable = TRUE
 	use_power_cost = 0.4
 	passive_power_cost = 0.4
+	backstab_damage = 10
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_BLUESPACE = 4)
 	var/mob/living/embedded
 	var/last_teleport
@@ -379,6 +405,64 @@
 		overlays += "[icon_state]_power_on"
 	else
 		overlays += "[icon_state]_power_off"
+
+/obj/item/weapon/tool/sword/katana/firebrand //Firebrand. Sprited and Implemented by Sieghardt
+	name = "Artificer Firebrand"
+	desc = "Originally the fever dream of an brave guild master looking for a better way to deal with roaches, the Firebrand ended up as a hellish implement of war. While turned off, this is a blunted hunk of metal. When turned on the Firebrand becomes a bringer of fiery doom to anyone unlucky enough to be its path."
+	icon_state = "firebrand"
+	item_state = "firebrand"
+	toggleable = TRUE
+
+	max_fuel = 100
+	use_fuel_cost = 0.5
+	passive_fuel_cost = 0.1
+
+	switched_on_qualities = list(QUALITY_CUTTING = 25, QUALITY_SAWING = 15, QUALITY_CAUTERIZING = 10, QUALITY_WELDING = 15)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
+	force = WEAPON_FORCE_NORMAL
+	switched_on_force = WEAPON_FORCE_BRUTAL
+	//Weaker than the Muramasa and other high end weapons, as it's not LETHAL, but sets the target on fire. 1 stack though.
+	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
+	//A heated blade can not be sharp, it's just shaped like a sword while being a blunt object. When turned off it has as much damage as other blunt implements.
+	heat = 2250
+	glow_color = COLOR_ORANGE
+	//Stronger when turned on. Will emit heat, turn its damage type to burn and set targets on fire.
+/obj/item/weapon/tool/sword/katana/firebrand/is_hot()
+	if(switched_on)
+		return heat
+
+/obj/item/weapon/tool/sword/katana/firebrand/turn_on(mob/user)
+	.=..()
+	if(.)
+		embed_mult = 0
+		damtype = BURN
+		set_light(2)
+		playsound(loc, 'sound/items/welderactivate.ogg', 50, 1)
+		//Too hot to get stuck into crud.
+
+/obj/item/weapon/tool/sword/katana/firebrand/apply_hit_effect(atom/target, blocked=FALSE)
+	.=..()
+	if(iscarbon(target) && switched_on)
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(1)
+		M.IgniteMob()
+		//Sets the target on fire, however only 1 stack at a time rather than 4 like most incendiary ammo.
+
+/obj/item/weapon/tool/sword/katana/firebrand/turn_off(mob/user)
+	..()
+	embed_mult = initial(embed_mult)
+	damtype = initial(damtype)
+	set_light(0)
+	playsound(loc, 'sound/items/welderdeactivate.ogg', 50, 1)
+
+/obj/item/weapon/tool/sword/katana/firebrand/update_icon()
+	..()
+	if(switched_on)
+		icon_state = "firebrand_on"
+		item_state = "firebrand_on"
+	else
+		icon_state = initial(icon_state)
+		item_state = initial(item_state)
 
 /obj/item/weapon/tool/sword/crusader
 	name = "crusader greatsword"

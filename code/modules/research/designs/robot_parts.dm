@@ -119,10 +119,20 @@
 	desc = "A rapid construction device module for use during construction operations."
 	build_path = /obj/item/borg/upgrade/rcd
 
-/datum/design/research/item/robot_upgrade/welder_stuff
+/datum/design/research/item/robot_upgrade/arc_welder
 	name = "Integrated Arc Welder module"
 	desc = "An electric based, safe welder for a robotic unit."
-	build_path = /obj/item/borg/upgrade/welder_stuff
+	build_path = /obj/item/borg/upgrade/arc_welder
+
+/datum/design/research/item/robot_upgrade/medical_hypo_upgrade
+	name = "Exspanded Medical Hypo Upgrade"
+	desc = "A smarter hypo synther to make more complex chems. Made for medical modules."
+	build_path = /obj/item/borg/upgrade/hypospray/medical
+
+/datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
+	name = "Exspanded Rescue Hypo Upgrade"
+	desc = "A smarter hypo synther to make more complex chems. Made for rescue modules."
+	build_path = /obj/item/borg/upgrade/hypospray/rescue
 
 /datum/design/research/item/robot_upgrade/syndicate
 	name = "Illegal upgrade"

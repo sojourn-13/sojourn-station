@@ -177,7 +177,8 @@
 							/datum/design/research/item/ammo/laser/ap,
 							/datum/design/research/item/ammo/laser/lethal,
 							/datum/design/research/item/weapon/katana,
-							/datum/design/research/item/ammo/rifle_laser,
+							/datum/design/research/item/ammo/rifle_75,
+							/datum/design/research/item/ammo/light_rifle_257,
 							/datum/design/research/item/ammo/kurtz_laser
 						)
 
@@ -217,7 +218,9 @@
 	required_tech_levels = list()
 	cost = 5000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun, /datum/design/research/item/weapon/lasercannon)
+	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun,
+							/datum/design/research/item/weapon/lasercannon,
+							/datum/design/research/item/ammo/heavy_rifle_408)
 
 /datum/technology/riglaser_weaponry
 	name = "Hardsuit Laser Weaponry"

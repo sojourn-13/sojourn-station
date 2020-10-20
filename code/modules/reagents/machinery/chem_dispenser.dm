@@ -37,7 +37,7 @@
 	var/list/level3 = list("potassium_chloride", "cryptobiolin")
 	var/list/level4 = list("inaprovaline")
 
-	var/list/hacked_reagents = list("fuel","cleaner") //Basic stuff
+	var/list/hacked_reagents = list("cleaner") //Basic stuff
 	var/obj/item/weapon/reagent_containers/beaker = null
 
 /obj/machinery/chemical_dispenser/RefreshParts()
@@ -332,4 +332,4 @@
 
 	level1 = list("oil", "cryptobiolin", "sterilizine")
 
-	hacked_reagents = list("fuel","cleaner","silicate","coolant") //So we have a reason to keep you
+	hacked_reagents = list("cleaner","silicate","coolant") //So we have a reason to keep you

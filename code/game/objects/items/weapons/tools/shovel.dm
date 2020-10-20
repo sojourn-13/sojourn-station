@@ -23,6 +23,18 @@
 	degradation = 1.5
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
+/obj/item/weapon/tool/shovel/combat
+	name = "combat shovel"
+	desc = "A plasteel shovel with a sharp head to dig out trenches faster and be used in hand to hand combat."
+	icon_state = "combat_shovel"
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_DANGEROUS
+	w_class = ITEM_SIZE_SMALL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6)
+	tool_qualities = list(QUALITY_SHOVELING = 30, QUALITY_DIGGING = 30, QUALITY_CUTTING = 10,QUALITY_SAWING = 5)
+	workspeed = 1.2
+
 /obj/item/weapon/tool/shovel/spade
 	name = "spade"
 	desc = "A small tool ofter used for simple gardening task such as digging soil and moving dirt."
@@ -45,6 +57,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 6,  MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 40, QUALITY_EXCAVATION = 20, QUALITY_HAMMERING = 15)
+	workspeed = 1.2
 	use_power_cost = 0.8
 	degradation = 0.7
 	max_upgrades = 4

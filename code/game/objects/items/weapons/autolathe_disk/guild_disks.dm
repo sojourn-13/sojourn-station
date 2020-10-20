@@ -116,7 +116,7 @@
 	designs = list(
 		/datum/design/autolathe/conveyor = 0,
 		/datum/design/autolathe/conveyor_switch = 0,
-		/datum/design/autolathe/circuit/smelter = 3,
+		///datum/design/autolathe/circuit/smelter = 3, //Balance, no more rnd/guild abuse
 		/datum/design/autolathe/circuit/sorter
 	)
 
@@ -147,13 +147,17 @@
 		/datum/design/research/item/weapon/mining/drill,
 		/datum/design/research/item/weapon/mining/drill_diamond,
 		/datum/design/autolathe/tool/pickaxe_excavation,
+		/datum/design/autolathe/tool/shovel/power,
 		/datum/design/autolathe/tool/circularsaw,
+		/datum/design/autolathe/tool/powered_hammer,
 		/datum/design/autolathe/tool/chainsaw,
+		/datum/design/autolathe/tool/hypersaw,
 		/datum/design/autolathe/tool/rcd,
 		/datum/design/autolathe/tool/electric_screwdriver,
 		/datum/design/autolathe/tool/combi_driver,
 		/datum/design/autolathe/tool/armature_cutter,
 		/datum/design/autolathe/tool/weldingtool/advanced,
+		/datum/design/autolathe/tool/rcd_ammo,
 		// From Circuits
 		/datum/design/autolathe/circuit/airlockmodule,
 		/datum/design/autolathe/circuit/airalarm,
@@ -169,6 +173,8 @@
 		/datum/design/autolathe/circuit/helm,
 		/datum/design/autolathe/circuit/nav,
 		/datum/design/autolathe/circuit/centrifuge,
+		/datum/design/autolathe/circuit/smelter, //Ok some guild abuse
+		/datum/design/autolathe/circuit/sorter,
 		// From tool mods
 		/datum/design/autolathe/part/laserguide,
 		/datum/design/autolathe/part/diamondblade,

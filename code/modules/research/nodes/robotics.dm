@@ -365,7 +365,7 @@
 						/datum/design/research/item/robot_upgrade/vtec,
 						/datum/design/research/item/robot_upgrade/tasercooler,
 						/datum/design/research/item/robot_upgrade/rcd,
-						/datum/design/research/item/robot_upgrade/welder_stuff,
+						/datum/design/research/item/robot_upgrade/arc_welder,
 						/datum/design/research/item/mechfab/robot/component/armour,
 						/datum/design/research/circuit/repair_station
 						)

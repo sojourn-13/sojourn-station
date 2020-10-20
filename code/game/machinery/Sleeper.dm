@@ -21,6 +21,7 @@
 	var/list/level2 = list("spaceacillin" = "Spaceacillin")
 	var/list/level3 = list("alkysine" = "Alkysine")
 	var/list/level4 = list("leporazine" = "Leporazine")
+	var/list/level5 = list("oxycodone" = "Oxycodone")
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 15
@@ -52,16 +53,20 @@
 		man_amount++
 	man_rating -= man_amount
 
-	available_chemicals = level0.Copy()
+	available_chemicals = level0.Copy() 
 
-	if(man_rating >= 2)
+			//We start out (2 - 2) for are man_rating
+
+	if(man_rating >= 2) //Needs both manips to be level 2 - Nano (4 - 2)
 		available_chemicals += level1
-	if(man_rating >= 3)
+	if(man_rating >= 4) //Needs both manips to be level 3 - Pico (6 - 2)
 		available_chemicals += level2
-	if(man_rating >= 4)
+	if(man_rating >= 6) //Needs both manips to be level 4 - Exl (8 - 2)
 		available_chemicals += level3
-	if(man_rating >= 5)
+	if(man_rating >= 8) //Needs both manips to be level 5 - Greyson (10 - 2)
 		available_chemicals += level4
+	if(man_rating >= 10) //Needs both manips to be level 6 - Alien (12 - 2)
+		available_chemicals += level5
 
 	var/scanning_rating = 0
 	var/scanning_amount = 0
