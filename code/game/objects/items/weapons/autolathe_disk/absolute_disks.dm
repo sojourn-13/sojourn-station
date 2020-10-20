@@ -139,6 +139,9 @@
 		/datum/design/autolathe/circuit/biogen,
 		/datum/design/autolathe/circuit/biogen_port,
 		/datum/design/autolathe/circuit/biogen_console,
+
+		/datum/design/autolathe/circuit/smelter, //In case they want to do a duel system or need to replace/sell it
+		/datum/design/autolathe/circuit/sorter,
 	)
 
 // Thorn and Rose Pack - both .40 and .35
