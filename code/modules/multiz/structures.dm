@@ -108,6 +108,34 @@
 /obj/structure/multiz/ladder/attack_generic(var/mob/M)
 	attack_hand(M)
 
+/obj/structure/multiz/ladder/proc/throw_through(var/obj/item/C, var/mob/throw_man)
+	if(istype(throw_man,/mob/living/carbon/human))
+		var/mob/living/carbon/human/user = throw_man
+		var/through =  istop ? "down" : "up"
+		user.visible_message(SPAN_WARNING("[user] takes position to throw [C] [through] \the [src]."),
+		SPAN_WARNING("You take position to throw [C] [through] \the [src]."))
+		if(do_after(user, 10))
+			user.visible_message(SPAN_WARNING("[user] throws [C] [through] \the [src]!"),
+			SPAN_WARNING("You throw [C] [through] \the [src]."))
+			user.drop_item()
+			C.forceMove(target.loc)
+			var/direction = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
+			C.Move(get_step(C, direction))
+			if(istype(C, /obj/item/weapon/grenade))
+				var/obj/item/weapon/grenade/G = C
+				if(!G.active)
+					G.activate(user)
+			return TRUE
+		return FALSE
+	return FALSE
+
+/obj/structure/multiz/ladder/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(throw_through(I,user))
+		return
+	else
+		attack_hand(user)
+
 /obj/structure/multiz/ladder/attack_hand(var/mob/M)
 	if (isrobot(M) && !isdrone(M))
 		var/mob/living/silicon/robot/R = M
@@ -176,17 +204,17 @@
 		if(!user.is_physically_disabled())
 			if(target)
 				if(user.client)
-					if(user.is_watching == 1)
+					if(user.is_watching == TRUE)
 						to_chat(user, SPAN_NOTICE("You look [istop ? "down" : "up"] \the [src]."))
 						user.client.eye = user.client.mob
 						user.client.perspective = MOB_PERSPECTIVE
 						user.hud_used.updatePlaneMasters(user)
-						user.is_watching = 0
-					else if(user.is_watching == 0)
+						user.is_watching = FALSE
+					else if(user.is_watching == FALSE)
 						user.client.eye = target
 						user.client.perspective = EYE_PERSPECTIVE
 						user.hud_used.updatePlaneMasters(user)
-						user.is_watching = 1
+						user.is_watching = TRUE
 				return
 		else
 			to_chat(user, SPAN_NOTICE("You can't do it right now."))
@@ -195,7 +223,7 @@
 		user.client.eye = user.client.mob
 		user.client.perspective = MOB_PERSPECTIVE
 		user.hud_used.updatePlaneMasters(user)
-		user.is_watching = 0
+		user.is_watching = FALSE
 		return
 
 ////STAIRS////
@@ -270,17 +298,17 @@
 		if(!user.is_physically_disabled())
 			if(target)
 				if(user.client)
-					if(user.is_watching == 1)
+					if(user.is_watching == TRUE)
 						to_chat(user, SPAN_NOTICE("You look [istop ? "down" : "up"] \the [src]."))
 						user.client.eye = user.client.mob
 						user.client.perspective = MOB_PERSPECTIVE
 						user.hud_used.updatePlaneMasters(user)
-						user.is_watching = 0
-					else if(user.is_watching == 0)
+						user.is_watching = FALSE
+					else if(user.is_watching == FALSE)
 						user.client.eye = target
 						user.client.perspective = EYE_PERSPECTIVE
 						user.hud_used.updatePlaneMasters(user)
-						user.is_watching = 1
+						user.is_watching = TRUE
 				return
 		else
 			to_chat(user, SPAN_NOTICE("You can't do it right now."))
@@ -289,7 +317,7 @@
 		user.client.eye = user.client.mob
 		user.client.perspective = MOB_PERSPECTIVE
 		user.hud_used.updatePlaneMasters(user)
-		user.is_watching = 0
+		user.is_watching = FALSE
 		return
 
 /obj/structure/multiz/stairs/active/bottom

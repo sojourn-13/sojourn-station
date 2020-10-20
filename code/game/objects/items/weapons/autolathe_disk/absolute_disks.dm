@@ -84,6 +84,9 @@
 		/datum/design/bioprinter/bioimplant/oscythe,
 		/datum/design/bioprinter/bioimplant/oarmor,
 		/datum/design/bioprinter/bioimplant/omuscle,
+		/datum/design/research/item/mechfab/modules/hud/welder_bio,
+		/datum/design/research/item/mechfab/modules/hud/night_bio,
+		/datum/design/research/item/mechfab/modules/hud/thermal_bio
 	)
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
@@ -136,6 +139,9 @@
 		/datum/design/autolathe/circuit/biogen,
 		/datum/design/autolathe/circuit/biogen_port,
 		/datum/design/autolathe/circuit/biogen_console,
+
+		/datum/design/autolathe/circuit/smelter, //In case they want to do a duel system or need to replace/sell it
+		/datum/design/autolathe/circuit/sorter,
 	)
 
 // Thorn and Rose Pack - both .40 and .35

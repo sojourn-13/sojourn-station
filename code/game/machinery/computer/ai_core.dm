@@ -214,7 +214,7 @@
 	transfer.cancel_camera()
 	to_chat(user, "<span class='notice'>Transfer successful:</span> [transfer.name] ([rand(1000,9999)].exe) downloaded to host terminal. Local copy wiped.")
 	to_chat(transfer, "You have been uploaded to a stationary terminal. Remote device connection restored.")
-
+	playsound(src.loc, 'sound/AI/my_voice_it_is_a_book.ogg', 50, 1, -3)
 	if(card)
 		card.clear()
 

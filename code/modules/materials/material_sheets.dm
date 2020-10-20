@@ -42,6 +42,9 @@
 /obj/item/stack/material/get_material()
 	return material
 
+/obj/item/stack/material/proc/get_default_type()
+	return default_type
+
 /obj/item/stack/material/proc/update_strings()
 	// Update from material datum.
 	singular_name = material.sheet_singular_name
@@ -255,6 +258,12 @@
 	icon_state = "sheet-cloth"
 	default_type = MATERIAL_CLOTH
 	price_tag = 10
+
+/obj/item/stack/material/silk
+	name = "silk"
+	icon_state = "sheet_silk_bundle"
+	default_type = MATERIAL_SILK //We dont work as cloth
+	price_tag = 20
 
 /obj/item/stack/material/cardboard
 	name = "cardboard"

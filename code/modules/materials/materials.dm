@@ -674,6 +674,15 @@ var/list/name_to_material
 	melting_point = T0C+300
 	flags = MATERIAL_PADDING
 
+/material/silk //todo
+	name = MATERIAL_SILK
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	composite_material = list(MATERIAL_BIOMATTER = 1) //So we have a vaule to more then one faction
+	door_icon_base = "wood"
+	ignition_point = T0C+232
+	melting_point = T0C+300
+	flags = MATERIAL_PADDING
+
 /material/resin
 	name = "resin"
 	icon_colour = "#E85DD8"

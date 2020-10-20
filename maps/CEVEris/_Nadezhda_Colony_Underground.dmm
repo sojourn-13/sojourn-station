@@ -73,11 +73,7 @@
 /area/nadezhda/engineering/engine_room)
 "aar" = (
 /obj/structure/lattice,
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/hydroelectric,
+/obj/structure/grille,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/engineering/engine_room)
 "aas" = (
@@ -294,17 +290,8 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/northcave)
 "abc" = (
+/obj/structure/grille,
 /obj/structure/lattice,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/hydroelectric,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/engineering/engine_room)
 "abd" = (
@@ -359,9 +346,9 @@
 /area/nadezhda/engineering/atmos)
 "abk" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /obj/structure/disposalpipe/up{
 	dir = 8;
@@ -527,9 +514,9 @@
 /area/nadezhda/engineering/atmos)
 "abE" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /obj/structure/disposalpipe/up{
 	dir = 8;
@@ -2061,7 +2048,6 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 4
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/fixed/hydrotile/shallowcoolant{
 	temperature = 10
 	},
@@ -3381,9 +3367,9 @@
 /area/nadezhda/command/tcommsat/computer)
 "aiX" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
@@ -3554,11 +3540,6 @@
 /obj/structure/lattice,
 /obj/machinery/camera/network/engineering{
 	dir = 1
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /turf/simulated/floor/fixed/hydrotile/shallowcoolant{
 	temperature = 10
@@ -4319,11 +4300,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
 "alx" = (
@@ -4483,11 +4459,6 @@
 /obj/machinery/holoposter{
 	pixel_y = 32
 	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/hydroelectric_control,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
 "alQ" = (
@@ -4928,8 +4899,8 @@
 /area/nadezhda/maintenance/undergroundfloor1oldconstruction)
 "ane" = (
 /obj/machinery/door/window/brigdoor/southleft{
-	dir = 8;
-	req_access = list(61)
+	req_access = list(61);
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/panels,
 /area/nadezhda/command/tcommsat/chamber)
@@ -6264,11 +6235,6 @@
 /area/nadezhda/engineering/engine_room)
 "aqk" = (
 /obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
 "aql" = (
@@ -14519,9 +14485,9 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "aLN" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
@@ -28647,9 +28613,9 @@
 /area/nadezhda/command/tcommsat/computer)
 "bwB" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8;
+	tag = "icon-up (WEST)";
 	icon_state = "up";
-	tag = "icon-up (WEST)"
+	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
@@ -50253,9 +50219,9 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/zpipe/down{
-	dir = 8;
+	tag = "icon-down (WEST)";
 	icon_state = "down";
-	tag = "icon-down (WEST)"
+	dir = 8
 	},
 /turf/simulated/open,
 /area/nadezhda/maintenance/undergroundfloor2west)
@@ -55858,8 +55824,8 @@
 	dir = 1
 	},
 /obj/item/clothing/head/fedora/feathered{
-	pixel_x = -6;
-	pixel_y = 16
+	pixel_y = 16;
+	pixel_x = -6
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/barbackroom)
@@ -75253,11 +75219,6 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 4
 	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/engine_room)
 "dBt" = (
@@ -83677,17 +83638,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/library)
-"fKt" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/engineering/engine_room)
 "fMg" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -84262,18 +84212,6 @@
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/sleeper)
-"iRV" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/maintenance_engineering{
-	name = "Engineering Maintenance";
-	req_access = list(10)
-	},
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/engineering/engine_room)
 "iSS" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
@@ -85795,15 +85733,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/rnd/lab)
-"qKW" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel/techfloor,
-/area/nadezhda/engineering/engine_room)
 "qQj" = (
 /obj/machinery/newscaster{
 	dir = 8;
@@ -86602,15 +86531,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm4)
-"vDm" = (
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/fixed/hydrotile/shallowcoolant,
-/area/nadezhda/engineering/engine_room)
 "vFG" = (
 /obj/machinery/newscaster{
 	pixel_x = 0;
@@ -86736,18 +86656,6 @@
 /area/nadezhda/maintenance/undergroundfloor2south)
 "wuB" = (
 /turf/simulated/floor/tiled/steel/cargo,
-/area/nadezhda/engineering/engine_room)
-"wvz" = (
-/obj/structure/catwalk,
-/obj/machinery/camera/network/engineering{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
 "wwb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -86882,15 +86790,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/cbo)
-"xtL" = (
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/fixed/hydrotile/shallowcoolant,
-/area/nadezhda/engineering/engine_room)
 "xxj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/watertank/derelict,
@@ -86977,19 +86876,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/nadezhda/maintenance/undergroundfloor2south)
-"xUE" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/engineering/engine_room)
 "yaG" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/cyancorner,
@@ -94952,7 +94838,7 @@ air
 aah
 aao
 aao
-afx
+aao
 aat
 afx
 afx
@@ -95154,7 +95040,7 @@ air
 aah
 aao
 aao
-afx
+aao
 aar
 abW
 aaz
@@ -95356,7 +95242,7 @@ air
 aah
 aao
 aao
-afx
+aao
 abc
 aau
 abW
@@ -95558,7 +95444,7 @@ air
 aah
 aao
 aao
-afx
+aao
 abc
 aau
 aau
@@ -95760,7 +95646,7 @@ air
 aah
 aao
 aao
-afx
+aao
 abc
 aau
 aau
@@ -95962,7 +95848,7 @@ air
 aah
 aao
 aao
-afx
+aao
 abc
 aau
 aau
@@ -96164,7 +96050,7 @@ air
 aah
 aao
 aao
-afx
+aao
 abc
 aau
 aau
@@ -96366,7 +96252,7 @@ air
 aah
 aao
 aao
-afx
+aao
 abc
 aau
 aau
@@ -96568,7 +96454,7 @@ air
 aah
 aao
 aao
-afx
+aao
 abc
 aau
 aau
@@ -96770,8 +96656,8 @@ air
 aah
 aao
 aao
-afx
-abc
+aao
+aar
 aau
 aau
 aau
@@ -96972,8 +96858,8 @@ air
 aah
 aao
 aao
-afx
-abc
+aao
+aar
 aau
 aau
 aau
@@ -97174,7 +97060,7 @@ air
 aai
 air
 air
-afx
+air
 ajv
 dBs
 dBs
@@ -97182,19 +97068,19 @@ dBs
 dBs
 dBs
 dBs
-qKW
-qKW
-qKW
-qKW
-qKW
-qKW
-qKW
-qKW
-qKW
-qKW
-qKW
-qKW
-wvz
+agt
+agt
+agt
+agt
+agt
+agt
+agt
+agt
+agt
+agt
+agt
+agt
+aCj
 air
 aul
 aul
@@ -97384,7 +97270,7 @@ afz
 afz
 afz
 afz
-aoe
+agt
 ajq
 ajq
 ajq
@@ -97598,7 +97484,7 @@ ajq
 ajq
 ajq
 als
-vDm
+add
 air
 auU
 akb
@@ -97800,7 +97686,7 @@ als
 aal
 aal
 als
-vDm
+add
 air
 auj
 aiN
@@ -98002,11 +97888,11 @@ als
 aal
 aal
 als
-xtL
-iRV
-fKt
-alR
-xUE
+add
+air
+vWL
+aul
+akQ
 alR
 alS
 aou

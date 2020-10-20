@@ -42,6 +42,9 @@
 	poison_per_bite = 4
 	melee_damage_lower = 3
 	melee_damage_upper = 5
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/recluse
+	meat_amount = 2
+	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen
@@ -56,6 +59,9 @@
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "menace"
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/queen
+	meat_amount = 3
+	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()

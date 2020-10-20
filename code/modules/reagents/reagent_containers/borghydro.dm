@@ -7,7 +7,7 @@
 	amount_per_transfer_from_this = 5
 	volume = 30
 	possible_transfer_amounts = null
-
+	var/accepts_reagent_upgrades = FALSE //If upgrades can increase number of reagents dispensed.
 	var/mode = 1
 	var/charge_cost = 50
 	var/charge_tick = 0
@@ -19,9 +19,11 @@
 
 /obj/item/weapon/reagent_containers/borghypo/medical
 	reagent_ids = list("bicaridine", "kelotane", "anti_toxin", "dexalin", "inaprovaline", "tramadol", "spaceacillin", "stoxin")
+	accepts_reagent_upgrades = TRUE
 
 /obj/item/weapon/reagent_containers/borghypo/rescue
 	reagent_ids = list("tricordrazine", "inaprovaline", "tramadol")
+	accepts_reagent_upgrades = TRUE
 
 /obj/item/weapon/reagent_containers/borghypo/New()
 	..()

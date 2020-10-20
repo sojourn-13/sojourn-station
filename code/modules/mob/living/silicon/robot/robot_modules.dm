@@ -310,6 +310,7 @@ var/global/list/robot_modules = list(
 	health = 140 //Fragile
 	speed_factor = 0.8 //Kinda slow
 	power_efficiency = 0.6 //Very poor, shackled to a charger
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack)
 
 	stat_modifiers = list(
 		STAT_BIO = 60,
@@ -335,6 +336,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
+	src.modules += new /obj/item/weapon/reagent_containers/spray/sterilizine(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
 	src.emag.name = "Polyacid spray"
@@ -374,6 +376,11 @@ var/global/list/robot_modules = list(
 		S.desc = initial(S.desc)
 		S.update_icon()
 
+	if(src.modules)
+		var/obj/item/weapon/reagent_containers/spray/sterilizine/ST = src.modules //ST for STerilizine
+		ST.reagents.add_reagent("sterilizine", 2 * amount)
+	..()
+
 	if(src.emag)
 		var/obj/item/weapon/reagent_containers/spray/PS = src.emag
 		PS.reagents.add_reagent("pacid", 2 * amount)
@@ -397,7 +404,7 @@ var/global/list/robot_modules = list(
 	//Rescue module has built in crew monitor
 	//General medical does not, they're expected to stay in medbay and use the computers
 	subsystems = list(/datum/nano_module/crew_monitor)
-
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack)
 	health = 270 //Tough
 	speed_factor = 1.3 //Turbospeed!
 	power_efficiency = 1.2 //Good for long journeys
