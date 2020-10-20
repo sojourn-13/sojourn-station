@@ -3,7 +3,7 @@
 #define HYDRO_MAX_DIST 100
 /obj/machinery/power/hydroelectric
 	name = "hydroelectric turbine"
-	desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be integral to the structural integrity around and is attached directly to the dam's frame."
+	desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be important to the structural integrity around and is attached directly to the dam's frame."
 	icon = 'icons/obj/machines/thermoelectric.dmi'
 	icon_state = "circ-unassembled"
 	density = 1
@@ -34,9 +34,9 @@
 /obj/machinery/power/hydroelectric/proc/Malfunction()
 	malfstate = rand(1,2)
 	if(malfstate == 1)
-		desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be integral to the structural integrity around and is attached directly to the dam's frame. There is debris blocking this turbine."
+		desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be important to the structural integrity around and is attached directly to the dam's frame. There is debris blocking this turbine."
 	else
-		desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be integral to the structural integrity around and is attached directly to the dam's frame. The turbine appears to be stalling out."
+		desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be important to the structural integrity around and is attached directly to the dam's frame. The turbine appears to be stalling out."
 	control.workingturbines = control.workingturbines - 1
 	control.malfturbines = control.malfturbines + 1
 	return
@@ -47,7 +47,7 @@
 	if(tool_type == QUALITY_PRYING && malfstate == 1)
 		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
 			malfstate = 0
-			desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be integral to the structural integrity around and is attached directly to the dam's frame."
+			desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be important to the structural integrity around and is attached directly to the dam's frame."
 			user.visible_message("[user] pried the debris from the generator's turbine.", "You pry away the blocking debris and dump trash which was in the way.")
 			new /obj/random/scrap/sparse_weighted(get_turf(user))
 			control.workingturbines = control.workingturbines + 1
@@ -56,7 +56,7 @@
 	if(tool_type == QUALITY_PULSING && malfstate == 2)
 		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			malfstate = 0
-			desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be integral to the structural integrity around and is attached directly to the dam's frame."
+			desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be important to the structural integrity around and is attached directly to the dam's frame."
 			user.visible_message("[user] reset the generator's turbine.", "You reset the generator's turbine to its default working state.")
 			control.workingturbines = control.workingturbines + 1
 			control.malfturbines = control.malfturbines - 1
