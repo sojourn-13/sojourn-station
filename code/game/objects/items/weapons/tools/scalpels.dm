@@ -11,6 +11,7 @@
 	worksound = WORKSOUND_HARD_SLASH
 	slot_flags = SLOT_EARS
 	throw_speed = WEAPON_FORCE_WEAK
+	max_health = 100
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
