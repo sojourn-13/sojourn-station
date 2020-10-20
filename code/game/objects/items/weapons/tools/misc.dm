@@ -1,6 +1,6 @@
 /obj/item/weapon/tool/omnitool
 	name = "Lonestars \"Munchkin 5000\""
-	desc = "A Fuel-powered monster of a tool. Its welder part is most advanced one, capable of welding things without harmfull glow and sparks, so no protection needed. The complexity of this tool means that regular maintainence is required."
+	desc = "A fuel-powered monster of a tool. Its welder part is the most advanced one, capable of welding things without harmfull glow and sparks, so no protection needed. The complexity of this tool means that regular maintainence is required."
 	icon_state = "omnitool"
 	max_health = 200
 	w_class = ITEM_SIZE_NORMAL
