@@ -86,6 +86,20 @@
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/combat_shovel
+	name = "combat shovel"
+	result = /obj/item/weapon/tool/shovel/combat
+	steps = list(
+		list(/obj/item/weapon/tool/shovel, 1),
+		list(QUALITY_SAWING, 20, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 20, "time" = 30),
+		list(/obj/item/weapon/tool_upgrade/augment/spikes, 1),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 10)
+	)
+
+
 //Weapons ------------------------
 /datum/craft_recipe/guild/railgunrifle
 	name = "reductor rail rifle"

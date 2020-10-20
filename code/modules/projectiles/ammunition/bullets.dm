@@ -97,6 +97,13 @@
 	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/lethal
 
+/obj/item/ammo_casing/light_rifle_257/laser
+	desc = "A .257 laser casing."
+	caliber = "lrifle"
+	caliber = CAL_LRIFLE
+	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
+
+
 //// 7.5 Rifle ////
 
 /obj/item/ammo_casing/rifle_75
@@ -124,6 +131,10 @@
 	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
 
+/obj/item/ammo_casing/rifle_75/laser
+	desc = "A 7.5mm laser casing."
+	caliber = CAL_RIFLE
+	projectile_type = /obj/item/projectile/beam/weak/rifle_75
 
 ////.408 rifle////
 
