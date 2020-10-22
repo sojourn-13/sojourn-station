@@ -14,7 +14,6 @@
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	active_power_usage = 0
-	health = 10
 	var/malfstate = NOMALFUNCTION //Our state regarding working. Are we malfunctioning?
 	var/id = 0
 	var/powrate = 10 //How much power * 10000 we produce per turbine.
