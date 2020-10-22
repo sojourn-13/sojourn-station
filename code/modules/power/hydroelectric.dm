@@ -2,7 +2,7 @@
 //The Hydro Turbine itself
 #define HYDRO_MAX_DIST 100
 #define DEBRISMALFUNCTION 1
-#define STALLMAFLFUNCTION 2
+#define STALLMALFUNCTION 2
 #define NOMALFUNCTION 0
 /obj/machinery/power/hydroelectric
 	name = "hydroelectric turbine"
@@ -55,7 +55,7 @@
 			control.workingturbines = control.workingturbines + 1
 			control.malfturbines = control.malfturbines - 1
 			return
-	if(tool_type == QUALITY_PULSING && malfstate == STALLMAFLFUNCTION)
+	if(tool_type == QUALITY_PULSING && malfstate == STALLMALFUNCTION)
 		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			malfstate = 0
 			desc = "A hydroelectric generator able to store water and then release it to generate electricity. This one seems to be important to the structural integrity around and is attached directly to the dam's frame."
