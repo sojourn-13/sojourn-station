@@ -39,3 +39,57 @@ var/list/obj/effect/bump_teleporter/BUMP_TELEPORTERS = list()
 /obj/effect/bump_teleporter/AFexit
 	id = "abexit"
 	id_target = "abentrance"
+
+//Map teleporters, don't fuck with'em. These are basically dynamic versions of the bump teleporters for map functions so the coordinates are not hard coded. -Kaz
+//You should always make news ones of these when connecting maps in normal ways such as through stairs or cave entrances, its safer than hard coded map stuff.
+
+//Underground to stairs.
+/obj/effect/bump_teleporter/underground_to_transition_1_A
+	id = "underground_to_transition_1_A"
+	id_target = "underground_to_transition_2_A"
+
+/obj/effect/bump_teleporter/underground_to_transition_2_A
+	id = "underground_to_transition_2_A"
+	id_target = "underground_to_transition_1_A"
+
+/obj/effect/bump_teleporter/underground_to_transition_1_B
+	id = "underground_to_transition_1_B"
+	id_target = "underground_to_transition_2_B"
+
+/obj/effect/bump_teleporter/underground_to_transition_2_B
+	id = "underground_to_transition_2_B"
+	id_target = "underground_to_transition_1_B"
+
+//Surface to stairs.
+/obj/effect/bump_teleporter/surface_to_transition_1_A
+	id = "surface_to_transition_1_A"
+	id_target = "surface_to_transition_2_A"
+
+/obj/effect/bump_teleporter/surface_to_transition_2_A
+	id = "surface_to_transition_2_A"
+	id_target = "surface_to_transition_1_A"
+
+/obj/effect/bump_teleporter/surface_to_transition_1_B
+	id = "surface_to_transition_1_B"
+	id_target = "surface_to_transition_2_B"
+
+/obj/effect/bump_teleporter/surface_to_transition_2_B
+	id = "surface_to_transition_2_B"
+	id_target = "surface_to_transition_1_B"
+
+//Surface to forest
+/obj/effect/bump_teleporter/surface_to_forest_1_A
+	id = "surface_to_forest_1_A"
+	id_target = "surface_to_forest_2_A"
+
+/obj/effect/bump_teleporter/surface_to_forest_2_A
+	id = "surface_to_forest_2_A"
+	id_target = "surface_to_forest_1_A"
+
+/obj/effect/bump_teleporter/surface_to_forest_1_B
+	id = "surface_to_forest_1_B"
+	id_target = "surface_to_forest_2_B"
+
+/obj/effect/bump_teleporter/surface_to_forest_2_B
+	id = "surface_to_forest_2_B"
+	id_target = "surface_to_forest_1_B"
