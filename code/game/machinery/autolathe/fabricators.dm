@@ -1,14 +1,16 @@
-/* // Going to finish this at some point, the template and menu is mostly set, might have a spacing issue, then I just need to set the machine to accept any material type, even in a stack, while also \
-meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
+// TODO: Remove the back end beakers
+// Note - For some reason the code shits itself if you try to remove the beakers and there isn't any real harm with it being there. Probably fix it later. Maybe. If I can be arsed. - Kazkin
 /obj/machinery/bulletfabricator
 	name = "Bullet Fabricator"
-	desc = "A machine for producing ammo magazines, speed loaders, and exotic munitions."
-	icon = 'icons/obj/biogenerator.dmi'
-	icon_state = "biogen-stand"
+	desc = "A machine for producing ammo magazines, speed loaders, ammo boxes, and exotic munitions using any type of materials converted into an unknown state, with rare or valuable materials having greater point values. Originally a scavenged design from the Greyson Positronics repurposed by the Artificer's Guild. How it works? Nobody is quite sure. The time it takes to fabricate munitions varies by cost and the machine parts used."
+	icon = 'icons/obj/machines/autolathe.dmi'
+	icon_state = "ammolathe"
 	density = 1
 	anchored = 1
+	layer = BELOW_OBJ_LAYER
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
+	circuit = /obj/item/weapon/circuitboard/bullet_fab
 	var/processing = 0
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
 	var/points = 0
@@ -22,14 +24,14 @@ meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 			list(name="Standard Magazine (.35 Auto)", cost=50, path=/obj/item/ammo_magazine/pistol_35),
 			list(name="Standard Magazine (.35 Auto high-velocity)", cost=50, path=/obj/item/ammo_magazine/pistol_35/highvelocity),
 			list(name="Standard Magazine (.35 Auto hollow-point)", cost=50, path=/obj/item/ammo_magazine/pistol_35/lethal),
-			list(name="Standard Magazine (.35 Auto rubber)", cost=50, path= /obj/item/ammo_magazine/pistol_35/rubber_35),
+			list(name="Standard Magazine (.35 Auto rubber)", cost=50, path= /obj/item/ammo_magazine/pistol_35/rubber),
 			list(name="Standard Magazine (.35 Auto practice)", cost=50, path=/obj/item/ammo_magazine/pistol_35/practice),
 		"High Capacity",
-			list(name="High Capacity Magazine (.35 Auto)", cost=100, path=/obj/item/ammo_magazine/smg_35),
-			list(name="High Capacity Magazine (.35 Auto high-velocity)", cost=100, path=/obj/item/ammo_magazine/smg_35/hv),
-			list(name="High Capacity Magazine (.35 Auto hollow-point)", cost=100, path=/obj/item/ammo_magazine/smg_35/lethal),
-			list(name="High Capacity Magazine (.35 Auto rubber)", cost=100, path=/obj/item/ammo_magazine/smg_35/rubber),
-			list(name="High Capacity Magazine (.35 Auto practice)", cost=100, path=/obj/item/ammo_magazine/smg_35/practice),
+			list(name="High Capacity Magazine (.35 Auto)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35),
+			list(name="High Capacity Magazine (.35 Auto high-velocity)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35/highvelocity),
+			list(name="High Capacity Magazine (.35 Auto hollow-point)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35/lethal),
+			list(name="High Capacity Magazine (.35 Auto rubber)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35/rubber),
+			list(name="High Capacity Magazine (.35 Auto practice)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35/practice),
 		".40 Pistol",
 			list(name="Magnum Magazine (.40 Magnum standard)", cost=75, path=/obj/item/ammo_magazine/magnum_40),
 			list(name="Magnum Magazine (.40 Magnum high velocity)", cost=75, path=/obj/item/ammo_magazine/magnum_40/hv),
@@ -43,41 +45,41 @@ meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 			list(name="Heavy Pistol Magazine (.50 Rubber)", cost=100, path=/obj/item/ammo_magazine/kurtz_50/rubber),
 			list(name="Heavy Pistol Magazine (.50 Practice)", cost=100, path=/obj/item/ammo_magazine/kurtz_50/practice),
 		".35 Speed Loader",
-			list(name="Speed Loader (.35 Special)", cost=50, path=/obj/item/ammo_magazine/speed_loader_pistol_35),
-			list(name="Speed Loader (.35 High-velocity)", cost=50, path=/obj/item/ammo_magazine/speed_loader_pistol_35/hv),
-			list(name="Speed Loader (.35 Hollow-point)", cost=50, path=/obj/item/ammo_magazine/speed_loader_pistol_35/lethal),
-			list(name="Speed Loader (.35 Rubber)", cost=50, path=/obj/item/ammo_magazine/speed_loader_pistol_35/rubber),
-			list(name="Speed Loader (.35 Practice)", cost=50, path=/obj/item/ammo_magazine/speed_loader_pistol_35/practice),
+			list(name="Speed Loader (.35 Special)", cost=30, path=/obj/item/ammo_magazine/speed_loader_pistol_35),
+			list(name="Speed Loader (.35 High-velocity)", cost=30, path=/obj/item/ammo_magazine/speed_loader_pistol_35/hv),
+			list(name="Speed Loader (.35 Hollow-point)", cost=30, path=/obj/item/ammo_magazine/speed_loader_pistol_35/lethal),
+			list(name="Speed Loader (.35 Rubber)", cost=30, path=/obj/item/ammo_magazine/speed_loader_pistol_35/rubber),
+			list(name="Speed Loader (.35 Practice)", cost=30, path=/obj/item/ammo_magazine/speed_loader_pistol_35/practice),
 		".40 Magnum Speed Loader",
-			list(name="Speed Loader (.40 Special)", cost=75, path=/obj/item/ammo_magazine/speed_loader_magnum_40),
-			list(name="Speed Loader (.40 High-velocity)", cost=75, path=/obj/item/ammo_magazine/speed_loader_magnum_40/highvelocity),
-			list(name="Speed Loader (.40 Hollow-point)", cost=75, path=/obj/item/ammo_magazine/speed_loader_magnum_40/lethal),
-			list(name="Speed Loader (.40 Rubber)", cost=75, path=/obj/item/ammo_magazine/speed_loader_magnum_40/rubber),
-			list(name="Speed Loader (.40 Practice)", cost=75, path=/obj/item/ammo_magazine/speed_loader_magnum_40/practice),
+			list(name="Speed Loader (.40 Special)", cost=45, path=/obj/item/ammo_magazine/speed_loader_magnum_40),
+			list(name="Speed Loader (.40 High-velocity)", cost=45, path=/obj/item/ammo_magazine/speed_loader_magnum_40/highvelocity),
+			list(name="Speed Loader (.40 Hollow-point)", cost=45, path=/obj/item/ammo_magazine/speed_loader_magnum_40/lethal),
+			list(name="Speed Loader (.40 Rubber)", cost=45, path=/obj/item/ammo_magazine/speed_loader_magnum_40/rubber),
+			list(name="Speed Loader (.40 Practice)", cost=45, path=/obj/item/ammo_magazine/speed_loader_magnum_40/practice),
 		".50 Kurtz Speed Loader",
-			list(name="Speed Loader (.50 Special)", cost=100, path=/obj/item/ammo_magazine/speed_loader_kurtz_50),
-			list(name="Speed Loader (.50 High-velocity)", cost=100, path=/obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity),
-			list(name="Speed Loader (.50 Hollow-point)", cost=100, path=/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal),
-			list(name="Speed Loader (.50 Rubber)", cost=100, path=/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber),
-			list(name="Speed Loader (.50 Practice)", cost=100, path=/obj/item/ammo_magazine/speed_loader_kurtz_50/practice),
+			list(name="Speed Loader (.50 Special)", cost=60, path=/obj/item/ammo_magazine/speed_loader_kurtz_50),
+			list(name="Speed Loader (.50 High-velocity)", cost=60, path=/obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity),
+			list(name="Speed Loader (.50 Hollow-point)", cost=60, path=/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal),
+			list(name="Speed Loader (.50 Rubber)", cost=60, path=/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber),
+			list(name="Speed Loader (.50 Practice)", cost=60, path=/obj/item/ammo_magazine/speed_loader_kurtz_50/practice),
 		"SMG",
-			list(name="SMG Magazine (.35 Auto)", cost=250, path= /obj/item/ammo_magazine/highcap_pistol_35),
-			list(name="SMG Magazine (.35 Auto high-velocity)", cost=250, path= /obj/item/ammo_magazine/highcap_pistol_35/highvelocity),
-			list(name="SMG Magazine (.35 Auto hollow-point)", cost=250, path= /obj/item/ammo_magazine/highcap_pistol_35/lethal),
-			list(name="SMG Magazine (.35 Auto rubber)", cost=250, path= /obj/item/ammo_magazine/highcap_pistol_35/rubber),
-			list(name="SMG Magazine (.35 Auto practice)", cost=250, path= /obj/item/ammo_magazine/highcap_pistol_35/practice),
+			list(name="SMG Magazine (.35 Auto)", cost=180, path= /obj/item/ammo_magazine/smg_35),
+			list(name="SMG Magazine (.35 Auto high-velocity)", cost=180, path= /obj/item/ammo_magazine/smg_35/hv),
+			list(name="SMG Magazine (.35 Auto hollow-point)", cost=180, path= /obj/item/ammo_magazine/smg_35/lethal),
+			list(name="SMG Magazine (.35 Auto rubber)", cost=180, path= /obj/item/ammo_magazine/smg_35/rubber),
+			list(name="SMG Magazine (.35 Auto practice)", cost=180, path= /obj/item/ammo_magazine/smg_35/practice),
 		".257 Carbine Long",
-			list(name="Carbine Magazine (Standard)", cost=300, path=/obj/item/ammo_magazine/lrifle),
-			list(name="Carbine Magazine (High velocity)", cost=300, path=/obj/item/ammo_magazine/lrifle/highvelocity),
-			list(name="Carbine Magazine (Hollow-point)", cost=300, path=/obj/item/ammo_magazine/lrifle/lethal),
-			list(name="Carbine Magazine (Rubber)", cost=300, path=/obj/item/ammo_magazine/lrifle/rubber),
-			list(name="Carbine Magazine (Practice)", cost=300, path=/obj/item/ammo_magazine/lrifle/practice),
+			list(name="Carbine Magazine (Standard)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257),
+			list(name="Carbine Magazine (High velocity)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257/highvelocity),
+			list(name="Carbine Magazine (Hollow-point)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257/lethal),
+			list(name="Carbine Magazine (Rubber)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257/rubber),
+			list(name="Carbine Magazine (Practice)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257/practice),
 		".257 Carbine Short",
-			list(name="Short Carbine Magazine (Standard)", cost=200, path=/obj/item/ammo_magazine/lrifle_short),
-			list(name="Short Carbine Magazine (High velocity)", cost=200, path=/obj/item/ammo_magazine/lrifle_short/highvelocity),
-			list(name="Short Carbine Magazine (Hollow-point)", cost=200, path=/obj/item/ammo_magazine/lrifle_short/lethal),
-			list(name="Short Carbine Magazine (Rubber)", cost=200, path=/obj/item/ammo_magazine/lrifle_short/rubber),
-			list(name="Short Carbine Magazine (Practice)", cost=200, path=/obj/item/ammo_magazine/lrifle_short/practice),
+			list(name="Short Carbine Magazine (Standard)", cost=200, path=/obj/item/ammo_magazine/light_rifle_257_short),
+			list(name="Short Carbine Magazine (High velocity)", cost=200, path=/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv),
+			list(name="Short Carbine Magazine (Hollow-point)", cost=200, path=/obj/item/ammo_magazine/light_rifle_257_short/lethal),
+			list(name="Short Carbine Magazine (Rubber)", cost=200, path=/obj/item/ammo_magazine/light_rifle_257_short/rubber),
+			list(name="Short Carbine Magazine (Practice)", cost=200, path=/obj/item/ammo_magazine/light_rifle_257_short/practice),
 		"7.5 Rifle",
 			list(name="Rifle Magazine (7.5 Standard)", cost=400, path=/obj/item/ammo_magazine/rifle_75),
 			list(name="Rifle Magazine (7.5 High velocity)", cost=400, path=/obj/item/ammo_magazine/rifle_75/highvelocity),
@@ -97,6 +99,13 @@ meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 			list(name="Heavy Rifle Magazine (.408 Rubber)", cost=400, path=/obj/item/ammo_magazine/heavy_rifle_408/rubber),
 			list(name="Heavy Rifle Magazine (.408 Practice)", cost=400, path=/obj/item/ammo_magazine/heavy_rifle_408/practice),
 		"Shotgun",
+			list(name="Shells (20mm Slug)", cost=400, path=/obj/item/ammo_casing/shotgun/prespawned),
+			list(name="Shells (20mm Buckshot)", cost=400, path=/obj/item/ammo_casing/shotgun/pellet/prespawned),
+			list(name="Shells (20mm Beanbag)", cost=400, path=/obj/item/ammo_casing/shotgun/beanbag/prespawned),
+			list(name="Shells (20mm Stun)", cost=400, path=/obj/item/ammo_casing/shotgun/stunshell/prespawned),
+			list(name="Shells (20mm Flash)", cost=400, path=/obj/item/ammo_casing/shotgun/flash/prespawned),
+			list(name="Shells (20mm Blank)", cost=400, path=/obj/item/ammo_casing/shotgun/blank/prespawned),
+			list(name="Shells (20mm Practice)", cost=400, path=/obj/item/ammo_casing/shotgun/practice/prespawned),
 			list(name="Ammo Drum (20mm Sabot slug)", cost=400, path=/obj/item/ammo_magazine/m12),
 			list(name="Ammo Drum (20mm Buckshot)", cost=400, path=/obj/item/ammo_magazine/m12/pellet),
 			list(name="Ammo Drum (20mm Beanbag)", cost=400, path=/obj/item/ammo_magazine/m12/beanbag),
@@ -106,13 +115,63 @@ meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 			list(name="SBAW Magazine (20mm HEFI)", cost=400, path=/obj/item/ammo_magazine/sbaw/he),
 		"Exotic",
 			list(name="Ammo Strip (7.5mm Rifle)", cost=400, path=/obj/item/ammo_magazine/speed_loader_rifle_75),
-			list(name="Ammo Strip (.408 Rifle)", cost=400, path=/obj/item/ammo_magazine/slhrifle),
-			list(name="Linked Ammunition Box (7.5mm Rifle)", cost=500, path=/obj/item/ammo_magazine/rifle_75_pk),
-			list(name="Linked Ammunition Box (7.5mm Rifle)", cost=500, path=/obj/item/ammo_magazine/rifle_75_pk),
-			list(name="Linked Ammunition Box (.257 Carbine)", cost=500, path=/obj/item/ammo_magazine/rifle_75_pk/lrifle),
+			list(name="Ammo Strip (.408 Rifle)", cost=400, path=/obj/item/ammo_magazine/heavy_rifle_408),
+			list(name="Shells (20mm Incendiary)", cost=400, path=/obj/item/ammo_casing/shotgun/incendiary/prespawned),
+			list(name="Shells (20mm Payload)", cost=500, path=/obj/item/ammo_casing/shotgun/payload/prespawned),
+			list(name="Linked Ammunition Box (7.5mm Rifle)", cost=500, path=/obj/item/ammo_magazine/rifle_75_linked_box),
+			list(name="Linked Ammunition Box (.257 Carbine)", cost=500, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257),
 			list(name="Heavy Rifle Drum Magazine (.408 Drum)", cost=500, path=/obj/item/ammo_magazine/heavy_rifle_408_drum),
 			list(name="Caseless Magazine (10x24 Standard)", cost=500, path=/obj/item/ammo_magazine/c10x24),
 			list(name="Ammo Magazine (.70 Gyro)", cost=500, path=/obj/item/ammo_magazine/a75),
+		".35 Ammo Packets",
+			list(name="Packet (.35 Auto)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35),
+			list(name="Packet (.35 Auto high-velocity)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/hv),
+			list(name="Packet (.35 Auto hollow-point)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/lethal),
+			list(name="Packet (.35 Auto rubber)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/rubber),
+			list(name="Packet (.35 Auto practice)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/practice),
+		".40 Ammo Packets",
+			list(name="Packet (.40 Magnum standard)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40),
+			list(name="Packet (.40 Magnum high velocity)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40/hv),
+			list(name="Packet (.40 Magnum hollow-point)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40/lethal),
+			list(name="Packet (.40 Magnum rubber)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40/rubber),
+			list(name="Packet (.40 Magnum practice)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40/practice),
+		".50 Ammo Boxes",
+			list(name="Box (.50 Standard)", cost=330, path=/obj/item/ammo_magazine/ammobox/kurtz_50),
+			list(name="Box (.50 High velocity)", cost=330, path=/obj/item/ammo_magazine/ammobox/kurtz_50/hv),
+			list(name="Box (.50 Hollow point)", cost=330, path=/obj/item/ammo_magazine/ammobox/kurtz_50/lethal),
+			list(name="Box (.50 Rubber)", cost=330, path=/obj/item/ammo_magazine/ammobox/kurtz_50/rubber),
+			list(name="Box (.50 Practice)", cost=330, path=/obj/item/ammo_magazine/ammobox/kurtz_50/practice),
+		".257 Ammo Packets",
+			list(name="Packet (Standard)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257),
+			list(name="Packet (High velocity)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv),
+			list(name="Packet (Hollow-point)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257_small/lethal),
+			list(name="Packet (Rubber)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber),
+			list(name="Packet (Practice)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/practice),
+		"7.5 Ammo Boxes",
+			list(name="Box (7.5 Standard)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75),
+			list(name="Box (7.5 High velocity)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75_small/hv),
+			list(name="Box (7.5 Hollow point)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75/lethal),
+			list(name="Box (7.5 Rubber)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75/rubber),
+			list(name="Box (7.5 Practice)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75/practice),
+		".408 Ammo Boxes",
+			list(name="Box (.408 Standard)", cost=1320, path=/obj/item/ammo_magazine/ammobox/heavy_rifle_408),
+			list(name="Box (.408 SLAP)", cost=1320, path=/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv),
+			list(name="Box (.408 Hollow point)", cost=1320, path=/obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal),
+			list(name="Box (.408 Rubber)", cost=1320, path=/obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber),
+			list(name="Box (.408 Practice)", cost=1320, path=/obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice),
+		"Shotgun Boxes",
+			list(name="Box (20mm Slug)", cost=3080, path=/obj/item/weapon/storage/box/shotgunammo/slug),
+			list(name="Box (20mm Buckshot)", cost=3080, path=/obj/item/weapon/storage/box/shotgunammo/buckshot),
+			list(name="Box (20mm Beanbag)", cost=3080, path=/obj/item/weapon/storage/box/shotgunammo/beanbags),
+			list(name="Box (20mm Stun)", cost=3080, path=/obj/item/weapon/storage/box/shotgunammo/stunshells),
+			list(name="Box (20mm Flash)", cost=3080, path=/obj/item/weapon/storage/box/shotgunammo/flashshells),
+			list(name="Box (20mm Blank)", cost=3080, path=/obj/item/weapon/storage/box/shotgunammo/blanks),
+			list(name="Box (20mm Practice)", cost=3080, path=/obj/item/weapon/storage/box/shotgunammo/practiceshells),
+		"Exotic Boxes",
+			list(name="Box (20mm Incendiary)", cost=3080, path=/obj/item/weapon/storage/box/shotgunammo/incendiary),
+			list(name="Box (20mm Payload)", cost=3850, path=/obj/item/weapon/storage/box/shotgunammo/payload),
+			list(name="Box (10x24mm caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c10x24),
+			list(name="Box (.60-06 AP)", cost=1650, path=/obj/item/ammo_magazine/ammobox/antim),
 	)
 
 
@@ -125,12 +184,10 @@ meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 	update_icon()
 
 /obj/machinery/bulletfabricator/update_icon()
-	if(!beaker)
-		icon_state = "biogen-empty"
-	else if(!processing)
-		icon_state = "biogen-stand"
+	if(!processing)
+		icon_state = "ammolathe"
 	else
-		icon_state = "biogen-work"
+		icon_state = "ammolathe_work"
 	return
 
 /obj/machinery/bulletfabricator/attackby(var/obj/item/I, var/mob/user)
@@ -192,7 +249,7 @@ meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 	if (!ui)
 		// the ui does not exist, so we'll create a new() one
 		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "bulletfabricator.tmpl", "Biogenerator", 550, 655)
+		ui = new(user, src, ui_key, "bulletfabricator.tmpl", "Munitions Fabricator", 550, 655)
 		// when the ui is first opened this is the data it will use
 		ui.set_initial_data(data)
 		// open the new ui window
@@ -216,15 +273,16 @@ meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 	var/S = 0
 	for(var/obj/item/stack/material/I in contents)
 		S += 5
-		if(I.reagents.get_reagent_amount("nutriment") < 0.1)
-			points += 1
-		else points += I.reagents.get_reagent_amount("nutriment") * 8 * eat_eff
+		points += I.amount * I.price_tag
+		//if(I.reagents.get_reagent_amount("nutriment") < 0.1)
+		//	points += 1
+		//else points += I.reagents.get_reagent_amount("nutriment") * 8 * eat_eff
 		qdel(I)
 	if(S)
 		processing = 1
 		update_icon()
 		updateUsrDialog()
-		playsound(src.loc, 'sound/machines/blender.ogg', 50, 1)
+		playsound(src.loc, 'sound/sanity/hydraulic.ogg', 50, 1)
 		use_power(S * 30)
 		sleep((S + 15) / eat_eff)
 		processing = 0
@@ -307,4 +365,3 @@ meed a gunpowder chem for the munitions. Side note, make a gunpowder chem.
 
 	build_eff = man_rating
 	eat_eff = bin_rating
-*/
