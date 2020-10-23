@@ -636,6 +636,8 @@
 	glass_name = "iced green tea"
 	glass_desc = "It looks like green tea with ice. One might even call it iced green tea."
 
+/*Coffee Starts Here*/
+
 /datum/reagent/drink/coffee
 	name = "Coffee"
 	id = "coffee"
@@ -670,6 +672,18 @@
 /datum/reagent/drink/coffee/overdose(var/mob/living/carbon/M, var/alien)
 	M.make_jittery(5)
 	M.add_chemical_effect(CE_PULSE, 2)
+
+/datum/reagent/drink/coffee/espresso
+	name = "Espresso"
+	id = "espresso"
+	description = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
+	taste_description = "bitter coffee"
+	taste_mult = 1
+	color = "#664300"
+
+	glass_icon_state = "hot_coffee"
+	glass_name = "shot of espresso"
+	glass_desc = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
 
 /datum/reagent/drink/coffee/icecoffee
 	name = "Iced Coffee"
@@ -716,6 +730,116 @@
 /datum/reagent/drink/coffee/cafe_latte/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
 	M.heal_organ_damage(0.05 * effect_multiplier, 0)
+
+/datum/reagent/drink/coffee/freddo_espresso
+	name = "Freddo Espresso"
+	id = "freddp_espresso"
+	description = "Espresso with ice cubes poured over ice."
+	taste_description = "cold and bitter coffee"
+	color = "#664300" // rgb: 102, 67, 0
+
+	glass_icon_state = "hot_coffee"
+	glass_name = "glass of freddo espresso"
+	glass_desc = "Espresso with ice cubes poured over ice."
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/caffe_americano
+	name = "Caffe Americano"
+	id = "caffe_americano"
+	description = "Espresso diluted with hot water."
+	taste_description = "delicious coffee"
+	color = "#664300" // rgb: 102, 67, 0
+
+
+	glass_icon_state = "hot_coffee"
+	glass_name = "glass of caffe Americano"
+	glass_desc = "delicious coffee"
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/flat_white
+	name = "Flat White Espresso"
+	id = "flat_white"
+	description = "Espresso with a bit of steamy hot milk."
+	taste_description = "bitter coffee and milk"
+	color = "#664300" // rgb: 102, 67, 0
+
+	glass_icon_state = "cafe_latte"
+	glass_name = "glass of flat white"
+	glass_desc = "Espresso with a bit of steamy hot milk."
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/latte
+	name = "Latte"
+	id = "latte"
+	description = "A nice, strong, and refreshing beverage to enjoy while reading."
+	taste_description = "bitter cream"
+	color = "#664300" // rgb: 102, 67, 0
+
+	glass_icon_state = "cafe_latte"
+	glass_name = "glass of cafe latte"
+	glass_desc = "A nice, strong, and refreshing beverage to enjoy while reading."
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/cappuccino
+	name = "Cappuccino"
+	id = "cappuccino"
+	description = "Espresso with steamed milk foam."
+	taste_description = "bitter milk foam"
+	color = "#664300" // rgb: 102, 67, 0
+
+	glass_icon_state = "hot_coffee"
+	glass_name = "glass of cappuccino"
+	glass_desc = "Espresso with steamed milk foam."
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/freddo_cappuccino
+	name = "Freddo Cappuccino"
+	id = "freddo_cappuccino"
+	description = "Espresso with steamed milk foam, on ice."
+	taste_description = "cold and bitter milk foam"
+	color = "#664300" // rgb: 102, 67, 0
+
+	glass_icon_state = "hot_coffee"
+	glass_name = "glass of freddo cappuccino"
+	glass_desc = "Espresso with steamed milk foam, on ice."
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/macchiato
+	name = "Macchiato"
+	id = "macchiato"
+	description = "Espresso with milk foam."
+	taste_description = "bitter milk foam"
+	color = "#664300" // rgb: 102, 67, 0
+
+	glass_icon_state = "hot_coffee"
+	glass_name = "glass of macchiato"
+	glass_desc = "Espresso with milk foam."
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/mocacchino
+	name = "Mocacchino"
+	id = "mocacchino"
+	description = "Espresso with hot milk and chocolate."
+	taste_description = "sweet milk and bitter coffee"
+	color = "#664300" // rgb: 102, 67, 0
+
+	glass_icon_state = "cafe_latte"
+	glass_name = "glass of mocacchino"
+	glass_desc = "Espresso with hot milk and chocolate."
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/sromshine
+	name = "Sromshine"
+	id = "sromshine"
+	description = "The best part of waking up."
+	taste_description = "bitter citrus"
+	color = "#A14702"
+
+	glass_icon_state = "sromshine"
+	glass_name = "cup of Sromshine"
+	glass_desc = "The best part of waking up."
+
+/*Aurora coffee ends here*/
 
 /datum/reagent/drink/hot_coco
 	name = "Hot Chocolate"
