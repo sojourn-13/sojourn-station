@@ -267,6 +267,16 @@
 //Simple form ideal for basic use. That proc will return TRUE only when everything was done right, and FALSE if something went wrong, ot user was unlucky.
 //Editionaly, handle_failure proc will be called for a critical failure roll.
 /obj/item/proc/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
+	if (health)//Low health on a tool increases failure chance. Scaling up as it breaks further.
+		if (health > max_health * 0.80)//100-80% is normal operation
+		else if (health > max_health * 0.40)
+			fail_chance += 5//80-40% is -5 precision
+		else if (health > max_health * 0.20)
+			fail_chance += 10//40-20% is -10 precision
+		else if (health > max_health * 0.10)
+			fail_chance += 20//20-10% is -20 precision
+		else
+			fail_chance += 40//below 10% is -40 precision. Good luck!
 	var/obj/item/weapon/tool/T
 	if (istool(src))
 		T = src
