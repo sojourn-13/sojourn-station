@@ -449,8 +449,10 @@
 				to_chat(user, "Eject the items first!")
 				return
 			if(!sound_on)
+				to_chat(user, "You turn on the chute alarm sound.")
 				sound_on = TRUE
 			if(sound_on)
+				to_chat(user, "You turn off the chute alarm sound.")
 				sound_on = FALSE
 
 		if(QUALITY_SCREW_DRIVING)
