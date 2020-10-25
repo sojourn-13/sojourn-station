@@ -118,6 +118,7 @@
 	I.req_gun_tags = list(GUN_ENERGY)
 
 /obj/item/weapon/gun_upgrade/trigger
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
 
 //Disables the ability to toggle the safety, toggles the safety permanently off, decreases fire delay. Acquired through loot spawns
 /obj/item/weapon/gun_upgrade/trigger/dangerzone
@@ -137,12 +138,13 @@
 //Disables the ability to toggle the safety, toggles the safety permanently on, takes 2 minutes to remove (yikes). Acquired through loot spawns
 /obj/item/weapon/gun_upgrade/trigger/cop_block
 	name = "H&S \"Cop Block\" Trigger"
-	desc = "A simpler way of making a weapon display-only"
+	desc = "A trigger guard to force the safety on a gun, used to pacify weapons from targets or trigger happy marshals. A simpler way of making a weapon display-only"
 	icon_state = "Cop_Block"
 
 /obj/item/weapon/gun_upgrade/trigger/cop_block/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.install_time = WORKTIME_INSTANT
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FORCESAFETY = TRUE,
 		)

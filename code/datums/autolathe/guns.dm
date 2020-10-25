@@ -341,3 +341,9 @@
 /datum/design/autolathe/gun/plasma/martyr
 	name = "NT PR \"Martyr\""
 	build_path = /obj/item/weapon/gun/energy/plasma/martyr
+
+// Gun mods
+
+/datum/design/autolathe/gun/cop_mod
+	name = "H&S \"Cop Block\" Trigger"
+	build_path = /obj/item/weapon/gun_upgrade/trigger/cop_block

@@ -14,6 +14,7 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 	var/prefix = "upgraded" //Added to the tool's name
 	var/removal_time = WORKTIME_SLOW
+	var/install_time = WORKTIME_FAST
 
 	//The upgrade can be applied to a tool that has any of these qualities
 	var/list/required_qualities = list()
@@ -171,7 +172,7 @@
 	if (user)
 		user.visible_message(SPAN_NOTICE("[user] starts applying [parent] to [A]"), SPAN_NOTICE("You start applying \the [parent] to \the [A]"))
 		var/obj/item/I = parent
-		if (!I.use_tool(user = user, target =  A, base_time = WORKTIME_FAST, required_quality = null, fail_chance = FAILCHANCE_ZERO, required_stat = STAT_MEC, forced_sound = WORKSOUND_WRENCHING))
+		if (!I.use_tool(user = user, target =  A, base_time = install_time, required_quality = null, fail_chance = FAILCHANCE_ZERO, required_stat = STAT_MEC, forced_sound = WORKSOUND_WRENCHING))
 			return FALSE
 		to_chat(user, SPAN_NOTICE("You have successfully installed \the [parent] in \the [A]"))
 		user.drop_from_inventory(parent)
