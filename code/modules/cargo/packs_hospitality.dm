@@ -226,3 +226,15 @@
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "pizza crate"
 	group = "Hospitality"
+
+/datum/supply_pack/hospitality_dispenser
+	name = "Hospitality Dispenser (Booze/Soda/Coffie Dispensers Boards)"
+	contains = list(/obj/item/weapon/circuitboard/chemical_dispenser/coffee_master,
+					/obj/item/weapon/circuitboard/chemical_dispenser/beer,
+					/obj/item/weapon/circuitboard/chemical_dispenser/soda,
+					/obj/item/weapon/storage/box/drinkingglasses,
+					/obj/item/weapon/storage/box/drinkingglasses)
+	cost = 850
+	containertype = /obj/structure/closet/crate
+	crate_name = "hospitality dispenser"
+	group = "Hospitality"
