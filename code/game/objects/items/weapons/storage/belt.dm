@@ -116,6 +116,27 @@
 	new /obj/item/weapon/tool/wrench/big_wrench(src)
 	new /obj/item/weapon/tool/knife/dagger(src)
 
+/obj/item/weapon/storage/belt/medical/opifex
+	name = "opifex black medical webbing"
+	desc = "A black webbing made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for medical supplies, limiting its versatility."
+	icon_state = "webbing_black"
+	item_state = "webbing_black"
+	storage_slots = 12
+
+/obj/item/weapon/storage/belt/medical/opifex/full/populate_contents()
+	new /obj/item/device/scanner/health(src)
+	new /obj/item/weapon/reagent_containers/syringe/hyperzine(src)
+	new /obj/item/weapon/reagent_containers/syringe/tricordrazine(src)
+	new /obj/item/weapon/reagent_containers/syringe/inaprovaline(src)
+	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
+	new /obj/item/weapon/storage/pill_bottle/prosurgeon(src)
+	new /obj/item/weapon/storage/pill_bottle/bicaridine(src)
+	new /obj/item/weapon/storage/pill_bottle/dermaline(src)
+	new /obj/item/weapon/storage/pill_bottle/dexalin_plus(src)
+	new /obj/item/weapon/storage/pill_bottle/antitox(src)
+	new /obj/item/bodybag/cryobag(src)
+	new /obj/item/weapon/extinguisher/mini(src)
+
 /obj/item/weapon/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
@@ -200,11 +221,13 @@
 		/obj/item/device/hailer,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/melee,
-		//obj/item/weapon/gun/projectile/mk58, //too big, use holster
+		/obj/item/weapon/tool/knife,
+		/obj/item/weapon/gun/projectile/mk58,
+		/obj/item/weapon/gun/energy/gun,
 		/obj/item/weapon/gun/projectile/clarissa,
 		/obj/item/weapon/gun/projectile/giskard,
-		//obj/item/weapon/gun/projectile/olivaw, //too big, use holster
-		//obj/item/weapon/gun/projectile/revolver/detective, //too big, use holster
+		/obj/item/weapon/gun/projectile/olivaw,
+		/obj/item/weapon/gun/projectile/revolver/detective,
 		/obj/item/weapon/gun/energy/gun/martin,
 		/obj/item/taperoll
 	)
@@ -245,6 +268,24 @@
 	desc = "Can hold various military and security equipment, more so than a standard belt or web harness."
 	icon_state = "tactical"
 	storage_slots = 12
+
+/obj/item/weapon/storage/belt/security/tactical/opifex
+	name = "opifex tactical belt"
+	desc = "A black tactical belt made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for combat, limiting its versatility."
+
+/obj/item/weapon/storage/belt/security/tactical/opifex/full/populate_contents()
+	new /obj/item/weapon/reagent_containers/spray/pepper(src)
+	new /obj/item/weapon/tool/crowbar(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/weapon/gun/energy/gun(src)
+	new /obj/item/weapon/cell/medium/high(src)
+	new /obj/item/weapon/cell/medium/high(src)
+	new /obj/item/weapon/tool/knife/dagger/assassin(src)
+	new /obj/item/weapon/grenade/spawnergrenade/manhacks/opifex(src)
+	new /obj/item/weapon/grenade/spawnergrenade/manhacks/opifex(src)
+	new /obj/item/weapon/grenade/smokebomb(src)
+	new /obj/item/weapon/grenade/chem_grenade/teargas(src)
 
 /obj/item/weapon/storage/belt/security/neotheology
 	name = "tactical absolutism belt"

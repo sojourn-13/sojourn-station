@@ -220,6 +220,11 @@
 	..(null,"is smashed into pieces!")
 	qdel(src)
 
+/mob/living/simple_animal/hostile/viscerator/opifex
+	name = "opifex viscerator"
+	desc = "A small, twin-bladed machine capable of inflicting very deadly lacerations. This one is an opifex model and thus targets non-colony humanoids, animals, and cht'mants."
+	faction = "neutral"
+
 
 /mob/living/simple_animal/hostile/elitemercenary
 	name = "\improper Elite operative"

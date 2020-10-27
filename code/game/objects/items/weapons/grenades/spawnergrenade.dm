@@ -39,6 +39,10 @@
 	deliveryamt = 5
 	origin_tech = list(TECH_MATERIAL = 3, TECH_MAGNET = 4, TECH_ILLEGAL = 4)
 
+/obj/item/weapon/grenade/spawnergrenade/manhacks/opifex
+	name = "opifex manhack grenade"
+	desc = "Deploys a swarm of floating robots that will attack animals and non-colony humanoids nearby. Due to targeting issues the manhacks will attack cht'mants and be shot by colony defense turrets be they opifex, guild, laser, or church defense grids, use with caution."
+	spawner_type = /mob/living/simple_animal/hostile/viscerator/opifex
 
 /obj/item/weapon/grenade/spawnergrenade/blob
 	name = "bioweapon sample"
