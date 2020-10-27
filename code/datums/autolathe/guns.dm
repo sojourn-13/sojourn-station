@@ -237,7 +237,7 @@
 
 /datum/design/autolathe/gun/omnirifle
 	name = "SA BR .408 \"Hustler\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/
+	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle
 
 /datum/design/autolathe/gun/omnicarbine
 	name = "H&S BR .408 \"Boar\""

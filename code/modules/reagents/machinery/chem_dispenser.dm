@@ -263,7 +263,7 @@
 	density = FALSE
 	level0 = list(
 		"coffee","cream","tea","greentea","sugar","hot_coco","espresso")
-
+	hacked_reagents = list("ice")
 	level1 = list("cappuccino")
 	level2 = list("macchiato")
 	level3 = list("soymilk") //Commie stock part gives this
