@@ -485,7 +485,7 @@
 		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 0,
+		/datum/design/autolathe/ammo/smg_lethal = 2,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/straylight
@@ -498,7 +498,7 @@
 		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 0,
+		/datum/design/autolathe/ammo/smg_lethal = 2,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/texan
@@ -511,7 +511,7 @@
 		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 0,
+		/datum/design/autolathe/ammo/smg_lethal = 2,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mac
@@ -524,7 +524,7 @@
 		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 0,
+		/datum/design/autolathe/ammo/smg_lethal = 2,
 	)
 
 // .257 carbines
@@ -680,10 +680,11 @@
 	license = 6
 	designs = list(
 		/datum/design/autolathe/gun/omnicarbine = 3,
+		/datum/design/autolathe/gun/rds_omnicarbine = 4,
 		/datum/design/autolathe/ammo/hrifle_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 		/datum/design/autolathe/ammo/hrifle,
-		/datum/design/autolathe/ammo/hrifle_lethal = 2,,
+		/datum/design/autolathe/ammo/hrifle_lethal = 2,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sts40
