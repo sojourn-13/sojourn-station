@@ -121,8 +121,7 @@ var/list/disciples = list()
 			wearer.visible_message(SPAN_DANGER("[wearer]'s [R.name] tears off."),
 			SPAN_DANGER("Your [R.name] tears off."))
 			R.droplimb()
-*/
-//This is the function to remove excelsior implants for cruciform bearers. Should only make cruciform bearers react badly to excelsior implants. -Kaz
+
 		if(istype(O, /obj/item/weapon/implant/excelsior))
 			if(O == src)
 				continue
@@ -136,6 +135,7 @@ var/list/disciples = list()
 			R.part.take_damage(rand(20,40))
 			R.uninstall()
 			R.malfunction = MALFUNCTION_PERMANENT
+*/
 	if(ishuman(wearer))
 		var/mob/living/carbon/human/H = wearer
 		H.update_implants()
