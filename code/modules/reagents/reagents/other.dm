@@ -303,7 +303,9 @@
 			if(S.wet >= 2)
 				S.wet_floor(1, TRUE)
 		T.clean_blood()
-
+		for(var/obj/effect/O in T)
+			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay))
+				qdel(O)
 		for(var/mob/living/carbon/slime/M in T)
 			M.adjustToxLoss(rand(5, 10))
 
