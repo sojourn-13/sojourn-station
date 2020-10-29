@@ -1,12 +1,19 @@
+var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /* Simple object type, calls a proc when "stepped" on by something */
 
 /obj/effect/step_trigger
 	var/affect_ghosts = 0
 	var/stopper = 1 // stops throwers
+	var/id = null			//id of this bump_teleporter.
+	var/id_target = null	//id of bump_teleporter which this moves you to.
 	invisibility = 101 // nope cant see this shit
 	anchored = 1
 
 /obj/effect/step_trigger/proc/Trigger(var/atom/movable/A)
+	for(var/obj/effect/step_trigger/ST in STEP_TELEPORTERS)
+		if(ST.id == src.id_target)
+			A.loc = ST.loc	//Teleport to location with correct id.
+			return
 	return 0
 
 /obj/effect/step_trigger/Crossed(H as mob|obj)
@@ -17,7 +24,13 @@
 		return
 	Trigger(H)
 
+/obj/effect/step_trigger/New()
+	..()
+	STEP_TELEPORTERS += src
 
+/obj/effect/step_trigger/Destroy()
+	STEP_TELEPORTERS -= src
+	return ..()
 
 /* Tosses things in a certain direction */
 
@@ -127,3 +140,70 @@
 		to_chat(M, "<span class='info'>[message]</span>")
 		if(once)
 			qdel(src)
+
+
+//Map teleporters, don't fuck with'em. These are basically dynamic versions of the bump teleporters for map functions so the coordinates are not hard coded. -Kaz
+//You should always make news ones of these when connecting maps in normal ways such as through stairs or cave entrances, its safer than hard coded map stuff.
+
+//Underground to stairs.
+/obj/effect/step_trigger/underground_to_transition_1_A
+	id = "underground_to_transition_1_A"
+	id_target = "underground_to_transition_2_A"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/underground_to_transition_2_A
+	id = "underground_to_transition_2_A"
+	id_target = "underground_to_transition_1_A"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/underground_to_transition_1_B
+	id = "underground_to_transition_1_B"
+	id_target = "underground_to_transition_2_B"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/underground_to_transition_2_B
+	id = "underground_to_transition_2_B"
+	id_target = "underground_to_transition_1_B"
+	affect_ghosts = 1
+
+//Surface to stairs.
+/obj/effect/step_trigger/surface_to_transition_1_A
+	id = "surface_to_transition_1_A"
+	id_target = "surface_to_transition_2_A"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/surface_to_transition_2_A
+	id = "surface_to_transition_2_A"
+	id_target = "surface_to_transition_1_A"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/surface_to_transition_1_B
+	id = "surface_to_transition_1_B"
+	id_target = "surface_to_transition_2_B"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/surface_to_transition_2_B
+	id = "surface_to_transition_2_B"
+	id_target = "surface_to_transition_1_B"
+	affect_ghosts = 1
+
+//Surface to forest
+/obj/effect/step_trigger/surface_to_forest_1_A
+	id = "surface_to_forest_1_A"
+	id_target = "surface_to_forest_2_A"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/surface_to_forest_2_A
+	id = "surface_to_forest_2_A"
+	id_target = "surface_to_forest_1_A"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/surface_to_forest_1_B
+	id = "surface_to_forest_1_B"
+	id_target = "surface_to_forest_2_B"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/surface_to_forest_2_B
+	id = "surface_to_forest_2_B"
+	id_target = "surface_to_forest_1_B"
+	affect_ghosts = 1
