@@ -31,6 +31,7 @@
 	var/dam_force = 20
 	var/obj/mecha/working/ripley/cargo_holder
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
+	var/allow_pickup = list(/obj/structure/scrap, /obj/structure/salvageable)
 
 	attach(obj/mecha/M as obj)
 		..()
@@ -49,7 +50,7 @@
 			if(locate(/mob/living) in O)
 				occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
 				return
-			if(O.anchored && !type(/obj/structure/scrap || /obj/structure/salvageable))
+			if(O.anchored &! allow_pickup)
 				occupant_message(SPAN_WARNING("[target] is firmly secured."))
 				return
 			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
