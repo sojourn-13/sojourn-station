@@ -1782,6 +1782,7 @@
 #include "code\modules\mob\living\login.dm"
 #include "code\modules\mob\living\logout.dm"
 #include "code\modules\mob\living\recoil.dm"
+#include "code\modules\mob\living\resize.dm"
 #include "code\modules\mob\living\say.dm"
 #include "code\modules\mob\living\bot\bot.dm"
 #include "code\modules\mob\living\bot\cleanbot.dm"

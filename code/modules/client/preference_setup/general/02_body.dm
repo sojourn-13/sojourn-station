@@ -20,6 +20,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	var/icon/bgstate = "black"
 	var/list/bgstate_options = list("steel", "dark_steel", "white_tiles", "black_tiles", "wood", "carpet", "white", "black")
 
+	var/size_multiplier = RESIZE_NORMAL
+
 /datum/category_item/player_setup_item/physical/body
 	name = "Body"
 	sort_order = 2
@@ -38,6 +40,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	from_file(S["skin_color"], pref.skin_color)
 	from_file(S["hair_color"], pref.hair_color)
 	from_file(S["facial_color"], pref.facial_color)
+	from_file(S["size_multiplier"], pref.size_multiplier)
 
 /datum/category_item/player_setup_item/physical/body/save_character(var/savefile/S)
 	to_file(S["species"], pref.species)
@@ -51,6 +54,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	to_file(S["skin_color"], pref.skin_color)
 	to_file(S["hair_color"], pref.hair_color)
 	to_file(S["facial_color"], pref.facial_color)
+	to_file(S["size_multiplier"], pref.size_multiplier)
 
 /datum/category_item/player_setup_item/physical/body/sanitize_character(var/savefile/S)
 	pref.h_style		= sanitize_inlist(pref.h_style, GLOB.hair_styles_list, initial(pref.h_style))
@@ -59,6 +63,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	pref.facial_color	= iscolor(pref.facial_color) ? pref.facial_color : "#000000"
 	pref.skin_color		= iscolor(pref.skin_color) ? pref.skin_color : "#FFE0D0"
 	pref.eyes_color		= iscolor(pref.eyes_color) ? pref.eyes_color : "#000000"
+	if(pref.size_multiplier == null || pref.size_multiplier < RESIZE_TINY || pref.size_multiplier > RESIZE_HUGE)
+		pref.size_multiplier = initial(pref.size_multiplier)
 
 	if(!pref.species || !(pref.species in global.playable_species))
 		pref.species = SPECIES_HUMAN
@@ -128,6 +134,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		. += "<b>Body Color: </b><a href='?src=\ref[src];skin_color=1'><span class='color_holder_box' style='background-color:[pref.skin_color]'></span></a><br>"
 	else if(has_flag(mob_species_form, HAS_SKIN_TONE))
 		. += "<b>Skin Tone: </b><a href='?src=\ref[src];skin_tone=1'>[-pref.s_tone + 35]/220</a><br>"
+
+	. += "<b>Scale:</b> <a href='?src=\ref[src];size_multiplier=1'>[round(pref.size_multiplier*100)]%</a><br>"
 
 	. += "</td><td style = 'text-align:center;' width = 35%><b>Preview</b><br>"
 	. += "<div style ='padding-bottom:-2px;' class='statusDisplay'><img src=previewicon.png width=[pref.preview_icon.Width()] height=[pref.preview_icon.Height()]></div>"
@@ -345,6 +353,15 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			new_f_style = valid_facialhairstyles[old_pos+1]
 		if(new_f_style && CanUseTopic(user) && mob_species_form.get_facial_hair_styles())
 			pref.f_style = new_f_style
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+	else if(href_list["size_multiplier"])
+		var/new_size = input(user, "Choose your character's size, ranging from 80% to 120% Please note that size is capped at these percentages. A size of 100 is considered close to 5'10 or 1.77 meters.", "Set Size") as num|null
+		if (!ISINRANGE(new_size,80,120))
+			pref.size_multiplier = 1
+			to_chat(user, "<span class='notice'>Invalid size.</span>")
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+		else if(new_size)
+			pref.size_multiplier = (new_size/100)
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	return ..()
