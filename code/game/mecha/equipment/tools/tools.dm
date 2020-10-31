@@ -49,7 +49,7 @@
 			if(locate(/mob/living) in O)
 				occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
 				return
-			if(O.anchored && (!istype(O, /obj/structure/scrap) && !istype(O, /obj/structure/salvageable))
+			if(O.anchored && (!istype(O, /obj/structure/scrap) && !istype(O, /obj/structure/salvageable)))
 				occupant_message(SPAN_WARNING("[target] is firmly secured."))
 				return
 			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
