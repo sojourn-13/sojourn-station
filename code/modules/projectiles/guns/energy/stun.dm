@@ -6,9 +6,16 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 3)
 	price_tag = 1000
+	charge_cost = 50
 	fire_sound = 'sound/weapons/Taser.ogg'
 	can_dual = 1
 	projectile_type = /obj/item/projectile/beam/stun
+
+	init_firemodes = list(
+		list(mode_name="small", projectile_type=/obj/item/projectile/beam/stun, fire_delay=12, charge_cost = 50),
+		list(mode_name="large", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300),
+		list(mode_name="large", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600), //Takes 1 full level 1 M cell
+	)
 
 /obj/item/weapon/gun/energy/taser/mounted
 	name = "mounted taser gun"
