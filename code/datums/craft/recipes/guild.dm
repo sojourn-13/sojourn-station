@@ -99,6 +99,19 @@
 		list(QUALITY_BOLT_TURNING, 30, "time" = 10)
 	)
 
+/datum/craft_recipe/guild/rocket_engine
+	name = "rocket engine"
+	result = /obj/item/rocket_engine
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 60),
+		list(/obj/item/stack/material/gold, 1, "time" = 20),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
+	)
 
 //Weapons ------------------------
 /datum/craft_recipe/guild/railgunrifle

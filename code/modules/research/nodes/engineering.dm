@@ -147,8 +147,8 @@
 
 // TO ADD: advmop?, holosign, spraycan, spacesuit & helmet?, glowsticks_adv, stimpack
 /datum/technology/supplyanddemand
-	name = "Supply And Demand"
-	desc = "Supply And Demand"
+	name = "Supply and Demand"
+	desc = "Supply and Demand"
 	tech_type = RESEARCH_ENGINEERING
 
 	x = 0.4
@@ -404,7 +404,8 @@
 
 	unlocks_designs = list(/datum/design/research/item/part/RPED,
 							 /datum/design/research/circuit/secure_airlock,
-							 /datum/design/research/item/part/RPED/mini)
+							 /datum/design/research/item/part/RPED/mini,
+							 /datum/design/research/item/part/rocket)
 
 /datum/technology/industrial_printing
 	name = "Industrial Printing"

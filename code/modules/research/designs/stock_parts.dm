@@ -56,6 +56,10 @@
 /datum/design/research/item/part/phasic_sensor
 	build_path = /obj/item/weapon/stock_parts/scanning_module/phasic
 
+/datum/design/research/item/part/rocket
+	name = "Rocket Engine"
+	build_path = /obj/item/rocket_engine
+
 // Telecomm parts
 /datum/design/research/item/part/subspace_ansible
 	build_path = /obj/item/weapon/stock_parts/subspace/ansible
