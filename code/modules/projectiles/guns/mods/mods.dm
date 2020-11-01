@@ -335,6 +335,25 @@
 	I.gun_loc_tag = GUN_MECHANISM
 */
 
+/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst
+	name = "Grayson \"Master Unmaker\" infuser"
+	desc = "One of the rarest and most powerful weapon modification ever made by Grayson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
+	icon_state = "psionic_catalyst"
+
+/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_BRUTE = 10,
+		GUN_UPGRADE_DAMAGE_BURN = 10,
+		GUN_UPGRADE_DAMAGE_TOX = 5,
+		GUN_UPGRADE_DAMAGE_OXY = 5,
+		GUN_UPGRADE_DAMAGE_CLONE = 5,
+		GUN_UPGRADE_DAMAGE_HALLOSS = 5
+	)
+	I.removal_time *= 10
+	I.gun_loc_tag = GUN_MECHANISM
+
 /obj/item/weapon/gun_upgrade/barrel/gauss
 	name = "Void Wolf \"Gauss Coil\" barrel"
 	desc = "Makes bullets pierce through walls and penetrate armor easily, but loses rate of fire and increases recoil."
