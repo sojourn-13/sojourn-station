@@ -25,15 +25,15 @@
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
 /obj/item/weapon/tool/shovel/combat
-	name = "combat shovel"
-	desc = "A plasteel shovel with a sharp head to dig out trenches faster and be used in hand to hand combat."
+	name = "combat croval"
+	desc = "A plasteel croval with a sharp head, serrated side, crowbar lever on the pommel, and a fold-able winch for easy transport. For when you need to dig out trenches, hammer barricades together, cave in skulls, and cut your steak."
 	icon_state = "combat_shovel"
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS
 	w_class = ITEM_SIZE_SMALL
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6)
-	tool_qualities = list(QUALITY_SHOVELING = 30, QUALITY_DIGGING = 30, QUALITY_CUTTING = 10,QUALITY_SAWING = 5)
+	tool_qualities = list(QUALITY_SHOVELING = 40, QUALITY_DIGGING = 40, QUALITY_PRYING = 25, QUALITY_CUTTING = 10, QUALITY_SAWING = 5)
 	workspeed = 1.2
 
 /obj/item/weapon/tool/shovel/spade
