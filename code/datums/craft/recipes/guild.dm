@@ -87,7 +87,7 @@
 	)
 
 /datum/craft_recipe/guild/combat_shovel
-	name = "combat croval"
+	name = "combat crovel"
 	result = /obj/item/weapon/tool/shovel/combat
 	steps = list(
 		list(/obj/item/weapon/tool/shovel, 1),
