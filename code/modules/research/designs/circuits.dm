@@ -388,7 +388,7 @@
 	build_path = /obj/item/weapon/circuitboard/mindswapper
 	category = CAT_MEDI
 
-//Industeral Printing
+//Industrial Printing
 
 /datum/design/research/circuit/industrial_chems
 	name = "Industrial Chem Dispenser"
