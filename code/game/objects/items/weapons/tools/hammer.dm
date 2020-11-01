@@ -143,7 +143,7 @@
 
 	if(cell?.checked_use(cost))
 		if(!wielded)
-			var/drop_prob = 30
+			var/drop_prob = 50
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				drop_prob *= H.stats.getMult(STAT_ROB, STAT_LEVEL_EXPERT)
