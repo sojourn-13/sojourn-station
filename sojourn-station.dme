@@ -1039,6 +1039,7 @@
 #include "code\game\objects\items\weapons\storage\boxes.dm"
 #include "code\game\objects\items\weapons\storage\briefcase.dm"
 #include "code\game\objects\items\weapons\storage\bsdm.dm"
+#include "code\game\objects\items\weapons\storage\case.dm"
 #include "code\game\objects\items\weapons\storage\costume.dm"
 #include "code\game\objects\items\weapons\storage\deferred.dm"
 #include "code\game\objects\items\weapons\storage\fancy.dm"

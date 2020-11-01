@@ -338,13 +338,25 @@
 
 /datum/craft_recipe/guild/silencer
 	name = "Silencer"
-	result = /obj/item/weapon/gun_upgrade/barrel/silencer
+	result = /obj/item/weapon/gun_upgrade/muzzle/silencer
 	steps = list(
 		list(/obj/item/stack/material/plasteel, 3, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
 		list(/obj/item/stack/material/plastic, 1, "time" = 30),
+		list(QUALITY_CUTTING, 25, "time" = 90),
+	)
+
+/datum/craft_recipe/guild/watchman
+	name = "Artificer's Guild \"Watchman\" scope"
+	result = /obj/item/weapon/gun_upgrade/scope/watchman
+	steps = list(
+		list(/obj/item/stack/material/plasteel, 3, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/material/glass, 2, "time" = 30),
 		list(QUALITY_CUTTING, 25, "time" = 90),
 	)
 

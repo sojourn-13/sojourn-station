@@ -7,21 +7,21 @@
 /obj/item/weapon/gun_upgrade/barrel
 
 //Silences the weapon, reduces damage multiplier slightly, Legacy port.
-/obj/item/weapon/gun_upgrade/barrel/silencer
+/obj/item/weapon/gun_upgrade/muzzle/silencer
 	name = "silencer"
-	desc = "A threaded silencer that can be attached to the barrel of certain guns. Vastly reduces noise, but impedes muzzle velocity."
+	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise, but impedes muzzle velocity."
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	icon_state = "silencer"
 
 
-/obj/item/weapon/gun_upgrade/barrel/silencer/New()
+/obj/item/weapon/gun_upgrade/muzzle/silencer/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_SILENCER = TRUE,
 		GUN_UPGRADE_DAMAGE_PLUS = -0.1
 		)
-	I.gun_loc_tag = GUN_BARREL
+	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_SILENCABLE)
 
 //Decreases fire delay. Acquired through loot spawns or guild crafting
@@ -334,3 +334,72 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
 */
+
+/obj/item/weapon/gun_upgrade/barrel/gauss
+	name = "Void Wolf \"Gauss Coil\" barrel"
+	desc = "Makes bullets pierce through walls and penetrate armor easily, but loses rate of fire and increases recoil."
+	icon_state = "Gauss"
+
+/obj/item/weapon/gun_upgrade/barrel/gauss/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_BRUTE = 10,
+		GUN_UPGRADE_PEN_MULT = 1.2,
+		GUN_UPGRADE_PIERC_MULT = 1,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+		GUN_UPGRADE_RECOIL = 1.2,
+		)
+	I.removal_time *= 10
+	I.gun_loc_tag = GUN_BARREL
+	I.req_gun_tags = list(GUN_PROJECTILE)
+
+/obj/item/weapon/gun_upgrade/trigger/boom
+	name = "Void Wolf \"Self Destruct\" trigger"
+	desc = "A trigger built for energy weapons that cause it to explode when fired, the perfect bait and switch for the dishonest pirate."
+	icon_state = "Boom"
+
+/obj/item/weapon/gun_upgrade/trigger/boom/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_EXPLODE = TRUE,
+		)
+	I.removal_time *= 10
+	I.gun_loc_tag = GUN_TRIGGER
+	I.req_gun_tags = list(GUN_ENERGY)
+
+/obj/item/weapon/gun_upgrade/scope
+//	bad_type = /obj/item/weapon/gun_upgrade/scope
+
+/obj/item/weapon/gun_upgrade/scope/watchman
+	name = "Artificer's Guild \"Watchman\" scope"
+	desc = "In the age of 3D printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. Hand-made scopes forged by the Artificer's Guild are known across the entire terran federation for the quality they have and this one is no diffrent."
+	icon_state = "Watchman"
+
+/obj/item/weapon/gun_upgrade/scope/watchman/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_OFFSET = 0.9,
+		GUN_UPGRADE_RECOIL = 1.1,
+		GUN_UPGRADE_ZOOM = 1.2
+		)
+	I.gun_loc_tag = GUN_SCOPE
+	I.req_gun_tags = list(GUN_SCOPE)
+
+/obj/item/weapon/gun_upgrade/scope/killer
+	name = "Void Wolf \"Contract Killer\" scope"
+	desc = "A digital scope machine printed by void wolf reavers, often combined with gauss weaponry and thermal scanners to cause breaches to ships and dead pilots in void-based dog fights."
+	icon_state = "Killer"
+
+/obj/item/weapon/gun_upgrade/scope/killer/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_OFFSET = 0.7,
+		GUN_UPGRADE_RECOIL = 1.3,
+		GUN_UPGRADE_ZOOM = 2
+		)
+	I.gun_loc_tag = GUN_SCOPE
+	I.req_gun_tags = list(GUN_SCOPE)

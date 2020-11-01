@@ -233,7 +233,7 @@
 	name = "random gun mod"
 	icon_state = "gun-red"
 /obj/random/dungeon_gun_mods/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/gun_upgrade/barrel/silencer = 1,
+	return pickweight(list(/obj/item/weapon/gun_upgrade/muzzle/silencer = 1,
 				/obj/item/weapon/gun_upgrade/barrel/forged = 1,
 				/obj/item/weapon/gun_upgrade/barrel/mag_accel = 1,
 				/obj/item/weapon/gun_upgrade/barrel/overheat = 1,
@@ -247,7 +247,11 @@
 				/obj/item/weapon/gun_upgrade/mechanism/battery_shunt = 1,
 				/obj/item/weapon/gun_upgrade/mechanism/overdrive = 1,
 				/obj/item/weapon/gun_upgrade/trigger/honker = 0.1,
-				/obj/item/weapon/gun_upgrade/barrel/toxin_coater = 1))
+				/obj/item/weapon/gun_upgrade/barrel/toxin_coater = 1,
+				/obj/item/weapon/gun_upgrade/barrel/gauss = 1,
+				/obj/item/weapon/gun_upgrade/trigger/boom = 0.5,
+				/obj/item/weapon/gun_upgrade/scope/watchman = 0.7,
+				/obj/item/weapon/gun_upgrade/scope/killer = 0.7))
 
 /obj/random/dungeon_gun_mods/low_chance
 	name = "low chance random gun  mod"

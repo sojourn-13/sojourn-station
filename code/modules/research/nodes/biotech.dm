@@ -302,6 +302,7 @@
 
 	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/armor,
 							/datum/design/research/item/mechfab/modules/armblade,
+							/datum/design/research/item/mechfab/modules/energy_blade,
 							/datum/design/research/item/mechfab/modules/runner,
 							/datum/design/research/item/mechfab/modules/hud/med,
 							/datum/design/research/item/mechfab/modules/hud/sec,

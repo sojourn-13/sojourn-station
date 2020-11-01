@@ -59,7 +59,8 @@
 			/datum/craft_recipe/guild/forged,
 			/datum/craft_recipe/guild/silencer,
 			/datum/craft_recipe/guild/turretcircuit,
-			/datum/craft_recipe/guild/rocket_engine
+			/datum/craft_recipe/guild/rocket_engine,
+			/datum/craft_recipe/guild/watchman
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -146,7 +147,8 @@
 			/datum/craft_recipe/guild/forged,
 			/datum/craft_recipe/guild/silencer,
 			/datum/craft_recipe/guild/turretcircuit,
-			/datum/craft_recipe/guild/rocket_engine
+			/datum/craft_recipe/guild/rocket_engine,
+			/datum/craft_recipe/guild/watchman
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,

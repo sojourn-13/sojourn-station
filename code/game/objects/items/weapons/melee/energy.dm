@@ -244,3 +244,9 @@
 			host.embedded -= src
 			host.drop_from_inventory(src)
 		spawn(1) if(src) qdel(src)
+
+/obj/item/weapon/melee/energy/blade/organ_module //just to make sure that blade doesnt delet itself
+
+/obj/item/weapon/melee/energy/blade/organ_module/New()
+
+/obj/item/weapon/melee/energy/blade/organ_module/attack_self(mob/user as mob)
