@@ -339,6 +339,7 @@
 	name = "Grayson \"Master Unmaker\" infuser"
 	desc = "One of the rarest and most powerful weapon modification ever made by Grayson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
 	icon_state = "psionic_catalyst"
+	matter = list(MATERIAL_PLATINUM = 5, MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 10)
 
 /obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst/New()
 	..()
@@ -395,6 +396,7 @@
 	name = "Artificer's Guild \"Watchman\" scope"
 	desc = "In the age of 3D printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. Hand-made scopes forged by the Artificer's Guild are known across the entire terran federation for the quality they have and this one is no diffrent."
 	icon_state = "Watchman"
+	matter = list(MATERIAL_GLASS = 2, MATERIAL_PLASTEEL = 1)
 
 /obj/item/weapon/gun_upgrade/scope/watchman/New()
 	..()
