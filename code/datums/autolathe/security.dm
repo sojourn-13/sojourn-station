@@ -28,7 +28,7 @@
 
 /datum/design/autolathe/sec/silencer
 	name = "silencer"
-	build_path = /obj/item/weapon/gun_upgrade/barrel/silencer
+	build_path = /obj/item/weapon/gun_upgrade/muzzle/silencer
 
 /datum/design/autolathe/sec/gun_case
 	name = "gun case"

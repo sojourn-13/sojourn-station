@@ -13,6 +13,7 @@
 		/datum/design/autolathe/sec/electropack,
 		/datum/design/autolathe/misc/taperecorder,
 		/datum/design/autolathe/tool/tacknife,
+		/datum/design/autolathe/tool/combat_shovel,
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/sec/silencer,
 		/datum/design/autolathe/sec/gun_case,

@@ -255,6 +255,18 @@
 	crate_name = "Void Wolf Recreations Crate"
 	group = "Xanorath Syndicate"
 
+/datum/supply_pack/voidwolfgunmod
+	name = "Void Wolf Gun-Mod Crate"
+	contains = list(/obj/item/weapon/gun_upgrade/scope/killer,
+					/obj/item/weapon/gun_upgrade/trigger/boom,
+					/obj/item/weapon/gun_upgrade/barrel/gauss,
+					/obj/item/weapon/gun_upgrade/mechanism/reverse_loader,
+					/obj/item/weapon/gun_upgrade/trigger/dangerzone)
+	cost = 1200
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Void Wolf Gun-Mod Crate"
+	group = "Xanorath Syndicate"
+
 /datum/supply_pack/voidwolfswords
 	name = "Void Wolf Energy Swords Crate"
 	contains = list(/obj/item/weapon/melee/energy/sword/pirate,
