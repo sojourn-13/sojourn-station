@@ -68,6 +68,7 @@
 
 /obj/item/clothing/head/helmet/space/rig/light/ultra_light
 	name = "SI 'Spacer' hood"
+	flags_inv = 0
 
 /obj/item/weapon/rig/light/hacker/steward
 	name = "SI 'Retainer' control module"
