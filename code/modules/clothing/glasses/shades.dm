@@ -34,7 +34,7 @@
 	vision_flags = SEE_MOBS
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	flash_protection = FLASH_PROTECTION_REDUCED
-	origin_tech = list(TECH_MAGNET = 3, TECH_COVERT = 4)
+	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1, MATERIAL_DIAMOND = 1)
 
 /obj/item/clothing/glasses/shades/thermal/Initialize()
