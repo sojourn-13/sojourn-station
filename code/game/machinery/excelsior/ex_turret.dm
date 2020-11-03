@@ -340,6 +340,9 @@
 	if(ishuman(L))
 		return TURRET_NOT_TARGET
 
+	if(L.faction == "neutral")
+		return TURRET_NOT_TARGET
+
 	if(L.lying)
 		return TURRET_SECONDARY_TARGET
 
