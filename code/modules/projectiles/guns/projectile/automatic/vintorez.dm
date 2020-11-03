@@ -20,6 +20,7 @@
 	recoil_buildup = 8
 	one_hand_penalty = 15 //automatic rifle level
 	silenced = TRUE
+	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

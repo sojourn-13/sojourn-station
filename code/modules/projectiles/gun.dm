@@ -706,6 +706,8 @@
 	//then update any UIs with the new stats
 	SSnano.update_uis(src)
 
+/* //Eris has this but it, unsurpriingly, has issues, just gonna comment it out for now incase I use the code for something else later.
 /obj/item/weapon/gun/proc/generate_guntags()
 	if(!zoom_factor && !(slot_flags & SLOT_HOLSTER))
 		gun_tags |= GUN_SCOPE
+*/

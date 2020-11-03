@@ -193,10 +193,10 @@
 	return
 
 /obj/proc/add_hearing()
-	hearing_objects |= src
+	GLOB.hearing_objects |= src
 
 /obj/proc/remove_hearing()
-	hearing_objects.Remove(src)
+	GLOB.hearing_objects.Remove(src)
 
 /obj/proc/eject_item(var/obj/item/I, var/mob/living/M)
 	if(!I || !M.IsAdvancedToolUser())

@@ -24,7 +24,7 @@
 	recoil_buildup = 3
 	one_hand_penalty = 5 //smg level
 
-	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE,GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE,GUN_CALIBRE_35,GUN_BAYONET,GUN_SCOPE)
 
 	init_firemodes = list(
 		FULL_AUTO_400,
@@ -48,5 +48,5 @@
 	name = "bullpip SMG"
 	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 Auto."
 	damage_multiplier = 1
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	price_tag = 300

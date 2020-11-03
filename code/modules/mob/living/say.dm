@@ -246,7 +246,7 @@ var/list/channel_to_radio_key = new
 			else if(M.locs.len && (M.locs[1] in hear_falloff))
 				listening_falloff |= M
 
-		for(var/obj in GLOB.listening_objects)
+		for(var/obj in GLOB.hearing_objects)
 			if(get_turf(obj) in hear)
 				listening_obj |= obj
 

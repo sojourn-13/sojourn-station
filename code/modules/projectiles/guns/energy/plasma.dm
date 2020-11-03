@@ -23,6 +23,7 @@
 		list(mode_name="destroy", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
 		list(mode_name="impact", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay=25, icon="kill", projectile_color = "#FF0000"),
 	)
+	gun_tags = list(GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
 
 /obj/item/weapon/gun/energy/plasma/mounted
 	self_recharge = TRUE
@@ -74,6 +75,7 @@
 		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#00FFFF"),
 		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#00AAFF"),
 	)
+	gun_tags = list(GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
 
 /obj/item/weapon/gun/energy/plasma/cassad/update_icon()
 	..()
@@ -94,6 +96,7 @@
 	charge_cost = 20
 	damage_multiplier = 0.9
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
+	gun_tags = list(GUN_ENERGY)
 
 	init_firemodes = list(
 		list(mode_name="plasma", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser4.ogg', fire_delay=1, icon="destroy", projectile_color = "#00FFFF"),
@@ -127,6 +130,7 @@
 	recoil_buildup = 1
 	one_hand_penalty = 0
 	twohanded = FALSE
+	gun_tags = list(GUN_ENERGY)
 
 	init_firemodes = list(
 		list(mode_name="Stun", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/Taser.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),
