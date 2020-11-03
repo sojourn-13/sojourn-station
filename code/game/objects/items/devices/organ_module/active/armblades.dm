@@ -40,7 +40,7 @@
 	desc = "An energy blade designed to be inserted into an arm. Gives you a nice advantage in a brawl while being maximum cool."
 	verb_name = "Deploy energyblade"
 	icon_state = "energyblade"
-	origin_tech = list(TECH_MAGNET = 3, TECH_COVERT = 4)
+	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_SILVER = 10, MATERIAL_GOLD = 3, )
 	holding_type = /obj/item/weapon/melee/energy/blade/organ_module
 
