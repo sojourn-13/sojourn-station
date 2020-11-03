@@ -58,7 +58,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 6,  MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 40, QUALITY_EXCAVATION = 20, QUALITY_HAMMERING = 15)
-	workspeed = 1.2
+	workspeed = 1.3
 	use_power_cost = 0.8
 	degradation = 0.7
 	max_upgrades = 4
