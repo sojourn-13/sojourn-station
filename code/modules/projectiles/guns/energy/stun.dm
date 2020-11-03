@@ -12,9 +12,9 @@
 	projectile_type = /obj/item/projectile/beam/stun
 
 	init_firemodes = list(
-		list(mode_name="small", projectile_type=/obj/item/projectile/beam/stun, fire_delay=12, charge_cost = 50),
-		list(mode_name="large", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300),
-		list(mode_name="large", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600), //Takes 1 full level 1 M cell
+		list(mode_name="taser", projectile_type=/obj/item/projectile/beam/stun, fire_delay=12, charge_cost = 50),
+		list(mode_name="stunbolt", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600), //Takes 1 full level 1 M cell
 	)
 
 /obj/item/weapon/gun/energy/taser/mounted
