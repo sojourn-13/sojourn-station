@@ -14,6 +14,13 @@
 	var/corporation = null
 	var/heat = 0
 
+/obj/verb/force_update_icon() //allows a player to update icons
+	set name = "Force Update Icon"
+	set category = "Object"
+	set src in view(1)
+
+	//Update icons
+	update_icon()
 
 /obj/proc/is_hot()
 	return heat
