@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/lasertag
-	name = "laser tag gun"
+	name = "plasma tag gun"
 	item_state = "laser"
 	desc = "Standard-issue weapon of the Imperial Guard."
 	origin_tech = list(TECH_COMBAT = 1, TECH_MAGNET = 2)

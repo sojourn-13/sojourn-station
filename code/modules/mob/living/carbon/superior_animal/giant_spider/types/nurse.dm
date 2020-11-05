@@ -31,6 +31,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	poison_type = "mutagen"
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/midwife
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
 	name = "recluse spider"

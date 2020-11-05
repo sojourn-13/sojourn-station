@@ -59,6 +59,11 @@
 	color = "#ACD1E9"
 	alpha = 200
 
+/obj/structure/curtain/open/shower/closed
+	icon_state = "closed"
+	layer = WALL_OBJ_LAYER
+	opacity = 1
+
 /obj/structure/curtain/open/shower/engineering
 	color = "#FFA500"
 
