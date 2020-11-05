@@ -70,7 +70,7 @@
 
 /obj/structure/closet/lasertag/green
 	name = "green plasma tag equipment"
-	desc = "It's a storage unit for laser tag equipment."
+	desc = "It's a storage unit for plasma tag equipment."
 	icon_door = "green"
 
 /obj/structure/closet/lasertag/green/populate_contents()
