@@ -5,10 +5,10 @@
 
 /obj/random/ammo/item_to_spawn()
 	return pickweight(list(
-				/obj/item/weapon/storage/box/shotgunammo/beanbags = 3,
-				/obj/item/weapon/storage/box/shotgunammo/slug = 2,
-				/obj/item/weapon/storage/box/shotgunammo = 1,
-				/obj/item/weapon/storage/box/shotgunammo/buckshot = 3,
+				/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 3,
+				/obj/item/ammo_magazine/ammobox/shotgun = 2,
+				/obj/item/ammo_magazine/ammobox/shotgun = 1,
+				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 3,
 				/obj/item/ammo_magazine/ammobox/magnum_40 = 1,
 				/obj/item/ammo_magazine/ammobox/magnum_40/lethal = 1,
 				/obj/item/ammo_magazine/ammobox/magnum_40/rubber = 1,
@@ -102,10 +102,10 @@
 
 /obj/random/ammo/shotgun/item_to_spawn()
 	return pickweight(list(
-				/obj/item/weapon/storage/box/shotgunammo/beanbags = 4,
-				/obj/item/weapon/storage/box/shotgunammo/slug = 2,
-				/obj/item/weapon/storage/box/shotgunammo/stunshells = 1,
-				/obj/item/weapon/storage/box/shotgunammo/buckshot = 3,
+				/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 4,
+				/obj/item/ammo_magazine/ammobox/shotgun = 2,
+				/obj/item/ammo_magazine/ammobox/shotgun/stunshells = 1,
+				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 3,
 				/obj/item/ammo_magazine/m12/empty = 0.3))
 
 /obj/random/ammo/shotgun/low_chance
@@ -119,9 +119,9 @@
 	spawn_nothing_percentage = 40
 
 /obj/random/ammo_lowcost/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/storage/box/shotgunammo/beanbags = 4,
-				/obj/item/weapon/storage/box/shotgunammo = 2,
-				/obj/item/weapon/storage/box/shotgunammo/slug = 1,
+	return pickweight(list(/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 4,
+				/obj/item/ammo_magazine/ammobox/shotgun = 2,
+				/obj/item/ammo_magazine/ammobox/shotgun = 1,
 				/obj/item/ammo_magazine/ammobox/pistol_35 = 1,
 				/obj/item/ammo_magazine/ammobox/pistol_35/rubber = 6,
 				/obj/item/ammo_magazine/highcap_pistol_35 = 2,
@@ -152,8 +152,8 @@
 				/obj/item/ammo_magazine/smg_35/lethal = 3,
 				/obj/item/ammo_magazine/pistol_35/lethal = 3,
 				/obj/item/ammo_magazine/kurtz_50/lethal = 1,
-				/obj/item/weapon/storage/box/shotgunammo/payload = 1,
-				/obj/item/weapon/storage/box/shotgunammo/buckshot = 2,
+				/obj/item/ammo_magazine/ammobox/shotgun/payload = 1,
+				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 2,
 				/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv = 2))
 
 /obj/random/dungeon_ammo/low_chance
