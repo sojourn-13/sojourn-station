@@ -21,6 +21,7 @@
 	var/obj/item/weapon/cell/starting_cell = /obj/item/weapon/cell/medium/high
 	var/suitable_cell = /obj/item/weapon/cell/medium
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 10)
 
 /obj/item/weapon/melee/baton/Initialize()
 	. = ..()
