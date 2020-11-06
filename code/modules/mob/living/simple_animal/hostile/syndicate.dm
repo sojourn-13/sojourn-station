@@ -238,7 +238,7 @@
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "hits"
-	speed = 6
+	speed = 2
 	move_to_delay = 1
 	turns_per_move = 1
 	stop_automated_movement_when_pulled = 0
