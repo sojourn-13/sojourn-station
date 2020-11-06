@@ -1,6 +1,7 @@
 #define MOVING_TO_TARGET 1
 #define EATING_TARGET 2
 #define LAYING_EGG 3
+#define EATING_TIME = 900
 
 /mob/living/carbon/superior_animal/roach/proc/GiveUp(var/C)
 	spawn(100)
@@ -31,14 +32,15 @@
 					return
 
 			else if(busy == MOVING_TO_TARGET && eat_target)
+				if(istype(eat_target, /mob/living/carbon/human))
+					EATING_TIME = 9000
+					continue
 				if(get_dist(src, eat_target) <= 1)
 					busy = EATING_TARGET
 					stop_automated_movement = 1
 					src.visible_message(SPAN_NOTICE("\The [src] begins to eat \the [eat_target]."))
 					walk(src,0)
-					spawn(900) // how much time it takes to eat a corpse, in tenths of second
-					if(istype(eat_target, /mob/living/carbon/human))
-						spawn(8100)
+					spawn(EATING_TIME) // how much time it takes to eat a corpse, in tenths of second
 						// Set to 15 minutes to let the crew enough time to get the corpse
 						 //Takes to eat any non-human much shorter of a time, just 1 and a 1/2 min
 						// Several roaches eating at the same time do not speed up the process
@@ -87,6 +89,7 @@
 										fed += rand(4,8)
 
 								eat_target = null
+								EATING_TIME = 900 //Resetting the timer just in case
 
 							busy = 0
 							stop_automated_movement = 0
