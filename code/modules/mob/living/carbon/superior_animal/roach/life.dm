@@ -1,7 +1,7 @@
 #define MOVING_TO_TARGET 1
 #define EATING_TARGET 2
 #define LAYING_EGG 3
-#define EATING_TIME = 900
+#define EATING_TIME 900
 
 /mob/living/carbon/superior_animal/roach/proc/GiveUp(var/C)
 	spawn(100)
