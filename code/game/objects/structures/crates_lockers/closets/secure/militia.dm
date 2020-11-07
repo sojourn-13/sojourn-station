@@ -15,6 +15,7 @@
 	new /obj/item/weapon/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/clothing/head/rank/milcom/beret(src)
 	new /obj/item/clothing/head/rank/milcom(src)
+	new /obj/item/clothing/head/helmet/altyn/maska(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/suit/armor/flackvest/commander(src)
 	new /obj/item/clothing/suit/armor/commander/militia(src)

@@ -21,6 +21,7 @@
 		/datum/design/autolathe/sec/hailer,
 		/datum/design/research/item/medical/autopsy_scanner,
 		/datum/design/autolathe/gun/cop_mod = 0,
+		/datum/design/autolathe/sec/stunbaton = 5, //balance, we can only make 10
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security/hos

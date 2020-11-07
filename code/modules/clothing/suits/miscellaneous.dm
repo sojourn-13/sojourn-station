@@ -2,7 +2,7 @@
  * Lasertag
  */
 /obj/item/clothing/suit/fluff/bluetag
-	name = "blue laser tag armour"
+	name = "blue plasma tag armour"
 	desc = "Blue Pride, Station Wide."
 	icon_state = "bluetag"
 	item_state = "bluetag"
@@ -12,7 +12,7 @@
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/redtag
-	name = "red laser tag armour"
+	name = "red plasma tag armour"
 	desc = "Reputed to go faster."
 	icon_state = "redtag"
 	item_state = "redtag"
@@ -22,7 +22,7 @@
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/greentag
-	name = "green laser tag armour"
+	name = "green plasma tag armour"
 	desc = "Started green, ended a legend."
 	icon_state = "greentag"
 	item_state = "greentag"
@@ -32,7 +32,7 @@
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/yellowtag
-	name = "yellow laser tag armour"
+	name = "yellow plasma tag armour"
 	desc = "The only thing yellow about you is your armor."
 	icon_state = "yellowtag"
 	item_state = "yellowtag"
