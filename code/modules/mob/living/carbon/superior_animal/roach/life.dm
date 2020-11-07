@@ -33,7 +33,7 @@
 
 			else if(busy == MOVING_TO_TARGET && eat_target)
 				if(istype(eat_target, /mob/living/carbon/human))
-					EATING_TIME = 9000
+					EATING_TIME == 9000
 					continue
 				if(get_dist(src, eat_target) <= 1)
 					busy = EATING_TARGET
