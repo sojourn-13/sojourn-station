@@ -89,7 +89,7 @@
 										fed += rand(4,8)
 
 								eat_target = null
-								EATING_TIME = 900 //Resetting the timer just in case
+								EATING_TIME == 900 //Resetting the timer just in case
 
 							busy = 0
 							stop_automated_movement = 0
