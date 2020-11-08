@@ -194,7 +194,7 @@
 	desc = "A crate containing one \"Penetrator\" rifle, and ten 60-06 shells."
 	icon_state = "serbcrate_deferred_black"
 	initial_contents = list(/obj/item/weapon/gun/projectile/heavysniper = 1,
-	/obj/item/weapon/storage/box/sniperammo = 2)
+	/obj/item/ammo_magazine/ammobox/antim_small = 2)
 
 /obj/item/weapon/storage/deferred/crate/sidearm
 	name = "sidearm crate"

@@ -134,22 +134,22 @@
 
 /datum/supply_pack/shotgunammo_beanbag
 	name = "HS Beanbag Shells Crate"
-	contains = list(/obj/item/weapon/storage/box/shotgunammo/beanbags,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags)
+	contains = list(/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
+					/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
+					/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
+					/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
+					/obj/item/ammo_magazine/ammobox/shotgun/beanbags)
 	cost = 800
 	crate_name = "HS beanbag shells crate"
 	group = "Security"
 
 /datum/supply_pack/shotgunammo_slug
 	name = "HS Slug Shells Crate"
-	contains = list(/obj/item/weapon/storage/box/shotgunammo/slug,
-					/obj/item/weapon/storage/box/shotgunammo/slug,
-					/obj/item/weapon/storage/box/shotgunammo/slug,
-					/obj/item/weapon/storage/box/shotgunammo/slug,
-					/obj/item/weapon/storage/box/shotgunammo/slug)
+	contains = list(/obj/item/ammo_magazine/ammobox/shotgun,
+					/obj/item/ammo_magazine/ammobox/shotgun,
+					/obj/item/ammo_magazine/ammobox/shotgun,
+					/obj/item/ammo_magazine/ammobox/shotgun,
+					/obj/item/ammo_magazine/ammobox/shotgun)
 	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "HS slug shells crate"
@@ -157,11 +157,11 @@
 
 /datum/supply_pack/shotgunammo_buckshot
 	name = "HS Buckshot Shells Crate"
-	contains = list(/obj/item/weapon/storage/box/shotgunammo/buckshot,
-					/obj/item/weapon/storage/box/shotgunammo/buckshot,
-					/obj/item/weapon/storage/box/shotgunammo/buckshot,
-					/obj/item/weapon/storage/box/shotgunammo/buckshot,
-					/obj/item/weapon/storage/box/shotgunammo/buckshot)
+	contains = list(/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+					/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+					/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+					/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+					/obj/item/ammo_magazine/ammobox/shotgun/buckshot)
 	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "HS buckshot shells crate"

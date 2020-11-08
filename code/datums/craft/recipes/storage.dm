@@ -8,11 +8,12 @@
 	avaliableToEveryone = FALSE
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
-		list(QUALITY_ADHESIVE, 10, "time" = 60), 
+		list(QUALITY_ADHESIVE, 10, "time" = 60),
 	)
 	related_stats = list(STAT_COG)
 
 /datum/craft_recipe/box
+	category = "Storage"
 	name = "box"
 	result = /obj/item/weapon/storage/box
 	steps = list(
@@ -22,33 +23,23 @@
 
 /datum/craft_recipe/box/adv/syringes
 	name = "box - syringes"
-	result = /obj/item/weapon/storage/box/syringes
-	avaliableToEveryone = TRUE
+	result = /obj/item/weapon/storage/box/syringes/empty
 
 /datum/craft_recipe/box/adv/bodybags
 	name = "box - bodybags"
-	result = /obj/item/weapon/storage/box/bodybags
-	avaliableToEveryone = TRUE
-
-/datum/craft_recipe/box/adv/ammo_shotgun
-	name = "box - shotgun shell storage"
-	result = /obj/item/weapon/storage/box/shotgunammo/buckshot //For ammo sorting
-	avaliableToEveryone = TRUE
+	result = /obj/item/weapon/storage/box/bodybags/empty
 
 /datum/craft_recipe/box/adv/condimentbottles
 	name = "box - condiment bottles"
-	result = /obj/item/weapon/storage/box/condimentbottles
-	avaliableToEveryone = TRUE
+	result = /obj/item/weapon/storage/box/condimentbottles/empty
 
 /datum/craft_recipe/box/adv/mixed_lights
 	name = "box - light storage"
-	result = /obj/item/weapon/storage/box/lights/mixed
-	avaliableToEveryone = TRUE
+	result = /obj/item/weapon/storage/box/lights/mixed/empty
 
 /datum/craft_recipe/box/adv/pillbottles
 	name = "box - pill bottles"
-	result = /obj/item/weapon/storage/box/pillbottles
-	avaliableToEveryone = TRUE
+	result = /obj/item/weapon/storage/box/pillbottles/empty
 
 /datum/craft_recipe/storage/bookshelf
 	name = "book shelf"
