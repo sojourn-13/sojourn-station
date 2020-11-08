@@ -87,18 +87,31 @@
 	)
 
 /datum/craft_recipe/guild/combat_shovel
-	name = "combat shovel"
+	name = "combat crovel"
 	result = /obj/item/weapon/tool/shovel/combat
 	steps = list(
 		list(/obj/item/weapon/tool/shovel, 1),
 		list(QUALITY_SAWING, 20, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
-		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 20, "time" = 30),
 		list(/obj/item/weapon/tool_upgrade/augment/spikes, 1),
 		list(QUALITY_BOLT_TURNING, 30, "time" = 10)
 	)
 
+/datum/craft_recipe/guild/rocket_engine
+	name = "rocket engine"
+	result = /obj/item/rocket_engine
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 60),
+		list(/obj/item/stack/material/gold, 1, "time" = 20),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
+	)
 
 //Weapons ------------------------
 /datum/craft_recipe/guild/railgunrifle
@@ -325,13 +338,25 @@
 
 /datum/craft_recipe/guild/silencer
 	name = "Silencer"
-	result = /obj/item/weapon/gun_upgrade/barrel/silencer
+	result = /obj/item/weapon/gun_upgrade/muzzle/silencer
 	steps = list(
 		list(/obj/item/stack/material/plasteel, 3, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
 		list(/obj/item/stack/material/plastic, 1, "time" = 30),
+		list(QUALITY_CUTTING, 25, "time" = 90),
+	)
+
+/datum/craft_recipe/guild/watchman
+	name = "Artificer's Guild \"Watchman\" scope"
+	result = /obj/item/weapon/gun_upgrade/scope/watchman
+	steps = list(
+		list(/obj/item/stack/material/plasteel, 3, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/material/glass, 2, "time" = 30),
 		list(QUALITY_CUTTING, 25, "time" = 90),
 	)
 

@@ -137,6 +137,8 @@
 "cG" = (/obj/structure/railing{icon_state = "railing0"; dir = 8},/obj/structure/railing,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/mountainsolars)
 "cH" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/outside/mountainsolars)
 "cI" = (/obj/structure/railing{tag = "icon-railing0 (NORTH)"; icon_state = "railing0"; dir = 1},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/mountainsolars)
+"cJ" = (/obj/structure/window/reinforced{dir = 8},/obj/machinery/ntnet_relay,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
+"cK" = (/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
 "cL" = (/obj/structure/railing{tag = "icon-railing0 (EAST)"; icon_state = "railing0"; dir = 4; anchored = 1},/obj/structure/railing{tag = "icon-railing0 (NORTH)"; icon_state = "railing0"; dir = 1},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/mountainsolars)
 "cM" = (/obj/structure/railing{icon_state = "railing0"; dir = 8},/obj/structure/railing{tag = "icon-railing0 (NORTH)"; icon_state = "railing0"; dir = 1},/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/mountainsolars)
 "cN" = (/obj/structure/flora/ausbushes/sunnybush,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/mountainsolars)
@@ -180,9 +182,7 @@
 "dz" = (/obj/structure/flora/small/lavarock3,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/mountainsolars)
 "dA" = (/obj/random/mob/croaker/low_chance,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/mountainsolars)
 "dB" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/structure/window/reinforced{dir = 4; pixel_x = 0},/obj/structure/window/reinforced{dir = 1; pixel_y = 0},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
-"dC" = (/obj/structure/window/reinforced{dir = 8},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
-"dD" = (/obj/machinery/telecomms/relay/preset/telecomms,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
-"dE" = (/obj/structure/window/reinforced{dir = 4; pixel_x = 0},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
+"dC" = (/obj/structure/window/reinforced{dir = 4; pixel_x = 0},/obj/machinery/telecomms/relay/preset/telecomms,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/outside/mountainsolars)
 "dF" = (/obj/structure/cable,/obj/machinery/power/solar,/turf/simulated/floor/plating/under,/area/nadezhda/outside/mountainsolars)
 "dG" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/mineral/planet,/area/nadezhda/outside/mountainsolars)
 
@@ -225,13 +225,13 @@ aaaaaaaaaaaaaaaaababacacalalalacacafagagagagagagagagagagagagagagagagagagagagagag
 aaaaaaaaaaaaaaaaabababacalalalacacahdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFadacalalacakaucgcgcgajajaCajajaDaAaEaAaEaBakalalbTalbTalacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaababacacalalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacacacacakaFaIcdaBaAbvaBaJaAaBaKaLaLaMaBakacalalalalalacabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababacalalalacacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadacacacacajaNaOaPaAchaQaAaEaEaAaKaLaLaMaBakacalalalalacacabababababababababababababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabababacalalalacacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadbxaGaGaGaRcicjcickclcmcecndBclcoclaVckaWajaZaZcpcpaZaZacabababababababababababababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababacacacalalacacahdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFadacacacacajaXcgcgaAaAaAdCdDdEaAaEchaAaBaYaRbebebebebebabgabababababababababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabababacalalalacacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadbxaGaGaGaRcicjcickclcmcecndBclcoclaVckaWajaZaZcpcpaZaZacacababababababababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababacacacalalacacahdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFadacacacacajaXcgcgaAaAaAcJcKdCaAaEchaAaBaYaRbebebebebebabgacacabababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaababacacacalalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacacacbbajakakakbcbdakakakakakbcbdakakakajbwbwbwbwbwbybAaZaZaZaZaZaZaZaZaZaZaZaZaZaZacaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaababacacacacalalacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadacacacacacacaccqauaucralalalcsauauctalalcuaccvcvbCbwbDbebebebebebebebebebebebebebebabEaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabababacabacacalacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadacalcwalalalaccqcgcgctaSalaScscgcgctavalccacalalcxbwbwbwbwbwbwbwbwbwbwbwbwbwbwbwbwbGbEaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababababababalalacahdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFadacalalalaSalaccqauaucralcyaScsauczctavavalacalalalcvbBbBbBbBbBbBbBbBbBbBbBbBbBbCbwbGbEaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaababababalalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacalaSavavalaccqcgczcAcBcpcBcCauczcDcpcpcEaccpalalalalacacacacacacacacacacacacbhbwbGbEaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabababacabacacalacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadacalcwalalalacaucgcgctaSalaScscgcgctavalccacalalcxbwbwbwbwbwbwbwbwbwbwbwbwbwbwbwbwbGbEaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababababababalalacahdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFadacalalalaSalacauauaucralcyaScsauczctavavalacalalalcvbBbBbBbBbBbBbBbBbBbBbBbBbBbCbwbGbEaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaababababalalalacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacadacalaSavavalacaucgczcAcBcpcBcCauczcDcpcpcEaccpalalalalacacacacacacacacacacacacbhbwbGbEaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaababababalalacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadacalaSalbNalaccqcgcFcgcgauauauczcgcgcgauaucgaucGcpaZaZbibibiakakakbibibibibibibibwbGbEaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaababababalalacafagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadacalavcwalccaccqczcHcFczcFcFczcgczczcFczczczcgauauaucgbdaubtaubjbibibibibibibibibwbGbEaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaababababalalalahdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFdFadacalavalbLalaccqauaucgcgcgauauauauauaucgcgaucgczcgcgaubkcgcgczaubiblbmbmbmbnbibibwbGbEaaaaaaaaaaaaaaaaaa

@@ -30,7 +30,7 @@
 
 /obj/item/weapon/tool/saw/circular //tier 3
 	name = "circular saw"
-	desc = "For heavy duty cutting."
+	desc = "For heavy duty cutting. Drains power quickly."
 	icon_state = "saw"
 	hitsound = WORKSOUND_CIRCULAR_SAW
 	worksound = WORKSOUND_CIRCULAR_SAW
@@ -39,7 +39,7 @@
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 40, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 30)
 
-	use_power_cost = 0.15
+	use_power_cost = 0.45
 	suitable_cell = /obj/item/weapon/cell/small
 
 /obj/item/weapon/tool/saw/circular/medical
@@ -55,13 +55,13 @@
 
 /obj/item/weapon/tool/saw/circular/advanced
 	name = "advanced circular saw"
-	desc = "You think you can cut anything with it."
+	desc = "You think you can cut anything with it. More power effecient than a regular circular saw."
 	icon_state = "advanced_saw"
 	armor_penetration = ARMOR_PEN_DEEP
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 50, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
 	degradation = 0.7
-	use_power_cost = 0.22
+	use_power_cost = 0.29
 	max_upgrades = 4
 
 /obj/item/weapon/tool/saw/chain //tier 4, focusing on damage, fuel variant

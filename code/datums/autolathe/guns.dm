@@ -237,7 +237,7 @@
 
 /datum/design/autolathe/gun/omnirifle
 	name = "SA BR .408 \"Hustler\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/
+	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle
 
 /datum/design/autolathe/gun/omnicarbine
 	name = "H&S BR .408 \"Boar\""
@@ -341,3 +341,9 @@
 /datum/design/autolathe/gun/plasma/martyr
 	name = "NT PR \"Martyr\""
 	build_path = /obj/item/weapon/gun/energy/plasma/martyr
+
+// Gun mods
+
+/datum/design/autolathe/gun/cop_mod
+	name = "H&S \"Cop Block\" Trigger"
+	build_path = /obj/item/weapon/gun_upgrade/trigger/cop_block

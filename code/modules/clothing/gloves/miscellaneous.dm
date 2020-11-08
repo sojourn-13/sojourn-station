@@ -49,6 +49,12 @@
 	heat_protection = ARMS
 	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
 
+/obj/item/clothing/gloves/thick/brown
+	desc = "A pair of fire-resistant brown work gloves."
+	name = "thick brown gloves"
+	icon_state = "germangloves"
+	item_state = "germangloves"
+
 /obj/item/clothing/gloves/thick/handmade
 	name = "handmade combat gloves"
 	desc = "A pair of modified work gloves with some steel."

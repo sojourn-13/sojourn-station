@@ -51,6 +51,10 @@
 	name = "Embedded armblade"
 	build_path = /obj/item/organ_module/active/simple/armblade
 
+/datum/design/research/item/mechfab/modules/energy_blade
+	name = "Embedded energy blade"
+	build_path = /obj/item/organ_module/active/simple/armblade/energy_blade
+
 /datum/design/research/item/mechfab/modules/runner
 	name = "Mechanical muscles"
 	build_path = /obj/item/organ_module/muscle

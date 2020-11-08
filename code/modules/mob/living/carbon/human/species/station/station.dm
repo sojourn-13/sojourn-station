@@ -319,7 +319,7 @@
 		"Feathered Wings, Large"
 		)
 
-	perks = list(/datum/perk/opifex_backup,/datum/perk/opifex_turret,/datum/perk/opifex_patchkit)
+	perks = list(/datum/perk/opifex_turret,/datum/perk/opifex_patchkit)
 
 /datum/species/vox/get_bodytype()
 	return "Opifex"

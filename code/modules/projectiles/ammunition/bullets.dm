@@ -102,7 +102,7 @@
 	caliber = "lrifle"
 	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
-
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 //// 7.5 Rifle ////
 
@@ -135,6 +135,7 @@
 	desc = "A 7.5mm laser casing."
 	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/beam/weak/rifle_75
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 ////.408 rifle////
 

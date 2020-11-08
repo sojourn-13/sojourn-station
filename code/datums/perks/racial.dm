@@ -162,7 +162,7 @@
 /////////////////////////////////////////Cindarite perks
 /datum/perk/purgetoxins
 	name = "Purge Toxins"
-	desc = "You force your body to begin the process of removing toxins from your blood. All toxins and addictions are slowly purged while any toxin damage to your liver or body is healed but the effect leaves you exhausted."
+	desc = "You force your body to begin the process of removing toxins from your blood. All toxins, addictions, and stimulants are slowly purged while any toxin damage to your liver or body is healed but the effect leaves you exhausted."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -216,6 +216,45 @@
 	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up tools out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/weapon/storage/belt/utility/opifex/full(usr.loc)
+	return ..()
+
+/datum/perk/opifex_backup_medical
+	name = "Smuggled Medicine"
+	desc = "You retrieve your custom kitted medical webbing hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This tool belt is yours alone and you should not allow any non-opifex to use it."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/opifex_backup_medical/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up meds. You didn't lose them, did you?"))
+		return FALSE
+	cooldown_time = world.time + 12 HOURS
+	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up webbing out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
+	log_and_message_admins("used their [src] perk.")
+	new /obj/item/weapon/storage/belt/medical/opifex/full(usr.loc)
+	return ..()
+
+
+/datum/perk/opifex_backup_combat
+	name = "Smuggled Armaments"
+	desc = "You retrieve your custom kitted combat belt hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This tool belt is yours alone and you should not allow any non-opifex to use it, nor the weapons within."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/opifex_backup_combat/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up weapons. You didn't lose them, did you?"))
+		return FALSE
+	cooldown_time = world.time + 12 HOURS
+	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up belt out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
+	log_and_message_admins("used their [src] perk.")
+	new /obj/item/weapon/storage/belt/security/tactical/opifex/full(usr.loc)
 	return ..()
 
 /datum/perk/opifex_turret

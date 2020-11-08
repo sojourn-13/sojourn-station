@@ -1,8 +1,7 @@
 //Oddities which are specific to factions or certain jobs.
 /obj/item/biosyphon
 	name = "Biosiphon Anomaly"
-	desc = "An exceedingly rare bluespace anomaly discovered by a marshal ranger outside the colony. After weeks of study it was discovered its only purpose was duplicating boxes of donuts. \
-	Soteria's disappointment was so great they gave the item to security for safe keeping."
+	desc = "An exceedingly rare bluespace anomaly discovered by a marshal ranger outside the colony. After weeks of study it was determined its only purpose was duplicating boxes of donuts. Soteria's disappointment was so great they gave the item to security for safe keeping. Months after its discovery it began to create refined cases of incredibly tasty donuts filled with long-lasting effective stimulents every two hours."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "biosyphon"
 	item_state = "biosyphon"
@@ -15,7 +14,7 @@
 	origin_tech = list(TECH_MATERIAL = 4, TECH_BLUESPACE = 9, TECH_POWER = 7)
 	matter = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 7)
 	var/last_produce = 0
-	var/cooldown = 30 MINUTES
+	var/cooldown = 2 HOURS
 
 /obj/item/biosyphon/New()
 	..()
@@ -27,15 +26,14 @@
 
 /obj/item/biosyphon/Process()
 	if(world.time >= (last_produce + cooldown))
-		var/obj/item/weapon/storage/box/donut/D = new /obj/item/weapon/storage/box/donut(get_turf(src))
+		var/obj/item/weapon/storage/case/donut/D = new /obj/item/weapon/storage/case/donut(get_turf(src))
 		visible_message(SPAN_NOTICE("[name] drop [D]."))
 		last_produce = world.time
 
 
 /obj/item/device/von_krabin
 	name = "Von-Krabin Stimulator"
-	desc = "A strange anomalous item given to the research directors of the soteria as its latent effects enhance the mind. Some say this is an unfinished prototype of the technology the church of \
-	absolute uses to enhance the abilities of others."
+	desc = "A strange anomalous item given to the research directors of the soteria as its latent effects enhance the mind. Some say this is an unfinished prototype of the technology the church of absolute uses to enhance the abilities of others."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "von-krabin"
 	item_state = "von-krabin"
@@ -287,9 +285,9 @@
 			else
 				to_chat(src.loc, SPAN_WARNING("The [src] is too complicated to use!"))
 		else
-			visible_message("\The [src] beeps, \"The [src] is not full enough to produce.\".")
+			visible_message("\icon The [src] beeps, \"The [src] is not full enough to produce.\".")
 	else
-		visible_message("\The [src] beeps, \"The [src] need time to cooldown.\".")
+		visible_message("\icon The [src] beeps, \"The [src] need time to cooldown.\".")
 
 /obj/item/device/techno_tribalism/examine(user)
 	..()

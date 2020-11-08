@@ -236,6 +236,13 @@
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/payload/prespawned(src)
 
+/obj/item/weapon/storage/box/shotgunammo/incendiary
+	name = "box of 20mm incendiary shells"
+
+/obj/item/weapon/storage/box/shotgunammo/incendiary/populate_contents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun/incendiary/prespawned(src)
+
 /obj/item/weapon/storage/box/sniperammo
 	name = "box of .60-06 shells"
 	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
@@ -293,6 +300,16 @@
 /obj/item/weapon/storage/box/frag/populate_contents()
 	for(var/i in 1 to 4)
 		new /obj/item/weapon/grenade/frag(src)
+
+/obj/item/weapon/storage/box/incendiary
+	name = "box of incendiary grenades"
+	desc = "A box containing 5 incendiary grenades."
+	icon_state = "box_security"
+	illustration = "flashbang"
+
+/obj/item/weapon/storage/box/incendiary/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/weapon/grenade/chem_grenade/incendiary(src)
 
 /obj/item/weapon/storage/box/explosive
 	name = "box of blast grenades"
@@ -583,7 +600,7 @@
 /obj/item/weapon/storage/box/data_disk/basic/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/weapon/computer_hardware/hard_drive/portable/basic(src)
-		
+
 /obj/item/weapon/storage/box/trooperuniform
 	name = "Trooper/Corpsman Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
@@ -597,7 +614,7 @@
 		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
-		
+
 /obj/item/weapon/storage/box/sergeantuniform
 	name = "Sergeant Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
@@ -611,7 +628,7 @@
 		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
-		
+
 /obj/item/weapon/storage/box/commanderuniform
 	name = "Commander Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
@@ -625,7 +642,7 @@
 		new /obj/item/clothing/head/rank/commanderdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
-		
+
 /obj/item/weapon/storage/box/blankranks
 	name = "Box of Blank Ranks"
 	desc = "A box full of solid red, ''blank'' Blackshield ranks, for distribution to volunteers and cadets."

@@ -58,7 +58,9 @@
 			/datum/craft_recipe/guild/dangerzone,
 			/datum/craft_recipe/guild/forged,
 			/datum/craft_recipe/guild/silencer,
-			/datum/craft_recipe/guild/turretcircuit
+			/datum/craft_recipe/guild/turretcircuit,
+			/datum/craft_recipe/guild/rocket_engine,
+			/datum/craft_recipe/guild/watchman
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -144,7 +146,9 @@
 			/datum/craft_recipe/guild/dangerzone,
 			/datum/craft_recipe/guild/forged,
 			/datum/craft_recipe/guild/silencer,
-			/datum/craft_recipe/guild/turretcircuit
+			/datum/craft_recipe/guild/turretcircuit,
+			/datum/craft_recipe/guild/rocket_engine,
+			/datum/craft_recipe/guild/watchman
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
@@ -156,7 +160,7 @@
 							 /datum/computer_file/program/shield_control)
 
 	description = "The Guild Adept is a member of one of the greatest engineering guilds in the galaxy, contracted to maintain this colony.<br>\
-Your main priority is ensuring the setup and maintenance of the supermatter engine. Seek guidance on this complex machine if untrained.<br>\
+Your main priority is ensuring the setup and maintenance of the colonies power grid. Seek guidance on this complex task if untrained.<br>\
 Outside of this, you should devote time to learning and configuring various systems. Everything can be improved, and new constructs can be made.<br>\
 This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, or purchased from Lonestar or the Prospectors.<br>\
 Do not let outsiders, even Command Staff, interfere with the duties of the Guild. And remember - be ready to respond to emergency calls at any time."
