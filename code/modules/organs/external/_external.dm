@@ -187,6 +187,7 @@
 	for(var/obj/item/organ/organ in children + internal_organs)
 		organ.removed_mob(user)
 
+	owner = null
 	SSnano.update_uis(src)
 
 /obj/item/organ/external/proc/update_bionics_hud()
