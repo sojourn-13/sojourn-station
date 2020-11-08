@@ -9,7 +9,7 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	flash_protection = FLASH_PROTECTION_REDUCED
 	price_tag = 500
-
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_DIAMOND = 2)
 	tick_cost = 0.5
 
 /obj/item/clothing/glasses/powered/thermal/emp_act(severity)

@@ -50,7 +50,7 @@
 		rad = 45
 	)
 	emp_protection = 0
-	matter = list(MATERIAL_STEEL = 80, MATERIAL_PLASTIC = 90, MATERIAL_GLASS = 60) //Costly!
+	matter = list(MATERIAL_STEEL = 50, MATERIAL_PLASTIC = 50, MATERIAL_GLASS = 30) //Costly!
 
 	chest_type = /obj/item/clothing/suit/space/rig/light/ultra_light
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/light/ultra_light
