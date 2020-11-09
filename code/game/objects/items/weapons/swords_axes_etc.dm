@@ -14,10 +14,23 @@
 	icon_state = "baton"
 	item_state = "classic_baton"
 	slot_flags = SLOT_BELT
-	force = WEAPON_FORCE_PAINFUL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	force = WEAPON_FORCE_ROBUST
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 
 /obj/item/weapon/melee/classic_baton/attack(mob/M as mob, mob/living/user as mob)
+	if(user.a_intent == I_HURT)
+		force = WEAPON_FORCE_PAINFUL
+		armor_penetration = ARMOR_PEN_MODERATE
+		damtype = HALLOSS
+
+	if(user.a_intent == I_DISARM)
+		force = WEAPON_FORCE_PAINFUL
+		damtype = HALLOSS
+
+	if(user.a_intent == I_HURT)
+		force = WEAPON_FORCE_ROBUST
+
 	if ((CLUMSY in user.mutations) && prob(50))
 		to_chat(user, SPAN_WARNING("You club yourself over the head."))
 		playsound(src.loc, 'sound/effects/woodhit.ogg', 50, 1, -1)
@@ -90,6 +103,18 @@
 
 /obj/item/weapon/melee/telebaton/attack(mob/target as mob, mob/living/user as mob)
 	if(on)
+		if(user.a_intent == I_HURT)
+			force = WEAPON_FORCE_PAINFUL
+			armor_penetration = ARMOR_PEN_MODERATE
+			damtype = HALLOSS
+
+		if(user.a_intent == I_DISARM)
+			force = WEAPON_FORCE_PAINFUL
+			damtype = HALLOSS
+
+		if(user.a_intent == I_HURT)
+			force = WEAPON_FORCE_ROBUST
+
 		if ((CLUMSY in user.mutations) && prob(50))
 			to_chat(user, SPAN_WARNING("You club yourself over the head."))
 			user.Weaken(3 * force)
