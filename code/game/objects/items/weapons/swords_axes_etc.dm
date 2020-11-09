@@ -20,13 +20,13 @@
 
 /obj/item/weapon/melee/classic_baton/attack(mob/M as mob, mob/living/user as mob)
 	if(user.a_intent == I_HURT)
+		damtype = HALLOSS
 		force = WEAPON_FORCE_PAINFUL
 		armor_penetration = ARMOR_PEN_MODERATE
-		damtype = HALLOSS
 
 	if(user.a_intent == I_DISARM)
-		force = WEAPON_FORCE_PAINFUL
 		damtype = HALLOSS
+		force = WEAPON_FORCE_PAINFUL
 
 	if(user.a_intent == I_HURT)
 		force = WEAPON_FORCE_ROBUST
