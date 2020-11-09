@@ -207,3 +207,24 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "surface_to_forest_2_B"
 	id_target = "surface_to_forest_1_B"
 	affect_ghosts = 1
+
+//HuT to Gulag
+/obj/effect/step_trigger/hut_to_gulag_1_A
+	id = "hut_to_gulag_1_A"
+	id_target = "hut_to_gulag_2_A"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/hut_to_gulag_2_A
+	id = "hut_to_gulag_2_A"
+	id_target = "hut_to_gulag_1_A"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/hut_to_gulag_1_B
+	id = "hut_to_gulag_1_B"
+	id_target = "hut_to_gulag_2_B"
+	affect_ghosts = 1
+
+/obj/effect/step_trigger/hut_to_gulag2_B
+	id = "hut_to_gulag_2_B"
+	id_target = "hut_to_gulag_1_B"
+	affect_ghosts = 1
