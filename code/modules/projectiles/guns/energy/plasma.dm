@@ -77,7 +77,7 @@
 	)
 	gun_tags = list(GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
 
-/obj/item/weapon/gun/energy/plasma/cassad/update_icon()
+/obj/item/weapon/gun/energy/pulse/cassad/update_icon()
 	..()
 	set_item_state(null, back = TRUE)
 

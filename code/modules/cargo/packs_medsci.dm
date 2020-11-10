@@ -201,6 +201,6 @@
 /datum/supply_pack/rped
 	contains = list(/obj/item/weapon/storage/part_replacer/mini)
 	name = "Compact Rapid Part Exchange Device"
-	cost = 250 //Its STILL cheaper to have rnd print this then buying
+	cost = 550 //Its STILL cheaper to have rnd print this then buying
 	crate_name ="compact rapid part exchange device crate"
 	group = "Miscellaneous"
