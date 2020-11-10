@@ -84,7 +84,7 @@
 										src.visible_message(SPAN_WARNING("\The [src] finishes eating \the [eat_target], leaving only bones."))
 
 										// Get fed
-										fed += rand(4,8)
+										fed += rand(2,3)
 
 								eat_target = null
 								eating_time = 900 //Resetting the timer just in case
