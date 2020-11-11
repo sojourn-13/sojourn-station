@@ -68,7 +68,7 @@
 /datum/reagent/medicine/meralyne
 	name = "Meralyne"
 	id = "meralyne"
-	description = "Meralyne is the next step in brute trauma medication. Works twice as good as bicaridine and enables the body to restore even the direst brute-damaged tissue."
+	description = "Meralyne is the next step in brute trauma medication. Works twice as good as Bicaridine and enables the body to restore even the direst brute-damaged tissue, while clotting bleeding incisions and cuts."
 	taste_description = "bitterness"
 	taste_mult = 3
 	reagent_state = LIQUID
@@ -333,6 +333,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	overdose = REAGENTS_OVERDOSE * 0.66
 	metabolism = 0.02
 	nerve_system_accumulations = 60
+	scannable = 1 //Finnicky chem application, we need to know how much of it is on a system to prevent overdose.
 
 /datum/reagent/medicine/oxycodone/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 200, TRUE)
@@ -435,6 +436,8 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	reagent_state = SOLID
 	color = "#004000"
 	overdose = REAGENTS_OVERDOSE
+	scannable = 1 // This is a mostly beneficial chem, it should show up on scanners
+	affects_dead = 1 //If it doesn't, how will it fix husking?
 
 /datum/reagent/medicine/ryetalyn/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	var/needs_update = M.mutations.len > 0
@@ -655,6 +658,9 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 		M.make_dizzy(5)
 		M.make_jittery(5)
 
+/datum/reagent/medicine/rezadone/overdose(var/mob/living/carbon/M, var/alien)
+	M.adjustCloneLoss(4)
+
 /datum/reagent/medicine/quickclot
 	name = "Quickclot"
 	id = "quickclot"
@@ -722,7 +728,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/kyphotorin
 	name = "Kyphotorin"
 	id = "kyphotorin"
-	description = "A strange chemical that allows a patient to regrow organic limbs, it may take awhile to work and requires use of a cryo pod. The process is extremely painful and may damage the body."
+	description = "A strange chemical that allows a patient to regrow organic limbs, it may take awhile to work and requires use of a cryo pod. The process is extremely painful and may damage the body if dosed incorrectly."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#7d88e6"
