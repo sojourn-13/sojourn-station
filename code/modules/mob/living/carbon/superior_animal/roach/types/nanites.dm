@@ -9,6 +9,7 @@
 	maxHealth = 35
 	health = 35
 
+	knockdown_odds = 3
 	melee_damage_lower = 1
 	melee_damage_upper = 3 //He's a ranged roach
 

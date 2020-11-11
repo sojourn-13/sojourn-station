@@ -23,6 +23,7 @@
 	//The common roach, gets to live 4 times, same as a roachling. They have so much to live for.
 	melee_damage_lower = 3
 	melee_damage_upper = 4
+	var/knockdown_odds = 1 //1% KO odds
 
 	min_breath_required_type = 3
 	min_air_pressure = 15 //below this, brute damage is dealt

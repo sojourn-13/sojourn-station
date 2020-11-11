@@ -27,7 +27,7 @@
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, var/params)
 	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities))
-		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
+		if (I.use_tool(user, src, WORKTIME_FAST, QUALITY_CUTTING, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
 			harvest(user)
 	else
 		. = ..()
