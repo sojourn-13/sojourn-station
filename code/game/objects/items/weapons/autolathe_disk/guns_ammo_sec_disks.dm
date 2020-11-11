@@ -43,7 +43,7 @@
 		//rifles
 		/datum/design/autolathe/gun/omnirifle,
 		/datum/design/autolathe/gun/standard_omnirifle,
-		/datum/design/autolathe/gun/omnicarbine
+		/datum/design/autolathe/gun/omnicarbine,
 		/datum/design/autolathe/gun/rds_omnicarbine,
 		//STS
 		/datum/design/autolathe/gun/sts25,
