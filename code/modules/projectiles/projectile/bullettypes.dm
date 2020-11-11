@@ -7,13 +7,13 @@
 //Low-caliber pistols and SMGs
 //*********************************//
 ///.35 Auto///
-/obj/item/projectile/bullet/pistol
+/obj/item/projectile/bullet/pistol_35
 	damage_types = list(BRUTE = 16)
 	armor_penetration = 5
 	step_delay = 0.75
 	can_ricochet = TRUE
 
-/obj/item/projectile/bullet/pistol/rubber
+/obj/item/projectile/bullet/pistol_35/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 3)
@@ -22,13 +22,13 @@
 	embed = FALSE
 	sharp = FALSE
 
-/obj/item/projectile/bullet/pistol/hv
+/obj/item/projectile/bullet/pistol_35/hv
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 10
 	step_delay = 0.5
 	can_ricochet = TRUE
 
-/obj/item/projectile/bullet/pistol/practice
+/obj/item/projectile/bullet/pistol_35/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 1)
 	agony = 3
@@ -38,7 +38,7 @@
 	step_delay = 0.75
 	can_ricochet = FALSE
 
-/obj/item/projectile/bullet/pistol/lethal
+/obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 18)
 	agony = 20
@@ -54,13 +54,13 @@
 //*********************************//
 /// .40 Magnum ///
 
-/obj/item/projectile/bullet/magnum
+/obj/item/projectile/bullet/magnum_40
 	damage_types = list(BRUTE = 24)
 	armor_penetration = 10
 	can_ricochet = TRUE
 	step_delay = 0.75
 
-/obj/item/projectile/bullet/magnum/practice
+/obj/item/projectile/bullet/magnum_40/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 2)
 	agony = 3
@@ -70,13 +70,13 @@
 	can_ricochet = FALSE
 	step_delay = 0.75
 
-/obj/item/projectile/bullet/magnum/hv
+/obj/item/projectile/bullet/magnum_40/hv
 	damage_types = list(BRUTE = 28)
 	armor_penetration = 25
 	penetrating = 1
 	step_delay = 0.5
 
-/obj/item/projectile/bullet/magnum/rubber
+/obj/item/projectile/bullet/magnum_40/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 5)
@@ -86,7 +86,7 @@
 	sharp = FALSE
 	step_delay = 0.9
 
-/obj/item/projectile/bullet/magnum/lethal
+/obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 26)
 	agony = 32
@@ -98,13 +98,13 @@
 	step_delay = 0.5
 
 /// .50 Kurtz ///
-/obj/item/projectile/bullet/kurtz
+/obj/item/projectile/bullet/kurtz_50
 	damage_types = list(BRUTE = 30)
 	armor_penetration = 15
 	can_ricochet = TRUE
 	step_delay = 0.75
 
-/obj/item/projectile/bullet/kurtz/rubber
+/obj/item/projectile/bullet/kurtz_50/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 6)
@@ -116,7 +116,7 @@
 	can_ricochet = TRUE
 	step_delay = 0.9
 
-/obj/item/projectile/bullet/kurtz/practice
+/obj/item/projectile/bullet/kurtz_50/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 2)
 	agony = 3
@@ -126,7 +126,7 @@
 	can_ricochet = FALSE
 	step_delay = 0.75
 
-/obj/item/projectile/bullet/kurtz/lethal
+/obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 32)
 	agony = 32
@@ -137,7 +137,7 @@
 	sharp = TRUE
 	step_delay = 0.8
 
-/obj/item/projectile/bullet/kurtz/hv
+/obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
 	damage_types = list(BRUTE = 36)
 	armor_penetration = 20
@@ -153,14 +153,14 @@
 
 /// .257 Carbine///
 
-/obj/item/projectile/bullet/lrifle
+/obj/item/projectile/bullet/light_rifle_257
 	damage_types = list(BRUTE = 16)
 	armor_penetration = 15
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.3
 
-/obj/item/projectile/bullet/lrifle/practice
+/obj/item/projectile/bullet/light_rifle_257/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 2)
 	agony = 2
@@ -170,13 +170,13 @@
 	can_ricochet = FALSE
 	step_delay = 0.5
 
-/obj/item/projectile/bullet/lrifle/hv
+/obj/item/projectile/bullet/light_rifle_257/hv
 	damage_types = list(BRUTE = 18)
 	armor_penetration = 24
 	penetrating = 2
 	hitscan = TRUE
 
-/obj/item/projectile/bullet/lrifle/rubber
+/obj/item/projectile/bullet/light_rifle_257/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 3)
@@ -188,7 +188,7 @@
 	can_ricochet = TRUE
 	step_delay = 0.9
 
-/obj/item/projectile/bullet/lrifle/lethal
+/obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 18)
 	agony = 20
@@ -199,26 +199,26 @@
 	sharp = TRUE
 	step_delay = 0.6
 
-/obj/item/projectile/bullet/lrifle/nomuzzle
+/obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
 
 ///7.5 Rifle///
 
-/obj/item/projectile/bullet/rifle
+/obj/item/projectile/bullet/rifle_75
 	damage_types = list(BRUTE = 26)
 	armor_penetration = 20
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.5
 
-/obj/item/projectile/bullet/rifle/hv
+/obj/item/projectile/bullet/rifle_75/hv
 	damage_types = list(BRUTE = 25)
 	armor_penetration = 30
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
 
-/obj/item/projectile/bullet/rifle/practice
+/obj/item/projectile/bullet/rifle_75/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 2)
 	agony = 2
@@ -227,7 +227,7 @@
 	sharp = FALSE
 	can_ricochet = FALSE
 
-/obj/item/projectile/bullet/rifle/rubber
+/obj/item/projectile/bullet/rifle_75/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 4)
@@ -239,7 +239,7 @@
 	can_ricochet = TRUE
 	step_delay = 0.9
 
-/obj/item/projectile/bullet/rifle/lethal
+/obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 25)
 	agony = 28
@@ -252,14 +252,14 @@
 
 /// .408 OMNI ///
 
-/obj/item/projectile/bullet/hrifle
+/obj/item/projectile/bullet/heavy_rifle_408
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 30
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
 
-/obj/item/projectile/bullet/hrifle/rubber
+/obj/item/projectile/bullet/heavy_rifle_408/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 8)
@@ -271,7 +271,7 @@
 	can_ricochet = TRUE
 	step_delay = 0.9
 
-/obj/item/projectile/bullet/hrifle/practice
+/obj/item/projectile/bullet/heavy_rifle_408/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 2)
 	agony = 2
@@ -281,14 +281,14 @@
 	can_ricochet = FALSE
 	step_delay = 0.5
 
-/obj/item/projectile/bullet/hrifle/hv
+/obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
 	damage_types = list(BRUTE = 24)
 	armor_penetration = 40
 	penetrating = 3
 	hitscan = TRUE
 
-/obj/item/projectile/bullet/hrifle/lethal
+/obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 22)
 	agony = 32
@@ -430,7 +430,7 @@
 	pellets = 4
 	range_step = 1
 	spread_step = 10
-	knockback = 1
+	knockback = 0 //We do not knockback do to issues with bullet douping
 	step_delay = 0.9
 
 /obj/item/projectile/bullet/pellet/shotgun/Initialize()

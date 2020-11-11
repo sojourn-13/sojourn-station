@@ -51,7 +51,6 @@
 /datum/gear/neotheologybook
 	display_name = "Absolutism ritual book"
 	path = /obj/item/weapon/book/ritual/cruciform
-	cost = 2
 
 /datum/gear/pipe
 	display_name = "pipe selection"

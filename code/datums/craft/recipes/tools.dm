@@ -12,6 +12,14 @@
 		list(QUALITY_CUTTING, 15, 150)
 	)
 
+/datum/craft_recipe/tool/weaver
+	name = "metal silk weaver"
+	result = /obj/item/weapon/tool/silk_wand
+	steps = list(
+		list(/obj/item/stack/rods, 2, 30),
+		list(QUALITY_WIRE_CUTTING, 10, 20)
+	)
+
 /datum/craft_recipe/tool/handmade_handtele
 	name = "makeshift hand-teleporter"
 	result = /obj/item/weapon/hand_tele/handmade

@@ -286,7 +286,7 @@
 
 /obj/structure/crematorium
 	name = "crematorium"
-	desc = "A human incinerator. Works well on barbeque nights."
+	desc = "An incinerator box, used to ash bodies or unwanted objects."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "crema1"
 	density = 1
@@ -463,7 +463,6 @@
 		locked = 0
 		playsound(loc, 'sound/machines/ding.ogg', 50, 1)
 	return
-
 
 /*
  * Crematorium tray

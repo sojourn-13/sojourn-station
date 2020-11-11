@@ -164,6 +164,11 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/external/robotic/technomancer
 	icon = 'icons/mob/human_races/cyberlimbs/technomancer.dmi'
 
+/datum/body_modification/limb/prosthesis/junktech
+	id = "prosthesis_ghetto"
+	replace_limb = /obj/item/organ/external/robotic/junktech
+	icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
+
 /datum/body_modification/limb/mutation/New()
 	short_name = "M: [name]"
 	name = "Mutation: [name]"

@@ -9,7 +9,7 @@
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
 	var/obj/item/weapon/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_lying_buckled_and_verb_status() call.
 
-/mob/living/carbon/human/New(var/new_loc, var/new_species = null, var/new_form = null)
+/mob/living/carbon/human/New(var/new_loc, var/new_species, var/new_form)
 
 	if(!dna)
 		dna = new /datum/dna(null)
@@ -120,8 +120,8 @@
 			flick("flash", HUDtech["flash"])
 
 	var/shielded = 0
-	var/b_loss = null
-	var/f_loss = null
+	var/b_loss
+	var/f_loss
 	var/bomb_defense = getarmor(null, ARMOR_BOMB) + mob_bomb_defense
 	switch (severity)
 		if (1.0)
@@ -171,7 +171,7 @@
 		return 1
 	return 0
 
-/mob/living/carbon/human/var/co2overloadtime = null
+/mob/living/carbon/human/var/co2overloadtime
 /mob/living/carbon/human/var/temperature_resistance = T0C+75
 
 
@@ -179,7 +179,7 @@
 	if(user.incapacitated()  || !user.Adjacent(src))
 		return
 
-	var/obj/item/clothing/under/suit = null
+	var/obj/item/clothing/under/suit
 	if (istype(w_uniform, /obj/item/clothing/under))
 		suit = w_uniform
 
@@ -332,7 +332,7 @@ var/list/rank_prefix = list(\
 
 //Removed the horrible safety parameter. It was only being used by ninja code anyways.
 //Now checks siemens_coefficient of the affected area by default
-/mob/living/carbon/human/electrocute_act(shock_damage, obj/source, siemens_coeff = 1.0, def_zone = null)
+/mob/living/carbon/human/electrocute_act(shock_damage, obj/source, siemens_coeff = 1, def_zone)
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if (!def_zone)
@@ -1131,14 +1131,10 @@ var/list/rank_prefix = list(\
 	if(default_color)
 		skin_color = form.base_color
 
-#define MODIFICATION_ORGANIC 1
-#define MODIFICATION_SILICON 2
-#define MODIFICATION_REMOVED 3
-
 //Needed for augmentation
 /mob/living/carbon/human/proc/rebuild_organs(from_preference)
 	if(!species)
-		return 0
+		return FALSE
 
 	status_flags |= REBUILDING_ORGANS
 
@@ -1149,26 +1145,25 @@ var/list/rank_prefix = list(\
 			C.removed()
 			organs_to_readd += C
 
-	for(var/obj/item/organ/organ in (organs|internal_organs))
-		qdel(organ)
-
 	var/obj/item/weapon/implant/core_implant/CI = get_core_implant()
 	var/checkprefcruciform = FALSE	// To reset the cruciform to original form
 	if(CI)
 		checkprefcruciform = TRUE
 		qdel(CI)
 
-	if(organs.len)
-		organs.Cut()
-	if(internal_organs.len)
-		internal_organs.Cut()
-	if(organs_by_name.len)
-		organs_by_name.Cut()
-	if(internal_organs_by_name.len)
-		internal_organs_by_name.Cut()
-
-
 	if(from_preference)
+		for(var/obj/item/organ/organ in (organs|internal_organs))
+			qdel(organ)
+
+		if(organs.len)
+			organs.Cut()
+		if(internal_organs.len)
+			internal_organs.Cut()
+		if(organs_by_name.len)
+			organs_by_name.Cut()
+		if(internal_organs_by_name.len)
+			internal_organs_by_name.Cut()
+
 		var/datum/preferences/Pref
 		if(istype(from_preference, /datum/preferences))
 			Pref = from_preference
@@ -1177,7 +1172,7 @@ var/list/rank_prefix = list(\
 		else
 			return
 
-		var/datum/body_modification/BM = null
+		var/datum/body_modification/BM
 
 		for(var/tag in species.has_limbs)
 			BM = Pref.get_modification(tag)
@@ -1209,14 +1204,20 @@ var/list/rank_prefix = list(\
 				C.install_default_modules_by_path(mind.assigned_job)
 
 	else
-		var/organ_type = null
+		var/organ_type
 
 		for(var/limb_tag in species.has_limbs)
 			var/datum/organ_description/OD = species.has_limbs[limb_tag]
+			var/obj/item/I = organs_by_name[limb_tag]
+			if(I && I.type == OD.default_type)
+				continue
 			OD.create_organ(src)
 
 		for(var/organ_tag in species.has_organ)
 			organ_type = species.has_organ[organ_tag]
+			var/obj/item/I = internal_organs_by_name[organ_tag]
+			if(I && I.type == organ_type)
+				continue
 			new organ_type(src)
 
 		if(checkprefcruciform)
@@ -1387,7 +1388,7 @@ var/list/rank_prefix = list(\
 
 	var/mob/S = src
 	var/mob/U = usr
-	var/self = null
+	var/self
 	if(S == U)
 		self = 1 // Removing object from yourself.
 

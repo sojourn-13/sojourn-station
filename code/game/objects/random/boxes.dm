@@ -24,7 +24,7 @@
 					/obj/item/weapon/storage/box/rxglasses = 1,
 					/obj/item/weapon/storage/box/samplebags = 1,
 					/obj/item/weapon/storage/box/smokes = 1,
-					/obj/item/weapon/storage/box/sniperammo = 1,
+					/obj/item/ammo_magazine/ammobox/antim_small = 1,
 					/obj/item/weapon/storage/box/solution_trays = 1,
 					/obj/item/weapon/storage/box/survival = 1,
 					/obj/item/weapon/storage/box/swabs = 1,

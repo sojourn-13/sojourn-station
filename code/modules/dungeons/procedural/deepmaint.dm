@@ -74,7 +74,7 @@ var/global/list/big_deepmaint_room_templates = list()
 */
 
 /obj/procedural/jp_DungeonGenerator/deepmaint/proc/makeLadders()
-	var/ladders_to_place = 6
+	var/ladders_to_place = 3
 	if(numRooms < ladders_to_place)
 		return
 	var/list/obj/procedural/jp_DungeonRoom/done_rooms = list()
@@ -215,7 +215,7 @@ var/global/list/big_deepmaint_room_templates = list()
 		generate.setLightChance(2)
 		generate.setFloorType(/turf/simulated/floor/tiled/techmaint_perforated)
 		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint/big))
-		generate.setNumRooms(1)
+		generate.setNumRooms(3) //3 deepmaints "core" rooms
 		generate.setExtraPaths(0)
 		generate.setMinPathLength(0)
 		generate.setMaxPathLength(0)
@@ -231,7 +231,7 @@ var/global/list/big_deepmaint_room_templates = list()
 
 		generate.setArea(locate(20, 20, z), locate(150, 150, z))
 		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint))
-		generate.setNumRooms(15)
+		generate.setNumRooms(25) // 25 smaller rooms
 		generate.setExtraPaths(5)
 		generate.setMinPathLength(0)
 		generate.setMaxPathLength(120)

@@ -3,7 +3,7 @@
 	reagent_type = "Drug"
 	scannable = 1
 
-	var/sanity_gain
+	var/sanity_gain = 0.5
 
 /datum/reagent/drug/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(sanity_gain)
@@ -104,6 +104,10 @@
 
 /datum/reagent/drug/mindbreaker/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.hallucination(50 * effect_multiplier, 50 * effect_multiplier)
+	M.druggy = max(M.druggy, 5 * effect_multiplier)
+	M.make_jittery(10 * effect_multiplier)
+	M.make_dizzy(10 * effect_multiplier)
+	M.confused = max(M.confused, 20 * effect_multiplier)
 
 
 /datum/reagent/drug/psilocybin
@@ -161,7 +165,7 @@
 	addiction_chance = 0
 	nerve_system_accumulations = 10
 
-/datum/reagent/drug/nicotine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/drug/nicotine/overdose(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.add_chemical_effect(CE_PULSE, 1)
 	M.add_chemical_effect(CE_PAINKILLER, 5 * effect_multiplier)

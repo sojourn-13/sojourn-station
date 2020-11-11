@@ -23,6 +23,11 @@
 	desc = "A pair of standard-issue jackboots typically worn by people who need to stomp things. These ones are brown."
 	icon_state = "germanboots"
 
+/obj/item/clothing/shoes/jackboots/laced_jackboots
+	name = "laced jackboots"
+	desc = "Old military boots designed to make look you tacticool."
+	icon_state = "laced_jackboots"
+
 /obj/item/clothing/shoes/reinforced
 	name = "reinforced boots"
 	desc = "A pair of metallic boots designed for industrial environments."

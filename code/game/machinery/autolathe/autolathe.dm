@@ -65,7 +65,7 @@
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
 
 	var/global/list/error_messages = list(
-		ERR_NOLICENSE = "Disk licenses have been exhausted.",
+		ERR_NOLICENSE = "Not enough license points left.",
 		ERR_NOTFOUND = "Design data not found.",
 		ERR_NOMATERIAL = "Not enough materials.",
 		ERR_NOREAGENT = "Not enough reagents.",
@@ -837,6 +837,8 @@
 		las_rating += M.rating
 		las_amount++
 	las_rating -= las_amount
+
+	queue_max = initial(queue_max) + mb_rating //So the more matter bin levels the more we can queue!
 
 	speed = initial(speed) + man_rating + las_rating
 	mat_efficiency = max(0.2, 1.0 - (man_rating * 0.1))

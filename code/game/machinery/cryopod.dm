@@ -360,7 +360,7 @@
 			qdel(O)
 
 	//Same for contract-based objectives.
-	for(var/datum/antag_contract/contract in GLOB.all_antag_contracts)
+	for(var/datum/antag_contract/contract in GLOB.excel_antag_contracts)
 		contract.on_mob_despawned(occupant.mind)
 
 
@@ -482,6 +482,10 @@
 	set name = "Eject Pod"
 	set category = "Object"
 	set src in oview(1)
+	if(!usr) //when called from preferences_spawnpoints.dm there is no usr since it is called indirectly. If there is no occupant and usr something really bad has happened here so just keep them in the pod - Hopek
+		if(!occupant)
+			return
+		usr = occupant
 	if(usr.stat != 0)
 		return
 

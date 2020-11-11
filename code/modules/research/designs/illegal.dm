@@ -10,14 +10,26 @@
 /datum/design/research/item/night_goggles
 	name = "Night Vison Goggles"
 	desc = "Goggles that use a small cell to allow you to see in the dark."
-	materials = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2) //Sheet for each eye!
-	build_path = /obj/item/clothing/glasses/powered/night //Also takes biomatter so work with the church!
+	build_path = /obj/item/clothing/glasses/powered/night
+	category = CAT_MINING
+
+/datum/design/research/item/thermal_goggles
+	name = "Thermal Vison Goggles"
+	desc = "Goggles that use a small cell to allow you to see living beings through walls."
+	build_path = /obj/item/clothing/glasses/powered/thermal
+	category = CAT_MINING
 
 /datum/design/research/item/rig_nvgoggles
 	name = "Night Vison Hardsuit Goggles"
 	desc = "Hardsuit linked goggles that allow the user to see in darkness as if it was day."
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_PLASTIC = 10, MATERIAL_URANIUM = 2) //Sheet for each eye!
 	build_path = /obj/item/rig_module/vision/nvg
+	category = CAT_MINING
+
+/datum/design/research/item/rig_thermalgoggles
+	name = "Thermal Vison Hardsuit Goggles"
+	desc = "Hardsuit linked goggles that allow the user to see in darkness as if it was day."
+	build_path = /obj/item/rig_module/vision/thermal
+	category = CAT_MINING
 
 /datum/design/research/item/glowstick
 	name = "Undark Glowstick"
@@ -25,6 +37,7 @@
 	build_path = /obj/item/device/lighting/glowstick/undark //Yes 1920s were a wild time
 	chemicals = list("radium" = 5, "phosphorus" = 10)
 	materials = list(MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 15)
+	category = CAT_MINING
 
 /datum/design/research/item/cleaner
 	name = "SI \"Spot\" Cleaning Pistol"

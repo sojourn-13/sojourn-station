@@ -35,7 +35,7 @@
 
 	set_typing_indicator(TRUE)
 	hud_typing = TRUE
-	var/message = input("", "me (text)") as text
+	var/message = input("", "me (text)") as text|null
 	hud_typing = FALSE
 	set_typing_indicator(FALSE)
 	if(message)
@@ -59,10 +59,10 @@
 		usr.emote(message)
 
 /mob/verb/subtle_wrapper()
-	set name = "Subtle verb"
+	set name = "Subtle (anti-ghost) verb"
 	set category = "IC"
 
-	var/message = input("", "subtle (text)") as text
+	var/message = input("", "subtle (text)") as text|null
 	if(message)
 		subtle_verb(message)
 

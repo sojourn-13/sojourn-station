@@ -74,3 +74,7 @@
 /datum/gear/head/fishbowl
 	display_name = "fishbowl helmet"
 	path = /obj/item/clothing/head/costume/misc/fishbowl
+
+/datum/gear/head/rice_hat
+	display_name = "rice hat"
+	path = /obj/item/clothing/head/rice_hat

@@ -24,6 +24,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/rifle_boltforward.ogg'
+	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET, GUN_SCOPE)
 
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY
@@ -93,6 +94,7 @@
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	zoom_factor = 1
+	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET)
 	recoil_buildup = 15
 	penetration_multiplier = 1.2
 	one_hand_penalty = 20
@@ -116,6 +118,7 @@
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	zoom_factor = 1.2
+	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine

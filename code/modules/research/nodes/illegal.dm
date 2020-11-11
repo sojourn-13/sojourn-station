@@ -30,7 +30,7 @@
 
 
 /datum/technology/night_sight
-	name = "Undark Vision"
+	name = "Vision Augmentation" //Undark was a better name
 	desc = "A better look into the shadows that hunt the station, allows for the manufacturing of night vision goggles and RIG night vison huds "
 	tech_type = RESEARCH_ILLEGAL
 
@@ -40,11 +40,29 @@
 
 	required_technologies = list(/datum/technology/binary_encryption_key)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 5)
-	cost = 3000
+	cost = 2500
 
 	unlocks_designs = list(/datum/design/research/item/night_goggles,
 							/datum/design/research/item/rig_nvgoggles,
-							/datum/design/research/item/glowstick)
+							/datum/design/research/item/glowstick,
+							/datum/design/research/item/mechfab/modules/hud/night)
+
+/datum/technology/thermal_sight
+	name = "Thermal Augmentation"
+	desc = "A better look into the thermal imprint of living beings, allows for the manufacturing of thermal vision goggles and RIG thermal vison huds "
+	tech_type = RESEARCH_ILLEGAL
+
+	x = 0.3
+	y = 0.7
+	icon = "night"
+
+	required_technologies = list(/datum/technology/night_sight)
+	required_tech_levels = list(RESEARCH_ENGINEERING = 20)
+	cost = 2500
+
+	unlocks_designs = list(/datum/design/research/item/thermal_goggles,
+							/datum/design/research/item/rig_thermalgoggles,
+							/datum/design/research/item/mechfab/modules/hud/thermal)
 
 
 /datum/technology/chameleon_kit
@@ -115,12 +133,12 @@
 	desc = "A defibulator that has no safeties and an overclocked set of paddles, making it ideal to pernitrate even armor."
 	tech_type = RESEARCH_ILLEGAL
 
-	x = 0.9
+	x = 0.5
 	y = 0.3
 	icon = "combatdefib"
 
-	required_technologies = list(/datum/technology/borg_syndicate_module)
+	required_technologies = list(/datum/technology/freedom_implant)
 	required_tech_levels = list(RESEARCH_BIOTECH = 10)
-	cost = 5000
+	cost = 3000
 
 	unlocks_designs = list(/datum/design/research/item/medical/combat_defibs)

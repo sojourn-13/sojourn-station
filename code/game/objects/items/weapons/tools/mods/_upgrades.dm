@@ -14,6 +14,7 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 	var/prefix = "upgraded" //Added to the tool's name
 	var/removal_time = WORKTIME_SLOW
+	var/install_time = WORKTIME_FAST
 
 	//The upgrade can be applied to a tool that has any of these qualities
 	var/list/required_qualities = list()
@@ -81,6 +82,9 @@
 	return FALSE
 
 /datum/component/item_upgrade/proc/check_tool(var/obj/item/weapon/tool/T, var/mob/living/user)
+	if(!tool_upgrades.len)
+		to_chat(user, SPAN_WARNING("\The [parent] can not be attached to a tool."))
+		return FALSE
 	if (T.item_upgrades.len >= T.max_upgrades)
 		to_chat(user, SPAN_WARNING("This tool can't fit anymore modifications!"))
 		return FALSE
@@ -171,7 +175,7 @@
 	if (user)
 		user.visible_message(SPAN_NOTICE("[user] starts applying [parent] to [A]"), SPAN_NOTICE("You start applying \the [parent] to \the [A]"))
 		var/obj/item/I = parent
-		if (!I.use_tool(user = user, target =  A, base_time = WORKTIME_FAST, required_quality = null, fail_chance = FAILCHANCE_ZERO, required_stat = STAT_MEC, forced_sound = WORKSOUND_WRENCHING))
+		if (!I.use_tool(user = user, target =  A, base_time = install_time, required_quality = null, fail_chance = FAILCHANCE_ZERO, required_stat = STAT_MEC, forced_sound = WORKSOUND_WRENCHING))
 			return FALSE
 		to_chat(user, SPAN_NOTICE("You have successfully installed \the [parent] in \the [A]"))
 		user.drop_from_inventory(parent)
@@ -281,6 +285,8 @@
 		G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
 	if(weapon_upgrades[GUN_UPGRADE_SILENCER])
 		G.silenced = weapon_upgrades[GUN_UPGRADE_SILENCER]
+	if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE])
+		G.force *= weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE]
 	if(weapon_upgrades[GUN_UPGRADE_OFFSET])
 		G.init_offset = max(0, G.init_offset+weapon_upgrades[GUN_UPGRADE_OFFSET])
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE])
@@ -303,6 +309,12 @@
 		G.rigged = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 		G.rigged = 2
+	if(weapon_upgrades[GUN_UPGRADE_ZOOM])
+		G.zoom_factor += weapon_upgrades[GUN_UPGRADE_ZOOM]
+		G.initialize_scope()
+		if(istype(G.loc, /mob))
+			var/mob/user = G.loc
+			user.update_action_buttons()
 
 	if(!isnull(weapon_upgrades[GUN_UPGRADE_FORCESAFETY]))
 		G.restrict_safety = TRUE
@@ -382,46 +394,50 @@
 		to_chat(user, SPAN_NOTICE("Can be attached to a firearm, giving the following benefits:"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
-			var/amount = weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]-1
+			if(amount > 0)
 				to_chat(user, SPAN_NOTICE("Increases projectile damage by [amount*100]%"))
 			else
-				to_chat(user, SPAN_WARNING("Decreases projectile damage by [amount*100]%"))
+				to_chat(user, SPAN_WARNING("Decreases projectile damage by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
-			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]-1
+			if(amount > 0)
 				to_chat(user, SPAN_NOTICE("Increases projectile penetration by [amount*100]%"))
 			else
-				to_chat(user, SPAN_WARNING("Decreases projectile penetration by [amount*100]%"))
+				to_chat(user, SPAN_WARNING("Decreases projectile penetration by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
 			if(amount > 1)
-				to_chat(user, SPAN_NOTICE("Increases projectile piercing penetration by [amount*100]%"))
+				to_chat(user, SPAN_NOTICE("Increases projectile piercing penetration by [amount] walls"))
+			else if(amount == 1)
+				to_chat(user, SPAN_NOTICE("Increases projectile piercing penetration by [amount] wall"))
+			else if(amount == -1)
+				to_chat(user, SPAN_WARNING("Decreases projectile piercing penetration by [amount] wall"))
 			else
-				to_chat(user, SPAN_WARNING("Decreases projectile piercing penetration by [amount*100]%"))
+				to_chat(user, SPAN_WARNING("Decreases projectile piercing penetration by [amount] walls"))
 
 		if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
-			var/amount = weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]-1
+			if(amount > 0)
 				to_chat(user, SPAN_WARNING("Increases fire delay by [amount*100]%"))
 			else
-				to_chat(user, SPAN_NOTICE("Decreases fire delay by [amount*100]%"))
+				to_chat(user, SPAN_NOTICE("Decreases fire delay by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
-			var/amount = weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]-1
+			if(amount > 0)
 				to_chat(user, SPAN_WARNING("Increases move delay by [amount*100]%"))
 			else
-				to_chat(user, SPAN_NOTICE("Decreases move delay by [amount*100]%"))
+				to_chat(user, SPAN_NOTICE("Decreases move delay by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
-			var/amount = weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]-1
+			if(amount > 0)
 				to_chat(user, SPAN_WARNING("Slows down the weapons projectile by [amount*100]%"))
 			else
-				to_chat(user, SPAN_NOTICE("Speeds up the weapons projectile by [amount*100]%"))
+				to_chat(user, SPAN_NOTICE("Speeds up the weapons projectile by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE])
 			to_chat(user, SPAN_NOTICE("Modifies projectile brute damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE]] damage points"))
@@ -445,18 +461,18 @@
 			to_chat(user, SPAN_NOTICE("Modifies projectile radiation damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_RECOIL])
-			var/amount = weapon_upgrades[GUN_UPGRADE_RECOIL]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_RECOIL]-1
+			if(amount > 0)
 				to_chat(user, SPAN_WARNING("Increases kickback by [amount*100]%"))
 			else
-				to_chat(user, SPAN_NOTICE("Decreases kickback by [amount*100]%"))
+				to_chat(user, SPAN_NOTICE("Decreases kickback by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
-			var/amount = weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]-1
+			if(amount > 0)
 				to_chat(user, SPAN_WARNING("Increases muzzle flash by [amount*100]%"))
 			else
-				to_chat(user, SPAN_NOTICE("Decreases muzzle flash by [amount*100]%"))
+				to_chat(user, SPAN_NOTICE("Decreases muzzle flash by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_MAGUP])
 			var/amount = weapon_upgrades[GUN_UPGRADE_MAGUP]
@@ -474,32 +490,32 @@
 			to_chat(user, SPAN_WARNING("Forces the safety toggle of the weapon to always be on."))
 
 		if(weapon_upgrades[GUN_UPGRADE_CHARGECOST])
-			var/amount = weapon_upgrades[GUN_UPGRADE_CHARGECOST]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_CHARGECOST]-1
+			if(amount > 0)
 				to_chat(user, SPAN_WARNING("Increases cell firing cost by [amount*100]%"))
 			else
-				to_chat(user, SPAN_NOTICE("Decreases cell firing cost by [amount*100]%"))
+				to_chat(user, SPAN_NOTICE("Decreases cell firing cost by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX])
-			var/amount = weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX]-1
+			if(amount > 0)
 				to_chat(user, SPAN_WARNING("Increases overcharge maximum by [amount*100]%"))
 			else
-				to_chat(user, SPAN_NOTICE("Decreases overcharge maximum by [amount*100]%"))
+				to_chat(user, SPAN_NOTICE("Decreases overcharge maximum by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_OVERCHARGE_RATE])
-			var/amount = weapon_upgrades[GUN_UPGRADE_OVERCHARGE_RATE]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_OVERCHARGE_RATE]-1
+			if(amount > 0)
 				to_chat(user, SPAN_NOTICE("Increases overcharge rate by [amount*100]%"))
 			else
-				to_chat(user, SPAN_WARNING("Decreases overcharge rate by [amount*100]%"))
+				to_chat(user, SPAN_WARNING("Decreases overcharge rate by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_OFFSET])
-			var/amount = weapon_upgrades[GUN_UPGRADE_OFFSET]
-			if(amount > 1)
+			var/amount = weapon_upgrades[GUN_UPGRADE_OFFSET]-1
+			if(amount > 0)
 				to_chat(user, SPAN_WARNING("Increases weapon inaccuracy by [amount]°"))
 			else
-				to_chat(user, SPAN_NOTICE("Decreases weapon inaccuracy by [amount]°"))
+				to_chat(user, SPAN_NOTICE("Decreases weapon inaccuracy by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_HONK])
 			to_chat(user, SPAN_WARNING("Cheers up the firing sound of the weapon."))
@@ -509,6 +525,13 @@
 
 		if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 			to_chat(user, SPAN_WARNING("Rigs the weapon to explode."))
+
+		if(weapon_upgrades[GUN_UPGRADE_ZOOM])
+			var/amount = weapon_upgrades[GUN_UPGRADE_ZOOM]
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases scope zoom by x[amount]"))
+			else
+				to_chat(user, SPAN_WARNING("Decreases scope zoom by x[amount]"))
 
 		to_chat(user, SPAN_WARNING("Requires a weapon with the following properties"))
 		to_chat(user, english_list(req_gun_tags))
@@ -559,12 +582,14 @@
 				SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)
 				QDEL_NULL(toremove)
 				upgrade_loc.refresh_upgrades()
+				user.update_action_buttons()
 				return 1
 			else if (T && T.degradation) //Because robot tools are unbreakable
 				//otherwise, damage the host tool a bit, and give you another try
 				to_chat(user, SPAN_DANGER("You only managed to damage \the [upgrade_loc], but you can retry."))
 				T.adjustToolHealth(-(5 * T.degradation), user) // inflicting 4 times use damage
 				upgrade_loc.refresh_upgrades()
+				user.update_action_buttons()
 				return 1
 	return 0
 

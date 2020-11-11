@@ -1,16 +1,16 @@
 /**
- *  Datum used to hold information about a product in a vending machine
+ * Datum used to hold information about a product in a vending machine
  */
 /datum/data/vending_product
 	var/product_name = "generic" // Display name for the product
 	var/product_desc
 	var/product_path = null
-	var/amount = 0            // The original amount held in the vending machine
-	var/price = 0              // Price to buy one
-	var/display_color = null   // Display color for vending machine listing
-	var/category = CAT_NORMAL  // CAT_HIDDEN for contraband, CAT_COIN for premium
-	var/obj/machinery/vending/vending_machine   // The vending machine we belong to
-	var/list/instances = list()		   // Stores inserted items. Instances are only used for things added during the round, and not for things spawned at initialize
+	var/amount = 0      // The original amount held in the vending machine
+	var/price = 0       // Price to buy one
+	var/display_color = null  // Display color for vending machine listing
+	var/category = CAT_NORMAL // CAT_HIDDEN for contraband, CAT_COIN for premium
+	var/obj/machinery/vending/vending_machine  // The vending machine we belong to
+	var/list/instances = list()		  // Stores inserted items. Instances are only used for things added during the round, and not for things spawned at initialize
 
 
 /datum/data/vending_product/New(vending_machine, path, name = null, amount = 1, price = 0, color = null, category = CAT_NORMAL)
@@ -73,7 +73,7 @@
 
 
 /**
- *  A vending machine
+ * A vending machine
  */
 /obj/machinery/vending
 	name = "Vendomat"
@@ -111,7 +111,7 @@
 	var/list/products	= list() // For each, use the following pattern:
 	var/list/contraband	= list() // list(/type/path = amount,/type/path2 = amount2)
 	var/list/premium 	= list() // No specified amount = only one in stock
-	var/list/prices     = list() // Prices for each item, list(/type/path = price), items not in the list don't have a price.
+	var/list/prices   = list() // Prices for each item, list(/type/path = price), items not in the list don't have a price.
 
 	// List of vending_product items available.
 	var/list/product_records = list()
@@ -146,7 +146,7 @@
 	var/auto_price = TRUE //The vendomat will automatically set prices on products if their price is not specified.
 	var/obj/item/weapon/coin/coin
 	var/datum/wires/vending/wires = null
-	var/always_open	=	FALSE  // If true, this machine allows products to be inserted without requirinf the maintenance hatch to be screwed open first
+	var/always_open	=	FALSE // If true, this machine allows products to be inserted without requirinf the maintenance hatch to be screwed open first
 	var/list/can_stock = list()	//A whitelist of objects which can be stocked into this vendor
 	//Note that a vendor can always accept restocks of things it has had in the past. This is in addition to that
 	var/no_criminals = FALSE //If true, the machine asks if you're wanted by security when you try to order.
@@ -231,11 +231,11 @@
 
 
 /**
- *  Build src.produdct_records from the products lists
+ * Build src.produdct_records from the products lists
  *
- *  src.products, src.contraband, src.premium, and src.prices allow specifying
- *  products that the vending machine is to carry without manually populating
- *  src.product_records.
+ * src.products, src.contraband, src.premium, and src.prices allow specifying
+ * products that the vending machine is to carry without manually populating
+ * src.product_records.
  */
 /obj/machinery/vending/proc/build_inventory()
 	var/list/all_products = list(
@@ -320,7 +320,7 @@
 			return
 
 		if(QUALITY_SCREW_DRIVING)
-			var/used_sound = panel_open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
+			var/used_sound = panel_open ? 'sound/machines/Custom_screwdriveropen.ogg' : 'sound/machines/Custom_screwdriverclose.ogg'
 			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
 				panel_open = !panel_open
 				to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance panel."))
@@ -459,7 +459,7 @@
 	..()
 
 /**
- *  Receive payment with cashmoney.
+ * Receive payment with cashmoney.
  */
 /obj/machinery/vending/proc/pay_with_cash(var/obj/item/weapon/spacecash/bundle/cashmoney)
 	if(currently_vending.price > cashmoney.worth)
@@ -549,9 +549,9 @@
 		return 1
 
 /**
- *  Add money for current purchase to the vendor account.
+ * Add money for current purchase to the vendor account.
  *
- *  Called after the money has already been taken from the customer.
+ * Called after the money has already been taken from the customer.
  */
 /obj/machinery/vending/proc/credit_purchase(target)
 	var/datum/transaction/T = new(currently_vending.price, target, "Purchase of [currently_vending.product_name]", src)
@@ -572,9 +572,9 @@
 	ui_interact(user)
 
 /**
- *  Display the NanoUI window for the vending machine.
+ * Display the NanoUI window for the vending machine.
  *
- *  See NanoUI documentation for details.
+ * See NanoUI documentation for details.
  */
 /obj/machinery/vending/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	user.set_machine(src)
@@ -669,7 +669,7 @@
 			if(R.price <= 0 || !locked)
 				vend(R, usr)
 			else if(issilicon(usr)) //If the item is not free, provide feedback if a synth is trying to buy something.
-				to_chat(usr, SPAN_DANGER("Artificial unit recognized.  Artificial units cannot complete this transaction.  Purchase canceled."))
+				to_chat(usr, SPAN_DANGER("Artificial unit recognized. Artificial units cannot complete this transaction. Purchase canceled."))
 				return
 			else
 				currently_vending = R
@@ -798,7 +798,7 @@
 	if(seconds_electrified > 0)
 		seconds_electrified--
 
-	//Pitch to the people!  Really sell it!
+	//Pitch to the people! Really sell it!
 	if(((last_slogan + slogan_delay) <= world.time) && (slogan_list.len > 0 || custom_vendor) && (!shut_up) && prob(5))
 		if(custom_vendor && product_records.len)
 			var/datum/data/vending_product/advertised = pick(product_records)
@@ -839,7 +839,7 @@
 			spawn(rand(0, 15))
 				icon_state = "[icon_type]-off"
 
-//Oh no we're malfunctioning!  Dump out some product and break.
+//Oh no we're malfunctioning! Dump out some product and break.
 /obj/machinery/vending/proc/malfunction()
 	for(var/datum/data/vending_product/R in product_records)
 		while(R.get_amount()>0)
@@ -895,7 +895,7 @@
 
 /*
 
-/obj/machinery/vending/[vendors name here]   // --vending machine template   :)
+/obj/machinery/vending/[vendors name here]  // --vending machine template  :)
 	name = ""
 	desc = ""
 	icon = ''
@@ -984,7 +984,7 @@
 		/obj/item/device/assembly/voice = 25,
 		/obj/item/device/transfer_valve = 25,
 		/obj/item/device/text_to_speech = 25,
-		/obj/item/weapon/tool/screwdriver  = 6,
+		/obj/item/weapon/tool/screwdriver = 6,
 		/obj/item/weapon/cartridge/signal = 10,
 		/obj/item/device/debugger = 5)
 	product_ads = "Spark them all!;Everything you need!"
@@ -1000,7 +1000,7 @@
 		/obj/item/device/electronic_assembly/large = 10,
 		/obj/item/device/integrated_electronics/wirer = 6,
 		/obj/item/device/integrated_electronics/debugger = 6,
-		/obj/item/weapon/tool/screwdriver  = 6,
+		/obj/item/weapon/tool/screwdriver = 6,
 		/obj/item/weapon/tool/crowbar = 6,
 		/obj/item/weapon/implanter = 6)
 	product_ads = "Automation for all your research needs!;Stainless steel!"
@@ -1201,41 +1201,42 @@
 	/obj/item/weapon/gun/energy/gun/martin = 2,
 	/obj/item/weapon/gun/projectile/revolver/detective = 2,
 	/obj/item/weapon/gun/projectile/clarissa = 2, // SoJ edit
-	/obj/item/ammo_magazine/slpistol/rubber = 3,
-	/obj/item/ammo_magazine/pistol/rubber = 5,
-	/obj/item/ammo_magazine/hpistol/rubber = 3,
-	/obj/item/ammo_magazine/smg/rubber = 3,
-	/obj/item/ammo_magazine/ammobox/pistol/rubber = 3,
-	/obj/item/ammo_magazine/pistol/practice = 3,
-	/obj/item/ammo_magazine/hpistol/practice = 3,
-	/obj/item/ammo_magazine/ammobox/pistol/practice = 5,
-	/obj/item/ammo_magazine/slmagnum/rubber = 3,
-	/obj/item/ammo_magazine/ammobox/magnum/rubber = 3,
-	/obj/item/ammo_magazine/slmagnum/practice = 3,
-	/obj/item/ammo_magazine/ammobox/magnum/practice = 2,
-	/obj/item/weapon/storage/box/shotgunammo/beanbags = 2,
-	/obj/item/ammo_magazine/lrifle/rubber = 3,
+	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 3,
+	/obj/item/ammo_magazine/pistol_35/rubber = 5,
+	/obj/item/ammo_magazine/highcap_pistol_35/rubber = 3,
+	/obj/item/ammo_magazine/smg_35/rubber = 3,
+	/obj/item/ammo_magazine/ammobox/pistol_35/rubber = 3,
+	/obj/item/ammo_magazine/pistol_35/practice = 3,
+	/obj/item/ammo_magazine/highcap_pistol_35/practice = 3,
+	/obj/item/ammo_magazine/ammobox/pistol_35/practice = 5,
+	/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 3,
+	/obj/item/ammo_magazine/ammobox/magnum_40/rubber = 3,
+	/obj/item/ammo_magazine/speed_loader_magnum_40/practice = 3,
+	/obj/item/ammo_magazine/ammobox/magnum_40/practice = 2,
+	/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 2,
+	/obj/item/ammo_magazine/light_rifle_257/rubber = 3,
 	/obj/item/clothing/accessory/holster/armpit = 2,
 	/obj/item/clothing/accessory/holster/leg = 2,
 	/obj/item/weapon/gun_upgrade/mechanism/weintraub = 2,
 	/obj/item/weapon/storage/pouch/pistol_holster = 2,
 	/obj/item/weapon/storage/pouch/ammo = 2,
-	/obj/item/weapon/storage/briefcase/rifle = 5) //SoJ Edit, adds in 15 rifle cases
+	/obj/item/weapon/storage/briefcase/rifle = 5) //SoJ Edit, adds in 5 rifle cases
 
 	contraband = list(/obj/item/weapon/gun/projectile/automatic/mac = 1,
 	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1,
 	/obj/item/weapon/gun/projectile/shotgun/pump = 1,
-	/obj/item/ammo_magazine/pistol = 5,
-	/obj/item/ammo_magazine/hpistol = 5,
-	/obj/item/ammo_magazine/slpistol = 5,
-	/obj/item/ammo_magazine/smg = 5,
-	/obj/item/ammo_magazine/slmagnum = 5,
-	/obj/item/ammo_magazine/lrifle = 3,
-	/obj/item/ammo_magazine/ammobox/pistol =3,
-	/obj/item/ammo_magazine/ammobox/magnum = 3,
-	/obj/item/weapon/storage/box/shotgunammo/slug = 2,
-	/obj/item/weapon/storage/box/shotgunammo/buckshot = 2,
-	/obj/item/ammo_magazine/ammobox/hrifle_small = 2,
+	/obj/item/ammo_magazine/pistol_35 = 5,
+	/obj/item/ammo_magazine/highcap_pistol_35 = 5,
+	/obj/item/ammo_magazine/speed_loader_pistol_35 = 5,
+	/obj/item/ammo_magazine/smg_35 = 5,
+	/obj/item/ammo_magazine/speed_loader_magnum_40 = 5,
+	/obj/item/ammo_magazine/light_rifle_257 = 3,
+	/obj/item/ammo_magazine/speed_loader_rifle_75 = 4,
+	/obj/item/ammo_magazine/ammobox/pistol_35 =3,
+	/obj/item/ammo_magazine/ammobox/magnum_40 = 3,
+	/obj/item/ammo_magazine/ammobox/shotgun = 2,
+	/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 2,
+	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 2,
 	/obj/item/weapon/tool/knife/tacknife = 3)
 
 	prices = list(/obj/item/device/flash = 200,
@@ -1249,40 +1250,43 @@
 	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1500,
 	/obj/item/weapon/gun/projectile/shotgun/pump = 1300,
 	/obj/item/weapon/gun/projectile/automatic/mac = 2000,
-	/obj/item/ammo_magazine/slpistol/rubber = 60,
-	/obj/item/ammo_magazine/pistol/rubber = 100,
-	/obj/item/ammo_magazine/hpistol/rubber = 160,
-	/obj/item/ammo_magazine/smg/rubber = 320,
-	/obj/item/ammo_magazine/ammobox/pistol/rubber = 280,
-	/obj/item/ammo_magazine/slpistol/practice = 30,
-	/obj/item/ammo_magazine/pistol/practice = 50,
-	/obj/item/ammo_magazine/hpistol/practice = 80,
-	/obj/item/ammo_magazine/ammobox/pistol/practice = 140,
-	/obj/item/ammo_magazine/slmagnum/rubber = 100,
-	/obj/item/ammo_magazine/ammobox/magnum/rubber = 550,
-	/obj/item/ammo_magazine/slmagnum/practice = 50,
-	/obj/item/ammo_magazine/ammobox/magnum/practice = 225,
-	/obj/item/weapon/storage/box/shotgunammo/beanbags = 800,
-	/obj/item/ammo_magazine/lrifle/rubber = 350,
-	/obj/item/weapon/storage/box/shotgunammo/flashshells = 400,
-	/obj/item/weapon/storage/box/shotgunammo/blanks = 50,
+	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 60,
+	/obj/item/ammo_magazine/pistol_35/rubber = 100,
+	/obj/item/ammo_magazine/highcap_pistol_35/rubber = 160,
+	/obj/item/ammo_magazine/smg_35/rubber = 320,
+	/obj/item/ammo_magazine/ammobox/pistol_35/rubber = 280,
+	/obj/item/ammo_magazine/speed_loader_pistol_35/practice = 30,
+	/obj/item/ammo_magazine/pistol_35/practice = 50,
+	/obj/item/ammo_magazine/highcap_pistol_35/practice = 80,
+	/obj/item/ammo_magazine/ammobox/pistol_35/practice = 140,
+	/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 100,
+	/obj/item/ammo_magazine/ammobox/magnum_40/rubber = 550,
+	/obj/item/ammo_magazine/speed_loader_magnum_40/practice = 50,
+	/obj/item/ammo_magazine/ammobox/magnum_40/practice = 225,
+	/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 800,
+	/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber = 350,
+	/obj/item/ammo_magazine/light_rifle_257/rubber = 150,
+	/obj/item/ammo_magazine/ammobox/shotgun/flashshells = 400,
+	/obj/item/ammo_magazine/ammobox/shotgun/blanks = 50,
 	/obj/item/clothing/accessory/holster = 150,
 	/obj/item/weapon/storage/pouch/pistol_holster =150,
 	/obj/item/weapon/gun_upgrade/mechanism/weintraub = 1000,
 	/obj/item/weapon/storage/pouch/ammo = 100,
-	/obj/item/ammo_magazine/ammobox/hrifle_small = 100,
-	/obj/item/ammo_magazine/slpistol = 80,
-	/obj/item/ammo_magazine/pistol = 120,
-	/obj/item/ammo_magazine/hpistol = 180,
-	/obj/item/ammo_magazine/smg = 360,
-	/obj/item/ammo_magazine/ammobox/pistol = 300,
-	/obj/item/ammo_magazine/slmagnum = 130,
-	/obj/item/ammo_magazine/ammobox/magnum = 500,
-	/obj/item/weapon/storage/box/shotgunammo/slug = 800,
-	/obj/item/weapon/storage/box/shotgunammo/buckshot = 800,
-	/obj/item/ammo_magazine/lrifle = 350,
+	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 600,
+	/obj/item/ammo_magazine/speed_loader_pistol_35 = 80,
+	/obj/item/ammo_magazine/pistol_35 = 120,
+	/obj/item/ammo_magazine/highcap_pistol_35 = 180,
+	/obj/item/ammo_magazine/smg_35 = 360,
+	/obj/item/ammo_magazine/ammobox/pistol_35 = 300,
+	/obj/item/ammo_magazine/speed_loader_magnum_40 = 130,
+	/obj/item/ammo_magazine/ammobox/magnum_40 = 500,
+	/obj/item/ammo_magazine/ammobox/shotgun = 800,
+	/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 800,
+	/obj/item/ammo_magazine/ammobox/light_rifle_257 = 350,
+	/obj/item/ammo_magazine/speed_loader_rifle_75 = 500,
+	/obj/item/ammo_magazine/light_rifle_257 = 350,
 	/obj/item/weapon/storage/briefcase/rifle = 150, //SoJ change makes rifle cases 150 credits
-	/obj/item/weapon/tool/knife/tacknife = 200,)
+	/obj/item/weapon/tool/knife/tacknife = 200)
 
 //This one's from bay12
 /obj/machinery/vending/cart
@@ -1353,6 +1357,10 @@
 				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 7,
 				/obj/item/weapon/storage/fancy/cigar = 2,
 				/obj/item/clothing/mask/vape = 5,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry = 10,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/banana = 10,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/lemon = 10,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/nicotine = 5,
 				/obj/item/weapon/storage/box/matches = 10,
 				/obj/item/weapon/flame/lighter/random = 4,
 				/obj/item/weapon/flame/lighter/zippo = 4,
@@ -1380,6 +1388,10 @@
 				/obj/item/weapon/storage/fancy/cigarettes/fortress = 100,
 				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 100,
 				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 100,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry = 50,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/banana = 50,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/lemon = 50,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/nicotine = 50,
 				/obj/item/weapon/storage/box/matches = 25,
 				/obj/item/weapon/flame/lighter/random = 50,
 				/obj/item/weapon/flame/lighter/zippo = 100,
@@ -1518,16 +1530,16 @@
 					/obj/item/weapon/grenade/chem_grenade/teargas = 8,
 					/obj/item/device/flash = 8,
 					/obj/item/weapon/reagent_containers/spray/pepper = 8,
-					/obj/item/ammo_magazine/lrifle/rubber = 8,
-					/obj/item/ammo_magazine/pistol/rubber = 8,
-					/obj/item/ammo_magazine/hpistol/rubber = 8,
-					/obj/item/ammo_magazine/smg/rubber = 8,
-					/obj/item/ammo_magazine/lrifle_short/rubber = 8,
-					/obj/item/ammo_magazine/rifle/rubber = 8,
-					/obj/item/ammo_magazine/hrifle/rubber = 8,
-					/obj/item/ammo_magazine/magnum/rubber = 8,
-					/obj/item/ammo_magazine/slmagnum/rubber = 6,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags = 2,
+					/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber = 8,
+					/obj/item/ammo_magazine/pistol_35/rubber = 8,
+					/obj/item/ammo_magazine/highcap_pistol_35/rubber = 8,
+					/obj/item/ammo_magazine/smg_35/rubber = 8,
+					/obj/item/ammo_magazine/light_rifle_257_short/rubber = 8,
+					/obj/item/ammo_magazine/rifle_75/rubber = 8,
+					/obj/item/ammo_magazine/heavy_rifle_408/rubber = 8,
+					/obj/item/ammo_magazine/magnum_40/rubber = 8,
+					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 6,
+					/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 2,
 					/obj/item/device/hailer = 8,
 					/obj/item/taperoll/police = 8,
 					/obj/item/weapon/storage/box/evidence = 2)
@@ -1605,10 +1617,10 @@
 	auto_price = FALSE
 
 /**
- *  Populate hydroseeds product_records
+ * Populate hydroseeds product_records
  *
- *  This needs to be customized to fetch the actual names of the seeds, otherwise
- *  the machine would simply list "packet of seeds" times 20
+ * This needs to be customized to fetch the actual names of the seeds, otherwise
+ * the machine would simply list "packet of seeds" times 20
  */
 /obj/machinery/vending/hydroseeds/build_inventory()
 	var/list/all_products = list(
@@ -1689,10 +1701,10 @@
 	icon_state = "tool"
 	icon_deny = "tool-deny"
 	products = list(/obj/item/stack/cable_coil/random = 10,/obj/item/weapon/tool/crowbar = 5,/obj/item/weapon/tool/weldingtool = 5,/obj/item/weapon/tool/wirecutters = 3, /obj/item/weapon/tool/wirecutters/pliers = 3,
-					/obj/item/weapon/tool/wrench = 5,/obj/item/weapon/tool/hammer = 5,/obj/item/device/scanner/gas = 5,/obj/item/device/t_scanner = 5, /obj/item/weapon/tool/screwdriver = 5, /obj/item/clothing/gloves/insulated/cheap  = 2, /obj/item/clothing/gloves/insulated = 1,
+					/obj/item/weapon/tool/wrench = 5,/obj/item/weapon/tool/hammer = 5,/obj/item/device/scanner/gas = 5,/obj/item/device/t_scanner = 5, /obj/item/weapon/tool/screwdriver = 5, /obj/item/clothing/gloves/insulated/cheap = 2, /obj/item/clothing/gloves/insulated = 1,
 					/obj/item/weapon/storage/pouch/engineering_tools = 2, /obj/item/weapon/storage/pouch/engineering_supply = 2, /obj/item/weapon/weldpack/canister = 4, /obj/item/weapon/weldpack = 2)
 	prices = list(/obj/item/weapon/tool/hammer = 30,/obj/item/stack/cable_coil/random = 100,/obj/item/weapon/tool/crowbar = 30,/obj/item/weapon/tool/weldingtool = 50,/obj/item/weapon/tool/wirecutters = 30, /obj/item/weapon/tool/wirecutters/pliers = 30,
-					/obj/item/weapon/tool/wrench = 30,/obj/item/device/scanner/gas = 50,/obj/item/device/t_scanner = 50, /obj/item/weapon/tool/screwdriver = 30, /obj/item/clothing/gloves/insulated/cheap  = 80, /obj/item/clothing/gloves/insulated = 600,
+					/obj/item/weapon/tool/wrench = 30,/obj/item/device/scanner/gas = 50,/obj/item/device/t_scanner = 50, /obj/item/weapon/tool/screwdriver = 30, /obj/item/clothing/gloves/insulated/cheap = 80, /obj/item/clothing/gloves/insulated = 600,
 					/obj/item/weapon/storage/pouch/engineering_tools = 300, /obj/item/weapon/storage/pouch/engineering_supply = 600, /obj/item/weapon/weldpack/canister = 300, /obj/item/weapon/weldpack/canister = 675)
 
 /obj/machinery/vending/engivend
@@ -1991,7 +2003,7 @@
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 5,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 5,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors = 2,
+					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/logistics = 2,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 10,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 10,
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 5,
@@ -2002,21 +2014,21 @@
 					 /obj/item/weapon/circuitboard/vending = 10)
 	contraband = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 3)
 	prices = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 50,
-				  /obj/item/weapon/storage/box/data_disk/basic = 100,
-	 			  /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 400,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 500,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 1800,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 600,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/conveyors = 400,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 400,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 500,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 600,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 3000,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 700,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork = 600,
-				  /obj/item/weapon/circuitboard/autolathe = 700,
-				  /obj/item/weapon/circuitboard/vending = 500,
-				  /obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 1000)
+				 /obj/item/weapon/storage/box/data_disk/basic = 100,
+	 			 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 400,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 500,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 1800,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 600,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/logistics = 400,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 400,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 500,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 600,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 3000,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 700,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork = 600,
+				 /obj/item/weapon/circuitboard/autolathe = 700,
+				 /obj/item/weapon/circuitboard/vending = 500,
+				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 1000)
 
 
 /obj/machinery/vending/fitness
@@ -2100,15 +2112,15 @@
 					/obj/item/weapon/storage/deferred/crate/uniform_black = 4, /obj/item/weapon/storage/deferred/crate/uniform_flak = 2,
 					/obj/item/weapon/storage/deferred/crate/uniform_light = 2,
 					/obj/item/weapon/gun/projectile/boltgun/sa = 8,
-					/obj/item/ammo_magazine/ammobox/hrifle = 30,
+					/obj/item/ammo_magazine/ammobox/heavy_rifle_408 = 30,
 					)
 	prices = list(
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 50,
-          				/obj/item/weapon/storage/deferred/crate/uniform_green = 2000, /obj/item/weapon/storage/deferred/crate/uniform_brown = 2000,
+     				/obj/item/weapon/storage/deferred/crate/uniform_green = 2000, /obj/item/weapon/storage/deferred/crate/uniform_brown = 2000,
 					/obj/item/weapon/storage/deferred/crate/uniform_black = 2000, /obj/item/weapon/storage/deferred/crate/uniform_flak = 2200,
 					/obj/item/weapon/storage/deferred/crate/uniform_light = 1800,
 					/obj/item/weapon/gun/projectile/boltgun/sa = 1000,
-					/obj/item/ammo_magazine/ammobox/hrifle = 300,
+					/obj/item/ammo_magazine/ammobox/heavy_rifle_408 = 300,
 					)
 	idle_power_usage = 211
 	auto_price = FALSE

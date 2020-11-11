@@ -1,7 +1,8 @@
 /obj/item/weapon/tool/omnitool
 	name = "Lonestars \"Munchkin 5000\""
-	desc = "A fuel powered monster of a tool. Its welding attachment is capable of welding things without an eye-damaging flash, so no eye protection is required."
+	desc = "A fuel-powered monster of a tool. Its welder part is the most advanced one, capable of welding things without harmfull glow and sparks, so no protection needed. The complexity of this tool means that regular maintainence is required."
 	icon_state = "omnitool"
+	max_health = 200
 	w_class = ITEM_SIZE_NORMAL
 	worksound = WORKSOUND_DRIVER_TOOL
 	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 50, QUALITY_BOLT_TURNING = 50, QUALITY_DRILLING = 20, QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 10)
@@ -36,6 +37,11 @@
 	var/stunforce = 0
 	var/agonyforce = 40
 	var/hitcost = 100
+
+/obj/item/weapon/tool/arcwelder/cyborg
+	desc = "A specialized tool designed by the Artificer's Guild. It functions as a battery powered welder and multitool. This version has a regulation on it preventing it to be used as a taser."
+	name = "integrated arc welder"
+	suitable_cell = /obj/item/weapon/cell/medium/moebius/nuclear
 
 /obj/item/weapon/tool/arcwelder/turn_on(mob/user)
 
@@ -162,6 +168,7 @@
 	suitable_cell = null
 	degradation = 0
 	max_upgrades = 0
+	workspeed = 1
 	//matter = list(MATERIAL_BIOMATTER = 10) No
 
 /obj/item/weapon/tool/engimplant
@@ -191,6 +198,7 @@
 	suitable_cell = null
 	degradation = 0
 	max_upgrades = 0
+	workspeed = 1
 
 /obj/item/weapon/tool/engimplant/Destroy() // code for omnitool buffers was copied from multitools.dm
 	unregister_buffer(buffer_object)
@@ -236,3 +244,9 @@
 	user.AddTopicPrint(src)
 	MT.interact(src, user)
 	return 1
+
+/obj/item/weapon/tool/silk_wand
+	name = "metal silk weaver"
+	desc = "A small metal two pronged fork used to gather balls of silk."
+	icon_state = "silk_wand"
+	tool_qualities = list(QUALITY_WEAVING = 30)

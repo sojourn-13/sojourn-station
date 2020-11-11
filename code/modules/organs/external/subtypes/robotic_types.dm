@@ -48,6 +48,12 @@
 	force_icon = 'icons/mob/human_races/cyberlimbs/technomancer.dmi'
 	model = "technomancer"
 
+/obj/item/organ/external/robotic/junktech
+	name = "\"Junktech\""
+	desc = "Custom tooled and held together by hope and duct tape."
+	force_icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
+	model = "ghetto"
+
 //In game prostheses
 /obj/item/organ/external/robotic/moebius
 	name = "\"Soteria\""

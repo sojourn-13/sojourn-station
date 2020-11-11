@@ -66,9 +66,10 @@ var/game_id = null
 
 /world/New()
 	// Begin loading of extools DLL and components
-	extools_initialize()
-	maptick_initialize()
-	debugger_initialize()
+	var/extools = world.GetConfig("env", "EXTOOLS_DLL") || (world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so")
+	if (fexists(extools))
+		call(extools, "maptick_initialize")()
+		call(extools, "debug_initialize")()
 	// End extools
 	//logs
 	start_time = world.realtime

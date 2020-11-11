@@ -30,30 +30,30 @@
 /mob/living/carbon/human/isMonkey()
 	return istype(species, /datum/species/monkey)
 
-proc/isdeaf(A)
+/proc/isdeaf(A)
 	if(isliving(A))
 		var/mob/living/M = A
 		return (M.sdisabilities & DEAF) || M.ear_deaf
 	return 0
 
-proc/hasorgans(A) // Fucking really??
+/proc/hasorgans(A) // Fucking really??
 	return ishuman(A)
 
-proc/iscuffed(A)
+/proc/iscuffed(A)
 	if(iscarbon(A))
 		var/mob/living/carbon/C = A
 		if(C.handcuffed)
 			return 1
 	return 0
 
-proc/hassensorlevel(A, var/level)
+/proc/hassensorlevel(A, var/level)
 	var/mob/living/carbon/human/H = A
 	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = H.w_uniform
 		return U.sensor_mode >= level
 	return 0
 
-proc/getsensorlevel(A)
+/proc/getsensorlevel(A)
 	var/mob/living/carbon/human/H = A
 	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = H.w_uniform
@@ -196,7 +196,7 @@ var/list/global/organ_rel_size = list(
 	if(re_encode)
 		. = html_encode(.)
 
-proc/slur(phrase)
+/proc/slur(phrase)
 	phrase = html_decode(phrase)
 	var/leng=length(phrase)
 	var/counter=length(phrase)
@@ -220,28 +220,42 @@ proc/slur(phrase)
 	return html_encode(newphrase)
 
 /proc/stutter(phrase)
-	var/n = length(phrase)//length of the entire word
-	var/list/t = list()
-	var/p = 1//1 is the start of any word
-	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
-		var/n_letter = copytext(phrase, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
-		if (prob(80) && (lowertext(n_letter) in LIST_OF_CONSONANT))
-			if (prob(10))
-				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
-			else
-				if (prob(20))
-					n_letter = text("[n_letter]-[n_letter]-[n_letter]")
-				else
-					if (prob(5))
-						n_letter = null
-					else
-						n_letter = text("[n_letter]-[n_letter]")
-		t += n_letter //since the above is ran through for each letter, the text just adds up back to the original word.
-		p++//for each letter p is increased to find where the next letter will be.
-	return sanitize(jointext(t,null))
+	phrase = html_decode(phrase)
+
+	var/list/split_phrase = splittext(phrase," ") //Split it up into words.
+
+	var/list/unstuttered_words = split_phrase.Copy()
+	var/i = rand(1,3)
+	for(,i > 0,i--) //Pick a few words to stutter on.
+
+		if (!unstuttered_words.len)
+			break
+		var/word = pick(unstuttered_words)
+		unstuttered_words -= word //Remove from unstuttered words so we don't stutter it again.
+		var/index = split_phrase.Find(word) //Find the word in the split phrase so we can replace it.
+
+		//Search for dipthongs (two letters that make one sound.)
+		var/first_sound = copytext(word,1,3)
+		var/first_letter = copytext(word,1,2)
+		if(lowertext(first_sound) in list("ch","th","sh"))
+			first_letter = first_sound
+
+		//Repeat the first letter to create a stutter.
+		var/rnum = rand(1,3)
+		switch(rnum)
+			if(1)
+				word = "[first_letter]-[word]"
+			if(2)
+				word = "[first_letter]-[first_letter]-[word]"
+			if(3)
+				word = "[first_letter]-[word]"
+
+		split_phrase[index] = word
+
+	return sanitize(jointext(split_phrase," "))
 
 
-proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
+/proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
 	/* Turn text into complete gibberish! */
 	var/returntext = ""
 	for(var/i = 1, i <= length(t), i++)
@@ -627,10 +641,14 @@ proc/is_blind(A)
 	embedded = list()
 
 /mob/proc/skill_to_evade_traps()
+	if(!stats)
+		return 0
 	var/prob_evade = 0
 	var/base_prob_evade = 30
 	if(MOVING_DELIBERATELY(src))
 		prob_evade += base_prob_evade
+	if(!stats)
+		return prob_evade
 	prob_evade += base_prob_evade * (stats.getStat(STAT_VIG)/STAT_LEVEL_GODLIKE - weight_coeff())
 	if(stats.getPerk(PERK_SURE_STEP))
 		prob_evade += base_prob_evade*30/STAT_LEVEL_GODLIKE

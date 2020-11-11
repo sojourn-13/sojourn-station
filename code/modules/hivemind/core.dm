@@ -39,8 +39,9 @@ var/datum/hivemind/hive_mind_ai
 				"NanoNurse", "Vivisector", "Ex Costa", "Apostasy", "Gnosis", "Balaam", "Ophite",
 				"Sarif", "VersaLife", "Slylandro", "SHODAN", "Pandora", "Obelisk")
 
-	surname = pick("Mk I", "Mk II", "Mk III", "Mk IV", "Mk V", "v0.9",
-					"v1.0", "v2.0", "2418-B", "Open Beta", "Pre-Release", "Commercial Release", "Closed Alpha", "v1.1")
+	surname = pick("Mk I", "Mk II", "Mk III", "Mk IV", "Mk V",
+					"v0.9", "v1.0", "v1.1", "v2.0", "2418-B", "Open Beta",
+					"Pre-Release", "Commercial Release", "Closed Alpha", "Hivebuilt")
 
 	var/list/all_machines = subtypesof(/obj/machinery/hivemind_machine) - /obj/machinery/hivemind_machine/node
 	//price list building

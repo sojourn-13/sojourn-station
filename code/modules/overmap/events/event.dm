@@ -24,25 +24,25 @@
 		if(!candidate_turfs.len)
 //			world << "No candidate_tufs"
 			break
-		var/overmap_event_type = pick(subtypesof(/datum/overmap_event))
-		if(!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail) && \
-		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_medium) && \
-		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_core))
-			var/datum/overmap_event/overmap_event = new overmap_event_type
+//		var/overmap_event_type = pick(subtypesof(/datum/overmap_event))
+//		if(!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail) &&
+//		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_medium) &&
+//		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_core))
+//			var/datum/overmap_event/overmap_event = new overmap_event_type
 
-			var/list/event_turfs = acquire_event_turfs(overmap_event.count, overmap_event.radius, candidate_turfs, overmap_event.continuous)
-			candidate_turfs -= event_turfs
+//			var/list/event_turfs = acquire_event_turfs(overmap_event.count, overmap_event.radius, candidate_turfs, overmap_event.continuous)
+//			candidate_turfs -= event_turfs
 
-			for(var/event_turf in event_turfs)
-				events_by_turf[event_turf] = overmap_event
-				GLOB.entered_event.register(event_turf, src, /decl/overmap_event_handler/proc/on_turf_entered)
-				GLOB.exited_event.register(event_turf, src, /decl/overmap_event_handler/proc/on_turf_exited)
+//			for(var/event_turf in event_turfs)
+//				events_by_turf[event_turf] = overmap_event
+//				GLOB.entered_event.register(event_turf, src, /decl/overmap_event_handler/proc/on_turf_entered)
+//				GLOB.exited_event.register(event_turf, src, /decl/overmap_event_handler/proc/on_turf_exited)
 
-				var/obj/effect/overmap_event/event = new(event_turf)
+//				var/obj/effect/overmap_event/event = new(event_turf)
 	//			world << "Created new event in [event.loc.x], [event.loc.y]"
-				event.name = overmap_event.name
-				event.icon_state = pick(overmap_event.event_icon_states)
-				event.opacity =  overmap_event.opacity
+//				event.name = overmap_event.name
+//				event.icon_state = pick(overmap_event.event_icon_states)
+//				event.opacity =  overmap_event.opacity
 
 /decl/overmap_event_handler/proc/get_event_turfs_by_z_level(var/z_level)
 	var/z_level_text = num2text(z_level)
@@ -143,12 +143,12 @@
 	if(!SSevent)
 		admin_notice("<span class='danger'>Event manager not setup.</span>")
 		return
-	if(victim in victims)
-		if(!istype(src, /datum/overmap_event/meteor/comet_tail_core) && \
-		!istype(src, /datum/overmap_event/meteor/comet_tail_medium)  && \
-		!istype(src, /datum/overmap_event/meteor/comet_tail))
-			admin_notice("<span class='danger'>Multiple attempts to trigger the same event by [victim] detected.</span>")
-			return
+//	if(victim in victims)
+//		if(!istype(src, /datum/overmap_event/meteor/comet_tail_core) &&
+//		!istype(src, /datum/overmap_event/meteor/comet_tail_medium)  &&
+//		!istype(src, /datum/overmap_event/meteor/comet_tail))
+//			admin_notice("<span class='danger'>Multiple attempts to trigger the same event by [victim] detected.</span>")
+//			return
 	LAZYADD(victims, victim)
 	//var/datum/event_meta/EM = new(difficulty, "Overmap event - [name]", event, add_to_queue = FALSE, is_one_shot = TRUE)
 	var/datum/event/E = new event(null, difficulty)
@@ -163,7 +163,7 @@
 		var/datum/event/E = victims[victim]
 		E.kill()
 		LAZYREMOVE(victims, victim)
-
+/*
 /datum/overmap_event/meteor
 	name = "asteroid field"
 	event = /datum/event/meteor_wave/overmap
@@ -202,7 +202,7 @@
 	if(victims[victim])
 		var/datum/event/meteor_wave/overmap/E = victims[victim]
 		E.victim = victim
-
+*/
 /datum/overmap_event/electric
 	name = "electrical storm"
 	event = /datum/event/electrical_storm
@@ -227,7 +227,7 @@
 	radius = 3
 	opacity = 0
 	event_icon_states = list("ion1", "ion2", "ion3", "ion4")
-
+/*
 /datum/overmap_event/carp
 	name = "carp shoal"
 	event = /datum/event/carp_migration
@@ -237,7 +237,7 @@
 	difficulty = EVENT_LEVEL_MODERATE
 	continuous = FALSE
 	event_icon_states = list("carp1", "carp2")
-
+*/
 /datum/overmap_event/carp/major
 	name = "carp school"
 	count = 5

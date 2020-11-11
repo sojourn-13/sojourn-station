@@ -572,6 +572,71 @@
 /obj/item/weapon/reagent_containers/food/snacks/egg/yellow
 	icon_state = "egg-yellow"
 
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff
+	name = "Masterpiece Donut"
+	desc = "The taste you will never forget."
+	filling_color = "#ED1169"
+	bitesize = 5
+	center_of_mass = list("x"=16, "y"=11)
+	var/list/stats_buff = list()
+	var/buff_power = 6
+	price_tag = 500
+	var/buff_time = 20 MINUTES
+	nutriment_amt = 3
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/On_Consume(var/mob/eater, var/mob/feeder = null)
+	..()
+	if(eater.stats)
+		for(var/stat in stats_buff)
+			if(eater.stats.getTempStat(stat, "donut"))
+				eater.stats.removeTempStat(stat, "donut")
+				eater.stats.addTempStat(stat, buff_power, buff_time, "donut")
+				to_chat(eater, SPAN_NOTICE("Your knowledge of [stat] feels renewed."))
+			eater.stats.addTempStat(stat, buff_power, buff_time, "donut")
+			to_chat(eater, SPAN_NOTICE("Your knowledge of [stat] is increased for a short period of time. Make use of it."))
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/mec
+	name = "Yellow Masterpiece Donut"
+	desc = "The taste you will never forget. Special for engineers."
+	icon_state = "donut_mec"
+	overlay_state = "donut_mec_c"
+	stats_buff = list(STAT_MEC)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/cog
+	name = "Purple Masterpiece Donut"
+	desc = "The taste you will never forget. Special for intelligent people."
+	icon_state = "donut_cog"
+	overlay_state = "donut_cog_c"
+	stats_buff = list(STAT_COG)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/bio
+	name = "Green Masterpiece Donut"
+	desc = "The taste you will never forget. Special for medics."
+	icon_state = "donut_bio"
+	overlay_state = "donut_bio_c"
+	stats_buff = list(STAT_BIO)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/rob
+	name = "Brown Masterpiece Donut"
+	desc = "The taste you will never forget. Special for strong people."
+	icon_state = "donut_rob"
+	overlay_state = "donut_rob_c"
+	stats_buff = list(STAT_ROB)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/tgh
+	name = "Cream Masterpiece Donut"
+	desc = "The taste you will never forget. Special for tough people."
+	icon_state = "donut_tgh"
+	overlay_state = "donut_tgh_c"
+	stats_buff = list(STAT_TGH)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/vig
+	name = "Blue Masterpiece Donut"
+	desc = "The taste you will never forget. Special for vigilant people."
+	icon_state = "donut_vig"
+	overlay_state = "donut_vig_c"
+	stats_buff = list(STAT_VIG)
+
 /obj/item/weapon/reagent_containers/food/snacks/friedegg
 	name = "fried egg"
 	desc = "A fried egg, with a touch of salt and pepper."
@@ -3050,3 +3115,11 @@
 	nutriment_desc = list("bread" = 2, "sweetness" = 3)
 	nutriment_amt = 6
 
+/obj/item/weapon/reagent_containers/food/snacks/organ
+	name = "organ"
+	desc = "Technically qualifies as organic."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "appendix"
+	filling_color = "#E00D34"
+	bitesize = 3
+	nutriment_amt = 5

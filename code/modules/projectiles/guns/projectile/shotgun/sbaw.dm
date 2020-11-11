@@ -24,7 +24,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
-
+	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET)
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)

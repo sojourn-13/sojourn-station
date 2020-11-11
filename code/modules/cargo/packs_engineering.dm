@@ -106,25 +106,34 @@
 	/obj/item/stack/material/steel/full,
 	/obj/item/stack/material/steel/full,
 	/obj/item/stack/material/steel/full)
-	cost = 960
+	cost = 1160
 	containertype = /obj/structure/largecrate
 	crate_name = "Bulk metal crate"
 	group = "Engineering"
 
-/datum/supply_pack/glass50
+/datum/supply_pack/glass120
 	name = "Glass Sheets Crate (120)"
 	contains = list(/obj/item/stack/material/glass)
 	amount = 120
-	cost = 400
+	cost = 600
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "glass sheet crate"
+	group = "Engineering"
+
+/datum/supply_pack/borosilicate_glass120
+	name = "Borosilicate Glass Sheets Crate (120)"
+	contains = list(/obj/item/stack/material/glass/plasmaglass)
+	amount = 120
+	cost = 1400
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "borosilicate glass sheet crate"
 	group = "Engineering"
 
 /datum/supply_pack/wood50
 	name = "Wooden Planks Crate (120)"
 	contains = list(/obj/item/stack/material/wood)
 	amount = 120
-	cost = 2000
+	cost = 600
 	containertype = /obj/structure/closet/crate
 	crate_name = "wooden planks crate"
 	group = "Engineering"
@@ -133,7 +142,7 @@
 	name = "Plasteel Sheets Crate (60)"
 	contains = list(/obj/item/stack/material/plasteel)
 	amount = 60
-	cost = 2400
+	cost = 1300
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "plasteel sheets crate"
 	group = "Engineering"
@@ -301,7 +310,7 @@
 					/obj/item/weapon/circuitboard/solar_control,
 					/obj/item/weapon/tracker_electronics,
 					/obj/item/weapon/paper/solar)
-	cost = 1600
+	cost = 1300
 	containertype = /obj/structure/closet/crate
 	crate_name = "solar pack crate"
 	group = "Engineering"

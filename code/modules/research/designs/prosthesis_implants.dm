@@ -51,10 +51,13 @@
 	name = "Embedded armblade"
 	build_path = /obj/item/organ_module/active/simple/armblade
 
+/datum/design/research/item/mechfab/modules/energy_blade
+	name = "Embedded energy blade"
+	build_path = /obj/item/organ_module/active/simple/armblade/energy_blade
+
 /datum/design/research/item/mechfab/modules/runner
 	name = "Mechanical muscles"
 	build_path = /obj/item/organ_module/muscle
-
 
 /datum/design/research/item/mechfab/modules/multitool/surgical
 	build_path = /obj/item/organ_module/active/simple/surgical
@@ -86,3 +89,37 @@
 /datum/design/research/item/implant/alarm
 	name = "death alarm"
 	build_path = /obj/item/weapon/implantcase/death_alarm
+
+/datum/design/research/item/mechfab/modules/hud
+
+/datum/design/research/item/mechfab/modules/hud/med
+	build_path = /obj/item/organ_module/active/hud/med
+	name = "Embedded Med Hud Shades"
+
+/datum/design/research/item/mechfab/modules/hud/sec
+	build_path = /obj/item/organ_module/active/hud/sec
+	name = "Embeded Security Hud Shades"
+
+/datum/design/research/item/mechfab/modules/hud/night
+	build_path = /obj/item/organ_module/active/hud/night
+	name = "Embedded Night Vision Shades"
+
+/datum/design/research/item/mechfab/modules/hud/thermal
+	build_path = /obj/item/organ_module/active/hud/thermal
+	name = "Embedded Thermal Shades"
+
+/datum/design/research/item/mechfab/modules/hud/welder
+	build_path = /obj/item/organ_module/active/hud/welder
+	name = "Embedded Welder Shades"
+
+/datum/design/research/item/mechfab/modules/hud/thermal_bio
+	build_path = /obj/item/weapon/biogoop/thermal
+	name = "Embedded bio-thermal shades"
+
+/datum/design/research/item/mechfab/modules/hud/welder_bio
+	build_path = /obj/item/weapon/biogoop/welding
+	name = "Embedded bio-welder shades"
+
+/datum/design/research/item/mechfab/modules/hud/night_bio
+	build_path = /obj/item/weapon/biogoop/night
+	name = "Embedded bio-night vision shades"

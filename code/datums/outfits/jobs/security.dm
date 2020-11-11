@@ -23,11 +23,11 @@
 	id_type = /obj/item/weapon/card/id/hos
 	head = /obj/item/clothing/head/rank/commander
 	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz/rubber = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz_50/rubber = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 /decl/hierarchy/outfit/job/security/smc
 	name = OUTFIT_JOB_NAME("Blackshield - Blackshield Commander")
-	l_ear = /obj/item/device/radio/headset/heads/hos
+	l_ear = /obj/item/device/radio/headset/heads/bscom
 	uniform = /obj/item/clothing/under/rank/commander
 	suit = /obj/item/clothing/suit/armor/commander/militia
 	l_pocket = /obj/item/device/flash
@@ -37,7 +37,7 @@
 	id_type = /obj/item/weapon/card/id/hos
 	head = /obj/item/clothing/head/rank/milcom/beret
 	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz_50 = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 
 /decl/hierarchy/outfit/job/security/gunserg
@@ -52,6 +52,7 @@
 
 /decl/hierarchy/outfit/job/security/serg
 	name = OUTFIT_JOB_NAME("Blackshield - Sergeant")
+	l_ear = /obj/item/device/radio/headset/headset_blackshield
 	uniform = /obj/item/clothing/under/instructor
 	head = /obj/item/clothing/head/rank/instructor_hat
 	glasses = /obj/item/clothing/glasses/ballistic
@@ -72,7 +73,7 @@
 	r_hand = /obj/item/weapon/storage/briefcase/crimekit
 	id_type = /obj/item/weapon/card/id/det
 	pda_type = /obj/item/modular_computer/pda/forensics
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/ammo_magazine/slkurtz/rubber = 2, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2)
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 2, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2)
 
 /decl/hierarchy/outfit/job/security/detective/New()
 	..()
@@ -81,6 +82,7 @@
 /decl/hierarchy/outfit/job/security/medspec
 	name = OUTFIT_JOB_NAME("Blackshield - Corpsman")
 	l_pocket = /obj/item/device/flash
+	l_ear = /obj/item/device/radio/headset/headset_blackshield
 	id_type = /obj/item/weapon/card/id/medcpec
 	uniform = /obj/item/clothing/under/rank/corpsman
 	head = /obj/item/clothing/head/rank/corpsman/beret
@@ -101,6 +103,7 @@
 
 /decl/hierarchy/outfit/job/security/troop
 	name = OUTFIT_JOB_NAME("Blackshield - Trooper")
+	l_ear = /obj/item/device/radio/headset/headset_blackshield
 	l_pocket = /obj/item/device/flash
 	uniform = /obj/item/clothing/under/rank/trooper
 	mask = /obj/item/clothing/mask/balaclava/tactical

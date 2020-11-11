@@ -151,11 +151,11 @@
 	maxcharge = 1000
 
 /obj/item/weapon/cell/medium/moebius/super
-	name = "Soteria \"Power-Geyser 1000M\""
+	name = "Soteria \"Power-Geyser 1200M\""
 	desc = "Soteria Institute branded rechargeable M-standardized power cell. This advanced version can store even more energy."
 	icon_state = "meb_m_sup"
 	origin_tech = list(TECH_POWER = 5)
-	maxcharge = 1000
+	maxcharge = 1200
 
 /obj/item/weapon/cell/medium/moebius/hyper
 	name = "Soteria \"Power-Geyser 1400M\""

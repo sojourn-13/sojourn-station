@@ -15,6 +15,7 @@
 	unlocks_designs = list(	/datum/design/research/item/science_tool,
 							/datum/design/research/item/part/basic_micro_laser,
 							/datum/design/research/item/part/basic_matter_bin,
+							/datum/design/research/item/part/consolescreen,
 							/datum/design/research/circuit/arcade_battle,
 							/datum/design/research/circuit/arcade_orion_trail,
 							/datum/design/research/circuit/autolathe,
@@ -125,8 +126,25 @@
 							/datum/design/research/item/custom_circuit_assembly/medium,
 							/datum/design/research/item/custom_circuit_assembly/drone,
 							/datum/design/research/item/custom_circuit_assembly/large,
+							/datum/design/research/item/custom_circuit_assembly/implant,
 							/datum/design/research/item/custom_circuit_assembly/implant
 							)
+
+/datum/technology/custom_circuits_advanced
+	name = "Advanced Designs"
+	desc = "Integral Ciruits - Advanced Designs"
+	tech_type = RESEARCH_ENGINEERING
+
+	x = 0.4
+	y = 0.9
+	icon = "tesla"
+
+	required_technologies = list(/datum/technology/custom_circuits)
+	required_tech_levels = list()
+	cost = 2000
+
+	unlocks_designs = list(/datum/design/research/item/custom_circuit_assembly/advanced_designs)
+
 /* No tesla engine?
 /datum/technology/tesla
 	name = "Tesla"
@@ -146,8 +164,8 @@
 
 // TO ADD: advmop?, holosign, spraycan, spacesuit & helmet?, glowsticks_adv, stimpack
 /datum/technology/supplyanddemand
-	name = "Supply And Demand"
-	desc = "Supply And Demand"
+	name = "Supply and Demand"
+	desc = "Supply and Demand"
 	tech_type = RESEARCH_ENGINEERING
 
 	x = 0.4
@@ -215,7 +233,8 @@
 
 	unlocks_designs = list(	/datum/design/autolathe/tool/pneumatic_crowbar,
 							/datum/design/autolathe/tool/rcd,
-							/datum/design/autolathe/tool/rcd_ammo
+							/datum/design/autolathe/tool/rcd_ammo,
+							/datum/design/autolathe/tool/combat_shovel
 							)
 
 /datum/technology/improved_tools
@@ -402,7 +421,8 @@
 
 	unlocks_designs = list(/datum/design/research/item/part/RPED,
 							 /datum/design/research/circuit/secure_airlock,
-							 /datum/design/research/item/part/RPED/mini)
+							 /datum/design/research/item/part/RPED/mini,
+							 /datum/design/research/item/part/rocket)
 
 /datum/technology/industrial_printing
 	name = "Industrial Printing"
@@ -417,7 +437,7 @@
 	required_tech_levels = list(RESEARCH_ENGINEERING = 7)
 	cost = 3500
 
-	unlocks_designs = list(/datum/design/research/circuit/industrial_printer,
+	unlocks_designs = list(/datum/design/research/circuit/industrial_autolathe,
 							/datum/design/research/circuit/recharger_industrial,
 							/datum/design/research/circuit/industrial_grinder,
 							/datum/design/research/circuit/industrial_chems
@@ -459,7 +479,8 @@
 
 	unlocks_designs = list(	/datum/design/research/item/rig_drill,
 							/datum/design/research/item/rig_anomaly_scanner,
-							/datum/design/research/item/rig_ore_scanner
+							/datum/design/research/item/rig_ore_scanner,
+							/datum/design/research/item/rig_meson_goggles
 							)
 
 

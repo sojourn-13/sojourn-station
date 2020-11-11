@@ -26,7 +26,7 @@
 	origin_tech = list(TECH_DATA = 1, TECH_POWER = 2, TECH_ENGINEERING = 3)
 
 /obj/item/weapon/circuitboard/pacman/miss
-	build_name = "MRSPACMAN-type generator"
+	build_name = "MISSSPACMAN-type generator"
 	build_path = /obj/machinery/power/port_gen/pacman/miss
 	origin_tech = list(TECH_DATA = 4, TECH_POWER = 6, TECH_ENGINEERING = 6)
 

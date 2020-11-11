@@ -3,7 +3,7 @@
 	desc = "\"Old Testament\" brand cleansing carbine. Uses solid biomass as ammo and dispense cleansing liquid on hit. Despite many attempts, nobody is quite sure how it works."
 	icon_state = "nt_sprayer"
 	icon = 'icons/obj/guns/matter/nt_sprayer.dmi'
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = SLOT_BACK|SLOT_BELT
 	fire_sound = 'sound/weapons/Genhit.ogg'
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1, TECH_BIO = 4)
 	matter_type = MATERIAL_BIOMATTER

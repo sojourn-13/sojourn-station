@@ -5,10 +5,10 @@
 	icon_state = "muscle"
 
 /obj/item/organ_module/muscle/onInstall(obj/item/organ/external/E)
-	E.tally -= 0.25
+	E.tally -= 0.35
 
 /obj/item/organ_module/muscle/onRemove(obj/item/organ/external/E)
-	E.tally += 0.25
+	E.tally += 0.35
 
 /obj/item/organ_module/muscle/organic
 	name = "organic muscle augments"

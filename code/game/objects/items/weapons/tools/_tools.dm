@@ -267,6 +267,16 @@
 //Simple form ideal for basic use. That proc will return TRUE only when everything was done right, and FALSE if something went wrong, ot user was unlucky.
 //Editionaly, handle_failure proc will be called for a critical failure roll.
 /obj/item/proc/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
+	if (health)//Low health on a tool increases failure chance. Scaling up as it breaks further.
+		if (health > max_health * 0.80)//100-80% is normal operation
+		else if (health > max_health * 0.40)
+			fail_chance += 5//80-40% is -5 precision
+		else if (health > max_health * 0.20)
+			fail_chance += 10//40-20% is -10 precision
+		else if (health > max_health * 0.10)
+			fail_chance += 20//20-10% is -20 precision
+		else
+			fail_chance += 40//below 10% is -40 precision. Good luck!
 	var/obj/item/weapon/tool/T
 	if (istool(src))
 		T = src
@@ -639,23 +649,21 @@
 
 //We are cheking if our item got required qualities. If we require several qualities, and item posses more than one of those, we ask user to choose how that item should be used
 /obj/item/proc/get_tool_type(mob/living/user, list/required_qualities, atom/use_on, datum/callback/CB)
-	var/list/L = required_qualities & tool_qualities
-
-	if(!L.len)
-		return FALSE
-
-	var/return_quality
-	if(L.len > 1)
-		for(var/i in L)
-			L[i] = image(icon = 'icons/mob/radial/tools.dmi', icon_state = i)
-		return_quality = show_radial_menu(user, use_on ? use_on : user, L, tooltips = TRUE, require_near = TRUE, custom_check = CB)
-	else
-		return_quality = L[1]
-
-	if(!return_quality)
+	if(!tool_qualities) //This is not a tool, or does not have tool qualities
 		return
 
-	return return_quality
+	var/list/L = required_qualities & tool_qualities
+
+	if(!(L.len))	//If the tool has none of the required qualities, the list is empty and thus we exit out of the proc
+		return
+
+	if(L.len == 1)
+		return L[1]
+
+	for(var/i in L)
+		L[i] = image(icon = 'icons/mob/radial/tools.dmi', icon_state = i)
+	return show_radial_menu(user, use_on ? use_on : user, L, tooltips = TRUE, require_near = TRUE, custom_check = CB)
+
 
 /obj/item/weapon/tool/proc/turn_on(var/mob/user)
 	if(use_power_cost)
@@ -671,6 +679,8 @@
 	tool_qualities = switched_on_qualities
 	if (!isnull(switched_on_force))
 		force = switched_on_force
+		if(wielded)
+			force *= 1.3
 	if(glow_color)
 		set_light(l_range = 1.7, l_power = 1.3, l_color = glow_color)
 	START_PROCESSING(SSobj, src)
@@ -708,7 +718,15 @@
 	if (timespent < 5)
 		timespent = 5
 
-	if(use_power_cost)
+	if(use_power_cost && isrobot(user))
+		var/mob/living/silicon/robot/R = user
+		if(R.cell)
+			var/cost = use_power_cost
+			if(R.cell.charge >= cost)
+				R.cell.use(cost)
+			return 1
+
+	if(use_power_cost &! isrobot(user))
 		if (!cell?.checked_use(use_power_cost*timespent))
 			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 			return FALSE
@@ -948,17 +966,6 @@
 		if(safety<FLASH_PROTECTION_MAJOR)
 			if(E.damage > 10)
 				to_chat(user, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
-
-			if (E.damage >= E.min_broken_damage)
-				to_chat(H, SPAN_DANGER("You go blind!"))
-				H.sdisabilities |= BLIND
-			else if (E.damage >= E.min_bruised_damage)
-				to_chat(H, SPAN_DANGER("You go blind!"))
-				H.eye_blind = 5
-				H.eye_blurry = 5
-				H.disabilities |= NEARSIGHTED
-				spawn(100)
-					H.disabilities &= ~NEARSIGHTED
 
 
 /obj/item/weapon/tool/attack(mob/living/M, mob/living/user, var/target_zone)

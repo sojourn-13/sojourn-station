@@ -45,17 +45,52 @@
 		qdel(src)
 
 /obj/effect/spider/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
-	if(exposed_temperature > 300 + T0C)
+	if(exposed_temperature > T0C + 50) //Weak to fire, windows take T0C + 100.
 		health -= 5
 		healthCheck()
 
 /obj/effect/spider/stickyweb
 	health = 1
 	icon_state = "stickyweb1"
+	var/silk_baring = TRUE
 	New()
 		if(prob(50))
 			icon_state = "stickyweb2"
+		if(prob(20))
+			silk_baring = FALSE
 		..()
+
+/obj/effect/spider/stickyweb/chtmant
+	silk_baring = FALSE
+
+/obj/effect/spider/stickyweb/attackby(obj/item/I, mob/user)
+	if(!istype(user.loc, /turf))
+		return
+	if(!silk_baring)
+		to_chat(user, SPAN_NOTICE("You can not collect anything from these webs."))
+		qdel(src)
+		return
+	if(user.a_intent == I_HURT)
+		to_chat(user, SPAN_NOTICE("You remove the webs."))
+		qdel(src)
+		return
+	var/list/usable_qualities = list(QUALITY_WEAVING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_WEAVING)
+		to_chat(user, SPAN_NOTICE("You started to collecting the sticky webs into a ball of silk."))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_COG))
+		//Hard to mess up but takes some time
+			new /obj/item/stack/material/silk(get_turf(src), 1 ? 1 : 2)
+			to_chat(user, SPAN_NOTICE("You bundle up a ball of spider silk."))
+			qdel(src)
+			return
+		return
+
+
+/obj/effect/spider/stickyweb/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(exposed_temperature > T0C + 25) //Webs are even weaker to fire
+		health -= 5
+		healthCheck()
 
 /obj/effect/spider/stickyweb/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0)) return 1

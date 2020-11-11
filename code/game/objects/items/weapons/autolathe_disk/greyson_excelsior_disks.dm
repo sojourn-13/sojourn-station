@@ -1,4 +1,5 @@
-
+// Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
+// To make a design unprotect use -1
 // greyson positronic
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar
 	disk_name = "Greyson Positronics Tool Pack"
@@ -10,10 +11,10 @@
 		/datum/design/autolathe/tool/jackhammer_onestar,
 		/datum/design/autolathe/tool/drill_onestar,
 		/datum/design/autolathe/tool/weldertool_onestar,
-		/datum/design/autolathe/tool/hammer_onestar,
-		/datum/design/autolathe/tool/omni_surgery_onestar,
+		/datum/design/autolathe/tool/hammer_onestar = 2,
+		/datum/design/autolathe/tool/omni_surgery_onestar = 2,
 		/datum/design/autolathe/tool/pickaxe_onestar,
-		/datum/design/autolathe/part/greyson/ai,
+		/datum/design/autolathe/part/greyson/ai = 3,
 
 	)
 
@@ -34,9 +35,9 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/cog
 	disk_name = "Greyson Positronics - Cog"
 	icon_state = "onestar"
-	license = 3
+	license = 6
 	designs = list(
-		/datum/design/autolathe/gun/greyson_cog,
+		/datum/design/autolathe/gun/greyson_cog = 2,
 		/datum/design/autolathe/cell/medium/high,
 
 	)
@@ -73,7 +74,7 @@
 		/datum/design/autolathe/circuit/reconstructor_excelsior,
 		/datum/design/autolathe/circuit/diesel_excelsior,
 		/datum/design/autolathe/circuit/turret_excelsior,
-		/datum/design/autolathe/circuit/autolathe_disk_cloner = 3,,
+		/datum/design/autolathe/circuit/autolathe_disk_cloner = 3,
 		/datum/design/research/item/part/micro_mani,				//machine parts
 		/datum/design/research/item/part/subspace_amplifier,
 		/datum/design/research/item/part/subspace_crystal,
@@ -92,6 +93,7 @@
 		/datum/design/autolathe/prosthesis/excelsior/l_leg,
 		/datum/design/autolathe/prosthesis/excelsior/r_leg,
 		/datum/design/autolathe/device/implanter,					//misc
+		/datum/design/autolathe/device/propaganda_chip,
 		/datum/design/autolathe/clothing/excelsior_armor,
 		/datum/design/autolathe/device/excelbaton,
 		/datum/design/autolathe/excelsior/laser,
@@ -132,7 +134,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_parts
 	disk_name = "Excelsior - Stocking Revolution"
-	desc = "The back has a machine etching: \"The everything can be apart of the revolution!\""
+	desc = "The back has a machine etching: \"Everything can be apart of the revolution!\""
 	icon_state = "excelsior"
 
 	license = -1
@@ -140,6 +142,7 @@
 		/datum/design/autolathe/circuit/autolathe_excelsior,//circuits
 		/datum/design/autolathe/circuit/diesel_excelsior,
 		/datum/design/autolathe/circuit/autolathe_disk_cloner,
+		/datum/design/autolathe/device/propaganda_chip,
 		/datum/design/autolathe/part/igniter,//regular parts
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_prox,
@@ -190,7 +193,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez
 	disk_name = "Excelsior - Vintorez"
-	desc = "The back has a machine etching: \"The long of revolution.\""
+	desc = "The back has a machine etching: \"The gun of long revolution.\""
 	icon_state = "excelsior"
 
 	license = -1

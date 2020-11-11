@@ -5,7 +5,7 @@
 
 /obj/random/lowkeyrandom/item_to_spawn()
 	return pickweight(list(
-				/obj/item/weapon/storage/box/shotgunammo/beanbags = 1,
+				/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 1,
 				/obj/item/weapon/storage/box/matches = 3,
 				/obj/item/stack/material/cardboard = 2,
 				/obj/item/weapon/cell/large = 3,
@@ -121,11 +121,11 @@
 				/obj/item/weapon/stock_parts/subspace/treatment = 1,
 				/obj/item/weapon/aiModule/reset = 1,
 				/obj/item/weapon/circuitboard/autolathe = 1,
-				/obj/item/ammo_magazine/pistol/rubber = 1,
-				/obj/item/ammo_magazine/pistol = 1,
-				/obj/item/ammo_magazine/slmagnum = 1,
-				/obj/item/ammo_magazine/slpistol = 1,
-				/obj/item/ammo_magazine/slpistol/rubber = 1,
+				/obj/item/ammo_magazine/pistol_35/rubber = 1,
+				/obj/item/ammo_magazine/pistol_35 = 1,
+				/obj/item/ammo_magazine/speed_loader_magnum_40 = 1,
+				/obj/item/ammo_magazine/speed_loader_pistol_35 = 1,
+				/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 1,
 				/obj/item/weapon/flamethrower = 1,
 				/obj/item/weapon/gun/projectile/mk58 = 1,
 				/obj/item/weapon/gun/projectile/giskard = 1,

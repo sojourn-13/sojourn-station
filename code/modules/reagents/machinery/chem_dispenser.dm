@@ -1,9 +1,10 @@
 #define chemical_dispenser_ENERGY_COST (CHEM_SYNTH_ENERGY * CELLRATE) //How many cell charge do we use per unit of chemical?
-#define BOTTLE_SPRITES list("bottle-1", "bottle-2", "bottle-3", "bottle-4") //list of available bottle sprites
+#define BOTTLE_SPRITES list("bottle") //list of available bottle sprites
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+//To do, make matter bins, do something
+//To do, make the capator do something
 
 /obj/machinery/chemical_dispenser
 	name = "chem dispenser"
@@ -14,13 +15,14 @@
 	use_power = NO_POWER_USE // Handles power use in Process()
 	layer = BELOW_OBJ_LAYER
 	circuit = /obj/item/weapon/circuitboard/chemical_dispenser
-
+	var/fancy_hack = FALSE
 	var/ui_title = "Chem Dispenser 5000"
 	var/obj/item/weapon/cell/medium/cell
 	var/amount = 30
 	var/accept_beaker = TRUE //At TRUE, ONLY accepts beakers.
 	var/hackedcheck = FALSE
-	var/list/dispensable_reagents = list(
+	var/list/dispensable_reagents
+	var/list/level0 = list(
 		"hydrazine","lithium","carbon",
 		"ammonia","acetone","sodium",
 		"aluminum","silicon","phosphorus",
@@ -30,48 +32,34 @@
 		"sugar","sacid","tungsten"
 	)
 
-	var/list/level1 = list("oil", "ammonia")
+	var/list/level1 = list("oil", "cryptobiolin")
 	var/list/level2 = list("toxin", "sodiumchloride")
 	var/list/level3 = list("potassium_chloride", "cryptobiolin")
 	var/list/level4 = list("inaprovaline")
 
-	var/list/hacked_reagents = list("fuel","cleaner") //Basic stuff
+	var/list/hacked_reagents = list("cleaner") //Basic stuff
 	var/obj/item/weapon/reagent_containers/beaker = null
 
 /obj/machinery/chemical_dispenser/RefreshParts()
 	cell = locate() in component_parts
 
-	var/rating  = 1
+	var/man_rating = 0
+	var/man_amount = 0
 	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
-		rating += M.rating - 1
+		man_rating += M.rating
+		man_amount++
+	man_rating -= man_amount
 
-	var/bins = 1
-	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
-		bins += B.rating - 2 //So were back to 0
+	dispensable_reagents = level0.Copy()
 
-	if(rating > 1) //Level 2 Manipulator
+	if(man_rating >= 2)
 		dispensable_reagents += level1
-
-	if(bins > 2) //Level 2, 2 Matter Bins
-		amount += 5
-
-	if(rating > 2) //Level 3 Manipulator
+	if(man_rating >= 3)
 		dispensable_reagents += level2
-
-	if(bins > 4) //Level 3, 2 Matter Bins
-		amount += 5
-
-	if(rating > 3) //Level 4 Manipulator
+	if(man_rating >= 4)
 		dispensable_reagents += level3
-
-	if(bins > 6) //Level 4, 2 Matter Bins
-		amount += 5
-
-	if(rating > 4) //Level 5 Manipulator
+	if(man_rating >= 5)
 		dispensable_reagents += level4
-
-	if(bins > 8) //Level 5, 2 Matter Bins
-		amount += 5
 
 /obj/machinery/chemical_dispenser/proc/recharge()
 	if(stat & (BROKEN|NOPOWER)) return
@@ -195,7 +183,7 @@
 	if(default_part_replacement(I, user))
 		return
 
-	if(istype(I, /obj/item/weapon/tool/multitool) && length(hacked_reagents))
+	if(istype(I, /obj/item/weapon/tool/multitool) && length(hacked_reagents) && fancy_hack == FALSE)
 		hackedcheck = !hackedcheck
 		if(!hackedcheck)
 			to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
@@ -234,18 +222,18 @@
 	desc = "A drink fabricating machine, capable of producing many sugary drinks with just one touch."
 	layer = OBJ_LAYER
 	ui_title = "Soda Dispens-o-matic"
+	fancy_hack = TRUE
 	accept_beaker = FALSE
 	density = FALSE
-	dispensable_reagents = list(
-	"water","ice","coffee","cream","tea","greentea","icetea",
-	"icegreentea","cola","spacemountainwind","dr_gibb","space_up",
-	"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice",
-	"watermelonjuice")
+	level0 = list(
+		"water","ice","icetea","icegreentea","cola","spacemountainwind","dr_gibb","space_up",
+		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice",
+		"watermelonjuice")
 
 	level1 = list("capsaicin", "carbon")
 	level2 = list("banana", "berryjuice")
 	level3 = list("soymilk") //Commie stock part gives this
-	level4 = list("enzyme", "milk")
+	level4 = list("enzyme")
 
 	hacked_reagents = list("thirteenloko","grapesoda")
 	circuit = /obj/item/weapon/circuitboard/chemical_dispenser/soda
@@ -264,19 +252,38 @@
 			dispensable_reagents -= hacked_reagents
 			SSnano.update_uis(src)
 
+/obj/machinery/chemical_dispenser/coffee_master
+	icon_state = "coffee_master"
+	name = "coffee master"
+	desc = "The only thing that can get some workers though the day."
+	layer = OBJ_LAYER
+	ui_title = "Coffee Master 3000"
+	fancy_hack = FALSE
+	accept_beaker = FALSE
+	density = FALSE
+	level0 = list(
+		"coffee","cream","tea","greentea","sugar","hot_coco","espresso")
+	hacked_reagents = list("ice")
+	level1 = list("cappuccino")
+	level2 = list("macchiato")
+	level3 = list("soymilk") //Commie stock part gives this
+	level4 = list("milk","kahlua")
+	circuit = /obj/item/weapon/circuitboard/chemical_dispenser/coffee_master
+
 /obj/machinery/chemical_dispenser/beer
 	icon_state = "booze_dispenser"
 	name = "booze dispenser"
 	layer = OBJ_LAYER
 	ui_title = "Booze Portal 9001"
+	fancy_hack = TRUE
 	accept_beaker = FALSE
 	density = FALSE
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
-	dispensable_reagents = list(
-	"lemon_lime","sugar","orangejuice","limejuice",
-	"sodawater","tonic","beer","kahlua","whiskey",
-	"wine","vodka","gin","rum","tequilla","vermouth",
-	"cognac","ale","mead")
+	level0 = list(
+		"lemon_lime","sugar","orangejuice","limejuice",
+		"sodawater","tonic","beer","kahlua","whiskey",
+		"wine","vodka","gin","rum","tequilla","vermouth",
+		"cognac","ale","mead")
 
 	level1 = list("melonliquor", "bluecuracao")
 	level2 = list("sake", "irishcream")
@@ -311,7 +318,7 @@
 	level3 = list(null)
 	level4 = list(null)
 
-	dispensable_reagents = list(
+	level0 = list(
 		"inaprovaline","ryetalyn","paracetamol",
 		"tramadol","oxycodone","sterilizine",
 		"leporazine","kelotane","dermaline",
@@ -327,46 +334,19 @@
 		"methylphenidate"
 	)
 
-/obj/machinery/chemical_dispenser/meds_admin_debug/attackby(obj/item/I, mob/living/user)
-	..()
-	if(istype(I, /obj/item/weapon/tool/multitool) && length(hacked_reagents))
-		hackedcheck = !hackedcheck
-		if(!hackedcheck)
-			to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
-			dispensable_reagents += hacked_reagents
-			SSnano.update_uis(src)
-
-		else
-			to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
-			dispensable_reagents -= hacked_reagents
-			SSnano.update_uis(src)
-
 /obj/machinery/chemical_dispenser/industrial
 	name = "industrial chem dispenser"
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "industrial_dispenser"
 	ui_title = "Industrial Dispenser 4835"
 	circuit = /obj/item/weapon/circuitboard/chemical_dispenser/industrial
-	dispensable_reagents = list(
+	level0 = list(
 		"acetone","aluminum","ammonia",
 		"copper","ethanol","hydrazine",
 		"iron","radium","sacid",
 		"hclacid","silicon","tungsten"
 	)
-	level1 = list("oil", "ammonia", "sterilizine")
 
-	hacked_reagents = list("fuel","cleaner","silicate","coolant") //So we have a reason to keep you
+	level1 = list("oil", "cryptobiolin", "sterilizine")
 
-/obj/machinery/chemical_dispenser/industrial/attackby(obj/item/I, mob/living/user)
-	..()
-	if(istype(I, /obj/item/weapon/tool/multitool) && length(hacked_reagents))
-		hackedcheck = !hackedcheck
-		if(!hackedcheck)
-			to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
-			dispensable_reagents += hacked_reagents
-			SSnano.update_uis(src)
-
-		else
-			to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
-			dispensable_reagents -= hacked_reagents
-			SSnano.update_uis(src)
+	hacked_reagents = list("cleaner","silicate","coolant") //So we have a reason to keep you

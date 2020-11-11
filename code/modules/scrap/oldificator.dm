@@ -59,14 +59,18 @@
 /obj/item/weapon/tool/make_old()
 	.=..()
 	if (.)
-		adjustToolHealth(-(rand(40, 150) * degradation))
+		adjustToolHealth(-(rand(20, 60) * degradation))
+		precision -= rand(0,20)
+		workspeed = workspeed*(rand(1,10)/10)
+		degradation += rand(0,4)
+		health = rand(10, max_health)
 
 /obj/item/weapon/gun/make_old()
 	. = ..()
-	fire_delay+=2
-	recoil_buildup+=10
-	damage_multiplier = max(0.2, damage_multiplier - rand(0.5, 1))
-	penetration_multiplier = max(0.2, penetration_multiplier - rand(0.5, 1))
+	fire_delay+= rand(0,3)
+	recoil_buildup+= rand(0,20)
+	damage_multiplier = damage_multiplier*(rand(1,10)/10)
+	penetration_multiplier = penetration_multiplier*(rand(1,10)/10)
 
 /obj/item/weapon/storage/make_old()
 	.=..()
@@ -133,7 +137,7 @@
 		if(!autorecharging)
 			charge = min(charge, RAND_DECIMAL(0, maxcharge))
 
-		if(prob(1))
+		if(prob(5))
 			rigged = TRUE
 			if(prob(10))
 				charge = maxcharge  //make it BOOM hard

@@ -888,6 +888,7 @@ mob/living/carbon/human/proc/get_wings_image()
 
 /mob/living/carbon/human/update_inv_head(var/update_icons=1)
 	overlays_standing[HEAD_LAYER]	= null
+	update_ears(update_icons)
 	if(head)
 		var/image/standing = null
 		//Determine the icon to use
@@ -970,7 +971,8 @@ mob/living/carbon/human/proc/get_wings_image()
 
 
 /mob/living/carbon/human/update_inv_wear_suit(var/update_icons=1)
-
+	update_tail(update_icons)
+	update_wings(update_icons)
 	if( wear_suit && istype(wear_suit, /obj/item/) )
 		var/image/standing
 		var/t_icon = form.get_mob_icon("suit")
@@ -1398,8 +1400,6 @@ mob/living/carbon/human/proc/get_wings_image()
 #undef LEGCUFF_LAYER
 #undef L_HAND_LAYER
 #undef R_HAND_LAYER
-#undef TARGETED_LAYER
 #undef FIRE_LAYER
-#undef CUSTOM_WING_LAYER
 #undef CUSTOM_TAIL_LAYER_ALT
 #undef TOTAL_LAYERS

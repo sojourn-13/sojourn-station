@@ -238,6 +238,10 @@
 	buckle_pixel_shift = "x=0;y=6"
 	var/item_form_type = /obj/item/roller	//The folded-up object path.
 
+/obj/structure/bed/roller/compact
+	name = "compact roller bed"
+	item_form_type = /obj/structure/bed/roller/compact
+
 /obj/structure/bed/roller/update_icon()
 	if(density)
 		icon_state = "up"
@@ -262,12 +266,19 @@
 	item_state = "rbed"
 	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
-	var/structure_form_type = /obj/structure/bed/roller	//The deployed form path.
+	var/structure_form_type = /obj/structure/bed/roller //The deployed form path.
+	matter = list(MATERIAL_PLASTIC = 20, MATERIAL_STEEL = 15)
+
+/obj/item/roller/compact
+	name = "compact roller bed"
+	desc = "A more durable and compact version of a collapsed roller bed that can be carried around in bags. Once deployed it can't be refolded due to the cheap design."
+	slot_flags = NONE
+	w_class = ITEM_SIZE_NORMAL
+	structure_form_type = /obj/structure/bed/roller/compact
+	matter = list(MATERIAL_PLASTIC = 20, MATERIAL_PLASTEEL = 5)
 
 /obj/item/roller/attack_self(mob/user)
 	deploy(user)
-
-
 
 /obj/item/roller/proc/deploy(var/mob/user)
 	var/turf/T = get_turf(src) //When held, this will still find the user's location

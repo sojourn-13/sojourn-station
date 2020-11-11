@@ -29,7 +29,6 @@
 
 	return ..()
 
-
 /obj/item/weapon/flamethrower/Process()
 	if(ptank.air_contents.gas["plasma"] < 1)
 		lit = FALSE
@@ -46,7 +45,6 @@
 	if(isturf(location)) //start a fire if possible
 		location.hotspot_expose(700, 2)
 	return
-
 
 /obj/item/weapon/flamethrower/update_icon()
 	cut_overlays()
@@ -83,7 +81,6 @@
 	..()
 	return
 
-
 /obj/item/weapon/flamethrower/attack_self(mob/user as mob)
 	if(user.stat || user.restrained() || user.lying)	return
 	user.set_machine(src)
@@ -91,7 +88,6 @@
 	user << browse(dat, "window=flamethrower;size=340x160")
 	onclose(user, "flamethrower")
 	return
-
 
 /obj/item/weapon/flamethrower/Topic(href,href_list[])
 	if(href_list["close"])
@@ -130,7 +126,6 @@
 	update_icon()
 	return
 
-
 //Called from turf.dm turf/dblclick
 /obj/item/weapon/flamethrower/proc/flame_turf(var/list/turflist)
 	if(!lit || operating)	return
@@ -151,7 +146,6 @@
 		if((M.client && M.machine == src))
 			attack_self(M)
 	return
-
 
 /obj/item/weapon/flamethrower/proc/ignite_turf(turf/target)
 	//TODO: DEFERRED Consider checking to make sure tank pressure is high enough before doing this...

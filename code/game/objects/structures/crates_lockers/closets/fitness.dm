@@ -39,7 +39,7 @@
 	new /obj/item/clothing/mask/costume/job/luchador/tecnicos(src)
 
 /obj/structure/closet/lasertag/red
-	name = "red laser tag equipment"
+	name = "red plasma tag equipment"
 	desc = "It's a storage unit for laser tag equipment."
 	icon_door = "red"
 
@@ -54,8 +54,8 @@
 	new /obj/item/clothing/suit/fluff/redtag(src)
 
 /obj/structure/closet/lasertag/blue
-	name = "blue laser tag equipment"
-	desc = "It's a storage unit for laser tag equipment."
+	name = "blue plasma tag equipment"
+	desc = "It's a storage unit for plasma tag equipment."
 	icon_door = "blue"
 
 /obj/structure/closet/lasertag/blue/populate_contents()
@@ -69,8 +69,8 @@
 	new /obj/item/clothing/suit/fluff/bluetag(src)
 
 /obj/structure/closet/lasertag/green
-	name = "green laser tag equipment"
-	desc = "It's a storage unit for laser tag equipment."
+	name = "green plasma tag equipment"
+	desc = "It's a storage unit for plasma tag equipment."
 	icon_door = "green"
 
 /obj/structure/closet/lasertag/green/populate_contents()
@@ -84,8 +84,8 @@
 	new /obj/item/clothing/suit/fluff/greentag(src)
 
 /obj/structure/closet/lasertag/yellow
-	name = "yellow laser tag equipment"
-	desc = "It's a storage unit for laser tag equipment."
+	name = "yellow plasma tag equipment"
+	desc = "It's a storage unit for plasma tag equipment."
 	icon_door = "yellow"
 
 /obj/structure/closet/lasertag/yellow/populate_contents()

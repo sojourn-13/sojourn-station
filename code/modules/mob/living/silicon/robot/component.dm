@@ -84,7 +84,17 @@
 	external_type = /obj/item/robot_parts/robot_component/armour
 	max_damage = 60
 
+/datum/robot_component/armour/level_2
+	name = "advanced armour plating"
+	external_type = /obj/item/robot_parts/robot_component/armour/mkii
+	max_damage = 90
+	installed_by_default = FALSE
 
+/datum/robot_component/armour/level_3
+	name = "combat armour plating"
+	external_type = /obj/item/robot_parts/robot_component/armour/mkv
+	max_damage = 120
+	installed_by_default = FALSE
 
 // JETPACK
 // Allows the cyborg to move in space
@@ -279,12 +289,20 @@
 	icon_state_broken = "motor_broken"
 
 /obj/item/robot_parts/robot_component/armour
-	name = "armour plating"
+	name = "robot armour plating"
 	icon_state = "armor"
 	icon_state_broken = "armor_broken"
 
+/obj/item/robot_parts/robot_component/armour/mkii
+	name = "robot Mark II armour plating"
+	matter = list(MATERIAL_STEEL = 25)
+
+/obj/item/robot_parts/robot_component/armour/mkv
+	name = "robot Mark V armour plating"
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
+
 /obj/item/robot_parts/robot_component/camera
-	name = "camera"
+	name = "robot camera"
 	icon_state = "camera"
 	icon_state_broken = "camera_broken"
 
@@ -294,12 +312,12 @@
 	icon_state_broken = "analyser_broken"
 
 /obj/item/robot_parts/robot_component/radio
-	name = "radio"
+	name = "robot radio"
 	icon_state = "radio"
 	icon_state_broken = "radio_broken"
 
 /obj/item/robot_parts/robot_component/jetpack
-	name = "jetpack"
+	name = "robot jetpack"
 	desc = "Self refilling jetpack that makes the unit suitable for EVA work."
 	icon = 'icons/obj/tank.dmi'
 	icon_state = "jetpack-black"

@@ -55,6 +55,10 @@
 	path = /obj/item/clothing/under/customskirt
 	flags = GEAR_HAS_COLOR_SELECTION
 
+/datum/gear/uniform/black_suit_skirt
+	display_name = "black suit skirt"
+	path = /obj/item/clothing/under/suit_jacket/blackskirt
+
 /datum/gear/uniform/latex_maid
 	display_name = "latex maid dress"
 	path = /obj/item/clothing/under/costume/kinky/latex_maid
@@ -145,3 +149,16 @@
 	display_name = "neon tracksuits, color presets"
 	path = /obj/item/clothing/under/neon
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/generic
+	display_name = "generic outfit, color presets"
+	path = /obj/item/clothing/under/genericb
+
+/datum/gear/uniform/generic/New()
+	..()
+	var/generic = list(
+		"blue" = /obj/item/clothing/under/genericb,
+		"red" = /obj/item/clothing/under/genericr,
+		"white" = /obj/item/clothing/under/genericw
+	)
+	gear_tweaks += new /datum/gear_tweak/path(generic)

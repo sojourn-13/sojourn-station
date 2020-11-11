@@ -386,10 +386,10 @@
 /datum/ritual/targeted/cruciform/inquisitor/spawn_item
 	name = "Litany of Armaments"
 	phrase = "Supra Domini, bona de te peto. Audi me, et libera vocationem ad me munera tua."
-	desc = "Request a greatsword and tower shield from the church armory to become a real crusader. Establishing the connection takes a lot of power and this litany may only be used once every hour."
+	desc = "Request a greatsword, tower shield, and suit of power armor from the church armory to become a real crusader. Establishing the connection takes a lot of power and this litany may only be used once every twelve hours."
 	power = 100
 	cooldown = TRUE
-	cooldown_time = 60 MINUTES
+	cooldown_time = 12 HOURS
 	cooldown_category = "armaments"
 
 
@@ -398,5 +398,6 @@
 	new /obj/item/clothing/accessory/holster/saber/greatsword(usr.loc)
 	new /obj/item/weapon/shield/riot/crusader(usr.loc)
 	new /obj/item/weapon/storage/belt/security/neotheology(usr.loc)
+	new /obj/item/clothing/suit/space/void/crusader(usr.loc)
 	set_personal_cooldown(user)
 

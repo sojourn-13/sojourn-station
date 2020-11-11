@@ -20,5 +20,5 @@
 	EVENT_LEVEL_MUNDANE = 0, //Mundane
 	EVENT_LEVEL_MODERATE = 0, //Moderate
 	EVENT_LEVEL_MAJOR = 0, //Major
-	EVENT_LEVEL_ROLESET = 220 //Roleset
+	EVENT_LEVEL_ROLESET = -999 //Roleset
 	)

@@ -1,0 +1,31 @@
+</div>
+<div class="item">
+	<div class="itemLabel">
+		Stored Capacity:
+	</div>
+	<div class="itemContent">
+		{{:helper.displayBar(data.waterheld, 0, 100,'good')}}
+		<div class="statusValue">
+			{{:helper.round(data.waterheld)}}%
+		</div>
+	</div>
+</div>
+	<div class="item">
+		{{:helper.link('Opened', 'power', {'togglegate' : 1}, data.isOpen ? 'selected' : null)}}{{:helper.link('Closed', 'close', {'togglegate' : 1}, data.isOpen ? null : 'selected')}}
+	</div>
+
+<div class="item">
+       {{:helper.link('Detect Connected Turbines', null, {'detectturbines' : 1})}}
+	</div>
+
+<b>Detected Hydroelectric Turbines Status:</b><br>
+		<div class = "item">
+			<div class="itemLabel">				
+				{{:data.hydrostatus}}
+			</div>
+
+<br><b>Power Generated:</b>
+		<div class = "item">
+			<div class="itemLabel">				
+				{{:data.generated}} W
+			</div>

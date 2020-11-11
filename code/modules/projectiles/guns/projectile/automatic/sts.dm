@@ -20,6 +20,7 @@
 	damage_multiplier = 1.1
 	recoil_buildup = 8
 	one_hand_penalty = 15 //automatic rifle level
+	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET, GUN_SCOPE)
 
 
 	init_firemodes = list(

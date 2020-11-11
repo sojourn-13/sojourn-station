@@ -79,6 +79,14 @@
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
     tipText = "Your PDA has an integrated medical scanner."
 
+/tipsAndTricks/jobs/cryo_bag_scanning
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
+    tipText = "Medical scanners work through cryo bags, allowing you to scan people currently inside them, including stasis bags."
+
+/tipsAndTricks/jobs/detox_chem_clering
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
+    tipText = "Dylovene, when injected, will clear toxic chemicals like pararein, blattedin, and general toxins. Dylovene when eaten does not have this affect."
+
 /tipsAndTricks/jobs/gas_scanner_pda
     jobs_list = list(/datum/job/cmo, /datum/job/technomancer)
     tipText = "Inside of your PDA is an installed gas scanner."
@@ -98,6 +106,10 @@
 /tipsAndTricks/jobs/crewMonitorHelp
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic)
     tipText = "You can use the crew monitoring program on computers to locate injured crew members. It can be downloaded on tablets or laptops for a portable solution. Medical storage always has one tablet for this purpose on roundstart."
+
+/tipsAndTricks/jobs/odysseus_boons
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic)
+    tipText = "The Odysseus medical mecha is a reliable and fast transport vehicle used best by paramedics or doctors acting as paramedics. The syringe gun module can scan and produce chemicals to deliver on the fly, provided you load it with syringes and the sleeper modules will put patients in stasis while treating their injuries."
 
 /tipsAndTricks/jobs/thermite
     jobs_list = list(/datum/job/doctor)
@@ -147,6 +159,18 @@
     jobs_list = list(/datum/job/clubworker, /datum/job/clubmanager)
     tipText = "There is a program in your PDA called Neon Cocktails that can help you with making drinks."
 
+/tipsAndTricks/jobs/upgrade_dispender
+    jobs_list = list(/datum/job/clubworker, /datum/job/clubmanager)
+    tipText = "Your booze and soda dispenser can be hacked with a multitool to give more drink options. It also can be upgraded with advanced parts to charge faster, hold more power, and even make new drinks or chems."
+
+/tipsAndTricks/jobs/upgrades
+    jobs_list = list(/datum/job/rd, /datum/job/scientist)
+    tipText = "There are many machines that can be upgraded, use an RPED on things to learn its parts and if it can be upgraded."
+
+/tipsAndTricks/jobs/upgrade_chemdispenders_sleeper
+    jobs_list = list(/datum/job/rd, /datum/job/scientist)
+    tipText = "A sleeper machine must be deconstructed and put back together to upgrade itself properly, similar to replacing a chemical dispencers power cell."
+
 /tipsAndTricks/jobs/bots
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
     tipText = "Bots are tireless servants that you can create. No janitor? CleanBot to the rescue! Not enough medical staff? MedBot will solve that."
@@ -154,6 +178,10 @@
 /tipsAndTricks/jobs/ripley
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
     tipText = "The Ripley mech is an universal tool for a variety of tasks, be it mining, building, or deconstructing. It also has a rather strong melee attack."
+
+/tipsAndTricks/jobs/firefighter
+    jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
+    tipText = "The Ripley Firefighter is an enhanced version of the Ripley sporting more armor and being almost fire proof."
 
 /tipsAndTricks/jobs/odysseus
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)

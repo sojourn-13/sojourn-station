@@ -12,7 +12,8 @@
 	cost = 0
 
 	unlocks_designs = list(	/datum/design/research/item/part/micro_mani,
-							/datum/design/research/item/part/basic_sensor
+							/datum/design/research/item/part/basic_sensor,
+							/datum/design/research/item/medical/autopsy_scanner
 						)
 
 /datum/technology/medical_cooling
@@ -47,7 +48,8 @@
 	cost = 200
 
 	unlocks_designs = list(	/datum/design/research/circuit/med_data,
-							/datum/design/research/circuit/operating
+							/datum/design/research/circuit/operating,
+							/datum/design/research/item/medical/roller_bed
 						)
 /*
 /datum/technology/virology
@@ -78,7 +80,8 @@
 	required_tech_levels = list()
 	cost = 500
 
-	unlocks_designs = list(/datum/design/research/circuit/sleeper)
+	unlocks_designs = list(/datum/design/research/circuit/sleeper,
+							/datum/design/research/item/medical/compact_roller_bed)
 
 /datum/technology/hydroponics
 	name = "Hydroponics"
@@ -115,7 +118,9 @@
 							/datum/design/research/circuit/chemical_dispenser,
 							/datum/design/research/circuit/chem_heater,
 							/datum/design/research/item/makeshift_centrifuge,
-							/datum/design/research/structure/bidon
+							/datum/design/research/structure/bidon,
+							/datum/design/research/item/robot_upgrade/medical_hypo_upgrade,
+							/datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
 							)
 /*
 /datum/technology/basic_food_processing
@@ -268,9 +273,7 @@
 	required_tech_levels = list()
 	cost = 2000
 
-	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/armor,
-							/datum/design/research/item/mechfab/modules/armblade,
-							/datum/design/research/item/mechfab/modules/runner,
+	unlocks_designs = list(
 							/datum/design/research/item/mechfab/modules/multitool/surgical,
 							/datum/design/research/item/mechfab/modules/multitool/engineer,
 							/datum/design/research/item/mechfab/modules/multitool/miner,
@@ -278,8 +281,34 @@
 							/datum/design/research/item/mechfab/prosthesis_moebius/l_arm,
 							/datum/design/research/item/mechfab/prosthesis_moebius/r_leg,
 							/datum/design/research/item/mechfab/prosthesis_moebius/l_leg,
+							/datum/design/research/item/mechfab/prosthesis_moebius/groin,
 							/datum/design/research/item/mechfab/prosthesis_moebius/groin
 							)
+
+/datum/technology/omega_biotech
+	name = "Advanced Augmentations Biotech"
+	desc = "Refined and end of the line advancements that the body and the mind can handle."
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.7
+	y = 0.9
+	icon = "scalpelmanager"
+
+	required_technologies = list(	/datum/technology/top_biotech,
+									/datum/technology/mind_biotech
+								)
+	required_tech_levels = list()
+	cost = 2000
+
+	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/armor,
+							/datum/design/research/item/mechfab/modules/armblade,
+							/datum/design/research/item/mechfab/modules/energy_blade,
+							/datum/design/research/item/mechfab/modules/runner,
+							/datum/design/research/item/mechfab/modules/hud/med,
+							/datum/design/research/item/mechfab/modules/hud/sec,
+							/datum/design/research/item/mechfab/modules/hud/welder
+							)
+
 
 /datum/technology/mind_biotech
 	name = "Mind Biotech"

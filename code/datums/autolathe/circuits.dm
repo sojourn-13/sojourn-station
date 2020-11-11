@@ -60,6 +60,10 @@
 	name = "excelsior turret"
 	build_path = /obj/item/weapon/circuitboard/excelsior_turret
 
+/datum/design/autolathe/circuit/turret_artificer
+	name = "artificer turret"
+	build_path = /obj/item/weapon/circuitboard/artificer_turret
+
 /datum/design/autolathe/circuit/centrifuge
 	name = "centrifuge"
 	build_path = /obj/item/weapon/circuitboard/centrifuge
@@ -71,6 +75,14 @@
 /datum/design/autolathe/circuit/reagentgrinder
 	name = "reagent grinder"
 	build_path = /obj/item/weapon/circuitboard/reagentgrinder
+
+/datum/design/autolathe/circuit/smelter
+	name = "smelter"
+	build_path = /obj/item/weapon/circuitboard/smelter
+
+/datum/design/autolathe/circuit/sorter
+	name = "sorter"
+	build_path = /obj/item/weapon/circuitboard/sorter
 
 /datum/design/autolathe/circuit/bioprinter
 	name = "Absolutism Biomatter Printer"

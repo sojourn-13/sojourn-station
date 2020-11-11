@@ -591,6 +591,7 @@ var/list/name_to_material
 	stack_type = /obj/item/stack/material/mhydrogen
 	icon_colour = "#E6C5DE"
 	stack_origin_tech = list(TECH_MATERIAL = 6, TECH_POWER = 6, TECH_MAGNET = 5)
+	display_name = "metallic hydrogen"
 
 /material/platinum
 	name = MATERIAL_PLATINUM
@@ -668,6 +669,15 @@ var/list/name_to_material
 /material/cloth //todo
 	name = MATERIAL_CLOTH
 	stack_origin_tech = list(TECH_MATERIAL = 2)
+	door_icon_base = "wood"
+	ignition_point = T0C+232
+	melting_point = T0C+300
+	flags = MATERIAL_PADDING
+
+/material/silk //todo
+	name = MATERIAL_SILK
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	composite_material = list(MATERIAL_BIOMATTER = 1) //So we have a vaule to more then one faction
 	door_icon_base = "wood"
 	ignition_point = T0C+232
 	melting_point = T0C+300

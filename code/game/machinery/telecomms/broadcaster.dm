@@ -11,10 +11,10 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 
 /obj/machinery/telecomms/broadcaster
 	name = "subspace broadcaster"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/telecomms.dmi'
 	icon_state = "broadcaster"
 	desc = "A dish-shaped machine used to broadcast processed subspace signals."
-	idle_power_usage = 25
+	idle_power_usage = 250 //Less then others base tends to be 600
 	machinetype = 5
 	produces_heat = 0
 	delay = 7
@@ -110,7 +110,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 
 /obj/machinery/telecomms/allinone
 	name = "telecommunications mainframe"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/telecomms.dmi'
 	icon_state = "comm_server"
 	desc = "A compact machine used for portable subspace telecommuniations processing."
 	use_power = NO_POWER_USE
@@ -348,13 +348,13 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 					blackbox.msg_medical += blackbox_msg
 				if(ENG_FREQ)
 					blackbox.msg_engineering += blackbox_msg
-				if(SEC_FREQ)
+				if(SEC_FREQ || BLS_FREQ || MAR_FREQ)
 					blackbox.msg_security += blackbox_msg
 				if(DTH_FREQ)
 					blackbox.msg_deathsquad += blackbox_msg
 				if(SYND_FREQ)
 					blackbox.msg_syndicate += blackbox_msg
-				if(SUP_FREQ)
+				if(SUP_FREQ || PRO_FREQ)
 					blackbox.msg_cargo += blackbox_msg
 				if(SRV_FREQ)
 					blackbox.msg_service += blackbox_msg
@@ -525,13 +525,13 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 					blackbox.msg_medical += blackbox_msg
 				if(ENG_FREQ)
 					blackbox.msg_engineering += blackbox_msg
-				if(SEC_FREQ)
+				if(SEC_FREQ || BLS_FREQ || MAR_FREQ)
 					blackbox.msg_security += blackbox_msg
 				if(DTH_FREQ)
 					blackbox.msg_deathsquad += blackbox_msg
 				if(SYND_FREQ)
 					blackbox.msg_syndicate += blackbox_msg
-				if(SUP_FREQ)
+				if(SUP_FREQ || PRO_FREQ)
 					blackbox.msg_cargo += blackbox_msg
 				if(SRV_FREQ)
 					blackbox.msg_service += blackbox_msg

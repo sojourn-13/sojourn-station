@@ -42,7 +42,7 @@
 	build_path = /obj/item/robot_parts/robot_component/binary_communication_device
 
 /datum/design/research/item/mechfab/robot/component/radio
-	name = "Radio"
+	name = "Robot Radio"
 	build_path = /obj/item/robot_parts/robot_component/radio
 
 /datum/design/research/item/mechfab/robot/component/actuator
@@ -54,16 +54,20 @@
 	build_path = /obj/item/robot_parts/robot_component/diagnosis_unit
 
 /datum/design/research/item/mechfab/robot/component/camera
-	name = "Camera"
+	name = "Robot Camera"
 	build_path = /obj/item/robot_parts/robot_component/camera
 
 /datum/design/research/item/mechfab/robot/component/armour
-	name = "Armour plating"
+	name = "Robot Armour plating"
 	build_path = /obj/item/robot_parts/robot_component/armour
+
+/datum/design/research/item/mechfab/robot/component/armour
+	name = "Robot Mark II Armour plating"
+	build_path = /obj/item/robot_parts/robot_component/armour/mkii
 
 
 /datum/design/research/item/mechfab/robot/component/jetpack
-	name = "Jetpack module"
+	name = "Robot Jetpack module"
 	desc = "Self refilling jetpack that makes the unit suitable for EVA work."
 	build_path = /obj/item/robot_parts/robot_component/jetpack
 	starts_unlocked = FALSE
@@ -114,6 +118,21 @@
 	name = "RCD module"
 	desc = "A rapid construction device module for use during construction operations."
 	build_path = /obj/item/borg/upgrade/rcd
+
+/datum/design/research/item/robot_upgrade/arc_welder
+	name = "Integrated Arc Welder module"
+	desc = "An electric based, safe welder for a robotic unit."
+	build_path = /obj/item/borg/upgrade/arc_welder
+
+/datum/design/research/item/robot_upgrade/medical_hypo_upgrade
+	name = "Exspanded Medical Hypo Upgrade"
+	desc = "A smarter hypo synther to make more complex chems. Made for medical modules."
+	build_path = /obj/item/borg/upgrade/hypospray/medical
+
+/datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
+	name = "Exspanded Rescue Hypo Upgrade"
+	desc = "A smarter hypo synther to make more complex chems. Made for rescue modules."
+	build_path = /obj/item/borg/upgrade/hypospray/rescue
 
 /datum/design/research/item/robot_upgrade/syndicate
 	name = "Illegal upgrade"

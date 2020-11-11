@@ -274,6 +274,15 @@
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
 
+/obj/item/stack/medical/advanced/bruise_pack/mending_ichor
+	name = "mending ichor"
+	singular_name = "mending ichor"
+	desc = "An ichor that can be used to mend physical trauma."
+	icon_state = "mending_ichor"
+	automatic_charge_overlays = FALSE
+	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
+	matter = list(MATERIAL_BIOMATTER = 2.5)
+
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
 		return 1
@@ -369,6 +378,15 @@
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
+
+/obj/item/stack/medical/advanced/ointment/regenerative_ichor
+	name = "regenerative ichor"
+	singular_name = "regenerative ichor"
+	desc = "An ichor that regenerates dead cells and fights off bacterial infection."
+	icon_state = "regenerative_ichor"
+	automatic_charge_overlays = FALSE
+	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
+	matter = list(MATERIAL_BIOMATTER = 2.5)
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())

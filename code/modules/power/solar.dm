@@ -1,5 +1,5 @@
 #define SOLAR_MAX_DIST 100
-#define SOLARGENRATE 3000
+#define SOLARGENRATE 1500
 
 /obj/machinery/power/solar
 	name = "solar panel"
@@ -54,13 +54,13 @@
 	S.loc = src
 	if(S.glass_type == /obj/item/stack/material/glass/reinforced) //if the panel is in reinforced glass
 		health *= 2 								 //this need to be placed here, because panels already on the map don't have an assembly linked to
-		glass_power = 1.01 //30300
+		glass_power = 1.1 //1650
 	if(S.glass_type == /obj/item/stack/material/glass/plasmaglass) //if the panel is in plasma glass
 		health *= 2
-		glass_power = 1.02 //30600
+		glass_power = 1.2 //1800
 	if(S.glass_type == /obj/item/stack/material/glass/plasmarglass) //if the panel is in reinforced plasma glass
 		health *= 3
-		glass_power = 1.03 //30900
+		glass_power = 1.3 //1950
 
 	update_icon()
 

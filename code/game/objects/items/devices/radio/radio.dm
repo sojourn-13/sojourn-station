@@ -8,6 +8,8 @@ var/global/list/default_internal_channels = list(
 	num2text(NT_FREQ) = list(access_nt_disciple),
 	num2text(MED_I_FREQ)=list(access_medical_equip),
 	num2text(SEC_FREQ) = list(access_security),
+	num2text(BLS_FREQ) = list(access_security),
+	num2text(MAR_FREQ) = list(access_security),
 	num2text(SEC_I_FREQ)=list(access_security),
 	num2text(SCI_FREQ) = list(access_tox,access_robotics,access_xenobiology),
 	num2text(SUP_FREQ) = list(access_cargo),
@@ -775,7 +777,7 @@ var/global/list/default_medbay_channels = list(
 	slot_flags = FALSE
 	canhear_range = 4
 	var/random_hear = 20
-	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Prospector" = 1)
+	channels = list("Command" = 1, "Blackshield" = 1, "Marshal" = 1, "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Prospector" = 1)
 	price_tag = 20000
 	origin_tech = list(TECH_DATA = 7, TECH_ENGINEERING = 7, TECH_ILLEGAL = 7)
 	var/list/obj/item/weapon/oddity/used_oddity = list()

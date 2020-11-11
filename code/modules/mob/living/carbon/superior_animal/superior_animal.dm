@@ -10,6 +10,8 @@
 	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "tomato"
 
+	var/eating_time = 900
+
 	var/icon_living
 	var/icon_dead
 	var/icon_rest //resting/unconscious animation
@@ -39,6 +41,9 @@
 	var/min_breath_poison_type = 0.2 //minimum portion of gas in a single breath
 	var/light_dam = 0 //0 to disable, minimum amount of lums to cause damage, otherwise heals in darkness
 	var/hunger_factor = 0 //0 to disable, how much nutrition is consumed per life tick
+
+	var/waring_faction = "" //What faction do we hate?
+	var/waring_faction_multy = 1 //How much more damage do we do to our ennemy faction?
 
 
 	var/min_air_pressure = 50 //below this, brute damage is dealt

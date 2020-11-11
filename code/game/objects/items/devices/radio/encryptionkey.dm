@@ -26,10 +26,16 @@
 	translate_binary = 1
 	origin_tech = list(TECH_ILLEGAL = 3)
 
-/obj/item/device/encryptionkey/headset_sec
+/obj/item/device/encryptionkey/headset_bs
 	name = "security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("Security" = 1)
+	channels = list( "Blackshield" = 1, "Marshal" = 1)
+
+
+/obj/item/device/encryptionkey/headset_mar
+	name = "security radio encryption key"
+	icon_state = "sec_cypherkey"
+	channels = list( "Marshal" = 1, "Blackshield" = 1)
 
 /obj/item/device/encryptionkey/headset_eng
 	name = "guild radio encryption key"
@@ -69,13 +75,13 @@
 /obj/item/device/encryptionkey/heads/captain
 	name = "premier's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1)
 
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
 	desc = "Integrated encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Blackshield" = 1, "Marshal" = 1)
 
 /obj/item/device/encryptionkey/heads/rd
 	name = "research overseer's encryption key"
@@ -90,7 +96,7 @@
 /obj/item/device/encryptionkey/heads/hos
 	name = "security commander's encryption key"
 	icon_state = "hos_cypherkey"
-	channels = list("Security" = 1, "Command" = 1)
+	channels = list("Command" = 1, "Blackshield" = 1, "Marshal" = 1)
 
 /obj/item/device/encryptionkey/heads/ce
 	name = "guild master's encryption key"
@@ -105,7 +111,7 @@
 /obj/item/device/encryptionkey/heads/hop
 	name = "steward's encryption key"
 	icon_state = "hop_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1)
 
 /obj/item/device/encryptionkey/heads/merchant
 	name = "lonestar executive radio encryption key"

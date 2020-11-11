@@ -35,6 +35,22 @@
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/weapon/tool/armblade/claws
 
+/obj/item/organ_module/active/simple/armblade/energy_blade
+	name = "energy armblade"
+	desc = "An energy blade designed to be inserted into an arm. Gives you a nice advantage in a brawl while being maximum cool."
+	verb_name = "Deploy energyblade"
+	icon_state = "energyblade"
+	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
+	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_SILVER = 10, MATERIAL_GOLD = 3, )
+	holding_type = /obj/item/weapon/melee/energy/blade/organ_module
+
+/obj/item/organ_module/active/simple/armblade/energy_blade/deploy(mob/living/carbon/human/H, obj/item/organ/external/E)
+	..()
+	playsound(H.loc, 'sound/weapons/saberon.ogg', 50, 1)
+
+/obj/item/organ_module/active/simple/armblade/energy_blade/retract(mob/living/carbon/human/H, obj/item/organ/external/E)
+	..()
+	playsound(H.loc, 'sound/weapons/saberoff.ogg', 50, 1)
 
 /obj/item/weapon/tool/armscythe
 	name = "organic scythe"

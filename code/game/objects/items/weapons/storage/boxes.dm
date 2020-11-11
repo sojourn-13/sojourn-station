@@ -101,6 +101,7 @@
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/weapon/tank/emergency_oxygen/engi(src)
 	new /obj/item/weapon/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/weapon/reagent_containers/food/snacks/mre(src)
 	new /obj/item/device/lighting/glowstick/yellow(src)
 
 /obj/item/weapon/storage/box/gloves
@@ -125,6 +126,10 @@
 	name = "box of syringes"
 	desc = "A box full of syringes."
 	illustration = "syringe"
+	use_to_pickup = TRUE // So we can pick up syringes quickly
+
+/obj/item/weapon/storage/box/syringes/empty/populate_contents()
+	return
 
 /obj/item/weapon/storage/box/syringes/populate_contents()
 	for(var/i in 1 to 7)
@@ -152,6 +157,9 @@
 	desc = "This box contains a number of body bags."
 	illustration = "bodybags"
 
+/obj/item/weapon/storage/box/bodybags/empty/populate_contents()
+	return
+
 /obj/item/weapon/storage/box/bodybags/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/bodybag(src)
@@ -167,88 +175,6 @@
 	new /obj/item/weapon/dnainjector/m2h(src)
 	new /obj/item/weapon/dnainjector/m2h(src)
 	new /obj/item/weapon/dnainjector/m2h(src)
-
-/obj/item/weapon/storage/box/shotgunammo
-	name = "box of 20mm shotgun slugs"
-	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	illustration = "ammo"
-
-/obj/item/weapon/storage/box/shotgunammo/slug
-	name = "box of 20mm shotgun slugs"
-
-/obj/item/weapon/storage/box/shotgunammo/slug/populate_contents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-
-/obj/item/weapon/storage/box/shotgunammo/blanks
-	name = "box of blank 20mm shells"
-
-/obj/item/weapon/storage/box/shotgunammo/blanks/populate_contents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/blank/prespawned(src)
-
-/obj/item/weapon/storage/box/shotgunammo/beanbags
-	name = "box of 20mm beanbag shells"
-
-/obj/item/weapon/storage/box/shotgunammo/beanbags/populate_contents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/beanbag/prespawned(src)
-
-/obj/item/weapon/storage/box/shotgunammo/buckshot
-	name = "box of 20mm shotgun shells"
-
-/obj/item/weapon/storage/box/shotgunammo/buckshot/populate_contents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
-
-/obj/item/weapon/storage/box/shotgunammo/flashshells
-	name = "box of 20mm illumination shells"
-
-/obj/item/weapon/storage/box/shotgunammo/flashshells/populate_contents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/flash/prespawned(src)
-
-/obj/item/weapon/storage/box/shotgunammo/stunshells
-	name = "box of 20mm stun shells"
-
-/obj/item/weapon/storage/box/shotgunammo/stunshells/populate_contents()
-	new /obj/item/ammo_casing/shotgun/stunshell/prespawned(src)
-	new /obj/item/ammo_casing/shotgun/stunshell/prespawned(src)
-	new /obj/item/ammo_casing/shotgun/stunshell/prespawned(src)
-	new /obj/item/ammo_casing/shotgun/stunshell/prespawned(src)
-	new /obj/item/ammo_casing/shotgun/stunshell/prespawned(src)
-	new /obj/item/ammo_casing/shotgun/stunshell/prespawned(src)
-	new /obj/item/ammo_casing/shotgun/stunshell/prespawned(src)
-
-/obj/item/weapon/storage/box/shotgunammo/practiceshells
-	name = "box of 20mm practice shells"
-
-/obj/item/weapon/storage/box/shotgunammo/practiceshells/populate_contents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/practice/prespawned(src)
-
-/obj/item/weapon/storage/box/shotgunammo/payload
-	name = "box of 20mm explosive shells"
-
-/obj/item/weapon/storage/box/shotgunammo/payload/populate_contents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/payload/prespawned(src)
-
-/obj/item/weapon/storage/box/sniperammo
-	name = "box of .60-06 shells"
-	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	illustration = "ammo"
-
-	New()
-		..()
-		new /obj/item/ammo_casing/antim/prespawned(src)
-		for(var/obj/item/ammo_casing/temp_casing in src)
-			temp_casing.update_icon()
-
-/obj/item/weapon/storage/box/sniperammo/populate_contents()
-	new /obj/item/ammo_casing/antim/prespawned(src)
-	for(var/obj/item/ammo_casing/temp_casing in src)
-		temp_casing.update_icon()
 
 /obj/item/weapon/storage/box/flashbangs
 	name = "box of flashbangs"
@@ -270,8 +196,6 @@
 	for(var/i in 1 to 6)
 		new /obj/item/weapon/grenade/chem_grenade/teargas(src)
 
-
-
 /obj/item/weapon/storage/box/emps
 	name = "box of emp grenades"
 	desc = "A box containing 5 military grade EMP grenades.<br> WARNING: Do not use near unshielded electronics or biomechanical augmentations, death or permanent paralysis may occur."
@@ -291,6 +215,16 @@
 /obj/item/weapon/storage/box/frag/populate_contents()
 	for(var/i in 1 to 4)
 		new /obj/item/weapon/grenade/frag(src)
+
+/obj/item/weapon/storage/box/incendiary
+	name = "box of incendiary grenades"
+	desc = "A box containing 5 incendiary grenades."
+	icon_state = "box_security"
+	illustration = "flashbang"
+
+/obj/item/weapon/storage/box/incendiary/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/weapon/grenade/chem_grenade/incendiary(src)
 
 /obj/item/weapon/storage/box/explosive
 	name = "box of blast grenades"
@@ -403,11 +337,12 @@
 	name = "box of condiment bottles"
 	desc = "It has a large ketchup smear on it."
 
+/obj/item/weapon/storage/box/condimentbottles/empty/populate_contents()
+	return
+
 /obj/item/weapon/storage/box/condimentbottles/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/weapon/reagent_containers/food/condiment(src)
-
-
 
 /obj/item/weapon/storage/box/cups
 	name = "box of paper cups"
@@ -416,7 +351,6 @@
 /obj/item/weapon/storage/box/cups/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/weapon/reagent_containers/food/drinks/sillycup(src)
-
 
 /obj/item/weapon/storage/box/donkpockets
 	name = "box of donk-pockets"
@@ -484,10 +418,12 @@
 	name = "box of pill bottles"
 	desc = "It has pictures of pill bottles on its front."
 
+/obj/item/weapon/storage/box/pillbottles/empty/populate_contents()
+	return
+
 /obj/item/weapon/storage/box/pillbottles/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/weapon/storage/pill_bottle(src)
-
 
 /obj/item/weapon/storage/box/snappops
 	name = "snap pop box"
@@ -559,6 +495,9 @@
 	name = "box of replacement lights"
 	illustration = "lightmixed"
 
+/obj/item/weapon/storage/box/lights/mixed/empty/populate_contents()
+	return
+
 /obj/item/weapon/storage/box/lights/mixed/populate_contents()
 	for(var/i in 1 to 14)
 		new /obj/item/weapon/light/tube(src)
@@ -581,7 +520,7 @@
 /obj/item/weapon/storage/box/data_disk/basic/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/weapon/computer_hardware/hard_drive/portable/basic(src)
-		
+
 /obj/item/weapon/storage/box/trooperuniform
 	name = "Trooper/Corpsman Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
@@ -595,7 +534,7 @@
 		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
-		
+
 /obj/item/weapon/storage/box/sergeantuniform
 	name = "Sergeant Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
@@ -609,7 +548,7 @@
 		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
-		
+
 /obj/item/weapon/storage/box/commanderuniform
 	name = "Commander Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
@@ -623,7 +562,7 @@
 		new /obj/item/clothing/head/rank/commanderdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
-		
+
 /obj/item/weapon/storage/box/blankranks
 	name = "Box of Blank Ranks"
 	desc = "A box full of solid red, ''blank'' Blackshield ranks, for distribution to volunteers and cadets."

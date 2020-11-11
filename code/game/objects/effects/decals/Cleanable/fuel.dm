@@ -48,8 +48,12 @@
 
 
 /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel
+	name = "plasma mist"
+	desc = "A small, low mist of the blue gas..."
 	icon_state = "mustard"
+	alpha = 150 //Less seeable
 	anchored = 0
+	color = "#9D14DB" // RGB (157, 20, 219)
 	var/turf/origin
 
 /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/New(newLoc, _amount = 1, d = 0, var/turf/_origin)

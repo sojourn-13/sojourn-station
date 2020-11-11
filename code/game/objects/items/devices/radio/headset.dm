@@ -75,12 +75,20 @@
 	ks1type = /obj/item/device/encryptionkey/binary
 
 /obj/item/device/radio/headset/headset_sec
-	name = "security radio headset"
+	name = "marshal radio headset"
 	desc = "This is used by your elite security force. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "sec_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
-	ks2type = /obj/item/device/encryptionkey/headset_sec
+	ks2type = /obj/item/device/encryptionkey/headset_mar
+
+/obj/item/device/radio/headset/headset_blackshield
+	name = "blackshield radio headset"
+	desc = "This is used by your elite security force. This has a small symbol denoting its built in back-up transmitter."
+	icon_state = "bs_headset"
+	item_state = "headset"
+	adhoc_fallback = TRUE
+	ks2type = /obj/item/device/encryptionkey/headset_bs
 
 /obj/item/device/radio/headset/headset_eng
 	name = "guild radio headset"
@@ -147,13 +155,20 @@
 	ks2type = /obj/item/device/encryptionkey/heads/moebius
 
 /obj/item/device/radio/headset/heads/hos
-	name = "security commander headset"
+	name = "warrant officer headset"
 	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
-	icon_state = "com_headset"
+	icon_state = "wo_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
+/obj/item/device/radio/headset/heads/bscom
+	name = "blackshield commander headset"
+	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
+	icon_state = "bscom_headset"
+	item_state = "headset"
+	adhoc_fallback = TRUE
+	ks2type = /obj/item/device/encryptionkey/heads/hos
 /obj/item/device/radio/headset/heads/ce
 	name = "guild master's headset"
 	desc = "The headset of the guy who is in charge of morons"

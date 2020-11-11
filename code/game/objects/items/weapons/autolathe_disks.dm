@@ -15,7 +15,7 @@
 		var/datum/computer_file/binary/design/D = new
 		D.set_design_type(design_typepath)
 		if(license > 0)
-			D.set_copy_protection(TRUE)
+			D.set_point_cost(designs[design_typepath])
 
 		store_file(D, TRUE) //Will force the disk to accept it in spite of size.
 

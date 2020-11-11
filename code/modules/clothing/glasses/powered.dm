@@ -86,7 +86,7 @@
 	off_state = "denight"
 	origin_tech = list(TECH_MAGNET = 2)
 	price_tag = 250
-
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2)
 	tick_cost = 1
 
 /obj/item/clothing/glasses/powered/night/Initialize()

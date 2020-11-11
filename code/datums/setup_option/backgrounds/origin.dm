@@ -112,12 +112,9 @@
 	name = "Castellen"
 	desc = "The castellen are the noble elite and highborn of the kriosan, genetically superior to the common folk they rule over but rarely found outside their own empire. \
 			Castellens are widely known for their considerable size and physical merit but lack the practical training in most areas compared to others, in particular those dealing with people or \
-			kriosans trademark rifles. A lifetime of being trained for the realm of politics and artisanship has made them quick to understand new things but abyssal at more other pursuits. \
-			On top of all that, a castellens political affiliations, be it present or former, bar them from command roles due to the very obvious conflict of interests."
+			kriosans trademark rifles. A lifetime of being trained for the realm of politics and artisanship has made them quick to understand new things but abyssal at more other pursuits."
 
 	restricted_to_species = list(FORM_KRIOSAN)
-
-	restricted_depts = COMMAND
 
 	stat_modifiers = list(
 		STAT_ROB = 5,
@@ -304,14 +301,36 @@
 		STAT_COG = 15
 	)
 
+/datum/category_item/setup_option/background/ethnicity/opifex_mechanist
+	name = "Mechanist"
+	desc = "You are one of the many opifex trained in the ways of your craft by your scavenger fleet. Like your brothers you have a knack for adapting to new situations and using all things \
+	mechanical. Sadly, seperated from your fleet you do not have access to the many useful robots that make life so much easier. That said, you always keep your various tools stowed away in a \
+	webbing smuggled on your person. As a rank and file you represent the best of the opifex ability and wear your tools with pride."
+
+	restricted_to_species = list(FORM_OPIFEX)
+
+	perks = list(/datum/perk/opifex_backup)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 5,
+		STAT_COG = 5
+	)
+
 /datum/category_item/setup_option/background/ethnicity/opifexbiomech
 	name = "Biomechanist"
 	desc = "While all opifex are trained in the workings of machines some are reserved for the biological aspect of their respective scavenger fleet. \
 			This training is usually towards the goal of maintaining the bio-mechanical augmentations used by the opifex, from installing nano-gates to replacing lost limbs with synthetic copies. \
 			The additional biological training, while helpful, does hamper the average opifexes ability to study machines, lessening their ability to quickly adapt to situations and new \
-			technology. After all, to the average opifex a biological entity is far less complex and nuisanced than even the most basic of robots."
+			technology. After all, to the average opifex a biological entity is far less complex and nuisanced than even the most basic of robots. Out of habit you always keep your trusty \
+			medical webbing stowed on your person with various useful chemicals and devices stored within."
 
 	restricted_to_species = list(FORM_OPIFEX)
+
+	perks = list(/datum/perk/opifex_backup_medical)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -327,9 +346,12 @@
 	desc = "Some opifex are assigned the tasks of dealing with the hostile entities aboard ships they loot, be it creatures living on space hulks, machines still defending lost ships, \
 			or the crew of a recently boarded ship being mercilessly slaughtered so they can peacefully strip the shuttles tech. Combat technicians favor the use of range weaponry, often \
 			times supported by combat drones with which they lead into conflict. Their skills towards repairing and salvaging technology isn't as good as the average opifex, but their concern \
-			is only on making areas safe for the lesser technicians to do the grunt labors."
+			is only on making areas safe for the lesser technicians to do the grunt labors. You don't take chances though, always making sure to keep your tactical belt smuggled on your person with \
+			a spare energy pistol, some manhack grenades, and other various combat tools."
 
 	restricted_to_species = list(FORM_OPIFEX)
+
+	perks = list(/datum/perk/opifex_backup_combat)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -348,6 +370,8 @@
 			knew what was needed for their purpose and literally nothing else."
 
 	restricted_to_species = list(FORM_CHTMANT)
+
+	perks = list(/datum/perk/scuttlebug)
 
 	stat_modifiers = list(
 		STAT_ROB = 4,
@@ -369,6 +393,8 @@
 	restricted_to_species = list(FORM_CHTMANT)
 	restricted_depts = SECURITY | PROSPECTOR
 
+	perks = list(/datum/perk/ichor)
+
 	stat_modifiers = list(
 		STAT_ROB = -8,
 		STAT_TGH = -8,
@@ -383,12 +409,14 @@
 	desc = "Ra’s are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ru’s and even \
 			most workers, the Ro. Their bodies were highly adapted to fight and they knew only loyalty unto death for the good of \
 			the hive’s. Due to this, and the existence of the Ru, they often heavily lacked any cognitive thinking skills and would \
-			rely on winning battles by sheer weight of numbers or attrition. The severe lack of intelligence they exibit also bars them from most medicalroles and all of science, engineering, and command roles."
+			rely on winning battles by sheer weight of numbers or pure attrition. The severe lack of intelligence they exibit also bars them from most medical roles and all of science, engineering, and command roles."
 
 	restricted_to_species = list(FORM_CHTMANT)
 
-	restricted_depts = SCIENCE | ENGINEERING | COMMAND
-	restricted_jobs = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
+	restricted_depts = SCIENCE | ENGINEERING
+	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/smc, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic, /datum/job/premier, /datum/job/pg, /datum/job/chief_engineer, /datum/job/chaplain, /datum/job/merchant)
+
+	perks = list(/datum/perk/chitinarmor)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,

@@ -106,7 +106,7 @@
 	rapid = 1
 	icon_state = "syndicateranged"
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
-	projectiletype = /obj/item/projectile/bullet/pistol
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
 
@@ -220,6 +220,11 @@
 	..(null,"is smashed into pieces!")
 	qdel(src)
 
+/mob/living/simple_animal/hostile/viscerator/opifex
+	name = "opifex viscerator"
+	desc = "A small, twin-bladed machine capable of inflicting very deadly lacerations. This one is an opifex model and thus targets non-colony humanoids, animals, and cht'mants."
+	faction = "neutral"
+
 
 /mob/living/simple_animal/hostile/elitemercenary
 	name = "\improper Elite operative"
@@ -233,7 +238,7 @@
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "hits"
-	speed = 6
+	speed = 2
 	move_to_delay = 1
 	turns_per_move = 1
 	stop_automated_movement_when_pulled = 0
@@ -296,7 +301,7 @@
 	rapid = 1
 	icon_state = "syndicate_stormtrooper_smg"
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
-	projectiletype = /obj/item/projectile/bullet/pistol
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
 
 /mob/living/simple_animal/hostile/elitemercenary/range/gunslinger

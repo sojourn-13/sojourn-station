@@ -1391,6 +1391,63 @@
 	required_reagents = list("capsaicin" = 1, "hot_ramen" = 6)
 	result_amount = 6
 
+/* Aurora's Coffee */
+
+/datum/chemical_reaction/soy_latte
+	result = "soy_latte"
+	required_reagents = list("coffee" = 1, "soymilk" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/cafe_latte
+	result = "cafe_latte"
+	required_reagents = list("coffee" = 1, "milk" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/freddo_espresso
+	result = "freddo_espresso"
+	required_reagents = list("espresso" = 1, "ice" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/caffe_americano
+	result = "caffe_americano"
+	required_reagents = list("espresso" = 1, "water" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/flat_white
+	result = "flat_white"
+	required_reagents = list("espresso" = 1, "milk" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/latte
+	result = "latte"
+	required_reagents = list("flat_white" = 1, "milk" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/cappuccino
+	result = "cappuccino"
+	required_reagents = list("espresso" = 1, "cream" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/freddo_cappuccino
+	result = "freddo_cappuccino"
+	required_reagents = list("cappuccino" = 1, "ice" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/macchiato
+	result = "macchiato"
+	required_reagents = list("cappuccino" = 1, "espresso" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/mocacchino
+	result = "mocacchino"
+	required_reagents = list("flat_white" = 1, "hot_coco" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/sromshine
+	result = "sromshine"
+	required_reagents = list("coffee" = 2, "orangejuice" = 1)
+	result_amount = 3
+
 /* Alcohol */
 
 /datum/chemical_reaction/goldschlager
@@ -1707,16 +1764,6 @@
 /datum/chemical_reaction/grog
 	result = "grog"
 	required_reagents = list("rum" = 1, "water" = 1)
-	result_amount = 2
-
-/datum/chemical_reaction/soy_latte
-	result = "soy_latte"
-	required_reagents = list("coffee" = 1, "soymilk" = 1)
-	result_amount = 2
-
-/datum/chemical_reaction/cafe_latte
-	result = "cafe_latte"
-	required_reagents = list("coffee" = 1, "milk" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/acidspit
