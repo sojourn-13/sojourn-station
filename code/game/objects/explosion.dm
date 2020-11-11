@@ -8,7 +8,14 @@ proc/explosion(turf/epicenter, devastation_range, heavy_impact_range, light_impa
 			return
 		//So we still get RnD points for this
 		for(var/obj/item/device/radio/beacon/explosion_watcher/W in GLOB.explosion_watcher_list)
-			var/power = devastation_range * 2 + heavy_impact_range + light_impact_range //The ranges add up, ie light 14 includes both heavy 7 and devestation 3. So this calculation means devestation counts for 4, heavy for 2 and light for 1 power, giving us a cap of 27 power.
+			var/power = devastation_range + heavy_impact_range + light_impact_range
+			//The ranges add up to give us RnD points
+			// ie light 14 includes both heavy 7 and devestation 3.
+			// So this calculation means devestation counts for 2,
+			// heavy for 2
+			// light for 1 power
+			// giving us a cap of 25 power.
+
 			if(get_dist(W, epicenter) < 10)
 				W.react_explosion(epicenter, power)
 
