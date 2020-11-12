@@ -10,6 +10,8 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/seuche
 	meat_amount = 3
 
+	knockdown_odds = 3
+
 	blattedin_revives_left = 1
 
 /mob/living/carbon/superior_animal/roach/support/New()
