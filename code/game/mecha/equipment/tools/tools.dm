@@ -156,8 +156,8 @@
 	icon_state = "mecha_diamond_drill"
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_DIAMOND = 3)
-	equip_cooldown = 20
-	force = 15
+	equip_cooldown = 10 // 3 diamonds for 3x the speed!
+	force = 25 //Lets not be out classed by a wrench...
 
 	action(atom/target)
 		if(!action_checks(target)) return
