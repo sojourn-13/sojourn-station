@@ -55,6 +55,10 @@
 	path = /obj/item/clothing/under/customskirt
 	flags = GEAR_HAS_COLOR_SELECTION
 
+/datum/gear/uniform/black_suit_skirt
+	display_name = "black suit skirt"
+	path = /obj/item/clothing/under/suit_jacket/blackskirt
+
 /datum/gear/uniform/latex_maid
 	display_name = "latex maid dress"
 	path = /obj/item/clothing/under/costume/kinky/latex_maid

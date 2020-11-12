@@ -32,9 +32,10 @@
 
 //COFFEE! SQUEEEEEEEEE!
 /mob/living/simple_animal/crab/Coffee
-	name = "Coffee"
-	real_name = "Coffee"
-	desc = "It's Coffee, the other pet!"
+	name = "Graves"
+	real_name = "Graves"
+	icon_state = "evilcrab"
+	desc = "It's Graves, the other pet! Despite his rather evil appearence he is utterly harmless. Best friends with Tea the Frog."
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
@@ -75,8 +76,8 @@
 	meat_amount = 3
 
 /mob/living/simple_animal/frog/rare
-	name = "Pepe"
-	desc = "It's quite colorful but you can't help but feel he is incredibly smug and super rare."
+	name = "Tea"
+	desc = "It's quite colorful but you can't help but feel he is incredibly smug given the fact this fatass just sits in his own personal pond all day."
 	icon_state = "rare_frog"
 	mob_size = MOB_TINY
 	speak_emote = list("ribbits smugly")

@@ -853,7 +853,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/haloperidol
 	name = "Haloperidol"
 	id = "haloperidol"
-	description = "Purges chems from bloodstream, lowers NSA and sedates patient. An overdose of haloperidol can be fatal."
+	description = "Purges all forms of toxins and stimulants from the bloodstream, lowers NSA, and sedates the patient. An overdose of haloperidol can be fatal."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ba1f04"
@@ -864,9 +864,12 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/haloperidol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.bloodstr)
 		for(var/current in M.bloodstr.reagent_list)
-			var/datum/reagent/toxin/pararein/R = current
+			var/datum/reagent/toxin/R = current
 			if(!istype(R, src))
-				R.remove_self(effect_multiplier * pick(list(1,2,3)))
+				R.remove_self(effect_multiplier * pick(list(2,4,6)))
+			var/datum/reagent/stim/S = current
+			if(!istype(S, src))
+				S.remove_self(effect_multiplier * pick(list(2,4,6)))
 	var/effective_dose = dose
 	if(issmall(M))
 		effective_dose *= 2
@@ -1059,7 +1062,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/cindpetamol
 	name = "Cindpetamol"
 	id = "cindpetamol"
-	description = "Cindpetamol is a highly specialized chemical made by cindarites that purges the blood stream of toxins and addictions."
+	description = "Cindpetamol is a highly specialized chemical made by cindarites that purges the blood stream of toxins, addictions, and stimulants."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#FF3300"
@@ -1090,6 +1093,9 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 			var/datum/reagent/toxin/R = current
 			if(!istype(R, src))
 				R.remove_self(pick(list(1,2,3)))
+			var/datum/reagent/stim/S = current
+			if(!istype(S, src))
+				S.remove_self(effect_multiplier * pick(list(1,2,3)))
 	var/effective_dose = dose
 	if(issmall(M))
 		effective_dose *= 2

@@ -78,7 +78,7 @@
 /datum/uplink_item/item/ammo/sniperammo
 	name = ".60-06 AP"
 	item_cost = 3
-	path = /obj/item/weapon/storage/box/sniperammo
+	path = /obj/item/ammo_magazine/ammobox/antim_small
 
 
 //Super-class cells, better than what you'll find in a vendor,

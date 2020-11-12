@@ -38,3 +38,7 @@
 /datum/design/autolathe/sec/hailer
 	name = "hailer"
 	build_path = /obj/item/device/hailer
+
+/datum/design/autolathe/sec/stunbaton
+	name = "stunbaton"
+	build_path = /obj/item/weapon/melee/baton

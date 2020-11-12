@@ -84,7 +84,7 @@
 	//Emperor Spider's meat contains party drops, big brain chemical. 8 seems fine. Emperors are dangerous.
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8, "party drops" =8)
-	
+
 /obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
 	icon_state = "xenomeat"
@@ -93,11 +93,19 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8)
 
+/obj/item/weapon/reagent_containers/food/snacks/meat/spider/midwife
+	desc = "A bloated slab of sickly-green meat cut from a spider. It twitches and shudders as you look it as if actively mutating even in death."
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+
+	bitesize = 6
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "mutagen" = 8)
+
 /obj/item/weapon/reagent_containers/food/snacks/meat/spider/recluse
 	desc = "A bloated slab of sickly-green meat cut from a spider. The smell from this one makes your nose go numb."
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
-	//Zombie Powder is fairly dangerous and recluses are easy to kill. 6 units per slab is good enough. 
+	//Zombie Powder is fairly dangerous and recluses are easy to kill. 6 units per slab is good enough.
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8, "zombiepowder" = 6)
 
