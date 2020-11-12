@@ -21,7 +21,7 @@
 		/datum/design/autolathe/sec/hailer,
 		/datum/design/research/item/medical/autopsy_scanner,
 		/datum/design/autolathe/gun/cop_mod = 0,
-		/datum/design/autolathe/sec/stunbaton = 5, //balance, we can only make 10
+		/datum/design/autolathe/sec/stunbaton = 5, //balance, we can only make 4
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security/hos
@@ -37,13 +37,18 @@
 
 	designs = list(
 		/datum/design/autolathe/gun/ten_dark,
+		/datum/design/autolathe/gun/NM_colt,
 		/datum/design/autolathe/gun/ladon,
- 		/datum/design/autolathe/gun/naga,
-		/datum/design/autolathe/gun/omnirifle,//rifles
+		/datum/design/autolathe/gun/naga,
+		//rifles
+		/datum/design/autolathe/gun/omnirifle,
 		/datum/design/autolathe/gun/standard_omnirifle,
 		/datum/design/autolathe/gun/omnicarbine,
-		/datum/design/autolathe/gun/sts40,
 		/datum/design/autolathe/gun/rds_omnicarbine,
+		//STS
+		/datum/design/autolathe/gun/sts25,
+		/datum/design/autolathe/gun/sts30,
+		/datum/design/autolathe/gun/sts40,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshieldammo
@@ -63,7 +68,7 @@
 		/datum/design/autolathe/ammo/magnum_lethal,
 		/datum/design/autolathe/ammo/hrifle,
 		/datum/design/autolathe/ammo/hrifle_rubber,
-		/datum/design/autolathe/ammo/hrifle_practice,
+		/datum/design/autolathe/ammo/hrifle_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_lethal,
 		/datum/design/autolathe/ammo/lrifle,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
@@ -142,6 +147,8 @@
 		/datum/design/autolathe/ammo/rifle_lethal,
 		/datum/design/autolathe/ammo/lrifle_short_lethal,
 		/datum/design/autolathe/ammo/rifle_short_lethal,
+		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/ammo/hrifle_lethal,
 		//shells
 		/datum/design/autolathe/ammo/shotgun_pellet,
 		/datum/design/autolathe/ammo/shotgun,
@@ -450,6 +457,7 @@
 		/datum/design/autolathe/ammo/sbaw_pellet,
 		/datum/design/autolathe/ammo/sbaw_beanbag,
 		/datum/design/autolathe/ammo/sbaw_payload = 3,
+		/datum/design/autolathe/ammo/sbaw_empty = 0, //So we can handload new mags
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/gladstone
@@ -626,7 +634,7 @@
 		/datum/design/autolathe/gun/sika = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
@@ -639,7 +647,7 @@
 		/datum/design/autolathe/gun/roe =  3,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
