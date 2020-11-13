@@ -432,6 +432,13 @@
 			else
 				to_chat(user, SPAN_NOTICE("Decreases move delay by [abs(amount*100)]%"))
 
+		if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE])
+			var/amount = weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE]-1
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases melee damage by [amount*100]%"))
+			else
+				to_chat(user, SPAN_WARNING("Decreases melee damage by [abs(amount*100)]%"))
+
 		if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]-1
 			if(amount > 0)

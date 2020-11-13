@@ -13,7 +13,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5)
 	price_tag = 1250
 	projectile_type = /obj/item/projectile/beam/midlaser
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
@@ -37,7 +37,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
 	charge_cost = 2000
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	suitable_cell = /obj/item/weapon/cell/large
 	one_hand_penalty = 15 //full sized shotgun level
 	fire_delay = 14 //Equivalent to a pump then fire time
@@ -100,7 +100,7 @@
 	item_charge_meter = TRUE
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	twohanded = TRUE
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
@@ -232,7 +232,7 @@
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
 	price_tag = 1000
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
@@ -283,7 +283,7 @@
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 		)
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 
 /obj/item/weapon/gun/energy/lasercannon/mounted
 	name = "mounted laser cannon"

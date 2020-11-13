@@ -38,6 +38,14 @@
 	name = "Mine"
 	icon_state = "unexplored"
 
+/area/mine/gulag
+	name = "Laber Mines"
+	has_gravity = 1
+
+/area/mine/gulag_base
+	name = "Laber Camp"
+	has_gravity = 1
+
 
 // OUTPOSTS
 

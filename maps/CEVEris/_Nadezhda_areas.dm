@@ -1251,6 +1251,18 @@ area/nadezhda/medical/medbaymeeting
 	name = "Prison Cells"
 	icon_state = "hammerblue"
 
+/area/nadezhda/security/laber_area
+	name = "Laber Transfer"
+	icon_state = "hammerblue"
+
+/area/nadezhda/security/hut_cell1
+	name = "HuT Cell 1"
+	icon_state = "hammerblue"
+
+/area/nadezhda/security/hut_cell2
+	name = "HuT Cell 2"
+	icon_state = "hammerblue"
+
 /area/nadezhda/security/evidencestorage
 	name = "Evidence Storage"
 	icon_state = "hammerred"

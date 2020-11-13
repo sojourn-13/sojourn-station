@@ -695,6 +695,7 @@
 	restrict_safety = initial(restrict_safety)
 	rigged = initial(rigged)
 	zoom_factor = initial(zoom_factor)
+	force = initial(force)
 	initialize_scope()
 	initialize_firemodes()
 

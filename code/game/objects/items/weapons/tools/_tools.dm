@@ -827,8 +827,8 @@
 			var/delta = reagents.total_volume - reagents.maximum_volume
 
 			reagents.trans_to_turf(get_turf(src), delta)
-			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, spilling its contents onto the floor!"), \
-								SPAN_WARNING("You remove the extended fuel tank, spilling its contents onto the floor!"))
+			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, its contents spilling onto the floor!"), \
+								SPAN_WARNING("You remove the extended fuel tank, its contents spilling onto the floor!"))
 	return
 
 /obj/item/weapon/tool/examine(mob/user)

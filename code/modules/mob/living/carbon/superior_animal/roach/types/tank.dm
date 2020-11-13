@@ -10,6 +10,8 @@
 	mob_size = MOB_MEDIUM
 	density = TRUE
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/panzer
+	knockdown_odds = 3
+
 
 // Panzers won't slip over on water or soap.
 /mob/living/carbon/superior_animal/roach/tank/slip(var/slipped_on,stun_duration=8)

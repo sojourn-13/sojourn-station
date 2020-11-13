@@ -6,7 +6,7 @@
 	w_class = ITEM_SIZE_HUGE
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
-	gun_tags = list(GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_SCOPE)
 
 	var/release_force = 0
 	var/throw_distance = 10

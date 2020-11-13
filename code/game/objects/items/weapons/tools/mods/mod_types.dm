@@ -169,7 +169,7 @@
 
 /obj/item/weapon/tool_upgrade/productivity/whetstone
 	name = "sharpening block"
-	desc = "A rough single-use block to sharpen a blade. The honed edge cuts smoothly."
+	desc = "A rough single-use block to sharpen a blade or a rifle bayonet. The honed edge cuts smoothly."
 	icon_state = "whetstone"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_DIAMOND = 3)
 
@@ -191,7 +191,7 @@
 
 /obj/item/weapon/tool_upgrade/productivity/diamond_blade
 	name = "Lonestars \"Gleaming Edge\": diamond blade"
-	desc = "An adaptable industrial grade cutting disc, with diamond dust worked into the metal. Exceptionally durable."
+	desc = "An adaptable industrial grade cutting disc, with diamond dust worked into the metal. Exceptionally durable. Works for both cutting tools and rifle bayonets."
 	icon_state = "diamond_blade"
 	price_tag = 300
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 4)
@@ -510,7 +510,7 @@
 /obj/item/weapon/tool_upgrade/augment/spikes
 	name = "spikes"
 	icon_state = "spike"
-	desc = "An array of sharp bits of steel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity."
+	desc = "An array of sharp bits of steel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity. Alternatively you could slap it on the end of a gun barrel as a ghetto bayonet at the cost of some accuracy."
 	matter = list(MATERIAL_STEEL = 2)
 
 /obj/item/weapon/tool_upgrade/augment/spikes/New()
@@ -526,6 +526,7 @@
 	)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_MELEE_DAMAGE = 1.2,
+		GUN_UPGRADE_RECOIL = 1.1,
 	)
 	I.gun_loc_tag = GUN_KNIFE
 	I.prefix = "spiked"

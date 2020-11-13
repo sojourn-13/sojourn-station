@@ -4,6 +4,7 @@
 #include "_Nadezhda_Colony_Underground.dmm"
 #include "_Nadezhda_Colony_Transition.dmm"
 #include "_Nadezhda_Colony_Surface.dmm"
+#include "_Nadezhda_Colony_labercamp.dmm"
 #include "_Nadezhda_Solar_Area.dmm"
 #include "../encounters/deepforest/deepforest.dm"
 #include "../encounters/spacefortress/spacefortress.dm"
@@ -54,4 +55,14 @@
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
+	height = 1
+
+/obj/map_data/nadezda_labor
+	name = "Nadezhda Labor Camp"
+	is_station_level = TRUE
+	is_player_level = TRUE
+	is_contact_level = TRUE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	generate_asteroid = TRUE
 	height = 1
