@@ -15,7 +15,7 @@
 	price_tag = 750
 	projectile_type = /obj/item/projectile/temp
 	zoom_factor = 2.0
-	gun_tags = list(GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_SCOPE)
 
 
 /obj/item/weapon/gun/energy/temperature/Initialize()

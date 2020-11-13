@@ -1211,7 +1211,7 @@ There are 9 wires.
 				if(AM.blocks_airlock())
 					if(world.time > next_beep_at)
 						playsound(src.loc, 'sound/machines/buzz-two.ogg', 30, 1, -1)
-						next_beep_at = world.time + SecondsToTicks(10)
+						next_beep_at = world.time + SecondsToTicks(120)
 					close_door_at = world.time + 6
 					return
 				if(istype(AM, /obj/item/weapon/tool))
