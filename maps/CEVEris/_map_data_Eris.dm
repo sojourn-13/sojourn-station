@@ -64,4 +64,5 @@
 	is_contact_level = TRUE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
+	generate_asteroid = TRUE
 	height = 1
