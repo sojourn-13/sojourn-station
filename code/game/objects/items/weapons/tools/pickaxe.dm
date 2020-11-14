@@ -60,18 +60,19 @@
 	workspeed = 1.2
 	use_power_cost = 0
 
-/obj/item/weapon/tool/pickaxe/onestar/turn_on()
-	/obj/item/weapon/tool/turn_on()
+/obj/item/weapon/tool/pickaxe/onestar/turn_on(mob/user)
+	.=..()
+	if(.)
 		mode = DIG
 		to_chat(user, SPAN_NOTICE("You turn on [src], readying yourself to strike earth."))
 		playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
 
-/obj/item/weapon/tool/pickaxe/onestar/turn_off()
-	/obj/item/weapon/tool/turn_off()
+/obj/item/weapon/tool/pickaxe/onestar/turn_off(mob/user)
+
 		mode = EXCAVATE
 		to_chat(user, SPAN_NOTICE("You turn off [src], and prepare to remove debris."))
 		playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
-
+		..()
 
 /obj/item/weapon/tool/pickaxe/onestar/cyborg
 	workspeed = 1.4
