@@ -10,7 +10,7 @@
 
 /obj/item/weapon/tool/bonesetter/adv
 	name = "clamp bone setter"
-	desc = "A more powerful yet still rather small bone clamp tool."
+	desc = "A Cautery with self-regulating heat transfer capabilities, allows for quicker and more precise cauterization of surgical incisions."
 	icon_state = "bone setter"
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 3)
