@@ -102,7 +102,7 @@
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 15, MATERIAL_GOLD = 3, MATERIAL_SILVER = 5)
 
 /datum/design/research/item/scalpel_laser
-	desc = "A scalpel augmented with a directed laser, for more precise cutting while instantly clamping bleeding cuts through laser cauterization."
+	desc = "A scalpel augmented with a directed laser, for more precise cutting while instantly searing bleeding cuts through laser cauterization."
 	build_path = /obj/item/weapon/tool/scalpel/laser
 	category = "Medical"
 
