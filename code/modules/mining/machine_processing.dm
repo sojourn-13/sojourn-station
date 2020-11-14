@@ -150,7 +150,7 @@
 	//Grab some more ore to process this tick.
 	for(var/obj/item/weapon/ore/O in get_step(src, input_dir))
 		if(!isnull(ores_stored[O.material]))
-			ores_stored[O.material]++
+			ores_stored[O.material] += O.sheet_amout
 		qdel(O)
 
 	if(!active)
