@@ -10,7 +10,7 @@
 
 /obj/item/weapon/tool/hemostat/adv
 	name = "precise hemostat"
-	desc = "A much more precise hemostat with more grip."
+	desc = "An advanced hemostat with better vein clamping strength and an adaptative tip tuned to also allow easier extraction of shrapnel, organs, and implants."
 	matter = list(MATERIAL_STEEL = 6)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
 	tool_qualities = list(QUALITY_CLAMPING = 60)
