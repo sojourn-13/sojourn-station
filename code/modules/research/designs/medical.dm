@@ -73,7 +73,7 @@
 	build_path = /obj/item/bodybag/cryobag
 
 /datum/design/research/item/medical/blue
-	desc = "A blue-colored, compact cryo box for holding organs for safe transportation while preserving their integrity.
+	desc = "A blue-colored, compact cryo box for holding organs for safe transportation while preserving their integrity."
 	build_path = /obj/item/weapon/storage/freezer
 
 /datum/design/research/item/medical/red
