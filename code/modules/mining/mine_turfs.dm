@@ -14,7 +14,7 @@
 		return
 	var/list/usable_qualities = list(QUALITY_EXCAVATION)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
-	if(tool_type==QUALITY_HAMMERING)
+	if(tool_type==QUALITY_EXCAVATION)
 		to_chat(user, SPAN_NOTICE("You try to brake out a rock geode or two."))
 		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_ZERO, required_stat = STAT_ROB))
 			new /obj/random/material_ore_small(get_turf(src))

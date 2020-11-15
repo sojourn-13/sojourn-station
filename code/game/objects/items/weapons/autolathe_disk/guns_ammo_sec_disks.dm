@@ -145,8 +145,6 @@
 		/datum/design/autolathe/ammo/rifle,
 		/datum/design/autolathe/ammo/lrifle_short,
 		/datum/design/autolathe/ammo/rifle_short,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small,
 		/datum/design/autolathe/ammo/rifle_lethal,
 		/datum/design/autolathe/ammo/lrifle_short_lethal,
 		/datum/design/autolathe/ammo/rifle_short_lethal,
