@@ -272,10 +272,10 @@
 	desc = "A trophy earned during the monthly plasma tag competitions between various factions. The gold is fashioned from anomalous metal, giving it beneficial properties to carry with you. Hold your factions achievement high!"
 	icon_state = "golden_cup"
 	oddity_stats = list(
-		STAT_ROB = 6,
-		STAT_TGH = 6,
-		STAT_VIG = 6,
-		STAT_BIO = 6,
-		STAT_ROB = 6,
-		STAT_VIG = 6,
+		STAT_ROB = 9,
+		STAT_TGH = 9,
+		STAT_VIG = 9,
+		STAT_BIO = 9,
+		STAT_ROB = 9,
+		STAT_VIG = 9,
 	)
