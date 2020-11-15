@@ -3,7 +3,7 @@
 	desc = "A stranger from an unknown place."
 	icon = 'icons/mob/mobs-humanoid.dmi'
 	icon_state = "strangerranged"
-	icon_dead = "stranger_dead" //TODO: that icon doesn't exist
+	icon_dead = "stranger_dead"
 	icon_gib = "syndicate_gib"
 	speak_chance = 0
 	turns_per_move = 4
@@ -109,13 +109,13 @@
 	..()
 
 /mob/living/simple_animal/hostile/stranger/Life()
-	if(prob(prob_tele/2))
+	. = ..()
+	if(. && prob(prob_tele/2))
 		var/source = src
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
 		do_teleport(src, T)
-	. = ..()
 
 /obj/item/weapon/gun/energy/plasma/stranger
 	name = "unknown plasma gun"
