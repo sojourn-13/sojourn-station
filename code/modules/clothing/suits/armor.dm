@@ -127,6 +127,22 @@
 	)
 	flags_inv = HIDEJUMPSUIT
 
+/obj/item/clothing/suit/armor/vest/hunter
+	name = "hunter armor"
+	desc = "A suit of armor crudely brought together with bits of metal, glass, bone, and leather. Surprisingly effective as it keeps the wearer mobile without sacrificing protection."
+	icon_state = "hunter_armor"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(
+		melee = 60,
+		bullet = 10,
+		energy = 5,
+		bomb = 50,
+		bio = 0,
+		rad = 0
+	)
+	flags_inv = HIDEJUMPSUIT
+
 /obj/item/clothing/suit/armor/vest/technomancersuit
 	name = "'Mark V' enviromental protection suit"
 	desc = "For working in hazardous enviroments. While its built for most enviroments, one of those is not space."
