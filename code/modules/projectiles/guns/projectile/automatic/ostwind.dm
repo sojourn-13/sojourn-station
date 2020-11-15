@@ -29,7 +29,7 @@
 	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND
+		BURST_3_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/ostwind/update_icon()
