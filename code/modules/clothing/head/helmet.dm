@@ -112,6 +112,9 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	flash_protection = FLASH_PROTECTION_MAJOR
+	action_button_name = "Toggle Headlamp"
+	light_overlay = "technohelmet_light"
+	brightness_on = 4
 
 /obj/item/clothing/head/helmet/soteriasuit
 	name = "'Mark II' enviromental protection helmet"
