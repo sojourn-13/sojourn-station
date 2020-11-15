@@ -3435,7 +3435,7 @@
 "boc" = (/obj/structure/flora/ausbushes/palebush,/obj/structure/flora/tree/jungle_small/variant1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
 "bod" = (/obj/structure/flora/big/rocks2,/obj/structure/flora/tree/jungle/variant1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
 "boe" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/flora/small/busha1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
-"bof" = (/obj/structure/table/woodentable,/obj/item/weapon/oddity/rare/golden_cup,/turf/simulated/floor/wood,/area/nadezhda/absolutism/vectorrooms)
+"bof" = (/obj/structure/table/woodentable,/turf/simulated/floor/wood,/area/nadezhda/absolutism/vectorrooms)
 "bog" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/structure/disposalpipe/segment{dir = 8; icon_state = "pipe-c"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/maintenance{name = "Surface Maintenance"})
 "boh" = (/obj/structure/flora/ausbushes/sparsegrass,/obj/structure/flora/tree/jungle/variant5,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
 "boi" = (/obj/structure/flora/big/bush1,/obj/structure/flora/tree/jungle_small/variant1,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
