@@ -42,7 +42,7 @@
 //Increases penetration multiplier, projectile speed. Increases fire delay. Acquired via science
 /obj/item/weapon/gun_upgrade/barrel/mag_accel
 	name = "Soteria \"Penetrator\" magnetic accelerator barrel"
-	desc = "Uses sympathetic magnetic coiling to increase exit velocity of a metal projectile."
+	desc = "Uses sympathetic magnetic coiling to increase exit velocity and penetration capabilities of a metal projectile. The added strain to the gun's barrel requires an additional cooldown period between shots."
 	icon_state = "Penetrator"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1)
 
@@ -240,7 +240,7 @@
 // Double damage at the cost of more recoil and a tripled energy consumption
 /obj/item/weapon/gun_upgrade/mechanism/battery_shunt
 	name = "Soteria \"Thunder\" battery shunt"
-	desc = "This experimental battery shunt is a cutting edge tool attachment which bypasses battery protection circuits to deliver the maximum amount of power in the shortest amount of time."
+	desc = "This experimental battery shunt is a cutting edge tool attachment which bypasses battery protection circuits to deliver the maximum amount of power in the shortest amount of time. For those who care more about stopping power than number of shots."
 	icon_state = "battery_shunt"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
 
@@ -257,7 +257,7 @@
 // Greatly increase firerate at the cost of lower damage
 /obj/item/weapon/gun_upgrade/mechanism/overdrive
 	name = "Soteria \"Tesla\" overdrive chip"
-	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase the rate of fire at the cost of a reduced stopping power."
+	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase the rate of fire at the cost of reduced stopping power."
 	icon_state = "overdrive"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
 
