@@ -51,7 +51,7 @@
 /obj/item/weapon/gun/projectile/automatic/ak47/akl
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-	A modernized eperimental version of an old Kalashnikov design, desginated to take .223 laser ammuniton. The future is now, comrade."
+	A modernized experimental version of an old Kalashnikov design, desginated to take .223 laser ammuniton. The future is now, comrade. This modified type is commonly found in use by void wolves and similar ilk."
 	icon = 'icons/obj/guns/projectile/akl.dmi'
 	icon_state = "AKL"
 	item_state = "AKL"
