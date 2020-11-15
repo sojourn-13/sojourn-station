@@ -24,7 +24,7 @@
 	one_hand_penalty = 20 //full sized rifle with bayonet is hard to keep on target
 	var/bolt_open = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") // Considering attached bayonet
-	sharp = 1
+	sharp = TRUE //We have a knife!
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET, GUN_SCOPE)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn
@@ -107,7 +107,6 @@
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/sa
 
-
 /obj/item/weapon/gun/projectile/boltgun/scout
 	name = "\"Scout\" heavy boltgun"
 	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .408 Heavy Rifle rounds, it packs the reach and accuracy for every occasion."
@@ -158,6 +157,26 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 10, MATERIAL_GLASS = 10)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/light/wood
+
+/obj/item/weapon/gun/projectile/boltgun/zatvor
+	name = "homemade \"Zatvor Kalashnikov\" rifle"
+	desc = "A mangeled mess of a boltgun and a Kalashnikov rifle combined into one with a soldered internal magazine; saving on production cost, thanks to Nadezhda Marshals gunsmiths."
+	icon = 'icons/obj/guns/projectile/zatvor.dmi'
+	icon_state = "zatvor"
+	item_state = "zatvor"
+	w_class = ITEM_SIZE_NORMAL
+	force = WEAPON_FORCE_NORMAL
+	caliber = CAL_LRIFLE
+	max_shells = 30
+	damage_multiplier = 0.8
+	penetration_multiplier  = 1.0
+	slot_flags = SLOT_BELT|SLOT_BACK
+	recoil_buildup = 15
+	price_tag = 600
+	one_hand_penalty = 20
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 20, MATERIAL_WOOD = 5)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
+	saw_off = FALSE
 
 /obj/item/weapon/gun/projectile/boltgun/sawn
 	name = "\"obrez\" boltgun"

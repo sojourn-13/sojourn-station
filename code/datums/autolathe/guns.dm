@@ -197,6 +197,9 @@
 	name = "HS BR .257 \"Roe\""
 	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/light/wood
 
+/datum/design/autolathe/gun/zatvor
+	name = "HG .257 \"zatvor\""
+	build_path = /obj/item/weapon/gun/projectile/boltgun/zatvor
 
 ///R I F L E S
 //7 . 5 m m

@@ -45,6 +45,8 @@
 		/datum/design/autolathe/gun/standard_omnirifle,
 		/datum/design/autolathe/gun/omnicarbine,
 		/datum/design/autolathe/gun/rds_omnicarbine,
+		//bolt gun
+		/datum/design/autolathe/gun/zatvor,
 		//STS
 		/datum/design/autolathe/gun/sts25,
 		/datum/design/autolathe/gun/sts30,

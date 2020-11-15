@@ -48,6 +48,31 @@
 	. = ..()
 	update_icon()
 
+/obj/item/weapon/gun/projectile/automatic/ak47/akl
+	name = "\"Legkiy-Kalashnikov\" laser carbine"
+	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
+	A modernized eperimental version of an old Kalashnikov design, desginated to take .223 laser ammuniton. The future is now, comrade."
+	icon = 'icons/obj/guns/projectile/akl.dmi'
+	icon_state = "AKL"
+	item_state = "AKL"
+	w_class = ITEM_SIZE_NORMAL
+	force = WEAPON_FORCE_NORMAL
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 3, TECH_POWER = 5)
+	price_tag = 600
+	recoil_buildup = 10
+	one_hand_penalty = 20
+	damage_multiplier = 1
+	saw_off = FALSE
+	caliber = CAL_SCI
+	mag_well = MAG_WELL_LSRIFLE
+	fire_sound = 'sound/weapons/Laser.ogg'
+	init_firemodes = list(
+		FULL_AUTO_400,
+		BURST_5_ROUND,
+		SEMI_AUTO_NODELAY
+		)
+
 /obj/item/weapon/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
