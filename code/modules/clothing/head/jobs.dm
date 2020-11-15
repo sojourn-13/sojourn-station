@@ -90,6 +90,11 @@
 	desc = "A dark and imposing black beret."
 	icon_state = "beretblack"
 
+/obj/item/clothing/head/beret/german
+	name = "brown beret"
+	desc = "A light brown beret."
+	icon_state = "beretblack"
+
 /obj/item/clothing/head/seccap
 	name = "blue patrol cap"
 	desc = "A blue patrol cap worn by security personnel."

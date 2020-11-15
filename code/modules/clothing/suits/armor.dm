@@ -71,6 +71,19 @@
 	)
 	price_tag = 150
 
+/obj/item/clothing/suit/armor/vest/northtech
+	name = "outdated ablative vest"
+	desc = "An outdated ablative vest with plates designed to absorb rather than reflect energy projectiles."
+	icon_state = "northtech"
+	armor = list(
+		melee = 15,
+		bullet = 15,
+		energy = 50,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
 	desc = "Every rose has its thorns."

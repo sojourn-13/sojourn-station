@@ -282,3 +282,15 @@
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
 	/obj/item/weapon/storage/fancy/cigarettes = 1)
+
+/obj/item/weapon/storage/deferred/crate/northtech_uniform
+	name = "NorthTech uniform crate"
+	desc = "A moderately sized crate full of clothes."
+	icon_state = "northtech_deferred"
+	initial_contents = list(
+	/obj/item/clothing/mask/balaclava/tactical = 1,
+	/obj/item/clothing/shoes/jackboots = 1,
+	/obj/item/clothing/gloves/thick  = 1,
+	/obj/item/clothing/head/soft/northtech = 1,
+	/obj/item/clothing/suit/armor/vest/northtech = 1,
+	/obj/item/clothing/under/northtech = 1)
