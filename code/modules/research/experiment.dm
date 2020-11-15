@@ -49,9 +49,31 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/static/list/level_to_points = list(200,500,1000,2500,10000)
 	// Points for special slime cores
 	var/static/list/core_points = list(
-		/obj/item/slime_extract/grey = 400,
-		/obj/item/slime_extract/gold = 2500,
-		/obj/item/slime_extract/adamantine = 3500,
+		//Level 0 - Gray
+		/obj/item/slime_extract/grey = 500,
+		//Level 1
+		/obj/item/slime_extract/metal = 750,
+		/obj/item/slime_extract/purple = 750,
+		/obj/item/slime_extract/orange = 750,
+		/obj/item/slime_extract/blue = 750,
+		//Level 2
+		/obj/item/slime_extract/yellow = 1000,
+		/obj/item/slime_extract/red = 1000,
+		/obj/item/slime_extract/darkpurple = 1000,
+		/obj/item/slime_extract/silver = 1000,
+		/obj/item/slime_extract/gold = 1000,
+		/obj/item/slime_extract/darkblue = 1000,
+		/obj/item/slime_extract/pink = 1000,
+		/obj/item/slime_extract/green = 1000,
+		//Level 3
+		/obj/item/slime_extract/black = 1250,
+		/obj/item/slime_extract/lightpink = 1250,
+		/obj/item/slime_extract/oil = 1250,
+		/obj/item/slime_extract/adamantine = 1250,
+		//Fancy/Rare
+		/obj/item/slime_extract/pyrite = 5000,
+		/obj/item/slime_extract/cerulean = 5000,
+		/obj/item/slime_extract/sepia = 5000,
 		/obj/item/slime_extract/bluespace = 7500,
 		/obj/item/slime_extract/rainbow = 15000
 	)
@@ -205,7 +227,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			var/added_power = max(0, power - saved_power_level)
 			var/already_earned_power = min(saved_power_level, power)
 
-			calculated_research_points = added_power * 1000 + already_earned_power * 200
+			calculated_research_points = added_power * 500 + already_earned_power * 200
 
 			if(power > saved_power_level)
 				RD.files.experiments.saved_best_explosion = power

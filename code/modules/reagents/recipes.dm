@@ -1066,13 +1066,48 @@
 	P.loc = get_turf(holder.my_atom)
 	..()
 
-//Gold - removed
-/datum/chemical_reaction/slime/crit
+/datum/chemical_reaction/slime/metal_2
+	result = null
+	required_reagents = list("water" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/metal
+
+/datum/chemical_reaction/slime/metal/on_reaction(var/datum/reagents/holder)
+	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/plastic
+	M.amount = 15
+	M.loc = get_turf(holder.my_atom)
+	..()
+
+//Gold
+/datum/chemical_reaction/slime/wealth
 	result = null
 	required_reagents = list("plasma" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/gold
-	mix_message = "The slime core fizzles disappointingly."
+
+/datum/chemical_reaction/slime/wealth/on_reaction(var/datum/reagents/holder)
+	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/gold
+	M.amount = 15
+	M.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/plasteel/P = new /obj/item/stack/material/platinum
+	P.amount = 5
+	P.loc = get_turf(holder.my_atom)
+	..()
+
+/datum/chemical_reaction/slime/wealth_light
+	result = null
+	required_reagents = list("MATERIAL_URANIUM" = 5)
+	result_amount = 1
+	required = /obj/item/slime_extract/gold
+
+/datum/chemical_reaction/slime/wealth/on_reaction(var/datum/reagents/holder)
+	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/silver
+	M.amount = 15
+	M.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/plasteel/P = new /obj/item/stack/material/glass
+	P.amount = 5
+	P.loc = get_turf(holder.my_atom)
+	..()
 
 //Silver
 /datum/chemical_reaction/slime/bork
@@ -1215,6 +1250,21 @@
 	required_reagents = list("plasma" = 1)
 	result_amount = 8
 	required = /obj/item/slime_extract/red
+
+/datum/chemical_reaction/slime/osmium
+	result = null
+	required_reagents = list("frostoil" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/red
+
+/datum/chemical_reaction/slime/osmium/on_reaction(var/datum/reagents/holder)
+	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/osmium
+	M.amount = 15
+	M.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/plasteel/P = new /obj/item/stack/material/mhydrogen
+	P.amount = 5
+	P.loc = get_turf(holder.my_atom)
+	..()
 
 /datum/chemical_reaction/slime/bloodlust
 	result = null

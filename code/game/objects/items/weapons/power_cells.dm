@@ -81,7 +81,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 2)
 	maxcharge = 18000
 
-//Meme cells - for fun and cancer
+//Meme cells - for fun
 
 /obj/item/weapon/cell/large/potato
 	name = "potato battery"
@@ -99,7 +99,8 @@
 	origin_tech = list(TECH_POWER = 2, TECH_BIO = 4)
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "yellow slime extract"
-	maxcharge = 10000
+	autorecharging = TRUE
+	maxcharge = 10000 //We still have a reason to use nukie cells
 	matter = null
 
 //MEDIUM CELLS - for energy weapons and large devices
