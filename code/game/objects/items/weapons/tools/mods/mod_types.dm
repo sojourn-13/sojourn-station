@@ -486,6 +486,7 @@
 	I.prefix = "holding"
 	I.req_fuel_cell = REQ_FUEL
 	item_flags |= BLUESPACE
+	bluespace_entropy(5, get_turf(src))
 
 //Penalises the tool, but unlocks several more augment slots.
 /obj/item/weapon/tool_upgrade/augment/expansion

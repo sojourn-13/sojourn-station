@@ -71,6 +71,19 @@
 	)
 	price_tag = 150
 
+/obj/item/clothing/suit/armor/vest/northtech
+	name = "outdated ablative vest"
+	desc = "An outdated ablative vest with plates designed to absorb rather than reflect energy projectiles."
+	icon_state = "northtech"
+	armor = list(
+		melee = 15,
+		bullet = 15,
+		energy = 50,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
 	desc = "Every rose has its thorns."
@@ -111,6 +124,22 @@
 		bomb = 50,
 		bio = 100,
 		rad = 100
+	)
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/vest/hunter
+	name = "hunter armor"
+	desc = "A suit of armor crudely brought together with bits of metal, glass, bone, and leather. Surprisingly effective as it keeps the wearer mobile without sacrificing protection."
+	icon_state = "hunter_armor"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(
+		melee = 60,
+		bullet = 10,
+		energy = 5,
+		bomb = 50,
+		bio = 0,
+		rad = 0
 	)
 	flags_inv = HIDEJUMPSUIT
 
@@ -188,7 +217,7 @@
 	siemens_coefficient = 0
 	price_tag = 325
 
-/obj/item/clothing/suit/armor/laserproof/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+/obj/item/clothing/suit/armor/laserproof/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack") //TODO: Refactor this all into humandefense
 	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))
 		var/obj/item/projectile/P = damage_source
 
@@ -428,8 +457,6 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	icon_state = "marshal_coat_ss"
 	item_state = "marshal_coat_ss"
 
-//Reactive armor
-
 //Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
 /obj/item/clothing/suit/storage/vest/merc
 	name = "heavy armor vest"
@@ -464,32 +491,22 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		bio = 0,
 		rad = 0
 		)
+	var/entropy_value = 2
 
-/obj/item/clothing/suit/armor/reactive/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+/obj/item/clothing/suit/armor/reactive/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
 	if(prob(50))
 		user.visible_message(SPAN_DANGER("The reactive teleport system flings [user] clear of the attack!"))
-		var/list/turfs = new/list()
 		var/turf/TLoc = get_turf(user)
-		for(var/turf/T in trange(6, TLoc))
-			if(istype(T,/turf/space)) continue
-			if(T.density) continue
-			if(T.x>world.maxx-6 || T.x<6)	continue
-			if(T.y>world.maxy-6 || T.y<6)	continue
-			turfs += T
-		if(!turfs.len) turfs += pick(/turf in orange(6))
-		var/turf/picked = pick(turfs)
-		if(!isturf(picked)) return
-
+		var/turf/picked = get_random_secure_turf_in_range(src, 7, 1)
+		if(!picked) return
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, user.loc)
 		spark_system.start()
-		playsound(user.loc, "sparks", 50, 1)
-
-		user.loc = picked
+		go_to_bluespace(TLoc, entropy_value, TRUE, user, picked)
 		return PROJECTILE_FORCE_MISS
-	return 0
+	return FALSE
 
-/obj/item/clothing/suit/armor/reactive/attack_self(mob/user as mob)
+/obj/item/clothing/suit/armor/reactive/attack_self(mob/user)
 	src.active = !( src.active )
 	if (src.active)
 		to_chat(user, "\blue The reactive armor is now active.")

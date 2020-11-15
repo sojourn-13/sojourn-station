@@ -25,7 +25,7 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND
+		BURST_3_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/nordwind/strelki
