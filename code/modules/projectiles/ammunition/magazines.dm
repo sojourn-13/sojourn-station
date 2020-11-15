@@ -709,3 +709,20 @@
 	icon_state = "sbaw_he"
 	matter = list(MATERIAL_STEEL = 10)
 	ammo_type = /obj/item/ammo_casing/shotgun/payload
+
+// SCI ammo
+/obj/item/ammo_magazine/rifle_223
+	name = "short carbine magazine"
+	desc = "A 20 round magazine marked for .223 Carbine laser ammunition."
+	icon_state = "lsrifle_20"
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_LSRIFLE
+	caliber = CAL_SCI
+	matter = list(MATERIAL_STEEL = 10)
+	ammo_type = /obj/item/ammo_casing/beam
+	max_ammo = 20
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/rifle_223/empty
+	icon_state = "lsrifle_0"
+	initial_ammo = 0

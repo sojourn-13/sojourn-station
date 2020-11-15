@@ -33,6 +33,8 @@
 #define MAG_WELL_DRUM		1024 //Drum-fed i.e. shotguns
 #define MAG_WELL_PULSE		2048 //Mary sue ammo for the pulse rifle
 
+#define MAG_WELL_LSRIFLE		4096 //Mary sue ammo for the laser AK
+
 #define SLOT_BARREL "barrel"
 #define SLOT_GRIP "grip"
 #define SLOT_TRIGGER "trigger"
