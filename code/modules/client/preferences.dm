@@ -216,6 +216,8 @@
 	character.wings_colors = wings_colors
 
 	character.body_markings = body_markings
+	character.grad_color = grad_color
+	character.grad_style = grad_style
 
 	QDEL_NULL_LIST(character.worn_underwear)
 	character.worn_underwear = list()
