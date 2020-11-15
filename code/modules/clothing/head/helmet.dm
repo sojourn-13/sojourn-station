@@ -84,7 +84,7 @@
 /obj/item/clothing/head/helmet/hunter
 	name = "hunter's hood"
 	desc = "A visored helmet made of bone and leather with glass lenses to keep blood and grit from the eyes."
-	icon_state = "prime"
+	icon_state = "hunter_helmet"
 	armor = list(
 		melee = 60,
 		bullet = 10,
