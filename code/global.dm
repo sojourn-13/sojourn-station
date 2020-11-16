@@ -77,6 +77,7 @@ var/Debug2 = 0
 
 var/gravity_is_on = 1
 
+var/server_ad = null
 var/join_motd = null
 
 var/list/awaydestinations = list() // Away missions. A list of landmarks that the warpgate can take you to.
