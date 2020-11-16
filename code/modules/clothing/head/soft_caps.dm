@@ -127,3 +127,10 @@
 	desc = "Cap worn by soteria medical personnel."
 	icon_state = "medcap"
 	item_state = "medcap"
+
+// M I N O R   F A C T I O N S //
+/obj/item/clothing/head/soft/northtech
+	name = "NorthTech security cap"
+	initial_name = "NorthTech security cap"
+	desc = "It's a field cap in red colors with \"NorthTech\" logo on it."
+	icon_state = "northtech"

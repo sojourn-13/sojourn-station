@@ -456,6 +456,22 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	max_ammo = 35
 
+/*To do, make this work
+/obj/item/ammo_magazine/ammobox/shotgun/update_icon()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (stored_ammo.len >= 0)
+		iconstring = "-1"
+	else
+		iconstring += "-0"
+		return
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+*/
+
 /obj/item/ammo_magazine/ammobox/shotgun/blanks
 	name = "ammunition packet (20mm Blank)"
 	icon_state = "slug"

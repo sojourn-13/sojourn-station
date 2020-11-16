@@ -1,7 +1,7 @@
 /obj/item/stack/nanopaste
 	name = "nanopaste"
 	singular_name = "nanite swarm"
-	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing robotic machinery."
+	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing mechanical bodyparts, organs, and smart purging of toxic buildup."
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "nanopaste"
 	matter = list(MATERIAL_PLASTIC = 2)

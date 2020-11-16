@@ -74,7 +74,6 @@
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND,
 		FULL_AUTO_400
 		)
 
@@ -100,7 +99,7 @@
 	one_hand_penalty = 20
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND
+		BURST_3_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/fancy

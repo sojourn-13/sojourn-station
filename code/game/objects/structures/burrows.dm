@@ -481,7 +481,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		if (I.has_quality(QUALITY_WELDING))
 			user.visible_message("[user] attempts to weld [src] with the [I]", "You start welding [src] with the [I]")
 			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC) && isSealed)
-				user.visible_message("[user] welds [src] with the [I].", "You welds [src] with the [I].")
+				user.visible_message("[user] welds [src] with the [I].", "You weld [src] with the [I].")
 				if(recieving)
 					if(prob(33))
 						qdel(src)

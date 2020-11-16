@@ -15,11 +15,11 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1
 	eating_time = 1200 //Takes longer for small roaches to eat
-	var/amount_grown = 0
 	probability_egg_laying = 0
+	var/amount_grown = 0
 
 /mob/living/carbon/superior_animal/roach/roachling/Life()
-	..()
+	.=..()
 	if(!stat)
 		amount_grown += rand(0,1) // Roachling growing up
 

@@ -8,7 +8,7 @@
 	..()
 
 /mob/living/carbon/Life()
-	..()
+	. = ..()
 
 	handle_viruses()
 	// Increase germ_level regularly

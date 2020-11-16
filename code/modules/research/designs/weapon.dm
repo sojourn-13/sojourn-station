@@ -102,6 +102,11 @@
 	desc = "A mix of the lighter version of the Sike point 257 hunting rifle, but with the twist of using laser based casings rather then normal bullet based projectiles."
 	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/sci
 
+//LAK - The gun thats able to laser shot away most proplems
+/datum/design/research/item/weapon/starstriker
+	name = "\"Legkiy-Kalashnikov\" laser carbine"
+	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/akl
+
 // Ammo
 /datum/design/research/item/ammo
 	name_category = "ammunition"
@@ -181,6 +186,11 @@
 /datum/design/research/item/ammo/rapidsyringe
 	name = "syringe revolver cartridge"
 	build_path = /obj/item/weapon/syringe_cartridge
+
+/datum/design/research/item/ammo/laser_mag
+	name = "laser .223 casing mag (empty)"
+	desc = "A 20 round magazine marked for .223 Carbine laser ammunition."
+	build_path = /obj/item/ammo_magazine/rifle_223/empty
 
 /datum/design/research/item/ammo/laser
 	name = "\"Star Striker\" casing"

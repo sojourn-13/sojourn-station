@@ -59,6 +59,10 @@
 	path = /obj/item/clothing/suit/storage/miljacket
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/suit/punk_vest
+	display_name = "punk vest"
+	path = /obj/item/clothing/suit/storage/punkvest
+
 /datum/gear/suit/trackjacket
 	display_name = "jacket sport selection"
 	path = /obj/item/clothing/suit/storage/toggle/track

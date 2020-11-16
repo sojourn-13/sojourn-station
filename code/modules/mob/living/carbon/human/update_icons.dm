@@ -375,11 +375,18 @@ var/global/list/wings_icon_cache = list()
 			face_standing.Blend(facial_s, ICON_OVERLAY)
 
 	if(h_style && !(head && (head.flags_inv & BLOCKHEADHAIR)))
+		var/icon/grad_s = null
 		var/datum/sprite_accessory/hair/hair_style = GLOB.hair_styles_list[h_style]
 		if(hair_style && (src.species.get_bodytype() in hair_style.species_allowed))
 			var/icon/hair_s = new/icon(hair_style.icon, hair_style.icon_state)
+			if(grad_style)
+				grad_s = new/icon("icon" = 'icons/mob/hair_gradients.dmi', "icon_state" = hair_gradients_list[grad_style])
+				grad_s.Blend(hair_s, ICON_AND)
+				grad_s.Blend(grad_color, ICON_ADD)
 			if(hair_style.colored_layers)
 				hair_s.Blend(hair_color, ICON_ADD)
+				if(!isnull(grad_s))
+					hair_s.Blend(grad_s, ICON_OVERLAY)
 
 			face_standing.Blend(hair_s, ICON_OVERLAY)
 

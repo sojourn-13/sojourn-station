@@ -174,6 +174,12 @@
 	)
 	price_tag = 125
 
+/obj/item/clothing/suit/storage/rank/det_trench/grey
+	name = "grey trenchcoat"
+	desc = "A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
+	icon_state = "detective_grey"
+	item_state = "det_suit_grey"
+
 //Engineering
 /obj/item/clothing/suit/storage/hazardvest
 	name = "hazard vest"
