@@ -33,6 +33,8 @@
 /obj/item/organ/internal/proc/take_internal_damage(amount, var/silent=0)
 	if(BP_IS_ROBOTIC(src))
 		damage = between(0, src.damage + (amount * 0.8), max_damage)
+	elseif(BP_IS_ASSISTED(src))
+		damage = between(0, src.damage + (amount * 1.2), max_damage) //Assisted organs are more easily damaged.
 	else
 		damage = between(0, src.damage + amount, max_damage)
 
@@ -83,6 +85,13 @@
 				"name" = "Damage",
 				"fix_name" = "Repair",
 				"step" = /datum/surgery_step/robotic/fix_organ,
+				"organ" = "\ref[src]"
+			)
+		elseif(BP_IS_ASSISTED(src))
+			condition = list(
+				"name" = "Damage"
+				"fix_name" = "Fix"
+				"step" = /datum/surgery_step/assisted/fix_organ,
 				"organ" = "\ref[src]"
 			)
 		else
