@@ -17,6 +17,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58 = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/colt = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rafale = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/armstrong = 1,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/revolver = 2,
 
