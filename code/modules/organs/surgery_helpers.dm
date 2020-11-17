@@ -37,6 +37,7 @@
 	status_data["dead"] = status & ORGAN_DEAD
 	status_data["mutated"] = status & ORGAN_MUTATED
 	status_data["robotic"] = BP_IS_ROBOTIC(src)
+	status_data["assisted"] = BP_IS_ASSISTED(src)
 
 	return status_data
 
