@@ -87,7 +87,7 @@
 				"step" = /datum/surgery_step/robotic/fix_organ,
 				"organ" = "\ref[src]"
 			)
-		elseif(BP_IS_ASSISTED(src))
+		else if(BP_IS_ASSISTED(src))
 			condition = list(
 				"name" = "Damage"
 				"fix_name" = "Fix"
