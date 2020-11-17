@@ -20,6 +20,7 @@
 	var/value=0
 
 /obj/item/weapon/dnainjector/New()
+	..()
 	if(datatype && block)
 		buf=new
 		buf.dna=new
@@ -98,9 +99,9 @@
 	return uses
 
 /obj/item/weapon/dnainjector/attack(mob/M as mob, mob/user as mob)
-	if (!ismob(M))
+	if(!ismob(M))
 		return
-	if (!usr.IsAdvancedToolUser())
+	if(!usr.IsAdvancedToolUser())
 		return
 	if(inuse)
 		return 0
