@@ -264,6 +264,7 @@ obj/item/clothing/under/genericr
 	item_state = "bl_suit"
 	has_sensor = 0
 
+//Dresses
 /obj/item/clothing/under/dress
 	name = "gray summerdress"
 	desc = "Gray summerdress only worn by the bravest individuals in the cold of space."
