@@ -89,8 +89,8 @@
 			)
 		else if(BP_IS_ASSISTED(src))
 			condition = list(
-				"name" = "Damage"
-				"fix_name" = "Fix"
+				"name" = "Damage",
+				"fix_name" = "Fix",
 				"step" = /datum/surgery_step/assisted/fix_organ,
 				"organ" = "\ref[src]"
 			)
