@@ -42,6 +42,9 @@
 	name = "OT HG .35 \"Mk58\""
 	build_path = /obj/item/weapon/gun/projectile/mk58
 
+/datum/design/autolathe/gun/alemao
+	name = "BR .35 \"O Alemao\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/alemao
 ///. 4 0 M A G N U M
 
 /datum/design/autolathe/gun/ladon
@@ -128,6 +131,10 @@
 /datum/design/autolathe/gun/drozd
 	name = "Excelsior .35 \"Drozd\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/drozd
+
+/datum/design/autolathe/gun/luger
+	name = "BR .35 \"Vintovka Lyugera\" carbine"
+	build_path = /obj/item/weapon/gun/projectile/automatic/luger
 
 //S H O T G U N S
 

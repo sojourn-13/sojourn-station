@@ -103,7 +103,7 @@
 	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/sci
 
 //LAK - The gun thats able to laser shot away most proplems
-/datum/design/research/item/weapon/starstriker
+/datum/design/research/item/weapon/laser_ak
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
 	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/akl
 
