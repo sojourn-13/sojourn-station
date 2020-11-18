@@ -367,6 +367,19 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/armstrong
+	disk_name = "H&S - .40 lever action Armstrong"
+	icon_state = "frozenstar"
+
+	license = 16
+	designs = list(
+		/obj/item/weapon/gun/projectile/boltgun/lever = 6,
+		/datum/design/autolathe/ammo/magnum_ammobox = 3,
+		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/magnum_ammobox_rubber = 3,
+		/datum/design/autolathe/ammo/magnum_ammobox_lethal = 4,
+		)
+
 // .50 PISTOLS
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lamia

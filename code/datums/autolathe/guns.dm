@@ -262,6 +262,11 @@
 	name = "SA BR - .408  \"STS-40\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/sts/hrifle
 
+// .40 rifles
+
+/datum/design/autolathe/gun/lever
+	name = "H&S .40 lever action \"Armstrong\""
+	build_path = /obj/item/weapon/gun/projectile/boltgun/lever
 
 // S N O W F L A K E S
 
