@@ -432,7 +432,7 @@
 
 	license = 16
 	designs = list(
-		/obj/item/weapon/gun/projectile/boltgun/lever = 6,
+		/datum/design/autolathe/gun/lever = 6,
 		/datum/design/autolathe/ammo/magnum_ammobox = 3,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber = 3,
