@@ -30,8 +30,13 @@
 		//church clothes
 		/datum/design/bioprinter/belt/utility/neotheology,
 		/datum/design/bioprinter/belt/security/neotheology,
+		/datum/design/bioprinter/nt_clothes/acolyte_armor_helm,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor,
+		/datum/design/bioprinter/nt_clothes/rosaria_armor_helm,
+		/datum/design/bioprinter/nt_clothes/rosaria_armor,
+		/datum/design/bioprinter/nt_clothes/agrolyte_armor_helm,
 		/datum/design/bioprinter/nt_clothes/agrolyte_armor,
+		/datum/design/bioprinter/nt_clothes/custodian_armor_helm,
 		/datum/design/bioprinter/nt_clothes/custodian_armor,
 		/datum/design/bioprinter/nt_clothes/sports_jacket,
 		/datum/design/bioprinter/nt_clothes/acolyte_uniform,

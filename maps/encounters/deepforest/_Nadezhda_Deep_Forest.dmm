@@ -807,7 +807,7 @@
 "pA" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/gibs/limb,/obj/item/weapon/reagent_containers/food/snacks/meat/human,/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/dungeon/outside/zoo)
 "pB" = (/obj/item/weapon/weaponparts/heavysniper/reciever,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
 "pC" = (/obj/random/junk/nondense,/obj/machinery/light,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/dungeon/outside/zoo)
-"pD" = (/obj/item/clothing/head/helmet/riot,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/dungeon/outside/zoo)
+"pD" = (/obj/item/clothing/head/helmet/faceshield/riot,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/dungeon/outside/zoo)
 "pE" = (/obj/effect/decal/cleanable/blood/drip,/obj/machinery/light,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/dungeon/outside/zoo)
 "pF" = (/obj/item/weapon/weaponparts/heavysniper/stockreciever,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
 "pG" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/gibs/core,/obj/effect/decal/cleanable/blood/drip,/obj/item/weapon/gun/projectile/automatic/lmg/saw,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/dungeon/outside/zoo)

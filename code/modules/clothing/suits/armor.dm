@@ -102,6 +102,16 @@
 	armor = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
+/obj/item/clothing/suit/armor/vest/rosaria
+	name = "rosaria armor"
+	desc = "The rosaria protects."
+	icon_state = "rosaria_armor"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
+	flags_inv = HIDEJUMPSUIT
+	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+
 /obj/item/clothing/suit/armor/vest/custodian
 	name = "custodian armor"
 	desc = "Someone's gotta clean this mess. While this armor is technically church property, lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
@@ -117,15 +127,9 @@
 	icon_state = "prime"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(
-		melee = 40,
-		bullet = 40,
-		energy = 40,
-		bomb = 50,
-		bio = 100,
-		rad = 100
-	)
+	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
+	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
 /obj/item/clothing/suit/armor/vest/hunter
 	name = "hunter armor"
@@ -323,9 +327,10 @@
  * Storage Types
  */
 /obj/item/clothing/suit/storage/vest
-	name = "webbed armor vest"
-	desc = "A synthetic armor vest. This one has added webbing and ballistic plates."
+	name = "webbed armor"
+	desc = "An armored vest used for day-to-day operations. This one has various pouches and straps attached."
 	icon_state = "webvest"
+	price_tag = 250 //Normal vest is worth 200, this one is worth 250 because it also has storage space
 	armor = list(
 		melee = 20,
 		bullet = 30,
@@ -337,6 +342,27 @@
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS|THICKMATERIAL
+
+	cold_protection = UPPER_TORSO|LOWER_TORSO
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = UPPER_TORSO|LOWER_TORSO
+	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0.6
+
+//Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
+/obj/item/clothing/suit/storage/vest/merc
+	name = "heavy armor vest"
+	desc = "A high-quality armor vest in a fetching tan. It is surprisingly flexible and light, even with the added webbing and armor plating."
+	icon_state = "mercwebvest"
+	item_state = "mercwebvest"
+	armor = list(
+		melee = 50,
+		bullet = 50,
+		energy = 50,
+		bomb = 25,
+		bio = 0,
+		rad = 0
+	)
 
 //Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier
