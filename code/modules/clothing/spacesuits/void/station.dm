@@ -3,6 +3,11 @@
 /obj/item/clothing/head/helmet/space/void/engineering
 	name = "engineering voidsuit helmet"
 	desc = "A special helmet designed for work in a hazardous, low-pressure environment. Has radiation shielding."
+
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4 //luminosity when on
+	light_overlay = "hardhat_light"
+
 	icon_state = "rig0-engineering"
 	item_state = "eng_helm"
 	item_state_slots = list(
@@ -48,7 +53,12 @@
 //Mining rig
 /obj/item/clothing/head/helmet/space/void/mining
 	name = "mining voidsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating."
+	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating and a high power light."
+
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 6 //luminosity when on
+	light_overlay = "hardhat_light"
+
 	icon_state = "mining_helmet"
 	item_state = "mining_helmet"
 	item_state_slots = list(
@@ -170,7 +180,12 @@
 
 /obj/item/clothing/head/helmet/space/void/odst
 	name = "Sol Federation voidsuit helmet"
-	desc = "A helmet designed for military EVA operations, though not direct combat."
+	desc = "A helmet designed for military EVA operations, though not direct combat has a small light."
+
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 3 //luminosity when on
+	light_overlay = "hardhat_light"
+
 	icon_state = "odst"
 	item_state = "odst"
 	item_state_slots = list(
@@ -280,6 +295,11 @@
 /obj/item/clothing/head/helmet/space/void/atmos
 	desc = "A special helmet designed for work in a hazardous, low pressure environments. Has improved thermal protection and minor radiation shielding."
 	name = "atmospherics voidsuit helmet"
+
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4 //luminosity when on
+	light_overlay = "hardhat_light"
+
 	icon_state = "rig0-atmos"
 	item_state = "atmos_helm"
 	item_state_slots = list(
@@ -316,10 +336,15 @@
 /obj/item/clothing/suit/space/void/security/equipped
 	tank = /obj/item/weapon/tank/jetpack/oxygen
 
-//Science
+//Assault
 /obj/item/clothing/head/space/void/assault
 	name = "assault helmet"
-	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
+	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in."
+
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4 //luminosity when on
+	light_overlay = "hardhat_light"
+
 	icon_state = "assaulthelm"
 	item_state = "assaulthelm"
 	item_state_slots = list(
@@ -359,10 +384,15 @@
 //Science
 /obj/item/clothing/head/space/void/medarmor
 	name = "soteria medical helmet"
-	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
+	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor and even a built in light."
 	icon_state = "armor_medical"
 	item_state = "armor_medical"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4 //luminosity when on
+	light_overlay = "hardhat_light"
+
 	body_parts_covered = HEAD|FACE|EARS
 	item_state_slots = list(
 		slot_l_hand_str = "assaulthelm",
