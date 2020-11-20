@@ -69,12 +69,12 @@
 		new /obj/item/clothing/shoes/combat(src)
 	else if(prob(80))
 		new /obj/item/clothing/suit/armor/heavy/riot(src)
-		new /obj/item/clothing/head/helmet/riot(src)
+		new /obj/item/clothing/head/helmet/faceshield/riot(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	else
 		new /obj/item/clothing/suit/armor/laserproof(src)
-		new /obj/item/clothing/head/helmet/helmet/visor/cyberpunkgoggle(src) //shitty helmet but it looks cool with the vest
+		new /obj/item/clothing/head/helmet/visor/cyberpunkgoggle(src) //shitty helmet but it looks cool with the vest
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	//longarms
@@ -261,12 +261,12 @@
 		new /obj/item/clothing/shoes/combat(src)
 	else if(prob(80))
 		new /obj/item/clothing/suit/armor/heavy/riot(src)
-		new /obj/item/clothing/head/helmet/riot(src)
+		new /obj/item/clothing/head/helmet/faceshield/riot(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	else
 		new /obj/item/clothing/suit/armor/laserproof(src)
-		new /obj/item/clothing/head/helmet/helmet/visor/cyberpunkgoggle(src) //shitty helmet but it looks cool with the vest
+		new /obj/item/clothing/head/helmet/visor/cyberpunkgoggle(src) //shitty helmet but it looks cool with the vest
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	//longarms

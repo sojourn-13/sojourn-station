@@ -345,8 +345,6 @@
 	brightness_on = 4 //luminosity when on
 	light_overlay = "hardhat_light"
 
-	icon_state = "assaulthelm"
-	item_state = "assaulthelm"
 	item_state_slots = list(
 		slot_l_hand_str = "assaulthelm",
 		slot_r_hand_str = "assaulthelm",
@@ -362,6 +360,11 @@
 	)
 	siemens_coefficient = 0.4
 	light_overlay = "helmet_light_dual"
+
+/obj/item/clothing/head/space/void/assault/New()
+	icon_state = "assaulthelm-[pick("b","w","p","o","g","r")]"
+	item_state = icon_state
+	..()
 
 /obj/item/clothing/suit/space/void/assault
 	name = "assault armor"
