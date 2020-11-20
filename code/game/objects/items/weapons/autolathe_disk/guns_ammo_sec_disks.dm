@@ -149,6 +149,20 @@
 		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 3,
 		)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
+	disk_name = "Blackshield .35 Auto \"Semyonovich\""
+	icon_state = "onestar"
+	license = 8
+
+	designs = list(
+		/datum/design/autolathe/gun/ppsh = 3,
+		/datum/design/autolathe/ammo/pistol_35_drum,
+		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/lethal = 2,
+		)
+
+
 // Magazines and ammo
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
@@ -844,7 +858,17 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 		/datum/design/autolathe/gun/grenade_launcher_lenar, // "FS GL \"Lenar\""
 	)
 
-// ENERGY SMALL ARMS
+// ENERGY ARMS
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercore
+	disk_name = "H&S - lasercore PDW E"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/lasercore = 2,
+		/datum/design/autolathe/cell/medium/high,
+	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/spiderrose
 	disk_name = "H&S - Spider Rose PDW E"
@@ -863,6 +887,16 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/energygun_martin = 2,
+		/datum/design/autolathe/cell/small/high,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firestorm
+	disk_name = "H&S - Firestorm PDW E"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/firestorm = 2,
 		/datum/design/autolathe/cell/small/high,
 	)
 
