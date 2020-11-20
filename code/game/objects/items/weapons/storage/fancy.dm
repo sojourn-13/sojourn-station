@@ -149,6 +149,27 @@
 	can_hold = list(/obj/item/clothing/mask/smokable/cigarette, /obj/item/weapon/flame/lighter)
 	icon_type = "cigarette"
 	reagent_flags = REFILLABLE | NO_REACT
+	var/open = FALSE
+
+/obj/item/weapon/storage/fancy/cigarettes/attack_self(mob/user)
+	if(open)
+		close_all()
+	else
+		..()
+	update_icon()
+
+/obj/item/weapon/storage/fancy/cigarettes/open(mob/user)
+	. = ..()
+	open = TRUE
+
+/obj/item/weapon/storage/fancy/cigarettes/close_all()
+	. = ..()
+	if(contents.len)
+		open = FALSE
+
+/obj/item/weapon/storage/fancy/cigarettes/show_to(mob/user)
+	. = ..()
+	update_icon()
 
 /obj/item/weapon/storage/fancy/cigarettes/populate_contents()
 	for(var/i in 1 to storage_slots)
@@ -314,6 +335,7 @@
 	can_hold = list(/obj/item/clothing/mask/smokable/cigarette/cigar)
 	icon_type = "cigar"
 	reagent_flags = REFILLABLE | NO_REACT
+	var/open = FALSE
 
 /obj/item/weapon/storage/fancy/cigar/populate_contents()
 	for(var/i in 1 to storage_slots)
@@ -322,7 +344,16 @@
 	update_icon()
 
 /obj/item/weapon/storage/fancy/cigar/update_icon()
-	icon_state = "[initial(icon_state)][contents.len]"
+	if(open)
+		icon_state = "[initial(icon_state)][contents.len]"
+	else
+		icon_state = "[initial(icon_state)]"
+
+/obj/item/weapon/storage/fancy/cigarettes/can_be_inserted(obj/item/W, stop_messages = 0)
+	if(!open)
+		to_chat(usr, SPAN_WARNING("Open [src] first!"))
+		return FALSE
+	return ..()
 
 /obj/item/weapon/storage/fancy/cigar/remove_from_storage(obj/item/W as obj, atom/new_location)
 		var/obj/item/clothing/mask/smokable/cigarette/cigar/C = W
