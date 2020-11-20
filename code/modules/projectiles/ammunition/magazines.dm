@@ -67,21 +67,18 @@
 	matter = list(MATERIAL_STEEL = 4)
 	icon_state = "ldrum_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
-	initial_ammo = 0
 
 /obj/item/ammo_magazine/pistol_35/drum/lethal
 	name = "standard auto magazine (hollow-point)"
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 	icon_state = "ldru_l"
-	initial_ammo = 0
 
 /obj/item/ammo_magazine/pistol_35/drum/hv
 	name = "standard auto magazine (high-velocity)"
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 	icon_state = "ldrum_hv"
-	initial_ammo = 0
 
 /obj/item/ammo_magazine/pistol_35/drum/empty
 	name = "standard auto magazine"
