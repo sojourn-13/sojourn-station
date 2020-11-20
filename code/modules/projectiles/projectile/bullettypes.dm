@@ -324,9 +324,9 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	icon_state = "slug"
-	damage_types = list(BRUTE = 45)
+	damage_types = list(BRUTE = 55) //normal would be 45
 	armor_penetration = 10
-	knockback = 1
+	knockback = 0 //Bug doups hits
 	step_delay = 0.9
 
 /obj/item/projectile/bullet/shotgun/beanbag

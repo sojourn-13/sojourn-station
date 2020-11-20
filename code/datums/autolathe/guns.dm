@@ -136,6 +136,14 @@
 	name = "BR .35 \"Vintovka Lyugera\" carbine"
 	build_path = /obj/item/weapon/gun/projectile/automatic/luger
 
+/datum/design/autolathe/gun/ppsh
+	name = "Excelsior .35  \"Shpagin\" assault SMG"
+	build_path = /obj/item/weapon/gun/projectile/automatic/ppsh
+
+/datum/design/autolathe/gun/ppv
+	name = "BR .35 \"Semyonovich\" assault SMG"
+	build_path = /obj/item/weapon/gun/projectile/automatic/ppsh/ppv
+
 //S H O T G U N S
 
 /datum/design/autolathe/gun/doublebarrel
@@ -316,6 +324,14 @@
 /datum/design/autolathe/gun/ntpistol
 	name = "NT LP \"Serenity\""
 	build_path = /obj/item/weapon/gun/energy/ntpistol
+
+/datum/design/autolathe/gun/lasercore
+	name = "H&S PDW \"Laser Core\""
+	build_path = /obj/item/weapon/gun/energy/lasercore
+
+/datum/design/autolathe/gun/firestorm
+	name = "H&S PDW \"Firestorm\""
+	build_path = /obj/item/weapon/gun/energy/firestorm
 
 /datum/design/autolathe/gun/energy_crossbow
 	name = "OT EC \"Nemesis\""
