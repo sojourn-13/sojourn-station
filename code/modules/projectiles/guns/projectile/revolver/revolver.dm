@@ -27,17 +27,20 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 
 /obj/item/weapon/gun/projectile/revolver/verb/spin_cylinder()
-	set name = "Spin cylinder"
+	set name = "Spin revolver"
 	set desc = "Fun when you're bored out of your skull."
 	set category = "Object"
 
 	chamber_offset = 0
-	visible_message(SPAN_WARNING("\The [usr] spins the cylinder of \the [src]!"), \
+	visible_message(SPAN_WARNING("\The [usr] spins the revolver of \the [src]!"), \
 	SPAN_NOTICE("You hear something metallic spin and click."))
 	playsound(src.loc, 'sound/weapons/revolver_spin.ogg', 100, 1)
 	loaded = shuffle(loaded)
 	if(rand(1,max_shells) > loaded.len)
 		chamber_offset = rand(0,max_shells - loaded.len)
+	icon_state = "[icon_state]_spin"
+	spawn(10)
+		icon_state = src
 
 /obj/item/weapon/gun/projectile/revolver/consume_next_projectile()
 	if(chamber_offset)
