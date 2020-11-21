@@ -301,8 +301,8 @@
 
 	else if(issuperioranimal(M))
 		var/mob/living/carbon/superior_animal/A = B
-		S.AdjustStunned(20) //Stop right their dirtbag
-		S.adjustBruteLoss(30) //You are removed creep!
+		A.AdjustStunned(20) //Stop right their dirtbag
+		A.adjustBruteLoss(30) //You are removed creep!
 		do_attack_animation(B)
 		playsound(loc, "swing_hit", 50, 1, -1)
 		is_attacking = 1
