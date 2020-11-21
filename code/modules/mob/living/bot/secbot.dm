@@ -300,17 +300,17 @@
 		visible_message(SPAN_WARNING("[M] was beaten by [src] with a stun baton!"))
 
 	else if(issuperioranimal(M))
-		var/mob/living/carbon/superior_animal/A = B
+		var/mob/living/carbon/superior_animal/A = M
 		A.AdjustStunned(20) //Stop right their dirtbag
 		A.adjustBruteLoss(30) //You are removed creep!
-		do_attack_animation(B)
+		do_attack_animation(M)
 		playsound(loc, "swing_hit", 50, 1, -1)
 		is_attacking = 1
 		update_icons()
 		spawn(2)
 			is_attacking = 0
 			update_icons()
-		visible_message(SPAN_WARNING("[B] was beaten by [src] with a stun baton!"))
+		visible_message(SPAN_WARNING("[M] was beaten by [src] with a stun baton!"))
 
 
 /mob/living/bot/secbot/explode()
