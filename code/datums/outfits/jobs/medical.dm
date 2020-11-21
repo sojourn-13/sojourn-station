@@ -3,7 +3,7 @@
 	l_ear = /obj/item/device/radio/headset/headset_med
 	shoes = /obj/item/clothing/shoes/reinforced/medical
 	id_type = /obj/item/weapon/card/id/med
-	pda_type = /obj/item/modular_computer/pda/science/medical
+	pda_type = /obj/item/device/pda/medical
 	pda_slot = slot_l_store
 
 /decl/hierarchy/outfit/job/medical/New()
@@ -18,9 +18,10 @@
 	l_hand = /obj/item/weapon/storage/firstaid/adv
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
 	id_type = /obj/item/weapon/card/id/cmo
-	pda_type = /obj/item/modular_computer/pda/heads/cmo
+	pda_type = /obj/item/device/pda/heads/cmo
 	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
-	belt = /obj/item/weapon/storage/belt/medical/
+	belt = /obj/item/weapon/storage/belt/medical
+	backpack_contents = list(/obj/item/modular_computer/pda/heads/cmo = 1)
 
 /decl/hierarchy/outfit/job/medical/doctor
 	name = OUTFIT_JOB_NAME("Soteria - Medical Doctor")
@@ -29,13 +30,13 @@
 	l_hand = /obj/item/weapon/storage/firstaid/adv
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
 	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
-	belt = /obj/item/weapon/storage/belt/medical/
+	belt = /obj/item/weapon/storage/belt/medical
 
 /decl/hierarchy/outfit/job/medical/orderly
 	name = OUTFIT_JOB_NAME("Soteria - Orderly")
 	uniform = /obj/item/clothing/under/scrubs
 	id_type = /obj/item/weapon/card/id/med
-	pda_type = /obj/item/modular_computer/pda/science/medical
+	pda_type = /obj/item/device/pda/medical
 	suit =  /obj/item/clothing/suit/armor/vest
 	head = /obj/item/clothing/head/surgery
 	r_ear  = /obj/item/weapon/reagent_containers/syringe/large

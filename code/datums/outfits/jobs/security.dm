@@ -4,7 +4,7 @@
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sec
-	pda_type = /obj/item/modular_computer/pda/security
+	pda_type = /obj/item/device/pda/security
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1)
 
 /decl/hierarchy/outfit/job/security/New()
@@ -22,8 +22,8 @@
 	belt = /obj/item/weapon/gun/projectile/lamia
 	id_type = /obj/item/weapon/card/id/hos
 	head = /obj/item/clothing/head/rank/commander
-	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz_50/rubber = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+	pda_type = /obj/item/device/pda/heads/hos
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz_50/rubber = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1, /obj/item/modular_computer/pda/heads/hos = 1)
 
 /decl/hierarchy/outfit/job/security/smc
 	name = OUTFIT_JOB_NAME("Blackshield - Blackshield Commander")
@@ -36,8 +36,8 @@
 	belt = /obj/item/weapon/gun/projectile/lamia
 	id_type = /obj/item/weapon/card/id/hos
 	head = /obj/item/clothing/head/rank/milcom/beret
-	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz_50 = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
+	pda_type = /obj/item/device/pda/heads/hos
+	backpack_contents = list(/obj/item/weapon/handcuffs = 1,/obj/item/ammo_magazine/kurtz_50 = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1, /obj/item/modular_computer/pda/heads/hos = 1)
 
 
 /decl/hierarchy/outfit/job/security/gunserg
@@ -58,6 +58,7 @@
 	glasses = /obj/item/clothing/glasses/ballistic
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/thick
+	pda_type = /obj/item/device/pda/warden
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 /decl/hierarchy/outfit/job/security/inspector
@@ -72,7 +73,7 @@
 	belt = /obj/item/weapon/gun/energy/gun/martin
 	r_hand = /obj/item/weapon/storage/briefcase/crimekit
 	id_type = /obj/item/weapon/card/id/det
-	pda_type = /obj/item/modular_computer/pda/forensics
+	pda_type = /obj/item/device/pda/detective
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 2, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2)
 
 /decl/hierarchy/outfit/job/security/detective/New()
@@ -86,7 +87,7 @@
 	id_type = /obj/item/weapon/card/id/medcpec
 	uniform = /obj/item/clothing/under/rank/corpsman
 	head = /obj/item/clothing/head/rank/corpsman/beret
-	pda_type = /obj/item/modular_computer/pda/forensics
+	pda_type = /obj/item/device/pda/medical
 	belt = /obj/item/weapon/storage/belt/medical/emt
 	gloves = /obj/item/clothing/gloves/thick
 	backpack_contents = list(/obj/item/weapon/gun/energy/gun/martin = 1, /obj/item/weapon/cell/small/high = 1)
@@ -99,6 +100,7 @@
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	head = /obj/item/clothing/head/helmet
 	gloves = /obj/item/clothing/gloves/stungloves
+	pda_type = /obj/item/device/pda/detective
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/gun/energy/gun/martin = 1)
 
 /decl/hierarchy/outfit/job/security/troop
