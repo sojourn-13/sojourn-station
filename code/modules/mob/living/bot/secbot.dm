@@ -2,8 +2,8 @@
 	name = "Securitron"
 	desc = "A little security robot.  He looks less than thrilled."
 	icon_state = "secbot0"
-	maxHealth = 50
-	health = 50
+	maxHealth = 100
+	health = 100 //So we dont get 1 shot by a basic gun
 	req_one_access = list(access_security, access_forensics_lockers)
 	botcard_access = list(access_security, access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels)
 
@@ -298,6 +298,20 @@
 			is_attacking = 0
 			update_icons()
 		visible_message(SPAN_WARNING("[M] was beaten by [src] with a stun baton!"))
+
+	else if(issuperioranimal(M))
+		var/mob/living/carbon/superior_animal/A = B
+		S.AdjustStunned(20) //Stop right their dirtbag
+		S.adjustBruteLoss(30) //You are removed creep!
+		do_attack_animation(B)
+		playsound(loc, "swing_hit", 50, 1, -1)
+		is_attacking = 1
+		update_icons()
+		spawn(2)
+			is_attacking = 0
+			update_icons()
+		visible_message(SPAN_WARNING("[B] was beaten by [src] with a stun baton!"))
+
 
 /mob/living/bot/secbot/explode()
 	visible_message(SPAN_WARNING("[src] blows apart!"))
