@@ -134,6 +134,11 @@
 	path = /obj/item/device/text_to_speech
 	cost = 2
 
+/datum/gear/utility/pda
+	display_name = "outdated pda"
+	path = /obj/item/device/pda
+	cost = 2
+
 /datum/gear/utility/wheelchair
 	display_name = "wheelchair"
 	path = /obj/item/wheelchair

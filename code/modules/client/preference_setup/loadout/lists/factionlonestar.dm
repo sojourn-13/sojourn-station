@@ -53,3 +53,9 @@
 	allowed_roles = list("Lonestar Miner")
 	slot = slot_wear_suit
 	sort_category = "Faction: Lonestar"
+
+/datum/gear/utility/cart_cargo
+	display_name = "outdated Lonestar Parts & Vendors pda cartridge"
+	path = /obj/item/weapon/cartridge/quartermaster
+	cost = 2 //4 loadout points to get the pda and this cart
+	sort_category = "Faction: Lonestar"

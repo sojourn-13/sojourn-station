@@ -147,3 +147,9 @@
 	allowed_roles = list("Chief Research Overseer","Soteria Scientist","Soteria Roboticist")
 	slot = slot_gloves
 	sort_category = "Faction: Soteria"
+
+/datum/gear/utility/cart_medsci
+	display_name = "outdated R.O.B.U.S.T. DELUXE pda cartridge"
+	path = /obj/item/weapon/cartridge/cmo
+	cost = 2 //4 loadout points to get the pda and this cart
+	sort_category = "Faction: Soteria"

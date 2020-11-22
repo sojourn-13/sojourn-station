@@ -40,3 +40,9 @@
 	allowed_roles = list("Guild Master","Guild Adept")
 	slot = slot_shoes
 	sort_category = "Faction: Artificer"
+
+/datum/gear/utility/cart_engi
+	display_name = "outdated Power-On DELUXE pda cartridge"
+	path = /obj/item/weapon/cartridge/ce
+	cost = 2 //4 hope points to get the pda and this cart
+	sort_category = "Faction: Artificer"

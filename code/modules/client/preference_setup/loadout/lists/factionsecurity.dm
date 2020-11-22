@@ -229,3 +229,9 @@
 	allowed_roles = list("Warrant Officer")
 	slot = slot_head
 	sort_category = "Faction: Security"
+
+/datum/gear/utility/cart_sec
+	display_name = "outdated R.O.B.U.S.T. DELUXE pda cartridge"
+	path = /obj/item/weapon/cartridge/hos
+	cost = 2 //4 loadout points to get the pda and this cart
+	sort_category = "Faction: Security"

@@ -68,7 +68,6 @@
 	access_security = 1
 	access_moebius = 1
 
-
 /obj/item/weapon/cartridge/janitor
 	name = "\improper CustodiPRO cartridge"
 	desc = "The ultimate in clean-room design."
@@ -123,6 +122,7 @@
 	desc = "Perfect for the Guild Merchant on the go!"
 	icon_state = "cart-q"
 	access_quartermaster = 1
+	access_janitor = 1
 
 /obj/item/weapon/cartridge/quartermaster/Initialize()
 	radio = new /obj/item/radio/integrated/mule(src)
@@ -148,7 +148,6 @@
 /obj/item/weapon/cartridge/hos
 	name = "\improper R.O.B.U.S.T. DELUXE"
 	icon_state = "cart-hos"
-	access_status_display = 1
 	access_security = 1
 
 /obj/item/weapon/cartridge/hos/Initialize()
@@ -158,21 +157,19 @@
 /obj/item/weapon/cartridge/ce
 	name = "\improper Power-On DELUXE"
 	icon_state = "cart-ce"
-	access_status_display = 1
 	access_engine = 1
 	access_atmos = 1
 
 /obj/item/weapon/cartridge/cmo
 	name = "\improper Med-U DELUXE"
 	icon_state = "cart-cmo"
-	access_status_display = 1
 	access_reagent_scanner = 1
+	access_atmos = 1
 	access_moebius = 1
 
 /obj/item/weapon/cartridge/rd
 	name = "\improper Signal Ace DELUXE"
 	icon_state = "cart-rd"
-	access_status_display = 1
 	access_reagent_scanner = 1
 	access_atmos = 1
 

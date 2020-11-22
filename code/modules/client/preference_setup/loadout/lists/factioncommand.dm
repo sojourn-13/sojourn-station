@@ -12,6 +12,14 @@
 	slot = slot_wear_suit
 	sort_category = "Faction: Command"
 
+/datum/gear/utility/cart_vaule
+	display_name = "outdated Value-PAK pda cartridge"
+	allowed_roles = list("Premier")
+	path = /obj/item/weapon/cartridge/captain
+	cost = 4 //6 loadout points to get the pda and this cart
+	//4 do to 200% of 2 is 4
+	sort_category = "Faction: Command"
+
 /datum/gear/factioncommand/cloakfo
 	display_name = "cloak, steward"
 	path = /obj/item/clothing/suit/hooded/cloak/job/fo
