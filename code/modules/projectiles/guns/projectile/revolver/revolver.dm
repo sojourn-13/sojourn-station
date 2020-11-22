@@ -40,7 +40,7 @@
 		chamber_offset = rand(0,max_shells - loaded.len)
 	icon_state = "[icon_state]_spin"
 	spawn(10)
-		icon_state = "[icon_state]"
+		icon_state = "[initial(icon_state)]"
 
 /obj/item/weapon/gun/projectile/revolver/consume_next_projectile()
 	if(chamber_offset)
