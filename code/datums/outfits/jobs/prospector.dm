@@ -5,8 +5,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/foreman
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/black
-	pda_type = /obj/item/device/pda/cargo
-	backpack_contents = list(/obj/item/modular_computer/pda/cargo = 1)
+	pda_type = /obj/item/modular_computer/pda/cargo
 
 /decl/hierarchy/outfit/job/pro
 	name = OUTFIT_JOB_NAME("Prospectors - Prospector")
@@ -14,7 +13,7 @@
 	l_ear = /obj/item/device/radio/headset/headset_pro
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/black
-	pda_type = /obj/item/device/pda/cargo
+	pda_type = /obj/item/modular_computer/pda/cargo
 
 /decl/hierarchy/outfit/job/salv
 	name = OUTFIT_JOB_NAME("Prospectors - Salvager")
@@ -22,5 +21,5 @@
 	l_ear = /obj/item/device/radio/headset/headset_pro
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/black
-	pda_type = /obj/item/device/pda/cargo
+	pda_type = /obj/item/modular_computer/pda/cargo
 

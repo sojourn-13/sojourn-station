@@ -14,8 +14,6 @@
 	var/dos_failure = 0			// Set to 1 if the relay failed due to (D)DoS attack
 	var/list/dos_sources = list()	// Backwards reference for qdel() stuff
 
-	circuit = /obj/item/weapon/circuitboard/ntnet_relay
-
 	// Denial of Service attack variables
 	var/dos_overload = 0		// Amount of DoS "packets" in this relay's buffer
 	var/dos_capacity = 500		// Amount of DoS "packets" in buffer required to crash the relay
@@ -98,6 +96,9 @@
 /obj/machinery/ntnet_relay/New()
 	uid = gl_uid
 	gl_uid++
+	component_parts = list()
+	component_parts += new /obj/item/stack/cable_coil(src,15)
+	component_parts += new /obj/item/weapon/circuitboard/ntnet_relay(src)
 
 	if(ntnet_global)
 		ntnet_global.relays.Add(src)

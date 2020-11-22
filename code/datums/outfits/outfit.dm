@@ -184,7 +184,7 @@ var/list/outfits_decls_by_type_
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)
 		return
-	var/obj/item/device/pda/pda = new pda_type(H)
+	var/obj/item/modular_computer/pda/pda = new pda_type(H)
 	if(W && pda) // ID's start in the PDA
 		pda.attackby(W,H,TRUE) // doing it this way ensures it passes through the attackby checks like looking for an ID slot etc instead of making unconnected checks here. Also gives the user a message so they know where it is.
 		H.equip_to_slot_or_store_or_drop(pda, id_slot) // Doing this here so that the ID stays in the ID slot if there is no PDA on spawn.

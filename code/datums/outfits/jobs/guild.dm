@@ -10,23 +10,21 @@
 	suit = /obj/item/clothing/suit/storage/rank/qm_coat
 	l_hand = /obj/item/weapon/clipboard
 	id_type = /obj/item/weapon/card/id/car
-	pda_type = /obj/item/device/pda/quartermaster
+	pda_type = /obj/item/modular_computer/pda/cargo
 	l_ear = /obj/item/device/radio/headset/heads/merchant
-	backpack_contents = list(/obj/item/modular_computer/pda/cargo = 1)
 
 /decl/hierarchy/outfit/job/cargo/cargo_tech
 	name = OUTFIT_JOB_NAME("Lonestar - Cargo Technician")
 	uniform = /obj/item/clothing/under/rank/cargotech
 	suit = /obj/item/clothing/suit/storage/rank/cargo_jacket
 	belt = /obj/item/weapon/storage/belt/utility
-	pda_type = /obj/item/device/pda/cargo
+	pda_type = /obj/item/modular_computer/pda/cargo
 
 /decl/hierarchy/outfit/job/cargo/mining
 	name = OUTFIT_JOB_NAME("Lonestar - Lonestar Miner")
 	uniform = /obj/item/clothing/under/rank/miner
 	pda_type = /obj/item/modular_computer/pda/science/science
 	belt = /obj/item/weapon/storage/belt/utility
-	pda_type = /obj/item/device/pda/shaftminer
 	backpack_contents = list(/obj/item/weapon/tool/crowbar = 1, /obj/item/weapon/storage/bag/ore = 1)
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 

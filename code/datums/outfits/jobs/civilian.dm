@@ -2,27 +2,23 @@
 	name = OUTFIT_JOB_NAME("Assistant")
 	suit = /obj/item/clothing/suit/storage/rank/ass_jacket
 	uniform = /obj/item/clothing/under/rank/assistant
-	pda_type = /obj/item/device/pda
 
 /decl/hierarchy/outfit/job/service
 	l_ear = /obj/item/device/radio/headset/headset_service
 	hierarchy_type = /decl/hierarchy/outfit/job/service
-	pda_type = /obj/item/device/pda
 
 /decl/hierarchy/outfit/job/service/bartender
 	name = OUTFIT_JOB_NAME("Lonestar - Bartender")
 	uniform = /obj/item/clothing/under/rank/bartender
 	head = /obj/item/clothing/head/tophat
 	id_type = /obj/item/weapon/card/id/white
-	pda_type = /obj/item/device/pda/bar
-	backpack_contents = list(/obj/item/modular_computer/pda/club_worker = 1)
+	pda_type = /obj/item/modular_computer/pda/club_worker
 
 /decl/hierarchy/outfit/job/service/waiter
 	name = OUTFIT_JOB_NAME("Lonestar - Waiter")
 	uniform = /obj/item/clothing/under/costume/job/waiter
 	id_type = /obj/item/weapon/card/id/white
-	pda_type = /obj/item/device/pda/bar
-	backpack_contents = list(/obj/item/modular_computer/pda/club_worker = 1)
+	pda_type = /obj/item/modular_computer/pda/club_worker
 
 /decl/hierarchy/outfit/job/service/chef
 	name = OUTFIT_JOB_NAME("Lonestar - Chef")
@@ -30,7 +26,7 @@
 	suit = /obj/item/clothing/suit/rank/chef
 	head = /obj/item/clothing/head/rank/chef
 	id_type = /obj/item/weapon/card/id/ltgrey
-	pda_type = /obj/item/device/pda/chef
+	pda_type = /obj/item/modular_computer/pda
 
 /decl/hierarchy/outfit/job/service/gardener
 	name = OUTFIT_JOB_NAME("Lonestar - Gardener")
@@ -38,7 +34,7 @@
 	suit = /obj/item/clothing/suit/rank/botanist
 	gloves = /obj/item/clothing/gloves/botanic_leather
 	id_type = /obj/item/weapon/card/id/hydro
-	pda_type = /obj/item/device/pda/botanist
+	pda_type = /obj/item/modular_computer/pda
 
 /decl/hierarchy/outfit/job/service/gardener/New()
 	..()

@@ -119,14 +119,10 @@
 	display_name = "silver coin"
 	path = /obj/item/weapon/coin/silver
 
-/datum/gear/utility/pdaadvanced
-	display_name = "modular pda, advanced"
-	path = /obj/item/modular_computer/pda
-	cost = 2
-
-/datum/gear/utility/mpdular_pda
-	display_name = "modular pda"
-	path = /obj/item/modular_computer/pda
+/datum/gear/utility/tabletadvanced
+	display_name = "tablet computer, advanced"
+	path = /obj/item/modular_computer/tablet/preset/custom_loadout/advanced
+	cost = 3
 
 /datum/gear/utility/tabletcheap
 	display_name = "tablet computer, consumer"
