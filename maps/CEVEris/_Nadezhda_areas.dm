@@ -182,6 +182,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault
 	name = "Vault Bunker"
 	icon_state = "erisblue"
+	requires_power = 1
 
 /area/nadezhda/dungeon/outside/monster_cave
 	name = "Monster Cave"
