@@ -6,7 +6,7 @@
 	blocks_air = 1
 	density = 1
 	opacity = 1
-	layer = EDGED_TURF_LAYER
+	layer = BELOW_MOB_LAYER
 
 /turf/unsimulated/mineral/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -50,7 +50,7 @@
 	nitrogen = MOLES_N2STANDARD
 	opacity = 1
 	density = 1
-	layer = EDGED_TURF_LAYER
+	layer = BELOW_MOB_LAYER
 	blocks_air = 1
 	temperature = T20C
 	var/mined_turf = /turf/simulated/floor/asteroid
