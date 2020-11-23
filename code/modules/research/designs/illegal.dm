@@ -4,7 +4,7 @@
 	build_path = /obj/item/weapon/storage/box/syndie_kit/chameleon
 
 /datum/design/research/item/binaryencrypt
-	name = "Binary encryption key"
+	name = "Binary Encryption Key"
 	desc = "Allows for deciphering the binary channel on-the-fly."
 	build_path = /obj/item/device/encryptionkey/binary
 

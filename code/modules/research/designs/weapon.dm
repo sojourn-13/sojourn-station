@@ -10,18 +10,21 @@
 		..()
 
 /datum/design/research/item/flash
-	name = "flash"
+	name = "Flash"
 	build_type = AUTOLATHE | MECHFAB
 	build_path = /obj/item/device/flash
 	category = "Misc"
 
 /datum/design/research/item/weapon/stunrevolver
+	name = "\"Zeus\" Stun Revolver"
 	build_path = /obj/item/weapon/gun/energy/stunrevolver
 
 /datum/design/research/item/weapon/nuclear_gun
+	name = "Prototype: Advanced Energy Gun"
 	build_path = /obj/item/weapon/gun/energy/gun/nuclear
 
 /datum/design/research/item/weapon/lasercannon
+	name = "\"Solaris\" Laser Cannon"
 	desc = "The lasing medium of this prototype is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core."
 	build_path = /obj/item/weapon/gun/energy/lasercannon
 
@@ -31,32 +34,41 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/c20r/sci
 
 /datum/design/research/item/weapon/centurio
+	name = "\"Centurio\" Plasma Pistol"
 	build_path = /obj/item/weapon/gun/energy/centurio
 
 /datum/design/research/item/weapon/auretian
+	name = "\"Auretian" Energy Pistol"
 	build_path = /obj/item/weapon/gun/energy/plasma/auretian
 
 /datum/design/research/item/weapon/decloner
+	name = "Prototype: Biological Demolecularizer"
 	build_path = /obj/item/weapon/gun/energy/decloner
 
 /datum/design/research/item/weapon/chemsprayer
+	name = "Chemical Sprayer"
 	desc = "An advanced chem spraying device."
 	build_path = /obj/item/weapon/reagent_containers/spray/chemsprayer
 
 /datum/design/research/item/weapon/rapidsyringe
+	name = "Rapid Syringe Gun"
 	build_path = /obj/item/weapon/gun/launcher/syringe/rapid
 
 /datum/design/research/item/weapon/temp_gun
+	name = "Temperature Gun"
 	desc = "A gun that shoots high-powered glass-encased energy temperature bullets."
 	build_path = /obj/item/weapon/gun/energy/temperature
 
 /datum/design/research/item/weapon/large_grenade
+	name = "Large Grenade Casing"
 	build_path = /obj/item/weapon/grenade/chem_grenade/large
 
 /datum/design/research/item/weapon/flora_gun
+	name = "Floral Somatoray"
 	build_path = /obj/item/weapon/gun/energy/floragun
 
 /datum/design/research/item/weapon/bluespace_harpoon
+	name = "Bluespace Harpoon"
 	build_path = /obj/item/weapon/bluespace_harpoon
 	category = "Bluespace Telecoms"
 
@@ -85,12 +97,12 @@
 	build_path = /obj/item/weapon/tool/knife/dagger/bluespace
 
 /datum/design/research/item/weapon/medarmor
-	name = "soteria medical void armor"
+	name = "Soteria Medical Void Armor"
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	build_path = /obj/item/clothing/suit/space/void/medarmor
 
 /datum/design/research/item/weapon/hatton
-	name = "Soteria BT \"Q-del\""
+	name = "Soteria Breaching Tool \"Q-del\""
 	desc = "This breaching tool was reverse engineered from the \"Hatton\" design. \
 			Despite the Artificer's Guild \"Hatton\" being traded on the free market through guild channels, \
 			this device suffers from a wide number of reliability issues stemming from it being lathe printed."
@@ -113,67 +125,67 @@
 	category = "Ammo"
 
 /datum/design/research/item/ammo/smg_mag
-	name = "smg magazine .35 Auto (Empty) "
+	name = "SMG Magazine .35 Auto (Empty) "
 	desc = "A magazine for .35 Auto, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/empty
 	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/research/item/ammo/smg_mag/lethal
-	name = "smg magazine .35 Auto"
+	name = "SMG Magazine .35 Auto"
 	desc = "A magazine for .35 auto, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35
 	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/research/item/ammo/smg_mag/rubber
-	name = "smg magazine .35 Auto (Rubber)"
+	name = "SMG Magazine .35 Auto (Rubber)"
 	desc = "A magazine for .35 Auto (Rubber), used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/rubber
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
 
 /datum/design/research/item/ammo/pistol_laser
-	name = "auto .35, laser case"
+	name = "Auto .35, laser case"
 	desc = "An auto .35 case fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_casing/pistol_35/laser
 
 /datum/design/research/item/ammo/magum_laser
-	name = "magnum .40, laser case"
+	name = "Magnum .40, laser case"
 	desc = "A magnum .40 case fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_casing/magnum_40/laser
 
 /datum/design/research/item/ammo/light_rifle_257
-	name = "light rifle .257 laser casing."
+	name = "Light rifle .257 laser casing."
 	desc = "A .257 casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_casing/light_rifle_257/laser
 
 /datum/design/research/item/ammo/rifle_75
-	name = "rifle 7.5 laser casing."
+	name = "Rifle 7.5 laser casing."
 	desc = "A 7.5 casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_casing/rifle_75/laser
 
 /datum/design/research/item/ammo/heavy_rifle_408
-	name = "omni .408 laser casing."
+	name = "Omni .408 laser casing."
 	desc = "A .408 Omni casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_casing/heavy_rifle_408/laser
 
 /datum/design/research/item/ammo/kurtz_laser
-	name = "kurtz .50 , laser case"
+	name = "Kurtz .50 , laser case"
 	desc = "A .50 kurtz case fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_casing/kurtz_50/laser
 
 // Shotgun Ammo
 
 /datum/design/research/item/ammo/shotgun_stun
-	name = "shotgun, stun"
+	name = "Shotgun ammo (Stun)"
 	desc = "A stunning shell for a shotgun."
 	build_path = /obj/item/ammo_casing/shotgun/stunshell //We print one at a time fore balance
 
 /datum/design/research/item/ammo/shotgun_fire
-	name = "shotgun, incendiary"
+	name = "Shotgun ammo (Incendiary)"
 	desc = "A incendiary shell for a shotgun."
 	build_path = /obj/item/ammo_casing/shotgun/incendiary //We print one at a time fore balance
 
 /datum/design/research/item/ammo/shotgun_laser
-	name = "shotgun, laser case"
+	name = "Shotgun ammo (Laser Case)"
 	desc = "A laser based shell for a shotgun."
 	build_path = /obj/item/ammo_casing/shotgun/laser //We print one at a time fore balance
 
@@ -184,11 +196,11 @@
 	build_path = /obj/item/weapon/hatton_magazine/moebius
 
 /datum/design/research/item/ammo/rapidsyringe
-	name = "syringe revolver cartridge"
+	name = "Syringe Gun Cartridge"
 	build_path = /obj/item/weapon/syringe_cartridge
 
 /datum/design/research/item/ammo/laser_mag
-	name = "laser .223 casing mag (empty)"
+	name = "Laser .223 casing mag (empty)"
 	desc = "A 20 round magazine marked for .223 Carbine laser ammunition."
 	build_path = /obj/item/ammo_magazine/rifle_223/empty
 
@@ -231,36 +243,43 @@
 
 // HIGH-TECH GUNMODS
 /datum/design/research/item/weapon/gunmod/penetrator
+	name = "Soteria \"Penetrator\" magnetic accelerator barrel"
 	build_path = /obj/item/weapon/gun_upgrade/barrel/mag_accel
 	sort_string = "GAAAA"
 	category = CAT_GUNMODS
 
 /datum/design/research/item/weapon/gunmod/overheat
+	name = "Soteria \"Caster\" magnetic overheat barrel"
 	build_path = /obj/item/weapon/gun_upgrade/barrel/overheat
 	sort_string = "GAAAB"
 	category = CAT_GUNMODS
 
 /datum/design/research/item/weapon/gunmod/battery_shunt
+	name = "Soteria \"Thunder\" battery shunt"
 	build_path = /obj/item/weapon/gun_upgrade/mechanism/battery_shunt
 	sort_string = "GAAAC"
 	category = CAT_GUNMODS
 
 /datum/design/research/item/weapon/gunmod/overdrive
+	name = "Soteria \"Tesla\" overdrive chip"
 	build_path = /obj/item/weapon/gun_upgrade/mechanism/overdrive
 	sort_string = "GAAAD"
 	category = CAT_GUNMODS
 
 /datum/design/research/item/weapon/gunmod/toxin_coater
+	name = "Soteria \"Black Viper\" toxin coater"
 	build_path = /obj/item/weapon/gun_upgrade/barrel/toxin_coater
 	sort_string = "GAAAF"
 	category = CAT_GUNMODS
 /*
 /datum/design/research/item/weapon/gunmod/isotope_diffuser
+	name = "Soteria \"Atomik\" isotope diffuser"
 	build_path = /obj/item/weapon/gun_upgrade/barrel/isotope_diffuser
 	sort_string = "GAAAG"
 	category = CAT_GUNMODS
 
 /datum/design/research/item/weapon/gunmod/psionic_catalyst
+	name = "Moebius \"Mastermind\" psionic catalyst"
 	build_path = /obj/item/weapon/gun_upgrade/mechanism/psionic_catalyst
 	sort_string = "GAAAH"
 	category = CAT_GUNMODS
@@ -268,141 +287,169 @@
 
 // HIGH-TECH TOOLMODS
 /datum/design/research/item/weapon/toolmod/stick
+	name = "Brace Bar"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/stick
 	sort_string = "TAAAA"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/heatsink
+	name = "Heatsink"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/heatsink
 	sort_string = "TAAAB"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/plating
+	name = "Reinforced Plating"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/plating
 	sort_string = "TAAAC"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/guard
+	name = "Metal Guard"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/guard
 	sort_string = "TAAAD"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/plasmablock
+	name = "Plasmablock"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/plasmablock
 	sort_string = "TAAAE"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/rubbermesh
+	name = "Rubber Mesh"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/rubbermesh
 	sort_string = "TAAAF"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/ergonomicgrip
+	name = "Ergonomic Grip"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/ergonomic_grip
 	sort_string = "TAAAG"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/ratchet
+	name = "Ratcheting Mechanism"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/ratchet
 	sort_string = "TAAAH"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/redpaint
+	name = "Red Paint"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/red_paint
 	sort_string = "TAAAI"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/whetstone
+	name = "Sharpening Block"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/whetstone
 	sort_string = "TAAAJ"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/dblade
+	name = "Lonestar's \"Gleaming Edge\": Diamond Blade"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/diamond_blade
 	sort_string = "TAAAK"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/oxyjet
+	name = "Oxyjet Canister"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/oxyjet
 	sort_string = "TAAAL"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/motor
+	name = "High Power Motor"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/motor
 	sort_string = "TAAAM"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/antistaining
+	name = "Anti-staining Paint"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/antistaining
 	sort_string = "TAAAN"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/booster
+	name = "Booster"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/booster
 	sort_string = "TAAAO"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/injector
+	name = "Plasma Injector"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/injector
 	sort_string = "TAAAP"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/laserguide
+	name = "Lonestar's \"Guiding Light\" Laser Guide"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/laserguide
 	sort_string = "TAAAQ"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/stabilizedgrip
+	name = "Gyrostabilized Grip"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/stabilized_grip
 	sort_string = "TAAAR"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/magbit
+	name = "Magnetic Bit"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/magbit
 	sort_string = "TAAAS"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/portedbarrel
+	name = "Ported Barrel"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/ported_barrel
 	sort_string = "TAAAT"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/compensatedbarrel
+	name = "Gravity-Compensated Barrel"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/compensatedbarrel
 	sort_string = "TAAAU"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/vibcompensator
+	name = "Vibration Compensator"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/vibcompensator
 	sort_string = "TAAAV"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/cellmount
+	name = "Heavy Cell Mount"
 	build_path = /obj/item/weapon/tool_upgrade/augment/cell_mount
 	sort_string = "TAAAW"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/fueltank
+	name = "Expanded Fuel Tank"
 	build_path = /obj/item/weapon/tool_upgrade/augment/fuel_tank
 	sort_string = "TAAAX"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/expansion
+	name = "Expansion Port"
 	build_path = /obj/item/weapon/tool_upgrade/augment/expansion
 	sort_string = "TAAAY"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/spikes
+	name = "Spikes"
 	build_path = /obj/item/weapon/tool_upgrade/augment/spikes
 	sort_string = "TAAAZ"
 	category = CAT_TOOLMODS
 /*
 /datum/design/research/item/weapon/toolmod/hammeraddon
+	name = "Flat Surface"
 	build_path = /obj/item/weapon/tool_upgrade/augment/hammer_addon
 	sort_string = "TAABA"
 	category = CAT_TOOLMODS
 */
 /datum/design/research/item/weapon/toolmod/hydraulic
+	name = "Hydraulic Circuits"
 	build_path = /obj/item/weapon/tool_upgrade/augment/hydraulic
 	sort_string = "TAABB"
 	category = CAT_TOOLMODS
