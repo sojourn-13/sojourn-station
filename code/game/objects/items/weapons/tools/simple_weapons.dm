@@ -363,7 +363,7 @@
 
 /obj/item/weapon/tool/sword/katana_makeshift
 	name = "makeshift katana"
-	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where theirs a will and a weeb theirs a way."
+	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where there's a will and a weeb there's a way."
 	icon_state = "katana_improv"
 	item_state = "katana_improv"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2) //twice the value of a kitche knife
