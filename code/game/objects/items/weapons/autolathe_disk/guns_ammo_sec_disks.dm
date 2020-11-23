@@ -143,10 +143,10 @@
 
 	designs = list(
 		/datum/design/autolathe/gun/zatvor = 3,
-		/datum/design/autolathe/ammo/rifle_ammobox_small = 2,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber = 2,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 3,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small = 2,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 3,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
