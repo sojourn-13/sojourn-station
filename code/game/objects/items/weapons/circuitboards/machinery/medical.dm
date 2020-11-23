@@ -25,6 +25,7 @@
 
 /obj/item/weapon/circuitboard/sleeper/hyper
 	build_name = "hyper-sleeper"
+	desc = "An exceedingly rare and valuable bit of sleeper technology, so advanced that without proper maintenance it breaks down rather quickly, making it largely useless for longer than a single shift."
 	build_path = /obj/machinery/sleeper/hyper
 	board_type = "machine"
 	origin_tech = list(TECH_BIO = 7)

@@ -29,3 +29,17 @@
 	name = "low chance random common odities"
 	icon_state = "techloot-grey-low"
 	spawn_nothing_percentage = 60
+
+/obj/random/oddity_guns
+	name = "random gun oddities"
+	icon_state = "techloot-grey"
+
+/obj/random/oddity_guns/item_to_spawn()
+	return pickweight(list(
+				/obj/item/weapon/gun/projectile/handmade_pistol/reliable = 1,
+				/obj/item/weapon/gun/energy/sniperrifle/saint = 1,
+				/obj/item/weapon/gun/projectile/automatic/lmg/saw/unicorn = 1,
+				/obj/item/weapon/gun/projectile/revolver/mistral/elite = 1,
+				/obj/item/weapon/gun/projectile/shotgun/pump/obrez/thunderlord = 1,
+				/obj/item/weapon/gun/energy/ntpistol/mana = 1,
+				/obj/item/weapon/gun/projectile/automatic/maxim/replica = 1))
