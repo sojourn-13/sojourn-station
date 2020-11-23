@@ -55,6 +55,7 @@
 		/datum/design/autolathe/gun/vintorez,
 		/datum/design/autolathe/gun/boltgun,
 		/datum/design/autolathe/gun/ak47,
+		/datum/design/autolathe/gun/ppsh,
 		/datum/design/autolathe/gun/reclaimer,
 		/datum/design/autolathe/ammo/pistol,				//makarov ammo
 		/datum/design/autolathe/ammo/pistol_rubber,
@@ -69,6 +70,11 @@
 		/datum/design/autolathe/ammo/lrifle,						//AK ammo
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/pistol_35_drum,				//ppsh
+		/datum/design/autolathe/ammo/pistol_35_drum/empty,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/hv,
+		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
 		/datum/design/autolathe/circuit/autolathe_excelsior,		//circuits
 		/datum/design/autolathe/circuit/shieldgen_excelsior,
 		/datum/design/autolathe/circuit/reconstructor_excelsior,
@@ -115,6 +121,7 @@
 		/datum/design/autolathe/gun/vintorez,
 		/datum/design/autolathe/gun/boltgun,
 		/datum/design/autolathe/gun/ak47,
+		/datum/design/autolathe/gun/ppsh,
 		/datum/design/autolathe/ammo/pistol,				//makarov ammo
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox,
@@ -127,7 +134,12 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/rifle,							//vintorez ammo
 		/datum/design/autolathe/ammo/rifle_short_hv,
-		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/lrifle_ammobox,				//ppsh
+		/datum/design/autolathe/ammo/pistol_35_drum,
+		/datum/design/autolathe/ammo/pistol_35_drum/empty,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/hv,
+		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
 		/datum/design/autolathe/sec/silencer,						//misc
 		/datum/design/autolathe/clothing/excelsior_armor,
 	)
@@ -236,4 +248,19 @@
 	license = -1
 	designs = list(
 		/datum/design/autolathe/gun/reclaimer
+		)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh
+	disk_name = "Excelsior - Shpagin"
+	desc = "The back has a machine etching: \"The hammer to break the chains.\""
+	icon_state = "excelsior"
+
+	license = -1
+	designs = list(
+		/datum/design/autolathe/gun/ppsh,
+		/datum/design/autolathe/ammo/pistol_35_drum,
+		/datum/design/autolathe/ammo/pistol_35_drum/empty,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/hv,
+		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
 		)

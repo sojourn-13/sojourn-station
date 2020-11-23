@@ -140,11 +140,11 @@
 					/obj/item/weapon/handcuffs,
 					/obj/item/weapon/handcuffs,
 					/obj/item/weapon/handcuffs,
-					/obj/item/clothing/head/helmet/riot,
+					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot,
-					/obj/item/clothing/head/helmet/riot,
+					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot,
-					/obj/item/clothing/head/helmet/riot,
+					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot)
 	cost = 4880
 	containertype = /obj/structure/closet/crate/secure

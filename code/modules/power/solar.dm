@@ -569,6 +569,14 @@
 	highly suggest cutting any splicings and crimping the wires to make them safe and increase power production. If needed it may be usefull to upgrade the glass inside the pannels to harvest more power, reinforced borosilicate works best. \
 	If the colony ever has any brown outs or black outs the third SMES unit in the biogenerator room will charge from these solars and can be hooked up as a temporary solution.</p>"
 
+/obj/item/weapon/paper/voidwolfwarning
+	name = "paper- 'Read this you vat grown retards!'"
+	info = "<h1>Good you got a few fucking brain cells</h1><p>For those limp dicks who fucking forgot ever since the colony killed Preston and his Jackels they can't reset this teleporter, its stuck \
+	on forever because none of our boffins know how the fuck it works. Doesn't matter anyways, the fortress got taken over by Preston's formerly caged face rippers so none of you should be getting \
+	your shit stained arses ripped in half trying to loot the place. The teleporter has enough juice to get you back and forth but thats it. Guard this side until we can get enough boys to \
+	take out that huge queen looking bitch. P.S. Watch out for the landmines we laced a few spots with, might cause a breach so keep your void suits on and your oxygen tanks filled.</p>"
+
+
 /obj/item/weapon/paper/solar
 	name = "paper- 'Going green! Setup your own solar array instructions.'"
 	info = "<h1>Welcome</h1><p>At greencorps we love the environment, and space. With this package you are able to help mother nature and produce energy without any usage of fossil fuel or \

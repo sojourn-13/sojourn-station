@@ -66,17 +66,35 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/rosaria
+	name = "rosaria great helm"
+	desc = "The rosaria protects. Deus Vult."
+	icon_state = "rosaria_helm"
+	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5)
+
 /obj/item/clothing/head/helmet/prime
 	name = "prime hood"
 	desc = "A visored helmet with a cloth hood covering it."
 	icon_state = "prime"
+	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5)
+
+/obj/item/clothing/head/helmet/hunter
+	name = "hunter's hood"
+	desc = "A visored helmet made of bone and leather with glass lenses to keep blood and grit from the eyes."
+	icon_state = "hunter_helmet"
 	armor = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
-		bomb = 50,
-		bio = 100,
-		rad = 100
+		melee = 60,
+		bullet = 10,
+		energy = 5,
+		bomb = 0,
+		bio = 10,
+		rad = 0
 	)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
@@ -104,6 +122,14 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/generic_full
+	name = "full helmet"
+	desc = "A generic non-branded full cover helmet with decent all round protection."
+	icon_state = "helmet_full"
+	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 25, bio = 10, rad = 10)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+
 /obj/item/clothing/head/helmet/technomancersuit
 	name = "'Mark V' enviromental protection helmet"
 	desc = "You feel like this helmet is rare, for some reason."
@@ -128,7 +154,7 @@
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
-	desc = "These are often used by highly trained Swat Members."
+	desc = "These are often used by highly trained SWAT Members."
 	icon_state = "swat"
 	armor = list(melee = 80, bullet = 60, energy = 40, bomb = 50, bio = 10, rad = 0)
 	flags_inv = HIDEEARS|HIDEEYES
@@ -136,6 +162,23 @@
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.5
 	price_tag = 150
+
+/obj/item/clothing/head/helmet/laserproof
+	name = "ablative helmet"
+	desc = "A helmet that excels in protecting the wearer against energy projectiles."
+	icon_state = "ablative"
+	armor = list(melee = 30, bullet = 30, energy = 75, bomb = 50, bio = 10, rad = 0)
+	flags_inv = HIDEEARS|HIDEEYES
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0.5
+	price_tag = 150
+
+/obj/item/clothing/head/helmet/mercenary
+	name = "mercenary helmet"
+	desc = "What happens when someone combines ablative, melee, and bullet plating in the form of a fetching tan and visor. Not as singularly powerful as each individually but the best all round protection one can get."
+	icon_state = "merchelm"
+	armor = list(melee = 55, bullet = 55, energy = 55, bomb = 45, bio = 0, rad = 0) // best what you can get
 
 /obj/item/clothing/head/helmet/handmade
 	name = "handmade combat helmet"
@@ -185,13 +228,115 @@
 	body_parts_covered = HEAD|FACE|EARS
 	siemens_coefficient = 1
 
-/obj/item/clothing/head/helmet/riot
+// toggleable face guard
+/obj/item/clothing/head/helmet/faceshield
+	//We cant just use the armor var to store the original since initial(armor) will return a null pointer
+	var/list/armor_up = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	var/list/armor_down = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+
+	var/tint_down = TINT_NONE
+	flags_inv = HIDEEARS
+	var/flags_inv_down = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
+	body_parts_covered = HEAD|EARS
+	var/body_parts_covered_down = HEAD|EARS|EYES|FACE
+	flash_protection = FLASH_PROTECTION_NONE
+	var/flash_protection_down = FLASH_PROTECTION_MAJOR
+	action_button_name = "Flip Face Shield"
+	var/up = FALSE
+
+/obj/item/clothing/head/helmet/faceshield/riot
 	name = "riot helmet"
+	desc = "It's a helmet specifically designed to protect against close range attacks."
+	icon_state = "riot"
+	armor_up = list(melee = 35, bullet = 25, energy = 25, bomb = 20, bio = 0, rad = 0)
+	armor_down = list(melee = 40, bullet = 40, energy = 30, bomb = 35, bio = 0, rad = 0)
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	price_tag = 150
+
+/obj/item/clothing/head/helmet/faceshield/Initialize()
+	. = ..()
+	set_is_up(up)
+
+/obj/item/clothing/head/helmet/faceshield/attack_self()
+	toggle()
+
+/obj/item/clothing/head/helmet/faceshield/update_icon()
+	icon_state = up ? "[initial(icon_state)]_up" : initial(icon_state)
+
+//I wanted to name it set_up() but some how I thought that would be misleading
+/obj/item/clothing/head/helmet/faceshield/proc/set_is_up(is_up)
+	up = is_up
+	if(up)
+		armor = getArmor(arglist(armor_up))
+		flash_protection = initial(flash_protection)
+		tint = initial(tint)
+		flags_inv = initial(flags_inv)
+		body_parts_covered = initial(body_parts_covered)
+	else
+		armor = getArmor(arglist(armor_down))
+		flash_protection = flash_protection_down
+		tint = tint_down
+		flags_inv = flags_inv_down
+		body_parts_covered = body_parts_covered_down
+
+	update_icon()
+	update_wear_icon()	//update our mob overlays
+
+/obj/item/clothing/head/helmet/faceshield/verb/toggle()
+	set category = "Object"
+	set name = "Adjust face shield"
+	set src in usr
+
+	if(!usr.incapacitated())
+		src.set_is_up(!src.up)
+
+		if(src.up)
+			to_chat(usr, "You push the [src] up out of your face.")
+		else
+			to_chat(usr, "You flip the [src] down to protect your face.")
+
+		usr.update_action_buttons()
+
+/obj/item/clothing/head/helmet/faceshield/helmet_visor
+	name = "marshal helmet"
+	desc = "It's a helmet specifically designed for general police work. Comes with a visor face cover and extra padding for dealing with criminal scum in melee."
+	icon_state = "helmet_visor"
+	armor_up = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
+	armor_down = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	price_tag = 150
+
+/obj/item/clothing/head/helmet/marshal_full
+	name = "marshal full helmet"
+	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for melee protection."
+	icon_state = "ironhammer_full"
+	armor = list(melee = 45, bullet = 40,energy = 15, bomb = 25, bio = 0, rad = 0)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	flash_protection = FLASH_PROTECTION_MAJOR
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4
+
+/obj/item/clothing/head/helmet/marshal_full/update_icon()
+	if(on)
+		icon_state = "ironhammer_full_on"
+		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
+	else
+		icon_state = "ironhammer_full"
+		set_light(0, 0)
+	update_wear_icon()
+	..()
+
+/*
+ * Special helmets with HUDs
+ */
+/obj/item/clothing/head/helmet/riot_hud
+	name = "marshal riot helmet"
 	desc = "Standard-issue marshal helmet with a basic HUD and targeting system included."
 	icon_state = "light_riot"
 	body_parts_covered = HEAD|FACE|EARS
 	armor = list(
-		melee = 60,
+		melee = 75,
 		bullet = 30,
 		energy = 30,
 		bomb = 25,
@@ -202,19 +347,19 @@
 	flash_protection = FLASH_PROTECTION_MAJOR
 	action_button_name = "Toggle Security Hud"
 	var/obj/item/clothing/glasses/hud/security/hud
-	price_tag = 150
+	price_tag = 300
 
-/obj/item/clothing/head/helmet/riot/New()
+/obj/item/clothing/head/helmet/riot_hud/New()
 	..()
 	hud = new(src)
 	hud.canremove = FALSE
 
-/obj/item/clothing/head/helmet/riot/ui_action_click()
+/obj/item/clothing/head/helmet/riot_hud/ui_action_click()
 	if(..())
 		return TRUE
 	toggle()
 
-/obj/item/clothing/head/helmet/riot/verb/toggle()
+/obj/item/clothing/head/helmet/riot_hud/verb/toggle()
 	set name = "Toggle Security Hud"
 	set desc = "Shows you jobs and criminal statuses"
 	set category = "Object"
@@ -236,7 +381,7 @@
 		update_icon()
 	usr.update_action_buttons()
 
-/obj/item/clothing/head/helmet/riot/dropped(usr)
+/obj/item/clothing/head/helmet/riot_hud/dropped(usr)
 	..()
 	if(hud.loc != src)
 		if(ismob(hud.loc))
@@ -246,13 +391,82 @@
 		hud.forceMove(src)
 		update_icon()
 
-/obj/item/clothing/head/helmet/riot/update_icon()
+/obj/item/clothing/head/helmet/riot_hud/update_icon()
 	if(hud in src)
 		icon_state = "light_riot"
 		set_light(0, 0)
 	else
 		icon_state = "light_riot_on"
 		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
+	update_wear_icon()
+	..()
+
+/obj/item/clothing/head/helmet/night_vision_helm
+	name = "thermo-nightvision helmet"
+	desc = "Written on the side is a garbled mess complaining about the alphabet-soup boys shooting the owners tannerite stuffed dog. Comes with a built in nuclear cell labeled 'fuck your roads'. An observant eye would notice the electrical equipment on this would be valued in the thousands while the helmet costs roughly twenty credits."
+	icon_state = "nhelm"
+	body_parts_covered = HEAD|FACE|EARS
+	armor = list(
+		melee = 20,
+		bullet = 20,
+		energy = 15,
+		bomb = 25,
+		bio = 0,
+		rad = 0
+	) //Low protection since it gives night vision with no battery.
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	flash_protection = FLASH_PROTECTION_MAJOR
+	action_button_name = "Toggle Thermo-Nightvision Hud"
+	var/obj/item/clothing/glasses/hud/security/jensenshades/hud
+	price_tag = 2000
+
+/obj/item/clothing/head/helmet/night_vision_helm/New()
+	..()
+	hud = new(src)
+	hud.canremove = FALSE
+
+/obj/item/clothing/head/helmet/night_vision_helm/ui_action_click()
+	if(..())
+		return TRUE
+	toggle()
+
+/obj/item/clothing/head/helmet/night_vision_helm/verb/toggle()
+	set name = "Toggle Thermo-Nightvision Hud"
+	set desc = "Lets you see in the dark and look tacticool."
+	set category = "Object"
+	var/mob/user = loc
+	if(usr.stat || user.restrained())
+		return
+	if(user.get_equipped_item(slot_head) != src)
+		return
+	if(hud in src)
+		if(user.equip_to_slot_if_possible(hud, slot_glasses))
+			to_chat(user, "You enable the thermo-nightvision hud on [src].")
+			update_icon()
+	else
+		if(ismob(hud.loc))
+			var/mob/hud_loc = hud.loc
+			hud_loc.drop_from_inventory(hud, src)
+			to_chat(user, "You disable the thermo-nightvision hud on [src].")
+		hud.forceMove(src)
+		update_icon()
+	usr.update_action_buttons()
+
+/obj/item/clothing/head/helmet/night_vision_helm/dropped(usr)
+	..()
+	if(hud.loc != src)
+		if(ismob(hud.loc))
+			var/mob/hud_loc = hud.loc
+			hud_loc.drop_from_inventory(hud, src)
+			to_chat(hud_loc, "[hud] automaticly retract in [src].")
+		hud.forceMove(src)
+		update_icon()
+
+/obj/item/clothing/head/helmet/night_vision_helm/update_icon()
+	if(hud in src)
+		icon_state = "nhelm_up"
+	else
+		icon_state = "nhelm"
 	update_wear_icon()
 	..()
 
@@ -267,72 +481,28 @@
 	body_parts_covered = HEAD|EARS
 	siemens_coefficient = 1
 
-/obj/item/clothing/head/helmet/altyn
+/obj/item/clothing/head/helmet/faceshield/altyn
 	name = "altyn helmet"
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
-	var/list/armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
-	var/list/armor_down = list(melee = 35, bullet = 30, energy = 0, bomb = 30, bio = 0, rad = 0) // slightly better than usual due to mask
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHEADHAIR
-	flash_protection = FLASH_PROTECTION_MAJOR
-	body_parts_covered = HEAD|FACE|EARS
+	armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
+	armor_down = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0)
 	siemens_coefficient = 1
+	up = TRUE
 
-	action_button_name = "Flip Face Shield"
-	var/up = TRUE
-
-
-/obj/item/clothing/head/helmet/altyn/Initialize()
-	. = ..()
-	armor = up ? armor_up : armor_down
-	update_icon()
-
-/obj/item/clothing/head/helmet/altyn/update_icon()
-	icon_state = up ? "[initial(icon_state)]_up" : initial(icon_state)
-
-/obj/item/clothing/head/helmet/altyn/attack_self()
-	toggle()
-
-
-/obj/item/clothing/head/helmet/altyn/verb/toggle()
-	set category = "Object"
-	set name = "Adjust face shield"
-	set src in usr
-
-	if(!usr.incapacitated())
-		src.up = !src.up
-
-		if(src.up)
-			body_parts_covered &= ~(EYES|FACE)
-			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
-			flash_protection = FLASH_PROTECTION_NONE
-			armor = armor_up
-			to_chat(usr, "You push the [src] up out of your face.")
-		else
-			body_parts_covered |= (EYES|FACE)
-			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
-			flash_protection = initial(flash_protection)
-			armor = armor_down
-			to_chat(usr, "You flip the [src] down to protect your face.")
-
-		update_icon()
-		update_wear_icon()	//update our mob overlays
-		usr.update_action_buttons()
-
-
-/obj/item/clothing/head/helmet/altyn/brown
+/obj/item/clothing/head/helmet/faceshield/altyn/brown
 	icon_state = "altyn_brown"
 
-/obj/item/clothing/head/helmet/altyn/black
+/obj/item/clothing/head/helmet/faceshield/altyn/black
 	icon_state = "altyn_black"
 
-/obj/item/clothing/head/helmet/altyn/maska
+/obj/item/clothing/head/helmet/faceshield/altyn/maska
 	name = "maska helmet"
 	desc = "\"I do not know who I am, I don\'t know why I\'m here. All I know is that I must kill.\""
 	icon_state = "maska"
-	armor_down = list(melee = 40, bullet = 40, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
+	armor_down = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
 
-/obj/item/clothing/head/helmet/helmet/visor/cyberpunkgoggle
+/obj/item/clothing/head/helmet/visor/cyberpunkgoggle
 	name = "\improper Type-34C Semi-Enclosed Headwear"
 	desc = "Civilian model of a popular helmet used by certain law enforcement agencies. It does not have any armor plating, but has a neo-laminated fabric lining."
 	icon_state = "cyberpunkgoggle"

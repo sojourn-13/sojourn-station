@@ -4,16 +4,16 @@
 	alpha = 128
 
 /obj/random/mob/spiders/item_to_spawn()
-	return pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 30,\
+	return pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 35,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse = 30,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 15,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 5,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 3,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor = 1,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter = 30,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 10,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter = 35,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 20,\
 				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 15,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula = 10,\
 				))
 
 /obj/random/mob/spiders/low_chance

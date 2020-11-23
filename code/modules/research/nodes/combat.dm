@@ -222,7 +222,11 @@
 							/datum/design/research/item/weapon/lasercannon,
 							/datum/design/research/item/ammo/heavy_rifle_408,
 							/datum/design/research/item/ammo/laser_mag,
+<<<<<<< HEAD
 							/datum/design/research/item/weapon/starstriker)
+=======
+							/datum/design/research/item/weapon/laser_ak)
+>>>>>>> bd60e5effe52c89ef42d197a3a71c5777c28352b
 
 /datum/technology/riglaser_weaponry
 	name = "Hardsuit Laser Weaponry"

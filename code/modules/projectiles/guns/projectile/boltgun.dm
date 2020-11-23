@@ -178,6 +178,26 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
 	saw_off = FALSE
 
+<<<<<<< HEAD
+=======
+/obj/item/weapon/gun/projectile/boltgun/lever
+	name = "\"Armstrong\" repeater rifle"
+	desc = "Weapon for hunting, or endless open plains. Perfect for horseback!"
+	icon = 'icons/obj/guns/projectile/lever.dmi'
+	icon_state = "lever"
+	item_state = "lever"
+	slot_flags = SLOT_BELT|SLOT_BACK
+	force = WEAPON_FORCE_PAINFUL
+	caliber = CAL_MAGNUM
+	max_shells = 11
+	price_tag = 650
+	recoil_buildup = 30
+	damage_multiplier = 1
+	penetration_multiplier  = 1.3
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 5)
+	saw_off = FALSE
+
+>>>>>>> bd60e5effe52c89ef42d197a3a71c5777c28352b
 /obj/item/weapon/gun/projectile/boltgun/sawn
 	name = "\"obrez\" boltgun"
 	desc = "A crudly mangled and sawn-down 7.5mm bolt action rifle. Rifle was fine."

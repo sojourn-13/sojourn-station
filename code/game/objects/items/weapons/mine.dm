@@ -124,6 +124,12 @@
 	var/bonus_evade = 0
 	if (armed)
 		if (isliving(AM))
+<<<<<<< HEAD
+=======
+			if(/mob/living/simple_animal || /mob/living/carbon/superior_animal)
+				explode()
+				return
+>>>>>>> bd60e5effe52c89ef42d197a3a71c5777c28352b
 			for(var/datum/antagonist/A in AM.mind.antagonist)
 				if(A.id == ROLE_EXCELSIOR_REV)
 					AM.visible_message(

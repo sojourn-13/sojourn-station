@@ -65,7 +65,6 @@
 /area/outpost/abandoned_fortress
 	name = "Abandoned Fortress"
 	icon_state = "yellow"
-	requires_power = 0
 
 // Main mining outpost
 /area/outpost/mining_main
