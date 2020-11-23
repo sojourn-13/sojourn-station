@@ -38,7 +38,7 @@
 	build_path = /obj/item/weapon/gun/energy/centurio
 
 /datum/design/research/item/weapon/auretian
-	name = "\"Auretian" Energy Pistol"
+	name = "\"Auretian\" Energy Pistol"
 	build_path = /obj/item/weapon/gun/energy/plasma/auretian
 
 /datum/design/research/item/weapon/decloner
