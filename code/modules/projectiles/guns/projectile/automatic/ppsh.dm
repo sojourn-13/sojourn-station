@@ -42,8 +42,8 @@
 	desc = "Some madmans bastardized yet idealized version of the past; improved yet its meaning and worth lost to time. \
 		 An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in .35 Auto; taking only specific drum magizines. The hammer to break the chains."
 	icon = 'icons/obj/guns/projectile/ppv.dmi'
-	icon_state = "ppsh"
-	item_state = "ppsh"
+	icon_state = "ppv"
+	item_state = "ppv"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	price_tag = 1200
 	damage_multiplier = 0.9
