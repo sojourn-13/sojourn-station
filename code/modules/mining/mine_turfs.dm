@@ -20,7 +20,7 @@
 			new /obj/random/material_ore_small(get_turf(src))
 			if(prob(50))
 				new /obj/random/material_ore_small(get_turf(src))
-			to_chat(user, SPAN_NOTICE("You brake out a rock geode or two."))
+			to_chat(user, SPAN_NOTICE("You break out some rock geode(s)."))
 			return
 		return
 
