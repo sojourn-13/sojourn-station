@@ -8,6 +8,22 @@
 	opacity = 1
 	layer = EDGED_TURF_LAYER
 
+/turf/unsimulated/mineral/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_EXCAVATION)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_EXCAVATION)
+		to_chat(user, SPAN_NOTICE("You try to brake out a rock geode or two."))
+		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_ZERO, required_stat = STAT_ROB))
+			new /obj/random/material_ore_small(get_turf(src))
+			if(prob(50))
+				new /obj/random/material_ore_small(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You brake out a rock geode or two."))
+			return
+		return
+
 /turf/unsimulated/wall/jungle
 	name = "dense forestry"
 	icon = 'icons/turf/flooring/grass.dmi'
@@ -490,8 +506,10 @@
 
 	for(var/i=0;i<(rand(3)+2);i++)
 		new/obj/item/weapon/ore/glass(src)
+		new/obj/item/weapon/ore(src)
 
 	dug = 1
+	desc = "A hole has been dug here." //so we can tell from looking
 	//icon_state = "asteroid_dug"
 	return
 

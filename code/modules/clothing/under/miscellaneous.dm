@@ -236,6 +236,12 @@ obj/item/clothing/under/genericr
 	icon_state = "genericr"
 	item_state = "genericr"
 
+/obj/item/clothing/under/northtech
+	name = "NorthTech Security Uniform"
+	desc = "An outdated uniform of now extinct security corporation \"NorthTech\". It was one of the first corporations to adopt and employ the use of energy weapons technology."
+	icon_state = "northtech"
+	has_sensor = 0
+
 //Excelsior
 /obj/item/clothing/under/excelsior
 	name = "white excelsior jumpsuit"

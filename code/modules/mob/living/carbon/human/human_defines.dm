@@ -7,6 +7,10 @@
 	var/facial_color = "#000000"
 	var/f_style = "Shaved"
 
+	//Hair gradiants
+	var/grad_style = "none"
+	var/grad_color = "#000000"
+
 	//Eye colour
 	var/eyes_color = "#000000"
 

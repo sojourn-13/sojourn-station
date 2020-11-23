@@ -21,7 +21,7 @@
 
 /obj/item/weapon/tool/saw/improvised
 	name = "choppa"
-	desc = "An improvised saw made of twisted, wicked metal. The serrated blade, with space for tool mods, is great for cutting."
+	desc = "An improvised saw made of twisted, wicked metal. The serrated blade, with ample space for tool mods, is great for cutting."
 	icon_state = "impro_saw"
 	force = WEAPON_FORCE_PAINFUL //doubles as makeshift melee weapon, thus must have more damage than tier 2 saw
 	tool_qualities = list(QUALITY_SAWING = 15, QUALITY_CUTTING = 10, QUALITY_WIRE_CUTTING = 10)
@@ -30,7 +30,7 @@
 
 /obj/item/weapon/tool/saw/circular //tier 3
 	name = "circular saw"
-	desc = "For heavy duty cutting. Drains power quickly."
+	desc = "For heavy duty cutting. Drains power quicker than normal saws."
 	icon_state = "saw"
 	hitsound = WORKSOUND_CIRCULAR_SAW
 	worksound = WORKSOUND_CIRCULAR_SAW
@@ -44,7 +44,7 @@
 
 /obj/item/weapon/tool/saw/circular/medical
 	name = "medical circular saw"
-	desc = "For clean bone cutting but dosnt seem all that durable. Spins slower then the normal saw as well."
+	desc = "For clean bone cutting but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
 	icon_state = "saw"
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 4)

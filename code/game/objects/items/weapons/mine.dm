@@ -71,6 +71,16 @@
 
 /obj/item/weapon/mine/attack_hand(mob/user as mob)
 	.=..()
+	for(var/datum/antagonist/A in user.mind.antagonist)
+		if(A.id == ROLE_EXCELSIOR_REV && deployed)
+			user.visible_message(
+				SPAN_NOTICE("You remember your Excelsior implanted training and carefully deactivate the mine for transport.")
+				)
+			deployed = FALSE
+			anchored = FALSE
+			armed = FALSE
+			update_icon()
+			return
 	if (deployed)
 		user.visible_message(
 				SPAN_DANGER("[user] extends its hand to reach \the [src]!"),
@@ -114,18 +124,24 @@
 	var/bonus_evade = 0
 	if (armed)
 		if (isliving(AM))
-			if (!is_excelsior(AM))
-				if(AM.stats.getPerk(PERK_SURE_STEP))
-					bonus_evade += 30
-				if(prob(AM.stats.getStat(STAT_VIG) + bonus_evade))
+			for(var/datum/antagonist/A in AM.mind.antagonist)
+				if(A.id == ROLE_EXCELSIOR_REV)
 					AM.visible_message(
-					SPAN_DANGER("[AM] narrowly avoids setting off \the [src] at the last second!"),
-					SPAN_DANGER("Your vigilant observation lets you avoid \the [src] at the last possible second!")
+					SPAN_DANGER("[AM] steps on \the [src] but it doesn't go off!"),
+					SPAN_DANGER("You step on \the [src] but it doesn't go off because you're an excelsior agent!")
 					)
 					return
-				else
-					explode()
-					return
+			if(AM.stats.getPerk(PERK_SURE_STEP))
+				bonus_evade += 30
+			if(prob(AM.stats.getStat(STAT_VIG) + bonus_evade))
+				AM.visible_message(
+				SPAN_DANGER("[AM] narrowly avoids setting off \the [src] at the last second!"),
+				SPAN_DANGER("Your vigilant observation lets you avoid \the [src] at the last possible second!")
+				)
+				return
+			else
+				explode()
+				return
 	.=..()
 
 /obj/item/weapon/mine/armed
