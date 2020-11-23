@@ -8,6 +8,7 @@
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
 	speed = 4
+	faction = "pond"
 	harm_intent_damage = 5
 	melee_damage_lower = 10
 	melee_damage_upper = 25
