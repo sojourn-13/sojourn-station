@@ -17,7 +17,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon
 	name = "mecha weapon"
-	range = RANGED
+	range = MECHA_RANGED
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 3)
 	matter = list(MATERIAL_STEEL = 15)
 	var/projectile //Type of projectile fired.
@@ -265,7 +265,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	var/missile_speed = 2
 	var/missile_range = 30
-	range = RANGED | RANGED_ONLY
+	range = MECHA_RANGED | MECHA_RANGED_ONLY
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/Fire(atom/movable/AM, atom/target)
 	AM.throw_at(target,missile_range, missile_speed, chassis)

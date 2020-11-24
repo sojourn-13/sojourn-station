@@ -4,9 +4,9 @@
 #define MECHA_INT_TANK_BREACH 8
 #define MECHA_INT_CONTROL_LOST 16
 
-#define MELEE 1
-#define RANGED 2
-#define RANGED_ONLY 4
+#define MECHA_MELEE 1
+#define MECHA_RANGED 2
+#define MECHA_RANGED_ONLY 4
 
 #define MOVEMODE_STEP 1
 #define MOVEMODE_THRUST 2
