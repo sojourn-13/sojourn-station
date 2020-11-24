@@ -6,6 +6,7 @@
 
 #define MELEE 1
 #define RANGED 2
+#define RANGED_ONLY 4
 
 #define MOVEMODE_STEP 1
 #define MOVEMODE_THRUST 2
@@ -356,8 +357,14 @@
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
 			selected.action(target)
-	else if(selected && selected.is_melee())
-		selected.action(target)
+	else if(selected)
+		if(selected.is_melee())
+			selected.action(target)
+		else if(selected.is_ranged())
+			if(selected.is_ranged_only())
+				occupant_message("<font color='red'>You cannot fire this weapon in close quarters!</font>")
+			else
+				selected.action(target)
 	else
 		src.melee_action(target)
 	return

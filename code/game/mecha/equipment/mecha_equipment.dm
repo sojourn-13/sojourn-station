@@ -71,6 +71,9 @@
 /obj/item/mecha_parts/mecha_equipment/proc/is_ranged()//add a distance restricted equipment. Why not?
 	return range&RANGED
 
+/obj/item/mecha_parts/mecha_equipment/proc/is_ranged_only()//add a distance restricted equipment. Why not?
+	return range&RANGED_ONLY
+
 /obj/item/mecha_parts/mecha_equipment/proc/is_melee()
 	return range&MELEE
 

@@ -265,6 +265,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	var/missile_speed = 2
 	var/missile_range = 30
+	range = RANGED | RANGED_ONLY
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/Fire(atom/movable/AM, atom/target)
 	AM.throw_at(target,missile_range, missile_speed, chassis)
