@@ -6,7 +6,23 @@
 	blocks_air = 1
 	density = 1
 	opacity = 1
-	layer = EDGED_TURF_LAYER
+	layer = BELOW_MOB_LAYER
+
+/turf/unsimulated/mineral/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_EXCAVATION)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_EXCAVATION)
+		to_chat(user, SPAN_NOTICE("You try to break out a rock geode or two."))
+		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_ZERO, required_stat = STAT_ROB))
+			new /obj/random/material_ore_small(get_turf(src))
+			if(prob(50))
+				new /obj/random/material_ore_small(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You break out some rock geode(s)."))
+			return
+		return
 
 /turf/unsimulated/wall/jungle
 	name = "dense forestry"
@@ -34,7 +50,7 @@
 	nitrogen = MOLES_N2STANDARD
 	opacity = 1
 	density = 1
-	layer = EDGED_TURF_LAYER
+	layer = BELOW_MOB_LAYER
 	blocks_air = 1
 	temperature = T20C
 	var/mined_turf = /turf/simulated/floor/asteroid
@@ -55,7 +71,7 @@
 	has_resources = 1
 
 /turf/simulated/mineral/Initialize()
-	..()
+	.=..()
 	icon_state = "rock[rand(0,4)]"
 	spawn(0)
 		MineralSpread()
@@ -490,8 +506,10 @@
 
 	for(var/i=0;i<(rand(3)+2);i++)
 		new/obj/item/weapon/ore/glass(src)
+		new/obj/item/weapon/ore(src)
 
 	dug = 1
+	desc = "A hole has been dug here." //so we can tell from looking
 	//icon_state = "asteroid_dug"
 	return
 

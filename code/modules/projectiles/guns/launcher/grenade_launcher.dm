@@ -19,7 +19,7 @@
 	var/max_grenades = 5 //holds this + one in the chamber
 	zoom_factor = 2.0
 	twohanded = TRUE
-	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 
 //revolves the magazine, allowing players to choose between multiple grenade types
 /obj/item/weapon/gun/launcher/grenade/proc/pump(mob/user as mob)

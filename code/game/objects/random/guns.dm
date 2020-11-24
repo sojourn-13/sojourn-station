@@ -22,6 +22,9 @@
 				/obj/item/weapon/gun/projectile/boltgun/sawn/sa = 1,\
 				/obj/item/weapon/gun/projectile/boltgun/sawn/scout = 0.5,\
 				/obj/item/weapon/gun/projectile/handmade_pistol = 2,\
+				/obj/item/weapon/gun/projectile/automatic/alemao = 2, \
+				/obj/item/weapon/gun/projectile/automatic/luger = 0.1, \
+				/obj/item/weapon/gun/projectile/boltgun/zatvor = 2, \
 				//obj/item/weapon/gun/projectile/ladon/sa = 1,
 				/obj/item/weapon/gun/projectile/olivaw = 2,
 				/obj/item/weapon/gun_upgrade/barrel/forged = 2))
@@ -128,6 +131,8 @@
 				/obj/item/weapon/gun/projectile/colt/NM_colt = 2,\
 				/obj/item/weapon/gun/projectile/colt/ten = 2,\
 				/obj/item/weapon/gun/projectile/colt/ten/dark = 1,\
+				/obj/item/weapon/gun/projectile/automatic/nordwind/strelki = 0.3, \
+				/obj/item/weapon/gun/projectile/boltgun/lever = 1, \
 				//obj/item/weapon/gun/projectile/automatic/lmg/saw = 1,
 				/obj/item/weapon/gun/projectile/lamia/scoped = 1,\
 				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 1,\

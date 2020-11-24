@@ -3,7 +3,7 @@
 /obj/map_data/spacefortress
 	name = "Space fortress Level"
 	is_player_level = TRUE
-	is_contact_level = TRUE
+	is_contact_level = FALSE
 	is_accessable_level = TRUE
 	height = 1
 

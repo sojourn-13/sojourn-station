@@ -20,7 +20,7 @@
 /datum/export/gear/riot_helmet
 	cost = 250
 	unit_name = "riot helmet"
-	export_types = list(/obj/item/clothing/head/helmet/riot)
+	export_types = list(/obj/item/clothing/head/helmet/faceshield/riot)
 
 /datum/export/gear/riot_armor
 	cost = 500

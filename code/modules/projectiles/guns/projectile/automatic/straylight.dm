@@ -23,7 +23,7 @@
 	init_firemodes = list(
 		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND
+		BURST_3_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/straylight/update_icon()

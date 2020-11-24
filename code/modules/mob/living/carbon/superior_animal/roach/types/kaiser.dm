@@ -18,6 +18,7 @@ Has ability of every roach.
 
 	var/datum/reagents/gas_sac
 
+	knockdown_odds = 10
 	melee_damage_lower = 20
 	melee_damage_upper = 35
 	move_to_delay = 8

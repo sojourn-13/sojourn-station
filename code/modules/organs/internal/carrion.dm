@@ -78,7 +78,6 @@
 	owner = null //overrides removed() call
 	. = ..()
 
-
 /obj/item/organ/internal/carrion/core/proc/make_spider()
 	set category = "Carrion"
 	set name = "Spawn a spider"
@@ -287,7 +286,6 @@
 	else
 		to_chat(owner, SPAN_WARNING("Your hunger is restless!"))
 
-
 /obj/item/organ/internal/carrion/maw/proc/consume_flesh()
 	set category = "Carrion"
 	set name = "Consume the flesh"
@@ -437,7 +435,6 @@
 /obj/item/organ/internal/carrion/spinneret/proc/bloodpurge()
 	set category = "Carrion"
 	set name = "Blood Purge (25)"
-
 
 	if (owner.check_ability(25))
 		to_chat(owner, SPAN_NOTICE("You cleanse your blood of all chemicals and poisons."))

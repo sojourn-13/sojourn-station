@@ -232,15 +232,16 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_BLUESPACE = 4)
 	var/mob/living/embedded
 	var/last_teleport
+	var/entropy_value = 3
 
 /obj/item/weapon/tool/knife/dagger/bluespace/New()
 	..()
 	item_flags |= BLUESPACE
 
-/obj/item/weapon/tool/knife/dagger/bluespace/on_embed(var/mob/user)
+/obj/item/weapon/tool/knife/dagger/bluespace/on_embed(mob/user)
 	embedded = user
 
-/obj/item/weapon/tool/knife/dagger/bluespace/on_embed_removal(var/mob/user)
+/obj/item/weapon/tool/knife/dagger/bluespace/on_embed_removal(mob/user)
 	embedded = null
 
 /obj/item/weapon/tool/knife/dagger/bluespace/Process()
@@ -253,7 +254,7 @@
 				last_teleport = world.time
 				playsound(T, "sparks", 50, 1)
 				anim(T,embedded,'icons/mob/mob.dmi',,"phaseout",,embedded.dir)
-				embedded.forceMove(T)
+				go_to_bluespace(get_turf(embedded), entropy_value, TRUE, embedded, T)
 				playsound(T, 'sound/effects/phasein.ogg', 25, 1)
 				playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
 				anim(T,embedded,'icons/mob/mob.dmi',,"phasein",,embedded.dir)

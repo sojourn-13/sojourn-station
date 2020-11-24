@@ -10,6 +10,7 @@
 
 	contaminant_immunity = TRUE
 
+	knockdown_odds = 3
 	melee_damage_lower = 3
 	melee_damage_upper = 7 //Weaker than hunter
 

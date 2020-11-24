@@ -30,9 +30,10 @@
 	permeability_coefficient = 0.05
 	price_tag = 50
 
-	New()
-		//average of 0.5, somewhat better than regular gloves' 0.75
-		siemens_coefficient = pick(0,0.1,0.3,0.5,0.5,0.75,1.35)
+/obj/item/clothing/gloves/insulated/cheap/Initialize(mapload, ...)
+	. = ..()
+	//average of 0.5, somewhat better than regular gloves' 0.75
+	siemens_coefficient = pick(0,0.1,0.3,0.5,0.5,0.75,1.35)
 
 /obj/item/clothing/gloves/thick
 	desc = "A pair of fire-resistant black work gloves."

@@ -18,11 +18,11 @@
 	damage_multiplier = 0.9
 	recoil_buildup = 2.5
 	one_hand_penalty = 20
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35,GUN_BAYONET,GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35,GUN_SCOPE)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND,
+		BURST_3_ROUND,
 		FULL_AUTO_600
 		)
 

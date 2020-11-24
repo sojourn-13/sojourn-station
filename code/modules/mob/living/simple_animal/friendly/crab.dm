@@ -14,6 +14,7 @@
 	response_harm   = "stomps"
 	stop_automated_movement = 1
 	friendly = "pinches"
+	faction = "pond"
 	mob_size = 5
 	var/obj/item/inventory_head
 	var/obj/item/inventory_mask

@@ -72,15 +72,13 @@
 		cell = new suitable_cell(src)
 
 	if(use_fuel_cost)
-		var/datum/reagents/R = new/datum/reagents(max_fuel)
-		reagents = R
-		R.my_atom = src
-		R.add_reagent("fuel", max_fuel)
+		create_reagents(max_fuel)
+		reagents.add_reagent("fuel", max_fuel)
 
-	if (use_stock_cost)
+	if(use_stock_cost)
 		stock = max_stock
 
-	if (max_health)
+	if(max_health)
 		health = max_health
 
 	update_icon()
@@ -827,8 +825,8 @@
 			var/delta = reagents.total_volume - reagents.maximum_volume
 
 			reagents.trans_to_turf(get_turf(src), delta)
-			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, spilling its contents onto the floor!"), \
-								SPAN_WARNING("You remove the extended fuel tank, spilling its contents onto the floor!"))
+			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, its contents spilling onto the floor!"), \
+								SPAN_WARNING("You remove the extended fuel tank, its contents spilling onto the floor!"))
 	return
 
 /obj/item/weapon/tool/examine(mob/user)

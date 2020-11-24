@@ -99,8 +99,8 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 		else if(!command)
 			to_chat(world, "<b><font color='[tcol]'>A Council Member is required to start the round.</font></b>")
 
-	if(GLOB.player_list.len <= 10)
-		to_chat(world, "<i>But there's less than 10 players, so this requirement will be ignored.</i>")
+	if(GLOB.player_list.len <= 15) //15 players is low pop do to lurkers
+		to_chat(world, "<i>But there's less than 16 players, so this requirement will be ignored.</i>")
 		return TRUE
 
 	return FALSE

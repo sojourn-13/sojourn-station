@@ -233,3 +233,20 @@ obj/item/clothing/suit/fluff/kimono
 	/obj/item/ammo_magazine,
 	/obj/item/ammo_magazine/ammobox/
 	)
+
+/obj/item/clothing/suit/storage/punkvest
+	name = "punk vest"
+	desc = "Sleek grey vest with pockets in it. You feel absolutely punk wearing this sturdy leather coat."
+	icon_state = "punk_vest"
+	item_state = "punk_vest"
+	armor = list(
+		melee = 10,
+		bullet = 20,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO
+	cold_protection = UPPER_TORSO
+	min_cold_protection_temperature = T0C - 20

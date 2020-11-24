@@ -38,6 +38,14 @@
 	name = "Mine"
 	icon_state = "unexplored"
 
+/area/mine/gulag
+	name = "Laber Mines"
+	has_gravity = 1
+
+/area/mine/gulag_base
+	name = "Laber Camp"
+	has_gravity = 1
+
 
 // OUTPOSTS
 
@@ -57,7 +65,6 @@
 /area/outpost/abandoned_fortress
 	name = "Abandoned Fortress"
 	icon_state = "yellow"
-	requires_power = 0
 
 // Main mining outpost
 /area/outpost/mining_main

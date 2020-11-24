@@ -24,12 +24,12 @@
 	damage_multiplier = 0.9
 	recoil_buildup = 7
 	one_hand_penalty = 15 //automatic rifle level
-	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET)
+	gun_tags = list(GUN_PROJECTILE)
 
 	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND
+		BURST_3_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/ostwind/update_icon()

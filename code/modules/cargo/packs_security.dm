@@ -15,9 +15,39 @@
 	group = "Security"
 	hidden = TRUE
 
+/datum/supply_pack/sts_lrifle
+	name = "STS Carbine(.257) Weapons Crate"
+	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/lrifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/lrifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/lrifle)
+	cost = 2500
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "STS Carbine(.257) Weapons Crate"
+	group = "Security"
+
+/datum/supply_pack/sts_rifle
+	name = "STS Rifle(7.5) Weapons Crate"
+	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/rifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/rifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/rifle)
+	cost = 3000
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "STS Rifle(7.5) Weapons Crate"
+	group = "Security"
+
+/datum/supply_pack/sts_hrifle
+	name = "STS Heavy Rifle(.408) Weapons Crate"
+	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/hrifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/hrifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/hrifle)
+	cost = 4000
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "STS Heavy Rifle(.408) Weapons Crate"
+	group = "Security"
+
 /datum/supply_pack/fsenergy
 	name = "HS Energy Weapons Crate"
-	contains = list(/obj/item/weapon/gun/energy/plasma/cassad,
+	contains = list(/obj/item/weapon/gun/energy/pulse/cassad,
 				/obj/item/weapon/gun/energy/gun,
 				/obj/item/weapon/gun/energy/gun,
 				/obj/item/weapon/gun/energy/gun/martin,
@@ -110,11 +140,11 @@
 					/obj/item/weapon/handcuffs,
 					/obj/item/weapon/handcuffs,
 					/obj/item/weapon/handcuffs,
-					/obj/item/clothing/head/helmet/riot,
+					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot,
-					/obj/item/clothing/head/helmet/riot,
+					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot,
-					/obj/item/clothing/head/helmet/riot,
+					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot)
 	cost = 4880
 	containertype = /obj/structure/closet/crate/secure
@@ -213,6 +243,14 @@
 	crate_name = "gun mod crate"
 	group = "Security"
 
+/datum/supply_pack/littlecomet
+	name = "Little Comet Sidearm Crate"
+	contains = list(/obj/item/weapon/gun/projectile/revolver/little_comet)
+	cost = 12000
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Little Comet Sidearm Crate"
+	group = "Security"
+
 //This crate is unaffected by price changes since its from krios, not pirates.
 /datum/supply_pack/assaultsuit
 	name = "Assault Armor"
@@ -297,11 +335,3 @@
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Emporer Crate"
 	group = "Xanorath Syndicate"
-
-/datum/supply_pack/littlecomet
-	name = "Little Comet Sidearm Crate"
-	contains = list(/obj/item/weapon/gun/projectile/revolver/little_comet)
-	cost = 12000
-	containertype = /obj/structure/closet/crate/serbcrate_gray
-	crate_name = "Little Comet Sidearm Crate"
-	group = "Security"

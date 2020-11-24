@@ -260,7 +260,7 @@
 
 /obj/item/roller
 	name = "roller bed"
-	desc = "A collapsed roller bed that can be carried around."
+	desc = "A foldable roller bed that can be carried around."
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "folded"
 	item_state = "rbed"

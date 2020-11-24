@@ -2,7 +2,7 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /* Simple object type, calls a proc when "stepped" on by something */
 
 /obj/effect/step_trigger
-	var/affect_ghosts = 0
+	var/affect_ghosts = 1
 	var/stopper = 1 // stops throwers
 	var/id = null			//id of this bump_teleporter.
 	var/id_target = null	//id of bump_teleporter which this moves you to.
@@ -149,61 +149,110 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /obj/effect/step_trigger/underground_to_transition_1_A
 	id = "underground_to_transition_1_A"
 	id_target = "underground_to_transition_2_A"
-	affect_ghosts = 1
 
 /obj/effect/step_trigger/underground_to_transition_2_A
 	id = "underground_to_transition_2_A"
 	id_target = "underground_to_transition_1_A"
-	affect_ghosts = 1
 
 /obj/effect/step_trigger/underground_to_transition_1_B
 	id = "underground_to_transition_1_B"
 	id_target = "underground_to_transition_2_B"
-	affect_ghosts = 1
 
 /obj/effect/step_trigger/underground_to_transition_2_B
 	id = "underground_to_transition_2_B"
 	id_target = "underground_to_transition_1_B"
-	affect_ghosts = 1
 
 //Surface to stairs.
 /obj/effect/step_trigger/surface_to_transition_1_A
 	id = "surface_to_transition_1_A"
 	id_target = "surface_to_transition_2_A"
-	affect_ghosts = 1
 
 /obj/effect/step_trigger/surface_to_transition_2_A
 	id = "surface_to_transition_2_A"
 	id_target = "surface_to_transition_1_A"
-	affect_ghosts = 1
 
 /obj/effect/step_trigger/surface_to_transition_1_B
 	id = "surface_to_transition_1_B"
 	id_target = "surface_to_transition_2_B"
-	affect_ghosts = 1
 
 /obj/effect/step_trigger/surface_to_transition_2_B
 	id = "surface_to_transition_2_B"
 	id_target = "surface_to_transition_1_B"
-	affect_ghosts = 1
 
 //Surface to forest
 /obj/effect/step_trigger/surface_to_forest_1_A
 	id = "surface_to_forest_1_A"
 	id_target = "surface_to_forest_2_A"
-	affect_ghosts = 1
 
 /obj/effect/step_trigger/surface_to_forest_2_A
 	id = "surface_to_forest_2_A"
 	id_target = "surface_to_forest_1_A"
-	affect_ghosts = 1
 
 /obj/effect/step_trigger/surface_to_forest_1_B
 	id = "surface_to_forest_1_B"
 	id_target = "surface_to_forest_2_B"
-	affect_ghosts = 1
 
 /obj/effect/step_trigger/surface_to_forest_2_B
 	id = "surface_to_forest_2_B"
 	id_target = "surface_to_forest_1_B"
-	affect_ghosts = 1
+
+//HuT to Gulag
+/obj/effect/step_trigger/hut_to_gulag_1_A
+	id = "hut_to_gulag_1_A"
+	id_target = "hut_to_gulag_2_A"
+
+/obj/effect/step_trigger/hut_to_gulag_2_A
+	id = "hut_to_gulag_2_A"
+	id_target = "hut_to_gulag_1_A"
+
+/obj/effect/step_trigger/hut_to_gulag_1_B
+	id = "hut_to_gulag_1_B"
+	id_target = "hut_to_gulag_2_B"
+
+/obj/effect/step_trigger/hut_to_gulag2_B
+	id = "hut_to_gulag_2_B"
+	id_target = "hut_to_gulag_1_B"
+
+//Monster cave to more beast caves
+/obj/effect/step_trigger/monster_to_beast_1_A
+	id = "monster_to_beast_1_A"
+	id_target = "monster_to_beast_2_A"
+
+/obj/effect/step_trigger/monster_to_beast_2_A
+	id = "monster_to_beast_2_A"
+	id_target = "monster_to_beast_1_A"
+
+/obj/effect/step_trigger/monster_to_beast_1_B
+	id = "monster_to_beast_1_B"
+	id_target = "monster_to_beast_2_B"
+
+/obj/effect/step_trigger/monster_to_beast_2_B
+	id = "monster_to_beast_2_B"
+	id_target = "monster_to_beast_1_B"
+
+//Greyson base to field offices
+/obj/effect/step_trigger/gbase_to_gfoffices_1_A
+	id = "gbase_to_gfoffices_1_A"
+	id_target = "gbase_to_gfoffices_2_A"
+
+/obj/effect/step_trigger/gbase_to_gfoffices_2_A
+	id = "gbase_to_gfoffices_2_A"
+	id_target = "gbase_to_gfoffices_1_A"
+
+//Prepper base to vault bunker
+/obj/effect/step_trigger/prepper_to_vbunker_1_A
+	id = "prepper_to_vbunker_1_A"
+	id_target = "prepper_to_vbunker_2_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_2_A
+	id = "prepper_to_vbunker_2_A"
+	id_target = "prepper_to_vbunker_1_A"
+
+//Ironhead compound to abandoned fortress
+/obj/effect/step_trigger/ironcompound_to_abandonedfortress_1_A
+	id = "ironcompound_to_abandonedfortress_1_A"
+	id_target = "ironcompound_to_abandonedfortress_2_A"
+
+/obj/effect/step_trigger/ironcompound_to_abandonedfortress_2_A
+	id = "ironcompound_to_abandonedfortress_2_A"
+	id_target = "ironcompound_to_abandonedfortress_1_A"

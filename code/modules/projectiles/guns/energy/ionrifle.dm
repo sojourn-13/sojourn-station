@@ -17,7 +17,7 @@
 	projectile_type = /obj/item/projectile/ion
 	one_hand_penalty = 5
 	twohanded = TRUE
-	gun_tags = list(GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 
 /obj/item/weapon/gun/energy/ionrifle/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess

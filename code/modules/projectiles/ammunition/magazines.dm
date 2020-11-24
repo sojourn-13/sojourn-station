@@ -48,6 +48,44 @@
 	icon_state = "pistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
+/obj/item/ammo_magazine/pistol_35/drum
+	name = "standard auto drum magazine"
+	icon_state = "ldrum"
+	desc = "A 71 round drum magazine marked for .35 Auto."
+	origin_tech = list(TECH_COMBAT = 2)
+	w_class = ITEM_SIZE_BULKY
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_DRUM
+	caliber = CAL_PISTOL
+	matter = list(MATERIAL_STEEL = 25)
+	ammo_type = /obj/item/ammo_casing/pistol_35
+	max_ammo = 71
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/pistol_35/drum/rubber
+	name = "standard auto magazine (rubber)"
+	matter = list(MATERIAL_STEEL = 4)
+	icon_state = "ldrum_r"
+	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
+
+/obj/item/ammo_magazine/pistol_35/drum/lethal
+	name = "standard auto magazine (hollow-point)"
+	matter = list(MATERIAL_STEEL = 4)
+	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
+	icon_state = "ldru_l"
+
+/obj/item/ammo_magazine/pistol_35/drum/hv
+	name = "standard auto magazine (high-velocity)"
+	matter = list(MATERIAL_STEEL = 4)
+	ammo_type = /obj/item/ammo_casing/pistol_35/hv
+	icon_state = "ldrum_hv"
+
+/obj/item/ammo_magazine/pistol_35/drum/empty
+	name = "standard auto magazine"
+	matter = list(MATERIAL_STEEL = 4)
+	icon_state = "ldrum"
+	initial_ammo = 0
+
 
 /////////////HighCap/////////////
 /obj/item/ammo_magazine/highcap_pistol_35
@@ -442,7 +480,6 @@
 	name = "heavy rifle magazine"
 	icon_state = "hdrum"
 	matter = list(MATERIAL_STEEL = 4)
-	icon_state = "hdrum"
 	initial_ammo = 0
 
 ////10mm caseless////
@@ -483,12 +520,12 @@
 	icon_state = "kurtz_r"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
-/obj/item/ammo_magazine/kurtz_50/hv
+/obj/item/ammo_magazine/kurtz_50/practice
 	name = "heavy pistol magazine (practice)"
 	icon_state = "kurtz_r"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/practice
 
-/obj/item/ammo_magazine/kurtz_50/practice
+/obj/item/ammo_magazine/kurtz_50/hv
 	name = "heavy pistol magazine (high-velocity)"
 	icon_state = "kurtz_hv"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
@@ -709,3 +746,19 @@
 	icon_state = "sbaw_he"
 	matter = list(MATERIAL_STEEL = 10)
 	ammo_type = /obj/item/ammo_casing/shotgun/payload
+
+// SCI ammo
+/obj/item/ammo_magazine/rifle_223
+	name = "short carbine magazine"
+	desc = "A 20 round magazine marked for .223 Carbine laser ammunition."
+	icon_state = "lsrifle"
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_LSRIFLE
+	caliber = CAL_SCI
+	matter = list(MATERIAL_STEEL = 10)
+	ammo_type = /obj/item/ammo_casing/beam
+	max_ammo = 20
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/rifle_223/empty
+	initial_ammo = 0
