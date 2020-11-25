@@ -33,7 +33,7 @@
 
 /obj/effect/decal/mecha_wreckage/attackby(obj/item/I, mob/user)
 
-	var/tool_type = I.get_tool_type(user, list(QUALITY_WIRE_CUTTING, QUALITY_WELDING, QUALITY_PRYING), src)
+	var/tool_type = I.get_tool_type(user, list(QUALITY_WIRE_CUTTING, QUALITY_WELDING, QUALITY_PRYING, QUALITY_SAWING), src)
 	switch(tool_type)
 
 		if(QUALITY_WIRE_CUTTING)
@@ -79,6 +79,17 @@
 					crowbar_salvage -= S
 					user.visible_message("[user] pries [S] from [src].", "You pry [S] from [src].")
 				return
+			return
+
+		if(QUALITY_SAWING)
+			to_chat(user, SPAN_NOTICE("You started to cut the mech apart..."))
+			if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				new /obj/item/stack/material/steel(get_turf(src), 1 ? 60 : 2)
+				new /obj/item/stack/material/plastic(get_turf(src), 1 ? 30 : 2)
+				new /obj/item/stack/material/plasteel(get_turf(src), 1 ? 20 : 2)
+				new /obj/item/stack/material/glass(get_turf(src), 1 ? 10 : 2)
+				to_chat(user, SPAN_NOTICE("You cut up the mech."))
+				qdel(src)
 			return
 
 		if(ABORT_CHECK)
