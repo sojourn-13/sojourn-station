@@ -349,7 +349,7 @@
 /obj/item/weapon/gun/energy/firestorm/update_icon()
 	..()
 
-	var/iconstring = initial(icon_state)
+	var/iconstring = icon_state
 	var/itemstring = ""
 
 	if (!cell)
@@ -384,7 +384,7 @@
 /obj/item/weapon/gun/energy/lasercore/update_icon()
 	..()
 
-	var/iconstring = initial(icon_state)
+	var/iconstring = icon_state
 	var/itemstring = ""
 
 	if (!cell)
