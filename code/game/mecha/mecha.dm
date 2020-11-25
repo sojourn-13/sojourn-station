@@ -4,8 +4,8 @@
 #define MECHA_INT_TANK_BREACH 8
 #define MECHA_INT_CONTROL_LOST 16
 
-#define MELEE 1
-#define RANGED 2
+#define MECHA_MELEE 1
+#define MECHA_RANGED 2
 
 #define MOVEMODE_STEP 1
 #define MOVEMODE_THRUST 2
@@ -356,8 +356,11 @@
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
 			selected.action(target)
-	else if(selected && selected.is_melee())
-		selected.action(target)
+	else if(selected)
+		if(selected.is_melee())
+			selected.action(target)
+		else
+			occupant_message("<font color='red'>You cannot fire this weapon in close quarters!</font>")
 	else
 		src.melee_action(target)
 	return
