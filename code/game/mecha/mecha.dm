@@ -819,6 +819,7 @@ assassination method if you time it right*/
 			Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
 			for(var/i in 1 to min(final_penetration, round(Proj.get_total_damage()/15)))
 				if(!critically_hit && prob(20))
+					src.occupant_message(SPAN_WARNING("Your armor was penetrated and a component was damaged!."))
 					src.visible_message("Sparks fly from the [src.name] as the projectile strikes a critical component!")
 					src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT), 1)
 					critically_hit = 1
