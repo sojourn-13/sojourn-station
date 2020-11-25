@@ -328,6 +328,7 @@
 	suitable_cell = /obj/item/weapon/cell/medium
 	can_dual = 1
 	projectile_type = /obj/item/projectile/beam/weak/smg
+	projectile_color = "#0000FF"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GLASS = 4)
@@ -345,20 +346,31 @@
 		FULL_AUTO_600
 		)
 
-/obj/item/weapon/gun/energy/firestorm/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
-	projectile_color = "#0000FF"
+/obj/item/weapon/gun/energy/firestorm/update_icon()
+	..()
+
+	var/iconstring = icon_state
+	var/itemstring = ""
+
+	if (!cell)
+		iconstring += "_slide"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
 
 /obj/item/weapon/gun/energy/lasercore
 	name = "\"Laser Core\" laser carbine"
 	desc = "A high-powered laser carbine made by H&S. It was hailed back in its prime for its high-powered shots and compactness. However, it really consumes power."
 	icon = 'icons/obj/guns/energy/lasercore.dmi'
-	icon_state = "lasercore"
-	item_state = "lasercore"
+	icon_state = "lcore"
+	item_state = "lcore"
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
 	projectile_type = /obj/item/projectile/beam/heavylaser
+	projectile_color = "#0000FF"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10, MATERIAL_GOLD = 2)
 	charge_cost = 120
 	fire_delay = 10
@@ -369,5 +381,14 @@
 	)
 	twohanded = TRUE
 
-/obj/item/weapon/gun/energy/lasercore/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
-	projectile_color = "#0000FF"
+/obj/item/weapon/gun/energy/lasercore/update_icon()
+	..()
+
+	var/iconstring = icon_state
+	var/itemstring = ""
+
+	if (!cell)
+		iconstring += "_slide"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
