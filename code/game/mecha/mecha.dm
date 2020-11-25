@@ -793,9 +793,6 @@ assassination method if you time it right*/
 	return
 
 /obj/mecha/bullet_act(var/obj/item/projectile/Proj)
-	if(Proj.damage_types[HALLOSS] && !(src.r_deflect_coeff > 1))
-		use_power(Proj.agony * 5)
-
 	src.log_message("Hit by projectile. Type: [Proj.name]([Proj.check_armour]).",1)
 	if(deflect_hit(is_melee=0))
 		src.occupant_message(SPAN_NOTICE("The armor deflects incoming projectile."))
