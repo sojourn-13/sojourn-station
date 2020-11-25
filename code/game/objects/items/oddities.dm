@@ -124,6 +124,15 @@
 		STAT_BIO = 6,
 	)
 
+/obj/item/weapon/oddity/common/broken_glass
+	name = "smashed glass jar"
+	desc = "A broken glass jar, dusty with a stained rim."
+	icon_state = "broken_glassjar"
+	oddity_stats = list(
+		STAT_BIO = 10,
+		STAT_ROB = 5,
+	)
+
 /obj/item/weapon/oddity/common/paper_omega
 	name = "collection of obscure reports"
 	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was greyson, soteria, or an independent group."
@@ -154,6 +163,14 @@
 		STAT_VIG = 6,
 	)
 
+/obj/item/weapon/oddity/common/broken_key
+	name = "broken key"
+	desc = "A yellow or golden key that goes to who knows what. The end bit broken off..."
+	icon_state = "broken_key"
+	oddity_stats = list(
+		STAT_COG = 15,
+	)
+
 /obj/item/weapon/oddity/common/book_bible
 	name = "old bible"
 	desc = "Oh, how quickly we forgot."
@@ -161,6 +178,16 @@
 	oddity_stats = list(
 		STAT_ROB = 5,
 		STAT_VIG = 5,
+	)
+
+/obj/item/weapon/oddity/common/book_log
+	name = "forgotten logs"
+	desc = "A once detailed book containing information on all manner of things, slashes and now ruined pages are whats left..."
+	icon_state = "book_log"
+	oddity_stats = list(
+		STAT_TGH = 8,
+		STAT_ROB = 5,
+		STAT_MEC = 5,
 	)
 
 /obj/item/weapon/oddity/common/old_money
@@ -229,6 +256,26 @@
 		STAT_ROB = 10,
 		STAT_TGH = 10,
 		STAT_VIG = 10,
+	)
+
+/obj/item/weapon/oddity/common/rusted_sword
+	name = "rusted sword" //Sword was never maintained or used
+	desc = "A rotted sword hilt with a rusted blade somewhat fitted in still. Was this just for show?"
+	icon_state = "rusted_sword"
+	item_state = "knife"
+	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
+	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
+	force = WEAPON_FORCE_ROBUST
+	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	slot_flags = SLOT_BELT
+	sharp = 1
+	edge = 1
+
+	oddity_stats = list(
+		STAT_MEC = 10, //What maintance prevents
+		STAT_BIO = 10, //Understanding rot and rust
+		STAT_VIG = 10, //Showings of degrading
 	)
 
 /obj/item/weapon/oddity/common/old_id

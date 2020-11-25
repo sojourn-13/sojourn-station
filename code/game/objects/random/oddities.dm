@@ -23,7 +23,11 @@
 				/obj/item/weapon/oddity/common/old_id = 1,
 				/obj/item/weapon/oddity/common/old_radio = 1,
 				/obj/item/weapon/oddity/common/paper_bundle = 2,
-				/obj/item/weapon/oddity/common/towel = 3))
+				/obj/item/weapon/oddity/common/towel = 3,
+				/obj/item/weapon/oddity/common/book_log = 1,
+				/obj/item/weapon/oddity/common/broken_glass = 0.5,
+				/obj/item/weapon/oddity/common/broken_key = 0.5,
+				/obj/item/weapon/oddity/common/rusted_sword = 0.1))
 
 /obj/random/common_oddities/low_chance
 	name = "low chance random common odities"
