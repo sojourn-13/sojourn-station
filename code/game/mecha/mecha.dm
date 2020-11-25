@@ -10,6 +10,10 @@
 #define MOVEMODE_STEP 1
 #define MOVEMODE_THRUST 2
 
+#define MECHA_ARMOR_LIGHT 1
+#define MECHA_ARMOR_SCOUT 2
+#define MECHA_ARMOR_MEDIUM 3
+#define MECHA_ARMOR_HEAVY 4
 
 /obj/mecha
 	name = "Mecha"
@@ -44,6 +48,8 @@
 
 	//the values in this list show how much damage will pass through, not how much will be absorbed.
 	var/list/damage_absorption = list("brute"=0.8,"fire"=1.2,"bullet"=0.9,"energy"=1,"bomb"=1)
+	// This armor level indicates how fortified the mech's armor is.
+	var/armor_level = MECHA_ARMOR_LIGHT
 	var/obj/item/weapon/cell/large/cell
 	var/state = 0
 	var/list/log = new
@@ -799,24 +805,25 @@ assassination method if you time it right*/
 
 	if(!(Proj.nodamage))
 		var/ignore_threshold
+		var/final_penetration = Proj.penetrating - src.armor_level
 		if(istype(Proj, /obj/item/projectile/beam/pulse))
 			ignore_threshold = 1
-		src.hit_damage(Proj.get_structure_damage(), Proj.check_armour, is_melee=0)
+		src.hit_damage(Proj.get_structure_damage() * max(1, final_penetration), Proj.check_armour, is_melee=0)
 		if(prob(25)) spark_system.start()
 		src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),ignore_threshold)
 
 		//AP projectiles have a chance to cause additional damage
 		if(Proj.penetrating)
 			var/distance = get_dist(Proj.starting, get_turf(loc))
-			var/hit_occupant = 1 //only allow the occupant to be hit once
-			for(var/i in 1 to min(Proj.penetrating, round(Proj.get_total_damage()/15)))
-				if(src.occupant && hit_occupant && prob(20))
-					Proj.attack_mob(src.occupant, distance)
-					hit_occupant = 0
-				else
+			var/critically_hit = 0 //only allow one critical hit per projectile
+			Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
+			for(var/i in 1 to min(final_penetration, round(Proj.get_total_damage()/15)))
+				if(!critically_hit && prob(20))
+					src.visible_message("Sparks fly from the [src.name] as the projectile strikes a critical component!")
 					src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT), 1)
+					critically_hit = 1
 
-				Proj.penetrating--
+				final_penetration--
 
 				if(prob(15))
 					break //give a chance to exit early
