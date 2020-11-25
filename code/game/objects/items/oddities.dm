@@ -126,7 +126,7 @@
 
 /obj/item/weapon/oddity/common/broken_glass
 	name = "smashed glass jar"
-	desc = "A broken glass jar, dusty with a stained rim."
+	desc = "A broken glass jar, covered in dust and left with a stained rim."
 	icon_state = "broken_glassjar"
 	oddity_stats = list(
 		STAT_BIO = 10,
@@ -260,7 +260,7 @@
 
 /obj/item/weapon/oddity/common/rusted_sword
 	name = "rusted sword" //Sword was never maintained or used
-	desc = "A rotted sword hilt with a rusted blade somewhat fitted in still. Was this just for show?"
+	desc = "A withered sword hilt with a rusted blade still barely slotted in place. Was this just for show?"
 	icon_state = "rusted_sword"
 	item_state = "knife"
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
