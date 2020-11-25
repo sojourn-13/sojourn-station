@@ -75,6 +75,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy
 	name = "general energy weapon"
 	auto_rearm = 1
+	range = MECHA_MELEE | MECHA_RANGED
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	equip_cooldown = 8
@@ -188,6 +189,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic
 	name = "general ballisic weapon"
 	var/projectile_energy_cost
+	range = MECHA_MELEE | MECHA_RANGED
 
 	get_equip_info()
 		return "[..()]\[[src.projectiles]\][(src.projectiles < initial(src.projectiles))?" - <a href='?src=\ref[src];rearm=1'>Rearm</a>":null]"
@@ -265,7 +267,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	var/missile_speed = 2
 	var/missile_range = 30
-	range = MECHA_RANGED | MECHA_RANGED_ONLY
+	range = MECHA_RANGED
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/Fire(atom/movable/AM, atom/target)
 	AM.throw_at(target,missile_range, missile_speed, chassis)

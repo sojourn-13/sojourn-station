@@ -6,7 +6,6 @@
 
 #define MECHA_MELEE 1
 #define MECHA_RANGED 2
-#define MECHA_RANGED_ONLY 4
 
 #define MOVEMODE_STEP 1
 #define MOVEMODE_THRUST 2
@@ -360,11 +359,8 @@
 	else if(selected)
 		if(selected.is_melee())
 			selected.action(target)
-		else if(selected.is_ranged())
-			if(selected.is_ranged_only())
-				occupant_message("<font color='red'>You cannot fire this weapon in close quarters!</font>")
-			else
-				selected.action(target)
+		else
+			occupant_message("<font color='red'>You cannot fire this weapon in close quarters!</font>")
 	else
 		src.melee_action(target)
 	return
