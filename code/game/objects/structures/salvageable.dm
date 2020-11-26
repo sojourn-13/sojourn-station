@@ -306,7 +306,7 @@ obj/structure/salvageable/bliss/Initialize()
 
 /obj/structure/salvageable/autolathe_os
 	name = "broken autolathe"
-	icon_state = "os-autolathe"
+	icon_state = "os_autolathe"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/stack/cable_coil{amount = 5} = 80,
