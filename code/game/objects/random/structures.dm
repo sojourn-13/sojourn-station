@@ -32,7 +32,7 @@
 
 /obj/random/structures/os/item_to_spawn()
 	return pickweight(list(/obj/structure/salvageable/machine_os = 10,\
-				/obj/structure/salvageable/autolathe = 10,\
+				/obj/structure/salvageable/autolathe_os = 10,\
 				/obj/structure/salvageable/implant_container_os = 3,\
 				/obj/structure/salvageable/data_os = 6,\
 				/obj/structure/salvageable/server_os = 6,\
