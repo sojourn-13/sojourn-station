@@ -155,7 +155,7 @@
 	license = 8
 
 	designs = list(
-		/datum/design/autolathe/gun/ppsh = 3,
+		/datum/design/autolathe/gun/ppv = 3,
 		/datum/design/autolathe/ammo/pistol_35_drum,
 		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
 		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
