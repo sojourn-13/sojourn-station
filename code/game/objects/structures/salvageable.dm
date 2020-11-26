@@ -304,6 +304,41 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20
 	)
 
+/obj/structure/salvageable/autolathe_os
+	name = "broken autolathe"
+	icon_state = "os_autolathe"
+	salvageable_parts = list(
+		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/stack/cable_coil{amount = 5} = 80,
+		/obj/item/weapon/stock_parts/capacitor/one_star = 20,
+		/obj/item/weapon/stock_parts/capacitor/one_star = 20,
+		/obj/item/weapon/stock_parts/scanning_module/one_star = 10,
+		/obj/item/weapon/stock_parts/scanning_module/one_star = 10,
+		/obj/item/weapon/stock_parts/manipulator/one_star = 80,
+		/obj/item/weapon/stock_parts/manipulator/one_star = 80,
+		/obj/item/weapon/stock_parts/micro_laser/one_star = 70,
+		/obj/item/weapon/stock_parts/micro_laser/one_star = 70,
+		/obj/item/weapon/stock_parts/matter_bin/one_star = 80,
+		/obj/item/weapon/stock_parts/matter_bin/one_star = 80,
+		/obj/random/tool/advanced/onestar = 45,
+		/obj/random/prothesis/one_star = 20,
+		/obj/random/lathe_disk/advanced/onestar = 10,
+		/obj/item/weapon/circuitboard/autolathe = 5,
+		/obj/item/stack/material/steel{amount = 10} = 60,
+		/obj/item/stack/material/glass{amount = 10} = 60,
+		/obj/item/stack/material/plastic{amount = 10} = 60,
+		/obj/item/stack/material/platinum{amount = 10} = 60,
+		/obj/item/stack/material/plasteel{amount = 5} = 20,
+		/obj/item/stack/material/silver{amount = 5} = 50,
+		/obj/item/stack/material/gold{amount = 5} = 50,
+		/obj/item/stack/material/plasma{amount = 5} = 10,
+		/obj/item/stack/material/uranium{amount = 3} = 5,
+		/obj/item/stack/material/diamond{amount = 1} = 1,
+		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20,
+		/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst = 0.1 //1 in 1000
+	)
+
+
 /obj/structure/salvageable/computer_os
 	name = "broken computer"
 	icon_state = "os-computer"
