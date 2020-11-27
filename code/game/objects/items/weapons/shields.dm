@@ -94,10 +94,10 @@
 
 /obj/item/weapon/shield/riot/crusader
 	name = "crusader tower shield"
-	desc = "A traditional tower shield meeting the materials and design of the future. It's made from durasteel and the craftmenship is the highest quality. It bears the insignia of the Church. Deus Vult."
-	icon = 'icons/obj/weapons-blades.dmi'
-	icon_state = "crusader_s"
-	item_state = "crusader_s"
+	desc = "A traditional tower shield meeting the materials and design of the future. It's made from durasteel and the craftmenship is the highest quality, setting it apart from regular shields. It bears the insignia of the Church. Deus Vult."
+	icon = 'icons/obj/nt_melee.dmi'
+	icon_state = "nt_shield"
+	item_state = "nt_shield"
 	price_tag = 2000
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10, MATERIAL_DURASTEEL = 20)
 

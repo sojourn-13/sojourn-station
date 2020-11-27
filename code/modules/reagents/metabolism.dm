@@ -61,7 +61,7 @@
 	return nsa_current
 
 /datum/metabolism_effects/proc/get_nsa_target()
-	var/accumulatedNSA
+	var/accumulatedNSA = 0
 	for(var/tag in nerve_system_accumulations)
 		accumulatedNSA += nerve_system_accumulations[tag]
 	return accumulatedNSA

@@ -533,6 +533,30 @@
 	I.prefix = "spiked"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
+/obj/item/weapon/tool_upgrade/augment/sanctifier
+	name = "sanctifier"
+	icon_state = "sanctifier"
+	desc = "Recommended for crusade against mutants, wild life, and heretics. Does this device actually make a better weapon or is it something else? Regardless, it makes one more thoughtful during labor."
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_STEEL = 2)
+
+/obj/item/weapon/tool_upgrade/augment/sanctifier/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_SANCTIFY = TRUE,
+	UPGRADE_FORCE_MOD = 10,
+	UPGRADE_HEALTH_THRESHOLD = 10,
+	UPGRADE_DEGRADATION_MULT = 0.9,
+	UPGRADE_WORKSPEED = -5
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 1.2,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_CHARGECOST = 0.8)
+	I.prefix = "sanctified"
+	I.req_fuel_cell = REQ_CELL
+
 /*
 /obj/item/weapon/tool_upgrade/augment/hammer_addon
 	name = "flat surface"
@@ -716,3 +740,24 @@
 	)
 	I.prefix = "bomb-proofed"
 	I.required_qualities = list(QUALITY_ARMOR)
+
+// Randomizes a bunch of weapon stats on application - stats are set on creation of the item to prevent people from re-rolling until they get what they want
+/obj/item/weapon/tool_upgrade/augment/randomizer
+	name = "BSL \"Randomizer\" tool polish"
+	desc = "This unidentified tar-like liquid warps and bends reality around it. Applying it to a tool may have unexpected results."
+	icon_state = "randomizer"
+	matter = list(MATERIAL_PLASMA = 4, MATERIAL_URANIUM = 4)
+
+/obj/item/weapon/tool_upgrade/augment/randomizer/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_DEGRADATION_MULT = rand(-1,10),
+	UPGRADE_HEALTH_THRESHOLD = rand(-10,10),
+	UPGRADE_WORKSPEED = rand(-1,3),
+	UPGRADE_PRECISION = rand(-20,20),
+	UPGRADE_FORCE_MOD = rand(-20,20),
+	UPGRADE_BULK = rand(-1,2),
+	UPGRADE_COLOR = "#3366ff"
+	)
+	I.prefix = "theoretical"

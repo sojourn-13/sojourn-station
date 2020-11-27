@@ -71,10 +71,7 @@
 		//utilities
 		/datum/design/autolathe/gun/nt_sprayer,
 		/datum/design/autolathe/device/grenade/nt_cleaner,
-		/datum/design/autolathe/device/grenade/nt_weedkiller,
-		/datum/design/autolathe/gun/plasma/martyr,
-		/datum/design/autolathe/gun_upgrade/barrel/excruciator
-
+		/datum/design/autolathe/device/grenade/nt_weedkiller
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioaugment
@@ -118,35 +115,6 @@
 		/datum/design/bioprinter/belt/security,
 		/datum/design/bioprinter/belt/medical/emt,
 		/datum/design/bioprinter/belt/misc/champion,
-	)
-
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_boards
-	disk_name = "Absolutism Circuit Pack"
-	icon_state = "neotheology"
-
-	license = -1
-	designs = list(
-		/datum/design/autolathe/circuit/bioprinter,
-		/datum/design/autolathe/circuit/solidifier,
-
-		//datum/design/autolathe/circuit/cloner,
-		//datum/design/autolathe/circuit/reader,
-		//datum/design/autolathe/circuit/biocan,
-
-		/datum/design/autolathe/circuit/bioreactor_platform,
-		/datum/design/autolathe/circuit/bioreactor_unloader,
-		/datum/design/autolathe/circuit/bioreactor_biotank,
-		/datum/design/autolathe/circuit/bioreactor_port,
-		/datum/design/autolathe/circuit/bioreactor_metrics,
-		/datum/design/autolathe/circuit/bioreactor_loader,
-
-		/datum/design/autolathe/circuit/biogen,
-		/datum/design/autolathe/circuit/biogen_port,
-		/datum/design/autolathe/circuit/biogen_console,
-
-		/datum/design/autolathe/circuit/smelter, //In case they want to do a duel system or need to replace/sell it
-		/datum/design/autolathe/circuit/sorter,
 	)
 
 // Thorn and Rose Pack - both .40 and .35
@@ -290,6 +258,38 @@
 		/datum/design/research/item/weapon/stunrevolver,
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/gun/sniperrifle = 6
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_basic_arms
+	disk_name = "Absolute Armory - New Testament Armaments"
+	icon_state = "neotheology"
+	license = -1
+	designs = list(
+		/datum/design/autolathe/sword/nt_sword,
+		/datum/design/autolathe/sword/nt_longsword,
+		/datum/design/autolathe/sword/nt_dagger,
+		/datum/design/autolathe/sword/nt_halberd,
+		/datum/design/autolathe/sword/nt_scourge,
+		/datum/design/autolathe/shield/nt_shield,
+		/datum/design/bioprinter/storage/sheath,
+		/datum/design/autolathe/tool_upgrade/sanctifier,
+		/datum/design/autolathe/gun_upgrade/barrel/excruciator,
+		/datum/design/autolathe/gun/plasma/martyr
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_basic_arms/public
+	disk_name = "Absolute Armory - Crusade Starter Kit"
+	license = 8
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_grenades
+	disk_name = "Absolute Armory - Grenades Pack"
+	icon_state = "neotheology"
+	license = 12
+	designs = list(
+		/datum/design/autolathe/grenade/nt_explosive = 3,
+		/datum/design/autolathe/grenade/nt_flashbang,
+		/datum/design/autolathe/grenade/nt_frag = 2,
+		/datum/design/autolathe/grenade/nt_smokebomb
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns
