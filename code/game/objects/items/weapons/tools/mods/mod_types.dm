@@ -533,6 +533,30 @@
 	I.prefix = "spiked"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
+/obj/item/weapon/tool_upgrade/augment/sanctifier
+	name = "sanctifier"
+	icon_state = "sanctifier"
+	desc = "Recommended for crusade against mutants, wild life, and heretics. Does this device actually make a better weapon or is it something else? Regardless, it makes one more thoughtful during labor."
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_STEEL = 2)
+
+/obj/item/weapon/tool_upgrade/augment/sanctifier/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_SANCTIFY = TRUE,
+	UPGRADE_FORCE_MOD = 10,
+	UPGRADE_HEALTH_THRESHOLD = 10,
+	UPGRADE_DEGRADATION_MULT = 0.9,
+	UPGRADE_WORKSPEED = -5
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 1.2,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_CHARGECOST = 0.8)
+	I.prefix = "sanctified"
+	I.req_fuel_cell = REQ_CELL
+
 /*
 /obj/item/weapon/tool_upgrade/augment/hammer_addon
 	name = "flat surface"

@@ -475,28 +475,12 @@
 /obj/structure/nt_pedestal/update_icon()
 	icon_state = "nt_pedestal[sword?"1":"0"]"
 
-/obj/item/weapon/storage/pouch/nt_sheath
+/obj/item/weapon/storage/sheath/joyeuse
 	name = "Joyeuse sheath"
 	desc = "A specially designed sheathe for the joyeuse, of which is the only object that shall fit in it."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "nt_sheath0"
-	item_state = "nt_sheath0"
-	slot_flags = SLOT_BELT
-	price_tag = 1000
-	storage_slots = 1
-	w_class = ITEM_SIZE_NORMAL
-	max_w_class = ITEM_SIZE_BULKY
-
 	can_hold = list(
 		/obj/item/weapon/tool/sword/crusader/nt_sword
 		)
-
-	sliding_behavior = TRUE
-
-/obj/item/weapon/storage/pouch/nt_sheath/update_icon()
-	icon_state = "nt_sheath[contents.len?"1":"0"]"
-	item_state = "nt_sheath[contents.len?"1":"0"]"
-	..()
 
 /obj/item/weapon/reagent_containers/atomic_distillery
 	name = "Atomic Distillery"
