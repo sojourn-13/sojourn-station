@@ -301,7 +301,8 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
 		/obj/random/lathe_disk/advanced/onestar = 5,
 		/obj/random/prothesis/one_star = 20,
-		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20
+		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20,
+		/obj/item/weapon/tool_upgrade/augment/randomizer = 40
 	)
 
 /obj/structure/salvageable/autolathe_os
@@ -335,6 +336,7 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/stack/material/uranium{amount = 3} = 5,
 		/obj/item/stack/material/diamond{amount = 1} = 1,
 		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20,
+		/obj/item/weapon/tool_upgrade/augment/randomizer = 40,
 		/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst = 0.1 //1 in 1000
 	)
 
