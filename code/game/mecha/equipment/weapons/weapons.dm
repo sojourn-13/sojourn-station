@@ -70,6 +70,7 @@
 	if(chassis && ishuman(chassis.occupant))
 		var/mob/living/carbon/human/H = chassis.occupant
 		def_zone = H.targeted_organ
+		P.firer = H
 	P.launch(target, def_zone)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy
