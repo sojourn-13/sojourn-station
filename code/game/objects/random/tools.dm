@@ -37,6 +37,7 @@
 				/obj/item/weapon/tool/pickaxe/excavation = 1,
 				/obj/item/weapon/tool/tape_roll = 12,
 				/obj/item/weapon/tool/tape_roll/fiber = 2,
+				/obj/item/weapon/tool/tape_roll/glue = 10,
 				/obj/item/weapon/storage/belt/utility = 5,
 				/obj/item/weapon/storage/belt/utility/full = 1,
 				/obj/item/clothing/gloves/insulated/cheap = 5,
