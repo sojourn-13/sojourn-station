@@ -220,6 +220,9 @@
 	if(!istype(target_mob))
 		return
 
+	if(target_mob == firer) // Do not hit the shooter if the bullet hasn't ricocheted yet. The firer changes upon ricochet, so this should not prevent ricocheting shots from hitting their
+		return FALSE
+
 	//roll to-hit
 	miss_modifier = 0
 	var/hit_zone = check_zone(def_zone)
