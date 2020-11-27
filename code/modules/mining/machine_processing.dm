@@ -159,6 +159,10 @@
 	for(var/obj/item/weapon/ore/O in get_step(src, input_dir))
 		if(!isnull(ores_stored[O.material]))
 			ores_stored[O.material] += O.sheet_amout
+		else
+			ores_stored[O.material] = O.sheet_amout
+		if(isnull(ores_processing[O.material]))
+			ores_processing[O.material] = 0
 		qdel(O)
 
 	if(!active)
