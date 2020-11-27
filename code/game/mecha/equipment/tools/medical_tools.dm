@@ -13,7 +13,7 @@
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 10)
 	energy_drain = 20
-	range = MELEE
+	range = MECHA_MELEE
 	equip_cooldown = 20
 	var/mob/living/carbon/occupant = null
 	var/datum/global_iterator/pr_mech_sleeper
@@ -396,7 +396,7 @@
 	energy_drain = 5
 	var/mode = 0 //0 - fire syringe, 1 - analyze reagents.
 	var/datum/global_iterator/mech_synth/synth
-	range = MELEE|RANGED
+	range = MECHA_MELEE|MECHA_RANGED
 	equip_cooldown = 10
 	origin_tech = list(TECH_MATERIAL = 3, TECH_BIO = 4, TECH_MAGNET = 4, TECH_DATA = 3)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 20)
