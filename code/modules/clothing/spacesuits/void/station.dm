@@ -8,8 +8,9 @@
 	brightness_on = 4 //luminosity when on
 	light_overlay = "hardhat_light"
 
-	icon_state = "rig0-engineering"
-	item_state = "eng_helm"
+	icon_state = "technohelmet_void"
+	item_state = "technohelmet_void"
+	light_overlay = "technohelmet_light"
 	item_state_slots = list(
 		slot_l_hand_str = "eng_helm",
 		slot_r_hand_str = "eng_helm",
@@ -24,11 +25,35 @@
 	)
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 
+/obj/item/clothing/head/helmet/space/void/engineering/verb/toggle_eyeglass()
+	set name = "Adjust Eyeglass node"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["generic"] = "technohelmet_void"
+	options["visor"] = "technohelmet_void_visor"
+	options["googles"] = "technohelmet_void_googles"
+
+	var/choice = input(M,"What kind of eyeglass node do you want to look through?","Adjust visor") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's eyeglass node into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/space/void/engineering
 	name = "engineering voidsuit"
 	desc = "A special suit that protects against hazardous, low pressure environments. Has radiation shielding."
-	icon_state = "rig-engineering"
-	item_state = "eng_voidsuit"
+	icon_state = "technosuit_void"
+	item_state = "technosuit_void"
 	armor = list(
 		melee = 35,
 		bullet = 30,

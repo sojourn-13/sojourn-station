@@ -25,7 +25,7 @@
 	var/obj/structure/biomatter_tank/biotank
 	var/obj/canister
 	var/pipes_opened = FALSE
-	var/pipes_cleanness = 100
+	var/pipes_cleanness = 200
 
 
 /obj/machinery/multistructure/bioreactor_part/biotank_platform/Initialize()
