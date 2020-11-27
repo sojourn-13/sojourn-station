@@ -807,25 +807,32 @@ assassination method if you time it right*/
 		return
 
 	if(!(Proj.nodamage))
-		var/ignore_threshold
-		var/final_penetration = Proj.penetrating - src.armor_level
-		if(istype(Proj, /obj/item/projectile/beam/pulse))
-			ignore_threshold = 1
-		src.hit_damage(Proj.get_structure_damage() * max(1, final_penetration), Proj.check_armour, is_melee=0)
-		if(prob(25)) spark_system.start()
-		src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),ignore_threshold)
+		var/final_penetration = Proj.penetrating ? Proj.penetrating - src.armor_level : 0
+		var/damage_multiplier = final_penetration > 0 ? max(1.5, final_penetration) : 1 // Minimum damage bonus of 50% if you beat the mech's armor
+		Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
+		src.hit_damage(Proj.get_structure_damage() * damage_multiplier, Proj.check_armour, is_melee=0)
 
 		//AP projectiles have a chance to cause additional damage
-		if(Proj.penetrating)
-			var/distance = get_dist(Proj.starting, get_turf(loc))
-			var/critically_hit = 0 //only allow one critical hit per projectile
-			Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
-			for(var/i in 1 to min(final_penetration, round(Proj.get_total_damage()/15)))
-				if(!critically_hit && prob(20))
+		if(final_penetration > 0)
+			for(var/i in 0 to min(final_penetration, round(Proj.get_total_damage()/15)))
+				if(prob(20))
 					src.occupant_message(SPAN_WARNING("Your armor was penetrated and a component was damaged!."))
 					src.visible_message("Sparks fly from the [src.name] as the projectile strikes a critical component!")
-					src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT), 1)
-					critically_hit = 1
+					spark_system.start()
+					// check_internal_damage rolls a chance to damage again, so do our own critical damage handling here to guarantee that a component is damaged.
+					var/list/possible_int_damage = list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT)
+					if(prob(90))
+						for(var/T in possible_int_damage)
+							if(internal_damage & T)
+								possible_int_damage -= T
+						var/int_dam_flag = safepick(possible_int_damage)
+						if(int_dam_flag)
+							setInternalDamage(int_dam_flag)
+					else
+						var/obj/item/mecha_parts/mecha_equipment/destr = safepick(equipment)
+						if(destr)
+							destr.destroy()
+					break // Only allow one critical hit per penetration
 
 				final_penetration--
 
