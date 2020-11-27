@@ -12,7 +12,7 @@
 	var/show_all_ores = 0
 
 /obj/machinery/mineral/processing_unit_console/laber
-	name = "laber camp production machine console"
+	name = "labor camp production machine console"
 
 /obj/machinery/mineral/processing_unit_console/New()
 	..()
@@ -117,7 +117,7 @@
 	var/output_dir = 0
 
 /obj/machinery/mineral/processing_unit/laber
-	name = "laber material processor"
+	name = "labor material processor"
 
 /obj/machinery/mineral/processing_unit/New()
 	..()
@@ -135,8 +135,10 @@
 		for(var/oretype in typesof(/ore)-/ore)
 			var/ore/OD = new oretype()
 			ore_data[OD.name] = OD
-			ores_processing[OD.name] = 0
-			ores_stored[OD.name] = 0
+	
+	for(var/orename in ore_data)
+		ores_processing[orename] = 0
+		ores_stored[orename] = 0
 
 	spawn()
 		//Locate our output and input machinery.

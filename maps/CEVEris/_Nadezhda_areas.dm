@@ -1276,7 +1276,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "hammerblue"
 
 /area/nadezhda/security/laber_area
-	name = "Laber Transfer"
+	name = "Labor Transfer"
 	icon_state = "hammerblue"
 
 /area/nadezhda/security/hut_cell1
