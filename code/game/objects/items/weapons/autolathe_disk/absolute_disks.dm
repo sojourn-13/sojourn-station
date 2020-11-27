@@ -120,35 +120,6 @@
 		/datum/design/bioprinter/belt/misc/champion,
 	)
 
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_boards
-	disk_name = "Absolutism Circuit Pack"
-	icon_state = "neotheology"
-
-	license = -1
-	designs = list(
-		/datum/design/autolathe/circuit/bioprinter,
-		/datum/design/autolathe/circuit/solidifier,
-
-		//datum/design/autolathe/circuit/cloner,
-		//datum/design/autolathe/circuit/reader,
-		//datum/design/autolathe/circuit/biocan,
-
-		/datum/design/autolathe/circuit/bioreactor_platform,
-		/datum/design/autolathe/circuit/bioreactor_unloader,
-		/datum/design/autolathe/circuit/bioreactor_biotank,
-		/datum/design/autolathe/circuit/bioreactor_port,
-		/datum/design/autolathe/circuit/bioreactor_metrics,
-		/datum/design/autolathe/circuit/bioreactor_loader,
-
-		/datum/design/autolathe/circuit/biogen,
-		/datum/design/autolathe/circuit/biogen_port,
-		/datum/design/autolathe/circuit/biogen_console,
-
-		/datum/design/autolathe/circuit/smelter, //In case they want to do a duel system or need to replace/sell it
-		/datum/design/autolathe/circuit/sorter,
-	)
-
 // Thorn and Rose Pack - both .40 and .35
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58
 	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack"
