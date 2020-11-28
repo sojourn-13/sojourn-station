@@ -90,7 +90,7 @@
 		if(2.0)
 			mined_ore = 4 //Heavyer bomb, we lose some ore in this
 			GetDrilled()
-		if(severity => 3.0)
+		if(3.0)
 			mined_ore = 3 //Heavy bomb, we lose quite a bit of ore
 			GetDrilled()
 
