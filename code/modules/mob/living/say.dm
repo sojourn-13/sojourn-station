@@ -166,6 +166,10 @@ var/list/channel_to_radio_key = new
 
 	message = format_say_message(message)
 
+	message = formatSpeech(message, "/", "<i>", "</i>")
+
+	message = formatSpeech(message, "*", "<b>", "</b>")
+
 	if(!(speaking && speaking.flags&NO_STUTTER))
 
 		var/list/handle_s = handle_speech_problems(message, verb)
@@ -293,6 +297,40 @@ mob/proc/format_say_message(var/message = null)
 		message += "."
 	return message
 
+// Utility procs for handling speech formatting
+/proc/formatSpeech(var/message, var/delimiter, var/openTag, var/closeTag)
+	var/location = findtextEx(message, delimiter)
+	while(location)
+		if(findtextEx(message, delimiter, location + 1)) // Only work with matching pairs
+			var/list/result = replaceFirst(message, delimiter, openTag, location)
+			message = result[1]
+			result = replaceFirst(message, delimiter, closeTag, result[2])
+			message = result[1]
+			location = findtextEx(message, delimiter, result[2] + 1)
+		else
+			break
+	return message
+
+/proc/replaceFirst(var/message, var/toFind, var/replaceWith, var/startLocation)
+	var/location = findtextEx(message, toFind, startLocation)
+	var/replacedLocation = 0
+	if(location)
+		var/findLength = length(toFind)
+		var/head = copytext(message, 1, location)
+		var/tail = copytext(message, location + findLength)
+		message = head + replaceWith + tail
+		replacedLocation = length(head) + length(replaceWith)
+	return list(message, replacedLocation)
+
+/proc/replaceAll(var/message, var/toFind, var/replaceWith)
+	var/location = findtextEx(message, toFind)
+	var/findLength = length(toFind)
+	while(location > 0)
+		var/head = copytext(message, 1, location)
+		var/tail = copytext(message, location + findLength)
+		message = head + replaceWith + tail
+		location = findtextEx(message, toFind, length(head) + length(replaceWith) + 1)
+	return message
 
 
 

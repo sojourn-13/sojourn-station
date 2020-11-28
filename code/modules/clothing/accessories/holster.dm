@@ -181,7 +181,7 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/greatsword
 	name = "greatsword scabbard"
-	desc = "A sturdy brown leather scabbard with gold trim. It's made for a massive sword. Deus Vult."
+	desc = "A sturdy brown leather scabbard with gold trim. It's made for a massive sword and is specially designed to allow for quick draws. Deus Vult."
 	icon_state = "crusader_holster"
 	overlay_state = "crusader"
 	can_hold = list(/obj/item/weapon/tool/sword)

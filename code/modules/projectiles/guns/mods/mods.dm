@@ -51,6 +51,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_PEN_MULT = 1.2,
+		GUN_UPGRADE_PIERC_MULT = 1, // Adds 1 to the gun's penetrating value
 		GUN_UPGRADE_STEPDELAY_MULT = 0.8,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
 		)

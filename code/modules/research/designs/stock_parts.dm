@@ -12,6 +12,7 @@
 	build_path = /obj/item/weapon/stock_parts/console_screen
 	materials = list(MATERIAL_GLASS = 3) //Balance it costs more for RnD to make
 
+//Credit to Azlan#0852 for the sprite work of the tier 1-3 stock parts.
 /datum/design/research/item/part/basic_capacitor
 	name = "Capacitor"
 	build_path = /obj/item/weapon/stock_parts/capacitor
