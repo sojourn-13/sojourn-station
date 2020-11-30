@@ -153,3 +153,117 @@
 	item_state = "flour"
 	preloaded_reagents = list("flour" = 30)
 
+
+/obj/item/weapon/reagent_containers/food/condiment/pack
+	name = "condiment pack"
+	desc = "A small plastic pack with condiments to put on your food."
+	icon_state = "condi_empty"
+	volume = 10
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list()
+
+	on_reagent_change()
+		if(reagents.reagent_list.len > 0)
+			switch(reagents.get_master_reagent_id())
+				if("ketchup")
+					name = "Ketchup"
+					desc = "Mixed up with blood all the time."
+					icon_state = "condi_ketchup"
+					center_of_mass = list("x"=16, "y"=6)
+				if("capsaicin")
+					name = "Hotsauce"
+					desc = "You can almost TASTE the stomach ulcers now!"
+					icon_state = "condi_hotsauce"
+					center_of_mass = list("x"=16, "y"=6)
+				if("enzyme")
+					name = "Universal Enzyme"
+					desc = "Used in cooking various dishes."
+					icon_state = "condi_soysauce"
+					center_of_mass = list("x"=16, "y"=6)
+				if("soysauce")
+					name = "Soy Sauce"
+					desc = "A salty soy-based flavoring."
+					icon_state = "condi_soysauce"
+					center_of_mass = list("x"=16, "y"=6)
+				if("frostoil")
+					name = "Coldsauce"
+					desc = "Leaves the tongue numb in its passage."
+					icon_state = "coldsauce"
+					center_of_mass = list("x"=16, "y"=6)
+				if("sodiumchloride")
+					name = "Salt Shaker"
+					desc = "Salt. From space oceans, presumably."
+					icon_state = "condi_salt"
+					center_of_mass = list("x"=16, "y"=10)
+				if("blackpepper")
+					name = "Pepper Mill"
+					desc = "Often used to flavor food or make people sneeze."
+					icon_state = "condi_pepper"
+					center_of_mass = list("x"=16, "y"=10)
+				if("cornoil")
+					name = "Corn Oil"
+					desc = "A delicious oil used in cooking. Made from corn."
+					icon_state = "condi_cornoil"
+					center_of_mass = list("x"=16, "y"=6)
+				if("sugar")
+					name = "Sugar"
+					desc = "Tasty space sugar!"
+					icon_state = "condi_sugar"
+					center_of_mass = list("x"=16, "y"=6)
+				else
+					name = "Misc Condiment Bottle"
+					if (reagents.reagent_list.len==1)
+						desc = "Looks like it is [reagents.get_master_reagent_name()], but you are not sure."
+					else
+						desc = "A mixture of various condiments. [reagents.get_master_reagent_name()] is one of them."
+					icon_state = "mixedcondiments"
+					center_of_mass = list("x"=16, "y"=6)
+		else
+			icon_state = "emptycondiment"
+			name = "Condiment Bottle"
+			desc = "An empty condiment bottle."
+			center_of_mass = list("x"=16, "y"=6)
+			return
+
+/obj/item/weapon/reagent_containers/food/condiment/pack/attack(mob/M, mob/user, target_zone) //Can't feed these to people directly.
+	return
+
+/obj/item/weapon/reagent_containers/food/condiment/pack/afterattack(obj/target, mob/user , proximity)
+	. = ..()
+	if(!proximity)
+		return
+
+	//You can tear the bag open above food to put the condiments on it, obviously.
+	if(istype(target, /obj/item/weapon/reagent_containers/food/snacks))
+		if(!reagents.total_volume)
+			to_chat(user, "<span class='warning'>You tear open [src], but there's nothing in it.</span>")
+			qdel(src)
+			return
+		if(target.reagents.total_volume >= target.reagents.maximum_volume)
+			to_chat(user, "<span class='warning'>You tear open [src], but [target] is stacked so high that it just drips off!</span>" )
+			qdel(src)
+			return
+		else
+			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
+			src.reagents.trans_to(target, amount_per_transfer_from_this)
+			qdel(src)
+
+//Ketchup
+/obj/item/weapon/reagent_containers/food/condiment/pack/ketchup
+	name = "ketchup pack"
+	preloaded_reagents = list("ketchup" = 10)
+
+//Milk
+/obj/item/weapon/reagent_containers/food/condiment/pack/milk
+	name = "milk pack"
+	preloaded_reagents = list("milk"= 10)
+
+//Sugar
+/obj/item/weapon/reagent_containers/food/condiment/pack/sugar
+	name = "sugar pack"
+	preloaded_reagents = list("sugar" = 10)
+
+//Hot sauce
+/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce
+	name = "hotsauce pack"
+	preloaded_reagents = list("capsaicin" = 10)
