@@ -12,7 +12,6 @@
 	var/obj/machinery/vending/vending_machine  // The vending machine we belong to
 	var/list/instances = list()		  // Stores inserted items. Instances are only used for things added during the round, and not for things spawned at initialize
 
-
 /datum/data/vending_product/New(vending_machine, path, name = null, amount = 1, price = 0, color = null, category = CAT_NORMAL)
 	..()
 
@@ -69,8 +68,6 @@
 		product.make_old()
 	product.forceMove(product_location)
 	return product
-
-
 
 /**
  * A vending machine
@@ -178,7 +175,6 @@
 	build_inventory()
 	power_change()
 
-
 /**
  * Add item to the machine
  *
@@ -266,7 +262,6 @@
 	product.instances.Add(I)
 	I.forceMove(src)
 	return product
-
 
 /obj/machinery/vending/Destroy()
 	qdel(wires)
@@ -1149,12 +1144,18 @@
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 25,
 					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 25,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 25,
-					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 25)
-	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/ice = 10)
+					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 25,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 25,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 25)
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/ice = 10,
+					  /obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 10)
 	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 3,
-					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 3)
+					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 3,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 3,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 5,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 5,)
 
 /obj/machinery/vending/coffee/postvend_effect()
 	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
@@ -1676,7 +1677,11 @@
 					/obj/item/weapon/reagent_containers/food/drinks/mug/rainbow = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/mug/brit = 3,
 					/obj/item/weapon/reagent_containers/food/drinks/mug/moebius = 3,
-					/obj/item/weapon/reagent_containers/food/drinks/mug/teacup = 10)
+					/obj/item/weapon/reagent_containers/food/drinks/mug/teacup = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/ketchup = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 10)
 	contraband = list(/obj/item/weapon/tool/knife/butch = 2)
 	auto_price = FALSE
 
@@ -1702,12 +1707,38 @@
 	product_ads = "Reliable!;Highest Quality!;Take a belt!;Colorful cables!;Insulated Gloves, only here!"
 	icon_state = "tool"
 	icon_deny = "tool-deny"
-	products = list(/obj/item/stack/cable_coil/random = 10,/obj/item/weapon/tool/crowbar = 5,/obj/item/weapon/tool/weldingtool = 5,/obj/item/weapon/tool/wirecutters = 3, /obj/item/weapon/tool/wirecutters/pliers = 3,
-					/obj/item/weapon/tool/wrench = 5,/obj/item/weapon/tool/hammer = 5,/obj/item/device/scanner/gas = 5,/obj/item/device/t_scanner = 5, /obj/item/weapon/tool/screwdriver = 5, /obj/item/clothing/gloves/insulated/cheap = 2, /obj/item/clothing/gloves/insulated = 1,
-					/obj/item/weapon/storage/pouch/engineering_tools = 2, /obj/item/weapon/storage/pouch/engineering_supply = 2, /obj/item/weapon/weldpack/canister = 4, /obj/item/weapon/weldpack = 2)
-	prices = list(/obj/item/weapon/tool/hammer = 30,/obj/item/stack/cable_coil/random = 100,/obj/item/weapon/tool/crowbar = 30,/obj/item/weapon/tool/weldingtool = 50,/obj/item/weapon/tool/wirecutters = 30, /obj/item/weapon/tool/wirecutters/pliers = 30,
-					/obj/item/weapon/tool/wrench = 30,/obj/item/device/scanner/gas = 50,/obj/item/device/t_scanner = 50, /obj/item/weapon/tool/screwdriver = 30, /obj/item/clothing/gloves/insulated/cheap = 80, /obj/item/clothing/gloves/insulated = 600,
-					/obj/item/weapon/storage/pouch/engineering_tools = 300, /obj/item/weapon/storage/pouch/engineering_supply = 600, /obj/item/weapon/weldpack/canister = 300, /obj/item/weapon/weldpack/canister = 675)
+	products = list(/obj/item/stack/cable_coil/random = 10,
+					/obj/item/weapon/tool/crowbar = 5,
+					/obj/item/weapon/tool/weldingtool = 5,
+					/obj/item/weapon/tool/wirecutters = 3,
+					/obj/item/weapon/tool/wirecutters/pliers = 3,
+					/obj/item/weapon/tool/wrench = 5,
+					/obj/item/weapon/tool/hammer = 5,
+					/obj/item/device/scanner/gas = 5,
+					/obj/item/device/t_scanner = 5,
+					/obj/item/weapon/tool/screwdriver = 5,
+					/obj/item/clothing/gloves/insulated/cheap = 2,
+					/obj/item/clothing/gloves/insulated = 1,
+					/obj/item/weapon/storage/pouch/engineering_tools = 2,
+					/obj/item/weapon/storage/pouch/engineering_supply = 2,
+					/obj/item/weapon/weldpack/canister = 4,
+					/obj/item/weapon/weldpack = 2)
+	prices = list(/obj/item/weapon/tool/hammer = 30,
+					/obj/item/stack/cable_coil/random = 100,
+					/obj/item/weapon/tool/crowbar = 30,
+					/obj/item/weapon/tool/weldingtool = 50,
+					/obj/item/weapon/tool/wirecutters = 30,
+					/obj/item/weapon/tool/wirecutters/pliers = 30,
+					/obj/item/weapon/tool/wrench = 30,
+					/obj/item/device/scanner/gas = 50,
+					/obj/item/device/t_scanner = 50,
+					/obj/item/weapon/tool/screwdriver = 30,
+					/obj/item/clothing/gloves/insulated/cheap = 80,
+					/obj/item/clothing/gloves/insulated = 600,
+					/obj/item/weapon/storage/pouch/engineering_tools = 300,
+					/obj/item/weapon/storage/pouch/engineering_supply = 600,
+					/obj/item/weapon/weldpack/canister = 300,
+					/obj/item/weapon/weldpack = 675)
 
 /obj/machinery/vending/engivend
 	name = "Guild-Vend"
