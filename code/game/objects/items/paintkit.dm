@@ -196,7 +196,7 @@
 	new_name = "Odysseus \"Medgax\""
 	new_desc = "An Odysseus mech outffitted to look like a gygax. For when you outfit your medical mech with guns, healing and slaughter are not exclusive after all."
 	new_icon = "medgax"
-	allowed_types = list("medical")
+	allowed_types = list("odysseus")
 
 /obj/item/device/kit/paint/odysseus/blue_racer
 	name = "\"Blue Speedracer\" Odysseus customisation kit"
