@@ -814,7 +814,7 @@ assassination method if you time it right*/
 
 		//AP projectiles have a chance to cause additional damage
 		if(Proj.penetrating)
-			var/distance = get_dist(Proj.starting, get_turf(loc))
+			//var/distance = get_dist(Proj.starting, get_turf(loc))
 			var/critically_hit = 0 //only allow one critical hit per projectile
 			Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
 			for(var/i in 1 to min(final_penetration, round(Proj.get_total_damage()/15)))
