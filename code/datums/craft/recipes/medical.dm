@@ -5,6 +5,7 @@
 /datum/craft_recipe/medical/bandage
 	name = "bandages"
 	result = /obj/item/stack/medical/bruise_pack/handmade
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30)
 	)

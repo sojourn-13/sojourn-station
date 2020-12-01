@@ -23,6 +23,7 @@
 /datum/craft_recipe/tool/handmade_handtele
 	name = "makeshift hand-teleporter"
 	result = /obj/item/weapon/hand_tele/handmade
+	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 30),
 		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
@@ -48,6 +49,7 @@
 /datum/craft_recipe/tool/jurytorch
 	name = "jury-rigged torch"
 	result = /obj/item/weapon/tool/weldingtool/improvised
+	icon_state = "gun"
 	steps = list(
 		list(/obj/item/device/assembly/igniter, 1),
 		list(QUALITY_SCREW_DRIVING, 10, 40),
@@ -70,7 +72,7 @@
 /datum/craft_recipe/tool/makeshift_electrolyser
 	name = "makeshift electrolyser"
 	result = /obj/item/device/makeshift_electrolyser
-
+	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
 		list(QUALITY_WIRE_CUTTING, 10, 20),
@@ -183,6 +185,7 @@
 /datum/craft_recipe/tool/cell_mount
 	name = "tool mod: heavy cell mount"
 	result = /obj/item/weapon/tool_upgrade/augment/cell_mount
+	icon_state = "electronic"
 	steps = list(
 		list(/obj/item/frame/apc, 2, "time" = 30),			//hull
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 40),		//prepare hull
