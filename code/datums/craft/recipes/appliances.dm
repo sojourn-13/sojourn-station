@@ -4,6 +4,7 @@
 /datum/craft_recipe/appliance/beehive_assembly
 	name = "beehive assembly"
 	result = /obj/item/beehive_assembly
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD)
 	)
@@ -12,6 +13,7 @@
 /datum/craft_recipe/appliance/beehive_frame
 	name = "beehive frame"
 	result = /obj/item/honey_frame
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
 	)

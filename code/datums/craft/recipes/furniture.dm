@@ -32,6 +32,7 @@
 /datum/craft_recipe/furniture/wooden_chair
 	name = "chair, wood"
 	result = /obj/structure/bed/chair/custom/wood
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD),
 	)
@@ -111,6 +112,7 @@
 	name = "drying rack"
 	result = /obj/machinery/smartfridge/drying_rack
 	time = 90
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_WOOD)
 	)
