@@ -326,8 +326,6 @@
 			splint = "Splinted:"
 		if(e.status & ORGAN_BLEEDING)
 			bled = "Bleeding:"
-		if(e.status & ORGAN_BROKEN)
-			AN = "[e.broken_description]:"
 		if(BP_IS_ASSISTED(e))
 			robot = "Assisted:"
 		if(BP_IS_ROBOTIC(e))
@@ -374,10 +372,16 @@
 	for(var/obj/item/organ/I in occ["internal_organs"])
 
 		var/mech = ""
+		var/bone_fracture = ""
 		if(BP_IS_ASSISTED(I))
 			mech = "Assisted:"
 		if(BP_IS_ROBOTIC(I))
 			mech = "Prosthetic:"
+
+		var/obj/item/organ/internal/bone/B = I
+		if(istype(B))
+			if(B.parent.status & ORGAN_BROKEN)
+				bone_fracture = "[B.broken_description]:"
 
 		var/infection = "None"
 		switch (I.germ_level)
@@ -397,7 +401,7 @@
 			infection += "(being rejected)"
 
 		dat += "<tr>"
-		dat += "<td>[I.name]</td><td>N/A</td><td>[I.damage]</td><td>[infection]:[mech]</td><td></td>"
+		dat += "<td>[I.name]</td><td>N/A</td><td>[I.damage]</td><td>[infection]:[bone_fracture]:[mech]</td><td></td>"
 		dat += "</tr>"
 	dat += "</table>"
 

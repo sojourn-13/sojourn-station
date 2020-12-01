@@ -32,6 +32,9 @@
 	if(!force_process && !bad_external_organs.len)
 		return
 
+	for(var/obj/item/organ/external/E in organs)
+		E.handle_bones()
+
 	for(var/obj/item/organ/external/E in bad_external_organs)
 		if(!E)
 			continue
@@ -65,7 +68,7 @@
 	// Buckled to a bed/chair. Stance damage is forced to 0 since they're sitting on something solid
 	if (istype(buckled, /obj/structure/bed))
 		return
-	
+
 	for(var/organ_name in organs_by_name)
 		if (organ_name in organ_rel_size)
 			var/obj/item/organ/external/organ = organs_by_name[organ_name]
