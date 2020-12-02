@@ -1446,7 +1446,7 @@
 #include "code\modules\client\preference_setup\loadout\gear_tweaks.dm"
 #include "code\modules\client\preference_setup\loadout\loadout.dm"
 #include "code\modules\client\preference_setup\loadout\lists\accessories.dm"
-#include "code\modules\client\preference_setup\loadout\lists\armerments.dm"
+#include "code\modules\client\preference_setup\loadout\lists\armament.dm"
 #include "code\modules\client\preference_setup\loadout\lists\clothing.dm"
 #include "code\modules\client\preference_setup\loadout\lists\cosmetics.dm"
 #include "code\modules\client\preference_setup\loadout\lists\earwear.dm"
