@@ -17,6 +17,7 @@
 	screen_on = FALSE
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 200
+	emagged_level_up = TRUE
 
 /obj/item/modular_computer/laptop/AltClick(var/mob/user)
 // Prevents carrying of open laptops inhand.
