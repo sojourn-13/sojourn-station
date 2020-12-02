@@ -18,31 +18,6 @@
 	path = /obj/item/device/radio
 	sort_category = "Utility"
 
-/datum/gear/utility/holster/armpit
-	display_name = "armpit holster"
-	path = /obj/item/clothing/accessory/holster/armpit
-	sort_category = "Utility"
-
-/datum/gear/utility/holster/waist
-	display_name = "waist holster"
-	path = /obj/item/clothing/accessory/holster/waist
-	sort_category = "Utility"
-
-/datum/gear/utility/holster/hip
-	display_name = "hip holster"
-	path = /obj/item/clothing/accessory/holster/hip
-	sort_category = "Utility"
-
-/datum/gear/utility/holster/leg
-	display_name = "leg holster"
-	path = /obj/item/clothing/accessory/holster/leg
-	sort_category = "Utility"
-
-/datum/gear/utility/holster/saber/cutlass
-	display_name = "cutlass holster"
-	path = /obj/item/clothing/accessory/holster/saber/cutlass
-	sort_category = "Utility"
-
 /datum/gear/utility/cane
 	display_name = "cane"
 	path = /obj/item/weapon/cane
