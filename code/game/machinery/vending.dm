@@ -899,10 +899,7 @@
 	products = list()
 	contraband = list()
 	premium = list()
-
-*/
-
-/*
+------------------------
 /obj/machinery/vending/atmospherics //Commenting this out until someone ponies up some actual working, broken, and unpowered sprites - Quarxink
 	name = "Tank Vendor"
 	desc = "A vendor with a wide variety of masks and gas tanks."
@@ -1174,7 +1171,8 @@
 					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 6,
-					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 6)
+					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 6,
+					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 6,)
 	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/syndicake = 6)
 	prices = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 40,
 					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 45,
@@ -1184,7 +1182,8 @@
 					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 40,
 					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 40,
 					/obj/item/weapon/reagent_containers/food/snacks/tastybread = 50,
-					/obj/item/weapon/reagent_containers/food/snacks/syndicake = 60)
+					/obj/item/weapon/reagent_containers/food/snacks/syndicake = 60,
+					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 360)
 
 
 /obj/machinery/vending/weapon_machine
@@ -1422,12 +1421,21 @@
 	icon_deny = "med-deny"
 	req_access = list(access_medical_equip)
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!;You do know how to use those, right?"
-	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
-					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/toxin = 4,
-					/obj/item/weapon/reagent_containers/syringe/spaceacillin = 4,/obj/item/weapon/reagent_containers/syringe = 12,
-					/obj/item/device/scanner/health = 5,/obj/item/weapon/reagent_containers/glass/beaker = 4, /obj/item/weapon/reagent_containers/dropper = 2,
-					/obj/item/stack/medical/advanced/bruise_pack = 3, /obj/item/stack/medical/advanced/ointment = 3, /obj/item/stack/medical/splint = 2)
-	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3,/obj/item/weapon/reagent_containers/pill/stox = 4,/obj/item/weapon/reagent_containers/pill/antitox = 6)
+	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,
+					/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
+					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,
+					/obj/item/weapon/reagent_containers/glass/bottle/toxin = 4,
+					/obj/item/weapon/reagent_containers/syringe/spaceacillin = 4,
+					/obj/item/weapon/reagent_containers/syringe = 12,
+					/obj/item/device/scanner/health = 5,
+					/obj/item/weapon/reagent_containers/glass/beaker = 4,
+					/obj/item/weapon/reagent_containers/dropper = 2,
+					/obj/item/stack/medical/advanced/bruise_pack = 3,
+					/obj/item/stack/medical/advanced/ointment = 3,
+					/obj/item/stack/medical/splint = 2)
+	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3,
+						/obj/item/weapon/reagent_containers/pill/stox = 4,
+						/obj/item/weapon/reagent_containers/pill/antitox = 6)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
 
@@ -1456,7 +1464,8 @@
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;I hope you know what you're doing."
 
 	products = list(
-		/obj/item/stack/medical/bruise_pack = 2, /obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/bruise_pack = 2,
+		/obj/item/stack/medical/ointment = 2,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector = 4,
 		/obj/item/device/scanner/health = 1
 		)
@@ -1469,7 +1478,8 @@
 
 /obj/machinery/vending/wallmed/minor
 	products = list(
-		/obj/item/stack/medical/bruise_pack = 2, /obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/bruise_pack = 2,
+		/obj/item/stack/medical/ointment = 2,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector = 4,
 		/obj/item/device/scanner/health = 1
 		)
@@ -1484,13 +1494,18 @@
 	products = list(
 		/obj/item/device/scanner/health = 6,
 
-		/obj/item/stack/medical/bruise_pack = 2, /obj/item/stack/medical/ointment = 2,
-		/obj/item/stack/medical/advanced/bruise_pack = 1, /obj/item/stack/medical/advanced/ointment = 1,
+		/obj/item/stack/medical/bruise_pack = 2,
+		/obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/advanced/bruise_pack = 1,
+		/obj/item/stack/medical/advanced/ointment = 1,
 		/obj/item/stack/nanopaste = 1,
 
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin = 5, /obj/item/weapon/reagent_containers/syringe/antitoxin = 5,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricordrazine = 5, /obj/item/weapon/reagent_containers/syringe/tricordrazine = 5,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/spaceacillin = 1, /obj/item/weapon/reagent_containers/syringe/spaceacillin = 1,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin = 5,
+		/obj/item/weapon/reagent_containers/syringe/antitoxin = 5,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricordrazine = 5,
+		/obj/item/weapon/reagent_containers/syringe/tricordrazine = 5,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/spaceacillin = 1,
+		/obj/item/weapon/reagent_containers/syringe/spaceacillin = 1,
 
 		/obj/item/weapon/implantcase/death_alarm = 2,
 		/obj/item/weapon/implanter = 2
@@ -1506,9 +1521,12 @@
 		/obj/item/stack/medical/advanced/bruise_pack = 200, /obj/item/stack/medical/advanced/ointment = 200,
 		/obj/item/stack/nanopaste = 300,
 
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin = 100, /obj/item/weapon/reagent_containers/syringe/antitoxin = 200,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricordrazine = 150, /obj/item/weapon/reagent_containers/syringe/tricordrazine = 300,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/spaceacillin = 100, /obj/item/weapon/reagent_containers/syringe/spaceacillin = 200,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin = 100,
+		/obj/item/weapon/reagent_containers/syringe/antitoxin = 200,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricordrazine = 150,
+		/obj/item/weapon/reagent_containers/syringe/tricordrazine = 300,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/spaceacillin = 100,
+		/obj/item/weapon/reagent_containers/syringe/spaceacillin = 200,
 
 		/obj/item/weapon/implantcase/death_alarm = 500,
 		/obj/item/weapon/implanter = 50,
@@ -2129,6 +2147,7 @@
 										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 8,
 										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 8,
 										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,
+										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 5,
 										/obj/item/weapon/towel/random = 8)
 	prices = list(
 										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 40,
@@ -2136,6 +2155,7 @@
 										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 30,
 										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 30,
 										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 30,
+										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 240,
 										/obj/item/weapon/towel/random = 70)
 
 /obj/machinery/vending/kink
@@ -2195,16 +2215,20 @@
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 30, // ghetto antihacking, have fun
-					/obj/item/weapon/storage/deferred/crate/uniform_green = 4, /obj/item/weapon/storage/deferred/crate/uniform_brown = 4,
-					/obj/item/weapon/storage/deferred/crate/uniform_black = 4, /obj/item/weapon/storage/deferred/crate/uniform_flak = 2,
+					/obj/item/weapon/storage/deferred/crate/uniform_green = 4,
+					/obj/item/weapon/storage/deferred/crate/uniform_brown = 4,
+					/obj/item/weapon/storage/deferred/crate/uniform_black = 4,
+					/obj/item/weapon/storage/deferred/crate/uniform_flak = 2,
 					/obj/item/weapon/storage/deferred/crate/uniform_light = 2,
 					/obj/item/weapon/gun/projectile/boltgun/sa = 8,
 					/obj/item/ammo_magazine/ammobox/heavy_rifle_408 = 30,
 					)
 	prices = list(
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 50,
-     				/obj/item/weapon/storage/deferred/crate/uniform_green = 2000, /obj/item/weapon/storage/deferred/crate/uniform_brown = 2000,
-					/obj/item/weapon/storage/deferred/crate/uniform_black = 2000, /obj/item/weapon/storage/deferred/crate/uniform_flak = 2200,
+					/obj/item/weapon/storage/deferred/crate/uniform_green = 2000,
+					/obj/item/weapon/storage/deferred/crate/uniform_brown = 2000,
+					/obj/item/weapon/storage/deferred/crate/uniform_black = 2000,
+					/obj/item/weapon/storage/deferred/crate/uniform_flak = 2200,
 					/obj/item/weapon/storage/deferred/crate/uniform_light = 1800,
 					/obj/item/weapon/gun/projectile/boltgun/sa = 1000,
 					/obj/item/ammo_magazine/ammobox/heavy_rifle_408 = 300,
