@@ -76,7 +76,7 @@
 
 /obj/item/device/radio/headset/headset_sec
 	name = "marshal radio headset"
-	desc = "This is used by your elite security force. This has a small symbol denoting its built in back-up transmitter."
+	desc = "This is used by your mall cops. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "sec_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
@@ -84,7 +84,7 @@
 
 /obj/item/device/radio/headset/headset_blackshield
 	name = "blackshield radio headset"
-	desc = "This is used by your elite security force. This has a small symbol denoting its built in back-up transmitter."
+	desc = "This is used by your elite forces and capable. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "bs_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
@@ -156,7 +156,7 @@
 
 /obj/item/device/radio/headset/heads/hos
 	name = "warrant officer headset"
-	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
+	desc = "The headset of the men who lock away your worthless lives. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "wo_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
@@ -213,7 +213,7 @@
 
 /obj/item/device/radio/headset/headset_service
 	name = "service radio headset"
-	desc = "Headset used by the service staff, tasked with keeping the station full, happy, and clean."
+	desc = "Headset used by the service staff, tasked with keeping the colony full, happy, and clean."
 	icon_state = "srv_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_service
