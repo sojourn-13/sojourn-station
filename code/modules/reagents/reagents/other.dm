@@ -447,14 +447,6 @@
 			var/datum/reagent/toxin/pararein/R = current
 			if(istype(R))
 				R.metabolism = initial(R.metabolism) * 3
-
-/datum/reagent/other/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_ANTITOX, 0.3)
-	if(M.bloodstr)
-		for(var/current in M.bloodstr.reagent_list)
-			var/datum/reagent/toxin/pararein/R = current
-			if(istype(R))
-				R.metabolism = initial(R.metabolism) * 3
 				break
 
 /datum/reagent/other/aranecolmin/on_mob_delete(mob/living/carbon/M)

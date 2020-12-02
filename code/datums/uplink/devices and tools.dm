@@ -9,6 +9,7 @@
 	item_cost = 5
 	path = /obj/item/weapon/storage/toolbox/syndicate
 	desc = "Danger. Very robust. Filled with advanced tools."
+
 /datum/uplink_item/item/tools/shield_diffuser
 	name = "Shield Diffuser"
 	item_cost = 4
@@ -26,6 +27,12 @@
 	item_cost = 1
 	path = /obj/item/weapon/spacecash/bundle/c500
 	desc = "A bundle of 500 untraceable credits to cover a few basic expenses."
+
+/datum/uplink_item/item/tools/hackergum
+	name = "Hacker Stimulant"
+	item_cost = 1
+	path = /obj/item/weapon/reagent_containers/food/snacks/candy_drop_red
+	desc = "A blue stick of gum injected with a hacker stumulant to help focus."
 
 /datum/uplink_item/item/tools/clerical
 	name = "Morphic Clerical Kit"
@@ -166,7 +173,7 @@
 
 /datum/uplink_item/item/tools/mental_imprinter
 	name = "Mental Imprinter"
-	item_cost = 5
+	item_cost = 5 //Why is this so much? Its only 5+ of a stat...
 	path = /obj/item/device/mental_imprinter
 	antag_roles = list(ROLE_TRAITOR,ROLE_MARSHAL,ROLE_INQUISITOR,ROLE_MERCENARY,ROLE_CARRION)
 
