@@ -16,6 +16,7 @@
 	max_damage = 300
 	broken_damage = 150
 	w_class = ITEM_SIZE_HUGE
+	emagged_level_up = TRUE //Were basiclly a normal computer anways
 
 /obj/item/modular_computer/telescreen/New()
 	..()
