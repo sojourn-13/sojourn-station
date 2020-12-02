@@ -321,17 +321,12 @@
 				return FALSE
 	return TRUE
 
+//I gutted this largely to get it to fit with Eris' version of organ processes, its a hack that just checks if the target has a brain and if so goes to the next step.
+//This isn't nearly as good as before because it will attempt a revive on a subject who will instantly die from brain/heart damage if the organs are present but fucked.
+//That said, a doctor attempting reviving without noticing that is just plain incompetant. Not a big issue but it could be better optimized later and I cannot be arsed currently. -Kazkin
 /obj/item/weapon/shockpaddles/proc/check_vital_organs(mob/living/carbon/human/H)
-	for(var/organ_tag in H.species.has_process)
-		var/obj/item/organ/O = H.species.has_process[organ_tag]
-		var/name = initial(O.name)
-		var/vital = initial(O.vital) //check for vital organs
-		if(vital)
-			O = H.organs_by_name[organ_tag]
-			if(!O)
-				return "buzzes, \"Resuscitation failed - Patient is missing vital organ ([name]). Further attempts futile.\""
-			if(O.damage > O.max_damage)
-				return "buzzes, \"Resuscitation failed - Excessive damage to vital organ ([name]). Further attempts futile.\""
+	if(!H.species.has_process[BP_BRAIN])
+		return "buzzes, \"Resuscitation failed - Patient does not have a brain. Further attempts futile.\""
 	return null
 
 /obj/item/weapon/shockpaddles/proc/check_blood_level(mob/living/carbon/human/H)
