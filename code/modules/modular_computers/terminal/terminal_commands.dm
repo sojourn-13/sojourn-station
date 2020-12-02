@@ -135,6 +135,7 @@ Subtypes
 	pattern = "^firewall_check$"
 	req_access = list(access_network)
 
+//Todo add back in a way to "un"emag a moular computer.
 /datum/terminal_command/firewall_check/proper_input_entered(text, mob/user, terminal)
 	var/obj/item/modular_computer/comp
 	if(comp.computer_emagged)
