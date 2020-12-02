@@ -229,7 +229,6 @@
 	name = "Ointment"
 	build_path = /obj/item/stack/medical/ointment
 
-
 /datum/design/bioprinter/medical/advanced
 	materials = list("biomatter" = 2)
 
@@ -240,6 +239,12 @@
 /datum/design/bioprinter/medical/advanced/ointment
 	name = "Advanced burn kit"
 	build_path = /obj/item/stack/medical/advanced/ointment
+
+/datum/design/bioprinter/lungs
+	name = "Extended Lungs"
+	materials = list("biomatter" = 30)
+	build_path = /obj/item/organ/internal/lungs/long
+
 //[/MED]
 
 /datum/design/bioprinter/bioimplant

@@ -2,8 +2,8 @@
 	name = "eyeballs"
 	icon_state = "eyes"
 	gender = PLURAL
-	organ_tag = BP_EYES
-	parent_organ = BP_HEAD
+	organ_efficiency = list(OP_EYES = 100)
+	parent_organ_base = BP_HEAD
 	price_tag = 1000
 	var/eyes_color = "#000000"
 	var/robo_color = "#000000"
@@ -40,16 +40,6 @@
 	..()
 	if(is_broken() && !oldbroken && owner && !owner.stat)
 		to_chat(owner, SPAN_DANGER("You go blind!"))
-
-/obj/item/organ/internal/eyes/Process() //Eye damage replaces the old eye_stat var.
-	..()
-	if(!owner)
-		return
-	if(is_bruised())
-		owner.eye_blurry = 1
-	if(is_broken())
-		owner.eye_blind = 1
-
 
 
 //Subtypes obsoleted by the heterochromia marking.

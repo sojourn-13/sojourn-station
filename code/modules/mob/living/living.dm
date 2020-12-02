@@ -309,6 +309,12 @@ default behaviour is:
 /mob/living/proc/setmaxHealth(var/newmaxHealth)
 	maxHealth = newmaxHealth
 
+/mob/living/proc/get_limb_efficiency(bodypartdefine)
+	return 100
+
+/mob/living/proc/get_specific_organ_efficiency(process_define, parent_organ_tag)
+	return 100
+
 /mob/living/proc/Stuttering(amount)
 	stuttering = max(max(stuttering,amount),0)
 	return

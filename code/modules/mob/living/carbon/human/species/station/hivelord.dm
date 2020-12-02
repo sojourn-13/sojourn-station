@@ -20,7 +20,7 @@
 	breath_type = null
 	poison_type = null
 
-	has_organ = list(
+	has_process = list(
 		BP_BRAIN = /obj/item/organ/internal/brain
 		)
 
