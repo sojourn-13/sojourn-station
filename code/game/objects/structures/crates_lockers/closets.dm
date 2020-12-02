@@ -687,5 +687,5 @@
 	req_access = list(access_cent_specops)
 	name = "[pick("locked", "sealed", "card reader", "access required", "eletronic")] [name]"
 	desc += "\n "
-	desc += "The access panel looks old. There is probably no ID's around that can open it. Hacking may be required or bashing the door open..."
+	desc += " The access panel looks old. It's unlikely anyone can open this without hacking or brute force."
 	hack_require = rand(1,2) //Easyer to hack older locks
