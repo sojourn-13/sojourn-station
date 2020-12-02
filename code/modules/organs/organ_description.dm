@@ -4,7 +4,7 @@
 	var/organ_tag = "limb"
 	var/additional_limb_parts = list() //Other parts to put on top of limbs.
 	var/body_part
-	var/parent_organ
+	var/parent_organ_base
 	var/default_type = /obj/item/organ/external
 	var/default_bone_type = /obj/item/organ/internal/bone
 
@@ -15,7 +15,7 @@
 	var/cannot_amputate = FALSE
 
 	var/w_class = ITEM_SIZE_NORMAL
-	var/cavity_max_w_class = ITEM_SIZE_TINY
+	var/max_volume = 2.5	//Space used up by specific organ size and w_class of cavity implants
 
 	var/amputation_point = "spine"
 	var/joint = "neck"
@@ -44,7 +44,7 @@
 	cannot_amputate = TRUE
 
 	w_class = ITEM_SIZE_HUGE
-	cavity_max_w_class = ITEM_SIZE_NORMAL
+	max_volume = ITEM_SIZE_TITANIC
 
 	joint = "neck"
 	amputation_point = "spine"
@@ -56,7 +56,7 @@
 	surgery_name = "lower abdomen"
 	organ_tag = BP_GROIN
 	body_part = LOWER_TORSO
-	parent_organ = BP_CHEST
+	parent_organ_base = BP_CHEST
 	default_type = /obj/item/organ/external/groin
 	default_bone_type = /obj/item/organ/internal/bone/groin
 
@@ -65,7 +65,7 @@
 	dislocated = -1
 
 	w_class = ITEM_SIZE_BULKY
-	cavity_max_w_class = ITEM_SIZE_SMALL
+	max_volume = ITEM_SIZE_GARGANTUAN
 
 	joint = "hip"
 	amputation_point = "lumbar"
@@ -76,7 +76,7 @@
 	surgery_name = "head" // Prevents "Unknown's Unkonwn's head" from popping up if the head was amputated and then reattached
 	organ_tag = BP_HEAD
 	body_part = HEAD
-	parent_organ = BP_CHEST
+	parent_organ_base = BP_CHEST
 	default_type = /obj/item/organ/external/head
 	default_bone_type = /obj/item/organ/internal/bone/head
 
@@ -85,6 +85,7 @@
 	vital = TRUE
 
 	w_class = ITEM_SIZE_NORMAL
+	max_volume = ITEM_SIZE_BULKY
 
 	joint = "jaw"
 	amputation_point = "neck"
@@ -95,7 +96,7 @@
 	functions = BODYPART_REAGENT_INTAKE | BODYPART_GAS_INTAKE
 
 /datum/organ_description/arm
-	parent_organ = BP_CHEST
+	parent_organ_base = BP_CHEST
 
 	w_class = ITEM_SIZE_NORMAL
 
@@ -131,7 +132,7 @@
 	additional_limb_parts = BP_R_ARM_EXTRA
 
 /datum/organ_description/leg
-	parent_organ = BP_GROIN
+	parent_organ_base = BP_GROIN
 
 	w_class = ITEM_SIZE_NORMAL
 

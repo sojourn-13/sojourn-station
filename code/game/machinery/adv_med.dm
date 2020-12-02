@@ -251,7 +251,7 @@
 		"lung_ruptured" = H.is_lung_ruptured(),
 		"external_organs" = H.organs.Copy(),
 		"internal_organs" = H.internal_organs.Copy(),
-		"species_organs" = H.species.has_organ, //Just pass a reference for this, it shouldn't ever be modified outside of the datum.
+		"species_organs" = H.species.has_process, //Just pass a reference for this, it shouldn't ever be modified outside of the datum.
 		"NSA" = max(0, H.metabolism_effects.get_nsa()),
 		"NSA_threshold" = H.metabolism_effects.nsa_threshold
 		)

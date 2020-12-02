@@ -12,7 +12,7 @@
 	siemens_coefficient = 3 //conductive
 	darksight = 3
 
-	has_organ = list(
+	has_process = list(
 		BP_BRAIN = /obj/item/organ/internal/brain/slime
 		)
 
