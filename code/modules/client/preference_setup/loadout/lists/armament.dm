@@ -62,6 +62,10 @@
 	display_name = "leg holster"
 	path = /obj/item/clothing/accessory/holster/leg
 
+/datum/gear/armament/holster/baton
+	display_name = "baton holster"
+	path = /obj/item/weapon/storage/pouch/baton_holster
+
 /datum/gear/armament/holster/saber/cutlass
 	display_name = "cutlass holster"
 	path = /obj/item/clothing/accessory/holster/saber/cutlass
