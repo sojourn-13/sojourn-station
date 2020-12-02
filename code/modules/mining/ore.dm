@@ -8,6 +8,9 @@
 	var/material
 	var/sheet_amout = 1 //How many sheets do we give?
 
+/obj/item/weapon/ore/ex_act(severity)
+	return //We allow mining charges to not blow up ores
+
 /obj/item/weapon/ore/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!istype(user.loc, /turf))

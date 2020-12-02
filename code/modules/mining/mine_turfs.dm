@@ -84,12 +84,14 @@
 
 /turf/simulated/mineral/ex_act(severity)
 	switch(severity)
-		if(2.0)
-			if (prob(70))
-				mined_ore = 1 //some of the stuff gets blown up
-				GetDrilled()
 		if(1.0)
-			mined_ore = 2 //some of the stuff gets blown up
+			mined_ore = 5 //light bomb, were not lossing much ore
+			GetDrilled()
+		if(2.0)
+			mined_ore = 4 //Heavyer bomb, we lose some ore in this
+			GetDrilled()
+		if(3.0)
+			mined_ore = 3 //Heavy bomb, we lose quite a bit of ore
 			GetDrilled()
 
 /turf/simulated/mineral/bullet_act(var/obj/item/projectile/Proj)
@@ -98,8 +100,8 @@
 	if(istype(Proj, /obj/item/projectile/beam/emitter))
 		emitter_blasts_taken++
 
-		if(emitter_blasts_taken > 2) // 3 blasts per tile
-			mined_ore = 1
+		if(emitter_blasts_taken > 1) // 2 blasts per tile
+			mined_ore = 4 //Were blasting away rock with high power lasers this takes quite a bit of time to set up and power.
 			GetDrilled()
 
 /turf/simulated/mineral/Bumped(AM)

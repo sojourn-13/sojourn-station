@@ -6,7 +6,6 @@
 	build_type = AUTOLATHE | BIOPRINTER
 	storage_capacity = 480
 	speed = 5
-	mat_efficiency = 0.7
 
 /obj/machinery/autolathe/bioprinter/attackby(obj/item/I, mob/user)
 	//hacky way to forbid deconstruction but use ..()
@@ -19,6 +18,11 @@
 		return
 
 	..(I, user)
+
+/obj/machinery/autolathe/bioprinter/RefreshParts()
+	..()
+	speed = initial(speed) + 4 + 2
+	mat_efficiency = max(0.2, 1.0 - (4 * 0.1))
 
 /obj/machinery/autolathe/bioprinter/disk
 	default_disk = /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter

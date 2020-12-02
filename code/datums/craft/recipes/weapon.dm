@@ -6,6 +6,7 @@
 /datum/craft_recipe/weapon/baseballbat
 	name = "baseball bat"
 	result = /obj/item/weapon/material/baseballbat
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD)
 	)
@@ -27,6 +28,7 @@
 /datum/craft_recipe/weapon/crossbow_frame
 	name = "crossbow frame"
 	result = /obj/item/weapon/crossbowframe
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD)
 	)
@@ -57,6 +59,7 @@
 /datum/craft_recipe/weapon/pistol
 	name = "handmade gun"
 	result = /obj/item/weapon/gun/projectile/handmade_pistol
+	icon_state = "woodworking"
 	steps = list(
 		list(/obj/item/pipe, 1, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 30),
@@ -66,6 +69,7 @@
 /datum/craft_recipe/weapon/shrapnelcannon
 	name = "\"Shellshock\" scrap rifle"
 	result = /obj/item/weapon/gun/energy/shrapnel
+	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
 		list(/obj/item/stack/material/steel, 8, "time" = 20),
@@ -80,6 +84,7 @@
 /datum/craft_recipe/weapon/lasersmg
 	name = "Lasblender - Texin"
 	result = /obj/item/weapon/gun/energy/lasersmg
+	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/automatic/texan, 1),
 		list(QUALITY_WELDING, 10, "time" = 30),
@@ -95,6 +100,7 @@
 /datum/craft_recipe/weapon/lasersmg_alt
 	name = "Lasblender - Mac"
 	result = /obj/item/weapon/gun/energy/lasersmg/alt
+	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/automatic/mac, 1),
 		list(QUALITY_WELDING, 10, "time" = 30),
@@ -110,6 +116,7 @@
 /datum/craft_recipe/weapon/handmade_shield
 	name = "handmade shield"
 	result = /obj/item/weapon/shield/riot/handmade
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 12, MATERIAL_WOOD),
 		list(/obj/item/stack/rods, 4, "time" = 10),
@@ -145,6 +152,7 @@
 /datum/craft_recipe/weapon/mechanical_trap
 	name = "jury-rigged mechanical trap"
 	result = /obj/item/weapon/beartrap/makeshift
+	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/tool/saw, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
@@ -163,6 +171,7 @@
 /datum/craft_recipe/weapon/laser_sabre
 	name = "laser sabre"
 	result = /obj/item/weapon/melee/energy/sword/sabre
+	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip, 1, "time" = 5),
 		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
@@ -175,6 +184,7 @@
 /datum/craft_recipe/weapon/laser_dagger
 	name = "laser dagger"
 	result = /obj/item/weapon/melee/energy/sword/sabre/dagger
+	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip, 1, "time" = 5),
 		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
@@ -207,6 +217,7 @@
 /datum/craft_recipe/weapon/nailed_bat
 	name = "nailed bat"
 	result = /obj/item/weapon/tool/nailstick
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(/obj/item/stack/rods, 3, "time" = 50)
@@ -252,6 +263,7 @@
 /datum/craft_recipe/weapon/charge_hammer
 	name = "rocket hammer"
 	result = /obj/item/weapon/tool/hammer/charge
+	icon_state = "electronic"
 	steps = list(
 		list(/obj/item/weapon/tool/hammer/homewrecker, 1, "time" = 120), //Get a homewrecker
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL), //Shore it up with some plasteel
