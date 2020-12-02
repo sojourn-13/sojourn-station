@@ -275,17 +275,17 @@
 //Checks for various conditions to see if the mob is revivable
 /obj/item/weapon/shockpaddles/proc/can_defib(mob/living/carbon/human/H) //This is checked before doing the defib operation
 	if((H.species.flags & NO_SCAN))
-		return "buzzes, \"Unrecogized physiology. Operation aborted.\""
+		return "buzzes: \"Unrecogized physiology. Operation aborted.\""
 	else if(H.isSynthetic() && !use_on_synthetic)
-		return "buzzes, \"Synthetic Body. Operation aborted.\""
+		return "buzzes: \"Synthetic Body. Operation aborted.\""
 	else if(!H.isSynthetic() && use_on_synthetic)
-		return "buzzes, \"Organic Body. Operation aborted.\""
+		return "buzzes: \"Organic Body. Operation aborted.\""
 
 	if(H.stat != DEAD)
-		return "buzzes, \"Patient is not in a valid state. Operation aborted.\""
+		return "buzzes: \"Patient is not in a valid state. Operation aborted.\""
 
 	if(!check_contact(H))
-		return "buzzes, \"Patient's chest is obstructed. Operation aborted.\""
+		return "buzzes: \"Patient's chest is obstructed. Operation aborted.\""
 
 	return null
 
@@ -293,16 +293,16 @@
 
 	var/deadtime = world.time - H.timeofdeath
 	if (deadtime > DEFIB_TIME_LIMIT && !H.isSynthetic())
-		return "buzzes, \"Resuscitation failed - Excessive neural degeneration. Further attempts futile.\""
+		return "buzzes: \"Resuscitation failed - Excessive neural degeneration. Further attempts futile.\""
 
 	H.updatehealth()
 
 	if(H.isSynthetic())
 		if(H.health + H.getOxyLoss() + H.getToxLoss() <= HEALTH_THRESHOLD_DEAD)
-			return "buzzes, \"Resuscitation failed - Severe damage detected. Begin manual repair before further attempts futile.\""
+			return "buzzes: \"Resuscitation failed - Severe damage detected. Begin manual repair before further attempts futile.\""
 
 	else if(H.health + H.getOxyLoss() <= HEALTH_THRESHOLD_DEAD || (HUSK in H.mutations) || can_defib(H))
-		return "buzzes, \"Resuscitation failed - Severe tissue damage makes recovery of patient impossible via defibrillator. Further attempts futile.\""
+		return "buzzes: \"Resuscitation failed - Severe tissue damage makes recovery of patient impossible via defibrillator. Further attempts futile.\""
 
 	var/bad_vital_organ = check_vital_organs(H)
 	if(bad_vital_organ)
@@ -310,7 +310,7 @@
 
 	//this needs to be last since if any of the 'other conditions are met their messages take precedence
 	if(!H.client && !H.teleop)
-		return "buzzes, \"Resuscitation failed - Mental interface error. Further attempts may be successful.\""
+		return "buzzes: \"Resuscitation failed - Mental interface error. Further attempts may be successful.\""
 
 	return null
 
@@ -327,11 +327,16 @@
 		var/name = initial(O.name)
 		var/vital = initial(O.vital) //check for vital organs
 		if(vital)
-			O = H.organs_by_name[organ_tag]
-			if(!O)
-				return "buzzes, \"Resuscitation failed - Patient is missing vital organ ([name]). Further attempts futile.\""
-			if(O.damage > O.max_damage)
-				return "buzzes, \"Resuscitation failed - Excessive damage to vital organ ([name]). Further attempts futile.\""
+			var/list/organs = H.internal_organs_by_efficiency[organ_tag]
+			if(!organs && !organs.len)
+				return "buzzes: \"Resuscitation failed - Patient is missing vital organ ([name]). Further attempts futile.\""
+			var/working_organ = FALSE
+			for(var/obj/item/organ/org in organs)
+				if(org.damage <= org.max_damage)
+					working_organ = TRUE
+					break
+			if(!working_organ)
+				return "buzzes: \"Resuscitation failed - Excessive damage to vital organ ([name]). Further attempts futile.\""
 	return null
 
 /obj/item/weapon/shockpaddles/proc/check_blood_level(mob/living/carbon/human/H)
@@ -416,7 +421,7 @@
 		return
 
 	if(check_blood_level(H))
-		make_announcement("buzzes, \"Warning - Patient is in hypovolemic shock.\"", "warning") //also includes heart damage
+		make_announcement("buzzes: \"Warning - Patient is in hypovolemic shock.\"", "warning") //also includes heart damage
 
 	//placed on chest and short delay to shock for dramatic effect, revive time is 5sec total
 	if(!do_after(user, chargetime, H))
@@ -424,7 +429,7 @@
 
 	//deduct charge here, in case the base unit was EMPed or something during the delay time
 	if(!checked_use(chargecost))
-		make_announcement("buzzes, \"Insufficient charge.\"", "warning")
+		make_announcement("buzzes: \"Insufficient charge.\"", "warning")
 		playsound(get_turf(src), 'sound/machines/defib_failed.ogg', 50, 0)
 		return
 
@@ -477,7 +482,7 @@
 
 	//deduct charge here, in case the base unit was EMPed or something during the delay time
 	if(!checked_use(chargecost))
-		make_announcement("buzzes, \"Insufficient charge.\"", "warning")
+		make_announcement("buzzes: \"Insufficient charge.\"", "warning")
 		playsound(get_turf(src), 'sound/machines/defib_failed.ogg', 50, 0)
 		return
 
