@@ -1,5 +1,5 @@
 /obj/item/organ/internal/nerve
-	name = "nervous linking"
+	name = "nerve synapses"
 	icon_state = "nerve"
 	desc = "Looking at this makes you feel nervous."
 	organ_efficiency = list(OP_NERVE = 100)
