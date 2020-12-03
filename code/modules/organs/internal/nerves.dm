@@ -1,10 +1,10 @@
 /obj/item/organ/internal/nerve
-	name = "nerve"
+	name = "nervous linking"
 	icon_state = "nerve"
 	desc = "Looking at this makes you feel nervous."
 	organ_efficiency = list(OP_NERVE = 100)
 	price_tag = 100
-	specific_organ_size = 0
+	specific_organ_size = 0.5 //Stops stacking
 
 /obj/item/organ/internal/nerve/robotic
 	name = "nerve wire"
