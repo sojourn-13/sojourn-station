@@ -81,10 +81,6 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 	for(var/mob/new_player/player in GLOB.player_list)
 		if(player.ready && player.mind)
 			if(player.mind.assigned_role in list(JOBS_COMMAND))
-				command = TRUE
-			if(player.mind.assigned_role in list(JOBS_ENGINEERING))
-				engineer = TRUE
-			if(command && engineer)
 				return TRUE
 
 	var/tcol = "red"
@@ -92,12 +88,7 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 		tcol = "black"
 
 	if(announce)
-		if(!engineer && !command)
-			to_chat(world, "<b><font color='[tcol]'>A Council Member and Guild Member are required to start the round.</font></b>")
-		else if(!engineer)
-			to_chat(world, "<b><font color='[tcol]'>A Guild Member is required to start the round.</font></b>")
-		else if(!command)
-			to_chat(world, "<b><font color='[tcol]'>A Council Member is required to start the round.</font></b>")
+		to_chat(world, "<b><font color='[tcol]'>A Council Member is required to start the round.</font></b>")
 
 	if(GLOB.player_list.len <= 15) //15 players is low pop do to lurkers
 		to_chat(world, "<i>But there's less than 16 players, so this requirement will be ignored.</i>")
