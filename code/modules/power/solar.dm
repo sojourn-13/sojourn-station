@@ -543,11 +543,11 @@
 
 /obj/machinery/power/solar_control/autostart/New()
 	..()
-	spawn(150) // Wait 15 seconds to ensure everything was set up properly (such as, powernets, solar panels, etc.
-		src.search_for_connected()
-		if(connected_tracker && track == 2)
-			connected_tracker.set_angle(SSsun.angle)
-		src.set_panels(cdir)
+	sleep(600) // Wait 60 seconds to ensure everything was set up properly (such as, powernets, solar panels, etc.
+	src.search_for_connected()
+	if(connected_tracker && track == 2)
+		connected_tracker.set_angle(SSsun.angle)
+	src.set_panels(cdir)
 
 //
 // MISC
