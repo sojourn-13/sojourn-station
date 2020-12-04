@@ -332,7 +332,7 @@
 			new /obj/item/clothing/head/costume/animal/kitty(get_turf(src))
 			qdel(src)
 
-/obj/item/weapon/reagent_containers/enricher/afterattack(var/obj/target, var/mob/user, var/flag)
+/obj/item/weapon/maneki_neko/afterattack(obj/target, mob/user, var/flag)
 	if(user.a_intent == I_HURT)
 		playsound(src, "shatter", 70, 1)
 		new /obj/item/clothing/head/costume/animal/kitty(get_turf(src))
@@ -531,3 +531,46 @@
 		return TRUE
 	if(standard_dispenser_refill(user, target))
 		return TRUE
+
+/** Special plant coded in but not added as a map object yet. Not entirely sure what I want to do with it, might make it a weird strange seed/fruit producer oddity for science. -Kaz
+	Every 10 seconds, checks if it has 10+ units of any alcohol.
+		If it does, removes said alcohol, and spawns a random base fruit or vegetable.
+		Ratio, 10 alcohol: 1 produce.
+**/
+
+/obj/item/weapon/reagent_containers/bonsai
+	name = "Laurelin bonsai"
+	desc = "A small tree, gifted to the club by a previous patron. It subsists off of numerous alcohols, and produces fruits and vegetables in return."
+
+	icon = 'icons/obj/plants.dmi'
+	icon_state = "plant-21" //Placeholder until we can get a proper sprite for them.
+
+	volume = 100 //Average bottle volume
+	reagent_flags = OPENCONTAINER
+
+	price_tag = 4000
+
+	matter = list(MATERIAL_BIOMATTER = 50)
+	var/ticks
+
+/obj/item/weapon/reagent_containers/bonsai/Process()
+	if(++ticks % 10 == 0 && reagents.total_volume)
+		var/reagent_count = 0
+		for(var/datum/reagent/R in reagents.reagent_list)
+			if(istype(R, /datum/reagent/ethanol))
+				reagent_count += R.volume
+				R.remove_self(R.volume)
+		if(reagent_count > 10)
+			var/amount_to_spawn = round(reagent_count/10)
+			for(var/i = 0 to amount_to_spawn)
+				var/datum/seed/S = plant_controller.seeds[pick(
+					"tomato",
+					"carrot",
+					"corn",
+					"eggplant",
+					"chili",
+					"mushrooms",
+					"wheat",
+					"potato",
+					"rice")]
+				S.harvest(get_turf(src),0,0,1)
