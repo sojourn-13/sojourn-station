@@ -3131,3 +3131,23 @@
 	filling_color = "#E00D34"
 	bitesize = 3
 	nutriment_amt = 5
+
+/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue
+	name = "\improper red gum stick"
+	desc = "A small slab of gum for chewing."
+	icon_state = "gumdrop_blue"
+	filling_color = "#FC44A0"
+	bitesize = 1
+	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
+	nutriment_amt = 0
+	preloaded_reagents = list("gum drops" = 3)
+
+/obj/item/weapon/reagent_containers/food/snacks/candy_drop_red
+	name = "\improper blue gum stick"
+	desc = "A small slab of gum for chewing. Wait, they come in blue now?"
+	icon_state = "gumdrop_red"
+	filling_color = "#2B00FF"
+	bitesize = 1
+	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
+	nutriment_amt = 0
+	preloaded_reagents = list("gum drops" = 5, "hacker" = 15)
