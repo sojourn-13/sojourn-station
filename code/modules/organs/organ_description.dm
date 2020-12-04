@@ -15,7 +15,7 @@
 	var/cannot_amputate = FALSE
 
 	var/w_class = ITEM_SIZE_NORMAL
-	var/max_volume = 2.5	//Space used up by specific organ size and w_class of cavity implants
+	var/max_volume = 3.5	//Space used up by specific organ size and w_class of cavity implants
 
 	var/amputation_point = "spine"
 	var/joint = "neck"
@@ -44,7 +44,7 @@
 	cannot_amputate = TRUE
 
 	w_class = ITEM_SIZE_HUGE
-	max_volume = ITEM_SIZE_TITANIC
+	max_volume = ITEM_SIZE_TITANIC + 1
 
 	joint = "neck"
 	amputation_point = "spine"
@@ -65,7 +65,7 @@
 	dislocated = -1
 
 	w_class = ITEM_SIZE_BULKY
-	max_volume = ITEM_SIZE_GARGANTUAN
+	max_volume = ITEM_SIZE_COLOSSAL
 
 	joint = "hip"
 	amputation_point = "lumbar"
@@ -85,7 +85,7 @@
 	vital = TRUE
 
 	w_class = ITEM_SIZE_NORMAL
-	max_volume = ITEM_SIZE_BULKY
+	max_volume = ITEM_SIZE_HUGE
 
 	joint = "jaw"
 	amputation_point = "neck"
@@ -98,7 +98,7 @@
 /datum/organ_description/arm
 	parent_organ_base = BP_CHEST
 
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 
 	max_damage = 50
 	min_broken_damage = 50
@@ -134,7 +134,7 @@
 /datum/organ_description/leg
 	parent_organ_base = BP_GROIN
 
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 
 	max_damage = 60
 	min_broken_damage = 50
