@@ -11,6 +11,16 @@
 	new /obj/item/clothing/under/top/outfitgambler(src)
 	new /obj/item/clothing/shoes/cowboy/snakeskin(src)
 
+/obj/item/weapon/storage/box/costume/gnome
+	name = "gnome costume kit"
+	desc = "You've just been gnomed."
+
+/obj/item/weapon/storage/box/costume/gnome/populate_contents()
+	new /obj/item/clothing/head/collectable/gnome(src)
+	new /obj/item/clothing/mask/gnome(src)
+	new /obj/item/clothing/under/gnome(src)
+	new /obj/item/clothing/under/gnome/fat(src)
+
 /obj/item/weapon/storage/box/costume/bunny
 	name = "bunny costume kit"
 	desc = "A box containing a bunny costume."
