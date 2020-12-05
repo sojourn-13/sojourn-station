@@ -55,6 +55,7 @@
 	//We look at are odds fairly as we were not made in maintenance but placed
 	if (prob(old_lock_odds + old_chance + 5)) //Maints or not sometimes we just are locked
 		make_lock_old()
+		update_icon() //So we have are lock added on icon wise
 
 	//If closet is spawned in maints, chance of getting rusty content is increased.
 	if (in_maintenance())
