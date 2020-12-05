@@ -40,7 +40,7 @@
 	var/old_chance = 0 //Chance to have rusted closet content in it, from 0 to 100. Keep in mind that chance increases in maints
 
 	var/old_lock_odds = 0 //Changes the access lock to something that must be hacked or CC access
-						  //If their is already a lock on this, it overrides it.
+			      //If their is already a lock on this, it overrides it.
 
 /obj/structure/closet/can_prevent_fall()
 	return TRUE
@@ -52,15 +52,16 @@
 	update_icon()
 	hack_require = rand(6,8)
 
+	//We look at are odds fairly as we were not made in maintenance but placed
+	if (prob(old_lock_odds + old_chance + 5)) //Maints or not sometimes we just are locked
+		make_lock_old()
+
 	//If closet is spawned in maints, chance of getting rusty content is increased.
 	if (in_maintenance())
 		old_chance = old_chance + 20
 
 	if (prob(old_chance))
 		make_old()
-
-	if (prob(old_lock_odds + old_chance))
-		make_lock_old()
 
 	if (old_chance)
 		for (var/atom/thing in contents)
