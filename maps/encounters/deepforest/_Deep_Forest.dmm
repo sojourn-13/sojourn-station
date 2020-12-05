@@ -75,7 +75,7 @@
 "bw" = (/obj/structure/table/steel_reinforced,/obj/item/clothing/suit/space/void/SCAF,/obj/item/clothing/head/helmet/space/void/SCAF,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bx" = (/obj/structure/table/steel_reinforced,/obj/item/device/defib_kit/compact/combat/loaded,/obj/item/weapon/reagent_containers/hypospray,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "by" = (/obj/random/common_oddities,/obj/random/common_oddities,/obj/random/common_oddities,/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"bz" = (/obj/structure/safe,/obj/item/weapon/bluespace_harpoon,/obj/item/weapon/gun/energy/mindflayer,/obj/item/weapon/gun/energy/crossbow/largecrossbow,/obj/random/credits/c10000,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"bz" = (/obj/structure/safe,/obj/item/weapon/bluespace_harpoon,/obj/item/weapon/gun/energy/mindflayer,/obj/item/weapon/gun/energy/crossbow/largecrossbow,/obj/item/weapon/spacecash/bundle/c1000,/obj/item/weapon/spacecash/bundle/c1000,/obj/item/weapon/spacecash/bundle/c1000,/obj/item/weapon/spacecash/bundle/c1000,/obj/item/weapon/spacecash/bundle/c1000,/obj/item/weapon/spacecash/bundle/c1000,/obj/item/weapon/spacecash/bundle/c1000,/obj/item/weapon/spacecash/bundle/c1000,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bA" = (/obj/random/rig,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
 "bB" = (/obj/random/pouch/low_chance,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
 "bC" = (/obj/random/surgery_tool,/turf/simulated/floor/asteroid/dirt,/area/asteroid/rogue)
@@ -92,7 +92,7 @@
 "bN" = (/obj/structure/closet/crate/bin,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bO" = (/obj/structure/closet/crate/trashcart,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bP" = (/obj/machinery/door/unpowered/simple/wood,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone)
-"bQ" = (/obj/structure/safe,/obj/item/weapon/gun/energy/decloner,/obj/item/weapon/gun/energy/floragun,/obj/item/weapon/gun/projectile/dartgun/vox/raider,/obj/item/weapon/gun/energy/lasercannon,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"bQ" = (/obj/structure/safe,/obj/item/weapon/gun/energy/decloner,/obj/item/weapon/gun/energy/floragun,/obj/item/weapon/gun/projectile/dartgun/vox/raider,/obj/item/weapon/gun/energy/lasercannon,/obj/item/weapon/spacecash/bundle/c1000,/obj/item/weapon/spacecash/bundle/c1000,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bR" = (/obj/item/weapon/mine_old,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bS" = (/obj/random/closet_maintloot,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone)
 "bT" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 4; locked = 1; name = "Ironhead Compound"},/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -1891,7 +1891,7 @@
 "Kt" = (/obj/machinery/vending/snack,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Ku" = (/obj/random/mob/croaker/low_chance,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/lakeside)
 "Kv" = (/obj/landmark/storyevent/midgame_stash_spawn,/turf/simulated/floor/wood/wild4,/area/asteroid/rogue)
-"Kw" = (/obj/structure/catwalk,/obj/item/stash_spawner,/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"Kw" = (/obj/structure/catwalk,/obj/item/stash_spawner,/obj/landmark/storyevent/midgame_stash_spawn,/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Kx" = (/obj/machinery/light/small{dir = 4; pixel_y = 8},/obj/landmark/storyevent/midgame_stash_spawn,/turf/simulated/floor/tiled/techmaint,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Ky" = (/obj/landmark/storyevent/midgame_stash_spawn,/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
 "Kz" = (/obj/landmark/storyevent/midgame_stash_spawn,/turf/simulated/floor/tiled/white,/area/nadezhda/dungeon/outside/zoo)
@@ -2334,7 +2334,6 @@ abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmfuwyfywzfBwsftbmbm
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
 aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 "}
-
 (1,1,2) = {"
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
