@@ -27,7 +27,7 @@
 		for(var/stat in oddity_stats)
 			oddity_stats[stat] = rand(1, oddity_stats[stat])
 		AddComponent(/datum/component/inspiration, oddity_stats)
-	if(!perk && prob(25))
+	if(!perk && prob(5))
 		perk = pick(subtypesof(/datum/perk/oddity))
 
 /obj/item/weapon/oddity/examine(user)
@@ -314,19 +314,6 @@
 		STAT_VIG = 6,
 	)
 
-/obj/item/weapon/oddity/rare/golden_cup
-	name = "Plasma Tag Trophy"
-	desc = "A trophy earned during the monthly plasma tag competitions between various factions. The gold is fashioned from anomalous metal, giving it beneficial properties to carry with you. Hold your factions achievement high!"
-	icon_state = "golden_cup"
-	oddity_stats = list(
-		STAT_ROB = 9,
-		STAT_TGH = 9,
-		STAT_VIG = 9,
-		STAT_BIO = 9,
-		STAT_ROB = 9,
-		STAT_VIG = 9,
-	)
-
 /obj/item/weapon/oddity/common/disk
 	name = "broken design disk"
 	desc = "This disk is corrupted and completely unusable. It has a hand-drawn picture of some strange mechanism on it - looking at it for too long makes your head hurt."
@@ -377,6 +364,21 @@
 	oddity_stats = list(
 		STAT_COG = 7,
 		STAT_VIG = 7,
+	)
+
+//Non-Spawn
+//Odditys that are event only or spawned in on map gen
+/obj/item/weapon/oddity/rare/golden_cup
+	name = "Plasma Tag Trophy"
+	desc = "A trophy earned during the monthly plasma tag competitions between various factions. The gold is fashioned from anomalous metal, giving it beneficial properties to carry with you. Hold your factions achievement high!"
+	icon_state = "golden_cup"
+	oddity_stats = list(
+		STAT_ROB = 9,
+		STAT_TGH = 9,
+		STAT_VIG = 9,
+		STAT_BIO = 9,
+		STAT_ROB = 9,
+		STAT_VIG = 9,
 	)
 
 /obj/item/weapon/oddity/broken_necklace
