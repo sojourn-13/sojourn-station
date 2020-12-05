@@ -689,3 +689,5 @@
 	desc += "\n "
 	desc += " The access panel looks old. It's unlikely anyone can open this without hacking or brute force."
 	hack_require = rand(1,2) //Easyer to hack older locks
+	locked = TRUE
+	secure = TRUE
