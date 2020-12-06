@@ -58,7 +58,7 @@ em						{font-style: normal;font-weight: bold;}
 .sciradio				{color: #993399;}
 .supradio				{color: #5F4519;}
 .srvradio				{color: #6EAA2C;}
-.proradio				{color: #ffff99;}
+.proradio				{color: #209848;}
 
 /* Miscellaneous */
 .name					{font-weight: bold;}

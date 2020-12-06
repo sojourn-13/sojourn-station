@@ -39,6 +39,9 @@
 	var/store_mobs = 1
 	var/old_chance = 0 //Chance to have rusted closet content in it, from 0 to 100. Keep in mind that chance increases in maints
 
+	var/old_lock_odds = 0 //Changes the access lock to something that must be hacked or CC access
+						  //If their is already a lock on this, it overrides it.
+
 /obj/structure/closet/can_prevent_fall()
 	return TRUE
 
@@ -55,6 +58,9 @@
 
 	if (prob(old_chance))
 		make_old()
+
+	if (prob(old_lock_odds + old_chance))
+		make_lock_old()
 
 	if (old_chance)
 		for (var/atom/thing in contents)
@@ -676,3 +682,10 @@
 
 /obj/structure/closet/AllowDrop()
 	return TRUE
+
+/obj/structure/closet/proc/make_lock_old()
+	req_access = list(access_cent_specops)
+	name = "[pick("locked", "sealed", "card reader", "access required", "eletronic")] [name]"
+	desc += "\n "
+	desc += " The access panel looks old. It's unlikely anyone can open this without hacking or brute force."
+	hack_require = rand(1,2) //Easyer to hack older locks

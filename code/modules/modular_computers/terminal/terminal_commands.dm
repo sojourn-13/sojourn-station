@@ -105,7 +105,7 @@ Subtypes
 	if(!ch)
 		return "hwinfo: No such hardware found."
 	ch.diagnostics(user)
-	return "Running diagnostic protocols..."	
+	return "Running diagnostic protocols..."
 
 // Sysadmin
 /datum/terminal_command/relays
@@ -127,6 +127,21 @@ Subtypes
 	. = list()
 	. += "The following ids are banned:"
 	. += jointext(ntnet_global.banned_nids, ", ") || "No ids banned."
+
+//Checks if the thing is emaged or not.
+/datum/terminal_command/firewall_check
+	name = "firewall_check"
+	man_entry = list("Format: firewall_check nid", "Checks nid for firewall bypassing.")
+	pattern = "^firewall_check$"
+	req_access = list(access_network)
+
+//Todo add back in a way to "un"emag a moular computer.
+/datum/terminal_command/firewall_check/proper_input_entered(text, mob/user, terminal)
+	var/obj/item/modular_computer/comp
+	if(comp.computer_emagged)
+		return "Check: Failed, Firewall deactivated or bypassed."
+	else
+		return "Check: Passed, Firewall active."
 
 /datum/terminal_command/status
 	name = "status"

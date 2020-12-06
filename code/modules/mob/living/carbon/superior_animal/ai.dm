@@ -31,7 +31,7 @@
 		loseTarget()
 		return
 
-	if (!(target_mob in getPotentialTargets()))
+	if (!(target_mob in getPotentialTargets()) && !istype(target_mob, /obj/mecha))
 		loseTarget()
 		return
 

@@ -12,7 +12,10 @@
 	var/last_battery_percent = 0							// Used for deciding if battery percentage has chandged
 	var/last_world_time = "00:00"
 	var/list/last_header_icons
+
 	var/computer_emagged = FALSE							// Whether the computer is emagged.
+	var/emagged_level_up = FALSE							// When do we turn from Labtop to Console bitflag
+
 	var/apc_powered = FALSE									// Set automatically. Whether the computer used APC power last tick.
 	var/base_active_power_usage = 50						// Power usage when the computer is open (screen is active) and can be interacted with. Remember hardware can use power too.
 	var/base_idle_power_usage = 5							// Power usage when the computer is idle and screen is off (currently only applies to laptops)
