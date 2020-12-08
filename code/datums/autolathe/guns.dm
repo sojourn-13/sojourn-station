@@ -144,6 +144,10 @@
 	name = "BR .35 \"Semyonovich\" assault SMG"
 	build_path = /obj/item/weapon/gun/projectile/automatic/ppsh/ppv
 
+/datum/design/autolathe/gun/greasegun
+	name = "BR .35 \"Grease Gun\" assault SMG
+	build_path = /obj/item/weapon/gun/projectile/automatic/greasegun
+
 //S H O T G U N S
 
 /datum/design/autolathe/gun/doublebarrel
@@ -169,6 +173,10 @@
 /datum/design/autolathe/gun/sbaw
 	name = "SF ASG \"Mjolnir\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/sbaw
+
+/datum/design/autolathe/gun/sixshot
+	name = "\"Six Shooter\" revolving shotgun"
+	build_path = /object/item/weapon/gun/projectile/revolver/sixshot
 
 //C A R B I N E S
 
