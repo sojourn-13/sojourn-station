@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	caliber = CAL_PISTOL
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 4)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_SMG
@@ -18,7 +18,7 @@
 	recoil_buildup = 5
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	one_hand_penalty = 25
-	silenced = 1
+	silenced = TRUE
 	init_firemodes = list(
 		FULL_AUTO_400,
 		)

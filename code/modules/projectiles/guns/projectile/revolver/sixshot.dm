@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/revolver/sixshot
 	name = "\"Six-Shot\" revolving shotgun"
-	desc = "A rare, custom-built revolving shotgun using a revolver cylander. You can't tell if the person who made it deserves an award or to be tried as a criminal."
+	desc = "A unique, revolving shotgun using a revolver cylinder. You can't tell if the person who made it deserves an award or to be tried as a criminal."
 	icon = 'icons/obj/guns/projectile/sixshot.dmi'
 	icon_state = "sixshot"
 	w_class = ITEM_SIZE_HUGE
@@ -11,7 +11,7 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_STEEL = 5)
 	price_tag = 500
-	damage_multiplier = 1.0
+	damage_multiplier = 0.8
 	recoil_buildup = 20
 	one_hand_penalty = 40
 	saw_off = TRUE
@@ -27,7 +27,7 @@
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5, MATERIAL_STEEL= 5)
 	price_tag = 250
-	damage_multiplier = 0.8
+	damage_multiplier = 0.7
 	penetration_multiplier = 0.8
 	recoil_buildup = 26
 	one_hand_penalty = 30
