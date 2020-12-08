@@ -119,17 +119,17 @@
 	icon_state = "inqarmor_hood"
 	item_state = "inqarmor_hood"
 	armor = list(
-		melee = 75,
-		bullet = 75,
-		energy = 75,
-		bomb = 90,
+		melee = 65,
+		bullet = 65,
+		energy = 65,
+		bomb = 70,
 		bio = 100,
 		rad = 100
 	)
 	siemens_coefficient = 0
 	species_restricted = list("Human")
 	light_overlay = "helmet_light_white"
-	brightness_on = 10 //luminosity when on
+	brightness_on = 8 //luminosity when on
 
 /obj/item/clothing/suit/space/void/crusader
 	name = "crusader 'Deus Vult' power armor"
@@ -139,10 +139,10 @@
 	slowdown = 0
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
 	armor = list(
-		melee = 75,
-		bullet = 75,
-		energy = 75,
-		bomb = 90,
+		melee = 65,
+		bullet = 65,
+		energy = 65,
+		bomb = 70,
 		bio = 100,
 		rad = 100
 	)
