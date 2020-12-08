@@ -145,7 +145,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/ppsh/ppv
 
 /datum/design/autolathe/gun/greasegun
-	name = "BR .35 \"Grease Gun\" assault SMG
+	name = "BR .35 \"Grease Gun\" assault SMG"
 	build_path = /obj/item/weapon/gun/projectile/automatic/greasegun
 
 //S H O T G U N S
@@ -176,7 +176,7 @@
 
 /datum/design/autolathe/gun/sixshot
 	name = "\"Six Shooter\" revolving shotgun"
-	build_path = /object/item/weapon/gun/projectile/revolver/sixshot
+	build_path = /obj/item/weapon/gun/projectile/revolver/sixshot
 
 //C A R B I N E S
 
@@ -304,6 +304,10 @@
 /datum/design/autolathe/gun/reclaimer
 	name = "Excelsior reclaimer"
 	build_path = /obj/item/weapon/gun/matter/launcher/reclaimer
+
+/datum/design/autolathe/gun/dp
+	name= "SA BR . 7.5 \"DP\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/dp
 
 //L A U N C H E R S
 

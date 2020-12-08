@@ -171,9 +171,9 @@
 	license = 8
 
 	designs = list(
-	/datum/desing/autolathe/gun/dp = 3,
-	/datum/design/autolathe/ammo/maxim = 1,
-	)
+		/datum/design/autolathe/gun/dp = 3,
+		/datum/design/autolathe/ammo/maxim = 1,
+		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/greasegun
 	disk_name = "Blackshield - .35 Auto \"Grease Gun\""
@@ -596,7 +596,7 @@
 		/datum/design/autolathe/ammo/m12slug,
 		)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pug
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sixshot
 	disk_name = "SA - 20mm Revolving Shotgun"
 	icon_state = "ironhammer"
 

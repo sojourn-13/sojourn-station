@@ -104,7 +104,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/wirbelwind = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/texan = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mac = 4,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/greasegun = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/greasegun = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_drozd = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 1,
 
