@@ -52,17 +52,17 @@
 	update_icon()
 	hack_require = rand(6,8)
 
-	//We look at are odds fairly as we were not made in maintenance but placed
-	if (prob(old_lock_odds + old_chance + 5)) //Maints or not sometimes we just are locked
-		make_lock_old()
-		update_icon() //So we have are lock added on icon wise
-
 	//If closet is spawned in maints, chance of getting rusty content is increased.
 	if (in_maintenance())
 		old_chance = old_chance + 20
 
 	if (prob(old_chance))
 		make_old()
+
+	if (prob(old_lock_odds + old_chance))
+		make_lock_old()
+		update_icon() //So we have are lock added on icon wise
+
 
 	if (old_chance)
 		for (var/atom/thing in contents)
