@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/revolver/sixshot
 	name = "\"Six-Shot\" revolving shotgun"
-	desc = "A rare, custom-built revolving shotgun using a revolver cylander. You can't tell if the person who made it deserves an award or to be tried as a criminal."
+	desc = "A unique, revolving shotgun using a revolver cylinder. You can't tell if the person who made it deserves an award or to be tried as a criminal."
 	icon = 'icons/obj/guns/projectile/sixshot.dmi'
 	icon_state = "sixshot"
 	w_class = ITEM_SIZE_HUGE
