@@ -11,7 +11,7 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_STEEL = 5)
 	price_tag = 500
-	damage_multiplier = 1.0
+	damage_multiplier = 0.8
 	recoil_buildup = 20
 	one_hand_penalty = 40
 	saw_off = TRUE
