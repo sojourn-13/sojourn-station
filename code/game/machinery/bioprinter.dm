@@ -2,7 +2,7 @@
 
 /obj/machinery/bioprinter
 	name = "organ bioprinter"
-	desc = "It's a machine that grows replacement organs. Level of stored matter: [stored_matter]"
+	desc = "It's a machine that grows replacement organs."
 	icon = 'icons/obj/surgery.dmi'
 
 	anchored = 1
@@ -28,6 +28,10 @@
 	name = "prosthetics fabricator"
 	desc = "It's a machine that prints prosthetic organs."
 	prints_prosthetics = 1
+
+/obj/machinery/bioprinter/examine(mob/user)
+	desc += "\n "
+	desc += " Level of stored matter: [stored_matter]"
 
 /obj/machinery/bioprinter/New()
 	..()
