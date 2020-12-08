@@ -42,9 +42,10 @@
 
 	)
 
-// Excelsior
+// Excelsior We also replace "name" for spawning reasons
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior
-	disk_name = "Excelsior Means of Production"
+	name = "design disk Means of Production"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"This struggle must be organised, according to \"all the rules of the art\", by people who are professionally engaged in revolutionary activity.\""
 	icon_state = "excelsior"
 
@@ -110,7 +111,8 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_weapons
-	disk_name = "Excelsior Means of Revolution"
+	name = "design disk Means of Revolution"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\""
 	icon_state = "excelsior"
 
@@ -145,7 +147,8 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_parts
-	disk_name = "Excelsior - Stocking Revolution"
+	name = "design disk Stocking Revolution"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"Everything can be apart of the revolution!\""
 	icon_state = "excelsior"
 
@@ -168,7 +171,8 @@
 
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_cells
-	disk_name = "Excelsior - Means of Power"
+	name = "design disk Means of Power"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The power of the people!\""
 	icon_state = "excelsior"
 
@@ -180,7 +184,8 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_drozd
-	disk_name = "Excelsior - .35 Drozd SMG"
+	disk_name = "design disk .35 Drozd SMG"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"Nobody is to be blamed for being born a slave; but a slave who not only eschews a striving for freedom but justifies and eulogies his slavery - such a slave is a lickspittle and a boor, who arouses a legitimate feeling of indignation, contempt, and loathing..\""
 	icon_state = "excelsior"
 
@@ -192,7 +197,8 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_makarov
-	disk_name = "Excelsior - Makarov"
+	name = "design disk Makarov"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The Equalizer that fits in your pocket.\""
 	icon_state = "excelsior"
 
@@ -204,7 +210,8 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez
-	disk_name = "Excelsior - Vintorez"
+	name = "design disk Vintorez"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The gun of long revolution.\""
 	icon_state = "excelsior"
 
@@ -216,7 +223,8 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_boltgun
-	disk_name = "Excelsior - Kardashev-Mosin"
+	name = "design disk Kardashev-Mosin"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The gun of endless revolution.\""
 	icon_state = "excelsior"
 
@@ -228,7 +236,8 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ak
-	disk_name = "Excelsior - Kalashnikov"
+	name = "design disk Kalashnikov"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The gun of modern revolution.\""
 	icon_state = "excelsior"
 
@@ -241,7 +250,8 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer
-	disk_name = "Excelsior - Reclaimer"
+	name = "design disk Reclaimer"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The gun of clean revolution.\""
 	icon_state = "excelsior"
 
@@ -251,7 +261,8 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh
-	disk_name = "Excelsior - Shpagin"
+	name = "design disk Shpagin"
+	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The hammer to break the chains.\""
 	icon_state = "excelsior"
 
