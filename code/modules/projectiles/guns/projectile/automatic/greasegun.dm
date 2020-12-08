@@ -18,7 +18,7 @@
 	recoil_buildup = 5
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	one_hand_penalty = 25
-	silenced = 1
+	silenced = TRUE
 	init_firemodes = list(
 		FULL_AUTO_400,
 		)
