@@ -195,7 +195,7 @@
 	icon_state = "ronin"
 	item_state = "ronin"
 	armor = list(
-		melee = 76,
+		melee = 66,
 		bullet = 60,
 		energy = 45,
 		bomb = 45,
@@ -217,7 +217,7 @@
 	slowdown = 0.45
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDESHOES
 	armor = list(
-		melee = 76,
+		melee = 66,
 		bullet = 60,
 		energy = 45,
 		bomb = 45,
