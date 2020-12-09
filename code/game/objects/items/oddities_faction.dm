@@ -356,8 +356,8 @@
 	name = "Joyeuse"
 	desc = "A sword made out of an unknown alloy, humming from an unknown power source."
 	icon = 'icons/obj/device.dmi'
-	icon_state = "nt_sword"
-	item_state = "nt_sword"
+	icon_state = "nt_sword_truth"
+	item_state = "nt_sword_truth"
 	slot_flags = FALSE
 	origin_tech = list(TECH_COMBAT = 9, TECH_POWER = 9, TECH_MATERIAL = 9)
 	price_tag = 20000
