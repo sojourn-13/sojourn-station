@@ -259,9 +259,9 @@ var/world_topic_spam_protect_time = world.timeofday
 		s += "<b>[config.server_name]</b> &#8212; "
 
 	s += "<b>[station_name()]</b>";
-	s += "\]"
+	s += "\]<br>"
 	if(server_ad)
-		s += "<br><small>"
+		s += "<small>"
 		s += server_ad
 		s += "</small></br>"
 
