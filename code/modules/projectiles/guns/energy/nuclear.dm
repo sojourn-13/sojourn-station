@@ -48,7 +48,7 @@
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	switch(current_mode.name)
 		if("stun") add_overlay("nucgun-stun")
-		if("lethal") add_overlay("nucgun-kill")
+		if("kill") add_overlay("nucgun-kill")
 
 /obj/item/weapon/gun/energy/gun/nuclear/update_icon()
 	cut_overlays()
@@ -56,3 +56,12 @@
 		update_charge()
 		update_reactor()
 	update_mode()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(wielded)
+		itemstring += "_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
