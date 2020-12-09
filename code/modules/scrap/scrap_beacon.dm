@@ -7,11 +7,11 @@
 	anchored = TRUE
 	density = TRUE
 	layer = MOB_LAYER + 1
-	var/summon_cooldown = 30 MINUTES
+	var/summon_cooldown = 60 MINUTES
 	var/impact_speed = 3
 	var/impact_prob = 100
 	var/impact_range = 2
-	var/last_summon = -18000
+	var/last_summon = -36000
 	var/active = 0
 
 /obj/structure/scrap_beacon/attack_hand(mob/user)
