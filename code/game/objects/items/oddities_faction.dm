@@ -352,7 +352,7 @@
 		var/neko = uppertext(src.name)
 		to_chat(H, SPAN_DANGER(pick("LIFE IS RUINED FOR ME! I CANNOT FIND [neko]!", "WHO STOLE MY [neko]!", "WHERE IS [neko]?!", "WHY I CANNOT FIND [neko]?!")))
 
-/obj/item/weapon/tool/sword/crusader/nt_sword
+/obj/item/weapon/tool/sword/crusader/nt_sword_truth
 	name = "Joyeuse"
 	desc = "A sword made out of an unknown alloy, humming from an unknown power source."
 	icon = 'icons/obj/device.dmi'
@@ -365,15 +365,15 @@
 	var/flash_cooldown = 1 MINUTES
 	var/last_use = 0
 
-/obj/item/weapon/tool/sword/crusader/nt_sword/wield(mob/living/user)
+/obj/item/weapon/tool/sword/crusader/nt_sword_truth/wield(mob/living/user)
 	..()
 	set_light(l_range = 4, l_power = 3)
 
-/obj/item/weapon/tool/sword/crusader/nt_sword/unwield(mob/living/user)
+/obj/item/weapon/tool/sword/crusader/nt_sword_truth/unwield(mob/living/user)
 	..()
 	set_light(l_range = 0, l_power = 0)
 
-/obj/item/weapon/tool/sword/crusader/nt_sword/attack_self(mob/user)
+/obj/item/weapon/tool/sword/crusader/nt_sword_truth/attack_self(mob/user)
 	if(isBroken)
 		to_chat(user, SPAN_WARNING("\The [src] is broken."))
 		return
@@ -423,11 +423,11 @@
 	anchored = TRUE
 	density = TRUE
 	breakable = FALSE
-	var/obj/item/weapon/tool/sword/crusader/nt_sword/sword = null
+	var/obj/item/weapon/tool/sword/crusader/nt_sword_truth/sword = null
 
 /obj/structure/nt_pedestal/New(var/loc, var/turf/anchor)
 	..()
-	sword = new /obj/item/weapon/tool/sword/crusader/nt_sword(src)
+	sword = new /obj/item/weapon/tool/sword/crusader/nt_sword_truth(src)
 	update_icon()
 
 /obj/structure/nt_pedestal/attackby(obj/item/I, mob/user)
@@ -440,7 +440,7 @@
 			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 				to_chat(user, SPAN_NOTICE("You've unsecured the [src] assembly!"))
 				anchored = FALSE
-	if(istype(I, /obj/item/weapon/tool/sword/crusader/nt_sword))
+	if(istype(I, /obj/item/weapon/tool/sword/crusader/nt_sword_truth))
 		if(sword)
 			to_chat(user, SPAN_WARNING("[src] already has a sword in it!"))
 		insert_item(I, user)
@@ -479,7 +479,7 @@
 	name = "Joyeuse sheath"
 	desc = "A specially designed sheathe for the joyeuse, of which is the only object that shall fit in it."
 	can_hold = list(
-		/obj/item/weapon/tool/sword/crusader/nt_sword
+		/obj/item/weapon/tool/sword/crusader/nt_sword_truth
 		)
 
 /obj/item/weapon/reagent_containers/atomic_distillery
