@@ -29,6 +29,10 @@
 	desc = "It's a machine that prints prosthetic organs."
 	prints_prosthetics = 1
 
+/obj/machinery/bioprinter/examine(mob/user)
+	desc += "\n "
+	desc += " Level of stored matter: [stored_matter]"
+
 /obj/machinery/bioprinter/New()
 	..()
 	if(SSticker.current_state != GAME_STATE_PLAYING)
