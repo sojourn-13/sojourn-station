@@ -722,9 +722,9 @@
 			var/cost = use_power_cost
 			if(R.cell.charge >= cost)
 				R.cell.use(cost)
-			return 1
+			return TRUE //we always use cell power, no need to check anything more
 
-	if(use_power_cost &! isrobot(user))
+	if(use_power_cost)
 		if (!cell?.checked_use(use_power_cost*timespent))
 			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 			return FALSE

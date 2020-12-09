@@ -11,6 +11,7 @@
 	max_stock = 100
 	degradation = 0 //its consumable anyway
 	flags = NOBLUDGEON //Its not a weapon
+	preloaded_reagents = list("glue" = 1, "plasticide" = 2)
 	max_upgrades = 0 //These are consumable, so no wasting upgrades on them
 
 /obj/item/weapon/tool/tape_roll/web
@@ -20,6 +21,7 @@
 	use_stock_cost = 0.17
 	max_stock = 30
 	alpha = 150
+	preloaded_reagents = null
 
 /obj/item/weapon/tool/tape_roll/glue
 	name = "superglue"
@@ -29,6 +31,7 @@
 	tool_qualities = list(QUALITY_ADHESIVE = 40, QUALITY_CAUTERIZING = 5) // Better than duct tape, but can't seal things and is mostly used in crafting - also, it's glue, so it can be used as an extremely shitty way of sealing wounds
 	matter = list(MATERIAL_BIOMATTER = 30)
 	worksound = NO_WORKSOUND
+	preloaded_reagents = list("glue" = 30)
 
 /obj/item/weapon/tool/tape_roll/fiber
 	name = "fiber tape"
@@ -38,6 +41,7 @@
 	matter = list(MATERIAL_PLASTIC = 20)
 	use_stock_cost = 0.10
 	max_stock = 100
+	preloaded_reagents = list("glue" = 15, "plasticide" = 5)
 
 /obj/item/weapon/tool/tape_roll/flextape
 	name = "flex tape"
@@ -46,6 +50,7 @@
 	tool_qualities = list(QUALITY_ADHESIVE = 100, QUALITY_SEALING = 100)
 	matter = list(MATERIAL_PLASTIC = 40)
 	use_stock_cost = 0.10
+	preloaded_reagents = list("glue" = 200, "plasticide" = 50) //A bucket
 	max_stock = 100
 
 /obj/item/weapon/tool/tape_roll/attack(var/mob/living/carbon/human/H, var/mob/user)

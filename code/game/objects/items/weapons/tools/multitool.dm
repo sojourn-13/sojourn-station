@@ -15,8 +15,9 @@
 	worksound = WORKSOUND_PULSING
 	tool_qualities = list(QUALITY_PULSING = 30)
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-
 	origin_tech = list(TECH_MAGNET = 1, TECH_ENGINEERING = 1)
+	use_power_cost = 0.08
+	suitable_cell = /obj/item/weapon/cell/small
 
 	var/buffer_name
 	var/atom/buffer_object
@@ -25,6 +26,24 @@
 	name = "bluespace multitool"
 	icon_state = "bs_multitool"
 	tool_qualities = list(QUALITY_PULSING = 100)
+
+/obj/item/weapon/tool/multitool/advanced
+	name = "advanced multitool"
+	desc = "Used for pulsing wires to test which to cut. You can use this on airlocks, APCs or even lockers to try to hack them. This verson is a more bulky and uses a medium cell."
+	icon_state = "adv_multitool"
+	flags = CONDUCT
+	force = WEAPON_FORCE_HARMLESS
+	w_class = ITEM_SIZE_SMALL
+	throwforce = WEAPON_FORCE_HARMLESS
+	worksound = WORKSOUND_PULSING
+	tool_qualities = list(QUALITY_PULSING = 50)
+	matter = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 5, MATERIAL_PLATINUM = 1)
+	origin_tech = list(TECH_MAGNET = 5, TECH_ENGINEERING = 2)
+	use_power_cost = 0.50
+	workspeed = 1.2
+	max_upgrades = 4
+	suitable_cell = /obj/item/weapon/cell/medium
+
 
 /obj/item/weapon/tool/multitool/Destroy()
 	unregister_buffer(buffer_object)

@@ -357,7 +357,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10
 	)
-	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING)
+	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING, QUALITY_PULSING)
 	I.prefix = "magnetic"
 
 /obj/item/weapon/tool_upgrade/refinement/ported_barrel
