@@ -61,10 +61,13 @@
 	if(iscarbon(M))
 		//TODO: replace with standard_feed_mob() call.
 		var/mob/living/carbon/C = M
-		var/fullness = C.nutrition + (C.reagents.get_reagent_amount("nutriment") * 25)
+		var/mob/living/carbon/human/H = M
+		var/fullness_modifier = 1
+		if(istype(H))
+			fullness_modifier = 100 / H.get_organ_efficiency(OP_STOMACH)
+		var/fullness = (C.nutrition + (C.reagents.get_reagent_amount("nutriment") * 25)) * fullness_modifier
 		if(C == user)								//If you're eating it yourself
-			if(ishuman(C))
-				var/mob/living/carbon/human/H = M
+			if(istype(H))
 				if(!H.check_has_mouth())
 					to_chat(user, "Where do you intend to put \the [src]? You don't have a mouth!")
 					return
@@ -109,7 +112,6 @@
 			if(reagents.total_volume)
 				var/amount_eaten = min(reagents.total_volume, bitesize)
 				reagents.trans_to_mob(M, amount_eaten, CHEM_INGEST)
-				var/mob/living/carbon/human/H = M
 				if(istype(H))
 					H.sanity.onEat(src, amount_eaten)
 				bitecount++
@@ -3129,3 +3131,23 @@
 	filling_color = "#E00D34"
 	bitesize = 3
 	nutriment_amt = 5
+
+/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue
+	name = "\improper red gum stick"
+	desc = "A small slab of gum for chewing."
+	icon_state = "gumdrop_blue"
+	filling_color = "#FC44A0"
+	bitesize = 1
+	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
+	nutriment_amt = 0
+	preloaded_reagents = list("gum drops" = 3)
+
+/obj/item/weapon/reagent_containers/food/snacks/candy_drop_red
+	name = "\improper blue gum stick"
+	desc = "A small slab of gum for chewing. Wait, they come in blue now?"
+	icon_state = "gumdrop_red"
+	filling_color = "#2B00FF"
+	bitesize = 1
+	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
+	nutriment_amt = 0
+	preloaded_reagents = list("gum drops" = 5, "hacker" = 15)

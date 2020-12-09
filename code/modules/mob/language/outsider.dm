@@ -10,6 +10,7 @@
 	syllables = list("sss","sSs","SSS")
 	shorthand = "Xeno"
 
+/*
 /datum/language/xenos
 	name = LANGUAGE_HIVEMIND
 	desc = "Xenomorphs have the strange ability to commune over a psychic hivemind."
@@ -30,6 +31,7 @@
 		return 1
 
 	return 0
+*/
 
 /datum/language/corticalborer
 	name = LANGUAGE_CORTICAL

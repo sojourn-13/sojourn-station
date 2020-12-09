@@ -52,7 +52,7 @@
 	for(var/name in stat_modifiers)
 		L.stats.changeStat(name, stat_modifiers[name])
 
-	create_id("Soldier")
+	create_id("Void Wolf")
 	..()
 
 
@@ -60,6 +60,7 @@
 	icon_state = "syndicate"
 
 /obj/item/weapon/card/id/merc/New()
+	. = ..()
 	access = list(access_mercenary,//This access governs their ship and base
 	access_external_airlocks,
 	access_maint_tunnels)

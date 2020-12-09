@@ -6,6 +6,7 @@
 
 /datum/craft_recipe/storage/plastic_bag
 	name = "plastic bag"
+	icon_state = "clothing"
 	result = /obj/item/weapon/storage/bag/plastic
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC)
@@ -26,6 +27,7 @@
 /datum/craft_recipe/storage/ore_bag
 	name = "ore bag"
 	result = /obj/item/weapon/storage/bag/ore
+	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
@@ -46,6 +48,7 @@
 /datum/craft_recipe/storage/chem_bag
 	name = "chemistry bag"
 	result = /obj/item/weapon/storage/bag/chemistry
+	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
@@ -54,6 +57,7 @@
 	related_stats = list(STAT_COG)
 
 /datum/craft_recipe/box/adv
+	icon_state = "clothing"
 	avaliableToEveryone = FALSE
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
@@ -98,6 +102,7 @@
 /datum/craft_recipe/storage/bookshelf
 	name = "book shelf"
 	result = /obj/structure/bookcase
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 	)
@@ -112,6 +117,7 @@
 /datum/craft_recipe/storage/coffin
 	name = "coffin"
 	result = /obj/structure/closet/coffin
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 	)

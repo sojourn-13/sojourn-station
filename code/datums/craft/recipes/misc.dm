@@ -9,6 +9,7 @@
 /datum/craft_recipe/medical/rag
 	name = "rag"
 	result = /obj/item/weapon/reagent_containers/glass/rag
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30)
 	)
@@ -62,6 +63,7 @@
 /datum/craft_recipe/pipe
 	name = "Smoking pipe"
 	result = /obj/item/clothing/mask/smokable/pipe
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD, "time" = 0),
 		list(QUALITY_CUTTING, 10, 10)

@@ -29,6 +29,7 @@
 	health = 550
 	lights_power = 8
 	damage_absorption = list("brute"=0.8,"fire"=0.5,"bullet"=0.8,"energy"=1,"bomb"=0.5)
+	armor_level = MECHA_ARMOR_SCOUT
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley/firefighter
 
 /obj/mecha/working/ripley/deathripley

@@ -42,6 +42,9 @@
 	name = "OT HG .35 \"Mk58\""
 	build_path = /obj/item/weapon/gun/projectile/mk58
 
+/datum/design/autolathe/gun/alemao
+	name = "BR .35 \"O Alemao\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/alemao
 ///. 4 0 M A G N U M
 
 /datum/design/autolathe/gun/ladon
@@ -128,6 +131,18 @@
 /datum/design/autolathe/gun/drozd
 	name = "Excelsior .35 \"Drozd\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/drozd
+
+/datum/design/autolathe/gun/luger
+	name = "BR .35 \"Vintovka Lyugera\" carbine"
+	build_path = /obj/item/weapon/gun/projectile/automatic/luger
+
+/datum/design/autolathe/gun/ppsh
+	name = "Excelsior .35  \"Shpagin\" assault SMG"
+	build_path = /obj/item/weapon/gun/projectile/automatic/ppsh
+
+/datum/design/autolathe/gun/ppv
+	name = "BR .35 \"Semyonovich\" assault SMG"
+	build_path = /obj/item/weapon/gun/projectile/automatic/ppsh/ppv
 
 //S H O T G U N S
 
@@ -262,6 +277,11 @@
 	name = "SA BR - .408  \"STS-40\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/sts/hrifle
 
+// .40 rifles
+
+/datum/design/autolathe/gun/lever
+	name = "H&S .40 lever action \"Armstrong\""
+	build_path = /obj/item/weapon/gun/projectile/boltgun/lever
 
 // S N O W F L A K E S
 
@@ -304,6 +324,14 @@
 /datum/design/autolathe/gun/ntpistol
 	name = "NT LP \"Serenity\""
 	build_path = /obj/item/weapon/gun/energy/ntpistol
+
+/datum/design/autolathe/gun/lasercore
+	name = "H&S PDW \"Laser Core\""
+	build_path = /obj/item/weapon/gun/energy/lasercore
+
+/datum/design/autolathe/gun/firestorm
+	name = "H&S PDW \"Firestorm\""
+	build_path = /obj/item/weapon/gun/energy/firestorm
 
 /datum/design/autolathe/gun/energy_crossbow
 	name = "OT EC \"Nemesis\""

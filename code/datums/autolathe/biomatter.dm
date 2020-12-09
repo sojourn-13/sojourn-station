@@ -37,6 +37,10 @@
 	name = "Cardboard"
 	build_path = /obj/item/stack/material/cardboard/random // I guess it depends on the protein content.
 */
+/datum/design/bioprinter/storage/sheath
+	name = "sheath"
+	build_path = /obj/item/weapon/storage/sheath
+
 /datum/design/bioprinter/wallet
 	name = "Wallet"
 	build_path = /obj/item/weapon/storage/wallet
@@ -117,15 +121,35 @@
 
 /datum/design/bioprinter/nt_clothes/acolyte_armor
 	name = "Vector Armor"
-	build_path = /obj/item/clothing/suit/space/void/acolyte
+	build_path = /obj/item/clothing/suit/armor/vest/acolyte
 
 /datum/design/bioprinter/nt_clothes/agrolyte_armor
 	name = "Agrolyte Armor"
-	build_path = /obj/item/clothing/suit/space/void/agrolyte
+	build_path = /obj/item/clothing/suit/armor/vest/botanist
 
 /datum/design/bioprinter/nt_clothes/custodian_armor
 	name = "Custodian Armor"
-	build_path = /obj/item/clothing/suit/space/void/custodian
+	build_path = /obj/item/clothing/suit/armor/vest/custodian
+
+/datum/design/bioprinter/nt_clothes/rosaria_armor
+	name = "Rosaria Armor"
+	build_path = /obj/item/clothing/suit/armor/vest/rosaria
+
+/datum/design/bioprinter/nt_clothes/acolyte_armor_helm
+	name = "Vector Helmet"
+	build_path = /obj/item/clothing/head/helmet/acolyte
+
+/datum/design/bioprinter/nt_clothes/agrolyte_armor_helm
+	name = "Agrolyte Helmet"
+	build_path = /obj/item/clothing/head/helmet/botanist
+
+/datum/design/bioprinter/nt_clothes/custodian_armor_helm
+	name = "Custodian Helmet"
+	build_path = /obj/item/clothing/head/helmet/custodian
+
+/datum/design/bioprinter/nt_clothes/rosaria_armor_helm
+	name = "Rosaria Helmet"
+	build_path = /obj/item/clothing/head/helmet/rosaria
 
 /datum/design/bioprinter/nt_clothes/sports_jacket
 	name = "Sports Jacket"
@@ -142,7 +166,52 @@
 /datum/design/bioprinter/nt_clothes/church_uniform
 	name = "Church Garment"
 	build_path = /obj/item/clothing/under/rank/church
-//[CLOTHES, ARMOR AND ACCESORIES]
+
+//[MELEE]
+/datum/design/autolathe/sword/nt_sword
+	name = "NT Shortsword"
+	build_path = /obj/item/weapon/tool/sword/nt
+
+/datum/design/autolathe/sword/nt_longsword
+	name = "NT Longsword"
+	build_path = /obj/item/weapon/tool/sword/nt/longsword
+
+/datum/design/autolathe/sword/nt_dagger
+	name = "NT Dagger"
+	build_path = /obj/item/weapon/tool/knife/dagger/nt
+
+/datum/design/autolathe/sword/nt_halberd
+	name = "NT Halberd"
+	build_path = /obj/item/weapon/tool/sword/nt/halberd
+
+/datum/design/autolathe/sword/nt_scourge
+	name = "NT Scourge"
+	build_path = /obj/item/weapon/tool/sword/nt/scourge
+
+/datum/design/autolathe/shield/nt_shield
+	name = "NT Shield"
+	build_path = /obj/item/weapon/shield/riot/nt
+
+/datum/design/autolathe/tool_upgrade/sanctifier
+	name = "sanctifier"
+	build_path = /obj/item/weapon/tool_upgrade/augment/sanctifier
+
+//[GRENADES]
+/datum/design/autolathe/grenade/nt_smokebomb
+	name = "NT SG \"Holy Fog\""
+	build_path = /obj/item/weapon/grenade/smokebomb/nt
+
+/datum/design/autolathe/grenade/nt_frag
+	name = "NT DFG \"Holy Thunder\""
+	build_path = /obj/item/weapon/grenade/frag/nt
+
+/datum/design/autolathe/grenade/nt_flashbang
+	name = "NT FBG \"Holy Light\""
+	build_path = /obj/item/weapon/grenade/flashbang/nt
+
+/datum/design/autolathe/grenade/nt_explosive
+	name = "NT OBG \"Holy Grail\""
+	build_path = /obj/item/weapon/grenade/explosive/nt
 
 //[MED]
 /datum/design/bioprinter/medical
@@ -160,7 +229,6 @@
 	name = "Ointment"
 	build_path = /obj/item/stack/medical/ointment
 
-
 /datum/design/bioprinter/medical/advanced
 	materials = list("biomatter" = 2)
 
@@ -171,6 +239,12 @@
 /datum/design/bioprinter/medical/advanced/ointment
 	name = "Advanced burn kit"
 	build_path = /obj/item/stack/medical/advanced/ointment
+
+/datum/design/bioprinter/lungs
+	name = "Extended Lungs"
+	materials = list("biomatter" = 30)
+	build_path = /obj/item/organ/internal/lungs/long
+
 //[/MED]
 
 /datum/design/bioprinter/bioimplant

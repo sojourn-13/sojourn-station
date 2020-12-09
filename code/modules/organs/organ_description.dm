@@ -3,9 +3,10 @@
 	var/surgery_name
 	var/organ_tag = "limb"
 	var/additional_limb_parts = list() //Other parts to put on top of limbs.
-	var/body_part = null
-	var/parent_organ = null
+	var/body_part
+	var/parent_organ_base
 	var/default_type = /obj/item/organ/external
+	var/default_bone_type = /obj/item/organ/internal/bone
 
 	var/max_damage = 0
 	var/min_broken_damage = 30
@@ -14,7 +15,7 @@
 	var/cannot_amputate = FALSE
 
 	var/w_class = ITEM_SIZE_NORMAL
-	var/cavity_max_w_class = ITEM_SIZE_TINY
+	var/max_volume = 3.5	//Space used up by specific organ size and w_class of cavity implants
 
 	var/amputation_point = "spine"
 	var/joint = "neck"
@@ -34,6 +35,7 @@
 	organ_tag = BP_CHEST
 	body_part = UPPER_TORSO
 	default_type = /obj/item/organ/external/chest
+	default_bone_type = /obj/item/organ/internal/bone/chest
 
 	max_damage = 100
 	min_broken_damage = 60
@@ -42,7 +44,7 @@
 	cannot_amputate = TRUE
 
 	w_class = ITEM_SIZE_HUGE
-	cavity_max_w_class = ITEM_SIZE_NORMAL
+	max_volume = ITEM_SIZE_TITANIC + 1
 
 	joint = "neck"
 	amputation_point = "spine"
@@ -54,15 +56,16 @@
 	surgery_name = "lower abdomen"
 	organ_tag = BP_GROIN
 	body_part = LOWER_TORSO
-	parent_organ = BP_CHEST
+	parent_organ_base = BP_CHEST
 	default_type = /obj/item/organ/external/groin
+	default_bone_type = /obj/item/organ/internal/bone/groin
 
 	max_damage = 100
 	min_broken_damage = 60
 	dislocated = -1
 
 	w_class = ITEM_SIZE_BULKY
-	cavity_max_w_class = ITEM_SIZE_SMALL
+	max_volume = ITEM_SIZE_COLOSSAL
 
 	joint = "hip"
 	amputation_point = "lumbar"
@@ -73,14 +76,16 @@
 	surgery_name = "head" // Prevents "Unknown's Unkonwn's head" from popping up if the head was amputated and then reattached
 	organ_tag = BP_HEAD
 	body_part = HEAD
-	parent_organ = BP_CHEST
+	parent_organ_base = BP_CHEST
 	default_type = /obj/item/organ/external/head
+	default_bone_type = /obj/item/organ/internal/bone/head
 
 	max_damage = 75
 	min_broken_damage = 60
 	vital = TRUE
 
 	w_class = ITEM_SIZE_NORMAL
+	max_volume = ITEM_SIZE_HUGE
 
 	joint = "jaw"
 	amputation_point = "neck"
@@ -91,9 +96,9 @@
 	functions = BODYPART_REAGENT_INTAKE | BODYPART_GAS_INTAKE
 
 /datum/organ_description/arm
-	parent_organ = BP_CHEST
+	parent_organ_base = BP_CHEST
 
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 
 	max_damage = 50
 	min_broken_damage = 50
@@ -105,6 +110,7 @@
 	organ_tag = BP_L_ARM
 	body_part = ARM_LEFT
 	icon_position = LEFT
+	default_bone_type = /obj/item/organ/internal/bone/l_arm
 
 	joint = "left elbow"
 	amputation_point = "left shoulder"
@@ -117,6 +123,7 @@
 	organ_tag = BP_R_ARM
 	body_part = ARM_RIGHT
 	icon_position = RIGHT
+	default_bone_type = /obj/item/organ/internal/bone/r_arm
 
 	joint = "right elbow"
 	amputation_point = "right shoulder"
@@ -125,9 +132,9 @@
 	additional_limb_parts = BP_R_ARM_EXTRA
 
 /datum/organ_description/leg
-	parent_organ = BP_GROIN
+	parent_organ_base = BP_GROIN
 
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 
 	max_damage = 60
 	min_broken_damage = 50
@@ -139,6 +146,7 @@
 	organ_tag = BP_L_LEG
 	body_part = LEG_LEFT
 	icon_position = LEFT
+	default_bone_type = /obj/item/organ/internal/bone/l_leg
 
 	joint = "left knee"
 	amputation_point = "left hip"
@@ -151,6 +159,7 @@
 	organ_tag = BP_R_LEG
 	body_part = LEG_RIGHT
 	icon_position = RIGHT
+	default_bone_type = /obj/item/organ/internal/bone/r_leg
 
 	joint = "right knee"
 	amputation_point = "right hip"

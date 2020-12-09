@@ -38,12 +38,12 @@
 	new /obj/effect/sparks(T)
 	new /obj/effect/effect/smoke/illumination(T, brightness=max(flash_range*2, brightness), lifetime=light_duration)
 
-//blinds people like the flash round, but can also be used for temporary illumination
+//blinds people like the flash round, but can also be used for temporary illumination for 10 mins
 /obj/item/projectile/energy/flash/flare
 	damage_types = list(BURN = 10)
 	flash_range = 1
 	brightness = 9 //similar to a flare
-	light_duration = 200
+	light_duration = 60000 //this is in milasecnds. 
 
 /obj/item/projectile/energy/electrode
 	name = "electrode"

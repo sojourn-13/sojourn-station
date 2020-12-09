@@ -65,6 +65,7 @@ var/global/excelsior_last_draft = 0
 		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez = 200,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_boltgun = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ak = 200,
+		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 300,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer = 300
 		)
 	var/entropy_value = 8

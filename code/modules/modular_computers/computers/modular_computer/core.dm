@@ -99,6 +99,13 @@
 	else
 		computer_emagged = TRUE
 		to_chat(user, "You emag \the [src]. Its screen flickers briefly.")
+		if(!computer_emagged && !emagged_level_up) //Are we already emaged OR able to be CPU overdrived or what ever magic its doing...
+			emagged_level_up = TRUE
+			//Todo make this upgrade to the next level
+			//I.e PDA - > Tablet - > CONSOLE
+			//Make this have downsides (Heat system?)
+			hardware_flag |= PROGRAM_CONSOLE
+			return TRUE
 		return TRUE
 
 /obj/item/modular_computer/update_icon()

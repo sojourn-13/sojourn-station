@@ -76,6 +76,19 @@
 			var/obj/effect/plant/P = A
 			P.die_off()
 
+/obj/item/weapon/tool/fireaxe/woodsman
+	name = "woodsman axe"
+	desc = "Chop the wood to fuel the fire."
+	icon_state = "woodsmanaxe0"
+	wielded_icon = "woodsmanaxe1"
+	force = WEAPON_FORCE_PAINFUL
+	force_unwielded = WEAPON_FORCE_PAINFUL
+	force_wielded = WEAPON_FORCE_ROBUST
+	armor_penetration = ARMOR_PEN_SHALLOW
+	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 25)
+	w_class = ITEM_SIZE_BULKY
+	slot_flags = null
+
 /obj/item/weapon/tool/minihoe
 	name = "mini hoe"
 	desc = "It's used for removing weeds or scratching your back."
@@ -89,8 +102,6 @@
 	tool_qualities = list(QUALITY_SHOVELING = 10)
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("slashed", "sliced", "cut", "clawed")
-
-
 
 //Knifes
 
@@ -308,8 +319,6 @@
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 15, QUALITY_SAWING = 10)
 
-
-
 //Flails
 /obj/item/weapon/tool/chainofcommand
 	name = "chain of command"
@@ -363,7 +372,7 @@
 
 /obj/item/weapon/tool/sword/katana_makeshift
 	name = "makeshift katana"
-	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where theirs a will and a weeb theirs a way."
+	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where there's a will and a weeb there's a way."
 	icon_state = "katana_improv"
 	item_state = "katana_improv"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2) //twice the value of a kitche knife

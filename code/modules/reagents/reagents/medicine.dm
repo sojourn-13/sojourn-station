@@ -139,7 +139,7 @@
 	M.adjustToxLoss(-8 * removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if(istype(L))
 			if(BP_IS_ROBOTIC(L))
 				return
@@ -157,7 +157,7 @@
 /datum/reagent/medicine/cordradaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/C = H.internal_organs_by_name[BP_HEART]
+		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(C))
 				return
@@ -209,7 +209,7 @@
 datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/lungs/L = H.internal_organs_by_name[BP_LUNGS]
+		var/obj/item/organ/internal/lungs/L = H.random_organ_by_process(OP_LUNGS)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(L))
 				return
@@ -404,7 +404,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	M.eye_blind = max(M.eye_blind - (5 * effect_multiplier), 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
+		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
 		if(E && istype(E))
 			if(E.damage > 0)
 				E.damage = max(E.damage - (0.5 * effect_multiplier), 0)
@@ -1081,7 +1081,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	M.adjustToxLoss(-8 * removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if(istype(L))
 			if(BP_IS_ROBOTIC(L))
 				return

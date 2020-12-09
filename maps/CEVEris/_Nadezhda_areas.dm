@@ -131,6 +131,7 @@
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 	dynamic_lighting = FALSE
+	ship_area = FALSE
 
 
 /area/nadezhda/dungeon/outside/trashcave
@@ -178,6 +179,11 @@
 	dynamic_lighting = TRUE
 	requires_power = 0
 
+/area/nadezhda/dungeon/outside/prepper/vault
+	name = "Vault Bunker"
+	icon_state = "erisblue"
+	requires_power = 1
+
 /area/nadezhda/dungeon/outside/monster_cave
 	name = "Monster Cave"
 	icon_state = "erisgreen"
@@ -213,6 +219,15 @@
 	requires_power = 0
 	flags = AREA_FLAG_RAD_SHIELDED
 
+/area/nadezhda/outside/one_star/fo_outside
+	name = "Greyson Grounds"
+	icon_state = "erisgreen"
+	dynamic_lighting = FALSE
+
+/area/nadezhda/outside/one_star/fo_internal
+	name = "Greyson Field Offices"
+	icon_state = "erisblue"
+
 /area/nadezhda/outside/dcave
 	name = "Diyaab Cave"
 	icon_state = "erisgreen"
@@ -239,6 +254,15 @@
 	icon_state = "forest"
 	sound_env = FOREST
 	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
+
+/area/nadezhda/outside/forest/beast_cave_light
+	name = "Swamp Caves"
+	icon_state = "forest"
+
+/area/nadezhda/outside/forest/beast_cave_dark
+	name = "Swamp Caves"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/lakeside
     name = "Lakeside"
@@ -1252,7 +1276,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "hammerblue"
 
 /area/nadezhda/security/laber_area
-	name = "Laber Transfer"
+	name = "Labor Transfer"
 	icon_state = "hammerblue"
 
 /area/nadezhda/security/hut_cell1

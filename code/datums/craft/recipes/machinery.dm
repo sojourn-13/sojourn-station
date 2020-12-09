@@ -18,6 +18,7 @@
 /datum/craft_recipe/machinery/wall/air_alarm
 	name = "air alarm frame"
 	result = /obj/item/frame/air_alarm
+	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
 	)
@@ -25,6 +26,7 @@
 /datum/craft_recipe/machinery/wall/apc
 	name = "apc frame"
 	result = /obj/item/frame/apc
+	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
 	)
@@ -39,6 +41,7 @@
 /datum/craft_recipe/machinery/wall/fire_alarm
 	name = "fire alarm frame"
 	result = /obj/item/frame/fire_alarm
+	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
 	)
@@ -46,6 +49,7 @@
 /datum/craft_recipe/machinery/wall/lightfixture
 	name = "light fixture frame"
 	result = /obj/item/frame/light
+	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
 	)
@@ -53,6 +57,7 @@
 /datum/craft_recipe/machinery/wall/lightfixture/small
 	name = "light fixture frame, small"
 	result = /obj/item/frame/light/small
+	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
 	)
@@ -84,6 +89,7 @@
 /datum/craft_recipe/machinery/computer/modularlaptop
 	name = "modular frame, laptop"
 	result = /obj/item/modular_computer/laptop
+	icon_state = "electronic"
 	time = 200
 	steps = list(
 		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL),
@@ -93,6 +99,7 @@
 /datum/craft_recipe/machinery/computer/modularpda
 	name = "modular frame, pda"
 	result = /obj/item/modular_computer/pda
+	icon_state = "electronic"
 	time = 200
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL),
@@ -102,6 +109,7 @@
 /datum/craft_recipe/machinery/computer/modulartablet
 	name = "modular frame, tablet"
 	result = /obj/item/modular_computer/tablet
+	icon_state = "electronic"
 	time = 200
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
@@ -111,6 +119,7 @@
 /datum/craft_recipe/machinery/computer/modulartelescreen
 	name = "modular frame, telescreen"
 	result = /obj/item/modular_computer/telescreen
+	icon_state = "electronic"
 	time = 200
 	steps = list(
 		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL),
