@@ -603,9 +603,9 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/sixshot = 3,
-		/datum/design/autolathe/ammo/m12beanbag, // Never add tazershells, for love of god
-		/datum/design/autolathe/ammo/m12pellet,
-		/datum/design/autolathe/ammo/m12slug,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_flash,
 		)
 
 // SMGs
