@@ -10,7 +10,7 @@
 
 	health = 210 //Very tanky!
 	speed_factor = 1.1 //Kinda slow
-	power_efficiency = 1.15 //Decent
+	power_efficiency = 1.55 //Decent we are meant to be around the colony
 
 	stat_modifiers = list(
 		STAT_ROB = 60,
@@ -30,6 +30,7 @@
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
+	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
 	//src.modules += new /obj/item/device/holowarrant(src)
 	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs
 	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
@@ -68,7 +69,7 @@
 
 	health = 85 //Fragile
 	speed_factor = 1.0 //Kinda slow
-	power_efficiency = 0.6 //Very poor, shackled to a charger
+	power_efficiency = 0.7 //Very poor, shackled to a charger
 
 	stat_modifiers = list(
 		STAT_BIO = 60,
@@ -182,6 +183,7 @@
 	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src) // a hydroponist's bucket
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
+	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
 	src.emag.name = "Lube spray"
@@ -306,6 +308,7 @@
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/scanner/gas(src)
