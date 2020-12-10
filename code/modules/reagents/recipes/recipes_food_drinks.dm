@@ -633,3 +633,13 @@
 	result = "balloon"
 	required_reagents = list("cream" = 1, "bluecuracao" = 1)
 	result_amount = 2
+
+/datum/chemical_reaction/drinks/deadrum
+	result = "deadrum"
+	required_reagents = list("rum" = 3, "limejuice" = 3, "sodiumchloride" = 3)
+	result_amount = 6
+
+/datum/chemical_reaction/drinks/miss_fortune
+	result = "miss_fortune"
+	required_reagents = list("nanatsunoumi" = 1, "redcandyliquor" = 1, "bluecuracao" = 1, "melonliquor" = 1)
+	result_amount = 2

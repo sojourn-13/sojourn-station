@@ -163,6 +163,22 @@
 	center_of_mass = list("x"=16, "y"=9)
 	preloaded_reagents = list("soymilk" = 30)
 
+/obj/item/weapon/reagent_containers/food/drinks/cocamilk/small
+	name = "small chocolate milk carton"
+	desc = "It's chocolate milk. Brown and sweet goodness!"
+	icon_state = "mini-cocamilk"
+	item_state = "carton"
+	center_of_mass = list("x"=16, "y"=9)
+	preloaded_reagents = list("chocolatemilk" = 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/redmilk/small
+	name = "small strawberry milk carton"
+	desc = "It's strawberry milk. Red and sweet goodness!"
+	icon_state = "mini-redmilk"
+	item_state = "carton"
+	center_of_mass = list("x"=16, "y"=9)
+	preloaded_reagents = list("strawberrymilk" = 30)
+
 /obj/item/weapon/reagent_containers/food/drinks/coffee
 	name = "Robust Coffee"
 	desc = "A cup of hot coffee. Sourced from the leading supplier."
@@ -197,6 +213,15 @@
 	base_icon = "cup"
 	filling_states = "100"
 	preloaded_reagents = list("dry_ramen" = 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/premade
+	name = "Raving Ramen"
+	desc = "A cup of ramen, with water, salt and even an egg already added."
+	icon_state = "ramen"
+	center_of_mass = list("x"=16, "y"=11)
+	base_icon = "cup"
+	filling_states = "100"
+	preloaded_reagents = list("hot_ramen" = 30, "sodiumchloride" = 2, "egg" = 5)
 
 /obj/item/weapon/reagent_containers/food/drinks/sillycup
 	name = "paper cup"
