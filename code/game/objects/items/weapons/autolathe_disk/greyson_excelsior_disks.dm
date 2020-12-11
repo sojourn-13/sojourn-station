@@ -15,7 +15,6 @@
 		/datum/design/autolathe/tool/omni_surgery_onestar = 2,
 		/datum/design/autolathe/tool/pickaxe_onestar,
 		/datum/design/autolathe/part/greyson/ai = 3,
-
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/stockparts
@@ -28,9 +27,7 @@
 		/datum/design/autolathe/greyson/module,
 		/datum/design/autolathe/greyson/capacitor,
 		/datum/design/autolathe/greyson/manipulator,
-
 	)
-
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/cog
 	disk_name = "Greyson Positronics - Cog"
@@ -39,8 +36,16 @@
 	designs = list(
 		/datum/design/autolathe/gun/greyson_cog = 2,
 		/datum/design/autolathe/cell/medium/high,
-
 	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/armor
+	disk_name = "Greyson Positronics - Ablative Vest"
+	icon_state = "onestar"
+	license = 3
+	designs = list(
+		/datum/design/autolathe/clothing/iron_lock_security_armor,
+	)
+
 
 // Excelsior We also replace "name" for spawning reasons
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior
