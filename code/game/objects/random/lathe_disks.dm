@@ -155,7 +155,8 @@
 /obj/random/lathe_disk/advanced/onestar/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/stockparts = 3,
 						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/cog = 1,
-						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar = 1))
+						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar = 1,
+						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/armor = 1))
 
 /obj/random/lathe_disk/advanced/excelsior
 	name = "random any excelsior lathe disk"
