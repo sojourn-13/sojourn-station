@@ -238,7 +238,7 @@ obj/item/clothing/under/genericr
 
 /obj/item/clothing/under/iron_lock_security
 	name = "Iron Lock Security Uniform"
-	desc = "An outdated uniform of now extinct security corporation \"Iron Lock Security\". A privet security force that offten worked protecting Greyson Positronic."
+	desc = "An outdated uniform of a now extinct corporation \"Iron Lock Security\". A private security firm that got its start centuries ago subcontracted by Greyson Positronics before being phased out."
 	icon_state = "northtech"
 	has_sensor = 0
 
