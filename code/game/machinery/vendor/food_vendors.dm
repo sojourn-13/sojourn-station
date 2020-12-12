@@ -2,7 +2,7 @@
 /obj/machinery/vending/boozeomat
 	name = "Booze-O-Mat"
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
-	icon_state = "boozeomat"	//18 drink entities below, plus the glasses, in case someone wants to edit the number of bottles
+	icon_state = "boozeomat"	//24(+2) drink entities below, plus the glasses, in case someone wants to edit the number of bottles
 	icon_deny = "boozeomat-deny"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/gin = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/whiskey = 5,
@@ -30,6 +30,8 @@
 					/obj/item/weapon/reagent_containers/food/drinks/ice = 9,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/melonliquor = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/bluecuracao = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/redcandywine = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/nanatsunoumi = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/grenadine = 5)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/tea/green = 10,
@@ -54,6 +56,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 25,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 25,
 					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 25,
+					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/premade = 10,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 25,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 25)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/ice = 10,
@@ -64,7 +67,8 @@
 					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 3,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 3,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 5,
-					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 5,)
+					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/premade = 300)
 
 /obj/machinery/vending/coffee/postvend_effect()
 	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
@@ -287,6 +291,8 @@
 										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 8,
 										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 8,
 										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 8,
+										/obj/item/weapon/reagent_containers/food/drinks/cocamilk/small = 8,
+										/obj/item/weapon/reagent_containers/food/drinks/redmilk/small = 8,
 										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 8,
 										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,
 										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 5,
@@ -295,6 +301,8 @@
 										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 40,
 										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 40,
 										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 30,
+										/obj/item/weapon/reagent_containers/food/drinks/cocamilk/small = 120,
+										/obj/item/weapon/reagent_containers/food/drinks/redmilk/small = 240,
 										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 30,
 										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 30,
 										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 240,

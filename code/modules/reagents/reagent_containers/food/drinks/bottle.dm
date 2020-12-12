@@ -266,7 +266,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/melonliquor
 	name = "Emeraldine Melon Liquor"
 	desc = "A bottle of 46 proof Emeraldine Melon Liquor. Sweet and light."
-	icon_state = "alco-green" //Placeholder.
+	icon_state = "alco-green"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("melonliquor" = 100)
 	icon_state_empty = "alco-clear"
@@ -274,10 +274,26 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bluecuracao
 	name = "Miss Blue Curacao"
 	desc = "A fruity, exceptionally azure drink. Does not allow the imbiber to use the fifth magic."
-	icon_state = "alco-blue" //Placeholder.
+	icon_state = "alco-blue"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("bluecuracao" = 100)
 	icon_state_empty = "alco-clear"
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/redcandywine
+	name = "Mister Red Candy Liquor"
+	desc = "Made from astored sweets, candies and even flowers."
+	icon_state = "alco-red"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("redcandywine" = 100)
+	icon_state_empty = "alco-clear"
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/nanatsunoumi
+	name = "Nanatsunoumi"
+	desc = "A harsh salty alcohol that is from Japanese origin."
+	icon_state = "alco-white"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("nanatsunoumi" = 100)
+	icon_state_empty = "alco-white_empty"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/grenadine
 	name = "Briar Rose Grenadine Syrup"
