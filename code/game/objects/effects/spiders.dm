@@ -64,6 +64,7 @@
 	silk_baring = FALSE
 
 /obj/effect/spider/stickyweb/attackby(obj/item/I, mob/user)
+	..()
 	if(!istype(user.loc, /turf))
 		return
 	if(!silk_baring)
@@ -84,7 +85,6 @@
 			to_chat(user, SPAN_NOTICE("You bundle up a ball of spider silk."))
 			qdel(src)
 			return
-		return
 
 
 /obj/effect/spider/stickyweb/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
