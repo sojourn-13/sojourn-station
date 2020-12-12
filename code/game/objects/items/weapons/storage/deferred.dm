@@ -283,14 +283,14 @@
 	/obj/item/clothing/gloves/fingerless = 1,
 	/obj/item/weapon/storage/fancy/cigarettes = 1)
 
-/obj/item/weapon/storage/deferred/crate/northtech_uniform
-	name = "NorthTech uniform crate"
+/obj/item/weapon/storage/deferred/crate/iron_lock_security_uniform
+	name = "Iron Lock Security uniform crate"
 	desc = "A moderately sized crate full of clothes."
 	icon_state = "northtech_deferred"
 	initial_contents = list(
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/thick  = 1,
-	/obj/item/clothing/head/soft/northtech = 1,
-	/obj/item/clothing/suit/armor/vest/northtech = 1,
-	/obj/item/clothing/under/northtech = 1)
+	/obj/item/clothing/head/soft/iron_lock_security = 1,
+	/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
+	/obj/item/clothing/under/iron_lock_security = 1)
