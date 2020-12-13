@@ -284,7 +284,7 @@
 	desc = "Made from astored sweets, candies and even flowers."
 	icon_state = "alco-red"
 	center_of_mass = list("x"=16, "y"=6)
-	preloaded_reagents = list("redcandywine" = 100)
+	preloaded_reagents = list("redcandyliquor" = 100)
 	icon_state_empty = "alco-clear"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/nanatsunoumi
