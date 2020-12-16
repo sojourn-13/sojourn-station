@@ -52,6 +52,8 @@
 		/datum/design/autolathe/gun/luger,
 		//machinegun
 		/datum/design/autolathe/gun/dp,
+		//grenade launcher
+		/datum/design/autolathe/gun/grenade_launcher_china_lake,
 		//bolt gun
 		/datum/design/autolathe/gun/zatvor,
 		//STS
@@ -93,6 +95,9 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/grenade,
+		/datum/design/autolathe/ammo/grenade/frag,
+		/datum/design/autolathe/ammo/grenade/blast
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/luger
