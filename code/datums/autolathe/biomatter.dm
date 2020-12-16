@@ -13,7 +13,7 @@
 
 /datum/design/bioprinter/soap
 	name = "Soap"
-	build_path = /obj/item/weapon/soap/deluxe
+	build_path = /obj/item/weapon/soap/church
 
 //[NUTRIMENTS]
 /datum/design/bioprinter/ez

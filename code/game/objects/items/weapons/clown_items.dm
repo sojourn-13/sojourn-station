@@ -30,6 +30,7 @@
 	var/clean_speed = 50 //How fast we are at cleaning
 	var/reagent_storage = 20 //How many units we store
 	var/cleaning_reagent = "cleaner" //What do we use to clean?
+	var/bless_tile = FALSE
 
 /obj/item/weapon/soap/New()
 	..()
@@ -58,6 +59,9 @@
 			to_chat(user, "<span class='notice'>You scrub \the [target.name] clean.</span>")
 			var/turf/T = target
 			T.clean(src, user)
+			if(bless_tile)
+				T.holy = 1
+				return
 			return
 		else
 			to_chat(user, "<span class='notice'>You need to stand still to clean \the [target.name]!</span>")
@@ -108,12 +112,28 @@
 	reagent_storage = 25 //we can clean 5 more tiles before needing more water
 
 /obj/item/weapon/soap/deluxe/New()
-	desc = "A deluxe Absolute brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
+	desc = "A deluxe Lonestar brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
 	..()
+
+/obj/item/weapon/soap/church
+	desc = "A Absolute brand bar of soap. It has a faithful smell."
+	icon_state = "soapdchurchie"
+	clean_speed = 45
+	reagent_storage = 25 //we can clean 5 more tiles before needing more water
+	cleaning_reagent = "holywater"
+	bless_tile = TRUE
 
 /obj/item/weapon/soap/syndie
 	desc = "An untrustworthy bar of soap. Smells of fear."
 	icon_state = "soapsyndie"
+	clean_speed = 35 //Almost the same as a mop
+	reagent_storage = 30 //Same as mop
+	slip_power = 5
+
+/obj/item/weapon/soap/commie
+	name = "excelsior soap"
+	desc = "A bar of with the words of \"For one to be truely free from shackles one must be clean\". Smells of struggles of the working class."
+	icon_state = "soapcommie"
 	clean_speed = 35 //Almost the same as a mop
 	reagent_storage = 30 //Same as mop
 	slip_power = 5

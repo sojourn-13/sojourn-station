@@ -208,11 +208,6 @@
 /datum/reagent/adrenaline/withdrawal_act(mob/living/carbon/M)
 	M.adjustOxyLoss(15)
 
-/datum/reagent/water/holywater/touch_turf(turf/T)
-	if(volume >= 5)
-		T.holy = 1
-	return TRUE
-
 /datum/reagent/other/diethylamine
 	name = "Diethylamine"
 	id = "diethylamine"

@@ -98,6 +98,17 @@
 	nerve_system_accumulations = 0
 	reagent_type = "Water"
 
+/datum/reagent/water/holywater
+	name = "Holy Water"
+	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen with the blessings of faith."
+	id = "holywater"
+
+/datum/reagent/water/holywater/touch_turf(turf/T)
+	..()
+	if(volume >= 5)
+		T.holy = 1
+	return TRUE
+
 /datum/reagent/water/touch_turf(turf/simulated/T)
 	if(!istype(T))
 		return TRUE
