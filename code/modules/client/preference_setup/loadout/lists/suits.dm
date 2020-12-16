@@ -112,3 +112,11 @@
 	display_name = "sweater selection"
 	path = /obj/item/clothing/suit/sweater
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/suit/church_bimbo
+	display_name = "monomial belt"
+	path = /obj/item/clothing/suit/church_bimbo
+
+/datum/gear/suit/ivory
+	display_name = "ivory tabard"
+	path = /obj/item/clothing/suit/ivory
