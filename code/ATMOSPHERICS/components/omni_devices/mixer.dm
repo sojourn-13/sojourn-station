@@ -7,7 +7,7 @@
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
-	power_rating = 3700			//3700 W ~ 5 HP
+	power_rating = 700			//700 W ~ 1 HP
 
 	var/list/inputs = new()
 	var/datum/omni_port/output
