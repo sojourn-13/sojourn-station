@@ -149,7 +149,7 @@
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns = 2,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 2,
 					/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 3,
-					/obj/item/weapon/soap = 5,
+					/obj/item/weapon/soap/church = 5,
 					/obj/item/weapon/storage/wallet = 5,
 					/obj/item/weapon/storage/backpack/satchel = 5,
 					/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 5,
