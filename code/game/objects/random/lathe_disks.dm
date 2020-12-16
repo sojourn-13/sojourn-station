@@ -121,6 +121,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/protector = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china = 1.2,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/counselor = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/spiderrose = 4,

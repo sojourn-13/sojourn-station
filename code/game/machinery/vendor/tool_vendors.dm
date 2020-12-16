@@ -185,7 +185,11 @@
 					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork = 3,
 					 /obj/item/weapon/circuitboard/autolathe = 3,
 					 /obj/item/weapon/circuitboard/vending = 10)
-	contraband = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 3)
+	contraband = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 3,
+	/obj/item/weapon/gun/projectile/shotgun/pump/china = 2,
+	/obj/item/ammo_casing/grenade/frag = 3,
+	/obj/item/ammo_casing/grenade/blast = 4,
+	/obj/item/ammo_casing/grenade = 2,)
 	prices = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 50,
 				 /obj/item/weapon/storage/box/data_disk/basic = 100,
 	 			 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 400,

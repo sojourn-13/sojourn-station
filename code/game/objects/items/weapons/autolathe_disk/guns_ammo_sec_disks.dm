@@ -895,6 +895,19 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 		/datum/design/autolathe/gun/grenade_launcher_lenar, // "FS GL \"Lenar\""
 	)
 
+obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
+	disk_name = "SA GL \"China Lake\""
+	icon_state = "ironhammer"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/grenade_launcher_china_lake = 3,
+		/datum/design/autolathe/ammo/grenade = 1,
+		/datum/design/autolathe/ammo/grenade/frag = 2,
+		/datum/design/autolathe/ammo/grenade/emp = 2,
+		/datum/design/autolathe/ammo/grenade/blast = 3,
+		)
+
 // ENERGY ARMS
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercore
