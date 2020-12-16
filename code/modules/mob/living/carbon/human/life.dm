@@ -955,8 +955,10 @@
 
 /mob/living/carbon/human/handle_shock()
 	..()
-	if(status_flags & GODMODE)	return 0	//godmode
-	if(species && species.flags & NO_PAIN) return
+	if(status_flags & GODMODE)
+		return FALSE //godmode
+	if(species && species.flags & NO_PAIN)
+		return FALSE
 
 	var/health_threshold_softcrit = HEALTH_THRESHOLD_SOFTCRIT - stats.getStat(STAT_TGH)
 	if(stats.getPerk(PERK_BALLS_OF_PLASTEEL))
