@@ -250,3 +250,15 @@ obj/item/clothing/suit/fluff/kimono
 	body_parts_covered = UPPER_TORSO
 	cold_protection = UPPER_TORSO
 	min_cold_protection_temperature = T0C - 20
+
+/obj/item/clothing/suit/church_bimbo
+	name = "modesty belt"
+	desc = "Modesty doesn't have to mean chastity."
+	icon_state = "church_bimbo"
+	item_state = "church_bimbo"
+
+/obj/item/clothing/suit/ivory
+	name = "revealing ivory vestments"
+	desc = "Revealing ivory vestments."
+	icon_state = "white_bimbo"
+	item_state = "white_bimbo"
