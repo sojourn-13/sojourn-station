@@ -373,6 +373,8 @@
 
 	perks = list(/datum/perk/scuttlebug)
 
+	allow_modifications = FALSE
+
 	stat_modifiers = list(
 		STAT_ROB = 4,
 		STAT_TGH = 3,
@@ -394,6 +396,8 @@
 	restricted_depts = SECURITY | PROSPECTOR
 
 	perks = list(/datum/perk/ichor)
+
+	allow_modifications = FALSE
 
 	stat_modifiers = list(
 		STAT_ROB = -8,
@@ -417,6 +421,8 @@
 	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/smc, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic, /datum/job/premier, /datum/job/pg, /datum/job/chief_engineer, /datum/job/chaplain, /datum/job/merchant)
 
 	perks = list(/datum/perk/chitinarmor)
+
+	allow_modifications = FALSE
 
 	stat_modifiers = list(
 		STAT_ROB = 15,

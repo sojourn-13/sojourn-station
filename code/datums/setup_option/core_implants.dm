@@ -16,6 +16,7 @@
 		)
 	allowed_depts = CHURCH
 	allow_modifications = TRUE
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CINDAR)
 
 /datum/category_item/setup_option/core_implant/cruciform/tessellate
 	name = "Tessellate Cruciform"
