@@ -256,3 +256,20 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /obj/effect/step_trigger/ironcompound_to_abandonedfortress_2_A
 	id = "ironcompound_to_abandonedfortress_2_A"
 	id_target = "ironcompound_to_abandonedfortress_1_A"
+
+//Swamp caves to river forest
+/obj/effect/step_trigger/swampcaves_to_riverforest_1_A
+	id = "swampcaves_to_riverforest_1_A"
+	id_target = "swampcaves_to_riverforest_2_A"
+
+/obj/effect/step_trigger/swampcaves_to_riverforest_2_A
+	id = "swampcaves_to_riverforest_2_A"
+	id_target = "swampcaves_to_riverforest_1_A"
+
+/obj/effect/step_trigger/swampcaves_to_riverforest_1_B
+	id = "swampcaves_to_riverforest_1_B"
+	id_target = "swampcaves_to_riverforest_2_B"
+
+/obj/effect/step_trigger/swampcaves_to_riverforest_2_B
+	id = "swampcaves_to_riverforest_2_B"
+	id_target = "swampcaves_to_riverforest_1_B"

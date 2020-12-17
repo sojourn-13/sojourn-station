@@ -174,7 +174,7 @@
 	pixel_y = 0
 	speak_chance = 0.1
 	speak = list("UUUUUUH")
-	speak_emote = list("grunts","groans", "roars", "snorts")
+	speak_emote = list("grunts.","groans.", "roars!", "snorts.")
 	emote_hear = list("groan")
 	emote_see = list("shakes its head")
 	meat_amount = 10 //Infinite meat!
@@ -198,7 +198,7 @@
 	aggro_vision_range = 16
 	pixel_x = -16
 	move_to_delay = 2
-	speak_emote = list("chitters", "sharpens its claws")
+	speak_emote = list("chitters.", "sharpens its claws.")
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 	alpha = 30
 	faction = "stalker"
@@ -244,7 +244,7 @@
 	stop_automated_movement_when_pulled = 1
 	pixel_x = -16
 	move_to_delay = 4
-	speak_emote = list("looses a rumbling croak", "grumbles quietly")
+	speak_emote = list("looses a rumbling croak.", "grumbles quietly.")
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "pond"
 	mob_size =  3  // The same as Hivemind Tyrant
