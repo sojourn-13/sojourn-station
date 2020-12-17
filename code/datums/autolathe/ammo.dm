@@ -551,3 +551,21 @@
 /datum/design/autolathe/ammo/antim
 	name = "loose shells (.60-06)"
 	build_path = /obj/item/ammo_casing/antim/prespawned
+
+// Grenade Shells
+
+/datum/design/autolathe/ammo/grenade
+	name = "baton round"
+	build_path = /obj/item/ammo_casing/grenade
+
+/datum/design/autolathe/ammo/grenade/blast
+	name = "blast grenade shell"
+	build_path = /obj/item/ammo_casing/grenade/blast
+
+/datum/design/autolathe/ammo/grenade/frag
+	name = "fragmentation grenade shell"
+	build_path = /obj/item/ammo_casing/grenade/frag
+
+/datum/design/autolathe/ammo/grenade/emp
+	name = "emp grenade shell"
+	build_path = /obj/item/ammo_casing/grenade/emp

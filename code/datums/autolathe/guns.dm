@@ -319,6 +319,10 @@
 	name = "HS GL \"Lenar\""
 	build_path = /obj/item/weapon/gun/launcher/grenade/lenar
 
+/datum/design/autolathe/gun/grenade_launcher_china_lake
+	name = "SA GL \"China Lake\""
+	build_path = /obj/item/weapon/gun/projectile/shotgun/pump/china
+
 // E N E R G Y
 
 /datum/design/autolathe/gun/taser

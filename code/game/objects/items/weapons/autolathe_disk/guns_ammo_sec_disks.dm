@@ -52,6 +52,8 @@
 		/datum/design/autolathe/gun/luger,
 		//machinegun
 		/datum/design/autolathe/gun/dp,
+		//grenade launcher
+		/datum/design/autolathe/gun/grenade_launcher_china_lake,
 		//bolt gun
 		/datum/design/autolathe/gun/zatvor,
 		//STS
@@ -93,6 +95,9 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/grenade,
+		/datum/design/autolathe/ammo/grenade/frag,
+		/datum/design/autolathe/ammo/grenade/blast
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/luger
@@ -894,6 +899,19 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
 	designs = list(
 		/datum/design/autolathe/gun/grenade_launcher_lenar, // "FS GL \"Lenar\""
 	)
+
+obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
+	disk_name = "SA GL \"China Lake\""
+	icon_state = "ironhammer"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/grenade_launcher_china_lake = 3,
+		/datum/design/autolathe/ammo/grenade = 1,
+		/datum/design/autolathe/ammo/grenade/frag = 2,
+		/datum/design/autolathe/ammo/grenade/emp = 2,
+		/datum/design/autolathe/ammo/grenade/blast = 3,
+		)
 
 // ENERGY ARMS
 
