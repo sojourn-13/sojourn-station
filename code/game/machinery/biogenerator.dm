@@ -268,7 +268,10 @@
 				beaker = null
 				update_icon()
 		if("create")
-			create_product(href_list["item"], text2num(href_list["amount"]))
+			var/amount = text2num(params["amount"])
+			amount = clamp(amount, 1, 5)
+			if(!amount)
+				return
 		if("menu")
 			menustat = "menu"
 	updateUsrDialog()
