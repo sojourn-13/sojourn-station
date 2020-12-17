@@ -183,7 +183,7 @@
 
 									if (istype(M, /mob/living))
 										src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
-										fed++
+										fed += 1 //Takes 2 mobs before we can lay eggs
 
 									C = C || new(targetTurf)
 									M.forceMove(C)

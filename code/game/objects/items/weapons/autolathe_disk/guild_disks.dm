@@ -46,7 +46,10 @@
 		/datum/design/autolathe/tool/combi_driver,
 		/datum/design/autolathe/tool/armature_cutter,
 		/datum/design/autolathe/tool/weldingtool/advanced,
+		/datum/design/autolathe/tool/multitool/advanced,
 		/datum/design/autolathe/part/diamondblade,
+		/datum/design/autolathe/tool/ducttape/fiber,
+		/datum/design/autolathe/tool/ducttape/glue,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/parttoolpack
@@ -157,6 +160,9 @@
 		/datum/design/autolathe/tool/combi_driver,
 		/datum/design/autolathe/tool/armature_cutter,
 		/datum/design/autolathe/tool/weldingtool/advanced,
+		/datum/design/autolathe/tool/multitool/advanced,
+		/datum/design/autolathe/tool/ducttape/fiber,
+		/datum/design/autolathe/tool/ducttape/glue,
 		/datum/design/autolathe/tool/rcd_ammo,
 		// From Circuits
 		/datum/design/autolathe/circuit/airlockmodule,
@@ -228,6 +234,8 @@
 	/datum/design/research/item/part/smes_coil/weak = 0,
 	/datum/design/research/item/part/smes_coil/super_io = 2,
 	/datum/design/research/item/part/smes_coil/super_capacity = 2,
+	/datum/design/autolathe/tool/multitool = 5,
+	/datum/design/autolathe/tool/multitool/advanced = 10,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork/factory

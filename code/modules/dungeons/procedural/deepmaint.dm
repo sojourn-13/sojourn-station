@@ -234,7 +234,7 @@ var/global/list/big_deepmaint_room_templates = list()
 		generate.setNumRooms(25) // 25 smaller rooms
 		generate.setExtraPaths(5)
 		generate.setMinPathLength(0)
-		generate.setMaxPathLength(120)
+		generate.setMaxPathLength(60) //Small Rooms are 60 at most appart
 		generate.setMinLongPathLength(0)
 		generate.setLongPathChance(0)
 		generate.setPathEndChance(100)

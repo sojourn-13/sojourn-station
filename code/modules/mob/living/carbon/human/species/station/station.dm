@@ -26,7 +26,6 @@
 		STAT_VIG = 2
 	)
 
-
 	perks = list(/datum/perk/tenacity, /datum/perk/gutsandglory)
 
 	spawn_flags = CAN_JOIN
@@ -461,13 +460,14 @@
 		)
 
 	has_process = list(    // which required-organ checks are conducted.
-		BP_HEART =    /obj/item/organ/internal/heart,
-		BP_LUNGS =    /obj/item/organ/internal/lungs,
-		BP_LIVER =    /obj/item/organ/internal/liver,
-		BP_KIDNEYS =  /obj/item/organ/internal/kidneys/quad,
+		OP_HEART =    /obj/item/organ/internal/heart,
+		OP_LUNGS =    /obj/item/organ/internal/lungs,
+		OP_STOMACH =  /obj/item/organ/internal/stomach,
+		OP_LIVER =    /obj/item/organ/internal/liver,
+		OP_KIDNEYS =  /obj/item/organ/internal/kidneys/quad,
 		BP_BRAIN =    /obj/item/organ/internal/brain,
-		BP_APPENDIX = /obj/item/organ/internal/appendix,
-		BP_EYES =     /obj/item/organ/internal/eyes
+		OP_APPENDIX = /obj/item/organ/internal/appendix,
+		OP_EYES =     /obj/item/organ/internal/eyes
 		)
 
 	permitted_ears  = list("Frills, Aquatic",

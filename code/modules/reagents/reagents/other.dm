@@ -208,11 +208,6 @@
 /datum/reagent/adrenaline/withdrawal_act(mob/living/carbon/M)
 	M.adjustOxyLoss(15)
 
-/datum/reagent/water/holywater/touch_turf(turf/T)
-	if(volume >= 5)
-		T.holy = 1
-	return TRUE
-
 /datum/reagent/other/diethylamine
 	name = "Diethylamine"
 	id = "diethylamine"
@@ -439,14 +434,6 @@
 	overdose = REAGENTS_OVERDOSE
 	addiction_chance = 10
 	nerve_system_accumulations = 5
-
-/datum/reagent/other/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_ANTITOX, 0.3)
-	if(M.bloodstr)
-		for(var/current in M.bloodstr.reagent_list)
-			var/datum/reagent/toxin/pararein/R = current
-			if(istype(R))
-				R.metabolism = initial(R.metabolism) * 3
 
 /datum/reagent/other/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_ANTITOX, 0.3)

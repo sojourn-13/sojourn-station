@@ -145,6 +145,10 @@
 	display_name = "church clothes"
 	path = /obj/item/clothing/under/rank/church
 
+/datum/gear/uniform/mono_belt
+	display_name = "monomial belt"
+	path = /obj/item/clothing/under/monomial_belt
+
 /datum/gear/uniform/neon
 	display_name = "neon tracksuits, color presets"
 	path = /obj/item/clothing/under/neon

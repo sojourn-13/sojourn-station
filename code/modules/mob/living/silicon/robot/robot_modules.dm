@@ -6,14 +6,14 @@ var/global/list/robot_modules = list(
 	"Rescue" 					= /obj/item/weapon/robot_module/medical/rescue,
 	"Medical" 					= /obj/item/weapon/robot_module/medical/general,
 	"Security" 					= /obj/item/weapon/robot_module/security/general,
-	"Engineering"				= /obj/item/weapon/robot_module/engineering/general,
-	"Construction"				= /obj/item/weapon/robot_module/engineering/construction,
-	"Custodial" 				= /obj/item/weapon/robot_module/custodial,
-	"Soteria Medihound"			= /obj/item/weapon/robot_module/robot/medihound,
-	"Security K9 Unit"			= /obj/item/weapon/robot_module/robot/knine,
-	"Custodial Hound"			= /obj/item/weapon/robot_module/robot/scrubpup,
-	"Soteria Scihound"			= /obj/item/weapon/robot_module/robot/science,
-	"Guild Engihound"			= /obj/item/weapon/robot_module/robot/engiedog,
+	"Engineering"					= /obj/item/weapon/robot_module/engineering/general,
+	"Construction"					= /obj/item/weapon/robot_module/engineering/construction,
+	"Custodial" 					= /obj/item/weapon/robot_module/custodial,
+	"Soteria Medihound"				= /obj/item/weapon/robot_module/robot/medihound,
+	"Security K9 Unit"				= /obj/item/weapon/robot_module/robot/knine,
+	"Custodial Hound"				= /obj/item/weapon/robot_module/robot/scrubpup,
+	"Soteria Scihound"				= /obj/item/weapon/robot_module/robot/science,
+	"Guild Engihound"				= /obj/item/weapon/robot_module/robot/engiedog,
 	//"Combat" 					= /obj/item/weapon/robot_module/combat,
 	)
 
@@ -309,7 +309,7 @@ var/global/list/robot_modules = list(
 	name = "medical robot module"
 	health = 140 //Fragile
 	speed_factor = 0.8 //Kinda slow
-	power_efficiency = 0.6 //Very poor, shackled to a charger
+	power_efficiency = 0.7 //Very poor, shackled to a charger
 	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack)
 
 	stat_modifiers = list(
@@ -436,6 +436,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src) // Allows usage of inflatables. Since they are basically robotic alternative to EMTs, they should probably have them.
 	src.modules += new /obj/item/device/gps(src) // for coordinating with medical suit health sensors console
+	src.modules += new /obj/item/weapon/tool/scalpel(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
 	src.emag.name = "Polyacid spray"
@@ -525,6 +526,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/knife(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
 	src.modules += new /obj/item/weapon/gripper(src)
@@ -590,6 +592,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/knife(src)
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/scanner/gas(src)
 	src.modules += new /obj/item/taperoll/engineering(src)
@@ -686,7 +689,7 @@ var/global/list/robot_modules = list(
 
 	health = 300 //Very tanky!
 	speed_factor = 0.85 //Kinda slow
-	power_efficiency = 1.15 //Decent
+	power_efficiency = 1.55 //Decent, we are meant to be going out and learing spiders
 
 	desc = "Focused on keeping the peace and fighting off threats to the colony, the security module is a \
 	heavily armored, though lightly armed battle unit."
@@ -720,6 +723,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
+	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
 	//src.modules += new /obj/item/device/holowarrant(src)
 	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
 	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
@@ -777,6 +781,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src) // a hydroponist's bucket
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
+	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
 	src.emag.name = "Lube spray"
@@ -818,7 +823,7 @@ var/global/list/robot_modules = list(
 
 	health = 80 //Ultra fragile
 	speed_factor = 1.2 //Quick
-	power_efficiency = 0.8 //Inefficient
+	power_efficiency = 1 //Base line
 
 	desc = "A lightweight unit designed to serve humans directly, in housekeeping, cooking, bartending, \
 	 gardening, secreterial and similar personal service roles. Their work does not necessitate any \
@@ -930,6 +935,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gripper/miner(src)
 	src.modules += new /obj/item/device/scanner/mining(src)
 	src.modules += new /obj/item/device/t_scanner(src)
+	src.modules += new /obj/item/weapon/tool/hammer(src) //slag and ore
+	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
 	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 	..(R)
 
@@ -1076,6 +1083,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/hammer(src)
+	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/weapon/gripper(src)

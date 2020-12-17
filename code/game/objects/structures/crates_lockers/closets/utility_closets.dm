@@ -65,7 +65,9 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/weapon/tank/oxygen/red(src)
 	new /obj/item/weapon/extinguisher(src)
-	new /obj/item/clothing/head/firefighter(src)
+	new /obj/item/clothing/head/hardhat(src)
+	new /obj/item/inflatable/door(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
 
 /*
  * Tool Closet

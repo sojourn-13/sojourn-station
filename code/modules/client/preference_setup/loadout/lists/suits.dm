@@ -112,3 +112,7 @@
 	display_name = "sweater selection"
 	path = /obj/item/clothing/suit/sweater
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/suit/ivory
+	display_name = "ivory tabard"
+	path = /obj/item/clothing/suit/ivory

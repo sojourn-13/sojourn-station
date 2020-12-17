@@ -357,7 +357,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10
 	)
-	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING)
+	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING, QUALITY_PULSING)
 	I.prefix = "magnetic"
 
 /obj/item/weapon/tool_upgrade/refinement/ported_barrel
@@ -536,8 +536,8 @@
 /obj/item/weapon/tool_upgrade/augment/sanctifier
 	name = "sanctifier"
 	icon_state = "sanctifier"
-	desc = "Recommended for crusade against mutants, wild life, and heretics. Does this device actually make a better weapon or is it something else? Regardless, it makes one more thoughtful during labor."
-	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_STEEL = 2)
+	desc = "Recommended for crusades against mutants, wild life, and heretics. Does this device actually make a better weapon or is it something else? Regardless, it makes one more thoughtful during labor."
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 2)
 
 /obj/item/weapon/tool_upgrade/augment/sanctifier/New()
 	..()
@@ -547,7 +547,7 @@
 	UPGRADE_FORCE_MOD = 10,
 	UPGRADE_HEALTH_THRESHOLD = 10,
 	UPGRADE_DEGRADATION_MULT = 0.9,
-	UPGRADE_WORKSPEED = -5
+	UPGRADE_WORKSPEED = -0.5
 	)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 1.2,

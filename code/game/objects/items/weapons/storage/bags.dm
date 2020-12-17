@@ -304,7 +304,7 @@
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL
 	w_class = ITEM_SIZE_NORMAL
-	display_contents_with_number = TRUE
+	display_contents_with_number = FALSE
 	can_hold = list(/obj/item/weapon/reagent_containers/pill,
 		/obj/item/weapon/reagent_containers/glass/beaker,
 		/obj/item/weapon/reagent_containers/glass/bottle

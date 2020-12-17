@@ -28,6 +28,14 @@
 	icon_state = "mime"
 	item_state = "mime"
 
+/obj/item/clothing/mask/gnome
+	name = "tactical beard"
+	desc = "The fancy looking beard."
+	icon_state = "gnome_beard"
+	item_state = "gnome_beard"
+	flags_inv = HIDEFACE
+	body_parts_covered = 0
+
 /obj/item/clothing/mask/costume/job/clown
 	name = "red clown mask"
 	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask."

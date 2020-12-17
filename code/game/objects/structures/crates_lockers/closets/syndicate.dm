@@ -2,7 +2,9 @@
 	name = "armory closet"
 	desc = "Why is this here?"
 	icon_state = "syndicate"
-
+	req_access = list(access_syndicate) //Stop people getting good stuff without access
+	locked = TRUE
+	secure = TRUE
 
 /obj/structure/closet/syndicate/personal
 	desc = "It's a storage unit for operative gear."

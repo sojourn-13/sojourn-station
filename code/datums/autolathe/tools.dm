@@ -10,6 +10,10 @@
 	name = "multitool"
 	build_path = /obj/item/weapon/tool/multitool
 
+/datum/design/autolathe/tool/multitool/advanced
+	name = "advanced multitool"
+	build_path = /obj/item/weapon/tool/multitool/advanced
+
 /datum/design/autolathe/tool/weldertool
 	name = "welding tool"
 	build_path = /obj/item/weapon/tool/weldingtool
@@ -58,6 +62,14 @@
 /datum/design/autolathe/tool/ducttape
 	name = "roll of duct tape"
 	build_path = /obj/item/weapon/tool/tape_roll
+
+/datum/design/autolathe/tool/ducttape/fiber
+	name = "roll of fiber"
+	build_path = /obj/item/weapon/tool/tape_roll/fiber
+
+/datum/design/autolathe/tool/ducttape/glue
+	name = "glue bucket"
+	build_path = /obj/item/weapon/tool/tape_roll/glue
 
 /datum/design/autolathe/tool/armature_cutter
 	name = "armature cutter"

@@ -633,7 +633,6 @@
 	icon_state = "slmagnum_hv"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
 
-
 //////// RIFLE SPEEDLOADERS ////////
 
 /obj/item/ammo_magazine/speed_loader_rifle_75
@@ -673,7 +672,8 @@
 
 /obj/item/ammo_magazine/a75
 	name = "ammo magazine (.70 gyro)"
-	icon_state = "darts"
+	icon_state = "gyropistol"
+	icon = 'icons/obj/ammo_mags.dmi'
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	caliber = CAL_70
@@ -683,6 +683,7 @@
 
 /obj/item/ammo_magazine/a75/empty
 	initial_ammo = 0
+	icon_state = "gyropistol-0"
 
 ////////////Shotguns!////////////
 

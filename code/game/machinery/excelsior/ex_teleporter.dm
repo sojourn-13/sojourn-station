@@ -47,6 +47,7 @@ var/global/excelsior_last_draft = 0
 		/obj/item/weapon/stock_parts/micro_laser/excelsior = 50,
 		/obj/item/weapon/stock_parts/matter_bin/excelsior = 50,
 		/obj/item/clothing/under/excelsior = 10,
+		/obj/item/weapon/soap/syndie = 25,
 		/obj/item/weapon/circuitboard/excelsior_teleporter = 500,
 		/obj/item/weapon/circuitboard/excelsiorautolathe = 150,
 		/obj/item/weapon/circuitboard/excelsiorreconstructor = 150,

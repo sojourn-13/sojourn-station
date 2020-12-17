@@ -250,3 +250,9 @@ obj/item/clothing/suit/fluff/kimono
 	body_parts_covered = UPPER_TORSO
 	cold_protection = UPPER_TORSO
 	min_cold_protection_temperature = T0C - 20
+
+/obj/item/clothing/suit/ivory
+	name = "ivory tabard"
+	desc = "A somewhat revealing ivory tabard favored by older orders for ceremony, used often for funerals and coupled with dark under clothes."
+	icon_state = "white_tabard"
+	item_state = "white_tabard"

@@ -22,6 +22,7 @@
 				/obj/item/weapon/tool/hammer/powered_hammer = 2,
 				/obj/item/weapon/tool/wrench/big_wrench = 2,
 				/obj/item/weapon/tool/multitool = 4,
+				/obj/item/weapon/tool/multitool/advanced = 1,
 				/obj/item/weapon/tool/saw = 8,
 				/obj/item/weapon/tool/saw/circular = 2,
 				/obj/item/weapon/tool/saw/circular/advanced = 1,
@@ -104,6 +105,7 @@
 				/obj/item/weapon/tool/saw/hyper = 1,
 				/obj/item/weapon/tool/pickaxe/diamonddrill = 2,
 				/obj/item/weapon/tool/tape_roll/fiber = 2,
+				/obj/item/weapon/tool/multitool/advanced = 1,
 				//obj/item/weapon/tool/tape_roll/flextape = 1,
 				/obj/item/weapon/tool/fireaxe = 1))
 

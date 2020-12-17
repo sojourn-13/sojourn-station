@@ -1,5 +1,5 @@
 /obj/item/organ/internal/blood_vessel
-	name = "blood vessel"
+	name = "blood veins"
 	icon_state = "blood_vessel"
 	organ_efficiency = list(OP_BLOOD_VESSEL= 100)
 	price_tag = 100

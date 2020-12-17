@@ -166,6 +166,19 @@
 	new_desc = "A standard APLU exosuit painted entirely chrome. To Valhalla!"
 	new_icon = "aluminizer"
 
+/obj/item/device/kit/paint/ripley/ripley_zairjah
+	name = "\"Zairjah\" APLU customisation kit"
+	new_name = "\"Zairjah\" APLU"
+	new_desc = "A standard APLU exosuit painted gray, with a drill arm and opaque glass cockpit cover. The best of the best model for mining."
+	new_icon = "ripley_zairjah"
+
+/obj/item/device/kit/paint/ripley/combatripley
+	name = "\"Zarudo\" APLU customisation kit"
+	new_name = "\"Zarudo\" APLU"
+	new_desc = "A fancy APLU exosuit paint job consisting of blue chrome and glowing red lights, perfect for pretending to be a combat mech."
+	new_icon = "combatripley"
+
+//Clark models
 /obj/item/device/kit/paint/ripley/clark
 	name = "\"Clark\" APLU customisation kit"
 	new_name = "\"Clark\" APLU"
@@ -215,6 +228,12 @@
 	new_name = "Odysseus \"Malpractice\""
 	new_desc = "An Odysseus mech given a foreboding black and red paint job with spikes that menace."
 	new_icon = "murdysseus"
+
+/obj/item/device/kit/paint/odysseus/hermes
+	name = "\"Hermes\" Odysseus customisation kit"
+	new_name = "Odysseus \"Hermes\""
+	new_desc = "An Odysseus mech from an ancient design, clunky and age-worn in appearence, but still a classic in some places."
+	new_icon = "hermes"
 
 /obj/item/device/kit/paint/odysseus/mime
 	name = "\"Mask Golem\" Odysseus customisation kit"

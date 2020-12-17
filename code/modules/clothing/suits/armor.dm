@@ -71,10 +71,11 @@
 	)
 	price_tag = 150
 
-/obj/item/clothing/suit/armor/vest/northtech
+/obj/item/clothing/suit/armor/vest/iron_lock_security
 	name = "outdated ablative vest"
-	desc = "An outdated ablative vest with plates designed to absorb rather than reflect energy projectiles."
+	desc = "An \"Iron Lock Security\" ablative vest with plates designed to absorb rather than reflect energy projectiles. Produced by Greyson Positronic."
 	icon_state = "northtech"
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
 	armor = list(
 		melee = 15,
 		bullet = 15,

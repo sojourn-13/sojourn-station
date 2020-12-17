@@ -1,6 +1,6 @@
 /obj/item/weapon/storage/sheath
-	name = "sheath"
-	desc = "Made to store swords."
+	name = "absolutism sheath"
+	desc = "Made to store only the swords of the church."
 	icon = 'icons/obj/sheath.dmi'
 	icon_state = "sheath_0"
 	item_state = "sheath_0"
@@ -12,10 +12,11 @@
 	max_w_class = ITEM_SIZE_BULKY
 
 	can_hold = list(
-		/obj/item/weapon/tool/sword
+		/obj/item/weapon/tool/sword/nt
 		)
 	cant_hold = list(
-		/obj/item/weapon/tool/knife/dagger/nt
+		/obj/item/weapon/tool/knife/dagger/nt,
+		/obj/item/weapon/tool/sword/nt/halberd
 		)
 /obj/item/weapon/storage/sheath/attack_hand(mob/living/carbon/human/user)
 	if(contents.len && (src in user))

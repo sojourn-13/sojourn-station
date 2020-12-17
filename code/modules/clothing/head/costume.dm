@@ -155,6 +155,12 @@
 	flags_inv = BLOCKHEADHAIR
 	siemens_coefficient = 2.0
 
+/obj/item/clothing/head/collectable/gnome
+	name = "gnome hat"
+	desc = "Why do gnomes come out of our toilet? Maybe they're searching for money?"
+	icon_state = "gnome_hat"
+	body_parts_covered = 0
+
 /obj/item/clothing/head/costume/halloween/mummy
 	name = "pharaoh crown"
 	desc = "A dusty ornate crown of ancient striped design."

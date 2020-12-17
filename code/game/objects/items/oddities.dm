@@ -27,7 +27,7 @@
 		for(var/stat in oddity_stats)
 			oddity_stats[stat] = rand(1, oddity_stats[stat])
 		AddComponent(/datum/component/inspiration, oddity_stats)
-	if(!perk && prob(25))
+	if(!perk && prob(10))
 		perk = pick(subtypesof(/datum/perk/oddity))
 
 /obj/item/weapon/oddity/examine(user)
@@ -314,6 +314,60 @@
 		STAT_VIG = 6,
 	)
 
+/obj/item/weapon/oddity/common/disk
+	name = "broken design disk"
+	desc = "This disk is corrupted and completely unusable. It has a hand-drawn picture of some strange mechanism on it - looking at it for too long makes your head hurt."
+	icon_state = "disc"
+	oddity_stats = list(
+		STAT_MEC = 10,
+	)
+
+/obj/item/weapon/oddity/common/mirror
+	name = "cracked mirror"
+	desc = "A thousand mirror images stare back at you as you examine the trinket. What if you're the reflection, staring back out at the real world? At the real you?"
+	icon_state = "mirror"
+	oddity_stats = list(
+		STAT_COG = 4,
+		STAT_VIG = 4,
+	)
+
+/obj/item/weapon/oddity/common/lighter
+	name = "rusted lighter"
+	desc = "This zippo ligher has been rusted shut. It smells faintly of sulphur and blood."
+	icon_state = "syndicate_lighter"
+	oddity_stats = list(
+		STAT_TGH = 10,
+	)
+
+/obj/item/weapon/oddity/common/device
+	name = "odd device"
+	desc = "Something about this gadget both disturbs and interests you. It's manufacturer's name has been mostly smudged away, but you can see a strange mechanism as their logo."
+	icon_state = "device"
+	oddity_stats = list(
+		STAT_MEC = 8,
+		STAT_COG = 8,
+	)
+
+/obj/item/weapon/oddity/common/book_unholy
+	name = "unholy book"
+	desc = "The writings inside entail some strange ritual. Pages have been torn out or smudged to illegibility."
+	icon_state = "book_skull"
+	oddity_stats = list(
+		STAT_COG = 7,
+		STAT_MEC = 7,
+	)
+
+/obj/item/weapon/oddity/common/photo_crime
+	name = "crime scene photo"
+	desc = "It is unclear whether this is a victim of suicide or murder. His face is frozen in a look of agony and terror, and you shudder to think at what his last moments might have been."
+	icon_state = "photo_crime"
+	oddity_stats = list(
+		STAT_COG = 7,
+		STAT_VIG = 7,
+	)
+
+//Non-Spawn
+//Odditys that are event only or spawned in on map gen
 /obj/item/weapon/oddity/rare/golden_cup
 	name = "Plasma Tag Trophy"
 	desc = "A trophy earned during the monthly plasma tag competitions between various factions. The gold is fashioned from anomalous metal, giving it beneficial properties to carry with you. Hold your factions achievement high!"
