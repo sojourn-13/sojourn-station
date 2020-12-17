@@ -16,6 +16,7 @@
 	var/smoke_ready = 1
 	var/smoke_cooldown = 100
 	var/datum/effect/effect/system/smoke_spread/smoke_system = new
+	armor_level = MECHA_ARMOR_SUPERHEAVY
 	wreckage = /obj/effect/decal/mecha_wreckage/marauder
 	add_req_access = 0
 	internal_damage_threshold = 25
