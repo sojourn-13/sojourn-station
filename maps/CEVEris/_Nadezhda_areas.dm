@@ -184,6 +184,19 @@
 	icon_state = "erisblue"
 	requires_power = 1
 
+//This is put here because the floors are seperated by power needs, the reason being if not powering 1 floor lags the server to hell and back. -Kaz
+/area/nadezhda/dungeon/outside/prepper/vault/floor1
+
+/area/nadezhda/dungeon/outside/prepper/vault/floor2
+
+/area/nadezhda/dungeon/outside/prepper/vault/floor3
+
+/area/nadezhda/dungeon/outside/prepper/vault/floor4
+
+/area/nadezhda/dungeon/outside/prepper/vault/floor5
+
+/area/nadezhda/dungeon/outside/prepper/vault/entryway
+
 /area/nadezhda/dungeon/outside/monster_cave
 	name = "Monster Cave"
 	icon_state = "erisgreen"
@@ -229,7 +242,7 @@
 	icon_state = "erisblue"
 
 /area/nadezhda/outside/dcave
-	name = "Diyaab Cave"
+	name = "Tengolo Cave East"
 	icon_state = "erisgreen"
 
 /area/nadezhda/outside/fnest
@@ -241,7 +254,7 @@
 	icon_state = "erisgreen"
 
 /area/nadezhda/outside/bcave
-	name = "Bear Cave"
+	name = "Tengolo Cave West"
 	icon_state = "erisgreen"
 	dynamic_lighting = TRUE
 
@@ -261,6 +274,15 @@
 
 /area/nadezhda/outside/forest/beast_cave_dark
 	name = "Swamp Caves"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
+/area/nadezhda/outside/forest/river_forest_light
+	name = "River Forest"
+	icon_state = "forest"
+
+/area/nadezhda/outside/forest/river_forest_dark
+	name = "River Forest"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 

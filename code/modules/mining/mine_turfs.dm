@@ -8,6 +8,11 @@
 	opacity = 1
 	layer = BELOW_MOB_LAYER
 
+/turf/unsimulated/mineral/transition
+	name = "path elsewhere"
+	desc = "Looks like this leads to a whole new area."
+	icon_state = "floor_transition"
+
 /turf/unsimulated/mineral/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!istype(user.loc, /turf))

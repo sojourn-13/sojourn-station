@@ -249,6 +249,8 @@
 					/obj/item/device/kit/paint/ripley/syndieripley = 3,
 					/obj/item/device/kit/paint/ripley/titan = 3,
 					/obj/item/device/kit/paint/ripley/glass = 3,
+					/obj/item/device/kit/paint/ripley/ripley_zairjah = 3,
+					/obj/item/device/kit/paint/ripley/combatripley = 3,
 					/obj/item/device/kit/paint/ripley/orange_box = 3,
 					/obj/item/device/kit/paint/ripley/clark = 3,
 					/obj/item/device/kit/paint/ripley/clark_orange = 3,
@@ -258,6 +260,7 @@
 					/obj/item/device/kit/paint/odysseus/blue_racer = 3,
 					/obj/item/device/kit/paint/odysseus/yellow_racer = 3,
 					/obj/item/device/kit/paint/odysseus/murderody = 3,
+					/obj/item/device/kit/paint/odysseus/hermes = 3,
 					//Durand
 					/obj/item/device/kit/paint/durand = 3,
 					/obj/item/device/kit/paint/durand/seraph = 3,

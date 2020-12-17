@@ -2,6 +2,7 @@
 #include "_Beast_Cave.dmm"
 #include "_Greyson_Field_Office.dmm"
 #include "_Prepper_Bunker.dmm"
+#include "_River_Forest.dmm"
 
 /obj/map_data/nadezda_f
 	name = "Deep Forest"
@@ -34,3 +35,11 @@
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	height = 4
+
+/obj/map_data/river_forest
+	name = "River Forest"
+	is_player_level = TRUE
+	is_contact_level = FALSE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	height = 1
