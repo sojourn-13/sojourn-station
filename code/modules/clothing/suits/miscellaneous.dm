@@ -251,14 +251,8 @@ obj/item/clothing/suit/fluff/kimono
 	cold_protection = UPPER_TORSO
 	min_cold_protection_temperature = T0C - 20
 
-/obj/item/clothing/suit/church_bimbo
-	name = "monomial belt"
-	desc = "A simple black loin cloth with a dark gold trim favored by monomials for its monk-like aesthetic. For when you need to show off your muscles in the name of god."
-	icon_state = "church_bimbo"
-	item_state = "church_bimbo"
-
 /obj/item/clothing/suit/ivory
 	name = "ivory tabard"
 	desc = "A somewhat revealing ivory tabard favored by older orders for ceremony, used often for funerals and coupled with dark under clothes."
-	icon_state = "white_bimbo"
-	item_state = "white_bimbo"
+	icon_state = "white_tabard"
+	item_state = "white_tabard"

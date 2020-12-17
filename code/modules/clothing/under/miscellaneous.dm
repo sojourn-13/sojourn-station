@@ -75,6 +75,12 @@
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
 
+/obj/item/clothing/under/monomial_belt
+	name = "monomial belt"
+	desc = "A simple black loin cloth with a dark gold trim favored by monomials for its monk-like aesthetic. For when you need to show off your muscles in the name of god."
+	icon_state = "mono_belt"
+	item_state = "mono_belt"
+
 /*Antagonist Spawn Gear*/
 
 /obj/item/clothing/under/rank/mercenary
