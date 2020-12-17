@@ -272,6 +272,7 @@
 			amount = clamp(amount, 1, 5)
 			if(!amount)
 				return
+			create_product(amount)
 		if("menu")
 			menustat = "menu"
 	updateUsrDialog()
