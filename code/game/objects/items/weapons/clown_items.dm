@@ -117,7 +117,7 @@
 
 /obj/item/weapon/soap/church
 	desc = "A Absolute brand bar of soap. It has a faithful smell."
-	icon_state = "soapdchurchie"
+	icon_state = "soapchuchie"
 	clean_speed = 45
 	reagent_storage = 25 //we can clean 5 more tiles before needing more water
 	cleaning_reagent = "holywater"
