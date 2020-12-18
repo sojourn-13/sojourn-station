@@ -8,6 +8,7 @@
 	no_criminals = TRUE
 	products = list(/obj/item/device/flash = 2,
 	/obj/item/weapon/reagent_containers/spray/pepper = 2,
+	/obj/item/weapon/gun/projectile/automatic/slaught_o_matic = 30,
 	/obj/item/weapon/gun/projectile/olivaw = 2,
 	/obj/item/weapon/gun/projectile/giskard = 2,
 	/obj/item/weapon/gun/projectile/colt = 2,
@@ -55,6 +56,7 @@
 
 	prices = list(/obj/item/device/flash = 200,
 	/obj/item/weapon/reagent_containers/spray/pepper = 100,
+	/obj/item/weapon/gun/projectile/automatic/slaught_o_matic = 50,
 	/obj/item/weapon/gun/projectile/olivaw = 600,
 	/obj/item/weapon/gun/projectile/giskard = 500,
 	/obj/item/weapon/gun/projectile/colt = 900,
