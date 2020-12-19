@@ -570,7 +570,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	body_parts_covered = UPPER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|LEGS
 
-obj/item/clothing/suit/armor/hunter/bone
+/obj/item/clothing/suit/armor/hunter/bone
 	name = "hunter armor"
 	desc = "An lightly armored breastplate with bone-reinforcements of animal ribs and skulls accompanied by knee-guards from an unkown animal. \
 	supplied by the local hunting-lodge. It appears to be rather crudely self made. \ "
