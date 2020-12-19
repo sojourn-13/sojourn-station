@@ -587,7 +587,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	body_parts_covered = UPPER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|LEGS
 
-obj/item/clothing/suit/armor/hunter/reinforced
+/obj/item/clothing/suit/armor/hunter/reinforced
 	name = "hunter armor"
 	desc = "An heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
 	icon_state = "hunter_armor_reinforced"
