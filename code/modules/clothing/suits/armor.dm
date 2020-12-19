@@ -554,7 +554,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 
 /// Hunting Lodge Armor
 
-obj/item/clothing/suit/armor/hunter
+/obj/item/clothing/suit/armor/hunter
 	name = "hunter armor"
 	desc = "An lightly armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
 	icon_state = "hunter_armor"
