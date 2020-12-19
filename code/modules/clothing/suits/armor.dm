@@ -551,3 +551,70 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	src.icon_state = "reactiveoff"
 	src.item_state = "reactiveoff"
 	..()
+
+/// Hunting Lodge Armor
+
+obj/item/clothing/suit/armor/hunter
+	name = "hunter armor"
+	desc = "An lightly armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	icon_state = "hunter_armor"
+	item_state = "hunter_armor"
+	blood_overlay_type = "armor"
+	armor = list(
+		melee = 35,
+		bullet = 25,
+		energy = 25,
+		bomb = 10,
+		bio = 0,
+		rad = 0 )
+	body_parts_covered = UPPER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|LEGS
+
+obj/item/clothing/suit/armor/hunter/bone
+	name = "hunter armor"
+	desc = "An lightly armored breastplate with bone-reinforcements of animal ribs and skulls accompanied by knee-guards from an unkown animal. \
+	supplied by the local hunting-lodge. It appears to be rather crudely self made. \ "
+	icon_state = "hunter_armor_bone"
+	item_state = "hunter_armor_bone"
+	blood_overlay_type = "armor"
+	armor = list(
+		melee = 45,
+		bullet = 20,
+		energy = 20,
+		bomb = 10,
+		bio = 0,
+		rad = 0 )
+	body_parts_covered = UPPER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|LEGS
+
+obj/item/clothing/suit/armor/hunter/reinforced
+	name = "hunter armor"
+	desc = "An heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	icon_state = "hunter_armor_reinforced"
+	item_state = "hunter_armor_reinforced"
+	blood_overlay_type = "armor"
+	armor = list(
+		melee = 30,
+		bullet = 45,
+		energy = 25,
+		bomb = 10,
+		bio = 0,
+		rad = 0 )
+	body_parts_covered = UPPER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|LEGS
+
+obj/item/clothing/suit/armor/hunter/leather
+	name = "hunter armor"
+	desc = "An lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	icon_state = "hunter_armor_leather"
+	item_state = "hunter_armor_leather"
+	blood_overlay_type = "armor"
+	armor = list(
+		melee = 30,
+		bullet = 20,
+		energy = 45,
+		bomb = 10,
+		bio = 0,
+		rad = 0 )
+	body_parts_covered = UPPER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LEGS|ARMS
