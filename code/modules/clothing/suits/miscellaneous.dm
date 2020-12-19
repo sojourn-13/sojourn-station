@@ -256,3 +256,49 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A somewhat revealing ivory tabard favored by older orders for ceremony, used often for funerals and coupled with dark under clothes."
 	icon_state = "white_tabard"
 	item_state = "white_tabard"
+
+/obj/item/clothing/suit/punkvest
+	name = "punk vest"
+	desc = "A dark vest made out of light, breathable fabric. Feeling lucky, punk?"
+	icon_state = "punkvest"
+	item_state = "punkvest"
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO
+
+/obj/item/clothing/suit/storage/toggle/windbreaker
+	name = "windbreaker"
+	desc = "A dark blue jacket with black highlights. As an added bonus, it looks fairly resistant to stains and caustic chemicals."
+	icon_state = "windbreaker_open"
+	item_state = "windbreaker" //Is this even used for anything?
+	icon_open = "windbreaker_open"
+	icon_closed = "windbreaker"
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		energy = 0,
+		bomb = 0,
+		bio = 30,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/punkvest/cyber
+	name = "cyberpunk vest"
+	desc = "A red vest with golden streaks. It's made out of tough materials, and can protect fairly well against bullets. Wake the fuck up, Samurai."
+	icon_state = "cyberpunk"
+	item_state = "cyberpunk"
+	armor = list(
+		melee = 10,
+		bullet = 20,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
