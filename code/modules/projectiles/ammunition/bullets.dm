@@ -400,7 +400,7 @@
 	name = "blast grenade shell"
 	desc = "An explosive grenade shell, designed to be fired from grenade launchers."
 	icon_state = "blast"
-	projectile_type = /obj/item/projectile/bullet/grenade/
+	projectile_type = /obj/item/projectile/bullet/grenade
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 0.5)
 
 /obj/item/ammo_casing/grenade/frag
