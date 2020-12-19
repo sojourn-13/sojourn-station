@@ -446,13 +446,13 @@
 		playsound(loc, 'sound/voice/shriek1.ogg', 85, 1, 8, 8)
 		spawn_spider()
 		attack_animation(user)
-		visible_message(SPAN_WARNING("[src] bursts open!"))
+		visible_message(SPAN_WARNING("\The [src] bursts open!"))
 		qdel(src)
 
 /obj/structure/spider_nest/bullet_act(obj/item/projectile/P, def_zone)
 	playsound(loc, 'sound/voice/shriek1.ogg', 85, 1, 8, 8)
 	spawn_spider()
-	visible_message(SPAN_WARNING("[src] bursts open!"))
+	visible_message(SPAN_WARNING("\The [src] bursts open!"))
 	qdel(src)
 	..()
 
