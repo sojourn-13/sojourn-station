@@ -504,6 +504,7 @@
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	slowdown = 0.2
+	radiation_mod = 0
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
