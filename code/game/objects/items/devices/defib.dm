@@ -354,7 +354,7 @@
 		blood_volume *= 0.7
 	else if(heart.damage > 1)
 		blood_volume *= 0.8
-	return blood_volume < BLOOD_VOLUME_SURVIVE
+	return blood_volume < BLOOD_VOLUME_OKAY_MODIFIER
 
 /obj/item/weapon/shockpaddles/proc/check_charge(var/charge_amt)
 	return 0
