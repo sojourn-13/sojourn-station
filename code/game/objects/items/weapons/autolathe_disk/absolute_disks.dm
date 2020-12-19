@@ -15,8 +15,6 @@
 		/datum/design/bioprinter/ez,
 		/datum/design/bioprinter/l4z,
 		/datum/design/bioprinter/rh,
-		//datum/design/bioprinter/cardboard,
-
 		//general clothes
 		/datum/design/bioprinter/wallet,
 		/datum/design/bioprinter/botanic_leather,
@@ -29,35 +27,13 @@
 		/datum/design/bioprinter/belt/misc/champion,
 		//church clothes
 		/datum/design/bioprinter/belt/utility/neotheology,
-		/datum/design/bioprinter/belt/security/neotheology,
-		/datum/design/bioprinter/nt_clothes/acolyte_armor_helm,
-		/datum/design/bioprinter/nt_clothes/acolyte_armor,
-		/datum/design/bioprinter/nt_clothes/rosaria_armor_helm,
-		/datum/design/bioprinter/nt_clothes/rosaria_armor,
-		/datum/design/bioprinter/nt_clothes/agrolyte_armor_helm,
-		/datum/design/bioprinter/nt_clothes/agrolyte_armor,
-		/datum/design/bioprinter/nt_clothes/custodian_armor_helm,
-		/datum/design/bioprinter/nt_clothes/custodian_armor,
 		/datum/design/bioprinter/nt_clothes/sports_jacket,
 		/datum/design/bioprinter/nt_clothes/acolyte_uniform,
 		/datum/design/bioprinter/nt_clothes/sports_uniform,
 		/datum/design/bioprinter/nt_clothes/church_uniform,
-		//holsters
-		/datum/design/bioprinter/leather/holster,
-		/datum/design/bioprinter/leather/holster/armpit,
-		/datum/design/bioprinter/leather/holster/waist,
-		/datum/design/bioprinter/leather/holster/hip,
-		/datum/design/bioprinter/leather/holster/leg,
 		//medical
-		/datum/design/bioprinter/medical/bruise,
-		/datum/design/bioprinter/medical/splints,
-		/datum/design/bioprinter/medical/ointment,
-		/datum/design/bioprinter/medical/advanced/bruise,
-		/datum/design/bioprinter/medical/advanced/ointment,
+		/datum/design/autolathe/firstaid/nt,
 		//pouches
-		/datum/design/bioprinter/pouch/ammo,
-		/datum/design/bioprinter/pouch/baton_holster,
-		/datum/design/bioprinter/pouch/pistol_holster,
 		/datum/design/bioprinter/pouch/engineering_supply,
 		/datum/design/bioprinter/pouch/engineering_tools,
 		/datum/design/bioprinter/pouch/janitor_supply,
@@ -265,16 +241,38 @@
 	icon_state = "neotheology"
 	license = -1
 	designs = list(
+		//weapons
 		/datum/design/autolathe/sword/nt_sword,
 		/datum/design/autolathe/sword/nt_longsword,
 		/datum/design/autolathe/sword/nt_dagger,
 		/datum/design/autolathe/sword/nt_halberd,
 		/datum/design/autolathe/sword/nt_scourge,
 		/datum/design/autolathe/shield/nt_shield,
+		/datum/design/autolathe/gun/plasma/martyr,
+		//armor and clothes
+		/datum/design/bioprinter/nt_clothes/acolyte_armor_helm,
+		/datum/design/bioprinter/nt_clothes/acolyte_armor,
+		/datum/design/bioprinter/nt_clothes/rosaria_armor_helm,
+		/datum/design/bioprinter/nt_clothes/rosaria_armor,
+		/datum/design/bioprinter/nt_clothes/agrolyte_armor_helm,
+		/datum/design/bioprinter/nt_clothes/agrolyte_armor,
+		/datum/design/bioprinter/nt_clothes/custodian_armor_helm,
+		/datum/design/bioprinter/nt_clothes/custodian_armor,
+		/datum/design/bioprinter/belt/security/neotheology,
+		//holsters
 		/datum/design/bioprinter/storage/sheath,
+		/datum/design/bioprinter/leather/holster,
+		/datum/design/bioprinter/leather/holster/armpit,
+		/datum/design/bioprinter/leather/holster/waist,
+		/datum/design/bioprinter/leather/holster/hip,
+		/datum/design/bioprinter/leather/holster/leg,
+		//pouches
+		/datum/design/bioprinter/pouch/ammo,
+		/datum/design/bioprinter/pouch/baton_holster,
+		/datum/design/bioprinter/pouch/pistol_holster,
+		//mods
 		/datum/design/autolathe/tool_upgrade/sanctifier,
-		/datum/design/autolathe/gun_upgrade/barrel/excruciator,
-		/datum/design/autolathe/gun/plasma/martyr
+		/datum/design/autolathe/gun_upgrade/barrel/excruciator
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_basic_arms/public
@@ -286,9 +284,9 @@
 	icon_state = "neotheology"
 	license = 12
 	designs = list(
-		/datum/design/autolathe/grenade/nt_explosive = 3,
+		/datum/design/autolathe/grenade/nt_explosive,
 		/datum/design/autolathe/grenade/nt_flashbang,
-		/datum/design/autolathe/grenade/nt_frag = 2,
+		/datum/design/autolathe/grenade/nt_frag,
 		/datum/design/autolathe/grenade/nt_smokebomb
 	)
 

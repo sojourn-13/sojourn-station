@@ -14,8 +14,8 @@
 
 //You choose what stat can be increased, and a maximum value that will be added to this stat
 //The minimum is defined above. The value of change will be decided by random
+	var/random_stats = TRUE
 	var/list/oddity_stats
-
 	var/sanity_value = 1
 	var/datum/perk/oddity/perk
 
@@ -24,8 +24,9 @@
 	. = ..()
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
 	if(oddity_stats)
-		for(var/stat in oddity_stats)
-			oddity_stats[stat] = rand(1, oddity_stats[stat])
+		if(random_stats)
+			for(var/stat in oddity_stats)
+				oddity_stats[stat] = rand(1, oddity_stats[stat])
 		AddComponent(/datum/component/inspiration, oddity_stats)
 	if(!perk && prob(10))
 		perk = pick(subtypesof(/datum/perk/oddity))
@@ -438,3 +439,19 @@
 			GLOB.bluespace_gift -= 1
 			bluespace_entropy(50,T)
 			qdel(src)
+
+//NT Oddities
+/obj/item/weapon/oddity/nt
+	random_stats = FALSE
+
+/obj/item/weapon/oddity/nt/seal
+	name = "Cartographer's Seal"
+	desc = "A badge carrying the seal of the cartographer of the church of Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
+	icon_state = "nt_seal"
+	oddity_stats = list(
+		STAT_TGH = 12,
+		STAT_VIG = 12,
+		STAT_ROB = 8
+	)
+	price_tag = 8000
+	perk = /datum/perk/nt_oddity/holy_light
