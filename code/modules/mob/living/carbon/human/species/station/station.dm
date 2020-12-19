@@ -496,10 +496,14 @@
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "How did you find this? Report this to Kazkin if you're reading it."
-	num_alternate_languages = 2
+	num_alternate_languages = 3
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 110
+	siemens_coefficient = 2
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	slowdown = 0.2
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -514,6 +518,12 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/soteria_synthetic
 		)
 
+	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
 	stat_modifiers = list(
 		STAT_COG = 5,
 		STAT_MEC = 5
@@ -521,5 +531,5 @@
 
 	spawn_flags = CAN_JOIN
 
-/datum/species/human/get_bodytype()
+/datum/species/soteria_synthetic/get_bodytype()
 	return "Synthetic"
