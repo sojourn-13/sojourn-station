@@ -190,3 +190,25 @@
 
 /datum/organ_description/leg/right/slime
 	default_type = /obj/item/organ/external/unbreakable
+
+////SYNTHETIC////
+/datum/organ_description/chest/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/groin/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/head/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/arm/left/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/arm/right/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/leg/left/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/leg/right/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius

@@ -53,8 +53,23 @@
 	desc = "Custom tooled and held together by hope and duct tape."
 	force_icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
 	model = "ghetto"
+	armor = list(melee = 10, bullet = 10, energy = 10, bomb = -5, bio = 100, rad = 100)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
+	min_broken_damage = 30
+	min_malfunction_damage = 15
 
-//In game prostheses
+/obj/item/organ/external/robotic/junktech/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/junktech/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/junktech/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/junktech/r_leg
+	default_description = /datum/organ_description/leg/right
+
 /obj/item/organ/external/robotic/moebius
 	name = "\"Soteria\""
 	desc = "Reinforced purple and white prosthesis designed for space exploration and light combat."
@@ -80,6 +95,15 @@
 /obj/item/organ/external/robotic/moebius/groin
 	default_description = /datum/organ_description/groin
 
+/obj/item/organ/external/robotic/moebius/torso
+	name = "\"Soteria\" Torso"
+	default_description = /datum/organ_description/chest
+
+/obj/item/organ/external/robotic/moebius/head
+	name = "\"Soteria\" Head"
+	default_description = /datum/organ_description/head
+
+//In game prostheses
 /obj/item/organ/external/robotic/excelsior
 	name = "Excelsior"
 	desc = "Plasma reinforced black prothsesis designed for heavy combat."

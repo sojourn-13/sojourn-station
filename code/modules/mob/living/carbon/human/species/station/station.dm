@@ -487,3 +487,39 @@
 
 /datum/species/cindarite/get_bodytype()
 	return "Cindarite"
+
+/datum/species/soteria_synthetic
+	name = "Soteria Full Body Positronic"
+	name_plural = "synthetics"
+	default_form = FORM_SOTSYNTH
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	num_alternate_languages = 2
+	name_language = null // Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+
+	dark_color = "#ffffff"
+	light_color = "#000000"
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/soteria_synthetic,
+		BP_GROIN =  new /datum/organ_description/groin/soteria_synthetic,
+		BP_HEAD =   new /datum/organ_description/head/soteria_synthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/soteria_synthetic,
+		BP_R_ARM =  new /datum/organ_description/arm/right/soteria_synthetic,
+		BP_L_LEG =  new /datum/organ_description/leg/left/soteria_synthetic,
+		BP_R_LEG =  new /datum/organ_description/leg/right/soteria_synthetic
+		)
+
+	stat_modifiers = list(
+		STAT_COG = 5,
+		STAT_MEC = 5
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/human/get_bodytype()
+	return "Synthetic"

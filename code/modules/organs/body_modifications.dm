@@ -41,6 +41,7 @@ var/global/list/modifications_types = list(
 	var/nature = MODIFICATION_ORGANIC
 	var/hascolor = FALSE
 	var/allow_nt = TRUE
+	var/list/department_specific = ALL_DEPARTMENTS
 
 /datum/body_modification/proc/get_mob_icon(organ, body_build = "", color="#ffffff", gender = MALE, var/datum/species_form/species_form)	//Use in setup character only
 	return new/icon('icons/mob/human.dmi', "blank")
@@ -58,11 +59,21 @@ var/global/list/modifications_types = list(
 				to_chat(usr, "[name] can't be attached to [parent.name]")
 				return FALSE
 
-	if(!allow_nt)
-		if(H?.mind?.assigned_job.department == DEPARTMENT_CHURCH)
-			return FALSE
-		if(H?.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
-			return FALSE
+	if(department_specific.len)
+		if(H && H.mind)
+			var/department = H.mind.assigned_job.department
+			if(!department || !department_specific.Find(department))
+				to_chat(usr, "This body-mod does not match your department.")
+				return FALSE
+		else if(P)
+			var/datum/job/J = SSjob.GetJob(P.job_high)
+			if(!J || !department_specific.Find(J.department))
+				to_chat(usr, "This body-mod does not match your department.")
+				return FALSE
+
+	if(!allow_nt && H?.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+		to_chat(usr, "Your cruciform prevents you from using this modification.")
+		return FALSE
 
 	return TRUE
 
@@ -168,6 +179,13 @@ var/global/list/modifications_types = list(
 	id = "prosthesis_ghetto"
 	replace_limb = /obj/item/organ/external/robotic/junktech
 	icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
+
+/datum/body_modification/limb/prosthesis/moebius
+	id = "prosthesis_moebius"
+	replace_limb = /obj/item/organ/external/robotic/moebius
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+	department_specific = list(DEPARTMENT_MEDICAL, DEPARTMENT_SCIENCE)
+	icon = 'icons/mob/human_races/cyberlimbs/moebius.dmi'
 
 /datum/body_modification/limb/mutation/New()
 	short_name = "M: [name]"
