@@ -603,7 +603,7 @@ obj/item/clothing/suit/armor/hunter/reinforced
 	body_parts_covered = UPPER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|LEGS
 
-obj/item/clothing/suit/armor/hunter/leather
+/obj/item/clothing/suit/armor/hunter/leather
 	name = "hunter armor"
 	desc = "An lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
 	icon_state = "hunter_armor_leather"
