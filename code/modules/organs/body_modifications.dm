@@ -63,12 +63,16 @@ var/global/list/modifications_types = list(
 		if(H && H.mind)
 			var/department = H.mind.assigned_job.department
 			if(!department || !department_specific.Find(department))
-				to_chat(usr, "This body-mod does not match your department.")
+				to_chat(usr, "This body-mod does not match your chosen department.")
 				return FALSE
 		else if(P)
-			var/datum/job/J = SSjob.GetJob(P.job_high)
+			var/datum/job/J
+			if(ASSISTANT in P.job_low)
+				J = SSjob.GetJob(ASSISTANT)
+			else
+				J = SSjob.GetJob(P.job_high)
 			if(!J || !department_specific.Find(J.department))
-				to_chat(usr, "This body-mod does not match your department.")
+				to_chat(usr, "This body-mod does not match your highest-priority department.")
 				return FALSE
 
 	if(!allow_nt && H?.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
