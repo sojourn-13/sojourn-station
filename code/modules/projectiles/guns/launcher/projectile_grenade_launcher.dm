@@ -21,7 +21,7 @@
 	recoil_buildup = 20
 	twohanded = TRUE
 
-/obj/item/weapon/gun/launcher/grenade/handle_post_fire(mob/user)
+/obj/item/weapon/gun/projectile/shotgun/pump/china/handle_post_fire(mob/user)
 	log_and_message_admins("fired a grenade ([chambered.name]) from a grenade launcher ([src.name]).")
 	user.attack_log += "\[[time_stamp()]\] <font color='red'> fired a grenade ([chambered.name]) from a grenade launcher ([src.name])</font>"
 	chambered = null
