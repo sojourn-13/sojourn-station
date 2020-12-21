@@ -340,6 +340,32 @@
 	nutriment_amt = 9
 	nutriment_desc = list("nutriment" = 7, "protein" = 8)
 
+/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack
+	name = "pistachios pack"
+	desc = "A packet of pistachios with added salt. A somewhat healthy light snack."
+	icon_state = "pistachios_pack"
+	trash = /obj/item/trash/pistachios
+	nutriment_amt = 4
+	nutriment_desc = list("pistachios" = 3, "protein" = 2, "sodiumchloride" = 2)
+	preloaded_reagents = list("nutriment" = 1, "sodiumchloride" = 6)
+
+/obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds
+	name = "sunflower fried seed pack"
+	desc = "Bag of sunflower seeds that have been fried and salted for people that like to chew their food for way to long."
+	icon_state = "proteinbar"
+	trash = /obj/item/trash/raisins
+	nutriment_amt = 3
+	nutriment_desc = list("nutriment" = 2, "protein" = 1)
+
+/obj/item/weapon/reagent_containers/food/snacks/candy/energybar
+	name = "energy bar"
+	desc = "A chewy candy bar that has many warnings about its surgar contents for quick energy."
+	icon_state = "proteinbar"
+	trash = /obj/item/trash/energybar
+	nutriment_amt = 1
+	nutriment_desc = list("nutriment" = 1, "sugar" = 29)
+	preloaded_reagents = list("nutriment" = 1, "sugar" = 29)
+
 /obj/item/weapon/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
 	desc = "It's a handful of candy corn. Cannot be stored in a detective's hat, alas."
@@ -361,6 +387,17 @@
 	center_of_mass = list("x"=15, "y"=15)
 	nutriment_amt = 3
 	nutriment_desc = list("salt" = 1, "chips" = 2)
+
+/obj/item/weapon/reagent_containers/food/snacks/gamerchips
+	name = "boritos crips packet"
+	desc = "An branded packet of crisps. Its marketing for people that like to play competitive arcade games."
+	icon_state = "boritos"
+	trash = /obj/item/trash/gamerchips
+	filling_color = "#E8C31E"
+	bitesize = 1
+	center_of_mass = list("x"=15, "y"=15)
+	nutriment_amt = 3
+	nutriment_desc = list("cool ranch" = 2, "corn" = 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/cookie
 	name = "cookie"

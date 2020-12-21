@@ -36,6 +36,11 @@
 	desc = "An empty packet of chips. Trash."
 	icon_state = "chips"
 
+/obj/item/trash/gamerchips
+	name = "boritos crips packet"
+	desc = "An empty packet of boritos crips. Trash."
+	icon_state = "boritos"
+
 /obj/item/trash/popcorn
 	name = "popcorn"
 	desc = "An empty packet of popcorn. Trash."
@@ -115,3 +120,8 @@
 /obj/item/trash/mre_can
 	name = "ration can"
 	icon_state = "ration_can_trash"
+
+/obj/item/trash/energybar
+	name = "energy candy"
+	desc = "An empty packet of energy candy. Trash."
+	icon_state= "energybar"
