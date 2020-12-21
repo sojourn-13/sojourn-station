@@ -352,15 +352,15 @@
 /obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds
 	name = "sunflower fried seed pack"
 	desc = "Bag of sunflower seeds that have been fried and salted for people that like to chew their food for way to long."
-	icon_state = "proteinbar"
-	trash = /obj/item/trash/raisins
+	icon_state = "semki_pack"
+	trash = /obj/item/trash/semki
 	nutriment_amt = 3
 	nutriment_desc = list("nutriment" = 2, "protein" = 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/energybar
 	name = "energy bar"
 	desc = "A chewy candy bar that has many warnings about its surgar contents for quick energy."
-	icon_state = "proteinbar"
+	icon_state = "energybar"
 	trash = /obj/item/trash/energybar
 	nutriment_amt = 1
 	nutriment_desc = list("nutriment" = 1, "sugar" = 29)
@@ -2193,6 +2193,17 @@
 	bitesize = 2
 	nutriment_amt = 3
 	preloaded_reagents = list("hyperzine" = 2, "paracetamol" = 3)
+
+/obj/item/weapon/reagent_containers/food/snacks/canned_peaches
+	name = "canned peaches"
+	desc = "A can of peaches."
+	icon_state = "peachcan"
+	trash = /obj/item/trash/peachcan
+	filling_color = "#DEDEAB"
+	nutriment_desc = list("acrid peaches" = 2)
+	bitesize = 2
+	nutriment_amt = 3
+	preloaded_reagents = list("sugar" = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/mre_cracker
 	name = "enriched cracker"

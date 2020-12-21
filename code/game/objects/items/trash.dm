@@ -125,3 +125,8 @@
 	name = "energy candy"
 	desc = "An empty packet of energy candy. Trash."
 	icon_state= "energybar"
+
+/obj/item/trash/peachcan
+	name = "peach can"
+	desc = "An empty can of peaches. Trash."
+	icon_state= "peachcan"
