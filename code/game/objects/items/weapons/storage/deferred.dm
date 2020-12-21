@@ -168,7 +168,7 @@
 	/obj/item/weapon/grenade/frag = 14,
 	/obj/item/weapon/grenade/empgrenade/low_yield = 4,
 	/obj/item/weapon/grenade/smokebomb = 8,
-	/obj/item/weapon/gun/launcher/grenade/lenar = 1)
+	/obj/item/weapon/gun/projectile/grenade/lenar = 1)
 
 /obj/item/weapon/storage/deferred/crate/antiarmor //change to demolitions, won't do now because will affect map
 	name = "demolitions crate"
