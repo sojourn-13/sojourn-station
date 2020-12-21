@@ -9,6 +9,7 @@
 	icon_state = "brain2"
 	force = 1.0
 	w_class = ITEM_SIZE_SMALL
+	specific_organ_size = 2
 	throwforce = 1.0
 	throw_speed = 3
 	throw_range = 5
@@ -16,6 +17,10 @@
 	origin_tech = list(TECH_BIO = 3)
 	attack_verb = list("attacked", "slapped", "whacked")
 	price_tag = 8000
+	blood_req = 8
+	max_blood_storage = 80
+	oxygen_req = 8
+	nutriment_req = 6
 	var/mob/living/carbon/brain/brainmob = null
 
 /obj/item/organ/internal/brain/xeno

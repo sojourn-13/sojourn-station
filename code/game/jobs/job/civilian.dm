@@ -18,6 +18,8 @@
 		STAT_VIG = 15,
 	)
 
+	perks = list(/datum/perk/market_prof)
+
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
 	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment.<br>\
 	Working with the Chef and Gardener, you make the big decisions. Run your business well - perhaps seek to maximise profits.<br>\
@@ -51,6 +53,8 @@
 		STAT_TGH = 10,
 		STAT_VIG = 5,
 	)
+
+	perks = list(/datum/perk/market_prof)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
 	description = "The Chef works in the kitchen, ensuring that the colony remains well-fed and energetic.<br>\
@@ -90,6 +94,8 @@
 		STAT_ROB = 10,
 	)
 
+	perks = list(/datum/perk/market_prof)
+
 	description = "The Gardener toils in hydroponics - utilising seeds, tools, and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
 	You are the go-to expert for flora destruction - use shovels and hatchets, or seek more advanced equipment like flamethrowers and chainsaws.<br>\
@@ -123,6 +129,8 @@
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
 
+	perks = list(/datum/perk/market_prof)
+
 	description = "The Actor serves as a versatile performance artist here to entertain the colony.<br>\
 	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
 	The CEO pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations."
@@ -152,6 +160,8 @@
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
+	perks = list(/datum/perk/market_prof)
+
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_BIO = 10,
@@ -171,4 +181,3 @@
 	name = "Janitor"
 	icon_state = "player-black"
 	join_tag = /datum/job/janitor
-

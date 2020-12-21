@@ -1,15 +1,15 @@
 /obj/item/organ/internal/cell
 	name = "microbattery"
-	desc = "A small, powerful cell for use in fully prosthetic bodies."
-	icon = 'icons/obj/power.dmi'
-	icon_state = "scell"
+	desc = "A small, powerful cell for use in fully prosthetic bodies. Takes a medium cell and normally comes with a nuclear self charging cell."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "cortical_stack"
 	parent_organ_base = BP_CHEST
 	nature = MODIFICATION_SILICON
 	vital = TRUE
 	var/open
-	var/obj/item/weapon/cell/medium/cell = /obj/item/weapon/cell/medium
+	var/obj/item/weapon/cell/medium/cell = /obj/item/weapon/cell/medium/moebius/nuclear
 	//at 0.8 completely depleted after 60ish minutes of constant walking or 130 minutes of standing still
-	var/servo_cost = 0.8 // this will probably require tweaking
+	var/servo_cost = 0.5 // this will probably require tweaking
 
 /obj/item/organ/internal/cell/Initialize(mapload, ...)
 	. = ..()
