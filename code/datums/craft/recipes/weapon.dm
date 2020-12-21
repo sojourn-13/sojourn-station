@@ -161,6 +161,18 @@
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
 	)
 
+/datum/craft_recipe/weapon/scrap_mine_trap
+	name = "improvised land mine trap"
+	result = /obj/item/weapon/mine/improvised
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/weapon/beartrap/makeshift, 1, "time" = 120),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(/obj/item/weapon/grenade/frag, 1, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10)
+	)
+
 /datum/craft_recipe/weapon/knife
 	name = "kitchen knife"
 	result = /obj/item/weapon/tool/knife
