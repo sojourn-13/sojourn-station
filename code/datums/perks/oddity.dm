@@ -171,3 +171,38 @@
 	holder.stats.changeStat(STAT_TGH, -5)
 	holder.stats.changeStat(STAT_VIG, -5)
 	..()
+
+///////////////////////////////////////
+//////// NT ODDITYS PERKS /////////////
+///////////////////////////////////////
+
+/datum/perk/nt_oddity
+	gain_text = "The Absolute chose you to expand his will."
+
+/datum/perk/nt_oddity/holy_light
+	name = "Holy Light"
+	desc = "You have been touched by the divine. You now provide a weak healing aura, healing both brute and burn damage to any cruciform bearers nearby as well as yourself."
+	icon_state = "third_eye"  //https://game-icons.net/1x1/lorc/third-eye.html
+	var/healing_power = 0.1
+	var/cooldown = 1 SECONDS // Just to make sure that perk don't go berserk.
+	var/initial_time
+
+/datum/perk/nt_oddity/holy_light/assign(mob/living/carbon/human/H)
+	..()
+	initial_time = world.time
+
+/datum/perk/nt_oddity/holy_light/on_process()
+	if(!..())
+		return
+	if(!holder.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+		return
+	if(world.time < initial_time + cooldown)
+		return
+	initial_time = world.time
+	for(var/mob/living/L in viewers(holder, 7))
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			if(H.stat == DEAD || !(H.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)))
+				continue
+			H.adjustBruteLoss(-healing_power)
+			H.adjustFireLoss(-healing_power)

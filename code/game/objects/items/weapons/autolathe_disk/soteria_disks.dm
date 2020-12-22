@@ -85,7 +85,7 @@
 	license = -1
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/rped
-	disk_name = "Soteria RnD Stock Parts Desgins"
+	disk_name = "Soteria RnD Stock Parts Designs"
 	icon_state = "moebius"
 	license = 20
 	designs = list(

@@ -101,7 +101,7 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	//pistols
 	if(prob(40)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
-		new /obj/item/weapon/gun/projectile/handmade_pistol(src)
+		new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src)
 	else if(prob(40))
 		new /obj/item/weapon/gun/projectile/revolver/detective(src)
 		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
@@ -179,7 +179,7 @@
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 	//pistols
 	if(prob(40)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
-		new /obj/item/weapon/gun/projectile/handmade_pistol(src)
+		new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src)
 	else if(prob(40))
 		new /obj/item/weapon/gun/projectile/revolver/detective(src)
 		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
@@ -293,7 +293,7 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	//pistols
 	if(prob(5)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
-		new /obj/item/weapon/gun/projectile/handmade_pistol(src)
+		new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src)
 	else if(prob(20))
 		new /obj/item/weapon/gun/projectile/revolver/detective(src)
 		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)

@@ -226,6 +226,7 @@
 			var/obj/item/weapon/oddity/OD = O
 			if(OD.perk)
 				owner.stats.addPerk(OD.perk)
+				OD.perk = null
 
 /datum/sanity/proc/onDamage(amount)
 	changeLevel(-SANITY_DAMAGE_HURT(amount, owner.stats.getStat(STAT_VIG)))

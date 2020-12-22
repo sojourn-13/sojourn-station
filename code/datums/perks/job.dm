@@ -187,7 +187,7 @@
 
 /datum/perk/chaingun_smoker
 	name = "Unclean Living"
-	desc = "The bad conditions of your birth have led you to thrive in toxic enviroments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and less sick when smoking."
+	desc = "The bad conditions of your birth have led you to thrive in toxic enviroments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and slowly heal toxin damage when smoking."
 	//icon_state = "cigarette" // https://game-icons.net
 
 /datum/perk/nightcrawler
@@ -197,12 +197,12 @@
 
 /datum/perk/fast_fingers
 	name = "Fast fingers"
-	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary!"
+	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary! Any time you pickpocket someone observers have a much harder time noticing."
 	//icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
 
 /datum/perk/quiet_as_mouse
 	name = "Quiet as a mouse"
-	desc = "Being deadly, easy. Silent? Even easier now."
+	desc = "Being deadly, easy. Silent? Even easier now. You generate less noise than others."
 	//icon_state = "footsteps" // https://game-icons.net
 
 /datum/perk/quiet_as_mouse/assign(mob/living/carbon/human/H)
@@ -233,7 +233,7 @@
 
 /datum/perk/sommelier
 	name = "Sommelier"
-	desc = "You know how to handle even strongest alcohol in the universe."
+	desc = "You know how to handle even strongest alcohol in the universe and doing so improves your toughness."
 	//icon_state = "inspiration"
 
 /datum/perk/rezsickness
@@ -334,3 +334,11 @@
 /datum/perk/stalker
 	name = "Anomaly Hunter"
 	desc = "Special training from senior prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examing an oddity that has become an anomaly you can tell what its greater boon or curse may be."
+
+/datum/perk/market_prof
+	name = "Market Professional"
+	desc = "Just by looking at the item you can know how much it cost."
+
+/datum/perk/surgical_master
+	name = "Surgical Master"
+	desc = "When it comes to surgery most in your field are experts, while you may not know the more advanced medical procedures you can perform surgery with ease."

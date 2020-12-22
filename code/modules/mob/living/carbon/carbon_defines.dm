@@ -19,6 +19,11 @@
 	//Active emote/pose
 	var/pose = null
 
+	//Values from all base organs should add up to this
+	var/total_blood_req = 40
+	var/total_oxygen_req = 50
+	var/total_nutriment_req = DEFAULT_HUNGER_FACTOR
+
 	var/datum/reagents/metabolism/bloodstr = null
 	var/datum/reagents/metabolism/ingested = null
 	var/datum/reagents/metabolism/touching = null

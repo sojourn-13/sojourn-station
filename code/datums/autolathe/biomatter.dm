@@ -245,6 +245,10 @@
 	materials = list("biomatter" = 30)
 	build_path = /obj/item/organ/internal/lungs/long
 
+/datum/design/autolathe/firstaid/nt
+	name = "Absolutism Medkit"
+	build_path = /obj/item/weapon/storage/firstaid/nt
+
 //[/MED]
 
 /datum/design/bioprinter/bioimplant
