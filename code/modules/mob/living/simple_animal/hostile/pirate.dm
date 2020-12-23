@@ -47,8 +47,10 @@
 	..()
 	if(weapon1)
 		new weapon1 (src.loc)
+		weapon1 = null
 	if(weapon2)
 		new weapon2 (src.loc)
+		weapon2 = null
 
 /mob/living/simple_animal/hostile/voidwolf/fieldtech
 	name = "Void Wolf Field Tech"
