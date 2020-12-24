@@ -122,7 +122,7 @@
 							stop_automated_movement = 0
 				else
 					//third, lay an egg cluster there
-					if((fed > 0) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
+					if((fed > 1) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
 						busy = LAYING_EGGS
 						src.visible_message(SPAN_NOTICE("\The [src] begins to lay a cluster of eggs."))
 						stop_automated_movement = 1
