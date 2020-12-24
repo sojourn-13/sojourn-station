@@ -517,7 +517,7 @@
 	singular_name = "Absolutism Bruisepack"
 	desc = "An advanced bruisepack for severe injuries. Created by will of God."
 	icon_state = "nt_traumakit"
-	heal_brute = 10
+	heal_brute = 8
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 20)
 	origin_tech = list(TECH_BIO = 4)
@@ -531,7 +531,7 @@
 	singular_name = "Absolutism Burnpack"
 	desc = "An advanced treatment kit for severe burns. Created by will of God."
 	icon_state = "nt_burnkit"
-	heal_brute = 10
+	heal_brute = 8
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 20)
 	origin_tech = list(TECH_BIO = 4)
