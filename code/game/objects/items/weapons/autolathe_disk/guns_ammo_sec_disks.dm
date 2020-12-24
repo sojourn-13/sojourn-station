@@ -97,7 +97,8 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/grenade,
 		/datum/design/autolathe/ammo/grenade/frag,
-		/datum/design/autolathe/ammo/grenade/blast
+		/datum/design/autolathe/ammo/grenade/blast,
+		/datum/design/autolathe/ammo/grenade/flash
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/luger
@@ -911,6 +912,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/ammo/grenade/frag = 2,
 		/datum/design/autolathe/ammo/grenade/emp = 2,
 		/datum/design/autolathe/ammo/grenade/blast = 3,
+		/datum/design/autolathe/ammo/grenade/flash = 2
 		)
 
 // ENERGY ARMS

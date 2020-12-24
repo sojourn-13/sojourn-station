@@ -784,7 +784,7 @@
 "pd" = (/obj/machinery/door/airlock/multi_tile/glass,/turf/simulated/floor/tiled/techmaint_cargo,/area/nadezhda/dungeon/outside/zoo)
 "pe" = (/obj/item/stack/rods,/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/zoo)
 "pf" = (/obj/item/stack/rods,/obj/item/weapon/material/shard,/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/zoo)
-"pg" = (/obj/structure/table/plasmaglass,/obj/machinery/light,/obj/item/weapon/gun/projectile/grenade/lenar,/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
+"pg" = (/obj/structure/table/plasmaglass,/obj/machinery/light,/obj/item/weapon/gun/launcher/grenade/lenar,/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
 "ph" = (/obj/structure/flora/small/rock2,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/dungeon/outside/zoo)
 "pi" = (/obj/item/weapon/material/shard,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/dungeon/outside/zoo)
 "pj" = (/obj/random/junk/nondense,/turf/simulated/floor/beach/sand/desert,/area/nadezhda/dungeon/outside/zoo)

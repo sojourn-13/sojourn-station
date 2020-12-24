@@ -12,7 +12,7 @@
 "aal" = (/turf/simulated/floor/plating/under,/area/nadezhda/maintenance{name = "Surface Maintenance"})
 "aam" = (/turf/simulated/wall/r_wall,/area/nadezhda/command/smc/quarters)
 "aan" = (/turf/simulated/wall,/area/nadezhda/maintenance{name = "Surface Maintenance"})
-"aao" = (/obj/structure/table/rack,/obj/item/weapon/gun/launcher/grenade,/obj/machinery/door/window/southright,/obj/structure/window/reinforced{dir = 4; pixel_x = 0},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/security/armory)
+"aao" = (/obj/structure/table/rack,/obj/item/weapon/gun/projectile/grenade,/obj/machinery/door/window/southright,/obj/structure/window/reinforced{dir = 4; pixel_x = 0},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/security/armory)
 "aap" = (/obj/structure/table/rack,/obj/item/weapon/gun/projectile/shotgun/pump/gladstone{pixel_y = 4},/obj/item/weapon/gun/projectile/shotgun/bull,/obj/machinery/door/window/southleft,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/security/armory)
 "aaq" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/techmaint,/area/nadezhda/maintenance{name = "Surface Maintenance"})
 "aar" = (/turf/simulated/wall/r_wall,/area/nadezhda/hallway/side/f2section1)

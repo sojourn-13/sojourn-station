@@ -569,3 +569,7 @@
 /datum/design/autolathe/ammo/grenade/emp
 	name = "emp grenade shell"
 	build_path = /obj/item/ammo_casing/grenade/emp
+
+/datum/design/autolathe/ammo/grenade/flash
+	name= "flash grenade shell"
+	build_path = /obj/item/ammo_casing/grenade/flash
