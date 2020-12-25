@@ -139,7 +139,7 @@
 	icon_dead = "megacarp_dead"
 	maxHealth = 230
 	health = 230
-	attack_same = 1
+	//attack_same = 1 We no longer attack are yonger less rare of breeds
 	speed = 1
 	meat_amount = 10
 	melee_damage_lower = 15
