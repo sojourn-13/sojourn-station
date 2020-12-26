@@ -546,3 +546,27 @@
 	attack_verb = list("attacked", "smashed", "bludgeoned", "beaten")
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_upgrades = 5
+
+/obj/item/weapon/tool/gauntlet
+	name = "render gauntlet"
+	desc = "A crudely made gauntlet consisting of straps, metal reinforcement and render skin - including it's deadly claws."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "gauntlet"
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 5)
+	attack_verb = list("clawed", "scratched", "lacerated", "slashed")
+
+/obj/item/weapon/tool/sword/nt/halberd
+	name = "Halberd"
+	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself; "
+	icon_state = "hunter_halberd"
+	item_state = "hunter_halberd"
+	wielded_icon = "hunter_halberd_wielded"
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_DEEP
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK
+	price_tag = 500
+	matter = list(MATERIAL_STEEL = 22, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 4)
