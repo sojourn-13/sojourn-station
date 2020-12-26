@@ -440,6 +440,16 @@
 			bluespace_entropy(50,T)
 			qdel(src)
 
+/obj/item/weapon/oddity/blackbox_nanoforage
+	name = "Matter NanoForge Black Box"
+	desc = "The core and data of all the designs for the Matter NanoForge. The craftmanship being some of the best possable by hand tools alone."
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "blackcube"
+	oddity_stats = list(
+		STAT_COG = 15,
+		STAT_MEC = 15
+	)
+
 //NT Oddities
 /obj/item/weapon/oddity/nt
 	random_stats = FALSE

@@ -403,6 +403,40 @@
 		list(QUALITY_WELDING, 40, "time" = 90),
 	)
 
+/datum/craft_recipe/guild/matter_nanoforge
+	name = "Circuit: Matter Nanoforge"
+	result = /obj/item/weapon/circuitboard/matter_nanoforge
+	icon_state = "electronic"
+	steps = list(
+		list(/obj/item/weapon/circuitboard/autolathe, 1, "time" = 30),
+		list(MATERIAL_GOLD, 2, MATERIAL_GOLD),
+		list(MATERIAL_SILVER, 2, MATERIAL_SILVER),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
+		list(QUALITY_WELDING, 40, "time" = 90),
+	)
+
+/datum/craft_recipe/guild/matter_nanoforge_blackbox
+	name = "Blackbox: Matter Nanoforge"
+	result = /obj/item/weapon/oddity/blackbox_nanoforage
+	steps = list(
+		list(/obj/item/weapon/computer_hardware/processor_unit, 1, "time" = 120),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(MATERIAL_PLASTEEL, 12, MATERIAL_PLASTEEL, "time" = 90),
+		list(MATERIAL_GLASS, 2, MATERIAL_RGLASS, "time" = 20),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(/obj/item/weapon/oddity/techno, 1, "time" = 80),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(/obj/item/stack/cable_coil, 10, "time" = 90),
+		list(MATERIAL_DIAMOND, 1, MATERIAL_DIAMOND, "time" = 20),
+		list(/obj/item/weapon/stock_parts/manipulator, 1, "time" = 120),
+		list(QUALITY_HAMMERING, 40, "time" = 40),
+		list(QUALITY_SAWING, 60, "time" = 60),
+		list(MATERIAL_GOLD, 2, MATERIAL_GOLD),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(MATERIAL_SILVER, 2, MATERIAL_SILVER),
+	)
+
 /*
 /datum/craft_recipe/weapon/guild_bin
 	name = "Casted Matter Bin"
