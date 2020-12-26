@@ -19,7 +19,7 @@
 	icon = 'icons/obj/storage.dmi'
 	allow_quick_gather = TRUE
 	allow_quick_empty = TRUE
-	display_contents_with_number = TRUE
+	display_contents_with_number = FALSE
 	use_to_pickup = TRUE
 	slot_flags = SLOT_BELT
 
@@ -32,6 +32,7 @@
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "trashbag0"
 	item_state = "trashbag"
+	display_contents_with_number = TRUE
 
 	w_class = ITEM_SIZE_BULKY
 	max_w_class = ITEM_SIZE_SMALL
@@ -60,6 +61,7 @@
 /obj/item/weapon/storage/bag/trash/holding/New()
 	..()
 	item_flags |= BLUESPACE
+	bluespace_entropy(10, get_turf(src))
 
 /obj/item/weapon/storage/bag/trash/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(W.item_flags & BLUESPACE)
@@ -132,6 +134,7 @@
 /obj/item/weapon/storage/bag/ore/holding/New()
 	..()
 	item_flags |= BLUESPACE
+	bluespace_entropy(4, get_turf(src))
 
 /obj/item/weapon/storage/bag/ore/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(W.item_flags & BLUESPACE)
@@ -160,7 +163,6 @@
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL
 	w_class = ITEM_SIZE_NORMAL
-	display_contents_with_number = FALSE
 	can_hold = list(/obj/item/weapon/reagent_containers/food/snacks/grown,
 		/obj/item/seeds,
 		/obj/item/weapon/grown,
@@ -302,7 +304,7 @@
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL
 	w_class = ITEM_SIZE_NORMAL
-	display_contents_with_number = TRUE
+	display_contents_with_number = FALSE
 	can_hold = list(/obj/item/weapon/reagent_containers/pill,
 		/obj/item/weapon/reagent_containers/glass/beaker,
 		/obj/item/weapon/reagent_containers/glass/bottle

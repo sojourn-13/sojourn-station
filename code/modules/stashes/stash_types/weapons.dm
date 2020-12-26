@@ -116,7 +116,7 @@ A few people are talking about striking out, just like Jeremiah did. I'm in and 
 /datum/stash/weapon/mutiny/starvation
  	//Make sure there's a shotgun with slugs in the stash, as described in the text.
  	//Also the wardens were hoarding food
- 	contents_list_extra = list(/obj/random/gun_shotgun = 1, /obj/item/weapon/storage/box/shotgunammo/slug = 1, /obj/random/rations = 6)
+ 	contents_list_extra = list(/obj/random/gun_shotgun = 1, /obj/item/ammo_magazine/ammobox/shotgun = 1, /obj/random/rations = 6)
  	lore = "I'm getting really tired of putting up with the day to day shit.<br>\
  Plan B is to shoot troublemakers until the people we brig start acting nice.<br>\
  Just keep it semi-justifiable, don't leave any slugs in the walls, and stick the lethals back at %D when you're done.<br>\

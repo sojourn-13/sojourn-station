@@ -13,7 +13,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5)
 	price_tag = 1250
 	projectile_type = /obj/item/projectile/beam/midlaser
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
@@ -37,7 +37,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
 	charge_cost = 2000
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	suitable_cell = /obj/item/weapon/cell/large
 	one_hand_penalty = 15 //full sized shotgun level
 	fire_delay = 14 //Equivalent to a pump then fire time
@@ -100,7 +100,7 @@
 	item_charge_meter = TRUE
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	twohanded = TRUE
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
@@ -232,7 +232,7 @@
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
 	price_tag = 1000
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
@@ -283,7 +283,7 @@
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 		)
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 
 /obj/item/weapon/gun/energy/lasercannon/mounted
 	name = "mounted laser cannon"
@@ -314,3 +314,56 @@
 	consume_cell = FALSE
 	cell_type = /obj/item/weapon/cell/small/high //Two shots
 	twohanded = FALSE
+
+/obj/item/weapon/gun/energy/firestorm
+	name = "\"Firestorm\" assault SMG"
+	desc = "A front loading laser SMG made more close quarters, compactness and its high rate of fire. Its downside revolves around its usage of small batteries.\
+	On the side of the gun under the barrel appears to be an 'H&S' marking. Surprising considering the quality of the weapon!"
+	icon = 'icons/obj/guns/energy/firestorm.dmi'
+	icon_state = "firestorm"
+	item_state = "firestorm"
+	w_class = ITEM_SIZE_NORMAL
+	item_charge_meter = TRUE
+	fire_sound = 'sound/weapons/Laser.ogg'
+	suitable_cell = /obj/item/weapon/cell/medium
+	can_dual = 1
+	projectile_type = /obj/item/projectile/beam/weak/smg
+	projectile_color = "#0000FF"
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	slot_flags = SLOT_BELT
+	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GLASS = 4)
+	price_tag = 650
+	damage_multiplier = 0.8
+	recoil_buildup = 3
+	one_hand_penalty = 4
+	projectile_type = /obj/item/projectile/beam
+	suitable_cell = /obj/item/weapon/cell/small
+	cell_type = /obj/item/weapon/cell/small
+	charge_cost = 25
+	gun_tags = list(GUN_LASER, GUN_ENERGY)
+	init_firemodes = list(
+		BURST_8_ROUND,
+		FULL_AUTO_600
+		)
+
+/obj/item/weapon/gun/energy/lasercore
+	name = "\"Laser Core\" laser carbine"
+	desc = "A high-powered laser carbine made by H&S. It was hailed back in its prime for its high-powered shots and compactness. However, it really consumes power."
+	icon = 'icons/obj/guns/energy/lasercore.dmi'
+	icon_state = "lcore"
+	item_state = "lcore"
+	item_charge_meter = TRUE
+	fire_sound = 'sound/weapons/Laser.ogg'
+	slot_flags = SLOT_BELT|SLOT_BACK
+	w_class = ITEM_SIZE_BULKY
+	projectile_type = /obj/item/projectile/beam/heavylaser
+	projectile_color = "#0000FF"
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10, MATERIAL_GOLD = 2)
+	charge_cost = 120
+	fire_delay = 10
+	price_tag = 1200
+	gun_tags = list(GUN_LASER, GUN_ENERGY)
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
+	twohanded = TRUE

@@ -72,15 +72,13 @@
 		cell = new suitable_cell(src)
 
 	if(use_fuel_cost)
-		var/datum/reagents/R = new/datum/reagents(max_fuel)
-		reagents = R
-		R.my_atom = src
-		R.add_reagent("fuel", max_fuel)
+		create_reagents(max_fuel)
+		reagents.add_reagent("fuel", max_fuel)
 
-	if (use_stock_cost)
+	if(use_stock_cost)
 		stock = max_stock
 
-	if (max_health)
+	if(max_health)
 		health = max_health
 
 	update_icon()
@@ -724,9 +722,9 @@
 			var/cost = use_power_cost
 			if(R.cell.charge >= cost)
 				R.cell.use(cost)
-			return 1
+			return TRUE //we always use cell power, no need to check anything more
 
-	if(use_power_cost &! isrobot(user))
+	if(use_power_cost)
 		if (!cell?.checked_use(use_power_cost*timespent))
 			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 			return FALSE
@@ -827,8 +825,8 @@
 			var/delta = reagents.total_volume - reagents.maximum_volume
 
 			reagents.trans_to_turf(get_turf(src), delta)
-			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, spilling its contents onto the floor!"), \
-								SPAN_WARNING("You remove the extended fuel tank, spilling its contents onto the floor!"))
+			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, its contents spilling onto the floor!"), \
+								SPAN_WARNING("You remove the extended fuel tank, its contents spilling onto the floor!"))
 	return
 
 /obj/item/weapon/tool/examine(mob/user)
@@ -944,7 +942,7 @@
 		return TRUE
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
+		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
 		if(!E)
 			return
 		var/safety = H.eyecheck()

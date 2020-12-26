@@ -8,7 +8,7 @@
 	..()
 
 /mob/living/carbon/Life()
-	..()
+	. = ..()
 
 	handle_viruses()
 	// Increase germ_level regularly
@@ -400,7 +400,7 @@
 	onclose(user, "mob[name]")
 	return
 
-/mob/living/carbon/proc/should_have_organ(var/organ_check)
+/mob/living/carbon/proc/should_have_process(var/organ_check)
 	return 0
 
 /mob/living/carbon/proc/has_appendage(var/limb_check)

@@ -122,7 +122,7 @@
 							stop_automated_movement = 0
 				else
 					//third, lay an egg cluster there
-					if((fed > 0) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
+					if((fed > 1) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
 						busy = LAYING_EGGS
 						src.visible_message(SPAN_NOTICE("\The [src] begins to lay a cluster of eggs."))
 						stop_automated_movement = 1
@@ -177,13 +177,13 @@
 									O.forceMove(C)
 
 								for(var/mob/living/M in targetTurf)
-									if((M.stat == CONSCIOUS) || istype(M, /mob/living/carbon/superior_animal/giant_spider) || is_carrion(M))
+									if((M.stat == CONSCIOUS) || is_carrion(M))
 										continue
 									large_cocoon = 1
 
 									if (istype(M, /mob/living))
 										src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
-										fed++
+										fed += 1 //Takes 2 mobs before we can lay eggs
 
 									C = C || new(targetTurf)
 									M.forceMove(C)

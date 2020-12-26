@@ -22,6 +22,7 @@
 	recoil_buildup = 3
 	one_hand_penalty = 30 //not like it's used anyway, but LMG level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	twohanded = TRUE
 
 	init_firemodes = list(
 		FULL_AUTO_600,

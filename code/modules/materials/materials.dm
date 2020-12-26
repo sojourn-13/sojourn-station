@@ -682,7 +682,7 @@ var/list/name_to_material
 	ignition_point = T0C+232
 	melting_point = T0C+300
 	flags = MATERIAL_PADDING
-
+/*
 /material/resin
 	name = "resin"
 	icon_colour = "#E85DD8"
@@ -697,7 +697,7 @@ var/list/name_to_material
 	if(istype(M) && locate(/obj/item/organ/internal/xenos/hivenode) in M.internal_organs)
 		return 1
 	return 0
-
+*/
 /material/biomatter
 	name = MATERIAL_BIOMATTER
 	stack_type = /obj/item/stack/material/biomatter
@@ -705,6 +705,13 @@ var/list/name_to_material
 	stack_origin_tech = list(TECH_MATERIAL = 2, TECH_BIO = 2)
 	sheet_singular_name = "sheet"
 	sheet_plural_name = "sheets"
+
+/material/compressed_matter
+	name = MATERIAL_COMPRESSED_MATTER
+	stack_type = /obj/item/stack/material/compressed_matter
+	icon_colour = "#00E1FF"
+	sheet_singular_name = "cartrigde"
+	sheet_plural_name = "cartridges"
 
 //TODO PLACEHOLDERS:
 /material/leather

@@ -4,12 +4,17 @@
 #define MECHA_INT_TANK_BREACH 8
 #define MECHA_INT_CONTROL_LOST 16
 
-#define MELEE 1
-#define RANGED 2
+#define MECHA_MELEE 1
+#define MECHA_RANGED 2
 
 #define MOVEMODE_STEP 1
 #define MOVEMODE_THRUST 2
 
+#define MECHA_ARMOR_LIGHT 1
+#define MECHA_ARMOR_SCOUT 2
+#define MECHA_ARMOR_MEDIUM 3
+#define MECHA_ARMOR_HEAVY 4
+#define MECHA_ARMOR_SUPERHEAVY 5
 
 /obj/mecha
 	name = "Mecha"
@@ -44,6 +49,8 @@
 
 	//the values in this list show how much damage will pass through, not how much will be absorbed.
 	var/list/damage_absorption = list("brute"=0.8,"fire"=1.2,"bullet"=0.9,"energy"=1,"bomb"=1)
+	// This armor level indicates how fortified the mech's armor is.
+	var/armor_level = MECHA_ARMOR_LIGHT
 	var/obj/item/weapon/cell/large/cell
 	var/state = 0
 	var/list/log = new
@@ -249,15 +256,20 @@
 	return 0
 
 /obj/mecha/proc/enter_after(delay as num, var/mob/user as mob, var/numticks = 5)
-	var/delayfraction = delay/numticks
-
 	var/turf/T = user.loc
 
-	for(var/i = 0, i<numticks, i++)
-		sleep(delayfraction)
-		if(!src || !user || !user.canmove || !(user.loc == T))
-			return 0
+	var/datum/progressbar/progbar = new(user, delay, user)
+	var/starttime = world.time
 
+	for(var/i = 0, i < delay, i++)
+		sleep(1)
+		progbar.update(world.time - starttime)
+		if(i % numticks == 0)
+			if(!src || !user || !user.canmove || !(user.loc == T))
+				qdel(progbar)
+				return 0
+
+	qdel(progbar)
 	return 1
 
 
@@ -356,8 +368,11 @@
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
 			selected.action(target)
-	else if(selected && selected.is_melee())
-		selected.action(target)
+	else if(selected)
+		if(selected.is_melee())
+			selected.action(target)
+		else
+			occupant_message("<font color='red'>You cannot fire this weapon in close quarters!</font>")
 	else
 		src.melee_action(target)
 	return
@@ -787,8 +802,8 @@ assassination method if you time it right*/
 	return
 
 /obj/mecha/bullet_act(var/obj/item/projectile/Proj)
-	if(Proj.damage_types[HALLOSS] && !(src.r_deflect_coeff > 1))
-		use_power(Proj.agony * 5)
+	if(Proj.firer == src.occupant) // Pass the projectile through if we fired it.
+		return PROJECTILE_CONTINUE
 
 	src.log_message("Hit by projectile. Type: [Proj.name]([Proj.check_armour]).",1)
 	if(deflect_hit(is_melee=0))
@@ -798,25 +813,34 @@ assassination method if you time it right*/
 		return
 
 	if(!(Proj.nodamage))
-		var/ignore_threshold
-		if(istype(Proj, /obj/item/projectile/beam/pulse))
-			ignore_threshold = 1
-		src.hit_damage(Proj.get_structure_damage(), Proj.check_armour, is_melee=0)
-		if(prob(25)) spark_system.start()
-		src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),ignore_threshold)
+		var/final_penetration = Proj.penetrating ? Proj.penetrating - src.armor_level : 0
+		var/damage_multiplier = final_penetration > 0 ? max(1.5, final_penetration) : 1 // Minimum damage bonus of 50% if you beat the mech's armor
+		Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
+		src.hit_damage(Proj.get_structure_damage() * damage_multiplier, Proj.check_armour, is_melee=0)
 
 		//AP projectiles have a chance to cause additional damage
-		if(Proj.penetrating)
-			var/distance = get_dist(Proj.starting, get_turf(loc))
-			var/hit_occupant = 1 //only allow the occupant to be hit once
-			for(var/i in 1 to min(Proj.penetrating, round(Proj.get_total_damage()/15)))
-				if(src.occupant && hit_occupant && prob(20))
-					Proj.attack_mob(src.occupant, distance)
-					hit_occupant = 0
-				else
-					src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT), 1)
+		if(final_penetration > 0)
+			for(var/i in 0 to min(final_penetration, round(Proj.get_total_damage()/15)))
+				if(prob(20))
+					src.occupant_message(SPAN_WARNING("Your armor was penetrated and a component was damaged!."))
+					src.visible_message("Sparks fly from the [src.name] as the projectile strikes a critical component!")
+					spark_system.start()
+					// check_internal_damage rolls a chance to damage again, so do our own critical damage handling here to guarantee that a component is damaged.
+					var/list/possible_int_damage = list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT)
+					if(prob(90))
+						for(var/T in possible_int_damage)
+							if(internal_damage & T)
+								possible_int_damage -= T
+						var/int_dam_flag = safepick(possible_int_damage)
+						if(int_dam_flag)
+							setInternalDamage(int_dam_flag)
+					else
+						var/obj/item/mecha_parts/mecha_equipment/destr = safepick(equipment)
+						if(destr)
+							destr.destroy()
+					break // Only allow one critical hit per penetration
 
-				Proj.penetrating--
+				final_penetration--
 
 				if(prob(15))
 					break //give a chance to exit early
@@ -930,9 +954,14 @@ assassination method if you time it right*/
 						clearInternalDamage(MECHA_INT_TANK_BREACH)
 						to_chat(user, SPAN_NOTICE("You repair the damaged gas tank."))
 					if(src.health<initial(src.health))
-						to_chat(user, SPAN_NOTICE("You repair some damage to [src.name]."))
+						var/missing_health = initial(src.health) - src.health
 						user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-						src.health += min(10, initial(src.health)-src.health)
+						if(state == 3)
+							to_chat(user, SPAN_NOTICE("You are able to repair more damage to [src.name] from the inside."))
+							src.health += min(initial(src.health) / 4, missing_health)
+						else
+							to_chat(user, SPAN_NOTICE("You repair some damage to [src.name]."))
+							src.health += min(10, missing_health)
 					return
 			return
 

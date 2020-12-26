@@ -6,7 +6,28 @@
 	blocks_air = 1
 	density = 1
 	opacity = 1
-	layer = EDGED_TURF_LAYER
+	layer = BELOW_MOB_LAYER
+
+/turf/unsimulated/mineral/transition
+	name = "path elsewhere"
+	desc = "Looks like this leads to a whole new area."
+	icon_state = "floor_transition"
+
+/turf/unsimulated/mineral/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_EXCAVATION)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_EXCAVATION)
+		to_chat(user, SPAN_NOTICE("You try to break out a rock geode or two."))
+		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_ZERO, required_stat = STAT_ROB))
+			new /obj/random/material_ore_small(get_turf(src))
+			if(prob(50))
+				new /obj/random/material_ore_small(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You break out some rock geode(s)."))
+			return
+		return
 
 /turf/unsimulated/wall/jungle
 	name = "dense forestry"
@@ -34,7 +55,7 @@
 	nitrogen = MOLES_N2STANDARD
 	opacity = 1
 	density = 1
-	layer = EDGED_TURF_LAYER
+	layer = BELOW_MOB_LAYER
 	blocks_air = 1
 	temperature = T20C
 	var/mined_turf = /turf/simulated/floor/asteroid
@@ -55,7 +76,7 @@
 	has_resources = 1
 
 /turf/simulated/mineral/Initialize()
-	..()
+	.=..()
 	icon_state = "rock[rand(0,4)]"
 	spawn(0)
 		MineralSpread()
@@ -68,12 +89,14 @@
 
 /turf/simulated/mineral/ex_act(severity)
 	switch(severity)
-		if(2.0)
-			if (prob(70))
-				mined_ore = 1 //some of the stuff gets blown up
-				GetDrilled()
 		if(1.0)
-			mined_ore = 2 //some of the stuff gets blown up
+			mined_ore = 5 //light bomb, were not lossing much ore
+			GetDrilled()
+		if(2.0)
+			mined_ore = 4 //Heavyer bomb, we lose some ore in this
+			GetDrilled()
+		if(3.0)
+			mined_ore = 3 //Heavy bomb, we lose quite a bit of ore
 			GetDrilled()
 
 /turf/simulated/mineral/bullet_act(var/obj/item/projectile/Proj)
@@ -82,8 +105,8 @@
 	if(istype(Proj, /obj/item/projectile/beam/emitter))
 		emitter_blasts_taken++
 
-		if(emitter_blasts_taken > 2) // 3 blasts per tile
-			mined_ore = 1
+		if(emitter_blasts_taken > 1) // 2 blasts per tile
+			mined_ore = 4 //Were blasting away rock with high power lasers this takes quite a bit of time to set up and power.
 			GetDrilled()
 
 /turf/simulated/mineral/Bumped(AM)
@@ -490,8 +513,10 @@
 
 	for(var/i=0;i<(rand(3)+2);i++)
 		new/obj/item/weapon/ore/glass(src)
+		new/obj/item/weapon/ore(src)
 
 	dug = 1
+	desc = "A hole has been dug here." //so we can tell from looking
 	//icon_state = "asteroid_dug"
 	return
 

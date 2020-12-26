@@ -382,3 +382,44 @@
 	desc = "A dence laser casing. Compact laser that is easily blocked by armor."
 	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/weak/lethal
+
+//// Grenade Shells ////
+
+/obj/item/ammo_casing/grenade
+	name = "baton round"
+	desc = "A less-lethal rubber round, designed to be fired from grenade launchers"
+	icon_state = "baton-round"
+	spent_icon = "grenadeshell"
+	projectile_type = /obj/item/projectile/bullet/batonround
+	w_class = ITEM_SIZE_SMALL
+	caliber = CAL_GRENADE
+	maxamount = 1
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 8)
+
+/obj/item/ammo_casing/grenade/blast
+	name = "blast grenade shell"
+	desc = "An explosive grenade shell, designed to be fired from grenade launchers."
+	icon_state = "blast"
+	projectile_type = /obj/item/projectile/bullet/grenade
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 0.5)
+
+/obj/item/ammo_casing/grenade/frag
+	name = "frag grenade shell"
+	desc = "A frag grenade shell, designed to be fired from grenade launchers."
+	icon_state = "frag"
+	projectile_type = /obj/item/projectile/bullet/grenade/frag
+	matter = list(MATERIAL_STEEL = 14)
+
+/obj/item/ammo_casing/grenade/emp
+	name = "emp grenade shell"
+	desc = "An EMP grenade shell, designed to be fired from grenade launchers."
+	icon_state = "emp"
+	projectile_type = /obj/item/projectile/bullet/grenade/emp
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_IRON = 1, MATERIAL_URANIUM = 1)
+
+/obj/item/ammo_casing/grenade/flash
+	name = "flash grenade shell"
+	desc = "A grenade shell containing specific chemical substances similar to those used in flashbangs, designed to be fired from gernade launchers."
+	icon_state = "flash"
+	projectile_type = /obj/item/projectile/bullet/grenade/flash
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 0.5, MATERIAL_GLASS = 0.5)

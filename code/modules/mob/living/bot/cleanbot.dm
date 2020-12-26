@@ -78,25 +78,26 @@
 
 	var/found_spot
 	var/target_in_view = FALSE
-	search_loop:
-		for(var/i=0, i <= maximum_search_range, i++)
-			for(var/obj/effect/decal/cleanable/D in view(i, src))
-				if(D in ignorelist)
-					continue
-				for(var/T in target_types)
-					if(istype(D, T))
-						target = D
-						found_spot = handle_target()
-						if (found_spot)
-							break search_loop
-						else
-							target_in_view = TRUE
-							target = null
-							continue // no need to check the other types
+	if(world.time > give_up_cooldown)
+		search_loop:
+			for(var/i=0, i <= maximum_search_range, i++)
+				for(var/obj/effect/decal/cleanable/D in view(i, src))
+					if(D in ignorelist)
+						continue
+					for(var/T in target_types)
+						if(istype(D, T))
+							target = D
+							found_spot = handle_target()
+							if (found_spot)
+								break search_loop
+							else
+								target_in_view = TRUE
+								target = null
+								continue // no need to check the other types
 
 	if(!found_spot && target_in_view && world.time > give_up_cooldown)
 		visible_message("[src] can't reach the target and is giving up.")
-		give_up_cooldown = world.time + 300
+		give_up_cooldown = world.time + rand(300, 600)
 
 
 /mob/living/bot/cleanbot/UnarmedAttack(var/obj/effect/decal/cleanable/D, var/proximity)
@@ -111,9 +112,10 @@
 
 	cleaning = 1
 	visible_message("[src] begins to clean up \the [D]")
-	var/message = pick("Cleaning a new canvas.", "Happy little dots.", "The joy of art.", "Fresh paint needed here.", "One day I will paint again.", "Hope you had fun painting.", "Make sure to clean your brushes!", "Beep!", "I wish to be an artbot, to write poems, create music.")
-	say(message)
-	playsound(loc, "robot_talk_light", 100, 0, 0)
+	if(prob(10))
+		var/message = pick("Cleaning a new canvas.", "Happy little dots.", "The joy of art.", "Fresh paint needed here.", "One day I will paint again.", "Hope you had fun painting.", "Make sure to clean your brushes!", "Beep!", "I wish to be an artbot, to write poems, create music.")
+		say(message)
+		playsound(loc, "robot_talk_light", 100, 0, 0)
 	update_icons()
 	var/cleantime = istype(D, /obj/effect/decal/cleanable/dirt) ? 10 : 50
 	if(do_after(src, cleantime, progress = 0))

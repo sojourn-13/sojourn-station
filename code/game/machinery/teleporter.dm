@@ -4,8 +4,8 @@
 	icon_keyboard = "teleport_key"
 	icon_screen = "teleport"
 	circuit = /obj/item/weapon/circuitboard/teleporter
-	var/obj/item/locked = null
-	var/id = null
+	var/obj/item/locked
+	var/id
 	var/one_time_use = 0 //Used for one-time-use teleport cards (such as clown planet coordinates.)
 						 //Setting this to 1 will set src.locked to null after a player enters the portal and will not allow hand-teles to open portals to that location.
 
@@ -176,6 +176,7 @@
 	idle_power_usage = 10
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
+	var/entropy_value = 8
 
 
 /obj/machinery/teleport/hub/New()
@@ -199,9 +200,9 @@
 		return
 	if (istype(M, /atom/movable))
 		if(prob(5) && !accurate) //oh dear a problem, put em in deep space
-			do_teleport(M, locate(rand((2*TRANSITIONEDGE), world.maxx - (2*TRANSITIONEDGE)), rand((2*TRANSITIONEDGE), world.maxy - (2*TRANSITIONEDGE)), 3), 2)
+			go_to_bluespace(get_turf(src), entropy_value, FALSE, M, locate(rand((2*TRANSITIONEDGE), world.maxx - (2*TRANSITIONEDGE)), rand((2*TRANSITIONEDGE), world.maxy - (2*TRANSITIONEDGE)), 3), 2)
 		else
-			do_teleport(M, com.locked) //dead-on precision
+			go_to_bluespace(get_turf(src), entropy_value, FALSE, M, com.locked) //dead-on precision
 
 		if(com.one_time_use) //Make one-time-use cards only usable one time!
 			com.one_time_use = 0
@@ -215,92 +216,6 @@
 		for(var/mob/B in hearers(src, null))
 			B.show_message(SPAN_NOTICE("Test fire completed."))
 	return
-/*
-/proc/do_teleport(atom/movable/M as mob|obj, atom/destination, precision)
-	if(istype(M, /obj/effect))
-		qdel(M)
-		return
-	if (istype(M, /obj/item/weapon/disk/nuclear)) // Don't let nuke disks get teleported --NeoFite
-		for(var/mob/O in viewers(M, null))
-			O.show_message(text(SPAN_DANGER("The [] bounces off of the portal!"), M.name), 1)
-		return
-	if (isliving(M))
-		var/mob/living/MM = M
-		if(MM.check_contents_for(/obj/item/weapon/disk/nuclear))
-			to_chat(MM, SPAN_WARNING("Something you are carrying seems to be unable to pass through the portal. Better drop it if you want to go through."))
-			return
-	var/disky = 0
-	for (var/atom/O in M.contents) //I'm pretty sure this accounts for the maximum amount of container in container stacking. --NeoFite
-		if (istype(O, /obj/item/weapon/storage) || istype(O, /obj/item/weapon/gift))
-			for (var/obj/OO in O.contents)
-				if (istype(OO, /obj/item/weapon/storage) || istype(OO, /obj/item/weapon/gift))
-					for (var/obj/OOO in OO.contents)
-						if (istype(OOO, /obj/item/weapon/disk/nuclear))
-							disky = 1
-				if (istype(OO, /obj/item/weapon/disk/nuclear))
-					disky = 1
-		if (istype(O, /obj/item/weapon/disk/nuclear))
-			disky = 1
-		if (isliving(O))
-			var/mob/living/MM = O
-			if(MM.check_contents_for(/obj/item/weapon/disk/nuclear))
-				disky = 1
-	if (disky)
-		for(var/mob/P in viewers(M, null))
-			P.show_message(text(SPAN_DANGER("The [] bounces off of the portal!"), M.name), 1)
-		return
-
-//Bags of Holding cause bluespace teleportation to go funky. --NeoFite
-	if (isliving(M))
-		var/mob/living/MM = M
-		if(MM.check_contents_for(/obj/item/weapon/storage/backpack/holding))
-			to_chat(MM, SPAN_WARNING("The Bluespace interface on your Bag of Holding interferes with the teleport!"))
-			precision = rand(1,100)
-	if (istype(M, /obj/item/weapon/storage/backpack/holding))
-		precision = rand(1,100)
-	for (var/atom/O in M.contents) //I'm pretty sure this accounts for the maximum amount of container in container stacking. --NeoFite
-		if (istype(O, /obj/item/weapon/storage) || istype(O, /obj/item/weapon/gift))
-			for (var/obj/OO in O.contents)
-				if (istype(OO, /obj/item/weapon/storage) || istype(OO, /obj/item/weapon/gift))
-					for (var/obj/OOO in OO.contents)
-						if (istype(OOO, /obj/item/weapon/storage/backpack/holding))
-							precision = rand(1,100)
-				if (istype(OO, /obj/item/weapon/storage/backpack/holding))
-					precision = rand(1,100)
-		if (istype(O, /obj/item/weapon/storage/backpack/holding))
-			precision = rand(1,100)
-		if (isliving(O))
-			var/mob/living/MM = O
-			if(MM.check_contents_for(/obj/item/weapon/storage/backpack/holding))
-				precision = rand(1,100)
-
-
-	var/turf/destturf = get_turf(destination)
-
-	var/tx = destturf.x + rand(precision * -1, precision)
-	var/ty = destturf.y + rand(precision * -1, precision)
-
-	var/tmploc
-
-	if (ismob(destination.loc)) //If this is an implant.
-		tmploc = locate(tx, ty, destturf.z)
-	else
-		tmploc = locate(tx, ty, destination.z)
-
-	if(tx == destturf.x && ty == destturf.y && (istype(destination.loc, /obj/structure/closet) || istype(destination.loc, /obj/structure/closet/secure_closet)))
-		tmploc = destination.loc
-
-	if(tmploc==null)
-		return
-
-	M.loc = tmploc
-	sleep(2)
-
-	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
-	s.set_up(5, 1, M)
-	s.start()
-	return
-*/
 
 /obj/machinery/teleport/station
 	name = "teleporter station"

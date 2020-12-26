@@ -27,7 +27,7 @@
 
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
 	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
-	var/pierce_multiplier = 0 //Additing wall penetration to projectiles fired from this gun
+	var/pierce_multiplier = 0 //ADDITIVE wall penetration to projectiles fired from this gun
 	var/burst = 1
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again
 	var/burst_delay = 2	//delay between shots, if firing in bursts
@@ -282,7 +282,7 @@
 
 		projectile.multiply_projectile_damage(damage_multiplier)
 
-		projectile.multiply_projectile_penetration(penetration_multiplier)
+		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.2)
 
 		projectile.multiply_pierce_penetration(pierce_multiplier)
 
@@ -414,7 +414,7 @@
 	if(params)
 		P.set_clickpoint(params)
 	var/offset = init_offset
-	if(user.calc_recoil())
+	if(user.recoil)
 		offset += user.recoil
 	offset = min(offset, MAX_ACCURACY_OFFSET)
 	offset = rand(-offset, offset)
@@ -551,6 +551,7 @@
 	return set_firemode(sel_mode)
 
 /obj/item/weapon/gun/proc/set_firemode(var/index)
+	refresh_upgrades()
 	if(index > firemodes.len)
 		index = 1
 	var/datum/firemode/new_mode = firemodes[sel_mode]
@@ -695,6 +696,7 @@
 	restrict_safety = initial(restrict_safety)
 	rigged = initial(rigged)
 	zoom_factor = initial(zoom_factor)
+	force = initial(force)
 	initialize_scope()
 	initialize_firemodes()
 

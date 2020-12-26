@@ -107,8 +107,8 @@
 			T.clean_partial(src, user, 1)
 		else if (user)
 			//You hit a wall!
-			user.setClickCooldown(30)
-			user.set_move_cooldown(30)
+			user.setClickCooldown(15)
+			user.set_move_cooldown(15)
 			shake_camera(user, 1, 1)
 			playsound(T,"thud", 20, 1, -3)
 			to_chat(user, SPAN_DANGER("There's not enough space for broad sweeps here!"))

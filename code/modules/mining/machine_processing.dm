@@ -2,6 +2,7 @@
 
 /obj/machinery/mineral/processing_unit_console
 	name = "production machine console"
+	desc = "A computer that links to the material processor"
 	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "console"
 	density = 0
@@ -9,6 +10,9 @@
 
 	var/obj/machinery/mineral/processing_unit/machine = null
 	var/show_all_ores = 0
+
+/obj/machinery/mineral/processing_unit_console/laber
+	name = "labor camp production machine console"
 
 /obj/machinery/mineral/processing_unit_console/New()
 	..()
@@ -97,6 +101,7 @@
 
 /obj/machinery/mineral/processing_unit
 	name = "material processor" //This isn't actually a goddamn furnace, we're in space and it's processing platinum and flammable plasma...
+	desc = "A large grinder, compressor , and smelter for all your sheet and material needs."
 	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "furnace"
 	density = 1
@@ -110,6 +115,9 @@
 	var/active = 0
 	var/input_dir = 0
 	var/output_dir = 0
+
+/obj/machinery/mineral/processing_unit/laber
+	name = "labor material processor"
 
 /obj/machinery/mineral/processing_unit/New()
 	..()
@@ -127,8 +135,10 @@
 		for(var/oretype in typesof(/ore)-/ore)
 			var/ore/OD = new oretype()
 			ore_data[OD.name] = OD
-			ores_processing[OD.name] = 0
-			ores_stored[OD.name] = 0
+	
+	for(var/orename in ore_data)
+		ores_processing[orename] = 0
+		ores_stored[orename] = 0
 
 	spawn()
 		//Locate our output and input machinery.
@@ -150,7 +160,11 @@
 	//Grab some more ore to process this tick.
 	for(var/obj/item/weapon/ore/O in get_step(src, input_dir))
 		if(!isnull(ores_stored[O.material]))
-			ores_stored[O.material]++
+			ores_stored[O.material] += O.sheet_amout
+		else
+			ores_stored[O.material] = O.sheet_amout
+		if(isnull(ores_processing[O.material]))
+			ores_processing[O.material] = 0
 		qdel(O)
 
 	if(!active)

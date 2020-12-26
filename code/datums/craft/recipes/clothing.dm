@@ -1,5 +1,6 @@
 /datum/craft_recipe/clothing
 	category = "Clothing"
+	icon_state = "clothing"
 	time = 50
 	related_stats = list(STAT_COG)
 
@@ -113,6 +114,7 @@
 /datum/craft_recipe/clothing/sandals
 	name = "wooden sandals"
 	result = /obj/item/clothing/shoes/sandal
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
 	)

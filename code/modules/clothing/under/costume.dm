@@ -133,6 +133,17 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "clown"
 	item_state = "clown"
 
+/obj/item/clothing/under/gnome
+	name = "gnome outfit"
+	desc = "Against the gnome there is no reception, if there is no other gnomes."
+	icon_state = "gnome"
+	item_state = "gnome"
+
+/obj/item/clothing/under/gnome/fat
+	name = "fat gnome outfit"
+	icon_state = "gnome_suit_fat"
+	item_state = "gnome_suit_fat"
+
 /obj/item/clothing/under/costume/job/clown/orange
 	name = "orange clown suit"
 	desc = "A colorful and comedic outfit perfect for some clowning around."

@@ -13,6 +13,7 @@
 #define CAL_ROCKET "rocket propelled grenade"
 #define CAL_DART "chemical dart"
 #define CAL_SCI "laser casings"
+#define CAL_GRENADE "grenade"
 
 //Gun loading types
 #define SINGLE_CASING 	1	//The gun only accepts ammo_casings. ammo_magazines should never have this as their mag_type.
@@ -32,6 +33,8 @@
 #define MAG_WELL_HRIFLE		512 //.408 rifle mags
 #define MAG_WELL_DRUM		1024 //Drum-fed i.e. shotguns
 #define MAG_WELL_PULSE		2048 //Mary sue ammo for the pulse rifle
+
+#define MAG_WELL_LSRIFLE		4096 //Mary sue ammo for the laser AK
 
 #define SLOT_BARREL "barrel"
 #define SLOT_GRIP "grip"

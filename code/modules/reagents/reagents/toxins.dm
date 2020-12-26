@@ -73,7 +73,7 @@
 /datum/reagent/toxin/carpotoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if(istype(L))
 			L.take_damage(strength * effect_multiplier, 0)
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_BASIC, STIM_TIME, "carpotoxin")
@@ -194,7 +194,7 @@
 	M.adjustOxyLoss(0.6 * effect_multiplier)
 	M.Weaken(10)
 	M.silent = max(M.silent, 10)
-	M.tod = stationtime2text()
+	M.tod = world.time
 	M.add_chemical_effect(CE_NOPULSE, 1)
 
 /datum/reagent/toxin/zombiepowder/Destroy()
@@ -508,7 +508,7 @@
 /datum/reagent/toxin/diplopterum/overdose(mob/living/carbon/M, alien)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if(istype(L))
 			L.take_damage(strength, 0)
 	if(issmall(M))
@@ -548,10 +548,10 @@
 	if(!ishuman(M))
 		return
 	var/mob/living/carbon/human/H = M
-	var/obj/item/organ/internal/heart/S = H.internal_organs_by_name[BP_HEART]
+	var/obj/item/organ/internal/heart/S = H.random_organ_by_process(OP_HEART)
 	if(istype(S))
 		S.take_damage(2, 0)
-	var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+	var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 	if(istype(L))
 		L.take_damage(3, 0)
 

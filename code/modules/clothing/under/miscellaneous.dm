@@ -75,6 +75,12 @@
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
 
+/obj/item/clothing/under/monomial_belt
+	name = "monomial belt"
+	desc = "A simple black loin cloth with a dark gold trim favored by monomials for its monk-like aesthetic. For when you need to show off your muscles in the name of god."
+	icon_state = "mono_belt"
+	item_state = "mono_belt"
+
 /*Antagonist Spawn Gear*/
 
 /obj/item/clothing/under/rank/mercenary
@@ -236,6 +242,12 @@ obj/item/clothing/under/genericr
 	icon_state = "genericr"
 	item_state = "genericr"
 
+/obj/item/clothing/under/iron_lock_security
+	name = "Iron Lock Security Uniform"
+	desc = "An outdated uniform of a now extinct corporation \"Iron Lock Security\". A private security firm that got its start centuries ago subcontracted by Greyson Positronics before being phased out."
+	icon_state = "northtech"
+	has_sensor = 0
+
 //Excelsior
 /obj/item/clothing/under/excelsior
 	name = "white excelsior jumpsuit"
@@ -258,6 +270,7 @@ obj/item/clothing/under/genericr
 	item_state = "bl_suit"
 	has_sensor = 0
 
+//Dresses
 /obj/item/clothing/under/dress
 	name = "gray summerdress"
 	desc = "Gray summerdress only worn by the bravest individuals in the cold of space."

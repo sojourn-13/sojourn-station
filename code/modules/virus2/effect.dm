@@ -167,7 +167,7 @@
 			var/mob/living/carbon/human/H = mob
 			for (var/obj/item/organ/external/E in H.organs)
 				if (E.status & ORGAN_BROKEN && prob(30))
-					E.status ^= ORGAN_BROKEN
+					E.mend_fracture()
 		var/heal_amt = -5*multiplier
 		mob.apply_damages(heal_amt,heal_amt,heal_amt,heal_amt)
 
@@ -224,7 +224,7 @@
 	activate(var/mob/living/carbon/mob,var/multiplier)
 		if(ishuman(mob))
 			var/mob/living/carbon/human/H = mob
-			var/obj/item/organ/internal/brain/B = H.internal_organs_by_name[BP_BRAIN]
+			var/obj/item/organ/internal/brain/B = H.random_organ_by_process(BP_BRAIN)
 			if (B && B.damage < B.min_broken_damage)
 				B.take_damage(5)
 		else

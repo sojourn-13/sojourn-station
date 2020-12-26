@@ -6,4 +6,4 @@
 	projectile_type = /obj/item/projectile/beam/mindflayer
 	fire_sound = 'sound/weapons/Laser.ogg'
 	price_tag = 1500
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)

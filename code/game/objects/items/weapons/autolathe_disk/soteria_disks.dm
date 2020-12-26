@@ -34,6 +34,15 @@
 	disk_name = "Soteria Medical Factory"
 	license = -1 //Same disk, but for the CBO exclusively with endless uses.
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/surgery
+	disk_name = "Back Alley Organs"
+	icon_state = "moebius"
+
+	license = 5
+	designs = list(
+		/datum/design/bioprinter/lungs
+	)
+
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer
 	disk_name = "Soteria Computer Parts"
 	icon_state = "moebius"
@@ -76,7 +85,7 @@
 	license = -1
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/rped
-	disk_name = "Soteria RnD Stock Parts Desgins"
+	disk_name = "Soteria RnD Stock Parts Designs"
 	icon_state = "moebius"
 	license = 20
 	designs = list(

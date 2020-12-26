@@ -23,7 +23,7 @@
 		list(mode_name="destroy", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
 		list(mode_name="impact", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay=25, icon="kill", projectile_color = "#FF0000"),
 	)
-	gun_tags = list(GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 
 /obj/item/weapon/gun/energy/plasma/mounted
 	self_recharge = TRUE
@@ -75,9 +75,9 @@
 		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#00FFFF"),
 		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#00AAFF"),
 	)
-	gun_tags = list(GUN_ENERGY, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 
-/obj/item/weapon/gun/energy/plasma/cassad/update_icon()
+/obj/item/weapon/gun/energy/pulse/cassad/update_icon()
 	..()
 	set_item_state(null, back = TRUE)
 

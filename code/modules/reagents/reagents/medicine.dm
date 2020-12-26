@@ -68,7 +68,7 @@
 /datum/reagent/medicine/meralyne
 	name = "Meralyne"
 	id = "meralyne"
-	description = "Meralyne is the next step in brute trauma medication. Works twice as good as bicaridine and enables the body to restore even the direst brute-damaged tissue."
+	description = "Meralyne is the next step in brute trauma medication. Works twice as good as Bicaridine and enables the body to restore even the direst brute-damaged tissue, while clotting bleeding incisions and cuts."
 	taste_description = "bitterness"
 	taste_mult = 3
 	reagent_state = LIQUID
@@ -139,7 +139,7 @@
 	M.adjustToxLoss(-8 * removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if(istype(L))
 			if(BP_IS_ROBOTIC(L))
 				return
@@ -157,7 +157,7 @@
 /datum/reagent/medicine/cordradaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/C = H.internal_organs_by_name[BP_HEART]
+		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(C))
 				return
@@ -209,7 +209,7 @@
 datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/lungs/L = H.internal_organs_by_name[BP_LUNGS]
+		var/obj/item/organ/internal/lungs/L = H.random_organ_by_process(OP_LUNGS)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(L))
 				return
@@ -334,6 +334,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	overdose = REAGENTS_OVERDOSE * 0.66
 	metabolism = 0.02
 	nerve_system_accumulations = 60
+	scannable = 1 //Finnicky chem application, we need to know how much of it is on a system to prevent overdose.
 
 /datum/reagent/medicine/oxycodone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 200, TRUE)
@@ -403,7 +404,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	M.eye_blind = max(M.eye_blind - (5 * effect_multiplier), 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
+		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
 		if(E && istype(E))
 			if(E.damage > 0)
 				E.damage = max(E.damage - (0.5 * effect_multiplier), 0)
@@ -436,6 +437,8 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	reagent_state = SOLID
 	color = "#004000"
 	overdose = REAGENTS_OVERDOSE
+	scannable = 1 // This is a mostly beneficial chem, it should show up on scanners
+	affects_dead = 1 //If it doesn't, how will it fix husking?
 
 /datum/reagent/medicine/ryetalyn/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	var/needs_update = M.mutations.len > 0
@@ -660,6 +663,9 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 		M.make_dizzy(5)
 		M.make_jittery(5)
 
+/datum/reagent/medicine/rezadone/overdose(var/mob/living/carbon/M, var/alien)
+	M.adjustCloneLoss(4)
+
 /datum/reagent/medicine/quickclot
 	name = "Quickclot"
 	id = "quickclot"
@@ -727,7 +733,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/kyphotorin
 	name = "Kyphotorin"
 	id = "kyphotorin"
-	description = "A strange chemical that allows a patient to regrow organic limbs, it may take awhile to work and requires use of a cryo pod. The process is extremely painful and may damage the body."
+	description = "A strange chemical that allows a patient to regrow organic limbs, it may take awhile to work and requires use of a cryo pod. The process is extremely painful and may damage the body if dosed incorrectly."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#7d88e6"
@@ -1075,7 +1081,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	M.adjustToxLoss(-8 * removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if(istype(L))
 			if(BP_IS_ROBOTIC(L))
 				return

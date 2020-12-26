@@ -29,7 +29,7 @@
 	M.add_chemical_effect(CE_TOXIN, 1)
 	if(ishuman(M) && prob(80 - (30 * M.stats.getMult(STAT_TGH))))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if(istype(L))
 			L.take_damage(3, 0)
 
@@ -176,7 +176,7 @@
 /datum/reagent/stim/steady/overdose(mob/living/carbon/M, alien)
 	if(ishuman(M) && prob(80 - (30 * M.stats.getMult(STAT_TGH))))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/L = H.internal_organs_by_name[BP_HEART]
+		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
 		if(istype(L))
 			L.take_damage(5, 0)
 	M.add_chemical_effect(CE_SPEEDBOOST, -1)
@@ -208,7 +208,7 @@
 	M.add_chemical_effect(CE_TOXIN, 1)
 	if(ishuman(M) && prob(80 - (30 * M.stats.getMult(STAT_TGH))))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if(istype(L))
 			L.take_damage(5, 0)
 
@@ -347,7 +347,7 @@
 /datum/reagent/stim/turbo/overdose(mob/living/carbon/M, alien)
 	if(ishuman(M) && (prob(80 - (30 * M.stats.getMult(STAT_TGH)))))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/L = H.internal_organs_by_name[BP_HEART]
+		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
 		if(istype(L))
 			L.take_damage(7, 0)
 	M.add_chemical_effect(CE_SPEEDBOOST, -1)
@@ -420,3 +420,41 @@
 	M.apply_effect(3, STUTTER)
 	if(prob(6))
 		M.paralysis = max(M.paralysis, 20)
+
+/datum/reagent/stim/gumdrops
+	name = "Gum Drops"
+	id = "gum drops"
+	description = "A cocktail of artificial sweet fruit that fades quickly."
+	taste_description = "sweet"
+	reagent_state = LIQUID
+	color = "#9bd70f"
+	overdose = REAGENTS_OVERDOSE + 5
+	nerve_system_accumulations = 10
+	addiction_chance = 5
+
+/datum/reagent/stim/gumdrops/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_COG, (STAT_LEVEL_BASIC - 10) * effect_multiplier, STIM_TIME, "gum drops")
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "gum drops")
+
+/datum/reagent/stim/gumdrops/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "gumDrops_w")
+
+//For when an antags REALLY need to be smart
+/datum/reagent/stim/hacker
+	name = "h@kr+_-pro"
+	id = "hacker"
+	description = "L33t kem T.H.@ hack-p w^-th COG @#!9)-."
+	taste_description = "electric shock"
+	reagent_state = LIQUID
+	scannable = FALSE //SSH'ed
+	color = "#9bd70f"
+	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = 80
+	addiction_chance = 100
+
+/datum/reagent/stim/hacker/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_PROF * effect_multiplier, STIM_TIME, "hacker")
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_PROF * effect_multiplier, STIM_TIME, "hacker")
+
+/datum/reagent/stim/hacker/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_PROF, STIM_TIME, "hacker_w")

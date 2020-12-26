@@ -41,6 +41,11 @@
 	sort_category = "Xenowear"
 	cost = 0
 
+/datum/gear/xenowear/kriosansuit
+	display_name = "kriosan fatigues"
+	path = /obj/item/clothing/under/kriosansuit
+	sort_category = "Xenowear"
+
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"
 	path = /obj/item/clothing/shoes/footwraps

@@ -2,7 +2,7 @@ var/global/list/body_modifications = list()
 var/global/list/modifications_types = list(
 	BP_CHEST  = "", BP_BACK   = "", BP_HEAD   = "", BP_GROIN = "",
 	BP_L_ARM  = "", BP_R_ARM  = "", BP_L_LEG  = "", BP_R_LEG = "",
-	BP_HEART  = "", BP_LUNGS  = "", BP_LIVER  = "", BP_EYES  = ""
+	OP_HEART  = "", OP_LUNGS  = "", OP_LIVER  = "", OP_EYES   = ""
 )
 
 /proc/generate_body_modification_lists()
@@ -33,7 +33,7 @@ var/global/list/modifications_types = list(
 	var/desc = ""							// Description.
 	var/list/body_parts = list(				// For sorting'n'selection optimization.
 		BP_CHEST, BP_BACK, BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG,\
-		BP_HEART, BP_LUNGS, BP_LIVER, BP_BRAIN, BP_EYES)
+		OP_HEART, OP_LUNGS, OP_LIVER, BP_BRAIN, OP_EYES)
 	var/list/allowed_species = list("Human")// Species restriction.
 	var/replace_limb = null					// To draw usual limb or not.
 	var/mob_icon = ""
@@ -41,6 +41,7 @@ var/global/list/modifications_types = list(
 	var/nature = MODIFICATION_ORGANIC
 	var/hascolor = FALSE
 	var/allow_nt = TRUE
+	var/list/department_specific = ALL_DEPARTMENTS
 
 /datum/body_modification/proc/get_mob_icon(organ, body_build = "", color="#ffffff", gender = MALE, var/datum/species_form/species_form)	//Use in setup character only
 	return new/icon('icons/mob/human.dmi', "blank")
@@ -58,11 +59,25 @@ var/global/list/modifications_types = list(
 				to_chat(usr, "[name] can't be attached to [parent.name]")
 				return FALSE
 
-	if(!allow_nt)
-		if(H?.mind?.assigned_job.department == DEPARTMENT_CHURCH)
-			return FALSE
-		if(H?.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
-			return FALSE
+	if(department_specific.len)
+		if(H && H.mind)
+			var/department = H.mind.assigned_job.department
+			if(!department || !department_specific.Find(department))
+				to_chat(usr, "This body-mod does not match your chosen department.")
+				return FALSE
+		else if(P)
+			var/datum/job/J
+			if(ASSISTANT in P.job_low)
+				J = SSjob.GetJob(ASSISTANT)
+			else
+				J = SSjob.GetJob(P.job_high)
+			if(!J || !department_specific.Find(J.department))
+				to_chat(usr, "This body-mod does not match your highest-priority department.")
+				return FALSE
+
+	if(!allow_nt && H?.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+		to_chat(usr, "Your cruciform prevents you from using this modification.")
+		return FALSE
 
 	return TRUE
 
@@ -169,6 +184,13 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/external/robotic/junktech
 	icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
 
+/datum/body_modification/limb/prosthesis/moebius
+	id = "prosthesis_moebius"
+	replace_limb = /obj/item/organ/external/robotic/moebius
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+	department_specific = list(DEPARTMENT_MEDICAL, DEPARTMENT_SCIENCE)
+	icon = 'icons/mob/human_races/cyberlimbs/moebius.dmi'
+
 /datum/body_modification/limb/mutation/New()
 	short_name = "M: [name]"
 	name = "Mutation: [name]"
@@ -198,7 +220,7 @@ var/global/list/modifications_types = list(
 	short_name = "P: assisted"
 	id = "assisted"
 	desc = "Assisted organ."
-	body_parts = list(BP_HEART, BP_LUNGS, BP_LIVER, BP_EYES)
+	body_parts = list(OP_HEART, OP_LUNGS, OP_LIVER, OP_EYES)
 	allow_nt = FALSE
 
 /datum/body_modification/organ/assisted/create_organ(var/mob/living/carbon/holder, var/O, var/color)
@@ -214,7 +236,7 @@ var/global/list/modifications_types = list(
 	short_name = "P: prosthesis"
 	id = "robotize_organ"
 	desc = "Robotic organ."
-	body_parts = list(BP_HEART, BP_LUNGS, BP_LIVER, BP_EYES)
+	body_parts = list(OP_HEART, OP_LUNGS, OP_LIVER, OP_EYES)
 	allow_nt = FALSE
 
 /datum/body_modification/organ/robotize_organ/create_organ(var/mob/living/carbon/holder, O, color)

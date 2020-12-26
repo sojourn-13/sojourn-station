@@ -48,7 +48,7 @@
 
 /obj/item/clothing/glasses/powered/science
 	name = "science goggles"
-	desc = "Powered goggles with access to the scientific hud."
+	desc = "Powered goggles remotely synched with the Research database, allowing you to see the research potential of objects."
 	icon_state = "purple"
 	item_state = "glasses"
 
@@ -60,7 +60,7 @@
 
 /obj/item/clothing/glasses/powered/meson
 	name = "optical meson scanner"
-	desc = "Used for seeing walls, floors, and stuff through anything."
+	desc = "Using meson-spectrum scanning technology, these goggles allow you to see the full physical layout of structures around the wearer."
 	icon_state = "meson"
 	item_state = "glasses"
 	off_state = "demeson"
@@ -78,7 +78,7 @@
 
 /obj/item/clothing/glasses/powered/night
 	name = "night vision goggles"
-	desc = "Powered goggles that pierce through the darkness."
+	desc = "Powered goggles that magnify visible light perceived, allowing you to see better in the dark."
 	icon_state = "night"
 	item_state = "glasses"
 	darkness_view = 7
@@ -86,7 +86,7 @@
 	off_state = "denight"
 	origin_tech = list(TECH_MAGNET = 2)
 	price_tag = 250
-
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2)
 	tick_cost = 1
 
 /obj/item/clothing/glasses/powered/night/Initialize()

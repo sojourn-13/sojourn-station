@@ -312,6 +312,7 @@
 /obj/item/weapon/storage/pouch/holding/New()
 	..()
 	item_flags |= BLUESPACE
+	bluespace_entropy(3, get_turf(src))
 
 /obj/item/weapon/storage/pouch/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(W.item_flags & BLUESPACE)

@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/decloner
-	name = "Prototype: biological demolecularisor"
+	name = "Prototype: Biological Demolecularizer"
 	desc = "A gun that discharges high amounts of controlled radiation to slowly break a target into component elements. Despite the fancy technology used to produce this weapon, overselling by the Lonestar has made it so common it is now worth less than the metal required to make it."
 	icon = 'icons/obj/guns/energy/decloner.dmi'
 	icon_state = "decloner"

@@ -68,6 +68,57 @@
 		STAT_COG = 10
 	)
 
+/datum/category_item/setup_option/background/ethnicity/sot_synth_medical
+	name = "Medical Positronic"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Your specific model was designed with \
+	in-house medical imaging, surgical support systems, and a suite of data stored biological reference documents fed to the brain within through a real-time artifical intelligence system. The entire \
+	system works on a subconcious level, allowing the existing machinery to work with instead of for the user."
+
+	restricted_to_species = list(FORM_SOTSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 10,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/ethnicity/sot_synth_engineer
+	name = "Engineering Positronic"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Your specific model was designed with \
+	sturdy reinforced chassis functions and augmented tool support to further enhance your innate skills. Due to an often times self tinkering habit, engineering FBP's are made sturdy and equipped \
+	with a repository of schematics and tool tips fed directly to the user on a subconcious level, allowing the existing machinery to work with instead of for the user."
+
+	restricted_to_species = list(FORM_SOTSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 5,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 5,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/ethnicity/sot_synth_combat
+	name = "Combat Positronic"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Combat positronics are built specifically \
+	for the protection of colony interests but allowed to retain their free will, unlike other cyborgs. Combat positronics have the sturdiest physical designs and enhanced hydraulic systems to \
+	further enhance their physical strength. In-built armor plating and AI-fed combat techniques given on a subconcious level allow for robust and study combatants."
+
+	restricted_to_species = list(FORM_SOTSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 10,
+		STAT_BIO = 0,
+		STAT_MEC = -5,
+		STAT_COG = -5
+	)
+
 /datum/category_item/setup_option/background/ethnicity/jaeger
 	name = "Jaeger"
 	desc = "The jaegers are a group of frontier kriosan who plot the course for the spread of the kriosan civilization. \

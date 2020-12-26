@@ -71,6 +71,20 @@
 	)
 	price_tag = 150
 
+/obj/item/clothing/suit/armor/vest/iron_lock_security
+	name = "outdated ablative vest"
+	desc = "An \"Iron Lock Security\" ablative vest with plates designed to absorb rather than reflect energy projectiles. Produced by Greyson Positronic."
+	icon_state = "northtech"
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
+	armor = list(
+		melee = 15,
+		bullet = 15,
+		energy = 50,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
 	desc = "Every rose has its thorns."
@@ -89,6 +103,16 @@
 	armor = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
+/obj/item/clothing/suit/armor/vest/rosaria
+	name = "rosaria armor"
+	desc = "The rosaria protects."
+	icon_state = "rosaria_armor"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
+	flags_inv = HIDEJUMPSUIT
+	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+
 /obj/item/clothing/suit/armor/vest/custodian
 	name = "custodian armor"
 	desc = "Someone's gotta clean this mess. While this armor is technically church property, lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
@@ -104,13 +128,23 @@
 	icon_state = "prime"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
+	flags_inv = HIDEJUMPSUIT
+	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+
+/obj/item/clothing/suit/armor/vest/hunter
+	name = "hunter armor"
+	desc = "A suit of armor crudely brought together with bits of metal, glass, bone, and leather. Surprisingly effective as it keeps the wearer mobile without sacrificing protection."
+	icon_state = "hunter_armor"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor = list(
-		melee = 40,
-		bullet = 40,
-		energy = 40,
+		melee = 60,
+		bullet = 10,
+		energy = 5,
 		bomb = 50,
-		bio = 100,
-		rad = 100
+		bio = 0,
+		rad = 0
 	)
 	flags_inv = HIDEJUMPSUIT
 
@@ -188,7 +222,7 @@
 	siemens_coefficient = 0
 	price_tag = 325
 
-/obj/item/clothing/suit/armor/laserproof/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+/obj/item/clothing/suit/armor/laserproof/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack") //TODO: Refactor this all into humandefense
 	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))
 		var/obj/item/projectile/P = damage_source
 
@@ -294,9 +328,10 @@
  * Storage Types
  */
 /obj/item/clothing/suit/storage/vest
-	name = "webbed armor vest"
-	desc = "A synthetic armor vest. This one has added webbing and ballistic plates."
+	name = "webbed armor"
+	desc = "An armored vest used for day-to-day operations. This one has various pouches and straps attached."
 	icon_state = "webvest"
+	price_tag = 250 //Normal vest is worth 200, this one is worth 250 because it also has storage space
 	armor = list(
 		melee = 20,
 		bullet = 30,
@@ -308,6 +343,27 @@
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS|THICKMATERIAL
+
+	cold_protection = UPPER_TORSO|LOWER_TORSO
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = UPPER_TORSO|LOWER_TORSO
+	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0.6
+
+//Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
+/obj/item/clothing/suit/storage/vest/merc
+	name = "heavy armor vest"
+	desc = "A high-quality armor vest in a fetching tan. It is surprisingly flexible and light, even with the added webbing and armor plating."
+	icon_state = "mercwebvest"
+	item_state = "mercwebvest"
+	armor = list(
+		melee = 50,
+		bullet = 50,
+		energy = 50,
+		bomb = 25,
+		bio = 0,
+		rad = 0
+	)
 
 //Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier
@@ -428,8 +484,6 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	icon_state = "marshal_coat_ss"
 	item_state = "marshal_coat_ss"
 
-//Reactive armor
-
 //Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
 /obj/item/clothing/suit/storage/vest/merc
 	name = "heavy armor vest"
@@ -464,32 +518,22 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		bio = 0,
 		rad = 0
 		)
+	var/entropy_value = 2
 
-/obj/item/clothing/suit/armor/reactive/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+/obj/item/clothing/suit/armor/reactive/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
 	if(prob(50))
 		user.visible_message(SPAN_DANGER("The reactive teleport system flings [user] clear of the attack!"))
-		var/list/turfs = new/list()
 		var/turf/TLoc = get_turf(user)
-		for(var/turf/T in trange(6, TLoc))
-			if(istype(T,/turf/space)) continue
-			if(T.density) continue
-			if(T.x>world.maxx-6 || T.x<6)	continue
-			if(T.y>world.maxy-6 || T.y<6)	continue
-			turfs += T
-		if(!turfs.len) turfs += pick(/turf in orange(6))
-		var/turf/picked = pick(turfs)
-		if(!isturf(picked)) return
-
+		var/turf/picked = get_random_secure_turf_in_range(src, 7, 1)
+		if(!picked) return
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, user.loc)
 		spark_system.start()
-		playsound(user.loc, "sparks", 50, 1)
-
-		user.loc = picked
+		go_to_bluespace(TLoc, entropy_value, TRUE, user, picked)
 		return PROJECTILE_FORCE_MISS
-	return 0
+	return FALSE
 
-/obj/item/clothing/suit/armor/reactive/attack_self(mob/user as mob)
+/obj/item/clothing/suit/armor/reactive/attack_self(mob/user)
 	src.active = !( src.active )
 	if (src.active)
 		to_chat(user, "\blue The reactive armor is now active.")
@@ -507,3 +551,70 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	src.icon_state = "reactiveoff"
 	src.item_state = "reactiveoff"
 	..()
+
+/// Hunting Lodge Armor
+
+/obj/item/clothing/suit/armor/hunter
+	name = "hunter armor"
+	desc = "An lightly armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	icon_state = "hunter_armor"
+	item_state = "hunter_armor"
+	blood_overlay_type = "armor"
+	armor = list(
+		melee = 35,
+		bullet = 25,
+		energy = 25,
+		bomb = 10,
+		bio = 0,
+		rad = 0 )
+	body_parts_covered = UPPER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|LEGS
+
+/obj/item/clothing/suit/armor/hunter/bone
+	name = "hunter armor"
+	desc = "An lightly armored breastplate with bone-reinforcements of animal ribs and skulls accompanied by knee-guards from an unkown animal. \
+	supplied by the local hunting-lodge. It appears to be rather crudely self made. \ "
+	icon_state = "hunter_armor_bone"
+	item_state = "hunter_armor_bone"
+	blood_overlay_type = "armor"
+	armor = list(
+		melee = 45,
+		bullet = 20,
+		energy = 20,
+		bomb = 10,
+		bio = 0,
+		rad = 0 )
+	body_parts_covered = UPPER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|LEGS
+
+/obj/item/clothing/suit/armor/hunter/reinforced
+	name = "hunter armor"
+	desc = "An heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	icon_state = "hunter_armor_reinforced"
+	item_state = "hunter_armor_reinforced"
+	blood_overlay_type = "armor"
+	armor = list(
+		melee = 30,
+		bullet = 45,
+		energy = 25,
+		bomb = 10,
+		bio = 0,
+		rad = 0 )
+	body_parts_covered = UPPER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|LEGS
+
+/obj/item/clothing/suit/armor/hunter/leather
+	name = "hunter armor"
+	desc = "An lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	icon_state = "hunter_armor_leather"
+	item_state = "hunter_armor_leather"
+	blood_overlay_type = "armor"
+	armor = list(
+		melee = 30,
+		bullet = 20,
+		energy = 45,
+		bomb = 10,
+		bio = 0,
+		rad = 0 )
+	body_parts_covered = UPPER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LEGS|ARMS

@@ -169,7 +169,7 @@
 
 /obj/item/weapon/tool_upgrade/productivity/whetstone
 	name = "sharpening block"
-	desc = "A rough single-use block to sharpen a blade. The honed edge cuts smoothly."
+	desc = "A rough single-use block to sharpen a blade or a rifle bayonet. The honed edge cuts smoothly."
 	icon_state = "whetstone"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_DIAMOND = 3)
 
@@ -191,7 +191,7 @@
 
 /obj/item/weapon/tool_upgrade/productivity/diamond_blade
 	name = "Lonestars \"Gleaming Edge\": diamond blade"
-	desc = "An adaptable industrial grade cutting disc, with diamond dust worked into the metal. Exceptionally durable."
+	desc = "An adaptable industrial grade cutting disc, with diamond dust worked into the metal. Exceptionally durable. Works for both cutting tools and rifle bayonets."
 	icon_state = "diamond_blade"
 	price_tag = 300
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 4)
@@ -357,7 +357,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10
 	)
-	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING)
+	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING, QUALITY_PULSING)
 	I.prefix = "magnetic"
 
 /obj/item/weapon/tool_upgrade/refinement/ported_barrel
@@ -486,6 +486,7 @@
 	I.prefix = "holding"
 	I.req_fuel_cell = REQ_FUEL
 	item_flags |= BLUESPACE
+	bluespace_entropy(5, get_turf(src))
 
 //Penalises the tool, but unlocks several more augment slots.
 /obj/item/weapon/tool_upgrade/augment/expansion
@@ -510,7 +511,7 @@
 /obj/item/weapon/tool_upgrade/augment/spikes
 	name = "spikes"
 	icon_state = "spike"
-	desc = "An array of sharp bits of steel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity."
+	desc = "An array of sharp bits of steel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity. Alternatively you could slap it on the end of a gun barrel as a ghetto bayonet at the cost of some accuracy."
 	matter = list(MATERIAL_STEEL = 2)
 
 /obj/item/weapon/tool_upgrade/augment/spikes/New()
@@ -526,10 +527,35 @@
 	)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_MELEE_DAMAGE = 1.2,
+		GUN_UPGRADE_RECOIL = 1.1,
 	)
 	I.gun_loc_tag = GUN_KNIFE
 	I.prefix = "spiked"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
+
+/obj/item/weapon/tool_upgrade/augment/sanctifier
+	name = "sanctifier"
+	icon_state = "sanctifier"
+	desc = "Recommended for crusades against mutants, wild life, and heretics. Does this device actually make a better weapon or is it something else? Regardless, it makes one more thoughtful during labor."
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 2)
+
+/obj/item/weapon/tool_upgrade/augment/sanctifier/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_SANCTIFY = TRUE,
+	UPGRADE_FORCE_MOD = 10,
+	UPGRADE_HEALTH_THRESHOLD = 10,
+	UPGRADE_DEGRADATION_MULT = 0.9,
+	UPGRADE_WORKSPEED = -0.5
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 1.2,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_CHARGECOST = 0.8)
+	I.prefix = "sanctified"
+	I.req_fuel_cell = REQ_CELL
 
 /*
 /obj/item/weapon/tool_upgrade/augment/hammer_addon
@@ -714,3 +740,24 @@
 	)
 	I.prefix = "bomb-proofed"
 	I.required_qualities = list(QUALITY_ARMOR)
+
+// Randomizes a bunch of weapon stats on application - stats are set on creation of the item to prevent people from re-rolling until they get what they want
+/obj/item/weapon/tool_upgrade/augment/randomizer
+	name = "BSL \"Randomizer\" tool polish"
+	desc = "This unidentified tar-like liquid warps and bends reality around it. Applying it to a tool may have unexpected results."
+	icon_state = "randomizer"
+	matter = list(MATERIAL_PLASMA = 4, MATERIAL_URANIUM = 4)
+
+/obj/item/weapon/tool_upgrade/augment/randomizer/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_DEGRADATION_MULT = rand(-1,10),
+	UPGRADE_HEALTH_THRESHOLD = rand(-10,10),
+	UPGRADE_WORKSPEED = rand(-1,3),
+	UPGRADE_PRECISION = rand(-20,20),
+	UPGRADE_FORCE_MOD = rand(-20,20),
+	UPGRADE_BULK = rand(-1,2),
+	UPGRADE_COLOR = "#3366ff"
+	)
+	I.prefix = "theoretical"

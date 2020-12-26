@@ -10,6 +10,8 @@
 	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "tomato"
 
+	var/eating_time = 900
+
 	var/icon_living
 	var/icon_dead
 	var/icon_rest //resting/unconscious animation

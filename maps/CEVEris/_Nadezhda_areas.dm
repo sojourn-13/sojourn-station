@@ -131,6 +131,7 @@
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 	dynamic_lighting = FALSE
+	ship_area = FALSE
 
 
 /area/nadezhda/dungeon/outside/trashcave
@@ -178,6 +179,24 @@
 	dynamic_lighting = TRUE
 	requires_power = 0
 
+/area/nadezhda/dungeon/outside/prepper/vault
+	name = "Vault Bunker"
+	icon_state = "erisblue"
+	requires_power = 1
+
+//This is put here because the floors are seperated by power needs, the reason being if not powering 1 floor lags the server to hell and back. -Kaz
+/area/nadezhda/dungeon/outside/prepper/vault/floor1
+
+/area/nadezhda/dungeon/outside/prepper/vault/floor2
+
+/area/nadezhda/dungeon/outside/prepper/vault/floor3
+
+/area/nadezhda/dungeon/outside/prepper/vault/floor4
+
+/area/nadezhda/dungeon/outside/prepper/vault/floor5
+
+/area/nadezhda/dungeon/outside/prepper/vault/entryway
+
 /area/nadezhda/dungeon/outside/monster_cave
 	name = "Monster Cave"
 	icon_state = "erisgreen"
@@ -213,8 +232,17 @@
 	requires_power = 0
 	flags = AREA_FLAG_RAD_SHIELDED
 
+/area/nadezhda/outside/one_star/fo_outside
+	name = "Greyson Grounds"
+	icon_state = "erisgreen"
+	dynamic_lighting = FALSE
+
+/area/nadezhda/outside/one_star/fo_internal
+	name = "Greyson Field Offices"
+	icon_state = "erisblue"
+
 /area/nadezhda/outside/dcave
-	name = "Diyaab Cave"
+	name = "Tengolo Cave East"
 	icon_state = "erisgreen"
 
 /area/nadezhda/outside/fnest
@@ -226,7 +254,7 @@
 	icon_state = "erisgreen"
 
 /area/nadezhda/outside/bcave
-	name = "Bear Cave"
+	name = "Tengolo Cave West"
 	icon_state = "erisgreen"
 	dynamic_lighting = TRUE
 
@@ -239,6 +267,24 @@
 	icon_state = "forest"
 	sound_env = FOREST
 	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
+
+/area/nadezhda/outside/forest/beast_cave_light
+	name = "Swamp Caves"
+	icon_state = "forest"
+
+/area/nadezhda/outside/forest/beast_cave_dark
+	name = "Swamp Caves"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
+/area/nadezhda/outside/forest/river_forest_light
+	name = "River Forest"
+	icon_state = "forest"
+
+/area/nadezhda/outside/forest/river_forest_dark
+	name = "River Forest"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/lakeside
     name = "Lakeside"
@@ -1249,6 +1295,18 @@ area/nadezhda/medical/medbaymeeting
 
 /area/nadezhda/security/prisoncells
 	name = "Prison Cells"
+	icon_state = "hammerblue"
+
+/area/nadezhda/security/laber_area
+	name = "Labor Transfer"
+	icon_state = "hammerblue"
+
+/area/nadezhda/security/hut_cell1
+	name = "HuT Cell 1"
+	icon_state = "hammerblue"
+
+/area/nadezhda/security/hut_cell2
+	name = "HuT Cell 2"
 	icon_state = "hammerblue"
 
 /area/nadezhda/security/evidencestorage

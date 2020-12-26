@@ -283,6 +283,16 @@
 	ammo_type = /obj/item/ammo_casing/antim
 	max_ammo = 30
 
+/obj/item/ammo_magazine/ammobox/antim_small
+	name = "ammunition packet (.60-06 AP)"
+	icon_state = "60-06sm"
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_ANTIM
+	w_class = ITEM_SIZE_NORMAL
+	ammo_type = /obj/item/ammo_casing/antim
+	max_ammo = 5
+
+
 //// .408 Omni ////
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small
@@ -434,3 +444,102 @@
 		var/percent = (stored_ammo.len / max_ammo) * 100
 		number = round(percent, 25)
 	icon_state = "boxhrifle-lethal-[number]"
+
+// Shotgun boxes
+
+/obj/item/ammo_magazine/ammobox/shotgun
+	name = "ammunition packet (20mm Slug)"
+	icon_state = "slug"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1) // should be 35 steel, but for balance its not
+	caliber = CAL_SHOTGUN
+	w_class = ITEM_SIZE_NORMAL //so we dont magiclly shrink
+	ammo_type = /obj/item/ammo_casing/shotgun
+	max_ammo = 35
+
+/*To do, make this work
+/obj/item/ammo_magazine/ammobox/shotgun/update_icon()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (stored_ammo.len >= 0)
+		iconstring = "-1"
+	else
+		iconstring += "-0"
+		return
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+*/
+
+/obj/item/ammo_magazine/ammobox/shotgun/blanks
+	name = "ammunition packet (20mm Blank)"
+	icon_state = "slug"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/blank
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/practiceshells
+	name = "ammunition packet (20mm Practice Shells)"
+	icon_state = "slug"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/practice
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/beanbags
+	name = "ammunition packet (20mm beanbags)"
+	icon_state = "bean"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/buckshot
+	name = "ammunition packet (20mm Buckshot)"
+	icon_state = "buckshot"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/flash
+	name = "ammunition packet (20mm Illumination)"
+	icon_state = "stunslug"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/flash
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/stunshells
+	name = "ammunition packet (20mm Stun Shells)"
+	icon_state = "stunslug"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/payload
+	name = "ammunition packet (20mm Explosive Shells)"
+	icon_state = "explosive"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/payload
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/incendiary
+	name = "ammunition packet (20mm Incendiary)"
+	icon_state = "explosive"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/flashshells
+	name = "ammunition packet (20mm Flash Shell)"
+	icon_state = "explosive"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/flash
+	max_ammo = 35

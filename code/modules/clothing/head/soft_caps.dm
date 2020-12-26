@@ -127,3 +127,10 @@
 	desc = "Cap worn by soteria medical personnel."
 	icon_state = "medcap"
 	item_state = "medcap"
+
+// M I N O R   F A C T I O N S //
+/obj/item/clothing/head/soft/iron_lock_security
+	name = "Iron Lock Security cap"
+	initial_name = "Iron Lock Security cap"
+	desc = "It's a field cap in red colors with \"Iron Lock Security\" logo on it."
+	icon_state = "northtech"

@@ -10,7 +10,7 @@
 
 /obj/item/weapon/tool/bonesetter/adv
 	name = "clamp bone setter"
-	desc = "A more powerful yet still rather small bone clamp tool."
+	desc = "An advanced bone clamping tool, allows for more precise settling of bones with less wrist force required."
 	icon_state = "bone setter"
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 3)

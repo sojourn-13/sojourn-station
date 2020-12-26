@@ -25,7 +25,28 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND
+		BURST_3_ROUND
+		)
+
+/obj/item/weapon/gun/projectile/automatic/nordwind/strelki
+	name = "\"Strelki\" precision rifle"
+	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\
+			Its mostly wooden design and its usage of 7.5 rounds make it the ideal weapon for a hunter tired of a crude boltaction. The frontier's favorite sniper!"
+	icon = 'icons/obj/guns/projectile/strelki.dmi'
+	icon_state = "strelki"
+	item_state = "strelki"
+	slot_flags = SLOT_BACK
+	load_method = MAGAZINE
+	mag_well = MAG_WELL_RIFLE
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
+	price_tag = 750
+	zoom_factor = 0.5
+	recoil_buildup = 22
+	damage_multiplier = 0.9
+	one_hand_penalty = 30
+	auto_eject = FALSE
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
 		)
 
 /obj/item/weapon/gun/projectile/automatic/nordwind/update_icon()

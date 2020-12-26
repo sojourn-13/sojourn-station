@@ -108,6 +108,10 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	opacity = 0
 	glass = 1
 
+/obj/machinery/door/airlock/glass/open
+	icon_state = "door_open"
+	density = 0
+
 /obj/machinery/door/airlock/centcom
 	name = "Airlock"
 	icon = 'icons/obj/doors/Doorele.dmi'
@@ -1211,7 +1215,7 @@ There are 9 wires.
 				if(AM.blocks_airlock())
 					if(world.time > next_beep_at)
 						playsound(src.loc, 'sound/machines/buzz-two.ogg', 30, 1, -1)
-						next_beep_at = world.time + SecondsToTicks(10)
+						next_beep_at = world.time + SecondsToTicks(120)
 					close_door_at = world.time + 6
 					return
 				if(istype(AM, /obj/item/weapon/tool))

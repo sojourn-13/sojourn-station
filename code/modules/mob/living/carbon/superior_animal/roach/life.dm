@@ -31,14 +31,14 @@
 					return
 
 			else if(busy == MOVING_TO_TARGET && eat_target)
+				if(istype(eat_target, /mob/living/carbon/human))
+					eating_time = 9000
 				if(get_dist(src, eat_target) <= 1)
 					busy = EATING_TARGET
 					stop_automated_movement = 1
 					src.visible_message(SPAN_NOTICE("\The [src] begins to eat \the [eat_target]."))
 					walk(src,0)
-					spawn(900) // how much time it takes to eat a corpse, in tenths of second
-					if(istype(eat_target, /mob/living/carbon/human))
-						spawn(8100)
+					spawn(eating_time) // how much time it takes to eat a corpse, in tenths of second
 						// Set to 15 minutes to let the crew enough time to get the corpse
 						 //Takes to eat any non-human much shorter of a time, just 1 and a 1/2 min
 						// Several roaches eating at the same time do not speed up the process
@@ -84,9 +84,10 @@
 										src.visible_message(SPAN_WARNING("\The [src] finishes eating \the [eat_target], leaving only bones."))
 
 										// Get fed
-										fed += rand(4,8)
+										fed += rand(2,3)
 
 								eat_target = null
+								eating_time = 900 //Resetting the timer just in case
 
 							busy = 0
 							stop_automated_movement = 0

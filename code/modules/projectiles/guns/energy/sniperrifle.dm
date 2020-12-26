@@ -22,4 +22,4 @@
 		WEAPON_CHARGE
 	)
 	twohanded = TRUE
-	gun_tags = list(GUN_ENERGY, GUN_BAYONET)
+	gun_tags = list(GUN_ENERGY)

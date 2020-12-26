@@ -22,6 +22,7 @@
 				/obj/item/weapon/tool/hammer/powered_hammer = 2,
 				/obj/item/weapon/tool/wrench/big_wrench = 2,
 				/obj/item/weapon/tool/multitool = 4,
+				/obj/item/weapon/tool/multitool/advanced = 1,
 				/obj/item/weapon/tool/saw = 8,
 				/obj/item/weapon/tool/saw/circular = 2,
 				/obj/item/weapon/tool/saw/circular/advanced = 1,
@@ -37,6 +38,7 @@
 				/obj/item/weapon/tool/pickaxe/excavation = 1,
 				/obj/item/weapon/tool/tape_roll = 12,
 				/obj/item/weapon/tool/tape_roll/fiber = 2,
+				/obj/item/weapon/tool/tape_roll/glue = 10,
 				/obj/item/weapon/storage/belt/utility = 5,
 				/obj/item/weapon/storage/belt/utility/full = 1,
 				/obj/item/clothing/gloves/insulated/cheap = 5,
@@ -103,6 +105,7 @@
 				/obj/item/weapon/tool/saw/hyper = 1,
 				/obj/item/weapon/tool/pickaxe/diamonddrill = 2,
 				/obj/item/weapon/tool/tape_roll/fiber = 2,
+				/obj/item/weapon/tool/multitool/advanced = 1,
 				//obj/item/weapon/tool/tape_roll/flextape = 1,
 				/obj/item/weapon/tool/fireaxe = 1))
 

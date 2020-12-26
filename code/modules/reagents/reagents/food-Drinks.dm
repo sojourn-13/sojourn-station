@@ -565,6 +565,28 @@
 	M.heal_organ_damage(0.05 * effect_multiplier, 0)
 	holder.remove_reagent("capsaicin", 1 * effect_multiplier)
 
+/datum/reagent/drink/milk/red
+	name = "Strawberry Milk"
+	id = "strawberrymilk"
+	description = "An opaque red liquid produced by the mammary glands of mammals and berries."
+	taste_description = "strawberry milk"
+	color = "#DFDFDF"
+
+	glass_icon_state = "glass_red"
+	glass_name = "strawberry milk"
+	glass_desc = "Red and nutritious goodness!"
+
+/datum/reagent/drink/milk/coca
+	name = "Chocolate Milk"
+	id = "chocolatemilk"
+	description = "An opaque brown liquid produced by the mammary glands of mammals and coca powerder."
+	taste_description = "strawberry milk"
+	color = "#DFDFDF"
+
+	glass_icon_state = "chocolateglass"
+	glass_name = "Chocolate milk"
+	glass_desc = "Chocolate and nutritious goodness!"
+
 /datum/reagent/drink/milk/cream
 	name = "Cream"
 	id = "cream"
@@ -662,7 +684,7 @@
 	// Coffee is really bad for you with busted kidneys.
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/kidneys/K = H.internal_organs_by_name[BP_KIDNEYS]
+		var/obj/item/organ/internal/kidney/K = H.random_organ_by_process(OP_KIDNEYS)
 		if(istype(K))
 			if(K.is_bruised())
 				M.adjustToxLoss(0.1)
@@ -1206,6 +1228,46 @@
 	glass_name = "blue curacao"
 	glass_desc = "Exotically blue, fruity drink, distilled from oranges."
 	glass_center_of_mass = list("x"=16, "y"=5)
+
+/datum/reagent/ethanol/redcandywine
+	name = "Candy Liquor"
+	id = "redcandyliquor"
+	description = "Made from astored sweets, candies and even flowers."
+	taste_description = "sweet and smooth alcohol"
+	color = "#E33232" // rgb: 227, 50, 50
+	strength = 10
+
+	glass_icon_state = "alco-redglass"
+	glass_name = "Mister Red"
+	glass_desc = "Candy is dandy but liquor is quicker."
+	glass_center_of_mass = list("x"=16, "y"=5)
+
+/datum/reagent/ethanol/nanatsunoumi
+	name = "Nanatsunoumi"
+	id = "nanatsunoumi"
+	description = "A harsh salty alcohol that is from Japanese origin."
+	taste_description = "salt and young leamons"
+	color = "#FFFFFF" // rgb: 255, 255, 255
+	strength = 40
+
+	glass_icon_state = "alco-whiteglass"
+	glass_name = "Rigingu"
+	glass_desc = "A alcohol drink from Japanese origin known for being salty."
+	glass_center_of_mass = list("x"=16, "y"=5)
+
+/datum/reagent/ethanol/miss_fortune
+	name = "Fortune"
+	id = "miss_fortune"
+	description = "Mix of Candy Liquor, Nanatsunoumi, Blue Curacao, and Melon Liquor that shockingly tastes good.."
+	taste_description = "luck"
+	color = "#FFFFFF" // rgb: 255, 255, 255
+	strength = 200 //Oh no
+
+	glass_icon_state = "alco-whiteglass"
+	glass_name = "Miss Fortune"
+	glass_desc = "A mix of many colours that somehow tastes good."
+	glass_center_of_mass = list("x"=16, "y"=5)
+
 
 /datum/reagent/ethanol/cognac
 	name = "Cognac"
@@ -2052,7 +2114,7 @@
 		M.adjustToxLoss(0.2 * effect_multiplier)
 	if(dose > 60 && ishuman(M) && prob(5))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/L = H.internal_organs_by_name[BP_HEART]
+		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
 		if(L && istype(L))
 			if(dose < 120)
 				L.take_damage(1 * effect_multiplier, 0)

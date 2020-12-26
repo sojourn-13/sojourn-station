@@ -48,11 +48,11 @@
 	createInnerDoors = 1
 
 	turbolift_stops = list(
-		/area/turbolift/Mining/colony,
+		/area/turbolift/Mining/underground,
 		/area/turbolift/Mining/midlevelOne,
 		/area/turbolift/Mining/midlevelTwo,
 		/area/turbolift/Mining/midlevelThree,
-		/area/turbolift/Mining/underground,
+		/area/turbolift/Mining/colony,
 		)
 
 

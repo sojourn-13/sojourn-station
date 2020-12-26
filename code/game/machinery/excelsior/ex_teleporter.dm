@@ -46,7 +46,8 @@ var/global/excelsior_last_draft = 0
 		/obj/item/weapon/stock_parts/manipulator/excelsior = 50,
 		/obj/item/weapon/stock_parts/micro_laser/excelsior = 50,
 		/obj/item/weapon/stock_parts/matter_bin/excelsior = 50,
-		/obj/item/clothing/under/excelsior = 100,
+		/obj/item/clothing/under/excelsior = 10,
+		/obj/item/weapon/soap/syndie = 25,
 		/obj/item/weapon/circuitboard/excelsior_teleporter = 500,
 		/obj/item/weapon/circuitboard/excelsiorautolathe = 150,
 		/obj/item/weapon/circuitboard/excelsiorreconstructor = 150,
@@ -65,8 +66,10 @@ var/global/excelsior_last_draft = 0
 		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez = 200,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_boltgun = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ak = 200,
+		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 300,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer = 300
 		)
+	var/entropy_value = 8
 
 /obj/machinery/complant_teleporter/Initialize()
 	excelsior_teleporters |= src
@@ -82,6 +85,7 @@ var/global/excelsior_last_draft = 0
 	var/man_amount = 0
 	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
+		entropy_value = initial(entropy_value)/M.rating
 		man_amount++
 
 	// +50% speed for each upgrade tier
@@ -278,6 +282,7 @@ var/global/excelsior_last_draft = 0
 /obj/machinery/complant_teleporter/proc/complete_order(order_path, amount)
 	use_power(active_power_usage * 3)
 	new order_path(loc, amount)
+	bluespace_entropy(entropy_value, get_turf(src))
 	processing_order = FALSE
 
 /obj/machinery/complant_teleporter/attackby(obj/item/I, mob/user)

@@ -76,6 +76,19 @@
 			var/obj/effect/plant/P = A
 			P.die_off()
 
+/obj/item/weapon/tool/fireaxe/woodsman
+	name = "woodsman axe"
+	desc = "Chop the wood to fuel the fire."
+	icon_state = "woodsmanaxe0"
+	wielded_icon = "woodsmanaxe1"
+	force = WEAPON_FORCE_PAINFUL
+	force_unwielded = WEAPON_FORCE_PAINFUL
+	force_wielded = WEAPON_FORCE_ROBUST
+	armor_penetration = ARMOR_PEN_SHALLOW
+	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 25)
+	w_class = ITEM_SIZE_BULKY
+	slot_flags = null
+
 /obj/item/weapon/tool/minihoe
 	name = "mini hoe"
 	desc = "It's used for removing weeds or scratching your back."
@@ -89,8 +102,6 @@
 	tool_qualities = list(QUALITY_SHOVELING = 10)
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("slashed", "sliced", "cut", "clawed")
-
-
 
 //Knifes
 
@@ -232,15 +243,16 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_BLUESPACE = 4)
 	var/mob/living/embedded
 	var/last_teleport
+	var/entropy_value = 3
 
 /obj/item/weapon/tool/knife/dagger/bluespace/New()
 	..()
 	item_flags |= BLUESPACE
 
-/obj/item/weapon/tool/knife/dagger/bluespace/on_embed(var/mob/user)
+/obj/item/weapon/tool/knife/dagger/bluespace/on_embed(mob/user)
 	embedded = user
 
-/obj/item/weapon/tool/knife/dagger/bluespace/on_embed_removal(var/mob/user)
+/obj/item/weapon/tool/knife/dagger/bluespace/on_embed_removal(mob/user)
 	embedded = null
 
 /obj/item/weapon/tool/knife/dagger/bluespace/Process()
@@ -253,7 +265,7 @@
 				last_teleport = world.time
 				playsound(T, "sparks", 50, 1)
 				anim(T,embedded,'icons/mob/mob.dmi',,"phaseout",,embedded.dir)
-				embedded.forceMove(T)
+				go_to_bluespace(get_turf(embedded), entropy_value, TRUE, embedded, T)
 				playsound(T, 'sound/effects/phasein.ogg', 25, 1)
 				playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
 				anim(T,embedded,'icons/mob/mob.dmi',,"phasein",,embedded.dir)
@@ -306,8 +318,6 @@
 	slot_flags = SLOT_BACK
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 15, QUALITY_SAWING = 10)
-
-
 
 //Flails
 /obj/item/weapon/tool/chainofcommand
@@ -362,7 +372,7 @@
 
 /obj/item/weapon/tool/sword/katana_makeshift
 	name = "makeshift katana"
-	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where theirs a will and a weeb theirs a way."
+	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where there's a will and a weeb there's a way."
 	icon_state = "katana_improv"
 	item_state = "katana_improv"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2) //twice the value of a kitche knife
@@ -536,3 +546,27 @@
 	attack_verb = list("attacked", "smashed", "bludgeoned", "beaten")
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_upgrades = 5
+
+/obj/item/weapon/tool/gauntlet
+	name = "render gauntlet"
+	desc = "A crudely made gauntlet consisting of straps, metal reinforcement and render skin - including it's deadly claws."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "gauntlet"
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 5)
+	attack_verb = list("clawed", "scratched", "lacerated", "slashed")
+
+/obj/item/weapon/tool/sword/nt/halberd
+	name = "Halberd"
+	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself; "
+	icon_state = "hunter_halberd"
+	item_state = "hunter_halberd"
+	wielded_icon = "hunter_halberd_wielded"
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_DEEP
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK
+	price_tag = 500
+	matter = list(MATERIAL_STEEL = 22, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 4)

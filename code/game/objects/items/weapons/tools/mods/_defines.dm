@@ -18,6 +18,8 @@
 #define UPGRADE_BOMB_ARMOR "bomb"
 // ------------------
 
+#define SANCTIFIED "saint" //Used for weapons that was sanctified
+
 #define UPGRADE_BULK "bulk_mod"
 
 #define UPGRADE_HEALTH_THRESHOLD "health_threshold_modifier"
@@ -25,6 +27,8 @@
 #define UPGRADE_MAXFUEL "max_fuel"
 
 #define UPGRADE_MAXUPGRADES "max_upgrades"
+
+#define UPGRADE_SANCTIFY "sanctify"
 
 #define UPGRADE_SHARP "sharp"
 

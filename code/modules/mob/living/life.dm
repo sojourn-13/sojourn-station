@@ -2,6 +2,7 @@
 	set invisibility = 0
 	set background = BACKGROUND_ENABLED
 
+	. = FALSE
 	..()
 	if(config.enable_mob_sleep)
 		if(life_cycles_before_scan > 0)
@@ -41,7 +42,7 @@
 			//Random events (vomiting etc)
 			handle_random_events()
 
-			. = 1
+			. = TRUE
 
 		//Handle temperature/pressure differences between body and environment
 		if(environment)
@@ -49,9 +50,6 @@
 
 		//Check if we're on fire
 		handle_fire()
-
-		//stuff in the stomach
-		handle_stomach()
 
 		update_pulling()
 
@@ -86,9 +84,6 @@
 	return
 
 /mob/living/proc/handle_environment(var/datum/gas_mixture/environment)
-	return
-
-/mob/living/proc/handle_stomach()
 	return
 
 /mob/living/proc/update_pulling()

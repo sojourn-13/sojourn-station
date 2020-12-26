@@ -56,7 +56,7 @@
 	New()
 		if(prob(50))
 			icon_state = "stickyweb2"
-		if(prob(20))
+		if(prob(20) && silk_baring)
 			silk_baring = FALSE
 		..()
 
@@ -84,7 +84,7 @@
 			to_chat(user, SPAN_NOTICE("You bundle up a ball of spider silk."))
 			qdel(src)
 			return
-		return
+	..()
 
 
 /obj/effect/spider/stickyweb/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)

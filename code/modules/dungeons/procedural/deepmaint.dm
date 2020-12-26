@@ -215,7 +215,7 @@ var/global/list/big_deepmaint_room_templates = list()
 		generate.setLightChance(2)
 		generate.setFloorType(/turf/simulated/floor/tiled/techmaint_perforated)
 		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint/big))
-		generate.setNumRooms(1)
+		generate.setNumRooms(3) //3 deepmaints "core" rooms
 		generate.setExtraPaths(0)
 		generate.setMinPathLength(0)
 		generate.setMaxPathLength(0)
@@ -231,10 +231,10 @@ var/global/list/big_deepmaint_room_templates = list()
 
 		generate.setArea(locate(20, 20, z), locate(150, 150, z))
 		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint))
-		generate.setNumRooms(15)
+		generate.setNumRooms(25) // 25 smaller rooms
 		generate.setExtraPaths(5)
 		generate.setMinPathLength(0)
-		generate.setMaxPathLength(120)
+		generate.setMaxPathLength(60) //Small Rooms are 60 at most appart
 		generate.setMinLongPathLength(0)
 		generate.setLongPathChance(0)
 		generate.setPathEndChance(100)

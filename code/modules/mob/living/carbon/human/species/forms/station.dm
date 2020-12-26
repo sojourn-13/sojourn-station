@@ -12,9 +12,9 @@
 #define FORM_CANINE				"Canine"
 #define FORM_SHARK				"Shark"
 #define FORM_LIZARD				"Lizard"
-#define FORM_VULPINE			"Vulpine"
+#define FORM_VULPINE				"Vulpine"
 #define FORM_FENNEC				"Fennec"
-#define FORM_NARAMAD			"Naramad"
+#define FORM_NARAMAD				"Naramad"
 #define FORM_SLIME				"Slime"
 #define FORM_AVIAN				"Avian"
 #define FORM_SPIDER				"Arachnoid"
@@ -182,3 +182,15 @@
 	base = 'icons/mob/human_races/r_nevrean.dmi'
 	deform = 'icons/mob/human_races/r_def_nevrean.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
+/datum/species_form/soteria_synthetic
+	playable = FALSE
+	name = FORM_SOTSYNTH
+	base = 'icons/mob/human_races/r_human_white.dmi'
+	deform = 'icons/mob/human_races/r_def_human_white.dmi'
+	appearance_flags = HAS_UNDERWEAR
+	death_sound = 'sound/machines/shutdown.ogg'
+	death_message = "falls over crashing to the ground as the eletronic eyes fade off."
+	knockout_message = "has been knocked offline!"
+	halloss_message = "falls down with a loud clash and seems to be unresponsive."
+	halloss_message_self = "Your systems are rebooting from an overload."

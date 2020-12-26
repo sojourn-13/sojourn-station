@@ -1,16 +1,15 @@
 /obj/item/organ/internal/cell
 	name = "microbattery"
-	desc = "A small, powerful cell for use in fully prosthetic bodies."
-	icon = 'icons/obj/power.dmi'
-	icon_state = "scell"
-	organ_tag = BP_CELL
-	parent_organ = BP_CHEST
+	desc = "A small, powerful cell for use in fully prosthetic bodies. Takes a medium cell and normally comes with a nuclear self charging cell."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "cortical_stack"
+	parent_organ_base = BP_CHEST
 	nature = MODIFICATION_SILICON
 	vital = TRUE
 	var/open
-	var/obj/item/weapon/cell/medium/cell = /obj/item/weapon/cell/medium
+	var/obj/item/weapon/cell/medium/cell = /obj/item/weapon/cell/medium/moebius/nuclear
 	//at 0.8 completely depleted after 60ish minutes of constant walking or 130 minutes of standing still
-	var/servo_cost = 0.8 // this will probably require tweaking
+	var/servo_cost = 0.5 // this will probably require tweaking
 
 /obj/item/organ/internal/cell/Initialize(mapload, ...)
 	. = ..()
@@ -98,7 +97,7 @@
 /obj/item/organ/internal/optical_sensor
 	name = "optical sensor"
 	organ_tag = "optics"
-	parent_organ = BP_HEAD
+	parent_organ_base = BP_HEAD
 	nature = MODIFICATION_SILICON
 	icon = 'icons/obj/robot_component.dmi'
 	icon_state = "camera"
@@ -108,7 +107,7 @@
 /obj/item/organ/internal/mmi_holder
 	name = "brain"
 	organ_tag = BP_BRAIN
-	parent_organ = BP_CHEST
+	parent_organ_base = BP_CHEST
 	vital = 1
 	var/obj/item/device/mmi/stored_mmi
 

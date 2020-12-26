@@ -185,6 +185,13 @@ var/world_topic_spam_protect_time = world.timeofday
 	fdel(F)
 	F << the_mode
 
+/hook/startup/proc/loadAd()
+	world.load_ad()
+	return 1
+
+/world/proc/load_ad()
+	server_ad = file2text("config/advert.txt")
+
 /hook/startup/proc/loadMOTD()
 	world.load_motd()
 	return 1
@@ -252,8 +259,11 @@ var/world_topic_spam_protect_time = world.timeofday
 		s += "<b>[config.server_name]</b> &#8212; "
 
 	s += "<b>[station_name()]</b>";
-	s += "\]"
-	s += "<br><small>+18, High Roleplay, colony map, ERIS downstream, weekly events, 4+ hour rounds. Custom character creator, tons of guns, and PvE.  Furry friendly!</small><br>"
+	s += "\]<br>"
+	if(server_ad)
+		s += "<small>"
+		s += server_ad
+		s += "</small></br>"
 
 	var/list/features = list()
 
@@ -269,9 +279,9 @@ var/world_topic_spam_protect_time = world.timeofday
 		if (M.client)
 			n++
 
-	if (n > 1)
+	if (n != 1)
 		features += "~[n] players"
-	else if (n > 0)
+	else
 		features += "~[n] player"
 
 

@@ -168,7 +168,7 @@
 	/obj/item/weapon/grenade/frag = 14,
 	/obj/item/weapon/grenade/empgrenade/low_yield = 4,
 	/obj/item/weapon/grenade/smokebomb = 8,
-	/obj/item/weapon/gun/launcher/grenade/lenar = 1)
+	/obj/item/weapon/gun/projectile/grenade/lenar = 1)
 
 /obj/item/weapon/storage/deferred/crate/antiarmor //change to demolitions, won't do now because will affect map
 	name = "demolitions crate"
@@ -194,7 +194,7 @@
 	desc = "A crate containing one \"Penetrator\" rifle, and ten 60-06 shells."
 	icon_state = "serbcrate_deferred_black"
 	initial_contents = list(/obj/item/weapon/gun/projectile/heavysniper = 1,
-	/obj/item/weapon/storage/box/sniperammo = 2)
+	/obj/item/ammo_magazine/ammobox/antim_small = 2)
 
 /obj/item/weapon/storage/deferred/crate/sidearm
 	name = "sidearm crate"
@@ -226,7 +226,7 @@
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
 	/obj/item/clothing/suit/armor/platecarrier/green = 1,
-	/obj/item/clothing/head/helmet/altyn = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1)
@@ -239,7 +239,7 @@
 	/obj/item/clothing/under/serbiansuit/brown = 1,
 	/obj/item/clothing/head/soft/tan2soft = 1,
 	/obj/item/clothing/suit/armor/platecarrier/tan = 1,
-	/obj/item/clothing/head/helmet/altyn/brown = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn/brown = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1)
@@ -251,7 +251,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/black = 1,
 	/obj/item/clothing/suit/armor/platecarrier = 1,
-	/obj/item/clothing/head/helmet/altyn/black = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn/black = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
@@ -264,7 +264,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/suit/armor/flackvest/green = 1,
-	/obj/item/clothing/head/helmet/altyn/maska = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn/maska = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
@@ -282,3 +282,15 @@
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
 	/obj/item/weapon/storage/fancy/cigarettes = 1)
+
+/obj/item/weapon/storage/deferred/crate/iron_lock_security_uniform
+	name = "Iron Lock Security uniform crate"
+	desc = "A moderately sized crate full of clothes."
+	icon_state = "northtech_deferred"
+	initial_contents = list(
+	/obj/item/clothing/mask/balaclava/tactical = 1,
+	/obj/item/clothing/shoes/jackboots = 1,
+	/obj/item/clothing/gloves/thick  = 1,
+	/obj/item/clothing/head/soft/iron_lock_security = 1,
+	/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
+	/obj/item/clothing/under/iron_lock_security = 1)

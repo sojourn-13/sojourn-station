@@ -1,10 +1,8 @@
 /obj/machinery/power/nt_obelisk
 	name = "Absolutism obelisk"
-	desc = "The obelisk."
+	desc = "The obelisks of the church are said to protect and empower those bearing cruciforms, how it works is not truly known, perhaps it is faith?"
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	icon_state = "nt_obelisk"
-	//TODO:
-	//circuit = /obj/item/weapon/circuitboard/nt_obelisk
 
 	density = TRUE
 	anchored = TRUE
@@ -25,6 +23,23 @@
 
 	var/static/stat_buff
 	var/list/currently_affected = list()
+
+/obj/machinery/power/nt_obelisk/eotp
+	name = "Eye of the Absolute"
+	desc = "An obelisk known as the eye, a powerful and difficult to build device that functions as the pinnacle of defense, in the name of god of course."
+	icon = 'icons/obj/eotp.dmi'
+
+	use_power = NO_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = 0
+
+	active = FALSE
+	area_radius = 9
+	damage = 40
+	max_targets = 10
+
+	nt_buff_power = 8
+	nt_buff_cd = 5
 
 /obj/machinery/power/nt_obelisk/Destroy()
 	for(var/i in currently_affected)

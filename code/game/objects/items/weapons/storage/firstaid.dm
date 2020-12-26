@@ -66,7 +66,7 @@
 	new /obj/item/weapon/reagent_containers/pill/antitox(src)
 	new /obj/item/weapon/reagent_containers/pill/antitox(src)
 	new /obj/item/weapon/reagent_containers/pill/antitox(src)
-	new /obj/item/weapon/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin(src)
 	new /obj/item/device/scanner/health(src)
 
 
@@ -243,6 +243,31 @@
 	new /obj/item/weapon/reagent_containers/pill/bicaridine(src)
 
 	return
+
+/obj/item/weapon/storage/firstaid/nt
+	name = "Absolutism Medkit"
+	desc = "A medkit filled with a set of high-end trauma kits and anti-toxins."
+	icon_state = "nt_kit"
+	item_state = "nt_kit"
+	matter = list(MATERIAL_BIOMATTER = 10)
+
+/obj/item/weapon/storage/firstaid/nt/populate_contents()
+	if (empty) return
+	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
+	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
+	new /obj/item/stack/medical/advanced/ointment/nt(src)
+	new /obj/item/stack/medical/advanced/ointment/nt(src)
+	new /obj/item/weapon/reagent_containers/syringe/large/antitoxin(src)
+	new /obj/item/weapon/reagent_containers/syringe/large/inaprovaline(src)
+
+/obj/item/weapon/storage/firstaid/nt/update_icon()
+	if(!contents.len)
+		icon_state = "[initial(icon_state)]_empty"
+		item_state = "[initial(item_state)]_empty"
+	else
+		icon_state = "[initial(icon_state)]"
+		item_state = "[initial(item_state)]"
+	..()
 
 /*
  * Pill Bottles
@@ -423,6 +448,7 @@
 
 /obj/item/weapon/storage/freezer/medical
 	name = "organ freezer"
+	desc = "A red-colored, compact cryo box for holding organs for safe transportation preserving their integrity. This one has expanded capacity."
 	icon_state = "freezer_red"
 	item_state = "medicalpack"
 	matter = list(MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)

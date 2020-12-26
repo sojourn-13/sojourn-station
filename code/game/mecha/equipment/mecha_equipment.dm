@@ -12,7 +12,7 @@
 	var/equip_ready = 1
 	var/energy_drain = 0
 	var/obj/mecha/chassis = null
-	var/range = MELEE //bitflags
+	var/range = MECHA_MELEE //bitflags
 	var/salvageable = 1
 	var/required_type = /obj/mecha //may be either a type or a list of allowed types
 
@@ -69,10 +69,10 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/proc/is_ranged()//add a distance restricted equipment. Why not?
-	return range&RANGED
+	return range&MECHA_RANGED
 
 /obj/item/mecha_parts/mecha_equipment/proc/is_melee()
-	return range&MELEE
+	return range&MECHA_MELEE
 
 
 /obj/item/mecha_parts/mecha_equipment/proc/action_checks(atom/target)

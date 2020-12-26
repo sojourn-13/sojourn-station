@@ -15,8 +15,6 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 5
 	active_power_usage = 300
-
-	circuit = /obj/item/weapon/circuitboard/neotheology/solidifier
 	var/active = FALSE
 	var/port_dir = NORTH
 	var/obj/structure/reagent_dispensers/biomatter/container
@@ -110,6 +108,10 @@
 	ping()
 	update_icon()
 
+/////////////////////
+
+/obj/machinery/neotheology
+	icon = 'icons/obj/neotheology_machinery.dmi'
 
 #undef CONTAINER_PIXEL_OFFSET
 #undef BIOMATTER_PER_SHEET
