@@ -58,31 +58,25 @@
 
 /obj/machinery/matter_nanoforge/proc/get_designs()
 	for (var/f in disk_list)
-		design_list.Add(find_files_by_type(f))
+		design_list.Add(find_files_by_disk(f))
 
-/obj/machinery/matter_nanoforge/proc/find_files_by_type(typepath)
+/obj/machinery/matter_nanoforge/proc/find_files_by_disk(typepath)
 	var/list/files = list()
 	var/obj/item/weapon/computer_hardware/hard_drive/portable/design/c = new typepath
-
 	for(var/f in c.designs)
-		var/datum/design/design_object = SSresearch.get_design(f)
+		var/datum/design/design_object = new f
+		design_object.AssembleDesignInfo()
 		var/total_mat = 0
-		var/list/ui_mats = design_object.ui_data["materials"]
-		var/saved_mat = ui_mats[1]
-
-		for(var/req_mats in ui_mats)
-			total_mat += req_mats["req"]
-
 		for(var/dmat in design_object.materials)
-			total_mat = total_mat +  ((1 - lst[dmat]) * 10) * 2
-
-		saved_mat["req"] = total_mat
-		saved_mat["name"] = MATERIAL_COMPRESSED_MATTER
-		ui_mats = list(1)
-		ui_mats[1] = saved_mat
-		design_object.ui_data["materials"] = ui_mats
+			total_mat = total_mat +  ((1 - lst[dmat]) * 10) * 2 + design_object.materials[dmat]
+		design_object.materials = list(MATERIAL_COMPRESSED_MATTER = total_mat)
+		var/datum/design/reference = SSresearch.get_design(f)
+		var/reference_icon = reference.ui_data["icon"]
+		if (!reference_icon)
+			continue
+		design_object.AssembleDesignUIData()
+		design_object.ui_data["icon"] = reference_icon
 		files.Add(design_object)
-
 	qdel(c)
 	return files
 
@@ -184,7 +178,7 @@
 		return TRUE
 	matter_assoc_list()
 	user.set_machine(src)
-	if(!design_list.len)
+	if(!design_list?.len)
 		get_designs()
 	ui_interact(user)
 
