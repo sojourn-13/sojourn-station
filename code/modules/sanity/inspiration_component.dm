@@ -26,43 +26,25 @@
 	else
 		return COMPONENT_INCOMPATIBLE
 	perk = new_perk
+	get_power()
 
 /datum/component/inspiration/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
 
 /datum/component/inspiration/proc/on_examine(mob/user)
-	for(var/stat in stats)
-		var/aspect
-		switch(stats[stat])
-			if(10 to INFINITY)
-				aspect = "an <span style='color:#d0b050;'>overwhelming</span>"
-			if(6 to 10)
-				aspect = "a <span class='red'>strong</span>"
-			if(3 to 6)
-				aspect = "a <span class='green'>medium</span>"
-			if(1 to 3)
-				aspect = "a <span class='blue'>weak</span>"
-			else
-				continue
-		to_chat(user, SPAN_NOTICE("This item has [aspect] aspect of [stat]"))
-
 	var/strength
 	switch(get_power())
 		if(1)
-			strength = "a weak catalyst power"
+			strength = "a weak mechanical catalyst power"
 		if(2)
-			strength = "a normal catalyst power"
+			strength = "a normal mechanical catalyst power"
 		if(3)
-			strength = "a medium catalyst power"
+			strength = "a medium mechanical catalyst power"
 		if(4)
-			strength = "a strong catalyst power"
+			strength = "a strong mechanical catalyst power"
 		else
 			strength = "no catalyst power"
 	to_chat(user, SPAN_NOTICE("This item has [strength]"))
-
-	if(perk)
-		var/datum/perk/oddity/OD = GLOB.all_perks[perk]
-		to_chat(user, SPAN_NOTICE("Strange words echo in your head: <span style='color:orange'>[OD]. [OD.desc]</span>"))
 
 /// Returns stats if defined, otherwise it returns the return value of get_stats
 /datum/component/inspiration/proc/calculate_statistics()
