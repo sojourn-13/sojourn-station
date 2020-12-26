@@ -12,6 +12,9 @@
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
 	use_power = NO_POWER_USE
+
+	circuit = /obj/item/weapon/circuitboard/matter_nanoforge
+
 	var/list/stored_material = list()
 	var/obj/power_source
 	var/storage_capacity = 1000
@@ -30,15 +33,7 @@
 	var/queue_max = 8
 
 	var/list/disk_list = list(
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools,
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/components,
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits,
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/logistics,
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc,
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/parttoolpack,
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork,
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer,
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical
+	/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforage
 	)
 	var/list/design_list = list()
 	var/speed = 2
@@ -63,25 +58,24 @@
 
 /obj/machinery/matter_nanoforge/proc/get_designs()
 	for (var/f in disk_list)
-		design_list.Add(find_files_by_type(f))
+		design_list.Add(find_files_by_disk(f))
 
-/obj/machinery/matter_nanoforge/proc/find_files_by_type(typepath)
+/obj/machinery/matter_nanoforge/proc/find_files_by_disk(typepath)
 	var/list/files = list()
 	var/obj/item/weapon/computer_hardware/hard_drive/portable/design/c = new typepath
 	for(var/f in c.designs)
-		var/datum/design/design_object = SSresearch.get_design(f)
+		var/datum/design/design_object = new f
+		design_object.AssembleDesignInfo()
 		var/total_mat = 0
-		var/list/ui_mats = design_object.ui_data["materials"]
-		var/saved_mat = ui_mats[1]
-		for(var/req_mats in ui_mats)
-			total_mat += req_mats["req"]
 		for(var/dmat in design_object.materials)
-			total_mat = total_mat +  ((1 - lst[dmat]) * 10) * 2
-		saved_mat["req"] = total_mat
-		saved_mat["name"] = MATERIAL_COMPRESSED_MATTER
-		ui_mats = list(1)
-		ui_mats[1] = saved_mat
-		design_object.ui_data["materials"] = ui_mats
+			total_mat = total_mat +  ((1 - lst[dmat]) * 10) * 2 + design_object.materials[dmat]
+		design_object.materials = list(MATERIAL_COMPRESSED_MATTER = total_mat)
+		var/datum/design/reference = SSresearch.get_design(f)
+		var/reference_icon = reference.ui_data["icon"]
+		if (!reference_icon)
+			continue
+		design_object.AssembleDesignUIData()
+		design_object.ui_data["icon"] = reference_icon
 		files.Add(design_object)
 	qdel(c)
 	return files
@@ -184,7 +178,7 @@
 		return TRUE
 	matter_assoc_list()
 	user.set_machine(src)
-	if(!design_list.len)
+	if(!design_list?.len)
 		get_designs()
 	ui_interact(user)
 
@@ -274,6 +268,13 @@
 		return 1
 
 /obj/machinery/matter_nanoforge/attackby(obj/item/I, mob/user)
+
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
 	GET_COMPONENT_FROM(comp, /datum/component/inspiration, I)
 	if(comp && comp.get_power() > 0)
 		if(power_source)
@@ -552,6 +553,36 @@
 		else
 			icon_state = "[icon_state]_work"
 
+//Updates matter  nanoforge material storage size, production speed and material efficiency.
+/obj/machinery/matter_nanoforge/RefreshParts()
+	..()
+	var/mb_rating = 0
+	var/mb_amount = 0
+	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+		mb_rating += MB.rating
+		mb_amount++
+
+	storage_capacity = round(initial(storage_capacity)*(mb_rating/mb_amount))
+
+	var/man_rating = 0
+	var/man_amount = 0
+	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+		man_amount++
+	man_rating -= man_amount
+
+	var/las_rating = 0
+	var/las_amount = 0
+	for(var/obj/item/weapon/stock_parts/micro_laser/M in component_parts)
+		las_rating += M.rating
+		las_amount++
+	las_rating -= las_amount
+
+	queue_max = initial(queue_max) + mb_rating //So the more matter bin levels the more we can queue!
+
+	speed = initial(speed) + man_rating + las_rating
+	mat_efficiency = max(0.2, 1.0 - (man_rating * 0.1))
+
 /obj/machinery/matter_nanoforge/proc/print_pre()
 	flick("[initial(icon_state)]_start", src)
 
@@ -572,21 +603,25 @@
 /obj/machinery/matter_nanoforge/proc/matter_assoc_list()
 	lst[MATERIAL_IRON] = 0.70
 	lst[MATERIAL_GLASS] = 0.50
+	lst[MATERIAL_RGLASS] = 0.70
 	lst[MATERIAL_STEEL] = 0.40
 	lst[MATERIAL_PLASMAGLASS] = 0.70
+	lst[MATERIAL_RPLASMAGLASS] = 0.90
 	lst[MATERIAL_DIAMOND] = 1
 	lst[MATERIAL_PLASMA] = 0.60
 	lst[MATERIAL_GOLD] = 0.70
 	lst[MATERIAL_URANIUM] = 1
 	lst[MATERIAL_SILVER] = 0.70
 	lst[MATERIAL_PLASTEEL] = 0.70
+	lst[MATERIAL_DURASTEEL] = 2.55
 	lst[MATERIAL_PLASTIC] = 0.50
 	lst[MATERIAL_TRITIUM] = 1
 	lst[MATERIAL_PLATINUM] = 1
 	lst[MATERIAL_MHYDROGEN] = 1
+	lst[MATERIAL_OSMIUM] = 1
 	lst[MATERIAL_WOOD] = 0.20
 	lst[MATERIAL_CLOTH] = 0.10
+	lst[MATERIAL_SILK] = 0.05
 	lst[MATERIAL_CARDBOARD] = 0.10
-	lst[MATERIAL_RGLASS] = 0.55
 	lst[MATERIAL_LEATHER] = 0.10
 	lst[MATERIAL_TITANIUM] = 0.70
