@@ -409,8 +409,8 @@
 	icon_state = "electronic"
 	steps = list(
 		list(/obj/item/weapon/circuitboard/autolathe, 1, "time" = 30),
-		list(MATERIAL_GOLD, 2, MATERIAL_GOLD),
-		list(MATERIAL_SILVER, 2, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
 		list(QUALITY_SCREW_DRIVING, 20, "time" = 90),
 		list(QUALITY_WELDING, 30, "time" = 90),
@@ -422,19 +422,19 @@
 	steps = list(
 		list(/obj/item/weapon/computer_hardware/processor_unit, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 20, 70, "time" = 10),
-		list(MATERIAL_PLASTEEL, 12, MATERIAL_PLASTEEL, "time" = 90),
-		list(MATERIAL_GLASS, 2, MATERIAL_RGLASS, "time" = 20),
+		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTEEL, "time" = 90),
+		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS, "time" = 20),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(/obj/item/weapon/oddity/techno, 1, "time" = 80),
 		list(QUALITY_WELDING, 30, "time" = 90),
 		list(/obj/item/stack/cable_coil, 10, "time" = 90),
-		list(MATERIAL_DIAMOND, 1, MATERIAL_DIAMOND, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND, "time" = 20),
 		list(/obj/item/weapon/stock_parts/manipulator, 1, "time" = 120),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(MATERIAL_GOLD, 2, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
-		list(MATERIAL_SILVER, 2, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
 	)
 
 /*
@@ -445,8 +445,8 @@
 	steps = list(
 		list(/obj/item/weapon/stock_parts/matter_bin/super, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
-		list(MATERIAL_PLASTEEL, 3, MATERIAL_PLASTEEL),
-		list(MATERIAL_PLASMAGLASS, 1, MATERIAL_PLASMAGLASS),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(/obj/item/weapon/stock_parts/matter_bin/super, 1, "time" = 120),
 		list(QUALITY_WELDING, 40, "time" = 90),
@@ -461,8 +461,8 @@
 	steps = list(
 		list(/obj/item/weapon/stock_parts/manipulator/pico, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(MATERIAL_PLASTEEL, 12, MATERIAL_PLASTEEL),
-		list(MATERIAL_RGLASS, 2, MATERIAL_RGLASS),
+		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40, "time" = 90),
 		list(/obj/item/stack/cable_coil, 10, "time" = 60),
@@ -478,7 +478,7 @@
 	steps = list(
 		list(/obj/item/weapon/stock_parts/micro_laser/ultra, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(MATERIAL_DIAMOND, 1, MATERIAL_DIAMOND),
+		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40, "time" = 90),
 		list(/obj/item/weapon/stock_parts/micro_laser/ultra, 1, "time" = 120),
@@ -492,10 +492,10 @@
 	steps = list(
 		list(/obj/item/weapon/stock_parts/scanning_module/phasic, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(MATERIAL_GOLD, 2, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40, "time" = 90),
-		list(MATERIAL_SILVER, 2, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
 		list(/obj/item/weapon/stock_parts/scanning_module/phasic, 1, "time" = 120),
 		list(QUALITY_SAWING, 60, "time" = 30),
 	)
@@ -507,10 +507,10 @@
 	steps = list(
 		list(/obj/item/weapon/stock_parts/capacitor/super, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(MATERIAL_GOLD, 2, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40, "time" = 90),
-		list(MATERIAL_SILVER, 2, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
 		list(/obj/item/weapon/stock_parts/capacitor/super, 1, "time" = 120),
 		list(QUALITY_SAWING, 60, "time" = 30),
 	)
