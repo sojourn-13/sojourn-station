@@ -26,6 +26,9 @@
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	move_to_delay = 5
+	//Drops
+	var/drop1 = /obj/item/weapon/scrap_lump
+	var/drop2 = null
 
 /mob/living/simple_animal/hostile/hivebot/range
 	name = "Malfunctioning Autonomous Sentinel"
@@ -40,6 +43,12 @@
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
+	if(drop1)
+		new drop1 (src.loc)
+		drop1 = null
+	if(drop2)
+		new drop2 (src.loc)
+		drop2 = null
 	qdel(src)
 	return
 
@@ -57,6 +66,13 @@
 	projectilesound = 'sound/weapons/Laser.ogg'
 	projectiletype = /obj/item/projectile/beam/heavylaser
 	faction = "hivebot"
+
+	//Death and harvest vars
+	meat_amount = 3
+	meat_type = /obj/item/weapon/scrap_lump
+	blood_from_harvest = /obj/effect/decal/cleanable/blood/gibs/robot
+	gibspawner = /obj/effect/gibspawner/robot
+
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0

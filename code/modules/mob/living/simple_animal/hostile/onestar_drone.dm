@@ -28,13 +28,24 @@
 	var/screen_type = "os" //if someone decides to make the drones for something aside from OS and have different desgins
 	var/tool = "laser"
 	var/tooltype = "os"
+	//Drops
+	var/drop1 = /obj/item/weapon/scrap_lump
+	var/drop2 = null
+	var/cell_drop = null
 
 /mob/living/simple_animal/hostile/onestar_custodian/New()
 	. = ..()
 	marks_type = pick("green", "blue", "pink", "orange", "cyan", "red", "os")
 	screen_type = pick("green", "os_red", "yellow", "cyan", "red", "os")
 	update_icon()
-
+	if(prob(5))
+		drop2 = /obj/item/weapon/soap
+	if(prob(10)) //Can override soap
+		drop2 = /obj/item/weapon/reagent_containers/spray/cleaner
+	if(prob(20)) //Can override soap or spacecleaner
+		drop2 = /obj/item/weapon/reagent_containers/glass/bucket
+	if(prob(10))
+		cell_drop = /obj/item/weapon/cell/medium
 
 /mob/living/simple_animal/hostile/onestar_custodian/update_icon()
 	. = ..()
@@ -60,9 +71,16 @@
 	s.set_up(3, 1, src)
 	s.start()
 	qdel(src)
+	if(drop1)
+		new drop1 (src.loc)
+		drop1 = null
+	if(drop2)
+		new drop2 (src.loc)
+		drop2 = null
+	if(cell_drop)
+		new cell_drop (src.loc)
+		cell_drop = null
 	return
-
-
 
 /mob/living/simple_animal/hostile/onestar_custodian/chef
 	name = "Greyson Positronic Service Drone"
@@ -72,7 +90,6 @@
 	screen_type = "os_red"
 	projectiletype = /obj/item/projectile/flamer_lob
 	ranged = 1
-
 
 /mob/living/simple_animal/hostile/onestar_custodian/chef/adjustFireLoss(var/amount)
 	if(status_flags & GODMODE)
@@ -86,6 +103,7 @@
 	tool = "laser"
 	tooltype = "os_red"
 	screen_type = "yellow"
+	drop2 = /obj/random/tool/advanced/onestar/low_chance
 	projectiletype = /obj/item/projectile/beam/drone
 	ranged = 1
 	melee_damage_lower = 7

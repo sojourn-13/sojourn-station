@@ -28,8 +28,12 @@
 	var/turns_per_move = 1
 	var/turns_since_move = 0
 	universal_speak = 0		//No, just no.
+
+	//Meat/harvest vars
 	var/meat_amount = 1
 	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat //all mobs now can be butchered into meat
+	var/blood_from_harvest = /obj/effect/decal/cleanable/blood/splatter
+
 	var/stop_automated_movement = FALSE //Use this to temporarely stop random movement or to if you write special movement code for animals.
 	var/wander = TRUE	// Does the mob wander around when idle?
 	var/stop_automated_movement_when_pulled = TRUE //When set to 1 this stops the animal from moving when someone is pulling it.
@@ -477,7 +481,7 @@
 			meat.name = "[src.name] [meat.name]"
 		if(issmall(src))
 			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
-			new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+			new blood_from_harvest(get_turf(src))
 			qdel(src)
 		else
 			user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
