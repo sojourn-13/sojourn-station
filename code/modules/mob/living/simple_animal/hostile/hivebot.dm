@@ -66,8 +66,13 @@
 	projectilesound = 'sound/weapons/Laser.ogg'
 	projectiletype = /obj/item/projectile/beam/heavylaser
 	faction = "hivebot"
+
+	//Death and harvest vars
 	meat_amount = 3
 	meat_type = /obj/item/weapon/scrap_lump
+	blood_from_harvest = /obj/effect/decal/cleanable/blood/gibs/robot
+	gibspawner = /obj/effect/gibspawner/robot
+
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0
