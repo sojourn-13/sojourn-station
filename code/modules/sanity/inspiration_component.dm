@@ -25,7 +25,8 @@
 		get_stats = statistics
 	else
 		return COMPONENT_INCOMPATIBLE
-	perk = new_perk
+	var/obj/item/weapon/oddity/father = parent
+	perk = father.perk
 	get_power()
 
 /datum/component/inspiration/RegisterWithParent()
