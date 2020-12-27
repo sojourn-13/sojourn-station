@@ -558,9 +558,10 @@
 	origin_tech = list(TECH_COMBAT = 5)
 	attack_verb = list("clawed", "scratched", "lacerated", "slashed")
 
-/obj/item/weapon/tool/sword/nt/halberd
+/obj/item/weapon/tool/halberd
 	name = "Halberd"
 	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself; "
+	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hunter_halberd"
 	item_state = "hunter_halberd"
 	wielded_icon = "hunter_halberd_wielded"

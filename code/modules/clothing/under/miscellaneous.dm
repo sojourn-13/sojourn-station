@@ -270,6 +270,13 @@ obj/item/clothing/under/genericr
 	item_state = "bl_suit"
 	has_sensor = 0
 
+/obj/item/clothing/under/excelsior/officer
+	name = "officer excelsior jumpsuit"
+	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution; made specifically for commissars."
+	icon_state = "excelsior_officer"
+	item_state = "bl_suit"
+	has_sensor = 0
+
 //Dresses
 /obj/item/clothing/under/dress
 	name = "gray summerdress"
