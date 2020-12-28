@@ -16,7 +16,7 @@
 		)
 	cant_hold = list(
 		/obj/item/weapon/tool/knife/dagger/nt,
-		/obj/item/weapon/tool/sword/nt/halberd
+		/obj/item/weapon/tool/spear/halberd
 		)
 /obj/item/weapon/storage/sheath/attack_hand(mob/living/carbon/human/user)
 	if(contents.len && (src in user))

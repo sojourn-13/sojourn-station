@@ -182,7 +182,7 @@
 
 /datum/design/autolathe/sword/nt_halberd
 	name = "NT Halberd"
-	build_path = /obj/item/weapon/tool/sword/nt/halberd
+	build_path = /obj/item/weapon/tool/spear/halberd
 
 /datum/design/autolathe/sword/nt_scourge
 	name = "NT Scourge"
