@@ -18,22 +18,20 @@
 	var/safety_mode = FALSE // Temporality stops the machine if it detects a mob
 	var/grinding = FALSE
 	var/icon_name = "grinder-o"
+	circuit = /obj/item/weapon/circuitboard/recycler
 	var/blood = FALSE
 	var/eat_dir = WEST
-	var/chance_to_recycle = 1
+	var/chance_to_recycle = 33
 
 /obj/machinery/recycler/Initialize()
 	// On us
 	. = ..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/recycler(null)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
 	RefreshParts()
 	update_icon()
 
 /obj/machinery/recycler/RefreshParts()
 	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
-		chance_to_recycle = 25 * M.rating //% of materials salvaged
+		chance_to_recycle = 33 * M.rating //% of materials salvaged level 3 parts is 99%
 	chance_to_recycle = min(100, chance_to_recycle)
 
 /obj/machinery/recycler/examine(mob/user)
@@ -110,10 +108,10 @@
 
 	if(sound)
 		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-	var/chance_mod = 1
+	var/chance_mod = 1 //Unused
 	if(!istype(I, /obj/item/weapon/scrap_lump))
-		chance_mod = 5
-	if(prob(chance_to_recycle / chance_mod))
+		chance_mod = 1 //Unused
+	if(prob(chance_to_recycle / chance_mod)) //change_mod here is not used, - divieds by one, prevents warning
 		new /obj/item/stack/sheet/refined_scrap(loc)
 	qdel(I)
 

@@ -6,6 +6,7 @@
 /obj/random/lowkeyrandom/item_to_spawn()
 	return pickweight(list(
 				/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 1,
+				/obj/item/weapon/scrap_lump = 2,
 				/obj/item/weapon/storage/box/matches = 3,
 				/obj/item/stack/material/cardboard = 2,
 				/obj/item/weapon/cell/large = 3,
