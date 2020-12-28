@@ -492,7 +492,7 @@
 /obj/item/weapon/tool_upgrade/augment/expansion
 	name = "expansion port"
 	icon_state = "expand"
-	desc = "A bulky adapter which more modifications to be attached to the tool. A bit fragile but you can compensate."
+	desc = "A bulky adapter which more modifications to be attached to the tool. A bit fragile but you can compensate. Due to its complex design it takes an extraordinarily long time to remove with tools."
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 
 /obj/item/weapon/tool_upgrade/augment/expansion/New()
@@ -501,10 +501,11 @@
 	I.tool_upgrades = list(
 	UPGRADE_BULK = 2,
 	UPGRADE_DEGRADATION_MULT = 1.3,
-	UPGRADE_PRECISION = -10,
+	UPGRADE_PRECISION = -8,
 	UPGRADE_HEALTH_THRESHOLD = -20,
 	UPGRADE_MAXUPGRADES = 3
 	)
+	I.removal_time *= 20
 	I.prefix = "custom"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
@@ -544,9 +545,9 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_SANCTIFY = TRUE,
-	UPGRADE_FORCE_MOD = 10,
+	UPGRADE_FORCE_MOD = 8,
 	UPGRADE_HEALTH_THRESHOLD = 10,
-	UPGRADE_DEGRADATION_MULT = 0.9,
+	UPGRADE_DEGRADATION_MULT = 0.8,
 	UPGRADE_WORKSPEED = -0.5
 	)
 	I.weapon_upgrades = list(

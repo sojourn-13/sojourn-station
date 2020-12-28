@@ -519,7 +519,7 @@
 	icon_state = "nt_traumakit"
 	heal_brute = 10
 	automatic_charge_overlays = FALSE
-	matter = list(MATERIAL_BIOMATTER = 20)
+	matter = list(MATERIAL_BIOMATTER = 5)
 	origin_tech = list(TECH_BIO = 4)
 
 /obj/item/stack/medical/advanced/bruise_pack/nt/update_icon()
@@ -533,7 +533,7 @@
 	icon_state = "nt_burnkit"
 	heal_brute = 10
 	automatic_charge_overlays = FALSE
-	matter = list(MATERIAL_BIOMATTER = 20)
+	matter = list(MATERIAL_BIOMATTER = 5)
 	origin_tech = list(TECH_BIO = 4)
 
 /obj/item/stack/medical/advanced/ointment/nt/update_icon()

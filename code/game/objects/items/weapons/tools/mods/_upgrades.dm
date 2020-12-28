@@ -364,8 +364,10 @@
 		to_chat(user, SPAN_NOTICE("Enhances precision by [tool_upgrades[UPGRADE_PRECISION]]"))
 	else if (tool_upgrades[UPGRADE_PRECISION] < 0)
 		to_chat(user, SPAN_WARNING("Reduces precision by [abs(tool_upgrades[UPGRADE_PRECISION])]"))
-	if (tool_upgrades[UPGRADE_WORKSPEED])
+	if (tool_upgrades[UPGRADE_WORKSPEED] > 0)
 		to_chat(user, SPAN_NOTICE("Enhances workspeed by [tool_upgrades[UPGRADE_WORKSPEED]*100]%"))
+	else if (tool_upgrades[UPGRADE_WORKSPEED] < 0)
+		to_chat(user, SPAN_WARNING("Reduces workspeed by [tool_upgrades[UPGRADE_WORKSPEED]*100]%"))
 
 
 	if (tool_upgrades[UPGRADE_DEGRADATION_MULT] < 1)

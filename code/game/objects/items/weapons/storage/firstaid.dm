@@ -14,6 +14,7 @@
 	icon_state = "firstaid"
 	throw_speed = 2
 	throw_range = 8
+	matter = list(MATERIAL_PLASTIC = 5)
 	var/empty = 0
 
 
@@ -249,7 +250,7 @@
 	desc = "A medkit filled with a set of high-end trauma kits and anti-toxins."
 	icon_state = "nt_kit"
 	item_state = "nt_kit"
-	matter = list(MATERIAL_BIOMATTER = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/storage/firstaid/nt/populate_contents()
 	if (empty) return
