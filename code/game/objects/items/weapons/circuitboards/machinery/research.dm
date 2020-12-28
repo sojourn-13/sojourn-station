@@ -106,7 +106,7 @@
 		/obj/item/weapon/stock_parts/matter_bin = 2,
 		/obj/item/weapon/stock_parts/manipulator = 1,
 		/obj/item/weapon/stock_parts/console_screen = 1,
-		/obj/item/weapon/oddity/blackbox_nanoforage,
+		/obj/item/weapon/oddity/blackbox_nanoforage = 1,
 		/obj/item/weapon/stock_parts/micro_laser = 1
 	)
 
