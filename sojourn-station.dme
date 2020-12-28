@@ -1893,6 +1893,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\roach\roach.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\bluespace.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\fuhrer.dm"
+#include "code\modules\mob\living\carbon\superior_animal\roach\types\glowing.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\hunter.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\kaiser.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\nanites.dm"

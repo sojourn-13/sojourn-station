@@ -1,7 +1,9 @@
-/mob/living/carbon/superior_animal/roach/toxic
+/mob/living/carbon/superior_animal/roach/glowing
 	name = "Gestrahlte Roach"
-	desc = "A hulking beast of green, congealed waste. It has an enlarged salivatory gland for vomiting toxic waste on enemies."
-	icon_state = "radioactiveroach"
+	desc = "A huge dog-sized roach that has been exposed to radiation, becoming stronger and glowing sickly green from exposure."
+	icon_state = "glowingroach"
+	light_range = 2
+	light_color = COLOR_LIGHTING_GREEN_DARK
 
 	meat_amount = 3
 	turns_per_move = 1
@@ -14,7 +16,7 @@
 	melee_damage_lower = 3
 	melee_damage_upper = 7 //Weaker than hunter
 
-/mob/living/carbon/superior_animal/roach/toxic/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/roach/glowing/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 
 	if(isliving(A))
