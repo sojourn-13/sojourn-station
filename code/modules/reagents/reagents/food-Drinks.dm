@@ -1263,7 +1263,7 @@
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	strength = 200 //Oh no
 
-	glass_icon_state = "alco-whiteglass"
+	glass_icon_state = "miss_fortuneglass"
 	glass_name = "Miss Fortune"
 	glass_desc = "A mix of many colours that somehow tastes good."
 	glass_center_of_mass = list("x"=16, "y"=5)
