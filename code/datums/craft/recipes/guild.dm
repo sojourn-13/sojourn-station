@@ -376,6 +376,21 @@
 		list(QUALITY_CUTTING, 25, "time" = 90),
 	)
 
+//Traps
+/*
+/datum/craft_recipe/weapon/guild_mine_trap
+	name = "land mine trap"
+	result = /obj/item/weapon/mine
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/weapon/mine/improvised, 1, "time" = 120),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10)
+	)
+*/
+
 //Machines
 /datum/craft_recipe/guild/turretcircuit
 	name = "Circuit: Artificer Turret"
@@ -387,3 +402,117 @@
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
 		list(QUALITY_WELDING, 40, "time" = 90),
 	)
+
+/datum/craft_recipe/guild/matter_nanoforge
+	name = "Circuit: Matter Nanoforge"
+	result = /obj/item/weapon/circuitboard/matter_nanoforge
+	icon_state = "electronic"
+	steps = list(
+		list(/obj/item/weapon/circuitboard/autolathe, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 20, "time" = 90),
+		list(QUALITY_WELDING, 30, "time" = 90),
+	)
+
+/datum/craft_recipe/guild/matter_nanoforge_blackbox
+	name = "Blackbox: Matter Nanoforge"
+	result = /obj/item/weapon/oddity/blackbox_nanoforage
+	steps = list(
+		list(/obj/item/weapon/computer_hardware/processor_unit, 1, "time" = 120),
+		list(QUALITY_SCREW_DRIVING, 20, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTEEL, "time" = 90),
+		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS, "time" = 20),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(/obj/item/weapon/oddity/techno, 1, "time" = 80),
+		list(QUALITY_WELDING, 30, "time" = 90),
+		list(/obj/item/stack/cable_coil, 10, "time" = 90),
+		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND, "time" = 20),
+		list(/obj/item/weapon/stock_parts/manipulator, 1, "time" = 120),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
+	)
+
+/*
+/datum/craft_recipe/weapon/guild_bin
+	name = "Casted Matter Bin"
+	result = /obj/item/weapon/stock_parts/matter_bin/guild
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/weapon/stock_parts/matter_bin/super, 1, "time" = 120),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(/obj/item/weapon/stock_parts/matter_bin/super, 1, "time" = 120),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(QUALITY_HAMMERING, 40, "time" = 20),
+		list(QUALITY_SAWING, 60, "time" = 30),
+	)
+
+/datum/craft_recipe/weapon/guild_manip
+	name = "Forged Manipulator"
+	result = /obj/item/weapon/stock_parts/manipulator/guild
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/weapon/stock_parts/manipulator/pico, 1, "time" = 120),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(/obj/item/stack/cable_coil, 10, "time" = 60),
+		list(/obj/item/weapon/stock_parts/manipulator/pico, 1, "time" = 120),
+		list(QUALITY_HAMMERING, 40, "time" = 20),
+		list(QUALITY_SAWING, 60, "time" = 30),
+	)
+
+/datum/craft_recipe/weapon/guild_laser
+	name = "Perfected Micro-Laser"
+	result = /obj/item/weapon/stock_parts/micro_laser/guild
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/weapon/stock_parts/micro_laser/ultra, 1, "time" = 120),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(/obj/item/weapon/stock_parts/micro_laser/ultra, 1, "time" = 120),
+		list(QUALITY_SAWING, 60, "time" = 30),
+	)
+
+/datum/craft_recipe/weapon/guild_scanner
+	name = "Perfected Micro-Laser"
+	result = /obj/item/weapon/stock_parts/scanning_module/guild
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/weapon/stock_parts/scanning_module/phasic, 1, "time" = 120),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
+		list(/obj/item/weapon/stock_parts/scanning_module/phasic, 1, "time" = 120),
+		list(QUALITY_SAWING, 60, "time" = 30),
+	)
+
+/datum/craft_recipe/weapon/guild_capacitor
+	name = "Crafted Ultra Capacitor"
+	result = /obj/item/weapon/stock_parts/capacitor/guild
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/weapon/stock_parts/capacitor/super, 1, "time" = 120),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
+		list(/obj/item/weapon/stock_parts/capacitor/super, 1, "time" = 120),
+		list(QUALITY_SAWING, 60, "time" = 30),
+	)
+*/
+

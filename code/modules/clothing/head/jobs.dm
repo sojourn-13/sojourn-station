@@ -54,6 +54,12 @@
 	icon_state = "beret"
 	body_parts_covered = 0
 
+/obj/item/clothing/head/beret/artist
+	name = "Feathered Beret"
+	desc = "Fit for artists, frenchmen, and eccentric military officers across the cosmos."
+	icon_state = "beret_artist"
+	item_state = "beret_artist"
+
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"

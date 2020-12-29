@@ -56,7 +56,7 @@
 	New()
 		if(prob(50))
 			icon_state = "stickyweb2"
-		if(prob(20))
+		if(prob(20) && silk_baring)
 			silk_baring = FALSE
 		..()
 
@@ -64,7 +64,6 @@
 	silk_baring = FALSE
 
 /obj/effect/spider/stickyweb/attackby(obj/item/I, mob/user)
-	..()
 	if(!istype(user.loc, /turf))
 		return
 	if(!silk_baring)
@@ -85,6 +84,7 @@
 			to_chat(user, SPAN_NOTICE("You bundle up a ball of spider silk."))
 			qdel(src)
 			return
+	..()
 
 
 /obj/effect/spider/stickyweb/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
@@ -285,6 +285,7 @@
 	desc = "Green squishy mess."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenshatter"
+	anchored = TRUE
 
 /obj/effect/spider/cocoon
 	name = "cocoon"

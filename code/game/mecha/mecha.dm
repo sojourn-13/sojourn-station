@@ -14,6 +14,7 @@
 #define MECHA_ARMOR_SCOUT 2
 #define MECHA_ARMOR_MEDIUM 3
 #define MECHA_ARMOR_HEAVY 4
+#define MECHA_ARMOR_SUPERHEAVY 5
 
 /obj/mecha
 	name = "Mecha"
@@ -255,15 +256,20 @@
 	return 0
 
 /obj/mecha/proc/enter_after(delay as num, var/mob/user as mob, var/numticks = 5)
-	var/delayfraction = delay/numticks
-
 	var/turf/T = user.loc
 
-	for(var/i = 0, i<numticks, i++)
-		sleep(delayfraction)
-		if(!src || !user || !user.canmove || !(user.loc == T))
-			return 0
+	var/datum/progressbar/progbar = new(user, delay, user)
+	var/starttime = world.time
 
+	for(var/i = 0, i < delay, i++)
+		sleep(1)
+		progbar.update(world.time - starttime)
+		if(i % numticks == 0)
+			if(!src || !user || !user.canmove || !(user.loc == T))
+				qdel(progbar)
+				return 0
+
+	qdel(progbar)
 	return 1
 
 
@@ -948,9 +954,14 @@ assassination method if you time it right*/
 						clearInternalDamage(MECHA_INT_TANK_BREACH)
 						to_chat(user, SPAN_NOTICE("You repair the damaged gas tank."))
 					if(src.health<initial(src.health))
-						to_chat(user, SPAN_NOTICE("You repair some damage to [src.name]."))
+						var/missing_health = initial(src.health) - src.health
 						user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-						src.health += min(10, initial(src.health)-src.health)
+						if(state == 3)
+							to_chat(user, SPAN_NOTICE("You are able to repair more damage to [src.name] from the inside."))
+							src.health += min(initial(src.health) / 4, missing_health)
+						else
+							to_chat(user, SPAN_NOTICE("You repair some damage to [src.name]."))
+							src.health += min(10, missing_health)
 					return
 			return
 

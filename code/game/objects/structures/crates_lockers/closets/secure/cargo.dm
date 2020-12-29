@@ -101,7 +101,7 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	//pistols
 	if(prob(40)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
-		new /obj/item/weapon/gun/projectile/handmade_pistol(src)
+		new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src)
 	else if(prob(40))
 		new /obj/item/weapon/gun/projectile/revolver/detective(src)
 		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
@@ -179,7 +179,7 @@
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 	//pistols
 	if(prob(40)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
-		new /obj/item/weapon/gun/projectile/handmade_pistol(src)
+		new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src)
 	else if(prob(40))
 		new /obj/item/weapon/gun/projectile/revolver/detective(src)
 		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
@@ -293,7 +293,7 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	//pistols
 	if(prob(5)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
-		new /obj/item/weapon/gun/projectile/handmade_pistol(src)
+		new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src)
 	else if(prob(20))
 		new /obj/item/weapon/gun/projectile/revolver/detective(src)
 		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
@@ -337,3 +337,44 @@
 		new /obj/item/weapon/storage/firstaid/adv(src)
 	else
 		new /obj/item/weapon/storage/firstaid/combat(src)
+
+
+/obj/structure/closet/secure_closet/personal/artist
+	name = "lonestar artist's locker"
+	req_access = list(access_merchant)
+	access_occupy = list(access_cargo)
+	icon_state = "cargo"
+
+/obj/structure/closet/secure_closet/personal/artist/populate_contents()
+	new/obj/item/clothing/suit/artist(src)
+	new/obj/item/clothing/under/rank/artist(src)
+	new/obj/item/clothing/suit/artist(src)
+	new/obj/item/clothing/shoes/artist_shoes(src)
+	new/obj/item/clothing/head/beret/artist(src)
+	new/obj/item/clothing/glasses/artist(src)
+	new/obj/item/clothing/mask/gas/artist_hat(src)
+	new/obj/item/device/radio/headset/headset_cargo(src)
+	new/obj/item/weapon/circuitboard/artist_bench(src)
+
+/obj/structure/closet/wardrobe/color/pink/artist
+
+/obj/structure/closet/wardrobe/color/pink/artist/populate_contents()
+	//new/obj/item/clothing/under/mime(src)
+	new/obj/item/clothing/shoes/color/black(src)
+	new/obj/item/clothing/gloves/color/white(src)
+	//new/obj/item/clothing/mask/gas/mime(src)
+	new/obj/item/clothing/head/beret(src)
+	new/obj/item/weapon/pen/crayon/mime(src)
+	new/obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing(src)
+	new/obj/item/weapon/bikehorn(src)
+	new/obj/item/clothing/glasses/monocle(src)
+	new/obj/item/weapon/storage/fancy/crayons(src)
+	new/obj/item/weapon/reagent_containers/spray/waterflower(src)
+	new/obj/item/device/pda/clown(src)
+	//new/obj/item/clothing/mask/gas/plaguedoctor(src)
+	new/obj/item/clothing/gloves/color/green(src)
+	//new/obj/item/clothing/gloves/color/rainbow(src)
+	new/obj/item/weapon/storage/backpack/clown(src)
+	//new/obj/item/clothing/shoes/clown_shoes(src)
+	//new/obj/item/clothing/under/rank/clown(src)
+	new/obj/item/clothing/mask/gas/clown_hat(src)

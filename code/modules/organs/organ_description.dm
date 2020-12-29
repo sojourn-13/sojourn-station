@@ -15,7 +15,7 @@
 	var/cannot_amputate = FALSE
 
 	var/w_class = ITEM_SIZE_NORMAL
-	var/max_volume = 3.5	//Space used up by specific organ size and w_class of cavity implants
+	var/max_volume = ITEM_SIZE_COLOSSAL		//Space used up by specific organ size and w_class of cavity implants
 
 	var/amputation_point = "spine"
 	var/joint = "neck"
@@ -85,7 +85,7 @@
 	vital = TRUE
 
 	w_class = ITEM_SIZE_NORMAL
-	max_volume = ITEM_SIZE_HUGE
+	max_volume = ITEM_SIZE_GARGANTUAN
 
 	joint = "jaw"
 	amputation_point = "neck"
@@ -190,3 +190,25 @@
 
 /datum/organ_description/leg/right/slime
 	default_type = /obj/item/organ/external/unbreakable
+
+////SYNTHETIC////
+/datum/organ_description/chest/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/groin/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/head/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/arm/left/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/arm/right/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/leg/left/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius
+
+/datum/organ_description/leg/right/soteria_synthetic
+	default_type = /obj/item/organ/external/robotic/moebius

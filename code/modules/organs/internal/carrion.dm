@@ -232,7 +232,7 @@
 	owner.status_flags |= FAKEDEATH
 	owner.update_lying_buckled_and_verb_status()
 	owner.emote("gasp")
-	owner.tod = stationtime2text()
+	owner.tod = world.time
 	var/last_owner = owner
 
 	spawn(rand(1 MINUTES, 3 MINUTES))
@@ -446,13 +446,13 @@
 		playsound(loc, 'sound/voice/shriek1.ogg', 85, 1, 8, 8)
 		spawn_spider()
 		attack_animation(user)
-		visible_message(SPAN_WARNING("[src] bursts open!"))
+		visible_message(SPAN_WARNING("\The [src] bursts open!"))
 		qdel(src)
 
 /obj/structure/spider_nest/bullet_act(obj/item/projectile/P, def_zone)
 	playsound(loc, 'sound/voice/shriek1.ogg', 85, 1, 8, 8)
 	spawn_spider()
-	visible_message(SPAN_WARNING("[src] bursts open!"))
+	visible_message(SPAN_WARNING("\The [src] bursts open!"))
 	qdel(src)
 	..()
 

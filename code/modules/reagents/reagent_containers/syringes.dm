@@ -486,3 +486,27 @@
 
 /obj/item/weapon/reagent_containers/syringe/ld50_syringe/choral
 	preloaded_reagents = list("chloralhydrate" = 50)
+
+////////////////////////////////////////////////////////////////////////////////
+/// Large Syringes.
+////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/weapon/reagent_containers/syringe/large/antitoxin
+	name = "large syringe (anti-toxin)"
+	desc = "Contains dylovene - a broad spectrum antitoxin."
+	preloaded_reagents = list("anti_toxin" = 30)
+
+/obj/item/weapon/reagent_containers/syringe/large/inaprovaline
+	name = "large syringe (inaprovaline)"
+	desc = "Contains inaprovaline - a mild painkiller that will stabilize a critical patient."
+	preloaded_reagents = list("inaprovaline" = 30)
+
+/obj/item/weapon/reagent_containers/syringe/large/tricordrazine
+	name = "large syringe (tricordrazine)"
+	desc = "Contains tricordrazine - a weak but universal healing chemical, a label warns that it over doses at thirty units."
+	preloaded_reagents = list("tricordrazine" = 30)
+
+/obj/item/weapon/reagent_containers/syringe/large/hyperzine
+	name = "large syringe (hyperzine)"
+	desc = "Contains hyperzine - a powerful stimulant to improve movement speed."
+	preloaded_reagents = list("hyperzine" = 30)

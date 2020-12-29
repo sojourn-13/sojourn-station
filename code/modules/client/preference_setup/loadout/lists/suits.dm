@@ -113,6 +113,14 @@
 	path = /obj/item/clothing/suit/sweater
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/suit/ivory
-	display_name = "ivory tabard"
-	path = /obj/item/clothing/suit/ivory
+/datum/gear/suit/punkvest
+	display_name = "punk vest"
+	path = /obj/item/clothing/suit/punkvest
+
+/datum/gear/suit/punkvest
+	display_name = "windbreaker"
+	path = /obj/item/clothing/suit/storage/toggle/windbreaker
+
+/datum/gear/suit/punkvest
+	display_name = "cyberpunk vest"
+	path = /obj/item/clothing/suit/punkvest/cyber

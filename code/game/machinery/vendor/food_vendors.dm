@@ -33,7 +33,9 @@
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/redcandywine = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/nanatsunoumi = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe = 2,
-					/obj/item/weapon/reagent_containers/food/drinks/bottle/grenadine = 5)
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/grenadine = 5,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack = 4
+					)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/tea/green = 10,
 						/obj/item/weapon/reagent_containers/food/drinks/tea/black = 10)
 	vend_delay = 15
@@ -81,13 +83,17 @@
 	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks straight from mars.;We love chocolate!;Try our new jerky!;Have a treat!;Crunchy!"
 	icon_state = "snack"
 	products = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 6,
+					/obj/item/weapon/reagent_containers/food/snacks/gamerchips = 3,
 					/obj/item/weapon/reagent_containers/food/snacks/chips =6,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds = 2,
 					/obj/item/weapon/reagent_containers/food/snacks/tastybread = 6,
 					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 6,
 					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 6,
+					/obj/item/weapon/reagent_containers/food/snacks/chocolatebar = 3,
 					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 6,)
 	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/syndicake = 6)
 	prices = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 40,
@@ -99,6 +105,10 @@
 					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 40,
 					/obj/item/weapon/reagent_containers/food/snacks/tastybread = 50,
 					/obj/item/weapon/reagent_containers/food/snacks/syndicake = 60,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds = 120,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack = 120,
+					/obj/item/weapon/reagent_containers/food/snacks/chocolatebar = 200,
+					/obj/item/weapon/reagent_containers/food/snacks/gamerchips = 120,
 					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 360)
 
 /obj/machinery/vending/cola
@@ -296,6 +306,7 @@
 										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 8,
 										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,
 										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 5,
+										/obj/item/weapon/reagent_containers/food/snacks/candy/energybar = 4,
 										/obj/item/weapon/towel/random = 8)
 	prices = list(
 										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 40,
@@ -306,4 +317,5 @@
 										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 30,
 										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 30,
 										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 240,
+										/obj/item/weapon/reagent_containers/food/snacks/candy/energybar = 400,
 										/obj/item/weapon/towel/random = 70)

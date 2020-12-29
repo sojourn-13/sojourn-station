@@ -346,19 +346,6 @@
 		FULL_AUTO_600
 		)
 
-/obj/item/weapon/gun/energy/firestorm/update_icon()
-	..()
-
-	var/iconstring = icon_state
-	var/itemstring = ""
-
-	if (!cell)
-		iconstring += "_slide"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
-
-
 /obj/item/weapon/gun/energy/lasercore
 	name = "\"Laser Core\" laser carbine"
 	desc = "A high-powered laser carbine made by H&S. It was hailed back in its prime for its high-powered shots and compactness. However, it really consumes power."
@@ -380,15 +367,3 @@
 		WEAPON_NORMAL
 	)
 	twohanded = TRUE
-
-/obj/item/weapon/gun/energy/lasercore/update_icon()
-	..()
-
-	var/iconstring = icon_state
-	var/itemstring = ""
-
-	if (!cell)
-		iconstring += "_slide"
-
-	icon_state = iconstring
-	set_item_state(itemstring)

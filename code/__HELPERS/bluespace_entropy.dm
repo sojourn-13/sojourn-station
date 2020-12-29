@@ -14,18 +14,18 @@ GLOBAL_VAR_INIT(bluespace_distotion_cooldown, 10 MINUTES)
 	var/area/A = get_area(T)
 	if(minor_distortion && A)
 		A.local_bluespace_entropy += entropy_value
-		var/area_entropy_cap = rand(100, 200)
+		var/area_entropy_cap = rand(45, 100)
 		if(A.local_bluespace_entropy > area_entropy_cap && world.time > GLOB.bluespace_distotion_cooldown)
 			GLOB.bluespace_distotion_cooldown = world.time + 5 MINUTES
-			A.local_bluespace_entropy -= rand(100, 150)
+			A.local_bluespace_entropy -= rand(45, 100)
 			bluespace_distorsion(T, minor_distortion)
 	else
 		GLOB.bluespace_entropy += entropy_value
-		var/entropy_cap = rand(150, 300)
+		var/entropy_cap = rand(60, 150)
 		if(GLOB.bluespace_entropy >= entropy_cap && world.time > GLOB.bluespace_distotion_cooldown)
 			GLOB.bluespace_distotion_cooldown = world.time + 10 MINUTES
 			bluespace_distorsion(T, minor_distortion)
-			GLOB.bluespace_entropy -= rand(150, 225)
+			GLOB.bluespace_entropy -= rand(50, 150)
 
 /proc/bluespace_distorsion(turf/T, minor_distortion=FALSE)
 	var/bluespace_event = rand(1, 100)

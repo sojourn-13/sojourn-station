@@ -14,21 +14,26 @@
 
 //You choose what stat can be increased, and a maximum value that will be added to this stat
 //The minimum is defined above. The value of change will be decided by random
+	var/random_stats = TRUE
 	var/list/oddity_stats
-
 	var/sanity_value = 1
 	var/datum/perk/oddity/perk
+	var/prob_perk = 100
 
 
 /obj/item/weapon/oddity/Initialize()
 	. = ..()
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
+	if(!perk && prob(prob_perk))
+		perk = get_oddity_perk()
 	if(oddity_stats)
-		for(var/stat in oddity_stats)
-			oddity_stats[stat] = rand(1, oddity_stats[stat])
-		AddComponent(/datum/component/inspiration, oddity_stats)
-	if(!perk && prob(10))
-		perk = pick(subtypesof(/datum/perk/oddity))
+		if(random_stats)
+			for(var/stat in oddity_stats)
+				oddity_stats[stat] = rand(1, oddity_stats[stat])
+		AddComponent(/datum/component/inspiration, oddity_stats, perk)
+
+/proc/get_oddity_perk()
+	return pick(subtypesof(/datum/perk/oddity))
 
 /obj/item/weapon/oddity/examine(user)
 	..()
@@ -438,3 +443,51 @@
 			GLOB.bluespace_gift -= 1
 			bluespace_entropy(50,T)
 			qdel(src)
+
+/obj/item/weapon/oddity/blackbox_nanoforage
+	name = "Matter NanoForge Black Box"
+	desc = "The core and data of all the designs for the Matter NanoForge. The craftmanship being some of the best possable by hand tools alone."
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "blackcube"
+	oddity_stats = list(
+		STAT_COG = 15,
+		STAT_MEC = 15
+	)
+
+//A randomized oddity with random stats, meant for artist job project
+/obj/item/weapon/oddity/artwork
+	name = "Strange Device"
+	desc = "You can't find out how to turn it on. Maybe it's already working?"
+	icon_state = "artwork_1"
+	price_tag = 200
+	prob_perk = 0//no perks for artwork oddities
+
+/obj/item/weapon/oddity/artwork/Initialize()
+	name = get_weapon_name(capitalize = TRUE)
+	icon_state = "artwork_[rand(1,6)]"
+	. = ..()
+
+/obj/item/weapon/oddity/artwork/get_item_cost(export)
+	. = ..()
+	GET_COMPONENT(comp_sanity, /datum/component/atom_sanity)
+	. += comp_sanity.affect * 100
+	GET_COMPONENT(comp_insp, /datum/component/inspiration)
+	var/list/true_stats = comp_insp.calculate_statistics()
+	for(var/stat in true_stats)
+		. += true_stats[stat] * 50
+
+//NT Oddities
+/obj/item/weapon/oddity/nt
+	random_stats = FALSE
+
+/obj/item/weapon/oddity/nt/seal
+	name = "Cartographer's Seal"
+	desc = "A badge carrying the seal of the cartographer of the church of Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
+	icon_state = "nt_seal"
+	oddity_stats = list(
+		STAT_TGH = 12,
+		STAT_VIG = 12,
+		STAT_ROB = 8
+	)
+	price_tag = 8000
+	perk = /datum/perk/nt_oddity/holy_light

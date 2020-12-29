@@ -4,7 +4,7 @@
 #define JOBS_ENGINEERING "Guild Master","Guild Adept"
 #define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Chemist","Soteria Paramedic"
 #define JOBS_SCIENCE "Chief Research Overseer","Soteria Scientist","Soteria Roboticist"
-#define JOBS_CARGO "Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor"
+#define JOBS_LSS "Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor","Artist"
 #define JOBS_CIVILIAN "Colonist"
 #define JOBS_CHURCH "Prime", "Vector"
 #define JOBS_PROSPECTOR "Foreman","Salvager","Prospector"
@@ -23,3 +23,5 @@
 #define DEPARTMENT_CIVILIAN	"Civilian"
 #define DEPARTMENT_CHURCH	"Church"
 #define DEPARTMENT_PROSPECTOR "Prospectors"
+
+#define ALL_DEPARTMENTS list(DEPARTMENT_COMMAND, DEPARTMENT_MEDICAL, DEPARTMENT_ENGINEERING, DEPARTMENT_SCIENCE, DEPARTMENT_SECURITY, DEPARTMENT_LSS, DEPARTMENT_CIVILIAN, DEPARTMENT_CHURCH, DEPARTMENT_PROSPECTOR)

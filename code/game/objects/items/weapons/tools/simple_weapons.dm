@@ -474,38 +474,6 @@
 		icon_state = initial(icon_state)
 		item_state = initial(item_state)
 
-/obj/item/weapon/tool/sword/crusader
-	name = "crusader greatsword"
-	desc = "A traditional blade meeting the materials and design of the future. It's made from durasteel and the craftmenship is of the highest quality. It bears the insignia of the Church. Deus Vult."
-	icon = 'icons/obj/weapons-blades.dmi'
-	icon_state = "crusader"
-	item_state = "crusader"
-	force = WEAPON_FORCE_LETHAL
-	armor_penetration = ARMOR_PEN_HALF
-	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_PLASTIC = 3)
-	price_tag = 10000
-
-/obj/item/weapon/tool/foremansledge
-	name = "foreman's sledgehammer"
-	desc = "Once a tool used to nail rivets, now a tool used to crush skulls. The signature weapon of the prospector's foreman."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "sledgehammer0"
-	item_state = "sledgehammer1"
-	force = WEAPON_FORCE_LETHAL
-	slot_flags = SLOT_BELT|SLOT_BACK
-	armor_penetration = ARMOR_PEN_EXTREME
-	throwforce = WEAPON_FORCE_LETHAL
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5)
-	throw_speed = 1
-	throw_range = 7
-	w_class = ITEM_SIZE_BULKY
-	origin_tech = list(TECH_COMBAT = 3)
-	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
-	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
-	tool_qualities = list(QUALITY_HAMMERING = 45)
-	worksound = WORKSOUND_HAMMER
-	price_tag = 2000
-
 /obj/item/weapon/tool/sword/saber
 	name = "premier's saber"
 	desc = "A finely made formal blade fit for the premier. Despite being primarily for show it cuts deep and painfully."
@@ -530,19 +498,47 @@
 	force = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
 
-/obj/item/weapon/tool/homewrecker
-	name = "homewrecker"
-	desc = "A large steel chunk welded to a long handle. Extremely heavy."
+/obj/item/weapon/tool/gauntlet
+	name = "render gauntlet"
+	desc = "A crudely made gauntlet consisting of straps, metal reinforcement and render skin - including it's deadly claws."
 	icon = 'icons/obj/weapons.dmi'
-	icon_state = "homewrecker0"
-	wielded_icon = "homewrecker1"
-	armor_penetration = ARMOR_PEN_EXTREME
-	w_class = ITEM_SIZE_BULKY
-	slot_flags = SLOT_BELT|SLOT_BACK
-	force = WEAPON_FORCE_NORMAL
-	force_unwielded = WEAPON_FORCE_NORMAL
-	force_wielded = WEAPON_FORCE_ROBUST
-	tool_qualities = list(QUALITY_HAMMERING = 15)
-	attack_verb = list("attacked", "smashed", "bludgeoned", "beaten")
-	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
-	max_upgrades = 5
+	icon_state = "gauntlet"
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 5)
+	attack_verb = list("clawed", "scratched", "lacerated", "slashed")
+
+//POLEARMS
+/obj/item/weapon/tool/spear
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "spearglass0"
+	wielded_icon = "spearglass1"
+	name = "spear"
+	desc = "A spiky bit of material tied onto a metal pole with some wire. It's an insult to spears across the galaxy - but it can still do some nasty damage and has some decent armor-piercing capabilities. Spears like these are often seen in the hands of vagrants, muggers, or desperate militias. Due to this weapon - if you could call it that - being so long, you're able to attack enemies from up to a tile away."
+	force = WEAPON_FORCE_PAINFUL
+	armor_penetration = ARMOR_PEN_MODERATE // It's a SPEAR!
+	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK
+	throw_speed = 3
+	edge = TRUE
+	sharp = TRUE
+	tool_qualities = list(QUALITY_CUTTING = 10)
+	origin_tech = list(TECH_COMBAT = 1)
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
+	embed_mult = 1.5
+	attack_distance = 2
+
+/obj/item/weapon/tool/spear/hunter_halberd
+	name = "Halberd"
+	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself; "
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "hunter_halberd"
+	item_state = "hunter_halberd"
+	wielded_icon = "hunter_halberd_wielded"
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_DEEP
+	price_tag = 500
+	matter = list(MATERIAL_STEEL = 22, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 4)

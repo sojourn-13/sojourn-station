@@ -26,3 +26,41 @@
 		list(QUALITY_WIRE_CUTTING, 10, 120)
 	)
 	related_stats = list(STAT_COG, STAT_BIO, STAT_MEC)
+
+/datum/craft_recipe/medical/makeshift_leg
+	name = "Junktech prosthetic left leg"
+	result = /obj/item/organ/external/robotic/junktech/l_leg
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL, "time" = 0),
+		list(QUALITY_CUTTING, 10, 10),
+		list(QUALITY_WELDING, 10, 10),
+		list(/obj/item/stack/cable_coil, 5, "time" = 0),
+		list(QUALITY_WIRE_CUTTING, 10, 10),
+		list(/obj/item/weapon/stock_parts/manipulator, 1),
+		list(QUALITY_PULSING, 10, 10),
+		list(/obj/item/weapon/reagent_containers/glass/bucket, 1)
+	)
+	related_stats = list(STAT_MEC)
+
+/datum/craft_recipe/medical/makeshift_leg/right
+	name = "Junktech prosthetic right leg"
+	result = /obj/item/organ/external/robotic/junktech/r_leg
+
+/datum/craft_recipe/medical/makeshift_arm
+	name = "Junktech prosthetic left arm"
+	result = /obj/item/organ/external/robotic/junktech/l_arm
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL, "time" = 0),
+		list(QUALITY_CUTTING, 10, 10),
+		list(QUALITY_WELDING, 10, 10),
+		list(/obj/item/stack/cable_coil, 5, "time" = 0),
+		list(QUALITY_WIRE_CUTTING, 10, 10),
+		list(/obj/item/weapon/stock_parts/manipulator, 1),
+		list(QUALITY_PULSING, 10, 10),
+		list(/obj/item/weapon/tool/knife/hook, 1)
+	)
+	related_stats = list(STAT_MEC)
+
+/datum/craft_recipe/medical/makeshift_arm/right
+	name = "Junktech prosthetic right arm"
+	result = /obj/item/organ/external/robotic/junktech/r_arm

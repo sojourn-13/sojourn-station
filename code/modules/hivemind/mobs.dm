@@ -31,7 +31,7 @@
 	New()
 		. = ..()
 		//here we change name, so design them according to this
-		name = pick("warped ", "altered ", "modified ", "upgraded ", "abnormal ") + name
+		name = pick("Warped ", "Altered ", "Modified ", "Upgraded ", "Abnormal ") + name
 
 //It's sets manually
 /mob/living/simple_animal/hostile/hivemind/proc/special_ability()
@@ -154,7 +154,7 @@
 
 //these guys is appears from bodies, and takes corpses appearence
 /mob/living/simple_animal/hostile/hivemind/resurrected
-	name = "marionette"
+	name = "Marionette"
 	malfunction_chance = 10
 
 
@@ -189,7 +189,7 @@
 
 	maxHealth = victim.maxHealth * 2 + 10
 	health = maxHealth
-	name = "[pick("warped", "twisted", "tortured", "tormented")] [victim.name]"
+	name = "[pick("Warped", "Twisted", "Tortured", "Tormented")] [victim.name]"
 	if(length(victim.desc))
 		desc = desc + " But now silver pus oozes from open wounds and unknown mechanisms push through their deathly skin..."
 	density = victim.density
@@ -201,7 +201,7 @@
 	for(var/count = 1 to phrase_amount)
 		var/first_word = pick("You should", "I", "They", "The hive will", "My flesh will", "We", "Your friend", "Your meat will", "Your mind will")
 		var/second_word = pick("embrace", "submit to", "transform", "love", "rebuild", "fix", "help", "rework", "burn")
-		var/third_word = pick("them", "me", "progress", "death", "us", "the hive", "the machines", "this new ship")
+		var/third_word = pick("them", "me", "progress", "death", "us", "the hive", "the machines", "this new colony")
 		var/end_symbol = pick("...", ".", "?", "!")
 		var/phrase = "[first_word] [second_word] [third_word][end_symbol]"
 		speak.Add(phrase)
@@ -226,7 +226,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/stinger
-	name = "medibot"
+	name = "Medibot"
 	desc = "A little medical robot. He looks somewhat underwhelmed. Wait a minute, is that a blade?"
 	icon_state = "slicer"
 	attacktext = "sliced"
@@ -275,7 +275,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/bomber
-	name = "probe"
+	name = "Bomber"
 	desc = "This hovering cyborg emits a faint smell of welding fuel."
 	icon_state = "bomber"
 	density = 0
@@ -338,7 +338,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/hiborg
-	name = "cyborg"
+	name = "Hiborg"
 	desc = "A cyborg covered with something... something alive."
 	icon_state = "hiborg"
 	icon_dead = "hiborg-dead"
@@ -411,7 +411,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/himan
-	name = "human"
+	name = "Himan"
 	desc = "Once a man, now metal plates and tubes weave in and out of their oozing sores."
 	icon_state = "himan"
 	icon_dead = "himan-dead"
@@ -551,8 +551,8 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/mechiver
-	name = "maneater"
-	desc = "Once an exosuit, this hulking machine drips fresh blood out of the pilot's hatch."
+	name = "Mechiver"
+	desc = "Once an exosuit, this hulking amalgamation of flesh and machine drips fresh blood out of the pilot's hatch."
 	icon = 'icons/mob/hivemind.dmi'
 	icon_state = "mechiver-closed"
 	icon_dead = "mechiver-dead"
@@ -564,7 +564,7 @@
 	attacktext = "crushed"
 	ability_cooldown = 1 MINUTES
 	speak_chance = 12
-	speed = 20
+	speed = 10
 	//internals
 	var/pilot						//Yes, there's no pilot, so we just use var
 	var/mob/living/passenger
@@ -777,7 +777,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/phaser
-	name = "warped"
+	name = "Phaser"
 	desc = "A warped human with a strange device on its head. Or for its head."
 	icon = 'icons/mob/hivemind.dmi'
 	icon_state = "phaser-1"

@@ -32,6 +32,8 @@
 	var/stop_automated_movement = 0 //use this to temporarely stop random movement
 	var/stop_automated_movement_when_pulled = 0
 
+	var/toxin_immune = FALSE
+
 	var/contaminant_immunity = FALSE //if TRUE, mob is immune to harmful contaminants in air (plasma), skin contact, does not relate to breathing
 	var/cold_protection = 0 //0 to 1 value, which corresponds to the percentage of protection, affects only bodytemperature
 	var/heat_protection = 0

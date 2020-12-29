@@ -20,7 +20,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
-	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/dp_fire.ogg'
 	recoil_buildup = 3
 	twohanded = TRUE
 	one_hand_penalty = 30 //not like it's used anyway, but LMG level
@@ -28,9 +28,9 @@
 
 	init_firemodes = list(
 		FULL_AUTO_400,
-		list(mode_name="short bursts", burst=5,    burst_delay=1, move_delay=6,  icon="burst"),
-		list(mode_name="long bursts",  burst=8, burst_delay=1, move_delay=8,  icon="burst"),
-		list(mode_name="suppressing fire",  burst=16, burst_delay=1, move_delay=11,  icon="burst")
+		list(mode_name="short bursts", burst=5,    burst_delay=1.2, move_delay=6,  icon="burst"),
+		list(mode_name="long bursts",  burst=8, burst_delay=1.2, move_delay=8,  icon="burst"),
+		list(mode_name="suppressing fire",  burst=16, burst_delay=1.2, move_delay=11,  icon="burst")
 		)
 
 obj/item/weapon/gun/projectile/automatic/dp/update_icon()

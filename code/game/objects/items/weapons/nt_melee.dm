@@ -18,7 +18,7 @@
 	item_state = "nt_longsword"
 	force = WEAPON_FORCE_ROBUST
 	armor_penetration = ARMOR_PEN_EXTREME
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_BULKY
 	price_tag = 1200
 	matter = list(MATERIAL_BIOMATTER = 75, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
 
@@ -33,16 +33,16 @@
 	price_tag = 120
 	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_STEEL = 1)
 
-/obj/item/weapon/tool/sword/nt/halberd
+/obj/item/weapon/tool/spear/halberd
 	name = "Halberd"
-	desc = "A saintly looking halberd, for emergency situation. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	desc = "This weapon of ancient design appears to be a spear-axe hybrid. It saw a lot of use back in the Dark Ages back on Earth - in more recent times, sablekyne hunters use a similar weapon \
+	on their homeworlds, the weapons practical use taking down huge and heavily armored wildlife lead to the church adopting its own design. Additionally, due to the halberd being so long, you can attack \
+	enemies from up to a tile away with it - twice as far as most other weapons can. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon_state = "nt_halberd"
 	item_state = "nt_halberd"
 	wielded_icon = "nt_halberd_wielded"
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_MASSIVE
-	w_class = ITEM_SIZE_HUGE
-	slot_flags = SLOT_BACK
 	price_tag = 600
 	matter = list(MATERIAL_BIOMATTER = 80, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 2)
 
@@ -108,3 +108,14 @@
 
 /obj/item/weapon/shield/riot/nt/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	return base_block_chance
+
+/obj/item/weapon/tool/sword/crusader
+	name = "crusader greatsword"
+	desc = "A traditional blade meeting the materials and design of the future. It's made from durasteel and the craftmenship is of the highest quality. It bears the insignia of the Church. Deus Vult."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "crusader"
+	item_state = "crusader"
+	force = WEAPON_FORCE_LETHAL
+	armor_penetration = ARMOR_PEN_HALF
+	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_PLASTIC = 3)
+	price_tag = 10000

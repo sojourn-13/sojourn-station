@@ -64,7 +64,10 @@
 /obj/item/weapon/storage/ration_pack/populate_contents()
 	new /obj/item/weapon/reagent_containers/food/snacks/mre(src)
 	new /obj/item/weapon/reagent_containers/food/snacks/mre/can(src)
-	new /obj/item/weapon/reagent_containers/food/snacks/mre_paste(src)
 	new /obj/item/weapon/storage/fancy/mre_cracker(src)
 	new /obj/item/weapon/reagent_containers/food/snacks/candy/mre(src)
 	new /obj/item/weapon/material/kitchen/utensil/spoon/mre(src)
+	if(prob(50))
+		new /obj/item/weapon/reagent_containers/food/snacks/mre_paste(src)
+	else
+		new /obj/item/weapon/reagent_containers/food/snacks/canned_peaches(src)

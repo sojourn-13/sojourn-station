@@ -124,6 +124,19 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/CRUCIFORM_TYPE = 1
 	)
 	build_time = 8 SECONDS
+
+/datum/nt_blueprint/machinery/eotp
+	name = "Eye of the Absolute"
+	build_path = /obj/machinery/power/nt_obelisk/eotp
+	materials = list(
+		/obj/item/stack/material/plasteel = 15,
+		/obj/item/stack/material/biomatter = 10,
+		/obj/item/stack/material/gold = 5,
+		/obj/item/stack/material/diamond = 3,
+		/CRUCIFORM_TYPE = 1
+	)
+	build_time = 15 SECONDS
+
 /datum/nt_blueprint/machinery/bioprinter
 	name = "Biomatter Printer"
 	build_path = /obj/machinery/autolathe/bioprinter

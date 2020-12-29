@@ -228,3 +228,8 @@
 	name = "rice hat"
 	desc = "A hat made out of straw, designed to keep the sun from hurting your face."
 	icon_state = "rice_hat"
+
+/obj/item/clothing/head/exceslior/excelsior_officer
+	name = "excelsior officer cap"
+	desc = "A peaked commissar cap marked with a red hammer and gear emblem on an orange background at its front."
+	icon_state = "excelsior_officer"

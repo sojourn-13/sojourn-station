@@ -117,6 +117,9 @@
 		if(is_carrion(user))
 			difficulty_adjust = -50
 
+	if(user.stats.getPerk(PERK_SURGICAL_MASTER))
+		difficulty_adjust = -30
+
 	var/atom/surgery_target = get_surgery_target()
 	if(S.required_tool_quality)
 		success = tool.use_tool_extended(

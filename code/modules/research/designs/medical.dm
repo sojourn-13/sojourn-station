@@ -154,6 +154,7 @@
 	name = "Nanopaste"
 	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing mechanical bodyparts, organs, and smart purging of toxic buildup."
 	build_path = /obj/item/stack/nanopaste
+	chemicals = list("nanites" = 5)
 
 //Brain stuff
 /datum/design/research/item/posibrain

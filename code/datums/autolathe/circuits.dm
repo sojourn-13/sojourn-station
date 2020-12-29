@@ -83,3 +83,11 @@
 /datum/design/autolathe/circuit/sorter
 	name = "sorter"
 	build_path = /obj/item/weapon/circuitboard/sorter
+
+/datum/design/autolathe/circuit/recycler
+	name = "recycler"
+	build_path = /obj/item/weapon/circuitboard/recycler
+
+/datum/design/autolathe/circuit/pile_ripper
+	name = "pile ripper"
+	build_path = /obj/item/weapon/circuitboard/pile_ripper
