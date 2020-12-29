@@ -1,5 +1,5 @@
 /mob/living/carbon/superior_animal/roach/glowing
-	name = "Gestrahlte Roach"
+	name = "Gluhend Roach"
 	desc = "A huge dog-sized roach that has been exposed to radiation, becoming stronger and glowing sickly green from exposure."
 	icon_state = "glowingroach"
 	light_range = 2
