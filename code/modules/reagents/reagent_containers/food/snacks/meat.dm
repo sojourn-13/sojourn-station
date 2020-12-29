@@ -61,6 +61,9 @@
 /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/kraftwerk
 	preloaded_reagents = list("protein" = 6, "blattedin" = 6, "gewaltine" = 6, "uncap nanites" = 2, "nanites" = 3)
 
+/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/glowing
+	preloaded_reagents = list("protein" = 4, "blattedin" = 8, "diplopterum" = 7, MATERIAL_URANIUM = 5) // half a uranium per roach
+
 /obj/item/weapon/reagent_containers/food/snacks/meat/spider
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
 	icon_state = "xenomeat"
