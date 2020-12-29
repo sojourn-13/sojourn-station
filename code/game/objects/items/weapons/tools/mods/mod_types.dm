@@ -762,3 +762,33 @@
 	UPGRADE_COLOR = "#3366ff"
 	)
 	I.prefix = "theoretical"
+
+/obj/item/weapon/tool_upgrade/artwork_tool_mod
+	name = "Weird Revolver"
+	desc = "This is an artistically-made tool mod."
+	icon_state = "artmod_1"
+	price_tag = 200
+
+/obj/item/weapon/tool_upgrade/artwork_tool_mod/Initialize(mapload, prob_rare = 33)
+	. = ..()
+	name = get_weapon_name(capitalize = TRUE)
+	icon_state = "artmod_[rand(1,16)]"
+	var/sanity_value = 0.2 + pick(0,0.1,0.2)
+	AddComponent(/datum/component/atom_sanity, sanity_value, "")
+	var/obj/randomcatcher/CATCH = new(src)
+	var/obj/item/weapon/tool_upgrade/spawn_type = pickweight(list(/obj/random/tool_upgrade = max(100-prob_rare,0), /obj/random/tool_upgrade/rare = prob_rare), 0)
+	spawn_type = CATCH.get_item(spawn_type)
+	spawn_type.TransferComponents(src)
+	GET_COMPONENT(tool_comp, /datum/component/item_upgrade)
+	for(var/upgrade in (tool_comp.tool_upgrades - GLOB.tool_aspects_blacklist))
+		if(isnum(tool_comp.tool_upgrades[upgrade]))
+			tool_comp.tool_upgrades[upgrade] = tool_comp.tool_upgrades[upgrade] * rand(5,15)/10
+	tool_comp.tool_upgrades[UPGRADE_BULK] = rand(-1,2)
+	QDEL_NULL(spawn_type)
+	QDEL_NULL(CATCH)
+	price_tag += rand(0, 1000)
+
+/obj/item/weapon/tool_upgrade/artwork_tool_mod/get_item_cost(export)
+	. = ..()
+	GET_COMPONENT(comp_sanity, /datum/component/atom_sanity)
+	. += comp_sanity.affect * 100

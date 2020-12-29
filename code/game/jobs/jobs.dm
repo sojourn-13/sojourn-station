@@ -45,7 +45,7 @@ var/const/CLUBWORKER		=(1<<2)
 var/const/MERCHANT			=(1<<3)
 var/const/CARGOTECH			=(1<<4)
 var/const/MINER				=(1<<5)
-var/const/ACTOR				=(1<<6)
+var/const/ARTIST			=(1<<6)
 var/const/ASSISTANT			=(1<<7)
 var/const/JANITOR			=(1<<8)
 var/const/BOTANIST			=(1<<9)
@@ -74,7 +74,7 @@ var/list/medical_positions = list(JOBS_MEDICAL)
 var/list/science_positions = list(JOBS_SCIENCE)
 
 //BS12 EDIT
-var/list/cargo_positions = list(JOBS_CARGO)
+var/list/cargo_positions = list(JOBS_LSS)
 
 
 var/list/prospector_positions = list(JOBS_PROSPECTOR)
