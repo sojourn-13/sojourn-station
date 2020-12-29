@@ -49,12 +49,22 @@
 			if(locate(/mob/living) in O)
 				occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
 				return
-			if(O.anchored && (!istype(O, /obj/structure/scrap) && !istype(O, /obj/structure/salvageable)))
+			if(O.anchored && !istype(O, /obj/structure/salvageable))
 				occupant_message(SPAN_WARNING("[target] is firmly secured."))
 				return
 			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
 				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
 				return
+
+			if(istype(target, /obj/structure/scrap))
+				occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [O] with \the [src]."))
+				if(do_after_cooldown(O))
+					if(istype(O, /obj/structure/scrap))
+						var/obj/structure/scrap/S = O
+						S.make_cube()
+						occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [O] into a cube with \the [src]."))
+				return
+
 
 			occupant_message("You lift [target] and start to load it into cargo compartment.")
 			playsound(src,'sound/mecha/hydraulic.ogg',100,1)

@@ -120,7 +120,9 @@
 		/datum/design/autolathe/conveyor = 0,
 		/datum/design/autolathe/conveyor_switch = 0,
 		///datum/design/autolathe/circuit/smelter = 3, //Balance, no more rnd/guild abuse
-		/datum/design/autolathe/circuit/sorter = 3
+		/datum/design/autolathe/circuit/sorter = 3,
+		/datum/design/autolathe/circuit/recycler = 1,
+		/datum/design/autolathe/circuit/pile_ripper = 1,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/engineering
@@ -181,6 +183,8 @@
 		/datum/design/autolathe/circuit/centrifuge,
 		/datum/design/autolathe/circuit/smelter, //Ok some guild abuse
 		/datum/design/autolathe/circuit/sorter,
+		/datum/design/autolathe/circuit/recycler,
+		/datum/design/autolathe/circuit/pile_ripper,
 		// From tool mods
 		/datum/design/autolathe/part/laserguide,
 		/datum/design/autolathe/part/diamondblade,
@@ -337,6 +341,8 @@
 	/datum/design/research/circuit/smes_cell,
 	/datum/design/research/circuit/batteryrack,
 	/datum/design/research/circuit/breakerbox,
+	/datum/design/autolathe/circuit/recycler,
+	/datum/design/autolathe/circuit/pile_ripper,
 	//Stock Parts, and SMES coils
 	/datum/design/autolathe/part/consolescreen,
 	/datum/design/research/item/part/basic_capacitor,
