@@ -90,6 +90,8 @@
 	new /obj/item/weapon/gun/projectile/boltgun(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/clothing/accessory/patches/blackshield_sergeant(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
@@ -154,6 +156,8 @@
 	new /obj/item/weapon/gun/projectile/boltgun(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/clothing/accessory/patches/blackshield_trooper(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
@@ -198,6 +202,8 @@
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
 	new /obj/item/weapon/gun/projectile/boltgun(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/clothing/accessory/patches/blackshield_corpsman(src)

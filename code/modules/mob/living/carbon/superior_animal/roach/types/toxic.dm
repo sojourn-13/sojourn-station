@@ -1,6 +1,6 @@
 /mob/living/carbon/superior_animal/roach/toxic
 	name = "Gestrahlte Roach"
-	desc = "A hulking beast of green, congealed waste. It has an enlarged salivatory gland for lobbing projectiles."
+	desc = "A hulking beast of green, congealed waste. It has an enlarged salivatory gland for vomiting toxic waste on enemies."
 	icon_state = "radioactiveroach"
 
 	meat_amount = 3

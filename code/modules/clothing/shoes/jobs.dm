@@ -72,3 +72,9 @@
 	desc = "A modified pair of workboots, designed for species with clawed feet."
 	icon_state = "workbootstoeless"
 	species_restricted = null
+
+/obj/item/clothing/shoes/artist_shoes
+	name = "Pointy Shoes"
+	desc = "They're actually quite comfortable."
+	icon_state = "artist"
+	item_state = "artist_shoes"

@@ -110,9 +110,9 @@
 	icon_state = "player-black"
 	join_tag = /datum/job/hydro
 
-/datum/job/actor
-	title = "Actor"
-	flag = ACTOR
+/datum/job/artist
+	title = "Artist"
+	flag = ARTIST
 	department = DEPARTMENT_LSS
 	department_flag = LSS
 	faction = MAP_FACTION
@@ -122,27 +122,33 @@
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre)
-	outfit_type = /decl/hierarchy/outfit/job/service/actor
+	outfit_type = /decl/hierarchy/outfit/job/cargo/artist
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
 	//alt_titles = list("Artist","Clown","Entertainer","Mime")
 	stat_modifiers = list(
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof, PERK_ARTIST)
+	software_on_spawn = list(///datum/computer_file/program/supply,
+							 ///datum/computer_file/program/deck_management,
+							 /datum/computer_file/program/scanner,
+							 /datum/computer_file/program/wordprocessor,
+							 /datum/computer_file/program/reports)
 
-	description = "The Actor serves as a versatile performance artist here to entertain the colony.<br>\
+	description = "The Artist serves as a versatile performance artist here to entertain the colony.<br>\
 	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
-	The CEO pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations."
+	The CEO pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations.<br>\
+	In addition you do not gain desires like other members of the colony, instead you spend your insight at your workbench to create expensive works of art worth selling."
 
 	duties = "Provide (family-friendly) entertainment to the crew with your varied talents.<br>\
-		Host shows, busk in the corridors, perform harmless pranks, or whatever else you think will be well-received.<br>\
+		Create and sell valuable works of art in your artist bench.<br>\
 		Try to be a successful rather than starving artist. The costume vendor and equipment in your cramped studio may prove useful."
 
-/obj/landmark/join/start/actor
-	name = "Actor"
+/obj/landmark/join/start/artist
+	name = "Artist"
 	icon_state = "player-grey"
-	join_tag = /datum/job/actor
+	join_tag = /datum/job/artist
 
 /datum/job/janitor
 	title = "Janitor"

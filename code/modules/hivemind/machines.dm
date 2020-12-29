@@ -572,7 +572,7 @@
 	icon_state = "head"
 	max_health = 100
 	evo_level_required = 3
-	cooldown_time = 30 SECONDS
+	cooldown_time = 20 SECONDS
 	spawn_weight  =	35
 
 

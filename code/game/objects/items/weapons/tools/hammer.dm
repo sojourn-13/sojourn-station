@@ -66,21 +66,42 @@
 	workspeed = 1.5
 	max_upgrades = 2
 
+/obj/item/weapon/tool/hammer/foremansledge
+	name = "foreman's sledgehammer"
+	desc = "Once a tool used to nail rivets, now a tool used to crush skulls. The signature weapon of the prospector's foreman."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "sledgehammer0"
+	item_state = "sledgehammer1"
+	force = WEAPON_FORCE_LETHAL
+	slot_flags = SLOT_BELT|SLOT_BACK
+	armor_penetration = ARMOR_PEN_EXTREME
+	throwforce = WEAPON_FORCE_LETHAL
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5)
+	throw_speed = 1
+	throw_range = 7
+	w_class = ITEM_SIZE_BULKY
+	origin_tech = list(TECH_COMBAT = 3)
+	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	tool_qualities = list(QUALITY_HAMMERING = 45)
+	price_tag = 2000
+
 /obj/item/weapon/tool/hammer/homewrecker
 	name = "homewrecker"
 	desc = "A large steel chunk welded to a long handle. Extremely heavy."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "homewrecker0"
 	wielded_icon = "homewrecker1"
-	armor_penetration = ARMOR_PEN_DEEP
-	w_class = ITEM_SIZE_HUGE
+	armor_penetration = ARMOR_PEN_EXTREME
+	w_class = ITEM_SIZE_BULKY
+	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_NORMAL
 	force_unwielded = WEAPON_FORCE_NORMAL
-	force_wielded = WEAPON_FORCE_DANGEROUS
+	force_wielded = WEAPON_FORCE_ROBUST
 	tool_qualities = list(QUALITY_HAMMERING = 15)
 	attack_verb = list("attacked", "smashed", "bludgeoned", "beaten")
-	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
-
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
+	max_upgrades = 5
 
 /obj/item/weapon/tool/hammer/mace
 	name = "mace"

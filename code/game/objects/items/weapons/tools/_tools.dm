@@ -276,7 +276,7 @@
 		else
 			fail_chance += 40//below 10% is -40 precision. Good luck!
 	var/obj/item/weapon/tool/T
-	if (istool(src))
+	if(istool(src))
 		T = src
 		T.tool_in_use = TRUE
 

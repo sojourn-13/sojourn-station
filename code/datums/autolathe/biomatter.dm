@@ -1,11 +1,11 @@
 /datum/design/bioprinter
 	build_type = BIOPRINTER
-	materials = list("biomatter" = 6)
+	materials = list(MATERIAL_BIOMATTER = 6)
 
 /datum/design/bioprinter/meat
 	name = "Meat"
 	build_path = /obj/item/weapon/reagent_containers/food/snacks/meat
-	materials = list("biomatter" = 5)
+	materials = list(MATERIAL_BIOMATTER = 5)
 
 /datum/design/bioprinter/milk
 	name = "Milk"
@@ -19,7 +19,7 @@
 /datum/design/bioprinter/ez
 	name = "EZ-Nutrient"
 	build_path = /obj/item/weapon/reagent_containers/glass/fertilizer/ez
-	materials = list("biomatter" = 3)
+	materials = list(MATERIAL_BIOMATTER = 3)
 
 /datum/design/bioprinter/l4z
 	name = "Left4Zed"
@@ -28,7 +28,7 @@
 /datum/design/bioprinter/rh
 	name = "Robust Harvestt"
 	build_path = /obj/item/weapon/reagent_containers/glass/fertilizer/rh
-	materials = list("biomatter" = 7.5)
+	materials = list(MATERIAL_BIOMATTER = 7.5)
 //[/NUTRIMENTS]
 
 //[CLOTHES, ARMOR AND ACCESORIES]
@@ -48,10 +48,10 @@
 /datum/design/bioprinter/botanic_leather
 	name = "Botanical gloves"
 	build_path = /obj/item/clothing/gloves/botanic_leather
-	materials = list("biomatter" = 15)
+	materials = list(MATERIAL_BIOMATTER = 15)
 
 /datum/design/bioprinter/leather
-	materials = list("biomatter" = 20)
+	materials = list(MATERIAL_BIOMATTER = 20)
 
 /datum/design/bioprinter/leather/satchel
 	name = "Leather Satchel"
@@ -86,7 +86,7 @@
 	build_path = /obj/item/clothing/accessory/holster/leg
 
 /datum/design/bioprinter/belt
-	materials = list("biomatter" = 20)
+	materials = list(MATERIAL_BIOMATTER = 20)
 
 /datum/design/bioprinter/belt/utility
 	name = "Utility belt"
@@ -115,7 +115,7 @@
 /datum/design/bioprinter/belt/misc/champion
 	name = "Champion belt"
 	build_path = /obj/item/weapon/storage/belt/champion
-	materials = list("biomatter" = 50)
+	materials = list(MATERIAL_BIOMATTER = 50)
 
 // This separates regular clothes designs from NT clothes designs //
 
@@ -182,7 +182,7 @@
 
 /datum/design/autolathe/sword/nt_halberd
 	name = "NT Halberd"
-	build_path = /obj/item/weapon/tool/sword/nt/halberd
+	build_path = /obj/item/weapon/tool/spear/halberd
 
 /datum/design/autolathe/sword/nt_scourge
 	name = "NT Scourge"
@@ -215,7 +215,7 @@
 
 //[MED]
 /datum/design/bioprinter/medical
-	materials = list("biomatter" = 2)
+	materials = list(MATERIAL_BIOMATTER = 2)
 
 /datum/design/bioprinter/medical/bruise
 	name = "Roll of gauze"
@@ -242,7 +242,7 @@
 
 /datum/design/bioprinter/lungs
 	name = "Extended Lungs"
-	materials = list("biomatter" = 30)
+	materials = list(MATERIAL_BIOMATTER = 30)
 	build_path = /obj/item/organ/internal/lungs/long
 
 /datum/design/autolathe/firstaid/nt
@@ -252,7 +252,7 @@
 //[/MED]
 
 /datum/design/bioprinter/bioimplant
-	materials = list("biomatter" = 50)
+	materials = list(MATERIAL_BIOMATTER = 50)
 
 /datum/design/bioprinter/bioimplant/oscythe
 	name = "Organic arm scythe implant"

@@ -8,6 +8,7 @@
 
 #define COMPONENT_INCOMPATIBLE 1
 #define COMPONENT_NOTRANSFER 2
+#define COMPONENT_TRANSFER 3
 
 // How multiple components of the exact same type are handled in the same datum
 
@@ -55,7 +56,7 @@
 
 // /mob/living/carbon/human signals
 #define COMSIG_HUMAN_SAY "human_say"                            //from mob/living/carbon/human/say(): (message)
-
+#define COMSIG_HUMAN_ODDITY_LEVEL_UP "human_oddity_level_up"
 // /datum/species signals
 
 // /obj signals

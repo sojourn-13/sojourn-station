@@ -81,6 +81,23 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+//Artist
+/obj/item/clothing/suit/artist
+	name = "Complicated Vest"
+	desc = "The tubes don't even do anything."
+	icon_state = "artist"
+	item_state = "artist_armor"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
 //Chaplain
 /obj/item/clothing/suit/storage/chaplain
 	name = "prime longcoat"
