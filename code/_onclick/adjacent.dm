@@ -97,7 +97,7 @@ Quick adjacency (to turf):
 	return FALSE
 
 // This is necessary for storage items not on your person.
-/obj/item/Adjacent(var/atom/neighbor, var/recurse = 1)
+/obj/item/Adjacent(var/atom/neighbor, var/recurse = 2)
 	if(neighbor == loc)
 		return TRUE
 	if(istype(loc,/obj/item))
