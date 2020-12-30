@@ -40,7 +40,7 @@
 /obj/machinery/porta_turret/prepper
 	name = "advanced turret"
 	desc = "A highly modified turret with a stronger laser and self repair system."
-	installation = /obj/item/weapon/gun/energy/lasercannon
+	installation = /obj/item/weapon/gun/energy/lasercore
 	check_synth = 1
 	ailock = 1
 	use_power = NO_POWER_USE
