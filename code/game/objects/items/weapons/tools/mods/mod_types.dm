@@ -495,7 +495,7 @@
 /obj/item/weapon/tool_upgrade/augment/expansion
 	name = "expansion port"
 	icon_state = "expand"
-	desc = "A bulky adapter which more modifications to be attached to the tool. A bit fragile but you can compensate. Due to its complex design it takes an extraordinarily long time to remove with tools."
+	desc = "A bulky adapter which allows more modifications to be attached to the tool. A bit fragile but you can compensate. Due to its complex design it cannot be removed once installed."
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	can_remove = FALSE
 
