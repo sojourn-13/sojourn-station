@@ -124,7 +124,7 @@
 /datum/nano_module/rcon/proc/FindDevices()
 	known_SMESs = new /list()
 	for(var/obj/machinery/power/smes/buildable/SMES in SSmachines.machinery)
-		if(AreConnectedZLevels(get_host_z(), get_z(SMES)) && SMES.RCon_tag && (SMES.RCon_tag != "NO_TAG") && SMES.RCon)
+		if(SMES.RCon_tag && (SMES.RCon_tag != "NO_TAG") && SMES.RCon)
 			known_SMESs.Add(SMES)
 
 	known_breakers = new /list()
