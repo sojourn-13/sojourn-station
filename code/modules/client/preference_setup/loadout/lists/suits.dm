@@ -124,3 +124,7 @@
 /datum/gear/suit/punkvest
 	display_name = "cyberpunk vest"
 	path = /obj/item/clothing/suit/punkvest/cyber
+
+/datum/gear/suit/ivory
+	display_name = "ivory tabard"
+	path = /obj/item/clothing/suit/ivory
