@@ -155,6 +155,7 @@
 	desc = "Do red tools really work faster or is the effect purely psychological?"
 	icon_state = "paint_red"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
+	can_remove = FALSE
 
 /obj/item/weapon/tool_upgrade/productivity/red_paint/New()
 	..()
@@ -172,6 +173,7 @@
 	desc = "A rough single-use block to sharpen a blade or a rifle bayonet. The honed edge cuts smoothly."
 	icon_state = "whetstone"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_DIAMOND = 3)
+	can_remove = FALSE
 
 /obj/item/weapon/tool_upgrade/productivity/whetstone/New()
 	..()
@@ -259,6 +261,7 @@
 	desc = "Applying a thin coat of this paint on a tool prevents stains, dirt or dust to adhere to its surface. Everyone work better and faster with clean tools."
 	icon_state = "antistaining"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2)
+	can_remove = FALSE
 
 /obj/item/weapon/tool_upgrade/productivity/antistaining/New()
 	..()
@@ -492,8 +495,9 @@
 /obj/item/weapon/tool_upgrade/augment/expansion
 	name = "expansion port"
 	icon_state = "expand"
-	desc = "A bulky adapter which more modifications to be attached to the tool. A bit fragile but you can compensate. Due to its complex design it takes an extraordinarily long time to remove with tools."
+	desc = "A bulky adapter which allows more modifications to be attached to the tool. A bit fragile but you can compensate. Due to its complex design it cannot be removed once installed."
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
+	can_remove = FALSE
 
 /obj/item/weapon/tool_upgrade/augment/expansion/New()
 	..()
