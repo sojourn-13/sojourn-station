@@ -78,7 +78,7 @@
 	result_amount = 1
 	required = /obj/item/slime_extract/metal
 
-/datum/chemical_reaction/slime/metal/on_reaction(var/datum/reagents/holder)
+/datum/chemical_reaction/slime/metal_2/on_reaction(var/datum/reagents/holder)
 	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/plastic
 	M.amount = 15
 	M.loc = get_turf(holder.my_atom)
@@ -102,11 +102,11 @@
 
 /datum/chemical_reaction/slime/wealth_light
 	result = null
-	required_reagents = list("MATERIAL_URANIUM" = 5)
+	required_reagents = list(MATERIAL_URANIUM = 5)
 	result_amount = 1
 	required = /obj/item/slime_extract/gold
 
-/datum/chemical_reaction/slime/wealth/on_reaction(var/datum/reagents/holder)
+/datum/chemical_reaction/slime/wealth_light/on_reaction(var/datum/reagents/holder)
 	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/silver
 	M.amount = 15
 	M.loc = get_turf(holder.my_atom)
