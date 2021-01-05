@@ -30,7 +30,8 @@
 
 /obj/structure/closet/secure_closet/personal/agrolyte
 	name = "agrolyte's locker"
-	req_access = list(access_hydroponics)
+	req_access = list(access_nt_disciple)
+	access_occupy = list(access_nt_disciple)
 	icon_state = "botanist"
 
 /obj/structure/closet/secure_closet/personal/agrolyte/populate_contents()
