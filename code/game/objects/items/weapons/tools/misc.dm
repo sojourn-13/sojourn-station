@@ -119,13 +119,14 @@
 
 /obj/item/weapon/tool/medmultitool
 	name = "greyson positronic medmultitool"
-	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools."
+	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools and takes a medium cell in its handle.."
 	icon_state = "medmulti"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
 	flags = CONDUCT
 	origin_tech = list(TECH_MATERIAL = 3, TECH_BIO = 4)
-	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 25)
-
+	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_LASER_CUTTING = 30, QUALITY_WIRE_CUTTING = 25)
+	suitable_cell = /obj/item/weapon/cell/medium
+	use_power_cost = 0.2 //affective!
 	max_upgrades = 2
 	workspeed = 1.2
 
