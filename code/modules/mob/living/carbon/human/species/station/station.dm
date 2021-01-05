@@ -552,8 +552,8 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 
-	dark_color = "#ffffff"
-	light_color = "#000000"
+	dark_color = "#FA8128"
+	light_color = "#FCAE1E"
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/artificer_guild_synthetic,
