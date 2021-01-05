@@ -1,8 +1,8 @@
-#include "_Deep_Forest.dmm"
+/*#include "_Deep_Forest.dmm"
 #include "_Beast_Cave.dmm"
 #include "_Greyson_Field_Office.dmm"
 #include "_Prepper_Bunker.dmm"
-#include "_River_Forest.dmm"
+#include "_River_Forest.dmm"*/
 
 /obj/map_data/nadezda_f
 	name = "Deep Forest"
