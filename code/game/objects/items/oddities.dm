@@ -18,7 +18,7 @@
 	var/list/oddity_stats
 	var/sanity_value = 1
 	var/datum/perk/oddity/perk
-	var/prob_perk = 100
+	var/prob_perk = 10
 
 
 /obj/item/weapon/oddity/Initialize()
