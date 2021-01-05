@@ -65,7 +65,7 @@
 /mob/living/simple_animal/hostile/roomba/trip
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it..."
-	icon_state = "roomba_baton"
+	icon_state = "roomba_batton"
 	health = 35
 	maxHealth = 35
 	speed = 3 //speedy boy!
