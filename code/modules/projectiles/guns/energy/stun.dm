@@ -8,7 +8,7 @@
 	price_tag = 1000
 	charge_cost = 50
 	fire_sound = 'sound/weapons/Taser.ogg'
-	can_dual = 1
+	can_dual = TRUE
 	projectile_type = /obj/item/projectile/beam/stun
 
 	init_firemodes = list(
@@ -35,7 +35,7 @@
 	icon_state = "stunrevolver"
 	item_state = "stunrevolver"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
-	can_dual = 1
+	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3, TECH_POWER = 2)
 	charge_cost = 50
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6, MATERIAL_SILVER = 2)

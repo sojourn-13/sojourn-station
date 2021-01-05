@@ -7,7 +7,7 @@
 	throw_speed = 2
 	throw_range = 10
 	force = 5.0
-	flags =  CONDUCT
+	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 5)
 	fire_sound = 'sound/effects/bang.ogg'

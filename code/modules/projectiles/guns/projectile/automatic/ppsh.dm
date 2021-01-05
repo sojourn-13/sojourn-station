@@ -22,7 +22,7 @@
 	one_hand_penalty = 25
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
-	silenced = 1
+	silenced = TRUE
 	init_firemodes = list(
 		FULL_AUTO_600,
 		BURST_8_ROUND,
