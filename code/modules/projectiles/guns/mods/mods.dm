@@ -250,6 +250,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
 	GUN_UPGRADE_DAMAGE_MULT = 2,
 	GUN_UPGRADE_CHARGECOST = 2)
 	I.req_fuel_cell = REQ_CELL
