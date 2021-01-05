@@ -260,7 +260,7 @@
 	name = "anti-staining paint"
 	desc = "Applying a thin coat of this paint on a tool prevents stains, dirt or dust to adhere to its surface. Everyone work better and faster with clean tools."
 	icon_state = "antistaining"
-	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_PLASMA = 3)
 	can_remove = FALSE
 
 /obj/item/weapon/tool_upgrade/productivity/antistaining/New()
@@ -381,7 +381,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_MUZZLEFLASH = 0.8,
 		GUN_UPGRADE_RECOIL = 0.8,
-		GUN_UPGRADE_DAMAGE_MULT = 0.8
+		GUN_UPGRADE_DAMAGE_MULT = 0.9
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_BARREL
@@ -405,8 +405,9 @@
 	UPGRADE_BULK = 1
 	)
 	I.weapon_upgrades = list(
+		GUN_UPGRADE_MUZZLEFLASH = 0.6,
 		GUN_UPGRADE_RECOIL = 0.6,
-		GUN_UPGRADE_DAMAGE_MULT = 0.8
+		GUN_UPGRADE_DAMAGE_MULT = 0.9
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.required_qualities = list(QUALITY_WELDING)
@@ -555,12 +556,12 @@
 	UPGRADE_WORKSPEED = -0.5
 	)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 1.2,
+	GUN_UPGRADE_RECOIL = 0.8,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 	GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
 	GUN_UPGRADE_CHARGECOST = 0.8)
 	I.prefix = "sanctified"
-	I.req_fuel_cell = REQ_CELL
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
 /*
 /obj/item/weapon/tool_upgrade/augment/hammer_addon
@@ -625,7 +626,7 @@
 	GUN_UPGRADE_OVERCHARGE_MAX = 0.8,
 	GUN_UPGRADE_OVERCHARGE_RATE = 1.2)
 	I.prefix = "intelligent"
-	I.req_fuel_cell = REQ_CELL
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
 /obj/item/weapon/tool_upgrade/augment/ai_tool_excelsior
 	name = "excelsior nanointegrated AI"
@@ -679,11 +680,15 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_WORKSPEED = 1.0,
-	UPGRADE_PRECISION = 10,
+	UPGRADE_WORKSPEED = 0.5,
+	UPGRADE_PRECISION = 5,
+	UPGRADE_DEGRADATION_MULT = 1.5,
+	UPGRADE_FUELCOST_MULT = 1.5,
+	UPGRADE_POWERCOST_MULT = 1.5,
 	UPGRADE_ITEMFLAGPLUS = LOUD
 	)
 	I.prefix = "hydraulic"
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
 //Armor mods
 /obj/item/weapon/tool_upgrade/armor/melee

@@ -32,7 +32,7 @@
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	twohanded = TRUE
-	flags =  CONDUCT
+	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
@@ -80,7 +80,7 @@
 	charge_cost = 200
 	recoil_buildup = 1
 	damage_multiplier = 0.8
-	can_dual = 1
+	can_dual = TRUE
 	twohanded = FALSE
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/kurtz/railgun, icon="kill"),
@@ -102,7 +102,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	twohanded = TRUE
-	flags =  CONDUCT
+	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8)
@@ -141,7 +141,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	fire_sound = 'sound/weapons/Laser.ogg'
 	suitable_cell = /obj/item/weapon/cell/medium
-	can_dual = 1
+	can_dual = TRUE
 	projectile_type = /obj/item/projectile/beam/weak/smg
 	charge_meter = FALSE
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
@@ -250,7 +250,7 @@
 	fire_sound = 'sound/weapons/Laser.ogg'
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_NORMAL
-	can_dual = 1
+	can_dual = TRUE
 	projectile_type = /obj/item/projectile/beam
 	origin_tech = null
 	self_recharge = TRUE
@@ -326,7 +326,7 @@
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/Laser.ogg'
 	suitable_cell = /obj/item/weapon/cell/medium
-	can_dual = 1
+	can_dual = TRUE
 	projectile_type = /obj/item/projectile/beam/weak/smg
 	projectile_color = "#0000FF"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)

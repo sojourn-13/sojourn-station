@@ -6,7 +6,7 @@
 	item_state = "straylight"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_PISTOL
-	can_dual = 1
+	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE

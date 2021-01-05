@@ -5,7 +5,7 @@
 	icon_state = "slaught"
 	item_state = "slaught"
 	w_class = ITEM_SIZE_SMALL
-	can_dual = 1
+	can_dual = TRUE
 	caliber = CAL_PISTOL
 	max_shells = 0
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1)

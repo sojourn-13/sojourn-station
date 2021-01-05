@@ -529,7 +529,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 	embed_mult = 1.5
-	attack_distance = 2
+	//attack_distance = 2
 
 /obj/item/weapon/tool/spear/hunter_halberd
 	name = "Halberd"

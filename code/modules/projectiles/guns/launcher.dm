@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guns/launcher/pneumatic.dmi'
 	icon_state = "pneumatic"
 	w_class = ITEM_SIZE_HUGE
-	flags =  CONDUCT
+	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	gun_tags = list(GUN_SCOPE)
 
