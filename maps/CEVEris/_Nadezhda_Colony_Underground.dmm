@@ -6722,7 +6722,7 @@
 "czn" = (/obj/structure/closet/secure_closet/personal/patient,/turf/simulated/floor/wood,/area/nadezhda/medical/psych)
 "czo" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating,/area/nadezhda/medical/psych)
 "czp" = (/obj/random/scrap/sparse_even/low_chance,/obj/machinery/light/small{dir = 4; pixel_y = 0},/turf/simulated/floor/tiled/techmaint,/area/nadezhda/maintenance/undergroundfloor2west)
-"czq" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/power/sensor{name_tag = "MAIN POWER GRID"},/obj/structure/cable,/turf/simulated/open,/area/nadezhda/engineering/engine_room)
+"czq" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/power/sensor{long_range = 1; name_tag = "MAIN POWER GRID"},/obj/structure/cable,/turf/simulated/open,/area/nadezhda/engineering/engine_room)
 "czr" = (/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/quartermaster/miningdock)
 "czs" = (/obj/effect/floor_decal/industrial/hatch/red,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/dark/panels,/area/nadezhda/rnd/chargebay)
 "czt" = (/obj/effect/floor_decal/industrial/outline/red,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/extinguisher_cabinet{pixel_x = 0; pixel_y = -30},/turf/simulated/floor/tiled/dark/panels,/area/nadezhda/rnd/chargebay)
