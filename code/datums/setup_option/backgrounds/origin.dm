@@ -1008,12 +1008,11 @@
 /datum/category_item/setup_option/background/career/former_servest
 	name = "Former Service Worker"
 	desc = "From a janitor to cook or even accountent work as been the mundane at best, being what ever you were before the crash was likely uneventful. \
-	Now a days who knows what can happen on the colony, hopefully your life skills from doing the prier or even current work have prepared  you for what you are now.."
+	Now a days who knows what can happen on the colony, hopefully your life skills from doing the prier or even current work have prepared you for what you are now."
 
 //REALLY open ended this one, thus is a bit of everything!
 //Main boon is that you dont lose or gain a lot, making it ideal for roleplay without lossing out on other jobs/skills
 //-9Loss Stats +11Gained Stats
-
 
 	stat_modifiers = list(
 		STAT_ROB = -2,
@@ -1161,7 +1160,7 @@
 //-11Loss Stats +"16"Gained Stats
 
 	restricted_depts = LSS //You dont need those non-entrepreneurs!
-	perks = list(/datum/perk/market_prof) //YOU GOT THIS, YOU KNOW WHATS UP AND HOW TO TURN TRASH INTO GOLD! BE YOUR OWN BOSS, GONE ON DO IT!
+	perks = list(/datum/perk/market_prof) //YOU GOT THIS, YOU KNOW WHATS UP AND HOW TO TURN TRASH INTO GOLD! BE YOUR OWN BOSS, GONE ON TO DO IT!
 
 	stat_modifiers = list(
 		STAT_ROB = -4,
