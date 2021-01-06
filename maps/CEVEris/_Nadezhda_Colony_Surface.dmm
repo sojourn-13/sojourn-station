@@ -193,7 +193,7 @@
 "adK" = (/obj/structure/table/marble,/obj/item/weapon/storage/box/donkpockets,/turf/simulated/floor/wood,/area/nadezhda/security/barracks{name = "Security Barracks"})
 "adL" = (/obj/structure/table/marble,/obj/machinery/microwave,/turf/simulated/floor/wood,/area/nadezhda/security/barracks{name = "Security Barracks"})
 "adM" = (/obj/machinery/power/smes/buildable{RCon_tag = "Substation - Surface"; charge = 2.5e+006; input_attempt = 1; input_level = 600000; output_attempt = 1; output_level = 600000},/obj/structure/cable{d2 = 4; icon_state = "0-4"},/obj/structure/cable{icon_state = "0-2"; d2 = 2},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/engineering/atmos/surface)
-"adN" = (/obj/machinery/power/breakerbox,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/engineering/atmos/surface)
+"adN" = (/obj/machinery/power/breakerbox{icon_state = "bbox_on"; on = 1},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/engineering/atmos/surface)
 "adO" = (/obj/structure/table/woodentable,/obj/item/weapon/oddity/rare/golden_cup,/turf/simulated/floor/wood,/area/nadezhda/absolutism/vectorrooms)
 "adP" = (/obj/structure/closet/wall_mounted/emcloset{pixel_y = 32},/obj/machinery/power/terminal{dir = 8},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/engineering/atmos/surface)
 "adQ" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/wall/r_wall,/area/nadezhda/engineering/atmos/surface)
