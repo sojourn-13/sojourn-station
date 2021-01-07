@@ -13,9 +13,9 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
-	recoil_buildup = 17
+	recoil_buildup = 12
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE)
-	one_hand_penalty = 20
+	one_hand_penalty = 14
 
 /obj/item/weapon/gun/projectile/colt/NM_colt
 	name = "\"Bronco\" pistol"
@@ -27,7 +27,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)
-	recoil_buildup = 12
+	recoil_buildup = 10
 
 /obj/item/weapon/gun/projectile/colt/ten
 	name = "\"Delta Elite\" magnum pistol"
@@ -44,7 +44,7 @@
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	recoil_buildup = 15
+	recoil_buildup = 12
 	damage_multiplier = 1.1
 	gun_tags = list(GUN_PROJECTILE)
 

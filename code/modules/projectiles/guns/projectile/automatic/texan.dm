@@ -16,7 +16,7 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.5
 	recoil_buildup = 4.5
-	one_hand_penalty = 15
+	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 
 	init_firemodes = list(
