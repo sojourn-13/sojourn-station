@@ -497,12 +497,7 @@
 	next_file()
 
 /obj/machinery/matter_nanoforge/proc/consume_materials(datum/design/design)
-	for(var/material in design.materials)
-	// + 15 base cost for each material then * 2
-		design.materials[material] += ((1 - lst[material]) * 10) * 2
-		var/material_cost = design.adjust_materials ? SANITIZE_LATHE_COST(design.materials[material]): design.materials[material]
-		stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - material_cost)
-
+	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - material_cost)
 	return TRUE
 
 #undef ERR_OK
