@@ -104,6 +104,7 @@
 	store_items = 0
 	var/used = 0
 	var/obj/item/weapon/tank/tank = null
+	var/existing_degradation
 
 /obj/structure/closet/body_bag/cryobag/New()
 	tank = new /obj/item/weapon/tank/emergency_oxygen(null) //It's in nullspace to prevent ejection when the bag is opened.
@@ -128,6 +129,8 @@
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		H.in_stasis = 1
+		if(H.timeofdeath)
+			src.existing_degradation = world.time - H.timeofdeath
 		src.used = 1
 	..()
 
@@ -135,6 +138,8 @@
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		H.in_stasis = 0
+		if(H.timeofdeath && src.existing_degradation)
+			H.timeofdeath = world.time - src.existing_degradation
 	..()
 
 /obj/structure/closet/body_bag/cryobag/return_air() //Used to make stasis bags protect from vacuum.
