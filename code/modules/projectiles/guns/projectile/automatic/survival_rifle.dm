@@ -1,9 +1,9 @@
 /obj/item/weapon/gun/projectile/automatic/survivalrifle
 	name = "\"Bond\" survival rifle"
 	desc = "A \"Bond\" marksman carbine manufactured by Hunters Inc. Compact, high velocity and high penetration despite its low fire rate. Uses the obscure 12x24 rounds."
-	icon = 'icons/obj/guns/projectile/nordwind.dmi'
-	icon_state = "survival_rifle"
-	item_state = "survival_rifle"
+	icon = 'icons/obj/guns/projectile/survivalrifle.dmi'
+	icon_state = "survivalrifle"
+	item_state = "survivalrifle"
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	mag_well = MAG_WELL_PISTOL
