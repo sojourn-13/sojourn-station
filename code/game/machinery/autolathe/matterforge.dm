@@ -497,7 +497,7 @@
 	next_file()
 
 /obj/machinery/matter_nanoforge/proc/consume_materials(datum/design/design)
-	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - material_cost)
+	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - design.materials[MATERIAL_COMPRESSED_MATTER])
 	return TRUE
 
 #undef ERR_OK
