@@ -1013,21 +1013,29 @@ There are 9 wires.
 		return
 
 	if(istype(I, /obj/item/weapon/keys))
+		if(used_now)
+			to_chat(user, SPAN_WARNING("You are already looking for the key!")) //don't want people stacking odds
+			return
+		used_now = TRUE
 		if(ishuman(usr))
 			var/mob/living/carbon/human/H = usr
 			if(istype(I, /obj/item/weapon/keys/lockpicks))
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 30, 1, -2)
 			else
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 700, 1, -2)
-			if(do_after(user, 600, src))
+			if(do_after(user, 900, src))
+				used_now = FALSE
 				if(locked)
 					to_chat(user, SPAN_NOTICE("Even with the right key you can't open \"deadbolts\"!"))
+					used_now = FALSE
 				return
 				if(prob(key_odds+1) && H.stats.getPerk(PERK_ARTIST)) //minmium 1%
 					to_chat(user, SPAN_NOTICE("You found the correct key!"))
 					open(0)
+					used_now = FALSE
 					return
 				to_chat(user, SPAN_NOTICE("Damn wrong key!"))
+				used_now = FALSE
 		return
 
 	var/tool_type = I.get_tool_type(user, list(QUALITY_PRYING, QUALITY_SCREW_DRIVING, QUALITY_WELDING), src)
