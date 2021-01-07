@@ -166,7 +166,7 @@
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
