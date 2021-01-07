@@ -11,7 +11,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	auto_eject = 1
-	can_dual = 1
+	can_dual = TRUE
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
 	price_tag = 1500 //good smg with normal recoil and silencer possibility
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'

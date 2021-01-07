@@ -10,7 +10,7 @@
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 800
-	can_dual = 1
+	can_dual = TRUE
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.2
 	recoil_buildup = 33

@@ -192,6 +192,7 @@
 	default_type = /obj/item/organ/external/unbreakable
 
 ////SYNTHETIC////
+//Soteria
 /datum/organ_description/chest/soteria_synthetic
 	default_type = /obj/item/organ/external/robotic/moebius
 
@@ -212,3 +213,25 @@
 
 /datum/organ_description/leg/right/soteria_synthetic
 	default_type = /obj/item/organ/external/robotic/moebius
+
+//Artificer
+/datum/organ_description/chest/artificer_guild_synthetic
+	default_type = /obj/item/organ/external/robotic/technomancer
+
+/datum/organ_description/groin/artificer_guild_synthetic
+	default_type = /obj/item/organ/external/robotic/technomancer
+
+/datum/organ_description/head/artificer_guild_synthetic
+	default_type = /obj/item/organ/external/robotic/technomancer
+
+/datum/organ_description/arm/left/artificer_guild_synthetic
+	default_type = /obj/item/organ/external/robotic/technomancer
+
+/datum/organ_description/arm/right/artificer_guild_synthetic
+	default_type = /obj/item/organ/external/robotic/technomancer
+
+/datum/organ_description/leg/left/artificer_guild_synthetic
+	default_type = /obj/item/organ/external/robotic/technomancer
+
+/datum/organ_description/leg/right/artificer_guild_synthetic
+	default_type = /obj/item/organ/external/robotic/technomancer

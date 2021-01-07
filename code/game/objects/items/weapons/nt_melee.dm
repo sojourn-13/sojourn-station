@@ -38,6 +38,7 @@
 	desc = "This weapon of ancient design appears to be a spear-axe hybrid. It saw a lot of use back in the Dark Ages back on Earth - in more recent times, sablekyne hunters use a similar weapon \
 	on their homeworlds, the weapons practical use taking down huge and heavily armored wildlife lead to the church adopting its own design. Additionally, due to the halberd being so long, you can attack \
 	enemies from up to a tile away with it - twice as far as most other weapons can. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_halberd"
 	item_state = "nt_halberd"
 	wielded_icon = "nt_halberd_wielded"

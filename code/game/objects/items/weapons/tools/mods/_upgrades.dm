@@ -371,7 +371,7 @@
 		to_chat(user, SPAN_WARNING("Reduces workspeed by [tool_upgrades[UPGRADE_WORKSPEED]*100]%"))
 
 
-	if(tool_upgrades[UPGRADE_DEGRADATION_MULT] < 1)
+	if(tool_upgrades[UPGRADE_DEGRADATION_MULT] < 1 && tool_upgrades[UPGRADE_DEGRADATION_MULT] > 0)
 		to_chat(user, SPAN_NOTICE("Reduces tool degradation by [(1-tool_upgrades[UPGRADE_DEGRADATION_MULT])*100]%"))
 	else if	(tool_upgrades[UPGRADE_DEGRADATION_MULT] > 1)
 		to_chat(user, SPAN_WARNING("Increases tool degradation by [(tool_upgrades[UPGRADE_DEGRADATION_MULT]-1)*100]%"))
@@ -597,6 +597,9 @@
 		var/obj/item/weapon/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
 		if (toremove == "Cancel")
 			return 1
+		if(!toremove.can_remove)
+			to_chat(user, SPAN_DANGER("You cannot remove [toremove] once it's been installed!"))
+			return 0
 		var/datum/component/item_upgrade/IU = toremove.GetComponent(/datum/component/item_upgrade)
 		if(C.use_tool(user = user, target =  upgrade_loc, base_time = IU.removal_time, required_quality = QUALITY_SCREW_DRIVING, fail_chance = FAILCHANCE_CHALLENGING, required_stat = STAT_MEC))
 			//If you pass the check, then you manage to remove the upgrade intact
@@ -631,3 +634,4 @@
 	force = WEAPON_FORCE_HARMLESS
 	w_class = ITEM_SIZE_SMALL
 	price_tag = 200
+	var/can_remove = TRUE

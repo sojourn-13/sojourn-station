@@ -90,7 +90,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	twohanded = FALSE
-	can_dual = 1
+	can_dual = TRUE
 	sel_mode = 1
 	suitable_cell = /obj/item/weapon/cell/small
 	charge_cost = 20

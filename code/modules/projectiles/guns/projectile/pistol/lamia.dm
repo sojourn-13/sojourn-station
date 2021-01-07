@@ -7,7 +7,7 @@
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
 	caliber = CAL_50
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
-	can_dual = 1
+	can_dual = TRUE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
