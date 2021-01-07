@@ -119,6 +119,40 @@
 		STAT_COG = -5
 	)
 
+/datum/category_item/setup_option/background/ethnicity/ag_synth_mech_adept
+	name = "Mechanical Adept"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Your specific model was designed with \
+	a squite of integrated repair AI modules and augmented tool support to further enhance your innate skills. While not as sturdy as some other models of FBP's such as the Soteria designs the \
+	artificer guild positronics come with a far more advanced mechanical support subsystem, allowing for superior designs, methods, and implementations."
+
+	restricted_to_species = list(FORM_AGSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 15,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/ethnicity/ag_synth_sturdy
+	name = "\"Long-Haul\" Body Chassis"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. This particular model is the work of Tacitus \
+	O'Conner himself, artificer guild grand master. Unlike the mechanical adept model this chassis is built to last, being far more sturdy and capable of performing alone or with teams of engineers cut \
+	off from the colony for extended periods. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and improved cogitation computers."
+
+	restricted_to_species = list(FORM_AGSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 10,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 10
+	)
+
 /datum/category_item/setup_option/background/ethnicity/jaeger
 	name = "Jaeger"
 	desc = "The jaegers are a group of frontier kriosan who plot the course for the spread of the kriosan civilization. \

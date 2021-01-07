@@ -70,7 +70,6 @@
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
-	qdel(src)
 	if(drop1)
 		new drop1 (src.loc)
 		drop1 = null
@@ -80,6 +79,7 @@
 	if(cell_drop)
 		new cell_drop (src.loc)
 		cell_drop = null
+	qdel(src)
 	return
 
 /mob/living/simple_animal/hostile/onestar_custodian/chef
@@ -90,6 +90,17 @@
 	screen_type = "os_red"
 	projectiletype = /obj/item/projectile/flamer_lob
 	ranged = 1
+
+/mob/living/simple_animal/hostile/onestar_custodian/chef/New()
+	. = ..()
+	if(prob(5))
+		drop2 = /obj/item/weapon/oddity/common/old_radio
+	if(prob(10)) //Can override radio
+		drop2 = /obj/random/rations
+	if(prob(20)) //Can override radio or snack
+		drop2 = /obj/random/booze 
+	if(prob(10))
+		cell_drop = /obj/item/weapon/cell/medium
 
 /mob/living/simple_animal/hostile/onestar_custodian/chef/adjustFireLoss(var/amount)
 	if(status_flags & GODMODE)
@@ -108,3 +119,14 @@
 	ranged = 1
 	melee_damage_lower = 7
 	melee_damage_upper = 15
+
+/mob/living/simple_animal/hostile/onestar_custodian/engineer/New()
+	. = ..()
+	if(prob(5))
+		drop2 = /obj/random/tool_upgrade/rare
+	if(prob(10)) //Can override tool mod
+		drop2 = /obj/random/material_rare
+	if(prob(20)) //Can override rool mod or materials
+		drop2 = /obj/random/pack/tech_loot/onestar
+	if(prob(10))
+		cell_drop = /obj/item/weapon/cell/medium/high

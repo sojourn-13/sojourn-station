@@ -534,3 +534,48 @@
 
 /datum/species/soteria_synthetic/get_bodytype()
 	return "Synthetic"
+
+/datum/species/artificer_guild_synthetic
+	name = "Artificer Guild Full Body Positronic"
+	name_plural = "synthetics"
+	default_form = FORM_AGSYNTH
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	num_alternate_languages = 3
+	name_language = null // Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+	siemens_coefficient = 0.5
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+
+	dark_color = "#FA8128"
+	light_color = "#FCAE1E"
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/artificer_guild_synthetic,
+		BP_GROIN =  new /datum/organ_description/groin/artificer_guild_synthetic,
+		BP_HEAD =   new /datum/organ_description/head/artificer_guild_synthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/artificer_guild_synthetic,
+		BP_R_ARM =  new /datum/organ_description/arm/right/artificer_guild_synthetic,
+		BP_L_LEG =  new /datum/organ_description/leg/left/artificer_guild_synthetic,
+		BP_R_LEG =  new /datum/organ_description/leg/right/artificer_guild_synthetic
+		)
+
+	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	stat_modifiers = list(
+		STAT_MEC = 10
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/artificer_guild_synthetic/get_bodytype()
+	return "Synthetic"

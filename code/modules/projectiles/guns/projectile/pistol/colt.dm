@@ -9,7 +9,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 5)
 	price_tag = 450
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	can_dual = 1
+	can_dual = TRUE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2

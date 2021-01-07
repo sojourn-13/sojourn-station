@@ -43,7 +43,7 @@
 /obj/item/clothing/suit/hooded/cloak/job/mbo
 	name = "biolab overseer's cloak"
 	icon_state = "mbocloak"
-	desc = "A cyan cloak with dark-cyan double stripe at edge."
+	desc = "A neon-cyan cloak with nanoleds on its animated medical cross pattern."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/mbo
 
 /*
@@ -88,7 +88,7 @@
 /obj/item/clothing/suit/hooded/cloak/job/service
 	name = "service cloak"
 	icon_state = "servicecloak"
-	desc = "A green cloak with blue lining."
+	desc = "A purple cloak with nanoleds creating sparkling bubbles."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/service
 
 /*
@@ -110,7 +110,7 @@
 /obj/item/clothing/suit/hooded/cloak/job/mining
 	name = "mining cloak"
 	icon_state = "miningcloak"
-	desc = "A purple cloak with orange lining."
+	desc = "A brown cloak with fancy nanoleds displaying an animation of rock being picked."
 //	hoodtype = /obj/item/clothing/head/hood/cloakhood/job/mining
 
 /*
