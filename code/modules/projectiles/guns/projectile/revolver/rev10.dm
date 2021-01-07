@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/revolver/rev10
-	name = "\"Mistral\" magnum revolver"
+	name = "\"Law Maker\" magnum revolver"
 	desc = "A well made police revolver used by many departments round the universal frontier. While the design appears to predate its production by H&S it has become iconic to their company for stopping power. \
-	It appears to use the rare 10x24 caliber, barely fitting all six rounds into the cylander from the looks of it. While being an odd choice its no doubt the reason for its stopping power."
+	It appears to take .40 magnum rounds."
 	icon = 'icons/obj/guns/projectile/rev10.dmi'
 	icon_state = "rev10"
 	item_state = "rev10"
