@@ -9,7 +9,6 @@
 	caliber = CAL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 6
-	ammo_type = /obj/item/ammo_casing/c10x24
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1200
 	damage_multiplier = 1.3
