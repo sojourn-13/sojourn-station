@@ -184,17 +184,27 @@
 /datum/reagent/medicine/dexalinp
 	name = "Dexalin Plus"
 	id = "dexalinp"
-	description = "Dexalin Plus is used in the treatment of oxygen deprivation. It is highly effective."
+	description = "Dexalin Plus is used in the treatment of oxygen deprivation as well as musle repair. It is highly effective."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#0040FF"
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = 1
 
-/datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
 	M.adjustOxyLoss(-30 * effect_multiplier)
 	M.add_chemical_effect(CE_OXYGENATED, 2)
 	holder.remove_reagent("lexorin", 0.3 * effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		//G for GUNS
+		var/obj/item/organ/internal/muscle/G = H.random_organ_by_process(OP_MUSCLE)
+		if(H && istype(H))
+			if(BP_IS_ROBOTIC(G))
+				return
+			if(G.damage > 0)
+				G.damage = max(G.damage - 5 * removed, 0)
+
 
 /datum/reagent/medicine/respirodaxon
 	name = "Respirodaxon"
@@ -206,7 +216,7 @@
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = 1
 
-datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/lungs/L = H.random_organ_by_process(OP_LUNGS)
@@ -419,7 +429,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	overdose = 10
 	scannable = 1
 
-/datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
 	if(ishuman(M))
@@ -428,6 +438,13 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 		for(var/obj/item/organ/I in H.internal_organs)
 			if((I.damage > 0) && !BP_IS_ROBOTIC(I)) //Peridaxon heals only non-robotic organs
 				I.heal_damage(((0.2 + I.damage * 0.05) * effect_multiplier), FALSE)
+		var/obj/item/organ/internal/nerve/N = H.random_organ_by_process(OP_NERVE )
+		if(H && istype(H))
+			if(BP_IS_ROBOTIC(N))
+				return
+			if(N.damage > 0)
+				N.damage = max(N.damage - 5 * removed, 0)
+
 
 /datum/reagent/medicine/ryetalyn
 	name = "Ryetalyn"
@@ -460,7 +477,6 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	reagent_state = SOLID
 	color = "#022000"
 
-
 /datum/reagent/medicine/positive_ling
 	name = "Positive Paragenetic Marker"
 	id = "positiveling"
@@ -468,7 +484,6 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#910000"
-
 
 /datum/reagent/medicine/ethylredoxrazine
 	name = "Ethylredoxrazine"
@@ -669,14 +684,14 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/quickclot
 	name = "Quickclot"
 	id = "quickclot"
-	description = "Temporarily stops\\oppresses any internal and external bleeding."
+	description = "Temporarily stops\\oppresses any internal and external bleeding. Also helps heal and repair blood vessels"
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#a6b85b"
 	overdose = REAGENTS_OVERDOSE/2
 	metabolism = REM/2
 
-/datum/reagent/medicine/quickclot/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/quickclot/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
 	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.1 * effect_multiplier))	// adding 0.01 to be more than 0.1 in order to stop int bleeding from growing
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -684,6 +699,12 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 			for(var/datum/wound/W in E.wounds)
 				if(W.internal)
 					W.heal_damage(5 * effect_multiplier)
+		var/obj/item/organ/internal/blood_vessel/B = H.random_organ_by_process(OP_BLOOD_VESSEL)
+		if(H && istype(H))
+			if(BP_IS_ROBOTIC(B))
+				return
+			if(B.damage > 0)
+				B.damage = max(B.damage - 5 * removed, 0)
 
 /datum/reagent/medicine/quickclot/overdose(mob/living/carbon/M, alien)
 	M.add_chemical_effect(CE_BLOODCLOT, min(1, 0.20))
@@ -697,7 +718,7 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 	color = "#660679"
 	overdose = REAGENTS_OVERDOSE/2
 
-/datum/reagent/medicine/ossisine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/ossisine/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
 	M.paralysis = max(M.paralysis, 5)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	if(ishuman(M))
@@ -712,6 +733,13 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 				E.mend_fracture()
 				M.pain(E.name, 60, TRUE)
 				dose = 0
+		var/obj/item/organ/internal/bone/B = H.random_organ_by_process(OP_BONE)
+		if(H && istype(H))
+			if(BP_IS_ROBOTIC(B))
+				return
+			if(B.damage > 0)
+				B.damage = max(B.damage - 5 * removed, 0)
+
 
 /datum/reagent/medicine/ossisine/overdose(mob/living/carbon/M, alien)
 	M.adjustCloneLoss(2)
@@ -806,15 +834,23 @@ datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/al
 /datum/reagent/medicine/purger
 	name = "Purger"
 	id = "purger"
-	description = "Temporary purges all addictions."
+	description = "Temporary purges all addictions well also repairing kidneys."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#d4cf3b"
 	scannable = 1
 	metabolism = REM/2
 
-/datum/reagent/medicine/purger/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/purger/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
 	M.add_chemical_effect(CE_PURGER, 1)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/kidney/K = H.random_organ_by_process(OP_KIDNEYS)
+		if(H && istype(H))
+			if(BP_IS_ROBOTIC(K))
+				return
+			if(K.damage > 0)
+				K.damage = max(K.damage - 5 * removed, 0)
 
 /datum/reagent/medicine/addictol
 	name = "Addictol"

@@ -108,10 +108,10 @@
 
 	if(sound)
 		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-	var/chance_mod = 1 //Unused
+	var/chance_mod = 1
 	if(!istype(I, /obj/item/weapon/scrap_lump))
-		chance_mod = 1 //Unused
-	if(prob(chance_to_recycle / chance_mod)) //change_mod here is not used, - divieds by one, prevents warning
+		chance_mod = chance_to_recycle
+	if(prob(chance_to_recycle - chance_to_recycle)) //changes it so that only lumps of scrap can be used to make refined scrap. 
 		new /obj/item/stack/sheet/refined_scrap(loc)
 	qdel(I)
 
