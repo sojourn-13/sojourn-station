@@ -6,7 +6,6 @@
 	item_state = "survivalrifle"
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	mag_well = MAG_WELL_PISTOL
 	caliber = CAL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
