@@ -25,6 +25,7 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY)
+
 /obj/item/ammo_magazine/rifle_10x24
 	name = "light rifle magazine"
 	desc = "A 20 round magazine marked for 12x24 rounds."
@@ -36,17 +37,16 @@
 	ammo_type = /obj/item/ammo_casing/c10x24
 	max_ammo = 20
 	multiple_sprites = 1
-/obj/item/weapon/gun/projectile/automatic/survivalrifle/update_icon()
+
+/obj/item/weapon/gun/projectile/automatic/ppsh/update_icon()
 	..()
-
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		iconstring += "_slide"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
+	if(ammo_magazine)
+		icon_state = "[initial(icon_state)]-full"
+		set_item_state("-full")
+	else
+		icon_state = initial(icon_state)
+		set_item_state()
+	return
 
 /obj/item/weapon/gun/projectile/automatic/survivalrifle/Initialize()
 	. = ..()

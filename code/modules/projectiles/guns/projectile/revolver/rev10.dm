@@ -17,16 +17,3 @@
 	zoom_factor = 0.2
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
-
-
-/obj/item/weapon/gun/projectile/rev10/update_icon()
-	..()
-
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if(len==0)
-		iconstring += "_slide"
-
-	icon_state = iconstring
-	set_item_state(itemstring)

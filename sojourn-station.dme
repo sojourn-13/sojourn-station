@@ -2346,7 +2346,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\slaught_o_matic.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\straylight.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\sts.dm"
-#include "code\modules\projectiles\guns\projectile\automatic\survival_rifle.dm"
+#include "code\modules\projectiles\guns\projectile\automatic\survivalrifle.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\texan.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\vintorez.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\wirbelwind.dm"
