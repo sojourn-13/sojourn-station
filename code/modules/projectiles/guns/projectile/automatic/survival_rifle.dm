@@ -25,7 +25,17 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY)
-
+/obj/item/ammo_magazine/rifle_10x24
+	name = "light rifle magazine"
+	desc = "A 20 round magazine marked for 12x24 rounds."
+	icon_state = "rifle"
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_RIFLE
+	matter = list(MATERIAL_STEEL = 8)
+	caliber = "10x24"
+	ammo_type = /obj/item/ammo_casing/c10x24
+	max_ammo = 20
+	multiple_sprites = 1
 /obj/item/weapon/gun/projectile/automatic/survivalrifle/update_icon()
 	..()
 
