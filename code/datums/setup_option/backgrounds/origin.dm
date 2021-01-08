@@ -1151,7 +1151,7 @@
 
 /datum/category_item/setup_option/background/career/entrepreneur
 	name = "Entrepreneur"
-	desc = "When life gives you lemons make lemonade then sell that drink at a proffit and corner the lemonade market. That is exactly what you may have set out to do, making it on your own! \
+	desc = "When life gives you lemons make lemonade then sell that drink at a profit and corner the lemonade market. That is exactly what you may have set out to do, making it on your own! \
 	This can range from starting your own shop to small business making stuff. Who knows how many tried and failed but your one of them, the market back in Sol Fed was just to crowed, that must be it. \
 	The system of bureaucracy and its regulations have pushed out many like you but it really gets the old nogging working in overtime."
 
