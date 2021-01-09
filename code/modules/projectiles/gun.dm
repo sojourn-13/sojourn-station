@@ -26,7 +26,7 @@
 	max_upgrades = 5
 
 	var/auto_eject = FALSE			//if the magazine should automatically eject itself when empty.
-	var/auto_eject_sound = null
+	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
 
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
 	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun

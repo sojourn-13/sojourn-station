@@ -434,7 +434,7 @@
 // Greatly reduces firerate but will turn on or off auto-eject
 /obj/item/weapon/gun_upgrade/magwell/auto_eject
 	name = "H&S \"Dropper\" Magwell Braker"
-	desc = "A rather smartly designed magwell braker box that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwel itself out!"
+	desc = "A rather smartly designed magwell braker box that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwel itself out! When force-ejecting a mag, will play a beeping sound."
 	icon_state = "auto_spingbox"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
 
