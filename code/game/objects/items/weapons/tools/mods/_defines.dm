@@ -97,7 +97,7 @@
 #define GUN_UPGRADE_FULLAUTO "full auto"
 #define GUN_UPGRADE_EXPLODE "self destruct"
 #define GUN_UPGRADE_RIGGED "rigged"
-
+#define GUN_UPGRADE_AUTOEJECT "autoeject"
 //Location Tag defines
 
 #define GUN_UNDERBARREL "underbarrel slot"
@@ -108,6 +108,7 @@
 #define GUN_MECHANISM "misc slot"
 #define GUN_GRIP "grip slot"
 #define GUN_KNIFE "knife slot"
+#define GUN_MAGWELL "magwell slot"
 
 //Whitelist Tag defines
 #define GUN_SILENCABLE "silencable"
@@ -121,4 +122,4 @@
 
 GLOBAL_LIST_INIT(tool_aspects_blacklist, list(UPGRADE_COLOR, UPGRADE_ITEMFLAGPLUS, UPGRADE_CELLPLUS, UPGRADE_SHARP, UPGRADE_BULK))
 GLOBAL_LIST_INIT(weapon_aspects_blacklist, list(GUN_UPGRADE_SILENCER, GUN_UPGRADE_FORCESAFETY, GUN_UPGRADE_HONK, GUN_UPGRADE_FULLAUTO,
-											GUN_UPGRADE_EXPLODE, GUN_UPGRADE_RIGGED, UPGRADE_SANCTIFY))
+											GUN_UPGRADE_EXPLODE, GUN_UPGRADE_RIGGED, UPGRADE_SANCTIFY, GUN_UPGRADE_AUTOEJECT))

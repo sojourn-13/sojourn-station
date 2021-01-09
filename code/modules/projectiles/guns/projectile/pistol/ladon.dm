@@ -17,6 +17,7 @@
 	one_hand_penalty = 20
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/ladon/update_icon()
 	..()

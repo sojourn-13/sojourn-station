@@ -22,7 +22,7 @@
 	zoom_factor = 0.6
 	recoil_buildup = 12
 	one_hand_penalty = 20 //automatic rifle level
-
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
@@ -38,6 +38,7 @@
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
+	gun_tags = list(GUN_PROJECTILE)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 750
 	zoom_factor = 0.5

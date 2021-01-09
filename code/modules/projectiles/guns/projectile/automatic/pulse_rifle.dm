@@ -23,7 +23,7 @@
 	damage_multiplier = 1
 	recoil_buildup = 6
 	one_hand_penalty = 10 //heavy, but very advanced, so bullpup rifle level despite not being bullpup
-	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
 		FULL_AUTO_600,

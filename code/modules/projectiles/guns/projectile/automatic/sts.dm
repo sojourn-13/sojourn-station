@@ -20,7 +20,7 @@
 	damage_multiplier = 1.1
 	recoil_buildup = 8
 	one_hand_penalty = 15 //automatic rifle level
-	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
 
 	init_firemodes = list(
@@ -55,7 +55,7 @@
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_MAGWELL)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn
 

@@ -25,6 +25,9 @@
 	hud_actions = list()
 	max_upgrades = 5
 
+	var/auto_eject = FALSE			//if the magazine should automatically eject itself when empty.
+	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
+
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
 	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
 	var/pierce_multiplier = 0 //ADDITIVE wall penetration to projectiles fired from this gun
@@ -697,6 +700,7 @@
 	rigged = initial(rigged)
 	zoom_factor = initial(zoom_factor)
 	force = initial(force)
+	auto_eject = initial(auto_eject)
 	initialize_scope()
 	initialize_firemodes()
 
