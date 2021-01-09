@@ -425,3 +425,23 @@
 		)
 	I.gun_loc_tag = GUN_SCOPE
 	I.req_gun_tags = list(GUN_SCOPE)
+
+//Magwell
+
+/obj/item/weapon/gun_upgrade/magwell
+//	bad_type = /obj/item/weapon/gun_upgrade/magwell
+
+// Greatly reduces firerate but will turn on or off auto-eject
+/obj/item/weapon/gun_upgrade/magwell/auto_eject
+	name = "H&S \"Dropper\" Magwell Braker"
+	desc = "A rather smartly designed magwell braker box that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwel itself out!"
+	icon_state = "auto_spingbox"
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
+
+/obj/item/weapon/gun_upgrade/magwell/auto_eject/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.50,
+	GUN_UPGRADE_AUTOEJECT = TRUE)
+	I.gun_loc_tag = GUN_MAGWELL

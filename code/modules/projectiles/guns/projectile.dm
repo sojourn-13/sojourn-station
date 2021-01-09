@@ -37,8 +37,6 @@
 	var/magazine_type = null	//the type of magazine that the gun comes preloaded with
 	var/obj/item/ammo_magazine/ammo_magazine = null //stored magazine
 	var/mag_well = MAG_WELL_GENERIC	//What kind of magazines the gun can load
-	var/auto_eject = FALSE			//if the magazine should automatically eject itself when empty.
-	var/auto_eject_sound = null
 	var/ammo_mag = "default" // magazines + gun itself. if set to default, then not used
 	var/tac_reloads = TRUE	// Enables guns to eject mag and insert new magazine.
 	gun_tags = list(GUN_PROJECTILE)

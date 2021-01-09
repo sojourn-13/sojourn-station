@@ -42,3 +42,7 @@
 /datum/design/autolathe/sec/stunbaton
 	name = "stunbaton"
 	build_path = /obj/item/weapon/melee/baton
+
+/datum/design/autolathe/sec/auto_eject_mod
+	name = "H&S \"Dropper\" Magwell Braker"
+	build_path = /obj/item/weapon/gun_upgrade/magwell/auto_eject
