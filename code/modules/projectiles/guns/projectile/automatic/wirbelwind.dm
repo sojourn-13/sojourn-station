@@ -16,9 +16,9 @@
 	price_tag = 1500 //good smg with normal recoil and silencer possibility
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	damage_multiplier = 0.9
-	recoil_buildup = 2
-	one_hand_penalty = 10
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35,GUN_SCOPE)
+	recoil_buildup = 2.5
+	one_hand_penalty = 20
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35,GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

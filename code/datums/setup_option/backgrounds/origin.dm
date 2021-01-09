@@ -153,6 +153,28 @@
 		STAT_COG = 10
 	)
 
+/datum/category_item/setup_option/background/ethnicity/ag_synth_mine
+	name = "\"Depts-Class\" Body Chassis"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. This particular model is made with mining in \
+	mind. Unlike the mechanical adept model this chassis is built work long hard hours in the darkness, being far more able to smash down rock viens and dig out tunnles rich with both soft \
+	and hard materals alike. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and preprogrammed assistants in maintaining tools and own self."
+
+	restricted_to_species = list(FORM_AGSYNTH)
+
+//Idea for this is that you were made with being a miner, thus giving you everything you need as one
+//The main boon being you get a bit of evey skill you /need/ to mine out faster and maintain tools / set up the big drills.
+//-0Loss Stats +15Gained Stat
+
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 5,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 5,
+		STAT_COG = 0
+	)
+
+
 /datum/category_item/setup_option/background/ethnicity/jaeger
 	name = "Jaeger"
 	desc = "The jaegers are a group of frontier kriosan who plot the course for the spread of the kriosan civilization. \
@@ -964,6 +986,43 @@
 		STAT_COG = -8
 	)
 
+/datum/category_item/setup_option/background/career/laborer_miner
+	name = "Former Miner"
+	desc = "Mining, the not well respected but needed none the less job. Pay ranges from work to work sometimes and the hazards are always an unknown, making it not as mindless of a job as one might think. \
+	Maybe mining in space were the gravity is ligher was easyer on a planet, maybe its all in the past now and to show for you labors you got calluses hands and known how to maintaining your tools."
+
+//This allows you to if your a miner, to get just the stats you need to do your job well not hurting as much of the smarter stats
+//The main boon of this being a better digging and maintaining tools/drills
+//-8Loss Stats +10Gained Stats
+
+
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 0,
+		STAT_VIG = -4,
+		STAT_BIO = -2,
+		STAT_MEC = 5,
+		STAT_COG = -2
+	)
+
+/datum/category_item/setup_option/background/career/former_servest
+	name = "Former Service Worker"
+	desc = "From a janitor to cook or even accountent work as been the mundane at best, being what ever you were before the crash was likely uneventful. \
+	Now a days who knows what can happen on the colony, hopefully your life skills from doing the prier or even current work have prepared you for what you are now."
+
+//REALLY open ended this one, thus is a bit of everything!
+//Main boon is that you dont lose or gain a lot, making it ideal for roleplay without lossing out on other jobs/skills
+//-9Loss Stats +11Gained Stats
+
+	stat_modifiers = list(
+		STAT_ROB = -2,
+		STAT_TGH = -3,
+		STAT_VIG = -4,
+		STAT_BIO = 4,
+		STAT_MEC = 3,
+		STAT_COG = 4
+	)
+
 /datum/category_item/setup_option/background/career/mechanic
 	name = "Former Mechanic"
 	desc = "You like mechanics, from cars to hover bikes to electrical equipment you've worked on them all. Maybe you were a minor technician, working on general maintenance for a few vehicles \
@@ -1019,7 +1078,7 @@
 		STAT_ROB = 0,
 		STAT_TGH = 2,
 		STAT_VIG = 1,
-		STAT_BIO = 3,
+		STAT_BIO = 5,
 		STAT_MEC = -5,
 		STAT_COG = 4
 	)
@@ -1067,12 +1126,12 @@
 	perks = list(/datum/perk/lungs_of_iron)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_ROB = 3,
+		STAT_TGH = 3,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_MEC = 4,
+		STAT_COG = -5
 	)
 
 /datum/category_item/setup_option/background/career/social
@@ -1085,11 +1144,32 @@
 		STAT_ROB = -4,
 		STAT_TGH = -4,
 		STAT_VIG = 0,
-		STAT_BIO = 0,
+		STAT_BIO = 2,
 		STAT_MEC = 0,
-		STAT_COG = 13
+		STAT_COG = 8
 	)
 
+/datum/category_item/setup_option/background/career/entrepreneur
+	name = "Entrepreneur"
+	desc = "When life gives you lemons make lemonade then sell that drink at a profit and corner the lemonade market. That is exactly what you may have set out to do, making it on your own! \
+	This can range from starting your own shop to small business making stuff. Who knows how many tried and failed but your one of them, the market back in Sol Fed was just to crowed, that must be it. \
+	The system of bureaucracy and its regulations have pushed out many like you but it really gets the old nogging working in overtime."
+
+//Idea is simple, this one is to be a smart cookie and try and make a something to rival even LLS!
+//The main boon, loads of cog and some bio and mec so you can craft fast and e-z well also not being to robust in maints.
+//-11Loss Stats +"16"Gained Stats
+
+	restricted_depts = LSS //You dont need those non-entrepreneurs!
+	perks = list(/datum/perk/market_prof) //YOU GOT THIS, YOU KNOW WHATS UP AND HOW TO TURN TRASH INTO GOLD! BE YOUR OWN BOSS, GONE ON TO DO IT!
+
+	stat_modifiers = list(
+		STAT_ROB = -4,
+		STAT_TGH = -4,
+		STAT_VIG = -3,
+		STAT_BIO = 3,
+		STAT_MEC = 3,
+		STAT_COG = 10 //Dump stat kinda not a big deal to be "to high"
+	)
 
 /datum/category_item/setup_option/background/career/scavenger
 	name = "Former Scavenger"
@@ -1130,6 +1210,25 @@
 		STAT_MEC = -8,
 		STAT_COG = 5
 	)
+
+/datum/category_item/setup_option/background/bckgrnd/pressered_in_life
+	name = "Overwhelming Upbringing"
+	desc = "You had quite the start in life, nothing was layed back or easy. Always being pressered into things you didn't have any care for or like. This maybe came from schools, friends, family or a mix of all three.  \
+	With all that presser and busy life has made you in later years less strong in the physical scenes, but has made your mind just as sharp as ever. Maybe giving you just the skills you needed for this colony."
+
+//Idea behind this is that well in younger years you pushed your body to hard and now your paying for it in TOB/TGH
+//The main boon of this being a better mind and understanding.
+//-14Loss Stats +15Gained Stats
+
+	stat_modifiers = list(
+		STAT_ROB = -6,
+		STAT_TGH = -6,
+		STAT_VIG = -2,
+		STAT_BIO = 5,
+		STAT_MEC = 5,
+		STAT_COG = 5
+	)
+
 
 /datum/category_item/setup_option/background/bckgrnd/wealthy
 	name = "Wealthy Upbringing"
@@ -1243,6 +1342,7 @@
 		STAT_MEC = 8,
 		STAT_COG = -15
 	)
+
 
 /datum/category_item/setup_option/background/bckgrnd/chtmantspider
 	name = "Eight-Legged Ally"

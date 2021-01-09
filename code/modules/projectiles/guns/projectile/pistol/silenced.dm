@@ -17,6 +17,7 @@
 	recoil_buildup = 8
 	one_hand_penalty = 9
 	penetration_multiplier = 0.8
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/silenced/update_icon()
 	..()

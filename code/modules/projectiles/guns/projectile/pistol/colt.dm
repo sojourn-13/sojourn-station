@@ -14,8 +14,8 @@
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
 	recoil_buildup = 12
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE)
 	one_hand_penalty = 14
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/colt/NM_colt
 	name = "\"Bronco\" pistol"
@@ -46,7 +46,7 @@
 	mag_well = MAG_WELL_PISTOL
 	recoil_buildup = 12
 	damage_multiplier = 1.1
-	gun_tags = list(GUN_PROJECTILE)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/colt/ten/dark
 	name = "\"Stallion\" magnum pistol"

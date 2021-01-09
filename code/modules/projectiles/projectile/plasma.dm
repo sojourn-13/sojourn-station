@@ -46,7 +46,11 @@
 /obj/item/projectile/plasma/lastertag/blue/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if(prob(20) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
+			M.Weaken(8)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
+			M.Weaken(8)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
 			M.Weaken(8)
 	return 1
 
@@ -60,7 +64,11 @@
 /obj/item/projectile/plasma/lastertag/red/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if(prob(20) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
+			M.Weaken(8)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
+			M.Weaken(8)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
 			M.Weaken(8)
 	return 1
 
@@ -74,7 +82,11 @@
 /obj/item/projectile/plasma/lastertag/green/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if(prob(20) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
+			M.Weaken(8)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
+			M.Weaken(8)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
 			M.Weaken(8)
 	return 1
 
@@ -88,7 +100,11 @@
 /obj/item/projectile/plasma/lastertag/yellow/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if(prob(20) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
+			M.Weaken(8)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
+			M.Weaken(8)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
 			M.Weaken(8)
 	return 1
 
@@ -105,6 +121,12 @@
 /obj/item/projectile/plasma/lastertag/omni/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if(prob(25) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag))||(istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
+		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
+			M.Weaken(5)
+		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
+			M.Weaken(5)
+		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
+			M.Weaken(5)
+		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
 			M.Weaken(5)
 	return 1

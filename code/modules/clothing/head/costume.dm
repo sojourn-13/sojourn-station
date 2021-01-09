@@ -187,6 +187,17 @@
 
 /*History*/
 
+/obj/item/clothing/head/costume/history/anarchist_cap
+	name = "anarchist hat"
+	desc = "A black styled piss-cover with a white skull symbol on the front of it. Mother Anarchy loves her sons.."
+	icon_state = "anarchist_cap"
+
+/obj/item/clothing/head/costume/history/anarchist
+	name = "anarchist hat"
+	desc = "A black dyed-fur hat with a white skull symbol on the front of it. Mother Anarchy is not for sale.."
+	icon_state = "anarchist"
+	body_parts_covered = 0
+
 /obj/item/clothing/head/costume/history/pirate
 	name = "pirate hat"
 	desc = "Yarr."

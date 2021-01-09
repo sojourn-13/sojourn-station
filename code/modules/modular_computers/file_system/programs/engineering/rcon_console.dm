@@ -129,5 +129,5 @@
 
 	known_breakers = new /list()
 	for(var/obj/machinery/power/breakerbox/breaker in SSmachines.machinery)
-		if(AreConnectedZLevels(get_host_z(), get_z(breaker)) && breaker.RCon_tag != "NO_TAG")
+		if(breaker.RCon_tag != "NO_TAG")
 			known_breakers.Add(breaker)
