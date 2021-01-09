@@ -1029,7 +1029,7 @@ There are 9 wires.
 					to_chat(user, SPAN_NOTICE("Even with the right key you can't open \"deadbolts\"!"))
 					used_now = FALSE
 				return
-				if(prob(key_odds+1) && H.stats.getPerk(PERK_ARTIST)) //minmium 1%
+				if(prob(key_odds+1) && H.stats.getPerk(PERK_JINGLE_JANGLE)) //minmium 1%
 					to_chat(user, SPAN_NOTICE("You found the correct key!"))
 					open(0)
 					used_now = FALSE
