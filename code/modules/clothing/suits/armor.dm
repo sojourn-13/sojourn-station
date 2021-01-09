@@ -603,6 +603,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		rad = 0 )
 	body_parts_covered = UPPER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|LEGS
+	flags_inv = HIDESHOES
 
 /obj/item/clothing/suit/armor/hunter/leather
 	name = "hunter armor"
