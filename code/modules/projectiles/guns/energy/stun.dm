@@ -26,9 +26,9 @@
 	damage_multiplier = 0.6
 
 	init_firemodes = list(
-		list(mode_name="taser", projectile_type=/obj/item/projectile/beam/stun, fire_delay=24, charge_cost = 5000), //We use large cells
-		list(mode_name="stunbolt", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=50, charge_cost = 10000),
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=80, charge_cost = 15000),
+		list(mode_name="taser", projectile_type=/obj/item/projectile/beam/stun, fire_delay=24, charge_cost = 1500), //We use large cells
+		list(mode_name="stunbolt", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=50, charge_cost = 2000),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=80, charge_cost = 2500),
 	)
 
 /obj/item/weapon/gun/energy/taser/mounted/cyborg
