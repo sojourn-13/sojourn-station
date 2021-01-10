@@ -38,7 +38,7 @@
 	caliber = CAL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_H_PISTOL
+	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8)
 	price_tag = 1000
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
