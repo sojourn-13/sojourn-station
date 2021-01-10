@@ -518,12 +518,16 @@
 
 //snowflake caseless
 /datum/design/autolathe/ammo/c10x24
-	name = "magazine (10x24mm Caseless)"
+	name = "box magazine (10x24mm Caseless)"
 	build_path = /obj/item/ammo_magazine/c10x24
 
 /datum/design/autolathe/ammo/box_10x24
 	name = "ammo box (10x24mm Caseless)"
 	build_path = /obj/item/ammo_magazine/ammobox/c10x24
+
+/datum/design/autolathe/ammo/mag_10x24
+	name = "magazine (10x24mm Caseless)"
+	build_path = /obj/item/ammo_magazine/rifle_10x24
 
 //.60-06
 /datum/design/autolathe/ammo/box_antim
