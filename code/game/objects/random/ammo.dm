@@ -28,9 +28,6 @@
 				/obj/item/ammo_magazine/ammobox/pistol_35/lethal = 1,
 				/obj/item/ammo_magazine/smg_35 = 1,
 				/obj/item/ammo_magazine/smg_35/rubber = 1,
-				/obj/item/ammo_magazine/pistol_35 = 2,
-				/obj/item/ammo_magazine/pistol_35/rubber = 4,
-				/obj/item/ammo_magazine/pistol_35/practice = 4,
 				/obj/item/ammo_magazine/highcap_pistol_35 = 2,
 				/obj/item/ammo_magazine/highcap_pistol_35/rubber = 4,
 				/obj/item/ammo_magazine/highcap_pistol_35/practice = 1,
@@ -127,9 +124,6 @@
 				/obj/item/ammo_magazine/highcap_pistol_35 = 2,
 				/obj/item/ammo_magazine/highcap_pistol_35/rubber = 4,
 				/obj/item/ammo_magazine/highcap_pistol_35/practice = 1,
-				/obj/item/ammo_magazine/pistol_35 = 3,
-				/obj/item/ammo_magazine/pistol_35/rubber = 4,
-				/obj/item/ammo_magazine/pistol_35/practice = 1,
 				/obj/item/weapon/cell/medium = 1))
 
 /obj/random/ammo_lowcost/low_chance
@@ -150,7 +144,7 @@
 				/obj/item/ammo_magazine/m12/pellet = 2,
 				/obj/item/ammo_magazine/ammobox/rifle_75/lethal = 2,
 				/obj/item/ammo_magazine/smg_35/lethal = 3,
-				/obj/item/ammo_magazine/pistol_35/lethal = 3,
+				/obj/item/ammo_magazine/highcap_pistol_35/lethal = 3,
 				/obj/item/ammo_magazine/kurtz_50/lethal = 1,
 				/obj/item/ammo_magazine/ammobox/shotgun/payload = 1,
 				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 2,
