@@ -102,8 +102,8 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/luger
-	disk_name = "Blackshield .35 \"Vintovka Lyugera\" carbine"
-	icon_state = "blackshield"
+	disk_name = "SA .35 \"Vintovka Lyugera\" carbine"
+	icon_state = "ironhammer"
 	license = 15
 
 	designs = list(
@@ -120,8 +120,8 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/alemao
-	disk_name = "Blackshield .35 \"O Alemao\""
-	icon_state = "blackshield"
+	disk_name = "SA .35 \"O Alemao\" smg"
+	icon_state = "ironhammer"
 	license = 8
 
 	designs = list(
@@ -146,8 +146,8 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/zatvor
-	disk_name = "Blackshield .257 bolt \"Zatvor\""
-	icon_state = "blackshield"
+	disk_name = ".257 bolt \"Zatvor\ rifle""
+	icon_state = "ironhammer"
 	license = 8
 
 	designs = list(
