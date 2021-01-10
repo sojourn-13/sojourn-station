@@ -70,6 +70,8 @@
 
 	designs = list(
 
+		/datum/design/autolathe/ammo/hpistol_lethal,
+		/datum/design/autolathe/ammo/hpistol_rubber,
 		/datum/design/autolathe/ammo/hpistol_practice = 0,
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_rubber,
