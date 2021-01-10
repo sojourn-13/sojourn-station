@@ -57,3 +57,4 @@
 #define PERK_MARKET_PROF /datum/perk/market_prof
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
 #define PERK_ARTIST /datum/perk/job/artist
+#define PERK_JINGLE_JANGLE /datum/perk/job/jingle_jangle
