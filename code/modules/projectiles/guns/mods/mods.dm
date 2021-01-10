@@ -3,6 +3,7 @@
 	w_class = ITEM_SIZE_TINY
 	price_tag = 100 //These should be sold in the player market.
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
+	var/can_remove = TRUE 
 
 /obj/item/weapon/gun_upgrade/barrel
 
