@@ -46,12 +46,12 @@
 /obj/item/projectile/plasma/lastertag/blue/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
-			M.Weaken(2)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
+			M.Weaken(5)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
+			M.Weaken(5)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
+			M.Weaken(5)
 	return 1
 
 /obj/item/projectile/plasma/lastertag/red
@@ -64,12 +64,12 @@
 /obj/item/projectile/plasma/lastertag/red/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
-			M.Weaken(2)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
+			M.Weaken(5)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
+			M.Weaken(5)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
+			M.Weaken(5)
 	return 1
 
 /obj/item/projectile/plasma/lastertag/green
@@ -82,12 +82,12 @@
 /obj/item/projectile/plasma/lastertag/green/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
-			M.Weaken(2)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
+			M.Weaken(5)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
+			M.Weaken(5)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
+			M.Weaken(5)
 	return 1
 
 /obj/item/projectile/plasma/lastertag/yellow
@@ -100,12 +100,12 @@
 /obj/item/projectile/plasma/lastertag/yellow/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
-			M.Weaken(2)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
+			M.Weaken(5)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
+			M.Weaken(5)
+		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
+			M.Weaken(5)
 	return 1
 
 /obj/item/projectile/plasma/lastertag/omni//A laser tag bolt that stuns EVERYONE
@@ -121,12 +121,12 @@
 /obj/item/projectile/plasma/lastertag/omni/on_hit(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
-			M.Weaken(2)
-		if((istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
-			M.Weaken(2)
+		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
+			M.Weaken(4)
+		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
+			M.Weaken(4)
+		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
+			M.Weaken(4)
+		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
+			M.Weaken(4)
 	return 1
