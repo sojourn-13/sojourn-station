@@ -169,7 +169,7 @@
 	item_state = "headset"
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
-	
+
 /obj/item/device/radio/headset/heads/ce
 	name = "guild master's headset"
 	desc = "The headset of the guy who is in charge of morons"
@@ -248,6 +248,27 @@
 	icon_state = "nt_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_church
+
+/obj/item/device/radio/headset/bluetag
+	name = "blue plasmatag team headset"
+	desc = "Blue pride radio wide."
+	ks2type = /obj/item/device/encryptionkey/headset_blueteam
+
+/obj/item/device/radio/headset/redtag
+	name = "red plasmatag team headset"
+	desc = "Some say this one makes you hear things faster!"
+	ks2type = /obj/item/device/encryptionkey/headset_redteam
+
+/obj/item/device/radio/headset/yellowtag
+	name = "yellow plasmatag team headset"
+	desc = "The only thing yellow is these radio waves"
+	ks2type = /obj/item/device/encryptionkey/headset_yellowteam
+
+/obj/item/device/radio/headset/greentag
+	name = "green plasmatag team headset"
+	desc = "Green tacticians have been using this to win games for ages!."
+	ks2type = /obj/item/device/encryptionkey/headset_greenteam
+
 
 /obj/item/device/radio/headset/attackby(obj/item/weapon/W as obj, mob/user as mob)
 //	..()

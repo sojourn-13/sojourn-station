@@ -47,11 +47,11 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
-			M.Weaken(8)
+			M.Weaken(5)
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
-			M.Weaken(8)
+			M.Weaken(5)
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
-			M.Weaken(8)
+			M.Weaken(5)
 	return 1
 
 /obj/item/projectile/plasma/lastertag/red
@@ -65,11 +65,11 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
-			M.Weaken(8)
+			M.Weaken(5)
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
-			M.Weaken(8)
+			M.Weaken(5)
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
-			M.Weaken(8)
+			M.Weaken(5)
 	return 1
 
 /obj/item/projectile/plasma/lastertag/green
@@ -83,11 +83,11 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
-			M.Weaken(8)
+			M.Weaken(5)
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
-			M.Weaken(8)
+			M.Weaken(5)
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
-			M.Weaken(8)
+			M.Weaken(5)
 	return 1
 
 /obj/item/projectile/plasma/lastertag/yellow
@@ -101,11 +101,11 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
-			M.Weaken(8)
+			M.Weaken(5)
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
-			M.Weaken(8)
+			M.Weaken(5)
 		if(prob(60) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
-			M.Weaken(8)
+			M.Weaken(5)
 	return 1
 
 /obj/item/projectile/plasma/lastertag/omni//A laser tag bolt that stuns EVERYONE
@@ -122,11 +122,11 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/redtag)))
-			M.Weaken(5)
+			M.Weaken(4)
 		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/bluetag)))
-			M.Weaken(5)
+			M.Weaken(4)
 		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/greentag)))
-			M.Weaken(5)
+			M.Weaken(4)
 		if(prob(65) && (istype(M.wear_suit, /obj/item/clothing/suit/fluff/yellowtag)))
-			M.Weaken(5)
+			M.Weaken(4)
 	return 1

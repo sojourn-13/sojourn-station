@@ -14,7 +14,11 @@ var/global/list/default_internal_channels = list(
 	num2text(SCI_FREQ) = list(access_tox,access_robotics,access_xenobiology),
 	num2text(SUP_FREQ) = list(access_cargo),
 	num2text(SRV_FREQ) = list(access_janitor, access_hydroponics),
-	num2text(PRO_FREQ) = list(access_prospector)
+	num2text(PRO_FREQ) = list(access_prospector),
+	num2text(PT_BT_FREQ) = list(access_security),
+	num2text(PT_RT_FREQ) = list(access_security),
+	num2text(PT_YT_FREQ) = list(access_security),
+	num2text(PT_GT_FREQ) = list(access_security)
 )
 
 var/global/list/unique_internal_channels = list(
