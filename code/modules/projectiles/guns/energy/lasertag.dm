@@ -7,6 +7,7 @@
 	slot_flags = SLOT_BELT|SLOT_BACK
 	item_charge_meter = TRUE
 	twohanded = TRUE
+	one_hand_penalty = 5
 	matter = list(MATERIAL_PLASTIC = 6)
 	fire_sound = 'sound/weapons/Laser.ogg'
 	projectile_type = /obj/item/projectile/plasma/lastertag/blue
@@ -30,7 +31,6 @@
 	desc = "Standard-issue weapon of the Imperial Guard. This one has a hologram projected scope attached that appears when the user looks down the sight. Fancy, but the gun itself is quite slow to fire as a result."
 	fire_delay = 10
 	zoom_factor = 1.2 //small zome factor so we can't snipe from all the way accross the map
-	recoil_buildup = 0
 
 /obj/item/weapon/gun/energy/lasertag/pistol
 	name = "plasma tag burst-pistol"
@@ -39,11 +39,11 @@
 	can_dual = TRUE
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	charge_cost = 100
-	one_hand_penalty = 0 //No wall of shots
-	recoil_buildup = 0
+	one_hand_penalty = 2 //No wall of shots
+	recoil_buildup = 0.1
 	init_firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, icon="semi"),
-		list(mode_name="2-round bursts", burst=2, fire_delay=0.2, move_delay=6, icon="burst"),
+		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=6, icon="burst"),
 		)
 
 /obj/item/weapon/gun/energy/lasertag/blue
