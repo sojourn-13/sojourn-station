@@ -642,7 +642,7 @@
 "mt" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "mu" = (/obj/item/weapon/folder/black,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "mv" = (/obj/random/gun_normal/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
-"mw" = (/obj/item/weapon/pen/multi,/obj/item/remains,/obj/item/weapon/gun/projectile/clarissa,/obj/item/ammo_magazine/pistol_35/highvelocity,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
+"mw" = (/obj/item/weapon/pen/multi,/obj/item/remains,/obj/item/weapon/gun/projectile/clarissa,/obj/item/ammo_magazine/highcap_pistol_35/highvelocity,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "mx" = (/obj/effect/decal/cleanable/blood/gibs/robot,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "my" = (/obj/structure/bed/chair/custom/onestar/red{dir = 1},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "mz" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)

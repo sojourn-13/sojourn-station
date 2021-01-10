@@ -63,8 +63,8 @@
 		/datum/design/autolathe/gun/ak47,
 		/datum/design/autolathe/gun/ppsh,
 		/datum/design/autolathe/gun/reclaimer,
-		/datum/design/autolathe/ammo/pistol,				//makarov ammo
-		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
+		/datum/design/autolathe/ammo/hpistol_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/smg,							//drozd ammo
@@ -129,8 +129,8 @@
 		/datum/design/autolathe/gun/boltgun,
 		/datum/design/autolathe/gun/ak47,
 		/datum/design/autolathe/gun/ppsh,
-		/datum/design/autolathe/ammo/pistol,				//makarov ammo
-		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
+		/datum/design/autolathe/ammo/hpistol_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/smg,							//drozd ammo
@@ -210,8 +210,8 @@
 	license = -1
 	designs = list(
 		/datum/design/autolathe/gun/makarov,
-		/datum/design/autolathe/ammo/pistol,				//makarov ammo
-		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
+		/datum/design/autolathe/ammo/hpistol_rubber,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez

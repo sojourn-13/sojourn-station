@@ -11,7 +11,7 @@
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
+	mag_well = MAG_WELL_H_PISTOL
 	damage_multiplier = 1.2
 	recoil_buildup = 17
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
@@ -38,7 +38,7 @@
 	caliber = CAL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
+	mag_well = MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8)
 	price_tag = 1000
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'

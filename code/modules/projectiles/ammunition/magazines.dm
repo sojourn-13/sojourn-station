@@ -11,42 +11,6 @@
 	playsound(src,'sound/weapons/guns/interact/hpistol_magout.ogg',20,3)
 
 /////////////Standard/////////////
-/obj/item/ammo_magazine/pistol_35
-	name = "standard magazine (.35 Auto)"
-	desc = "a 10 round magazine marked for .35 Auto."
-	icon_state = "pistol"
-	origin_tech = list(TECH_COMBAT = 2)
-	mag_type = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
-	matter = list(MATERIAL_STEEL = 3)
-	caliber = CAL_PISTOL
-	ammo_type = /obj/item/ammo_casing/pistol_35
-	max_ammo = 10
-	multiple_sprites = 1
-
-/obj/item/ammo_magazine/pistol_35/empty
-	icon_state = "pistol"
-	initial_ammo = 0
-
-/obj/item/ammo_magazine/pistol_35/practice
-	name = "standard magazine (.35 Auto practice)"
-	icon_state = "pistol_p"
-	ammo_type = /obj/item/ammo_casing/pistol_35/practice
-
-/obj/item/ammo_magazine/pistol_35/highvelocity
-	name = "standard magazine (.35 Auto high-velocity)"
-	icon_state = "pistol_hv"
-	ammo_type = /obj/item/ammo_casing/pistol_35/hv
-
-/obj/item/ammo_magazine/pistol_35/rubber
-	name = "standard magazine (.35 Auto rubber)"
-	icon_state = "pistol_r"
-	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
-
-/obj/item/ammo_magazine/pistol_35/lethal
-	name = "standard magazine (.35 Auto hollow-point)"
-	icon_state = "pistol_l"
-	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
 /obj/item/ammo_magazine/pistol_35/drum
 	name = "standard auto drum magazine"

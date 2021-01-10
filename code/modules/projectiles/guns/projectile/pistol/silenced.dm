@@ -12,7 +12,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	price_tag = 750
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
+	mag_well = MAG_WELL_H_PISTOL
 	damage_multiplier = 1.1
 	recoil_buildup = 14
 	one_hand_penalty = 10
