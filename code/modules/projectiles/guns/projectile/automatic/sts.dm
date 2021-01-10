@@ -18,8 +18,8 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	damage_multiplier = 1.1
-	recoil_buildup = 8
-	one_hand_penalty = 15 //automatic rifle level
+	recoil_buildup = 6
+	one_hand_penalty = 13 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
 
@@ -92,8 +92,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	price_tag = 600
-	recoil_buildup = 15
-	one_hand_penalty = 25
+	recoil_buildup = 12
+	one_hand_penalty = 20
 	saw_off = FALSE
 
 /obj/item/weapon/gun/projectile/automatic/sts/rifle
@@ -106,7 +106,7 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1
-	recoil_buildup = 11
+	recoil_buildup = 8
 	one_hand_penalty = 20
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
@@ -128,8 +128,8 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 0.8
-	recoil_buildup = 15
-	one_hand_penalty = 25 //automatic rifle level
+	recoil_buildup = 10
+	one_hand_penalty = 20 //automatic rifle level
 	saw_off = FALSE
 
 	init_firemodes = list(
@@ -148,8 +148,8 @@
 	mag_well = MAG_WELL_HRIFLE
 	penetration_multiplier = 1
 	damage_multiplier = 1.3
-	recoil_buildup = 15
-	one_hand_penalty = 30
+	recoil_buildup = 13
+	one_hand_penalty = 20
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	saw_off = TRUE
@@ -166,6 +166,6 @@
 	item_state = "sts"
 	penetration_multiplier = 0.8
 	damage_multiplier = 1
-	recoil_buildup = 20
-	one_hand_penalty = 30
+	recoil_buildup = 15
+	one_hand_penalty = 25
 	saw_off = FALSE

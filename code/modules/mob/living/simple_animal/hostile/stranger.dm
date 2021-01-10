@@ -124,6 +124,7 @@
 	icon_state = "lancer"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 7, MATERIAL_URANIUM = 8, MATERIAL_GOLD = 4)
 	price_tag = 5000
+	origin_tech = list(TECH_COMBAT = 7, TECH_PLASMA = 7, TECH_BLUESPACE = 8)
 	charge_cost = 5
 	fire_delay = 5
 	one_hand_penalty = 5

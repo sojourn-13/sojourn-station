@@ -13,8 +13,8 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
-	recoil_buildup = 17
-	one_hand_penalty = 20
+	recoil_buildup = 14
+	one_hand_penalty = 15
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
@@ -35,8 +35,8 @@
 	icon_state = "ladon"
 	item_state = "ladon"
 	damage_multiplier = 1
-	recoil_buildup = 14
-	one_hand_penalty = 15
+	recoil_buildup = 9
+	one_hand_penalty = 11
 
 /obj/item/weapon/gun/projectile/ladon/sa
 	name = "\"ladon\" magnum pistol"
@@ -44,5 +44,5 @@
 	icon_state = "ladon_alt"
 	item_state = "ladon_alt"
 	damage_multiplier = 1.1
-	recoil_buildup = 14
-	one_hand_penalty = 15
+	recoil_buildup = 12
+	one_hand_penalty = 12

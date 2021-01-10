@@ -13,8 +13,8 @@
 	price_tag = 250 //cheap civ peashooter revolver, something similar to olivav
 	damage_multiplier = 1.15 //because pistol round
 	penetration_multiplier = 1.2
-	recoil_buildup = 18
-	one_hand_penalty = 15
+	recoil_buildup = 16
+	one_hand_penalty = 12
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 
 /obj/item/weapon/gun/projectile/revolver/detective/update_icon()

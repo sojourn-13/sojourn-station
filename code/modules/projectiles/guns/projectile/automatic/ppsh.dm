@@ -16,10 +16,10 @@
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
 	price_tag = 1450
 	penetration_multiplier = 1.2
-	recoil_buildup = 10
+	recoil_buildup = 5
 	fire_sound = 'sound/weapons/guns/fire/ppsh_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
-	one_hand_penalty = 25
+	one_hand_penalty = 20
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
 	silenced = TRUE
@@ -49,6 +49,6 @@
 	price_tag = 1200
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.0
-	recoil_buildup = 15
-	one_hand_penalty = 30
+	recoil_buildup = 10
+	one_hand_penalty = 20
 	auto_eject = 0

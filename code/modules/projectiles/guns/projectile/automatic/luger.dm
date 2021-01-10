@@ -13,7 +13,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	damage_multiplier = 1
 	recoil_buildup = 2
-	one_hand_penalty = 40
+	one_hand_penalty = 20
 	load_method = MAGAZINE
 	init_firemodes = list(
 		FULL_AUTO_600,

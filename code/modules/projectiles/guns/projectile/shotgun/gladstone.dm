@@ -12,8 +12,8 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 750
-	recoil_buildup = 14
-	one_hand_penalty = 15 //full sized shotgun level
+	recoil_buildup = 12
+	one_hand_penalty = 14
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn
 
@@ -29,6 +29,6 @@
 	damage_multiplier = 0.8
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 400
-	recoil_buildup = 100
-	one_hand_penalty = 100 //full sized shotgun level
+	recoil_buildup = 22
+	one_hand_penalty = 27 //full sized shotgun level
 	saw_off = FALSE

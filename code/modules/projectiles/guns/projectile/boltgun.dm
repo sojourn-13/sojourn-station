@@ -21,7 +21,7 @@
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 500
-	one_hand_penalty = 20 //full sized rifle with bayonet is hard to keep on target
+	one_hand_penalty = 15 //full sized rifle with bayonet is hard to keep on target
 	var/bolt_open = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") // Considering attached bayonet
 	sharp = TRUE //We have a knife!
@@ -101,7 +101,7 @@
 	item_state = "boltgun"
 	max_shells = 5
 	price_tag = 300
-	recoil_buildup = 40
+	recoil_buildup = 20
 	damage_multiplier = 1
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	saw_off = TRUE
@@ -116,14 +116,14 @@
 	force = WEAPON_FORCE_PAINFUL
 	damage_multiplier = 1.3
 	penetration_multiplier  = 1.6
-	recoil_buildup = 50
+	recoil_buildup = 30
 	max_shells = 5
 	zoom_factor = 2.0
 	price_tag = 1500
 	sharp = 0
 	caliber = CAL_HRIFLE
 	load_method = SINGLE_CASING
-	one_hand_penalty = 50 //No trick shots
+	one_hand_penalty = 40 //No trick shots
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
@@ -137,6 +137,8 @@
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	max_shells = 10
+	recoil_buildup = 10
+	one_hand_penalty = 20 //maybe some trick shots
 	price_tag = 1000
 	damage_multiplier = 1
 	caliber = CAL_LRIFLE
@@ -171,9 +173,9 @@
 	damage_multiplier = 0.8
 	penetration_multiplier  = 1.0
 	slot_flags = SLOT_BELT|SLOT_BACK
-	recoil_buildup = 15
+	recoil_buildup = 10
 	price_tag = 600
-	one_hand_penalty = 20
+	one_hand_penalty = 15
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 20, MATERIAL_WOOD = 5)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
 	saw_off = FALSE
@@ -189,7 +191,7 @@
 	caliber = CAL_MAGNUM
 	max_shells = 11
 	price_tag = 650
-	recoil_buildup = 30
+	recoil_buildup = 10
 	damage_multiplier = 1
 	penetration_multiplier  = 1.3
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 5)
@@ -206,7 +208,7 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	price_tag = 75
 	sharp = 0
-	recoil_buildup = 60
+	recoil_buildup = 50
 	penetration_multiplier = 0.5
 	damage_multiplier = 0.9
 	fire_delay = 18
@@ -247,7 +249,7 @@
 	caliber = CAL_LRIFLE
 	load_method = SINGLE_CASING
 	fire_delay = 18
-	one_hand_penalty = 15
+	one_hand_penalty = 10
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	saw_off = FALSE
 
@@ -259,9 +261,7 @@
 	item_state = "obrez"
 	caliber = CAL_LRIFLE
 	load_method = SINGLE_CASING
-	fire_delay = 18
 	max_shells = 10
-	one_hand_penalty = 15
 	saw_off = FALSE
 
 // Star-Striker! A sci only gun that fires laser based shells

@@ -17,8 +17,8 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
-	recoil_buildup = 21
-	one_hand_penalty = 20
+	recoil_buildup = 18
+	one_hand_penalty = 19
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/lamia/update_icon()

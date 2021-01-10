@@ -19,8 +19,8 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	recoil_buildup = 10
-	one_hand_penalty = 15 //automatic rifle level
+	recoil_buildup = 8
+	one_hand_penalty = 10 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
@@ -60,8 +60,8 @@
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 3, TECH_POWER = 5)
 	price_tag = 600
-	recoil_buildup = 10
-	one_hand_penalty = 20
+	recoil_buildup = 3
+	one_hand_penalty = 10
 	damage_multiplier = 1
 	saw_off = FALSE
 	caliber = CAL_SCI
@@ -98,7 +98,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 500
-	recoil_buildup = 15
-	one_hand_penalty = 25
+	recoil_buildup = 10
+	one_hand_penalty = 20
 	damage_multiplier = 0.8
 	saw_off = FALSE

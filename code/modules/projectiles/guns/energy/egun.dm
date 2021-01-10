@@ -71,8 +71,6 @@
 	projectile_type = /obj/item/projectile/beam
 	charge_cost = 50
 	can_dual = TRUE
-	zoom_factor = 0
-	damage_multiplier = 1
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_WOOD = 4, MATERIAL_SILVER = 2)
 	price_tag = 250
 	init_firemodes = list(

@@ -15,7 +15,7 @@
 	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
 	fire_sound_text = "a metallic thunk"
-	recoil_buildup = 20
+	recoil_buildup = 15
 	max_shells = 6
 	zoom_factor = 2.0
 	var/throw_distance = 7
