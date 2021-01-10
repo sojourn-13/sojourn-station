@@ -54,7 +54,7 @@
 		return 1
 	else
 		if(istype(mover, /obj/item/projectile))
-			return prob(30)
+			return prob(70) //only 30% odds for grills to block a shot
 		else
 			return !density
 
@@ -67,12 +67,12 @@
 
 	if(!damage) return
 
-	//20% chance that the grille provides a bit more cover than usual. Support structure for example might take up 20% of the grille's area.
+	//5% chance that the grille provides a bit more cover than usual. Support structure for example might take up 20% of the grille's area.
 	//If they click on the grille itself then we assume they are aiming at the grille itself and the extra cover behaviour is always used.
 	for(var/i in Proj.damage_types)
 		if(i == BRUTE)
 			//bullets
-			if(Proj.original == src || prob(20))
+			if(Proj.original == src || prob(5))
 				Proj.damage_types[i] *= between(0, Proj.damage_types[i]/60, 0.5)
 				if(prob(max((damage-10)/25, 0))*100)
 					passthrough = 1
@@ -81,7 +81,7 @@
 				passthrough = 1
 		if(i == BURN)
 			//beams and other projectiles are either blocked completely by grilles or stop half the damage.
-			if(!(Proj.original == src || prob(20)))
+			if(!(Proj.original == src || prob(5)))
 				Proj.damage_types[i] *= 0.5
 				passthrough = 1
 

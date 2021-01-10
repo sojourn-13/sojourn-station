@@ -56,6 +56,7 @@
 	new /obj/item/weapon/gun/energy/lasertag/pistol/red(src)
 	new /obj/item/weapon/gun/energy/lasertag/pistol/red(src)
 	new /obj/item/weapon/gun/energy/lasertag/pistol/red(src)
+	new /obj/item/device/radio/headset/bluetag(src)
 	new /obj/item/clothing/suit/fluff/redtag(src)
 	new /obj/item/clothing/suit/fluff/redtag(src)
 	new /obj/item/clothing/suit/fluff/redtag(src)

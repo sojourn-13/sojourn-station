@@ -4,7 +4,6 @@
 	desc = "Standard-issue weapon of the Imperial Guard."
 	origin_tech = list(TECH_COMBAT = 1, TECH_MAGNET = 2)
 	self_recharge = 1
-	one_hand_penalty = 5
 	slot_flags = SLOT_BELT|SLOT_BACK
 	item_charge_meter = TRUE
 	twohanded = TRUE
@@ -23,14 +22,15 @@
 /obj/item/weapon/gun/energy/lasertag/shotgun
 	name = "plasma tag shotgun"
 	desc = "Standard-issue weapon of the Imperial Guard. This one has a slower fire delay but contains an alternate knock back fire to deny charges."
-	fire_delay = 9
+	fire_delay = 6
 	sel_mode = 1
 
 /obj/item/weapon/gun/energy/lasertag/sniper
 	name = "plasma tag sniper"
 	desc = "Standard-issue weapon of the Imperial Guard. This one has a hologram projected scope attached that appears when the user looks down the sight. Fancy, but the gun itself is quite slow to fire as a result."
-	fire_delay = 12
-	zoom_factor = 1.5
+	fire_delay = 10
+	zoom_factor = 1.2 //small zome factor so we can't snipe from all the way accross the map
+	recoil_buildup = 0
 
 /obj/item/weapon/gun/energy/lasertag/pistol
 	name = "plasma tag burst-pistol"
@@ -39,9 +39,11 @@
 	can_dual = TRUE
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	charge_cost = 100
+	one_hand_penalty = 0 //No wall of shots
+	recoil_buildup = 0
 	init_firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, icon="semi"),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4, icon="burst"),
+		list(mode_name="2-round bursts", burst=2, fire_delay=0.2, move_delay=6, icon="burst"),
 		)
 
 /obj/item/weapon/gun/energy/lasertag/blue
