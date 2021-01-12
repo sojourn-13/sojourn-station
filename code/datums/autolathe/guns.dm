@@ -79,6 +79,10 @@
 	name = "H&S REV .40 Magnum \"Minotaur\""
 	build_path = /obj/item/weapon/gun/projectile/revolver
 
+/datum/design/autolathe/gun/rev10
+	name = "/'Frontier/' Magnum Revolver"
+	build_path = /obj/item/weapon/gun/projectile/revolver/rev10
+
 //. 5 0 K U R T Z
 
 /datum/design/autolathe/gun/revolver/mateba
@@ -308,6 +312,10 @@
 /datum/design/autolathe/gun/dp
 	name= "SA BR . 7.5 \"DP\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/dp
+
+/datum/design/autolathe/gun/survivalrifle
+	name = "SM SAS .10mm Caseless \"Bond\" Rifle"
+	build_path = /obj/item/weapon/gun/projectile/automatic/survivalrifle
 
 //L A U N C H E R S
 
