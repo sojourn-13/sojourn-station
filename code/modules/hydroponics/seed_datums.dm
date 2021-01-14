@@ -288,7 +288,7 @@
 	name = "ambrosia"
 	seed_name = "ambrosia vulgaris"
 	display_name = "ambrosia vulgaris"
-	mutants = list("ambrosiadeus")
+	mutants = list("ambrosiadeus", "ambrosiarobusto")
 	chems = list("nutriment" = list(1), "space_drugs" = list(1,8), "kelotane" = list(1,8,1), "bicaridine" = list(1,10,1), "toxin" = list(1,10))
 	kitchen_tag = "ambrosia"
 
@@ -316,6 +316,18 @@
 	..()
 	set_trait(TRAIT_PRODUCT_COLOUR,"#A3F0AD")
 	set_trait(TRAIT_PLANT_COLOUR,"#2A9C61")
+
+/datum/seed/ambrosia/robusto
+	name = "ambrosiarobusto"
+	seed_name = "ambrosia robusto"
+	display_name = "ambrosia robusto"
+	mutants = null
+	chems = list("nicotine" = list(5,20), "space_drugs" = list(1,50))
+
+/datum/seed/ambrosia/robusto/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#E8A725")
+	set_trait(TRAIT_PLANT_COLOUR, "#996633")
 
 //Mushrooms/varieties.
 /datum/seed/mushroom
