@@ -60,17 +60,58 @@
 	.=..()
 	if (.)
 		adjustToolHealth(-(rand(20, 60) * degradation))
-		precision -= rand(0,20)
-		workspeed = workspeed*(rand(1,10)/10)
+		precision -= rand(0,10)
+		workspeed = workspeed*(rand(5,10)/10) //50% less speed max
 		degradation += rand(0,4)
 		health = rand(10, max_health)
+
+/obj/item/weapon/tool/make_young()
+	if(oldified)
+		name = initial(name)
+		color = initial(color)
+		workspeed = initial(workspeed)
+		precision = initial(precision)
+		degradation = initial(degradation)
+		refresh_upgrades() //So we dont null upgrades
+	..()
 
 /obj/item/weapon/gun/make_old()
 	. = ..()
 	fire_delay+= rand(0,3)
-	recoil_buildup+= rand(0,20)
-	damage_multiplier = damage_multiplier*(rand(1,10)/10)
-	penetration_multiplier = penetration_multiplier*(rand(1,10)/10)
+	recoil_buildup+= rand(0,10)
+	damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
+	penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
+
+/obj/item/weapon/gun/make_young()
+	if(oldified)
+		name = initial(name)
+		color = initial(color)
+		fire_delay = initial(fire_delay)
+		recoil_buildup = initial(recoil_buildup)
+		damage_multiplier = initial(damage_multiplier)
+		penetration_multiplier = initial(penetration_multiplier)
+		refresh_upgrades() //So we dont null upgrades
+	..()
+
+/obj/item/weapon/gun/energy/make_old()
+	. = ..()
+	charge_cost+= rand(0,250)
+	overcharge_max-= rand(0,5) //This is infact a number you want to go up
+	overcharge_rate-= rand(0,5)
+
+/obj/item/weapon/gun/energ/make_young()
+	if(oldified)
+		name = initial(name)
+		color = initial(color)
+		fire_delay = initial(fire_delay)
+		recoil_buildup = initial(recoil_buildup)
+		damage_multiplier = initial(damage_multiplier)
+		penetration_multiplier = initial(penetration_multiplier)
+		charge_cost = initial(charge_cost)
+		overcharge_max = initial(overcharge_max)
+		overcharge_rate = initial(overcharge_rate)
+		refresh_upgrades() //So we dont null upgrades
+	..()
 
 /obj/item/weapon/storage/make_old()
 	.=..()
