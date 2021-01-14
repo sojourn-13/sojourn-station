@@ -227,7 +227,7 @@
 
 /obj/machinery/power/hydroelectric_control/proc/togglegate()
 	working = !working
-	malfnumber = malfnumber + 5
+	malfnumber = malfnumber + 10
 
 /obj/machinery/power/hydroelectric_control/attack_hand(mob/user)
 	ui_interact(user)
