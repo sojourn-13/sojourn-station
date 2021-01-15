@@ -219,7 +219,7 @@
 		//shells
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
-		/datum/design/autolathe/ammo/shotgun_flash,
+		/datum/design/autolathe/ammo/shotgun_illumination,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
@@ -562,7 +562,7 @@
 		/datum/design/autolathe/gun/doublebarrel = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
-		/datum/design/autolathe/ammo/shotgun_flash,
+		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly
@@ -574,7 +574,7 @@
 		/datum/design/autolathe/gun/pump_shotgun = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
-		/datum/design/autolathe/ammo/shotgun_flash,
+		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sbaw
@@ -600,7 +600,7 @@
 		/datum/design/autolathe/gun/gladstone = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
-		/datum/design/autolathe/ammo/shotgun_flash,
+		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pug
@@ -624,7 +624,7 @@
 		/datum/design/autolathe/gun/sixshot = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
-		/datum/design/autolathe/ammo/shotgun_flash,
+		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
 // SMGs

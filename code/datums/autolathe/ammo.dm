@@ -16,9 +16,9 @@
 	name = "shotgun shells (beanbag)"
 	build_path = /obj/item/ammo_casing/shotgun/beanbag/prespawned
 
-/datum/design/autolathe/ammo/shotgun_flash
-	name = "shotgun shells (flash)"
-	build_path = /obj/item/ammo_casing/shotgun/flash/prespawned
+/datum/design/autolathe/ammo/shotgun_illumination
+	name = "shotgun shells (illumination)"
+	build_path = /obj/item/ammo_casing/shotgun/illumination/prespawned
 
 /datum/design/autolathe/ammo/shotgun_he
 	name = "20mm shells (HEFI)"
