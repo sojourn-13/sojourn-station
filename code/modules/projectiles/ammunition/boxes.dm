@@ -508,10 +508,11 @@
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells
 	name = "signaling ammunition packet (20mm Illumination)"
 	icon_state = "stunslug"
-	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_CARDBOARD = 2)
 	caliber = CAL_SHOTGUN
+	w_class = ITEM_SIZE_BULKY
 	ammo_type = /obj/item/ammo_casing/shotgun/illumination
-	max_ammo = 60
+	max_ammo = 70 //2x the ammo for being map spawned
 
 /obj/item/ammo_magazine/ammobox/shotgun/flash
 	name = "ammunition packet (20mm Illumination)"
