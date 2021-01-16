@@ -102,14 +102,7 @@
 	Bumped(AM)
 
 /obj/item/weapon/spider_shadow_trap/attack_hand(mob/user as mob)
-	if(ishuman(M))
-		for(var/mob/O in viewers(world.view, src.loc))
-			M.visible_message(
-				SPAN_DANGER("A gutteral screeching roar is heard right before [M] is knocked down by a huge spider leaping from above!"),
-				SPAN_DANGER("You hear a gutteral screeching roar right before something huge falling from above knocks you down!")
-			)
-		triggered = 1
-		call(src,triggerproc)(M)
+	return
 
 /obj/item/weapon/spider_shadow_trap/Bumped(mob/M as mob|obj)
 
