@@ -17,21 +17,21 @@
 
 /obj/item/weapon/cell/large/super
 	name = "Lonestar \"Robustcell 16000L\""
-	desc = "Lonestar branded rechargeable L-standardized power cell. This advanced version can store even more energy."
+	desc = "Lonestar branded rechargeable L-standardized power cell. This industeral version can store even more energy."
 	icon_state = "b_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 16000
 
 /obj/item/weapon/cell/large/hyper
 	name = "Lonestar \"Robustcell-X 20000L\""
-	desc = "Lonestar branded rechargeable L-standardized power cell. Looks like this is a rare and powerful prototype."
+	desc = "Lonestar branded rechargeable L-standardized power cell. This is the top of class most advanced verson of cell on the market."
 	icon_state = "b_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 20000
 
 /obj/item/weapon/cell/large/moebius
 	name = "Soteria \"Power-Geyser 2000L\""
-	desc = "Soteria Institute branded rechargeable L-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
+	desc = "Soteria Institute branded rechargeable L-standardized power cell. This one is as cheap as Lonestar models, for same price."
 	icon_state = "meb_b_st"
 	maxcharge = 2000
 
@@ -44,21 +44,21 @@
 
 /obj/item/weapon/cell/large/moebius/super
 	name = "Soteria \"Power-Geyser 14000L\""
-	desc = "Soteria Institute branded rechargeable L-standardized power cell. This advanced version can store even more energy."
+	desc = "Soteria Institute branded rechargeable L-standardized power cell. This industeral version can store even more energy."
 	icon_state = "meb_b_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 14000
 
 /obj/item/weapon/cell/large/moebius/hyper
 	name = "Soteria \"Power-Geyser 18000L\""
-	desc = "Soteria Institute branded rechargeable L-standardized power cell. Looks like this is rare and powerful prototype."
+	desc = "Soteria Institute branded rechargeable L-standardized power cell. Regarden as the second most powerful cell on the market."
 	icon_state = "meb_b_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 18000
 
 /obj/item/weapon/cell/large/moebius/omega
 	name = "Soteria \"Omega-Geyser 20000L\""
-	desc = "Soteria branded rechargeable L-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
+	desc = "Soteria branded rechargeable L-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type, yet to hit the open market."
 	icon_state = "meb_b_omega"
 	matter = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_SILVER = 9, MATERIAL_GOLD = 6) //DEAR LOAD WHAT ARE THOSE COSTS?
 	origin_tech = list(TECH_POWER = 7)
@@ -126,21 +126,21 @@
 
 /obj/item/weapon/cell/medium/super
 	name = "Lonestar \"Robustcell 1000M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. This advanced version can store even more energy."
+	desc = "Lonestar branded rechargeable M-standardized power cell. This industeral version can store even more energy."
 	icon_state = "m_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 1000
 
 /obj/item/weapon/cell/medium/hyper
 	name = "Lonestar \"Robustcell-X 1600M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. Looks like this is a rare and powerful prototype."
+	desc = "Lonestar branded rechargeable M-standardized power cell. This is the top of class most advanced verson of cell on the market."
 	icon_state = "m_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1600
 
 /obj/item/weapon/cell/medium/moebius
 	name = "Lonestar \"Power-Geyser 800M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
+	desc = "Lonestar branded rechargeable M-standardized power cell. This one is as cheap as Lonestar models, for same price."
 	icon_state = "meb_m_st"
 	maxcharge = 800
 
@@ -153,21 +153,21 @@
 
 /obj/item/weapon/cell/medium/moebius/super
 	name = "Soteria \"Power-Geyser 1200M\""
-	desc = "Soteria Institute branded rechargeable M-standardized power cell. This advanced version can store even more energy."
+	desc = "Soteria Institute branded rechargeable M-standardized power cell. This industeral version can store even more energy."
 	icon_state = "meb_m_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 1200
 
 /obj/item/weapon/cell/medium/moebius/hyper
 	name = "Soteria \"Power-Geyser 1400M\""
-	desc = "Soteria Institute branded rechargeable M-standardized power cell. Looks like this is rare and powerful prototype."
+	desc = "Soteria Institute branded rechargeable M-standardized power cell. Regarden as the second most powerful cell on the market."
 	icon_state = "meb_m_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1400
 
 /obj/item/weapon/cell/medium/moebius/omega
 	name = "Soteria \"Omega-Geyser 1600M\""
-	desc = "Soteria branded rechargeable M-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
+	desc = "Soteria branded rechargeable M-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type, yet to hit the open market."
 	icon_state = "meb_m_omega"
 	matter = list(MATERIAL_STEEL = 9, MATERIAL_PLASTIC = 9, MATERIAL_SILVER = 6, MATERIAL_GOLD = 3) //DEAR LOAD WHAT ARE THOSE COSTS?
 	origin_tech = list(TECH_POWER = 7)
@@ -213,14 +213,14 @@
 
 /obj/item/weapon/cell/small/super
 	name = "Lonestar \"Robustcell 300S\""
-	desc = "Lonestar branded rechargeable S-standardized power cell. This advanced version can store even more energy."
+	desc = "Lonestar branded rechargeable S-standardized power cell. This industeral version can store even more energy."
 	icon_state = "s_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 300
 
 /obj/item/weapon/cell/small/hyper
 	name = "Lonestar \"Robustcell-X 500S\""
-	desc = "Lonestar branded rechargeable S-standardized power cell. Looks like this is a rare and powerful prototype."
+	desc = "Lonestar branded rechargeable S-standardized power cell. This is the top of class most advanced verson of cell on the market."
 	icon_state = "s_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 500
@@ -240,21 +240,21 @@
 
 /obj/item/weapon/cell/small/moebius/super
 	name = "Soteria \"Power-Geyser 300S\""
-	desc = "Soteria Institute branded rechargeable S-standardized power cell. This advanced version can store even more energy."
+	desc = "Soteria Institute branded rechargeable S-standardized power cell. This industeral version can store even more energy."
 	icon_state = "meb_s_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 300
 
 /obj/item/weapon/cell/small/moebius/hyper
 	name = "Soteria \"Power-Geyser 400S\""
-	desc = "Soteria Institute branded rechargeable S-standardized power cell. Looks like this is rare and powerful prototype."
+	desc = "Soteria Institute branded rechargeable S-standardized power cell. Regarden as the second most powerful cell on the market."
 	icon_state = "meb_s_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 400
 
 /obj/item/weapon/cell/small/moebius/omega
 	name = "Soteria \"Omega-Geyser 500S\""
-	desc = "Soteria branded rechargeable S-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
+	desc = "Soteria branded rechargeable S-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type, yet to hit the open market."
 	icon_state = "meb_s_omega"
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 1) //DEAR LOAD WHAT ARE THOSE COSTS?
 	origin_tech = list(TECH_POWER = 7)
@@ -309,5 +309,5 @@
 			return
 		else
 			user.visible_message(SPAN_NOTICE("[user] have started to turn handle on \the [src]."), SPAN_NOTICE("You started to turn handle on \the [src]."))
-			cell.charge += 100
+			cell.charge += 10
 			return //Stafy Return
