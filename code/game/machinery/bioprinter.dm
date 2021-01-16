@@ -2,7 +2,7 @@
 
 /obj/machinery/bioprinter
 	name = "organ bioprinter"
-	desc = "It's a machine that grows replacement organs. Level of stored matter: [stored_matter]."
+	desc = "It's a machine that grows replacement organs."
 
 	anchored = TRUE
 	density = TRUE
@@ -31,6 +31,10 @@
 	name = "prosthetics fabricator"
 	desc = "It's a machine that prints prosthetic organs."
 	prints_prosthetics = 1
+
+/obj/machinery/bioprinter/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>Levels of stored biomass: [stored_matter]</span>")
 
 /obj/machinery/bioprinter/New()
 	..()
