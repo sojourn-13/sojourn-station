@@ -44,9 +44,10 @@
 	return TRUE
 
 /obj/make_young()
-	if(oldified)
-		name = initial(name)
-		color = initial(color)
+	if(!oldified)
+		return
+	name = initial(name)
+	color = initial(color)
 	..()
 
 /obj/item/make_old()
@@ -66,13 +67,12 @@
 		health = rand(10, max_health)
 
 /obj/item/weapon/tool/make_young()
-	if(oldified)
-		name = initial(name)
-		color = initial(color)
-		workspeed = initial(workspeed)
-		precision = initial(precision)
-		degradation = initial(degradation)
-		refresh_upgrades() //So we dont null upgrades
+	if(!oldified)
+		return
+	workspeed = initial(workspeed)
+	precision = initial(precision)
+	degradation = initial(degradation)
+	refresh_upgrades() //So we dont null upgrades
 	..()
 
 /obj/item/weapon/gun/make_old()
@@ -83,14 +83,15 @@
 	penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
 
 /obj/item/weapon/gun/make_young()
-	if(oldified)
-		name = initial(name)
-		color = initial(color)
-		fire_delay = initial(fire_delay)
-		recoil_buildup = initial(recoil_buildup)
-		damage_multiplier = initial(damage_multiplier)
-		penetration_multiplier = initial(penetration_multiplier)
-		refresh_upgrades() //So we dont null upgrades
+	if(!oldified)
+		return
+	name = initial(name)
+	color = initial(color)
+	fire_delay = initial(fire_delay)
+	recoil_buildup = initial(recoil_buildup)
+	damage_multiplier = initial(damage_multiplier)
+	penetration_multiplier = initial(penetration_multiplier)
+	refresh_upgrades() //So we dont null upgrades
 	..()
 
 /obj/item/weapon/gun/energy/make_old()
@@ -100,17 +101,12 @@
 	overcharge_rate-= rand(0,5)
 
 /obj/item/weapon/gun/energ/make_young()
-	if(oldified)
-		name = initial(name)
-		color = initial(color)
-		fire_delay = initial(fire_delay)
-		recoil_buildup = initial(recoil_buildup)
-		damage_multiplier = initial(damage_multiplier)
-		penetration_multiplier = initial(penetration_multiplier)
-		charge_cost = initial(charge_cost)
-		overcharge_max = initial(overcharge_max)
-		overcharge_rate = initial(overcharge_rate)
-		refresh_upgrades() //So we dont null upgrades
+	if(!oldified)
+		return
+	charge_cost = initial(charge_cost)
+	overcharge_max = initial(overcharge_max)
+	overcharge_rate = initial(overcharge_rate)
+	refresh_upgrades() //So we dont null upgrades. Do it again...
 	..()
 
 /obj/item/weapon/storage/make_old()
@@ -259,11 +255,12 @@
 			equip_delay += rand(0, 6 SECONDS)
 
 /obj/item/clothing/make_young()
-	if(oldified)
-		slowdown = initial(slowdown)
-		heat_protection = initial(heat_protection)
-		cold_protection = initial(cold_protection)
-		equip_delay = initial(equip_delay)
+	if(!oldified)
+		return
+	slowdown = initial(slowdown)
+	heat_protection = initial(heat_protection)
+	cold_protection = initial(cold_protection)
+	equip_delay = initial(equip_delay)
 	..()
 
 
