@@ -472,7 +472,7 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rafale
-	disk_name = "SM - .40 Auto-Mag Rafale"
+	disk_name = "GmbH - .40 Auto-Mag Rafale"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -630,7 +630,7 @@
 // SMGs
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/wirbelwind
-	disk_name = "SM - .35 Wirbelwind SMG"
+	disk_name = "GmbH - .35 Wirbelwind SMG"
 	icon_state = "frozenstar"
 
 	license = 12
@@ -701,7 +701,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ostwind
-	disk_name = "SM - .257 Ostwind Carbine"
+	disk_name = "GmbH - .257 Ostwind Carbine"
 	icon_state = "frozenstar"
 
 	license = 16
@@ -996,7 +996,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/survivalrifle
-	disk_name = "SM SAS - 10mm Caseless /'Bond/' Rifle"
+	disk_name = "SAS - 10mm Caseless /'Bond/' Rifle"
 	icon_state = "black"
 
 	license = 10 //2 guns 2 mags and 1 box

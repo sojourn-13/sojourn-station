@@ -105,7 +105,7 @@
 /obj/item/weapon/gun/projectile/automatic/omnirifle/fancy
 	name = "\"Osprey\" precision rifle"
 	desc = "Classic, elegant sporting rifle based on proven military technology. \
-		 A civilian model of the venerable M13A1 Special Purpose Rifle manufactured on Earth by Seinemetall for both sportsmen and counter-terror agents, it fires a variety of utility and specialized munitions. \
+		 A civilian model of the venerable M13A1 Special Purpose Rifle manufactured on Earth by Seinemetall Defense GmbH for both sportsmen and counter-terror agents, it fires a variety of utility and specialized munitions. \
 		 Chambered in .408, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an high-zoom optic, elegant wood furnishing, and is limited to semiautomatic."
 	icon = 'icons/obj/guns/projectile/Osprey.dmi'

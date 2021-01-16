@@ -60,7 +60,7 @@
 	build_path = /obj/item/weapon/gun/projectile/ladon/sa
 
 /datum/design/autolathe/gun/rafale
-	name = "SM SHG .40 \"Rafale\""
+	name = "GmbH SHG .40 \"Rafale\""
 	build_path = /obj/item/weapon/gun/projectile/silenced
 
 /datum/design/autolathe/gun/mk58_wood
@@ -129,7 +129,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/straylight
 
 /datum/design/autolathe/gun/wirbelwind
-	name = "SM SMG ,35 \"Wirbelwind\""
+	name = "GmbH SMG ,35 \"Wirbelwind\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/wirbelwind
 
 /datum/design/autolathe/gun/drozd
@@ -205,7 +205,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/pitbull
 
 /datum/design/autolathe/gun/ostwind
-	name = "SM AR .257 \"Ostwind\""
+	name = "GmbH AR .257 \"Ostwind\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/ostwind
 
 /datum/design/autolathe/gun/sts25
@@ -236,7 +236,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/vintorez
 
 /datum/design/autolathe/gun/nordwind
-	name = "SM DMR - 7.5mm  \"Nordwind\""
+	name = "GmbH DMR - 7.5mm  \"Nordwind\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/nordwind
 
 /datum/design/autolathe/gun/sts30
@@ -314,7 +314,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/dp
 
 /datum/design/autolathe/gun/survivalrifle
-	name = "SM SAS .10mm Caseless \"Bond\" Rifle"
+	name = "SAS .10mm Caseless \"Bond\" Rifle"
 	build_path = /obj/item/weapon/gun/projectile/automatic/survivalrifle
 
 //L A U N C H E R S
