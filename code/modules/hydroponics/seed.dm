@@ -10,14 +10,14 @@
 	var/seed_noun = "seeds"        // Descriptor for packet.
 	var/display_name               // Prettier name.
 	var/roundstart                 // If set, seed will not display variety number.
-	var/mysterious                 // Only used for the random seed packets.
-	var/can_self_harvest = 0       // Mostly used for living mobs.
-	var/growth_stages = 0          // Number of stages the plant passes through before it is mature.
-	var/list/traits = list()       // Initialized in New()
-	var/list/mutants               // Possible predefined mutant varieties, if any.
-	var/list/chems                 // Chemicals that plant produces in products/injects into victim.
-	var/list/consume_gasses        // The plant will absorb these gasses during its life.
-	var/list/exude_gasses          // The plant will exude these gasses during its life.
+	var/mysterious                  	 // Only used for the random seed packets.
+	var/can_self_harvest = 0        	 // Mostly used for living mobs.
+	var/growth_stages = 0            	// Number of stages the plant passes through before it is mature.
+	var/list/traits = list()        	 // Initialized in New()
+	var/list/mutants           		      // Possible predefined mutant varieties, if any.
+	var/list/chems                 		  // Chemicals that plant produces in products/injects into victim.
+	var/list/consume_gasses =list()       // The plant will absorb these gasses during its life.
+	var/list/exude_gasses   =list()       // The plant will exude these gasses during its life.
 	var/kitchen_tag                // Used by the reagent grinder.
 	var/trash_type                 // Garbage item produced when eaten.
 	var/splat_type = /obj/effect/decal/cleanable/fruit_smudge // Graffiti decal.
@@ -597,15 +597,7 @@
 					else
 						chems[rid][i] = gene_chem[i]
 
-			var/list/new_gasses = gene.values["[TRAIT_EXUDE_GASSES]"]
-			if(islist(new_gasses))
-				if(!exude_gasses) exude_gasses = list()
-				exude_gasses |= new_gasses
-				for(var/gas in exude_gasses)
-					exude_gasses[gas] = max(1,round(exude_gasses[gas]*0.8))
 
-			gene.values["[TRAIT_EXUDE_GASSES]"] = null
-			gene.values["[TRAIT_CHEMS]"] = null
 
 		if(GENE_DIET)
 			var/list/new_gasses = gene.values["[TRAIT_CONSUME_GASSES]"]
@@ -614,6 +606,21 @@
 		if(GENE_METABOLISM)
 			has_mob_product = gene.values["mob_product"]
 			gene.values["mob_product"] = null
+
+		if(GENE_OUTPUT)
+			var/list/new_gasses = gene.values["[TRAIT_EXUDE_GASSES]"]
+			if(islist(new_gasses))
+				if(!exude_gasses) exude_gasses = list()
+				exude_gasses = new_gasses.Copy()
+				for(var/gas in exude_gasses)
+					exude_gasses[gas] = max(1,round(exude_gasses[gas]*0.8))
+				set_trait(TRAIT_EXUDE_GASSES,1)
+			else
+				set_trait(TRAIT_EXUDE_GASSES,0)
+				exude_gasses = list()
+
+			gene.values["[TRAIT_EXUDE_GASSES]"] = null
+			gene.values["[TRAIT_CHEMS]"] = null
 
 	for(var/trait in gene.values)
 		set_trait(trait,gene.values["[trait]"])
@@ -633,9 +640,9 @@
 	switch(genetype)
 		if(GENE_BIOCHEMISTRY)
 			P.values["[TRAIT_CHEMS]"] =        chems
-			P.values["[TRAIT_EXUDE_GASSES]"] = exude_gasses
 			traits_to_copy = list(TRAIT_POTENCY)
 		if(GENE_OUTPUT)
+			P.values["[TRAIT_EXUDE_GASSES]"] = exude_gasses
 			traits_to_copy = list(TRAIT_PRODUCES_POWER,TRAIT_BIOLUM)
 		if(GENE_ATMOSPHERE)
 			traits_to_copy = list(TRAIT_HEAT_TOLERANCE,TRAIT_LOWKPA_TOLERANCE,TRAIT_HIGHKPA_TOLERANCE)

@@ -288,7 +288,7 @@
 	name = "ambrosia"
 	seed_name = "ambrosia vulgaris"
 	display_name = "ambrosia vulgaris"
-	mutants = list("ambrosiadeus", "ambrosiarobusto")
+	mutants = list("ambrosiadeus", "ambrosiarobusto", "ambrosiainfernum")
 	chems = list("nutriment" = list(1), "space_drugs" = list(1,8), "kelotane" = list(1,8,1), "bicaridine" = list(1,10,1), "toxin" = list(1,10))
 	kitchen_tag = "ambrosia"
 
@@ -328,6 +328,26 @@
 	..()
 	set_trait(TRAIT_PRODUCT_COLOUR,"#E8A725")
 	set_trait(TRAIT_PLANT_COLOUR, "#996633")
+
+/datum/seed/ambrosia/infernum
+	name = "ambrosiainfernum"
+	seed_name = "ambrosia infernum"
+	display_name = "ambrosia infernum"
+	mutants = null
+	chems = list("plasma" = list(5,20), "fuel" = list(5,20), "space_drugs" = list(1))
+	exude_gasses = list("plasma"=1)
+
+
+
+/datum/seed/ambrosia/infernum/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#E8A725")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF0000")
+	set_trait(TRAIT_BIOLUM, 1)
+	set_trait(TRAIT_BIOLUM_COLOUR, "FF3300")
+	set_trait(TRAIT_ALTER_TEMP, 2)
+
+
 
 //Mushrooms/varieties.
 /datum/seed/mushroom

@@ -196,10 +196,11 @@
 	if(grown_seed.get_trait(TRAIT_TELEPORTING))
 		dat += "<br>The fruit is temporal/spatially unstable."
 
-	if(grown_seed.get_trait(TRAIT_EXUDE_GASSES))
+	if(grown_seed.get_gene(GENE_OUTPUT).values["[TRAIT_EXUDE_GASSES]"].len)
 		dat += "<br>It will release gas into the environment."
 
-	if(grown_seed.get_trait(TRAIT_CONSUME_GASSES))
+	if(grown_seed.get_gene(GENE_DIET).values["[TRAIT_CONSUME_GASSES]"].len)
 		dat += "<br>It will remove gas from the environment."
+
 
 	return JOINTEXT(dat)
