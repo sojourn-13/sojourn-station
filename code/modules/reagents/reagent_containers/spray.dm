@@ -111,7 +111,7 @@
 
 /obj/item/weapon/reagent_containers/spray/pepper
 	name = "pepperspray"
-	desc = "Manufactured by Seinemetall Defense, used to blind and down an opponent quickly."
+	desc = "Manufactured by Seinemetall Defense GmbH, used to blind and down an opponent quickly."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "pepperspray"
 	item_state = "pepperspray"
