@@ -14,6 +14,10 @@
 	name = "advanced multitool"
 	build_path = /obj/item/weapon/tool/multitool/advanced
 
+/datum/design/autolathe/tool/multitool/multitool_onestar
+	name = "greyson positronic multitool"
+	build_path = /obj/item/weapon/tool/onestar_multitool
+
 /datum/design/autolathe/tool/weldertool
 	name = "welding tool"
 	build_path = /obj/item/weapon/tool/weldingtool
@@ -58,6 +62,10 @@
 /datum/design/autolathe/tool/pliers
 	name = "pliers"
 	build_path = /obj/item/weapon/tool/wirecutters/pliers
+
+/datum/design/autolathe/tool/onestar_pliers
+	name = "greyson positronic pliers"
+	build_path = /obj/item/weapon/tool/wirecutters/onestar_pliers
 
 /datum/design/autolathe/tool/ducttape
 	name = "roll of duct tape"
@@ -136,6 +144,10 @@
 	name = "shovel"
 	build_path = /obj/item/weapon/tool/shovel
 
+/datum/design/autolathe/tool/onestar_shovel
+	name = "greyson positronic shovel"
+	build_path = /obj/item/weapon/tool/shovel/onestar_shovel
+
 /datum/design/autolathe/tool/combat_shovel
 	name = "combat shovel"
 	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
@@ -159,6 +171,10 @@
 /datum/design/autolathe/tool/saw
 	name = "saw"
 	build_path = /obj/item/weapon/tool/saw
+
+/datum/design/autolathe/tool/onestar_saw
+	name = "greyson positronic saw"
+	build_path = /obj/item/weapon/tool/saw/onestar_saw
 
 /datum/design/autolathe/tool/circularsaw
 	name = "circular saw"

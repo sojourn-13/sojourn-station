@@ -23,7 +23,7 @@
 	desc = "A pair of metal rods laboriously twisted into a useful prying and digging tool. Has more space for tool mods because it's hand-made."
 	icon_state = "impro_crowbar"
 	item_state = "impro_crowbar"
-	tool_qualities = list(QUALITY_PRYING = 10, QUALITY_DIGGING = 10,QUALITY_HAMMERING = 10)
+	tool_qualities = list(QUALITY_PRYING = 10, QUALITY_DIGGING = 10, QUALITY_HAMMERING = 10)
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
@@ -33,7 +33,7 @@
 	icon_state = "one_star_crowbar"
 	item_state = "onestar_crowbar"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLATINUM = 1)
-	tool_qualities = list(QUALITY_PRYING = 25, QUALITY_DIGGING = 10)
+	tool_qualities = list(QUALITY_PRYING = 30, QUALITY_DIGGING = 10, QUALITY_HAMMERING = 10)
 	origin_tech = list(TECH_ENGINEERING = 1, TECH_MATERIAL = 2)
 	degradation = 0.6
 	workspeed = 1.2
