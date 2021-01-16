@@ -85,8 +85,6 @@
 /obj/item/weapon/gun/make_young()
 	if(!oldified)
 		return
-	name = initial(name)
-	color = initial(color)
 	fire_delay = initial(fire_delay)
 	recoil_buildup = initial(recoil_buildup)
 	damage_multiplier = initial(damage_multiplier)
