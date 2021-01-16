@@ -26,7 +26,7 @@
 /datum/design/research/item/weapon/lasercannon
 	name = "\"Solaris\" Laser Cannon"
 	desc = "The lasing medium of this prototype is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core."
-	build_path = /obj/item/weapon/gun/energy/lasercannon
+	build_path = /obj/item/weapon/gun/energy/lasercannon/rnd
 
 /datum/design/research/item/weapon/c20r
 	name = "Lightweight C20R"

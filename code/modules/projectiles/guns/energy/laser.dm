@@ -262,28 +262,38 @@
 	twohanded = FALSE
 
 /obj/item/weapon/gun/energy/lasercannon
-	name = "\"Solaris\" laser cannon"
-	desc = "A new design for an energy weapon created by Soteria Institute. The lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
+	name = "\"Titanica\" laser cannon"
+	desc = "A bulky design for an energy weapon that allows for it to shoot condenced laser beams to really burn a whole in anything."
 	icon = 'icons/obj/guns/energy/lascannon.dmi'
 	icon_state = "lasercannon"
 	item_state = "lasercannon"
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3, TECH_POWER = 3) //Shows that its not as high tech but still rather smartly designed
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BELT|SLOT_BACK
 	projectile_type = /obj/item/projectile/beam/heavylaser
 	charge_cost = 100
 	fire_delay = 20
-	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 4, MATERIAL_URANIUM = 1)
-	price_tag = 1500
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 6)
+	price_tag = 500
 	one_hand_penalty = 5
 	twohanded = TRUE
 	init_firemodes = list(
 		WEAPON_NORMAL,
-		WEAPON_CHARGE
 		)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+
+/obj/item/weapon/gun/energy/lasercannon/rnd
+	name = "\"Solaris\" laser cannon"
+	desc = "A new design for an energy weapon created by Soteria Institute. The lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 4, MATERIAL_URANIUM = 1)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
+	price_tag = 1500
+	init_firemodes = list(
+		WEAPON_NORMAL,
+		WEAPON_CHARGE
+		)
 
 /obj/item/weapon/gun/energy/lasercannon/mounted
 	name = "mounted laser cannon"
