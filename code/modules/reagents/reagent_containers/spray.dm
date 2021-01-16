@@ -111,14 +111,14 @@
 
 /obj/item/weapon/reagent_containers/spray/pepper
 	name = "pepperspray"
-	desc = "Manufactured by UhangInc, used to blind and down an opponent quickly."
+	desc = "Manufactured by Seinemetall Defense, used to blind and down an opponent quickly."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "pepperspray"
 	item_state = "pepperspray"
 	possible_transfer_amounts = null
-	volume = 40
+	volume = 50
 	var/safety = 1
-	preloaded_reagents = list("condensedcapsaicin" = 40)
+	preloaded_reagents = list("condensedcapsaicin" = 50)
 
 /obj/item/weapon/reagent_containers/spray/pepper/examine(mob/user)
 	if(..(user, 1))
