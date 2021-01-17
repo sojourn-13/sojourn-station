@@ -716,9 +716,6 @@
 /obj/item/weapon/reagent_containers/food/snacks/slice/vegetablepizza
 	price_tag = 10
 
-/obj/item/weapon/reagent_containers/food/snacks/
-
-
 // Baked Goods //
 
 /obj/item/weapon/reagent_containers/food/snacks/poppypretzel
@@ -794,7 +791,7 @@
 	price_tag = 30
 
 /obj/item/weapon/reagent_containers/food/snacks/wishsoup
-	price_tag = 30
+	price_tag = 0
 
 /obj/item/weapon/reagent_containers/food/snacks/hotchili
 	price_tag = 30
