@@ -98,7 +98,7 @@
 	overcharge_max-= rand(0,5) //This is infact a number you want to go up
 	overcharge_rate-= rand(0,5)
 
-/obj/item/weapon/gun/energ/make_young()
+/obj/item/weapon/gun/energy/make_young()
 	if(!oldified)
 		return
 	charge_cost = initial(charge_cost)
