@@ -109,7 +109,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	materials = list(
 		/obj/item/stack/material/steel = 16,
 		/obj/item/stack/material/plastic = 4,
-		/obj/item/stack/material/plasteel = 2,
+		/obj/item/stack/material/plasteel = 2
 	)
 	build_time = 5 SECONDS
 
@@ -283,7 +283,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_time = 8 SECONDS
 
 /datum/nt_blueprint/machinery/bioreactor_platform
-	name = "Biomatter Reactor: Biomatter Vanister Platform"
+	name = "Biomatter Reactor: Biomatter Canister Platform"
 	build_path = /obj/machinery/multistructure/bioreactor_part/biotank_platform
 	materials = list(
 		/obj/item/stack/material/steel = 10,
