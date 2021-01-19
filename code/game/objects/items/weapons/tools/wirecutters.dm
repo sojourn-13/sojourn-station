@@ -50,8 +50,8 @@
 /obj/item/weapon/tool/wirecutters/onestar_pliers //hybrid of wirecutters, wrench and cautery now in plat!
 	name = "greyson positronic pliers"
 	desc = "A multitool from the world of maintenance. Useful for pinching, clamping, and occasional bolt turning. \
-			The metal coating and refining for balance, well also still being slightly magnetic makes this known to all who use \
-			it why its considered the best pare of plies to ever be the in the market to date "
+			Being slightly magnetized, the metal coating and refined tip help for balance, making all who use \
+			it know why its considered the best pair of plies to exist in the in the market to date "
 	icon_state = "one_star_pliers"
 	edge = TRUE //We
 	sharp = TRUE//Are

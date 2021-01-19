@@ -30,7 +30,7 @@
 /obj/item/weapon/tool/onestar_multitool
 	name = "greyson positronic multitool"
 	desc = "Used for pulsing wires to test which to cut. You can use this on airlocks or APCs to try to hack them. \
-			The advanced and precise engineering allows for more DIY improvements then most Greyson Positronic tools ."
+			The advanced and precise engineering allows for more DIY improvements than most Greyson Positronic tools ."
 	icon_state = "one_star_multitool"
 	tool_qualities = list(QUALITY_PULSING = 60)
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 1, MATERIAL_DIAMOND = 1)
