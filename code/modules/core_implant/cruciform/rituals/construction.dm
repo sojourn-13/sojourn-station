@@ -121,6 +121,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	materials = list(
 		/obj/item/stack/material/plasteel = 10,
 		/obj/item/stack/material/gold = 5,
+		/obj/item/stack/material/biomatter = 50, //so we dont doup biomatter
 		/CRUCIFORM_TYPE = 1
 	)
 	build_time = 8 SECONDS
@@ -133,6 +134,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/biomatter = 10,
 		/obj/item/stack/material/gold = 5,
 		/obj/item/stack/material/diamond = 3,
+		/obj/item/stack/material/biomatter = 120, //so we dont doup biomatter
 		/CRUCIFORM_TYPE = 1
 	)
 	build_time = 15 SECONDS

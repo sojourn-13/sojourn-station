@@ -12,6 +12,9 @@
 	idle_power_usage = 30
 	active_power_usage = 2500
 
+	var/biomatter_ammo = 50 //We attack 50 times before running out on map spawn
+	var/biomatter_use_per_shot = 1 //Modular way of making it so admins can tweak this mid round
+
 	var/overrideFaithfulCheck = FALSE
 	var/active = FALSE
 	var/area_radius = 7
@@ -28,6 +31,8 @@
 	name = "Eye of the Absolute"
 	desc = "An obelisk known as the eye, a powerful and difficult to build device that functions as the pinnacle of defense, in the name of god of course."
 	icon = 'icons/obj/eotp.dmi'
+
+	biomatter_ammo = 120 //When made we will attack 150 times before needing to be filled.
 
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
@@ -50,8 +55,33 @@
 /obj/machinery/power/nt_obelisk/New()
 	..()
 
+/obj/machinery/power/nt_obelisk/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>Level of stored biomatter: [biomatter_ammo]</span>")
+
 /obj/machinery/power/nt_obelisk/attack_hand(mob/user)
 	return
+
+/obj/machinery/power/nt_obelisk/attackby(obj/item/I, mob/user as mob)
+	if (istype(I, /obj/item/stack/material/biomatter))
+		var/obj/item/stack/material/biomatter/B = I
+		if (B.amount)
+			var/sheets_amount_to_transphere = input(user, "How many sheets you want to load?", "Biomatter melting", 1) as num
+			if (sheets_amount_to_transphere > B.amount ) //No cheating!
+				to_chat(user, SPAN_WARNING("You don't that many [B.name]"))
+				return
+			if(sheets_amount_to_transphere)
+				B.use(sheets_amount_to_transphere)
+				biomatter_ammo += sheets_amount_to_transphere
+				user.visible_message(
+									"[user.name] inserted \the [B.name]'s sheets in \the [name].",
+									"You inserted \the [B.name] in  (in amount: [sheets_amount_to_transphere]) \the [name].\
+									And after that you see how the counter on \the [name] is incremented by [sheets_amount_to_transphere]."
+									)
+				ping()
+			else
+				to_chat(user, SPAN_WARNING("You can't insert [sheets_amount_to_transphere] in [name]"))
+			return
 
 /obj/machinery/power/nt_obelisk/Process()
 	..()
@@ -76,19 +106,22 @@
 					burrow.obelisk_around = any2ref(src)
 			else if(istype(A, /mob/living/carbon/superior_animal))
 				var/mob/living/carbon/superior_animal/animal = A
-				if(animal.stat != DEAD) //got roach, spider, maybe bear
+				if(animal.stat != DEAD && biomatter_ammo > biomatter_use_per_shot) //got roach, spider, maybe bear
 					animal.take_overall_damage(damage)
+					biomatter_ammo -= biomatter_use_per_shot
 					if(!--to_fire)
 						return
 			else if(istype(A, /mob/living/simple_animal/hostile))
 				var/mob/living/simple_animal/hostile/animal = A
-				if(animal.stat != DEAD) //got bear or something
+				if(animal.stat != DEAD && biomatter_ammo > biomatter_use_per_shot) //got bear or something
 					animal.take_overall_damage(damage)
+					biomatter_ammo -= biomatter_use_per_shot
 					if(!--to_fire)
 						return
 			else if(istype(A, /obj/effect/plant))
 				var/obj/effect/plant/shroom = A
-				if(shroom.seed.type == /datum/seed/mushroom/maintshroom)
+				if(shroom.seed.type == /datum/seed/mushroom/maintshroom && biomatter_ammo > biomatter_use_per_shot)
+					biomatter_ammo -= (biomatter_use_per_shot * 0.1) //Its not hard to kill these
 					qdel(shroom)
 					if(!--to_fire)
 						return
