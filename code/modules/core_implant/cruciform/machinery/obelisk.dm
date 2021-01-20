@@ -68,7 +68,7 @@
 		if (B.amount)
 			var/sheets_amount_to_transphere = input(user, "How many sheets you want to load?", "Biomatter melting", 1) as num
 			if (sheets_amount_to_transphere > B.amount ) //No cheating!
-				to_chat(user, SPAN_WARNING("You don't that many [B.name]"))
+				to_chat(user, SPAN_WARNING("You don't have that many [B.name]"))
 				return
 			if(sheets_amount_to_transphere)
 				B.use(sheets_amount_to_transphere)
