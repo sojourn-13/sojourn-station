@@ -14,7 +14,8 @@
 	var/can_self_harvest = 0        	 // Mostly used for living mobs.
 	var/growth_stages = 0            	// Number of stages the plant passes through before it is mature.
 	var/list/traits = list()        	 // Initialized in New()
-	var/list/mutants           		      // Possible predefined mutant varieties, if any.
+	var/list/mutants           		      // Possible predefined mutant varieties, if any
+	var/list/greatMutants				  // Possible floral gun mutations
 	var/list/chems                 		  // Chemicals that plant produces in products/injects into victim.
 	var/list/consume_gasses =list()       // The plant will absorb these gasses during its life.
 	var/list/exude_gasses   =list()       // The plant will exude these gasses during its life.
@@ -492,9 +493,9 @@
 	set_trait(TRAIT_PRODUCTION,get_trait(TRAIT_MATURATION)+rand(2,5))
 
 //Returns a key corresponding to an entry in the global seed list.
-/datum/seed/proc/get_mutant_variant()
-	if(!mutants || !mutants.len || get_trait(TRAIT_IMMUTABLE) > 0) return 0
-	return pick(mutants)
+/datum/seed/proc/get_mutant_variant(var/list/strains)
+	if(!strains || !strains.len || get_trait(TRAIT_IMMUTABLE) > 0) return 0
+	return pick(strains)
 
 //Mutates the plant overall (randomly).
 /datum/seed/proc/mutate(degree,turf/source_turf)
@@ -757,6 +758,7 @@
 	new_seed.has_mob_product =  has_mob_product
 	//Copy over everything else.
 	if(mutants)        new_seed.mutants = mutants.Copy()
+	if(greatMutants)   new_seed.greatMutants = greatMutants.Copy()
 	if(chems)          new_seed.chems = chems.Copy()
 	if(consume_gasses) new_seed.consume_gasses = consume_gasses.Copy()
 	if(exude_gasses)   new_seed.exude_gasses = exude_gasses.Copy()

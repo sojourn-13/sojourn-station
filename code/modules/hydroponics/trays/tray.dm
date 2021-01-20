@@ -151,7 +151,7 @@
 
 	//Override for somatoray projectiles.
 	if(istype(Proj ,/obj/item/projectile/energy/floramut) && prob(20))
-		mutate(1)
+		mutate(prob(25) ? 3 : 1)
 		return
 	else if(istype(Proj ,/obj/item/projectile/energy/florayield) && prob(20))
 		yield_mod = min(10,yield_mod+rand(1,2))
@@ -314,11 +314,16 @@
 	// No seed, no mutations.
 	if(!seed)
 		return
+	switch(severity)
+		if (3)
+			if(seed.greatMutants && seed.greatMutants.len)
 
-	// Check if we should even bother working on the current seed datum.
-	if(seed.mutants && seed.mutants.len && severity > 1)
-		mutate_species()
-		return
+				mutate_species(seed.greatMutants)
+			return
+		if (2)
+			if(seed.mutants && seed.mutants.len)
+				mutate_species(seed.mutants)
+			return
 
 	// We need to make sure we're not modifying one of the global seed datums.
 	// If it's not in the global list, then no products of the line have been
@@ -375,10 +380,10 @@
 	weedlevel =      max(0,min(weedlevel,10))
 	toxins =         max(0,min(toxins,10))
 
-/obj/machinery/portable_atmospherics/hydroponics/proc/mutate_species()
+/obj/machinery/portable_atmospherics/hydroponics/proc/mutate_species(var/list/strains)
 
 	var/previous_plant = seed.display_name
-	var/newseed = seed.get_mutant_variant()
+	var/newseed = seed.get_mutant_variant(strains)
 	if(newseed in plant_controller.seeds)
 		seed = plant_controller.seeds[newseed]
 	else
