@@ -30,7 +30,8 @@
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
-	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/weapon/tool/knife/tacknife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/device/gps(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
 	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs
 	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
@@ -100,6 +101,7 @@
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
+	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
 	src.emag.name = "Polyacid spray"
@@ -184,6 +186,7 @@
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
 	src.emag.name = "Lube spray"
@@ -253,6 +256,7 @@
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/storage/bag/produce(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/hand_tele(src) //Why
 	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 
@@ -319,6 +323,7 @@
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
+	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(60000)
