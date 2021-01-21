@@ -1023,7 +1023,7 @@ There are 9 wires.
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 30, 1, -2)
 			else
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 700, 1, -2)
-			if(do_after(user, 900, src))
+			if(do_after(user, 600, src))
 				used_now = FALSE
 				if(locked)
 					to_chat(user, SPAN_NOTICE("Even with the right key you can't open \"deadbolts\"!"))
