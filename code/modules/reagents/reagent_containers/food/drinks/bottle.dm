@@ -269,7 +269,7 @@
 	icon_state = "alco-green"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("melonliquor" = 100)
-	icon_state_empty = "alco-clear"
+	icon_state_empty = "alco-empty"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bluecuracao
 	name = "Miss Blue Curacao"
@@ -277,7 +277,7 @@
 	icon_state = "alco-blue"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("bluecuracao" = 100)
-	icon_state_empty = "alco-clear"
+	icon_state_empty = "alco-empty"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/redcandywine
 	name = "Mister Red Candy Liquor"
@@ -285,7 +285,7 @@
 	icon_state = "alco-red"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("redcandyliquor" = 100)
-	icon_state_empty = "alco-clear"
+	icon_state_empty = "alco-empty"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/nanatsunoumi
 	name = "Nanatsunoumi"
