@@ -470,7 +470,7 @@ var/global/list/robot_modules = list(
 	name = "engineering robot module"
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
-	supported_upgrades = list(/obj/item/borg/upgrade/welder_stuff,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
 	subsystems = list(/datum/nano_module/power_monitor)
 	sprites = list(
 					"Basic" = "robotengi",
@@ -507,7 +507,7 @@ var/global/list/robot_modules = list(
 	speed_factor = 0.65 //Very slow!
 	power_efficiency = 1.3 //Good for the long haul
 
-	supported_upgrades = list(/obj/item/borg/upgrade/welder_stuff,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
 
 
 	desc = "The construction module is a ponderous, overgeared monstrosity, huge and bulky. \

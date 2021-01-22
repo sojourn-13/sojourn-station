@@ -280,7 +280,7 @@
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/welder_stuff,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
 
 	health = 170 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
