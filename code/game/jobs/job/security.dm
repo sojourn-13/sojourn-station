@@ -32,7 +32,7 @@
 		STAT_VIG = 40,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete)
+	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -90,7 +90,7 @@
 		STAT_VIG = 30,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete)
+	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -190,6 +190,8 @@
 		STAT_TGH = 25,
 		STAT_VIG = 25,
 	)
+
+	perks = list(/datum/perk/job/bolt_reflect)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -325,6 +327,8 @@
 	wage = WAGE_LABOUR_HAZARD
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
+
+	perks = list(/datum/perk/job/bolt_reflect)
 
 	access = list(
 		access_security, access_eva,
