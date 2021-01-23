@@ -156,6 +156,9 @@
 	else if(istype(Proj ,/obj/item/projectile/energy/florayield) && prob(20))
 		yield_mod = min(10,yield_mod+rand(1,2))
 		return
+	else if(istype(Proj ,/obj/item/projectile/energy/floraevolve) && prob(20))
+
+		return
 
 	..()
 
