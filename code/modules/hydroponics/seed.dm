@@ -14,6 +14,7 @@
 	var/can_self_harvest = 0        	 // Mostly used for living mobs.
 	var/growth_stages = 0            	// Number of stages the plant passes through before it is mature.
 	var/list/traits = list()        	 // Initialized in New()
+	var/list/materials
 	var/list/mutants           		      // Possible predefined mutant varieties, if any
 	var/list/greatMutants				  // Possible floral gun mutations
 	var/list/chems                 		  // Chemicals that plant produces in products/injects into victim.
@@ -762,6 +763,7 @@
 	if(chems)          new_seed.chems = chems.Copy()
 	if(consume_gasses) new_seed.consume_gasses = consume_gasses.Copy()
 	if(exude_gasses)   new_seed.exude_gasses = exude_gasses.Copy()
+	if(materials)	   new_seed.materials = materials.Copy()
 
 	new_seed.seed_name =            "[(roundstart ? "[(modified ? "modified" : "mutant")] " : "")][seed_name]"
 	new_seed.display_name =         "[(roundstart ? "[(modified ? "modified" : "mutant")] " : "")][display_name]"

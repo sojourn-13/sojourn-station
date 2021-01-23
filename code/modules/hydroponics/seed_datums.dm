@@ -249,6 +249,7 @@
 	chems = list("nutriment" = list(1,10))
 	kitchen_tag = "apple"
 
+
 /datum/seed/apple/New()
 	..()
 	set_trait(TRAIT_HARVEST_REPEAT,1)
@@ -498,7 +499,7 @@
 	seed_name = "tower cap"
 	display_name = "tower caps"
 	chems = list("woodpulp" = list(10,1))
-	mutants = null
+	mutants = list("metalcap")
 
 /datum/seed/mushroom/towercap/New()
 	..()
@@ -506,6 +507,22 @@
 	set_trait(TRAIT_PRODUCT_ICON,"mushroom7")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#79A36D")
 	set_trait(TRAIT_PLANT_COLOUR,"#857F41")
+	set_trait(TRAIT_PLANT_ICON,"mushroom8")
+
+/datum/seed/mushroom/towercap/metalcap
+	name = "metalcap"
+	seed_name = "metal cap"
+	display_name = "metal caps"
+	chems = list("aluminum" = list(5,5))
+	materials = list(MATERIAL_STEEL = 1)
+	mutants = null
+
+/datum/seed/mushroom/towercap/metalcap/New()
+	..()
+	set_trait(TRAIT_MATURATION,15)
+	set_trait(TRAIT_PRODUCT_ICON,"mushroom7")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#4D4D4D")
+	set_trait(TRAIT_PLANT_COLOUR,"#969696")
 	set_trait(TRAIT_PLANT_ICON,"mushroom8")
 
 /datum/seed/mushroom/glowshroom
@@ -642,6 +659,7 @@
 	name = "harebells"
 	seed_name = "harebell"
 	display_name = "harebells"
+	mutants = list("silverbells")
 	chems = list("nutriment" = list(1,20))
 
 /datum/seed/flower/New()
@@ -654,6 +672,20 @@
 	set_trait(TRAIT_PLANT_COLOUR,"#6B8C5E")
 	set_trait(TRAIT_PLANT_ICON,"flower")
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/datum/seed/flower/silverBell
+	name = "silverbells"
+	seed_name = "silverbell"
+	display_name = "silverbells"
+	materials = list(MATERIAL_SILVER = 1)
+	chems = list("nutriment" = list(1,50))
+
+/datum/seed/flower/silverBell/New()
+	..()
+	set_trait(TRAIT_MATURATION,4)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_PRODUCT_COLOUR,"#C0C0C0")
 
 /datum/seed/flower/poppy
 	name = "poppies"
