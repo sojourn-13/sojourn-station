@@ -28,7 +28,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET, GUN_SCOPE)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn
-	var/bolt_trainning = TRUE
+	var/bolt_training = TRUE
 
 /obj/item/weapon/gun/projectile/boltgun/update_icon()
 	..()
@@ -59,11 +59,16 @@
 
 /obj/item/weapon/gun/projectile/boltgun/handle_post_fire(mob/user)
 	..()
-	if(bolt_trainning && user.stats.getPerk(PERK_BOLT_REFLECT))
+	if(bolt_training && user.stats.getPerk(PERK_BOLT_REFLECT) && loaded.len>0)
 		to_chat(user, SPAN_NOTICE("Your hands move instinctively to work the bolt!"))
 		bolt_act(src)
+		bolt_act(src)
 		return
-	if(!bolt_trainning && user.stats.getPerk(PERK_BOLT_REFLECT))
+	if(bolt_training && user.stats.getPerk(PERK_BOLT_REFLECT) && loaded.len==0)
+		to_chat(user, SPAN_NOTICE("You stop your hands from instinctively to work the bolt closed"))
+		bolt_act(src)
+		return
+	if(!bolt_training && user.stats.getPerk(PERK_BOLT_REFLECT))
 		to_chat(src, SPAN_NOTICE("Your mind draws a blank on instinctively working the bolt..."))
 		return
 
@@ -227,7 +232,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE
-	bolt_trainning = FALSE //Trainning didnt cover obrez
+	bolt_training = FALSE //Trainning didnt cover obrez
 
 /obj/item/weapon/gun/projectile/boltgun/sawn/sa
 	name = "\"obrez\" boltgun"
