@@ -302,7 +302,8 @@
 
 	duties = "Minimize casualties in combat situations and treat all related wounds.<br>\
 	Treat any prisoners and suspects, and thoroughly monitor their health.<br>\
-	Work with the Ranger to solve crimes through collecting forensic evidence and conducting autopsies."
+	Work with the Ranger to solve crimes through collecting forensic evidence and conducting autopsies.<br>\
+	<b>Well you are medically trained you are not a replacement doctor for Soteria Medical. You are a more personal doctor for Blackshield and Marshals.</b>"
 
 /obj/landmark/join/start/medspec
 	name = "Corpsman"
