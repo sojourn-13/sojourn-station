@@ -303,7 +303,7 @@
 	duties = "Minimize casualties in combat situations and treat all related wounds.<br>\
 	Treat any prisoners and suspects, and thoroughly monitor their health.<br>\
 	Work with the Ranger to solve crimes through collecting forensic evidence and conducting autopsies.<br>\
-	<b>Well you are medically trained you are not a replacement doctor for Soteria Medical. You are a more personal doctor for Blackshield and Marshals.</b>"
+	<b>While you are sufficiently medically trained, you are not a replacement doctor for Soteria Medical. You are a more personal combat medic under Blackshield and Marshals jurisdiction.</b>"
 
 /obj/landmark/join/start/medspec
 	name = "Corpsman"
@@ -405,4 +405,3 @@
 	name = "Marshal Officer"
 	icon_state = "player-blue"
 	join_tag = /datum/job/officer
-
