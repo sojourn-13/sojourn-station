@@ -223,7 +223,7 @@
 
 /obj/item/weapon/tool/knife/dagger/skinning
 	name = "skinning knife"
-	desc = "A sharp tool that is the pride and joy of the local hunting lodge, while not suitable as a weapon its blade is edged and as finely cutting as any laser scalpel. Considered sacred by \
+	desc = "A sharp tool that is the pride and joy of the local hunting lodge. While not suitable as a weapon, its blade is as finely edged as any laser scalpel. Considered sacred by \
 	the hunters that normally carry them."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "skinning"

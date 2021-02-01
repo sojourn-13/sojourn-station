@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/handmade_pistol/reliable
 	name = "\"Reliable\" handmade pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Whoever made this particular model did exceptional work, unlike lesser handmade pistols this one jams less and has much better shot capability. Uses .35 caliber."
+	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. Uses .35 caliber."
 	jam_chance = 5
 	damage_multiplier = 3
 	recoil_buildup = 1

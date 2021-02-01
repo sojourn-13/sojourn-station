@@ -59,7 +59,7 @@
 
 /obj/item/animal_part/render_claw
 	name = "render claw"
-	desc = "A hand of a primal render, severed and sickly green without blood flowing through it. It's deadly sharp claws could be useful, if you know how to weaponize it."
+	desc = "A hand of a primal render, severed and sickly green without blood flowing through it. Its deadly sharp claws could be useful, if you know how to weaponize it."
 	icon_state = "gecko_claw"
 	item_state = "gecko_claw"
 

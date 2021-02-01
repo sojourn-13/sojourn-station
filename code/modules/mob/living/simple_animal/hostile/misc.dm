@@ -311,7 +311,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/tahca
 	name = "tahca"
-	desc = "A cervine that is, surprisingly, native to the planet that resembles a two headed deer. Despite what what one expect, while docile, it is more than willing to fight if attacked. Hunters value \
+	desc = "A cervine creature, surprisingly native to this planet, that resembles a two-headed deer. Despite what one would expect, while docile in nature, it is more than willing to fight if attacked. Hunters value \
 	these beasts for their antlers, both as trophies of value and for medicine."
 	faction = "radstag"
 	icon = 'icons/mob/mobs-domestic.dmi'

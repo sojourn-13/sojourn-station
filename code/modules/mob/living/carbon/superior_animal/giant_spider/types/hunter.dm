@@ -36,7 +36,7 @@
 //bomb spider, very little toxins and not much health but explodes on reaching melee range.
 /mob/living/carbon/superior_animal/giant_spider/plasma
 	name = "plasma spider"
-	desc = "Furry and black, it makes you shudder to look at it. This one is infused with plasma and has mutated spikes poking from its chitin."
+	desc = "Furry and black, it makes you shudder to look at it. This one is infused with plasma and has mutated spikes protruding from its chitin."
 	icon_state = "phoron"
 	icon_living = "phoron"
 	maxHealth = 60
@@ -111,7 +111,7 @@
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider
 	name = "reaper spider"
-	desc = "Furry, white, and black, it makes you shudder to look at it. This one is a massive hulking leviathan capable of striking fear in even the most powerful stalwart of men."
+	desc = "Furry, white, and black, it makes you shudder to look at it. This one is a massive hulking leviathan capable of striking fear in even the most powerful and stalwart of men."
 	icon_state = "terror_empress"
 	icon_living = "terror_empress"
 	maxHealth = 1500

@@ -494,7 +494,7 @@
 
 /obj/item/weapon/oddity/chimeric_fang_trophy
 	name = "Chimera Fang Trophy"
-	desc = "A scrimshaw carved chimera fang turned into a trophy, the bone either taken from a butchered chimera or hunting companion fallen in battle. In either case, its very presence hardens the holders resolve."
+	desc = "A scrimshaw carved chimera fang turned into a trophy, the bone either taken from a butchered chimera or hunting companion fallen in battle. In either case, its very presence hardens the holder's resolve."
 	icon_state = "chimera_trophy"
 	oddity_stats = list(
 		STAT_ROB = 12,

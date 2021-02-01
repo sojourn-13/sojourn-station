@@ -285,8 +285,8 @@
 
 /mob/living/simple_animal/hostile/hell_pig
 	name = "hell pig"
-	desc = "The venerable evolution of a tengolo charger, morphing into a violent destructive beast hostile to all but its own berserk kind. Hell pigs represent the end of a chargers life \
-	as upon reaching a certain age they undergo a metamorphisis that turns them into blood thirsty monsters who rampage until slain."
+	desc = "The venerable evolution of a tengolo charger, morphing into a violent and destructive beast hostile to all but its own berserk kind. Hell pigs represent the end of a charger's life \
+	as upon reaching a certain age they undergo a metamorphosis that turns them into bloodthirsty monsters who rampage until slain."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "hellpig"
 	icon_living = "hellpig"
@@ -313,7 +313,7 @@
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
 	name = "wendigo"
-	desc = "The venerable evolution of a tengolo stalker, morphing into a violent destructive beast hostile to all but its own berserk kind. The wendigo is a violent transformation that involves \
+	desc = "The venerable evolution of a tengolo stalker, morphing into a violent and destructive beast hostile to all but its own berserk kind. The wendigo is a violent transformation that involves \
 	much of the flesh and bone of a tengolo painfully and rapidly mutating, driving the creature insane and violent."
 	icon_state = "wendigo"
 	icon_living = "wendigo"
@@ -330,7 +330,7 @@
 
 /mob/living/simple_animal/hostile/hell_pig/slepnir
 	name = "slepnir"
-	desc = "The venerable evolution of a tengolo charger, morphing into a violent destructive beast hostile to all but its own berserk kind. The slepnir, unlike its other berserk kin, only attacks \
+	desc = "The venerable evolution of a tengolo charger, morphing into a violent and destructive beast hostile to all but its own berserk kind. The slepnir, unlike its other berserk kin, only attacks \
 	those who draw close, but once its ire is drawn it becomes a relentless pursuer. More disturbingly, upon closer examination one would note its new coloration is the result of his normally \
 	blue-ish hide having sloughed off to expose the reddish-brown muscle beneath."
 	icon_state = "slepnir"
