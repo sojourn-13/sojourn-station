@@ -12,7 +12,7 @@
 
 /////////////Standard/////////////
 
-/obj/item/ammo_magazine/pistol_35/drum
+/obj/item/ammo_magazine/highcap_pistol_35/drum
 	name = "standard auto drum magazine"
 	icon_state = "ldrum"
 	desc = "A 71 round drum magazine marked for .35 Auto."
@@ -26,25 +26,25 @@
 	max_ammo = 71
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/pistol_35/drum/rubber
+/obj/item/ammo_magazine/highcap_pistol_35/drum/rubber
 	name = "standard auto magazine (rubber)"
 	matter = list(MATERIAL_STEEL = 4)
 	icon_state = "ldrum_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
-/obj/item/ammo_magazine/pistol_35/drum/lethal
+/obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
 	name = "standard auto magazine (hollow-point)"
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 	icon_state = "ldru_l"
 
-/obj/item/ammo_magazine/pistol_35/drum/hv
+/obj/item/ammo_magazine/highcap_pistol_35/drum/hv
 	name = "standard auto magazine (high-velocity)"
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 	icon_state = "ldrum_hv"
 
-/obj/item/ammo_magazine/pistol_35/drum/empty
+/obj/item/ammo_magazine/highcap_pistol_35/drum/empty
 	name = "standard auto magazine"
 	matter = list(MATERIAL_STEEL = 4)
 	icon_state = "ldrum"

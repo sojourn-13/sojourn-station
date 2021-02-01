@@ -122,7 +122,7 @@
 		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
-		/datum/design/autolathe/ammo/shotgun_flash,
+		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
 // ENERGY SMALL ARMS

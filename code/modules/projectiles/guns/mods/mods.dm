@@ -3,13 +3,13 @@
 	w_class = ITEM_SIZE_TINY
 	price_tag = 100 //These should be sold in the player market.
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
-	var/can_remove = TRUE 
+	var/can_remove = TRUE
 
 /obj/item/weapon/gun_upgrade/barrel
 
 //Silences the weapon, reduces damage multiplier slightly, Legacy port.
 /obj/item/weapon/gun_upgrade/muzzle/silencer
-	name = "silencer"
+	name = "Silencer"
 	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise, but impedes muzzle velocity."
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	icon_state = "silencer"
@@ -27,7 +27,7 @@
 
 //Decreases fire delay. Acquired through loot spawns or guild crafting
 /obj/item/weapon/gun_upgrade/barrel/forged
-	name = "forged barrel"
+	name = "Forged barrel"
 	desc = "Despite advancements in 3D printing, a properly forged plasteel barrel can still outperform anything that comes from an autolathe."
 	icon_state = "Forged_barrel"
 
@@ -174,10 +174,10 @@
 /* //This mod works fine but if a bullet hits an object it run times, my theory is its trying to make an effect work via rads that isn't coded properly either by ERIS or my bad porting.
 //For now this has been modified to not use rad damage since that has issues.
 */
-//Adds radiation damage to .35 rounds. Acquired through raiding grayson machines.
+//Adds radiation damage to .35 rounds. Acquired through raiding greyson machines.
 /obj/item/weapon/gun_upgrade/mechanism/glass_widow
-	name = "Grayson \"Glass Widow\" infuser"
-	desc = "An old technology from the grayson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
+	name = "Greyson \"Glass Widow\" infuser"
+	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
 	icon_state = "Glass_Widow"
 
 /obj/item/weapon/gun_upgrade/mechanism/glass_widow/New()
@@ -337,13 +337,13 @@
 	I.gun_loc_tag = GUN_MECHANISM
 */
 
-/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst
-	name = "Grayson \"Master Unmaker\" infuser"
-	desc = "One of the rarest and most powerful weapon modification ever made by Grayson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
+/obj/item/weapon/gun_upgrade/mechanism/greyson_master_catalyst
+	name = "Greyson \"Master Unmaker\" infuser"
+	desc = "One of the rarest and most powerful weapon modification ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
 	icon_state = "psionic_catalyst"
 	matter = list(MATERIAL_PLATINUM = 5, MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 10)
 
-/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst/New()
+/obj/item/weapon/gun_upgrade/mechanism/greyson_master_catalyst/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(

@@ -23,6 +23,8 @@
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	move_to_delay = 9
+	leather_amount = 0
+	bones_amount = 0
 	var/shell_type = "os"
 	var/marks_type = "os"
 	var/screen_type = "os" //if someone decides to make the drones for something aside from OS and have different desgins
@@ -98,7 +100,7 @@
 	if(prob(10)) //Can override radio
 		drop2 = /obj/random/rations
 	if(prob(20)) //Can override radio or snack
-		drop2 = /obj/random/booze 
+		drop2 = /obj/random/booze
 	if(prob(10))
 		cell_drop = /obj/item/weapon/cell/medium
 

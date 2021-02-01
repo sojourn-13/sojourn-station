@@ -102,7 +102,7 @@
 	Bumped(AM)
 
 /obj/item/weapon/spider_shadow_trap/attack_hand(mob/user as mob)
-	return
+	Bumped(user)
 
 /obj/item/weapon/spider_shadow_trap/Bumped(mob/M as mob|obj)
 

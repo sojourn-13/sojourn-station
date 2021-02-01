@@ -33,6 +33,7 @@
 	icon_dead = "parrot_dead"
 	pass_flags = PASSTABLE
 	mob_size = MOB_SMALL
+	leather_amount = 0
 
 	speak_emote = list("squawks","says","yells")
 	emote_see = list("flutters its wings","squawks","bawks")

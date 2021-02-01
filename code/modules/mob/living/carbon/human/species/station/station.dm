@@ -481,7 +481,12 @@
 		"Lizard Tail",
 		"Lizard Tail, Short"
 		)
-	permitted_wings = list()
+	permitted_wings = list("Spines,Aquatic",
+		"Spines, Long",
+		"Spines, Long Membrane",
+		"Spines, Short",
+		"Spines, Short Membrane",
+		)
 
 	perks = list(/datum/perk/purgetoxins,/datum/perk/purgeinfections)
 

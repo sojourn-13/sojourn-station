@@ -22,6 +22,8 @@
 	projectiletype = /obj/item/projectile/beam/drone
 	projectilesound = 'sound/weapons/laser3.ogg'
 	destroy_surroundings = 0
+	leather_amount = 0
+	bones_amount = 0
 	var/datum/effect/effect/system/trail/ion/trail
 
 	//the drone randomly switches between these states because it's malfunctioning

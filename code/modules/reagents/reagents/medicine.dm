@@ -455,9 +455,9 @@
 	color = "#004000"
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1 // This is a mostly beneficial chem, it should show up on scanners
-	affects_dead = 1 //If it doesn't, how will it fix husking?
+	affects_dead = 1 //My guess is this flag makes the chem act on a cryotube regardless of mob life or not.
 
-/datum/reagent/medicine/ryetalyn/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/ryetalyn/on_mob_add(mob/living/carbon/M, alien, effect_multiplier) //on_mob_add allows it to act regardless if the human is dead or alive.
 	var/needs_update = M.mutations.len > 0
 
 	M.mutations = list()
@@ -468,6 +468,7 @@
 	if(needs_update && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.update_mutations()
+		H.update_body() //Don't let husks stay wrinkly all the time, we gotta fix them!
 
 /datum/reagent/medicine/negative_ling
 	name = "Negative Paragenetic Marker"
@@ -946,6 +947,56 @@
 	if(prob(10 * effect_multiplier))
 		M.vomit()
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Meds made from animals. Unga.
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/datum/reagent/medicine/tangu_extract
+	name = "Tangu Extract"
+	id = "tangu_extract"
+	description = "The extracted juices from a tangu horn, a powerful multi-purpose healing chemical derived from bone marrow and tangu blood."
+	taste_description = "vitamins"
+	reagent_state = LIQUID
+	color = "#BF0000"
+	scannable = 1
+	overdose = REAGENTS_OVERDOSE
+
+/datum/reagent/medicine/tangu_extract/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.adjustOxyLoss(-1.2 * effect_multiplier)
+	M.heal_organ_damage(0.6 * effect_multiplier, 0.6 * effect_multiplier)
+	M.adjustToxLoss(-0.6 * effect_multiplier)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+
+/datum/reagent/medicine/tangu_extract/overdose(var/mob/living/carbon/M, var/alien)
+	. = ..()
+	M.adjustToxLoss(5)
+	M.adjustBrainLoss(1)
+	if(M.losebreath < 15)
+		M.losebreath++
+
+/datum/reagent/medicine/clucker_extract
+	name = "Clucker Extract"
+	id = "clucker_extract"
+	description = "A weak painkiller derived from the juices found in compressed clucker feathers."
+	taste_description = "sickness"
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	overdose = 60
+	scannable = 1
+	metabolism = 0.02
+
+/datum/reagent/medicine/clucker_extract/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 80, TRUE)
+
+/datum/reagent/medicine/clucker_extract/overdose(mob/living/carbon/M, alien)
+	..()
+	M.druggy = max(M.druggy, 2)
+
+/datum/reagent/medicine/spaceacillin/tahcacillin
+	name = "Tahcacillin"
+	id = "tahcacillin"
+	description = "An all-purpose antiviral agent derived from tahca horns crushed into a blood mixed extract."
+	constant_metabolism = TRUE
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Racial chemicals used for perks.

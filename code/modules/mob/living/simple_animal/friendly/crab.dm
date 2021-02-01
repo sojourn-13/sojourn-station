@@ -16,6 +16,8 @@
 	friendly = "pinches"
 	faction = "pond"
 	mob_size = 5
+	leather_amount = 0
+	bones_amount = 0
 	var/obj/item/inventory_head
 	var/obj/item/inventory_mask
 	possession_candidate = 1

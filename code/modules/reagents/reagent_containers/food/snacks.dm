@@ -587,6 +587,12 @@
 	else
 		..()
 
+/obj/item/weapon/reagent_containers/food/snacks/egg/clucker
+	name = "cluckeregg"
+	desc = "A clucker egg!"
+	icon_state = "egg"
+	filling_color = "#ffe6d1"
+
 /obj/item/weapon/reagent_containers/food/snacks/egg/blue
 	icon_state = "egg-blue"
 

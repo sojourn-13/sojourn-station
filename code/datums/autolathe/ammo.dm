@@ -16,9 +16,9 @@
 	name = "shotgun shells (beanbag)"
 	build_path = /obj/item/ammo_casing/shotgun/beanbag/prespawned
 
-/datum/design/autolathe/ammo/shotgun_flash
-	name = "shotgun shells (flash)"
-	build_path = /obj/item/ammo_casing/shotgun/flash/prespawned
+/datum/design/autolathe/ammo/shotgun_illumination
+	name = "shotgun shells (illumination)"
+	build_path = /obj/item/ammo_casing/shotgun/illumination/prespawned
 
 /datum/design/autolathe/ammo/shotgun_he
 	name = "20mm shells (HEFI)"
@@ -99,23 +99,23 @@
 //.35 drum
 /datum/design/autolathe/ammo/pistol_35_drum
 	name = "standard drum (.35 Auto)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum
 
 /datum/design/autolathe/ammo/pistol_35_drum/empty
 	name = "standard drum (.35 Auto empty)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum/empty
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
 
 /datum/design/autolathe/ammo/pistol_35_drum/rubber
 	name = "standard drum (.35 Auto rubber)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum/rubber
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum/rubber
 
 /datum/design/autolathe/ammo/pistol_35_drum/hv
 	name = "standard drum (.35 Auto high-velocity)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum/hv
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum/hv
 
 /datum/design/autolathe/ammo/pistol_35_drum/lethal
 	name = "standard drum (.35 Auto hollow-point)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum/lethal
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
 
 
 // .35 Speed Loaders

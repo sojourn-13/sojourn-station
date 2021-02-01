@@ -135,3 +135,8 @@
 	account_initial_balance = 7500
 	funding_type = FUNDING_EXTERNAL
 
+/datum/department/independent
+	name = "Independent Allied Factions"
+	id = DEPARTMENT_INDEPENDENT
+	account_initial_balance = 0
+	funding_type = FUNDING_NONE

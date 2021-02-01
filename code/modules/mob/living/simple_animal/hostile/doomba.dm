@@ -26,6 +26,8 @@
 	maxHealth = 25
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+	leather_amount = 0
+	bones_amount = 0
 
 	//Drops
 	var/drop1 = /obj/item/weapon/scrap_lump

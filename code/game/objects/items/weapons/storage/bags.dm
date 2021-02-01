@@ -118,7 +118,7 @@
 
 /obj/item/weapon/storage/bag/ore/holding
 	name = "satchel of holding"
-	desc = "A revolution in convenience, this satchel allows for immense ore or produce storage. It's been outfitted with anti-malfunction safety measures."
+	desc = "A revolution in convenience, this satchel allows for immense ore or produce storage."
 	icon_state = "satchel_bspace"
 	max_storage_space = DEFAULT_HUGE_STORAGE * 10
 	max_w_class = ITEM_SIZE_BULKY

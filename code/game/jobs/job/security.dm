@@ -32,7 +32,7 @@
 		STAT_VIG = 40,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -132,7 +132,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
 
 	access = list(
-		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
+		access_security, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
 		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
 	)
@@ -180,7 +180,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/security/serg
 
 	access = list(
-		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
+		access_security, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
 		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
 	)
@@ -191,7 +191,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -304,7 +304,8 @@
 
 	duties = "Minimize casualties in combat situations and treat all related wounds.<br>\
 	Treat any prisoners and suspects, and thoroughly monitor their health.<br>\
-	Work with the Ranger to solve crimes through collecting forensic evidence and conducting autopsies."
+	Work with the Ranger to solve crimes through collecting forensic evidence and conducting autopsies.<br>\
+	<b>While you are sufficiently medically trained, you are not a replacement doctor for Soteria Medical. You are a more personal combat medic under Blackshield and Marshals jurisdiction.</b>"
 
 /obj/landmark/join/start/medspec
 	name = "Corpsman"
@@ -334,6 +335,8 @@
 		access_security, access_eva,
 		access_sec_doors, access_brig, access_maint_tunnels, access_external_airlocks
 	)
+
+	perks = list(/datum/perk/job/blackshield_conditioning)
 
 	stat_modifiers = list(
 		STAT_ROB = 25,
@@ -408,4 +411,3 @@
 	name = "Marshal Officer"
 	icon_state = "player-blue"
 	join_tag = /datum/job/officer
-

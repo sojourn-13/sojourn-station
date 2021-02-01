@@ -6,6 +6,7 @@
 	on = 0
 	powered = 1
 	locked = 0
+	layer = BELOW_MOB_LAYER + 0.1
 
 	load_item_visible = 1
 	load_offset_x = 0

@@ -277,10 +277,17 @@
 
 /obj/item/stack/material/leather
 	name = "leather"
-	desc = "The by-product of mob grinding."
+	desc = "The by-product of skinning local wildlife."
 	icon_state = "sheet-leather"
 	default_type = MATERIAL_LEATHER
 	price_tag = 10
+
+/obj/item/stack/material/bone
+	name = "bones"
+	desc = "A collection of random bones and bits."
+	icon_state = "sheet_bones"
+	default_type = MATERIAL_BONE
+	price_tag = 5
 
 /obj/item/stack/material/glass
 	name = MATERIAL_GLASS

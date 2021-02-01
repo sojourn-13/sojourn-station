@@ -13,9 +13,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	difficulty = "Very Hard."
 	selection_color = "#ccccff"
 	req_admin_notify = 1
-	wage = WAGE_NONE //The captain doesn't get paid, he's the one who does the paying
-	//The colony account is his, and he's free to draw as much salary as he likes
-
+	wage = WAGE_COMMAND
 
 	ideal_character_age = 50 // Old geezer captains ftw
 	minimum_character_age = 35

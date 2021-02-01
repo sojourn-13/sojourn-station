@@ -923,7 +923,7 @@
 	. = ..()
 
 	if(module)
-		if(istype(module, /obj/item/weapon/robot_module/custodial))
+		if(istype(module, /obj/item/weapon/robot_module/custodial) || istype(module, /obj/item/weapon/robot_module/robot/scrubpup))
 			var/turf/tile = loc
 			if(isturf(tile))
 				tile.clean_blood()
