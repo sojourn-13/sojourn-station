@@ -368,6 +368,10 @@
 	name = "Surgical Master"
 	desc = "When it comes to surgery most in your field are experts, while you may not know the more advanced medical procedures you can perform surgery with ease."
 
+/datum/perk/job/bolt_reflect
+	name = "Bolt Action Rifle Trainning"
+	desc = "Through your training with bolt action rifles and repeaters, after firing you will always chamber a new round instantly."
+
 /datum/perk/job/jingle_jangle
 	name = "Key Smith"
 	desc = "You know how to use keys and lockpicks to open electronic doors somehow."
