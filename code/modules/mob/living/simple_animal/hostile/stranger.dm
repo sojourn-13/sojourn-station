@@ -34,6 +34,8 @@
 	projectiletype = /obj/item/projectile/plasma/heavy
 	projectilesound = 'sound/weapons/laser.ogg'
 	faction = "bluespace"
+	leather_amount = 0
+	bones_amount = 0
 	var/empy_cell = FALSE
 	var/prob_tele = 20
 

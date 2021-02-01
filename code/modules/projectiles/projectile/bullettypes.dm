@@ -471,3 +471,11 @@
 	nodamage = TRUE
 	embed = FALSE
 	sharp = FALSE
+
+/obj/item/projectile/bullet/crossbow_bolt
+	name = "bolt"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 55) //normal would be 45
+	armor_penetration = 10
+	knockback = 0 //Bug doups hits
+	step_delay = 0.9

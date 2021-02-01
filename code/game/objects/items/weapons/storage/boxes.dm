@@ -152,6 +152,14 @@
 	for(var/i in 1 to 7)
 		new /obj/item/weapon/reagent_containers/glass/beaker(src)
 
+/obj/item/weapon/storage/box/bottles
+	name = "box of bottles"
+	illustration = "beaker"
+
+/obj/item/weapon/storage/box/bottles/populate_contents()
+	for(var/i in 1 to 7)
+		new /obj/item/weapon/reagent_containers/glass/bottle(src)
+
 /obj/item/weapon/storage/box/bodybags
 	name = "body bags"
 	desc = "This box contains a number of body bags."

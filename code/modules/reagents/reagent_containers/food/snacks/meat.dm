@@ -80,6 +80,14 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "pararein" = 2)
 
+/obj/item/weapon/reagent_containers/food/snacks/meat/spider/plasma
+	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+
+	bitesize = 6
+	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "plasma" = 5)
+
 /obj/item/weapon/reagent_containers/food/snacks/meat/spider/emperor
 	desc = "A bloated slab of sickly-green meat cut from a spider. This one smells like cognitive improvement drugs."
 	icon_state = "xenomeat"
@@ -87,6 +95,14 @@
 	//Emperor Spider's meat contains party drops, big brain chemical. 8 seems fine. Emperors are dangerous.
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8, "party drops" =8)
+
+/obj/item/weapon/reagent_containers/food/snacks/meat/spider/reaper_spider
+	desc = "A bloated slab of sickly-green meat cut from a spider. This one smells like cognitive improvement drugs."
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+	//Emperor Spider's meat contains party drops, big brain chemical. 8 seems fine. Emperors are dangerous.
+	bitesize = 6
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "stoxin" =8)
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"

@@ -248,6 +248,23 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "prepper_to_vbunker_2_A"
 	id_target = "prepper_to_vbunker_1_A"
 
+//Surface to lower colony disposal transition teleporters.
+/obj/effect/step_trigger/disposal_transition_1_A
+	id = "disposal_transition_1_A"
+	id_target = "disposal_transition_2_A"
+
+/obj/effect/step_trigger/disposal_transition_2_A
+	id = "disposal_transition_2_A"
+	id_target = "disposal_transition_1_A"
+
+/obj/effect/step_trigger/disposal_transition_1_B
+	id = "disposal_transition_1_B"
+	id_target = "disposal_transition_2_B"
+
+/obj/effect/step_trigger/disposal_transition_2_B
+	id = "disposal_transition_2_B"
+	id_target = "disposal_transition_1_B"
+
 //Ironhead compound to abandoned fortress
 /obj/effect/step_trigger/ironcompound_to_abandonedfortress_1_A
 	id = "ironcompound_to_abandonedfortress_1_A"
@@ -257,7 +274,7 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "ironcompound_to_abandonedfortress_2_A"
 	id_target = "ironcompound_to_abandonedfortress_1_A"
 
-//Swamp caves to river forest
+//Swamp caves to river forest (redirected from deep forest to river forest)
 /obj/effect/step_trigger/swampcaves_to_riverforest_1_A
 	id = "swampcaves_to_riverforest_1_A"
 	id_target = "swampcaves_to_riverforest_2_A"
@@ -273,3 +290,20 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /obj/effect/step_trigger/swampcaves_to_riverforest_2_B
 	id = "swampcaves_to_riverforest_2_B"
 	id_target = "swampcaves_to_riverforest_1_B"
+
+//River forest to hunting lodge
+/obj/effect/step_trigger/riverforest_to_huntinglodge_1_A
+	id = "riverforest_to_huntinglodge_1_A"
+	id_target = "riverforest_to_huntinglodge_2_A"
+
+/obj/effect/step_trigger/riverforest_to_huntinglodge_2_A
+	id = "riverforest_to_huntinglodge_2_A"
+	id_target = "riverforest_to_huntinglodge_1_A"
+
+/obj/effect/step_trigger/riverforest_to_huntinglodge_1_B
+	id = "riverforest_to_huntinglodge_1_B"
+	id_target = "riverforest_to_huntinglodge_2_B"
+
+/obj/effect/step_trigger/riverforest_to_huntinglodge_2_B
+	id = "riverforest_to_huntinglodge_2_B"
+	id_target = "riverforest_to_huntinglodge_1_B"

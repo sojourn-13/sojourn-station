@@ -24,7 +24,7 @@
 
 /obj/item/weapon/tool/knife/dagger/nt
 	name = "Dagger"
-	desc = "A saintly looking dagger, even God have mercy. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	desc = "A saintly looking dagger, may the absolute have mercy. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_dagger"
 	item_state = "nt_dagger"

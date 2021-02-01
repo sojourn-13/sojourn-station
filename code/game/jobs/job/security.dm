@@ -32,7 +32,7 @@
 		STAT_VIG = 40,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete)
+	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/blackshield_conditioning)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -191,6 +191,8 @@
 		STAT_VIG = 25,
 	)
 
+	perks = list(/datum/perk/job/blackshield_conditioning)
+
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
@@ -330,6 +332,8 @@
 		access_security, access_eva,
 		access_sec_doors, access_brig, access_maint_tunnels, access_external_airlocks
 	)
+
+	perks = list(/datum/perk/job/blackshield_conditioning)
 
 	stat_modifiers = list(
 		STAT_ROB = 25,

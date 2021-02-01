@@ -20,6 +20,9 @@
 	health = 60
 	melee_damage_lower = 20
 	melee_damage_upper = 30
+	leather_amount = 6
+	bones_amount = 4
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
 	//Space bears aren't affected by atmos.
 	min_oxy = 0
@@ -83,6 +86,7 @@
 	health = 400
 	melee_damage_lower = 30
 	melee_damage_upper = 40
+	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/bear/Life()
 	. =..()
@@ -181,27 +185,18 @@
 		//M.attack_animal(src)
 		//return M
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/mob/living/simple_animal/hostile/bear/mukwah
+	name = "mukwah"
+	desc = "A bear that escaped from the abandoned zoo labs before mutating into a creature known as a mukwah. Unlike a standard bear, a mukwah is much more powerful, a heavy hitter that is \
+	slow but with a strength that exceeds even other powerful fauna."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "yaoguai"
+	icon_dead = "yaoguai_dead"
+	maxHealth = 400
+	health = 400
+	melee_damage_lower = 40 //Low health but an extremely powerful hitter
+	melee_damage_upper = 50
+	leather_amount = 10
+	bones_amount = 10
+	pixel_x = -16
+	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
