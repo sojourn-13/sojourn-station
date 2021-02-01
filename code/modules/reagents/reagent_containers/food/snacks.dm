@@ -1579,6 +1579,7 @@
 	center_of_mass = list("x"=16, "y"=11)
 	bitesize = 5
 	preloaded_reagents = list("water" = 10)
+	matter = null
 	New()
 		..()
 		if(prob(25))
