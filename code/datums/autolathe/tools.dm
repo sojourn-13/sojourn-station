@@ -156,6 +156,10 @@
 	name = "scalpel"
 	build_path = /obj/item/weapon/tool/scalpel
 
+/datum/design/autolathe/tool/scalpel/advanced
+	name = "advanced scalpel"
+	build_path = /obj/item/weapon/tool/scalpel/advanced
+
 /datum/design/autolathe/tool/saw
 	name = "saw"
 	build_path = /obj/item/weapon/tool/saw
