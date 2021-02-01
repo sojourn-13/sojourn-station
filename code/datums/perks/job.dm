@@ -369,8 +369,8 @@
 	desc = "When it comes to surgery most in your field are experts, while you may not know the more advanced medical procedures you can perform surgery with ease."
 
 /datum/perk/job/bolt_reflect
-	name = "Bolt Action Rilfe Trainning"
-	desc = "Through your training with bolt action rifles and repeaters, after firing you will always open the bolt reflectively."
+	name = "Bolt Action Rifle Trainning"
+	desc = "Through your training with bolt action rifles and repeaters, after firing you will always chamber a new round instantly."
 
 /datum/perk/job/jingle_jangle
 	name = "Key Smith"
