@@ -8,12 +8,16 @@
 	designs = list(
 		/datum/design/autolathe/tool/crowbar_onestar,
 		/datum/design/autolathe/tool/combi_driver_onestar,
-		/datum/design/autolathe/tool/jackhammer_onestar,
-		/datum/design/autolathe/tool/drill_onestar,
 		/datum/design/autolathe/tool/weldertool_onestar,
+		/datum/design/autolathe/tool/onestar_saw,
+		/datum/design/autolathe/tool/multitool/multitool_onestar = 2,
 		/datum/design/autolathe/tool/hammer_onestar = 2,
 		/datum/design/autolathe/tool/omni_surgery_onestar = 2,
+		/datum/design/autolathe/tool/onestar_pliers = 2,
 		/datum/design/autolathe/tool/pickaxe_onestar,
+		/datum/design/autolathe/tool/onestar_shovel,
+		/datum/design/autolathe/tool/jackhammer_onestar,
+		/datum/design/autolathe/tool/drill_onestar,
 		/datum/design/autolathe/part/greyson/ai = 3,
 	)
 
@@ -45,7 +49,6 @@
 	designs = list(
 		/datum/design/autolathe/clothing/iron_lock_security_armor,
 	)
-
 
 // Excelsior We also replace "name" for spawning reasons
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior

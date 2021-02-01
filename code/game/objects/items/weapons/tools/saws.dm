@@ -19,6 +19,17 @@
 	icon_state = "bs_metal_saw"
 	tool_qualities = list(QUALITY_SAWING = 100, QUALITY_CUTTING = 100, QUALITY_WIRE_CUTTING = 100)
 
+/obj/item/weapon/tool/saw/onestar_saw
+	name = "greyson positronic saw"
+	desc = "A rather robust hand saw for cutting down trees quickly and cleanly."
+	icon_state = "one_star_metal_saw"
+	force = WEAPON_FORCE_PAINFUL
+	tool_qualities = list(QUALITY_SAWING = 50, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 25)
+	degradation = 0.6
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 2)
+	max_upgrades = 2
+	workspeed = 1.4
+
 /obj/item/weapon/tool/saw/improvised
 	name = "choppa"
 	desc = "An improvised saw made of twisted, wicked metal. The serrated blade, with ample space for tool mods, is great for cutting."
