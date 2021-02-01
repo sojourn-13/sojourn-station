@@ -333,7 +333,7 @@
 	amount = 5
 
 //Does not stun, only blinds, but has area of effect.
-/obj/item/ammo_casing/shotgun/flash
+/obj/item/ammo_casing/shotgun/illumination
 	name = "flash shell"
 	desc = "A chemical shell used to signal distress or provide illumination."
 	icon_state = "fshell"
@@ -341,7 +341,7 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
 	maxamount = 5
 
-/obj/item/ammo_casing/shotgun/flash/prespawned
+/obj/item/ammo_casing/shotgun/illumination/prespawned
 	amount = 5
 
 /obj/item/ammo_casing/rocket

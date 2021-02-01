@@ -83,7 +83,7 @@
 	/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 800,
 	/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber = 350,
 	/obj/item/ammo_magazine/light_rifle_257/rubber = 150,
-	/obj/item/ammo_magazine/ammobox/shotgun/flashshells = 400,
+	/obj/item/ammo_magazine/ammobox/shotgun/flash = 400,
 	/obj/item/ammo_magazine/ammobox/shotgun/blanks = 50,
 	/obj/item/clothing/accessory/holster = 150,
 	/obj/item/weapon/storage/pouch/pistol_holster =150,
