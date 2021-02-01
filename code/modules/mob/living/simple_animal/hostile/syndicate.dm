@@ -6,7 +6,6 @@
 	icon_dead = "syndicate_dead" //TODO: That icon doesn't exist
 	icon_gib = "syndicate_gib"
 	speak_chance = 5
-	turns_per_move = 5
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "hits"
@@ -36,6 +35,8 @@
 	environment_smash = 1
 	faction = "syndicate"
 	status_flags = CANPUSH
+	leather_amount = 0
+	bones_amount = 0
 
 /mob/living/simple_animal/hostile/syndicate/death(gibbed, deathmessage = "<b>[src]</b> drops its weapon as it explodes in a shower of gore when their death implant detonates!")
 	..()
@@ -234,12 +235,11 @@
 	icon_dead = "syndicate_stormtrooper_dead" //TODO: That icon doesn't exist
 	icon_gib = "syndicate_gib"
 	speak_chance = 5
-	turns_per_move = 5
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "hits"
-	speed = 2
-	move_to_delay = 1
+	speed = 4
+	move_to_delay = 2
 	turns_per_move = 1
 	stop_automated_movement_when_pulled = 0
 	maxHealth = 350
@@ -270,7 +270,7 @@
 	..()
 	set_light(l_range = 4, l_power = 3)
 
-/mob/living/simple_animal/hostile/elitemercenary/death(gibbed, deathmessage = "<b>[src]</b> drops its weapon as it explodes in a shower of gore when their death implant detonates!")
+/mob/living/simple_animal/hostile/elitemercenary/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
 	..()
 	new /obj/effect/gibspawner/human(src.loc)
 	playsound(src, 'sound/effects/Explosion1.ogg', 75, 1, -3)

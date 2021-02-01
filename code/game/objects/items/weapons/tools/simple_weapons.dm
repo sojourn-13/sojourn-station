@@ -81,11 +81,11 @@
 	desc = "Chop the wood to fuel the fire."
 	icon_state = "woodsmanaxe0"
 	wielded_icon = "woodsmanaxe1"
-	force = WEAPON_FORCE_PAINFUL
-	force_unwielded = WEAPON_FORCE_PAINFUL
+	force = WEAPON_FORCE_DANGEROUS
+	force_unwielded = WEAPON_FORCE_DANGEROUS
 	force_wielded = WEAPON_FORCE_ROBUST
 	armor_penetration = ARMOR_PEN_SHALLOW
-	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 25)
+	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 30)
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = null
 
@@ -187,13 +187,14 @@
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 15)
 
 /obj/item/weapon/tool/knife/neotritual
-	name = "Absolutism ritual knife"
+	name = "absolutism ritual knife"
 	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "neot-knife"
 	item_state = "knife"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
 	force = WEAPON_FORCE_PAINFUL
+	tool_qualities = list(QUALITY_CUTTING = 30)
 	max_upgrades = 3
 
 /obj/item/weapon/tool/knife/tacknife
@@ -219,6 +220,18 @@
 	force = WEAPON_FORCE_NORMAL
 	backstab_damage = 15
 	armor_penetration = ARMOR_PEN_DEEP
+
+/obj/item/weapon/tool/knife/dagger/skinning
+	name = "skinning knife"
+	desc = "A sharp tool that is the pride and joy of the local hunting lodge, while not suitable as a weapon its blade is edged and as finely cutting as any laser scalpel. Considered sacred by \
+	the hunters that normally carry them."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "skinning"
+	item_state = "skinning"
+	armor_penetration = ARMOR_PEN_DEEP
+	throwforce = WEAPON_FORCE_WEAK
+	armor_penetration = ARMOR_PEN_SHALLOW
+	tool_qualities = list(QUALITY_CUTTING = 50)
 
 /obj/item/weapon/tool/knife/dagger/ceremonial
 	name = "ceremonial dagger"

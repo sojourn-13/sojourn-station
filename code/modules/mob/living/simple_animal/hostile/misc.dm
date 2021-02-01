@@ -21,6 +21,8 @@
 	meat_amount = 3
 	mob_size = 10
 	resistance = 8
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/diyaab
 	name = "diyaab"
@@ -44,6 +46,8 @@
 	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 3
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/shantak
 	name = "shantak"
@@ -66,6 +70,8 @@
 	mob_size = 5
 	resistance = 3
 	meat_amount = 6 //Pigs are known for giving meat
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/yithian
 	name = "yithian"
@@ -125,6 +131,8 @@
 	break_stuff_probability = 4
 	faction = "pond"
 	var/attack_reagent = "toxin"
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/snake/AttackingTarget()
 	. = ..()
@@ -136,7 +144,7 @@
 /mob/living/simple_animal/hostile/tengbrute
 	name = "tengolo brute"
 	desc = "One of the local fauna native to the planet, peaceful except around insects and insectile creatures. This is one of the males, it looks like a four-eyed monkey mixed with a warthog."
-	faction = "neutral"
+	faction = "tengo"
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "fatshouter"
 	icon_living = "fatshouter"
@@ -159,11 +167,15 @@
 	meat_amount = 3
 	mob_size = 10
 	resistance = 5
+	leather_amount = 4
+	bones_amount = 4
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/tengstalker
 	name = "tengolo stalker"
 	desc = "One of the local fauna native to the planet, peaceful except around insects and insectile creatures. This is one of the males, it looks like a large cat-like creature."
-	faction = "neutral"
+	faction = "tengo"
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "bigcat"
 	icon_living = "bigcat"
@@ -187,11 +199,15 @@
 	mob_size = 10
 	resistance = 5
 	pixel_x = -16
+	leather_amount = 4
+	bones_amount = 4
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/tengcharge
 	name = "tengolo charger"
 	desc = "One of the local fauna native to the planet, peaceful except around insects and insectile creatures. This is one of the females, it looks like an elk mixed with a warthog."
-	faction = "neutral"
+	faction = "tengo"
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "rafama"
 	icon_living = "rafama"
@@ -214,6 +230,10 @@
 	meat_amount = 3
 	mob_size = 10
 	resistance = 3
+	leather_amount = 4
+	bones_amount = 4
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/helldiver
 	name = "hell diver"
@@ -251,6 +271,10 @@
 	nutrition_step = 0.1 //nutrition lost per tick and per step, calculated from mob_size, 0.2 is a fallback
 	stop_automated_movement_when_pulled = 1 //or just drag it around since it doesn't mind.
 	break_stuff_probability = 0
+	leather_amount = 6
+	bones_amount = 6
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/helldiver_tooth)
 
 /mob/living/simple_animal/hostile/helldiver/FindTarget()
 	. = ..()
@@ -284,3 +308,34 @@
 	meat_amount = 3
 	mob_size = 20
 	resistance = 15
+
+/mob/living/simple_animal/hostile/retaliate/tahca
+	name = "tahca"
+	desc = "A cervine that is, surprisingly, native to the planet that resembles a two headed deer. Despite what what one expect, while docile, it is more than willing to fight if attacked. Hunters value \
+	these beasts for their antlers, both as trophies of value and for medicine."
+	faction = "radstag"
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "radstag"
+	icon_living = "radstag"
+	icon_dead = "radstag_dead"
+	response_help = "pets the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	move_to_delay = 3
+	maxHealth = 120
+	health = 120
+	speed = 1
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	attacktext = "gored"
+	attack_sound = 'sound/weapons/bite.ogg'
+	speak_chance = 5
+	speak = list("Hruuugh!","Hrunnph")
+	emote_see = list("bleats.","clacks its horns.","stomps.")
+	emote_hear = list("gronks.")
+	meat_amount = 3
+	leather_amount = 6
+	bones_amount = 6
+	mob_size = 20
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/tahca_antler)

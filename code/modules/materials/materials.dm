@@ -682,6 +682,8 @@ var/list/name_to_material
 	ignition_point = T0C+232
 	melting_point = T0C+300
 	flags = MATERIAL_PADDING
+	sheet_singular_name = "ball"
+	sheet_plural_name = "balls"
 /*
 /material/resin
 	name = "resin"
@@ -721,6 +723,16 @@ var/list/name_to_material
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+300
 	melting_point = T0C+300
+
+/material/bone
+	name = MATERIAL_BONE
+	icon_colour = "#EDE1D1"
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	flags = MATERIAL_PADDING
+	ignition_point = T0C+300
+	melting_point = T0C+300
+	sheet_singular_name = "bit"
+	sheet_plural_name = "bits"
 
 /material/carpet
 	name = "carpet"

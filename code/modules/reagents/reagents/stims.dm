@@ -458,3 +458,45 @@
 
 /datum/reagent/stim/hacker/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_PROF, STIM_TIME, "hacker_w")
+
+//Animal chemicals, these are not created through chemistry but messing with animals, be it butchering or milking. Yes, I'm aware of the irony, shush. -Kaz
+/datum/reagent/stim/tatonka_milk
+	name = "Tatonka Milk"
+	id = "tatonka_milk"
+	description = "Milk from the two headed mutant cows known as tatonka, usually owned and bred by the hunting lodge. While not useful for cooking it does provide a powerful non-addictive stimulant \
+	heavily favored for its invigorating properties, provided one does not overdose on it."
+	taste_description = "cream"
+	reagent_state = LIQUID
+	color = "#DFDFDF"
+	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = 10
+	addiction_chance = 0
+
+/datum/reagent/stim/tatonka_milk/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "lodge_milk")
+
+/datum/reagent/stim/tatonka_milk/overdose(mob/living/carbon/M, alien)
+	if(prob(5 - (3 * M.stats.getMult(STAT_TGH))))
+		M.Stun(rand(1,5))
+	M.bodytemperature += TEMPERATURE_DAMAGE_COEFFICIENT
+
+/datum/reagent/stim/tangu_milk
+	name = "Tangu Milk"
+	id = "tangu_milk"
+	description = "Milk from the two headed mutant cows known as tangu, usually owned and bred by the hunting lodge. Tangu are a rare mutant strand of tatonka with richer produce as a result."
+	taste_description = "thick cream"
+	reagent_state = LIQUID
+	color = "#AEE5E4"
+	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = 15
+	addiction_chance = 0
+
+/datum/reagent/stim/tangu_milk/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "lodge_milk")
+
+/datum/reagent/stim/tangu_milk/overdose(mob/living/carbon/M, alien)
+	if(prob(5 - (3 * M.stats.getMult(STAT_TGH))))
+		M.Stun(rand(1,5))
+	M.bodytemperature += TEMPERATURE_DAMAGE_COEFFICIENT

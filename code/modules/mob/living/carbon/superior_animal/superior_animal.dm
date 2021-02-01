@@ -61,6 +61,11 @@
 
 	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
 	var/meat_amount = 3
+	//Lodge related products
+	var/leather_amount = 0 //The amount of leather sheets dropped.
+	var/bones_amount = 0 //The amount of bone sheets dropped.
+	var/has_special_parts = FALSE //var for checking during the butcher process.
+	var/special_parts = list() //Any special body parts.
 
 	var/melee_damage_lower = 0
 	var/melee_damage_upper = 10

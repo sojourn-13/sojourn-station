@@ -16,6 +16,8 @@
 	pixel_x = -16
 	pixel_y = -16
 	meat_amount = 8
+	leather_amount = 8 //The amount of leather sheets dropped.
+	bones_amount = 6 //The amount of bone sheets dropped.
 
 /mob/living/simple_animal/hostile/render
 	name = "primal render"
@@ -48,7 +50,11 @@
 	meat_amount = 6
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
-	mob_size =  3  // The same as Hivemind Tyrant
+	mob_size = 3
+	leather_amount = 16
+	bones_amount = 20
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/render_claw,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/render/FindTarget()
 	. = ..()
@@ -75,6 +81,7 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	meat_amount = 8
+	leather_amount = 24 //The amount of leather sheets dropped.
 
 /mob/living/simple_animal/hostile/panther
 	name = "panther"
@@ -99,6 +106,10 @@
 	pixel_x = -16
 	pixel_y = 0
 	meat_amount = 4 //Kitty no!
+	leather_amount = 6 //The amount of leather sheets dropped.
+	bones_amount = 6 //The amount of bone sheets dropped.
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/retaliate/gaslamp
 	name = "gaslamp"
@@ -146,6 +157,8 @@
 	melee_damage_upper = 25
 	old_y = -16
 	pixel_y = -16
+	leather_amount = 10 //The amount of leather sheets dropped.
+	bones_amount = 10 //The amount of bone sheets dropped.
 
 /mob/living/simple_animal/hostile/retaliate/hippo
 	name = "hippo"
@@ -158,7 +171,8 @@
 	turns_per_move = 5
 	see_in_dark = 3
 	speed = 5
-
+	leather_amount = 16 //The amount of leather sheets dropped.
+	bones_amount = 16 //The amount of bone sheets dropped.
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
@@ -202,7 +216,9 @@
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 	alpha = 30
 	faction = "stalker"
-	mob_size =  3  // The same as Hivemind Tyrant
+	mob_size = 3
+	leather_amount = 0 //No actual skin
+	bones_amount = 30 //Lots of bone-like chitin
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
 	..()
@@ -243,12 +259,13 @@
 	aggro_vision_range = 16
 	stop_automated_movement_when_pulled = 1
 	pixel_x = -16
-	move_to_delay = 4
 	speak_emote = list("looses a rumbling croak.", "grumbles quietly.")
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "pond"
-	mob_size =  3  // The same as Hivemind Tyrant
+	mob_size = 3
 	wander = 1
+	leather_amount = 20
+	bones_amount = 10
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
 	..()
@@ -265,3 +282,68 @@
 	..()
 	icon_state = "leaper"
 	icon_living = "leaper"
+
+/mob/living/simple_animal/hostile/hell_pig
+	name = "hell pig"
+	desc = "The venerable evolution of a tengolo charger, morphing into a violent destructive beast hostile to all but its own berserk kind. Hell pigs represent the end of a chargers life \
+	as upon reaching a certain age they undergo a metamorphisis that turns them into blood thirsty monsters who rampage until slain."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "hellpig"
+	icon_living = "hellpig"
+	icon_dead = "hellpig_dead"
+	melee_damage_lower = 30
+	melee_damage_upper = 45
+	maxHealth = 1100
+	health = 1100
+	move_to_delay = 4
+	turns_per_move = 4
+	vision_range = 16
+	aggro_vision_range = 16
+	stop_automated_movement_when_pulled = 1
+	pixel_x = -16
+	speak_emote = list("emits a challenging roar!", "stomps the ground angrily.")
+	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
+	faction = "tengolo_berserker"
+	mob_size =  3  // The same as Hivemind Tyrant
+	wander = 1
+	leather_amount = 20
+	bones_amount = 10
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+
+/mob/living/simple_animal/hostile/hell_pig/wendigo
+	name = "wendigo"
+	desc = "The venerable evolution of a tengolo stalker, morphing into a violent destructive beast hostile to all but its own berserk kind. The wendigo is a violent transformation that involves \
+	much of the flesh and bone of a tengolo painfully and rapidly mutating, driving the creature insane and violent."
+	icon_state = "wendigo"
+	icon_living = "wendigo"
+	icon_dead = "wendigo_dead"
+	melee_damage_lower = 25
+	melee_damage_upper = 35
+	maxHealth = 800
+	health = 800
+	move_to_delay = 2
+	turns_per_move = 6
+	speak_emote = list("snarls!", "jerks erratically.")
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+
+/mob/living/simple_animal/hostile/hell_pig/slepnir
+	name = "slepnir"
+	desc = "The venerable evolution of a tengolo charger, morphing into a violent destructive beast hostile to all but its own berserk kind. The slepnir, unlike its other berserk kin, only attacks \
+	those who draw close, but once its ire is drawn it becomes a relentless pursuer. More disturbingly, upon closer examination one would note its new coloration is the result of his normally \
+	blue-ish hide having sloughed off to expose the reddish-brown muscle beneath."
+	icon_state = "slepnir"
+	icon_living = "slepnir"
+	icon_dead = "slepnir_dead"
+	melee_damage_lower = 30
+	melee_damage_upper = 35
+	maxHealth = 700
+	health = 700
+	vision_range = 8
+	aggro_vision_range = 16
+	move_to_delay = 1
+	turns_per_move = 8
+	speak_emote = list("stomps its hooves!", "whinnies!")
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/slepnir_hoof,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)

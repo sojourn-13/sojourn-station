@@ -946,6 +946,56 @@
 	if(prob(10 * effect_multiplier))
 		M.vomit()
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Meds made from animals. Unga.
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/datum/reagent/medicine/tangu_extract
+	name = "Tangu Extract"
+	id = "tangu_extract"
+	description = "The extracted juices from a tangu horn, a powerful multi-purpose healing chemical derived from bone marrow and tangu blood."
+	taste_description = "vitamins"
+	reagent_state = LIQUID
+	color = "#BF0000"
+	scannable = 1
+	overdose = REAGENTS_OVERDOSE
+
+/datum/reagent/medicine/tangu_extract/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.adjustOxyLoss(-1.2 * effect_multiplier)
+	M.heal_organ_damage(0.6 * effect_multiplier, 0.6 * effect_multiplier)
+	M.adjustToxLoss(-0.6 * effect_multiplier)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+
+/datum/reagent/medicine/tangu_extract/overdose(var/mob/living/carbon/M, var/alien)
+	. = ..()
+	M.adjustToxLoss(5)
+	M.adjustBrainLoss(1)
+	if(M.losebreath < 15)
+		M.losebreath++
+
+/datum/reagent/medicine/clucker_extract
+	name = "Clucker Extract"
+	id = "clucker_extract"
+	description = "A weak painkiller derived from the juices found in compressed clucker feathers."
+	taste_description = "sickness"
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	overdose = 60
+	scannable = 1
+	metabolism = 0.02
+
+/datum/reagent/medicine/clucker_extract/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 80, TRUE)
+
+/datum/reagent/medicine/clucker_extract/overdose(mob/living/carbon/M, alien)
+	..()
+	M.druggy = max(M.druggy, 2)
+
+/datum/reagent/medicine/spaceacillin/tahcacillin
+	name = "Tahcacillin"
+	id = "tahcacillin"
+	description = "An all-purpose antiviral agent derived from tahca horns crushed into a blood mixed extract."
+	constant_metabolism = TRUE
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Racial chemicals used for perks.

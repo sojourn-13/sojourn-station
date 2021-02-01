@@ -423,3 +423,13 @@
 	icon_state = "flash"
 	projectile_type = /obj/item/projectile/bullet/grenade/flash
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 0.5, MATERIAL_GLASS = 0.5)
+
+//Snowflake ammo
+/obj/item/ammo_casing/crossbow_bolts
+	name = "crossbow bolt"
+	desc = "A finely made bolt designed for a crossbow."
+	icon_state = "bolt"
+	caliber = CAL_CROSSBOW
+	projectile_type = /obj/item/projectile/bullet/crossbow_bolt
+	matter = list(MATERIAL_STEEL = 1)
+	maxamount = 10

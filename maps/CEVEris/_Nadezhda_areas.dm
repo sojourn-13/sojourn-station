@@ -229,7 +229,7 @@
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen13.ogg', 'sound/ambience/ambigen14.ogg', 'sound/ambience/ambimalf.ogg')
 	dynamic_lighting = TRUE
-	requires_power = 0
+	requires_power = FALSE
 	flags = AREA_FLAG_RAD_SHIELDED
 
 /area/nadezhda/outside/one_star/fo_outside
@@ -283,6 +283,20 @@
 
 /area/nadezhda/outside/forest/river_forest_dark
 	name = "River Forest"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
+/area/nadezhda/outside/forest/hunting_lodge
+	name = "Hunting Lodge"
+	icon_state = "forest"
+
+/area/nadezhda/outside/forest/hunting_lodge_dark
+	name = "Hunting Lodge"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
+/area/nadezhda/outside/forest/hunting_lodge_shed_dark
+	name = "Lodge Barn"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
@@ -1355,6 +1369,10 @@ area/nadezhda/medical/medbaymeeting
 	name = "Disposal and Delivery"
 	icon_state = "erisred"
 
+/area/nadezhda/quartermaster/underground_to_surface_disposal
+	name = "Disposal surface access"
+	icon_state = "erisblue"
+	requires_power = FALSE
 
 /area/nadezhda/quartermaster/hangarsupply
 	name = "Supply Shuttle Hangar"
@@ -1538,6 +1556,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/pros/shuttle
 	name = "\improper Shuttle Hangar"
 	icon_state = "erisgreen"
+	dynamic_lighting = FALSE
 
 /area/nadezhda/pros/proelav
 	name = "\improper Lonestar Surface Elevator"

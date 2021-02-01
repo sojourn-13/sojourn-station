@@ -49,7 +49,7 @@
 	poison_type = "zombiepowder"
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen
-	name = "spider queen"
+	name = "empress spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one is a huge chittering brood queen with large fangs of dripping venom."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "spider_queen"
