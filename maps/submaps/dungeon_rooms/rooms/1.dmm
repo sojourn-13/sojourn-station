@@ -23,10 +23,19 @@
 /area/crawler)
 "g" = (
 /obj/machinery/light/small,
+/obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/crawler)
 "h" = (
 /obj/random/mob/roomba,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/crawler)
+"N" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/crawler)
+"T" = (
+/obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/crawler)
 
@@ -43,7 +52,7 @@ a
 "}
 (2,1,1) = {"
 a
-c
+T
 c
 c
 c
@@ -54,24 +63,24 @@ a
 "}
 (3,1,1) = {"
 a
-c
+N
 c
 c
 c
 c
 f
-c
+N
 a
 "}
 (4,1,1) = {"
 a
-c
+T
 d
 c
 h
 c
 c
-c
+T
 a
 "}
 (5,1,1) = {"
@@ -131,35 +140,35 @@ b
 "}
 (10,1,1) = {"
 a
-c
+T
 h
 c
 c
 c
 c
-c
+T
 a
 "}
 (11,1,1) = {"
 a
+N
 c
 c
 c
 c
 c
-c
-c
+N
 a
 "}
 (12,1,1) = {"
 a
+T
 c
 c
 c
 c
 c
-c
-c
+T
 a
 "}
 (13,1,1) = {"

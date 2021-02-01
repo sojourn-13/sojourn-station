@@ -20,7 +20,9 @@
 				/obj/item/clothing/mask/breath = 20,
 				/obj/item/clothing/mask/breath/medical = 5,
 				/obj/item/clothing/mask/gas = 20,
+				/obj/item/clothing/mask/gas/germanmask = 15,
 				/obj/item/clothing/mask/costume/job/clown = 10,
+				/obj/item/clothing/mask/costume/job/clown/joker = 10,
 				/obj/item/clothing/mask/gas/ihs = 10,
 				/obj/item/clothing/mask/gas/tactical = 2,
 				/obj/item/clothing/mask/gas/voice = 2,
@@ -51,6 +53,7 @@
 				/obj/item/clothing/suit/armor/heavy/riot = 4,
 				/obj/item/clothing/suit/armor/laserproof = 2,
 				/obj/item/clothing/suit/armor/vest/ironhammer  = 10,
+				/obj/item/clothing/suit/storage/vest = 5,
 				/obj/item/clothing/suit/armor/platecarrier  = 10,
 				/obj/item/clothing/suit/armor/platecarrier/green  = 10,
 				/obj/item/clothing/suit/armor/platecarrier/tan  = 10,
@@ -59,6 +62,7 @@
 				/obj/item/clothing/suit/armor/vest/detective  = 10,
 				/obj/item/clothing/suit/armor/vest/handmade = 20,
 				/obj/item/clothing/suit/space/void/SCAF = 1,
+				/obj/item/clothing/suit/storage/vest/merc = 1,
 				/obj/item/clothing/suit/space/void/odst/red = 1,
 				/obj/item/clothing/suit/space/void/odst/blue = 1,
 				/obj/item/clothing/suit/space/void/odst/orange = 1,
@@ -216,20 +220,24 @@
 
 /obj/random/cloth/helmet/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/head/helmet = 5,
-				/obj/item/clothing/head/helmet/riot = 5,
+				/obj/item/clothing/head/helmet/faceshield/riot = 5,
 				/obj/item/clothing/head/helmet/ballistic = 5,
 				/obj/item/clothing/head/helmet/ballistic/green = 5,
 				/obj/item/clothing/head/helmet/ballistic/tan = 5,
+				/obj/item/clothing/head/helmet/laserproof = 2,
 				/obj/item/clothing/head/helmet/handmade = 5,
 				/obj/item/clothing/head/helmet/steelpot = 8,
-				/obj/item/clothing/head/helmet/altyn = 2,
-				/obj/item/clothing/head/helmet/altyn/brown = 2,
-				/obj/item/clothing/head/helmet/altyn/black = 2,
-				/obj/item/clothing/head/helmet/altyn/maska = 2,
+				/obj/item/clothing/head/helmet/generic_full = 5,
+				/obj/item/clothing/head/helmet/faceshield/altyn = 2,
+				/obj/item/clothing/head/helmet/faceshield/altyn/brown = 2,
+				/obj/item/clothing/head/helmet/faceshield/altyn/black = 2,
+				/obj/item/clothing/head/helmet/faceshield/altyn/maska = 2,
+				/obj/item/clothing/head/helmet/mercenary = 2,
 				/obj/item/clothing/head/helmet/space/void/odst/red = 1,
 				/obj/item/clothing/head/helmet/space/void/odst/blue = 1,
 				/obj/item/clothing/head/helmet/space/void/odst/orange = 1,
-				/obj/item/clothing/head/helmet/space/void/SCAF = 1))
+				/obj/item/clothing/head/helmet/space/void/SCAF = 1,
+				/obj/item/clothing/head/helmet/night_vision_helm = 0.5))
 
 /obj/random/cloth/helmet/low_chance
 	name = "low chance random helmet"

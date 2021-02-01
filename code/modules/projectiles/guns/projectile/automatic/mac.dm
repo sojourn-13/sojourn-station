@@ -6,19 +6,19 @@
 	item_state = "mac"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_PISTOL
-	can_dual = 1
+	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
-	price_tag = 2000
+	price_tag = 1000
 	damage_multiplier = 0.9
 	recoil_buildup = 5
-	silencer_type = /obj/item/weapon/silencer
+	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	one_hand_penalty = 5 //smg level
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_600,
 		BURST_8_ROUND,
 		SEMI_AUTO_NODELAY
@@ -36,6 +36,10 @@
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
 	icon_state = iconstring
 	set_item_state(itemstring)
 
@@ -52,20 +56,20 @@
 	item_state = "croon"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_PISTOL
-	can_dual = 1
+	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
-	price_tag = 2000
+	price_tag = 1000
 	damage_multiplier = 0.75
 	recoil_buildup = 2
-	silencer_type = null
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	one_hand_penalty = 5 //smg level
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_600,
 		list(mode_name="fuller auto", mode_type = /datum/firemode/automatic, fire_delay=0.5, icon="auto"),
 		)

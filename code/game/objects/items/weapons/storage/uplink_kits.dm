@@ -25,7 +25,7 @@
 
 		if("guns")
 			new /obj/item/weapon/gun/projectile/revolver(src)
-			new /obj/item/ammo_magazine/slmagnum(src)
+			new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
 			new /obj/item/weapon/card/emag(src)
 			new /obj/item/weapon/plastique(src)
 			new /obj/item/weapon/plastique(src)
@@ -125,7 +125,7 @@
 
 /obj/item/weapon/storage/box/syndie_kit/chameleon
 	name = "chameleon kit"
-	desc = "Comes with all the clothes you need to impersonate most people.  Acting lessons sold seperately. The box itself is made of plasteel."
+	desc = "Comes with all the clothes you need to impersonate most people. Acting lessons sold seperately. The box itself is made of plasteel."
 	matter = list(MATERIAL_PLASTEEL = 1)
 
 /obj/item/weapon/storage/box/syndie_kit/chameleon/populate_contents()
@@ -164,7 +164,7 @@
 	new /obj/item/device/spy_monitor(src)
 
 /obj/item/weapon/storage/box/syndie_kit/dartgun
-	name  = "dartgun kit"
+	name = "dartgun kit"
 	desc = "Just like a mosquito bite."
 
 /obj/item/weapon/storage/box/syndie_kit/dartgun/populate_contents()
@@ -177,8 +177,8 @@
 
 /obj/item/weapon/storage/box/syndie_kit/pistol/populate_contents()
 	new /obj/item/weapon/gun/projectile/silenced(src)
-	new /obj/item/ammo_magazine/magnum/hv(src)
-	new /obj/item/ammo_magazine/magnum/hv(src)
+	new /obj/item/ammo_magazine/magnum_40/hv(src)
+	new /obj/item/ammo_magazine/magnum_40/hv(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/mask/balaclava(src)
 
@@ -189,8 +189,8 @@
 
 /obj/item/weapon/storage/box/syndie_kit/hpistol/populate_contents()
 	new /obj/item/weapon/gun/projectile/lamia/akurra(src)
-	new /obj/item/ammo_magazine/kurtz/hv(src)
-	new /obj/item/ammo_magazine/kurtz/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/mask/balaclava(src)
 
@@ -200,7 +200,7 @@
 
 /obj/item/weapon/storage/box/syndie_kit/c20r/populate_contents()
 	new /obj/item/weapon/gun/projectile/automatic/c20r(src)
-	new /obj/item/ammo_magazine/smg(src)
+	new /obj/item/ammo_magazine/smg_35(src)
 
 /obj/item/weapon/storage/box/syndie_kit/revolver
 	name = "revolver box"
@@ -208,7 +208,7 @@
 
 /obj/item/weapon/storage/box/syndie_kit/revolver/populate_contents()
 	new /obj/item/weapon/gun/projectile/revolver/mistral(src)
-	new /obj/item/ammo_magazine/slmagnum(src)
+	new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
 
 /obj/item/weapon/storage/box/syndie_kit/sts
 	name = "assault rifle box"
@@ -218,8 +218,8 @@
 
 /obj/item/weapon/storage/box/syndie_kit/sts/populate_contents()
 	new /obj/item/weapon/gun/projectile/automatic/sts/lrifle(src)
-	new /obj/item/ammo_magazine/lrifle(src)
-	new /obj/item/ammo_magazine/lrifle_short(src)
+	new /obj/item/ammo_magazine/light_rifle_257(src)
+	new /obj/item/ammo_magazine/light_rifle_257_short(src)
 	new /obj/item/clothing/suit/storage/toggle/leather/blackjacket(src)
 
 /obj/item/weapon/storage/box/syndie_kit/pug

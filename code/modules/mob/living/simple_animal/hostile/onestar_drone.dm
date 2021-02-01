@@ -28,13 +28,24 @@
 	var/screen_type = "os" //if someone decides to make the drones for something aside from OS and have different desgins
 	var/tool = "laser"
 	var/tooltype = "os"
+	//Drops
+	var/drop1 = /obj/item/weapon/scrap_lump
+	var/drop2 = null
+	var/cell_drop = null
 
 /mob/living/simple_animal/hostile/onestar_custodian/New()
 	. = ..()
 	marks_type = pick("green", "blue", "pink", "orange", "cyan", "red", "os")
 	screen_type = pick("green", "os_red", "yellow", "cyan", "red", "os")
 	update_icon()
-
+	if(prob(5))
+		drop2 = /obj/item/weapon/soap
+	if(prob(10)) //Can override soap
+		drop2 = /obj/item/weapon/reagent_containers/spray/cleaner
+	if(prob(20)) //Can override soap or spacecleaner
+		drop2 = /obj/item/weapon/reagent_containers/glass/bucket
+	if(prob(10))
+		cell_drop = /obj/item/weapon/cell/medium
 
 /mob/living/simple_animal/hostile/onestar_custodian/update_icon()
 	. = ..()
@@ -59,10 +70,17 @@
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
+	if(drop1)
+		new drop1 (src.loc)
+		drop1 = null
+	if(drop2)
+		new drop2 (src.loc)
+		drop2 = null
+	if(cell_drop)
+		new cell_drop (src.loc)
+		cell_drop = null
 	qdel(src)
 	return
-
-
 
 /mob/living/simple_animal/hostile/onestar_custodian/chef
 	name = "Greyson Positronic Service Drone"
@@ -73,6 +91,16 @@
 	projectiletype = /obj/item/projectile/flamer_lob
 	ranged = 1
 
+/mob/living/simple_animal/hostile/onestar_custodian/chef/New()
+	. = ..()
+	if(prob(5))
+		drop2 = /obj/item/weapon/oddity/common/old_radio
+	if(prob(10)) //Can override radio
+		drop2 = /obj/random/rations
+	if(prob(20)) //Can override radio or snack
+		drop2 = /obj/random/booze 
+	if(prob(10))
+		cell_drop = /obj/item/weapon/cell/medium
 
 /mob/living/simple_animal/hostile/onestar_custodian/chef/adjustFireLoss(var/amount)
 	if(status_flags & GODMODE)
@@ -86,7 +114,19 @@
 	tool = "laser"
 	tooltype = "os_red"
 	screen_type = "yellow"
+	drop2 = /obj/random/tool/advanced/onestar/low_chance
 	projectiletype = /obj/item/projectile/beam/drone
 	ranged = 1
 	melee_damage_lower = 7
 	melee_damage_upper = 15
+
+/mob/living/simple_animal/hostile/onestar_custodian/engineer/New()
+	. = ..()
+	if(prob(5))
+		drop2 = /obj/random/tool_upgrade/rare
+	if(prob(10)) //Can override tool mod
+		drop2 = /obj/random/material_rare
+	if(prob(20)) //Can override rool mod or materials
+		drop2 = /obj/random/pack/tech_loot/onestar
+	if(prob(10))
+		cell_drop = /obj/item/weapon/cell/medium/high

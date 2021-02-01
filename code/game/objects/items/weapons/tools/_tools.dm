@@ -22,6 +22,7 @@
 	var/use_power_cost = 0	//For tool system, determinze how much power tool will drain from cells, 0 means no cell needed
 	var/obj/item/weapon/cell/cell = null
 	var/suitable_cell = null	//Dont forget to edit this for a tool, if you want in to consume cells
+	var/passive_power_cost = 1 //Energy consumed per process tick while active
 
 	var/use_fuel_cost = 0	//Same, only for fuel. And for the sake of God, DONT USE CELLS AND FUEL SIMULTANEOUSLY.
 	var/passive_fuel_cost = 0.03 //Fuel consumed per process tick while active
@@ -41,7 +42,7 @@
 	//Variables used for tool degradation
 	var/degradation = 0.8 //If nonzero, the health of the tool decreases by this amount after each tool operation
 	health = 0		// Health of a tool.
-	max_health = 1000
+	max_health = 500
 	var/health_threshold  = 40 // threshold in percent on which tool health stops dropping
 	var/lastNearBreakMessage = 0 // used to show messages that tool is about to break
 	var/isBroken = FALSE
@@ -49,9 +50,9 @@
 
 	var/toggleable = FALSE	//Determines if it can be switched ON or OFF, for example, if you need a tool that will consume power/fuel upon turning it ON only. Such as welder.
 	var/switched_on = FALSE	//Curent status of tool. Dont edit this in subtypes vars, its for procs only.
-	var/switched_on_qualities = null	//This var will REPLACE tool_qualities when tool will be toggled on.
+	var/switched_on_qualities = list()	//This var will REPLACE tool_qualities when tool will be toggled on.
 	var/switched_on_force = null
-	var/switched_off_qualities = null	//This var will REPLACE tool_qualities when tool will be toggled off. So its possible for tool to have diferent qualities both for ON and OFF state.
+	var/switched_off_qualities = list()	//This var will REPLACE tool_qualities when tool will be toggled off. So its possible for tool to have diferent qualities both for ON and OFF state.
 	var/create_hot_spot = FALSE	 //Set this TRUE to ignite plasma on turf with tool upon activation
 	var/glow_color = null	//Set color of glow upon activation, or leave it null if you dont want any light
 	var/last_tooluse = 0 //When the tool was last used for a tool operation. This is set both at the start of an operation, and after the doafter call
@@ -71,15 +72,13 @@
 		cell = new suitable_cell(src)
 
 	if(use_fuel_cost)
-		var/datum/reagents/R = new/datum/reagents(max_fuel)
-		reagents = R
-		R.my_atom = src
-		R.add_reagent("fuel", max_fuel)
+		create_reagents(max_fuel)
+		reagents.add_reagent("fuel", max_fuel)
 
-	if (use_stock_cost)
+	if(use_stock_cost)
 		stock = max_stock
 
-	if (max_health)
+	if(max_health)
 		health = max_health
 
 	update_icon()
@@ -126,8 +125,12 @@
 			sparks.set_up(3, 0, get_turf(src))
 			sparks.start()
 
-		if (passive_fuel_cost)
+		if (use_fuel_cost && passive_fuel_cost)
 			if(!consume_fuel(passive_fuel_cost))
+				turn_off()
+
+		if(use_power_cost && passive_power_cost)
+			if(!cell?.checked_use(passive_power_cost))
 				turn_off()
 
 
@@ -148,49 +151,9 @@
 		update_icon()
 		return
 
-	//Removing upgrades from a tool. Very difficult, but passing the check only gets you the perfect result
-	//You can also get a lesser success (remove the upgrade but break it in the process) if you fail
-	//Using a laser guided stabilised screwdriver is recommended. Precision mods will make this easier
-	if (item_upgrades.len && C.has_quality(QUALITY_SCREW_DRIVING))
-		var/list/possibles = item_upgrades.Copy()
-		possibles += "Cancel"
-		var/obj/item/weapon/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
-		if (toremove == "Cancel")
-			return
-
-		if (C.use_tool(user = user, target =  src, base_time = WORKTIME_SLOW, required_quality = QUALITY_SCREW_DRIVING, fail_chance = FAILCHANCE_CHALLENGING, required_stat = STAT_MEC))
-			//If you pass the check, then you manage to remove the upgrade intact
-			to_chat(user, SPAN_NOTICE("You successfully remove [toremove] while leaving it intact."))
-			SEND_SIGNAL(toremove, COMSIG_REMOVE, src)
-			refresh_upgrades()
-			return 1
-		else
-			//You failed the check, lets see what happens
-			if (prob(50))
-				//50% chance to break the upgrade and remove it
-				to_chat(user, SPAN_DANGER("You successfully remove [toremove], but destroy it in the process."))
-				SEND_SIGNAL(toremove, COMSIG_REMOVE, src)
-				QDEL_NULL(toremove)
-				refresh_upgrades()
-				return 1
-			else if (degradation) //Because robot tools are unbreakable
-				//otherwise, damage the host tool a bit, and give you another try
-				to_chat(user, SPAN_DANGER("You only managed to damage [src], but you can retry."))
-				adjustToolHealth(-(5 * degradation), user) // inflicting 4 times use damage
-				refresh_upgrades()
-				return 1
 	if(isBroken)
 		to_chat(user, SPAN_WARNING("\The [src] is broken."))
 		return
-	.=..()
-
-/obj/item/clothing/suit/armor/attackby(obj/item/C, mob/living/user)
-	//Removing upgrades from armor. Very difficult, but passing the check only gets you the perfect result
-	//You can also get a lesser success (remove the upgrade but break it in the process) if you fail
-	//Using a laser guided stabilised screwdriver is recommended. Precision mods will make this easier
-	if (item_upgrades.len && C.has_quality(QUALITY_SCREW_DRIVING))
-		to_chat(user, SPAN_DANGER("You cannot remove armor upgrades once they've been installed!"))
-		return 1
 	.=..()
 
 //Turning it on/off
@@ -302,8 +265,18 @@
 //Simple form ideal for basic use. That proc will return TRUE only when everything was done right, and FALSE if something went wrong, ot user was unlucky.
 //Editionaly, handle_failure proc will be called for a critical failure roll.
 /obj/item/proc/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
+	if (health)//Low health on a tool increases failure chance. Scaling up as it breaks further.
+		if (health > max_health * 0.80)//100-80% is normal operation
+		else if (health > max_health * 0.40)
+			fail_chance += 5//80-40% is -5 precision
+		else if (health > max_health * 0.20)
+			fail_chance += 10//40-20% is -10 precision
+		else if (health > max_health * 0.10)
+			fail_chance += 20//20-10% is -20 precision
+		else
+			fail_chance += 40//below 10% is -40 precision. Good luck!
 	var/obj/item/weapon/tool/T
-	if (istool(src))
+	if(istool(src))
 		T = src
 		T.tool_in_use = TRUE
 
@@ -386,8 +359,14 @@
 			volume = 3
 			extrarange = -6
 
+		else if (T && T.item_flags & LOUD)
+			volume = 500
+			extrarange = 10
+
 		var/soundfile
-		if(forced_sound)
+		if (T && T.item_flags & HONKING)
+			soundfile = WORKSOUND_HONK
+		else if(forced_sound)
 			soundfile = forced_sound
 		else
 			soundfile = worksound
@@ -668,35 +647,48 @@
 
 //We are cheking if our item got required qualities. If we require several qualities, and item posses more than one of those, we ask user to choose how that item should be used
 /obj/item/proc/get_tool_type(mob/living/user, list/required_qualities, atom/use_on, datum/callback/CB)
-	var/list/L = required_qualities & tool_qualities
-
-	if(!L.len)
-		return FALSE
-
-	var/return_quality
-	if(L.len > 1)
-		for(var/i in L)
-			L[i] = image(icon = 'icons/mob/radial/tools.dmi', icon_state = i)
-		return_quality = show_radial_menu(user, use_on ? use_on : user, L, tooltips = TRUE, require_near = TRUE, custom_check = CB)
-	else
-		return_quality = L[1]
-
-	if(!return_quality)
+	if(!tool_qualities) //This is not a tool, or does not have tool qualities
 		return
 
-	return return_quality
+	var/list/L = required_qualities & tool_qualities
+
+	if(!(L.len))	//If the tool has none of the required qualities, the list is empty and thus we exit out of the proc
+		return
+
+	if(L.len == 1)
+		return L[1]
+
+	for(var/i in L)
+		L[i] = image(icon = 'icons/mob/radial/tools.dmi', icon_state = i)
+	return show_radial_menu(user, use_on ? use_on : user, L, tooltips = TRUE, require_near = TRUE, custom_check = CB)
+
 
 /obj/item/weapon/tool/proc/turn_on(var/mob/user)
+	if(use_power_cost)
+		if(!cell)
+			to_chat(user, SPAN_WARNING("\The [src] has no cell!"))
+			return FALSE
+		if(cell.charge < use_power_cost)
+			to_chat(user, SPAN_WARNING("\The [src] does not have enough power!"))
+			return FALSE
+	if(user)
+		to_chat(user, SPAN_NOTICE("\The [src] turns on."))
 	switched_on = TRUE
 	tool_qualities = switched_on_qualities
 	if (!isnull(switched_on_force))
 		force = switched_on_force
+		if(wielded)
+			force *= 1.3
 	if(glow_color)
 		set_light(l_range = 1.7, l_power = 1.3, l_color = glow_color)
+	START_PROCESSING(SSobj, src)
 	update_icon()
 	update_wear_icon()
+	return TRUE
 
 /obj/item/weapon/tool/proc/turn_off(var/mob/user)
+	if(user)
+		to_chat(user, SPAN_NOTICE("\The [src] turns off."))
 	switched_on = FALSE
 	STOP_PROCESSING(SSobj, src)
 	tool_qualities = switched_off_qualities
@@ -723,6 +715,14 @@
 	//We will always use a minimum of 0.5 second worth of resources
 	if (timespent < 5)
 		timespent = 5
+
+	if(use_power_cost && isrobot(user))
+		var/mob/living/silicon/robot/R = user
+		if(R.cell)
+			var/cost = use_power_cost
+			if(R.cell.charge >= cost)
+				R.cell.use(cost)
+			return TRUE //we always use cell power, no need to check anything more
 
 	if(use_power_cost)
 		if (!cell?.checked_use(use_power_cost*timespent))
@@ -775,7 +775,7 @@
 
 //Returns the amount of fuel in tool
 /obj/item/weapon/tool/proc/get_fuel()
-	return reagents.get_reagent_amount("fuel")
+	return ( reagents ? reagents.get_reagent_amount("fuel") : 0 )
 
 /obj/item/weapon/tool/proc/consume_fuel(var/volume)
 	if (get_fuel() >= volume)
@@ -825,8 +825,8 @@
 			var/delta = reagents.total_volume - reagents.maximum_volume
 
 			reagents.trans_to_turf(get_turf(src), delta)
-			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, spilling its contents onto the floor!"), \
-								SPAN_WARNING("You remove the extended fuel tank, spilling its contents onto the floor!"))
+			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, its contents spilling onto the floor!"), \
+								SPAN_WARNING("You remove the extended fuel tank, its contents spilling onto the floor!"))
 	return
 
 /obj/item/weapon/tool/examine(mob/user)
@@ -942,7 +942,7 @@
 		return TRUE
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
+		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
 		if(!E)
 			return
 		var/safety = H.eyecheck()
@@ -964,17 +964,6 @@
 		if(safety<FLASH_PROTECTION_MAJOR)
 			if(E.damage > 10)
 				to_chat(user, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
-
-			if (E.damage >= E.min_broken_damage)
-				to_chat(H, SPAN_DANGER("You go blind!"))
-				H.sdisabilities |= BLIND
-			else if (E.damage >= E.min_bruised_damage)
-				to_chat(H, SPAN_DANGER("You go blind!"))
-				H.eye_blind = 5
-				H.eye_blurry = 5
-				H.disabilities |= NEARSIGHTED
-				spawn(100)
-					H.disabilities &= ~NEARSIGHTED
 
 
 /obj/item/weapon/tool/attack(mob/living/M, mob/living/user, var/target_zone)

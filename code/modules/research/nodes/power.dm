@@ -106,6 +106,7 @@
 	cost = 400
 
 	unlocks_designs = list(	/datum/design/research/circuit/solarcontrol,
+							/datum/design/research/circuit/camp,
 							/datum/design/research/circuit/pacman
 						)
 
@@ -122,7 +123,8 @@
 	required_tech_levels = list()
 	cost = 600
 
-	unlocks_designs = list(/datum/design/research/circuit/superpacman)
+	unlocks_designs = list(/datum/design/research/circuit/superpacman,
+							/datum/design/research/circuit/diesel)
 
 /datum/technology/advanced_power_generation
 	name = "Basic Fusion Power"
@@ -141,7 +143,7 @@
 
 /datum/technology/fusion_power_generation
 	name = "Fusion Power Generation"//"R-UST Mk. 8"
-	desc = "R-UST Tokamak MK 8"//"R-UST Mk. 8"
+	desc = "Using and harvesting fussion levels of power."//"R-UST Mk. 8" - get on that?
 	tech_type = RESEARCH_POWERSTORAGE
 
 	x = 0.6
@@ -150,9 +152,11 @@
 
 	required_technologies = list(/datum/technology/advanced_power_generation)
 	required_tech_levels = list()
+	unlocks_designs = list(/datum/design/research/circuit/miss, /datum/design/research/structure/solar)
+
 	cost = 2000//5000
 
-	unlocks_designs = list()//"fusion_core_control", "fusion_fuel_compressor", "fusion_fuel_control", "gyrotron_control", "fusion_core", "fusion_injector", "gyrotron")
+	//unlocks_designs = list()"fusion_core_control", "fusion_fuel_compressor", "fusion_fuel_control", "gyrotron_control", "fusion_core", "fusion_injector", "gyrotron")
 
 /datum/technology/omega_power
 	name = "Fusion Based Power"

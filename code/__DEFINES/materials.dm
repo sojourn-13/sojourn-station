@@ -15,6 +15,7 @@
 #define MATERIAL_IRON "iron"
 #define MATERIAL_CARDBOARD "cardboard"
 #define MATERIAL_CLOTH "cloth"
+#define MATERIAL_SILK "silk"
 #define MATERIAL_LEATHER "leather"
 #define MATERIAL_MARBLE "marble"
 #define MATERIAL_MHYDROGEN "mhydrogen"
@@ -30,6 +31,7 @@
 #define MATERIAL_RESIN "resin"
 #define MATERIAL_CARPET "carpet"
 #define MATERIAL_BIOMATTER "biomatter"
+#define MATERIAL_COMPRESSED_MATTER "compressed matter"
 
 #define MATERIAL_LIST list(\
 	MATERIAL_STEEL,\
@@ -46,6 +48,7 @@
 	MATERIAL_IRON,\
 	MATERIAL_CARDBOARD,\
 	MATERIAL_CLOTH,\
+	MATERIAL_SILK,\
 	MATERIAL_LEATHER,\
 	MATERIAL_MARBLE,\
 	MATERIAL_MHYDROGEN,\
@@ -60,7 +63,8 @@
 	MATERIAL_VOXALLOY,\
 	MATERIAL_RESIN,\
 	MATERIAL_CARPET,\
-	MATERIAL_BIOMATTER)
+	MATERIAL_BIOMATTER,\
+	MATERIAL_COMPRESSED_MATTER)
 
 #define PLASTEEL_COLOUR "#8e9799"
 //Color to exactly match concept art #b0bcbe

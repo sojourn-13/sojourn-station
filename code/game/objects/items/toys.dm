@@ -19,10 +19,11 @@
 
 
 /obj/item/toy
-	throwforce = 0
+	throwforce = NONE
 	throw_speed = 4
 	throw_range = 20
-	force = 0
+	matter = list(MATERIAL_PLASTIC = 3)
+	force = NONE
 
 
 /*
@@ -34,11 +35,11 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "waterballoon-e"
 	item_state = "balloon-empty"
+	preloaded_reagents = list()
 
 /obj/item/toy/junk/balloon/New()
-	var/datum/reagents/R = new/datum/reagents(10)
-	reagents = R
-	R.my_atom = src
+	create_reagents(10)
+	..()
 
 /obj/item/toy/junk/balloon/attack(mob/living/carbon/human/M as mob, mob/user as mob)
 	return
@@ -333,14 +334,9 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "sunflower"
 	item_state = "sunflower"
+	preloaded_reagents = list("water" = 10)
 	var/empty = 0
 	flags
-
-/obj/item/toy/weapon/waterflower/New()
-	var/datum/reagents/R = new/datum/reagents(10)
-	reagents = R
-	R.my_atom = src
-	R.add_reagent("water", 10)
 
 /obj/item/toy/weapon/waterflower/attack(mob/living/carbon/human/M as mob, mob/user as mob)
 	return
@@ -509,7 +505,7 @@
 /*Civilian*/
 
 /obj/item/toy/figure/character/civilian/assistant
-	name = "colonist action figure"
+	name = "assistant action figure"
 	desc = "The lowly but dutiful helper. Civilians 1/7."
 	icon_state = "assistant"
 	toysay = "Greytide, stationwide!"
@@ -657,6 +653,7 @@
 /obj/item/toy/figure/character/technomancer/ce
 	name = "guild master figure"
 	desc = "The overseer of all construction and repair. Artificer 1/2."
+	icon_state = "ce"
 	toysay = "Hurry up and wire the solars."
 
 /obj/item/toy/figure/character/technomancer/engineer
@@ -690,6 +687,82 @@
 	desc = "Some crimes can't be solved by force alone. Marshal 4/4."
 	icon_state = "detective"
 	toysay = "Hmm, insulated glove fibers..."
+
+// Eris bobbleheads
+/obj/item/toy/figure/character/bobblehead/excelsior
+	name = "\"Excelsior\" figurine"
+	desc = "A curiously unbranded figurine of a Space Soviet, adorned in their iconic armor. There is still a price tag on the back of the base, six-hundred credits, people collect these things?"
+	toysay = "\"Ever Upward!\""
+	icon_state = "excelsior"
+
+/obj/item/toy/figure/character/bobblehead/serbian
+	name = "mercenary figurine"
+	desc = "A curiously unbranded figurine, the olive drab a popular pick for many independent Serbian mercenary outfits. Rocket launcher not included."
+	icon_state = "serbian"
+	toysay = "\"Vodka!\""
+
+/obj/item/toy/figure/character/bobblehead/acolyte
+	name = "acolyte figurine"
+	desc = "Church of Absolute \"New Faith Life\" brand figurine of a vector, hooded both physically and spiritually from that which would lead them astray."
+	icon_state = "acolyte"
+	toysay = "\"Brotherhood.\""
+
+/obj/item/toy/figure/character/bobblehead/carrion
+	name = "carrion figurine"
+	desc = "A curiously unbranded figurine depicting a grotesque head of flesh, the human features seem almost underdeveloped, its skull bulging outwards, mouth agape with torn flesh. \
+	Whoever made this certainly knew how to thin their paints."
+	icon_state = "carrion"
+	toysay = "\"Meat...\""
+
+/obj/item/toy/figure/character/bobblehead/roach
+	name = "roach figurine"
+	desc = "Upon the base is an erected \"Roachman\", its arms outstretched, with more additional roach hands besides them. This is likely the one thing most universally recognized in popular media. \
+	The plaque is covered in hundreds of scratch marks, eliminating any further knowledge of it or its brand."
+	icon_state = "roach"
+	toysay = "\"I AM NOT A CHT'MANT DAMN IT!\""
+
+/obj/item/toy/figure/character/bobblehead/vagabond
+	name = "colonist figurine"
+	desc = "A Lonestar \"Space Life\" brand figurine showcasing the form of a random colonist, wearing one of the colony uniforms and an orange bandana. \
+	Must of been custom-made to commemorate the colonies many colonists."
+	icon_state = "vagabond"
+	toysay = "\"What do you mean get a job?\""
+
+/obj/item/toy/figure/character/bobblehead/rooster
+	name = "rooster figurine"
+	desc = "\"Space Vice\" brand figurine, there is no further manufacturer information. It's a man wearing a rooster mask and a varsity jacket with the letter \"B\" emblazoned on the front."
+	toysay = "\"Do you like hurting other people?\""
+	icon_state = "rooster"
+
+/obj/item/toy/figure/character/bobblehead/barking_dog
+	name = "barking dog figurine"
+	desc = "A metal soldier with the mask of a hound stands upon the base, the plaque seems smeared with caked grime, but despite this you make out a rare double-quote."
+	toysay = "\"A dog barks on its master's orders, lest its pack runs astray. Whatever the task, the grim dog mask would tell you that your life was done.\""
+	icon_state = "barking_dog"
+
+/obj/item/toy/figure/character/bobblehead/red_soldier
+	name = "red soldier figurine"
+	desc = "A curiously unbranded figurine of a red soldier fighting in the tides of war, their humanity hidden by a gas mask."
+	toysay = "\"Why do we fight? To win the war, of course.\""
+	icon_state = "red_soldier"
+
+/obj/item/toy/figure/character/bobblehead/metacat
+	name = "meta-cat figurine"
+	desc = "A curiously unbranded figurine depicting an anthropomorphic cat in a voidsuit, the small plaque claims this to be one of two."
+	toysay = "\"Always in silent pair, through distance or unlikelihood.\""
+	icon_state = "metacat"
+
+/obj/item/toy/figure/character/bobblehead/shitcurity
+	name = "shitcurity officer figurine"
+	desc = "A Lonestar \"Space Life\" brand figurine of a classic redshirt security employed in most space stations. Their belly distends out into an obvious beer gut, revealing no form of manufacturer bias what-so-ever."
+	toysay = "\"I joined just to kill people.\""
+	icon_state = "shitcurity"
+
+/obj/item/toy/figure/character/bobblehead/metro_patrolman
+	name = "metro patrolman figurine"
+	desc = "The plaque seems flaked with rust residue, \"London Metro\" brand it reads. The man wears some kind of enforcer's uniform, with the acronym \"VPP\" on their left shoulder and cap."
+	toysay = "\"Abandoned for escalation, the patrolman grumbles.\""
+	icon_state = "metro_patrolman"
 
 /*Discontinued*/
 

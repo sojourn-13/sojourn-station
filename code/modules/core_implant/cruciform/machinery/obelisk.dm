@@ -1,16 +1,14 @@
 /obj/machinery/power/nt_obelisk
 	name = "Absolutism obelisk"
-	desc = "The obelisk."
+	desc = "The obelisks of the church are said to protect and empower those bearing cruciforms, how it works is not truly known, perhaps it is faith?"
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	icon_state = "nt_obelisk"
-	//TODO:
-	//circuit = /obj/item/weapon/circuitboard/nt_obelisk
 
 	density = TRUE
 	anchored = TRUE
 	layer = 2.8
 
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 30
 	active_power_usage = 2500
 
@@ -25,6 +23,23 @@
 
 	var/static/stat_buff
 	var/list/currently_affected = list()
+
+/obj/machinery/power/nt_obelisk/eotp
+	name = "Eye of the Absolute"
+	desc = "An obelisk known as the eye, a powerful and difficult to build device that functions as the pinnacle of defense, in the name of god of course."
+	icon = 'icons/obj/eotp.dmi'
+
+	use_power = NO_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = 0
+
+	active = FALSE
+	area_radius = 9
+	damage = 40
+	max_targets = 10
+
+	nt_buff_power = 8
+	nt_buff_cd = 5
 
 /obj/machinery/power/nt_obelisk/Destroy()
 	for(var/i in currently_affected)
@@ -46,7 +61,7 @@
 	active = check_for_faithful(affected) || overrideFaithfulCheck
 	update_icon()
 	if(!active)
-		use_power = 1
+		use_power = IDLE_POWER_USE
 		for(var/obj/structure/burrow/burrow in affected)
 			if(burrow.obelisk_around == any2ref(src))
 				burrow.obelisk_around = null

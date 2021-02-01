@@ -4,7 +4,69 @@
 	related_stats = list(STAT_MEC)
 	time = 80
 
+/datum/craft_recipe/storage/plastic_bag
+	name = "plastic bag"
+	icon_state = "clothing"
+	result = /obj/item/weapon/storage/bag/plastic
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC)
+	)
+	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/storage/sheet_bag
+	name = "sheet snatcher"
+	result = /obj/item/weapon/storage/bag/sheetsnatcher
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20),
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60),
+	)
+	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/storage/ore_bag
+	name = "ore bag"
+	result = /obj/item/weapon/storage/bag/ore
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60),
+	)
+	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/storage/plant_bag
+	name = "plant bag"
+	result = /obj/item/weapon/storage/bag/produce
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60),
+	)
+	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/storage/chem_bag
+	name = "chemistry bag"
+	result = /obj/item/weapon/storage/bag/chemistry
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60),
+	)
+	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/box/adv
+	icon_state = "clothing"
+	avaliableToEveryone = FALSE
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60),
+	)
+	related_stats = list(STAT_COG)
+
 /datum/craft_recipe/box
+	category = "Storage"
 	name = "box"
 	result = /obj/item/weapon/storage/box
 	steps = list(
@@ -12,9 +74,35 @@
 	)
 	related_stats = list(STAT_COG)
 
+/datum/craft_recipe/box/adv/syringes
+	name = "box - syringes"
+	result = /obj/item/weapon/storage/box/syringes/empty
+	avaliableToEveryone = TRUE
+
+/datum/craft_recipe/box/adv/bodybags
+	name = "box - bodybags"
+	result = /obj/item/weapon/storage/box/bodybags/empty
+	avaliableToEveryone = TRUE
+
+/datum/craft_recipe/box/adv/condimentbottles
+	name = "box - condiment bottles"
+	result = /obj/item/weapon/storage/box/condimentbottles/empty
+	avaliableToEveryone = TRUE
+
+/datum/craft_recipe/box/adv/mixed_lights
+	name = "box - light storage"
+	result = /obj/item/weapon/storage/box/lights/mixed/empty
+	avaliableToEveryone = TRUE
+
+/datum/craft_recipe/box/adv/pillbottles
+	name = "box - pill bottles"
+	result = /obj/item/weapon/storage/box/pillbottles/empty
+	avaliableToEveryone = TRUE
+
 /datum/craft_recipe/storage/bookshelf
 	name = "book shelf"
 	result = /obj/structure/bookcase
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 	)
@@ -29,6 +117,7 @@
 /datum/craft_recipe/storage/coffin
 	name = "coffin"
 	result = /obj/structure/closet/coffin
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 	)

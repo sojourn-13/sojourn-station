@@ -1,12 +1,19 @@
+var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /* Simple object type, calls a proc when "stepped" on by something */
 
 /obj/effect/step_trigger
-	var/affect_ghosts = 0
+	var/affect_ghosts = 1
 	var/stopper = 1 // stops throwers
+	var/id = null			//id of this bump_teleporter.
+	var/id_target = null	//id of bump_teleporter which this moves you to.
 	invisibility = 101 // nope cant see this shit
 	anchored = 1
 
 /obj/effect/step_trigger/proc/Trigger(var/atom/movable/A)
+	for(var/obj/effect/step_trigger/ST in STEP_TELEPORTERS)
+		if(ST.id == src.id_target)
+			A.loc = ST.loc	//Teleport to location with correct id.
+			return
 	return 0
 
 /obj/effect/step_trigger/Crossed(H as mob|obj)
@@ -17,7 +24,13 @@
 		return
 	Trigger(H)
 
+/obj/effect/step_trigger/New()
+	..()
+	STEP_TELEPORTERS += src
 
+/obj/effect/step_trigger/Destroy()
+	STEP_TELEPORTERS -= src
+	return ..()
 
 /* Tosses things in a certain direction */
 
@@ -127,3 +140,136 @@
 		to_chat(M, "<span class='info'>[message]</span>")
 		if(once)
 			qdel(src)
+
+
+//Map teleporters, don't fuck with'em. These are basically dynamic versions of the bump teleporters for map functions so the coordinates are not hard coded. -Kaz
+//You should always make news ones of these when connecting maps in normal ways such as through stairs or cave entrances, its safer than hard coded map stuff.
+
+//Underground to stairs.
+/obj/effect/step_trigger/underground_to_transition_1_A
+	id = "underground_to_transition_1_A"
+	id_target = "underground_to_transition_2_A"
+
+/obj/effect/step_trigger/underground_to_transition_2_A
+	id = "underground_to_transition_2_A"
+	id_target = "underground_to_transition_1_A"
+
+/obj/effect/step_trigger/underground_to_transition_1_B
+	id = "underground_to_transition_1_B"
+	id_target = "underground_to_transition_2_B"
+
+/obj/effect/step_trigger/underground_to_transition_2_B
+	id = "underground_to_transition_2_B"
+	id_target = "underground_to_transition_1_B"
+
+//Surface to stairs.
+/obj/effect/step_trigger/surface_to_transition_1_A
+	id = "surface_to_transition_1_A"
+	id_target = "surface_to_transition_2_A"
+
+/obj/effect/step_trigger/surface_to_transition_2_A
+	id = "surface_to_transition_2_A"
+	id_target = "surface_to_transition_1_A"
+
+/obj/effect/step_trigger/surface_to_transition_1_B
+	id = "surface_to_transition_1_B"
+	id_target = "surface_to_transition_2_B"
+
+/obj/effect/step_trigger/surface_to_transition_2_B
+	id = "surface_to_transition_2_B"
+	id_target = "surface_to_transition_1_B"
+
+//Surface to forest
+/obj/effect/step_trigger/surface_to_forest_1_A
+	id = "surface_to_forest_1_A"
+	id_target = "surface_to_forest_2_A"
+
+/obj/effect/step_trigger/surface_to_forest_2_A
+	id = "surface_to_forest_2_A"
+	id_target = "surface_to_forest_1_A"
+
+/obj/effect/step_trigger/surface_to_forest_1_B
+	id = "surface_to_forest_1_B"
+	id_target = "surface_to_forest_2_B"
+
+/obj/effect/step_trigger/surface_to_forest_2_B
+	id = "surface_to_forest_2_B"
+	id_target = "surface_to_forest_1_B"
+
+//HuT to Gulag
+/obj/effect/step_trigger/hut_to_gulag_1_A
+	id = "hut_to_gulag_1_A"
+	id_target = "hut_to_gulag_2_A"
+
+/obj/effect/step_trigger/hut_to_gulag_2_A
+	id = "hut_to_gulag_2_A"
+	id_target = "hut_to_gulag_1_A"
+
+/obj/effect/step_trigger/hut_to_gulag_1_B
+	id = "hut_to_gulag_1_B"
+	id_target = "hut_to_gulag_2_B"
+
+/obj/effect/step_trigger/hut_to_gulag2_B
+	id = "hut_to_gulag_2_B"
+	id_target = "hut_to_gulag_1_B"
+
+//Monster cave to more beast caves
+/obj/effect/step_trigger/monster_to_beast_1_A
+	id = "monster_to_beast_1_A"
+	id_target = "monster_to_beast_2_A"
+
+/obj/effect/step_trigger/monster_to_beast_2_A
+	id = "monster_to_beast_2_A"
+	id_target = "monster_to_beast_1_A"
+
+/obj/effect/step_trigger/monster_to_beast_1_B
+	id = "monster_to_beast_1_B"
+	id_target = "monster_to_beast_2_B"
+
+/obj/effect/step_trigger/monster_to_beast_2_B
+	id = "monster_to_beast_2_B"
+	id_target = "monster_to_beast_1_B"
+
+//Greyson base to field offices
+/obj/effect/step_trigger/gbase_to_gfoffices_1_A
+	id = "gbase_to_gfoffices_1_A"
+	id_target = "gbase_to_gfoffices_2_A"
+
+/obj/effect/step_trigger/gbase_to_gfoffices_2_A
+	id = "gbase_to_gfoffices_2_A"
+	id_target = "gbase_to_gfoffices_1_A"
+
+//Prepper base to vault bunker
+/obj/effect/step_trigger/prepper_to_vbunker_1_A
+	id = "prepper_to_vbunker_1_A"
+	id_target = "prepper_to_vbunker_2_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_2_A
+	id = "prepper_to_vbunker_2_A"
+	id_target = "prepper_to_vbunker_1_A"
+
+//Ironhead compound to abandoned fortress
+/obj/effect/step_trigger/ironcompound_to_abandonedfortress_1_A
+	id = "ironcompound_to_abandonedfortress_1_A"
+	id_target = "ironcompound_to_abandonedfortress_2_A"
+
+/obj/effect/step_trigger/ironcompound_to_abandonedfortress_2_A
+	id = "ironcompound_to_abandonedfortress_2_A"
+	id_target = "ironcompound_to_abandonedfortress_1_A"
+
+//Swamp caves to river forest
+/obj/effect/step_trigger/swampcaves_to_riverforest_1_A
+	id = "swampcaves_to_riverforest_1_A"
+	id_target = "swampcaves_to_riverforest_2_A"
+
+/obj/effect/step_trigger/swampcaves_to_riverforest_2_A
+	id = "swampcaves_to_riverforest_2_A"
+	id_target = "swampcaves_to_riverforest_1_A"
+
+/obj/effect/step_trigger/swampcaves_to_riverforest_1_B
+	id = "swampcaves_to_riverforest_1_B"
+	id_target = "swampcaves_to_riverforest_2_B"
+
+/obj/effect/step_trigger/swampcaves_to_riverforest_2_B
+	id = "swampcaves_to_riverforest_2_B"
+	id_target = "swampcaves_to_riverforest_1_B"

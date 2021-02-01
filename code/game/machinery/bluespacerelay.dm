@@ -6,7 +6,7 @@
 
 	anchored = 1
 	density = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	circuit = /obj/item/weapon/circuitboard/bluespacerelay
 	var/on = 1
 
@@ -21,9 +21,9 @@
 
 
 /obj/machinery/bluespacerelay/update_icon()
-	if(on)
+	if(on && (icon_state != initial(icon_state)))
 		icon_state = initial(icon_state)
-	else
+	else if(icon_state != "[initial(icon_state)]_off")
 		icon_state = "[initial(icon_state)]_off"
 
 /obj/machinery/bluespacerelay/proc/update_power()

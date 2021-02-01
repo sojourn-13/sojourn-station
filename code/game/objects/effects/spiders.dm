@@ -5,7 +5,7 @@
 	icon = 'icons/effects/effects.dmi'
 	anchored = 1
 	density = 0
-	health = 15
+	health = 5
 
 //similar to weeds, but only barfed out by nurses manually
 /obj/effect/spider/ex_act(severity)
@@ -45,23 +45,60 @@
 		qdel(src)
 
 /obj/effect/spider/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
-	if(exposed_temperature > 300 + T0C)
+	if(exposed_temperature > T0C + 50) //Weak to fire, windows take T0C + 100.
 		health -= 5
 		healthCheck()
 
 /obj/effect/spider/stickyweb
-	health = 5
+	health = 1
 	icon_state = "stickyweb1"
+	var/silk_baring = TRUE
 	New()
 		if(prob(50))
 			icon_state = "stickyweb2"
+		if(prob(20) && silk_baring)
+			silk_baring = FALSE
 		..()
+
+/obj/effect/spider/stickyweb/chtmant
+	silk_baring = FALSE
+
+/obj/effect/spider/stickyweb/attackby(obj/item/I, mob/user)
+	if(!istype(user.loc, /turf))
+		return
+	if(!silk_baring)
+		to_chat(user, SPAN_NOTICE("You can not collect anything from these webs."))
+		qdel(src)
+		return
+	if(user.a_intent == I_HURT)
+		to_chat(user, SPAN_NOTICE("You remove the webs."))
+		qdel(src)
+		return
+	var/list/usable_qualities = list(QUALITY_WEAVING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_WEAVING)
+		to_chat(user, SPAN_NOTICE("You started to collecting the sticky webs into a ball of silk."))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_COG))
+		//Hard to mess up but takes some time
+			new /obj/item/stack/material/silk(get_turf(src), 1 ? 1 : 2)
+			to_chat(user, SPAN_NOTICE("You bundle up a ball of spider silk."))
+			qdel(src)
+			return
+	..()
+
+
+/obj/effect/spider/stickyweb/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(exposed_temperature > T0C + 25) //Webs are even weaker to fire
+		health -= 5
+		healthCheck()
 
 /obj/effect/spider/stickyweb/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0)) return 1
-	if(istype(mover, /mob/living/carbon/superior_animal/giant_spider))
-		return 1
-	else if(isliving(mover))
+	var/mob/M = mover
+	if(istype(M))
+		if(M.faction == "spiders")
+			return 1
+	if(isliving(mover))
 		var/mob/living/carbon/human/H = mover
 		if(H.stats.getPerk(PERK_SPIDER_FRIEND))
 			return 1
@@ -96,7 +133,7 @@
 /obj/effect/spider/eggcluster/Process()
 	amount_grown += rand(0,2)
 	if(amount_grown >= 100)
-		var/num = rand(2,5)
+		var/num = rand(1,3)
 		var/obj/item/organ/external/O = null
 		if(istype(loc, /obj/item/organ/external))
 			O = loc
@@ -220,7 +257,7 @@
 					break
 
 		if(amount_grown >= 100)
-			var/spawn_type = pick(typesof(/mob/living/carbon/superior_animal/giant_spider))
+			var/spawn_type = /obj/random/mob/spiders
 			new spawn_type(src.loc, src)
 			qdel(src)
 	else if(isorgan(loc))
@@ -248,12 +285,13 @@
 	desc = "Green squishy mess."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenshatter"
+	anchored = TRUE
 
 /obj/effect/spider/cocoon
 	name = "cocoon"
 	desc = "Something wrapped in silky spider web"
 	icon_state = "cocoon1"
-	health = 5
+	health = 3
 
 	var/is_large_cocoon
 
@@ -262,7 +300,7 @@
 	icon_state = pick("cocoon1","cocoon2","cocoon3")
 
 /obj/effect/spider/cocoon/proc/becomeLarge()
-	health = 20
+	health = 8
 	is_large_cocoon = 1
 	icon_state = pick("cocoon_large1","cocoon_large2","cocoon_large3")
 

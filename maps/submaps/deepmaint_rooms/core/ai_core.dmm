@@ -1,7 +1,7 @@
 "aa" = (/turf/simulated/floor/tiled/steel/bar_flat,/area/deepmaint)
 "ab" = (/turf/simulated/wall/r_wall,/area/deepmaint)
 "ac" = (/turf/simulated/floor/tiled/steel/bar_dance,/area/deepmaint)
-"ad" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/tiled/steel/bar_flat,/area/deepmaint)
+"ad" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/steel/bar_flat,/area/deepmaint)
 "ae" = (/obj/structure/catwalk,/obj/structure/disposalpipe/segment{dir = 4; icon_state = "pipe-c"},/turf/simulated/floor/plating/under,/area/deepmaint)
 "af" = (/obj/structure/catwalk,/obj/structure/disposalpipe/segment{icon_state = "pipe-s"; dir = 4},/turf/simulated/floor/plating/under,/area/deepmaint)
 "ag" = (/obj/structure/disposalpipe/segment{icon_state = "pipe-s"; dir = 4},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/deepmaint)
@@ -50,7 +50,7 @@
 "aX" = (/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/pack/gun_loot,/turf/simulated/floor/tiled/steel/bar_flat,/area/deepmaint)
 "aY" = (/obj/structure/disposalpipe/segment,/obj/structure/catwalk,/obj/random/junk,/turf/simulated/floor/plating/under,/area/deepmaint)
 "aZ" = (/obj/random/scrap/dense_even,/turf/simulated/floor/plating,/area/deepmaint)
-"ba" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/reinforced,/area/deepmaint)
+"ba" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/reinforced,/area/deepmaint)
 "bb" = (/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/pack/gun_loot,/obj/random/pack/gun_loot,/obj/machinery/light{dir = 8},/turf/simulated/floor/reinforced,/area/deepmaint)
 "bc" = (/obj/structure/disposalpipe/segment,/obj/structure/catwalk,/obj/random/scrap/dense_even,/turf/simulated/floor/plating/under,/area/deepmaint)
 "bd" = (/obj/random/junk,/obj/random/junk,/turf/simulated/floor/plating,/area/deepmaint)
@@ -63,7 +63,7 @@
 "bk" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel/bar_flat,/area/deepmaint)
 "bl" = (/obj/item/modular_computer/console/preset/command{icon_state = "console"; dir = 4},/turf/simulated/floor/tiled/steel/bar_dance,/area/deepmaint)
 "bm" = (/obj/item/modular_computer/console/preset/command{icon_state = "console"; dir = 8},/turf/simulated/floor/tiled/steel/bar_dance,/area/deepmaint)
-"bn" = (/obj/random/junk,/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/tiled/steel/bar_flat,/area/deepmaint)
+"bn" = (/obj/random/junk,/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/steel/bar_flat,/area/deepmaint)
 "bo" = (/obj/machinery/door/airlock/vault{icon_state = "door_locked"; locked = 1; name = "AI Core"},/turf/simulated/floor/tiled/steel/bar_dance,/area/space)
 
 (1,1,1) = {"

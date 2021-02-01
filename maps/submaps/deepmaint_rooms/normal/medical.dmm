@@ -7,11 +7,10 @@
 "g" = (/obj/random/medical/low_chance,/turf/simulated/floor/tiled/white/brown_platform,/area/deepmaint)
 "h" = (/turf/simulated/wall,/area/deepmaint)
 "i" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating,/area/deepmaint)
-"j" = (/mob/living/bot/medbot{on = 0},/turf/simulated/floor/tiled/white/brown_platform,/area/deepmaint)
+"j" = (/obj/random/cluster/xenomorphs,/turf/simulated/floor/tiled/white/brown_platform,/area/deepmaint)
 "k" = (/obj/structure/table/standard,/obj/random/surgery_tool,/obj/random/surgery_tool/low_chance,/turf/simulated/floor/tiled/white/panels,/area/deepmaint)
 "l" = (/obj/machinery/optable,/turf/simulated/floor/tiled/white/panels,/area/deepmaint)
 "m" = (/turf/simulated/floor/tiled/white/panels,/area/deepmaint)
-"n" = (/obj/random/cluster/roaches/low_chance,/turf/simulated/floor/tiled/white/brown_platform,/area/deepmaint)
 "o" = (/turf/simulated/floor/tiled/steel/techfloor_grid,/area/deepmaint)
 "p" = (/obj/structure/table/standard,/turf/simulated/floor/tiled/white/brown_perforated,/area/deepmaint)
 "q" = (/obj/structure/medical_stand,/turf/simulated/floor/tiled/white/brown_perforated,/area/deepmaint)
@@ -22,12 +21,12 @@
 aaaaaaaaaaa
 ahbbbcdeeha
 ahiiiiiiiha
-aafgaajaaaa
-aafaanaaaaa
+aafgajaaaaa
+aafaaaaaaaa
 ahiiiaiiiha
 ahkliailkha
 ahmmiaimmha
 ahhohahohha
-apqrsnsrqpa
+apqrsjsrqpa
 aaaaaaaaaaa
 "}

@@ -6,6 +6,7 @@
 	var/list/items = list(
 		/obj/item/weapon/material/shard = 5,
 		/obj/item/weapon/material/shard/shrapnel = 8,
+		/obj/item/weapon/scrap_lump = 1,
 		/obj/item/weapon/reagent_containers/pill/floorpill = 8,
 		/obj/item/stack/material/cardboard = 3,
 		/obj/item/weapon/storage/box/lights/mixed = 3,
@@ -21,6 +22,8 @@
 		/obj/item/trash/material/device = 5,
 		/obj/item/weapon/tool/tape_roll = 3,
 		/obj/item/weapon/phone = 2,
+		/obj/item/trash/gamerchips = 2,
+		/obj/item/trash/energybar = 2,
 		/obj/item/trash/candle = 1,
 		/obj/item/trash/candy = 1,
 		/obj/item/trash/candy/proteinbar = 1,

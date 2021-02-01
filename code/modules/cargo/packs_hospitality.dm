@@ -161,6 +161,8 @@
 					/obj/item/weapon/reagent_containers/food/condiment/flour,
 					/obj/item/weapon/reagent_containers/food/condiment/flour,
 					/obj/item/weapon/reagent_containers/food/condiment/flour,
+					/obj/item/weapon/reagent_containers/food/condiment/enzyme,
+					/obj/item/weapon/reagent_containers/food/condiment/sugar,
 					/obj/item/weapon/reagent_containers/food/drinks/milk,
 					/obj/item/weapon/reagent_containers/food/drinks/milk,
 					/obj/item/weapon/storage/fancy/egg_box,
@@ -223,4 +225,16 @@
 	cost = 800
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "pizza crate"
+	group = "Hospitality"
+
+/datum/supply_pack/hospitality_dispenser
+	name = "Hospitality Dispenser (Booze/Soda/Coffie Dispensers Boards)"
+	contains = list(/obj/item/weapon/circuitboard/chemical_dispenser/coffee_master,
+					/obj/item/weapon/circuitboard/chemical_dispenser/beer,
+					/obj/item/weapon/circuitboard/chemical_dispenser/soda,
+					/obj/item/weapon/storage/box/drinkingglasses,
+					/obj/item/weapon/storage/box/drinkingglasses)
+	cost = 850
+	containertype = /obj/structure/closet/crate
+	crate_name = "hospitality dispenser"
 	group = "Hospitality"

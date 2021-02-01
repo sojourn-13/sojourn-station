@@ -28,11 +28,11 @@
 
 	stat_modifiers = list(
 		STAT_MEC = 25,
-		STAT_COG = 40,
+		STAT_COG = 50,
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/selfmedicated, /datum/perk/surgical_master)
 
 	// TODO: enable after baymed
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -86,8 +86,8 @@
 
 	stat_modifiers = list(
 		STAT_MEC = 20,
-		STAT_COG = 30,
-		STAT_BIO = 20,
+		STAT_COG = 35,
+		STAT_BIO = 10,
 	)
 
 	description = "The Scientist is a researcher representing the Soteria Institute, standing at the frontier of human advancement.<br>\
@@ -129,11 +129,11 @@
 
 	stat_modifiers = list(
 		STAT_MEC = 30,
-		STAT_COG = 20,
+		STAT_COG = 25,
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/selfmedicated, /datum/perk/surgical_master)
 
 	description = "The Roboticist is a specialised scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
 	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\

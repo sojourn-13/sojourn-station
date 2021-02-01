@@ -20,6 +20,17 @@
 	build_path = /obj/machinery/power/port_gen/pacman/mrs
 	origin_tech = list(TECH_DATA = 3, TECH_POWER = 5, TECH_ENGINEERING = 5)
 
+/obj/item/weapon/circuitboard/pacman/camp
+	build_name = "CAMPMAN-type generator"
+	build_path = /obj/machinery/power/port_gen/pacman/camp
+	origin_tech = list(TECH_DATA = 1, TECH_POWER = 2, TECH_ENGINEERING = 3)
+
+/obj/item/weapon/circuitboard/pacman/miss
+	build_name = "MISSSPACMAN-type generator"
+	build_path = /obj/machinery/power/port_gen/pacman/miss
+	origin_tech = list(TECH_DATA = 4, TECH_POWER = 6, TECH_ENGINEERING = 6)
+
+
 /*
 /obj/item/weapon/circuitboard/diesel
 	build_name = "diesel generator"

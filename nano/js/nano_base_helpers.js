@@ -16,6 +16,39 @@ NanoBaseHelpers = function ()
 
 				return '';
 			},
+
+            // change ui styling to "excelsior mode"
+			excelsiorMode: function() {
+				$('body').css("background-color","#d0854c");
+				$('body').css("background-image","url('uiBackground-Excelsior.png')");
+				$('body').css("background-position","50% 0");
+				$('body').css("background-repeat","repeat-x");
+
+				$('#uiTitleFluff').css("background-image","url('uiTitleFluff-Excelsior.png')");
+				$('#uiTitleFluff').css("background-position","50% 50%");
+				$('#uiTitleFluff').css("background-repeat", "no-repeat");
+
+				return '';
+			},
+
+            // change ui styling to "carrion mode"
+			carrionMode: function() {
+				$('body').css("background-color","#230a04");
+				$('body').css("background-image","url('uiBackground-Carrion.png')");
+				$('body').css("background-position","centre");
+				$('body').css("background-repeat","repeat-x");
+				
+				return '';
+			},
+            // change ui styling to "meat mode"
+			meatMode: function() {
+				$('body').css("background-color","#7e050c");
+				$('body').css("background-image","url('uiBackground-Meat.png')");
+				$('body').css("background-position","centre");
+				$('body').css("background-repeat","repeat");
+
+				return '';
+			},
 			// Generate a Byond link
 			link: function( text, icon, parameters, status, elementClass, elementId) {
 

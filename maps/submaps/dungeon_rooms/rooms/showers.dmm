@@ -13,6 +13,8 @@
 "d" = (
 /obj/structure/closet/l3closet,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost/low_chance,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/crawler)
 "e" = (
@@ -39,6 +41,8 @@
 /obj/structure/closet/l3closet,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/floor,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost/low_chance,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/crawler)
 "k" = (

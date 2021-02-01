@@ -30,8 +30,8 @@
 	desc = "A heavy, powerful rig used by construction crews and mining corporations."
 	icon_state = "engineering_rig"
 	armor = list(
-		melee = 50,
-		bullet = 50,
+		melee = 40,
+		bullet = 30,
 		energy = 10,
 		bomb = 25,
 		bio = 100,
@@ -171,7 +171,7 @@ Advanced Voidsuit: Guild Master
 	armor = list(
 		melee = 30,
 		bullet = 20,
-		energy = 50,
+		energy = 40,
 		bomb = 90,
 		bio = 100,
 		rad = 100
@@ -262,8 +262,8 @@ Advanced Voidsuit: Guild Master
 	desc = "A security hardsuit designed for prolonged EVA in dangerous environments."
 	icon_state = "hazard_rig"
 	armor = list(
-		melee = 40,
-		bullet = 40,
+		melee = 30,
+		bullet = 30,
 		energy = 40,
 		bomb = 90,
 		bio = 100,

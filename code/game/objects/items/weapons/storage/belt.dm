@@ -95,6 +95,48 @@
 	new /obj/item/stack/cable_coil/random(src)
 	new /obj/item/weapon/tool/saw/improvised(src)
 
+/obj/item/weapon/storage/belt/utility/opifex
+	name = "opifex black tool webbing"
+	desc = "A black webbing made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for tools, limiting its versatility."
+	icon_state = "webbing_black"
+	item_state = "webbing_black"
+	storage_slots = 12
+
+/obj/item/weapon/storage/belt/utility/opifex/full/populate_contents()
+	new /obj/item/weapon/tool/crowbar/pneumatic(src)
+	new /obj/item/weapon/tool/hammer(src)
+	new /obj/item/weapon/tool/multitool/advanced(src)
+	new /obj/item/weapon/tool/saw/circular/advanced(src)
+	new /obj/item/weapon/tool/screwdriver/electric(src)
+	new /obj/item/stack/cable_coil/random(src)
+	new /obj/item/weapon/tool/shovel/power(src)
+	new /obj/item/weapon/tool/tape_roll/fiber(src)
+	new /obj/item/weapon/tool/weldingtool/advanced(src)
+	new /obj/item/weapon/tool/wirecutters/armature(src)
+	new /obj/item/weapon/tool/wrench/big_wrench(src)
+	new /obj/item/weapon/tool/knife/dagger(src)
+
+/obj/item/weapon/storage/belt/medical/opifex
+	name = "opifex black medical webbing"
+	desc = "A black webbing made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for medical supplies, limiting its versatility."
+	icon_state = "webbing_black"
+	item_state = "webbing_black"
+	storage_slots = 12
+
+/obj/item/weapon/storage/belt/medical/opifex/full/populate_contents()
+	new /obj/item/device/scanner/health(src)
+	new /obj/item/weapon/reagent_containers/syringe/large/hyperzine(src)
+	new /obj/item/weapon/reagent_containers/syringe/large/tricordrazine(src)
+	new /obj/item/weapon/reagent_containers/syringe/large/inaprovaline(src)
+	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
+	new /obj/item/weapon/storage/pill_bottle/prosurgeon(src)
+	new /obj/item/weapon/storage/pill_bottle/bicaridine(src)
+	new /obj/item/weapon/storage/pill_bottle/dermaline(src)
+	new /obj/item/weapon/storage/pill_bottle/dexalin_plus(src)
+	new /obj/item/weapon/storage/pill_bottle/antitox(src)
+	new /obj/item/bodybag/cryobag(src)
+	new /obj/item/weapon/extinguisher/mini(src)
+
 /obj/item/weapon/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
@@ -138,6 +180,14 @@
 		/obj/item/weapon/tool/hemostat,
 		/obj/item/weapon/reagent_containers/pill,
 		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/bodybag/cryobag,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses,
+		/obj/item/weapon/reagent_containers/blood,
+		/obj/item/taperoll/medical,
+		/obj/item/weapon/tool/crowbar,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses
 	)
 
 /obj/item/weapon/storage/belt/medical/emt
@@ -171,20 +221,72 @@
 		/obj/item/device/hailer,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/melee,
-		//obj/item/weapon/gun/projectile/mk58, //too big, use holster
+		/obj/item/weapon/tool/knife,
+		/obj/item/weapon/gun/projectile/mk58,
+		/obj/item/weapon/gun/energy/gun,
 		/obj/item/weapon/gun/projectile/clarissa,
 		/obj/item/weapon/gun/projectile/giskard,
-		//obj/item/weapon/gun/projectile/olivaw, //too big, use holster
-		//obj/item/weapon/gun/projectile/revolver/detective, //too big, use holster
+		/obj/item/weapon/gun/projectile/olivaw,
+		/obj/item/weapon/gun/projectile/revolver/detective,
 		/obj/item/weapon/gun/energy/gun/martin,
 		/obj/item/taperoll
 	)
+
+/obj/item/weapon/storage/belt/holding
+	name = "belt of holding"
+	desc = "The greatest in pants-supporting bluespace technology."
+	icon_state = "holdingbelt"
+	item_state = "holdingbelt"
+	storage_slots = 14
+	max_w_class = ITEM_SIZE_BULKY
+	max_storage_space = DEFAULT_HUGE_STORAGE * 1.25
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_GOLD = 6, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 3)
+	origin_tech = list(TECH_BLUESPACE = 4)
+
+/obj/item/weapon/storage/belt/holding/New()
+	..()
+	item_flags |= BLUESPACE
+	bluespace_entropy(4, get_turf(src))
+
+/obj/item/weapon/storage/belt/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(W.item_flags & BLUESPACE)
+		to_chat(user, SPAN_WARNING("The bluespace interfaces of the two devices conflict and malfunction, producing a loud explosion."))
+		if (ishuman(user))
+			var/mob/living/carbon/human/H = user
+			var/held = W.get_equip_slot()
+			if (held == slot_l_hand)
+				var/obj/item/organ/external/E = H.get_organ(BP_L_ARM)
+				E.droplimb(0, DROPLIMB_BLUNT)
+			else if (held == slot_r_hand)
+				var/obj/item/organ/external/E = H.get_organ(BP_R_ARM)
+				E.droplimb(0, DROPLIMB_BLUNT)
+		user.drop_item()
+		return
+	..()
 
 /obj/item/weapon/storage/belt/security/tactical
 	name = "professional tactical belt"
 	desc = "Can hold various military and security equipment, more so than a standard belt or web harness."
 	icon_state = "tactical"
 	storage_slots = 12
+
+/obj/item/weapon/storage/belt/security/tactical/opifex
+	name = "opifex tactical belt"
+	desc = "A black tactical belt made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for combat, limiting its versatility."
+
+/obj/item/weapon/storage/belt/security/tactical/opifex/full/populate_contents()
+	new /obj/item/weapon/reagent_containers/spray/pepper(src)
+	new /obj/item/weapon/tool/crowbar(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/weapon/gun/energy/gun(src)
+	new /obj/item/weapon/cell/medium/high(src)
+	new /obj/item/weapon/cell/medium/high(src)
+	new /obj/item/weapon/tool/knife/dagger/assassin(src)
+	new /obj/item/weapon/grenade/spawnergrenade/manhacks/opifex(src)
+	new /obj/item/weapon/grenade/spawnergrenade/manhacks/opifex(src)
+	new /obj/item/weapon/grenade/smokebomb(src)
+	new /obj/item/weapon/grenade/chem_grenade/teargas(src)
 
 /obj/item/weapon/storage/belt/security/neotheology
 	name = "tactical absolutism belt"

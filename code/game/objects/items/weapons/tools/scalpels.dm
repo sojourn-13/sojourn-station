@@ -11,6 +11,7 @@
 	worksound = WORKSOUND_HARD_SLASH
 	slot_flags = SLOT_EARS
 	throw_speed = WEAPON_FORCE_WEAK
+	max_health = 100
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -27,7 +28,7 @@
 
 /obj/item/weapon/tool/scalpel/laser
 	name = "laser scalpel"
-	desc = "A scalpel which uses a directed laser to slice instead of a blade, for more precise surgery while also cauterizing as it cuts."
+	desc = "A scalpel augmented with a directed laser, for more precise cutting while instantly searing bleeding cuts through laser cauterization."
 	icon_state = "scalpel_t5"
 	damtype = "fire"
 	force = WEAPON_FORCE_DANGEROUS

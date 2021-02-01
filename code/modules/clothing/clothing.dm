@@ -4,7 +4,7 @@
 	item_flags = DRAG_AND_DROP_UNEQUIP
 	var/flash_protection = FLASH_PROTECTION_NONE	// Sets the item's level of flash protection.
 	var/tint = TINT_NONE							// Sets the item's level of visual impairment tint.
-	var/list/species_restricted = null				// Only these species can wear this kit.
+	var/list/species_restricted						// Only these species can wear this kit.
 	var/gunshot_residue								// Used by forensics.
 	var/initial_name = "clothing"					// For coloring
 
@@ -105,13 +105,14 @@
 
 /obj/item/clothing/ui_data()
 	var/list/data = list()
-	if(armor.len)
+	var/list/armorlist = armor.getList()
+	if(armorlist.len)
 		var/list/armor_vals = list()
-		for(var/i in armor)
-			if(armor[i])
+		for(var/i in armorlist)
+			if(armorlist[i])
 				armor_vals += list(list(
 					"name" = i,
-					"value" = armor[i]
+					"value" = armorlist[i]
 					))
 		data["armor_info"] = armor_vals
 	if(body_parts_covered)
@@ -199,7 +200,7 @@
 	icon = 'icons/mob/screen1_Midnight.dmi'
 	icon_state = "blocked"
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
-	var/obj/item/master_item = null
+	var/obj/item/master_item
 
 /obj/item/clothing/ears/offear/New(var/obj/O)
 	name = O.name
@@ -319,6 +320,7 @@ BLIND     // can't see anything
 	var/wired = 0
 	var/clipped = 0
 	body_parts_covered = ARMS
+	armor = list(melee = 10, bullet = 0, energy = 15, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_GLOVES
 	attack_verb = list("challenged")
 
@@ -462,6 +464,7 @@ BLIND     // can't see anything
 	var/noslip = 0
 	var/module_inside = 0
 
+	armor = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	permeability_coefficient = 0.50
 	slowdown = SHOES_SLOWDOWN
 	force = 2
@@ -558,8 +561,8 @@ BLIND     // can't see anything
 
 /obj/item/clothing/shoes/update_icon()
 	cut_overlays()
-	if(holding)
-		add_overlay(image(icon, "[icon_state]_knife"))
+	//if(holding)
+	//	add_overlay(image(icon, "[icon_state]_knife"))
 	return ..()
 
 /obj/item/clothing/shoes/proc/handle_movement(var/turf/walking, var/running)

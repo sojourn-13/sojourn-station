@@ -143,3 +143,7 @@
 	display_name = "universal sling"
 	path = 	/obj/item/clothing/suit/sling
 	cost = 2
+
+/datum/gear/utility/ducttape
+	display_name = "duct tape"
+	path = /obj/item/weapon/tool/tape_roll

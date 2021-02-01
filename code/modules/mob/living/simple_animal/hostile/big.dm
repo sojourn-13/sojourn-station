@@ -23,6 +23,7 @@
 	icon = 'icons/mob/deathclaw.dmi'
 	icon_state = "deathclaw"
 	icon_living = "deathclaw"
+	icon_rest = "deathclaw_sleep"
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
 	speed = 18
@@ -47,6 +48,7 @@
 	meat_amount = 6
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
+	mob_size =  3  // The same as Hivemind Tyrant
 
 /mob/living/simple_animal/hostile/render/FindTarget()
 	. = ..()
@@ -131,13 +133,13 @@
 
 /mob/living/simple_animal/hostile/carp/greatwhite
 	name = "great white carp"
-	desc = "A very rare breed of carp- and a very aggressive one."
+	desc = "A very rare breed of carp and a very aggressive one."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "megacarp"
 	icon_dead = "megacarp_dead"
 	maxHealth = 230
 	health = 230
-	attack_same = 1
+	//attack_same = 1 We no longer attack are yonger less rare of breeds
 	speed = 1
 	meat_amount = 10
 	melee_damage_lower = 15
@@ -172,7 +174,7 @@
 	pixel_y = 0
 	speak_chance = 0.1
 	speak = list("UUUUUUH")
-	speak_emote = list("grunts","groans", "roars", "snorts")
+	speak_emote = list("grunts.","groans.", "roars!", "snorts.")
 	emote_hear = list("groan")
 	emote_see = list("shakes its head")
 	meat_amount = 10 //Infinite meat!
@@ -184,6 +186,7 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "arachnid"
 	icon_living = "arachnid"
+	icon_rest = "arachnid_sleeping"
 	icon_dead = "arachnid_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
@@ -195,10 +198,11 @@
 	aggro_vision_range = 16
 	pixel_x = -16
 	move_to_delay = 2
-	speak_emote = list("chitters", "sharpens its claws")
+	speak_emote = list("chitters.", "sharpens its claws.")
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
-	alpha = 15
+	alpha = 30
 	faction = "stalker"
+	mob_size =  3  // The same as Hivemind Tyrant
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
 	..()
@@ -215,11 +219,7 @@
 
 /mob/living/simple_animal/hostile/nightmare/LoseTarget()
 	..()
-	alpha = 15
-
-/mob/living/simple_animal/hostile/nightmare/LostTarget()
-	..()
-	alpha = 15
+	alpha = 50
 
 /mob/living/simple_animal/hostile/nightmare/death()
 	..()
@@ -227,7 +227,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord
 	name = "croaker lord"
-	desc = "The thing the 'frogs' eventually grow into, proving beyond doubt their alien nature. While one of the strongest monsters on the planet it isn't normally hostile unless it has a reason."
+	desc = "The thing the 'frogs' eventually grow into, proving beyond doubt their alien nature. While one of the strongest monsters on the planet it isn't normally hostile unless it \
+	has a reason and god help you if it finds one, their berserk rages kill nearly everyone when its eyes open."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "leaper"
 	icon_living = "leaper"
@@ -243,13 +244,15 @@
 	stop_automated_movement_when_pulled = 1
 	pixel_x = -16
 	move_to_delay = 4
-	speak_emote = list("looses a rumbling croak", "grumbles quietly")
+	speak_emote = list("looses a rumbling croak.", "grumbles quietly.")
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "pond"
-	wander = FALSE
+	mob_size =  3  // The same as Hivemind Tyrant
+	wander = 1
 
-/mob/living/simple_animal/hostile/retaliate/croakerlord/AttackingTarget()
+/mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
 	..()
+	visible_emote("slowly begins to open its many eyes as it looses an angered croak...")
 	icon_state = "leaper_alert"
 	icon_living = "leaper_alert"
 

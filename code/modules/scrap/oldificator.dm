@@ -44,9 +44,10 @@
 	return TRUE
 
 /obj/make_young()
-	if(oldified)
-		name = initial(name)
-		color = initial(color)
+	if(!oldified)
+		return
+	name = initial(name)
+	color = initial(color)
 	..()
 
 /obj/item/make_old()
@@ -59,14 +60,52 @@
 /obj/item/weapon/tool/make_old()
 	.=..()
 	if (.)
-		adjustToolHealth(-(rand(40, 150) * degradation))
+		adjustToolHealth(-(rand(20, 60) * degradation))
+		precision -= rand(0,10)
+		workspeed = workspeed*(rand(5,10)/10) //50% less speed max
+		degradation += rand(0,4)
+		health = rand(10, max_health)
+
+/obj/item/weapon/tool/make_young()
+	if(!oldified)
+		return
+	workspeed = initial(workspeed)
+	precision = initial(precision)
+	degradation = initial(degradation)
+	refresh_upgrades() //So we dont null upgrades
+	..()
 
 /obj/item/weapon/gun/make_old()
 	. = ..()
-	fire_delay+=2
-	recoil_buildup+=10
-	damage_multiplier = max(0.2, damage_multiplier - rand(0.5, 1))
-	penetration_multiplier = max(0.2, penetration_multiplier - rand(0.5, 1))
+	fire_delay+= rand(0,3)
+	recoil_buildup+= rand(0,10)
+	damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
+	penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
+
+/obj/item/weapon/gun/make_young()
+	if(!oldified)
+		return
+	fire_delay = initial(fire_delay)
+	recoil_buildup = initial(recoil_buildup)
+	damage_multiplier = initial(damage_multiplier)
+	penetration_multiplier = initial(penetration_multiplier)
+	refresh_upgrades() //So we dont null upgrades
+	..()
+
+/obj/item/weapon/gun/energy/make_old()
+	. = ..()
+	charge_cost+= rand(0,250)
+	overcharge_max-= rand(0,5) //This is infact a number you want to go up
+	overcharge_rate-= rand(0,5)
+
+/obj/item/weapon/gun/energy/make_young()
+	if(!oldified)
+		return
+	charge_cost = initial(charge_cost)
+	overcharge_max = initial(overcharge_max)
+	overcharge_rate = initial(overcharge_rate)
+	refresh_upgrades() //So we dont null upgrades. Do it again...
+	..()
 
 /obj/item/weapon/storage/make_old()
 	.=..()
@@ -133,7 +172,7 @@
 		if(!autorecharging)
 			charge = min(charge, RAND_DECIMAL(0, maxcharge))
 
-		if(prob(1))
+		if(prob(5))
 			rigged = TRUE
 			if(prob(10))
 				charge = maxcharge  //make it BOOM hard
@@ -197,12 +236,11 @@
 		if(prob(30))
 			slowdown += pick(0.5, 0.5, 1, 1.5)
 		if(prob(40))
-			armor[ARMOR_MELEE] = rand(0, armor[ARMOR_MELEE])
-			armor[ARMOR_BULLET] = rand(0, armor[ARMOR_BULLET])
-			armor[ARMOR_ENERGY] = rand(0, armor[ARMOR_ENERGY])
-			armor[ARMOR_BOMB] = rand(0, armor[ARMOR_BOMB])
-			armor[ARMOR_BIO] = rand(0, armor[ARMOR_BIO])
-			armor[ARMOR_RAD] = rand(0, armor[ARMOR_RAD])
+			if(islist(armor)) //Possible to run before the initialize proc, thus having to modify the armor list
+				for(var/i in armor)
+					armor[i] = rand(0, armor[i])
+			else if(is_proper_datum(armor))
+				armor = armor.setRating(melee = rand(0, armor.getRating(ARMOR_MELEE)), bullet =  rand(0, armor.getRating(ARMOR_BULLET)), energy = rand(0, armor.getRating(ARMOR_ENERGY)), bomb = rand(0, armor.getRating(ARMOR_BOMB)), bio = rand(0, armor.getRating(ARMOR_BIO)), rad = rand(0, armor.getRating(ARMOR_RAD)))
 		if(prob(40))
 			heat_protection = rand(0, round(heat_protection * 0.5))
 		if(prob(40))
@@ -215,11 +253,12 @@
 			equip_delay += rand(0, 6 SECONDS)
 
 /obj/item/clothing/make_young()
-	if(oldified)
-		slowdown = initial(slowdown)
-		heat_protection = initial(heat_protection)
-		cold_protection = initial(cold_protection)
-		equip_delay = initial(equip_delay)
+	if(!oldified)
+		return
+	slowdown = initial(slowdown)
+	heat_protection = initial(heat_protection)
+	cold_protection = initial(cold_protection)
+	equip_delay = initial(equip_delay)
 	..()
 
 

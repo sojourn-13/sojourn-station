@@ -9,17 +9,21 @@
 	nonmaint_reroll = 100
 	contents_list_base = list(/obj/item/weapon/circuitboard/excelsiorautolathe = 1,
 	 /obj/item/weapon/circuitboard/excelsior_teleporter = 1,
-	 /obj/item/weapon/implanter/excelsior/broken = 2)
+	 /obj/item/weapon/implanter/excelsior/broken = 2,
+	 /obj/random/lathe_disk/advanced/excelsior/safe = 1)
 
 	contents_list_random = list(/obj/item/weapon/implantcase/excelsior/broken = 70,
 	/obj/item/weapon/implantcase/excelsior/broken = 40,
+	/obj/item/weapon/soap/commie = 80,
 	/obj/item/clothing/suit/space/void/excelsior = 70,
-	/obj/item/weapon/gun/projectile/automatic/ak47 = 30,
-	/obj/item/weapon/gun/projectile/automatic/vintorez = 10,
-	/obj/item/weapon/gun/projectile/clarissa/makarov = 50,
-	/obj/item/weapon/gun/projectile/clarissa/makarov = 50,
-	/obj/item/ammo_magazine/lrifle = 50,
-	/obj/item/ammo_magazine/lrifle = 50,
+	/obj/item/weapon/gun/projectile/automatic/ak47 = 3,
+	/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ak = 30,
+	/obj/item/weapon/gun/projectile/automatic/vintorez = 1,
+	/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez = 10,
+	/obj/item/weapon/gun/projectile/clarissa/makarov = 5,
+	/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_makarov = 50,
+	/obj/item/ammo_magazine/light_rifle_257 = 50,
+	/obj/item/ammo_magazine/light_rifle_257 = 50,
 	/obj/item/weapon/stock_parts/capacitor/excelsior = 70,
 	/obj/item/weapon/stock_parts/scanning_module/excelsior = 70,
 	/obj/item/weapon/stock_parts/manipulator/excelsior = 70,

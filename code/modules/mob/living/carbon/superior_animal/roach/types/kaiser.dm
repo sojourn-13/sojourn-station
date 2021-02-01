@@ -8,19 +8,23 @@ Has ability of every roach.
 	desc = "A glorious emperor of roaches."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "kaiser_roach"
+	icon_dead = "kaiser_roach_dead"
 	density = TRUE
 
-	turns_per_move = 4
+	turns_per_move = 6
 	maxHealth = 2000
 	health = 2000
 	contaminant_immunity = TRUE
 
 	var/datum/reagents/gas_sac
 
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	knockdown_odds = 10
+	melee_damage_lower = 20
+	melee_damage_upper = 35
 	move_to_delay = 8
 	mob_size =  3  // The same as Hivemind Tyrant
+	status_flags = 0
+	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
 
 	var/distress_call_stage = 3
 
@@ -30,8 +34,7 @@ Has ability of every roach.
 
 	blattedin_revives_left = 0
 
-	// TODO: Add a special type of meat for Kaiser
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/fuhrer
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/kaiser
 	meat_amount = 15
 	sanity_damage = 3
 
@@ -154,9 +157,3 @@ Has ability of every roach.
 		return TRUE
 	visible_message("[src] snaps out of its trance and rushes at [user]!")
 	return FALSE
-
-// Kaiser has no death sprite, so he explodes when dies.
-/mob/living/carbon/superior_animal/roach/kaiser/death()
-	. = ..()
-	if(.)
-		gib()

@@ -15,9 +15,9 @@
 	layer = MOB_LAYER + 1 // Overhead
 	anchored = TRUE
 	density = TRUE
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 300
-
+	circuit = /obj/item/weapon/circuitboard/pile_ripper
 	var/safety_mode = FALSE // Temporality stops the machine if it detects a mob
 	var/icon_name = "grinder-b"
 	var/blood = 0

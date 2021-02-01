@@ -13,7 +13,7 @@
 		/obj/random/costume/head_generic				= 2,
 		/obj/random/costume/head_animals				= 2,
 		/obj/random/toy/arcadejunk						= 1,
-		/obj/random/toy/action_figure					= 1,
+		/obj/item/toy/figure							= 1,
 		/obj/random/toy/mecha							= 1,
 		/obj/random/toy/plushie							= 1,
 	)

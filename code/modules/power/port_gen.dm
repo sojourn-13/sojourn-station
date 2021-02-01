@@ -6,7 +6,7 @@
 	icon_state = "portgen0"
 	density = 1
 	anchored = 0
-	use_power = 0
+	use_power = NO_POWER_USE
 
 	var/active = 0
 	var/power_gen = 5000
@@ -48,6 +48,7 @@
 		return
 	if(!anchored)
 		return
+
 
 /obj/machinery/power/port_gen/update_icon()
 	if(!active)
@@ -142,6 +143,8 @@
 				create_reagents(max_fuel_volume)
 		else if(istype(SP, /obj/item/weapon/stock_parts/micro_laser) || istype(SP, /obj/item/weapon/stock_parts/capacitor))
 			temp_rating += SP.rating
+	desc = "A power generator that runs on [fuel_name]. Rated for [(power_gen * max_safe_output) / 1000] kW max safe output."
+
 
 	power_gen = round(initial(power_gen) * (max(2, temp_rating) / 2))
 
@@ -280,6 +283,12 @@
 
 /obj/machinery/power/port_gen/pacman/attackby(var/obj/item/I, var/mob/user)
 
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
 	if(!use_reagents_as_fuel && istype(I, sheet_path))
 		var/obj/item/stack/addstack = I
 		var/amount = min((max_fuel_volume - sheets), addstack.amount)
@@ -297,35 +306,10 @@
 
 	else
 
-		var/list/usable_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING)
-		if(open)
-			usable_qualities.Add(QUALITY_PRYING)
+		var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
 
 		var/tool_type = I.get_tool_type(user, usable_qualities, src)
 		switch(tool_type)
-
-			if(QUALITY_PRYING)
-				if(open)
-					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-						var/obj/machinery/constructable_frame/machine_frame/new_frame = new /obj/machinery/constructable_frame/machine_frame(src.loc)
-						for(var/obj/item/CP in component_parts)
-							CP.loc = src.loc
-						while ( sheets > 0 )
-							DropFuel()
-						new_frame.state = 2
-						new_frame.icon_state = "box_1"
-						qdel(src)
-					return
-				return
-
-			if(QUALITY_SCREW_DRIVING)
-				var/used_sound = open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
-					open = !open
-					to_chat(user, SPAN_NOTICE("You [open ? "open" : "close"] the maintenance hatch of \the [src] with [I]."))
-					update_icon()
-					return
-				return
 
 			if(QUALITY_BOLT_TURNING)
 				if(istype(get_turf(src), /turf/space) && !anchored)
@@ -490,3 +474,40 @@
 	//no special effects, but the explosion is pretty big (same as a supermatter shard).
 	explosion(src.loc, 3, 6, 12, 16, 1)
 	qdel(src)
+
+/obj/machinery/power/port_gen/pacman/camp
+	name = "C.A.M.P.E.R.P.A.C.M.A.N portable generator"
+	desc = "This pacman got its named form its low power rating of burning wood as fuel, tends to be used well people go out camping. Rated for 20 kW maximum safe output!"
+	icon_state = "portgen2"
+	sheet_path = /obj/item/stack/material/wood
+	sheet_name = "Wood Planks Fuel Sheets"
+
+	//Wood is everyware here, this is is rather weak
+	power_gen = 12000 //watts
+	time_per_fuel_unit = 80
+	temperature_gain = 20
+	circuit = /obj/item/weapon/circuitboard/pacman/camp
+
+/obj/machinery/power/port_gen/pacman/camp/explode()
+	//low explosion effects, this is rather safe.
+	explosion(src.loc, 0, 0, 3, 1)
+	qdel(src)
+
+/obj/machinery/power/port_gen/pacman/miss
+	name = "M.I.S.S.P.A.C.M.A.N portable generator"
+	desc = "Using a girls best friend. Rated for 200 kW maximum safe output!"
+	icon_state = "portgen2"
+	sheet_path = /obj/item/stack/material/diamond
+	sheet_name = "Diamond Sheet Fuel Sheets"
+
+	//diamonds are just as common as any other mat*
+	power_gen = 22500 //watts
+	time_per_fuel_unit = 284 //3x longer then plasma
+	temperature_gain = 70
+	circuit = /obj/item/weapon/circuitboard/pacman/miss
+
+/obj/machinery/power/port_gen/pacman/miss/explode()
+	//low explosion effects.
+	explosion(src.loc, 1, 1, 3, 3)
+	qdel(src)
+

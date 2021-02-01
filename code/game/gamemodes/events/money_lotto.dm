@@ -22,7 +22,7 @@
 	var/deposit_success = 0
 
 /datum/event/money_lotto/start()
-	winner_sum = pick(5000, 10000, 15000)
+	winner_sum = pick(3000, 5000, 7500)
 	if(all_money_accounts.len)
 		var/list/private_accounts = all_money_accounts.Copy()
 		for(var/i in department_accounts)

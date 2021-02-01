@@ -18,6 +18,7 @@
 
 /mob/living/bot/miningonestar/Destroy()
 	loot = null
+	. = ..()
 
 /mob/living/bot/miningonestar/death()
 	loot.forceMove(loc)
@@ -82,4 +83,4 @@
 		if(get_dist(src, AST) >= 1)
 			UnarmedAttack(AST)
 		else
-			walk_to(src,AST,1,5,0)
+			walk_to(src,AST, 1, 5, 0)

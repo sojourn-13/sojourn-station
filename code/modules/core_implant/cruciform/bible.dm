@@ -2,7 +2,7 @@
 	name = "absolutism ritual book"
 	desc = "Contains holy litanies and religious prayers."
 	icon_state = "bible"
-	price_tag = 300
+	price_tag = 150
 
 /*
 /obj/item/weapon/book/ritual/cruciform/ritual(var/datum/ritual/R)
@@ -23,4 +23,4 @@
 	name = "prime ritual book"
 	desc = "Contains holy litany and prayers meant only for the prime."
 	icon_state = "biblep"
-	price_tag = 500
+	price_tag = 250

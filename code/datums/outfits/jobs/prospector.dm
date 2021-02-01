@@ -3,8 +3,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/top/outfitfrontier
 	l_ear = /obj/item/device/radio/headset/heads/foreman
-	shoes = /obj/item/clothing/shoes/winter/explorer
-	gloves = /obj/item/clothing/gloves/thick
+	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/black
 	pda_type = /obj/item/modular_computer/pda/cargo
 
@@ -12,8 +11,7 @@
 	name = OUTFIT_JOB_NAME("Prospectors - Prospector")
 	uniform = /obj/item/clothing/under/top/outfitgambler
 	l_ear = /obj/item/device/radio/headset/headset_pro
-	shoes = /obj/item/clothing/shoes/winter/explorer
-	gloves = /obj/item/clothing/gloves/thick
+	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/black
 	pda_type = /obj/item/modular_computer/pda/cargo
 
@@ -21,8 +19,7 @@
 	name = OUTFIT_JOB_NAME("Prospectors - Salvager")
 	uniform = /obj/item/clothing/under/overalls/jumpsuitpowerline
 	l_ear = /obj/item/device/radio/headset/headset_pro
-	shoes = /obj/item/clothing/shoes/winter/explorer
-	gloves = /obj/item/clothing/gloves/thick
+	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/black
 	pda_type = /obj/item/modular_computer/pda/cargo
 

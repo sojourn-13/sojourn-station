@@ -5,7 +5,7 @@
 	icon_state = "ninja_rig"
 	suit_type = "light suit"
 	armor = list(
-		melee = 30,
+		melee = 25,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
@@ -36,14 +36,46 @@
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
 
+/obj/item/weapon/rig/light/ultra_light
+	name = "SI 'Proto-Spacer' control module"
+	desc = "An ultra light, unarmoured rig suit. The precursor to the Soteria retainer model, quite lacking in armor and EMP protection but capable of fitting hardsuit modules."
+	icon_state = "hacker_rig"
+	suit_type = "light suit"
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 0,
+		bomb = 25,
+		bio = 100,
+		rad = 45
+	)
+	emp_protection = 0
+	matter = list(MATERIAL_STEEL = 50, MATERIAL_PLASTIC = 50, MATERIAL_GLASS = 30) //Costly!
 
+	chest_type = /obj/item/clothing/suit/space/rig/light/ultra_light
+	helm_type =  /obj/item/clothing/head/helmet/space/rig/light/ultra_light
+	boot_type =  /obj/item/clothing/shoes/magboots/rig/light/ultra_light
+	glove_type = /obj/item/clothing/gloves/rig/light/ultra_light
+
+/obj/item/clothing/suit/space/rig/light/ultra_light
+	name = "SI 'Spacer' suit"
+
+/obj/item/clothing/gloves/rig/light/ultra_light
+	name = "SI 'Spacer' gloves"
+
+/obj/item/clothing/shoes/magboots/rig/light/ultra_light
+	name = "SI 'Spacer' shoes"
+
+/obj/item/clothing/head/helmet/space/rig/light/ultra_light
+	name = "SI 'Spacer' hood"
+	flags_inv = 0
 
 /obj/item/weapon/rig/light/hacker/steward
 	name = "SI 'Retainer' control module"
 	desc = "A Soteria Institute modification of the traditional light rig built for equal parts utility and defense."
 	armor = list(
-		melee = 40,
-		bullet = 30,
+		melee = 30,
+		bullet = 25,
 		energy = 30,
 		bomb = 30,
 		bio = 100,
@@ -113,7 +145,7 @@
 	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for assassins."
 	icon_state = "ninja_rig"
 	armor = list(
-		melee = 40,
+		melee = 30,
 		bullet = 30,
 		energy = 20,
 		bomb = 25,

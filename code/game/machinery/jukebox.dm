@@ -15,14 +15,14 @@
 	return track
 
 /obj/machinery/media/jukebox/
-	name = "space jukebox"
+	name = "jukebox"
 	icon = 'icons/obj/jukebox.dmi'
-	icon_state = "jukebox2-nopower"
-	var/state_base = "jukebox2"
+	icon_state = "jukebox-nopower"
+	var/state_base = "jukebox"
 	anchored = 1
 	density = 1
 	power_channel = EQUIP
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	active_power_usage = 100
 

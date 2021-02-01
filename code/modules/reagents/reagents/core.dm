@@ -1,5 +1,5 @@
 /datum/reagent/organic/blood
-	data = new/list("donor" = null, "viruses" = null, "species" = "Human", "blood_DNA" = null, "blood_type" = null, "blood_colour" = "#A10808", "resistances" = null, "trace_chem" = null, "antibodies" = list(), "ling" = null)
+	data = new/list("donor" = null, "viruses" = null, "species" = "Human", "blood_DNA" = null, "blood_type" = null, "blood_colour" = "#A10808", "resistances" = null, "trace_chem" = null, "antibodies" = list(), "carrion" = null)
 	name = "Blood"
 	id = "blood"
 	reagent_state = LIQUID
@@ -20,13 +20,13 @@
 	return
 
 /datum/reagent/organic/blood/get_data() // Just in case you have a reagent that handles data differently.
-	var/t = data.Copy()
-	if(t["virus2"])
-		var/list/v = t["virus2"]
-		t["virus2"] = v.Copy()
-	return t
+	var/T = data.Copy()
+	if(T["virus2"])
+		var/list/V = T["virus2"]
+		T["virus2"] = V.Copy()
+	return T
 
-/datum/reagent/organic/blood/touch_turf(var/turf/simulated/T)
+/datum/reagent/organic/blood/touch_turf(turf/simulated/T)
 	if(!istype(T) || volume < 3)
 		return TRUE
 	if(!data["donor"] || istype(data["donor"], /mob/living/carbon/human))
@@ -37,7 +37,7 @@
 			B.blood_DNA["UNKNOWN DNA STRUCTURE"] = "X*"
 	return TRUE
 
-/datum/reagent/organic/blood/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/organic/blood/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 
 	var/effective_dose = dose
 	if(issmall(M)) effective_dose *= 2
@@ -54,7 +54,7 @@
 				if(V.spreadtype == "Contact")
 					infect_virus2(M, V.getcopy())
 
-/datum/reagent/organic/blood/affect_touch(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/organic/blood/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	if(data && data["virus2"])
 		var/list/vlist = data["virus2"]
 		if(vlist.len)
@@ -65,7 +65,7 @@
 	if(data && data["antibodies"])
 		M.antibodies |= data["antibodies"]
 
-/datum/reagent/organic/blood/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/organic/blood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.inject_blood(src, volume)
 	remove_self(volume)
 
@@ -78,7 +78,7 @@
 	reagent_state = LIQUID
 	color = "#0050F0"
 
-/datum/reagent/organic/antibodies/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/organic/antibodies/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(src.data)
 		M.antibodies |= src.data["antibodies"]
 	..()
@@ -98,7 +98,18 @@
 	nerve_system_accumulations = 0
 	reagent_type = "Water"
 
-/datum/reagent/water/touch_turf(var/turf/simulated/T)
+/datum/reagent/water/holywater
+	name = "Holy Water"
+	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen with the blessings of faith."
+	id = "holywater"
+
+/datum/reagent/water/holywater/touch_turf(turf/T)
+	..()
+	if(volume >= 5)
+		T.holy = 1
+	return TRUE
+
+/datum/reagent/water/touch_turf(turf/simulated/T)
 	if(!istype(T))
 		return TRUE
 
@@ -123,7 +134,7 @@
 		T.wet_floor(1)
 	return TRUE
 
-/datum/reagent/water/touch_obj(var/obj/O)
+/datum/reagent/water/touch_obj(obj/O)
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/monkeycube))
 		var/obj/item/weapon/reagent_containers/food/snacks/monkeycube/cube = O
 		if(!cube.wrapped)
@@ -144,10 +155,10 @@
 			remove_self(amount)
 		*/
 
-/datum/reagent/water/affect_touch(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/water/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	if(isslime(M))
 		var/mob/living/carbon/slime/S = M
-		S.adjustToxLoss(0.8 * effect_multiplier) // Babies have 150 health, adults have 200; So, 10 units and 13.5
+		S.adjustToxLoss(20 * effect_multiplier) // Babies have 150 health, adults have 200; So, 10 units and 13.5
 		if(!S.client)
 			if(S.Target) // Like cats
 				S.Target = null
@@ -168,15 +179,15 @@
 	glass_name = "welder fuel"
 	glass_desc = "Unless you are an industrial tool, this is probably not safe for consumption."
 
-/datum/reagent/toxin/fuel/touch_turf(var/turf/T)
+/datum/reagent/toxin/fuel/touch_turf(turf/T)
 	new /obj/effect/decal/cleanable/liquid_fuel(T, volume)
 	remove_self(volume)
 	return TRUE
 
-/datum/reagent/toxin/fuel/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/toxin/fuel/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustToxLoss(0.2 * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
 
-/datum/reagent/toxin/fuel/touch_mob(var/mob/living/L, var/amount)
+/datum/reagent/toxin/fuel/touch_mob(mob/living/L, var/amount)
 	if(istype(L))
 		L.adjust_fire_stacks(amount / 10) // Splashing people with welding fuel to make them easy to ignite!
 

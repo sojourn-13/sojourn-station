@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_WOOD = 2)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
-	tool_qualities = list(QUALITY_HAMMERING = 30)
+	tool_qualities = list(QUALITY_HAMMERING = 30, QUALITY_PRYING = 10)
 
 /obj/item/weapon/tool/hammer/powered_hammer
 	name = "powered sledgehammer"
@@ -30,7 +30,7 @@
 	degradation = 0.7
 	use_power_cost = 2
 	suitable_cell = /obj/item/weapon/cell/medium
-	max_upgrades = 3
+	max_upgrades = 4
 
 /obj/item/weapon/tool/hammer/powered_hammer/turn_on(mob/user)
 
@@ -65,3 +65,120 @@
 	use_power_cost = 1.5
 	workspeed = 1.5
 	max_upgrades = 2
+
+/obj/item/weapon/tool/hammer/foremansledge
+	name = "foreman's sledgehammer"
+	desc = "Once a tool used to nail rivets, now a tool used to crush skulls. The signature weapon of the prospector's foreman."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "sledgehammer0"
+	item_state = "sledgehammer1"
+	force = WEAPON_FORCE_LETHAL
+	slot_flags = SLOT_BELT|SLOT_BACK
+	armor_penetration = ARMOR_PEN_EXTREME
+	throwforce = WEAPON_FORCE_LETHAL
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5)
+	throw_speed = 1
+	throw_range = 7
+	w_class = ITEM_SIZE_BULKY
+	origin_tech = list(TECH_COMBAT = 3)
+	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	tool_qualities = list(QUALITY_HAMMERING = 45)
+	price_tag = 2000
+
+/obj/item/weapon/tool/hammer/homewrecker
+	name = "homewrecker"
+	desc = "A large steel chunk welded to a long handle. Extremely heavy."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "homewrecker0"
+	wielded_icon = "homewrecker1"
+	armor_penetration = ARMOR_PEN_EXTREME
+	w_class = ITEM_SIZE_BULKY
+	slot_flags = SLOT_BELT|SLOT_BACK
+	force = WEAPON_FORCE_NORMAL
+	force_unwielded = WEAPON_FORCE_NORMAL
+	force_wielded = WEAPON_FORCE_ROBUST
+	tool_qualities = list(QUALITY_HAMMERING = 15)
+	attack_verb = list("attacked", "smashed", "bludgeoned", "beaten")
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
+	max_upgrades = 5
+
+/obj/item/weapon/tool/hammer/mace
+	name = "mace"
+	desc = "Used for applying blunt force trauma to a person's ribcage."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "mace"
+	item_state = "mace"
+	matter = list(MATERIAL_STEEL = 10)
+
+	armor_penetration = ARMOR_PEN_DEEP
+	force = WEAPON_FORCE_DANGEROUS
+
+	tool_qualities = list(QUALITY_HAMMERING = 20)
+
+/obj/item/weapon/tool/hammer/mace/makeshift
+	name = "makeshift mace"
+	desc = "Some metal attached to the end of a stick, for applying blunt force trauma to a roach."
+	icon_state = "ghetto_mace"
+	item_state = "ghetto_mace"
+
+	force = WEAPON_FORCE_PAINFUL
+
+	tool_qualities = list(QUALITY_HAMMERING = 15)
+	degradation = 5 //This one breaks REALLY fast
+	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+
+/obj/item/weapon/tool/hammer/charge
+	name = "rocket hammer"
+	desc = "After many issues with scientists trying to hammer a nail, one bright individual wondered what could be achieved by attaching a stellar-grade ship engine to the back."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "chargehammer"
+	item_state = "chargehammer"
+	w_class = ITEM_SIZE_HUGE
+	switched_on_force = WEAPON_FORCE_BRUTAL
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	switched_on_qualities = list(QUALITY_HAMMERING = 60)
+	switched_off_qualities = list(QUALITY_HAMMERING = 35)
+	toggleable = TRUE
+	slot_flags = SLOT_BACK
+	suitable_cell = /obj/item/weapon/cell/medium
+	use_power_cost = 15
+	var/datum/effect/effect/system/trail/T
+	var/last_launch
+
+/obj/item/weapon/tool/hammer/charge/New()
+	..()
+	T = new /datum/effect/effect/system/trail/fire()
+	T.set_up(src)
+
+/obj/item/weapon/tool/hammer/charge/Destroy()
+	QDEL_NULL(T)
+	return ..()
+
+/obj/item/weapon/tool/hammer/charge/afterattack(atom/target, mob/user, proximity_flag, params)
+	if(!switched_on || world.time < last_launch + 3 SECONDS)
+		return
+	var/cost = use_power_cost*get_dist(target, user)
+	if(user.check_gravity())
+		cost *= (user.mob_size/10)
+
+	if(cell?.checked_use(cost))
+		if(!wielded)
+			var/drop_prob = 50
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				drop_prob *= H.stats.getMult(STAT_ROB, STAT_LEVEL_EXPERT)
+			if(prob(drop_prob))
+				to_chat(user, SPAN_WARNING("\The [src] launches from your grasp!"))
+				user.drop_item(src)
+				T.start()
+				playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+				throw_at(target, get_dist(target, user), 1, user)
+				T.stop()
+				last_launch = world.time
+				return
+		last_launch = world.time
+		T.start()
+		playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+		user.throw_at(target, get_dist(target, user), 1, user)
+		T.stop()

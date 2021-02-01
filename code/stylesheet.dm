@@ -52,12 +52,13 @@ em						{font-style: normal;font-weight: bold;}
 .ntradio				{color: #D4AF37;}
 
 .secradio				{color: #A30000;}
+.bsradio				{color: #88100a;}
 .engradio				{color: #A66300;}
 .medradio				{color: #0081A3;}
 .sciradio				{color: #993399;}
 .supradio				{color: #5F4519;}
 .srvradio				{color: #6EAA2C;}
-.proradio				{color: #ffff99;}
+.proradio				{color: #209848;}
 
 /* Miscellaneous */
 .name					{font-weight: bold;}
@@ -88,7 +89,6 @@ h1.alert, h2.alert		{color: #000000;}
 
 .alien					{color: #543354;}
 .monkey					{color: #22228B;}
-.changeling				{color: #800080;}
 .rough					{font-family: Trebuchet MS, cursive, sans-serif;}
 .say_quote				{font-family: Georgia, Verdana, sans-serif;}
 .russian				{color: #635d17}

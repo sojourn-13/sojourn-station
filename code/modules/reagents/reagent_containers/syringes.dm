@@ -21,6 +21,7 @@
 	unacidable = 1 //glass
 	reagent_flags = TRANSPARENT
 	var/mode = SYRINGE_DRAW
+	var/breakable = TRUE
 	var/image/filling //holds a reference to the current filling overlay
 	var/visible_name = "a syringe"
 	var/time = 30
@@ -246,7 +247,15 @@
 			add_overlay(injoverlay)
 			update_wear_icon()
 
-	else if(/obj/item/weapon/reagent_containers/syringe/large)
+/obj/item/weapon/reagent_containers/syringe/large/update_icon()
+	cut_overlays()
+
+	if(mode == SYRINGE_BROKEN)
+		icon_state = "broken"
+		return
+
+	var/rounded_vol
+	if(/obj/item/weapon/reagent_containers/syringe/large)
 		if(reagents && reagents.total_volume)
 			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)
 			var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe-[rounded_vol]")
@@ -267,6 +276,11 @@
 					injoverlay = "inject"
 			add_overlay(injoverlay)
 			update_wear_icon()
+
+/obj/item/weapon/reagent_containers/syringe/blitzshell
+	name = "blitzshell syringe"
+	desc = "A blitzshell syringe."
+	breakable = FALSE
 
 /obj/item/weapon/reagent_containers/syringe/proc/syringestab(mob/living/carbon/target as mob, mob/living/carbon/user as mob)
 	if(ishuman(target))
@@ -314,6 +328,8 @@
 	break_syringe(target, user)
 
 /obj/item/weapon/reagent_containers/syringe/proc/break_syringe(mob/living/carbon/target, mob/living/carbon/user)
+	if(!breakable)
+		return
 	desc += " It is broken."
 	mode = SYRINGE_BROKEN
 	if(target)
@@ -354,6 +370,80 @@
 	sharp = TRUE
 	unacidable = 1 //glass
 	reagent_flags = TRANSPARENT
+
+//Stimulents in syringe form for loot and admin spawn uses. Most of these are obtained via a lucky roll with medical refuse piles. -Kaz
+/obj/item/weapon/reagent_containers/syringe/stim
+	name = "syringe (stim)"
+
+/obj/item/weapon/reagent_containers/syringe/stim/mbr
+	name = "syringe (Machine binding ritual)"
+	desc = "A syringe containing an ethanol based stimulator. Often used as a ritual drink by machine cults or engineering groups to enhance initiates who lack experience."
+	preloaded_reagents = list("machine binding ritual" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/cherrydrops
+	name = "syringe (Cherry Drops)"
+	desc = "A syringe containing a dose of cherry drops stimulants, a favorite among researchers and scientists for its cognitive enhancing abilities."
+	preloaded_reagents = list("cherry drops" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/pro_surgeon
+	name = "syringe (ProSurgeon)"
+	desc = "A syringe containing a sample of the prosurgeon stimulate, used to reduce tremors as an aid to surgical work or the application of bandages."
+	preloaded_reagents = list("prosurgeon" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/violence
+	name = "syringe (Violence)"
+	desc = "A syringe containing a dose of violence, a stimulant reknown for its ability to enhance the users muscles to their peak limit at the cost of driving them into a blind rage."
+	preloaded_reagents = list("violence" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/bouncer
+	name = "syringe (Bouncer)"
+	desc = "A syringe containing a dose of bouncer, a stimulant favored for toughening the body and enhancing regenerative abilities."
+	preloaded_reagents = list("bouncer" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/steady
+	name = "syringe (Steady)"
+	desc = "A syringe containing a dose of steady, a stimulant favored by mercenaries for enhancing reaction time."
+	preloaded_reagents = list("steady" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/machine_spirit
+	name = "syringe (Machine Spirit)"
+	desc = "A syringe containing the ethanol based stimulant machine spirit. A favored chemical used by the Artificer's Guild to make even the lowliest adept a machine master."
+	preloaded_reagents = list("machine spirit" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/grape_drops
+	name = "syringe (Grape Drops)"
+	desc = "A syringe containing a dose of the powerful stimulant known as grape drops, which boosts creativity and cognitive ability. Often used by scientists or bomb disposal experts."
+	preloaded_reagents = list("grape drops" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/ultra_surgeon
+	name = "syringe (UltraSurgeon)"
+	desc = "A syringe containing a dose of the powerful stimulant known as ultra-surgeon, which stabilizes both muscle and mind. Used as last resort during complex surgeries or by amateur frontier medics."
+	preloaded_reagents = list("ultrasurgeon" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/violence_ultra
+	name = "syringe (Violence Ultra)"
+	desc = "A syringe containing a dose of the powerful electrolyte based stimulant known as violence ultra. A drug favored by only the most brutal and psychotic of users."
+	preloaded_reagents = list("violence ultra" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/boxer
+	name = "syringe (Boxer)"
+	desc = "A syringe containing a dose of boxer, a powerful stimulant which makes the body stronger and more robust. Named after the sport it was originally developed for."
+	preloaded_reagents = list("boxer" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/turbo
+	name = "syringe (TURBO)"
+	desc = "A syringe containing a potent mix of cardiovascular and neuro stimulators, known as turbo. Used by sharpshooters to increase accuracy and favored by kriosan jaegers to ensure every bullet is the last thing nobody saw."
+	preloaded_reagents = list("turbo" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/party_drops
+	name = "syringe (Party Drops)"
+	desc = "A syringe containing a dose of a powerful stimulating substance which pumps intellectual capabilities to the theoretical maximum. Used as delicacy by some high ranking scientists."
+	preloaded_reagents = list("party drops" = 15)
+
+/obj/item/weapon/reagent_containers/syringe/stim/menace
+	name = "syringe (MENACE)"
+	desc = "A syringe containing a dose of the powerful electrolyte based stimulant known as menace. A drug made famous for being used by suicidal naramadi shock troops employed by the Terran Federation."
+	preloaded_reagents = list("menace" = 15)
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Syringes. END
@@ -396,3 +486,27 @@
 
 /obj/item/weapon/reagent_containers/syringe/ld50_syringe/choral
 	preloaded_reagents = list("chloralhydrate" = 50)
+
+////////////////////////////////////////////////////////////////////////////////
+/// Large Syringes.
+////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/weapon/reagent_containers/syringe/large/antitoxin
+	name = "large syringe (anti-toxin)"
+	desc = "Contains dylovene - a broad spectrum antitoxin."
+	preloaded_reagents = list("anti_toxin" = 30)
+
+/obj/item/weapon/reagent_containers/syringe/large/inaprovaline
+	name = "large syringe (inaprovaline)"
+	desc = "Contains inaprovaline - a mild painkiller that will stabilize a critical patient."
+	preloaded_reagents = list("inaprovaline" = 30)
+
+/obj/item/weapon/reagent_containers/syringe/large/tricordrazine
+	name = "large syringe (tricordrazine)"
+	desc = "Contains tricordrazine - a weak but universal healing chemical, a label warns that it over doses at thirty units."
+	preloaded_reagents = list("tricordrazine" = 30)
+
+/obj/item/weapon/reagent_containers/syringe/large/hyperzine
+	name = "large syringe (hyperzine)"
+	desc = "Contains hyperzine - a powerful stimulant to improve movement speed."
+	preloaded_reagents = list("hyperzine" = 30)

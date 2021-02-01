@@ -2,23 +2,43 @@
  * Lasertag
  */
 /obj/item/clothing/suit/fluff/bluetag
-	name = "blue laser tag armour"
+	name = "blue plasma tag armour"
 	desc = "Blue Pride, Station Wide."
 	icon_state = "bluetag"
 	item_state = "bluetag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag/blue)
+	allowed = list (/obj/item/weapon/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/redtag
-	name = "red laser tag armour"
+	name = "red plasma tag armour"
 	desc = "Reputed to go faster."
 	icon_state = "redtag"
 	item_state = "redtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag/red)
+	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	siemens_coefficient = 3.0
+
+/obj/item/clothing/suit/fluff/greentag
+	name = "green plasma tag armour"
+	desc = "Started green, ended a legend."
+	icon_state = "greentag"
+	item_state = "greentag"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO
+	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	siemens_coefficient = 3.0
+
+/obj/item/clothing/suit/fluff/yellowtag
+	name = "yellow plasma tag armour"
+	desc = "The only thing yellow about you is your armor."
+	icon_state = "yellowtag"
+	item_state = "yellowtag"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO
+	allowed = list (/obj/item/weapon/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/cyborg_suit
@@ -212,4 +232,73 @@ obj/item/clothing/suit/fluff/kimono
 	/obj/item/weapon/tank,
 	/obj/item/ammo_magazine,
 	/obj/item/ammo_magazine/ammobox/
+	)
+
+/obj/item/clothing/suit/storage/punkvest
+	name = "punk vest"
+	desc = "Sleek grey vest with pockets in it. You feel absolutely punk wearing this sturdy leather coat."
+	icon_state = "punk_vest"
+	item_state = "punk_vest"
+	armor = list(
+		melee = 10,
+		bullet = 20,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO
+	cold_protection = UPPER_TORSO
+	min_cold_protection_temperature = T0C - 20
+
+/obj/item/clothing/suit/ivory
+	name = "ivory tabard"
+	desc = "A somewhat revealing ivory tabard favored by older orders for ceremony, used often for funerals and coupled with dark under clothes."
+	icon_state = "white_tabard"
+	item_state = "white_tabard"
+
+/obj/item/clothing/suit/punkvest
+	name = "punk vest"
+	desc = "A dark vest made out of light, breathable fabric. Feeling lucky, punk?"
+	icon_state = "punkvest"
+	item_state = "punkvest"
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO
+
+/obj/item/clothing/suit/storage/toggle/windbreaker
+	name = "windbreaker"
+	desc = "A dark blue jacket with black highlights. As an added bonus, it looks fairly resistant to stains and caustic chemicals."
+	icon_state = "windbreaker_open"
+	item_state = "windbreaker" //Is this even used for anything?
+	icon_open = "windbreaker_open"
+	icon_closed = "windbreaker"
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		energy = 0,
+		bomb = 0,
+		bio = 30,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/punkvest/cyber
+	name = "cyberpunk vest"
+	desc = "A red vest with golden streaks. It's made out of tough materials, and can protect fairly well against bullets. Wake the fuck up, Samurai."
+	icon_state = "cyberpunk"
+	item_state = "cyberpunk"
+	armor = list(
+		melee = 10,
+		bullet = 20,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
 	)

@@ -26,10 +26,16 @@
 	translate_binary = 1
 	origin_tech = list(TECH_ILLEGAL = 3)
 
-/obj/item/device/encryptionkey/headset_sec
+/obj/item/device/encryptionkey/headset_bs
 	name = "security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("Security" = 1)
+	channels = list( "Blackshield" = 1, "Marshal" = 1)
+
+
+/obj/item/device/encryptionkey/headset_mar
+	name = "security radio encryption key"
+	icon_state = "sec_cypherkey"
+	channels = list( "Marshal" = 1, "Blackshield" = 1)
 
 /obj/item/device/encryptionkey/headset_eng
 	name = "guild radio encryption key"
@@ -69,13 +75,13 @@
 /obj/item/device/encryptionkey/heads/captain
 	name = "premier's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1, "Blueteam" = 0, "Redtag" = 0, "Greenteam" = 0, "Yellowtag" = 0)
 
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
 	desc = "Integrated encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Blackshield" = 1, "Marshal" = 1)
 
 /obj/item/device/encryptionkey/heads/rd
 	name = "research overseer's encryption key"
@@ -83,14 +89,14 @@
 	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/moebius
-	name = "Soteria command encryption key"
+	name = "soteria command encryption key"
 	icon_state = "rd_cypherkey"
 	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hos
-	name = "Security commander's encryption key"
+	name = "security commander's encryption key"
 	icon_state = "hos_cypherkey"
-	channels = list("Security" = 1, "Command" = 1)
+	channels = list("Command" = 1, "Blackshield" = 1, "Marshal" = 1)
 
 /obj/item/device/encryptionkey/heads/ce
 	name = "guild master's encryption key"
@@ -103,17 +109,17 @@
 	channels = list("Medical" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hop
-	name = "Steward's encryption key"
+	name = "steward's encryption key"
 	icon_state = "hop_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1, "Security" = 1, "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1, "Blueteam" = 0, "Redtag" = 0, "Greenteam" = 0, "Yellowtag" = 0)
 
 /obj/item/device/encryptionkey/heads/merchant
-	name = "Lonestar executive radio encryption key"
+	name = "lonestar executive radio encryption key"
 	icon_state = "qm_cypherkey"
-	channels = list("Supply" = 1, "Command" = 1, "Service" = 1)
+	channels = list("Supply" = 1, "Prospector" = 1, "Command" = 1, "Service" = 1)
 
 /obj/item/device/encryptionkey/heads/preacher
-	name = "Prime's radio encryption key"
+	name = "prime's radio encryption key"
 	icon_state = "preach_cypherkey"
 	channels = list("Church" = 1, "Command" = 1)
 
@@ -130,13 +136,29 @@
 /obj/item/device/encryptionkey/headset_pro
 	name = "prospector radio encryption key"
 	icon_state = "srv_cypherkey"
-	channels = list("Prospector" = 1)
+	channels = list("Prospector" = 1, "Supply" = 1)
 
 /obj/item/device/encryptionkey/heads/foreman
 	name = "prospector radio encryption key"
 	icon_state = "qm_cypherkey"
-	channels = list("Prospector" = 1, "Command" = 1)
+	channels = list("Prospector" = 1, "Supply" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/entertainment
 	name = "entertainment radio key"
 	channels = list("Entertainment" = 1)
+
+/obj/item/device/encryptionkey/headset_blueteam
+	name = "entertainment radio key"
+	channels = list("Blueteam" = 1)
+
+/obj/item/device/encryptionkey/headset_redteam
+	name = "entertainment radio key"
+	channels = list("Redtag" = 1)
+
+/obj/item/device/encryptionkey/headset_yellowteam
+	name = "entertainment radio key"
+	channels = list("Yellowtag" = 1)
+
+/obj/item/device/encryptionkey/headset_greenteam
+	name = "entertainment radio key"
+	channels = list("Greenteam" = 1)

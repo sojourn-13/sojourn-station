@@ -7,7 +7,7 @@
 	max_shells = 4
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
-	flags =  CONDUCT
+	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
@@ -17,10 +17,10 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
-	price_tag = 1000
-	damage_multiplier = 1.3
-	recoil_buildup = 20
-	one_hand_penalty = 15 //full sized shotgun level
+	price_tag = 500
+	damage_multiplier = 1.1
+	recoil_buildup = 15
+	one_hand_penalty = 10 //full sized shotgun level
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/sawn
 
@@ -58,11 +58,11 @@
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 10)
-	price_tag = 900
+	price_tag = 450
 	damage_multiplier = 1
 	penetration_multiplier = 0.9
-	recoil_buildup = 23
-	one_hand_penalty = 18 //full sized shotgun level
+	recoil_buildup = 20
+	one_hand_penalty = 15 //full sized shotgun level
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/obrez
 
@@ -77,9 +77,9 @@
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5)
-	price_tag = 500
+	price_tag = 250
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.8
-	recoil_buildup = 26
-	one_hand_penalty = 25 //full sized shotgun level
+	recoil_buildup = 24
+	one_hand_penalty = 23 //full sized shotgun level
 	saw_off = FALSE

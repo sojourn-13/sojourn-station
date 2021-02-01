@@ -75,16 +75,24 @@
 	ks1type = /obj/item/device/encryptionkey/binary
 
 /obj/item/device/radio/headset/headset_sec
-	name = "security radio headset"
-	desc = "This is used by your elite security force. This has a small symbol denoting its built in back-up transmitter."
+	name = "marshal radio headset"
+	desc = "This is used by your mall cops. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "sec_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
-	ks2type = /obj/item/device/encryptionkey/headset_sec
+	ks2type = /obj/item/device/encryptionkey/headset_mar
+
+/obj/item/device/radio/headset/headset_blackshield
+	name = "blackshield radio headset"
+	desc = "This is used by the idiotic chimps with guns. This has a small symbol denoting its built in back-up transmitter."
+	icon_state = "bs_headset"
+	item_state = "headset"
+	adhoc_fallback = TRUE
+	ks2type = /obj/item/device/encryptionkey/headset_bs
 
 /obj/item/device/radio/headset/headset_eng
 	name = "guild radio headset"
-	desc = "When the adepts wish to chat like girls."
+	desc = "When the wage slaves wish to chat like girls."
 	icon_state = "eng_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_eng
@@ -98,7 +106,7 @@
 
 /obj/item/device/radio/headset/headset_med
 	name = "medical radio headset"
-	desc = "A headset for the trained staff of the medbay."
+	desc = "A headset for the department staffed with people who love drugs."
 	icon_state = "med_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_moebius
@@ -112,14 +120,14 @@
 
 /obj/item/device/radio/headset/headset_com
 	name = "command radio headset"
-	desc = "A headset with a commanding channel."
+	desc = "A headset with a commanding channel. For the self important asshole."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_com
 
 /obj/item/device/radio/headset/heads/captain
 	name = "premier's headset"
-	desc = "The headset of the arbiter."
+	desc = "The headset of the arbiter and man with less power than he pretends he has."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/captain
@@ -147,9 +155,17 @@
 	ks2type = /obj/item/device/encryptionkey/heads/moebius
 
 /obj/item/device/radio/headset/heads/hos
-	name = "security commander headset"
+	name = "warrant officer headset"
+	desc = "The headset of the men who lock away your worthless lives. This has a small symbol denoting its built in back-up transmitter."
+	icon_state = "wo_headset"
+	item_state = "headset"
+	adhoc_fallback = TRUE
+	ks2type = /obj/item/device/encryptionkey/heads/hos
+
+/obj/item/device/radio/headset/heads/bscom
+	name = "blackshield commander headset"
 	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
-	icon_state = "com_headset"
+	icon_state = "bscom_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
@@ -163,7 +179,7 @@
 
 /obj/item/device/radio/headset/heads/cmo
 	name = "biolab overseer's headset"
-	desc = "The headset of the highly trained medical chief."
+	desc = "The headset of the highly trained medical chief who is never around when he is actually needed."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/moebius
@@ -177,14 +193,14 @@
 
 /obj/item/device/radio/headset/heads/merchant
 	name = "executive officer's headset"
-	desc = "The headset of the guy who knows the price for everything."
+	desc = "The headset of the guy who knows the price for everything and absolutely will buy that for a dollar."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/merchant
 
 /obj/item/device/radio/headset/heads/preacher
 	name = "prime's headset"
-	desc = "The headset of the man who leads you to god."
+	desc = "The headset of the man who leads you to god and into the arms of a cult."
 	icon_state = "nt_com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/preacher
@@ -198,7 +214,7 @@
 
 /obj/item/device/radio/headset/headset_service
 	name = "service radio headset"
-	desc = "Headset used by the service staff, tasked with keeping the station full, happy, and clean."
+	desc = "Headset used by the service staff, tasked with keeping the colony full, happy, and clean."
 	icon_state = "srv_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_service
@@ -232,6 +248,27 @@
 	icon_state = "nt_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_church
+
+/obj/item/device/radio/headset/bluetag
+	name = "blue plasmatag team headset"
+	desc = "Blue pride radio wide."
+	ks2type = /obj/item/device/encryptionkey/headset_blueteam
+
+/obj/item/device/radio/headset/redtag
+	name = "red plasmatag team headset"
+	desc = "Some say this one makes you hear things faster!"
+	ks2type = /obj/item/device/encryptionkey/headset_redteam
+
+/obj/item/device/radio/headset/yellowtag
+	name = "yellow plasmatag team headset"
+	desc = "The only thing yellow is these radio waves"
+	ks2type = /obj/item/device/encryptionkey/headset_yellowteam
+
+/obj/item/device/radio/headset/greentag
+	name = "green plasmatag team headset"
+	desc = "Green tacticians have been using this to win games for ages!."
+	ks2type = /obj/item/device/encryptionkey/headset_greenteam
+
 
 /obj/item/device/radio/headset/attackby(obj/item/weapon/W as obj, mob/user as mob)
 //	..()

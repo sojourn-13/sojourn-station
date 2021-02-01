@@ -18,6 +18,31 @@
 	holder.stats.removeTempStat(STAT_MEC, "Exotic Inspiration")
 	..()
 
+/datum/perk/job/artist
+	name = "Artist"
+	desc = "You have a lot of expertise in making works of art. You gain more insight from all sources but can only increase \
+			your stats by creating works of art."
+	var/old_max_insight = INFINITY
+	var/old_max_resting = INFINITY
+	var/old_insight_rest_gain_multiplier = 1
+
+/datum/perk/job/artist/assign(mob/living/carbon/human/H)
+	..()
+	old_max_insight = holder.sanity.max_insight
+	old_max_resting = holder.sanity.max_resting
+	old_insight_rest_gain_multiplier = holder.sanity.insight_rest_gain_multiplier
+	holder.sanity.max_insight = 100
+	holder.sanity.insight_gain_multiplier *= 1.5
+	holder.sanity.max_resting = 1
+	holder.sanity.insight_rest_gain_multiplier = 0
+
+/datum/perk/job/artist/remove()
+	holder.sanity.max_insight += old_max_insight - 100
+	holder.sanity.insight_gain_multiplier /= 1.5
+	holder.sanity.max_resting += old_max_resting - 1
+	holder.sanity.insight_rest_gain_multiplier += old_insight_rest_gain_multiplier
+	..()
+
 /datum/perk/timeismoney
 	name = "Hyperzine Implant"
 	desc = "A standard issue implant designed for chief executive officers that contains a small on demand injection of hyperzine. The implant itself is hidden from prying scanners and comes in both \
@@ -159,7 +184,7 @@
 
 /datum/perk/space_asshole
 	name = "Rough Life"
-	desc = "Coming from a world consumed with war has made you a lot more used to dealing with bad terrain and explosives."
+	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Enviromental damage from falling or explosives have less of an effect on your toughened body."
 	//icon_state = "bomb" // https://game-icons.net
 
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
@@ -179,7 +204,7 @@
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
-	holder.mod_climb_delay -= -0.5
+	holder.mod_climb_delay -= 0.5
 
 /datum/perk/parkour/remove()
 	holder.mod_climb_delay += 0.5
@@ -187,7 +212,7 @@
 
 /datum/perk/chaingun_smoker
 	name = "Unclean Living"
-	desc = "The bad conditions of your birth have led you to thrive in toxic enviroments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and less sick when smoking."
+	desc = "The bad conditions of your birth have led you to thrive in toxic enviroments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and slowly heal toxin damage when smoking."
 	//icon_state = "cigarette" // https://game-icons.net
 
 /datum/perk/nightcrawler
@@ -197,12 +222,12 @@
 
 /datum/perk/fast_fingers
 	name = "Fast fingers"
-	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary!"
+	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary! Any time you pickpocket someone observers have a much harder time noticing."
 	//icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
 
 /datum/perk/quiet_as_mouse
 	name = "Quiet as a mouse"
-	desc = "Being deadly, easy. Silent? Even easier now."
+	desc = "Being deadly, easy. Silent? Even easier now. You generate less noise than others."
 	//icon_state = "footsteps" // https://game-icons.net
 
 /datum/perk/quiet_as_mouse/assign(mob/living/carbon/human/H)
@@ -215,7 +240,7 @@
 
 /datum/perk/junkborn
 	name = "Expert Scavenger"
-	desc = "They say theirs diamonds in the rough and you can prove it."
+	desc = "They say theirs diamonds in the rough and you can prove it. Removing a trash pile has a chance of revealing a valuable item nobody else would find."
 	//icon_state = "treasure" // https://game-icons.net
 
 /datum/perk/ass_of_concrete
@@ -233,7 +258,7 @@
 
 /datum/perk/sommelier
 	name = "Sommelier"
-	desc = "You know how to handle even strongest alcohol in the universe."
+	desc = "You know how to handle even strongest alcohol in the universe and doing so improves your toughness."
 	//icon_state = "inspiration"
 
 /datum/perk/rezsickness
@@ -326,3 +351,23 @@
 		return
 	if(holder.buckled)
 		cooldown_time -= 2 SECONDS
+
+/datum/perk/handyman
+	name = "Handyman"
+	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the best way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
+
+/datum/perk/stalker
+	name = "Anomaly Hunter"
+	desc = "Special training from senior prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examing an oddity that has become an anomaly you can tell what its greater boon or curse may be."
+
+/datum/perk/market_prof
+	name = "Market Professional"
+	desc = "Just by looking at the item you can know how much it cost."
+
+/datum/perk/surgical_master
+	name = "Surgical Master"
+	desc = "When it comes to surgery most in your field are experts, while you may not know the more advanced medical procedures you can perform surgery with ease."
+
+/datum/perk/job/jingle_jangle
+	name = "Key Smith"
+	desc = "You know how to use keys and lockpicks to open electronic doors somehow."

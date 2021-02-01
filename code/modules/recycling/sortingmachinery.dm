@@ -373,6 +373,7 @@
 /obj/machinery/disposal/deliveryChute
 	name = "delivery chute"
 	desc = "A chute for big and small packages alike!"
+	var/sound_on = TRUE
 	density = 1
 	icon_state = "intake"
 	layer = BELOW_OBJ_LAYER //So that things being ejected are visible
@@ -393,15 +394,16 @@
 
 /obj/machinery/disposal/deliveryChute/Bumped(var/atom/movable/AM) //Go straight into the chute
 	if(istype(AM, /obj/item/projectile) || istype(AM, /obj/effect))	return
-	switch(dir)
-		if(NORTH)
-			if(AM.loc.y != src.loc.y+1) return
-		if(EAST)
-			if(AM.loc.x != src.loc.x+1) return
-		if(SOUTH)
-			if(AM.loc.y != src.loc.y-1) return
-		if(WEST)
-			if(AM.loc.x != src.loc.x-1) return
+	if(AM.loc && src.loc)
+		switch(dir)
+			if(NORTH)
+				if(AM.loc.y != src.loc.y+1) return
+			if(EAST)
+				if(AM.loc.x != src.loc.x+1) return
+			if(SOUTH)
+				if(AM.loc.y != src.loc.y-1) return
+			if(WEST)
+				if(AM.loc.x != src.loc.x-1) return
 
 	if(isobj(AM) || ismob(AM))
 		AM.forceMove(src)
@@ -415,7 +417,8 @@
 	//air_contents = new()		// new empty gas resv.
 
 	sleep(10)
-	playsound(src, 'sound/machines/disposalflush.ogg', 50, 0, 0)
+	if(sound_on)
+		playsound(src, 'sound/machines/disposalflush.ogg', 50, 0, 0)
 	sleep(5) // wait for animation to finish
 
 	H.init(src)	// copy the contents of disposer to holder
@@ -434,12 +437,23 @@
 
 /obj/machinery/disposal/deliveryChute/attackby(var/obj/item/I, var/mob/user)
 
-	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING)
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_PULSING)
 	if(c_mode == 1)
 		usable_qualities.Add(QUALITY_WELDING)
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
+
+		if(QUALITY_PULSING)
+			if(contents.len > 0)
+				to_chat(user, "Eject the items first!")
+				return
+			if(!sound_on)
+				to_chat(user, "You turn on the chute alarm sound.")
+				sound_on = TRUE
+			if(sound_on)
+				to_chat(user, "You turn off the chute alarm sound.")
+				sound_on = FALSE
 
 		if(QUALITY_SCREW_DRIVING)
 			if(contents.len > 0)

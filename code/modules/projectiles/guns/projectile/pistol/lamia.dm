@@ -7,18 +7,19 @@
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
 	caliber = CAL_50
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
-	can_dual = 1
+	can_dual = TRUE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
-	price_tag = 2400
+	price_tag = 1200
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
-	recoil_buildup = 21
-	one_hand_penalty = 20
+	recoil_buildup = 18
+	one_hand_penalty = 19
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/lamia/update_icon()
 	..()
@@ -52,7 +53,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	zoom_factor = 0.4
 	recoil_buildup = 15
-	price_tag = 2500
+	price_tag = 1250
 
 /obj/item/weapon/gun/projectile/lamia/scoped/dark
 	name = "\"Naga\" advanced heavy pistol"
@@ -62,9 +63,9 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.4
 	recoil_buildup = 10
-	damage_multiplier = 1.4
-	penetration_multiplier = 1.4
-	price_tag = 2200
+	damage_multiplier = 1.3
+	penetration_multiplier = 1.2
+	price_tag = 1100
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
@@ -76,16 +77,11 @@
 	item_state = "socom"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.5
-	silencer_type = /obj/item/weapon/silencer/integrated
+	silenced = TRUE
 	recoil_buildup = 8 //highly OP SolFed specwar weapon
-	damage_multiplier = 0.95
+	damage_multiplier = 0.9
 	penetration_multiplier = 1.2
-	price_tag = 2500
-
-	//This comes with a preinstalled silencer
-/obj/item/weapon/gun/projectile/lamia/socom/Initialize()
-	.=..()
-	apply_silencer(new /obj/item/weapon/silencer/integrated(src), null)
+	price_tag = 1250
 
 /obj/item/weapon/gun/projectile/lamia/akurra
 	name = "\"Akurra\" silenced heavy pistol"
@@ -94,12 +90,7 @@
 	item_state = "akurra"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	recoil_buildup = 15
-	silencer_type = /obj/item/weapon/silencer/integrated
+	silenced = TRUE
 	damage_multiplier = 0.95
 	penetration_multiplier = 1.2
-	price_tag = 2500
-
-	//This comes with a preinstalled silencer
-/obj/item/weapon/gun/projectile/lamia/akurra/Initialize()
-	.=..()
-	apply_silencer(new /obj/item/weapon/silencer/integrated(src), null)
+	price_tag = 1250

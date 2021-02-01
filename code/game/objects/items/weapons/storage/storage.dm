@@ -223,11 +223,11 @@
 	return L
 
 /obj/item/weapon/storage/proc/show_to(var/mob/user)
-	if (!user.client)
+	if(!user.client)
 		return
 
 	if(user.s_active != src) //opening a new storage item
-		if (user.s_active) //user already had a storage item open
+		if(user.s_active) //user already had a storage item open
 			user.s_active.close(user)
 
 		for(var/obj/item/I in src)
@@ -235,14 +235,14 @@
 				return
 
 	var/datum/hud/data = global.HUDdatums[user.defaultHUD]
-	if (data)
+	if(data)
 		generateHUD(data).show(user.client)
 		is_seeing |= user
 		user.s_active = src
 
 /obj/item/weapon/storage/proc/hide_from(var/mob/user)
 	is_seeing -= user
-	if (user.s_active == src)
+	if(user.s_active == src)
 		user.s_active = null
 
 	if(!user.client)
@@ -251,7 +251,7 @@
 	user.client.hide_HUD_element("storage")
 
 /obj/item/weapon/storage/proc/open(var/mob/user)
-	if (src.use_sound)
+	if(src.use_sound)
 		playsound(src.loc, src.use_sound, 50, 1, -5)
 
 	show_to(user)
@@ -259,13 +259,22 @@
 /obj/item/weapon/storage/proc/close(var/mob/user)
 	hide_from(user)
 
+/obj/item/weapon/storage/AltClick(mob/user)
+	if(user.incapacitated())
+		to_chat(user, SPAN_WARNING("You can't do that right now!"))
+		return
+	if(!in_range(src, user))
+		return
+	else
+		src.open(user)
+
 /obj/item/weapon/storage/proc/close_all()
 	for (var/mob/M in is_seeing)
 		close(M)
 
 /obj/item/weapon/storage/proc/refresh_all()
 	for (var/mob/M in is_seeing)
-		if (M.client)
+		if(M.client)
 			var/datum/hud/data = global.HUDdatums[M.defaultHUD]
 			if (data)
 				generateHUD(data).show(M.client)
@@ -304,7 +313,7 @@
 			to_chat(usr, SPAN_NOTICE("[src] cannot hold [W]."))
 		return 0
 
-	if (max_w_class != null && W.w_class > max_w_class)
+	if(max_w_class != null && W.w_class > max_w_class)
 		if(!stop_messages)
 			to_chat(usr, SPAN_NOTICE("[W] is too long for this [src]."))
 		return 0

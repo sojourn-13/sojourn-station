@@ -12,17 +12,16 @@
 	default_description = /datum/organ_description/head
 
 
-/obj/item/organ/external/head/removed()
-	if(owner)
-		name = "[owner.real_name]'s head"
-		spawn(1)
-			if(owner) // In case owner was destroyed already - gibbed, for example
-				owner.update_hair()
+/obj/item/organ/external/head/removed_mob()
+	name = "[owner.real_name]'s head"
+	spawn(1)
+		if(owner) // In case owner was destroyed already - gibbed, for example
+			owner.update_hair()
 	..()
 
 /obj/item/organ/external/head/take_damage(brute, burn, sharp, edge, used_weapon = null, list/forbidden_limbs = list(), silent)
-	..(brute, burn, sharp, edge, used_weapon, forbidden_limbs)
-	if (!disfigured)
+	. = ..()
+	if(. && !disfigured)
 		if (brute_dam > 40)
 			if (prob(50))
 				disfigure("brute")

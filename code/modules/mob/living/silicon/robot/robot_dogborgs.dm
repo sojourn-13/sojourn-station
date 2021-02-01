@@ -4,20 +4,22 @@
 					"K9 Hound" = "k9",
 					"V2 K9 Hound" = "ihsechound",
 					)
-	channels = list("Security" = 1)
+	channels = list("Marshal" = 1, "Blackshield" = 1)
 	networks = list(NETWORK_SECURITY)
 	can_be_pushed = 0
 
 	health = 210 //Very tanky!
 	speed_factor = 1.1 //Kinda slow
-	power_efficiency = 1.15 //Decent
+	power_efficiency = 1.55 //Decent we are meant to be around the colony
 
 	stat_modifiers = list(
-		STAT_ROB = 30,
-		STAT_TGH = 20
+		STAT_ROB = 60,
+		STAT_TGH = 60,
+		STAT_BIO = 25,
+		STAT_COG = 25
 	)
 
-	desc = "Focused on keeping the peace and fighting off threats to the ship, the IH K9 Module is a \
+	desc = "Focused on keeping the peace and fighting off threats to the colony, the IH K9 Module is a \
 	heavily armored, though lightly armed battle unit."
 
 /obj/item/weapon/robot_module/robot/knine/New(var/mob/living/silicon/robot/R)
@@ -28,9 +30,10 @@
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
+	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
 	//src.modules += new /obj/item/device/holowarrant(src)
 	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs
-	src.emag = new /obj/item/weapon/gun/energy/laser/mounted(src)
+	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
 
 	R.icon 		 = 'icons/mob/robots_wide.dmi'
 	R.pixel_x 	 = -16
@@ -66,11 +69,11 @@
 
 	health = 85 //Fragile
 	speed_factor = 1.0 //Kinda slow
-	power_efficiency = 0.6 //Very poor, shackled to a charger
+	power_efficiency = 0.7 //Very poor, shackled to a charger
 
 	stat_modifiers = list(
-		STAT_BIO = 40,
-		STAT_COG = 10
+		STAT_BIO = 60,
+		STAT_COG = 30
 	)
 
 	desc = "A versatile medical hound, equipped with all the tools necessary for surgery, chemistry, and \
@@ -94,6 +97,7 @@
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
 	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
+	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
@@ -159,9 +163,11 @@
 	power_efficiency = 0.8 //Poor
 
 	stat_modifiers = list(
-		STAT_ROB = 20
+		STAT_ROB = 25,
+		STAT_TGH = 25,
+		STAT_BIO = 25,
+		STAT_COG = 25
 	)
-
 	desc = "A vast machine designed for cleaning up trash and scrubbing floors. A fairly specialised task, \
 	but requiring a large capacity. The huge chassis consequentially grants it a degree of toughness, \
 	though it is slow and cheaply made"
@@ -177,6 +183,7 @@
 	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src) // a hydroponist's bucket
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
+	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
 	src.emag.name = "Lube spray"
@@ -241,11 +248,13 @@
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
 	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
+	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/storage/bag/produce(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.emag = new /obj/item/weapon/hand_tele(src)
+	src.emag = new /obj/item/weapon/hand_tele(src) //Why
+	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
 	synths += nanite
@@ -271,19 +280,22 @@
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
 	can_be_pushed = 0
+	supported_upgrades = list(/obj/item/borg/upgrade/welder_stuff,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
 
 	health = 170 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
 	power_efficiency = 0.9 //Slightly below average
 
-	desc = "The engineering module is designed for setting up and maintaining core ship systems, \
+	desc = "The engineering module is designed for setting up and maintaining core colony systems, \
 	as well as occasional repair work here and there. It's a good all rounder that can serve most \
 	engineering tasks."
 
 	stat_modifiers = list(
-		STAT_COG = 20,
-		STAT_MEC = 40
+		STAT_COG = 40,
+		STAT_MEC = 40,
+		STAT_BIO = 25
 	)
+
 
 /obj/item/weapon/robot_module/robot/engiedog/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
@@ -296,8 +308,10 @@
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/device/scanner(src)
+	src.modules += new /obj/item/device/scanner/gas(src)
 	src.modules += new /obj/item/taperoll/engineering(src)
 	src.modules += new /obj/item/weapon/gripper(src)
 	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
@@ -305,7 +319,7 @@
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
-	src.emag = new /obj/item/weapon/melee/baton(src)
+	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(60000)
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass(40000)

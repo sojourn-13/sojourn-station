@@ -38,6 +38,13 @@
     ..()
     toggle_active()
     update_icon()
+   
+/obj/machinery/excelsior_boombox/attackby(var/obj/item/I, var/mob/user)
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
 
 /obj/machinery/excelsior_boombox/update_icon()
 	if(!active || (stat & (BROKEN|NOPOWER)))

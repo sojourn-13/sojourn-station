@@ -139,6 +139,49 @@
 	rating = 3
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 
+/*
+//Guild stock parts (rating 4)
+/obj/item/weapon/stock_parts/capacitor/guild
+	name = "crafted ultra capacitor"
+	desc = "A guild tinkered super-high capacity capacitor used in the construction of a variety of devices."
+	icon_state = "guild_capacitor"
+	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
+	rating = 4
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_GOLD  = 2, MATERIAL_SILVER = 2)
+
+/obj/item/weapon/stock_parts/scanning_module/guild
+	name = "overtooned scanning module"
+	desc = "A over engierned and exspective yet compact, high resolution phasic scanning module used in the construction of certain devices."
+	icon_state = "guild_scan_module"
+	origin_tech = list(TECH_MAGNET = 5)
+	rating = 4
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_RGLASS  = 1, MATERIAL_GOLD  = 2, MATERIAL_SILVER = 2)
+
+/obj/item/weapon/stock_parts/manipulator/guild
+	name = "forged manipulator"
+	desc = "A buffed up pico manipulator with a added case to increase manipulation used in the construction of certain devices."
+	icon_state = "guild_mani"
+	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
+	rating = 4
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 2)
+
+/obj/item/weapon/stock_parts/micro_laser/guild
+	name = "perfected micro-laser"
+	icon_state = "guild_laser"
+	desc = "A ultera-high micro laser with a perfected lens to increase productivtly."
+	origin_tech = list(TECH_MAGNET = 5)
+	rating = 4
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_DIAMOND = 1)
+
+/obj/item/weapon/stock_parts/matter_bin/guild
+	name = "casted matter bin"
+	desc = "A supper matter bin with added compression casted onto the base itself for more effective storage."
+	icon_state = "guild_matter"
+	origin_tech = list(TECH_MATERIAL = 5)
+	rating = 4
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 1, MATERIAL_PLASMAGLASS = 1)
+*/
+
 //excelsior stock parts (rating 4)
 /obj/item/weapon/stock_parts/capacitor/excelsior
 	name = "excelsior capacitor"

@@ -1,16 +1,15 @@
 /obj/item/organ/internal/cell
 	name = "microbattery"
-	desc = "A small, powerful cell for use in fully prosthetic bodies."
-	icon = 'icons/obj/power.dmi'
-	icon_state = "scell"
-	organ_tag = BP_CELL
-	parent_organ = BP_CHEST
+	desc = "A small, powerful cell for use in fully prosthetic bodies. Takes a medium cell and normally comes with a nuclear self charging cell."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "cortical_stack"
+	parent_organ_base = BP_CHEST
 	nature = MODIFICATION_SILICON
 	vital = TRUE
 	var/open
-	var/obj/item/weapon/cell/medium/cell = /obj/item/weapon/cell/medium
+	var/obj/item/weapon/cell/medium/cell = /obj/item/weapon/cell/medium/moebius/nuclear
 	//at 0.8 completely depleted after 60ish minutes of constant walking or 130 minutes of standing still
-	var/servo_cost = 0.8 // this will probably require tweaking
+	var/servo_cost = 0.5 // this will probably require tweaking
 
 /obj/item/organ/internal/cell/Initialize(mapload, ...)
 	. = ..()
@@ -87,32 +86,32 @@
 				cell = W
 				to_chat(user, SPAN_NOTICE("You insert \the [cell]."))
 
-/obj/item/organ/internal/cell/replaced()
+/obj/item/organ/internal/cell/replaced_mob(mob/living/carbon/human/target)
 	..()
 	// This is very ghetto way of rebooting an IPC. TODO better way.
-	if(owner && owner.stat == DEAD)
+	if(owner.stat == DEAD)
 		owner.set_stat(CONSCIOUS)
 		owner.visible_message(SPAN_DANGER("\The [owner] twitches visibly!"))
 
 
-/obj/item/organ/optical_sensor
+/obj/item/organ/internal/optical_sensor
 	name = "optical sensor"
 	organ_tag = "optics"
-	parent_organ = BP_HEAD
+	parent_organ_base = BP_HEAD
 	nature = MODIFICATION_SILICON
 	icon = 'icons/obj/robot_component.dmi'
 	icon_state = "camera"
 	dead_icon = "camera_broken"
 
 // Used for an MMI or posibrain being installed into a human.
-/obj/item/organ/mmi_holder
+/obj/item/organ/internal/mmi_holder
 	name = "brain"
 	organ_tag = BP_BRAIN
-	parent_organ = BP_CHEST
+	parent_organ_base = BP_CHEST
 	vital = 1
 	var/obj/item/device/mmi/stored_mmi
 
-/obj/item/organ/mmi_holder/proc/update_from_mmi()
+/obj/item/organ/internal/mmi_holder/proc/update_from_mmi()
 	if(!stored_mmi)
 		return
 	name = stored_mmi.name
@@ -120,12 +119,10 @@
 	icon = stored_mmi.icon
 	icon_state = stored_mmi.icon_state
 
-/obj/item/organ/mmi_holder/removed(var/mob/living/user)
+/obj/item/organ/internal/mmi_holder/removed(var/mob/living/user)
 
 	if(stored_mmi)
-		stored_mmi.loc = get_turf(src)
-		if(owner.mind)
-			owner.mind.transfer_to(stored_mmi.brainmob)
+		stored_mmi.forceMove(get_turf(src))
 	..()
 
 	var/mob/living/holder_mob = loc
@@ -133,7 +130,12 @@
 		holder_mob.drop_from_inventory(src)
 	qdel(src)
 
-/obj/item/organ/mmi_holder/New()
+/obj/item/organ/internal/mmi_holder/removed_mob(mob/living/user)
+	if(owner.mind && stored_mmi)
+		owner.mind.transfer_to(stored_mmi.brainmob)
+	..()
+
+/obj/item/organ/internal/mmi_holder/New()
 	..()
 	// This is very ghetto way of rebooting an IPC. TODO better way.
 	spawn(1)
@@ -141,10 +143,10 @@
 			owner.stat = 0
 			owner.visible_message(SPAN_DANGER("\The [owner] twitches visibly!"))
 
-/obj/item/organ/mmi_holder/posibrain
+/obj/item/organ/internal/mmi_holder/posibrain
 	nature = MODIFICATION_SILICON
 
-/obj/item/organ/mmi_holder/posibrain/New()
+/obj/item/organ/internal/mmi_holder/posibrain/New()
 	stored_mmi = new /obj/item/device/mmi/digital/posibrain(src)
 	..()
 	spawn(30)

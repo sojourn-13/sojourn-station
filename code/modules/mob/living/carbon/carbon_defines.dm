@@ -19,6 +19,11 @@
 	//Active emote/pose
 	var/pose = null
 
+	//Values from all base organs should add up to this
+	var/total_blood_req = 40
+	var/total_oxygen_req = 50
+	var/total_nutriment_req = DEFAULT_HUNGER_FACTOR
+
 	var/datum/reagents/metabolism/bloodstr = null
 	var/datum/reagents/metabolism/ingested = null
 	var/datum/reagents/metabolism/touching = null
@@ -30,6 +35,8 @@
 
 	var/cpr_time = 1.0
 	nutrition = 400.0//Carbon
+
+	var/is_watching = TRUE  //used for remote viewing of multiz structures
 
 	var/flesh_color = "#A10808"
 

@@ -35,9 +35,9 @@
 	#define MED_HUD 2 //Medical HUD mode
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
-/mob/living/silicon/New()
+/mob/living/silicon/Initialize()
 	GLOB.silicon_mob_list |= src
-	..()
+	. = ..()
 	add_language(LANGUAGE_COMMON)
 	init_id()
 	init_subsystems()
@@ -113,11 +113,10 @@
 		IgniteMob()
 
 	if(!Proj.nodamage)
-		switch(Proj.damage_type)
-			if(BRUTE)
-				adjustBruteLoss(Proj.damage)
-			if(BURN)
-				adjustFireLoss(Proj.damage)
+		if(Proj.damage_types[BRUTE])
+			adjustBruteLoss(Proj.damage_types[BRUTE])
+		if(Proj.damage_types[BURN])
+			adjustFireLoss(Proj.damage_types[BURN])
 
 	Proj.on_hit(src)
 	updatehealth()

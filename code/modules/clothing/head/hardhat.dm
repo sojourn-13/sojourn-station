@@ -1,7 +1,6 @@
 /obj/item/clothing/head/hardhat
-	name = "yellow hard hat"
-	desc = "Yellow headgear for dangerous working conditions. Comes with a built-in light."
-	icon_state = "hardhat0_yellow"
+	name = "hard hat"
+	desc = "Headgear for dangerous working conditions. Comes with a built-in light and a variety of colors."
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4 //luminosity when on
 	light_overlay = "hardhat_light"
@@ -16,43 +15,33 @@
 	siemens_coefficient = 0.8
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 30
-
-/obj/item/clothing/head/hardhat/orange
-	name = "orange hard hat"
-	desc = "Orange headgear for dangerous working conditions. Comes with a built-in light."
-	icon_state = "hardhat0_orange"
-
-/obj/item/clothing/head/firefighter
-	icon_state = "hardhat0_red"
-	name = "firefighter helmet"
-	desc = "Fire-resistant red headgear worn for firefighting purposes."
 	item_flags = STOPPRESSUREDAMAGE
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 
+/obj/item/clothing/head/hardhat/New()
+	icon_state = "hardhat-[pick("o","y","r","b")]"
+	item_state = icon_state
+	..()
+
 /obj/item/clothing/head/firefighter/chief
-	name = "firefighter chief helmet"
-	desc = "Fire-resistant white headgear worn for firefighting command purposes."
-	icon_state = "hardhat0_white"
+	name = "guild master helmet"
+	desc = "A pure white fire resistant hard hat with a powerful headlight and built in nuclear cell. The best utility helmet the guild has."
+	icon_state = "hardhat_white"
 	item_flags = STOPPRESSUREDAMAGE
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 	action_button_name = "Toggle Headlamp"
-	brightness_on = 5 //luminosity when on
+	brightness_on = 6 //luminosity when on
 	light_overlay = "hardhat_light"
 	armor = list(
-		melee = 20,
-		bullet = 15,
-		energy = 10,
-		bomb = 15,
+		melee = 30,
+		bullet = 20,
+		energy = 20,
+		bomb = 35,
 		bio = 10,
 		rad = 25
 	)
 	siemens_coefficient = 0.8
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 100
-
-/obj/item/clothing/head/hardhat/dblue
-	name = "blue hard hat"
-	desc = "Blue headgear for dangerous working conditions. Comes with a built-in light."
-	icon_state = "hardhat0_dblue"

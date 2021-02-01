@@ -13,7 +13,7 @@
 	mag_well = MAG_WELL_STANMAG
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 4000
+	price_tag = 2000
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
@@ -22,13 +22,14 @@
 	zoom_factor = 0.4
 	penetration_multiplier = 1.2
 	damage_multiplier = 0.9
-	recoil_buildup = 7
-	one_hand_penalty = 15 //automatic rifle level
+	recoil_buildup = 5
+	one_hand_penalty = 10 //automatic rifle level
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND
+		BURST_3_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/ostwind/update_icon()

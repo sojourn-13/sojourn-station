@@ -237,8 +237,8 @@
 			M.change_mob_type( /mob/observer/ghost , null, null, delmob )
 		if("angel")
 			M.change_mob_type( /mob/observer/eye/angel , null, null, delmob )
-		if("larva")
-			M.change_mob_type( /mob/living/carbon/alien/larva , null, null, delmob )
+		//if("larva")
+		//	M.change_mob_type( /mob/living/carbon/alien/larva , null, null, delmob )
 		if("human")
 			M.change_mob_type( /mob/living/carbon/human , null, null, delmob, input["species"])
 		if("slime")
@@ -574,7 +574,8 @@
 
 
 /datum/admin_topic/boot2
-	keyword = "boot"
+	keyword = "boot2"
+	require_perms = list(R_MOD|R_ADMIN)
 
 /datum/admin_topic/boot2/Run(list/input)
 	var/mob/M = locate(input["boot2"])

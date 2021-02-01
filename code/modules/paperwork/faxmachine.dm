@@ -11,7 +11,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	req_one_access = list() //No access required but you will get Bluespace Cannoned if you misuse it.
 
 	density = 0//It's a small machine that sits on a table, this allows small things to walk under that table
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 30
 	active_power_usage = 200
 

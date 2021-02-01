@@ -49,12 +49,21 @@
 			if(locate(/mob/living) in O)
 				occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
 				return
-			if(O.anchored)
+			if(istype(target, /obj/structure/scrap))
+				occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [O] with \the [src]."))
+				if(do_after_cooldown(O))
+					if(istype(O, /obj/structure/scrap))
+						var/obj/structure/scrap/S = O
+						S.make_cube()
+						occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [O] into a cube with \the [src]."))
+				return
+			if(O.anchored && !istype(O, /obj/structure/salvageable))
 				occupant_message(SPAN_WARNING("[target] is firmly secured."))
 				return
 			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
 				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
 				return
+
 
 			occupant_message("You lift [target] and start to load it into cargo compartment.")
 			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
@@ -156,8 +165,8 @@
 	icon_state = "mecha_diamond_drill"
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_DIAMOND = 3)
-	equip_cooldown = 20
-	force = 15
+	equip_cooldown = 10 // 3 diamonds for 3x the speed!
+	force = 25 //Lets not be out classed by a wrench...
 
 	action(atom/target)
 		if(!action_checks(target)) return
@@ -209,7 +218,7 @@
 	icon_state = "mecha_exting"
 	equip_cooldown = 5
 	energy_drain = 0
-	range = MELEE|RANGED
+	range = MECHA_MELEE|MECHA_RANGED
 	required_type = /obj/mecha/working
 	var/spray_particles = 5
 	var/spray_amount = 5	//units of liquid per particle. 5 is enough to wet the floor - it's a big fire extinguisher, so should be fine
@@ -282,7 +291,7 @@
 	origin_tech = list(TECH_MATERIAL = 4, TECH_BLUESPACE = 3, TECH_MAGNET = 4, TECH_POWER = 4)
 	equip_cooldown = 10
 	energy_drain = 250
-	range = MELEE|RANGED
+	range = MECHA_MELEE|MECHA_RANGED
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASMA = 15, MATERIAL_URANIUM = 15)
 	var/mode = 0 //0 - deconstruct, 1 - wall or floor, 2 - airlock.
 	var/disabled = 0 //malf
@@ -386,7 +395,7 @@
 	origin_tech = list(TECH_BLUESPACE = 6)
 	equip_cooldown = 150
 	energy_drain = 1000
-	range = RANGED
+	range = MECHA_RANGED
 
 	action(atom/target)
 		if(!action_checks(target) || src.loc.z == 6) return
@@ -406,7 +415,7 @@
 	origin_tech = list(TECH_BLUESPACE = 3)
 	equip_cooldown = 50
 	energy_drain = 300
-	range = RANGED
+	range = MECHA_RANGED
 
 
 	action(atom/target)
@@ -446,7 +455,7 @@
 	origin_tech = list(TECH_BLUESPACE = 2, TECH_MAGNET = 3)
 	equip_cooldown = 10
 	energy_drain = 100
-	range = MELEE|RANGED
+	range = MECHA_MELEE|MECHA_RANGED
 	var/atom/movable/locked
 	var/mode = 1 //1 - gravsling 2 - gravpush
 
@@ -794,7 +803,7 @@
 	origin_tech = list(TECH_PLASMA = 2, TECH_POWER = 2, TECH_ENGINEERING = 1)
 	equip_cooldown = 10
 	energy_drain = 0
-	range = MELEE
+	range = MECHA_MELEE
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 5, MATERIAL_GLASS = 1)
 	var/datum/global_iterator/pr_mech_generator
 	var/coeff = 100
@@ -1028,7 +1037,7 @@
 	origin_tech = list(TECH_ENGINEERING = 1, TECH_BIO = 1)
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 5)
 	energy_drain = 10
-	range = MELEE
+	range = MECHA_MELEE
 	equip_cooldown = 20
 	var/mob/living/carbon/occupant = null
 	var/door_locked = 1

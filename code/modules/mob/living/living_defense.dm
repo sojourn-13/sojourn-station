@@ -16,6 +16,9 @@
 	var/armor_effectiveness = max(0, ( armor - armour_pen ) )
 	var/effective_damage = damage - guaranteed_damage_red
 
+	if(damagetype == HALLOSS)
+		effective_damage = round(effective_damage * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)))
+
 	if(effective_damage <= 0)
 		show_message(SPAN_NOTICE("Your armor absorbs the blow!"))
 		return FALSE
@@ -35,7 +38,7 @@
 						SPAN_NOTICE("Your armor reduced the impact greatly!"))
 
 	else if(armor_effectiveness >= 49)
-		visible_message(SPAN_NOTICE("[src] armor abosrbs most of the damage!"),
+		visible_message(SPAN_NOTICE("[src] armor absorbs most of the damage!"),
 						SPAN_NOTICE("Your armor protects you from impact!"))
 
 	else if(armor_effectiveness >= 24)
@@ -50,7 +53,7 @@
 		//Pain part of the damage, that simulates impact from armor absorbtion
 		//For balance purposes, it's lowered by ARMOR_AGONY_COEFFICIENT
 		if(!(damagetype == HALLOSS ))
-			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_AGONY_COEFFICIENT ) / 100 )
+			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_AGONY_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)) / 100))
 			apply_effect(agony_gamage, AGONY)
 
 		//Actual part of the damage that passed through armor
@@ -97,8 +100,11 @@
 
 	//Armor and damage
 	if(!P.nodamage)
-		hit_impact(P.damage, hit_dir)
-		damage_through_armor(P.damage, P.damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P))
+		hit_impact(P.get_structure_damage(), hit_dir)
+		for(var/damage_type in P.damage_types)
+			var/damage = P.damage_types[damage_type]
+			damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P))
+
 
 	if(P.agony > 0 && istype(P,/obj/item/projectile/bullet))
 		hit_impact(P.agony, hit_dir)
@@ -230,7 +236,7 @@
 					src.anchored = 1
 					src.pinned += O
 
-/mob/living/proc/embed(var/obj/O, var/def_zone=null)
+/mob/living/proc/embed(var/obj/item/O, var/def_zone=null)
 	if(ismob(O.loc))
 		var/mob/living/L = O.loc
 		if(!L.unEquip(O, src))
@@ -239,6 +245,7 @@
 	src.embedded += O
 	src.visible_message("<span class='danger'>\The [O] embeds in the [src]!</span>")
 	src.verbs += /mob/proc/yank_out_object
+	O.on_embed(src)
 
 //This is called when the mob is thrown into a dense turf
 /mob/living/proc/turf_collision(var/turf/T, var/speed)

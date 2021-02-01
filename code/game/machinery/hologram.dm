@@ -41,7 +41,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 
 	var/power_per_hologram = 500 //per usage per hologram
 	idle_power_usage = 5
-	use_power = 1
+	use_power = IDLE_POWER_USE
 
 	var/list/mob/living/silicon/ai/masters = new() //List of AIs that use the holopad
 	var/last_request = 0 //to prevent request spam. ~Carn
@@ -132,6 +132,8 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 	log_admin("[key_name(caller_id)] just established a holopad connection from [sourcepad.loc.loc] to [src.loc.loc]")
 
 /obj/machinery/hologram/holopad/proc/end_call(mob/living/carbon/user)
+	if(!caller_id)
+		return
 	caller_id.unset_machine()
 	caller_id.reset_view() //Send the caller back to his body
 	clear_holo(0, caller_id) // destroy the hologram
@@ -336,7 +338,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 /obj/machinery/hologram
 	anchored = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 5
 	active_power_usage = 100
 

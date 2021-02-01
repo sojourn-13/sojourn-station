@@ -1,14 +1,14 @@
 /obj/item/stack/nanopaste
 	name = "nanopaste"
 	singular_name = "nanite swarm"
-	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing robotic machinery."
+	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing mechanical bodyparts, organs, and smart purging of toxic buildup."
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "nanopaste"
-	matter = list(MATERIAL_PLASTIC = 2)
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 0.2, MATERIAL_STEEL = 1)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3)
 	amount = 5
 	w_class = ITEM_SIZE_SMALL //just so you can place same places that a brute pack would be
-	price_tag = 15
+	price_tag = 80
 
 
 /obj/item/stack/nanopaste/attack(mob/living/M as mob, mob/user as mob)

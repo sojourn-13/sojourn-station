@@ -114,6 +114,12 @@
 		rad = 0
 	)
 
+/obj/item/clothing/under/rank/artist
+	name = "Jester's Garments"
+	desc = "The bright colors are almost distracting."
+	icon_state = "artist"
+	item_state = "artist"
+
 /obj/item/clothing/under/rank/miner
 	desc = "A snappy lonestar jumpsuit complete with sturdy mining overalls."
 	name = "lonestar miner's jumpsuit"

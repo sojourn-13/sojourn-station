@@ -10,6 +10,7 @@
 	flags = CONDUCT
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_STEEL = 1)
 	var/list/datum/autopsy_data_scanner/wdata = list()
 	var/list/datum/autopsy_data_scanner/chemtraces = list()
 	var/target_name = null
@@ -53,7 +54,7 @@
 			*/
 
 			// Buffing this stuff up for now!
-			if(prob(min(20 + (user.stats.getMult(STAT_BIO, STAT_LEVEL_EXPERT) * 100 ), 100)))
+			if(prob(min(20 + (user.stats.getMult(STAT_BIO, STAT_LEVEL_ADEPT) * 100 ), 100)))
 				W.pretend_weapon = W.weapon
 			else
 				W.pretend_weapon = pick("mechanical toolbox", "wirecutters", "revolver", "crowbar", "fire extinguisher", "tomato soup", "oxygen tank", "emergency oxygen tank", "laser", "bullet")

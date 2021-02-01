@@ -48,7 +48,7 @@ see multiz/movement.dm for some info.
 	// A lazy list to contain a list of mobs who are currently scaling
 	// up this turf. Used in human/can_fall.
 
-	var/tmp/list/climbers
+	var/tmp/list/climbers = list()
 
 /turf/simulated/open/New()
 	icon_state = "transparentclickable"
@@ -72,14 +72,14 @@ see multiz/movement.dm for some info.
 	if(open)
 		fallThrough(mover)
 
-/turf/simulated/open/proc/updateFallability()
+/turf/simulated/open/proc/updateFallability(var/obj/structure/catwalk/catwalk)
 	var/wasOpen = open
-	open = isOpen()
+	open = isOpen(catwalk)
 	if(open && open != wasOpen)
 		for(var/atom/A in src)
 			fallThrough(A)
 
-/turf/simulated/open/proc/isOpen()
+/turf/simulated/open/proc/isOpen(var/obj/structure/catwalk/catwalk)
 	. = FALSE
 	// only fall down in defined areas (read: areas with artificial gravitiy)
 	if(!istype(below)) //make sure that there is actually something below
@@ -87,7 +87,7 @@ see multiz/movement.dm for some info.
 		if(!below)
 			return
 
-	if(locate(/obj/structure/catwalk) in src)
+	if(catwalk != (locate(/obj/structure/catwalk) in src))
 		return
 
 	if(locate(/obj/structure/multiz/stairs) in src)
@@ -240,3 +240,49 @@ see multiz/movement.dm for some info.
 	else
 		return null
 
+/turf/simulated/open/MouseDrop_T(mob/target, mob/user)
+	var/mob/living/H = user
+	var/obj/structure/S = locate(/obj/structure) in GetBelow(src)
+	if(istype(H) && can_descent(H, S) && target == user)
+		do_descent(target, S)
+	else
+		return ..()
+
+/turf/simulated/open/proc/can_descent(var/mob/living/user, var/obj/structure/structure, post_descent_check = 0)
+	if(!structure || !structure.climbable || (!post_descent_check && (user in climbers)))
+		return
+
+	if(!user.Adjacent(src))
+		to_chat(user, SPAN_DANGER("You can't descent there, the way is blocked."))
+		return
+
+	var/obj/occupied = structure.turf_is_crowded()
+	if(occupied)
+		to_chat(user, SPAN_DANGER("There's \a [occupied] in the way."))
+		return
+
+	return 1
+
+/turf/simulated/open/proc/do_descent(var/mob/living/user, var/obj/structure/structure)
+	if(!can_descent(user, structure))
+		return
+
+	usr.visible_message(SPAN_WARNING("[user] starts descenting onto [structure]!"))
+	structure.visible_message(SPAN_WARNING("Someone starts descenting onto [structure]!"))
+	climbers |= user
+
+	var/delay = (issmall(user) ? 32 : 60) * user.mod_climb_delay
+	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
+	if(!do_after(user, duration, src))
+		climbers -= user
+		return
+
+	if(!can_descent(user, structure, post_descent_check = 1))
+		climbers -= user
+		return
+
+	usr.forceMove(GetBelow(src))
+
+	if(get_turf(user) == GetBelow(src))
+		usr.visible_message(SPAN_WARNING("[user] descents onto [structure]!"))
+	climbers -= user

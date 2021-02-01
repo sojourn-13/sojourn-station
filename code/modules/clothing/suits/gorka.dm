@@ -224,7 +224,7 @@
 	icon_open = "gorka_jacket_tan_open"
 	icon_closed = "gorka_jacket_tan"
 	blood_overlay_type = "coat"
-	armor = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -295,7 +295,7 @@
 	icon_closed = "gorka_jacket_crew_sci"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 5, rad = 5)
+	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -319,7 +319,7 @@
 	icon_closed = "gorka_jacket_crew_med"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 5, rad = 5)
+	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 5, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -342,7 +342,7 @@
 	icon_open = "gorka_jacket_ih_open"
 	icon_closed = "gorka_jacket_ih"
 	blood_overlay_type = "coat"
-	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 15, bio = 0, rad = 0)
+	armor = list(melee = 25, bullet = 25, energy = 15, bomb = 15, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20

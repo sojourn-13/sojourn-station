@@ -81,7 +81,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 2)
 	maxcharge = 18000
 
-//Meme cells - for fun and cancer
+//Meme cells - for fun
 
 /obj/item/weapon/cell/large/potato
 	name = "potato battery"
@@ -99,7 +99,8 @@
 	origin_tech = list(TECH_POWER = 2, TECH_BIO = 4)
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "yellow slime extract"
-	maxcharge = 10000
+	autorecharging = TRUE
+	maxcharge = 10000 //We still have a reason to use nukie cells
 	matter = null
 
 //MEDIUM CELLS - for energy weapons and large devices
@@ -151,11 +152,11 @@
 	maxcharge = 1000
 
 /obj/item/weapon/cell/medium/moebius/super
-	name = "Soteria \"Power-Geyser 1000M\""
+	name = "Soteria \"Power-Geyser 1200M\""
 	desc = "Soteria Institute branded rechargeable M-standardized power cell. This advanced version can store even more energy."
 	icon_state = "meb_m_sup"
 	origin_tech = list(TECH_POWER = 5)
-	maxcharge = 1000
+	maxcharge = 1200
 
 /obj/item/weapon/cell/medium/moebius/hyper
 	name = "Soteria \"Power-Geyser 1400M\""

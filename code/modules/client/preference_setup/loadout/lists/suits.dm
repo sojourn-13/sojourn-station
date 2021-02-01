@@ -59,6 +59,10 @@
 	path = /obj/item/clothing/suit/storage/miljacket
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/suit/punk_vest
+	display_name = "punk vest"
+	path = /obj/item/clothing/suit/storage/punkvest
+
 /datum/gear/suit/trackjacket
 	display_name = "jacket sport selection"
 	path = /obj/item/clothing/suit/storage/toggle/track
@@ -108,3 +112,15 @@
 	display_name = "sweater selection"
 	path = /obj/item/clothing/suit/sweater
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/suit/punkvest
+	display_name = "punk vest"
+	path = /obj/item/clothing/suit/punkvest
+
+/datum/gear/suit/punkvest
+	display_name = "windbreaker"
+	path = /obj/item/clothing/suit/storage/toggle/windbreaker
+
+/datum/gear/suit/punkvest
+	display_name = "cyberpunk vest"
+	path = /obj/item/clothing/suit/punkvest/cyber

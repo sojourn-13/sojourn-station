@@ -5,16 +5,18 @@
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "pad-idle"
 	anchored = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 200
 	active_power_usage = 5000
 	circuit = /obj/item/weapon/circuitboard/telesci_pad
 	var/efficiency
+	var/entropy_value = 8
 
 /obj/machinery/telepad/RefreshParts()
 	var/E
 	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
 		E += C.rating
+		entropy_value = initial(entropy_value)/C.rating
 	efficiency = E
 
 /obj/machinery/telepad/attackby(obj/item/I, mob/user, params)

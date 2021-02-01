@@ -21,7 +21,7 @@
 
 /obj/item/weapon/tool/saw/improvised
 	name = "choppa"
-	desc = "An improvised saw made of twisted, wicked metal. The serrated blade, with space for tool mods, is great for cutting."
+	desc = "An improvised saw made of twisted, wicked metal. The serrated blade, with ample space for tool mods, is great for cutting."
 	icon_state = "impro_saw"
 	force = WEAPON_FORCE_PAINFUL //doubles as makeshift melee weapon, thus must have more damage than tier 2 saw
 	tool_qualities = list(QUALITY_SAWING = 15, QUALITY_CUTTING = 10, QUALITY_WIRE_CUTTING = 10)
@@ -30,7 +30,7 @@
 
 /obj/item/weapon/tool/saw/circular //tier 3
 	name = "circular saw"
-	desc = "For heavy duty cutting."
+	desc = "For heavy duty cutting. Drains power quicker than normal saws."
 	icon_state = "saw"
 	hitsound = WORKSOUND_CIRCULAR_SAW
 	worksound = WORKSOUND_CIRCULAR_SAW
@@ -39,12 +39,12 @@
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 40, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 30)
 
-	use_power_cost = 0.15
+	use_power_cost = 0.45
 	suitable_cell = /obj/item/weapon/cell/small
 
 /obj/item/weapon/tool/saw/circular/medical
 	name = "medical circular saw"
-	desc = "For clean bone cutting but dosnt seem all that durable. Spins slower then the normal saw as well."
+	desc = "For clean bone cutting but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
 	icon_state = "saw"
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 4)
@@ -55,13 +55,13 @@
 
 /obj/item/weapon/tool/saw/circular/advanced
 	name = "advanced circular saw"
-	desc = "You think you can cut anything with it."
+	desc = "You think you can cut anything with it. More power effecient than a regular circular saw."
 	icon_state = "advanced_saw"
 	armor_penetration = ARMOR_PEN_DEEP
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 50, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
 	degradation = 0.7
-	use_power_cost = 0.22
+	use_power_cost = 0.29
 	max_upgrades = 4
 
 /obj/item/weapon/tool/saw/chain //tier 4, focusing on damage, fuel variant
@@ -71,6 +71,7 @@
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
 	force = WEAPON_FORCE_BRUTAL //Rip and tear!
+	w_class = ITEM_SIZE_BULKY
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20) //not the best choice to cut wires
@@ -85,6 +86,7 @@
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
 	force = WEAPON_FORCE_BRUTAL
+	w_class = ITEM_SIZE_BULKY
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20)

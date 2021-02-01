@@ -5,6 +5,7 @@
 
 //nursemaids - these create webs and eggs
 /mob/living/carbon/superior_animal/giant_spider/nurse
+	name = "nurse spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes."
 	icon_state = "nurse"
 	icon_living = "nurse"
@@ -18,8 +19,10 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
 	meat_amount = 3
 	var/fed = 0
+	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
+	name = "midwife spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes and purple stripes on the back."
 	icon_state = "midwife"
 	icon_living = "midwife"
@@ -28,6 +31,22 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	poison_type = "mutagen"
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/midwife
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/recluse
+	name = "recluse spider"
+	desc = "Furry and brown, it makes you shudder to look at it. This one has brilliant green eyes and light brown skin."
+	icon_state = "recluse"
+	icon_living = "recluse"
+	maxHealth = 20
+	health = 20
+	poison_per_bite = 4
+	melee_damage_lower = 3
+	melee_damage_upper = 5
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/recluse
+	meat_amount = 2
+	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
+	poison_type = "zombiepowder"
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen
 	name = "spider queen"
@@ -35,13 +54,21 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "spider_queen"
 	icon_living = "spider_queen"
-	maxHealth = 500
-	health = 500
+	maxHealth = 400
+	health = 400
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "menace"
-	pixel_x = -20
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/queen
+	meat_amount = 3
+	//Giving the queen her own meat type which contains MENACE.
+	mob_size = MOB_LARGE
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
+	..()
+	pixel_x = -16
+	pixel_y = null
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/attemptAttackOnTarget()
 	var/target = ..()
@@ -95,7 +122,7 @@
 							stop_automated_movement = 0
 				else
 					//third, lay an egg cluster there
-					if((fed > 0) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
+					if((fed > 1) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
 						busy = LAYING_EGGS
 						src.visible_message(SPAN_NOTICE("\The [src] begins to lay a cluster of eggs."))
 						stop_automated_movement = 1
@@ -150,13 +177,13 @@
 									O.forceMove(C)
 
 								for(var/mob/living/M in targetTurf)
-									if((M.stat == CONSCIOUS) || istype(M, /mob/living/carbon/superior_animal/giant_spider))
+									if((M.stat == CONSCIOUS) || is_carrion(M))
 										continue
 									large_cocoon = 1
 
 									if (istype(M, /mob/living))
 										src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
-										fed++
+										fed += 1 //Takes 2 mobs before we can lay eggs
 
 									C = C || new(targetTurf)
 									M.forceMove(C)

@@ -44,12 +44,36 @@
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/beacon
-	name = "Bluespace tracking beacon design"
+	name = "Bluespace Tracking Beacon"
 	build_path = /obj/item/device/radio/beacon
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/bag_holding
-	name = "'Bag of Holding', an infinite capacity bag prototype"
+	name = "'Bag of Holding'"
 	desc = "Using localized pockets of bluespace this bag prototype offers incredible storage capacity with the contents weighting nothing. It's a shame the bag itself is pretty heavy."
 	build_path = /obj/item/weapon/storage/backpack/holding
+	category = "Bluespace Telecoms"
+
+/datum/design/research/item/belt_holding
+	name = "'Belt of Holding'"
+	desc = "Using localized pockets of bluespace this belt prototype offers incredible storage capacity with the contents weighting nothing."
+	build_path = /obj/item/weapon/storage/belt/holding
+	category = "Bluespace Telecoms"
+
+/datum/design/research/item/pouch_holding
+	name = "'Pouch of Holding'"
+	desc = "Using localized pockets of bluespace this pouch prototype offers incredible storage capacity with the contents weighting nothing."
+	build_path = /obj/item/weapon/storage/pouch/holding
+	category = "Bluespace Telecoms"
+
+/datum/design/research/item/trashbag_holding
+	name = "'Trashbag of Holding'"
+	desc = "Using localized pockets of bluespace this trashbag prototype offers incredible storage capacity with the contents weighting nothing."
+	build_path = /obj/item/weapon/storage/bag/trash/holding
+	category = "Bluespace Telecoms"
+
+/datum/design/research/item/oresatchel_holding
+	name = "'Ore satchel of Holding'"
+	desc = "Using localized pockets of bluespace this ore satchel prototype offers incredible storage capacity with the contents weighting nothing."
+	build_path = /obj/item/weapon/storage/bag/ore/holding
 	category = "Bluespace Telecoms"

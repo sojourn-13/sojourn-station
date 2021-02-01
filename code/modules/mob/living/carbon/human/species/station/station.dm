@@ -26,7 +26,6 @@
 		STAT_VIG = 2
 	)
 
-
 	perks = list(/datum/perk/tenacity, /datum/perk/gutsandglory)
 
 	spawn_flags = CAN_JOIN
@@ -95,7 +94,7 @@
 	permitted_tail  = list("Sablekyne Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/laststand)
+	perks = list(/datum/perk/laststand,/datum/perk/bone)
 
 /datum/species/sablekyne/get_bodytype()
 	return "Sablekyne"
@@ -140,7 +139,7 @@
 	permitted_tail  = list()
 	permitted_wings = list()
 
-	perks = list(/datum/perk/suddenbrilliance)
+	perks = list(/datum/perk/suddenbrilliance,/datum/perk/inspired)
 
 /datum/species/marqua/get_bodytype()
 	return "Mar'Qua"
@@ -278,7 +277,7 @@
 	permitted_tail  = list("Naramad Tail", "Naramad Tail 2")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/adrenalineburst)
+	perks = list(/datum/perk/adrenalineburst,/datum/perk/born_warrior)
 
 /datum/species/naramad/get_bodytype()
 	return "Naramad"
@@ -319,7 +318,7 @@
 		"Feathered Wings, Large"
 		)
 
-	perks = list(/datum/perk/backup)
+	perks = list(/datum/perk/opifex_turret,/datum/perk/opifex_patchkit)
 
 /datum/species/vox/get_bodytype()
 	return "Opifex"
@@ -460,14 +459,16 @@
 		"Your chilly scales stands out in goosebumps."
 		)
 
-	has_organ = list(    // which required-organ checks are conducted.
-		BP_HEART =    /obj/item/organ/internal/heart,
-		BP_LUNGS =    /obj/item/organ/internal/lungs,
-		BP_LIVER =    /obj/item/organ/internal/liver,
-		BP_KIDNEYS =  /obj/item/organ/internal/kidneys/quad,
+	has_process = list(    // which required-organ checks are conducted.
+		OP_HEART =    /obj/item/organ/internal/heart,
+		OP_LUNGS =    /obj/item/organ/internal/lungs,
+		OP_STOMACH =  /obj/item/organ/internal/stomach,
+		OP_LIVER =    /obj/item/organ/internal/liver,
+		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/cindarite,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/cindarite,
 		BP_BRAIN =    /obj/item/organ/internal/brain,
-		BP_APPENDIX = /obj/item/organ/internal/appendix,
-		BP_EYES =     /obj/item/organ/internal/eyes
+		OP_APPENDIX = /obj/item/organ/internal/appendix,
+		OP_EYES =     /obj/item/organ/internal/eyes
 		)
 
 	permitted_ears  = list("Frills, Aquatic",
@@ -482,7 +483,99 @@
 		)
 	permitted_wings = list()
 
-	perks = list(/datum/perk/purgetoxins)
+	perks = list(/datum/perk/purgetoxins,/datum/perk/purgeinfections)
 
 /datum/species/cindarite/get_bodytype()
 	return "Cindarite"
+
+/datum/species/soteria_synthetic
+	name = "Soteria Full Body Positronic"
+	name_plural = "synthetics"
+	default_form = FORM_SOTSYNTH
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	num_alternate_languages = 3
+	name_language = null // Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+	siemens_coefficient = 2
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	slowdown = 0.2
+	radiation_mod = 0
+
+	dark_color = "#ffffff"
+	light_color = "#000000"
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/soteria_synthetic,
+		BP_GROIN =  new /datum/organ_description/groin/soteria_synthetic,
+		BP_HEAD =   new /datum/organ_description/head/soteria_synthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/soteria_synthetic,
+		BP_R_ARM =  new /datum/organ_description/arm/right/soteria_synthetic,
+		BP_L_LEG =  new /datum/organ_description/leg/left/soteria_synthetic,
+		BP_R_LEG =  new /datum/organ_description/leg/right/soteria_synthetic
+		)
+
+	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	stat_modifiers = list(
+		STAT_COG = 5,
+		STAT_MEC = 5
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/soteria_synthetic/get_bodytype()
+	return "Synthetic"
+
+/datum/species/artificer_guild_synthetic
+	name = "Artificer Guild Full Body Positronic"
+	name_plural = "synthetics"
+	default_form = FORM_AGSYNTH
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	num_alternate_languages = 3
+	name_language = null // Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+	siemens_coefficient = 0.5
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+
+	dark_color = "#FA8128"
+	light_color = "#FCAE1E"
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/artificer_guild_synthetic,
+		BP_GROIN =  new /datum/organ_description/groin/artificer_guild_synthetic,
+		BP_HEAD =   new /datum/organ_description/head/artificer_guild_synthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/artificer_guild_synthetic,
+		BP_R_ARM =  new /datum/organ_description/arm/right/artificer_guild_synthetic,
+		BP_L_LEG =  new /datum/organ_description/leg/left/artificer_guild_synthetic,
+		BP_R_LEG =  new /datum/organ_description/leg/right/artificer_guild_synthetic
+		)
+
+	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	stat_modifiers = list(
+		STAT_MEC = 10
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/artificer_guild_synthetic/get_bodytype()
+	return "Synthetic"

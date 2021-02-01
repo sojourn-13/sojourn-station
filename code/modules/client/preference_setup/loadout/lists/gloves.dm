@@ -4,7 +4,14 @@
 	sort_category = "Gloves and Handwear"
 	path = /obj/item/clothing/gloves/thick
 	slot = slot_gloves
-	cost = 2
+	cost = 1
+
+/datum/gear/gloves/brown
+	display_name = "gloves, thick brown"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/thick/brown
+	slot = slot_gloves
+	cost = 1
 
 /datum/gear/gloves/color
 	display_name = "gloves basic selection"

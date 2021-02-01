@@ -122,7 +122,7 @@
 	item_state = "madscientist" //Is this even used for anything?
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 50, rad = 0)
 
 /obj/item/clothing/suit/costume/halloween/syndicate
 	name = "red space suit replica"

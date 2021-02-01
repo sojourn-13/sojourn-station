@@ -134,3 +134,13 @@
 	materials = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 25, MATERIAL_GLASS = 10)
 	category = CAT_MINING
 
+/datum/design/research/item/rig_meson_goggles
+	name = "Meson Hardsuit Goggles"
+	desc = "Integrated mesons that link to a hardsuit internal cell."
+	build_path = /obj/item/rig_module/vision/meson
+	category = CAT_MINING
+
+/datum/design/research/item/rig_cheap
+	name = "SI 'Spacer' control module"
+	desc = "An ultra light rig suit that a protolathe is only just able to print off..."
+	build_path = /obj/item/weapon/rig/light/ultra_light

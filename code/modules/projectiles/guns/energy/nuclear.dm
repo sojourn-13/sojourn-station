@@ -5,14 +5,14 @@
 	icon_state = "nucgun"
 	item_charge_meter = TRUE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 5, TECH_POWER = 3)
-	slot_flags = SLOT_BELT
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	force = WEAPON_FORCE_PAINFUL //looks heavier than a pistol
 	self_recharge = 1
 	modifystate = null
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_URANIUM = 10)
-	price_tag = 4000
+	price_tag = 2000
 
-	firemodes = list(
+	init_firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, fire_sound='sound/weapons/Taser.ogg', icon="stun"),
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, fire_sound='sound/weapons/Laser.ogg', icon="kill"),
 		)
@@ -48,7 +48,7 @@
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	switch(current_mode.name)
 		if("stun") add_overlay("nucgun-stun")
-		if("lethal") add_overlay("nucgun-kill")
+		if("kill") add_overlay("nucgun-kill")
 
 /obj/item/weapon/gun/energy/gun/nuclear/update_icon()
 	cut_overlays()
@@ -56,3 +56,12 @@
 		update_charge()
 		update_reactor()
 	update_mode()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(wielded)
+		itemstring += "_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)

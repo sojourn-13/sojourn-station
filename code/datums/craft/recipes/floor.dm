@@ -10,6 +10,47 @@
 /datum/craft_recipe/floor/wood
 	name = "wood floor tile"
 	result = /obj/item/stack/tile/wood
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
+	)
+
+/datum/craft_recipe/floor/ashwood
+	name = "ash wood floor tile"
+	result = /obj/item/stack/tile/wood/ashen
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
+	)
+
+/datum/craft_recipe/floor/redashen
+	name = "red ash wood floor tile"
+	result = /obj/item/stack/tile/wood/ashen/red
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
+	)
+
+/datum/craft_recipe/floor/dullashen
+	name = "dull ash wood floor tile"
+	result = /obj/item/stack/tile/wood/ashen/dull
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
+	)
+
+/datum/craft_recipe/floor/rustic
+	name = "rustic wood floor tile"
+	result = /obj/item/stack/tile/wood/old
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
+	)
+
+/datum/craft_recipe/floor/veridicalrustic
+	name = "veridical rustic wood floor tile"
+	result = /obj/item/stack/tile/wood/old/veridical
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
 	)
@@ -124,8 +165,6 @@
 /datum/craft_recipe/floor/steel/bar_light
 	name = "steel bar light tile"
 	result = /obj/item/stack/tile/floor/steel/bar_light
-
-
 
 
 /datum/craft_recipe/floor/white
@@ -259,3 +298,14 @@
 	name = "dark monofloor tile"
 	result = /obj/item/stack/tile/floor/dark/monofloor
 
+/datum/craft_recipe/floor/lighttile
+	name = "light tile"
+	icon_state = "gun"
+	result = /obj/machinery/floor_light
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_GLASS, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 10, 80),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_PULSING, 30, 80)
+	)

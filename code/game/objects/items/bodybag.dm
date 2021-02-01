@@ -1,5 +1,5 @@
 //Also contains /obj/structure/closet/body_bag because I doubt anyone would think to look for bodybags in /object/structures
-
+// Note that deploying body bags is based on attack self hard coding, well folding themselfs up is modular "item_path"
 /obj/item/bodybag
 	name = "body bag"
 	desc = "A folded bag designed for the storage and transportation of cadavers."
@@ -14,7 +14,6 @@
 		R.add_fingerprint(user)
 		qdel(src)
 
-
 /obj/structure/closet/body_bag
 	name = "body bag"
 	desc = "A plastic bag designed for the storage and transportation of cadavers."
@@ -22,9 +21,9 @@
 	icon_state = "bodybag"
 	open_sound = 'sound/items/zip.ogg'
 	close_sound = 'sound/items/zip.ogg'
-	var/item_path = /obj/item/bodybag
+	var/item_path = /obj/item/bodybag //What item do we get back when folding it up?
 	density = 0
-	storage_capacity = (MOB_MEDIUM * 2) - 1
+	storage_capacity = (MOB_MEDIUM * 2) - 1 //Holds 1 medium size mob or 2 smalls
 	var/contains_body = 0
 	layer = LOW_OBJ_LAYER+0.01
 
@@ -88,7 +87,7 @@
 	icon = 'icons/obj/cryobag.dmi'
 	icon_state = "bodybag_folded"
 	origin_tech = list(TECH_BIO = 4)
-	price_tag = 250
+	price_tag = 50
 
 /obj/item/bodybag/cryobag/attack_self(mob/user)
 	var/obj/structure/closet/body_bag/cryobag/R = new /obj/structure/closet/body_bag/cryobag(user.loc)
@@ -105,6 +104,7 @@
 	store_items = 0
 	var/used = 0
 	var/obj/item/weapon/tank/tank = null
+	var/existing_degradation
 
 /obj/structure/closet/body_bag/cryobag/New()
 	tank = new /obj/item/weapon/tank/emergency_oxygen(null) //It's in nullspace to prevent ejection when the bag is opened.
@@ -129,6 +129,8 @@
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		H.in_stasis = 1
+		if(H.timeofdeath)
+			src.existing_degradation = world.time - H.timeofdeath
 		src.used = 1
 	..()
 
@@ -136,6 +138,8 @@
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		H.in_stasis = 0
+		if(H.timeofdeath && src.existing_degradation)
+			H.timeofdeath = world.time - src.existing_degradation
 	..()
 
 /obj/structure/closet/body_bag/cryobag/return_air() //Used to make stasis bags protect from vacuum.

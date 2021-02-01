@@ -1,7 +1,8 @@
 /obj/item/weapon/tool/omnitool
 	name = "Lonestars \"Munchkin 5000\""
-	desc = "A fuel powered monster of a tool. Its welding attachment is capable of welding things without an eye-damaging flash, so no eye protection is required."
+	desc = "A fuel-powered monster of a tool. Its welder part is the most advanced one, capable of welding things without harmfull glow and sparks, so no protection needed. The complexity of this tool means that regular maintainence is required."
 	icon_state = "omnitool"
+	max_health = 200
 	w_class = ITEM_SIZE_NORMAL
 	worksound = WORKSOUND_DRIVER_TOOL
 	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 50, QUALITY_BOLT_TURNING = 50, QUALITY_DRILLING = 20, QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 10)
@@ -36,6 +37,11 @@
 	var/stunforce = 0
 	var/agonyforce = 40
 	var/hitcost = 100
+
+/obj/item/weapon/tool/arcwelder/cyborg
+	desc = "A specialized tool designed by the Artificer's Guild. It functions as a battery powered welder and multitool. This version has a regulation on it preventing it to be used as a taser."
+	name = "integrated arc welder"
+	suitable_cell = /obj/item/weapon/cell/medium/moebius/nuclear
 
 /obj/item/weapon/tool/arcwelder/turn_on(mob/user)
 
@@ -113,18 +119,19 @@
 
 /obj/item/weapon/tool/medmultitool
 	name = "greyson positronic medmultitool"
-	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools."
+	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools and takes a medium cell in its handle.."
 	icon_state = "medmulti"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
 	flags = CONDUCT
 	origin_tech = list(TECH_MATERIAL = 3, TECH_BIO = 4)
-	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 25)
-
+	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_LASER_CUTTING = 30, QUALITY_WIRE_CUTTING = 25)
+	suitable_cell = /obj/item/weapon/cell/medium
+	use_power_cost = 0.2 //affective!
 	max_upgrades = 2
 	workspeed = 1.2
 
 /obj/item/weapon/tool/medmultitool/medimplant
-	name = "Medical Omnitool"
+	name = "soteria medical omnitool"
 	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a medium power cell."
 	icon_state = "medimplant"
 	matter = null
@@ -143,7 +150,7 @@
 	max_upgrades = 1
 
 /obj/item/weapon/tool/medmultitool/medimplant/sci
-	name = "Medical Omnitool"
+	name = "soteria medical omnitool"
 	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
 	icon_state = "medimplant_sci"
 	matter = null //Nope
@@ -155,17 +162,18 @@
 	max_upgrades = 0 //NO
 
 /obj/item/weapon/tool/medmultitool/medimplant/organic
-	name = "Organic Medical Omnitool"
+	name = "organic medical omnitool"
 	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels. This version is made of entirely organic materials and doesn't require a power cell, sadly it cannot be upgraded and work takes slightly longer, but at least it is self repairing."
 	icon_state = "organicmedimplant"
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
 	max_upgrades = 0
+	workspeed = 1
 	//matter = list(MATERIAL_BIOMATTER = 10) No
 
 /obj/item/weapon/tool/engimplant
-	name = "Engineering Omnitool"
+	name = "engineering omnitool"
 	desc = "An all-in-one engineering tool implant. Convenient to use and more effective than the basics, but much less efficient than customized or more specialized tools."
 	icon_state = "engimplant"
 	force = WEAPON_FORCE_DANGEROUS
@@ -182,6 +190,16 @@
 
 	var/buffer_name
 	var/atom/buffer_object
+
+/obj/item/weapon/tool/engimplant/organic
+	name = "organic engineering omnitool"
+	desc = "An all-in-one engineering tool implant. Convenient to use and more effective than the basics, but much less efficient than customized or more specialized tools. This version is made of entirely organic materials and doesn't require a power cell, sadly it cannot be upgraded and work takes slightly longer, but at least it is self repairing."
+	icon_state = "organicengimplant"
+	use_power_cost = 0
+	suitable_cell = null
+	degradation = 0
+	max_upgrades = 0
+	workspeed = 1
 
 /obj/item/weapon/tool/engimplant/Destroy() // code for omnitool buffers was copied from multitools.dm
 	unregister_buffer(buffer_object)
@@ -227,3 +245,9 @@
 	user.AddTopicPrint(src)
 	MT.interact(src, user)
 	return 1
+
+/obj/item/weapon/tool/silk_wand
+	name = "metal silk weaver"
+	desc = "A small metal two pronged fork used to gather balls of silk."
+	icon_state = "silk_wand"
+	tool_qualities = list(QUALITY_WEAVING = 30)

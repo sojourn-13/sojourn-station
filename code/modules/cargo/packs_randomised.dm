@@ -17,29 +17,6 @@
 	contraband = TRUE
 	group = "Operations"
 
-/datum/supply_pack/randomised/costume
-	name = "Actor Costumes Crate"
-	num_contained = 2
-	contains = list(/obj/item/clothing/suit/costume/history/pirate,
-					/obj/item/clothing/suit/costume/job/judge,
-					/obj/item/clothing/suit/storage/wcoat/black,
-					/obj/item/clothing/suit/costume/job/nun,
-					/obj/item/clothing/under/rank/first_officer/suit,
-					/obj/item/clothing/suit/costume/history/plaguedoctor,
-					/obj/item/clothing/under/plaid/properblue,
-					/obj/item/clothing/under/costume/animal/owl,
-					/obj/item/clothing/under/costume/job/waiter,
-					/obj/item/clothing/under/costume/history/gladiator,
-					/obj/item/clothing/under/costume/history/soviet,
-					/obj/item/clothing/under/bride_white,
-					/obj/item/clothing/suit/rank/chef,
-					/obj/item/clothing/under/plaid/kilt)
-	cost = 800
-	crate_name = "actor costumes crate"
-	containertype = /obj/structure/closet/crate/secure
-	access = access_theatre
-	group = "Clothing"
-
 /datum/supply_pack/randomised/guns
 	num_contained = 4
 	contains = list(/obj/random/gun_cheap,
@@ -69,6 +46,7 @@
 	group = "Security"
 
 /datum/supply_pack/randomised/holsters
+	contraband = FALSE
 	num_contained = 4
 	contains = list(/obj/random/cloth/holster,
 					/obj/random/cloth/holster,
@@ -78,9 +56,10 @@
 	cost = 800
 	crate_name = "Surplus Uniform Holsters Crate"
 	containertype = /obj/structure/closet/crate
-	group = "Operations"
+	group = "Clothing"
 
 /datum/supply_pack/randomised/pouches
+	contraband = FALSE
 	num_contained = 5
 	contains = list(/obj/random/pouch,
 				/obj/random/pouch,
@@ -91,9 +70,10 @@
 	cost = 1200
 	crate_name = "surplus pouches crate"
 	containertype = /obj/structure/closet/crate
-	group = "Operations"
+	group = "Clothing"
 
-datum/supply_pack/randomised/voidsuit
+/datum/supply_pack/randomised/voidsuit
+	contraband = FALSE
 	num_contained = 1
 	contains = list(/obj/random/voidsuit,
 					/obj/random/voidsuit/damaged)
@@ -101,9 +81,10 @@ datum/supply_pack/randomised/voidsuit
 	cost = 1200
 	crate_name = "surplus voidsuit crate"
 	containertype = /obj/structure/closet/crate
-	group = "Operations"
+	group = "Clothing"
 
-datum/supply_pack/randomised/rig
+/datum/supply_pack/randomised/rig
+	contraband = FALSE
 	num_contained = 1
 	contains = list(/obj/random/rig,
 					/obj/random/rig/damaged)
@@ -111,9 +92,9 @@ datum/supply_pack/randomised/rig
 	cost = 4000
 	crate_name = "surplus rig crate"
 	containertype = /obj/structure/closet/crate
-	group = "Operations"
+	group = "Clothing"
 
-datum/supply_pack/randomised/rigmods
+/datum/supply_pack/randomised/rigmods
 	name = "Surplus Rig Modules Crate"
 	num_contained = 2
 	contains = list(/obj/random/rig_module,
@@ -121,4 +102,4 @@ datum/supply_pack/randomised/rigmods
 	cost = 2000
 	crate_name = "surplus rig modules crate"
 	containertype = /obj/structure/closet/crate
-	group = "Operations"
+	group = "Clothing"

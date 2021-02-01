@@ -1,15 +1,17 @@
 /mob/living/simple_animal/hostile/dino
-	name = "primal lizard"
-	desc = "A feral lizard creature that moves fast and bites faster."
-	icon = 'icons/mob/mobs-monster.dmi'
-	icon_state = "dino"
-	icon_dead = "dino_dead"
+	name = "primal render yearling"
+	desc = "A younger primal render, one that has yet to harden its scales, shed the baby fat, and grow its usual horns and claws. Unlike older ones it has yet to become as fantastically violent to everything, a trait that often gets it hunted by older renders to kill potential developing rivals."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "biglizard"
+	icon_dead = "biglizard_dead"
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
 	speed = 4
-	harm_intent_damage = 5
-	melee_damage_lower = 10
+	faction = "pond"
+	health = 400
+	maxHealth = 400
+	melee_damage_lower = 20
 	melee_damage_upper = 25
 	attacktext = "bitten"
 	attack_sound = 'sound/weapons/bite.ogg'

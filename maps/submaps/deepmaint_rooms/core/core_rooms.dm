@@ -26,3 +26,22 @@
 	name = "AI core"
 	desc = " I'm sorry, Dave."
 	mappath = 'maps/submaps/deepmaint_rooms/core/ai_core.dmm'
+
+
+/datum/map_template/deepmaint_template/big/dinner
+	name = "dinner"
+	desc = "A last meal."
+	mappath = 'maps/submaps/deepmaint_rooms/core/diner.dmm'
+
+
+/datum/map_template/deepmaint_template/big/telecoms
+	name = "telecoms"
+	desc = "Calls for help in a void."
+	mappath = 'maps/submaps/deepmaint_rooms/core/telecoms.dmm'
+
+
+/datum/map_template/deepmaint_template/big/overrun
+	name = "over run"
+	desc = "A last stand before ruin."
+	mappath = 'maps/submaps/deepmaint_rooms/core/overrun.dmm'
+

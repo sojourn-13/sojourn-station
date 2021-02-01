@@ -273,14 +273,14 @@
 
 			var/obj/item/organ/vision
 			if(H.species.vision_organ)
-				vision = H.internal_organs_by_name[H.species.vision_organ]
+				vision = H.random_organ_by_process(H.species.vision_organ)
 			if(!vision)
 				to_chat(user, "<span class='warning'>You can't find any [H.species.vision_organ ? H.species.vision_organ : BP_EYES] on [H]!</span>")
 				return
 
 			user.visible_message(SPAN_NOTICE("\The [user] directs [src] to [M]'s eyes."), \
 							 	 SPAN_NOTICE("You direct [src] to [M]'s eyes."))
-			if(H == user)	//can't look into your own eyes buster
+			if(H != user)	//can't look into your own eyes buster
 				if(M.stat == DEAD || M.blinded)	//mob is dead or fully blind
 					to_chat(user, SPAN_WARNING("\The [M]'s pupils do not react to the light!"))
 					return

@@ -1,7 +1,7 @@
 "aa" = (/turf/simulated/floor/tiled/dark,/area/deepmaint)
 "ab" = (/turf/simulated/floor/tiled/dark/panels,/area/deepmaint)
 "ac" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/tiled/dark/panels,/area/deepmaint)
-"ad" = (/obj/random/cluster/roaches/low_chance,/turf/simulated/floor/tiled/dark/panels,/area/deepmaint)
+"ad" = (/obj/random/cluster/xenomorphs/low_chance,/turf/simulated/floor/tiled/dark/panels,/area/deepmaint)
 "ae" = (/obj/machinery/light/small,/turf/simulated/floor/tiled/dark/panels,/area/deepmaint)
 "af" = (/turf/simulated/floor/tiled/dark/gray_platform,/area/deepmaint)
 "ag" = (/turf/simulated/wall/r_wall,/area/deepmaint)
@@ -37,7 +37,7 @@
 "aK" = (/obj/random/junk,/obj/random/junk,/turf/simulated/shuttle/floor{tag = "icon-cargofloor7"; icon_state = "cargofloor7"},/area/deepmaint)
 "aL" = (/obj/random/junk,/turf/simulated/shuttle/floor{tag = "icon-cargofloor7"; icon_state = "cargofloor7"},/area/deepmaint)
 "aM" = (/turf/simulated/shuttle/floor{tag = "icon-cargofloor7"; icon_state = "cargofloor7"},/area/deepmaint)
-"aN" = (/obj/structure/closet/walllocker/emerglocker/north,/obj/structure/closet/walllocker/emerglocker/north{dir = 1; pixel_y = -32},/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/gun_normal,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
+"aN" = (/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/gun_normal,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
 "aO" = (/turf/simulated/shuttle/wall/escpod{tag = "icon-escpodwall14"; icon_state = "escpodwall14"},/area/deepmaint)
 "aP" = (/obj/structure/shuttle_part/escpod{tag = "icon-escpodwall15"; icon_state = "escpodwall15"},/turf/simulated/floor/tiled/dark/techfloor,/area/deepmaint)
 "aQ" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/plating/under,/area/deepmaint)
@@ -60,7 +60,7 @@
 "bh" = (/turf/simulated/shuttle/wall/escpod{tag = "icon-escpodwall8"; icon_state = "escpodwall8"},/area/deepmaint)
 "bi" = (/obj/structure/shuttle_part/escpod{tag = "icon-escpodwall9"; icon_state = "escpodwall9"},/turf/simulated/floor/tiled/dark/techfloor_grid,/area/deepmaint)
 "bj" = (/obj/structure/shuttle_part/escpod{tag = "icon-escpodwall10"; icon_state = "escpodwall10"},/turf/simulated/floor/tiled/dark/techfloor_grid,/area/deepmaint)
-"bk" = (/obj/random/cluster/roaches/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/deepmaint)
+"bk" = (/obj/random/cluster/xenomorphs/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/deepmaint)
 "bl" = (/turf/simulated/floor/tiled/dark/gray_perforated,/area/deepmaint)
 "bm" = (/obj/item/weapon/stool,/turf/simulated/floor/tiled/dark/gray_perforated,/area/deepmaint)
 "bn" = (/obj/structure/table/standard,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot/low_chance,/obj/random/pack/tech_loot/low_chance,/turf/simulated/floor/tiled/dark/gray_perforated,/area/deepmaint)
@@ -83,7 +83,6 @@
 "bE" = (/obj/structure/bed/chair/shuttle,/obj/machinery/light{dir = 1},/obj/effect/decal/cleanable/blood,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
 "bF" = (/obj/structure/bed/chair/shuttle,/obj/effect/decal/cleanable/blood,/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/pack/tech_loot/low_chance,/obj/random/pack/gun_loot,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
 "bG" = (/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood/oil,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
-"bH" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/drip,/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/pack/tech_loot/low_chance,/obj/random/pack/gun_loot,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
 "bI" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/dark/cargo,/area/deepmaint)
 "bJ" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/drip,/turf/simulated/shuttle/floor{tag = "icon-cargofloor7"; icon_state = "cargofloor7"},/area/deepmaint)
 "bK" = (/obj/effect/decal/cleanable/blood,/turf/simulated/shuttle/floor{tag = "icon-cargofloor7"; icon_state = "cargofloor7"},/area/deepmaint)
@@ -91,7 +90,7 @@
 "bM" = (/obj/effect/decal/cleanable/blood,/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/pack/tech_loot/low_chance,/obj/random/pack/gun_loot,/turf/simulated/shuttle/floor{tag = "icon-cargofloor7"; icon_state = "cargofloor7"},/area/deepmaint)
 "bN" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood,/turf/simulated/shuttle/floor{tag = "icon-cargofloor7"; icon_state = "cargofloor7"},/area/deepmaint)
 "bO" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood,/turf/simulated/shuttle/floor{tag = "icon-cargofloor7"; icon_state = "cargofloor7"},/area/deepmaint)
-"bP" = (/obj/structure/closet/walllocker/emerglocker/north,/obj/structure/closet/walllocker/emerglocker/north{dir = 1; pixel_y = -32},/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/drip,/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/pack/tech_loot/low_chance,/obj/random/pack/gun_loot,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
+"bP" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/drip,/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/pack/tech_loot/low_chance,/obj/random/pack/gun_loot,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
 "bQ" = (/obj/item/remains/human,/obj/random/pack/cloth,/obj/random/pack/cloth,/obj/random/pack/tech_loot/low_chance,/obj/random/pack/gun_loot,/turf/simulated/floor/tiled/dark/cargo,/area/deepmaint)
 "bR" = (/obj/item/device/radio/intercom{dir = 4; pixel_x = -22},/obj/structure/bed/chair/shuttle{tag = "icon-shuttle_chair (NORTH)"; icon_state = "shuttle_chair"; dir = 1},/obj/effect/decal/cleanable/blood,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
 "bS" = (/obj/effect/decal/cleanable/blood,/turf/simulated/shuttle/floor{icon_state = "cargofloor1"},/area/deepmaint)
@@ -113,16 +112,16 @@ aaaxaxaJaKaKaLaKaLaMaNaOaPaHavaQaQawagabaa
 aaaxaxaRaSaTaUaVaWaXaEaYaZaHavaQaQaQagabaa
 aaajafbabbbcbdbebfbgbhbibjaubZaIawaQagabaa
 aaabafafahafafafafafafahahabagagagagagabaa
-aaabbkblblblbmbmbmbnboblahabajbpblbqbrabaa
-aaabafblbsbtbubvbwbwbxblafabbyafbzbqbAabaa
+aaabafblblblbmbmbmbnboblahabajbpblbqbrabaa
+aaabbkblbsbtbubvbwbwbxblafabbyafbzbqbAabaa
 aaabafblblblbmbmbmbnboblafabajafblbqbrabaa
 aaabafafafafafafafafafafahabagagagagagabaa
 aaajahakalamanaoapaqarasataubZaIawawagabaa
-aaaxbBaybCbDbEbFbGbHaEaFaGaHavaQawawagabaa
+aaaxbBaybCbDbEbFbGbPaEaFaGaHavaQawawagabaa
 aaaxbIbJbKbLbMbNbObJbPaOaPaHavaQaQaQagabaa
-aaaxbQaRbRbSbTbUbVbHaEaYaZaHavaQaQawagabaa
+aaaxbQaRbRbSbTbUbVbPaEaYaZaHavaQaQawagabaa
 aiajafbabbbcbdbebfbgbhbibjaubZaIawawagabaa
 aaabafagagafafafafafafafahabagagagagagabaa
-aaababbWbXababababababababababadababbYabaa
+aaababbWbXabababababababababadabababbYabaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}

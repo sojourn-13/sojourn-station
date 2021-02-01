@@ -70,7 +70,7 @@
 	amount_per_transfer_from_this = 10
 	volume = 1500
 	starting_reagent = "water"
-	price_tag = 50
+	price_tag = 25
 	contents_cost = 150
 
 /obj/structure/reagent_dispensers/watertank/derelict
@@ -81,7 +81,7 @@
 	desc = "A high-capacity water tank. It is used to store HUGE amounts of water."
 	icon_state = "hvwatertank"
 	volume = 3000
-	price_tag = 100
+	price_tag = 50
 	contents_cost = 300
 
 /obj/structure/reagent_dispensers/watertank/huge/derelict
@@ -97,7 +97,7 @@
 	var/obj/item/device/assembly_holder/rig = null
 	volume = 500
 	starting_reagent = "fuel"
-	price_tag = 50
+	price_tag = 25
 	contents_cost = 750
 
 /obj/structure/reagent_dispensers/fueltank/derelict
@@ -108,7 +108,7 @@
 	desc = "A high-capacity tank full of industrial welding fuel. Do not consume."
 	icon_state = "hvweldtank"
 	volume = 1000
-	price_tag = 100
+	price_tag = 50
 	contents_cost = 1500
 
 /obj/structure/reagent_dispensers/fueltank/huge/derelict
@@ -177,7 +177,7 @@
 			message_admins("[key_name_admin(Proj.firer)] shot fueltank at [loc.loc.name] ([loc.x],[loc.y],[loc.z]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[loc.x];Y=[loc.y];Z=[loc.z]'>JMP</a>).")
 			log_game("[key_name(Proj.firer)] shot fueltank at [loc.loc.name] ([loc.x],[loc.y],[loc.z]).")
 
-		if(!istype(Proj ,/obj/item/projectile/beam/lastertag) && !istype(Proj ,/obj/item/projectile/beam/practice) )
+		if(!istype(Proj ,/obj/item/projectile/plasma/lastertag) && !istype(Proj ,/obj/item/projectile/beam/practice) )
 			explode()
 
 /obj/structure/reagent_dispensers/fueltank/ex_act()
@@ -262,7 +262,7 @@
 	amount_per_transfer_from_this = 10
 	volume = 1000
 	starting_reagent = "beer"
-	price_tag = 50
+	price_tag = 25
 	contents_cost = 700
 
 /obj/structure/reagent_dispensers/cahorsbarrel
@@ -271,7 +271,7 @@
 	icon_state = "barrel"
 	volume = 1000
 	starting_reagent = "ntcahors"
-	price_tag = 50
+	price_tag = 25
 	contents_cost = 950
 
 /obj/structure/reagent_dispensers/virusfood

@@ -33,7 +33,6 @@
 	uniform = /obj/item/clothing/under/rank/botanist
 	suit = /obj/item/clothing/suit/rank/botanist
 	gloves = /obj/item/clothing/gloves/botanic_leather
-	r_pocket = /obj/item/device/scanner/plant
 	id_type = /obj/item/weapon/card/id/hydro
 	pda_type = /obj/item/modular_computer/pda
 
@@ -48,19 +47,19 @@
 	uniform = /obj/item/clothing/under/rank/janitor
 	pda_type = /obj/item/modular_computer/pda
 	shoes = /obj/item/clothing/shoes/jackboots/janitor
+	belt = /obj/item/weapon/keys/janitor
 
-/decl/hierarchy/outfit/job/service/actor
-	name = OUTFIT_JOB_NAME("Lonestar - Actor")
-	uniform = /obj/item/clothing/under/modular/black
-	suit = /obj/item/clothing/suit/storage/suitjacket/black
+/decl/hierarchy/outfit/job/cargo/artist
+	name = OUTFIT_JOB_NAME("Lonestar - Artist")
+	uniform = /obj/item/clothing/under/rank/artist
+	suit = /obj/item/clothing/suit/artist
+	shoes = /obj/item/clothing/shoes/artist_shoes
+	head = /obj/item/clothing/head/beret/artist
+	glasses = /obj/item/clothing/glasses/artist
+	mask = /obj/item/clothing/mask/gas/artist_hat
 	l_pocket = /obj/item/weapon/bikehorn
 	backpack_contents = list(/obj/item/weapon/bananapeel = 1, /obj/item/weapon/storage/fancy/crayons = 1, /obj/item/toy/weapon/waterflower = 1, /obj/item/weapon/stamp/clown = 1, /obj/item/weapon/handcuffs/fake = 1)
 
-/decl/hierarchy/outfit/job/service/actor/New()
-	..()
-	backpack_overrides[/decl/backpack_outfit/backpack] = /obj/item/weapon/storage/backpack/clown
-	backpack_overrides[/decl/backpack_outfit/satchel] = /obj/item/weapon/storage/backpack/satchel/leather
-
-/decl/hierarchy/outfit/job/service/actor/post_equip(var/mob/living/carbon/human/H)
+/decl/hierarchy/outfit/job/cargo/artist/clown/post_equip(var/mob/living/carbon/human/H)
 	..()
 	H.mutations.Add(CLUMSY)

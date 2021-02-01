@@ -2,7 +2,7 @@
 //This machine converts liquid biomatter to solid one(sheets)
 //Working with this also required bio protection cloths
 
-#define BIOMATTER_PER_SHEET 		10
+#define BIOMATTER_PER_SHEET 		1
 #define CONTAINER_PIXEL_OFFSET 		6
 
 /obj/machinery/biomatter_solidifier
@@ -12,13 +12,9 @@
 	icon_state = "solidifier"
 	density = TRUE
 	anchored = TRUE
-	use_power = 1
-	idle_power_usage = 15
+	use_power = IDLE_POWER_USE
+	idle_power_usage = 5
 	active_power_usage = 300
-
-	var/biomatter_per_sheet = BIOMATTER_PER_SHEET
-
-	circuit = /obj/item/weapon/circuitboard/neotheology/solidifier
 	var/active = FALSE
 	var/port_dir = NORTH
 	var/obj/structure/reagent_dispensers/biomatter/container
@@ -27,17 +23,6 @@
 /obj/machinery/biomatter_solidifier/New()
 	. = ..()
 	add_overlay(image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir))
-
-/obj/machinery/biomatter_solidifier/RefreshParts()
-	for(var/obj/item/weapon/stock_parts/micro_laser/L in component_parts)
-		biomatter_per_sheet -= (L.rating - 1) //So were back to 0
-		//Alien parts would half the costs
-
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
-		idle_power_usage -= (M.rating) //Has 2 manipulators
-
-	for(var/obj/item/weapon/stock_parts/matter_bin/B in component_parts)
-		active_power_usage -= (B.rating * 10) //Has 2 bins, so level 1s are 280 and level 5s are 200 active power
 
 /obj/machinery/biomatter_solidifier/update_icon()
 	if(active)
@@ -53,10 +38,10 @@
 		if(!container)
 			abort("Container of liquid biomatter required.")
 		else
-			if(!container.reagents.has_reagent("biomatter", biomatter_per_sheet))
+			if(!container.reagents.has_reagent("biomatter", BIOMATTER_PER_SHEET))
 				abort("Insufficient amount of biomatter.")
 			else
-				container.reagents.remove_reagent("biomatter", biomatter_per_sheet)
+				container.reagents.remove_reagent("biomatter", BIOMATTER_PER_SHEET)
 				var/obj/item/stack/material/biomatter/current_stack
 				//if there any stacks here, let's check them
 				if(locate(/obj/item/stack/material/biomatter) in loc)
@@ -116,13 +101,6 @@
 		playsound(src, 'sound/machines/click.ogg', 80, 1)
 		update_icon()
 
-/obj/machinery/biomatter_solidifier/attackby(obj/item/I, mob/user)
-	if(default_deconstruction(I, user))
-		return
-
-	if(default_part_replacement(I, user))
-		return
-
 
 /obj/machinery/biomatter_solidifier/proc/abort(var/msg)
 	state(msg)
@@ -130,6 +108,10 @@
 	ping()
 	update_icon()
 
+/////////////////////
+
+/obj/machinery/neotheology
+	icon = 'icons/obj/neotheology_machinery.dmi'
 
 #undef CONTAINER_PIXEL_OFFSET
 #undef BIOMATTER_PER_SHEET

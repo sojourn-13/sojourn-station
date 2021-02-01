@@ -52,10 +52,14 @@
 	random_rotation = FALSE
 
 /obj/effect/decal/cleanable/reagents/proc/add_reagents(loc, var/datum/reagents/reagents_to_add)
+	if(!reagents_to_add)
+		return
 	if(!reagents) create_reagents(1)
-	var/space_to_add = reagents_to_add.total_volume - reagents.get_free_space()
-	if(space_to_add > 0)
+	var/space_to_add = reagents_to_add.total_volume + reagents.total_volume
+	if(space_to_add > reagents.maximum_volume)
+		var/datum/reagents/R = reagents
 		create_reagents(space_to_add, TRUE)
+		R.trans_to_holder(reagents, R.total_volume)
 	reagents_to_add.trans_to_holder(reagents, reagents_to_add.total_volume)
 
 /obj/effect/decal/cleanable/reagents/New(var/datum/reagents/reagents_to_add = null)

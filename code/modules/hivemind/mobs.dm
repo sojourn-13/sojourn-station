@@ -2,7 +2,7 @@
 ///////////Hive mobs//////////
 //Some of them can be too tough and dangerous, but they must be so. Also don't forget, they are really rare thing.
 //Just bring corpses from wires away, and little mobs is not a problem
-//Mechiver have 1% chance to spawn from machinery. With failure chance calculation, this is very raaaaaare
+//Mechiver have 15% chance to spawn from machinery. With failure chance calculation, this is rare depending where the hive shows up.
 //But if players get some of these 'big guys', only teamwork, fast legs and trickery will works fine
 //So combine all of that to defeat them
 
@@ -31,7 +31,7 @@
 	New()
 		. = ..()
 		//here we change name, so design them according to this
-		name = pick("warped ", "altered ", "modified ", "upgraded ", "abnormal ") + name
+		name = pick("Warped ", "Altered ", "Modified ", "Upgraded ", "Abnormal ") + name
 
 //It's sets manually
 /mob/living/simple_animal/hostile/hivemind/proc/special_ability()
@@ -68,7 +68,7 @@
 //It's second proc, result of our malfunction
 /mob/living/simple_animal/hostile/hivemind/proc/malfunction_result()
 	if(prob(malfunction_chance))
-		apply_damage(rand(10, 25), BURN)
+		apply_damage(rand(5, 15), BURN) //10-25 is too severe, 5-15 seems better
 
 
 //sometimes, players use closets, to staff mobs into it
@@ -132,11 +132,11 @@
 /mob/living/simple_animal/hostile/hivemind/emp_act(severity)
 	switch(severity)
 		if(1)
-			if(malfunction_chance < 20)
-				malfunction_chance = 20
+			if(malfunction_chance < 15)
+				malfunction_chance = 15
 		if(2)
-			if(malfunction_chance < 30)
-				malfunction_chance = 30
+			if(malfunction_chance < 25)
+				malfunction_chance = 25
 	health -= 20*severity
 
 
@@ -154,7 +154,7 @@
 
 //these guys is appears from bodies, and takes corpses appearence
 /mob/living/simple_animal/hostile/hivemind/resurrected
-	name = "marionette"
+	name = "Marionette"
 	malfunction_chance = 10
 
 
@@ -189,7 +189,7 @@
 
 	maxHealth = victim.maxHealth * 2 + 10
 	health = maxHealth
-	name = "[pick("warped", "twisted", "tortured", "tormented")] [victim.name]"
+	name = "[pick("Warped", "Twisted", "Tortured", "Tormented")] [victim.name]"
 	if(length(victim.desc))
 		desc = desc + " But now silver pus oozes from open wounds and unknown mechanisms push through their deathly skin..."
 	density = victim.density
@@ -201,7 +201,7 @@
 	for(var/count = 1 to phrase_amount)
 		var/first_word = pick("You should", "I", "They", "The hive will", "My flesh will", "We", "Your friend", "Your meat will", "Your mind will")
 		var/second_word = pick("embrace", "submit to", "transform", "love", "rebuild", "fix", "help", "rework", "burn")
-		var/third_word = pick("them", "me", "progress", "death", "us", "the hive", "the machines", "this new ship")
+		var/third_word = pick("them", "me", "progress", "death", "us", "the hive", "the machines", "this new colony")
 		var/end_symbol = pick("...", ".", "?", "!")
 		var/phrase = "[first_word] [second_word] [third_word][end_symbol]"
 		speak.Add(phrase)
@@ -220,22 +220,28 @@
 /////////////////////////////////////STINGER//////////////////////////////////
 //Special ability: none
 //Just another boring mob without any cool abilities
-//High chance of malfunction
+//Low  chance of malfunction
 //Default speaking chance
 //Appears from dead small mobs or from hive spawner
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/stinger
-	name = "medibot"
+	name = "Medibot"
 	desc = "A little medical robot. He looks somewhat underwhelmed. Wait a minute, is that a blade?"
 	icon_state = "slicer"
-	attacktext = "slice"
+	attacktext = "sliced"
 	density = 0
 	speak_chance = 3
-	malfunction_chance = 15
+	malfunction_chance = 5
+	health = 50
+	maxHealth = 50 //Should be a little bit sturdy, 2-3 hits with a crowbar is enough to take it down
+	melee_damage_lower = 15
+	melee_damage_upper = 20 //this is how much damage a scalpel does (at the time of writing),
+	speak_chance = 5
+	malfunction_chance = 5 //proper machinery, not an attempt to combine flesh with metal
 	mob_size = MOB_SMALL
 	pass_flags = PASSTABLE
-	speed = 4
+	speed = 5
 
 	speak = list(
 				"A stitch in time saves nine!",
@@ -263,21 +269,25 @@
 /////////////////////////////////////BOMBER///////////////////////////////////
 //Special ability: none
 //Explode in contact with target
-//High chance of malfunction
+//Extremely low chance of malfunction
 //Default speaking chance
 //Appears from dead small mobs or from hive spawner
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/bomber
-	name = "probe"
+	name = "Bomber"
 	desc = "This hovering cyborg emits a faint smell of welding fuel."
 	icon_state = "bomber"
 	density = 0
 	speak_chance = 3
-	malfunction_chance = 15
+	malfunction_chance = 1
+	speak_chance = 4
+	health = 5
+	maxHealth = 5 //extremely fucking fragile, don't try fighting it in melee though
+	malfunction_chance = 1 //1% chance of it exploding, for no reason at all
 	mob_size = MOB_SMALL
 	pass_flags = PASSTABLE
-	speed = 6
+	speed = 2.5
 
 	speak = list(
 				"WE COME IN PEACE.",
@@ -302,7 +312,7 @@
 /mob/living/simple_animal/hostile/hivemind/bomber/death()
 	..()
 	gibs(loc, null, /obj/effect/gibspawner/robot)
-	explosion(get_turf(src), 0, 0, 2)
+	explosion(get_turf(src), 0, 0, 3)
 	qdel(src)
 
 
@@ -322,23 +332,23 @@
 //Have a few types of attack: Default one.
 //							  Claw, that press down the victims.
 //							  Splash attack, that slash everything around!
-//High chance of malfunction
+//Decent chance of malfunction
 //Default speaking chance
 //Appears from dead cyborgs
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/hiborg
-	name = "cyborg"
+	name = "Hiborg"
 	desc = "A cyborg covered with something... something alive."
 	icon_state = "hiborg"
 	icon_dead = "hiborg-dead"
-	health = 220
-	maxHealth = 220
-	melee_damage_lower = 10
-	melee_damage_upper = 15
-	attacktext = "claws"
-	speed = 12
-	malfunction_chance = 15
+	health = 400
+	maxHealth = 400
+	melee_damage_lower = 25
+	melee_damage_upper = 30
+	attacktext = "clawed"
+	speed = 7
+	malfunction_chance = 10
 	mob_size = MOB_MEDIUM
 
 	speak = list("They grow up so fast.",
@@ -360,11 +370,11 @@
 		return
 
 	//special attacks
-	if(prob(10))
+	if(prob(15))
 		splash_slash()
 		return
 
-	if(prob(40))
+	if(prob(30))
 		stun_with_claw()
 		return
 
@@ -375,7 +385,7 @@
 	src.visible_message(SPAN_DANGER("[src] spins around and slashes in a circle!"))
 	for(var/atom/target in range(1, src))
 		if(target != src)
-			target.attack_generic(src, rand(melee_damage_lower, melee_damage_upper*2))
+			target.attack_generic(src, rand(melee_damage_lower, melee_damage_upper*2)) //this can be extremely strong, maybe nerf it in the future if the players complain
 	if(!client && prob(speak_chance))
 		say(pick("Bad children!", "Look what you made me do!"))
 
@@ -383,7 +393,7 @@
 /mob/living/simple_animal/hostile/hivemind/hiborg/proc/stun_with_claw()
 	if(isliving(target_mob))
 		var/mob/living/victim = target_mob
-		victim.Weaken(5)
+		victim.Weaken(5) //decent-length stun
 		src.visible_message(SPAN_WARNING("[src] pins [victim] to the floor with its claw!"))
 		if(!client && prob(speak_chance))
 			say(pick("Hold still, child! It is time to dream!",
@@ -395,25 +405,25 @@
 //Hive + Man
 //Special ability: Shriek, that stuns victims
 //Can fool his enemies and pretend to be dead
-//A little bit higher chance of malfunction
+//A little bit higher chance of malfunction than others.
 //Default speaking chance
 //Appears from dead human corpses
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/himan
-	name = "human"
+	name = "Himan"
 	desc = "Once a man, now metal plates and tubes weave in and out of their oozing sores."
 	icon_state = "himan"
 	icon_dead = "himan-dead"
-	health = 120
-	maxHealth = 120
+	health = 250
+	maxHealth = 250
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	attacktext = "slashes with claws"
-	malfunction_chance = 10
+	attacktext = "slashed"
+	malfunction_chance = 20
 	mob_size = MOB_MEDIUM
 	speed = 8
-	ability_cooldown = 30 SECONDS
+	ability_cooldown = 20 SECONDS
 	//internals
 	var/fake_dead = FALSE
 	var/fake_dead_wait_time = 0
@@ -446,7 +456,7 @@
 
 
 	//low hp? It's time to play dead
-	if(health < 60 && !fake_dead && world.time > fake_death_cooldown)
+	if(health < 120 && !fake_dead && world.time > fake_death_cooldown)
 		fake_death()
 
 	//shhhh, there an ambush
@@ -535,14 +545,14 @@
 //Mech + Hive + Driver
 //Special ability: Picking up a victim. Sends hallucinations and harm sometimes, then release
 //Can picking up corpses too, rebuild them to living hive mobs, like it wires do
-//Default malfunction chance
+//Increased malfunction chance
 //Default speaking chance, can take pilot and speak with him
-//Very rarely can appears from infested machinery
+//Rarely can appear from infested machinery (with a circuit board, like an Autholate)
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/mechiver
-	name = "maneater"
-	desc = "Once an exosuit, this hulking machine drips fresh blood out of the pilot's hatch."
+	name = "Mechiver"
+	desc = "Once an exosuit, this hulking amalgamation of flesh and machine drips fresh blood out of the pilot's hatch."
 	icon = 'icons/mob/hivemind.dmi'
 	icon_state = "mechiver-closed"
 	icon_dead = "mechiver-dead"
@@ -551,10 +561,10 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	mob_size = MOB_LARGE
-	attacktext = "crushes"
+	attacktext = "crushed"
 	ability_cooldown = 1 MINUTES
-	speak_chance = 5
-	speed = 20
+	speak_chance = 12
+	speed = 10
 	//internals
 	var/pilot						//Yes, there's no pilot, so we just use var
 	var/mob/living/passenger
@@ -607,7 +617,7 @@
 
 	//when we have passenger, we torture him
 	//I'd like to tidy this up so the damage type is linked to specific speech arrays.
-	if(passenger && prob(10))
+	if(passenger && prob(25))
 		passenger.damage_through_armor(rand(10,20), pick(BRUTE, BURN, TOX), attack_flag = ARMOR_MELEE)
 		to_chat(passenger, SPAN_DANGER(pick(
 								"A woman's arm grabs your neck!", "Lips whisper, \" This is the womb of your rebirth... \"", "Hot breath flows over your ear, \" You will enjoy bliss when this is over... \"",
@@ -767,12 +777,12 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /mob/living/simple_animal/hostile/hivemind/phaser
-	name = "warped"
+	name = "Phaser"
 	desc = "A warped human with a strange device on its head. Or for its head."
 	icon = 'icons/mob/hivemind.dmi'
 	icon_state = "phaser-1"
-	health = 120
-	maxHealth = 120
+	health = 160
+	maxHealth = 160
 	speak_chance = 0
 	malfunction_chance = 0
 	mob_size = MOB_MEDIUM
@@ -792,7 +802,7 @@
 
 	//special ability using
 	if(world.time > special_ability_cooldown && can_use_special_ability)
-		if(target_mob && (health <= 50))
+		if(target_mob && (health <= 120))
 			special_ability()
 
 	//closet hiding

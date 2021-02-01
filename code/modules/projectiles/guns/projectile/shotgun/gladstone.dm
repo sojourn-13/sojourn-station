@@ -8,12 +8,12 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 7
 	caliber = CAL_SHOTGUN
-	damage_multiplier = 1.1
+	damage_multiplier = 1
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
-	price_tag = 1500
-	recoil_buildup = 14
-	one_hand_penalty = 15 //full sized shotgun level
+	price_tag = 750
+	recoil_buildup = 12
+	one_hand_penalty = 14
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn
 
@@ -28,7 +28,7 @@
 	w_class = ITEM_SIZE_BULKY
 	damage_multiplier = 0.8
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
-	price_tag = 800
-	recoil_buildup = 100
-	one_hand_penalty = 100 //full sized shotgun level
+	price_tag = 400
+	recoil_buildup = 22
+	one_hand_penalty = 27 //full sized shotgun level
 	saw_off = FALSE

@@ -73,6 +73,7 @@
 	name = "red bandana"
 	desc = "A red bandana fashioned from a piece of cloth."
 	icon_state = "bandana"
+	flags_inv = BLOCKHEADHAIR
 
 /*Bowler Hats*/
 
@@ -222,3 +223,13 @@
 	icon_state = "turban"
 	body_parts_covered = 0
 	flags_inv = BLOCKHAIR
+
+/obj/item/clothing/head/rice_hat
+	name = "rice hat"
+	desc = "A hat made out of straw, designed to keep the sun from hurting your face."
+	icon_state = "rice_hat"
+
+/obj/item/clothing/head/exceslior/excelsior_officer
+	name = "excelsior officer cap"
+	desc = "A peaked commissar cap marked with a red hammer and gear emblem on an orange background at its front."
+	icon_state = "excelsior_officer"

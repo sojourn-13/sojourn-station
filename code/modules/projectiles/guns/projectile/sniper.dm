@@ -9,7 +9,7 @@
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 	caliber = CAL_ANTIM
-	recoil_buildup = 75
+	recoil_buildup = 60
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING
 	max_shells = 1
@@ -17,11 +17,12 @@
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20, MATERIAL_DIAMOND = 3, MATERIAL_OSMIUM = 5, MATERIAL_URANIUM = 2)
-	price_tag = 20000
-	one_hand_penalty = 100
+	price_tag = 10000
+	one_hand_penalty = 80
 	var/bolt_open = 0
 	zoom_factor = 2.0
 	twohanded = TRUE
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
 /obj/item/weapon/gun/projectile/heavysniper/update_icon()
 	..()
@@ -134,19 +135,33 @@
 		qdel(src)
 
 /obj/item/weapon/gun/projectile/revolver/little_comet
-	name = "\"Little Comet\" pistol"
-	desc = "A special pistol developed to be as flashy and over priced as the businessmen that carry them. Uses .35 special rounds."
+	name = "\"Little Comet\" revolver"
+	desc = "A special revolver developed to be as flashy and over priced as the businessmen that carry them. A special gravity based modification in the cylinder allows for it to over penetrate \
+	even solid steel walls despite its low caliber, the weapons value derived from said gravitonic modification being old tech from greyson that can no longer be reproduced. Uses .35 special rounds."
 	icon = 'icons/obj/guns/projectile/little_comet.dmi'
 	icon_state = "little_comet"
 	item_state = "little_comet"
 	drawChargeMeter = FALSE
-	max_shells = 5
+	max_shells = 6
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/pistol
+	ammo_type = /obj/item/ammo_casing/pistol_35
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
-	price_tag = 10000
+	price_tag = 5000
 	damage_multiplier = 1.1 //because pistol round
 	penetration_multiplier = 20
 	pierce_multiplier =  5
-	recoil_buildup = 50
+	recoil_buildup = 13
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
+
+/obj/item/weapon/gun/projectile/revolver/little_comet/update_icon()
+	..()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
+	icon_state = iconstring
+	set_item_state(itemstring)

@@ -40,7 +40,7 @@
 	matter = list(MATERIAL_GLASS = 2)
 	volume = 120
 	amount_per_transfer_from_this = 10
-	possible_transfer_amounts = list(5,10,15,25,30,60,120)
+	possible_transfer_amounts = list(5,10,15,25,30,60,100,120)
 
 /obj/item/weapon/reagent_containers/glass/beaker/noreact
 	name = "cryostasis beaker"
@@ -58,8 +58,12 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASMA = 1)
 	volume = 300
 	amount_per_transfer_from_this = 10
-	possible_transfer_amounts = list(5,10,15,25,30,60,120,300)
+	possible_transfer_amounts = list(5,10,15,25,30,60,100,120,300)
 	lid_icon_state = "lid_beakerlarge"
+
+/obj/item/weapon/reagent_containers/glass/beaker/bluespace/New()
+	..()
+	item_flags |= BLUESPACE
 
 /obj/item/weapon/reagent_containers/glass/beaker/vial
 	name = "vial"
@@ -83,6 +87,28 @@
 /obj/item/weapon/reagent_containers/glass/beaker/sulphuric
 	preloaded_reagents = list("sacid" = 60)
 
+/obj/item/weapon/reagent_containers/glass/beaker/vial/vape
+	name = "vape vial"
+	desc = "A small plastic vial."
+	icon_state = "vial_plastic"
+	matter = list(MATERIAL_PLASTIC = 1)
+
+
+/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry
+	name = "berry vape vial"
+	preloaded_reagents = list("nicotine" = 20, "berryjuice" = 10)
+
+/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/lemon
+	name = "lemon vape vial"
+	preloaded_reagents = list("nicotine" = 20, "lemonjuice" = 10)
+
+/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/banana
+	name= "banana vape vial"
+	preloaded_reagents = list("nicotine" = 20, "banana" = 10)
+
+/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/nicotine
+	name = "nicotine vape vial"
+	preloaded_reagents = list("nicotine" = 30)
 
 /obj/item/weapon/reagent_containers/glass/bucket
 	desc = "It's a bucket."
@@ -93,7 +119,7 @@
 	matter = list(MATERIAL_PLASTIC = 2)
 	w_class = ITEM_SIZE_NORMAL
 	amount_per_transfer_from_this = 20
-	possible_transfer_amounts = list(10,20,30,60,120,200)
+	possible_transfer_amounts = list(10,20,30,60,100,120,200)
 	volume = 200
 	unacidable = 0
 
@@ -119,3 +145,11 @@
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
 		add_overlay(lid)
 
+/obj/item/weapon/reagent_containers/glass/urn
+	name = "Urn"
+	desc = "A tall, rounded vase with a base, with a short stem, used for storing the ashes of a cremated person."
+	icon_state = "urn"
+	amount_per_transfer_from_this = 1 //No
+	possible_transfer_amounts = list(1) //No
+	volume = 30
+	can_be_placed_into = null

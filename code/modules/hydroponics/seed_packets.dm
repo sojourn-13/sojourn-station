@@ -74,6 +74,7 @@ var/global/list/plant_seed_sprites = list()
 	seed_type = null
 
 /obj/item/seeds/random/New()
+	..()
 	seed = plant_controller.create_random_seed()
 	seed_type = seed.name
 	update_seed()
@@ -128,6 +129,10 @@ var/global/list/plant_seed_sprites = list()
 
 /obj/item/seeds/bluespacetomatoseed
 	seed_type = "bluespacetomato"
+
+/obj/item/seeds/bluespacetomatoseed/New()
+	..()
+	item_flags |= BLUESPACE
 
 /obj/item/seeds/cornseed
 	seed_type = "corn"

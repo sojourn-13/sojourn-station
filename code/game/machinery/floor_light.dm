@@ -104,11 +104,11 @@ var/list/floor_light_cache = list()
 	..()
 	var/need_update
 	if((!anchored || broken()) && on)
-		use_power = 0
+		use_power = NO_POWER_USE
 		on = 0
 		need_update = 1
 	else if(use_power && !on)
-		use_power = 0
+		use_power = NO_POWER_USE
 		need_update = 1
 	if(need_update)
 		update_brightness()
@@ -118,7 +118,7 @@ var/list/floor_light_cache = list()
 		if(light_range != default_light_range || light_power != default_light_power || light_color != default_light_colour)
 			set_light(default_light_range, default_light_power, default_light_colour)
 	else
-		use_power = 0
+		use_power = NO_POWER_USE
 		if(light_range || light_power)
 			set_light(0)
 

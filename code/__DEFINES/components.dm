@@ -8,6 +8,7 @@
 
 #define COMPONENT_INCOMPATIBLE 1
 #define COMPONENT_NOTRANSFER 2
+#define COMPONENT_TRANSFER 3
 
 // How multiple components of the exact same type are handled in the same datum
 
@@ -55,14 +56,16 @@
 
 // /mob/living/carbon/human signals
 #define COMSIG_HUMAN_SAY "human_say"                            //from mob/living/carbon/human/say(): (message)
-
+#define COMSIG_HUMAN_ODDITY_LEVEL_UP "human_oddity_level_up"
 // /datum/species signals
 
 // /obj signals
 
 // /obj/item signals
 #define COMSIG_IATTACK "item_attack"									//from /mob/ClickOn(): (/atom, /src, /params) If any reply to this returns TRUE, overrides attackby and afterattack
+#define COMSIG_ATTACKBY "attack_by"										//from /mob/ClickOn():
 #define COMSIG_APPVAL "apply_values"									//from /atom/refresh_upgrades(): (/src) Called to upgrade specific values
+#define COMSIG_ADDVAL "add_values" 										//from /atom/refresh_upgrades(): (/src) Called to add specific things to the /src, called before COMSIG_APPVAL
 #define COMSIG_REMOVE "uninstall"										//from  /obj/item/weapon/tool/attackby(): Called to remove an upgrade
 // /obj/item/clothing signals
 

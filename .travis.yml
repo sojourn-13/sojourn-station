@@ -13,7 +13,7 @@ env:
     global:
     - BYOND_MAJOR="513"
     - BYOND_MINOR="1511"
-    - DM_BUILDFILE="odessa-outpost.dme"
+    - DM_BUILDFILE="sojourn-station.dme"
 
 cache:
   directories:

@@ -68,6 +68,113 @@
 		STAT_COG = 10
 	)
 
+/datum/category_item/setup_option/background/ethnicity/sot_synth_medical
+	name = "Medical Positronic"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Your specific model was designed with \
+	in-house medical imaging, surgical support systems, and a suite of data stored biological reference documents fed to the brain within through a real-time artifical intelligence system. The entire \
+	system works on a subconcious level, allowing the existing machinery to work with instead of for the user."
+
+	restricted_to_species = list(FORM_SOTSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 10,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/ethnicity/sot_synth_engineer
+	name = "Engineering Positronic"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Your specific model was designed with \
+	sturdy reinforced chassis functions and augmented tool support to further enhance your innate skills. Due to an often times self tinkering habit, engineering FBP's are made sturdy and equipped \
+	with a repository of schematics and tool tips fed directly to the user on a subconcious level, allowing the existing machinery to work with instead of for the user."
+
+	restricted_to_species = list(FORM_SOTSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 5,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 5,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/ethnicity/sot_synth_combat
+	name = "Combat Positronic"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Combat positronics are built specifically \
+	for the protection of colony interests but allowed to retain their free will, unlike other cyborgs. Combat positronics have the sturdiest physical designs and enhanced hydraulic systems to \
+	further enhance their physical strength. In-built armor plating and AI-fed combat techniques given on a subconcious level allow for robust and study combatants."
+
+	restricted_to_species = list(FORM_SOTSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 10,
+		STAT_BIO = 0,
+		STAT_MEC = -5,
+		STAT_COG = -5
+	)
+
+/datum/category_item/setup_option/background/ethnicity/ag_synth_mech_adept
+	name = "Mechanical Adept"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Your specific model was designed with \
+	a squite of integrated repair AI modules and augmented tool support to further enhance your innate skills. While not as sturdy as some other models of FBP's such as the Soteria designs the \
+	artificer guild positronics come with a far more advanced mechanical support subsystem, allowing for superior designs, methods, and implementations."
+
+	restricted_to_species = list(FORM_AGSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 15,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/ethnicity/ag_synth_sturdy
+	name = "\"Long-Haul\" Body Chassis"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. This particular model is the work of Tacitus \
+	O'Conner himself, artificer guild grand master. Unlike the mechanical adept model this chassis is built to last, being far more sturdy and capable of performing alone or with teams of engineers cut \
+	off from the colony for extended periods. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and improved cogitation computers."
+
+	restricted_to_species = list(FORM_AGSYNTH)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 10,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 10
+	)
+
+/datum/category_item/setup_option/background/ethnicity/ag_synth_mine
+	name = "\"Depts-Class\" Body Chassis"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. This particular model is made with mining in \
+	mind. Unlike the mechanical adept model this chassis is built work long hard hours in the darkness, being far more able to smash down rock viens and dig out tunnles rich with both soft \
+	and hard materals alike. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and preprogrammed assistants in maintaining tools and own self."
+
+	restricted_to_species = list(FORM_AGSYNTH)
+
+//Idea for this is that you were made with being a miner, thus giving you everything you need as one
+//The main boon being you get a bit of evey skill you /need/ to mine out faster and maintain tools / set up the big drills.
+//-0Loss Stats +15Gained Stat
+
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 5,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 5,
+		STAT_COG = 0
+	)
+
+
 /datum/category_item/setup_option/background/ethnicity/jaeger
 	name = "Jaeger"
 	desc = "The jaegers are a group of frontier kriosan who plot the course for the spread of the kriosan civilization. \
@@ -112,12 +219,9 @@
 	name = "Castellen"
 	desc = "The castellen are the noble elite and highborn of the kriosan, genetically superior to the common folk they rule over but rarely found outside their own empire. \
 			Castellens are widely known for their considerable size and physical merit but lack the practical training in most areas compared to others, in particular those dealing with people or \
-			kriosans trademark rifles. A lifetime of being trained for the realm of politics and artisanship has made them quick to understand new things but abyssal at more other pursuits. \
-			On top of all that, a castellens political affiliations, be it present or former, bar them from command roles due to the very obvious conflict of interests."
+			kriosans trademark rifles. A lifetime of being trained for the realm of politics and artisanship has made them quick to understand new things but abyssal at more other pursuits."
 
 	restricted_to_species = list(FORM_KRIOSAN)
-
-	restricted_depts = COMMAND
 
 	stat_modifiers = list(
 		STAT_ROB = 5,
@@ -304,14 +408,36 @@
 		STAT_COG = 15
 	)
 
+/datum/category_item/setup_option/background/ethnicity/opifex_mechanist
+	name = "Mechanist"
+	desc = "You are one of the many opifex trained in the ways of your craft by your scavenger fleet. Like your brothers you have a knack for adapting to new situations and using all things \
+	mechanical. Sadly, seperated from your fleet you do not have access to the many useful robots that make life so much easier. That said, you always keep your various tools stowed away in a \
+	webbing smuggled on your person. As a rank and file you represent the best of the opifex ability and wear your tools with pride."
+
+	restricted_to_species = list(FORM_OPIFEX)
+
+	perks = list(/datum/perk/opifex_backup)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 5,
+		STAT_COG = 5
+	)
+
 /datum/category_item/setup_option/background/ethnicity/opifexbiomech
 	name = "Biomechanist"
 	desc = "While all opifex are trained in the workings of machines some are reserved for the biological aspect of their respective scavenger fleet. \
 			This training is usually towards the goal of maintaining the bio-mechanical augmentations used by the opifex, from installing nano-gates to replacing lost limbs with synthetic copies. \
 			The additional biological training, while helpful, does hamper the average opifexes ability to study machines, lessening their ability to quickly adapt to situations and new \
-			technology. After all, to the average opifex a biological entity is far less complex and nuisanced than even the most basic of robots."
+			technology. After all, to the average opifex a biological entity is far less complex and nuisanced than even the most basic of robots. Out of habit you always keep your trusty \
+			medical webbing stowed on your person with various useful chemicals and devices stored within."
 
 	restricted_to_species = list(FORM_OPIFEX)
+
+	perks = list(/datum/perk/opifex_backup_medical)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -327,9 +453,12 @@
 	desc = "Some opifex are assigned the tasks of dealing with the hostile entities aboard ships they loot, be it creatures living on space hulks, machines still defending lost ships, \
 			or the crew of a recently boarded ship being mercilessly slaughtered so they can peacefully strip the shuttles tech. Combat technicians favor the use of range weaponry, often \
 			times supported by combat drones with which they lead into conflict. Their skills towards repairing and salvaging technology isn't as good as the average opifex, but their concern \
-			is only on making areas safe for the lesser technicians to do the grunt labors."
+			is only on making areas safe for the lesser technicians to do the grunt labors. You don't take chances though, always making sure to keep your tactical belt smuggled on your person with \
+			a spare energy pistol, some manhack grenades, and other various combat tools."
 
 	restricted_to_species = list(FORM_OPIFEX)
+
+	perks = list(/datum/perk/opifex_backup_combat)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -348,6 +477,8 @@
 			knew what was needed for their purpose and literally nothing else."
 
 	restricted_to_species = list(FORM_CHTMANT)
+
+	perks = list(/datum/perk/scuttlebug)
 
 	stat_modifiers = list(
 		STAT_ROB = 4,
@@ -369,6 +500,8 @@
 	restricted_to_species = list(FORM_CHTMANT)
 	restricted_depts = SECURITY | PROSPECTOR
 
+	perks = list(/datum/perk/ichor)
+
 	stat_modifiers = list(
 		STAT_ROB = -8,
 		STAT_TGH = -8,
@@ -383,12 +516,14 @@
 	desc = "Ra’s are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ru’s and even \
 			most workers, the Ro. Their bodies were highly adapted to fight and they knew only loyalty unto death for the good of \
 			the hive’s. Due to this, and the existence of the Ru, they often heavily lacked any cognitive thinking skills and would \
-			rely on winning battles by sheer weight of numbers or attrition. The severe lack of intelligence they exibit also bars them from most medicalroles and all of science, engineering, and command roles."
+			rely on winning battles by sheer weight of numbers or pure attrition. The severe lack of intelligence they exibit also bars them from most medical roles and all of science, engineering, and command roles."
 
 	restricted_to_species = list(FORM_CHTMANT)
 
-	restricted_depts = SCIENCE | ENGINEERING | COMMAND
-	restricted_jobs = list(/datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic)
+	restricted_depts = SCIENCE | ENGINEERING
+	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/smc, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic, /datum/job/premier, /datum/job/pg, /datum/job/chief_engineer, /datum/job/chaplain, /datum/job/merchant)
+
+	perks = list(/datum/perk/chitinarmor)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -851,6 +986,43 @@
 		STAT_COG = -8
 	)
 
+/datum/category_item/setup_option/background/career/laborer_miner
+	name = "Former Miner"
+	desc = "Mining, the not well respected but needed none the less job. Pay ranges from work to work sometimes and the hazards are always an unknown, making it not as mindless of a job as one might think. \
+	Maybe mining in space were the gravity is ligher was easyer on a planet, maybe its all in the past now and to show for you labors you got calluses hands and known how to maintaining your tools."
+
+//This allows you to if your a miner, to get just the stats you need to do your job well not hurting as much of the smarter stats
+//The main boon of this being a better digging and maintaining tools/drills
+//-8Loss Stats +10Gained Stats
+
+
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 0,
+		STAT_VIG = -4,
+		STAT_BIO = -2,
+		STAT_MEC = 5,
+		STAT_COG = -2
+	)
+
+/datum/category_item/setup_option/background/career/former_servest
+	name = "Former Service Worker"
+	desc = "From a janitor to cook or even accountent work as been the mundane at best, being what ever you were before the crash was likely uneventful. \
+	Now a days who knows what can happen on the colony, hopefully your life skills from doing the prier or even current work have prepared you for what you are now."
+
+//REALLY open ended this one, thus is a bit of everything!
+//Main boon is that you dont lose or gain a lot, making it ideal for roleplay without lossing out on other jobs/skills
+//-9Loss Stats +11Gained Stats
+
+	stat_modifiers = list(
+		STAT_ROB = -2,
+		STAT_TGH = -3,
+		STAT_VIG = -4,
+		STAT_BIO = 4,
+		STAT_MEC = 3,
+		STAT_COG = 4
+	)
+
 /datum/category_item/setup_option/background/career/mechanic
 	name = "Former Mechanic"
 	desc = "You like mechanics, from cars to hover bikes to electrical equipment you've worked on them all. Maybe you were a minor technician, working on general maintenance for a few vehicles \
@@ -906,7 +1078,7 @@
 		STAT_ROB = 0,
 		STAT_TGH = 2,
 		STAT_VIG = 1,
-		STAT_BIO = 3,
+		STAT_BIO = 5,
 		STAT_MEC = -5,
 		STAT_COG = 4
 	)
@@ -954,12 +1126,12 @@
 	perks = list(/datum/perk/lungs_of_iron)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_ROB = 3,
+		STAT_TGH = 3,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_MEC = 4,
+		STAT_COG = -5
 	)
 
 /datum/category_item/setup_option/background/career/social
@@ -972,11 +1144,32 @@
 		STAT_ROB = -4,
 		STAT_TGH = -4,
 		STAT_VIG = 0,
-		STAT_BIO = 0,
+		STAT_BIO = 2,
 		STAT_MEC = 0,
-		STAT_COG = 13
+		STAT_COG = 8
 	)
 
+/datum/category_item/setup_option/background/career/entrepreneur
+	name = "Entrepreneur"
+	desc = "When life gives you lemons make lemonade then sell that drink at a profit and corner the lemonade market. That is exactly what you may have set out to do, making it on your own! \
+	This can range from starting your own shop to small business making stuff. Who knows how many tried and failed but your one of them, the market back in Sol Fed was just to crowed, that must be it. \
+	The system of bureaucracy and its regulations have pushed out many like you but it really gets the old nogging working in overtime."
+
+//Idea is simple, this one is to be a smart cookie and try and make a something to rival even LLS!
+//The main boon, loads of cog and some bio and mec so you can craft fast and e-z well also not being to robust in maints.
+//-11Loss Stats +"16"Gained Stats
+
+	restricted_depts = LSS //You dont need those non-entrepreneurs!
+	perks = list(/datum/perk/market_prof) //YOU GOT THIS, YOU KNOW WHATS UP AND HOW TO TURN TRASH INTO GOLD! BE YOUR OWN BOSS, GONE ON TO DO IT!
+
+	stat_modifiers = list(
+		STAT_ROB = -4,
+		STAT_TGH = -4,
+		STAT_VIG = -3,
+		STAT_BIO = 3,
+		STAT_MEC = 3,
+		STAT_COG = 10 //Dump stat kinda not a big deal to be "to high"
+	)
 
 /datum/category_item/setup_option/background/career/scavenger
 	name = "Former Scavenger"
@@ -1017,6 +1210,25 @@
 		STAT_MEC = -8,
 		STAT_COG = 5
 	)
+
+/datum/category_item/setup_option/background/bckgrnd/pressered_in_life
+	name = "Overwhelming Upbringing"
+	desc = "You had quite the start in life, nothing was layed back or easy. Always being pressered into things you didn't have any care for or like. This maybe came from schools, friends, family or a mix of all three.  \
+	With all that presser and busy life has made you in later years less strong in the physical scenes, but has made your mind just as sharp as ever. Maybe giving you just the skills you needed for this colony."
+
+//Idea behind this is that well in younger years you pushed your body to hard and now your paying for it in TOB/TGH
+//The main boon of this being a better mind and understanding.
+//-14Loss Stats +15Gained Stats
+
+	stat_modifiers = list(
+		STAT_ROB = -6,
+		STAT_TGH = -6,
+		STAT_VIG = -2,
+		STAT_BIO = 5,
+		STAT_MEC = 5,
+		STAT_COG = 5
+	)
+
 
 /datum/category_item/setup_option/background/bckgrnd/wealthy
 	name = "Wealthy Upbringing"
@@ -1130,6 +1342,7 @@
 		STAT_MEC = 8,
 		STAT_COG = -15
 	)
+
 
 /datum/category_item/setup_option/background/bckgrnd/chtmantspider
 	name = "Eight-Legged Ally"

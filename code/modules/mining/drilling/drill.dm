@@ -1,7 +1,7 @@
 /obj/machinery/mining
 	icon = 'icons/obj/mining_drill.dmi'
 	anchored = 0
-	use_power = 0 //The drill takes power directly from a cell.
+	use_power = NO_POWER_USE //The drill takes power directly from a cell.
 	density = 1
 	layer = MOB_LAYER+0.1 //So it draws over mobs in the tile north of it.
 
@@ -84,7 +84,8 @@
 		harvesting.has_resources = FALSE
 		harvesting.resources = null
 		resource_field -= harvesting
-		harvesting = pick(resource_field)
+		if(resource_field.len)
+			harvesting = pick(resource_field)
 
 	if(!harvesting)
 		system_error("resources depleted")

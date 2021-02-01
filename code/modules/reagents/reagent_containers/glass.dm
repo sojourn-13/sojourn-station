@@ -16,6 +16,7 @@
 	reagent_flags = OPENCONTAINER
 	unacidable = 1 //glass doesn't dissolve in acid
 	matter = list(MATERIAL_GLASS = 1)
+	var/label_icon_state = null
 	var/lid_icon_state = null
 
 	var/label_text = ""
@@ -89,6 +90,7 @@
 
 /obj/item/weapon/reagent_containers/glass/pre_attack(atom/A, mob/user, params)
 	if(user.a_intent == I_HURT)
+		user.investigate_log("splashed [src] filled with [reagents.log_list()] onto [A]", "chemistry")
 		if(standard_splash_mob(user, A))
 			return TRUE
 		if(is_drainable() && reagents.total_volume)
@@ -131,6 +133,7 @@
 			to_chat(user, SPAN_NOTICE("You set the label to \"[tmp_label]\"."))
 			label_text = tmp_label
 			update_name_label()
+			update_icon()
 
 	var/hotness = I.is_hot()
 	if(hotness && reagents)

@@ -6,13 +6,15 @@
 	use_power = 2
 	active_power_usage = 20000 //20kW, apropriate for machine that keeps massive cross-Zlevel wireless network operational.
 	idle_power_usage = 100
-	icon_state = "bus"
+	icon_state = "router"
 	anchored = 1
 	density = 1
 	var/datum/ntnet/NTNet = null // This is mostly for backwards reference and to allow varedit modifications from ingame.
 	var/enabled = 1				// Set to 0 if the relay was turned off
 	var/dos_failure = 0			// Set to 1 if the relay failed due to (D)DoS attack
 	var/list/dos_sources = list()	// Backwards reference for qdel() stuff
+
+	circuit = /obj/item/weapon/circuitboard/ntnet_relay
 
 	// Denial of Service attack variables
 	var/dos_overload = 0		// Amount of DoS "packets" in this relay's buffer
@@ -40,7 +42,7 @@
 	if(operable())
 		use_power = 2
 	else
-		use_power = 1
+		use_power = IDLE_POWER_USE
 
 	if(dos_overload)
 		dos_overload = max(0, dos_overload - dos_dissipate)
@@ -94,17 +96,14 @@
 		return 1
 
 /obj/machinery/ntnet_relay/New()
+	..()
 	uid = gl_uid
 	gl_uid++
-	component_parts = list()
-	component_parts += new /obj/item/stack/cable_coil(src,15)
-	component_parts += new /obj/item/weapon/circuitboard/ntnet_relay(src)
 
 	if(ntnet_global)
 		ntnet_global.relays.Add(src)
 		NTNet = ntnet_global
 		ntnet_global.add_log("New quantum relay activated. Current amount of linked relays: [NTNet.relays.len]")
-	..()
 
 /obj/machinery/ntnet_relay/Destroy()
 	if(ntnet_global)
@@ -116,7 +115,7 @@
 		D.error = "Connection to quantum relay severed"
 	..()
 
-/obj/machinery/ntnet_relay/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/machinery/ntnet_relay/attackby(obj/item/W, mob/user)
 	if(default_deconstruction(W, user))
 		return
 	if(default_part_replacement(W, user))

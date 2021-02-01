@@ -173,14 +173,14 @@
 	preloaded_reagents = list("gin" = 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/whiskey
-	name = "Uncle Git's Special Reserve"
+	name = "Uncle Git's Special Reserve Whiskey"
 	desc = "A premium single-malt whiskey, gently matured inside the tunnels of a nuclear shelter. TUNNEL WHISKEY RULES."
 	icon_state = "whiskeybottle"
 	center_of_mass = list("x"=16, "y"=3)
 	preloaded_reagents = list("whiskey" = 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vodka
-	name = "Tunguska Triple Distilled"
+	name = "Tunguska Triple Distilled Vodka"
 	desc = "Aah, vodka. Prime choice of drink AND fuel by Russians worldwide."
 	icon_state = "vodkabottle"
 	center_of_mass = list("x"=17, "y"=3)
@@ -201,7 +201,7 @@
 	preloaded_reagents = list("nothing" = 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/patron
-	name = "Wrapp Artiste Patron"
+	name = "Wrapp Artiste Patron Tequilla"
 	desc = "Silver laced tequilla, served in space night clubs across the galaxy."
 	icon_state = "patronbottle"
 	center_of_mass = list("x"=16, "y"=6)
@@ -222,7 +222,7 @@
 	preloaded_reagents = list("vermouth" = 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/kahlua
-	name = "Robert Robust's Coffee Liqueur"
+	name = "Robert Robust's Coffee Kahlua"
 	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936, HONK"
 	icon_state = "kahluabottle"
 	center_of_mass = list("x"=17, "y"=3)
@@ -257,7 +257,7 @@
 	preloaded_reagents = list("ntcahors" = 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe
-	name = "Jailbreaker Verte"
+	name = "Jailbreaker Absinthe"
 	desc = "One sip of this and you just know you're gonna have a good time."
 	icon_state = "absinthebottle"
 	center_of_mass = list("x"=16, "y"=6)
@@ -266,7 +266,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/melonliquor
 	name = "Emeraldine Melon Liquor"
 	desc = "A bottle of 46 proof Emeraldine Melon Liquor. Sweet and light."
-	icon_state = "alco-green" //Placeholder.
+	icon_state = "alco-green"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("melonliquor" = 100)
 	icon_state_empty = "alco-clear"
@@ -274,10 +274,26 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bluecuracao
 	name = "Miss Blue Curacao"
 	desc = "A fruity, exceptionally azure drink. Does not allow the imbiber to use the fifth magic."
-	icon_state = "alco-blue" //Placeholder.
+	icon_state = "alco-blue"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("bluecuracao" = 100)
 	icon_state_empty = "alco-clear"
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/redcandywine
+	name = "Mister Red Candy Liquor"
+	desc = "Made from astored sweets, candies and even flowers."
+	icon_state = "alco-red"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("redcandyliquor" = 100)
+	icon_state_empty = "alco-clear"
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/nanatsunoumi
+	name = "Nanatsunoumi"
+	desc = "A harsh salty alcohol that is from Japanese origin."
+	icon_state = "alco-white"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("nanatsunoumi" = 100)
+	icon_state_empty = "alco-white_empty"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/grenadine
 	name = "Briar Rose Grenadine Syrup"

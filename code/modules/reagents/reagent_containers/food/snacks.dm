@@ -61,10 +61,13 @@
 	if(iscarbon(M))
 		//TODO: replace with standard_feed_mob() call.
 		var/mob/living/carbon/C = M
-		var/fullness = C.nutrition + (C.reagents.get_reagent_amount("nutriment") * 25)
+		var/mob/living/carbon/human/H = M
+		var/fullness_modifier = 1
+		if(istype(H))
+			fullness_modifier = 100 / H.get_organ_efficiency(OP_STOMACH)
+		var/fullness = (C.nutrition + (C.reagents.get_reagent_amount("nutriment") * 25)) * fullness_modifier
 		if(C == user)								//If you're eating it yourself
-			if(ishuman(C))
-				var/mob/living/carbon/human/H = M
+			if(istype(H))
 				if(!H.check_has_mouth())
 					to_chat(user, "Where do you intend to put \the [src]? You don't have a mouth!")
 					return
@@ -109,7 +112,6 @@
 			if(reagents.total_volume)
 				var/amount_eaten = min(reagents.total_volume, bitesize)
 				reagents.trans_to_mob(M, amount_eaten, CHEM_INGEST)
-				var/mob/living/carbon/human/H = M
 				if(istype(H))
 					H.sanity.onEat(src, amount_eaten)
 				bitecount++
@@ -198,18 +200,6 @@
 	if (is_sliceable())
 		//these are used to allow hiding edge items in food that is not on a table/tray
 		var/can_slice_here = isturf(src.loc) && ((locate(/obj/structure/table) in src.loc) || (locate(/obj/machinery/optable) in src.loc) || (locate(/obj/item/weapon/tray) in src.loc))
-		var/hide_item = !has_edge(W) || !can_slice_here
-
-		if (hide_item)
-			if (W.w_class >= src.w_class || is_robot_module(W))
-				return
-
-			to_chat(user, SPAN_WARNING("You slip \the [W] inside \the [src]."))
-			user.remove_from_mob(W)
-			W.dropped(user)
-			add_fingerprint(user)
-			contents += W
-			return
 
 		if (has_edge(W))
 			if (!can_slice_here)
@@ -350,6 +340,32 @@
 	nutriment_amt = 9
 	nutriment_desc = list("nutriment" = 7, "protein" = 8)
 
+/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack
+	name = "pistachios pack"
+	desc = "A packet of pistachios with added salt. A somewhat healthy light snack."
+	icon_state = "pistachios_pack"
+	trash = /obj/item/trash/pistachios
+	nutriment_amt = 4
+	nutriment_desc = list("pistachios" = 3, "protein" = 2, "sodiumchloride" = 2)
+	preloaded_reagents = list("nutriment" = 1, "sodiumchloride" = 6)
+
+/obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds
+	name = "sunflower fried seed pack"
+	desc = "Bag of sunflower seeds that have been fried and salted for people that like to chew their food for way to long."
+	icon_state = "semki_pack"
+	trash = /obj/item/trash/semki
+	nutriment_amt = 3
+	nutriment_desc = list("nutriment" = 2, "protein" = 1)
+
+/obj/item/weapon/reagent_containers/food/snacks/candy/energybar
+	name = "energy bar"
+	desc = "A chewy candy bar that has many warnings about its surgar contents for quick energy."
+	icon_state = "energybar"
+	trash = /obj/item/trash/energybar
+	nutriment_amt = 1
+	nutriment_desc = list("nutriment" = 1, "sugar" = 29)
+	preloaded_reagents = list("nutriment" = 1, "sugar" = 29)
+
 /obj/item/weapon/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
 	desc = "It's a handful of candy corn. Cannot be stored in a detective's hat, alas."
@@ -371,6 +387,17 @@
 	center_of_mass = list("x"=15, "y"=15)
 	nutriment_amt = 3
 	nutriment_desc = list("salt" = 1, "chips" = 2)
+
+/obj/item/weapon/reagent_containers/food/snacks/gamerchips
+	name = "boritos crips packet"
+	desc = "An branded packet of crisps. Its marketing for people that like to play competitive arcade games."
+	icon_state = "boritos"
+	trash = /obj/item/trash/gamerchips
+	filling_color = "#E8C31E"
+	bitesize = 1
+	center_of_mass = list("x"=15, "y"=15)
+	nutriment_amt = 3
+	nutriment_desc = list("cool ranch" = 2, "corn" = 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/cookie
 	name = "cookie"
@@ -584,6 +611,77 @@
 /obj/item/weapon/reagent_containers/food/snacks/egg/yellow
 	icon_state = "egg-yellow"
 
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff
+	name = "Masterpiece Donut"
+	desc = "The taste you will never forget."
+	filling_color = "#ED1169"
+	bitesize = 5
+	center_of_mass = list("x"=16, "y"=11)
+	var/list/stats_buff = list()
+	var/buff_power = 6
+	price_tag = 500
+	var/buff_time = 20 MINUTES
+	nutriment_amt = 3
+	preloaded_reagents = list("sprinkles" = 2)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/On_Consume(var/mob/eater, var/mob/feeder = null)
+	..()
+	if(eater.stats)
+		for(var/stat in stats_buff)
+			if(eater.stats.getTempStat(stat, "donut"))
+				eater.stats.removeTempStat(stat, "donut")
+				eater.stats.addTempStat(stat, buff_power, buff_time, "donut")
+				to_chat(eater, SPAN_NOTICE("Your knowledge of [stat] feels renewed."))
+			eater.stats.addTempStat(stat, buff_power, buff_time, "donut")
+			to_chat(eater, SPAN_NOTICE("Your knowledge of [stat] is increased for a short period of time. Make use of it."))
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/mec
+	name = "Yellow Masterpiece Donut"
+	desc = "The sour citrus flavor you will never forget. A choice sweet of mechanics."
+	icon_state = "donut_mec"
+	overlay_state = "donut_mec_c"
+	stats_buff = list(STAT_MEC)
+	preloaded_reagents = list("sprinkles" = 1, "lemonjuice" = 1)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/cog
+	name = "Purple Masterpiece Donut"
+	desc = "The too-sweet artificial grape taste you will never forget. An intellectual's favorite."
+	icon_state = "donut_cog"
+	overlay_state = "donut_cog_c"
+	stats_buff = list(STAT_COG)
+	preloaded_reagents = list("sprinkles" = 1, "grapejuice" = 1)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/bio
+	name = "Green Masterpiece Donut"
+	desc = "The fresh spearmint flavor you will never forget. Perfect for an immaculate doctor."
+	icon_state = "donut_bio"
+	overlay_state = "donut_bio_c"
+	stats_buff = list(STAT_BIO)
+	preloaded_reagents = list("sprinkles" = 1, "mint" = 1)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/rob
+	name = "Brown Masterpiece Donut"
+	desc = "A near-chocolate taste you will never forget. A robust flavor for the strong."
+	icon_state = "donut_rob"
+	overlay_state = "donut_rob_c"
+	stats_buff = list(STAT_ROB)
+	preloaded_reagents = list("sprinkles" = 1, "coco" = 1)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/tgh
+	name = "Cream Masterpiece Donut"
+	desc = "The classic donut flavor you will never forget. Specially panders to tough people."
+	icon_state = "donut_tgh"
+	overlay_state = "donut_tgh_c"
+	stats_buff = list(STAT_TGH)
+
+/obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/vig
+	name = "Blue Masterpiece Donut"
+	desc = "A tart blueberry taste you will never forget. A go-to choice for the vigilant watchman."
+	icon_state = "donut_vig"
+	overlay_state = "donut_vig_c"
+	stats_buff = list(STAT_VIG)
+	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 1)
+
 /obj/item/weapon/reagent_containers/food/snacks/friedegg
 	name = "fried egg"
 	desc = "A fried egg, with a touch of salt and pepper."
@@ -697,7 +795,7 @@
 	proc/heat()
 		warm = 1
 		for(var/reagent in heated_reagents)
-			reagents.add_reagent(reagent, heated_reagents[reagent])
+			reagents?.add_reagent(reagent, heated_reagents[reagent])
 		bitesize = 6
 		name = "Warm " + name
 		cooltime()
@@ -921,6 +1019,17 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 8, "Fuhrole" = 3)
+	cooked = TRUE
+
+/obj/item/weapon/reagent_containers/food/snacks/kaiserburger
+	name = "kaiser Burger"
+	desc = "The rare experience for your taste buds"
+	icon_state = "kaiserburger"
+	bitesize = 3
+	center_of_mass = list("x"=16, "y"=11)
+	nutriment_desc = list("bun" = 2)
+	nutriment_amt = 3
+	preloaded_reagents = list("protein" = 10)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/omelette
@@ -1464,6 +1573,7 @@
 	center_of_mass = list("x"=16, "y"=11)
 	bitesize = 5
 	preloaded_reagents = list("water" = 10)
+	matter = null
 	New()
 		..()
 		if(prob(25))
@@ -2084,6 +2194,17 @@
 	bitesize = 2
 	nutriment_amt = 3
 	preloaded_reagents = list("hyperzine" = 2, "paracetamol" = 3)
+
+/obj/item/weapon/reagent_containers/food/snacks/canned_peaches
+	name = "canned peaches"
+	desc = "A can of peaches."
+	icon_state = "peachcan"
+	trash = /obj/item/trash/peachcan
+	filling_color = "#DEDEAB"
+	nutriment_desc = list("acrid peaches" = 2)
+	bitesize = 2
+	nutriment_amt = 3
+	preloaded_reagents = list("sugar" = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/mre_cracker
 	name = "enriched cracker"
@@ -2971,6 +3092,7 @@
 	bitesize = 1
 	center_of_mass = list("x"=17, "y"=20)
 	preloaded_reagents = list("protein" = 1)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/cutlet
 	name = "cutlet"
@@ -3051,3 +3173,31 @@
 	nutriment_desc = list("bread" = 2, "sweetness" = 3)
 	nutriment_amt = 6
 
+/obj/item/weapon/reagent_containers/food/snacks/organ
+	name = "organ"
+	desc = "Technically qualifies as organic."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "appendix"
+	filling_color = "#E00D34"
+	bitesize = 3
+	nutriment_amt = 5
+
+/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue
+	name = "\improper red gum stick"
+	desc = "A small slab of gum for chewing."
+	icon_state = "gumdrop_blue"
+	filling_color = "#FC44A0"
+	bitesize = 1
+	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
+	nutriment_amt = 0
+	preloaded_reagents = list("gum drops" = 3)
+
+/obj/item/weapon/reagent_containers/food/snacks/candy_drop_red
+	name = "\improper blue gum stick"
+	desc = "A small slab of gum for chewing. Wait, they come in blue now?"
+	icon_state = "gumdrop_red"
+	filling_color = "#2B00FF"
+	bitesize = 1
+	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
+	nutriment_amt = 0
+	preloaded_reagents = list("gum drops" = 5, "hacker" = 15)

@@ -11,9 +11,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 5,
+		bullet = 5,
+		energy = 5,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -28,9 +28,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 5,
+		bullet = 5,
+		energy = 5,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -45,9 +45,9 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor = list(
-		melee = 30,
-		bullet = 20,
-		energy = 10,
+		melee = 20,
+		bullet = 10,
+		energy = 5,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -81,19 +81,37 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+//Artist
+/obj/item/clothing/suit/artist
+	name = "Complicated Vest"
+	desc = "The tubes don't even do anything."
+	icon_state = "artist"
+	item_state = "artist_armor"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
 //Chaplain
 /obj/item/clothing/suit/storage/chaplain
-	name = "prime jacket"
+	name = "prime longcoat"
 	desc = "A long, lightly armoured jacket. Dark, stylish and authoritarian."
 	icon_state = "chaplain_hoodie"
 	item_state = "chaplain_hoodie"
 	blood_overlay_type = "coat"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	permeability_coefficient = 0.50
 	siemens_coefficient = 0.7
+	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 5)
 	armor = list(
-		melee = 30,
-		bullet = 30,
+		melee = 20,
+		bullet = 20,
 		energy = 10,
 		bomb = 30,
 		bio = 100,
@@ -153,7 +171,7 @@
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(melee = 40, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
 /obj/item/clothing/suit/storage/rank/det_trench
@@ -164,14 +182,20 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor = list(
-		melee = 30,
+		melee = 20,
 		bullet = 20,
 		energy = 20,
 		bomb = 0,
 		bio = 0,
 		rad = 0
 	)
-	price_tag = 250
+	price_tag = 125
+
+/obj/item/clothing/suit/storage/rank/det_trench/grey
+	name = "grey trenchcoat"
+	desc = "A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
+	icon_state = "detective_grey"
+	item_state = "det_suit_grey"
 
 //Engineering
 /obj/item/clothing/suit/storage/hazardvest

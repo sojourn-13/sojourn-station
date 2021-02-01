@@ -102,7 +102,7 @@
 
 /datum/technology/basic_lethal
 	name = "Basic Lethal Weapons"
-	desc = "Chemical grenade design with anti-acid coating inside."
+	desc = "Chemical grenades with anti-acid coating inside and new laser based ammo."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.6
@@ -113,10 +113,14 @@
 	required_tech_levels = list()
 	cost = 2000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade)
+	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
+							/datum/design/research/item/ammo/smg_mag,
+							/datum/design/research/item/ammo/pistol_laser,
+							/datum/design/research/item/ammo/magum_laser
+							)
 
 /datum/technology/exotic_weaponry
-	name = "Experemental Weaponry"
+	name = "Experimental Weaponry"
 	desc = "Remote temperature controling weapon."
 	tech_type = RESEARCH_COMBAT
 
@@ -128,10 +132,13 @@
 	required_tech_levels = list()
 	cost = 3000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun)
+	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun,
+							/datum/design/research/item/ammo/shotgun_fire,
+							/datum/design/research/item/ammo/shotgun_laser
+							)
 
 /datum/technology/adv_exotic_weaponry
-	name = "Advanced Experemental Weaponry"
+	name = "Advanced Experimental Weaponry"
 	desc = "Specisl weapon system using plasma as catalyst. Special weapon core prototipe that deal DNA damage to target."
 	tech_type = RESEARCH_COMBAT
 
@@ -163,10 +170,39 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
+							/datum/design/research/item/ammo/smg_mag/lethal,
+							/datum/design/research/item/ammo/smg_mag/rubber,
 							/datum/design/research/item/weapon/starstriker,
 							/datum/design/research/item/ammo/laser,
 							/datum/design/research/item/ammo/laser/ap,
-							/datum/design/research/item/ammo/laser/lethal
+							/datum/design/research/item/ammo/laser/lethal,
+							/datum/design/research/item/weapon/katana,
+							/datum/design/research/item/ammo/rifle_75,
+							/datum/design/research/item/ammo/light_rifle_257,
+							/datum/design/research/item/ammo/kurtz_laser
+						)
+
+/datum/technology/exotic_gunmods
+	name = "Experimental Gunmods"
+	desc = "Experimental gunmods that can grant a wide variety of effects. Use at your own risks."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.8
+	y = 0.6
+	icon = "toxincoater"
+
+	required_technologies = list(/datum/technology/adv_lethal)
+	required_tech_levels = list()
+	cost = 4000
+
+	unlocks_designs = list(
+							/datum/design/research/item/weapon/gunmod/battery_shunt,
+							/datum/design/research/item/weapon/gunmod/overdrive,
+							/datum/design/research/item/weapon/gunmod/toxin_coater,
+							/datum/design/research/item/weapon/gunmod/overheat,
+							/datum/design/research/item/weapon/gunmod/penetrator,
+							//datum/design/research/item/weapon/gunmod/isotope_diffuser,
+							//datum/design/research/item/weapon/gunmod/psionic_catalyst
 						)
 
 /datum/technology/laser_weaponry
@@ -182,7 +218,11 @@
 	required_tech_levels = list()
 	cost = 5000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun, /datum/design/research/item/weapon/lasercannon)
+	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun,
+							/datum/design/research/item/weapon/lasercannon,
+							/datum/design/research/item/ammo/heavy_rifle_408,
+							/datum/design/research/item/ammo/laser_mag,
+							/datum/design/research/item/weapon/laser_ak)
 
 /datum/technology/riglaser_weaponry
 	name = "Hardsuit Laser Weaponry"
@@ -202,7 +242,7 @@
 //Armor
 /datum/technology/basic_armor
 	name = "Basic Armor Designs"
-	desc = "Basic armor designs and integration of suit power systems."
+	desc = "Basic armor designs for hazardous work."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.1
@@ -213,11 +253,13 @@
 	required_tech_levels = list()
 	cost = 1000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/soteriaarmorchest, /datum/design/research/item/weapon/soteriaarmorhead)
+	unlocks_designs = list(/datum/design/research/item/weapon/soteriaarmorchest,
+							 /datum/design/research/item/weapon/soteriaarmorhead,
+							 /datum/design/research/item/rig_cheap)
 
 /datum/technology/advanced_armor
 	name = "Advanced Armor Designs"
-	desc = "Basic armor designs and integration of suit power systems."
+	desc = "Advanced armor designs for space or laser combat."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.3
@@ -228,4 +270,5 @@
 	required_tech_levels = list()
 	cost = 5000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/medarmor)
+	unlocks_designs = list(/datum/design/research/item/weapon/medarmor,
+							/datum/design/research/item/weapon/armor_laserproof)

@@ -57,16 +57,16 @@
 // Versions with some materials already loaded, to be used on map spawn
 /obj/machinery/autolathe/rnd/protolathe/loaded
 	stored_material = list(
-		MATERIAL_STEEL = 60,
-		MATERIAL_GLASS = 60,
-		MATERIAL_PLASTIC = 60
+		MATERIAL_STEEL = 15,
+		MATERIAL_GLASS = 15,
+		MATERIAL_PLASTIC = 15
 		)
 
 
 /obj/machinery/autolathe/rnd/imprinter/loaded
 	stored_material = list(
-		MATERIAL_STEEL = 30,
-		MATERIAL_PLASTIC = 30
+		MATERIAL_STEEL = 10,
+		MATERIAL_PLASTIC = 10
 		)
 
 /obj/machinery/autolathe/rnd/imprinter/loaded/Initialize()

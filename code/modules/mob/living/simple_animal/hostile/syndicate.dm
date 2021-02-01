@@ -60,6 +60,30 @@
 	attacktext = "slashed"
 	status_flags = 0
 
+/mob/living/simple_animal/hostile/syndicate/melee/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(O.force)
+		if(prob(80))
+			var/damage = O.force
+			if (O.damtype == HALLOSS)
+				damage = 0
+			health -= damage
+			visible_message("\red \b [src] has been attacked with the [O] by [user]. ")
+		else
+			visible_message("\red \b [src] blocks the [O] with its shield! ")
+		//user.do_attack_animation(src)
+	else
+		to_chat(usr, "\red This weapon is ineffective, it does no damage.")
+		visible_message("\red [user] gently taps [src] with the [O]. ")
+
+
+/mob/living/simple_animal/hostile/syndicate/melee/bullet_act(var/obj/item/projectile/Proj)
+	if(!Proj)	return
+	if(prob(65))
+		..()
+	else
+		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
+	return 0
+
 /mob/living/simple_animal/hostile/syndicate/melee/space
 	min_oxy = 0
 	max_oxy = 0
@@ -82,7 +106,7 @@
 	rapid = 1
 	icon_state = "syndicateranged"
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
-	projectiletype = /obj/item/projectile/bullet/pistol
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
 
@@ -196,6 +220,11 @@
 	..(null,"is smashed into pieces!")
 	qdel(src)
 
+/mob/living/simple_animal/hostile/viscerator/opifex
+	name = "opifex viscerator"
+	desc = "A small, twin-bladed machine capable of inflicting very deadly lacerations. This one is an opifex model and thus targets non-colony humanoids, animals, and cht'mants."
+	faction = "neutral"
+
 
 /mob/living/simple_animal/hostile/elitemercenary
 	name = "\improper Elite operative"
@@ -209,7 +238,7 @@
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "hits"
-	speed = 6
+	speed = 2
 	move_to_delay = 1
 	turns_per_move = 1
 	stop_automated_movement_when_pulled = 0
@@ -272,7 +301,7 @@
 	rapid = 1
 	icon_state = "syndicate_stormtrooper_smg"
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
-	projectiletype = /obj/item/projectile/bullet/pistol
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
 
 /mob/living/simple_animal/hostile/elitemercenary/range/gunslinger

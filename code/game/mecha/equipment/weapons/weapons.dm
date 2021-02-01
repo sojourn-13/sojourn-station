@@ -17,7 +17,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon
 	name = "mecha weapon"
-	range = RANGED
+	range = MECHA_RANGED
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 3)
 	matter = list(MATERIAL_STEEL = 15)
 	var/projectile //Type of projectile fired.
@@ -70,11 +70,13 @@
 	if(chassis && ishuman(chassis.occupant))
 		var/mob/living/carbon/human/H = chassis.occupant
 		def_zone = H.targeted_organ
+		P.firer = H
 	P.launch(target, def_zone)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy
 	name = "general energy weapon"
 	auto_rearm = 1
+	range = MECHA_MELEE | MECHA_RANGED
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	equip_cooldown = 8
@@ -188,6 +190,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic
 	name = "general ballisic weapon"
 	var/projectile_energy_cost
+	range = MECHA_MELEE | MECHA_RANGED
 
 	get_equip_info()
 		return "[..()]\[[src.projectiles]\][(src.projectiles < initial(src.projectiles))?" - <a href='?src=\ref[src];rearm=1'>Rearm</a>":null]"
@@ -214,7 +217,7 @@
 	name = "\improper LBX AC 10 \"Scattershot\""
 	icon_state = "mecha_scatter"
 	equip_cooldown = 20
-	projectile = /obj/item/projectile/bullet/magnum
+	projectile = /obj/item/projectile/bullet/magnum_40
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 40
@@ -227,7 +230,7 @@
 	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
 	icon_state = "mecha_scatter"
 	equip_cooldown = 20
-	projectile = /obj/item/projectile/bullet/magnum
+	projectile = /obj/item/projectile/bullet/magnum_40
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 30
@@ -240,7 +243,7 @@
 	name = "\improper Ultra AC 2"
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
-	projectile = /obj/item/projectile/bullet/rifle
+	projectile = /obj/item/projectile/bullet/rifle_75
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	projectiles = 300
 	projectiles_per_shot = 3
@@ -253,7 +256,7 @@
 	desc = "Few would call this weapon reliable, fewer know just how valuable it is."
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
-	projectile = /obj/item/projectile/bullet/pistol
+	projectile = /obj/item/projectile/bullet/pistol_35
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiles = 60
 	projectiles_per_shot = 3
@@ -265,6 +268,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	var/missile_speed = 2
 	var/missile_range = 30
+	range = MECHA_RANGED
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/Fire(atom/movable/AM, atom/target)
 	AM.throw_at(target,missile_range, missile_speed, chassis)

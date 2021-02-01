@@ -7,18 +7,19 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	can_dual = 1
+	can_dual = TRUE
 	load_method = SINGLE_CASING
 	max_shells = 1
 	damage_multiplier = 1.36
-	recoil_buildup = 45
+	recoil_buildup = 25
 	var/chamber_open = FALSE
 	var/jammed = FALSE
 	var/jam_chance = 15
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_CALIBRE_35)
 
-	New()
-		..()
-		open_chamber()
+obj/item/weapon/gun/projectile/handmade_pistol/New()
+	..()
+	open_chamber()
 
 /obj/item/weapon/gun/projectile/handmade_pistol/special_check(mob/user)
 	if(jammed)

@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(ghost_trap_users)
 // Check for bans, proper atom types, etc.
 /datum/ghosttrap/proc/assess_candidate(mob/observer/ghost/candidate, mob/target, check_respawn_timer=TRUE)
 	if(check_respawn_timer)
-		if(!candidate.MayRespawn(0, respawn_type ? respawn_type : CREW))
+		if(!candidate.MayRespawn(1, respawn_type ? respawn_type : CREW))
 			return 0
 	if(islist(ban_checks))
 		for(var/bantype in ban_checks)
@@ -64,10 +64,12 @@ GLOBAL_LIST_EMPTY(ghost_trap_users)
 	for(var/mob/observer/ghost/O in GLOB.player_list)
 		src.respawn_type = respawn_type
 		if(!O.MayRespawn(0, respawn_type))
+			to_chat(O, "[request_string] However, you are not currently able to respawn, and thus are not eligible.")
 			continue
 		if(islist(ban_checks))
 			for(var/bantype in ban_checks)
 				if(jobban_isbanned(O, "[bantype]"))
+					to_chat(O, "[request_string] However, you are banned from playing it.")
 					continue
 		if(pref_check && !(pref_check in O.client.prefs.be_special_role))
 			continue
@@ -205,3 +207,15 @@ datum/ghosttrap/pai/assess_candidate(var/mob/observer/ghost/candidate, var/mob/t
 
 datum/ghosttrap/pai/transfer_personality(var/mob/candidate, var/mob/living/silicon/robot/drone/drone, check_respawn_timer)
 	return 0
+
+/**************
+*  Blitzshell *
+**************/
+/datum/ghosttrap/blitzdrone
+	object = "blitzshell drone"
+	pref_check = ROLE_BLITZ
+	ghost_trap_message = "They have become a Blitzshell drone now."
+	ghost_trap_role = "Blitzshell Drone."
+	can_set_own_name = FALSE
+	list_as_special_role = FALSE
+	can_only_use_once = TRUE

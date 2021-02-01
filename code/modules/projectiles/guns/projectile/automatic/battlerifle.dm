@@ -15,17 +15,18 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_HRIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
-	price_tag = 2000
+	price_tag = 1000
 	penetration_multiplier = 1.2
-	damage_multiplier = 1.3
-	recoil_buildup = 15
-	one_hand_penalty = 15
+	damage_multiplier = 1.1
+	recoil_buildup = 10
+	one_hand_penalty = 10
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/rifle_boltforward.ogg'
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
-	firemodes = list(
+	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
 
@@ -63,17 +64,16 @@
 	icon_state = "omnirifle"
 	item_state = "omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
-	price_tag = 2500
+	price_tag = 1250
 	zoom_factor = 0.3
-	recoil_buildup = 15
+	recoil_buildup = 10
 	one_hand_penalty = 10
 	penetration_multiplier = 1
 	damage_multiplier = 1
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND,
 		FULL_AUTO_400
 		)
 
@@ -87,18 +87,19 @@
 	icon_state = "DMR"
 	item_state = "DMR"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
-	price_tag = 3000
+	price_tag = 1500
 	damage_multiplier = 1.2
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	zoom_factor = 1
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	recoil_buildup = 15
 	penetration_multiplier = 1.2
-	one_hand_penalty = 20
-	firemodes = list(
+	one_hand_penalty = 15
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND
+		BURST_3_ROUND
 		)
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/fancy
@@ -111,11 +112,12 @@
 	icon_state = "osprey"
 	item_state = "osprey"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
-	price_tag = 3500
-	recoil_buildup = 20
+	price_tag = 1750
+	recoil_buildup = 15
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	zoom_factor = 1.2
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine
@@ -129,13 +131,13 @@
 	item_state = "boar"
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
-	price_tag = 2500
+	price_tag = 1250
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	damage_multiplier = 0.8
-	recoil_buildup = 22
+	recoil_buildup = 18
 	penetration_multiplier = 0.8
-	one_hand_penalty = 30
-	firemodes = list(
+	one_hand_penalty = 25
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_600
 		)
@@ -150,12 +152,12 @@
 	icon_state = "warthog"
 	item_state = "warthog"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
-	price_tag = 3000
+	price_tag = 1500
 	damage_multiplier = 0.8
-	recoil_buildup = 20
-	one_hand_penalty = 25
+	recoil_buildup = 13
+	one_hand_penalty = 23
 	zoom_factor = 0.3
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)

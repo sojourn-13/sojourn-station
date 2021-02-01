@@ -89,7 +89,7 @@
 		maintenance = TRUE
 		break_open(TRUE)
 
-	if(prob(1))
+	if(prob(3))
 		deepmaint_entry_point = TRUE
 
 //Lets remove ourselves from the global list and cleanup any held references
@@ -481,7 +481,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		if (I.has_quality(QUALITY_WELDING))
 			user.visible_message("[user] attempts to weld [src] with the [I]", "You start welding [src] with the [I]")
 			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC) && isSealed)
-				user.visible_message("[user] welds [src] with the [I].", "You welds [src] with the [I].")
+				user.visible_message("[user] welds [src] with the [I].", "You weld [src] with the [I].")
 				if(recieving)
 					if(prob(33))
 						qdel(src)
@@ -534,7 +534,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 				spawn_rubble(loc, 1, 100)
 
 				if (I.get_tool_quality(QUALITY_DIGGING) > 30)
-					to_chat(user, SPAN_NOTICE("The [src] crumbles a bit. Keep trying and you'll collapse it eventually"))
+					to_chat(user, SPAN_NOTICE("[src] crumbles a bit. Keep trying and you'll collapse it eventually"))
 				else
 					to_chat(user, SPAN_NOTICE("This isn't working very well. Perhaps you should get a better digging tool?"))
 

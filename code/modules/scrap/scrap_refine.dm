@@ -30,7 +30,7 @@
 	desc = "This thing is messed up beyond any recognition. Into the grinder it goes!"
 	icon = 'icons/obj/structures/scrap/refine.dmi'
 	icon_state = "unrefined"
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_TINY //so we can fit more then 2 in a bag
 
 /obj/item/weapon/scrap_lump/Initialize()
 	. = ..()
@@ -45,8 +45,12 @@
 
 /obj/item/stack/sheet/refined_scrap
 	name = "refined scrap"
-	desc = "This is ghetto gold! It could be used as fuel or building material. Even lonestar would give cargo points for this."
+	desc = "This is ghetto gold! It could be used as fuel or building material."
 	icon = 'icons/obj/structures/scrap/refine.dmi'
 	icon_state = "refined"
-	max_amount = 20
+	max_amount = 120
 	amount = 1
+
+/obj/item/stack/sheet/refined_scrap/random
+	rand_min = 5
+	rand_max = 20

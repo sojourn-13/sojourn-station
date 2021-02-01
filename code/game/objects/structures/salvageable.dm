@@ -18,6 +18,25 @@
 		to_chat(user, SPAN_NOTICE("You start salvage anything useful from \the [src]."))
 		if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PRYING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			dismantle()
+			if(prob(user.stats.getStat(STAT_COG)+user.stats.getStat(STAT_MEC)) && user.stats.getPerk(PERK_HANDYMAN))
+				to_chat(user, SPAN_NOTICE("Thanks to your training on salvaging machines you find additional materials in \the [src]."))
+				new /obj/random/material_handyman(src.loc)
+				new /obj/item/stack/sheet/refined_scrap/random(src.loc) //So we can fuel scap-pacmans
+				if(prob(50))
+					new /obj/item/weapon/scrap_lump(src.loc)
+				if(prob(25))
+					new /obj/item/weapon/scrap_lump(src.loc)
+				if(prob(5))
+					new /obj/item/weapon/scrap_lump(src.loc)
+			else if(user.stats.getPerk(PERK_HANDYMAN))
+				to_chat(user, SPAN_NOTICE("You don't find any additional rare materials, but you do manage to salvage some refined scrap from \the [src]."))
+				new /obj/item/stack/sheet/refined_scrap/random(src.loc)
+				if(prob(50))
+					new /obj/item/weapon/scrap_lump(src.loc)
+				if(prob(25))
+					new /obj/item/weapon/scrap_lump(src.loc)
+				if(prob(5))
+					new /obj/item/weapon/scrap_lump(src.loc)
 			qdel(src)
 			return
 
@@ -28,6 +47,11 @@
 	icon_state = "machine"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 70,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 20,
+		/obj/item/weapon/scrap_lump = 10,
+		/obj/item/weapon/scrap_lump = 5,
 		/obj/item/stack/cable_coil{amount = 5} = 80,
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
@@ -62,6 +86,9 @@
 	icon_state = "computer"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 70,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 20,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/stack/material/glass{amount = 5} = 90,
 		/obj/item/trash/material/circuit = 60,
@@ -88,6 +115,11 @@ obj/structure/salvageable/computer/Initialize()
 	icon_state = "autolathe"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 70,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 80,
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
@@ -123,6 +155,10 @@ obj/structure/salvageable/computer/Initialize()
 	icon_state = "implant-container"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 70,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 30,
+		/obj/item/weapon/scrap_lump = 10,
 		/obj/item/stack/cable_coil{amount = 5} = 80,
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
@@ -136,6 +172,15 @@ obj/structure/salvageable/computer/Initialize()
 		/obj/item/organ/external/robotic/l_leg = 20,
 		/obj/item/organ/external/robotic/r_leg = 20,
 		/obj/item/organ/external/robotic/groin = 10,
+		/obj/item/organ/external/robotic/moebius/l_arm = 5,
+		/obj/item/organ/external/robotic/moebius/r_arm = 5,
+		/obj/item/organ/external/robotic/moebius/l_leg = 5,
+		/obj/item/organ/external/robotic/moebius/r_leg = 5,
+		/obj/item/organ/external/robotic/moebius/groin = 3,
+		/obj/item/organ/external/robotic/excelsior/l_arm = 1,
+		/obj/item/organ/external/robotic/excelsior/r_arm = 1,
+		/obj/item/organ/external/robotic/excelsior/l_leg = 1,
+		/obj/item/organ/external/robotic/excelsior/r_leg = 1,
 		/obj/item/weapon/implantcase = 30,
 		/obj/item/weapon/implanter = 30,
 		/obj/item/stack/material/steel{amount = 10} = 30,
@@ -152,6 +197,9 @@ obj/structure/salvageable/implant_container/Initialize()
 	icon_state = "data"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/stack/material/glass{amount = 5} = 90,
 		/obj/item/trash/material/circuit = 60,
@@ -180,6 +228,10 @@ obj/structure/salvageable/data/Initialize()
 	icon_state = "server"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 40,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/stack/material/glass{amount = 5} = 90,
 		/obj/item/trash/material/circuit = 60,
@@ -210,6 +262,8 @@ obj/structure/salvageable/server/Initialize()
 	icon_state = "personal"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 90,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/weapon/computer_hardware/led = 40,
 		/obj/item/weapon/computer_hardware/led/adv = 40,
@@ -273,6 +327,12 @@ obj/structure/salvageable/bliss/Initialize()
 	icon_state = "os-machine"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 80,
 		/obj/item/weapon/stock_parts/capacitor/one_star = 40,
 		/obj/item/weapon/stock_parts/capacitor/one_star = 40,
@@ -284,14 +344,65 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/stock_parts/micro_laser/one_star = 40,
 		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
 		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
-		/obj/random/lathe_disk/advanced/onestar = 5
+		/obj/random/lathe_disk/advanced/onestar = 5,
+		/obj/random/prothesis/one_star = 20,
+		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20,
+		/obj/item/weapon/tool_upgrade/augment/randomizer = 40
 	)
+
+/obj/structure/salvageable/autolathe_os
+	name = "broken autolathe"
+	icon_state = "os_autolathe"
+	salvageable_parts = list(
+		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 90,
+		/obj/item/weapon/scrap_lump = 70,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/stack/cable_coil{amount = 5} = 80,
+		/obj/item/weapon/stock_parts/capacitor/one_star = 20,
+		/obj/item/weapon/stock_parts/capacitor/one_star = 20,
+		/obj/item/weapon/stock_parts/scanning_module/one_star = 10,
+		/obj/item/weapon/stock_parts/scanning_module/one_star = 10,
+		/obj/item/weapon/stock_parts/manipulator/one_star = 80,
+		/obj/item/weapon/stock_parts/manipulator/one_star = 80,
+		/obj/item/weapon/stock_parts/micro_laser/one_star = 70,
+		/obj/item/weapon/stock_parts/micro_laser/one_star = 70,
+		/obj/item/weapon/stock_parts/matter_bin/one_star = 80,
+		/obj/item/weapon/stock_parts/matter_bin/one_star = 80,
+		/obj/random/tool/advanced/onestar = 45,
+		/obj/random/prothesis/one_star = 20,
+		/obj/random/lathe_disk/advanced/onestar = 10,
+		/obj/item/weapon/circuitboard/autolathe = 5,
+		/obj/item/stack/material/steel{amount = 10} = 60,
+		/obj/item/stack/material/glass{amount = 10} = 60,
+		/obj/item/stack/material/plastic{amount = 10} = 60,
+		/obj/item/stack/material/platinum{amount = 10} = 60,
+		/obj/item/stack/material/plasteel{amount = 5} = 20,
+		/obj/item/stack/material/silver{amount = 5} = 50,
+		/obj/item/stack/material/gold{amount = 5} = 50,
+		/obj/item/stack/material/plasma{amount = 5} = 10,
+		/obj/item/stack/material/uranium{amount = 3} = 5,
+		/obj/item/stack/material/diamond{amount = 1} = 1,
+		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20,
+		/obj/item/weapon/tool_upgrade/augment/randomizer = 40,
+		/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst = 0.1 //1 in 1000
+	)
+
 
 /obj/structure/salvageable/computer_os
 	name = "broken computer"
 	icon_state = "os-computer"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/stack/material/glass{amount = 5} = 90,
 		/obj/item/weapon/stock_parts/capacitor/one_star = 60,
@@ -309,6 +420,12 @@ obj/structure/salvageable/bliss/Initialize()
 	icon_state = "os-container"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 80,
 		/obj/item/weapon/implant/death_alarm = 30,
 		/obj/item/weapon/implant/explosive = 20,
@@ -320,6 +437,10 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/organ/external/robotic/l_leg = 20,
 		/obj/item/organ/external/robotic/r_leg = 20,
 		/obj/item/organ/external/robotic/groin = 10,
+		/obj/item/organ/external/robotic/one_star/l_arm = 1,
+		/obj/item/organ/external/robotic/one_star/r_arm = 1,
+		/obj/item/organ/external/robotic/one_star/l_leg = 1,
+		/obj/item/organ/external/robotic/one_star/r_leg = 1,
 		/obj/item/weapon/implantcase = 30,
 		/obj/item/weapon/implanter = 30
 	)
@@ -329,6 +450,12 @@ obj/structure/salvageable/bliss/Initialize()
 	icon_state = "os-data"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 90,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/stack/material/glass{amount = 5} = 90,
 		/obj/item/weapon/computer_hardware/processor_unit/adv = 60,
@@ -345,6 +472,12 @@ obj/structure/salvageable/bliss/Initialize()
 	icon_state = "os-server"
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/stack/material/glass{amount = 5} = 90,
 		/obj/item/weapon/computer_hardware/network_card/wired = 40,
@@ -371,6 +504,12 @@ obj/structure/salvageable/bliss/Initialize()
 	salvageable_parts = list(
 		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points = 60,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points/rare = 25,
+		/obj/item/weapon/scrap_lump = 30,
+		/obj/item/weapon/scrap_lump = 25,
+		/obj/item/weapon/scrap_lump = 20,
+		/obj/item/weapon/scrap_lump = 20,
+		/obj/item/weapon/scrap_lump = 20,
+		/obj/item/weapon/scrap_lump = 10,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/weapon/stock_parts/capacitor/one_star = 60,
@@ -389,6 +528,13 @@ obj/structure/salvageable/bliss/Initialize()
 	salvageable_parts = list(
 		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points = 30,
 		/obj/item/weapon/computer_hardware/hard_drive/portable/research_points/rare = 15,
+		/obj/item/weapon/scrap_lump = 60,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 50,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 40,
+		/obj/item/weapon/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/weapon/stock_parts/capacitor/one_star = 60,

@@ -15,9 +15,39 @@
 	group = "Security"
 	hidden = TRUE
 
+/datum/supply_pack/sts_lrifle
+	name = "STS Carbine(.257) Weapons Crate"
+	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/lrifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/lrifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/lrifle)
+	cost = 2500
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "STS Carbine(.257) Weapons Crate"
+	group = "Security"
+
+/datum/supply_pack/sts_rifle
+	name = "STS Rifle(7.5) Weapons Crate"
+	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/rifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/rifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/rifle)
+	cost = 3000
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "STS Rifle(7.5) Weapons Crate"
+	group = "Security"
+
+/datum/supply_pack/sts_hrifle
+	name = "STS Heavy Rifle(.408) Weapons Crate"
+	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/hrifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/hrifle,
+				/obj/item/weapon/gun/projectile/automatic/sts/hrifle)
+	cost = 4000
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "STS Heavy Rifle(.408) Weapons Crate"
+	group = "Security"
+
 /datum/supply_pack/fsenergy
 	name = "HS Energy Weapons Crate"
-	contains = list(/obj/item/weapon/gun/energy/plasma/cassad,
+	contains = list(/obj/item/weapon/gun/energy/pulse/cassad,
 				/obj/item/weapon/gun/energy/gun,
 				/obj/item/weapon/gun/energy/gun,
 				/obj/item/weapon/gun/energy/gun/martin,
@@ -48,12 +78,22 @@
 	crate_name = "HS revolvers crate"
 	group = "Security"
 
+/datum/supply_pack/longrevolver
+	name = "Lonestar Long Revolver Novelty Crate"
+	contains = list(/obj/item/weapon/gun/projectile/revolver/longboi)
+	cost = 3000
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "long revolver crate"
+	group = "Security"
+
 /datum/supply_pack/ntweapons
 	name = "CA Energy Weapons Crate"
 	contains = list(/obj/item/weapon/gun/energy/laser,
 				/obj/item/weapon/gun/energy/laser,
 				/obj/item/weapon/gun/energy/taser,
-				/obj/item/weapon/gun/energy/taser)
+				/obj/item/weapon/gun/energy/taser,
+				/obj/item/weapon/gun/energy/ntpistol,
+				/obj/item/weapon/gun/energy/ntpistol)
 	cost = 4000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "CA energy weapons crate"
@@ -100,11 +140,11 @@
 					/obj/item/weapon/handcuffs,
 					/obj/item/weapon/handcuffs,
 					/obj/item/weapon/handcuffs,
-					/obj/item/clothing/head/helmet/riot,
+					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot,
-					/obj/item/clothing/head/helmet/riot,
+					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot,
-					/obj/item/clothing/head/helmet/riot,
+					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot)
 	cost = 4880
 	containertype = /obj/structure/closet/crate/secure
@@ -124,22 +164,22 @@
 
 /datum/supply_pack/shotgunammo_beanbag
 	name = "HS Beanbag Shells Crate"
-	contains = list(/obj/item/weapon/storage/box/shotgunammo/beanbags,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags,
-					/obj/item/weapon/storage/box/shotgunammo/beanbags)
+	contains = list(/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
+					/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
+					/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
+					/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
+					/obj/item/ammo_magazine/ammobox/shotgun/beanbags)
 	cost = 800
-	crate_name = "FS beanbag shells crate"
+	crate_name = "HS beanbag shells crate"
 	group = "Security"
 
 /datum/supply_pack/shotgunammo_slug
 	name = "HS Slug Shells Crate"
-	contains = list(/obj/item/weapon/storage/box/shotgunammo/slug,
-					/obj/item/weapon/storage/box/shotgunammo/slug,
-					/obj/item/weapon/storage/box/shotgunammo/slug,
-					/obj/item/weapon/storage/box/shotgunammo/slug,
-					/obj/item/weapon/storage/box/shotgunammo/slug)
+	contains = list(/obj/item/ammo_magazine/ammobox/shotgun,
+					/obj/item/ammo_magazine/ammobox/shotgun,
+					/obj/item/ammo_magazine/ammobox/shotgun,
+					/obj/item/ammo_magazine/ammobox/shotgun,
+					/obj/item/ammo_magazine/ammobox/shotgun)
 	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "HS slug shells crate"
@@ -147,11 +187,11 @@
 
 /datum/supply_pack/shotgunammo_buckshot
 	name = "HS Buckshot Shells Crate"
-	contains = list(/obj/item/weapon/storage/box/shotgunammo/buckshot,
-					/obj/item/weapon/storage/box/shotgunammo/buckshot,
-					/obj/item/weapon/storage/box/shotgunammo/buckshot,
-					/obj/item/weapon/storage/box/shotgunammo/buckshot,
-					/obj/item/weapon/storage/box/shotgunammo/buckshot)
+	contains = list(/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+					/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+					/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+					/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+					/obj/item/ammo_magazine/ammobox/shotgun/buckshot)
 	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "HS buckshot shells crate"
@@ -189,6 +229,26 @@
 	cost = 1600
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "wall shield generators crate"
+	group = "Security"
+
+/datum/supply_pack/gunmods
+	name = "Random Gun Mod Crate"
+	contains = list(/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods,
+					/obj/random/dungeon_gun_mods)
+	cost = 1200
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "gun mod crate"
+	group = "Security"
+
+/datum/supply_pack/littlecomet
+	name = "Little Comet Sidearm Crate"
+	contains = list(/obj/item/weapon/gun/projectile/revolver/little_comet)
+	cost = 12000
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Little Comet Sidearm Crate"
 	group = "Security"
 
 //This crate is unaffected by price changes since its from krios, not pirates.
@@ -233,6 +293,18 @@
 	crate_name = "Void Wolf Recreations Crate"
 	group = "Xanorath Syndicate"
 
+/datum/supply_pack/voidwolfgunmod
+	name = "Void Wolf Gun-Mod Crate"
+	contains = list(/obj/item/weapon/gun_upgrade/scope/killer,
+					/obj/item/weapon/gun_upgrade/trigger/boom,
+					/obj/item/weapon/gun_upgrade/barrel/gauss,
+					/obj/item/weapon/gun_upgrade/mechanism/reverse_loader,
+					/obj/item/weapon/gun_upgrade/trigger/dangerzone)
+	cost = 1200
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Void Wolf Gun-Mod Crate"
+	group = "Xanorath Syndicate"
+
 /datum/supply_pack/voidwolfswords
 	name = "Void Wolf Energy Swords Crate"
 	contains = list(/obj/item/weapon/melee/energy/sword/pirate,
@@ -263,11 +335,3 @@
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Emporer Crate"
 	group = "Xanorath Syndicate"
-
-/datum/supply_pack/littlecomet
-	name = "Little Comet Sidearm Crate"
-	contains = list(/obj/item/weapon/gun/projectile/revolver/little_comet)
-	cost = 12000
-	containertype = /obj/structure/closet/crate/serbcrate_gray
-	crate_name = "Little Comet Sidearm Crate"
-	group = "Security"

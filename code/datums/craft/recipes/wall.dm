@@ -4,6 +4,7 @@
 /datum/craft_recipe/wall/barricade
 	name = "barricade"
 	result = /obj/structure/barricade
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD),
 		list(QUALITY_HAMMERING, 10, 20)

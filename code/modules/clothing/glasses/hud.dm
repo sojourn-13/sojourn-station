@@ -57,6 +57,7 @@
 /obj/item/clothing/glasses/sechud/tactical
 	name = "security tactical HUD"
 	desc = "Flash-resistant goggles with inbuilt combat and security information."
+	flash_protection = FLASH_PROTECTION_MODERATE
 	icon_state = "swatgoggles"
 
 /obj/item/clothing/glasses/hud/broken/process_hud(mob/M)

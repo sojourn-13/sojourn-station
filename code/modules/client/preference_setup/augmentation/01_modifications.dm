@@ -4,7 +4,7 @@
 	var/current_organ = BP_TORSO
 	var/global/list/r_organs = list(BP_HEAD, BP_R_ARM, BP_TORSO, BP_R_LEG)
 	var/global/list/l_organs = list(BP_EYES, BP_L_ARM, BP_GROIN, BP_L_LEG)
-	var/global/list/internal_organs = list(BP_BACK, BP_HEART, BP_LUNGS, BP_LIVER)
+	var/global/list/internal_organs = list("chest2", OP_HEART, OP_LUNGS, OP_LIVER)
 
 /datum/category_item/player_setup_item/augmentation/modifications
 	name = "Augmentation"
@@ -119,6 +119,8 @@
 
 /datum/preferences/proc/modifications_allowed()
 	for(var/category in setup_options)
+		if(!get_option(category))
+			continue
 		var/datum/category_item/setup_option/option = get_option(category)
 		if(!option)
 			CRASH("Option [category] could not be found through get_option()")

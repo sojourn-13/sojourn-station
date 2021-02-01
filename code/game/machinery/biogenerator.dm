@@ -5,32 +5,45 @@
 	icon_state = "biogen-stand"
 	density = 1
 	anchored = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
+	circuit = /obj/item/weapon/circuitboard/biogenerator
 	var/processing = 0
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
 	var/points = 0
 	var/menustat = "menu"
 	var/build_eff = 1
 	var/eat_eff = 1
-	var/storage_space = 10
 
 
 	var/list/recipes = list(
 		"Food",
 			list(name="Milk, 30u", cost=60, reagent="milk"),
+			list(name="Soy Milk, 30u", cost=60, reagent="soymilk"),
+			list(name="Black Pepper, 30u", cost=60, reagent="blackpepper"),
+			list(name="2 Eggs", cost=600, reagent="egg"), //Got to be really lazy
+			list(name="Flour, 30u", cost=600, reagent="flour"), //Got to be really lazy
+			list(name="Rice, 30u", cost=600, reagent="rice"), //Got to be really lazy
+			list(name="Salt, 30u", cost=600, reagent="sodiumchloride"), //Got to be really lazy
+			list(name="Sugar, 30u", cost=30, reagent="sugar"),
 			list(name="Slab of meat", cost=50, path=/obj/item/weapon/reagent_containers/food/snacks/meat),
 		"Nutrient",
 			list(name="EZ-Nutrient, 30u", cost=30, reagent="eznutrient"),
 			list(name="Left4Zed, 30u", cost=60, reagent="left4zed"),
 			list(name="Robust Harvest, 30u", cost=75, reagent="robustharvest"),
+		"Weedkillers",
+			list(name="Weed Killer", cost=30, path=/obj/item/weapon/plantspray/weeds),
+			list(name="Pest Killer", cost=60, path=/obj/item/weapon/plantspray/pests),
+			list(name="Carbaryl", cost=75, path=/obj/item/weapon/plantspray/pests/old/carbaryl),
+			list(name="Lindane", cost=75, path=/obj/item/weapon/plantspray/pests/old/lindane),
+			list(name="Phosmet", cost=75, path=/obj/item/weapon/plantspray/pests/old/phosmet),
 		"Leather",
 			list(name="Cloth Sheet", cost=50, path=/obj/item/stack/material/cloth),
 			list(name="Wallet", cost=100, path=/obj/item/weapon/storage/wallet),
 			list(name="Botanical gloves", cost=250, path=/obj/item/clothing/gloves/botanic_leather),
 			list(name="Utility belt", cost=300, path=/obj/item/weapon/storage/belt/utility),
-			list(name="Leather Satchel", cost=400, path=/obj/item/weapon/storage/backpack/satchel),
-			list(name="Leather jacket", cost=400, /obj/item/clothing/suit/storage/toggle/leather),
+			list(name="Leather Satchel", cost=400, path=/obj/item/weapon/storage/backpack/satchel/leather),
+			list(name="Leather Jacket", cost=400, path=/obj/item/clothing/suit/storage/toggle/leather),
 			list(name="Cash Bag", cost=400, path=/obj/item/weapon/storage/bag/money),
 			list(name="Medical belt", cost=300, path=/obj/item/weapon/storage/belt/medical),
 			list(name="Security belt", cost=300, path=/obj/item/weapon/storage/belt/security),
@@ -42,6 +55,17 @@
 			list(name="Ointment", cost=100, path=/obj/item/stack/medical/ointment),
 			list(name="Advanced trauma kit", cost=200, path=/obj/item/stack/medical/advanced/bruise_pack),
 			list(name="Advanced burn kit", cost=200, path=/obj/item/stack/medical/advanced/ointment),
+		"Carpet",
+			list(name="Red Carpet", cost=12, path=/obj/item/stack/tile/carpet),
+			list(name="Black Carpet", cost=12, path=/obj/item/stack/tile/carpet/bcarpet),
+			list(name="Blue Carpet", cost=12, path=/obj/item/stack/tile/carpet/blucarpet),
+			list(name="Turquoise Carpet", cost=12, path=/obj/item/stack/tile/carpet/turcarpet),
+			list(name="Silver Carpet", cost=12, path=/obj/item/stack/tile/carpet/sblucarpet),
+			list(name="Purple Carpet", cost=12, path=/obj/item/stack/tile/carpet/purcarpet),
+			list(name="Orange Carpet", cost=12, path=/obj/item/stack/tile/carpet/oracarpet),
+		"Misc",
+			list(name="Cardboard", cost=60, path=/obj/item/stack/material/cardboard),
+			list(name="Crayon Box", cost=120, path=/obj/item/weapon/storage/fancy/crayons),
 	)
 
 
@@ -63,19 +87,14 @@
 		icon_state = "biogen-work"
 	return
 
-/obj/machinery/biogenerator/attackby(obj/item/I, mob/user)
+/obj/machinery/biogenerator/attackby(var/obj/item/I, var/mob/user)
 
-	if(processing) //We are working, thus we prevent all other actions
-		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
+	if(default_deconstruction(I, user))
 		return
 
-	if(default_deconstruction(I, user)) //So we can open the pannle and take it apart
+	if(default_part_replacement(I, user))
 		return
-
-	if(default_part_replacement(I, user)) //This makes it so we can upgrade the bio-gene
-		return
-
-	if(istype(I, /obj/item/weapon/reagent_containers/glass)) //Loading a beaker into the biogene
+	if(istype(I, /obj/item/weapon/reagent_containers/glass))
 		if(beaker)
 			to_chat(user, SPAN_NOTICE("The [src] is already loaded."))
 		else
@@ -83,37 +102,37 @@
 			I.loc = src
 			beaker = I
 			updateUsrDialog()
-
-	if(istype(I, /obj/item/weapon/storage/bag/produce)) //We allow you to quick load from produce bags
-		var/i = 0 //I is the Biogenerators contents
-		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents) //We are only taking the grown food items from the bag
-			i++ //For every food item added we add it to the Biogenerators contents
-		if(i >= storage_space) //Biogene can only hold as much as 10 + bin rating.
+	else if(processing)
+		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
+	else if(istype(I, /obj/item/weapon/storage/bag/produce))
+		var/i = 0
+		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
+			i++
+		if(i >= 10)
 			to_chat(user, SPAN_NOTICE("\The [src] is already full! Activate it."))
 		else
-			for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in I.contents) //This is looking in the produce bag for grown foods
-				G.loc = src //This takes the grown food item
-				i++  //For every food item added we add it to the Biogenerators contents
-				if(i >= storage_space) //Biogene can only hold as much as 10 + bin rating.
+			for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in I.contents)
+				G.loc = src
+				i++
+				if(i >= 10)
 					to_chat(user, SPAN_NOTICE("You fill \the [src] to its capacity."))
 					break
-			if(i < storage_space) //Feedback if you dont fill the biogenerator to full using the produce baggie
+			if(i < 10)
 				to_chat(user, SPAN_NOTICE("You empty \the [I] into \the [src]."))
 
-	//If we are not grown things, we dont want you
-	if(!istype(I, /obj/item/weapon/reagent_containers/food/snacks/grown))
+
+	else if(!istype(I, /obj/item/weapon/reagent_containers/food/snacks/grown))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
-		return
 	else
-		var/i = 0 //I is the Biogenerators contents
+		var/i = 0
 		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
-			i++ //For every food item added we add it to the Biogenerators contents
-		if(i >= storage_space) //Biogene can only hold as much as 10 + bin rating.
+			i++
+		if(i >= 10)
 			to_chat(user, SPAN_NOTICE("\The [src] is full! Activate it."))
 		else
-			user.remove_from_mob(I) //This takes the grown food item
-			I.loc = src // This places it in the bioreactor
-			to_chat(user, SPAN_NOTICE("You put \the [I] in \the [src]")) //Feedback for players
+			user.remove_from_mob(I)
+			I.loc = src
+			to_chat(user, SPAN_NOTICE("You put \the [I] in \the [src]"))
 	update_icon()
 	return
 
@@ -261,10 +280,9 @@
 
 	for(var/obj/item/weapon/stock_parts/P in component_parts)
 		if(istype(P, /obj/item/weapon/stock_parts/matter_bin))
-			bin_rating += P.rating //Better bins lets us print cheaper
-			storage_space += P.rating //Better bins lets us hold more
+			bin_rating += P.rating
 		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
-			man_rating += P.rating //Better manipulators let us get more bio-points from nutriments 
+			man_rating += P.rating
 
 	build_eff = man_rating
 	eat_eff = bin_rating

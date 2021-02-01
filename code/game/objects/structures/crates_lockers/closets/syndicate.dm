@@ -2,7 +2,9 @@
 	name = "armory closet"
 	desc = "Why is this here?"
 	icon_state = "syndicate"
-
+	req_access = list(access_syndicate) //Stop people getting good stuff without access
+	locked = TRUE
+	secure = TRUE
 
 /obj/structure/closet/syndicate/personal
 	desc = "It's a storage unit for operative gear."
@@ -38,11 +40,11 @@
 	desc = "It's a storage unit for nuclear-operative gear."
 
 /obj/structure/closet/syndicate/nuclear/populate_contents()
-	new /obj/item/ammo_magazine/smg(src)
-	new /obj/item/ammo_magazine/smg(src)
-	new /obj/item/ammo_magazine/smg(src)
-	new /obj/item/ammo_magazine/smg(src)
-	new /obj/item/ammo_magazine/smg(src)
+	new /obj/item/ammo_magazine/smg_35(src)
+	new /obj/item/ammo_magazine/smg_35(src)
+	new /obj/item/ammo_magazine/smg_35(src)
+	new /obj/item/ammo_magazine/smg_35(src)
+	new /obj/item/ammo_magazine/smg_35(src)
 	new /obj/item/weapon/storage/box/handcuffs(src)
 	new /obj/item/weapon/storage/box/flashbangs(src)
 	new /obj/item/weapon/gun/energy/gun(src)

@@ -39,6 +39,9 @@
 	var/store_mobs = 1
 	var/old_chance = 0 //Chance to have rusted closet content in it, from 0 to 100. Keep in mind that chance increases in maints
 
+	var/old_lock_odds = 0 //Changes the access lock to something that must be hacked or CC access
+			      //If their is already a lock on this, it overrides it.
+
 /obj/structure/closet/can_prevent_fall()
 	return TRUE
 
@@ -55,6 +58,11 @@
 
 	if (prob(old_chance))
 		make_old()
+
+	if (prob(old_lock_odds + old_chance))
+		make_lock_old()
+		update_icon() //So we have are lock added on icon wise
+
 
 	if (old_chance)
 		for (var/atom/thing in contents)
@@ -446,14 +454,19 @@
 		SPAN_WARNING("[user] picks in wires of the [src.name] with a multitool"), \
 		SPAN_WARNING("[pick("Picking wires in [src.name] lock", "Hacking [src.name] security systems", "Pulsing in locker controller")].")
 		)
-		if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD, required_stat = (STAT_MEC+STAT_COG))) //Not only does Cog let you skip a few stages but speed you up in hacking as well
 			if(hack_stage < hack_require)
 
 				var/obj/item/weapon/tool/T = I
 				if (istype(T) && T.item_flags & SILENT)
 					playsound(src.loc, 'sound/items/glitch.ogg', 3, 1, -5) //Silenced tools can hack it silently
+				else if (istype(T) && T.item_flags & LOUD)
+					playsound(src.loc, 'sound/items/glitch.ogg', 500, 1, 10) //Loud tools can hack it LOUDLY
 				else
 					playsound(src.loc, 'sound/items/glitch.ogg', 70, 1, -1)
+
+				if (istype(T) && T.item_flags & HONKING)
+					playsound(src.loc, WORKSOUND_HONK, 70, 1, -2)
 
 				//Cognition can be used to speed up the proccess
 				if (prob (user.stats.getStat(STAT_COG)))
@@ -671,3 +684,12 @@
 
 /obj/structure/closet/AllowDrop()
 	return TRUE
+
+/obj/structure/closet/proc/make_lock_old()
+	req_access = list(access_cent_specops)
+	name = "[pick("locked", "sealed", "card reader", "access required", "eletronic")] [name]"
+	desc += "\n "
+	desc += " The access panel looks old. It's unlikely anyone can open this without hacking or brute force."
+	hack_require = rand(1,2) //Easyer to hack older locks
+	locked = TRUE
+	secure = TRUE

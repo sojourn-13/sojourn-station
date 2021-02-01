@@ -31,7 +31,7 @@
 		loseTarget()
 		return
 
-	if (!(target_mob in getPotentialTargets()))
+	if (!(target_mob in getPotentialTargets()) && !istype(target_mob, /obj/mecha))
 		loseTarget()
 		return
 
@@ -76,6 +76,7 @@
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
 
-			var/obj/structure/obstacle = locate(/obj/structure, get_step(src, dir))
-			if (istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille) || istype(obstacle, /obj/structure/low_wall))
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+			for (var/obj/structure/obstacle in get_step(src, dir))
+				if (istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille) || istype(obstacle, /obj/structure/low_wall) || istype(obstacle, /obj/structure/railing) || istype(obstacle, /obj/mecha))
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return

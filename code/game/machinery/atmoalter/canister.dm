@@ -18,7 +18,7 @@
 	start_pressure = 45 * ONE_ATMOSPHERE
 	var/temperature_resistance = 1000 + T0C
 	volume = 1000
-	use_power = 0
+	use_power = NO_POWER_USE
 	interact_offline = 1 // Allows this to be used when not in powered area.
 	var/release_log = ""
 	var/update_flag = 0
@@ -233,11 +233,8 @@ update_flag
 	return 0
 
 /obj/machinery/portable_atmospherics/canister/bullet_act(var/obj/item/projectile/Proj)
-	if(!(Proj.damage_type == BRUTE || Proj.damage_type == BURN))
-		return
-
-	if(Proj.damage)
-		src.health -= round(Proj.damage / 2)
+	if(Proj.get_structure_damage())
+		src.health -= round(Proj.get_structure_damage() / 2)
 		healthCheck()
 	..()
 

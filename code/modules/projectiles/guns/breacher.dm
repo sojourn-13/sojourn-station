@@ -13,7 +13,7 @@
 	//m_amt = 2000
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("struck", "hit", "bashed")
-	price_tag = 1000
+	price_tag = 500
 	var/obj/item/weapon/hatton_magazine/magazine
 	var/fire_sound = 'sound/weapons/pulse.ogg'
 	var/fire_cooldown = 0
@@ -151,7 +151,7 @@
 	//m_amt = 15
 	origin_tech = list(TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASMA = 10, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 2)
-	price_tag = 100
+	price_tag = 50
 
 	var/charge = 3
 

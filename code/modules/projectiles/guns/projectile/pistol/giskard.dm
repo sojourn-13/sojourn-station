@@ -5,20 +5,19 @@
 	icon_state = "giskard"
 	item_state = "pistol"
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	silencer_type = /obj/item/weapon/silencer
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	caliber = CAL_PISTOL
 	w_class = ITEM_SIZE_SMALL
-	can_dual = 1
+	can_dual = TRUE
 	fire_delay = 0.6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3)
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
+	mag_well = MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 4)
-	price_tag = 600
+	price_tag = 300
 	damage_multiplier = 1
 	penetration_multiplier = 0.8
 	recoil_buildup = 3
-	one_hand_penalty = 20
 
 /obj/item/weapon/gun/projectile/giskard/update_icon()
 	..()

@@ -9,6 +9,7 @@
 	health = 400
 	deflect_chance = 30
 	damage_absorption = list("brute"=0.7,"fire"=0.7,"bullet"=0.7,"energy"=0.7,"bomb"=0.7)
+	armor_level = MECHA_ARMOR_MEDIUM
 	max_temperature = 25000
 	infra_luminosity = 3
 	wreckage = /obj/effect/decal/mecha_wreckage/phazon

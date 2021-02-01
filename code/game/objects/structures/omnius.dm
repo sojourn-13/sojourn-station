@@ -4,6 +4,7 @@
 	desc = "It looks like an ancient and strange generator."
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
 	var/cooldown = FALSE
+	var/entropy_value = 3
 
 /obj/structure/ominous/attack_hand(mob/living/user as mob)
 	var/last_use
@@ -30,7 +31,7 @@
 			cooldown++
 			sleep(rand(1,2))
 			var/obj/item/projectile/beam/emitter/A = new /obj/item/projectile/beam/emitter( src.loc )
-			A.damage = round(2000/DAMAGE_POWER_TRANSFER)
+			A.damage_types = list(BURN = round(2000/DAMAGE_POWER_TRANSFER))
 			A.launch( get_step(src.loc, pick(SOUTH, NORTH, WEST, EAST, SOUTHEAST, SOUTHWEST, NORTHEAST, NORTHWEST)) )
 		cooldown = FALSE
 	shooting = FALSE
@@ -45,7 +46,7 @@
 
 /obj/structure/ominous/teleporter/proc/teleport()
 	for(var/mob/living/carbon/human/H in range(7, src))
-		H.forceMove(locate(x + rand(-14, 14), y + rand(-14, 14), z))
+		go_to_bluespace(get_turf(src), entropy_value, FALSE, H, locate(x + rand(-14, 14), y + rand(-14, 14), z))
 
 /obj/structure/ominous/teleporter/attack_hand(mob/living/user as mob)
 	var/last_use

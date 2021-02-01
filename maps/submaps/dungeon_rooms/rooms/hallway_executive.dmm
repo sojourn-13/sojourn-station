@@ -123,7 +123,7 @@
 /turf/simulated/floor/wood,
 /area/crawler)
 "x" = (
-/obj/structure/table/rack,
+/obj/random/structures/os,
 /turf/simulated/floor/wood,
 /area/crawler)
 "y" = (
@@ -159,6 +159,40 @@
 /obj/structure/closet/onestar/tier2,
 /turf/simulated/floor/wood,
 /area/crawler)
+"E" = (
+/obj/structure/table/onestar,
+/obj/random/junkfood,
+/turf/simulated/floor/wood,
+/area/crawler)
+"H" = (
+/obj/random/junkfood/onlypizza,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"K" = (
+/obj/structure/table/onestar,
+/obj/random/junkfood/onlyburger,
+/turf/simulated/floor/tiled/techmaint,
+/area/crawler)
+"N" = (
+/obj/structure/table/onestar,
+/obj/random/junkfood,
+/turf/simulated/floor/tiled/techmaint,
+/area/crawler)
+"Q" = (
+/obj/structure/table/onestar,
+/obj/random/structures/os,
+/turf/simulated/floor/wood,
+/area/crawler)
+"X" = (
+/obj/structure/table/onestar,
+/obj/random/junkfood/onlyburger,
+/turf/simulated/floor/wood,
+/area/crawler)
+"Y" = (
+/obj/structure/table/onestar,
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/techmaint,
+/area/crawler)
 
 (1,1,1) = {"
 a
@@ -186,8 +220,8 @@ a
 b
 e
 j
-j
-j
+Y
+N
 d
 d
 x
@@ -196,8 +230,8 @@ a
 (4,1,1) = {"
 a
 e
-j
-j
+N
+K
 j
 p
 d
@@ -230,7 +264,7 @@ B
 B
 g
 t
-g
+H
 o
 g
 g
@@ -262,9 +296,9 @@ B
 (10,1,1) = {"
 a
 e
-k
-k
-k
+E
+X
+Q
 s
 d
 A
@@ -275,7 +309,7 @@ a
 e
 k
 k
-k
+E
 s
 d
 x

@@ -1,5 +1,5 @@
 /obj/item/weapon/tool/pickaxe
-	name = "pickaxe"
+	name = "Pickaxe"
 	desc = "The most basic of mining tools, for short excavations and small mineral extractions."
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
@@ -8,6 +8,7 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	icon_state = "pickaxe"
 	item_state = "pickaxe"
+	max_health = 500
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 6)
 	tool_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_PRYING = 20) //So it still shares its switch off quality despite not yet being used.
@@ -31,10 +32,10 @@
 	update_icon()
 
 /obj/item/weapon/tool/pickaxe/turn_on(mob/user)
-
-	mode = DIG
-	to_chat(user, SPAN_NOTICE("You tighten your grip on [src], and ready yourself to strike earth."))
-	..()
+	.=..()
+	if(.)
+		mode = DIG
+		to_chat(user, SPAN_NOTICE("You tighten your grip on [src], and ready yourself to strike earth."))
 
 /obj/item/weapon/tool/pickaxe/turn_off(mob/user)
 
@@ -43,8 +44,8 @@
 	..()
 
 
-/obj/item/weapon/tool/pickaxe/onestar //TODO: Add sound to /turn_on proc
-	name = "greyson positronic pickaxe"
+/obj/item/weapon/tool/pickaxe/onestar //Here's my lame attempt at adding a sound proc
+	name = "Greyson Positronic Pickaxe"
 	desc = "A standard Greyson Positronic digging tool. Whatever secrets they used to make this so powerful and cheap is a mystery."
 	icon_state = "one_star_pickaxe"
 	item_state = "pickaxe"
@@ -60,18 +61,22 @@
 	use_power_cost = 0
 
 /obj/item/weapon/tool/pickaxe/onestar/turn_on(mob/user)
-
-	to_chat(user, SPAN_NOTICE("You switch [src] on."))
-	..()
+	..(null, TRUE)
+	mode = DIG
+	to_chat(user, SPAN_NOTICE("You turn on [src], readying yourself to strike earth."))
+	playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
 
 /obj/item/weapon/tool/pickaxe/onestar/turn_off(mob/user)
+	..(null, TRUE)
+	mode = EXCAVATE
+	to_chat(user, SPAN_NOTICE("You turn off [src], and prepare to remove debris."))
+	playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
 
-	to_chat(user, SPAN_NOTICE("You switch [src] off."))
-	..()
-
+/obj/item/weapon/tool/pickaxe/onestar/cyborg
+	workspeed = 1.4
 
 /obj/item/weapon/tool/pickaxe/jackhammer
-	name = "jackhammer"
+	name = "Jackhammer"
 	desc = "Cracks rocks with blasts, perfect for killing cave lizards."
 	icon_state = "jackhammer"
 	item_state = "jackhammer"
@@ -86,7 +91,7 @@
 	suitable_cell = /obj/item/weapon/cell/medium
 
 /obj/item/weapon/tool/pickaxe/jackhammer/onestar
-	name = "greyson positronic jackhammer"
+	name = "Greyson Positronic Jackhammer"
 	desc = "A heavy Greyson Positronic tool that cracks rocks with blasts, perfect for killing capitalist pigs."
 	icon_state = "one_star_jackhammer"
 	item_state = "jackhammer"
@@ -131,7 +136,7 @@
 
 /obj/item/weapon/tool/pickaxe/diamonddrill
 	name = "diamond-point mining drill"
-	desc = "Yours is the drill that will pierce the heavens!"
+	desc = "Yours is the drill that will pierce the universe!"
 	icon_state = "diamonddrill"
 	item_state = "jackhammer"
 	force = WEAPON_FORCE_DANGEROUS * 1.15
@@ -151,7 +156,7 @@
 
 /obj/item/weapon/tool/pickaxe/excavation
 	name = "hand pickaxe"
-	desc = "A smaller, more precise version of the pickaxe, used for archeology excavation."
+	desc = "A smaller, more precise version of the pickaxe, used for archeological excavation."
 	icon_state = "pick_hand"
 	item_state = "syringe_0"
 	force = WEAPON_FORCE_PAINFUL //It's smaller

@@ -9,7 +9,7 @@
 	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 3)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
-	price_tag = 3200
+	price_tag = 1600
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
@@ -18,26 +18,27 @@
 	reload_sound 	= 'sound/weapons/guns/interact/batrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	recoil_buildup = 6
-	penetration_multiplier = 1.1
+	penetration_multiplier = 1
 	damage_multiplier = 1.1
 	zoom_factor = 0.2
 	one_hand_penalty = 10 //bullpup rifle level
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		list(mode_name="fire grenades",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 
-	var/obj/item/weapon/gun/launcher/grenade/underslung/launcher
+	var/obj/item/weapon/gun/projectile/underslung/launcher
 
 /obj/item/weapon/gun/projectile/automatic/pitbull/Initialize()
 	. = ..()
 	launcher = new(src)
 
 /obj/item/weapon/gun/projectile/automatic/pitbull/attackby(obj/item/I, mob/user)
-	if((istype(I, /obj/item/weapon/grenade)))
-		launcher.load(I, user)
+	if((istype(I, /obj/item/ammo_casing/grenade)))
+		launcher.load_ammo(I, user)
 	else
 		..()
 
@@ -45,7 +46,7 @@
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(user.get_inactive_hand() == src && cur_mode.settings["use_launcher"])
-		launcher.unload(user)
+		launcher.unload_ammo(user)
 	else
 		..()
 
@@ -71,6 +72,8 @@
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
+	if(wielded)
+		itemstring += "_doble"
 	icon_state = iconstring
 	set_item_state(itemstring)
 
@@ -81,7 +84,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/pitbull/examine(mob/user)
 	..()
-	if(launcher.chambered)
+	if(launcher.loaded.len)
 		to_chat(user, "\The [launcher] has \a [launcher.chambered] loaded.")
 	else
 		to_chat(user, "\The [launcher] is empty.")

@@ -14,15 +14,17 @@
 	mag_well = MAG_WELL_PAN
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 42, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
-	price_tag = 5000
+	price_tag = 2500
 	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	recoil_buildup = 3
 	one_hand_penalty = 30 //not like it's used anyway, but LMG level
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	twohanded = TRUE
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_600,
 		list(mode_name="short bursts", burst=5,    burst_delay=1, move_delay=6,  icon="burst"),
 		list(mode_name="long bursts",  burst=8, burst_delay=1, move_delay=8,  icon="burst"),

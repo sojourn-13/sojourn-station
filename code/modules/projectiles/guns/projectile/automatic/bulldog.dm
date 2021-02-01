@@ -11,12 +11,13 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
-	price_tag = 2300
+	price_tag = 1650
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	recoil_buildup = 13
+	recoil_buildup = 10
 	one_hand_penalty = 5 //bullpup rifle (this one is smaller and carbine, so it's 5)
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
-	firemodes = list(
+	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
@@ -48,5 +49,5 @@
 	icon = 'icons/obj/guns/projectile/bulldog_rds.dmi'
 	icon_state = "bulldog_rds"
 	item_state = "bulldog_rds"
-	price_tag = 2350
+	price_tag = 1225
 	zoom_factor = 0.3

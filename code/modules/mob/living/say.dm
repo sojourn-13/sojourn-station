@@ -8,7 +8,8 @@ var/list/department_radio_keys = list(
 	"n" = "Science",
 	"m" = "Medical",
 	"e" = "Engineering",
-	"s" = "Security",
+	"s" = "Marshal",
+	"b" = "Blackshield",
 	"w" = "whisper",
 	"y" = "Mercenary",
 	"u" = "Supply",
@@ -163,6 +164,12 @@ var/list/channel_to_radio_key = new
 
 	message = trim_left(message)
 
+	message = format_say_message(message)
+
+	message = formatSpeech(message, "/", "<i>", "</i>")
+
+	message = formatSpeech(message, "*", "<b>", "</b>")
+
 	if(!(speaking && speaking.flags&NO_STUTTER))
 
 		var/list/handle_s = handle_speech_problems(message, verb)
@@ -243,12 +250,9 @@ var/list/channel_to_radio_key = new
 			else if(M.locs.len && (M.locs[1] in hear_falloff))
 				listening_falloff |= M
 
-		for(var/X in hearing_objects)
-			if(!isobj(X))
-				continue
-			var/obj/O = X
-			if(O.locs.len && (O.locs[1] in hear))
-				listening_obj |= O
+		for(var/obj in GLOB.hearing_objects)
+			if(get_turf(obj) in hear)
+				listening_obj |= obj
 
 	var/speech_bubble_test = say_test(message)
 	var/image/speech_bubble = image('icons/mob/talk.dmi', src, "h[speech_bubble_test]")
@@ -281,6 +285,57 @@ var/list/channel_to_radio_key = new
 
 	log_say("[name]/[key] : [message]")
 	return TRUE
+
+mob/proc/format_say_message(var/message = null)
+
+	///List of symbols that we dont want a dot after
+	var/list/punctuation = list("!","?",".")
+
+	///Last character in the message
+	var/last_character = copytext(message,length_char(message))
+	if(!(last_character in punctuation))
+		message += "."
+	return message
+
+// Utility procs for handling speech formatting
+/proc/formatSpeech(var/message, var/delimiter, var/openTag, var/closeTag)
+	var/location = findtextEx(message, delimiter)
+	while(location)
+		if(findtextEx(message, delimiter, location + 1)) // Only work with matching pairs
+			var/list/result = replaceFirst(message, delimiter, openTag, location)
+			message = result[1]
+			result = replaceFirst(message, delimiter, closeTag, result[2])
+			message = result[1]
+			location = findtextEx(message, delimiter, result[2] + 1)
+		else
+			break
+	return message
+
+/proc/replaceFirst(var/message, var/toFind, var/replaceWith, var/startLocation)
+	var/location = findtextEx(message, toFind, startLocation)
+	var/replacedLocation = 0
+	if(location)
+		var/findLength = length(toFind)
+		var/head = copytext(message, 1, location)
+		var/tail = copytext(message, location + findLength)
+		message = head + replaceWith + tail
+		replacedLocation = length(head) + length(replaceWith)
+	return list(message, replacedLocation)
+
+/proc/replaceAll(var/message, var/toFind, var/replaceWith)
+	var/location = findtextEx(message, toFind)
+	var/findLength = length(toFind)
+	while(location > 0)
+		var/head = copytext(message, 1, location)
+		var/tail = copytext(message, location + findLength)
+		message = head + replaceWith + tail
+		location = findtextEx(message, toFind, length(head) + length(replaceWith) + 1)
+	return message
+
+
+
+
+
 
 
 /proc/animate_speechbubble(image/I, list/show_to, duration)

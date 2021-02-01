@@ -49,7 +49,7 @@
 	build_path = /obj/item/weapon/circuitboard/excelsiorreconstructor
 
 /datum/design/autolathe/circuit/diesel_excelsior
-	name = "excelsior diesel generator"
+	name = "diesel generator"
 	build_path = /obj/item/weapon/circuitboard/diesel
 
 /datum/design/autolathe/circuit/teleporter_excelsior
@@ -59,6 +59,10 @@
 /datum/design/autolathe/circuit/turret_excelsior
 	name = "excelsior turret"
 	build_path = /obj/item/weapon/circuitboard/excelsior_turret
+
+/datum/design/autolathe/circuit/turret_artificer
+	name = "artificer turret"
+	build_path = /obj/item/weapon/circuitboard/artificer_turret
 
 /datum/design/autolathe/circuit/centrifuge
 	name = "centrifuge"
@@ -72,60 +76,18 @@
 	name = "reagent grinder"
 	build_path = /obj/item/weapon/circuitboard/reagentgrinder
 
-/datum/design/autolathe/circuit/bioprinter
-	name = "Absolutism Biomatter Printer"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioprinter
+/datum/design/autolathe/circuit/smelter
+	name = "smelter"
+	build_path = /obj/item/weapon/circuitboard/smelter
 
-/datum/design/autolathe/circuit/solidifier
-	name = "Absolutism Biomatter Solidifier"
-	build_path = /obj/item/weapon/circuitboard/neotheology/solidifier
+/datum/design/autolathe/circuit/sorter
+	name = "sorter"
+	build_path = /obj/item/weapon/circuitboard/sorter
 
-/*
-/datum/design/autolathe/circuit/cloner
-	name = "NeoTheology Cloner, Pod"
-	build_path = /obj/item/weapon/circuitboard/neotheology/cloner
+/datum/design/autolathe/circuit/recycler
+	name = "recycler"
+	build_path = /obj/item/weapon/circuitboard/recycler
 
-/datum/design/autolathe/circuit/reader
-	name = "NeoTheology Cloner, Cruciform Reader"
-	build_path = /obj/item/weapon/circuitboard/neotheology/reader
-*/
-
-/datum/design/autolathe/circuit/biocan
-	name = "Absolutism Cloner, Biomass container"
-	build_path = /obj/item/weapon/circuitboard/neotheology/biocan
-
-/datum/design/autolathe/circuit/biogen
-	name = "Absolutism Biomatter Generator, Power Generator"
-	build_path = /obj/item/weapon/circuitboard/neotheology/biogen
-
-/datum/design/autolathe/circuit/biogen_console
-	name = "Absolutism Biomatter Generator, Power Generator Console"
-	build_path = /obj/item/weapon/circuitboard/neotheology/biogen_console
-
-/datum/design/autolathe/circuit/biogen_port
-	name = "Absolutism Biomatter Generator, Power Generator Port"
-	build_path = /obj/item/weapon/circuitboard/neotheology/biogen_port
-
-/datum/design/autolathe/circuit/bioreactor_loader
-	name = "Absolutism Biomatter Reactor, Loader"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_loader
-
-/datum/design/autolathe/circuit/bioreactor_metrics
-	name = "Absolutism Biomatter Reactor, Metrics"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_metrics
-
-/datum/design/autolathe/circuit/bioreactor_port
-	name = "Absolutism Biomatter Reactor, Port"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_port
-
-/datum/design/autolathe/circuit/bioreactor_biotank
-	name = "Absolutism Biomatter Reactor, Biomatter Tank"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_biotank
-
-/datum/design/autolathe/circuit/bioreactor_unloader
-	name = "Absolutism Biomatter Reactor, Unloader"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_unloader
-
-/datum/design/autolathe/circuit/bioreactor_platform
-	name = "Absolutism Biomatter Reactor, Platform"
-	build_path = /obj/item/weapon/circuitboard/neotheology/bioreactor_platform
+/datum/design/autolathe/circuit/pile_ripper
+	name = "pile ripper"
+	build_path = /obj/item/weapon/circuitboard/pile_ripper

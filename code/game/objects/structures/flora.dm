@@ -5,6 +5,7 @@
 	density = 1
 	pixel_x = -16
 	layer = ABOVE_MOB_LAYER
+	mouse_opacity = MOUSE_OPACITY_ICON
 
 /obj/structure/flora/tree/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -53,6 +54,21 @@
 	name = "grass"
 	icon = 'icons/obj/flora/snowflora.dmi'
 	anchored = 1
+
+/obj/structure/flora/grass/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/grass/brown
 	icon_state = "snowgrass1bb"
@@ -250,6 +266,23 @@
 	anchored = 1
 	layer = LOW_OBJ_LAYER
 
+/obj/structure/flora/ausbushes/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/stack/material/wood(get_turf(src), 1 ? 1 : 2)
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/ausbushes/New()
 	..()
 	icon_state = "firstbush_[rand(1, 4)]"
@@ -321,6 +354,24 @@
 	name = "lavender"
 	icon_state = "lavendergrass_1"
 
+/obj/structure/flora/ausbushes/lavendergrass/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/flower/harebells/wild(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
+			qdel(src)
+			return
+		return
+
+
 /obj/structure/flora/ausbushes/lavendergrass/New()
 	..()
 	icon_state = "lavendergrass_[rand(1, 4)]"
@@ -328,6 +379,23 @@
 /obj/structure/flora/ausbushes/ywflowers
 	name = "flowers"
 	icon_state = "ywflowers_1"
+
+/obj/structure/flora/ausbushes/ywflowers/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/flower/sunflower/wild(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/ausbushes/ywflowers/New()
 	..()
@@ -345,6 +413,23 @@
 	name = "flowers"
 	icon_state = "ppflowers_1"
 
+/obj/structure/flora/ausbushes/ppflowers/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/flower/poppy/wild(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/ausbushes/ppflowers/New()
 	..()
 	icon_state = "ppflowers_[rand(1, 4)]"
@@ -353,6 +438,22 @@
 	name = "sparse grass"
 	icon_state = "sparsegrass_1"
 
+/obj/structure/flora/ausbushes/sparsegrass/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/ausbushes/sparsegrass/New()
 	..()
 	icon_state = "sparsegrass_[rand(1, 3)]"
@@ -360,6 +461,23 @@
 /obj/structure/flora/ausbushes/fullgrass
 	name = "full grass"
 	icon_state = "fullgrass_1"
+
+/obj/structure/flora/ausbushes/fullgrass/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Got a flower out of it too!"))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/ausbushes/fullgrass/New()
 	..()
@@ -447,6 +565,25 @@
 	icon_state = "tree6"
 	pixel_x = -30
 	pixel_y = -16
+
+/obj/structure/flora/small
+	anchored = 1
+
+/obj/structure/flora/small/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_HAMMERING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_HAMMERING)
+		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/rock1
 	name = "rocks"
@@ -556,90 +693,405 @@
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "busha1"
 
+/obj/structure/flora/small/busha1/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/small/busha2
 	name = "bush"
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "busha2"
+
+/obj/structure/flora/small/busha2/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/busha3
 	name = "bush"
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "busha3"
 
+/obj/structure/flora/small/busha3/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/small/bushb1
 	name = "bush"
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "bushb1"
+
+/obj/structure/flora/small/bushb1/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
+			new /obj/item/stack/material/wood(get_turf(src), 1 ? 1 : 2)
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/bushb2
 	name = "bush"
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "bushb2"
 
+/obj/structure/flora/small/bushb2/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
+			new /obj/item/stack/material/wood(get_turf(src), 1 ? 1 : 2)
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/small/bushb3
 	name = "bush"
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "bushb3"
+
+/obj/structure/flora/small/bushb3/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/bushc1
 	name = "bush"
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "bushc1"
 
+/obj/structure/flora/small/bushc1/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/small/bushc2
 	name = "bush"
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "bushc2"
+
+/obj/structure/flora/small/bushc2/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/bushc3
 	name = "bush"
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "bushc3"
 
+/obj/structure/flora/small/bushc3/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
+			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/small/grassa1
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassa1"
+
+/obj/structure/flora/small/grassa1/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/grassa2
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassa2"
 
+/obj/structure/flora/small/grassa2/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/small/grassa3
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassa3"
+
+/obj/structure/flora/small/grassa3/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/grassa4
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassa4"
 
+/obj/structure/flora/small/grassa4/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/small/grassa5
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassa5"
+
+/obj/structure/flora/small/grassa5/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/grassb1
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassb1"
 
+/obj/structure/flora/small/grassb1/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/small/grassb2
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassb2"
+
+/obj/structure/flora/small/grassb2/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/grassb3
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassb3"
 
+/obj/structure/flora/small/grassb3/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/small/grassb4
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassb4"
+
+/obj/structure/flora/small/grassb4/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/small/grassb5
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassb5"
 
+/obj/structure/flora/small/grassb5/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/big
 	name = "big bush"
 	layer = ABOVE_MOB_LAYER
 	anchored = 1
+
+/obj/structure/flora/small/big/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You started to cut the bush away, harvesting some plant clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/big/bush1
 	icon = 'icons/obj/flora/largejungleflora.dmi'
@@ -659,11 +1111,47 @@
 	icon_state = "rocks1"
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 
+/obj/structure/flora/big/rocks1/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_HAMMERING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_HAMMERING)
+		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/big/rocks2
 	name = "rock pile"
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "rocks2"
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
+
+/obj/structure/flora/big/rocks2/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_HAMMERING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_HAMMERING)
+		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/big/rocks3
 	name = "rock pile"
@@ -671,6 +1159,23 @@
 	icon_state = "rocks3"
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 
+/obj/structure/flora/big/rocks3/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_HAMMERING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_HAMMERING)
+		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
+			new /obj/random/material_ore(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
+			qdel(src)
+			return
+		return
 
 
 
@@ -719,6 +1224,21 @@
 	desc = "A dull and sturdy rock."
 	anchored = 1
 	density = 1
+
+/obj/structure/flora/rock/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_HAMMERING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_HAMMERING)
+		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/item/weapon/ore/glass(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/rock/variant1
 	name = "rock"

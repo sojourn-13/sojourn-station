@@ -252,3 +252,34 @@
 	else
 		icon_state = "fortunecard"
 	return
+
+/obj/item/weapon/paper/laber_camp
+	name = "Labor Notice"
+	info = {"Hard Labor Notice:
+	<BR>\n\tHard Rock Wall:
+	<BR>\n\t\tReally hard to mine through, but has many geodes.
+	<BR>\n\t\tAny blasts will not affect the hard rock.
+	<BR>\n\t\tMining through to the other side is impossible.
+	<BR>\n
+	<BR>\n\tSand Below Your Feet:
+	<BR>\n\t\tThe sand below you can be dug for rocks.
+	<BR>\n\t\tDigging in a small area is wise as well as piling the sand into ore boxes.
+	<BR>\n
+	<BR>\n\tSmall rocks:
+	<BR>\n\t\tThe small rocks dig out from the hard walls or sand can be crushed into more sand.
+	<BR>\n\t\tSome rocks even have small amounts of ore if the caves yield none.
+	<BR>\n
+	<BR>\n\t\tWARNING: It is a crime to mine here without authorization"}
+
+/obj/item/weapon/paper/laber_camp_notice
+	name = "Mining Rights and Conservation"
+	info = {"From Artificer Guild and Soteria Xenoarch Division:
+	<BR>\n\tArtificer Guild:
+	<BR>\n\t\tDo to LSS mining operations and Soteria Toxin testing the labor camp might have rock falls refilling the area from time to time.
+	<BR>\n\t\tWith this issue ever present, we are unable to add any power networking down into the camp.
+	<BR>\n
+	<BR>\n\tSoteria Xenoarch Division:
+	<BR>\n\t\tXenoarch may ask to use the local camp for digging out artifacts .
+	<BR>\n\t\tDeep rock scans have shown that from time to time the labor camp may have hidden weapons and tools inside the rock walls.
+	<BR>\n
+	<BR>\n\t\tWARNING: Well Boris Kilmeade has full rights to mining the labor camp sight it may be used by any prisoner that wishes to do labor or a time sentence"}

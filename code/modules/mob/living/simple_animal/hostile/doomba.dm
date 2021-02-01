@@ -27,6 +27,11 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 
+	//Drops
+	var/drop1 = /obj/item/weapon/scrap_lump
+	var/drop2 = null
+	var/cell_drop = null
+
 /mob/living/simple_animal/hostile/roomba/death()
 	..()
 	visible_message("<b>[src]</b> blows apart!")
@@ -34,9 +39,17 @@
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
+	if(drop1)
+		new drop1 (src.loc)
+		drop1 = null
+	if(drop2)
+		new drop2 (src.loc)
+		drop2 = null
+	if(cell_drop)
+		new cell_drop (src.loc)
+		cell_drop = null
 	qdel(src)
 	return
-
 
 /mob/living/simple_animal/hostile/roomba/slayer
 	name = "Greyson Positronic RMB-A unit"
@@ -47,8 +60,40 @@
 	speed = 2
 	melee_damage_lower = 12
 	melee_damage_upper = 17
+	drop2 = /obj/item/weapon/tool/knife
 
+/mob/living/simple_animal/hostile/roomba/trip
+	name = "Greyson Positronic RMB-A unit"
+	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it..."
+	icon_state = "roomba_batton"
+	health = 35
+	maxHealth = 35
+	speed = 3 //speedy boy!
+	melee_damage_lower = 7
+	melee_damage_upper = 12
+	drop2 = /obj/item/weapon/melee/telebaton
 
+/mob/living/simple_animal/hostile/roomba/trip/AttackTarget(var/atom/A, var/proximity)
+	if(isliving(A))
+		var/mob/living/L = A
+
+		if(istype(L) && !L.weakened && prob(15))
+			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE))
+				return
+			L.Weaken(3)
+			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
+
+	. = ..()
+
+/mob/living/simple_animal/hostile/roomba/trip/armored
+	name = "Greyson Positronic RMB-SEC unit"
+	desc = "A small blue round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it and seems to have added armor..."
+	icon_state = "roomba_IH_batton"
+	health = 90
+	maxHealth = 90
+	speed = 2 //speedy boy!
+	melee_damage_lower = 7
+	melee_damage_upper = 12
 
 /mob/living/simple_animal/hostile/roomba/boomba
 	name = "Greyson Positronic RMB-A unit"
@@ -78,6 +123,80 @@
 	melee_damage_upper = 10
 	ranged = 1
 
+/mob/living/simple_animal/hostile/roomba/gun_ba/New()
+	..()
+	if(prob(10))
+		drop2 = /obj/item/weapon/gun/energy/retro
+	if(prob(10))
+		cell_drop = /obj/item/weapon/cell/medium
+
+/mob/living/simple_animal/hostile/roomba/gun_ba/plasma
+	name = "Greyson Positronic RMB-SEC unit"
+	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a overclocked gun."
+	icon_state = "roomba_lmg"
+	health = 50
+	maxHealth = 50
+	speed = 3
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+	ranged = 1
+	projectiletype = /obj/item/projectile/plasma/light
+
+/mob/living/simple_animal/hostile/roomba/gun_ba/armored
+	name = "Greyson Positronic RMB-SEC unit"
+	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a gun and seems to have added armor."
+	icon_state = "roomba_IH_lmg"
+	health = 70
+	maxHealth = 70
+	speed = 3
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+	ranged = 1
+
+/mob/living/simple_animal/hostile/roomba/chemical
+	name = "Greyson Positronic RMB-MED unit"
+	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
+	icon_state = "roomba_drugs"
+	health = 20
+	maxHealth = 20
+	speed = 3
+	melee_damage_lower = 7
+	melee_damage_upper = 12
+	var/injection_per_hit = 2
+	var/injection_type = "toxin"
+
+/mob/living/simple_animal/hostile/roomba/chemical/AttackTarget(var/atom/A, var/proximity)
+	. = ..()
+
+	if(isliving(A))
+		var/mob/living/L = A
+		if(istype(L) && L.reagents)
+			L.reagents.add_reagent(injection_type, injection_per_hit)
+
+/mob/living/simple_animal/hostile/roomba/chemical/med
+	name = "Greyson Positronic RMB-MED unit"
+	desc = "A small white round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
+	icon_state = "roomba_medical_drugs"
+	health = 20
+	maxHealth = 20
+	speed = 3
+	melee_damage_lower = 2
+	melee_damage_upper = 3
+	injection_per_hit = 1
+	injection_type = "chloralhydrate"
+
+/mob/living/simple_animal/hostile/roomba/chemical/med/healer
+	name = "Greyson Positronic RMB-MED unit"
+	desc = "A small white round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
+	icon_state = "roomba_medical_drugs"
+	health = 20
+	maxHealth = 20
+	speed = 3
+	melee_damage_lower = 2
+	melee_damage_upper = 3
+	injection_per_hit = 3
+	injection_type = "tricordrazine"
+
 /mob/living/simple_animal/hostile/roomba/synthetic
 	name = "Greyson Positronic FBP-Utility unit"
 	desc = "A full body positronic, tasked with carrying out a variety of duties. This one is unarmed."
@@ -96,6 +215,13 @@
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has an old style energy pistol built into its arm."
 	icon_state = "nanotrasenranged"
 	ranged = 1
+
+/mob/living/simple_animal/hostile/roomba/synthetic/epistol/New()
+	..()
+	if(prob(20))
+		drop2 = /obj/item/weapon/gun/energy/retro
+	if(prob(30))
+		cell_drop = /obj/item/weapon/cell/medium
 
 /mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg
 	name = "Greyson Positronic FBP-SEC Mark II unit"
@@ -126,8 +252,15 @@
 /obj/random/mob/roomba/item_to_spawn()
 	return pickweight(list(/mob/living/simple_animal/hostile/roomba = 17,
 				/mob/living/simple_animal/hostile/roomba/slayer = 15,
+				/mob/living/simple_animal/hostile/roomba/trip = 10,
+				/mob/living/simple_animal/hostile/roomba/trip/armored = 3,
 				/mob/living/simple_animal/hostile/roomba/boomba = 7,
+				/mob/living/simple_animal/hostile/roomba/gun_ba/armored = 5,
 				/mob/living/simple_animal/hostile/roomba/gun_ba = 10,
+				/mob/living/simple_animal/hostile/roomba/gun_ba/plasma = 4,
+				/mob/living/simple_animal/hostile/roomba/chemical = 5,
+				/mob/living/simple_animal/hostile/roomba/chemical/med = 3,
+				/mob/living/simple_animal/hostile/roomba/chemical/med/healer = 3,
 				/mob/living/simple_animal/hostile/onestar_custodian = 25,
 				/mob/living/simple_animal/hostile/onestar_custodian/chef = 10,
 				/mob/living/simple_animal/hostile/onestar_custodian/engineer = 15,

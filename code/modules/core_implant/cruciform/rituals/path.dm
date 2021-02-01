@@ -18,7 +18,7 @@
 	desc = "A tricky litany that heals the mind and body of esoteric maladies such as genetic malignance or brain damage. However it requires them to be awake and able to hear you. This litany requires alot of power and needs a quarter of an hour to recharge."
 	cooldown = TRUE
 	cooldown_time = 15 MINUTES
-	cooldown_category = "grepose" //It shares a cooldown because it replaces divine hymn, not add atop it.
+	cooldown_category = "grepose"
 	power = 60 //stronger healing higher cost
 
 /datum/ritual/cruciform/tessellate/heal_heathen_special/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -51,10 +51,11 @@
 /datum/ritual/cruciform/tessellate/heal_heathen_improved
 	name = "Healing Word"
 	phrase = "Pastor gregem suum pascet, sive sciens sive ignarus gubernandum."
-	desc = "Heal every person who can see and hear for a fair amount, even if they do not have a cruciform. This prayer uses alot of power."
+	desc = "Heal every person who can see and hear you for a fair amount, even if they do not have a cruciform. This prayer uses alot of power and requires five minutes to pass before it can be used again."
 	cooldown = TRUE
-	cooldown_time = 300
 	power = 50
+	cooldown_time = 5 MINUTES
+	cooldown_category = "dhymn" //It shares a cooldown because it replaces divine hymn, not add atop it.
 
 /datum/ritual/cruciform/tessellate/heal_heathen_improved/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
@@ -206,23 +207,30 @@
 /datum/ritual/cruciform/monomial/ironskin
 	name = "Resolution"
 	phrase = "Ut det Dominus virtutem populo suo? Sit Dominus benedicet populo suo in pace."
-	desc = "A short litany that removes all pain, it is much stronger then the relief litany, but requires more power and has a short cooldown between uses."
+	desc = "A short litany that removes all pain, it is much stronger then the relief litany, but requires more power and has a five minute recharge time between uses."
 	power = 50
 	cooldown_time = 5 MINUTES
 
 /datum/ritual/cruciform/monomial/ironskin/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.add_chemical_effect(CE_PAINKILLER, 10000, TRUE)
 	H.apply_effect(-200, AGONY, 0)
+	H.apply_effect(-200, HALLOSS, 0)
+	H.adjustBruteLoss(-10)
+	H.adjustFireLoss(-10)
+	H.adjustToxLoss(-10)
+	H.adjustOxyLoss(-20)
+	H.adjustBrainLoss(-5)
+	H.updatehealth()
 	return TRUE
 
 /datum/ritual/cruciform/monomial/perfect_self
 	name = "Perfect Self"
 	phrase = "Quaerite primum regnum Dei et iustitiam eius, et haec omnia adicientur vobis."
-	desc = "A solemn prayer, often spoken in a whisper that allows a disciple of the monomial to focus inward and reach their full potential in both body and mind. This litany lasts ten minutes and takes over half an hour before it can be used again."
+	desc = "A solemn prayer, often spoken in a whisper that allows a disciple of the monomial to focus inward and reach their full potential in both body and mind. This litany lasts fifteen minutes and takes over half an hour before it can be used again."
 	cooldown = TRUE
 	cooldown_time = 30 MINUTES
 	cooldown_category = "pself"
-	effect_time = 10 MINUTES
+	effect_time = 15 MINUTES
 	power = 90
 
 /datum/ritual/cruciform/monomial/perfect_self/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)

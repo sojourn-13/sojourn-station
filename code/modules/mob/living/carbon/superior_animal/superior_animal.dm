@@ -10,6 +10,8 @@
 	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "tomato"
 
+	var/eating_time = 900
+
 	var/icon_living
 	var/icon_dead
 	var/icon_rest //resting/unconscious animation
@@ -30,6 +32,8 @@
 	var/stop_automated_movement = 0 //use this to temporarely stop random movement
 	var/stop_automated_movement_when_pulled = 0
 
+	var/toxin_immune = FALSE
+
 	var/contaminant_immunity = FALSE //if TRUE, mob is immune to harmful contaminants in air (plasma), skin contact, does not relate to breathing
 	var/cold_protection = 0 //0 to 1 value, which corresponds to the percentage of protection, affects only bodytemperature
 	var/heat_protection = 0
@@ -40,6 +44,9 @@
 	var/light_dam = 0 //0 to disable, minimum amount of lums to cause damage, otherwise heals in darkness
 	var/hunger_factor = 0 //0 to disable, how much nutrition is consumed per life tick
 
+	var/waring_faction = "" //What faction do we hate?
+	var/waring_faction_multy = 1 //How much more damage do we do to our ennemy faction?
+
 
 	var/min_air_pressure = 50 //below this, brute damage is dealt
 	var/max_air_pressure = 300 //above this, brute damage is dealt
@@ -49,7 +56,7 @@
 	var/deathmessage = "dies."
 	var/attacktext = "bitten"
 	var/list/attack_sound = 'sound/weapons/spiderlunge.ogg'
-	var/attack_sound_chance = 33
+	var/attack_sound_chance = 100
 	var/attack_sound_volume = 90
 
 	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat

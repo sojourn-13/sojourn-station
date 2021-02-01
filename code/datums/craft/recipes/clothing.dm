@@ -1,5 +1,6 @@
 /datum/craft_recipe/clothing
 	category = "Clothing"
+	icon_state = "clothing"
 	time = 50
 	related_stats = list(STAT_COG)
 
@@ -29,6 +30,13 @@
 		list(QUALITY_CUTTING, 10, 60)
 	)
 
+/datum/craft_recipe/clothing/handmadebelt
+	name = "hand-made toolbelt"
+	result = /obj/item/weapon/storage/belt/utility/handmade
+	steps = list(
+		list(/obj/item/stack/cable_coil, 30, time = 15),
+		list(QUALITY_CUTTING, 10, 60)
+	)
 
 /datum/craft_recipe/clothing/blindfold
 	name = "blindfold"
@@ -106,6 +114,7 @@
 /datum/craft_recipe/clothing/sandals
 	name = "wooden sandals"
 	result = /obj/item/clothing/shoes/sandal
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
 	)

@@ -6,7 +6,7 @@
 	anchored = 1
 	density = 1
 	throwpass = 1
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	layer = 3.3
 	power_channel = EQUIP
 	var/on = 0

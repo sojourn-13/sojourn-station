@@ -20,7 +20,21 @@
 				/obj/item/weapon/reagent_containers/syringe/tricordrazine = 1,\
 				/obj/item/weapon/reagent_containers/syringe/spaceacillin = 1,\
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/nanites = 0.5,\
-				/obj/item/stack/nanopaste = 0.5))
+				/obj/item/stack/nanopaste = 0.5,\
+				/obj/item/weapon/reagent_containers/syringe/stim/mbr = 0.5,\
+				/obj/item/weapon/reagent_containers/syringe/stim/cherrydrops = 0.5,\
+				/obj/item/weapon/reagent_containers/syringe/stim/pro_surgeon = 0.5,\
+				/obj/item/weapon/reagent_containers/syringe/stim/violence = 0.5,\
+				/obj/item/weapon/reagent_containers/syringe/stim/bouncer = 0.5,\
+				/obj/item/weapon/reagent_containers/syringe/stim/steady = 0.5,\
+				/obj/item/weapon/reagent_containers/syringe/stim/machine_spirit = 0.1,\
+				/obj/item/weapon/reagent_containers/syringe/stim/grape_drops = 0.1,\
+				/obj/item/weapon/reagent_containers/syringe/stim/ultra_surgeon = 0.1,\
+				/obj/item/weapon/reagent_containers/syringe/stim/violence_ultra = 0.1,\
+				/obj/item/weapon/reagent_containers/syringe/stim/boxer = 0.1,\
+				/obj/item/weapon/reagent_containers/syringe/stim/turbo = 0.1,\
+				/obj/item/weapon/reagent_containers/syringe/stim/party_drops = 0.05,\
+				/obj/item/weapon/reagent_containers/syringe/stim/menace = 0.05))
 
 /obj/random/medical/low_chance
 	name = "low chance random medicine"

@@ -16,7 +16,7 @@
 	caliber = CAL_RIFLE
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
-	price_tag = 5000
+	price_tag = 2500
 	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
@@ -24,7 +24,7 @@
 	recoil_buildup = 3.5
 	one_hand_penalty = 30 //you're not Stallone. LMG level.
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_5_ROUND,
 		BURST_8_ROUND
@@ -102,7 +102,7 @@
 	icon_base = "pk"
 	icon_state = "pk_closed"
 	item_state = "pk_closed"
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_5_ROUND,
 		BURST_8_ROUND
@@ -122,10 +122,10 @@
 	penetration_multiplier = 0.85
 	damage_multiplier = 0.6
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
-	price_tag = 3000
+	price_tag = 1500
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
 	recoil_buildup = 3.5
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_600,
 		)

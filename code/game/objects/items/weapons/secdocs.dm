@@ -2,7 +2,7 @@
 	name = "classified research"
 	desc = "This folder contains highly confidential scientific research."
 	icon = 'icons/obj/oddities.dmi'
-	price_tag = 5000
+	price_tag = 2500
 
 	oddity_stats = list(
 		STAT_MEC = 8,
@@ -13,7 +13,7 @@
 	//var/static/inv_spawn_count = 3
 
 /obj/item/weapon/oddity/secdocs/Initialize()
-	icon_state = "paper_[pick("omega","psi","theta")]"
+	icon_state = "paper_[pick("omega","psi","theta","nuke","delta","epsilon")]"
 	desc = pick("It's labelled 'Attractor Fields Theory'.",
 				"It's labelled 'World Lines Theory'.",
 				"It's labelled 'The Door Phenomenon'.",
@@ -54,6 +54,12 @@
 				"It's labelled 'Eletric Welders And Cold Welding'.",
 				"It's labelled 'Improvements On Cryogenic Technologies'.",
 				"It's labelled 'The Future of the Soteria Institute'.",
+				"It's labelled 'Mining Advancements using Thermal Dentation'.",
+				"It's labelled 'Bluespace Connection Lines'.",
+				"It's labelled 'Possible new Terms and Conditions'.",
+				"It's labelled 'Unknown Threats from Bluespace'.",
+				"It's labelled 'Possable New neuromod'.",
+				"It's about Bluespace and possable new ways to gain endless power from the ''Void''.",
 				"The label has been censored with permanent marker. Mysterious.",
 				"The label has been torn off. Maybe it's best not to pry.")
 	. = ..()

@@ -11,7 +11,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	caliber = CAL_RIFLE
 	fire_delay = 12 // double the standart
-	damage_multiplier = 1.4
+	damage_multiplier = 1.1
 	penetration_multiplier  = 1.5
 	recoil_buildup = 40 //same as AMR
 	handle_casings = HOLD_CASINGS
@@ -21,10 +21,11 @@
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 500
-	one_hand_penalty = 20 //full sized rifle with bayonet is hard to keep on target
+	one_hand_penalty = 15 //full sized rifle with bayonet is hard to keep on target
 	var/bolt_open = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") // Considering attached bayonet
-	sharp = 1
+	sharp = TRUE //We have a knife!
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET, GUN_SCOPE)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn
 
@@ -61,7 +62,7 @@
 	if(bolt_open)
 		if(chambered)
 			to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [chambered]!"))
-			chambered.loc = get_turf(src)
+			chambered.forceMove(get_turf(src))
 			loaded -= chambered
 			chambered = null
 		else
@@ -100,11 +101,11 @@
 	item_state = "boltgun"
 	max_shells = 5
 	price_tag = 300
-	recoil_buildup = 40
+	recoil_buildup = 20
+	damage_multiplier = 1
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/sa
-
 
 /obj/item/weapon/gun/projectile/boltgun/scout
 	name = "\"Scout\" heavy boltgun"
@@ -113,18 +114,19 @@
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	force = WEAPON_FORCE_PAINFUL
-	damage_multiplier = 1.6
+	damage_multiplier = 1.3
 	penetration_multiplier  = 1.6
-	recoil_buildup = 50
+	recoil_buildup = 30
 	max_shells = 5
 	zoom_factor = 2.0
-	price_tag = 3000
+	price_tag = 1500
 	sharp = 0
 	caliber = CAL_HRIFLE
 	load_method = SINGLE_CASING
-	one_hand_penalty = 50 //No trick shots
+	one_hand_penalty = 40 //No trick shots
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/scout
 
@@ -135,7 +137,10 @@
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	max_shells = 10
-	price_tag = 2000
+	recoil_buildup = 10
+	one_hand_penalty = 20 //maybe some trick shots
+	price_tag = 1000
+	damage_multiplier = 1
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
@@ -149,11 +154,48 @@
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	max_shells = 10
-	price_tag = 2000
+	price_tag = 1000
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 10, MATERIAL_GLASS = 10)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/light/wood
+
+/obj/item/weapon/gun/projectile/boltgun/zatvor
+	name = "homemade \"Zatvor Kalashnikov\" rifle"
+	desc = "A mangeled mess of a boltgun and a Kalashnikov rifle combined into one with a soldered internal magazine; saving on production cost, thanks to Nadezhda Marshals gunsmiths and copious amounts of booze."
+	icon = 'icons/obj/guns/projectile/zatvor.dmi'
+	icon_state = "zatvor"
+	item_state = "zatvor"
+	w_class = ITEM_SIZE_NORMAL
+	force = WEAPON_FORCE_NORMAL
+	caliber = CAL_LRIFLE
+	max_shells = 30
+	damage_multiplier = 0.8
+	penetration_multiplier  = 1.0
+	slot_flags = SLOT_BELT|SLOT_BACK
+	recoil_buildup = 10
+	price_tag = 600
+	one_hand_penalty = 15
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 20, MATERIAL_WOOD = 5)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
+	saw_off = FALSE
+
+/obj/item/weapon/gun/projectile/boltgun/lever
+	name = "\"Armstrong\" repeater rifle"
+	desc = "Weapon for hunting, or endless open plains. Perfect for horseback!"
+	icon = 'icons/obj/guns/projectile/lever.dmi'
+	icon_state = "lever"
+	item_state = "lever"
+	slot_flags = SLOT_BELT|SLOT_BACK
+	force = WEAPON_FORCE_PAINFUL
+	caliber = CAL_MAGNUM
+	max_shells = 11
+	price_tag = 650
+	recoil_buildup = 10
+	damage_multiplier = 1
+	penetration_multiplier  = 1.3
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 5)
+	saw_off = FALSE
 
 /obj/item/weapon/gun/projectile/boltgun/sawn
 	name = "\"obrez\" boltgun"
@@ -164,13 +206,14 @@
 	force = WEAPON_FORCE_NORMAL
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	price_tag = 150
+	price_tag = 75
 	sharp = 0
-	recoil_buildup = 60
+	recoil_buildup = 50
 	penetration_multiplier = 0.5
-	damage_multiplier = 1.1
+	damage_multiplier = 0.9
 	fire_delay = 18
 	one_hand_penalty = 10
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE
 
@@ -206,7 +249,7 @@
 	caliber = CAL_LRIFLE
 	load_method = SINGLE_CASING
 	fire_delay = 18
-	one_hand_penalty = 15
+	one_hand_penalty = 10
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	saw_off = FALSE
 
@@ -218,9 +261,7 @@
 	item_state = "obrez"
 	caliber = CAL_LRIFLE
 	load_method = SINGLE_CASING
-	fire_delay = 18
 	max_shells = 10
-	one_hand_penalty = 15
 	saw_off = FALSE
 
 // Star-Striker! A sci only gun that fires laser based shells
@@ -231,7 +272,8 @@
 	icon_state = "starstriker"
 	item_state = "starstriker"
 	max_shells = 10
-	price_tag = 500 //no...
+	price_tag = 250 //no...
+	damage_multiplier = 1
 	caliber = CAL_SCI
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_MAGNET = 3, TECH_POWER = 6)
 	fire_sound = 'sound/weapons/Laser.ogg'

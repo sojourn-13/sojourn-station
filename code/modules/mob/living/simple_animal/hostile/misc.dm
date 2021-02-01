@@ -16,7 +16,7 @@
 	cold_damage_per_tick = 0
 	speak_chance = 5
 	speak = list("Hruuugh!","Hrunnph")
-	emote_see = list("paws the ground","shakes its mane","stomps")
+	emote_see = list("paws the ground.","shakes its mane.","stomps.")
 	emote_hear = list("snuffles")
 	meat_amount = 3
 	mob_size = 10
@@ -62,7 +62,7 @@
 	cold_damage_per_tick = 0
 	speak_chance = 5
 	speak = list("Shuhn","Shrunnph?","Shunpf")
-	emote_see = list("scratches the ground","shakes out it's mane","tinkles gently")
+	emote_see = list("scratches the ground.","shakes out it's mane.","tinkles gently.")
 	mob_size = 5
 	resistance = 3
 	meat_amount = 6 //Pigs are known for giving meat
@@ -87,12 +87,26 @@
 	density = 0
 	mob_size = 1.5
 
+/mob/living/simple_animal/schlorgo
+	name = "schlorgo"
+	desc = "A friendly creature vaguely resembling a squat fat penguin with no feathers and a bulbous nose."
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "schlorgo"
+	icon_living = "schlorgo"
+	icon_dead = "schlorgo_dead"
+	pass_flags = PASSTABLE
+	density = 0
+	mob_size = 2
+
 /mob/living/simple_animal/hostile/snake
 	name = "viper"
-	desc = "A ferocious, fang-bearing creature that resembles a snake. Surprisingly not venomous."
+	desc = "A ferocious, fang-bearing creature that resembles a snake. Rather calm, unless you get close."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "snake"
 	speak_chance = 0
+	pass_flags = PASSTABLE
+	layer = HIDE_LAYER
+	density = 0
 	turns_per_move = 5
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
 	response_help = "pets the"
@@ -118,3 +132,155 @@
 		var/mob/living/L = target_mob
 		if(L.reagents)
 			L.reagents.add_reagent(attack_reagent, rand(3,5))
+
+/mob/living/simple_animal/hostile/tengbrute
+	name = "tengolo brute"
+	desc = "One of the local fauna native to the planet, peaceful except around insects and insectile creatures. This is one of the males, it looks like a four-eyed monkey mixed with a warthog."
+	faction = "neutral"
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "fatshouter"
+	icon_living = "fatshouter"
+	icon_dead = "fatshouter_dead"
+	response_help = "pets the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	move_to_delay = 5
+	maxHealth = 130
+	health = 130
+	speed = 2
+	melee_damage_lower = 15
+	melee_damage_upper = 19
+	attacktext = "mauled"
+	attack_sound = 'sound/weapons/bite.ogg'
+	speak_chance = 5
+	speak = list("Hruuugh!","Hrunnph")
+	emote_see = list("paws the ground.","shakes its mane.","stomps.")
+	emote_hear = list("snuffles")
+	meat_amount = 3
+	mob_size = 10
+	resistance = 5
+
+/mob/living/simple_animal/hostile/tengstalker
+	name = "tengolo stalker"
+	desc = "One of the local fauna native to the planet, peaceful except around insects and insectile creatures. This is one of the males, it looks like a large cat-like creature."
+	faction = "neutral"
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "bigcat"
+	icon_living = "bigcat"
+	icon_dead = "bigcat_dead"
+	response_help = "pets the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	move_to_delay = 5
+	maxHealth = 180
+	health = 180
+	speed = 5
+	melee_damage_lower = 18
+	melee_damage_upper = 24
+	attacktext = "bites"
+	attack_sound = 'sound/weapons/bite.ogg'
+	speak_chance = 5
+	speak = list("Hruuugh!","Hrunnph")
+	emote_see = list("paws the ground.","shakes its mane.","stomps.")
+	emote_hear = list("snuffles")
+	meat_amount = 3
+	mob_size = 10
+	resistance = 5
+	pixel_x = -16
+
+/mob/living/simple_animal/hostile/tengcharge
+	name = "tengolo charger"
+	desc = "One of the local fauna native to the planet, peaceful except around insects and insectile creatures. This is one of the females, it looks like an elk mixed with a warthog."
+	faction = "neutral"
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "rafama"
+	icon_living = "rafama"
+	icon_dead = "rafama_dead"
+	response_help = "pets the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	move_to_delay = 5
+	maxHealth = 90
+	health = 90
+	speed = 6
+	melee_damage_lower = 12
+	melee_damage_upper = 15
+	attacktext = "gored"
+	attack_sound = 'sound/weapons/bite.ogg'
+	speak_chance = 5
+	speak = list("Hruuugh!","Hrunnph")
+	emote_see = list("paws the ground.","shakes its mane.","stomps.")
+	emote_hear = list("snuffles")
+	meat_amount = 3
+	mob_size = 10
+	resistance = 3
+
+/mob/living/simple_animal/hostile/helldiver
+	name = "hell diver"
+	desc = "One of the local fauna native to the planet, nicknamed hell diver by lonestar miners. They're usually friendly and highly valued by \
+	miners as potential companions as they don't mind being led around, love food, and tend to rush after hostile life before a miner can see it. They have \
+	peerless eyesight in the dark and are quite skilled at killing hostile fauna, more than their small size suggests."
+	faction = "neutral"
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "tunneler"
+	icon_living = "tunneler"
+	icon_dead = "tunneler_dead"
+	response_help = "pets the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	move_to_delay = 2
+	maxHealth = 150
+	health = 150
+	speed = 4
+	melee_damage_lower = 20
+	melee_damage_upper = 25
+	aggro_vision_range = 16
+	vision_range = 16
+	attacktext = "gnawed"
+	attack_sound = 'sound/weapons/bite.ogg'
+	speak_chance = 5
+	speak = list("chitters!","chitter")
+	emote_see = list("scratches at the ground.","gives a small snuffle.","hops back and forth.")
+	emote_hear = list("chitters.")
+	meat_amount = 2
+	mob_size = 5
+	resistance = 10
+	//Feed to lead
+	hunger_enabled = 1//If set to 0, a creature ignores hunger
+	metabolic_factor = 0.5//A multiplier on how fast nutrition is lost. used to tweak the rates on a per-animal basis
+	nutrition_step = 0.1 //nutrition lost per tick and per step, calculated from mob_size, 0.2 is a fallback
+	stop_automated_movement_when_pulled = 1 //or just drag it around since it doesn't mind.
+	break_stuff_probability = 0
+
+/mob/living/simple_animal/hostile/helldiver/FindTarget()
+	. = ..()
+	if(.)
+		visible_emote("lets out a gutteral chitter in warning!")
+		playsound(src, 'sound/voice/hiss4.ogg', 50, 1, -3)
+
+/mob/living/simple_animal/hostile/retaliate/hakhma
+	name = "hakhma beetle"
+	desc = "One of the local fauna native to the planet, a large ornery beetle who doesn't get along with anything but roaches. Mostly peaceful, unless you give it a reason to be hostile."
+	faction = "roach"
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "hakhma"
+	icon_living = "hakhma"
+	icon_dead = "hakhma_dead"
+	response_help = "pets the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	move_to_delay = 5
+	maxHealth = 250
+	health = 250
+	speed = 3
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	attacktext = "gored"
+	attack_sound = 'sound/weapons/heavysmash.ogg'
+	speak_chance = 5
+	speak = list("Hruuugh!","Hrunnph")
+	emote_see = list("flutters its wings.","twitches its antenna.","stomps.")
+	emote_hear = list("gronks.")
+	meat_amount = 3
+	mob_size = 20
+	resistance = 15

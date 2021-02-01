@@ -15,10 +15,17 @@
 		/obj/item/weapon/tool/sword/katana = 20,
 		/obj/item/rig_module/chem_dispenser/ninja = 90, //Weakest chem dispenser rig
 		/obj/item/weapon/reagent_containers/food/drinks/bottle/pwine = 70,
+		/obj/item/rig_module/vision/thermal = 10,
+		/obj/item/weapon/gun/projectile/lamia/akurra = 5,
+		/obj/item/ammo_magazine/kurtz_50/hv = 1,
+		/obj/item/weapon/gun/projectile/revolver/mistral = 3,
+		/obj/item/noslipmodule = 90,
+		/obj/item/weapon/soap/syndie = 50,
+		/obj/item/weapon/storage/box/syndie_kit/cigarette = 10,
+		/obj/item/weapon/storage/box/sinpockets = 70,
 		/obj/item/device/spy_bug = 70,
 		/obj/item/device/spy_bug = 60,
 		/obj/item/device/spy_bug = 50,
-		/obj/item/weapon/silencer = 70,
 		/obj/item/weapon/pen/reagent = 20,)
 
 /datum/stash/ninja/haiku

@@ -216,6 +216,8 @@
 	character.wings_colors = wings_colors
 
 	character.body_markings = body_markings
+	character.grad_color = grad_color
+	character.grad_style = grad_style
 
 	QDEL_NULL_LIST(character.worn_underwear)
 	character.worn_underwear = list()
@@ -259,8 +261,11 @@
 		character.nutrition = rand(250, 450)
 
 	for(var/options_name in setup_options)
+		if(!get_option(options_name))
+			continue
 		get_option(options_name).apply(character)
 
+	character.size_multiplier = size_multiplier
 
 /datum/preferences/proc/open_load_dialog(mob/user)
 	var/dat  = list()

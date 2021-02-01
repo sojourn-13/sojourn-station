@@ -277,6 +277,8 @@ var/global/list/wings_icon_cache = list()
 
 			for(var/obj/item/organ/external/part in organs)
 				var/icon/temp = part.get_icon(skeleton)
+				if(!temp)
+					continue
 				//That part makes left and right legs drawn topmost and lowermost when human looks WEST or EAST
 				//And no change in rendering for other parts (they icon_position is 0, so goes to 'else' part)
 				if(part.icon_position&(LEFT|RIGHT))
@@ -373,11 +375,18 @@ var/global/list/wings_icon_cache = list()
 			face_standing.Blend(facial_s, ICON_OVERLAY)
 
 	if(h_style && !(head && (head.flags_inv & BLOCKHEADHAIR)))
+		var/icon/grad_s = null
 		var/datum/sprite_accessory/hair/hair_style = GLOB.hair_styles_list[h_style]
 		if(hair_style && (src.species.get_bodytype() in hair_style.species_allowed))
 			var/icon/hair_s = new/icon(hair_style.icon, hair_style.icon_state)
+			if(grad_style)
+				grad_s = new/icon("icon" = 'icons/mob/hair_gradients.dmi', "icon_state" = hair_gradients_list[grad_style])
+				grad_s.Blend(hair_s, ICON_AND)
+				grad_s.Blend(grad_color, ICON_ADD)
 			if(hair_style.colored_layers)
 				hair_s.Blend(hair_color, ICON_ADD)
+				if(!isnull(grad_s))
+					hair_s.Blend(grad_s, ICON_OVERLAY)
 
 			face_standing.Blend(hair_s, ICON_OVERLAY)
 
@@ -886,6 +895,7 @@ mob/living/carbon/human/proc/get_wings_image()
 
 /mob/living/carbon/human/update_inv_head(var/update_icons=1)
 	overlays_standing[HEAD_LAYER]	= null
+	update_ears(update_icons)
 	if(head)
 		var/image/standing = null
 		//Determine the icon to use
@@ -968,7 +978,8 @@ mob/living/carbon/human/proc/get_wings_image()
 
 
 /mob/living/carbon/human/update_inv_wear_suit(var/update_icons=1)
-
+	update_tail(update_icons)
+	update_wings(update_icons)
 	if( wear_suit && istype(wear_suit, /obj/item/) )
 		var/image/standing
 		var/t_icon = form.get_mob_icon("suit")
@@ -1396,8 +1407,6 @@ mob/living/carbon/human/proc/get_wings_image()
 #undef LEGCUFF_LAYER
 #undef L_HAND_LAYER
 #undef R_HAND_LAYER
-#undef TARGETED_LAYER
 #undef FIRE_LAYER
-#undef CUSTOM_WING_LAYER
 #undef CUSTOM_TAIL_LAYER_ALT
 #undef TOTAL_LAYERS

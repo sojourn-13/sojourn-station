@@ -28,8 +28,12 @@
 	var/turns_per_move = 1
 	var/turns_since_move = 0
 	universal_speak = 0		//No, just no.
+
+	//Meat/harvest vars
 	var/meat_amount = 1
 	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat //all mobs now can be butchered into meat
+	var/blood_from_harvest = /obj/effect/decal/cleanable/blood/splatter
+
 	var/stop_automated_movement = FALSE //Use this to temporarely stop random movement or to if you write special movement code for animals.
 	var/wander = TRUE	// Does the mob wander around when idle?
 	var/stop_automated_movement_when_pulled = TRUE //When set to 1 this stops the animal from moving when someone is pulling it.
@@ -116,13 +120,13 @@
 
 	verbs -= /mob/verb/observe
 
-	if (mob_size)
+	if(mob_size)
 		nutrition_step = mob_size * 0.03 * metabolic_factor
 		bite_factor = mob_size * 0.1
 		max_nutrition *= 1 + (nutrition_step*4)//Max nutrition scales faster than costs, so bigger creatures eat less often
-		reagents = new/datum/reagents(stomach_size_mult*mob_size, src)
+		create_reagents(stomach_size_mult*mob_size)
 	else
-		reagents = new/datum/reagents(20, src)
+		create_reagents(20)
 
 /mob/living/simple_animal/Move(NewLoc, direct)
 	. = ..()
@@ -169,16 +173,16 @@
 		to_chat(user, SPAN_WARNING("It looks wounded."))
 
 /mob/living/simple_animal/Life()
-	..()
+	.=..()
 
 	if(!stasis)
 
-		if(stat == DEAD)
-			return 0
+		if(!.)
+			return FALSE
 
 		if(health <= 0)
 			death()
-			return
+			return FALSE
 
 		if(health > maxHealth)
 			health = maxHealth
@@ -252,7 +256,7 @@
 					speak_audio()
 
 			if(incapacitated())
-				return 1
+				return TRUE
 
 			//Movement
 			turns_since_move++
@@ -266,7 +270,7 @@
 							step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS))
 							turns_since_move = 0
 
-	return 1
+	return TRUE
 
 /mob/living/simple_animal/proc/visible_emote(message)
 	if(islist(message))
@@ -326,7 +330,7 @@
 	if(!Proj || Proj.nodamage)
 		return
 
-	adjustBruteLoss(Proj.damage)
+	adjustBruteLoss(Proj.get_total_damage())
 	return 0
 
 /mob/living/simple_animal/rejuvenate()
@@ -455,6 +459,10 @@
 		var/obj/machinery/bot/B = target_mob
 		if(B.health > 0)
 			return (0)
+	if (istype(target_mob,/obj/machinery/porta_turret))
+		var/obj/machinery/porta_turret/P = target_mob
+		if(P.health > 0)
+			return (0)
 	return 1
 
 /mob/living/simple_animal/get_speech_ending(verb, var/ending)
@@ -473,7 +481,7 @@
 			meat.name = "[src.name] [meat.name]"
 		if(issmall(src))
 			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
-			new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+			new blood_from_harvest(get_turf(src))
 			qdel(src)
 		else
 			user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))

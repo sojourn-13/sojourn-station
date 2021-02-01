@@ -10,8 +10,22 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	fire_sound = 'sound/weapons/Gunshot_light.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
-	price_tag = 500 //cheap civ peashooter revolver, something similar to olivav
+	price_tag = 250 //cheap civ peashooter revolver, something similar to olivav
 	damage_multiplier = 1.15 //because pistol round
 	penetration_multiplier = 1.2
-	recoil_buildup = 18
-	one_hand_penalty = 15
+	recoil_buildup = 16
+	one_hand_penalty = 12
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
+
+/obj/item/weapon/gun/projectile/revolver/detective/update_icon()
+	..()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
+	icon_state = iconstring
+	set_item_state(itemstring)

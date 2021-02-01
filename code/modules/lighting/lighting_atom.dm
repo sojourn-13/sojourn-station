@@ -59,6 +59,18 @@
 		light = null
 	return ..()
 
+/atom/movable/New()
+	. = ..()
+
+	if(opacity && isturf(loc))
+		var/turf/T = loc
+		T.reconsider_lights()
+
+	if(istype(loc, /turf/simulated/open))
+		var/turf/simulated/open/open = loc
+		if(open.isOpen())
+			open.fallThrough(src)
+
 /atom/movable/Destroy()
 	var/turf/T = loc
 	if(opacity && istype(T))

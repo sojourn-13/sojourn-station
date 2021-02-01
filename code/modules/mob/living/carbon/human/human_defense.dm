@@ -13,10 +13,10 @@ meteor_act
 	if(!has_organ(def_zone))
 		return PROJECTILE_FORCE_MISS //if they don't have the organ in question then the projectile just passes by.
 
-	var/obj/item/organ/external/organ = get_organ()
+	var/obj/item/organ/external/organ = get_organ(def_zone)
 
 	//Shields
-	var/shield_check = check_shields(P.damage, P, null, def_zone, "the [P.name]")
+	var/shield_check = check_shields(P.get_structure_damage(), P, null, def_zone, "the [P.name]")
 	if(shield_check)
 		if(shield_check < 0)
 			return shield_check
@@ -31,7 +31,7 @@ meteor_act
 	//Shrapnel
 	if(P.can_embed() && (check_absorb < 2))
 		var/armor = getarmor_organ(organ, ARMOR_BULLET)
-		if(prob(10 + max(P.damage - armor, -10)))
+		if(prob(20 + max(P.damage_types[BRUTE] - armor, -10)))
 			var/obj/item/weapon/material/shard/shrapnel/SP = new()
 			SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
 			SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
@@ -157,11 +157,15 @@ meteor_act
 	if(!type || !def_zone) return 0
 	var/protection = 0
 	var/list/protective_gear = list(head, wear_mask, wear_suit, w_uniform, gloves, shoes)
+	if(def_zone.armor)
+		if(def_zone.armor.getRating(type) > protection)
+			protection = def_zone.armor.getRating(type)
 	for(var/gear in protective_gear)
 		if(gear && istype(gear ,/obj/item/clothing))
 			var/obj/item/clothing/C = gear
-			if(istype(C) && C.body_parts_covered & def_zone.body_part)
-				protection += C.armor[type]
+			if(istype(C) && C.body_parts_covered & def_zone.body_part && C.armor)
+				if(C.armor.vars[type] > protection)
+					protection = C.armor.vars[type]
 	return protection
 
 /mob/living/carbon/human/proc/check_head_coverage()
@@ -255,7 +259,7 @@ meteor_act
 					apply_effect(6, WEAKEN, getarmor(hit_zone, ARMOR_MELEE) )
 
 		//Apply blood
-		if(!(I.flags & NOBLOODY))
+		if(!((I.flags & NOBLOODY)||(I.item_flags & NOBLOODY)))
 			I.add_blood(src)
 
 		if(prob(33 + I.sharp * 10))

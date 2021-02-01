@@ -8,6 +8,7 @@
 	},
 /obj/machinery/light/floor,
 /obj/item/remains/human,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "ac" = (
@@ -42,7 +43,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/modular_computer/console,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "ai" = (
@@ -54,6 +55,7 @@
 	},
 /obj/machinery/light/floor,
 /obj/item/remains/human,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "aj" = (
@@ -68,6 +70,7 @@
 	dir = 1
 	},
 /obj/structure/bed/chair/office/dark,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "al" = (
@@ -110,6 +113,7 @@
 /obj/structure/table/onestar,
 /obj/machinery/light/floor,
 /obj/item/weapon/storage/lunchbox/rainbow,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "ap" = (
@@ -248,9 +252,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/modular_computer/console{
-	dir = 4
-	},
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "aF" = (
@@ -366,13 +368,15 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/bed/chair/office/dark,
-/obj/item/weapon/lipstick/black,
-/turf/simulated/floor/tiled/dark/brown_platform,
+/obj/structure/table/onestar,
+/obj/item/device/lighting/toggleable/lamp,
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "aS" = (
 /obj/structure/table/onestar,
 /obj/item/weapon/phone,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "aT" = (
@@ -383,9 +387,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/modular_computer/console{
-	dir = 8
-	},
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "aV" = (
@@ -404,6 +406,7 @@
 	},
 /obj/structure/table/onestar,
 /obj/item/weapon/stamp/denied,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "aY" = (
@@ -469,7 +472,7 @@ aA
 al
 aE
 aH
-ag
+aR
 aa
 "}
 (3,1,1) = {"
@@ -486,7 +489,7 @@ aa
 (4,1,1) = {"
 ac
 ab
-aR
+ap
 aM
 ae
 aF

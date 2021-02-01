@@ -63,7 +63,7 @@
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 100, bullet = 100, laser = 100,energy = 100, bomb = 100, bio = 100, rad = 100)
+	armor = list(melee = 100, bullet = 100, energy = 100, bomb = 100, bio = 100, rad = 100)
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0
@@ -74,6 +74,12 @@
 	name = "loincloth"
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
+
+/obj/item/clothing/under/monomial_belt
+	name = "monomial belt"
+	desc = "A simple black loin cloth with a dark gold trim favored by monomials for its monk-like aesthetic. For when you need to show off your muscles in the name of god."
+	icon_state = "mono_belt"
+	item_state = "mono_belt"
 
 /*Antagonist Spawn Gear*/
 
@@ -110,7 +116,7 @@
 	icon_state = "serbiansuit"
 	item_state = "bl_suit"
 	has_sensor = 0
-	price_tag = 200
+	price_tag = 100
 
 /obj/item/clothing/under/serbiansuit/brown
 	name = "brown battle dress"
@@ -218,6 +224,30 @@
 	icon_state = "gorka_crew_sci"
 	item_state = "gorka_crew_sci"
 
+obj/item/clothing/under/genericb
+	name = "blue generic outfit"
+	desc = "A simple blue shirt with brown pants."
+	icon_state = "genericb"
+	item_state = "genericb"
+
+obj/item/clothing/under/genericw
+	name = "white generic outfit"
+	desc = "A simple white shirt with grey pants."
+	icon_state = "genericw"
+	item_state = "genericw"
+
+obj/item/clothing/under/genericr
+	name = "red generic outfit"
+	desc = "A simple red shirt with black pants."
+	icon_state = "genericr"
+	item_state = "genericr"
+
+/obj/item/clothing/under/iron_lock_security
+	name = "Iron Lock Security Uniform"
+	desc = "An outdated uniform of a now extinct corporation \"Iron Lock Security\". A private security firm that got its start centuries ago subcontracted by Greyson Positronics before being phased out."
+	icon_state = "northtech"
+	has_sensor = 0
+
 //Excelsior
 /obj/item/clothing/under/excelsior
 	name = "white excelsior jumpsuit"
@@ -240,6 +270,14 @@
 	item_state = "bl_suit"
 	has_sensor = 0
 
+/obj/item/clothing/under/excelsior/officer
+	name = "officer excelsior jumpsuit"
+	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution; made specifically for commissars."
+	icon_state = "excelsior_officer"
+	item_state = "bl_suit"
+	has_sensor = 0
+
+//Dresses
 /obj/item/clothing/under/dress
 	name = "gray summerdress"
 	desc = "Gray summerdress only worn by the bravest individuals in the cold of space."
@@ -287,3 +325,27 @@
 	desc = "I wanted a jumpsuit. It gave me THIS."
 	icon_state = "cyber"
 	item_state = "cyber"
+
+obj/item/clothing/under/neon
+	name = "green neon tracksuit"
+	desc = "A tracksuit lined with green neon fibers. Slightly luminescent."
+	icon_state = "neon"
+	item_state = "bl_suit"
+
+obj/item/clothing/under/neon/yellow
+	name = "yellow neon tracksuit"
+	desc = "A tracksuit lined with yellow neon fibers. Slightly luminescent."
+	icon_state = "neony"
+	item_state = "bl_suit"
+
+obj/item/clothing/under/neon/blue
+	name = "blue neon tracksuit"
+	desc = "A tracksuit lined with blue neon fibers. Slightly luminescent."
+	icon_state = "neonb"
+	item_state = "bl_suit"
+
+obj/item/clothing/under/neon/red
+	name = "red neon tracksuit"
+	desc = "A tracksuit lined with red neon fibers. Slightly luminescent."
+	icon_state = "neonr"
+	item_state = "bl_suit"

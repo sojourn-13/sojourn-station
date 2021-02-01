@@ -3,25 +3,28 @@
 /obj/machinery/bioprinter
 	name = "organ bioprinter"
 	desc = "It's a machine that grows replacement organs."
-	icon = 'icons/obj/surgery.dmi'
 
-	anchored = 1
-	density = 1
-	use_power = 1
+	anchored = TRUE
+	density = TRUE
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
 
 	icon_state = "bioprinter"
+	icon = 'icons/obj/surgery.dmi'
 
 	var/prints_prosthetics
 	var/stored_matter = 0
 	var/max_matter = 300
 	var/loaded_dna //Blood sample for DNA hashing.
 	var/list/products = list(
-		BP_HEART =   list(/obj/item/organ/internal/heart,  50),
-		BP_LUNGS =   list(/obj/item/organ/internal/lungs,  40),
-		BP_KIDNEYS = list(/obj/item/organ/internal/kidneys,20),
-		BP_EYES =    list(/obj/item/organ/internal/eyes,   30),
-		BP_LIVER =   list(/obj/item/organ/internal/liver,  50)
+		OP_HEART =  		list(/obj/item/organ/internal/heart,  50),
+		OP_LUNGS =  		list(/obj/item/organ/internal/lungs,  40),
+		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney, 20),
+		OP_EYES =    		list(/obj/item/organ/internal/eyes,   30),
+		OP_LIVER =   		list(/obj/item/organ/internal/liver,  50),
+		OP_BLOOD_VESSEL =    	list(/obj/item/organ/internal/blood_vessel,  10),
+		OP_MUSCLE  =    	list(/obj/item/organ/internal/muscle,  20),
+		OP_NERVE  =	    	list(/obj/item/organ/internal/nerve,  10)
 		)
 
 /obj/machinery/bioprinter/prosthetics
@@ -29,16 +32,23 @@
 	desc = "It's a machine that prints prosthetic organs."
 	prints_prosthetics = 1
 
+/obj/machinery/bioprinter/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>Levels of stored biomass: [stored_matter]</span>")
+
 /obj/machinery/bioprinter/New()
 	..()
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		stored_matter = 200
 	products = list(
-		BP_HEART =   list(/obj/item/organ/internal/heart/prosthetic,  50),
-		BP_LUNGS =   list(/obj/item/organ/internal/lungs/prosthetic,  40),
-		BP_KIDNEYS = list(/obj/item/organ/internal/kidneys/prosthetic,20),
-		BP_EYES =    list(/obj/item/organ/internal/eyes/prosthetic,   30),
-		BP_LIVER =   list(/obj/item/organ/internal/liver/prosthetic,  50)
+		OP_HEART =   		list(/obj/item/organ/internal/heart,  50),
+		OP_LUNGS =   		list(/obj/item/organ/internal/lungs,  40),
+		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney, 20),
+		OP_EYES =   		list(/obj/item/organ/internal/eyes,   30),
+		OP_LIVER =   		list(/obj/item/organ/internal/liver,  50),
+		OP_BLOOD_VESSEL =    	list(/obj/item/organ/internal/blood_vessel,  10),
+		OP_MUSCLE  =    	list(/obj/item/organ/internal/muscle,  20),
+		OP_NERVE  =	    	list(/obj/item/organ/internal/nerve,  10)
 		)
 
 

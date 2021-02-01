@@ -51,7 +51,7 @@ var/list/holder_mob_icon_cache = list()
 	reagents = null
 	STOP_PROCESSING(SSprocessing, src)
 	if (contained)
-		release_mob()
+		release_mob(FALSE)
 	return ..()
 
 /obj/item/weapon/holder/examine(mob/user)
@@ -95,7 +95,7 @@ var/list/holder_mob_icon_cache = list()
 //is_unsafe_container should be checked before calling this
 //This function releases mobs into wherever the holder currently is. Its not safe to call from a lot of places
 //Use release_to_floor for a simple, safe release
-/obj/item/weapon/holder/proc/release_mob()
+/obj/item/weapon/holder/proc/release_mob(var/des_self = TRUE)
 	for(var/mob/living/M in contents)
 		var/atom/movable/mob_container
 		mob_container = M
@@ -104,7 +104,8 @@ var/list/holder_mob_icon_cache = list()
 		M.Released()
 
 	contained = null
-	qdel(src)
+	if(des_self)
+		qdel(src)
 
 //Similar to above function, but will not deposit things in any container, only directly on a turf.
 //Can be called safely anywhere. Notably on holders held or worn on a mob
@@ -545,7 +546,7 @@ var/list/holder_mob_icon_cache = list()
 
 //Holders for mice
 /obj/item/weapon/holder/mouse
-	name = "mouse"
+	name = "rat"
 	desc = "It's a fuzzy little critter."
 	desc_dead = "It's filthy vermin, throw it in the trash."
 	icon = 'icons/mob/mobs-mouse.dmi'
@@ -571,6 +572,16 @@ var/list/holder_mob_icon_cache = list()
 	icon_state = "mouse_brown_sleep"
 	item_state = "mouse_brown"
 	icon_state_dead = "mouse_brown_dead"
+
+/obj/item/weapon/holder/mouse/hooded
+	icon_state = "mouse_hooded_sleep"
+	item_state = "mouse_hooded"
+	icon_state_dead = "mouse_hooded_dead"
+
+/obj/item/weapon/holder/mouse/irish
+	icon_state = "mouse_irish_sleep"
+	item_state = "mouse_irish"
+	icon_state_dead = "mouse_irish_dead"
 
 
 /obj/item/weapon/holder/GetIdCard()

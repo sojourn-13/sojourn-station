@@ -89,9 +89,10 @@
 	name = "grab"
 
 /obj/screen/grab/Click()
-	var/obj/item/weapon/grab/G = master
-	G.s_click(src)
-	return TRUE
+	if(master)
+		var/obj/item/weapon/grab/G = master
+		G.s_click(src)
+		return TRUE
 
 /obj/screen/grab/attack_hand()
 	return
@@ -1331,7 +1332,7 @@ obj/screen/fire/DEADelize()
 /obj/screen/toggle_invetory
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "b-open"
-	name = "toggle invetory"
+	name = "toggle inventory"
 	screen_loc = "1,0"
 
 /obj/screen/toggle_invetory/proc/hideobjects()

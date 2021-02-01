@@ -10,34 +10,30 @@
 
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
-	desc = "A pair of standard-issue jackboots typically worn by security personnel."
+	desc = "A pair of standard-issue jackboots typically worn by people who need to stomp things."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	force = WEAPON_FORCE_HARMLESS
-	armor = list(
-		melee = 20,
-		bullet = 10,
-		energy = 10,
-		bomb = 10,
-		bio = 0,
-		rad = 0
-	)
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 25, rad = 0)
 	siemens_coefficient = 0.6
 	can_hold_knife = 1
+
+/obj/item/clothing/shoes/jackboots/german
+	name = "brown jackboots"
+	desc = "A pair of standard-issue jackboots typically worn by people who need to stomp things. These ones are brown."
+	icon_state = "germanboots"
+
+/obj/item/clothing/shoes/jackboots/laced_jackboots
+	name = "laced jackboots"
+	desc = "Old military boots designed to make look you tacticool."
+	icon_state = "laced_jackboots"
 
 /obj/item/clothing/shoes/reinforced
 	name = "reinforced boots"
 	desc = "A pair of metallic boots designed for industrial environments."
 	icon_state = "reinforced"
 	item_state = "reinforced"
-	armor = list(
-		melee = 20,
-		bullet = 10,
-		energy = 10,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 
 /obj/item/clothing/shoes/reinforced/medical
@@ -51,14 +47,7 @@
 	desc = "A pair of steel-toed utility workboots."
 	icon_state = "workboots"
 	item_state = "workboots"
-	armor = list(
-		melee = 20,
-		bullet = 10,
-		energy = 10,
-		bomb = 10,
-		bio = 0,
-		rad = 25
-	)
+	armor = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	can_hold_knife = 1
 
@@ -83,3 +72,9 @@
 	desc = "A modified pair of workboots, designed for species with clawed feet."
 	icon_state = "workbootstoeless"
 	species_restricted = null
+
+/obj/item/clothing/shoes/artist_shoes
+	name = "Pointy Shoes"
+	desc = "They're actually quite comfortable."
+	icon_state = "artist"
+	item_state = "artist_shoes"

@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/biogoop/surgical
-	name = "incomplete organic muscle augments"
+	name = "incomplete organic surgical augment"
 
 
 /obj/item/weapon/biogoop/surgical/attackby(obj/item/I, mob/user)

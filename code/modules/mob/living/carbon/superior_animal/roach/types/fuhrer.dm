@@ -8,6 +8,7 @@
 	maxHealth = 200
 	health = 200
 
+	knockdown_odds = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 30
 	move_to_delay = 8
@@ -42,6 +43,12 @@ flood into this room and surrounding ones.
 Each leader can only call reinforcements once in its life. But it can also sound an evacuation once. If it has no
 reinforcements left it will attempt to evacuate*/
 /mob/living/carbon/superior_animal/roach/fuhrer/proc/distress_call()
+	if(stat != CONSCIOUS) // if the roach is conscious
+		return
+
+	if(stat != AI_inactive)
+		return
+
 	if (!distress_calls && !retreat_calls)
 		return
 

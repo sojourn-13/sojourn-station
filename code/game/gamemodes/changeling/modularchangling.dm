@@ -1,221 +1,122 @@
-var/list/powers = typesof(/datum/power/changeling) - /datum/power/changeling	//needed for the badmin verb for now
-var/list/datum/power/changeling/powerinstances = list()
+var/list/powers = subtypesof(/datum/power/carrion)	//needed for the badmin verb for now
+var/list/datum/power/carrion/powerinstances = list()
 
 /datum/power //Could be used by other antags too
 	var/name = "Power"
 	var/desc = "Placeholder"
 	var/helptext = ""
-	var/isVerb = 1 // Is it an active power, or passive?
-	var/verbpath // Path to a verb that contains the effects.
 
-/datum/power/changeling
-	var/allowduringlesserform = 0
-	var/genomecost = 500000 // Cost for the changling to evolve this power.
+/datum/power/carrion
+	var/genomecost = 500000 // Cost for the carrion to evolve this power.
+	var/organpath //Path to the organ that is getting evolved.
+	var/spiderpath //The path of the spider we spawn.
 
-/datum/power/changeling/absorb_dna
-	name = "Absorb DNA"
-	desc = "Permits us to syphon the DNA from a human. They become one with us, and we become stronger."
-	genomecost = 0
-	verbpath = /mob/proc/changeling_absorb_dna
+/datum/power/carrion/flashbang_spider
+	name = "Flashbang spider"
+	desc = "Creates a spider filled with a strange substance that when activated explodes in a flash of light. Does minor damage to its host."
+	genomecost = 5
+	spiderpath = /obj/item/weapon/implant/carrion_spider/flashbang
 
-/datum/power/changeling/transform
-	name = "Transform"
-	desc = "We take on the apperance and voice of one we have absorbed."
-	genomecost = 0
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_transform
-
-/datum/power/changeling/fakedeath
-	name = "Regenerative Stasis"
-	desc = "We become weakened to a death-like state, where we will rise again from death."
-	helptext = "Can be used before or after death. Duration varies greatly."
-	genomecost = 0
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_fakedeath
-
-// Hivemind
-
-/datum/power/changeling/hive_upload
-	name = "Hive Channel"
-	desc = "We can channel a DNA into the airwaves, allowing our fellow changelings to absorb it and transform into it as if they acquired the DNA themselves."
-	helptext = "Allows other changelings to absorb the DNA you channel from the airwaves. Will not help them towards their absorb objectives."
-	genomecost = 0
-	verbpath = /mob/proc/changeling_hiveupload
-
-/datum/power/changeling/hive_download
-	name = "Hive Absorb"
-	desc = "We can absorb a single DNA from the airwaves, allowing us to use more disguises with help from our fellow changelings."
-	helptext = "Allows you to absorb a single DNA and use it. Does not count towards your absorb objective."
-	genomecost = 0
-	verbpath = /mob/proc/changeling_hivedownload
-
-/datum/power/changeling/lesser_form
-	name = "Lesser Form"
-	desc = "We debase ourselves and become lesser.  We become a monkey."
-	genomecost = 4
-	verbpath = /mob/proc/changeling_lesser_form
-
-/datum/power/changeling/deaf_sting
-	name = "Deaf Sting"
-	desc = "We silently sting a human, completely deafening them for a short time."
-	genomecost = 1
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_prepare_deaf_sting
-
-/datum/power/changeling/blind_sting
-	name = "Blind Sting"
-	desc = "We silently sting a human, completely blinding them for a short time."
-	genomecost = 2
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_prepare_blind_sting
-
-/datum/power/changeling/silence_sting
-	name = "Silence Sting"
-	desc = "We silently sting a human, completely silencing them for a short time."
-	helptext = "Does not provide a warning to a victim that they have been stung, until they try to speak and cannot."
-	genomecost = 3
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_prepare_silence_sting
-
-/datum/power/changeling/mimicvoice
-	name = "Mimic Voice"
-	desc = "We shape our vocal glands to sound like a desired voice."
-	helptext = "Will turn your voice into the name that you enter. We must constantly expend chemicals to maintain our form like this"
-	genomecost = 1
-	verbpath = /mob/proc/changeling_mimicvoice
-
-/datum/power/changeling/extractdna
-	name = "Extract DNA"
-	desc = "We stealthily sting a target and extract the DNA from them."
-	helptext = "Will give you the DNA of your target, allowing you to transform into them. Does not count towards absorb objectives."
-	genomecost = 2
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_prepare_extract_dna_sting
-
-/datum/power/changeling/transformation_sting
-	name = "Transformation Sting"
-	desc = "We silently sting a human, injecting a retrovirus that forces them to transform into another."
-	helptext = "Does not provide a warning to others. The victim will transform much like a changeling would."
-	genomecost = 3
-	verbpath = /mob/proc/changeling_prepare_transformation_sting
-
-/datum/power/changeling/paralysis_sting
-	name = "Paralysis Sting"
-	desc = "We silently sting a human, paralyzing them for a short time."
-	genomecost = 8
-	verbpath = /mob/proc/changeling_prepare_paralysis_sting
-
-/datum/power/changeling/LSDSting
-	name = "Hallucination Sting"
-	desc = "We evolve the ability to sting a target with a powerful hallunicationary chemical."
-	helptext = "The target does not notice they have been stung.  The effect occurs after 30 to 60 seconds."
-	genomecost = 3
-	verbpath = /mob/proc/changeling_prepare_lsdsting
-
-/datum/power/changeling/DeathSting
-	name = "Death Sting"
-	desc = "We silently sting a human, filling them with potent chemicals. Their rapid death is all but assured."
+/datum/power/carrion/control_spider
+	name = "Control spider"
+	desc = "Creates a mind controling spider with a neural link to you, giving you the abilty to control the host, but also making you feel any trauma the host has, and than some."
 	genomecost = 10
-	verbpath = /mob/proc/changeling_prepare_DEATHsting
+	spiderpath = /obj/item/weapon/implant/carrion_spider/control
 
-///datum/power/changeling/unfat_sting
-//	name = "Unfat Sting"
-//	desc = "We silently sting a human, forcing them to rapidly metabolize their fat."
-//	genomecost = 1
-//	verbpath = /mob/proc/changeling_prepare_unfat_sting()
+/datum/power/carrion/infection_spider
+	name = "Infection spider"
+	desc = "Creates a miniature spider, with spider core inside it capable of making more carrions."
+	helptext = "Requires 7 evolution points to produce."
+	genomecost = 0
+	spiderpath = /obj/item/weapon/implant/carrion_spider/infection
 
-/datum/power/changeling/boost_range
-	name = "Boost Range"
-	desc = "We evolve the ability to shoot our stingers at humans, with some preperation."
-	genomecost = 2
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_boost_range
-
-/datum/power/changeling/Epinephrine
-	name = "Epinephrine sacs"
-	desc = "We evolve additional sacs of adrenaline throughout our body."
-	helptext = "Gives the ability to instantly recover from stuns.  High chemical cost."
-	genomecost = 3
-	verbpath = /mob/proc/changeling_unstun
-
-/datum/power/changeling/ChemicalSynth
-	name = "Rapid Chemical-Synthesis"
-	desc = "We evolve new pathways for producing our necessary chemicals, permitting us to naturally create them faster."
-	helptext = "Doubles the rate at which we naturally recharge chemicals."
+/datum/power/carrion/healing_spider
+	name = "Healing spider"
+	desc = "Evolves a spider filled with a mixture of medicinal chemicals."
 	genomecost = 4
-	isVerb = 0
-	verbpath = /mob/proc/changeling_fastchemical
+	spiderpath = /obj/item/weapon/implant/carrion_spider/healing
+
+/datum/power/carrion/breeding_spider
+	name = "Breeding spider"
+	desc = "Creates a spider carrying eggs, when it will be put inside a dead host and activated, the eggs will give birth to many lesser ones of your kin."
+	genomecost = 4
+	spiderpath = /obj/item/weapon/implant/carrion_spider/breeding
+
+/datum/power/carrion/explosive_spider
+	name = "Explosive spider"
+	desc = "Creates an expensive spider that makes a small explosion."
+	genomecost = 10
+	spiderpath = /obj/item/weapon/implant/carrion_spider/explosive
+
+/datum/power/carrion/toxic_spider
+	name = "Toxin bomb spider"
+	desc = "Creates a spider filled with dangerous lexorin gas, explodes on activation."
+	genomecost = 5
+	spiderpath = /obj/item/weapon/implant/carrion_spider/toxicbomb
 /*
-/datum/power/changeling/AdvChemicalSynth
-	name = "Advanced Chemical-Synthesis"
-	desc = "We evolve new pathways for producing our necessary chemicals, permitting us to naturally create them faster."
-	helptext = "Doubles the rate at which we naturally recharge chemicals."
-	genomecost = 8
-	isVerb = 0
-	verbpath = /mob/proc/changeling_fastchemical
+/datum/power/carrion/mindboil_spider
+	name = "Mindboil spider"
+	desc = "Creates a horrible spider able to drive everyone around him insane."
+	helptext = "Used to complete derail contracts"
+	genomecost = 5
+	spiderpath = /obj/item/weapon/implant/carrion_spider/mindboil
 */
-/datum/power/changeling/EngorgedGlands
-	name = "Engorged Chemical Glands"
-	desc = "Our chemical glands swell, permitting us to store more chemicals inside of them."
-	helptext = "Allows us to store an extra 25 units of chemicals."
-	genomecost = 4
-	isVerb = 0
-	verbpath = /mob/proc/changeling_engorgedglands
+/datum/power/carrion/observer_spider
+	name = "Observer spider"
+	desc = "Creates a spider with a large monocular eye, useful for spying on others."
+	helptext = "Used to complete recon contracts"
+	genomecost = 3
+	spiderpath = /obj/item/weapon/implant/carrion_spider/observer
 
-/datum/power/changeling/DigitalCamoflague
-	name = "Digital Camoflauge"
-	desc = "We evolve the ability to distort our form and proprtions, defeating common altgorthms used to detect lifeforms on cameras."
-	helptext = "We cannot be tracked by camera while using this skill.  However, humans looking at us will find us.. uncanny.  We must constantly expend chemicals to maintain our form like this."
-	genomecost = 1
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_digitalcamo
+/datum/power/carrion/identity_spider
+	name = "Idenitity spider"
+	desc = "Creates a spider with the ability to extract and transmit human DNA to you."
+	genomecost = 3
+	spiderpath = /obj/item/weapon/implant/carrion_spider/identity
 
-/datum/power/changeling/rapidregeneration
-	name = "Rapid Regeneration"
-	desc = "We evolve the ability to rapidly regenerate, negating the need for stasis."
-	helptext = "Heals a moderate amount of damage every tick."
+/datum/power/carrion/maw
+	name = "Carrion Maw"
+	desc = "Unlocks and expands your jaw, giving you the ability to spit acid and call upon spiders."
+	genomecost = 0
+	organpath = /obj/item/organ/internal/carrion/maw
+
+/datum/power/carrion/spinneret
+	name = "Carrion Spinneret"
+	desc = "Grows a spinneret inside your lower body, making you able to create a spider nest and filter your blood from all chemicals."
 	genomecost = 7
-	verbpath = /mob/proc/changeling_rapidregen
+	organpath = /obj/item/organ/internal/carrion/spinneret
 
+/datum/power/carrion/chemvessel
+	name = "Chemical Vessel"
+	desc = "Grows a chemical vessel that stores and produces chemicals needed for your abilities."
+	genomecost = 0
+	organpath = /obj/item/organ/internal/carrion/chemvessel
 
-
-// Modularchangling, totally stolen from the new player panel.  YAYY
-/datum/changeling/proc/EvolutionMenu()//The new one
-	set category = "Changeling"
+/obj/item/organ/internal/carrion/core/proc/EvolutionMenu()	//Topic proc is stored in code\modules\organs\internal\carrion.dm
+	set category = "Carrion"
 	set desc = "Level up!"
-
-	if(!usr || !usr.mind || !usr.mind.changeling)	return
-	src = usr.mind.changeling
 
 	if(!powerinstances.len)
 		for(var/P in powers)
 			powerinstances += new P()
 
-	var/dat = "<html><head><title>Changling Evolution Menu</title></head>"
+	var/dat = "<html><head><title>Carrion Evolution Menu</title></head>"
 
-	//javascript, the part that does most of the work~
+	//javascript, the part that does most of the work
 	dat += {"
-
 		<head>
 			<script type='text/javascript'>
-
 				var locked_tabs = new Array();
-
 				function updateSearch(){
-
-
 					var filter_text = document.getElementById('filter');
 					var filter = filter_text.value.toLowerCase();
-
 					if(complete_list != null && complete_list != ""){
 						var mtbl = document.getElementById("maintable_data_archive");
 						mtbl.innerHTML = complete_list;
 					}
-
 					if(filter.value == ""){
 						return;
 					}else{
-
 						var maintable_data = document.getElementById('maintable_data');
 						var ltr = maintable_data.getElementsByTagName("tr");
 						for ( var i = 0; i < ltr.length; ++i )
@@ -241,71 +142,45 @@ var/list/datum/power/changeling/powerinstances = list()
 							}catch(err) {   }
 						}
 					}
-
 					var count = 0;
 					var index = -1;
 					var debug = document.getElementById("debug");
-
 					locked_tabs = new Array();
-
 				}
-
 				function expand(id,name,desc,helptext,power,ownsthis){
-
 					clearAll();
-
 					var span = document.getElementById(id);
-
 					body = "<table><tr><td>";
-
 					body += "</td><td align='center'>";
-
 					body += "<font size='2'><b>"+desc+"</b></font> <BR>"
-
 					body += "<font size='2'><font color = 'red'><b>"+helptext+"</b></font></font><BR>"
-
 					if(!ownsthis)
 					{
 						body += "<a href='?src=\ref[src];P="+power+"'>Evolve</a>"
 					}
-
 					body += "</td><td align='center'>";
-
 					body += "</td></tr></table>";
-
-
 					span.innerHTML = body
 				}
-
 				function clearAll(){
 					var spans = document.getElementsByTagName('span');
 					for(var i = 0; i < spans.length; i++){
 						var span = spans\[i\];
-
 						var id = span.getAttribute("id");
-
 						if(!(id.indexOf("item")==0))
 							continue;
-
 						var pass = 1;
-
 						for(var j = 0; j < locked_tabs.length; j++){
 							if(locked_tabs\[j\]==id){
 								pass = 0;
 								break;
 							}
 						}
-
 						if(pass != 1)
 							continue;
-
-
-
-
 						span.innerHTML = "";
 					}
 				}
-
 				function addToLocked(id,link_id,notice_span_id){
 					var link = document.getElementById(link_id);
 					var decision = link.getAttribute("name");
@@ -316,7 +191,6 @@ var/list/datum/power/changeling/powerinstances = list()
 						removeFromLocked(id,link_id,notice_span_id);
 						return;
 					}
-
 					var pass = 1;
 					for(var j = 0; j < locked_tabs.length; j++){
 						if(locked_tabs\[j\]==id){
@@ -333,11 +207,9 @@ var/list/datum/power/changeling/powerinstances = list()
 					//document.write("removeFromLocked('"+id+"','"+link_id+"','"+notice_span_id+"')");
 					//document.write("aa - "+link.getAttribute("onClick"));
 				}
-
 				function attempt(ab){
 					return ab;
 				}
-
 				function removeFromLocked(id,link_id,notice_span_id){
 					//document.write("a");
 					var index = 0;
@@ -357,17 +229,13 @@ var/list/datum/power/changeling/powerinstances = list()
 					//var link = document.getElementById(link_id);
 					//link.setAttribute("onClick","addToLocked('"+id+"','"+link_id+"','"+notice_span_id+"')");
 				}
-
 				function selectTextField(){
 					var filter_text = document.getElementById('filter');
 					filter_text.focus();
 					filter_text.select();
 				}
-
 			</script>
 		</head>
-
-
 	"}
 
 	//body tag start + onload and onkeypress (onkeyup) javascript event calls
@@ -375,11 +243,10 @@ var/list/datum/power/changeling/powerinstances = list()
 
 	//title + search bar
 	dat += {"
-
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable'>
 			<tr id='title_tr'>
 				<td align='center'>
-					<font size='5'><b>Changling Evolution Menu</b></font><br>
+					<font size='5'><b>Carrion Evolution Menu</b></font><br>
 					Hover over a power to see more information<br>
 					Current evolution points left to evolve with: [geneticpoints]<br>
 					Absorb genomes to acquire more evolution points
@@ -392,16 +259,14 @@ var/list/datum/power/changeling/powerinstances = list()
 				</td>
 			</tr>
 	</table>
-
 	"}
-
 	//player table header
 	dat += {"
 		<span id='maintable_data_archive'>
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable_data'>"}
 
 	var/i = 1
-	for(var/datum/power/changeling/P in powerinstances)
+	for(var/datum/power/carrion/P in powerinstances)
 		var/ownsthis = 0
 
 		if(P in purchasedpowers)
@@ -414,7 +279,6 @@ var/list/datum/power/changeling/powerinstances = list()
 
 
 		dat += {"
-
 			<tr id='data[i]' name='[i]' onClick="addToLocked('item[i]','data[i]','notice_span[i]')">
 				<td align='center' bgcolor='[color]'>
 					<span id='notice_span[i]'></span>
@@ -426,17 +290,14 @@ var/list/datum/power/changeling/powerinstances = list()
 					<br><span id='item[i]'></span>
 				</td>
 			</tr>
-
 		"}
 
 		i++
-
 
 	//player table ending
 	dat += {"
 		</table>
 		</span>
-
 		<script type='text/javascript'>
 			var maintable = document.getElementById("maintable_data_archive");
 			var complete_list = maintable.innerHTML;
@@ -446,29 +307,10 @@ var/list/datum/power/changeling/powerinstances = list()
 
 	usr << browse(dat, "window=powers;size=900x480")
 
+/obj/item/organ/internal/carrion/core/proc/purchasePower(var/Pname, var/free = FALSE)
+	var/datum/power/carrion/Thepower = Pname
 
-/datum/changeling/Topic(href, href_list)
-	..()
-	if(!ismob(usr))
-		return
-
-	if(href_list["P"])
-		var/datum/mind/M = usr.mind
-		if(!istype(M))
-			return
-		purchasePower(M, href_list["P"])
-		call(/datum/changeling/proc/EvolutionMenu)()
-
-
-
-/datum/changeling/proc/purchasePower(var/datum/mind/M, var/Pname, var/remake_verbs = 1)
-	if(!M || !M.changeling)
-		return
-
-	var/datum/power/changeling/Thepower = Pname
-
-
-	for (var/datum/power/changeling/P in powerinstances)
+	for (var/datum/power/carrion/P in powerinstances)
 		//world << "[P] - [Pname] = [P.name == Pname ? "True" : "False"]"
 		if(P.name == Pname)
 			Thepower = P
@@ -476,24 +318,26 @@ var/list/datum/power/changeling/powerinstances = list()
 
 
 	if(Thepower == null)
-		to_chat(M.current, "This is awkward.  Changeling power purchase failed, please report this bug to a coder!")
+		to_chat(owner, "This is awkward. Carrion power purchase failed, please report this bug to a coder!")
 		return
 
 	if(Thepower in purchasedpowers)
-		to_chat(M.current, "We have already evolved this ability!")
+		to_chat(owner, "You have already evolved this ability!")
 		return
 
-
-	if(geneticpoints < Thepower.genomecost)
-		to_chat(M.current, "We cannot evolve this... yet.  We must acquire more DNA.")
+	if(geneticpoints < Thepower.genomecost && !free)
+		to_chat(owner, "You cannot evolve this... yet.  You must acquire more DNA.")
 		return
 
-	geneticpoints -= Thepower.genomecost
+	if(!free)
+		geneticpoints -= Thepower.genomecost
 
 	purchasedpowers += Thepower
 
-	if(!Thepower.isVerb && Thepower.verbpath)
-		call(M.current, Thepower.verbpath)()
-	else if(remake_verbs)
-		M.current.make_changeling()
+	if (Thepower.organpath)
+		var/obj/item/organ/internal/organ = new Thepower.organpath
+		var/obj/item/organ/external/parentorgan =  owner.get_organ(organ.parent_organ_base)
+		parentorgan.add_item(organ, owner, FALSE)
 
+	if(Thepower.spiderpath)
+		spiderlist |= Thepower.spiderpath

@@ -13,20 +13,20 @@
 	mag_well = MAG_WELL_SMG
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
-	price_tag = 3000
+	price_tag = 2500
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
-	damage_multiplier = 1.25
+	damage_multiplier = 1.2
 	penetration_multiplier = 1.5
 	zoom_factor = 0.4
 	recoil_buildup = 3
 	one_hand_penalty = 5 //smg level
 
-	silencer_type = /obj/item/weapon/silencer
+	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE,GUN_CALIBRE_35,GUN_SCOPE, GUN_MAGWELL)
 
-	firemodes = list(
+	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
@@ -43,3 +43,10 @@
 /obj/item/weapon/gun/projectile/automatic/c20r/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/weapon/gun/projectile/automatic/c20r/sci
+	name = "bullpip SMG"
+	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 Auto."
+	damage_multiplier = 1
+	penetration_multiplier = 1
+	price_tag = 300

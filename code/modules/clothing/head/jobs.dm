@@ -54,6 +54,12 @@
 	icon_state = "beret"
 	body_parts_covered = 0
 
+/obj/item/clothing/head/beret/artist
+	name = "Feathered Beret"
+	desc = "Fit for artists, frenchmen, and eccentric military officers across the cosmos."
+	icon_state = "beret_artist"
+	item_state = "beret_artist"
+
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
@@ -88,6 +94,11 @@
 /obj/item/clothing/head/beret/black
 	name = "black beret"
 	desc = "A dark and imposing black beret."
+	icon_state = "beretblack"
+
+/obj/item/clothing/head/beret/german
+	name = "brown beret"
+	desc = "A light brown beret."
 	icon_state = "beretblack"
 
 /obj/item/clothing/head/seccap
@@ -126,6 +137,11 @@
 	name = "blackshield cap"
 	desc = "A faded black cap with the badge of the Blackshield."
 	icon_state = "milsoft"
+
+/obj/item/clothing/head/rank/trooper/radiohat
+	name = "blackshield radio cap"
+	desc = "A faded black cap with the badge of the Blackshield. Comes attached with a industrial radio headset for long-range communiction."
+	icon_state = "radiohat"
 
 /obj/item/clothing/head/rank/corpsman/cap
 	name = "Corpsman cap"

@@ -4,8 +4,8 @@
  *		ID CARD
  *		FINGERPRINT CARD HOLDER
  *		FINGERPRINT CARD
+ *		KEYS
  */
-
 
 
 /*
@@ -116,12 +116,17 @@ var/const/NO_EMAG_ACT = -50
 
 	var/formal_name_prefix
 	var/formal_name_suffix
+	var/claimed_locker = FALSE
 
 /obj/item/weapon/card/id/examine(mob/user)
 	set src in oview(1)
 	if(in_range(usr, src))
 		show(usr)
 		to_chat(usr, desc)
+		to_chat(usr, text("\icon[] []: The current assignment on the card is [].", src, src.name, src.assignment))
+		to_chat(usr, "The blood type on the card is [blood_type].")
+		to_chat(usr, "The DNA hash on the card is [dna_hash].")
+		to_chat(usr, "The fingerprint hash on the card is [fingerprint_hash].")
 	else
 		to_chat(usr, SPAN_WARNING("It is too far away."))
 
@@ -187,18 +192,6 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/GetIdCard()
 	return src
-
-/obj/item/weapon/card/id/verb/read()
-	set name = "Read ID Card"
-	set category = "Object"
-	set src in usr
-
-	to_chat(usr, text("\icon[] []: The current assignment on the card is [].", src, src.name, src.assignment))
-	to_chat(usr, "The blood type on the card is [blood_type].")
-	to_chat(usr, "The DNA hash on the card is [dna_hash].")
-	to_chat(usr, "The fingerprint hash on the card is [fingerprint_hash].")
-	return
-
 
 /obj/item/weapon/card/id/syndicate_command
 	name = "syndicate ID card"
@@ -332,3 +325,22 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/blankwhite
 	icon_state = "id_blankwhite"
+
+//Keys
+/obj/item/weapon/keys
+	name = "skeletonkey"
+	desc = "The true key to rule them all, can't open \"deadbolts\"."
+	icon = 'icons/obj/card.dmi'
+	icon_state = "keys"
+	w_class = ITEM_SIZE_TINY
+
+/obj/item/weapon/keys/janitor
+	name = "janitor keys"
+	desc = "A set of keys to open any door, can't open \"deadbolts\"."
+	w_class = ITEM_SIZE_BULKY //No hiding this
+	slot_flags = SLOT_BELT
+
+/obj/item/weapon/keys/lockpicks
+	name = "lockpicks"
+	desc = "A set of lockpicks used to open doors, sadly cant pick through \"deadbolts\"."
+	icon_state = "lockpick"

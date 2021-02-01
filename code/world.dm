@@ -66,9 +66,10 @@ var/game_id = null
 
 /world/New()
 	// Begin loading of extools DLL and components
-	extools_initialize()
-	maptick_initialize()
-	debugger_initialize()
+	var/extools = world.GetConfig("env", "EXTOOLS_DLL") || (world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so")
+	if (fexists(extools))
+		call(extools, "maptick_initialize")()
+		call(extools, "debug_initialize")()
 	// End extools
 	//logs
 	start_time = world.realtime
@@ -80,6 +81,8 @@ var/game_id = null
 	diary = file(diary_filename)
 	diary << "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(start_time, "hh:mm.ss")][log_end]\n---------------------[log_end]"
 	changelog_hash = md5('html/changelog.html')					//used for telling if the changelog has changed recently
+
+	world_qdel_log = file("data/logs/[date_string] qdel.log")	// GC Shutdown log
 
 	if(byond_version < RECOMMENDED_VERSION)
 		log_world("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
@@ -182,6 +185,13 @@ var/world_topic_spam_protect_time = world.timeofday
 	fdel(F)
 	F << the_mode
 
+/hook/startup/proc/loadAd()
+	world.load_ad()
+	return 1
+
+/world/proc/load_ad()
+	server_ad = file2text("config/advert.txt")
+
 /hook/startup/proc/loadMOTD()
 	world.load_motd()
 	return 1
@@ -249,8 +259,11 @@ var/world_topic_spam_protect_time = world.timeofday
 		s += "<b>[config.server_name]</b> &#8212; "
 
 	s += "<b>[station_name()]</b>";
-	s += "\]" 
-	s += "<br><small>+18, High Roleplay, colony map, ERIS downstream, weekly events, 4+ hour rounds. Custom character creator, tons of guns, and PvE.  Furry friendly!</small><br>" 
+	s += "\]<br>"
+	if(server_ad)
+		s += "<small>"
+		s += server_ad
+		s += "</small></br>"
 
 	var/list/features = list()
 
@@ -266,9 +279,9 @@ var/world_topic_spam_protect_time = world.timeofday
 		if (M.client)
 			n++
 
-	if (n > 1)
+	if (n != 1)
 		features += "~[n] players"
-	else if (n > 0)
+	else
 		features += "~[n] player"
 
 
@@ -276,7 +289,7 @@ var/world_topic_spam_protect_time = world.timeofday
 		features += "hosted by <b>[config.hostedby]</b>"
 
 	if (features)
-		s += "\[[jointext(features, ", ")]"	
+		s += "\[[jointext(features, ", ")]"
 
 	/* does this help? I do not know */
 	if (src.status != s)

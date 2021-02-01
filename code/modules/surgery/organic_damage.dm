@@ -5,6 +5,7 @@
 	allowed_tools = list(
 		/obj/item/stack/medical/advanced/bruise_pack = 100,
 		/obj/item/stack/medical/bruise_pack = 20,
+		/obj/item/stack/medical/advanced/bruise_pack/mending_ichor = 100,
 	)
 
 	duration = 80
@@ -18,6 +19,8 @@
 		tool_name = "regenerative membrane"
 	if (istype(tool, /obj/item/stack/medical/bruise_pack))
 		tool_name = "the bandaid"
+	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack/mending_ichor))
+		tool_name = "the mending ichor"
 	return tool_name
 
 /datum/surgery_step/fix_organ/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
@@ -80,46 +83,6 @@
 		SPAN_WARNING("Your hand slips, tearing blood vessels in [organ.get_surgery_name()] with \the [tool]!"),
 	)
 	organ.take_damage(10, 0, sharp=TRUE)
-
-
-
-/datum/surgery_step/fix_bone
-	required_tool_quality = QUALITY_BONE_SETTING
-	duration = 100
-
-	can_infect = TRUE
-	blood_level = 1
-
-/datum/surgery_step/fix_bone/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	. = BP_IS_ORGANIC(organ) && organ.is_open() && (organ.status & ORGAN_BROKEN)
-
-	// Otherwise, it will just immediately fracture again
-	if(. && organ.should_fracture())
-		to_chat(user, SPAN_WARNING("[organ.get_surgery_name()] is too damaged!"))
-		return FALSE
-
-	return .
-
-/datum/surgery_step/fix_bone/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	var/bone = organ.encased ? organ.encased : "bones"
-	user.visible_message(
-		SPAN_NOTICE("[user] starts mending the damaged [bone] in [organ.get_surgery_name()] with \the [tool]."),
-		SPAN_NOTICE("You start mending the damaged [bone] in [organ.get_surgery_name()] with \the [tool].")
-	)
-
-/datum/surgery_step/fix_bone/end_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	var/bone = organ.encased ? organ.encased : "bones"
-	user.visible_message(
-		SPAN_NOTICE("[user] has mended the damaged [bone] in [organ.get_surgery_name()] with \the [tool]."),
-		SPAN_NOTICE("You have mended the damaged [bone] in [organ.get_surgery_name()] with \the [tool].")
-	)
-	organ.mend_fracture()
-
-/datum/surgery_step/fix_bone/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	user.visible_message(
-		SPAN_WARNING("[user]'s hand slips, smearing [tool] in the incision in [organ.get_surgery_name()]!"),
-		SPAN_WARNING("Your hand slips, smearing [tool] in the incision in [organ.get_surgery_name()]!")
-	)
 
 
 

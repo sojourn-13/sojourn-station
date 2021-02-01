@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(human_mob_list)				//List of all human mobs and sub-types, inc
 GLOBAL_LIST_EMPTY(silicon_mob_list)			//List of all silicon mobs, including clientless
 GLOBAL_LIST_EMPTY(living_mob_list)			//List of all alive mobs, including clientless. Excludes /mob/new_player
 GLOBAL_LIST_EMPTY(dead_mob_list)				//List of all dead mobs, including clientless. Excludes /mob/new_player
-GLOBAL_LIST_EMPTY(listening_objects)	//List of all dead mobs, including clientless. Excludes /mob/new_player
+GLOBAL_LIST_EMPTY(hearing_objects)	//List of all dead mobs, including clientless. Excludes /mob/new_player
 var/global/list/current_antags = list()
 var/global/list/current_factions = list()
 var/global/list/antag_team_objectives = list()		//List of shared sets of objectives for antag teams
@@ -31,9 +31,6 @@ var/global/list/old_surgery_steps = list()			//list of all old-style (not bound 
 GLOBAL_LIST_EMPTY(surgery_steps)					//list of all new organ-based surgery steps
 var/global/list/mechas_list = list()				//list of all mechs. Used by hostile mobs target tracking.
 
-
-
-var/global/list/hearing_objects = list()			//list of all objects, that can hear mob say
 
 //Jobs and economy
 var/global/list/joblist = list()					//list of all jobstypes, minus borg and AI
@@ -158,6 +155,12 @@ var/global/list/string_slot_flags = list(
 //A list of slots where an item doesn't count as "worn" if it's in one of them
 var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_r_store,slot_robot_equip_1,slot_robot_equip_2,slot_robot_equip_3)
 
+var/global/list/hair_gradients_list = list(
+	"None" = "none",
+	"Fade (Up)" = "fadeup",
+	"Fade (Down)" = "fadedown",
+	"Vertical Split" = "vsplit"
+	)
 
 //////////////////////////
 /////Initial Building/////

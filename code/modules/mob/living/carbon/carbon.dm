@@ -8,7 +8,7 @@
 	..()
 
 /mob/living/carbon/Life()
-	..()
+	. = ..()
 
 	handle_viruses()
 	// Increase germ_level regularly
@@ -41,6 +41,9 @@
 			if (move_intent.flags & MOVE_INTENT_EXERTIVE)
 				src.nutrition -= DEFAULT_HUNGER_FACTOR/10
 
+		if(is_watching == TRUE)
+			reset_view(null)
+			is_watching = FALSE
 
 		// Moving around increases germ_level faster
 		if(germ_level < GERM_LEVEL_MOVE_CAP && prob(8))
@@ -397,7 +400,7 @@
 	onclose(user, "mob[name]")
 	return
 
-/mob/living/carbon/proc/should_have_organ(var/organ_check)
+/mob/living/carbon/proc/should_have_process(var/organ_check)
 	return 0
 
 /mob/living/carbon/proc/has_appendage(var/limb_check)

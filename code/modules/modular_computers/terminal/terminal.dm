@@ -1,4 +1,4 @@
-// System for a shitty terminal emulator.
+// System for a terminal emulator.
 /datum/terminal
 	var/name = "Terminal"
 	var/datum/browser/panel

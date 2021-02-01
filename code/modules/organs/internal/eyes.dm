@@ -2,9 +2,13 @@
 	name = "eyeballs"
 	icon_state = "eyes"
 	gender = PLURAL
-	organ_tag = BP_EYES
-	parent_organ = BP_HEAD
+	organ_efficiency = list(OP_EYES = 100)
+	parent_organ_base = BP_HEAD
 	price_tag = 1000
+	blood_req = 2
+	max_blood_storage = 10
+	oxygen_req = 1
+	nutriment_req = 1
 	var/eyes_color = "#000000"
 	var/robo_color = "#000000"
 	var/cache_key = BP_EYES
@@ -13,6 +17,8 @@
 	name = "prosthetic eyes"
 	icon_state = "eyes-prosthetic"
 	price_tag = 100
+	nature = MODIFICATION_SILICON
+	matter = list(MATERIAL_STEEL = 1)
 
 /obj/item/organ/internal/eyes/proc/get_icon()
 	var/icon/eyes_icon = new/icon('icons/mob/human_face.dmi', "eye_l")
@@ -23,13 +29,12 @@
 /obj/item/organ/internal/eyes/proc/get_cache_key()
 	return "[cache_key][BP_IS_ROBOTIC(src) ? robo_color : eyes_color]"
 
-/obj/item/organ/internal/eyes/replaced(var/mob/living/carbon/human/target)
-
-	// Apply our eye colour to the target.
-	if(istype(target) && eyes_color)
-		target.eyes_color = eyes_color
-		target.update_eyes()
+/obj/item/organ/internal/eyes/replaced_mob(mob/living/carbon/human/target)
 	..()
+	// Apply our eye colour to the target.
+	if(eyes_color)
+		owner.eyes_color = eyes_color
+		owner.update_eyes()
 
 /obj/item/organ/internal/eyes/proc/update_colour()
 	if(!owner)
@@ -41,16 +46,6 @@
 	..()
 	if(is_broken() && !oldbroken && owner && !owner.stat)
 		to_chat(owner, SPAN_DANGER("You go blind!"))
-
-/obj/item/organ/internal/eyes/Process() //Eye damage replaces the old eye_stat var.
-	..()
-	if(!owner)
-		return
-	if(is_bruised())
-		owner.eye_blurry = 20
-	if(is_broken())
-		owner.eye_blind = 20
-
 
 
 //Subtypes obsoleted by the heterochromia marking.
