@@ -109,6 +109,11 @@
 	desc = "Used to kick in a robot's VTEC systems, increasing their speed."
 	build_path = /obj/item/borg/upgrade/vtec
 
+/datum/design/research/item/robot_upgrade/power_saver
+	name = "Power Saver module"
+	desc = "Used to kick in a robot's Power Saver systems, increasing their power efficiency."
+	build_path = /obj/item/borg/upgrade/power_saver
+
 /datum/design/research/item/robot_upgrade/tasercooler
 	name = "Rapid taser cooling module"
 	desc = "Used to cool a mounted taser, increasing the potential current in it and thus its recharge rate."

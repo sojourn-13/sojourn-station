@@ -8,6 +8,8 @@
 	networks = list(NETWORK_SECURITY)
 	can_be_pushed = 0
 
+	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,/obj/item/borg/upgrade/jetpack)
+
 	health = 210 //Very tanky!
 	speed_factor = 1.1 //Kinda slow
 	power_efficiency = 1.55 //Decent we are meant to be around the colony
@@ -67,7 +69,7 @@
 	channels = list("Medical" = 1)
 	networks = list(NETWORK_MEDICAL)
 	can_be_pushed = 0
-
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack)
 	health = 85 //Fragile
 	speed_factor = 1.0 //Kinda slow
 	power_efficiency = 0.7 //Very poor, shackled to a charger
@@ -284,7 +286,7 @@
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/welder_stuff,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
 
 	health = 170 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
