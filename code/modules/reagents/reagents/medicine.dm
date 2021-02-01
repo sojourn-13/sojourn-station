@@ -455,9 +455,9 @@
 	color = "#004000"
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1 // This is a mostly beneficial chem, it should show up on scanners
-	affects_dead = 1 //If it doesn't, how will it fix husking?
+	affects_dead = 1 //My guess is this flag makes the chem act on a cryotube regardless of mob life or not.
 
-/datum/reagent/medicine/ryetalyn/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/ryetalyn/on_mob_add(mob/living/carbon/M, alien, effect_multiplier) //on_mob_add allows it to act regardless if the human is dead or alive.
 	var/needs_update = M.mutations.len > 0
 
 	M.mutations = list()
@@ -468,6 +468,7 @@
 	if(needs_update && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.update_mutations()
+		H.update_body() //Don't let husks stay wrinkly all the time, we gotta fix them!
 
 /datum/reagent/medicine/negative_ling
 	name = "Negative Paragenetic Marker"
