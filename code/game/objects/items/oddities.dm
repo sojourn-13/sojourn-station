@@ -18,7 +18,7 @@
 	var/list/oddity_stats
 	var/sanity_value = 1
 	var/datum/perk/oddity/perk
-	var/prob_perk = 100
+	var/prob_perk = 10
 
 
 /obj/item/weapon/oddity/Initialize()
@@ -39,7 +39,7 @@
 	..()
 	if(perk)
 		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>"))
-		if(usr.stats.getPerk(PERK_STALKER))
+		if(usr.stats?.getPerk(PERK_STALKER))
 			var/datum/perk/oddity/OD = GLOB.all_perks[perk]
 			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
 	for(var/stat in oddity_stats)
@@ -476,7 +476,7 @@
 	for(var/stat in true_stats)
 		. += true_stats[stat] * 50
 
-//NT Oddities
+//Faction Oddities
 /obj/item/weapon/oddity/nt
 	random_stats = FALSE
 
@@ -491,3 +491,14 @@
 	)
 	price_tag = 8000
 	perk = /datum/perk/nt_oddity/holy_light
+
+/obj/item/weapon/oddity/chimeric_fang_trophy
+	name = "Chimera Fang Trophy"
+	desc = "A scrimshaw carved chimera fang turned into a trophy, the bone either taken from a butchered chimera or hunting companion fallen in battle. In either case, its very presence hardens the holder's resolve."
+	icon_state = "chimera_trophy"
+	oddity_stats = list(
+		STAT_ROB = 12,
+		STAT_TGH = 12,
+		STAT_BIO = 8
+	)
+	perk = /datum/perk/oddity/harden

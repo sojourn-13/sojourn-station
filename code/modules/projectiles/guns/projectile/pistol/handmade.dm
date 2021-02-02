@@ -7,11 +7,11 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	can_dual = 1
+	can_dual = TRUE
 	load_method = SINGLE_CASING
 	max_shells = 1
 	damage_multiplier = 1.36
-	recoil_buildup = 45
+	recoil_buildup = 25
 	var/chamber_open = FALSE
 	var/jammed = FALSE
 	var/jam_chance = 15

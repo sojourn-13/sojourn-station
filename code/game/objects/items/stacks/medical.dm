@@ -274,6 +274,15 @@
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
 
+/obj/item/stack/medical/advanced/bruise_pack/tatonka_tongue
+	name = "tatonka blood tongue"
+	singular_name = "tatonka blood tongue"
+	desc = "A treated tatonka tongue that has anti-septic saliva, capable of promoting healing and properly treating brute damage."
+	icon_state = "brahmin_tongue"
+	automatic_charge_overlays = FALSE
+	consumable = TRUE
+	matter = list(MATERIAL_BIOMATTER = 2.5)
+
 /obj/item/stack/medical/advanced/bruise_pack/mending_ichor
 	name = "mending ichor"
 	singular_name = "mending ichor"
@@ -378,6 +387,15 @@
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
+
+/obj/item/stack/medical/advanced/ointment/powder_pouch
+	name = "tatonka powder pouch"
+	singular_name = "tatonka powder pouch"
+	desc = "A small pouch containing the powder of a tatonka horn, a medicine useful for treating burns and disinfecting wounds."
+	icon_state = "powder_pouch"
+	automatic_charge_overlays = FALSE
+	consumable = TRUE
+	matter = list(MATERIAL_BIOMATTER = 2.5)
 
 /obj/item/stack/medical/advanced/ointment/regenerative_ichor
 	name = "regenerative ichor"

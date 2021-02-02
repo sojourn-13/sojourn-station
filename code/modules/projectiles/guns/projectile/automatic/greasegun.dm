@@ -17,7 +17,7 @@
 	penetration_multiplier = 1.2
 	recoil_buildup = 5
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
 	one_hand_penalty = 25
 	silenced = TRUE
 	init_firemodes = list(

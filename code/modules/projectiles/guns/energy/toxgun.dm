@@ -6,7 +6,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	twohanded = FALSE
-	can_dual = 1
+	can_dual = TRUE
 	sel_mode = 1
 	origin_tech = list(TECH_COMBAT = 5, TECH_PLASMA = 4)
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASMA = 5)

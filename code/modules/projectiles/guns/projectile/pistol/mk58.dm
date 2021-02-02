@@ -9,13 +9,13 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	price_tag = 700
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	can_dual = 1
+	can_dual = TRUE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL
 	damage_multiplier = 1.1
 	penetration_multiplier = 0.9
 	recoil_buildup = 3
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	one_hand_penalty = 10
 
 /obj/item/weapon/gun/projectile/mk58/update_icon()
@@ -47,7 +47,7 @@
 	caliber = CAL_MAGNUM
 	damage_multiplier = 0.9
 	recoil_buildup = 6
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/mk58/wood/update_icon()
 	..()

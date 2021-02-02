@@ -6,7 +6,7 @@
 	item_state = "texan"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_PISTOL
-	can_dual = 1
+	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	load_method = MAGAZINE
@@ -16,8 +16,8 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.5
 	recoil_buildup = 4.5
-	one_hand_penalty = 15
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+	one_hand_penalty = 10
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
 
 	init_firemodes = list(
 		FULL_AUTO_400,

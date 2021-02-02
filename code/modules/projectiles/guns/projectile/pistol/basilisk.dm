@@ -10,17 +10,17 @@
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 800
-	can_dual = 1
+	can_dual = TRUE
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.2
-	recoil_buildup = 33
-	one_hand_penalty = 30
+	recoil_buildup = 15
+	one_hand_penalty = 20
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/basilisk/update_icon()
 	..()

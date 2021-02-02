@@ -116,6 +116,8 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	faction = "sargoyle"
 	speed = 6
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 
 /mob/living/simple_animal/hostile/wurm
 	name = "wurm youngling"

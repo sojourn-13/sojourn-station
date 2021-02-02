@@ -6,7 +6,7 @@
 	item_state = "firefly"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_PISTOL
-	can_dual = 1
+	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
@@ -17,9 +17,9 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	damage_multiplier = 1
-	recoil_buildup = 15
-	one_hand_penalty = 10
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE)
+	recoil_buildup = 5
+	one_hand_penalty = 7
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/firefly/update_icon()
 	..()

@@ -6,7 +6,7 @@
 	item_state = "revolver"
 	caliber = CAL_MAGNUM
 	force = WEAPON_FORCE_NORMAL
-	can_dual = 1
+	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	handle_casings = CYCLE_CASINGS
 	max_shells = 6
@@ -20,7 +20,7 @@
 	fire_delay = 3 //all revolvers can fire faster, but have huge recoil
 	damage_multiplier = 1.2
 	armor_penetration = 0.65 // Insanely powerful handcannon, but worthless against heavy armor
-	recoil_buildup = 50
+	recoil_buildup = 30
 	one_hand_penalty = 20
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	var/drawChargeMeter = TRUE

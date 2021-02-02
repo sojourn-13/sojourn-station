@@ -324,6 +324,12 @@
 			var/mob/user = G.loc
 			user.update_action_buttons()
 
+	if(weapon_upgrades[GUN_UPGRADE_AUTOEJECT])
+		if(G.auto_eject)
+			G.auto_eject = FALSE
+		else
+			G.auto_eject = TRUE
+
 	if(!isnull(weapon_upgrades[GUN_UPGRADE_FORCESAFETY]))
 		G.restrict_safety = TRUE
 		G.safety = weapon_upgrades[GUN_UPGRADE_FORCESAFETY]

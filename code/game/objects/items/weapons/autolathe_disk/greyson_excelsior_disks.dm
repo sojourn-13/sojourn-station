@@ -8,12 +8,16 @@
 	designs = list(
 		/datum/design/autolathe/tool/crowbar_onestar,
 		/datum/design/autolathe/tool/combi_driver_onestar,
-		/datum/design/autolathe/tool/jackhammer_onestar,
-		/datum/design/autolathe/tool/drill_onestar,
 		/datum/design/autolathe/tool/weldertool_onestar,
+		/datum/design/autolathe/tool/onestar_saw,
+		/datum/design/autolathe/tool/multitool/multitool_onestar = 2,
 		/datum/design/autolathe/tool/hammer_onestar = 2,
 		/datum/design/autolathe/tool/omni_surgery_onestar = 2,
+		/datum/design/autolathe/tool/onestar_pliers = 2,
 		/datum/design/autolathe/tool/pickaxe_onestar,
+		/datum/design/autolathe/tool/onestar_shovel,
+		/datum/design/autolathe/tool/jackhammer_onestar,
+		/datum/design/autolathe/tool/drill_onestar,
 		/datum/design/autolathe/part/greyson/ai = 3,
 	)
 
@@ -46,7 +50,6 @@
 		/datum/design/autolathe/clothing/iron_lock_security_armor,
 	)
 
-
 // Excelsior We also replace "name" for spawning reasons
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior
 	name = "design disk Means of Production"
@@ -63,8 +66,8 @@
 		/datum/design/autolathe/gun/ak47,
 		/datum/design/autolathe/gun/ppsh,
 		/datum/design/autolathe/gun/reclaimer,
-		/datum/design/autolathe/ammo/pistol,				//makarov ammo
-		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
+		/datum/design/autolathe/ammo/hpistol_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/smg,							//drozd ammo
@@ -129,8 +132,8 @@
 		/datum/design/autolathe/gun/boltgun,
 		/datum/design/autolathe/gun/ak47,
 		/datum/design/autolathe/gun/ppsh,
-		/datum/design/autolathe/ammo/pistol,				//makarov ammo
-		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
+		/datum/design/autolathe/ammo/hpistol_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/smg,							//drozd ammo
@@ -210,8 +213,8 @@
 	license = -1
 	designs = list(
 		/datum/design/autolathe/gun/makarov,
-		/datum/design/autolathe/ammo/pistol,				//makarov ammo
-		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
+		/datum/design/autolathe/ammo/hpistol_rubber,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez

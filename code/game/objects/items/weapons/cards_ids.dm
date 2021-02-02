@@ -4,8 +4,8 @@
  *		ID CARD
  *		FINGERPRINT CARD HOLDER
  *		FINGERPRINT CARD
+ *		KEYS
  */
-
 
 
 /*
@@ -325,3 +325,22 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/blankwhite
 	icon_state = "id_blankwhite"
+
+//Keys
+/obj/item/weapon/keys
+	name = "skeletonkey"
+	desc = "The true key to rule them all, can't open \"deadbolts\"."
+	icon = 'icons/obj/card.dmi'
+	icon_state = "keys"
+	w_class = ITEM_SIZE_TINY
+
+/obj/item/weapon/keys/janitor
+	name = "janitor keys"
+	desc = "A set of keys to open any door, can't open \"deadbolts\"."
+	w_class = ITEM_SIZE_BULKY //No hiding this
+	slot_flags = SLOT_BELT
+
+/obj/item/weapon/keys/lockpicks
+	name = "lockpicks"
+	desc = "A set of lockpicks used to open doors, sadly cant pick through \"deadbolts\"."
+	icon_state = "lockpick"

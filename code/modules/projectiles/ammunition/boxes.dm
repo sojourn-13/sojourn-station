@@ -504,12 +504,22 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 	max_ammo = 35
 
+//used in mapping only cases
+/obj/item/ammo_magazine/ammobox/shotgun/flashshells
+	name = "signaling ammunition packet (20mm Illumination)"
+	icon_state = "stunslug"
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_CARDBOARD = 2)
+	caliber = CAL_SHOTGUN
+	w_class = ITEM_SIZE_BULKY
+	ammo_type = /obj/item/ammo_casing/shotgun/illumination
+	max_ammo = 70 //2x the ammo for being map spawned
+
 /obj/item/ammo_magazine/ammobox/shotgun/flash
 	name = "ammunition packet (20mm Illumination)"
 	icon_state = "stunslug"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_SHOTGUN
-	ammo_type = /obj/item/ammo_casing/shotgun/flash
+	ammo_type = /obj/item/ammo_casing/shotgun/illumination
 	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/stunshells
@@ -534,12 +544,4 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
-	max_ammo = 35
-
-/obj/item/ammo_magazine/ammobox/shotgun/flashshells
-	name = "ammunition packet (20mm Flash Shell)"
-	icon_state = "explosive"
-	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
-	ammo_type = /obj/item/ammo_casing/shotgun/flash
 	max_ammo = 35

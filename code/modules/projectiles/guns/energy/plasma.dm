@@ -10,13 +10,14 @@
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 7, MATERIAL_URANIUM = 8)
 	price_tag = 2250
+	origin_tech = list(TECH_COMBAT = 3, TECH_PLASMA = 2)
 	fire_sound = 'sound/weapons/Laser.ogg'
 	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/weapon/cell/medium
 	sel_mode = 2
 	charge_cost = 20 //Gives us 40 shots per high medium-sized cell
-	recoil_buildup = 1 //pulse weapons have a bit more recoil
-	one_hand_penalty = 10
+	recoil_buildup = 0.9 //pulse weapons have a bit more recoil
+	one_hand_penalty = 5
 	twohanded = TRUE
 	damage_multiplier = 0.9
 	init_firemodes = list(
@@ -50,6 +51,7 @@
 	projectile_type = /obj/item/projectile/beam/pulse
 	charge_cost = 30 //Gives us 30 shots per high medium-sized cell
 	fire_delay = 15
+	origin_tech = list(TECH_COMBAT = 4, TECH_PLASMA = 3)
 	damage_multiplier = 1
 	init_firemodes = list(
 		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=15, icon="kill", projectile_color = "#FFFF00"),
@@ -68,6 +70,7 @@
 	sel_mode = 1
 	charge_cost = 20 //40 shots per high medium-sized cell
 	fire_delay = 12
+	origin_tech = list(TECH_COMBAT = 7, TECH_PLASMA = 2)
 	price_tag = 1500
 	zoom_factor = null
 	damage_multiplier = 1.1
@@ -90,7 +93,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	twohanded = FALSE
-	can_dual = 1
+	origin_tech = list(TECH_COMBAT = 5, TECH_PLASMA = 6)
+	can_dual = TRUE
 	sel_mode = 1
 	suitable_cell = /obj/item/weapon/cell/small
 	charge_cost = 20
@@ -122,6 +126,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_STEEL = 2, "biomatter" = 20)
 	disposable = TRUE
+	origin_tech = list(TECH_COMBAT = 1, TECH_PLASMA = 1)
 	price_tag = 200
 	fire_sound = 'sound/weapons/Laser.ogg'
 	cell_type = /obj/item/weapon/cell/small //can't recharge this one

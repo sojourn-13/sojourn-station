@@ -29,7 +29,7 @@
 
 /obj/item/device/scanner/price/scan(atom/movable/target, mob/user)
 	scan_title = "Price estimations"
-	
+
 	if(!scan_data)
 		scan_data = price_scan_results(target, cargo_console.contraband, cargo_console.emagged)
 	else
@@ -56,10 +56,9 @@
 
 	if(price)
 		data += "<span class='notice'>Scanned [target], value: <b>[price]</b> \
-			credits[target.contents.len ? " (contents included)" : ""].</span>"
+			credits[target.contents.len ? " (contents included)" : ""]. [target.surplus_tag?"(surplus)":""]</span>"
 	else
 		data += "<span class='warning'>Scanned [target], no export value. \
 			</span>"
-	
 	data = jointext(data, "<br>")
 	return data

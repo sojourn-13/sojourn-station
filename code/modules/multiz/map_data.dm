@@ -103,8 +103,8 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 						/datum/job/chaplain, /datum/job/acolyte, /datum/job/janitor, /datum/job/hydro,
 						/datum/job/scientist, /datum/job/roboticist,
 						/datum/job/ai, /datum/job/cyborg,
-						/datum/job/assistant
-
+						/datum/job/assistant,
+						/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter
 						)
 
 	var/overmap_z

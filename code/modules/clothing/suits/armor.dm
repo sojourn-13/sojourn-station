@@ -562,9 +562,9 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	item_state = "hunter_armor"
 	blood_overlay_type = "armor"
 	armor = list(
-		melee = 35,
-		bullet = 25,
-		energy = 25,
+		melee = 30,
+		bullet = 20,
+		energy = 20,
 		bomb = 10,
 		bio = 0,
 		rad = 0 )
@@ -580,8 +580,8 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	blood_overlay_type = "armor"
 	armor = list(
 		melee = 45,
-		bullet = 20,
-		energy = 20,
+		bullet = 25,
+		energy = 25,
 		bomb = 10,
 		bio = 0,
 		rad = 0 )
@@ -590,29 +590,31 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 
 /obj/item/clothing/suit/armor/hunter/reinforced
 	name = "hunter armor"
-	desc = "An heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	desc = "An heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made with steel plating functioning as make-shift kevlar plates."
 	icon_state = "hunter_armor_reinforced"
 	item_state = "hunter_armor_reinforced"
 	blood_overlay_type = "armor"
 	armor = list(
-		melee = 30,
+		melee = 35,
 		bullet = 45,
 		energy = 25,
-		bomb = 10,
+		bomb = 30,
 		bio = 0,
 		rad = 0 )
 	body_parts_covered = UPPER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|LEGS
+	flags_inv = HIDESHOES
 
 /obj/item/clothing/suit/armor/hunter/leather
 	name = "hunter armor"
-	desc = "An lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	desc = "An lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made, yet the extra leather inforcement is not \
+	only stylish but aids greatly is dispersing laser and plasma shots."
 	icon_state = "hunter_armor_leather"
 	item_state = "hunter_armor_leather"
 	blood_overlay_type = "armor"
 	armor = list(
-		melee = 30,
-		bullet = 20,
+		melee = 35,
+		bullet = 25,
 		energy = 45,
 		bomb = 10,
 		bio = 0,

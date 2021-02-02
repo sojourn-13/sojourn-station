@@ -101,6 +101,9 @@
 /obj/item/weapon/spider_shadow_trap/Crossed(AM as mob|obj)
 	Bumped(AM)
 
+/obj/item/weapon/spider_shadow_trap/attack_hand(mob/user as mob)
+	Bumped(user)
+
 /obj/item/weapon/spider_shadow_trap/Bumped(mob/M as mob|obj)
 
 	if(triggered) return

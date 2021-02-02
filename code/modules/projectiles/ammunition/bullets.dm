@@ -333,7 +333,7 @@
 	amount = 5
 
 //Does not stun, only blinds, but has area of effect.
-/obj/item/ammo_casing/shotgun/flash
+/obj/item/ammo_casing/shotgun/illumination
 	name = "flash shell"
 	desc = "A chemical shell used to signal distress or provide illumination."
 	icon_state = "fshell"
@@ -341,7 +341,7 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
 	maxamount = 5
 
-/obj/item/ammo_casing/shotgun/flash/prespawned
+/obj/item/ammo_casing/shotgun/illumination/prespawned
 	amount = 5
 
 /obj/item/ammo_casing/rocket
@@ -423,3 +423,13 @@
 	icon_state = "flash"
 	projectile_type = /obj/item/projectile/bullet/grenade/flash
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 0.5, MATERIAL_GLASS = 0.5)
+
+//Snowflake ammo
+/obj/item/ammo_casing/crossbow_bolts
+	name = "crossbow bolt"
+	desc = "A finely made bolt designed for a crossbow."
+	icon_state = "bolt"
+	caliber = CAL_CROSSBOW
+	projectile_type = /obj/item/projectile/bullet/crossbow_bolt
+	matter = list(MATERIAL_STEEL = 1)
+	maxamount = 10

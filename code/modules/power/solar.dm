@@ -253,7 +253,7 @@
 
 	if(anchored && isturf(loc))
 		log_debug("1")
-		if(istype(I, /obj/item/stack/material) && (I.get_material_name() == "glass" || I.get_material_name() == "rglass" || I.get_material_name() == "borosilicate glass" || I.get_material_name() == "reinforced borosilicate glass"))
+		if(istype(I, /obj/item/stack/material) && (I.get_material_name() == MATERIAL_GLASS || I.get_material_name() == MATERIAL_RGLASS || I.get_material_name() == MATERIAL_PLASMAGLASS || I.get_material_name() == MATERIAL_RPLASMAGLASS))
 			log_debug("2")
 			var/obj/item/stack/material/S = I
 			if(S.use(2))

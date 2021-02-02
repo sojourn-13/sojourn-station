@@ -265,10 +265,8 @@
 /obj/machinery/repair_station
 	name = "cyborg auto-repair platform"
 	desc = "An automated repair system, designed to repair drones and cyborgs that stand on it."
-	//PLACEHOLDER
-	icon = 'icons/obj/objects.dmi'
+	icon = 'icons/mecha/mech_bay.dmi'
 	icon_state = "recharge_floor"
-	///PLACEHOLDER
 	anchored = TRUE
 	density = FALSE
 	layer = TURF_LAYER + 0.1

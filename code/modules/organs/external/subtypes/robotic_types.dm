@@ -48,6 +48,18 @@
 	force_icon = 'icons/mob/human_races/cyberlimbs/technomancer.dmi'
 	model = "technomancer"
 
+obj/item/organ/external/robotic/technomancer/groin
+	name = "\"Artificer Guild\" Groin"
+	default_description = /datum/organ_description/groin
+
+/obj/item/organ/external/robotic/technomancer/torso
+	name = "\"Artificer Guild\" Torso"
+	default_description = /datum/organ_description/chest
+
+/obj/item/organ/external/robotic/technomancer/head
+	name = "\"Artificer Guild\" Head"
+	default_description = /datum/organ_description/head
+
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""
 	desc = "Custom tooled and held together by hope and duct tape."

@@ -16,6 +16,7 @@
 		list(QUALITY_CUTTING, 30, "time" = 180),
 		list(QUALITY_HAMMERING, 30, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
+		list(/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh, 1),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 120),
 		list(QUALITY_SAWING, 30, "time" = 60)
 	)
@@ -25,10 +26,13 @@
 	result = /obj/item/weapon/tool_upgrade/armor/bullet
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 30, MATERIAL_PLASTEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC , "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 20),
 		list(QUALITY_WELDING, 40, "time" = 60),
 		list(QUALITY_CUTTING, 30, "time" = 180),
 		list(QUALITY_HAMMERING, 30, "time" = 180),
+		list(/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh, 1),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 120),
 		list(QUALITY_SAWING, 30, "time" = 60)
@@ -39,11 +43,13 @@
 	result = /obj/item/weapon/tool_upgrade/armor/energy
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 30, MATERIAL_PLATINUM, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLATINUM, "time" = 30),
+		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTIC , "time" = 30),
 		list(QUALITY_WELDING, 40, "time" = 60),
 		list(QUALITY_CUTTING, 30, "time" = 180),
 		list(QUALITY_HAMMERING, 30, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
+		list(/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh, 1),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 120),
 		list(QUALITY_SAWING, 30, "time" = 60)
 	)
@@ -54,10 +60,12 @@
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL, "time" = 60),
 		list(QUALITY_WELDING, 40, "time" = 60),
 		list(QUALITY_CUTTING, 30, "time" = 180),
 		list(QUALITY_HAMMERING, 30, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
+		list(/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh, 1),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 120),
 		list(QUALITY_SAWING, 30, "time" = 60)
 	)

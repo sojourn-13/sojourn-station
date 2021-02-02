@@ -11,7 +11,7 @@
 		slot_back_str   = "back",
 		slot_s_store_str= "onsuit",
 		)
-	flags =  CONDUCT
+	flags = CONDUCT
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	matter = list(MATERIAL_STEEL = 6)
 	w_class = ITEM_SIZE_NORMAL
@@ -24,6 +24,9 @@
 	zoomdevicename = "scope"
 	hud_actions = list()
 	max_upgrades = 5
+
+	var/auto_eject = FALSE			//if the magazine should automatically eject itself when empty.
+	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
 
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
 	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
@@ -40,7 +43,7 @@
 
 	var/muzzle_flash = 3
 	var/dual_wielding
-	var/can_dual = 0 // Controls whether guns can be dual-wielded (firing two at once).
+	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
 	var/zoom_factor = 0 //How much to scope in when using weapon
 
 	var/suppress_delay_warning = FALSE
@@ -697,6 +700,7 @@
 	rigged = initial(rigged)
 	zoom_factor = initial(zoom_factor)
 	force = initial(force)
+	auto_eject = initial(auto_eject)
 	initialize_scope()
 	initialize_firemodes()
 

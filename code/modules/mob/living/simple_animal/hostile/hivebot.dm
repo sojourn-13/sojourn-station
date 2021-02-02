@@ -26,6 +26,8 @@
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	move_to_delay = 5
+	leather_amount = 0
+	bones_amount = 0
 	//Drops
 	var/drop1 = /obj/item/weapon/scrap_lump
 	var/drop2 = null

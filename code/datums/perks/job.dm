@@ -367,3 +367,45 @@
 /datum/perk/surgical_master
 	name = "Surgical Master"
 	desc = "When it comes to surgery most in your field are experts, while you may not know the more advanced medical procedures you can perform surgery with ease."
+
+/datum/perk/job/bolt_reflect
+	name = "Bolt Action Rifle Trainning"
+	desc = "Through your training with bolt action rifles and repeaters, after firing you will always chamber a new round instantly."
+
+/datum/perk/job/jingle_jangle
+	name = "Key Smith"
+	desc = "You know how to use keys and lockpicks to open electronic doors somehow."
+
+/datum/perk/job/blackshield_conditioning
+	name = "Blackshield Conditioning"
+	desc = "Thanks to special training given by your employment within the Blackshield your body is a bit more resistant to brute force damage and burns due to proper conditioning."
+
+/datum/perk/blackshield_conditioning/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk -= 0.15
+	holder.burn_mod_perk -= 0.10
+
+/datum/perk/blackshield_conditioning/remove()
+	holder.brute_mod_perk += 0.15
+	holder.burn_mod_perk += 0.10
+
+/datum/perk/job/prospector_conditioning
+	name = "Rough and Tumble"
+	desc = "As a prospector you've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot and even set on fire. As a result you resist every type of damage just a little bit better than salvagers."
+
+/datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk -= 0.10
+	holder.burn_mod_perk -= 0.05
+	holder.oxy_mod_perk -= 0.10
+	holder.toxin_mod_perk -= 0.15
+
+/datum/perk/prospector_conditioning/remove()
+	holder.brute_mod_perk += 0.10
+	holder.burn_mod_perk += 0.05
+	holder.oxy_mod_perk += 0.10
+	holder.toxin_mod_perk += 0.15
+
+/datum/perk/job/butcher
+	name = "Master Butcher"
+	desc = "Your skill as a butcher is is unmatched be it through your training or experience. You can harvest additional valuable parts from animals you cut up, as well as gain a bonus on succeeding in all harvesting skill checks."

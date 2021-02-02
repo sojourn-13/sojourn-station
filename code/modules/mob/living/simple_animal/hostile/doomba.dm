@@ -26,6 +26,8 @@
 	maxHealth = 25
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+	leather_amount = 0
+	bones_amount = 0
 
 	//Drops
 	var/drop1 = /obj/item/weapon/scrap_lump
@@ -65,7 +67,7 @@
 /mob/living/simple_animal/hostile/roomba/trip
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it..."
-	icon_state = "roomba_baton"
+	icon_state = "roomba_batton"
 	health = 35
 	maxHealth = 35
 	speed = 3 //speedy boy!

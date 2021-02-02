@@ -11,7 +11,7 @@
 	max_shells = 2
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
-	flags =  CONDUCT
+	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
@@ -33,8 +33,8 @@
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/flare
 	name = "signal shotgun"
-	desc = "A double-barreled shotgun meant to fire signal flash shells."
-	ammo_type = /obj/item/ammo_casing/shotgun/flash
+	desc = "A double-barreled shotgun meant to fire signal illumination shells."
+	ammo_type = /obj/item/ammo_casing/shotgun/illumination
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/update_icon()
 	..()

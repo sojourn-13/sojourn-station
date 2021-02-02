@@ -131,10 +131,8 @@
 	icon_state = "box-green-low"
 	spawn_nothing_percentage = 60
 
-
 /obj/random/tool/advanced/onestar
 	name = "random greyson tool"
-
 
 /obj/random/tool/advanced/onestar/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/tool/crowbar/onestar = 1,
@@ -142,9 +140,13 @@
 						/obj/item/weapon/tool/pickaxe/onestar = 1,
 						/obj/item/weapon/tool/pickaxe/jackhammer/onestar = 1,
 						/obj/item/weapon/tool/pickaxe/drill/onestar = 1,
+						/obj/item/weapon/tool/shovel/onestar_shovel = 0.5,
+						/obj/item/weapon/tool/saw/onestar_saw = 1,
 						/obj/item/weapon/tool/hammer/powered_hammer/onestar_hammer = 0.5,
 						/obj/item/weapon/tool/screwdriver/combi_driver/onestar = 1,
-						/obj/item/weapon/tool/weldingtool/onestar = 1))
+						/obj/item/weapon/tool/weldingtool/onestar = 1,
+						/obj/item/weapon/tool/wirecutters/onestar_pliers = 0.2,
+						/obj/item/weapon/tool/onestar_multitool = 0.1))
 
 /obj/random/tool/advanced/onestar/low_chance
 	icon_state = "tool-orange-low"

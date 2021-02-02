@@ -6,7 +6,7 @@
 	item_state = "mac"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_PISTOL
-	can_dual = 1
+	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
@@ -15,7 +15,7 @@
 	price_tag = 1000
 	damage_multiplier = 0.9
 	recoil_buildup = 5
-	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	one_hand_penalty = 5 //smg level
 
 	init_firemodes = list(
@@ -56,7 +56,7 @@
 	item_state = "croon"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_PISTOL
-	can_dual = 1
+	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE

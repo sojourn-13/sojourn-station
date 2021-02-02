@@ -26,3 +26,9 @@
 			M.throw_at(get_edge_target_turf(M, throwdir),15,1)
 	return ..()
 */
+
+/obj/item/projectile/coin
+	name = "coin"
+	desc = "Keep the change, ya filthy animal."
+	damage_types = list(BRUTE = 5)
+	embed = 0

@@ -19,6 +19,7 @@
 #define CAL_CAP "plastic cap"
 #define CAL_ROCKET "rocket propelled grenade"
 #define CAL_GRENADE "grenade"
+#define CAL_CROSSBOW "bolt"
 
 /obj/machinery/autolathe/artist_bench
 	name = "artist's bench"

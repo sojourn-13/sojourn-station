@@ -168,6 +168,17 @@
 	matter = list(MATERIAL_STEEL = 8)
 	base_block_chance = 40
 
+/obj/item/weapon/shield/riot/handmade/bone
+	name = "bone shield"
+	desc = "A handmade stout shield, but with a small size crafted entirely of bone. Exceptionally good at enduring melee attacks due to its light weight and high density."
+	icon_state = "buckler_bone"
+	item_state = "buckler_bone"
+	flags = null
+	throw_speed = 2
+	throw_range = 6
+	matter = list(MATERIAL_BONE = 6)
+	base_block_chance = 50
+
 /*
  * Energy Shield
  */

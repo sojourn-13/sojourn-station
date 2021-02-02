@@ -8,7 +8,7 @@
 	item_state = "bluetag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag/blue)
+	allowed = list (/obj/item/weapon/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/redtag
@@ -18,7 +18,7 @@
 	item_state = "redtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag/red)
+	allowed = list (/obj/item/weapon/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/greentag
@@ -28,7 +28,7 @@
 	item_state = "greentag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag/green)
+	allowed = list (/obj/item/weapon/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/yellowtag
@@ -38,7 +38,7 @@
 	item_state = "yellowtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag/yellow)
+	allowed = list (/obj/item/weapon/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/cyborg_suit
