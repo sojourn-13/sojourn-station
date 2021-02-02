@@ -18,10 +18,10 @@
 	You are primarily a helper and communicator. Use your abilities to help the crew in accordance with your laws.<br>\
 	Orders from the Council, CRO, and Roboticists should always be adhered to unless they conflict with your laws.<br>\
 	The Council and CRO can override the commands of Roboticists, however. They're far more important around here.<br>\
-	The usual Soteria lawset is to serve the public trust, protect the innocent, and prevent tampering. Keep them in mind constantly.<br>\
+	The usual Soteria law set is to serve the public trust, protect the innocent, and prevent tampering. Keep them in mind constantly.<br>\
 	Of course, there is the chance your laws may be changed. Such can potentially get very interesting for an AI..."
 
-	duties = "Follow your lawset, whatever it may be. Remember that this may potentially change throughout the shift."
+	duties = "Follow your law set, whatever it may be. Remember that this may potentially change throughout the shift."
 
 /datum/job/ai/equip(var/mob/living/carbon/human/H, var/alt_title)
 	return FALSE
@@ -61,10 +61,10 @@
 	You are primarily a helper. Choose a department module, and use your respective abilities to help in accordance with your laws.<br>\
 	Orders from the Council, CRO, AI, and Roboticists should always be adhered to unless they conflict with your laws.<br>\
 	The Council and CRO can override the commands of Roboticists and the AI, however. They're far more important around here.<br>\
-	The usual Soteria lawset is to serve the public trust, protect the innocent, and prevent tampering. Keep them in mind constantly.<br>\
+	The usual Soteria law set is to serve the public trust, protect the innocent, and prevent tampering. Keep them in mind constantly.<br>\
 	Of course, there is the chance your laws may be changed. Such can potentially get very interesting for a Cyborg..."
 
-	duties = "Follow your lawset, whatever it may be. Remember that this may potentially change throughout the shift."
+	duties = "Follow your law set, whatever it may be. Remember that this may potentially change throughout the shift."
 
 /datum/job/cyborg/equip(var/mob/living/carbon/human/H, var/alt_title)
 	return FALSE

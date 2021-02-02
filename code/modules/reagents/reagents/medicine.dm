@@ -98,7 +98,7 @@
 /datum/reagent/medicine/dermaline
 	name = "Dermaline"
 	id = "dermaline"
-	description = "Dermaline is the next step in burn medication. Works twice as good as kelotane and enables the body to restore even the direst heat-damaged tissue."
+	description = "Dermaline is the next step in burn medication. Works twice as well as Kelotane and enables the body to restore even the direst heat-damaged tissue."
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -184,7 +184,7 @@
 /datum/reagent/medicine/dexalinp
 	name = "Dexalin Plus"
 	id = "dexalinp"
-	description = "Dexalin Plus is used in the treatment of oxygen deprivation as well as musle repair. It is highly effective."
+	description = "Dexalin Plus is used in the treatment of oxygen deprivation as well as muscle repair. It is highly effective."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#0040FF"
@@ -229,7 +229,7 @@
 /datum/reagent/medicine/tricordrazine
 	name = "Tricordrazine"
 	id = "tricordrazine"
-	description = "Tricordrazine is a highly potent stimulant, originally derived from cordrazine. Can be used to treat a wide range of injuries."
+	description = "Tricordrazine is a highly potent stimulant, originally derived from Cordrazine. Can be used to treat a wide range of injuries."
 	taste_description = "grossness"
 	reagent_state = LIQUID
 	color = "#8040FF"
@@ -254,7 +254,7 @@
 /datum/reagent/medicine/cryoxadone
 	name = "Cryoxadone"
 	id = "cryoxadone"
-	description = "A chemical mixture with almost magical healing powers. Its main limitation is that the targets body temperature must be under 170K for it to metabolise correctly."
+	description = "A chemical mixture with almost magical healing powers. Its main limitation is that the targets body temperature must be under 170K for it to metabolize correctly."
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#8080FF"
@@ -274,7 +274,7 @@
 /datum/reagent/medicine/clonexadone
 	name = "Cronexidone"
 	id = "clonexadone"
-	description = "A liquid compound that is in all ways superior to cryoxadone. Can be used to treat severe clone damage, genetic mutation, and repair even dead bodies when used in conjunction with a cryo tube."
+	description = "A liquid compound that is in all ways superior to Cryoxadone. Can be used to treat severe clone damage, genetic mutation, and repair even dead bodies when used in conjunction with a cryo tube."
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#80BFFF"
@@ -296,7 +296,7 @@
 /datum/reagent/medicine/paracetamol
 	name = "Paracetamol"
 	id = "paracetamol"
-	description = "Most probably know this as Tylenol, but this chemical is a mild, simple painkiller."
+	description = "Most probably know this as Tylenol, this chemical is a mild, simple painkiller."
 	taste_description = "sickness"
 	reagent_state = LIQUID
 	color = "#C8A5DC"
@@ -449,7 +449,7 @@
 /datum/reagent/medicine/ryetalyn
 	name = "Ryetalyn"
 	id = "ryetalyn"
-	description = "Ryetalyn can cure all genetic abnomalities via a catalytic process."
+	description = "Ryetalyn can cure all genetic abnormalities via a catalytic process."
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#004000"
@@ -713,7 +713,7 @@
 /datum/reagent/medicine/ossisine
 	name = "Ossisine"
 	id = "ossisine"
-	description = "Paralyses user and restores broken bones. Medicate in critical conditions only."
+	description = "Paralyzes user and restores broken bones. Medicate in critical conditions only."
 	taste_description = "calcium"
 	reagent_state = LIQUID
 	color = "#660679"
@@ -809,7 +809,7 @@
 /datum/reagent/medicine/detox
 	name = "Detox"
 	id = "detox"
-	description = "Boosts neural regeneration, allowing neural system to tolerate more chemicals without permament damage."
+	description = "Boosts neural regeneration, allowing neural system to tolerate more chemicals without permanent damage."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#229e08"
@@ -835,7 +835,7 @@
 /datum/reagent/medicine/purger
 	name = "Purger"
 	id = "purger"
-	description = "Temporary purges all addictions well also repairing kidneys."
+	description = "Temporarily purges all addictions, as well as repairing kidneys."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#d4cf3b"
@@ -882,7 +882,7 @@
 /datum/reagent/medicine/aminazine
 	name = "Aminazine"
 	id = "aminazine"
-	description = "Medication designed to opresse withdrawal effects for some time."
+	description = "Medication designed to suppress withdrawal effects for some time."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#88336f"
@@ -896,7 +896,7 @@
 /datum/reagent/medicine/haloperidol
 	name = "Haloperidol"
 	id = "haloperidol"
-	description = "Purges all forms of toxins and stimulants from the bloodstream, lowers NSA, and sedates the patient. An overdose of haloperidol can be fatal."
+	description = "Purges all forms of toxins and stimulants from the bloodstream, lowers NSA, and sedates the patient. An overdose of Haloperidol can be fatal."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ba1f04"
@@ -1149,7 +1149,7 @@
 /datum/reagent/medicine/spaceacillin/cindicillin
 	name = "Cindicillin"
 	id = "cindicillin"
-	description = "An all-purpose antiviral agent naturally produced by cindarites that functions identically to spaceacillin."
+	description = "An all-purpose antiviral agent naturally produced by cindarites that functions identically to Spaceacillin."
 	constant_metabolism = TRUE
 
 /datum/reagent/medicine/cindpetamol
@@ -1178,7 +1178,7 @@
 	if(istype(C) && C.metabolism_effects.addiction_list.len)
 		if(prob(90 + dose))
 			var/datum/reagent/R = pick(C.metabolism_effects.addiction_list)
-			to_chat(C, SPAN_NOTICE("You dont crave for [R.name] anymore."))
+			to_chat(C, SPAN_NOTICE("You don't crave for [R.name] anymore."))
 			C.metabolism_effects.addiction_list.Remove(R)
 			qdel(R)
 	if(M.bloodstr)

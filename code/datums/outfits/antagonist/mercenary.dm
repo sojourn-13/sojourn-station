@@ -39,6 +39,6 @@
 
 /obj/item/clothing/under/kriosansuit
 	name = "kriosan fatigues"
-	desc = "A tough, wear-resistant fatigues in brown colors. Typically worn underneath armour."
+	desc = "A tough, wear-resistant fatigues in brown colors. Typically worn underneath armor."
 	icon_state = "germansuit_brown"
 	item_state = "germansuit_brown"

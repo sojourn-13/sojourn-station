@@ -39,9 +39,9 @@
 							 /datum/computer_file/program/reports)
 
 	description = "The Chief Biolab Overseer is the head of the medical branch of the Soteria Institute, preserving and improving lives.<br>\
-	Your main responsibility is to keep everyone alive, as is the objective of your department. Prioritise health over most other concerns. <br>\
+	Your main responsibility is to keep everyone alive, as is the objective of your department. Prioritize health over most other concerns. <br>\
 	A variety of medical staff work under your command. Although these roles are clear-cut compared to the research branch, direct them appropriately.<br>\
-	Of course, remember that you are a doctor yourself - feel free to help with less specialised activities to ease the burden.<br>\
+	Of course, remember that you are a doctor yourself - feel free to help with less specialized activities to ease the burden.<br>\
 	The Medical wing also falls under the ownership of Soteria. You may use their resources - and they may use yours - as needed."
 
 	duties = "Direct the doctors under your command towards the bettering of all mankind.<br>\
@@ -90,7 +90,7 @@
 
 	description = "The Doctor is a professional medic and surgeon dedicated to healing the sick and injured, at all costs.<br>\
 	A broad range of medical procedures fall under your purview - diagnostics, general treatment, surgery, and virology.<br>\
-	You are not expected to be an expert in all: specialising in an area is fine. Divide tasks amongst colleagues, with CBO guidance.<br>\
+	You are not expected to be an expert in all: specializing in an area is fine. Divide tasks amongst colleagues, with CBO guidance.<br>\
 	Remember that chemistry has a dedicated specialist. Avoid this department unless it is notably short-staffed.<br>\
 	Due to the nature of your work, you may find yourself confined to the department for the shift majority. Don't abandon patients."
 
@@ -144,7 +144,7 @@
 	duties = "Act as a guard for medical, ensuring unneeded colonist leave and nothing is stolen.<br>\
 		Aid medical doctors and paramedics in any way you can.<br>\
 		Act as a nurse for minor injuries, treating patients that a doctor needn't bother with.<br>\
-		Ensure that any outbreaks are contained, such as slimes, infected monkies, or kudzu."
+		Ensure that any outbreaks are contained, such as slimes, infected monkeys, or kudzu."
 
 /obj/landmark/join/start/chemist //This says chemist so I didn't have to edit the map shit when I changed this. Fix later.
 	name = "Soteria Orderly"

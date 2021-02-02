@@ -81,11 +81,11 @@ Treat your command officers with respect, and listen to their council. Try not t
 
 	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow him wherever he goes.<br>\
 	Your primary, and perhaps only, responsibility is to ensure the safety of the Premier at all costs - even your own life if necessary.<br>\
-	However, you are an advisor as well as a bodyguard. Discreetly inform him of mistakes. Make sure he follows the law and remains popular.<br>\
+	However, you are an adviser as well as a bodyguard. Discreetly inform him of mistakes. Make sure he follows the law and remains popular.<br>\
 	You may be assigned special tasks by the Premier for whatever reason. Ensure these orders are fulfilled.<br>\
 	Do not embarass him, and especially do not harm his relations with faction leaders. You may not do much talking, but you have great impact."
 
-	duties = "Act as a bodyguard, advisor, and confidant to the Premier.<br>\
+	duties = "Act as a bodyguard, adviser, and confidant to the Premier.<br>\
 	Remain conscious of any potential threats to the safety of the Premier.<br>\
 	Perform tasks as assigned by the Premier - such as filling paperwork or reassigning roles.<br>\
 	Demonstrate true loyalty and do not let your superior down."

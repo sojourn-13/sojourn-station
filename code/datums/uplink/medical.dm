@@ -20,12 +20,12 @@
 	path = /obj/item/weapon/storage/firstaid/combat
 
 /datum/uplink_item/item/medical/nanites
-	name = "Raw nanites vial"
+	name = "Raw nanite vial"
 	item_cost = 5
 	path = /obj/item/weapon/reagent_containers/glass/beaker/vial/nanites
 
 /datum/uplink_item/item/medical/uncapnanites
-	name = "Raw uncapped nanites vial"
+	name = "Raw uncapped nanite vial"
 	item_cost = 8
 	path = /obj/item/weapon/reagent_containers/glass/beaker/vial/uncapnanites
 

@@ -169,7 +169,7 @@
 		"Exotic Boxes",
 			list(name="Box (20mm Incendiary)", cost=3080, path=/obj/item/ammo_magazine/ammobox/shotgun/incendiary),
 			list(name="Box (20mm Payload)", cost=3850, path=/obj/item/ammo_magazine/ammobox/shotgun/payload),
-			list(name="Box (10x24mm caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c10x24),
+			list(name="Box (10x24mm Caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c10x24),
 			list(name="Box (.60-06 AP)", cost=1650, path=/obj/item/ammo_magazine/ammobox/antim),
 	)
 

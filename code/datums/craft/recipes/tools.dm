@@ -70,7 +70,7 @@
 	)
 
 /datum/craft_recipe/tool/makeshift_electrolyser
-	name = "makeshift electrolyser"
+	name = "makeshift electrolyzer"
 	result = /obj/item/device/makeshift_electrolyser
 	icon_state = "electronic"
 	steps = list(
@@ -102,7 +102,7 @@
 
 //A rod wrapped in tape makes a crude screwthing
 /datum/craft_recipe/tool/screwpusher
-	name = "screwpusher"
+	name = "screw pusher"
 	result = /obj/item/weapon/tool/screwdriver/improvised
 	steps = list(
 		list(/obj/item/stack/rods, 1, "time" = 30),
@@ -137,7 +137,7 @@
 
 //Rods bent into wierd shapes and held together with a screw
 /datum/craft_recipe/tool/wiremanglers
-	name = "wiremanglers"
+	name = "wire manglers"
 	result = /obj/item/weapon/tool/wirecutters/improvised
 	steps = list(
 		list(/obj/item/stack/rods, 1, "time" = 30),

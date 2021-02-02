@@ -71,7 +71,7 @@
 	)
 
 /datum/craft_recipe/guild/robotmelee //Lots of steps
-	name = "robot mark v armour plating"
+	name = "robot mark v armor plating"
 	result = /obj/item/robot_parts/robot_component/armour/mkv
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 90),
@@ -217,7 +217,7 @@
 
 //Wearables =========================
 /datum/craft_recipe/guild/technosuit
-	name = "'Mark V' enviromental protection suit"
+	name = "'Mark V' environmental protection suit"
 	result = /obj/item/clothing/suit/armor/vest/technomancersuit
 	icon_state = "clothing"
 	steps = list(
@@ -233,7 +233,7 @@
 	)
 
 /datum/craft_recipe/guild/technohelmet
-	name = "'Mark V' enviromental protection helmet"
+	name = "'Mark V' environmental protection helmet"
 	result = /obj/item/clothing/head/helmet/technomancersuit
 	icon_state = "clothing"
 	steps = list(
@@ -412,7 +412,7 @@
 	)
 
 /datum/craft_recipe/guild/matter_nanoforge
-	name = "Circuit: Matter Nanoforge"
+	name = "Circuit: Matter Nano-Forge"
 	result = /obj/item/weapon/circuitboard/matter_nanoforge
 	icon_state = "electronic"
 	steps = list(
@@ -425,7 +425,7 @@
 	)
 
 /datum/craft_recipe/guild/matter_nanoforge_blackbox
-	name = "Blackbox: Matter Nanoforge"
+	name = "Black Box: Matter Nano-Forge"
 	result = /obj/item/weapon/oddity/blackbox_nanoforage
 	steps = list(
 		list(/obj/item/weapon/computer_hardware/processor_unit, 1, "time" = 120),
@@ -447,7 +447,7 @@
 
 /*
 /datum/craft_recipe/weapon/guild_bin
-	name = "Casted Matter Bin"
+	name = "Cast Matter Bin"
 	result = /obj/item/weapon/stock_parts/matter_bin/guild
 	icon_state = "gun"
 	steps = list(

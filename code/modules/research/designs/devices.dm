@@ -67,7 +67,7 @@
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/trashbag_holding
-	name = "'Trashbag of Holding'"
+	name = "'Trash Bag of Holding'"
 	desc = "Using localized pockets of bluespace this trashbag prototype offers incredible storage capacity with the contents weighting nothing."
 	build_path = /obj/item/weapon/storage/bag/trash/holding
 	category = "Bluespace Telecoms"

@@ -84,8 +84,8 @@
 							 /datum/computer_file/program/reports)
 
 	description = "The Guild Master is the head of the Artificers Guild, a group of skilled engineers. This colony is your pride.<br>\
-	You are to keep the colony running and constantly improve it as much as you are able. Let none question the efficacy of your labours.<br>\
-	As a leader, it is far more efficient for you to delegate work than attempting to solve everything yourself - spread the labour.<br>\
+	You are to keep the colony running and constantly improve it as much as you are able. Let none question the efficacy of your labors.<br>\
+	As a leader, it is far more efficient for you to delegate work than attempting to solve everything yourself - spread the labor.<br>\
 	Machinery across the station is your responsibility. Let no outsiders interfere or intrude into your domain - even Command staff are no exception.<br>\
 	Treat every Guild member like your family. Keep them paid, fed, and safe. You may be a part of the wider colony, but your own come first."
 

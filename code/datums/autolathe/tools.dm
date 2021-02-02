@@ -48,15 +48,15 @@
 	build_path = /obj/item/weapon/tool/screwdriver/electric
 
 /datum/design/autolathe/tool/combi_driver
-	name = "combi driver"
+	name = "combination drill"
 	build_path = /obj/item/weapon/tool/screwdriver/combi_driver
 
 /datum/design/autolathe/tool/combi_driver_onestar
-	name = "greyson positronic combi driver"
+	name = "greyson positronic combination drill"
 	build_path = /obj/item/weapon/tool/screwdriver/combi_driver/onestar
 
 /datum/design/autolathe/tool/wirecutters
-	name = "wirecutters"
+	name = "wire cutters"
 	build_path = /obj/item/weapon/tool/wirecutters
 
 /datum/design/autolathe/tool/pliers
@@ -204,11 +204,11 @@
 	build_path = /obj/item/weapon/tool/retractor
 
 /datum/design/autolathe/tool/cautery
-	name = "cautery"
+	name = "electrocautery"
 	build_path = /obj/item/weapon/tool/cautery
 
 /datum/design/autolathe/tool/bonesetter
-	name = "bonesetter"
+	name = "bone setter"
 	build_path = /obj/item/weapon/tool/bonesetter
 
 /datum/design/autolathe/tool/hemostat
@@ -231,5 +231,5 @@
 	build_path = /obj/item/weapon/tool/crowbar/pneumatic
 
 /datum/design/autolathe/tool/omni_surgery_onestar
-	name = "greyson positronic medmultitool"
+	name = "greyson positronic medical multitool"
 	build_path = /obj/item/weapon/tool/medmultitool

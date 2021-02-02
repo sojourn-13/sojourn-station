@@ -32,13 +32,13 @@
 
 /obj/item/organ/external/robotic/serbian
 	name = "\"Voidwolf Arms\""
-	desc = "Battle hardened green and brown prostesis rebranded several times."
+	desc = "Battle hardened green and brown prosthesis rebranded several times."
 	force_icon = 'icons/mob/human_races/cyberlimbs/serbian.dmi'
 	model = "serbian"
 
 /obj/item/organ/external/robotic/frozen_star
 	name = "\"H&S Augments\""
-	desc = "Tactical \"Holland & Sullivan\" blue and gray prosthesis for dangerous enviroment."
+	desc = "Tactical \"Holland & Sullivan\" blue and gray prosthesis for dangerous environment."
 	force_icon = 'icons/mob/human_races/cyberlimbs/frozen_star.dmi'
 	model = "frozen_star"
 
@@ -118,7 +118,7 @@ obj/item/organ/external/robotic/technomancer/groin
 //In game prostheses
 /obj/item/organ/external/robotic/excelsior
 	name = "Excelsior"
-	desc = "Plasma reinforced black prothsesis designed for heavy combat."
+	desc = "Plasma reinforced black prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/excelsior.dmi'
 	model = "excelsior"
 	armor = list(melee = 50, bullet = 50, energy = 50, bomb = 50, bio = 0, rad = 100)
@@ -140,7 +140,7 @@ obj/item/organ/external/robotic/technomancer/groin
 
 /obj/item/organ/external/robotic/one_star
 	name = "Greyson"
-	desc = "Advanced, extremly resileant and mobile prosthetic. Inscribed with \"Made in\" followed by giberish, must have been lost to time."
+	desc = "Advanced, extremely resilient and mobile prosthetic. Inscribed with \"Made in\" followed by gibberish, must have been lost to time."
 	force_icon = 'icons/mob/human_races/cyberlimbs/one_star.dmi'
 	model = "one_star"
 	armor = list(melee = 65, bullet = 65, energy = 65, bomb = 65, bio = 0, rad = 100)

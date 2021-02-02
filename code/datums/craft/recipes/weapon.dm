@@ -181,7 +181,7 @@
 	)
 
 /datum/craft_recipe/weapon/hook
-	name = "steel meathook"
+	name = "steel meat hook"
 	result = /obj/item/weapon/tool/knife/hook
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),

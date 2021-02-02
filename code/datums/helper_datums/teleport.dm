@@ -182,7 +182,7 @@
 			if(beltholding.len)
 				to_chat(MM, SPAN_DANGER("The bluespace interface of your belt of holding interferes with the teleport!"))
 			if(trashholding.len)
-				to_chat(MM, SPAN_DANGER("The bluespace interface of your trashbag of holding interferes with the teleport!"))
+				to_chat(MM, SPAN_DANGER("The bluespace interface of your trash bag of holding interferes with the teleport!"))
 			if(satchelholding.len)
 				to_chat(MM, SPAN_DANGER("The bluespace interface of your satchel of holding interferes with the teleport!"))
 	return 1
