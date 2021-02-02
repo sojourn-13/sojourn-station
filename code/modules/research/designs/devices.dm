@@ -16,6 +16,11 @@
 	build_path = /obj/item/clothing/glasses/hud/security
 	category = CAT_WEAPON //Strongest weapon in the game is a ED/Beesky combo
 
+/datum/design/research/item/botany_disk
+	name = "flora data disk"
+	build_path = /obj/item/weapon/disk/botany
+	category = "Misc"
+
 //Bluespace stuff
 
 /datum/design/research/item/ano_scanner
