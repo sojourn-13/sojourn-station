@@ -14,8 +14,8 @@
 	faction = "deathclaw"
 	maxHealth = 2200
 	health = 2200
-	melee_damage_lower = 25
-	melee_damage_upper = 30
+	melee_damage_lower = 30
+	melee_damage_upper = 35
 	old_x = -16
 	speed = 0.8
 	var/zoomeye = 7
