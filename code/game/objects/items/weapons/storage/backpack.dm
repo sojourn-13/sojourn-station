@@ -125,7 +125,7 @@
 	icon_state = "backpack_purple"
 
 /obj/item/weapon/storage/backpack/purple/scientist
-	name = "scientific backpack"
+	name = "scientist backpack"
 	desc = "Useful for holding research materials."
 
 /obj/item/weapon/storage/backpack/blue
@@ -133,7 +133,7 @@
 	icon_state = "backpack_blue"
 
 /obj/item/weapon/storage/backpack/blue/geneticist
-	name = "genetical backpack"
+	name = "geneticist backpack"
 	desc = "A sterile backpack with geneticist colours."
 
 /obj/item/weapon/storage/backpack/green
@@ -141,7 +141,7 @@
 	icon_state = "backpack_green"
 
 /obj/item/weapon/storage/backpack/green/virologist
-	name = "virological backpack"
+	name = "virologist backpack"
 	desc = "A sterile backpack with virologist colours."
 
 /obj/item/weapon/storage/backpack/orange
@@ -149,11 +149,11 @@
 	icon_state = "backpack_orange"
 
 /obj/item/weapon/storage/backpack/orange/chemist
-	name = "chemistry backpack"
+	name = "chemist backpack"
 	desc = "A sterile backpack with chemist colours."
 
 /obj/item/weapon/storage/backpack/botanist
-	name = "botanical backpack"
+	name = "botanist backpack"
 	desc = "A green backpack for plant related work."
 	icon_state = "backpack_botanical"
 
@@ -199,7 +199,7 @@
 	icon_state = "backpack_ironhammer"
 
 /obj/item/weapon/storage/backpack/neotheology
-	name = "cruciformed backpack"
+	name = "cruciform backpack"
 	desc = "For carrying all your holy needs."
 	icon_state = "backpack_neotheology"
 
@@ -246,11 +246,11 @@
 //Faction-specific backsports
 /obj/item/weapon/storage/backpack/sport/ironhammer
 	name = "operator's sport backpack"
-	desc = "Done in a complementing shade for IronHammer Security forces. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
+	desc = "Done in a complementing shade for Ironhammer Security forces. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
 	icon_state = "backsport_ironhammer"
 
 /obj/item/weapon/storage/backpack/sport/neotheology
-	name = "cruciformed sport backpack"
+	name = "cruciform sport backpack"
 	desc = "For carrying all your holy needs."
 	icon_state = "backsport_neotheology"
 
@@ -281,27 +281,27 @@
 	icon_state = "satchel_blue"
 
 /obj/item/weapon/storage/backpack/satchel/blue/geneticist
-	name = "genetical satchel"
-	desc = "A sterile satchel with geneticist colours."
+	name = "geneticist satchel"
+	desc = "A sterile satchel with geneticist colors."
 
 /obj/item/weapon/storage/backpack/satchel/green
 	name = "green satchel"
 	icon_state = "satchel_green"
 
 /obj/item/weapon/storage/backpack/satchel/green/virologist
-	name = "virological backpack"
-	desc = "A sterile backpack with virologist colours."
+	name = "virologist backpack"
+	desc = "A sterile backpack with virologist colors."
 
 /obj/item/weapon/storage/backpack/satchel/orange
 	name = "orange satchel"
 	icon_state = "satchel_orange"
 
 /obj/item/weapon/storage/backpack/satchel/orange/chemist
-	name = "chemistry backpack"
-	desc = "A sterile backpack with chemist colours."
+	name = "chemist backpack"
+	desc = "A sterile backpack with chemist colors."
 
 /obj/item/weapon/storage/backpack/satchel/botanist
-	name = "botanical satchel"
+	name = "botanist satchel"
 	icon_state = "satchel_botanical"
 	desc = "A green satchel for plant related work."
 
@@ -340,7 +340,7 @@
 	icon_state = "satchel_ironhammer"
 
 /obj/item/weapon/storage/backpack/satchel/neotheology
-	name = "cruciformed satchel"
+	name = "cruciform satchel"
 	desc = "Slightly more accessible means for your holy goods."
 	icon_state = "satchel_neotheology"
 

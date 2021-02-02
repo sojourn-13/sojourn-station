@@ -1,5 +1,5 @@
 /obj/item/weapon/tool/cautery
-	name = "cautery"
+	name = "electrocautery"
 	desc = "This stops bleeding."
 	icon_state = "cautery"
 	item_state = "cautery"
@@ -10,8 +10,8 @@
 	tool_qualities = list(QUALITY_CAUTERIZING = 30)
 
 /obj/item/weapon/tool/cautery/adv
-	name = "high powered cautery"
-	desc = "A Cautery with self-regulating heat transfer capabilities, allows for quicker and more precise cauterization of surgical incisions."
+	name = "high powered electrocautery"
+	desc = "An electrocautery with self-regulating heat transfer capabilities, allows for quicker and more precise cauterization of surgical incisions."
 	matter = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 4)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 2)
 	tool_qualities = list(QUALITY_CAUTERIZING = 50)

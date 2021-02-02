@@ -120,7 +120,7 @@
 	max_fuel = 100
 
 /obj/item/weapon/tool/pickaxe/drill/onestar
-	name = "greyson positronic mining drill"
+	name = "Greyson Positronic mining drill"
 	desc = "Yours is the drill that will pierce through the worker, metaphorically."
 	icon_state = "one_star_drill"
 	tool_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 10)
@@ -156,7 +156,7 @@
 
 /obj/item/weapon/tool/pickaxe/excavation
 	name = "hand pickaxe"
-	desc = "A smaller, more precise version of the pickaxe, used for archeological excavation."
+	desc = "A smaller, more precise version of the pickaxe, used for archaeological excavation."
 	icon_state = "pick_hand"
 	item_state = "syringe_0"
 	force = WEAPON_FORCE_PAINFUL //It's smaller

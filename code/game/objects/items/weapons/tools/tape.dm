@@ -45,7 +45,7 @@
 
 /obj/item/weapon/tool/tape_roll/flextape
 	name = "flex tape"
-	desc = "To fix a lot of damage! Posdate: It doesn't repair the Supermatter."
+	desc = "To fix a lot of damage! PS: It doesn't repair the Supermatter."
 	icon_state = "flextaperoll"
 	tool_qualities = list(QUALITY_ADHESIVE = 100, QUALITY_SEALING = 100)
 	matter = list(MATERIAL_PLASTIC = 40)

@@ -355,7 +355,7 @@
 
 /obj/item/weapon/bikehorn/rubberducky
 	name = "rubber ducky"
-	desc = "A yellow rubber ducky for bathtime. Has the most annoying squeak."
+	desc = "A yellow rubber ducky for bath time. Has the most annoying squeak."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "rubberducky"
 	item_state = "rubberducky"

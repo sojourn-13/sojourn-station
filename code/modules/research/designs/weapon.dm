@@ -293,7 +293,7 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/heatsink
-	name = "Heatsink"
+	name = "Heat Sink"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/heatsink
 	sort_string = "TAAAB"
 	category = CAT_TOOLMODS
@@ -311,7 +311,7 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/plasmablock
-	name = "Plasmablock"
+	name = "Plasma Block"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/plasmablock
 	sort_string = "TAAAE"
 	category = CAT_TOOLMODS
@@ -347,7 +347,7 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/dblade
-	name = "Lonestar's \"Gleaming Edge\": Diamond Blade"
+	name = "Lonestar \"Gleaming Edge\": Diamond Blade"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/diamond_blade
 	sort_string = "TAAAK"
 	category = CAT_TOOLMODS
@@ -365,7 +365,7 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/antistaining
-	name = "Anti-staining Paint"
+	name = "Anti-Staining Paint"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/antistaining
 	sort_string = "TAAAN"
 	category = CAT_TOOLMODS
@@ -383,13 +383,13 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/laserguide
-	name = "Lonestar's \"Guiding Light\" Laser Guide"
+	name = "Lonestar \"Guiding Light\" Laser Guide"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/laserguide
 	sort_string = "TAAAQ"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/stabilizedgrip
-	name = "Gyrostabilized Grip"
+	name = "Gyro-Stabilized Grip"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/stabilized_grip
 	sort_string = "TAAAR"
 	category = CAT_TOOLMODS

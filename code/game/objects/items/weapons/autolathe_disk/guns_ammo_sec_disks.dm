@@ -931,7 +931,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 // ENERGY ARMS
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercore
-	disk_name = "H&S - lasercore PDW E"
+	disk_name = "H&S - Laser Core PDW E"
 	icon_state = "frozenstar"
 
 	license = 8

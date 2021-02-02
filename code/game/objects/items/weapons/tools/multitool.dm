@@ -28,7 +28,7 @@
 	tool_qualities = list(QUALITY_PULSING = 100)
 
 /obj/item/weapon/tool/onestar_multitool
-	name = "greyson positronic multitool"
+	name = "Greyson Positronic multitool"
 	desc = "Used for pulsing wires to test which to cut. You can use this on airlocks or APCs to try to hack them. \
 			The advanced and precise engineering allows for more DIY improvements than most Greyson Positronic tools ."
 	icon_state = "one_star_multitool"
@@ -42,7 +42,7 @@
 
 /obj/item/weapon/tool/multitool/advanced
 	name = "advanced multitool"
-	desc = "Used for pulsing wires to test which to cut. You can use this on airlocks, APCs or even lockers to try to hack them. This verson is a more bulky and uses a medium cell."
+	desc = "Used for pulsing wires to test which to cut. You can use this on airlocks, APCs or even lockers to try to hack them. This version is a more bulky and uses a medium cell."
 	icon_state = "adv_multitool"
 	tool_qualities = list(QUALITY_PULSING = 50)
 	matter = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 5, MATERIAL_PLATINUM = 1)

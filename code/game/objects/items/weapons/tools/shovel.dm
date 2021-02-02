@@ -37,7 +37,7 @@
 	workspeed = 1.2
 
 /obj/item/weapon/tool/shovel/onestar_shovel
-	name = "greyson positronic shovel"
+	name = "Greyson Positronic shovel"
 	desc = "A large tool for digging and moving dirt and rock with the finest engineering put into it for maximum lift and heaving."
 	icon_state = "one_star_shovel"
 	force = WEAPON_FORCE_DANGEROUS

@@ -14,7 +14,7 @@
 	var/list/usable_qualities = list(QUALITY_SAWING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_SAWING)
-		to_chat(user, SPAN_NOTICE("You started to cut the tree, felling it and turning it into planks..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the tree, felling it and turning it into planks..."))
 		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			playsound(loc, 'sound/items/tree_fall.ogg', 80, 1)
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 30 : 2)
@@ -62,7 +62,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -128,7 +128,7 @@
 
 /obj/structure/flora/pottedplant/overgrown
 	name = "overgrown potted plants"
-	desc = "This is an assortment of colourful plants. Some parts are overgrown."
+	desc = "This is an assortment of colorful plants. Some parts are overgrown."
 	icon_state = "plant-03"
 
 /obj/structure/flora/pottedplant/bamboo
@@ -158,7 +158,7 @@
 
 /obj/structure/flora/pottedplant/unusual
 	name = "unusual potted plant"
-	desc = "This is an unusual plant. It's bulbous ends emit a soft blue light."
+	desc = "This is an unusual plant. Its bulbous ends emit a soft blue light."
 	icon_state = "plant-09"
 	light_range = 2
 	light_power = 0.6
@@ -216,7 +216,7 @@
 
 /obj/structure/flora/pottedplant/subterranean
 	name = "subterranean potted plant"
-	desc = "This is a subterranean plant. It's bulbous ends glow faintly."
+	desc = "This is a subterranean plant. Its bulbous ends glow faintly."
 	icon_state = "plant-20"
 	light_range = 2
 	light_power = 0.6
@@ -234,7 +234,7 @@
 
 /obj/structure/flora/pottedplant/drooping
 	name = "drooping potted plant"
-	desc = "This is a small plant. The drooping leaves make it look like its wilted."
+	desc = "This is a small plant. The drooping leaves make it look like it's wilted."
 	icon_state = "plant-23"
 
 /obj/structure/flora/pottedplant/tropical
@@ -273,7 +273,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
@@ -361,7 +361,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
@@ -387,7 +387,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
@@ -420,7 +420,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
@@ -445,7 +445,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
@@ -469,7 +469,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the plant, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
@@ -485,7 +485,7 @@
 
 /obj/structure/flora/tree/sif
 	name = "glowing tree"
-	desc = "It's a tree, except this one seems quite alien.  It glows a deep blue."
+	desc = "It's a tree, except this one seems quite alien. It glows a deep blue."
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "tree_sif"
 
@@ -700,7 +700,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
@@ -721,7 +721,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
@@ -742,7 +742,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
@@ -763,7 +763,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
@@ -785,7 +785,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src)) //We get more
@@ -807,7 +807,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
@@ -828,7 +828,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
@@ -849,7 +849,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
@@ -870,7 +870,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
@@ -890,7 +890,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -909,7 +909,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -928,7 +928,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -947,7 +947,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -966,7 +966,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -985,7 +985,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -1004,7 +1004,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -1023,7 +1023,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -1042,7 +1042,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -1061,7 +1061,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the grass, harvesting some clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
@@ -1081,7 +1081,7 @@
 	var/list/usable_qualities = list(QUALITY_CUTTING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_CUTTING)
-		to_chat(user, SPAN_NOTICE("You started to cut the bush away, harvesting some plant clippings..."))
+		to_chat(user, SPAN_NOTICE("You start to cut the bush away, harvesting some plant clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
 			new /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings(get_turf(src))
@@ -1186,7 +1186,7 @@
 	icon_state = "decor-pumpkin"
 
 /obj/effect/landmark/carved_pumpkin_spawn
-	name = "jack o'lantern spawn"
+	name = "jack o' lantern spawn"
 	icon = 'icons/obj/flora/pumpkins.dmi'
 	icon_state = "spawner-jackolantern"
 
@@ -1201,8 +1201,8 @@
     ..()
 
 /obj/structure/flora/pumpkin/carved
-	name = "jack o'lantern"
-	desc = "A fat, freshly picked pumpkin. This one has a face carved into it! This one has develishly evil-looking eyes and a grinning mouth more than big enough for a very small person to hide in."
+	name = "jack o' lantern"
+	desc = "A fat, freshly picked pumpkin. This one has a face carved into it! This one has devilishly evil-looking eyes and a grinning mouth more than big enough for a very small person to hide in."
 	icon_state = "decor-jackolantern"
 
 /obj/structure/flora/pumpkin/carved/scream
@@ -1210,7 +1210,7 @@
 	icon_state = "decor-jackolantern-scream"
 
 /obj/structure/flora/pumpkin/carved/girly
-	desc = "A fat, freshly picked pumpkin. This one has a face carved into it! This one has neatly rounded eyes topped with what appear to be cartoony eyelashes, completed with what seems to have been the carver's attempt at friendly, toothy smile. The mouth is easily the scariest part of its face."
+	desc = "A fat, freshly picked pumpkin. This one has a face carved into it! This one has neatly rounded eyes topped with what appear to be cartoon-y eyelashes, completed with what seems to have been the carver's attempt at friendly, toothy smile. The mouth is easily the scariest part of its face."
 	icon_state = "decor-jackolantern-girly"
 
 /obj/structure/flora/pumpkin/carved/owo

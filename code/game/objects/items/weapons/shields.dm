@@ -94,7 +94,7 @@
 
 /obj/item/weapon/shield/riot/crusader
 	name = "crusader tower shield"
-	desc = "A traditional tower shield meeting the materials and design of the future. It's made from durasteel and the craftmenship is the highest quality, setting it apart from regular shields. It bears the insignia of the Church. Deus Vult."
+	desc = "A traditional tower shield meeting the materials and design of the future. It's made from durasteel and the craftsmanship is the highest quality, setting it apart from regular shields. It bears the insignia of the Church. Deus Vult."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
@@ -160,7 +160,7 @@
 
 /obj/item/weapon/shield/riot/handmade/lid
 	name = "lid shield"
-	desc = "A detached lid from trashcart, that works well as shield."
+	desc = "A detached lid from a trash cart, that works well as shield."
 	icon_state = "lid_shield"
 	flags = CONDUCT
 	throw_speed = 2

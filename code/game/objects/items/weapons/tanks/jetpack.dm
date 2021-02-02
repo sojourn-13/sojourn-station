@@ -1,7 +1,7 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
 
 /obj/item/weapon/tank/jetpack
-	name = "jetpack (empty)"
+	name = "jet pack (empty)"
 	desc = "A tank of compressed gas for use as propulsion in zero-gravity areas. Use with caution."
 	icon_state = "jetpack"
 	gauge_icon = null
@@ -37,7 +37,7 @@
 	Jetpack Types
 *****************************/
 /obj/item/weapon/tank/jetpack/void
-	name = "void jetpack (oxygen)"
+	name = "void jet pack (oxygen)"
 	desc = "It works well in a void."
 	icon_state = "jetpack-void"
 	item_state = "jetpack-void"
@@ -45,7 +45,7 @@
 
 
 /obj/item/weapon/tank/jetpack/oxygen
-	name = "jetpack (oxygen)"
+	name = "jet pack (oxygen)"
 	desc = "A tank of compressed oxygen for use as propulsion in zero-gravity areas. Use with caution."
 	icon_state = "jetpack"
 	item_state = "jetpack"
@@ -53,7 +53,7 @@
 
 
 /obj/item/weapon/tank/jetpack/carbondioxide
-	name = "jetpack (carbon dioxide)"
+	name = "jet pack (carbon dioxide)"
 	desc = "A tank of compressed carbon dioxide for use as propulsion in zero-gravity areas. Painted black to indicate that it should not be used as a source for internals."
 	icon_state = "jetpack-black"
 	item_state = "jetpack-black"
@@ -93,7 +93,7 @@
 //Toggling does as little as possible, to make jetpacks more modular.
 //All the work is done in the enable/disable procs
 /obj/item/weapon/tank/jetpack/verb/toggle_rockets()
-	set name = "Toggle Jetpack Stabilization"
+	set name = "Toggle Jet Pack Stabilization"
 	set category = "Object"
 
 	//Turning off stabilisation always works
@@ -142,7 +142,7 @@
 //Toggling does as little as possible, to make jetpacks more modular.
 //All the work is done in the enable/disable procs
 /obj/item/weapon/tank/jetpack/verb/toggle()
-	set name = "Toggle Jetpack"
+	set name = "Toggle Jet Pack"
 	set category = "Object"
 
 	if(on)
@@ -338,7 +338,7 @@
 	Rig jetpack
 ********************************/
 /obj/item/weapon/tank/jetpack/rig
-	name = "maneuvring jets"
+	name = "maneuvering jets"
 	var/obj/item/weapon/rig/holder
 
 //The rig jetpack uses the suit's gastank, this is set during the install proc for the rig module
@@ -372,7 +372,7 @@
 *****************************/
 //Refills by compressing air in the environment
 /obj/item/weapon/tank/jetpack/synthetic
-	name = "synthetic jetpack"
+	name = "synthetic jet pack"
 	desc = "A tank of compressed air for use as propulsion in zero-gravity areas. Has a built in compressor to refill it in any gaseous environment."
 	default_pressure = 6*ONE_ATMOSPHERE	// kPa. Also the pressure the compressor would fill itself to
 	default_gas = "carbon_dioxide"

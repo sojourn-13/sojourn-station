@@ -106,7 +106,7 @@
 
 /obj/item/weapon/grenade/flashbang/nt
 	name = "NT FBG \"Holy Light\""
-	desc = "An old \"Absolute\" flashbang granade, modified to spread the light of god."
+	desc = "An old \"Absolute\" flashbang grenade, modified to spread the light of god."
 	icon_state = "flashbang_nt"
 	item_state = "flashbang_nt"
 	matter = list(MATERIAL_BIOMATTER = 75)

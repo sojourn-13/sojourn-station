@@ -45,7 +45,7 @@
 
 /obj/item/animal_part/helldiver_tooth
 	name = "hell diver tooth"
-	desc = "A tooth from a fallen feral hell diver. While not particularily useful it does sell for quite a bit as a collector's item to kriosan jaegers who desire them for artwork involving scrimshaw."
+	desc = "A tooth from a fallen feral hell diver. While not particularly useful it does sell for quite a bit as a collector's item to kriosan jaegers who desire them for artwork involving scrimshaw."
 	icon_state = "molerat_tooth"
 	item_state = "molerat_tooth"
 	price_tag = 1000
@@ -65,7 +65,7 @@
 
 /obj/item/animal_part/tahca_antler
 	name = "tahca antler"
-	desc = "The antler of a tahca, valued for its decoritive appearence and for creating a universal anti-viral to prevent or even cure infections."
+	desc = "The antler of a tahca, valued for its decorative appearance and for creating a universal anti-viral to prevent or even cure infections."
 	icon_state = "radstag_antler"
 	item_state = "radstag_antler"
 	price_tag = 1000

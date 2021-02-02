@@ -167,7 +167,7 @@
 
 
 /obj/item/weapon/melee/energy/sword/sabre
-	name = "laser sabre"
+	name = "laser saber"
 	desc = "You feel the radiant glow below your skin."
 	origin_tech = list(TECH_MAGNET = 5, TECH_POWER = 6, TECH_COMBAT = 3)
 	active_force =  WEAPON_FORCE_ROBUST
@@ -176,7 +176,7 @@
 /obj/item/weapon/melee/energy/sword/sabre/dagger
 	blade_color = "green"
 	name = "laser dagger"
-	desc = "A much smaller but still usefull energy based short blade."
+	desc = "A much smaller but still useful energy based short blade."
 	armor_penetration = ARMOR_PEN_EXTREME
 	active_force =  WEAPON_FORCE_DANGEROUS
 	active_throwforce =  WEAPON_FORCE_DANGEROUS

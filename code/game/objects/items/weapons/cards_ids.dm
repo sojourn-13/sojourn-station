@@ -328,7 +328,7 @@ var/const/NO_EMAG_ACT = -50
 
 //Keys
 /obj/item/weapon/keys
-	name = "skeletonkey"
+	name = "skeleton key"
 	desc = "The true key to rule them all, can't open \"deadbolts\"."
 	icon = 'icons/obj/card.dmi'
 	icon_state = "keys"
@@ -341,6 +341,6 @@ var/const/NO_EMAG_ACT = -50
 	slot_flags = SLOT_BELT
 
 /obj/item/weapon/keys/lockpicks
-	name = "lockpicks"
-	desc = "A set of lockpicks used to open doors, sadly cant pick through \"deadbolts\"."
+	name = "lock picks"
+	desc = "A set of lock picks used to open doors, sadly cant pick through \"deadbolts\"."
 	icon_state = "lockpick"

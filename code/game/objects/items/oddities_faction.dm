@@ -1,7 +1,7 @@
 //Oddities which are specific to factions or certain jobs.
 /obj/item/biosyphon
 	name = "Biosiphon Anomaly"
-	desc = "An exceedingly rare bluespace anomaly discovered by a marshal ranger outside the colony. After weeks of study it was determined its only purpose was duplicating boxes of donuts. Soteria's disappointment was so great they gave the item to security for safe keeping. Months after its discovery it began to create refined cases of incredibly tasty donuts filled with long-lasting effective stimulents every two hours."
+	desc = "An exceedingly rare bluespace anomaly discovered by a marshal ranger outside the colony. After weeks of study it was determined its only purpose was duplicating boxes of donuts. Soteria's disappointment was so great they gave the item to security for safe keeping. Months after its discovery it began to create refined cases of incredibly tasty donuts filled with long-lasting effective stimulants every two hours."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "biosyphon"
 	item_state = "biosyphon"
@@ -33,7 +33,7 @@
 
 /obj/item/device/von_krabin
 	name = "Von-Krabin Stimulator"
-	desc = "A strange anomalous item given to the research directors of the soteria as its latent effects enhance the mind. Some say this is an unfinished prototype of the technology the church of absolute uses to enhance the abilities of others."
+	desc = "A strange anomalous item given to the research directors of Soteria as its latent effects enhance the mind. Some say this is an unfinished prototype of the technology the church of absolute uses to enhance the abilities of others."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "von-krabin"
 	item_state = "von-krabin"
@@ -298,7 +298,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "maneki_neko"
 	item_state = "maneki_neko"
-	desc = "An oddity that costs quite alot of money, it feels like its watching you. Creepy."
+	desc = "An oddity that costs quite a lot of money, it feels like its watching you. Creepy."
 	flags = CONDUCT
 	force = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_SMALL
@@ -477,7 +477,7 @@
 
 /obj/item/weapon/storage/sheath/joyeuse
 	name = "Joyeuse sheath"
-	desc = "A specially designed sheathe for the joyeuse, of which is the only object that shall fit in it."
+	desc = "A specially designed sheathe for the joyeuse, which is the only object that shall fit in it."
 	can_hold = list(
 		/obj/item/weapon/tool/sword/crusader/nt_sword_truth
 		)

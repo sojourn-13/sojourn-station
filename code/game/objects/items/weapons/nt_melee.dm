@@ -1,6 +1,6 @@
 //Warning! If you change icon_state or item_state, make sure you change path for sneath as well. icons/obj/sneath.dmi
 /obj/item/weapon/tool/sword/nt
-	name = "Shortsword"
+	name = "Short Sword"
 	desc = "A saintly looking sword, made to do God's work. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shortsword"
@@ -111,8 +111,8 @@
 	return base_block_chance
 
 /obj/item/weapon/tool/sword/crusader
-	name = "crusader greatsword"
-	desc = "A traditional blade meeting the materials and design of the future. It's made from durasteel and the craftmenship is of the highest quality. It bears the insignia of the Church. Deus Vult."
+	name = "crusader great sword"
+	desc = "A traditional blade meeting the materials and design of the future. It's made from durasteel and the craftsmanship is of the highest quality. It bears the insignia of the Church. Deus Vult."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "crusader"
 	item_state = "crusader"
