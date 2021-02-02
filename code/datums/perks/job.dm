@@ -65,7 +65,7 @@
 
 /datum/perk/selfmedicated
 	name = "Medical Expertise"
-	desc = "You've been trained in the art of Soteria medicine, applying chemicals in the most efficient ways to lessen addiction chance and prevent as much nerve shock."
+	desc = "You've been trained in the art of Soteria medicine, applying chemicals in the most efficient ways to lessen addiction chance and reduce nerve shock."
 	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/selfmedicated/assign(mob/living/carbon/human/H)
@@ -138,7 +138,7 @@
 */
 /datum/perk/sanityboost
 	name = "True Faith"
-	desc = "When near an obelisk, you feel your mind at ease. You're body is strengthed by its presence, resisting all forms of damage."
+	desc = "When near an obelisk, you feel your mind at ease. Your body is strengthened by its presence, resisting all forms of damage."
 	gain_text = "You feel the protection of the nearby obelisk."
 	lose_text = "You no longer feel the protection of an obelisk."
 	//icon_state = "sanityboost" // https://game-icons.net/1x1/lorc/templar-eye.html
@@ -159,7 +159,7 @@
 
 /datum/perk/sure_step
 	name = "Sure step"
-	desc = "Years spent in hazardous areas have made you sure on your footing, you are more likely to avoid traps and don't trip while running on underplating."
+	desc = "Years spent in hazardous areas have made you sure on your footing, you are more likely to avoid traps and don't trip while running on under-plating."
 	//icon_state = "mantrap"
 
 /datum/perk/ear_of_quicksilver
@@ -169,7 +169,7 @@
 
 /datum/perk/unfinished_delivery
 	name = "Lazarus Protocol"
-	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish it will attempt an emergency revival that may restore your body after a short time in which you'll be unconcious."
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish it will attempt an emergency revival that may restore your body after a short time in which you'll be unconscious."
 	//icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
 
 /datum/perk/lungs_of_iron
@@ -184,7 +184,7 @@
 
 /datum/perk/space_asshole
 	name = "Rough Life"
-	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Enviromental damage from falling or explosives have less of an effect on your toughened body."
+	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
 	//icon_state = "bomb" // https://game-icons.net
 
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
@@ -212,7 +212,7 @@
 
 /datum/perk/chaingun_smoker
 	name = "Unclean Living"
-	desc = "The bad conditions of your birth have led you to thrive in toxic enviroments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and slowly heal toxin damage when smoking."
+	desc = "The bad conditions of your birth have led you to thrive in toxic environments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and slowly heal toxin damage when smoking."
 	//icon_state = "cigarette" // https://game-icons.net
 
 /datum/perk/nightcrawler
@@ -222,7 +222,7 @@
 
 /datum/perk/fast_fingers
 	name = "Fast fingers"
-	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary! Any time you pickpocket someone observers have a much harder time noticing."
+	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary! Your thefts are much more difficult to notice."
 	//icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
 
 /datum/perk/quiet_as_mouse
@@ -240,7 +240,7 @@
 
 /datum/perk/junkborn
 	name = "Expert Scavenger"
-	desc = "They say theirs diamonds in the rough and you can prove it. Removing a trash pile has a chance of revealing a valuable item nobody else would find."
+	desc = "They say there are diamonds in the rough and you can prove it. Removing a trash pile has a chance of revealing a valuable item nobody else would find."
 	//icon_state = "treasure" // https://game-icons.net
 
 /datum/perk/ass_of_concrete
@@ -263,7 +263,7 @@
 
 /datum/perk/rezsickness
 	name = "Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience has left you weakened and thus unable to be fighting fit for awhile."
+	desc = "You've recently died and have been brought back to life, the experience has left you weakened and thus unfit for fighting for a while."
 	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
 	lose_text = "You finally feel like you recovered from the ravages of your body."
 	var/initial_time
@@ -292,7 +292,7 @@
 
 /datum/perk/rezsickness/severe
 	name = "Severe Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience has left severely weakened to the point where you struggle to do even basic tasks."
+	desc = "You've recently died and have been brought back to life, the experience has left severely weakened to the point where you struggle to complete even basic tasks."
 
 /datum/perk/rezsickness/severe/assign(mob/living/carbon/human/H)
 	..()
@@ -358,7 +358,7 @@
 
 /datum/perk/stalker
 	name = "Anomaly Hunter"
-	desc = "Special training from senior prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examing an oddity that has become an anomaly you can tell what its greater boon or curse may be."
+	desc = "Special training from senior prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examining an oddity that has become an anomaly you can tell what its greater boon or curse may be."
 
 /datum/perk/market_prof
 	name = "Market Professional"
@@ -369,16 +369,16 @@
 	desc = "When it comes to surgery most in your field are experts, while you may not know the more advanced medical procedures you can perform surgery with ease."
 
 /datum/perk/job/bolt_reflect
-	name = "Bolt Action Rifle Trainning"
+	name = "Bolt Action Rifle Training"
 	desc = "Through your training with bolt action rifles and repeaters, after firing you will always chamber a new round instantly."
 
 /datum/perk/job/jingle_jangle
 	name = "Key Smith"
-	desc = "You know how to use keys and lockpicks to open electronic doors somehow."
+	desc = "You know how to use keys and lock picks to open electronic doors somehow."
 
 /datum/perk/job/blackshield_conditioning
 	name = "Blackshield Conditioning"
-	desc = "Thanks to special training given by your employment within the Blackshield your body is a bit more resistant to brute force damage and burns due to proper conditioning."
+	desc = "Thanks to special training received in the course of employment within the Blackshield your body is a bit more resistant to brute force damage and burns due to proper conditioning."
 
 /datum/perk/blackshield_conditioning/assign(mob/living/carbon/human/H)
 	..()

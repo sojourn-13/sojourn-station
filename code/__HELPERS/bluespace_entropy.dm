@@ -119,7 +119,7 @@ GLOBAL_VAR_INIT(bluespace_distotion_cooldown, 10 MINUTES)
 		var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
 		sparks.set_up(3, 0, T)
 		sparks.start()
-		log_and_message_admins("Bluespace gif spawned: [jumplink(T)]") //unique item
+		log_and_message_admins("Bluespace gift spawned: [jumplink(T)]") //unique item
 	else
 		second_gift *= 10
 /*	if(prob(second_gift))

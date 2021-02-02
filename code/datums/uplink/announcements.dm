@@ -11,7 +11,7 @@
 
 /datum/uplink_item/abstract/announcements/announce/New()
 	..()
-	name = "Shipwide Announcement"
+	name = "Ship-wide Announcement"
 	item_cost = 2
 	desc = "Broadcasts a message anonymously to the entire vessel. Triggers immediately after supplying additional data."
 

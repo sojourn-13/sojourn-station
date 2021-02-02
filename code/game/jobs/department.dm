@@ -76,7 +76,7 @@
 	account_initial_balance = 5000
 
 /datum/department/technomancers
-	name = "Artificier's Guild"
+	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
 	funding_type = FUNDING_EXTERNAL
 

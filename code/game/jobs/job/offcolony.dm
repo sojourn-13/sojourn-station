@@ -47,7 +47,7 @@
 		STAT_COG = 0
 	)
 
-	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanately. As the hunt \
+	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As the hunt \
 	master your job is to lead your fledgling hunters on expeditions and generally work towards keeping them alive while thriving in your lodge. You are not nearly as well \
 	equipped as the colony is, but special training by the lodge has given you the ability to live off the land."
 
@@ -109,7 +109,7 @@
 		STAT_COG = 0
 	)
 
-	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanately. As a lodge hunter \
+	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge hunter \
 	your primary work is both as an animal rancher and big game hunter. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good lodge members \
 	work as a team under the direction of the hunt master or if present the lodge matriarch. An expert lodge hunter reads the lodge codex for the do's and dont's."
 

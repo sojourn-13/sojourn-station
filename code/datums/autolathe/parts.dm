@@ -43,11 +43,11 @@
 	build_path = /obj/item/weapon/stock_parts/subspace/amplifier
 
 /datum/design/autolathe/part/laserguide
-	name = "Lonestars \"Guiding Light\" laser guide"
+	name = "Lonestar \"Guiding Light\" laser guide"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/laserguide
 
 /datum/design/autolathe/part/diamondblade
-	name = "Lonestars \"Gleaming Edge\": Diamond blade"
+	name = "Lonestar \"Gleaming Edge\": Diamond blade"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/diamond_blade
 
 /datum/design/autolathe/part/stick
@@ -91,7 +91,7 @@
 	build_path = /obj/item/weapon/tool_upgrade/productivity/red_paint
 
 /datum/design/autolathe/part/stabilized_grip
-	name = "Gyrostabilized Grip"
+	name = "Gyro-Stabilized Grip"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/stabilized_grip
 
 /datum/design/autolathe/part/motor
@@ -103,7 +103,7 @@
 	build_path = /obj/item/weapon/tool_upgrade/refinement/ported_barrel
 
 /datum/design/autolathe/part/cell_mout
-	name = "Tool Heavy Cell Mout"
+	name = "Tool Heavy Cell Mount"
 	build_path = /obj/item/weapon/tool_upgrade/augment/cell_mount
 
 /datum/design/autolathe/part/fuel_tank
@@ -162,7 +162,7 @@
 //Greyson Positronics
 
 /datum/design/autolathe/part/greyson/ai
-	name = "Nanointegrated AI"
+	name = "nano-integrated AI"
 	build_path = /obj/item/weapon/tool_upgrade/augment/ai_tool
 
 /datum/design/autolathe/greyson/laser
