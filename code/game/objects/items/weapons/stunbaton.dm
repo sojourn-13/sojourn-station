@@ -171,9 +171,9 @@
 
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/weapon/melee/baton/cattleprod
-	name = "stunprod"
+	name = "stun prod"
 	desc = "An improvised stun baton."
-	icon_state = "stun prod"
+	icon_state = "stunprod"
 	item_state = "prod"
 	force = WEAPON_FORCE_NORMAL
 	throwforce = WEAPON_FORCE_NORMAL
