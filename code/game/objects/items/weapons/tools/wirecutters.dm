@@ -1,5 +1,5 @@
 /obj/item/weapon/tool/wirecutters
-	name = "wirecutters"
+	name = "wire cutters"
 	desc = "Cuts wires and other objects with it."
 	icon_state = "cutters"
 	flags = CONDUCT
@@ -13,13 +13,13 @@
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 30, QUALITY_RETRACTING = 15, QUALITY_BONE_SETTING = 15)
 
 /obj/item/weapon/tool/wirecutters/bs
-	name = "bluespace wirecutters"
+	name = "bluespace wire cutters"
 	icon_state = "bs_cutters"
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 100, QUALITY_RETRACTING = 100, QUALITY_BONE_SETTING = 100)
 
 //Better and more flexible than most improvised tools, but more bulky and annoying to make
 /obj/item/weapon/tool/wirecutters/improvised
-	name = "wiremanglers"
+	name = "wire manglers"
 	desc = "An improvised monstrosity made of bent rods which can sometimes be used to snip things. Could serve you well if you stuff it with enough tool mods."
 	icon_state = "impro_cutter"
 	w_class = ITEM_SIZE_NORMAL
@@ -30,7 +30,7 @@
 
 /obj/item/weapon/tool/wirecutters/armature
 	name = "armature cutter"
-	desc = "Bigger brother of wirecutter. Can't do much in terms of emergency surgery, but does its main job better."
+	desc = "Bigger brother of wire cutter. Can't do much in terms of emergency surgery, but does its main job better."
 	icon_state = "arm-cutter"
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
@@ -48,7 +48,7 @@
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 10, QUALITY_CLAMPING = 20, QUALITY_BOLT_TURNING = 15, QUALITY_BONE_SETTING = 20)
 
 /obj/item/weapon/tool/wirecutters/onestar_pliers //hybrid of wirecutters, wrench and cautery now in plat!
-	name = "greyson positronic pliers"
+	name = "Greyson Positronic pliers"
 	desc = "A multitool from the world of maintenance. Useful for pinching, clamping, and occasional bolt turning. \
 			Being slightly magnetized, the metal coating and refined tip help for balance, making all who use \
 			it know why its considered the best pair of plies to exist in the in the market to date "

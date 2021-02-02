@@ -132,7 +132,7 @@
 
 /obj/item/weapon/soap/commie
 	name = "excelsior soap"
-	desc = "A bar of with the words of \"For one to be truely free from shackles one must be clean\". Smells of struggles of the working class."
+	desc = "A bar of with the words of \"For one to be truly free from shackles one must be clean\". Smells of struggles of the working class."
 	icon_state = "soapcommie"
 	clean_speed = 35 //Almost the same as a mop
 	reagent_storage = 30 //Same as mop

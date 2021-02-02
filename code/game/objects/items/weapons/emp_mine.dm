@@ -1,6 +1,6 @@
 /obj/item/weapon/emp_mine
 	name = "OS Type - 183 \"Hei'an\""
-	desc = "Self-rechargeable EMP Chinese mine. It still works, despite all the age."
+	desc = "Self-rechargeable Chinese EMP mine. It still works, despite all the age."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "empmine0"
 	w_class = ITEM_SIZE_BULKY

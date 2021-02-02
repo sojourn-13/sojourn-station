@@ -34,7 +34,7 @@
 
 /obj/item/weapon/tool/hatchet
 	name = "hatchet"
-	desc = "A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood."
+	desc = "A very sharp axe blade upon a short fiber-metal handle. It has a long history of chopping things, but now it is used for chopping wood."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hatchet"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 3)
@@ -212,7 +212,7 @@
 
 /obj/item/weapon/tool/knife/dagger
 	name = "dagger"
-	desc = "A sharp implement; difference between this and a knife is it is sharp on both sides. Good for finding holes in armor and exploiting them."
+	desc = "A sharp implement; difference between this and a knife: it's sharp on both sides. Good for finding holes in armor and exploiting them."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "dagger"
 	item_state = "dagger"
@@ -223,7 +223,7 @@
 
 /obj/item/weapon/tool/knife/dagger/skinning
 	name = "skinning knife"
-	desc = "A sharp tool that is the pride and joy of the local hunting lodge. While not suitable as a weapon, its blade is as finely edged as any laser scalpel. Considered sacred by \
+	desc = "A sharp tool that is the pride and joy of the local hunting lodge. While not well suited as a weapon, its blade is as finely edged as any laser scalpel. Considered sacred by \
 	the hunters that normally carry them."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "skinning"
@@ -285,7 +285,7 @@
 
 /obj/item/weapon/tool/knife/dagger/assassin
 	name = "dagger"
-	desc = "A sharp implement, with a twist; The handle acts as a reservoir for reagents, and the blade injects those that it hits."
+	desc = "A sharp implement, with a twist; The handle acts as a reservoir for reagents, and the blade injects those that it pierces."
 	icon_state = "ass_dagger"
 	item_state = "ass_dagger"
 	reagent_flags = INJECTABLE|TRANSPARENT
@@ -318,7 +318,7 @@
 
 /obj/item/weapon/tool/scythe
 	name = "scythe"
-	desc = "A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow."
+	desc = "A sharp and curved blade on a long fiber-metal handle, this tool makes it easy to reap what you sow."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "scythe0"
 	matter = list(MATERIAL_PLASTEEL = 7, MATERIAL_PLASTIC = 3)
@@ -375,7 +375,7 @@
 
 /obj/item/weapon/tool/sword/katana
 	name = "katana"
-	desc = "Modern japanese-style blade that has no curve to it. This one looks pretty sharp."
+	desc = "Modern Japanese-style blade that has no curve to it. This one looks pretty sharp."
 	icon_state = "katana"
 	item_state = "katana"
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
@@ -385,7 +385,7 @@
 
 /obj/item/weapon/tool/sword/katana_makeshift
 	name = "makeshift katana"
-	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where there's a will and a weeb there's a way."
+	desc = "Modern Japanese-style blade that has no curve to it. This one is two knives welded together, proving where there's a will and a weeb there's a way."
 	icon_state = "katana_improv"
 	item_state = "katana_improv"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2) //twice the value of a kitche knife

@@ -387,7 +387,7 @@
 /datum/reagent/medicine/alkysine
 	name = "Alkysine"
 	id = "alkysine"
-	description = "Alkysine is a drug used to lessen the damage to neurological tissue after a catastrophic injury. Can heal brain tissue."
+	description = "Alkysine is a drug used to repair the damage to neurological tissue after a catastrophic injury. Can heal brain tissue."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#FFFF66"
@@ -402,7 +402,7 @@
 /datum/reagent/medicine/imidazoline
 	name = "Imidazoline"
 	id = "imidazoline"
-	description = "Helps naturally regenerate and restore eye cells."
+	description = "Helps naturally regenerate and restore eye tissue."
 	taste_description = "dull toxin"
 	reagent_state = LIQUID
 	color = "#C8A5DC"
@@ -579,7 +579,7 @@
 /datum/reagent/medicine/leporazine
 	name = "Leporazine"
 	id = "leporazine"
-	description = "Leporazine can be use to stabilize an individuals body temperature."
+	description = "Leporazine can be used to stabilize an individual's body temperature."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#C8A5DC"
@@ -685,7 +685,7 @@
 /datum/reagent/medicine/quickclot
 	name = "Quickclot"
 	id = "quickclot"
-	description = "Temporarily stops\\oppresses any internal and external bleeding. Also helps heal and repair blood vessels"
+	description = "Temporarily halts any internal and external bleeding. Also helps heal and repair blood vessels"
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#a6b85b"
@@ -762,7 +762,7 @@
 /datum/reagent/medicine/kyphotorin
 	name = "Kyphotorin"
 	id = "kyphotorin"
-	description = "A strange chemical that allows a patient to regrow organic limbs, it may take awhile to work and requires use of a cryo pod. The process is extremely painful and may damage the body if dosed incorrectly."
+	description = "A strange chemical that allows a patient to regrow organic limbs. Requires the use of cryogenics and is slow-acting. The process is extremely painful and may damage the body if dosed incorrectly."
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#7d88e6"
@@ -809,7 +809,7 @@
 /datum/reagent/medicine/detox
 	name = "Detox"
 	id = "detox"
-	description = "Boosts neural regeneration, allowing neural system to tolerate more chemicals without permanent damage."
+	description = "Boosts neural regeneration, bolstering the nervous system against large doses of chemicals without permanent damage."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#229e08"
@@ -1037,7 +1037,7 @@
 /datum/reagent/medicine/hadrenol
 	name = "Hadrenol"
 	id = "adrenol"
-	description = "A chemical naturally produced by humans when they are at deaths door, allowing them to recover from things that would kill lesser people."
+	description = "A chemical naturally produced by humans pushed to their limit, allowing them to possibly recover from grievous injuries."
 	taste_description = "grossness"
 	reagent_state = LIQUID
 	color = "#8040FF"
@@ -1056,7 +1056,7 @@
 /datum/reagent/medicine/hustim
 	name = "Hustimdol"
 	id = "hustim"
-	description = "A chemical naturally produced by humans when they are at deaths door, putting them in a recovery coma to heal their wounds."
+	description = "A chemical naturally produced by humans pushed to their limit. Induces a recovery coma to heal their wounds."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ded890"

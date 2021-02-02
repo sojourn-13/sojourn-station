@@ -22,7 +22,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/stockparts
-	disk_name = "Greyson Positronics Stockpart Pack"
+	disk_name = "Greyson Positronics Stock Parts Pack"
 	icon_state = "onestar"
 	license = 8
 	designs = list(
@@ -54,7 +54,7 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior
 	name = "design disk Means of Production"
 	disk_name = "Excelsior"
-	desc = "The back has a machine etching: \"This struggle must be organised, according to \"all the rules of the art\", by people who are professionally engaged in revolutionary activity.\""
+	desc = "The back has a machine etching: \"This struggle must be organized, according to \"all the rules of the art\", by people who are professionally engaged in revolutionary activity.\""
 	icon_state = "excelsior"
 
 	license = -1
@@ -157,7 +157,7 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_parts
 	name = "design disk Stocking Revolution"
 	disk_name = "Excelsior"
-	desc = "The back has a machine etching: \"Everything can be apart of the revolution!\""
+	desc = "The back has a machine etching: \"Everything can be a part of the revolution!\""
 	icon_state = "excelsior"
 
 	license = -1

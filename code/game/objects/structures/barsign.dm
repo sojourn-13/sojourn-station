@@ -35,11 +35,11 @@
 	var/obj/item/weapon/card/id/card = I.GetIdCard()
 	if(istype(card))
 		if(access_bar in card.GetAccess())
-			var/sign_type = input(user, "What would you like to change the barsign to?") as null|anything in get_valid_states(0)
+			var/sign_type = input(user, "What would you like to change the bar sign to?") as null|anything in get_valid_states(0)
 			if(!sign_type)
 				return
 			icon_state = sign_type
-			to_chat(user, SPAN_NOTICE("You change the barsign."))
+			to_chat(user, SPAN_NOTICE("You change the bar sign."))
 		else
 			to_chat(user, SPAN_WARNING("Access denied."))
 		return

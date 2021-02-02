@@ -128,7 +128,7 @@
 // ENERGY SMALL ARMS
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/counselor
-	disk_name = "Absolute Armory - Councelor PDW E"
+	disk_name = "Absolute Armory - Counselor PDW E"
 	icon_state = "neotheology"
 
 	license = 8
@@ -189,7 +189,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/halicon
-	disk_name = "Absolute Armory - Halicon Ion Rifle"
+	disk_name = "Absolute Armory - Halcyon Ion Rifle"
 	icon_state = "neotheology"
 
 	license = 8

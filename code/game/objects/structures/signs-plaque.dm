@@ -25,7 +25,7 @@
 
 /obj/structure/sign/plaque/goldplaqueatmos
 	name = "gold plaque"
-	desc = "A golden plaque with text and an image of a gasmask."
+	desc = "A golden plaque with text and an image of a gas mask."
 	icon_state = "atmosplaque"
 
 /obj/structure/sign/plaque/roundplaque
