@@ -270,8 +270,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
@@ -319,8 +319,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	//alt_titles = list("Blackshield Junior Trooper")
@@ -329,14 +329,12 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
-	perks = list(/datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/job/bolt_reflect,/datum/perk/job/blackshield_conditioning)
 
 	access = list(
 		access_security, access_eva,
 		access_sec_doors, access_brig, access_maint_tunnels, access_external_airlocks
 	)
-
-	perks = list(/datum/perk/job/blackshield_conditioning)
 
 	stat_modifiers = list(
 		STAT_ROB = 25,
