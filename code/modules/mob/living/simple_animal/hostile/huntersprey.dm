@@ -12,8 +12,8 @@
 	break_stuff_probability = 95
 	attacktext = "mauled"
 	faction = "deathclaw"
-	maxHealth = 1400
-	health = 1400
+	maxHealth = 2200
+	health = 2200
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	old_x = -16
