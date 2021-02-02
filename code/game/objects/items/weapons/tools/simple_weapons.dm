@@ -87,7 +87,6 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 30)
 	w_class = ITEM_SIZE_BULKY
-	slot_flags = null
 
 /obj/item/weapon/tool/minihoe
 	name = "mini hoe"
@@ -348,6 +347,23 @@
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	max_upgrades = 2
 	tool_qualities = list(QUALITY_HAMMERING = 5)
+
+/obj/item/weapon/tool/disciplinary_action
+	name = "Disciplinary Action"
+	desc = "A long whip of steel chains used by Blackshield for when someone acts out of line."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "chain"
+	item_state = "chain"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_DANGEROUS
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 2)
+	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
+	max_upgrades = 3
+	tool_qualities = list(QUALITY_HAMMERING = 5)
+
 
 //Swords
 

@@ -689,7 +689,7 @@ var/global/list/robot_modules = list(
 	channels = list("Marshal" = 1, "Blackshield" = 1)
 	networks = list(NETWORK_SECURITY)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/bigknife)
 
 	health = 300 //Very tanky!
 	speed_factor = 0.85 //Kinda slow
@@ -763,6 +763,9 @@ var/global/list/robot_modules = list(
 	health = 250 //Bulky
 	speed_factor = 1.15 //Fast
 	power_efficiency = 0.8 //Poor
+
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
+
 
 	stat_modifiers = list(
 		STAT_ROB = 25,
@@ -842,6 +845,7 @@ var/global/list/robot_modules = list(
 		STAT_TGH = 30,
 		STAT_MEC = 30
 	)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
 
 /obj/item/weapon/robot_module/service/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
@@ -924,6 +928,7 @@ var/global/list/robot_modules = list(
 		STAT_BIO = 25,
 		STAT_COG = 25
 	)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
 
 	desc = "Built for digging anywhere, excavating the ores and materials to keep the colony running, \
 	this is heavy and powerful unit with a fairly singleminded purpose. It needs to withstand impacts \
@@ -968,6 +973,7 @@ var/global/list/robot_modules = list(
 	desc = "Built for working in a well-equipped lab, and designed to handle a wide variety of research \
 	duties, this module prioritises flexibility over efficiency. Capable of working in R&D, Toxins, \
 	chemistry, xenobiology and robotics."
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
 
 	stat_modifiers = list(
 		STAT_BIO = 30,

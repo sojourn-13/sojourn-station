@@ -143,3 +143,13 @@
 	name = "Illegal upgrade"
 	desc = "Allows for the construction of lethal upgrades for cyborgs."
 	build_path = /obj/item/borg/upgrade/syndicate
+
+/datum/design/research/item/robot_upgrade/bigknife
+	name = "Combat Knife upgrade"
+	desc = "Allows for the construction of lethal upgrades for sec-based bots."
+	build_path = /obj/item/borg/upgrade/bigknife
+
+/datum/design/research/item/robot_upgrade/stachle_of_holding_for_borgs
+	name = "Stachle of holding equipment upgrade"
+	desc = "Allows for the construction of lethal upgrades for sec-based bots."
+	build_path = /obj/item/borg/upgrade/stachle_of_holding_for_borgs
