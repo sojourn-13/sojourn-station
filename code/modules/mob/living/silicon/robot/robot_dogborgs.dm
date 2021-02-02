@@ -8,7 +8,7 @@
 	networks = list(NETWORK_SECURITY)
 	can_be_pushed = 0
 
-	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/bigknife)
 
 	health = 210 //Very tanky!
 	speed_factor = 1.1 //Kinda slow
@@ -69,7 +69,7 @@
 	channels = list("Medical" = 1)
 	networks = list(NETWORK_MEDICAL)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
 	health = 85 //Fragile
 	speed_factor = 1.0 //Kinda slow
 	power_efficiency = 0.7 //Very poor, shackled to a charger
@@ -161,6 +161,7 @@
 					)
 	channels = list("Service" = 1)
 	can_be_pushed = 0
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
 
 	health = 175 //Bulky
 	speed_factor = 1.1 //Slow
@@ -222,6 +223,7 @@
 					)
 	channels = list("Science" = 1)
 	can_be_pushed = 0
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
 
 	health = 115 //Weak
 	speed_factor = 1.3 //Average

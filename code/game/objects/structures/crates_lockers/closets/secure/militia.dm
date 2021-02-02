@@ -39,6 +39,7 @@
 	new /obj/item/clothing/suit/greatcoat/ihc/bmc_cloaked(src)
 	new /obj/item/weapon/storage/pouch/baton_holster(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
+	new /obj/item/weapon/tool/disciplinary_action(src)
 	new /obj/item/clothing/accessory/patches/blackshield_commander(src)
 	if(prob(50))
 		new /obj/item/weapon/storage/backpack/security(src)
