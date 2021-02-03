@@ -89,7 +89,7 @@
 	if(!damage || BP_IS_ROBOTIC(src) || !owner || owner.chem_effects[CE_TOXIN] || owner.is_asystole() || !current_blood)
 		return
 	if(damage < 0.1*max_damage)
-		owner.adjustNutrition(-(nutriment_req * 10))
+		owner.adjustNutrition(-(nutriment_req))
 		heal_damage(0.1)
 
 /obj/item/organ/internal/examine(mob/user)

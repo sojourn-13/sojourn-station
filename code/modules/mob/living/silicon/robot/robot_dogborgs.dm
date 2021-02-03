@@ -8,6 +8,8 @@
 	networks = list(NETWORK_SECURITY)
 	can_be_pushed = 0
 
+	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/bigknife)
+
 	health = 210 //Very tanky!
 	speed_factor = 1.1 //Kinda slow
 	power_efficiency = 1.55 //Decent we are meant to be around the colony
@@ -30,7 +32,8 @@
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
-	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/weapon/tool/knife/tacknife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/device/gps(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
 	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs
 	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
@@ -66,7 +69,7 @@
 	channels = list("Medical" = 1)
 	networks = list(NETWORK_MEDICAL)
 	can_be_pushed = 0
-
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
 	health = 85 //Fragile
 	speed_factor = 1.0 //Kinda slow
 	power_efficiency = 0.7 //Very poor, shackled to a charger
@@ -100,6 +103,7 @@
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
+	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
 	src.emag.name = "Polyacid spray"
@@ -157,6 +161,7 @@
 					)
 	channels = list("Service" = 1)
 	can_be_pushed = 0
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
 
 	health = 175 //Bulky
 	speed_factor = 1.1 //Slow
@@ -184,6 +189,7 @@
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
 	src.emag.name = "Lube spray"
@@ -217,6 +223,7 @@
 					)
 	channels = list("Science" = 1)
 	can_be_pushed = 0
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
 
 	health = 115 //Weak
 	speed_factor = 1.3 //Average
@@ -253,6 +260,7 @@
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/storage/bag/produce(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/hand_tele(src) //Why
 	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 
@@ -280,7 +288,7 @@
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/welder_stuff,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
 
 	health = 170 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
@@ -319,6 +327,7 @@
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
+	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(60000)

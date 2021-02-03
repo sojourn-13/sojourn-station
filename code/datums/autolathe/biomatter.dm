@@ -26,7 +26,7 @@
 	build_path = /obj/item/weapon/reagent_containers/glass/fertilizer/l4z
 
 /datum/design/bioprinter/rh
-	name = "Robust Harvestt"
+	name = "Robust Harvest"
 	build_path = /obj/item/weapon/reagent_containers/glass/fertilizer/rh
 	materials = list(MATERIAL_BIOMATTER = 7.5)
 //[/NUTRIMENTS]
@@ -169,7 +169,7 @@
 
 //[MELEE]
 /datum/design/autolathe/sword/nt_sword
-	name = "NT Shortsword"
+	name = "NT Short Sword"
 	build_path = /obj/item/weapon/tool/sword/nt
 
 /datum/design/autolathe/sword/nt_longsword

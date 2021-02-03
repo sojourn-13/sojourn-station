@@ -138,6 +138,11 @@
 	desc = "A faded black cap with the badge of the Blackshield."
 	icon_state = "milsoft"
 
+/obj/item/clothing/head/rank/trooper/radiohat
+	name = "blackshield radio cap"
+	desc = "A faded black cap with the badge of the Blackshield. Comes attached with a industrial radio headset for long-range communiction."
+	icon_state = "radiohat"
+
 /obj/item/clothing/head/rank/corpsman/cap
 	name = "Corpsman cap"
 	desc = "A faded black cap with the badge of a Medical Corpsman."

@@ -1,5 +1,5 @@
 /obj/item/weapon/legcuffs
-	name = "legcuffs"
+	name = "leg cuffs"
 	desc = "Use this to keep prisoners in line."
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
@@ -12,7 +12,7 @@
 	var/breakouttime = 300	//Deciseconds = 30s = 0.5 minute
 
 /obj/item/weapon/legcuffs/fuzzy
-	name = "fuzzy legcuffs"
+	name = "fuzzy leg cuffs"
 	icon_state = "fuzzylegcuff"
 	breakouttime = 150
 	desc = "Use this to keep... 'prisoners' in line."

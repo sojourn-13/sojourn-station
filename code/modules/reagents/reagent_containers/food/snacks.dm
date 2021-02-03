@@ -587,6 +587,12 @@
 	else
 		..()
 
+/obj/item/weapon/reagent_containers/food/snacks/egg/clucker
+	name = "cluckeregg"
+	desc = "A clucker egg!"
+	icon_state = "egg"
+	filling_color = "#ffe6d1"
+
 /obj/item/weapon/reagent_containers/food/snacks/egg/blue
 	icon_state = "egg-blue"
 
@@ -1573,6 +1579,7 @@
 	center_of_mass = list("x"=16, "y"=11)
 	bitesize = 5
 	preloaded_reagents = list("water" = 10)
+	matter = null
 	New()
 		..()
 		if(prob(25))

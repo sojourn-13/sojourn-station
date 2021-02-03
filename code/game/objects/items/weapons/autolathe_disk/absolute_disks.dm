@@ -102,10 +102,10 @@
 	designs = list(
 		/datum/design/autolathe/gun/mk58 = 3,
 		/datum/design/autolathe/gun/mk58_wood = 3,
-		/datum/design/autolathe/ammo/pistol_practice = 0,
-		/datum/design/autolathe/ammo/pistol_rubber,
-		/datum/design/autolathe/ammo/pistol,
-		/datum/design/autolathe/ammo/pistol_lethal = 2,
+		/datum/design/autolathe/ammo/hpistol_practice = 0,
+		/datum/design/autolathe/ammo/hpistol_rubber,
+		/datum/design/autolathe/ammo/hpistol,
+		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_rubber,
 		/datum/design/autolathe/ammo/magnum,
@@ -122,13 +122,13 @@
 		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
-		/datum/design/autolathe/ammo/shotgun_flash,
+		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
 // ENERGY SMALL ARMS
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/counselor
-	disk_name = "Absolute Armory - Councelor PDW E"
+	disk_name = "Absolute Armory - Counselor PDW E"
 	icon_state = "neotheology"
 
 	license = 8
@@ -189,7 +189,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/halicon
-	disk_name = "Absolute Armory - Halicon Ion Rifle"
+	disk_name = "Absolute Armory - Halcyon Ion Rifle"
 	icon_state = "neotheology"
 
 	license = 8

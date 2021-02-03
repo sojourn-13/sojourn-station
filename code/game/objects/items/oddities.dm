@@ -39,7 +39,7 @@
 	..()
 	if(perk)
 		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>"))
-		if(usr.stats.getPerk(PERK_STALKER))
+		if(usr.stats?.getPerk(PERK_STALKER))
 			var/datum/perk/oddity/OD = GLOB.all_perks[perk]
 			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
 	for(var/stat in oddity_stats)
@@ -65,7 +65,7 @@
 //Common - you can find those everywhere
 /obj/item/weapon/oddity/common/blueprint
 	name = "strange blueprint"
-	desc = "There's no telling what this design is supposed to be. Whatever could be built from this likely wouldn't work yet the greyson positronic logo near the top makes one wonder."
+	desc = "There's no telling what this design is supposed to be. Whatever could be built from this likely wouldn't work yet the Greyson Positronic logo near the top makes one wonder."
 	icon_state = "blueprint"
 	oddity_stats = list(
 		STAT_COG = 5,
@@ -140,7 +140,7 @@
 
 /obj/item/weapon/oddity/common/paper_omega
 	name = "collection of obscure reports"
-	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was greyson, soteria, or an independent group."
+	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was Greyson, Soteria, or an independent group."
 	icon_state = "paper_omega"
 	oddity_stats = list(
 		STAT_MEC = 8,
@@ -150,7 +150,7 @@
 
 /obj/item/weapon/oddity/common/book_eyes
 	name = "observer book"
-	desc = "This book details information on some cybernetic creatures. Who did this? How is this even possible? The illustrations bear unconformtable likeness to hivemind abominations."
+	desc = "This book details information on some cybernetic creatures. Who did this? How is this even possible? The illustrations bear uncomfortable likeness to hivemind abominations."
 	icon_state = "book_eyes"
 	oddity_stats = list(
 		STAT_ROB = 9,
@@ -160,7 +160,7 @@
 
 /obj/item/weapon/oddity/common/book_omega
 	name = "occult book"
-	desc = "Most of the stories in this book seem to be the writings of madmen, but at least the stories are interesting. Some of the phrases are written in latin, an odd thing in this day and age."
+	desc = "Most of the stories in this book seem to be the writings of madmen, but at least the stories are interesting. Some of the phrases are written in Latin, an odd thing in this day and age."
 	icon_state = "book_omega"
 	oddity_stats = list(
 		STAT_BIO = 6,
@@ -293,7 +293,7 @@
 
 /obj/item/weapon/oddity/techno
 	name = "Unknown technological part"
-	desc = "A technological part maded by Artificer Perfection Cube."
+	desc = "A technological part made by Artificer Perfection Cube."
 	icon_state = "techno_part1"
 
 /obj/item/weapon/oddity/techno/Initialize()
@@ -338,7 +338,7 @@
 
 /obj/item/weapon/oddity/common/lighter
 	name = "rusted lighter"
-	desc = "This zippo ligher has been rusted shut. It smells faintly of sulphur and blood."
+	desc = "This zippo lighter is rusted shut. It smells faintly of sulphur and blood."
 	icon_state = "syndicate_lighter"
 	oddity_stats = list(
 		STAT_TGH = 10,
@@ -346,7 +346,7 @@
 
 /obj/item/weapon/oddity/common/device
 	name = "odd device"
-	desc = "Something about this gadget both disturbs and interests you. It's manufacturer's name has been mostly smudged away, but you can see a strange mechanism as their logo."
+	desc = "Something about this gadget both disturbs and interests you. Its manufacturer's name has been mostly smudged away, but you can see a strange mechanism as their logo."
 	icon_state = "device"
 	oddity_stats = list(
 		STAT_MEC = 8,
@@ -445,8 +445,8 @@
 			qdel(src)
 
 /obj/item/weapon/oddity/blackbox_nanoforage
-	name = "Matter NanoForge Black Box"
-	desc = "The core and data of all the designs for the Matter NanoForge. The craftmanship being some of the best possable by hand tools alone."
+	name = "Matter Nano-Forge Black Box"
+	desc = "The core and data of all the designs for the Matter Nano-Forge. The craftsmanship being some of the best possible by hand tools alone."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "blackcube"
 	oddity_stats = list(
@@ -476,7 +476,7 @@
 	for(var/stat in true_stats)
 		. += true_stats[stat] * 50
 
-//NT Oddities
+//Faction Oddities
 /obj/item/weapon/oddity/nt
 	random_stats = FALSE
 
@@ -491,3 +491,14 @@
 	)
 	price_tag = 8000
 	perk = /datum/perk/nt_oddity/holy_light
+
+/obj/item/weapon/oddity/chimeric_fang_trophy
+	name = "Chimera Fang Trophy"
+	desc = "A scrimshaw carved chimera fang turned into a trophy, the bone either taken from a butchered chimera or hunting companion fallen in battle. In either case, its very presence hardens the holder's resolve."
+	icon_state = "chimera_trophy"
+	oddity_stats = list(
+		STAT_ROB = 12,
+		STAT_TGH = 12,
+		STAT_BIO = 8
+	)
+	perk = /datum/perk/oddity/harden

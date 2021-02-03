@@ -14,8 +14,8 @@
 /obj/item/borg/upgrade/proc/action(var/mob/living/silicon/robot/R)
 	if(R.stat == DEAD)
 		to_chat(usr, SPAN_WARNING("The [src] will not function on a deceased robot."))
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/item/borg/upgrade/reset
 	name = "robotic module reset board"
@@ -24,7 +24,7 @@
 	require_module = TRUE
 
 /obj/item/borg/upgrade/reset/action(var/mob/living/silicon/robot/R)
-	if(..()) return 0
+	if(..()) return FALSE
 	R.uneq_all()
 	R.modtype = initial(R.modtype)
 
@@ -39,7 +39,7 @@
 	R.old_x = 0
 	R.default_pixel_x = 0
 
-	return 1
+	return TRUE
 
 /obj/item/borg/upgrade/rename
 	name = "robot reclassification board"
@@ -51,13 +51,13 @@
 	heldname = sanitizeSafe(input(user, "Enter new robot name", "Robot Reclassification", heldname), MAX_NAME_LEN)
 
 /obj/item/borg/upgrade/rename/action(var/mob/living/silicon/robot/R)
-	if(..()) return 0
+	if(..()) return FALSE
 	R.notify_ai(ROBOT_NOTIFICATION_NEW_NAME, R.name, heldname)
 	R.name = heldname
 	R.custom_name = heldname
 	R.real_name = heldname
 
-	return 1
+	return TRUE
 
 /obj/item/borg/upgrade/floodlight
 	name = "robot floodlight module"
@@ -65,16 +65,16 @@
 	icon_state = "cyborg_upgrade1"
 
 /obj/item/borg/upgrade/floodlight/action(var/mob/living/silicon/robot/R)
-	if(..()) return 0
+	if(..()) return FALSE
 
 	if(R.intenselight)
 		to_chat(usr, "This cyborg's light was already upgraded")
-		return 0
+		return FALSE
 	else
 		R.intenselight = 1
 		R.update_robot_light()
 		to_chat(R, "Lighting systems upgrade detected.")
-	return 1
+	return TRUE
 
 /obj/item/borg/upgrade/restart
 	name = "robot emergency restart module"
@@ -85,7 +85,7 @@
 /obj/item/borg/upgrade/restart/action(var/mob/living/silicon/robot/R)
 	if(R.health < 0)
 		to_chat(usr, "You have to repair the robot before using this module!")
-		return 0
+		return FALSE
 
 	if(!R.key)
 		for(var/mob/observer/ghost/ghost in GLOB.player_list)
@@ -97,7 +97,7 @@
 	GLOB.living_mob_list |= R
 	R.death_notified = FALSE
 	R.notify_ai(ROBOT_NOTIFICATION_NEW_UNIT)
-	return 1
+	return TRUE
 
 /obj/item/borg/upgrade/vtec
 	name = "robotic VTEC Module"
@@ -108,10 +108,24 @@
 
 /obj/item/borg/upgrade/vtec/action(var/mob/living/silicon/robot/R)
 	if(..())
-		return 0
+		return FALSE
 
 	R.speed_factor += 0.5
-	return 1
+	return TRUE
+
+/obj/item/borg/upgrade/power_saver
+	name = "robotic Power Saver Module"
+	desc = "Used to kick in a robot's Power Saver systems, increasing their power efficiency."
+	icon_state = "cyborg_upgrade2"
+	matter = list(MATERIAL_STEEL = 8, MATERIAL_GLASS = 6, MATERIAL_GOLD = 2, MATERIAL_SILVER = 2)
+	require_module = TRUE
+
+/obj/item/borg/upgrade/power_saver/action(var/mob/living/silicon/robot/R)
+	if(..())
+		return FALSE
+
+	R.power_efficiency += 0.5
+	return TRUE
 
 /obj/item/borg/upgrade/tasercooler
 	name = "robotic Rapid Taser Cooling Module"
@@ -121,12 +135,12 @@
 	require_module = TRUE
 
 /obj/item/borg/upgrade/tasercooler/action(var/mob/living/silicon/robot/R)
-	if(..()) return 0
+	if(..()) return FALSE
 
 	if(!R.module || !(type in R.module.supported_upgrades))
 		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
 		to_chat(usr, "There's no mounting point for the module!")
-		return 0
+		return FALSE
 
 	var/obj/item/weapon/gun/energy/taser/mounted/cyborg/T = locate() in R.module
 	if(!T)
@@ -135,17 +149,17 @@
 		T = locate() in R.module.modules
 	if(!T)
 		to_chat(usr, "This robot has had its taser removed!")
-		return 0
+		return FALSE
 
 	if(T.recharge_time <= 2)
 		to_chat(R, "Maximum cooling achieved for this hardpoint!")
 		to_chat(usr, "There's no room for another cooling unit!")
-		return 0
+		return FALSE
 
 	else
 		T.recharge_time = max(2 , T.recharge_time - 4)
 
-	return 1
+	return TRUE
 
 /obj/item/borg/upgrade/jetpack
 	name = "mining robot jetpack"
@@ -154,19 +168,19 @@
 	require_module = TRUE
 
 /obj/item/borg/upgrade/jetpack/action(var/mob/living/silicon/robot/R)
-	if(..()) return 0
+	if(..()) return FALSE
 
 	if(!R.module || !(type in R.module.supported_upgrades))
 		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
 		to_chat(usr, "There's no mounting point for the module!")
-		return 0
+		return FALSE
 	else
 		R.module.modules += new/obj/item/weapon/tank/jetpack/carbondioxide
 //		for(var/obj/item/weapon/tank/jetpack/carbondioxide in R.module.modules)
 //			R.internals = src
 		//R.icon_state="Miner+j"
 		R.module.Initialize() //Fixes layering and possible tool issues
-		return 1
+		return TRUE
 
 /obj/item/borg/upgrade/rcd
 	name = "engineering robot RCD"
@@ -176,16 +190,16 @@
 	require_module = TRUE
 
 /obj/item/borg/upgrade/rcd/action(var/mob/living/silicon/robot/R)
-	if(..()) return 0
+	if(..()) return FALSE
 
 	if(!R.module || !(type in R.module.supported_upgrades))
 		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
 		to_chat(usr, "There's no mounting point for the module!")
-		return 0
+		return FALSE
 	else
 		R.module.modules += new/obj/item/weapon/rcd/borg(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
-		return 1
+		return TRUE
 
 /obj/item/borg/upgrade/arc_welder
 	name = "engineering robot arc welder"
@@ -194,23 +208,22 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASMA = 10, MATERIAL_URANIUM = 10, MATERIAL_GOLD = 5)
 	require_module = TRUE
 
-/obj/item/borg/upgrade/welder_stuff/action(var/mob/living/silicon/robot/R)
-	if(..()) return 0
+/obj/item/borg/upgrade/arc_welder/action(var/mob/living/silicon/robot/R)
+	if(..()) return FALSE
 
 	if(!R.module || !(type in R.module.supported_upgrades))
 		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
 		to_chat(usr, "There's no mounting point for the module!")
-		return 0
+		return FALSE
 	else
 		R.module.modules += new/obj/item/weapon/tool/arcwelder/cyborg(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
-		return 1
+		return TRUE
 
 /obj/item/borg/upgrade/hypospray
 	name = "medical cyborg hypospray advanced synthesiser"
 	desc = "An upgrade to the Medical module cyborg's hypospray, allowing it \
 		to produce more advanced and complex medical reagents."
-	require_module = TRUE
 	var/list/additional_reagents = list()
 
 /obj/item/borg/upgrade/hypospray/action(mob/living/silicon/robot/R, user = usr)
@@ -238,10 +251,49 @@
 	require_module = TRUE
 
 /obj/item/borg/upgrade/syndicate/action(var/mob/living/silicon/robot/R)
-	if(..()) return 0
+	if(..()) return FALSE
 
 	if(R.emagged == 1)
-		return 0
+		return FALSE
 
 	R.emagged = 1
-	return 1
+	return TRUE
+
+/obj/item/borg/upgrade/bigknife
+	name = "large knife equipment module"
+	desc = "Mounts a large knife onto sec class borgs"
+	icon_state = "cyborg_upgrade3"
+	matter = list(MATERIAL_STEEL = 25)
+	require_module = TRUE
+
+/obj/item/borg/upgrade/bigknife/action(var/mob/living/silicon/robot/R)
+	if(..()) return FALSE
+
+	if(!R.module || !(type in R.module.supported_upgrades))
+		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
+		to_chat(usr, "There's no mounting point for the module!")
+		return FALSE
+	else
+		R.module.modules += new/obj/item/weapon/tool/sword/machete(R.module)
+		R.module.Initialize() //Fixes layering and possible tool issues
+		return TRUE
+
+
+/obj/item/borg/upgrade/stachle_of_holding_for_borgs
+	name = "stachle of holding equipment module"
+	desc = "Mounts a unstable bluespace stachle of holding borgs"
+	icon_state = "cyborg_upgrade2"
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_GOLD = 6, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
+	require_module = TRUE
+
+/obj/item/borg/upgrade/bigknife/action(var/mob/living/silicon/robot/R)
+	if(..()) return FALSE
+
+	if(!R.module || !(type in R.module.supported_upgrades))
+		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
+		to_chat(usr, "There's no mounting point for the module!")
+		return FALSE
+	else
+		R.module.modules += new/obj/item/weapon/storage/bag/ore/holding(R.module)
+		R.module.Initialize() //Fixes layering and possible tool issues
+		return TRUE

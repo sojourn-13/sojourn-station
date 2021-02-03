@@ -131,7 +131,7 @@
 	body_parts_covered = HEAD|FACE|EARS
 
 /obj/item/clothing/head/helmet/technomancersuit
-	name = "'Mark V' enviromental protection helmet"
+	name = "'Mark V' environmental protection helmet"
 	desc = "You feel like this helmet is rare, for some reason."
 	icon_state = "technohelmet"
 	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100) //Cant have armor mods
@@ -143,7 +143,7 @@
 	brightness_on = 4
 
 /obj/item/clothing/head/helmet/soteriasuit
-	name = "'Mark II' enviromental protection helmet"
+	name = "'Mark II' environmental protection helmet"
 	desc = "You feel like this helmet is cheap, for some reason."
 	icon_state = "armor_engineering"
 	armor = list(melee = 15, bullet = 15, energy = 25, bomb = 35, bio = 50, rad = 50)
@@ -416,7 +416,7 @@
 	) //Low protection since it gives night vision with no battery.
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	flash_protection = FLASH_PROTECTION_MAJOR
-	action_button_name = "Toggle Thermo-Nightvision Hud"
+	action_button_name = "Toggle Thermal Night-Vision HUD"
 	var/obj/item/clothing/glasses/hud/security/jensenshades/hud
 	price_tag = 2000
 
@@ -431,7 +431,7 @@
 	toggle()
 
 /obj/item/clothing/head/helmet/night_vision_helm/verb/toggle()
-	set name = "Toggle Thermo-Nightvision Hud"
+	set name = "Toggle Thermal Night-Vision HUD"
 	set desc = "Lets you see in the dark and look tacticool."
 	set category = "Object"
 	var/mob/user = loc
@@ -441,13 +441,13 @@
 		return
 	if(hud in src)
 		if(user.equip_to_slot_if_possible(hud, slot_glasses))
-			to_chat(user, "You enable the thermo-nightvision hud on [src].")
+			to_chat(user, "You enable the thermal night-vision HUD on [src].")
 			update_icon()
 	else
 		if(ismob(hud.loc))
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			to_chat(user, "You disable the thermo-nightvision hud on [src].")
+			to_chat(user, "You disable the thermal night-vision HUD on [src].")
 		hud.forceMove(src)
 		update_icon()
 	usr.update_action_buttons()
@@ -458,7 +458,7 @@
 		if(ismob(hud.loc))
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			to_chat(hud_loc, "[hud] automaticly retract in [src].")
+			to_chat(hud_loc, "[hud] automatically retract in [src].")
 		hud.forceMove(src)
 		update_icon()
 
@@ -503,7 +503,7 @@
 	armor_down = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
 
 /obj/item/clothing/head/helmet/visor/cyberpunkgoggle
-	name = "\improper Type-34C Semi-Enclosed Headwear"
+	name = "\improper Type-34C Semi-Enclosed Head Wear"
 	desc = "Civilian model of a popular helmet used by certain law enforcement agencies. It does not have any armor plating, but has a neo-laminated fabric lining."
 	icon_state = "cyberpunkgoggle"
 	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR

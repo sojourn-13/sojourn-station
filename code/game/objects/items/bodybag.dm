@@ -83,7 +83,7 @@
 /obj/item/bodybag/cryobag
 	name = "stasis bag"
 	desc = "A folded, non-reusable bag designed to prevent additional damage to an occupant. Especially useful if short on time or in \
-	a hostile enviroment."
+	a hostile environment."
 	icon = 'icons/obj/cryobag.dmi'
 	icon_state = "bodybag_folded"
 	origin_tech = list(TECH_BIO = 4)
@@ -97,13 +97,14 @@
 /obj/structure/closet/body_bag/cryobag
 	name = "stasis bag"
 	desc = "A non-reusable plastic bag designed to prevent additional damage to an occupant. Especially useful if short on time or in \
-	a hostile enviroment. This one features a much more advanced design that preserves its occupant in cryostasis."
+	a hostile environment. This one features a much more advanced design that preserves its occupant in cryostasis."
 	icon = 'icons/obj/cryobag.dmi'
 	item_path = /obj/item/bodybag/cryobag
 	store_misc = 0
 	store_items = 0
 	var/used = 0
 	var/obj/item/weapon/tank/tank = null
+	var/existing_degradation
 
 /obj/structure/closet/body_bag/cryobag/New()
 	tank = new /obj/item/weapon/tank/emergency_oxygen(null) //It's in nullspace to prevent ejection when the bag is opened.
@@ -128,6 +129,8 @@
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		H.in_stasis = 1
+		if(H.timeofdeath)
+			src.existing_degradation = world.time - H.timeofdeath
 		src.used = 1
 	..()
 
@@ -135,6 +138,8 @@
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		H.in_stasis = 0
+		if(H.timeofdeath && src.existing_degradation)
+			H.timeofdeath = world.time - src.existing_degradation
 	..()
 
 /obj/structure/closet/body_bag/cryobag/return_air() //Used to make stasis bags protect from vacuum.

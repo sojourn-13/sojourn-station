@@ -179,6 +179,7 @@
 				var/malftrigger = rand(1,workingturbines)
 				connected_turbines[malftrigger].Malfunction()
 				malfnumber = 0
+			tidechange = 0
 		return
 
 	if(waterheld >= 10000 && !announced)
@@ -226,7 +227,7 @@
 
 /obj/machinery/power/hydroelectric_control/proc/togglegate()
 	working = !working
-	malfnumber = malfnumber + 1
+	malfnumber = malfnumber + 10
 
 /obj/machinery/power/hydroelectric_control/attack_hand(mob/user)
 	ui_interact(user)

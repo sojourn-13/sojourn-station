@@ -295,19 +295,6 @@
 	else
 		..()
 
-/obj/item/weapon/gun/launcher/crossbow/hunter_crossbow
-	name = "powered crossbow"
-	desc = "A modified crossbow powered by an internal battery device, hand-made by the local hunting lodge it seems."
-	icon = 'icons/obj/guns/launcher/crossbow-solid.dmi'
-	icon_state = "hunter_crossbow"
-	item_state = "crossbow-solid"
-	fire_sound = 'sound/weapons/punchmiss.ogg' // TODO: Decent THWOK noise.
-	fire_sound_text = "a solid thunk"
-	fire_delay = 15
-	slot_flags = SLOT_BACK
-	restrict_safety = TRUE
-	twohanded = TRUE
-
 /*////////////////////////////
 //	Rapid Crossbow Device	//
 */////////////////////////////

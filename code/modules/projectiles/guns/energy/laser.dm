@@ -39,9 +39,9 @@
 	charge_cost = 2000
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	suitable_cell = /obj/item/weapon/cell/large
-	one_hand_penalty = 15 //full sized shotgun level
+	one_hand_penalty = 10
 	fire_delay = 14 //Equivalent to a pump then fire time
-	recoil_buildup = 1.5
+	recoil_buildup = 1.2
 	damage_multiplier = 0.9
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
@@ -78,7 +78,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	fire_delay = 12
 	charge_cost = 200
-	recoil_buildup = 1
+	recoil_buildup = 0.8
 	damage_multiplier = 0.8
 	can_dual = TRUE
 	twohanded = FALSE
@@ -108,9 +108,9 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8)
 	charge_cost = 100
 	suitable_cell = /obj/item/weapon/cell/medium
-	one_hand_penalty = 15 //full sized shotgun level
+	one_hand_penalty = 10
 	fire_delay = 14 //Equivalent to a pump then fire time
-	recoil_buildup = 1.5
+	recoil_buildup = 1.2
 	damage_multiplier = 0.8
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
 	init_firemodes = list(
@@ -149,8 +149,8 @@
 	matter = list(MATERIAL_PLASTEEL = 11, MATERIAL_STEEL = 13, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1, MATERIAL_GLASS = 2)
 	price_tag = 500
 	damage_multiplier = 0.5 //makeshift laser
-	recoil_buildup = 3
-	one_hand_penalty = 4
+	recoil_buildup = 2
+	one_hand_penalty = 3
 	init_offset = 7 //makeshift laser
 	projectile_type = /obj/item/projectile/beam
 	suitable_cell = /obj/item/weapon/cell/medium
@@ -263,27 +263,38 @@
 
 /obj/item/weapon/gun/energy/lasercannon
 	name = "\"Titanica\" laser cannon"
-	desc = "A new design for an energy weapon. The lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
+	desc = "A bulky outdated and now abandoned H&S design for an energy weapon that allows for it to shoot condenced laser beams to really burn a whole in anything. At its time it was compared to the \"Bull\" as one of the worst personal defence laser firearms created."
 	icon = 'icons/obj/guns/energy/lascannon.dmi'
 	icon_state = "lasercannon"
 	item_state = "lasercannon"
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3, TECH_POWER = 3) //Shows that its not as high tech but still rather smartly designed
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BELT|SLOT_BACK
 	projectile_type = /obj/item/projectile/beam/heavylaser
 	charge_cost = 100
 	fire_delay = 20
-	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 4, MATERIAL_URANIUM = 1)
-	price_tag = 1500
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 6)
+	price_tag = 500
 	one_hand_penalty = 5
 	twohanded = TRUE
+	init_firemodes = list(
+		WEAPON_NORMAL
+		)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+
+/obj/item/weapon/gun/energy/lasercannon/rnd
+	name = "\"Solaris\" laser cannon"
+	desc = "A outdated and abandoned design for an energy weapon, revamped by Soteria Institute. The lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. \
+		This incredible technology packed inside let it stand on it's own has one of the markets best laser cannon for turret defense and firepower! "
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 4, MATERIAL_URANIUM = 1)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
+	price_tag = 1500
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 		)
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 
 /obj/item/weapon/gun/energy/lasercannon/mounted
 	name = "mounted laser cannon"
@@ -334,8 +345,8 @@
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GLASS = 4)
 	price_tag = 650
 	damage_multiplier = 0.8
-	recoil_buildup = 3
-	one_hand_penalty = 4
+	recoil_buildup = 2
+	one_hand_penalty = 3
 	projectile_type = /obj/item/projectile/beam
 	suitable_cell = /obj/item/weapon/cell/small
 	cell_type = /obj/item/weapon/cell/small

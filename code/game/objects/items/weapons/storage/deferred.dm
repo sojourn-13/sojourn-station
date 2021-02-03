@@ -200,7 +200,7 @@
 	desc = "A crate containing six Makarov .35 pistols, 200 rounds of ammunition, and six fixed-blade combat knives."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/weapon/gun/projectile/clarissa/makarov = 6,
-	/obj/item/ammo_magazine/pistol_35  = 20,
+	/obj/item/ammo_magazine/highcap_pistol_35  = 20,
 	/obj/item/weapon/tool/knife/boot = 6)
 
 /obj/item/weapon/storage/deferred/crate/cells

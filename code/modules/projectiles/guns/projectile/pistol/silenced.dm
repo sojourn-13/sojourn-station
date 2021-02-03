@@ -14,9 +14,10 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.1
-	recoil_buildup = 14
-	one_hand_penalty = 10
+	recoil_buildup = 8
+	one_hand_penalty = 9
 	penetration_multiplier = 0.8
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/silenced/update_icon()
 	..()

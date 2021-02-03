@@ -226,12 +226,12 @@ Thus, the two variables affect pump operation are set in New():
 	if(!(QUALITY_BOLT_TURNING in I.tool_qualities))
 		return ..()
 	if (!(stat & NOPOWER) && use_power)
-		to_chat(user, SPAN_WARNING("You cannot unwrench this [src], turn it off first."))
+		to_chat(user, SPAN_WARNING("You cannot unfasten this [src], turn it off first."))
 		return 1
 	var/datum/gas_mixture/int_air = return_air()
 	var/datum/gas_mixture/env_air = loc.return_air()
 	if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-		to_chat(user, SPAN_WARNING("You cannot unwrench this [src], it too exerted due to internal pressure."))
+		to_chat(user, SPAN_WARNING("You cannot unfasten this [src], it is under too much pressure."))
 		add_fingerprint(user)
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))

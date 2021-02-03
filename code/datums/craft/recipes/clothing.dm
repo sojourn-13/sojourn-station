@@ -31,7 +31,7 @@
 	)
 
 /datum/craft_recipe/clothing/handmadebelt
-	name = "hand-made toolbelt"
+	name = "hand-made tool belt"
 	result = /obj/item/weapon/storage/belt/utility/handmade
 	steps = list(
 		list(/obj/item/stack/cable_coil, 30, time = 15),

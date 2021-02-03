@@ -7,13 +7,13 @@
 	item_state = "luger"
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_PISTOL
-	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG|MAG_WELL_H_PISTOL|MAG_WELL_DRUM
+	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 6, MATERIAL_STEEL = 10)
 	price_tag = 650
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	damage_multiplier = 1
 	recoil_buildup = 2
-	one_hand_penalty = 40
+	one_hand_penalty = 20
 	load_method = MAGAZINE
 	init_firemodes = list(
 		FULL_AUTO_600,

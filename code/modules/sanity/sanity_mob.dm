@@ -140,7 +140,7 @@
 			pick_desires()
 			insight -= 100
 		give_resting(1)
-		owner.playsound_local(get_turf(owner), 'sound/sanity/psychochimes.ogg', 100)
+		owner.playsound_local(get_turf(owner), 'sound/sanity/level_up.ogg', 100)
 
 	var/obj/screen/sanity/hud = owner.HUDneed["sanity"]
 	hud?.update_icon()

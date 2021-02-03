@@ -13,8 +13,8 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_STEEL = 5)
 	price_tag = 500
 	damage_multiplier = 0.8
-	recoil_buildup = 20
-	one_hand_penalty = 40
+	recoil_buildup = 15
+	one_hand_penalty = 30
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/revolver/sixshot/sawn
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
@@ -30,5 +30,5 @@
 	price_tag = 250
 	damage_multiplier = 0.7
 	penetration_multiplier = 0.8
-	recoil_buildup = 26
-	one_hand_penalty = 30
+	recoil_buildup = 20
+	one_hand_penalty = 26

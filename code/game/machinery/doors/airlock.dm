@@ -44,6 +44,8 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	var/datum/wifi/receiver/button/door/wifi_receiver
 	var/obj/item/wedged_item
 
+	var/key_odds = 2 //How likely we are to guess the right key/lockpick
+
 	damage_smoke = TRUE
 
 /obj/machinery/door/airlock/attack_generic(var/mob/user, var/damage)
@@ -69,32 +71,38 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	name = "Airlock"
 	icon = 'icons/obj/doors/Doorcom.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_com
+	key_odds = 0
 
 /obj/machinery/door/airlock/security
 	name = "Airlock"
 	icon = 'icons/obj/doors/Doorsec.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_sec
 	resistance = RESISTANCE_ARMOURED
+	key_odds = 1
 
 /obj/machinery/door/airlock/engineering
 	name = "Airlock"
 	icon = 'icons/obj/doors/Dooreng.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_eng
+	key_odds = 20
 
 /obj/machinery/door/airlock/medical
 	name = "Airlock"
 	icon = 'icons/obj/doors/Doormed.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_med
+	key_odds = 20
 
 /obj/machinery/door/airlock/maintenance
 	name = "Maintenance Access"
 	icon = 'icons/obj/doors/Doormaint.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_mai
+	key_odds = 70
 
 /obj/machinery/door/airlock/external
 	name = "External Airlock"
 	icon = 'icons/obj/doors/Doorext.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_ext
+	key_odds = 40
 	opacity = 0
 	glass = 0
 
@@ -107,6 +115,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	explosion_resistance = 5
 	opacity = 0
 	glass = 1
+	key_odds = 40
 
 /obj/machinery/door/airlock/glass/open
 	icon_state = "door_open"
@@ -116,6 +125,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	name = "Airlock"
 	icon = 'icons/obj/doors/Doorele.dmi'
 	opacity = 1
+	key_odds = 0
 
 /obj/machinery/door/airlock/vault
 	name = "Vault"
@@ -123,6 +133,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	explosion_resistance = RESISTANCE_ARMOURED
 	resistance = RESISTANCE_VAULT
 	opacity = 1
+	key_odds = 0
 	secured_wires = 1
 	assembly_type = /obj/structure/door_assembly/door_assembly_highsecurity //Until somebody makes better sprites.
 
@@ -133,6 +144,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 /obj/machinery/door/airlock/freezer
 	name = "Freezer Airlock"
 	icon = 'icons/obj/doors/Doorfreezer.dmi'
+	key_odds = 50
 	opacity = 1
 	assembly_type = /obj/structure/door_assembly/door_assembly_fre
 
@@ -141,6 +153,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	icon = 'icons/obj/doors/Doorhatchele.dmi'
 	explosion_resistance = RESISTANCE_ARMOURED
 	resistance = RESISTANCE_ARMOURED
+	key_odds = 40
 	opacity = 1
 	assembly_type = /obj/structure/door_assembly/door_assembly_hatch
 
@@ -149,6 +162,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	icon = 'icons/obj/doors/Doorhatchmaint2.dmi'
 	explosion_resistance = RESISTANCE_ARMOURED
 	resistance = RESISTANCE_ARMOURED
+	key_odds = 70
 	opacity = 1
 	assembly_type = /obj/structure/door_assembly/door_assembly_mhatch
 
@@ -160,6 +174,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	resistance = RESISTANCE_AVERAGE
 	explosion_resistance = 5
 	opacity = 0
+	key_odds = 0
 	assembly_type = /obj/structure/door_assembly/door_assembly_com
 	glass = 1
 
@@ -171,6 +186,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	resistance = RESISTANCE_AVERAGE
 	explosion_resistance = 5
 	opacity = 0
+	key_odds = 20
 	assembly_type = /obj/structure/door_assembly/door_assembly_eng
 	glass = 1
 
@@ -182,6 +198,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	resistance = RESISTANCE_AVERAGE
 	explosion_resistance = 5
 	opacity = 0
+	key_odds = 2
 	assembly_type = /obj/structure/door_assembly/door_assembly_sec
 	glass = 1
 
@@ -193,6 +210,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	resistance = RESISTANCE_AVERAGE
 	explosion_resistance = 5
 	opacity = 0
+	key_odds = 10
 	assembly_type = /obj/structure/door_assembly/door_assembly_med
 	glass = 1
 
@@ -200,16 +218,19 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	name = "Mining Airlock"
 	icon = 'icons/obj/doors/Doormining.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_min
+	key_odds = 20
 
 /obj/machinery/door/airlock/atmos
 	name = "Atmospherics Airlock"
 	icon = 'icons/obj/doors/Dooratmo.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_atmo
+	key_odds = 5 //no messes really their
 
 /obj/machinery/door/airlock/research
 	name = "Airlock"
 	icon = 'icons/obj/doors/Doorresearch.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_research
+	key_odds = 20
 
 /obj/machinery/door/airlock/glass_research
 	name = "Maintenance Hatch"
@@ -221,6 +242,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	opacity = 0
 	assembly_type = /obj/structure/door_assembly/door_assembly_research
 	glass = 1
+	key_odds = 20
 	heat_proof = 1
 
 /obj/machinery/door/airlock/glass_mining
@@ -233,6 +255,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	opacity = 0
 	assembly_type = /obj/structure/door_assembly/door_assembly_min
 	glass = 1
+	key_odds = 20
 
 /obj/machinery/door/airlock/glass_atmos
 	name = "Maintenance Hatch"
@@ -244,6 +267,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	opacity = 0
 	assembly_type = /obj/structure/door_assembly/door_assembly_atmo
 	glass = 1
+	key_odds = 5
 
 /* NEW AIRLOCKS BLOCK */
 
@@ -251,41 +275,49 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doormaint_cargo.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_maint_cargo
+	key_odds = 20
 
 /obj/machinery/door/airlock/maintenance_command
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doormaint_command.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_maint_command
+	key_odds = 0
 
 /obj/machinery/door/airlock/maintenance_engineering
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doormaint_engi.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_maint_engi
+	key_odds = 20
 
 /obj/machinery/door/airlock/maintenance_medical
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doormaint_med.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_maint_med
+	key_odds = 20
 
 /obj/machinery/door/airlock/maintenance_rnd
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doormaint_rnd.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_maint_rnd
+	key_odds = 20
 
 /obj/machinery/door/airlock/maintenance_security
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doormaint_sec.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_maint_sec
+	key_odds = 2
 
 /obj/machinery/door/airlock/maintenance_common
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doormaint_common.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_maint_common
+	key_odds = 50
 
 /obj/machinery/door/airlock/maintenance_interior
 	name = "Maintenance Hatch"
 	icon = 'icons/obj/doors/Doormaint_int.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_maint_int
+	key_odds = 20
 
 /* NEW AIRLOCKS BLOCK END */
 
@@ -371,6 +403,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	name = "Airlock"
 	icon = 'icons/obj/doors/Doorsci.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_science
+	key_odds = 20
 
 /obj/machinery/door/airlock/glass_science
 	name = "Glass Airlocks"
@@ -380,6 +413,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	opacity = 0
 	assembly_type = /obj/structure/door_assembly/door_assembly_science
 	glass = 1
+	key_odds = 20
 
 /obj/machinery/door/airlock/highsecurity
 	name = "Secure Airlock"
@@ -388,6 +422,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	resistance = RESISTANCE_ARMOURED
 	secured_wires = 1
 	assembly_type = /obj/structure/door_assembly/door_assembly_highsecurity
+	key_odds = 0
 
 /*
 About the new airlock wires panel:
@@ -975,6 +1010,32 @@ There are 9 wires.
 	//Harm intent overrides other actions
 	if(src.density && user.a_intent == I_HURT && !I.GetIdCard())
 		hit(user, I)
+		return
+
+	if(istype(I, /obj/item/weapon/keys))
+		if(used_now)
+			to_chat(user, SPAN_WARNING("You are already looking for the key!")) //don't want people stacking odds
+			return
+		used_now = TRUE
+		if(ishuman(usr))
+			var/mob/living/carbon/human/H = usr
+			if(istype(I, /obj/item/weapon/keys/lockpicks))
+				playsound(src.loc, 'sound/items/keychainrattle.ogg', 30, 1, -2)
+			else
+				playsound(src.loc, 'sound/items/keychainrattle.ogg', 700, 1, -2)
+			if(do_after(user, 600, src))
+				used_now = FALSE
+				if(locked)
+					to_chat(user, SPAN_NOTICE("Even with the right key you can't open \"deadbolts\"!"))
+					used_now = FALSE
+					return
+				if(prob(key_odds+1) && H.stats.getPerk(PERK_JINGLE_JANGLE)) //minmium 1%
+					to_chat(user, SPAN_NOTICE("You found the correct key!"))
+					open(0)
+					used_now = FALSE
+					return
+				to_chat(user, SPAN_NOTICE("Damn wrong key!"))
+				used_now = FALSE
 		return
 
 	var/tool_type = I.get_tool_type(user, list(QUALITY_PRYING, QUALITY_SCREW_DRIVING, QUALITY_WELDING), src)

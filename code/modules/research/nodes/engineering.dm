@@ -127,7 +127,7 @@
 							/datum/design/research/item/custom_circuit_assembly/drone,
 							/datum/design/research/item/custom_circuit_assembly/large,
 							/datum/design/research/item/custom_circuit_assembly/implant,
-							/datum/design/research/item/custom_circuit_assembly/implant
+							/datum/design/research/item/custom_circuit_assembly/printer
 							)
 
 /datum/technology/custom_circuits_advanced

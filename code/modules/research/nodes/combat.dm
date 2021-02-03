@@ -116,7 +116,8 @@
 	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
 							/datum/design/research/item/ammo/smg_mag,
 							/datum/design/research/item/ammo/pistol_laser,
-							/datum/design/research/item/ammo/magum_laser
+							/datum/design/research/item/ammo/magum_laser,
+							/datum/design/research/item/robot_upgrade/bigknife
 							)
 
 /datum/technology/exotic_weaponry

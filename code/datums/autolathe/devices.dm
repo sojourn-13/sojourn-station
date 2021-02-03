@@ -43,7 +43,7 @@
 	build_path = /obj/item/weapon/implanter
 
 /datum/design/autolathe/device/hand_labeler
-	name = "hand labeler"
+	name = "hand labeller"
 	build_path = /obj/item/weapon/hand_labeler
 
 /datum/design/autolathe/device/flamethrower

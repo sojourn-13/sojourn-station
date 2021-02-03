@@ -34,7 +34,6 @@
 	active_power_usage = 0
 
 	active = FALSE
-	area_radius = 9
 	damage = 40
 	max_targets = 10
 

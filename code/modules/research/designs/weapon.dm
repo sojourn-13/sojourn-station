@@ -26,7 +26,7 @@
 /datum/design/research/item/weapon/lasercannon
 	name = "\"Solaris\" Laser Cannon"
 	desc = "The lasing medium of this prototype is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core."
-	build_path = /obj/item/weapon/gun/energy/lasercannon
+	build_path = /obj/item/weapon/gun/energy/lasercannon/rnd
 
 /datum/design/research/item/weapon/c20r
 	name = "Lightweight C20R"
@@ -73,13 +73,13 @@
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/weapon/soteriaarmorchest
-	name = "'Mark II' enviromental protection suit"
-	desc = "For working in hazardous enviroments. While its built for most enviroments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
-	Unlike its superior, it offers alot less armor but it is made out of basic steel, making it a cheaper, easier alternative to build."
+	name = "'Mark II' environmental protection suit"
+	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
+	Unlike its superior, it offers significantly less armor but it is made out of basic steel, making it a cheaper, easier alternative to build."
 	build_path = /obj/item/clothing/suit/armor/vest/soteriasuit
 
 /datum/design/research/item/weapon/soteriaarmorhead
-	name = "'Mark II' enviromental protection helmet"
+	name = "'Mark II' environmental protection helmet"
 	desc = "You feel like this helmet is cheap, for some reason."
 	build_path = /obj/item/clothing/head/helmet/soteriasuit
 
@@ -98,7 +98,7 @@
 
 /datum/design/research/item/weapon/medarmor
 	name = "Soteria Medical Void Armor"
-	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
+	desc = "A suit of all purpose Soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	build_path = /obj/item/clothing/suit/space/void/medarmor
 
 /datum/design/research/item/weapon/hatton
@@ -169,7 +169,7 @@
 
 /datum/design/research/item/ammo/kurtz_laser
 	name = "Kurtz .50 , laser case"
-	desc = "A .50 kurtz case fitted with a one time use laser payload."
+	desc = "A .50 Kurtz case fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_casing/kurtz_50/laser
 
 // Shotgun Ammo
@@ -293,7 +293,7 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/heatsink
-	name = "Heatsink"
+	name = "Heat Sink"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/heatsink
 	sort_string = "TAAAB"
 	category = CAT_TOOLMODS
@@ -311,7 +311,7 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/plasmablock
-	name = "Plasmablock"
+	name = "Plasma Block"
 	build_path = /obj/item/weapon/tool_upgrade/reinforcement/plasmablock
 	sort_string = "TAAAE"
 	category = CAT_TOOLMODS
@@ -347,7 +347,7 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/dblade
-	name = "Lonestar's \"Gleaming Edge\": Diamond Blade"
+	name = "Lonestar \"Gleaming Edge\": Diamond Blade"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/diamond_blade
 	sort_string = "TAAAK"
 	category = CAT_TOOLMODS
@@ -365,7 +365,7 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/antistaining
-	name = "Anti-staining Paint"
+	name = "Anti-Staining Paint"
 	build_path = /obj/item/weapon/tool_upgrade/productivity/antistaining
 	sort_string = "TAAAN"
 	category = CAT_TOOLMODS
@@ -383,13 +383,13 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/laserguide
-	name = "Lonestar's \"Guiding Light\" Laser Guide"
+	name = "Lonestar \"Guiding Light\" Laser Guide"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/laserguide
 	sort_string = "TAAAQ"
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/weapon/toolmod/stabilizedgrip
-	name = "Gyrostabilized Grip"
+	name = "Gyro-Stabilized Grip"
 	build_path = /obj/item/weapon/tool_upgrade/refinement/stabilized_grip
 	sort_string = "TAAAR"
 	category = CAT_TOOLMODS

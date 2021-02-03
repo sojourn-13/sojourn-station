@@ -11,7 +11,7 @@
 	load_method = SINGLE_CASING
 	max_shells = 1
 	damage_multiplier = 1.36
-	recoil_buildup = 45
+	recoil_buildup = 25
 	var/chamber_open = FALSE
 	var/jammed = FALSE
 	var/jam_chance = 15

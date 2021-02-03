@@ -140,7 +140,7 @@
 				<br>
 				<h2>EJECTION PROCEDURE</h2>
 				<ol>
-				<li>Press Engine Ventilatory Control button to open engine core vent to space.</li>
+				<li>Press Engine Ventilation Control button to open engine core vent to space.</li>
 				<li>Press Emergency Core Eject button to eject supermatter crystal. NOTE: Attempting crystal ejection while engine core vent is closed will result in ejection failure.</li>
 				<li>In event of ejection failure, <i>pending</i></li>
 				</ol>
@@ -204,9 +204,9 @@
 					<li>Put in the new, <b>full power cell</b> - if you don't have one, continue with step 15.</li>
 					<li>Quickly put on a <b>Radiation suit.</b></li>
 					<li>Check if the <b>singularity field generators</b> withstood the down-time - if they didn't, continue with step 15.</li>
-					<li>Since disaster was averted you now have to ensure it doesn't repeat. If it was a powersink which caused it and if the engineering APC is wired to the same powernet, which the powersink is on, you have to remove the piece of wire which links the APC to the powernet. If it wasn't a powersink which caused it, then skip to step 14.</li>
+					<li>Since disaster was averted you now have to ensure it doesn't repeat. If it was caused by a power sink and if the engineering APC is wired to the same power net, which the power sink is on, you have to remove the piece of wire which links the APC to the power net. If it wasn't caused by a power sink, then skip to step 14.</li>
 					<li>Grab your crowbar and pry away the tile closest to the APC.</li>
-					<li>Use the wirecutters to cut the wire which is connecting the grid to the terminal. </li>
+					<li>Use the wire cutters to cut the wire which is connecting the grid to the terminal. </li>
 					<li>Go to the bar and tell the guys how you saved them all. Stop reading this guide here.</li>
 					<li><b>GET THE FUCK OUT OF THERE!!!</b></li>
 				</ol>
@@ -271,7 +271,7 @@
 
 				<a name='4'><h3>Step 4: Scan body</h3>
 				Go onto the computer and scan the body by pressing 'Scan - &lt;Subject Name Here&gt;.' If you're successful, they will be added to the records (note that this can be done at any time, even with living people,
-				so that they can be cloned without a body in the event that they are lying dead on port solars and didn't turn on their suit sensors)!
+				so that they can be cloned without a body in the event that they are lying dead on port solar panels and didn't turn on their suit sensors)!
 				If not, and it says "Error: Mental interface failure.", then they have left their bodily confines and are one with the spirits. If this happens, just shout at them to get back in their body,
 				click 'Refresh' and try scanning them again. If there's no success, threaten them with gibbing.
 				Still no success? Skip over to Step 7 and don't continue after it, as you have an unresponsive body and it cannot be cloned.
@@ -295,7 +295,7 @@
 				Now go back to the lab and wait for your patient to be cloned. It won't be long now, I promise.
 
 				<a name='9'><h3>Step 9: Cryo and clean SE injector on person</h3>
-				Has your body been cloned yet? Great! As soon as the guy pops out, grab them and stick them in cryo. Clonexadone and Cryoxadone help rebuild their genetic material. Then grab your clean SE injector and jab it in them. Once you've injected them,
+				Has your body been cloned yet? Great! As soon as the guy pops out, grab them and stick them in cryogenics. Clonexadone and Cryoxadone help rebuild their genetic material. Then grab your clean SE injector and jab it in them. Once you've injected them,
 				they now have clean Structural Enzymes and their defects, if any, will disappear in a short while.
 
 				<a name='10'><h3>Step 10: Give person clothes back</h3>
@@ -363,10 +363,10 @@
 					<li>Connect all hydraulic fittings and tighten them up with a wrench.</li>
 					<li>Adjust the servohydraulics with a screwdriver.</li>
 					<li>Wire the chassis (Cable is not included).</li>
-					<li>Use the wirecutters to remove the excess cable if needed.</li>
-					<li>Install the central control module (Not included. Use supplied datadisk to create one).</li>
+					<li>Use the wire cutters to remove the excess cable if needed.</li>
+					<li>Install the central control module (Not included. Use supplied data disk to create one).</li>
 					<li>Secure the mainboard with a screwdriver.</li>
-					<li>Install the peripherals control module (Not included. Use supplied datadisk to create one).</li>
+					<li>Install the peripherals control module (Not included. Use supplied data disk to create one).</li>
 					<li>Secure the peripherals control module with a screwdriver.</li>
 					<li>Install the internal armor plating (Not included due to corporate regulations. Can be made using 5 metal sheets).</li>
 					<li>Secure the internal armor plating with a wrench.</li>
@@ -379,7 +379,7 @@
 				<h2>Additional Information:</h2>
 				<ul>
 					<li>The firefighting variation is made in a similar fashion.</li>
-					<li>A firesuit must be connected to the firefighter chassis for heat shielding.</li>
+					<li>A fire suit must be connected to the firefighter chassis for heat shielding.</li>
 					<li>Internal armor is plasteel for additional strength.</li>
 					<li>External armor must be installed in 2 parts, totalling 10 sheets.</li>
 					<li>Completed mech is more resilient against fire, and is a bit more durable overall.</li>
@@ -428,7 +428,7 @@
 				It also has a settings menu that lets you re-sync with nearby R&D devices (if they've become disconnected), lock the console from the unworthy,
 				upload the data to all other R&D consoles in the network (all R&D consoles are networked by default), connect/disconnect from the network, and purge all data from the database.<br><br>
 
-				<b>NOTE:</b> The technology list screen, circuit imprinter, and protolathe menus are accessible by non-scientists. This is intended to allow 'public' systems for the plebians to utilize some new devices.
+				<b>NOTE:</b> The technology list screen, circuit imprinter, and protolathe menus are accessible by non-scientists. This is intended to allow 'public' systems for the plebeians to utilize some new devices.
 
 				<h2>Destructive Analyzer</h2>
 				This is the source of all technology. Whenever you put a handheld object in it, it analyzes it and determines what sort of technological advancements you can discover from it. If the technology of the object is equal or higher then your current knowledge,
@@ -650,14 +650,14 @@
 					<li>Check to make sure the LawSync and AI Sync lights are lit</li>
 					<li>If they are not lit, pulse the LawSync wire using a multitool to enable the cyborg's LawSync</li>
 					<li>Proceed to a cyborg upload console. The Company usually places these in the same location as AI upload consoles.</li>
-					<li>Use a "Reset" upload moduleto reset the cyborg's laws</li>
+					<li>Use a "Reset" upload module to reset the cyborg's laws</li>
 					<li>Proceed to a Robotics Control console</li>
 					<li>Remove the lockdown on the cyborg</li>
 				</ol>
 
 				<h3>As a last resort</h3>
 				If all else fails in a case of cyborg-related emergency, there may be only one option. Using a Robotics Control console, you may have to remotely detonate the cyborg.
-				<h3>WARNING:</h3> Do not detonate a borg without an explicit reason for doing so. Cyborgs are expensive pieces of company equipment, and you may be punished for detonating them without reason.
+				<h3>WARNING:</h3> Do not detonate a cyborg without an explicit reason for doing so. Cyborgs are expensive pieces of company equipment, and you may be punished for detonating them without reason.
 
 				</body>
 			</html>
@@ -716,15 +716,15 @@
 
 				<ol>
 					<li>Now, as a new doctor, I solemnly promise that I will, to the best of my ability, serve humanity-caring for the sick, promoting good health, and alleviating pain and suffering.</li>
-					<li>I recognise that the practice of medicine is a privilege with which comes considerable responsibility and I will not abuse my position.</li>
-					<li>I will practise medicine with integrity, humility, honesty, and compassion-working with my fellow doctors and other colleagues to meet the needs of my patients.</li>
+					<li>I recognize that the practice of medicine is a privilege with which comes considerable responsibility and I will not abuse my position.</li>
+					<li>I will practice medicine with integrity, humility, honesty, and compassion-working with my fellow doctors and other colleagues to meet the needs of my patients.</li>
 					<li>I shall never intentionally do or administer anything to the overall harm of my patients.</li>
 					<li>I will not permit considerations of gender, race, religion, political affiliation, sexual orientation, nationality, or social standing to influence my duty of care.</li>
 					<li>I will oppose policies in breach of human rights and will not participate in them. I will strive to change laws that are contrary to my profession's ethics and will work towards a fairer distribution of health resources.</li>
 					<li>I will assist my patients to make informed decisions that coincide with their own values and beliefs and will uphold patient confidentiality.</li>
-					<li>I will recognise the limits of my knowledge and seek to maintain and increase my understanding and skills throughout my professional life. I will acknowledge and try to remedy my own mistakes and honestly assess and respond to those of others.</li>
+					<li>I will recognize the limits of my knowledge and seek to maintain and increase my understanding and skills throughout my professional life. I will acknowledge and try to remedy my own mistakes and honestly assess and respond to those of others.</li>
 					<li>I will seek to promote the advancement of medical knowledge through teaching and research.</li>
-					<li>I make this declaration solemnly, freely, and upon my honour.</li>
+					<li>I make this declaration solemnly, freely, and upon my honor.</li>
 				</ol><br>
 
 				<HR COLOR="steelblue" WIDTH="60%" ALIGN="LEFT">
@@ -902,7 +902,7 @@
 					<li>Using your forensic scanning computer, scan your scanner to upload all of your evidence into the database.</li>
 					<li>Browse through the resulting dossiers, looking for the one that either has the most complete set of prints, or the most suspicious items handled. </li>
 					<li>If you have 80% or more of the print (The print is displayed), go to step 10, otherwise continue to step 8.</li>
-					<li>Look for clues from the suit fibres you found on your perpetrator, and go about looking for more evidence with this new information, scanning as you go. </li>
+					<li>Look for clues from the suit fibers you found on your perpetrator, and go about looking for more evidence with this new information, scanning as you go. </li>
 					<li>Try to get a fingerprint card of your perpetrator, as if used in the computer, the prints will be completed on their dossier.</li>
 					<li>Assuming you have enough of a print to see it, grab the biggest complete piece of the print and search the security records for it. </li>
 					<li>Since you now have both your dossier and the name of the person, print both out as evidence and get security to nab your baddie.</li>
@@ -941,8 +941,8 @@
 				<ul>
 					<li>Place the nuclear device in the designated detonation zone.</li>
 					<li>Extend and anchor the nuclear device from its interface.</li>
-					<li>Insert the nuclear authorisation disk into the slot.</li>
-					<li>Type the numeric authorisation code into the keypad. This should have been provided.<br>
+					<li>Insert the nuclear authorization disk into the slot.</li>
+					<li>Type the numeric authorization code into the keypad. This should have been provided.<br>
 					<b>Note</b>: If you make a mistake, press R to reset the device.
 					<li>Press the E button to log on to the device.</li>
 				</ul><br>
@@ -1043,7 +1043,7 @@
 				<li><b>Gas pump:</b> Take a wild guess. It moves gas in the direction it's pointing (marked by the red line on one end). It moves it based on pressure, the maximum output being 15000 kPa (kilopascals).
 				Ordinary atmospheric pressure, for comparison, is 101.3 kPa, and the minimum pressure of room-temperature pure oxygen needed to not suffocate in a matter of minutes is 16 kPa
 				(though 18 kPa is preferred when using internals with pure oxygen, for various reasons). A high-powered variant will move gas more quickly at the expense of consuming more power. Do not turn the distribution loop up to 15000 kPa.
-				You will make engiborgs cry and the Technomancer Exultant will beat you.</li>
+				You will make engineering cyborgs cry and the Technomancer Exultant will beat you.</li>
 				<li><b>Pressure regulator:</b> These replaced the old passive gates. You can choose to regulate pressure by input or output, and regulate flow rate. Regulating by input means that when input pressure is above the limit, gas will flow.
 				Regulating by output means that when pressure is below the limit, gas will flow. Flow rate can be controlled.</li>
 				<li><b>Unary vent:</b> The basic vent used in rooms. It pumps gas into the room, but can't suck it back out. Controlled by the room's air alarm system.</li>
@@ -1052,7 +1052,7 @@
 				<li><b>Gas mixer:</b> Two sides are input, one side is output. Mixes the gases pumped into it at the ratio defined. The side perpendicular to the other two is "node 2," for reference, on non-mirrored mixers..
 				Output is controlled by flow rate. There is also an "omni" variant that allows you to set input and output sections freely..</li>
 				<li><b>Gas filter:</b> Essentially the opposite of a gas mixer. One side is input. The other two sides are output. One gas type will be filtered into the perpendicular output pipe,
-				the rest will continue out the other side. Can also output from 0-4500 kPa. The "omni" vairant allows you to set input and output sections freely.</li>
+				the rest will continue out the other side. Can also output from 0-4500 kPa. The "omni" variant allows you to set input and output sections freely.</li>
 				</ul>
 
 				<h1><a name="HES"><B>Heat Exchange Systems</B></a></h1>

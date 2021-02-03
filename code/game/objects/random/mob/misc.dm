@@ -109,9 +109,12 @@
 	alpha = 128
 
 /obj/random/mob/tengolo/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/tengbrute = 2,
-		/mob/living/simple_animal/hostile/tengstalker = 1,
-		/mob/living/simple_animal/hostile/tengcharge = 2,
+	return pickweight(list(/mob/living/simple_animal/hostile/tengbrute = 20,
+		/mob/living/simple_animal/hostile/tengstalker = 10,
+		/mob/living/simple_animal/hostile/tengcharge = 20,
+		/mob/living/simple_animal/hostile/hell_pig = 1,
+		/mob/living/simple_animal/hostile/hell_pig/slepnir = 1,
+		/mob/living/simple_animal/hostile/hell_pig/wendigo = 1
 		))
 
 /obj/random/mob/tengolo/low_chance
@@ -129,6 +132,32 @@
 
 /obj/random/cluster/tengolo/item_to_spawn()
 	return /obj/random/mob/tengolo
+
+/obj/random/mob/tahca
+	name = "random tahca"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/tahca/item_to_spawn()
+	return /mob/living/simple_animal/hostile/retaliate/tahca
+
+/obj/random/mob/tahca/low_chance
+	name = "low chance tahca"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/mob/mukwah
+	name = "random mukwah"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/mukwah/item_to_spawn()
+	return /mob/living/simple_animal/hostile/bear/mukwah
+
+/obj/random/mob/mukwah/low_chance
+	name = "low chance mukwah"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
 
 //hakhma beetle - seperate due to hakhma being roach aligned
 /obj/random/mob/hakhma

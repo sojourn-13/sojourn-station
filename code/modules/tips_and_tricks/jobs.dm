@@ -198,3 +198,23 @@
 /tipsAndTricks/jobs/phazon
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
     tipText = "The Phazon is a combat mech. It has the highest base movespeed, good armor, and can phase through anything thanks to bluespace technology."
+
+/tipsAndTricks/jobs/hunter_meds
+    jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
+    tipText = "Tatonka's located in the barn can be bred using wheat and then butchered for bones, leather, and animal parts you can turn into medicine in the crafting menu."
+
+/tipsAndTricks/jobs/hunter_knife
+    jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
+    tipText = "Your tools are sacred, don't let anyone take or have your skinning knives. But you can still barter your halberds, crossbow, and armor."
+
+/tipsAndTricks/jobs/hunter_stimulants
+    jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
+    tipText = "When cluckers are butchered they drop a feather that can be turned into a painkiller in the crafting menu. This can be useful when combined with milk taken from tatonkas to boost your defenses."
+
+/tipsAndTricks/jobs/hunter_mutants
+    jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
+    tipText = "Tatonkas and cerberuses have a small chance of mutating everytime one grows up. These mutant variants are much more valuable and much more sought after, but quite rare."
+
+/tipsAndTricks/jobs/hunter_allies
+    jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
+    tipText = "The cerberus hounds are far sighted and loyal animals who won't ever attack you, they make great hunting allies by acting as distractions against larger enemies and emitting growls when they spot enemies you haven't."

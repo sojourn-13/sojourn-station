@@ -75,7 +75,7 @@
 /obj/item/device/encryptionkey/heads/captain
 	name = "premier's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1, "Blueteam" = 0, "Redtag" = 0, "Greenteam" = 0, "Yellowtag" = 0)
 
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
@@ -111,7 +111,7 @@
 /obj/item/device/encryptionkey/heads/hop
 	name = "steward's encryption key"
 	icon_state = "hop_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1, "Blueteam" = 0, "Redtag" = 0, "Greenteam" = 0, "Yellowtag" = 0)
 
 /obj/item/device/encryptionkey/heads/merchant
 	name = "lonestar executive radio encryption key"
@@ -146,3 +146,19 @@
 /obj/item/device/encryptionkey/entertainment
 	name = "entertainment radio key"
 	channels = list("Entertainment" = 1)
+
+/obj/item/device/encryptionkey/headset_blueteam
+	name = "entertainment radio key"
+	channels = list("Blueteam" = 1)
+
+/obj/item/device/encryptionkey/headset_redteam
+	name = "entertainment radio key"
+	channels = list("Redtag" = 1)
+
+/obj/item/device/encryptionkey/headset_yellowteam
+	name = "entertainment radio key"
+	channels = list("Yellowtag" = 1)
+
+/obj/item/device/encryptionkey/headset_greenteam
+	name = "entertainment radio key"
+	channels = list("Greenteam" = 1)

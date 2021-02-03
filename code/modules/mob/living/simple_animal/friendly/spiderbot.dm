@@ -6,6 +6,8 @@
 	minbodytemp = 0
 	maxbodytemp = 500
 	mob_size = MOB_SMALL
+	leather_amount = 0
+	bones_amount = 0
 
 	var/obj/item/device/radio/borg/radio = null
 	var/mob/living/silicon/ai/connected_ai = null

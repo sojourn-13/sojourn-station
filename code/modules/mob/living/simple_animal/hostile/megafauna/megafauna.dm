@@ -17,6 +17,8 @@
 	status_flags = 0 //No pushing, no stunning, no paralyze and no weaken.
 	layer = LARGE_MOB_LAYER //Looks weird with them slipping under mineral walls and cameras and shit otherwise
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
+	leather_amount = 0
+	bones_amount = 0
 	var/anger_modifier = 0
 	var/recovery_time = 0
 	var/chosen_attack = 1 // chosen attack num

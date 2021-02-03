@@ -5,11 +5,6 @@
 	item_cost = 4
 	category = /datum/uplink_category/ammunition
 
-/datum/uplink_item/item/ammo/pistol
-	name = ".35 HV box"
-	item_cost = 1
-	path = /obj/item/ammo_magazine/pistol_35/highvelocity
-
 /datum/uplink_item/item/ammo/hpistol
 	name = ".35 HV high-capacity mag"
 	item_cost = 1

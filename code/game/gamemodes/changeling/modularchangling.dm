@@ -69,7 +69,7 @@ var/list/datum/power/carrion/powerinstances = list()
 	spiderpath = /obj/item/weapon/implant/carrion_spider/observer
 
 /datum/power/carrion/identity_spider
-	name = "Idenitity spider"
+	name = "Identity spider"
 	desc = "Creates a spider with the ability to extract and transmit human DNA to you."
 	genomecost = 3
 	spiderpath = /obj/item/weapon/implant/carrion_spider/identity

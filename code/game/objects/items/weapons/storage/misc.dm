@@ -45,8 +45,8 @@
 	name = "emergency ration pack"
 	desc = "Silvery plastic package, with the letters \"ERP\" pasted onto the front. Seems air tight, and vacuumed sealed. \
 	The packaging holds usage information within the fineprint: \
-	\"Instructions: Remove contents from packaging, open both mre container and ration can, use them in-hand to activate thermal heater. \
-	Thermal insulation will keep them warm for over four hours. Nutrient paste and morale bar contains medicinal additives for field performace, DO NOT OVERCONSUME.\""
+	\"Instructions: Remove contents from packaging, open both MRE container and ration can, use them in-hand to activate thermal heater. \
+	Thermal insulation will keep them warm for over four hours. Nutrient paste and morale bar contains medicinal additives for field performance, DO NOT OVER-CONSUME.\""
 	can_hold = list(
 		/obj/item/weapon/reagent_containers/food/snacks,
 		/obj/item/weapon/storage/fancy/mre_cracker,

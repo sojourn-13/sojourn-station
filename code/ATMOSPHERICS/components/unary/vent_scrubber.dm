@@ -271,11 +271,11 @@
 			to_chat(user, SPAN_NOTICE("Now welding the vent."))
 			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 				if(!welded)
-					user.visible_message(SPAN_NOTICE("\The [user] welds the scrubber shut."), SPAN_NOTICE("You weld the vent scrubber."), "You hear welding.")
+					user.visible_message(SPAN_NOTICE("\The [user] welds the scrubber shut."), SPAN_NOTICE("You weld the scrubber shut."), "You hear welding.")
 					welded = 1
 					update_icon()
 				else
-					user.visible_message(SPAN_NOTICE("[user] unwelds the scrubber."), SPAN_NOTICE("You unweld the scrubber."), "You hear welding.")
+					user.visible_message(SPAN_NOTICE("[user] unseals the scrubber."), SPAN_NOTICE("You unseal the scrubber."), "You hear welding.")
 					welded = 0
 					update_icon()
 					return
@@ -283,7 +283,7 @@
 
 		if(QUALITY_BOLT_TURNING)
 			if (!(stat & NOPOWER) && use_power)
-				to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], turn it off first."))
+				to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], turn it off first."))
 				return 1
 			var/turf/T = src.loc
 			if (node1 && node1.level==1 && isturf(T) && !T.is_plating())
@@ -292,7 +292,7 @@
 			var/datum/gas_mixture/int_air = return_air()
 			var/datum/gas_mixture/env_air = loc.return_air()
 			if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-				to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it is too exerted due to internal pressure."))
+				to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], it is under too much pressure."))
 				add_fingerprint(user)
 				return 1
 			to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
@@ -310,7 +310,7 @@
 	if(..(user, 1))
 		to_chat(user, "A small gauge in the corner reads [round(last_flow_rate, 0.1)] L/s; [round(last_power_draw)] W")
 	else
-		to_chat(user, "You are too far away to read the gauge.")
+		to_chat(user, "You are too far away to read its gauge.")
 
 /obj/machinery/atmospherics/unary/vent_scrubber/Destroy()
 	if(initial_loc)

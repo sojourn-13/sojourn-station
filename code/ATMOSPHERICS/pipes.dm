@@ -87,7 +87,7 @@
 		var/datum/gas_mixture/int_air = return_air()
 		var/datum/gas_mixture/env_air = loc.return_air()
 		if ((int_air.return_pressure()-env_air.return_pressure()) > 4*ONE_ATMOSPHERE)
-			to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it is too exerted due to internal pressure."))
+			to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], it is under too much pressure."))
 			add_fingerprint(user)
 			return 1
 		to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
@@ -319,8 +319,8 @@
 	layer = GAS_PIPE_VISIBLE_LAYER
 
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers
-	name = "scrubbers pipe"
-	desc = "A one meter section of scrubbers pipe"
+	name = "scrubber pipe"
+	desc = "A one meter section of scrubber pipe"
 	icon_state = "intact-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -361,8 +361,8 @@
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers
-	name = "scrubbers pipe"
-	desc = "A one meter section of scrubbers pipe"
+	name = "scrubber pipe"
+	desc = "A one meter section of scrubber pipe"
 	icon_state = "intact-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -413,7 +413,7 @@
 	icon = 'icons/atmos/manifold.dmi'
 	icon_state = ""
 	name = "pipe manifold"
-	desc = "A manifold composed of regular pipes"
+	desc = "A manifold of regular pipes"
 
 	volume = ATMOS_DEFAULT_VOLUME_PIPE * 1.5
 
@@ -585,8 +585,8 @@
 	level = ABOVE_PLATING_LEVEL
 
 /obj/machinery/atmospherics/pipe/manifold/visible/scrubbers
-	name="Scrubbers pipe manifold"
-	desc = "A manifold composed of scrubbers pipes"
+	name="Scrubber pipe manifold"
+	desc = "A manifold of scrubber pipes"
 	icon_state = "map-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -595,7 +595,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold/visible/supply
 	name="Air supply pipe manifold"
-	desc = "A manifold composed of supply pipes"
+	desc = "A manifold of supply pipes"
 	icon_state = "map-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -627,8 +627,8 @@
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers
-	name="Scrubbers pipe manifold"
-	desc = "A manifold composed of scrubbers pipes"
+	name="Scrubber pipe manifold"
+	desc = "A manifold of scrubbers pipes"
 	icon_state = "map-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -637,7 +637,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply
 	name="Air supply pipe manifold"
-	desc = "A manifold composed of supply pipes"
+	desc = "A manifold of supply pipes"
 	icon_state = "map-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -841,8 +841,8 @@
 	level = ABOVE_PLATING_LEVEL
 
 /obj/machinery/atmospherics/pipe/manifold4w/visible/scrubbers
-	name="4-way scrubbers pipe manifold"
-	desc = "A manifold composed of scrubbers pipes"
+	name="4-way scrubber pipe manifold"
+	desc = "A manifold of scrubber pipes"
 	icon_state = "map_4way-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -851,7 +851,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold4w/visible/supply
 	name="4-way air supply pipe manifold"
-	desc = "A manifold composed of supply pipes"
+	desc = "A manifold of supply pipes"
 	icon_state = "map_4way-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -882,8 +882,8 @@
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers
-	name="4-way scrubbers pipe manifold"
-	desc = "A manifold composed of scrubbers pipes"
+	name="4-way scrubber pipe manifold"
+	desc = "A manifold of scrubber pipes"
 	icon_state = "map_4way-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -892,7 +892,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply
 	name="4-way air supply pipe manifold"
-	desc = "A manifold composed of supply pipes"
+	desc = "A manifold of supply pipes"
 	icon_state = "map_4way-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -919,7 +919,7 @@
 
 /obj/machinery/atmospherics/pipe/cap
 	name = "pipe endcap"
-	desc = "An endcap for pipes"
+	desc = "A pipe sealing end"
 	icon = 'icons/atmos/pipes.dmi'
 	icon_state = ""
 	level = ABOVE_PLATING_LEVEL
@@ -996,16 +996,16 @@
 	icon_state = "cap"
 
 /obj/machinery/atmospherics/pipe/cap/visible/scrubbers
-	name = "scrubbers pipe endcap"
-	desc = "An endcap for scrubbers pipes"
+	name = "scrubber pipe end cap"
+	desc = "A sealing end for scrubber pipes"
 	icon_state = "cap-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/cap/visible/supply
-	name = "supply pipe endcap"
-	desc = "An endcap for supply pipes"
+	name = "supply pipe end cap"
+	desc = "A sealing end for supply pipes"
 	icon_state = "cap-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	icon_connect_type = "-supply"
@@ -1017,16 +1017,16 @@
 	alpha = 128
 
 /obj/machinery/atmospherics/pipe/cap/hidden/scrubbers
-	name = "scrubbers pipe endcap"
-	desc = "An endcap for scrubbers pipes"
+	name = "scrubber pipe end cap"
+	desc = "A sealing end for scrubbers pipes"
 	icon_state = "cap-f-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/cap/hidden/supply
-	name = "supply pipe endcap"
-	desc = "An endcap for supply pipes"
+	name = "supply pipe end cap"
+	desc = "An sealing end for supply pipes"
 	icon_state = "cap-f-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	icon_connect_type = "-supply"
@@ -1276,7 +1276,7 @@
 
 /obj/machinery/atmospherics/pipe/simple/visible/universal
 	name="universal pipe adapter"
-	desc = "An adapter for regular, supply and scrubbers pipes"
+	desc = "An adapter for regular, supply and scrubber pipes"
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER
 	icon_state = "map_universal"
 
@@ -1313,7 +1313,7 @@
 
 /obj/machinery/atmospherics/pipe/simple/hidden/universal
 	name="universal pipe adapter"
-	desc = "An adapter for regular, supply and scrubbers pipes"
+	desc = "An adapter for regular, supply and scrubber pipes"
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER
 	icon_state = "map_universal"
 

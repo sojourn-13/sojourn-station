@@ -16,9 +16,9 @@
 	name = "shotgun shells (beanbag)"
 	build_path = /obj/item/ammo_casing/shotgun/beanbag/prespawned
 
-/datum/design/autolathe/ammo/shotgun_flash
-	name = "shotgun shells (flash)"
-	build_path = /obj/item/ammo_casing/shotgun/flash/prespawned
+/datum/design/autolathe/ammo/shotgun_illumination
+	name = "shotgun shells (illumination)"
+	build_path = /obj/item/ammo_casing/shotgun/illumination/prespawned
 
 /datum/design/autolathe/ammo/shotgun_he
 	name = "20mm shells (HEFI)"
@@ -61,40 +61,22 @@
 	name = "SBAW magazine (empty)"
 	build_path = /obj/item/ammo_magazine/sbaw/empty
 
-//.35 mags
-
-/datum/design/autolathe/ammo/pistol
-	name = "standard magazine (.35 Auto)"
-	build_path = /obj/item/ammo_magazine/pistol_35
-
-/datum/design/autolathe/ammo/pistol_rubber
-	name = "standard magazine (.35 Auto rubber)"
-	build_path = /obj/item/ammo_magazine/pistol_35/rubber
-
-/datum/design/autolathe/ammo/pistol_practice
-	name = "standard magazine (.35 Auto practice)"
-	build_path = /obj/item/ammo_magazine/pistol_35/practice
-
-/datum/design/autolathe/ammo/pistol_lethal
-	name = "standard magazine (.35 Auto hollow-point)"
-	build_path = /obj/item/ammo_magazine/pistol_35/lethal
-
 // .35 Highcap
 
 /datum/design/autolathe/ammo/hpistol
-	name = "highcap magazine (.35 Auto)"
+	name = "high cap magazine (.35 Auto)"
 	build_path = /obj/item/ammo_magazine/highcap_pistol_35
 
 /datum/design/autolathe/ammo/hpistol_rubber
-	name = "highcap magazine (.35 Auto rubber)"
+	name = "high cap magazine (.35 Auto rubber)"
 	build_path = /obj/item/ammo_magazine/highcap_pistol_35/rubber
 
 /datum/design/autolathe/ammo/hpistol_practice
-	name = "highcap magazine (.35 Auto practice)"
+	name = "high cap magazine (.35 Auto practice)"
 	build_path = /obj/item/ammo_magazine/highcap_pistol_35/practice
 
 /datum/design/autolathe/ammo/hpistol_lethal
-	name = "highcap magazine (.35 Auto hollow-point)"
+	name = "high cap magazine (.35 Auto hollow-point)"
 	build_path = /obj/item/ammo_magazine/highcap_pistol_35/lethal
 
 //.35 SMG
@@ -117,23 +99,23 @@
 //.35 drum
 /datum/design/autolathe/ammo/pistol_35_drum
 	name = "standard drum (.35 Auto)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum
 
 /datum/design/autolathe/ammo/pistol_35_drum/empty
 	name = "standard drum (.35 Auto empty)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum/empty
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
 
 /datum/design/autolathe/ammo/pistol_35_drum/rubber
 	name = "standard drum (.35 Auto rubber)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum/rubber
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum/rubber
 
 /datum/design/autolathe/ammo/pistol_35_drum/hv
 	name = "standard drum (.35 Auto high-velocity)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum/hv
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum/hv
 
 /datum/design/autolathe/ammo/pistol_35_drum/lethal
 	name = "standard drum (.35 Auto hollow-point)"
-	build_path = /obj/item/ammo_magazine/pistol_35/drum/lethal
+	build_path = /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
 
 
 // .35 Speed Loaders
@@ -536,12 +518,16 @@
 
 //snowflake caseless
 /datum/design/autolathe/ammo/c10x24
-	name = "magazine (10x24mm Caseless)"
+	name = "box magazine (10x24mm Caseless)"
 	build_path = /obj/item/ammo_magazine/c10x24
 
 /datum/design/autolathe/ammo/box_10x24
 	name = "ammo box (10x24mm Caseless)"
 	build_path = /obj/item/ammo_magazine/ammobox/c10x24
+
+/datum/design/autolathe/ammo/mag_10x24
+	name = "magazine (10x24mm Caseless)"
+	build_path = /obj/item/ammo_magazine/rifle_10x24
 
 //.60-06
 /datum/design/autolathe/ammo/box_antim
@@ -567,7 +553,7 @@
 	build_path = /obj/item/ammo_casing/grenade/frag
 
 /datum/design/autolathe/ammo/grenade/emp
-	name = "emp grenade shell"
+	name = "EMP grenade shell"
 	build_path = /obj/item/ammo_casing/grenade/emp
 
 /datum/design/autolathe/ammo/grenade/flash

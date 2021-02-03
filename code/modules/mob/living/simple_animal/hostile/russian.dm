@@ -32,6 +32,8 @@
 	unsuitable_atoms_damage = 15
 	faction = "russian"
 	status_flags = CANPUSH
+	leather_amount = 0
+	bones_amount = 0
 
 
 /mob/living/simple_animal/hostile/russian/ranged

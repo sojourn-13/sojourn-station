@@ -149,8 +149,8 @@
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/technomancersuit
-	name = "'Mark V' enviromental protection suit"
-	desc = "For working in hazardous enviroments. While its built for most enviroments, one of those is not space."
+	name = "'Mark V' environmental protection suit"
+	desc = "For working in hazardous environments. While its built for most environments, one of those is not space."
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -166,9 +166,9 @@
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/soteriasuit
-	name = "'Mark II' enviromental protection suit"
-	desc = "For working in hazardous enviroments. While its built for most enviroments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
-	Unlike its superior, it offers alot less armor but it is made out of basic steel, making it a cheaper, easier alternative to build."
+	name = "'Mark II' environmental protection suit"
+	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
+	Unlike its superior variant, it offers significantly less armor but it is made out of basic steel, making it a cheaper, easier alternative to build."
 	icon_state = "armor_engineering"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -562,24 +562,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	item_state = "hunter_armor"
 	blood_overlay_type = "armor"
 	armor = list(
-		melee = 35,
-		bullet = 25,
-		energy = 25,
-		bomb = 10,
-		bio = 0,
-		rad = 0 )
-	body_parts_covered = UPPER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|LEGS
-
-/obj/item/clothing/suit/armor/hunter/bone
-	name = "hunter armor"
-	desc = "An lightly armored breastplate with bone-reinforcements of animal ribs and skulls accompanied by knee-guards from an unkown animal. \
-	supplied by the local hunting-lodge. It appears to be rather crudely self made. \ "
-	icon_state = "hunter_armor_bone"
-	item_state = "hunter_armor_bone"
-	blood_overlay_type = "armor"
-	armor = list(
-		melee = 45,
+		melee = 30,
 		bullet = 20,
 		energy = 20,
 		bomb = 10,
@@ -588,15 +571,16 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	body_parts_covered = UPPER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|LEGS
 
-/obj/item/clothing/suit/armor/hunter/reinforced
+/obj/item/clothing/suit/armor/hunter/bone
 	name = "hunter armor"
-	desc = "An heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
-	icon_state = "hunter_armor_reinforced"
-	item_state = "hunter_armor_reinforced"
+	desc = "An lightly armored breastplate with bone-reinforcements of animal ribs and skulls accompanied by knee-guards from an unknown animal. \
+	supplied by the local hunting-lodge. It appears to be rather crudely self made. \ "
+	icon_state = "hunter_armor_bone"
+	item_state = "hunter_armor_bone"
 	blood_overlay_type = "armor"
 	armor = list(
-		melee = 30,
-		bullet = 45,
+		melee = 45,
+		bullet = 25,
 		energy = 25,
 		bomb = 10,
 		bio = 0,
@@ -604,15 +588,33 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	body_parts_covered = UPPER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|LEGS
 
+/obj/item/clothing/suit/armor/hunter/reinforced
+	name = "hunter armor"
+	desc = "An heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made with steel plating functioning as make-shift kevlar plates."
+	icon_state = "hunter_armor_reinforced"
+	item_state = "hunter_armor_reinforced"
+	blood_overlay_type = "armor"
+	armor = list(
+		melee = 35,
+		bullet = 45,
+		energy = 25,
+		bomb = 30,
+		bio = 0,
+		rad = 0 )
+	body_parts_covered = UPPER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|LEGS
+	flags_inv = HIDESHOES
+
 /obj/item/clothing/suit/armor/hunter/leather
 	name = "hunter armor"
-	desc = "An lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	desc = "An lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made, yet the extra leather reinforcement is not \
+	only stylish but aids greatly is dispersing laser and plasma shots."
 	icon_state = "hunter_armor_leather"
 	item_state = "hunter_armor_leather"
 	blood_overlay_type = "armor"
 	armor = list(
-		melee = 30,
-		bullet = 20,
+		melee = 35,
+		bullet = 25,
 		energy = 45,
 		bomb = 10,
 		bio = 0,

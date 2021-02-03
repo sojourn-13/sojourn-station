@@ -13,7 +13,7 @@
 	price_tag = 1300
 	damage_multiplier = 1.1
 	penetration_multiplier = 1
-	recoil_buildup = 16
+	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/combat/sawn
@@ -29,7 +29,7 @@
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1000
-	recoil_buildup = 50
+	recoil_buildup = 30
 	one_hand_penalty = 100 //Just in case
 	damage_multiplier = 0.9
 	fire_delay = 12

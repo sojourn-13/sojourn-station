@@ -7,7 +7,7 @@
 	name = ""
 	id = "dont use these"
 	description = "Microscopic construction robots."
-	taste_description = "slimey metal"
+	taste_description = "slimy metal"
 	reagent_state = LIQUID
 	color = "#696969" // ( ͡° ͜ʖ ͡°)
 	metabolism = REM/2
@@ -280,7 +280,7 @@
 /datum/reagent/nanites/uncapped/dynamic_handprints
 	name = "Handyprints"
 	id = "nanohands"
-	description = "Microscopic construction robots programmed to change handprints while in bloodstream."
+	description = "Microscopic construction robots programmed to change hand prints while in bloodstream."
 	var/uni_identity
 	heating_point = 523
 	heating_products = list("uncap nanites")

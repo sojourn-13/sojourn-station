@@ -36,7 +36,7 @@
 	var/grabbed_something = 0
 
 	for(var/mob/M in T)
-		if(istype(M,/mob/living/simple_animal/lizard) || ismouse(M))
+		if(istype(M,/mob/living/simple_animal/lizard) || ismouse(M) || istype(M,/obj/item/remains))
 			src.loc.visible_message(SPAN_DANGER("[src.loc] sucks [M] into its decompiler. There's a horrible crunching noise."),SPAN_DANGER("It's a bit of a struggle, but you manage to suck [M] into your decompiler. It makes a series of visceral crunching noises."))
 			new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
 			qdel(M)
@@ -44,6 +44,8 @@
 				wood.add_charge(2000)
 			if(plastic)
 				plastic.add_charge(2000)
+			if(glass)
+				glass.add_charge(2000)
 			return
 
 		else if(isdrone(M) && !M.client)
@@ -105,6 +107,8 @@
 				metal.add_charge(1000)
 			if(plastic)
 				plastic.add_charge(3000)
+			if(glass)
+				plastic.add_charge(3000)
 		else if(istype(W,/obj/effect/decal/cleanable/blood/gibs/robot))
 			if(metal)
 				metal.add_charge(2000)
@@ -117,6 +121,12 @@
 			if(metal)
 				metal.add_charge(1000)
 		else if(istype(W,/obj/item/weapon/material/shard))
+			if(glass)
+				glass.add_charge(1000)
+		else if(istype(W,/obj/item/weapon/tool/broken_bottle))
+			if(glass)
+				glass.add_charge(2000)
+		else if(istype(W,/obj/item/weapon/circuitboard/broken))
 			if(glass)
 				glass.add_charge(1000)
 		else if(istype(W,/obj/item/weapon/reagent_containers/food/snacks/grown))

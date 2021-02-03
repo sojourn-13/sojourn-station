@@ -9,7 +9,7 @@
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 	caliber = CAL_ANTIM
-	recoil_buildup = 75
+	recoil_buildup = 60
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING
 	max_shells = 1
@@ -18,7 +18,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20, MATERIAL_DIAMOND = 3, MATERIAL_OSMIUM = 5, MATERIAL_URANIUM = 2)
 	price_tag = 10000
-	one_hand_penalty = 100
+	one_hand_penalty = 80
 	var/bolt_open = 0
 	zoom_factor = 2.0
 	twohanded = TRUE
@@ -151,7 +151,7 @@
 	damage_multiplier = 1.1 //because pistol round
 	penetration_multiplier = 20
 	pierce_multiplier =  5
-	recoil_buildup = 20
+	recoil_buildup = 13
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 
 /obj/item/weapon/gun/projectile/revolver/little_comet/update_icon()

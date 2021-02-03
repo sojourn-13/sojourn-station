@@ -16,6 +16,9 @@
 	break_stuff_probability = 95
 	stop_automated_movement = 1
 
+	aggro_vision_range = 16 //No more cheesing
+	vision_range = 40 //No more cheesing
+
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	megafauna_min_cooldown = 30
@@ -48,11 +51,11 @@
 	if(istype(src.loc, /turf))
 		var/turf/TURF = src.loc
 		if(TURF.get_lumcount() < 1)
-			vision_range = 4
-		else
 			vision_range = 10
+		else
+			vision_range = 20
 	else
-		vision_range = 0
+		vision_range = 30
 	. = ..()
 	if(.)
 		icon_state = "onestar_boss"
@@ -92,7 +95,7 @@
 
 /mob/living/simple_animal/hostile/megafauna/one_star/OpenFire()
 	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
-	ranged_cooldown = world.time + 120
+	ranged_cooldown = world.time + 30
 	walk(src, 0)
 	telegraph()
 	icon_state = "onestar_boss"

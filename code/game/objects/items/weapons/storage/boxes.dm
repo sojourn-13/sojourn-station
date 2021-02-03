@@ -152,6 +152,14 @@
 	for(var/i in 1 to 7)
 		new /obj/item/weapon/reagent_containers/glass/beaker(src)
 
+/obj/item/weapon/storage/box/bottles
+	name = "box of bottles"
+	illustration = "beaker"
+
+/obj/item/weapon/storage/box/bottles/populate_contents()
+	for(var/i in 1 to 7)
+		new /obj/item/weapon/reagent_containers/glass/bottle(src)
+
 /obj/item/weapon/storage/box/bodybags
 	name = "body bags"
 	desc = "This box contains a number of body bags."
@@ -178,7 +186,7 @@
 
 /obj/item/weapon/storage/box/flashbangs
 	name = "box of flashbangs"
-	desc = "A box containing 7 antipersonnel flashbang grenades.<br> WARNING: These devices are extremely dangerous and can cause blindness or deafness in repeated use."
+	desc = "A box containing seven antipersonnel flashbang grenades.<br> WARNING: These devices are extremely dangerous and can cause blindness or deafness in repeated use."
 	icon_state = "box_security"
 	illustration = "flashbang"
 
@@ -187,8 +195,8 @@
 		new /obj/item/weapon/grenade/flashbang(src)
 
 /obj/item/weapon/storage/box/teargas
-	name = "box of pepperspray grenades"
-	desc = "A box containing 6 tear gas grenades. A gas mask is printed on the label.<br> WARNING: Exposure carries risk of serious injury or death. Keep away from persons with lung conditions."
+	name = "box of pepper spray grenades"
+	desc = "A box containing six tear gas grenades. A gas mask is printed on the label.<br> WARNING: Exposure carries risk of serious injury or death. Keep away from persons with lung conditions."
 	icon_state = "box_security"
 	illustration = "gas"
 
@@ -197,8 +205,8 @@
 		new /obj/item/weapon/grenade/chem_grenade/teargas(src)
 
 /obj/item/weapon/storage/box/emps
-	name = "box of emp grenades"
-	desc = "A box containing 5 military grade EMP grenades.<br> WARNING: Do not use near unshielded electronics or biomechanical augmentations, death or permanent paralysis may occur."
+	name = "box of EMP grenades"
+	desc = "A box containing five military grade EMP grenades.<br> WARNING: Do not use near unshielded electronics or biomechanical augmentations, death or permanent paralysis may occur."
 	icon_state = "box_security"
 	illustration = "flashbang"
 
@@ -208,7 +216,7 @@
 
 /obj/item/weapon/storage/box/frag
 	name = "box of fragmentation grenades"
-	desc = "A box containing 4 fragmentation grenades. Designed for use on enemies in the open."
+	desc = "A box containing four fragmentation grenades. Designed for use on enemies in the open."
 	icon_state = "box_security"
 	illustration = "frag"
 
@@ -218,7 +226,7 @@
 
 /obj/item/weapon/storage/box/incendiary
 	name = "box of incendiary grenades"
-	desc = "A box containing 5 incendiary grenades."
+	desc = "A box containing five incendiary grenades."
 	icon_state = "box_security"
 	illustration = "flashbang"
 
@@ -228,7 +236,7 @@
 
 /obj/item/weapon/storage/box/explosive
 	name = "box of blast grenades"
-	desc = "A box containing 4 blast grenades. Designed for assaulting strongpoints."
+	desc = "A box containing four blast grenades. Designed for assaulting strongpoints."
 	icon_state = "box_security"
 	illustration = "blast"
 
@@ -239,7 +247,7 @@
 
 /obj/item/weapon/storage/box/smokes
 	name = "box of smoke bombs"
-	desc = "A box containing 5 smoke bombs."
+	desc = "A box containing five smoke bombs."
 	illustration = "flashbang"
 
 /obj/item/weapon/storage/box/smokes/populate_contents()
@@ -248,7 +256,7 @@
 
 /obj/item/weapon/storage/box/anti_photons
 	name = "box of anti-photon grenades"
-	desc = "A box containing 5 experimental photon disruption grenades."
+	desc = "A box containing five experimental photon disruption grenades."
 	illustration = "flashbang"
 
 /obj/item/weapon/storage/box/anti_photons/populate_contents()
@@ -257,7 +265,7 @@
 
 /obj/item/weapon/storage/box/baton_rounds
 	name = "box of baton rounds"
-	desc = "A box containing 6 baton rounds. Designed to be fired from a grenade launcher."
+	desc = "A box containing six baton rounds. Designed to be fired from a grenade launcher."
 	illustration = "flashbang"
 
 /obj/item/weapon/storage/box/baton_rounds/populate_contents()
@@ -266,7 +274,7 @@
 
 /obj/item/weapon/storage/box/flash_grenade_shells
 	name = "box of flash grenade shells"
-	desc = "A box containing 6 flash gernade shells. Designed to be fired from a grenade launcher."
+	desc = "A box containing six flash grenade shells. Designed to be fired from a grenade launcher."
 	illustration = "flashbag"
 
 /obj/item/weapon/storage/box/flash_grenade_shells/populate_contents()
@@ -274,8 +282,8 @@
 		new  /obj/item/ammo_casing/grenade/flash(src)
 
 /obj/item/weapon/storage/box/emp_grenade_shells
-	name = "box of emp grenade shells"
-	desc = "A box containing 6 emp grenade shells. Designed to be fired from a grenade launcher."
+	name = "box of EMP grenade shells"
+	desc = "A box containing six EMP grenade shells. Designed to be fired from a grenade launcher."
 	illustration = "flashbang"
 
 /obj/item/weapon/storage/box/emp_grenade_shells/populate_contents()
@@ -284,7 +292,7 @@
 
 /obj/item/weapon/storage/box/frag_grenade_shells
 	name = "box of frag grenade shells"
-	desc = "A box containing 6 frag grenade shells. Designed to be fired from a grenade launcher."
+	desc = "A box containing six frag grenade shells. Designed to be fired from a grenade launcher."
 	illustration = "flashbang"
 
 /obj/item/weapon/storage/box/frag_grenade_shells/populate_contents()
@@ -293,7 +301,7 @@
 
 /obj/item/weapon/storage/box/blast_grenade_shells
 	name = "box of blast grenade shells"
-	desc = "A box containing 6 blast grenade shells. Designed to be fired from a grenade launcher."
+	desc = "A box containing six blast grenade shells. Designed to be fired from a grenade launcher."
 	illustration = "flashbang"
 
 /obj/item/weapon/storage/box/blast_grenade_shells/populate_contents()
@@ -451,7 +459,7 @@
 
 
 /obj/item/weapon/storage/box/mousetraps
-	name = "box of Pest-B-Gon mousetraps"
+	name = "box of Pest-B-Gone mousetraps"
 	desc = "<B><FONT color='red'>WARNING:</FONT></B> <I>Keep out of reach of children</I>."
 	illustration = "mousetraps"
 
@@ -508,7 +516,7 @@
 
 /obj/item/weapon/storage/box/autoinjectors
 	name = "box of injectors"
-	desc = "Contains autoinjectors."
+	desc = "Contains auto-injectors."
 	illustration = "syringe"
 
 /obj/item/weapon/storage/box/autoinjectors/populate_contents()

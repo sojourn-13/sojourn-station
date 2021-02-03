@@ -14,12 +14,12 @@
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shirt_fem
-	name = "Babydoll shirt"
+	name = "Baby Doll shirt"
 	icon_state = "undershirt_fem"
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shirt_long
-	name = "Longsleeve Shirt"
+	name = "Long Sleeve Shirt"
 	icon_state = "undershirt_long"
 	has_color = TRUE
 
@@ -29,7 +29,7 @@
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shirt_long_fem
-	name = "Longsleeve Shirt, feminine"
+	name = "Long Sleeve Shirt, feminine"
 	icon_state = "undershirt_long_fem"
 	has_color = TRUE
 
@@ -84,7 +84,7 @@
 	icon_state = "lover_s"
 
 /datum/category_item/underwear/undershirt/shirt_heart_fem
-	name = "Shirt, heart, babydoll"
+	name = "Shirt, heart, baby doll"
 	icon_state = "lover_fem_s"
 
 /datum/category_item/underwear/undershirt/shirt_nt
@@ -96,21 +96,21 @@
 	icon_state = "ilovent_s"
 
 /datum/category_item/underwear/undershirt/shirt_love_nt_fem
-	name = "Shirt, I<3NT, babydoll"
+	name = "Shirt, I<3NT, baby doll"
 	icon_state = "ilovent_fem_s"
 
 /datum/category_item/underwear/undershirt/shortsleeve_shirt
-	name = "Shortsleeve shirt"
+	name = "Short Sleeve shirt"
 	icon_state = "shortsleeve"
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shortsleeve_shirt_fem
-	name = "Shortsleeve babydoll shirt"
+	name = "Short Sleeve baby doll shirt"
 	icon_state = "shortsleeve_fem"
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/shortsleeve_shirt_fem_vneck
-	name = "Shortsleeve babydoll shirt, v-neck"
+	name = "Short Sleeve baby doll shirt, v-neck"
 	icon_state = "shortsleeve_fem_vneck"
 	has_color = TRUE
 
@@ -132,7 +132,7 @@
 	icon_state = "blueshirtsport_s"
 
 /datum/category_item/underwear/undershirt/shirt_tiedye
-	name = "Shirt, tiedye"
+	name = "Shirt, tie-dye"
 	icon_state = "shirt_tiedye_s"
 
 /datum/category_item/underwear/undershirt/shirt_blue_striped
@@ -161,13 +161,13 @@
 	has_color = TRUE
 
 /datum/category_item/underwear/undershirt/longstripe_black
-	name = "Longsleeve Striped Shirt, Black"
+	name = "Long Sleeve Striped Shirt, Black"
 	icon_state = "longstripe"
 
 /datum/category_item/underwear/undershirt/longstripe_blue
-	name = "Longsleeve Striped Shirt, Blue"
+	name = "Long Sleeve Striped Shirt, Blue"
 	icon_state = "longstripe_blue"
 
 /datum/category_item/underwear/undershirt/tiedye
-	name = "Tiedye Shirt"
+	name = "Tie-dye Shirt"
 	icon_state = "tiedye"

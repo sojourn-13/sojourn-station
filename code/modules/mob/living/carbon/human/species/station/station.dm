@@ -8,7 +8,7 @@
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
 	While the central Sol Federation maintains control of much of the known star space \
 	interests, rampant cyber and bio-augmentation and secretive factions make life on most human \
-	worlds tumultous at best in the far flung galactic rim."
+	worlds tumultuous at best in the far flung galactic rim."
 	num_alternate_languages = 2
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
@@ -48,8 +48,8 @@
 	blurb = "The Sablekyne are a mammalian alien species vaguely resembling felines with horns, hailing from Onkarth in the Gamma Minoris system. \
 	Sablekyne were originally uplifted by the aid of human colonization and human corporations, aiding them by \
 	accelerating the fledgling culture into the interstellar age. Their history is full of war and highly fractious \
-	ethnicities, something that permeates even to today's times. Northlander sablekyne perfer colder winter enviroments and speak with gaelic influences while \
-	southlanders prefer hot dry deserts and speak with japanese influences. Both groups are stocky, strong, and thickly built and few have the lithe feline qualities \
+	ethnicities, something that permeates even to today's times. Northlander sablekyne perfer colder winter environments and speak with Gaelic influences while \
+	southlanders prefer hot dry deserts and speak with Japanese influences. Both groups are stocky, strong, and thickly built and few have the lithe feline qualities \
 	one would expect."
 	taste_sensitivity = TASTE_SENSITIVE                 // How sensitive the species is to minute tastes.
 
@@ -481,7 +481,12 @@
 		"Lizard Tail",
 		"Lizard Tail, Short"
 		)
-	permitted_wings = list()
+	permitted_wings = list("Spines,Aquatic",
+		"Spines, Long",
+		"Spines, Long Membrane",
+		"Spines, Short",
+		"Spines, Short Membrane",
+		)
 
 	perks = list(/datum/perk/purgetoxins,/datum/perk/purgeinfections)
 

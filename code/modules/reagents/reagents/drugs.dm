@@ -57,7 +57,7 @@
 /datum/reagent/drug/cryptobiolin
 	name = "Cryptobiolin"
 	id = "cryptobiolin"
-	description = "Cryptobiolin causes confusion and dizzyness."
+	description = "Cryptobiolin causes confusion and dizziness."
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#000055"
@@ -113,7 +113,7 @@
 /datum/reagent/drug/psilocybin
 	name = "Psilocybin"
 	id = "psilocybin"
-	description = "A strong psycotropic derived from certain species of mushroom."
+	description = "A strong psychotropic derived from certain species of mushroom."
 	taste_description = "mushroom"
 	color = "#E700E7"
 	overdose = REAGENTS_OVERDOSE * 0.66

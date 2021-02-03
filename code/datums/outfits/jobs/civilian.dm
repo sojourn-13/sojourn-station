@@ -47,6 +47,7 @@
 	uniform = /obj/item/clothing/under/rank/janitor
 	pda_type = /obj/item/modular_computer/pda
 	shoes = /obj/item/clothing/shoes/jackboots/janitor
+	belt = /obj/item/weapon/keys/janitor
 
 /decl/hierarchy/outfit/job/cargo/artist
 	name = OUTFIT_JOB_NAME("Lonestar - Artist")
