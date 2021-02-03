@@ -368,7 +368,7 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#99CCFF"
-	metabolism = REM * 0.05
+	metabolism = REM * 0.1 //This was taking A LOT to metabolize. By its effects, it shouldn't be.
 	overdose = 5
 	scannable = 1
 	nerve_system_accumulations = 50
@@ -455,7 +455,7 @@
 	color = "#004000"
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1 // This is a mostly beneficial chem, it should show up on scanners
-	affects_dead = 1 //My guess is this flag makes the chem act on a cryotube regardless of mob life or not.
+	affects_dead = 1
 
 /datum/reagent/medicine/ryetalyn/on_mob_add(mob/living/carbon/M, alien, effect_multiplier) //on_mob_add allows it to act regardless if the human is dead or alive.
 	var/needs_update = M.mutations.len > 0
@@ -485,6 +485,7 @@
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#910000"
+	scannable = 1 //Injecting a corpse with negative paragenic should return this chem for scanning it and pinpointing lings
 
 /datum/reagent/medicine/ethylredoxrazine
 	name = "Ethylredoxrazine"
@@ -541,7 +542,7 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#C1C1C1"
-	metabolism = REM * 0.1
+	metabolism = REM * 0.05 //Infections are already a pain in the neck to treat, this should ease having to re-dose every time above the 5u threshold.
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1
 
@@ -691,6 +692,7 @@
 	color = "#a6b85b"
 	overdose = REAGENTS_OVERDOSE/2
 	metabolism = REM/2
+	scannable = 1
 
 /datum/reagent/medicine/quickclot/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.1 * effect_multiplier))	// adding 0.01 to be more than 0.1 in order to stop int bleeding from growing
@@ -718,6 +720,7 @@
 	reagent_state = LIQUID
 	color = "#660679"
 	overdose = REAGENTS_OVERDOSE/2
+	scannable = 1
 
 /datum/reagent/medicine/ossisine/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.paralysis = max(M.paralysis, 5)
@@ -767,6 +770,7 @@
 	reagent_state = LIQUID
 	color = "#7d88e6"
 	overdose = REAGENTS_OVERDOSE * 0.66
+	scannable = 1
 
 /datum/reagent/medicine/kyphotorin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(ishuman(M))
@@ -896,7 +900,7 @@
 /datum/reagent/medicine/haloperidol
 	name = "Haloperidol"
 	id = "haloperidol"
-	description = "Purges all forms of toxins and stimulants from the bloodstream, lowers NSA, and sedates the patient. An overdose of Haloperidol can be fatal."
+	description = "Purges all forms of toxins, stimulants and other reagents from the bloodstream, and sedates the patient. An overdose of Haloperidol can be fatal."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ba1f04"
@@ -942,6 +946,7 @@
 	reagent_state = LIQUID
 	color = "#a6b85b"
 	overdose = REAGENTS_OVERDOSE
+	scannable = 1
 
 /datum/reagent/medicine/vomitol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(10 * effect_multiplier))
