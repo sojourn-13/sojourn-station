@@ -39,6 +39,7 @@
 	degradation = 0.6
 	workspeed = 1.6
 	max_upgrades = 5 //UNLIMITED MODS!
+	suitable_cell = /obj/item/weapon/cell/medium
 
 /obj/item/weapon/tool/multitool/advanced
 	name = "advanced multitool"
