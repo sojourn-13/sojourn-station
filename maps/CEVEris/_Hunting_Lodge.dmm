@@ -244,7 +244,7 @@
 "eJ" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eK" = (/obj/structure/bed/chair/custom/onestar/red{dir = 1},/obj/item/trash/cigbutt/cigarbutt,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eL" = (/obj/item/trash/cigbutt/cigarbutt,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"eM" = (/obj/structure/table/woodentable,/obj/machinery/light{dir = 1},/obj/machinery/photocopier/faxmachine{department = "Lodge Hunt Master's Office"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eM" = (/obj/structure/table/woodentable,/obj/machinery/light{dir = 1},/obj/machinery/photocopier/faxmachine{department = "Lodge Hunt Master's Office"},/obj/item/weapon/card/id{name = "Hunt Master ID"; registered_name = "Hunt Master"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eN" = (/obj/structure/bed/chair/custom/wood/wings,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eO" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/firstaid/surgery,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eP" = (/obj/structure/closet/crate/hydroponics,/obj/item/device/lighting/toggleable/lantern,/obj/item/weapon/plantspray/pests,/obj/item/weapon/plantspray/pests,/obj/item/weapon/plantspray/weeds,/obj/item/weapon/plantspray/weeds,/obj/item/device/lighting/toggleable/lantern,/obj/item/weapon/storage/bag/produce,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
