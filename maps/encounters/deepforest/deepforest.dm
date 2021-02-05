@@ -34,7 +34,7 @@
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	height = 4
+	height = 1
 
 /obj/map_data/river_forest
 	name = "River Forest"
