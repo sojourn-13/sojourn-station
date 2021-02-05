@@ -132,29 +132,14 @@
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
-/obj/item/clothing/suit/armor/vest/hunter
-	name = "hunter armor"
-	desc = "A suit of armor crudely brought together with bits of metal, glass, bone, and leather. Surprisingly effective as it keeps the wearer mobile without sacrificing protection."
-	icon_state = "hunter_armor"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(
-		melee = 60,
-		bullet = 10,
-		energy = 5,
-		bomb = 50,
-		bio = 0,
-		rad = 0
-	)
-	flags_inv = HIDEJUMPSUIT
-
 /obj/item/clothing/suit/armor/vest/technomancersuit
 	name = "'Mark V' environmental protection suit"
-	desc = "For working in hazardous environments. While its built for most environments, one of those is not space."
+	desc = "For working in hazardous environments. While its built for most environments, one of those is not space proof but can be modified more."
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 100)
+	max_upgrades = 2
 	extra_allowed = list(/obj/item/weapon/extinguisher,
 						 /obj/item/weapon/tool,
 						 /obj/item/weapon/tool_upgrade,
@@ -168,10 +153,11 @@
 /obj/item/clothing/suit/armor/vest/soteriasuit
 	name = "'Mark II' environmental protection suit"
 	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
-	Unlike its superior variant, it offers significantly less armor but it is made out of basic steel, making it a cheaper, easier alternative to build."
+	Unlike its superior variant, it offers significantly less armor but it is made out of basic steel, making it a cheaper, easier alternative to build well also being easier to modify."
 	icon_state = "armor_engineering"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	max_upgrades = 2
 	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 30, bio = 50, rad = 50)
 	extra_allowed = list(/obj/item/weapon/extinguisher,
 						 /obj/item/weapon/tool,
@@ -247,7 +233,7 @@
 
 /obj/item/clothing/suit/armor/laserproof/rnd
 	name = "soteria ablative armor vest"
-	desc = "A soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets."
+	desc = "A soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
 	icon_state = "ablative_ironhammer"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
 	armor = list(
@@ -258,6 +244,7 @@
 		bio = 0,
 		rad = 0
 	)
+	max_upgrades = 2
 	siemens_coefficient = 0
 	price_tag = 650
 /*
@@ -277,6 +264,7 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	slowdown = 0.9
+	max_upgrades = 2
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	armor = list(
 		melee = 35,
@@ -353,13 +341,14 @@
 //Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
 /obj/item/clothing/suit/storage/vest/merc
 	name = "heavy armor vest"
-	desc = "A high-quality armor vest in a fetching tan. It is surprisingly flexible and light, even with the added webbing and armor plating."
+	desc = "A high-quality armor vest in a fetching tan. It is surprisingly flexible and light, even with the added webbing and armor plating as well as be modified more."
 	icon_state = "mercwebvest"
 	item_state = "mercwebvest"
+	max_upgrades = 2
 	armor = list(
-		melee = 50,
-		bullet = 50,
-		energy = 50,
+		melee = 35,
+		bullet = 35,
+		energy = 35,
 		bomb = 25,
 		bio = 0,
 		rad = 0
@@ -413,7 +402,6 @@ obj/item/clothing/suit/armor/platecarrier/tan
 	blood_overlay_type = "armor"
 	slowdown = 0.15
 	armor = list(melee = 40, bullet = 50, energy = 20, bomb = 10, bio = 0, rad = 0)
-
 
 obj/item/clothing/suit/armor/flackvest
 	name = "flak vest"
@@ -485,21 +473,6 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	item_state = "marshal_coat_ss"
 
 
-//Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
-/obj/item/clothing/suit/storage/vest/merc
-	name = "heavy armor vest"
-	desc = "A high-quality armor vest in a fetching tan. It is surprisingly flexible and light, even with the added webbing and armor plating."
-	icon_state = "mercwebvest"
-	item_state = "mercwebvest"
-	armor = list(
-		melee = 35,
-		bullet = 35,
-		energy = 35,
-		bomb = 25,
-		bio = 0,
-		rad = 0
-	)
-
 /*
  * Reactive Armor
  */
@@ -570,6 +543,22 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		rad = 0 )
 	body_parts_covered = UPPER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|LEGS
+
+/obj/item/clothing/suit/armor/vest/hunter
+	name = "improved hunter armor"
+	desc = "A suit of armor crudely brought together with bits of metal, glass, bone, and leather. Surprisingly effective as it keeps the wearer mobile without sacrificing protection but can't be crafted into other hunter armor."
+	icon_state = "hunter_armor"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(
+		melee = 60,
+		bullet = 10,
+		energy = 5,
+		bomb = 50,
+		bio = 0,
+		rad = 0
+	)
+	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/hunter/bone
 	name = "hunter armor"
