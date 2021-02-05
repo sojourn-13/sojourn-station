@@ -102,6 +102,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/type_butt = null
 	var/chem_volume = 0
 	var/smoketime = 0
+	var/last_drag = 0
 	var/quality_multiplier = 1 // Used for sanity and insight gain
 	var/matchmes = "USER lights NAME with FLAME"
 	var/lightermes = "USER lights NAME with FLAME"
@@ -355,6 +356,20 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(lit == 1)
 		user.visible_message(SPAN_NOTICE("[user] calmly drops and treads on the lit [src], putting it out instantly."))
 		die(1)
+	return ..()
+
+/obj/item/clothing/mask/smokable/cigarette/attack(mob/living/carbon/human/H, mob/user, def_zone)
+	if(lit && H == user && istype(H))
+		var/obj/item/blocked = H.check_mouth_coverage()
+		if(blocked)
+			to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
+			return 1
+		if(last_drag <= world.time - 30) //No chainsmoking.
+			last_drag = world.time
+			H.visible_message("<span class='notice'>[H.name] takes a drag of their [name].</span>")
+			playsound(H, 'sound/items/cigs_lighters/inhale.ogg', 50, 0, -1)
+			reagents.trans_to_mob(H, (rand(10,20)/10), CHEM_INGEST)
+			return 1
 	return ..()
 
 ////////////
