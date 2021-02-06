@@ -213,7 +213,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/medical/paramedic
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_paramedic,
-		access_eva, access_maint_tunnels, access_external_airlocks
+		access_eva, access_maint_tunnels, access_external_airlocks, access_chemistry
 	)
 
 	stat_modifiers = list(
