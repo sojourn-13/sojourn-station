@@ -12,10 +12,10 @@
 	max_upgrades = 1
 
 /obj/item/clothing/suit/armor/refresh_upgrades()
-//First of all, lets reset any var that could possibly be altered by an upgrade
-	armor = initial(armor)
+	var/obj/item/clothing/suit/armor/referencecarmor = new type()
+	armor = referencecarmor.armor
+	qdel(referencecarmor)
 	..()
-
 
 /*
  * Vests
