@@ -61,6 +61,24 @@
 	name = "SBAW magazine (empty)"
 	build_path = /obj/item/ammo_magazine/sbaw/empty
 
+//.35 mags
+
+/datum/design/autolathe/ammo/pistol
+	name = "standard magazine (.35 Auto)"
+	build_path = /obj/item/ammo_magazine/pistol_35
+
+/datum/design/autolathe/ammo/pistol_rubber
+	name = "standard magazine (.35 Auto rubber)"
+	build_path = /obj/item/ammo_magazine/pistol_35/rubber
+
+/datum/design/autolathe/ammo/pistol_practice
+	name = "standard magazine (.35 Auto practice)"
+	build_path = /obj/item/ammo_magazine/pistol_35/practice
+
+/datum/design/autolathe/ammo/pistol_lethal
+	name = "standard magazine (.35 Auto hollow-point)"
+	build_path = /obj/item/ammo_magazine/pistol_35/lethal
+
 // .35 Highcap
 
 /datum/design/autolathe/ammo/hpistol

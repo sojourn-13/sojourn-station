@@ -20,6 +20,12 @@
 
 
 	var/list/recipes = list(
+		"Standard",
+			list(name="Standard Magazine (.35 Auto)", cost=50, path=/obj/item/ammo_magazine/pistol_35),
+			list(name="Standard Magazine (.35 Auto high-velocity)", cost=50, path=/obj/item/ammo_magazine/pistol_35/highvelocity),
+			list(name="Standard Magazine (.35 Auto hollow-point)", cost=50, path=/obj/item/ammo_magazine/pistol_35/lethal),
+			list(name="Standard Magazine (.35 Auto rubber)", cost=50, path= /obj/item/ammo_magazine/pistol_35/rubber),
+			list(name="Standard Magazine (.35 Auto practice)", cost=50, path=/obj/item/ammo_magazine/pistol_35/practice),
 		"High Capacity",
 			list(name="High Capacity Magazine (.35 Auto)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35),
 			list(name="High Capacity Magazine (.35 Auto high-velocity)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35/highvelocity),

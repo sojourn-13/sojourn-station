@@ -67,9 +67,9 @@
 
 	designs = list(
 
-		/datum/design/autolathe/ammo/hpistol_lethal,
-		/datum/design/autolathe/ammo/hpistol_rubber,
-		/datum/design/autolathe/ammo/hpistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_lethal,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg_practice = 0,
@@ -114,9 +114,9 @@
 		/datum/design/autolathe/ammo/hpistol_practice = 0,
 		/datum/design/autolathe/ammo/hpistol_rubber = 2,
 		/datum/design/autolathe/ammo/hpistol = 2,
-		/datum/design/autolathe/ammo/hpistol_practice = 0,
-		/datum/design/autolathe/ammo/hpistol_rubber,
-		/datum/design/autolathe/ammo/hpistol,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/alemao
@@ -126,10 +126,10 @@
 
 	designs = list(
 		/datum/design/autolathe/gun/alemao = 3,
-		/datum/design/autolathe/ammo/hpistol_practice = 0,
-		/datum/design/autolathe/ammo/hpistol_rubber,
-		/datum/design/autolathe/ammo/hpistol,
-		/datum/design/autolathe/ammo/hpistol_lethal = 2,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/pistol_lethal = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/strelki
@@ -203,7 +203,7 @@
 	license = 20
 	designs = list(
 		//pistol mags
-		/datum/design/autolathe/ammo/hpistol_rubber,
+		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/magnum_rubber,
 		/datum/design/autolathe/ammo/kurtz_rubber,
 		//speed loaders
@@ -229,8 +229,8 @@
 	license = 20
 	designs = list(
 		//pistol mags
-		/datum/design/autolathe/ammo/hpistol,
-		/datum/design/autolathe/ammo/hpistol_lethal,
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/pistol_lethal,
 		/datum/design/autolathe/ammo/magnum,
 		/datum/design/autolathe/ammo/magnum_lethal,
 		/datum/design/autolathe/ammo/kurtz_lethal,
@@ -341,8 +341,8 @@
 		/datum/design/autolathe/gun/olivaw = 2,
 		/datum/design/autolathe/gun/clarissa = 2,
 		/datum/design/autolathe/gun/detective,
-		/datum/design/autolathe/ammo/hpistol_practice = 0,
-		/datum/design/autolathe/ammo/hpistol_rubber,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/slpistol_practice = 0,
 		/datum/design/autolathe/ammo/slpistol_rubber,
 		)
@@ -355,10 +355,10 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/colt = 3,
-		/datum/design/autolathe/ammo/hpistol_practice = 0,
-		/datum/design/autolathe/ammo/hpistol_rubber,
-		/datum/design/autolathe/ammo/hpistol,
-		/datum/design/autolathe/ammo/hpistol_lethal = 2,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/pistol_lethal = 2,
 	)
 
 
