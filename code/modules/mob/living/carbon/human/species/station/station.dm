@@ -218,7 +218,7 @@
 	max_age = 130
 	blurb = "How did you find this? Report this to Kazkin if you're reading it."
 	taste_sensitivity = TASTE_DULL
-	hunger_factor = DEFAULT_HUNGER_FACTOR*1.25
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
 
 	cold_level_1 = 200 //Default 260
 	cold_level_2 = 140 //Default 200
