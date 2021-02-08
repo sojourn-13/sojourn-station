@@ -13,6 +13,7 @@
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 1000
+	caliber = "10x24"
 	penetration_multiplier = 1.3
 	damage_multiplier = 1.1
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
@@ -38,7 +39,7 @@
 	max_ammo = 20
 	multiple_sprites = 1
 
-/obj/item/weapon/gun/projectile/automatic/ppsh/update_icon()
+/obj/item/weapon/gun/projectile/automatic/survivalrifle/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]-full"
