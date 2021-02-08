@@ -385,6 +385,7 @@
 		STAT_ROB = 9,
 		STAT_VIG = 9,
 	)
+	perk = /datum/perk/oddity/gunslinger
 
 /obj/item/weapon/oddity/broken_necklace
 	name = "Broken necklace"
@@ -482,12 +483,12 @@
 
 /obj/item/weapon/oddity/nt/seal
 	name = "Cartographer's Seal"
-	desc = "A badge carrying the seal of the cartographer of the church of Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
+	desc = "A badge carrying the seal of the cartographer of the Church of Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
 	icon_state = "nt_seal"
 	oddity_stats = list(
 		STAT_TGH = 12,
 		STAT_VIG = 12,
-		STAT_ROB = 8
+		STAT_ROB = 12
 	)
 	price_tag = 8000
 	perk = /datum/perk/nt_oddity/holy_light
