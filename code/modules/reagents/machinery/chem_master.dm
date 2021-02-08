@@ -1,8 +1,8 @@
 
 /obj/machinery/chem_master
 	name = "ChemMaster 3000"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
 	circuit = /obj/item/weapon/circuitboard/chemmaster
 	icon = 'icons/obj/chemical.dmi'
@@ -10,8 +10,8 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
-	var/mode = 0
-	var/condi = 0
+	var/mode = FALSE
+	var/condi = FALSE
 	var/useramount = 30 // Last used amount
 	var/pillamount = 10
 	var/bottlesprite = "bottle"
@@ -249,7 +249,7 @@
 	if(inoperable())
 		return
 
-	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery)
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
@@ -313,4 +313,5 @@
 
 /obj/machinery/chem_master/condimaster
 	name = "CondiMaster 3000"
-	condi = 1
+	condi = TRUE
+	simple_machinery = TRUE
