@@ -10,6 +10,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	heat = 3800
 	embed_mult = 0 //No physical matter to catch onto things
+	hitsound = "sound/weapons/blade1.ogg" //Make these lightsaber thingies do the sound they're intended to do on attack.
 
 /obj/item/weapon/melee/energy/is_hot()
 	if (active)

@@ -66,8 +66,8 @@
 		/datum/design/autolathe/gun/ak47,
 		/datum/design/autolathe/gun/ppsh,
 		/datum/design/autolathe/gun/reclaimer,
-		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
-		/datum/design/autolathe/ammo/hpistol_rubber,
+		/datum/design/autolathe/ammo/pistol,				//makarov ammo
+		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/smg,							//drozd ammo
