@@ -395,8 +395,14 @@
 	desc = "A box containing a tech-priest costume."
 
 /obj/item/weapon/storage/box/costume/techpriest/populate_contents()
-	new /obj/item/clothing/head/hood/techpriest(src)
 	new /obj/item/clothing/suit/hooded/costume/techpriest(src)
+
+/obj/item/weapon/storage/box/costume/techpriest_explorator
+	name = "tech-priest explorator costume kit"
+	desc = "A box containing an armored tech-priest costume."
+
+/obj/item/weapon/storage/box/costume/techpriest_explorator/populate_contents()
+	new /obj/item/clothing/suit/hooded/costume/techpriest_explorator(src)
 
 /obj/item/weapon/storage/box/costume/xeno
 	name = "xeno costume kit"
