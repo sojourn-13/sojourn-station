@@ -1052,7 +1052,7 @@ var/list/rank_prefix = list(\
 	else
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 
-/mob/living/carbon/human/proc/set_species(var/new_species, var/default_color)
+/mob/living/carbon/human/proc/set_species(var/new_species, var/default_color, var/rebuild_organs = TRUE)
 	if(!dna)
 		if(!new_species)
 			new_species = "Human"
@@ -1093,11 +1093,13 @@ var/list/rank_prefix = list(\
 
 	icon_state = lowertext(species.name)
 
-	if(species.has_process.len)
-		for(var/process in species.has_process)
-			internal_organs_by_efficiency[process] = list()
+	if(rebuild_organs)
+		if(species.has_process.len)
+			for(var/process in species.has_process)
+				internal_organs_by_efficiency[process] = list()
+				
+		rebuild_organs()
 
-	rebuild_organs()
 	src.sync_organ_dna()
 	species.handle_post_spawn(src)
 
