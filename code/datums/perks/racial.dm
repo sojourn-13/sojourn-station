@@ -19,7 +19,7 @@
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("<b><font color='red'>[user] begins growling as their muscles tighten!</font><b>", "<b><font color='red'>You feel a comfortable warmth as your body steels itself against all pain.</font><b>", "<b><font color='red'>You hear something growling!</font><b>")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("sabledone", 5)
+	user.reagents.add_reagent("sabledone", 10)
 	return ..()
 
 /datum/perk/bone
