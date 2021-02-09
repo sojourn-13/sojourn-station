@@ -61,7 +61,7 @@
 	update_lying_buckled_and_verb_status()
 	invisibility = initial(invisibility)
 
-	set_species("Human")
+	set_species("Human", null, FALSE)
 	dna.SetSEState(MONKEYBLOCK,0)
 
 	to_chat(src, "<B>You are now [species.name]. </B>")
