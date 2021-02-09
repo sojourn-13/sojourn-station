@@ -963,7 +963,8 @@ mob/proc/yank_out_object()
 		affected.implants -= selection
 		affected.embedded -= selection
 		selection.on_embed_removal(src)
-		H.shock_stage+=20
+		if(!(H.species && (H.species.flags & NO_PAIN)))
+			H.shock_stage+=20
 		affected.take_damage((selection.w_class * 3), 0, 0, 1, "Embedded object extraction")
 
 		//if(prob(selection.w_class * 5)) //I'M SO ANEMIC I COULD JUST -DIE-.
