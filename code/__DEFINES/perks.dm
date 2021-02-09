@@ -30,6 +30,7 @@
 #define PERK_SHELL_SHOCK /datum/perk/oddity/shell_shock
 #define PERK_FAILING_MIND /datum/perk/oddity/failing_mind
 #define PERK_SHARP_MIND /datum/perk/oddity/sharp_mind
+#define PERK_BLACKBOX_INSIGHT /datum/perk/oddity/blackbox_insight
 #define PERK_STRANGTH /datum/perk/oddity/strangth
 
 //roundstart perks (job and racial)
