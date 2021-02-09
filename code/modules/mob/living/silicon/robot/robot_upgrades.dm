@@ -279,14 +279,14 @@
 		return TRUE
 
 
-/obj/item/borg/upgrade/stachle_of_holding_for_borgs
-	name = "stachle of holding equipment module"
-	desc = "Mounts a unstable bluespace stachle of holding borgs"
+/obj/item/borg/upgrade/satchel_of_holding_for_borgs
+	name = "satchel of holding equipment module"
+	desc = "Mounts a unstable bluespace satchel of holding borgs"
 	icon_state = "cyborg_upgrade2"
 	matter = list(MATERIAL_STEEL = 12, MATERIAL_GOLD = 6, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
 	require_module = TRUE
 
-/obj/item/borg/upgrade/bigknife/action(var/mob/living/silicon/robot/R)
+/obj/item/borg/upgrade/satchel_of_holding_for_borgs/action(var/mob/living/silicon/robot/R)
 	if(..()) return FALSE
 
 	if(!R.module || !(type in R.module.supported_upgrades))

@@ -149,7 +149,7 @@
 	desc = "Allows for the construction of lethal upgrades for sec-based bots."
 	build_path = /obj/item/borg/upgrade/bigknife
 
-/datum/design/research/item/robot_upgrade/stachle_of_holding_for_borgs
-	name = "Stachle of holding equipment upgrade"
+/datum/design/research/item/robot_upgrade/satchel_of_holding_for_borgs
+	name = "Satchel of holding equipment upgrade"
 	desc = "Allows for the construction of lethal upgrades for sec-based bots."
-	build_path = /obj/item/borg/upgrade/stachle_of_holding_for_borgs
+	build_path = /obj/item/borg/upgrade/satchel_of_holding_for_borgs
