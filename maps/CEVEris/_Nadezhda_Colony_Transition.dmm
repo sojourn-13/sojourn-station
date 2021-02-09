@@ -5,8 +5,8 @@
 "ae" = (/obj/random/furniture/pottedplant,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "af" = (/obj/machinery/alarm{pixel_y = 30},/obj/structure/table/woodentable,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "ag" = (/obj/machinery/firealarm{pixel_y = 30},/obj/structure/bed/chair/comfy/brown{dir = 8},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
-"ah" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
-"ai" = (/obj/structure/closet/wall_mounted/emcloset{pixel_x = 32},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"ah" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/closet/wall_mounted/emcloset{pixel_x = 32},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"ai" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "aj" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/light,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "ak" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/sign/levels/stairsdown{pixel_x = -32; pixel_y = -32},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "al" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/sign/levels/stairsup{pixel_x = 32; pixel_y = -32},/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
@@ -145,10 +145,13 @@
 "ej" = (/turf/simulated/floor/tiled/steel,/area/turbolift/prospector/surlevelTwo)
 "em" = (/turf/simulated/floor/tiled/steel,/area/turbolift/mountain/transition2)
 "fK" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"mL" = (/obj/machinery/vending/cola,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "wc" = (/obj/machinery/power/apc{dir = 8; name = "West APC"; pixel_x = -28; pixel_y = 0},/obj/structure/cable/yellow,/obj/machinery/power/sensor{long_range = 1; name = "Powernet Sensor - Stairwell"; name_tag = "Stairwell Subgrid"},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "AL" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/machinery/telecomms/relay/preset/telecomms,/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
+"Eb" = (/obj/machinery/vending/coffee,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "GX" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
 "Nc" = (/obj/machinery/door/airlock/maintenance_interior{name = "Service Maintenance"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
+"OJ" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/vending/wallmed{name = "Emergency NanoMed"; pixel_x = 0; pixel_y = -32},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "OT" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/toolbox/electrical,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 
 (1,1,1) = {"
@@ -177,17 +180,17 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababNcabaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababababababababababababababaaaaaaaaabababababababababaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababacadaeaTafagaedIahaiababaaaaaaaaabdCdEdEdEdEdFdqabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababawdGdGdGdGdGdGdGdGaeababaaaaaaaaabdKdwdwdwdwdKdrabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababdGdGajakdIalamdIdGaeababaaaaaaaaabdKdwdwdwdwdKdQabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababananabdGdIawabananabababaaaaaaaaabdKdwdwdwdwdKdJabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaababaoapabdGaqawabarasabababaaaaaaaaabdRdEdEdEdEdSdWabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaabababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaabababababababababababababababaaaaaaaaabababababababababaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaabababacadaeaTafagaeaiahabababaaaaaaaaabdCdEdEdEdEdFdqabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaababaedGdGdGdGdGdGdGdGdGaeababaaaaaaaaabdKdwdwdwdwdKdrabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaababmLdGdGajakdIalamdIdGEbababaaaaaaaaabdKdwdwdwdwdKdQabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaabababananabdGdIawabananabababaaaaaaaaabdKdwdwdwdwdKdJabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaabababaoapabdGaqawabarasabababaaaaaaaaabdRdEdEdEdEdSdWabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaababababdGdIdGabababababaaaaaaaaaaabababababababNcabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaababatauavaxayazaAaBabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaababaCaDaEaFaGaGcNcNabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababaJauauaKcSdkaLdmabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababaJOJauaKcSdkaLdmabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabababababbfabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 abababababababababababababbgabababababaaaaaaaaaaabababababababababaaaaaaaaaaaaaaaaaaaaaaaaaa
 abababababababababababababaMabababababaaaaaaaaaaabdCdEdEdEdEdFdtabaaaaaaaaaaaaaaaaaaaaaaaaaa
