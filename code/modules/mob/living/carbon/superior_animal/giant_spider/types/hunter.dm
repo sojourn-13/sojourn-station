@@ -43,7 +43,7 @@
 	health = 60
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	poison_per_bite = 1
+	poison_per_bite = 2
 	poison_type = "plasma"
 	move_to_delay = 4
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/plasma
