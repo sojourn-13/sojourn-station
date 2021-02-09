@@ -156,8 +156,8 @@
 
 /datum/perk/oddity/blackbox_insight
 	name = "Blackbox Trinkering"
-	desc = "It's sleak sides... The perfect hand engiering..."
-	gain_text = "How can we make this?"
+	desc = "It's sleek contours, the expert craftsmanship, the best of hand made mechanical genius."
+	gain_text = "What wondrous possibilities..."
 	//icon_state = "" // - No icon, suggestion, detective glass?
 
 /datum/perk/oddity/blackbox_insight/assign(mob/living/carbon/human/H)
