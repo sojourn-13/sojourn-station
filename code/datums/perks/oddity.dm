@@ -154,6 +154,22 @@
 	holder.stats.changeStat(STAT_BIO, -5)
 	..()
 
+/datum/perk/oddity/blackbox_insight
+	name = "Blackbox Trinkering"
+	desc = "It's sleak sides... The perfect hand engiering..."
+	gain_text = "How can we make this?"
+	//icon_state = "" // - No icon, suggestion, detective glass?
+
+/datum/perk/oddity/blackbox_insight/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_COG, 15)
+	holder.stats.changeStat(STAT_MEC, 15)
+
+/datum/perk/oddity/blackbox_insight/remove()
+	holder.stats.changeStat(STAT_COG, -10) //we keep 5 of each
+	holder.stats.changeStat(STAT_MEC, -10)
+	..()
+
 /datum/perk/oddity/strangth
 	name = "Inner Strength"
 	desc = "Maybe its the planets gravity or your body is all warmed up, none the less you feel much more physically capable."

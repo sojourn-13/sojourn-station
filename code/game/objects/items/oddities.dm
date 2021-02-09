@@ -454,6 +454,7 @@
 		STAT_COG = 15,
 		STAT_MEC = 15
 	)
+	perk = /datum/perk/oddity/blackbox_insight
 
 //A randomized oddity with random stats, meant for artist job project
 /obj/item/weapon/oddity/artwork
