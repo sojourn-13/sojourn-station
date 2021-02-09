@@ -966,8 +966,10 @@
 /mob/living/carbon/human/handle_shock()
 	..()
 	if(status_flags & GODMODE)
+		shock_stage = 0
 		return FALSE //godmode
 	if(species && species.flags & NO_PAIN)
+		shock_stage = 0
 		return FALSE
 
 	var/health_threshold_softcrit = HEALTH_THRESHOLD_SOFTCRIT - stats.getStat(STAT_TGH)
