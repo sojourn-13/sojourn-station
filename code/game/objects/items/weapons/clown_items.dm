@@ -138,6 +138,21 @@
 	reagent_storage = 30 //Same as mop
 	slip_power = 5
 
+/obj/item/weapon/soap/hunters
+	name = "handmade soap"
+	desc = "A bar of soap made by animal byproducts and ash."
+	icon_state = "soaproach_red"
+	clean_speed = 45
+	reagent_storage = 10 //less then normal
+	slip_power = 2 //weak do to being handmade
+
+/obj/item/weapon/soap/hunters/New()
+	..()
+	if(prob(50))
+		icon_state = "soaproach_green"
+	else
+		icon_state = "soaproach_red"
+
 /obj/item/weapon/soap/bluespase
 	desc = "An anomalous bar of blue soap created by an unknown person (or group?) their work marked by a blue cross,\
 	these items are known to vanish and reappear when left alone. Smells of bluespace and hospitals."

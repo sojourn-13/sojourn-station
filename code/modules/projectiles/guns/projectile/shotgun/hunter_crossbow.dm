@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow
 	name = "bolt lance"
-	desc = "A modified crossbow powered by an internal battery device that rapidly winds up a hydraulic winch to deliver a devastating, superheated bolt shot. Hand-crafted by the local Hunting Lodge, it uses a design commonly found on Onkarth, the homeworld of the Sablekyne."
+	desc = "A modified crossbow powered by an internal battery device that rapidly winds up a hydraulic winch to deliver a devastating, superheated bolt shot. \
+	Hand-crafted by the local Hunting Lodge, it uses a design commonly found on Onkarth, the homeworld of the Sablekyne."
 	icon = 'icons/obj/guns/projectile/hunter_crossbow.dmi'
 	icon_state = "hunter_crossbow"
 	item_state = "hunter_crossbow"
@@ -14,6 +15,7 @@
 	price_tag = 750
 	recoil_buildup = 1
 	one_hand_penalty = 14
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 
 /obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow/pump(mob/M as mob)
 	//var/turf/newloc = get_turf(src)

@@ -103,6 +103,10 @@
 	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen with the blessings of faith."
 	id = "holywater"
 
+/datum/reagent/water/holywater/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+//TODO: Make holy water help churchies regen power faster but takes food away
+	..()
+
 /datum/reagent/water/holywater/touch_turf(turf/T)
 	..()
 	if(volume >= 5)

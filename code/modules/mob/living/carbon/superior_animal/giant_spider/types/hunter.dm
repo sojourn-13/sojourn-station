@@ -43,10 +43,10 @@
 	health = 60
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	poison_per_bite = 1
+	poison_per_bite = 2
 	poison_type = "plasma"
 	move_to_delay = 4
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/hunter
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/plasma
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","vibrates.")
 

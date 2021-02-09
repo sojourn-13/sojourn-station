@@ -198,3 +198,11 @@
 	icon_state = "techpriest"
 	item_state = "techpriest"
 	hoodtype = /obj/item/clothing/head/hood/techpriest
+
+/obj/item/clothing/suit/hooded/costume/techpriest_explorator
+	name = "explorator armor"
+	desc = "For larping as the other techno cult. This time with armor, the metal platings provided decent protection, roughly on par with a hand made vest."
+	icon_state = "explorator"
+	item_state = "explorator"
+	armor = list(melee = 30, bullet = 20, energy = 15, bomb = 10, bio = 15, rad = 5)
+	hoodtype = /obj/item/clothing/head/hood/techpriest

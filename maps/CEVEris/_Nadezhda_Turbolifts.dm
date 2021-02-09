@@ -10,9 +10,9 @@
 
 	turbolift_stops = list(
 		/area/turbolift/ElevatorOne/underground,
-		/area/turbolift/ElevatorOne/midlevelOne,
+		//area/turbolift/ElevatorOne/midlevelOne,
 		/area/turbolift/ElevatorOne/midlevelTwo,
-		/area/turbolift/ElevatorOne/midlevelThree,
+		//area/turbolift/ElevatorOne/midlevelThree,
 		/area/turbolift/ElevatorOne/surface,
 		)
 
@@ -49,9 +49,9 @@
 
 	turbolift_stops = list(
 		/area/turbolift/Mining/underground,
-		/area/turbolift/Mining/midlevelOne,
+		//area/turbolift/Mining/midlevelOne,
 		/area/turbolift/Mining/midlevelTwo,
-		/area/turbolift/Mining/midlevelThree,
+		//area/turbolift/Mining/midlevelThree,
 		/area/turbolift/Mining/colony,
 		)
 
@@ -99,9 +99,9 @@
 
 	turbolift_stops = list(
 		/area/turbolift/prospector/underground,
-		/area/turbolift/prospector/surlevelOne,
+		//area/turbolift/prospector/surlevelOne,
 		/area/turbolift/prospector/surlevelTwo,
-		/area/turbolift/prospector/surlevelThree,
+		//area/turbolift/prospector/surlevelThree,
 		/area/turbolift/prospector/surface,
 		)
 
@@ -147,9 +147,9 @@
 
 	turbolift_stops = list(
 		/area/turbolift/mountain/colony,
-		/area/turbolift/mountain/transition1,
+		//area/turbolift/mountain/transition1,
 		/area/turbolift/mountain/transition2,
-		/area/turbolift/mountain/transition3,
+		//area/turbolift/mountain/transition3,
 		/area/turbolift/mountain/solars,
 		)
 
@@ -195,9 +195,9 @@
 
 	turbolift_stops = list(
 		/area/turbolift/Research/underground,
-		/area/turbolift/Research/midlevelOne,
+		//area/turbolift/Research/midlevelOne,
 		/area/turbolift/Research/midlevelTwo,
-		/area/turbolift/Research/midlevelThree,
+		//area/turbolift/Research/midlevelThree,
 		/area/turbolift/Research/colony,
 		)
 

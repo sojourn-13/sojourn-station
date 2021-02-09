@@ -5,6 +5,15 @@
 	avaliableToEveryone = FALSE
 
 // Weaponry -----------------
+/datum/craft_recipe/lodge/crossbow_bolts
+	name = "Crossbow Bolts"
+	result = /obj/item/ammo_casing/crossbow_bolts
+	time = 0
+	steps = list(
+		list(/obj/item/stack/rods, 1)
+	)
+	flags = CRAFT_BATCH
+
 /datum/craft_recipe/lodge/hunter_crossbow
 	name = "Lodge Hunting Crossbow"
 	result = /obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow
@@ -200,14 +209,16 @@
 	)
 
 // Misc. --------------------
-/datum/craft_recipe/lodge/crossbow_bolts
-	name = "Crossbow Bolts"
-	result = /obj/item/ammo_casing/crossbow_bolts
-	time = 0
+
+/datum/craft_recipe/lodge/soap
+	name = "Handmade Soap"
+	result = /obj/item/weapon/soap/hunters
 	steps = list(
-		list(/obj/item/stack/rods, 1)
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 60),
+		list(/obj/item/animal_part/cerberus_snout, 1, "time" = 20),
+		list(/obj/item/weapon/reagent_containers/food/snacks/egg/clucker, 1, "time" = 20),
+		list(QUALITY_HAMMERING, 15, "time" = 40),
 	)
-	flags = CRAFT_BATCH
 
 /datum/craft_recipe/lodge/duct_tape_weak
 	name = "Duct Tape"

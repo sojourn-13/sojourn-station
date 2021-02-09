@@ -54,4 +54,5 @@
 				/obj/item/weapon/gun/projectile/shotgun/pump/obrez/thunderlord = 1,
 				/obj/item/weapon/gun/energy/ntpistol/mana = 1,
 				/obj/item/weapon/gun/projectile/automatic/maxim/replica = 1,
+				/obj/item/weapon/oddity/nt/seal = 1,
 				/obj/item/weapon/soap/bluespase = 0.5)) //Ye not a "gun" but still good for this

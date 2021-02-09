@@ -643,7 +643,7 @@
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 3)
 	ammo_type = /obj/item/ammo_casing/rifle_75
-	max_ammo = 5
+	max_ammo = 10
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408
@@ -654,7 +654,7 @@
 	caliber = CAL_HRIFLE
 	matter = list(MATERIAL_STEEL = 3)
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
-	max_ammo = 5
+	max_ammo = 10
 	multiple_sprites = 1
 
 ////other////
