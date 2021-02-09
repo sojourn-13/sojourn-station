@@ -433,7 +433,6 @@
 		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTEEL, "time" = 90),
 		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS, "time" = 20),
 		list(QUALITY_BOLT_TURNING, 10, 70),
-		list(/obj/item/weapon/oddity/techno, 1, "time" = 80),
 		list(QUALITY_WELDING, 30, "time" = 90),
 		list(/obj/item/stack/cable_coil, 10, "time" = 90),
 		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND, "time" = 20),
