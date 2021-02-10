@@ -109,4 +109,4 @@
 	desc = "An old \"Absolute\" flashbang grenade, modified to spread the light of god."
 	icon_state = "flashbang_nt"
 	item_state = "flashbang_nt"
-	matter = list(MATERIAL_BIOMATTER = 75)
+	matter = list(MATERIAL_BIOMATTER = 15)
