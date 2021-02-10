@@ -2325,6 +2325,7 @@
 #include "code\modules\projectiles\guns\launcher\projectile_grenade_launcher.dm"
 #include "code\modules\projectiles\guns\launcher\syringe_gun.dm"
 #include "code\modules\projectiles\guns\matter\launcher.dm"
+#include "code\modules\projectiles\guns\matter\launcher\books.dm"
 #include "code\modules\projectiles\guns\matter\launcher\nt_sprayer.dm"
 #include "code\modules\projectiles\guns\mods\mods.dm"
 #include "code\modules\projectiles\guns\projectile\automatic.dm"

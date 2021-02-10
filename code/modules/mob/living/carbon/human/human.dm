@@ -1097,7 +1097,7 @@ var/list/rank_prefix = list(\
 		if(species.has_process.len)
 			for(var/process in species.has_process)
 				internal_organs_by_efficiency[process] = list()
-				
+
 		rebuild_organs()
 
 	src.sync_organ_dna()

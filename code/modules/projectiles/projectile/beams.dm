@@ -134,3 +134,40 @@
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
 	impact_type = /obj/effect/projectile/stun/impact
+
+//book "lasers"
+/obj/item/projectile/beam/stun/jugement
+	name = "lighting"
+	icon_state = "stun"
+	nodamage = FALSE
+	taser_effect = TRUE
+	agony = 5
+	damage_types = list(BURN = 10)
+
+	muzzle_type = /obj/effect/projectile/stun/muzzle
+	tracer_type = /obj/effect/projectile/stun/tracer
+	impact_type = /obj/effect/projectile/stun/impact
+
+/obj/item/projectile/beam/sniper/sin_within
+	name = "sin"
+	icon_state = "xray"
+	damage_types = list(TOXIN = 10)
+	armor_penetration = 0
+	stun = 0
+	weaken = 0
+
+	muzzle_type = /obj/effect/projectile/xray/muzzle
+	tracer_type = /obj/effect/projectile/xray/tracer
+	impact_type = /obj/effect/projectile/xray/impact
+
+/obj/item/projectile/beam/sniper/healing
+	name = "grace"
+	icon_state = "xray"
+	damage_types = list(TOXIN = -3, BURN = -3, BRUTE = -3)
+	armor_penetration = 0
+	stun = 0
+	weaken = 0
+
+	muzzle_type = /obj/effect/projectile/xray/muzzle
+	tracer_type = /obj/effect/projectile/xray/tracer
+	impact_type = /obj/effect/projectile/xray/impact
