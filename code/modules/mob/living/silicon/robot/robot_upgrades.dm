@@ -96,6 +96,7 @@
 	GLOB.dead_mob_list -= R
 	GLOB.living_mob_list |= R
 	R.death_notified = FALSE
+	R.vtech_added_speed = 0
 	R.notify_ai(ROBOT_NOTIFICATION_NEW_UNIT)
 	return TRUE
 
@@ -104,13 +105,15 @@
 	desc = "Used to kick in a robot's VTEC systems, increasing their speed."
 	icon_state = "cyborg_upgrade2"
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_GLASS = 6, MATERIAL_GOLD = 5)
-	require_module = TRUE
 
 /obj/item/borg/upgrade/vtec/action(var/mob/living/silicon/robot/R)
 	if(..())
 		return FALSE
+	if(R.vtech_added_speed > 0)
+		return FALSE
 
 	R.speed_factor += 0.5
+	R.vtech_added_speed += 0.5
 	return TRUE
 
 /obj/item/borg/upgrade/power_saver
