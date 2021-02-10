@@ -923,8 +923,8 @@ var/global/list/robot_modules = list(
 	power_efficiency = 1.5 //Best efficiency
 
 	stat_modifiers = list(
-		STAT_ROB = 55,
-		STAT_TGH = 25,
+		STAT_ROB = 60,
+		STAT_TGH = 50,
 		STAT_BIO = 25,
 		STAT_COG = 25
 	)
