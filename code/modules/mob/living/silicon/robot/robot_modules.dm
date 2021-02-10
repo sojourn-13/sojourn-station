@@ -85,7 +85,7 @@ var/global/list/robot_modules = list(
 	R.maxHealth = health
 	R.health = R.maxHealth * healthpercent
 
-	R.speed_factor = speed_factor
+	R.speed_factor = speed_factor + R.vtech_added_speed
 	R.power_efficiency = power_efficiency
 
 	for(var/name in stat_modifiers)
@@ -923,8 +923,8 @@ var/global/list/robot_modules = list(
 	power_efficiency = 1.5 //Best efficiency
 
 	stat_modifiers = list(
-		STAT_ROB = 40,
-		STAT_TGH = 40,
+		STAT_ROB = 55,
+		STAT_TGH = 25,
 		STAT_BIO = 25,
 		STAT_COG = 25
 	)
