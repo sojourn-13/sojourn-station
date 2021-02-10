@@ -63,14 +63,14 @@
 					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 25)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/ice = 10,
 					  /obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 10)
-	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 3,
-					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 3,
-					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 3,
-					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 3,
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 12,
+					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 12,
+					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 15,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 3,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 5,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 5,
-					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/premade = 300)
+					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/premade = 100)
 
 /obj/machinery/vending/coffee/postvend_effect()
 	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
@@ -96,20 +96,20 @@
 					/obj/item/weapon/reagent_containers/food/snacks/chocolatebar = 3,
 					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 6,)
 	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/syndicake = 6)
-	prices = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 40,
-					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 45,
-					/obj/item/weapon/reagent_containers/food/snacks/chips = 40,
-					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 45,
-					/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 40,
-					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 40,
-					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 40,
-					/obj/item/weapon/reagent_containers/food/snacks/tastybread = 50,
-					/obj/item/weapon/reagent_containers/food/snacks/syndicake = 60,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds = 120,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack = 120,
-					/obj/item/weapon/reagent_containers/food/snacks/chocolatebar = 200,
-					/obj/item/weapon/reagent_containers/food/snacks/gamerchips = 120,
-					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 360)
+	prices = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 25,
+					/obj/item/weapon/reagent_containers/food/snacks/chips = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 25,
+					/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/tastybread = 25,
+					/obj/item/weapon/reagent_containers/food/snacks/syndicake = 30,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds = 60,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack = 60,
+					/obj/item/weapon/reagent_containers/food/snacks/chocolatebar = 75,
+					/obj/item/weapon/reagent_containers/food/snacks/gamerchips = 80,
+					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 90)
 
 /obj/machinery/vending/cola
 	name = "Robust Softdrinks"
@@ -127,16 +127,16 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 5,
 						/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 6)
-	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 32,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 50,
-					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 60)
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 16,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 25,
+					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 30)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/cola/postvend_effect()
@@ -309,13 +309,13 @@
 										/obj/item/weapon/reagent_containers/food/snacks/candy/energybar = 4,
 										/obj/item/weapon/towel/random = 8)
 	prices = list(
-										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 40,
-										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 40,
-										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 30,
-										/obj/item/weapon/reagent_containers/food/drinks/cocamilk/small = 120,
-										/obj/item/weapon/reagent_containers/food/drinks/redmilk/small = 240,
-										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 30,
-										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 30,
-										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 240,
-										/obj/item/weapon/reagent_containers/food/snacks/candy/energybar = 400,
-										/obj/item/weapon/towel/random = 70)
+										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 20,
+										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 20,
+										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 15,
+										/obj/item/weapon/reagent_containers/food/drinks/cocamilk/small = 40,
+										/obj/item/weapon/reagent_containers/food/drinks/redmilk/small = 40,
+										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 50,
+										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 16,
+										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 90,
+										/obj/item/weapon/reagent_containers/food/snacks/candy/energybar = 90,
+										/obj/item/weapon/towel/random = 10)
