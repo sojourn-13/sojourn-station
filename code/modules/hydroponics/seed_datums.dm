@@ -249,6 +249,7 @@
 	chems = list("nutriment" = list(1,10))
 	kitchen_tag = "apple"
 
+
 /datum/seed/apple/New()
 	..()
 	set_trait(TRAIT_HARVEST_REPEAT,1)
@@ -288,7 +289,8 @@
 	name = "ambrosia"
 	seed_name = "ambrosia vulgaris"
 	display_name = "ambrosia vulgaris"
-	mutants = list("ambrosiadeus")
+	mutants = list("ambrosiadeus", "ambrosiarobusto")
+	greatMutants = list("ambrosiainfernum")
 	chems = list("nutriment" = list(1), "space_drugs" = list(1,8), "kelotane" = list(1,8,1), "bicaridine" = list(1,10,1), "toxin" = list(1,10))
 	kitchen_tag = "ambrosia"
 
@@ -316,6 +318,37 @@
 	..()
 	set_trait(TRAIT_PRODUCT_COLOUR,"#A3F0AD")
 	set_trait(TRAIT_PLANT_COLOUR,"#2A9C61")
+
+/datum/seed/ambrosia/robusto
+	name = "ambrosiarobusto"
+	seed_name = "ambrosia robusto"
+	display_name = "ambrosia robusto"
+	mutants = null
+	chems = list("nicotine" = list(5,20), "space_drugs" = list(1,50))
+
+/datum/seed/ambrosia/robusto/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#E8A725")
+	set_trait(TRAIT_PLANT_COLOUR, "#996633")
+
+/datum/seed/ambrosia/infernum
+	name = "ambrosiainfernum"
+	seed_name = "ambrosia infernum"
+	display_name = "ambrosia infernum"
+	mutants = null
+	chems = list("plasma" = list(5,20), "fuel" = list(5,20), "space_drugs" = list(1))
+	exude_gasses = list("plasma"=1)
+
+
+/datum/seed/ambrosia/infernum/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#E8A725")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF0000")
+	set_trait(TRAIT_BIOLUM, 1)
+	set_trait(TRAIT_BIOLUM_COLOUR, "FF3300")
+	set_trait(TRAIT_ALTER_TEMP, 2)
+
+
 
 //Mushrooms/varieties.
 /datum/seed/mushroom
@@ -466,7 +499,7 @@
 	seed_name = "tower cap"
 	display_name = "tower caps"
 	chems = list("woodpulp" = list(10,1))
-	mutants = null
+	mutants = list("metalcap")
 
 /datum/seed/mushroom/towercap/New()
 	..()
@@ -474,6 +507,22 @@
 	set_trait(TRAIT_PRODUCT_ICON,"mushroom7")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#79A36D")
 	set_trait(TRAIT_PLANT_COLOUR,"#857F41")
+	set_trait(TRAIT_PLANT_ICON,"mushroom8")
+
+/datum/seed/mushroom/towercap/metalcap
+	name = "metalcap"
+	seed_name = "metal cap"
+	display_name = "metal caps"
+	chems = list("aluminum" = list(5,5))
+	materials = list(MATERIAL_STEEL = 1)
+	mutants = null
+
+/datum/seed/mushroom/towercap/metalcap/New()
+	..()
+	set_trait(TRAIT_MATURATION,15)
+	set_trait(TRAIT_PRODUCT_ICON,"mushroom7")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#4D4D4D")
+	set_trait(TRAIT_PLANT_COLOUR,"#969696")
 	set_trait(TRAIT_PLANT_ICON,"mushroom8")
 
 /datum/seed/mushroom/glowshroom
@@ -610,6 +659,7 @@
 	name = "harebells"
 	seed_name = "harebell"
 	display_name = "harebells"
+	mutants = list("silverbells")
 	chems = list("nutriment" = list(1,20))
 
 /datum/seed/flower/New()
@@ -622,6 +672,20 @@
 	set_trait(TRAIT_PLANT_COLOUR,"#6B8C5E")
 	set_trait(TRAIT_PLANT_ICON,"flower")
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/datum/seed/flower/silverBell
+	name = "silverbells"
+	seed_name = "silverbell"
+	display_name = "silverbells"
+	materials = list(MATERIAL_SILVER = 1)
+	chems = list("nutriment" = list(1,50))
+
+/datum/seed/flower/silverBell/New()
+	..()
+	set_trait(TRAIT_MATURATION,4)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_PRODUCT_COLOUR,"#C0C0C0")
 
 /datum/seed/flower/poppy
 	name = "poppies"
@@ -1142,7 +1206,10 @@
 
 /datum/seed/telriis/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"telriis")
+	set_trait(TRAIT_PLANT_ICON,"stalk3")
+	set_trait(TRAIT_PRODUCT_ICON, "alien5")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#00FFF2")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF3399")
 	set_trait(TRAIT_ENDURANCE,50)
 	set_trait(TRAIT_MATURATION,5)
 	set_trait(TRAIT_PRODUCTION,5)
@@ -1157,7 +1224,10 @@
 
 /datum/seed/thaadra/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"thaadra")
+	set_trait(TRAIT_PLANT_ICON,"alien4")
+	set_trait(TRAIT_PRODUCT_ICON, "alien3")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#00FF8F")
+	set_trait(TRAIT_PLANT_COLOUR, "#006DFF")
 	set_trait(TRAIT_ENDURANCE,10)
 	set_trait(TRAIT_MATURATION,5)
 	set_trait(TRAIT_PRODUCTION,9)
@@ -1172,7 +1242,10 @@
 
 /datum/seed/jurlmah/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"jurlmah")
+	set_trait(TRAIT_PLANT_ICON,"stalk2")
+	set_trait(TRAIT_PRODUCT_ICON, "unkown")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#996633")
+	set_trait(TRAIT_PLANT_COLOUR, "#336600")
 	set_trait(TRAIT_ENDURANCE,12)
 	set_trait(TRAIT_MATURATION,8)
 	set_trait(TRAIT_PRODUCTION,9)
@@ -1187,7 +1260,10 @@
 
 /datum/seed/amauri/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"amauri")
+	set_trait(TRAIT_PLANT_ICON,"alien2")
+	set_trait(TRAIT_PRODUCT_ICON, "alien2")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#FF0066")
+	set_trait(TRAIT_PLANT_COLOUR, "#6924C4")
 	set_trait(TRAIT_ENDURANCE,10)
 	set_trait(TRAIT_MATURATION,8)
 	set_trait(TRAIT_PRODUCTION,9)
@@ -1202,7 +1278,10 @@
 
 /datum/seed/gelthi/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"gelthi")
+	set_trait(TRAIT_PLANT_ICON,"alien")
+	set_trait(TRAIT_PRODUCT_ICON, "alien")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#A1082D")
+	set_trait(TRAIT_PLANT_COLOUR, "#6924C4")
 	set_trait(TRAIT_ENDURANCE,15)
 	set_trait(TRAIT_MATURATION,6)
 	set_trait(TRAIT_PRODUCTION,6)
@@ -1217,7 +1296,10 @@
 
 /datum/seed/vale/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"vale")
+	set_trait(TRAIT_PLANT_ICON,"bush4")
+	set_trait(TRAIT_PRODUCT_ICON, "nuts")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#B2B2B2")
+	set_trait(TRAIT_PLANT_COLOUR, "#4735C6")
 	set_trait(TRAIT_ENDURANCE,15)
 	set_trait(TRAIT_MATURATION,8)
 	set_trait(TRAIT_PRODUCTION,10)
@@ -1232,7 +1314,10 @@
 
 /datum/seed/surik/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"surik")
+	set_trait(TRAIT_PLANT_ICON,"vine2")
+	set_trait(TRAIT_PRODUCT_ICON, "vine2")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#990099")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF3300")
 	set_trait(TRAIT_ENDURANCE,18)
 	set_trait(TRAIT_MATURATION,7)
 	set_trait(TRAIT_PRODUCTION,7)

@@ -131,6 +131,24 @@
 	else
 		return 1
 
+/obj/item/projectile/energy/floraevolve
+	name = "gamma somatoray"
+	icon_state = "plasma"
+	damage_types = list(TOX = 0)
+	nodamage = TRUE
+	check_armour = ARMOR_ENERGY
+
+/obj/item/projectile/energy/floraevolve/on_hit(atom/target)
+	var/mob/M = target
+	if(ishuman(target)) //These rays make plantmen fat.
+		var/mob/living/carbon/human/H = M
+		if((H.species.flags & IS_PLANT) && (H.nutrition < 500))
+			H.nutrition += 30
+	else if (istype(target, /mob/living/carbon/))
+		M.show_message("\blue The evolution beam dissipates harmlessly through your body.")
+	else
+		return 1
+
 
 /obj/item/projectile/beam/mindflayer
 	name = "flayer ray"

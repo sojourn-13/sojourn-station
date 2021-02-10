@@ -63,6 +63,11 @@
 	if(reagents.total_volume > 0)
 		bitesize = 1+round(reagents.total_volume / 2, 1)
 
+	if (!seed.materials)
+		return
+
+	matter = seed.materials.Copy()
+
 /obj/item/weapon/reagent_containers/food/snacks/grown/New()
 	..()
 
