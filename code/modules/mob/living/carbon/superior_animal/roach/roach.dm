@@ -15,6 +15,8 @@
 
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 2
+	leather_amount = 0
+	bones_amount = 0
 
 	maxHealth = 15
 	health = 15

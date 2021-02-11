@@ -81,9 +81,9 @@
 	result = /obj/item/weapon/gun/projectile/automatic/sts/rifle
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 60),
 	)
 
 /datum/craft_recipe/repairs/sts_heavy_rifle
