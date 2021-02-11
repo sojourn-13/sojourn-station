@@ -1,14 +1,15 @@
 /obj/random/gun_cheap
 	name = "random cheap gun"
 	icon_state = "gun-grey"
-	spawn_nothing_percentage = 20
+	spawn_nothing_percentage = 10
 
 /obj/random/gun_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/projectile/mk58 = 1,\
-				//obj/item/weapon/gun/projectile/mk58/wood = 1,
-				//obj/item/weapon/gun/projectile/revolver/detective = 4,
+				/obj/item/weapon/gun/projectile/mk58/wood = 1,
+				/obj/item/weapon/gun/projectile/revolver/detective = 4,
 				/obj/item/weapon/gun/energy/shrapnel = 4,
 				/obj/item/weapon/gun/energy/lasersmg = 3,
+				/obj/item/ammo_kit = 3,
 				/obj/item/weapon/gun/projectile/giskard = 2,\
 				/obj/item/weapon/gun/projectile/boltgun/sa = 3,\
 				//obj/item/weapon/gun/projectile/boltgun/scout/light = 2,
@@ -40,7 +41,7 @@
 /obj/random/gun_normal
 	name = "random normal gun"
 	icon_state = "gun-green"
-	spawn_nothing_percentage = 20
+	spawn_nothing_percentage = 10
 
 /obj/random/gun_normal/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/projectile/lamia = 0.1,\
@@ -66,11 +67,12 @@
 				//obj/item/weapon/gun/projectile/boltgun/scout/light = 2,
 				//obj/item/weapon/gun/projectile/boltgun/scout/light/wood = 2,
 				/obj/item/weapon/gun/projectile/firefly = 2,
+				/obj/item/ammo_kit = 2,
 				/obj/item/weapon/gun_upgrade/trigger/dangerzone = 1,
 				/obj/item/weapon/gun_upgrade/trigger/cop_block = 1,
-				/obj/item/weapon/gun_upgrade/mechanism/overshooter = 1))
+				/obj/item/weapon/gun_upgrade/mechanism/overshooter = 1,
 				//obj/item/weapon/gun/projectile/automatic/straylight = 2,
-				//obj/item/weapon/gun/projectile/automatic/wirbelwind = 0.5))
+				/obj/item/weapon/gun/projectile/automatic/wirbelwind = 0.5))
 
 /obj/random/gun_normal/low_chance
 	name = "low chance random normal gun"
@@ -81,13 +83,14 @@
 /obj/random/gun_combat
 	name = "random assault weapon"
 	icon_state = "gun-green"
-	spawn_nothing_percentage = 20
+	spawn_nothing_percentage = 10
 
 /obj/random/gun_combat/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/projectile/automatic/texan = 1,\
 				/obj/item/weapon/gun/projectile/automatic/mac = 1,\
 				//obj/item/weapon/gun/projectile/automatic/sts/lrifle = 3,
 				/obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn = 1,\
+				/obj/item/ammo_kit = 0.8,
 				//obj/item/weapon/gun/projectile/automatic/sts/rifle = 2,
 				//obj/item/weapon/gun/projectile/automatic/sts/hrifle = 1,
 				/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn = 1,\
@@ -114,7 +117,7 @@
 /obj/random/gun_fancy
 	name = "random fancy gun"
 	icon_state = "gun-blue"
-	spawn_nothing_percentage = 60
+	spawn_nothing_percentage = 30
 
 /obj/random/gun_fancy/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/projectile/automatic/wirbelwind = 3,\
@@ -150,7 +153,7 @@
 /obj/random/gun_energy_cheap
 	name = "random cheap energy weapon"
 	icon_state = "gun-blue"
-	spawn_nothing_percentage = 60
+	spawn_nothing_percentage = 30
 
 /obj/random/gun_energy_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/energy/gun/martin = 2,\
@@ -167,7 +170,7 @@
 /obj/random/gun_shotgun
 	name = "random shotgun"
 	icon_state = "gun-red"
-	spawn_nothing_percentage = 60
+	spawn_nothing_percentage = 30
 
 /obj/random/gun_shotgun/item_to_spawn()
 	return pickweight(list(

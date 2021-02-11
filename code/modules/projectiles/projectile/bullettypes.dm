@@ -49,6 +49,8 @@
 	sharp = TRUE
 	step_delay = 0.55
 
+/obj/item/projectile/bullet/pistol_35/scrap
+	damage_types = list(BRUTE = 12)
 
 //Revolvers and high-caliber pistols
 //*********************************//
@@ -96,6 +98,9 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.5
+
+/obj/item/projectile/bullet/magnum_40/scrap
+	damage_types = list(BRUTE = 20)
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50
@@ -199,6 +204,9 @@
 	sharp = TRUE
 	step_delay = 0.6
 
+/obj/item/projectile/bullet/light_rifle_257/scrap
+	damage_types = list(BRUTE = 12)
+
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
 
@@ -250,6 +258,9 @@
 	sharp = TRUE
 	step_delay = 0.8
 
+/obj/item/projectile/bullet/rifle_75/scrap
+	damage_types = list(BRUTE = 22)
+
 /// .408 OMNI ///
 
 /obj/item/projectile/bullet/heavy_rifle_408
@@ -299,6 +310,9 @@
 	sharp = TRUE
 	step_delay = 0.5
 
+/obj/item/projectile/bullet/heavy_rifle_408/scrap
+	damage_types = list(BRUTE = 16)
+
 ///Snowflake caseless///
 
 /obj/item/projectile/bullet/c10x24
@@ -317,6 +331,9 @@
 	weaken = 10
 	penetrating = 5
 	hitscan = TRUE //so the PTR isn't useless as a sniper weapon
+
+/obj/item/projectile/bullet/antim/scrap
+	damage_types = list(BRUTE = 63)
 
 //Shotguns
 //*********************************//
@@ -362,6 +379,16 @@
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
+
+/obj/item/projectile/bullet/shotgun/scrap
+	damage_types = list(BRUTE = 48)
+
+/obj/item/projectile/bullet/shotgun/beanbag/scrap
+	damage_types = list(BRUTE = 9)
+	agony = 55
+
+/obj/item/projectile/bullet/pellet/shotgun/scrap
+	damage_types = list(BRUTE = 9)
 
 //Railgun
 /obj/item/projectile/bullet/shotgun/railgun
