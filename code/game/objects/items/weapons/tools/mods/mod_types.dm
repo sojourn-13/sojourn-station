@@ -184,7 +184,7 @@
 	UPGRADE_FORCE_MULT = 1.15
 	)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_MELEE_DAMAGE = 1.5,
+		GUN_UPGRADE_MELEE_DAMAGE = 1.3,
 	)
 	I.req_gun_tags = list(GUN_BAYONET)
 	I.gun_loc_tag = GUN_KNIFE
@@ -207,7 +207,7 @@
 	UPGRADE_FORCE_MULT = 1.10,
 	)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_MELEE_DAMAGE = 1.4,
+		GUN_UPGRADE_MELEE_DAMAGE = 1.2,
 	)
 	I.req_gun_tags = list(GUN_BAYONET)
 	I.gun_loc_tag = GUN_KNIFE
