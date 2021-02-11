@@ -228,14 +228,15 @@
 	fire_sound = 'sound/weapons/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_HUGE
-	matter = list(MATERIAL_STEEL = 12)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 5)
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
+	charge_cost = 50
 	price_tag = 1000
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
-		WEAPON_CHARGE
+		BURST_2_ROUND
 	)
 	twohanded = TRUE
 
