@@ -218,11 +218,11 @@
 
 /datum/design/autolathe/gun/sika
 	name = "SA BR .257 \"Sika\""
-	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/light
+	build_path = /obj/item/weapon/gun/projectile/boltgun/light
 
 /datum/design/autolathe/gun/roe
 	name = "HS BR .257 \"Roe\""
-	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/light/wood
+	build_path = /obj/item/weapon/gun/projectile/boltgun/light_wood
 
 /datum/design/autolathe/gun/zatvor
 	name = "BR .257 \"zatvor\""

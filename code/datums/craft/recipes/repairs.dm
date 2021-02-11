@@ -15,10 +15,11 @@
 	)
 
 /datum/craft_recipe/repairs/combat_shotgun
-	name = "Combat shotgun"
+	name = "Regulator shotgun"
 	result = /obj/item/weapon/gun/projectile/shotgun/pump/combat
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/shotgun/pump/combat/sawn, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60),
@@ -29,7 +30,7 @@
 	result = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60),
 	)
@@ -51,6 +52,7 @@
 	result = /obj/item/weapon/gun/projectile/shotgun/pump
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/shotgun/pump/sawn, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
@@ -62,6 +64,7 @@
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/shotgun/pump/obrez, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60),
 	)
@@ -71,13 +74,24 @@
 	result = /obj/item/weapon/gun/projectile/automatic/ak47/sa
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/automatic/ak47/sawn, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
 	)
 
+/datum/craft_recipe/repairs/sts_carbine
+	name = "STS carbine"
+	result = /obj/item/weapon/gun/projectile/automatic/sts/lrifle
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+	)
+
 /datum/craft_recipe/repairs/sts_standard_rifle
-	name = "STS standard rifle"
+	name = "STS battle rifle"
 	result = /obj/item/weapon/gun/projectile/automatic/sts/rifle
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn, 1, "time" = 60),
@@ -96,16 +110,6 @@
 		list(QUALITY_WELDING, 30, "time" = 60),
 	)
 
-/datum/craft_recipe/repairs/sts_carbine
-	name = "STS carbine"
-	result = /obj/item/weapon/gun/projectile/automatic/sts/lrifle
-	steps = list(
-		list(/obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
-		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
-	)
-
 /datum/craft_recipe/repairs/scout_boltgun
 	name = "Scout heavy boltgun"
 	result = /obj/item/weapon/gun/projectile/boltgun/scout
@@ -119,22 +123,48 @@
 
 /datum/craft_recipe/repairs/sika_boltgun
 	name = "Sika light boltgun"
-	result = /obj/item/weapon/gun/projectile/boltgun/scout/light
+	result = /obj/item/weapon/gun/projectile/boltgun/light
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/boltgun/sawn/light, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60),
 	)
 
 /datum/craft_recipe/repairs/roe_boltgun
 	name = "Roe light boltgun"
-	result = /obj/item/weapon/gun/projectile/boltgun/scout/light/wood
+	result = /obj/item/weapon/gun/projectile/boltgun/light_wood
 	steps = list(
-		list(/obj/item/weapon/gun/projectile/boltgun/sawn/light/wood, 1, "time" = 60),
+		list(/obj/item/weapon/gun/projectile/boltgun/sawn/light_wood, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+	)
+
+/datum/craft_recipe/repairs/novakovic_boltgun
+	name = "Novakovic boltgun"
+	result = /obj/item/weapon/gun/projectile/boltgun/sa
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/boltgun/sawn/sa, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+	)
+
+/datum/craft_recipe/repairs/mosin_boltgun
+	name = "Kardashev-Mosin boltgun"
+	result = /obj/item/weapon/gun/projectile/boltgun
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/boltgun/sawn/true, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60),
