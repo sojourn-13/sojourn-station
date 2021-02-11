@@ -32,6 +32,8 @@ var/global/list/robot_modules = list(
 					LANGUAGE_SERBIAN = 1,
 					LANGUAGE_CYRILLIC = 1,
 					LANGUAGE_GERMAN = 1,
+					LANGUAGE_JANA = 1,
+					LANGUAGE_LATIN = 1,
 					LANGUAGE_JIVE = 0
 					)
 	var/sprites = list()
@@ -869,6 +871,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/tape_roll(src) //allows it to place flyers
 	src.modules += new /obj/item/weapon/stamp/denied(src) //why was this even a emagged item before smh
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/device/synthesized_instrument/synthesizer
 	src.emag = new /obj/item/weapon/stamp/chameleon(src)
 	src.emag = new /obj/item/weapon/pen/chameleon(src)
 	..(R)
