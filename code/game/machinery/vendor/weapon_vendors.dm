@@ -33,7 +33,8 @@
 	/obj/item/weapon/gun_upgrade/mechanism/weintraub = 2,
 	/obj/item/weapon/storage/pouch/pistol_holster = 2,
 	/obj/item/weapon/storage/pouch/ammo = 2,
-	/obj/item/weapon/storage/briefcase/rifle = 5) //SoJ Edit, adds in 5 rifle cases
+	/obj/item/weapon/storage/briefcase/rifle = 5,
+	/obj/item/weapon/storage/box/smokes = 3) //SoJ Edit, adds in 5 rifle cases
 
 	contraband = list(/obj/item/weapon/gun/projectile/automatic/mac = 1,
 	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1,
@@ -109,7 +110,8 @@
 	/obj/item/ammo_magazine/speed_loader_rifle_75 = 250,
 	/obj/item/ammo_magazine/light_rifle_257 = 175,
 	/obj/item/weapon/storage/briefcase/rifle = 50, //SoJ change makes rifle cases 50 credits
-	/obj/item/weapon/tool/knife/tacknife = 50)
+	/obj/item/weapon/tool/knife/tacknife = 50,
+	/obj/item/weapon/storage/box/smokes = 200)
 
 /obj/machinery/vending/security
 	name = "SecTech"
@@ -123,6 +125,7 @@
 					/obj/item/weapon/handcuffs/zipties = 8,
 					/obj/item/weapon/grenade/flashbang = 8,
 					/obj/item/weapon/grenade/chem_grenade/teargas = 8,
+					/obj/item/weapon/grenade/smokebomb = 8,
 					/obj/item/device/flash = 8,
 					/obj/item/weapon/reagent_containers/spray/pepper = 8,
 					/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber = 8,
