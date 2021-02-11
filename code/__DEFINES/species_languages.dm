@@ -42,7 +42,7 @@
 #define LANGUAGE_OCCULT "Occult"
 #define LANGUAGE_BLITZ "Blitzshell Communique"
 #define LANGUAGE_OPIFEXEE "Opifexee"
-#define LANGUAGE_CHTMANT "Cht'Hive"
+#define LANGUAGE_CHTMANT "Chthive"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.
