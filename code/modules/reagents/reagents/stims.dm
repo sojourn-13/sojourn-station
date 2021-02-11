@@ -473,8 +473,8 @@
 	addiction_chance = 0
 
 /datum/reagent/stim/tatonka_milk/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "lodge_milk")
-	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC, STIM_TIME, "lodge_milk")
 
 /datum/reagent/stim/tatonka_milk/overdose(mob/living/carbon/M, alien)
 	if(prob(5 - (3 * M.stats.getMult(STAT_TGH))))
@@ -493,8 +493,8 @@
 	addiction_chance = 0
 
 /datum/reagent/stim/tangu_milk/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "lodge_milk")
-	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "lodge_milk")
 
 /datum/reagent/stim/tangu_milk/overdose(mob/living/carbon/M, alien)
 	if(prob(5 - (3 * M.stats.getMult(STAT_TGH))))
