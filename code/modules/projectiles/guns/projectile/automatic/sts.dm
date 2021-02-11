@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/sts
 	name = "\"STS\" carbine"
-	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds. This one is unmarked."
+	desc = "The rugged STS-25, the right arm of the unfree world. Uses Carbine rounds. This one is unmarked."
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"

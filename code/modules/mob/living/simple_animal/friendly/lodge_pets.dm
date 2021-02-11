@@ -25,7 +25,6 @@
 	old_y = 0
 	default_pixel_x = -16
 	pixel_x = -16
-	pixel_y = 0
 	leather_amount = 6 //The amount of leather sheets dropped.
 	bones_amount = 8 //The amount of bone sheets dropped.
 	has_special_parts = TRUE //var for checking during the butcher process.
@@ -65,7 +64,7 @@
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")
-			if(!stat && offspring_left < 2)
+			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It moos happily.")
 				user.drop_item()
 				qdel(O)
@@ -106,6 +105,8 @@
 		var/mob/living/simple_animal/baby_tatonka/E = new(get_turf(src))
 		if(tatonka_count < MAX_TATONKA && prob(10))
 			START_PROCESSING(SSobj, E)
+	default_pixel_x = -16
+	pixel_x = -16
 
 //Baby Tatonka
 //Grows into a tatonka or a tangu
@@ -130,6 +131,8 @@
 	autoseek_food = 0
 	beg_for_food = 0
 	hunger_enabled = FALSE
+	default_pixel_x = -16
+	pixel_x = -16
 
 /mob/living/simple_animal/baby_tatonka/New()
 	..()
@@ -148,6 +151,8 @@
 			else
 				new /mob/living/simple_animal/tatonka(src.loc)
 			qdel(src)
+	default_pixel_x = -16
+	pixel_x = -16
 
 var/const/MAX_TATONKA = 5
 var/global/tatonka_count = 0
@@ -248,11 +253,11 @@ var/global/clucker_count = 0
 	..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
-	chicken_count += 1
+	clucker_count += 1
 
 /mob/living/simple_animal/clucker/death()
 	..()
-	chicken_count -= 1
+	clucker_count -= 1
 
 /mob/living/simple_animal/clucker/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
@@ -342,7 +347,7 @@ var/global/cerberus_count = 0
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "mushroom")
-			if(!stat && offspring_left < 3)
+			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It snuffles happily.")
 				user.drop_item()
 				qdel(O)
@@ -375,6 +380,12 @@ var/global/cerberus_count = 0
 	bones_amount = 6 //The amount of bone sheets dropped.
 	has_special_parts = TRUE //var for checking during the butcher process.
 	special_parts = list(/obj/item/animal_part/chimera_fang)
+	default_pixel_x = -16
+	pixel_x = -16
+
+/mob/living/simple_animal/hostile/helldiver/cerberus/chimera/Life()
+	. =..()
+	default_pixel_x = -16
 	pixel_x = -16
 
 //Baby cerberus

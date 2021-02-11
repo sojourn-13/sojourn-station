@@ -84,7 +84,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	force_unwielded = WEAPON_FORCE_DANGEROUS
 	force_wielded = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_SHALLOW
+	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 30)
 	w_class = ITEM_SIZE_BULKY
 
@@ -208,6 +208,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
 	armor_penetration = ARMOR_PEN_MODERATE
 	max_upgrades = 3
+	embed_mult = 0.3
 
 /obj/item/weapon/tool/knife/dagger
 	name = "dagger"
@@ -216,9 +217,9 @@
 	icon_state = "dagger"
 	item_state = "dagger"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
-	force = WEAPON_FORCE_NORMAL
+	force = 13
 	backstab_damage = 15
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_HALF
 
 /obj/item/weapon/tool/knife/dagger/skinning
 	name = "skinning knife"
@@ -238,6 +239,8 @@
 	icon_state = "fancydagger"
 	item_state = "fancydagger"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
+	embed_mult = 0.3
+	max_upgrades = 4
 
 /obj/item/weapon/tool/knife/dagger/bluespace
 	name = "Soteria \"Displacement Dagger\""

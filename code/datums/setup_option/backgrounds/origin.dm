@@ -653,7 +653,10 @@
 	highly attractive destinations for tourists and vacationers, but the planet does have a number of drawbacks. The primary issue facing the residents of Neapolis is the lack of settle-able \
 	land with only a smattering of plateaus being safe enough for permanent settlements in the face of the ever transient forests. Fortunately the second issue- a lack of valuable ores \
 	or gasses, has so far been a boon for Neapolitians who have managed to evade major interest from their large- sometimes hostile, neighbors. Individuals from Neapolis are often \
-	idealistic, artistic, and sometimes a little naive."
+	idealistic, artistic, and sometimes a little naive. As a lush garden world that boasts a highly productive and often self reliance on growable food, those from Neapolis are often \
+	described as having a green thumb."
+
+	perks = list(/datum/perk/greenthumb)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -672,7 +675,10 @@
 	compete for market shares as they engage in a desperate contest to feed the massive population of their neighboring worlds. These conflicts are often economic, territorial, and electronic, \
 	but since the crash the massive ocean trawlers have begun arming themselves more. These conflicts are becoming increasingly frustrating for local researchers who are being \
 	treated with more and more hostility from both the fish mongers and their port masters. Individuals from Agua Fria are often skeptical of those outside their social circle, \
-	highly adept swimmers, and usually very business minded."
+	highly adept swimmers, and usually very business minded. Due to an intense need to keep food clean and healthy for consumption, many of those from Aqua Fria treat cleaning their work spaces \
+	and their equipment as second nature."
+
+	perks = list(/datum/perk/neat)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -696,11 +702,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_TGH = 1,
+		STAT_VIG = 2,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = 2
 	)
 
 /datum/category_item/setup_option/background/homeworld/thalatta
@@ -747,13 +753,13 @@
 	people to settle there the toxic nature of the world proved most disastrous to kriosans and cindarites despite their usual tolerance to such conditions. Through a quirk of biology the flora of \
 	Rankorin developed toxins that attacked the immune system and turned it against the body, as such, races normally suited for this world avoided it as much as possible. \
 	The remaining people who choose to settle here and work the mines adapted over several generations to thrive in bad atmosphere and have almost become dependent on it. \
-	This adaptation, coupled with working the diamond mines, have made them physically strong but comparably weak to people of other home-worlds."
+	This adaptation, coupled with working the diamond mines, have made them physically tough but comparably weak to people of other home-worlds."
 
 	perks = list(/datum/perk/chaingun_smoker)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_ROB = -5,
+		STAT_TGH = 10,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -765,7 +771,7 @@
 	desc = "Sanperitor is a low atmosphere world closer to its systems star then most species are comfortable living with. The intense solar radiation of the planet has caused those who reside their to \
 	naturally adapt to the toxins present in every day life. Sanperitor itself first came to be colonized due to its larger than normal core and already lightly radioactive atmosphere that allowed \
 	for massive thermonuclear power generators to be built. The planet itself supplies a great number of worlds with super charged power cores, artificially crafted super matters, and \
-	technology used to produce star ship engines or planetary nuclear reactors. People from this planet tend to be physically weaker than most but cheerfully resolute and have naturally \
+	technology used to produce star ship engines or planetary nuclear reactors. People from this planet tend to be physically tougher than most, cheerfully resolute and have naturally \
 	evolved to resist most forms of toxins."
 
 	restricted_to_species = list(FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
@@ -773,7 +779,7 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_TGH = 5,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
