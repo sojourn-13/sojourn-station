@@ -444,7 +444,7 @@
 	max_health = 260
 	resistance = RESISTANCE_IMPROVED
 	icon_state = "spawner"
-	cooldown_time = 25 SECONDS
+	cooldown_time = 10 SECONDS
 	spawn_weight  = 50
 	var/mob_to_spawn
 	var/mob_amount = 4
@@ -455,6 +455,7 @@
 /obj/random/mob/assembled/item_to_spawn() //list of spawnable mobs
 	return pickweight(list(/mob/living/simple_animal/hostile/hivemind/stinger = 5,
 							/mob/living/simple_animal/hostile/hivemind/bomber = 4,
+							/mob/living/simple_animal/hostile/hivemind/lobber = 3,
 							/mob/living/simple_animal/hostile/hivemind/hiborg = 1))
 
 /obj/machinery/hivemind_machine/mob_spawner/Initialize()
