@@ -17,9 +17,9 @@
 				/obj/item/weapon/gun/projectile/shotgun/pump = 0.5,\
 				/obj/item/weapon/gun/projectile/shotgun/pump/sawn = 1,\
 				/obj/item/weapon/gun/projectile/shotgun/pump/obrez = 2,\
-				/obj/item/weapon/gun/projectile/boltgun/sawn/light/wood = 0.5,\
+				/obj/item/weapon/gun/projectile/boltgun/sawn/light_wood = 0.5,\
 				/obj/item/weapon/gun/projectile/boltgun/sawn/light = 0.5,\
-				/obj/item/weapon/gun/projectile/boltgun/sawn = 0.5,\
+				/obj/item/weapon/gun/projectile/boltgun/sawn/true = 0.5,\
 				/obj/item/weapon/gun/projectile/boltgun/sawn/sa = 1,\
 				/obj/item/weapon/gun/projectile/boltgun/sawn/scout = 0.5,\
 				/obj/item/weapon/gun/projectile/handmade_pistol = 2,\

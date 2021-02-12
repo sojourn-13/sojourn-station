@@ -217,7 +217,7 @@
 "ei" = (/obj/structure/closet/crate/bin,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/river_forest_light)
 "ej" = (/obj/random/traps,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/river_forest_light)
 "ek" = (/obj/item/ammo_casing/light_rifle_257/hv,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/river_forest_light)
-"el" = (/obj/item/weapon/gun/projectile/boltgun/scout/light/wood,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/river_forest_light)
+"el" = (/obj/item/weapon/gun/projectile/boltgun/light_wood,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/river_forest_light)
 "em" = (/obj/structure/flora/big/bush2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/river_forest_light)
 "en" = (/obj/structure/flora/big/bush3,/obj/structure/flora/big/bush2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/river_forest_light)
 "eo" = (/obj/random/junk,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest/river_forest_light)
