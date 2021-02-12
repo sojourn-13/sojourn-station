@@ -72,7 +72,8 @@
 	icon_state = "woodworking"
 	steps = list(
 		list(/obj/item/stack/rods, 10, "time" = 60),
-		list(MATERIAL_CARDBOARD, 4, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 4, MATERIAL_CARDBOARD, "time" = 60),
 		list(/obj/item/weapon/tool/wrench/improvised, 1, "time" = 60),
 		list(/obj/item/weapon/tool/knife/shiv, 1, "time" = 60),
 		list(/obj/item/weapon/tool/wirecutters/improvised, 1, "time" = 60),
