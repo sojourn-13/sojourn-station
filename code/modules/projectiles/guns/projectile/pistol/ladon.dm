@@ -30,8 +30,8 @@
 		icon_state = initial(icon_state) + "_full"
 
 /obj/item/weapon/gun/projectile/ladon/hs
-	name = "\"ladon\" magnum pistol"
-	desc = "A popular commercial variant of Mk-68 \"Ladon\" produced by Holland & Sullivan. Often found in police and private use alike. Uses .40 Auto-Mag rounds."
+	name = "\"Ladon\" magnum pistol"
+	desc = "A popular commercial variant of Mk-68 \"Ladon\" produced by Seinemetall Defense GmbH. Often found in police and private use alike. Uses .40 Auto-Mag rounds."
 	icon_state = "ladon"
 	item_state = "ladon"
 	damage_multiplier = 1
@@ -39,7 +39,7 @@
 	one_hand_penalty = 11
 
 /obj/item/weapon/gun/projectile/ladon/sa
-	name = "\"ladon\" magnum pistol"
+	name = "\"Ladon\" magnum pistol"
 	desc = "A cheap copy of Mk-68 \"Ladon\". Uses .40 Auto-Mag rounds. This one has a Scarborough Arms rollmark on the frame and no other markings."
 	icon_state = "ladon_alt"
 	item_state = "ladon_alt"
