@@ -134,7 +134,7 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -281,7 +281,7 @@
 
 	access = list(
 		access_security, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
-		access_medical_equip, access_eva, access_brig, access_external_airlocks, access_surgery
+		access_medical_equip, access_eva, access_brig, access_external_airlocks, access_surgery, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -381,7 +381,7 @@
 
 	access = list(
 		access_security, access_moebius, access_engine, access_mailsorting,access_eva,
-		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector, access_kitchen
+		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector, access_kitchen, access_medical_suits
 	)
 
 	stat_modifiers = list(
