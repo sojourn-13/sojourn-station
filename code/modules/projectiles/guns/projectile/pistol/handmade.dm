@@ -7,6 +7,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_WOOD = 2)
 	can_dual = TRUE
 	load_method = SINGLE_CASING
 	max_shells = 1

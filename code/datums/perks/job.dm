@@ -222,7 +222,8 @@
 
 /datum/perk/fast_fingers
 	name = "Fast fingers"
-	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary! Your thefts are much more difficult to notice."
+	desc = "Nothing is safe around your hands. You are a true kleptomaniac. Taking items off others is without sound and prompts provided its in their pockets, hands, or on their ears. \
+	It's also quicker and you can slip pills into drinks unnoticed."
 	//icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
 
 /datum/perk/quiet_as_mouse

@@ -61,9 +61,26 @@
 	result = /obj/item/weapon/gun/projectile/handmade_pistol
 	icon_state = "woodworking"
 	steps = list(
-		list(/obj/item/pipe, 1, "time" = 60),
+		list(/obj/item/stack/rods, 3, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(/obj/item/weapon/crossbowframe, 1, "time" = 20)
+	)
+
+/datum/craft_recipe/weapon/ammo_kit
+	name = "ammo kit"
+	result = /obj/item/ammo_kit
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/stack/rods, 10, "time" = 60),
+		list(MATERIAL_CARDBOARD, 4, "time" = 60),
+		list(/obj/item/weapon/tool/wrench/improvised, 1, "time" = 60),
+		list(/obj/item/weapon/tool/knife/shiv, 1, "time" = 60),
+		list(/obj/item/weapon/tool/wirecutters/improvised, 1, "time" = 60),
+		list(QUALITY_WELDING, 15, "time" = 30),
+		list(QUALITY_CUTTING, 10, "time" = 30),
+		list(QUALITY_ADHESIVE, 15, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 15, "time" = 30),
+		list(QUALITY_SAWING, 15, "time" = 30)
 	)
 
 /datum/craft_recipe/weapon/shrapnelcannon
