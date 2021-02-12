@@ -62,13 +62,14 @@
 		organ_data["max_damage"] = organ.max_damage
 		organ_data["status"] = organ.get_status_data()
 		organ_data["conditions"] = organ.get_conditions()
+
 		organ_data["stored_blood"] = organ.current_blood
 		organ_data["max_blood"] = organ.max_blood_storage
 		if(BP_BRAIN in organ.organ_efficiency)
 			organ_data["show_oxy"] = TRUE
+		organ_data["processes"] = organ.get_process_data()
 
 		var/list/actions_list = list()
-
 		if(can_remove_item(organ))
 			actions_list.Add(list(list(
 					"name" = "Extract",
@@ -94,9 +95,9 @@
 		var/icon/ic = new(implant.icon, implant.icon_state)
 		usr << browse_rsc(ic, "[implant.icon_state].png")	//Contvers the icon to a PNG so it can be used in the UI
 		implant_data["icon_data"] = "[implant.icon_state].png"
+		implant_data["processes"] = list()
 
 		var/list/actions_list = list()
-
 		if(can_remove_item(implant))
 			var/list/remove_action = list(
 				"name" = "Extract",
@@ -107,7 +108,6 @@
 			actions_list.Add(list(remove_action))
 
 		implant_data["actions"] = actions_list
-		implant_data["processes"] = list()
 
 		contents_list.Add(list(implant_data))
 
