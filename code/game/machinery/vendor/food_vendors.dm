@@ -248,7 +248,73 @@
 					/obj/item/weapon/material/kitchen/utensil/fork = 6,
 					/obj/item/weapon/tool/knife = 6,
 					/obj/item/weapon/material/kitchen/utensil/spoon = 6,
-					/obj/item/weapon/tool/knife = 3,
+					/obj/item/weapon/material/kitchen/rollingpin = 3,
+					/obj/item/weapon/reagent_containers/glass/rag = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 8,
+					/obj/item/clothing/suit/rank/chef/classic = 2,
+					/obj/item/weapon/storage/lunchbox = 3,
+					/obj/item/weapon/storage/lunchbox/rainbow = 3,
+					/obj/item/weapon/storage/lunchbox/cat = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/pitcher = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/teapot = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/black = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/green = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/blue = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/red = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/heart = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/one = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/metal = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/rainbow = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/brit = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/moebius = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/teacup = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/ketchup = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 10)
+	contraband = list(/obj/item/weapon/tool/knife/butch = 2)
+	prices = list(/obj/item/weapon/tray = 35,
+					/obj/item/weapon/material/kitchen/utensil/fork = 3,
+					/obj/item/weapon/tool/knife = 35,
+					/obj/item/weapon/material/kitchen/utensil/spoon = 3,
+					/obj/item/weapon/material/kitchen/rollingpin = 9,
+					/obj/item/weapon/reagent_containers/glass/rag = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 2,
+					/obj/item/clothing/suit/rank/chef/classic = 50,
+					/obj/item/weapon/storage/lunchbox = 8,
+					/obj/item/weapon/storage/lunchbox/rainbow = 8,
+					/obj/item/weapon/storage/lunchbox/cat = 8,
+					/obj/item/weapon/reagent_containers/food/drinks/pitcher = 9,
+					/obj/item/weapon/reagent_containers/food/drinks/teapot = 9,
+					/obj/item/weapon/reagent_containers/food/drinks/mug = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/black = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/green = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/blue = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/red = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/heart = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/one = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/metal = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/rainbow = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/brit = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/moebius = 7,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/teacup = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/ketchup = 3,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 3,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 3,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 3,
+					/obj/item/weapon/tool/knife/butch = 55)
+	auto_price = TRUE
+
+/obj/machinery/vending/dinnerware/cooks //So we dont charge the cook
+	name = "Dinnerware Express"
+	desc = "A kitchen and restaurant equipment vendor."
+	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these...;Need knives? Got you covered."
+	icon_state = "dinnerware"
+	products = list(/obj/item/weapon/tray = 8,
+					/obj/item/weapon/material/kitchen/utensil/fork = 6,
+					/obj/item/weapon/tool/knife = 6,
+					/obj/item/weapon/material/kitchen/utensil/spoon = 6,
 					/obj/item/weapon/material/kitchen/rollingpin = 3,
 					/obj/item/weapon/reagent_containers/glass/rag = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 8,
@@ -276,6 +342,7 @@
 					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 10)
 	contraband = list(/obj/item/weapon/tool/knife/butch = 2)
 	auto_price = FALSE
+
 
 /obj/machinery/vending/sovietsoda
 	name = "BODA"

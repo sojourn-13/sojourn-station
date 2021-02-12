@@ -4926,7 +4926,7 @@
 "pGt" = (/turf/simulated/floor/tiled/dark,/area/nadezhda/security/prisoncells)
 "pGX" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/closet/wall_mounted/emcloset{pixel_x = 32},/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/command/bridge)
 "pHB" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white/techfloor,/area/nadezhda/rnd/robotics)
-"pHF" = (/obj/machinery/vending/dinnerware,/turf/simulated/floor/tiled/cafe,/area/nadezhda/crew_quarters/kitchen)
+"pHF" = (/obj/machinery/vending/dinnerware/cooks,/turf/simulated/floor/tiled/cafe,/area/nadezhda/crew_quarters/kitchen)
 "pIz" = (/obj/structure/table/rack/shelf,/obj/random/lowkeyrandom,/obj/random/lowkeyrandom,/obj/random/lowkeyrandom/low_chance,/obj/random/tool_upgrade/rare/low_chance,/obj/effect/floor_decal/industrial/danger,/obj/effect/floor_decal/industrial/danger{dir = 1},/turf/simulated/floor/tiled/techmaint,/area/nadezhda/maintenance/undergroundfloor1south)
 "pJg" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/plating/under,/area/nadezhda/maintenance/undergroundfloor1east)
 "pJl" = (/turf/simulated/floor/tiled/techmaint,/area/nadezhda/command/panic_room)
