@@ -178,8 +178,8 @@
 
 /obj/item/ammo_casing/rifle_75
 	desc = "A 7.5mm bullet casing."
-	icon_state = "clrifle_c_l"
-	spent_icon = "clrifle_c_l-spent"
+	icon_state = "srifle_c_l"
+	spent_icon = "srifle_c_l-spent"
 	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75
 	maxamount = 10
@@ -192,20 +192,22 @@
 
 /obj/item/ammo_casing/rifle_75/hv
 	desc = "A 7.5mm high-velocity bullet casing."
-	icon_state = "clrifle_c_hv"
-	spent_icon = "clrifle_c_hv-spent"
+	icon_state = "srifle_c_hv"
+	spent_icon = "srifle_c_hv-spent"
 	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75/hv
 
 /obj/item/ammo_casing/rifle_75/rubber
 	desc = "A 7.5mm rubber bullet casing."
+	icon_state = "srifle_c_r"
+	spent_icon = "srifle_c_r-spent"
 	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75/rubber
 
 /obj/item/ammo_casing/rifle_75/practice
 	desc = "A 7.5mm practice bullet casing."
-	icon_state = "clrifle_c_p"
-	spent_icon = "clrifle_c_p-spent"
+	icon_state = "srifle_c_p"
+	spent_icon = "srifle_c_p-spent"
 	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75/practice
 
@@ -216,8 +218,8 @@
 
 /obj/item/ammo_casing/rifle_75/scrap
 	desc = "An old 7.5 Caseless Rifle bullet casing."
-	icon_state = "clrifle_c_s"
-	spent_icon = "clrifle_c_s-spent"
+	icon_state = "srifle_c_s"
+	spent_icon = "srifle_c_s-spent"
 	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75/scrap
 

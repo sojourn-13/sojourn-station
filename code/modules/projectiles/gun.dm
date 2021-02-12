@@ -520,9 +520,9 @@
 		hud_actions -= action
 
 /obj/item/weapon/gun/proc/initialize_scope()
-	if((/mob/new_player) || (/mob/living/carbon/human/dummy)) //So we stop a runtime with new_player(ghosting) and character creation dummies
-		return
 	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/scope) in hud_actions
+	if((/mob/living/carbon/human/dummy)) //So we stop a runtime with character creation dummies
+		return
 	if(zoom_factor > 0)
 		if(!action)
 			action = new /obj/screen/item_action/top_bar/gun/scope
