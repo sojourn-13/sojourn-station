@@ -1,4 +1,3 @@
-//// .35 ////
 /obj/item/ammo_kit
 	name = "scrap Ammo Kit"
 	desc = "A somewhat jank looking crafting kit. It has a can of single-use tools, cheap pliers and a box of bullet making materials."

@@ -8,6 +8,14 @@
 	name = "shotgun shells (buckshot)"
 	build_path = /obj/item/ammo_casing/shotgun/pellet/prespawned
 
+/datum/design/autolathe/ammo/shotgun_box
+	name = "shotgun shells box (slug)"
+	build_path = /obj/item/ammo_magazine/ammobox/shotgun
+
+/datum/design/autolathe/ammo/shotgun_pellet_box
+	name = "shotgun shells box (buckshot)"
+	build_path = /obj/item/ammo_magazine/ammobox/shotgun/buckshot
+
 /datum/design/autolathe/ammo/shotgun_blanks
 	name = "shotgun shells (blank)"
 	build_path = /obj/item/ammo_casing/shotgun/blank/prespawned
