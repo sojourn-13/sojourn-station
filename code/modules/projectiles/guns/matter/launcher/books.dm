@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/matter/launcher/holybook
+/obj/item/weapon/gun/matter/holybook
 	name = "Book of Jugments"
 	desc = "A book from the faiths that are used to punish the sinful."
 	icon_state = "biblegun"
@@ -12,19 +12,22 @@
 	projectile_cost = 1
 	projectile_type = /obj/item/projectile/beam/stun/jugement
 
-/obj/item/weapon/gun/matter/launcher/holybook/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
+/obj/item/weapon/gun/matter/holybook/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	var/obj/item/weapon/implant/core_implant/I = user.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
-	if(!I && !I.active && !I.wearer)
+	if(!I && !I.wearer) //Do we have a core implant?
+		to_chat(user, SPAN_WARNING("[src] is useless in your hand..."))
+		return
+	if(!I.active) //Is it active?
 		to_chat(user, SPAN_WARNING("[src] is useless in your hand..."))
 		return
 	..()
 
-/obj/item/weapon/gun/matter/launcher/holybook/sin
+/obj/item/weapon/gun/matter/holybook/sin
 	name = "Sin within"
 	desc = "A book from the faiths that are used to show the sinful."
 	projectile_type = /obj/item/projectile/beam/sniper/sin_within
 
-/obj/item/weapon/gun/matter/launcher/holybook/healing
+/obj/item/weapon/gun/matter/holybook/healing
 	name = "Book of Grace"
 	desc = "A book showing the mercy of the faith."
 	projectile_type = /obj/item/projectile/beam/sniper/healing
