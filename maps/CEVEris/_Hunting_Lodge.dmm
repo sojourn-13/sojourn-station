@@ -148,7 +148,7 @@
 "cR" = (/obj/structure/table/marble,/obj/machinery/chemical_dispenser/coffee_master,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "cS" = (/obj/structure/kitchenspike,/obj/machinery/light,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "cT" = (/obj/structure/kitchenspike,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"cU" = (/obj/machinery/vending/dinnerware,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"cU" = (/obj/machinery/vending/dinnerware/cooks,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "cV" = (/obj/structure/table/marble,/obj/machinery/chemical_dispenser/beer,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "cW" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Kitchen"},/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "cX" = (/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/forest/hunting_lodge_dark)
