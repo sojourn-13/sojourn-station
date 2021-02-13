@@ -109,7 +109,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/zippomes = "USER lights NAME with FLAME"
 	var/weldermes = "USER lights NAME with FLAME"
 	var/ignitermes = "USER lights NAME with FLAME"
-//	preloaded_reagents = list("nicotine" = 5)
+//	preloaded_reagents = list("nicotineplus" = 5)
 
 /obj/item/clothing/mask/smokable/Initialize()
 	reagent_flags |= NO_REACT // so it doesn't react until you light it
@@ -386,7 +386,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "cigaroff"
 	smoketime = 800
 	chem_volume = 25
-	preloaded_reagents = list("nicotine" = 14)
+	preloaded_reagents = list("nicotineplus" = 14)
 	quality_multiplier = 2
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
 	lightermes = "<span class='notice'>USER manages to offend their NAME by lighting it with FLAME.</span>"
@@ -400,6 +400,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "cigar2off"
 	icon_on = "cigar2on"
 	icon_off = "cigar2off"
+	smoketime = 1000
+	chem_volume = 45
+	preloaded_reagents = list("nicotineplus" = 20, "coffee" = 10)
 
 /obj/item/clothing/mask/smokable/cigarette/cigar/havana
 	name = "premium havanian cigar"
@@ -409,7 +412,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "cigar2off"
 	smoketime = 1100
 	chem_volume = 35
-	preloaded_reagents = list("nicotine" = 20)
+	preloaded_reagents = list("nicotineplus" = 20)
 	quality_multiplier = 3
 
 /obj/item/trash/cigbutt
@@ -487,7 +490,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	chem_volume = 50
 	w_class = ITEM_SIZE_SMALL
 	preloaded_reagents = list("nicotine" = 1)
-	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
+	matchmes = "<span class='notice'>USER lights their NAME with their FLAME in a very classy move.</span>"
 	lightermes = "<span class='notice'>USER manages to light their NAME with FLAME.</span>"
 	zippomes = "<span class='rose'>With much care, USER lights their NAME with their FLAME.</span>"
 	weldermes = "<span class='notice'>USER recklessly lights NAME with FLAME.</span>"

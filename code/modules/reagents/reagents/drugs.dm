@@ -39,7 +39,7 @@
 	name = "Serotrotium"
 	id = "serotrotium"
 	description = "A chemical compound that promotes concentrated production of the serotonin neurotransmitter in humans."
-	taste_description = "bitterness"
+	taste_description = "pure happiness"
 	reagent_state = LIQUID
 	color = "#202040"
 	metabolism = REM * 0.25
@@ -158,11 +158,11 @@
 	name = "Nicotine"
 	id = "nicotine"
 	description = "A highly addictive stimulant extracted from the tobacco plant."
-	taste_description = "pepper"
+	taste_description = "tobacco"
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0
+	addiction_chance = 0.05
 	nerve_system_accumulations = 10
 
 /datum/reagent/drug/nicotine/overdose(mob/living/carbon/M, alien, effect_multiplier)
@@ -176,8 +176,35 @@
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
 	if(prob(5))
-		M.vomit()
+		M.emote("cough")
+	M.adjustOxyLoss(0.5)
 	M.adjustToxLoss(0.5)
+
+/datum/reagent/drug/nicotineplus
+	name = "Nicotine"
+	id = "nicotine"
+	description = "A highly addictive and strong stimulant extracted from the tobacco plant, found on the finest of cigars."
+	taste_description = "fine tobacco"
+	reagent_state = LIQUID
+	color = "#181818"
+	overdose = REAGENTS_OVERDOSE
+	addiction_chance = 0.1
+	nerve_system_accumulations = 15
+
+/datum/reagent/drug/nicotineplus/overdose(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	M.add_chemical_effect(CE_PULSE, 1)
+	M.add_chemical_effect(CE_PAINKILLER, 10 * effect_multiplier)
+	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
+		M.add_chemical_effect(CE_ANTITOX, 10 * effect_multiplier)
+		M.heal_organ_damage(0.2 * effect_multiplier, 0.2 * effect_multiplier)
+
+/datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11)
+	if(prob(5))
+		M.emote("cough")
+	M.adjustOxyLoss(1)
+	M.adjustToxLoss(1)
 
 /datum/reagent/drug/hyperzine
 	name = "Hyperzine"
