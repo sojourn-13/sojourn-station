@@ -1,6 +1,6 @@
 /obj/item/weapon/grenade/flashbang
 	name = "HS FBG \"Serra\""
-	desc = "A \"Holland and Sullivan\" flashbang grenade. If in any doubt - use it."
+	desc = "A \"Holland & Sullivan\" flashbang grenade. If in any doubt - use it."
 	icon_state = "flashbang"
 	item_state = "flashbang"
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 1)

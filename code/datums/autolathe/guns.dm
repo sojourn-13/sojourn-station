@@ -23,7 +23,7 @@
 	build_path = /obj/item/weapon/gun/projectile/clarissa/makarov
 
 /datum/design/autolathe/gun/firefly
-	name = "H&S HG .35 \"Firefly\""
+	name = "GmbH HG .35 \"Firefly\""
 	build_path = /obj/item/weapon/gun/projectile/firefly
 
 /datum/design/autolathe/gun/colt
@@ -52,7 +52,7 @@
 	build_path = /obj/item/weapon/gun/projectile/ladon
 
 /datum/design/autolathe/gun/ladon_hs
-	name = "H&S HG .40 \"Ladon\""
+	name = "GmbH HG .40 \"Ladon\""
 	build_path = /obj/item/weapon/gun/projectile/ladon/hs
 
 /datum/design/autolathe/gun/ladon_sa
@@ -102,7 +102,7 @@
 	build_path = /obj/item/weapon/gun/projectile/lamia/scoped/dark
 
 /datum/design/autolathe/gun/scoped_lamia
-	name = "H&S HG .50 Kurtz \"Lamia\" Advanced"
+	name = "GmbH HG .50 Kurtz \"Lamia\" Advanced"
 	build_path = /obj/item/weapon/gun/projectile/lamia/scoped
 
 /datum/design/autolathe/gun/basilisk

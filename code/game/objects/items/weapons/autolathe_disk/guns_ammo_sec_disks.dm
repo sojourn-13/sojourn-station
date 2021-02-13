@@ -364,7 +364,7 @@
 
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firefly
-	disk_name = "H&S - .35 Firefly Pistol"
+	disk_name = "GmbH - .35 Firefly Pistol"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -421,7 +421,7 @@
 // .40 pistols
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ladon
-	disk_name = "H&S - .40 Auto-Mag Ladon Handgun"
+	disk_name = "GmbH - .40 Auto-Mag Ladon Handgun"
 	icon_state = "frozenstar"
 
 	license = 8

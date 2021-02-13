@@ -11,7 +11,7 @@
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_PISTOL
 	damage_multiplier = 1.2
 	recoil_buildup = 12
 	one_hand_penalty = 14
@@ -23,7 +23,7 @@
 	icon_state = "NM_colt"
 	item_state = "colt"
 	caliber = CAL_PISTOL
-	mag_well = MAG_WELL_PISTOL
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_PISTOL
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)
