@@ -42,10 +42,9 @@
 		return
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-	for(var/obj/item/organ/E in affected.internal_organs)
-		if (target.getBruteLoss() > 0)
-			user.visible_message(SPAN_NOTICE("[user] begins treating the brute damage to [target]'s body with the [tool_name]."), \
-			SPAN_NOTICE("You begin treating the brute damage to [target]'s body with the [tool_name]."))
+	if (target.getBruteLoss() > 0)
+		user.visible_message(SPAN_NOTICE("[user] begins treating the brute damage to [target]'s body with the [tool_name]."), \
+		SPAN_NOTICE("You begin treating the brute damage to [target]'s body with the [tool_name]."))
 
 	target.custom_pain("The pain in your [affected.name] is living hell!",1)
 	..()
@@ -57,14 +56,19 @@
 
 	if (!hasorgans(target))
 		return
-	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-	for(var/obj/item/organ/E in affected.internal_organs)
-		if (target.getBruteLoss() > 0)
-			user.visible_message(SPAN_NOTICE("[user] treats the brute damage to [target]'s body with the [tool_name]."), \
-			SPAN_NOTICE("You treat the brute damage to [target]'s body with [tool_name].") )
+	if(target.getBruteLoss() > 0)
+		var/heal_amount = -15
+		if(user.stats.getPerk(PERK_ADVANCED_MEDICAL))
+			heal_amount -= calculate_expert_surgery_bonus(user)
+		user.visible_message(SPAN_NOTICE("[user] treats the brute damage to [target]'s body with the [tool_name]."), \
+		SPAN_NOTICE("You treat the brute damage to [target]'s body with [tool_name].") )
+		var/charges_needed = target.getBruteLoss() / (heal_amount * -1)
+		// Take the ceiling of charges_needed as required_uses
+		var/required_uses = round(charges_needed) == charges_needed ? charges_needed : round(charges_needed + 1)
+		for(var/i = 0; i < required_uses; i++)
 			if(tool.use(1))
-				target.adjustBruteLoss(-15)
+				target.adjustBruteLoss(heal_amount)
 
 /datum/old_surgery_step/external/brute_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 
@@ -102,12 +106,12 @@
 
 	if (!hasorgans(target))
 		return
+
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-	for(var/obj/item/organ/E in affected.internal_organs)
-		if (target.getFireLoss() > 0)
-			user.visible_message(SPAN_NOTICE("[user] begins treating the burn damage to [target]'s body with the [tool_name]."), \
-			SPAN_NOTICE("You begin treating the burn damage to [target]'s body with the [tool_name].") )
+	if (target.getFireLoss() > 0)
+		user.visible_message(SPAN_NOTICE("[user] begins treating the burn damage to [target]'s body with the [tool_name]."), \
+		SPAN_NOTICE("You begin treating the burn damage to [target]'s body with the [tool_name].") )
 
 	target.custom_pain("The pain in your [affected.name] is living hell!",1)
 	..()
@@ -119,14 +123,19 @@
 
 	if (!hasorgans(target))
 		return
-	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-	for(var/obj/item/organ/E in affected.internal_organs)
-		if (target.getFireLoss() > 0)
-			user.visible_message(SPAN_NOTICE("[user] treats the burn damage to [target]'s body with the [tool_name]."), \
+	if(target.getFireLoss() > 0)
+		var/heal_amount = -15
+		if(user.stats.getPerk(PERK_ADVANCED_MEDICAL))
+			heal_amount -= calculate_expert_surgery_bonus(user)
+		user.visible_message(SPAN_NOTICE("[user] treats the burn damage to [target]'s body with the [tool_name]."), \
 			SPAN_NOTICE("You treat the burn damage to [target]'s body with [tool_name].") )
+		var/charges_needed = target.getFireLoss() / (heal_amount * -1)
+		// Take the ceiling of charges_needed as required_uses
+		var/required_uses = round(charges_needed) == charges_needed ? charges_needed : round(charges_needed + 1)
+		for(var/i = 0; i <= charges_needed; i++)
 			if(tool.use(1))
-				target.adjustFireLoss(-15)
+				target.adjustFireLoss(heal_amount)
 
 
 /datum/old_surgery_step/external/burn_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)

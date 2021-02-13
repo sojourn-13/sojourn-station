@@ -953,12 +953,13 @@ assassination method if you time it right*/
 					if(src.health<initial(src.health))
 						var/missing_health = initial(src.health) - src.health
 						user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+						var/user_mec = max(0, user.stats.getStat(STAT_MEC))
 						if(state == 3)
 							to_chat(user, SPAN_NOTICE("You are able to repair more damage to [src.name] from the inside."))
-							src.health += min(initial(src.health) / 4, missing_health)
+							src.health += min(initial(src.health) * (user_mec / 100), missing_health)
 						else
 							to_chat(user, SPAN_NOTICE("You repair some damage to [src.name]."))
-							src.health += min(10, missing_health)
+							src.health += min(user.stats.getStat(STAT_MEC) * 2, missing_health)
 					return
 			return
 

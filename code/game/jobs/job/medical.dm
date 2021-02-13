@@ -30,7 +30,7 @@
 		STAT_COG = 25
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/selfmedicated, /datum/perk/advanced_medical)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -82,7 +82,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/selfmedicated, /datum/perk/advanced_medical)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,

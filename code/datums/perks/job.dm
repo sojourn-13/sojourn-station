@@ -368,6 +368,10 @@
 	name = "Surgical Master"
 	desc = "When it comes to surgery most in your field are experts, while you may not know the more advanced medical procedures you can perform surgery with ease."
 
+/datum/perk/advanced_medical
+	name = "Advanced Medical Techniques"
+	desc = "Your advanced medical training has taught you special techniques for treating patients, enabling you to make more effective and efficient use of your resources."
+
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
 	desc = "Through your training with bolt action rifles and repeaters, after firing you will always chamber a new round instantly."
