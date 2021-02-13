@@ -521,8 +521,6 @@
 
 /obj/item/weapon/gun/proc/initialize_scope()
 	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/scope) in hud_actions
-	if(/mob/living/carbon/human/dummy/mannequin) //So we stop a runtime with character creation dummies
-		return
 	if(zoom_factor > 0)
 		if(!action)
 			action = new /obj/screen/item_action/top_bar/gun/scope
