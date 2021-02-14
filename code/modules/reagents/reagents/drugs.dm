@@ -181,8 +181,8 @@
 	M.adjustToxLoss(0.5)
 
 /datum/reagent/drug/nicotineplus
-	name = "Nicotine"
-	id = "nicotine"
+	name = "Fine Nicotine"
+	id = "nicotineplus"
 	description = "A highly addictive and strong stimulant extracted from the tobacco plant, found on the finest of cigars."
 	taste_description = "fine tobacco"
 	reagent_state = LIQUID
