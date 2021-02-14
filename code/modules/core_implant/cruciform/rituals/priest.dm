@@ -678,7 +678,7 @@
 
 /datum/ritual/cruciform/priest/reactivation
 	name = "Reconsecration"
-	phrase = "Vetus moritur et onus hoc levaverit"
+	phrase = "Vetus moritur et onus hoc levaverit."
 	desc = "The ritual needed for the reactivation and repair of a cruciform that has been unwillingly separated from the body or destroyed by the bearer's death. The process requires an altar and the cruciform in question to be attached."
 	power = 50
 
