@@ -2,7 +2,8 @@
 	name = "core implant"
 	icon = 'icons/obj/device.dmi'
 	w_class = ITEM_SIZE_SMALL
-	origin_tech = list(TECH_MATERIAL=6, TECH_BIO=9, TECH_DATA=9, TECH_ENGINEERING=9)
+	origin_tech = list(TECH_MATERIAL=9, TECH_BIO=20, TECH_DATA=20, TECH_ENGINEERING=12)
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_BIOMATTER = 3, MATERIAL_DIAMOND = 10)
 	external = TRUE
 	var/implant_type = /obj/item/weapon/implant/core_implant
 	var/active = FALSE
