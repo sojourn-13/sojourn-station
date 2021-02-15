@@ -23,7 +23,7 @@
 	var/datum/wires/robot/wires
 	var/ai_access = TRUE
 	var/power_efficiency = 1.0
-
+	var/vtech_added_speed = 0 //How much speed is added by vtech?
 
 	mob_size = MOB_LARGE
 

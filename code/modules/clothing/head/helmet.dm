@@ -163,6 +163,34 @@
 	siemens_coefficient = 0.5
 	price_tag = 150
 
+/obj/item/clothing/head/armor/helmet/tanker
+	name = "black tanker helmet"
+	desc = "Protects the head from damage while you are in a mech or joy riding the cargo trolley."
+	icon_state = "tanker_helmet"
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEEARS|BLOCKHAIR
+	siemens_coefficient = 1
+	armor = list(
+		melee = 15,
+		bullet = 15,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/head/armor/helmet/tanker/green
+	name = "green tanker helmet"
+	icon_state = "tanker_helmet_green"
+
+/obj/item/clothing/head/armor/helmet/tanker/brown
+	name = "brown tanker helmet"
+	icon_state = "tanker_helmet_brown"
+
+/obj/item/clothing/head/armor/helmet/tanker/gray
+	name = "gray tanker helmet"
+	icon_state = "tanker_helmet_gray"
+
 /obj/item/clothing/head/helmet/laserproof
 	name = "ablative helmet"
 	desc = "A helmet that excels in protecting the wearer against energy projectiles."

@@ -18,10 +18,10 @@
 	about = "This is a private military company that's quite old and has long since gone out of business. Their name is still found occasionally, due to their formerly wide influence."
 
 /datum/corporation/frozenstar
-	name = "Heckler and Sons"
+	name = "Holland & Sullivan"
 	textcolor = "#008585"
 	icon_state = "frozenstar"
-	about = "Heckler and Sons is a known arms manufacturer selling simple and reliable firearms. One of the five members of Hansa Trade Union."
+	about = "Holland & Sullivan is a known arms manufacturer selling simple and reliable firearms. One of the five members of Hansa Trade Union."
 
 /datum/corporation/valhalla
     name = "Valhalla Shipyards"

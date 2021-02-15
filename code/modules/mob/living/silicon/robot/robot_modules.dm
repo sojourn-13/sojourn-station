@@ -32,6 +32,8 @@ var/global/list/robot_modules = list(
 					LANGUAGE_SERBIAN = 1,
 					LANGUAGE_CYRILLIC = 1,
 					LANGUAGE_GERMAN = 1,
+					LANGUAGE_JANA = 1,
+					LANGUAGE_LATIN = 1,
 					LANGUAGE_JIVE = 0
 					)
 	var/sprites = list()
@@ -85,7 +87,7 @@ var/global/list/robot_modules = list(
 	R.maxHealth = health
 	R.health = R.maxHealth * healthpercent
 
-	R.speed_factor = speed_factor
+	R.speed_factor = speed_factor + R.vtech_added_speed
 	R.power_efficiency = power_efficiency
 
 	for(var/name in stat_modifiers)
@@ -764,7 +766,7 @@ var/global/list/robot_modules = list(
 	speed_factor = 1.15 //Fast
 	power_efficiency = 0.8 //Poor
 
-	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 
 	stat_modifiers = list(
@@ -845,7 +847,7 @@ var/global/list/robot_modules = list(
 		STAT_TGH = 30,
 		STAT_MEC = 30
 	)
-	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 /obj/item/weapon/robot_module/service/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
@@ -869,6 +871,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/tape_roll(src) //allows it to place flyers
 	src.modules += new /obj/item/weapon/stamp/denied(src) //why was this even a emagged item before smh
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/device/synthesized_instrument/synthesizer
 	src.emag = new /obj/item/weapon/stamp/chameleon(src)
 	src.emag = new /obj/item/weapon/pen/chameleon(src)
 	..(R)
@@ -923,12 +926,12 @@ var/global/list/robot_modules = list(
 	power_efficiency = 1.5 //Best efficiency
 
 	stat_modifiers = list(
-		STAT_ROB = 40,
-		STAT_TGH = 40,
+		STAT_ROB = 60,
+		STAT_TGH = 50,
 		STAT_BIO = 25,
 		STAT_COG = 25
 	)
-	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 	desc = "Built for digging anywhere, excavating the ores and materials to keep the colony running, \
 	this is heavy and powerful unit with a fairly singleminded purpose. It needs to withstand impacts \
@@ -973,7 +976,7 @@ var/global/list/robot_modules = list(
 	desc = "Built for working in a well-equipped lab, and designed to handle a wide variety of research \
 	duties, this module prioritises flexibility over efficiency. Capable of working in R&D, Toxins, \
 	chemistry, xenobiology and robotics."
-	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/stachle_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 	stat_modifiers = list(
 		STAT_BIO = 30,

@@ -300,6 +300,8 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
+		/datum/design/autolathe/ammo/shotgun_box,
+		/datum/design/autolathe/ammo/shotgun_pellet_box,
 	)
 
 
@@ -319,9 +321,8 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
-		/datum/design/autolathe/ammo/shotgun,
-		/datum/design/autolathe/ammo/shotgun_pellet,
-		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_box,
+		/datum/design/autolathe/ammo/shotgun_pellet_box,
 		/datum/design/autolathe/ammo/box_10x24 = 5,
 		/datum/design/autolathe/ammo/box_antim = 5,
 		)
@@ -363,7 +364,7 @@
 
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firefly
-	disk_name = "H&S - .35 Firefly Pistol"
+	disk_name = "GmbH - .35 Firefly Pistol"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -420,7 +421,7 @@
 // .40 pistols
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ladon
-	disk_name = "H&S - .40 Auto-Mag Ladon Handgun"
+	disk_name = "GmbH - .40 Auto-Mag Ladon Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -566,7 +567,7 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly
-	disk_name = "SA - 20mm Grizly Shotgun"
+	disk_name = "SA - 20mm Grizzly Shotgun"
 	icon_state = "ironhammer"
 
 	license = 8

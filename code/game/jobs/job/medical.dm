@@ -18,7 +18,7 @@
 		access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
 		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
-		access_external_airlocks, access_paramedic, access_research_equipment
+		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits
 	)
 
 	ideal_character_age = 40
@@ -30,7 +30,7 @@
 		STAT_COG = 25
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/selfmedicated, /datum/perk/advanced_medical)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -74,7 +74,7 @@
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
-		access_genetics, access_external_airlocks, access_research_equipment
+		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -82,7 +82,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/selfmedicated, /datum/perk/advanced_medical)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -119,7 +119,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
 
 	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly
+		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits
 	)
 
 	perks = list(/datum/perk/selfmedicated)
@@ -167,7 +167,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
 
 	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry
+		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -213,7 +213,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/medical/paramedic
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_paramedic,
-		access_eva, access_maint_tunnels, access_external_airlocks, access_chemistry
+		access_eva, access_maint_tunnels, access_external_airlocks, access_chemistry, access_medical_suits
 	)
 
 	stat_modifiers = list(

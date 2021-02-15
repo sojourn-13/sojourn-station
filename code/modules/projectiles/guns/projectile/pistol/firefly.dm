@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/firefly
 	name = "\"Firefly\" pistol"
-	desc = "A simple and reliable sidearm produced by Holland & Sullivan Arms for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses .35 Auto in high-capacity magazines.."
+	desc = "A simple and reliable sidearm produced by Seinemetall Defense GmbH for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses .35 Auto magazines."
 	icon = 'icons/obj/guns/projectile/firefly.dmi'
 	icon_state = "firefly"
 	item_state = "firefly"

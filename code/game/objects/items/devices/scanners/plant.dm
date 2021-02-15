@@ -17,10 +17,6 @@
 	)
 
 /obj/item/device/scanner/plant/is_valid_scan_target(atom/O)
-	if(!usr.stat_check(STAT_COG, STAT_LEVEL_BASIC))
-		to_chat(usr, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
-		return
-
 	if(is_type_in_list(O, valid_targets))
 		return TRUE
 	return FALSE

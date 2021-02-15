@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/sts
 	name = "\"STS\" carbine"
-	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds. This one is unmarked."
+	desc = "The rugged STS-25, the right arm of the unfree world. Uses Carbine rounds. This one is unmarked."
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -56,6 +56,7 @@
 	icon_state = "sts"
 	item_state = "sts"
 	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_MAGWELL)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 12)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn
 
@@ -91,6 +92,7 @@
 	item_state = "sts"
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 6)
 	price_tag = 600
 	recoil_buildup = 12
 	one_hand_penalty = 20
@@ -131,7 +133,7 @@
 	recoil_buildup = 10
 	one_hand_penalty = 20 //automatic rifle level
 	saw_off = FALSE
-
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_400
@@ -168,4 +170,5 @@
 	damage_multiplier = 1
 	recoil_buildup = 15
 	one_hand_penalty = 25
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	saw_off = FALSE

@@ -86,22 +86,22 @@
 	prices = list(
 		/obj/item/device/scanner/health = 50,
 
-		/obj/item/stack/medical/bruise_pack = 100, /obj/item/stack/medical/ointment = 100,
-		/obj/item/stack/medical/advanced/bruise_pack = 200, /obj/item/stack/medical/advanced/ointment = 200,
+		/obj/item/stack/medical/bruise_pack = 50, /obj/item/stack/medical/ointment = 35,
+		/obj/item/stack/medical/advanced/bruise_pack = 100, /obj/item/stack/medical/advanced/ointment = 100,
 		/obj/item/stack/nanopaste = 300,
 
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin = 100,
-		/obj/item/weapon/reagent_containers/syringe/antitoxin = 200,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricordrazine = 150,
-		/obj/item/weapon/reagent_containers/syringe/tricordrazine = 300,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/spaceacillin = 100,
-		/obj/item/weapon/reagent_containers/syringe/spaceacillin = 200,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin = 50,
+		/obj/item/weapon/reagent_containers/syringe/antitoxin = 100,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricordrazine = 75,
+		/obj/item/weapon/reagent_containers/syringe/tricordrazine = 125,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/spaceacillin = 50,
+		/obj/item/weapon/reagent_containers/syringe/spaceacillin = 100,
 
-		/obj/item/weapon/implantcase/death_alarm = 500,
-		/obj/item/weapon/implanter = 50,
+		/obj/item/weapon/implantcase/death_alarm = 25,
+		/obj/item/weapon/implanter = 25,
 
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/hyperzine = 500,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs = 500,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/hyperzine = 100,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs = 100,
 		)
 	vendor_department = DEPARTMENT_MEDICAL
 	auto_price = FALSE

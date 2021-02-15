@@ -30,7 +30,7 @@
 	health = 60
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	poison_type = "mutagen"
+	poison_per_bite = 4
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/midwife
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
@@ -181,7 +181,19 @@
 										continue
 									large_cocoon = 1
 
-									if (istype(M, /mob/living))
+									if(istype(M, /mob/living/carbon/human))
+										if(M.faction == "spiders")
+											continue
+										else
+											src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
+											M.drip_blood(200)
+											M.adjustToxLoss(200)
+											M.adjustOxyLoss(200)
+											M.adjustBrainLoss(60)
+											M.updatehealth()
+											fed += 1 //Takes 2 mobs before we can lay eggs
+
+									else if(istype(M, /mob/living))
 										src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
 										fed += 1 //Takes 2 mobs before we can lay eggs
 

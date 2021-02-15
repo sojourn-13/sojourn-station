@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/lamia
 	name = "\"Lamia\" heavy pistol"
-	desc = "The \"Lamia\", a massive handgun based on the M6 series, repackaged by Holland and Sullivan for civilian and law enforcement use. Uses .50 Kurtz."
+	desc = "The \"Lamia\", a massive handgun based on the M6 series, repackaged by Holland & Sullivan for civilian and law enforcement use. Uses .50 Kurtz."
 	icon = 'icons/obj/guns/projectile/lamia.dmi'
 	icon_state = "lamia"
 	item_state = "lamia"
@@ -45,7 +45,7 @@
 
 /obj/item/weapon/gun/projectile/lamia/scoped
 	name = "\"Lamia\" advanced heavy pistol"
-	desc = "H&S HG .50 \"Lamia\" Based on the \"Naga\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
+	desc = "Seinemetall Defense GmbH handgun .50 \"Lamia\" Based on the \"Naga\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
 	icon_state = "scoped_lamia"
 	item_state = "scoped_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5)

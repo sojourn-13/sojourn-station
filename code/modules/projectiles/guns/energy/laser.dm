@@ -93,7 +93,8 @@
 
 /obj/item/weapon/gun/energy/shrapnel
 	name = "\"Shellshock\" scrap rifle"
-	desc = "A slapped together junk design made as a copy of the far superior Reductor rail gun. It's projectiles fire slower and it has a wider delay between shots with the same issue of burning batteries out."
+	desc = "A slapped together junk design made as a copy of the far superior Reductor rail gun. It's projectiles fire slower and it has a wider delay between shots with the \
+	same issue of burning batteries out. The matter contained in empty cells can be converted directly into ammunition as well, if the safety bolts are loosened properly."
 	icon = 'icons/obj/guns/energy/energyshotgun.dmi'
 	icon_state = "eshotgun"
 	item_state = "eshotgun"
@@ -115,20 +116,37 @@
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/hrifle/railgun, icon="kill"),
+		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/weak, charge_cost=10000, icon="grenade"),
 		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/lrifle/incendiary, icon="destroy"),
 	)
-	var/consume_cell = TRUE
+	var/consume_cell = FALSE
 	price_tag = 500
 
 /obj/item/weapon/gun/energy/shrapnel/consume_next_projectile()
-	.=..()
-	if(. && consume_cell && cell.empty())
+	if(!cell) return null
+	if(!ispath(projectile_type)) return null
+	if(consume_cell && !cell.checked_use(charge_cost))
 		visible_message(SPAN_WARNING("\The [cell] of \the [src] burns out!"))
 		qdel(cell)
 		cell = null
 		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 		new /obj/effect/decal/cleanable/ash(get_turf(src))
-	return .
+		return new projectile_type(src)
+	else if(!consume_cell && !cell.checked_use(charge_cost))
+		return null
+	else
+		return new projectile_type(src)
+
+/obj/item/weapon/gun/energy/shrapnel/attackby(obj/item/I, mob/user)
+	..()
+	if(I.has_quality(QUALITY_BOLT_TURNING))
+		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
+			if(consume_cell)
+				consume_cell = FALSE
+				to_chat(user, SPAN_NOTICE("You secure the safety bolts and tune down the capacitor to safe levels, preventing the weapon from destroying empty cells for use as ammuniton."))
+			else
+				consume_cell = TRUE
+				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
 
 /obj/item/weapon/gun/energy/lasersmg
 	name = "Disco Vazer \"Lasblender\""
@@ -228,14 +246,15 @@
 	fire_sound = 'sound/weapons/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_HUGE
-	matter = list(MATERIAL_STEEL = 12)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 5)
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
+	charge_cost = 50
 	price_tag = 1000
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
-		WEAPON_CHARGE
+		BURST_2_ROUND
 	)
 	twohanded = TRUE
 
@@ -325,6 +344,11 @@
 	consume_cell = FALSE
 	cell_type = /obj/item/weapon/cell/small/high //Two shots
 	twohanded = FALSE
+	init_firemodes = list(
+		list(mode_name="Buckshot", mode_desc="Fires a buckshot synth-shell", projectile_type=/obj/item/projectile/bullet/pellet/shotgun, charge_cost=100, icon="kill"),
+		list(mode_name="Beanbag", mode_desc="Fires a beanbag synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, charge_cost=25, icon="stun"),
+		list(mode_name="Blast", mode_desc="Fires a slug synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun, charge_cost=null, icon="destroy"),
+	)
 
 /obj/item/weapon/gun/energy/firestorm
 	name = "\"Firestorm\" assault SMG"

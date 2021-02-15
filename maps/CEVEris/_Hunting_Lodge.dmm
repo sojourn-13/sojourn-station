@@ -260,7 +260,7 @@
 "eZ" = (/obj/structure/table/woodentable,/obj/random/toy/plushie_onlycat,/obj/item/weapon/storage/fancy/cigar,/obj/item/weapon/flame/lighter/zippo/bullet,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fa" = (/obj/structure/table/woodentable,/obj/item/toy/plushie,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fb" = (/obj/structure/table/woodentable,/obj/item/ammo_magazine/ammobox/light_rifle_257_small,/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow,/obj/item/weapon/tool/spear/hunter_halberd,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"fc" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/boltgun/scout/light/wood,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fc" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/boltgun/light_wood,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fd" = (/obj/structure/table/woodentable,/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fe" = (/obj/structure/table/rack/shelf,/obj/item/weapon/gun/projectile/boltgun/lever,/obj/item/ammo_magazine/ammobox/magnum_40/hv,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "ff" = (/obj/structure/table/woodentable,/obj/random/firstaid,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -368,11 +368,13 @@
 "uG" = (/obj/structure/table/reinforced,/obj/item/stack/material/wood/random,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "wZ" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/cable_coil/random,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "xv" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"zI" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/pill_bottle/dice,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "En" = (/obj/structure/table/reinforced,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/item/stack/rods/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "JC" = (/obj/structure/table/woodentable,/obj/machinery/recharger,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "ME" = (/obj/structure/table/rack/shelf,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Ng" = (/obj/structure/table/rack/shelf,/obj/item/stack/material/steel/random,/obj/item/weapon/tool/hammer,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "PW" = (/obj/structure/table/reinforced,/obj/item/stack/material/steel/random,/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Qd" = (/obj/structure/table/woodentable,/obj/item/weapon/deck/cards,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "TT" = (/obj/structure/table/rack/shelf,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/item/stack/rods/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Uz" = (/obj/structure/table/reinforced,/obj/random/ammo/shotgun,/obj/item/stack/material/steel/random,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "XX" = (/obj/structure/table/reinforced,/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow,/obj/item/stack/cable_coil/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -421,14 +423,14 @@ aBaZatatatatawatatatatatatatatatatatatatatatabatatatatatatatatatataDaDaCaDaDaDaD
 aBaOatatatatatatauatatatatatatatatatatatatatatatatayatatatatatatataDaDaDaDaDaDaDaDbGbkaPaPaPaPaPaPbObPbPbPbPbPbPbPbPbPbPbPbPbPbPbPbPbQaPaPaPaPaPaPaDaDaDaDaDaDaDaDaMaDaMaDaDaDaDaDaMaDaDaMaDaDatatataBaBaBaaaaaaaaaa
 aBaBatatabatatatatatatatatatatatatatatatawatatatatatatatatatatatataDaDaDaDaEaDaDaDbGbkaPbRbSbTbUbVbWbWbPbPbXbXbXbXbYbYbXbXbXbXbPbPbPbQbQbQbQbQbQaPaDaDaDaDaDaDaDaDaMaDaMbZaYaMaDaQaMaMaRaPaDaDatauataBaBaBaaaaaaaaaa
 aBaBatatabatatatatatawatatawatatatatatatatatatatatatatatawatayatataDaDaDaDaDaDaDaCbGbkaPcacacacacacabWcbbPcccdcccecccccecccdccbPbPbPbQbQbQbQbQbQaPaDaDaDaDaDaDaDaDaYaDaYaMaMaDaDaDaYaMaDaMaEaDaDatataBaBaBaaaaaaaaaa
-aBaBatawatatatayatatatatatatatatatatawatavatatawatatatatatatatataDaDaDaDaDaDaDaDaDbGbkaPcfcacacacacabWcbbPcgcccccccececcccccccbPbPbPchbPbPbPbPdHaPaDaDaDaDaDaDaDaDaPaDaDaDaDaDaDaDaDaDaDaMaDaDaDatatataBaBaaaaaaaaaa
+aBaBatawatatatayatatatatatatatatatatawatavatatawatatatatatatatataDaDaDaDaDaDaDaDaDbGbkaPcfcacacacacabWcbbPcgcczIcccececcQdccccbPbPbPchbPbPbPbPdHaPaDaDaDaDaDaDaDaDaPaDaDaDaDaDaDaDaDaDaDaMaDaDaDatatataBaBaaaaaaaaaa
 aBaBatatatatatatatatatatavayatatatayatatatatatatatatatatatatatataDaDaDaDaDaDaDaDaDbGbkaPcicacjckcacabWcbbPbPbPbPbPbPbPbPbPbPbPbPbPbPclclclbPbPbPaPaDaCaDaDaDaDaDaDaPaMaMaMaPaPaMaMaMaYaMaPaDaDaDatatatataBaaaaaaaaaa
 aBaBatatatatatatatawatatatatatatatatavatatatauatazatatawatatatataDaDaDaDaDaDaDaDaDbGbkaPcmcacncocacabWcbbPbPbPbPbPbPbPefbPbPclclclcpcqcrcsctbPbPaPaDaDaDaDaDaCaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDatatatatataBaBaaaaaaaaaa
-aBaOawatatatatatauatatatatatatavatatatatatatatatatatatatavatatataDaDaDaDaDaDaDaDaDbGbkaPcucacvcwcacabWcbbPbPbXccccbXbPbPbPctcrcrcxcycrcrczcAbPbPaPaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDatatatatataBaBaaaaaaaaaa
+aBaOawatatatatatauatatatatatatavatatatatatatatatatatatatavatatataDaDaDaDaDaDaDaDaDbGbkaPcucacvcwcacabWcbbPbPbXQdccbXbPbPbPctcrcrcxcycrcrczcAbPbPaPaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDatatatatataBaBaaaaaaaaaa
 aBaBatatatatatatatatatatatawatatababatataDaDaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDbGbkaPcBcacCcDcacabWcbbPbPbXccccbXbPbPbPcEcrcFcGcHcrcrcrcIbPcJaPaDaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaDatatatatataBaBaaaaaaaaaa
-aBaBatatatatatatatatatatatatatatatatatawaDaDaCaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaCaDbGbkaPcKcacacacacacLbPbPbPbXcgccbXbPbPbPcMcrcrcNcOcPcPcPctbPbPaPaDaDaDaDaDaDaDaHaDaDaDaDaDaDaDaEaDaDaDaDaDatatatatataBaBaaaaaaaaaa
+aBaBatatatatatatatatatatatatatatatatatawaDaDaCaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaCaDbGbkaPcKcacacacacacLbPbPbPbXcgzIbXbPbPbPcMcrcrcNcOcPcPcPctbPbPaPaDaDaDaDaDaDaDaHaDaDaDaDaDaDaDaEaDaDaDaDaDatatatatataBaBaaaaaaaaaa
 aBaBatatatatatayatatatatatayatatatatatataDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDbGbkaPcQcacacacacacRbPbPbPbXccccbXbPbPbPctcPcPcpbPbPbPbPbPbPdHaPaDaCaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatauataBaBaaaaaaaaaa
-aBaBatatatawatatatatatatatatatataDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaCbfbfbfbfbfbfbfbfbnbkaPcKcacacScTcUcVbPbPbPbXceccbXbPbPbPbPbPbPbPbPbPbPejbQbQbQaPaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDatatatatataBaBaaaaaaaaaa
+aBaBatatatawatatatatatatatatatataDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaCbfbfbfbfbfbfbfbfbnbkaPcKcacacScTcUcVbPbPbPbXceQdbXbPbPbPbPbPbPbPbPbPbPejbQbQbQaPaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDatatatatataBaBaaaaaaaaaa
 aBaBatatatatatatatatatatawatatataEaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDbGboaTaTaTaTaTaTaTaTaXaPbQbQcWbQbQbQbQbPbPbPbPbPbPbPbPefbPbPbPbPbPbPbPbPcXcYcZbQaPaDaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDatatatatataBaBaaaaaaaaaa
 aBaBatatatatatatatatatatatatatataDaDaDaPaPaPaPaPaPaPaPaPaPaPaPaDbGbkaDaDaDaDaDaDaDaDaMaPbQbQbPbPchbPbPbPbPbPbPbPbPbPbPbPbPbPbPbPbPbPbPbPcXcYcZbQaPaDaDaDaDaCaDaDaDaDaDaDaDaDaDaHaDaDaCaDaDaDatatatatataBaBaaaaaaaaaa
 aBaOatawatatatatatatatatayatatataDaDaDaPdbdcdedcdcdcdcdedfdfaPaDbGbkaDaDaDaDaDaDaDaDaMaPbQbQbPbPbPddddddddddddddbPbPbPbPddddddddddddddddembQbQbQaPaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatatataBaBaaaaaaaaaa

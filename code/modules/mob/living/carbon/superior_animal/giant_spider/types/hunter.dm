@@ -72,9 +72,6 @@
 /mob/living/carbon/superior_animal/giant_spider/tarantula/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))
 		var/mob/living/L = A
-		if(istype(L) && L.reagents)
-			L.reagents.add_reagent(poison_type, poison_per_bite)
-
 		if(istype(L) && !L.weakened && prob(15))
 			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE))
 				return

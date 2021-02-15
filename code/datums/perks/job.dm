@@ -222,7 +222,8 @@
 
 /datum/perk/fast_fingers
 	name = "Fast fingers"
-	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary! Your thefts are much more difficult to notice."
+	desc = "Nothing is safe around your hands. You are a true kleptomaniac. Taking items off others is without sound and prompts provided its in their pockets, hands, or on their ears. \
+	It's also quicker and you can slip pills into drinks unnoticed."
 	//icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
 
 /datum/perk/quiet_as_mouse
@@ -368,6 +369,10 @@
 	name = "Surgical Master"
 	desc = "When it comes to surgery most in your field are experts, while you may not know the more advanced medical procedures you can perform surgery with ease."
 
+/datum/perk/advanced_medical
+	name = "Advanced Medical Techniques"
+	desc = "Your advanced medical training has taught you special techniques for treating patients, enabling you to make more effective and efficient use of your resources."
+
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
 	desc = "Through your training with bolt action rifles and repeaters, after firing you will always chamber a new round instantly."
@@ -409,3 +414,21 @@
 /datum/perk/job/butcher
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is is unmatched be it through your training or experience. You can harvest additional valuable parts from animals you cut up, as well as gain a bonus on succeeding in all harvesting skill checks."
+
+/datum/perk/greenthumb
+	name = "Green Thumb"
+	desc = "After growing plants for years (or at least being around those that do) you have become a botanical expert. You can get all information about plants, from stats \
+	        to harvest reagents, by examining them."
+	//icon_state = "greenthumb" // https://game-icons.net/1x1/delapouite/farmer.html
+
+	var/virtual_scanner = new /obj/item/device/scanner/plant
+
+/datum/perk/greenthumb/assign(mob/living/carbon/human/H)
+	..()
+	var/obj/item/device/scanner/V = virtual_scanner
+	V.is_virtual = TRUE
+
+/datum/perk/neat
+	name = "Humble Cleanser"
+	desc = "You're used to seeing filth in all its forms. Your motto: a clean colony and workspace is the first step to enlightenment. The simple act of such humble work as cleaning grants your inspiration."
+	//icon_state = "neat" // https://game-icons.net/1x1/delapouite/broom.html

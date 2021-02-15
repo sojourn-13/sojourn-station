@@ -70,7 +70,7 @@
 /datum/gear/head/turban
 	display_name = "turban"
 	path = /obj/item/clothing/head/turban
-	
+
 /datum/gear/head/fishbowl
 	display_name = "fishbowl helmet"
 	path = /obj/item/clothing/head/costume/misc/fishbowl
@@ -78,3 +78,17 @@
 /datum/gear/head/rice_hat
 	display_name = "rice hat"
 	path = /obj/item/clothing/head/rice_hat
+
+/datum/gear/head/tanker_helmet/color_presets
+	display_name = "tanker helmet, color presets"
+	path = /obj/item/clothing/head/armor/helmet/tanker
+
+/datum/gear/head/tanker_helmet/color_presets/New()
+	..()
+	var/tanker_helmet = list(
+		"Black"		=	/obj/item/clothing/head/armor/helmet/tanker,
+		"Green"		=	/obj/item/clothing/head/armor/helmet/tanker/green,
+		"Brown"		=	/obj/item/clothing/head/armor/helmet/tanker/brown,
+		"Gray"		=	/obj/item/clothing/head/armor/helmet/tanker/gray,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(tanker_helmet)
