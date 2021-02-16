@@ -1,4 +1,3 @@
-
 /obj/item/weapon/gun/projectile/boltgun/light
 	name = "\"Sika\" light boltgun"
 	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."

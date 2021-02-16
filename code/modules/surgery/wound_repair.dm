@@ -133,7 +133,7 @@
 		var/charges_needed = target.getFireLoss() / (heal_amount * -1)
 		// Take the ceiling of charges_needed as required_uses
 		var/required_uses = round(charges_needed) == charges_needed ? charges_needed : round(charges_needed + 1)
-		for(var/i = 0; i <= charges_needed; i++)
+		for(var/i = 0; i <= required_uses; i++)
 			if(tool.use(1))
 				target.adjustFireLoss(heal_amount)
 

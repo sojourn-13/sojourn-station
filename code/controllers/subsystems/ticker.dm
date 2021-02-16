@@ -47,6 +47,8 @@ SUBSYSTEM_DEF(ticker)
 	//station_explosion used to be a variable for every mob's hud. Which was a waste!
 	//Now we have a general cinematic centrally held within the gameticker....far more efficient!
 	var/obj/screen/cinematic = null
+	var/scheduled_restart = null
+	var/automatic_restart_allowed = TRUE
 
 /datum/controller/subsystem/ticker/Initialize(start_timeofday)
 	if(!syndicate_code_phrase)
@@ -126,7 +128,10 @@ SUBSYSTEM_DEF(ticker)
 			if(!process_empty_server())
 				return
 
-			var/game_finished = (evacuation_controller.round_over() || ship_was_nuked  || universe_has_ended)
+			if(automatic_restart_allowed && config.automatic_restart_time && config.automatic_restart_time < world.time)
+				shift_end()
+
+			var/game_finished = (evacuation_controller.round_over() || ship_was_nuked  || universe_has_ended || (scheduled_restart && scheduled_restart < world.time))
 
 			if(!nuke_in_progress && game_finished)
 				current_state = GAME_STATE_FINISHED
@@ -518,3 +523,8 @@ datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 	log_game("Antagonists at round end were...")
 	for(var/i in total_antagonists)
 		log_game("[i]s[total_antagonists[i]].")
+
+/datum/controller/subsystem/ticker/proc/shift_end(round_end_time = config.automatic_restart_delay)
+	command_announcement.Announce("Todays shift will be ending in [round(round_end_time/(1 MINUTE))] minute[round_end_time >= 1 MINUTE && round_end_time < 2 MINUTES ? "" : "s"]. Please finish up all tasks and return department equipment.", "Shift End Call", new_sound = 'sound/misc/notice3.ogg')
+	automatic_restart_allowed = FALSE
+	scheduled_restart = world.time + round_end_time
