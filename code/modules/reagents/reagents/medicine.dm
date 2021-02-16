@@ -436,7 +436,7 @@
 		var/mob/living/carbon/human/H = M
 
 		for(var/obj/item/organ/I in H.internal_organs)
-			if((I.damage > 0) && !BP_IS_ROBOTIC(I) && !istype(/obj/item/organ/internal/bone)) //Stop healing bones, bones are not organs!
+			if((I.damage > 0) && !BP_IS_ROBOTIC(I) && !istype(I, /obj/item/organ/internal/bone)) //Stop healing bones, bones are not organs!
 				I.heal_damage(((0.2 + I.damage * 0.05) * effect_multiplier), FALSE)
 		var/obj/item/organ/internal/nerve/N = H.random_organ_by_process(OP_NERVE)
 		if(H && istype(H))
