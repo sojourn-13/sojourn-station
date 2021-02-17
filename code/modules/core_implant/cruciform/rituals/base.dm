@@ -40,7 +40,7 @@
 
 /datum/ritual/cruciform/base/flare
 	name = "Trickling Light"
-	phrase = "Absumet heres Caecuba dignior sit illuminatus."
+	phrase = "Lucerna pedibus meis verbum tuum, et lumen semitis meis."
 	desc = "Litany of pilgrims that creates a small light for some time."
 	power = 15 //Cheap but not tooo cheap
 
