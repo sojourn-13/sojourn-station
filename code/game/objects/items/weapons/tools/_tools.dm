@@ -491,7 +491,10 @@
 	var/crit_fail_chance = 25
 
 	if(required_stat)
-		crit_fail_chance = crit_fail_chance - user.stats.getStat(required_stat)
+		if(islist(required_stat))
+			crit_fail_chance = crit_fail_chance - user.stats.getMaxStat(required_stat)
+		else
+			crit_fail_chance = crit_fail_chance - user.stats.getStat(required_stat)
 
 	if (crit_fail_chance <= 0)
 		return
