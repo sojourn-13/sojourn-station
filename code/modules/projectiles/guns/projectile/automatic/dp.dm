@@ -1,4 +1,3 @@
-
 /obj/item/weapon/gun/projectile/automatic/dp
 	name = "\"Pulemyot Degtyaryova\" light machinegun"
 	desc = "A cruedly made yet reliable top-loading machine gun manufactured by the local Nadezhda Marshals. It appears to have specifically been made to use spare pan-magazines from Maxims."

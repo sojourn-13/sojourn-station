@@ -5,16 +5,20 @@
 
 /obj/random/gun_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/projectile/mk58 = 1,\
-				/obj/item/weapon/gun/projectile/mk58/wood = 1,
-				/obj/item/weapon/gun/projectile/revolver/detective = 4,
-				/obj/item/weapon/gun/energy/shrapnel = 4,
-				/obj/item/weapon/gun/energy/lasersmg = 3,
-				/obj/item/ammo_kit = 3,
+				/obj/item/weapon/gun/projectile/mk58/wood = 1,\
+				/obj/item/weapon/gun/projectile/revolver/detective = 3,\
+				/obj/item/weapon/gun/energy/shrapnel = 4,\
+				/obj/item/weapon/gun/energy/lasersmg = 3,\
+				/obj/item/ammo_kit = 3,\
+				/obj/item/weapon/gun/projectile/automatic/alemao = 2,\
 				/obj/item/weapon/gun/projectile/giskard = 2,\
+				/obj/item/weapon/gun/projectile/automatic/luger = 1,\
 				/obj/item/weapon/gun/projectile/boltgun/sa = 3,\
+				/obj/item/weapon/gun/projectile/boltgun/zatvor = 1,\
 				//obj/item/weapon/gun/projectile/boltgun/scout/light = 2,
 				//obj/item/weapon/gun/projectile/boltgun/scout/light/wood = 3,
 				/obj/item/weapon/gun/projectile/shotgun/pump = 0.5,\
+				/obj/item/weapon/gun/projectile/revolver/sixshot/sawn = 0.5,\
 				/obj/item/weapon/gun/projectile/shotgun/pump/sawn = 1,\
 				/obj/item/weapon/gun/projectile/shotgun/pump/obrez = 2,\
 				/obj/item/weapon/gun/projectile/boltgun/sawn/light_wood = 0.5,\
@@ -47,10 +51,15 @@
 	return pickweight(list(/obj/item/weapon/gun/projectile/lamia = 0.1,\
 				/obj/item/weapon/gun/projectile/automatic/texan = 0.5,\
 				/obj/item/weapon/gun/projectile/lamia/dark = 0.1,\
+				/obj/item/weapon/gun/projectile/revolver/rev10 = 0.5,\
 				//obj/item/weapon/gun/projectile/lamia/dark/sf = 0.1,
 				/obj/item/weapon/gun/projectile/ladon = 0.5,\
 				/obj/item/weapon/gun/projectile/ladon/sa = 0.5,\
 				/obj/item/weapon/gun/projectile/ladon/hs = 0.5,\
+				/obj/item/weapon/gun/projectile/automatic/nordwind/strelki = 0.1,\
+				/obj/item/weapon/gun/projectile/automatic/ppsh/ppv = 0.1,\
+				/obj/item/weapon/gun/projectile/revolver/sixshot = 1,\
+				/obj/item/weapon/gun/projectile/boltgun/lever = 1.5,\
 				/obj/item/weapon/gun/projectile/automatic/mac = 0.1,\
 				//obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 2,
 				/obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn = 0.5,\
@@ -95,6 +104,7 @@
 				//obj/item/weapon/gun/projectile/automatic/sts/hrifle = 1,
 				/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/weapon/gun/projectile/automatic/sts/hrifle/sawn = 1,\
+				/obj/item/weapon/gun/projectile/automatic/greasegun = 1,\
 				//obj/item/weapon/gun/projectile/automatic/lmg/saw = 0.5,
 				//obj/item/weapon/gun/projectile/automatic/pitbull = 1,
 				//obj/item/weapon/gun/projectile/automatic/ak47/sa = 3,
@@ -127,6 +137,7 @@
 				/obj/item/weapon/gun/projectile/ladon = 1,\
 				/obj/item/weapon/gun/projectile/lamia/akurra = 1,\
 				/obj/item/weapon/gun/projectile/basilisk = 2,\
+				/obj/item/weapon/gun/projectile/automatic/survivalrifle = 1,\
 				/obj/item/weapon/gun/projectile/revolver/mateba = 1,\
 				/obj/item/weapon/gun/projectile/silenced = 2,\
 				/obj/item/weapon/gun/projectile/revolver/mistral = 2,\
@@ -159,7 +170,9 @@
 	return pickweight(list(/obj/item/weapon/gun/energy/gun/martin = 2,\
 				/obj/item/weapon/gun/energy/ntpistol = 2,\
 				/obj/item/weapon/gun/energy/gun = 2,\
-				/obj/item/weapon/gun/energy/retro = 1))
+				/obj/item/weapon/gun/energy/retro = 1,\
+				/obj/item/weapon/gun/energy/lasercore = 1,\
+				/obj/item/weapon/gun/energy/firestorm = 0.5))
 
 /obj/random/gun_energy_cheap/low_chance
 	name = "low chance random cheap energy weapon"
