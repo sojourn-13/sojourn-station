@@ -38,6 +38,19 @@
 	H.adjustToxLoss(5)
 	return TRUE
 
+/datum/ritual/cruciform/base/flare
+	name = "Trickling Light"
+	phrase = "Absumet heres Caecuba dignior sit illuminatus."
+	desc = "Litany of pilgrims that creates a small light for some time."
+	power = 15 //Cheap but not tooo cheap
+
+/datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+	var/turf/T = get_turf(src)
+	playsound(src, 'sound/effects/snap.ogg', 50, 1)
+	new /obj/effect/sparks(T)
+	new /obj/effect/effect/smoke/illumination(T, brightness=max(6), lifetime=30000) //Not as good as a flare or flare shell but its almost free!
+	return TRUE
+
 
 /datum/ritual/cruciform/base/entreaty
 	name = "Entreaty"
