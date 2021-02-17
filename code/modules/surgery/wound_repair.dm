@@ -131,8 +131,6 @@
 		user.visible_message(SPAN_NOTICE("[user] treats the burn damage to [target]'s body with the [tool_name]."), \
 			SPAN_NOTICE("You treat the burn damage to [target]'s body with [tool_name].") )
 		var/charges_needed = target.getFireLoss() / (heal_amount * -1)
-		// Take the ceiling of charges_needed as required_uses
-		var/required_uses = round(charges_needed) == charges_needed ? charges_needed : round(charges_needed + 1)
 		for(var/i = 0; i <= charges_needed; i++)
 			if(tool.use(1))
 				target.adjustFireLoss(heal_amount)
@@ -183,14 +181,17 @@
 
 	if (!hasorgans(target))
 		return
-	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-	for(var/obj/item/organ/E in affected.internal_organs)
-		if (target.getToxLoss() >= 0)
-			user.visible_message(SPAN_NOTICE("[user] finishess filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
-			SPAN_NOTICE("You finish filtering out any toxins to [target]'s body and repairing any neural degradation with the [tool_name].") )
+	if (target.getToxLoss() >= 0)
+		var/heal_amount = -40 // Same total heal per full stack as before
+		if(user.stats.getPerk(PERK_ADVANCED_MEDICAL))
+			heal_amount -= calculate_expert_surgery_bonus(user) * 2
+		user.visible_message(SPAN_NOTICE("[user] finishes filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
+		SPAN_NOTICE("You finish filtering out any toxins to [target]'s body and repairing any neural degradation with the [tool_name].") )
+		var/charges_needed = target.getToxLoss() / (heal_amount * -1)
+		for(var/i = 0; i <= charges_needed; i++)
 			if(tool.use(1))
-				target.adjustToxLoss(-200)
+				target.adjustToxLoss(heal_amount)
 				target.timeofdeath = 99999999
 
 
