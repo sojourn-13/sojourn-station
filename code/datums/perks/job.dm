@@ -373,6 +373,10 @@
 	name = "Advanced Medical Techniques"
 	desc = "Your advanced medical training has taught you special techniques for treating patients, enabling you to make more effective and efficient use of your resources."
 
+/datum/perk/robotics_expert
+	name = "Robotics Expert"
+	desc = "Your training in advanced robotics has made you more adept at working with such devices."
+
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
 	desc = "Through your training with bolt action rifles and repeaters, after firing you will always chamber a new round instantly."

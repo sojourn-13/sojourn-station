@@ -59,9 +59,10 @@
 
 	if(target.getBruteLoss() > 0)
 		var/heal_amount = -15
-		if(user.stats.getPerk(PERK_ADVANCED_MEDICAL))
+		var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
+		if(advanced_medical)
 			heal_amount -= calculate_expert_surgery_bonus(user)
-		user.visible_message(SPAN_NOTICE("[user] treats the brute damage to [target]'s body with the [tool_name]."), \
+		user.visible_message(SPAN_NOTICE("[user] [advanced_medical ? "expertly" : ""] treats the brute damage to [target]'s body with the [tool_name]."), \
 		SPAN_NOTICE("You treat the brute damage to [target]'s body with [tool_name].") )
 		var/charges_needed = target.getBruteLoss() / (heal_amount * -1)
 		// Take the ceiling of charges_needed as required_uses
@@ -126,9 +127,10 @@
 
 	if(target.getFireLoss() > 0)
 		var/heal_amount = -15
-		if(user.stats.getPerk(PERK_ADVANCED_MEDICAL))
+		var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
+		if(advanced_medical)
 			heal_amount -= calculate_expert_surgery_bonus(user)
-		user.visible_message(SPAN_NOTICE("[user] treats the burn damage to [target]'s body with the [tool_name]."), \
+		user.visible_message(SPAN_NOTICE("[user] [advanced_medical ? "expertly" : ""] treats the burn damage to [target]'s body with the [tool_name]."), \
 			SPAN_NOTICE("You treat the burn damage to [target]'s body with [tool_name].") )
 		var/charges_needed = target.getFireLoss() / (heal_amount * -1)
 		for(var/i = 0; i <= charges_needed; i++)
@@ -184,9 +186,10 @@
 
 	if (target.getToxLoss() >= 0)
 		var/heal_amount = -40 // Same total heal per full stack as before
-		if(user.stats.getPerk(PERK_ADVANCED_MEDICAL))
+		var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
+		if(advanced_medical)
 			heal_amount -= calculate_expert_surgery_bonus(user) * 2
-		user.visible_message(SPAN_NOTICE("[user] finishes filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
+		user.visible_message(SPAN_NOTICE("[user] finishes [advanced_medical ? "expertly" : ""] filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
 		SPAN_NOTICE("You finish filtering out any toxins to [target]'s body and repairing any neural degradation with the [tool_name].") )
 		var/charges_needed = target.getToxLoss() / (heal_amount * -1)
 		for(var/i = 0; i <= charges_needed; i++)
