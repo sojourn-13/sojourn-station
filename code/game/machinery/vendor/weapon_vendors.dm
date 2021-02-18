@@ -12,6 +12,7 @@
 	/obj/item/weapon/gun/projectile/giskard = 2,
 	/obj/item/weapon/gun/projectile/colt = 2,
 	/obj/item/weapon/gun/energy/gun/martin = 2,
+	/obj/item/weapon/gun/projectile/glock = 2,
 	/obj/item/weapon/gun/projectile/revolver/detective = 2,
 	/obj/item/weapon/gun/projectile/clarissa = 2, // SoJ edit
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 3,
@@ -65,6 +66,7 @@
 	/obj/item/weapon/gun/projectile/giskard = 500,
 	/obj/item/weapon/gun/projectile/colt = 900,
 	/obj/item/weapon/gun/energy/gun/martin = 120,
+	/obj/item/weapon/gun/projectile/glock = 900,
 	/obj/item/weapon/gun/projectile/revolver/detective = 400,
 	/obj/item/weapon/gun/projectile/clarissa = 450, //Weakest gun in the game - SoJ Edit
 	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1500,
