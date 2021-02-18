@@ -807,7 +807,7 @@
 			m_type = 2
 			playsound(loc, 'sound/voice/purr.ogg', 50, 1, -1)
 		if ("ycackle")
-			message = "purrs softly."
+			message = "cackles like a hyena!"
 			m_type = 2
 			playsound(loc, 'sound/voice/YeenCackle.ogg', 50, 1, -1)
 
