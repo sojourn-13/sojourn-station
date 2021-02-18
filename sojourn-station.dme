@@ -2375,6 +2375,7 @@
 #include "code\modules\projectiles\guns\projectile\pistol\colt.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\firefly.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\giskard.dm"
+#include "code\modules\projectiles\guns\projectile\pistol\glock.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\gyropistol.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\handmade.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\ladon.dm"
