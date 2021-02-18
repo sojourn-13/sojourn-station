@@ -65,9 +65,9 @@
 		SPAN_NOTICE("You finish patching damage to [organ.get_surgery_name()] with \the [tool].")
 	)
 	if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
-			organ.heal_damage(50, 0, TRUE)
-		else
-			organ.heal_damage(rand(30, 50), 0, TRUE)
+		organ.heal_damage(50, 0, TRUE)
+	else
+		organ.heal_damage(rand(30, 50), 0, TRUE)
 
 /datum/surgery_step/robotic/fix_brute/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
