@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/colt
 	name = "\"Colt\" pistol"
-	desc = "A cheap knock-off of an M1911 produced by Scarborough Arms. Uses .35 rounds."
+	desc = "A cheap knock-off of an M1911 produced by Holland & Sullivan. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/colt.dmi'
 	icon_state = "colt"
 	item_state = "colt"
@@ -31,7 +31,7 @@
 
 /obj/item/weapon/gun/projectile/colt/ten
 	name = "\"Delta Elite\" magnum pistol"
-	desc = "A classy civilian high-powered automatic based on the M1911 series handguns, with significant reinforcements produded by Holland & Sullivan Arms. Uses .40 Auto-Mag."
+	desc = "A classy civilian high-powered automatic based on the M1911 series handguns, with significant reinforcements produded by Scarborough Arms. Uses .40 Auto-Mag."
 	icon_state = "delta"
 	item_state = "colt"
 	w_class = ITEM_SIZE_NORMAL
