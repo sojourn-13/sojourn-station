@@ -10,7 +10,7 @@
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	caliber = CAL_RIFLE
-	fire_delay = 12 // double the standart
+	fire_delay = 2 // double the standart
 	damage_multiplier = 1.1
 	penetration_multiplier  = 1.5
 	recoil_buildup = 40 //same as AMR
@@ -44,7 +44,7 @@
 	recoil_buildup = 50
 	penetration_multiplier = 0.5
 	damage_multiplier = 0.9
-	fire_delay = 18
+	fire_delay = 4
 	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
