@@ -31,7 +31,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/selfmedicated, /datum/perk/surgical_master)
+	perks = list(/datum/perk/selfmedicated, /datum/perk/surgical_master, /datum/perk/robotics_expert)
 
 	// TODO: enable after baymed
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -132,7 +132,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/selfmedicated, /datum/perk/surgical_master)
+	perks = list(/datum/perk/selfmedicated, /datum/perk/surgical_master, /datum/perk/robotics_expert)
 
 	description = "The Roboticist is a specialized scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
 	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\
