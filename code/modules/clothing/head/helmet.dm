@@ -202,6 +202,18 @@
 	siemens_coefficient = 0.5
 	price_tag = 150
 
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security
+	name = "outdated ablative helmet"
+	desc = "A \"Iron Lock Security\" helmet that excels in protecting the wearer against energy projectiles this even after all these years still is the base of ablative helmet design. Produced by Greyson Positronic"
+	icon_state = "ablative"
+	armor = list(melee = 20, bullet = 20, energy = 70, bomb = 50, bio = 10, rad = 0)
+	flags_inv = HIDEEARS|HIDEEYES
+	cold_protection = HEAD
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_PLATINUM = 2) //cheaper
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0.5
+	price_tag = 150
+
 /obj/item/clothing/head/helmet/mercenary
 	name = "mercenary helmet"
 	desc = "What happens when someone combines ablative, melee, and bullet plating in the form of a fetching tan and visor. Not as singularly powerful as each individually but the best all round protection one can get."

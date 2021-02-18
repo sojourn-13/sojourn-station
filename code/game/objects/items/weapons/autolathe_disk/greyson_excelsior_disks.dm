@@ -45,9 +45,10 @@
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/armor
 	disk_name = "Greyson Positronics - Ablative Vest"
 	icon_state = "onestar"
-	license = 3
+	license = 6 //3 sets
 	designs = list(
 		/datum/design/autolathe/clothing/iron_lock_security_armor,
+		/datum/design/autolathe/clothing/iron_lock_security_helmet,
 	)
 
 // Excelsior We also replace "name" for spawning reasons

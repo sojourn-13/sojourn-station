@@ -27,6 +27,12 @@
 	max_shells = 60
 	recoil_buildup = 20
 
+/obj/item/weapon/gun/projectile/revolver/mistral/elite/New()
+	..()
+	item_flags |= BLUESPACE
+	bluespace_entropy(2, get_turf(src)) //Same as the normal bluespace crystal
+
+
 /obj/item/weapon/gun/projectile/shotgun/pump/obrez/thunderlord
 	name = "\"Thunderlord\" shotgun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
