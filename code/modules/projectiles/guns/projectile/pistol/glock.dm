@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/glock
 	name = "\"Sky\" pistol"
-	desc = "The SA sky pistol, a weapon bearing a close resemblance to the traditional glock, modified for semi-auto and burst functions as well as coming with a fitting for a silencer. Uses .35 Auto."
+	desc = "The SA sky pistol, a weapon bearing a close resemblance to the traditional glock, modified for semi-auto, burst, auto-eject mags and coming with a fitting for a silencer. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/glock.dmi'
 	icon_state = "glock"
 	item_state = "glock"
@@ -17,6 +17,7 @@
 	recoil_buildup = 2
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	one_hand_penalty = 8
+	auto_eject = 1
 
 	init_firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),
