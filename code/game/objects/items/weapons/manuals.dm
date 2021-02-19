@@ -191,7 +191,7 @@
 
 				<h2>Power outage</h2>
 
-				A power problem has made the entire colony lose power? Could be colony-wide wiring problems or Excelsior power sinks. In any case follow these steps:
+				A power problem has made the entire colony lose power? Could be colony-wide wiring problems or syndicate power sinks. In any case follow these steps:
 
 				<ol>
 					<li><b><font color='red'>PANIC!</font></b></li>
