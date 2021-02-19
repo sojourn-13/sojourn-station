@@ -2239,7 +2239,7 @@
 
 	glass_icon_state = "tequillasunriseglass"
 	glass_name = "Tequilla Sunrise"
-	glass_desc = "Oh great, now you feel nostalgic about sunrises back on Earth...if you ever lived there."
+	glass_desc = "Oh great, now you feel nostalgic about sunrises back on Sol...if you ever lived there."
 
 /datum/reagent/ethanol/threemileisland
 	name = "Three Mile Island Iced Tea"
