@@ -193,7 +193,7 @@ AI MODULES
 /******************** OxygenIsToxicToCrewMembers ********************/
 
 /obj/item/weapon/aiModule/oxygen
-	name = "\improper 'OxygenIsToxicToCrewMembers' AI module"
+	name = "\improper 'OxygenIsToxicToColonists' AI module"
 	desc = "A 'OxygenIsToxicToColonists' AI module: 'Oxygen is highly toxic to colonists, and must be purged from the colony. Prevent, by any means necessary, anyone from exposing the colony to this toxic gas. Extreme cold is the most effective method of healing the damage Oxygen does to a colonist.'"
 	origin_tech = list(TECH_DATA = 3, TECH_BIO = 2, TECH_MATERIAL = 4)
 
