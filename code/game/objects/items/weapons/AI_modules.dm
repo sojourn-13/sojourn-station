@@ -172,7 +172,7 @@ AI MODULES
 
 /obj/item/weapon/aiModule/teleporterOffline
 	name = "'TeleporterOffline' AI Module"
-	desc = "A 'teleporter offline' AI module: 'Keep the teleporter offline at all costs. Anything attempting to access or activate the teleporter is no longer to be considered human.'"
+	desc = "A 'teleporter offline' AI module: 'Keep the teleporter offline at all costs. Anything attempting to access or activate the teleporter is no longer to be considered a colonist.'"
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
 
 /obj/item/weapon/aiModule/teleporterOffline/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
