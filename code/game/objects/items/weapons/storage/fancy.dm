@@ -321,6 +321,17 @@
 		new /obj/item/clothing/mask/smokable/cigarette/khi(src)
 	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
+/obj/item/weapon/storage/fancy/cigarettes/comred
+	name = "\improper ComRed packet"
+	desc = "A packet of six ComRed cigarettes. Smokes for the when the workers are free."
+	icon_state = "ComRedCigPack"
+	item_state = "ComRedCigPack"
+
+/obj/item/weapon/storage/fancy/cigarettes/comred/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/comred(src)
+	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+
 /obj/item/weapon/storage/fancy/cigarettes/faith
 	name = "\improper TempleOS packet"
 	desc = "A packet of six TempleOS cigarettes. A brand made by zeolites and sweet tooth's alike to have something to taste well doing the day to day work."

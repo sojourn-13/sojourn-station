@@ -193,7 +193,6 @@
 				/obj/item/weapon/storage/fancy/cigarettes/fortress = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 7,
-				/obj/item/weapon/storage/fancy/cigarettes/faith = 4,
 				/obj/item/weapon/storage/fancy/cigar = 2,
 				/obj/item/clothing/mask/vape = 5,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry = 10,
@@ -216,7 +215,8 @@
 				/obj/item/weapon/flame/lighter/zippo/gonzo = 4,
 				/obj/item/weapon/flame/lighter/zippo/bullet = 4,)
 	contraband = list(/obj/item/weapon/flame/lighter/zippo/communist = 2,
-				/obj/item/weapon/storage/fancy/cigarettes/khi = 2)
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 2,
+				/obj/item/weapon/storage/fancy/cigarettes/comred = 1)
 	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 40,
 				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 70,
 				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 45,
@@ -227,7 +227,6 @@
 				/obj/item/weapon/storage/fancy/cigarettes/fortress = 50,
 				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 50,
 				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 50,
-				/obj/item/weapon/storage/fancy/cigarettes/faith = 120,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry = 25,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/banana = 25,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/lemon = 25,
@@ -250,7 +249,8 @@
 				/obj/item/weapon/flame/lighter/zippo/communist = 500,
 				/obj/item/weapon/storage/fancy/cigar = 250,
 				/obj/item/clothing/mask/vape = 150,
-				/obj/item/weapon/storage/fancy/cigarettes/khi = 500)
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 500,
+				/obj/item/weapon/storage/fancy/cigarettes/comred = 525)
 
 
 //FOR ACTORS GUILD - mainly props that cannot be spawned otherwise

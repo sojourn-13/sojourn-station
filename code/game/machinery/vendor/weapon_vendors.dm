@@ -157,6 +157,7 @@
 	vendor_department = DEPARTMENT_CHURCH
 	products = list(/obj/item/weapon/book/ritual/cruciform = 10,
 					/obj/item/weapon/storage/fancy/candle_box = 10,
+					/obj/item/weapon/storage/fancy/cigarettes/faith = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 20,
 					/obj/item/weapon/tool_upgrade/augment/sanctifier = 5,
 					/obj/item/weapon/soap/church = 5,
@@ -188,6 +189,7 @@
 
 	prices = list(/obj/item/weapon/book/ritual/cruciform = 5,
 					/obj/item/weapon/storage/fancy/candle_box = 30,
+					/obj/item/weapon/storage/fancy/cigarettes/faith = 65, //Some healing chems
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 100,
 					/obj/item/weapon/tool_upgrade/augment/sanctifier = 80,
 					/obj/item/weapon/soap/church = 50,

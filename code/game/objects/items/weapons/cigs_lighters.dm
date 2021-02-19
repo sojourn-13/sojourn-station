@@ -328,6 +328,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt/khi
 	preloaded_reagents = list("mindbreaker" = 5, "serotrotium" = 5, "impedrezene" = 5, "space_drugs" = 5)
 
+/obj/item/clothing/mask/smokable/cigarette/comred
+	name = "\improper ComRed light cigarette"
+	type_butt = /obj/item/trash/cigbutt/comred
+	icon_state = "comredoff"
+	icon_on = "comredon"
+	icon_off = "comredoff"
+	preloaded_reagents = list("nicotineplus" = 5, "vodka" = 10)
+
 /obj/item/clothing/mask/smokable/cigarette/faith
 	name = "\improper TempleOS light cigarette"
 	type_butt = /obj/item/trash/cigbutt/faith
@@ -494,6 +502,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/trash/cigbutt/khi
 	name = "KHI cigarette butt"
 	icon_state = "khibutt"
+
+/obj/item/trash/cigbutt/comred
+	name = "ComRed cigarette butt"
+	icon_state = "comredbutt"
 
 /obj/item/trash/cigbutt/faith
 	name = "TempleOS cigarette butt"
