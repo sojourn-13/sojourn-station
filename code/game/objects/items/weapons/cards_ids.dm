@@ -91,7 +91,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id
 	name = "identification card"
-	desc = "A card used to provide ID and determine access across the ship."
+	desc = "A card used to provide ID and determine access across the colony."
 	icon_state = "id"
 	item_state = "card-id"
 	slot_flags = SLOT_ID
@@ -201,12 +201,12 @@ var/const/NO_EMAG_ACT = -50
 	access = list(access_syndicate, access_external_airlocks)
 
 /obj/item/weapon/card/id/captains_spare
-	name = "captain's spare ID"
-	desc = "The spare ID of the High Lord himself."
+	name = "premier's spare ID"
+	desc = "A golden and pompous spare ID, for the shameful case in wich the Premier lost his one."
 	icon_state = MATERIAL_GOLD
 	item_state = "gold_id"
-	registered_name = "Captain"
-	assignment = "Captain"
+	registered_name = "Premier"
+	assignment = "Premier"
 
 /obj/item/weapon/card/id/captains_spare/New()
 	access = get_all_station_access()

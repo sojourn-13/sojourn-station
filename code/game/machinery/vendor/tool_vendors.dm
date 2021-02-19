@@ -74,8 +74,8 @@
 //This one's from bay12
 /obj/machinery/vending/engineering
 	name = "Artificer's Tool Maker"
-	desc = "Everything you need for do-it-yourself station repair."
-	product_slogans = "Home project planned? Do it yourself!;Legally, I have to ask you not to use those tools to hack into anything.;Locked door? Tools here!;Big project and you're missing your precious wrench? I bet I can replace it!;The most robust tools on the ship!"
+	desc = "Everything you need for do-it-yourself colony repair."
+	product_slogans = "Home project planned? Do it yourself!;Legally, I have to ask you not to use those tools to hack into anything.;Locked door? Tools here!;Big project and you're missing your precious wrench? I bet I can replace it!;The most robust tools on the colony!"
 	product_ads = "Best tools!;Cheap!;Reliable!;Do-It-Yourself!"
 	icon_state = "engi"
 	icon_deny = "engi-deny"

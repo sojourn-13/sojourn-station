@@ -397,7 +397,7 @@
 		if (shuttle)
 			supplyData["shuttle_moving"] = shuttle.has_arrive_time()
 			supplyData["shuttle_eta"] = shuttle.eta_minutes()
-			supplyData["shuttle_loc"] = shuttle.at_station() ? "Station" : "Dock"
+			supplyData["shuttle_loc"] = shuttle.at_station() ? "Colony" : "Dock"
 		var/supplyOrderCount = 0
 		var/supplyOrderData[0]
 		for(var/S in SSsupply.shoppinglist)

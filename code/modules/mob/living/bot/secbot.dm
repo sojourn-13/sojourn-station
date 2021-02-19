@@ -1,6 +1,6 @@
 /mob/living/bot/secbot
 	name = "Securitron"
-	desc = "A little security robot.  He looks less than thrilled."
+	desc = "A little marshal robot.  He looks less than thrilled."
 	icon_state = "secbot0"
 	maxHealth = 100
 	health = 100 //So we dont get 1 shot by a basic gun

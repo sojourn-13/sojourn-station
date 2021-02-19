@@ -1,6 +1,6 @@
 /obj/item/device/radio/intercom
-	name = "station intercom (General)"
-	desc = "Talk through this."
+	name = "colony intercom (General)"
+	desc = "Talk through this, and everyone on the colony will hear you." //Please don't broadcast your moans
 	icon_state = "intercom"
 	anchored = 1
 	slot_flags = null
@@ -11,16 +11,16 @@
 	var/last_tick //used to delay the powercheck
 
 /obj/item/device/radio/intercom/custom
-	name = "station intercom (Custom)"
+	name = "colony intercom (Custom)"
 	broadcasting = 0
 	listening = 0
 
 /obj/item/device/radio/intercom/interrogation
-	name = "station intercom (Interrogation)"
+	name = "colony intercom (Interrogation)"
 	frequency  = 1449
 
 /obj/item/device/radio/intercom/private
-	name = "station intercom (Private)"
+	name = "colony intercom (Private)"
 	frequency = AI_FREQ
 
 /obj/item/device/radio/intercom/department
@@ -29,11 +29,11 @@
 	listening = 1
 
 /obj/item/device/radio/intercom/department/medbay
-	name = "station intercom (Medbay)"
+	name = "colony intercom (Medbay)"
 	frequency = MED_I_FREQ
 
 /obj/item/device/radio/intercom/department/security
-	name = "station intercom (Security)"
+	name = "colony intercom (Security)"
 	frequency = SEC_I_FREQ
 
 /obj/item/device/radio/intercom/New()

@@ -7,10 +7,10 @@
 
 
 /obj/item/weapon/book/manual/engineering_construction
-	name = "Station Repairs and Construction"
+	name = "Colony Repairs and Construction"
 	icon_state ="book_construction"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
-	title = "Station Repairs and Construction"
+	title = "Colony Repairs and Construction"
 
 /obj/item/weapon/book/manual/engineering_construction/New()
 	..()
@@ -191,11 +191,11 @@
 
 				<h2>Power outage</h2>
 
-				A power problem has made the entire station lose power? Could be station-wide wiring problems or syndicate power sinks. In any case follow these steps:
+				A power problem has made the entire colony lose power? Could be colony-wide wiring problems or Excelsior power sinks. In any case follow these steps:
 
 				<ol>
 					<li><b><font color='red'>PANIC!</font></b></li>
-					<li>Get your ass over to engineering! <b>QUICKLY!!!</b></li>
+					<li>Get your ass over to the Guild! <b>QUICKLY!!!</b></li>
 					<li>Get to the <b>Area Power Controller</b> which controls the power to the emitters.</li>
 					<li>Swipe it with your <b>ID card</b> - if it doesn't unlock, continue with step 15.</li>
 					<li>Open the console and disengage the cover lock.</li>
@@ -204,7 +204,7 @@
 					<li>Put in the new, <b>full power cell</b> - if you don't have one, continue with step 15.</li>
 					<li>Quickly put on a <b>Radiation suit.</b></li>
 					<li>Check if the <b>singularity field generators</b> withstood the down-time - if they didn't, continue with step 15.</li>
-					<li>Since disaster was averted you now have to ensure it doesn't repeat. If it was a powersink which caused it and if the engineering APC is wired to the same powernet, which the powersink is on, you have to remove the piece of wire which links the APC to the powernet. If it wasn't a powersink which caused it, then skip to step 14.</li>
+					<li>Since disaster was averted you now have to ensure it doesn't repeat. If it was a powersink which caused it and if the Guild APC is wired to the same powernet, which the powersink is on, you have to remove the piece of wire which links the APC to the powernet. If it wasn't a powersink which caused it, then skip to step 14.</li>
 					<li>Grab your crowbar and pry away the tile closest to the APC.</li>
 					<li>Use the wirecutters to cut the wire which is connecting the grid to the terminal. </li>
 					<li>Go to the bar and tell the guys how you saved them all. Stop reading this guide here.</li>
@@ -666,7 +666,7 @@
 
 /obj/item/weapon/book/manual/security_space_law
 	name = "Corporate Regulations"
-	desc = "A set of corporate guidelines for keeping law and order on privately-owned space stations."
+	desc = "A set of corporate guidelines for keeping law and order on settlements."
 	icon_state = "bookSpaceLaw"
 	author = "The Company"
 	title = "Corporate Regulations"
@@ -1105,7 +1105,7 @@
 				<br>
 
 				EVA gear. Wonderful to use. It's useful for mining, engineering, and occasionally just surviving, if things are that bad. Most people have EVA training,
-				but apparently there are some on a space station who don't. This guide should give you a basic idea of how to use this gear, safely. It's split into two sections:
+				but apparently there are some on space stations and ships who don't. This guide should give you a basic idea of how to use this gear, safely. It's split into two sections:
 				 Civilian suits and hardsuits.<BR><BR>
 
 				<h2><a name="Civilian">Civilian Suits</a></h2>
@@ -1150,7 +1150,7 @@
 					<li>If you have modified it manually, is absolutely everything sealed perfectly?</li>
 					<li>Do you either have shoes on under the suit, or magnetic boots on over it?</li>
 					<li>Do you have a mask on and internals on the suit or your back?</li>
-					<li>Do you have a way to communicate with the station in case something goes wrong?</li>
+					<li>Do you have a way to communicate with the ship/station in case something goes wrong?</li>
 					<li>Do you have a second person watching if this is a training session?</li><BR>
 				</ul>
 
@@ -1201,10 +1201,10 @@
 	page_link = "Guide_to_Engineering"
 
 /obj/item/weapon/book/manual/wiki/engineering_construction
-	name = "Station Repairs and Construction"
+	name = "Colony Repairs and Construction"
 	icon_state ="book_construction"
 	author = "Engineering Encyclopedia"
-	title = "Station Repairs and Construction"
+	title = "Colony Repairs and Construction"
 	page_link = "Guide_to_Construction"
 
 /obj/item/weapon/book/manual/wiki/engineering_atmos
