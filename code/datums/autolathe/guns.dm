@@ -27,8 +27,12 @@
 	build_path = /obj/item/weapon/gun/projectile/firefly
 
 /datum/design/autolathe/gun/colt
-	name = "SA HG .35 \"Colt\""
+	name = "H&S HG .35 \"Colt\""
 	build_path = /obj/item/weapon/gun/projectile/colt
+
+/datum/design/autolathe/gun/glock
+	name = "SA HG .35 \"Sky\""
+	build_path = /obj/item/weapon/gun/projectile/glock
 
 /datum/design/autolathe/gun/NM_colt
 	name = "BR .35 \"Bronco\""
@@ -68,7 +72,7 @@
 	build_path = /obj/item/weapon/gun/projectile/mk58/wood
 
 /datum/design/autolathe/gun/ten
-	name = "H&S HG .40 \"Delta Elite\""
+	name = "SA HG .40 \"Delta Elite\""
 	build_path = /obj/item/weapon/gun/projectile/colt/ten
 
 /datum/design/autolathe/gun/ten_dark

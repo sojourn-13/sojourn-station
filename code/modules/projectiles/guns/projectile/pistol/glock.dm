@@ -17,10 +17,10 @@
 	recoil_buildup = 2
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	one_hand_penalty = 8
-	auto_eject = 1
+	auto_eject = TRUE
 
 	init_firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),
+		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
 		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)
 
@@ -29,10 +29,13 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+	if (!ammo_magazine)
 		iconstring += "_empty"
 	else
 		iconstring = initial(icon_state) + "_full"
+
+	if(!length(ammo_magazine.stored_ammo))
+		iconstring += "_out"
 
 	if (silenced)
 		iconstring += "_s"
