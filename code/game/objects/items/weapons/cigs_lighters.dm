@@ -328,6 +328,44 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt/khi
 	preloaded_reagents = list("mindbreaker" = 5, "serotrotium" = 5, "impedrezene" = 5, "space_drugs" = 5)
 
+/obj/item/clothing/mask/smokable/cigarette/comred
+	name = "\improper ComRed light cigarette"
+	type_butt = /obj/item/trash/cigbutt/comred
+	icon_state = "comredoff"
+	icon_on = "comredon"
+	icon_off = "comredoff"
+	preloaded_reagents = list("nicotineplus" = 5, "vodka" = 10)
+
+/obj/item/clothing/mask/smokable/cigarette/faith
+	name = "\improper TempleOS light cigarette"
+	type_butt = /obj/item/trash/cigbutt/faith
+	preloaded_reagents = list("nicotine" = 2, "grapejuice" = 8)
+
+/obj/item/clothing/mask/smokable/cigarette/faith/blue
+	name = "\improper TempleOS light cigarette"
+	type_butt = /obj/item/trash/cigbutt/faith/blue
+	preloaded_reagents = list("nicotine" = 2, "watermelonjuice" = 8)
+
+/obj/item/clothing/mask/smokable/cigarette/faith/red
+	name = "\improper TempleOS light cigarette"
+	type_butt = /obj/item/trash/cigbutt/faith/red
+	preloaded_reagents = list("nicotine" = 2, "grapesoda" = 8)
+
+/obj/item/clothing/mask/smokable/cigarette/faith/green
+	name = "\improper TempleOS light cigarette"
+	type_butt = /obj/item/trash/cigbutt/faith/green
+	preloaded_reagents = list("nicotine" = 2, "limejuice" = 8)
+
+/obj/item/clothing/mask/smokable/cigarette/faith/yellow
+	name = "\improper TempleOS light cigarette"
+	type_butt = /obj/item/trash/cigbutt/faith/yellow
+	preloaded_reagents = list("nicotine" = 2, "banana" = 8)
+
+/obj/item/clothing/mask/smokable/cigarette/faith/dark_yellow
+	name = "\improper TempleOS light cigarette"
+	type_butt = /obj/item/trash/cigbutt/faith/dark_yellow
+	preloaded_reagents = list("nicotine" = 2, "carrotjuice" = 8)
+
 /obj/item/clothing/mask/smokable/cigarette/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
 
@@ -464,6 +502,29 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/trash/cigbutt/khi
 	name = "KHI cigarette butt"
 	icon_state = "khibutt"
+
+/obj/item/trash/cigbutt/comred
+	name = "ComRed cigarette butt"
+	icon_state = "comredbutt"
+
+/obj/item/trash/cigbutt/faith
+	name = "TempleOS cigarette butt"
+	icon_state = "faith_butt"
+
+/obj/item/trash/cigbutt/faith/blue
+	icon_state = "faith_bluebutt"
+
+/obj/item/trash/cigbutt/faith/red
+	icon_state = "faith_redbutt"
+
+/obj/item/trash/cigbutt/faith/yellow
+	icon_state = "faith_yellowbutt"
+
+/obj/item/trash/cigbutt/faith/dark_yellow
+	icon_state = "faith_dark_yellowbutt"
+
+/obj/item/trash/cigbutt/faith/green
+	icon_state = "faith_greenbutt"
 
 /obj/item/trash/cigbutt/New()
 	..()

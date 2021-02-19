@@ -215,7 +215,8 @@
 				/obj/item/weapon/flame/lighter/zippo/gonzo = 4,
 				/obj/item/weapon/flame/lighter/zippo/bullet = 4,)
 	contraband = list(/obj/item/weapon/flame/lighter/zippo/communist = 2,
-				/obj/item/weapon/storage/fancy/cigarettes/khi = 2)
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 2,
+				/obj/item/weapon/storage/fancy/cigarettes/comred = 1)
 	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 40,
 				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 70,
 				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 45,
@@ -248,7 +249,8 @@
 				/obj/item/weapon/flame/lighter/zippo/communist = 500,
 				/obj/item/weapon/storage/fancy/cigar = 250,
 				/obj/item/clothing/mask/vape = 150,
-				/obj/item/weapon/storage/fancy/cigarettes/khi = 500)
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 500,
+				/obj/item/weapon/storage/fancy/cigarettes/comred = 525)
 
 
 //FOR ACTORS GUILD - mainly props that cannot be spawned otherwise
