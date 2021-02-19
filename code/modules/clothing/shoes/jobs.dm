@@ -78,3 +78,12 @@
 	desc = "They're actually quite comfortable."
 	icon_state = "artist"
 	item_state = "artist_shoes"
+
+/obj/item/clothing/shoes/hermes_shoes
+	name = "Hermes Boots"
+	desc = "Boots used by the faithful to spread the word of God more quickly. Sadly not all that good at protecting your feet as other more robust shoes."
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
+	icon_state = "artist"
+	item_state = "artist_shoes"
+	slowdown = SHOES_SLOWDOWN - 0.1 //As aposed to clown shoes
