@@ -138,7 +138,7 @@ AI MODULES
 	return ..()
 
 /obj/item/weapon/aiModule/oneHuman/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
-	var/law = "Only [targetName] is human."
+	var/law = "Only [targetName] is a colonist."
 	if (!target.is_malf_or_traitor()) // Makes sure the AI isn't a traitor before changing their law 0. --NeoFite
 		to_chat(target, law)
 		target.set_zeroth_law(law)
