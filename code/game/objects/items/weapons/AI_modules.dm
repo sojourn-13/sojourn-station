@@ -154,7 +154,7 @@ AI MODULES
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4) //made of gold
 
 /obj/item/weapon/aiModule/protectStation/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
-	var/law = "Protect the Nadezhda colony against damage. Anyone you see harming the colony's infrastructure is no longer to be considered human, and is a threat which must be neutralized."
+	var/law = "Protect the Nadezhda colony against damage. Anyone you see harming the colony's infrastructure is no longer to be considered a colonist, and is a threat which must be neutralized."
 	target.add_supplied_law(10, law)
 
 /******************** PrototypeEngineOffline ********************/
