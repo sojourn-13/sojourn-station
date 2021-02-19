@@ -1761,7 +1761,7 @@
 
 	glass_icon_state = "cubalibreglass"
 	glass_name = "Cuba Libre"
-	glass_desc = "A classic mix of rum and cola."
+	glass_desc = "A classic mix of rum and cola. Makes you want to scream 'VIVA!' at the top of your lungs."
 	glass_center_of_mass = list("x"=16, "y"=8)
 
 /datum/reagent/ethanol/demonsblood
@@ -1856,7 +1856,7 @@
 
 	glass_icon_state = "gargleblasterglass"
 	glass_name = "Pan-Galactic Gargle Blaster"
-	glass_desc = "Does... does this mean that Arthur and Ford are on the station? Oh joy."
+	glass_desc = "Does... does this mean that Arthur and Ford are on the colony? Oh joy."
 	glass_center_of_mass = list("x"=17, "y"=6)
 
 /datum/reagent/ethanol/gintonic
@@ -1984,20 +1984,20 @@
 /datum/reagent/ethanol/manhattan
 	name = "Manhattan"
 	id = "manhattan"
-	description = "The Detective's undercover drink of choice. He never could stomach gin..."
+	description = "The Ranger's undercover drink of choice. They never could stomach gin..."
 	taste_description = "mild dryness"
 	color = "#664300"
 	strength = 15
 
 	glass_icon_state = "manhattanglass"
 	glass_name = "Manhattan"
-	glass_desc = "The Detective's undercover drink of choice. He never could stomach gin..."
+	glass_desc = "The Ranger's undercover drink of choice. They never could stomach gin..."
 	glass_center_of_mass = list("x"=17, "y"=8)
 
 /datum/reagent/ethanol/manhattan_proj
 	name = "Manhattan Project"
 	id = "manhattan_proj"
-	description = "A scientist's drink of choice, for pondering ways to blow up the station."
+	description = "A scientist's drink of choice, for pondering ways to blow up the colony."
 	taste_description = "death, the destroyer of worlds"
 	color = "#664300"
 	strength = 10
@@ -2005,7 +2005,7 @@
 
 	glass_icon_state = "proj_manhattanglass"
 	glass_name = "Manhattan Project"
-	glass_desc = "A scientist's drink of choice, for thinking how to blow up the station."
+	glass_desc = "A scientist's drink of choice, for pondering ways to blow up the colony."
 	glass_center_of_mass = list("x"=17, "y"=8)
 
 /datum/reagent/ethanol/manly_dorf
@@ -2146,7 +2146,7 @@
 
 	glass_icon_state = "sbitenglass"
 	glass_name = "Sbiten"
-	glass_desc = "A spicy mix of Vodka and Spice. Very hot."
+	glass_desc = "A spicy mix of Vodka and Peppers. Very hot."
 	glass_center_of_mass = list("x"=17, "y"=8)
 
 /datum/reagent/ethanol/screwdrivercocktail
@@ -2159,7 +2159,7 @@
 
 	glass_icon_state = "screwdriverglass"
 	glass_name = "Screwdriver"
-	glass_desc = "A simple, yet superb mixture of Vodka and orange juice. Just the thing for the tired engineer."
+	glass_desc = "A simple, yet superb mixture of Vodka and orange juice. Just the thing for the tired Adept."
 	glass_center_of_mass = list("x"=15, "y"=10)
 
 /datum/reagent/ethanol/silencer
@@ -2239,7 +2239,7 @@
 
 	glass_icon_state = "tequillasunriseglass"
 	glass_name = "Tequilla Sunrise"
-	glass_desc = "Oh great, now you feel nostalgic about sunrises back on Terra..."
+	glass_desc = "Oh great, now you feel nostalgic about sunrises back on Sol...if you ever lived there."
 
 /datum/reagent/ethanol/threemileisland
 	name = "Three Mile Island Iced Tea"
@@ -2258,7 +2258,7 @@
 /datum/reagent/ethanol/toxins_special
 	name = "Toxins Special"
 	id = "plasmaspecial"
-	description = "This thing is ON FIRE! CALL THE DAMN SHUTTLE!"
+	description = "This thing is ON FIRE! CALL THE DAMN GUILDIES!"
 	taste_description = "spicy toxins"
 	reagent_state = LIQUID
 	color = "#664300"
@@ -2357,14 +2357,14 @@
 /datum/reagent/ethanol/specialwhiskey // I have no idea what this is and where it comes from
 	name = "Special Blend Whiskey"
 	id = "specialwhiskey"
-	description = "Just when you thought regular station whiskey was good... This silky, amber goodness has to come along and ruin everything."
+	description = "Just when you thought regular colony whiskey was good... This silky, amber goodness has to come along and ruin everything."
 	taste_description = "the whiskey gods pissed in your mouth"
 	color = "#664300"
 	strength = 5
 
 	glass_icon_state = "whiskeyglass"
 	glass_name = "special blend whiskey"
-	glass_desc = "Just when you thought regular station whiskey was good... This silky, amber goodness has to come along and ruin everything."
+	glass_desc = "Just when you thought regular colony whiskey was good... This silky, amber goodness has to come along and ruin everything."
 	glass_center_of_mass = list("x"=16, "y"=12)
 
 /datum/reagent/ethanol/daiquiri

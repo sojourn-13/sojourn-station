@@ -25,7 +25,7 @@ Used In File(s): \code\game\objects\items\devices\PDA\PDA.dm
 	</div>
 	<div class="item">
 		<div class="itemLabelNarrow">
-			<b>Station Time</b>:
+			<b>Current Time</b>:
 		</div>
 		<div class="itemContent">
 			<span class="average">{{:data.stationTime}}</span>
@@ -473,7 +473,7 @@ Used In File(s): \code\game\objects\items\devices\PDA\PDA.dm
 
 
     {{else data.mode == 42}}
-        <H2>Station Status Displays Interlink</H2>
+        <H2>Colony Status Displays Interlink</H2>
         <div class="item">
             <div class="itemLabel">
                 <b>Code</b>:
@@ -726,7 +726,7 @@ Used In File(s): \code\game\objects\items\devices\PDA\PDA.dm
 			<div class="itemContent">
 				<span class="average">
 					{{if data.records.supply.shuttle_moving}}
-					    Moving to station ({{:data.records.supply.shuttle_eta}})
+					    Moving to the colony ({{:data.records.supply.shuttle_eta}})
 					{{else}}
 					    Shuttle at {{:data.records.supply.shuttle_loc}}
 					{{/if}}
@@ -977,7 +977,7 @@ Used In File(s): \code\game\objects\items\devices\PDA\PDA.dm
                 <div class="itemContent" style="width: 100%;">
 					{{if data.feed.censored}}
 						<H3><span class="bad">Attention</span></H3>
-						This channel has been deemed as threatening to the welfare of the station, and marked with a Nanotrasen D-Notice.<br>
+						This channel has been deemed as threatening to the welfare of the colony, and marked with a Nanotrasen D-Notice.<br>
 						No further feed story additions are allowed while the D-Notice is in effect.<br>
 					{{else}}
 						{{for data.feed.messages}}

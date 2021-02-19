@@ -1515,7 +1515,7 @@
 						news_network.wanted_issue.body = source.admincaster_feed_message.body
 						news_network.wanted_issue.backup_author = source.admincaster_feed_message.backup_author
 						source.admincaster_screen = 19
-					log_admin("[key_name_admin(usr)] issued a Station-wide Wanted Notification for [source.admincaster_feed_message.author]!")
+					log_admin("[key_name_admin(usr)] issued a Colony-wide Wanted Notification for [source.admincaster_feed_message.author]!")
 			source.access_news_network()
 
 		if("cancel_wanted")

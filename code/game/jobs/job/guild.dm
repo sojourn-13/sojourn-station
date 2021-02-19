@@ -29,7 +29,7 @@
 	description = "The Chief Executive Officer coordinates the affairs of the local branch of Lonestar Shipping Solutions.<br>\
 Your main objective, bluntly, is to make as much money as you can. Purchase and acquire goods, and sell them on for a profit.<br>\
 Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
-The vendors found throughout the ship are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
+The vendors found throughout the colony are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
 There is a market for contraband and more unscrupulous services. Venturing into this area may prove profitable, but comes with risk.<br>\
 You do not receive a salary, but can fund yourself from the company account. Strike a balance between the needs of yourself and the wider company."
 

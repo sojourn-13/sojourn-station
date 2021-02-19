@@ -367,7 +367,7 @@ ADMIN_VERB_ADD(/client/proc/kill_air, R_DEBUG, FALSE)
 		deadmin_holder.reassociate()
 		log_admin("[src] re-admined themself.")
 		message_admins("[src] re-admined themself.", 1)
-		to_chat(src, "<span class='interface'>You now have the keys to control the planet, or atleast a small space station</span>")
+		to_chat(src, "<span class='interface'>You now have the keys to control the planet, or at least just the colony.</span>")
 		verbs -= /client/proc/readmin_self
 
 
@@ -484,7 +484,7 @@ ADMIN_VERB_ADD(/client/proc/change_human_appearance_self, R_ADMIN, FALSE)
 ADMIN_VERB_ADD(/client/proc/change_security_level, R_ADMIN|R_FUN, FALSE)
 /client/proc/change_security_level()
 	set name = "Set security level"
-	set desc = "Sets the station security level"
+	set desc = "Sets the colony's security level"
 	set category = "Admin"
 
 	if(!check_rights(R_ADMIN))	return
