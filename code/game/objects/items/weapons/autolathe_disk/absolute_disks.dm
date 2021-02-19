@@ -31,6 +31,7 @@
 		/datum/design/bioprinter/nt_clothes/acolyte_uniform,
 		/datum/design/bioprinter/nt_clothes/sports_uniform,
 		/datum/design/bioprinter/nt_clothes/church_uniform,
+		/datum/design/bioprinter/nt_clothes/hermes_shoes,
 		//medical
 		/datum/design/autolathe/firstaid/nt,
 		//pouches
@@ -258,6 +259,7 @@
 		/datum/design/bioprinter/nt_clothes/agrolyte_armor,
 		/datum/design/bioprinter/nt_clothes/custodian_armor_helm,
 		/datum/design/bioprinter/nt_clothes/custodian_armor,
+		/datum/design/bioprinter/nt_clothes/hermes_shoes,
 		/datum/design/bioprinter/belt/security/neotheology,
 		//holsters
 		/datum/design/bioprinter/storage/sheath,
