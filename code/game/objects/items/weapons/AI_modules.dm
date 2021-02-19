@@ -194,7 +194,7 @@ AI MODULES
 
 /obj/item/weapon/aiModule/oxygen
 	name = "\improper 'OxygenIsToxicToCrewMembers' AI module"
-	desc = "A 'OxygenIsToxicToCrewMembers' AI module: 'Oxygen is highly toxic to colonists, and must be purged from the colony. Prevent, by any means necessary, anyone from exposing the colony to this toxic gas. Extreme cold is the most effective method of healing the damage Oxygen does to human.'"
+	desc = "A 'OxygenIsToxicToColonists' AI module: 'Oxygen is highly toxic to colonists, and must be purged from the colony. Prevent, by any means necessary, anyone from exposing the colony to this toxic gas. Extreme cold is the most effective method of healing the damage Oxygen does to a colonist.'"
 	origin_tech = list(TECH_DATA = 3, TECH_BIO = 2, TECH_MATERIAL = 4)
 
 /obj/item/weapon/aiModule/oxygen/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
