@@ -129,7 +129,7 @@ AI MODULES
 	..()
 	var/targName = sanitize(input("Please enter the name of the person who is the only colonist.", "Who?", user.real_name))
 	targetName = targName
-	desc = text("A 'one colonist' AI module: 'Only [] is human.'", targetName)
+	desc = text("A 'one colonist' AI module: 'Only [] is colonist.'", targetName)
 
 /obj/item/weapon/aiModule/oneHuman/install(var/obj/machinery/computer/C)
 	if(!targetName)
