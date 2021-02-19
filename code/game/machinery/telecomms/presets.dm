@@ -6,7 +6,7 @@
 	network = "nadezhda"
 
 /obj/machinery/telecomms/relay/preset/station
-	id = "colony relay"
+	id = "station relay"
 	listening_levels = list(1,2,3)
 	autolinkers = list("s_relay")
 
