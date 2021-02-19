@@ -646,7 +646,7 @@
 	name = "miner action figure"
 	desc = "Will they find minerals, treasure, or monsters? Lonestar 3/3."
 	icon_state = "miner"
-	toysay = "Yeah, yeah, "I'm here" too- wait, who said that...?"
+	toysay = "Yeah, yeah, 'I'm here' too- wait, who said that...?"
 
 /*Engineer*/
 
