@@ -122,7 +122,7 @@ AI MODULES
 /obj/item/weapon/aiModule/oneHuman
 	name = "\improper 'OneCrewMember' AI module"
 	var/targetName = ""
-	desc = "A 'one colonist' AI module: 'Only <name> is human.'"
+	desc = "A 'one colonist' AI module: 'Only <name> is a colonist.'"
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6) //made with diamonds!
 
 /obj/item/weapon/aiModule/oneHuman/attack_self(var/mob/user as mob)
