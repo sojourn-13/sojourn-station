@@ -112,7 +112,7 @@ AI MODULES
 	..()
 
 /obj/item/weapon/aiModule/safeguard/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
-	var/law = text("Safeguard []. Anyone threatening or attempting to harm [] is no longer to be considered human, and is a threat which must be neutralized.", targetName, targetName)
+	var/law = text("Safeguard []. Anyone threatening or attempting to harm [] is no longer to be considered a colonist, and is a threat which must be neutralized.", targetName, targetName)
 	target.add_supplied_law(9, law)
 	lawchanges.Add("The law specified [targetName]")
 
