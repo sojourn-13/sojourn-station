@@ -459,15 +459,15 @@ datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 				var/turf/playerTurf = get_turf(Player)
 				if(evacuation_controller.round_over() && evacuation_controller.emergency_evacuation)
 					if(isNotAdminLevel(playerTurf.z))
-						to_chat(Player, "<font color='blue'><b>You managed to survive today's events on the [station_name()] as [Player.real_name].</b></font>") //No more "getting marooned" on a goddamn planet.
+						to_chat(Player, "<font color='green'><b>You managed to survive today's events on the [station_name()] as [Player.real_name].</b></font>") //No more "getting marooned" on a goddamn planet.
 					else
-						to_chat(Player, "<font color='blue'><b>You managed to survive today's events on the [station_name()] as [Player.real_name].</b></font>")
+						to_chat(Player, "<font color='green'><b>You managed to survive today's events on the [station_name()] as [Player.real_name].</b></font>")
 				else if(isAdminLevel(playerTurf.z))
 					to_chat(Player, "<font color='green'><b>You successfully underwent crew transfer after events on [station_name()] as [Player.real_name].</b></font>")
 				else if(issilicon(Player))
 					to_chat(Player, "<font color='green'><b>You remained operational after today's events on the [station_name()] as [Player.real_name].</b></font>")
 				else
-					to_chat(Player, "<font color='blue'><b>You managed to survive today's events on the [station_name()] as [Player.real_name].</b></font>") //No such "crew transfer" here, unless people take the lift back home.
+					to_chat(Player, "<font color='green'><b>You managed to survive today's events on the [station_name()] as [Player.real_name].</b></font>") //No such "crew transfer" here, unless people take the lift back home.
 			else
 				if(isghost(Player))
 					var/mob/observer/ghost/O = Player
