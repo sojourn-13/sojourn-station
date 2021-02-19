@@ -96,7 +96,7 @@ AI MODULES
 /obj/item/weapon/aiModule/safeguard
 	name = "\improper 'Safeguard' AI module"
 	var/targetName = ""
-	desc = "A 'safeguard' AI module: 'Safeguard <name>. Anyone threatening or attempting to harm <name> is no longer to be considered human, and is a threat which must be neutralized.'"
+	desc = "A 'safeguard' AI module: 'Safeguard <name>. Anyone threatening or attempting to harm <name> is no longer to be a colonist, and is a threat which must be neutralized.'"
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
 
 /obj/item/weapon/aiModule/safeguard/attack_self(var/mob/user as mob)
