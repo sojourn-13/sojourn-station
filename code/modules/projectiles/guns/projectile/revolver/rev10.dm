@@ -23,7 +23,7 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if (loaded.len > 0)
+	if (loaded.len == 0)
 		iconstring += "_slide"
 	else
 		iconstring = initial(icon_state) + "_full"
