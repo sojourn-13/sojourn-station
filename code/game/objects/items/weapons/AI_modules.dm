@@ -150,7 +150,7 @@ AI MODULES
 
 /obj/item/weapon/aiModule/protectStation
 	name = "\improper 'ProtectColony' AI module"
-	desc = "A 'protect colony' AI module: 'Protect the Nadezhda colony against damage. Anyone you see harming the colony's infrastructure is no longer to be considered human, and is a threat which must be neutralized.'"
+	desc = "A 'protect colony' AI module: 'Protect the Nadezhda colony against damage. Anyone you see harming the colony's infrastructure is no longer to be considered colonist, and is a threat which must be neutralized.'"
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4) //made of gold
 
 /obj/item/weapon/aiModule/protectStation/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
