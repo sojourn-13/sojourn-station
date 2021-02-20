@@ -80,16 +80,35 @@
 
 /datum/perk/gutsandglory/activate()
 	var/mob/living/carbon/human/user = usr
+	var/list/people_around = list()
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("The human body can only take so much, you'll need more time before you've recovered enough to use this again."))
+		to_chat(usr, SPAN_NOTICE("You can not muster the willpower to have a heroic moment just yet.."))
 		return FALSE
 	cooldown_time = world.time + 30 MINUTES
-	user.visible_message("[user] closes their eyes and takes a deep breath, slowing down as they focus on recovering!", "You feel exhausted as you slow down to let your body recover, focusing on controlling your breathing while your body slowly mends some of your internal damage.")
+	user.visible_message("[user] releases a heroic roar, inspiring everyone around them! Ooorah!", "You bellow out in a heroic roar, inspiring everyone around you! Ooorah!")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("hustim", 5)
+	for(var/mob/living/carbon/human/H in view(user))
+		if(H != user && !isdeaf(H))
+			people_around.Add(H)
+	if(people_around.len > 0)
+		for(var/mob/living/carbon/human/participant in people_around)
+			to_chat(participant, SPAN_NOTICE("You feel inspirted by a heroic shout."))
+			give_boost(participant)
+	give_boost(usr)
 	return ..()
+
+/datum/perk/gutsandglory/proc/give_boost(mob/living/carbon/human/participant)
+	var/effect_time = 1 MINUTES
+	var/amount = 17
+	var/list/stats_to_boost = list(STAT_ROB = 17, STAT_TGH = 17, STAT_VIG = 17)
+	for(var/stat in stats_to_boost)
+		participant.stats.changeStat(stat, amount)
+		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
+
+/datum/perk/gutsandglory/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
+	participant.stats.changeStat(stat, -amount)
 
 //////////////////////////////////////Kriosan perks
 /datum/perk/enhancedsenses
