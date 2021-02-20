@@ -184,6 +184,7 @@
 	vend_delay = 34
 	icon_state = "cigs"
 	products = list(/obj/item/weapon/storage/fancy/cigarettes = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/lonestar = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/brouzouf = 7,
@@ -218,6 +219,7 @@
 				/obj/item/weapon/storage/fancy/cigarettes/khi = 2,
 				/obj/item/weapon/storage/fancy/cigarettes/comred = 1)
 	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 40,
+				/obj/item/weapon/storage/fancy/cigarettes/lonestar = 35,
 				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 70,
 				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 45,
 				/obj/item/weapon/storage/fancy/cigarettes/brouzouf = 55,

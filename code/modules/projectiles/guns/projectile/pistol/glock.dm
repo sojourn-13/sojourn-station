@@ -29,13 +29,10 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if (!ammo_magazine)
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_empty"
 	else
 		iconstring = initial(icon_state) + "_full"
-
-	if(!length(ammo_magazine.stored_ammo))
-		iconstring += "_out"
 
 	if (silenced)
 		iconstring += "_s"
