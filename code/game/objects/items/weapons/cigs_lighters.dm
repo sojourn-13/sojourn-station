@@ -228,7 +228,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 // CIGARETTES //
 ////////////////
 /obj/item/clothing/mask/smokable/cigarette
-	name = "Roach Eyes cigarette"
+	name = "\improper Roach Eyes cigarette"
 	desc = "A roll of tobacco and nicotine."
 	icon_state = "roachoff"
 	throw_speed = 0.5
@@ -249,7 +249,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME.</span>"
 
 /obj/item/clothing/mask/smokable/cigarette/ishimura
-	name = "Ishimura Special cigarette"
+	name = "\improper Ishimura Special cigarette"
 	icon_state = "ishimuraoff"
 	icon_on = "ishimuraon"
 	icon_off = "ishimuraoff"
@@ -257,7 +257,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5, "ishispec" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/tannhauser
-	name = "Tannhauser Gate cigarette"
+	name = "\improper Tannhauser Gate cigarette"
 	icon_state = "tannhauseroff"
 	icon_on = "tannhauseron"
 	icon_off = "tannhauseroff"
@@ -265,7 +265,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5, "sodiumchloride" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/brouzouf
-	name = "Brouzouf Message cigarette"
+	name = "\improper Brouzouf Message cigarette"
 	icon_state = "brouzoufoff"
 	icon_on = "brouzoufon"
 	icon_off = "brouzoufoff"
@@ -336,35 +336,61 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "comredoff"
 	preloaded_reagents = list("nicotineplus" = 5, "vodka" = 10)
 
+/obj/item/clothing/mask/smokable/cigarette/lonestar
+	name = "\improper LoneStar light cigarette"
+	type_butt = /obj/item/trash/cigbutt/lonestar
+	icon_state = "lonestaroff"
+	icon_on = "lonestaron"
+	icon_off = "lonestaroff"
+	preloaded_reagents = list("nicotineplus" = 5, "cafe_latte" = 5)
+
 /obj/item/clothing/mask/smokable/cigarette/faith
 	name = "\improper TempleOS light cigarette"
+	icon_state = "faithoff"
+	icon_on = "faithon"
+	icon_off = "faithoff"
 	type_butt = /obj/item/trash/cigbutt/faith
-	preloaded_reagents = list("nicotine" = 2, "grapejuice" = 8)
+	preloaded_reagents = list("nicotine" = 5, "grapejuice" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/faith/blue
 	name = "\improper TempleOS light cigarette"
+	icon_state = "faithblueoff"
+	icon_on = "faithblueon"
+	icon_off = "faithblueoff"
 	type_butt = /obj/item/trash/cigbutt/faith/blue
-	preloaded_reagents = list("nicotine" = 2, "watermelonjuice" = 8)
+	preloaded_reagents = list("nicotine" = 5, "mint" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/faith/red
 	name = "\improper TempleOS light cigarette"
+	icon_state = "faithredoff"
+	icon_on = "faithredon"
+	icon_off = "faithredoff"
 	type_butt = /obj/item/trash/cigbutt/faith/red
-	preloaded_reagents = list("nicotine" = 2, "grapesoda" = 8)
+	preloaded_reagents = list("nicotine" = 5, "cherryjelly" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/faith/green
 	name = "\improper TempleOS light cigarette"
+	icon_state = "faithgreenoff"
+	icon_on = "faithgreenon"
+	icon_off = "faithgreenoff"
 	type_butt = /obj/item/trash/cigbutt/faith/green
-	preloaded_reagents = list("nicotine" = 2, "limejuice" = 8)
+	preloaded_reagents = list("nicotine" = 5, "limejuice" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/faith/yellow
 	name = "\improper TempleOS light cigarette"
+	icon_state = "faithyellowoff"
+	icon_on = "faithyellowon"
+	icon_off = "faithyellowoff"
 	type_butt = /obj/item/trash/cigbutt/faith/yellow
-	preloaded_reagents = list("nicotine" = 2, "banana" = 8)
+	preloaded_reagents = list("nicotine" = 5, "lemonjuice" = 5)
 
-/obj/item/clothing/mask/smokable/cigarette/faith/dark_yellow
+/obj/item/clothing/mask/smokable/cigarette/faith/orange
 	name = "\improper TempleOS light cigarette"
-	type_butt = /obj/item/trash/cigbutt/faith/dark_yellow
-	preloaded_reagents = list("nicotine" = 2, "carrotjuice" = 8)
+	icon_state = "faithorangeoff"
+	icon_on = "faithorangeon"
+	icon_off = "faithorangeoff"
+	type_butt = /obj/item/trash/cigbutt/faith/orange
+	preloaded_reagents = list("nicotine" = 5, "orangejuice" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
@@ -424,7 +450,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "cigaroff"
 	smoketime = 800
 	chem_volume = 25
-	preloaded_reagents = list("nicotineplus" = 14)
+	preloaded_reagents = list("nicotineplus" = 15)
 	quality_multiplier = 2
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
 	lightermes = "<span class='notice'>USER manages to offend their NAME by lighting it with FLAME.</span>"
@@ -454,7 +480,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	quality_multiplier = 3
 
 /obj/item/trash/cigbutt
-	name = "Roach Eyes cigarette butt"
+	name = "\improper Roach Eyes cigarette butt"
 	desc = "A decayed cigarette butt."
 	icon = 'icons/inventory/face/icon.dmi'
 	icon_state = "roachbutt"
@@ -464,67 +490,71 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	throwforce = 1
 
 /obj/item/trash/cigbutt/ishimura
-	name = "Ishimura Special cigarette butt"
+	name = "\improper Ishimura Special cigarette butt"
 	icon_state = "ishimurabutt"
 
 /obj/item/trash/cigbutt/tannhauser
-	name = "Tannhauser Gate cigarette butt"
+	name = "\improper Tannhauser Gate cigarette butt"
 	icon_state = "tannhauserbutt"
 
 /obj/item/trash/cigbutt/brouzouf
-	name = "Brouzouf Message cigarette butt"
+	name = "\improper Brouzouf Message cigarette butt"
 	icon_state = "brouzoufbutt"
 
 /obj/item/trash/cigbutt/shodan
-	name = "Shodans cigarette butt"
+	name = "\improper Shodans cigarette butt"
 	icon_state = "shodanbutt"
 
 /obj/item/trash/cigbutt/toha
-	name = "TOHA Heavy Industries cigarette butt"
+	name = "\improper TOHA Heavy Industries cigarette butt"
 	icon_state = "tohabutt"
 
 /obj/item/trash/cigbutt/frozen
-	name = "Frozen Nova cigarette butt"
+	name = "\improper Frozen Nova cigarette butt"
 	icon_state = "frozenbutt"
 
 /obj/item/trash/cigbutt/fortress
-	name = "Fortress Classic cigarette butt"
+	name = "\improper Fortress Classic cigarette butt"
 	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/fortressred
-	name = "Fortress RED menthols cigarette butt"
+	name = "\improper Fortress RED menthols cigarette butt"
 	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/fortressblue
-	name = "Fortress BLU light cigarette butt"
+	name = "\improper Fortress BLU light cigarette butt"
 	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/khi
-	name = "KHI cigarette butt"
+	name = "\improper KHI cigarette butt"
 	icon_state = "khibutt"
 
 /obj/item/trash/cigbutt/comred
-	name = "ComRed cigarette butt"
+	name = "\improper ComRed cigarette butt"
+	icon_state = "comredbutt"
+
+/obj/item/trash/cigbutt/lonestar
+	name = "\improper LoneStar cigarette butt"
 	icon_state = "comredbutt"
 
 /obj/item/trash/cigbutt/faith
-	name = "TempleOS cigarette butt"
-	icon_state = "faith_butt"
+	name = "\improper TempleOS cigarette butt"
+	icon_state = "faithbutt"
 
 /obj/item/trash/cigbutt/faith/blue
-	icon_state = "faith_bluebutt"
+	icon_state = "faithbluebutt"
 
 /obj/item/trash/cigbutt/faith/red
-	icon_state = "faith_redbutt"
+	icon_state = "faithredbutt"
 
 /obj/item/trash/cigbutt/faith/yellow
-	icon_state = "faith_yellowbutt"
+	icon_state = "faithyellowbutt"
 
-/obj/item/trash/cigbutt/faith/dark_yellow
-	icon_state = "faith_dark_yellowbutt"
+/obj/item/trash/cigbutt/faith/orange
+	icon_state = "faithorangebutt"
 
 /obj/item/trash/cigbutt/faith/green
-	icon_state = "faith_greenbutt"
+	icon_state = "faithgreenbutt"
 
 /obj/item/trash/cigbutt/New()
 	..()
