@@ -240,7 +240,9 @@ var/global/list/robot_modules = list(
 					"Sleek" = "sleekstandard",
 					"Drone" = "drone-standard",
 					"Spider" = "spider",
-					"Miss" = "missm_sd"
+					"Miss" = "missm_sd",
+					"Fembot" = "bootysd",
+					"Femboybot" = "male_bootysd"
 				  )
 
 	desc = "The baseline, jack of all trades. Can do a little of everything. Some DIY, some healing, some combat."
@@ -300,7 +302,9 @@ var/global/list/robot_modules = list(
 				"Sleek - Medical" = "sleekmedic",
 				"Sleek - Chemistry" = "sleekchemistry",
 				"Miss" = "missm_med",
-				"Medical Junkbot" = "qualified_doctor"
+				"Medical Junkbot" = "qualified_doctor",
+				"Fembot" = "bootymedical",
+				"Femboybot" = "male_bootymedical"
 				)
 
 	desc = "A versatile medical droid, equipped with all the tools necessary for surgery, chemistry, and \
@@ -403,7 +407,9 @@ var/global/list/robot_modules = list(
 			"Drone" = "drone-medical",
 			"Heavy" = "heavymed",
 			"Miss" = "missm_med",
-			"Medical Junkbot" = "qualified_doctor"
+			"Medical Junkbot" = "qualified_doctor",
+			"Fembot" = "bootymedical",
+			"Femboybot" = "male_bootymedical"
 			)
 
 	//Rescue module has built in crew monitor
@@ -489,7 +495,9 @@ var/global/list/robot_modules = list(
 					"Spider" = "spidereng",
 					"Plated" = "ceborg",
 					"Heavy" = "heavyeng",
-					"Miss" = "missm_eng"
+					"Miss" = "missm_eng",
+					"Fembot" = "bootyeng",
+					"Femboybot" = "male_bootyeng"
 					)
 	health = 240 //Slightly above average
 	speed_factor = 1.1 //Slightly above average
@@ -719,7 +727,9 @@ var/global/list/robot_modules = list(
 					"Classic" = "secborg",
 					"Spider" = "spidersec",
 					"Heavy" = "heavysec",
-					"Miss" = "missm_security"
+					"Miss" = "missm_security",
+					"Fembot" = "bootypeace",
+					"Femboybot" = "male_bootypeace"
 				)
 
 /obj/item/weapon/robot_module/security/general/New(var/mob/living/silicon/robot/R)
@@ -761,7 +771,9 @@ var/global/list/robot_modules = list(
 					"Buffer" = "mechaduster",
 					"Sleek" = "sleekjanitor",
 					"Maid" = "maidbot",
-					"Miss" = "missm_janitor"
+					"Miss" = "missm_janitor",
+					"Fembot" = "bootyjanitor",
+					"Femboybot" = "male_bootyjanitor"
 					)
 	health = 250 //Bulky
 	speed_factor = 1.15 //Fast
@@ -830,7 +842,9 @@ var/global/list/robot_modules = list(
 					"Mobile Bar" = "heavyserv",
 					"Sleek" = "sleekservice",
 					"Maid" = "maidbot",
-					"Miss" = "missm_service"
+					"Miss" = "missm_service",
+					"Fembot" = "bootyservice",
+					"Femboybot" = "male_bootyservice"
 				  	)
 
 	health = 80 //Ultra fragile
@@ -920,7 +934,9 @@ var/global/list/robot_modules = list(
 					"Classic" = "miner_old",
 					"Heavy" = "heavymine",
 					"Spider" = "spidermining",
-					"Miss" = "missm_miner"
+					"Miss" = "missm_miner",
+					"Femboy" = "bootyminer",
+					"Femboybot" = "male_bootyminer"
 				)
 	health = 250 //Pretty tough
 	speed_factor = 0.9 //meh
