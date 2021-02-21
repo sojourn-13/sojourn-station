@@ -100,9 +100,9 @@
 	return ..()
 
 /datum/perk/gutsandglory/proc/give_boost(mob/living/carbon/human/participant)
-	var/effect_time = 1 MINUTES
-	var/amount = 17
-	var/list/stats_to_boost = list(STAT_ROB = 17, STAT_TGH = 17, STAT_VIG = 17)
+	var/effect_time = 2 MINUTES
+	var/amount = 10
+	var/list/stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
 	for(var/stat in stats_to_boost)
 		participant.stats.changeStat(stat, amount)
 		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
