@@ -338,9 +338,9 @@
 	icon_state = "LoneStarCigPack"
 	item_state = "LoneStarCigPack"
 
-/obj/item/weapon/storage/fancy/cigarettes/comred/populate_contents()
+/obj/item/weapon/storage/fancy/cigarettes/lonestar/populate_contents()
 	for(var/i in 1 to storage_slots)
-		new /obj/item/clothing/mask/smokable/cigarette/comred(src)
+		new /obj/item/clothing/mask/smokable/cigarette/lonestar(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 /obj/item/weapon/storage/fancy/cigarettes/faith
