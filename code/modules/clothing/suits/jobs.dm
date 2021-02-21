@@ -249,7 +249,7 @@
 		/obj/item/weapon/tool/hemostat,
 		/obj/item/weapon/tool/retractor,
 		/obj/item/weapon/tool/scalpel,
-		/obj/item/weapon/tool/surgicaldrill,
+		/obj/item/weapon/tool/bonegel,
 		/obj/item/stack/medical/advanced/bruise_pack
 	)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO

@@ -26,6 +26,7 @@
 #define QUALITY_BONE_SETTING			"bone setting"
 #define QUALITY_CUTTING					"cutting"
 #define QUALITY_LASER_CUTTING			"laser cutting"	//laser scalpels and e-swords - bloodless cutting
+#define QUALITY_BONE_GRAFTING			"bone grafting"
 
 //Other Qualities
 #define QUALITY_WEAVING					"weaving"

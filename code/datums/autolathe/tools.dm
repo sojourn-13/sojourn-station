@@ -196,7 +196,7 @@
 	build_path = /obj/item/weapon/tool/saw/hyper
 
 /datum/design/autolathe/tool/surgicaldrill
-	name = "surgical drill"
+	name = "hand drill"
 	build_path = /obj/item/weapon/tool/surgicaldrill
 
 /datum/design/autolathe/tool/retractor
@@ -233,3 +233,7 @@
 /datum/design/autolathe/tool/omni_surgery_onestar
 	name = "greyson positronic medical multitool"
 	build_path = /obj/item/weapon/tool/medmultitool
+
+/datum/design/autolathe/tool/bonegel
+	name = "bone gel"
+	build_path = /obj/item/weapon/tool/bonegel

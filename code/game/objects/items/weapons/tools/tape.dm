@@ -28,7 +28,7 @@
 	desc = "A bucket of milky white fluid. Can be used to stick things together, but unlike tape, it cannot be used to seal things."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "glue"
-	tool_qualities = list(QUALITY_ADHESIVE = 40, QUALITY_CAUTERIZING = 5) // Better than duct tape, but can't seal things and is mostly used in crafting - also, it's glue, so it can be used as an extremely shitty way of sealing wounds
+	tool_qualities = list(QUALITY_ADHESIVE = 40, QUALITY_CAUTERIZING = 5, QUALITY_BONE_GRAFTING = 25) // Better than duct tape, but can't seal things and is mostly used in crafting - also, it's glue, so it can be used as an extremely shitty way of sealing wounds and repairing bones.
 	matter = list(MATERIAL_BIOMATTER = 30)
 	worksound = NO_WORKSOUND
 	preloaded_reagents = list("glue" = 30)
