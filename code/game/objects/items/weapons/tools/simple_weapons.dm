@@ -583,8 +583,8 @@
 	icon_state = "bonegel"
 	item_state = "bonegel"
 	w_class = ITEM_SIZE_TINY
-	matter = list(MATERIAL_PLASTIC = 4, MATERIAL_BIOMATTER = 2)
+	matter = list(MATERIAL_PLASTIC = 10)
 	flags = CONDUCT
-	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
+	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
 	preloaded_reagents = list("milk" = 5)
 	tool_qualities = list(QUALITY_BONE_GRAFTING = 50)
