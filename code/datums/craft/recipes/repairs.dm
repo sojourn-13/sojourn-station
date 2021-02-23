@@ -59,7 +59,7 @@
 	)
 
 /datum/craft_recipe/repairs/obrez_shotgun
-	name = "sawn-off Grizzly shotgun"
+	name = "sawn-down Grizzly shotgun"
 	result = /obj/item/weapon/gun/projectile/shotgun/pump/sawn
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/shotgun/pump/obrez, 1, "time" = 60),
@@ -170,8 +170,8 @@
 		list(QUALITY_WELDING, 30, "time" = 60),
 	)
 
-/datum/craft_recipe/repairs/dozer_helm
-	name = "Dozer bomb helmet"
+/datum/craft_recipe/repairs/juggernaut_helm
+	name = "Juggernaut bomb helmet"
 	result = /obj/item/clothing/head/helmet/space/bomb/security
 	steps = list(
 		list(/obj/item/clothing/head/helmet/space/bomb, 1, "time" = 60),
@@ -187,8 +187,8 @@
 		list(QUALITY_WELDING, 30, "time" = 60),
 	)
 
-/datum/craft_recipe/repairs/dozer_suit
-	name = "Dozer bomb suit"
+/datum/craft_recipe/repairs/juggernaut_suit
+	name = "Juggernaut bomb suit"
 	result = /obj/item/clothing/suit/space/bomb/security
 	steps = list(
 		list(/obj/item/clothing/suit/space/bomb, 1, "time" = 60),

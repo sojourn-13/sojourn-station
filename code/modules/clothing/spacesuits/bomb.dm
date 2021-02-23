@@ -43,7 +43,7 @@
 	price_tag = 300
 
 /obj/item/clothing/head/helmet/space/bomb/security
-	name = "dozer bomb helmet"
+	name = "juggernaut bomb helmet"
 	desc = "Use in case of bomb well under fire."
 	equip_delay = 16 SECONDS
 	slowdown = 1.25 //so with full suit is 3.5 or 4.5
@@ -58,7 +58,7 @@
 	icon_state = "bombsuitsec"
 
 /obj/item/clothing/suit/space/bomb/security
-	name = "dozer bomb suit"
+	name = "juggernaut bomb suit"
 	desc = "A protective suit designed for safety when handling explosives well under fire."
 	slowdown = 3.25
 	equip_delay = 16 SECONDS
