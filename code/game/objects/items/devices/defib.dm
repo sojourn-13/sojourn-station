@@ -725,5 +725,4 @@
 	item_state = "jumperpaddles0"
 	use_on_synthetic = 1
 
-#undef DEFIB_TIME_LIMIT
 #undef DEFIB_TIME_LOSS
