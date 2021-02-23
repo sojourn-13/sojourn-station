@@ -5,7 +5,7 @@
 	program_icon_state = "supply"
 	program_key_state = "rd_key"
 	program_menu_icon = "cart"
-	extended_desc = "A management tool that allows for ordering of various supplies through the facility's cargo system. Some features may require additional access."
+	extended_desc = "A management tool that allows for ordering of various supplies through the colony's cargo system. Some features may require additional access."
 	size = 21
 	available_on_ntnet = 1
 	requires_ntnet = 1

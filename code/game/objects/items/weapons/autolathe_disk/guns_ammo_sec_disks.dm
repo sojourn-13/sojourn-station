@@ -103,7 +103,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/luger
 	disk_name = "NM .35 \"Vintovka Lyugera\" carbine"
-	icon_state = "black"
+	icon_state = "blackshield"
 	license = 15
 
 	designs = list(
@@ -121,11 +121,24 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/alemao
 	disk_name = "NM .35 \"O Alemao\" smg"
-	icon_state = "black"
+	icon_state = "blackshield"
 	license = 8
 
 	designs = list(
 		/datum/design/autolathe/gun/alemao = 3,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/pistol_lethal = 2,
+		)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/NM_colt
+	disk_name = "NM HG .35 \"Bronco\""
+	icon_state = "blackshield"
+	license = 8
+
+	designs = list(
+		/datum/design/autolathe/gun/NM_colt = 3,
 		/datum/design/autolathe/ammo/pistol_practice = 0,
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol,
@@ -147,7 +160,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/zatvor
 	disk_name = "NM .257 bolt \"Zatvor\" rifle"
-	icon_state = "black"
+	icon_state = "blackshield"
 	license = 8
 
 	designs = list(
@@ -300,8 +313,8 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
-		/datum/design/autolathe/ammo/shotgun_box,
-		/datum/design/autolathe/ammo/shotgun_pellet_box,
+		/datum/design/autolathe/ammo/shotgun_box = 5, //35 x 4 (140 shells well a full disk of 5 x 20 = 100)
+		/datum/design/autolathe/ammo/shotgun_pellet_box = 5,
 	)
 
 
@@ -321,8 +334,8 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
-		/datum/design/autolathe/ammo/shotgun_box,
-		/datum/design/autolathe/ammo/shotgun_pellet_box,
+		/datum/design/autolathe/ammo/shotgun_box = 3, //35 x 6 (210 shells well a full disk of 5 x 20 = 100)
+		/datum/design/autolathe/ammo/shotgun_pellet_box = 3,
 		/datum/design/autolathe/ammo/box_10x24 = 5,
 		/datum/design/autolathe/ammo/box_antim = 5,
 		)
@@ -375,6 +388,20 @@
 		/datum/design/autolathe/ammo/hpistol,
 		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/glock
+	disk_name = "SA - .35 Sky Auto Pistol"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/glock = 3,
+		/datum/design/autolathe/ammo/hpistol_practice = 0,
+		/datum/design/autolathe/ammo/hpistol_rubber,
+		/datum/design/autolathe/ammo/hpistol,
+		/datum/design/autolathe/ammo/hpistol_lethal = 2,
+	)
+
 
 // .40 REVOLVERS
 

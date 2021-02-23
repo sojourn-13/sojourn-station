@@ -463,7 +463,7 @@
 		GUN_UPGRADE_FIRE_DELAY_MULT = rand(11,18)/10
 	)
 	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10.14)/10
+	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_TRIGGER
 
@@ -482,7 +482,7 @@
 		GUN_UPGRADE_DAMAGE_MULT = rand(4,9)/10,
 	)
 	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10.14)/10
+	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_BARREL
 
@@ -500,7 +500,7 @@
 		GUN_UPGRADE_STEPDELAY_MULT = rand(12,18)/10,
 	)
 	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10.14)/10
+	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MUZZLE
 
@@ -517,7 +517,7 @@
 		GUN_UPGRADE_RECOIL = rand(5, 50)/10,
 	)
 	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10.14)/10
+	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MECHANISM
 
@@ -534,7 +534,7 @@
 		GUN_UPGRADE_OFFSET = rand(3,6),
 	)
 	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10.14)/10
+	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_SCOPE
 
@@ -550,7 +550,7 @@
 		GUN_UPGRADE_RIGGED = TRUE
 	)
 	I.destroy_on_removal = TRUE
-	I.removal_time *= rand(10.14)/10
+	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MECHANISM
 

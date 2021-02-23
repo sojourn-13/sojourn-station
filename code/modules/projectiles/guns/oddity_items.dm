@@ -1,10 +1,11 @@
-/obj/item/weapon/gun/projectile/handmade_pistol/reliable
-	name = "\"Reliable\" handmade pistol"
+/obj/item/weapon/gun/projectile/handmade_pistol/anti_material/reliable
+	name = "\"Finger of God\" handmade pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. Uses .35 caliber."
+	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. This one chambers .60-06 anti material ammo."
 	jam_chance = 5
-	damage_multiplier = 3
-	recoil_buildup = 1
+	damage_multiplier = 1.36
+	recoil_buildup = 25
+	max_shells = 6
 
 /obj/item/weapon/gun/energy/sniperrifle/saint
 	name = "\"Saint\" laser rifle"
@@ -26,6 +27,12 @@
 	max_shells = 60
 	recoil_buildup = 20
 
+/obj/item/weapon/gun/projectile/revolver/mistral/elite/New()
+	..()
+	item_flags |= BLUESPACE
+	bluespace_entropy(2, get_turf(src)) //Same as the normal bluespace crystal
+
+
 /obj/item/weapon/gun/projectile/shotgun/pump/obrez/thunderlord
 	name = "\"Thunderlord\" shotgun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
@@ -46,3 +53,19 @@
 	name = "\"Maxim\" light machinegun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A common design used by certain nefarious political groups, this model however has been stripped of its fellows evil machinations, making it safe to use by anyone."
+
+/obj/item/weapon/gun/energy/lasersmg/inferno
+	name = "Disco Inferno \"Light Show\""
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	Someone has inscribed 'inferno' in a stylized multi-color crayon on the side while modifying its internal power capacitor to be much more effeciant."
+	charge_cost = 5
+
+/obj/item/weapon/gun/projectile/silenced/rat
+	name = "\"Rat Man\" silenced pistol"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	A spray painted decal of a rat man with a grinning face has been placed on the grip, the deadliest killers are often those ignored or underestimated by others after all. \
+	This particular pistol has been oiled, cleaned, and appears to be so well maintenanced that its become 110% of its normal potential."
+	damage_multiplier = 1.4
+	recoil_buildup = 4
+	one_hand_penalty = 6
+	penetration_multiplier = 1.1

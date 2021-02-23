@@ -57,13 +57,46 @@
 	)
 
 /datum/craft_recipe/weapon/pistol
-	name = "handmade gun"
+	name = "handmade pistol"
 	result = /obj/item/weapon/gun/projectile/handmade_pistol
 	icon_state = "woodworking"
 	steps = list(
 		list(/obj/item/stack/rods, 3, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(/obj/item/weapon/crossbowframe, 1, "time" = 20)
+	)
+
+/datum/craft_recipe/weapon/pistol_magnum
+	name = "handmade magnum"
+	result = /obj/item/weapon/gun/projectile/handmade_pistol/magnum
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
+		list(QUALITY_SAWING, 10, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+	)
+
+/datum/craft_recipe/weapon/pistol_slugger
+	name = "handmade slugger"
+	result = /obj/item/weapon/gun/projectile/handmade_pistol/shotgun
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
+		list(QUALITY_SAWING, 10, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+	)
+
+/datum/craft_recipe/weapon/pistol_man_opener
+	name = "handmade man-opener"
+	result = /obj/item/weapon/gun/projectile/handmade_pistol/anti_material
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
+		list(QUALITY_SAWING, 10, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
 	)
 
 /datum/craft_recipe/weapon/ammo_kit

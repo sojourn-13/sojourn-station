@@ -55,16 +55,19 @@
 
 /datum/surgery_step/robotic/fix_brute/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
-		SPAN_NOTICE("[user] begins to patch damage to [organ.get_surgery_name()]'s support structure with \the [tool]."),
+		SPAN_NOTICE("[user] begins to [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] patch damage to [organ.get_surgery_name()]'s support structure with \the [tool]."),
 		SPAN_NOTICE("You begin to patch damage to [organ.get_surgery_name()]'s support structure with \the [tool].")
 	)
 
 /datum/surgery_step/robotic/fix_brute/end_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
-		SPAN_NOTICE("[user] finishes patching damage to [organ.get_surgery_name()] with \the [tool]."),
+		SPAN_NOTICE("[user] finishes [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] patching damage to [organ.get_surgery_name()] with \the [tool]."),
 		SPAN_NOTICE("You finish patching damage to [organ.get_surgery_name()] with \the [tool].")
 	)
-	organ.heal_damage(rand(30, 50), 0, TRUE)
+	if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
+		organ.heal_damage(50, 0, TRUE)
+	else
+		organ.heal_damage(rand(30, 50), 0, TRUE)
 
 /datum/surgery_step/robotic/fix_brute/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
@@ -95,17 +98,20 @@
 
 /datum/surgery_step/robotic/fix_burn/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/stack/cable_coil/tool)
 	user.visible_message(
-		SPAN_NOTICE("[user] begins to replace damaged wiring in [organ.get_surgery_name()]."),
+		SPAN_NOTICE("[user] begins to [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] replace damaged wiring in [organ.get_surgery_name()]."),
 		SPAN_NOTICE("You begin to replace damaged wiring in [organ.get_surgery_name()].")
 	)
 
 /datum/surgery_step/robotic/fix_burn/end_step(mob/living/user, obj/item/organ/external/organ, obj/item/stack/cable_coil/tool)
 	user.visible_message(
-		SPAN_NOTICE("[user] finishes replacing damaged wiring in [organ.get_surgery_name()]."),
+		SPAN_NOTICE("[user] finishes [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] replacing damaged wiring in [organ.get_surgery_name()]."),
 		SPAN_NOTICE("You finish replacing damaged wiring in [organ.get_surgery_name()].")
 	)
 	if(tool.use(3))
-		organ.heal_damage(0, rand(30, 50), TRUE)
+		if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
+			organ.heal_damage(0, 50, TRUE)
+		else
+			organ.heal_damage(0,rand(30, 50), TRUE)
 
 /datum/surgery_step/robotic/fix_burn/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/stack/cable_coil/tool)
 	user.visible_message(

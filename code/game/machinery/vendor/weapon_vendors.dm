@@ -12,6 +12,7 @@
 	/obj/item/weapon/gun/projectile/giskard = 2,
 	/obj/item/weapon/gun/projectile/colt = 2,
 	/obj/item/weapon/gun/energy/gun/martin = 2,
+	/obj/item/weapon/gun/projectile/glock = 2,
 	/obj/item/weapon/gun/projectile/revolver/detective = 2,
 	/obj/item/weapon/gun/projectile/clarissa = 2, // SoJ edit
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 3,
@@ -65,6 +66,7 @@
 	/obj/item/weapon/gun/projectile/giskard = 500,
 	/obj/item/weapon/gun/projectile/colt = 900,
 	/obj/item/weapon/gun/energy/gun/martin = 120,
+	/obj/item/weapon/gun/projectile/glock = 900,
 	/obj/item/weapon/gun/projectile/revolver/detective = 400,
 	/obj/item/weapon/gun/projectile/clarissa = 450, //Weakest gun in the game - SoJ Edit
 	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1500,
@@ -155,6 +157,7 @@
 	vendor_department = DEPARTMENT_CHURCH
 	products = list(/obj/item/weapon/book/ritual/cruciform = 10,
 					/obj/item/weapon/storage/fancy/candle_box = 10,
+					/obj/item/weapon/storage/fancy/cigarettes/faith = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 20,
 					/obj/item/weapon/tool_upgrade/augment/sanctifier = 5,
 					/obj/item/weapon/soap/church = 5,
@@ -186,6 +189,7 @@
 
 	prices = list(/obj/item/weapon/book/ritual/cruciform = 5,
 					/obj/item/weapon/storage/fancy/candle_box = 30,
+					/obj/item/weapon/storage/fancy/cigarettes/faith = 65, //Some healing chems
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors = 100,
 					/obj/item/weapon/tool_upgrade/augment/sanctifier = 80,
 					/obj/item/weapon/soap/church = 50,

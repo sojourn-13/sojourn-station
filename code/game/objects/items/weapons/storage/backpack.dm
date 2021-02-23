@@ -164,7 +164,7 @@
 
 /obj/item/weapon/storage/backpack/industrial
 	name = "industrial backpack"
-	desc = "It's a tough backpack for the daily grind of station life."
+	desc = "It's a tough backpack for the daily grind of colonial life."
 	icon_state = "backpack_industrial"
 
 /obj/item/weapon/storage/backpack/medical

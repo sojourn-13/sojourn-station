@@ -35,6 +35,13 @@
 
 	return filtered
 
+//Alt race masks here
+/obj/item/clothing/mask/gas/kriosan
+	name = "kriosan gas mask"
+	desc = "A face-covering mask fitted to a more canine biology connected to an air supply. Filters harmful gases from the air."
+	icon_state = "kriosan_gasmask"
+	siemens_coefficient = 0.7
+
 //Payday masks, clown alternatives, they function as gas masks.
 /obj/item/clothing/mask/gas/dal
 	name = "professional clown mask"

@@ -47,6 +47,16 @@
 	)
 	price_tag = 10
 
+//Alt race masks here
+/obj/item/clothing/mask/surgical/kriosan
+	name = "kriosan surgical mask"
+	desc = "A sterile mask designed and fitted to help prevent the spread of diseases for your local kriosan."
+	icon_state = "kriosan_sterile"
+	flags_inv = HIDEFACE
+	body_parts_covered = 0
+
+//End
+
 /obj/item/clothing/mask/snorkel
 	name = "snorkel"
 	desc = "Diving goggles complete with an attached air tube."

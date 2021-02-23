@@ -436,7 +436,7 @@
 		var/mob/living/carbon/human/H = M
 
 		for(var/obj/item/organ/I in H.internal_organs)
-			if((I.damage > 0) && !BP_IS_ROBOTIC(I) && !istype(/obj/item/organ/internal/bone)) //Stop healing bones, bones are not organs!
+			if((I.damage > 0) && !BP_IS_ROBOTIC(I) && !istype(I, /obj/item/organ/internal/bone)) //Stop healing bones, bones are not organs!
 				I.heal_damage(((0.2 + I.damage * 0.05) * effect_multiplier), FALSE)
 		var/obj/item/organ/internal/nerve/N = H.random_organ_by_process(OP_NERVE)
 		if(H && istype(H))
@@ -459,20 +459,20 @@
 	affects_dead = 1
 
 /datum/reagent/medicine/ryetalyn/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-    src.on_mob_add(M, alien, effect_multiplier) //I'm going with this to make it both affect dead people for unhusking, and to update on every life tick. Thanks Hydro!
+	src.on_mob_add(M, alien, effect_multiplier) //I'm going with this to make it both affect dead people for unhusking, and to update on every life tick. Thanks Hydro!
 
 /datum/reagent/medicine/ryetalyn/on_mob_add(mob/living/carbon/M, alien, effect_multiplier) //on_mob_add allows it to act regardless if the human is dead or alive.
-    var/needs_update = M.mutations.len > 0
+	var/needs_update = M.mutations.len > 0
 
-    M.mutations = list()
-    M.disabilities = 0
-    M.sdisabilities = 0
+	M.mutations = list()
+	M.disabilities = 0
+	M.sdisabilities = 0
 
-    // Might need to update appearance for hulk etc.
-    if(needs_update && ishuman(M))
-        var/mob/living/carbon/human/H = M
-        H.update_mutations()
-        H.update_body() //Don't let husks stay wrinkly all the time, we gotta fix them!
+	// Might need to update appearance for hulk etc.
+	if(needs_update && ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.update_mutations()
+		H.update_body() //Don't let husks stay wrinkly all the time, we gotta fix them!
 
 /datum/reagent/medicine/negative_ling
 	name = "Negative Paragenetic Marker"

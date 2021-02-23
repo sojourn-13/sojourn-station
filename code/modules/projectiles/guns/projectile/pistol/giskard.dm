@@ -12,7 +12,7 @@
 	fire_delay = 0.6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3)
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_PISTOL
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 4)
 	price_tag = 300
 	damage_multiplier = 1

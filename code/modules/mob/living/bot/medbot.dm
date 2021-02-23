@@ -1,6 +1,6 @@
 /mob/living/bot/medbot
 	name = "Medbot"
-	desc = "A little medical robot. He looks somewhat underwhelmed."
+	desc = "A little medical robot. He looks somewhat disappointed."
 	icon_state = "medibot0"
 	req_one_access = list(access_moebius, access_robotics)
 

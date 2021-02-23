@@ -491,7 +491,10 @@
 	var/crit_fail_chance = 25
 
 	if(required_stat)
-		crit_fail_chance = crit_fail_chance - user.stats.getStat(required_stat)
+		if(islist(required_stat))
+			crit_fail_chance = crit_fail_chance - user.stats.getMaxStat(required_stat)
+		else
+			crit_fail_chance = crit_fail_chance - user.stats.getStat(required_stat)
 
 	if (crit_fail_chance <= 0)
 		return
@@ -979,11 +982,15 @@
 
 		if (get_tool_type(user, list(QUALITY_WELDING), H)) //Prosthetic repair
 			if (S.brute_dam)
-				if (S.brute_dam < ROBOLIMB_SELF_REPAIR_CAP)
+				var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
+				if (S.brute_dam < ROBOLIMB_SELF_REPAIR_CAP || robotics_expert)
 					if (use_tool(user, H, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-						S.heal_damage(15,0,TRUE)
+						var/repair_amount = 15
+						if(robotics_expert)
+							repair_amount = user.stats.getStat(STAT_MEC)
+						S.heal_damage(repair_amount,0,TRUE)
 						user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-						user.visible_message(SPAN_NOTICE("\The [user] patches some dents on \the [H]'s [S.name] with \the [src]."))
+						user.visible_message(SPAN_NOTICE("\The [user] [robotics_expert ? "expertly" : ""] patches some dents on \the [H]'s [S.name] with \the [src]."))
 						return 1
 				else if (S.open != 2)
 					to_chat(user, SPAN_DANGER("The damage is far too severe to patch over externally."))

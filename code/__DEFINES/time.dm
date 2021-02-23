@@ -7,10 +7,13 @@
 #define DECISECONDS
 
 #define SECONDS *10
+#define SECOND SECONDS
 
 #define MINUTES SECONDS*60
+#define MINUTE MINUTES
 
 #define HOURS MINUTES*60
+#define HOUR HOURS
 
 #define DAYS *864000
 

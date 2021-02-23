@@ -162,7 +162,7 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0.05
+	addiction_chance = 0 //Never make nicotine actually addictive. Kaz's orders.
 	nerve_system_accumulations = 10
 
 /datum/reagent/drug/nicotine/overdose(mob/living/carbon/M, alien, effect_multiplier)
@@ -188,7 +188,7 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0.1
+	addiction_chance = 0 //Never make nicotine actually addictive. Kaz's orders.
 	nerve_system_accumulations = 15
 
 /datum/reagent/drug/nicotineplus/overdose(mob/living/carbon/M, alien, effect_multiplier)

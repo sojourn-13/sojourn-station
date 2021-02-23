@@ -27,7 +27,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/log_world_output = 0			// log log_world(messages)
 	var/sql_enabled = 1					// for sql switching
 	var/allow_admin_ooccolor = 0		// Allows admins with relevant permissions to have their own ooc colour
-	var/allow_vote_restart = 0 			// allow votes to restart
+	var/allow_vote_restart = 0 			// allow votes to e
+	var/automatic_restart_time = 0		// server will begin ending the round at this time
+	var/automatic_restart_delay = 0		// warning on how long until things restart
 	var/ert_admin_call_only = 0
 	var/allow_vote_mode = 0				// allow votes to change mode
 	var/allow_admin_jump = 1			// allows admin jumping
@@ -349,6 +351,12 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("allow_vote_restart")
 					config.allow_vote_restart = 1
+
+				if ("automatic_restart_time")
+					config.automatic_restart_time = text2num(value) SECONDS
+
+				if ("automatic_restart_delay")
+					config.automatic_restart_delay = text2num(value) SECONDS
 
 				if ("allow_vote_mode")
 					config.allow_vote_mode = 1

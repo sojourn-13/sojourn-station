@@ -167,6 +167,10 @@
 	name = "Church Garment"
 	build_path = /obj/item/clothing/under/rank/church
 
+/datum/design/bioprinter/nt_clothes/hermes_shoes
+	name = "Hermes Boots"
+	build_path = /obj/item/clothing/shoes/hermes_shoes
+
 //[MELEE]
 /datum/design/autolathe/sword/nt_sword
 	name = "NT Short Sword"
@@ -249,7 +253,7 @@
 	name = "Absolutism Medkit"
 	build_path = /obj/item/weapon/storage/firstaid/nt
 
-//[/MED]
+//[/IMPLANTS]
 
 /datum/design/bioprinter/bioimplant
 	materials = list(MATERIAL_BIOMATTER = 50)
@@ -273,9 +277,6 @@
 /datum/design/bioprinter/bioimplant/omuscle
 	name = "Organic muscle implant"
 	build_path = /obj/item/weapon/biogoop/muscle
-//[/IMPLANT]
-
-
 
 //[/POUCHES]
 /datum/design/bioprinter/pouch/ammo
