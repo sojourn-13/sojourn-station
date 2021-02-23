@@ -45,10 +45,12 @@
 /obj/item/clothing/head/helmet/space/bomb/security
 	name = "dozer bomb helmet"
 	desc = "Use in case of bomb well under fire."
+	equip_delay = 16 SECONDS
+	slowdown = 1.25 //so with full suit is 3.5 or 4.5
 	armor = list(
-		melee = 40,
-		bullet = 40,
-		energy = 40,
+		melee = 60,
+		bullet = 60,
+		energy = 60,
 		bomb = 100,
 		bio = 100,
 		rad = 90
@@ -58,11 +60,12 @@
 /obj/item/clothing/suit/space/bomb/security
 	name = "dozer bomb suit"
 	desc = "A protective suit designed for safety when handling explosives well under fire."
-	slowdown = 3
+	slowdown = 3.25
+	equip_delay = 16 SECONDS
 	armor = list(
-		melee = 40,
-		bullet = 40,
-		energy = 40,
+		melee = 60,
+		bullet = 60,
+		energy = 60,
 		bomb = 100,
 		bio = 100,
 		rad = 90
