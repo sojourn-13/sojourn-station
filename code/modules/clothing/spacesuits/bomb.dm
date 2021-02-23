@@ -13,6 +13,7 @@
 		bio = 100,
 		rad = 90
 	)
+	max_upgrades = 3
 	siemens_coefficient = 0
 	tint = TINT_HEAVY
 	price_tag = 100
@@ -42,7 +43,28 @@
 	price_tag = 300
 
 /obj/item/clothing/head/helmet/space/bomb/security
+	name = "dozer bomb helmet"
+	desc = "Use in case of bomb well under fire."
+	armor = list(
+		melee = 40,
+		bullet = 40,
+		energy = 40,
+		bomb = 100,
+		bio = 100,
+		rad = 90
+	)
 	icon_state = "bombsuitsec"
 
 /obj/item/clothing/suit/space/bomb/security
+	name = "dozer bomb suit"
+	desc = "A protective suit designed for safety when handling explosives well under fire."
+	slowdown = 3
+	armor = list(
+		melee = 40,
+		bullet = 40,
+		energy = 40,
+		bomb = 100,
+		bio = 100,
+		rad = 90
+	)
 	icon_state = "bombsuitsec"

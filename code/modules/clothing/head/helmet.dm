@@ -24,6 +24,8 @@
 	siemens_coefficient = 0.7
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 100
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
 
 //Blackshield helmets
 /obj/item/clothing/head/helmet/ballistic
@@ -141,6 +143,7 @@
 	action_button_name = "Toggle Headlamp"
 	light_overlay = "technohelmet_light"
 	brightness_on = 4
+	max_upgrades = 2
 
 /obj/item/clothing/head/helmet/soteriasuit
 	name = "'Mark II' environmental protection helmet"
@@ -151,6 +154,7 @@
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_STEEL = 20)
 	flash_protection = FLASH_PROTECTION_MODERATE
+	max_upgrades = 2
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
@@ -233,6 +237,7 @@
 		rad = 0
 	)
 	price_tag = 75
+	max_upgrades = 2
 
 /obj/item/clothing/head/helmet/handmade/greathelm
 	name = "bucket-helm"
@@ -273,7 +278,6 @@
 	//We cant just use the armor var to store the original since initial(armor) will return a null pointer
 	var/list/armor_up = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	var/list/armor_down = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-
 	var/tint_down = TINT_NONE
 	flags_inv = HIDEEARS
 	var/flags_inv_down = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
@@ -312,12 +316,14 @@
 		tint = initial(tint)
 		flags_inv = initial(flags_inv)
 		body_parts_covered = initial(body_parts_covered)
+		refresh_upgrades()
 	else
 		armor = getArmor(arglist(armor_down))
 		flash_protection = flash_protection_down
 		tint = tint_down
 		flags_inv = flags_inv_down
 		body_parts_covered = body_parts_covered_down
+		refresh_upgrades()
 
 	update_icon()
 	update_wear_icon()	//update our mob overlays
