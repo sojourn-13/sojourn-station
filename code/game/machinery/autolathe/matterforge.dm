@@ -177,6 +177,8 @@
 	if(..())
 		return TRUE
 	matter_assoc_list()
+	if(!check_user(user))
+		return
 	user.set_machine(src)
 	if(!design_list?.len)
 		get_designs()
@@ -620,3 +622,9 @@
 	lst[MATERIAL_CARDBOARD] = 0.10
 	lst[MATERIAL_LEATHER] = 0.10
 	lst[MATERIAL_TITANIUM] = 0.70
+
+/obj/machinery/matter_nanoforge/proc/check_user(mob/user)
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
+		return TRUE
+	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
+	return FALSE
