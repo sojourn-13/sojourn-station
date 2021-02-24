@@ -147,7 +147,7 @@
 
 	return TRUE
 
-/datum/component/item_upgrade/proc/check_armor(var/obj/item/clothing/suit/armor/T, var/mob/living/user)
+/datum/component/item_upgrade/proc/check_armor(var/obj/item/clothing/T, var/mob/living/user)
 	if(T.item_upgrades.len >= T.max_upgrades)
 		to_chat(user, SPAN_WARNING("This armor can't fit anymore modifications!"))
 		return FALSE
@@ -242,7 +242,7 @@
 		add_values_gun(holder)
 	return TRUE
 
-/datum/component/item_upgrade/proc/apply_values_armor(var/obj/item/clothing/suit/armor/T)
+/datum/component/item_upgrade/proc/apply_values_armor(var/obj/item/clothing/T)
 	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
 		T.armor.melee += tool_upgrades[UPGRADE_MELEE_ARMOR]
 	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
@@ -612,8 +612,8 @@
 	if(istype(upgrade_loc, /obj/item/weapon/tool))
 		T = upgrade_loc
 
-	if(istype(upgrade_loc, /obj/item/clothing/suit/armor))
-		to_chat(user, SPAN_DANGER("You cannot remove armor upgrades once they've been installed!"))
+	if(istype(upgrade_loc, /obj/item/clothing))
+		//to_chat(user, SPAN_DANGER("You cannot remove armor upgrades once they've been installed!")) so we dont spawm for suit changing
 		return 1
 
 	ASSERT(istype(upgrade_loc))
