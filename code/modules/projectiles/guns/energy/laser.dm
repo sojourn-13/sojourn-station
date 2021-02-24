@@ -22,7 +22,8 @@
 
 /obj/item/weapon/gun/energy/laser/railgun
 	name = "\"Reductor\" rail rifle"
-	desc = "\"Artificer's Guild\" brand rail gun. This gun features a sleek and deadly design but it may burn out a battery when used."
+	desc = "\"Artificer's Guild\" brand rail gun. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
+	consuming the cell within for an extra bullet or a powerful explosive round."
 	icon = 'icons/obj/guns/energy/railgun.dmi'
 	icon_state = "railgun"
 	item_state = "railgun"
@@ -42,54 +43,67 @@
 	one_hand_penalty = 10
 	fire_delay = 14 //Equivalent to a pump then fire time
 	recoil_buildup = 1.2
-	damage_multiplier = 0.9
+	damage_multiplier = 1
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
 		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
-		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/shotgun/incendiary/railgun, icon="destroy"),
+		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=20000, icon="grenade"),
 	)
-	var/consume_cell = TRUE
+	var/consume_cell = FALSE
 	price_tag = 1750
 
 /obj/item/weapon/gun/energy/laser/railgun/consume_next_projectile()
-	.=..()
-	if(. && consume_cell && cell.empty())
+	if(!cell) return null
+	if(!ispath(projectile_type)) return null
+	if(consume_cell && !cell.checked_use(charge_cost))
 		visible_message(SPAN_WARNING("\The [cell] of \the [src] burns out!"))
 		qdel(cell)
 		cell = null
 		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 		new /obj/effect/decal/cleanable/ash(get_turf(src))
-	return .
+		return new projectile_type(src)
+	else if(!consume_cell && !cell.checked_use(charge_cost))
+		return null
+	else
+		return new projectile_type(src)
+
+/obj/item/weapon/gun/energy/laser/railgun/attackby(obj/item/I, mob/user)
+	..()
+	if(I.has_quality(QUALITY_BOLT_TURNING))
+		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
+			if(consume_cell)
+				consume_cell = FALSE
+				to_chat(user, SPAN_NOTICE("You secure the safety bolts and tune down the capacitor to safe levels, preventing the weapon from destroying empty cells for use as ammuniton."))
+			else
+				consume_cell = TRUE
+				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
+
 
 /obj/item/weapon/gun/energy/laser/railgun/pistol
 	name = "\"Myrmidon\" rail pistol"
-	desc = "\"Artificer's Guild\" brand rail pistol. This gun features a sleek and deadly design but it may burn out a battery when used."
+	desc = "\"Artificer's Guild\" brand rail pistol. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
+	consuming the cell within for an extra bullet or a powerful explosive round. For the law abiding engineer because rifles are too hard to hide."
 	icon = 'icons/obj/guns/energy/railpistol.dmi'
 	icon_state = "railpistol"
 	item_state = "railpistol"
-	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/rail.ogg'
 	suitable_cell = /obj/item/weapon/cell/medium
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 4, TECH_ENGINEERING = 4)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	fire_delay = 12
 	charge_cost = 200
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	recoil_buildup = 0.8
-	damage_multiplier = 0.8
 	can_dual = TRUE
 	twohanded = FALSE
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/kurtz/railgun, icon="kill"),
 		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/kurtz/rubber/railgun, icon="stun"),
-		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/kurtz/incendiary, icon="destroy"),
+		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=10000, icon="grenade"),
 	)
-	consume_cell = TRUE
 	price_tag = 1250
-	gun_tags = list(GUN_ENERGY,)
 
 /obj/item/weapon/gun/energy/shrapnel
 	name = "\"Shellshock\" scrap rifle"
@@ -117,7 +131,6 @@
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/hrifle/railgun, icon="kill"),
 		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/weak, charge_cost=10000, icon="grenade"),
-		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/lrifle/incendiary, icon="destroy"),
 	)
 	var/consume_cell = FALSE
 	price_tag = 500
