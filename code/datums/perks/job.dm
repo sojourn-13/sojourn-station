@@ -436,3 +436,8 @@
 	name = "Humble Cleanser"
 	desc = "You're used to seeing filth in all its forms. Your motto: a clean colony and workspace is the first step to enlightenment. The simple act of such humble work as cleaning grants your inspiration."
 	//icon_state = "neat" // https://game-icons.net/1x1/delapouite/broom.html
+
+/datum/perk/channeling
+	name = "Channeling"
+	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
+			during group rituals and have an increased regeneration of cruciform energy."

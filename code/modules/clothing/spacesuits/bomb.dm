@@ -3,7 +3,7 @@
  */
 /obj/item/clothing/head/helmet/space/bomb
 	name = "bomb helmet"
-	desc = "Use in case of bomb."
+	desc = "A protective helmet designed for safety when handling explosives, biological problems, and radiation."
 	icon_state = "bombsuit"
 	armor = list(
 		melee = 20,
@@ -20,7 +20,7 @@
 
 /obj/item/clothing/suit/space/bomb
 	name = "bomb suit"
-	desc = "A protective suit designed for safety when handling explosives."
+	desc = "A protective suit designed for safety when handling explosives, biological problems, and radiation."
 	icon_state = "bombsuit"
 	item_state = "bombsuit"
 	gas_transfer_coefficient = 0.01
@@ -44,7 +44,7 @@
 
 /obj/item/clothing/head/helmet/space/bomb/security
 	name = "juggernaut bomb helmet"
-	desc = "Use in case of bomb well under fire."
+	desc = "For use when bombs, bullets, toxic enviroments, lasers, and melee are all a concern but speed is not."
 	equip_delay = 16 SECONDS
 	slowdown = 1.25 //so with full suit is 3.5 or 4.5
 	armor = list(
@@ -59,7 +59,7 @@
 
 /obj/item/clothing/suit/space/bomb/security
 	name = "juggernaut bomb suit"
-	desc = "A protective suit designed for safety when handling explosives well under fire."
+	desc = "For use when bombs, bullets, toxic enviroments, lasers, and melee are all a concern but speed is not."
 	slowdown = 3.25
 	equip_delay = 16 SECONDS
 	armor = list(
