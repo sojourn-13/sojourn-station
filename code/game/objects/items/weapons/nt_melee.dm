@@ -19,13 +19,6 @@
 	else
 		embed_mult = initial(embed_mult)
 
-/obj/item/weapon/tool/sword/nt/equipped(mob/living/M)
-	. = ..()
-	if(is_held() && is_neotheology_disciple(M))
-		embed_mult = 0.1
-	else
-		embed_mult = initial(embed_mult)
-
 /obj/item/weapon/tool/sword/nt/shortsword
 	name = "Short Sword"
 	desc = "A saintly looking sword, made to do God's work. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
@@ -86,7 +79,7 @@
 	var/armor_penetration_extended = ARMOR_PEN_HALF
 	var/extended = FALSE
 	var/agony = 20
-	var/agony_extended = 45
+	var/agony_extended = 40 //Church harmbaton! This is legit better then a normal baton as it can be upgraded AND has base 15 damage
 	var/stun = 0
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 1000
@@ -144,7 +137,7 @@
 	var/tipbroken = FALSE
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK | SLOT_BELT
-	throwforce = 75
+	throwforce = 25 //We embed making us amazing!
 	armor_penetration = ARMOR_PEN_HALF
 	throw_speed = 3
 	price_tag = 150
@@ -249,3 +242,11 @@
 	armor_penetration = ARMOR_PEN_HALF
 	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_PLASTIC = 3)
 	price_tag = 10000
+
+//This is after all also a church weapon
+/obj/item/weapon/tool/sword/crusader/equipped(mob/living/M)
+	. = ..()
+	if(is_held() && is_neotheology_disciple(M))
+		embed_mult = 0.1
+	else
+		embed_mult = initial(embed_mult)
