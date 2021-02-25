@@ -366,10 +366,7 @@
 	knockback = 0
 
 /obj/item/projectile/bullet/shotgun/incendiary
-	damage_types = list(BURN = 10)
-	agony = 5
-	armor_penetration = 0
-	embed = FALSE
+	damage_types = list(BURN = 45)
 	knockback = 0
 	var/fire_stacks = 4
 

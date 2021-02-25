@@ -220,6 +220,8 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/webhook_url
 	var/webhook_key
 
+	var/profiler_permission = R_DEBUG | R_SERVER
+
 /datum/configuration/New()
 	fill_storyevents_list()
 
@@ -709,6 +711,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("webhook_key")
 					config.webhook_key = value
+
+				if("profiler_permission")
+					profiler_permission = text2num(value)
 
 				if("webhook_url")
 					config.webhook_url = value
