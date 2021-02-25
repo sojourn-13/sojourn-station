@@ -174,7 +174,7 @@
 //[MELEE]
 /datum/design/autolathe/sword/nt_sword
 	name = "NT Short Sword"
-	build_path = /obj/item/weapon/tool/sword/nt
+	build_path = /obj/item/weapon/tool/sword/nt/shortsword
 
 /datum/design/autolathe/sword/nt_longsword
 	name = "NT Longsword"
@@ -187,6 +187,10 @@
 /datum/design/autolathe/sword/nt_halberd
 	name = "NT Halberd"
 	build_path = /obj/item/weapon/tool/spear/halberd
+
+/datum/design/autolathe/sword/nt_spear
+	name = "NT Spear"
+	build_path = /obj/item/weapon/tool/sword/nt/spear
 
 /datum/design/autolathe/sword/nt_scourge
 	name = "NT Scourge"
