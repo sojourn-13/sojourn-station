@@ -15,7 +15,7 @@
 	path = /obj/item/rig_module/fabricator/energy_net
 
 /datum/uplink_item/item/ewar_voice
-	name = "Electrowarfare Suite and Voice Synthesiser"
+	name = "Electrowarfare Suite and Voice Synthesizer"
 	item_cost = 4
 	path = /obj/item/weapon/storage/box/syndie_kit/ewar_voice
 

@@ -50,7 +50,7 @@
 	..()
 
 /obj/item/weapon/tool/hammer/powered_hammer/onestar_hammer
-	name = "greyson sledgehammer"
+	name = "Greyson sledgehammer"
 	desc = "Used for applying immeasurable blunt force to anything in your way."
 	icon_state = "onehammer"
 	item_state = "onehammer"
@@ -105,7 +105,7 @@
 
 /obj/item/weapon/tool/hammer/mace
 	name = "mace"
-	desc = "Used for applying blunt force trauma to a person's ribcage."
+	desc = "Used for applying blunt force trauma to a person's rib cage."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "mace"
 	item_state = "mace"

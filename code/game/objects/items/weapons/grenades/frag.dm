@@ -1,5 +1,5 @@
 /obj/item/weapon/grenade/frag
-	name = "NT DFG \"Pomme\""
+	name = "NT DF grenade \"Pomme\""
 	desc = "A military-grade defensive fragmentation grenade, designed to be thrown from cover."
 	icon_state = "frag"
 	item_state = "frggrenade"
@@ -37,7 +37,7 @@
 	qdel(src)
 
 /obj/item/weapon/grenade/frag/nt
-	name = "NT DFG \"Holy Thunder\""
+	name = "NT DF grenade \"Holy Thunder\""
 	desc = "A military-grade defensive fragmentation grenade, designed to be thrown from cover."
 	icon_state = "frag_nt"
 	item_state = "frggrenade_nt"

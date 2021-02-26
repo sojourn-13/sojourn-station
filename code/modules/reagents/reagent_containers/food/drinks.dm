@@ -166,7 +166,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/cocamilk/small
 	name = "small chocolate milk carton"
 	desc = "It's chocolate milk. Brown and sweet goodness!"
-	icon_state = "mini-cocamilk"
+	icon_state = "mini-milkcoca"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
 	preloaded_reagents = list("chocolatemilk" = 30)
@@ -174,7 +174,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/redmilk/small
 	name = "small strawberry milk carton"
 	desc = "It's strawberry milk. Red and sweet goodness!"
-	icon_state = "mini-redmilk"
+	icon_state = "mini-milkred"
 	item_state = "carton"
 	center_of_mass = list("x"=16, "y"=9)
 	preloaded_reagents = list("strawberrymilk" = 30)

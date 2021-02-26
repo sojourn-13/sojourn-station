@@ -44,11 +44,11 @@
 	category = CAT_PROSTHESIS
 
 /datum/design/research/item/mechfab/modules/armor
-	name = "Subdermal Body Armor"
+	name = "Sub-Dermal Body Armor"
 	build_path = /obj/item/organ_module/armor
 
 /datum/design/research/item/mechfab/modules/armblade
-	name = "Embedded armblade"
+	name = "Embedded Arm Blade"
 	build_path = /obj/item/organ_module/active/simple/armblade
 
 /datum/design/research/item/mechfab/modules/energy_blade
@@ -97,7 +97,7 @@
 
 /datum/design/research/item/mechfab/modules/hud/sec
 	build_path = /obj/item/organ_module/active/hud/sec
-	name = "Embeded Security HUD Shades"
+	name = "Embedded Security HUD Shades"
 
 /datum/design/research/item/mechfab/modules/hud/night
 	build_path = /obj/item/organ_module/active/hud/night

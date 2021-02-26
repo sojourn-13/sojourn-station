@@ -28,7 +28,7 @@
 /datum/reagent/toxin/plasticide
 	name = "Plasticide"
 	id = "plasticide"
-	description = "Liquid plastic used in creating plastic sheets."
+	description = "Liquid plastic used in creation of plastic sheets."
 	taste_description = "plastic"
 	reagent_state = LIQUID
 	color = "#CF3600"
@@ -123,7 +123,7 @@
 /datum/reagent/toxin/cyanide //Fast and Lethal
 	name = "Cyanide"
 	id = "cyanide"
-	description = "A highly toxic chemical."
+	description = "A highly toxic chemical that prevents cellular respiration."
 	taste_mult = 0.6
 	reagent_state = LIQUID
 	color = "#CF3600"
@@ -138,7 +138,7 @@
 /datum/reagent/toxin/potassium_chloride
 	name = "Potassium Chloride"
 	id = "potassium_chloride"
-	description = "A delicious salt that stops the heart when injected into cardiac muscle."
+	description = "A delicious salt that arrests the heart if injected there."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
@@ -160,7 +160,7 @@
 /datum/reagent/toxin/potassium_chlorophoride
 	name = "Potassium Chlorophoride"
 	id = "potassium_chlorophoride"
-	description = "A specific chemical based on Potassium Chloride to stop the heart for surgery."
+	description = "A specific chemical based on Potassium Chloride to arrest the heart for surgery."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
@@ -228,7 +228,7 @@
 /datum/reagent/toxin/plantbgone
 	name = "Plant-B-Gone"
 	id = "plantbgone"
-	description = "A harmful toxic mixture to kill plantlife."
+	description = "A harmful toxic mixture to kill plant life."
 	taste_mult = 1
 	reagent_state = LIQUID
 	color = "#49002E"
@@ -257,7 +257,7 @@
 /datum/reagent/acid/polyacid
 	name = "Polytrinic acid"
 	id = "pacid"
-	description = "Polytrinic acid is a an extremely corrosive chemical substance."
+	description = "Polytrinic acid is an extremely corrosive chemical substance."
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#8E18A9"
@@ -733,7 +733,7 @@
 /datum/reagent/toxin/combat
 	name = "Tetraricide"
 	id = "chemweapon1"
-	description = "A powerful chemical weapon, sometimes called as \"Sweet Death\". Only absolute psychopaths and REALLY desperete mercenaries utilize this chemical."
+	description = "A powerful chemical weapon, sometimes referred to as \"Sweet Death\". Only absolute psychopaths and REALLY desperate mercenaries utilize this chemical."
 	taste_description = "sweetness"
 	reagent_state = LIQUID
 	strength = 0.8

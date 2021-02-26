@@ -62,7 +62,7 @@
 /datum/reagent/carbon
 	name = "Carbon"
 	id = "carbon"
-	description = "A chemical element, the builing block of life."
+	description = "A chemical element, the building block of life."
 	taste_description = "sour chalk"
 	taste_mult = 1.5
 	reagent_state = SOLID
@@ -450,7 +450,7 @@
 /datum/reagent/metal/tungsten
 	name = "Tungsten"
 	id = "tungsten"
-	description = "A chemical element, and a strong oxidising agent."
+	description = "A chemical element, and a strong oxidizing agent."
 	taste_mult = 0 //no taste
 	reagent_state = SOLID
 	color = "#DCDCDC"

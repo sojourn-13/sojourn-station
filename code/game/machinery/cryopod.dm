@@ -46,6 +46,11 @@
 	desc = "An interface between crew and the elevator storage systems."
 	storage_name = "Elevator Storage Control"
 
+/obj/machinery/computer/cryopod/dormitory
+	name = "dormitory oversight console"
+	desc = "An interface between crew and the dorms storage systems."
+	storage_name = "Dorms Storage Control"
+
 /obj/machinery/computer/cryopod/attack_hand(mob/user = usr)
 	if(stat & (NOPOWER|BROKEN))
 		return
@@ -176,6 +181,7 @@
 	var/obj/machinery/computer/cryopod/control_computer
 	var/last_no_computer_message = 0
 	var/applies_stasis = 1
+	var/cryo_announcement = TRUE
 
 	// These items are preserved when the process() despawn proc occurs.
 	var/list/preserve_items = list(
@@ -220,6 +226,23 @@
 	opacity = 1
 
 	time_till_despawn = 600 //1 minute. We want to be much faster then normal cryo, since waiting in an elevator for half an hour is a special kind of hell.
+
+	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
+	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
+
+/obj/machinery/cryopod/dormitory
+	name = "Long Sleep Bed"
+	desc = "A bed for a long term sleep. (Use this to log out like a cryopod)"
+	icon = 'icons/obj/furniture.dmi'
+	icon_state = "bed"
+	base_icon_state = "bed"
+	occupied_icon_state = "bed"
+	on_store_message = null
+	on_store_name = null
+	on_enter_occupant_message = "You slip into the warm sheets and prepare for a long rest."
+	cryo_announcement = FALSE
+
+	time_till_despawn = 600 //1 minute. Quick log outs because of how it looks
 
 	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
 	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
@@ -395,7 +418,9 @@
 	control_computer._admin_logs += "[key_name(occupant)]" + "[occupant.mind ? ", ([occupant.mind.assigned_role])" : ""]" + " at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)]" + "[occupant.mind ? " ([occupant.mind.assigned_role])" : ""]" + " entered cryostorage.")
 
-	announce.autosay("[occupant.real_name]" + "[occupant.mind ? ", [occupant.mind.assigned_role]" : ""]" + ", [on_store_message]", "[on_store_name]")
+	if(cryo_announcement)
+		announce.autosay("[occupant.real_name]" + "[occupant.mind ? ", [occupant.mind.assigned_role]" : ""]" + ", [on_store_message]", "[on_store_name]")
+
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>")
 
 

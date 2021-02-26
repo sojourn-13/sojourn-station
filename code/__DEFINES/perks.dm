@@ -30,6 +30,7 @@
 #define PERK_SHELL_SHOCK /datum/perk/oddity/shell_shock
 #define PERK_FAILING_MIND /datum/perk/oddity/failing_mind
 #define PERK_SHARP_MIND /datum/perk/oddity/sharp_mind
+#define PERK_BLACKBOX_INSIGHT /datum/perk/oddity/blackbox_insight
 #define PERK_STRANGTH /datum/perk/oddity/strangth
 
 //roundstart perks (job and racial)
@@ -55,6 +56,11 @@
 #define PERK_BORN_WARRIOR /datum/perk/born_warrior
 #define PERK_SCUTTLEBUG /datum/perk/scuttlebug
 #define PERK_MARKET_PROF /datum/perk/market_prof
+#define PERK_MEDICAL_EXPERT /datum/perk/selfmedicated
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
+#define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
+#define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert
 #define PERK_ARTIST /datum/perk/job/artist
+#define PERK_BOLT_REFLECT /datum/perk/job/bolt_reflect
 #define PERK_JINGLE_JANGLE /datum/perk/job/jingle_jangle
+#define PERK_BUTCHER /datum/perk/job/butcher

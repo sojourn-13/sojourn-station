@@ -33,7 +33,7 @@
 	sort_string = "XABAB"
 
 /datum/design/research/aimodule/protectstation
-	name = "ProtectStation"
+	name = "ProtectColony"
 	build_path = /obj/item/weapon/aiModule/protectStation
 	sort_string = "XABAC"
 

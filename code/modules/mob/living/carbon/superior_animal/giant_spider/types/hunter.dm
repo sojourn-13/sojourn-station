@@ -33,6 +33,30 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
+//bomb spider, very little toxins and not much health but explodes on reaching melee range.
+/mob/living/carbon/superior_animal/giant_spider/plasma
+	name = "plasma spider"
+	desc = "Furry and black, it makes you shudder to look at it. This one is infused with plasma and has mutated spikes protruding from its chitin."
+	icon_state = "phoron"
+	icon_living = "phoron"
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+	poison_per_bite = 2
+	poison_type = "plasma"
+	move_to_delay = 4
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/plasma
+	meat_amount = 4
+	emote_see = list("chitters.","rubs its legs.","vibrates.")
+
+/mob/living/carbon/superior_animal/giant_spider/plasma/UnarmedAttack(var/atom/A, var/proximity)
+	. = ..()
+	src.gib()
+	explosion(src.loc, 0,1,3)
+
+
+//fortress spiders are tanks, not any faster but can knock enemies down and take a few more hits.
 /mob/living/carbon/superior_animal/giant_spider/tarantula
 	name = "fortress spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one is an absolute unit of chitin, armor, and chittering horror."
@@ -48,9 +72,6 @@
 /mob/living/carbon/superior_animal/giant_spider/tarantula/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))
 		var/mob/living/L = A
-		if(istype(L) && L.reagents)
-			L.reagents.add_reagent(poison_type, poison_per_bite)
-
 		if(istype(L) && !L.weakened && prob(15))
 			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE))
 				return
@@ -68,14 +89,14 @@
 	maxHealth = 500
 	health = 500
 	move_to_delay = 1
-	turns_per_move = 9
+	turns_per_move = 7
 	viewRange = 12
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "party drops"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/emperor
-	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4. 
+	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
 	meat_amount = 3
 	emote_see = list("chitters.","rubs its legs.","chitters in something that sounds like speech.")
 	mob_size = MOB_LARGE
@@ -84,3 +105,21 @@
 	..()
 	pixel_x = -16
 	pixel_y = null
+
+/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider
+	name = "reaper spider"
+	desc = "Furry, white, and black, it makes you shudder to look at it. This one is a massive hulking leviathan capable of striking fear in even the most powerful and stalwart of men."
+	icon_state = "terror_empress"
+	icon_living = "terror_empress"
+	maxHealth = 1500
+	health = 1500
+	move_to_delay = 2
+	turns_per_move = 1
+	melee_damage_lower = 40
+	melee_damage_upper = 50
+	poison_per_bite = 6
+	poison_type = "stoxin"
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/reaper_spider
+
+/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider/slip(var/slipped_on)
+	return FALSE

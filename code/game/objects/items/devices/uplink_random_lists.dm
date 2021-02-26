@@ -39,6 +39,7 @@ var/datum/uplink_random_selection/default_uplink_selection = new/datum/uplink_ra
 	..()
 
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/visible_weapons/rafale)
+	items += new/datum/uplink_random_item(/datum/uplink_item/item/ammo/pistol)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/visible_weapons/revolver)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/ammo/magnum)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/visible_weapons/heavysniper, 15, 0)

@@ -4,7 +4,7 @@
 /obj/structure/strangebeacon
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
 	icon_state = "strange_beacon"
-	desc = "It looks like ancient, and strange beacon."
+	desc = "It looks ancient."
 	var/nosignal = FALSE
 	var/entropy_value = 6
 

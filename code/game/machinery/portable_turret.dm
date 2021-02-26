@@ -11,22 +11,22 @@
 	name = "turret"
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "turretCover"
-	anchored = 1
+	anchored = TRUE
 
-	density = 0
+	density = FALSE
 	use_power = IDLE_POWER_USE				//this turret uses and requires power
 	idle_power_usage = 50		//when inactive, this turret takes up constant 50 Equipment power
 	active_power_usage = 300	//when active, this turret takes up constant 300 Equipment power
 	power_channel = EQUIP	//drains power from the EQUIPMENT channel
 
-	var/raised = 0			//if the turret cover is "open" and the turret is raised
-	var/raising= 0			//if the turret is currently opening or closing its cover
+	var/raised = FALSE			//if the turret cover is "open" and the turret is raised
+	var/raising= FALSE			//if the turret is currently opening or closing its cover
 	health = 80			//the turret's health
 	maxHealth = 80		//turrets maximal health.
 	var/resistance = RESISTANCE_FRAGILE 		//reduction on incoming damage
-	var/auto_repair = 0		//if 1 the turret slowly repairs itself.
-	var/locked = 1			//if the turret's behaviour control access is locked
-	var/controllock = 0		//if the turret responds to control panels
+	var/auto_repair = FALSE		//if 1 the turret slowly repairs itself.
+	var/locked = TRUE			//if the turret's behaviour control access is locked
+	var/controllock = FALSE		//if the turret responds to control panels
 
 	var/obj/item/weapon/gun/energy/installation = /obj/item/weapon/gun/energy/gun	//the weapon that's installed. Store as path to initialize a new gun on creation.
 	var/projectile = null	//holder for bullettype
@@ -38,19 +38,19 @@
 	var/last_fired = 0		//1: if the turret is cooling down from a shot, 0: turret is ready to fire
 	var/shot_delay = 15		//1.5 seconds between each shot
 
-	var/check_arrest = 1	//checks if the perp is set to arrest
-	var/check_records = 1	//checks if a security record exists at all
-	var/check_weapons = 0	//checks if it can shoot people that have a weapon they aren't authorized to have
-	var/check_access = 1	//if this is active, the turret shoots everything that does not meet the access requirements
-	var/check_anomalies = 1	//checks if it can shoot at unidentified lifeforms (ie xenos)
-	var/check_synth	 = 0 	//if active, will shoot at anything not an AI or cyborg
-	var/ailock = 0 			// AI cannot use this
+	var/check_arrest = TRUE	//checks if the perp is set to arrest
+	var/check_records = TRUE	//checks if a security record exists at all
+	var/check_weapons = FALSE	//checks if it can shoot people that have a weapon they aren't authorized to have
+	var/check_access = TRUE	//if this is active, the turret shoots everything that does not meet the access requirements
+	var/check_anomalies = TRUE	//checks if it can shoot at unidentified lifeforms (ie xenos)
+	var/check_synth	 = FALSE 	//if active, will shoot at anything not an AI or cyborg
+	var/ailock = FALSE 			// AI cannot use this
 
-	var/attacked = 0		//if set to 1, the turret gets pissed off and shoots at people nearby (unless they have sec access!)
+	var/attacked = FALSE		//if set to 1, the turret gets pissed off and shoots at people nearby (unless they have sec access!)
 
-	var/enabled = 1				//determines if the turret is on
-	var/lethal = 0			//whether in lethal or stun mode
-	var/disabled = 0
+	var/enabled = TRUE				//determines if the turret is on
+	var/lethal = FALSE			//whether in lethal or stun mode
+	var/disabled = FALSE
 
 	var/shot_sound 			//what sound should play when the turret fires
 	var/eshot_sound			//what sound should play when the emagged turret fires
@@ -60,40 +60,40 @@
 	var/wrenching = 0
 	var/last_target					//last target fired at, prevents turrets from erratically firing at all valid targets in range
 
-	var/hackfail = 0				//if the turret has gotten pissed at someone who tried to hack it, but failed, it will immediately reactivate and target them.
-	var/debugopen = 0				//if the turret's debug functions are accessible through the control panel
+	var/hackfail = FALSE				//if the turret has gotten pissed at someone who tried to hack it, but failed, it will immediately reactivate and target them.
+	var/debugopen = FALSE				//if the turret's debug functions are accessible through the control panel
 	var/list/registered_names = list() 		//holder for registered IDs for the turret to ignore
 	var/list/access_occupy = list()
-	var/overridden = 0				//if the security override is 0, security protocols are on. if 1, protocols are broken.
+	var/overridden = FALSE				//if the security override is 0, security protocols are on. if 1, protocols are broken.
 
 /obj/machinery/porta_turret/One_star
 	name = "greyson positronic turret"
 	installation = /obj/item/weapon/gun/energy/retro
 
 /obj/machinery/porta_turret/crescent
-	enabled = 0
-	ailock = 1
-	check_synth	 = 0
-	check_access = 1
-	check_arrest = 1
-	check_records = 1
-	check_weapons = 1
-	check_anomalies = 1
+	enabled = FALSE
+	ailock = TRUE
+	check_synth	 = FALSE
+	check_access = TRUE
+	check_arrest = TRUE
+	check_records = TRUE
+	check_weapons = TRUE
+	check_anomalies = TRUE
 
 /obj/machinery/porta_turret/gate
 	name = "colony defense turret"
 	desc = "Decent firepower, slow rate of fire, only has a lethal mode. The kind of defense the colony can afford."
-	check_synth	 = 0
-	check_access = 0
-	check_arrest = 1
-	check_records = 0
-	check_weapons = 0
-	check_anomalies = 1
-	installation = /obj/item/weapon/gun/energy/laser
+	check_synth	 = FALSE
+	check_access = FALSE
+	check_arrest = TRUE
+	check_records = FALSE
+	check_weapons = FALSE
+	check_anomalies = TRUE
+	installation = /obj/item/weapon/gun/energy/retro
 
 /obj/machinery/porta_turret/stationary
-	ailock = 1
-	lethal = 1
+	ailock = TRUE
+	lethal = TRUE
 	installation = /obj/item/weapon/gun/energy/laser
 
 /obj/machinery/porta_turret/New()

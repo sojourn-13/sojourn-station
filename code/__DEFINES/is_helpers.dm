@@ -66,7 +66,7 @@
 
 #define isgun(A) istype(A, /obj/item/weapon/gun)
 
-#define isarmor(A) istype(A, /obj/item/clothing/suit/armor)
+#define isarmor(A) istype(A, /obj/item/clothing)
 
 #define istool(A) istype(A, /obj/item/weapon/tool)
 

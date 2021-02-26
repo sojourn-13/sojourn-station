@@ -302,12 +302,12 @@
 	icon_state = "bidon"
 	reagent_flags = AMOUNT_VISIBLE
 	amount_per_transfer_from_this = 30
-	possible_transfer_amounts = list(10,30,60,120,200)
+	possible_transfer_amounts = list(10,30,60,120,200,300)
 	var/filling_states = list(10,20,30,40,50,60,70,80,100)
 	unacidable = 1
 	anchored = 0
 	density = TRUE
-	volume = 600
+	volume = 6000
 	var/lid = TRUE
 
 /obj/structure/reagent_dispensers/bidon/advanced
@@ -316,7 +316,7 @@
 	icon_state = "bidon_adv"
 	reagent_flags = TRANSPARENT
 	filling_states = list(20,40,60,80,100)
-	volume = 900
+	volume = 9000
 
 /obj/structure/reagent_dispensers/bidon/Initialize(mapload, ...)
 	. = ..()

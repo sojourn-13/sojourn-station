@@ -33,6 +33,8 @@
 	unsuitable_atoms_damage = 0
 	meat_amount = 0
 	meat_type = null
+	leather_amount = 0
+	bones_amount = 0
 
 //Drops
 	meat_amount = 4

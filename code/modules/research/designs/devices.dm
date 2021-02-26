@@ -16,6 +16,11 @@
 	build_path = /obj/item/clothing/glasses/hud/security
 	category = CAT_WEAPON //Strongest weapon in the game is a ED/Beesky combo
 
+/datum/design/research/item/botany_disk
+	name = "flora data disk"
+	build_path = /obj/item/weapon/disk/botany
+	category = "Misc"
+
 //Bluespace stuff
 
 /datum/design/research/item/ano_scanner
@@ -67,7 +72,7 @@
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/trashbag_holding
-	name = "'Trashbag of Holding'"
+	name = "'Trash Bag of Holding'"
 	desc = "Using localized pockets of bluespace this trashbag prototype offers incredible storage capacity with the contents weighting nothing."
 	build_path = /obj/item/weapon/storage/bag/trash/holding
 	category = "Bluespace Telecoms"

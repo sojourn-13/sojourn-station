@@ -23,12 +23,16 @@
 	build_path = /obj/item/weapon/gun/projectile/clarissa/makarov
 
 /datum/design/autolathe/gun/firefly
-	name = "H&S HG .35 \"Firefly\""
+	name = "GmbH HG .35 \"Firefly\""
 	build_path = /obj/item/weapon/gun/projectile/firefly
 
 /datum/design/autolathe/gun/colt
-	name = "SA HG .35 \"Colt\""
+	name = "H&S HG .35 \"Colt\""
 	build_path = /obj/item/weapon/gun/projectile/colt
+
+/datum/design/autolathe/gun/glock
+	name = "SA HG .35 \"Sky\""
+	build_path = /obj/item/weapon/gun/projectile/glock
 
 /datum/design/autolathe/gun/NM_colt
 	name = "BR .35 \"Bronco\""
@@ -52,7 +56,7 @@
 	build_path = /obj/item/weapon/gun/projectile/ladon
 
 /datum/design/autolathe/gun/ladon_hs
-	name = "H&S HG .40 \"Ladon\""
+	name = "GmbH HG .40 \"Ladon\""
 	build_path = /obj/item/weapon/gun/projectile/ladon/hs
 
 /datum/design/autolathe/gun/ladon_sa
@@ -60,7 +64,7 @@
 	build_path = /obj/item/weapon/gun/projectile/ladon/sa
 
 /datum/design/autolathe/gun/rafale
-	name = "SM SHG .40 \"Rafale\""
+	name = "GmbH SHG .40 \"Rafale\""
 	build_path = /obj/item/weapon/gun/projectile/silenced
 
 /datum/design/autolathe/gun/mk58_wood
@@ -68,7 +72,7 @@
 	build_path = /obj/item/weapon/gun/projectile/mk58/wood
 
 /datum/design/autolathe/gun/ten
-	name = "H&S HG .40 \"Delta Elite\""
+	name = "SA HG .40 \"Delta Elite\""
 	build_path = /obj/item/weapon/gun/projectile/colt/ten
 
 /datum/design/autolathe/gun/ten_dark
@@ -102,7 +106,7 @@
 	build_path = /obj/item/weapon/gun/projectile/lamia/scoped/dark
 
 /datum/design/autolathe/gun/scoped_lamia
-	name = "H&S HG .50 Kurtz \"Lamia\" Advanced"
+	name = "GmbH HG .50 Kurtz \"Lamia\" Advanced"
 	build_path = /obj/item/weapon/gun/projectile/lamia/scoped
 
 /datum/design/autolathe/gun/basilisk
@@ -129,7 +133,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/straylight
 
 /datum/design/autolathe/gun/wirbelwind
-	name = "SM SMG ,35 \"Wirbelwind\""
+	name = "GmbH SMG ,35 \"Wirbelwind\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/wirbelwind
 
 /datum/design/autolathe/gun/drozd
@@ -205,7 +209,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/pitbull
 
 /datum/design/autolathe/gun/ostwind
-	name = "SM AR .257 \"Ostwind\""
+	name = "GmbH AR .257 \"Ostwind\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/ostwind
 
 /datum/design/autolathe/gun/sts25
@@ -218,11 +222,11 @@
 
 /datum/design/autolathe/gun/sika
 	name = "SA BR .257 \"Sika\""
-	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/light
+	build_path = /obj/item/weapon/gun/projectile/boltgun/light
 
 /datum/design/autolathe/gun/roe
 	name = "HS BR .257 \"Roe\""
-	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/light/wood
+	build_path = /obj/item/weapon/gun/projectile/boltgun/light_wood
 
 /datum/design/autolathe/gun/zatvor
 	name = "BR .257 \"zatvor\""
@@ -236,7 +240,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/vintorez
 
 /datum/design/autolathe/gun/nordwind
-	name = "SM DMR - 7.5mm  \"Nordwind\""
+	name = "GmbH DMR - 7.5mm  \"Nordwind\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/nordwind
 
 /datum/design/autolathe/gun/sts30
@@ -314,7 +318,7 @@
 	build_path = /obj/item/weapon/gun/projectile/automatic/dp
 
 /datum/design/autolathe/gun/survivalrifle
-	name = "SM SAS .10mm Caseless \"Bond\" Rifle"
+	name = "SAS .10mm Caseless \"Bond\" Rifle"
 	build_path = /obj/item/weapon/gun/projectile/automatic/survivalrifle
 
 //L A U N C H E R S

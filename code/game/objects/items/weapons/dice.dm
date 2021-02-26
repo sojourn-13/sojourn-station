@@ -49,7 +49,7 @@
 
 /obj/item/weapon/dice/d100
 	name = "d100"
-	desc = "A dice with hundred sides. Can be used as a golfball."
+	desc = "A dice with hundred sides. Can be used as a golf ball."
 	icon_state = "d10010"
 	sides = 100
 

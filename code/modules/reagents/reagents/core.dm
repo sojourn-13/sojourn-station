@@ -103,6 +103,15 @@
 	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen with the blessings of faith."
 	id = "holywater"
 
+/datum/reagent/water/holywater/affect_ingest(mob/living/carbon/human/M, alien, effect_multiplier)
+	var/obj/item/weapon/implant/core_implant/I = M.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
+	if(!I && !I.wearer) //Do we have a core implant?
+		return
+	if(!I.active) //Is it active?
+		return
+	M.heal_organ_damage(0, 0.2 * effect_multiplier, 0, 3 * effect_multiplier)
+	..()
+
 /datum/reagent/water/holywater/touch_turf(turf/T)
 	..()
 	if(volume >= 5)
@@ -169,7 +178,7 @@
 /datum/reagent/toxin/fuel
 	name = "Welding fuel"
 	id = "fuel"
-	description = "Required for welders. Flamable."
+	description = "Required for welders. Inflammable."
 	taste_description = "gross metal"
 	reagent_state = LIQUID
 	color = "#660000"

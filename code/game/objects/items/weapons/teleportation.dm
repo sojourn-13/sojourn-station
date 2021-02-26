@@ -15,7 +15,7 @@
 	var/temp = null
 	var/frequency = 1451
 	var/broadcasting = null
-	var/listening = 1.0
+	var/listening = 1
 	flags = CONDUCT
 	w_class = ITEM_SIZE_SMALL
 	item_state = "electronic"
@@ -45,13 +45,13 @@ Frequency:
 
 /obj/item/weapon/locator/Topic(href, href_list)
 	..()
-	if (usr.stat || usr.restrained())
+	if(usr.stat || usr.restrained())
 		return
 	var/turf/current_location = get_turf(usr)//What turf is the user on?
 	if(!current_location||current_location.z==2)//If turf was not found or they're on z level 2.
 		to_chat(usr, "The [src] is malfunctioning!")
 		return
-	if ((usr.contents.Find(src) || (in_range(src, usr) && istype(src.loc, /turf))))
+	if((usr.contents.Find(src) || (in_range(src, usr) && istype(src.loc, /turf))))
 		usr.set_machine(src)
 		if (href_list["refresh"])
 			src.temp = "<B>Persistent Signal Locator</B><HR>"
@@ -188,7 +188,7 @@ Frequency:
 	to_chat(user, SPAN_NOTICE("Portal locked in."))
 	var/obj/effect/portal/P = new portal_type(get_turf(src))
 	P.set_target(T)
-	P.entropy_value = entropy_value
+	P.entropy_value += entropy_value
 	if(portal_fail_chance)
 		P.failchance = portal_fail_chance
 	src.add_fingerprint(user)
@@ -214,7 +214,7 @@ Frequency:
 	portal_fail_chance = 50
 	cell_charge_per_attempt = 50
 	var/calibration_required = TRUE
-	entropy_value = 4 //for bluespace entropy
+	entropy_value = 3 //for bluespace entropy
 
 /obj/item/weapon/hand_tele/handmade/attackby(obj/item/C, mob/living/user)
 	..()

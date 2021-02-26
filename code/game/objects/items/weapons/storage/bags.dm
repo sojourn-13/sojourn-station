@@ -52,7 +52,7 @@
 
 /obj/item/weapon/storage/bag/trash/holding
 	name = "trash bag of holding"
-	desc = "The latest and greatest in custodial convenience, a trashbag that is capable of holding vast quantities of garbage. Why someone used highly dangerous bluespace for this is a question left unanswered."
+	desc = "The latest and greatest in custodial convenience, a trash bag that is capable of holding vast quantities of garbage. Why someone used highly dangerous bluespace for this is a question left unanswered."
 	icon_state = "bluetrashbag"
 	max_w_class = ITEM_SIZE_BULKY
 	max_storage_space = DEFAULT_HUGE_STORAGE * 1.25
@@ -118,7 +118,7 @@
 
 /obj/item/weapon/storage/bag/ore/holding
 	name = "satchel of holding"
-	desc = "A revolution in convenience, this satchel allows for immense ore or produce storage. It's been outfitted with anti-malfunction safety measures."
+	desc = "A revolution in convenience, this satchel allows for immense ore or produce storage."
 	icon_state = "satchel_bspace"
 	max_storage_space = DEFAULT_HUGE_STORAGE * 10
 	max_w_class = ITEM_SIZE_BULKY
@@ -279,7 +279,7 @@
 	name = "money bag"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "moneybag"
-	desc = "A bag for carrying lots of cash. It's got a big dollar sign printed on the front."
+	desc = "A bag for carrying lots of cash. It has got a big dollar sign printed on the front."
 	storage_slots = 40
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL

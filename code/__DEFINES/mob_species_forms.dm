@@ -89,7 +89,7 @@
 #define FORM_VOX_GRAY			"Gray Vox"
 #define FORM_VOX_LIME			"Lime Vox"
 
-#define FORM_VOX_BONEY			"Boney Vox"
+#define FORM_VOX_BONEY			"Bony Vox"
 #define FORM_VOX_TECHY			"Techy Vox"
 
 //

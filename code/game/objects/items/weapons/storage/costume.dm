@@ -165,8 +165,8 @@
 	new /obj/item/clothing/shoes/costume/animal/griffin(src)
 
 /obj/item/weapon/storage/box/costume/ian
-	name = "ian costume kit"
-	desc = "A box containing a ian costume."
+	name = "Ian costume kit"
+	desc = "A box containing an Ian costume."
 
 /obj/item/weapon/storage/box/costume/ian/populate_contents()
 	new /obj/item/clothing/head/costume/animal/ian(src)
@@ -334,8 +334,8 @@
 	new /obj/item/clothing/under/costume/animal/owl(src)
 
 /obj/item/weapon/storage/box/costume/santa
-	name = "santa costume kit"
-	desc = "A box containing a santa costume, and two hats for his elves."
+	name = "Santa costume kit"
+	desc = "A box containing a Santa costume, and two hats for his elves."
 
 /obj/item/weapon/storage/box/costume/santa/populate_contents()
 	new /obj/item/clothing/head/costume/misc/santa(src)
@@ -391,12 +391,18 @@
 	new /obj/item/clothing/under/color/red(src)
 
 /obj/item/weapon/storage/box/costume/techpriest
-	name = "techpriest costume kit"
-	desc = "A box containing a techpriest costume."
+	name = "tech-priest costume kit"
+	desc = "A box containing a tech-priest costume."
 
 /obj/item/weapon/storage/box/costume/techpriest/populate_contents()
-	new /obj/item/clothing/head/hood/techpriest(src)
 	new /obj/item/clothing/suit/hooded/costume/techpriest(src)
+
+/obj/item/weapon/storage/box/costume/techpriest_explorator
+	name = "tech-priest explorator costume kit"
+	desc = "A box containing an armored tech-priest costume."
+
+/obj/item/weapon/storage/box/costume/techpriest_explorator/populate_contents()
+	new /obj/item/clothing/suit/hooded/costume/techpriest_explorator(src)
 
 /obj/item/weapon/storage/box/costume/xeno
 	name = "xeno costume kit"
@@ -443,7 +449,7 @@
 	new /obj/item/clothing/mask/costume/misc/tiki/happy(src)
 
 /obj/item/weapon/storage/box/costume/surplushalloween
-	name = "halloween surplus kit"
+	name = "Halloween surplus kit"
 	desc = "A box containing a bunch of scary costume pieces."
 
 /obj/item/weapon/storage/box/costume/surplushalloween/populate_contents()

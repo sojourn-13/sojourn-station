@@ -285,7 +285,7 @@
 
 		projectile.multiply_projectile_damage(damage_multiplier)
 
-		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.2)
+		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02) //every 10 points is 1 AP added on
 
 		projectile.multiply_pierce_penetration(pierce_multiplier)
 

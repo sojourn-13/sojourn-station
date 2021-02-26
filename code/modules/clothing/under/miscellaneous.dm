@@ -224,19 +224,19 @@
 	icon_state = "gorka_crew_sci"
 	item_state = "gorka_crew_sci"
 
-obj/item/clothing/under/genericb
+/obj/item/clothing/under/genericb
 	name = "blue generic outfit"
 	desc = "A simple blue shirt with brown pants."
 	icon_state = "genericb"
 	item_state = "genericb"
 
-obj/item/clothing/under/genericw
+/obj/item/clothing/under/genericw
 	name = "white generic outfit"
 	desc = "A simple white shirt with grey pants."
 	icon_state = "genericw"
 	item_state = "genericw"
 
-obj/item/clothing/under/genericr
+/obj/item/clothing/under/genericr
 	name = "red generic outfit"
 	desc = "A simple red shirt with black pants."
 	icon_state = "genericr"

@@ -33,8 +33,11 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
-	move_to_delay = 2
+	move_to_delay = 1
 	turns_per_move = 12
+
+/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen/slip(var/slipped_on)
+	return FALSE
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))

@@ -1,5 +1,5 @@
 /obj/item/weapon/circuitboard/stationalert
-	build_name = "station alert console"
+	build_name = "colony-wide alert console"
 	build_path = /obj/machinery/computer/station_alert
 	var/list/alarm_handlers
 

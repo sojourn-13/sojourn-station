@@ -53,7 +53,7 @@
 
 /obj/item/weapon/storage/firstaid/toxin
 	name = "toxin first aid"
-	desc = "Used to treat when you have a high amount of toxins in your body."
+	desc = "Used to treat those nasty spider bites."
 	icon_state = "antitoxin"
 	item_state = "firstaid-toxin"
 
@@ -344,7 +344,7 @@
 
 /obj/item/weapon/storage/pill_bottle/dylovene
 	name = "bottle of Dylovene pills"
-	desc = "Contains pills used to treat toxic substances in the blood."
+	desc = "Contains pills used to counteract toxic substances in the blood."
 
 /obj/item/weapon/storage/pill_bottle/dylovene/populate_contents()
     new /obj/item/weapon/reagent_containers/pill/dylovene(src)
@@ -449,7 +449,7 @@
 
 /obj/item/weapon/storage/freezer/medical
 	name = "organ freezer"
-	desc = "A red-colored, compact cryo box for holding organs for safe transportation preserving their integrity. This one has expanded capacity."
+	desc = "A red-colored, compact cryogenic box for holding organs for safe transportation preserving their integrity. This one has expanded capacity."
 	icon_state = "freezer_red"
 	item_state = "medicalpack"
 	matter = list(MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)

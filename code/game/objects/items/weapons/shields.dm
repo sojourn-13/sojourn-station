@@ -94,7 +94,7 @@
 
 /obj/item/weapon/shield/riot/crusader
 	name = "crusader tower shield"
-	desc = "A traditional tower shield meeting the materials and design of the future. It's made from durasteel and the craftmenship is the highest quality, setting it apart from regular shields. It bears the insignia of the Church. Deus Vult."
+	desc = "A traditional tower shield meeting the materials and design of the future. It's made from durasteel and the craftsmanship is the highest quality, setting it apart from regular shields. It bears the insignia of the Church. Deus Vult."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
@@ -160,13 +160,24 @@
 
 /obj/item/weapon/shield/riot/handmade/lid
 	name = "lid shield"
-	desc = "A detached lid from trashcart, that works well as shield."
+	desc = "A detached lid from a trash cart, that works well as shield."
 	icon_state = "lid_shield"
 	flags = CONDUCT
 	throw_speed = 2
 	throw_range = 2
 	matter = list(MATERIAL_STEEL = 8)
 	base_block_chance = 40
+
+/obj/item/weapon/shield/riot/handmade/bone
+	name = "bone shield"
+	desc = "A handmade stout shield, but with a small size crafted entirely of bone. Exceptionally good at enduring melee attacks due to its light weight and high density."
+	icon_state = "buckler_bone"
+	item_state = "buckler_bone"
+	flags = null
+	throw_speed = 2
+	throw_range = 6
+	matter = list(MATERIAL_BONE = 6)
+	base_block_chance = 50
 
 /*
  * Energy Shield

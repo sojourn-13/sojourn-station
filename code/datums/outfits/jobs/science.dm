@@ -16,6 +16,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	shoes = /obj/item/clothing/shoes/reinforced
 	uniform = /obj/item/clothing/under/rank/expedition_overseer
+	belt = /obj/item/weapon/storage/belt/utility/full
 	l_hand = /obj/item/weapon/clipboard
 	id_type = /obj/item/weapon/card/id/rd
 	pda_type = /obj/item/modular_computer/pda/heads/rd
@@ -35,6 +36,7 @@
 	pda_slot = slot_r_store
 	id_type = /obj/item/weapon/card/id/dkgrey
 	pda_type = /obj/item/modular_computer/pda/science/roboticist
+	backpack_contents = list(/obj/item/device/robotanalyzer = 1)
 
 /decl/hierarchy/outfit/job/science/roboticist/New()
 	..()

@@ -5,7 +5,7 @@
 
 /mob/living/bot/farmbot
 	name = "Farmbot"
-	desc = "The botanist's best friend."
+	desc = "The gardener's and xenobotanist's best friend."
 	icon = 'icons/obj/aibots.dmi'
 	icon_state = "farmbot0"
 	health = 50

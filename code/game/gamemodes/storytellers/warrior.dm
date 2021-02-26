@@ -2,7 +2,7 @@
 	config_tag = "warrior"
 	name = "The Warrior"
 	welcome = "Ready your weapons, and prepare for battle..."
-	description = "Aggressive storyteller with a focus on generating monsters and antagonists that will do battle with the crew"
+	description = "Aggressive storyteller with a focus on generating monsters and antagonists that will do battle with the colonists."
 
 	gain_mult_moderate = 1.25
 	gain_mult_major = 1.25

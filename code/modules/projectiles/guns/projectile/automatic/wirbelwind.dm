@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/wirbelwind
 	name = "\"Wirbelwind\" SMG"
-	desc = "A compact and lightweight law enforcement PDW produced by Seinemetall. Uses .35 Auto."
+	desc = "A compact and lightweight law enforcement PDW produced by Seinemetall Defense GmbH. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/wirbelwind.dmi'
 	icon_state = "wirbelwind"
 	item_state = "wirbelwind"

@@ -22,7 +22,9 @@
 	see_in_dark = 10
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider
 	meat_amount = 3
-	stop_automated_movement_when_pulled = 0
+	leather_amount = 0
+	bones_amount = 0
+	stop_automated_movement_when_pulled = 1
 
 	melee_damage_lower = 12
 	melee_damage_upper = 17

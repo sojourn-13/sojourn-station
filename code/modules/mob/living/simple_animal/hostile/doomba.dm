@@ -26,6 +26,8 @@
 	maxHealth = 25
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+	leather_amount = 0
+	bones_amount = 0
 
 	//Drops
 	var/drop1 = /obj/item/weapon/scrap_lump
@@ -274,3 +276,12 @@
 /obj/random/mob/roomba/post_spawn(var/list/spawns)
 	for(var/mob/living/simple_animal/A in spawns)
 		A.stasis = TRUE
+
+//Non-hostile to regular colonists.
+/mob/living/simple_animal/hostile/roomba/gun_ba/armored/allied
+	faction = "neutral"
+	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a gun and seems to have added armor. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+
+/mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg/allied
+	faction = "neutral"
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified burst fire cog laser rifle built into its arm. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."

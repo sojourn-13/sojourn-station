@@ -50,7 +50,7 @@
 	update_icon()
 
 /obj/item/weapon/gun/projectile/shotgun/pump/sawn
-	name = "\"Grizzly\" shotgun"
+	name = "sawn-down \"Grizzly\" shotgun"
 	desc = "A common open-source pump-action shotgun, a bastard child of the three primary pump shotguns on the market, all rolled together once their patents expired. This one has been slightly cut down."
 	icon = 'icons/obj/guns/projectile/sawnoff/shotgun.dmi'
 	icon_state = "shotgun"
@@ -67,7 +67,7 @@
 	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/obrez
 
 /obj/item/weapon/gun/projectile/shotgun/pump/obrez
-	name = "sawn-off \"Grizzly\" shotgun"
+	name = "obrez \"Grizzly\" shotgun"
 	desc = "A common open-source pump-action shotgun, hacked up, sawn down, and ready to rob a liquor store."
 	icon = 'icons/obj/guns/projectile/sawnoff/shotgunobrez.dmi'
 	icon_state = "obrez"
