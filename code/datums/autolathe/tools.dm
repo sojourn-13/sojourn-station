@@ -14,6 +14,10 @@
 	name = "advanced multitool"
 	build_path = /obj/item/weapon/tool/multitool/advanced
 
+/datum/design/autolathe/tool/multitool/multitool_onestar
+	name = "greyson positronic multitool"
+	build_path = /obj/item/weapon/tool/onestar_multitool
+
 /datum/design/autolathe/tool/weldertool
 	name = "welding tool"
 	build_path = /obj/item/weapon/tool/weldingtool
@@ -44,20 +48,24 @@
 	build_path = /obj/item/weapon/tool/screwdriver/electric
 
 /datum/design/autolathe/tool/combi_driver
-	name = "combi driver"
+	name = "combination drill"
 	build_path = /obj/item/weapon/tool/screwdriver/combi_driver
 
 /datum/design/autolathe/tool/combi_driver_onestar
-	name = "greyson positronic combi driver"
+	name = "greyson positronic combination drill"
 	build_path = /obj/item/weapon/tool/screwdriver/combi_driver/onestar
 
 /datum/design/autolathe/tool/wirecutters
-	name = "wirecutters"
+	name = "wire cutters"
 	build_path = /obj/item/weapon/tool/wirecutters
 
 /datum/design/autolathe/tool/pliers
 	name = "pliers"
 	build_path = /obj/item/weapon/tool/wirecutters/pliers
+
+/datum/design/autolathe/tool/onestar_pliers
+	name = "greyson positronic pliers"
+	build_path = /obj/item/weapon/tool/wirecutters/onestar_pliers
 
 /datum/design/autolathe/tool/ducttape
 	name = "roll of duct tape"
@@ -136,6 +144,10 @@
 	name = "shovel"
 	build_path = /obj/item/weapon/tool/shovel
 
+/datum/design/autolathe/tool/onestar_shovel
+	name = "greyson positronic shovel"
+	build_path = /obj/item/weapon/tool/shovel/onestar_shovel
+
 /datum/design/autolathe/tool/combat_shovel
 	name = "combat shovel"
 	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
@@ -156,9 +168,17 @@
 	name = "scalpel"
 	build_path = /obj/item/weapon/tool/scalpel
 
+/datum/design/autolathe/tool/scalpel/advanced
+	name = "advanced scalpel"
+	build_path = /obj/item/weapon/tool/scalpel/advanced
+
 /datum/design/autolathe/tool/saw
 	name = "saw"
 	build_path = /obj/item/weapon/tool/saw
+
+/datum/design/autolathe/tool/onestar_saw
+	name = "greyson positronic saw"
+	build_path = /obj/item/weapon/tool/saw/onestar_saw
 
 /datum/design/autolathe/tool/circularsaw
 	name = "circular saw"
@@ -184,11 +204,11 @@
 	build_path = /obj/item/weapon/tool/retractor
 
 /datum/design/autolathe/tool/cautery
-	name = "cautery"
+	name = "electrocautery"
 	build_path = /obj/item/weapon/tool/cautery
 
 /datum/design/autolathe/tool/bonesetter
-	name = "bonesetter"
+	name = "bone setter"
 	build_path = /obj/item/weapon/tool/bonesetter
 
 /datum/design/autolathe/tool/hemostat
@@ -211,5 +231,5 @@
 	build_path = /obj/item/weapon/tool/crowbar/pneumatic
 
 /datum/design/autolathe/tool/omni_surgery_onestar
-	name = "greyson positronic medmultitool"
+	name = "greyson positronic medical multitool"
 	build_path = /obj/item/weapon/tool/medmultitool

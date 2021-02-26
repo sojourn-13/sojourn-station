@@ -27,7 +27,7 @@
 	max_shells = 4
 	w_class = ITEM_SIZE_BULKY
 	damage_multiplier = 0.8
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 6)
 	price_tag = 400
 	recoil_buildup = 22
 	one_hand_penalty = 27 //full sized shotgun level

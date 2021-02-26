@@ -1,6 +1,6 @@
 /mob/living/bot/medbot
 	name = "Medbot"
-	desc = "A little medical robot. He looks somewhat underwhelmed."
+	desc = "A little medical robot. He looks somewhat disappointed."
 	icon_state = "medibot0"
 	req_one_access = list(access_moebius, access_robotics)
 
@@ -84,7 +84,7 @@
 		return
 
 	if(H.stat == DEAD)
-		var/death_message = pick("No! NO!", "Live, damnit! LIVE!", "I... I've never lost a patient before. Not today, I mean.")
+		var/death_message = pick("What a shame.", "What a rotten way to die.", "They were a good man.")
 		say(death_message)
 		playsound(loc, "robot_talk_light", 100, 0, 0)
 		patient = null

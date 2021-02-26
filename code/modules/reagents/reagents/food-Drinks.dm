@@ -241,7 +241,7 @@
 /datum/reagent/organic/enzyme
 	name = "Universal Enzyme"
 	id = "enzyme"
-	description = "A universal enzyme used in the preperation of certain chemicals and foods."
+	description = "A universal enzyme used in the preparation of certain chemicals and foods."
 	taste_description = "sweetness"
 	taste_mult = 0.7
 	reagent_state = LIQUID
@@ -251,7 +251,7 @@
 /datum/reagent/organic/frostoil
 	name = "Frost Oil"
 	id = "frostoil"
-	description = "A special oil that noticably chills the body. Extracted from Ice Peppers."
+	description = "A special oil that noticeably chills the body. Extracted from Ice Peppers."
 	taste_description = "mint"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -268,7 +268,7 @@
 /datum/reagent/organic/capsaicin
 	name = "Capsaicin Oil"
 	id = "capsaicin"
-	description = "This is what makes chilis hot."
+	description = "This is what makes chili hot."
 	taste_description = "hot peppers"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -340,7 +340,7 @@
 	var/message
 	if(eyes_covered)
 		if(!mouth_covered)
-			message = SPAN_WARNING("Your [eye_protection] protects your eyes from the pepperspray!")
+			message = SPAN_WARNING("Your [eye_protection] protects your eyes from the pepper spray!")
 	else
 		message = SPAN_WARNING("The pepperspray gets in your eyes!")
 		if(mouth_covered)
@@ -352,7 +352,7 @@
 
 	if(mouth_covered)
 		if(!message)
-			message = SPAN_WARNING("Your [face_protection] protects you from the pepperspray!")
+			message = SPAN_WARNING("Your [face_protection] protects you from the pepper spray!")
 	else if(!no_pain)
 		message = SPAN_DANGER("Your face and throat burn!")
 		if(prob(25))
@@ -431,7 +431,7 @@
 /datum/reagent/drink/carrotjuice
 	name = "Carrot juice"
 	id = "carrotjuice"
-	description = "Has a uniquely sweet flavour of concentrated carrots."
+	description = "Has a uniquely sweet flavor of concentrated carrots."
 	taste_description = "carrots"
 	color = "#FF8C00" // rgb: 255, 140, 0
 
@@ -513,7 +513,7 @@
 	name = "Potato Juice"
 	id = "potato"
 	description = "Juice of the potato. Best served fresh."
-	taste_description = "irish sadness"
+	taste_description = "Irish sadness"
 	nutrition = 2
 	color = "#302000"
 
@@ -966,12 +966,12 @@
 
 	glass_icon_state = "milkshake"
 	glass_name = "milkshake"
-	glass_desc = "Glorious brainfreezing mixture."
+	glass_desc = "Glorious brain-freezing mixture."
 	glass_center_of_mass = list("x"=16, "y"=7)
 
 /datum/reagent/drink/rewriter
 	name = "Rewriter"
-	description = "The secret of the sanctuary of the Libarian..."
+	description = "The secret of the sanctuary of the Librarian..."
 	taste_description = "a bad night out"
 	id = "rewriter"
 	color = "#485000"
@@ -979,7 +979,7 @@
 
 	glass_icon_state = "rewriter"
 	glass_name = "Rewriter"
-	glass_desc = "The secret of the sanctuary of the Libarian..."
+	glass_desc = "The secret of the sanctuary of the Librarian..."
 	glass_center_of_mass = list("x"=16, "y"=9)
 
 /datum/reagent/drink/rewriter/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
@@ -1052,7 +1052,7 @@
 /datum/reagent/drink/dr_gibb
 	name = "Dr. Gibb"
 	id = "dr_gibb"
-	description = "A delicious blend of 42 different flavours"
+	description = "A delicious blend of 42 different flavors"
 	taste_description = "cherry soda"
 	color = "#102000"
 	adj_drowsy = -6
@@ -1173,7 +1173,7 @@
 /datum/reagent/ethanol/absinthe
 	name = "Absinthe"
 	id = "absinthe"
-	description = "A anise-flavoured spirit derived from botanicals."
+	description = "A anise-flavored spirit derived from botanicals."
 	taste_description = "death and licorice"
 	taste_mult = 1.5
 	color = "#33EE00"
@@ -1187,7 +1187,7 @@
 /datum/reagent/ethanol/ale
 	name = "Ale"
 	id = "ale"
-	description = "A dark alchoholic beverage made by malted barley and yeast."
+	description = "A dark alcoholic beverage made by malted barley and yeast."
 	taste_description = "hearty barley ale"
 	color = "#664300"
 	strength = 25
@@ -1232,7 +1232,7 @@
 /datum/reagent/ethanol/redcandywine
 	name = "Candy Liquor"
 	id = "redcandyliquor"
-	description = "Made from astored sweets, candies and even flowers."
+	description = "Made from assorted sweets, candies and even flowers."
 	taste_description = "sweet and smooth alcohol"
 	color = "#E33232" // rgb: 227, 50, 50
 	strength = 10
@@ -1246,7 +1246,7 @@
 	name = "Nanatsunoumi"
 	id = "nanatsunoumi"
 	description = "A harsh salty alcohol that is from Japanese origin."
-	taste_description = "salt and young leamons"
+	taste_description = "salt and young lemons"
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	strength = 40
 
@@ -1265,14 +1265,14 @@
 
 	glass_icon_state = "miss_fortuneglass"
 	glass_name = "Miss Fortune"
-	glass_desc = "A mix of many colours that somehow tastes good."
+	glass_desc = "A mix of many colors that somehow tastes good."
 	glass_center_of_mass = list("x"=16, "y"=5)
 
 
 /datum/reagent/ethanol/cognac
 	name = "Cognac"
 	id = "cognac"
-	description = "A sweet and strongly alchoholic drink, made after numerous distillations and years of maturing. Classy as fornication."
+	description = "A sweet and strongly alcoholic drink, made after numerous distillations and years of maturing. Classy as fornication."
 	taste_description = "rich and smooth alcohol"
 	taste_mult = 1.1
 	color = "#AB3C05"
@@ -1303,7 +1303,7 @@
 /datum/reagent/ethanol/gin
 	name = "Gin"
 	id = "gin"
-	description = "A distilled alcoholic drink that derives its predominant flavour from juniper berries."
+	description = "A distilled alcoholic drink that derives its predominant flavor from juniper berries."
 	taste_description = "an alcoholic christmas tree"
 	color = "#664300"
 	strength = 25
@@ -1331,7 +1331,7 @@
 /datum/reagent/ethanol/coffee/kahlua
 	name = "Kahlua"
 	id = "kahlua"
-	description = "A widely known, Mexican coffee-flavoured liqueur."
+	description = "A widely known, Mexican coffee-flavored liqueur."
 	taste_description = "spiked latte"
 	taste_mult = 1.1
 	color = "#664300"
@@ -1385,13 +1385,13 @@
 /datum/reagent/ethanol/tequilla
 	name = "Tequila"
 	id = "tequilla"
-	description = "A strong and mildly flavoured, mexican produced spirit."
+	description = "A strong and mildly flavored, Mexican produced spirit."
 	taste_description = "paint stripper"
 	color = "#FFFF91"
 	strength = 25
 
 	glass_icon_state = "tequillaglass"
-	glass_name = "Tequilla"
+	glass_name = "Tequila"
 	glass_desc = "Now all that's missing is the weird colored shades!"
 	glass_center_of_mass = list("x"=16, "y"=12)
 
@@ -1463,7 +1463,7 @@
 /datum/reagent/ethanol/wine
 	name = "Wine"
 	id = "wine"
-	description = "An premium alchoholic beverage made from distilled grape juice."
+	description = "An premium alcoholic beverage made from distilled grape juice."
 	taste_description = "bitter sweetness"
 	color = "#7E4043" // rgb: 126, 64, 67
 	strength = 15
@@ -1594,14 +1594,14 @@
 	name = "B-52"
 	id = "b52"
 	description = "Coffee, Irish Cream, and cognac. You will get bombed."
-	taste_description = "angry and irish"
+	taste_description = "angry and Irish"
 	taste_mult = 1.3
 	color = "#664300"
 	strength = 10
 
 	glass_icon_state = "b52glass"
 	glass_name = "B-52"
-	glass_desc = "Kahlua, Irish cream, and congac. You will get bombed."
+	glass_desc = "Kahlua, Irish cream, and Cognac. You will get bombed."
 
 /datum/reagent/ethanol/bahama_mama
 	name = "Bahama mama"
@@ -1761,11 +1761,11 @@
 
 	glass_icon_state = "cubalibreglass"
 	glass_name = "Cuba Libre"
-	glass_desc = "A classic mix of rum and cola."
+	glass_desc = "A classic mix of rum and cola. Makes you want to scream 'VIVA!' at the top of your lungs."
 	glass_center_of_mass = list("x"=16, "y"=8)
 
 /datum/reagent/ethanol/demonsblood
-	name = "Demons Blood"
+	name = "Demons' Blood"
 	id = "demonsblood"
 	description = "AHHHH!!!!"
 	taste_description = "sweet tasting iron"
@@ -1779,7 +1779,7 @@
 	glass_center_of_mass = list("x"=16, "y"=2)
 
 /datum/reagent/ethanol/devilskiss
-	name = "Devils Kiss"
+	name = "Devil's Kiss"
 	id = "devilskiss"
 	description = "Creepy time!"
 	taste_description = "bitter iron"
@@ -1847,7 +1847,7 @@
 /datum/reagent/ethanol/gargle_blaster
 	name = "Pan-Galactic Gargle Blaster"
 	id = "gargleblaster"
-	description = "Whoah, this stuff looks volatile!"
+	description = "Woah, this stuff looks volatile!"
 	taste_description = "your brains smashed out by a lemon wrapped around a gold brick"
 	taste_mult = 5
 	reagent_state = LIQUID
@@ -1856,7 +1856,7 @@
 
 	glass_icon_state = "gargleblasterglass"
 	glass_name = "Pan-Galactic Gargle Blaster"
-	glass_desc = "Does... does this mean that Arthur and Ford are on the station? Oh joy."
+	glass_desc = "Does... does this mean that Arthur and Ford are on the colony? Oh joy."
 	glass_center_of_mass = list("x"=17, "y"=6)
 
 /datum/reagent/ethanol/gintonic
@@ -1904,7 +1904,7 @@
 /datum/reagent/ethanol/hooch
 	name = "Hooch"
 	id = "hooch"
-	description = "Either someone's failure at cocktail making or attempt in alchohol production. In any case, do you really want to drink that?"
+	description = "Either someone's failure at cocktail making or attempt in alcohol production. In any case, do you really want to drink that?"
 	taste_description = "pure resignation"
 	color = "#664300"
 	strength = 1
@@ -1984,20 +1984,20 @@
 /datum/reagent/ethanol/manhattan
 	name = "Manhattan"
 	id = "manhattan"
-	description = "The Detective's undercover drink of choice. He never could stomach gin..."
+	description = "The Ranger's undercover drink of choice. They never could stomach gin..."
 	taste_description = "mild dryness"
 	color = "#664300"
 	strength = 15
 
 	glass_icon_state = "manhattanglass"
 	glass_name = "Manhattan"
-	glass_desc = "The Detective's undercover drink of choice. He never could stomach gin..."
+	glass_desc = "The Ranger's undercover drink of choice. They never could stomach gin..."
 	glass_center_of_mass = list("x"=17, "y"=8)
 
 /datum/reagent/ethanol/manhattan_proj
 	name = "Manhattan Project"
 	id = "manhattan_proj"
-	description = "A scientist's drink of choice, for pondering ways to blow up the station."
+	description = "A scientist's drink of choice, for pondering ways to blow up the colony."
 	taste_description = "death, the destroyer of worlds"
 	color = "#664300"
 	strength = 10
@@ -2005,7 +2005,7 @@
 
 	glass_icon_state = "proj_manhattanglass"
 	glass_name = "Manhattan Project"
-	glass_desc = "A scienitst drink of choice, for thinking how to blow up the station."
+	glass_desc = "A scientist's drink of choice, for pondering ways to blow up the colony."
 	glass_center_of_mass = list("x"=17, "y"=8)
 
 /datum/reagent/ethanol/manly_dorf
@@ -2018,7 +2018,7 @@
 
 	glass_icon_state = "manlydorfglass"
 	glass_name = "The Manly Dorf"
-	glass_desc = "A manly concotion made from Ale and Beer. Intended for true men only."
+	glass_desc = "A manly concoction made from Ale and Beer. Intended for true men only."
 
 /datum/reagent/ethanol/margarita
 	name = "Margarita"
@@ -2090,7 +2090,7 @@
 
 	glass_icon_state = "patronglass"
 	glass_name = "Patron"
-	glass_desc = "Drinking patron in the bar, with all the subpar ladies."
+	glass_desc = "Drinking patron in the bar, with all the sub-par ladies."
 	glass_center_of_mass = list("x"=7, "y"=8)
 
 /datum/reagent/ethanol/pwine
@@ -2146,7 +2146,7 @@
 
 	glass_icon_state = "sbitenglass"
 	glass_name = "Sbiten"
-	glass_desc = "A spicy mix of Vodka and Spice. Very hot."
+	glass_desc = "A spicy mix of Vodka and Peppers. Very hot."
 	glass_center_of_mass = list("x"=17, "y"=8)
 
 /datum/reagent/ethanol/screwdrivercocktail
@@ -2159,7 +2159,7 @@
 
 	glass_icon_state = "screwdriverglass"
 	glass_name = "Screwdriver"
-	glass_desc = "A simple, yet superb mixture of Vodka and orange juice. Just the thing for the tired engineer."
+	glass_desc = "A simple, yet superb mixture of Vodka and orange juice. Just the thing for the tired Adept."
 	glass_center_of_mass = list("x"=15, "y"=10)
 
 /datum/reagent/ethanol/silencer
@@ -2239,7 +2239,7 @@
 
 	glass_icon_state = "tequillasunriseglass"
 	glass_name = "Tequilla Sunrise"
-	glass_desc = "Oh great, now you feel nostalgic about sunrises back on Terra..."
+	glass_desc = "Oh great, now you feel nostalgic about sunrises back on Sol...if you ever lived there."
 
 /datum/reagent/ethanol/threemileisland
 	name = "Three Mile Island Iced Tea"
@@ -2258,7 +2258,7 @@
 /datum/reagent/ethanol/toxins_special
 	name = "Toxins Special"
 	id = "plasmaspecial"
-	description = "This thing is ON FIRE! CALL THE DAMN SHUTTLE!"
+	description = "This thing is ON FIRE! CALL THE DAMN GUILDIES!"
 	taste_description = "spicy toxins"
 	reagent_state = LIQUID
 	color = "#664300"
@@ -2268,7 +2268,7 @@
 
 	glass_icon_state = "toxinsspecialglass"
 	glass_name = "Toxins Special"
-	glass_desc = "Whoah, this thing is on FIRE"
+	glass_desc = "Woah, this thing is on FIRE"
 
 /datum/reagent/ethanol/vodkamartini
 	name = "Vodka Martini"
@@ -2280,13 +2280,13 @@
 
 	glass_icon_state = "martiniglass"
 	glass_name = "vodka martini"
-	glass_desc ="A bastardisation of the classic martini. Still great."
+	glass_desc ="A bastardization of the classic martini. Still great."
 	glass_center_of_mass = list("x"=17, "y"=8)
 
 /datum/reagent/ethanol/vodkatonic
 	name = "Vodka and Tonic"
 	id = "vodkatonic"
-	description = "For when a gin and tonic isn't russian enough."
+	description = "For when a gin and tonic isn't Russian enough."
 	taste_description = "tart bitterness"
 	color = "#0064C8" // rgb: 0, 100, 200
 	strength = 15
@@ -2346,7 +2346,7 @@
 
 	glass_icon_state = "ginvodkaglass"
 	glass_name = "atomic vodka"
-	glass_desc = "Booze for true drunkers."
+	glass_desc = "Booze for true drunkards."
 	glass_center_of_mass = list("x"=16, "y"=12)
 
 /datum/reagent/ethanol/atomic_vodka/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
@@ -2357,37 +2357,37 @@
 /datum/reagent/ethanol/specialwhiskey // I have no idea what this is and where it comes from
 	name = "Special Blend Whiskey"
 	id = "specialwhiskey"
-	description = "Just when you thought regular station whiskey was good... This silky, amber goodness has to come along and ruin everything."
+	description = "Just when you thought regular colony whiskey was good... This silky, amber goodness has to come along and ruin everything."
 	taste_description = "the whiskey gods pissed in your mouth"
 	color = "#664300"
 	strength = 5
 
 	glass_icon_state = "whiskeyglass"
 	glass_name = "special blend whiskey"
-	glass_desc = "Just when you thought regular station whiskey was good... This silky, amber goodness has to come along and ruin everything."
+	glass_desc = "Just when you thought regular colony whiskey was good... This silky, amber goodness has to come along and ruin everything."
 	glass_center_of_mass = list("x"=16, "y"=12)
 
 /datum/reagent/ethanol/daiquiri
 	name = "Daiquiri"
 	id = "daiquiri"
-	description = "Refeshing rum and citrus. Time for a tropical get away."
+	description = "Refreshing rum and citrus. Time for a tropical get away."
 	taste_description = "refreshing citrus and rum"
 	color = "#d1ff49" // rgb(209, 255, 73
 	strength = 25
 
 	glass_name = "Daiquiri"
-	glass_desc = "Refeshing rum and citrus. Time for a tropical get away."
+	glass_desc = "Refreshing rum and citrus. Time for a tropical get away."
 
 /datum/reagent/ethanol/whiskeysour
 	name = "Whiskey Sour"
 	id = "whiskeysour"
-	description = "A smokey, refreshing lemoned whiskey."
+	description = "A smokey, refreshing lemon whiskey."
 	taste_description = "smoke and citrus"
 	color = "#a0692e" // rgb(160, 105, 46)
 	strength = 20
 
 	glass_name = "Whiskey Sour"
-	glass_desc = "A smokey, refreshing lemoned whiskey."
+	glass_desc = "A smokey, refreshing lemon whiskey."
 
 /datum/reagent/ethanol/mojito
 	name = "Mojito"

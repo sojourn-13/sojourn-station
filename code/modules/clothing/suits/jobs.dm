@@ -125,10 +125,10 @@
 	item_state = "nt_sportsjacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor = list(
-		melee = 10,
-		bullet = 5,
-		energy = 0,
-		bomb = 10,
+		melee = 15,
+		bullet = 10,
+		energy = 5,
+		bomb = 0,
 		bio = 100,
 		rad = 75
 	)

@@ -347,6 +347,8 @@
 				/mob/living/carbon/superior_animal/giant_spider/nurse = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 2,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/plasma = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/hunter = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 3,\
 				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 4,\
@@ -462,6 +464,7 @@
 				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 2,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 1,\
+				/mob/living/carbon/superior_animal/giant_spider/plasma = 1,\
 				/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor = 1,\
 				/mob/living/carbon/superior_animal/giant_spider/hunter = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 3,\

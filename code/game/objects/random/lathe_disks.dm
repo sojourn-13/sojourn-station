@@ -10,6 +10,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/logistics = 10,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 8,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/advanced = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 8,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/surgery = 1,
@@ -17,12 +18,15 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58 = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/colt = 3,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/glock = 2.5,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rafale = 2,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/alemao = 6,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/NM_colt = 2.5,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/strelki = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/zatvor = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/luger = 1,
+
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/armstrong = 3,
 
@@ -81,6 +85,7 @@
 /obj/random/lathe_disk/advanced/item_to_spawn()
 	return pickweight(list(
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 4,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/advanced = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 6,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 8,

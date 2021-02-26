@@ -299,3 +299,16 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 		return chair && chair.buckled_mob == M
 
 	return M.lying && (locate(/obj/machinery/optable, M.loc) || (locate(/obj/structure/bed, M.loc)) || locate(/obj/structure/table, M.loc))
+
+// Returns a bonus to apply to flat surgery values for various stat levels.
+// Soft caps at 80 bio, providing only 1/10 of the stat value exceeding 80.
+proc/calculate_expert_surgery_bonus(mob/living/user)
+	var/user_stat = user.stats.getStat(STAT_BIO)
+	var/stat_bonus = 0
+	if(user_stat > STAT_LEVEL_EXPERT && user_stat <= STAT_LEVEL_PROF)
+		stat_bonus = user_stat - STAT_LEVEL_EXPERT
+	else if(user_stat > STAT_LEVEL_PROF && user_stat <= STAT_LEVEL_GODLIKE)
+		stat_bonus = 20 + (user_stat - STAT_LEVEL_PROF) * 0.5
+	else if(user_stat > STAT_LEVEL_GODLIKE)
+		stat_bonus = 30 + (user_stat - STAT_LEVEL_GODLIKE) * 0.1
+	return stat_bonus

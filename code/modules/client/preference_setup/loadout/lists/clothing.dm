@@ -4,6 +4,12 @@
 	slot = slot_wear_mask
 	sort_category = "Clothing Pieces"
 
+/datum/gear/clothing/kriosan
+	display_name = "kriosan sterile mask"
+	path = /obj/item/clothing/mask/surgical/kriosan
+	slot = slot_wear_mask
+	cost = 2
+
 /datum/gear/clothing/bandana
 	display_name = "bandana mask selection"
 	path = /obj/item/clothing/mask/bandana
@@ -13,6 +19,12 @@
 /datum/gear/clothing/gasmask
 	display_name = "gas mask"
 	path = /obj/item/clothing/mask/gas
+	slot = slot_wear_mask
+	cost = 2
+
+/datum/gear/clothing/gasmask/kriosan
+	display_name = "kriosan gas mask"
+	path = /obj/item/clothing/mask/gas/kriosan
 	slot = slot_wear_mask
 	cost = 2
 

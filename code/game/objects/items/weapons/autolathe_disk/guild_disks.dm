@@ -248,7 +248,7 @@
 
 //This disk will never be in game as its used as a dummy disk for the nano forage
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforage
-	name = "Nanoforage Data Disk"
+	name = "Nano-Forge Data Disk"
 	disk_name = "Artificer Data Collection"
 	designs = list(
 	/datum/design/autolathe/misc/flashlight,

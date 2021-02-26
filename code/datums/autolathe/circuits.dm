@@ -17,7 +17,7 @@
 	build_path = /obj/item/weapon/circuitboard/apc
 
 /datum/design/autolathe/circuit/vending
-	name = "custom Vendomat"
+	name = "custom vendomat"
 	build_path = /obj/item/weapon/circuitboard/vending
 
 /datum/design/autolathe/circuit/autolathe_excelsior

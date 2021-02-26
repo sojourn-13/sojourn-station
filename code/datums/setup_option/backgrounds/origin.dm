@@ -48,7 +48,7 @@
 	name = "Maunkyne"
 	desc = "The maunkyne are the absolute lowest dregs of sablekyne society, users of a highly addictive drug they are permanently enslaved to. \
 			On their home-planet maunkyne are outcasts, executed in the north for the crime of existing and exiled in the south to the unforgiving desert wastes. \
-			As a maunkyne you might be able to pass as a normal sablekyne, even among your more aware kin, but the colonies strict regulation on demon powder has left you without your fix. \
+			As a maunkyne you might be able to pass as a normal sablekyne, even amongst your more aware kin, but the colony's strict regulation on demon powder has left you without your fix. \
 			Without it, your body is weak and prone to further addiction but your upbringing in the criminal underworld of Onkarth has left you with a feral cunning and tolerance to most drugs. \
 			Even the most 'noble' maunkyne knows much about medicine, in particular the creation of highly profitable and illegal drugs. \
 			Due to maunkyne's innate addictions they are barred from command and security roles."
@@ -70,9 +70,9 @@
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_medical
 	name = "Medical Positronic"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Your specific model was designed with \
-	in-house medical imaging, surgical support systems, and a suite of data stored biological reference documents fed to the brain within through a real-time artifical intelligence system. The entire \
-	system works on a subconcious level, allowing the existing machinery to work with instead of for the user."
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Your specific model was designed with \
+	in-house medical imaging, surgical support systems, and a suite of data stored biological reference documents fed to the brain within through a real-time artificial intelligence system. The entire \
+	system works on a subconscious level, allowing the existing machinery to work with instead of for the user."
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 
@@ -87,9 +87,9 @@
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_engineer
 	name = "Engineering Positronic"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Your specific model was designed with \
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Your specific model was designed with \
 	sturdy reinforced chassis functions and augmented tool support to further enhance your innate skills. Due to an often times self tinkering habit, engineering FBP's are made sturdy and equipped \
-	with a repository of schematics and tool tips fed directly to the user on a subconcious level, allowing the existing machinery to work with instead of for the user."
+	with a repository of schematics and tool tips fed directly to the user on a subconscious level, allowing the existing machinery to work with instead of for the user."
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 
@@ -104,9 +104,9 @@
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_combat
 	name = "Combat Positronic"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Combat positronics are built specifically \
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Combat positronics are built specifically \
 	for the protection of colony interests but allowed to retain their free will, unlike other cyborgs. Combat positronics have the sturdiest physical designs and enhanced hydraulic systems to \
-	further enhance their physical strength. In-built armor plating and AI-fed combat techniques given on a subconcious level allow for robust and study combatants."
+	further enhance their physical strength. In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and study combatants."
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 
@@ -121,8 +121,8 @@
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_mech_adept
 	name = "Mechanical Adept"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. Your specific model was designed with \
-	a squite of integrated repair AI modules and augmented tool support to further enhance your innate skills. While not as sturdy as some other models of FBP's such as the Soteria designs the \
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Your specific model was designed with \
+	a suite of integrated repair AI modules and augmented tool support to further enhance your innate skills. While not as sturdy as some other models of FBP's such as the Soteria designs the \
 	artificer guild positronics come with a far more advanced mechanical support subsystem, allowing for superior designs, methods, and implementations."
 
 	restricted_to_species = list(FORM_AGSYNTH)
@@ -138,7 +138,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_sturdy
 	name = "\"Long-Haul\" Body Chassis"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. This particular model is the work of Tacitus \
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This particular model is the work of Tacitus \
 	O'Conner himself, artificer guild grand master. Unlike the mechanical adept model this chassis is built to last, being far more sturdy and capable of performing alone or with teams of engineers cut \
 	off from the colony for extended periods. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and improved cogitation computers."
 
@@ -155,9 +155,9 @@
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_mine
 	name = "\"Depts-Class\" Body Chassis"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropiate to the person in question. This particular model is made with mining in \
-	mind. Unlike the mechanical adept model this chassis is built work long hard hours in the darkness, being far more able to smash down rock viens and dig out tunnles rich with both soft \
-	and hard materals alike. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and preprogrammed assistants in maintaining tools and own self."
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This particular model is made with mining in \
+	mind. Unlike the mechanical adept model this chassis is built work long hard hours in the darkness, being far more able to smash down rock veins and dig out tunnels rich with both soft \
+	and hard materials alike. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and pre-programmed assistants in maintaining tools and own self."
 
 	restricted_to_species = list(FORM_AGSYNTH)
 
@@ -195,10 +195,10 @@
 
 /datum/category_item/setup_option/background/ethnicity/vorhut
 	name = "Former Vorhut Soldier"
-	desc = "All Vorhut technically are soldiers, but a very real distinction is drawn between the civilians and the dedicated soldiers who serve as their empire's career stormtroopers. \
+	desc = "All Vorhut technically are soldiers, but a very real distinction is drawn between the civilians and the dedicated soldiers who serve as their empire's career storm troopers. \
 	Vorhut battalions were originally formed and trained by the survivors of the rebellion with experience fighting the Terran military, and were seen as fanatical and violent extremists. \
 	Nowadays, Vorhut are far more focused on military superiority than racial, and have a reputation for following orders ruthlessly and without question. They often hold the belief that \
-	their deaths are pre-determined, and that if their time has come, they must face it with courage and dignity. If it has not, then their Corpsmen will see to it they live to battle another \
+	their deaths are predetermined, and that if their time has come, they must face it with courage and dignity. If it has not, then their Corpsmen will see to it they live to battle another \
 	day. As a result, they are fearless warriors with no patience for engineering or science, and their ultimately violent doctrines leave them barred from serving in \
 	command roles."
 
@@ -411,7 +411,7 @@
 /datum/category_item/setup_option/background/ethnicity/opifex_mechanist
 	name = "Mechanist"
 	desc = "You are one of the many opifex trained in the ways of your craft by your scavenger fleet. Like your brothers you have a knack for adapting to new situations and using all things \
-	mechanical. Sadly, seperated from your fleet you do not have access to the many useful robots that make life so much easier. That said, you always keep your various tools stowed away in a \
+	mechanical. Sadly, separated from your fleet you do not have access to the many useful robots that make life so much easier. That said, you always keep your various tools stowed away in a \
 	webbing smuggled on your person. As a rank and file you represent the best of the opifex ability and wear your tools with pride."
 
 	restricted_to_species = list(FORM_OPIFEX)
@@ -432,7 +432,7 @@
 	desc = "While all opifex are trained in the workings of machines some are reserved for the biological aspect of their respective scavenger fleet. \
 			This training is usually towards the goal of maintaining the bio-mechanical augmentations used by the opifex, from installing nano-gates to replacing lost limbs with synthetic copies. \
 			The additional biological training, while helpful, does hamper the average opifexes ability to study machines, lessening their ability to quickly adapt to situations and new \
-			technology. After all, to the average opifex a biological entity is far less complex and nuisanced than even the most basic of robots. Out of habit you always keep your trusty \
+			technology. After all, to the average opifex a biological entity is far less complex and nuanced than even the most basic of robots. Out of habit you always keep your trusty \
 			medical webbing stowed on your person with various useful chemicals and devices stored within."
 
 	restricted_to_species = list(FORM_OPIFEX)
@@ -477,7 +477,7 @@
 			knew what was needed for their purpose and literally nothing else."
 
 	restricted_to_species = list(FORM_CHTMANT)
-
+	allow_modifications = FALSE
 	perks = list(/datum/perk/scuttlebug)
 
 	stat_modifiers = list(
@@ -499,7 +499,7 @@
 
 	restricted_to_species = list(FORM_CHTMANT)
 	restricted_depts = SECURITY | PROSPECTOR
-
+	allow_modifications = FALSE
 	perks = list(/datum/perk/ichor)
 
 	stat_modifiers = list(
@@ -516,10 +516,10 @@
 	desc = "Ra’s are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ru’s and even \
 			most workers, the Ro. Their bodies were highly adapted to fight and they knew only loyalty unto death for the good of \
 			the hive’s. Due to this, and the existence of the Ru, they often heavily lacked any cognitive thinking skills and would \
-			rely on winning battles by sheer weight of numbers or pure attrition. The severe lack of intelligence they exibit also bars them from most medical roles and all of science, engineering, and command roles."
+			rely on winning battles by sheer weight of numbers or pure attrition. The severe lack of intelligence they exhibit also bars them from most medical roles and all of science, engineering, and command roles."
 
 	restricted_to_species = list(FORM_CHTMANT)
-
+	allow_modifications = FALSE
 	restricted_depts = SCIENCE | ENGINEERING
 	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/smc, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic, /datum/job/premier, /datum/job/pg, /datum/job/chief_engineer, /datum/job/chaplain, /datum/job/merchant)
 
@@ -554,7 +554,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/cindarspacer
 	name = "Spacer"
-	desc = "Many cindarites choose to leave the confines of their deathworld of Cindar and instead choose to become spacers, spending ther entire lives living on traveling ships. \
+	desc = "Many cindarites choose to leave the confines of their death world of Cindar and instead choose to become spacers, spending their entire lives living on traveling ships. \
 			Spacers often take work as engineers, merchants, and sometimes pirates as jobs are rarely ever steady. This broadens the already wide range of skills that most cindarites have, but \
 			most of this knowledge is learned practically, making them poor studies on more advanced careers that can't be as easily learned from a hands on approach."
 
@@ -573,7 +573,7 @@
 	name = "Colony Ancestry"
 	desc = "A catch all term to describe Humans and Abhumans born within Terran Colonies. Those born here have access to much more prestigious and advanced education facilities, \
 	along with various military pathways to choose from. Colony born humans tend to be widely skilled and physically better off than most as a result of clean living and access to \
-	beffter form of education than most. You may have been born on a colony world or be the child of those that were, in either case you still reap the benefits of good genetics."
+	better form of education than most. You may have been born on a colony world or be the child of those that were, in either case you still reap the benefits of good genetics."
 
 	restricted_to_species = list(FORM_HUMAN)
 
@@ -606,7 +606,7 @@
 /datum/category_item/setup_option/background/ethnicity/humanspacer
 	name = "Space Ancestry"
 	desc = "Spacers have no planets nor lands to call their own, instead being born on ships and orbital stations. Due to such areas needing constant upkeep to remain functioning (and habitable), \
-	a solid comprehension of engineering is required, which leads to Spacers quickly coming to learn their enviroment and technology exceptionally well. Living in a confined and enviromentally \
+	a solid comprehension of engineering is required, which leads to Spacers quickly coming to learn their environment and technology exceptionally well. Living in a confined and environmentally \
 	controlled space, however, weakens the body. You might have been born to spacers who finally put down roots on a planet or stayed in space, in either case they made sure to pass along \
 	their technical skills to you."
 
@@ -653,7 +653,10 @@
 	highly attractive destinations for tourists and vacationers, but the planet does have a number of drawbacks. The primary issue facing the residents of Neapolis is the lack of settle-able \
 	land with only a smattering of plateaus being safe enough for permanent settlements in the face of the ever transient forests. Fortunately the second issue- a lack of valuable ores \
 	or gasses, has so far been a boon for Neapolitians who have managed to evade major interest from their large- sometimes hostile, neighbors. Individuals from Neapolis are often \
-	idealistic, artistic, and sometimes a little naive."
+	idealistic, artistic, and sometimes a little naive. As a lush garden world that boasts a highly productive and often self reliance on growable food, those from Neapolis are often \
+	described as having a green thumb."
+
+	perks = list(/datum/perk/greenthumb)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -672,7 +675,10 @@
 	compete for market shares as they engage in a desperate contest to feed the massive population of their neighboring worlds. These conflicts are often economic, territorial, and electronic, \
 	but since the crash the massive ocean trawlers have begun arming themselves more. These conflicts are becoming increasingly frustrating for local researchers who are being \
 	treated with more and more hostility from both the fish mongers and their port masters. Individuals from Agua Fria are often skeptical of those outside their social circle, \
-	highly adept swimmers, and usually very business minded."
+	highly adept swimmers, and usually very business minded. Due to an intense need to keep food clean and healthy for consumption, many of those from Aqua Fria treat cleaning their work spaces \
+	and their equipment as second nature."
+
+	perks = list(/datum/perk/neat)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -696,11 +702,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_TGH = 1,
+		STAT_VIG = 2,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = 2
 	)
 
 /datum/category_item/setup_option/background/homeworld/thalatta
@@ -710,7 +716,7 @@
 	thousands of occupants of the Thalatta have been slowly adopting the use of implants and robotics to both prolong their lifespans and better synergize with their ship. This has led many \
 	outsiders to speculate that the Thalatta and it's occupants will slowly begin mixing their religious beliefs and technology with scary and unimaginable ends. Ironically while the original \
 	beliefs of the Thalattans seem mundane and inoffensive, it may be that another conflict of belief between the Thalattans and their neighbors is inevitable. Individuals from Thalatta are \
-	tech savvy, reverent towards fellow believers, and skeptical of outside authority- especially when it's perceived as being luddic or atheistic."
+	tech savvy, reverent towards fellow believers, and skeptical of outside authority- especially if it's perceived as being Luddites or Atheists."
 
 	stat_modifiers = list(
 		STAT_ROB = -5,
@@ -747,13 +753,13 @@
 	people to settle there the toxic nature of the world proved most disastrous to kriosans and cindarites despite their usual tolerance to such conditions. Through a quirk of biology the flora of \
 	Rankorin developed toxins that attacked the immune system and turned it against the body, as such, races normally suited for this world avoided it as much as possible. \
 	The remaining people who choose to settle here and work the mines adapted over several generations to thrive in bad atmosphere and have almost become dependent on it. \
-	This adaptation, coupled with working the diamond mines, have made them physically strong but comparably weak to people of other home-worlds."
+	This adaptation, coupled with working the diamond mines, have made them physically tough but comparably weak to people of other home-worlds."
 
 	perks = list(/datum/perk/chaingun_smoker)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_ROB = -5,
+		STAT_TGH = 10,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -765,7 +771,7 @@
 	desc = "Sanperitor is a low atmosphere world closer to its systems star then most species are comfortable living with. The intense solar radiation of the planet has caused those who reside their to \
 	naturally adapt to the toxins present in every day life. Sanperitor itself first came to be colonized due to its larger than normal core and already lightly radioactive atmosphere that allowed \
 	for massive thermonuclear power generators to be built. The planet itself supplies a great number of worlds with super charged power cores, artificially crafted super matters, and \
-	technology used to produce star ship engines or planetary nuclear reactors. People from this planet tend to be physically weaker than most but cheerfully resolute and have naturally \
+	technology used to produce star ship engines or planetary nuclear reactors. People from this planet tend to be physically tougher than most, cheerfully resolute and have naturally \
 	evolved to resist most forms of toxins."
 
 	restricted_to_species = list(FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
@@ -773,7 +779,7 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_TGH = 5,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -805,7 +811,7 @@
 	fringes of civilization. The conditions on Onkarth are brutal with long blazingly hot days and freezing ice cold nights in even the hottest regions. The planet is also plagued with common \
 	and vicious animals that often attempt to make a meal of anything they find. Native fauna to the planet also have evolved with chitinous or bone-like growths that create a durable layer of \
 	natural armor that require either great strength to break or superior firepower. Due to the planets hostility few other than sablekyne choose to live on the planet, those that do are often \
-	family members to humans, abhumans, or naramads stationed there as part of the Terran Federation planteary defense force. "
+	family members to humans, abhumans, or naramads stationed there as part of the Terran Federation planetary defense force. "
 
 	restricted_to_species = list(FORM_SABLEKYNE, FORM_HUMAN, FORM_NARAMAD)
 
@@ -820,11 +826,11 @@
 
 /datum/category_item/setup_option/background/homeworld/donbettyr
 	name = "Donbettyr"
-	desc = "The planet of Donbettyr is the homeworld of the akula, an old primarily water planet with two moons and few thosuand seperated areas of land making up a series of islands and archapelos. \
+	desc = "The planet of Donbettyr is the homeworld of the akula, an old primarily water planet with two moons and few thousand separated areas of land making up a series of islands and archipelagos. \
 	Donbettyr suffers heavily from extreme storms and rainfalls with weather rarely being clear for more than a handful of days. Frequent tsunamis and volcanic activity also commonly appear  \
-	every few years and can have devistating impacts on those ill-prepared. Despite harsh weather however Donbettyr is a tropical paradise in many ways and contains large tropical biomes \
-	that make it an appealing place both to live and visit. Donbettyr is largely home to those well adapted to living in wet enviroments, with humans, abhumans, akula, and very rarely mar'qua \
-	choosing to live there. The harsh storms and weather, coupled with swimming being the most common leisure activity, toughens most who spend there lives here."
+	every few years and can have devastating impacts on those ill-prepared. Despite harsh weather however Donbettyr is a tropical paradise in many ways and contains large tropical biomes \
+	that make it an appealing place both to live and visit. Donbettyr is largely home to those well adapted to living in wet environments, with humans, abhumans, akula, and very rarely mar'qua \
+	choosing to live there. The harsh storms and weather, coupled with swimming as the most common leisure activity, toughens most who spend there lives here."
 
 	restricted_to_species = list(FORM_AKULA, FORM_HUMAN, FORM_MARQUA, FORM_SABLEKYNE)
 
@@ -843,7 +849,7 @@
 	largely self sufficient they follow a strict caste system and each world is largely similar to one another. Concepts of family, friendship, and leisure time are foreign ideas to  \
 	worlds controlled by the mar'qua empire and people growing up here may be relocated by the government to new areas or even new worlds far from family or friends at a moments notice. \
 	Mar'qua are practical above all else and as such employ the use of humans and cindarites greatly for their broader skills, allowing them to live within their borders, yet they refuse \
-	citizenship to any other race. Life in the homeworlds is one of monotany, but such living enhances the intelligence of denizens as toil and reassignment happen often enough to \
+	citizenship to any other race. Life in the homeworlds is one of monotony, but such living enhances the intelligence of denizens as toil and reassignment happen often enough to \
 	broaden your skill sets."
 
 	restricted_to_species = list(FORM_MARQUA, FORM_HUMAN, FORM_CINDAR)
@@ -859,7 +865,7 @@
 
 /datum/category_item/setup_option/background/homeworld/marquawanderer
 	name = "Wanderers Armada"
-	desc = "The Wanderer's Armada is a group of nearly a hundred repourposed ships, ranging from small corvettes to the largest Dreadnought that began the Armada. While the size of this fleet \
+	desc = "The Wanderer's Armada is a group of nearly a hundred repurposed ships, ranging from small corvettes to the largest Dreadnought that began the Armada. While the size of this fleet \
 	rivals certain Federation fleets, it focuses on being the wandering black market, visiting each system and recruiting those that wish to join them. While originally it was composed of \
 	Mar'Qua exiles, currently nearly every race in the known space has it's part in the Armada."
 
@@ -874,10 +880,10 @@
 
 /datum/category_item/setup_option/background/homeworld/norian
 	name = "Norian"
-	desc = "The world of Norian is home to the physically powerful race of the Naramadi. The naramad live amoungst the ruins of another civilzation long forgotten with the passage of time \
-	who's only remaining mark on the world is many dangerous ruins dotting the landscape. Many areas of Norian remain largely unplundered and often treated as sacred locations by the local \
+	desc = "The world of Norian is home to the physically powerful race of the Naramadi. The naramad live amongst the ruins of another civilization long forgotten with the passage of time \
+	who's only remaining mark on the world is many dangerous ruins dotting the landscape. Many areas of Norian remain largely pristine and often treated as sacred locations by the local \
 	naramad tribes who often plunder the location at great risk for what they consider worthwhile rewards. Norian does boast a decent human, abhuman, and sablekyne population as those races of \
-	the Terran Federation are uniquely capable of adapting to the harsh world. Unfortunately Norian has next to nothing in the way of proper education, even among the Terran plantary defence forces. \
+	the Terran Federation are uniquely capable of adapting to the harsh world. Unfortunately Norian has next to nothing in the way of proper education, even among the Terran planetary defense forces. \
 	People from this planet tend to be the hardiest of individuals, but just as often they prove to be dull and lacking in attention to detail."
 
 	restricted_to_species = list(FORM_NARAMAD, FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA)
@@ -896,7 +902,7 @@
 	desc = "The scavenger fleets of the Opifex are a mix of massive ships miles long and smaller skip jacks housing clans of populi and dominus opifex. Scavenger fleets are always on the move \
 	and rarely stay in one place for long as they make prey of enemies of the Terran Federation, pirates, or unaligned colonies just trying to make a living. Due to the opifex superiority  \
 	complexes they absolutely and resolutely refuse to allow anyone besides their own kind and synthetic life forms to even visit the various fleets they call home. Opifex fleets are strangely  \
-	lawful places despite their subsistance largely based upon raiding and every opifex is trained on maintaining their various ships and robots."
+	lawful places despite their subsistence largely based upon raiding and every opifex is trained on maintaining their various ships and robots."
 
 	restricted_to_species = list(FORM_OPIFEX)
 
@@ -911,10 +917,10 @@
 
 /datum/category_item/setup_option/background/homeworld/cindar
 	name = "Cindar"
-	desc = "The homeworld of the cindarite, creatively named Cindar, is a hostile deathworld of radiation and heat where the inhabitants live deep underground in fortified rad proofed bunkers. \
+	desc = "The homeworld of the cindarite, creatively named Cindar, is a hostile death world of radiation and heat where the inhabitants live deep underground in fortified rad proofed bunkers. \
 	Cindar is a place that few can survive, even the more toxin adapted Kriosan would perish after a few years. As such only the Cindarites call this place home. \
 	Life in the underground bunkers left little time for  much physical activity but leisure time spent studying, reading, or maintaining your home has give you a broad set of skills. \
-	The occassional dose of light radiation has also helped improve your toughness a small bit, so maybe Cindar isn't that bad."
+	The occasional dose of light radiation has also helped improve your toughness a small bit, so maybe Cindar isn't that bad."
 
 	restricted_to_species = list(FORM_CINDAR)
 
@@ -988,8 +994,7 @@
 
 /datum/category_item/setup_option/background/career/laborer_miner
 	name = "Former Miner"
-	desc = "Mining, the not well respected but needed none the less job. Pay ranges from work to work sometimes and the hazards are always an unknown, making it not as mindless of a job as one might think. \
-	Maybe mining in space were the gravity is ligher was easyer on a planet, maybe its all in the past now and to show for you labors you got calluses hands and known how to maintaining your tools."
+	desc = "Mining, the not well respected but needed none the less job. Pay ranges from work to work sometimes and the hazards are always an unknown, making it not as mindless of a job as one might think."
 
 //This allows you to if your a miner, to get just the stats you need to do your job well not hurting as much of the smarter stats
 //The main boon of this being a better digging and maintaining tools/drills
@@ -1007,8 +1012,8 @@
 
 /datum/category_item/setup_option/background/career/former_servest
 	name = "Former Service Worker"
-	desc = "From a janitor to cook or even accountent work as been the mundane at best, being what ever you were before the crash was likely uneventful. \
-	Now a days who knows what can happen on the colony, hopefully your life skills from doing the prier or even current work have prepared you for what you are now."
+	desc = "From a janitor to cook or even accountant, work has been quite colorful for you. \
+	Hopefully one of those taught you something of use to a colony."
 
 //REALLY open ended this one, thus is a bit of everything!
 //Main boon is that you dont lose or gain a lot, making it ideal for roleplay without lossing out on other jobs/skills
@@ -1025,7 +1030,7 @@
 
 /datum/category_item/setup_option/background/career/mechanic
 	name = "Former Mechanic"
-	desc = "You like mechanics, from cars to hover bikes to electrical equipment you've worked on them all. Maybe you were a minor technician, working on general maintenance for a few vehicles \
+	desc = "You like machines, from cars to hover bikes to electrical equipment you've worked on them all. Maybe you were a minor technician, working on general maintenance for a few vehicles \
 	or basic electrical equipment. Maybe you were a full licensed mechanic with plenty of experience. Whatever you were you picked up quite a few tricks over the years with various bits of tech \
 	ranging from robots, autolathes, and other fancy machines."
 
@@ -1057,7 +1062,7 @@
 	name = "Former Military"
 	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
-	of physical conditioning and marksmenship training, but the stamping out of the individual makes most lose their creativity."
+	of physical conditioning and marksmanship training, but the stamping out of the individual makes most lose their creativity."
 
 	stat_modifiers = list(
 		STAT_ROB = 2,
@@ -1121,7 +1126,7 @@
 	name = "Former Space Contractor"
 	desc = "Maybe you were an asteroid miner, hull repair technician, or simply worked a job where oxygen was a rarity. Whatever your job, it was so far from civilization and people you \
 	developed a hearty constitution and self reliant attitude. Yet the boredom of being cut off from the general population and the lack of more intellectual stimulation did a number on your \
-	creativity. All that time spent working in low oxygen enviroments and the occassional oxygen breach has adapted you to dealing with such events, your lungs may as well be made of metal now."
+	creativity. All that time spent working in low oxygen environments and the occasional oxygen breach has adapted you to dealing with such events, your lungs may as well be made of metal now."
 
 	perks = list(/datum/perk/lungs_of_iron)
 
@@ -1153,7 +1158,7 @@
 	name = "Entrepreneur"
 	desc = "When life gives you lemons make lemonade then sell that drink at a profit and corner the lemonade market. That is exactly what you may have set out to do, making it on your own! \
 	This can range from starting your own shop to small business making stuff. Who knows how many tried and failed but your one of them, the market back in Sol Fed was just to crowed, that must be it. \
-	The system of bureaucracy and its regulations have pushed out many like you but it really gets the old nogging working in overtime."
+	The system of bureaucracy and its regulations have pushed out many like you but it really gets the old noggin working in overtime."
 
 //Idea is simple, this one is to be a smart cookie and try and make a something to rival even LLS!
 //The main boon, loads of cog and some bio and mec so you can craft fast and e-z well also not being to robust in maints.
@@ -1213,8 +1218,8 @@
 
 /datum/category_item/setup_option/background/bckgrnd/pressered_in_life
 	name = "Overwhelming Upbringing"
-	desc = "You had quite the start in life, nothing was layed back or easy. Always being pressered into things you didn't have any care for or like. This maybe came from schools, friends, family or a mix of all three.  \
-	With all that presser and busy life has made you in later years less strong in the physical scenes, but has made your mind just as sharp as ever. Maybe giving you just the skills you needed for this colony."
+	desc = "You had quite the start in life, nothing ever was laid back or easy. Always being pressured into things you didn't care for or like. This may have come from parents, peers, or even schools. \
+	Your mind is as sharp as ever as a result, but you almost never set foot in a gym, making you physically deficient."
 
 //Idea behind this is that well in younger years you pushed your body to hard and now your paying for it in TOB/TGH
 //The main boon of this being a better mind and understanding.
@@ -1233,7 +1238,7 @@
 /datum/category_item/setup_option/background/bckgrnd/wealthy
 	name = "Wealthy Upbringing"
 	desc = "You grew up with a silver spoon in your mouth all your life. Education, leisure time, and relaxation allowed you to indulge in scholarly pursuits to a degree, letting you pick up a few \
-	randomly useful facts about many things. A shame that easy living left you a bit naive and physically weak albiet healthier than most. Not to mention you never quite developed the sense of when \
+	randomly useful facts about many things. A shame that easy living left you a bit naive and physically weak albeit healthier than most. Not to mention you never quite developed the sense of when \
 	danger is present. This certainly made switching to regular life a bit of a culture shock."
 
 	stat_modifiers = list(
@@ -1248,8 +1253,8 @@
 /datum/category_item/setup_option/background/bckgrnd/refugee
 	name = "Refugee"
 	desc = "Where ever you came from is no more, torn apart by conflict and war. It may have been a civil war or conquest by the Terran Federation, whatever the reason it has long since lost any \
-	meaning after the destruction of your home-world. Or maybe it wasn't your homeworld that was destoyed, maybe it was just your way of life. Regardless, you've left a burned bridge behind you and \
-	can no longer go back. Your rough life has hardened you to the worst troubles you may face."
+	meaning after the destruction of your home-world. Or maybe it wasn't your homeworld that was destroyed, maybe it was just your way of life. Regardless, you've left a burned bridge behind you and \
+	can no longer go back. Your rough life has hardened you against the worst possible situations."
 
 	perks = list(/datum/perk/space_asshole)
 
@@ -1330,7 +1335,7 @@
 
 /datum/category_item/setup_option/background/bckgrnd/idiotsavant
 	name = "Idiot Savant"
-	desc = "You're an idiot, no really, you're just a complete brainlet when it comes to anything you're not hyper focused on. You have an innate knack and understanding with the most conceptual  \
+	desc = "You're an idiot, no really, you're just a complete brainlet when it comes to anything you're not hyper-focused on. You have an innate knack and understanding with the most conceptual  \
 	applications of technology, medicine, and even firearms. The problem is this understanding is instinctual, not intellectual, you have no idea how you know, you just do. You're stuck in the odd \
 	position of being able to do complex difficult tasks related to your areas of interest but completely incapable of doing the most basic things in other areas."
 
@@ -1347,7 +1352,7 @@
 /datum/category_item/setup_option/background/bckgrnd/chtmantspider
 	name = "Eight-Legged Ally"
 	desc = "As a cht'mant you have an innate understanding towards insects and crawling things. While most of your kin are naturally adapted to roaches you've developed a sense of  \
-	control and understanding to spiders. Over time a subtle shift in your pheramones allowed you to interact with spiders much in the same way your kin do with roaches. \
+	control and understanding to spiders. Over time a subtle shift in your pheromones allowed you to interact with spiders much in the same way your kin do with roaches. \
 	Unfortunately this shift in biology has made roaches innately hostile to you, viewing you as a spider from the smell alone. A secondary side effect of your biological adjustment has \
 	given you the ability to generate webs like a spider."
 

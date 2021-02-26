@@ -79,7 +79,7 @@
 
 /obj/item/weapon/storage/box/syndie_kit/imp_freedom
 	name = "boxed freedom implant (with injector)"
-	desc = "A box with freedom implant inside. Install it in your hand or leg, chose emote. You can remove instantly handcuffs or legcuffs with your emotion. Have a small amount of uses."
+	desc = "A box with freedom implant inside. Install it in your hand or leg, chose emote. You can remove instantly handcuffs or leg cuffs with your emotion. Have a small amount of uses."
 
 /obj/item/weapon/storage/box/syndie_kit/imp_freedom/populate_contents()
 	new /obj/item/weapon/implanter/freedom(src)
@@ -125,7 +125,7 @@
 
 /obj/item/weapon/storage/box/syndie_kit/chameleon
 	name = "chameleon kit"
-	desc = "Comes with all the clothes you need to impersonate most people. Acting lessons sold seperately. The box itself is made of plasteel."
+	desc = "Comes with all the clothes you need to impersonate most people. Acting lessons sold separately. The box itself is made of plasteel."
 	matter = list(MATERIAL_PLASTEEL = 1)
 
 /obj/item/weapon/storage/box/syndie_kit/chameleon/populate_contents()
@@ -164,7 +164,7 @@
 	new /obj/item/device/spy_monitor(src)
 
 /obj/item/weapon/storage/box/syndie_kit/dartgun
-	name = "dartgun kit"
+	name = "dart gun kit"
 	desc = "Just like a mosquito bite."
 
 /obj/item/weapon/storage/box/syndie_kit/dartgun/populate_contents()
@@ -293,7 +293,7 @@
 		C.reagents.add_reagent(reagent, reagents[reagent] * C.storage_slots)
 
 /obj/item/weapon/storage/box/syndie_kit/ewar_voice
-	name = "Electrowarfare and Voice Synthesiser kit"
+	name = "Electro-Warfare and Voice Synthesizer kit"
 	desc = "Kit for confounding organic and synthetic entities alike."
 
 /obj/item/weapon/storage/box/syndie_kit/ewar_voice/populate_contents()

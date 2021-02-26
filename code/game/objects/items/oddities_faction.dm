@@ -1,7 +1,7 @@
 //Oddities which are specific to factions or certain jobs.
 /obj/item/biosyphon
 	name = "Biosiphon Anomaly"
-	desc = "An exceedingly rare bluespace anomaly discovered by a marshal ranger outside the colony. After weeks of study it was determined its only purpose was duplicating boxes of donuts. Soteria's disappointment was so great they gave the item to security for safe keeping. Months after its discovery it began to create refined cases of incredibly tasty donuts filled with long-lasting effective stimulents every two hours."
+	desc = "An exceedingly rare bluespace anomaly discovered by a marshal ranger outside the colony. After weeks of study it was determined its only purpose was duplicating boxes of donuts. Soteria's disappointment was so great they gave the item to security for safe keeping. Months after its discovery it began to create refined cases of incredibly tasty donuts filled with long-lasting effective stimulants every two hours."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "biosyphon"
 	item_state = "biosyphon"
@@ -33,7 +33,7 @@
 
 /obj/item/device/von_krabin
 	name = "Von-Krabin Stimulator"
-	desc = "A strange anomalous item given to the research directors of the soteria as its latent effects enhance the mind. Some say this is an unfinished prototype of the technology the church of absolute uses to enhance the abilities of others."
+	desc = "A strange anomalous item given to the research directors of Soteria as its latent effects enhance the mind. Some say this is an unfinished prototype of the technology the church of absolute uses to enhance the abilities of others."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "von-krabin"
 	item_state = "von-krabin"
@@ -298,7 +298,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "maneki_neko"
 	item_state = "maneki_neko"
-	desc = "An oddity that costs quite alot of money, it feels like its watching you. Creepy."
+	desc = "An oddity that costs quite a lot of money, it feels like its watching you. Creepy."
 	flags = CONDUCT
 	force = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_SMALL
@@ -395,13 +395,24 @@
 				var/obj/item/weapon/implant/core_implant/I = M.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
 				if(I && I.active && I.wearer)
 					continue
+				M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, 45 SECONDS)
+				M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 45 SECONDS)
+				M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, 45 SECONDS)
+				M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT, 45 SECONDS)
+				M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, 45 SECONDS)
+				M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT, 45 SECONDS)
 				flashbang_bang(get_turf(src), M, bang_text)
-
 
 	for(var/mob/living/carbon/M in hear(7, get_turf(src)))
 		var/obj/item/weapon/implant/core_implant/I = M.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
 		if(I && I.active && I.wearer)
 			continue
+		M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, 45 SECONDS)
+		M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 45 SECONDS)
+		M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, 45 SECONDS)
+		M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT, 45 SECONDS)
+		M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, 45 SECONDS)
+		M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT, 45 SECONDS)
 		flashbang_bang(get_turf(src), M, bang_text)
 
 	for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
@@ -414,6 +425,12 @@
 	last_use = world.time
 	return
 
+/obj/item/weapon/tool/sword/crusader/nt_sword_truth/equipped(mob/living/M)
+	. = ..()
+	if(is_held() && is_neotheology_disciple(M))
+		embed_mult = 0.1
+	else
+		embed_mult = initial(embed_mult)
 
 /obj/structure/nt_pedestal
 	name = "Pedestal of the Joyeuse"
@@ -477,7 +494,7 @@
 
 /obj/item/weapon/storage/sheath/joyeuse
 	name = "Joyeuse sheath"
-	desc = "A specially designed sheathe for the joyeuse, of which is the only object that shall fit in it."
+	desc = "A specially designed sheathe for the joyeuse, which is the only object that shall fit in it."
 	can_hold = list(
 		/obj/item/weapon/tool/sword/crusader/nt_sword_truth
 		)

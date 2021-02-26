@@ -30,8 +30,46 @@
 		/datum/design/research/item/medical/roller_bed
 	)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/advanced
+	disk_name = "Soteria Advanced Medical Designs"
+	icon_state = "moebius"
+	license = 10
+	designs = list(
+		/datum/design/autolathe/gun/syringe_gun,
+		/datum/design/autolathe/misc/penflashlight,
+		/datum/design/autolathe/container/syringe,
+		/datum/design/autolathe/container/syringe/large,
+		/datum/design/autolathe/container/vial = 0,
+		/datum/design/autolathe/container/beaker,
+		/datum/design/autolathe/container/beaker_large,
+		/datum/design/autolathe/container/pill_bottle = 0,
+		/datum/design/autolathe/container/spray,
+		/datum/design/autolathe/container/syringegun_ammo,
+		/datum/design/research/item/medical/cryobag,
+		/datum/design/research/item/medical/compact_roller_bed,
+		/datum/design/research/item/medical/adv_mass_spectrometer,
+		/datum/design/research/item/medical/adv_reagent_scanner,
+		/datum/design/research/item/medical/defibs = 3,
+		/datum/design/research/item/medical/red,
+		/datum/design/research/item/scalpel_laser,
+		/datum/design/autolathe/tool/scalpel/advanced,
+		/datum/design/research/item/bonesetter_adv,
+		/datum/design/research/item/cautery_adv,
+		/datum/design/research/item/hemostat_adv,
+		/datum/design/research/item/retractor_adv,
+		/datum/design/research/item/medsaw_circular,
+		/datum/design/autolathe/tool/surgicaldrill,
+		/datum/design/research/item/medical/nanopaste = 2,
+		/datum/design/research/item/hud/health = 2
+	)
+
+
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/cmo
 	disk_name = "Soteria Medical Factory"
+	license = -1 //Same disk, but for the CBO exclusively with endless uses.
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/advanced/cmo
+	disk_name = "Soteria Advanced Medical Designs Factory"
 	license = -1 //Same disk, but for the CBO exclusively with endless uses.
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/surgery

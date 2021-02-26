@@ -1,5 +1,5 @@
 /obj/item/weapon/grenade/smokebomb
-	name = "HS SG \"Reynolds\""
+	name = "HS smoke grenade \"Reynolds\""
 	desc = "Smoke grenade, used to create a cloud of smoke providing cover and hiding movement."
 	det_time = 20
 	var/datum/effect/effect/system/smoke_spread/bad/smoke
@@ -36,8 +36,8 @@
 	return
 
 /obj/item/weapon/grenade/smokebomb/nt
-	name = "NT SG \"Holy Fog\""
+	name = "NT smoke grenade \"Holy Fog\""
 	desc = "Smoke grenade, used to create a cloud of smoke providing cover and hiding movement."
 	icon_state = "smokegrenade_nt"
 	item_state = "smokegrenade_nt"
-	matter = list(MATERIAL_BIOMATTER = 75)
+	matter = list(MATERIAL_BIOMATTER = 10)

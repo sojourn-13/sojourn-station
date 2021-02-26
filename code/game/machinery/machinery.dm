@@ -100,7 +100,7 @@ Class Procs:
 	icon = 'icons/obj/stationobjs.dmi'
 	w_class = ITEM_SIZE_GARGANTUAN
 
-	var/emagged = 0
+	var/emagged = FALSE
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
 		//1 = run auto, use idle
@@ -110,9 +110,10 @@ Class Procs:
 	var/power_channel = EQUIP //EQUIP, ENVIRON or LIGHT
 	var/list/component_parts = null //list of all the parts used to build it, if made from certain kinds of frames.
 	var/uid
-	var/panel_open = 0
+	var/panel_open = FALSE
+	var/simple_machinery = FALSE
 	var/global/gl_uid = 1
-	var/interact_offline = 0 // Can the machine be interacted with while de-powered.
+	var/interact_offline = FALSE // Can the machine be interacted with while de-powered.
 	var/obj/item/weapon/circuitboard/circuit = null
 	var/frame_type = FRAME_DEFAULT
 

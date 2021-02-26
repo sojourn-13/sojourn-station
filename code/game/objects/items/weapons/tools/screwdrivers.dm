@@ -16,7 +16,7 @@
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 100, QUALITY_BONE_SETTING = 100)
 
 /obj/item/weapon/tool/screwdriver/improvised
-	name = "screwpusher"
+	name = "screw pusher"
 	desc = "A little metal rod wrapped in a tape handle. This can be fixed with enough tool mods, for which it has ample capacity."
 	icon_state = "impro_screwdriver"
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 15)
@@ -25,7 +25,7 @@
 
 /obj/item/weapon/tool/screwdriver/electric
 	name = "electric screwdriver"
-	desc = "An electrical screwdriver, powered by an S class cell. Can be used as a drilling tool if necessary, though is not well suited to do so."
+	desc = "An electrical screwdriver, powered by an S class cell. Can be used as a drilling tool if necessary, though it is badly suited to do so."
 	icon_state = "e-screwdriver"
 	worksound = WORKSOUND_DRIVER_TOOL
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1)
@@ -36,8 +36,8 @@
 	suitable_cell = /obj/item/weapon/cell/small
 
 /obj/item/weapon/tool/screwdriver/combi_driver
-	name = "combi driver"
-	desc = "Drive screws, drive bolts, drill bones - you can do everything with it! But it drains power cells quickly."
+	name = "combination drill"
+	desc = "Turn screws, turn bolts, drill bones - you can do everything with it! But it drains power cells quickly."
 	icon_state = "combi_driver"
 	w_class = ITEM_SIZE_NORMAL
 	worksound = WORKSOUND_DRIVER_TOOL
@@ -60,8 +60,8 @@
 
 
 /obj/item/weapon/tool/screwdriver/combi_driver/onestar
-	name = "greyson positronic combi driver"
-	desc = "A Greyson combi driver. Does better than the standard combi drivers on the market, but has less slots for tool mods."
+	name = "Greyson Positronic combination drill"
+	desc = "Does better than the standard combination drivers on the market, but has less slots for tool mods."
 	icon_state = "one_star_combidriver"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2)
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 60, QUALITY_BOLT_TURNING = 60, QUALITY_DRILLING = 25)

@@ -213,7 +213,7 @@
 /*
 	You wake up from a nice nap, in a dormitory somewhere
 */
-/*
+
 /datum/spawnpoint/dormitory
 
 /datum/spawnpoint/dormitory/get_spawn_locations()
@@ -258,4 +258,3 @@
 
 		return TRUE
 	return FALSE
-*/

@@ -162,7 +162,7 @@
 	attacktext = "kicked"
 	health = 1
 	var/amount_grown = 0
-	pass_flags = PASSTABLE | PASSGRILLE
+	pass_flags = PASSTABLE
 	mob_size = MOB_MINISCULE
 	autoseek_food = 0
 	beg_for_food = 0
@@ -183,7 +183,7 @@
 			new /mob/living/simple_animal/chicken(src.loc)
 			qdel(src)
 
-var/const/MAX_CHICKENS = 50
+var/const/MAX_CHICKENS = 10
 var/global/chicken_count = 0
 
 /mob/living/simple_animal/chicken
@@ -191,7 +191,7 @@ var/global/chicken_count = 0
 	desc = "Hopefully the eggs are good this season."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "chicken_brown"
-	speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
+	speak = list("cluck!","BWAAAAARK BWAK BWAK BWAK!","bwaak bwak.")
 	emote_see = list("pecks at the ground","flaps its wings viciously")
 	speak_chance = 2
 	turns_per_move = 3

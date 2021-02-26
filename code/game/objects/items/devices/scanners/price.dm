@@ -56,7 +56,7 @@
 
 	if(price)
 		data += "<span class='notice'>Scanned [target], value: <b>[price]</b> \
-			credits[target.contents.len ? " (contents included)" : ""]. [target.surplus_tag?"(surplus)":""]</span>"
+			credits[target.contents.len ? " (contents included)" : ""].</span>"
 	else
 		data += "<span class='warning'>Scanned [target], no export value. \
 			</span>"

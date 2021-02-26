@@ -587,6 +587,12 @@
 	else
 		..()
 
+/obj/item/weapon/reagent_containers/food/snacks/egg/clucker
+	name = "cluckeregg"
+	desc = "A clucker egg!"
+	icon_state = "egg"
+	filling_color = "#ffe6d1"
+
 /obj/item/weapon/reagent_containers/food/snacks/egg/blue
 	icon_state = "egg-blue"
 
@@ -1627,9 +1633,15 @@
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube/proc/Expand()
 	src.visible_message(SPAN_NOTICE("\The [src] expands!"))
 	var/mob/living/carbon/human/H = new(get_turf(src))
-	H.set_species(monkey_type)
+	H.set_species(monkey_type, null, FALSE)
 	H.real_name = H.species.get_random_name()
 	H.name = H.real_name
+	H.dna.SetSEValue(MONKEYBLOCK,0xFFF)
+	H.dna.b_type = RANDOM_BLOOD_TYPE
+	H.sync_organ_dna()
+	var/datum/dna/gene/G = new /datum/dna/gene/basic/monkey
+	H.active_genes |= G.type
+	H.update_icon = 1
 	if(ismob(loc))
 		var/mob/M = loc
 		M.unEquip(src)

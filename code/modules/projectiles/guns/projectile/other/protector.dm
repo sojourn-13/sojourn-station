@@ -22,6 +22,7 @@
 	var/release_force = 5
 	twohanded = TRUE
 
+/* We no longer fire grenades like this. As we now use internal ammo
 /obj/item/weapon/gun/projectile/grenade/proc/load_grenade(obj/item/weapon/grenade/A, mob/user)  //For loading hand grenades, not ammo
 	if(!A.loadable)
 		to_chat(user, SPAN_WARNING("\The [A] doesn't seem to fit in \the [src]!"))
@@ -40,7 +41,7 @@
 	if(istype(A, /obj/item/weapon/grenade))
 		load_grenade(A, user)
 	else
-		..()
+		..()*/
 
 
 //revolves the magazine, allowing players to choose between multiple grenade types

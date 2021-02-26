@@ -33,6 +33,11 @@
 	var/meat_amount = 1
 	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat //all mobs now can be butchered into meat
 	var/blood_from_harvest = /obj/effect/decal/cleanable/blood/splatter
+	//Lodge related products
+	var/leather_amount = 1 //The amount of leather sheets dropped.
+	var/bones_amount = 1 //The amount of bone sheets dropped.
+	var/has_special_parts = FALSE //var for checking during the butcher process.
+	var/list/special_parts = list()//Any special body parts.
 
 	var/stop_automated_movement = FALSE //Use this to temporarely stop random movement or to if you write special movement code for animals.
 	var/wander = TRUE	// Does the mob wander around when idle?
@@ -475,6 +480,22 @@
 // Harvest an animal's delicious byproducts
 /mob/living/simple_animal/proc/harvest(var/mob/user)
 	var/actual_meat_amount = max(1,(meat_amount/2))
+	drop_embedded()
+	if(user.stats.getPerk(PERK_BUTCHER))
+		var/actual_leather_amount = max(1,(leather_amount/2))
+		if(actual_leather_amount>0 && (stat == DEAD))
+			for(var/i=0;i<actual_leather_amount;i++)
+				new /obj/item/stack/material/leather(get_turf(src))
+
+		var/actual_bones_amount = max(1,(bones_amount/2))
+		if(actual_bones_amount>0 && (stat == DEAD))
+			for(var/i=0;i<actual_bones_amount;i++)
+				new /obj/item/stack/material/bone(get_turf(src))
+
+		if(has_special_parts)
+			for(var/animal_part in special_parts)
+				new animal_part(get_turf(src))
+
 	if(meat_type && actual_meat_amount>0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
 			var/obj/item/meat = new meat_type(get_turf(src))

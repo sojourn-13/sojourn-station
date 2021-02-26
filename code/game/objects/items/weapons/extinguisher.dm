@@ -26,7 +26,7 @@
 
 /obj/item/weapon/extinguisher/mini
 	name = "fire extinguisher"
-	desc = "A light and compact fibreglass-framed model fire extinguisher."
+	desc = "A light and compact fiberglass-framed model fire extinguisher."
 	icon_state = "miniFE0"
 	item_state = "miniFE"
 	hitsound = null	//it is much lighter, after all.
@@ -76,6 +76,13 @@
 	//TODO; Add support for reagents in water.
 
 	if( istype(target, /obj/structure/reagent_dispensers/watertank) && flag)
+		var/obj/o = target
+		var/amount = o.reagents.trans_to_obj(src, 50)
+		to_chat(user, SPAN_NOTICE("You fill [src] with [amount] units of the contents of [target]."))
+		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
+		return
+
+	if( istype(target, /obj/structure/reagent_dispensers/water_cooler) && flag)
 		var/obj/o = target
 		var/amount = o.reagents.trans_to_obj(src, 50)
 		to_chat(user, SPAN_NOTICE("You fill [src] with [amount] units of the contents of [target]."))

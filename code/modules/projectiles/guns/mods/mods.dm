@@ -3,13 +3,13 @@
 	w_class = ITEM_SIZE_TINY
 	price_tag = 100 //These should be sold in the player market.
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
-	var/can_remove = TRUE 
+	var/can_remove = TRUE
 
 /obj/item/weapon/gun_upgrade/barrel
 
 //Silences the weapon, reduces damage multiplier slightly, Legacy port.
 /obj/item/weapon/gun_upgrade/muzzle/silencer
-	name = "silencer"
+	name = "Silencer"
 	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise, but impedes muzzle velocity."
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	icon_state = "silencer"
@@ -27,7 +27,7 @@
 
 //Decreases fire delay. Acquired through loot spawns or guild crafting
 /obj/item/weapon/gun_upgrade/barrel/forged
-	name = "forged barrel"
+	name = "Forged barrel"
 	desc = "Despite advancements in 3D printing, a properly forged plasteel barrel can still outperform anything that comes from an autolathe."
 	icon_state = "Forged_barrel"
 
@@ -174,10 +174,10 @@
 /* //This mod works fine but if a bullet hits an object it run times, my theory is its trying to make an effect work via rads that isn't coded properly either by ERIS or my bad porting.
 //For now this has been modified to not use rad damage since that has issues.
 */
-//Adds radiation damage to .35 rounds. Acquired through raiding grayson machines.
+//Adds radiation damage to .35 rounds. Acquired through raiding greyson machines.
 /obj/item/weapon/gun_upgrade/mechanism/glass_widow
-	name = "Grayson \"Glass Widow\" infuser"
-	desc = "An old technology from the grayson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
+	name = "Greyson \"Glass Widow\" infuser"
+	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
 	icon_state = "Glass_Widow"
 
 /obj/item/weapon/gun_upgrade/mechanism/glass_widow/New()
@@ -222,7 +222,7 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
 
-/obj/item/weapon/gun_upgrade/underbarrel
+//obj/item/weapon/gun_upgrade/underbarrel
 
 /obj/item/weapon/storage/box/gun_upgrades
 	name = "Big box of gun fun"
@@ -337,13 +337,13 @@
 	I.gun_loc_tag = GUN_MECHANISM
 */
 
-/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst
-	name = "Grayson \"Master Unmaker\" infuser"
-	desc = "One of the rarest and most powerful weapon modification ever made by Grayson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
+/obj/item/weapon/gun_upgrade/mechanism/greyson_master_catalyst
+	name = "Greyson \"Master Unmaker\" infuser"
+	desc = "One of the rarest and most powerful weapon modification ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
 	icon_state = "psionic_catalyst"
 	matter = list(MATERIAL_PLATINUM = 5, MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 10)
 
-/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst/New()
+/obj/item/weapon/gun_upgrade/mechanism/greyson_master_catalyst/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -446,3 +446,114 @@
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.50,
 	GUN_UPGRADE_AUTOEJECT = TRUE)
 	I.gun_loc_tag = GUN_MAGWELL
+
+//Trash mods, for putting on old guns
+
+/obj/item/weapon/gun_upgrade/trigger/faulty
+	name = "Faulty Trigger"
+	desc = "Weirdly sticky, and none of your fingers seem to fit to it comfortably. This causes more recoil and increases delay between shots as you try to compensate for it."
+	icon_state = "Cop_Block"
+	price_tag = 0
+
+/obj/item/weapon/gun_upgrade/trigger/faulty/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL = rand(12,30)/10,
+		GUN_UPGRADE_FIRE_DELAY_MULT = rand(11,18)/10
+	)
+	I.destroy_on_removal = TRUE
+	I.removal_time *= rand(10, 14)/10
+	I.removal_difficulty *= rand(5, 15)/10
+	I.gun_loc_tag = GUN_TRIGGER
+
+/obj/item/weapon/gun_upgrade/barrel/faulty
+	name = "Warped Barrel"
+	desc = "Extreme heat has warped this barrel off-target. This decreases the impact force of bullets fired through it and makes it more difficult to correctly aim the weapon it's attached to."
+	icon_state = "Forged_barrel"
+	price_tag = 0
+
+/obj/item/weapon/gun_upgrade/barrel/faulty/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_OFFSET = rand(5,15),
+		GUN_UPGRADE_PEN_MULT = rand(4,9)/10,
+		GUN_UPGRADE_DAMAGE_MULT = rand(4,9)/10,
+	)
+	I.destroy_on_removal = TRUE
+	I.removal_time *= rand(10, 14)/10
+	I.removal_difficulty *= rand(5, 15)/10
+	I.gun_loc_tag = GUN_BARREL
+
+/obj/item/weapon/gun_upgrade/muzzle/faulty
+	name = "Failed Makeshift Silencer"
+	desc = "Inspired by cheesy action movies, somebody has left trash on the end of this weapon. This causes the attached weapon to suffer from weaker armor penetration."
+	icon_state = "silencer"
+	price_tag = 0
+
+/obj/item/weapon/gun_upgrade/muzzle/faulty/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_PEN_MULT = rand(4,9)/10,
+		GUN_UPGRADE_STEPDELAY_MULT = rand(12,18)/10,
+	)
+	I.destroy_on_removal = TRUE
+	I.removal_time *= rand(10, 14)/10
+	I.removal_difficulty *= rand(5, 15)/10
+	I.gun_loc_tag = GUN_MUZZLE
+
+/obj/item/weapon/gun_upgrade/mechanism/faulty
+	name = "Unknown Clockwork Mechanism"
+	desc = "It's really not clear what this modification actually does. It appears to effect the attached weapon's recoil, but if it actually helps or hinders the weapon is unclear."
+	icon_state = "Weintraub"
+	price_tag = 0
+
+/obj/item/weapon/gun_upgrade/mechanism/faulty/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL = rand(5, 50)/10,
+	)
+	I.destroy_on_removal = TRUE
+	I.removal_time *= rand(10, 14)/10
+	I.removal_difficulty *= rand(5, 15)/10
+	I.gun_loc_tag = GUN_MECHANISM
+
+/obj/item/weapon/gun_upgrade/scope/faulty
+	name = "Misaligned sights"
+	desc = "Some bad knocks have changed the angling on the sights of this weapon. This causes the attached weapon to suffer from decreased accuracy."
+	icon_state = "Watchman"
+	price_tag = 0
+
+/obj/item/weapon/gun_upgrade/scope/faulty/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_OFFSET = rand(3,6),
+	)
+	I.destroy_on_removal = TRUE
+	I.removal_time *= rand(10, 14)/10
+	I.removal_difficulty *= rand(5, 15)/10
+	I.gun_loc_tag = GUN_SCOPE
+
+/obj/item/weapon/gun_upgrade/mechanism/faulty_trapped
+	name = "Jammed loader"
+	desc = "The mechanism that loads bullets into the chamber has jammed, one would be lucky the gun didn't explode if this was shot."
+	icon_state = "Reverse_loader"
+
+/obj/item/weapon/gun_upgrade/faulty_trapped/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RIGGED = TRUE
+	)
+	I.destroy_on_removal = TRUE
+	I.removal_time *= rand(10, 14)/10
+	I.removal_difficulty *= rand(5, 15)/10
+	I.gun_loc_tag = GUN_MECHANISM
+
+#define TRASH_GUNMODS list(/obj/item/weapon/gun_upgrade/trigger/faulty, /obj/item/weapon/gun_upgrade/barrel/faulty, \
+		/obj/item/weapon/gun_upgrade/muzzle/faulty, /obj/item/weapon/gun_upgrade/mechanism/faulty, \
+		/obj/item/weapon/gun_upgrade/scope/faulty, /obj/item/weapon/gun_upgrade/mechanism/faulty_trapped)

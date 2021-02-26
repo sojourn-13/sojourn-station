@@ -5,8 +5,8 @@ LINEN BINS
 */
 
 /obj/item/weapon/bedsheet
-	name = "bedsheet"
-	desc = "A surprisingly soft linen bedsheet."
+	name = "bed sheet"
+	desc = "A surprisingly soft linen bed sheet."
 	icon = 'icons/obj/bedsheets.dmi'
 	icon_state = "sheet"
 	item_state = "bedsheet"
@@ -92,7 +92,7 @@ LINEN BINS
 	return FALSE
 
 /obj/item/weapon/bedsheet/verb/fold_verb()
-	set name = "Fold bedsheet"
+	set name = "Fold bed sheet"
 	set category = "Object"
 	set src in view(1)
 
@@ -102,7 +102,7 @@ LINEN BINS
 		toggle_fold(usr)
 
 /obj/item/weapon/bedsheet/verb/roll_verb()
-	set name = "Roll bedsheet"
+	set name = "Roll bed sheet"
 	set category = "Object"
 	set src in view(1)
 
@@ -276,7 +276,7 @@ LINEN BINS
 
 /obj/structure/bedsheetbin
 	name = "linen bin"
-	desc = "A linen bin. It looks rather cosy."
+	desc = "A linen bin. It looks rather cozy."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "linenbin-full"
 	anchored = 1

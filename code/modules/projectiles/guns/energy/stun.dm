@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/energy/taser
 	name = "\"Counselor\" stun gun"
-	desc = "The OT SP \"Counselor\" is a taser gun used for non-lethal takedowns. Originally produced by the Old Testament as a non-lethal and safe alternative to plasma or ballistics."
+	desc = "The OT SP \"Counselor\" is a taser gun used for non-lethal takedowns. Originally developed by the Seinemetall Defense GmbH before being sold off to Old Testament as a non-lethal and safe alternative to plasma or ballistics."
 	icon = 'icons/obj/guns/energy/taser.dmi'
 	icon_state = "taser"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -43,7 +43,8 @@
 
 /obj/item/weapon/gun/energy/stunrevolver
 	name = "\"Zeus\" stun revolver"
-	desc = "Also know as stun revolver. Older and less precise H&S solution for non-lethal takedowns. This gun has a smaller capacity in exchange for S-cells use."
+	desc = "Also know as stun revolver. Seinemetall Defense GmbH with Soteria Institute solution for non-lethal takedowns, its rather simple deisign has a smaller capacity in exchange for S-cells use. \
+			The now outdated design was the base for the much more successfull \"Counselor\"."
 	icon = 'icons/obj/guns/energy/stunrevolver.dmi'
 	icon_state = "stunrevolver"
 	item_state = "stunrevolver"

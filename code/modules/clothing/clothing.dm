@@ -151,6 +151,11 @@
 	name = "Clothing information"
 	icon_state = "info"
 
+/obj/item/clothing/refresh_upgrades()
+	var/obj/item/clothing/referencecarmor = new type()
+	armor = referencecarmor.armor
+	qdel(referencecarmor)
+	..()
 
 ///////////////////////////////////////////////////////////////////////
 // Ears: headsets, earmuffs and tiny objects
@@ -372,6 +377,12 @@ BLIND     // can't see anything
 	else
 		return ..(user)
 
+/obj/item/clothing/head/refresh_upgrades()
+	var/obj/item/clothing/head/referencecarmor = new type()
+	armor = referencecarmor.armor
+	qdel(referencecarmor)
+	..()
+
 /obj/item/clothing/head/proc/update_flashlight(var/mob/user = null)
 	if(on && !light_applied)
 		set_light(brightness_on)
@@ -555,10 +566,6 @@ BLIND     // can't see anything
 		usr.put_in_hands(NSM)
 	else to_chat(usr, "You haven't got any accessories in your shoes")
 
-
-
-
-
 /obj/item/clothing/shoes/update_icon()
 	cut_overlays()
 	//if(holding)
@@ -608,6 +615,13 @@ BLIND     // can't see anything
 /obj/item/clothing/suit/New()
 	allowed |= extra_allowed
 	.=..()
+
+/obj/item/clothing/suit/refresh_upgrades()
+	var/obj/item/clothing/suit/referencecarmor = new type()
+	armor = referencecarmor.armor
+	qdel(referencecarmor)
+	..()
+
 ///////////////////////////////////////////////////////////////////////
 //Under clothing
 /obj/item/clothing/under

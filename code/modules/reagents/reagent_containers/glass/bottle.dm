@@ -114,3 +114,21 @@
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "holyflask"
 	preloaded_reagents = list("adminordrazine" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/tangu_extract
+	name = "tangu extract bottle"
+	desc = "A small bottle. Contains the extract of a tangu horn, a highly valuable universal healing chemical."
+	icon_state = "bottle"
+	preloaded_reagents = list("tangu_extract" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/clucker_extract
+	name = "clucker extract bottle"
+	desc = "A small bottle. Contains the extract of a compressed clucker feather, a rather weak painkiller."
+	icon_state = "bottle"
+	preloaded_reagents = list("clucker_extract" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/tahcacillin
+	name = "tahcacillin bottle"
+	desc = "A small bottle. Contains a derived extract of blood mixed with tahca horns, a powerful anti-viral for dealing with diseases and infection when injected into the bloodstream."
+	icon_state = "bottle"
+	preloaded_reagents = list("tahcacillin" = 60)

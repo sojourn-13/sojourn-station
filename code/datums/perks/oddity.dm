@@ -4,7 +4,7 @@
 /datum/perk/oddity/toxic_revenger
 	name = "Fungal Host"
 	desc = "A small hostile fungal spores were on the oddity, hijacking your lungs and forcing them to emit toxins harmful to everyone around you every half hour. It will be a long time before your body can fight this off..."
-	gain_text = "You feel a terrible aching pain in your lungs, an anomalous fungus on the oddity has infused your body!"
+	gain_text = "You feel a terrible aching pain in your lungs - an anomalous fungus on the oddity has infused your body!"
 	//icon_state = "Hazmat" // https://game-icons.net
 	var/cooldown = 30 MINUTES
 	var/initial_time
@@ -34,14 +34,14 @@
 
 /datum/perk/oddity/gunslinger
 	name = "Gunslinger"
-	desc = "The latent effects of an oddity have granted you an insight into firing bullets faster than anyone else, a shame it doesn't make you immune to recoil."
+	desc = "The latent effects of an oddity have granted you an insight into firing bullets faster than anyone else; a shame it doesn't make you immune to recoil."
 	gain_text = "You feel different, as if time has slowed and your hands can move with an easy grace. The oddity your carrying has changed you, for now."
 	//icon_state = "dual_shot" // https://game-icons.net/1x1/delapouite/bullet-impacts.html
 
 /datum/perk/oddity/balls_of_plasteel
 	name = "True Grit"
 	desc = "Pain comes and goes, you feel as though can withstand far worse than ever before."
-	gain_text = "You feel a numbing senstation spreading through out your body. The oddity your carrying has changed you, for now."
+	gain_text = "You feel a numbing sensation spreading through out your body. The oddity your carrying has changed you, for now."
 	//icon_state = "golem" // https://game-icons.net
 
 /datum/perk/oddity/fast_walker
@@ -88,7 +88,7 @@
 
 /datum/perk/oddity/better_toxins
 	name = "Toxic Resistance"
-	desc = "You've been exposed to something toxic, yet your body fought it off and is now strengethed against toxins as a result."
+	desc = "You've been exposed to something toxic, yet your body fought it off and is now strengthened against toxins as a result."
 	gain_text = "Fresh air, healthy living, and a bit of "
 	//icon_state = "" // - No icon, suggestion - Anti toxin needle?
 
@@ -173,7 +173,7 @@
 	..()
 
 ///////////////////////////////////////
-//////// NT ODDITYS PERKS /////////////
+//////// JOB ODDITYS PERKS ////////////
 ///////////////////////////////////////
 
 /datum/perk/nt_oddity
@@ -206,3 +206,20 @@
 				continue
 			H.adjustBruteLoss(-healing_power)
 			H.adjustFireLoss(-healing_power)
+
+
+/datum/perk/guild/blackbox_insight
+	name = "Blackbox Tinkering"
+	desc = "It's sleek contours, the expert craftsmanship, the best of hand made mechanical genius."
+	gain_text = "What wondrous possibilities..."
+	//icon_state = "" // - No icon, suggestion, detective glass?
+
+/datum/perk/guild/blackbox_insight/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_COG, 15)
+	holder.stats.changeStat(STAT_MEC, 15)
+
+/datum/perk/guild/blackbox_insight/remove()
+	holder.stats.changeStat(STAT_COG, -10) //we keep 5 of each
+	holder.stats.changeStat(STAT_MEC, -10)
+	..()

@@ -11,8 +11,44 @@
 	playsound(src,'sound/weapons/guns/interact/hpistol_magout.ogg',20,3)
 
 /////////////Standard/////////////
+/obj/item/ammo_magazine/pistol_35
+	name = "standard magazine (.35 Auto)"
+	desc = "a 10 round magazine marked for .35 Auto."
+	icon_state = "pistol"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_PISTOL
+	matter = list(MATERIAL_STEEL = 3)
+	caliber = CAL_PISTOL
+	ammo_type = /obj/item/ammo_casing/pistol_35
+	max_ammo = 10
+	multiple_sprites = 1
 
-/obj/item/ammo_magazine/pistol_35/drum
+/obj/item/ammo_magazine/pistol_35/empty
+	icon_state = "pistol"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/pistol_35/practice
+	name = "standard magazine (.35 Auto practice)"
+	icon_state = "pistol_p"
+	ammo_type = /obj/item/ammo_casing/pistol_35/practice
+
+/obj/item/ammo_magazine/pistol_35/highvelocity
+	name = "standard magazine (.35 Auto high-velocity)"
+	icon_state = "pistol_hv"
+	ammo_type = /obj/item/ammo_casing/pistol_35/hv
+
+/obj/item/ammo_magazine/pistol_35/rubber
+	name = "standard magazine (.35 Auto rubber)"
+	icon_state = "pistol_r"
+	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
+
+/obj/item/ammo_magazine/pistol_35/lethal
+	name = "standard magazine (.35 Auto hollow-point)"
+	icon_state = "pistol_l"
+	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
+
+/obj/item/ammo_magazine/highcap_pistol_35/drum
 	name = "standard auto drum magazine"
 	icon_state = "ldrum"
 	desc = "A 71 round drum magazine marked for .35 Auto."
@@ -26,25 +62,25 @@
 	max_ammo = 71
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/pistol_35/drum/rubber
+/obj/item/ammo_magazine/highcap_pistol_35/drum/rubber
 	name = "standard auto magazine (rubber)"
-	matter = list(MATERIAL_STEEL = 4)
+	matter = list(MATERIAL_STEEL = 25)
 	icon_state = "ldrum_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
-/obj/item/ammo_magazine/pistol_35/drum/lethal
+/obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
 	name = "standard auto magazine (hollow-point)"
-	matter = list(MATERIAL_STEEL = 4)
+	matter = list(MATERIAL_STEEL = 25)
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 	icon_state = "ldru_l"
 
-/obj/item/ammo_magazine/pistol_35/drum/hv
+/obj/item/ammo_magazine/highcap_pistol_35/drum/hv
 	name = "standard auto magazine (high-velocity)"
-	matter = list(MATERIAL_STEEL = 4)
+	matter = list(MATERIAL_STEEL = 25)
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 	icon_state = "ldrum_hv"
 
-/obj/item/ammo_magazine/pistol_35/drum/empty
+/obj/item/ammo_magazine/highcap_pistol_35/drum/empty
 	name = "standard auto magazine"
 	matter = list(MATERIAL_STEEL = 4)
 	icon_state = "ldrum"
@@ -607,7 +643,7 @@
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 3)
 	ammo_type = /obj/item/ammo_casing/rifle_75
-	max_ammo = 5
+	max_ammo = 10
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408
@@ -618,7 +654,7 @@
 	caliber = CAL_HRIFLE
 	matter = list(MATERIAL_STEEL = 3)
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
-	max_ammo = 5
+	max_ammo = 10
 	multiple_sprites = 1
 
 ////other////

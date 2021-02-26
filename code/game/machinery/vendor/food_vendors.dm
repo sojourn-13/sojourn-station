@@ -40,7 +40,7 @@
 						/obj/item/weapon/reagent_containers/food/drinks/tea/black = 10)
 	vend_delay = 15
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
-	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?;Care for a cup of coffee? It's Irish.;Whiskey for your sorrows, Beer for your break."
+	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this colony?;Care for a cup of coffee? It's Irish.;Whiskey for your sorrows, Beer for your break."
 	product_ads = "Drink up!;Booze is good for you!;Alcohol is humanity's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 2053!;Award-winning wine!;Maximum alcohol!;Man loves beer.;A toast for progress!"
 	auto_price = FALSE
 
@@ -63,14 +63,14 @@
 					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 25)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/ice = 10,
 					  /obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 10)
-	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 3,
-					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 3,
-					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 3,
-					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 3,
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 12,
+					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 12,
+					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 15,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 3,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 5,
 					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 5,
-					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/premade = 300)
+					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/premade = 100)
 
 /obj/machinery/vending/coffee/postvend_effect()
 	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
@@ -96,27 +96,27 @@
 					/obj/item/weapon/reagent_containers/food/snacks/chocolatebar = 3,
 					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 6,)
 	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/syndicake = 6)
-	prices = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 40,
-					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 45,
-					/obj/item/weapon/reagent_containers/food/snacks/chips = 40,
-					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 45,
-					/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 40,
-					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 40,
-					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 40,
-					/obj/item/weapon/reagent_containers/food/snacks/tastybread = 50,
-					/obj/item/weapon/reagent_containers/food/snacks/syndicake = 60,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds = 120,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack = 120,
-					/obj/item/weapon/reagent_containers/food/snacks/chocolatebar = 200,
-					/obj/item/weapon/reagent_containers/food/snacks/gamerchips = 120,
-					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 360)
+	prices = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 25,
+					/obj/item/weapon/reagent_containers/food/snacks/chips = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 25,
+					/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 20,
+					/obj/item/weapon/reagent_containers/food/snacks/tastybread = 25,
+					/obj/item/weapon/reagent_containers/food/snacks/syndicake = 30,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds = 60,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack = 60,
+					/obj/item/weapon/reagent_containers/food/snacks/chocolatebar = 75,
+					/obj/item/weapon/reagent_containers/food/snacks/gamerchips = 80,
+					/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 90)
 
 /obj/machinery/vending/cola
 	name = "Robust Softdrinks"
 	desc = "A softdrink vendor provided by Lone Star Solutions, LLC."
 	icon_state = "Cola_Machine"
 	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!;Operating heavy machinery? Robust Softdrinks has you covered!;Just to fill your sweet tooth needs!;Don't belive the reports, It doesn't have that much sugar!;Thirsty? Why not have cola!;Get your sugarwater here!;The taste of freedom!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not have some cola?;Please, have a drink!;Drink up!;The best drinks in space.;Treat yourself to what you deserve!"
+	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not have some cola?;Please, have a drink!;Drink up!;The best drinks in this colony.;Treat yourself to what you deserve!"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 10,
@@ -127,16 +127,16 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 5,
 						/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 6)
-	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 32,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 50,
-					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 60)
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 16,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 25,
+					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 30)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/cola/postvend_effect()
@@ -163,7 +163,7 @@
 /obj/machinery/vending/hydroseeds
 	name = "MegaSeed Servitor"
 	desc = "When you need seeds fast!"
-	product_slogans = "This is where the seeds live, git you some!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!;Seeds? We got you covered.;Remember: Glowshrooms are bad for you.;I'm legally advised to tell you that Nettles are poisonous."
+	product_slogans = "This is where the seeds live, git you some!;Hands down the best seed selection on the colony!;Also certain mushroom varieties available, more for experts! Get certified today!;Seeds? We got you covered.;Remember: Glowshrooms are bad for you.;I'm legally advised to tell you that Nettles are poisonous."
 	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!;Just like your ancestors!"
 	icon_state = "seeds"
 	always_open = TRUE
@@ -240,7 +240,7 @@
 
 
 /obj/machinery/vending/dinnerware
-	name = "Dinnerware Express"
+	name = "Delta Dinnerware Express"
 	desc = "A kitchen and restaurant equipment vendor."
 	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these...;Need knives? Got you covered."
 	icon_state = "dinnerware"
@@ -248,7 +248,6 @@
 					/obj/item/weapon/material/kitchen/utensil/fork = 6,
 					/obj/item/weapon/tool/knife = 6,
 					/obj/item/weapon/material/kitchen/utensil/spoon = 6,
-					/obj/item/weapon/tool/knife = 3,
 					/obj/item/weapon/material/kitchen/rollingpin = 3,
 					/obj/item/weapon/reagent_containers/glass/rag = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 8,
@@ -277,12 +276,80 @@
 	contraband = list(/obj/item/weapon/tool/knife/butch = 2)
 	auto_price = FALSE
 
+/obj/machinery/vending/dinnerware/cost //So we can place these around and charge people
+	name = "Dinnerware Express"
+	desc = "A kitchen and restaurant equipment vendor."
+	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these...;Need knives? Got you covered."
+	icon_state = "dinnerware"
+	products = list(/obj/item/weapon/tray = 8,
+					/obj/item/weapon/material/kitchen/utensil/fork = 6,
+					/obj/item/weapon/tool/knife = 6,
+					/obj/item/weapon/material/kitchen/utensil/spoon = 6,
+					/obj/item/weapon/material/kitchen/rollingpin = 3,
+					/obj/item/weapon/reagent_containers/glass/rag = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 8,
+					/obj/item/clothing/suit/rank/chef/classic = 2,
+					/obj/item/weapon/storage/lunchbox = 3,
+					/obj/item/weapon/storage/lunchbox/rainbow = 3,
+					/obj/item/weapon/storage/lunchbox/cat = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/pitcher = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/teapot = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/black = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/green = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/blue = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/red = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/heart = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/one = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/metal = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/rainbow = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/brit = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/moebius = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/teacup = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/ketchup = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 10)
+	contraband = list(/obj/item/weapon/tool/knife/butch = 2)
+	prices = list(/obj/item/weapon/tray = 35,
+					/obj/item/weapon/material/kitchen/utensil/fork = 3,
+					/obj/item/weapon/tool/knife = 35,
+					/obj/item/weapon/material/kitchen/utensil/spoon = 3,
+					/obj/item/weapon/material/kitchen/rollingpin = 9,
+					/obj/item/weapon/reagent_containers/glass/rag = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 2,
+					/obj/item/clothing/suit/rank/chef/classic = 50,
+					/obj/item/weapon/storage/lunchbox = 8,
+					/obj/item/weapon/storage/lunchbox/rainbow = 8,
+					/obj/item/weapon/storage/lunchbox/cat = 8,
+					/obj/item/weapon/reagent_containers/food/drinks/pitcher = 9,
+					/obj/item/weapon/reagent_containers/food/drinks/teapot = 9,
+					/obj/item/weapon/reagent_containers/food/drinks/mug = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/black = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/green = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/blue = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/red = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/heart = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/one = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/metal = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/rainbow = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/brit = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/moebius = 7,
+					/obj/item/weapon/reagent_containers/food/drinks/mug/teacup = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/ketchup = 3,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/milk = 3,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/sugar = 3,
+					/obj/item/weapon/reagent_containers/food/condiment/pack/hotsauce = 3,
+					/obj/item/weapon/tool/knife/butch = 55)
+	auto_price = TRUE
+
+
 /obj/machinery/vending/sovietsoda
 	name = "BODA"
 	desc = "An old sweet water vending machine, how did this end up here?"
 	icon_state = "sovietsoda"
 	product_slogans = "For Tsar and Country!;Fulfill your nutrition quota!;Drink to forget food.;You no hungry anymore, da?"
-	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
+	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. No person, no problem."
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda = 30)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cola = 20)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
@@ -309,13 +376,13 @@
 										/obj/item/weapon/reagent_containers/food/snacks/candy/energybar = 4,
 										/obj/item/weapon/towel/random = 8)
 	prices = list(
-										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 40,
-										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 40,
-										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 30,
-										/obj/item/weapon/reagent_containers/food/drinks/cocamilk/small = 120,
-										/obj/item/weapon/reagent_containers/food/drinks/redmilk/small = 240,
-										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 30,
-										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 30,
-										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 240,
-										/obj/item/weapon/reagent_containers/food/snacks/candy/energybar = 400,
-										/obj/item/weapon/towel/random = 70)
+										/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 20,
+										/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 20,
+										/obj/item/weapon/reagent_containers/food/drinks/milk/small = 15,
+										/obj/item/weapon/reagent_containers/food/drinks/cocamilk/small = 40,
+										/obj/item/weapon/reagent_containers/food/drinks/redmilk/small = 40,
+										/obj/item/weapon/reagent_containers/food/drinks/soymilk/small = 50,
+										/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 16,
+										/obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue = 90,
+										/obj/item/weapon/reagent_containers/food/snacks/candy/energybar = 90,
+										/obj/item/weapon/towel/random = 10)

@@ -36,6 +36,18 @@
 	tool_qualities = list(QUALITY_SHOVELING = 40, QUALITY_DIGGING = 40, QUALITY_PRYING = 25, QUALITY_HAMMERING = 15, QUALITY_CUTTING = 10, QUALITY_SAWING = 5)
 	workspeed = 1.2
 
+/obj/item/weapon/tool/shovel/onestar_shovel
+	name = "Greyson Positronic shovel"
+	desc = "A large tool for digging and moving dirt and rock with the finest engineering put into it for maximum lift and heaving."
+	icon_state = "one_star_shovel"
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_DANGEROUS
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6, MATERIAL_PLATINUM = 3)
+	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 40, QUALITY_EXCAVATION = 40)
+	workspeed = 1.6
+	degradation = 0.8
+	max_upgrades = 2
+
 /obj/item/weapon/tool/shovel/spade
 	name = "spade"
 	desc = "A small tool ofter used for simple gardening task such as digging soil and moving dirt."

@@ -35,7 +35,9 @@
 		child.forceMove(target_turf)
 		for(var/obj/effect/plant/hivemind/neighbor in range(1, child))
 			neighbor.update_neighbors()
-
+	if(target_turf.holy) //Holy tiles can kill off the wire sometimes!
+		if(prob(30))
+			die_off()
 
 /obj/effect/plant/hivemind/proc/try_to_assimilate()
 	for(var/obj/machinery/machine_on_my_tile in loc)

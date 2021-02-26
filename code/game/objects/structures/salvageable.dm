@@ -388,7 +388,7 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/stack/material/diamond{amount = 1} = 1,
 		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20,
 		/obj/item/weapon/tool_upgrade/augment/randomizer = 40,
-		/obj/item/weapon/gun_upgrade/mechanism/grayson_master_catalyst = 0.1 //1 in 1000
+		/obj/item/weapon/gun_upgrade/mechanism/greyson_master_catalyst = 0.1 //1 in 1000
 	)
 
 

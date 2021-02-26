@@ -677,6 +677,13 @@ assassination method if you time it right*/
 		log_append_to_last("Took [damage] points of damage. Damage type: \"[type]\".",1)
 	return
 
+/obj/mecha/proc/take_flat_damage(amount, type="brute")
+	if(amount)
+		health -= amount
+		update_health()
+		log_append_to_last("Took [amount] points of damage.",1)
+	return
+
 /obj/mecha/proc/absorb_damage(damage,damage_type)
 	return damage*(listgetindex(damage_absorption,damage_type) || 1)
 
@@ -854,21 +861,11 @@ assassination method if you time it right*/
 	if(prob(src.deflect_chance))
 		severity++
 		src.log_append_to_last("Armor saved, changing severity to [severity].")
-	switch(severity)
-		if(1.0)
-			qdel(src)
-		if(2.0)
-			if (prob(30))
-				qdel(src)
-			else
-				src.take_damage(initial(src.health)/2)
-				src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),1)
-		if(3.0)
-			if (prob(5))
-				qdel(src)
-			else
-				src.take_damage(initial(src.health)/5)
-				src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),1)
+	// This formula is designed to one-shot anything less armored than a Phazon taking a severity 1 explosion.
+	// This formula does the same raw damage (aside from one-shotting) as the previous formula against a Durand, but deals more final damage due to being unmitigated by damage resistance.
+	var/damage_proportion = 1 / max(1, (severity + max(0, armor_level - 2)))
+	src.take_flat_damage(initial(src.health) * damage_proportion)
+	src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),1)
 	return
 
 /*Will fix later -Sieve
@@ -956,12 +953,13 @@ assassination method if you time it right*/
 					if(src.health<initial(src.health))
 						var/missing_health = initial(src.health) - src.health
 						user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+						var/user_mec = max(0, user.stats.getStat(STAT_MEC))
 						if(state == 3)
 							to_chat(user, SPAN_NOTICE("You are able to repair more damage to [src.name] from the inside."))
-							src.health += min(initial(src.health) / 4, missing_health)
+							src.health += min(initial(src.health) * (user_mec / 100), missing_health)
 						else
 							to_chat(user, SPAN_NOTICE("You repair some damage to [src.name]."))
-							src.health += min(10, missing_health)
+							src.health += min(user.stats.getStat(STAT_MEC) * 2, missing_health)
 					return
 			return
 
