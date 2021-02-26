@@ -21,7 +21,7 @@
 	name = "robotic module reset board"
 	desc = "Used to reset a cyborg's module. Destroys any other upgrades applied to the robot."
 	icon_state = "cyborg_upgrade1"
-	matter = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 6, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 6, MATERIAL_PLASTIC = 6)
 	require_module = TRUE
 
 /obj/item/borg/upgrade/reset/action(var/mob/living/silicon/robot/R)
