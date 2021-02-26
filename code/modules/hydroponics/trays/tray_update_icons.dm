@@ -28,6 +28,7 @@
 			add_overlay(dead_overlay)
 		else
 			if(!seed.growth_stages)
+				to_chat(world, SPAN_DANGER("THIS PART WAS CALLED"))
 				seed.update_growth_stages()
 			if(!seed.growth_stages)
 				to_chat(world, SPAN_DANGER("Seed type [seed.get_trait(TRAIT_PLANT_ICON)] cannot find a growth stage value."))

@@ -56,6 +56,7 @@ var/global/list/plant_seed_sprites = list()
 	else
 		src.name = "sample of [seed.seed_name] [seed.seed_noun]"
 		src.desc = "It's labelled as coming from [seed.display_name]."
+	if (seed.origin_tech) origin_tech = seed.origin_tech.Copy()
 
 /obj/item/seeds/examine(mob/user)
 	..(user)
@@ -111,6 +112,9 @@ var/global/list/plant_seed_sprites = list()
 
 /obj/item/seeds/bananaseed
 	seed_type = "banana"
+
+/obj/item/seeds/clownanaseed
+	seed_type = "clownana"
 
 /obj/item/seeds/eggplantseed
 	seed_type = "eggplant"

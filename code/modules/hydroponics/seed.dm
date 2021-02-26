@@ -10,13 +10,15 @@
 	var/seed_noun = "seeds"        // Descriptor for packet.
 	var/display_name               // Prettier name.
 	var/roundstart                 // If set, seed will not display variety number.
-	var/mysterious                  	 // Only used for the random seed packets.
-	var/can_self_harvest = 0        	 // Mostly used for living mobs.
+	var/mysterious                  	// Only used for the random seed packets.
+	var/can_self_harvest = 0        	// Mostly used for living mobs.
 	var/growth_stages = 0            	// Number of stages the plant passes through before it is mature.
-	var/list/traits = list()        	 // Initialized in New()
-	var/list/materials
+	var/list/traits = list()        	// Initialized in New()
+	var/list/materials					// List used to determine material values for recycling in autolathe
+	var/list/origin_tech 	= list()	// List used to determine research values for recyling in deconstructive analyzer
 	var/list/mutants           		      // Possible predefined mutant varieties, if any
 	var/list/greatMutants				  // Possible floral gun mutations
+	var/list/evolutions		=list()       // Possible floral evolutions
 	var/list/chems                 		  // Chemicals that plant produces in products/injects into victim.
 	var/list/consume_gasses =list()       // The plant will absorb these gasses during its life.
 	var/list/exude_gasses   =list()       // The plant will exude these gasses during its life.
@@ -642,6 +644,7 @@
 	switch(genetype)
 		if(GENE_BIOCHEMISTRY)
 			P.values["[TRAIT_CHEMS]"] =        chems
+			P.values["mob_product"] = has_mob_product
 			traits_to_copy = list(TRAIT_POTENCY)
 		if(GENE_OUTPUT)
 			P.values["[TRAIT_EXUDE_GASSES]"] = exude_gasses
@@ -764,6 +767,8 @@
 	if(consume_gasses) new_seed.consume_gasses = consume_gasses.Copy()
 	if(exude_gasses)   new_seed.exude_gasses = exude_gasses.Copy()
 	if(materials)	   new_seed.materials = materials.Copy()
+	if(evolutions)	   new_seed.evolutions = evolutions.Copy()
+	if(origin_tech)    new_seed.origin_tech = origin_tech.Copy()
 
 	new_seed.seed_name =            "[(roundstart ? "[(modified ? "modified" : "mutant")] " : "")][seed_name]"
 	new_seed.display_name =         "[(roundstart ? "[(modified ? "modified" : "mutant")] " : "")][display_name]"
@@ -775,5 +780,7 @@
 /datum/seed/proc/update_growth_stages()
 	if(get_trait(TRAIT_PLANT_ICON))
 		growth_stages = plant_controller.plant_sprites[get_trait(TRAIT_PLANT_ICON)]
+		to_chat(world, SPAN_DANGER("PLANT_ICON = [get_trait(TRAIT_PLANT_ICON)]"))
 	else
+		to_chat(world, SPAN_DANGER("NO PLANT_ICON FOUND"))
 		growth_stages = 0

@@ -157,7 +157,8 @@
 		yield_mod = min(10,yield_mod+rand(1,2))
 		return
 	else if(istype(Proj ,/obj/item/projectile/energy/floraevolve) && prob(20))
-
+		visible_message(SPAN_NOTICE("Is calling Mutate 4"))
+		mutate(4)
 		return
 
 	..()
@@ -318,6 +319,37 @@
 	if(!seed)
 		return
 	switch(severity)
+		if (4)
+			visible_message(SPAN_NOTICE("Is past Mutate 4 Switch"))
+			if (seed.evolutions && seed.evolutions.len)
+
+				visible_message(SPAN_NOTICE("Has verified evolutions exists"))
+
+
+				for(var/rid in seed.evolutions)
+
+
+					var/list/checkEvoChems = seed.evolutions[rid].Copy()
+					visible_message(SPAN_NOTICE("evolutionChems copied into CheckEvoChems"))
+
+
+					if (checkEvoChems.len)
+						visible_message(SPAN_NOTICE("evoChems somehow has a length!"))
+
+					for (var/rid2 in checkEvoChems)
+						visible_message(SPAN_NOTICE("[rid] needs [rid2] to evolve!"))
+
+
+					visible_message(SPAN_NOTICE("evolutions has a length of [seed.evolutions.len]"))
+
+
+					if (checkEvoChems ~= (checkEvoChems & seed.chems))
+						visible_message(SPAN_NOTICE("It worked? Also Evochems1 is [checkEvoChems[1]]"))
+						evolve_species(rid)
+					else
+						visible_message(SPAN_NOTICE("It didn't work? Also Evochems1 is [checkEvoChems[1]]"))
+
+			return
 		if (3)
 			if(seed.greatMutants && seed.greatMutants.len)
 
@@ -404,6 +436,39 @@
 	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly mutated into </span><span class='notice'>[seed.display_name]!"))
 
 	return
+
+/obj/machinery/portable_atmospherics/hydroponics/proc/evolve_species(var/strain)
+
+
+	visible_message(SPAN_DANGER("inside of evolve_species"))
+	var/previous_plant = seed.display_name
+	//var/setterupper = seed.get_trait(TRAIT_PLANT_ICON)
+	visible_message(SPAN_DANGER("setterupper was set to [seed.get_trait(TRAIT_PLANT_ICON)]"))
+	var/newseed = strain
+	visible_message(SPAN_DANGER("newseed is equal to [newseed]"))
+	if (newseed in plant_controller.seeds)
+		seed = plant_controller.seeds[newseed]
+		visible_message(SPAN_DANGER("newseed was apparently in plant_controller"))
+	else
+		visible_message(SPAN_DANGER("newseed was not in plant_controller.seeds"))
+		return
+
+	//seed.set_trait(TRAIT_PLANT_ICON, previous_plant.get_trait(TRAIT_PLANT_ICON))
+	dead = 0
+	mutate(1)
+	age = 0
+	health = seed.get_trait(TRAIT_ENDURANCE)
+	lastcycle = world.time
+	harvest = 0
+	weedlevel = 0
+
+	update_icon()
+	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly evolved into </span><span class='notice'>[seed.display_name]!"))
+
+	return
+
+
+
 
 /obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/I, var/mob/user as mob)
 
