@@ -316,15 +316,14 @@
 		tint = initial(tint)
 		flags_inv = initial(flags_inv)
 		body_parts_covered = initial(body_parts_covered)
-		refresh_upgrades()
 	else
 		armor = getArmor(arglist(armor_down))
 		flash_protection = flash_protection_down
 		tint = tint_down
 		flags_inv = flags_inv_down
 		body_parts_covered = body_parts_covered_down
-		refresh_upgrades()
 
+	refresh_upgrades()
 	update_icon()
 	update_wear_icon()	//update our mob overlays
 
