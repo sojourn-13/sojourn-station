@@ -106,6 +106,7 @@
 		var/obj/item/weapon/implant/core_implant/cruciform/C = get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
 		if (C)
 			stat("Cruciform", "[C.power]/[C.max_power]")
+			stat("Channeling Boost", "[C.channeling_boost]")
 
 	else if(statpanel("Perks"))
 		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)

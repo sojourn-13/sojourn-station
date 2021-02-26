@@ -227,6 +227,9 @@
 
 /obj/machinery/autolathe/attackby(obj/item/I, mob/user)
 
+	if(istype(I, /obj/item/stack/material/cyborg))
+		return //Prevents borgs throwing their stuff into it
+
 	if(default_deconstruction(I, user))
 		wires?.Interact(user)
 		return

@@ -276,8 +276,6 @@
 // toggleable face guard
 /obj/item/clothing/head/helmet/faceshield
 	//We cant just use the armor var to store the original since initial(armor) will return a null pointer
-	var/list/armor_up = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-	var/list/armor_down = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	var/tint_down = TINT_NONE
 	flags_inv = HIDEEARS
 	var/flags_inv_down = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
@@ -287,6 +285,9 @@
 	var/flash_protection_down = FLASH_PROTECTION_MAJOR
 	action_button_name = "Flip Face Shield"
 	var/up = FALSE
+	tool_qualities = list()
+	max_upgrades = 0
+
 
 /obj/item/clothing/head/helmet/faceshield/riot
 	name = "riot helmet"
@@ -303,6 +304,9 @@
 
 /obj/item/clothing/head/helmet/faceshield/attack_self()
 	toggle()
+
+/obj/item/clothing/head/helmet/faceshield/refresh_upgrades()
+	return //do to bugs we no longer refresh this
 
 /obj/item/clothing/head/helmet/faceshield/update_icon()
 	icon_state = up ? "[initial(icon_state)]_up" : initial(icon_state)

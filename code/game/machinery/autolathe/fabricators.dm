@@ -197,6 +197,9 @@
 
 /obj/machinery/bulletfabricator/attackby(var/obj/item/I, var/mob/user)
 
+	if(istype(I, /obj/item/stack/material/cyborg))
+		return //Prevents borgs throwing their stuff into it
+
 	if(default_deconstruction(I, user))
 		return
 

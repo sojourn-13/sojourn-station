@@ -245,12 +245,21 @@
 /datum/component/item_upgrade/proc/apply_values_armor(var/obj/item/clothing/T)
 	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
 		T.armor.melee += tool_upgrades[UPGRADE_MELEE_ARMOR]
+		T.armor_up.melee += tool_upgrades[UPGRADE_MELEE_ARMOR]
+		T.armor_down.melee += tool_upgrades[UPGRADE_MELEE_ARMOR]
 	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
 		T.armor.bullet += tool_upgrades[UPGRADE_BALLISTIC_ARMOR]
+		T.armor_up.bullet += tool_upgrades[UPGRADE_BALLISTIC_ARMOR]
+		T.armor_down.bullet += tool_upgrades[UPGRADE_BALLISTIC_ARMOR]
 	if(tool_upgrades[UPGRADE_ENERGY_ARMOR])
 		T.armor.energy += tool_upgrades[UPGRADE_ENERGY_ARMOR]
+		T.armor_up.energy += tool_upgrades[UPGRADE_ENERGY_ARMOR]
+		T.armor_down.energy += tool_upgrades[UPGRADE_ENERGY_ARMOR]
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
 		T.armor.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
+		T.armor_up.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
+		T.armor_down.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
+
 	T.prefixes |= prefix
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/weapon/tool/T)

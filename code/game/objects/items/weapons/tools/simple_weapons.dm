@@ -88,6 +88,19 @@
 	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 30)
 	w_class = ITEM_SIZE_BULKY
 
+/obj/item/weapon/tool/fireaxe/militia_tomahawk
+	name = "blackshield tactical tomahawk"
+	desc = "For cutting, sawing, prying, and throwing at targets mid back-flip."
+	icon_state = "sec_tomahawk"
+	wielded_icon = "sec_tomahawk"
+	force = WEAPON_FORCE_DANGEROUS
+	force_unwielded = WEAPON_FORCE_DANGEROUS
+	force_wielded = WEAPON_FORCE_ROBUST
+	throwforce = WEAPON_FORCE_BRUTAL
+	slot_flags = SLOT_BELT|SLOT_BACK
+	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
+	w_class = ITEM_SIZE_NORMAL
+
 /obj/item/weapon/tool/minihoe
 	name = "mini hoe"
 	desc = "It's used for removing weeds or scratching your back."
@@ -195,6 +208,14 @@
 	force = WEAPON_FORCE_PAINFUL
 	tool_qualities = list(QUALITY_CUTTING = 30)
 	max_upgrades = 3
+	embed_mult = 3
+
+/obj/item/weapon/tool/knife/neotritual/equipped(mob/living/H)
+	. = ..()
+	if(is_held() && is_neotheology_disciple(H))
+		embed_mult = 0.1
+	else
+		embed_mult = initial(embed_mult)
 
 /obj/item/weapon/tool/knife/tacknife
 	name = "tactical knife"
