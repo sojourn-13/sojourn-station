@@ -7,7 +7,6 @@
 	var/list/species_restricted						// Only these species can wear this kit.
 	var/gunshot_residue								// Used by forensics.
 	var/initial_name = "clothing"					// For coloring
-
 	var/list/accessories = list()
 	var/list/valid_accessory_slots
 	var/list/restricted_accessory_slots
