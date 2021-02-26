@@ -8,6 +8,7 @@
 		)
 	item_flags = THICKMATERIAL
 	body_parts_covered = HEAD | EARS
+	/*
 	armor = list(
 		melee = 35,
 		bullet = 25,
@@ -16,6 +17,7 @@
 		bio = 0,
 		rad = 0
 	)
+	*/
 	flags_inv = HIDEEARS
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
@@ -278,6 +280,7 @@
 	//We cant just use the armor var to store the original since initial(armor) will return a null pointer
 	var/list/armor_up = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	var/list/armor_down = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	var/tint_down = TINT_NONE
 	flags_inv = HIDEEARS
 	var/flags_inv_down = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
@@ -294,18 +297,16 @@
 	icon_state = "riot"
 	armor_up = list(melee = 35, bullet = 25, energy = 25, bomb = 20, bio = 0, rad = 0)
 	armor_down = list(melee = 40, bullet = 40, energy = 30, bomb = 35, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 35, bio = 0, rad = 0)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	price_tag = 150
 
-/obj/item/clothing/head/helmet/faceshield/Initialize()
-	. = ..()
-	set_is_up(up)
 
 /obj/item/clothing/head/helmet/faceshield/attack_self()
 	toggle()
 
 /obj/item/clothing/head/helmet/faceshield/update_icon()
-	icon_state = up ? "[initial(icon_state)]_up" : initial(icon_state)
+	icon_state = (up ? "[initial(icon_state)]_up" : initial(icon_state))
 
 //I wanted to name it set_up() but some how I thought that would be misleading
 /obj/item/clothing/head/helmet/faceshield/proc/set_is_up(is_up)
@@ -348,6 +349,7 @@
 	icon_state = "helmet_visor"
 	armor_up = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
 	armor_down = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	price_tag = 150
 
@@ -532,6 +534,7 @@
 	icon_state = "altyn"
 	armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
 	armor_down = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0)
+	armor = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
 	siemens_coefficient = 1
 	up = TRUE
 
