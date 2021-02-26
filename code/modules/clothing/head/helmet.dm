@@ -8,16 +8,6 @@
 		)
 	item_flags = THICKMATERIAL
 	body_parts_covered = HEAD | EARS
-	/*
-	armor = list(
-		melee = 35,
-		bullet = 25,
-		energy = 20,
-		bomb = 25,
-		bio = 0,
-		rad = 0
-	)
-	*/
 	flags_inv = HIDEEARS
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
