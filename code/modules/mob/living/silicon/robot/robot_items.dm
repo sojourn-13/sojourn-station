@@ -407,7 +407,7 @@
 
 /obj/item/weapon/tool/crowbar/robotic
 	icon = 'icons/obj/robot_items.dmi'
-	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_DIGGING = 35)
+	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_DIGGING = 1, QUALITY_HAMMERING = 10) //We can dig but not that fast!
 
 /obj/item/weapon/tool/wrench/robotic
 	icon = 'icons/obj/robot_items.dmi'
