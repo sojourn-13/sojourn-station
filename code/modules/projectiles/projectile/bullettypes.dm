@@ -365,7 +365,7 @@
 
 /obj/item/projectile/bullet/shotgun/incendiary
 	//This is the best ammo for pvp in a shotgun, beating the stunshell with its pain and cooks anyone in any armor!
-	damage_types = list(BURN = 25) //We deal most of are damage with fire stacks
+	damage_types = list(BURN = 45) //We deal most of are damage with fire stacks
 	var/fire_stacks = 4 //40 pain a fire proc through ALL armor!
 
 /obj/item/projectile/bullet/shotgun/incendiary/on_hit(atom/target, blocked = FALSE)
