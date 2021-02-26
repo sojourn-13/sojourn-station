@@ -297,6 +297,6 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/storage/bag/ore/holding(R.module)
+		R.module.modules += new/obj/item/weapon/storage/bag/robotic/holding(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE

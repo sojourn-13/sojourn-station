@@ -676,3 +676,23 @@
 	can_hold = list (
 		/obj/item/stack/material
 	)
+
+/obj/item/weapon/storage/bag/robotic/holding
+	name = "satchel of holding"
+	desc = "A revolution in convenience, this satchel allows for immense ore or produce storage even has safty restrictions to stabilize unwanted reactions."
+	icon_state = "satchel_bspace"
+	max_storage_space = DEFAULT_HUGE_STORAGE * 10
+	max_w_class = ITEM_SIZE_BULKY
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
+	origin_tech = list(TECH_BLUESPACE = 4)
+	can_hold = list(/obj/item/weapon/ore,
+	                /obj/item/weapon/reagent_containers/food/snacks/grown,
+	                /obj/item/seeds,
+	                /obj/item/weapon/grown,
+	                /obj/item/weapon/reagent_containers/food/snacks/egg,
+	                /obj/item/weapon/reagent_containers/food/snacks/meat)
+
+/obj/item/weapon/storage/bag/ore/holding/New()
+	..()
+	item_flags |= BLUESPACE
+	bluespace_entropy(4, get_turf(src))
