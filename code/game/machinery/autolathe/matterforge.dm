@@ -295,6 +295,7 @@
 
 /obj/machinery/matter_nanoforge/proc/eat(mob/living/user, obj/item/eating)
 	var/used_sheets
+
 	if(!eating && istype(user))
 		eating = user.get_active_hand()
 	if(!istype(eating))
@@ -322,6 +323,10 @@
 					total_material_gained[material] = 0
 
 				var/total_material = _matter[material]
+
+				if(istype(O, /obj/item/stack/material/cyborg))
+					return //Prevents borgs throwing their stuff into it
+
 				if(istype(O, /obj/item/stack))
 					var/obj/item/stack/material/stack = O
 					total_material *= stack.get_amount()
