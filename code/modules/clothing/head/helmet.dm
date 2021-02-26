@@ -303,6 +303,15 @@
 
 /obj/item/clothing/head/helmet/faceshield/attack_self()
 	toggle()
+	refresh_upgrades()
+
+/obj/item/clothing/head/helmet/faceshield/refresh_upgrades() //we need this here
+	var/obj/item/clothing/head/helmet/faceshield/referencecarmor = new type()
+	armor = referencecarmor.armor
+	armor_up = referencecarmor.armor
+	armor_down = referencecarmor.armor
+	qdel(referencecarmor)
+	..()
 
 /obj/item/clothing/head/helmet/faceshield/update_icon()
 	icon_state = up ? "[initial(icon_state)]_up" : initial(icon_state)
@@ -323,7 +332,6 @@
 		flags_inv = flags_inv_down
 		body_parts_covered = body_parts_covered_down
 
-	refresh_upgrades()
 	update_icon()
 	update_wear_icon()	//update our mob overlays
 
