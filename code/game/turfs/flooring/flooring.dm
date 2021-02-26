@@ -236,7 +236,7 @@ var/list/flooring_types
 			return
 		if(prob(5))
 			M.adjustBruteLoss(5)
-			M.slip(null, 4)
+			M.slip(null, 6)
 			playsound(M, 'sound/effects/bang.ogg', 50, 1)
 			to_chat(M, SPAN_WARNING("You tripped over!"))
 			return
