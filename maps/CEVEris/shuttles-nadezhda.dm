@@ -1,7 +1,7 @@
 //Shuttle landmark code
 /datum/shuttle/autodock/multi/surface_transport
 	name = "Surface Transport Shuttle"
-	move_time = 2
+	move_time = (2 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/surface_transport_lz
 	current_location = "nav_pad_surface_transport"
 	landmark_transition = "nav_transit_surface_transport"
