@@ -407,7 +407,7 @@
 
 /obj/item/weapon/tool/crowbar/robotic
 	icon = 'icons/obj/robot_items.dmi'
-	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_DIGGING = 1, QUALITY_HAMMERING = 10) //We can dig but not that fast!
+	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_HAMMERING = 10) //We can dig but not that fast!
 
 /obj/item/weapon/tool/wrench/robotic
 	icon = 'icons/obj/robot_items.dmi'
@@ -423,6 +423,18 @@
 /obj/item/weapon/tool/wirecutters/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 40, QUALITY_CUTTING = 30)
+
+/obj/item/weapon/tool/pickaxe/robotic
+	tool_qualities = list(QUALITY_EXCAVATION = 70) //So it still shares its switch off quality despite not yet being used.
+	switched_off_qualities = list(QUALITY_EXCAVATION = 70)
+	switched_on_qualities = list(QUALITY_DIGGING = 20)
+	workspeed = 0.5
+
+/obj/item/weapon/tool/pickaxe/robotic/sec //Were even slower and less good
+	tool_qualities = list(QUALITY_EXCAVATION = 10) //So it still shares its switch off quality despite not yet being used.
+	switched_off_qualities = list(QUALITY_EXCAVATION = 10)
+	switched_on_qualities = list(QUALITY_DIGGING = 10)
+	workspeed = 0.2
 
 /obj/item/weapon/tool/weldingtool/robotic
 	icon = 'icons/obj/robot_items.dmi'

@@ -33,6 +33,7 @@
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
 	src.modules += new /obj/item/weapon/tool/knife/tacknife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //borrows and the like.
 	src.modules += new /obj/item/device/gps(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
 	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs
@@ -190,6 +191,7 @@
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //borrows and the like.
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
@@ -250,6 +252,7 @@
 	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
 	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
+	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src) //Robotic repair and such
 	src.modules += new /obj/item/weapon/tool/scalpel(src)
 	src.modules += new /obj/item/weapon/tool/saw/circular(src)
 	src.modules += new /obj/item/weapon/extinguisher/mini(src)
@@ -318,6 +321,8 @@
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
 	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //borrows and the like.
+	src.modules += new /obj/item/weapon/tool/saw(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/scanner/gas(src)
