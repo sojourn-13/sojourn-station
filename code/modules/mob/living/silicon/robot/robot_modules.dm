@@ -382,7 +382,7 @@ var/global/list/robot_modules = list(
 		S.update_icon()
 
 	if(src.modules)
-		var/obj/item/weapon/reagent_containers/spray/sterilizine/ST = src.modules //ST for STerilizine
+		var/obj/item/weapon/reagent_containers/spray/sterilizine/ST = locate() in src.modules //ST for STerilizine
 		ST.reagents.add_reagent("sterilizine", 2 * amount)
 	..()
 

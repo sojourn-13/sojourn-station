@@ -528,11 +528,13 @@
 			hud_actions += action
 			if(istype(src.loc, /mob))
 				var/mob/user = src.loc
-				user.client.screen += action
+				if(user)
+					user.client.screen += action
 	else
 		if(istype(src.loc, /mob))
 			var/mob/user = src.loc
-			user.client.screen -= action
+			if(user)
+				user.client.screen -= action
 		hud_actions -= action
 		qdel(action)
 
