@@ -162,12 +162,19 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0 //Never make nicotine actually addictive. Kaz's orders.
+	addiction_chance = 0 //Anything above 0 will have a 100% odds when smoking
 	nerve_system_accumulations = 10
 
-/datum/reagent/drug/nicotine/overdose(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/drug/nicotine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.add_chemical_effect(CE_PULSE, 1)
+	M.add_chemical_effect(CE_PULSE, 1) //If you inject it into your blood
+	M.add_chemical_effect(CE_PAINKILLER, 5 * effect_multiplier)
+	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
+		M.add_chemical_effect(CE_ANTITOX, 5 * effect_multiplier)
+		M.heal_organ_damage(0.1 * effect_multiplier, 0.1 * effect_multiplier)
+
+/datum/reagent/drug/nicotine/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
 	M.add_chemical_effect(CE_PAINKILLER, 5 * effect_multiplier)
 	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		M.add_chemical_effect(CE_ANTITOX, 5 * effect_multiplier)
@@ -175,6 +182,7 @@
 
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
+	M.add_chemical_effect(CE_PULSE, 2) //Your ODing...
 	if(prob(5))
 		M.emote("cough")
 	M.adjustOxyLoss(0.5)
