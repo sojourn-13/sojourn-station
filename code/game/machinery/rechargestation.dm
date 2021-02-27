@@ -368,6 +368,13 @@
 
 /obj/machinery/repair_station/attackby(var/obj/item/weapon/O, var/mob/user)
 	.=..()
+
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
 	if(istype(O,/obj/item/stack/material) && O.get_material_name() == MATERIAL_STEEL)
 		var/obj/item/stack/material/S = O
 		if(S.use(1))
