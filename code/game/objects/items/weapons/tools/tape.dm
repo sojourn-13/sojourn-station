@@ -69,7 +69,7 @@
 	use_stock_cost = 1
 
 /obj/item/weapon/tool/tape_roll/attack(var/mob/living/carbon/human/H, var/mob/user)
-	if(istype(H)) && has_quality(QUALITY_ADHESIVE)
+	if(istype(H))
 		if(user.targeted_organ == BP_EYES)
 
 			if(!H.organs_by_name[BP_HEAD])

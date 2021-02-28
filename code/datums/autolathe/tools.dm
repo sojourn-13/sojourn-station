@@ -236,4 +236,4 @@
 
 /datum/design/autolathe/tool/bonegel
 	name = "bone gel"
-	build_path = /obj/item/weapon/tool/bonegel
+	build_path = /obj/item/weapon/tool/tape_roll/bonegel
