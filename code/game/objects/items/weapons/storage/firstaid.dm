@@ -133,7 +133,7 @@
 		/obj/item/weapon/tool/hemostat,
 		/obj/item/weapon/tool/retractor,
 		/obj/item/weapon/tool/scalpel,
-		/obj/item/weapon/tool/bonegel,
+		/obj/item/weapon/tool/tape_roll/bonegel,
 		/obj/item/device/scanner,
 		/obj/item/weapon/storage/pill_bottle,
 		/obj/item/stack/medical,
@@ -147,7 +147,7 @@
 	new /obj/item/weapon/tool/hemostat(src)
 	new /obj/item/weapon/tool/retractor(src)
 	new /obj/item/weapon/tool/scalpel(src)
-	new /obj/item/weapon/tool/bonegel(src)
+	new /obj/item/weapon/tool/tape_roll/bonegel(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	make_exact_fit()
 
@@ -159,7 +159,7 @@
 	new /obj/item/weapon/tool/hemostat(src)
 	new /obj/item/weapon/tool/retractor(src)
 	new /obj/item/weapon/tool/scalpel/advanced(src)
-	new /obj/item/weapon/tool/bonegel(src)
+	new /obj/item/weapon/tool/tape_roll/bonegel(src)
 	new /obj/item/device/scanner/health(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/weapon/storage/pill_bottle/tramadol(src)

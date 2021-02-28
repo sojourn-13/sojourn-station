@@ -574,17 +574,3 @@
 	armor_penetration = ARMOR_PEN_DEEP
 	price_tag = 500
 	matter = list(MATERIAL_STEEL = 22, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 4)
-
-//Bone Gel gets here since for some reason wasn't being included on the pull as its own file
-/obj/item/weapon/tool/bonegel
-	name = "bone gel"
-	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
-	icon = 'icons/obj/stack/items.dmi'
-	icon_state = "bonegel"
-	item_state = "bonegel"
-	w_class = ITEM_SIZE_TINY
-	matter = list(MATERIAL_PLASTIC = 10)
-	flags = CONDUCT
-	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
-	preloaded_reagents = list("milk" = 5)
-	tool_qualities = list(QUALITY_BONE_GRAFTING = 50)

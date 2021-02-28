@@ -159,8 +159,9 @@
 /datum/design/research/item/bonegel
 	name = "Bone Gel"
 	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
-	build_path = /obj/item/weapon/tool/bonegel
+	build_path = /obj/item/weapon/tool/tape_roll/bonegel
 	materials = list(MATERIAL_PLASTIC = 10)
+	category = "Medical"
 
 //Brain stuff
 /datum/design/research/item/posibrain

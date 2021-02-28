@@ -58,7 +58,7 @@
 		/datum/design/research/item/hemostat_adv,
 		/datum/design/research/item/retractor_adv,
 		/datum/design/research/item/medsaw_circular,
-		/datum/design/autolathe/tool/bonegel,
+		/datum/design/autolathe/tool/tape_roll/bonegel,
 		/datum/design/research/item/medical/nanopaste = 2,
 		/datum/design/research/item/hud/health = 2
 	)

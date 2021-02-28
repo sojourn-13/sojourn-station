@@ -62,8 +62,10 @@
 
 /datum/surgery_step/fix_bone/proc/get_tool_name(obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
-	if (istype(tool, /obj/item/weapon/tool/bonegel))
+	if (istype(tool, /obj/item/weapon/tool/tape_roll/bonegel))
 		tool_name = "bone gel"
+	if (istype(tool, /obj/item/weapon/tool/tape_roll/glue))
+		tool_name = "superglue"
 	return tool_name
 
 /datum/surgery_step/fix_bone/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
@@ -85,7 +87,7 @@
 		SPAN_NOTICE("You succesfuly graft lost bone tissue on [organ.get_surgery_name()] with [get_tool_name(tool)].")
 	)
 	organ.damage = 0
-	playsound(user.loc, 'sound/effects/creatures/nibble1.ogg', 50, 1)
+	playsound(user.loc, 'sound/effects/creatures/nibble1.ogg', 50, 1) //As close a sound I could find!
 		
 /datum/surgery_step/fix_bone/fail_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	user.visible_message(

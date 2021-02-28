@@ -173,7 +173,7 @@
 		/obj/item/weapon/tool/scalpel,
 		/obj/item/weapon/tool/scalpel/advanced,
 		/obj/item/weapon/tool/scalpel/laser,
-		/obj/item/weapon/tool/bonegel,
+		/obj/item/weapon/tool/tape_roll/bonegel,
 		/obj/item/weapon/tool/cautery,
 		/obj/item/weapon/tool/cautery/adv,
 		/obj/item/weapon/tool/retractor,

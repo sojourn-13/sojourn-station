@@ -63,7 +63,7 @@
 				/obj/item/weapon/storage/box/drinkingglasses = 2,
 				/obj/item/weapon/hatton_magazine = 2,
 				/obj/item/weapon/hand_labeler = 2,
-				/obj/item/weapon/tool/bonegel = 2,
+				/obj/item/weapon/tool/tape_roll/bonegel = 2,
 				/obj/item/weapon/tool/bonesetter = 2,
 				/obj/item/weapon/tool/scalpel = 2,
 				/obj/item/weapon/tool/surgicaldrill = 2,
