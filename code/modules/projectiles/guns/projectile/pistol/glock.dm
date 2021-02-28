@@ -29,10 +29,12 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
+	if (ammo_magazine)
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		itemstring += "_full"
+
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		iconstring += "_empty"
-	else
-		iconstring = initial(icon_state) + "_full"
+		iconstring += "_slide"
 
 	if (silenced)
 		iconstring += "_s"

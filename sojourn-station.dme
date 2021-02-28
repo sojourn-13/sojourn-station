@@ -2752,6 +2752,7 @@
 #include "maps\CEVEris\_Nadezhda_areas.dm"
 #include "maps\CEVEris\_Nadezhda_factions.dm"
 #include "maps\CEVEris\_Nadezhda_Turbolifts.dm"
+#include "maps\CEVEris\shuttles-nadezhda.dm"
 #include "maps\CEVEris\datums\reports.dm"
 #include "maps\dungeons\crawler\crawler.dm"
 #include "maps\dungeons\deepmaint\deepmaint.dm"

@@ -547,24 +547,8 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		bomb = 10,
 		bio = 0,
 		rad = 0 )
-	body_parts_covered = UPPER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|LEGS
-
-/obj/item/clothing/suit/armor/vest/hunter
-	name = "improved hunter armor"
-	desc = "A suit of armor crudely brought together with bits of metal, glass, bone, and leather. Surprisingly effective as it keeps the wearer mobile without sacrificing protection but can't be crafted into other hunter armor."
-	icon_state = "hunter_armor"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(
-		melee = 60,
-		bullet = 10,
-		energy = 5,
-		bomb = 50,
-		bio = 0,
-		rad = 0
-	)
-	flags_inv = HIDEJUMPSUIT
+	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 
 /obj/item/clothing/suit/armor/hunter/bone
 	name = "hunter armor"
@@ -579,9 +563,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		energy = 25,
 		bomb = 10,
 		bio = 0,
-		rad = 0 )
-	body_parts_covered = UPPER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|LEGS
+		rad = 0)
 
 /obj/item/clothing/suit/armor/hunter/reinforced
 	name = "hunter armor"
@@ -595,10 +577,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		energy = 25,
 		bomb = 30,
 		bio = 0,
-		rad = 0 )
-	body_parts_covered = UPPER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|LEGS
-	flags_inv = HIDESHOES
+		rad = 0)
 
 /obj/item/clothing/suit/armor/hunter/leather
 	name = "hunter armor"
@@ -613,6 +592,4 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		energy = 45,
 		bomb = 10,
 		bio = 0,
-		rad = 0 )
-	body_parts_covered = UPPER_TORSO|LEGS|ARMS
-	cold_protection = UPPER_TORSO|LEGS|ARMS
+		rad = 0)

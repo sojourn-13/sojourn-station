@@ -18,9 +18,9 @@
 /datum/ritual/targeted/cruciform/priest/penance
 	name = "Penance"
 	phrase = "Mihi vindicta \[Target human]"
-	desc = "Imparts extreme pain on the target disciple. Does no actual harm."
+	desc = "Imparts extreme pain on the target disciple. Does no actual harm. Use this on someone who performs a heretical act."
 	power = 35
-	category = "Vitae"
+	category = "Devotion"
 
 /datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	if(!targets.len)
@@ -581,44 +581,6 @@
 	phrase = "Cor meum et caro mea, potest deficere, sed non in viribus Deus cordis mei et pars mea Deus in aeternum."
 	stats_to_boost = list(STAT_VIG = 10)
 
-/datum/ritual/targeted/cruciform/priest/atonement
-	name = "Atonement"
-	phrase = "Piaculo sit \[Target human]!"
-	desc = "Imparts extreme pain on the target disciple, but does no actual harm. Use this if someone who performs a heretical act."
-	power = 45
-	category = "Vitae"
-
-/datum/ritual/targeted/cruciform/priest/atonement/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
-	if(!targets.len)
-		fail("Target not found.",user,C,targets)
-		return FALSE
-
-	var/obj/item/weapon/implant/core_implant/CI = targets[1]
-
-	if(!CI.active || !CI.wearer)
-
-		fail("Cruciform not found.", user, C)
-		return FALSE
-
-	var/mob/living/M = CI.wearer
-	log_and_message_admins("inflicted pain on [C] with atonement litany")
-	to_chat(M, SPAN_DANGER("A wave of agony washes over you, the cruciform in your chest searing like a star for a few moments of eternity."))
-
-
-	var/datum/effect/effect/system/spark_spread/s = new
-	s.set_up(1, 1, M.loc)
-	s.start()
-
-	M.apply_effect(50, AGONY, 0)
-
-	return TRUE
-
-/datum/ritual/targeted/cruciform/priest/atonement/process_target(var/index, var/obj/item/weapon/implant/core_implant/target, var/text)
-	target.update_address()
-	if(index == 1 && target.address == text)
-		if(target.wearer && (target.loc && (target.locs[1] in view())))
-			return target
-
 /datum/ritual/cruciform/priest/records
 	name = "Baptismal Record"
 	phrase = "Memento nomina..."
@@ -710,8 +672,8 @@
 
 /datum/ritual/cruciform/priest/accelerated_growth
 	name = "Accelerated growth"
-	phrase = "Plantae crescere in divinum lumen tua"
-	desc = "This litany boosts the growth of all plants in sight for about ten minutes. "
+	phrase = "Plantae crescere in divinum lumen tua."
+	desc = "This litany boosts the growth of all plants in sight for about ten minutes."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
 	effect_time = 5 MINUTES
@@ -748,3 +710,78 @@
 	// may have been deleted during the duration of the boost
 	if(S) // check if seed still exist otherwise we cannot read null.stats
 		S.set_trait(TRAIT_BOOSTED_GROWTH, 1)
+
+/datum/ritual/cruciform/priest/mercy
+	name = "Hand of mercy"
+	phrase = "Non est verus dolor."
+	desc = "Relieves the pain of a person in front of you."
+	power = 50
+	category = "Vitae"
+
+/datum/ritual/cruciform/agrolyte/mercy/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
+	if(!T)
+		fail("No target in front of you.", user, C)
+		return FALSE
+
+	to_chat(T, SPAN_NOTICE("You feel slightly better as your pain eases."))
+	to_chat(user, SPAN_NOTICE("You ease the pain of [T.name]."))
+
+	T.add_chemical_effect(CE_PAINKILLER, 15)  // painkiller effect to target
+
+	return TRUE
+
+/datum/ritual/cruciform/priest/absolution
+	name = "Absolution of wounds"
+	phrase = "Surge et ambula."
+	desc = "Stabilizes the health of a person in front of you."
+	power = 50
+	category = "Vitae"
+
+/datum/ritual/cruciform/priest/absolution/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
+	if(!T)
+		fail("No target in front of you.", user, C)
+		return FALSE
+
+	to_chat(T, SPAN_NOTICE("You feel a soothing sensation in your veins."))
+	to_chat(user, SPAN_NOTICE("You stabilize [T.name]'s health."))
+
+	var/datum/reagents/R = new /datum/reagents(20, null)
+	R.add_reagent("holyinaprovaline", 10)
+	R.add_reagent("holydexalinp", 10)
+	R.trans_to_mob(T, 20, CHEM_BLOOD)
+
+	return TRUE
+
+/datum/ritual/cruciform/priest/purging
+	name = "Words of purging"
+	phrase = "Purificati a peccatis et in remissionem peccatorum."
+	desc = "Addictions are common afflictions among colony denizens. This litany helps those people by easing or removing their addictions."
+	power = 50
+	category = "Vitae"
+
+/datum/ritual/cruciform/priest/purging/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
+	if(!T)
+		fail("No target in front of you.", user, C)
+		return FALSE
+
+	if(T.metabolism_effects.addiction_list.len)
+		for(var/addiction in T.metabolism_effects.addiction_list)
+			var/datum/reagent/R = addiction
+			if(!R)
+				T.metabolism_effects.addiction_list.Remove(R)
+				continue
+
+			T.metabolism_effects.addiction_list[R] += 15  // increase addiction level by 15
+			// target will go through the addiction stages and finally be free from the addiction once it reaches level 40
+			// it's a bad moment to go through but after 2 or 3 littany the addiction will be gone
+			// psychiatrist RP opportunity -> think about the sins that led you to this addiction
+
+	to_chat(T, SPAN_NOTICE("You feel weird as you progress through your addictions."))
+	to_chat(user, SPAN_NOTICE("You help [T.name] get rid of their addictions."))
+
+	T.add_chemical_effect(CE_PAINKILLER, 15)  // painkiller effect to target
+
+	return TRUE

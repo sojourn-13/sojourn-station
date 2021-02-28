@@ -382,7 +382,7 @@ var/global/list/robot_modules = list(
 		S.update_icon()
 
 	if(src.modules)
-		var/obj/item/weapon/reagent_containers/spray/sterilizine/ST = src.modules //ST for STerilizine
+		var/obj/item/weapon/reagent_containers/spray/sterilizine/ST = locate() in src.modules //ST for STerilizine
 		ST.reagents.add_reagent("sterilizine", 2 * amount)
 	..()
 
@@ -531,6 +531,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //Borrows
+	src.modules += new /obj/item/weapon/tool/saw(src)
 	src.modules += new /obj/item/weapon/tool/knife(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
@@ -598,6 +600,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //Borrows
+	src.modules += new /obj/item/weapon/tool/saw(src)
 	src.modules += new /obj/item/weapon/tool/knife(src)
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/scanner/gas(src)
@@ -731,6 +735,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
 	src.modules += new /obj/item/weapon/tool/knife/tacknife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //Borrows
 	src.modules += new /obj/item/device/gps(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
 	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
@@ -793,6 +798,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //Borrows
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
@@ -930,7 +936,8 @@ var/global/list/robot_modules = list(
 		STAT_ROB = 60,
 		STAT_TGH = 50,
 		STAT_BIO = 25,
-		STAT_COG = 25
+		STAT_COG = 25,
+		STAT_MEC = 30 //Drills
 	)
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
@@ -941,6 +948,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/miner/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/material(src)
 	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
@@ -996,6 +1004,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/scalpel(src)
+	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src) //For robotic repair/mech stuff
 	src.modules += new /obj/item/weapon/tool/saw/circular(src)
 	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
@@ -1104,8 +1113,10 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/saw(src)
 	src.modules += new /obj/item/weapon/tool/hammer(src)
 	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //borrows and the like.
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/weapon/gripper(src)

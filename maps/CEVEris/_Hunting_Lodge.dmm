@@ -244,7 +244,7 @@
 "eJ" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eK" = (/obj/structure/bed/chair/custom/onestar/red{dir = 1},/obj/item/trash/cigbutt/cigarbutt,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eL" = (/obj/item/trash/cigbutt/cigarbutt,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"eM" = (/obj/structure/table/woodentable,/obj/machinery/light{dir = 1},/obj/machinery/photocopier/faxmachine{department = "Lodge Hunt Master's Office"},/obj/item/weapon/card/id{name = "Hunt Master ID"; registered_name = "Hunt Master"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eM" = (/obj/structure/table/woodentable,/obj/machinery/light{dir = 1},/obj/machinery/photocopier/faxmachine{department = "Lodge Hunt Master's Office"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eN" = (/obj/structure/bed/chair/custom/wood/wings,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eO" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/firstaid/surgery,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eP" = (/obj/structure/closet/crate/hydroponics,/obj/item/device/lighting/toggleable/lantern,/obj/item/weapon/plantspray/pests,/obj/item/weapon/plantspray/pests,/obj/item/weapon/plantspray/weeds,/obj/item/weapon/plantspray/weeds,/obj/item/device/lighting/toggleable/lantern,/obj/item/weapon/storage/bag/produce,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
@@ -272,7 +272,7 @@
 "fl" = (/obj/structure/coatrack,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fm" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/shotgun/pump/gladstone{damage_multiplier = 1.1; desc = "A venerable shotgun with incredibly dubious patent claims by H&S Arms, it serves as a common shotgun alongside a number of virtually ideantical weapons across the galaxy. Can hold up to 7+1 20mm shells in its tube magazine. This one has been endlessly tinkered by Jea Smails giving it just the more power it needed to stop crimes in 2 shots."; name = "old \"Gladstone\" combat shotgun"},/obj/item/ammo_casing/shotgun/pellet/prespawned,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fn" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/boltgun/scout/sci,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"fo" = (/obj/structure/table/woodentable,/obj/item/clothing/accessory/holster/saber/machete/occupied,/obj/item/clothing/suit/armor/vest/hunter,/obj/item/clothing/head/helmet/hunter,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fo" = (/obj/structure/table/woodentable,/obj/item/clothing/accessory/holster/saber/machete/occupied,/obj/item/clothing/head/helmet/hunter,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fp" = (/obj/structure/table/rack/shelf,/obj/item/ammo_magazine/ammobox/magnum_40,/obj/item/ammo_magazine/ammobox/magnum_40,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fq" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Medical Room"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fr" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Hunt Masters Office"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -299,7 +299,7 @@
 "fM" = (/obj/structure/table/reinforced,/obj/random/ammo/shotgun,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fN" = (/obj/structure/closet/crate,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fO" = (/obj/structure/closet/crate/bin,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"fP" = (/obj/structure/table/reinforced,/obj/item/clothing/suit/armor/vest/hunter,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fP" = (/obj/structure/table/reinforced,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fQ" = (/obj/structure/closet,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fR" = (/obj/structure/bed/padded,/obj/landmark/join/late/dormitory,/obj/random/furniture/bedsheet,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fS" = (/obj/structure/closet/crate,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -330,10 +330,10 @@
 "gr" = (/obj/structure/table/reinforced,/obj/item/stack/cable_coil/random,/obj/item/stack/material/steel/random,/obj/item/weapon/tool/spear/hunter_halberd,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gs" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gt" = (/obj/machinery/smartfridge/kitchen,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
-"gu" = (/obj/structure/table/reinforced,/obj/item/stack/material/steel/random,/obj/item/clothing/head/helmet/hunter,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gu" = (/obj/structure/table/reinforced,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gv" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/material/glass/random,/obj/item/weapon/tool/hammer,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gw" = (/obj/structure/table/reinforced,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"gx" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/cable_coil/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gx" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/cable_coil/random,/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gy" = (/obj/machinery/autolathe,/obj/machinery/light,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gz" = (/obj/structure/table/reinforced,/obj/item/weapon/tool/fireaxe/woodsman,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gA" = (/obj/structure/table/woodentable,/obj/item/weapon/material/ashtray,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -360,6 +360,23 @@
 "gV" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/box/syringes,/obj/item/weapon/storage/box/syringes,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gW" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/box/bottles,/obj/item/weapon/storage/box/bottles,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gX" = (/obj/structure/table/rack/shelf,/obj/item/weapon/beartrap,/obj/item/weapon/beartrap,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gY" = (/obj/structure/railing,/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
+"gZ" = (/obj/structure/railing{icon_state = "railing0"; dir = 4},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
+"ha" = (/obj/effect/floor_decal/industrial/warningred{dir = 8},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"hb" = (/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"hc" = (/obj/effect/floor_decal/industrial/warningred{dir = 4},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"hd" = (/obj/structure/railing{anchored = 1; dir = 8; icon_state = "railing0"; tag = "icon-railing0 (WEST)"},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
+"he" = (/obj/structure/railing{anchored = 1; dir = 8; icon_state = "railing0"; tag = "icon-railing0 (WEST)"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"hf" = (/obj/effect/floor_decal/industrial/warningred{dir = 8},/obj/effect/floor_decal/industrial/stand_clear/red{dir = 8},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"hg" = (/obj/effect/shuttle_landmark/hunting_lodge,/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"hh" = (/obj/effect/floor_decal/industrial/warningred{dir = 4},/obj/effect/floor_decal/industrial/stand_clear/red{dir = 4},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"hi" = (/obj/structure/railing{icon_state = "railing0"; dir = 4},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"hj" = (/obj/structure/railing{tag = "icon-railing0 (EAST)"; icon_state = "railing0"; dir = 4},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"hk" = (/obj/effect/floor_decal/industrial/warningred,/obj/effect/floor_decal/industrial/warningred{dir = 8},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"hl" = (/obj/effect/floor_decal/industrial/warningred,/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"hm" = (/obj/effect/floor_decal/industrial/warningred,/obj/effect/floor_decal/industrial/stand_clear/red,/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"hn" = (/obj/effect/floor_decal/industrial/warningred,/obj/effect/floor_decal/industrial/warningred{dir = 4},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
+"ho" = (/obj/structure/railing,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/outside/forest/hunting_lodge)
 "iX" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "jf" = (/obj/structure/closet/crate,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/item/stack/rods/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "jJ" = (/obj/structure/table/rack/shelf,/obj/item/weapon/beartrap,/obj/item/weapon/beartrap,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -440,24 +457,24 @@ aBaBatatatatatatavatatatatatatatataDaDaPdqdqdqdqdrdrdqdqdqdqaPaDdmbkaMaCaDaDaEaD
 aBaBatatatavatatatatatatatatatatataDaDaPdvdkdldldldkdldkdldwaPaDdmbkaMaDaDaDaDaDaDaDaDaDaMaPaPaPaPaPaPaPaPaPaPaPaPdsdsaPaPaPaPaPaPaPaPaPaPaPaPaDaDaDaDaDaDaDaDaDaDaDaDaCaDaHaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
 aBaBatawatatatatatatatatatatatatataDaDaPdvdldldkdkdkdldkdldwaPaDdmdtaMaDaDaDaDaDaDaDaDaDaMaDaDaDaDaDaDaDaDaDaDaDaMduduaMaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
 aBaBatatatatatatatawatatatatauatataDaDaPdxdxdxdzdldldAdxdxdxaPaPaPdyaPaPaPaPaDaDaDaDaDaDaMaDaDaDaDaDaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDaDaDaDatauatatatatataBaBaaaaaaaaaa
-aBaBatayatatatatatatatatatayatataDaDaDaPdBdBdldCdldkdDdldfdbdEgtgSgMdIdJdKaPaDaDaDaCaDaDaMaMaMaMaMaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
-aBaBatatatatatatatatatatatatatataDaDaDaPdLdMdkdNdkdkdDdcdcdOdEdPdQdRdSdSdSaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaDaCaDaDaMaMaMaMaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaCaDaDatatatatatatataBaBaaaaaaaaaa
-aBaBatatauatatatatatatavatatatataDaDaDaPdcdcdldCdldkdTdcdUdcdEdXdSdSdSdSdYaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
-aBaOatatatatatatauatatatayatatatataDaDaPdcdcdfdCdldkdTdcdZdcdEeadSdSdSdSecaPaDaDaDaDaDdVaDdWaDaDaDaMaDdVaDdWaDaDaMaMaMaMaDaDaDdVaDdWaDaDaDaDaDaHaDaDaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
-aBaBatatatawatatatatatatatatauatataDaDaPedeedfdNdldkdDdcdcdOdEePdSdSdSdSfjaPaDaDaDaDaDaDaDaDaDebaDaMaDaDaDaDaDebaMaMaMaMaDaDaDaDaDaDaDebaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatatatatauataBaaaaaaaaaa
-aBaBatatatatatatatatatatatavatatataDaDaPdfdfdfdCdldldDdcdcdcdEgEdSdSdSdSgFaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaCaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaEaDaDaDaHaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatataBaaaaaaaaaa
-aBaBatatatatatayatatatatatatatatataDaDaPdbdfdldCdkdldDdcdcdcdEgGdSdSdSdSgHaPaDaDaEaDebaDaDegaDaDaDaMebaDaDegaDaDaMaMaMaMaDaDebaDaCegaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDaCaDaDaDaDaDabaBaBaaaaaaaaaa
-aBaBatatatataAatatatatatatatatataDaDaDaPaPaPaPaPdldkaPaPaPaPaPaPaPehehaPaPaPaDaDaDaDaDaDaCaDdVaDaDaMaDaDaDaDdVaMaMaMaMaMaMaDaDaDaDaDdVaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaDaDaaaaaBaaaaaaaaaa
-aBaBatauatatatatatatatatatatatataDaDaDaDaDaDaDaDduduaMaMaMaMaDaDaDduduaDaDaDaDaDaDaDaDaDaDeiaDaDaDaMaDaDaDeiaMaMaMaMaMaMaMaMaDaDaDeiaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaaaaaaaaaaaaaaaaaa
-aBaBatatazatawatatatatatatatatataDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMgPgQaaaaaaaaaaaa
-aBaOatatatatatatauatatawatatatataDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMgRgQaaaaaaaaaaaa
-aBaBatatatavayatatatayatatatauataDaDaMaMerekekekelelekekelelekekelelekekeketaMaMaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaaaaaaaaaaaaaaaaaa
-aBaBatatatatatatatatatavatavatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDaaaaaaaaaaaaaaaa
-aBaBatatatatatatavatatatatatatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDatatataDaDabaBaBaaaaaaaaaa
-aBaBatatatatawatatatatatatatatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDaDaDatatatatatatataDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDatatatatatatatataDaDaDaDaDaDatatauatatataBaBaaaaaaaaaa
-aBaBatatatatatatatatatatawatatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDatatatatatatatatatataDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatatateqatataDaDaDaDaDaDatatatatatatataBaaaaaaaaaa
-aBaBawatazatayatatatatatatatatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDatatatauatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatateqatatatatatatatatatatatatatatatatatayataBaaaaaaaaaa
-aBaBatatatatatatavayatatatayatataDaDaMaMenelelelelelelelelelelelelelelelelepaMaMaDatatatatatatatatatatatateqatatatatatatatatatatatatayatatatatatatatatatatatatatatatatatatatatatatabatatatatatatatatataBaBaaaaaaaaaa
+aBaBatayatatatatatatatatatayatataDaDaDaPdBdBdldCdldkdDdldfdbdEgtgSgMdIdJdKaPaDaDaDaCaDaDaMaMaMaMaMaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaEaDgYgYgYgYgYgYgYgYgYgYgYgYgYaDaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
+aBaBatatatatatatatatatatatatatataDaDaDaPdLdMdkdNdkdkdDdcdcdOdEdPdQdRdSdSdSaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaDaCaDaDaMaMaMaMaDaDaDaDaCaDaDaDaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbihdaDaDaDaDaCaDaDatatatatatatataBaBaaaaaaaaaa
+aBaBatatauatatatatatatavatatatataDaDaDaPdcdcdldCdldkdTdcdUdcdEdXdSdSdSdSdYaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbiheaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
+aBaOatatatatatatauatatatayatatatataDaDaPdcdcdfdCdldkdTdcdZdcdEeadSdSdSdSecaPaDaDaDaDaDdVaDdWaDaDaDaMaDdVaDdWaDaDaMaMaMaMaDaDaDdVaDdWaDaDaDaDgZhfhbhbhbhbhghbhbhbhbhbhhbiheaDaCaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
+aBaBatatatawatatatatatatatatauatataDaDaPedeedfdNdldkdDdcdcdOdEePdSdSdSdSfjaPaDaDaDaDaDaDaDaDaDebaDaMaDaDaDaDaDebaMaMaMaMaDaDaDaDaDaDaDebaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbihdaDaDaDaDaDaDaDatatatatatatauataBaaaaaaaaaa
+aBaBatatatatatatatatatatatavatatataDaDaPdfdfdfdCdldldDdcdcdcdEgEdSdSdSdSgFaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaCaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaCaDhihahbhbhbhbhbhbhbhbhbhbhcbiheaDaDaDaDaDaDaDaDaDaDaDatatatataBaaaaaaaaaa
+aBaBatatatatatayatatatatatatatatataDaDaPdbdfdldCdkdldDdcdcdcdEgGdSdSdSdSgHaPaDaDaEaDebaDaDegaDaDaDaMebaDaDegaDaDaMaMaMaMaDaDebaDaCegaDaDaDaDhjhkhlhmhlhlhlhlhlhlhmhlhnbiaMaDaEaDaDaEaDaDaCaDaDaDaDaDabaBaBaaaaaaaaaa
+aBaBatatatataAatatatatatatatatataDaDaDaPaPaPaPaPdldkaPaPaPaPaPaPaPehehaPaPaPaDaDaDaDaDaDaCaDdVaDaDaMaDaDaDaDdVaMaMaMaMaMaMaDaDaDaDaDdVaDaDaDhjhohohohohohohohohohobibibiaMaDaDaDaDaDaDaDaDaDaDaDaDaDaaaaaBaaaaaaaaaa
+aBaBatauatatatatatatatatatatatataDaDaDaDaDaDaDaDduduaMaMaMaMaDaDaDduduaDaDaDaDaDaDaDaDaDaDeiaDaDaDaMaDaDaDeiaMaMaMaMaMaMaMaMaDaDaDeiaDaDaDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaDaDaDaDaDaDaDaDaDaDaDaDaaaaaaaaaaaaaaaaaa
+aBaBatatazatawatatatatatatatatataDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaaaaaaaaaa
+aBaOatatatatatatauatatawatatatataDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaaaaaaaaaa
+aBaBatatatavayatatatayatatatauataDaDaMaMerekekekelelekekelelekekelelekekeketaMaMaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaaaagRgPaaaaaaaaaa
+aBaBatatatatatatatatatavatavatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDaagQgQaaaaaaaaaa
+aBaBatatatatatatavatatatatatatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDatatataDaDaaaaaaaaaaaaaaaa
+aBaBatatatatawatatatatatatatatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDaDaDatatatatatatataDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDaDaDaDatatatatatatatataDaDaDaDaDaDatatauatataaaaaaaaaaaaaaaa
+aBaBatatatatatatatatatatawatatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDatatatatatatatatatataDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatatateqatataDaDaDaDaDaDatatatatataaaaaaaaaaaaaaaa
+aBaBawatazatayatatatatatatatatataDaDaMaMeneleoeoeleleoeoeleleoeoeleleoeoelepaMaMaDatatatauatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatateqatatatatatatatatatatatatatatatatatayaaaaaaaaaaaaaa
+aBaBatatatatatatavayatatatayatataDaDaMaMenelelelelelelelelelelelelelelelelepaMaMaDatatatatatatatatatatatateqatatatatatatatatatatatatayatatatatatatatatatatatatatatatatatatatatatatabatatatatatatatatataBaaaaaaaaaaaa
 aBaBatatatatatatatatatatatatatataDaDaMaMgIesesesesesesesesesesesesesesesesgJaMaMaDaDatatatatatatateqatatatatatatatatatatatateqatatatatatabatatatatatatateqatatatatatatatatatatatatatatatatatatateqatataBaBaaaaaaaaaa
 aBaBatatauatatatatatatavatatatatatatatatatatatatatatatatatatatatatatatatatatatatataxatatatatatatatatatatatayatatatateqatatatatatatatatatatatatateqatatatatatatayabatatatatatauatatatatateqatayatatatataBaBaaaaaaaaaa
 aBaBatatatatatatatatatatababatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatateqatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatateqatatatatatatatatatatatatatatataBaBaaaaaaaaaa
@@ -486,6 +503,7 @@ aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaB
 aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 euaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 "}
+
 (1,1,2) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

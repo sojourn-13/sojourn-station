@@ -59,7 +59,7 @@
 	)
 
 /datum/craft_recipe/repairs/obrez_shotgun
-	name = "Obrez shotgun"
+	name = "sawn-down Grizzly shotgun"
 	result = /obj/item/weapon/gun/projectile/shotgun/pump/sawn
 	steps = list(
 		list(/obj/item/weapon/gun/projectile/shotgun/pump/obrez, 1, "time" = 60),
@@ -167,5 +167,39 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+	)
+
+/datum/craft_recipe/repairs/juggernaut_helm
+	name = "Juggernaut bomb helmet"
+	result = /obj/item/clothing/head/helmet/space/bomb/security
+	steps = list(
+		list(/obj/item/clothing/head/helmet/space/bomb, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+		list(/obj/item/weapon/tool_upgrade/armor/melee, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(/obj/item/weapon/tool_upgrade/armor/bullet, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_SILK),
+		list(QUALITY_HAMMERING, 30, "time" = 60),
+		list(/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh, 1, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+	)
+
+/datum/craft_recipe/repairs/juggernaut_suit
+	name = "Juggernaut bomb suit"
+	result = /obj/item/clothing/suit/space/bomb/security
+	steps = list(
+		list(/obj/item/clothing/suit/space/bomb, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+		list(/obj/item/weapon/tool_upgrade/armor/melee, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(/obj/item/weapon/tool_upgrade/armor/bullet, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_SILK),
+		list(QUALITY_HAMMERING, 30, "time" = 60),
+		list(/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh, 1, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60),
 	)

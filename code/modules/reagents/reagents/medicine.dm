@@ -13,6 +13,10 @@
 	metabolism = REM * 0.5
 	scannable = 1
 
+/datum/reagent/medicine/inaprovaline/holy
+	id = "holyinaprovaline"
+	scannable = 0
+
 /datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_STABLE)
 	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
@@ -190,6 +194,10 @@
 	color = "#0040FF"
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = 1
+
+/datum/reagent/medicine/dexalinp/holy
+	id = "holydexalinp"
+	scannable = 0
 
 /datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.adjustOxyLoss(-30 * effect_multiplier)

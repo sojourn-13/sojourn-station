@@ -248,6 +248,7 @@
 		/datum/design/autolathe/sword/nt_dagger,
 		/datum/design/autolathe/sword/nt_halberd,
 		/datum/design/autolathe/sword/nt_scourge,
+		/datum/design/autolathe/sword/nt_spear,
 		/datum/design/autolathe/shield/nt_shield,
 		/datum/design/autolathe/gun/plasma/martyr,
 		//armor and clothes
