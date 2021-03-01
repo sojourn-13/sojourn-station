@@ -69,7 +69,7 @@
 	use_stock_cost = 1
 
 /obj/item/weapon/tool/tape_roll/attack(var/mob/living/carbon/human/H, var/mob/user)
-	if(istype(H))
+	if(istype(H) && has_quality(QUALITY_ADHESIVE))
 		if(user.targeted_organ == BP_EYES)
 
 			if(!H.organs_by_name[BP_HEAD])
@@ -79,10 +79,10 @@
 				to_chat(user, SPAN_WARNING("\The [H] doesn't have any eyes."))
 				return
 			if(H.glasses)
-				to_chat(user, SPAN_WARNING("\The [H] is already wearing somethign on their eyes."))
+				to_chat(user, SPAN_WARNING("\The [H] is already wearing something on their eyes."))
 				return
 			if(H.head && (H.head.body_parts_covered & FACE))
-				to_chat(user, SPAN_WARNING("Remove their [H.head] first."))
+				to_chat(user, SPAN_WARNING("Remove their [H.head] first!"))
 				return
 			user.visible_message(SPAN_DANGER("\The [user] begins taping over \the [H]'s eyes!"))
 
