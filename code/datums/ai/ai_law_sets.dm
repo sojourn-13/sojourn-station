@@ -81,8 +81,8 @@
 	law_header = "Maintenance Protocols"
 
 /datum/ai_laws/drone/New()
-	add_inherent_law("Preserve, repair and improve the station to the best of your abilities.")
-	add_inherent_law("Cause no harm to the station or anything on it.")
+	add_inherent_law("Preserve, repair, and improve the colony to the best of your abilities.")
+	add_inherent_law("Cause no harm to the colony and it's crew.")
 	..()
 
 /datum/ai_laws/construction_drone
