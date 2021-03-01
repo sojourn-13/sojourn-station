@@ -30,20 +30,6 @@
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/true
 	var/bolt_training = TRUE
 
-/obj/item/weapon/gun/projectile/boltgun/bluecross
-	name = "\"Bluecross\" boltgun"
-	desc = "A single shot rifle; perfect for small game hunters! \
-			Amazing for a budget - or if you hate yourself. One of the two."
-	icon = 'icons/obj/guns/projectile/bluecross.dmi'
-	icon_state = "bluecross"
-	item_state = "bluecross"
-	damage_multiplier = 3.1
-	penetration_multiplier  = 2
-	max_shells = 1
-	price_tag = 750
-	sharp = FALSE
-	saw_off = FALSE
-
 /obj/item/weapon/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" boltgun"
 	desc = "A crudly mangled and sawn-down 7.5mm bolt action rifle. Rifle was fine."

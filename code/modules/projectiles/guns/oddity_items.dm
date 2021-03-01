@@ -69,3 +69,21 @@
 	recoil_buildup = 4
 	one_hand_penalty = 6
 	penetration_multiplier = 1.1
+
+/obj/item/weapon/gun/projectile/boltgun/bluecross //Pending balance changes with
+	name = "\"Krag Jørgensen\" boltgun"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			A single shot rifle; perfect for big game hunters! \
+			Amazing for a budget - or if you hate yourself. One of the two."
+	icon = 'icons/obj/guns/projectile/bluecross.dmi'
+	icon_state = "bluecross"
+	item_state = "bluecross"
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
+	force = WEAPON_FORCE_DANGEROUS
+	bolt_training = FALSE
+	damage_multiplier = 2.5 //basic shot will 67.6~ damage
+	penetration_multiplier  = 2
+	max_shells = 1
+	price_tag = 750
+	sharp = FALSE
+	saw_off = FALSE

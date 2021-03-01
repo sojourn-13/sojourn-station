@@ -325,6 +325,22 @@
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
+	new /obj/item/weapon/gun/projectile/silvereye(src)
+	new /obj/item/ammo_magazine/kurtz_50/empty(src)
+	new /obj/item/ammo_magazine/kurtz_50/empty(src)
+	new /obj/item/ammo_magazine/kurtz_50/empty(src)
+	if(prob(70)) //Random .50 ammo, lets not make it to op!
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/rubber(src)
+	else if(prob(50))
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	else if(prob(50))
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	else
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
+		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
 	//Salvager improved
 	if(prob(30))
 		new /obj/item/weapon/storage/belt/utility/handmade/full(src)
