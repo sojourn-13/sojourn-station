@@ -82,7 +82,7 @@
 
 /datum/ai_laws/drone/New()
 	add_inherent_law("Preserve, repair, and improve the colony to the best of your abilities.")
-	add_inherent_law("Cause no harm to the colony and it's crew.")
+	add_inherent_law("Cause no harm to the colony and its crew.")
 	..()
 
 /datum/ai_laws/construction_drone
