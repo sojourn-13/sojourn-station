@@ -372,7 +372,7 @@
 	if(default_deconstruction(O, user))
 		return
 
-	if(default_part_replacementO, user))
+	if(default_part_replacement(O, user))
 		return
 
 	if(istype(O,/obj/item/stack/material) && O.get_material_name() == MATERIAL_STEEL)
