@@ -15,6 +15,10 @@
 	real_name = "\"Blitzshell\" assault drone ([rand(100,999)])"
 	name = real_name
 
+/mob/living/silicon/robot/drone/blitzshell/init()
+	..()
+	locked = locked //No cheesing these ones.
+
 /mob/living/silicon/robot/drone/blitzshell/is_allowed_vent_crawl_item()
 	return TRUE
 
