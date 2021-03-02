@@ -4,9 +4,9 @@
 
 /obj/structure/cryopod_spawner
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
-	name = "cryopod"
+	name = "cryogenics pod"
 	icon_state = "cryopod"
-	desc = "It looks like an older model cryopod."
+	desc = "It looks like an older model cryogenics pod."
 	var/mob/spawnmob
 	var/spawn_role
 	var/spawn_faction

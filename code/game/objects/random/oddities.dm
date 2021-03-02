@@ -47,11 +47,15 @@
 
 /obj/random/oddity_guns/item_to_spawn()
 	return pickweight(list(
-				/obj/item/weapon/gun/projectile/handmade_pistol/reliable = 1,
+				/obj/item/weapon/gun/projectile/handmade_pistol/anti_material/reliable = 1,
 				/obj/item/weapon/gun/energy/sniperrifle/saint = 1,
 				/obj/item/weapon/gun/projectile/automatic/lmg/saw/unicorn = 1,
 				/obj/item/weapon/gun/projectile/revolver/mistral/elite = 1,
+				/obj/item/weapon/gun/energy/lasersmg/inferno = 1,
 				/obj/item/weapon/gun/projectile/shotgun/pump/obrez/thunderlord = 1,
+				/obj/item/weapon/gun/projectile/automatic/pulse_rifle = 1,
+				/obj/item/weapon/gun/projectile/silenced/rat = 1,
 				/obj/item/weapon/gun/energy/ntpistol/mana = 1,
 				/obj/item/weapon/gun/projectile/automatic/maxim/replica = 1,
+				/obj/item/weapon/oddity/nt/seal = 1,
 				/obj/item/weapon/soap/bluespase = 0.5)) //Ye not a "gun" but still good for this

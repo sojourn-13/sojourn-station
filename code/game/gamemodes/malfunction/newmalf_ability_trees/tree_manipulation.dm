@@ -1,6 +1,6 @@
 // MANIPULATION TREE
 //
-// Abilities in this tree allow the AI to physically manipulate systems around the station.
+// Abilities in this tree allow the AI to physically manipulate systems around the colony.
 // T1 - Electrical Pulse - Sends out pulse that breaks some lights and sometimes even APCs. This can actually break the AI's APC so be careful!
 // T2 - Hack Camera - Allows the AI to hack a camera. Deactivated areas may be reactivated, and functional cameras can be upgraded.
 // T3 - Emergency Forcefield - Allows the AI to project 1 tile forcefield that blocks movement and air flow. Forcefield´dissipates over time. It is also very susceptible to energetic weaponry.
@@ -40,7 +40,7 @@
 
 /datum/game_mode/malfunction/verb/electrical_pulse()
 	set name = "Electrical Pulse"
-	set desc = "15 CPU - Sends feedback pulse through station's power grid, overloading some sensitive systems, such as lights."
+	set desc = "15 CPU - Sends feedback pulse through the colony's power grid, overloading some sensitive systems, such as lights."
 	set category = "Software"
 	var/price = 15
 	var/mob/living/silicon/ai/user = usr
@@ -113,7 +113,7 @@
 
 /datum/game_mode/malfunction/verb/emergency_forcefield(var/turf/T in turfs)
 	set name = "Emergency Forcefield"
-	set desc = "275 CPU - Uses station's emergency shielding system to create temporary barrier which lasts for few minutes, but won't resist gunfire."
+	set desc = "275 CPU - Uses the colony's emergency shielding system to create temporary barrier which lasts for few minutes, but won't resist gunfire."
 	set category = "Software"
 	var/price = 275
 	var/mob/living/silicon/ai/user = usr

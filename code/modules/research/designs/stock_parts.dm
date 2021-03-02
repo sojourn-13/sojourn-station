@@ -114,7 +114,7 @@
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/part/artificialbscrystal
-	name = "Artificial BlueSpace Crystal"
+	name = "Artificial Bluespace Crystal"
 	build_path = /obj/item/bluespace_crystal/artificial
 	category = "Bluespace Telecoms"
 

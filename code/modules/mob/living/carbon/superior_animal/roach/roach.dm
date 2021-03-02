@@ -15,6 +15,8 @@
 
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 2
+	leather_amount = 0
+	bones_amount = 0
 
 	maxHealth = 15
 	health = 15
@@ -39,6 +41,10 @@
 	var/atom/eat_target // target that the roach wants to eat
 	var/fed = 0 // roach gets fed after eating a corpse
 	var/probability_egg_laying = 25 // probability to lay an egg
+
+/mob/living/carbon/superior_animal/roach/New()
+	..()
+	add_language(LANGUAGE_CHTMANT)
 
 //When roaches die near a leader, the leader may call for reinforcements
 /mob/living/carbon/superior_animal/roach/death()

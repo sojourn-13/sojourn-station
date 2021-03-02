@@ -8,6 +8,14 @@
 	name = "shotgun shells (buckshot)"
 	build_path = /obj/item/ammo_casing/shotgun/pellet/prespawned
 
+/datum/design/autolathe/ammo/shotgun_box
+	name = "shotgun shells box (slug)"
+	build_path = /obj/item/ammo_magazine/ammobox/shotgun
+
+/datum/design/autolathe/ammo/shotgun_pellet_box
+	name = "shotgun shells box (buckshot)"
+	build_path = /obj/item/ammo_magazine/ammobox/shotgun/buckshot
+
 /datum/design/autolathe/ammo/shotgun_blanks
 	name = "shotgun shells (blank)"
 	build_path = /obj/item/ammo_casing/shotgun/blank/prespawned
@@ -61,22 +69,40 @@
 	name = "SBAW magazine (empty)"
 	build_path = /obj/item/ammo_magazine/sbaw/empty
 
+//.35 mags
+
+/datum/design/autolathe/ammo/pistol
+	name = "standard magazine (.35 Auto)"
+	build_path = /obj/item/ammo_magazine/pistol_35
+
+/datum/design/autolathe/ammo/pistol_rubber
+	name = "standard magazine (.35 Auto rubber)"
+	build_path = /obj/item/ammo_magazine/pistol_35/rubber
+
+/datum/design/autolathe/ammo/pistol_practice
+	name = "standard magazine (.35 Auto practice)"
+	build_path = /obj/item/ammo_magazine/pistol_35/practice
+
+/datum/design/autolathe/ammo/pistol_lethal
+	name = "standard magazine (.35 Auto hollow-point)"
+	build_path = /obj/item/ammo_magazine/pistol_35/lethal
+
 // .35 Highcap
 
 /datum/design/autolathe/ammo/hpistol
-	name = "highcap magazine (.35 Auto)"
+	name = "high cap magazine (.35 Auto)"
 	build_path = /obj/item/ammo_magazine/highcap_pistol_35
 
 /datum/design/autolathe/ammo/hpistol_rubber
-	name = "highcap magazine (.35 Auto rubber)"
+	name = "high cap magazine (.35 Auto rubber)"
 	build_path = /obj/item/ammo_magazine/highcap_pistol_35/rubber
 
 /datum/design/autolathe/ammo/hpistol_practice
-	name = "highcap magazine (.35 Auto practice)"
+	name = "high cap magazine (.35 Auto practice)"
 	build_path = /obj/item/ammo_magazine/highcap_pistol_35/practice
 
 /datum/design/autolathe/ammo/hpistol_lethal
-	name = "highcap magazine (.35 Auto hollow-point)"
+	name = "high cap magazine (.35 Auto hollow-point)"
 	build_path = /obj/item/ammo_magazine/highcap_pistol_35/lethal
 
 //.35 SMG
@@ -553,7 +579,7 @@
 	build_path = /obj/item/ammo_casing/grenade/frag
 
 /datum/design/autolathe/ammo/grenade/emp
-	name = "emp grenade shell"
+	name = "EMP grenade shell"
 	build_path = /obj/item/ammo_casing/grenade/emp
 
 /datum/design/autolathe/ammo/grenade/flash

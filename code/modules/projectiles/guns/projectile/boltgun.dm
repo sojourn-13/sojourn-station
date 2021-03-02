@@ -10,7 +10,7 @@
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	caliber = CAL_RIFLE
-	fire_delay = 12 // double the standart
+	fire_delay = 2 // double the standart
 	damage_multiplier = 1.1
 	penetration_multiplier  = 1.5
 	recoil_buildup = 40 //same as AMR
@@ -27,8 +27,45 @@
 	sharp = TRUE //We have a knife!
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET, GUN_SCOPE)
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn
+	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/true
 	var/bolt_training = TRUE
+
+/obj/item/weapon/gun/projectile/boltgun/bluecross
+	name = "\"Bluecross\" boltgun"
+	desc = "A single shot rifle; perfect for small game hunters! \
+			Amazing for a budget - or if you hate yourself. One of the two."
+	icon = 'icons/obj/guns/projectile/bluecross.dmi'
+	icon_state = "bluecross"
+	item_state = "bluecross"
+	damage_multiplier = 3.1
+	penetration_multiplier  = 2
+	max_shells = 1
+	price_tag = 750
+	sharp = FALSE
+	saw_off = FALSE
+
+/obj/item/weapon/gun/projectile/boltgun/sawn //subtype for code
+	name = "\"obrez\" boltgun"
+	desc = "A crudly mangled and sawn-down 7.5mm bolt action rifle. Rifle was fine."
+	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
+	icon_state = "obrez"
+	item_state = "obrez"
+	force = WEAPON_FORCE_NORMAL
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	price_tag = 75
+	sharp = 0
+	recoil_buildup = 50
+	penetration_multiplier = 0.5
+	damage_multiplier = 0.9
+	fire_delay = 4
+	one_hand_penalty = 10
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
+	saw_off = FALSE
+	bolt_training = FALSE //Trainning didnt cover obrez
+
+/obj/item/weapon/gun/projectile/boltgun/sawn/true //used for the Kardashev-Mosin, so we dont cheat crafting menus
 
 /obj/item/weapon/gun/projectile/boltgun/update_icon()
 	..()
@@ -102,193 +139,3 @@
 	if(!bolt_open)
 		return
 	..()
-
-
-/obj/item/weapon/gun/projectile/boltgun/sa
-	name = "\"Novakovic\" boltgun"
-	desc = "Weapon for hunting, or endless trench warfare. \
-			If you're on a budget, it's a darn good rifle for just about everything. \
-			This copy, in fact, is a reverse-engineered poor-quality copy of a more perfect copy of an ancient rifle"
-	icon = 'icons/obj/guns/projectile/boltgun_wood.dmi'
-	icon_state = "boltgun"
-	item_state = "boltgun"
-	max_shells = 5
-	price_tag = 300
-	recoil_buildup = 20
-	damage_multiplier = 1
-	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
-	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/sa
-
-/obj/item/weapon/gun/projectile/boltgun/scout
-	name = "\"Scout\" heavy boltgun"
-	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .408 Heavy Rifle rounds, it packs the reach and accuracy for every occasion."
-	icon = 'icons/obj/guns/projectile/heavyboltgun.dmi'
-	icon_state = "boltgun"
-	item_state = "boltgun"
-	force = WEAPON_FORCE_PAINFUL
-	damage_multiplier = 1.3
-	penetration_multiplier  = 1.6
-	recoil_buildup = 30
-	max_shells = 5
-	zoom_factor = 2.0
-	price_tag = 1500
-	sharp = 0
-	caliber = CAL_HRIFLE
-	load_method = SINGLE_CASING
-	one_hand_penalty = 40 //No trick shots
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
-	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/scout
-
-/obj/item/weapon/gun/projectile/boltgun/scout/light
-	name = "\"Sika\" light boltgun"
-	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
-	icon = 'icons/obj/guns/projectile/lightboltgun.dmi'
-	icon_state = "boltgun"
-	item_state = "boltgun"
-	max_shells = 10
-	recoil_buildup = 10
-	one_hand_penalty = 20 //maybe some trick shots
-	price_tag = 1000
-	damage_multiplier = 1
-	caliber = CAL_LRIFLE
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
-	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
-	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/light
-
-/obj/item/weapon/gun/projectile/boltgun/scout/light/wood
-	name = "\"Roe\" light boltgun"
-	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
-	icon = 'icons/obj/guns/projectile/lightboltgun_wood.dmi'
-	icon_state = "boltgun"
-	item_state = "boltgun"
-	max_shells = 10
-	price_tag = 1000
-	caliber = CAL_LRIFLE
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 10, MATERIAL_GLASS = 10)
-	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/light/wood
-
-/obj/item/weapon/gun/projectile/boltgun/zatvor
-	name = "homemade \"Zatvor Kalashnikov\" rifle"
-	desc = "A mangeled mess of a boltgun and a Kalashnikov rifle combined into one with a soldered internal magazine; saving on production cost, thanks to Nadezhda Marshals gunsmiths and copious amounts of booze."
-	icon = 'icons/obj/guns/projectile/zatvor.dmi'
-	icon_state = "zatvor"
-	item_state = "zatvor"
-	w_class = ITEM_SIZE_NORMAL
-	force = WEAPON_FORCE_NORMAL
-	caliber = CAL_LRIFLE
-	max_shells = 30
-	damage_multiplier = 0.8
-	penetration_multiplier  = 1.0
-	slot_flags = SLOT_BELT|SLOT_BACK
-	recoil_buildup = 10
-	price_tag = 600
-	one_hand_penalty = 15
-	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 20, MATERIAL_WOOD = 5)
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
-	saw_off = FALSE
-
-/obj/item/weapon/gun/projectile/boltgun/lever
-	name = "\"Armstrong\" repeater rifle"
-	desc = "Weapon for hunting, or endless open plains. Perfect for horseback!"
-	icon = 'icons/obj/guns/projectile/lever.dmi'
-	icon_state = "lever"
-	item_state = "lever"
-	slot_flags = SLOT_BELT|SLOT_BACK
-	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_MAGNUM
-	max_shells = 11
-	price_tag = 650
-	recoil_buildup = 10
-	damage_multiplier = 1
-	penetration_multiplier  = 1.3
-	matter = list(MATERIAL_STEEL = 25, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 5)
-	saw_off = FALSE
-
-/obj/item/weapon/gun/projectile/boltgun/sawn
-	name = "\"obrez\" boltgun"
-	desc = "A crudly mangled and sawn-down 7.5mm bolt action rifle. Rifle was fine."
-	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
-	icon_state = "obrez"
-	item_state = "obrez"
-	force = WEAPON_FORCE_NORMAL
-	w_class = ITEM_SIZE_NORMAL
-	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	price_tag = 75
-	sharp = 0
-	recoil_buildup = 50
-	penetration_multiplier = 0.5
-	damage_multiplier = 0.9
-	fire_delay = 18
-	one_hand_penalty = 10
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
-	saw_off = FALSE
-	bolt_training = FALSE //Trainning didnt cover obrez
-
-/obj/item/weapon/gun/projectile/boltgun/sawn/sa
-	name = "\"obrez\" boltgun"
-	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
-	icon_state = "obrez"
-	item_state = "obrez"
-	max_shells = 5
-	one_hand_penalty = 10
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_WOOD = 4)
-	saw_off = FALSE
-
-/obj/item/weapon/gun/projectile/boltgun/sawn/scout
-	name = "\"obrez\" heavy boltgun"
-	desc = "A crudly mangled and sawn-down .408 bolt action rifle. Rifle was fine."
-	icon = 'icons/obj/guns/projectile/sawnoff/heavyboltgun.dmi'
-	icon_state = "obrez"
-	item_state = "obrez"
-	caliber = CAL_HRIFLE
-	load_method = SINGLE_CASING
-	fire_delay = 18
-	max_shells = 5
-	one_hand_penalty = 15
-	saw_off = FALSE
-
-/obj/item/weapon/gun/projectile/boltgun/sawn/light
-	name = "\"obrez\" light boltgun"
-	desc = "A crudly mangled and sawn-down .257 bolt action rifle. Rifle was fine."
-	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
-	icon_state = "obrez"
-	item_state = "obrez"
-	caliber = CAL_LRIFLE
-	load_method = SINGLE_CASING
-	fire_delay = 18
-	one_hand_penalty = 10
-	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
-	saw_off = FALSE
-
-/obj/item/weapon/gun/projectile/boltgun/sawn/light/wood
-	name = "\"obrez\" light boltgun"
-	desc = "A crudly mangled and sawn-down .257 bolt action rifle. Rifle was fine."
-	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
-	icon_state = "obrez"
-	item_state = "obrez"
-	caliber = CAL_LRIFLE
-	load_method = SINGLE_CASING
-	max_shells = 10
-	saw_off = FALSE
-
-// Star-Striker! A sci only gun that fires laser based shells
-/obj/item/weapon/gun/projectile/boltgun/scout/sci
-	name = "\"Star Striker\" laser boltgun"
-	desc = "A weapon based on the Sike boltgun line but fitted to use longer, laser based casings. Chambered in laser casings."
-	icon = 'icons/obj/guns/energy/starstriker.dmi'
-	icon_state = "starstriker"
-	item_state = "starstriker"
-	max_shells = 10
-	price_tag = 250 //no...
-	damage_multiplier = 1
-	caliber = CAL_SCI
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_MAGNET = 3, TECH_POWER = 6)
-	fire_sound = 'sound/weapons/Laser.ogg'
-	saw_off = FALSE

@@ -213,6 +213,71 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "hut_to_gulag_2_B"
 	id_target = "hut_to_gulag_1_B"
 
+//Vault Bunker
+/obj/effect/step_trigger/vault_bunker_1A
+	id = "vault_bunker_1A"
+	id_target = "vault_bunker_2A"
+
+/obj/effect/step_trigger/vault_bunker_2A
+	id = "vault_bunker_2A"
+	id_target = "vault_bunker_1A"
+
+/obj/effect/step_trigger/vault_bunker_1B
+	id = "vault_bunker_1B"
+	id_target = "vault_bunker_2B"
+
+/obj/effect/step_trigger/vault_bunker_2B
+	id = "vault_bunker_2B"
+	id_target = "vault_bunker_1B"
+
+/obj/effect/step_trigger/vault_bunker_1C
+	id = "vault_bunker_1C"
+	id_target = "vault_bunker_2C"
+
+/obj/effect/step_trigger/vault_bunker_2C
+	id = "vault_bunker_2C"
+	id_target = "vault_bunker_1C"
+
+/obj/effect/step_trigger/vault_bunker_1D
+	id = "vault_bunker_1D"
+	id_target = "vault_bunker_2D"
+
+/obj/effect/step_trigger/vault_bunker_2D
+	id = "vault_bunker_2D"
+	id_target = "vault_bunker_1D"
+
+/obj/effect/step_trigger/vault_bunker_1E
+	id = "vault_bunker_1E"
+	id_target = "vault_bunker_2E"
+
+/obj/effect/step_trigger/vault_bunker_2E
+	id = "vault_bunker_2E"
+	id_target = "vault_bunker_1E"
+
+/obj/effect/step_trigger/vault_bunker_1F
+	id = "vault_bunker_1F"
+	id_target = "vault_bunker_2F"
+
+/obj/effect/step_trigger/vault_bunker_2F
+	id = "vault_bunker_2F"
+	id_target = "vault_bunker_1F"
+
+/obj/effect/step_trigger/vault_bunker_1G
+	id = "vault_bunker_1G"
+	id_target = "vault_bunker_2G"
+
+/obj/effect/step_trigger/vault_bunker_2G
+	id = "vault_bunker_2G"
+	id_target = "vault_bunker_1G"
+
+/obj/effect/step_trigger/vault_bunker_1H
+	id = "vault_bunker_1H"
+	id_target = "vault_bunker_2H"
+
+/obj/effect/step_trigger/vault_bunker_2H
+	id = "vault_bunker_2H"
+	id_target = "vault_bunker_1H"
+
 //Monster cave to more beast caves
 /obj/effect/step_trigger/monster_to_beast_1_A
 	id = "monster_to_beast_1_A"

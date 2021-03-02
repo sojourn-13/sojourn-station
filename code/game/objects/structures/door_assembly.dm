@@ -1,6 +1,6 @@
 /obj/structure/door_assembly
 	name = "airlock assembly"
-	desc = "The frame for an airlock. It's clearly inoperational."
+	desc = "The frame for an airlock. It's clearly inoperable."
 	icon = 'icons/obj/doors/door_assembly.dmi'
 	icon_state = "door_as_0"
 	anchored = 0
@@ -38,10 +38,10 @@
 			if(state == 0)
 				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 					if(anchored)
-						user.visible_message("[user] begins unsecuring the airlock assembly from the floor.", "You starts unsecuring the airlock assembly from the floor.")
+						user.visible_message("[user] begins unbolting the airlock assembly from the floor.", "You start unbolting the airlock assembly from the floor.")
 					else
-						user.visible_message("[user] begins securing the airlock assembly to the floor.", "You starts securing the airlock assembly to the floor.")
-					to_chat(user, SPAN_NOTICE("You [anchored? "un" : ""]secured the airlock assembly!"))
+						user.visible_message("[user] begins bolting the airlock assembly to the floor.", "You start bolting the airlock assembly to the floor.")
+					to_chat(user, SPAN_NOTICE("You [anchored? "un" : ""]bolted the airlock assembly!"))
 					anchored = !anchored
 			update_state()
 			return
@@ -60,7 +60,7 @@
 					glass = 0
 			else if(!anchored)
 				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You dissasembled the airlock assembly!"))
+					to_chat(user, SPAN_NOTICE("You disassembled the airlock assembly!"))
 					new /obj/item/stack/material/steel(src.loc, 8)
 					qdel (src)
 			update_state()

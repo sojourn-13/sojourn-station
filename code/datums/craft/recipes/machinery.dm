@@ -24,7 +24,7 @@
 	)
 
 /datum/craft_recipe/machinery/wall/apc
-	name = "apc frame"
+	name = "APC frame"
 	result = /obj/item/frame/apc
 	icon_state = "electronic"
 	steps = list(

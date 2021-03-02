@@ -19,7 +19,7 @@
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("<b><font color='red'>[user] begins growling as their muscles tighten!</font><b>", "<b><font color='red'>You feel a comfortable warmth as your body steels itself against all pain.</font><b>", "<b><font color='red'>You hear something growling!</font><b>")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("sabledone", 5)
+	user.reagents.add_reagent("sabledone", 10)
 	return ..()
 
 /datum/perk/bone
@@ -114,7 +114,7 @@
 ////////////////////////////////////////Akula perks
 /datum/perk/recklessfrenzy
 	name = "Reckless Frenzy"
-	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time. The rush of chemicals is also highly adddictive \
+	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time. The rush of chemicals is also highly addictive \
 	and often times will leave your body weaker for a short time."
 	active = FALSE
 	passivePerk = FALSE
@@ -127,7 +127,7 @@
 		to_chat(usr, SPAN_NOTICE("Your body has been taxed to its limits, you need more time to recover before using this ability again."))
 		return FALSE
 	cooldown_time = world.time + 15 MINUTES
-	user.visible_message("<b><font color='red'>[user] lets out deep gutteral growl as their eyes glaze over!</font><b>", "<b><font size='3px'><font color='red'>You abandon all reason as your sink into a blood thirsty frenzy!</font><b>", "<b><font color='red'>You hear a terrifying roar!</font><b>")
+	user.visible_message("<b><font color='red'>[user] lets out deep guttural growl as their eyes glaze over!</font><b>", "<b><font size='3px'><font color='red'>You abandon all reason as your sink into a blood thirsty frenzy!</font><b>", "<b><font color='red'>You hear a terrifying roar!</font><b>")
 	playsound(usr.loc, 'sound/voice/akularoar.ogg', 50, 1)
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("robustitol", 5)
@@ -213,7 +213,7 @@
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up tools. You didn't lose them, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up tools out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up tools out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/weapon/storage/belt/utility/opifex/full(usr.loc)
 	return ..()
@@ -229,10 +229,10 @@
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up meds. You didn't lose them, did you?"))
+		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of backup medicine. You didn't lose them, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up webbing out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up webbing out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/weapon/storage/belt/medical/opifex/full(usr.loc)
 	return ..()
@@ -249,10 +249,10 @@
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up weapons. You didn't lose them, did you?"))
+		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of backup weapons. You didn't lose them, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up belt out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up belt out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/weapon/storage/belt/security/tactical/opifex/full(usr.loc)
 	return ..()
@@ -271,14 +271,14 @@
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your scrap circuit. You didn't lose it, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your smuggled circuit out from their hiding place, the plastic and metal device clattering on the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your smuggled circuit out from their hiding place, the plastic and metal device clattering on the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/weapon/circuitboard/artificer_turret/opifex(usr.loc)
 	return ..()
 
 /datum/perk/opifex_patchkit
 	name = "Smuggled Patch Kit"
-	desc = "Every opifex carries his own personal IFAK stashed somewhere. Being practical is the best option, after all, and the colony is a dangerous place."
+	desc = "Every opifex carries their own personal IFAK stashed somewhere. Being practical is the best option, after all, and the colony is a dangerous place."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -290,7 +290,7 @@
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your patch kit. You didn't lose it, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your smuggled patch kit out from their hiding place, the cloth pouch clattering on the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your smuggled patch kit out from their hiding place, the cloth pouch clattering on the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/weapon/storage/firstaid/ifak(usr.loc)
 	return ..()
@@ -298,8 +298,8 @@
 ////////////////////////////////////////////Cht'mant perks
 /datum/perk/spiderfriend
 	name = "Kin to the Spiders"
-	desc = "Through a combination of pheromones, appearence, and an innate understanding of spider behaviour all spiders are friendly to you, they won't attack you even if you attack them. This change \
-	in your biology and pheramones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
+	desc = "Through a combination of pheromones, appearance, and an innate understanding of spider behavior all spiders are friendly to you, they won't attack you even if you attack them. This change \
+	in your biology and pheromones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
 	//icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/spiderfriend/assign(mob/living/carbon/human/H)
@@ -324,7 +324,7 @@
 		to_chat(usr, SPAN_NOTICE("You need a bit more time to build up your web reserves!"))
 		return FALSE
 	cooldown_time = world.time + 5 SECONDS
-	user.visible_message("[user] begins secreting and spreading web material around them.", "You begin secreting and spreading your webbing around.", "You hear an uncomfortable chitter noise.")
+	user.visible_message("[user] begins secreting and spreading web material around them.", "You begin secreting and spreading your webbing around.", "You hear an uncomfortable chittering noise.")
 	//log_and_message_admins("used their [src] perk.") //commented out due to spam in the logs.
 	new /obj/effect/spider/stickyweb/chtmant(usr.loc)
 	return ..()
@@ -347,7 +347,7 @@
 		return FALSE
 	cooldown_time = world.time + 1 HOURS
 	usr.nutrition -= 350
-	user.visible_message("<b><font color='red'>[user] vomits different colored slime onto the floor!</font><b>", "<b><font color='red'>You vomit out your healing ichors onto the floor!</font><b>", "<b><font color='red'>You hear a wretching noise!</font><b>")
+	user.visible_message("<b><font color='red'>[user] vomits different colored slime onto the floor!</font><b>", "<b><font color='red'>You vomit out your healing ichors onto the floor!</font><b>", "<b><font color='red'>You hear a retching noise!</font><b>")
 	log_and_message_admins("used their [src] perk.")
 	playsound(usr.loc, 'sound/effects/blobattack.ogg', 50, 1)
 	new /obj/item/stack/medical/advanced/bruise_pack/mending_ichor(usr.loc)
@@ -357,7 +357,7 @@
 
 /datum/perk/chitinarmor
 	name = "Chitin Armor"
-	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile bretheren."
+	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile brethren."
 	//icon_state = "" // - No icon, suggestion - Riot Shield?
 
 /datum/perk/chitinarmor/assign(mob/living/carbon/human/H)

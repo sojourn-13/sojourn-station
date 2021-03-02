@@ -128,13 +128,13 @@
 
 /datum/design/research/item/cautery_adv
 	name = "High Power Cautery"
-	desc = "A Cautery with self-regulating heat transfer capabilities, allows for quicker and more precise cauterization of surgical incisions."
+	desc = "A cautery with self-regulating heat transfer capabilities, allows for quicker and more precise cauterization of surgical incisions."
 	build_path = /obj/item/weapon/tool/cautery/adv
 	category = "Medical"
 
 /datum/design/research/item/hemostat_adv
 	name = "Precise Hemostat"
-	desc = "An advanced hemostat with better vein clamping strength and an adaptative tip tuned to also allow easier extraction of shrapnel, organs, and implants."
+	desc = "An advanced hemostat with better vein clamping strength and an adaptive tip tuned to also allow easier extraction of shrapnel, organs, and implants."
 	build_path = /obj/item/weapon/tool/hemostat/adv
 	category = "Medical"
 
@@ -152,7 +152,7 @@
 
 /datum/design/research/item/medical/nanopaste
 	name = "Nanopaste"
-	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing mechanical bodyparts, organs, and smart purging of toxic buildup."
+	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing mechanical body parts, organs, and smart purging of toxic buildup."
 	build_path = /obj/item/stack/nanopaste
 	chemicals = list("nanites" = 5)
 

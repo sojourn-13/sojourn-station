@@ -1,6 +1,6 @@
 //replaces our stun baton code with /tg/station's code
 /obj/item/weapon/melee/baton
-	name = "stunbaton"
+	name = "stun baton"
 	desc = "A stun baton for incapacitating people with."
 	icon_state = "stunbaton"
 	item_state = "baton"
@@ -171,7 +171,7 @@
 
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/weapon/melee/baton/cattleprod
-	name = "stunprod"
+	name = "stun prod"
 	desc = "An improvised stun baton."
 	icon_state = "stunprod"
 	item_state = "prod"

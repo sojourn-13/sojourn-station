@@ -34,7 +34,7 @@
 
 /obj/item/weapon/tool/hatchet
 	name = "hatchet"
-	desc = "A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood."
+	desc = "A very sharp axe blade upon a short fiber-metal handle. It has a long history of chopping things, but now it is used for chopping wood."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hatchet"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 3)
@@ -84,10 +84,22 @@
 	force = WEAPON_FORCE_DANGEROUS
 	force_unwielded = WEAPON_FORCE_DANGEROUS
 	force_wielded = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_SHALLOW
+	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 30)
 	w_class = ITEM_SIZE_BULKY
-	slot_flags = null
+
+/obj/item/weapon/tool/fireaxe/militia_tomahawk
+	name = "blackshield tactical tomahawk"
+	desc = "For cutting, sawing, prying, and throwing at targets mid back-flip."
+	icon_state = "sec_tomahawk"
+	wielded_icon = "sec_tomahawk"
+	force = WEAPON_FORCE_DANGEROUS
+	force_unwielded = WEAPON_FORCE_DANGEROUS
+	force_wielded = WEAPON_FORCE_ROBUST
+	throwforce = WEAPON_FORCE_BRUTAL
+	slot_flags = SLOT_BELT|SLOT_BACK
+	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
+	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/weapon/tool/minihoe
 	name = "mini hoe"
@@ -196,6 +208,14 @@
 	force = WEAPON_FORCE_PAINFUL
 	tool_qualities = list(QUALITY_CUTTING = 30)
 	max_upgrades = 3
+	embed_mult = 3
+
+/obj/item/weapon/tool/knife/neotritual/equipped(mob/living/H)
+	. = ..()
+	if(is_held() && is_neotheology_disciple(H))
+		embed_mult = 0.1
+	else
+		embed_mult = initial(embed_mult)
 
 /obj/item/weapon/tool/knife/tacknife
 	name = "tactical knife"
@@ -209,21 +229,22 @@
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
 	armor_penetration = ARMOR_PEN_MODERATE
 	max_upgrades = 3
+	embed_mult = 0.3
 
 /obj/item/weapon/tool/knife/dagger
 	name = "dagger"
-	desc = "A sharp implement; difference between this and a knife is it is sharp on both sides. Good for finding holes in armor and exploiting them."
+	desc = "A sharp implement; difference between this and a knife: it's sharp on both sides. Good for finding holes in armor and exploiting them."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "dagger"
 	item_state = "dagger"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
-	force = WEAPON_FORCE_NORMAL
+	force = 13
 	backstab_damage = 15
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_penetration = ARMOR_PEN_HALF
 
 /obj/item/weapon/tool/knife/dagger/skinning
 	name = "skinning knife"
-	desc = "A sharp tool that is the pride and joy of the local hunting lodge. While not suitable as a weapon, its blade is as finely edged as any laser scalpel. Considered sacred by \
+	desc = "A sharp tool that is the pride and joy of the local hunting lodge. While not well suited as a weapon, its blade is as finely edged as any laser scalpel. Considered sacred by \
 	the hunters that normally carry them."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "skinning"
@@ -239,6 +260,8 @@
 	icon_state = "fancydagger"
 	item_state = "fancydagger"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
+	embed_mult = 0.3
+	max_upgrades = 4
 
 /obj/item/weapon/tool/knife/dagger/bluespace
 	name = "Soteria \"Displacement Dagger\""
@@ -285,7 +308,7 @@
 
 /obj/item/weapon/tool/knife/dagger/assassin
 	name = "dagger"
-	desc = "A sharp implement, with a twist; The handle acts as a reservoir for reagents, and the blade injects those that it hits."
+	desc = "A sharp implement, with a twist; The handle acts as a reservoir for reagents, and the blade injects those that it pierces."
 	icon_state = "ass_dagger"
 	item_state = "ass_dagger"
 	reagent_flags = INJECTABLE|TRANSPARENT
@@ -318,7 +341,7 @@
 
 /obj/item/weapon/tool/scythe
 	name = "scythe"
-	desc = "A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow."
+	desc = "A sharp and curved blade on a long fiber-metal handle, this tool makes it easy to reap what you sow."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "scythe0"
 	matter = list(MATERIAL_PLASTEEL = 7, MATERIAL_PLASTIC = 3)
@@ -349,6 +372,23 @@
 	max_upgrades = 2
 	tool_qualities = list(QUALITY_HAMMERING = 5)
 
+/obj/item/weapon/tool/disciplinary_action
+	name = "Disciplinary Action"
+	desc = "A long whip of steel chains used by Blackshield for when someone acts out of line."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "chain"
+	item_state = "chain"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_DANGEROUS
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 2)
+	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
+	max_upgrades = 3
+	tool_qualities = list(QUALITY_HAMMERING = 5)
+
+
 //Swords
 
 /obj/item/weapon/tool/sword
@@ -375,7 +415,7 @@
 
 /obj/item/weapon/tool/sword/katana
 	name = "katana"
-	desc = "Modern japanese-style blade that has no curve to it. This one looks pretty sharp."
+	desc = "Modern Japanese-style blade that has no curve to it. This one looks pretty sharp."
 	icon_state = "katana"
 	item_state = "katana"
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
@@ -385,7 +425,7 @@
 
 /obj/item/weapon/tool/sword/katana_makeshift
 	name = "makeshift katana"
-	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where there's a will and a weeb there's a way."
+	desc = "Modern Japanese-style blade that has no curve to it. This one is two knives welded together, proving where there's a will and a weeb there's a way."
 	icon_state = "katana_improv"
 	item_state = "katana_improv"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2) //twice the value of a kitche knife

@@ -245,8 +245,6 @@
 		return
 	limb_efficiency = (limb_efficiency + owner.get_specific_organ_efficiency(OP_BLOOD_VESSEL, organ_tag)) / 3
 
-
-
 /obj/item/organ/external/proc/update_bionics_hud()
 	switch(organ_tag)
 		if(BP_L_ARM)
@@ -303,7 +301,9 @@
 				continue
 			to_chat(usr, SPAN_DANGER("There is \a [I] sticking out of it."))
 	return
-B
+
+#define MAX_MUSCLE_SPEED -0.5
+
 /obj/item/organ/external/proc/get_tally()
 	if(is_broken() && !(status & ORGAN_SPLINTED))
 		. += 3
@@ -325,7 +325,9 @@ B
 	if(status & ORGAN_SPLINTED)
 		. += 0.5
 
-	. += (-(limb_efficiency / 100 - 1) * 1.5)	//0 at 100 efficiency, -0.75 at 150, +0.75 at 50
+	var/muscle_eff = owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
+	muscle_eff = muscle_eff - (muscle_eff/(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag)/100)) //Need more nerves to control those new muscles
+	. += max(-(muscle_eff/ 100)/4, MAX_MUSCLE_SPEED)
 
 	. += tally
 
@@ -828,8 +830,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 // Checks if the limb should get fractured by now
 /obj/item/organ/external/proc/should_fracture()
-	var/bone_efficiency = owner.get_specific_organ_efficiency(OP_BONE, organ_tag)
-	return config.bones_can_break && !BP_IS_ROBOTIC(src) && (brute_dam > ((min_broken_damage * ORGAN_HEALTH_MULTIPLIER) * (bone_efficiency / 100)))
+	if(owner)
+		var/bone_efficiency = owner.get_specific_organ_efficiency(OP_BONE, organ_tag)
+		return config.bones_can_break && (brute_dam > ((min_broken_damage * ORGAN_HEALTH_MULTIPLIER) * (bone_efficiency / 100)))
 
 // Fracture the bone in the limb
 /obj/item/organ/external/proc/fracture()
@@ -932,9 +935,6 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 		return english_list(descriptors)
 
-	. = ""
-	if((status & ORGAN_CUT_AWAY) && !is_stump() && !(parent && parent.status & ORGAN_CUT_AWAY))
-		. += "tear at [amputation_point] so severe that it hangs by a scrap of flesh"
 	//Normal organic organ damage
 	var/list/wound_descriptors = list()
 	if(open > 1)

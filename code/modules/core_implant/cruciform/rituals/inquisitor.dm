@@ -400,4 +400,3 @@
 	new /obj/item/weapon/storage/belt/security/neotheology(usr.loc)
 	new /obj/item/clothing/suit/space/void/crusader(usr.loc)
 	set_personal_cooldown(user)
-

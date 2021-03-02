@@ -232,7 +232,11 @@
     desc = "Medical Access"
     region = ACCESS_REGION_MEDBAY
 
-// /var/const/free_access_id = 38
+/var/const/access_medical_suits = 38
+/datum/access/access_medical_suits
+    id = access_medical_suits
+    desc = "Suit Sensors Access"
+    region = ACCESS_REGION_MEDBAY
 
 /var/const/access_virology = 39
 /datum/access/virology

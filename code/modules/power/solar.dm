@@ -52,6 +52,7 @@
 		S.glass_type = /obj/item/stack/material/glass
 		S.anchored = 1
 	S.loc = src
+
 	if(S.glass_type == /obj/item/stack/material/glass/reinforced) //if the panel is in reinforced glass
 		health *= 2 								 //this need to be placed here, because panels already on the map don't have an assembly linked to
 		glass_power = 1.1 //1650
@@ -65,7 +66,6 @@
 	update_icon()
 
 /obj/machinery/power/solar/attackby(obj/item/weapon/I, mob/user)
-
 	if(QUALITY_PRYING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_PRYING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			var/obj/item/solar_assembly/S = locate() in src
@@ -229,6 +229,10 @@
 	var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
 	if(tracker)
 		usable_qualities.Add(QUALITY_PRYING)
+
+	if(istype(I, /obj/item/stack/material/cyborg))
+		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]. Use a sheet loader with glass inside it to build!"))
+		return //Prevents borgs throwing their stuff into it
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)

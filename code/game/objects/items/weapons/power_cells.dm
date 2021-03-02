@@ -85,7 +85,7 @@
 
 /obj/item/weapon/cell/large/potato
 	name = "potato battery"
-	desc = "A rechargable starch based power cell."
+	desc = "A rechargeable starch based power cell."
 	origin_tech = list(TECH_POWER = 1)
 	icon = 'icons/obj/power.dmi'
 	icon_state = "potato_cell"
@@ -140,7 +140,7 @@
 
 /obj/item/weapon/cell/medium/moebius
 	name = "Lonestar \"Power-Geyser 800M\""
-	desc = "Lonestar-brand rechargeable M-standardized power cell. This one is as cheap as Lonestar models come."
+	desc = "Lonestar branded rechargeable M-standardized power cell. This one is as cheap as Lonestar models come."
 	icon_state = "meb_m_st"
 	maxcharge = 800
 
@@ -153,21 +153,21 @@
 
 /obj/item/weapon/cell/medium/moebius/super
 	name = "Soteria \"Power-Geyser 1200M\""
-	desc = "Soteria Institute-brand rechargeable M-standardized power cell. This industrial version can store even more energy."
+	desc = "Soteria Institute branded rechargeable M-standardized power cell. This industrial version can store even more energy."
 	icon_state = "meb_m_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 1200
 
 /obj/item/weapon/cell/medium/moebius/hyper
 	name = "Soteria \"Power-Geyser 1400M\""
-	desc = "Soteria Institute-brand rechargeable M-standardized power cell. Regarded as the second most powerful cell on the market."
+	desc = "Soteria Institute branded rechargeable M-standardized power cell. Regarded as the second most powerful cell on the market."
 	icon_state = "meb_m_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1400
 
 /obj/item/weapon/cell/medium/moebius/omega
 	name = "Soteria \"Omega-Geyser 1600M\""
-	desc = "Soteria Institute-brand rechargeable M-standardized power cell. This one being part of the Omega line, making it the be-all-end-all power cell of its type, yet to hit the open market."
+	desc = "Soteria Institute branded rechargeable M-standardized power cell. This one being part of the Omega line, making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_m_omega"
 	matter = list(MATERIAL_STEEL = 9, MATERIAL_PLASTIC = 9, MATERIAL_SILVER = 6, MATERIAL_GOLD = 3) //DEAR LOAD WHAT ARE THOSE COSTS?
 	origin_tech = list(TECH_POWER = 7)
@@ -213,14 +213,14 @@
 
 /obj/item/weapon/cell/small/super
 	name = "Lonestar \"Robustcell 300S\""
-	desc = "Lonestar-brand rechargeable S-standardized power cell. This industrial version can store even more energy."
+	desc = "Lonestar branded rechargeable S-standardized power cell. This industrial version can store even more energy."
 	icon_state = "s_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 300
 
 /obj/item/weapon/cell/small/hyper
 	name = "Lonestar \"Robustcell-X 500S\""
-	desc = "Lonestar-brand rechargeable S-standardized power cell. This is the top of the class most advanced version of cell on the market."
+	desc = "Lonestar branded rechargeable S-standardized power cell. This is the top of the class most advanced version of cell on the market."
 	icon_state = "s_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 500
@@ -240,21 +240,21 @@
 
 /obj/item/weapon/cell/small/moebius/super
 	name = "Soteria \"Power-Geyser 300S\""
-	desc = "Soteria Institute-brand rechargeable S-standardized power cell. This industrial version can store even more energy."
+	desc = "Soteria Institute branded rechargeable S-standardized power cell. This industrial version can store even more energy."
 	icon_state = "meb_s_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 300
 
 /obj/item/weapon/cell/small/moebius/hyper
 	name = "Soteria \"Power-Geyser 400S\""
-	desc = "Soteria Institute-brand rechargeable S-standardized power cell. Regarded as the second most powerful cell on the market."
+	desc = "Soteria Institute branded rechargeable S-standardized power cell. Regarded as the second most powerful cell on the market."
 	icon_state = "meb_s_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 400
 
 /obj/item/weapon/cell/small/moebius/omega
 	name = "Soteria \"Omega-Geyser 500S\""
-	desc = "Soteria Institute-brand rechargeable S-standardized power cell. This one being part of the Omega line making it the be-all-end-all power cell of its type, yet to hit the open market."
+	desc = "Soteria Institute branded rechargeable S-standardized power cell. This one being part of the Omega line making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_s_omega"
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 1) //DEAR LOAD WHAT ARE THOSE COSTS?
 	origin_tech = list(TECH_POWER = 7)
@@ -292,7 +292,7 @@
 // Hand crank
 /obj/item/device/manual_charger
 	name = "manual recharger"
-	desc = "A basic hand crank recharger utilising a manual mechanism."
+	desc = "A basic hand crank recharger utilizing a manual mechanism."
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "centrifuge_makeshift"
 	matter = list(MATERIAL_STEEL = 30)

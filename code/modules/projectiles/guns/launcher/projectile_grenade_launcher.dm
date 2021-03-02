@@ -10,7 +10,7 @@
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_WOOD = 10)
-	price_tag = 3000
+	price_tag = 2000
 	caliber = CAL_GRENADE
 	load_method = SINGLE_CASING
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)

@@ -184,6 +184,7 @@
 	vend_delay = 34
 	icon_state = "cigs"
 	products = list(/obj/item/weapon/storage/fancy/cigarettes = 7,
+				/obj/item/weapon/storage/fancy/cigarettes/lonestar = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 7,
 				/obj/item/weapon/storage/fancy/cigarettes/brouzouf = 7,
@@ -215,40 +216,43 @@
 				/obj/item/weapon/flame/lighter/zippo/gonzo = 4,
 				/obj/item/weapon/flame/lighter/zippo/bullet = 4,)
 	contraband = list(/obj/item/weapon/flame/lighter/zippo/communist = 2,
-				/obj/item/weapon/storage/fancy/cigarettes/khi = 2)
-	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 80,
-				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 140,
-				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 90,
-				/obj/item/weapon/storage/fancy/cigarettes/brouzouf = 110,
-				/obj/item/weapon/storage/fancy/cigarettes/frozen = 125,
-				/obj/item/weapon/storage/fancy/cigarettes/shodan = 150,
-				/obj/item/weapon/storage/fancy/cigarettes/toha = 200,
-				/obj/item/weapon/storage/fancy/cigarettes/fortress = 100,
-				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 100,
-				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 100,
-				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry = 50,
-				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/banana = 50,
-				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/lemon = 50,
-				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/nicotine = 50,
-				/obj/item/weapon/storage/box/matches = 25,
-				/obj/item/weapon/flame/lighter/random = 50,
-				/obj/item/weapon/flame/lighter/zippo = 100,
-				/obj/item/weapon/flame/lighter/zippo/blue = 100,
-				/obj/item/weapon/flame/lighter/zippo/red = 100,
-				/obj/item/weapon/flame/lighter/zippo/gold = 100,
-				/obj/item/weapon/flame/lighter/zippo/rainbow = 100,
-				/obj/item/weapon/flame/lighter/zippo/engraved = 100,
-				/obj/item/weapon/flame/lighter/zippo/black = 100,
-				/obj/item/weapon/flame/lighter/zippo/moff = 100,
-				/obj/item/weapon/flame/lighter/zippo/ironic = 100,
-				/obj/item/weapon/flame/lighter/zippo/capitalist = 100,
-				/obj/item/weapon/flame/lighter/zippo/royal = 100,
-				/obj/item/weapon/flame/lighter/zippo/gonzo = 100,
-				/obj/item/weapon/flame/lighter/zippo/bullet = 100,
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 2,
+				/obj/item/weapon/storage/fancy/cigarettes/comred = 1)
+	prices = list(/obj/item/weapon/storage/fancy/cigarettes = 40,
+				/obj/item/weapon/storage/fancy/cigarettes/lonestar = 35,
+				/obj/item/weapon/storage/fancy/cigarettes/ishimura = 70,
+				/obj/item/weapon/storage/fancy/cigarettes/tannhauser = 45,
+				/obj/item/weapon/storage/fancy/cigarettes/brouzouf = 55,
+				/obj/item/weapon/storage/fancy/cigarettes/frozen = 70,
+				/obj/item/weapon/storage/fancy/cigarettes/shodan = 75,
+				/obj/item/weapon/storage/fancy/cigarettes/toha = 100,
+				/obj/item/weapon/storage/fancy/cigarettes/fortress = 50,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressred = 50,
+				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 50,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry = 25,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/banana = 25,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/lemon = 25,
+				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/nicotine = 25,
+				/obj/item/weapon/storage/box/matches = 10,
+				/obj/item/weapon/flame/lighter/random = 25,
+				/obj/item/weapon/flame/lighter/zippo = 50,
+				/obj/item/weapon/flame/lighter/zippo/blue = 50,
+				/obj/item/weapon/flame/lighter/zippo/red = 50,
+				/obj/item/weapon/flame/lighter/zippo/gold = 50,
+				/obj/item/weapon/flame/lighter/zippo/rainbow = 50,
+				/obj/item/weapon/flame/lighter/zippo/engraved = 50,
+				/obj/item/weapon/flame/lighter/zippo/black = 50,
+				/obj/item/weapon/flame/lighter/zippo/moff = 50,
+				/obj/item/weapon/flame/lighter/zippo/ironic = 50,
+				/obj/item/weapon/flame/lighter/zippo/capitalist = 50,
+				/obj/item/weapon/flame/lighter/zippo/royal = 50,
+				/obj/item/weapon/flame/lighter/zippo/gonzo = 50,
+				/obj/item/weapon/flame/lighter/zippo/bullet = 50,
 				/obj/item/weapon/flame/lighter/zippo/communist = 500,
-				/obj/item/weapon/storage/fancy/cigar = 500,
-				/obj/item/clothing/mask/vape = 300,
-				/obj/item/weapon/storage/fancy/cigarettes/khi = 500)
+				/obj/item/weapon/storage/fancy/cigar = 250,
+				/obj/item/clothing/mask/vape = 150,
+				/obj/item/weapon/storage/fancy/cigarettes/khi = 500,
+				/obj/item/weapon/storage/fancy/cigarettes/comred = 525)
 
 
 //FOR ACTORS GUILD - mainly props that cannot be spawned otherwise
@@ -300,6 +304,7 @@
 					/obj/item/weapon/storage/box/costume/soviet = 2,
 					/obj/item/weapon/storage/box/costume/syndicate = 2,
 					/obj/item/weapon/storage/box/costume/techpriest = 2,
+					/obj/item/weapon/storage/box/costume/techpriest_explorator = 2,
 					/obj/item/weapon/storage/box/costume/xeno = 2,
 					/obj/item/weapon/storage/box/costume/surplusanimal = 2,
 					/obj/item/weapon/storage/box/costume/surplusgeneric = 2,
@@ -352,6 +357,7 @@
 					/obj/item/weapon/storage/box/costume/soviet = 100,
 					/obj/item/weapon/storage/box/costume/syndicate = 100,
 					/obj/item/weapon/storage/box/costume/techpriest = 100,
+					/obj/item/weapon/storage/box/costume/techpriest_explorator = 150,
 					/obj/item/weapon/storage/box/costume/xeno = 100,
 					/obj/item/weapon/storage/box/costume/surplusanimal = 200,
 					/obj/item/weapon/storage/box/costume/surplusgeneric = 200,
@@ -425,7 +431,7 @@
 	products = list(
 					/obj/item/weapon/paper/fortune = 30)
 	prices = list(
-					/obj/item/weapon/paper/fortune = 50)
+					/obj/item/weapon/paper/fortune = 25)
 
 /obj/machinery/vending/fortune/postvend_effect()
 	playsound(loc, 'sound/machines/fortune_riff.ogg', 100, 1)

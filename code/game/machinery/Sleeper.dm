@@ -20,8 +20,8 @@
 	var/list/level1 = list("tricordrazine" ="Tricordrazine")
 	var/list/level2 = list("spaceacillin" = "Spaceacillin")
 	var/list/level3 = list("alkysine" = "Alkysine")
-	var/list/level4 = list("leporazine" = "Leporazine")
-	var/list/level5 = list("oxycodone" = "Oxycodone")
+	var/list/level4 = list("hyronalin" = "Hyronalin")
+	var/list/level5 = list("arithrazine" = "Arithrazine")
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 15
@@ -36,7 +36,7 @@
 	color = "#a4bdba"
 	circuit = /obj/item/weapon/circuitboard/sleeper/hyper
 	level0 = list(
-		"inaprovaline" = "Inaprovaline", "chloralhydrate" = "Chloral Hydrate", "tramadol" = "Tramadol", "carthatoline" = "Carthatoline", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline")
+		"tricordrazine" ="Tricordrazine", "tramadol" = "Tramadol", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline", "carthatoline" = "Carthatoline", "peridaxon" = "Peridaxon")
 
 /obj/machinery/sleeper/Initialize()
 	. = ..()

@@ -95,12 +95,12 @@
 	var/obj/item/I = CS.find_item(user)
 
 	if(!I)
-		to_chat(user, SPAN_WARNING("You can't find required item!"))
+		to_chat(user, SPAN_WARNING("You can't find the required item!"))
 		return
 
 	//Robots can craft things on the floor
 	if(ishuman(user) && !I.is_held())
-		to_chat(user, SPAN_WARNING("You should hold [I] in hands for doing that!"))
+		to_chat(user, SPAN_WARNING("You should be holding [I] in your hands for this!"))
 		return
 
 	if(!CS.apply(I, user, null, src))

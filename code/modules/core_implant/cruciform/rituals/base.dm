@@ -38,6 +38,19 @@
 	H.adjustToxLoss(5)
 	return TRUE
 
+/* -Currently doesn't work, will spend more time fixing it later or replacing it with a more functional method. -Kaz
+/datum/ritual/cruciform/base/flare
+	name = "Holy Light"
+	phrase = "Lucerna pedibus meis verbum tuum, et lumen semitis meis."
+	desc = "Litany of pilgrims that creates a small light for some time."
+	power = 15 //Cheap but not tooo cheap
+
+/datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+	playsound(src, 'sound/effects/snap.ogg', 50, 1)
+	new /obj/effect/sparks(src)
+	new /obj/effect/effect/smoke/illumination(src, brightness=max(6), lifetime=30000) //Not as good as a flare or flare shell but its almost free!
+	return TRUE
+*/
 
 /datum/ritual/cruciform/base/entreaty
 	name = "Entreaty"

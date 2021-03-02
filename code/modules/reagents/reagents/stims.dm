@@ -36,7 +36,7 @@
 /datum/reagent/stim/ishigrape
 	name = "Ishimura Special"
 	id = "ishispec"
-	description = "A non-addictive stimulent found in Ishimura cigarettes. It aids in clearing the mind and focusing, a favorite by researchers and scientists."
+	description = "A non-addictive stimulant found in Ishimura cigarettes. It aids in clearing the mind and focusing, a favorite by researchers and scientists."
 	taste_description = "grapes"
 	reagent_state = LIQUID
 	color = "#863333"
@@ -131,7 +131,7 @@
 /datum/reagent/stim/bouncer
 	name = "Bouncer"
 	id = "bouncer"
-	description = "Stimulator that boost regenerative capabilities. Quite often issued to crew operating in hazard enviroments."
+	description = "Stimulator that boost regenerative capabilities. Quite often issued to crew operating in hazardous environments."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#682f93"
@@ -325,7 +325,7 @@
 /datum/reagent/stim/turbo
 	name = "TURBO"
 	id = "turbo"
-	description = "Potent mix of cardiovascular and neuro stimulators. Used by sharpshooters to increase accuracy."
+	description = "Potent mix of cardiovascular and neurostimulators. Used by sharpshooters to increase accuracy."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#f22168"
@@ -357,7 +357,7 @@
 /datum/reagent/stim/party_drops
 	name = "Party Drops"
 	id = "party drops"
-	description = "Stimulating substance which pumps intelectual capabilities to theoretical maximum. Used as delicacy by some high ranking scientists."
+	description = "Stimulating substance which pumps intellectual capabilities to theoretical maximum. Used as delicacy by some high ranking scientists."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ffb3b7"
@@ -473,8 +473,8 @@
 	addiction_chance = 0
 
 /datum/reagent/stim/tatonka_milk/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "lodge_milk")
-	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC, STIM_TIME, "lodge_milk")
 
 /datum/reagent/stim/tatonka_milk/overdose(mob/living/carbon/M, alien)
 	if(prob(5 - (3 * M.stats.getMult(STAT_TGH))))
@@ -493,8 +493,8 @@
 	addiction_chance = 0
 
 /datum/reagent/stim/tangu_milk/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "lodge_milk")
-	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "lodge_milk")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "lodge_milk")
 
 /datum/reagent/stim/tangu_milk/overdose(mob/living/carbon/M, alien)
 	if(prob(5 - (3 * M.stats.getMult(STAT_TGH))))

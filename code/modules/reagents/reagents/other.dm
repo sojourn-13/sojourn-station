@@ -5,7 +5,7 @@
 /datum/reagent/other/crayon_dust
 	name = "Crayon dust"
 	id = "crayon_dust"
-	description = "Intensely coloured powder obtained by grinding crayons."
+	description = "Intensely colored powder obtained by grinding crayons."
 	taste_description = "the back of class"
 	reagent_state = LIQUID
 	color = "#888888"
@@ -260,7 +260,7 @@
 /datum/reagent/other/matter_deconstructor //Currently uncraftable, used in excelsior reclaimer
 	name = "Matter deconstructor"
 	id = "deconstructor"
-	description = "A celluose based combound able to deconstruct matter into it's base components, not 100% effective."
+	description = "A cellulose-based compound able to deconstruct matter into it's base components, not 100% effective."
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#DC7633"

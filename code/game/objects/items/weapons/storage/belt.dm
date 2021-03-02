@@ -77,7 +77,11 @@
 		/obj/item/weapon/book/ritual/cruciform,
 		/obj/item/weapon/implant/core_implant/cruciform,
 		/obj/item/weapon/soap,
-		/obj/item/weapon/reagent_containers/spray/cleaner
+		/obj/item/weapon/reagent_containers/spray/cleaner,
+		/obj/item/weapon/tool/knife/dagger/nt,
+		/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors,
+		/obj/item/weapon/gun/energy/plasma/martyr,
+		/obj/item/weapon/gun/energy/ntpistol
 	)
 
 /obj/item/weapon/storage/belt/utility/handmade
@@ -298,6 +302,10 @@
 		/obj/item/weapon/tool/knife/neotritual,
 		/obj/item/weapon/gun/energy/crossbow,
 		/obj/item/weapon/gun/energy/taser, //specially fitted to hold the counselor
+		/obj/item/weapon/tool/knife/dagger/nt,
+		/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors,
+		/obj/item/weapon/gun/energy/plasma/martyr,
+		/obj/item/weapon/gun/energy/ntpistol
 	)
 
 /obj/item/weapon/storage/belt/champion

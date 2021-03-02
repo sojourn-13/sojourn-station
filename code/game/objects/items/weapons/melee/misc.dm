@@ -43,14 +43,14 @@
 	if(toolbox)
 		if(istype(C, /obj/item/weapon/tool/wirecutters))
 			if(reinforced)
-				to_chat(user, SPAN_NOTICE("You cutted up the tapes from [src]."))
+				to_chat(user, SPAN_NOTICE("You cut up the tapes from [src]."))
 				reinforced = FALSE
 			else
 				to_chat(user, SPAN_NOTICE("You carefully cut cables from [src]."))
 				break_apart(user)
 
 		if(istype(C, /obj/item/weapon/tool/tape_roll))
-			to_chat(user, SPAN_NOTICE("You begins to tie [src] with [C]..."))
+			to_chat(user, SPAN_NOTICE("You begin to tie [src] with [C]..."))
 			if(do_after(user, 50))
 				if(!reinforced)
 					to_chat(user, SPAN_NOTICE("You reinforce [src]."))
