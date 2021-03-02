@@ -418,20 +418,13 @@
 /obj/machinery/portable_atmospherics/hydroponics/proc/evolve_species(var/strain)
 
 
-	visible_message(SPAN_DANGER("inside of evolve_species"))
 	var/previous_plant = seed.display_name
-	//var/setterupper = seed.get_trait(TRAIT_PLANT_ICON)
-	visible_message(SPAN_DANGER("setterupper was set to [seed.get_trait(TRAIT_PLANT_ICON)]"))
 	var/newseed = strain
-	visible_message(SPAN_DANGER("newseed is equal to [newseed]"))
 	if (newseed in plant_controller.seeds)
 		seed = plant_controller.seeds[newseed]
-		visible_message(SPAN_DANGER("newseed was apparently in plant_controller"))
 	else
-		visible_message(SPAN_DANGER("newseed was not in plant_controller.seeds"))
 		return
 
-	//seed.set_trait(TRAIT_PLANT_ICON, previous_plant.get_trait(TRAIT_PLANT_ICON))
 	dead = 0
 	mutate(1)
 	age = 0

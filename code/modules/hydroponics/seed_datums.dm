@@ -356,7 +356,7 @@
 	seed_name = "ambrosia robusto"
 	display_name = "ambrosia robusto"
 	mutants = null
-	chems = list("nicotine" = list(5,20), "space_drugs" = list(1,50))
+	chems = list("nicotine" = list(5,20))
 
 /datum/seed/ambrosia/robusto/New()
 	..()
@@ -1363,8 +1363,8 @@
 
 /datum/seed/telriis
 	name = "telriis"
-	seed_name = "telriis"
-	display_name = "telriis grass"
+	seed_name = "Telriis grass"
+	display_name = "Telriis grass"
 	chems = list("pwine" = list(1,5), "nutriment" = list(1,6))
 
 /datum/seed/telriis/New()
@@ -1382,8 +1382,8 @@
 
 /datum/seed/thaadra
 	name = "thaadra"
-	seed_name = "thaa'dra"
-	display_name = "thaa'dra lichen"
+	seed_name = "Thaa'dra lichen"
+	display_name = "Thaa'dra lichen"
 	chems = list("frostoil" = list(1,5),"nutriment" = list(1,5))
 
 /datum/seed/thaadra/New()
@@ -1398,10 +1398,12 @@
 	set_trait(TRAIT_PRODUCTION,9)
 	set_trait(TRAIT_YIELD,2)
 	set_trait(TRAIT_POTENCY,5)
+	set_trait(TRAIT_ALTER_TEMP, -5)
+	set_trait(TRAIT_IDEAL_HEAT, 276)
 
 /datum/seed/jurlmah
 	name = "jurlmah"
-	seed_name = "jurl'mah"
+	seed_name = "jurl'mah reeds"
 	display_name = "jurl'mah reeds"
 	chems = list("serotrotium" = list(1,5),"nutriment" = list(1,5))
 
@@ -1439,7 +1441,7 @@
 	name = "gelthi"
 	seed_name = "gelthi"
 	display_name = "gelthi plant"
-	chems = list("stoxin" = list(1,5),"capsaicin" = list(1,5),"nutriment" = list(1,5))
+	chems = list("coffee" = list(1,5),"nicotine" = list(1,5),"nutriment" = list(1,5))
 
 /datum/seed/gelthi/New()
 	..()
@@ -1455,7 +1457,7 @@
 
 /datum/seed/vale
 	name = "vale"
-	seed_name = "vale"
+	seed_name = "vale bush"
 	display_name = "vale bush"
 	chems = list("paracetamol" = list(1,5),"dexalin" = list(1,2),"nutriment"= list(1,5))
 
@@ -1474,7 +1476,7 @@
 
 /datum/seed/surik
 	name = "surik"
-	seed_name = "surik"
+	seed_name = "surik vine"
 	display_name = "surik vine"
 	chems = list("impedrezene" = list(1,3),"synaptizine" = list(1,2),"nutriment" = list(1,5))
 

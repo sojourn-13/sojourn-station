@@ -169,7 +169,9 @@
 	always_open = TRUE
 	can_stock = list(/obj/item/seeds)
 
-	products = list(/obj/item/seeds/bananaseed = 3,
+	products = list(
+					/obj/item/seeds/ambrosiarobusto = 3,
+					/obj/item/seeds/bananaseed = 3,
 					/obj/item/seeds/berryseed = 3,
 					/obj/item/seeds/carrotseed = 3,
 					/obj/item/seeds/chantermycelium = 3,
@@ -197,10 +199,16 @@
 					/obj/item/seeds/cabbageseed = 3,
 					/obj/item/seeds/grapeseed = 3,
 					/obj/item/seeds/pumpkinseed = 3,
+					/obj/item/seeds/thaadra = 3,
 					/obj/item/seeds/cherryseed = 3,
 					/obj/item/seeds/plastiseed = 3,
-					/obj/item/seeds/riceseed = 3)
-	contraband = list(/obj/item/seeds/amanitamycelium = 2,
+					/obj/item/seeds/riceseed = 3,
+					/obj/item/seeds/thaadra = 2,
+					/obj/item/seeds/gelthi = 2,
+					)
+
+	contraband = list(
+					/obj/item/seeds/amanitamycelium = 2,
 					/obj/item/seeds/glowshroom = 2,
 					/obj/item/seeds/ambrosiavulgarisseed = 2,
 					/obj/item/seeds/libertymycelium = 2,
@@ -208,7 +216,13 @@
 					/obj/item/seeds/nettleseed = 2,
 					/obj/item/seeds/reishimycelium = 2,
 					/obj/item/seeds/reishimycelium = 2,
-					/obj/item/seeds/shandseed = 2)
+					/obj/item/seeds/shandseed = 2,
+					/obj/item/seeds/jurlmah = 2,
+					/obj/item/seeds/amauri = 2,
+					/obj/item/seeds/vale = 2,
+					/obj/item/seeds/surik = 2,
+					/obj/item/seeds/telriis = 2,
+					 )
 	auto_price = FALSE
 
 /**
@@ -217,6 +231,7 @@
  * This needs to be customized to fetch the actual names of the seeds, otherwise
  * the machine would simply list "packet of seeds" times 20
  */
+
 /obj/machinery/vending/hydroseeds/build_inventory()
 	var/list/all_products = list(
 		list(products, CAT_NORMAL),

@@ -11,6 +11,7 @@
 		new /obj/item/weapon/storage/backpack/sport/botanist(src)
 	else
 		new /obj/item/weapon/storage/backpack/satchel/botanist(src)
+
 	new /obj/item/clothing/suit/rank/botanist(src)
 	new /obj/item/weapon/storage/bag/produce(src)
 	new /obj/item/clothing/under/rank/botanist(src)
@@ -22,11 +23,14 @@
 	new /obj/item/weapon/tool/wirecutters(src)
 	new /obj/item/weapon/reagent_containers/spray/plantbgone(src)
 	new /obj/item/clothing/gloves/botanic_leather(src)
+	new /obj/item/clothing/mask/gas/alternate(src)
+	new /obj/item/weapon/tank/air(src)
 
-/obj/structure/closet/secure_closet/personal/hydroponics/public
+/obj/structure/closet/secure_closet/personal/hydroponics/
 	name = "botanist's locker"
 	req_access = list(access_hydroponics)
 	access_occupy = list()
+	icon_state = "hydro"
 
 /obj/structure/closet/secure_closet/personal/agrolyte
 	name = "agrolyte's locker"
