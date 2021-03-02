@@ -535,7 +535,7 @@
 	name = "destroyingangel"
 	seed_name = "destroying angel"
 	display_name = "destroying angel mushrooms"
-	mutants = null
+	mutants = list("gravefiller")
 	chems = list("nutriment" = list(1,50), "amatoxin" = list(13,3), "psilocybin" = list(1,25))
 
 /datum/seed/mushroom/poison/death/New()
@@ -547,6 +547,21 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#EDE8EA")
 	set_trait(TRAIT_PLANT_COLOUR,"#E6D8DD")
 	set_trait(TRAIT_PLANT_ICON,"mushroom5")
+
+/datum/seed/mushroom/poison/grave
+	name = "gravefiller"
+	seed_name = "grave filler"
+	display_name = "Grave Filler"
+	mutants = null
+	chems = list("nutriment" = list(1,50), "chemweapon1" = list(5,7), "psilocybin" = list(1,15), "zombiepowder" = list(13,3))
+	exude_gasses = list("carbon_dioxide" = 6)
+
+/datum/seed/mushroom/poison/grave/New()
+	..()
+	set_trait(TRAIT_PRODUCT_ICON, "mushroom10")
+	set_trait(TRAIT_PLANT_ICON, "mushroom2")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#0099CC")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF9900")
 
 /datum/seed/mushroom/towercap
 	name = "towercap"
