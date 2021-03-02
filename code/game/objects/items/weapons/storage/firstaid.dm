@@ -270,6 +270,102 @@
 		item_state = "[initial(item_state)]"
 	..()
 
+/obj/item/weapon/storage/firstaid/soteria
+	name = "Triage Kit"
+	desc = "A specialized triage kit, outfitted for Soteria personnel only. Contains everything a Doctor would ever need in a case of emergency, in a pinch."
+	icon_state = "triagekit"
+	item_state = "triagekit"
+	can_hold = list(
+		/obj/item/stack/medical,
+		/obj/item/device/scanner/health,
+		/obj/item/weapon/reagent_containers/syringe,
+		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/weapon/reagent_containers/hypospray,
+		/obj/item/weapon/reagent_containers/glass/bottle,
+		/obj/item/weapon/reagent_containers/glass/beaker,
+		/obj/item/weapon/reagent_containers/dropper,
+		/obj/item/weapon/tool/medmultitool,
+		)
+
+/obj/item/weapon/storage/firstaid/soteria/populate_contents()
+	if (empty) return
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/weapon/reagent_containers/glass/bottle/inaprovaline(src)
+	new /obj/item/weapon/reagent_containers/glass/bottle/antitoxin(src)
+	new /obj/item/weapon/reagent_containers/syringe/tricordrazine(src)
+	new /obj/item/device/scanner/health(src)
+	make_exact_fit()
+
+/obj/item/weapon/storage/firstaid/soteria/large
+	name = "Reinforced Triage Kit"
+	desc = "A reinforced, specialized triage kit outfitted for Soteria personnel only. This one is larger in capacity thanks to minor bluespace infusement, and should help Paramedics carry everything they need for any emergency."
+	icon_state = "rtk"
+	item_state = "rtk"
+	can_hold = list(
+		/obj/item/stack/medical,
+		/obj/item/device/scanner/health,
+		/obj/item/weapon/reagent_containers/syringe,
+		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/weapon/reagent_containers/hypospray,
+		/obj/item/weapon/reagent_containers/glass/bottle,
+		/obj/item/weapon/reagent_containers/glass/beaker,
+		/obj/item/weapon/reagent_containers/dropper,
+		)
+
+/obj/item/weapon/storage/firstaid/soteria/large/populate_contents()
+	if (empty) return
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
+	new /obj/item/weapon/reagent_containers/glass/bottle/inaprovaline(src)
+	new /obj/item/weapon/reagent_containers/glass/bottle/antitoxin(src)
+	new /obj/item/stack/medical/splint(src)
+	new /obj/item/weapon/reagent_containers/syringe/spaceacillin(src)
+	new /obj/item/device/scanner/health(src)
+	make_exact_fit()
+
+/obj/item/weapon/storage/firstaid/blackshield
+	name = "Corpsman's Bulk-Treatment Kit"
+	desc = "A compact version of Soteria creation, this high-capacity CBT Kit allows a Corpsman to carry all the necessary tools for battlefield triage." //Yes, it's exactly what you're thinking.
+	icon_state = "cbtk"
+	item_state = "cbtk"
+	can_hold = list(
+		/obj/item/stack/medical,
+		/obj/item/device/scanner/health,
+		/obj/item/weapon/reagent_containers/syringe,
+		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/weapon/reagent_containers/hypospray,
+		/obj/item/weapon/reagent_containers/glass/bottle,
+		/obj/item/weapon/reagent_containers/glass/beaker,
+		/obj/item/weapon/reagent_containers/dropper,
+		/obj/item/weapon/tool/medmultitool, //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
+		)
+
+/obj/item/weapon/storage/firstaid/blackshield/populate_contents()
+	if (empty) return
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
+	new /obj/item/weapon/reagent_containers/glass/bottle/stoxin(src)
+	new /obj/item/weapon/reagent_containers/glass/bottle/tricord(src)
+	new /obj/item/stack/medical/splint(src)
+	new /obj/item/weapon/reagent_containers/syringe/spaceacillin(src)
+	new /obj/item/device/scanner/health(src)
+	make_exact_fit() //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
+
 /*
  * Pill Bottles
  */
