@@ -106,6 +106,7 @@
 		var/obj/item/weapon/implant/core_implant/cruciform/C = get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
 		if (C)
 			stat("Cruciform", "[C.power]/[C.max_power]")
+			stat("Channeling Boost", "[C.channeling_boost]")
 
 	else if(statpanel("Perks"))
 		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
@@ -1052,7 +1053,7 @@ var/list/rank_prefix = list(\
 	else
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 
-/mob/living/carbon/human/proc/set_species(var/new_species, var/default_color)
+/mob/living/carbon/human/proc/set_species(var/new_species, var/default_color, var/rebuild_organs = TRUE)
 	if(!dna)
 		if(!new_species)
 			new_species = "Human"
@@ -1093,11 +1094,13 @@ var/list/rank_prefix = list(\
 
 	icon_state = lowertext(species.name)
 
-	if(species.has_process.len)
-		for(var/process in species.has_process)
-			internal_organs_by_efficiency[process] = list()
+	if(rebuild_organs)
+		if(species.has_process.len)
+			for(var/process in species.has_process)
+				internal_organs_by_efficiency[process] = list()
 
-	rebuild_organs()
+		rebuild_organs()
+
 	src.sync_organ_dna()
 	species.handle_post_spawn(src)
 
@@ -1195,14 +1198,15 @@ var/list/rank_prefix = list(\
 				new organ_type(src)
 
 		var/datum/category_item/setup_option/core_implant/I = Pref.get_option("Core implant")
-		if(I.implant_type)
-			var/obj/item/weapon/implant/core_implant/C = new I.implant_type
-			C.install(src)
-			C.activate()
-			if(mind)
-				C.install_default_modules_by_job(mind.assigned_job)
-				C.access.Add(mind.assigned_job.cruciform_access)
-				C.install_default_modules_by_path(mind.assigned_job)
+		if(I)
+			if(I.implant_type)
+				var/obj/item/weapon/implant/core_implant/C = new I.implant_type
+				C.install(src)
+				C.activate()
+				if(mind)
+					C.install_default_modules_by_job(mind.assigned_job)
+					C.access.Add(mind.assigned_job.cruciform_access)
+					C.install_default_modules_by_path(mind.assigned_job)
 
 	else
 		var/organ_type
@@ -1222,14 +1226,15 @@ var/list/rank_prefix = list(\
 			new organ_type(src)
 
 		if(checkprefcruciform)
-			var/datum/category_item/setup_option/core_implant/I = client.prefs.get_option("Core implant")
-			if(I.implant_type && (!mind || mind.assigned_role != "Robot"))
-				var/obj/item/weapon/implant/core_implant/C = new I.implant_type
-				C.install(src)
-				C.activate()
-				C.install_default_modules_by_job(mind.assigned_job)
-				C.access.Add(mind.assigned_job.cruciform_access)
-				C.install_default_modules_by_path(mind.assigned_job)
+			if(client)
+				var/datum/category_item/setup_option/core_implant/I = client.prefs.get_option("Core implant")
+				if(I.implant_type && (!mind || mind.assigned_role != "Robot"))
+					var/obj/item/weapon/implant/core_implant/C = new I.implant_type
+					C.install(src)
+					C.activate()
+					C.install_default_modules_by_job(mind.assigned_job)
+					C.access.Add(mind.assigned_job.cruciform_access)
+					C.install_default_modules_by_path(mind.assigned_job)
 
 	for(var/obj/item/organ/internal/carrion/C in organs_to_readd)
 		C.replaced(get_organ(C.parent_organ_base))

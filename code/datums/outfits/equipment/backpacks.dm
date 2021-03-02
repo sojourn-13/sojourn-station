@@ -26,7 +26,7 @@
 	is_default = TRUE
 
 /decl/backpack_outfit/duffelbag
-	name = "Duffelbag"
+	name = "Duffel Bag"
 	path = /obj/item/weapon/storage/backpack/duffelbag
 
 /* Code */

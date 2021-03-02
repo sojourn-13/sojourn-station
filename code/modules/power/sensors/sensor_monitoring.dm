@@ -5,7 +5,7 @@
 
 /obj/machinery/computer/power_monitor
 	name = "power monitoring console"
-	desc = "Computer designed to remotely monitor power levels around the station"
+	desc = "Computer designed to remotely monitor power levels around the colony"
 	icon_keyboard = "power_key"
 	icon_screen = "power_monitor"
 	light_color = COLOR_LIGHTING_ORANGE_MACHINERY

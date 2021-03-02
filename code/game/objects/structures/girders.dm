@@ -1,5 +1,5 @@
 /obj/structure/girder
-	name = "wall grider"
+	name = "wall girder"
 	desc = "The inner support structure of a wall."
 	icon_state = "girder"
 	anchored = 1
@@ -21,7 +21,7 @@
 
 //Low girders are used to build low walls
 /obj/structure/girder/low
-	name = "low wall grider"
+	name = "low wall girder"
 	matter = list(MATERIAL_STEEL = 3)
 	health = 120
 	cover = 25 //how much cover the girder provides against projectiles.
@@ -141,9 +141,9 @@
 
 		if(QUALITY_SCREW_DRIVING)
 			if(state == 2)
-				to_chat(user, SPAN_NOTICE("You start unsecuring support struts..."))
+				to_chat(user, SPAN_NOTICE("You start unfastening support struts..."))
 				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You unsecured the support struts!"))
+					to_chat(user, SPAN_NOTICE("You unfastened the support struts!"))
 					state = 1
 					return
 			if(anchored && reinforcing && !reinf_material)

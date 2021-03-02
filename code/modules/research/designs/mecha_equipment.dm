@@ -99,7 +99,7 @@
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
 
 /datum/design/research/item/mecha/weapon/ion
-	name = "mkIV ion heavy cannon"
+	name = "MkIV ion heavy cannon"
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
 
 /datum/design/research/item/mecha/weapon/grenade_launcher

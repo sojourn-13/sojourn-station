@@ -34,7 +34,6 @@
 	active_power_usage = 0
 
 	active = FALSE
-	area_radius = 9
 	damage = 40
 	max_targets = 10
 
@@ -116,6 +115,8 @@
 				var/prev_stat
 				for(var/stat in ALL_STATS)
 					var/datum/stat_mod/SM = mob.stats.getTempStat(stat, "nt_obelisk")
+					//if(mob.stats && mob.stats.getPerk(/datum/perk/channeling))
+					//	buff_power = buff_power * 2  // Channeling gives +1 stat point per disciple so it amounts to * 2
 					if(stat == stat_buff)
 						if(!SM)
 							message = "A wave of dizziness washes over you, and your mind is filled with a sudden insight into [stat]."

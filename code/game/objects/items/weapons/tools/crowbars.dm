@@ -28,7 +28,7 @@
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
 /obj/item/weapon/tool/crowbar/onestar
-	name = "greyson positronic crowbar"
+	name = "Greyson Positronic crowbar"
 	desc = "Looks like a classic one, but more durable. Has more space for mods too."
 	icon_state = "one_star_crowbar"
 	item_state = "onestar_crowbar"

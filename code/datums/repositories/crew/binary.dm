@@ -3,7 +3,8 @@
 	crew_data["alert"] = FALSE
 	if(!H.isSynthetic())
 		var/pulse = H.pulse()
-		if(pulse == PULSE_NONE || pulse == PULSE_THREADY)
+		var/obj/item/organ/internal/heart/O = H.random_organ_by_process(OP_HEART)
+		if(!O || (!BP_IS_ROBOTIC(O) && (pulse == PULSE_NONE || pulse == PULSE_THREADY)))
 			crew_data["alert"] = TRUE
 		if(H.getOxyLoss() >= 20)
 			crew_data["alert"] = TRUE

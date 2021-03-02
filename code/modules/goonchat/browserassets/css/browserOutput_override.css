@@ -46,11 +46,14 @@
 /* Languages */
 
 .monkey					{color: #22228B;}
+.chthive				{color: #4f8529;}
 .rough					{font-family: Trebuchet MS, cursive, sans-serif;}
 .say_quote				{font-family: Georgia, Verdana, sans-serif;}
 .russian				{color: #635d17}
 .serbian				{color: #Ad6f1d}
 .jive					{color: #666666}
+.jana					{color: #993399}
+.latin					{color: #deb63d}
 
 .good                   {color: #4f8529; font-weight: bold;}
 .bad                    {color: #ee0000; font-weight: bold;}

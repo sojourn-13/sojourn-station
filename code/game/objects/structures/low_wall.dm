@@ -42,7 +42,7 @@
 
 //Derelict tileset
 /obj/structure/low_wall/onestar
-	name = "greyson low wall"
+	name = "Greyson low wall"
 	wall_color = "#FFFFFF"
 	icon_state = "greyson"
 

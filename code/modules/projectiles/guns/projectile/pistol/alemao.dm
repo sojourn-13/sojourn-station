@@ -7,7 +7,7 @@
 	item_state = "alemao"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_PISTOL
-	mag_well = MAG_WELL_H_PISTOL
+	mag_well = MAG_WELL_PISTOL|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 4)
 	price_tag = 550
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)

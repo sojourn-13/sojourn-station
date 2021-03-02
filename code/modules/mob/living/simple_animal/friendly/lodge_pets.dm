@@ -25,7 +25,6 @@
 	old_y = 0
 	default_pixel_x = -16
 	pixel_x = -16
-	pixel_y = 0
 	leather_amount = 6 //The amount of leather sheets dropped.
 	bones_amount = 8 //The amount of bone sheets dropped.
 	has_special_parts = TRUE //var for checking during the butcher process.
@@ -42,12 +41,7 @@
 /mob/living/simple_animal/tatonka/New()
 	udder = new(50)
 	udder.my_atom = src
-	tatonka_count += 1
 	..()
-
-/mob/living/simple_animal/tatonka/death()
-	..()
-	tatonka_count -= 1
 
 /mob/living/simple_animal/tatonka/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/weapon/reagent_containers/G = O
@@ -65,7 +59,7 @@
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")
-			if(!stat && offspring_left < 2)
+			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It moos happily.")
 				user.drop_item()
 				qdel(O)
@@ -103,9 +97,8 @@
 	if(!stat && prob(3) && offspring_left > 0)
 		visible_message("[src] [pick("squats down and moos.","begins making a huge racket.","begins mooing raucously.")]")
 		offspring_left--
-		var/mob/living/simple_animal/baby_tatonka/E = new(get_turf(src))
-		if(tatonka_count < MAX_TATONKA && prob(10))
-			START_PROCESSING(SSobj, E)
+	default_pixel_x = -16
+	pixel_x = -16
 
 //Baby Tatonka
 //Grows into a tatonka or a tangu
@@ -130,6 +123,8 @@
 	autoseek_food = 0
 	beg_for_food = 0
 	hunger_enabled = FALSE
+	default_pixel_x = -16
+	pixel_x = -16
 
 /mob/living/simple_animal/baby_tatonka/New()
 	..()
@@ -148,9 +143,8 @@
 			else
 				new /mob/living/simple_animal/tatonka(src.loc)
 			qdel(src)
-
-var/const/MAX_TATONKA = 5
-var/global/tatonka_count = 0
+	default_pixel_x = -16
+	pixel_x = -16
 
 //Tangu, the improved version of tatonka and thus rarer to produce.
 /mob/living/simple_animal/tatonka/tangu
@@ -211,9 +205,6 @@ var/global/tatonka_count = 0
 			new /mob/living/simple_animal/clucker(src.loc)
 			qdel(src)
 
-var/const/MAX_CLUCKERS = 10
-var/global/clucker_count = 0
-
 //clucker
 //Basically a mutant chicken that produces feathers, meat, and a single bit of bones if butchered by a hunter.
 /mob/living/simple_animal/clucker
@@ -248,21 +239,16 @@ var/global/clucker_count = 0
 	..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
-	chicken_count += 1
-
-/mob/living/simple_animal/clucker/death()
-	..()
-	chicken_count -= 1
 
 /mob/living/simple_animal/clucker/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "poppy")
-			if(!stat && eggsleft < 8)
+			if(!stat && eggsleft < 2)
 				user.visible_message("\blue [user] feeds [O] to [name]! It clucks happily.","\blue You feed [O] to [name]! It clucks happily.")
 				user.drop_item()
 				qdel(O)
-				eggsleft += rand(1, 4)
+				eggsleft += rand(1, 2)
 			else
 				to_chat(user, "\blue [name] doesn't seem hungry!")
 		else
@@ -280,8 +266,6 @@ var/global/clucker_count = 0
 		var/obj/item/weapon/reagent_containers/food/snacks/egg/clucker/E = new(get_turf(src))
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
-		if(clucker_count < MAX_CLUCKERS && prob(10))
-			START_PROCESSING(SSobj, E)
 
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/clucker/amount_grown = 0
@@ -316,13 +300,6 @@ var/global/clucker_count = 0
 	special_parts = list(/obj/item/animal_part/cerberus_snout)
 	var/offspring_left = 0
 
-var/const/MAX_CERBERUS = 4
-var/global/cerberus_count = 0
-
-/mob/living/simple_animal/hostile/helldiver/cerberus/New()
-	cerberus_count += 1
-	..()
-
 /mob/living/simple_animal/hostile/helldiver/cerberus/Life()
 	. = ..()
 	if(!.)
@@ -330,19 +307,12 @@ var/global/cerberus_count = 0
 	if(!stat && prob(3) && offspring_left > 0)
 		visible_message("[src] [pick("squats down and grunts.","begins making a huge racket.","begins snuffling raucously.")]")
 		offspring_left--
-		var/mob/living/simple_animal/baby_cerberus/E = new(get_turf(src))
-		if(cerberus_count < MAX_CERBERUS && prob(10))
-			START_PROCESSING(SSobj, E)
-
-/mob/living/simple_animal/hostile/helldiver/cerberus/death()
-	..()
-	cerberus_count -= 1
 
 /mob/living/simple_animal/hostile/helldiver/cerberus/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "mushroom")
-			if(!stat && offspring_left < 3)
+			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It snuffles happily.")
 				user.drop_item()
 				qdel(O)
@@ -375,6 +345,12 @@ var/global/cerberus_count = 0
 	bones_amount = 6 //The amount of bone sheets dropped.
 	has_special_parts = TRUE //var for checking during the butcher process.
 	special_parts = list(/obj/item/animal_part/chimera_fang)
+	default_pixel_x = -16
+	pixel_x = -16
+
+/mob/living/simple_animal/hostile/helldiver/cerberus/chimera/Life()
+	. =..()
+	default_pixel_x = -16
 	pixel_x = -16
 
 //Baby cerberus

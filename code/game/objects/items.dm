@@ -43,7 +43,11 @@
 	var/permeability_coefficient = 1 // for chemicals/diseases
 	var/siemens_coefficient = 1 // for electrical admittance/conductance (electrocution checks and shit)
 	var/slowdown = 0 // How much clothing is slowing you down. Negative values speeds you up
+
 	var/datum/armor/armor // Ref to the armor datum
+	var/datum/armor/armor_up // Ref to the armor datum
+	var/datum/armor/armor_down // Ref to the armor datum
+
 	var/list/allowed = list() //suit storage stuff.
 	var/obj/item/device/uplink/hidden/hidden_uplink = null // All items can have an uplink hidden inside, just remember to add the triggers.
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
@@ -160,7 +164,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.stats.getPerk(PERK_MARKET_PROF))
-			message += SPAN_NOTICE("\nThis item cost: [get_item_cost()][CREDITS]")
+			message += SPAN_NOTICE("\nThis item cost: [price_tag == null ? 0 : price_tag][CREDITS]")
 
 	return ..(user, distance, "", message)
 

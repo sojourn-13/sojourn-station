@@ -150,8 +150,8 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_GOLD  = 2, MATERIAL_SILVER = 2)
 
 /obj/item/weapon/stock_parts/scanning_module/guild
-	name = "overtooned scanning module"
-	desc = "A over engierned and exspective yet compact, high resolution phasic scanning module used in the construction of certain devices."
+	name = "over-tuned scanning module"
+	desc = "A over engineered and expensive yet compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "guild_scan_module"
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 4
@@ -168,14 +168,14 @@
 /obj/item/weapon/stock_parts/micro_laser/guild
 	name = "perfected micro-laser"
 	icon_state = "guild_laser"
-	desc = "A ultera-high micro laser with a perfected lens to increase productivtly."
+	desc = "A ultra-high micro laser with a perfected lens to increase productivity."
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_DIAMOND = 1)
 
 /obj/item/weapon/stock_parts/matter_bin/guild
-	name = "casted matter bin"
-	desc = "A supper matter bin with added compression casted onto the base itself for more effective storage."
+	name = "cast matter bin"
+	desc = "A supper matter bin with added compression cast onto the base itself for more effective storage."
 	icon_state = "guild_matter"
 	origin_tech = list(TECH_MATERIAL = 5)
 	rating = 4
@@ -226,7 +226,7 @@
 //greyson positronic stock parts (rating 5)
 
 /obj/item/weapon/stock_parts/capacitor/one_star
-	name = "greyson positronic capacitor"
+	name = "Greyson Positronic capacitor"
 	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
 	icon_state = "one_capacitor"
 	origin_tech = list(TECH_POWER = 7, TECH_MATERIAL = 7)
@@ -234,7 +234,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 
 /obj/item/weapon/stock_parts/scanning_module/one_star
-	name = "greyson positronic scanning module"
+	name = "Greyson Positronic scanning module"
 	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "one_scan_module"
 	origin_tech = list(TECH_MAGNET = 7)
@@ -242,7 +242,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 
 /obj/item/weapon/stock_parts/manipulator/one_star
-	name = "greyson positronic manipulator"
+	name = "Greyson Positronic manipulator"
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "one_mani"
 	origin_tech = list(TECH_MATERIAL = 7, TECH_DATA = 6)
@@ -250,7 +250,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2)
 
 /obj/item/weapon/stock_parts/micro_laser/one_star
-	name = "greyson positronic micro-laser"
+	name = "Greyson Positronic micro-laser"
 	icon_state = "one_laser"
 	desc = "A tiny laser used in certain devices."
 	origin_tech = list(TECH_MAGNET = 7)
@@ -258,7 +258,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 
 /obj/item/weapon/stock_parts/matter_bin/one_star
-	name = "greyson positronic matter bin"
+	name = "Greyson Positronic matter bin"
 	desc = "A container for hold compressed matter awaiting re-construction."
 	icon_state = "one_matter"
 	origin_tech = list(TECH_MATERIAL = 7)
@@ -269,7 +269,7 @@
 //alien stock parts (rating 6)
 
 /obj/item/weapon/stock_parts/capacitor/alien_capacitor
-	name = "Exothermal Seal"
+	name = "Exothermic Seal"
 	desc = "A can-shaped brass component, covered in scratch marks and weathered by time. A faint humming can be heard coming from its inner workings. Seems like it can be used in construction of certain devices."
 	icon_state = "alien_capacitor"
 	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 5)
@@ -301,7 +301,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 
 /obj/item/weapon/stock_parts/matter_bin/alien
-	name = "Recepticle"
+	name = "Receptacle"
 	desc = "A twisted and time-weathered metal contraption, that's slightly warm to the touch. Seems like it can be used in construction of certain devices."
 	icon_state = "alien_matter"
 	origin_tech = list(TECH_MATERIAL = 5)
@@ -349,7 +349,7 @@
 /obj/item/weapon/stock_parts/subspace/crystal
 	name = "ansible crystal"
 	icon_state = "ansible_crystal"
-	desc = "A crystal made from pure glass used to transmit laser databursts to subspace."
+	desc = "A crystal made from pure glass used to transmit laser data bursts to subspace."
 	origin_tech = list(TECH_MAGNET = 4, TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 2)
 

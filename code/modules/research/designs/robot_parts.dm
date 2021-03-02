@@ -67,8 +67,8 @@
 
 
 /datum/design/research/item/mechfab/robot/component/jetpack
-	name = "Robot Jetpack module"
-	desc = "Self refilling jetpack that makes the unit suitable for EVA work."
+	name = "Robot Jet Pack module"
+	desc = "Self refilling jet pack that makes the unit suitable for EVA work."
 	build_path = /obj/item/robot_parts/robot_component/jetpack
 	starts_unlocked = FALSE
 
@@ -130,16 +130,26 @@
 	build_path = /obj/item/borg/upgrade/arc_welder
 
 /datum/design/research/item/robot_upgrade/medical_hypo_upgrade
-	name = "Exspanded Medical Hypo Upgrade"
-	desc = "A smarter hypo synther to make more complex chems. Made for medical modules."
+	name = "Expanded Medical Hypo Upgrade"
+	desc = "A smarter hypo synthesizer to make more complex chemicals. Made for medical modules."
 	build_path = /obj/item/borg/upgrade/hypospray/medical
 
 /datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
-	name = "Exspanded Rescue Hypo Upgrade"
-	desc = "A smarter hypo synther to make more complex chems. Made for rescue modules."
+	name = "Expanded Rescue Hypo Upgrade"
+	desc = "A smarter hypo synthesizer to make more complex chemicals. Made for rescue modules."
 	build_path = /obj/item/borg/upgrade/hypospray/rescue
 
 /datum/design/research/item/robot_upgrade/syndicate
 	name = "Illegal upgrade"
 	desc = "Allows for the construction of lethal upgrades for cyborgs."
 	build_path = /obj/item/borg/upgrade/syndicate
+
+/datum/design/research/item/robot_upgrade/bigknife
+	name = "Combat Knife upgrade"
+	desc = "Allows for the construction of lethal upgrades for sec-based bots."
+	build_path = /obj/item/borg/upgrade/bigknife
+
+/datum/design/research/item/robot_upgrade/satchel_of_holding_for_borgs
+	name = "Satchel of holding equipment upgrade"
+	desc = "Allows for the construction of lethal upgrades for sec-based bots."
+	build_path = /obj/item/borg/upgrade/satchel_of_holding_for_borgs

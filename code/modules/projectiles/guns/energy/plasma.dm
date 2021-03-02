@@ -122,7 +122,7 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
 	w_class = ITEM_SIZE_SMALL
-	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_POCKET
+	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_POCKET|SLOT_HOLSTER
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_STEEL = 2, "biomatter" = 20)
 	disposable = TRUE

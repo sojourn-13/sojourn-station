@@ -46,7 +46,7 @@
 
 /obj/item/weapon/tool/weldingtool/improvised
 	name = "jury-rigged torch"
-	desc = "An assembly of pipes attached to a little gas tank. Serves capably as a welder, though a bit risky. Can be improved greatly with large amount of tool mods."
+	desc = "An assembly of pipes attached to a little gas tank. Serves capably as a welder, though a bit risky. Can be improved greatly with a large amount of tool mods."
 	icon_state = "ghettowelder"
 	item_state = "ghettowelder"
 	switched_on_force = WEAPON_FORCE_PAINFUL * 0.8
@@ -83,7 +83,7 @@
 	switched_on_qualities = list(QUALITY_WELDING = 100, QUALITY_CAUTERIZING = 100, QUALITY_WIRE_CUTTING = 100)
 
 /obj/item/weapon/tool/weldingtool/onestar
-	name = "greyson positronic welding tool"
+	name = "Greyson Positronic welding tool"
 	desc = "An old and legendary Greyson Positronic welding tool. Very powerful and reliable, but its compact design causes it to suffer from a lack of both fuel storage and efficiency."
 	icon_state = "one_star_welder"
 	item_state = "welder"

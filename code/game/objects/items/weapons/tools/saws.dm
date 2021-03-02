@@ -20,7 +20,7 @@
 	tool_qualities = list(QUALITY_SAWING = 100, QUALITY_CUTTING = 100, QUALITY_WIRE_CUTTING = 100)
 
 /obj/item/weapon/tool/saw/onestar_saw
-	name = "greyson positronic saw"
+	name = "Greyson Positronic saw"
 	desc = "A rather robust hand saw for cutting down trees quickly and cleanly."
 	icon_state = "one_star_metal_saw"
 	force = WEAPON_FORCE_PAINFUL
@@ -66,7 +66,7 @@
 
 /obj/item/weapon/tool/saw/circular/advanced
 	name = "advanced circular saw"
-	desc = "You think you can cut anything with it. More power effecient than a regular circular saw."
+	desc = "You think you can cut anything with it. More power efficient than a regular circular saw."
 	icon_state = "advanced_saw"
 	armor_penetration = ARMOR_PEN_DEEP
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)

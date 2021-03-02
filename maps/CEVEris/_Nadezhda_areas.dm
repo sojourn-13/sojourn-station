@@ -1378,6 +1378,12 @@ area/nadezhda/medical/medbaymeeting
 	name = "Supply Shuttle Hangar"
 	icon_state = "erisblue"
 
+/area/nadezhda/quartermaster/hangarsupply_nolight
+	name = "Supply Shuttle Dock"
+	icon_state = "erisgreen"
+	requires_power = FALSE
+	dynamic_lighting = FALSE
+
 /area/nadezhda/quartermaster/misc
 	name = "\improper Cargo Barracks"
 	icon_state = "nadezhdayellow"

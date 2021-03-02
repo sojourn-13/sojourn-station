@@ -77,10 +77,19 @@
 
 /obj/item/weapon/gun/make_old()
 	. = ..()
-	fire_delay+= rand(0,3)
-	recoil_buildup+= rand(0,10)
-	damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
-	penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
+	if(. && prob(60))
+		var/list/trash_mods = TRASH_GUNMODS
+		while(trash_mods.len)
+			var/trash_mod_path = pick_n_take(trash_mods)
+			var/obj/item/trash_mod = new trash_mod_path
+			if(SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
+				break
+			qdel(trash_mod)
+	else
+		fire_delay+= rand(0,3)
+		recoil_buildup+= rand(0,10)
+		damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
+		penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
 
 /obj/item/weapon/gun/make_young()
 	if(!oldified)
@@ -172,9 +181,9 @@
 		if(!autorecharging)
 			charge = min(charge, RAND_DECIMAL(0, maxcharge))
 
-		if(prob(5))
+		if(prob(20))
 			rigged = TRUE
-			if(prob(10))
+			if(prob(40))
 				charge = maxcharge  //make it BOOM hard
 		update_icon()
 

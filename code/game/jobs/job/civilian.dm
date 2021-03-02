@@ -94,7 +94,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof, /datum/perk/greenthumb)
 
 	description = "The Gardener toils in hydroponics - utilising seeds, tools, and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
@@ -166,7 +166,7 @@
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
-	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle)
+	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,

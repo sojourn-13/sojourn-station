@@ -26,7 +26,7 @@
 	build_path = /obj/item/weapon/reagent_containers/glass/fertilizer/l4z
 
 /datum/design/bioprinter/rh
-	name = "Robust Harvestt"
+	name = "Robust Harvest"
 	build_path = /obj/item/weapon/reagent_containers/glass/fertilizer/rh
 	materials = list(MATERIAL_BIOMATTER = 7.5)
 //[/NUTRIMENTS]
@@ -167,10 +167,14 @@
 	name = "Church Garment"
 	build_path = /obj/item/clothing/under/rank/church
 
+/datum/design/bioprinter/nt_clothes/hermes_shoes
+	name = "Hermes Boots"
+	build_path = /obj/item/clothing/shoes/hermes_shoes
+
 //[MELEE]
 /datum/design/autolathe/sword/nt_sword
-	name = "NT Shortsword"
-	build_path = /obj/item/weapon/tool/sword/nt
+	name = "NT Short Sword"
+	build_path = /obj/item/weapon/tool/sword/nt/shortsword
 
 /datum/design/autolathe/sword/nt_longsword
 	name = "NT Longsword"
@@ -183,6 +187,10 @@
 /datum/design/autolathe/sword/nt_halberd
 	name = "NT Halberd"
 	build_path = /obj/item/weapon/tool/spear/halberd
+
+/datum/design/autolathe/sword/nt_spear
+	name = "NT Spear"
+	build_path = /obj/item/weapon/tool/sword/nt/spear
 
 /datum/design/autolathe/sword/nt_scourge
 	name = "NT Scourge"
@@ -249,7 +257,7 @@
 	name = "Absolutism Medkit"
 	build_path = /obj/item/weapon/storage/firstaid/nt
 
-//[/MED]
+//[/IMPLANTS]
 
 /datum/design/bioprinter/bioimplant
 	materials = list(MATERIAL_BIOMATTER = 50)
@@ -273,9 +281,6 @@
 /datum/design/bioprinter/bioimplant/omuscle
 	name = "Organic muscle implant"
 	build_path = /obj/item/weapon/biogoop/muscle
-//[/IMPLANT]
-
-
 
 //[/POUCHES]
 /datum/design/bioprinter/pouch/ammo

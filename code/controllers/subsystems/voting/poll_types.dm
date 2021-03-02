@@ -83,12 +83,7 @@
 	text = "End Shift"
 
 /datum/vote_choice/restart/on_win()
-	command_announcement.Announce("Todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.", "Shift End Call", new_sound = 'sound/misc/notice3.ogg')
-	sleep(15 MINUTES)
-	to_chat(world, "<b>Restarting world due to shift end...</b>")
-	sleep(60)
-	log_game("Rebooting due to restart vote")
-	world.Reboot()
+	SSticker.shift_end(15 MINUTES)
 
 /datum/vote_choice/countinue_round
 	text = "Continue Shift"

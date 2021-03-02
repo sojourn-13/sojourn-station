@@ -21,6 +21,7 @@
 	name = "robotic module reset board"
 	desc = "Used to reset a cyborg's module. Destroys any other upgrades applied to the robot."
 	icon_state = "cyborg_upgrade1"
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 6, MATERIAL_PLASTIC = 6)
 	require_module = TRUE
 
 /obj/item/borg/upgrade/reset/action(var/mob/living/silicon/robot/R)
@@ -96,6 +97,7 @@
 	GLOB.dead_mob_list -= R
 	GLOB.living_mob_list |= R
 	R.death_notified = FALSE
+	R.vtech_added_speed = 0
 	R.notify_ai(ROBOT_NOTIFICATION_NEW_UNIT)
 	return TRUE
 
@@ -104,13 +106,15 @@
 	desc = "Used to kick in a robot's VTEC systems, increasing their speed."
 	icon_state = "cyborg_upgrade2"
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_GLASS = 6, MATERIAL_GOLD = 5)
-	require_module = TRUE
 
 /obj/item/borg/upgrade/vtec/action(var/mob/living/silicon/robot/R)
 	if(..())
 		return FALSE
+	if(R.vtech_added_speed > 0)
+		return FALSE
 
 	R.speed_factor += 0.5
+	R.vtech_added_speed += 0.5
 	return TRUE
 
 /obj/item/borg/upgrade/power_saver
@@ -224,7 +228,6 @@
 	name = "medical cyborg hypospray advanced synthesiser"
 	desc = "An upgrade to the Medical module cyborg's hypospray, allowing it \
 		to produce more advanced and complex medical reagents."
-	require_module = TRUE
 	var/list/additional_reagents = list()
 
 /obj/item/borg/upgrade/hypospray/action(mob/living/silicon/robot/R, user = usr)
@@ -259,3 +262,42 @@
 
 	R.emagged = 1
 	return TRUE
+
+/obj/item/borg/upgrade/bigknife
+	name = "large knife equipment module"
+	desc = "Mounts a large knife onto sec class borgs"
+	icon_state = "cyborg_upgrade3"
+	matter = list(MATERIAL_STEEL = 25)
+	require_module = TRUE
+
+/obj/item/borg/upgrade/bigknife/action(var/mob/living/silicon/robot/R)
+	if(..()) return FALSE
+
+	if(!R.module || !(type in R.module.supported_upgrades))
+		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
+		to_chat(usr, "There's no mounting point for the module!")
+		return FALSE
+	else
+		R.module.modules += new/obj/item/weapon/tool/sword/machete(R.module)
+		R.module.Initialize() //Fixes layering and possible tool issues
+		return TRUE
+
+
+/obj/item/borg/upgrade/satchel_of_holding_for_borgs
+	name = "satchel of holding equipment module"
+	desc = "Mounts a unstable bluespace satchel of holding borgs"
+	icon_state = "cyborg_upgrade2"
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_GOLD = 6, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
+	require_module = TRUE
+
+/obj/item/borg/upgrade/satchel_of_holding_for_borgs/action(var/mob/living/silicon/robot/R)
+	if(..()) return FALSE
+
+	if(!R.module || !(type in R.module.supported_upgrades))
+		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
+		to_chat(usr, "There's no mounting point for the module!")
+		return FALSE
+	else
+		R.module.modules += new/obj/item/weapon/storage/bag/robotic/holding(R.module)
+		R.module.Initialize() //Fixes layering and possible tool issues
+		return TRUE

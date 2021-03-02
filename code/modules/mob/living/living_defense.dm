@@ -237,6 +237,8 @@
 					src.pinned += O
 
 /mob/living/proc/embed(var/obj/item/O, var/def_zone=null)
+	if(O.wielded)
+		return
 	if(ismob(O.loc))
 		var/mob/living/L = O.loc
 		if(!L.unEquip(O, src))

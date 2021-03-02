@@ -23,7 +23,7 @@
 	build_path = /obj/item/weapon/shield/riot
 
 /datum/design/autolathe/sec/beartrap
-	name = "beartrap"
+	name = "bear trap"
 	build_path = /obj/item/weapon/beartrap
 
 /datum/design/autolathe/sec/silencer
@@ -40,7 +40,7 @@
 	build_path = /obj/item/device/hailer
 
 /datum/design/autolathe/sec/stunbaton
-	name = "stunbaton"
+	name = "stun baton"
 	build_path = /obj/item/weapon/melee/baton
 
 /datum/design/autolathe/sec/auto_eject_mod

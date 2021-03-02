@@ -1,6 +1,6 @@
 /obj/structure/wire_splicing
 	name = "wire splicing"
-	desc = "The wire has frayed and worn away, creating a hazard that needs to be repaired. This can be removed by wirecutters."
+	desc = "The wire has frayed and worn away, creating a hazard that needs to be repaired. This can be removed by wire cutters."
 	icon = 'icons/obj/traps.dmi'
 	icon_state = "wire_splicing1"
 	density = 0

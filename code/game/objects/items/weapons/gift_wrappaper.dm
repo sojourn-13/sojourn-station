@@ -201,4 +201,4 @@
 		else
 			to_chat(user, SPAN_WARNING("You need more paper."))
 	else
-		to_chat(user, "They are moving around too much. A straightjacket would help.")
+		to_chat(user, "They are moving around too much. A straitjacket would help.")

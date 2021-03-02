@@ -20,6 +20,12 @@
 
 
 	var/list/recipes = list(
+		"Standard",
+			list(name="Standard Magazine (.35 Auto)", cost=50, path=/obj/item/ammo_magazine/pistol_35),
+			list(name="Standard Magazine (.35 Auto high-velocity)", cost=50, path=/obj/item/ammo_magazine/pistol_35/highvelocity),
+			list(name="Standard Magazine (.35 Auto hollow-point)", cost=50, path=/obj/item/ammo_magazine/pistol_35/lethal),
+			list(name="Standard Magazine (.35 Auto rubber)", cost=50, path= /obj/item/ammo_magazine/pistol_35/rubber),
+			list(name="Standard Magazine (.35 Auto practice)", cost=50, path=/obj/item/ammo_magazine/pistol_35/practice),
 		"High Capacity",
 			list(name="High Capacity Magazine (.35 Auto)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35),
 			list(name="High Capacity Magazine (.35 Auto high-velocity)", cost=100, path=/obj/item/ammo_magazine/highcap_pistol_35/highvelocity),
@@ -169,7 +175,7 @@
 		"Exotic Boxes",
 			list(name="Box (20mm Incendiary)", cost=3080, path=/obj/item/ammo_magazine/ammobox/shotgun/incendiary),
 			list(name="Box (20mm Payload)", cost=3850, path=/obj/item/ammo_magazine/ammobox/shotgun/payload),
-			list(name="Box (10x24mm caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c10x24),
+			list(name="Box (10x24mm Caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c10x24),
 			list(name="Box (.60-06 AP)", cost=1650, path=/obj/item/ammo_magazine/ammobox/antim),
 	)
 
@@ -190,6 +196,9 @@
 	return
 
 /obj/machinery/bulletfabricator/attackby(var/obj/item/I, var/mob/user)
+
+	if(istype(I, /obj/item/stack/material/cyborg))
+		return //Prevents borgs throwing their stuff into it
 
 	if(default_deconstruction(I, user))
 		return

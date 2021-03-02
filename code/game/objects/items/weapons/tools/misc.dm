@@ -1,6 +1,6 @@
 /obj/item/weapon/tool/omnitool
-	name = "Lonestars \"Munchkin 5000\""
-	desc = "A fuel-powered monster of a tool. Its welder part is the most advanced one, capable of welding things without harmfull glow and sparks, so no protection needed. The complexity of this tool means that regular maintainence is required."
+	name = "Lonestar \"Munchkin 5000\""
+	desc = "A fuel-powered monster of a tool. Its welder part is the most advanced one, capable of welding things without harmful glow and sparks, so no protection needed. The complexity of this tool means that regular maintenance is required."
 	icon_state = "omnitool"
 	max_health = 200
 	w_class = ITEM_SIZE_NORMAL
@@ -118,7 +118,7 @@
 			return FALSE
 
 /obj/item/weapon/tool/medmultitool
-	name = "greyson positronic medmultitool"
+	name = "Greyson Positronic medical multitool"
 	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools and takes a medium cell in its handle.."
 	icon_state = "medmulti"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)

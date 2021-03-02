@@ -57,13 +57,64 @@
 	)
 
 /datum/craft_recipe/weapon/pistol
-	name = "handmade gun"
+	name = "handmade pistol"
 	result = /obj/item/weapon/gun/projectile/handmade_pistol
 	icon_state = "woodworking"
 	steps = list(
-		list(/obj/item/pipe, 1, "time" = 60),
+		list(/obj/item/stack/rods, 3, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(/obj/item/weapon/crossbowframe, 1, "time" = 20)
+	)
+
+/datum/craft_recipe/weapon/pistol_magnum
+	name = "handmade magnum"
+	result = /obj/item/weapon/gun/projectile/handmade_pistol/magnum
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
+		list(QUALITY_SAWING, 10, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+	)
+
+/datum/craft_recipe/weapon/pistol_slugger
+	name = "handmade slugger"
+	result = /obj/item/weapon/gun/projectile/handmade_pistol/shotgun
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
+		list(QUALITY_SAWING, 10, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+	)
+
+/datum/craft_recipe/weapon/pistol_man_opener
+	name = "handmade man-opener"
+	result = /obj/item/weapon/gun/projectile/handmade_pistol/anti_material
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
+		list(QUALITY_SAWING, 10, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+	)
+
+/datum/craft_recipe/weapon/ammo_kit
+	name = "ammo kit"
+	result = /obj/item/ammo_kit
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/stack/rods, 10, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 4, MATERIAL_CARDBOARD, "time" = 60),
+		list(/obj/item/weapon/tool/wrench/improvised, 1, "time" = 60),
+		list(/obj/item/weapon/tool/knife/shiv, 1, "time" = 60),
+		list(/obj/item/weapon/tool/wirecutters/improvised, 1, "time" = 60),
+		list(QUALITY_WELDING, 15, "time" = 30),
+		list(QUALITY_CUTTING, 10, "time" = 30),
+		list(QUALITY_ADHESIVE, 15, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 15, "time" = 30),
+		list(QUALITY_SAWING, 15, "time" = 30)
 	)
 
 /datum/craft_recipe/weapon/shrapnelcannon
@@ -181,7 +232,7 @@
 	)
 
 /datum/craft_recipe/weapon/hook
-	name = "steel meathook"
+	name = "steel meat hook"
 	result = /obj/item/weapon/tool/knife/hook
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
