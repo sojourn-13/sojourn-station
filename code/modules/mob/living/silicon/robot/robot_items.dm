@@ -693,6 +693,7 @@
 	name = "satchel of holding"
 	desc = "A revolution in convenience, this satchel allows for immense ore or produce storage even has safty restrictions to stabilize unwanted reactions."
 	icon_state = "satchel_bspace"
+	icon = 'icons/obj/mining.dmi'
 	max_storage_space = DEFAULT_HUGE_STORAGE * 10
 	max_w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
