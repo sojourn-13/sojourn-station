@@ -71,6 +71,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = list("pecked")
+	faction = "pond"
 
 /mob/living/simple_animal/lizard
 	name = "lizard"

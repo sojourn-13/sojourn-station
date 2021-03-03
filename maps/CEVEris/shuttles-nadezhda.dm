@@ -37,6 +37,7 @@
 	icon_state = "shuttle"
 	requires_power = FALSE
 	dynamic_lighting = FALSE
+	base_turf = /turf/simulated/floor/plating/under
 
 /obj/machinery/computer/shuttle_control/multi/surface_transport
 	name = "surface transport shuttle console"

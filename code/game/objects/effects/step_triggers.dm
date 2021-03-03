@@ -313,6 +313,30 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "prepper_to_vbunker_2_A"
 	id_target = "prepper_to_vbunker_1_A"
 
+/obj/effect/step_trigger/prepper_to_vbunker_3_A
+	id = "prepper_to_vbunker_3_A"
+	id_target = "prepper_to_vbunker_4_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_4_A
+	id = "prepper_to_vbunker_4_A"
+	id_target = "prepper_to_vbunker_3_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_5_A
+	id = "prepper_to_vbunker_5_A"
+	id_target = "prepper_to_vbunker_6_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_6_A
+	id = "prepper_to_vbunker_6_A"
+	id_target = "prepper_to_vbunker_5_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_7_A
+	id = "prepper_to_vbunker_7_A"
+	id_target = "prepper_to_vbunker_8_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_8_A
+	id = "prepper_to_vbunker_8_A"
+	id_target = "prepper_to_vbunker_7_A"
+
 //Surface to lower colony disposal transition teleporters.
 /obj/effect/step_trigger/disposal_transition_1_A
 	id = "disposal_transition_1_A"

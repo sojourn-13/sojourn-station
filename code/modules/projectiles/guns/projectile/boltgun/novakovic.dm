@@ -9,7 +9,6 @@
 	max_shells = 5
 	price_tag = 300
 	recoil_buildup = 20
-	damage_multiplier = 1
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/sa

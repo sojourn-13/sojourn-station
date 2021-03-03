@@ -46,7 +46,7 @@
 	damage_multiplier = 1
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
-		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
+		list(mode_name="non-lethal", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
 		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=20000, icon="grenade"),
 	)
 	var/consume_cell = FALSE
@@ -100,7 +100,7 @@
 	twohanded = FALSE
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/kurtz/railgun, icon="kill"),
-		list(mode_name="stun", projectile_type=/obj/item/projectile/bullet/kurtz/rubber/railgun, icon="stun"),
+		list(mode_name="non-lethal", projectile_type=/obj/item/projectile/bullet/kurtz/rubber/railgun, icon="stun"),
 		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=10000, icon="grenade"),
 	)
 	price_tag = 1250

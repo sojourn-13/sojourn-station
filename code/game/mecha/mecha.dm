@@ -932,13 +932,15 @@ assassination method if you time it right*/
 		if(QUALITY_BOLT_TURNING)
 			if(state == 1)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You undo the securing bolts."))
+					to_chat(user, SPAN_NOTICE("You undo the securing bolts and deploy the rollers."))
 					state = 2
+					anchored = 0
 					return
 			if(state == 2)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You tighten the securing bolts."))
+					to_chat(user, SPAN_NOTICE("You tighten the securing bolts and undeploy the rollers."))
 					state = 1
+					anchored = 1
 					return
 			return
 

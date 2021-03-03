@@ -1,4 +1,4 @@
-#include "asteroid.dmm"
+//#include "asteroid.dmm"
 
 /obj/map_data/asteroid
 	name = "Asteroid Level"

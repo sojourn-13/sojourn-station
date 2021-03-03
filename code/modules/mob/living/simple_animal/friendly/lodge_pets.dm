@@ -97,6 +97,8 @@
 	if(!stat && prob(3) && offspring_left > 0)
 		visible_message("[src] [pick("squats down and moos.","begins making a huge racket.","begins mooing raucously.")]")
 		offspring_left--
+		var/mob/living/simple_animal/baby_tatonka/E = new(get_turf(src))
+		START_PROCESSING(SSobj, E)
 	default_pixel_x = -16
 	pixel_x = -16
 
@@ -266,6 +268,7 @@
 		var/obj/item/weapon/reagent_containers/food/snacks/egg/clucker/E = new(get_turf(src))
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
+		START_PROCESSING(SSobj, E)
 
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/clucker/amount_grown = 0
@@ -307,6 +310,8 @@
 	if(!stat && prob(3) && offspring_left > 0)
 		visible_message("[src] [pick("squats down and grunts.","begins making a huge racket.","begins snuffling raucously.")]")
 		offspring_left--
+		var/mob/living/simple_animal/baby_cerberus/E = new(get_turf(src))
+		START_PROCESSING(SSobj, E)
 
 /mob/living/simple_animal/hostile/helldiver/cerberus/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens

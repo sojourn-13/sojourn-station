@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/silvereye
-	name = "\"Silvet-Eye\" heavy pistol"
-	desc = "A silver plated Basilisk heavy pistol, customized with specialized counterweights to assist with recoil handling. Gifted to the Foreman by Hogg in exchange for their wrangling of the Scav Team. Uses .50 Kurtz rounds."
+	name = "\"Silver-Eye\" heavy pistol"
+	desc = "A silver plated Basilisk heavy pistol, customized with specialized counterweights to assist with recoil handling. Gifted to the Foreman by Over-Boss Jeremiah Hogg in exchange for their wrangling of the prospector team. Uses .50 Kurtz rounds."
 	icon = 'icons/obj/guns/projectile/silvereye.dmi'
 	icon_state = "silvereye"
 	item_state = "silvereye"
@@ -17,6 +17,8 @@
 	one_hand_penalty = 20
 	penetration_multiplier = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	reload_sound 	= 'sound/weapons/guns/interact/reload_silver.ogg'
+	fire_sound = 'sound/weapons/guns/fire/fire_silver.ogg'
 
 /obj/item/weapon/gun/projectile/silvereye/update_icon()
 	..()
