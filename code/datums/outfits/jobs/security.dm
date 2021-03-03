@@ -89,6 +89,7 @@
 	pda_type = /obj/item/modular_computer/pda/forensics
 	belt = /obj/item/weapon/storage/belt/medical/emt
 	gloves = /obj/item/clothing/gloves/thick
+	l_hand = /obj/item/weapon/storage/firstaid/blackshield
 	backpack_contents = list(/obj/item/weapon/gun/energy/gun/martin = 1, /obj/item/weapon/cell/small/high = 1)
 
 /decl/hierarchy/outfit/job/security/ihoper
