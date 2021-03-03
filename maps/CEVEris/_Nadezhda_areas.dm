@@ -22,7 +22,7 @@
 /area/nadezhda
 	ship_area = TRUE
 	icon_state = "erisyellow"
-	base_turf = /turf/simulated/floor/asteroid/dirt
+	base_turf = /turf/simulated/floor/plating/under
 	flags = AREA_FLAG_RAD_SHIELDED
 
 //Maintenance
@@ -62,47 +62,47 @@
 
 /area/nadezhda/maintenance/undergroundfloor1north
 	name = "Underground Floor 1 North Maintenance"
-	icon_state = "section1deck1central"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/undergroundfloor1west
 	name = "Underground Floor 1 West Maintenance"
-	icon_state = "section1deck2central"
+	icon_state = "erisyellow"
 
 /area/nadezhda/maintenance/undergroundfloor1east
 	name = "Underground Floor 1 East Maintenance"
-	icon_state = "section1deck3central"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/undergroundfloor1central
 	name = "Underground Floor 1 Central Maintenance"
-	icon_state = "section1deck3central"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/undergroundfloor1oldgarden
 	name = "Underground Floor 1 Old Garden"
-	icon_state = "section1deck3central"
+	icon_state = "erisyellow"
 
 /area/nadezhda/maintenance/undergroundfloor1oldconstruction
 	name = "Underground Floor 1 Old Construction Site"
-	icon_state = "section1deck3central"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/undergroundfloor1south
 	name = "Underground Floor 1 South Maintenance"
-	icon_state = "section1deck4central"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/undergroundfloor2north
 	name = "Underground Floor 2 North Maintenance"
-	icon_state = "section1deck5central"
+	icon_state = "erisyellow"
 
 /area/nadezhda/maintenance/undergroundfloor2west
 	name = "Underground Floor 2 West Maintenance"
-	icon_state = "section2deck1port"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/undergroundfloor2east
 	name = "Underground Floor 2 East Maintenance"
-	icon_state = "section2deck1starboard"
+	icon_state = "erisyellow"
 
 /area/nadezhda/maintenance/undergroundfloor2south
 	name = "Underground Floor 2 South Maintenance"
-	icon_state = "section2deck2port"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/cavehideout
 	name = "Abandoned Cave Shed"
@@ -1381,8 +1381,6 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/quartermaster/hangarsupply_nolight
 	name = "Supply Shuttle Dock"
 	icon_state = "erisgreen"
-	requires_power = FALSE
-	dynamic_lighting = FALSE
 
 /area/nadezhda/quartermaster/misc
 	name = "\improper Cargo Barracks"

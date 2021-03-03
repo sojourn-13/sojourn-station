@@ -1005,7 +1005,7 @@
 	metabolism = 0.02
 
 /datum/reagent/medicine/clucker_extract/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 80, TRUE)
+	M.add_chemical_effect(CE_PAINKILLER, 130, TRUE)
 
 /datum/reagent/medicine/clucker_extract/overdose(mob/living/carbon/M, alien)
 	..()

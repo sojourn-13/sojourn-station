@@ -2,7 +2,7 @@
 // Abstract Class
 //
 
-/mob/living/simple_animal/hostile/mimic/crate
+/mob/living/simple_animal/hostile/mimic
 	name = "suspicious object"
 	desc = "It seems rather.. gooey. Is that thing organic?"
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -37,5 +37,5 @@
 	faction = "mimic"
 	move_to_delay = 6
 
-/mob/living/simple_animal/hostile/mimic/crate/Initialize()
+/mob/living/simple_animal/hostile/mimic/Initialize()
 	icon_state = "mimic_[pick("trashcart","crate","bin","steel","wood","med","freezer","wep","stool","body","ore")]"
