@@ -33,14 +33,14 @@ var/list/mob_hat_cache = list()
 	braintype = "Robot"
 	lawupdate = 0
 	density = FALSE
-	req_access = list(access_robotics)
+	req_access = list(access_robotics) //We are robotics based!
 	integrated_light_power = 3
 	local_transmit = 1
 	possession_candidate = 1
 	speed = -0.25
 
-	can_pull_size = ITEM_SIZE_NORMAL
-	can_pull_mobs = MOB_PULL_SMALLER
+//	can_pull_size = ITEM_SIZE_NORMAL SoJ change, we can drag normal things around to not get soft lock/QoL
+//	can_pull_mobs = MOB_PULL_SMALLER SoJ change, we can drag mobs that need to be dragged, QoL
 
 	mob_bump_flag = SIMPLE_ANIMAL
 	mob_swap_flags = SIMPLE_ANIMAL
@@ -104,8 +104,8 @@ var/list/mob_hat_cache = list()
 	module_type = /obj/item/weapon/robot_module/drone/construction
 	hat_x_offset = 1
 	hat_y_offset = -12
-//	can_pull_size = ITEM_SIZE_HUGE
-//	can_pull_mobs = MOB_PULL_SAME
+//	can_pull_size = ITEM_SIZE_HUGE Soj chnge, same as base
+//	can_pull_mobs = MOB_PULL_SAME Soj chnge, same as base
 
 /mob/living/silicon/robot/drone/New()
 
