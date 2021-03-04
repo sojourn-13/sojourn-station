@@ -120,6 +120,9 @@
 	name = "Abandoned Maintenance Shed"
 	icon_state = "section2deck3starboard"
 
+/area/nadezhda/maintenance/lift_mai maints
+	name = "Elevator Maintenance"
+	icon_state = "section2deck3starboard"
 
 //Outside abandoned structures
 
@@ -326,7 +329,6 @@
 	sound_env = SMALL_ENCLOSED
 	forced_ambience = list('sound/ambience/maintambience.ogg')
 
-
 /area/nadezhda/maintenance/substation/engineering
 	name = "Engineering Substation"
 
@@ -356,9 +358,6 @@
 
 /area/nadezhda/maintenance/substation/bridge
 	name = "Bridge Substation"
-
-
-
 
 //Hallway
 
@@ -448,8 +447,8 @@
 	name = "Stairwell"
 	icon_state = "hallway4"
 
-
 //Command
+
 /area/nadezhda/command
 	name = "\improper Command"
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
@@ -593,7 +592,6 @@
 	icon_state = "erisyellow"
 
 //Crew Quarters
-
 
 /area/nadezhda/crew_quarters
 	name = "\improper Dormitories"
@@ -756,7 +754,6 @@
 	name = "Public Hydroponics"
 	icon_state = "erisblue"
 
-
 //Church
 
 /area/nadezhda/absolutism
@@ -792,11 +789,6 @@
 /area/nadezhda/absolutism/chapelritualroom
 	name = "Chapel Rituals Room"
 	icon_state = "erisgreen"
-
-
-
-
-
 
 //Engineering
 
@@ -862,7 +854,6 @@
 /area/nadezhda/engineering/enginehallway
 	name = "\improper Engine Room Hallway"
 	icon_state = "engine"
-
 
 /area/nadezhda/engineering/engine_monitoring
 	name = "\improper Engine Monitoring Room"
@@ -979,7 +970,6 @@
 
 /area/nadezhda/engineering/propulsion/right
 	name = "Right Propulsion Hangar"
-
 
 //MedBay
 
@@ -1152,9 +1142,6 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/medical/medbay/uppercor
 	name = "Medbay Upper Coridor"
 	icon_state = "erisgreen"
-
-
-
 
 //Security
 
@@ -1339,9 +1326,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "hammerred"
 	is_maintenance = TRUE
 
-
 //Cargo
-
 
 /area/nadezhda/quartermaster
 	name = "\improper Merchants"
@@ -1390,8 +1375,6 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Cargo Delivery Dock"
 	icon_state = "erisgreen"
 	base_turf = /turf/simulated/floor/tiled/dark/cargo
-
-
 
 
 //Research and Development
