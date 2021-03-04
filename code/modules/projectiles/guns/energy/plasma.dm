@@ -58,61 +58,6 @@
 		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="destroy", projectile_color = "#FF0000", recoil_buildup=3),
 	)
 
-/obj/item/weapon/gun/energy/pulse/cassad
-	name = "\"Cassad\" energy rifle"
-	desc = "\"Holland & Sullivan\" brand energy assault rifle, capable of prolonged combat. When surrender is not an option."
-	icon = 'icons/obj/guns/energy/cassad.dmi'
-	icon_state = "cassad"
-	item_state = "cassad"
-	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 6)
-	fire_sound = 'sound/weapons/pulse.ogg'
-	projectile_type = /obj/item/projectile/beam/pulse
-	sel_mode = 1
-	charge_cost = 20 //40 shots per high medium-sized cell
-	fire_delay = 12
-	origin_tech = list(TECH_COMBAT = 7, TECH_PLASMA = 2)
-	price_tag = 1500
-	zoom_factor = null
-	damage_multiplier = 1.1
-	init_firemodes = list(
-		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#00FFFF"),
-		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#00AAFF"),
-	)
-	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
-
-/obj/item/weapon/gun/energy/pulse/cassad/update_icon()
-	..()
-	set_item_state(null, back = TRUE)
-
-/obj/item/weapon/gun/energy/plasma/auretian
-	name = "\"Auretian\" energy pistol"
-	desc = "\"Soteria\" brand energy pistol, for personal overprotection. It can change between laser and plasma, with the former penetrating armor better and the latter dealing more raw damage."
-	icon = 'icons/obj/guns/energy/brigador.dmi'
-	icon_state = "brigador"
-	charge_meter = FALSE
-	w_class = ITEM_SIZE_NORMAL
-	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
-	twohanded = FALSE
-	origin_tech = list(TECH_COMBAT = 5, TECH_PLASMA = 6)
-	can_dual = TRUE
-	sel_mode = 1
-	suitable_cell = /obj/item/weapon/cell/small
-	charge_cost = 20
-	damage_multiplier = 0.9
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
-	gun_tags = list(GUN_ENERGY)
-
-	init_firemodes = list(
-		list(mode_name="plasma", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser4.ogg', fire_delay=1, icon="destroy", projectile_color = "#00FFFF"),
-		list(mode_name="laser", projectile_type=/obj/item/projectile/beam/xray, fire_sound='sound/weapons/Taser3.ogg', fire_delay=1, icon="kill", projectile_color = "#00AAFF"),
-	)
-
-/obj/item/weapon/gun/energy/plasma/auretian/update_icon()
-	overlays.Cut()
-	..()
-	if(cell)
-		overlays += image(icon, "cell_guild")
-
 /obj/item/weapon/gun/energy/plasma/martyr // or should it be  Zealot
 	name = "\"Martyr\" holdout pistol"
 	desc = "An \"New Testament\" weapon that uses advanced biomass-converted blasts of energized matter. It is a disposable holdout side arm, good enough to save you and be recycled."
