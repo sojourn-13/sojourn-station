@@ -428,13 +428,13 @@
 	tool_qualities = list(QUALITY_EXCAVATION = 70) //So it still shares its switch off quality despite not yet being used.
 	switched_off_qualities = list(QUALITY_EXCAVATION = 70)
 	switched_on_qualities = list(QUALITY_DIGGING = 20)
-	workspeed = 0.5
+	workspeed = 0.6
 
 /obj/item/weapon/tool/pickaxe/robotic/sec //Were even slower and less good
 	tool_qualities = list(QUALITY_EXCAVATION = 10) //So it still shares its switch off quality despite not yet being used.
 	switched_off_qualities = list(QUALITY_EXCAVATION = 10)
 	switched_on_qualities = list(QUALITY_DIGGING = 10)
-	workspeed = 0.2
+	workspeed = 0.4
 
 /obj/item/weapon/tool/weldingtool/robotic
 	icon = 'icons/obj/robot_items.dmi'
@@ -652,7 +652,6 @@
 		/obj/item/weapon/reagent_containers/food/snacks/egg,
 		/obj/item/weapon/reagent_containers/food/snacks/meat
 	)
-
 
 /obj/item/weapon/storage/bag/robotic/trash
 	name = "internal trash container"

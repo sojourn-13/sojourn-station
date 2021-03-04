@@ -264,6 +264,7 @@
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/storage/bag/produce(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/storage/part_replacer/mini(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/hand_tele(src) //Why
 	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
@@ -288,6 +289,7 @@
 	sprites = list(
 					"V2 Engihound" = "thottbot",
 					"Pupdozer" = "pupdozer",
+					"Artificer Safty Hound" = "kg",
 					)
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
@@ -323,6 +325,7 @@
 	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
 	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //borrows and the like.
 	src.modules += new /obj/item/weapon/tool/saw(src)
+	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/scanner/gas(src)
@@ -333,6 +336,7 @@
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
+	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
 
@@ -398,4 +402,10 @@
 	R.pixel_x 	 = -16
 	R.old_x 	 = -16
 	R.default_pixel_x = -16
+	..()
+
+/obj/item/weapon/robot_module/robot/engiedog/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	if(src.modules)
+		var/obj/item/weapon/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
+		KBG.reagents.add_reagent("silicate", 2 * amount)
 	..()

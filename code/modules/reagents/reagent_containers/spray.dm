@@ -109,6 +109,11 @@
 	desc = "Great for hiding incriminating bloodstains and sterilizing scalpels."
 	preloaded_reagents = list("sterilizine" = 250)
 
+/obj/item/weapon/reagent_containers/spray/krag_b_gone
+	name = "window krag-b-gone"
+	desc = "A robust liquid for repairing and reinforcing windows."
+	preloaded_reagents = list("silicate" = 250)
+
 /obj/item/weapon/reagent_containers/spray/pepper
 	name = "pepperspray"
 	desc = "Manufactured by Seinemetall Defense GmbH, used to blind and down an opponent quickly."
