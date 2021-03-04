@@ -56,7 +56,6 @@
 /datum/gear/head/hardhat
 	display_name = "hardhat selection"
 	path = /obj/item/clothing/head/hardhat/
-	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/head/hardhat/New()
 	..()
