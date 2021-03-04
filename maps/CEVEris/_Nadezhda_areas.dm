@@ -120,10 +120,6 @@
 	name = "Abandoned Maintenance Shed"
 	icon_state = "section2deck3starboard"
 
-/area/nadezhda/maintenance/lift_mai maints
-	name = "Elevator Maintenance"
-	icon_state = "section2deck3starboard"
-
 //Outside abandoned structures
 
 /area/nadezhda/dungeon/outside
