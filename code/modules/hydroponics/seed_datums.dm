@@ -345,6 +345,7 @@
 	mutants = null
 	evolutions = null
 	chems = list("nutriment"=list(1), "clonexadone"=list(5,10), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respiradoxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"vomitol"=list(5,20),"quickclot"=list(5,20),"ossissine"=list(5,20))
+	exude_gasses = list("sleeping_agent" = 4)
 
 /datum/seed/ambrosia/panacea/New()
 	..()
@@ -356,7 +357,7 @@
 	seed_name = "ambrosia robusto"
 	display_name = "ambrosia robusto"
 	mutants = null
-	chems = list("nicotine" = list(5,20))
+	chems = list("nicotineplus" = list(5,20), "space_drugs" = list(1))
 
 /datum/seed/ambrosia/robusto/New()
 	..()
@@ -1252,6 +1253,7 @@
 	mutants = null
 	evolutions = null
 	chems = list ("clonexadone" = list(1,20))
+	exude_gasses = list("sleeping_agent" = 3)
 
 /datum/seed/grass/maiden/trinitygrass/New()
 	..()
