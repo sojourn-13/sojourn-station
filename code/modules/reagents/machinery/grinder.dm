@@ -298,6 +298,12 @@
 		return
 	grind()
 
+/obj/machinery/reagentgrinder/industrial/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/weapon/reagent_containers/borghypo) || istype(I, /obj/item/weapon/reagent_containers/spray)) //prevents borg items
+		return
+	..() //So we run the rest
+
+
 /obj/machinery/reagentgrinder/industrial/update_icon()
 	cut_overlays()
 
