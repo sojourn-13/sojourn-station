@@ -33,14 +33,14 @@ var/list/mob_hat_cache = list()
 	braintype = "Robot"
 	lawupdate = 0
 	density = FALSE
-	req_access = list(access_robotics) //We are robotics based!
+	req_access = list(access_engine, access_robotics)
 	integrated_light_power = 3
 	local_transmit = 1
 	possession_candidate = 1
 	speed = -0.25
 
-//	can_pull_size = ITEM_SIZE_NORMAL SoJ change, we can drag normal things around to not get soft lock/QoL
-//	can_pull_mobs = MOB_PULL_SMALLER SoJ change, we can drag mobs that need to be dragged, QoL
+	can_pull_size = ITEM_SIZE_NORMAL
+	can_pull_mobs = MOB_PULL_SMALLER
 
 	mob_bump_flag = SIMPLE_ANIMAL
 	mob_swap_flags = SIMPLE_ANIMAL
@@ -62,7 +62,6 @@ var/list/mob_hat_cache = list()
 	var/armguard = ""
 	var/communication_channel = LANGUAGE_DRONE
 	var/station_drone = TRUE
-
 	holder_type = /obj/item/weapon/holder/drone
 
 /mob/living/silicon/robot/drone/can_be_possessed_by(var/mob/observer/ghost/possessor)
@@ -105,8 +104,8 @@ var/list/mob_hat_cache = list()
 	module_type = /obj/item/weapon/robot_module/drone/construction
 	hat_x_offset = 1
 	hat_y_offset = -12
-//	can_pull_size = ITEM_SIZE_HUGE Soj chnge, same as base
-//	can_pull_mobs = MOB_PULL_SAME Soj chnge, same as base
+	can_pull_size = ITEM_SIZE_HUGE
+	can_pull_mobs = MOB_PULL_SAME
 
 /mob/living/silicon/robot/drone/New()
 
@@ -144,8 +143,6 @@ var/list/mob_hat_cache = list()
 	additional_law_channels["Drone"] = "d"
 	if(!laws) laws = new law_type
 
-	locked = !locked //We spawn unlocked. This for repairing them.
-
 	flavor_text = "It's a tiny little repair drone. The casing is stamped with an corporate logo and the subscript: '[company_name] Recursive Repair Systems: Fixing Tomorrow's Problem, Today!'"
 	playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 0)
 
@@ -156,8 +153,12 @@ var/list/mob_hat_cache = list()
 	name = real_name
 
 /mob/living/silicon/robot/drone/updatename()
-	real_name = "maintenance drone ([rand(100,999)])"
-	name = real_name
+	if(controlling_ai)
+		real_name = "remote drone ([controlling_ai.name])"
+		name = real_name
+	else
+		real_name = "[initial(name)] ([random_id(type,100,999)])"
+		name = real_name
 
 /mob/living/silicon/robot/drone/updateicon()
 
@@ -210,13 +211,9 @@ var/list/mob_hat_cache = list()
 			if(!allowed(usr))
 				to_chat(user, SPAN_DANGER("Access denied."))
 				return
-			if(src.health < 0) //Are we able to even be revived?
-				to_chat(usr, "You have to repair the robot before using this module!")
-				return
+
 			user.visible_message(SPAN_DANGER("\The [user] swipes \his ID card through \the [src], attempting to reboot it."), SPAN_DANGER(">You swipe your ID card through \the [src], attempting to reboot it."))
-			request_player() //Tell the player they are alive again.
-			we_live_again() //Do the revive!
-			updatehealth() //Check are hp, and refresh are huds
+			request_player()
 			return
 
 		else
@@ -324,15 +321,6 @@ var/list/mob_hat_cache = list()
 	var/datum/ghosttrap/G = get_ghost_trap("maintenance drone")
 	G.request_player(src, "Someone is attempting to reboot a maintenance drone.", MINISYNTH, 30 SECONDS)
 
-/mob/living/silicon/robot/drone/proc/we_live_again(var/mob/living/silicon/robot/R) //we shall live again!
-	..() //Can never go wrong with one of these!
-	R.stat = CONSCIOUS //We live again!
-	GLOB.dead_mob_list -= R //Were not dead...
-	GLOB.living_mob_list |= R //Were infact alive
-	R.death_notified = FALSE //un-notifie us!
-	R.notify_ai(ROBOT_NOTIFICATION_NEW_UNIT) //Tell our big brother were back in action!
-	return  //for safty!
-
 /mob/living/silicon/robot/drone/proc/transfer_personality(var/client/player)
 	if(!player) return
 	src.ckey = player.ckey
@@ -346,10 +334,13 @@ var/list/mob_hat_cache = list()
 	welcome_drone()
 
 /mob/living/silicon/robot/drone/proc/welcome_drone()
-	to_chat(src, "<b>You are a maintenance drone, a tiny-brained robotic repair machine</b>.")
-	to_chat(src, "You have no individual will, no personality, and no drives or urges other than your laws.")
-	to_chat(src, "Remember,  you are <b>lawed against interference with the crew</b>. Also remember, <b>you DO NOT take orders from the AI.</b>")
-	to_chat(src, "Use <b>say ;Hello</b> to talk to other drones and <b>say Hello</b> to speak silently to your nearby fellows.")
+	if(controlling_ai)
+		to_chat( src, "<b> You are now controlling a drone. Your former laws still apply.</b>")
+	else
+		to_chat(src, "<b>You are a maintenance drone, a tiny-brained robotic repair machine</b>.")
+		to_chat(src, "You have no individual will, no personality, and no drives or urges other than your laws.")
+		to_chat(src, "Remember,  you are <b>lawed against interference with the crew</b>. Also remember, <b>you DO NOT take orders from the AI.</b>")
+		to_chat(src, "Use <b>say ;Hello</b> to talk to other drones and <b>say Hello</b> to speak silently to your nearby fellows.")
 
 /mob/living/silicon/robot/drone/add_robot_verbs()
 	return
@@ -382,6 +373,21 @@ var/list/mob_hat_cache = list()
 		if(D.key && D.client)
 			drones++
 	return drones >= config.max_maint_drones
+
+/mob/living/silicon/robot/drone/show_laws(var/everyone = 0)
+	if(!controlling_ai)
+		return..()
+	to_chat(src, "<b>Obey these laws:</b>")
+	controlling_ai.laws_sanity_check()
+	controlling_ai.laws.show_laws(src)
+
+/mob/living/silicon/robot/drone/robot_checklaws()
+	set category = "Silicon Commands"
+	set name = "State Laws"
+
+	if(!controlling_ai)
+		return ..()
+	controlling_ai.open_subsystem(/datum/nano_module/law_manager)
 
 /mob/living/silicon/robot/drone/verb/choose_eyecolor()
 	set name = "Choose Light Color"
