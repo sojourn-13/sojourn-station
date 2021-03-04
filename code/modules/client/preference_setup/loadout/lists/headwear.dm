@@ -56,7 +56,16 @@
 /datum/gear/head/hardhat
 	display_name = "hardhat selection"
 	path = /obj/item/clothing/head/hardhat/
-	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/head/hardhat/New()
+	..()
+	var/hardhat = list(
+		"yellow hardhat"			=	/obj/item/clothing/head/hardhat/yellow,
+		"red hardhat"				=	/obj/item/clothing/head/hardhat/red,
+		"orange hardhat"			=	/obj/item/clothing/head/hardhat/orange,
+		"blue hardhat"				=	/obj/item/clothing/head/hardhat/blue,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(hardhat)
 
 /datum/gear/head/sombrero
 	display_name = "sombrero"
