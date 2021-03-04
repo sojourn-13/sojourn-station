@@ -1,6 +1,8 @@
 /obj/item/clothing/head/hardhat
 	name = "hard hat"
-	desc = "Headgear for dangerous working conditions. Comes with a built-in light and a variety of colors."
+	desc = "Headgear for dangerous working conditions. This one is an Artificer's standard yellow design with a built-in light."
+	icon_state = "hardhat-y"
+	item_state = "hardhat-y"
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4 //luminosity when on
 	light_overlay = "hardhat_light"
@@ -18,11 +20,6 @@
 	item_flags = STOPPRESSUREDAMAGE
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
-
-/obj/item/clothing/head/hardhat/New()
-	icon_state = "hardhat-[pick("o","y","r","b")]"
-	item_state = icon_state
-	..()
 
 /obj/item/clothing/head/hardhat/yellow
 	name = "yellow hardhat"
