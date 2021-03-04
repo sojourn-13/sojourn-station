@@ -24,6 +24,30 @@
 	item_state = icon_state
 	..()
 
+/obj/item/clothing/head/hardhat/yellow
+	name = "yellow hardhat"
+	desc = "Headgear for dangerous working conditions with a built-in light. This one comes in standard Artificer's yellow."
+	icon_state = "hardhat-y"
+	item_state = "hardhat-y"
+
+/obj/item/clothing/head/hardhat/orange
+	name = "orange hardhat"
+	desc = "Headgear for dangerous working conditions with a built-in light. This one comes in orange."
+	icon_state = "hardhat-o"
+	item_state = "hardhat-o"
+
+/obj/item/clothing/head/hardhat/red
+	name = "red hardhat"
+	desc = "Headgear for dangerous working conditions with a built-in light. This one comes in red."
+	icon_state = "hardhat-r"
+	item_state = "hardhat-r"
+
+/obj/item/clothing/head/hardhat/blue
+	name = "blue hardhat"
+	desc = "Headgear for dangerous working conditions with a built-in light. This one comes in blue."
+	icon_state = "hardhat-b"
+	item_state = "hardhat-b"
+
 /obj/item/clothing/head/firefighter/chief
 	name = "guild master helmet"
 	desc = "A pure white fire resistant hard hat with a powerful headlight and built in nuclear cell. The best utility helmet the guild has."
