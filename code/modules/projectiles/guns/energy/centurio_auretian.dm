@@ -19,7 +19,8 @@
 
 /obj/item/weapon/gun/energy/plasma/auretian
 	name = "\"Auretian\" energy pistol"
-	desc = "\"Soteria\" brand energy pistol, for personal overprotection. It can change between laser and plasma, with the former penetrating armor better and the latter dealing more raw damage."
+	desc = "\"Soteria\" brand energy pistol, for personal overprotection. It has the advantage of using laser and plasma firing methods, \
+	with the former firing rapid weaker shots able to pass through glass or grilles and the latter firing slower but higher damage armor penetrating shots."
 	icon = 'icons/obj/guns/energy/brigador.dmi'
 	icon_state = "brigador"
 	charge_meter = FALSE
@@ -31,13 +32,13 @@
 	sel_mode = 1
 	suitable_cell = /obj/item/weapon/cell/small
 	charge_cost = 20
-	damage_multiplier = 0.9
+	damage_multiplier = 1
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
-	gun_tags = list(GUN_ENERGY)
+	gun_tags = list(GUN_LASER, GUN_ENERGY)
 
 	init_firemodes = list(
-		list(mode_name="plasma", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser4.ogg', fire_delay=1, icon="destroy", projectile_color = "#00FFFF"),
-		list(mode_name="laser", projectile_type=/obj/item/projectile/beam/xray, fire_sound='sound/weapons/Taser3.ogg', fire_delay=1, icon="kill", projectile_color = "#00AAFF"),
+		list(mode_name="plasma", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/Taser4.ogg', fire_delay=9, icon="destroy", projectile_color = "#00FFFF"),
+		list(mode_name="laser", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Taser3.ogg', fire_delay=0.5, icon="kill", projectile_color = "#00AAFF"),
 	)
 
 /obj/item/weapon/gun/energy/plasma/auretian/update_icon()
