@@ -33,7 +33,7 @@ var/list/mob_hat_cache = list()
 	braintype = "Robot"
 	lawupdate = 0
 	density = FALSE
-	req_access = list(access_engine, access_robotics)
+	req_access = list(access_robotics)
 	integrated_light_power = 3
 	local_transmit = 1
 	possession_candidate = 1
@@ -104,8 +104,8 @@ var/list/mob_hat_cache = list()
 	module_type = /obj/item/weapon/robot_module/drone/construction
 	hat_x_offset = 1
 	hat_y_offset = -12
-	can_pull_size = ITEM_SIZE_HUGE
-	can_pull_mobs = MOB_PULL_SAME
+//	can_pull_size = ITEM_SIZE_HUGE
+//	can_pull_mobs = MOB_PULL_SAME
 
 /mob/living/silicon/robot/drone/New()
 
@@ -142,6 +142,8 @@ var/list/mob_hat_cache = list()
 	aiCamera = new/obj/item/device/camera/siliconcam/drone_camera(src)
 	additional_law_channels["Drone"] = "d"
 	if(!laws) laws = new law_type
+
+	locked = !locked //We spawn unlocked. This is for repairing them.
 
 	flavor_text = "It's a tiny little repair drone. The casing is stamped with an corporate logo and the subscript: '[company_name] Recursive Repair Systems: Fixing Tomorrow's Problem, Today!'"
 	playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 0)
@@ -212,8 +214,14 @@ var/list/mob_hat_cache = list()
 				to_chat(user, SPAN_DANGER("Access denied."))
 				return
 
+			if(src.health < 0) //Are we able to even be revived?
+				to_chat(usr, "You have to repair the robot before using this module!")
+				return
+
 			user.visible_message(SPAN_DANGER("\The [user] swipes \his ID card through \the [src], attempting to reboot it."), SPAN_DANGER(">You swipe your ID card through \the [src], attempting to reboot it."))
-			request_player()
+			request_player() //Tell the player they are alive again.
+			we_live_again() //Do the revive!
+			updatehealth() //Check are hp, and refresh are huds
 			return
 
 		else
@@ -314,6 +322,15 @@ var/list/mob_hat_cache = list()
 	laws = new law_type
 
 //Reboot procs.
+
+/mob/living/silicon/robot/drone/proc/we_live_again(var/mob/living/silicon/robot/R) //we shall live again!
+	..() //Can never go wrong with one of these!
+	R.stat = CONSCIOUS //We live again!
+	GLOB.dead_mob_list -= R //Were not dead...
+	GLOB.living_mob_list |= R //Were infact alive
+	R.death_notified = FALSE //un-notifie us!
+	R.notify_ai(ROBOT_NOTIFICATION_NEW_UNIT) //Tell our big brother were back in action!
+	return  //for safty!
 
 /mob/living/silicon/robot/drone/proc/request_player()
 	if(too_many_active_drones())
