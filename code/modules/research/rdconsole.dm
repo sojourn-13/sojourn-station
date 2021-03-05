@@ -122,7 +122,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		D.forceMove(src)
 		disk = D
 		to_chat(user, SPAN_NOTICE("You add \the [D] to the machine."))
-	else if(istype(D, /obj/item/device/science_tool)) // Used when you want to upload autopsy/other scanned data to the console
+	else if(istype(D, /obj/item/device/science_tool) || istype(D,/obj/item/weapon/portable_destructive_analyzer)) // Used when you want to upload autopsy/other scanned data to the console
 		var/research_points = files.experiments.read_science_tool(D)
 		if(research_points > 0)
 			to_chat(user, SPAN_NOTICE("[name] received [research_points] research points from uploaded data."))

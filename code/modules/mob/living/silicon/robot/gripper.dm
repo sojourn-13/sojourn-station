@@ -239,7 +239,8 @@
 		/obj/item/weapon/disk,
 		/obj/item/device/scanner/plant,//For farmbot construction
 		/obj/item/weapon/tool/minihoe,//Farmbots and xenoflora
-		/obj/item/weapon/computer_hardware
+		/obj/item/weapon/computer_hardware,
+		/obj/item/device/integrated_electronics
 		)
 
 /obj/item/weapon/gripper/chemistry //A gripper designed for chemistry, to allow borgs to work efficiently in the lab

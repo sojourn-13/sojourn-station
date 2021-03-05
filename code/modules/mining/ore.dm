@@ -6,7 +6,32 @@
 	var/crushable = TRUE
 	var/datum/geosample/geologic_data
 	var/material
+	var/material_randomly_has = TRUE
 	var/sheet_amout = 1 //How many sheets do we give?
+
+/obj/item/weapon/ore/New()
+	..()
+	if(material_randomly_has)
+		if(prob(5))
+			material = MATERIAL_MHYDROGEN
+		if(prob(15))
+			material = MATERIAL_PLATINUM
+		if(prob(10))
+			material = MATERIAL_DIAMOND
+		if(prob(20))
+			material = MATERIAL_GOLD
+		if(prob(15))
+			material = MATERIAL_URANIUM
+		if(prob(20))
+			material = MATERIAL_SILVER
+		if(prob(10))
+			material = MATERIAL_PLASMA
+		if(prob(40))
+			material = "carbon"
+		if(prob(40))
+			material = "hematite"
+		else
+			material = "sand"
 
 /obj/item/weapon/ore/ex_act(severity)
 	return //We allow mining charges to not blow up ores
@@ -21,7 +46,7 @@
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_HAMMERING)
 		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
-		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_QUICK, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			new /obj/item/weapon/ore/glass(get_turf(src))
 			if(prob(50))
 				new /obj/random/material_ore_small(get_turf(src))
@@ -37,12 +62,12 @@
 	origin_tech = list(TECH_MATERIAL = 5)
 	material = MATERIAL_URANIUM
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 /obj/item/weapon/ore/uranium/small
 	name = "pitchblende shard"
 	material = MATERIAL_URANIUM
-	sheet_amout = 0.2
-	crushable = FALSE
+	sheet_amout = 0.5
 
 /obj/item/weapon/ore/iron
 	name = "hematite"
@@ -50,11 +75,11 @@
 	origin_tech = list(TECH_MATERIAL = 1)
 	material = "hematite"
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 /obj/item/weapon/ore/iron/small
 	name = "hematite nugget"
-	sheet_amout = 0.2
-	crushable = FALSE
+	sheet_amout = 0.5
 
 /obj/item/weapon/ore/coal
 	name = "raw carbon"
@@ -62,11 +87,11 @@
 	origin_tech = list(TECH_MATERIAL = 1)
 	material = "carbon"
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 /obj/item/weapon/ore/coal/small
 	name = "raw carbon chunk"
-	sheet_amout = 0.2
-	crushable = FALSE
+	sheet_amout = 0.5
 
 /obj/item/weapon/ore/glass
 	name = "sand"
@@ -75,6 +100,7 @@
 	material = "sand"
 	slot_flags = SLOT_HOLSTER
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 // POCKET SAND!
 /obj/item/weapon/ore/glass/throw_impact(atom/hit_atom)
@@ -94,11 +120,11 @@
 	origin_tech = list(TECH_MATERIAL = 2)
 	material = MATERIAL_PLASMA
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 /obj/item/weapon/ore/plasma/small
 	name = "plasma crystal"
-	sheet_amout = 0.2
-	crushable = FALSE
+	sheet_amout = 0.5
 
 /obj/item/weapon/ore/silver
 	name = "native silver ore"
@@ -106,11 +132,11 @@
 	origin_tech = list(TECH_MATERIAL = 3)
 	material = MATERIAL_SILVER
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 /obj/item/weapon/ore/silver/small
 	name = "native silver nugget"
-	sheet_amout = 0.2
-	crushable = FALSE
+	sheet_amout = 0.5
 
 /obj/item/weapon/ore/gold
 	name = "native gold ore"
@@ -118,11 +144,11 @@
 	origin_tech = list(TECH_MATERIAL = 4)
 	material = MATERIAL_GOLD
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 /obj/item/weapon/ore/gold/small
 	name = "native gold nugget"
-	sheet_amout = 0.2
-	crushable = FALSE
+	sheet_amout = 0.5
 
 /obj/item/weapon/ore/diamond
 	name = "diamonds"
@@ -130,11 +156,11 @@
 	origin_tech = list(TECH_MATERIAL = 6)
 	material = MATERIAL_DIAMOND
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 /obj/item/weapon/ore/diamond/small
 	name = "diamond dust"
-	sheet_amout = 0.2
-	crushable = FALSE
+	sheet_amout = 0.5
 
 /obj/item/weapon/ore/osmium
 	name = "raw platinum"
@@ -144,19 +170,18 @@
 
 /obj/item/weapon/ore/osmium/small
 	name = "raw platinum shard"
-	sheet_amout = 0.2
-	crushable = FALSE
+	sheet_amout = 0.5
 
 /obj/item/weapon/ore/hydrogen
 	name = "raw hydrogen"
 	icon_state = "ore_hydrogen"
 	material = MATERIAL_MHYDROGEN
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 /obj/item/weapon/ore/hydrogen/small
 	name = "raw hydrogen nugget" //Its a nugget?
-	sheet_amout = 0.2
-	crushable = FALSE
+	sheet_amout = 0.5
 
 /obj/item/weapon/ore/slag
 	name = "Slag"
