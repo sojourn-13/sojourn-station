@@ -34,6 +34,7 @@
 	armor = list(melee = 20, bullet = 10, energy = 25, bomb = 10, bio = 10, rad = 0)
 	item_flags = NOSLIP
 	siemens_coefficient = 0.4
+	can_hold_knife = 1
 
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain, wooden sandals."
@@ -52,7 +53,7 @@
 
 /obj/item/clothing/shoes/cult
 	name = "boots"
-	desc = "A pair of boots worn by the followers of Nar-Sie."
+	desc = "A pair of boots worn by the followers of ... something."
 	icon_state = "cult"
 	item_state = "cult"
 	force = WEAPON_FORCE_WEAK

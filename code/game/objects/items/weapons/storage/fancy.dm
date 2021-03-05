@@ -360,7 +360,7 @@
 
 /obj/item/weapon/storage/fancy/cigar
 	name = "cigar case"
-	desc = "A case for holding your cigars when you are not smoking them, made of steel and designed to hold only classy cigars."
+	desc = "A case for holding your cigars when you are not smoking them, made of steel and designed to hold only classy cigars and equally classy zippo lighters."
 	icon_state = "cigarcase"
 	item_state = "cigarcase"
 	icon = 'icons/obj/cigarettes.dmi'
@@ -368,7 +368,7 @@
 	throwforce = WEAPON_FORCE_HARMLESS
 	slot_flags = SLOT_BELT
 	storage_slots = 7
-	can_hold = list(/obj/item/clothing/mask/smokable/cigarette/cigar)
+	can_hold = list(/obj/item/clothing/mask/smokable/cigarette/cigar, /obj/item/weapon/flame/lighter/zippo)
 	icon_type = "cigar"
 	reagent_flags = REFILLABLE | NO_REACT
 	var/open = FALSE
