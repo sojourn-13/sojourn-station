@@ -323,6 +323,7 @@
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
 	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/weapon/tool/hammer(src)
 	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //borrows and the like.
 	src.modules += new /obj/item/weapon/tool/saw(src)
 	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair
