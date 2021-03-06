@@ -12,12 +12,60 @@
     tipText = "As a member of security, you have broad access to chase criminals. This does not mean you can take anything you have access to. Taking things from other departments is theft!"
 
 /tipsAndTricks/jobs/guild_resale_profit
-    jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech)
-    tipText = "As the executive officer, you should be buying up valuable things from scavengers and reselling them for a profit. Buy anything of value that's brought to you."
+    jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
+    tipText = "As Lonestar, you should be buying up valuable things from scavengers and reselling them for a profit. Buy anything of value that's brought to you."
 
 /tipsAndTricks/jobs/guild_price_scanner
-    jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech)
+    jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
     tipText = "There is a price scanner that can help you evaluate items. Your PDA also has this scanner installed ."
+
+/tipsAndTricks/jobs/mines_are_danger
+    jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
+    tipText = "The mines can hold a lot of ore, but also danger. Nightmare Stalkers, Spiders, Roaches and other monsters are common place down their."
+
+/tipsAndTricks/jobs/custom_venders
+    jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
+    tipText = "Always try to make use of your Custom Vending Machines when you can, they can sell products when you are busy making more deals. Other departments will love you for setting one up for them as well."
+
+/tipsAndTricks/jobs/drillllls
+    jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
+    tipText = "The massive drills mine into the deep ground on the tile its drilling, upgrading it will increase its AOE to more tiles."
+
+/tipsAndTricks/jobs/diggyhole
+    jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
+    tipText = "The ground itself can be digged to get more ore with a shovel, this will likely give you rocks that can be hammered on for more ore fragments."
+
+/tipsAndTricks/jobs/the_wall_of_ore
+    jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
+    tipText = "You can mine out with some types of picks the walls of the mines that are impassable, this will make more ore fragments."
+
+/tipsAndTricks/jobs/surface_mining
+    jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
+    tipText = "For those that want to avoid the dark, lonely, scary mines, you can go to the surface and in fine a cave by the lakeside to mine out. Sadly this will not get much ore but could be fun."
+
+/tipsAndTricks/jobs/survive
+    jobs_list = list(/datum/job/foreman, /datum/job/mining, /datum/job/salvager, /datum/job/pro)
+    tipText = "Dont die."
+
+/tipsAndTricks/jobs/scrap_stuff
+    jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
+    tipText = "Broken Devices, Scrap Metal, and Burnt Boards are all worth grabbing, as it can have random materails and good for steel glass and plastic."
+
+/tipsAndTricks/jobs/scrap_ammo_uses
+    jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
+    tipText = "Scap ammo well dealing less damage, has great uses at shooting down lockers when ever a hacker is not available."
+
+/tipsAndTricks/jobs/pointy_thing
+    jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
+    tipText = "Daggers and knifes when stabbed in the back of monsters and man alike will deal more damage then normal."
+
+/tipsAndTricks/jobs/sell_things_you_hoarding_goblins
+    jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
+    tipText = "Selling things to other departments is apart of your job, Blackshield and Marshals like weapon and ammo, Soteria would love materals as would the Guild."
+
+/tipsAndTricks/jobs/your_perks_are_op
+    jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
+    tipText = "You have a perk that lets you tell at a glance what an anomaly on an oddity does, you can market this for a proffit!"
 
 /tipsAndTricks/jobs/captain_leader
     jobs_list = list(/datum/job/premier)
@@ -66,6 +114,14 @@
 /tipsAndTricks/jobs/engies_firespacesuit
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
     tipText = "No adept lives long without learning that firesuits are not space suits, and vice versa."
+
+/tipsAndTricks/jobs/theBlackBox
+    jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
+    tipText = "The NanoForge can be powered with any oddity that both has mechanical and an anomaly. The NanoForge Black Box will always have an anomaly."
+
+/tipsAndTricks/jobs/bullet_fab
+    jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
+    tipText = "The Bullet Fabricator gets its points based on the worth of the material not what they are made of."
 
 /tipsAndTricks/jobs/tric
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/orderly, /datum/job/psychiatrist, /datum/job/paramedic)
@@ -123,6 +179,10 @@
     jobs_list = list(/datum/job/cyborg)
     tipText = "As a cyborg, you don't need oxygen/pressure to survive. You're also quite resistant to heat. Use it to your advantage."
 
+/tipsAndTricks/jobs/cyborgsChargersAreAmazing
+    jobs_list = list(/datum/job/cyborg)
+    tipText = "Having a cyborg recharger with better manipulators will allow it to heal brute and burn based damage."
+
 /tipsAndTricks/jobs/siliconRemoteControl
     jobs_list = list(/datum/job/cyborg, /datum/job/ai)
     tipText = "Silicons have the ability to remotely control machinery. You can open airlocks without bumping into them."
@@ -134,6 +194,10 @@
 /tipsAndTricks/jobs/siliconRemoteControlTwo
     jobs_list = list(/datum/job/cyborg, /datum/job/ai)
     tipText = "You can access some computer programs without interacting with actual computers using your \"Subsystems\", located in the silicon tab."
+
+/tipsAndTricks/jobs/ai_can_controle_shells
+    jobs_list = list(/datum/job/ai)
+    tipText = "As an AI you can controle drone shells inside drone fabricators."
 
 /tipsAndTricks/jobs/pda_paper_scanner
     jobs_list = list(/datum/job/premier, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/smc, /datum/job/pg, /datum/job/rd)
