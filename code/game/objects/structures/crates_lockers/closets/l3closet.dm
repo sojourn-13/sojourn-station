@@ -3,11 +3,16 @@
 	desc = "It's a storage unit for level-3 biohazard gear."
 	icon_state = "bio"
 
+/obj/structure/closet/l3closet/populate_contents()
+	new /obj/item/clothing/suit/bio_suit/general(src)
+	new /obj/item/clothing/head/bio_hood/general(src)
+
 /obj/structure/closet/l3closet/general
 
 /obj/structure/closet/l3closet/general/populate_contents()
 	new /obj/item/clothing/suit/bio_suit/general(src)
 	new /obj/item/clothing/head/bio_hood/general(src)
+	new /obj/item/weapon/reagent_containers/spray/sterilizine(src)
 
 /obj/structure/closet/l3closet/virology
 	icon_door = "bio_viro"
@@ -17,6 +22,7 @@
 	new /obj/item/clothing/head/bio_hood/virology(src)
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/weapon/tank/oxygen(src)
+	new /obj/item/weapon/reagent_containers/spray/sterilizine(src)
 
 /obj/structure/closet/l3closet/security
 	icon_door = "bio_sec"
