@@ -383,10 +383,9 @@
 		list(/obj/item/stack/material/glass, 2, "time" = 30),
 		list(QUALITY_CUTTING, 25, "time" = 90),
 	)
-
-//Traps
 /*
-/datum/craft_recipe/weapon/guild_mine_trap
+//Traps
+/datum/craft_recipe/guild/guild_mine_trap
 	name = "land mine trap"
 	result = /obj/item/weapon/mine
 	icon_state = "gun"
@@ -396,8 +395,7 @@
 		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
-	)
-*/
+	)*/
 
 //Machines
 /datum/craft_recipe/guild/turretcircuit
@@ -444,8 +442,7 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
 	)
 
-/*
-/datum/craft_recipe/weapon/guild_bin
+/datum/craft_recipe/guild/guild_bin
 	name = "Cast Matter Bin"
 	result = /obj/item/weapon/stock_parts/matter_bin/guild
 	icon_state = "gun"
@@ -461,7 +458,7 @@
 		list(QUALITY_SAWING, 60, "time" = 30),
 	)
 
-/datum/craft_recipe/weapon/guild_manip
+/datum/craft_recipe/guild/guild_manip
 	name = "Forged Manipulator"
 	result = /obj/item/weapon/stock_parts/manipulator/guild
 	icon_state = "gun"
@@ -478,7 +475,7 @@
 		list(QUALITY_SAWING, 60, "time" = 30),
 	)
 
-/datum/craft_recipe/weapon/guild_laser
+/datum/craft_recipe/guild/guild_laser
 	name = "Perfected Micro-Laser"
 	result = /obj/item/weapon/stock_parts/micro_laser/guild
 	icon_state = "gun"
@@ -492,7 +489,7 @@
 		list(QUALITY_SAWING, 60, "time" = 30),
 	)
 
-/datum/craft_recipe/weapon/guild_scanner
+/datum/craft_recipe/guild/guild_scanner
 	name = "Perfected Micro-Laser"
 	result = /obj/item/weapon/stock_parts/scanning_module/guild
 	icon_state = "gun"
@@ -507,7 +504,7 @@
 		list(QUALITY_SAWING, 60, "time" = 30),
 	)
 
-/datum/craft_recipe/weapon/guild_capacitor
+/datum/craft_recipe/guild/guild_capacitor
 	name = "Crafted Ultra Capacitor"
 	result = /obj/item/weapon/stock_parts/capacitor/guild
 	icon_state = "gun"
@@ -521,5 +518,3 @@
 		list(/obj/item/weapon/stock_parts/capacitor/super, 1, "time" = 120),
 		list(QUALITY_SAWING, 60, "time" = 30),
 	)
-*/
-
