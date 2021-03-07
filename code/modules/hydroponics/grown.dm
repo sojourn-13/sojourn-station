@@ -21,6 +21,8 @@
 	src.pixel_y = rand(-5.0, 5)
 
 	// Fill the object up with the appropriate reagents.
+
+
 	if(planttype)
 		plantname = planttype
 
@@ -62,6 +64,12 @@
 	update_desc()
 	if(reagents.total_volume > 0)
 		bitesize = 1+round(reagents.total_volume / 2, 1)
+
+	if (!seed.materials)
+		return
+
+	if (seed.materials) matter = seed.materials.Copy()
+	if (seed.origin_tech) origin_tech = seed.origin_tech.Copy()
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/New()
 	..()

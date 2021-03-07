@@ -151,10 +151,13 @@
 
 	//Override for somatoray projectiles.
 	if(istype(Proj ,/obj/item/projectile/energy/floramut) && prob(20))
-		mutate(1)
+		mutate(prob(25) ? 3 : 1)
 		return
 	else if(istype(Proj ,/obj/item/projectile/energy/florayield) && prob(20))
 		yield_mod = min(10,yield_mod+rand(1,2))
+		return
+	else if(istype(Proj ,/obj/item/projectile/energy/floraevolve) && prob(20))
+		mutate(4)
 		return
 
 	..()
@@ -314,11 +317,26 @@
 	// No seed, no mutations.
 	if(!seed)
 		return
+	switch(severity)
+		if (4)
+			if (seed.evolutions && seed.evolutions.len)
+				for(var/rid in seed.evolutions)
 
-	// Check if we should even bother working on the current seed datum.
-	if(seed.mutants && seed.mutants.len && severity > 1)
-		mutate_species()
-		return
+					var/list/checkEvoChems = seed.evolutions[rid].Copy()
+
+					if (checkEvoChems ~= (checkEvoChems & seed.chems))
+						evolve_species(rid)
+
+			return
+		if (3)
+			if(seed.greatMutants && seed.greatMutants.len)
+
+				mutate_species(seed.greatMutants)
+			return
+		if (2)
+			if(seed.mutants && seed.mutants.len)
+				mutate_species(seed.mutants)
+			return
 
 	// We need to make sure we're not modifying one of the global seed datums.
 	// If it's not in the global list, then no products of the line have been
@@ -375,10 +393,10 @@
 	weedlevel =      max(0,min(weedlevel,10))
 	toxins =         max(0,min(toxins,10))
 
-/obj/machinery/portable_atmospherics/hydroponics/proc/mutate_species()
+/obj/machinery/portable_atmospherics/hydroponics/proc/mutate_species(var/list/strains)
 
 	var/previous_plant = seed.display_name
-	var/newseed = seed.get_mutant_variant()
+	var/newseed = seed.get_mutant_variant(strains)
 	if(newseed in plant_controller.seeds)
 		seed = plant_controller.seeds[newseed]
 	else
@@ -396,6 +414,32 @@
 	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly mutated into </span><span class='notice'>[seed.display_name]!"))
 
 	return
+
+/obj/machinery/portable_atmospherics/hydroponics/proc/evolve_species(var/strain)
+
+
+	var/previous_plant = seed.display_name
+	var/newseed = strain
+	if (newseed in plant_controller.seeds)
+		seed = plant_controller.seeds[newseed]
+	else
+		return
+
+	dead = 0
+	mutate(1)
+	age = 0
+	health = seed.get_trait(TRAIT_ENDURANCE)
+	lastcycle = world.time
+	harvest = 0
+	weedlevel = 0
+
+	update_icon()
+	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly evolved into </span><span class='notice'>[seed.display_name]!"))
+
+	return
+
+
+
 
 /obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/I, var/mob/user as mob)
 

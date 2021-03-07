@@ -10,14 +10,18 @@
 	var/seed_noun = "seeds"        // Descriptor for packet.
 	var/display_name               // Prettier name.
 	var/roundstart                 // If set, seed will not display variety number.
-	var/mysterious                 // Only used for the random seed packets.
-	var/can_self_harvest = 0       // Mostly used for living mobs.
-	var/growth_stages = 0          // Number of stages the plant passes through before it is mature.
-	var/list/traits = list()       // Initialized in New()
-	var/list/mutants               // Possible predefined mutant varieties, if any.
-	var/list/chems                 // Chemicals that plant produces in products/injects into victim.
-	var/list/consume_gasses        // The plant will absorb these gasses during its life.
-	var/list/exude_gasses          // The plant will exude these gasses during its life.
+	var/mysterious                  	// Only used for the random seed packets.
+	var/can_self_harvest = 0        	// Mostly used for living mobs.
+	var/growth_stages = 0            	// Number of stages the plant passes through before it is mature.
+	var/list/traits = list()        	// Initialized in New()
+	var/list/materials					// List used to determine material values for recycling in autolathe
+	var/list/origin_tech 	= list()	// List used to determine research values for recyling in deconstructive analyzer
+	var/list/mutants           		      // Possible predefined mutant varieties, if any
+	var/list/greatMutants				  // Possible floral gun mutations
+	var/list/evolutions		=list()       // Possible floral evolutions
+	var/list/chems                 		  // Chemicals that plant produces in products/injects into victim.
+	var/list/consume_gasses =list()       // The plant will absorb these gasses during its life.
+	var/list/exude_gasses   =list()       // The plant will exude these gasses during its life.
 	var/kitchen_tag                // Used by the reagent grinder.
 	var/trash_type                 // Garbage item produced when eaten.
 	var/splat_type = /obj/effect/decal/cleanable/fruit_smudge // Graffiti decal.
@@ -415,6 +419,7 @@
 			"thermite",
 			"tramadol",
 			"cryptobiolin",
+			"clonexadone",
 			"dermaline",
 			"dexalin",
 			"plasma",
@@ -493,9 +498,9 @@
 	set_trait(TRAIT_PRODUCTION,get_trait(TRAIT_MATURATION)+rand(2,5))
 
 //Returns a key corresponding to an entry in the global seed list.
-/datum/seed/proc/get_mutant_variant()
-	if(!mutants || !mutants.len || get_trait(TRAIT_IMMUTABLE) > 0) return 0
-	return pick(mutants)
+/datum/seed/proc/get_mutant_variant(var/list/strains)
+	if(!strains || !strains.len || get_trait(TRAIT_IMMUTABLE) > 0) return 0
+	return pick(strains)
 
 //Mutates the plant overall (randomly).
 /datum/seed/proc/mutate(degree,turf/source_turf)
@@ -598,15 +603,7 @@
 					else
 						chems[rid][i] = gene_chem[i]
 
-			var/list/new_gasses = gene.values["[TRAIT_EXUDE_GASSES]"]
-			if(islist(new_gasses))
-				if(!exude_gasses) exude_gasses = list()
-				exude_gasses |= new_gasses
-				for(var/gas in exude_gasses)
-					exude_gasses[gas] = max(1,round(exude_gasses[gas]*0.8))
 
-			gene.values["[TRAIT_EXUDE_GASSES]"] = null
-			gene.values["[TRAIT_CHEMS]"] = null
 
 		if(GENE_DIET)
 			var/list/new_gasses = gene.values["[TRAIT_CONSUME_GASSES]"]
@@ -615,6 +612,21 @@
 		if(GENE_METABOLISM)
 			has_mob_product = gene.values["mob_product"]
 			gene.values["mob_product"] = null
+
+		if(GENE_OUTPUT)
+			var/list/new_gasses = gene.values["[TRAIT_EXUDE_GASSES]"]
+			if(islist(new_gasses))
+				if(!exude_gasses) exude_gasses = list()
+				exude_gasses = new_gasses.Copy()
+				for(var/gas in exude_gasses)
+					exude_gasses[gas] = max(1,round(exude_gasses[gas]*0.8))
+				set_trait(TRAIT_EXUDE_GASSES,1)
+			else
+				set_trait(TRAIT_EXUDE_GASSES,0)
+				exude_gasses = list()
+
+			gene.values["[TRAIT_EXUDE_GASSES]"] = null
+			gene.values["[TRAIT_CHEMS]"] = null
 
 	for(var/trait in gene.values)
 		set_trait(trait,gene.values["[trait]"])
@@ -634,9 +646,10 @@
 	switch(genetype)
 		if(GENE_BIOCHEMISTRY)
 			P.values["[TRAIT_CHEMS]"] =        chems
-			P.values["[TRAIT_EXUDE_GASSES]"] = exude_gasses
+			P.values["mob_product"] = has_mob_product
 			traits_to_copy = list(TRAIT_POTENCY)
 		if(GENE_OUTPUT)
+			P.values["[TRAIT_EXUDE_GASSES]"] = exude_gasses
 			traits_to_copy = list(TRAIT_PRODUCES_POWER,TRAIT_BIOLUM)
 		if(GENE_ATMOSPHERE)
 			traits_to_copy = list(TRAIT_HEAT_TOLERANCE,TRAIT_LOWKPA_TOLERANCE,TRAIT_HIGHKPA_TOLERANCE)
@@ -757,9 +770,13 @@
 	new_seed.has_mob_product =  has_mob_product
 	//Copy over everything else.
 	if(mutants)        new_seed.mutants = mutants.Copy()
+	if(greatMutants)   new_seed.greatMutants = greatMutants.Copy()
 	if(chems)          new_seed.chems = chems.Copy()
 	if(consume_gasses) new_seed.consume_gasses = consume_gasses.Copy()
 	if(exude_gasses)   new_seed.exude_gasses = exude_gasses.Copy()
+	if(materials)	   new_seed.materials = materials.Copy()
+	if(evolutions)	   new_seed.evolutions = evolutions.Copy()
+	if(origin_tech)    new_seed.origin_tech = origin_tech.Copy()
 
 	new_seed.seed_name =            "[(roundstart ? "[(modified ? "modified" : "mutant")] " : "")][seed_name]"
 	new_seed.display_name =         "[(roundstart ? "[(modified ? "modified" : "mutant")] " : "")][display_name]"
@@ -772,4 +789,5 @@
 	if(get_trait(TRAIT_PLANT_ICON))
 		growth_stages = plant_controller.plant_sprites[get_trait(TRAIT_PLANT_ICON)]
 	else
+		to_chat(world, SPAN_DANGER("NO PLANT_ICON FOUND"))
 		growth_stages = 0

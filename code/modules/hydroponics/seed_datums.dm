@@ -142,6 +142,8 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#8C5030")
 	set_trait(TRAIT_PLANT_COLOUR,"#634941")
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //Tomatoes/variants.
 /datum/seed/tomato
 	name = "tomato"
@@ -223,7 +225,6 @@
 	name = "eggplant"
 	seed_name = "eggplant"
 	display_name = "eggplants"
-	mutants = list("realeggplant")
 	chems = list("nutriment" = list(1,10))
 	kitchen_tag = "eggplant"
 
@@ -240,6 +241,9 @@
 	set_trait(TRAIT_IDEAL_HEAT, 298)
 	set_trait(TRAIT_IDEAL_LIGHT, 7)
 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Apples/varieties.
 /datum/seed/apple
 	name = "apple"
@@ -248,6 +252,7 @@
 	mutants = list("poisonapple","goldapple")
 	chems = list("nutriment" = list(1,10))
 	kitchen_tag = "apple"
+
 
 /datum/seed/apple/New()
 	..()
@@ -283,12 +288,15 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#FFDD00")
 	set_trait(TRAIT_PLANT_COLOUR,"#D6B44D")
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //Ambrosia/varieties.
 /datum/seed/ambrosia
 	name = "ambrosia"
 	seed_name = "ambrosia vulgaris"
 	display_name = "ambrosia vulgaris"
-	mutants = list("ambrosiadeus")
+	mutants = list("ambrosiadeus", "ambrosiarobusto")
+	greatMutants = list("ambrosiainfernum", "ambrosiaomni")
 	chems = list("nutriment" = list(1), "space_drugs" = list(1,8), "kelotane" = list(1,8,1), "bicaridine" = list(1,10,1), "toxin" = list(1,10))
 	kitchen_tag = "ambrosia"
 
@@ -316,6 +324,86 @@
 	..()
 	set_trait(TRAIT_PRODUCT_COLOUR,"#A3F0AD")
 	set_trait(TRAIT_PLANT_COLOUR,"#2A9C61")
+
+/datum/seed/ambrosia/omni
+	name = "ambrosiaomni"
+	seed_name = "ambrosia omni"
+	display_name = "ambrosia omni"
+	mutants = null
+	evolutions = list("ambrosiapanacea" = list("clonexadone"))
+	chems = list("nutriment"=list(1), "tricordrazine"=list(1,10), "anti_toxin"=list(1,10), "bicaridine"=list(2), "dexalinp"=list(2), "kelotane"=list(2),"copper"=list(2),"stoxin"=list(2))
+
+/datum/seed/ambrosia/omni/New()
+	..()
+	set_trait(TRAIT_PLANT_COLOUR, "#DDDDDD")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#51CEE7")
+
+/datum/seed/ambrosia/panacea
+	name = "ambrosiapanacea"
+	seed_name = "ambrosia panacea"
+	display_name = "ambrosia panacea"
+	mutants = null
+	evolutions = null
+	chems = list("nutriment"=list(1), "clonexadone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respiradoxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"vomitol"=list(5,20),"quickclot"=list(5,20),"ossissine"=list(5,20))
+	exude_gasses = list("sleeping_agent" = 4)
+
+/datum/seed/ambrosia/panacea/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR, "#FFFF00")
+	set_trait(TRAIT_PLANT_COLOUR, "#DDDDDD")
+
+/datum/seed/ambrosia/robusto
+	name = "ambrosiarobusto"
+	seed_name = "ambrosia robusto"
+	display_name = "ambrosia robusto"
+	mutants = null
+	chems = list("nicotineplus" = list(5,20), "space_drugs" = list(1))
+
+/datum/seed/ambrosia/robusto/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#E8A725")
+	set_trait(TRAIT_PLANT_COLOUR, "#996633")
+
+/datum/seed/ambrosia/infernum
+	name = "ambrosiainfernum"
+	seed_name = "ambrosia infernum"
+	display_name = "ambrosia infernum"
+	mutants = null
+	evolutions = list("ambrosiadiablos" = list("aluminum"))
+	chems = list("plasma" = list(5,20), "fuel" = list(5,20), "acetone" = list(1,25), "space_drugs" = list(1))
+	exude_gasses = list("plasma"=1)
+
+/datum/seed/ambrosia/infernum/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#E8A725")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF0000")
+	set_trait(TRAIT_BIOLUM, 1)
+	set_trait(TRAIT_BIOLUM_COLOUR, "#FF3300")
+	set_trait(TRAIT_ALTER_TEMP, 2)
+
+/datum/seed/ambrosia/diablos
+	name = "ambrosiadiablos"
+	seed_name = "ambrosia diablos"
+	display_name = "ambrosia diablos"
+	exude_gasses = list("plasma"=4,"oxygen"=8)
+	chems = list("plasma" = list(20),"thermite" = list(0,5), "space_drugs"= list (5))
+	origin_tech = list(TECH_PLASMA = 4, TECH_POWER = 5, TECH_COMBAT = 4)
+	evolutions = null
+	mutants = null
+
+/datum/seed/ambrosia/diablos/New()
+	..()
+	set_trait(TRAIT_EXPLOSIVE, 1)
+	set_trait(TRAIT_BIOLUM, 1)
+	set_trait(TRAIT_BIOLUM_COLOUR, "#FF3300")
+	set_trait(TRAIT_ALTER_TEMP, 10)
+	set_trait(TRAIT_HEAT_TOLERANCE, 10000)
+	set_trait(TRAIT_IDEAL_HEAT,10000)
+	set_trait(TRAIT_JUICY,1)
+	set_trait(TRAIT_PRODUCT_COLOUR,"#E8A725")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF0000")
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Mushrooms/varieties.
 /datum/seed/mushroom
@@ -448,7 +536,7 @@
 	name = "destroyingangel"
 	seed_name = "destroying angel"
 	display_name = "destroying angel mushrooms"
-	mutants = null
+	greatMutants = list("gravefiller")
 	chems = list("nutriment" = list(1,50), "amatoxin" = list(13,3), "psilocybin" = list(1,25))
 
 /datum/seed/mushroom/poison/death/New()
@@ -461,12 +549,30 @@
 	set_trait(TRAIT_PLANT_COLOUR,"#E6D8DD")
 	set_trait(TRAIT_PLANT_ICON,"mushroom5")
 
+/datum/seed/mushroom/poison/grave
+	name = "gravefiller"
+	seed_name = "grave filler"
+	display_name = "Grave Filler"
+	greatMutants = null
+	chems = list("nutriment" = list(1,50), "carpotoxin" = list(5,7), "cyanide" = list(1,15), "amatoxin" = list(13,15), "lexorin" = list(3,30))
+	exude_gasses = list("carbon_dioxide" = 6)
+	consume_gasses = list("oxygen" = 3)
+
+/datum/seed/mushroom/poison/grave/New()
+	..()
+	set_trait(TRAIT_PRODUCT_ICON, "mushroom10")
+	set_trait(TRAIT_PLANT_ICON, "mushroom2")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#0099CC")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF9900")
+	set_trait(TRAIT_POTENCY, 40)
+	set_trait(TRAIT_STINGS, 1)
+
 /datum/seed/mushroom/towercap
 	name = "towercap"
 	seed_name = "tower cap"
 	display_name = "tower caps"
 	chems = list("woodpulp" = list(10,1))
-	mutants = null
+	mutants = list("metalcap")
 
 /datum/seed/mushroom/towercap/New()
 	..()
@@ -475,6 +581,36 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#79A36D")
 	set_trait(TRAIT_PLANT_COLOUR,"#857F41")
 	set_trait(TRAIT_PLANT_ICON,"mushroom8")
+
+/datum/seed/mushroom/towercap/metalcap
+	name = "metalcap"
+	seed_name = "metal cap"
+	display_name = "metal caps"
+	chems = list("aluminum" = list(10,10))
+	materials = list(MATERIAL_STEEL = 1)
+	origin_tech = list(TECH_MATERIAL = 1)
+	mutants = null
+	evolutions = list("plasmacap"=list("plasma"))
+
+/datum/seed/mushroom/towercap/metalcap/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#4D4D4D")
+	set_trait(TRAIT_PLANT_COLOUR,"#969696")
+
+/datum/seed/mushroom/towercap/metalcap/plasmacap
+	name = "plasmacap"
+	seed_name = "plasma cap"
+	display_name = "Plasma Caps"
+	chems = list("plasma" = list(1,25))
+	materials = list(MATERIAL_PLASTEEL = 1)
+	evolutions = null
+	origin_tech = list(TECH_MATERIAL = 2, TECH_PLASMA = 2)
+
+/datum/seed/mushroom/towercap/metalcap/plasmacap/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#FF0066")
+	set_trait(TRAIT_PLANT_COLOUR,  "#46B543")
+
 
 /datum/seed/mushroom/glowshroom
 	name = "glowshroom"
@@ -558,6 +694,7 @@
 		"radium",
 		"ryetalyn",
 		"alkysine",
+		"clonexadone",
 		"thermite",
 		"tramadol",
 		"cryptobiolin",
@@ -567,6 +704,7 @@
 		"impedrezene",
 		"hyronalin",
 		"peridaxon",
+		"chemweapon1",
 		"toxin",
 		"rezadone",
 		"ethylredoxrazine",
@@ -605,11 +743,15 @@
 		set_trait(TRAIT_PLANT_COLOUR,color)
 		set_trait(TRAIT_PRODUCT_COLOUR,color)
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //Flowers/varieties
 /datum/seed/flower
 	name = "harebells"
 	seed_name = "harebell"
 	display_name = "harebells"
+	mutants = list("silverbells")
 	chems = list("nutriment" = list(1,20))
 
 /datum/seed/flower/New()
@@ -622,6 +764,20 @@
 	set_trait(TRAIT_PLANT_COLOUR,"#6B8C5E")
 	set_trait(TRAIT_PLANT_ICON,"flower")
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/datum/seed/flower/silverBell
+	name = "silverbells"
+	seed_name = "silverbell"
+	display_name = "silverbells"
+	materials = list(MATERIAL_SILVER = 1)
+	chems = list("nutriment" = list(1,50))
+
+/datum/seed/flower/silverBell/New()
+	..()
+	set_trait(TRAIT_MATURATION,4)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_PRODUCT_COLOUR,"#C0C0C0")
 
 /datum/seed/flower/poppy
 	name = "poppies"
@@ -705,7 +861,7 @@
 	set_trait(TRAIT_PRODUCTION,6)
 	set_trait(TRAIT_YIELD,6)
 	set_trait(TRAIT_POTENCY,10)
-	set_trait(TRAIT_PRODUCT_ICON,"potato")
+	set_trait(TRAIT_PRODUCT_ICON,"nuts")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#C4AE7A")
 	set_trait(TRAIT_PLANT_ICON,"bush2")
 	set_trait(TRAIT_IDEAL_LIGHT, 6)
@@ -737,6 +893,7 @@
 	seed_name = "banana"
 	display_name = "banana tree"
 	chems = list("banana" = list(10,10))
+	evolutions = list("clownana"=list("lube","blood"))
 	trash_type = /obj/item/weapon/bananapeel
 	kitchen_tag = "banana"
 
@@ -753,6 +910,18 @@
 	set_trait(TRAIT_IDEAL_HEAT, 298)
 	set_trait(TRAIT_IDEAL_LIGHT, 7)
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+
+/datum/seed/banana/clownana
+	name = "clownana"
+	seed_name = "clownana"
+	display_name = "Clownana tree"
+	has_mob_product = /mob/living/simple_animal/hostile/retaliate/clown/banana
+	exude_gasses = list("sleeping_agent" = 8)
+
+/datum/seed/banana/clownana/New()
+	..()
+	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_PRODUCT_COLOUR,"#1C1C1C")
 
 /datum/seed/corn
 	name = "corn"
@@ -1015,11 +1184,14 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#FFC20A")
 	set_trait(TRAIT_FLESH_COLOUR,"#FFC20A")
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /datum/seed/grass
 	name = "grass"
 	seed_name = "grass"
 	display_name = "grass"
 	chems = list("nutriment" = list(1,20))
+	mutants = list("maidengrass")
 	kitchen_tag = "grass"
 
 /datum/seed/grass/New()
@@ -1034,6 +1206,68 @@
 	set_trait(TRAIT_PLANT_ICON,"grass")
 	set_trait(TRAIT_WATER_CONSUMPTION, 0.5)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/datum/seed/grass/maiden
+	name = "maidengrass"
+	seed_name = "maiden grass"
+	display_name = "maiden grass"
+	kitchen_tag = "maidengrass"
+	mutants = list("mothergrass")
+	evolutions = list("trinitygrass"=list("paracetamol","tramadol","oxycodone"))
+	chems = list("paracetamol" = list(1,10))
+
+/datum/seed/grass/maiden/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR, "#EAEAEA")
+	set_trait(TRAIT_PLANT_COLOUR, "#EAEAEA")
+	set_trait(TRAIT_PRODUCT_ICON,"grass2")
+
+/datum/seed/grass/maiden/mothergrass
+	name = "mothergrass"
+	seed_name = "mother grass"
+	display_name = "mother grass"
+	kitchen_tag = "mothergrass"
+	mutants = list("maidengrass","cronegrass")
+	evolutions = list("trinitygrass"=list("paracetamol","tramadol","oxycodone"))
+	chems = list("tramadol" = list(1,10))
+
+/datum/seed/grass/maiden/mothergrass/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR, "#7AA7FB")
+	set_trait(TRAIT_PLANT_COLOUR, "#7AA7FB")
+
+/datum/seed/grass/maiden/cronegrass
+	name = "cronegrass"
+	seed_name = "crone grass"
+	display_name = "crone grass"
+	kitchen_tag = "cronegrass"
+	mutants = list("mothergrass")
+	evolutions = list("trinitygrass"=list("paracetamol","tramadol","oxycodone"))
+	chems = list("oxycodone" = list(1,10))
+
+/datum/seed/grass/maiden/cronegrass/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR, "#A1085E")
+	set_trait(TRAIT_PLANT_COLOUR, "#A1085E")
+
+/datum/seed/grass/maiden/trinitygrass
+	name = "trinitygrass"
+	seed_name = "trinity grass"
+	display_name = "Trinity Grass"
+	kitchen_tag = "trinitygrass"
+	mutants = null
+	evolutions = null
+	chems = list ("clonexadone" = list(1,20))
+	exude_gasses = list("sleeping_agent" = 3)
+
+/datum/seed/grass/maiden/trinitygrass/New()
+	..()
+	set_trait(TRAIT_IMMUTABLE, 0)
+	set_trait(TRAIT_PRODUCT_ICON, "wheat")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#FF00FF")
+	set_trait(TRAIT_PLANT_ICON, "stalk2")
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/seed/cocoa
 	name = "cocoa"
@@ -1136,13 +1370,17 @@
 
 /datum/seed/telriis
 	name = "telriis"
-	seed_name = "telriis"
-	display_name = "telriis grass"
+	seed_name = "Telriis grass"
+	display_name = "Telriis grass"
 	chems = list("pwine" = list(1,5), "nutriment" = list(1,6))
 
 /datum/seed/telriis/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"telriis")
+	set_trait(TRAIT_PLANT_ICON,"grass2")
+	set_trait(TRAIT_PRODUCT_ICON, "grass")
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_PRODUCT_COLOUR, "#00FFF2")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF3399")
 	set_trait(TRAIT_ENDURANCE,50)
 	set_trait(TRAIT_MATURATION,5)
 	set_trait(TRAIT_PRODUCTION,5)
@@ -1151,28 +1389,37 @@
 
 /datum/seed/thaadra
 	name = "thaadra"
-	seed_name = "thaa'dra"
-	display_name = "thaa'dra lichen"
+	seed_name = "Thaa'dra lichen"
+	display_name = "Thaa'dra lichen"
 	chems = list("frostoil" = list(1,5),"nutriment" = list(1,5))
 
 /datum/seed/thaadra/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"thaadra")
+	set_trait(TRAIT_PLANT_ICON,"alien4")
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_PRODUCT_ICON, "alien3")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#00FF8F")
+	set_trait(TRAIT_PLANT_COLOUR, "#006DFF")
 	set_trait(TRAIT_ENDURANCE,10)
 	set_trait(TRAIT_MATURATION,5)
 	set_trait(TRAIT_PRODUCTION,9)
 	set_trait(TRAIT_YIELD,2)
 	set_trait(TRAIT_POTENCY,5)
+	set_trait(TRAIT_ALTER_TEMP, -5)
+	set_trait(TRAIT_IDEAL_HEAT, 276)
 
 /datum/seed/jurlmah
 	name = "jurlmah"
-	seed_name = "jurl'mah"
+	seed_name = "jurl'mah reeds"
 	display_name = "jurl'mah reeds"
-	chems = list("serotrotium" = list(1,5),"nutriment" = list(1,5))
+	chems = list("mutagen" = list(1,5),"nutriment" = list(1,5))
 
 /datum/seed/jurlmah/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"jurlmah")
+	set_trait(TRAIT_PLANT_ICON,"stalk3")
+	set_trait(TRAIT_PRODUCT_ICON, "stalk")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#996633")
+	set_trait(TRAIT_PLANT_COLOUR, "#336600")
 	set_trait(TRAIT_ENDURANCE,12)
 	set_trait(TRAIT_MATURATION,8)
 	set_trait(TRAIT_PRODUCTION,9)
@@ -1187,7 +1434,10 @@
 
 /datum/seed/amauri/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"amauri")
+	set_trait(TRAIT_PLANT_ICON,"alien2")
+	set_trait(TRAIT_PRODUCT_ICON, "alien2")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#FF0066")
+	set_trait(TRAIT_PLANT_COLOUR, "#6924C4")
 	set_trait(TRAIT_ENDURANCE,10)
 	set_trait(TRAIT_MATURATION,8)
 	set_trait(TRAIT_PRODUCTION,9)
@@ -1198,11 +1448,14 @@
 	name = "gelthi"
 	seed_name = "gelthi"
 	display_name = "gelthi plant"
-	chems = list("stoxin" = list(1,5),"capsaicin" = list(1,5),"nutriment" = list(1,5))
+	chems = list("coffee" = list(1,5),"nicotine" = list(1,5),"nutriment" = list(1,5))
 
 /datum/seed/gelthi/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"gelthi")
+	set_trait(TRAIT_PLANT_ICON,"alien")
+	set_trait(TRAIT_PRODUCT_ICON, "alien")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#A1082D")
+	set_trait(TRAIT_PLANT_COLOUR, "#6924C4")
 	set_trait(TRAIT_ENDURANCE,15)
 	set_trait(TRAIT_MATURATION,6)
 	set_trait(TRAIT_PRODUCTION,6)
@@ -1211,13 +1464,17 @@
 
 /datum/seed/vale
 	name = "vale"
-	seed_name = "vale"
+	seed_name = "vale bush"
 	display_name = "vale bush"
 	chems = list("paracetamol" = list(1,5),"dexalin" = list(1,2),"nutriment"= list(1,5))
 
 /datum/seed/vale/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"vale")
+	set_trait(TRAIT_PLANT_ICON,"bush4")
+	set_trait(TRAIT_PRODUCT_ICON, "nuts")
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_PRODUCT_COLOUR, "#B2B2B2")
+	set_trait(TRAIT_PLANT_COLOUR, "#4735C6")
 	set_trait(TRAIT_ENDURANCE,15)
 	set_trait(TRAIT_MATURATION,8)
 	set_trait(TRAIT_PRODUCTION,10)
@@ -1226,18 +1483,23 @@
 
 /datum/seed/surik
 	name = "surik"
-	seed_name = "surik"
+	seed_name = "surik vine"
 	display_name = "surik vine"
-	chems = list("impedrezene" = list(1,3),"synaptizine" = list(1,2),"nutriment" = list(1,5))
+	chems = list("mindbreaker" = list(1,3),"turbo" = list(1,2),"nutriment" = list(1,5))
 
 /datum/seed/surik/New()
 	..()
-	set_trait(TRAIT_PLANT_ICON,"surik")
+	set_trait(TRAIT_PLANT_ICON,"vine2")
+	set_trait(TRAIT_PRODUCT_ICON, "vine2")
+	set_trait(TRAIT_PRODUCT_COLOUR, "#990099")
+	set_trait(TRAIT_PLANT_COLOUR, "#FF3300")
 	set_trait(TRAIT_ENDURANCE,18)
-	set_trait(TRAIT_MATURATION,7)
-	set_trait(TRAIT_PRODUCTION,7)
+	set_trait(TRAIT_MATURATION,5)
+	set_trait(TRAIT_PRODUCTION,1)
 	set_trait(TRAIT_YIELD,3)
 	set_trait(TRAIT_POTENCY,3)
+	set_trait(TRAIT_SPREAD,1)
+	set_trait(TRAIT_STINGS, 1)
 
 // Alien weeds.
 /datum/seed/xenomorph

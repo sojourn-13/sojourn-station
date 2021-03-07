@@ -77,7 +77,6 @@
 		/obj/item/seeds/sugarcaneseed = 3,
 		/obj/item/seeds/sunflowerseed = 3,
 		/obj/item/seeds/shandseed = 2,
-		/obj/item/seeds/tobaccoseed = 3,
 		/obj/item/seeds/tomatoseed = 3,
 		/obj/item/seeds/towermycelium = 3,
 		/obj/item/seeds/watermelonseed = 3,
@@ -88,7 +87,8 @@
 /obj/machinery/seed_storage/xenobotany
 	name = "xenobotany SeedMaster"
 	scanner = list("stats", "produce", "soil", "temperature", "light")
-	starting_seeds = list(/obj/item/seeds/ambrosiavulgarisseed = 3,
+	starting_seeds = list(
+		/obj/item/seeds/ambrosiavulgarisseed = 3,
 		/obj/item/seeds/appleseed = 3,
 		/obj/item/seeds/amanitamycelium = 2,
 		/obj/item/seeds/bananaseed = 3,
@@ -104,6 +104,7 @@
 		/obj/item/seeds/glowshroom = 2,
 		/obj/item/seeds/grapeseed = 3,
 		/obj/item/seeds/grassseed = 3,
+		/obj/item/seeds/harebell = 2,
 		/obj/item/seeds/lemonseed = 3,
 		/obj/item/seeds/libertymycelium = 2,
 		/obj/item/seeds/limeseed = 3,
@@ -122,13 +123,19 @@
 		/obj/item/seeds/sugarcaneseed = 3,
 		/obj/item/seeds/sunflowerseed = 3,
 		/obj/item/seeds/shandseed = 2,
-		/obj/item/seeds/tobaccoseed = 3,
 		/obj/item/seeds/tomatoseed = 3,
 		/obj/item/seeds/towermycelium = 3,
 		/obj/item/seeds/watermelonseed = 3,
 		/obj/item/seeds/wheatseed = 3,
 		/obj/item/seeds/whitebeetseed = 3,
 		/obj/item/seeds/kudzuseed = 2,
+		/obj/item/seeds/jurlmah = 2,
+		/obj/item/seeds/amauri = 2,
+		/obj/item/seeds/gelthi = 2,
+		/obj/item/seeds/vale = 2,
+		/obj/item/seeds/surik = 2,
+		/obj/item/seeds/telriis = 2,
+		/obj/item/seeds/thaadra = 2,
 		/obj/item/seeds/random = 6
 	)
 
