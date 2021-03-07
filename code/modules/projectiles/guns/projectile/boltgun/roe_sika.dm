@@ -9,7 +9,7 @@
 	recoil_buildup = 10
 	one_hand_penalty = 20 //maybe some trick shots
 	price_tag = 1000
-	damage_multiplier = 1
+	damage_multiplier = 1.25
 	sharp = FALSE
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_LRIFLE
@@ -45,7 +45,7 @@
 	one_hand_penalty = 20 //maybe some trick shots
 	zoom_factor = 2.0
 	price_tag = 1000
-	damage_multiplier = 1
+	damage_multiplier = 1.25
 	force = WEAPON_FORCE_PAINFUL
 	sharp = FALSE
 	caliber = CAL_LRIFLE
