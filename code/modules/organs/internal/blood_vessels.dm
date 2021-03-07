@@ -7,3 +7,4 @@
 	max_blood_storage = 100
 	oxygen_req = 2
 	nutriment_req = 1
+	w_class =  ITEM_SIZE_TINY

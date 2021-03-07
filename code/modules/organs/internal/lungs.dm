@@ -10,6 +10,7 @@
 	max_blood_storage = 50
 	nutriment_req = 10
 	var/breath_modulo = 2
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/organ/internal/lungs/long
 	name = "long lungs"

@@ -10,6 +10,7 @@
 	var/obj/item/weapon/cell/medium/cell = /obj/item/weapon/cell/medium/moebius/nuclear
 	//at 0.8 completely depleted after 60ish minutes of constant walking or 130 minutes of standing still
 	var/servo_cost = 0.5 // this will probably require tweaking
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/organ/internal/cell/Initialize(mapload, ...)
 	. = ..()
