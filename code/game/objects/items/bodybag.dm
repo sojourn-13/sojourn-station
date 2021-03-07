@@ -23,7 +23,7 @@
 	close_sound = 'sound/items/zip.ogg'
 	var/item_path = /obj/item/bodybag //What item do we get back when folding it up?
 	density = 0
-	storage_capacity = (MOB_MEDIUM * 2) - 1 //Holds 1 medium size mob or 2 smalls
+	storage_capacity = (MOB_MEDIUM * 4) - 1 //Holds 6 medium size mob or 11 smalls
 	var/contains_body = 0
 	layer = LOW_OBJ_LAYER+0.01
 

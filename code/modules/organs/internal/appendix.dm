@@ -6,6 +6,7 @@
 	specific_organ_size = 0
 	price_tag = 750
 	var/inflamed = 0 //Counter, not boolean
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/organ/internal/appendix/update_icon()
 	..()

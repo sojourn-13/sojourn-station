@@ -9,6 +9,7 @@
 	oxygen_req = 2.5
 	nutriment_req = 2
 	price_tag = 1500
+	w_class =  ITEM_SIZE_TINY
 
 /obj/item/organ/internal/kidney/left
 /obj/item/organ/internal/kidney/right
