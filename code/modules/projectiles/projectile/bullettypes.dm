@@ -159,7 +159,7 @@
 /// .257 Carbine///
 
 /obj/item/projectile/bullet/light_rifle_257
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 20)
 	armor_penetration = 15
 	penetrating = 1
 	can_ricochet = TRUE
@@ -176,7 +176,7 @@
 	step_delay = 0.5
 
 /obj/item/projectile/bullet/light_rifle_257/hv
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 22)
 	armor_penetration = 24
 	penetrating = 2
 	hitscan = TRUE
@@ -195,7 +195,7 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 22)
 	agony = 20
 	armor_penetration = 5
 	penetrating = 0
@@ -205,7 +205,7 @@
 	step_delay = 0.6
 
 /obj/item/projectile/bullet/light_rifle_257/scrap
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 16)
 
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
@@ -264,7 +264,7 @@
 /// .408 OMNI ///
 
 /obj/item/projectile/bullet/heavy_rifle_408
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 28)
 	armor_penetration = 30
 	penetrating = 2
 	can_ricochet = TRUE
@@ -294,14 +294,14 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
-	damage_types = list(BRUTE = 24)
+	damage_types = list(BRUTE = 30)
 	armor_penetration = 40
 	penetrating = 3
 	hitscan = TRUE
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 22)
+	damage_types = list(BRUTE = 30)
 	agony = 32
 	armor_penetration = 35
 	penetrating = 0
@@ -311,12 +311,12 @@
 	step_delay = 0.5
 
 /obj/item/projectile/bullet/heavy_rifle_408/scrap
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 20)
 
 ///Snowflake caseless///
 
 /obj/item/projectile/bullet/c10x24
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 18)
 	armor_penetration = 15
 	penetrating = 2
 	can_ricochet = TRUE
@@ -341,7 +341,7 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	icon_state = "slug"
-	damage_types = list(BRUTE = 55) //normal would be 45
+	damage_types = list(BRUTE = 45) //normal would be 45
 	armor_penetration = 10
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
@@ -497,7 +497,7 @@
 /obj/item/projectile/bullet/crossbow_bolt
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 55) //normal would be 45
+	damage_types = list(BRUTE = 45) //normal would be 45
 	armor_penetration = 10
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
