@@ -344,7 +344,7 @@
 	display_name = "ambrosia panacea"
 	mutants = null
 	evolutions = null
-	chems = list("nutriment"=list(1), "clonexadone"=list(5,10), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respiradoxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"vomitol"=list(5,20),"quickclot"=list(5,20),"ossissine"=list(5,20))
+	chems = list("nutriment"=list(1), "clonexadone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respiradoxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"vomitol"=list(5,20),"quickclot"=list(5,20),"ossissine"=list(5,20))
 	exude_gasses = list("sleeping_agent" = 4)
 
 /datum/seed/ambrosia/panacea/New()
@@ -536,7 +536,7 @@
 	name = "destroyingangel"
 	seed_name = "destroying angel"
 	display_name = "destroying angel mushrooms"
-	mutants = list("gravefiller")
+	greatMutants = list("gravefiller")
 	chems = list("nutriment" = list(1,50), "amatoxin" = list(13,3), "psilocybin" = list(1,25))
 
 /datum/seed/mushroom/poison/death/New()
@@ -553,9 +553,10 @@
 	name = "gravefiller"
 	seed_name = "grave filler"
 	display_name = "Grave Filler"
-	mutants = null
-	chems = list("nutriment" = list(1,50), "chemweapon1" = list(5,7), "psilocybin" = list(1,15), "zombiepowder" = list(13,3))
+	greatMutants = null
+	chems = list("nutriment" = list(1,50), "carpotoxin" = list(5,7), "cyanide" = list(1,15), "amatoxin" = list(13,15), "lexorin" = list(3,30))
 	exude_gasses = list("carbon_dioxide" = 6)
+	consume_gasses = list("oxygen" = 3)
 
 /datum/seed/mushroom/poison/grave/New()
 	..()
@@ -563,6 +564,8 @@
 	set_trait(TRAIT_PLANT_ICON, "mushroom2")
 	set_trait(TRAIT_PRODUCT_COLOUR, "#0099CC")
 	set_trait(TRAIT_PLANT_COLOUR, "#FF9900")
+	set_trait(TRAIT_POTENCY, 40)
+	set_trait(TRAIT_STINGS, 1)
 
 /datum/seed/mushroom/towercap
 	name = "towercap"
@@ -691,6 +694,7 @@
 		"radium",
 		"ryetalyn",
 		"alkysine",
+		"clonexadone",
 		"thermite",
 		"tramadol",
 		"cryptobiolin",
@@ -700,6 +704,7 @@
 		"impedrezene",
 		"hyronalin",
 		"peridaxon",
+		"chemweapon1",
 		"toxin",
 		"rezadone",
 		"ethylredoxrazine",
@@ -1407,7 +1412,7 @@
 	name = "jurlmah"
 	seed_name = "jurl'mah reeds"
 	display_name = "jurl'mah reeds"
-	chems = list("serotrotium" = list(1,5),"nutriment" = list(1,5))
+	chems = list("mutagen" = list(1,5),"nutriment" = list(1,5))
 
 /datum/seed/jurlmah/New()
 	..()
@@ -1480,7 +1485,7 @@
 	name = "surik"
 	seed_name = "surik vine"
 	display_name = "surik vine"
-	chems = list("impedrezene" = list(1,3),"synaptizine" = list(1,2),"nutriment" = list(1,5))
+	chems = list("mindbreaker" = list(1,3),"turbo" = list(1,2),"nutriment" = list(1,5))
 
 /datum/seed/surik/New()
 	..()
@@ -1489,10 +1494,12 @@
 	set_trait(TRAIT_PRODUCT_COLOUR, "#990099")
 	set_trait(TRAIT_PLANT_COLOUR, "#FF3300")
 	set_trait(TRAIT_ENDURANCE,18)
-	set_trait(TRAIT_MATURATION,7)
-	set_trait(TRAIT_PRODUCTION,7)
+	set_trait(TRAIT_MATURATION,5)
+	set_trait(TRAIT_PRODUCTION,1)
 	set_trait(TRAIT_YIELD,3)
 	set_trait(TRAIT_POTENCY,3)
+	set_trait(TRAIT_SPREAD,1)
+	set_trait(TRAIT_STINGS, 1)
 
 // Alien weeds.
 /datum/seed/xenomorph
