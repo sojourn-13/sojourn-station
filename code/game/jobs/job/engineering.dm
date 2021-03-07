@@ -62,14 +62,13 @@
 			/datum/craft_recipe/guild/rocket_engine,
 			/datum/craft_recipe/guild/watchman,
 			/datum/craft_recipe/guild/matter_nanoforge,
-			/datum/craft_recipe/guild/matter_nanoforge_blackbox/*,
-			/datum/craft_recipe/weapon/guild_bin,
-			/datum/craft_recipe/weapon/guild_manip,
-			/datum/craft_recipe/weapon/guild_laser,
-			/datum/craft_recipe/weapon/guild_scanner,
-			/datum/craft_recipe/weapon/guild_capacitor,
-			/datum/craft_recipe/weapon/guild_mine_trap,
-			*/
+			/datum/craft_recipe/guild/matter_nanoforge_blackbox,
+			/datum/craft_recipe/guild/guild_bin,
+			/datum/craft_recipe/guild/guild_manip,
+			/datum/craft_recipe/guild/guild_laser,
+			/datum/craft_recipe/guild/guild_scanner,
+			/datum/craft_recipe/guild/guild_capacitor,
+			//datum/craft_recipe/guild/guild_mine_trap,
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -159,14 +158,13 @@
 			/datum/craft_recipe/guild/rocket_engine,
 			/datum/craft_recipe/guild/watchman,
 			/datum/craft_recipe/guild/matter_nanoforge,
-			/datum/craft_recipe/guild/matter_nanoforge_blackbox/*,
-			/datum/craft_recipe/weapon/guild_bin,
-			/datum/craft_recipe/weapon/guild_manip,
-			/datum/craft_recipe/weapon/guild_laser,
-			/datum/craft_recipe/weapon/guild_scanner,
-			/datum/craft_recipe/weapon/guild_capacitor,
-			/datum/craft_recipe/weapon/guild_mine_trap,
-			*/
+			/datum/craft_recipe/guild/matter_nanoforge_blackbox,
+			/datum/craft_recipe/guild/guild_bin,
+			/datum/craft_recipe/guild/guild_manip,
+			/datum/craft_recipe/guild/guild_laser,
+			/datum/craft_recipe/guild/guild_scanner,
+			/datum/craft_recipe/guild/guild_capacitor,
+			//datum/craft_recipe/guild/guild_mine_trap,
 			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,

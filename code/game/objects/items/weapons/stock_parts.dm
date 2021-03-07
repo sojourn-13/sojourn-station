@@ -139,7 +139,6 @@
 	rating = 3
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 
-/*
 //Guild stock parts (rating 4)
 /obj/item/weapon/stock_parts/capacitor/guild
 	name = "crafted ultra capacitor"
@@ -180,7 +179,6 @@
 	origin_tech = list(TECH_MATERIAL = 5)
 	rating = 4
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 1, MATERIAL_PLASMAGLASS = 1)
-*/
 
 //excelsior stock parts (rating 4)
 /obj/item/weapon/stock_parts/capacitor/excelsior

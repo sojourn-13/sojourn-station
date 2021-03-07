@@ -436,3 +436,11 @@
 /obj/machinery/vending/fortune/postvend_effect()
 	playsound(loc, 'sound/machines/fortune_riff.ogg', 100, 1)
 	return
+
+//For the propis loot
+/obj/machinery/vending/propis_loot_box
+	name = "Propspectors Randomised Gear"
+	products = list(
+		)
+	product_ads = "Imagine the rare stuff and buy more!;Rare stuff if you buy more!;Buy and get random items!;Don't quit, buy more!"
+	auto_price = FALSE
