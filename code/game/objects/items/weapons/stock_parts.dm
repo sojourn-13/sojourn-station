@@ -150,7 +150,7 @@
 
 /obj/item/weapon/stock_parts/scanning_module/guild
 	name = "over-tuned scanning module"
-	desc = "A over engineered and expensive yet compact, high resolution phasic scanning module used in the construction of certain devices."
+	desc = "An over engineered and expensive yet compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "guild_scan_module"
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 4
@@ -167,14 +167,14 @@
 /obj/item/weapon/stock_parts/micro_laser/guild
 	name = "perfected micro-laser"
 	icon_state = "guild_laser"
-	desc = "A ultra-high micro laser with a perfected lens to increase productivity."
+	desc = "An ultra-high micro laser with a perfected lens to increase productivity."
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_DIAMOND = 1)
 
 /obj/item/weapon/stock_parts/matter_bin/guild
 	name = "cast matter bin"
-	desc = "A supper matter bin with added compression cast onto the base itself for more effective storage."
+	desc = "A super matter bin with added compression cast onto the base itself for more effective storage."
 	icon_state = "guild_matter"
 	origin_tech = list(TECH_MATERIAL = 5)
 	rating = 4

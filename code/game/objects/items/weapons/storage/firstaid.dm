@@ -246,7 +246,7 @@
 	return
 
 /obj/item/weapon/storage/firstaid/nt
-	name = "Absolutism Medkit"
+	name = "absolutism medkit"
 	desc = "A medkit filled with a set of high-end trauma kits and anti-toxins."
 	icon_state = "nt_kit"
 	item_state = "nt_kit"
@@ -271,7 +271,7 @@
 	..()
 
 /obj/item/weapon/storage/firstaid/soteria
-	name = "Triage Kit"
+	name = "triage kit"
 	desc = "A specialized triage kit, outfitted for Soteria personnel only. Contains everything a Doctor would ever need in a case of emergency, in a pinch."
 	icon_state = "triagekit"
 	item_state = "triagekit"
@@ -302,7 +302,7 @@
 	make_exact_fit()
 
 /obj/item/weapon/storage/firstaid/soteria/large
-	name = "Reinforced Triage Kit"
+	name = "reinforced triage Kit"
 	desc = "A reinforced, specialized triage kit outfitted for Soteria personnel only. This one is larger in capacity thanks to minor bluespace infusement, and should help Paramedics carry everything they need for any emergency."
 	icon_state = "rtk"
 	item_state = "rtk"
@@ -334,7 +334,7 @@
 	make_exact_fit()
 
 /obj/item/weapon/storage/firstaid/blackshield
-	name = "Corpsman's Bulk-Treatment Kit"
+	name = "corpsman's bulk-treatment kit"
 	desc = "A compact version of Soteria creation, this high-capacity CBT Kit allows a Corpsman to carry all the necessary tools for battlefield triage." //Yes, it's exactly what you're thinking.
 	icon_state = "cbtk"
 	item_state = "cbtk"

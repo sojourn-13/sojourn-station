@@ -445,7 +445,6 @@
 /datum/craft_recipe/guild/guild_bin
 	name = "Cast Matter Bin"
 	result = /obj/item/weapon/stock_parts/matter_bin/guild
-	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/stock_parts/matter_bin/super, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
@@ -461,7 +460,6 @@
 /datum/craft_recipe/guild/guild_manip
 	name = "Forged Manipulator"
 	result = /obj/item/weapon/stock_parts/manipulator/guild
-	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/stock_parts/manipulator/pico, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
@@ -478,7 +476,6 @@
 /datum/craft_recipe/guild/guild_laser
 	name = "Perfected Micro-Laser"
 	result = /obj/item/weapon/stock_parts/micro_laser/guild
-	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/stock_parts/micro_laser/ultra, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
@@ -490,9 +487,8 @@
 	)
 
 /datum/craft_recipe/guild/guild_scanner
-	name = "Perfected Micro-Laser"
+	name = "Perfected Scanning Module"
 	result = /obj/item/weapon/stock_parts/scanning_module/guild
-	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/stock_parts/scanning_module/phasic, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
@@ -507,7 +503,6 @@
 /datum/craft_recipe/guild/guild_capacitor
 	name = "Crafted Ultra Capacitor"
 	result = /obj/item/weapon/stock_parts/capacitor/guild
-	icon_state = "gun"
 	steps = list(
 		list(/obj/item/weapon/stock_parts/capacitor/super, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
