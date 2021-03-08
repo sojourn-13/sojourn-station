@@ -159,7 +159,7 @@
 /// .257 Carbine///
 
 /obj/item/projectile/bullet/light_rifle_257
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 22)
 	armor_penetration = 15
 	penetrating = 1
 	can_ricochet = TRUE
@@ -176,7 +176,7 @@
 	step_delay = 0.5
 
 /obj/item/projectile/bullet/light_rifle_257/hv
-	damage_types = list(BRUTE = 22)
+	damage_types = list(BRUTE = 26)
 	armor_penetration = 24
 	penetrating = 2
 	hitscan = TRUE
@@ -195,7 +195,7 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 22)
+	damage_types = list(BRUTE = 24)
 	agony = 20
 	armor_penetration = 5
 	penetrating = 0
@@ -205,7 +205,7 @@
 	step_delay = 0.6
 
 /obj/item/projectile/bullet/light_rifle_257/scrap
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 18)
 
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
@@ -294,7 +294,7 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
-	damage_types = list(BRUTE = 30)
+	damage_types = list(BRUTE = 32)
 	armor_penetration = 40
 	penetrating = 3
 	hitscan = TRUE
