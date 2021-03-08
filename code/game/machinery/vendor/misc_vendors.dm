@@ -424,6 +424,7 @@
 	desc = "An archaic fortune teller machine. It looks recently refurbished."
 	icon_state = "fortuneteller"
 	icon_vend = "fortuneteller-vend"
+	vendor_department = DEPARTMENT_CHURCH
 	product_slogans = list("Ha ha ha ha ha!",
 	"I am the great wizard Zoltan!",
 	"Learn your fate!")
@@ -439,8 +440,34 @@
 
 //For the propis loot
 /obj/machinery/vending/propis_loot_box
-	name = "Propspectors Randomised Gear"
+	name = "Prospectors 'Git-yer-Shit' Vendor"
+	desc = "The prospectors much loved 'Git-yer-Shit' a machine meant to sap the credits... 'reward' people for playing a lottery like system for boxes of items. Please spend responsibly."
+	icon_state = "MagiVend"
+	product_slogans = list("Imagine the rare stuff and buy more!", "Rare stuff if you buy more!", "Buy and get random items!", "Don't quit, buy more!", "Its not a lootbox, its surprise mechanics!")
+	vendor_department = DEPARTMENT_PROSPECTOR
 	products = list(
+		/obj/item/weapon/storage/box/vendor_lootbox = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_light = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_medium = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_high = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_basic = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_moderate = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_high = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_low = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_moderate = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_high = 3
 		)
-	product_ads = "Imagine the rare stuff and buy more!;Rare stuff if you buy more!;Buy and get random items!;Don't quit, buy more!"
+	prices = list(
+		/obj/item/weapon/storage/box/vendor_lootbox = 50,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_light = 100,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_medium = 250,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_high = 500,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_basic = 100,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_moderate = 250,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_high = 500,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_low = 150,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_moderate = 300,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_high = 600
+		)
+	product_ads = "Imagine the rare stuff and buy more!;Rare stuff if you buy more!;Buy and get random items!;Don't quit, buy more!;Its not a lootbox, its surprise mechanics!"
 	auto_price = FALSE

@@ -101,4 +101,3 @@
 	new /obj/item/weapon/tool/multitool(src)
 	new /obj/item/weapon/cell/medium/super(src)
 	new /obj/item/weapon/cell/small/super(src)
-
