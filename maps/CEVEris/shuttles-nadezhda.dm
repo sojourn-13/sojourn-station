@@ -62,7 +62,7 @@
 //Skipjack Code
 /datum/shuttle/autodock/multi/skipjack
 	name = "Skipjack"
-	move_time = (1 MINUTES) / (1 SECOND)
+	move_time = (15 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/skipjack_area
 	current_location = "nav_skipjack_homebase"
 	landmark_transition = "nav_skipjack_transit"
