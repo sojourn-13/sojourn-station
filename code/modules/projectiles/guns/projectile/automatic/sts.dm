@@ -17,8 +17,8 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	damage_multiplier = 1.1
-	recoil_buildup = 6
+	damage_multiplier = 1.2
+	recoil_buildup = 10
 	one_hand_penalty = 13 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
@@ -148,10 +148,10 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_HRIFLE
 	mag_well = MAG_WELL_HRIFLE
-	penetration_multiplier = 1
-	damage_multiplier = 1.3
-	recoil_buildup = 13
-	one_hand_penalty = 20
+	penetration_multiplier = 1.1
+	damage_multiplier = 1.1
+	recoil_buildup = 15
+	one_hand_penalty = 25
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	saw_off = TRUE
@@ -168,7 +168,7 @@
 	item_state = "sts"
 	penetration_multiplier = 0.8
 	damage_multiplier = 1
-	recoil_buildup = 15
-	one_hand_penalty = 25
+	recoil_buildup = 20
+	one_hand_penalty = 30
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	saw_off = FALSE

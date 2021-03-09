@@ -1,12 +1,12 @@
 /obj/item/weapon/gun/projectile/boltgun/scout
 	name = "\"Scout\" heavy boltgun"
-	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .408 Heavy Rifle rounds, it packs the reach and accuracy for every occasion."
+	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .408 Heavy Rifle rounds, it packs the reach, the punch and the accuracy for every occasion, however saying it kicks like a mule would only be a plain understatement."
 	icon = 'icons/obj/guns/projectile/heavyboltgun.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	force = WEAPON_FORCE_PAINFUL
-	damage_multiplier = 1.3
-	penetration_multiplier  = 1.6
+	damage_multiplier = 1.5
+	penetration_multiplier  = 1.5
 	recoil_buildup = 30
 	max_shells = 5
 	zoom_factor = 2.0
