@@ -97,7 +97,7 @@
 				//first, check for potential food nearby to cocoon
 				var/list/cocoonTargets = new
 				for(var/mob/living/C in getObjectsInView())
-					if(C.stat != CONSCIOUS)
+					if(C.stat == DEAD) //We only want dead, no more cocooning living
 						cocoonTargets += C
 
 				cocoon_target = safepick(nearestObjectsInList(cocoonTargets,src,1))
