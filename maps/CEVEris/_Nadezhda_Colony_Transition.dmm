@@ -14,7 +14,7 @@
 "an" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "ao" = (/obj/effect/step_trigger/underground_to_transition_2_A,/obj/structure/multiz/stairs/enter/bottom{dir = 1},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "ap" = (/obj/effect/step_trigger/underground_to_transition_2_B,/obj/structure/multiz/stairs/enter/bottom{dir = 1},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
-"aq" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
+"aq" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/item/device/radio/beacon,/turf/simulated/floor/tiled/steel/cyancorner,/area/nadezhda/hallway/main/stairwell)
 "ar" = (/obj/effect/step_trigger/surface_to_transition_1_A,/obj/structure/multiz/stairs/enter/bottom{dir = 1},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "as" = (/obj/effect/step_trigger/surface_to_transition_1_B,/obj/structure/multiz/stairs/enter/bottom{dir = 1},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
 "at" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/extinguisher_cabinet{pixel_x = -27; pixel_y = 0},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
