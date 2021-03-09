@@ -63,8 +63,10 @@
 	if(on)
 		if(mode == MODE_SEPARATING)
 			amount_we_can_transfer_into = mainBeaker.reagents.total_volume
+			if(unitsPerSec > amount_we_can_transfer_into)
+				amount_we_can_transfer_into = unitsPerSec
 			mainBeaker.reagents.handle_reactions()
-			mainBeaker.separate_solution(separationBeakers,  max(unitsPerSec - amount_we_can_transfer_into), mainBeaker.reagents.get_master_reagent_id())
+			mainBeaker.separate_solution(separationBeakers, amount_we_can_transfer_into, mainBeaker.reagents.get_master_reagent_id())
 
 		if(world.time >= lastActivation + workTime)
 			finish()
@@ -262,8 +264,10 @@
 			switch(mode)
 				if(MODE_SEPARATING)
 					amount_we_can_transfer_into = mainBeaker.reagents.total_volume
+					if(5 > amount_we_can_transfer_into)
+						amount_we_can_transfer_into = 5
 					mainBeaker.reagents.handle_reactions()
-					mainBeaker.separate_solution(separationBeakers, max(5 - amount_we_can_transfer_into), mainBeaker.reagents.get_master_reagent_id())
+					mainBeaker.separate_solution(separationBeakers, amount_we_can_transfer_into, mainBeaker.reagents.get_master_reagent_id())
 				if(MODE_SYNTHESISING)
 					mainBeaker.reagents.rotating = TRUE
 					mainBeaker.reagents.handle_reactions()
