@@ -210,7 +210,7 @@
 "eb" = (/turf/unsimulated/wall{desc = "That looks like it doesn't open easily."; icon = 'icons/obj/doors/rapid_pdoor.dmi'; icon_state = "pdoor1"; name = "Shuttle Bay Blast Door"},/area/space)
 "ec" = (/obj/machinery/cryopod,/obj/machinery/light,/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
 "ed" = (/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 8; frequency = 1331; id_tag = "vox_west_vent"},/obj/machinery/light/small,/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
-"ee" = (/obj/structure/table/steel,/obj/item/weapon/reagent_containers/food/condiment/saltshaker{pixel_x = 4},/obj/item/weapon/reagent_containers/food/condiment/peppermill{pixel_x = -4},/turf/simulated/floor/reinforced,/area/shuttle/skipjack_area)
+"ee" = (/obj/structure/table/steel,/obj/item/weapon/storage/box/donkpockets,/obj/item/weapon/reagent_containers/food/condiment/saltshaker{pixel_x = 4},/obj/item/weapon/reagent_containers/food/condiment/peppermill{pixel_x = -4},/turf/simulated/floor/reinforced,/area/shuttle/skipjack_area)
 "ef" = (/turf/simulated/floor/tiled/steel/brown_perforated,/area/shuttle/skipjack_area)
 "eg" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/uplink/mercenary,/obj/effect/floor_decal/industrial/hatch,/turf/simulated/floor/tiled/techmaint,/area/shuttle/mercenary)
 "eh" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/bag/money,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/wizard_station)
@@ -394,7 +394,7 @@
 "hG" = (/obj/machinery/atmospherics/pipe/simple/hidden/cyan,/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/dark/danger,/area/shuttle/skipjack_area)
 "hI" = (/obj/machinery/door/airlock/hatch{frequency = 1331; icon_state = "door_closed"; id_tag = "vox_southwest_lock"; locked = 0; req_access = newlist()},/obj/machinery/atmospherics/pipe/simple/hidden/cyan,/turf/simulated/floor/tiled/techmaint_cargo,/area/shuttle/skipjack_area)
 "hJ" = (/obj/machinery/atmospherics/pipe/simple/hidden/cyan,/turf/simulated/floor/tiled/dark/danger,/area/shuttle/skipjack_area)
-"hK" = (/obj/effect/floor_decal/industrial/outline,/obj/structure/closet/crate,/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
+"hK" = (/obj/machinery/smartfridge/drying_rack,/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
 "hM" = (/obj/structure/sign/faction/neotheology_cross,/turf/simulated/wall/r_wall,/area/centcom/evac)
 "hN" = (/obj/machinery/atmospherics/pipe/simple/hidden/cyan,/obj/machinery/door/airlock,/turf/simulated/floor/tiled/dark/golden,/area/shuttle/skipjack_area)
 "hO" = (/obj/machinery/door/airlock,/turf/simulated/floor/tiled/dark/danger,/area/shuttle/skipjack_area)
@@ -723,6 +723,7 @@
 "pp" = (/obj/machinery/light/small,/turf/simulated/floor/tiled/dark/cargo,/area/centcom/raider_base)
 "pN" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/centcom/raider_base)
 "pO" = (/obj/effect/step_trigger/thrower{affect_ghosts = 1; name = "thrower_leftnostop"},/turf/space,/area/space)
+"qk" = (/obj/structure/reagent_dispensers/watertank/derelict,/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
 "qH" = (/turf/space,/area/space)
 "qI" = (/obj/map_data/admin,/turf/space,/area/space)
 "qY" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark/panels,/area/centcom/raider_base)
@@ -780,6 +781,7 @@
 "Iw" = (/turf/simulated/wall/durasteel,/area/shuttle/mercenary)
 "IK" = (/obj/machinery/portable_atmospherics/canister/oxygen,/obj/machinery/light,/turf/simulated/floor/tiled/white/gray_perforated,/area/centcom/merc_base)
 "IY" = (/obj/machinery/door/airlock/hatch,/turf/simulated/floor/carpet/purcarpet,/area/centcom/raider_base)
+"JG" = (/obj/machinery/biogenerator,/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
 "Kb" = (/obj/structure/closet/crate,/obj/random/lathe_disk,/obj/random/lathe_disk,/obj/random/lathe_disk/advanced,/obj/effect/floor_decal/industrial/outline,/turf/simulated/floor/tiled/white/cargo,/area/centcom/raider_base)
 "Kt" = (/obj/machinery/light/small,/turf/simulated/floor/carpet/purcarpet,/area/centcom/raider_base)
 "Ku" = (/obj/structure/closet/crate,/obj/random/dungeon_gun_energy,/obj/random/dungeon_armor_mods,/obj/effect/floor_decal/industrial/outline,/turf/simulated/floor/tiled/white/cargo,/area/centcom/raider_base)
@@ -822,6 +824,7 @@
 "TW" = (/obj/structure/bed,/obj/item/weapon/bedsheet/orange,/obj/effect/decal/cleanable/cobweb2{tag = "icon-cobweb1"; icon_state = "cobweb1"},/obj/random/toy/plushie_onlymisc,/obj/item/modular_computer/telescreen{pixel_y = 32},/turf/simulated/floor/carpet/blucarpet,/area/centcom/raider_base)
 "Uf" = (/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/dark/cargo,/area/centcom/raider_base)
 "Uq" = (/turf/simulated/floor/tiled/white/gray_platform,/area/shuttle/mercenary)
+"Uw" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
 "UE" = (/obj/structure/closet,/obj/item/weapon/tool/pickaxe/diamonddrill,/obj/item/weapon/tool/pickaxe/diamonddrill,/obj/item/weapon/storage/backpack/military,/obj/item/weapon/storage/backpack/military,/obj/effect/floor_decal/industrial/hatch,/turf/simulated/floor/tiled/steel/techfloor_grid,/area/shuttle/mercenary)
 "Wh" = (/turf/simulated/floor/tiled/white/brown_platform,/area/shuttle/mercenary)
 "Wi" = (/obj/machinery/recharger/wallcharger{pixel_x = -25},/obj/effect/floor_decal/industrial/hatch,/turf/simulated/floor/tiled/steel/techfloor_grid,/area/shuttle/mercenary)
@@ -1011,8 +1014,8 @@ qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlhlhlhlqHqHqHqHqHqHqHdgdg
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlhlhlhlqHqHqHqHqHqHqHqHdghIdgdgdgdgdggbefefgdefefgidgdgdgdgdgmadgqHqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlhlhlhlqHqHqHqHqHqHqHqHdggkgogrgsgvdggwefgGgLgMefgNdggOgPgQgRgTdgqHqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlqHqHqHqHqHqHqHqHqHqHqHdghdhthththudghvefgGhwgMefhBdghDhthththGdgqHqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlqHqHqHqHqHqHqHqHqHqHqHdihJhthththtmgefefefgdefefefmghththththJdiqHqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlhlqHqHqHqHqHqHqHqHqHqHdihJhthththtdghKhKhKefhKhKhKdghththththJdiqHqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHpOpOpOpOpOpOpOpOpOpOpOpOqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlqHqHqHqHqHqHqHqHqHqHqHdihJgogohthtmgefefefgdefefefmghtgogogohJdiqHqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlhlqHqHqHqHqHqHqHqHqHqHdihJhthththtdghKhKqkefUwUwJGdghththththJdiqHqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHpOpOpOpOpOpOpOpOpOpOpOpOqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlhlqHqHqHqHqHqHqHqHqHqHdghNdghOdgmgdghPhPhQefhVhPhPdgmgdghOdghWdgqHqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHpOqHqHqHqHqHqHqHqHqHqHpOqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlhlqHqHqHqHqHqHqHqHqHdgdghXdgdudgiaibichPidgdiehPifigihiiikdgildgdgqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHpOqHqHqHqHqHqHqHqHqHqHpOqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkbVbVhlhlqHqHqHqHhlhlqHqHqHdgdgdgdgdgdgiaiaimhPidefiehPioihihipdgdgdgdgdgqHqHqHhkqHqHeYfpqHqHqHqHqHqHqHqHqHqHpOqHqHqHqHqHqHqHqHqHqHpOqHqHqHqHqHqHqHqHqHfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHeYfpqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqH
