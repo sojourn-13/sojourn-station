@@ -166,7 +166,7 @@
 
 /obj/item/weapon/stock_parts/micro_laser/guild
 	name = "perfected micro-laser"
-	icon_state = "guild_laser"
+	icon_state = "guild_micro_laser"
 	desc = "An ultra-high micro laser with a perfected lens to increase productivity."
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 4
@@ -175,7 +175,7 @@
 /obj/item/weapon/stock_parts/matter_bin/guild
 	name = "cast matter bin"
 	desc = "A super matter bin with added compression cast onto the base itself for more effective storage."
-	icon_state = "guild_matter"
+	icon_state = "guild_matter_bin"
 	origin_tech = list(TECH_MATERIAL = 5)
 	rating = 4
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 1, MATERIAL_PLASMAGLASS = 1)
