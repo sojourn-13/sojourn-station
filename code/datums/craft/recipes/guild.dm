@@ -509,7 +509,7 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40, "time" = 90),
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLATINUM),
+		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
 		list(/obj/item/weapon/stock_parts/capacitor/super, 1, "time" = 120),
 		list(QUALITY_SAWING, 60, "time" = 30),
 	)
