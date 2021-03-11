@@ -532,10 +532,7 @@
 					)
 					return
 			affecting.status |= ORGAN_SPLINTED
-			if(prob(10 + user.stats.getStat(STAT_BIO)))
-				to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
-			else
-				use(1)
+			use(1) //You cannot "waste less" of a splint! Their uses are supposed to be expended since it's one whole item not some ointment!
 		return
 
 /obj/item/stack/medical/advanced/bruise_pack/nt
