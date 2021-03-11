@@ -468,6 +468,14 @@
 	amount = 5
 	max_amount = 5
 
+/obj/item/stack/medical/splint/improvised
+	name = "improvised bone splint"
+	singular_name = "improvised bone splint"
+	desc = "A pair of wooden planks held together by wire that can work as a splint on a pinch."
+	icon_state = "improsplint"
+	amount = 1
+	max_amount = 1
+
 /obj/item/stack/medical/splint/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
 		return 1
