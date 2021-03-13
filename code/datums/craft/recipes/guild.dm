@@ -449,7 +449,7 @@
 		list(/obj/item/weapon/stock_parts/matter_bin/super, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(/obj/item/weapon/stock_parts/matter_bin/super, 1, "time" = 120),
 		list(QUALITY_WELDING, 40, "time" = 90),
