@@ -97,7 +97,7 @@
 	src.modules += new /obj/item/weapon/tool/cautery(src)
 	src.modules += new /obj/item/weapon/tool/bonesetter(src)
 	src.modules += new /obj/item/weapon/tool/saw/circular(src)
-	src.modules += new /obj/item/weapon/tool/surgicaldrill(src)
+	src.modules += new /obj/item/weapon/tool/tape_roll/bonegel(src)
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
 	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
