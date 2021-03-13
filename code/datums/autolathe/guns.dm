@@ -204,6 +204,10 @@
 	name = "SA CAR .257 \"Kalashnikov\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/sa
 
+/datum/design/autolathe/gun/basstet
+	name = "NM CAR .257 \"Basstet\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/basstet
+
 /datum/design/autolathe/gun/pitbull
 	name = "H&S AR .257 \"Pitbull\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/pitbull

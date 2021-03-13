@@ -50,6 +50,7 @@
 		/datum/design/autolathe/gun/omnicarbine,
 		/datum/design/autolathe/gun/rds_omnicarbine,
 		/datum/design/autolathe/gun/luger,
+		/datum/design/autolathe/gun/basstet,
 		//machinegun
 		/datum/design/autolathe/gun/dp,
 		//grenade launcher
@@ -130,6 +131,10 @@
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol,
 		/datum/design/autolathe/ammo/pistol_lethal = 2,
+		/datum/design/autolathe/ammo/hpistol_practice = 1,
+		/datum/design/autolathe/ammo/hpistol_rubber = 2,
+		/datum/design/autolathe/ammo/hpistol = 2,
+		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/NM_colt
@@ -143,6 +148,10 @@
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol,
 		/datum/design/autolathe/ammo/pistol_lethal = 2,
+		/datum/design/autolathe/ammo/hpistol_practice = 1,
+		/datum/design/autolathe/ammo/hpistol_rubber = 2,
+		/datum/design/autolathe/ammo/hpistol = 2,
+		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/strelki
@@ -194,7 +203,7 @@
 		/datum/design/autolathe/ammo/maxim = 1,
 		)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/greasegun
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/greasegun
 	disk_name = "Blackshield - .35 Auto \"Grease Gun\""
 	icon_state = "blackshield"
 
@@ -205,6 +214,23 @@
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_lethal = 2,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/basstet
+	disk_name = "NM - .257 Basstet Rifle"
+	icon_state = "blackshield"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/basstet = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
 // Magazines and ammo
@@ -359,6 +385,10 @@
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/slpistol_practice = 0,
 		/datum/design/autolathe/ammo/slpistol_rubber,
+		/datum/design/autolathe/ammo/hpistol_practice = 1,
+		/datum/design/autolathe/ammo/hpistol_rubber = 2,
+		/datum/design/autolathe/ammo/hpistol = 2,
+		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 		)
 
 
@@ -373,6 +403,10 @@
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol,
 		/datum/design/autolathe/ammo/pistol_lethal = 2,
+		/datum/design/autolathe/ammo/hpistol_practice = 1,
+		/datum/design/autolathe/ammo/hpistol_rubber = 2,
+		/datum/design/autolathe/ammo/hpistol = 2,
+		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 	)
 
 
