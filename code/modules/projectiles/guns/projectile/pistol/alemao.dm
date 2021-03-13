@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/alemao
 	name = "\"O Alemao\" auto-pistol"
-	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Compact, high rate of fire, but rather.. shoddily made. You swear you can see the welding lines; figures its made by Nadezhda Marshals gunsmiths. \
+	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Compact, high rate of fire, but rather.. shoddily made. You swear you can see the welding lines; figures, it's made by Nadezhda Marshals gunsmiths. \
 	It appears to only be able to take .35 pistol magazines; being unfit for SMG magazines due to their smaller width. It almost looks good in a way! Almost.."
 	icon = 'icons/obj/guns/projectile/alemao.dmi'
 	icon_state = "alemao"
