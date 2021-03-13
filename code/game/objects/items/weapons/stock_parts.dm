@@ -178,7 +178,7 @@
 	icon_state = "guild_matter_bin"
 	origin_tech = list(TECH_MATERIAL = 5)
 	rating = 4
-	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 3, MATERIAL_STEEL = 2)
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 1, MATERIAL_PLASMAGLASS = 1)
 
 //excelsior stock parts (rating 4)
 /obj/item/weapon/stock_parts/capacitor/excelsior
