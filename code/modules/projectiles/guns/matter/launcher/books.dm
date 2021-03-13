@@ -10,11 +10,11 @@
 	max_stored_matter = 15
 	stored_matter = 0 //We do not print with free biomatter
 	projectile_cost = 1
-	projectile_type = /obj/item/projectile/beam/stun/jugement
+	projectile_type = /obj/item/projectile/beam/stun/judgement
 
 /obj/item/weapon/gun/matter/holybook/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	var/obj/item/weapon/implant/core_implant/I = user.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
-	if(!I && !I.wearer) //Do we have a core implant?
+	if(!I) //Do we have a core implant?
 		to_chat(user, SPAN_WARNING("[src] is useless in your hand..."))
 		return
 	if(!I.active) //Is it active?
