@@ -162,7 +162,7 @@
 	icon_state = "guild_mani"
 	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
 	rating = 4
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 2)
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 5)
 
 /obj/item/weapon/stock_parts/micro_laser/guild
 	name = "perfected micro-laser"
