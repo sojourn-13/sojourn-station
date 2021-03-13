@@ -57,6 +57,53 @@
 	src.smoke_system.attach(src)
 	return
 
+/obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events
+	desc = "EDIT THIS FOR EVENTS."
+	name = "EDIT THIS FOR EVENTS"
+	icon_state = "hephaestus"
+	initial_icon = "hephaestus"
+	step_in = 3
+	step_energy_drain = 1
+	dir_in = 1 //Facing North.
+	health = 8000
+	wreckage = /obj/effect/decal/mecha_wreckage/dreadnought/hephaestus
+	deflect_chance = 50
+	damage_absorption = list("brute"=0.3,"fire"=0.4,"bullet"=0.3,"energy"=0.5,"bomb"=0.55)
+
+/obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events/New()
+	..()//Let it equip whatever is needed.
+	var/obj/item/mecha_parts/mecha_equipment/ME
+	if(equipment.len)//Now to remove it and equip anew.
+		for(ME in equipment)
+			ME.detach(src)
+			qdel(ME)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/passenger(src)
+	return
+
+/obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events/add_cell()
+	cell = new /obj/item/weapon/cell/large/moebius/nuclear(src)
+
 /obj/mecha/combat/dreadnought/seraph
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
 	name = "Seraph"
