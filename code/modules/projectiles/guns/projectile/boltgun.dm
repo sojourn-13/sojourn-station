@@ -107,7 +107,8 @@
 		to_chat(user, SPAN_NOTICE("You work the bolt closed."))
 		playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltforward.ogg', 75, 1)
 		bolt_open = 0
-	add_fingerprint(user)
+	if(user)
+		add_fingerprint(user)
 	update_icon()
 
 /obj/item/weapon/gun/projectile/boltgun/special_check(mob/user)

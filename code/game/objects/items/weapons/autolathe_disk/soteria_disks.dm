@@ -11,7 +11,7 @@
 		/datum/design/autolathe/misc/penflashlight,
 		/datum/design/autolathe/tool/scalpel,
 		/datum/design/autolathe/tool/circularsaw,
-		/datum/design/autolathe/tool/surgicaldrill,
+		/datum/design/autolathe/tool/bonegel,
 		/datum/design/autolathe/tool/retractor,
 		/datum/design/autolathe/tool/cautery,
 		/datum/design/autolathe/tool/hemostat,
@@ -58,7 +58,7 @@
 		/datum/design/research/item/hemostat_adv,
 		/datum/design/research/item/retractor_adv,
 		/datum/design/research/item/medsaw_circular,
-		/datum/design/autolathe/tool/surgicaldrill,
+		/datum/design/autolathe/tool/bonegel,
 		/datum/design/research/item/medical/nanopaste = 2,
 		/datum/design/research/item/hud/health = 2
 	)

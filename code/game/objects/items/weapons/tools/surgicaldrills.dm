@@ -1,5 +1,5 @@
 /obj/item/weapon/tool/surgicaldrill
-	name = "surgical drill"
+	name = "hand drill"
 	desc = "You can drill using this item. You dig?"
 	icon_state = "drill"
 	hitsound = WORKSOUND_DRIVER_TOOL
@@ -17,7 +17,7 @@
 	suitable_cell = /obj/item/weapon/cell/small
 
 /obj/item/weapon/tool/surgicaldrill/adv
-	name = "long nose surgical drill"
+	name = "long-nose hand drill"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_DRILLING = 65)
 	use_power_cost = 0.55

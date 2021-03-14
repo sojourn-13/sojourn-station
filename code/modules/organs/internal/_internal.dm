@@ -131,12 +131,20 @@
 				"organ" = "\ref[src]"
 			)
 		else
-			condition = list(
-				"name" = "Damage",
-				"fix_name" = "Heal",
-				"step" = /datum/surgery_step/fix_organ,
-				"organ" = "\ref[src]"
-			)
+			if(istype(src, /obj/item/organ/internal/bone))
+				condition = list(
+					"name" = "Damage",
+					"fix_name" = "Graft",
+					"step" = /datum/surgery_step/fix_bone,
+					"organ" = "\ref[src]"
+				)
+			else
+				condition = list(
+					"name" = "Damage",
+					"fix_name" = "Heal",
+					"step" = /datum/surgery_step/fix_organ,
+					"organ" = "\ref[src]"
+				)
 
 		conditions_list.Add(list(condition))
 

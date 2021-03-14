@@ -12,7 +12,7 @@
 /obj/item/device/antibody_scanner/attack(mob/M as mob, mob/user as mob)
 	if(!istype(M,/mob/living/carbon/))
 		report("Scan aborted: Incompatible target.", user)
-		flick("health2", src)
+		flick("viroscanner2", src)
 		return
 
 	var/mob/living/carbon/C = M
@@ -20,21 +20,21 @@
 		var/mob/living/carbon/human/H = C
 		if(H.species.flags & NO_BLOOD)
 			report("Scan aborted: The target does not have blood.", user)
-			flick("health2", src)
+			flick("viroscanner2", src)
 			return
 
 	if(!C.antibodies.len)
 		report("Scan Complete: No antibodies detected.", user)
-		flick("health2", src)
+		flick("viroscanner2", src)
 		return
 
 	if (CLUMSY in user.mutations && prob(50))
 		// I was tempted to be really evil and rot13 the output.
 		report("Antibodies detected: [reverse_text(antigens2string(C.antibodies))]", user)
-		flick("health2", src)
+		flick("viroscanner2", src)
 	else
 		report("Antibodies detected: [antigens2string(C.antibodies)]", user)
-		flick("health2", src)
+		flick("viroscanner2", src)
 
 /obj/item/device/antibody_scanner/proc/report(var/text, mob/user as mob)
 	to_chat(user, "\blue \icon[src] \The [src] beeps, \"[text]\"")

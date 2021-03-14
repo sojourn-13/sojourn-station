@@ -463,8 +463,8 @@
 	steps = list(
 		list(/obj/item/weapon/stock_parts/manipulator/pico, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40, "time" = 90),
 		list(/obj/item/stack/cable_coil, 10, "time" = 60),

@@ -28,8 +28,8 @@
 	desc = "A bucket of milky white fluid. Can be used to stick things together, but unlike tape, it cannot be used to seal things."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "glue"
-	tool_qualities = list(QUALITY_ADHESIVE = 40, QUALITY_CAUTERIZING = 5) // Better than duct tape, but can't seal things and is mostly used in crafting - also, it's glue, so it can be used as an extremely shitty way of sealing wounds
-	matter = list(MATERIAL_BIOMATTER = 30)
+	tool_qualities = list(QUALITY_ADHESIVE = 40, QUALITY_CAUTERIZING = 5, QUALITY_BONE_GRAFTING = 25) // Better than duct tape, but can't seal things and is mostly used in crafting - also, it's glue, so it can be used as an extremely shitty way of sealing wounds and repairing bones.
+	matter = list(MATERIAL_PLASTIC = 15)
 	worksound = NO_WORKSOUND
 	preloaded_reagents = list("glue" = 30)
 
@@ -53,8 +53,23 @@
 	preloaded_reagents = list("glue" = 200, "plasticide" = 50) //A bucket
 	max_stock = 100
 
+/obj/item/weapon/tool/tape_roll/bonegel //Five stacks is too little for how often bones break. Tape-based stock system works just as fine.
+	name = "bone gel"
+	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
+	icon = 'icons/obj/stack/items.dmi'
+	icon_state = "bonegel"
+	item_state = "bonegel"
+	w_class = ITEM_SIZE_TINY
+	worksound = NO_WORKSOUND
+	matter = list(MATERIAL_PLASTIC = 20)
+	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
+	preloaded_reagents = list("milk" = 5)
+	tool_qualities = list(QUALITY_BONE_GRAFTING = 50)
+	max_stock = 100
+	use_stock_cost = 1
+
 /obj/item/weapon/tool/tape_roll/attack(var/mob/living/carbon/human/H, var/mob/user)
-	if(istype(H))
+	if(istype(H) && has_quality(QUALITY_ADHESIVE))
 		if(user.targeted_organ == BP_EYES)
 
 			if(!H.organs_by_name[BP_HEAD])
@@ -64,10 +79,10 @@
 				to_chat(user, SPAN_WARNING("\The [H] doesn't have any eyes."))
 				return
 			if(H.glasses)
-				to_chat(user, SPAN_WARNING("\The [H] is already wearing somethign on their eyes."))
+				to_chat(user, SPAN_WARNING("\The [H] is already wearing something on their eyes."))
 				return
 			if(H.head && (H.head.body_parts_covered & FACE))
-				to_chat(user, SPAN_WARNING("Remove their [H.head] first."))
+				to_chat(user, SPAN_WARNING("Remove their [H.head] first!"))
 				return
 			user.visible_message(SPAN_DANGER("\The [user] begins taping over \the [H]'s eyes!"))
 

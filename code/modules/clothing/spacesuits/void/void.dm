@@ -228,14 +228,18 @@
 		return
 
 	if(istype(W,/obj/item/weapon/tool/screwdriver))
-		if(boots || tank)
-			var/choice = input("What component would you like to remove?") as null|anything in list(boots,tank)
+		if(boots || tank || helmet)
+			var/choice = input("What component would you like to remove?") as null|anything in list(boots,tank,helmet)
 			if(!choice) return
 
 			if(choice == tank)	//No, a switch doesn't work here. Sorry. ~Techhead
 				to_chat(user, "You pop \the [tank] out of \the [src]'s storage compartment.")
 				tank.forceMove(get_turf(src))
 				src.tank = null
+			if(choice == helmet)
+				to_chat(user, "You pop \the [helmet] out of \the [src]'s helmet casing.")
+				helmet.forceMove(get_turf(src))
+				src.helmet = null
 			else if(choice == boots)
 				to_chat(user, "You detatch \the [boots] from \the [src]'s boot mounts.")
 				boots.forceMove(get_turf(src))
@@ -263,6 +267,16 @@
 			user.drop_item()
 			W.forceMove(src)
 			tank = W
+			playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
+		return
+	if(istype(W,/obj/item/clothing/head/helmet/space/void))
+		if(helmet)
+			to_chat(user, "\The [src] already has a void helmet.")
+		else
+			to_chat(user, "You insert \the [W] into \the [src]'s helmet casing.")
+			user.drop_item()
+			W.forceMove(src)
+			helmet = W
 			playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		return
 

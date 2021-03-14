@@ -265,8 +265,8 @@
 			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
 		return
 
-
-	add_fingerprint(user)
+	if(user)
+		add_fingerprint(user)
 
 	if(!special_check(user))
 		return

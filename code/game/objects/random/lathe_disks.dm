@@ -26,6 +26,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/strelki = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/zatvor = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/luger = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/basstet = 2,
 
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/armstrong = 3,
@@ -110,7 +111,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/wirbelwind = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/texan = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mac = 4,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/greasegun = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/greasegun = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_drozd = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 1,
 
@@ -119,6 +120,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pitbull = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pulse_rifle = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/semyonovich = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/basstet = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/dp = 0.4,
 
