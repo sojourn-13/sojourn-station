@@ -200,6 +200,7 @@
 	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
 	new /obj/item/weapon/storage/pouch/pistol_holster(src)
 	new /obj/item/weapon/storage/briefcase/crimekit(src)
+	new /obj/random/rations/crayon(src)
 
 /obj/structure/closet/secure_closet/detective
 	name = "ranger's locker"
