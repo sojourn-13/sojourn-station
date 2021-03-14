@@ -381,10 +381,14 @@
 /mob/living/silicon/robot/verb/toggle_panel_lock()
 	set name = "Toggle Panel Lock"
 	set category = "Silicon Commands"
-	to_chat(src, "You begin [locked ? "lock" : "unlock"] locking your panel.")
-	if(!opened && has_power && do_after(usr, 80) && !opened && has_power)
-		to_chat(src, "You [locked ? "lock" : "unlock"] locked your panel.")
-		locked = !locked
+	to_chat(src, "You begin activate the electronic lock on your panel.")
+	if(!opened && has_power && do_after(usr, 80))
+		if(locked)
+			to_chat(src, "You unlocked your panel.")
+			locked = !locked
+		if(!locked)
+			to_chat(src, "You locked your panel.")
+			locked = locked
 
 /mob/living/silicon/robot/verb/toggle_lights()
 	set category = "Silicon Commands"

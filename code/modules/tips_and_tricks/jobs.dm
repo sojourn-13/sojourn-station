@@ -53,7 +53,7 @@
 
 /tipsAndTricks/jobs/scrap_ammo_uses
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
-    tipText = "Scap ammo well dealing less damage, has great uses at shooting down lockers when ever a hacker is not available."
+    tipText = "Scrap ammo while dealing less damage, has great uses at shooting down lockers when ever a hacker is not available."
 
 /tipsAndTricks/jobs/pointy_thing
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
