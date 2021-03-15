@@ -20,7 +20,7 @@
 	icon_state = "bluespace_crystal"
 	w_class = 1
 	origin_tech = list(TECH_BLUESPACE = 4, TECH_MATERIAL = 3)
-	matter = list(MATERIAL_GOLD = 30, MATERIAL_DIAMOND = 35, MATERIAL_PLASMA = 30)
+	matter = list(MATERIAL_GOLD = 10, MATERIAL_DIAMOND = 15, MATERIAL_PLASMA = 10)
 	var/blink_range = 8 // The teleport range when crushed/thrown at someone.
 	var/entropy_value = 2
 
@@ -67,5 +67,6 @@
 /obj/item/bluespace_crystal/artificial
 	name = "artificial bluespace crystal"
 	desc = "An artificially made bluespace crystal, it looks delicate."
+	matter = list(MATERIAL_GOLD = 30, MATERIAL_DIAMOND = 35, MATERIAL_PLASMA = 30)
 	origin_tech = list(TECH_BLUESPACE = 2)
 	blink_range = 4 // Not as good as the organic stuff!
