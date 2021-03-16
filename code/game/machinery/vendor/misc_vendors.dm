@@ -196,6 +196,9 @@
 				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 7,
 				/obj/item/weapon/storage/fancy/cigar = 2,
 				/obj/item/clothing/mask/vape = 5,
+				/obj/item/clothing/mask/smokable/pipe = 2,
+				/obj/item/clothing/mask/smokable/pipe/cobpipe = 2,
+				/obj/item/clothing/mask/smokable/pipe/glass = 2,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry = 10,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/banana = 10,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/lemon = 10,
@@ -251,6 +254,9 @@
 				/obj/item/weapon/flame/lighter/zippo/communist = 500,
 				/obj/item/weapon/storage/fancy/cigar = 250,
 				/obj/item/clothing/mask/vape = 150,
+				/obj/item/clothing/mask/smokable/pipe = 75,
+				/obj/item/clothing/mask/smokable/pipe/cobpipe = 25,
+				/obj/item/clothing/mask/smokable/pipe/glass = 150,
 				/obj/item/weapon/storage/fancy/cigarettes/khi = 500,
 				/obj/item/weapon/storage/fancy/cigarettes/comred = 525)
 
