@@ -42,7 +42,8 @@
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/tool/disciplinary_action(src)
 	new /obj/item/clothing/accessory/patches/blackshield_commander(src)
-	new /obj/random/rations/crayon(src)
+	if(prob(5))
+		new /obj/random/rations/crayon(src)
 	if(prob(50))
 		new /obj/item/weapon/storage/backpack/security(src)
 	else
@@ -97,7 +98,8 @@
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/clothing/accessory/patches/blackshield_sergeant(src)
-	new /obj/random/rations/crayon(src)
+	if(prob(5))
+		new /obj/random/rations/crayon(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
@@ -165,7 +167,8 @@
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/clothing/accessory/patches/blackshield_trooper(src)
-	new /obj/random/rations/crayon(src)
+	if(prob(5))
+		new /obj/random/rations/crayon(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
@@ -215,7 +218,8 @@
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/clothing/accessory/patches/blackshield_corpsman(src)
-	new /obj/random/rations/crayon(src)
+	if(prob(5))
+		new /obj/random/rations/crayon(src)
 
 /obj/structure/closet/secure_closet/militia/armor
 	name = "blackshield armor locker"
