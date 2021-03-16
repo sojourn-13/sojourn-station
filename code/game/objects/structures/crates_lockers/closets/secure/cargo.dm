@@ -357,7 +357,7 @@
 
 /obj/structure/closet/secure_closet/personal/artist
 	name = "lonestar artist's locker"
-	req_access = list(access_merchant)
+	req_access = list(access_theatre)
 	access_occupy = list(access_cargo)
 	icon_state = "cargo"
 
