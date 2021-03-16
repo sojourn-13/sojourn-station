@@ -468,6 +468,14 @@
 	amount = 5
 	max_amount = 5
 
+/obj/item/stack/medical/splint/improvised
+	name = "improvised bone splint"
+	singular_name = "improvised bone splint"
+	desc = "A pair of wooden planks held together by wire that can work as a splint on a pinch."
+	icon_state = "improsplint"
+	amount = 1
+	max_amount = 1
+
 /obj/item/stack/medical/splint/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
 		return 1
@@ -524,10 +532,7 @@
 					)
 					return
 			affecting.status |= ORGAN_SPLINTED
-			if(prob(10 + user.stats.getStat(STAT_BIO)))
-				to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
-			else
-				use(1)
+			use(1) //You cannot "waste less" of a splint! Their uses are supposed to be expended since it's one whole item not some ointment!
 		return
 
 /obj/item/stack/medical/advanced/bruise_pack/nt
