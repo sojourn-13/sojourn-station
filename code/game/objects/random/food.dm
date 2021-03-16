@@ -8,7 +8,8 @@
 				/obj/item/weapon/reagent_containers/food/snacks/tastybread = 2,\
 				/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 2,\
 				/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 4,
-				/obj/item/weapon/reagent_containers/food/snacks/donkpocket/sinpocket = 1))
+				/obj/item/weapon/reagent_containers/food/snacks/donkpocket/sinpocket = 1,\
+				/obj/item/weapon/storage/fancy/crayons = 0.1))
 
 /obj/random/rations/low_chance
 	name = "low chance preserved rations"
@@ -88,3 +89,19 @@
 		if(prob(30)) // So sometimes the rot is visible.
 			food.make_old()
 	return spawns
+
+
+/obj/random/rations/crayon
+	name = "random crayon rations"
+	icon_state = "food-green"
+
+/obj/random/rations/item_to_spawn()
+	return pickweight(list(/obj/item/weapon/pen/crayon/red = 2,\
+				/obj/item/weapon/pen/crayon/orange = 2,\
+				/obj/item/weapon/pen/crayon/yellow = 2,\
+				/obj/item/weapon/pen/crayon/green = 2,\
+				/obj/item/weapon/pen/crayon/blue = 2,\
+				/obj/item/weapon/pen/crayon/purple = 2,\
+				/obj/item/weapon/pen/crayon/mime = 0.2,\
+				/obj/item/weapon/pen/crayon/rainbow = 0.2,\
+				/obj/item/weapon/storage/fancy/crayons = 1))
