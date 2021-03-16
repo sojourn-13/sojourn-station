@@ -275,6 +275,10 @@
 	desc = "A specialized triage kit, outfitted for Soteria personnel only. Contains everything a Doctor would ever need in a case of emergency, in a pinch."
 	icon_state = "triagekit"
 	item_state = "triagekit"
+	storage_slots = 10
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_NORMAL_STORAGE
+	
 	can_hold = list(
 		/obj/item/stack/medical,
 		/obj/item/device/scanner/health,
@@ -285,6 +289,8 @@
 		/obj/item/weapon/reagent_containers/glass/beaker,
 		/obj/item/weapon/reagent_containers/dropper,
 		/obj/item/weapon/tool/medmultitool,
+		/obj/item/clothing/gloves/latex,
+		/obj/item/weapon/tool/medmultitool/medimplant
 		)
 
 /obj/item/weapon/storage/firstaid/soteria/populate_contents()
@@ -299,13 +305,15 @@
 	new /obj/item/weapon/reagent_containers/glass/bottle/antitoxin(src)
 	new /obj/item/weapon/reagent_containers/syringe/tricordrazine(src)
 	new /obj/item/device/scanner/health(src)
-	make_exact_fit()
 
 /obj/item/weapon/storage/firstaid/soteria/large
 	name = "reinforced triage Kit"
 	desc = "A reinforced, specialized triage kit outfitted for Soteria personnel only. This one is larger in capacity thanks to minor bluespace infusement, and should help Paramedics carry everything they need for any emergency."
 	icon_state = "rtk"
 	item_state = "rtk"
+	storage_slots = 12
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_NORMAL_STORAGE
 	can_hold = list(
 		/obj/item/stack/medical,
 		/obj/item/device/scanner/health,
@@ -315,6 +323,7 @@
 		/obj/item/weapon/reagent_containers/glass/bottle,
 		/obj/item/weapon/reagent_containers/glass/beaker,
 		/obj/item/weapon/reagent_containers/dropper,
+		/obj/item/clothing/gloves/latex,
 		)
 
 /obj/item/weapon/storage/firstaid/soteria/large/populate_contents()
@@ -331,13 +340,15 @@
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/weapon/reagent_containers/syringe/spaceacillin(src)
 	new /obj/item/device/scanner/health(src)
-	make_exact_fit()
 
 /obj/item/weapon/storage/firstaid/blackshield
 	name = "corpsman's bulk-treatment kit"
 	desc = "A compact version of Soteria creation, this high-capacity CBT Kit allows a Corpsman to carry all the necessary tools for battlefield triage." //Yes, it's exactly what you're thinking.
 	icon_state = "cbtk"
 	item_state = "cbtk"
+	storage_slots = 12 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_NORMAL_STORAGE
 	can_hold = list(
 		/obj/item/stack/medical,
 		/obj/item/device/scanner/health,
@@ -347,6 +358,7 @@
 		/obj/item/weapon/reagent_containers/glass/bottle,
 		/obj/item/weapon/reagent_containers/glass/beaker,
 		/obj/item/weapon/reagent_containers/dropper,
+		/obj/item/clothing/gloves/latex,
 		/obj/item/weapon/tool/medmultitool, //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
 		)
 
@@ -364,7 +376,6 @@
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/weapon/reagent_containers/syringe/spaceacillin(src)
 	new /obj/item/device/scanner/health(src)
-	make_exact_fit() //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
 
 /*
  * Pill Bottles
