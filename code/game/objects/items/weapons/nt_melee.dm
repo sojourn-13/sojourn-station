@@ -5,7 +5,7 @@
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shortsword"
 	item_state = "nt_shortsword"
-	force = WEAPON_FORCE_DANGEROUS * 1.25
+	force = WEAPON_FORCE_DANGEROUS
 	force_wielded = WEAPON_FORCE_ROBUST
 	throwforce = WEAPON_FORCE_WEAK
 	armor_penetration = ARMOR_PEN_DEEP
@@ -25,7 +25,7 @@
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shortsword"
 	item_state = "nt_shortsword"
-	force = WEAPON_FORCE_DANGEROUS * 1.25
+	force = WEAPON_FORCE_DANGEROUS
 	force_wielded = WEAPON_FORCE_ROBUST
 	throwforce = WEAPON_FORCE_WEAK
 	armor_penetration = ARMOR_PEN_DEEP
@@ -38,6 +38,7 @@
 	icon_state = "nt_longsword"
 	item_state = "nt_longsword"
 	force = WEAPON_FORCE_ROBUST
+	force_wielded = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 1200
@@ -132,7 +133,7 @@
 	icon_state = "nt_spear"
 	item_state = "nt_spear"
 	wielded_icon = "nt_spear_wielded"
-	force = WEAPON_FORCE_DANGEROUS * 1.2
+	force = WEAPON_FORCE_DANGEROUS
 	force_wielded = WEAPON_FORCE_ROBUST
 	var/tipbroken = FALSE
 	w_class = ITEM_SIZE_HUGE

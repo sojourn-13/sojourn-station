@@ -16,10 +16,7 @@
 #define CAL_SHOTGUN "Shotgun Shell"
 #define CAL_50	".50 kurtz"
 #define CAL_70 ".70"
-#define CAL_CAP "plastic cap"
-#define CAL_ROCKET "rocket propelled grenade"
 #define CAL_GRENADE "grenade"
-#define CAL_CROSSBOW "bolt"
 
 /obj/machinery/autolathe/artist_bench
 	name = "artist's bench"
@@ -200,14 +197,12 @@
 		var/obj/item/weapon/gun/projectile/revolver/artwork_revolver/R = new(src)
 
 		var/gun_pattern = pickweight(list(
-			"pistol" = 16 + weight_robustness,
+			"pistol" = 16 + weight_robustness + weight_biology,
 			"magnum" = 8 + weight_vigilance,
 			"shotgun" = 8 + weight_robustness,
 			"rifle" = 8 + weight_vigilance,
 			"sniper" = 8 + max(weight_vigilance + weight_cognition),
 			"gyro" = 1 + weight_robustness + weight_mechanical,
-			"cap" = 16 + weight_biology,
-			"rocket" = 8 + weight_toughness,
 			"grenade" = 8 + weight_toughness
 		))
 
@@ -252,16 +247,6 @@
 			if("gyro")//From gyropistol.dm, Arbitrary values
 				R.caliber = CAL_70
 				R.recoil_buildup = 0.1 * rand(1,20)
-
-			if("cap")
-				R.caliber = CAL_CAP
-
-			if("rocket")//From RPG.dm, Arbitrary values
-				R.caliber = CAL_ROCKET
-				R.fire_sound = 'sound/effects/bang.ogg'
-				R.bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'
-				R.one_hand_penalty = 15 + rand(-3,5)//From ak47.dm, temporary values
-				R.recoil_buildup = 15 + rand(-3,3)
 
 			if("grenade")
 				R.caliber = CAL_GRENADE
