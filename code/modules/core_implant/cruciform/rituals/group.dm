@@ -17,19 +17,31 @@
 		return TRUE
 	return FALSE
 
+/datum/ritual/group/cruciform/stat//parent ritual
+	effect_type = /datum/group_ritual_effect/cruciform/stat
+
+/datum/ritual/group/cruciform/stat/step_check(mob/living/carbon/human/H)
+	if(GLOB.miracle_points < 1)
+		return FALSE
+	return TRUE
+
 /datum/group_ritual_effect/cruciform/stat
 	var/stat_buff
+	var/buff_value = 3
+	var/aditional_value = 2
+
+/datum/group_ritual_effect/cruciform/stat/trigger_success(var/mob/starter, var/list/participants)
+	. = ..()
+	GLOB.miracle_points--
 
 /datum/group_ritual_effect/cruciform/stat/success(var/mob/living/M, var/cnt)
 	if(cnt < 3 || !stat_buff)
 		return
-	var/obj/machinery/power/nt_obelisk/O
-	O = O // "unused variable" yourself
-	O.stat_buff = stat_buff
+	M.stats.changeStat(stat_buff, buff_value + cnt * aditional_value)
 
-/datum/ritual/group/cruciform/mechanical
-	name = "Mechanical"
-	desc = "Boosts Mechanical stat to 3 + 1 for each participant."
+/datum/ritual/group/cruciform/stat/mechanical
+	name = "Origin of Time"
+	desc = "Boosts Mechanical stat to 3 + 2 for each participant permanently, if god wills it."
 	phrase = "Omnia haec tractavi in corde meo ut curiose intellegerem sunt iusti atque sapientes et opera eorum in manu Dei et tamen nescit homo utrum amore an odio dignus sit."
 	phrases = list(
 		"Omnia haec tractavi in corde meo ut curiose intellegerem sunt iusti atque sapientes et opera eorum in manu Dei et tamen nescit homo utrum amore an odio dignus sit.",
@@ -49,9 +61,9 @@
 	stat_buff = STAT_MEC
 
 
-/datum/ritual/group/cruciform/cognition
-	name = "Cognition"
-	desc = "Boosts Cognition stat to 3 + 1 for each participant."
+/datum/ritual/group/cruciform/stat/cognition
+	name = "Discovery of the Path"
+	desc = "Boosts Cognition stat to 3 + 2 for each participant permanently, if god wills it."
 	phrase = "Dedit quoque Deus sapientiam Salomoni et prudentiam multam nimis et latitudinem cordis quasi harenam quae est in litore maris."
 	phrases = list(
 		"Dedit quoque Deus sapientiam Salomoni et prudentiam multam nimis et latitudinem cordis quasi harenam quae est in litore maris.",
@@ -69,9 +81,9 @@
 
 
 
-/datum/ritual/group/cruciform/biology
-	name = "Biology"
-	desc = "Boosts Biology stat to 3 + 1 for each participant."
+/datum/ritual/group/cruciform/stat/biology
+	name = "Creation of Vitae"
+	desc = "Boosts Biology stat to 3 + 2 for each participant permanently, if god wills it."
 	phrase = "Convocatis autem duodecim apostolis dedit illis virtutem et potestatem super omnia daemonia et ut languores curarent."
 	phrases = list(
 		"Convocatis autem duodecim apostolis dedit illis virtutem et potestatem super omnia daemonia et ut languores curarent.",
@@ -89,8 +101,8 @@
 
 
 /datum/ritual/group/cruciform/robustness
-	name = "Robustness"
-	desc = "Boosts Robustness stat to 3 + 1 for each participant."
+	name = "Pilgrim's Path"
+	desc = "Boosts Robustness stat to 3 + 2 for each participant permanently, if god wills it."
 	phrase = "Audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas."
 	phrases = list(
 		"Audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas.",
@@ -108,8 +120,8 @@
 
 
 /datum/ritual/group/cruciform/toughness
-	name = "Toughness"
-	desc = "Boosts Toughness stat to 3 + 1 for each participant."
+	name = "Reclamation of Endurance"
+	desc = "Boosts Toughness stat to 3 + 2 for each participant permanently, if god wills it."
 	phrase = "In finem psalmus David."
 	phrases = list(
 		"In finem psalmus David.",
@@ -128,8 +140,8 @@
 
 
 /datum/ritual/group/cruciform/crusade
-	name = "Crusade"
-	desc = "Reveal crusade litanies to disciples. Depends on participants amount."
+	name = "Call of the Crusade"
+	desc = "A litany that may reveal the prayers of crusaders, if enough people participate."
 	phrase = "Locutus est Dominus ad Mosen dicens."
 	phrases = list(
 		"Locutus est Dominus ad Mosen dicens.",
@@ -155,3 +167,6 @@
 		CI.known_rituals |= initial(C.name)
 		C = /datum/ritual/cruciform/crusader/flash
 		CI.known_rituals |= initial(C.name)
+
+/datum/ritual/group/cruciform/sanctify/step_check(mob/living/carbon/human/H)
+	return TRUE
