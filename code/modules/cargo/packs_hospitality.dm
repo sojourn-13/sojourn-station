@@ -239,25 +239,6 @@
 	crate_name = "hospitality dispenser"
 	group = "Hospitality"
 
-/datum/supply_pack/lunchboxes
-	name = "Lunchbox Crate"
-	contains = list(/obj/item/weapon/storage/lunchbox/cat,
-					/obj/item/weapon/storage/lunchbox/cat,
-					/obj/item/weapon/storage/lunchbox/cat,
-					/obj/item/weapon/storage/lunchbox/cat,
-					/obj/item/weapon/storage/lunchbox,
-					/obj/item/weapon/storage/lunchbox,
-					/obj/item/weapon/storage/lunchbox,
-					/obj/item/weapon/storage/lunchbox,
-					/obj/item/weapon/storage/lunchbox/rainbow,
-					/obj/item/weapon/storage/lunchbox/rainbow,
-					/obj/item/weapon/storage/lunchbox/rainbow,
-					/obj/item/weapon/storage/lunchbox/rainbow)
-	cost = 320
-	containertype = /obj/structure/closet/crate
-	crate_name  = "lunchbox crate"
-	group = "Hospitality"
-
 /datum/supply_pack/piano
 	name = "Paino Cate"
 	cost = 750
