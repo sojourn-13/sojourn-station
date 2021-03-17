@@ -95,7 +95,7 @@
 	name = "random crayon rations"
 	icon_state = "food-green"
 
-/obj/random/rations/item_to_spawn()
+/obj/random/rations/crayon/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/pen/crayon/red = 2,\
 				/obj/item/weapon/pen/crayon/orange = 2,\
 				/obj/item/weapon/pen/crayon/yellow = 2,\
