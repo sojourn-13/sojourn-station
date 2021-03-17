@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/survivalrifle
 	name = "\"Bond\" survival rifle"
-	desc = "A \"Bond\" marksman carbine manufactured by Hunters Inc. Compact, high velocity and high penetration despite its low fire rate. Uses the obscure 12x24 rounds."
+	desc = "A \"Bond\" marksman carbine manufactured by Hunters Inc. Compact, high velocity and high penetration despite its low fire rate. Uses the obscure 10x24 rounds."
 	icon = 'icons/obj/guns/projectile/survivalrifle.dmi'
 	icon_state = "survivalrifle"
 	item_state = "survivalrifle"
@@ -29,7 +29,7 @@
 
 /obj/item/ammo_magazine/rifle_10x24
 	name = "light rifle magazine"
-	desc = "A 20 round magazine marked for 12x24 rounds."
+	desc = "A 20 round magazine marked for 10x24 rounds."
 	icon_state = "rifle"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
