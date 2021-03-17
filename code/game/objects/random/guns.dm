@@ -15,6 +15,7 @@
 				/obj/item/weapon/gun/projectile/automatic/luger = 1,\
 				/obj/item/weapon/gun/projectile/boltgun/sa = 3,\
 				/obj/item/weapon/gun/projectile/boltgun/zatvor = 1,\
+				/obj/item/weapon/gun/projectile/clarissa = 2,\
 				//obj/item/weapon/gun/projectile/boltgun/scout/light = 2,
 				//obj/item/weapon/gun/projectile/boltgun/scout/light/wood = 3,
 				/obj/item/weapon/gun/projectile/shotgun/pump = 0.5,\
@@ -109,6 +110,7 @@
 				//obj/item/weapon/gun/projectile/automatic/pitbull = 1,
 				//obj/item/weapon/gun/projectile/automatic/ak47/sa = 3,
 				/obj/item/weapon/gun/projectile/automatic/ak47/sawn = 1,\
+				/obj/item/weapon/gun/projectile/clarissa/makarov = 1,\
 				//obj/item/weapon/gun/projectile/automatic/ostwind = 1,
 				//obj/item/weapon/gun/projectile/automatic/bulldog = 3,
 				//obj/item/weapon/gun/projectile/automatic/bulldog/rds = 2,
@@ -116,7 +118,7 @@
 				//obj/item/weapon/gun/projectile/automatic/omnirifle = 1,
 				//obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine = 1,
 				//obj/item/weapon/gun/projectile/automatic/straylight = 3,
-				/obj/item/weapon/gun/projectile/shotgun/pug = 0.1))
+				/obj/item/weapon/gun/projectile/shotgun/pug = 0.5))
 				//obj/item/weapon/gun/projectile/automatic/wirbelwind = 0.1))
 
 /obj/random/gun_combat/low_chance
@@ -152,6 +154,7 @@
 				/obj/item/weapon/gun/projectile/lamia/scoped = 1,\
 				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 1,\
 				/obj/item/weapon/gun/projectile/revolver/deckard = 0.4,\
+				/obj/item/weapon/gun/projectile/clarissa/makarov = 1.1,\
 				//obj/item/weapon/gun/projectile/automatic/nordwind = 2,
 				/obj/item/weapon/gun/projectile/boltgun/scout = 0.5))
 				//obj/item/weapon/gun/projectile/automatic/c20r = 2))
@@ -195,7 +198,7 @@
 				/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn = 2,\
 				//obj/item/weapon/gun/projectile/shotgun/pump/combat = 1,
 				/obj/item/weapon/gun/projectile/shotgun/pump/combat/sawn = 1,\
-				/obj/item/weapon/gun/projectile/shotgun/pug = 0.1,\
+				/obj/item/weapon/gun/projectile/shotgun/pug = 0.3,\
 				/obj/item/weapon/gun/projectile/revolver/sixshot = 0.7, \
 				/obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn = 0.5))
 				//obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1))

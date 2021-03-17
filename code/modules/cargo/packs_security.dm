@@ -251,6 +251,17 @@
 	crate_name = "Little Comet Sidearm Crate"
 	group = "Security"
 
+/datum/supply_pack/survivalrifle
+	name = "\"Bond\" survival rifle"
+	contains = list(/obj/item/weapon/gun/projectile/automatic/survivalrifle,
+					/obj/item/ammo_magazine/rifle_10x24,
+					/obj/item/ammo_magazine/rifle_10x24,
+					/obj/item/ammo_magazine/rifle_10x24)
+	cost = 2000
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "\"Bond\" hunting survival rifle"
+	group = "Security"
+
 //This crate is unaffected by price changes since its from krios, not pirates.
 /datum/supply_pack/assaultsuit
 	name = "Assault Armor"

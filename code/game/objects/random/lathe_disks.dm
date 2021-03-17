@@ -103,7 +103,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly = 8,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/gladstone = 6,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pug = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pug = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sbaw = 1,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firefly = 4,

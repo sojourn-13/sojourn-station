@@ -77,3 +77,6 @@
 	name = "chicken crate"
 	held_count = 5
 	held_type = /mob/living/simple_animal/chick
+
+/obj/structure/largecrate/animal/piano
+	held_type = /obj/structure/synthesized_instrument/synthesizer/piano

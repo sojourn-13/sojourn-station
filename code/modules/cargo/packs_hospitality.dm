@@ -238,3 +238,41 @@
 	containertype = /obj/structure/closet/crate
 	crate_name = "hospitality dispenser"
 	group = "Hospitality"
+
+/datum/supply_pack/lunchboxes
+	name = "Lunchbox Crate"
+	contains = list(/obj/item/weapon/storage/lunchbox/cat,
+					/obj/item/weapon/storage/lunchbox/cat,
+					/obj/item/weapon/storage/lunchbox/cat,
+					/obj/item/weapon/storage/lunchbox/cat,
+					/obj/item/weapon/storage/lunchbox,
+					/obj/item/weapon/storage/lunchbox,
+					/obj/item/weapon/storage/lunchbox,
+					/obj/item/weapon/storage/lunchbox,
+					/obj/item/weapon/storage/lunchbox/rainbow,
+					/obj/item/weapon/storage/lunchbox/rainbow,
+					/obj/item/weapon/storage/lunchbox/rainbow,
+					/obj/item/weapon/storage/lunchbox/rainbow)
+	cost = 320
+	containertype = /obj/structure/closet/crate
+	crate_name  = "lunchbox crate"
+	group = "Hospitality"
+
+/datum/supply_pack/piano
+	name = "Paino Cate"
+	cost = 750
+	containertype = /obj/structure/largecrate/animal/piano
+	crate_name  = "paino crate"
+	group = "Hospitality"
+
+/datum/supply_pack/band
+	name = "Music Cate"
+	cost = 750
+	contains = list(/obj/item/device/synthesized_instrument/guitar,
+					/obj/item/device/synthesized_instrument/guitar/multi,
+					/obj/item/device/synthesized_instrument/synthesizer,
+					/obj/item/device/synthesized_instrument/trumpet,
+					/obj/item/device/synthesized_instrument/violin)
+	containertype = /obj/structure/closet/crate
+	crate_name  = "musical band crate"
+	group = "Hospitality"
