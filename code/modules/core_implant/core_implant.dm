@@ -109,7 +109,7 @@
 		L |= M.GetAccess()
 	return L
 
-/obj/item/weapon/implant/core_implant/hear_talk(mob/living/carbon/human/H, message, verb, datum/language/speaking, speech_volume)
+/obj/item/weapon/implant/core_implant/hear_talk(mob/living/carbon/human/H, message, verb, datum/language/speaking, speech_volume, message_pre_problems)
 	var/group_ritual_leader = FALSE
 	for(var/datum/core_module/group_ritual/GR in src.modules)
 		GR.hear(H, message)
@@ -121,14 +121,17 @@
 	else
 		for(var/RT in known_rituals)
 			var/datum/ritual/R = GLOB.all_rituals[RT]
-			if(R.compare(message))
+			var/ture_message = message
+			if(R.ignore_stuttering)
+				ture_message = message_pre_problems
+			if(R.compare(ture_message))
 				if(R.power > src.power)
 					to_chat(H, SPAN_DANGER("Not enough energy for the [R.name]."))
 					return
 				if(!R.is_allowed(src))
 					to_chat(H, SPAN_DANGER("You are not allowed to perform [R.name]."))
 					return
-				R.activate(H, src, R.get_targets(message))
+				R.activate(H, src, R.get_targets(ture_message))
 				return
 
 /obj/item/weapon/implant/core_implant/proc/hear_other(mob/living/carbon/human/H, message)

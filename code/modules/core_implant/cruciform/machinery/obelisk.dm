@@ -1,3 +1,5 @@
+GLOBAL_VAR_INIT(miracle_points, 5)
+
 /obj/machinery/power/nt_obelisk
 	name = "Absolutism obelisk"
 	desc = "The obelisks of the church are said to protect and empower those bearing cruciforms, how it works is not truly known, perhaps it is faith?"

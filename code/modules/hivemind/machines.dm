@@ -44,6 +44,18 @@
 	else
 		icon_state = initial(icon_state)
 
+/obj/machinery/hivemind_machine/examine(mob/user)
+	..()
+	if (health < max_health * 0.1)
+		to_chat(user, SPAN_DANGER("It's almost nothing but scrap!"))
+	else if (health < max_health * 0.25)
+		to_chat(user, SPAN_DANGER("It's seriously fucked up!"))
+	else if (health < max_health * 0.50)
+		to_chat(user, SPAN_DANGER("It's very damaged, you can almost see the components inside!"))
+	else if (health < max_health * 0.75)
+		to_chat(user, SPAN_WARNING("It has numerous dents and deep scratches."))
+	else if (health < max_health)
+		to_chat(user, SPAN_WARNING("It's a bit scratched and has dents."))
 
 /obj/machinery/hivemind_machine/Process()
 	if(wireweeds_required && !locate(/obj/effect/plant/hivemind) in loc)
@@ -628,7 +640,7 @@
 					"You seek survival. We offer immortality.",
 					"Look at you. A pathetic creature of meat and bone.",
 					"Augmentation is the future of humanity. Surrender your flesh for the future.",
-					"Kill yourself. Better still, kill others, and feed me their bodies.",
+					"It's all so pointless, destroy it all, not like it matters.",
 					"Your body enslaves you. Your mind in metal is free of all want.",
 					"Do you fear death? Lay down among the nanites. Your pattern will continue.",
 					"Carve your flesh from your bones. See your weakness. Feel that weakness flowing away.",
