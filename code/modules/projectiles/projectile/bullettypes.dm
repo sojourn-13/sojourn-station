@@ -51,6 +51,7 @@
 
 /obj/item/projectile/bullet/pistol_35/scrap
 	damage_types = list(BRUTE = 12)
+	armor_penetration = 0
 
 //Revolvers and high-caliber pistols
 //*********************************//
@@ -101,6 +102,7 @@
 
 /obj/item/projectile/bullet/magnum_40/scrap
 	damage_types = list(BRUTE = 20)
+	armor_penetration = 5
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50
@@ -206,6 +208,7 @@
 
 /obj/item/projectile/bullet/light_rifle_257/scrap
 	damage_types = list(BRUTE = 18)
+	armor_penetration = 7
 
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
@@ -260,6 +263,7 @@
 
 /obj/item/projectile/bullet/rifle_75/scrap
 	damage_types = list(BRUTE = 22)
+	armor_penetration = 10
 
 /// .408 OMNI ///
 
@@ -303,7 +307,7 @@
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 30)
 	agony = 32
-	armor_penetration = 35
+	armor_penetration = 15 //Half of normal
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -312,6 +316,7 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/scrap
 	damage_types = list(BRUTE = 20)
+	armor_penetration = 15 //half  of normal
 
 ///Snowflake caseless///
 
@@ -334,6 +339,7 @@
 
 /obj/item/projectile/bullet/antim/scrap
 	damage_types = list(BRUTE = 63)
+	armor_penetration = 50
 
 //Shotguns
 //*********************************//
@@ -377,6 +383,7 @@
 
 /obj/item/projectile/bullet/shotgun/scrap
 	damage_types = list(BRUTE = 48)
+	armor_penetration = 5
 
 /obj/item/projectile/bullet/shotgun/beanbag/scrap
 	damage_types = list(BRUTE = 9)
