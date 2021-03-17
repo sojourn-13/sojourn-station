@@ -16,6 +16,7 @@
 	var/cooldown_time = 0
 	var/cooldown_category = ""
 	var/effect_time = 0
+	var/ignore_stuttering = FALSE
 
 //code of ritual, returns true on success, can be interrupted with fail(H, C, targets) and return FALSE
 /datum/ritual/proc/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C, targets)
