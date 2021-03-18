@@ -20,6 +20,7 @@
 				//obj/item/weapon/gun/projectile/boltgun/scout/light/wood = 3,
 				/obj/item/weapon/gun/projectile/shotgun/pump = 0.5,\
 				/obj/item/weapon/gun/projectile/revolver/sixshot/sawn = 0.5,\
+				/obj/item/weapon/gun/projectile/avasarala = 0.1,\
 				/obj/item/weapon/gun/projectile/shotgun/pump/sawn = 1,\
 				/obj/item/weapon/gun/projectile/shotgun/pump/obrez = 2,\
 				/obj/item/weapon/gun/projectile/boltgun/sawn/light_wood = 0.5,\
@@ -54,6 +55,7 @@
 				/obj/item/weapon/gun/projectile/lamia/dark = 0.1,\
 				/obj/item/weapon/gun/projectile/revolver/rev10 = 0.5,\
 				//obj/item/weapon/gun/projectile/lamia/dark/sf = 0.1,
+				/obj/item/weapon/gun/projectile/avasarala = 0.5,\
 				/obj/item/weapon/gun/projectile/ladon = 0.5,\
 				/obj/item/weapon/gun/projectile/ladon/sa = 0.5,\
 				/obj/item/weapon/gun/projectile/ladon/hs = 0.5,\
@@ -69,6 +71,7 @@
 				//obj/item/weapon/gun/projectile/automatic/bulldog/rds = 0.5,
 				/obj/item/weapon/gun/projectile/revolver = 2,\
 				/obj/item/weapon/gun/projectile/revolver/mateba = 0.1,\
+				/obj/item/weapon/gun/projectile/revolver/tacticool_revolver = 0.1,\
 				//obj/item/weapon/gun/projectile/automatic/ostwind = 0.5,
 				//obj/item/weapon/gun/projectile/automatic/omnirifle = 0.5,
 				//obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine = 0.5,
@@ -140,6 +143,7 @@
 				/obj/item/weapon/gun/projectile/lamia/akurra = 1,\
 				/obj/item/weapon/gun/projectile/basilisk = 2,\
 				/obj/item/weapon/gun/projectile/automatic/survivalrifle = 1,\
+				/obj/item/weapon/gun/projectile/revolver/tacticool_revolver = 1,\
 				/obj/item/weapon/gun/projectile/revolver/mateba = 1,\
 				/obj/item/weapon/gun/projectile/silenced = 2,\
 				/obj/item/weapon/gun/projectile/revolver/mistral = 2,\
