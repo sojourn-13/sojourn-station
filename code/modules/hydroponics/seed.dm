@@ -659,7 +659,7 @@
 			P.values["mob_product"] = has_mob_product
 			traits_to_copy = list(TRAIT_REQUIRES_NUTRIENTS,TRAIT_REQUIRES_WATER,TRAIT_ALTER_TEMP)
 		if(GENE_VIGOUR)
-			traits_to_copy = list(TRAIT_PRODUCTION,TRAIT_MATURATION,TRAIT_YIELD,TRAIT_SPREAD,TRAIT_WALL_HUGGER)
+			traits_to_copy = list(TRAIT_PRODUCTION,TRAIT_MATURATION,TRAIT_YIELD)
 		if(GENE_DIET)
 			P.values["[TRAIT_CONSUME_GASSES]"] = consume_gasses
 			traits_to_copy = list(TRAIT_CARNIVOROUS,TRAIT_PARASITE,TRAIT_NUTRIENT_CONSUMPTION,TRAIT_WATER_CONSUMPTION)
@@ -672,7 +672,7 @@
 		if(GENE_FRUIT)
 			traits_to_copy = list(TRAIT_STINGS,TRAIT_EXPLOSIVE,TRAIT_FLESH_COLOUR,TRAIT_JUICY,TRAIT_CHEM_SPRAYER)
 		if(GENE_SPECIAL)
-			traits_to_copy = list(TRAIT_TELEPORTING)
+			traits_to_copy = list(TRAIT_TELEPORTING,TRAIT_SPREAD,TRAIT_WALL_HUGGER)
 
 	for(var/trait in traits_to_copy)
 		P.values["[trait]"] = get_trait(trait)
