@@ -43,6 +43,9 @@
 				overlay_stage = maturation ? max(1,round(age/maturation)) : 1
 			var/ikey = "[seed.get_trait(TRAIT_PLANT_ICON)]-[overlay_stage]"
 			var/image/plant_overlay = plant_controller.plant_icon_cache["[ikey]-[seed.get_trait(TRAIT_PLANT_COLOUR)]"]
+			if(frozen == 1)
+				plant_overlay = image('icons/obj/hydroponics_growing.dmi', "[ikey]")
+				plant_overlay.color = FROZEN_PLANT_COLOUR
 			if(!plant_overlay)
 				plant_overlay = image('icons/obj/hydroponics_growing.dmi', "[ikey]")
 				plant_overlay.color = seed.get_trait(TRAIT_PLANT_COLOUR)
@@ -72,6 +75,8 @@
 			add_overlay("over_alert3")
 		if(harvest)
 			add_overlay("over_harvest3")
+		if(frozen)
+			add_overlay("over_frozen3")
 
 	// Update bioluminescence.
 	if(seed)

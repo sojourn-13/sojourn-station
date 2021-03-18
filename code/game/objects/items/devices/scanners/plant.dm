@@ -66,6 +66,9 @@
 	else if(istype(target,/obj/machinery/portable_atmospherics/hydroponics))
 
 		var/obj/machinery/portable_atmospherics/hydroponics/H = target
+		if(H.frozen == 1)
+			to_chat(usr, "<span class='warning'>Disable the cryogenic freezing first!</span>")
+			return
 		grown_seed = H.seed
 		grown_reagents = H.reagents
 

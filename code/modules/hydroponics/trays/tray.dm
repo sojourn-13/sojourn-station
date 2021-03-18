@@ -38,6 +38,7 @@
 	var/force_update           // Set this to bypass the cycle time check.
 	var/obj/temp_chem_holder   // Something to hold reagents during process_reagents()
 	var/labelled
+	var/frozen = 0			   //Is the plant frozen? -1 is used to define trays that can't be frozen. 0 is unfrozen and 1 is frozen.
 
 	// Seed details/line data.
 	var/datum/seed/seed = null // The currently planted seed
@@ -595,6 +596,18 @@
 		qdel(I)
 		check_health()
 
+	else if(istype(I, /obj/item/weapon/tool/multitool))
+		if(!anchored)
+			to_chat(user, "<span class='warning'>Anchor it first!</span>")
+			return
+		if(frozen == -1)
+			to_chat(user, "<span class='warning'>You see no way to use \the [I] on [src].</span>")
+			return
+		to_chat(user, "<span class='notice'>You [frozen ? "disable" : "enable"] the cryogenic freezing.</span>")
+		frozen = !frozen
+		update_icon()
+		return
+
 	else if(I.force && seed)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been attacked by [user] with \the [I]!"))
@@ -613,7 +626,8 @@
 
 	if(issilicon(usr))
 		return
-
+	if(frozen == 1)
+		to_chat(user, "<span class='warning'>Disable the cryogenic freezing first!</span>")
 	if(harvest)
 		harvest(user)
 	else if(dead)
@@ -644,6 +658,8 @@
 		to_chat(usr, SPAN_DANGER("The plant is dead."))
 	else if(health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
 		to_chat(usr, "The plant looks <span class='danger'>unhealthy</span>.")
+	if (frozen == 1)
+		to_chat(usr, "<span class='notice'>It is cryogenically frozen.</span>")
 
 	if(mechanical)
 		var/turf/T = loc
