@@ -43,7 +43,7 @@
 	name = "random large lonestar weighted powercell"
 	icon_state = "battery-green"
 
-/obj/random/powercell/item_to_spawn()
+/obj/random/powercell/large_safe/item_to_spawn()
 	return pickweight(list(
 				/obj/item/weapon/cell/large/high = 10,\
 				/obj/item/weapon/cell/large/super = 9,\
@@ -58,7 +58,7 @@
 	name = "random medium lonestar weighted powercell"
 	icon_state = "battery-green"
 
-/obj/random/powercell/item_to_spawn()
+/obj/random/powercell/medium_safe/item_to_spawn()
 	return pickweight(list(
 				/obj/item/weapon/cell/medium = 10,\
 				/obj/item/weapon/cell/medium/high = 30,\
@@ -75,7 +75,7 @@
 	name = "random small lonestar weighted powercell"
 	icon_state = "battery-green"
 
-/obj/random/powercell/item_to_spawn()
+/obj/random/powercell/small_safe/item_to_spawn()
 	return pickweight(list(
 				/obj/item/weapon/cell/small = 20,\
 				/obj/item/weapon/cell/small/high = 40,\

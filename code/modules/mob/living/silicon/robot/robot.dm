@@ -386,9 +386,11 @@
 		if(locked)
 			to_chat(src, "You unlocked your panel.")
 			locked = !locked
+			return
 		if(!locked)
 			to_chat(src, "You locked your panel.")
 			locked = locked
+			return
 
 /mob/living/silicon/robot/verb/toggle_lights()
 	set category = "Silicon Commands"
