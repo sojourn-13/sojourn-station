@@ -554,7 +554,7 @@
 	seed_name = "grave filler"
 	display_name = "Grave Filler"
 	greatMutants = null
-	chems = list("nutriment" = list(1,50), "carpotoxin" = list(5,7), "cyanide" = list(1,15), "amatoxin" = list(13,15), "lexorin" = list(3,30))
+	chems = list("nutriment" = list(1,50), "carpotoxin" = list(5,7), "cyanide" = list(1,15), "amatoxin" = list(13,15), "lexorin" = list(3,20))
 	exude_gasses = list("carbon_dioxide" = 6)
 	consume_gasses = list("oxygen" = 3)
 
