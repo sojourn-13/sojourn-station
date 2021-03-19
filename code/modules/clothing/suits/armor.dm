@@ -347,10 +347,11 @@
 //Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
 /obj/item/clothing/suit/storage/vest/merc
 	name = "heavy armor vest"
-	desc = "A high-quality armor vest in a fetching tan. It is surprisingly flexible and light, even with the added webbing and armor plating. It can also accept up to two armor upgrades, if you have them."
+	desc = "A high-quality armor vest in a fetching tan. It is surprisingly flexible and light, even with the added webbing and armor plating."
 	icon_state = "mercwebvest"
 	item_state = "mercwebvest"
-	max_upgrades = 2
+	max_upgrades = 0 //No upgrading this one
+	tool_qualities = list()
 	armor = list(
 		melee = 55,
 		bullet = 55,

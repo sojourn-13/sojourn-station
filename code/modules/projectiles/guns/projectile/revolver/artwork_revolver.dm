@@ -9,7 +9,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4) //Arbitrary values
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 1000
-	damage_multiplier = 1.4 //because pistol round //From havelock.dm
+	damage_multiplier = 1.4 //From havelock.dm
 	penetration_multiplier = 1.4
 	recoil_buildup = 30 //Arbitrary value
 
