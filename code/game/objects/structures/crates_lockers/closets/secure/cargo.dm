@@ -58,8 +58,8 @@
 		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
 		new /obj/item/clothing/gloves/thick/handmade(src)
 	else if(prob(70))
-		new /obj/item/clothing/suit/armor/vest(src)
-		new /obj/item/clothing/head/helmet(src)
+		new /obj/item/clothing/suit/storage/scavengerarmor(src)
+		new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	else if(prob(70))
@@ -160,8 +160,8 @@
 		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
 		new /obj/item/clothing/gloves/thick/handmade(src)
 	else
-		new /obj/item/clothing/suit/armor/vest(src)
-		new /obj/item/clothing/head/helmet(src)
+		new /obj/item/clothing/suit/storage/scavengerarmor(src)
+		new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	//longarms
@@ -246,12 +246,12 @@
 	else
 		new /obj/item/weapon/storage/backpack/holding(src)
 	//armor
-	if(prob(70)) //Low chance but if you get lucky you get an immediate step up in armor.
+	if(prob(60)) //Low chance but if you get lucky you get an immediate step up in armor.
 		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
 		new /obj/item/clothing/gloves/thick/handmade(src)
 	else if(prob(60))
-		new /obj/item/clothing/suit/armor/vest(src)
-		new /obj/item/clothing/head/helmet(src)
+		new /obj/item/clothing/suit/storage/scavengerarmor(src)
+		new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	else if(prob(60))

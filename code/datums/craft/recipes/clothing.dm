@@ -22,6 +22,8 @@
 		list(/obj/item/stack/cable_coil, 4)
 	)
 
+
+
 /datum/craft_recipe/clothing/balaclava
 	name = "balaclava"
 	result = /obj/item/clothing/mask/balaclava
@@ -89,6 +91,39 @@
 		list(/obj/item/weapon/reagent_containers/glass/bucket, 1, "time" = 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
 		list(/obj/item/stack/cable_coil, 2)
+	)
+
+/datum/craft_recipe/clothing/chest_rig
+	name = "chest rig"
+	result = /obj/item/clothing/suit/storage/vest/chestrig
+	steps = list(
+		list(/obj/item/stack/medical/bruise_pack/handmade, 3, "time" = 10),
+		list(/obj/item/stack/rods, 2, "time" = 10),
+		list(/obj/item/stack/cable_coil, 2),
+	)
+
+/datum/craft_recipe/clothing/riggedvoidsuit
+	name = "makeshift armored void suit"
+	result = /obj/item/clothing/suit/space/void/riggedvoidsuit
+	steps = list(
+		list(/obj/item/clothing/under, 1),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTIC),
+		list(/obj/item/weapon/tool/tape_roll, 10, "time" = 10),
+		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
+		list(QUALITY_WELDING, 10, 20),
+	)
+
+/datum/craft_recipe/clothing/scavengerarmor
+	name = "scavenger armor"
+	result = /obj/item/clothing/suit/storage/scavengerarmor
+	steps = list(
+		list(/obj/item/clothing/under, 1),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+		list(/obj/item/weapon/tool/tape_roll, 10, "time" = 10),
+		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
+		list(QUALITY_WELDING, 10, 20),
 	)
 
 /datum/craft_recipe/clothing/muzzle

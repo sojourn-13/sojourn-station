@@ -302,3 +302,19 @@ obj/item/clothing/suit/fluff/kimono
 		bio = 0,
 		rad = 0
 	)
+
+/obj/item/clothing/suit/storage/scavengerarmor
+	name = "scavenger armor"
+	desc = "A sturdy, rigged scavenger armor. strong and sturdy as most vests. made fully from junk."
+	icon_state = "scav_armor"
+	item_state = "scav_armor"
+	armor = list(
+		melee = 35,
+		bullet = 35,
+		energy = 35,
+		bomb = 25,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	siemens_coefficient = 0.7

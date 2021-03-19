@@ -112,6 +112,7 @@
 /obj/item/clothing/head/helmet/hunter
 	name = "hunter's hood"
 	desc = "A visored helmet made of bone and leather with glass lenses to keep blood and grit from the eyes."
+	item_state = "hunter_helmet"
 	icon_state = "hunter_helmet"
 	armor = list(
 		melee = 60,
@@ -123,6 +124,30 @@
 	)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
+
+/obj/item/clothing/head/helmet/hunter/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["combat helmet"] = "hunter_helmet"
+	options["stalker hood"] = "hunter_helmet_stalker"
+	options["visored helmet"] = "hunter_helmet_visor"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/generic_full
 	name = "full helmet"
