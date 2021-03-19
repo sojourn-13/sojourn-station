@@ -337,6 +337,8 @@
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "turbo")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "turbo")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "turbo")
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/stim/turbo/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "turbo_w")
@@ -381,7 +383,7 @@
 		M.shake_animation(8)
 
 /datum/reagent/stim/party_drops/overdose(mob/living/carbon/M, alien)
-	M.adjustBrainLoss(2)
+	M.adjustOxyLoss(2)
 	M.slurring = max(M.slurring, 30)
 	if(prob(5))
 		M.vomit()

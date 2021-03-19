@@ -49,6 +49,7 @@
 	return pickweight(list(
 				/obj/item/weapon/gun/projectile/handmade_pistol/anti_material/reliable = 1,
 				/obj/item/weapon/gun/energy/sniperrifle/saint = 1,
+				/obj/item/weapon/gun/projectile/deaglebolt = 1,
 				/obj/item/weapon/gun/projectile/automatic/lmg/saw/unicorn = 1,
 				/obj/item/weapon/gun/projectile/revolver/mistral/elite = 1,
 				/obj/item/weapon/gun/energy/lasersmg/inferno = 1,
