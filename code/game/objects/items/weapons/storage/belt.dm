@@ -221,7 +221,6 @@
 		/obj/item/ammo_magazine,
 		/obj/item/weapon/cell/small,
 		/obj/item/weapon/cell/medium,
-		/obj/item/weapon/reagent_containers/food/snacks/donut, //meme, but fine
 		/obj/item/weapon/flame/lighter,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/modular_computer/pda,
@@ -237,7 +236,10 @@
 		/obj/item/weapon/gun/projectile/olivaw,
 		/obj/item/weapon/gun/projectile/revolver/detective,
 		/obj/item/weapon/gun/energy/gun/martin,
-		/obj/item/taperoll
+		/obj/item/taperoll,
+		/obj/item/weapon/pen,
+		/obj/item/weapon/reagent_containers/food/snacks,
+		/obj/item/weapon/reagent_containers/food/drinks
 	)
 
 /obj/item/weapon/storage/belt/holding
