@@ -57,7 +57,8 @@
 	/obj/item/ammo_magazine/ammobox/shotgun = 2,
 	/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 2,
 	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 2,
-	/obj/item/weapon/tool/knife/tacknife = 3)
+	/obj/item/weapon/tool/knife/tacknife = 3,
+	/obj/item/weapon/tool/fireaxe/militia_tomahawk = 3)
 
 	prices = list(/obj/item/device/flash = 200,
 	/obj/item/weapon/reagent_containers/spray/pepper = 50,
@@ -113,6 +114,7 @@
 	/obj/item/ammo_magazine/light_rifle_257 = 175,
 	/obj/item/weapon/storage/briefcase/rifle = 50, //SoJ change makes rifle cases 50 credits
 	/obj/item/weapon/tool/knife/tacknife = 50,
+	/obj/item/weapon/tool/fireaxe/militia_tomahawk = 75,
 	/obj/item/weapon/storage/box/smokes = 200)
 
 /obj/machinery/vending/security
@@ -142,10 +144,11 @@
 					/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 2,
 					/obj/item/device/hailer = 8,
 					/obj/item/taperoll/police = 8,
-					/obj/item/weapon/storage/box/evidence = 2)
+					/obj/item/weapon/storage/box/evidence = 2,
+					/obj/item/weapon/tool/fireaxe/militia_tomahawk = 4,
+					/obj/item/weapon/tool/knife/tacknife = 4)
 
-	contraband = list(/obj/item/weapon/tool/knife/tacknife = 4,
-						/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 12)
+	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 12)
 	auto_price = FALSE
 
 /obj/machinery/vending/theomat

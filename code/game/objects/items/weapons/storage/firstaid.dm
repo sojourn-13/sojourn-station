@@ -278,7 +278,7 @@
 	storage_slots = 10
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_NORMAL_STORAGE
-	
+
 	can_hold = list(
 		/obj/item/stack/medical,
 		/obj/item/device/scanner/health,
@@ -307,7 +307,7 @@
 	new /obj/item/device/scanner/health(src)
 
 /obj/item/weapon/storage/firstaid/soteria/large
-	name = "reinforced triage Kit"
+	name = "reinforced triage kit"
 	desc = "A reinforced, specialized triage kit outfitted for Soteria personnel only. This one is larger in capacity thanks to minor bluespace infusement, and should help Paramedics carry everything they need for any emergency."
 	icon_state = "rtk"
 	item_state = "rtk"
@@ -375,6 +375,48 @@
 	new /obj/item/weapon/reagent_containers/glass/bottle/tricord(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/weapon/reagent_containers/syringe/spaceacillin(src)
+	new /obj/item/device/scanner/health(src)
+
+/obj/item/weapon/storage/firstaid/blackshield/large
+	name = "blackshield's counter-siege treatment kit"
+	desc = "The bigger brother to the corpsman bulk treatment kit, perfect for extended combat scenarios. Sadly not as compact as other similar designed kits." //Yes, it's exactly what you're thinking.
+	icon_state = "cbtk_large"
+	item_state = "cbtk_large"
+	w_class = ITEM_SIZE_BULKY //Big boy meds
+	storage_slots = 18 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
+
+	can_hold = list(
+		/obj/item/stack/medical,
+		/obj/item/device/scanner/health,
+		/obj/item/weapon/reagent_containers/syringe,
+		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/weapon/reagent_containers/hypospray,
+		/obj/item/weapon/reagent_containers/glass/bottle,
+		/obj/item/weapon/reagent_containers/glass/beaker,
+		/obj/item/weapon/reagent_containers/dropper,
+		/obj/item/clothing/gloves/latex,
+		/obj/item/weapon/tool/medmultitool, //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
+		)
+
+/obj/item/weapon/storage/firstaid/blackshield/large/populate_contents()
+	if (empty) return
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
+	new /obj/item/weapon/storage/pill_bottle/bicaridine(src)
+	new /obj/item/weapon/storage/pill_bottle/dermaline(src)
+	new /obj/item/weapon/storage/pill_bottle/spaceacillin(src)
+	new /obj/item/weapon/storage/pill_bottle/antitox(src)
+	new /obj/item/weapon/storage/pill_bottle/prosurgeon(src)
+	new /obj/item/stack/medical/splint(src)
 	new /obj/item/device/scanner/health(src)
 
 /*
@@ -529,7 +571,7 @@
 
 /obj/item/weapon/storage/pill_bottle/prosurgeon
 	name = "bottle of ProSurgeon pills"
-	desc = "Contains pills used to reduce hand tremor."
+	desc = "Contains pills used to reduce hand tremors."
 
 /obj/item/weapon/storage/pill_bottle/prosurgeon/populate_contents()
 	new /obj/item/weapon/reagent_containers/pill/prosurgeon(src)

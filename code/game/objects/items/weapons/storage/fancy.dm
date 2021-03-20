@@ -379,23 +379,58 @@
 	create_reagents(15 * storage_slots)
 	update_icon()
 
-/obj/item/weapon/storage/fancy/cigar/update_icon()
+/obj/item/weapon/storage/fancy/cigar/attack_self(mob/user)
 	if(open)
-		icon_state = "[initial(icon_state)][contents.len]"
+		close_all()
 	else
-		icon_state = "[initial(icon_state)]"
+		..()
+	update_icon()
 
-/obj/item/weapon/storage/fancy/cigarettes/can_be_inserted(obj/item/W, stop_messages = 0)
+/obj/item/weapon/storage/fancy/cigar/open(mob/user)
+	. = ..()
+	open = TRUE
+
+/obj/item/weapon/storage/fancy/cigar/close_all()
+	. = ..()
+	if(contents.len)
+		open = FALSE
+
+/obj/item/weapon/storage/fancy/cigar/show_to(mob/user)
+	. = ..()
+	update_icon()
+
+/obj/item/weapon/storage/fancy/cigar/update_icon()
+	icon_state = "[initial(icon_state)][contents.len]"
+	return
+
+/obj/item/weapon/storage/fancy/cigar/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
+	if(!ismob(M))
+		return
+
+	if(M == user && user.targeted_organ == BP_MOUTH)
+		// Find ourselves a cig. Note that we could be full of lighters.
+		var/obj/item/clothing/mask/smokable/cigarette/cigar/cig = locate() in src
+
+		if(!cig)
+			to_chat(user, SPAN_NOTICE("Looks like the packet is out of cigars."))
+			return
+
+		user.equip_to_slot_if_possible(cig, slot_wear_mask)
+	else
+		..()
+
+/obj/item/weapon/storage/fancy/cigar/can_be_inserted(obj/item/W, stop_messages = 0)
 	if(!open)
 		to_chat(usr, SPAN_WARNING("Open [src] first!"))
 		return FALSE
 	return ..()
 
 /obj/item/weapon/storage/fancy/cigar/remove_from_storage(obj/item/W as obj, atom/new_location)
+		// Don't try to transfer reagents to lighters
+	if(istype(W, /obj/item/clothing/mask/smokable/cigarette/cigar))
 		var/obj/item/clothing/mask/smokable/cigarette/cigar/C = W
-		if(!istype(C)) return
 		reagents.trans_to_obj(C, (reagents.total_volume/contents.len))
-		..()
+	..()
 
 /*
  * Vial Box

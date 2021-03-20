@@ -218,6 +218,8 @@
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/clothing/accessory/patches/blackshield_corpsman(src)
+	if(prob(25))
+		new /obj/item/weapon/storage/firstaid/blackshield/large(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 

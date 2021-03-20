@@ -48,6 +48,7 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 1)
 	attack_verb = list("chopped", "torn", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_SAWING = 15)
+	worksound = WORKSOUND_HARD_SLASH
 
 /obj/item/weapon/tool/fireaxe
 	name = "fire axe"
@@ -67,6 +68,7 @@
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	embed_mult = 1 //Axes cut deep, and their hooked shape catches on things
+	worksound = WORKSOUND_HARD_SLASH
 
 /obj/item/weapon/tool/fireaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return

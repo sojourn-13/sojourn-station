@@ -98,6 +98,21 @@
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/polytool
+	name = "\"jolly co-operation\" polytool"
+	result = /obj/item/weapon/tool/polytool
+	steps = list(
+		list(/obj/item/weapon/tool/omnitool, 1, "time" = 60),
+		list(QUALITY_CUTTING, 20, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(/obj/item/weapon/cell/medium, 1, "time" = 60),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 20, 30),
+		list(/obj/item/weapon/tool_upgrade/augment/fuel_tank, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 20, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
+	)
+
 /datum/craft_recipe/guild/combat_shovel
 	name = "combat crovel"
 	result = /obj/item/weapon/tool/shovel/combat

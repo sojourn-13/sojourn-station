@@ -380,7 +380,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 
 	access = list(
-		access_security, access_moebius, access_engine, access_mailsorting,access_eva,
+		access_security, access_moebius, access_engine, access_mailsorting, access_eva, access_forensics_lockers, access_medspec,
 		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector, access_kitchen, access_medical_suits
 	)
 

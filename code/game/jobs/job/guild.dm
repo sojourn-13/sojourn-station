@@ -128,7 +128,7 @@ The deep tunnels are far less dangerous than the wilderness, but pack well - dis
 	Locate other valuables within the tunnels that may be turned to profit."
 
 	access = list(
-		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mining,
+		access_maint_tunnels, access_mailsorting, access_mining,
 		access_mining_station
 	)
 
