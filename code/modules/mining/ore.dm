@@ -167,6 +167,7 @@
 	icon_state = "ore_platinum"
 	material = MATERIAL_PLATINUM
 	crushable = FALSE
+	material_randomly_has = FALSE
 
 /obj/item/weapon/ore/osmium/small
 	name = "raw platinum shard"

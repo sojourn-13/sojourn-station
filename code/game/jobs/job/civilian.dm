@@ -162,7 +162,7 @@
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	//alt_titles = list("Custodian","Sanitation Technician")
-	access = list(access_janitor, access_maint_tunnels, access_morgue, access_crematorium, access_mailsorting, access_cargo)
+	access = list(access_janitor, access_maint_tunnels, access_morgue)
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
