@@ -224,6 +224,7 @@
 				/obj/item/weapon/gun/projectile/automatic/chaingun = 2,
 				/obj/item/weapon/gun/projectile/automatic/lmg/pk = 3,
 				/obj/item/weapon/gun/projectile/automatic/dp = 1,
+				/obj/item/weapon/gun/projectile/automatic/bren = 1.5,
 				/obj/item/weapon/gun/projectile/automatic/mac/croon = 1,
 				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 3,
 				/obj/item/weapon/gun/projectile/shotgun/pump/combat = 3,

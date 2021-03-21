@@ -2348,6 +2348,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\ak47.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\basstet.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\battlerifle.dm"
+#include "code\modules\projectiles\guns\projectile\automatic\bren.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\bulldog.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\c20r.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\chaingun.dm"

@@ -98,6 +98,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/revolver_mateba = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lamia = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/basilisk = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rev10 = 3,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/doublebarrel = 5,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly = 8,
@@ -122,6 +123,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/semyonovich = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/basstet = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 4,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bren = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/dp = 0.4,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/heavysniper = 1,
