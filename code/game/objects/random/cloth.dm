@@ -289,6 +289,8 @@
 				/obj/item/clothing/head/soft/sec/corp = 1,
 				/obj/item/clothing/head/tophat = 5,
 				/obj/item/clothing/head/ushanka = 3,
+				/obj/item/clothing/head/costume/history/anarchist_cap = 2,
+				/obj/item/clothing/head/costume/history/anarchist = 1,
 				/obj/item/clothing/head/welding = 5))
 
 /obj/random/cloth/head/low_chance

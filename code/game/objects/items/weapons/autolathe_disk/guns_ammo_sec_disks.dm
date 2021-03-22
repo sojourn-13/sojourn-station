@@ -856,6 +856,22 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bren
+	disk_name = "No-Publisher - .257 \"Kalashnabren\""
+	icon_state = "black"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/bren = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+	)
 
 // 7.5 Rifles
 

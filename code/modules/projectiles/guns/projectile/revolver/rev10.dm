@@ -31,3 +31,7 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/weapon/gun/projectile/revolver/rev10/Initialize()
+	. = ..()
+	update_icon()
