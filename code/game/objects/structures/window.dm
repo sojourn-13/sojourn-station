@@ -585,10 +585,10 @@
 	icon_state = "plasmarwindow"
 	shardtype = /obj/item/weapon/material/shard/plasma
 	glasstype = /obj/item/stack/material/glass/plasmarglass
-	maximal_heat = T0C + 5453 // Safe use temperature at 6000 kelvin.
+	maximal_heat = T0C + 99453 // Safe use temperature at 100,000 kelvin. I think?
 	damage_per_fire_tick = 1.5
 	maxHealth = 200
-	resistance = RESISTANCE_IMPROVED
+	resistance = RESISTANCE_TOUGH
 
 /obj/structure/window/reinforced/plasma/full
 	dir = SOUTH|EAST
@@ -596,7 +596,7 @@
 	icon_state = "plasmarwindow_mask"
 	alpha = 150
 	maxHealth = 250
-	resistance = RESISTANCE_IMPROVED
+	resistance = RESISTANCE_TOUGH
 	flags = null
 
 /obj/structure/window/reinforced/tinted
