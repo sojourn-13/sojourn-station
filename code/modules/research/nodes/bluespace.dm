@@ -29,7 +29,7 @@
 	unlocks_designs = list()
 
 /datum/technology/telecommunications
-	name = "Roots\' Telecommunications"
+	name = "Roots Telecommunications"
 	desc = "Parts for telecommunications. Hyperwave filtering method. Subspace ansible. Subspace transmition and analyzing method. Advanced bluespace broadcasting and receiving. Transmition system monitoring."
 	tech_type = RESEARCH_BLUESPACE
 

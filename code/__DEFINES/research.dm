@@ -11,6 +11,7 @@
 #define TECH_DATA "programming"
 #define TECH_ILLEGAL "syndicate"
 #define TECH_ARCANE "arcane"
+#define TECH_GREYSON "greyson"
 
 //used in design to specify which machine can build it
 #define IMPRINTER		(1<<0)	//For circuits. Uses glass/chemicals.
@@ -29,6 +30,7 @@
 #define RESEARCH_POWERSTORAGE  /datum/tech/powerstorage
 #define RESEARCH_BLUESPACE     /datum/tech/bluespace
 #define RESEARCH_ROBOTICS      /datum/tech/robotics
+#define RESEARCH_GREYSON       /datum/tech/greyson
 #define RESEARCH_ILLEGAL       /datum/tech/illegal
 
 

@@ -39,7 +39,7 @@
 
 /obj/item/clothing/glasses/powered/thermal/onestar
 	name = "type-73 zhenchayuan goggles"
-	desc = "Incredibly old Chinese thermals in the shape of goggles."
+	desc = "Incredibly GP thermals in the shape of goggles."
 	icon_state = "onestar_thermal"
 	off_state = "onestar_thermal"
 
