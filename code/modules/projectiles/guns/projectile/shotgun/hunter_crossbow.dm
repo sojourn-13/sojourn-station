@@ -15,6 +15,7 @@
 	price_tag = 750
 	recoil_buildup = 1
 	one_hand_penalty = 14
+	saw_off = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 
 /obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow/pump(mob/M as mob)
