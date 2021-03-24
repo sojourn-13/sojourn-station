@@ -181,7 +181,7 @@
 	icon_state = "guild_mani"
 	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
 	rating = 4
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 2)
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 5)
 	price_tag = 300
 
 /obj/item/weapon/stock_parts/micro_laser/guild
@@ -201,7 +201,6 @@
 	rating = 4
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 1, MATERIAL_PLASMAGLASS = 1)
 	price_tag = 300
-*/
 
 //excelsior stock parts (rating 4)
 /obj/item/weapon/stock_parts/capacitor/excelsior
