@@ -11,6 +11,7 @@
 	damage_absorption = list("brute"=0.5,"fire"=1.1,"bullet"=0.65,"energy"=0.9,"bomb"=1)
 	armor_level = MECHA_ARMOR_HEAVY
 	max_temperature = 30000
+	price_tag = 25000
 	infra_luminosity = 8
 	force = 40
 	var/defence = 0
