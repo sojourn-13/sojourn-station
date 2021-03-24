@@ -4,6 +4,7 @@
 	icon_state = "odysseus"
 	initial_icon = "odysseus"
 	step_in = 1
+	test
 	max_temperature = 15000
 	health = 320
 	wreckage = /obj/effect/decal/mecha_wreckage/odysseus
