@@ -140,7 +140,7 @@
 	switched_on_qualities = list(QUALITY_HAMMERING = 60)
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)
 	toggleable = TRUE
-	slot_flags = SLOT_BACK
+	slot_flags = SLOT_BELT|SLOT_BACK
 	suitable_cell = /obj/item/weapon/cell/medium
 	use_power_cost = 15
 	var/datum/effect/effect/system/trail/T
