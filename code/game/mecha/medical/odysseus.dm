@@ -6,6 +6,7 @@
 	step_in = 1
 	test
 	max_temperature = 15000
+	price_tag = 6000
 	health = 320
 	wreckage = /obj/effect/decal/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
