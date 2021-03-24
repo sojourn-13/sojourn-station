@@ -11,6 +11,7 @@
 	damage_absorption = list("brute"=0.75,"fire"=1,"bullet"=0.8,"energy"=0.85,"bomb"=1)
 	armor_level = MECHA_ARMOR_SCOUT
 	max_temperature = 25000
+	price_tag = 25000
 	infra_luminosity = 6
 	var/overload = 0
 	var/overload_coeff = 2
