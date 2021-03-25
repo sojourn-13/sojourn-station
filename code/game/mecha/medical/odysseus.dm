@@ -4,7 +4,6 @@
 	icon_state = "odysseus"
 	initial_icon = "odysseus"
 	step_in = 1
-	test
 	max_temperature = 15000
 	price_tag = 6000
 	health = 320
