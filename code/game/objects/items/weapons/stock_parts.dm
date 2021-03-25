@@ -19,7 +19,6 @@
 	icon_state = "screen"
 	origin_tech = list(TECH_MATERIAL = 1)
 	matter = list(MATERIAL_GLASS = 3)
-	price_tag = 30
 
 /obj/item/weapon/stock_parts/capacitor
 	name = "capacitor"
@@ -27,7 +26,6 @@
 	icon_state = "capacitor"
 	origin_tech = list(TECH_POWER = 1)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-	price_tag = 30
 
 /obj/item/weapon/stock_parts/scanning_module
 	name = "scanning module"
@@ -35,7 +33,6 @@
 	icon_state = "scan_module"
 	origin_tech = list(TECH_MAGNET = 1)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-	price_tag = 30
 
 /obj/item/weapon/stock_parts/manipulator
 	name = "micro-manipulator"
@@ -43,7 +40,6 @@
 	icon_state = "micro_mani"
 	origin_tech = list(TECH_MATERIAL = 1, TECH_DATA = 1)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
-	price_tag = 30
 
 /obj/item/weapon/stock_parts/micro_laser
 	name = "micro-laser"
@@ -51,7 +47,6 @@
 	icon_state = "micro_laser"
 	origin_tech = list(TECH_MAGNET = 1)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-	price_tag = 30
 
 /obj/item/weapon/stock_parts/matter_bin
 	name = "matter bin"
@@ -59,7 +54,6 @@
 	icon_state = "matter_bin"
 	origin_tech = list(TECH_MATERIAL = 1)
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-	price_tag = 30
 
 //Rank 2
 
@@ -70,7 +64,6 @@
 	origin_tech = list(TECH_POWER = 3)
 	rating = 2
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-	price_tag = 45
 
 /obj/item/weapon/stock_parts/scanning_module/adv
 	name = "advanced scanning module"
@@ -79,7 +72,6 @@
 	origin_tech = list(TECH_MAGNET = 3)
 	rating = 2
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-	price_tag = 45
 
 /obj/item/weapon/stock_parts/manipulator/nano
 	name = "nano-manipulator"
@@ -88,7 +80,6 @@
 	origin_tech = list(TECH_MATERIAL = 3, TECH_DATA = 2)
 	rating = 2
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
-	price_tag = 45
 
 /obj/item/weapon/stock_parts/micro_laser/high
 	name = "high-power micro-laser"
@@ -97,7 +88,6 @@
 	origin_tech = list(TECH_MAGNET = 3)
 	rating = 2
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-	price_tag = 45
 
 /obj/item/weapon/stock_parts/matter_bin/adv
 	name = "advanced matter bin"
@@ -106,7 +96,6 @@
 	origin_tech = list(TECH_MATERIAL = 3)
 	rating = 2
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-	price_tag = 45
 
 //Rating 3
 
@@ -117,7 +106,6 @@
 	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
 	rating = 3
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-	price_tag = 75
 
 /obj/item/weapon/stock_parts/scanning_module/phasic
 	name = "phasic scanning module"
@@ -126,7 +114,6 @@
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 3
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-	price_tag = 75
 
 /obj/item/weapon/stock_parts/manipulator/pico
 	name = "pico-manipulator"
@@ -135,7 +122,6 @@
 	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
 	rating = 3
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2)
-	price_tag = 75
 
 /obj/item/weapon/stock_parts/micro_laser/ultra
 	name = "ultra-high-power micro-laser"
@@ -144,7 +130,6 @@
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 3
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-	price_tag = 75
 
 /obj/item/weapon/stock_parts/matter_bin/super
 	name = "super matter bin"
@@ -153,7 +138,6 @@
 	origin_tech = list(TECH_MATERIAL = 5)
 	rating = 3
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
-	price_tag = 75
 
 /*
 //Guild stock parts (rating 4)
@@ -164,7 +148,6 @@
 	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
 	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_GOLD  = 2, MATERIAL_SILVER = 2)
-	price_tag = 300
 
 /obj/item/weapon/stock_parts/scanning_module/guild
 	name = "over-tuned scanning module"
@@ -173,7 +156,6 @@
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 4
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_RGLASS  = 1, MATERIAL_GOLD  = 2, MATERIAL_SILVER = 2)
-	price_tag = 300
 
 /obj/item/weapon/stock_parts/manipulator/guild
 	name = "forged manipulator"
@@ -182,7 +164,6 @@
 	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
 	rating = 4
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 2)
-	price_tag = 300
 
 /obj/item/weapon/stock_parts/micro_laser/guild
 	name = "perfected micro-laser"
@@ -191,7 +172,6 @@
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_DIAMOND = 1)
-	price_tag = 300
 
 /obj/item/weapon/stock_parts/matter_bin/guild
 	name = "cast matter bin"
@@ -200,7 +180,6 @@
 	origin_tech = list(TECH_MATERIAL = 5)
 	rating = 4
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 1, MATERIAL_PLASMAGLASS = 1)
-	price_tag = 300
 */
 
 //excelsior stock parts (rating 4)
@@ -253,7 +232,6 @@
 	origin_tech = list(TECH_POWER = 7, TECH_MATERIAL = 7)
 	rating = 5
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
-	price_tag = 500
 
 /obj/item/weapon/stock_parts/scanning_module/one_star
 	name = "Greyson Positronic scanning module"
@@ -262,7 +240,6 @@
 	origin_tech = list(TECH_MAGNET = 7)
 	rating = 5
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
-	price_tag = 500
 
 /obj/item/weapon/stock_parts/manipulator/one_star
 	name = "Greyson Positronic manipulator"
@@ -271,7 +248,6 @@
 	origin_tech = list(TECH_MATERIAL = 7, TECH_DATA = 6)
 	rating = 5
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2)
-	price_tag = 500
 
 /obj/item/weapon/stock_parts/micro_laser/one_star
 	name = "Greyson Positronic micro-laser"
@@ -280,7 +256,6 @@
 	origin_tech = list(TECH_MAGNET = 7)
 	rating = 5
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
-	price_tag = 500
 
 /obj/item/weapon/stock_parts/matter_bin/one_star
 	name = "Greyson Positronic matter bin"
@@ -289,7 +264,6 @@
 	origin_tech = list(TECH_MATERIAL = 7)
 	rating = 5
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
-	price_tag = 500
 
 
 //alien stock parts (rating 6)
@@ -301,7 +275,6 @@
 	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 5)
 	rating = 6
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 3)
-	price_tag = 700
 
 /obj/item/weapon/stock_parts/scanning_module/alien
 	name = "Optical receptor"
@@ -310,7 +283,6 @@
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 6
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-	price_tag = 700
 
 /obj/item/weapon/stock_parts/manipulator/alien
 	name = "Gripper"
@@ -319,7 +291,6 @@
 	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
 	rating = 6
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2)
-	price_tag = 700
 
 /obj/item/weapon/stock_parts/micro_laser/alien
 	name = "Pico-emitter"
@@ -328,7 +299,6 @@
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 6
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
-	price_tag = 700
 
 /obj/item/weapon/stock_parts/matter_bin/alien
 	name = "Receptacle"
@@ -337,7 +307,6 @@
 	origin_tech = list(TECH_MATERIAL = 5)
 	rating = 6
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
-	price_tag = 700
 
 
 // Subspace stock parts
@@ -348,7 +317,6 @@
 	desc = "A compact module capable of sensing extradimensional activity."
 	origin_tech = list(TECH_DATA = 3, TECH_MAGNET = 5 ,TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 2)
-	price_tag = 125
 
 /obj/item/weapon/stock_parts/subspace/filter
 	name = "hyperwave filter"
@@ -356,7 +324,6 @@
 	desc = "A tiny device capable of filtering and converting super-intense radiowaves."
 	origin_tech = list(TECH_DATA = 4, TECH_MAGNET = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
-	price_tag = 100
 
 /obj/item/weapon/stock_parts/subspace/amplifier
 	name = "subspace amplifier"
@@ -364,7 +331,6 @@
 	desc = "A compact micro-machine capable of amplifying weak subspace transmissions."
 	origin_tech = list(TECH_DATA = 3, TECH_MAGNET = 4, TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
-	price_tag = 100
 
 /obj/item/weapon/stock_parts/subspace/treatment
 	name = "subspace treatment disk"
@@ -372,7 +338,6 @@
 	desc = "A compact micro-machine capable of stretching out hyper-compressed radio waves."
 	origin_tech = list(TECH_DATA = 3, TECH_MAGNET = 2, TECH_MATERIAL = 5, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
-	price_tag = 100
 
 /obj/item/weapon/stock_parts/subspace/analyzer
 	name = "subspace wavelength analyzer"
@@ -380,7 +345,6 @@
 	desc = "A sophisticated analyzer capable of analyzing cryptic subspace wavelengths."
 	origin_tech = list(TECH_DATA = 3, TECH_MAGNET = 4, TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
-	price_tag = 100
 
 /obj/item/weapon/stock_parts/subspace/crystal
 	name = "ansible crystal"
@@ -388,7 +352,6 @@
 	desc = "A crystal made from pure glass used to transmit laser data bursts to subspace."
 	origin_tech = list(TECH_MAGNET = 4, TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 2)
-	price_tag = 125
 
 /obj/item/weapon/stock_parts/subspace/transmitter
 	name = "subspace transmitter"
@@ -396,4 +359,3 @@
 	desc = "A large piece of equipment used to open a window into the subspace dimension."
 	origin_tech = list(TECH_MAGNET = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 3)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
-	price_tag = 100
