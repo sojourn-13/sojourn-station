@@ -258,6 +258,13 @@
 			oddity_stats[STAT_ROB] += 2
 			oddity_stats[STAT_VIG] += 2
 
+		else if(istype(W, /obj/item/weapon/gun_upgrade))
+			oddity_stats[STAT_MEC] += 2
+			oddity_stats[STAT_VIG] += 2
+
+		else if(istype(W, /obj/item/weapon/storage/toolbox))
+			oddity_stats[STAT_MEC] += 3
+
 		else
 			to_chat(user, SPAN_WARNING("The [W] is not suitable for [src]!"))
 			return

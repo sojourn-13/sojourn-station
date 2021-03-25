@@ -446,7 +446,7 @@
 		if(prob(1))
 			qdel(src)
 
-/obj/item/weapon/oddity/blackbox_nanoforage
+/obj/item/weapon/oddity/blackbox_nanoforge
 	name = "Matter Nano-Forge Black Box"
 	desc = "The core and data of all the designs for the Matter Nano-Forge. The craftsmanship being some of the best possible by hand tools alone."
 	icon = 'icons/obj/stationobjs.dmi'
