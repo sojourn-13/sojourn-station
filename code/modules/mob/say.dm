@@ -59,7 +59,7 @@
 		usr.emote(message)
 
 /mob/verb/subtle_wrapper()
-	set name = "Subtle (anti-ghost) verb"
+	set name = "Subtle verb"
 	set category = "IC"
 
 	var/message = input("", "subtle (text)") as text|null
