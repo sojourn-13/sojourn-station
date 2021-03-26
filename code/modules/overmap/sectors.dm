@@ -2,14 +2,15 @@
 //Overmap object representing zlevel(s)
 //===================================================================================
 /obj/effect/overmap
-	name = "map object"
+	name = "unknown spatial phenomenon"
 	icon = 'icons/obj/overmap.dmi'
-	icon_state = "object"
+	icon_state = "poi"
+	bad_type = /obj/effect/overmap
+	spawn_tags = null
 	var/list/map_z = list()
 
 	var/list/generic_waypoints = list()    //waypoints that any shuttle can use
 	var/list/restricted_waypoints = list() //waypoints for specific shuttles
-	var/docking_codes
 
 	var/start_x			//coordinates on the
 	var/start_y			//overmap zlevel
@@ -18,7 +19,18 @@
 	var/known = 1		//shows up on nav computers automatically
 	var/in_space = 1	//can be accessed via lucky EVA
 
-/obj/effect/overmap/New()
+	var/global/eris_start_set = FALSE //Tells us if we need to modify a random location for Eris to start at
+	var/global/eris
+
+	// Stage 0: close, well scanned by sensors
+	// Stage 1: medium, barely scanned by sensors
+	// Stage 2: far, not scanned by sensors
+	var/list/name_stages = list("stage0", "stage1", "stage2")
+	var/list/icon_stages = list("generic", "object", "poi")
+
+/obj/effect/overmap/Initialize()
+	. = ..()
+
 	if(!config.use_overmap)
 		return
 
@@ -26,36 +38,32 @@
 	for(var/zlevel in map_z)
 		map_sectors["[zlevel]"] = src
 
-	docking_codes = "[ascii2text(rand(65,90))][ascii2text(rand(65,90))][ascii2text(rand(65,90))][ascii2text(rand(65,90))]"
-	..()
+	// Spawning location of area is randomized or default values, but can be changed to the Eris Coordinates in the code below.
+	// This provides a random starting location for Eris.
+	start_x = start_x || rand(OVERMAP_EDGE, GLOB.maps_data.overmap_size - OVERMAP_EDGE)
+	start_y = start_y || rand(OVERMAP_EDGE, GLOB.maps_data.overmap_size - OVERMAP_EDGE)
 
-/obj/effect/overmap/initialize()
-	. = ..()
+	if ((!eris_start_set) && (name == config.start_location))
+		var/obj/effect/overmap/ship/eris/E = ships[eris]
+		start_x = E.start_x
+		start_y = E.start_y
+		eris_start_set = TRUE
 
-	if(!config.use_overmap)
-		return 1
+	forceMove(locate(start_x, start_y, GLOB.maps_data.overmap_z))
+	testing("Located sector \"[name_stages[1]]\" at [start_x],[start_y], containing Z [english_list(map_z)]")
 
-	if(!maps_data.overmap_z)
-		build_overmap()
-
-	start_x = start_x || rand(OVERMAP_EDGE, maps_data.overmap_size - OVERMAP_EDGE)
-	start_y = start_y || rand(OVERMAP_EDGE, maps_data.overmap_size - OVERMAP_EDGE)
-
-	forceMove(locate(start_x, start_y, maps_data.overmap_z))
-	testing("Located sector \"[name]\" at [start_x],[start_y], containing Z [english_list(map_z)]")
-
-	maps_data.player_levels |= map_z
+	GLOB.maps_data.player_levels |= map_z
 
 	if(!in_space)
-		maps_data.sealed_levels |= map_z
+		GLOB.maps_data.sealed_levels |= map_z
 
 	if(base)
-		maps_data.station_levels |= map_z
-		maps_data.contact_levels |= map_z
+		GLOB.maps_data.station_levels |= map_z
+		GLOB.maps_data.contact_levels |= map_z
 
 
 	//handle automatic waypoints that spawned before us
-	for(var/obj/effect/shuttle_landmark/automatic/L in world)
+	for(var/obj/effect/shuttle_landmark/automatic/L in GLOB.shuttle_landmarks_list)
 		if(L.z in map_z)
 			L.add_to_sector(src, 1)
 
@@ -66,7 +74,7 @@
 		if(WP)
 			found_waypoints += WP
 		else
-			admin_notice("Sector \"[name]\" containing Z [english_list(map_z)] could not find waypoint with tag [waypoint_tag]!")
+			admin_notice("Sector \"[name_stages[1]]\" containing Z [english_list(map_z)] could not find waypoint with tag [waypoint_tag]!")
 	generic_waypoints = found_waypoints
 
 	for(var/shuttle_name in restricted_waypoints)
@@ -76,14 +84,14 @@
 			if(WP)
 				found_waypoints += WP
 			else
-				admin_notice("Sector \"[name]\" containing Z [english_list(map_z)] could not find waypoint with tag [waypoint_tag]!")
+				admin_notice("Sector \"[name_stages[1]]\" containing Z [english_list(map_z)] could not find waypoint with tag [waypoint_tag]!")
 		restricted_waypoints[shuttle_name] = found_waypoints
 
-	for(var/obj/machinery/computer/sensors/S in machines)
+	for(var/obj/machinery/computer/sensors/S in SSmachines.machinery)
 		if (S.z in map_z)
 			S.linked = src
 
-/obj/effect/overmap/proc/get_waypoints(var/shuttle_name)
+/obj/effect/overmap/sector/proc/get_waypoints(var/shuttle_name)
 	. = generic_waypoints.Copy()
 	if(shuttle_name in restricted_waypoints)
 		. += restricted_waypoints[shuttle_name]
@@ -91,37 +99,16 @@
 /obj/effect/overmap/sector
 	name = "generic sector"
 	desc = "Sector with some stuff in it."
-	icon_state = "sector"
-	anchored = 1
+	icon_state = "poi"
+	anchored = TRUE
 
-/obj/effect/overmap/sector/initialize()
+/obj/effect/overmap/sector/Initialize()
 	. = ..()
 	if(known)
 		layer = 2
-		plane = -1
-		for(var/obj/machinery/computer/helm/H in machines)
+		set_plane(-1)
+		for(var/obj/machinery/computer/helm/H in SSmachines.machinery)
 			H.get_known_sectors()
 
-/proc/build_overmap()
-	if(!config.use_overmap)
-		return 1
-
-	testing("Building overmap...")
-	world.maxz++
-	maps_data.overmap_z = world.maxz
-	var/list/turfs = list()
-	for (var/square in block(locate(1,1,maps_data.overmap_z), locate(maps_data.overmap_size, maps_data.overmap_size, maps_data.overmap_z)))
-		var/turf/T = square
-		if(T.x == maps_data.overmap_size || T.y == maps_data.overmap_size)
-			T = T.ChangeTurf(/turf/unsimulated/map/edge)
-		else
-			T = T.ChangeTurf(/turf/unsimulated/map/)
-		turfs += T
-
-	var/area/overmap/A = new
-	A.contents.Add(turfs)
-
-	maps_data.sealed_levels |= maps_data.overmap_z
-
-	testing("Overmap build complete.")
-	return 1
+/obj/effect/overmap/proc/add_landmark(obj/effect/shuttle_landmark/landmark)
+	generic_waypoints += landmark

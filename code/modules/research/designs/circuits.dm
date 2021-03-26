@@ -374,6 +374,16 @@
 	build_path = /obj/item/weapon/electronics/circuitboard/long_range_scanner
 	sort_string = "VAAAC"
 
+// Long range scanner
+/datum/design/research/circuit/lrange_scanner
+	name_category = "long range scanner"
+	category = CAT_MISC
+
+/datum/design/research/circuit/lrange_scanner/hull
+	name = "long range scanner"
+	build_path = /obj/item/weapon/electronics/circuitboard/long_range_scanner
+	sort_string = "VAAAC"
+
 //BS
 /datum/design/research/circuit/telesci/console
 	name = "TeleSci Console"
