@@ -24,12 +24,12 @@
 
 	required_technologies = list(/datum/technology/basic_bluespace)
 	required_tech_levels = list()
-	cost = 150
+	cost = 200
 
 	unlocks_designs = list()
 
 /datum/technology/telecommunications
-	name = "Roots Telecommunications"
+	name = "Roots\' Telecommunications"
 	desc = "Parts for telecommunications. Hyperwave filtering method. Subspace ansible. Subspace transmition and analyzing method. Advanced bluespace broadcasting and receiving. Transmition system monitoring."
 	tech_type = RESEARCH_BLUESPACE
 
@@ -39,7 +39,7 @@
 
 	required_technologies = list(/datum/technology/radio_transmission)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1000
 
 	unlocks_designs = list(	/datum/design/research/circuit/comconsole,
 							/datum/design/research/circuit/message_monitor,
@@ -67,7 +67,7 @@
 
 	required_technologies = list(/datum/technology/telecommunications)
 	required_tech_levels = list()
-	cost = 600
+	cost = 800
 
 	unlocks_designs = list(
 							/datum/design/research/circuit/tcom/bus,
@@ -103,7 +103,7 @@
 	x = 0.5
 	y = 0.4
 	required_technologies = list(/datum/technology/basic_bluespace)
-	cost = 600
+	cost = 800
 
 	unlocks_designs = list(	/datum/design/research/item/ano_scanner,
 							/datum/design/research/item/beacon_locator,
@@ -121,10 +121,9 @@
 
 	required_technologies = list(/datum/technology/spatial_scan)
 	required_tech_levels = list()
-	cost = 1125
+	cost = 1500
 
-	unlocks_designs = list(	/datum/design/research/circuit/shield/hull,
-							/datum/design/research/circuit/telesci/inhibit)
+	unlocks_designs = list(/datum/design/research/circuit/shield/hull)
 
 /datum/technology/teleportation
 	name = "Teleportation"
@@ -137,12 +136,10 @@
 
 	required_technologies = list(/datum/technology/spatial_scan)
 	required_tech_levels = list()
-	cost = 1125
+	cost = 1500
 
 	unlocks_designs = list(/datum/design/research/circuit/teleconsole,
-							/datum/design/research/circuit/teleporter/station,
-							/datum/design/research/circuit/teleporter/hub
-	)
+	                       /datum/design/research/circuit/lrange_scanner/hull)
 
 /datum/technology/adv_spatial_scan
 	name = "Advanced Spatial Analyzing"
@@ -154,16 +151,16 @@
 	x = 0.5
 	y = 0.6
 	required_technologies = list(/datum/technology/teleportation)
-	cost = 600
+	cost = 800
 
 	unlocks_designs = list(	/datum/design/research/circuit/telesci/console,
 							/datum/design/research/circuit/telesci/hub,
-							/datum/design/research/circuit/telesci/relay,
 							/datum/design/research/item/part/artificialbscrystal,
 							/datum/design/research/circuit/bssilk/hub,
 							/datum/design/research/circuit/bssilk/console,
 							/datum/design/research/item/bs_snare,
-							/datum/design/research/item/si_bluespace_scanner
+							/datum/design/research/circuit/teleporter/station,
+							/datum/design/research/circuit/teleporter/hub
 							)
 
 /datum/technology/bluespace_tools
@@ -177,7 +174,7 @@
 
 	required_technologies = list(/datum/technology/teleportation)
 	required_tech_levels = list()
-	cost = 2250
+	cost = 3000
 
 	unlocks_designs = list(	/datum/design/research/item/beaker/bluespace,
 							/datum/design/research/item/beaker/noreact,
@@ -197,15 +194,14 @@
 
 	required_technologies = list(/datum/technology/bluespace_tools)
 	required_tech_levels = list()
-	cost = 1125
+	cost = 1500
 
 	unlocks_designs = list(	/datum/design/research/item/belt_holding,
 							/datum/design/research/item/pouch_holding,
 							/datum/design/research/item/trashbag_holding,
-							/datum/design/research/item/oresatchel_holding,
-							/datum/design/research/item/robot_upgrade/satchel_of_holding_for_borgs
+							/datum/design/research/item/oresatchel_holding
 						    )
-
+	
 /*
 /datum/technology/bluespace_rped
 	name = "Bluespace RPED"

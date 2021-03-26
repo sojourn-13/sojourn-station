@@ -12,7 +12,7 @@
 	density = TRUE
 	anchored = FALSE
 
-	circuit = /obj/item/circuitboard/shield_generator
+	circuit = /obj/item/weapon/electronics/circuitboard/shield_generator
 
 	var/needs_update = FALSE //If true, will update in process
 
@@ -34,6 +34,9 @@
 	var/input_cap = 1 MEGAWATTS			// Currently set input limit. Set to 0 to disable limits altogether. The shield will try to input this value per tick at most
 	var/upkeep_power_usage = 0			// Upkeep power usage last tick.
 	var/upkeep_multiplier = 1			// Multiplier of upkeep values.
+	var/upkeep_star_multiplier = 1      // Multiplier of upkeep values due to proximity with the star at the center of the overmap
+	var/upkeep_star_multiplier_max = 4  // Maximum upkeep multiplier when the ship is right on top of the star
+	var/upkeep_star_multiplier_safe = 50// Distance from star above which shields are no longer impacted (multiplier = 1)
 	var/power_usage = 0					// Total power usage last tick.
 	var/overloaded = 0					// Whether the field has overloaded and shut down to regenerate.
 	var/offline_for = 0					// The generator will be inoperable for this duration in ticks.
@@ -45,21 +48,22 @@
 	var/list/default_modes = list()
 	var/generatingShield = FALSE //true when shield tiles are in process of being generated
 
-	/// If true, will allow report_damage() to be called.
-	var/reportDamage = TRUE
+	var/obj/effect/overmap/ship/linked_ship = null // To access position of Eris on the overmap
 
 	// The shield mode flags which should be enabled on this generator by default
 
 	var/list/allowed_modes = list(MODEFLAG_HYPERKINETIC,
-									MODEFLAG_PHOTONIC,
-									MODEFLAG_NONHUMANS,
-									MODEFLAG_HUMANOIDS,
-									MODEFLAG_ANORGANIC,
-									MODEFLAG_ATMOSPHERIC,
-									MODEFLAG_BYPASS,
-									MODEFLAG_OVERCHARGE,
-									MODEFLAG_MODULATE,
-									MODEFLAG_EM)
+							MODEFLAG_PHOTONIC,
+							MODEFLAG_NONHUMANS,
+							MODEFLAG_HUMANOIDS,
+							MODEFLAG_ANORGANIC,
+							MODEFLAG_ATMOSPHERIC,
+							MODEFLAG_HULL,
+							MODEFLAG_BYPASS,
+							MODEFLAG_OVERCHARGE,
+							MODEFLAG_MODULATE,
+							MODEFLAG_MULTIZ,
+							MODEFLAG_EM)
 		// The modes that this shield generator can ever use. Override to create less-able subtypes
 		// By default, multiz and hull are restricted to the hull generator
 
@@ -74,16 +78,31 @@
 	var/report_delay = 20 SECONDS //We will wait this amount of time after taking a hit before sending a report.
 	var/report_scheduled = FALSE //
 
+	var/list/tendrils = list()
+	var/list/tendril_dirs = list(NORTH, EAST, WEST)
+	var/tendrils_deployed = FALSE				// Whether the dummy capacitors are currently extended
 
 
-
-/obj/machinery/power/shield_generator/update_icon()
+/obj/machinery/power/shield_generator/on_update_icon()
 	cut_overlays()
 	if(running)
-		icon_state = "generator1"
+		SetIconState("generator1")
+		set_light(2, 2, "#8AD55D")
 	else
-		icon_state = "generator0"
+		SetIconState("generator0")
+		set_light(0)
+	if (tendrils_deployed)
+		for (var/D in tendril_dirs)
+			var/I = image(icon,"capacitor_connected", dir = D)
+			add_overlays(I)
 
+	for (var/obj/machinery/shield_conduit/S in tendrils)
+		if (running)
+			S.SetIconState("conduit_1")
+			S.bright_light()
+		else
+			S.SetIconState("conduit_0")
+			S.no_light()
 
 
 
@@ -103,9 +122,11 @@
 	for (var/DM in default_modes)
 		toggle_flag(DM)
 
-
+	// Link to Eris object on the overmap
+	linked_ship = locate(/obj/effect/overmap/ship/eris)
 
 /obj/machinery/power/shield_generator/Destroy()
+	toggle_tendrils(FALSE)
 	shutdown_field()
 	field_segments = null
 	damaged_segments = null
@@ -116,12 +137,12 @@
 
 /obj/machinery/power/shield_generator/RefreshParts()
 	max_energy = 0
-	for(var/obj/item/stock_parts/smes_coil/S in component_parts)
+	for(var/obj/item/weapon/stock_parts/smes_coil/S in component_parts)
 		max_energy += (S.ChargeCapacity / CELLRATE)
 	current_energy = between(0, current_energy, max_energy)
 
 	mitigation_max = MAX_MITIGATION_BASE
-	for(var/obj/item/stock_parts/capacitor/C in component_parts)
+	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
 		mitigation_max += MAX_MITIGATION_RESEARCH * C.rating
 	mitigation_em = between(0, mitigation_em, mitigation_max)
 	mitigation_physical = between(0, mitigation_physical, mitigation_max)
@@ -168,7 +189,7 @@
 	if(check_flag(MODEFLAG_HULL))
 		var/isFloor
 		for(var/turf/T in shielded_turfs)
-			if (T.diffused)
+			if (locate(/obj/effect/shield) in T)
 				continue
 			isFloor = TRUE
 			for(var/turf/TN in orange(1, T))
@@ -184,7 +205,8 @@
 			S.gen = src
 			S.flags_updated()
 			field_segments |= S
-
+			if (T.diffused)
+				S.fail(20)
 			CHECK_TICK
 	else
 		for(var/turf/T in shielded_turfs)
@@ -201,18 +223,27 @@
 
 // Recalculates and updates the upkeep multiplier
 /obj/machinery/power/shield_generator/proc/update_upkeep_multiplier()
-	var/new_upkeep = 1.0
+	var/new_upkeep = 1
 	for(var/datum/shield_mode/SM in mode_list)
 		if(check_flag(SM.mode_flag))
 			new_upkeep *= SM.multiplier
 
 	upkeep_multiplier = new_upkeep
 
+// Recalculates and updates the upkeep star multiplier
+/obj/machinery/power/shield_generator/proc/update_upkeep_star_multiplier()
+	var/distance = sqrt((linked_ship.x - GLOB.maps_data.overmap_size/2)**2 + (linked_ship.y - GLOB.maps_data.overmap_size/2)**2) // Distance from star
+	if(distance>upkeep_star_multiplier_safe) // Above safe distance, no impact on shields
+		upkeep_star_multiplier = 1
+	else // Otherwise shields are impacted depending on proximity to the star
+		upkeep_star_multiplier = 1 + (upkeep_star_multiplier_max - 1) * ((upkeep_star_multiplier_safe - distance) / upkeep_star_multiplier_safe)
 
 /obj/machinery/power/shield_generator/Process()
 	upkeep_power_usage = 0
 	power_usage = 0
 
+	if (!anchored)
+		return
 	if(offline_for)
 		offline_for = max(0, offline_for - 1)
 		if (offline_for <= 0)
@@ -229,7 +260,9 @@
 	mitigation_heat = between(0, mitigation_heat - MITIGATION_LOSS_PASSIVE, mitigation_max)
 	mitigation_physical = between(0, mitigation_physical - MITIGATION_LOSS_PASSIVE, mitigation_max)
 
-	upkeep_power_usage = round((field_segments.len - damaged_segments.len) * ENERGY_UPKEEP_PER_TILE * upkeep_multiplier)
+	update_upkeep_star_multiplier() // Update shield upkeep depending on proximity to the star at the center of the overmap
+
+	upkeep_power_usage = round((field_segments.len - damaged_segments.len) * ENERGY_UPKEEP_PER_TILE * upkeep_multiplier * upkeep_star_multiplier)
 
 	if(powernet && !input_cut && (running == SHIELD_RUNNING || running == SHIELD_OFF))
 		var/energy_buffer = 0
@@ -273,57 +306,17 @@
 		to_chat(user, "Wait until \the [src] cools down from emergency shutdown first!")
 		return
 
+	if(default_deconstruction(O, user))
+		return
 	if(default_part_replacement(O, user))
 		return
 
-	else
+	//TODO: Implement unwrenching in a proper centralised location. Having to copypaste this around sucks
+	if(QUALITY_BOLT_TURNING in O.tool_qualities)
+		wrench(user, O)
+		return
 
-		var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_SCREW_DRIVING)
-
-		if(panel_open && circuit)
-			usable_qualities += QUALITY_PRYING
-
-		var/tool_type = O.get_tool_type(user, usable_qualities, src)
-		switch(tool_type)
-
-			if(QUALITY_BOLT_TURNING)
-				if(O.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
-					playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-					if(anchored)
-						to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
-						anchored = FALSE
-					else
-						if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
-						to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
-						anchored = TRUE
-
-					if(anchored)
-						connect_to_network()
-					else
-						disconnect_from_network()
-
-					return
-
-			if(QUALITY_PRYING)
-				if(O.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_HARD, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You remove the components of \the [src] with [O]."))
-					dismantle()
-				return TRUE
-
-			if(QUALITY_SCREW_DRIVING)
-				var/used_sound = panel_open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
-				if(O.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
-					updateUsrDialog()
-					panel_open = !panel_open
-					to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance hatch of \the [src] with [O]."))
-					update_icon()
-				return TRUE
-
-
-			if(ABORT_CHECK)
-				return
-
-	if(istype(O, /obj/item/tool))
+	if(istool(O))
 		return src.attack_hand(user)
 
 
@@ -338,7 +331,7 @@
 			S.fail(1)
 
 
-/obj/machinery/power/shield_generator/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/power/shield_generator/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 
 	data["running"] = running
@@ -391,7 +384,7 @@
 
 
 /obj/machinery/power/shield_generator/attack_hand(var/mob/user)
-	nano_ui_interact(user)
+	ui_interact(user)
 	if(panel_open)
 		wires.Interact(user)
 
@@ -404,7 +397,8 @@
 /obj/machinery/power/shield_generator/Topic(href, href_list)
 	if(..())
 		return 1
-
+	if(!anchored)
+		return
 	//Doesn't respond while disabled
 	if(offline_for)
 		return
@@ -471,7 +465,7 @@
 		log_event(EVENT_RECONFIGURED, src)
 		. = 1
 
-	nano_ui_interact(usr)
+	ui_interact(usr)
 
 /obj/machinery/power/shield_generator/proc/field_integrity()
 	if(max_energy)
@@ -570,9 +564,9 @@
 
 /obj/machinery/power/shield_generator/proc/get_logs()
 	var/list/all_logs = list()
-	for(var/entry in event_log)
+	for(var/i = event_log.len; i > 1; i--)
 		all_logs.Add(list(list(
-			"entry" = entry
+			"entry" = event_log[i]
 		)))
 	return all_logs
 
@@ -606,7 +600,7 @@
 	var/list/base_turfs = get_base_turfs()
 
 	for(var/turf/gen_turf in base_turfs)
-		for(var/turf/T in trange(field_radius, gen_turf))
+		for(var/turf/T in RANGE_TURFS(field_radius, gen_turf))
 			if(istype(T, /turf/space))
 				continue
 
@@ -651,16 +645,12 @@
 	if (report_scheduled)
 		return
 
-	if (reportDamage)
-		report_scheduled = TRUE
-
-		addtimer(CALLBACK(src, .proc/report_damage), report_delay)
-
-
+	report_scheduled = TRUE
+	spawn(report_delay)
+		report_damage()
 
 //This proc sends reports for shield damage
 /obj/machinery/power/shield_generator/proc/report_damage()
-
 	var/do_report = FALSE //We only report if this is true
 	report_scheduled = FALSE //Reset this regardless of what we do here
 
@@ -699,6 +689,19 @@
 		spanclass = "danger"
 
 	command_announcement.Announce(span(spanclass, "[prefix]Shield integrity at [round(field_integrity())]%"), "Shield Status Report", msg_sanitized = TRUE)
+
+
+/obj/machinery/power/shield_generator/proc/wrench(var/user, var/obj/item/O)
+	if(O.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		if(anchored)
+			to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
+			anchored = FALSE
+		else
+			if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
+			to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
+			anchored = TRUE
+		return
 
 //This proc keeps an internal log of shield impacts, activations, deactivations, and a vague log of config changes
 /obj/machinery/power/shield_generator/proc/log_event(var/event_type, var/atom/origin_atom)
@@ -756,6 +759,125 @@
 		if (event_log.len > max_log_entries)
 			event_log.Cut(1,2)
 
+/obj/machinery/shield_conduit
+	name = "shield conduit"
+	icon = 'icons/obj/machines/shielding.dmi'
+	icon_state = "conduit_0"
+	desc = "A combined conduit and capacitor that transfers and stores massive amounts of energy."
+	density = TRUE
+	anchored = FALSE //Will be set true just after deploying
+	var/obj/machinery/power/shield_generator/generator
+
+/obj/machinery/shield_conduit/proc/connect(gen)
+	generator = gen
+
+/obj/machinery/shield_conduit/proc/no_light()
+	set_light(0)
+
+/obj/machinery/shield_conduit/proc/bright_light()
+	set_light(2, 2, "#8AD55D")
+
+/obj/machinery/shield_conduit/Destroy()
+	if(generator)
+		generator.toggle_tendrils(FALSE)
+		if(generator.running != SHIELD_OFF && !generator.emergency_shutdown)
+			generator.offline_for += 300
+			generator.shutdown_field()
+			generator.emergency_shutdown = TRUE
+			generator.log_event(EVENT_DISABLED, generator)
+	. = ..()
+
+/obj/machinery/power/shield_generator/wrench(user, obj/item/I)
+	if(running != SHIELD_OFF)
+		to_chat(usr, SPAN_NOTICE("Generator has to be toggled off first!"))
+		return
+	if(tendrils_deployed)
+		to_chat(usr, SPAN_NOTICE("Retract conduits first!"))
+		return
+	if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		if(anchored)
+			to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
+			toggle_tendrils(FALSE)
+			anchored = FALSE
+		else
+			if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
+			to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
+			anchored = TRUE
+		return
+
+/obj/machinery/power/shield_generator/verb/toggle_tendrils_verb()
+	set category = "Object"
+	set name = "Toggle conduits"
+	set src in view(1)
+
+	if(running != SHIELD_OFF)
+		to_chat(usr, SPAN_NOTICE("Generator has to be toggled off first!"))
+		return
+	toggle_tendrils()
+
+/obj/machinery/power/shield_generator/proc/toggle_tendrils(on = null)
+	var/target_state
+	if (!isnull(on))
+		target_state = on
+	else
+		target_state = tendrils_deployed ? FALSE : TRUE //Otherwise we're toggling
+
+	if (target_state == tendrils_deployed)
+		return
+	//If we're extending them
+	if (target_state == TRUE)
+		for (var/D in tendril_dirs)
+			var/turf/T = get_step(src, D)
+			var/obj/machinery/shield_conduit/SC = locate(/obj/machinery/shield_conduit) in T
+			if(SC)
+				continue
+			if (!turf_clear(T))
+				visible_message(SPAN_DANGER("The [src] buzzes an insistent warning as it lacks the space to deploy"))
+				playsound(src.loc, "/sound/machines/buzz-two", 100, 1, 5)
+				tendrils_deployed = FALSE
+				update_icon()
+				return FALSE
+
+		//Now deploy
+		for (var/D in tendril_dirs)
+			var/turf/T = get_step(src, D)
+			var/obj/machinery/shield_conduit/SC = locate(/obj/machinery/shield_conduit) in T
+			if(!SC) SC = new(T)
+			SC.connect(src)
+			tendrils.Add(SC)
+			SC.face_atom(src)
+			SC.anchored = TRUE
+		tendrils_deployed = TRUE
+		update_icon()
+
+		allowed_modes |= MODEFLAG_MULTIZ
+		allowed_modes |= MODEFLAG_HULL
+
+		to_chat(usr, SPAN_NOTICE("You deployed [src] conduits."))
+		return TRUE
+
+	else if (target_state == FALSE)
+		for (var/obj/machinery/shield_conduit/SC in tendrils)
+			tendrils.Remove(SC)
+			qdel(SC)
+		tendrils_deployed = FALSE
+		update_icon()
+
+		allowed_modes.Remove(MODEFLAG_MULTIZ)
+		allowed_modes.Remove(MODEFLAG_HULL)
+		to_chat(usr, SPAN_NOTICE("You retracted [src] conduits."))
+		return FALSE
+
+	mode_list = list()
+	for(var/st in subtypesof(/datum/shield_mode/))
+		var/datum/shield_mode/SM = new st()
+		if (locate(SM.mode_flag) in allowed_modes)
+			mode_list.Add(SM)
+
+	//Enable all modes in the default modes list
+	for (var/DM in default_modes)
+		toggle_flag(DM)
 
 #undef EVENT_DAMAGE_PHYSICAL
 #undef EVENT_DAMAGE_EM

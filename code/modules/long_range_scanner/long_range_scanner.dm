@@ -1,11 +1,9 @@
 #define EVENT_ENABLED           3
 #define EVENT_DISABLED          4
 #define EVENT_RECONFIGURED      5
-#define PASSIVE_SCAN_RANGE      6
+#define PASSIVE_SCAN_RANGE      3
 #define PASSIVE_SCAN_PERIOD     3 SECONDS
 #define PULSE_PROGRESS_TIME    30  // in decisecond
-#define ACTIVE_SCAN_RANGE      10
-#define ACTIVE_SCAN_DURATION   30 SECONDS
 
 var/list/ship_scanners = list()
 
@@ -17,7 +15,7 @@ var/list/ship_scanners = list()
 	density = TRUE
 	anchored = FALSE
 
-	circuit = /obj/item/electronics/circuitboard/long_range_scanner
+	circuit = /obj/item/weapon/electronics/circuitboard/long_range_scanner
 
 
 
@@ -28,8 +26,7 @@ var/list/ship_scanners = list()
 	var/max_log_entries = 200			// A safety to prevent players generating endless logs and maybe endangering server memory
 
 	var/scanner_modes = 0				// Enabled scanner mode flags
-	var/as_duration_multiplier = 1.0    // Active scan duration multiplier (improve internal components)
-	var/as_energy_multiplier = 1.0      // Active scan energy cost multiplier (improve internal components)
+	var/scan_range = 2					// Scan range on the overmap
 
 	var/max_energy = 0					// Maximal stored energy. In joules. Depends on the type of used SMES coil when constructing this scanner.
 	var/current_energy = 0				// Current stored energy.
@@ -98,7 +95,8 @@ var/list/ship_scanners = list()
 		S.scanners |= src
 
 	// Link to Eris object on the overmap
-	linked_ship = (locate(/obj/effect/overmap/ship/eris) in GLOB.ships)
+	linked_ship = locate(/obj/effect/overmap/ship/eris)
+
 
 /obj/machinery/power/long_range_scanner/Destroy()
 	toggle_tendrils(FALSE)
@@ -112,20 +110,12 @@ var/list/ship_scanners = list()
 
 /obj/machinery/power/long_range_scanner/RefreshParts()
 	max_energy = 0
-	for(var/obj/item/stock_parts/smes_coil/S in component_parts)
+	for(var/obj/item/weapon/stock_parts/smes_coil/S in component_parts)
 		max_energy += (S.ChargeCapacity / CELLRATE)
 	current_energy = between(0, current_energy, max_energy)
 
-	// Better micro lasers increase the duration of the active scan mode
-	as_duration_multiplier = 1.0 + 0.5 * max_part_rating(/obj/item/stock_parts/micro_laser)
-	as_duration_multiplier = between(initial(as_duration_multiplier), as_duration_multiplier, 10.0)
 
-	// Better capacitors diminish the energy consumption of the active scan mode
-	as_energy_multiplier = 1.0 - 0.1 * max_part_rating(/obj/item/stock_parts/capacitor)
-	as_energy_multiplier = between(0.0, as_energy_multiplier, initial(as_energy_multiplier))
-
-
-// Shuts down the long range scanner
+// Shuts down the shield, removing all shield segments and unlocking generator settings.
 /obj/machinery/power/long_range_scanner/proc/shutdown_scanner()
 	running = SCANNER_OFF
 	update_icon()
@@ -482,8 +472,8 @@ var/list/ship_scanners = list()
 		return FALSE
 
 /obj/machinery/power/long_range_scanner/proc/consume_energy_scan()
-	if(current_energy > round(ENERGY_PER_SCAN * as_energy_multiplier))
-		current_energy -= round(ENERGY_PER_SCAN * as_energy_multiplier)
+	if(current_energy > round(ENERGY_PER_SCAN))
+		current_energy -= round(ENERGY_PER_SCAN)
 		return TRUE
 	return FALSE
 

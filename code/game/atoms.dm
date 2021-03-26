@@ -19,30 +19,6 @@
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
-	/// Associative list containing FLAG -> transform_type. Holds all transform_types currently applying their effects to us.
-	var/list/transform_types = list()
-
-	/**
-	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in prob.
-	 *
-	 * NOTE: Arguments may be passed to certain modifiers. To do this, change the value to this: list(prob, ...) where prob is the probability and ... are any arguments you want passed.
-	**/
-	var/list/allowed_stat_modifiers = list(
-
-	)
-
-	/// List of all instances of /datum/stat_modifier that have been applied in /datum/stat_modifier/proc/apply_to(). Should never have more instances of one typepath than that typepath's maximum_instances var.
-	var/list/current_stat_modifiers = list(
-
-	)
-
-	/// List of all stored prefixes. Used for stat_modifiers, on everything but tools and guns, which use them for attachments.
-	var/list/prefixes = list()
-
-	var/get_stat_modifier = FALSE
-	var/times_to_get_stat_modifiers = 1
-	var/get_prefix = TRUE
-
 	///Chemistry.
 	var/reagent_flags = NONE
 	var/datum/reagents/reagents
@@ -65,83 +41,37 @@
 	  */
 	var/list/atom_colours
 
-
-	// over-lays
-	var/tmp/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSover-lays to manipulate
-	var/tmp/list/priority_overlays	//over-lays that should remain on top and not normally removed when using cut_overlay functions, like c4.
-
-	// All physical objects that exist have a somewhat metaphysical representation of their integrity
-	// Why are areas derived from /atom instead of /datum?  They're abstracts!
-	var/health    = 99999 // RPG boss unless  otherwise defined
-	var/maxHealth = 99999
-	// And a status
-	var/stat = 0
-
 /atom/proc/update_icon()
-	update_all_transforms()
-	return
+	return on_update_icon(arglist(args))
 
-/atom/proc/healthCheck()
-	if (src.health <= 0)
-		if(!(stat & BROKEN))
-			breakObject()
-		else
-			return
+/atom/proc/on_update_icon()
 	return
-
-/atom/proc/breakObject()
-	if(!(stat & BROKEN))
-		stat |= BROKEN
 
 /atom/New(loc, ...)
 	init_plane()
 	update_plane()
-//	init_light()
-
-	var/do_initialize = SSatoms.initialized
-	if(do_initialize != INITIALIZATION_INSSATOMS)
+	var/do_initialize = SSatoms.init_state
+	if(do_initialize > INITIALIZATION_INSSATOMS)
 		args[1] = do_initialize == INITIALIZATION_INNEW_MAPLOAD
-		if(SSatoms.InitAtom(src, FALSE, args))
+		if(SSatoms.InitAtom(src, args))
 			//we were deleted
 			return
 
-/**
- * The primary method that objects are setup in SS13 with
- *
- * we don't use New as we have better control over when this is called and we can choose
- * to delay calls or hook other logic in and so forth
- *
- * During roundstart map parsing, atoms are queued for intialization in the base atom/New(),
- * After the map has loaded, then Initalize is called on all atoms one by one. NB: this
- * is also true for loading map templates as well, so they don't Initalize until all objects
- * in the map file are parsed and present in the world
- *
- * If you're creating an object at any point after SSInit has run then this proc will be
- * immediately be called from New.
- *
- * mapload: This parameter is true if the atom being loaded is either being intialized during
- * the Atom subsystem intialization, or if the atom is being loaded from the map template.
- * If the item is being created at runtime any time after the Atom subsystem is intialized then
- * it's false.
- *
- * You must always call the parent of this proc, otherwise failures will occur as the item
- * will not be seen as initalized (this can lead to all sorts of strange behaviour, like
- * the item being completely unclickable)
- *
- * You must not sleep in this proc, or any subprocs
- *
- * Any parameters from new are passed through (excluding loc), naturally if you're loading from a map
- * there are no other arguments
- *
- * Must return an [initialization hint][INITIALIZE_HINT_NORMAL] or a runtime will occur.
- *
- * Note: the following functions don't call the base for optimization and must copypasta handling:
- * * [/turf/proc/Initialize]
- * * [/turf/open/space/proc/Initialize]
- */
+	var/list/created = SSatoms.created_atoms
+	if(created)
+		created += src
+
+
+//Called after New if the map is being loaded. mapload = TRUE
+//Called from base of New if the map is not being loaded. mapload = FALSE
+//This base must be called or derivatives must set initialized to TRUE
+//must not sleep
+//Other parameters are passed from New (excluding loc), this does not happen if mapload is TRUE
+//Must return an Initialize hint. Defined in __DEFINES/subsystems.dm
+
 /atom/proc/Initialize(mapload, ...)
 	if(initialized)
-		CRASH("Warning: [src]([type]) initialized multiple times!")
+		crash_with("Warning: [src]([type]) initialized multiple times!")
 	initialized = TRUE
 
 	if(light_power && light_range)
@@ -158,78 +88,18 @@
 		for(var/reagent in preloaded_reagents)
 			reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
-	if (get_stat_modifier)
-		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
-
-			var/list/excavated = list()
-			for (var/entry in allowed_stat_modifiers)
-				var/to_add = allowed_stat_modifiers[entry]
-				if (islist(allowed_stat_modifiers[entry]))
-					var/list/entrylist = allowed_stat_modifiers[entry]
-					to_add = entrylist[1]
-				excavated[entry] = to_add
-
-			var/list/successful_rolls = list()
-			for (var/typepath in excavated)
-				if (prob(excavated[typepath]))
-					successful_rolls += typepath
-
-			var/picked
-			if (successful_rolls.len)
-				picked = pick(successful_rolls)
-
-			if (isnull(picked))
-				continue
-
-			var/list/arguments
-			if (islist(allowed_stat_modifiers[picked]))
-				var/list/nested_list = allowed_stat_modifiers[picked]
-				if (length(nested_list) > 1)
-					arguments = nested_list.Copy(2)
-
-			var/datum/stat_modifier/chosen_modifier = new picked
-			if (!(chosen_modifier.valid_check(src, arguments)))
-				QDEL_NULL(chosen_modifier)
-
-	add_initial_transforms()
 
 	return INITIALIZE_HINT_NORMAL
 
-/**
- * Late Intialization, for code that should run after all atoms have run Intialization
- *
- * To have your LateIntialize proc be called, your atoms [Initalization][/atom/proc/Initialize]
- *  proc must return the hint
- * [INITIALIZE_HINT_LATELOAD] otherwise you will never be called.
- *
- * useful for doing things like finding other machines on GLOB.machines because you can guarantee
- * that all atoms will actually exist in the "WORLD" at this time and that all their Intialization
- * code has been run
- */
+//called if Initialize returns INITIALIZE_HINT_LATELOAD
 /atom/proc/LateInitialize()
-	set waitfor = FALSE
+	return
 
-/**
- * Top level of the destroy chain for most atoms
- *
- * Cleans up the following:
- * * Removes alternate apperances from huds that see them
- * * qdels the reagent holder from atoms if it exists
- * * clears the orbiters list
- * * clears overlays and priority overlays
- * * clears the light object
- */
 /atom/Destroy()
-	if(reagents)
-		QDEL_NULL(reagents)
-
-	QDEL_LIST_ASSOC_VAL(transform_types)
-	QDEL_LIST(current_stat_modifiers)
-
+	QDEL_NULL(reagents)
 	spawn()
 		update_openspace()
-
-	return ..()
+	. = ..()
 
 /atom/proc/reveal_blood()
 	return
@@ -292,9 +162,6 @@
 	P.on_hit(src, def_zone)
 	. = FALSE
 
-/atom/proc/block_bullet(mob/user, var/obj/item/projectile/damage_source, def_zone)
-	return 0
-
 /atom/proc/in_contents_of(container)//can take class or object instance as argument
 	if(ispath(container))
 		if(istype(src.loc, container))
@@ -336,13 +203,14 @@
 
 /*
 Beam code by Gunbuddy
+
 Beam() proc will only allow one beam to come from a source at a time.  Attempting to call it more than
 once at a time per source will cause graphical errors.
 Also, the icon used for the beam will have to be vertical and 32x32.
 The math involved assumes that the icon is vertical to begin with so unless you want to adjust the math,
 its easier to just keep the beam vertical.
 */
-/atom/proc/Beam(atom/BeamTarget, icon_state="b_beam", icon='icons/effects/beam.dmi',time=50, maxdistance=10, alpha_arg, color_arg)
+/atom/proc/Beam(atom/BeamTarget, icon_state="b_beam", icon='icons/effects/beam.dmi',time=50, maxdistance=10)
 	//BeamTarget represents the target for the beam, basically just means the other end.
 	//Time is the duration to draw the beam
 	//Icon is obviously which icon to use for the beam, default is beam.dmi
@@ -367,40 +235,36 @@ its easier to just keep the beam vertical.
 		var/N=0
 		var/length=round(sqrt((DX)**2+(DY)**2))
 		for(N, N<length, N+=32)
-			var/obj/effect/overlay/beam/beam=new(loc)
-			beam.BeamSource=src
+			var/obj/effect/overlay/beam/X=new(loc)
+			X.BeamSource=src
 			if(N+32>length)
 				var/icon/II=new(icon, icon_state)
 				II.DrawBox(null, 1, (length-N), 32, 32)
 				II.Turn(Angle)
-				beam.icon=II
-			else beam.icon=I
+				X.icon=II
+			else X.icon=I
 			var/Pixel_x=round(sin(Angle)+32*sin(Angle)*(N+16)/32)
 			var/Pixel_y=round(cos(Angle)+32*cos(Angle)*(N+16)/32)
 			if(DX==0) Pixel_x=0
 			if(DY==0) Pixel_y=0
 			if(Pixel_x>32)
 				for(var/a=0, a<=Pixel_x, a+=32)
-					beam.x++
+					X.x++
 					Pixel_x-=32
 			if(Pixel_x<-32)
 				for(var/a=0, a>=Pixel_x, a-=32)
-					beam.x--
+					X.x--
 					Pixel_x+=32
 			if(Pixel_y>32)
 				for(var/a=0, a<=Pixel_y, a+=32)
-					beam.y++
+					X.y++
 					Pixel_y-=32
 			if(Pixel_y<-32)
 				for(var/a=0, a>=Pixel_y, a-=32)
-					beam.y--
+					X.y--
 					Pixel_y+=32
-			beam.pixel_x=Pixel_x
-			beam.pixel_y=Pixel_y
-			if (alpha_arg)
-				beam.alpha = alpha_arg
-			if (color_arg)
-				beam.color = color_arg
+			X.pixel_x=Pixel_x
+			X.pixel_y=Pixel_y
 		sleep(3)	//Changing this to a lower value will cause the beam to follow more smoothly with movement, but it will also be more laggy.
 					//I've found that 3 ticks provided a nice balance for my use.
 	for(var/obj/effect/overlay/beam/O in orange(10, src)) if(O.BeamSource==src) qdel(O)
@@ -429,74 +293,38 @@ its easier to just keep the beam vertical.
 
 	if(desc)
 		to_chat(user, desc)
-		var/pref = user.get_preference_value("SWITCHEXAMINE")
-		if(pref == GLOB.PREF_YES)
-			user.client.statpanel = "Examine"
-//Soj Edits
-	if (current_stat_modifiers && current_stat_modifiers.len)
-		var/list/descriptions_to_print = list()
-		for (var/datum/stat_modifier/mod in current_stat_modifiers)
-			if (mod.description)
-				if (!(mod.description in descriptions_to_print))
-					descriptions_to_print += mod.description
-		for (var/description in descriptions_to_print)
-			to_chat(user, SPAN_NOTICE(description))
 
 	if(reagents)
 		if(reagent_flags & TRANSPARENT)
-			to_chat(user, SPAN_NOTICE("It contains:"))
-			var/return_value = user.can_see_reagents()
-			var/cop_vision = user.can_see_illegal_reagents()
-			var/bar_vision = user.can_see_common_reagents()
-			if(return_value == TRUE) //Show each individual reagent
-				for(var/datum/reagent/R in reagents.reagent_list)
-					to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
-			// Only display reagents marked as "Common", IE, a regular person will know what it is and does.
-			else if(bar_vision)
-				var/misc_reagent = 0
-				for(var/datum/reagent/R in reagents.reagent_list)
-					if(R.common)
-						to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
-					else if(cop_vision && R.illegal)
-						to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
-					else
-						misc_reagent += R.volume
-				if(misc_reagent != 0)
-					to_chat(user, SPAN_NOTICE("[misc_reagent] units of various reagents."))
-			else if(cop_vision)
-				var/misc_reagent = 0
-				for(var/datum/reagent/R in reagents.reagent_list)
-					if(R.illegal)
-						to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
-					else
-						misc_reagent += R.volume
-				if(misc_reagent != 0)
-					var/datum/reagent/master_reagent = reagents.get_master_reagent()
-					if(master_reagent.common && !master_reagent.illegal)
-						to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of what looks like [master_reagent.name]."))
-					else
-						to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of various reagents."))
-			//Get the most populated reagent in the mix. If it is a "common" reagent, let the person see that, and only that.
-			else if(reagents && reagents.reagent_list.len)
-				var/datum/reagent/master_reagent = reagents.get_master_reagent()
-				if(master_reagent.common)
-					to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of what looks like [master_reagent.name]."))
-				else
-					to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of various reagents."))
-// End of SoJ changes
-		else
-			if(reagent_flags & AMOUNT_VISIBLE)
-				if(reagents.total_volume)
-					to_chat(user, SPAN_NOTICE("It has [reagents.total_volume] unit\s left."))
-				else
-					to_chat(user, SPAN_DANGER("It's empty."))
+			to_chat(user, "<span class='notice'>It contains:</span>")
+			if(reagents.reagent_list.len)
+				for(var/I in reagents.reagent_list)
+					var/datum/reagent/R = I
+					to_chat(user, "<span class='notice'>[R.volume] units of [R.name]</span>")
+
+				// TODO: reagent vision googles? code below:
+				/*
+				if(user.can_see_reagents()) //Show each individual reagent
+					for(var/I in reagents.reagent_list)
+						var/datum/reagent/R = I
+						to_chat(user, "<span class='notice'>[R.volume] units of [R.name]</span>")
+				else //Otherwise, just show the total volume
+					if(reagents && reagents.reagent_list.len)
+						to_chat(user, "<span class='notice'>[reagents.total_volume] units of various reagents.</span>")
+				*/
+			else
+				to_chat(user, "<span class='notice'>Nothing.</span>	")
+		else if(reagent_flags & AMOUNT_VISIBLE)
+			if(reagents.total_volume)
+				to_chat(user, "<span class='notice'>It has [reagents.total_volume] unit\s left.</span>")
+			else
+				to_chat(user, "<span class='danger'>It's empty.</span>")
 
 	if(ishuman(user) && user.stats && user.stats.getPerk(/datum/perk/greenthumb))
 		var/datum/perk/greenthumb/P = user.stats.getPerk(/datum/perk/greenthumb)
-		var/obj/item/I = P.virtual_scanner
-		I.afterattack(src, user, get_dist(src, user) <= 1)
+		P.virtual_scanner.afterattack(src, user, get_dist(src, user) <= 1)
 
-	LEGACY_SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
+	SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
 
 	return distance == -1 || (get_dist(src, user) <= distance) || isobserver(user)
 
@@ -798,7 +626,7 @@ its easier to just keep the beam vertical.
 	var/turf/T = get_turf(src)
 	var/list/mobs = list()
 	var/list/objs = list()
-	get_mobs_and_objs_in_view_fast(T, range, mobs, objs, ONLY_GHOSTS_IN_VIEW)
+	get_mobs_and_objs_in_view_fast(T,range, mobs, objs, ONLY_GHOSTS_IN_VIEW)
 
 	for(var/m in mobs)
 		var/mob/M = m
@@ -809,7 +637,8 @@ its easier to just keep the beam vertical.
 
 /atom/Entered(var/atom/movable/AM, var/atom/old_loc, var/special_event)
 	if(loc)
-		for(var/atom/movable/A as anything in AM.contents)
+		for(var/i in AM.contents)
+			var/atom/movable/A = i
 			A.entered_with_container(old_loc)
 		if(MOVED_DROP == special_event)
 			AM.forceMove(loc, MOVED_DROP)
@@ -864,8 +693,6 @@ its easier to just keep the beam vertical.
 	// offset correction
 	BM.pixel_x--
 	BM.pixel_y--
-	BM.serial_type_index = Proj.serial_type_index_bullet //Nothing to nothing shouldnt be an issue
-
 
 	if(Proj.get_structure_damage() >= WEAPON_FORCE_DANGEROUS)//If it does a lot of damage it makes a nice big black hole.
 		BM.icon_state = "scorch"
@@ -884,21 +711,11 @@ its easier to just keep the beam vertical.
 
 
 /atom/proc/get_recursive_contents()
-	. = list()
-	for (var/atom/a as anything in contents)
-		. += a
-		. |= a.get_recursive_contents()
-
-/atom/proc/get_recursive_contents_until(limit = INFINITY, current_recursion = 0)
-	if (limit <= current_recursion)
-		return
-	. = list()
-	current_recursion++
-	for (var/atom/a as anything in contents)
-		. += a
-		var/recursive_contents = a.get_recursive_contents_until(limit, current_recursion)
-		if (!isnull(recursive_contents))
-			. |= recursive_contents
+	var/list/result = list()
+	for (var/atom/a in contents)
+		result += a
+		result |= a.get_recursive_contents()
+	return result
 
 /atom/proc/AllowDrop()
 	return FALSE
@@ -942,41 +759,8 @@ its easier to just keep the beam vertical.
 
 /atom/proc/additional_see_invisible()
 	return 0
-
 /atom/proc/lava_act()
 	visible_message("<span class='danger'>\The [src] sizzles and melts away, consumed by the lava!</span>")
-//	playsound(src, 'sound/effects/flare.ogg', 100, 3)
-	if(ismob(src))
-		var/mob/M = src
-		M.death(FALSE, FALSE)
+	playsound(src, 'sound/effects/flare.ogg', 100, 3)
 	qdel(src)
 	. = TRUE
-
-/atom/proc/get_sex()
-	return gender
-
-//RETURNS A DATUM
-/atom/proc/get_gender()
-	return GLOB.gender_datums[gender]
-
-/atom/proc/gender_word(var/position, var/gen = null) //So you can suggest an alternative gender if needed.
-	var/datum/gender/G = get_gender()
-	if(istype(gen, /datum/gender))
-		//Use as given.
-		G = gen
-		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite type match") //TODO: REMOVE THIS ONCE FIXED
-	else if(istext(gen))
-		G = GLOB.gender_datums[gen] //Convert to the gender using the name given.
-		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite list extraction") //TODO: REMOVE THIS ONCE FIXED
-	return G.word(position)
-
-// Called after we wrench/unwrench this object
-/obj/proc/wrenched_change()
-	return
-
-/// First resets the name of the mob to the initial name it had, then adds each prefix in a random order.
-/atom/proc/update_prefixes()
-	name = initial(src.name) //reset the name so we can accurately re-add prefixes without fear of double prefixes
-
-	for (var/prefix in prefixes)
-		name = "[prefix] [name]"

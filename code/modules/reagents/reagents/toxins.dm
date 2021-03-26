@@ -10,8 +10,8 @@
 	color = "#CF3600"
 	metabolism = REM * 0.05 // 0.01 by default. They last a while and slowly kill you.
 	var/strength = 0.05 // How much damage it deals per unit
+	var/sanityloss = 0
 	reagent_type = "Toxin"
-	scannable = 1
 
 /datum/reagent/toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
@@ -19,14 +19,10 @@
 		if(issmall(M))  // Small bodymass, more effect from lower volume.
 			multi *= 2
 		M.adjustToxLoss(strength * multi)
+		if(sanityloss && ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.sanity.onToxin(src, effect_multiplier)
 	M.add_chemical_effect(CE_TOXIN, 1)
-
-/datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if(ishuman(M))
-		if(M.stats.getPerk(PERK_SNACKIVORE))
-			M.adjustToxLoss(-((0.6 + (M.getToxLoss() * 0.05)) * effect_multiplier))
-
-	return ..()
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
@@ -35,7 +31,7 @@
 /datum/reagent/toxin/plasticide
 	name = "Plasticide"
 	id = "plasticide"
-	description = "Liquid plastic used in creation of plastic sheets."
+	description = "Liquid plastic used in creating plastic sheets."
 	taste_description = "plastic"
 	reagent_state = LIQUID
 	color = "#CF3600"
@@ -44,11 +40,10 @@
 /datum/reagent/toxin/oil
 	name = "Oil"
 	id = "oil"
-	description = "Crude oil, somehow connected to frequent invasions."
+	description = "Crude oil, commonly found on habitable planets."
 	taste_description = "money"
 	reagent_state = LIQUID
 	color = "#0C0C0C"
-	common = TRUE //Identifiable on sight
 
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"
@@ -131,7 +126,7 @@
 /datum/reagent/toxin/cyanide //Fast and Lethal
 	name = "Cyanide"
 	id = "cyanide"
-	description = "A highly toxic chemical that prevents cellular respiration."
+	description = "A highly toxic chemical."
 	taste_mult = 0.6
 	reagent_state = LIQUID
 	color = "#CF3600"
@@ -146,7 +141,7 @@
 /datum/reagent/toxin/potassium_chloride
 	name = "Potassium Chloride"
 	id = "potassium_chloride"
-	description = "A delicious salt that arrests the heart if injected there."
+	description = "A delicious salt that stops the heart when injected into cardiac muscle."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
@@ -168,7 +163,7 @@
 /datum/reagent/toxin/potassium_chlorophoride
 	name = "Potassium Chlorophoride"
 	id = "potassium_chlorophoride"
-	description = "A specific chemical based on Potassium Chloride to arrest the heart for surgery."
+	description = "A specific chemical based on Potassium Chloride to stop the heart for surgery."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
@@ -195,7 +190,6 @@
 	color = "#669900"
 	metabolism = REM
 	strength = 0.04
-	illegal = TRUE
 
 /datum/reagent/toxin/zombiepowder/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -203,7 +197,7 @@
 	M.adjustOxyLoss(0.6 * effect_multiplier)
 	M.Weaken(10)
 	M.silent = max(M.silent, 10)
-	M.tod = world.time
+	M.timeofdeath = world.time
 	M.add_chemical_effect(CE_NOPULSE, 1)
 
 /datum/reagent/toxin/zombiepowder/Destroy()
@@ -221,7 +215,6 @@
 	reagent_state = LIQUID
 	strength = 0.01 // It's not THAT poisonous.
 	color = "#664330"
-	common = TRUE
 
 /datum/reagent/toxin/fertilizer/eznutrient
 	name = "EZ Nutrient"
@@ -238,7 +231,7 @@
 /datum/reagent/toxin/plantbgone
 	name = "Plant-B-Gone"
 	id = "plantbgone"
-	description = "A harmful toxic mixture to kill plant life."
+	description = "A harmful toxic mixture to kill plantlife."
 	taste_mult = 1
 	reagent_state = LIQUID
 	color = "#49002E"
@@ -254,7 +247,7 @@
 	return TRUE
 
 /datum/reagent/toxin/plantbgone/touch_obj(obj/O, var/volume)
-	if(istype(O, /obj/effect/plant) && !istype(O, /obj/effect/plant/hivemind))
+	if(istype(O, /obj/effect/plant))
 		qdel(O)
 	if(istype(O, /obj/machinery/portable_atmospherics/hydroponics))
 		var/obj/machinery/portable_atmospherics/hydroponics/T = O
@@ -267,13 +260,12 @@
 /datum/reagent/acid/polyacid
 	name = "Polytrinic acid"
 	id = "pacid"
-	description = "Polytrinic acid is an extremely corrosive chemical substance."
+	description = "Polytrinic acid is a an extremely corrosive chemical substance."
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#8E18A9"
 	power = 10
 	meltdose = 4
-	illegal = TRUE
 
 
 /datum/reagent/toxin/lexorin
@@ -323,7 +315,7 @@
 			M.UpdateAppearance()
 	M.apply_effect(1 * effect_multiplier, IRRADIATE, 0)
 
-/datum/reagent/toxin/slimejelly
+/datum/reagent/medicine/slimejelly
 	name = "Slime Jelly"
 	id = "slimejelly"
 	description = "A gooey semi-liquid produced from one of the deadliest lifeforms in existence."
@@ -331,7 +323,6 @@
 	taste_mult = 1.3
 	reagent_state = LIQUID
 	color = "#801E28"
-	illegal = TRUE
 
 /datum/reagent/medicine/slimejelly/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(10))
@@ -339,24 +330,6 @@
 		M.adjustToxLoss(rand(10, 30) * effect_multiplier)
 	else if(prob(40))
 		M.heal_organ_damage(2.5 * effect_multiplier, 0)
-
-/datum/reagent/medicine/pureslimejelly
-	name = "Pure Slime Jelly"
-	id = "pureslimejelly"
-	description = "A advanced version of slime jelly. Naturally made from certain slimes."
-	taste_description = "soft and warm slime"
-	taste_mult = 1.3
-	reagent_state = LIQUID
-	color = "#801E28"
-	illegal = TRUE
-
-/datum/reagent/medicine/pureslimejelly/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustToxLoss(rand(15,20) * effect_multiplier)
-	to_chat(M, SPAN_DANGER("slime gushes from your mouth."))
-	M.vomit()
-	var/mob/living/carbon/slime/S = new /mob/living/carbon/slime
-	S.loc = M.loc
-	holder.remove_reagent("pureslimejelly", 30)
 
 /datum/reagent/medicine/soporific
 	name = "Soporific"
@@ -396,7 +369,6 @@
 	color = "#000067"
 	metabolism = REM * 5
 	overdose = REAGENTS_OVERDOSE * 0.5
-	illegal = TRUE
 
 /datum/reagent/medicine/chloralhydrate/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	var/effective_dose = dose
@@ -427,7 +399,6 @@
 	glass_name = "beer"
 	glass_desc = "A freezing pint of beer"
 	glass_center_of_mass = list("x"=16, "y"=8)
-	common = TRUE //So people mistakenly believe it is, in fact, beer.
 
 /* Transformations */
 
@@ -464,7 +435,7 @@
 	M.cut_overlays()
 	M.invisibility = 101
 	for(var/obj/item/W in M)
-		if(istype(W, /obj/item/implant)) //TODO: Carn. give implants a dropped() or something
+		if(istype(W, /obj/item/weapon/implant)) //TODO: Carn. give implants a dropped() or something
 			qdel(W)
 			continue
 		W.layer = initial(W.layer)
@@ -494,49 +465,13 @@
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#a37d9c"
+	metabolism = REM * 2
 	overdose = REAGENTS_OVERDOSE/3
-	addiction_chance = 0.01 //Will STILL likely always be addicting
-	nerve_system_accumulations = 10
-	metabolism = REM * 0.2 //but processes much faster than other toxins
-	strength = 0.3 //Rather lethal
+	nerve_system_accumulations = 5
+	strength = 0.01
+	sanityloss = 3
 	heating_point = 523
 	heating_products = list("toxin")
-
-/datum/reagent/toxin/pararein/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	..()
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
-	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "pararein")
-
-/datum/reagent/toxin/aranecolmin
-	name = "Aranecolmin"
-	id = "aranecolmin"
-	description = "Weak antitoxin used by warrior spiders. Speeds up metabolism immensely."
-	taste_description = "sludge"
-	reagent_state = LIQUID
-	color = "#acc107"
-	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 10
-	nerve_system_accumulations = 5
-
-/datum/reagent/toxin/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_ANTITOX, 0.3)
-	if(M.bloodstr)
-		for(var/current in M.bloodstr.reagent_list)
-			var/datum/reagent/toxin/pararein/R = current
-			if(istype(R))
-				R.metabolism = initial(R.metabolism) * 3
-				break
-
-/datum/reagent/toxin/aranecolmin/on_mob_delete(mob/living/carbon/M)
-	..()
-	if(istype(M))
-		if(M.bloodstr)
-			for(var/current in M.bloodstr.reagent_list)
-				var/datum/reagent/toxin/pararein/R = current
-				if(istype(R))
-					R.metabolism = initial(R.metabolism)
-					break
 
 /datum/reagent/toxin/diplopterum
 	name = "Diplopterum"
@@ -545,7 +480,7 @@
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#c9bed2"
-	overdose = 16
+	overdose = REAGENTS_OVERDOSE * 0.66
 	strength = 0.1
 	addiction_chance = 10
 	nerve_system_accumulations = 5
@@ -556,16 +491,8 @@
 /datum/reagent/toxin/diplopterum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "diplopterum")
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		M.adjustOxyLoss(-1.5 * effect_multiplier)
-		M.add_chemical_effect(CE_OXYGENATED, 1)
-		holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
-		M.adjustToxLoss(-0.1)
-		return
 
 /datum/reagent/toxin/diplopterum/withdrawal_act(mob/living/carbon/M)
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		return
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
 
@@ -587,25 +514,22 @@
 	taste_description = "plague"
 	reagent_state = LIQUID
 	color = "#6d33b4"
-	overdose = 16
+	overdose = REAGENTS_OVERDOSE/2
 	addiction_chance = 10
 	nerve_system_accumulations = 5
 	heating_point = 573
 	heating_products = list("radium", "ammonia", "sulfur", "nutriment")
 
 /datum/reagent/toxin/seligitillin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+	M.heal_organ_damage(0.2 * effect_multiplier, 0, 3)
 	var/mob/living/carbon/human/H = M
 	for(var/obj/item/organ/external/E in H.organs)
 		for(var/datum/wound/W in E.wounds)
 			if(W.internal)
 				W.heal_damage(1 * effect_multiplier)
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
-		return
 
 /datum/reagent/toxin/seligitillin/withdrawal_act(mob/living/carbon/M)
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		return
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, STIM_TIME, "seligitillin_w")
 
 /datum/reagent/toxin/seligitillin/overdose(mob/living/carbon/M, alien)
@@ -626,7 +550,7 @@
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#736bbe"
-	overdose = 16
+	overdose = REAGENTS_OVERDOSE/2
 	addiction_chance = 15
 	nerve_system_accumulations = 5
 	heating_point = 573
@@ -636,15 +560,8 @@
 /datum/reagent/toxin/starkellin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "starkellin")
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
-		M.add_chemical_effect(CE_BLOODCLOT, 0.15)
-		M.adjustToxLoss(-0.1)
-		return
 
 /datum/reagent/toxin/starkellin/withdrawal_act(mob/living/carbon/M)
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
 
@@ -655,7 +572,7 @@
 	taste_description = "raw meat"
 	reagent_state = LIQUID
 	color = "#9452ba"
-	overdose = 16
+	overdose = REAGENTS_OVERDOSE/2
 	addiction_chance = 20
 	nerve_system_accumulations = 5
 	strength = 0.2
@@ -667,17 +584,8 @@
 	..()
 	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC, STIM_TIME, "gewaltine")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "gewaltine")
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
-		M.adjust_hallucination(-0.9 * effect_multiplier)
-		M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
-		M.add_chemical_effect(CE_ANTITOX, 1)
-		holder.remove_reagent("pararein", 0.4 * effect_multiplier)
-		return
 
 /datum/reagent/toxin/gewaltine/withdrawal_act(mob/living/carbon/M)
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, STIM_TIME, "gewaltine_w")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "gewaltine_w")
 
@@ -691,31 +599,20 @@
 	taste_description = "third reich"
 	reagent_state = LIQUID
 	color = "#a6b85b"
-	overdose = 16
+	overdose = 8
 	addiction_chance = 30
 	nerve_system_accumulations = 4
 	heating_point = 573
 	heating_products = list("radium", "mercury", "lithium", "nutriment")
 
 /datum/reagent/toxin/fuhrerole/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	..()
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		var/mob/living/carbon/human/H = M
-		for(var/obj/item/organ/I in H.internal_organs)
-			if((I.damage > 0) && !BP_IS_ROBOTIC(I)) //Chtmants are not meant to have robotic organs!
-				I.heal_damage(((0.2 + I.damage * 0.05) * effect_multiplier), FALSE)
-		return
 	M.faction = "roach"
 
-/datum/reagent/toxin/fuhrerole/on_mob_delete(mob/living/carbon/L)
+/datum/reagent/toxin/fuhrerole/on_mob_delete(mob/living/L)
 	..()
-	if(L.species?.reagent_tag == IS_CHTMANT)
-		return
 	L.faction = initial(L.faction)
 
 /datum/reagent/toxin/fuhrerole/withdrawal_act(mob/living/carbon/M)
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
 
@@ -731,7 +628,6 @@
 	reagent_state = LIQUID
 	color = "#527f4f"
 	strength = 0.3
-	common = TRUE //Church should know if they actually have biomatter or something else.
 
 /datum/reagent/toxin/biomatter/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -758,107 +654,18 @@
 		remove_self(volume)
 		return TRUE
 
-/datum/reagent/toxin/xenotoxin
-	name = "Xenomorph Toxin"
-	id = "xenotoxin"
-	description = "A highly toxic chemical that causes a complete neural weakening of the body in both mind and muscle."
-	taste_description = "bitterness"
+/datum/reagent/toxin/chlorine
+	name = "Chlorine"
+	description = "A highly poisonous liquid. Smells strongly of bleach."
 	reagent_state = LIQUID
-	color = "#ffb3b7"
-	nerve_system_accumulations = 5
-	addiction_chance = 10
-	scannable = 1
-	metabolism = REM/4
-	constant_metabolism = TRUE
+	taste_description = "bleach"
+	color = "#707c13"
+	strength = 15
 
-/datum/reagent/toxin/xenotoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
-	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
-
-/datum/reagent/toxin/xenotoxin/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
-	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "xeno_toxin_w")
-	if(prob(25 - (5 * M.stats.getMult(STAT_TGH))))
-		M.shake_animation(8)
-
-/datum/reagent/toxin/xenotoxin/overdose(mob/living/carbon/M, alien)
-	M.adjustBrainLoss(2)
-	M.slurring = max(M.slurring, 30)
-	if(prob(5))
-		M.vomit()
-
-/datum/reagent/toxin/combat
-	name = "Tetraricide"
-	id = "chemweapon1"
-	description = "A powerful chemical weapon, sometimes referred to as \"Sweet Death\". Only absolute psychopaths and REALLY desperate mercenaries utilize this chemical."
-	taste_description = "sweetness"
+/datum/reagent/toxin/tar
+	name = "Tar"
+	description = "A dark, viscous liquid."
+	taste_description = "petroleum"
+	color = "#140b30"
 	reagent_state = LIQUID
-	strength = 0.8
-	overdose = REAGENTS_OVERDOSE/2
-	illegal = TRUE
-
-/datum/reagent/toxin/combat/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	..()
-	if(M.losebreath < 15)
-		M.losebreath++
-	M.apply_damages(0,0,0,1.5,0,20)				//Asphyxia and pain
-	if(prob(5 - (4 * M.stats.getMult(STAT_TGH))))
-		M.vomit()
-
-/datum/reagent/toxin/combat/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
-	..()
-	if(M.losebreath < 15)
-		M.losebreath++
-	M.apply_damages(0,0,0,0.5,0,20)				//Asphyxia and pain
-	if(prob(5 - (5 * M.stats.getMult(STAT_TGH))))
-		M.vomit()
-
-/datum/reagent/toxin/combat/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	..()
-	if(M.losebreath < 15)
-		M.losebreath++
-	M.apply_damages(0,0,0,2.5,0,10)				//Asphyxia and pain
-	if(prob(5 - (4 * M.stats.getMult(STAT_TGH))))
-		M.vomit()
-
-/datum/reagent/toxin/combat/overdose(mob/living/carbon/M, alien)
-	..()
-	M.adjustHalLoss(20)
-	M.adjustOxyLoss(5)
-
-/datum/reagent/toxin/combat/touch_mob(mob/living/L, amount)
-	if(istype(L))
-		L.adjustHalLoss(50)
-		L.adjustToxLoss(20)
-
-
-//Wasp toxin
-/datum/reagent/toxin/wasp_toxin
-	name = "Wasp Inflamer"
-	id = "wasp_toxin"
-	description = "A toxin that paralizes through pain its victums."
-	taste_mult = 0.6
-	reagent_state = LIQUID
-	color = "#CF3600"
-	strength = 0.2
-	metabolism = REM * 2
-	var/agony_amount = 4
-
-/datum/reagent/toxin/wasp_toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	..()
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.species && (H.species.flags & (NO_PAIN)))
-			return
-
-		M.apply_effect(agony_amount, AGONY, 0)
-		if(prob(5))
-			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
+	strength = 4

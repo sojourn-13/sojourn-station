@@ -20,6 +20,7 @@
 	var/in_space = 1	//can be accessed via lucky EVA
 
 	var/global/eris_start_set = FALSE //Tells us if we need to modify a random location for Eris to start at
+	var/global/eris
 
 	// Stage 0: close, well scanned by sensors
 	// Stage 1: medium, barely scanned by sensors
@@ -43,7 +44,7 @@
 	start_y = start_y || rand(OVERMAP_EDGE, GLOB.maps_data.overmap_size - OVERMAP_EDGE)
 
 	if ((!eris_start_set) && (name == config.start_location))
-		var/obj/effect/overmap/ship/eris/E = (locate(/obj/effect/overmap/ship/eris) in GLOB.ships)
+		var/obj/effect/overmap/ship/eris/E = ships[eris]
 		start_x = E.start_x
 		start_y = E.start_y
 		eris_start_set = TRUE
@@ -86,11 +87,11 @@
 				admin_notice("Sector \"[name_stages[1]]\" containing Z [english_list(map_z)] could not find waypoint with tag [waypoint_tag]!")
 		restricted_waypoints[shuttle_name] = found_waypoints
 
-	for(var/obj/machinery/computer/sensors/S in GLOB.computer_list)
+	for(var/obj/machinery/computer/sensors/S in SSmachines.machinery)
 		if (S.z in map_z)
 			S.linked = src
 
-/obj/effect/overmap/proc/get_waypoints(var/shuttle_name)
+/obj/effect/overmap/sector/proc/get_waypoints(var/shuttle_name)
 	. = generic_waypoints.Copy()
 	if(shuttle_name in restricted_waypoints)
 		. += restricted_waypoints[shuttle_name]
@@ -104,13 +105,10 @@
 /obj/effect/overmap/sector/Initialize()
 	. = ..()
 	if(known)
-		update_known()
-
-/obj/effect/overmap/proc/update_known()
-	layer = 2
-	set_plane(-1)
-	for(var/obj/machinery/computer/helm/H in GLOB.computer_list)
-		H.get_known_sectors()
+		layer = 2
+		set_plane(-1)
+		for(var/obj/machinery/computer/helm/H in SSmachines.machinery)
+			H.get_known_sectors()
 
 /obj/effect/overmap/proc/add_landmark(obj/effect/shuttle_landmark/landmark)
 	generic_waypoints += landmark

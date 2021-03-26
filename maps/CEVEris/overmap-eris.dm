@@ -50,6 +50,10 @@
 	//overmap_event_handler.scan_loc(src, loc, can_scan()) // Eris uses its sensors to scan nearby events
 	.=..()
 
+/obj/effect/overmap/ship/eris/Process()
+	overmap_event_handler.scan_loc(src, loc, can_scan()) // Eris uses its sensors to scan nearby events
+	.=..()
+
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
 	name = "shuttle control console"
 	shuttle_tag = "Vasiliy Dokuchaev"

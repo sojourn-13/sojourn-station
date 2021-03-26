@@ -1,12 +1,10 @@
-#define NAVIGATION_VIEW_RANGE 10
-
 /obj/machinery/computer/helm
 	name = "helm control console"
 	icon_state = "computer"
 	icon_keyboard = "teleport_key"
 	icon_screen = "eris_control"
 	light_color = COLOR_LIGHTING_CYAN_MACHINERY
-	circuit = /obj/item/electronics/circuitboard/helm
+	circuit = /obj/item/weapon/electronics/circuitboard/helm
 	var/obj/effect/overmap/ship/linked			//connected overmap object
 	var/autopilot = 0
 	var/manual_control = 0
@@ -21,9 +19,6 @@
 	get_known_sectors()
 	new /obj/effect/overmap_event/movable/comet()
 
-	if (isnull(linked))
-		error("There are no map_sectors on [src]'s z.")
-		return
 	linked.check_link()
 
 /obj/machinery/computer/helm/proc/get_known_sectors()
@@ -66,7 +61,9 @@
 		if (!manual_control)
 			user.reset_view(user.eyeobj)
 		return 0
-	if (!manual_control || (!get_dist(user, src) > 1) || user.blinded || !linked )
+	if (!manual_control)
+		return -1
+	if (!get_dist(user, src) > 1 || user.blinded || !linked )
 		return -1
 	return 0
 
@@ -82,7 +79,6 @@
 
 	if(linked && manual_control)
 		user.reset_view(linked)
-		user.client.view = "[2*NAVIGATION_VIEW_RANGE+1]x[2*NAVIGATION_VIEW_RANGE+1]"
 
 	else if(!config.use_overmap && user?.client?.holder)
 		// Let the new developers know why the helm console is unresponsive
@@ -116,7 +112,6 @@
 	data["manual_control"] = manual_control
 	data["canburn"] = linked.can_burn()
 	data["canpulse"] = linked.can_pulse()
-	data["canscanpoi"] = linked.can_scan_poi()
 
 	if(linked.get_speed())
 		data["ETAnext"] = "[round(linked.ETA()/10)] seconds"
@@ -151,7 +146,7 @@
 
 	if (href_list["add"])
 		var/datum/data/record/R = new()
-		var/sec_name = sanitize(input("Input naviation entry name", "New navigation entry", "Sector #[known_sectors.len]") as text)
+		var/sec_name = input("Input naviation entry name", "New navigation entry", "Sector #[known_sectors.len]") as text
 		if(!CanInteract(usr,state))
 			return
 		if(!sec_name)
@@ -222,7 +217,6 @@
 		manual_control = !manual_control
 		if(manual_control)
 			usr.reset_view(linked)
-			usr.client.view = "[2*NAVIGATION_VIEW_RANGE+1]x[2*NAVIGATION_VIEW_RANGE+1]"
 		else
 			if (isAI(usr))
 				usr.reset_view(usr.eyeobj)
@@ -230,15 +224,12 @@
 	if (href_list["pulse"])
 		linked.pulse()
 
-	if (href_list["scanpoi"])
-		linked.scan_poi()
-
 	updateUsrDialog()
 
 
 /obj/machinery/computer/navigation
 	name = "navigation console"
-	circuit = /obj/item/electronics/circuitboard/nav
+	circuit = /obj/item/weapon/electronics/circuitboard/nav
 	var/viewing = 0
 	var/obj/effect/overmap/ship/linked
 	icon_keyboard = "generic_key"
@@ -298,7 +289,6 @@
 		if (!isAI(user))
 			user.set_machine(src)
 		user.reset_view(linked)
-		user.client.view = "[2*NAVIGATION_VIEW_RANGE+1]x[2*NAVIGATION_VIEW_RANGE+1]"
 
 	ui_interact(user)
 
@@ -313,7 +303,6 @@
 		viewing = !viewing
 		if(viewing)
 			usr.reset_view(linked)
-			usr.client.view = "[2*NAVIGATION_VIEW_RANGE+1]x[2*NAVIGATION_VIEW_RANGE+1]"
 		else
 			if (isAI(usr))
 				usr.reset_view(usr.eyeobj)

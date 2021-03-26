@@ -51,6 +51,8 @@ What is the naming convention for planes or layers?
 //Defines for atom layers and planes
 //KEEP THESE IN A NICE ACSCENDING ORDER, PLEASE
 
+#define CLICKCATCHER_PLANE -99
+
 #define PLANE_SPACE -95
 #define PLANE_SPACE_PARALLAX -80
 
@@ -60,9 +62,6 @@ What is the naming convention for planes or layers?
 #define FLOOR_PLANE -2
 #define GAME_PLANE -1
 
-////////////////////////////////////////////////////////////////////////////////////////
-#define PLANE_WORLD				0	// BYOND's default value for plane, the "base plane"
-////////////////////////////////////////////////////////////////////////////////////////
 
 //Partial porting of bay defines, with our own values reinserted as placeholder
 //The full list of planes and layers needs ported
@@ -79,8 +78,8 @@ What is the naming convention for planes or layers?
 	#define LYING_HUMAN_LAYER 3.8 //0 on bay
 
 	//discordia-space/CEV-Eris/issues/2051
-	#define ABOVE_LYING_MOB_LAYER 3.85
-	#define ABOVE_LYING_HUMAN_LAYER 3.85
+	#define ABOVE_LYING_MOB_LAYER 3.85 
+	#define ABOVE_LYING_HUMAN_LAYER 3.85 
 
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
 #define SPACE_LAYER 1.8
@@ -93,6 +92,7 @@ What is the naming convention for planes or layers?
 #define LATTICE_LAYER 2.2
 #define DISPOSAL_PIPE_LAYER 2.3
 #define GAS_PIPE_HIDDEN_LAYER 2.35
+#define DUCT_LAYER 2.36
 #define WIRE_LAYER 2.4
 #define WIRE_TERMINAL_LAYER 2.45
 #define GAS_SCRUBBER_LAYER 2.46
@@ -127,6 +127,14 @@ What is the naming convention for planes or layers?
 
 #define BELOW_MOB_LAYER 3.7
 //#define MOB_LAYER 4 //For easy recordkeeping; this is a byond define
+//[MECHS]
+#define MECH_UNDER_LAYER   3
+#define MECH_BASE_LAYER    4
+#define MECH_INTERMEDIATE_LAYER 4.5
+#define MECH_PILOT_LAYER   5
+#define MECH_COCKPIT_LAYER 6
+//[/MEHCS]
+
 #define ABOVE_MOB_LAYER 4.1
 #define ON_MOB_HUD_LAYER 4.2
 #define WALL_OBJ_LAYER 4.25
@@ -177,5 +185,6 @@ What is the naming convention for planes or layers?
 	layer = initial(layer)
 
 
-// Check if a mob can "logically" see an atom plane
-#define MOB_CAN_SEE_PLANE(M, P) (P <= PLANE_WORLD || (P in M.planes_visible))
+/image/proc/plating_decal_layerise()
+	plane = SPACE_LAYER
+	layer = TURF_PLATING_DECAL_LAYER

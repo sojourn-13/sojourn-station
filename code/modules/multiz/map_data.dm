@@ -116,8 +116,8 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 						)
 
 	var/overmap_z
-	var/overmap_size = 50
-	var/overmap_event_areas = 40
+	var/overmap_size = 50 * 4
+	var/overmap_event_areas = 40 * 16
 
 	var/emergency_shuttle_docked_message = "Emergency evacuation is now in effect. You have %ETA% to choose to evacuate or stay and help contain the problem."
 	var/emergency_shuttle_leaving_dock = "Emergency evacuation is now complete. Remaining colonists have %ETD% before additional support arrives."
