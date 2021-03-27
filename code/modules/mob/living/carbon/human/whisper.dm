@@ -147,6 +147,7 @@
 
 	QDEL_IN(speech_bubble, 30)
 
+	log_say("[name]/[key] (WHISPER) : [message]")
 	var/list/speech_bubble_recipients = list()
 	for(var/mob/M in listening)
 		if(M.client)
