@@ -28,6 +28,8 @@
 				/obj/item/weapon/tool/saw/circular/advanced = 1,
 				/obj/item/weapon/tool/saw/chain = 0.5,
 				/obj/item/weapon/tool/saw/hyper = 0.5,
+				/obj/item/weapon/tool/surgicaldrill = 4,
+				/obj/item/weapon/tool/surgicaldrill/adv = 1,
 				/obj/item/weapon/tool/shovel = 5,
 				/obj/item/weapon/tool/shovel/spade = 2.5,
 				/obj/item/weapon/tool/shovel/power = 1,

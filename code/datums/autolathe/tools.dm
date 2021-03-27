@@ -199,6 +199,10 @@
 	name = "hand drill"
 	build_path = /obj/item/weapon/tool/surgicaldrill
 
+/datum/design/autolathe/tool/surgicaldrill/adv
+	name = "long-nose hand drill"
+	build_path = /obj/item/weapon/tool/surgicaldrill/adv
+
 /datum/design/autolathe/tool/retractor
 	name = "retractor"
 	build_path = /obj/item/weapon/tool/retractor
