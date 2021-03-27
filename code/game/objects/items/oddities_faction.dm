@@ -11,10 +11,10 @@
 	throw_speed = 1
 	throw_range = 2
 	price_tag = 20000
-	origin_tech = list(TECH_MATERIAL = 4, TECH_BLUESPACE = 9, TECH_POWER = 7)
+	origin_tech = list(TECH_MATERIAL = 4, TECH_BIO = 13, TECH_POWER = 7) //high bio as it works on making donuts!
 	matter = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 7)
 	var/last_produce = 0
-	var/cooldown = 2 HOURS
+	var/cooldown = 30 MINUTES
 
 /obj/item/biosyphon/New()
 	..()
