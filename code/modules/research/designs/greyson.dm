@@ -3,6 +3,26 @@
 	build_path = /obj/item/clothing/glasses/powered/thermal/onestar
 	category = CAT_WEAPON
 
+/datum/design/research/item/greyson/manhacks_roomba
+	name = "GP-SI roomba grenade"
+	build_path = /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba
+	category = CAT_WEAPON
+
+/datum/design/research/item/greyson/manhacks_roomba_tripper
+	name = "GP-SI roomba sec grenade"
+	build_path = /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/trippers
+	category = CAT_WEAPON
+
+/datum/design/research/item/greyson/manhacks_roomba_gunne
+	name = "GP-SI roomba gunner sec grenade"
+	build_path = /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/gunners
+	category = CAT_WEAPON
+
+/datum/design/research/item/greyson/manhacks_roomba_fbp
+	name = "GP-SI FBP MK II grenade"
+	build_path = /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/smg_roomba
+	category = CAT_WEAPON
+
 /datum/design/research/item/greyson/randomizer
 	name = "GP BSL \"Randomizer\" tool polish" //Not blue space I guess, but still uses BS tag?
 	build_path = /obj/item/weapon/tool_upgrade/augment/randomizer

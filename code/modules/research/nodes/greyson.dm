@@ -13,6 +13,24 @@
 
 	unlocks_designs = list(/datum/design/autolathe/gun/greyson_cog)
 
+/datum/technology/GP_roomba
+	name = "Greyson Positronic Roomba Creation"
+	desc = "Small deployable kits for deploying Roomba's and GP FPBs."
+	tech_type = RESEARCH_GREYSON
+
+	x = 0.2 //Bottom left corner
+	y = 0.1
+	icon = "roomba_kit"
+
+	required_technologies = list(/datum/technology/GP_Cog)
+	required_tech_levels = list(RESEARCH_COMBAT = 3, RESEARCH_ROBOTICS = 10)
+	cost = 2500
+
+	unlocks_designs = list(/datum/design/research/item/greyson/manhacks_roomba,
+						   /datum/design/research/item/greyson/manhacks_roomba_tripper,
+						   /datum/design/research/item/greyson/manhacks_roomba_gunne,
+						   /datum/design/research/item/greyson/manhacks_roomba_fbp)
+
 /datum/technology/GP_armor
 	name = "Greyson Positronic Armor Vests"
 	desc = "GP Laser resistant armor vests that were supplied and branded as Iron Lock, the bases of all other laser armor."
