@@ -503,7 +503,7 @@
 /datum/computer_file/report/recipient/shipping_receipt
 	form_name = "LSC-LSR-01"
 	title = "Lonestar Shipping Receipt"
-	availiable_on_ntnet = 1
+	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/shipping_receipt/generate_fields()
 	..()

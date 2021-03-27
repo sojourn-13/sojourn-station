@@ -64,7 +64,7 @@
 	spawner_type = /mob/living/simple_animal/hostile/roomba/trip/armored/allied
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/gunners
-	name = "GP-SI roomba sec grenade"
+	name = "GP-SI roomba gunner sec grenade"
 	desc = "Deploys a swarm of roomba that will attack animals and non-colony humanoids nearby. Due to targeting issues the roomba's will attack cht'mants."
 	deliveryamt = 3
 	spawner_type = /mob/living/simple_animal/hostile/roomba/gun_ba/armored/allied
