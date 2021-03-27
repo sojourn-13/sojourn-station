@@ -152,7 +152,7 @@
 				return
 			if(!(message))
 				return
-			return custom_emote(m_type, "<I>[message]</I>", 1, TRUE)
+			return custom_emote(m_type, "<I>[message]</I>", 1)
 
 		if("pain")
 			if(!message)
