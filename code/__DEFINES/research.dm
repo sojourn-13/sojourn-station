@@ -53,3 +53,5 @@
 #define CAT_MEDI        "Medical"
 #define CAT_TOOLMODS    "Tool Mods"
 #define CAT_GUNMODS     "Gun Mods"
+#define CAT_TOOLS       "Tools"
+#define CAT_CLOTHING    "Clothing"
