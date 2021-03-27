@@ -1,12 +1,3 @@
-/datum/design/research/item/part
-	build_type = AUTOLATHE | PROTOLATHE
-	name_category = "component"
-	category = CAT_STOCKPARTS
-
-/datum/design/research/item/part/AssembleDesignDesc()
-	if(!desc)
-		desc = "A stock part used in the construction of various devices."
-
 /datum/design/research/item/part/consolescreen
 	name = "Console Screen"
 	build_path = /obj/item/weapon/stock_parts/console_screen
