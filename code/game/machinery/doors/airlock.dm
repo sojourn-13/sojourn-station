@@ -1023,7 +1023,7 @@ There are 9 wires.
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 30, 1, -2)
 			else
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 700, 1, -2)
-			if(do_after(user, 600, src))
+			if(do_after(user, 300, src)) //in ms so half a min of sitting their trying
 				used_now = FALSE
 				if(locked)
 					to_chat(user, SPAN_NOTICE("Even with the right key you can't open \"deadbolts\"!"))
@@ -1032,9 +1032,11 @@ There are 9 wires.
 				if(prob(key_odds+1) && H.stats.getPerk(PERK_JINGLE_JANGLE)) //minmium 1%
 					to_chat(user, SPAN_NOTICE("You found the correct key!"))
 					open(0)
+					key_odds = 100 //If we open it we know the combo
 					used_now = FALSE
 					return
 				to_chat(user, SPAN_NOTICE("Damn wrong key!"))
+				key_odds += 1 //We dont try the same key over and over!
 				used_now = FALSE
 		return
 
