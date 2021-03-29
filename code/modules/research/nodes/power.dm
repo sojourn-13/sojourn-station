@@ -213,7 +213,7 @@
 	icon = "bluespacecell"
 
 	required_technologies = list(
-									/datum/technology/omega_power
+									/datum/technology/atom_small_power
 								)
 
 	required_tech_levels = list()
