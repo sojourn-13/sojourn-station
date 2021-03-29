@@ -1023,6 +1023,10 @@ There are 9 wires.
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 30, 1, -2)
 			else
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 700, 1, -2)
+			if(!do_after(user, 300, src))
+				to_chat(user, SPAN_DANGER("Key code punch cancelled"))
+				used_now = FALSE
+				return
 			if(do_after(user, 300, src)) //in ms so half a min of sitting their trying
 				used_now = FALSE
 				if(locked)
@@ -1038,6 +1042,8 @@ There are 9 wires.
 				to_chat(user, SPAN_NOTICE("Damn wrong key!"))
 				key_odds += 1 //We dont try the same key over and over!
 				used_now = FALSE
+			used_now = FALSE
+			return
 		return
 
 	var/tool_type = I.get_tool_type(user, list(QUALITY_PRYING, QUALITY_SCREW_DRIVING, QUALITY_WELDING), src)
