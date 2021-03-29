@@ -23,7 +23,7 @@
 	icon = "roomba_kit"
 
 	required_technologies = list(/datum/technology/GP_Cog)
-	required_tech_levels = list(RESEARCH_COMBAT = 3, RESEARCH_ROBOTICS = 10)
+	required_tech_levels = list(RESEARCH_COMBAT = 5, RESEARCH_ROBOTICS = 10)
 	cost = 2500
 
 	unlocks_designs = list(/datum/design/research/item/greyson/manhacks_roomba,
@@ -106,7 +106,7 @@
 	icon = "greysonstockparts"
 
 	required_technologies = list()
-	required_tech_levels = list(RESEARCH_ENGINEERING = 20, RESEARCH_BIOTECH = 10)
+	required_tech_levels = list(RESEARCH_ENGINEERING = 20)
 	cost = 7500
 
 	unlocks_designs = list(/datum/design/research/item/part/greyson_laser,

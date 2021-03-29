@@ -231,7 +231,7 @@
 //Weapon mods
 /datum/design/research/item/weapon_upgrade
 	name_category = "weapon upgrades"
-	category = CAT_WEAPON
+	category = CAT_GUNMODS
 
 /datum/design/research/item/weapon_upgrade/penetrator
 	name = "Soteria \"Penetrator\" magnetic accelerator barrel"
