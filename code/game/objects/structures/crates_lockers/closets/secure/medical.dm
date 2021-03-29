@@ -143,6 +143,8 @@
 	new /obj/item/taperoll/medical(src)
 	new /obj/item/weapon/storage/belt/medical/emt(src)
 	new /obj/item/clothing/suit/storage/hazardvest_black(src)
+	new /obj/item/weapon/melee/baton(src)
+	new /obj/item/weapon/storage/pouch/baton_holster(src)
 	new /obj/item/weapon/storage/pouch/medical_supply(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
