@@ -26,6 +26,8 @@ Has ability of every roach.
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
 
+	flash_resistances = 9.9 // were not fully flash proof but almost...
+
 	var/distress_call_stage = 3
 
 	var/health_marker_1 = 1500
