@@ -61,7 +61,7 @@
 /datum/design/research/item/powercell/small/grayson
 	name = "GP-SI \"Posi-cell 400S\""
 	build_type = PROTOLATHE | MECHFAB
-	build_path = /obj/item/weapon/cell/medium/greyson
+	build_path = /obj/item/weapon/cell/small/greyson
 
 //Upgraded prosthesis ========================
 /datum/design/research/item/mechfab/prosthesis_grayson
