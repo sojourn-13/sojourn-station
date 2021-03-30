@@ -83,14 +83,16 @@
 	max_w_class = ITEM_SIZE_BULKY
 	max_storage_space = DEFAULT_HUGE_STORAGE * 2
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GOLD = 10, MATERIAL_DIAMOND = 5, MATERIAL_URANIUM = 5)
+	var/bluespace_safe = FALSE
 
 /obj/item/weapon/storage/backpack/holding/New()
 	..()
 	item_flags |= BLUESPACE
-	bluespace_entropy(6, get_turf(src))
+	if(!bluespace_safe)
+		bluespace_entropy(6, get_turf(src))
 
 /obj/item/weapon/storage/backpack/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(W.item_flags & BLUESPACE)
+	if(W.item_flags & BLUESPACE * !bluespace_safe)
 		to_chat(user, SPAN_WARNING("The bluespace interfaces of the two devices conflict and malfunction, producing a loud explosion."))
 		if (ishuman(user))
 			var/mob/living/carbon/human/H = user
