@@ -62,6 +62,7 @@
 	poison_type = "menace"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/queen
 	meat_amount = 3
+	flash_resistances = 5 //For balance against are speedy fello
 	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
 

@@ -67,7 +67,18 @@
 	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
 	var/flashfail = 0
 
-	if(iscarbon(M))
+	if(issuperioranimal(M))
+		if(M.stat!=DEAD)
+			var/flash_strength = 10
+			if(issuperioranimal(M))
+				var/mob/living/carbon/superior_animal/H = M
+				flash_strength -= H.flash_resistances
+			if(flash_strength > 0)
+				M.Weaken(flash_strength)
+			else
+				flashfail = 1
+
+	if(iscarbon(M) && !issuperioranimal(M)) //Just in case so we dont double flash are superioranimal friends
 		if(M.stat!=DEAD)
 			var/mob/living/carbon/C = M
 			var/safety = C.eyecheck()
