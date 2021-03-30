@@ -75,6 +75,8 @@
 				flash_strength -= H.flash_resistances
 			if(flash_strength > 0)
 				M.Weaken(flash_strength)
+				user.visible_message(SPAN_NOTICE("[user] overloads [M]'s sensors with the flash!")) //This IS what we want.
+				return //hacky way to stop miss-messages for the player. but should work
 			else
 				flashfail = 1
 
