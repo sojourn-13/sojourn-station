@@ -237,7 +237,7 @@
 	chemistry, xenobiology and robotics."
 
 	stat_modifiers = list(
-		STAT_BIO = 30,
+		STAT_BIO = 40,
 		STAT_COG = 40,
 		STAT_MEC = 30
 	)
@@ -255,13 +255,15 @@
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src) //Robotic repair and such
 	src.modules += new /obj/item/weapon/tool/scalpel(src)
 	src.modules += new /obj/item/weapon/tool/saw/circular(src)
-	src.modules += new /obj/item/weapon/extinguisher/mini(src)
+	src.modules += new /obj/item/weapon/tool/multitool/robotic(src) //hydro
+	src.modules += new /obj/item/weapon/robot_harvester(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
 	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.modules += new /obj/item/weapon/storage/bag/produce(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/storage/part_replacer/mini(src)

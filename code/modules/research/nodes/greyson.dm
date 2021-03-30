@@ -105,7 +105,8 @@
 	y = 0.9
 	icon = "greysonstockparts"
 
-	required_technologies = list()
+	required_technologies = list(/datum/technology/advanced_biotech,
+								 /datum/technology/super_power) // no cheating past level 3s
 	required_tech_levels = list(RESEARCH_ENGINEERING = 20)
 	cost = 7500
 
