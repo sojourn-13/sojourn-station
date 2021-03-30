@@ -499,7 +499,7 @@
 	add_field(/datum/report_field/options/yes_no, "Approved")
 	temp_field.set_access(access_edit = access_heads)
 
-//Dunno if this will work, keeping my bullshit down here in case it breaks
+//D the Snek's magical report code, will likely never be used, but hey, I did a thing
 /datum/computer_file/report/recipient/shipping_receipt
 	form_name = "LSC-LSR-01"
 	title = "Lonestar Shipping Receipt"
@@ -508,7 +508,6 @@
 /datum/computer_file/report/recipient/shipping_receipt/generate_fields()
 	..()
 	add_field(/datum/report_field/instruction, "Lonestar Shipping Receipt")
-	add_field(/datum/report_field/instruction, "Holy Shit, a test")
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/time, "Time")
 	add_field(/datum/report_field/simple_text, "You were served by:")
@@ -516,3 +515,290 @@
 	add_field(/datum/report_field/simple_text, "Your Total:")
 	add_field(/datum/report_field/signature, "Signature")
 
+/datum/computer_file/report/recipient/shipping_invoice
+	form_name = "LSC-LSI-02"
+	title = "Lonestar Shipping Invoice"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/shipping_invoice/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Lonestar Shipping Invoice")
+	add_field(/datum/report_field/simple_text, "Employee:")
+	add_field(/datum/report_field/simple_text, "Original Price of Item/Order:")
+	add_field(/datum/report_field/simple_text, "Item/Order sold:")
+	add_field(/datum/report_field/simple_text, "80% of the above is:")
+	add_field(/datum/report_field/simple_text, "The seller is entilted to a maximum amount of:")
+	add_field(/datum/report_field/simple_text, "The seller has taken:")
+	add_field(/datum/report_field/instruction, "The seller is entitled to a maximum of 20% of the profits made. Going over is a breach of contract and will result in your demotion. The receipt of sale is required to be attached to this paperwork for it to be considered valid.")
+
+/datum/computer_file/report/recipient/mining_report
+	form_name = "LSC-LMR-03"
+	title = "Lonestar Mining Report"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/mining_report/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Mining Report")
+	add_field(/datum/report_field/simple_text, "Mined by:")
+	add_field(/datum/report_field/pencode_text, "Detailed amount of Materials after processing:")
+	add_field(/datum/report_field/simple_text, "Total Shipping Profits of All Materials (Standard Value):")
+	add_field(/datum/report_field/simple_text, "Were all items sold via the Lonestar Cargo Shuttle?:")
+	add_field(/datum/report_field/pencode_text, "What materials were sold to other departments?:")
+	add_field(/datum/report_field/simple_text, "Total amount of profit:")
+	add_field(/datum/report_field/simple_text, "The miner is entitled to:")
+	add_field(/datum/report_field/simple_text, "Was a prospector or guard present during mining operation?:")
+	add_field(/datum/report_field/simple_text, "The prospector/guard is entilted to:")
+	add_field(/datum/report_field/signature, "Buyers Signature:")
+	add_field(/datum/report_field/signature, "Prospectors/Guard Signature:")
+	add_field(/datum/report_field/date, "Date")
+	add_field(/datum/report_field/time, "Time")
+	add_field(/datum/report_field/instruction, "Employees are entitled to a maximum of 10% of the profits made. Going over is a breach of contract and will result in your demotion.")
+
+/datum/computer_file/report/recipient/item_request
+	form_name = "LSC-IRF-04"
+	title = "Item Request Form"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/item_request/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Item Request Form")
+	add_field(/datum/report_field/simple_text, "Applicant Name:")
+	add_field(/datum/report_field/simple_text, "Requested Item:")
+	add_field(/datum/report_field/simple_text, "Reason for Request:")
+	add_field(/datum/report_field/signature, "Applicant Signature:")
+	add_field(/datum/report_field/signature, "Signature of Relevant Head Of Staff:")
+	add_field(/datum/report_field/signature, "Signature of Premier:")
+	add_field(/datum/report_field/date, "Date")
+	add_field(/datum/report_field/time, "Time")
+
+/datum/computer_file/report/recipient/item_application
+	form_name = "LSC-IAP-05"
+	title = "Item Application"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/item_application/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Item Application")
+	add_field(/datum/report_field/simple_text, "Applicant Name:")
+	add_field(/datum/report_field/simple_text, "Requested Item:")
+	add_field(/datum/report_field/signature, "Applicant Signature:")
+	add_field(/datum/report_field/signature, "Signature of Applicant Head Of Staff:")
+	add_field(/datum/report_field/signature, "Signature of Relevant Head Of Staff:")
+	add_field(/datum/report_field/signature, "Signature of Premier:")
+	add_field(/datum/report_field/instruction, "By singing this form as applicant you are agreeing that you understand the faction in question does not provide any warranty whatsoever that the item will be free of defects or faults. In no respect shall the faction in questionincur any liability for any damages, injury or loss, including, but not limited to, direct, indirect, special, or consequential damages arising out of, resulting from, or any way connected to the use of the item. The item if provided, remains the providing factions property and is in no way your own.")
+	add_field(/datum/report_field/instruction, "Stamps of Command Staff placed below this line.")
+
+/datum/computer_file/report/recipient/requisition
+	form_name = "LSC-RQF-06"
+	title = "Requisition Form"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/requisition/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Requisition Approval Sheet")
+	add_field(/datum/report_field/instruction, "The following is to be filled out in order to facilitate the deliver process of requisitions from cargo. Only appoved requisitions are to be listed on this form. All requisitions listed on this form are to be attached to this form. Requisitions listed may be from a single individual or faction.")
+	add_field(/datum/report_field/instruction, "Requester Information")
+	add_field(/datum/report_field/simple_text, "Name:")
+	add_field(/datum/report_field/simple_text, "Faction:")
+	add_field(/datum/report_field/pencode_text, "Ordered Items:")
+	add_field(/datum/report_field/simple_text, "Total Cost:")
+	add_field(/datum/report_field/simple_text, "Location of Delivery:")
+	add_field(/datum/report_field/date, "Date")
+	add_field(/datum/report_field/instruction, "NOTE: Items may be delievered or picked up at cargo.")
+	add_field(/datum/report_field/signature, "Chief Executive Officer/Cargo Technician's Signature:")
+	add_field(/datum/report_field/signature, "Requesters Signature:")
+	add_field(/datum/report_field/instruction, "NOTE: The below area is to be stamped by a Cargo Technician or the CEO when all items on this list are ordered.")
+
+/datum/computer_file/report/recipient/confirmation_form
+	form_name = "LSC-CFF-07"
+	title = "Confirmation Form"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/confirmation_form/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Confirmation Form")
+	add_field(/datum/report_field/simple_text, "Shipment Destination:")
+	add_field(/datum/report_field/instruction, "Ores/Material in this Shipment:")
+	add_field(/datum/report_field/simple_text, "Iron Ore:")
+	add_field(/datum/report_field/simple_text, "Metal:")
+	add_field(/datum/report_field/simple_text, "Plasteel:")
+	add_field(/datum/report_field/simple_text, "Sand:")
+	add_field(/datum/report_field/simple_text, "Glass:")
+	add_field(/datum/report_field/simple_text, "Reinforced Glass:")
+	add_field(/datum/report_field/simple_text, "Gold Ore:")
+	add_field(/datum/report_field/simple_text, "Gold Bars:")
+	add_field(/datum/report_field/simple_text, "Silver Ore:")
+	add_field(/datum/report_field/simple_text, "Silver Bars:")
+	add_field(/datum/report_field/simple_text, "Plasma Ore:")
+	add_field(/datum/report_field/simple_text, "Solid Plasma:")
+	add_field(/datum/report_field/simple_text, "Uranium Ore:")
+	add_field(/datum/report_field/simple_text, "Uranium:")
+	add_field(/datum/report_field/simple_text, "Diamond Ore:")
+	add_field(/datum/report_field/simple_text, "Diamonds:")
+	add_field(/datum/report_field/pencode_text, "Miscellaneous:")
+	add_field(/datum/report_field/signature, "Supply Personell Signature:")
+	add_field(/datum/report_field/signature, "Recipient Signature:")
+	add_field(/datum/report_field/instruction, "By signing this form as recipient, you agree that all materials listed were present at the time of signing. You also agree that after signing, you and your department take full responsibility for the materials delivered.")
+
+/datum/computer_file/report/recipient/council_communication
+	form_name = "HOD-QET-01"
+	title = "High Council Communication Form"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/council_communication/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "NADEZHDA QUANTUM ENTANGLEMENT NETWORK")
+	add_field(/datum/report_field/instruction, "FORM HOD-QET-01:")
+	add_field(/datum/report_field/instruction, "GENERAL TRANSMISSION")
+	add_field(/datum/report_field/instruction, "")
+	add_field(/datum/report_field/instruction, "QUANTUM ENTANGLEMENT TRANSMISSION")
+	add_field(/datum/report_field/instruction, "")
+	add_field(/datum/report_field/date, "Date")
+	add_field(/datum/report_field/time, "Time")
+	add_field(/datum/report_field/instruction, "")
+	add_field(/datum/report_field/simple_text, "Origin:")
+	add_field(/datum/report_field/simple_text, "Department:")
+	add_field(/datum/report_field/simple_text, "Destination:")
+	add_field(/datum/report_field/simple_text, "Sender's Name:")
+	add_field(/datum/report_field/simple_text, "Sender's Rank:")
+	add_field(/datum/report_field/instruction, "")
+	add_field(/datum/report_field/simple_text, "Priority:")
+	add_field(/datum/report_field/simple_text, "Subject:")
+	add_field(/datum/report_field/instruction, "")
+	add_field(/datum/report_field/pencode_text, "Message Body:")
+	add_field(/datum/report_field/signature, "Sender's Signature:")
+	add_field(/datum/report_field/signature, "Signatures of additional authorities:")
+	add_field(/datum/report_field/instruction, "Stamps of applicable authorities below this line.")
+
+/datum/computer_file/report/recipient/emergency_transmission
+	form_name = "HOD-EMT-02"
+	title = "Emergency Transmission"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/emergency_transmission/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "EMERGENCY TRANSMISSION")
+	add_field(/datum/report_field/instruction, "")
+	add_field(/datum/report_field/simple_text, "Sender:")
+	add_field(/datum/report_field/simple_text, "Position:")
+	add_field(/datum/report_field/pencode_text, "Message:")
+	add_field(/datum/report_field/signature, "Signed:")
+
+/datum/computer_file/report/recipient/awol
+	form_name = "HOD-EAM-03"
+	title = "Employee AWOL/MIA"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/awol/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "CD-14 Form: Colonist missing while on duty")
+	add_field(/datum/report_field/simple_text, "Name/Aliases:")
+	add_field(/datum/report_field/simple_text, "Assignment:")
+	add_field(/datum/report_field/simple_text, "Reason for Colonist missing from duty:")
+	add_field(/datum/report_field/simple_text, "What can be done to rectify this issue:")
+	add_field(/datum/report_field/simple_text, "Is executive action required:")
+	add_field(/datum/report_field/simple_text, "Head of Department:")
+	add_field(/datum/report_field/instruction, "Colonist delinquent of duty are governed by the  protocol 348-60-9, and the relevant faction withholds the right to perform any and all acts of reasonable punishment and repossession upon said employee under protocol 348-60-2. Colonist are at minimum docked of pay till such time as recommencement as governed by contract 24-5. Any and all losses caused by the employee colonist loss and excessive loss is defined within protocol 23-13B. The relevant faction withholds the right to deny, permit, override all concordant or orders of command staff from other factions except those given by a lawful order or council vote.")
+
+/datum/computer_file/report/recipient/reassignment
+	form_name = "HOD-RAO-04"
+	title = "Reassignment Order"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/reassignment/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Reassignment Order")
+	add_field(/datum/report_field/simple_text, "Employee:")
+	add_field(/datum/report_field/simple_text, "Original Position:")
+	add_field(/datum/report_field/simple_text, "New Position:")
+	add_field(/datum/report_field/simple_text, "Reason for Assignment:")
+	add_field(/datum/report_field/signature, "Signature of relevant Head of Staff:")
+	add_field(/datum/report_field/signature, "Signature of Premier:")
+	add_field(/datum/report_field/date, "Date")
+	add_field(/datum/report_field/time, "Time")
+
+/datum/computer_file/report/recipient/access_change
+	form_name = "HOD-ACO-05"
+	title = "Access Change Order"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/access_change/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Access Change Order")
+	add_field(/datum/report_field/simple_text, "Employee:")
+	add_field(/datum/report_field/simple_text, "Access Added/Removed:")
+	add_field(/datum/report_field/simple_text, "Reasoning for Addition/Removal:")
+	add_field(/datum/report_field/signature, "Signature of relevant Head of Staff:")
+	add_field(/datum/report_field/signature, "Signature of Premier:")
+	add_field(/datum/report_field/date, "Date")
+	add_field(/datum/report_field/time, "Time")
+
+/datum/computer_file/report/recipient/dismissal
+	form_name = "HOD-DMO-06"
+	title = "Dismissal Order"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/dismissal/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Access Change Order")
+	add_field(/datum/report_field/simple_text, "Employee:")
+	add_field(/datum/report_field/simple_text, "Original Position:")
+	add_field(/datum/report_field/simple_text, "Reason for Dismissal:")
+	add_field(/datum/report_field/signature, "Signature of relevant Head of Staff:")
+	add_field(/datum/report_field/signature, "Signature of Premier:")
+	add_field(/datum/report_field/date, "Date")
+	add_field(/datum/report_field/time, "Time")
+
+/datum/computer_file/report/recipient/staff_assessment
+	form_name = "HOD-SAP-07"
+	title = "Staff Assessment Paperwork"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/staff_assessment/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Shift Departmental Staff Assessment")
+	add_field(/datum/report_field/simple_text, "Department:")
+	add_field(/datum/report_field/simple_text, "Employee Name:")
+	add_field(/datum/report_field/simple_text, "Current Job:")
+	add_field(/datum/report_field/simple_text, "Current Duties:")
+	add_field(/datum/report_field/simple_text, "Does the staff member wear the correct uniform or protective gear:")
+	add_field(/datum/report_field/simple_text, "Rate the staff members performance, 1-10:")
+	add_field(/datum/report_field/simple_text, "Does the staff member require further training:")
+	add_field(/datum/report_field/simple_text, "Head of Department:")
+	add_field(/datum/report_field/instruction, "Contained review materials are not representative of the views of the relevant faction. Said faction is not liable for any bias or offensive language contained within said review materials. The relevant faction in question withholds the right to action upon any information contained within this assessment.")
+
+/datum/computer_file/report/recipient/access_form
+	form_name = "PRM-AAF-01"
+	title = "Additional Access Form"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/access_form/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Additional Access Form")
+	add_field(/datum/report_field/simple_text, "Name:")
+	add_field(/datum/report_field/simple_text, "Rank:")
+	add_field(/datum/report_field/instruction, "Nadezhda Colony")
+	add_field(/datum/report_field/simple_text, "Requested Access:")
+	add_field(/datum/report_field/simple_text, "Reason:")
+	add_field(/datum/report_field/signature, "Signature of relevant Head of Staff:")
+	add_field(/datum/report_field/signature, "Signature of Premier:")
+
+/datum/computer_file/report/recipient/transfer_form
+	form_name = "PRM-TRF-02"
+	title = "Transfer Form"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/transfer_form/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Additional Access Form")
+	add_field(/datum/report_field/simple_text, "Name:")
+	add_field(/datum/report_field/simple_text, "Rank:")
+	add_field(/datum/report_field/instruction, "Nadezhda Colony")
+	add_field(/datum/report_field/simple_text, "From Department:")
+	add_field(/datum/report_field/simple_text, "To Department:")
+	add_field(/datum/report_field/simple_text, "Requested Position:")
+	add_field(/datum/report_field/simple_text, "Reason:")
+	add_field(/datum/report_field/signature, "Signature:")
+	add_field(/datum/report_field/signature, "Signature of Transferring Head of Staff:")
+	add_field(/datum/report_field/signature, "Signature of Recieving Head of Staff:")
+	add_field(/datum/report_field/signature, "Signature of Premier:")
