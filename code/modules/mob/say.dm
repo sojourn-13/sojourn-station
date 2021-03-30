@@ -173,7 +173,7 @@
 		return standard_mode
 
 	if(length(message) >= 2 && copytext(message,1,2) == get_prefix_key(/decl/prefix/radio_channel_selection))
-		var/channel_prefix =  sanitize_key(copytext(message, 2, 3))
+		var/channel_prefix = lowertext(copytext(message, 2, 3))
 		return department_radio_keys[channel_prefix]
 
 	return null
