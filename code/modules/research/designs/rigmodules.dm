@@ -140,7 +140,7 @@
 	build_path = /obj/item/rig_module/vision/meson
 	category = CAT_MINING
 
-/datum/design/research/item/rig_cheap
+/datum/design/research/item/clothing/rig_cheap
 	name = "SI 'Spacer' control module"
 	desc = "An ultra light rig suit that a protolathe is only just able to print off..."
 	build_path = /obj/item/weapon/rig/light/ultra_light

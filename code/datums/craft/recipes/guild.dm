@@ -439,7 +439,7 @@
 
 /datum/craft_recipe/guild/matter_nanoforge_blackbox
 	name = "Black Box: Matter Nano-Forge"
-	result = /obj/item/weapon/oddity/blackbox_nanoforage
+	result = /obj/item/weapon/oddity/blackbox_nanoforge
 	steps = list(
 		list(/obj/item/weapon/computer_hardware/processor_unit, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 20, 70, "time" = 10),

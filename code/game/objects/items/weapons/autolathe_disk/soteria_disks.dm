@@ -60,7 +60,7 @@
 		/datum/design/research/item/medsaw_circular,
 		/datum/design/autolathe/tool/bonegel,
 		/datum/design/research/item/medical/nanopaste = 2,
-		/datum/design/research/item/hud/health = 2
+		/datum/design/research/item/clothing/health = 2
 	)
 
 

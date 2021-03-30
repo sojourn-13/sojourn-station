@@ -963,6 +963,21 @@ img.sciTechTreeIconToolTip {
 .icon-mindswapper { background-position: -160px -320px; }
 .icon-holdingpouch { background-position: -192px -320px; }
 
+.icon-cog { background-position: -256px -288px; }
+.icon-window { background-position: -320px -96px; }
+.icon-mastermind { background-position: -320px -64px; }
+.icon-greysoncells { background-position: -288px -128px; }
+.icon-greysonsaw { background-position: -320px -192px; }
+.icon-greysonwelder { background-position: -288px -288px; }
+.icon-greysondrill { background-position: -256px -320px; }
+.icon-greysonai { background-position: -224px -320px; }
+.icon-greysonfuel { background-position: -288px -320px; }
+.icon-greysonstockparts { background-position: -320px 0px; }
+.icon-greysonroboticleg { background-position: -320px -32px; }
+.icon-greysonthermals { background-position: -320px -128px; }
+.icon-greysonarmor { background-position: -320px -160px; }
+.icon-roomba_kit { background-position: -320px -224px; }
+
 .sciMenuButton {
     width: 300px;
     float: left;

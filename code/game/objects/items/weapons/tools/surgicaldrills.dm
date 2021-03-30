@@ -18,6 +18,10 @@
 
 /obj/item/weapon/tool/surgicaldrill/adv
 	name = "long-nose hand drill"
-	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2)
-	tool_qualities = list(QUALITY_DRILLING = 65)
-	use_power_cost = 0.55
+	desc = "A handheld drill with a longer and more durable drill, for precision drilling."
+	icon_state = "longdrill"
+	force = WEAPON_FORCE_ROBUST 
+	armor_penetration = ARMOR_PEN_DEEP //Diamond tip!
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2, MATERIAL_DIAMOND = 1)
+	tool_qualities = list(QUALITY_DRILLING = 60)
+	use_power_cost = 0.60

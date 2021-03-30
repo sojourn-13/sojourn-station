@@ -18,7 +18,8 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 9)
 	price_tag = 10
 
-	safety = FALSE
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	var/list/possible_colors = list("purple", "magenta", "blue", "cyan", "aqua", "green", "yellow", "orange", "red" )
 	var/choosen_color = ""
@@ -36,8 +37,6 @@
 /obj/item/weapon/gun/projectile/automatic/slaught_o_matic/Initialize()
 	. = ..()
 	ammo_magazine = new magazine_type(src)
-
-	restrict_safety = TRUE // We need safty switch but we can not use him
 
 	choosen_color = pick(possible_colors)
 	update_icon()

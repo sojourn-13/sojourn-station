@@ -33,7 +33,7 @@
 	var/queue_max = 8
 
 	var/list/disk_list = list(
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforage
+	/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforge
 	)
 	var/list/design_list = list()
 	var/speed = 2

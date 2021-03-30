@@ -50,3 +50,27 @@
 	spawner_type = /obj/effect/blob/core
 	deliveryamt = 1
 	origin_tech = list(TECH_MATERIAL = 3, TECH_MAGNET = 4, TECH_ILLEGAL = 4)
+
+/obj/item/weapon/grenade/spawnergrenade/manhacks/roomba
+	name = "GP-SI roomba grenade"
+	desc = "Deploys a swarm of roomba that will attack animals and non-colony humanoids nearby. Due to targeting issues the roomba's will attack cht'mants."
+	deliveryamt = 3
+	spawner_type = /mob/living/simple_animal/hostile/roomba/allied
+
+/obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/trippers
+	name = "GP-SI roomba sec grenade"
+	desc = "Deploys a swarm of roomba that will attack animals and non-colony humanoids nearby. Due to targeting issues the roomba's will attack cht'mants."
+	deliveryamt = 3
+	spawner_type = /mob/living/simple_animal/hostile/roomba/trip/armored/allied
+
+/obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/gunners
+	name = "GP-SI roomba gunner sec grenade"
+	desc = "Deploys a swarm of roomba that will attack animals and non-colony humanoids nearby. Due to targeting issues the roomba's will attack cht'mants."
+	deliveryamt = 3
+	spawner_type = /mob/living/simple_animal/hostile/roomba/gun_ba/armored/allied
+
+/obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/smg_roomba
+	name = "GP-SI FBP MK II grenade"
+	desc = "Deploys two of FBP MK II that will attack animals and non-colony humanoids nearby. Due to targeting issues the roomba's will attack cht'mants."
+	deliveryamt = 2
+	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg/allied

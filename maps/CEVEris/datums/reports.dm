@@ -498,3 +498,21 @@
 	add_field(/datum/report_field/signature, "Recipient of Visitation Pass Signature")
 	add_field(/datum/report_field/options/yes_no, "Approved")
 	temp_field.set_access(access_edit = access_heads)
+
+//Dunno if this will work, keeping my bullshit down here in case it breaks
+/datum/computer_file/report/recipient/shipping_receipt
+	form_name = "LSC-LSR-01"
+	title = "Lonestar Shipping Receipt"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/shipping_receipt/generate_fields()
+	..()
+	add_field(/datum/report_field/instruction, "Lonestar Shipping Receipt")
+	add_field(/datum/report_field/instruction, "Holy Shit, a test")
+	add_field(/datum/report_field/date, "Date")
+	add_field(/datum/report_field/time, "Time")
+	add_field(/datum/report_field/simple_text, "You were served by:")
+	add_field(/datum/report_field/pencode_text, "You bought the following items:")
+	add_field(/datum/report_field/simple_text, "Your Total:")
+	add_field(/datum/report_field/signature, "Signature")
+

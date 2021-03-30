@@ -73,13 +73,14 @@
 	speed = 3 //speedy boy!
 	melee_damage_lower = 7
 	melee_damage_upper = 12
+	var/trip_odds = 15 //So admins can edit this
 	drop2 = /obj/item/weapon/melee/telebaton
 
 /mob/living/simple_animal/hostile/roomba/trip/AttackTarget(var/atom/A, var/proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 
-		if(istype(L) && !L.weakened && prob(15))
+		if(istype(L) && !L.weakened && prob(trip_odds))
 			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE))
 				return
 			L.Weaken(3)
@@ -285,3 +286,16 @@
 /mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg/allied
 	faction = "neutral"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified burst fire cog laser rifle built into its arm. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+
+/mob/living/simple_animal/hostile/roomba/allied
+	faction = "neutral"
+	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless and it doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+
+/mob/living/simple_animal/hostile/roomba/trip/armored/allied
+	faction = "neutral"
+	desc = "A small blue round drone, usually tasked with carrying out menial tasks with baton attached to it and seems to have added armor. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+
+/mob/living/simple_animal/hostile/roomba/gun_ba/armored/allied
+	faction = "neutral"
+	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a gun and seems to have added armor. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+

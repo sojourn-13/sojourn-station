@@ -11,7 +11,7 @@
 	required_tech_levels = list()
 	cost = 0
 
-	unlocks_designs = list(/datum/design/research/item/hud/security)
+	unlocks_designs = list(/datum/design/research/item/clothing/security)
 
 // TO ADD: synth flashes?
 /datum/technology/basic_nonlethal
@@ -197,13 +197,13 @@
 	cost = 4000
 
 	unlocks_designs = list(
-							/datum/design/research/item/weapon/gunmod/battery_shunt,
-							/datum/design/research/item/weapon/gunmod/overdrive,
-							/datum/design/research/item/weapon/gunmod/toxin_coater,
-							/datum/design/research/item/weapon/gunmod/overheat,
-							/datum/design/research/item/weapon/gunmod/penetrator,
-							//datum/design/research/item/weapon/gunmod/isotope_diffuser,
-							//datum/design/research/item/weapon/gunmod/psionic_catalyst
+							/datum/design/research/item/weapon/weapon_upgrade/battery_shunt,
+							/datum/design/research/item/weapon/weapon_upgrade/overdrive,
+							/datum/design/research/item/weapon/weapon_upgrade/toxin_coater,
+							/datum/design/research/item/weapon/weapon_upgrade/overheat,
+							/datum/design/research/item/weapon/weapon_upgrade/penetrator,
+							//datum/design/research/item/weapon/weapon_upgrade/isotope_diffuser,
+							//datum/design/research/item/weapon/weapon_upgrade/psionic_catalyst
 						)
 
 /datum/technology/laser_weaponry
@@ -254,9 +254,9 @@
 	required_tech_levels = list()
 	cost = 1000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/soteriaarmorchest,
-							 /datum/design/research/item/weapon/soteriaarmorhead,
-							 /datum/design/research/item/rig_cheap)
+	unlocks_designs = list(/datum/design/research/item/clothing/soteriaarmorchest,
+							 /datum/design/research/item/clothing/soteriaarmorhead,
+							 /datum/design/research/item/clothing/rig_cheap)
 
 /datum/technology/advanced_armor
 	name = "Advanced Armor Designs"
@@ -271,5 +271,5 @@
 	required_tech_levels = list()
 	cost = 5000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/medarmor,
-							/datum/design/research/item/weapon/armor_laserproof)
+	unlocks_designs = list(/datum/design/research/item/clothing/medarmor,
+							/datum/design/research/item/clothing/armor_laserproof)
