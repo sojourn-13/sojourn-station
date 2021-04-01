@@ -18,6 +18,11 @@
 	build_path = /obj/item/clothing/glasses/powered/thermal/onestar
 	category = CAT_CLOTHING
 
+/datum/design/research/item/greyson/combat_shield
+	name = "GP Combat Shield"
+	build_path = /obj/item/shield_projector/rectangle
+	category = CAT_CLOTHING
+
 /datum/design/research/item/greyson/manhacks_roomba
 	name = "GP-SI roomba grenade"
 	build_path = /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba

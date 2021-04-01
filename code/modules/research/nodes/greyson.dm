@@ -64,15 +64,16 @@
 	unlocks_designs = list(/datum/design/research/item/greyson/glass_widow)
 
 /datum/technology/GP_unmaker
-	name = "Greyson Positronic Master Unmaker Infuser"
-	desc = "The rare and highly vauleable GP Master Unmaker Infuser gun mod."
+	name = "Greyson Positronic Tyrant Destroyers"
+	desc = "The rare and highly vauleable GP Master Unmaker Infuser gun mod and portable self charging combat shields."
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.5 //Bottom middle
 	y = 0.1
 	icon = "mastermind"
 
-	required_technologies = list(/datum/technology/GP_window)
+	required_technologies = list(/datum/technology/GP_window,
+								/datum/design/research/item/greyson/combat_shield)
 	required_tech_levels = list(RESEARCH_COMBAT = 13)
 	cost = 50000
 

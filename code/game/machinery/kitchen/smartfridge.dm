@@ -149,6 +149,9 @@
 	icon_state = "drying_rack"
 	icon_on = "drying_rack_on"
 	icon_off = "drying_rack"
+	use_power = NO_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = 0
 	var/drying_power = 0.1 //should take a bit but. why make people wait a lifetime to DRY PLANTS
 	var/currently_drying = FALSE
 

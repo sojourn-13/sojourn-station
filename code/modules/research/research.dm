@@ -248,8 +248,8 @@ Procs:
 	shortname = "Greyson Positronic"
 	desc = "Research into the Greyson Positronic blueprints and mimicry of their tech"
 	rare = 5
-	shown = FALSE
-	item_tech_req = TECH_ARCANE //So we will never be shown ^_^
+	//shown = FALSE
+	//item_tech_req = TECH_ARCANE //So we will never be shown ^_^
 
 /datum/tech/illegal
 	name = "Covert Technologies Research"

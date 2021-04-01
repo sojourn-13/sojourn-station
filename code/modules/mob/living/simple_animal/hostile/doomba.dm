@@ -209,7 +209,6 @@
 	move_to_delay = 2
 	turns_per_move = 7
 	speed = 6
-	move_to_delay = 4
 	health = 125
 	maxHealth = 125
 
@@ -279,23 +278,66 @@
 		A.stasis = TRUE
 
 //Non-hostile to regular colonists.
-/mob/living/simple_animal/hostile/roomba/gun_ba/armored/allied
-	faction = "neutral"
-	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a gun and seems to have added armor. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
-
-/mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg/allied
-	faction = "neutral"
-	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified burst fire cog laser rifle built into its arm. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
-
+//Roomba
 /mob/living/simple_animal/hostile/roomba/allied
+	name = "Soteria Institute Combat Roomba"
+	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat. \
+	Due to similarities between hostile bugs and cht'mants, they'll be attacked on sight. Colony turrets will shoot drones on sight, an oversight the Soteria are still working out."
 	faction = "neutral"
-	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless and it doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+	icon_state = "roomba_SI"
+	melee_damage_lower = 10
+	melee_damage_upper = 15
 
 /mob/living/simple_animal/hostile/roomba/trip/armored/allied
+	name = "Soteria Institute Armored Roomba"
+	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat and given additional armor. \
+	Due to similarities between hostile bugs and cht'mants, they'll be attacked on sight. Colony turrets will shoot drones on sight, an oversight the Soteria are still working out."
 	faction = "neutral"
-	desc = "A small blue round drone, usually tasked with carrying out menial tasks with baton attached to it and seems to have added armor. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+	icon_state = "roomba_SI_armor"
+	melee_damage_lower = 12
+	melee_damage_upper = 17
 
-/mob/living/simple_animal/hostile/roomba/gun_ba/armored/allied
+//Robots
+/mob/living/simple_animal/hostile/roomba/synthetic/allied
+	name = "Soteria Institute Sword Drone"
+	desc = "A soteria branded sword drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight. Due to similarities between hostile bugs and cht'mants, \
+	they'll be attacked on sight. Colony turrets will shoot drones on sight, an oversight the Soteria are still working out."
 	faction = "neutral"
-	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a gun and seems to have added armor. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+	icon = 'icons/mob/mobs-humanoid.dmi'
+	icon_state = "soteria"
+	attacktext = "slashed"
+	move_to_delay = 1
+	turns_per_move = 7
+	speed = 2
+	health = 250
+	maxHealth = 250
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	stop_automated_movement_when_pulled = TRUE
+	wander = FALSE
 
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/FindTarget()
+	. = ..()
+	if(.)
+		visible_emote("lets out a buzz as it detects a target!")
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced
+	name = "Soteria Institute Mantis Drone"
+	desc = "A soteria branded heavily armored mantis drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight. Due to similarities between hostile bugs and cht'mants, \
+	they'll be attacked on sight. Colony turrets will shoot drones on sight, an oversight the Soteria are still working out."
+	icon_state = "soteria_mantis"
+	health = 350
+	maxHealth = 350
+	melee_damage_lower = 30
+	melee_damage_upper = 40
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/junkbot
+	name = "Prospector Junkbot"
+	desc = "A prospector forged robot, its made from spare parts, love, and duct tape. Using designs 'borrowed' from the Soteria the prospector salvagers made these bots to function as disposable shields or \
+	to gaurd specific locations since they do not wander. While lightweight, fast, and capable of a wickedly damaging slash with its armblade, they are not that durable."
+	icon_state = "junkbot"
+	health = 125
+	maxHealth = 125
+	melee_damage_lower = 15
+	melee_damage_upper = 25
