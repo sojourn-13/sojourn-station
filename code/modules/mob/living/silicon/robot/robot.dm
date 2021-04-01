@@ -68,7 +68,7 @@
 	var/opened = 0
 	var/emagged = 0
 	var/wiresexposed = 0
-	var/locked = 1
+	var/locked = TRUE
 	var/has_power = 1
 	var/death_notified = FALSE
 
@@ -385,11 +385,11 @@
 	if(!opened && has_power && do_after(usr, 80))
 		if(locked)
 			to_chat(src, "You unlocked your panel.")
-			locked = !locked
+			locked = FALSE
 			return
 		if(!locked)
 			to_chat(src, "You locked your panel.")
-			locked = locked
+			locked = TRUE
 			return
 
 /mob/living/silicon/robot/verb/toggle_lights()
@@ -1112,7 +1112,7 @@
 		if(locked)
 			if(prob(90))
 				to_chat(user, "You emag the cover lock.")
-				locked = 0
+				locked = FALSE
 			else
 				to_chat(user, "You fail to emag the cover lock.")
 				to_chat(src, "Hack attempt detected.")
