@@ -397,7 +397,7 @@
 					message = "cries."
 					m_type = 2
 				else
-					message = "makes a weak whipering noise. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"] [get_visible_gender() == NEUTER ? "frown" : "frowns"]."
+					message = "makes a weak, whimpering noise. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"] [get_visible_gender() == NEUTER ? "frown" : "frowns"]."
 					m_type = 2
 
 		if ("sigh")
