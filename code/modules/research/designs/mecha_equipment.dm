@@ -129,8 +129,13 @@
 
 /datum/design/research/item/mecha/repair_droid
 	name = "Repair droid"
-	desc = "Automated repair droid, exosuits' best companion. BEEP BOOP"
+	desc = "Automated repair droid, exosuits' best companion. BEEP BOOP!"
 	build_path = /obj/item/mecha_parts/mecha_equipment/repair_droid
+
+/datum/design/research/item/mecha/shield_droid
+	name = "Shield droid"
+	desc = "Automated sheild droid, exosuits' second best companion. BEEP BOOP!"
+	build_path = /obj/item/mecha_parts/mecha_equipment/combat_shield
 
 /datum/design/research/item/mecha/plasma_generator
 	desc = "Plasma reactor"
