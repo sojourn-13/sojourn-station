@@ -56,7 +56,7 @@
 #define PERK_BORN_WARRIOR /datum/perk/born_warrior
 #define PERK_SCUTTLEBUG /datum/perk/scuttlebug
 #define PERK_MARKET_PROF /datum/perk/market_prof
-#define PERK_MEDICAL_EXPERT /datum/perk/selfmedicated
+#define PERK_MEDICAL_EXPERT /datum/perk/medicalexpertise
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
 #define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
 #define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert

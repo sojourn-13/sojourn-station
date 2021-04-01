@@ -789,11 +789,11 @@
 /datum/category_item/setup_option/background/homeworld/earthandmars
 	name = "Earth and Mars"
 	desc = "Earth and Mars are the political seat of power for the Terran Federation and considered the wealthiest and most heavily protected planets in the known universe. \
-	People from earth and mars are almost universally wealthy and worldly, with access to broad educations and understandings in philosophies that help them at every step in life. \
-	The melting pot of cultures have made Sol born extremely knowledgeable of other cultures and varied even among themselves, anyone of any race could have once been born and bred in the \
-	Sol system. However, most are still commonly human or abhuman even with the numerous exceptions. As a result of the clean living, free of pollution, drugs, or heavily processed foods \
-	your body is healthy but can't handle as many drugs as other people and you find yourself getting addicted slightly easier."
+	People from Earth and Mars are generally wealthy and worldly, with access to broad educations and understandings in philosophies that help them at every step in life. \
+	The broad contact with different cultures around the universe have made Sol born extremely knowledgeable of other races' customs and habits. However, most people born there \
+	are still mostly human or abhuman, with counted exceptions."
 
+	restricted_to_species = list(FORM_HUMAN)
 	perks = list(/datum/perk/solborn)
 
 	stat_modifiers = list(

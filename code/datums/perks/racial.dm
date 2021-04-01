@@ -55,7 +55,7 @@
 //////////////////////////////////////Human perks
 /datum/perk/tenacity
 	name = "Tenacity"
-	desc = "You pull what made your ancestors conquer the stars from your will, recovering from a small amount of injuries and potentially stabilizing yourself to live a bit longer."
+	desc = "When everything looks grim, you can muster a moment of bravado, reminding yourself that you ain't got time to bleed. You toughen up your metabolism, allowing you to ignore some of your pain, while stopping your bleeding and slightly healing your wounds."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -72,9 +72,9 @@
 	user.reagents.add_reagent("adrenol", 5)
 	return ..()
 
-/datum/perk/gutsandglory
-	name = "Guts and Glory"
-	desc = "You pull what made your ancestors conquer the stars from your will, letting your body recover somewhat from any internal damage at the cost of becoming exhausted while it works."
+/datum/perk/iwillsurvive
+	name = "Will to Survive"
+	desc = "You push your primal desire to keep living to its limit, letting your body recover slightly from any internal damage out of sheer force of will at the cost of becoming extremely exhausted while it works."
 	active = FALSE
 	passivePerk = FALSE
 
