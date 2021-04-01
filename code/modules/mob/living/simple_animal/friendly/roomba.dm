@@ -5,6 +5,7 @@
 	icon_state = "roomba_pink"
 	mob_size = MOB_SMALL
 	speak_chance = 0
+	hunger_enabled = FALSE
 	turns_per_move = 1
 	maxHealth = 125 //Lets not die to a single roach bit
 	health = 125 //Most things deal 40 at a time
@@ -48,7 +49,7 @@
 					cleaned_item.clean_blood()
 				else if(ishuman(A))
 					var/mob/living/carbon/human/cleaned_human = A
-				if(cleaned_human.lying)
+					if(cleaned_human.lying)
 						if(cleaned_human.head)
 							cleaned_human.head.clean_blood()
 							cleaned_human.update_inv_head(0)
