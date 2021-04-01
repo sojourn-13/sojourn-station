@@ -2,11 +2,10 @@
 	name_category = "biotech device prototype"
 	category = "Medical"
 
-/datum/design/research/item/hud/health
+/datum/design/research/item/clothing/health
 	name = "Health Scanner"
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject."
 	build_path = /obj/item/clothing/glasses/hud/health
-	category = "Medical"
 
 /datum/design/research/item/makeshift_centrifuge
 	name = "Portable centrifuge"

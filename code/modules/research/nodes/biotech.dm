@@ -171,7 +171,7 @@
 							/datum/design/research/item/medical/reagent_scanner,
 							/datum/design/research/item/medical/defibs,
 							/datum/design/research/item/scalpel_laser,
-							/datum/design/research/item/hud/health,
+							/datum/design/research/item/clothing/health,
 							/datum/design/research/item/bonegel,
 							)
 

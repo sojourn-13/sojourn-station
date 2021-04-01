@@ -32,3 +32,4 @@
 	new /obj/item/clothing/head/helmet/prime(src)
 	new /obj/item/clothing/under/rank/church/sport(src)
 	new /obj/item/clothing/suit/storage/neotheosports(src)
+	new /obj/item/shield_projector/rectangle/church_personal(src)

@@ -23,6 +23,12 @@
 	new /obj/item/taperoll/engineering(src)
 	new /obj/item/weapon/tool/tape_roll/flextape(src)
 	new /obj/item/weapon/storage/pouch/engineering_supply(src)
+	if(prob(50))
+		new /obj/item/weapon/tool_upgrade/augment/ai_tool(src)
+	else if(prob(50))
+		new /obj/item/weapon/tool_upgrade/augment/repair_nano(src)
+	else
+		new /obj/item/weapon/tool_upgrade/augment/randomizer(src)
 
 /obj/structure/closet/secure_closet/engineering_electrical
 	name = "electrical supplies"

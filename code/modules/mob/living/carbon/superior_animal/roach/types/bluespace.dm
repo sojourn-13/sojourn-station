@@ -8,6 +8,9 @@
 	melee_damage_lower = 3
 	melee_damage_upper = 10
 	sanity_damage = 1
+
+	flash_resistances = 15 //We are the light
+
 	//spawn_blacklisted = TRUE
 	var/change_tele_to_mob = 25
 	var/chance_tele_to_eat = 25

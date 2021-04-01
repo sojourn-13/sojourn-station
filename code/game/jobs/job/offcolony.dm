@@ -36,6 +36,7 @@
 			/datum/craft_recipe/lodge/duct_tape_weak,
 			/datum/craft_recipe/lodge/duct_tape,
 			/datum/craft_recipe/lodge/chimera_fang,
+			/datum/craft_recipe/lodge/soap,
 			)
 
 	stat_modifiers = list(
@@ -98,6 +99,7 @@
 			/datum/craft_recipe/lodge/duct_tape_weak,
 			/datum/craft_recipe/lodge/duct_tape,
 			/datum/craft_recipe/lodge/chimera_fang,
+			/datum/craft_recipe/lodge/soap,
 			)
 
 	stat_modifiers = list(

@@ -32,6 +32,8 @@
 	var/stop_automated_movement = 0 //use this to temporarely stop random movement
 	var/stop_automated_movement_when_pulled = 0
 
+	var/flash_resistances = 0 //Normal flash done by a hand held is 10, 10+ is for bombs
+
 	var/toxin_immune = FALSE
 
 	var/contaminant_immunity = FALSE //if TRUE, mob is immune to harmful contaminants in air (plasma), skin contact, does not relate to breathing

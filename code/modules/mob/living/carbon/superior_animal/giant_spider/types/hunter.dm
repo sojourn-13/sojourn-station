@@ -94,6 +94,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	poison_per_bite = 4
+	flash_resistances = 3 //For balance against are speedy fello
 	poison_type = "party drops"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/emperor
 	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
@@ -117,6 +118,7 @@
 	turns_per_move = 1
 	melee_damage_lower = 40
 	melee_damage_upper = 50
+	flash_resistances = 10 //For balance against are speedy fello
 	poison_per_bite = 6
 	poison_type = "stoxin"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/reaper_spider
