@@ -72,12 +72,12 @@
 	y = 0.1
 	icon = "mastermind"
 
-	required_technologies = list(/datum/technology/GP_window,
-								/datum/design/research/item/greyson/combat_shield)
+	required_technologies = list(/datum/technology/GP_window)
 	required_tech_levels = list(RESEARCH_COMBAT = 13)
 	cost = 50000
 
-	unlocks_designs = list(/datum/design/research/item/greyson/unmaker)
+	unlocks_designs = list(/datum/design/research/item/greyson/unmaker,
+			       /datum/design/research/item/greyson/combat_shield)
 
 /datum/technology/GP_cells
 	name = "Greyson Positronic Cells"
