@@ -19,6 +19,7 @@
 	var/ui_title = "Chem Dispenser 5000"
 	var/obj/item/weapon/cell/medium/cell
 	var/amount = 30
+	var/cell_charger_additon = 0 //This is not a TRUE/FALSE
 	var/accept_beaker = TRUE //At TRUE, ONLY accepts beakers.
 	var/hackedcheck = FALSE
 	var/list/dispensable_reagents
@@ -61,20 +62,30 @@
 	if(man_rating >= 5)
 		dispensable_reagents += level4
 
+	var/capa_rating = 0
+	var/capa_amount = 0
+	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
+		capa_rating += C.rating
+		capa_amount++
+	capa_rating -= capa_amount
+
+	cell_charger_additon = capa_rating // theirs only 1 in dispenders min 34 max 120 RnD 60 Greyson 100
+
 /obj/machinery/chemical_dispenser/proc/recharge()
 	if(stat & (BROKEN|NOPOWER)) return
-	var/addenergy = cell.give(min(24, cell.maxcharge*cell.max_chargerate))
+	var/addenergy = cell.give(clamp(cell.maxcharge*cell.max_chargerate + (cell_charger_additon*20 / 2),0,cell.maxcharge))
 	if(addenergy)
 		use_power(addenergy / CELLRATE)
 		SSnano.update_uis(src) // update all UIs attached to src
+
+/obj/machinery/chemical_dispenser/Process()
+	if(cell && cell.percent() < 100)
+		recharge()
 
 /obj/machinery/chemical_dispenser/power_change()
 	..()
 	SSnano.update_uis(src) // update all UIs attached to src
 
-/obj/machinery/chemical_dispenser/Process()
-	if(cell && cell.percent() < 100)
-		recharge()
 
 /obj/machinery/chemical_dispenser/Initialize()
 	. = ..()
