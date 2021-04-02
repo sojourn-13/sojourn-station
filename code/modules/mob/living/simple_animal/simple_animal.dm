@@ -107,6 +107,16 @@
 	var/scan_range = 6//How far around the animal will look for food
 	var/foodtarget = 0
 	//Used to control how often ian scans for nearby food
+	//Armor values for the mob. Works like normal armor values.
+	var/armor = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0,
+		agony = 0
+	)
 
 	mob_classification = CLASSIFICATION_ORGANIC
 
@@ -335,11 +345,13 @@
 /mob/living/simple_animal/gib()
 	..(icon_gib,1)
 
-/mob/living/simple_animal/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/simple_animal/bullet_act(var/obj/item/projectile/Proj, var/def_zone = null)
 	if(!Proj || Proj.nodamage)
 		return
 
-	adjustBruteLoss(Proj.get_total_damage())
+	for(var/damage_type in Proj.damage_types)
+		var/damage = Proj.damage_types[damage_type]
+		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj))
 	return 0
 
 /mob/living/simple_animal/rejuvenate()

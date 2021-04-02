@@ -95,6 +95,16 @@
 
 	var/fleshcolor = "#666600"
 	var/bloodcolor = "#666600"
+	//Armor values for the mob. Works like normal armor values.
+	var/armor = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0,
+		agony = 0
+	)
 
 /mob/living/carbon/superior_animal/New()
 	..()
