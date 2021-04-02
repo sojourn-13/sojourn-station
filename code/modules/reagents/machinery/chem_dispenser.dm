@@ -69,22 +69,23 @@
 		capa_amount++
 	capa_rating -= capa_amount
 
-	cell_charger_additon = capa_rating // theirs only 1 in dispenders min 20 max 120 RnD 60 Greyson 100
+	cell_charger_additon = capa_rating // theirs only 1 in dispenders min 34 max 120 RnD 60 Greyson 100
 
 /obj/machinery/chemical_dispenser/proc/recharge()
 	if(stat & (BROKEN|NOPOWER)) return
-	var/addenergy = cell.give(min(24, cell.maxcharge*cell.max_chargerate + (cell_charger_additon*20)))
+	var/addenergy = cell.give(clamp(cell.maxcharge*cell.max_chargerate + (cell_charger_additon*20 / 2),0,cell.maxcharge))
 	if(addenergy)
 		use_power(addenergy / CELLRATE)
 		SSnano.update_uis(src) // update all UIs attached to src
+
+/obj/machinery/chemical_dispenser/Process()
+	if(cell && cell.percent() < 100)
+		recharge()
 
 /obj/machinery/chemical_dispenser/power_change()
 	..()
 	SSnano.update_uis(src) // update all UIs attached to src
 
-/obj/machinery/chemical_dispenser/Process()
-	if(cell && cell.percent() < 100)
-		recharge()
 
 /obj/machinery/chemical_dispenser/Initialize()
 	. = ..()
