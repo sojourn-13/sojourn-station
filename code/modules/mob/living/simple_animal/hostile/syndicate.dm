@@ -150,16 +150,19 @@
 
 //range
 /mob/living/simple_animal/hostile/syndicate/ranged/weak
+	ranged_cooldown = 2
 	rapid = 0
 	icon_state = "syndicate_pistol"
 	weapon1 = /obj/item/weapon/gun/projectile/clarissa/makarov
 
 /mob/living/simple_animal/hostile/syndicate/ranged/heavy
+	ranged_cooldown = 3
 	icon_state = "syndicate_smg"
 	maxHealth = 200 //Boosted because melee given armor/shield
 	health = 200
 
 /mob/living/simple_animal/hostile/syndicate/ranged/heavy/shotgun
+	ranged_cooldown = 4
 	rapid = 0
 	icon_state = "syndicate_shotgun"
 	weapon1 = /obj/item/weapon/gun/projectile/shotgun/pump/combat/sawn
@@ -177,16 +180,19 @@
 
 //space range
 /mob/living/simple_animal/hostile/syndicate/ranged/space/weak
+	ranged_cooldown = 2
 	rapid = 0
 	icon_state = "syndicate_space_pistol"
 	weapon1 = /obj/item/weapon/gun/projectile/clarissa/makarov
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space/heavy
+	ranged_cooldown = 2
 	icon_state = "syndicaterangedpsace"
 	maxHealth = 200 //Boosted because melee given armor/shield
 	health = 200
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space/heavy/shotgun
+	ranged_cooldown = 4
 	rapid = 0
 	icon_state = "syndicate_space_shotgun"
 	weapon1 = /obj/item/weapon/gun/projectile/shotgun/pump/combat/sawn
@@ -297,6 +303,7 @@
 
 //elite range
 /mob/living/simple_animal/hostile/elitemercenary/range
+	ranged_cooldown = 3
 	ranged = 1
 	rapid = 1
 	icon_state = "syndicate_stormtrooper_smg"
@@ -305,6 +312,7 @@
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
 
 /mob/living/simple_animal/hostile/elitemercenary/range/gunslinger
+	ranged_cooldown = 2
 	rapid = 0
 	icon_state = "syndicate_stormtrooper_pistol"
 	projectilesound = 'sound/weapons/guns/fire/revolver_fire.ogg'
@@ -312,6 +320,7 @@
 	weapon1 = /obj/item/weapon/gun/projectile/revolver/mateba
 
 /mob/living/simple_animal/hostile/elitemercenary/range/space/heavy/shotgun
+	ranged_cooldown = 4
 	rapid = 0
 	icon_state = "syndicate_stormtrooper_shotgun"
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'

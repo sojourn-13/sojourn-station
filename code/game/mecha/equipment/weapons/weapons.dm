@@ -80,6 +80,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	equip_cooldown = 8
+	fire_cooldown = 2
 	name = "\improper CH-PS \"Immolator\" laser"
 	icon_state = "mecha_laser"
 	energy_drain = 30
@@ -92,6 +93,7 @@
 	desc = "While not regulation, this inefficient weapon can be attached to working exo-suits in desperate, or malicious, times."
 	icon_state = "mecha_laser"
 	energy_drain = 80
+	fire_cooldown = 8
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
@@ -101,11 +103,13 @@
 	name = "\improper CH-LC \"Solaris\" laser cannon"
 	icon_state = "mecha_laser"
 	energy_drain = 60
+	fire_cooldown = 6
 	projectile = /obj/item/projectile/beam/heavylaser
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
 	equip_cooldown = 40
+	fire_cooldown = 12
 	name = "mkIV ion heavy cannon"
 	icon_state = "mecha_ion"
 	energy_drain = 120
@@ -117,6 +121,7 @@
 	name = "eZ-13 mk2 heavy pulse rifle"
 	icon_state = "mecha_pulse"
 	energy_drain = 120
+	fire_cooldown = 10
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 6, TECH_POWER = 4)
 	projectile = /obj/item/projectile/beam/pulse/heavy
 	fire_sound = 'sound/weapons/marauder.ogg'
@@ -137,6 +142,7 @@
 	name = "\improper PBT \"Pacifier\" mounted taser"
 	icon_state = "mecha_taser"
 	energy_drain = 20
+	fire_cooldown = 8 //Tasers are really really powerful
 	equip_cooldown = 8
 	projectile = /obj/item/projectile/beam/stun
 	fire_sound = 'sound/weapons/Taser.ogg'
@@ -217,6 +223,7 @@
 	name = "\improper LBX AC 10 \"Scattershot\""
 	icon_state = "mecha_scatter"
 	equip_cooldown = 20
+	fire_cooldown = 5
 	projectile = /obj/item/projectile/bullet/magnum_40
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
@@ -230,6 +237,7 @@
 	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
 	icon_state = "mecha_scatter"
 	equip_cooldown = 20
+	fire_cooldown = 15
 	projectile = /obj/item/projectile/bullet/magnum_40
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
@@ -243,6 +251,7 @@
 	name = "\improper Ultra AC 2"
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
+	fire_cooldown = 3
 	projectile = /obj/item/projectile/bullet/rifle_75
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	projectiles = 300
@@ -256,6 +265,7 @@
 	desc = "Few would call this weapon reliable, fewer know just how valuable it is."
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
+	fire_cooldown = 6
 	projectile = /obj/item/projectile/bullet/pistol_35
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiles = 60

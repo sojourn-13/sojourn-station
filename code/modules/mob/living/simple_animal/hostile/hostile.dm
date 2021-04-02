@@ -8,13 +8,12 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	faction = "hostile"
 	var/stance = HOSTILE_STANCE_IDLE	//Used to determine behavior
 	var/mob/living/target_mob
-	var/attack_same = 0
-	var/ranged = 0
-	var/rapid = 0
+	var/attack_same = FALSE
+	var/ranged = FALSE
+	var/rapid = FALSE
 	var/projectiletype
 	var/projectilesound
 	var/casingtype
-	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
 	var/list/friends = list()
 	var/break_stuff_probability = 100
 	var/ranged_ignores_vision
@@ -267,6 +266,9 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 
 /mob/living/simple_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
 	var /mob/living/simple_animal/hostile/shooter = src
+	if(ranged_cooldown <= world.time) //Modula for admins to set them at different things
+		to_chat(src, "You gun isnt ready to fire!.")
+		return
 	if(shooter.ranged ==1)
 		shooter.OpenFire(targetDD)
 

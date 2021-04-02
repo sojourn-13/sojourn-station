@@ -11,6 +11,7 @@
 	response_disarm = "shoves"
 	response_harm = "hits"
 	speed = 4
+	ranged_cooldown = 1
 	stop_automated_movement_when_pulled = FALSE
 	maxHealth = 200
 	health = 200
