@@ -210,7 +210,7 @@
 
 /datum/perk/guild/blackbox_insight
 	name = "Blackbox Tinkering"
-	desc = "It's sleek contours, the expert craftsmanship...the best of hand-made mechanical genius."
+	desc = "It's sleek contours, the expert craftsmanship... The best of hand-made mechanical genius."
 	gain_text = "What wondrous possibilities..."
 	//icon_state = "" // - No icon, suggestion, detective glass?
 

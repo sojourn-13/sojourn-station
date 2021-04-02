@@ -236,7 +236,7 @@
 
 /datum/perk/fast_fingers
 	name = "Fast fingers"
-	desc = "Nothing is safe around your hands. You are a true kleptomaniac. Taking items off others does no sound and prompts, provided its in their pockets, hands, or their ears. \
+	desc = "Nothing is safe around your hands. You are a true kleptomaniac. Taking items off others makes no sound or prompts, provided its in their pockets, hands, or their ears. \
 	It's also quicker and you can slip pills into drinks unnoticed."
 	//icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
 
@@ -260,7 +260,7 @@
 
 /datum/perk/ass_of_concrete
 	name = "Immovable Object"
-	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around, as long as you remember how to anchor yourself to the floor."
+	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around, as long as you stand perfectly still."
 	//icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/ass_of_concrete/assign(mob/living/carbon/human/H)
@@ -278,7 +278,7 @@
 
 /datum/perk/rezsickness
 	name = "Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience has left you weakened and thus unfit for fighting for a while."
+	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. You better find a bed or chair to rest into until you've fully recuperated."
 	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
 	lose_text = "You finally feel like you recovered from the ravages of your body."
 	var/initial_time
@@ -307,7 +307,7 @@
 
 /datum/perk/rezsickness/severe
 	name = "Severe Revival Sickness"
-	desc = "You've recently died and have been brought back to life, again. The experience has left you severely weakened, to the point where you struggle to complete even basic tasks."
+	desc = "You've recently died and have been brought back to life. Your body cannot handle this traumatic experience very well, to the point where you struggle to complete even basic tasks. You better rest in a bed until it subsides before going back to work."
 
 /datum/perk/rezsickness/severe/assign(mob/living/carbon/human/H)
 	..()
@@ -331,7 +331,7 @@
 
 /datum/perk/rezsickness/severe/fatal
 	name = "Fatal Revival Sickness"
-	desc = "You have a (troubling) penchant for getting killed at this point. Experiencing multiple deaths and revivals has left you utterly physically and mentally wrecked, you better stay in bed for now, or you risk dying a fourth time, this time, for good."
+	desc = "You've recently died and have been brought back to life. Your frail constitution can barely handle the process, leaving you utterly physically and mentally wrecked. You better stay in bed for now and rest, or you risk dying even easier than before."
 
 /datum/perk/rezsickness/severe/fatal/assign(mob/living/carbon/human/H)
 	..()

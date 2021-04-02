@@ -793,13 +793,13 @@
 	The broad contact with different cultures around the universe have made Sol born extremely knowledgeable of other races' customs and habits. However, most people born there \
 	are still mostly human or abhuman, with counted exceptions."
 
-	restricted_to_species = list(FORM_HUMAN)
+	restricted_to_species = list(SPECIES_HUMAN)
 	perks = list(/datum/perk/solborn)
 
 	stat_modifiers = list(
-		STAT_ROB = 3,
-		STAT_TGH = 3,
-		STAT_VIG = 3,
+		STAT_ROB = 1,
+		STAT_TGH = 1,
+		STAT_VIG = 1,
 		STAT_BIO = 3,
 		STAT_MEC = 3,
 		STAT_COG = 3
