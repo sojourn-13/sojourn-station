@@ -67,7 +67,7 @@
 		to_chat(usr, SPAN_NOTICE("The human body can only take so much, you'll need more time before you've recovered enough to use this again."))
 		return FALSE
 	cooldown_time = world.time + 15 MINUTES
-	user.visible_message("[user] grits their teeth and begins breathing slowly.", "You grit your teeth and remind yourself you don't have time to bleed!")
+	user.visible_message("[user] grits their teeth and begins breathing slowly.", "You grit your teeth and remind yourself you ain't got time to bleed!")
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("adrenol", 5)
 	return ..()
@@ -78,18 +78,58 @@
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/gutsandglory/activate()
+/datum/perk/iwillsurvive/activate()
 	var/mob/living/carbon/human/user = usr
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("The human body can only take so much, you'll need more time before you've recovered enough to use this again."))
+		to_chat(usr, SPAN_NOTICE("The human body can only take so much punishment, you'll need more time before you've recovered enough to use this again."))
 		return FALSE
 	cooldown_time = world.time + 30 MINUTES
 	user.visible_message("[user] closes their eyes and takes a deep breath, slowing down as they focus on recovering!", "You feel exhausted as you slow down to let your body recover, focusing on controlling your breathing while your body slowly mends some of your internal damage.")
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("hustim", 5)
 	return ..()
+
+/*
+/datum/perk/slymarbo
+	name = "Inspiring Battlecry"
+	desc = "Life has taught you that beyond sheer force of will, what made your kind conquer the stars was also a sense of camaraderie and cooperation among your battle brothers and sisters. Your heroic warcry can inspire yourself and others to better performance in combat."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/slymarbo/activate()
+	var/mob/living/carbon/human/user = usr
+	var/list/people_around = list()
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You cannot muster the willpower to have a heroic moment just yet."))
+		return FALSE
+	cooldown_time = world.time + 30 MINUTES
+	log_and_message_admins("used their [src] perk.")
+	for(var/mob/living/carbon/human/H in view(user))
+		if(H != user && !isdeaf(H))
+			people_around.Add(H)
+	if(people_around.len > 0)
+		for(var/mob/living/carbon/human/participant in people_around)
+			to_chat(participant, SPAN_NOTICE("You feel inspired by a heroic shout!"))
+			give_boost(participant)
+	give_boost(usr)
+	usr.emote("urah")
+	return ..()
+
+/datum/perk/slymarbo/proc/give_boost(mob/living/carbon/human/participant)
+	var/effect_time = 2 MINUTES
+	var/amount = 10
+	var/list/stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
+	for(var/stat in stats_to_boost)
+		participant.stats.changeStat(stat, amount)
+		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
+
+/datum/perk/slymarbo/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
+	participant.stats.changeStat(stat, -amount)
+*/
 
 //////////////////////////////////////Kriosan perks
 /datum/perk/enhancedsenses

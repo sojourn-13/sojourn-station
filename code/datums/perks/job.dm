@@ -71,42 +71,20 @@
 	desc = "Your medical training and experience in the area of patient triage is unparalleled. 'Waste not, want not' is your motto, and you apply bandages and salves with utmost efficiency, sometimes using just the right ammount of them."
 
 /datum/perk/solborn
-	name = "Sol-Born Battlecry"
-	desc = "Life in the cradle of humanity has taught you that beyond sheer force of will, what made your kind conquer the stars was also a sense of camaraderie and cooperation among your battle brothers and sisters. Your heroic warcry can inspire yourself and others to better performance in combat."
-	active = FALSE
-	passivePerk = FALSE
+	name = "Sol Born"
+	desc = "Clean living in the Sol system has prevented you from building up a tolerance to most chemicals, your body can't handle the more hardcore drugs that most can and you find yourself getting \
+	addicted slightly easier."
+	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
-/datum/perk/solborn/activate()
-	var/mob/living/carbon/human/user = usr
-	var/list/people_around = list()
-	if(!istype(user))
-		return ..()
-	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("You cannot muster the willpower to have a heroic moment just yet."))
-		return FALSE
-	cooldown_time = world.time + 30 MINUTES
-	log_and_message_admins("used their [src] perk.")
-	for(var/mob/living/carbon/human/H in view(user))
-		if(H != user && !isdeaf(H))
-			people_around.Add(H)
-	if(people_around.len > 0)
-		for(var/mob/living/carbon/human/participant in people_around)
-			to_chat(participant, SPAN_NOTICE("You feel inspired by a heroic shout!"))
-			give_boost(participant)
-	give_boost(usr)
-	usr.emote("urah")
-	return ..()
+/datum/perk/solborn/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 1.2
+	holder.metabolism_effects.nsa_threshold -= 15
 
-/datum/perk/solborn/proc/give_boost(mob/living/carbon/human/participant)
-	var/effect_time = 2 MINUTES
-	var/amount = 10
-	var/list/stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
-	for(var/stat in stats_to_boost)
-		participant.stats.changeStat(stat, amount)
-		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
-
-/datum/perk/solborn/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
-	participant.stats.changeStat(stat, -amount)
+/datum/perk/solborn/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 1
+	holder.metabolism_effects.nsa_threshold += 15
+	..()
 
 /datum/perk/klutz
 	name = "Klutz"
