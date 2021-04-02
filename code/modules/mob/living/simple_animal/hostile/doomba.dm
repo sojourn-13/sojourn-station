@@ -230,6 +230,7 @@
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified burst fire cog laser rifle built into its arm."
 	icon_state = "nanotrasenrangedsmg"
 	rapid = 1
+	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam/pulse/drone
 
 /mob/living/simple_animal/hostile/roomba/synthetic/epistol/rifle

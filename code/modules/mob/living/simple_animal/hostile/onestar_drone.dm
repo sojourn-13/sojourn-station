@@ -9,6 +9,7 @@
 	maxHealth = 40
 	melee_damage_lower = 5
 	melee_damage_upper = 13
+	ranged_cooldown = 5
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0

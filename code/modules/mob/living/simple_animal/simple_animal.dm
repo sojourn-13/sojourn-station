@@ -17,6 +17,8 @@
 	var/icon_gib = null	//We only try to show a gibbing animation if this exists.
 	can_burrow = FALSE
 
+	var/ranged_cooldown = 2 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
+
 	//Napping
 	var/can_nap = FALSE
 	var/icon_rest = null

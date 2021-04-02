@@ -79,6 +79,7 @@
 	health = 100
 	ranged = 1
 	rapid = 1
+	ranged_cooldown = 3
 	minimum_distance = 4
 	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/gun/energy/retro
@@ -105,6 +106,7 @@
 	icon_dead = "voidwolf_flying_dead"
 	melee_damage_lower = 10 //We dont like melee
 	melee_damage_upper = 15
+	ranged_cooldown = 3
 	ranged = 1
 	rapid = 1
 	minimum_distance = 4
@@ -121,6 +123,7 @@
 	melee_damage_upper = 35
 	maxHealth = 200
 	health = 200
+	ranged_cooldown = 3
 	ranged = 1
 	rapid = 1
 	minimum_distance = 4
