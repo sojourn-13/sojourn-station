@@ -15,6 +15,8 @@
 	var/inuse = 0
 	var/obj/item/weapon/reagent_containers/beaker = null
 
+	var/grinding_time = 60
+
 	var/limit = 10
 	var/list/holdingitems = list()
 	var/list/sheet_reagents = list(
@@ -25,6 +27,17 @@
 		/obj/item/stack/material/silver = "silver",
 		/obj/item/stack/material/mhydrogen = "hydrogen",
 	)
+
+/obj/machinery/reagentgrinder/RefreshParts()
+	var/man_rating = 0
+	var/man_amount = 0
+	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+		man_amount++
+	man_rating -= man_amount
+
+	limit = (25 + (man_rating * 5))
+	grinding_time = (60 - man_rating)
 
 /obj/machinery/reagentgrinder/MouseDrop_T(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !I.Adjacent(user) || user.incapacitated())
@@ -255,7 +268,7 @@
 	inuse = 1
 
 	// Reset the machine.
-	spawn(60)
+	spawn(grinding_time)
 		inuse = 0
 		SSnano.update_uis(src)
 
