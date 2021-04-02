@@ -52,8 +52,7 @@
 
 /mob/living/carbon/superior_animal/giant_spider/plasma/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
-	new /obj/effect/decal/cleanable/ash(src.loc)
-	explosion(src.loc, 0,1,3)
+	src.gib()
 	qdel(src)
 
 
