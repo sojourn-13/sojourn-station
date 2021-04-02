@@ -81,11 +81,15 @@
 	icon_state = "ano01"
 	var/find_type = 0
 
+/obj/item/weapon/archaeological_find/get_item_cost(export)
+	. = ..()
+	. += rand(500,3500) //Always worth something to someone
+
 /obj/item/weapon/archaeological_find/New(loc, var/new_item_type)
 	if(new_item_type)
 		find_type = new_item_type
 	else
-		find_type = rand(1,34)	//update this when you add new find types
+		find_type = rand(1,36)	//update this when you add new find types
 
 	var/item_type = "object"
 	icon_state = "unknown[rand(1,4)]"
@@ -116,6 +120,7 @@
 				new_item = new /obj/item/weapon/reagent_containers/glass/beaker(src.loc)
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 			new_item.icon_state = "bowl"
+			new_item.price_tag = rand(200,500)
 			apply_image_decorations = 1
 			if(prob(20))
 				additional_desc = "There appear to be [pick("dark","faintly glowing","pungent","bright")] [pick("red","purple","green","blue")] stains inside."
@@ -127,6 +132,7 @@
 				new_item = new /obj/item/weapon/reagent_containers/glass/beaker(src.loc)
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 			new_item.icon_state = "urn"
+			new_item.price_tag = rand(200,500)
 			apply_image_decorations = 1
 			if(prob(20))
 				additional_desc = "It [pick("whispers faintly","makes a quiet roaring sound","whistles softly","thrums quietly","throbs")] if you put it to your ear."
@@ -138,6 +144,7 @@
 				new_item = new /obj/item/weapon/tool/knife(src.loc)
 			else
 				new_item = new /obj/item/weapon/material/kitchen/utensil/spoon(src.loc)
+			new_item.price_tag = rand(250,600) //Legit no use
 			additional_desc = "[pick("It's like no [item_type] you've ever seen before",\
 			"It's a mystery how anyone is supposed to eat with this",\
 			"You wonder what the creator's mouth was shaped like")]."
@@ -151,6 +158,7 @@
 			[pick("performing unspeakable acts","posing heroically","in a fetal position","cheering","sobbing","making a plaintive gesture","making a rude gesture")]."
 			if(prob(25))
 				new_item = new /obj/item/weapon/vampiric(src.loc)
+			new_item.price_tag = rand(500,750)
 		if(5)
 			name = "instrument"
 			icon = 'icons/obj/xenoarchaeology.dmi'
@@ -162,33 +170,31 @@
 				"You wonder how many mouths the creator had",\
 				"You wonder what it sounds like",\
 				"You wonder what kind of music was made with it")]."
+			new_item.price_tag = rand(600,650)//Again no use
 		if(6)
 			item_type = "[pick("bladed knife","serrated blade","sharp cutting implement")]"
 			new_item = new /obj/item/weapon/tool/knife(src.loc)
 			additional_desc = "[pick("It doesn't look safe.",\
 			"It looks wickedly jagged",\
 			"There appear to be [pick("dark red","dark purple","dark green","dark blue")] stains along the edges")]."
+			new_item.price_tag = rand(300,650)//some use
 		if(7)
-			//assuming there are 10 types of coins
-			var/chance = 10
-			for(var/type in typesof(/obj/item/weapon/coin))
-				if(prob(chance))
-					new_item = new type(src.loc)
-					break
-				chance += 10
-
-			item_type = new_item.name
-			apply_prefix = 0
-			apply_material_decorations = 0
-			apply_image_decorations = 1
+			item_type = "[pick("jewled","fragmented","cosmic")]"
+			new_item = new /obj/item/weapon/oddity/broken_necklace(src.loc)
+			additional_desc = "[pick("It doesn't look safe.",\
+			"It looks wickedly jagged",\
+			"There appear to be [pick("dark red","dark purple","dark green","dark blue")] stains along the string")]."
+			new_item.price_tag = rand(3250,4650)//Bluespace artifact.
 		if(8)
 			item_type = "handcuffs"
 			new_item = new /obj/item/weapon/handcuffs(src.loc)
 			additional_desc = "[pick("They appear to be for securing two things together","Looks kinky","Doesn't seem like a children's toy")]."
+			new_item.price_tag = rand(100,400)
 		if(9)
 			item_type = "[pick("wicked","evil","byzantine","dangerous")] looking [pick("device","contraption","thing","trap")]"
 			apply_prefix = 0
 			new_item = new /obj/item/weapon/beartrap(src.loc)
+			new_item.price_tag = rand(20,800) //Has some uses
 			additional_desc = "[pick("It looks like it could take a limb off",\
 			"Could be some kind of animal trap",\
 			"There appear to be [pick("dark red","dark purple","dark green","dark blue")] stains along part of it")]."
@@ -196,6 +202,7 @@
 			item_type = "[pick("cylinder","tank","chamber")]"
 			new_item = new /obj/item/weapon/flame/lighter(src.loc)
 			additional_desc = "There is a tiny device attached."
+			new_item.price_tag = rand(120,900) //Has some uses
 			if(prob(30))
 				apply_image_decorations = 1
 		if(11)
@@ -203,6 +210,7 @@
 			new_item = new /obj/item/weapon/storage/box(src.loc)
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 			new_item.icon_state = "box"
+			new_item.price_tag = rand(250,1000) //Has some uses
 			var/obj/item/weapon/storage/box/new_box = new_item
 			new_box.max_w_class = pick(\
 				prob(1);ITEM_SIZE_TINY,
@@ -224,6 +232,7 @@
 				new_item = new /obj/item/weapon/tank/plasma(src.loc)
 			icon_state = pick("oxygen","oxygen_fr","oxygen_f","plasma","anesthetic")
 			additional_desc = "It [pick("gloops","sloshes")] slightly when you shake it."
+			new_item.price_tag = rand(450,1000) //Has some uses
 		if(13)
 			item_type = "tool"
 			if(prob(25))
@@ -232,6 +241,7 @@
 				new_item = new /obj/item/weapon/tool/crowbar(src.loc)
 			else
 				new_item = new /obj/item/weapon/tool/screwdriver(src.loc)
+			new_item.price_tag = rand(450,1200) //Has some uses
 			additional_desc = "[pick("It doesn't look safe.",\
 			"You wonder what it was used for",\
 			"There appear to be [pick("dark red","dark purple","dark green","dark blue")] stains on it")]."
@@ -251,7 +261,7 @@
 
 			var/new_type = pick(possible_spawns)
 			new_item = new new_type(src.loc)
-			new_item:amount = rand(5,45)
+			new_item:amount = rand(50,75) //If you get lucky and get this then you should get a good amout
 		if(15)
 			if(prob(75))
 				new_item = new /obj/item/weapon/pen(src.loc)
@@ -259,6 +269,7 @@
 				new_item = new /obj/item/weapon/pen/reagent/sleepy(src.loc)
 			if(prob(30))
 				apply_image_decorations = 1
+			new_item.price_tag = rand(350,1200) //Has some uses
 		if(16)
 			apply_prefix = 0
 			if(prob(25))
@@ -274,7 +285,7 @@
 				item_type = "rough red crystal"
 				icon_state = "changerock"
 			additional_desc = pick("It shines faintly as it catches the light.","It appears to have a faint inner glow.","It seems to draw you inward as you look it at.","Something twinkles faintly as you look at it.","It's mesmerizing to behold.")
-
+			new_item.price_tag = rand(750,2500) //It shines!
 			apply_material_decorations = 0
 			if(prob(10))
 				apply_image_decorations = 1
@@ -284,11 +295,13 @@
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 			new_item.icon_state = "unknown[rand(1,4)]"
 			new_item.desc = ""
+				new_item.price_tag = rand(450,1500)
 		if(19 to 20)
 			apply_prefix = 0
 			new_item = new /obj/item/weapon/tool/sword(src.loc)
 			new_item.force = 10
 			item_type = new_item.name
+			new_item.price_tag = rand(550,1100)
 		if(21 to 22)
 			if(prob(50))
 				new_item = new /obj/item/weapon/material/shard(src.loc)
@@ -316,6 +329,7 @@
 			new_item = new /obj/item/weapon/tool/sword/katana(src.loc)
 			new_item.force = 10
 			item_type = new_item.name
+			new_item.price_tag = rand(650,1200)
 		if(26)
 			//energy gun
 			var/spawn_type = pick(\
@@ -340,6 +354,7 @@
 					new_gun.cell.charge = rand(0, new_gun.cell.maxcharge)
 				else
 					new_gun.cell.charge = 0
+			new_item.price_tag = rand(950,2500)
 
 			item_type = "gun"
 		if(27)
@@ -348,7 +363,7 @@
 			new_item = new_gun
 			new_item.icon_state = "gun[rand(1,4)]"
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
-
+			new_item.price_tag = rand(950,2500)
 			//33% chance to be able to reload the gun with human ammunition
 			if(prob(66))
 				new_gun.caliber = "999"
@@ -381,6 +396,7 @@
 			//completely unknown alien device
 			if(prob(50))
 				apply_image_decorations = 0
+			new_item.price_tag = rand(450,800)
 		if(29)
 			//fossil bone/skull
 			//new_item = new /obj/item/weapon/fossil/base(src.loc)
@@ -395,6 +411,7 @@
 			additional_desc = "A fossilised part of an alien, long dead."
 			apply_image_decorations = 0
 			apply_material_decorations = 0
+			new_item.price_tag = rand(950,1750)
 		if(30)
 			//fossil shell
 			new_item = new /obj/item/weapon/fossil/shell(src.loc)
@@ -402,6 +419,7 @@
 			additional_desc = "A fossilised, pre-Stygian alien crustacean."
 			apply_image_decorations = 0
 			apply_material_decorations = 0
+			new_item.price_tag = rand(950,1750)
 			if(prob(10))
 				apply_image_decorations = 1
 		if(31)
@@ -412,6 +430,7 @@
 			apply_image_decorations = 0
 			apply_material_decorations = 0
 			apply_prefix = 0
+			new_item.price_tag = rand(1000,1750)
 		if(32)
 			//humanoid remains
 			apply_prefix = 0
@@ -427,6 +446,7 @@
 			"The mouth is wide open in a death rictus, the victim would appear to have died screaming.")
 			apply_image_decorations = 0
 			apply_material_decorations = 0
+			new_item.price_tag = rand(950,1750)
 		if(33)
 			//robot remains
 			apply_prefix = 0
@@ -442,6 +462,7 @@
 			"A pile of wires and crap metal that looks vaguely robotic.")
 			apply_image_decorations = 0
 			apply_material_decorations = 0
+			new_item.price_tag = rand(1000,2000)
 		if(34)
 			//xenos remains
 			apply_prefix = 0
@@ -458,12 +479,30 @@
 			"It doesn't look human.")
 			apply_image_decorations = 0
 			apply_material_decorations = 0
+			new_item.price_tag = rand(1500,2500)
 		if(35)
 			//gas mask
 			if(prob(25))
 				new_item = new /obj/item/clothing/mask/gas/poltergeist(src.loc)
 			else
 				new_item = new /obj/item/clothing/mask/gas(src.loc)
+			new_item.price_tag = rand(100,200)
+		if(36)
+			//oddity knife
+			if(prob(25))
+				new_item = new /obj/item/weapon/oddity/common/rusted_sword(src.loc)
+			else
+				new_item = new /obj/item/weapon/oddity/common/old_knife(src.loc)
+			new_item.price_tag = rand(500,700)
+		if(37)
+			//oddity random
+			if(prob(25))
+				new_item = new /obj/item/weapon/oddity/chimeric_fang_trophy(src.loc)
+			else
+				new_item = new /obj/item/weapon/oddity/common/broken_key(src.loc)
+			new_item.price_tag = rand(500,700)
+
+
 	var/decorations = ""
 	if(apply_material_decorations)
 		source_material = pick("cordite","quadrinium",MATERIAL_STEEL,"titanium","aluminium","ferritic-alloy","plasteel","duranium")
