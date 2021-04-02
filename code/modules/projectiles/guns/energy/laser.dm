@@ -70,6 +70,12 @@
 	)
 	twohanded = TRUE
 
+/obj/item/weapon/gun/energy/retro/New()
+	..()
+	if(prob(50))
+		icon = 'icons/obj/guns/energy/retro_alt.dmi'
+	return
+
 /obj/item/weapon/gun/energy/captain
 	name = "\"Destiny\" energy pistol"
 	icon = 'icons/obj/guns/energy/capgun.dmi'
