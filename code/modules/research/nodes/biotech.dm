@@ -284,7 +284,8 @@
 							/datum/design/research/item/mechfab/prosthesis_moebius/r_leg,
 							/datum/design/research/item/mechfab/prosthesis_moebius/l_leg,
 							/datum/design/research/item/mechfab/prosthesis_moebius/groin,
-							/datum/design/research/item/mechfab/prosthesis_moebius/groin
+							/datum/design/research/item/mechfab/prosthesis_moebius/head,
+							/datum/design/research/item/mechfab/prosthesis_moebius/chest
 							)
 
 /datum/technology/omega_biotech

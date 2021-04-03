@@ -38,6 +38,50 @@
 /datum/design/research/item/mechfab/prosthesis_moebius/groin
 	build_path = /obj/item/organ/external/robotic/moebius/groin
 
+/datum/design/research/item/mechfab/prosthesis_moebius/head
+	build_path = /obj/item/organ/external/robotic/moebius/head
+
+/datum/design/research/item/mechfab/prosthesis_moebius/chest
+	build_path = /obj/item/organ/external/robotic/moebius/torso
+
+/*Robotic Internals ====================================
+TODO: Get this all sorted out, atm people will have to print of
+the lims and such to pull out the internal bits for other people if needed
+/datum/design/research/item/mechfab/robotic_internals
+	category = "Medical"
+
+/datum/design/research/item/mechfab/robotic_internals/heart
+	build_path = /obj/item/organ/internal/heart/prosthetic
+	category = "Medical"
+
+/datum/design/research/item/mechfab/robotic_internals/liver
+	build_path = /obj/item/organ/external/robotic/moebius/torso
+	category = "Medical"
+
+/datum/design/research/item/mechfab/robotic_internals/lung
+	build_path = /obj/item/organ/external/robotic/moebius/torso
+	category = "Medical"
+
+/datum/design/research/item/mechfab/robotic_internals/blood
+	build_path = /obj/item/organ/external/robotic/moebius/torso
+	category = "Medical"
+
+/datum/design/research/item/mechfab/robotic_internals/nerves
+	build_path = /obj/item/organ/external/robotic/moebius/torso
+	category = "Medical"
+
+/datum/design/research/item/mechfab/robotic_internals/eyes
+	build_path = /obj/item/organ/internal/eyes/prosthetic
+	category = "Medical"
+
+/datum/design/research/item/mechfab/robotic_internals/
+	build_path = /obj/item/organ/external/robotic/moebius/torso
+	category = "Medical"
+
+/datum/design/research/item/mechfab/robotic_internals
+	build_path = /obj/item/organ/external/robotic/moebius/torso
+	category = "Medical"*/
+
 //Modules ====================================
 
 /datum/design/research/item/mechfab/modules
