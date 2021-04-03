@@ -23,6 +23,7 @@
 	holder_type = /obj/item/weapon/holder/corgi
 	var/obj/item/inventory_head
 	var/obj/item/inventory_back
+	colony_friend = TRUE
 
 /mob/living/simple_animal/corgi/New()
 	..()

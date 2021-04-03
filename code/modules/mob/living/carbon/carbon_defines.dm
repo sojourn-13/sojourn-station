@@ -41,6 +41,7 @@
 	var/flesh_color = "#A10808"
 
 	var/obj/item/weapon/tank/internal = null//Human/Monkey
+	colony_friend = TRUE //So we dont attack monkeys/BST/People if we allied
 
 	//TODO: move to brain
 
