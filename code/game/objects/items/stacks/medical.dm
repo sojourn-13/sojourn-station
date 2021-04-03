@@ -50,7 +50,7 @@
 				SPAN_NOTICE("You start applying [src] to [M].") \
 				)
 				if (do_after(user, 30, M))
-					if(prob(10 + user.stats.getStat(STAT_BIO)))
+					if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 					else
 						use(1)
@@ -78,7 +78,7 @@
 		var/med_skill = user.stats.getStat(STAT_BIO)
 		if (do_after(user, 30, M))
 			M.heal_organ_damage((src.heal_brute * (1+med_skill/50)/2), (src.heal_burn * (1+med_skill/50)/2))
-			if(prob(10 + med_skill))
+			if(prob(10 + med_skill) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 				to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 			else
 				use(1)
@@ -178,7 +178,7 @@
 								to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "a lot of " : ""]pain."))
 							else
 								to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
-					if(prob(10 + user.stats.getStat(STAT_BIO)))
+					if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 					else
 						used++
@@ -240,7 +240,7 @@
 					SPAN_NOTICE("[user] salved wounds on [M]'s [affecting.name]."),
 					SPAN_NOTICE("You salved wounds on [M]'s [affecting.name].")
 				)
-				if(prob(10 + user.stats.getStat(STAT_BIO)))
+				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					use(1)
@@ -347,7 +347,7 @@
 				W.bandage()
 				W.disinfect()
 				W.heal_damage(heal_brute)
-				if(prob(10 + user.stats.getStat(STAT_BIO)))
+				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					used++
@@ -438,7 +438,7 @@
 					SPAN_NOTICE("You cover wounds on [M]'s [affecting.name] with regenerative membrane.")
 				)
 				affecting.heal_damage(0,heal_burn)
-				if(prob(10 + user.stats.getStat(STAT_BIO)))
+				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					use(1)
