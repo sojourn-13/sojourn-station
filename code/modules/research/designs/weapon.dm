@@ -229,19 +229,10 @@
 	build_path = /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
 
 //Weapon mods
-/datum/design/research/item/weapon_upgrade
+/datum/design/research/item/weapon/weapon_upgrade
 	name_category = "weapon upgrades"
 	category = CAT_GUNMODS
 
-/datum/design/research/item/weapon_upgrade/penetrator
-	name = "Soteria \"Penetrator\" magnetic accelerator barrel"
-	build_path = /obj/item/weapon/gun_upgrade/barrel/mag_accel
-
-/datum/design/research/item/weapon_upgrade/overheat
-	name = "Soteria \"Caster\" magnetic overheat barrel"
-	build_path = /obj/item/weapon/gun_upgrade/barrel/overheat
-
-// HIGH-TECH GUNMODS
 /datum/design/research/item/weapon/weapon_upgrade/penetrator
 	name = "Soteria \"Penetrator\" magnetic accelerator barrel"
 	build_path = /obj/item/weapon/gun_upgrade/barrel/mag_accel
