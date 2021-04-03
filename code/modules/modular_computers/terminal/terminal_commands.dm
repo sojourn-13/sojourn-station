@@ -174,7 +174,7 @@ Subtypes
 	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
 	if(!comp || !comp.enabled || !comp.network_card || !comp.network_card.check_functionality())
 		return
-	return "... Estimating location: [get_area(comp)]"
+	return "... Estimating location: [get_area(comp)] at [comp.x], [comp.y], [comp.z]!"
 
 /datum/terminal_command/ping
 	name = "ping"

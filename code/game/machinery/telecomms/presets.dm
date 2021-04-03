@@ -66,7 +66,7 @@
 
 /obj/machinery/telecomms/receiver/preset_cent
 	id = "CentComm Receiver"
-	network = "nadezhda"	
+	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("receiverCent")
 	freq_listening = list(DTH_FREQ)
@@ -163,7 +163,7 @@
 
 /obj/machinery/telecomms/server/presets/service
 	id = "service server"
-	freq_listening = list(SRV_FREQ)
+	freq_listening = list(SRV_FREQ, PT_BT_FREQ, PT_RT_FREQ, PT_YT_FREQ, PT_GT_FREQ)
 	autolinkers = list("service")
 
 /obj/machinery/telecomms/server/presets/common
