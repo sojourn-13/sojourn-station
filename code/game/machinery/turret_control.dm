@@ -41,11 +41,18 @@
 	name = "advanced turret"
 	desc = "A highly modified turret with a stronger laser and self repair system."
 	installation = /obj/item/weapon/gun/energy/lasercannon
-	check_synth = 1
-	ailock = 1
+
+	check_arrest = TRUE //Sure
+	check_records = TRUE //Sure
+	check_weapons = TRUE //So we shoot propis with their guns
+	check_access = TRUE //Respects access
+	check_anomalies = FALSE //We dont attack simples
+	check_synth = FALSE //so dont shoot are own
+
+	ailock = TRUE
 	use_power = NO_POWER_USE
 	shot_delay = 5
-	auto_repair = 1
+	auto_repair = TRUE
 
 /obj/machinery/turretid/Destroy()
 	if(control_area)
