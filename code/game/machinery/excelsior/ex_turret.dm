@@ -152,6 +152,7 @@
 	density = TRUE
 	lethal = TRUE
 	raised = TRUE
+	colony_allied_turret = TRUE
 	circuit = /obj/item/weapon/circuitboard/artificer_turret
 	installation = null
 	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
@@ -334,7 +335,10 @@
 	if(L.stat == DEAD)
 		return TURRET_NOT_TARGET
 
-	if(emagged)		// If emagged not even the dead get a rest
+	if(!emagged && colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
+		return TURRET_NOT_TARGET
+
+	if(emagged)	// If emagged not even the dead get a rest
 		return TURRET_PRIORITY_TARGET
 
 	if(ishuman(L))
