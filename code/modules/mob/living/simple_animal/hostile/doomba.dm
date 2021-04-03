@@ -28,6 +28,7 @@
 	melee_damage_upper = 10
 	leather_amount = 0
 	bones_amount = 0
+	cleaning = TRUE
 
 	//Drops
 	var/drop1 = /obj/item/weapon/scrap_lump
@@ -211,6 +212,7 @@
 	speed = 6
 	health = 125
 	maxHealth = 125
+	cleaning = FALSE
 
 /mob/living/simple_animal/hostile/roomba/synthetic/epistol
 	name = "Greyson Positronic FBP-SEC Mark I unit"

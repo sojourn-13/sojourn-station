@@ -37,6 +37,7 @@
 	var/datum/reagents/udder = null
 	var/offspring_left = 0
 	var/milk_type = "tatonka_milk"
+	colony_friend = TRUE
 
 /mob/living/simple_animal/tatonka/New()
 	udder = new(50)
@@ -127,6 +128,7 @@
 	hunger_enabled = FALSE
 	default_pixel_x = -16
 	pixel_x = -16
+	colony_friend = TRUE
 
 /mob/living/simple_animal/baby_tatonka/New()
 	..()
@@ -165,7 +167,7 @@
 		/obj/item/animal_part/tangu_horn,
 		/obj/item/animal_part/tangu_horn,
 		/obj/item/animal_part/tangu_horn)
-
+	colony_friend = TRUE
 
 //Baby Clucker
 //Looks nearly the same as a regular chick.
@@ -191,6 +193,7 @@
 	autoseek_food = 0
 	beg_for_food = 0
 	hunger_enabled = FALSE
+	colony_friend = TRUE
 
 /mob/living/simple_animal/chick_clucker/New()
 	..()
@@ -236,6 +239,7 @@
 	bones_amount = 4 //The amount of bone sheets dropped.
 	has_special_parts = TRUE //var for checking during the butcher process.
 	special_parts = list(/obj/item/animal_part/clucker_feather)
+	colony_friend = TRUE
 
 /mob/living/simple_animal/clucker/New()
 	..()

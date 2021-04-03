@@ -48,6 +48,7 @@
 
 	var/waring_faction = "" //What faction do we hate?
 	var/waring_faction_multy = 1 //How much more damage do we do to our ennemy faction?
+	colony_friend = FALSE
 
 
 	var/min_air_pressure = 50 //below this, brute damage is dealt

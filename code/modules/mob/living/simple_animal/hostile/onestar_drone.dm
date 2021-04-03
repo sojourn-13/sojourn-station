@@ -5,11 +5,13 @@
 	icon_state = "drone_os"
 	faction = "onestar"
 	attacktext = "zapped"
+
 	health = 40
 	maxHealth = 40
 	melee_damage_lower = 5
 	melee_damage_upper = 13
 	ranged_cooldown = 5
+
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0
@@ -19,7 +21,10 @@
 	min_n2 = 0
 	max_n2 = 0
 	minbodytemp = 0
+
 	speed = 4
+	cleaning = TRUE //we do clean prase us!
+
 	light_range = 3
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
@@ -93,6 +98,7 @@
 	screen_type = "os_red"
 	projectiletype = /obj/item/projectile/flamer_lob
 	ranged = 1
+	cleaning = FALSE
 
 /mob/living/simple_animal/hostile/onestar_custodian/chef/New()
 	. = ..()
@@ -122,6 +128,7 @@
 	ranged = 1
 	melee_damage_lower = 7
 	melee_damage_upper = 15
+	cleaning = FALSE
 
 /mob/living/simple_animal/hostile/onestar_custodian/engineer/New()
 	. = ..()

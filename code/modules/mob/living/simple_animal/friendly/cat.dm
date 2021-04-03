@@ -20,6 +20,7 @@
 	holder_type = /obj/item/weapon/holder/cat
 	mob_size = MOB_SMALL
 	possession_candidate = 1
+	colony_friend = TRUE
 
 	scan_range = 3//less aggressive about stealing food
 	metabolic_factor = 0.75

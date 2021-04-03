@@ -231,6 +231,7 @@
 	name = "opifex viscerator"
 	desc = "A small, twin-bladed machine capable of inflicting very deadly lacerations. This one is an opifex model and thus targets non-colony humanoids, animals, and cht'mants."
 	faction = "neutral"
+	colony_friend = TRUE
 
 
 /mob/living/simple_animal/hostile/elitemercenary

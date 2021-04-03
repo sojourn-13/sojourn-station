@@ -42,7 +42,7 @@
 //Opifex spawner
 /obj/item/weapon/grenade/spawnergrenade/manhacks/opifex
 	name = "opifex manhack grenade"
-	desc = "Deploys a swarm of floating robots that will attack animals and non-colony humanoids nearby. Due to targeting issues the manhacks will attack cht'mants and be shot by colony defense turrets be they opifex, guild, laser, or church defense grids, use with caution."
+	desc = "Deploys a swarm of floating robots that will attack animals and non-colony humanoids nearby. Due to targeting issues the manhacks will be shot by colony defense turrets be they opifex, guild, laser, or church defense grids, use with caution."
 	spawner_type = /mob/living/simple_animal/hostile/viscerator/opifex
 
 //Troll grenade
@@ -55,7 +55,7 @@
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot
 	name = "\improper Prospie 'Eat-shit m8' lobber"
-	desc = "A shitty rapid 'build-a-bot' grenade produced by prospector salvagers using designs 'borrowed' from the Soteria, handy for a build-a-bot guard or as a disposable decoy. Due to targeting issues the junkbots will attack cht'mants and be shot by turrets of all varieties."
+	desc = "A shitty rapid 'build-a-bot' grenade produced by prospector salvagers using designs 'borrowed' from the Soteria, handy for a build-a-bot guard or as a disposable decoy. Due to targeting issues the junkbots will be shot by turrets of all varieties."
 	deliveryamt = 1
 	icon_state = "screamer"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied/junkbot
@@ -64,7 +64,7 @@
 //Greyson spawner grenades
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba
 	name = "\improper GP-SI roomba grenade"
-	desc = "Deploys a swarm of roomba that will attack animals and non-colony humanoids nearby. Due to targeting issues the roomba's will attack cht'mants and be shot by turrets of all varieties."
+	desc = "Deploys a swarm of roomba that will attack animals and non-colony humanoids nearby. Due to targeting issues the roomba's will be shot by turrets of all varieties."
 	deliveryamt = 3
 	icon_state = "greyson_nade_small"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/allied
@@ -72,7 +72,7 @@
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/trippers
 	name = "\improper GP-SI armored roomba grenade"
-	desc = "Deploys a swarm of armored roomba that will attack animals and non-colony humanoids nearby. Due to targeting issues the roomba's will attack cht'mants and be shot by turrets of all varieties."
+	desc = "Deploys a swarm of armored roomba that will attack animals and non-colony humanoids nearby. Due to targeting issues the roomba's will be shot by turrets of all varieties."
 	deliveryamt = 3
 	icon_state = "greyson_nade_small"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/trip/armored/allied
@@ -80,7 +80,7 @@
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/gunners
 	name = "\improper GP-SI sword drone grenade"
-	desc = "Deploys a trio of sword bearing robots enhanced with incredible speed and augmetics that will attack animals and non-colony humanoids on sight. Due to targeting issues the robots will attack cht'mants and be shot by turrets of all varieties."
+	desc = "Deploys a trio of sword bearing robots enhanced with incredible speed and augmetics that will attack animals and non-colony humanoids on sight. Due to targeting issues the robots will be shot by turrets of all varieties."
 	deliveryamt = 3
 	icon_state = "greyson_nade_medium"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied
@@ -88,7 +88,7 @@
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/smg_roomba
 	name = "\improper GP-SI mantis drone grenade"
-	desc = "Deploys a trio of sword bearing robots enhanced with incredible speed and augmetics that will attack animals and non-colony humanoids on sight. Due to targeting issues the robots will attack cht'mants and be shot by turrets of all varieties."
+	desc = "Deploys a trio of sword bearing robots enhanced with incredible speed and augmetics that will attack animals and non-colony humanoids on sight. Due to targeting issues the robots will be shot by turrets of all varieties."
 	deliveryamt = 2
 	icon_state = "greyson_nade_large"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced
