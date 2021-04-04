@@ -50,7 +50,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			var/mob/living/L = A
 			if(L.faction == src.faction && !attack_same)
 				continue
-			if(L.colony_friend)
+			if(L.colony_friend && colony_friend)
 				continue
 			else if(L in friends)
 				continue
