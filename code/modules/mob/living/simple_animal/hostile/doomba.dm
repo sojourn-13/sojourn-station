@@ -289,6 +289,7 @@
 	icon_state = "roomba_SI"
 	melee_damage_lower = 10
 	melee_damage_upper = 15
+	colony_friend = TRUE
 
 /mob/living/simple_animal/hostile/roomba/trip/armored/allied
 	name = "Soteria Institute Armored Roomba"
