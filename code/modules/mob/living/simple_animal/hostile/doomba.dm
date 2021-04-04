@@ -284,8 +284,7 @@
 //Roomba
 /mob/living/simple_animal/hostile/roomba/allied
 	name = "Soteria Institute Combat Roomba"
-	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat. \
-	Due to similarities between hostile bugs and cht'mants, they'll be attacked on sight. Colony turrets will shoot drones on sight, an oversight the Soteria are still working out."
+	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat."
 	faction = "neutral"
 	icon_state = "roomba_SI"
 	melee_damage_lower = 10
@@ -293,8 +292,7 @@
 
 /mob/living/simple_animal/hostile/roomba/trip/armored/allied
 	name = "Soteria Institute Armored Roomba"
-	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat and given additional armor. \
-	Due to similarities between hostile bugs and cht'mants, they'll be attacked on sight. Colony turrets will shoot drones on sight, an oversight the Soteria are still working out."
+	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat and given additional armor."
 	faction = "neutral"
 	icon_state = "roomba_SI_armor"
 	melee_damage_lower = 12
@@ -303,8 +301,7 @@
 //Robots
 /mob/living/simple_animal/hostile/roomba/synthetic/allied
 	name = "Soteria Institute Sword Drone"
-	desc = "A soteria branded sword drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight. Due to similarities between hostile bugs and cht'mants, \
-	they'll be attacked on sight. Colony turrets will shoot drones on sight, an oversight the Soteria are still working out."
+	desc = "A soteria branded sword drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
 	faction = "neutral"
 	icon = 'icons/mob/mobs-humanoid.dmi'
 	icon_state = "soteria"
@@ -327,8 +324,7 @@
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced
 	name = "Soteria Institute Mantis Drone"
-	desc = "A soteria branded heavily armored mantis drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight. Due to similarities between hostile bugs and cht'mants, \
-	they'll be attacked on sight. Colony turrets will shoot drones on sight, an oversight the Soteria are still working out."
+	desc = "A soteria branded heavily armored mantis drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
 	icon_state = "soteria_mantis"
 	health = 350
 	maxHealth = 350

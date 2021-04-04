@@ -576,9 +576,6 @@ var/list/turret_icons
 	if(!istype(L))
 		return TURRET_NOT_TARGET
 
-	if(!istype(L))
-		return TURRET_NOT_TARGET
-
 	if(L.invisibility >= INVISIBILITY_LEVEL_ONE) // Cannot see him. see_invisible is a mob-var
 		return TURRET_NOT_TARGET
 
@@ -618,7 +615,10 @@ var/list/turret_icons
 		return TURRET_NOT_TARGET
 
 	if(isanimal(L) || issmall(L)) // Animals are not so dangerous
-		return check_anomalies ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
+		if(colony_allied_turret && L.colony_friend)
+			return TURRET_NOT_TARGET
+		else
+			return check_anomalies ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
 
 	//if(isxenomorph(L) || isalien(L)) // Xenos are dangerous
 	//	return check_anomalies ? TURRET_PRIORITY_TARGET	: TURRET_NOT_TARGET
