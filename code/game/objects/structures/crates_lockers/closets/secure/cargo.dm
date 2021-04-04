@@ -81,6 +81,7 @@
 	new /obj/item/clothing/head/soft(src)
 	new /obj/item/device/scanner/price(src)
 	new /obj/item/weapon/gun/projectile/revolver/little_comet(src)
+	new /obj/item/weapon/gun_upgrade/mechanism/glass_widow(src)
 	new /obj/item/ammo_magazine/ammobox/pistol_35(src)
 	new /obj/item/ammo_magazine/ammobox/pistol_35/rubber(src)
 
@@ -185,6 +186,10 @@
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
+	if(prob(25))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
+	if(prob(10))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
 //Salvager lockers have less potential combat power by capped potential while still balancing with the most likely to spawn gear.
@@ -276,6 +281,10 @@
 		new /obj/item/weapon/storage/firstaid/adv(src)
 	else
 		new /obj/item/weapon/storage/firstaid/combat(src)
+	if(prob(50))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
+	if(prob(25))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
 //Foremans can technically do the jobs of both prospectors and salvagers (but not as well) and as such have better odds on the gear they start with.
@@ -405,6 +414,10 @@
 		new /obj/item/weapon/storage/firstaid/adv(src)
 	else
 		new /obj/item/weapon/storage/firstaid/combat(src)
+	if(prob(40))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
+	if(prob(20))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
 /obj/structure/closet/secure_closet/personal/artist

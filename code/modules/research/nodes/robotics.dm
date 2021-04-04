@@ -234,7 +234,8 @@
 
 	unlocks_designs = list(
 		/datum/design/research/item/mecha/ccw_armor,
-		/datum/design/research/item/mecha/proj_armor
+		/datum/design/research/item/mecha/proj_armor,
+		/datum/design/research/item/mecha/shield_droid
 		)
 
 /datum/technology/mech_weaponry_modules

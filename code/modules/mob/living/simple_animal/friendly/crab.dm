@@ -21,6 +21,7 @@
 	var/obj/item/inventory_head
 	var/obj/item/inventory_mask
 	possession_candidate = 1
+	colony_friend = TRUE
 
 /mob/living/simple_animal/crab/Life()
 	..()
@@ -60,6 +61,7 @@
 	faction = "pond"
 	density = 0
 	wander = 1
+	colony_friend = TRUE
 
 /mob/living/simple_animal/hostile/ratking
 	name = "rat king"
@@ -108,3 +110,4 @@
 	mob_size = 3
 	faction = "pond"
 	density = 0
+	colony_friend = TRUE

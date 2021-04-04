@@ -26,7 +26,7 @@
 		STAT_VIG = 2
 	)
 
-	perks = list(/datum/perk/tenacity, /datum/perk/gutsandglory)
+	perks = list(/datum/perk/tenacity, /datum/perk/iwillsurvive)
 
 	spawn_flags = CAN_JOIN
 

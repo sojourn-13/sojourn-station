@@ -8,7 +8,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Nadezhda Council"
-	difficulty = "Hard."
+	difficulty = "Stressful."
 	selection_color = "#94a87f"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
@@ -30,7 +30,7 @@
 		STAT_COG = 25
 	)
 
-	perks = list(/datum/perk/selfmedicated, /datum/perk/advanced_medical)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -65,7 +65,7 @@
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "the Chief Biolab Overseer"
-	difficulty = "Medium."
+	difficulty = "Boring to Overwhelming."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
@@ -82,7 +82,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(/datum/perk/selfmedicated, /datum/perk/advanced_medical)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -112,17 +112,16 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief Biolab Overseer"
-	difficulty = "Medium."
+	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
 
 	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits
+		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits,
+		access_psychiatrist, access_genetics, access_robotics, access_xenobiology, access_tox, access_xenoarch
 	)
-
-	perks = list(/datum/perk/selfmedicated)
 
 	stat_modifiers = list(
 		STAT_TGH = 20,
@@ -161,7 +160,7 @@
 	spawn_positions = 1
 	wage = WAGE_PROFESSIONAL
 	supervisors = "the Soteria Biolab Overseer"
-	difficulty = "Easy To Medium."
+	difficulty = "Soul Crushing."
 	selection_color = "#a8b69a"
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
@@ -175,8 +174,6 @@
 		STAT_COG = 15,
 		STAT_VIG = 5
 	)
-
-	perks = list(/datum/perk/selfmedicated)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -206,7 +203,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Soteria Biolab Overseer"
-	difficulty = "Medium."
+	difficulty = "Underappreciated."
 	selection_color = "#a8b69a"
 	wage = WAGE_LABOUR_HAZARD
 
@@ -222,7 +219,7 @@
 		STAT_VIG = 10,
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/medicalexpertise)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,

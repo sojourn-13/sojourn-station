@@ -38,6 +38,9 @@
 	var/last_fired = 0		//1: if the turret is cooling down from a shot, 0: turret is ready to fire
 	var/shot_delay = 15		//1.5 seconds between each shot
 
+// Used to not target allied mobs
+	var/colony_allied_turret = FALSE //Are we allied with the colony?
+
 	var/check_arrest = TRUE	//checks if the perp is set to arrest
 	var/check_records = TRUE	//checks if a security record exists at all
 	var/check_weapons = FALSE	//checks if it can shoot people that have a weapon they aren't authorized to have
@@ -89,6 +92,7 @@
 	check_records = FALSE
 	check_weapons = FALSE
 	check_anomalies = TRUE
+	colony_allied_turret = TRUE
 	installation = /obj/item/weapon/gun/energy/retro
 
 /obj/machinery/porta_turret/stationary
@@ -227,6 +231,7 @@ var/list/turret_icons
 		settings[++settings.len] = list("category" = "Check Arrest Status", "setting" = "check_arrest", "value" = check_arrest)
 		settings[++settings.len] = list("category" = "Check Access Authorization", "setting" = "check_access", "value" = check_access)
 		settings[++settings.len] = list("category" = "Check misc. Lifeforms", "setting" = "check_anomalies", "value" = check_anomalies)
+		settings[++settings.len] = list("category" = "Check misc. Alliement To Local SI Systems", "setting" = "colony_allied_turret", "value" = colony_allied_turret)
 		data["settings"] = settings
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -278,6 +283,8 @@ var/list/turret_icons
 			check_access = value
 		else if(href_list["command"] == "check_anomalies")
 			check_anomalies = value
+		else if(href_list["command"] == "colony_allied_turret")
+			colony_allied_turret = value
 
 		return 1
 
@@ -569,10 +576,16 @@ var/list/turret_icons
 	if(!istype(L))
 		return TURRET_NOT_TARGET
 
+	if(!istype(L))
+		return TURRET_NOT_TARGET
+
 	if(L.invisibility >= INVISIBILITY_LEVEL_ONE) // Cannot see him. see_invisible is a mob-var
 		return TURRET_NOT_TARGET
 
 	if(!L)
+		return TURRET_NOT_TARGET
+
+	if(!emagged && colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
 
 	if(!emagged && issilicon(L))	// Don't target silica

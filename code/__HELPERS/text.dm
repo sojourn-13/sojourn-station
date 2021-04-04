@@ -410,7 +410,6 @@ proc/TextPreview(var/string, var/len=40)
 
 
 /proc/pencode2html(t)
-	t = cp1251_to_utf8(t)
 	t = replacetext(t, "\n", "<BR>")
 	t = replacetext(t, "\[center\]", "<center>")
 	t = replacetext(t, "\[/center\]", "</center>")

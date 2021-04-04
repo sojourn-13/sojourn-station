@@ -8,14 +8,17 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	faction = "hostile"
 	var/stance = HOSTILE_STANCE_IDLE	//Used to determine behavior
 	var/mob/living/target_mob
-	var/attack_same = 0
-	var/ranged = 0
-	var/rapid = 0
+
+	var/attack_same = FALSE
+
+	var/ranged = FALSE
+	var/rapid = FALSE
 	var/projectiletype
 	var/projectilesound
 	var/casingtype
-	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
+
 	var/list/friends = list()
+
 	var/break_stuff_probability = 100
 	var/ranged_ignores_vision
 	stop_automated_movement_when_pulled = 0
@@ -45,7 +48,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 
 		if(isliving(A))
 			var/mob/living/L = A
-			if(L.faction == src.faction && !attack_same)
+			if(L.faction == src.faction && !attack_same && L.colony_friend)
 				continue
 			else if(L in friends)
 				continue
@@ -55,21 +58,21 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 					T = L
 					break
 
-		else if(istype(A, /obj/mecha)) // Our line of sight stuff was already done in ListTargets().
+		else if(istype(A, /obj/mecha) && !friendly_to_colony) // Our line of sight stuff was already done in ListTargets().
 			var/obj/mecha/M = A
 			if (M.occupant)
 				stance = HOSTILE_STANCE_ATTACK
 				T = M
 				break
 
-		if(istype(A, /obj/machinery/bot))
+		if(istype(A, /obj/machinery/bot) && !friendly_to_colony)
 			var/obj/machinery/bot/B = A
 			if (B.health > 0)
 				stance = HOSTILE_STANCE_ATTACK
 				T = B
 				break
 
-		if(istype(A, /obj/machinery/porta_turret))
+		if(istype(A, /obj/machinery/porta_turret) && !friendly_to_colony)
 			var/obj/machinery/porta_turret/P = A
 			if (P.health > 0)
 				stance = HOSTILE_STANCE_ATTACK
@@ -267,6 +270,9 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 
 /mob/living/simple_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
 	var /mob/living/simple_animal/hostile/shooter = src
+	if(ranged_cooldown <= world.time) //Modula for admins to set them at different things
+		to_chat(src, "You gun isnt ready to fire!.")
+		return
 	if(shooter.ranged ==1)
 		shooter.OpenFire(targetDD)
 

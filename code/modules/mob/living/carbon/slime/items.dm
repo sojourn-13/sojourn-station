@@ -157,6 +157,7 @@
 			newname = "pet slime"
 		pet.name = newname
 		pet.real_name = newname
+		pet.colony_friend = TRUE //Hardcode hack to make sure
 		qdel(src)
 
 /obj/item/weapon/slimepotion2
@@ -188,6 +189,7 @@
 			newname = "pet slime"
 		pet.name = newname
 		pet.real_name = newname
+		pet.colony_friend = TRUE //Hardcode hack to make sure
 		qdel(src)
 
 

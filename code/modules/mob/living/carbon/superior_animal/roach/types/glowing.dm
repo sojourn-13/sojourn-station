@@ -10,6 +10,8 @@
 	maxHealth = 45
 	health = 45
 
+	flash_resistances = 10 //We are the light
+
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/glowing
 
 	contaminant_immunity = TRUE

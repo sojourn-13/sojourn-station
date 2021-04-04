@@ -17,7 +17,6 @@
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn
 
-
 /obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn
 	name = "\"Gladstone\" stakeout shotgun"
 	desc = "A venerable shotgun that's been destroyed by some sort of heartless monster. Can hold up to 4+1 20mm shells in its tube magazine."
@@ -31,4 +30,23 @@
 	price_tag = 400
 	recoil_buildup = 22
 	one_hand_penalty = 27 //full sized shotgun level
+	saw_off = FALSE
+
+/obj/item/weapon/gun/projectile/shotgun/pump/gladstone/queen
+	name = "\"Queen\" hunting shotgun"
+	desc = "A venerable shotgun with incredibly dubious patent claims by H&S Arms, it serves as a common shotgun alongside a number of virtually ideantical weapons across the galaxy. \
+			 Can hold up to 14+1 20mm shells in its tube magazine. This one has been endlessly tinkered by Jea Smails giving it just the more power and looks it needed to stop crimes in 2 shots."
+	icon = 'icons/obj/guns/projectile/shotgun_queen.dmi'
+	icon_state = "queen"
+	item_state = "queen"
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	max_shells = 14 //half a box in this massive gun
+	caliber = CAL_SHOTGUN
+	w_class = ITEM_SIZE_HUGE
+	damage_multiplier = 1.1
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 26)
+	price_tag = 20000 //Its amazing!
+	recoil_buildup = 12
+	one_hand_penalty = 30 //lets not really reward 1 handing
 	saw_off = FALSE

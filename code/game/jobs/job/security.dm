@@ -291,6 +291,8 @@
 		STAT_ROB = 10,
 	)
 
+	perks = list(/datum/perk/medicalexpertise)
+
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/chem_catalog,

@@ -35,8 +35,11 @@
 	src.modules += new /obj/item/weapon/tool/knife/tacknife(src) //To deal with bodies and cutting down webs
 	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //borrows and the like.
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
-	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs
+	//src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs - its broken
 	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
 
 	R.icon 		 = 'icons/mob/robots_wide.dmi'
@@ -106,6 +109,9 @@
 	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
 	src.modules += new /obj/item/roller_holder(src)
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
 	src.emag.name = "Polyacid spray"
@@ -193,6 +199,9 @@
 	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
 	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //borrows and the like.
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
 	src.emag.name = "Lube spray"
@@ -237,7 +246,7 @@
 	chemistry, xenobiology and robotics."
 
 	stat_modifiers = list(
-		STAT_BIO = 30,
+		STAT_BIO = 40,
 		STAT_COG = 40,
 		STAT_MEC = 30
 	)
@@ -255,15 +264,20 @@
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src) //Robotic repair and such
 	src.modules += new /obj/item/weapon/tool/scalpel(src)
 	src.modules += new /obj/item/weapon/tool/saw/circular(src)
-	src.modules += new /obj/item/weapon/extinguisher/mini(src)
+	src.modules += new /obj/item/weapon/tool/multitool/robotic(src) //hydro
+	src.modules += new /obj/item/weapon/robot_harvester(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
 	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.modules += new /obj/item/weapon/storage/bag/produce(src)
+	src.modules += new /obj/item/device/science_tool(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/weapon/storage/part_replacer/mini(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/hand_tele(src) //Why
@@ -338,6 +352,9 @@
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
 	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
 

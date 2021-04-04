@@ -1,4 +1,25 @@
+// Tools/misc clothing?
 
+
+/datum/design/research/item/clothing/weldermask
+	name = "welding mask"
+	build_path = /obj/item/clothing/head/welding
+
+/datum/design/research/item/tool/combat_shovel
+	name = "combat shovel"
+	build_path = /obj/item/weapon/tool/shovel/combat
+
+/datum/design/research/item/tool/rcd
+	name = "rapid construction device"
+	build_path = /obj/item/weapon/rcd
+
+/datum/design/research/item/tool/rcd_ammo
+	name = "matter cartridge"
+	build_path = /obj/item/weapon/rcd_ammo
+
+/datum/design/research/item/tool/pneumatic_crowbar
+	name = "pneumatic crowbar"
+	build_path = /obj/item/weapon/tool/crowbar/pneumatic
 
 /datum/design/research/item/light_replacer
 	name = "light replacer"
@@ -11,10 +32,9 @@
 	build_path = /obj/item/device/science_tool
 	category = "Misc"
 
-/datum/design/research/item/hud/security
+/datum/design/research/item/clothing/security
 	name = "security records"
 	build_path = /obj/item/clothing/glasses/hud/security
-	category = CAT_WEAPON //Strongest weapon in the game is a ED/Beesky combo
 
 /datum/design/research/item/botany_disk
 	name = "flora data disk"
