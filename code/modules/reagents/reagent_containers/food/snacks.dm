@@ -1760,6 +1760,19 @@
 	preloaded_reagents = list("protein" = 3, "carbon" = 2)
 	cooked = TRUE
 
+/obj/item/weapon/reagent_containers/food/snacks/toasted_guild_sandwich
+	name = "delux toasted sandwich"
+	desc = "A perfectly toasted sandwich with all the works."
+	icon_state = "toastedsandwich"
+	trash = /obj/item/trash/plate
+	filling_color = "#D9BE29"
+	bitesize = 2
+	center_of_mass = list("x"=16, "y"=4)
+	nutriment_desc = list("toasted bread" = 3, "cheese" = 3, "delux toasted sandwich" = 5)
+	nutriment_amt = 3
+	preloaded_reagents = list("protein" = 3, "machine binding ritual" = 3, )
+	cooked = TRUE
+
 /obj/item/weapon/reagent_containers/food/snacks/grilledcheese
 	name = "grilled cheese sandwich"
 	desc = "Goes great with Tomato soup!"

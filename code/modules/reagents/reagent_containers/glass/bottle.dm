@@ -120,6 +120,11 @@
 	icon_state = "holyflask"
 	preloaded_reagents = list("adminordrazine" = 60)
 
+/obj/item/weapon/reagent_containers/glass/bottle/petrel
+	name = "diesel bottle"
+	desc = "A small bottle. Contains the liquid diesel useful for powering diesel generators or fire bombs."
+	preloaded_reagents = list("fuel" = 60)
+
 /obj/item/weapon/reagent_containers/glass/bottle/tangu_extract
 	name = "tangu extract bottle"
 	desc = "A small bottle. Contains the extract of a tangu horn, a highly valuable universal healing chemical."
