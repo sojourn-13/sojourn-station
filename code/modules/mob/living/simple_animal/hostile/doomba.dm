@@ -290,6 +290,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/hostile/roomba/trip/armored/allied
 	name = "Soteria Institute Armored Roomba"
@@ -316,6 +317,8 @@
 	melee_damage_upper = 30
 	stop_automated_movement_when_pulled = TRUE
 	wander = FALSE
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/FindTarget()
 	. = ..()
