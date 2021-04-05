@@ -292,8 +292,7 @@
 	name = "cerberus"
 	desc = "A domesticated hell diver kept fat, happy, and loyal by the local hunting lodge that breed them as hunting allies and guard animals. Favored especially for their asexual \
 	reproduction after being fed various mushrooms, a fact that baffles some soteria scientists. Unlike a standard hell diver the cerberus isn't as \
-	obsessed with food but gladly lets itself get pulled along. Hunters beware, however, as the instinct to attack insectile creatures makes even these attempt to maul cht'mants to death, a trait \
-	that hasn't been bred out of them yet. Turrets from the colony will also detect these creatures as hostile life, shooting them on sight."
+	obsessed with food but gladly lets itself get pulled along. The instinct to attack insectile creatures that makes these attempt to maul cht'mants to death, has been bred out of them."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "pigrat"
 	icon_living = "pigrat"
@@ -306,6 +305,8 @@
 	has_special_parts = TRUE //var for checking during the butcher process.
 	special_parts = list(/obj/item/animal_part/cerberus_snout)
 	var/offspring_left = 0
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/hostile/helldiver/cerberus/Life()
 	. = ..()
@@ -337,9 +338,7 @@
 /mob/living/simple_animal/hostile/helldiver/cerberus/chimera
 	name = "chimera"
 	desc = "A mutated strain of a domesticated cerberus, rarely appearing and much sleeker than their lesser cousins. Chimera are faster, better armored, and much more lethal than a cerberus \
-	thanks to its maw containing a huge singular fang, making them prized companions by all hunters. While strong, they carry the same problems a regular cerberus does, in that they attack \
-	cht'mants on sight and are viewed as hostile life forms \
-	most automated combat systems."
+	thanks to its maw containing a huge singular fang, making them prized companions by all hunters. The instinct to attack insectile creatures that makes these attempt to maul cht'mants to death, has been bred out of them."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "nightstalker"
 	icon_living = "nightstalker"
@@ -388,6 +387,8 @@
 	autoseek_food = 0
 	beg_for_food = 0
 	hunger_enabled = FALSE
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/baby_cerberus/New()
 	..()
