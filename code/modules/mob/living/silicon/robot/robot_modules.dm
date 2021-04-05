@@ -1150,9 +1150,9 @@ var/global/list/robot_modules = list(
 	networks = list(NETWORK_ENGINEERING)
 	channels = list("Engineering" = 1, "Common" = 1)
 	stat_modifiers = list(
-		STAT_COG = 15,
+		STAT_COG = 25,
 		STAT_MEC = 40
-	)
+	) //so we can use rnd consoles for parts ect
 
 /obj/item/weapon/robot_module/drone/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
