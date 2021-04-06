@@ -271,8 +271,8 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	A.launch(target, def_zone)
 
 /mob/living/simple_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
-	var /mob/living/simple_animal/hostile/shooter = src
-	if(ranged_cooldown <= world.time) //Modula for admins to set them at different things
+	var /mob/living/simple_animal/hostile/shooter = src //TODO: Make it work for alt click in perfs like rig code
+	if(ranged_cooldown >= world.time) //Modula for admins to set them at different things
 		to_chat(src, "You gun isnt ready to fire!.")
 		return
 	if(shooter.ranged ==1)
