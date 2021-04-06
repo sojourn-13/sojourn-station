@@ -77,7 +77,7 @@
 	name = "GP-SI \"Posi-cell 16000L\""
 	desc = "GP-SI branded rechargeable L-standardized power cell that recharges itself over time. This type has yet to hit the market!"
 	icon_state = "greyson_b_omega"
-	maxcharge = 20000
+	maxcharge = 16000
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_PLATINUM = 3, MATERIAL_URANIUM = 6)
@@ -192,7 +192,7 @@
 	maxcharge = 1000
 
 /obj/item/weapon/cell/medium/greyson
-	name = "GP-SI \"Posi-cell 1200M\""
+	name = "GP-SI \"Posi-cell 1600M\""
 	desc = "GP-SI branded rechargeable M-standardized power cell that recharges itself over time. This type has yet to hit the market!"
 	icon_state = "greyson_m_omega"
 	maxcharge = 1600

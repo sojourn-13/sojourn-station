@@ -34,13 +34,13 @@
 	category = CAT_WEAPON
 
 /datum/design/research/item/greyson/manhacks_roomba_gunne
-	name = "GP-SI roomba gunner sec grenade"
-	build_path = /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/gunners
+	name = "GP-SI sword drone grenade"
+	build_path = /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/sword
 	category = CAT_WEAPON
 
 /datum/design/research/item/greyson/manhacks_roomba_fbp
-	name = "GP-SI FBP MK II grenade"
-	build_path = /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/smg_roomba
+	name = "GP-SI mantis drone grenade"
+	build_path = /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/mantis
 	category = CAT_WEAPON
 
 /datum/design/research/item/greyson/glass_widow
@@ -59,7 +59,7 @@
 	build_path = /obj/item/weapon/cell/large/greyson
 
 /datum/design/research/item/powercell/medium/grayson
-	name = "GP-SI \"Posi-cell 1200M\""
+	name = "GP-SI \"Posi-cell 1600M\""
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/weapon/cell/medium/greyson
 

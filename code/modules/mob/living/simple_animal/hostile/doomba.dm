@@ -299,6 +299,8 @@
 	icon_state = "roomba_SI_armor"
 	melee_damage_lower = 12
 	melee_damage_upper = 17
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 //Robots
 /mob/living/simple_animal/hostile/roomba/synthetic/allied
@@ -334,6 +336,8 @@
 	maxHealth = 350
 	melee_damage_lower = 30
 	melee_damage_upper = 40
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/junkbot
 	name = "Prospector Junkbot"
@@ -344,3 +348,5 @@
 	maxHealth = 125
 	melee_damage_lower = 15
 	melee_damage_upper = 25
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
