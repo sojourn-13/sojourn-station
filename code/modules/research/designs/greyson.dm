@@ -59,7 +59,7 @@
 	build_path = /obj/item/weapon/cell/large/greyson
 
 /datum/design/research/item/powercell/medium/grayson
-	name = "GP-SI \"Posi-cell 1200M\""
+	name = "GP-SI \"Posi-cell 1600M\""
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/weapon/cell/medium/greyson
 
