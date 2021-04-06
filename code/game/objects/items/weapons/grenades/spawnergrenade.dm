@@ -76,7 +76,7 @@
 	deliveryamt = 3
 	icon_state = "greyson_nade_small"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/trip/armored/allied
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1, MATERIAL_PLASTEEL = 9) //3 plasteel per baton
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/gunners
 	name = "\improper GP-SI sword drone grenade"
