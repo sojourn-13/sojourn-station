@@ -103,6 +103,7 @@
 
 	duties = "Grow food. Ensure a good supply of raw vegetables and core grains - rice and wheat.<br>\
 		Raise animals for eggs, meat and recreation.<br>\
+		Maintain the potted plants around the colony.<br>\
 		Manage invasive flora around the colony and control fungal infestations."
 
 /obj/landmark/join/start/hydro
@@ -181,6 +182,7 @@
 
 	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
 		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\
+		Restock Newscasters to at lest 15 prints.<br>\
 		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
 
 /obj/landmark/join/start/janitor

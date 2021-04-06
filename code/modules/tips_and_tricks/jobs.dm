@@ -11,6 +11,14 @@
     jobs_list = list(/datum/job/smc, /datum/job/swo, /datum/job/supsec, /datum/job/inspector, /datum/job/medspec, /datum/job/trooper, /datum/job/officer, /datum/job/serg)
     tipText = "As a member of security, you have broad access to chase criminals. This does not mean you can take anything you have access to. Taking things from other departments is theft!"
 
+/tipsAndTricks/jobs/plants_are_dieing_gardener
+    jobs_list = list(/datum/job/hydro)
+    tipText = "As the gardener your exspected to maintain potted plants around the colony."
+
+/tipsAndTricks/jobs/newsprint
+    jobs_list = list(/datum/job/janitor)
+    tipText = "Your bundle of newsprint will never run out of paper, make sure to keep those news casters all stocked up."
+
 /tipsAndTricks/jobs/guild_resale_profit
     jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
     tipText = "As Lonestar, you should be buying up valuable things from scavengers and reselling them for a profit. Buy anything of value that's brought to you."

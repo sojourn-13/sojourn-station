@@ -52,3 +52,9 @@
 
 /tipsAndTricks/gameplay/guncases
     tipText = "Gun cases are large and unwieldy but great for transporting rifles and certain weapons in a legal way. Security can supply you with one from their vendor or armory shop!"
+
+/tipsAndTricks/gameplay/newscasters_can_be_maintaind
+    tipText = "Newscasters have limited stock that can be refilled by refitting back in printed news papers."
+
+/tipsAndTricks/gameplay/flashlights_fit_in_baton_holsters
+    tipText = "Tubular and Baton Holsters can fit many things inside them, from flashlights to hatton tubes try to fit just about anything inside them to learn what can and cant fit."
