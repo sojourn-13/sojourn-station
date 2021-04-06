@@ -527,6 +527,7 @@
 	icon_state = "spike"
 	desc = "An array of sharp bits of steel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity. Alternatively you could slap it on the end of a gun barrel as a ghetto bayonet at the cost of some accuracy."
 	matter = list(MATERIAL_STEEL = 2)
+	price_tag = 10
 
 /obj/item/weapon/tool_upgrade/augment/spikes/New()
 	..()
