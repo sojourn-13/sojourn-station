@@ -1,3 +1,5 @@
+ //TODO: Make this link to the in game news casts
+ //TODO: Make them once linked to the news casters, be able to tell you were they are.
 /datum/computer_file/program/newsbrowser
 	filename = "news_browser"
 	filedesc = "News Browser"
