@@ -64,12 +64,8 @@
 			heal_amount -= calculate_expert_surgery_bonus(user)
 		user.visible_message(SPAN_NOTICE("[user] [advanced_medical ? "expertly" : ""] treats the brute damage to [target]'s body with the [tool_name]."), \
 		SPAN_NOTICE("You treat the brute damage to [target]'s body with [tool_name].") )
-		var/charges_needed = target.getBruteLoss() / (heal_amount * -1)
-		// Take the ceiling of charges_needed as required_uses
-		var/required_uses = round(charges_needed) == charges_needed ? charges_needed : round(charges_needed + 1)
-		for(var/i = 0; i < required_uses; i++)
-			if(tool.use(1))
-				target.adjustBruteLoss(heal_amount)
+		if(target.getBruteLoss() > 0 && tool.use(1))
+			target.adjustBruteLoss(heal_amount)
 
 /datum/old_surgery_step/external/brute_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 
@@ -132,10 +128,8 @@
 			heal_amount -= calculate_expert_surgery_bonus(user)
 		user.visible_message(SPAN_NOTICE("[user] [advanced_medical ? "expertly" : ""] treats the burn damage to [target]'s body with the [tool_name]."), \
 			SPAN_NOTICE("You treat the burn damage to [target]'s body with [tool_name].") )
-		var/charges_needed = target.getFireLoss() / (heal_amount * -1)
-		for(var/i = 0; i <= charges_needed; i++)
-			if(tool.use(1))
-				target.adjustFireLoss(heal_amount)
+		if(target.getFireLoss() > 0 && tool.use(1))
+			target.adjustFireLoss(heal_amount)
 
 
 /datum/old_surgery_step/external/burn_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
@@ -191,13 +185,9 @@
 			heal_amount -= calculate_expert_surgery_bonus(user) * 2
 		user.visible_message(SPAN_NOTICE("[user] finishes [advanced_medical ? "expertly" : ""] filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
 		SPAN_NOTICE("You finish filtering out any toxins to [target]'s body and repairing any neural degradation with the [tool_name].") )
-		var/charges_needed = target.getToxLoss() / (heal_amount * -1)
-		if(needs_regeneration && charges_needed <= 0) // Use at least one charge to repair neural degradation
-			charges_needed = 1
-		for(var/i = 0; i <= charges_needed; i++)
-			if(tool.use(1))
-				target.adjustToxLoss(heal_amount)
-				target.timeofdeath = 99999999
+		if((needs_regeneration || target.getToxLoss() > 0) && tool.use(1))
+			target.adjustToxLoss(heal_amount)
+			target.timeofdeath = 99999999
 
 
 /datum/old_surgery_step/external/tox_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
