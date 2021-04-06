@@ -48,6 +48,9 @@
 	stop_automated_movement = 1
 	universal_speak = 1
 
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+
 	var/parrot_state = PARROT_WANDER //Hunt for a perch when created
 	var/parrot_sleep_max = 25 //The time the parrot sits while perched before looking around. Mosly a way to avoid the parrot's AI in life() being run every single tick.
 	var/parrot_sleep_dur = 25 //Same as above, this is the var that physically counts down
@@ -784,6 +787,9 @@
 	response_harm   = "swats"
 	universal_speak = 1
 	wander = 1
+
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/jungle_bird/Initialize()
 	icon_state = "bird-[rand(1, 17)]"
