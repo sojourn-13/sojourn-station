@@ -2,7 +2,7 @@
 /obj/machinery/petrel_maker
 	name = "Greyson Petrel Pump"
 	desc = "A machine for petrel and refined scrap. Originally design by the Greyson Positronic's AI then given to the Artificer's Guild. \
-	When stored plastic as the same or higher just flip the switch on its side to produce a bottle of diesel. \
+	When enough plastic is stored inside, flip the switch on its side to produce a bottle of diesel relative to the ammount of plastic used. \
 	Thanks to advanced blueprint designs by SI it can also take lumps of scrap to crate refined scrap by simply adding them to the pump's storage."
 	icon = 'icons/obj/machines/petrel_maker.dmi'
 	icon_state = "diesel_greyson"

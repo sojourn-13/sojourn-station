@@ -122,7 +122,7 @@
 
 /obj/item/weapon/reagent_containers/glass/bottle/petrel
 	name = "diesel canister"
-	desc = "A small canister. Contains the liquid diesel useful for powering diesel generators or fire bombs."
+	desc = "A small canister. Contains liquid diesel, useful for powering diesel generators or making fire bombs."
 	icon_state = "canister"
 	possible_transfer_amounts = list(5,10,15,25,30,60,120)
 	volume = 120
