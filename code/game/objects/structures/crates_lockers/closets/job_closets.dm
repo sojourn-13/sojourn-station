@@ -52,7 +52,7 @@
  * Janitor
  */
 /obj/structure/closet/jcloset
-	name = "janitorial closet"
+	name = "janitorial closet" //TODO: additonal tools for janitor only
 	desc = "It's a storage unit for janitorial clothes and gear."
 	icon_door = "mixed"
 
@@ -77,6 +77,7 @@
 	new /obj/item/weapon/mop(src)
 	new /obj/item/weapon/soap/deluxe(src)
 	new /obj/item/weapon/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
+	new /obj/item/weapon/newspaper_stack(src)
 
 /obj/structure/closet/custodial
 	name = "church custodial closet"
@@ -111,6 +112,7 @@
 	new /obj/item/weapon/tool/knife/dagger/nt(src)
 	new /obj/item/clothing/suit/armor/vest/custodian(src)
 	new /obj/item/clothing/head/helmet/custodian(src)
+	new /obj/item/weapon/newspaper_stack(src)
 
 /obj/structure/closet/acolyte
 	name = "vector closet"

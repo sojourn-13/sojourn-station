@@ -12,8 +12,13 @@
 	var/pest_kill_str = 0
 	var/weed_kill_str = 0
 
-/obj/item/weapon/plantspray/weeds // -- Skie
+/obj/item/weapon/plantspray/water
+	name = "LSS Plant Mineral Water"
+	desc = "A mix of both water and needed robustharvest for plant survival in enclosed spaces. Do not drink!"
+	item_state = "spray"
+	toxicity = -5 //Heals plants that are toxic basiclly
 
+/obj/item/weapon/plantspray/weeds // -- Skie
 	name = "weed-spray"
 	desc = "It's a toxic mixture, in spray form, to kill small weeds."
 	icon_state = "weedspray"

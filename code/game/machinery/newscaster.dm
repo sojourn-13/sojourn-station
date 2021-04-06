@@ -153,6 +153,9 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 	light_range = 0
 	anchored = 1
 
+/obj/machinery/newscaster/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>The number of newsprints left states [src.paper_remaining].</span>")
 
 /obj/machinery/newscaster/security_unit                   //Security unit
 	name = "security newscaster"
@@ -160,7 +163,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 
 /obj/machinery/newscaster/New()         //Constructor, ho~
 	allCasters += src
-	src.paper_remaining = 15            // Will probably change this to something better
+	src.paper_remaining = rand(3,15)            ///At most 15 prints and at minium 3. No max as storage as of now
 	for(var/obj/machinery/newscaster/NEWSCASTER in allCasters) // Let's give it an appropriate unit number
 		src.unit_no++
 	src.update_icon() //for any custom ones on the map...
@@ -728,6 +731,18 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 		playsound(src.loc, 'sound/effects/hit_on_shattered_glass.ogg', 100, 1)
 		for (var/mob/O in hearers(5, src.loc))
 			O.show_message("<EM>[user.name]</EM> further abuses the shattered [src.name].")
+	if(istype(I, /obj/item/weapon/newspaper) || istype(I, /obj/item/weapon/oddity/common/old_newspaper))
+		qdel(I)
+		ping()
+		src.paper_remaining += 1
+		to_chat(user, "<span class='info'>This Newscaster has [src.paper_remaining] prints left now.</span>")
+		return
+	if(istype(I, /obj/item/weapon/newspaper_stack))
+		ping()
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //No spamming
+		src.paper_remaining += 1
+		to_chat(user, "<span class='info'>This Newscaster has [src.paper_remaining] prints left now.</span>")
+		return
 	else
 		if(istype(I, /obj/item/weapon) )
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -784,6 +799,12 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 //########################################################################################################################
 //###################################### NEWSPAPER! ######################################################################
 //########################################################################################################################
+
+/obj/item/weapon/newspaper_stack
+	name = "newspaper bundle"
+	desc = "A bundle of newspaper ready to hit the ink."
+	icon = 'icons/obj/bureaucracy.dmi'
+	icon_state = "newspaper_stack"
 
 /obj/item/weapon/newspaper
 	name = "newspaper"

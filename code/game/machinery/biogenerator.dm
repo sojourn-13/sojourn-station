@@ -31,6 +31,7 @@
 			list(name="EZ-Nutrient, 30u", cost=30, reagent="eznutrient"),
 			list(name="Left4Zed, 30u", cost=60, reagent="left4zed"),
 			list(name="Robust Harvest, 30u", cost=75, reagent="robustharvest"),
+			list(name="Mineral Water", cost=80, path=/obj/item/weapon/plantspray/water),
 		"Weedkillers",
 			list(name="Weed Killer", cost=30, path=/obj/item/weapon/plantspray/weeds),
 			list(name="Pest Killer", cost=60, path=/obj/item/weapon/plantspray/pests),
