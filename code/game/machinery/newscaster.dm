@@ -805,6 +805,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 	desc = "A bundle of newspaper ready to hit the ink."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "newspaper_stack"
+	w_class = ITEM_SIZE_SMALL //Lets not make it bad to carry
 
 /obj/item/weapon/newspaper
 	name = "newspaper"
