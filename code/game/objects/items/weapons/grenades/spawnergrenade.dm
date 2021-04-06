@@ -78,7 +78,7 @@
 	spawner_type = /mob/living/simple_animal/hostile/roomba/trip/armored/allied
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1, MATERIAL_PLASTEEL = 9) //3 plasteel per baton
 
-/obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/gunners
+/obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/sword
 	name = "\improper GP-SI sword drone grenade"
 	desc = "Deploys a trio of sword bearing robots enhanced with incredible speed and augmetics that will attack animals and non-colony humanoids on sight."
 	deliveryamt = 3
@@ -86,7 +86,7 @@
 	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_SILVER = 4, MATERIAL_GOLD = 3)
 
-/obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/smg_roomba
+/obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/mantis
 	name = "\improper GP-SI mantis drone grenade"
 	desc = "Deploys a trio of sword bearing robots enhanced with incredible speed and augmetics that will attack animals and non-colony humanoids on sight."
 	deliveryamt = 2
