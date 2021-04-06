@@ -2,12 +2,12 @@
 /obj/machinery/petrel_maker
 	name = "Greyson Petrel Pump"
 	desc = "A machine for petrel and refined scrap. Originally design by the Greyson Positronic's AI then given to the Artificer's Guild. \
-	When stored pastic as the same or higher just flip the switch on its side to produce a bottle of diesel. \
+	When enough plastic is stored inside, flip the switch on its side to produce a bottle of diesel relative to the ammount of plastic used. \
 	Thanks to advanced blueprint designs by SI it can also take lumps of scrap to crate refined scrap by simply adding them to the pump's storage."
 	icon = 'icons/obj/machines/petrel_maker.dmi'
 	icon_state = "diesel_greyson"
 	circuit = /obj/item/weapon/circuitboard/petrel_maker
-	var/petrel_form_plastic = 15 //15/5 = 5 so with grayson upgrades this is 11 sheets of plastic into 60 welder fuel.
+	var/petrel_form_plastic = 30 //25/5 = 5 so with grayson upgrades this is 29 sheets of plastic into 120 welder fuel.
 	var/stored_plastic = 0 //How much stored plastic we have
 //	var/convert_speed = 30 SECONDS //How long it takes to covert things
 	density = TRUE
@@ -15,6 +15,7 @@
 
 //TODO: remove sleep, make it use wait somehow...
 //TODO: max cap of how many plastics it can hold
+//TODO: More cooking and other oddities with it
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 120 //Some drain
@@ -92,5 +93,5 @@
 	//	if(istype(P, /obj/item/weapon/stock_parts/micro_laser))
 		//	convert_speed = clamp((P.rating / convert_speed),1,30) //max level is 6 so 5 sleep or what not
 		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
-			petrel_form_plastic -= clamp((P.rating - petrel_form_plastic),1,15) //Max level is 6 so 9 is min amout for admin spawned things
+			petrel_form_plastic -= clamp((P.rating - petrel_form_plastic),1,30) //Max level is 6 so 21 is min amout for admin spawned things
 	return

@@ -121,9 +121,13 @@
 	preloaded_reagents = list("adminordrazine" = 60)
 
 /obj/item/weapon/reagent_containers/glass/bottle/petrel
-	name = "diesel bottle"
-	desc = "A small bottle. Contains the liquid diesel useful for powering diesel generators or fire bombs."
-	preloaded_reagents = list("fuel" = 60)
+	name = "diesel canister"
+	desc = "A small canister. Contains liquid diesel, useful for powering diesel generators or making fire bombs."
+	icon_state = "canister"
+	possible_transfer_amounts = list(5,10,15,25,30,60,120)
+	volume = 120
+	matter = list(MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("fuel" = 120)
 
 /obj/item/weapon/reagent_containers/glass/bottle/tangu_extract
 	name = "tangu extract bottle"
