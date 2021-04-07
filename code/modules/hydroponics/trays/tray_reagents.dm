@@ -15,7 +15,7 @@
 /obj/item/weapon/plantspray/water
 	name = "LSS Plant Mineral Water"
 	desc = "A mix of both water and needed robustharvest for plant survival in enclosed spaces. Do not drink!"
-	item_state = "spray"
+	icon_state = "bottle16"
 	toxicity = -5 //Heals plants that are toxic basiclly
 
 /obj/item/weapon/plantspray/weeds // -- Skie
