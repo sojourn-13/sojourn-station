@@ -769,8 +769,8 @@
 	name = "silverbells"
 	seed_name = "silverbell"
 	display_name = "silverbells"
-	materials = list(MATERIAL_SILVER = 1)
-	chems = list("nutriment" = list(1,50))
+	mutants = null
+	chems = list("nutriment" = list(1,50), "silver" = list(1,5))
 
 /datum/seed/flower/silverBell/New()
 	..()
