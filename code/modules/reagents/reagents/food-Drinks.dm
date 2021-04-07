@@ -574,7 +574,7 @@
 
 	glass_icon_state = "glass_red"
 	glass_name = "strawberry milk"
-	glass_desc = "Red and nutritious goodness!"
+	glass_desc = "Strawberry sweet and lactose goodness!"
 
 /datum/reagent/drink/milk/coca
 	name = "Chocolate Milk"
@@ -585,7 +585,7 @@
 
 	glass_icon_state = "chocolateglass"
 	glass_name = "Chocolate milk"
-	glass_desc = "Chocolate and nutritious goodness!"
+	glass_desc = "Chocolate and lactose goodness!"
 
 /datum/reagent/drink/milk/cream
 	name = "Cream"
@@ -596,7 +596,7 @@
 
 	glass_icon_state = "glass_white"
 	glass_name = "cream"
-	glass_desc = "Ewwww..."
+	glass_desc = "Mmm...creamy."
 
 /datum/reagent/drink/milk/soymilk
 	name = "Soy Milk"
@@ -631,8 +631,8 @@
 /datum/reagent/drink/tea/icetea
 	name = "Iced Tea"
 	id = "icetea"
-	description = "A form of cold tea. Though usually served in a glass with ice"
-	taste_description = "sweet tea"
+	description = "A form of cold tea. Usually served in a glass with ice."
+	taste_description = "cold, tart tea"
 	color = "#B43A003"
 	adj_temp = -5
 
@@ -645,18 +645,24 @@
 /datum/reagent/drink/tea/green
 	name = "Green Tea"
 	id = "greentea"
+	description = "Tasty green tea. It has antioxidants; it's good for you!"
 	taste_description = "subtle green tea"
-	color = "#C33F00"
+	color = "#669900"
+	
+	glass_icon_state = "greentea"
 	glass_name = "green tea"
 	glass_desc = "Tasty green tea. It has antioxidants; it's good for you!"
 
 /datum/reagent/drink/tea/icetea/green
 	name = "Iced Green Tea"
 	id = "icegreentea"
+	description = "Green tea, cold and served with ice."
 	taste_description = "cold green tea"
-	color = "#CE4200"
+	color = "#669900" // Nice.
+	
 	glass_name = "iced green tea"
 	glass_desc = "It looks like green tea with ice. One might even call it iced green tea."
+	glass_icon_state = "icedgreen"
 
 /*Coffee Starts Here*/
 
@@ -704,7 +710,7 @@
 	taste_mult = 1
 	color = "#664300"
 
-	glass_icon_state = "hot_coffee"
+	glass_icon_state = "espresso"
 	glass_name = "shot of espresso"
 	glass_desc = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
 
@@ -730,7 +736,7 @@
 
 	glass_icon_state = "soy_latte"
 	glass_name = "soy latte"
-	glass_desc = "A nice and refreshing beverage while you are reading."
+	glass_desc = "A nice and refreshing beverage to drink while you are reading."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
 /datum/reagent/drink/coffee/soy_latte/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
@@ -740,14 +746,14 @@
 /datum/reagent/drink/coffee/cafe_latte
 	name = "Cafe Latte"
 	id = "cafe_latte"
-	description = "A nice, strong and tasty beverage while you are reading."
-	taste_description = "bitter cream"
+	description = "A nice, strong and tasty beverage to drink while you are reading."
+	taste_description = "soft bitterness"
 	color = "#664300" // rgb: 102, 67, 0
 	adj_temp = 5
 
 	glass_icon_state = "cafe_latte"
 	glass_name = "cafe latte"
-	glass_desc = "A nice, strong and refreshing beverage while you are reading."
+	glass_desc = "A nice, strong and refreshing beverage to drink while you are reading."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
 /datum/reagent/drink/coffee/cafe_latte/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
@@ -758,11 +764,11 @@
 	name = "Freddo Espresso"
 	id = "freddp_espresso"
 	description = "Espresso with ice cubes poured over ice."
-	taste_description = "cold and bitter coffee"
+	taste_description = "cold and refreshing bitter coffee"
 	color = "#664300" // rgb: 102, 67, 0
 
-	glass_icon_state = "hot_coffee"
-	glass_name = "glass of freddo espresso"
+	glass_icon_state = "freddo_spr" // Lonestar Shipping Solutions logo and all!
+	glass_name = "freddo espresso"
 	glass_desc = "Espresso with ice cubes poured over ice."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
@@ -770,48 +776,48 @@
 	name = "Caffe Americano"
 	id = "caffe_americano"
 	description = "Espresso diluted with hot water."
-	taste_description = "delicious coffee"
+	taste_description = "coffee"
 	color = "#664300" // rgb: 102, 67, 0
 
 
-	glass_icon_state = "hot_coffee"
-	glass_name = "glass of caffe Americano"
-	glass_desc = "delicious coffee"
+	glass_icon_state = "americano"
+	glass_name = "caffe Americano"
+	glass_desc = "Your average, watered-down coffee."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
 /datum/reagent/drink/coffee/flat_white
 	name = "Flat White Espresso"
 	id = "flat_white"
 	description = "Espresso with a bit of steamy hot milk."
-	taste_description = "bitter coffee and milk"
+	taste_description = "bitter coffee and a dash of foamy milk"
 	color = "#664300" // rgb: 102, 67, 0
 
-	glass_icon_state = "cafe_latte"
-	glass_name = "glass of flat white"
+	glass_icon_state = "flatwhite"
+	glass_name = "flat white"
 	glass_desc = "Espresso with a bit of steamy hot milk."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
-/datum/reagent/drink/coffee/latte
-	name = "Latte"
-	id = "latte"
-	description = "A nice, strong, and refreshing beverage to enjoy while reading."
-	taste_description = "bitter cream"
+/datum/reagent/drink/coffee/lattemacchiato
+	name = "Latte Macchiato"
+	id = "lattemacchiato"
+	description = "Foamy milk with a single espresso shot."
+	taste_description = "foamy bitterness"
 	color = "#664300" // rgb: 102, 67, 0
 
-	glass_icon_state = "cafe_latte"
-	glass_name = "glass of cafe latte"
-	glass_desc = "A nice, strong, and refreshing beverage to enjoy while reading."
+	glass_icon_state = "lattemacchiato"
+	glass_name = "cafe latte"
+	glass_desc = "A tall glass of foamy milk with espresso poured on top."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
 /datum/reagent/drink/coffee/cappuccino
 	name = "Cappuccino"
 	id = "cappuccino"
 	description = "Espresso with steamed milk foam."
-	taste_description = "bitter milk foam"
+	taste_description = "foamy light coffee"
 	color = "#664300" // rgb: 102, 67, 0
 
-	glass_icon_state = "hot_coffee"
-	glass_name = "glass of cappuccino"
+	glass_icon_state = "cappuccino"
+	glass_name = "cappuccino"
 	glass_desc = "Espresso with steamed milk foam."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
@@ -822,8 +828,8 @@
 	taste_description = "cold and bitter milk foam"
 	color = "#664300" // rgb: 102, 67, 0
 
-	glass_icon_state = "hot_coffee"
-	glass_name = "glass of freddo cappuccino"
+	glass_icon_state = "freddo_cap"
+	glass_name = "freddo cappuccino"
 	glass_desc = "Espresso with steamed milk foam, on ice."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
@@ -831,23 +837,23 @@
 	name = "Macchiato"
 	id = "macchiato"
 	description = "Espresso with milk foam."
-	taste_description = "bitter milk foam"
+	taste_description = "bitter coffee with a hint of foamy milk"
 	color = "#664300" // rgb: 102, 67, 0
 
-	glass_icon_state = "hot_coffee"
-	glass_name = "glass of macchiato"
+	glass_icon_state = "macchiato"
+	glass_name = "macchiato"
 	glass_desc = "Espresso with milk foam."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
-/datum/reagent/drink/coffee/mocacchino
-	name = "Mocacchino"
-	id = "mocacchino"
+/datum/reagent/drink/coffee/mocaccino
+	name = "Mocaccino"
+	id = "mocaccino"
 	description = "Espresso with hot milk and chocolate."
-	taste_description = "sweet milk and bitter coffee"
+	taste_description = "sweet milk and bitter, chocolatey coffee"
 	color = "#664300" // rgb: 102, 67, 0
 
-	glass_icon_state = "cafe_latte"
-	glass_name = "glass of mocacchino"
+	glass_icon_state = "mocaccino"
+	glass_name = "mocaccino"
 	glass_desc = "Espresso with hot milk and chocolate."
 	glass_center_of_mass = list("x"=15, "y"=9)
 
@@ -855,7 +861,7 @@
 	name = "Sromshine"
 	id = "sromshine"
 	description = "The best part of waking up."
-	taste_description = "bitter citrus"
+	taste_description = "coffee with an acidic twist"
 	color = "#A14702"
 
 	glass_icon_state = "sromshine"
@@ -1377,9 +1383,9 @@
 	color = "#664300"
 	strength = 25
 
-	glass_icon_state = "ginvodkaglass"
+	glass_icon_state = "sakeglass"
 	glass_name = "sake"
-	glass_desc = "Wine made from rice: it's sake!"
+	glass_desc = "Wine made from rice: it's sake! Perfect to drink at the hot springs after a long hunt."
 	glass_center_of_mass = list("x"=16, "y"=12)
 
 /datum/reagent/ethanol/tequilla
@@ -1392,7 +1398,7 @@
 
 	glass_icon_state = "tequillaglass"
 	glass_name = "Tequila"
-	glass_desc = "Now all that's missing is the weird colored shades!"
+	glass_desc = "Now where's the salt and lemon?"
 	glass_center_of_mass = list("x"=16, "y"=12)
 
 /datum/reagent/ethanol/thirteenloko
@@ -1910,9 +1916,9 @@
 	strength = 1
 	toxicity = 2
 
-	glass_icon_state = "glass_brown2"
+	glass_icon_state = "hoochbottle"
 	glass_name = "Hooch"
-	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night."
+	glass_desc = "Prohibition can bite my shiny positronic behind."
 
 /datum/reagent/ethanol/iced_beer
 	name = "Iced Beer"
@@ -2052,12 +2058,12 @@
 	name = "Moonshine"
 	id = "moonshine"
 	description = "You've really hit rock bottom now... your liver packed its bags and left last night."
-	taste_description = "bitterness"
+	taste_description = "cheap ethanol"
 	taste_mult = 2.5
 	color = "#664300"
 	strength = 12
 
-	glass_icon_state = "glass_clear"
+	glass_icon_state = "moonshinebottle"
 	glass_name = "moonshine"
 	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night."
 
@@ -2354,16 +2360,16 @@
 	if(!M.stats.getTempStat(STAT_TGH, "atomvodka") && M.stats.getPerk(/datum/perk/sommelier))
 		M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 10 MINUTES, "atomvodka")
 
-/datum/reagent/ethanol/specialwhiskey // I have no idea what this is and where it comes from
+/datum/reagent/ethanol/specialwhiskey // Previously unobtainable, bar spawns with a keg full of it, and you can't order more. A luxury drink!
 	name = "Special Blend Whiskey"
 	id = "specialwhiskey"
 	description = "Just when you thought regular colony whiskey was good... This silky, amber goodness has to come along and ruin everything."
-	taste_description = "the whiskey gods pissed in your mouth"
+	taste_description = "the whiskey gods blessing your tastebuds"
 	color = "#664300"
-	strength = 5
+	strength = 10
 
 	glass_icon_state = "whiskeyglass"
-	glass_name = "special blend whiskey"
+	glass_name = "Special Blend Whiskey"
 	glass_desc = "Just when you thought regular colony whiskey was good... This silky, amber goodness has to come along and ruin everything."
 	glass_center_of_mass = list("x"=16, "y"=12)
 
@@ -2411,3 +2417,131 @@
 
 	glass_name = "Balloon"
 	glass_desc = "A strange drink invented in the aerostats of Venus."
+
+/datum/reagent/drink/triplecitrus
+	name = "Triple Citrus" // This one's for you, Duffy.
+	id = "triplecitrus"
+	description = "A mixture of citrus juices. Tangy, yet smooth."
+	taste_description = "extremely refreshing sourness"
+	nutrition = 2
+	color = "#bedf00" // rgb(190, 223, 0)
+
+	glass_icon_state = "triplecitrus"
+	glass_name = "Triple Citrus"
+	glass_desc = "A mixture of citrus juices. Tangy, yet smooth."
+
+/datum/reagent/drink/sugarrush
+	name = "Sugar Rush"
+	id = "sugarrush"
+	description = "Sweet, light, and fruity - as girly as it gets."
+	taste_description = "a sweet, girly drink"
+	nutrition = 2
+	color = "#d51e5e" // rgb(213, 30,94)
+	glass_center_of_mass = list("x"=16, "y"=7)
+
+	glass_icon_state = "sugarrush"
+	glass_name = "Sugar Rush"
+	glass_desc = "Sweet, light, and fruity - as girly as it gets."
+
+/datum/reagent/drink/crevicespike
+	name = "Crevice Spike"
+	id = "crevicespike"
+	description = "It will knock the drunkenness out of you or knock you out cold."
+	taste_description = "sour, manly, and sobering goodness"
+	color = "#5bd231" // rgb(91, 210, 49)
+	overdose = 45
+
+	glass_icon_state = "crevicespike"
+	glass_name = "Crevice Spike"
+	glass_desc = "It will knock the drunkenness out of you or knock you out cold."
+
+/datum/reagent/drink/crevicespike/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.dizziness = 0
+	M.drowsyness = 0
+	M.stuttering = 0
+	M.confused = 0
+
+/datum/reagent/drink/crevicespike/overdose(mob/living/carbon/M, alien)
+	..()
+	M.Stun(2)
+
+/datum/reagent/ethanol/fringeweaver
+	name = "Fringe Weaver"
+	id = "fringeweaver"
+	description = "It's like drinking ethylic alcohol with a spoonful of sugar."
+	taste_description = "sugar dilluted in ethylic alcohol"
+	color = "#ffffb3" // rgb(255, 255, 179)
+	strength = 15 //Almost like Moonshine
+
+	glass_icon_state = "fringeweaver"
+	glass_name =  "Fringe Weaver"
+	glass_desc = "It's like drinking ethylic alcohol with a spoonful of sugar."
+
+/datum/reagent/ethanol/pianowoman
+	name = "Piano Woman"
+	id = "pianowoman"
+	description = "A rename of a classic mix, with a twist of its own. Some Biosynths seem to love this for some reason..."
+	taste_description = "sweet and happy"
+	color = "#bdffca" // rgb(189, 255, 202)
+	strength = 25
+
+	glass_icon_state = "pianowoman"
+	glass_name = "Piano Woman"
+	glass_desc = "A rename of a classic mix, the favorite drink of certain robots and biosynths for some reason..."
+
+/datum/reagent/ethanol/fernet
+	name = "Fernet"
+	id = "fernet"
+	description = "Pure Fernet, a bitter herb digestiff. Drink if you dare."
+	taste_description = "unbearable bitterness"
+	color = "#150905" // rgb(21, 9, 5)
+	strength = 5 //Not meant to be drank on its own!
+	
+	glass_icon_state = "fernetpuro"
+	glass_name = "pure Fernet"
+	glass_desc = "A glass of pure Fernet, a bitter herb digestiff. Are you sure you can stomach this undilluted...?"
+
+/datum/reagent/ethanol/fernet/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0) //Since it's a digestiff it allows you to be less "full" by making you hungry!
+	if(dose > 10)
+		M.adjustToxLoss(0.2 * effect_multiplier) //Toxic! Don't drink alone! May this be a reminder!
+	if(dose > 60 && ishuman(M) && prob(5))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER) // This will destroy your liver, don't do it!
+		if(L && istype(L))
+			if(dose < 120)
+				L.take_damage(1 * effect_multiplier, 0)
+			else
+				L.take_damage(10 * effect_multiplier, 0)
+
+/datum/reagent/ethanol/fernetcola
+	name = "Fernet Cola"
+	id = "fernetcola"
+	description = "Fernet dilluted with Cola, a refreshing and digestive combination."
+	taste_description = "bittersweet relief"
+	color = "#572C00" // rgb(87, 44, 0)
+	strength = 35
+
+	glass_icon_state = "godlyblend"
+	glass_name = "sawn-off bottle of Fernet cola"
+	glass_desc = "Fernet mixed with cola, served on a sawn-off bottle as per tradition. A smooth digestiff for when you've eaten more than you could chew."
+
+/datum/reagent/ethanol/fernetcola/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
+
+/datum/reagent/drink/fanciulli
+	name = "Fanciulli"
+	id = "fanciulli"
+	description = "Manhattan with Fernet as its bitter."
+	taste_description = "a sweet, sobering mix"
+
+	glass_icon_state = "fanciulli"
+	glass_name = "Fanciulli"
+	glass_desc = "What if the Manhattan cocktail <b>actually</b> used a digestiff? Helps you sober up, but makes you sluggish."
+
+/datum/reagent/drink/fanciulli/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
+	M.dizziness = 0
+	M.stuttering = 0
+	M.confused = 0
+	M.Weaken(2)

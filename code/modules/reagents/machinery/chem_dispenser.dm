@@ -238,8 +238,7 @@
 	density = FALSE
 	level0 = list(
 		"water","ice","icetea","icegreentea","cola","spacemountainwind","dr_gibb","space_up",
-		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice",
-		"watermelonjuice")
+		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice")
 
 	level1 = list("capsaicin", "carbon")
 	level2 = list("banana", "berryjuice")
@@ -275,7 +274,7 @@
 	level0 = list(
 		"coffee","cream","tea","greentea","sugar","hot_coco","espresso")
 	hacked_reagents = list("ice")
-	level1 = list("cappuccino")
+	level1 = list("cappuccino","coco")
 	level2 = list("macchiato")
 	level3 = list("soymilk") //Commie stock part gives this
 	level4 = list("milk","kahlua")

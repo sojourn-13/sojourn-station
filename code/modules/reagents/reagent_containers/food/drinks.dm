@@ -182,11 +182,16 @@
 /obj/item/weapon/reagent_containers/food/drinks/coffee
 	name = "Robust Coffee"
 	desc = "A cup of hot coffee. Sourced from the leading supplier."
-	icon_state = "cup"
+	icon_state = "coffee"
 	center_of_mass = list("x"=15, "y"=10)
 	base_icon = "cup"
-	filling_states = "100"
 	preloaded_reagents = list("coffee" = 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/coffee/update_icon()
+	if(reagents.total_volume)
+		icon_state = "coffee"
+	else
+		icon_state = "cup"
 
 /obj/item/weapon/reagent_containers/food/drinks/ice
 	name = "Northern Freeze"
@@ -205,6 +210,12 @@
 	center_of_mass = list("x"=15, "y"=13)
 	preloaded_reagents = list("hot_coco" = 30)
 
+/obj/item/weapon/reagent_containers/food/drinks/h_chocolate/update_icon()
+	if(reagents.total_volume)
+		icon_state = "hot_coco"
+	else
+		icon_state = "cup"
+
 /obj/item/weapon/reagent_containers/food/drinks/dry_ramen
 	name = "Raving Ramen"
 	desc = "A self-heating cup of ramen. Just add 10ml water."
@@ -213,6 +224,12 @@
 	base_icon = "cup"
 	filling_states = "100"
 	preloaded_reagents = list("dry_ramen" = 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/update_icon()
+	if(reagents.total_volume)
+		icon_state = "ramen"
+	else
+		icon_state = "ramen_e"
 
 /obj/item/weapon/reagent_containers/food/drinks/dry_ramen/premade
 	name = "Raving Ramen"
@@ -430,9 +447,11 @@
 /obj/item/weapon/reagent_containers/food/drinks/tea/black
 	name = "cup of black tea"
 	desc = "A tall plastic cup of hot black tea."
+	icon_state = "tea_v"
 	preloaded_reagents = list("tea" = 30)
 
 /obj/item/weapon/reagent_containers/food/drinks/tea/green
 	name = "cup of green tea"
 	desc = "A tall plastic cup of hot green tea."
+	icon_state = "greentea_v"
 	preloaded_reagents = list("greentea" = 30)

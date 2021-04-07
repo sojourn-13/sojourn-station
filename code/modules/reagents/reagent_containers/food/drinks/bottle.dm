@@ -330,6 +330,13 @@
 	center_of_mass = list("x"=16, "y"=4)
 	preloaded_reagents = list("pwine" = 100)
 
+/obj/item/weapon/reagent_containers/food/drinks/bottle/fernet
+	name = "Fernet Bronca"
+	desc = "A bottle of pure Fernet Bronca, imported from Cordoba Space Station."
+	icon_state = "fernetbottle"
+	center_of_mass = list("x"=16, "y"=4)
+	preloaded_reagents = list("fernet" = 100)
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice
