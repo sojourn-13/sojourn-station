@@ -590,13 +590,13 @@
 	materials = list(MATERIAL_STEEL = 1)
 	origin_tech = list(TECH_MATERIAL = 1)
 	mutants = null
-	evolutions = list("plasmacap"=list("plasma"))
+	evolutions = null
 
 /datum/seed/mushroom/towercap/metalcap/New()
 	..()
 	set_trait(TRAIT_PRODUCT_COLOUR,"#4D4D4D")
 	set_trait(TRAIT_PLANT_COLOUR,"#969696")
-
+/*
 /datum/seed/mushroom/towercap/metalcap/plasmacap
 	name = "plasmacap"
 	seed_name = "plasma cap"
@@ -610,7 +610,7 @@
 	..()
 	set_trait(TRAIT_PRODUCT_COLOUR,"#FF0066")
 	set_trait(TRAIT_PLANT_COLOUR,  "#46B543")
-
+*/
 
 /datum/seed/mushroom/glowshroom
 	name = "glowshroom"
@@ -751,7 +751,7 @@
 	name = "harebells"
 	seed_name = "harebell"
 	display_name = "harebells"
-	mutants = list("silverbells")
+	mutants = null
 	chems = list("nutriment" = list(1,20))
 
 /datum/seed/flower/New()
@@ -764,7 +764,7 @@
 	set_trait(TRAIT_PLANT_COLOUR,"#6B8C5E")
 	set_trait(TRAIT_PLANT_ICON,"flower")
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
-
+/*
 /datum/seed/flower/silverBell
 	name = "silverbells"
 	seed_name = "silverbell"
@@ -778,7 +778,7 @@
 	set_trait(TRAIT_PRODUCTION,5)
 	set_trait(TRAIT_YIELD,2)
 	set_trait(TRAIT_PRODUCT_COLOUR,"#C0C0C0")
-
+*/
 /datum/seed/flower/poppy
 	name = "poppies"
 	seed_name = "poppy"
