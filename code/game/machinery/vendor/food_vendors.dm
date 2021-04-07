@@ -37,7 +37,8 @@
 					/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack = 4
 					)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/tea/green = 10,
-						/obj/item/weapon/reagent_containers/food/drinks/tea/black = 10)
+						/obj/item/weapon/reagent_containers/food/drinks/tea/black = 10,
+						/obj/item/weapon/reagent_containers/food/drinks/bottle/fernet = 5)
 	vend_delay = 15
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this colony?;Care for a cup of coffee? It's Irish.;Whiskey for your sorrows, Beer for your break."

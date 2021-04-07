@@ -161,8 +161,8 @@
 	required_reagents = list("espresso" = 1, "milk" = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/latte
-	result = "latte"
+/datum/chemical_reaction/lattemacchiato
+	result = "lattemacchiato"
 	required_reagents = list("flat_white" = 1, "milk" = 1)
 	result_amount = 2
 
@@ -181,8 +181,8 @@
 	required_reagents = list("cappuccino" = 1, "espresso" = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/mocacchino
-	result = "mocacchino"
+/datum/chemical_reaction/mocaccino
+	result = "mocaccino"
 	required_reagents = list("flat_white" = 1, "hot_coco" = 1)
 	result_amount = 2
 
@@ -370,7 +370,8 @@
 
 /datum/chemical_reaction/hooch
 	result = "hooch"
-	required_reagents = list ("sugar" = 1, "ethanol" = 2, "fuel" = 1)
+	required_reagents = list ("ethanol" = 2, "fuel" = 1)
+	catalysts = list("enzyme" = 5)
 	result_amount = 3
 
 /datum/chemical_reaction/irish_coffee
@@ -642,4 +643,49 @@
 /datum/chemical_reaction/drinks/miss_fortune
 	result = "miss_fortune"
 	required_reagents = list("nanatsunoumi" = 1, "redcandyliquor" = 1, "bluecuracao" = 1, "melonliquor" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/drinks/triplecitrus
+	result = "triplecitrus"
+	required_reagents = list("limejuice" = 1, "orangejuice" = 1, "lemonjuice" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/sugarrush
+	result = "sugarrush"
+	required_reagents = list("sugar" = 2, "triplecitrus" = 1) //Optional Karmotrine.
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/crevicespike
+	result = "crevicespike"
+	required_reagents = list("capsaicin" = 2, "triplecitrus" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/fringeweaver
+	result = "fringeweaver"
+	required_reagents = list("sugar" = 1, "ethanol" = 3)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/pianowoman
+	result = "pianowoman"
+	required_reagents = list("sugar" = 1, "fernet" = 1, "lemon_lime" = 1, "capsaicin" = 1, "bluecuracao" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/drinks/choccymilk
+	result = "chocolatemilk"
+	required_reagents = list("coco" = 1, "milk" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/strawberrymilk
+	result = "strawberrymilk"
+	required_reagents = list("berryjuice" = 1, "milk" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/drinks/fernetcola
+	result = "fernetcola"
+	required_reagents = list("fernet" = 1, "cola" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/drinks/fanciulli
+	result = "fanciulli"
+	required_reagents = list("manhattan" = 1, "fernet" = 1)
 	result_amount = 2
