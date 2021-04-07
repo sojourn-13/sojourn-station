@@ -100,7 +100,7 @@
 	reagent_type = "Water"
 
 /datum/reagent/water/extinguisher
-	name = "Water"
+	name = "Extinguisher"
 	id = "abwater"
 	description = "A mix of water, with chemicals to reduce heat, oil and suppress fire with heavy particulates."
 	taste_description = "watered down chemicals"
