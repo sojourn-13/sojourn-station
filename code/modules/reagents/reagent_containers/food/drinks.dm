@@ -210,7 +210,7 @@
 	center_of_mass = list("x"=15, "y"=13)
 	preloaded_reagents = list("hot_coco" = 30)
 
-/obj/item/weapon/reagent_containers/food/drinks/dry_ramen/update_icon()
+/obj/item/weapon/reagent_containers/food/drinks/h_chocolate/update_icon()
 	if(reagents.total_volume)
 		icon_state = "hot_coco"
 	else
