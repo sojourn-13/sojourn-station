@@ -398,6 +398,15 @@
 	new /obj/item/stack/material/uranium(get_turf(holder.my_atom), created_volume)
 	return
 
+/datum/chemical_reaction/silversolidification
+	result = null
+	required_reagents = list("iron" =5, "frostoil" =5, "silver" =20)
+	result_amount =1
+
+/datum/chemical_reaction/silversolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
+	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)
+	return
+
 /* Grenade reactions */
 
 /datum/chemical_reaction/explosion_potassium
