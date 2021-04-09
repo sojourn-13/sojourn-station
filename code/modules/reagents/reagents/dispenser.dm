@@ -46,15 +46,6 @@
 	reagent_state = SOLID
 	color = "#A8A8A8"
 
-/datum/reagent/metal/silver
-	name = "Silver"
-	id = "silver"
-	taste_description = "polished metal"
-	taste_mult =1.1
-	description = "Liquid form of the metal known as silver."
-	reagent_state = SOLID
-	color = "#A8A8A8"
-
 /datum/reagent/toxin/ammonia
 	name = "Ammonia"
 	id = "ammonia"
