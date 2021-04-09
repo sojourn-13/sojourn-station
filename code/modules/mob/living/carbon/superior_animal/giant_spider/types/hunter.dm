@@ -80,6 +80,21 @@
 
 	. = ..()
 
+/mob/living/carbon/superior_animal/giant_spider/tarantula/ogre
+	name = "ogre spider"
+	desc = "Furry and tan, it makes you shudder to look at it. An absolute unit of a spider with the same strength and durability of a fortress spider combined with the toxins and speed of a hunter."
+	icon_state = "ogre"
+	icon_living = "ogre"
+	poison_per_bite = 4
+	move_to_delay = 4
+
+/mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing
+	name = "trapdoor spider"
+	desc = "Furry and brown, it makes you shudder to look at it. Tough, durable, and strong. Unlike the usual strong-bodied spiders, this one carries sleep toxin in its deadly fangs."
+	icon_state = "burrowing"
+	icon_living = "burrowing"
+	poison_type = "stoxin"
+
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor
 	name = "emperor spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one is huge with long legs and glowing nightmarish eyes filled with malign hatred."

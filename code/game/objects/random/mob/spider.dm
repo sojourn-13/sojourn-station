@@ -15,6 +15,8 @@
 				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 20,\
 				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 15,\
 				/mob/living/carbon/superior_animal/giant_spider/tarantula = 10,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/ogre = 8,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing = 6
 				))
 
 /obj/random/mob/spiders/low_chance

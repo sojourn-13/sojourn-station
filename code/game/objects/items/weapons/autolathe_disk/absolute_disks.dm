@@ -260,6 +260,7 @@
 		/datum/design/bioprinter/nt_clothes/agrolyte_armor,
 		/datum/design/bioprinter/nt_clothes/custodian_armor_helm,
 		/datum/design/bioprinter/nt_clothes/custodian_armor,
+		/datum/design/bioprinter/nt_clothes/NTvoid,
 		/datum/design/bioprinter/nt_clothes/hermes_shoes,
 		/datum/design/bioprinter/belt/security/neotheology,
 		//holsters
