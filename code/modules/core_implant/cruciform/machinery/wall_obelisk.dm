@@ -1,8 +1,8 @@
 
 /obj/machinery/power/wall_obelisk
 	name = "Absolutism Protection"
-	desc = "The Absolutism Protection is a wall mounted obelisks thought of by the GP AI to help protect the colonist form the many \
-	threats in areas were the faith has less control."
+	desc = "The wall mounted version of the obelisk, unlike the larger version, it can remain active even without an active cruciform nearby. \
+	One of the few designs created for the church by the Greyson AI under control by the Soteria, much to Soteria's annoyance."
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	icon_state = "nt_wall_obelisk"
 
