@@ -160,9 +160,9 @@
 "dd" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "de" = (/obj/effect/window_lwall_spawn/smartspawnplasma,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "df" = (/obj/item/trash/mre_can,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
-"dg" = (/obj/machinery/drone_fabricator/derelict,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"dg" = (/obj/machinery/drone_fabricator/derelict{fabricator_tag = "Vault Bunker"},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "dh" = (/obj/random/powercell,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
-"di" = (/obj/machinery/drone_fabricator/derelict,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"di" = (/obj/random/powercell,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "dj" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/r_wall,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "dk" = (/turf/simulated/mineral,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "dl" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/floor/plating/under,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
@@ -367,6 +367,7 @@
 "hc" = (/obj/item/trash/material/circuit,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "hd" = (/obj/machinery/door/airlock/highsecurity{locked = 1},/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "he" = (/obj/item/trash/broken_robot_part{pixel_x = -10; pixel_y = 9},/obj/effect/decal/cleanable/molten_item,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"hf" = (/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "hg" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "hh" = (/obj/machinery/portable_atmospherics/powered/scrubber/huge,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "hi" = (/obj/structure/filingcabinet/medical,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
@@ -775,6 +776,8 @@
 "oV" = (/obj/machinery/door/airlock/engineering{locked = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "oW" = (/obj/effect/decal/cleanable/dirt,/obj/random/junk/cigbutt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "oX" = (/obj/structure/boulder,/obj/effect/decal/cleanable/rubble,/obj/random/junk/nondense,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"oY" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/drone_fabricator/derelict{fabricator_tag = "Vault Bunker"},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"oZ" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "pa" = (/obj/effect/decal/cleanable/dirt,/obj/random/scrap/sparse_even,/obj/random/traps/low_chance,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "pb" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "pc" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/mineral,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
@@ -836,6 +839,8 @@
 "qg" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/rubble,/obj/item/inflatable/door/torn,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qh" = (/obj/structure/boulder,/turf/simulated/mineral,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qi" = (/obj/structure/boulder,/obj/structure/boulder,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"qj" = (/obj/machinery/drone_fabricator/derelict{fabricator_tag = "Vault Bunker"},/turf/simulated/floor/tiled/dark/gray_platform,/area/outpost/abandoned_fortress/powered)
+"qk" = (/turf/simulated/floor/tiled/dark/gray_platform,/area/outpost/abandoned_fortress/powered)
 "ql" = (/obj/structure/sign/levels/stairsdown,/turf/simulated/wall/r_wall,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qm" = (/obj/structure/sink/puddle,/obj/item/weapon/reagent_containers/glass/bucket,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qn" = (/obj/structure/flora/big/bush1,/turf/simulated/floor/asteroid/dirt/dark,/area/nadezhda/dungeon/outside/prepper/vault/floor3)
@@ -1949,9 +1954,9 @@ aaaaaaaaaavjvLvLwMwNvLvLGkGlGmGnvLvLvLGoGpGpGpGpvLvLvLvLygGqGqygygAhygyqyqygGrvL
 aaaaaaaaaavjvLvLwMwNvLvLGkGwyqGxvLvLvLvLGyGyGyGyvLvLvLvLygGqGqygygygCbGzygygyqyyGAGBGgFYGCvLvLvjvjvjvjvjvjaaaaaaaaaaaaaaaaaaaabHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHyTyTyTyTyTyTyTbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHadadaeaeckaJayaJaybKclboaJayayaKayaJboayaycmcncncncocpcqcrcsbOctcuayaycvaJayaJaBaBcicjaeaeadacaaaaaaaa
 aaaaaaaaaavjvLvLwMwNvLvLGkGDygGxvLvLvLvLGyGyGyGyvLvLvLvLygygygygygyqCbyqygygyqGEGFGGGgFYGHvLvLvjvjvjvjvjvjaaaaaaaaaaaaaaaaaaaabHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHyTyTyTyTyTyTyTbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHbHadadaeaeaycwcxayaybKclaJayayayayayaJaJaJaJcmcncncncocyaJczcAayaJcgcBaJcCayaJaJcDcDaecjaeaeadacaaaaaaaa
 aaaaaaaaaavjvLvLycybvLvLGqGIygGJvLvLvLvLGpGpGpGpvLvLvLvLGKygygygyqGdyqygygygyqFLvLFOGgFYGHvLvLvjvjvjvjvjvjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacadadadadadadadadadadadadadadadadadadadadadadaeaecwcEcxayaJcFcGcHcIcJcKcLcMayayaJaKcNcOcOcncocPayaJayaJaJaJaJaJaJaybncQaeaeaecjaeaeadacaaaaaaaa
-aaaaaaaaaavjvLvLycybvLvLGLGMyqGNvLvLvLygyqyqyqGOylvLvLvLygAhygyqCbCbygygygygygFLFLGPGgFYGHvLvLvjvjvjvjvjvjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadadadadadadaeaecRcSayaycTcUcncVcWcXcYcZdcaJayayaJddayaJaJdeaydfaJdgdhaydgaycBdiayaJaydjdkaecjaeaeadacaaaaaaaa
+aaaaaaaaaavjvLvLycybvLvLGLGMyqGNvLvLvLygyqyqyqGOylvLvLvLygAhygyqCbCbygygygygygFLFLGPGgFYGHvLvLvjvjvjvjvjvjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadadadadadadaeaecRcSayaycTcUcncVcWcXcYcZdcaJayayaJddayaJaJdeaydfaJdgdiaydghfcBoYhfaJaydjdkaecjaeaeadacaaaaaaaa
 aaaaaaaaaavjvLvLwMwNvLvLGQGRygygGSygGSGTyqyQyqygylvLvLvLygygGUGVCbyqygygAhygygGEFYFOGWFYGXvLvLvjvjvjvjvjvjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaecjdldmdndndndndndndododpdqaeaeaeaeadaddradaeaedscncncndtbLayducjdvdwdvdcaJayayaydxaJaJaJdeaJbodhaydyaJaJaJaJaJayaJaJdjdkaecjaeaeadacaaaaaaaa
-aaaaaaaaaavjvLvLwMGYzKzKGZyqyqHaHbyqCbyqyqyqyqHcylvLvLvLygygygygHdHeygygygygygyyHfHgHhHiHjvLvLvjvjvjvjvjvjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaeaedzcjcjaeaeaeaeaeaeaedAdBdCdDdEaeadadadadaeaedscncncOdFbLaydudGdHcXdHdIayaJayayddaJayaJdeaJdJaydgaJaydgayaydgayaycfdjaeaecjaeaeadacaaaaaaaa
+aaaaaaaaaavjvLvLwMGYzKzKGZyqyqHaHbyqCbyqyqyqyqHcylvLvLvLygygygygHdHeygygygygygyyHfHgHhHiHjvLvLvjvjvjvjvjvjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaeaedzcjcjaeaeaeaeaeaeaedAdBdCdDdEaeadadadadaeaedscncncOdFbLaydudGdHcXdHdIayaJayayddaJayaJdeaJdJaydgoZaydghfayqjqkaycfdjaeaecjaeaeadacaaaaaaaa
 aaaaaaaaaavjvLvLHkDzzuzuHlHmGwHnGwygygygyqyQyqyqHovLvLvLGKygygygGzyqHbygygygHpvLFLHqHrHsvLvLvLvjvjvjvjvjvjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaeaedKcjaeaeaeaeaeaeaeaeaedLaBaBdMaeaeaeaeaeaeaedNbjbjdOdOdPdQdudRdvdwdvdSaJdTaJaydUayaJaJdVaJayayaydWdXaJaJdYaJaJdZaJeaaeaeciaeaeadacaaaaaaaa
 aaaaaaaaaavjvLvLwhwhvLvLHtyqGIHuygygygyqyqCbHvyqHwvLvLvLyqCbHxygyqyqyqyqygygHyvLFLvLvLvLvLvLvLvLvLvjvjvjvjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaeaedKaeaeaeaeaeaeaeaeaeaeaeaBaeaeaeaeaeaeaeaeaedNbjdObjdOecayedeedHcXdHdSaJdTefayddegegehaeaeeiejaeaeaeaeaeaeaeejekaeaedkaeelaeaeadacaaaaaaaa
 aaaaaaaaaavjvLvLwhwhvLvLHtHmyqHnEoygygHzyqFeHAHBHCvLvLvLHDHEyqHEyqHDHDygGqygGqvLFLvLvLvLHFvLvLvLvLvjvjvjvjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaeaedKaeaeaeaeemcjemaeaeaeenaBaeaeaeeoaWaeaeaeaeayepaJayaJayayeqeresdvetdSaJdTayaJddehehegaeaeaWaBaeaedkdkdkaeaeeuaWaedkdkaeevaeaeadacaaaaaaaa
