@@ -130,7 +130,7 @@
 /datum/reagent/water/holywater
 	name = "Holy Water"
 	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen with the blessings of faith."
-	fire_supperion_affect = 1.1 //When your hopeful this works...
+	fire_suppression_effect = 1.1 //When your hopeful this works...
 	id = "holywater"
 
 /datum/reagent/water/holywater/affect_ingest(mob/living/carbon/human/M, alien, effect_multiplier)
