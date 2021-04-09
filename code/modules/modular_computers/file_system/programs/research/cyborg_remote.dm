@@ -12,11 +12,10 @@
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/remote_cyborg_controle/
 
-
 /datum/nano_module/program/remote_cyborg_controle
 	name = "Cyborg Remote Access & Monitor"
 
-/datum/nano_module/program/remote_cyborg_controle/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/datum/nano_module/program/remote_cyborg_controle/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/data[0]
 	var/safety = 1
 	data["robots"] = get_cyborgs(user)
