@@ -400,7 +400,7 @@
 
 /datum/chemical_reaction/silversolidification
 	result = null
-	required_reagents = list("iron" =5, "frostoil" =5, "silver" =5)
+	required_reagents = list("iron" =5, "frostoil" =5, "silver" =20)
 	result_amount =1
 
 /datum/chemical_reaction/silversolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
