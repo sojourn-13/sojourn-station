@@ -1596,6 +1596,7 @@
 #include "code\modules\core_implant\cruciform\upgrades.dm"
 #include "code\modules\core_implant\cruciform\machinery\altar.dm"
 #include "code\modules\core_implant\cruciform\machinery\obelisk.dm"
+#include "code\modules\core_implant\cruciform\machinery\wall_obelisk.dm"
 #include "code\modules\core_implant\cruciform\rituals\base.dm"
 #include "code\modules\core_implant\cruciform\rituals\construction.dm"
 #include "code\modules\core_implant\cruciform\rituals\crusader.dm"

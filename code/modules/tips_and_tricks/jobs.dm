@@ -306,6 +306,30 @@
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
     tipText = "The Phazon is a combat mech. It has the highest base movespeed, good armor, and can phase through anything thanks to stable bluespace technology."
 
+/tipsAndTricks/jobs/wall_obelisk
+    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    tipText = "Around some parts of the station their are wall obelisks, they run on biomatter so it might be wise to check them and refill them form time to time."
+
+/tipsAndTricks/jobs/church_wine_anti_toxin
+    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    tipText = "The Absolutism Cahors Wine can be drank to help combat toxin damage or injected to be a mild painkiller."
+
+/tipsAndTricks/jobs/best_dagger_ever
+    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    tipText = "The absolutism ritual knife can be thrown, this is useful for embeding the knife into someones back. If thrown into someone that is also apart of the Absolutism, it is less likely to embed."
+
+/tipsAndTricks/jobs/skyfall_timer
+    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    tipText = "Scrap Beacon has a two hour delay before it can be used again, meaning in a productive shift you can use it 3 times before its end."
+
+/tipsAndTricks/jobs/plants_n_meat
+    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    tipText = "If your ever in need of biomatter, you can always buy or trade for plants and meat with Hunters or Gardener."
+
+/tipsAndTricks/jobs/cleaning_carbine
+    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    tipText = "The cleansing carbine as the name suggests fires cleaning pellets that when hit something will make a small bit of slippery foam that cleans. This can be used both defensively as lasting slip to get away from bigger foes and to normally clean the station if theirs no janitor around."
+
 /tipsAndTricks/jobs/hunter_meds
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
     tipText = "Tatonkas located in the barn can be bred using wheat and then butchered for bones, leather, and animal parts you can turn into medicine in the crafting menu."
