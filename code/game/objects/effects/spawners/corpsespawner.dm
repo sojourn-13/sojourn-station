@@ -8,22 +8,22 @@
 	name = "Unknown"
 	icon_state = "player-black"
 	var/mobname = "Unknown"  //Unused now but it'd fuck up maps to remove it now
-	var/corpseuniform = null //Set this to an object path to have the slot filled with said object on the corpse.
-	var/corpsesuit = null
-	var/corpseshoes = null
-	var/corpsegloves = null
-	var/corpseradio = null
-	var/corpseglasses = null
-	var/corpsemask = null
-	var/corpsehelmet = null
-	var/corpsebelt = null
-	var/corpsepocket1 = null
-	var/corpsepocket2 = null
-	var/corpseback = null
+	var/corpseuniform //Set this to an object path to have the slot filled with said object on the corpse.
+	var/corpsesuit
+	var/corpseshoes
+	var/corpsegloves
+	var/corpseradio
+	var/corpseglasses
+	var/corpsemask
+	var/corpsehelmet
+	var/corpsebelt
+	var/corpsepocket1
+	var/corpsepocket2
+	var/corpseback
 	var/corpseid = 0     //Just set to 1 if you want them to have an ID
-	var/corpseidjob = null // Needs to be in quotes, such as "Clown" or "Chef." This just determines what the ID reads as, not their access
-	var/corpseidaccess = null //This is for access. See access.dm for which jobs give what access. Again, put in quotes. Use "Captain" if you want it to be all access.
-	var/species = "Human"
+	var/corpseidjob // Needs to be in quotes, such as "Clown" or "Chef." This just determines what the ID reads as, not their access
+	var/corpseidaccess //This is for access. See access.dm for which jobs give what access. Again, put in quotes. Use "Captain" if you want it to be all access.
+	var/species = SPECIES_HUMAN
 
 /obj/landmark/corpse/Initialize()
 	..()
@@ -61,12 +61,14 @@
 		M.equip_to_slot_or_del(new src.corpseback(M), slot_back)
 
 	var/datum/job/jobdatum = corpseidjob && SSjob.GetJob(corpseidjob)
+	if(jobdatum)
+		jobdatum.equip(M)
 
 	if(src.corpseid)
 		var/datum/job/job_access = jobdatum
 		if(corpseidaccess)
 			job_access = SSjob.GetJob(corpseidaccess)
-		var/obj/item/card/id/W = new(M)
+		var/obj/item/weapon/card/id/W = new(M)
 		if(job_access)
 			W.access = job_access.get_access()
 		else
@@ -77,79 +79,158 @@
 
 
 
-/obj/landmark/corpse/generic/clown
-	name = "Clown"
-	corpseuniform = /obj/item/clothing/under/costume/job/clown
-	corpseshoes = /obj/item/clothing/shoes/costume/job/clown
-	corpseradio = /obj/item/device/radio/headset
-	corpsemask = /obj/item/clothing/mask/costume/job/clown
-	corpsepocket1 = /obj/item/bikehorn
-	corpseback = /obj/item/storage/backpack/clown
-	corpseid = 1
-	corpseidjob = "Clown"
+// I'll work on making a list of corpses people request for maps, or that I think will be commonly used. Syndicate operatives for example.
 
-/obj/landmark/corpse/generic/prisoner
-	name = "Prisoner"
-	corpseuniform = /obj/item/clothing/under/orange
-	corpseshoes = /obj/item/clothing/shoes/orange
 
-/obj/landmark/corpse/generic/hunter
-	name = "Hunter"
-	corpseuniform = /obj/item/clothing/under/gorka/camo
-	corpsesuit = /obj/item/clothing/suit/gorka/toggle/gorka/camo
-	corpseshoes = /obj/item/clothing/shoes/cowboy/classic
-	corpsemask = /obj/item/clothing/mask/gas/old
-	corpsehelmet = /obj/item/clothing/head/cowboy/longhorn
-	corpsegloves = /obj/item/clothing/gloves/thick
 
-/////////////////Enemies//////////////////////
 
-/obj/landmark/corpse/antagonist/syndicate
+
+/obj/landmark/corpse/syndicatesoldier
 	name = "Syndicate Operative"
 	corpseuniform = /obj/item/clothing/under/syndicate
 	corpsesuit = /obj/item/clothing/suit/armor/vest
-	corpseshoes = /obj/item/clothing/shoes/swat
-	corpsegloves = /obj/item/clothing/gloves/thick/swat
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpsegloves = /obj/item/clothing/gloves/security
 	corpseradio = /obj/item/device/radio/headset
 	corpsemask = /obj/item/clothing/mask/gas
-	corpsehelmet = /obj/item/clothing/head/helmet/swat
-	corpseback = /obj/item/storage/backpack
+	corpsehelmet = /obj/item/clothing/head/armor/helmet
+	corpseback = /obj/item/weapon/storage/backpack
 	corpseid = 1
-	corpseidjob = "Syndicate Operative"
+	corpseidjob = "Operative"
 	corpseidaccess = "Syndicate"
 
-/obj/landmark/corpse/antagonist/syndicate/commando
+
+
+/obj/landmark/corpse/syndicatecommando
 	name = "Syndicate Commando"
 	corpseuniform = /obj/item/clothing/under/syndicate
 	corpsesuit = /obj/item/clothing/suit/space/void/merc
-	corpseshoes = /obj/item/clothing/shoes/swat
-	corpsegloves = /obj/item/clothing/gloves/thick/swat
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpsegloves = /obj/item/clothing/gloves/security
 	corpseradio = /obj/item/device/radio/headset
-	corpsemask = /obj/item/clothing/mask/gas/tactical
-	corpsehelmet = /obj/item/clothing/head/helmet/space/void/merc
-	corpseback = /obj/item/tank/jetpack/oxygen
-	corpsepocket1 = /obj/item/tank/emergency_oxygen
+	corpsemask = /obj/item/clothing/mask/gas/syndicate
+	corpseback = /obj/item/weapon/tank/jetpack/oxygen
+	corpsepocket1 = /obj/item/weapon/tank/emergency_oxygen
 	corpseid = 1
-	corpseidjob = "Syndicate Commando"
+	corpseidjob = "Operative"
 	corpseidaccess = "Syndicate"
 
-/obj/landmark/corpse/antagonist/pirate
+
+
+///////////Civilians//////////////////////
+
+/obj/landmark/corpse/chef
+	name = "Chef"
+	corpseuniform = /obj/item/clothing/under/rank/chef
+	corpsesuit = /obj/item/clothing/suit/chef
+	corpseshoes = /obj/item/clothing/shoes/reinforced
+	corpseradio = /obj/item/device/radio/headset
+	corpsehelmet = /obj/item/clothing/head/chefhat
+	corpseid = 1
+	corpseidjob = "Chef"
+
+/obj/landmark/corpse/doctor
+	name = "Medical doctor"
+	corpseuniform = /obj/item/clothing/under/rank/medical
+	corpseshoes = /obj/item/clothing/shoes/reinforced
+	corpseradio = /obj/item/device/radio/headset
+	corpsepocket1 = /obj/item/device/lighting/toggleable/flashlight/pen
+	corpsebelt = /obj/item/weapon/storage/belt/medical/
+	corpseid = 1
+	corpseidjob = "Medical doctor"
+
+/obj/landmark/corpse/engineer
+	name = "Technomancer"
+	corpseid = 1
+	corpseidjob = "Technomancer"
+
+/obj/landmark/corpse/engineer/rig
+	corpsesuit = /obj/item/clothing/suit/space/void/engineering
+	corpsemask = /obj/item/clothing/mask/breath
+
+/obj/landmark/corpse/clown
+	name = "Clown"
+	corpseuniform = /obj/item/clothing/under/rank/clown
+	corpseshoes = /obj/item/clothing/shoes/clown_shoes
+	corpseradio = /obj/item/device/radio/headset
+	corpsemask = /obj/item/clothing/mask/gas/clown_hat
+	corpsepocket1 = /obj/item/weapon/bikehorn
+	corpseback = /obj/item/weapon/storage/backpack/clown
+	corpseid = 1
+	corpseidjob = "Clown"
+	//corpseidaccess = "Clown" //not exist
+
+/obj/landmark/corpse/scientist
+	name = "Scientist"
+	corpseuniform = /obj/item/clothing/under/rank/scientist
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpseradio = /obj/item/device/radio/headset
+	corpsesuit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	corpseid = 1
+	corpseidjob = "Scientist"
+
+/obj/landmark/corpse/miner
+	name = "Guild Miner"
+	corpseid = 1
+	corpseidjob = "Guild Miner"
+
+/obj/landmark/corpse/miner/rig
+	corpsesuit = /obj/item/clothing/suit/space/void/mining
+	corpsemask = /obj/item/clothing/mask/breath
+
+
+/////////////////Officers//////////////////////
+
+/obj/landmark/corpse/bridgeofficer
+	name = "Bridge Officer"
+	corpseradio = /obj/item/device/radio/headset
+	corpseuniform = /obj/item/clothing/under/rank/first_officer
+	corpsesuit = /obj/item/clothing/suit/armor/bulletproof
+	corpseshoes = /obj/item/clothing/shoes/color/black
+	corpseglasses = /obj/item/clothing/glasses/sunglasses
+	corpseid = 1
+	corpseidjob = "Bridge Officer"
+	// corpseidaccess = "Captain"  // No reason for them to have all access on Eris
+
+/obj/landmark/corpse/commander
+	name = "Commander"
+	corpseuniform = /obj/item/clothing/under/rank/first_officer
+	corpsesuit = /obj/item/clothing/suit/armor/bulletproof
+	corpseradio = /obj/item/device/radio/headset/heads/captain
+	corpseglasses = /obj/item/clothing/glasses/eyepatch
+	corpsemask = /obj/item/clothing/mask/smokable/cigarette/cigar/cohiba
+	corpsehelmet = /obj/item/clothing/head/centhat
+	corpsegloves = /obj/item/clothing/gloves/security
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpsepocket1 = /obj/item/weapon/flame/lighter/zippo
+	corpseid = 1
+	corpseidjob = "Commander"
+	// corpseidaccess = "Captain"  // No reason for them to have all access on Eris
+
+
+/////////////////Enemies//////////////////////
+
+/obj/landmark/corpse/pirate
 	name = "Pirate"
-	corpseuniform = /obj/item/clothing/under/costume/history/pirate
+	corpseuniform = /obj/item/clothing/under/pirate
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpseglasses = /obj/item/clothing/glasses/eyepatch
 	corpsehelmet = /obj/item/clothing/head/bandana
 
-/obj/landmark/corpse/antagonist/pirate/gunner
-	name = "Pirate Gunner"
-	corpsesuit = /obj/item/clothing/suit/costume/history/pirate
-	corpsehelmet = /obj/item/clothing/head/costume/history/pirate
 
-/obj/landmark/corpse/antagonist/russian
+
+/obj/landmark/corpse/pirate/ranged
+	name = "Pirate Gunner"
+	corpsesuit = /obj/item/clothing/suit/pirate
+	corpsehelmet = /obj/item/clothing/head/pirate
+
+
+
+/obj/landmark/corpse/russian
 	name = "Russian"
-	corpseuniform = /obj/item/clothing/under/costume/history/soviet
+	corpseuniform = /obj/item/clothing/under/soviet
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpsehelmet = /obj/item/clothing/head/bearpelt
 
-/obj/landmark/corpse/antagonist/russian/ranged
+/obj/landmark/corpse/russian/ranged
 	corpsehelmet = /obj/item/clothing/head/ushanka
