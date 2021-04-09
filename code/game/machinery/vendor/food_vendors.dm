@@ -48,7 +48,7 @@
 /obj/machinery/vending/coffee
 	name = "Hot Coffee"
 	desc = "A vending machine which dispenses hot drinks."
-	product_slogans = "Care for a cup of hot joe?;Care for a cup of coffee?;How about a pick-me-upper?;Tea, sir/madame?;I hope you ask me for a bloody cup o' tea...;Only the finest!"
+	product_slogans = "Care for a cup of hot joe?;Care for a cup of coffee?;How about a pick-me-upper?;Want a nice tea?;I hope you ask me for a bloody cup o' tea...;Only the finest!"
 	product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the galaxy.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our hot chocolate!"
 	icon_state = "coffee"
 	icon_vend = "coffee-vend"
