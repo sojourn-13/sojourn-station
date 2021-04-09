@@ -2,6 +2,7 @@
 /obj/machinery/power/wall_obelisk
 	name = "Absolutism Protection"
 	desc = "The wall mounted version of the obelisk, unlike the larger version, it can remain active even without an active cruciform nearby. \
+	Despite its extended function, it requires biomatter loaded into it periodically. \
 	One of the few designs created for the church by the Greyson AI under control by the Soteria, much to Soteria's annoyance."
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	icon_state = "nt_wall_obelisk"
