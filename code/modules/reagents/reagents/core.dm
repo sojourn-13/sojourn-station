@@ -108,7 +108,7 @@
 	glass_name = "water"
 	glass_desc = "The father of all refreshments, this one has floating particulates in it..."
 	nerve_system_accumulations = 50 //Chemical soup
-	fire_supperion_affect = 3 //Three times better at putting out fire then water.
+	fire_suppression_effect = 3 //Three times better at putting out fire than water.
 
 /datum/reagent/water/extinguisher/touch_turf(turf/T)
 	..()
@@ -229,4 +229,3 @@
 /datum/reagent/toxin/fuel/touch_mob(mob/living/L, var/amount)
 	if(istype(L))
 		L.adjust_fire_stacks(amount / 10) // Splashing people with welding fuel to make them easy to ignite!
-
