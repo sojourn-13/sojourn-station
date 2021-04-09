@@ -1,6 +1,6 @@
 /obj/item/weapon/extinguisher
 	name = "fire extinguisher"
-	desc = "A traditional red fire extinguisher."
+	desc = "A traditional red fire extinguisher, its rated for A and B, unless it was refilled with just water..."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "fire_extinguisher0"
 	item_state = "fire_extinguisher"
@@ -26,7 +26,7 @@
 
 /obj/item/weapon/extinguisher/mini
 	name = "fire extinguisher"
-	desc = "A light and compact fiberglass-framed model fire extinguisher."
+	desc = "A light and compact fiberglass-framed model fire extinguisher, its rated for A and B, unless it was refilled with just water..."
 	icon_state = "miniFE0"
 	item_state = "miniFE"
 	hitsound = null	//it is much lighter, after all.
@@ -44,7 +44,7 @@
 		var/icon/temp = new /icon('icons/obj/items.dmi', overlaylist[rand(1,overlaylist.len)])
 		overlays += temp
 	create_reagents(max_water)
-	reagents.add_reagent("water", max_water)
+	reagents.add_reagent("abwater", max_water)
 
 
 /obj/item/weapon/extinguisher/attack_self(mob/user as mob)
