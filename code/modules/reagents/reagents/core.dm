@@ -96,7 +96,7 @@
 	glass_name = "water"
 	glass_desc = "The father of all refreshments."
 	nerve_system_accumulations = 0
-	var/fire_supperion_affect = 1 //19000 times this.
+	var/fire_suppression_effect = 1 //19000 times this.
 	reagent_type = "Water"
 
 /datum/reagent/water/extinguisher

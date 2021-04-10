@@ -57,3 +57,15 @@
 /obj/random/spider_trap/low_chance
 	icon_state = "trap-red-low"
 	spawn_nothing_percentage = 80
+
+/obj/random/spider_trap_burrowing
+	name = "burrow spider trap"
+	icon_state = "trap-red"
+	alpha = 128
+
+/obj/random/spider_trap_burrowing/item_to_spawn()
+	return (/obj/item/weapon/spider_shadow_trap/burrowing)
+
+/obj/random/spider_trap_burrowing/low_chance
+	icon_state = "trap-red-low"
+	spawn_nothing_percentage = 80

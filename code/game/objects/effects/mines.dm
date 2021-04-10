@@ -105,7 +105,6 @@
 	Bumped(user)
 
 /obj/item/weapon/spider_shadow_trap/Bumped(mob/M as mob|obj)
-
 	if(triggered) return
 
 	if(ishuman(M))
@@ -123,3 +122,36 @@
 	M.Weaken(8)
 	new /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor(src.loc)
 	qdel(src)
+
+/obj/item/weapon/spider_shadow_trap/burrowing
+	name = "collection of webs"
+	desc = "Something isn't quite right with that section of the floor, it looks like something made a small door of refuse held together by webs."
+	density = 0
+	anchored = 1
+	icon = 'icons/obj/traps.dmi'
+	icon_state = "trapdoor"
+	item_state = "trapdoor"
+
+/obj/item/weapon/spider_shadow_trap/burrowing/Bumped(mob/M as mob|obj)
+	if(triggered) return
+
+	if(ishuman(M))
+		for(var/mob/O in viewers(world.view, src.loc))
+			M.visible_message(
+				SPAN_DANGER("The trap door opens and out springs a spider, [M] is knocked to the ground as it pounces!"),
+				SPAN_DANGER("You see the ground spring open right before a bulky spider leaps out and knocks you to the ground!")
+			)
+		triggered = 1
+		call(src,triggerproc)(M)
+
+/obj/item/weapon/spider_shadow_trap/burrowing/ambush(var/mob/living/M)
+	triggered = 1
+	playsound(src.loc, 'sound/effects/impacts/rumble2.ogg', 300, 1)
+	M.Weaken(8)
+	new /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing(src.loc)
+	qdel(src)
+
+/obj/item/weapon/spider_shadow_trap/burrowing/New()
+	..()
+	pixel_x = 0
+	pixel_y = 0

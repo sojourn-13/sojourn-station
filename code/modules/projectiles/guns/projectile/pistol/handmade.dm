@@ -18,6 +18,7 @@
 	var/jammed = FALSE
 	var/jam_chance = 15
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_CALIBRE_35)
+	max_upgrades = 0
 
 /obj/item/weapon/gun/projectile/handmade_pistol/magnum
 	name = "handmade magnum"

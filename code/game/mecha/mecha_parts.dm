@@ -137,7 +137,7 @@
 	name = "Gygax Armour Plates"
 	icon_state = "gygax_armour"
 	origin_tech = list(TECH_MATERIAL = 6, TECH_COMBAT = 4, TECH_ENGINEERING = 5)
-	matter = list(MATERIAL_STEEL = 30, MATERIAL_DIAMOND = 10)
+	matter = list(MATERIAL_STEEL = 30, MATERIAL_TRITIUM = 10)
 
 
 //////////// Durand

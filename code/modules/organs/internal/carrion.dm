@@ -470,6 +470,8 @@
 				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 3,\
 				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/tarantula = 3,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/ogre = 2,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing = 1
 				))
 	new spider_to_spawn(loc)
 	visible_message(SPAN_WARNING("A spider spews out of \The [src]"))

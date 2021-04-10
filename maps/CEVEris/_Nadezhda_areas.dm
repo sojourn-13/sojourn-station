@@ -143,6 +143,9 @@
 	name = "Abandoned Solars"
 	icon_state = "erisgreen"
 
+/area/nadezhda/dungeon/outside/abandoned_solars/powered
+	requires_power = FALSE
+
 /area/nadezhda/dungeon/outside/burned_outpost
 	name = "Burned Outpost"
 	icon_state = "erisgreen"

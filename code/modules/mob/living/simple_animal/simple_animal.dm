@@ -557,8 +557,12 @@
 			new blood_from_harvest(get_turf(src))
 			qdel(src)
 		else
-			user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
-			gib()
+			if(user.stats.getPerk(PERK_BUTCHER))
+				user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
+				new blood_from_harvest(get_turf(src))
+				qdel(src)
+			else
+				gib()
 
 //Code to handle finding and nomming nearby food items
 /mob/living/simple_animal/proc/handle_foodscanning()
