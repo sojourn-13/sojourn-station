@@ -1,4 +1,3 @@
-
 /obj/machinery/power/wall_obelisk
 	name = "Absolutism Protection"
 	desc = "The wall mounted version of the obelisk, unlike the larger version, it can remain active even without an active cruciform nearby. \
@@ -7,6 +6,7 @@
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	icon_state = "nt_wall_obelisk"
 
+	density = FALSE
 	anchored = TRUE
 	layer = 2.8
 
