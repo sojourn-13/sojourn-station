@@ -145,7 +145,7 @@
 	icon_state = "ntvoid"
 	item_state = "ntvoid"
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 29)
-	slowdown = 0.3
+	slowdown = 0.15
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
 	armor = list(
 		melee = 40,
