@@ -7,7 +7,6 @@
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	icon_state = "nt_wall_obelisk"
 
-	density = TRUE
 	anchored = TRUE
 	layer = 2.8
 
