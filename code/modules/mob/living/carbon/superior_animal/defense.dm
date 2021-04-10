@@ -27,8 +27,15 @@
 			blood_effect.update_icon()
 			qdel(src)
 		else
-			user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
-			gib()
+			if(user.stats.getPerk(PERK_BUTCHER))
+				user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
+				var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+				blood_effect.basecolor = bloodcolor
+				blood_effect.update_icon()
+				qdel(src)
+			else
+				user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
+				gib()
 
 /mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
 	..()
