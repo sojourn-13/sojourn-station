@@ -57,6 +57,18 @@
 
 //obj/item/mecha_parts/mecha_equipment/repair_droid,
 
+/datum/design/research/item/mecha/ammo/lmg
+	name = "Ultra AC 2 ammunition box"
+	build_path = /obj/item/mech_ammo_box/lmg
+	starts_unlocked = TRUE
+	category = "Ammo"
+
+/datum/design/research/item/mecha/ammo/scattershot
+	name = "LBX AC 10 ammunition box"
+	build_path = /obj/item/mech_ammo_box/scattershot
+	starts_unlocked = TRUE
+	category = "Ammo"
+
 /datum/design/research/item/mecha/taser
 	name = "PBT \"Pacifier\" mounted taser"
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
