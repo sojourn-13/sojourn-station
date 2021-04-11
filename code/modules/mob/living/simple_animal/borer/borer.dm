@@ -7,7 +7,7 @@
 	response_disarm = "prods"
 	response_harm   = "stomps on"
 	icon_state = "brainslug"
-
+	colony_friend = TRUE
 	health = 30
 	maxHealth = 30
 
