@@ -73,7 +73,8 @@
 
 /obj/machinery/chemical_dispenser/proc/recharge()
 	if(stat & (BROKEN|NOPOWER)) return
-	var/addenergy = cell.give(clamp(cell.maxcharge*cell.max_chargerate + (cell_charger_additon*20 / 2),0,cell.maxcharge))
+	//Calculates the charge rate. 800 battery starts at 48 which is high. So we pull that back a bit.
+	var/addenergy = cell.give(clamp((cell.maxcharge*cell.max_chargerate) / 2 + (cell_charger_additon*20 / 2),0,cell.maxcharge))
 	if(addenergy)
 		use_power(addenergy / CELLRATE)
 		SSnano.update_uis(src) // update all UIs attached to src
