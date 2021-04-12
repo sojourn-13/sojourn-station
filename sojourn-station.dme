@@ -1409,6 +1409,7 @@
 #include "code\modules\cargo\packs_recreation.dm"
 #include "code\modules\cargo\packs_security.dm"
 #include "code\modules\cargo\packs_supply.dm"
+#include "code\modules\cargo\resource_integration.dm"
 #include "code\modules\cargo\supplyshuttle.dm"
 #include "code\modules\cargo\exports\gear.dm"
 #include "code\modules\cargo\exports\large_objects.dm"
