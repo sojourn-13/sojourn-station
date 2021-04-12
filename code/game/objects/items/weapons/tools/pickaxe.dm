@@ -9,7 +9,7 @@
 	icon_state = "pickaxe"
 	item_state = "pickaxe"
 	max_health = 500
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_STEEL = 6)
 	tool_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_PRYING = 20) //So it still shares its switch off quality despite not yet being used.
 	switched_off_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_PRYING = 20)
@@ -163,5 +163,5 @@
 	tool_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 15)
 	switched_off_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 15)
 	switched_on_qualities = list(QUALITY_DIGGING = 15, QUALITY_PRYING = 15)
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_STEEL = 3)
