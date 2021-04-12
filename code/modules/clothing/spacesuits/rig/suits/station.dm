@@ -37,7 +37,7 @@
 		bio = 100,
 		rad = 90
 	)
-	slowdown = 3
+	slowdown = 0.3
 	drain = 3
 	offline_slowdown = 10
 	offline_vision_restriction = 2
@@ -176,7 +176,7 @@ Advanced Voidsuit: Guild Master
 		bio = 100,
 		rad = 100
 	)
-	slowdown = 1
+	slowdown = 0.3
 	drain = 3
 	offline_vision_restriction = 1
 
@@ -228,7 +228,7 @@ Advanced Voidsuit: Guild Master
 		bio = 100,
 		rad = 100
 	)
-	slowdown = 0.75
+	slowdown = 0
 	offline_vision_restriction = 1
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
@@ -269,7 +269,7 @@ Advanced Voidsuit: Guild Master
 		bio = 100,
 		rad = 100
 	)
-	slowdown = 1.35
+	slowdown = 0.3
 	drain = 3.5
 	offline_slowdown = 3
 	offline_vision_restriction = 1

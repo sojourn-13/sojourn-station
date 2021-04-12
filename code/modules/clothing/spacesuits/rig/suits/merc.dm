@@ -16,7 +16,7 @@
 		bio = 100,
 		rad = 50
 	)
-	slowdown = 1
+	slowdown = 0.3
 	drain = 3.5
 	offline_slowdown = 3
 	offline_vision_restriction = 1
