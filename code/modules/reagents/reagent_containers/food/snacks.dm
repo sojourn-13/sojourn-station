@@ -1632,21 +1632,11 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube/proc/Expand()
 	src.visible_message(SPAN_NOTICE("\The [src] expands!"))
-	var/mob/living/carbon/human/H = new(get_turf(src))
-	H.set_species(monkey_type, null, FALSE)
-	H.real_name = H.species.get_random_name()
-	H.name = H.real_name
-	H.dna.SetSEValue(MONKEYBLOCK,0xFFF)
-	H.dna.b_type = RANDOM_BLOOD_TYPE
-	H.sync_organ_dna()
-	var/datum/dna/gene/G = new /datum/dna/gene/basic/monkey
-	H.active_genes |= G.type
-	H.update_icon = 1
-	if(ismob(loc))
-		var/mob/M = loc
-		M.unEquip(src)
+	var/turf/T = get_turf(src)
+	if(istype(T))
+		new /mob/living/carbon/human/monkey(T)
 	qdel(src)
-	return 1
+	return TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube/proc/Unwrap(mob/user as mob)
 	icon_state = "monkeycube"
