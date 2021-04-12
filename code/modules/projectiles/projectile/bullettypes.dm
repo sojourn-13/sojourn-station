@@ -332,8 +332,8 @@
 /obj/item/projectile/bullet/antim
 	damage_types = list(BRUTE = 90)
 	armor_penetration = 100
-	stun = 5
-	weaken = 10
+	//stun = 5
+	//weaken = 10
 	penetrating = 5
 	hitscan = TRUE //so the PTR isn't useless as a sniper weapon
 
