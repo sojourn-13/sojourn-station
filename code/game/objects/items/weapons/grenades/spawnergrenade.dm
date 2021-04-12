@@ -76,20 +76,20 @@
 	deliveryamt = 3
 	icon_state = "greyson_nade_small"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/trip/armored/allied
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1, MATERIAL_PLASTEEL = 9) //3 plasteel per baton
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1, MATERIAL_PLASTEEL = 6) //3 plasteel per baton
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/sword
 	name = "\improper GP-SI sword drone grenade"
-	desc = "Deploys a trio of sword bearing robots enhanced with incredible speed and augmetics that will attack animals and non-colony humanoids on sight."
-	deliveryamt = 3
+	desc = "Deploys a pair of sword-bearing robots enhanced with incredible speed and augments that will attack animals and non-colony humanoids on sight."
+	deliveryamt = 2
 	icon_state = "greyson_nade_medium"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied
-	matter = list(MATERIAL_STEEL = 15, MATERIAL_SILVER = 4, MATERIAL_GOLD = 3)
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_SILVER = 6, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 5)
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/mantis
 	name = "\improper GP-SI mantis drone grenade"
-	desc = "Deploys a trio of sword bearing robots enhanced with incredible speed and augmetics that will attack animals and non-colony humanoids on sight."
-	deliveryamt = 2
+	desc = "Deploys a sword-bearing robot enhanced with incredible speed and augments that will attack animals and non-colony humanoids on sight."
+	deliveryamt = 1
 	icon_state = "greyson_nade_large"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced
-	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 6, MATERIAL_GOLD = 4)
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 8, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 9)
