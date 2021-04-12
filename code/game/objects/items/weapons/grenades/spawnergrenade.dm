@@ -88,7 +88,7 @@
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/mantis
 	name = "\improper GP-SI mantis drone grenade"
-	desc = "Deploys a sword bearing robots enhanced with incredible speed and augmetics that will attack animals and non-colony humanoids on sight."
+	desc = "Deploys a sword-bearing robot enhanced with incredible speed and augments that will attack animals and non-colony humanoids on sight."
 	deliveryamt = 1
 	icon_state = "greyson_nade_large"
 	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced
