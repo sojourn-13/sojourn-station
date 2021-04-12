@@ -53,7 +53,7 @@
 	var/loaded = FALSE //do we spawn fully loaded?
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/get_equip_info()
-		return "[..()]\[[src.projectiles]\][(src.projectiles < initial(src.projectiles))?"]"
+		return "[..()]\[[src.projectiles]\]"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/examine(mob/user)
 	..()
@@ -74,8 +74,8 @@
 			if(src.max_ammo == src.projectiles)
 				to_chat(user, SPAN_WARNING("The [src] is full."))
 				return 0
-			FMJ.ammo_amout_left -= amount_per_click
-			src.projectiles += amount_per_click
+			FMJ.ammo_amout_left -= FMJ.amount_per_click
+			src.projectiles += FMJ.amount_per_click
 			return 1
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/New() //Freshly made ones are not loaded
