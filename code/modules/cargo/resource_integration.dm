@@ -23,6 +23,13 @@
 	crate_name = "Industrial Hardsuit Control Module Crate"
 	group = "Resource Integration Gear"
 
+/datum/supply_pack/light_rig
+	name = "Light Hardsuit Control Module Crate"
+	contains = list(/obj/item/weapon/rig/light)
+	cost = 300
+	crate_name = "Light Hardsuit Control Module Crate"
+	group = "Resource Integration Gear"
+
 /datum/supply_pack/flash
 	name = "Mounted Flash Module Crate"
 	contains = list(/obj/item/rig_module/device/flash)
