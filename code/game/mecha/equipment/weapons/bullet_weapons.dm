@@ -18,6 +18,7 @@
 	w_class = ITEM_SIZE_BULKY
 	var/ammo_amout_left = 0 //How many shells this box has left
 	var/ammo_max_amout = 0 //How many shells can this big box hold?
+	var/amount_per_click = 1 //how many we load per click. Used to
 	var/ammo_type = "mew" //What kinda ammo do we load?
 	matter = list(MATERIAL_STEEL = 35)
 
@@ -39,8 +40,8 @@
 			if(src.ammo_max_amout == src.ammo_amout_left)
 				to_chat(user, SPAN_WARNING("The box is full."))
 				return 0
-			ammo_amout_left -= 1
-			src.ammo_amout_left += 1
+			ammo_amout_left -= amount_per_click
+			src.ammo_amout_left += amount_per_click
 			return 1
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic
@@ -49,8 +50,10 @@
 	range = MECHA_MELEE | MECHA_RANGED
 	var/max_ammo = 0// How much ammo can we cram into this gun?
 	var/ammo_type = "mew"
-	get_equip_info()
-		return "[..()]\[[src.projectiles]\][(src.projectiles < initial(src.projectiles))?" - <a href='?src=\ref[src];rearm=1'>Rearm</a>":null]"
+	var/loaded = FALSE //do we spawn fully loaded?
+
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/get_equip_info()
+		return "[..()]\[[src.projectiles]\][(src.projectiles < initial(src.projectiles))?"]"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/examine(mob/user)
 	..()
@@ -58,6 +61,7 @@
 	to_chat(user, "<span class='info'>Ammo type: [ammo_type]</span>")
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/attackby(obj/item/I, mob/user)
+	..()
 	if (istype(I, /obj/item/mech_ammo_box))
 		var/obj/item/mech_ammo_box/FMJ = I //Full metal jecket
 		while(1)
@@ -70,16 +74,20 @@
 			if(src.max_ammo == src.projectiles)
 				to_chat(user, SPAN_WARNING("The [src] is full."))
 				return 0
-			FMJ.ammo_amout_left -= 1
-			src.projectiles += 1
+			FMJ.ammo_amout_left -= amount_per_click
+			src.projectiles += amount_per_click
 			return 1
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/New() //Freshly made ones are not loaded
 	..()
+	if(loaded)
+		return
 	projectiles = 0
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/Initialize() //On load we give random ammo
 	..()
+	if(loaded)
+		return
 	projectiles = clamp(-1, rand(0,max_ammo), max_ammo+1)
 
 
@@ -105,6 +113,9 @@
 	deviation = 0.7
 	ammo_type = "12g"
 
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/loaded
+	loaded = TRUE
+
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak
 	name = "\improper jury-rigged flak cannon"
 	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
@@ -119,6 +130,9 @@
 	deviation = 0.9
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak/loaded
+	loaded = TRUE
+
 /obj/item/mech_ammo_box/lmg
 	name = "Ultra AC 2 ammunition box"
 	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label."
@@ -126,6 +140,7 @@
 	icon_state = "boxhrifle-practice"
 	ammo_amout_left = 300
 	ammo_max_amout = 300
+	amount_per_click = 3 //Hack to make them impossable to go into negitives
 	ammo_type = "5.56"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
@@ -141,6 +156,9 @@
 	fire_cooldown = 2
 	ammo_type = "5.56"
 
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/loaded
+	loaded = TRUE
+
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/scrap
 	name = "\improper jury-rigged lead repeater"
 	desc = "Few would call this weapon reliable, fewer know just how valuable it is."
@@ -155,12 +173,19 @@
 	fire_cooldown = 2
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/scrap/loaded
+	loaded = TRUE
+
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	var/missile_speed = 2
 	var/missile_range = 30
 	max_ammo = 0
+	loaded = TRUE //We always start loaded
 	ammo_type = "fabricated rocket"
 	range = MECHA_RANGED
+
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/get_equip_info()
+		return "[..()]\[[src.projectiles]\][(src.projectiles < initial(src.projectiles))?" - <a href='?src=\ref[src];rearm=1'>Rearm</a>":null]"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/Fire(atom/movable/AM, atom/target)
 	AM.throw_at(target,missile_range, missile_speed, chassis)
