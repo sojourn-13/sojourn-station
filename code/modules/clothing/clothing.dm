@@ -469,7 +469,7 @@ BLIND     // can't see anything
 	body_parts_covered = LEGS
 	slot_flags = SLOT_FEET
 
-	var/can_hold_knife
+	var/can_hold_knife = 0
 	var/obj/item/holding
 	var/noslip = 0
 	var/module_inside = 0
@@ -540,6 +540,7 @@ BLIND     // can't see anything
 			/obj/item/weapon/material/butterfly,
 			/obj/item/weapon/material/kitchen/utensil,
 			/obj/item/weapon/tool/knife/tacknife,
+			/obj/item/weapon/tool/knife/shiv
 		)
 	if(can_hold_knife && is_type_in_list(I, knifes))
 		if(holding)
