@@ -1632,21 +1632,11 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube/proc/Expand()
 	src.visible_message(SPAN_NOTICE("\The [src] expands!"))
-	var/mob/living/carbon/human/H = new(get_turf(src))
-	H.set_species(monkey_type, null, FALSE)
-	H.real_name = H.species.get_random_name()
-	H.name = H.real_name
-	H.dna.SetSEValue(MONKEYBLOCK,0xFFF)
-	H.dna.b_type = RANDOM_BLOOD_TYPE
-	H.sync_organ_dna()
-	var/datum/dna/gene/G = new /datum/dna/gene/basic/monkey
-	H.active_genes |= G.type
-	H.update_icon = 1
-	if(ismob(loc))
-		var/mob/M = loc
-		M.unEquip(src)
+	var/turf/T = get_turf(src)
+	if(istype(T))
+		new /mob/living/carbon/human/monkey(T)
 	qdel(src)
-	return 1
+	return TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube/proc/Unwrap(mob/user as mob)
 	icon_state = "monkeycube"
@@ -2352,10 +2342,14 @@
 		open()
 		to_chat(user, SPAN_NOTICE("You tear \the [src] open."))
 		return
+	if(warm)
+		to_chat(user, SPAN_NOTICE("You are pretty sure \the [src] can't be heated again."))
+		return
 	user.visible_message(
 		SPAN_NOTICE("[user] crushes \the [src] package."),
 		"You crush \the [src] package and feel a comfortable heat build up.",
 	)
+	warm = TRUE
 	spawn(300)
 		to_chat(user, "You think \the [src] is ready to eat about now.")
 		heat()
@@ -2370,7 +2364,6 @@
 	if(warm == TRUE)
 		to_chat(usr, SPAN_WARNING("You already crushed this!"))
 		return
-	warm = TRUE
 	for(var/reagent in heated_reagents)
 		reagents.add_reagent(reagent, heated_reagents[reagent])
 	bitesize = 6

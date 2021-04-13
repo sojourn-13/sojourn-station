@@ -283,7 +283,7 @@
 //Non-hostile to regular colonists.
 //Roomba
 /mob/living/simple_animal/hostile/roomba/allied
-	name = "Soteria Institute Combat Roomba"
+	name = "SI Combat Roomba"
 	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat."
 	faction = "neutral"
 	icon_state = "roomba_SI"
@@ -293,7 +293,7 @@
 	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/hostile/roomba/trip/armored/allied
-	name = "Soteria Institute Armored Roomba"
+	name = "SI Armored Roomba"
 	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat and given additional armor."
 	faction = "neutral"
 	icon_state = "roomba_SI_armor"
@@ -304,7 +304,7 @@
 
 //Robots
 /mob/living/simple_animal/hostile/roomba/synthetic/allied
-	name = "Soteria Institute Sword Drone"
+	name = "SI Sword Drone"
 	desc = "A soteria branded sword drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
 	faction = "neutral"
 	icon = 'icons/mob/mobs-humanoid.dmi'
@@ -329,7 +329,7 @@
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced
-	name = "Soteria Institute Mantis Drone"
+	name = "SI Mantis Drone"
 	desc = "A soteria branded heavily armored mantis drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
 	icon_state = "soteria_mantis"
 	health = 350
