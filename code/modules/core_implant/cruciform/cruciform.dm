@@ -91,6 +91,19 @@ var/list/disciples = list()
 		power_regen += channeling_boost  // Applying the new power regeneration boost
 		//wearer.visible_message(SPAN_DANGER("New [channeling_boost]"))
 
+/obj/item/weapon/implant/core_implant/cruciform/examine(mob/user)
+	..()
+	var/datum/core_module/cruciform/cloning/data = get_module(CRUCIFORM_CLONING)
+	if(data?.mind) // if there is cloning data and it has a mind
+		to_chat(user, SPAN_NOTICE("This cruciform has been activated."))
+		if(isghost(user) || (user in disciples))
+			var/datum/mind/MN = data.mind
+			if(MN.name) // if there is a mind and it also has a name
+				to_chat(user, SPAN_NOTICE("This cruciform belongs to <b>[MN.name]</b>."))
+			else
+				to_chat(user, SPAN_DANGER("Something terrible has happened with this soul. Please notify somebody in charge."))
+	else // no cloning data
+		to_chat(user, "This cruciform has not yet been activated.")
 
 /obj/item/weapon/implant/core_implant/cruciform/proc/transfer_soul()
 	if(!wearer || !activated)

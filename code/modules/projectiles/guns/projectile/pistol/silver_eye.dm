@@ -13,8 +13,8 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
-	recoil_buildup = 10
-	one_hand_penalty = 20
+	recoil_buildup = 5
+	one_hand_penalty = 10
 	penetration_multiplier = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	reload_sound 	= 'sound/weapons/guns/interact/reload_silver.ogg'

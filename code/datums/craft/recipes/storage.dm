@@ -136,6 +136,30 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
 	)
 
+/datum/craft_recipe/storage/bottle
+	name = "bottle"
+	result = /obj/item/weapon/reagent_containers/glass/bottle
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS),
+		list(QUALITY_WELDING, 10, 70),
+	)
+
+/datum/craft_recipe/storage/beaker
+	name = "beaker"
+	result = /obj/item/weapon/reagent_containers/glass/beaker
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS),
+		list(QUALITY_WELDING, 10, 70),
+	)
+
+/datum/craft_recipe/storage/beaker_large
+	name = "large beaker"
+	result = /obj/item/weapon/reagent_containers/glass/beaker/large
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS),
+		list(QUALITY_WELDING, 10, 70),
+	)
+
 /datum/craft_recipe/storage/rack
 	name = "rack"
 	result = /obj/structure/table/rack

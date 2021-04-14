@@ -20,8 +20,8 @@
 	fire_delay = 3 //all revolvers can fire faster, but have huge recoil
 	damage_multiplier = 1.2
 	armor_penetration = 0.65 // Insanely powerful handcannon, but worthless against heavy armor
-	recoil_buildup = 30
-	one_hand_penalty = 20
+	recoil_buildup = 8
+	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	var/drawChargeMeter = TRUE
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
@@ -78,7 +78,7 @@
 	price_tag = 1250 //It's a novelty item.
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.1
-	recoil_buildup = 10
-	one_hand_penalty = 20
+	recoil_buildup = 1
+	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	twohanded = TRUE

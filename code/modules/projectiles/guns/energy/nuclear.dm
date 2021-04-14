@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/energy/gun/nuclear
 	name = "Prototype: advanced energy gun"
-	desc = "An energy gun with an experimental miniaturized reactor."
+	desc = "An energy gun with an experimental miniaturized reactor. It offers a self charging cell and fires in both lethal and stun. Comes with a folding stock that allows this rifle to fit a holster."
 	icon = 'icons/obj/guns/energy/nucgun.dmi'
 	icon_state = "nucgun"
 	item_charge_meter = TRUE
@@ -11,6 +11,7 @@
 	modifystate = null
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_URANIUM = 10)
 	price_tag = 2000
+	charge_cost = 50
 
 	init_firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, fire_sound='sound/weapons/Taser.ogg', icon="stun"),
