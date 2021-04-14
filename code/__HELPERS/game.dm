@@ -275,6 +275,12 @@ proc/isInSight(atom/A, atom/B)
 	else
 		return 0
 
+/proc/get_client_by_ckey(key)
+	for(var/mob/M in SSmobs.mob_list)
+		if(M.ckey == lowertext(key))
+			return M.client
+	return null
+
 /proc/get_cardinal_step_away(atom/start, atom/finish) //returns the position of a step from start away from finish, in one of the cardinal directions
 	//returns only NORTH, SOUTH, EAST, or WEST
 	var/dx = finish.x - start.x
