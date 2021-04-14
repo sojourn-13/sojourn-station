@@ -3,6 +3,7 @@
 	desc = "It can hold a few small and personal things."
 	storage_slots = 7
 	icon_state = "wallet"
+	price_tag = 20
 	w_class = ITEM_SIZE_SMALL
 	cant_hold = list(
 		/obj/item/weapon/tool/screwdriver/combi_driver,
