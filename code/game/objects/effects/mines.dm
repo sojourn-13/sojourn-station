@@ -97,14 +97,14 @@
 	..()
 	pixel_x = -16
 	pixel_y = -12
-
-/obj/item/weapon/spider_shadow_trap/Crossed(AM as mob|obj)
-	Bumped(AM)
-
+/*
+/obj/item/weapon/spider_shadow_trap/Bumped(AM as mob|obj)
+	Crossed(AM)
+*/
 /obj/item/weapon/spider_shadow_trap/attack_hand(mob/user as mob)
-	Bumped(user)
+	Crossed(user)
 
-/obj/item/weapon/spider_shadow_trap/Bumped(mob/M as mob|obj)
+/obj/item/weapon/spider_shadow_trap/Crossed(mob/M as mob|obj)
 	if(triggered) return
 
 	if(ishuman(M))
@@ -132,7 +132,7 @@
 	icon_state = "trapdoor"
 	item_state = "trapdoor"
 
-/obj/item/weapon/spider_shadow_trap/burrowing/Bumped(mob/M as mob|obj)
+/obj/item/weapon/spider_shadow_trap/burrowing/Crossed(mob/M as mob|obj)
 	if(triggered) return
 
 	if(ishuman(M))

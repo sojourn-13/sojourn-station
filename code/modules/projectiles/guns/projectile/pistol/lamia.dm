@@ -17,8 +17,8 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
-	recoil_buildup = 18
-	one_hand_penalty = 19
+	recoil_buildup = 6
+	one_hand_penalty = 8
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 /obj/item/weapon/gun/projectile/lamia/update_icon()
@@ -52,7 +52,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	zoom_factor = 0.4
-	recoil_buildup = 15
+	recoil_buildup = 7
 	price_tag = 1250
 
 /obj/item/weapon/gun/projectile/lamia/scoped/dark
@@ -62,7 +62,7 @@
 	item_state = "scoped_dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.4
-	recoil_buildup = 10
+	recoil_buildup = 5
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.2
 	price_tag = 1100
@@ -78,7 +78,7 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.5
 	silenced = TRUE
-	recoil_buildup = 8 //highly OP SolFed specwar weapon
+	recoil_buildup = 4 //highly OP SolFed specwar weapon
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.2
 	price_tag = 1250
@@ -89,7 +89,7 @@
 	icon_state = "akurra"
 	item_state = "akurra"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
-	recoil_buildup = 15
+	recoil_buildup = 6
 	silenced = TRUE
 	damage_multiplier = 0.95
 	penetration_multiplier = 1.2
