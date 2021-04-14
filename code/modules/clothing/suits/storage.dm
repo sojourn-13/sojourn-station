@@ -441,6 +441,7 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
+	price_tag = 80
 
 /*Flannel Shirts*/
 

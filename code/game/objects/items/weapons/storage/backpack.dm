@@ -331,6 +331,7 @@
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
 	icon_state = "satchel_leather"
+	price_tag = 90
 
 /obj/item/weapon/storage/backpack/satchel/leather/withwallet/populate_contents()
 	new /obj/item/weapon/storage/wallet/random(src)
