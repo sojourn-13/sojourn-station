@@ -5,6 +5,7 @@
 	initial_icon = "marauder"
 	step_in = 3
 	step_energy_drain = 3
+	price_tag = 25000 //Rare spawns + uncraftable
 	health = 1000
 	deflect_chance = 25
 	damage_absorption = list("brute"=0.5,"fire"=0.7,"bullet"=0.45,"energy"=0.7,"bomb"=0.7)
@@ -23,10 +24,11 @@
 	force = 45
 	max_equip = 10
 
-//Iron Lords gift, will remove this if destroyed in game.
+//Iron Lords gift, will remove this if destroyed in game or sold.
 /obj/mecha/combat/dreadnought/security
 	desc = "Heavy-duty, combat exosuit, developed after the Durand model. Rarely found among civilian populations. Anyone who kept up with colony news would know this one was gifted by the Iron Lord void wolves as apart of a trade agreement and unfortunately is the only one of its kind. If destroyed, it would disappear forever."
 	name = "Iron Tyrant"
+	price_tag = 2500000 //best mech in the game
 
 /obj/mecha/combat/dreadnought/security/New()
 	..()//Let it equip whatever is needed.
