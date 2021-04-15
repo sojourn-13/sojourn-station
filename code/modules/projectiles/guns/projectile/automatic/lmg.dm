@@ -138,6 +138,8 @@
 	icon_base = "tk"
 	icon_state = "tkclosed-empty"
 	item_state = "tkclosedmag"
+	mag_well = MAG_WELL_BOX|MAG_WELL_STANMAG
+	caliber = CAL_LRIFLE
 	damage_multiplier = 1.1 //This is clearly to high
 	penetration_multiplier = 1.1 //Ah yes wall hacks...
 	recoil_buildup = 1.7 //Why is this so good?
@@ -148,18 +150,12 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if (cover_open)
-		iconstring += "open"
-		itemstring += "open"
-	else
-		iconstring += "closed"
-		itemstring += "closed"
-
 	if (ammo_magazine)
 		var/percent = (ammo_magazine.stored_ammo.len / ammo_magazine.max_ammo) * 100
 		var/number = round(percent, 25)
 		iconstring += "[number]"
-	else
+
+	if (!ammo_magazine)
 		iconstring += "-empty"
 
 	icon_state = iconstring
