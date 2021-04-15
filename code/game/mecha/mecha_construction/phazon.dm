@@ -12,7 +12,7 @@
 		list("key"=/obj/item/bluespace_crystal/artificial), //7,
 		list("key"=/obj/item/weapon/stock_parts/smes_coil/super_capacity), //8,
 		list("key"=/obj/item/weapon/gun_upgrade/mechanism/overdrive), //9,
-		list("key"=/obj/item/weapon/cell/large/moebius/nuclear), //10,
+		list("key"=/obj/item/weapon/cell/large/moebius/nuclear) //10
 	)
 
 	spawn_result()
