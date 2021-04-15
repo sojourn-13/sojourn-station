@@ -140,8 +140,9 @@
 	dynamic_lighting = TRUE
 
 /area/nadezhda/dungeon/outside/abandoned_solars
-	name = "Abandoned Solars"
+	name = "Soteria Solar Outpost"
 	icon_state = "erisgreen"
+	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
 
 /area/nadezhda/dungeon/outside/abandoned_solars/powered
 	requires_power = FALSE
@@ -254,6 +255,7 @@
 /area/nadezhda/outside/pond
 	name = "Pond"
 	icon_state = "erisgreen"
+	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
 
 /area/nadezhda/outside/bcave
 	name = "Tengolo Cave West"

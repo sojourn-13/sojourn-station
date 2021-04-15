@@ -13,8 +13,8 @@
 	can_dual = TRUE
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
-	recoil_buildup = 20
-	one_hand_penalty = 30
+	recoil_buildup = 8
+	one_hand_penalty = 15
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'

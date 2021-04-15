@@ -10,6 +10,7 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_BIOMATTER = 4, MATERIAL_PLASTIC = 5)
 	attack_verb = list("whipped", "lashed", "disciplined")
+	price_tag = 15
 
 	var/show_above_suit = 0
 
@@ -89,6 +90,7 @@
 	desc = "Can hold various tools, its made from wire. It somehow always ends up the same color no matter what it is made from."
 	icon_state = "handmade_utility"
 	item_state = "handmande_utility"
+	price_tag = 5
 
 /obj/item/weapon/storage/belt/utility/handmade/full/populate_contents()
 	new /obj/item/weapon/tool/screwdriver/improvised(src)
@@ -323,6 +325,7 @@
 	can_hold = list(
 		/obj/item/clothing/mask/costume/job/luchador
 		)
+	price_tag = 50
 
 /obj/item/weapon/storage/belt/church
 	name = "absolutism belt"

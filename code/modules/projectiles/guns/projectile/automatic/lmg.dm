@@ -129,3 +129,14 @@
 	init_firemodes = list(
 		FULL_AUTO_600,
 		)
+
+/obj/item/weapon/gun/projectile/automatic/lmg/tk
+	name = "\"Takeshi\" suppression machinegun"
+	desc = "The \"Takeshi LMG\" is marshal's answer to any scenario that requires suppression or meat grinding, a fine oiled machine of war and death."
+	icon = 'icons/obj/guns/projectile/tk.dmi'
+	icon_base = "tk"
+	icon_state = "tkclosed-empty"
+	item_state = "tkclosedmag"
+	damage_multiplier = 1.1
+	penetration_multiplier = 1.1
+	recoil_buildup = 1.7

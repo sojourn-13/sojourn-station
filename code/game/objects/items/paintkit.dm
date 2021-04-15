@@ -336,3 +336,9 @@
 	new_name = "Phazon \"Janus\""
 	new_desc = "A Phazon exosuit painted with a gray gradient and multiple neon colored lighting. Is this cyberpunk enough?"
 	new_icon = "janus"
+
+/obj/item/device/kit/paint/phazon/skullmech
+	name = "\"Bone 'Ead\" Phazon customization kit"
+	new_name = "Phazon \"Bone 'Ead\""
+	new_desc = "A Phazon exosuit outfitted with bones to appear more menacing. Why would anyone do this?"
+	new_icon = "skullmech"

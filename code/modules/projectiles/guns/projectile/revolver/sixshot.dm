@@ -30,5 +30,5 @@
 	price_tag = 250
 	damage_multiplier = 0.7
 	penetration_multiplier = 0.8
-	recoil_buildup = 20
+	recoil_buildup = 20 //Still a shotgun
 	one_hand_penalty = 26

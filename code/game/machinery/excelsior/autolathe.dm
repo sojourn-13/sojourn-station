@@ -38,7 +38,7 @@
     ..()
     toggle_active()
     update_icon()
-   
+
 /obj/machinery/excelsior_boombox/attackby(var/obj/item/I, var/mob/user)
 	if(default_deconstruction(I, user))
 		return
@@ -69,6 +69,6 @@
                 M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 20 SECONDS, "ex_boombox")
                 M.stats.addTempStat(STAT_VIG, STAT_LEVEL_BASIC, 20 SECONDS, "ex_boombox")
             else
-                to_chat(M, SPAN_WARNING("You hear some stupid propaganda, you dont belive it but... what if they are right?"))
+                to_chat(M, SPAN_WARNING("You hear some stupid propaganda, you dont believe it but... what if they are right?"))
                 M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, 20 SECONDS, "ex_boombox_m")
         addtimer(CALLBACK(src, .proc/send_propaganda), 20 SECONDS)

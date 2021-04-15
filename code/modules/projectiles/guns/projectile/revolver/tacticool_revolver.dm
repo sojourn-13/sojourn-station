@@ -13,6 +13,6 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.25
 	zoom_factor = 1.3
-	recoil_buildup = 30 //Less recoil due to the weight of the scope.
-	one_hand_penalty = 30
+	recoil_buildup = 4 //Less recoil due to the weight of the scope.
+	one_hand_penalty = 15
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)

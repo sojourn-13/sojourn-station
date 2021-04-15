@@ -19,8 +19,8 @@
 	var/key = diff == FORWARD ? "key" : "backkey" //Were in a constent state of "We can go back a step or fordwards?" for each step,
 	if(!ispath(step[key]))
 		if(istype(used_atom, /obj/item))
-			var/obj/item/I = used_atom //The item we just used. Used for deleting items
-			return I.use_tool(user, holder, WORKTIME_NORMAL, step[key], FAILCHANCE_NORMAL, required_stat = STAT_MEC) //We are not hard to make but do take sometime.
+			var/obj/item/I = used_atom
+			return I.use_tool(user, holder, WORKTIME_EXTREMELY_LONG, step[key], FAILCHANCE_NORMAL, required_stat = STAT_MEC)
 
 	else if(istype(used_atom, /obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/C = used_atom
