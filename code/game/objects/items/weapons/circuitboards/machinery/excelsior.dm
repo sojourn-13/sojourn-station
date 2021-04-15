@@ -84,6 +84,7 @@
 		/obj/item/weapon/cell/medium = 1
 	)
 
+//Putting these here since its an antag type item and making a full .dm for 9 lines of code is.. dumb. -Kaz, Trilby
 /obj/item/weapon/circuitboard/artificer_turret
 	build_name = "artificer turret"
 	build_path = /obj/machinery/porta_turret/artificer
@@ -104,7 +105,6 @@
 		/obj/item/device/assembly/prox_sensor = 1,
 	)
 
-//Putting this here since its an antag type item and making a full .dm for 9 lines of code is.. dumb. -Kaz
 /obj/item/weapon/circuitboard/mindswapper
 	build_name = "mind swapper"
 	build_path = /obj/machinery/mindswapper
@@ -114,4 +114,16 @@
 		/obj/item/weapon/stock_parts/capacitor = 5,
 		/obj/item/weapon/stock_parts/scanning_module = 3,
 		/obj/item/weapon/stock_parts/manipulator = 4
+	)
+
+/obj/item/weapon/circuitboard/blackshield_teleporter
+	name = "circuit board blackshield teleporter"
+	build_name = ""
+	build_path = /obj/machinery/blackshield_teleporter
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 2)
+	req_components = list(
+		/obj/item/weapon/stock_parts/manipulator = 2,
+		/obj/item/weapon/cell/large = 1,
+		/obj/item/weapon/stock_parts/subspace/crystal = 1
 	)
