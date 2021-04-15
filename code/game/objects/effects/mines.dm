@@ -108,11 +108,8 @@
 	if(triggered) return
 
 	if(ishuman(M))
-		for(var/mob/O in viewers(world.view, src.loc))
-			M.visible_message(
-				SPAN_DANGER("A gutteral screeching roar is heard right before [M] is knocked down by a huge spider leaping from above!"),
-				SPAN_DANGER("You hear a gutteral screeching roar right before something huge falling from above knocks you down!")
-			)
+		M.visible_message("<span class='warning'>A gutteral screeching roar is heard right before [M] is knocked down by a huge spider leaping from above!</span>", \
+						  "<span class='warning'>You hear a gutteral screeching roar right before something huge falling from above knocks you down!</span>")
 		triggered = 1
 		call(src,triggerproc)(M)
 
@@ -136,11 +133,8 @@
 	if(triggered) return
 
 	if(ishuman(M))
-		for(var/mob/O in viewers(world.view, src.loc))
-			M.visible_message(
-				SPAN_DANGER("The trap door opens and out springs a spider, [M] is knocked to the ground as it pounces!"),
-				SPAN_DANGER("You see the ground spring open right before a bulky spider leaps out and knocks you to the ground!")
-			)
+		M.visible_message("<span class='warning'>The trap door opens and out springs a spider, [M] is knocked to the ground as it pounces!</span>", \
+						  "<span class='warning'>You see the ground spring open right before a bulky spider leaps out and knocks you to the ground!</span>")
 		triggered = 1
 		call(src,triggerproc)(M)
 
