@@ -1057,7 +1057,9 @@ I said no!
 	items = list(/obj/item/organ/internal/brain)
 	result = /obj/item/weapon/reagent_containers/food/snacks/sliceable/braincake
 
-/datum/recipe/cube/roach
+//Roach cubes
+
+/datum/recipe/cube/
 	fruit = list("potato" = 1)
 	reagents = list("protein" = 10)
 	items = list(/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat)
