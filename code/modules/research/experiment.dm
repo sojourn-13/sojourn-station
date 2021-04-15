@@ -259,6 +259,9 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/list/scanned_artifacts = list()
 	var/list/scanned_symptoms = list()
 	var/list/scanned_slimecores = list()
+	var/list/scanned_fruituid = list()
+	var/list/scanned_fruitnames = list()
+	var/list/scanned_fruitchems = list()
 	var/datablocks = 0
 
 /obj/item/device/science_tool/Initialize()
@@ -303,10 +306,24 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			if(!scanned_symptoms[symptom])
 				scanneddata += 1
 				scanned_symptoms[symptom] = report.symptoms[symptom]
+
 	if(istype(O, /obj/item/slime_extract))
 		if(!(O.type in scanned_slimecores))
 			scanned_slimecores += O.type
 			scanneddata += 1
+
+	if(istype(O, /obj/item/weapon/paper/plant_report))
+		var/obj/item/weapon/paper/plant_report/report = O
+
+		if(!report.scanned_reagents)
+			to_chat(user, SPAN_NOTICE("Can only gather research from fully grown fruit."))
+			return
+
+		var/datum/seed/P = report.scanned_seed
+		if(P.uid in scanned_fruituid)
+			to_chat(user, SPAN_NOTICE("[src] already has data about this fruit."))
+			return
+		scanned_fruituid += P.uid
 
 	if(scanneddata > 0)
 		datablocks += scanneddata

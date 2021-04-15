@@ -24,6 +24,8 @@
 	return FALSE
 
 /obj/item/device/scanner/plant/scan(atom/A, mob/user)
+	loaded_seed = null
+	loaded_reagents = null
 	scan_title = "[A] at [get_area(A)]"
 	scan_data = plant_scan_results(A)
 	flick("hydro2", src)
@@ -76,9 +78,10 @@
 		if(H.frozen == 1)
 			to_chat(usr, "<span class='warning'>Disable the cryogenic freezing first!</span>")
 			return
-		grown_seed = H.seed
+
+		var/datum/seed/S = H.seed
+		grown_seed = S
 		loaded_seed = grown_seed
-		grown_reagents = H.reagents
 
 	if(!grown_seed)
 		return("No Data Available")
