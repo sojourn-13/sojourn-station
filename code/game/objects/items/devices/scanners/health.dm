@@ -20,7 +20,7 @@
 	charge_per_use = 0
 
 /obj/item/device/scanner/health/afterattack(atom/A, mob/user, proximity)
-	if(user.stats.getStat(STAT_BIO) > STAT_LEVEL_EXPERT)
+	if(user.stats?.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getStat(STAT_BIO) > STAT_LEVEL_EXPERT)
 		use_delay = 0 // Instant use for skilled users
 	..()
 	use_delay = initial(use_delay) // Reset use_delay so unskilled users don't get the bonus

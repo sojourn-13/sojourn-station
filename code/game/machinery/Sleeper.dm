@@ -53,7 +53,7 @@
 		man_amount++
 	man_rating -= man_amount
 
-	available_chemicals = level0.Copy() 
+	available_chemicals = level0.Copy()
 
 			//We start out (2 - 2) for are man_rating
 
@@ -106,7 +106,7 @@
 	icon_state = "sleeper_[occupant ? "1" : "0"]"
 
 /obj/machinery/sleeper/attack_hand(var/mob/user)
-	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT))
+	if(user.stats?.getPerk(PERK_MEDICAL_EXPERT) !usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT))
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
