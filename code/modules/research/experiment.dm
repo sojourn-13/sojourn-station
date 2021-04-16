@@ -325,9 +325,24 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			return
 		scanned_fruituid += P.uid
 
+		if (P.kitchen_tag in scanned_fruitnames)																			// kitchen_tag is because due to the mutation/gene splicing process
+			to_chat(user, SPAN_NOTICE("[src] already has scanned this fruit base. No research expected"))					// the only "name" that links them is the kitchen_tag
+		else
+			scanned_fruitnames += P.kitchen_tag
+
+		for (var/datum/reagent/Q in report.scanned_reagents.reagent_list)
+
+			if (Q.id in scanned_fruitchems)
+				to_chat(user, SPAN_NOTICE("[src] already has scanned [Q.id]. No research expected"))
+			else
+				scanned_fruitchems += Q.id
+
+		scanneddata += 1
+
 	if(scanneddata > 0)
 		datablocks += scanneddata
 		to_chat(user, SPAN_NOTICE("[src] received [scanneddata] data block[scanneddata>1?"s":""] from scanning [O]"))
+
 	else if(istype(O, /obj/item))
 		var/science_value = experiments.get_object_research_value(O)
 		if(science_value > 0)

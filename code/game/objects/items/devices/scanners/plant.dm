@@ -78,7 +78,6 @@
 		if(H.frozen == 1)
 			to_chat(usr, "<span class='warning'>Disable the cryogenic freezing first!</span>")
 			return
-
 		var/datum/seed/S = H.seed
 		grown_seed = S
 		loaded_seed = grown_seed
