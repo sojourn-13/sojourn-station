@@ -64,7 +64,7 @@
 					/obj/item/weapon/airlock_electronics = 10,
 					/obj/item/weapon/circuitboard/apc = 10,
 					/obj/item/weapon/airalarm_electronics = 10,
-					/obj/item/weapon/cell/large/high = 10,
+					/obj/item/weapon/cell/large/high = 2,
 					/obj/item/weapon/storage/belt/utility = 3,
 					/obj/item/weapon/weldpack/canister = 4,
 					/obj/item/weapon/weldpack = 2)

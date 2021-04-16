@@ -163,7 +163,7 @@
 /obj/item/projectile/beam/sniper/healing
 	name = "grace"
 	icon_state = "xray"
-	damage_types = list(TOX = -3, BURN = -3, BRUTE = -3)
+	damage_types = list(TOX = -5, BURN = -5, BRUTE = -5)
 	armor_penetration = 0
 	stun = 0
 	weaken = 0

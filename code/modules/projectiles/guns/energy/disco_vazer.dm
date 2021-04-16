@@ -1,4 +1,3 @@
-
 /obj/item/weapon/gun/energy/lasersmg
 	name = "Disco Vazer \"Lasblender\""
 	desc = "This conversion of the \"Texan\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
