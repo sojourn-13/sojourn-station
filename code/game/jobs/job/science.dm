@@ -115,6 +115,7 @@
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
+	department_account_access = TRUE
 
 	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
 
