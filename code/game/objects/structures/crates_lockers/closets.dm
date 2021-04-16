@@ -321,11 +321,15 @@
 					A.forceMove(src.loc)
 					A.ex_act(severity + 1)
 				qdel(src)
+			else
+				health -= 99
 		if(3)
 			if(prob(5))
 				for(var/atom/movable/A as mob|obj in src)
 					A.forceMove(src.loc)
 				qdel(src)
+			else
+				health -= 50
 
 /obj/structure/closet/proc/populate_contents()
 	return
