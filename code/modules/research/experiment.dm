@@ -35,6 +35,10 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/list/saved_artifacts = list()
 	var/list/saved_symptoms = list()
 	var/list/saved_slimecores = list()
+	var/list/saved_fruituid = list()
+	var/list/saved_fruitnames = list()
+	var/list/saved_fruitchems = list()
+	var/list/saved_fruittraits = list()
 
 	// Special point amount for autopsy weapons
 	var/static/list/special_weapons = list(
@@ -148,6 +152,8 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			points += ARTIFACT_PAMT
 			saved_artifacts += list(artifact)
 
+			/////////////////////////////////////// VIRUS SCANNER
+
 	for(var/symptom in I.scanned_symptoms)
 		if(saved_symptoms[symptom])
 			continue
@@ -158,6 +164,8 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 
 		saved_symptoms[symptom] = level
 
+		/////////////////////////////////////////// SLIME CORES
+
 	for(var/core in I.scanned_slimecores)
 		if(core in saved_slimecores)
 			continue
@@ -167,6 +175,9 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			reward = core_points[core]
 		points += reward
 		saved_slimecores += core
+
+		////////////////////////////////////////// PLANT DATA
+
 
 	I.clear_data()
 	return round(points)
@@ -262,6 +273,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/list/scanned_fruituid = list()
 	var/list/scanned_fruitnames = list()
 	var/list/scanned_fruitchems = list()
+	var/list/scanned_fruittraits = list()
 	var/datablocks = 0
 
 /obj/item/device/science_tool/Initialize()
@@ -336,6 +348,21 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 				to_chat(user, SPAN_NOTICE("[src] already has scanned [Q.id]. No research expected"))
 			else
 				scanned_fruitchems += Q.id
+		if ((P.get_trait(TRAIT_HARVEST_REPEAT)) && !("TRAIT_HARVEST_REPEAT" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_HARVEST_REPEAT"
+		if ((P.get_trait(TRAIT_PRODUCES_POWER)) && !("TRAIT_PRODUCES_POWER" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_PRODUCES_POWER"
+		if ((P.get_trait(TRAIT_JUICY)) && !("TRAIT_JUICY" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_JUICY"
+		if ((P.get_trait(TRAIT_EXPLOSIVE)) && !("TRAIT_EXPLOSIVE" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_EXPLOSIVE"
+		if ((P.get_trait(TRAIT_PARASITE)) && !("TRAIT_PARASITE" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_PARASITE"
+		if ((P.get_trait(TRAIT_STINGS)) && !("TRAIT_STINGS" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_STINGS"
+		if ((P.get_trait(TRAIT_TELEPORTING)) && !("TRAIT_TELEPORTING" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_TELEPORTING"
+		if ((P.get_trait(TRAIT_BIOLUM)) && !("TRAIT_BIOLUM" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_BIOLUM"
+		if ((P.get_trait(TRAIT_CARNIVOROUS)==1) && !("TRAIT_CARNIVOROUS1" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_CARNIVOROUS1"
+		if ((P.get_trait(TRAIT_CARNIVOROUS)==2) && !("TRAIT_CARNIVOROUS2" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_CARNIVOROUS2"
+		if ((P.get_trait(TRAIT_SPREAD)==1) && !("TRAIT_SPREAD1" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_SPREAD1"
+		if ((P.get_trait(TRAIT_SPREAD)==2) && !("TRAIT_SPREAD2" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_SPREAD2"
+		if ((P.get_trait(TRAIT_ALTER_TEMP)<0) && !("TRAIT_ALTER_TEMPDOWN" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_ALTER_TEMPDOWN"
+		if ((P.get_trait(TRAIT_ALTER_TEMP)>0) && !("TRAIT_ALTER_TEMPUP" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_ALTER_TEMPUP"
+
 
 		scanneddata += 1
 
@@ -355,6 +382,9 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	scanned_artifacts = list()
 	scanned_symptoms = list()
 	scanned_slimecores = list()
+	scanned_fruitnames = list()
+	scanned_fruitchems = list()
+	scanned_fruittraits = list()
 	datablocks = 0
 
 
