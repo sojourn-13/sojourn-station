@@ -495,7 +495,7 @@
 /datum/ritual/cruciform/priest/short_boost
 	name = "Short boost ritual"
 	phrase = null
-	desc = "This litany boosts mechanical stats of everyone who's hear you on the short time. "
+	desc = "This litany boosts the stats of everyone who's hear you on the short time. "
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	effect_time = 10 MINUTES
@@ -505,7 +505,7 @@
 
 /datum/ritual/cruciform/priest/short_boost/New()
 	..()
-	desc = "This litany boosts [get_stats_to_text()] stats of evryone who hears you, for about ten minutes."
+	desc = "This litany boosts [get_stats_to_text()] stats of everyone who hears you, for about ten minutes."
 
 
 /datum/ritual/cruciform/priest/short_boost/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -557,12 +557,12 @@
 
 /datum/ritual/cruciform/priest/short_boost/mental
 	name = "Grace of Perseverance"
-	phrase = "Domine petra mea et robur meum et salvator meus Deus meus fortis meus sperabo in eo scutum meum et cornu salutis meae susceptor meus"
+	phrase = "Domine petra mea et robur meum et salvator meus Deus meus fortis meus sperabo in eo scutum meum et cornu salutis meae susceptor meus."
 	stats_to_boost = list(STAT_MEC = 10, STAT_COG = 10, STAT_BIO = 10)
 
 /datum/ritual/cruciform/priest/short_boost/physical
 	name = "Canto of Courage"
-	phrase = "In Deo laudabo verbum in Domino praedicabo sermonem in Deo speravi non timebo quid faciat homo mihi"
+	phrase = "In Deo laudabo verbum in Domino praedicabo sermonem in Deo speravi non timebo quid faciat homo mihi."
 	stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
 
 /datum/ritual/cruciform/priest/records
