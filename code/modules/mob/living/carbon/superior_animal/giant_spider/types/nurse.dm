@@ -40,7 +40,7 @@
 	icon_living = "recluse"
 	maxHealth = 20
 	health = 20
-	poison_per_bite = 4
+	poison_per_bite = 1 //1u is all it takes to sleep you, your asleep also dosnt prevet it form attacking you more then once meaning this quit quickly stacks without someones help
 	melee_damage_lower = 3
 	melee_damage_upper = 5
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/recluse

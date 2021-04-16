@@ -155,9 +155,6 @@
 		var/number = round(percent, 25)
 		iconstring += "[number]"
 
-	if (!ammo_magazine)
-		iconstring += "-empty"
-
 	icon_state = iconstring
 	set_item_state(itemstring)
 

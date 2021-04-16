@@ -34,25 +34,29 @@
 	update_icon()
 	return TRUE
 
+// this should probably use dump_contents()
 /obj/structure/closet/crate/ex_act(severity)
 	switch(severity)
-		if(1.0)
-			for(var/obj/O in src.contents)
-				qdel(O)
+		if(1)
+			for(var/atom/movable/A as mob|obj in src)//pulls everything out of the locker and hits it with an explosion
+				A.forceMove(src.loc)
+				A.ex_act(severity + 1)
 			qdel(src)
-			return
-		if(2.0)
-			for(var/obj/O in src.contents)
-				if(prob(50))
-					qdel(O)
-			qdel(src)
-			return
-		if(3.0)
-			if (prob(50))
+		if(2)
+			if(prob(50))
+				for (var/atom/movable/A as mob|obj in src)
+					A.forceMove(src.loc)
+					A.ex_act(severity + 1)
 				qdel(src)
-			return
-		else
-	return
+			else
+				health -= 99
+		if(3)
+			if(prob(5))
+				for(var/atom/movable/A as mob|obj in src)
+					A.forceMove(src.loc)
+				qdel(src)
+			else
+				health -= 50
 
 /obj/structure/closet/crate/MouseDrop_T(mob/target, mob/user)
 	var/mob/living/L = user
