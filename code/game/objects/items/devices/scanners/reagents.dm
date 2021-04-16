@@ -12,7 +12,7 @@
 	var/recent_fail = 0
 
 /obj/item/device/scanner/reagent/is_valid_scan_target(obj/O)
-	if(user.stats?.getPerk(PERK_ADVANCED_MEDICAL) || !usr.stat_check(STAT_COG, STAT_LEVEL_BASIC))
+	if(usr.stats?.getPerk(PERK_ADVANCED_MEDICAL) || !usr.stat_check(STAT_COG, STAT_LEVEL_BASIC))
 		to_chat(usr, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
 		return
 
