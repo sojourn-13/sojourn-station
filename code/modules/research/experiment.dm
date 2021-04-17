@@ -178,6 +178,26 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 
 		////////////////////////////////////////// PLANT DATA
 
+	for(var/plantname in I.scanned_fruitnames)
+		if (plantname in saved_fruitnames)
+			continue
+		var/given = rand (200,1000)
+		saved_fruitnames+=plantname
+		points += given
+
+	for(var/chemname in I.scanned_fruitchems)
+		if (chemname in saved_fruitchems)
+			continue
+		var/given = rand (750,2250)
+		saved_fruitchems += chemname
+		points += given
+	for(var/traitname in I.scanned_fruittraits)
+		if (traitname in saved_fruittraits)
+			continue
+		var/ given = rand (1500,2500)
+		saved_fruittraits += traitname
+		points += given
+
 
 	I.clear_data()
 	return round(points)
@@ -332,39 +352,66 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			return
 
 		var/datum/seed/P = report.scanned_seed
+
 		if(P.uid in scanned_fruituid)
 			to_chat(user, SPAN_NOTICE("[src] already has data about this fruit."))
 			return
+
 		scanned_fruituid += P.uid
 
-		if (P.kitchen_tag in scanned_fruitnames)																			// kitchen_tag is because due to the mutation/gene splicing process
-			to_chat(user, SPAN_NOTICE("[src] already has scanned this fruit base. No research expected"))					// the only "name" that links them is the kitchen_tag
-		else
-			scanned_fruitnames += P.kitchen_tag
+		if (!(P.seed_name in scanned_fruitnames))
+			scanned_fruitnames += P.seed_name
+			scanneddata += 1
 
 		for (var/datum/reagent/Q in report.scanned_reagents.reagent_list)
-
 			if (Q.id in scanned_fruitchems)
-				to_chat(user, SPAN_NOTICE("[src] already has scanned [Q.id]. No research expected"))
+				continue
 			else
 				scanned_fruitchems += Q.id
-		if ((P.get_trait(TRAIT_HARVEST_REPEAT)) && !("TRAIT_HARVEST_REPEAT" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_HARVEST_REPEAT"
-		if ((P.get_trait(TRAIT_PRODUCES_POWER)) && !("TRAIT_PRODUCES_POWER" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_PRODUCES_POWER"
-		if ((P.get_trait(TRAIT_JUICY)) && !("TRAIT_JUICY" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_JUICY"
-		if ((P.get_trait(TRAIT_EXPLOSIVE)) && !("TRAIT_EXPLOSIVE" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_EXPLOSIVE"
-		if ((P.get_trait(TRAIT_PARASITE)) && !("TRAIT_PARASITE" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_PARASITE"
-		if ((P.get_trait(TRAIT_STINGS)) && !("TRAIT_STINGS" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_STINGS"
-		if ((P.get_trait(TRAIT_TELEPORTING)) && !("TRAIT_TELEPORTING" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_TELEPORTING"
-		if ((P.get_trait(TRAIT_BIOLUM)) && !("TRAIT_BIOLUM" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_BIOLUM"
-		if ((P.get_trait(TRAIT_CARNIVOROUS)==1) && !("TRAIT_CARNIVOROUS1" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_CARNIVOROUS1"
-		if ((P.get_trait(TRAIT_CARNIVOROUS)==2) && !("TRAIT_CARNIVOROUS2" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_CARNIVOROUS2"
-		if ((P.get_trait(TRAIT_SPREAD)==1) && !("TRAIT_SPREAD1" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_SPREAD1"
-		if ((P.get_trait(TRAIT_SPREAD)==2) && !("TRAIT_SPREAD2" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_SPREAD2"
-		if ((P.get_trait(TRAIT_ALTER_TEMP)<0) && !("TRAIT_ALTER_TEMPDOWN" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_ALTER_TEMPDOWN"
-		if ((P.get_trait(TRAIT_ALTER_TEMP)>0) && !("TRAIT_ALTER_TEMPUP" in scanned_fruittraits)) scanned_fruittraits += "TRAIT_ALTER_TEMPUP"
+				scanneddata += 1
 
-
-		scanneddata += 1
+		if ((P.get_trait(TRAIT_HARVEST_REPEAT)) && !("TRAIT_HARVEST_REPEAT" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_HARVEST_REPEAT"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_PRODUCES_POWER)) && !("TRAIT_PRODUCES_POWER" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_PRODUCES_POWER"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_JUICY)) && !("TRAIT_JUICY" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_JUICY"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_EXPLOSIVE)) && !("TRAIT_EXPLOSIVE" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_EXPLOSIVE"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_PARASITE)) && !("TRAIT_PARASITE" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_PARASITE"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_STINGS)) && !("TRAIT_STINGS" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_STINGS"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_TELEPORTING)) && !("TRAIT_TELEPORTING" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_TELEPORTING"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_BIOLUM)) && !("TRAIT_BIOLUM" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_BIOLUM"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_CARNIVOROUS)==1) && !("TRAIT_CARNIVOROUS1" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_CARNIVOROUS1"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_CARNIVOROUS)==2) && !("TRAIT_CARNIVOROUS2" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_CARNIVOROUS2"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_SPREAD)==1) && !("TRAIT_SPREAD1" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_SPREAD1"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_SPREAD)==2) && !("TRAIT_SPREAD2" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_SPREAD2"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_ALTER_TEMP)<0) && !("TRAIT_ALTER_TEMPDOWN" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_ALTER_TEMPDOWN"
+			scanneddata += 1
+		if ((P.get_trait(TRAIT_ALTER_TEMP)>0) && !("TRAIT_ALTER_TEMPUP" in scanned_fruittraits))
+			scanned_fruittraits += "TRAIT_ALTER_TEMPUP"
+			scanneddata += 1
 
 	if(scanneddata > 0)
 		datablocks += scanneddata
