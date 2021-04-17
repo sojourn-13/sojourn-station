@@ -5,11 +5,11 @@
 //Clockrigger 2019
 
 /obj/item/weapon/oddity
-	name = "Oddity"
+	name = "An Oddity"
 	desc = "Strange item of uncertain origin."
 	icon = 'icons/obj/oddities.dmi'
-	icon_state = "gift3"
-	item_state = "electronic"
+	icon_state = "techno_part3"
+	item_state = "techno_part3"
 	w_class = ITEM_SIZE_SMALL
 
 //You choose what stat can be increased, and a maximum value that will be added to this stat

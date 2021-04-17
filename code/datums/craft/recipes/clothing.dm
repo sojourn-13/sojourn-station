@@ -22,8 +22,6 @@
 		list(/obj/item/stack/cable_coil, 4)
 	)
 
-
-
 /datum/craft_recipe/clothing/balaclava
 	name = "balaclava"
 	result = /obj/item/clothing/mask/balaclava
