@@ -106,7 +106,7 @@
 	//Stuff rigs can store
 	//allowed = list(/obj/item/weapon/storage/backpack) // nope
 	var/list/extra_allowed = list()
-
+	extra_allowed = list(/obj/item/weapon/storage/backpack)
 
 /obj/item/weapon/rig/proc/getCurrentGlasses()
 	if(wearer && visor && visor && visor.vision && visor.vision.glasses && (!helmet || (wearer.head && helmet == wearer.head)))
