@@ -91,7 +91,7 @@
 	icon = 'icons/obj/guns/projectile/bluecross.dmi'
 	icon_state = "bluecross"
 	item_state = "bluecross"
-	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 	force = WEAPON_FORCE_DANGEROUS
 	bolt_training = FALSE
 	damage_multiplier = 2.5 //basic shot will 67.6~ damage
