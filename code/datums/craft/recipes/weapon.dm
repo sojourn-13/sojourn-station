@@ -56,6 +56,19 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 
+/datum/craft_recipe/weapon/kenny
+	name = "scrap bot deployer"
+	result = /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot
+	steps = list(
+		list(/obj/item/weapon/grenade/chem_grenade, 1),
+		list(/obj/item/clothing/head/space/void/riggedvoidsuit, 1),
+		list(/obj/item/weapon/computer_hardware/processor_unit, 1),
+		list(/obj/item/weapon/oddity, 1), //For the soul!
+		list(/obj/item/stack/cable_coil, 4),
+		list(/obj/item/clothing/suit/hooded/cloak/simple, 1),
+		list(/obj/item/weapon/scrap_lump, 1),
+		list(/obj/item/weapon/tool/tape_roll, 10, "time" = 10)
+	)
 /datum/craft_recipe/weapon/handmade_shield
 	name = "handmade shield"
 	result = /obj/item/weapon/shield/riot/handmade
