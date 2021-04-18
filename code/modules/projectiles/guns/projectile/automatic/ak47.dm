@@ -82,7 +82,8 @@
 	item_state = "AK"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 750
-	damage_multiplier = 1
+	damage_multiplier = 1.2
+	recoil_buildup = 14
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/ak47/sawn
@@ -98,7 +99,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 500
-	recoil_buildup = 14
+	recoil_buildup = 16
 	one_hand_penalty = 20
 	damage_multiplier = 0.8
 	saw_off = FALSE
