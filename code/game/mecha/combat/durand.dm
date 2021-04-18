@@ -24,7 +24,7 @@
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/loaded(src)
 	ME.attach(src)
 	return
 
