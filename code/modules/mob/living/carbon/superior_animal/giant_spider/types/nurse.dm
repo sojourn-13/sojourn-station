@@ -131,7 +131,7 @@
 							if(busy == LAYING_EGGS)
 								if(!(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
 									new /obj/effect/spider/eggcluster(loc, src)
-									fed--
+									fed -= 2
 									update_openspace()
 								busy = 0
 								stop_automated_movement = 0
