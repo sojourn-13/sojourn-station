@@ -19,6 +19,7 @@
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "gygax0"
 		const_holder.density = 1
+		const_holder.desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."
 		spawn()
 			qdel(src)
 		return
@@ -29,120 +30,120 @@
 	steps = list(
 		//1
 		list("key"=QUALITY_WELDING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="External armor is wrenched just needs to be welded."),
 		//2
 		list("key"=/obj/item/weapon/tool_upgrade/productivity/booster,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed, just needs the internal booster mod."),
 		//3
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed and needs glass a to be screwed down."),
 		//4
 		list("key"=/obj/item/stack/material/glass/reinforced,
-			"backkey"=QUALITY_WELDING,
+			//"backkey"=QUALITY_WELDING,
 			"desc"="External armor is installed and needs glass a to be installed."),
 		//5
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed but unbolted."),
 		//6
 		list("key"=/obj/item/mecha_parts/part/gygax_armour,
-			"backkey"=QUALITY_WELDING,
+			//"backkey"=QUALITY_WELDING,
 			"desc"="Internal armor is welded and ready for the gygax armour plates."),
 		//7
 		list("key"=QUALITY_WELDING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="Internal armor is wrenched but needs to be welded"),
 		//8
 		list("key"=/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is placed in its case and needs to a CCW plate"),
 		//9
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is placed in its case and needs to be bolted down"),
 		//10
 		list("key"=/obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is placed in its case and needs to a Exosuit projectile armor plate"),
 		//11
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is placed in its case and needs to be bolted down"),
 		//12
 		list("key"=/obj/item/stack/material/plasteel,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Advanced capacitor is secured and ready for an armor plate"),
 		//13
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Advanced capacitor is installed but not screwed down"),
 		//14
 		list("key"=/obj/item/weapon/stock_parts/capacitor,
 			"rating" = 2,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Advanced scanner module is secured and ready to connect to an advanced capacitor"),
 		//15
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Advanced scanner module is installed but not screwed down"),
 		//16
 		list("key"=/obj/item/weapon/stock_parts/scanning_module,
 			"rating" = 2,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Targeting module is secured down and ready to connect to an advanced scanner"),
 		//17
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Targeting module is installed but unscrewed"),
 		//18
 		list("key"=/obj/item/weapon/circuitboard/mecha/targeting,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Peripherals control module is secured and ready to connect to a targeting board"),
 		//19
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed and need to be screwed down"),
 		//20
 		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured and ready to connect to a peripherals board"),
 		//21
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed but is unscrewed"),
 		//22
 		list("key"=/obj/item/weapon/circuitboard/mecha/main,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted and ready for a central control board"),
 		//23
 		list("key"=QUALITY_WIRE_CUTTING,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is added but needs to be fixed up"),
 		//24
 		list("key"=/obj/item/stack/cable_coil,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The hydraulic systems are active but unwired."),
 		//25
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="The hydraulic systems are connected but bolted down."),
 		//26
 		list("key"=QUALITY_BOLT_TURNING,
 			"desc"="The hydraulic systems are disconnected."),
 		//27
 		list("key"=/obj/item/weapon/tool_upgrade/productivity/motor,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Hydraulics set inside need to be linked to a eletric moter."),
 		//28
 		list("key"=/obj/item/weapon/tool_upgrade/augment/hydraulic,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="With the cell mount added it can now have the hydraulics added."),
 		//29
 		list("key"=/obj/item/weapon/tool_upgrade/augment/cell_mount,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Mech case is made and needs to start with a cell mount."),
 		//30
 		list("key"=QUALITY_SCREW_DRIVING,
@@ -167,6 +168,7 @@
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
+					qdel(used_atom)
 					holder.icon_state = "gygax0"
 				else
 					usr.visible_message(
@@ -180,6 +182,7 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
+					qdel(used_atom)
 					holder.icon_state = "gygax1"
 				else
 					usr.visible_message(
@@ -194,6 +197,7 @@
 						"[usr] connects [holder] hydraulic systems", \
 						"You connect [holder] hydraulic systems."
 					)
+					qdel(used_atom)
 					holder.icon_state = "gygax1"
 				else
 					usr.visible_message(
@@ -444,6 +448,7 @@
 						"[usr] installs internal armor layer to [holder].", \
 						"You install internal armor layer to [holder]."
 					)
+					qdel(used_atom)
 					holder.icon_state = "gygax15"
 				else
 					new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(get_turf(holder))
@@ -471,6 +476,7 @@
 						"[usr] bolts down armor plates to [holder].", \
 						"You bolt down armor plating [holder]."
 					)
+					qdel(used_atom)
 					holder.icon_state = "gygax15"
 				else
 					usr.visible_message(
@@ -552,17 +558,18 @@
 						"[usr] screws down the glass case on [holder].", \
 						"You fasten the glass to [holder]."
 					)
+					qdel(used_atom)
 				else
 					usr.visible_message(
-						"[usr] unfastens Gygax Armour Plates.", \
-						"You unfasten Gygax Armour Plates."
+						"[usr] installs a booster into the controles.", \
+						"You  installs a booster into the controles."
 					)
 					holder.icon_state = "gygax18"
 			if(1)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] welds Gygax Armour Plates to [holder].", \
-						"You weld Gygax Armour Plates to [holder]."
+						"[usr] screws down the glass case on [holder].", \
+						"You fasten the glass to [holder]."
 					)
 				else
 					usr.visible_message(

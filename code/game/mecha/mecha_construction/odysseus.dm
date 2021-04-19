@@ -16,6 +16,7 @@
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "odysseus0"
 		const_holder.density = 1
+		const_holder.desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."
 		spawn()
 			qdel(src)
 		return
@@ -25,83 +26,83 @@
 	steps = list(
 		//1
 		list("key"=QUALITY_WELDING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="External armor is bolted and just needs some flash welding."),
 		//2
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed but unbolted."),
 		//3
 		list("key"=/obj/item/stack/material/plasteel,
-			"backkey"=QUALITY_WELDING,
+			//"backkey"=QUALITY_WELDING,
 			"desc"="Internal armor is welded, heatsinked and ready for plasteel external armor."),
 		//4
 		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/heatsink,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor and HUD is installed and the case is ready for a heatsink."),
 		//5
 		list("key"=/obj/item/stack/cable_coil,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The health HUD is installed but not wired."),
-		//6 - 5
+		//6
 		list("key"=/obj/item/rig_module/vision/medhud,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is installed and now the pilot mounted health HUD slot can be installed."),
 		//7
 		list("key"=QUALITY_WELDING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="Internal armor is fitted and needs to be welded down."),
 		//8
 		list("key"=/obj/item/stack/material/plastic,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is secured but needs plastic fitting."),
 		//9
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is installed, but missing securing bolts."),
 		//10
 		list("key"=/obj/item/stack/material/steel,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Peripherals control module is secured and screwed. Steel platting for outer armor is needed."),
 		//11
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed but unscrewed."),
 		//12
 		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured and waiting for a peripherals board."),
 		//13
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed but unscrewed."),
 		//14
 		list("key"=/obj/item/weapon/circuitboard/mecha/main,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted and setted, waiting for a Central control board."),
 		//15
 		list("key"=QUALITY_WIRE_CUTTING,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is added but unset."),
 		//16
 		list("key"=/obj/item/stack/cable_coil,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The hydraulic systems are active, and the case can be wired."),
 		//17
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="The hydraulic systems screws are unsecured."),
 		//18
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="The hydraulic systems are unbolted."),
 		//19
 		list("key"=/obj/item/weapon/tool_upgrade/augment/hydraulic,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="With the cell mount added it can now have the hydraulics added."),
 		//20
 		list("key"=/obj/item/weapon/tool_upgrade/augment/cell_mount,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Mech case is made and needs to start with a cell mount."),
 		//21
 		list("key"=QUALITY_SCREW_DRIVING,
@@ -126,6 +127,7 @@
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
+					qdel(used_atom)
 					holder.icon_state = "odysseus0"
 				else
 					usr.visible_message(
@@ -139,6 +141,7 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
+					qdel(used_atom)
 					holder.icon_state = "odysseus1"
 				else
 					usr.visible_message(
@@ -330,6 +333,7 @@
 						"[usr] a [used_atom] mounted HUD to [holder].", \
 						"You install Med Hud to [holder]."
 					)
+					qdel(used_atom)
 					holder.icon_state = "odysseus12"
 				else
 					usr.visible_message(
@@ -352,26 +356,13 @@
 					)
 					new /obj/item/stack/cable_coil (get_turf(holder), 4)
 					holder.icon_state = "odysseus11"
-			if(4)
-				if(diff==FORWARD)
-					usr.visible_message(
-						"[usr] adds connections to the Medical Hud.", \
-						"You adds wiring connecting the Medical Hud."
-					)
-					holder.icon_state = "odysseus13"
-				else
-					usr.visible_message(
-						"[usr] removes wire form [holder].", \
-						"You unscrews and take out wiring from [holder]."
-					)
-					new /obj/item/stack/cable_coil (get_turf(holder), 4)
-					holder.icon_state = "odysseus11"
 			if(3)
 				if(diff==FORWARD)
 					usr.visible_message(
 					"[usr] adds in a [holder]", \
 					"You adds in [holder]."
 					)
+					qdel(used_atom)
 					holder.icon_state = "odysseus11"
 				else
 					usr.visible_message(

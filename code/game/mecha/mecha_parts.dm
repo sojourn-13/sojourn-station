@@ -146,7 +146,7 @@
 
 /obj/item/mecha_parts/chassis/durand
 	name = "Durand Chassis"
-	desc = "A chassis or case for a Gygax mech, needs Gygax arms, legs, head, as well as a magboots and added four brace bars."
+	desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."
 	construct_type = /datum/construction/mecha/durand_chassis
 	matter = list(MATERIAL_PLASTEEL = 30)
 
@@ -253,6 +253,7 @@
 
 /obj/item/mecha_parts/chassis/odysseus
 	name = "Odysseus Chassis"
+	desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."
 	construct_type = /datum/construction/mecha/odysseus_chassis
 	matter = list(MATERIAL_STEEL = 25)
 
