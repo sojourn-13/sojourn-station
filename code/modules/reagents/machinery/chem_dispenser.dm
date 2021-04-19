@@ -37,7 +37,7 @@
 	var/list/level3 = list("mutagen")
 	var/list/level4 = list("inaprovaline")
 
-	var/list/hacked_reagents = list("mindbreaker") //USEFUL stuff
+	var/list/hacked_reagents = list("mindbreaker", "cleaner") //USEFUL stuff
 	var/obj/item/weapon/reagent_containers/beaker = null
 
 /obj/machinery/chemical_dispenser/RefreshParts()
