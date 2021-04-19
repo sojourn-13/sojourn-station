@@ -128,7 +128,7 @@
 	M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
 	M.add_chemical_effect(CE_ANTITOX, 1)
 	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
-	holder.remove_reagent("blattedin", 0.4 * effect_multiplier)
+	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes
 	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
 
 /datum/reagent/medicine/carthatoline
@@ -732,6 +732,7 @@
 	reagent_state = LIQUID
 	color = "#660679"
 	overdose = REAGENTS_OVERDOSE/2
+	metabolism = REM * 1.5 // Hard stun, impractical use for the situations it's used, and healing per removed unit, this was needed.
 	scannable = 1
 
 /datum/reagent/medicine/ossisine/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
@@ -739,7 +740,7 @@
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(prob(5 * effect_multiplier + dose) || dose == overdose)
+		if(dose == overdose) //Less gaming, do surgery you lazy butt.
 			var/list/brokenBP = list()
 			for(var/obj/item/organ/external/E in H.organs)
 				if(E.is_broken())
@@ -952,7 +953,8 @@
 /datum/reagent/medicine/haloperidol/overdose(mob/living/carbon/M, alien)
 	M.adjustToxLoss(6)
 
-/datum/reagent/medicine/vomitol
+/*
+/datum/reagent/medicine/vomitol //Why is the same chem defined on two different files?
 	name = "Vomitol"
 	id = "vomitol"
 	description = "Forces patient to vomit - results in total cleaning of his stomach. Has extremely unpleasant taste."
@@ -965,6 +967,7 @@
 /datum/reagent/medicine/vomitol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(10 * effect_multiplier))
 		M.vomit()
+*/
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Meds made from animals. Unga.

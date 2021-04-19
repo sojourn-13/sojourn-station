@@ -541,6 +541,7 @@
 	reagent_state = LIQUID
 	color = "#bbc5f0"
 
+/*
 /datum/reagent/vomitol
 	name = "Vomitol"
 	id = "vomitol"
@@ -553,3 +554,4 @@
 /datum/reagent/vomitol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(prob(10 * effect_multiplier))
 		M.vomit()
+*/

@@ -5,8 +5,8 @@
 
 /datum/chemical_reaction/sodiumchloride
 	result = "sodiumchloride"
-	required_reagents = list("sodium" = 1, "hclacid" = 1)
-	result_amount = 2
+	required_reagents = list("hclacid" = 1, "sodium" = 1, "water" = 1) //Hydrocloric Acid with Water so that it makes Chlorine, makes more sense.
+	result_amount = 3
 
 /datum/chemical_reaction/eznutrient
 	result = "eznutrient"

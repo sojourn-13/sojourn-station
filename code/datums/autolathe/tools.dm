@@ -87,12 +87,15 @@
 	build_path = /obj/item/weapon/tool/wrench
 
 /datum/design/autolathe/tool/hammer
+	name = "hammer"
 	build_path = /obj/item/weapon/tool/hammer
 
 /datum/design/autolathe/tool/powered_hammer
+	name = "powered sledgehammer"
 	build_path = /obj/item/weapon/tool/hammer/powered_hammer
 
 /datum/design/autolathe/tool/hammer_onestar
+	name = "greyson sledgehammer"
 	build_path = /obj/item/weapon/tool/hammer/powered_hammer/onestar_hammer
 
 /datum/design/autolathe/tool/big_wrench
@@ -131,10 +134,6 @@
 	name = "hatchet"
 	build_path = /obj/item/weapon/tool/hatchet
 
-/datum/design/autolathe/tool/hammer
-	name = "hammer"
-	build_path = /obj/item/weapon/tool/hammer
-
 /datum/design/autolathe/tool/minihoe
 	name = "mini hoe"
 	build_path = /obj/item/weapon/tool/minihoe
@@ -156,6 +155,7 @@
 	build_path = /obj/item/weapon/tool/shovel/spade
 
 /datum/design/autolathe/tool/shovel/power
+	name = "power shovel 9000"
 	build_path = /obj/item/weapon/tool/shovel/power
 
 /datum/design/autolathe/tool/mop
@@ -191,6 +191,7 @@
 	build_path = /obj/item/weapon/tool/saw/chain
 
 /datum/design/autolathe/tool/hypersaw
+	name = "TM hypersaw"
 	build_path = /obj/item/weapon/tool/saw/hyper
 
 /datum/design/autolathe/tool/surgicaldrill

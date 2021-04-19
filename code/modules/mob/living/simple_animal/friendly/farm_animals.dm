@@ -141,7 +141,7 @@
 				var/list/responses = list(	"[src] looks at you imploringly.",
 											"[src] looks at you pleadingly",
 											"[src] looks at you with a resigned expression.",
-											"[src] seems resigned to its fate.")
+											"[src] seems resigned to her fate.")
 				to_chat(M, pick(responses))
 	else
 		..()
@@ -234,7 +234,7 @@ var/global/chicken_count = 0
 		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")
 			if(!stat && eggsleft < 8)
-				user.visible_message("\blue [user] feeds [O] to [name]! It clucks happily.","\blue You feed [O] to [name]! It clucks happily.")
+				user.visible_message("\blue [user] feeds [O] to [name]! She clucks happily.","\blue You feed [O] to [name]! She clucks happily.")
 				user.drop_item()
 				qdel(O)
 				eggsleft += rand(1, 4)

@@ -44,7 +44,7 @@
 
 	if(!stat && !resting && !buckled)
 		if(prob(1))
-			var/msg2 = (pick("dances around","chases their tail"))
+			var/msg2 = (pick("dances around","chases [get_gender() == MALE ? "his" : get_gender() == FEMALE ? "her" : "their"] tail"))
 			src.visible_message("<span class='name'>[src]</span> [msg2].")
 			spawn(0)
 				for(var/i in list(1,2,4,8,4,2,1,2,4,8,4,2,1,2,4,8,4,2))
