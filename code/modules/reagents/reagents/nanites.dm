@@ -14,6 +14,7 @@
 	heating_point = 523
 	heating_products = list("nanites")
 	scannable = 1
+	affects_dead = 1
 	reagent_type = "Nanites"
 
 /datum/reagent/nanites/proc/eat_blood(mob/living/carbon/M) // Yam !
