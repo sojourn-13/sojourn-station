@@ -17,6 +17,7 @@
 /datum/construction/reversible/mecha/custom_action(index, diff, atom/used_atom, mob/user)
 	var/list/step = steps[index]
 	var/key = diff == FORWARD ? "key" : "backkey" //Were in a constent state of "We can go back a step or fordwards?" for each step,
+// As of 19-Apr-2021 we soft-remove backkey form all mechs, do to balance issues and mat doups
 	if(!ispath(step[key]))
 		if(istype(used_atom, /obj/item))
 			var/obj/item/I = used_atom
@@ -120,6 +121,8 @@
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "example0" //Make sure these are correct with icons. They are picky about it
 		const_holder.density = 1 //This is so we cant pick up or walk onto a contrustion for a mech
+		const_holder.desc = "A chassis or case for a example mech." //Used to tell what lims/spare parts are needed, could be anything really.
+
 		spawn()
 			qdel(src) //Delets are mech contrution part rig thing that we used to slap on head/arms/legs
 		return
@@ -129,71 +132,71 @@
 	steps = list(
 		//1 Last step
 		list("key"=QUALITY_WELDING, //This is how we move on form this step. In this case this will make the mech
-			"backkey"=QUALITY_BOLT_TURNING, //This is how we go form 1 - > 2 steps
+			//"backkey"=QUALITY_BOLT_TURNING, //This is how we go form 1 - > 2 steps
 			"desc"="External armor is wrenched."), //This is what when on this step will say in its desc.
 		//2
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed."),
 		//3
 		list("key"=/obj/item/stack/material/plasteel,
-			"backkey"=QUALITY_WELDING,
+			//"backkey"=QUALITY_WELDING,
 			"desc"="Internal armor is welded."),
 		//4
 		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/heatsink, //In this case were using an item rather then a tool. It will delete it after.
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor needs to be welded into place."),
 		//5
 		list("key"=/obj/item/stack/cable_coil, //Coils always take in 5s, dont worry it prevents 4- with
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Heat Sink compartment is open."),
 		//6
 		list("key"=/obj/item/clothing/glasses/hud/health,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Health HUD Display installed, but not wired linked."),
 		//7
 		list("key"=QUALITY_WELDING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="Internal armor is wrenched"),
 		//8
 		list("key"=/obj/item/stack/material/plastic, //Like coil, takes 5 and prevents 4-
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is plastic fitted just needs to be welded."),
 		//9
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is installed, but needs plastic fittings."),
 		//10
 		list("key"=/obj/item/stack/material/steel,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Peripherals control module is secured"),
 		//11
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed"),
 		//12
 		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured"),
 		//13
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed"),
 		//14
 		list("key"=/obj/item/weapon/circuitboard/mecha/main,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted"),
 		//15
 		list("key"=QUALITY_WIRE_CUTTING,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is added"),
 		//16
 		list("key"=/obj/item/stack/cable_coil,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The hydraulic systems are active."),
 		//17
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="The hydraulic systems are connected."),
 		//18 // First step
 		list("key"=QUALITY_BOLT_TURNING,
