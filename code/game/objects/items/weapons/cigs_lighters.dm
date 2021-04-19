@@ -661,6 +661,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	chem_volume = 35
 	quality_multiplier = 1 // Not nearly as fancy as the other one
 
+/obj/item/clothing/mask/smokable/pipe/glass
+	name = "glass pipe"
+	desc = "A glass pipe, a more technologically advanced version of the standard pipe using similar tech to the vape mask. Expensive, but one of the cleanest ways to get a smoke, just a shame it \
+	looks like a crack pipe. A small device on it lets it always emit smoke, even when empty."
+	icon_state = "glass_pipe"
+	item_state = "glass_pipe"
+	icon_on = "glass_pipe"  //Note - these are in masks.dmi
+	icon_off = "glass_pipe"
+	quality_multiplier = 3 //Advanced tech offering a cleaner smoke.
+
 ////////
 //VAPE//
 ////////

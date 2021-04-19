@@ -144,7 +144,7 @@
 	icon_state = "taser"
 
 
-	usable = 0
+	usable = 1
 
 	suit_overlay_active = "mounted-taser"
 	suit_overlay_inactive = "mounted-taser"

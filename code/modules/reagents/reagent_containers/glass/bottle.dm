@@ -107,6 +107,11 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("frostoil" = 60)
 
+/obj/item/weapon/reagent_containers/glass/bottle/tricord
+	name = "tricordrazine bottle"
+	desc = "A small bottle. Contains Tricordrazine, a mild all-around healing agent."
+	icon_state = "bottle"
+	preloaded_reagents = list("tricordrazine" = 60)
 
 /obj/item/weapon/reagent_containers/glass/bottle/adminordrazine
 	name = "adminordrazine bottle"
@@ -114,6 +119,15 @@
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "holyflask"
 	preloaded_reagents = list("adminordrazine" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/petrel
+	name = "diesel canister"
+	desc = "A small canister. Contains liquid diesel, useful for powering diesel generators or making fire bombs."
+	icon_state = "canister"
+	possible_transfer_amounts = list(5,10,15,25,30,60,120)
+	volume = 120
+	matter = list(MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("fuel" = 120)
 
 /obj/item/weapon/reagent_containers/glass/bottle/tangu_extract
 	name = "tangu extract bottle"

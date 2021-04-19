@@ -111,9 +111,9 @@
 	category = "Lemniscate"
 	var/list/stats_to_boost = list()
 
-	New()
-		..()
-		desc = "This litany boosts [get_stats_to_text()] stats of everyone who hears you, lasts about thirty minutes."
+/datum/ritual/cruciform/priest/short_boost/New()
+	..()
+	desc = "This litany boosts [get_stats_to_text()] stats of evryone who hears you, for about ten minutes."
 
 
 /datum/ritual/cruciform/lemniscate/long_boost/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -138,14 +138,13 @@
 /datum/ritual/cruciform/lemniscate/long_boost/proc/give_boost(mob/living/carbon/human/participant)
 	for(var/stat in stats_to_boost)
 		var/amount = stats_to_boost[stat]
-		participant.stats.changeStat(stat, amount)
+		participant.stats.addTempStat(stat, amount, effect_time, src.name)
 		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
 	spawn(30)
 		to_chat(participant, SPAN_NOTICE("A wave of dizziness washes over you and your mind is filled with a sudden insight into [get_stats_to_text()]."))
 
 
 /datum/ritual/cruciform/lemniscate/long_boost/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
-	participant.stats.changeStat(stat, -amount)
 	to_chat(participant, SPAN_WARNING("Your knowledge of [get_stats_to_text()] feels lessened."))
 
 /datum/ritual/cruciform/lemniscate/long_boost/proc/get_stats_to_text()
@@ -164,30 +163,15 @@
 	return lowertext(stats_text)
 
 
-/datum/ritual/cruciform/lemniscate/long_boost/mechanical
-	name = "Hammering Roar"
-	phrase = "Noli timere, quia ego tecum sum; ne declines, quia ego Deus tuus: Tuus confortavi te, et auxiliatus sum tibi, et suscepit te dextera Justi mei sunt."
-	stats_to_boost = list(STAT_MEC = 10)
-
-/datum/ritual/cruciform/lemniscate/long_boost/cognition
-	name = "Discovery of Lore"
-	phrase = "Haec locutus sum vobis ut in me pacem habeatis. In mundo pressuram habebitis. Sed confidite, Ego vici mundum."
-	stats_to_boost = list(STAT_COG = 10)
-
-/datum/ritual/cruciform/lemniscate/long_boost/biology
+/datum/ritual/cruciform/lemniscate/long_boost/mental
 	name = "Sanctorum of Life"
 	phrase = "Venite ad me omnes qui laboratis, et onerati estis, et ego reficiam vos."
-	stats_to_boost = list(STAT_BIO = 10)
+	stats_to_boost = list(STAT_MEC = 10, STAT_COG = 10, STAT_BIO = 10)
 
-/datum/ritual/cruciform/lemniscate/long_boost/courage
-	name = "Dirge of Honor"
+/datum/ritual/cruciform/lemniscate/long_boost/physical
+	name = "Pilgrim's Path"
 	phrase = "Confortare et esto robustus. Nolite timere nec paveatis a conspectu eorum quia Dominus Deus tuus ipse est ductor tuus. Et non dimittet nec derelinquet te."
-	stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10)
-
-/datum/ritual/cruciform/lemniscate/long_boost/vigilance
-	name = "Binding Geas"
-	phrase = "Dat lasso virtutem et his qui non sunt fortitudinem et robur multiplicat."
-	stats_to_boost = list(STAT_VIG = 10)
+	stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
 
 
 /datum/ritual/cruciform/monomial
@@ -210,6 +194,7 @@
 	desc = "A short litany that removes all pain, it is much stronger then the relief litany, but requires more power and has a five minute recharge time between uses."
 	power = 50
 	cooldown_time = 5 MINUTES
+	ignore_stuttering = TRUE
 
 /datum/ritual/cruciform/monomial/ironskin/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.add_chemical_effect(CE_PAINKILLER, 10000, TRUE)

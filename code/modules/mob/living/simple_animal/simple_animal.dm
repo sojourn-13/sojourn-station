@@ -17,6 +17,8 @@
 	var/icon_gib = null	//We only try to show a gibbing animation if this exists.
 	can_burrow = FALSE
 
+	var/ranged_cooldown = 2 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
+
 	//Napping
 	var/can_nap = FALSE
 	var/icon_rest = null
@@ -50,6 +52,8 @@
 	var/response_disarm = "tries to disarm"
 	var/response_harm   = "tries to hurt"
 	var/harm_intent_damage = 3
+	var/cleaning = FALSE //we do clean prase us!
+	var/friendly_to_colony = FALSE //Do we attack colony stuff - Mechs / Turrets regardless of who they are
 
 	//Temperature effect
 	var/minbodytemp = 250
@@ -107,6 +111,16 @@
 	var/scan_range = 6//How far around the animal will look for food
 	var/foodtarget = 0
 	//Used to control how often ian scans for nearby food
+	//Armor values for the mob. Works like normal armor values.
+	var/armor = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0,
+		agony = 0
+	)
 
 	mob_classification = CLASSIFICATION_ORGANIC
 
@@ -138,6 +152,38 @@
 	if(.)
 		if(src.nutrition && src.stat != DEAD)
 			src.nutrition -= nutrition_step
+
+	//Yes this is two of the same proc back to back.
+/mob/living/simple_animal/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0) //WE CLEAN!
+	. = ..()
+	if(cleaning)
+		var/turf/tile = loc
+		if(isturf(tile))
+			tile.clean_blood()
+			for(var/A in tile)
+				if(istype(A, /obj/effect))
+					if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
+						qdel(A)
+				else if(istype(A, /obj/item))
+					var/obj/item/cleaned_item = A
+					cleaned_item.clean_blood()
+				else if(ishuman(A))
+					var/mob/living/carbon/human/cleaned_human = A
+					if(cleaned_human.lying)
+						if(cleaned_human.head)
+							cleaned_human.head.clean_blood()
+							cleaned_human.update_inv_head(0)
+						if(cleaned_human.wear_suit)
+							cleaned_human.wear_suit.clean_blood()
+							cleaned_human.update_inv_wear_suit(0)
+						else if(cleaned_human.w_uniform)
+							cleaned_human.w_uniform.clean_blood()
+							cleaned_human.update_inv_w_uniform(0)
+						if(cleaned_human.shoes)
+							cleaned_human.shoes.clean_blood()
+							cleaned_human.update_inv_shoes(0)
+						cleaned_human.clean_blood(1)
+						to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
 
 /mob/living/simple_animal/Released()
 	//These will cause mobs to immediately do things when released.
@@ -172,10 +218,14 @@
 			to_chat(user, SPAN_NOTICE("It looks hungry."))
 		else if ((reagents.total_volume > 0 && nutrition > max_nutrition *0.75) || nutrition > max_nutrition *0.9)
 			to_chat(user, "It looks full and contented.")
-	if (health < maxHealth * 0.5)
-		to_chat(user, SPAN_DANGER("It looks badly wounded!"))
+	if (health < maxHealth * 0.25)
+		to_chat(user, SPAN_DANGER("It's grievously wounded!"))
+	else if (health < maxHealth * 0.50)
+		to_chat(user, SPAN_DANGER("It's badly wounded!"))
+	else if (health < maxHealth * 0.75)
+		to_chat(user, SPAN_WARNING("It's wounded."))
 	else if (health < maxHealth)
-		to_chat(user, SPAN_WARNING("It looks wounded."))
+		to_chat(user, SPAN_WARNING("It's a bit wounded."))
 
 /mob/living/simple_animal/Life()
 	.=..()
@@ -331,11 +381,13 @@
 /mob/living/simple_animal/gib()
 	..(icon_gib,1)
 
-/mob/living/simple_animal/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/simple_animal/bullet_act(var/obj/item/projectile/Proj, var/def_zone = null)
 	if(!Proj || Proj.nodamage)
 		return
 
-	adjustBruteLoss(Proj.get_total_damage())
+	for(var/damage_type in Proj.damage_types)
+		var/damage = Proj.damage_types[damage_type]
+		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj))
 	return 0
 
 /mob/living/simple_animal/rejuvenate()
@@ -505,8 +557,12 @@
 			new blood_from_harvest(get_turf(src))
 			qdel(src)
 		else
-			user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
-			gib()
+			if(user.stats.getPerk(PERK_BUTCHER))
+				user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
+				new blood_from_harvest(get_turf(src))
+				qdel(src)
+			else
+				gib()
 
 //Code to handle finding and nomming nearby food items
 /mob/living/simple_animal/proc/handle_foodscanning()

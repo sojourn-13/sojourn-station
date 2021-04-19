@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/alemao
 	name = "\"O Alemao\" auto-pistol"
-	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Compact, high rate of fire, but rather.. shoddily made. You swear you can see the welding lines; figures its made by Nadezhda Marshals gunsmiths.. \
+	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Compact, high rate of fire, but rather.. shoddily made. You swear you can see the welding lines; figures, it's made by Nadezhda Marshals gunsmiths. \
 	It appears to only be able to take .35 pistol magazines; being unfit for SMG magazines due to their smaller width. It almost looks good in a way! Almost.."
 	icon = 'icons/obj/guns/projectile/alemao.dmi'
 	icon_state = "alemao"
@@ -13,7 +13,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	damage_multiplier = 0.9
 	recoil_buildup = 3
-	one_hand_penalty = 20
+	one_hand_penalty = 10
 	load_method = MAGAZINE
 	init_firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),

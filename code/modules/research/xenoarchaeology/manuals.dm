@@ -112,6 +112,87 @@
 				</html>
 			"}
 
+/obj/item/weapon/book/manual/suspension
+	name = "Suspension Setup"
+	icon_state = "excavation"
+	author = "Professor Euclidenies Wisponellus, Curator of Nedezhda's Museum of Ancients"
+	title = "Suspension Setup"
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 18px; margin: 15px 0px 5px;}
+				h2 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+
+				<h1><a name="Contents">Contents</a></h1>
+				<ol>
+					<li><a href="#Prep">Knowing your tool</a></li>
+					<li><a href="#Setup">Setting up your generator</a></li>
+					<li><a href="#Settings">Getting your settings right</a></li>
+					<li><a href="#End">Footnotes</a></li>
+				</ol>
+				<br>
+
+				<h1><a name="Prep">Knowing your tool</a></h1>
+				The suspension field is quite the bulky tool. Hated or loved by many its a critical piece to us doing xenoarch correctly.
+				The suspension field has large bulky legs that we wrench into place. Ontop of having to make sure we have it facing the
+				right direction there is the settings on it. It also requires power but they should have a large cell in it to begin with
+				Of course you might have to replace that cell at some point too. Overall its a complicated piece with a lot of value.
+				In my workplace we only have two of them. So if your workplace is like mine. Make sure to not lose them to the wildlife. <br>
+				<ul>
+					<li>Heavy and Bulky.</li>
+					<li>Requires wrench to get legs into place.</li>
+					<li>Must be facing the right direction.</li>
+					<li>Has to be unlocked with ID to get to settings.</li>
+					<li>Requires a large cell in it. Make sure you have one in.</li>
+					<li>Valuable piece of equipment. Don't lose it!</li>
+				</ul><br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Setup">Setting up your generator</a></h1>
+				Now lets assume you dragged that bulky generator all the way out to your digsite. Congrads its heavy.
+				But now we have to get it against the dig itself. Make sure you have space for both it and you. You'll
+				have to dig a little more once its turned on. And of course. It should be facing the dig. Once its
+				against the dig and facing it, just wrench the legs down and into place. It should be secure now. Then
+				Swipe your ID to unlock the device. It should give a whole bunch of options that will make newer
+				archeologist's heads spin.<br>
+				<ul>
+
+				</ul><br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Settings">Getting your settings right</a></h1>
+				So now that we have a long list of settings, which one do we pick? Well this takes a little memorization. Or a handy guide on hand.
+				For each outcome of what we find on our depth scanner there is a corrisponding setting we put the Suspension field generator too.
+				Below you'll see I have labeled six of them. But why only six? Cause thats the only ones you'll need. The others are for other
+				fields of science that wont be covered for a xenoarch focused setup guide. Please take your time to learn these. Eventually you
+				won't even need a book to refrence!<br>
+				<ul>
+					<li><b>Trace Organic Cells</b> - We use a Diffracted Carbon Dioxide Laser.</li>
+					<li><b>Long Exposure Particles</b> - We slow the particles down with a Potassium Refrigerant Cloud.</li>
+					<li><b>Crystalline Structures</b> - Trace around the crystals with a Nitrogen Tracer Field.</li>
+					<li><b>Metallic Derivative</b> - Make sure you don't mix the two metals up. Derivative takes Mercury Dispersion Waves.</li>
+					<li><b>Metallic Composite</b> - Make sure you don't mix the two metals up. Iron Wafer Conduction for composites.</li>
+					<li><b>Unknown</b> - If you picked up unknown then something is normally wrong. Make sure to make a note for heads. Nothing works here.</li>
+				</ul><br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="End">Footnotes</a></h1>
+				After setting up and getting your settings, go ahead and turn it on and finish your dig. Make sure to turn it off and all. But overall. Please
+				be careful with the equipment. Its bulky and heavy. Annoying to haul around but there is only so many of them. And they are needed.
+				Eventually youll get the settings down. Its a memorization thing.<br>
+				<a href="#Contents">Contents</a>
+
+				</body>
+				</html>
+			"}
+
 /obj/item/weapon/book/manual/mass_spectrometry
 	name = "High Power Mass Spectrometry: A Comprehensive Guide"
 	icon_state = "analysis"

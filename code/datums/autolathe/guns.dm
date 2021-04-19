@@ -84,7 +84,7 @@
 	build_path = /obj/item/weapon/gun/projectile/revolver
 
 /datum/design/autolathe/gun/rev10
-	name = "/'Frontier/' Magnum Revolver"
+	name = "\"Frontier\" Magnum Revolver"
 	build_path = /obj/item/weapon/gun/projectile/revolver/rev10
 
 //. 5 0 K U R T Z
@@ -204,6 +204,10 @@
 	name = "SA CAR .257 \"Kalashnikov\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/sa
 
+/datum/design/autolathe/gun/basstet
+	name = "NM CAR .257 \"Basstet\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/basstet
+
 /datum/design/autolathe/gun/pitbull
 	name = "H&S AR .257 \"Pitbull\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/pitbull
@@ -316,6 +320,10 @@
 /datum/design/autolathe/gun/dp
 	name= "SA BR . 7.5 \"DP\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/dp
+
+/datum/design/autolathe/gun/bren
+	name = "\"Kalashnabren\" LMG"
+	build_path = /obj/item/weapon/gun/projectile/automatic/bren
 
 /datum/design/autolathe/gun/survivalrifle
 	name = "SAS .10mm Caseless \"Bond\" Rifle"

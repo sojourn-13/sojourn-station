@@ -48,6 +48,7 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 1)
 	attack_verb = list("chopped", "torn", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_SAWING = 15)
+	worksound = WORKSOUND_HARD_SLASH
 
 /obj/item/weapon/tool/fireaxe
 	name = "fire axe"
@@ -67,6 +68,7 @@
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	embed_mult = 1 //Axes cut deep, and their hooked shape catches on things
+	worksound = WORKSOUND_HARD_SLASH
 
 /obj/item/weapon/tool/fireaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return
@@ -107,7 +109,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hoe"
 	item_state = "hoe"
-	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 2)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_WEAK
 	max_upgrades = 2
@@ -206,7 +208,7 @@
 	item_state = "knife"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
 	force = WEAPON_FORCE_PAINFUL
-	tool_qualities = list(QUALITY_CUTTING = 30)
+	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
 	max_upgrades = 3
 	embed_mult = 3
 
@@ -264,7 +266,7 @@
 	max_upgrades = 4
 
 /obj/item/weapon/tool/knife/dagger/bluespace
-	name = "Soteria \"Displacement Dagger\""
+	name = "/improper Soteria \"Displacement Dagger\""
 	desc = "A teleportation matrix attached to a dagger, for sending things you stab it into very far away."
 	icon_state = "bluespace_dagger"
 	item_state = "bluespace_dagger"

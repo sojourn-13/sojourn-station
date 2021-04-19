@@ -51,6 +51,7 @@
 
 /obj/item/projectile/bullet/pistol_35/scrap
 	damage_types = list(BRUTE = 12)
+	armor_penetration = 0
 
 //Revolvers and high-caliber pistols
 //*********************************//
@@ -101,6 +102,7 @@
 
 /obj/item/projectile/bullet/magnum_40/scrap
 	damage_types = list(BRUTE = 20)
+	armor_penetration = 5
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50
@@ -159,7 +161,7 @@
 /// .257 Carbine///
 
 /obj/item/projectile/bullet/light_rifle_257
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 22)
 	armor_penetration = 15
 	penetrating = 1
 	can_ricochet = TRUE
@@ -176,7 +178,7 @@
 	step_delay = 0.5
 
 /obj/item/projectile/bullet/light_rifle_257/hv
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 26)
 	armor_penetration = 24
 	penetrating = 2
 	hitscan = TRUE
@@ -195,7 +197,7 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 24)
 	agony = 20
 	armor_penetration = 5
 	penetrating = 0
@@ -205,7 +207,8 @@
 	step_delay = 0.6
 
 /obj/item/projectile/bullet/light_rifle_257/scrap
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 18)
+	armor_penetration = 7
 
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
@@ -260,11 +263,12 @@
 
 /obj/item/projectile/bullet/rifle_75/scrap
 	damage_types = list(BRUTE = 22)
+	armor_penetration = 10
 
 /// .408 OMNI ///
 
 /obj/item/projectile/bullet/heavy_rifle_408
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 28)
 	armor_penetration = 30
 	penetrating = 2
 	can_ricochet = TRUE
@@ -273,7 +277,7 @@
 /obj/item/projectile/bullet/heavy_rifle_408/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 8)
+	damage_types = list(BRUTE = 10)
 	agony = 32
 	check_armour = ARMOR_MELEE
 	armor_penetration = 0
@@ -294,16 +298,16 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
-	damage_types = list(BRUTE = 24)
+	damage_types = list(BRUTE = 32)
 	armor_penetration = 40
 	penetrating = 3
 	hitscan = TRUE
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 22)
+	damage_types = list(BRUTE = 30)
 	agony = 32
-	armor_penetration = 35
+	armor_penetration = 15 //Half of normal
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -311,12 +315,13 @@
 	step_delay = 0.5
 
 /obj/item/projectile/bullet/heavy_rifle_408/scrap
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 20)
+	armor_penetration = 15 //half  of normal
 
 ///Snowflake caseless///
 
 /obj/item/projectile/bullet/c10x24
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 18)
 	armor_penetration = 15
 	penetrating = 2
 	can_ricochet = TRUE
@@ -327,13 +332,14 @@
 /obj/item/projectile/bullet/antim
 	damage_types = list(BRUTE = 90)
 	armor_penetration = 100
-	stun = 5
-	weaken = 10
+	//stun = 5
+	//weaken = 10
 	penetrating = 5
 	hitscan = TRUE //so the PTR isn't useless as a sniper weapon
 
 /obj/item/projectile/bullet/antim/scrap
 	damage_types = list(BRUTE = 63)
+	armor_penetration = 50
 
 //Shotguns
 //*********************************//
@@ -341,7 +347,7 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	icon_state = "slug"
-	damage_types = list(BRUTE = 55) //normal would be 45
+	damage_types = list(BRUTE = 54)
 	armor_penetration = 10
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
@@ -349,7 +355,6 @@
 /obj/item/projectile/bullet/shotgun/beanbag
 	name = "beanbag"
 	icon_state = "rubber"
-	check_armour = ARMOR_BULLET //neverforget
 	damage_types = list(BRUTE = 10)
 	agony = 60
 	armor_penetration = 0
@@ -363,12 +368,11 @@
 	agony = 5
 	armor_penetration = 0
 	embed = FALSE
-	knockback = 0
 
 /obj/item/projectile/bullet/shotgun/incendiary
-	damage_types = list(BURN = 45)
-	knockback = 0
-	var/fire_stacks = 4
+	//This is the best ammo for pvp in a shotgun, beating the stunshell with its pain and cooks anyone in any armor!
+	damage_types = list(BURN = 45) //We deal most of are damage with fire stacks
+	var/fire_stacks = 4 //40 pain a fire proc through ALL armor!
 
 /obj/item/projectile/bullet/shotgun/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -379,6 +383,7 @@
 
 /obj/item/projectile/bullet/shotgun/scrap
 	damage_types = list(BRUTE = 48)
+	armor_penetration = 5
 
 /obj/item/projectile/bullet/shotgun/beanbag/scrap
 	damage_types = list(BRUTE = 9)
@@ -499,7 +504,7 @@
 /obj/item/projectile/bullet/crossbow_bolt
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 55) //normal would be 45
+	damage_types = list(BRUTE = 54)
 	armor_penetration = 10
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9

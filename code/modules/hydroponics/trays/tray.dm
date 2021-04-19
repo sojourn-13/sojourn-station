@@ -38,6 +38,7 @@
 	var/force_update           // Set this to bypass the cycle time check.
 	var/obj/temp_chem_holder   // Something to hold reagents during process_reagents()
 	var/labelled
+	var/frozen = 0			   //Is the plant frozen? -1 is used to define trays that can't be frozen. 0 is unfrozen and 1 is frozen.
 
 	// Seed details/line data.
 	var/datum/seed/seed = null // The currently planted seed
@@ -151,10 +152,13 @@
 
 	//Override for somatoray projectiles.
 	if(istype(Proj ,/obj/item/projectile/energy/floramut) && prob(20))
-		mutate(1)
+		mutate(prob(25) ? 3 : 1)
 		return
 	else if(istype(Proj ,/obj/item/projectile/energy/florayield) && prob(20))
 		yield_mod = min(10,yield_mod+rand(1,2))
+		return
+	else if(istype(Proj ,/obj/item/projectile/energy/floraevolve) && prob(20))
+		mutate(4)
 		return
 
 	..()
@@ -314,11 +318,26 @@
 	// No seed, no mutations.
 	if(!seed)
 		return
+	switch(severity)
+		if (4)
+			if (seed.evolutions && seed.evolutions.len)
+				for(var/rid in seed.evolutions)
 
-	// Check if we should even bother working on the current seed datum.
-	if(seed.mutants && seed.mutants.len && severity > 1)
-		mutate_species()
-		return
+					var/list/checkEvoChems = seed.evolutions[rid].Copy()
+
+					if (checkEvoChems ~= (checkEvoChems & seed.chems))
+						evolve_species(rid)
+
+			return
+		if (3)
+			if(seed.greatMutants && seed.greatMutants.len)
+
+				mutate_species(seed.greatMutants)
+			return
+		if (2)
+			if(seed.mutants && seed.mutants.len)
+				mutate_species(seed.mutants)
+			return
 
 	// We need to make sure we're not modifying one of the global seed datums.
 	// If it's not in the global list, then no products of the line have been
@@ -375,10 +394,10 @@
 	weedlevel =      max(0,min(weedlevel,10))
 	toxins =         max(0,min(toxins,10))
 
-/obj/machinery/portable_atmospherics/hydroponics/proc/mutate_species()
+/obj/machinery/portable_atmospherics/hydroponics/proc/mutate_species(var/list/strains)
 
 	var/previous_plant = seed.display_name
-	var/newseed = seed.get_mutant_variant()
+	var/newseed = seed.get_mutant_variant(strains)
 	if(newseed in plant_controller.seeds)
 		seed = plant_controller.seeds[newseed]
 	else
@@ -396,6 +415,32 @@
 	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly mutated into </span><span class='notice'>[seed.display_name]!"))
 
 	return
+
+/obj/machinery/portable_atmospherics/hydroponics/proc/evolve_species(var/strain)
+
+
+	var/previous_plant = seed.display_name
+	var/newseed = strain
+	if (newseed in plant_controller.seeds)
+		seed = plant_controller.seeds[newseed]
+	else
+		return
+
+	dead = 0
+	mutate(1)
+	age = 0
+	health = seed.get_trait(TRAIT_ENDURANCE)
+	lastcycle = world.time
+	harvest = 0
+	weedlevel = 0
+
+	update_icon()
+	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly evolved into </span><span class='notice'>[seed.display_name]!"))
+
+	return
+
+
+
 
 /obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/I, var/mob/user as mob)
 
@@ -551,6 +596,18 @@
 		qdel(I)
 		check_health()
 
+	else if(istype(I, /obj/item/weapon/tool/multitool))
+		if(!anchored)
+			to_chat(user, "<span class='warning'>Anchor it first!</span>")
+			return
+		if(frozen == -1)
+			to_chat(user, "<span class='warning'>You see no way to use \the [I] on [src].</span>")
+			return
+		to_chat(user, "<span class='notice'>You [frozen ? "disable" : "enable"] the cryogenic freezing.</span>")
+		frozen = !frozen
+		update_icon()
+		return
+
 	else if(I.force && seed)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been attacked by [user] with \the [I]!"))
@@ -569,7 +626,8 @@
 
 	if(issilicon(usr))
 		return
-
+	if(frozen == 1)
+		to_chat(user, "<span class='warning'>Disable the cryogenic freezing first!</span>")
 	if(harvest)
 		harvest(user)
 	else if(dead)
@@ -600,6 +658,8 @@
 		to_chat(usr, SPAN_DANGER("The plant is dead."))
 	else if(health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
 		to_chat(usr, "The plant looks <span class='danger'>unhealthy</span>.")
+	if (frozen == 1)
+		to_chat(usr, "<span class='notice'>It is cryogenically frozen.</span>")
 
 	if(mechanical)
 		var/turf/T = loc

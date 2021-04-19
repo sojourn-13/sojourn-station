@@ -10,6 +10,7 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_BIOMATTER = 4, MATERIAL_PLASTIC = 5)
 	attack_verb = list("whipped", "lashed", "disciplined")
+	price_tag = 15
 
 	var/show_above_suit = 0
 
@@ -89,6 +90,7 @@
 	desc = "Can hold various tools, its made from wire. It somehow always ends up the same color no matter what it is made from."
 	icon_state = "handmade_utility"
 	item_state = "handmande_utility"
+	price_tag = 5
 
 /obj/item/weapon/storage/belt/utility/handmade/full/populate_contents()
 	new /obj/item/weapon/tool/screwdriver/improvised(src)
@@ -177,11 +179,15 @@
 		/obj/item/weapon/tool/scalpel,
 		/obj/item/weapon/tool/scalpel/advanced,
 		/obj/item/weapon/tool/scalpel/laser,
-		/obj/item/weapon/tool/surgicaldrill,
+		/obj/item/weapon/tool/tape_roll/bonegel,
 		/obj/item/weapon/tool/cautery,
+		/obj/item/weapon/tool/cautery/adv,
 		/obj/item/weapon/tool/retractor,
+		/obj/item/weapon/tool/retractor/adv,
 		/obj/item/weapon/tool/saw/circular,
+		/obj/item/weapon/tool/saw/circular/medical,
 		/obj/item/weapon/tool/hemostat,
+		/obj/item/weapon/tool/hemostat/adv,
 		/obj/item/weapon/reagent_containers/pill,
 		/obj/item/weapon/storage/pill_bottle,
 		/obj/item/bodybag/cryobag,
@@ -217,7 +223,6 @@
 		/obj/item/ammo_magazine,
 		/obj/item/weapon/cell/small,
 		/obj/item/weapon/cell/medium,
-		/obj/item/weapon/reagent_containers/food/snacks/donut, //meme, but fine
 		/obj/item/weapon/flame/lighter,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/modular_computer/pda,
@@ -233,7 +238,10 @@
 		/obj/item/weapon/gun/projectile/olivaw,
 		/obj/item/weapon/gun/projectile/revolver/detective,
 		/obj/item/weapon/gun/energy/gun/martin,
-		/obj/item/taperoll
+		/obj/item/taperoll,
+		/obj/item/weapon/pen,
+		/obj/item/weapon/reagent_containers/food/snacks,
+		/obj/item/weapon/reagent_containers/food/drinks
 	)
 
 /obj/item/weapon/storage/belt/holding
@@ -317,6 +325,7 @@
 	can_hold = list(
 		/obj/item/clothing/mask/costume/job/luchador
 		)
+	price_tag = 50
 
 /obj/item/weapon/storage/belt/church
 	name = "absolutism belt"

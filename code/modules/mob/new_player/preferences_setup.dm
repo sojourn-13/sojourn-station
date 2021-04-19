@@ -35,7 +35,8 @@
 						ASSIGN_LIST_TO_COLORS(ReadRGB("#000000"), r_facial, g_facial, b_facial)
 				*/
 		if(current_form.appearance_flags & HAS_UNDERWEAR)
-			all_underwear.Cut()
+			if(all_underwear)
+				all_underwear.Cut()
 			for(var/datum/category_group/underwear/WRC in GLOB.underwear.categories)
 				var/datum/category_item/underwear/WRI = pick(WRC.items)
 				all_underwear[WRC.name] = WRI.name

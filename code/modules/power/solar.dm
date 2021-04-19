@@ -14,12 +14,18 @@
 	var/glass_power = 1 //How much are more are we getting from the glass?
 	var/id = 0
 	health = 10
-	var/obscured = 0
-	var/sunfrac = 0
+	var/obscured = 0 //When we draw are line to the sun, are we blocked by something?
+	var/sunfrac = 0 //This is used for maths on how much power were getting, based on were the sun is vs pannel angel
 	var/adir = SOUTH // actual dir
 	var/ndir = SOUTH // target dir
 	var/turn_angle = 0
 	var/obj/machinery/power/solar_control/control = null
+
+/obj/machinery/power/solar/Initialize(mapload) //We want to make them like 20% odds to brake but not when made.
+	..()
+	if(prob(20))
+		broken()
+
 
 /obj/machinery/power/solar/drain_power()
 	return -1
@@ -52,6 +58,7 @@
 		S.glass_type = /obj/item/stack/material/glass
 		S.anchored = 1
 	S.loc = src
+
 	if(S.glass_type == /obj/item/stack/material/glass/reinforced) //if the panel is in reinforced glass
 		health *= 2 								 //this need to be placed here, because panels already on the map don't have an assembly linked to
 		glass_power = 1.1 //1650
@@ -65,7 +72,6 @@
 	update_icon()
 
 /obj/machinery/power/solar/attackby(obj/item/weapon/I, mob/user)
-
 	if(QUALITY_PRYING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_PRYING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			var/obj/item/solar_assembly/S = locate() in src
@@ -78,7 +84,7 @@
 	else if (I)
 		src.add_fingerprint(user)
 		src.health -= I.force
-		//src.healthcheck()
+		src.healthCheck()
 	..()
 
 
@@ -229,6 +235,10 @@
 	var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
 	if(tracker)
 		usable_qualities.Add(QUALITY_PRYING)
+
+	if(istype(I, /obj/item/stack/material/cyborg))
+		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]. Use a sheet loader with glass inside it to build!"))
+		return //Prevents borgs throwing their stuff into it
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)

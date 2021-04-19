@@ -96,11 +96,41 @@
 	glass_name = "water"
 	glass_desc = "The father of all refreshments."
 	nerve_system_accumulations = 0
+	var/fire_suppression_effect = 1 //19000 times this.
 	reagent_type = "Water"
+
+/datum/reagent/water/extinguisher
+	name = "Extinguisher"
+	id = "abwater"
+	description = "A mix of water, with chemicals to reduce heat, oil and suppress fire with heavy particulates."
+	taste_description = "watered down chemicals"
+	glass_icon_state = "glass_clear"
+	glass_name = "water"
+	glass_desc = "The father of all refreshments, this one has floating particulates in it..."
+	nerve_system_accumulations = 50 //Chemical soup
+	fire_suppression_effect = 3 //Three times better at putting out fire than water.
+
+/datum/reagent/water/extinguisher/touch_turf(turf/T)
+	..()
+	if(volume >= 1)
+		if(istype(T, /turf/simulated))
+			var/turf/simulated/S = T
+			if(S.wet >= 2)
+				S.wet_floor(1, TRUE)
+		for(var/obj/effect/O in T)
+			if(istype(O,/obj/effect/decal/cleanable/liquid_fuel)) //We only clean flue spills
+				qdel(O)
+		for(var/mob/living/carbon/slime/M in T)
+			M.adjustToxLoss(rand(15, 25))
+
+	T.color = "white"
+	return TRUE
+
 
 /datum/reagent/water/holywater
 	name = "Holy Water"
 	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen with the blessings of faith."
+	fire_suppression_effect = 1.1 //When your hopeful this works...
 	id = "holywater"
 
 /datum/reagent/water/holywater/affect_ingest(mob/living/carbon/human/M, alien, effect_multiplier)
@@ -134,7 +164,7 @@
 		qdel(hotspot)
 
 	if (environment && environment.temperature > min_temperature) // Abstracted as steam or something
-		var/removed_heat = between(0, volume * WATER_LATENT_HEAT, -environment.get_thermal_energy_change(min_temperature))
+		var/removed_heat = between(0, volume * (WATER_LATENT_HEAT * fire_suppression_effect), -environment.get_thermal_energy_change(min_temperature))
 		environment.add_thermal_energy(-removed_heat)
 		if (prob(5))
 			T.visible_message(SPAN_WARNING("The water sizzles as it lands on \the [T]!"))
@@ -199,4 +229,3 @@
 /datum/reagent/toxin/fuel/touch_mob(mob/living/L, var/amount)
 	if(istype(L))
 		L.adjust_fire_stacks(amount / 10) // Splashing people with welding fuel to make them easy to ignite!
-

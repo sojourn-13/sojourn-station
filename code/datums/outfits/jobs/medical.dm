@@ -15,18 +15,19 @@
 	l_ear  =/obj/item/device/radio/headset/heads/cmo
 	uniform = /obj/item/clothing/under/rank/moebius_biolab_officer
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/cmo
-	l_hand = /obj/item/weapon/storage/firstaid/adv
+	l_hand = /obj/item/weapon/storage/firstaid/soteria
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
 	id_type = /obj/item/weapon/card/id/cmo
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
 	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
 	belt = /obj/item/weapon/storage/belt/medical/
+	glasses = /obj/item/clothing/glasses/hud/health
 
 /decl/hierarchy/outfit/job/medical/doctor
 	name = OUTFIT_JOB_NAME("Soteria - Medical Doctor")
 	uniform = /obj/item/clothing/under/rank/medical
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	l_hand = /obj/item/weapon/storage/firstaid/adv
+	l_hand = /obj/item/weapon/storage/firstaid/soteria
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
 	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
 	belt = /obj/item/weapon/storage/belt/medical/
@@ -55,7 +56,7 @@
 	name = OUTFIT_JOB_NAME("Soteria - Paramedic")
 	uniform = /obj/item/clothing/under/rank/paramedic
 	shoes = /obj/item/clothing/shoes/jackboots
-	l_hand = /obj/item/weapon/storage/firstaid/adv
+	l_hand = /obj/item/weapon/storage/firstaid/soteria/large
 	belt = /obj/item/weapon/storage/belt/medical/emt
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 	r_ear  = /obj/item/weapon/reagent_containers/syringe/large

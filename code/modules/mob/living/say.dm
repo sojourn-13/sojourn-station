@@ -16,7 +16,11 @@ var/list/department_radio_keys = list(
 	"v" = "Service",
 	"p" = "AI Private",
 	"t" = "Church",
-	"k" = "Prospector"
+	"k" = "Prospector",
+	"1" = "Plasmatag B",
+	"2" = "Plasmatag R",
+	"3" = "Plasmatag Y",
+	"4" = "Plasmatag G"
 )
 
 
@@ -163,6 +167,7 @@ var/list/channel_to_radio_key = new
 	verb = say_quote(message, speaking)
 
 	message = trim_left(message)
+	var/message_pre_stutter = message
 
 	message = format_say_message(message)
 
@@ -279,8 +284,8 @@ var/list/channel_to_radio_key = new
 
 	for(var/obj/O in listening_obj)
 		spawn(0)
-			if(O) //It's possible that it could be deleted in the meantime.
-				O.hear_talk(src, message, verb, speaking, getSpeechVolume(message))
+			if(!QDELETED(O)) //It's possible that it could be deleted in the meantime.
+				O.hear_talk(src, message, verb, speaking, getSpeechVolume(message), message_pre_stutter)
 
 
 	log_say("[name]/[key] : [message]")

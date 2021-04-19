@@ -32,7 +32,6 @@
 
 /datum/design/autolathe/tool/weldermask
 	name = "welding mask"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/clothing/head/welding
 
 /datum/design/autolathe/tool/weldinggoggles
@@ -150,7 +149,6 @@
 
 /datum/design/autolathe/tool/combat_shovel
 	name = "combat shovel"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/weapon/tool/shovel/combat
 
 /datum/design/autolathe/tool/spade
@@ -196,8 +194,12 @@
 	build_path = /obj/item/weapon/tool/saw/hyper
 
 /datum/design/autolathe/tool/surgicaldrill
-	name = "surgical drill"
+	name = "hand drill"
 	build_path = /obj/item/weapon/tool/surgicaldrill
+
+/datum/design/autolathe/tool/surgicaldrill/adv
+	name = "long-nose hand drill"
+	build_path = /obj/item/weapon/tool/surgicaldrill/adv
 
 /datum/design/autolathe/tool/retractor
 	name = "retractor"
@@ -217,19 +219,20 @@
 
 /datum/design/autolathe/tool/rcd
 	name = "rapid construction device"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/weapon/rcd
 
 /datum/design/autolathe/tool/rcd_ammo
 	name = "matter cartridge"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/weapon/rcd_ammo
 
 /datum/design/autolathe/tool/pneumatic_crowbar
 	name = "pneumatic crowbar"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/weapon/tool/crowbar/pneumatic
 
 /datum/design/autolathe/tool/omni_surgery_onestar
 	name = "greyson positronic medical multitool"
 	build_path = /obj/item/weapon/tool/medmultitool
+
+/datum/design/autolathe/tool/bonegel
+	name = "bone gel"
+	build_path = /obj/item/weapon/tool/tape_roll/bonegel

@@ -136,7 +136,7 @@
 	impact_type = /obj/effect/projectile/stun/impact
 
 //book "lasers"
-/obj/item/projectile/beam/stun/jugement
+/obj/item/projectile/beam/stun/judgement
 	name = "lighting"
 	icon_state = "stun"
 	nodamage = FALSE
@@ -151,7 +151,7 @@
 /obj/item/projectile/beam/sniper/sin_within
 	name = "sin"
 	icon_state = "xray"
-	damage_types = list(TOXIN = 10)
+	damage_types = list(TOX = 10)
 	armor_penetration = 0
 	stun = 0
 	weaken = 0
@@ -163,7 +163,7 @@
 /obj/item/projectile/beam/sniper/healing
 	name = "grace"
 	icon_state = "xray"
-	damage_types = list(TOXIN = -3, BURN = -3, BRUTE = -3)
+	damage_types = list(TOX = -5, BURN = -5, BRUTE = -5)
 	armor_penetration = 0
 	stun = 0
 	weaken = 0

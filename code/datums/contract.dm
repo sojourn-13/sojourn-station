@@ -1,5 +1,6 @@
 GLOBAL_LIST_EMPTY(various_antag_contracts)	//Contracts from "Various" emloyers, currently used by Traitors, Changelings and Blitzshells
 GLOBAL_LIST_EMPTY(excel_antag_contracts)	//Excelsior contracts
+GLOBAL_LIST_EMPTY(blackshield_antag_contracts)	//Excelsior contracts
 GLOBAL_LIST_INIT(antag_item_targets,list(
 		"the premier's antique laser gun" = /obj/item/weapon/gun/energy/captain,
 		"a hand teleporter" = /obj/item/weapon/hand_tele,
@@ -41,6 +42,64 @@ GLOBAL_LIST_INIT(excel_item_targets,list(
 		"a bluespace Harpoon" = /obj/item/weapon/bluespace_harpoon,
 		//"a rocket-powered charge hammer" = /obj/item/weapon/tool/hammer/charge,
 		"the captain's antique laser gun" = /obj/item/weapon/gun/energy/captain,
+
+	))
+
+GLOBAL_LIST_INIT(blackshield_item_targets,list(
+		"Deckard revolver" = /obj/item/weapon/gun/projectile/revolver/deckard,
+		"Gladstone shotgun" = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone,
+		"Cassad plasma rifle" = /obj/item/weapon/gun/energy/pulse/cassad,
+		"Spider Rose energy gun" = /obj/item/weapon/gun/energy/gun,
+		"Hustler omni rifle" = /obj/item/weapon/gun/projectile/automatic/omnirifle,
+		"MAC sub machine gun" = /obj/item/weapon/gun/projectile/automatic/mac,
+		"Straylight sub machine gun" = /obj/item/weapon/gun/projectile/automatic/straylight,
+		"STS carbine" = /obj/item/weapon/gun/projectile/automatic/sts,
+		"M1911 .40 Auto mag handgun" = /obj/item/weapon/gun/projectile/colt/ten,
+		"Lenar granade launcher" = /obj/item/weapon/gun/projectile/grenade/lenar,
+		"Forged barrel" = /obj/item/weapon/gun_upgrade/barrel/forged,
+		"Penetrator magnetic accelerator barrel" = /obj/item/weapon/gun_upgrade/barrel/mag_accel,
+		"Magnetic overheat barrel" = /obj/item/weapon/gun_upgrade/barrel/overheat,
+		"Danger Zone Trigger" = /obj/item/weapon/gun_upgrade/trigger/dangerzone,
+		"Gauss Coil barrel" = /obj/item/weapon/gun_upgrade/barrel/gauss,
+		"Watchman scope" = /obj/item/weapon/gun_upgrade/scope/watchman,
+		"Contract Killer scope" = /obj/item/weapon/gun_upgrade/scope/killer,
+		"Melee armor plating" = /obj/item/weapon/tool_upgrade/armor/melee,
+		"Ballistic armor plating" = /obj/item/weapon/tool_upgrade/armor/bullet,
+		"Energy armor plating" = /obj/item/weapon/tool_upgrade/armor/energy,
+		"Bomb proofing armor plate" = /obj/item/weapon/tool_upgrade/armor/bomb,
+		"Hand RCD" = /obj/item/weapon/rcd,
+		"bluespace Harpoon" = /obj/item/weapon/bluespace_harpoon,
+		"Mech CCW armor booster" = /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
+		"Mech Exosuit projectile armor booster" = /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
+		"Mech Shield droid" = /obj/item/mecha_parts/mecha_equipment/combat_shield,
+		"Mech RCD" = /obj/item/mecha_parts/mecha_equipment/tool/rcd,
+		"PBT Pacifier mounted taser" = /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser,
+		"Ultra AC 2"= /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg,
+		"LBX AC 10 Scattershot" = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
+		"CH-PS Immolator laser" = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
+		"CH-LC Solaris laser cannon" = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy,
+		"MkIV ion heavy cannon" = /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
+		"SGL-6 grenade launcher" = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang,
+		"Mounted rig combat injector" = /obj/item/rig_module/chem_dispenser/combat,
+		"hardsuit laser cannon"= /obj/item/rig_module/mounted,
+		"hardsuit laser gun"= /obj/item/rig_module/mounted/egun,
+		"hardsuit taser" = /obj/item/rig_module/mounted/taser,
+		"hardsuit grenade launcher" = /obj/item/rig_module/grenade_launcher,
+		"hardsuit integrated flash" = /obj/item/rig_module/device/flash,
+		"hardsuit integrated thermals" = /obj/item/rig_module/vision/thermal,
+		"hardsuit integrated power sink" = /obj/item/rig_module/power_sink,
+		"hardsuit integrated electrowarfare mod" = /obj/item/rig_module/electrowarfare_suite,
+		"design disk Means of Production" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior,
+		"design disk Means of Revolution" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_weapons,
+		"design disk Stocking Revolution" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_parts,
+		"design disk Means of Power" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_cells,
+		"design disk .35 Drozd SMG" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_drozd,
+		"design disk Makarov" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_makarov,
+		"design disk Vintorez" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez,
+		"design disk Kardashev-Mosin" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_boltgun,
+		"design disk Kalashnikov" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ak,
+		"design disk Reclaimer" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer,
+		"design disk Shpagin" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh,
 
 	))
 
@@ -493,3 +552,47 @@ GLOBAL_LIST_INIT(excel_item_targets,list(
 
 /datum/antag_contract/excel/propaganda/can_place()
 	return ..() && targets.len
+
+
+// Blackshield contracts
+
+/datum/antag_contract/blackshield
+
+/datum/antag_contract/blackshield/place()
+	GLOB.blackshield_antag_contracts += src
+
+/datum/antag_contract/blackshield/remove()
+	GLOB.blackshield_antag_contracts -= src
+
+/datum/antag_contract/blackshield/complete(user)
+	if(completed)
+		warning("Request completed twice: [name] [desc]")
+	completed = TRUE
+
+	if(user)
+		to_chat(user, SPAN_NOTICE("Request completed: [name] ([reward] energy)"))
+
+	blackshield_energy += reward
+	for (var/obj/machinery/blackshield_teleporter/t in blackshield_teleporters)
+		t.update_nano_data()
+
+//TODO: Make let them send in other things/place items in areas to allow for addionation points
+/datum/antag_contract/blackshield/appropriate
+	name = "Appropriate"
+	reward = 100 //How many points we give for items
+	var/target_desc
+	var/target_type
+
+/datum/antag_contract/blackshield/appropriate/New()
+	..()
+	if(!target_type)
+		var/list/candidates = GLOB.excel_item_targets.Copy()
+		for(var/datum/antag_contract/blackshield/appropriate/C in GLOB.blackshield_antag_contracts)
+			candidates.Remove(C.target_desc)
+		if(candidates.len)
+			target_desc = pick(candidates)
+			target_type = candidates[target_desc]
+			desc = "Appropriate [target_desc] by sending it in the teleporter."
+
+/datum/antag_contract/blackshield/appropriate/can_place()
+	return ..() && target_type

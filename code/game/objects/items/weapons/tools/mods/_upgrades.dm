@@ -251,6 +251,7 @@
 		T.armor.energy += tool_upgrades[UPGRADE_ENERGY_ARMOR]
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
 		T.armor.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
+
 	T.prefixes |= prefix
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/weapon/tool/T)

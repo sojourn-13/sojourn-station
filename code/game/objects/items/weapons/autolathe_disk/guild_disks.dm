@@ -47,6 +47,7 @@
 		/datum/design/autolathe/tool/armature_cutter,
 		/datum/design/autolathe/tool/weldingtool/advanced,
 		/datum/design/autolathe/tool/multitool/advanced,
+		/datum/design/autolathe/tool/surgicaldrill/adv,
 		/datum/design/autolathe/part/diamondblade,
 		/datum/design/autolathe/tool/ducttape/fiber,
 		/datum/design/autolathe/tool/ducttape/glue,
@@ -246,8 +247,8 @@
 	disk_name = "Artificer's MW-841 Power Setters"
 	license = -1
 
-//This disk will never be in game as its used as a dummy disk for the nano forage
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforage
+//This disk will never be in game as its used as a dummy disk for the nano forge
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforge
 	name = "Nano-Forge Data Disk"
 	disk_name = "Artificer Data Collection"
 	designs = list(
@@ -274,6 +275,7 @@
 	/datum/design/autolathe/tool/pickaxe_excavation,
 	/datum/design/research/item/weapon/mining/jackhammer,
 	/datum/design/research/item/weapon/mining/drill,
+	/datum/design/autolathe/tool/surgicaldrill,
 	//Advanced tools
 	/datum/design/autolathe/tool/big_wrench,
 	/datum/design/autolathe/tool/pneumatic_crowbar,
@@ -290,6 +292,7 @@
 	/datum/design/autolathe/tool/multitool/advanced,
 	/datum/design/autolathe/tool/rcd,
 	/datum/design/autolathe/tool/rcd_ammo,
+	/datum/design/autolathe/tool/surgicaldrill/adv,
 	//Tool Mods
 	/datum/design/autolathe/part/laserguide,
 	/datum/design/autolathe/part/diamondblade,
@@ -356,7 +359,6 @@
 	/datum/design/autolathe/part/timer,
 	/datum/design/autolathe/part/sensor_prox,
 	/datum/design/autolathe/part/camera_assembly,
-	/datum/design/autolathe/part/laserguide,
 	/datum/design/research/item/part/smes_coil,
 	/datum/design/research/item/part/smes_coil/weak,
 	/datum/design/research/item/part/smes_coil/super_io,

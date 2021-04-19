@@ -14,6 +14,24 @@
 	glow_color = COLOR_ORANGE
 	max_upgrades = 2
 
+/obj/item/weapon/tool/polytool
+	name = "\"Jolly Co-operation\" polytool"
+	desc = "One of the few jointly designed tools by both Lonestar Shipping Solutions and the Artificer's Guild, a rather curious attempt at merging the munchkin 5000 of lonestar infamy and \
+	designs taken directly from the guild arc welder. What it produced was a munchkin and arc welder combo with much finer tuned properties, efficient fuel economy, comfortable hand grips, and plenty of slots for tool augments."
+	icon_state = "polytool"
+	item_state = "polytool"
+	max_health = 300
+	w_class = ITEM_SIZE_NORMAL
+	worksound = WORKSOUND_DRIVER_TOOL
+	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 75, QUALITY_BOLT_TURNING = 75, QUALITY_DRILLING = 40, QUALITY_PULSING = 60, QUALITY_WIRE_CUTTING = 30, QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 30)
+	price_tag = 3000
+	use_fuel_cost = 0.05
+	max_fuel = 100
+	toggleable = TRUE
+	create_hot_spot = TRUE
+	glow_color = COLOR_BLUE_LIGHT
+	max_upgrades = 4 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
+
 /obj/item/weapon/tool/arcwelder
 	name = "arc welder"
 	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, multitool, and incredibly painful taser. Due to its complex design it doesn't require welding goggles nor conduct shocks."
@@ -44,7 +62,6 @@
 	suitable_cell = /obj/item/weapon/cell/medium/moebius/nuclear
 
 /obj/item/weapon/tool/arcwelder/turn_on(mob/user)
-
 	if (cell && cell.charge > 0)
 		item_state = "[initial(item_state)]_on"
 		to_chat(user, SPAN_NOTICE("You switch [src] on."))
@@ -124,9 +141,9 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
 	flags = CONDUCT
 	origin_tech = list(TECH_MATERIAL = 3, TECH_BIO = 4)
-	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_LASER_CUTTING = 30, QUALITY_WIRE_CUTTING = 25)
+	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_LASER_CUTTING = 30, QUALITY_WIRE_CUTTING = 25, QUALITY_BONE_GRAFTING = 50)
 	suitable_cell = /obj/item/weapon/cell/medium
-	use_power_cost = 0.2 //affective!
+	use_power_cost = 0.2 //Effective!
 	max_upgrades = 2
 	workspeed = 1.2
 
@@ -140,7 +157,7 @@
 	edge = TRUE
 	worksound = WORKSOUND_DRIVER_TOOL
 	flags = CONDUCT
-	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 15)
+	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 15, QUALITY_BONE_GRAFTING = 40)
 	degradation = 0.5
 	workspeed = 0.8
 

@@ -2,11 +2,10 @@
 	name_category = "biotech device prototype"
 	category = "Medical"
 
-/datum/design/research/item/hud/health
+/datum/design/research/item/clothing/health
 	name = "Health Scanner"
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject."
 	build_path = /obj/item/clothing/glasses/hud/health
-	category = "Medical"
 
 /datum/design/research/item/makeshift_centrifuge
 	name = "Portable centrifuge"
@@ -155,6 +154,13 @@
 	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing mechanical body parts, organs, and smart purging of toxic buildup."
 	build_path = /obj/item/stack/nanopaste
 	chemicals = list("nanites" = 5)
+
+/datum/design/research/item/bonegel
+	name = "Bone Gel"
+	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
+	build_path = /obj/item/weapon/tool/tape_roll/bonegel
+	materials = list(MATERIAL_PLASTIC = 10)
+	category = "Medical"
 
 //Brain stuff
 /datum/design/research/item/posibrain

@@ -19,7 +19,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	recoil_buildup = 8
+	recoil_buildup = 10
 	one_hand_penalty = 10 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
@@ -76,13 +76,14 @@
 /obj/item/weapon/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-		 A poor copy of the AKM pattern, shortened into a mid-length carbine and chambered in .257. The left arm of the unfree world."
+		 A copy of the AKM pattern, shortened into a mid-length carbine and chambered in .257. The left arm of the unfree world."
 	icon = 'icons/obj/guns/projectile/ak_wood.dmi'
 	icon_state = "AK"
 	item_state = "AK"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 750
-	damage_multiplier = 0.9
+	damage_multiplier = 1.2
+	recoil_buildup = 14
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/ak47/sawn
@@ -90,7 +91,7 @@
 /obj/item/weapon/gun/projectile/automatic/ak47/sawn
 	name = "sawn-off \"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-	A poor copy of the AKM pattern chambered in .257 and crudely sawed down to a shadow of its former self. Rifle was fine. Was."
+	A copy of the AKM pattern chambered in .257 and crudely sawed down to a shadow of its former self. Rifle was fine. Was."
 	icon = 'icons/obj/guns/projectile/sawnoff/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -98,7 +99,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 500
-	recoil_buildup = 10
+	recoil_buildup = 16
 	one_hand_penalty = 20
 	damage_multiplier = 0.8
 	saw_off = FALSE

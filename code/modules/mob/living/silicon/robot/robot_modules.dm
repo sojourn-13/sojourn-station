@@ -259,9 +259,13 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
+	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair ect
 	src.modules += new /obj/item/device/scanner/health(src)
 	src.modules += new /obj/item/weapon/gripper(src)
 	src.modules += new /obj/item/device/t_scanner(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/melee/energy/sword(src)
 
@@ -332,7 +336,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/cautery(src)
 	src.modules += new /obj/item/weapon/tool/bonesetter(src)
 	src.modules += new /obj/item/weapon/tool/saw/circular(src)
-	src.modules += new /obj/item/weapon/tool/surgicaldrill(src)
+	src.modules += new /obj/item/weapon/tool/tape_roll/bonegel(src)
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
 	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
@@ -341,6 +345,9 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
 	src.modules += new /obj/item/weapon/reagent_containers/spray/sterilizine(src)
 	src.modules += new /obj/item/roller_holder(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
@@ -382,7 +389,7 @@ var/global/list/robot_modules = list(
 		S.update_icon()
 
 	if(src.modules)
-		var/obj/item/weapon/reagent_containers/spray/sterilizine/ST = src.modules //ST for STerilizine
+		var/obj/item/weapon/reagent_containers/spray/sterilizine/ST = locate() in src.modules //ST for STerilizine
 		ST.reagents.add_reagent("sterilizine", 2 * amount)
 	..()
 
@@ -442,6 +449,9 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src) // Allows usage of inflatables. Since they are basically robotic alternative to EMTs, they should probably have them.
 	src.modules += new /obj/item/device/gps(src) // for coordinating with medical suit health sensors console
 	src.modules += new /obj/item/weapon/tool/scalpel(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
 	src.emag.name = "Polyacid spray"
@@ -531,7 +541,10 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //Borrows
+	src.modules += new /obj/item/weapon/tool/saw(src)
 	src.modules += new /obj/item/weapon/tool/knife(src)
+	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
 	src.modules += new /obj/item/weapon/gripper(src)
@@ -543,7 +556,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/pickaxe/drill(src)
 	src.modules += new /obj/item/weapon/hatton/robot(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
 
 	//src.emag = new /obj/item/weapon/gun/energy/plasmacutter/mounted(src)
@@ -588,6 +605,12 @@ var/global/list/robot_modules = list(
 
 	..(R)
 
+/obj/item/weapon/robot_module/engineering/construction/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	if(src.modules)
+		var/obj/item/weapon/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
+		KBG.reagents.add_reagent("silicate", 2 * amount)
+	..()
+
 /obj/item/weapon/robot_module/engineering/general/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/meson(src)
@@ -598,7 +621,10 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //Borrows
+	src.modules += new /obj/item/weapon/tool/saw(src)
 	src.modules += new /obj/item/weapon/tool/knife(src)
+	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/scanner/gas(src)
 	src.modules += new /obj/item/taperoll/engineering(src)
@@ -609,7 +635,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.emag = new /obj/item/weapon/melee/baton(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(60000)
@@ -673,6 +703,12 @@ var/global/list/robot_modules = list(
 	..(R)
 
 
+/obj/item/weapon/robot_module/engineering/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	if(src.modules)
+		var/obj/item/weapon/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
+		KBG.reagents.add_reagent("silicate", 2 * amount)
+	..()
+
 	//TODO: Insert appropriate tiles here
 	//var/obj/item/stack/tile/floor_white/cyborg/FTW = new (src)
 	//FTW.synths = list(plastic)
@@ -731,9 +767,13 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
 	src.modules += new /obj/item/weapon/tool/knife/tacknife(src) //To deal with bodies and cutting down webs
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //Borrows
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
-	src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
+	//src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
 	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
 	..(R)
 
@@ -773,7 +813,7 @@ var/global/list/robot_modules = list(
 	stat_modifiers = list(
 		STAT_ROB = 25,
 		STAT_TGH = 25,
-		STAT_BIO = 25,
+		STAT_BIO = 30,
 		STAT_COG = 25
 	)
 
@@ -793,7 +833,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //Borrows
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
 	src.emag.name = "Lube spray"
@@ -857,6 +901,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src)
 	src.modules += new /obj/item/weapon/tool/minihoe(src)
 	src.modules += new /obj/item/weapon/tool/hatchet(src)
+	src.modules += new /obj/item/weapon/tool/multitool/robotic(src) //hydro
 	src.modules += new /obj/item/device/scanner/plant(src)
 	src.modules += new /obj/item/weapon/storage/bag/robotic/produce(src)
 	src.modules += new /obj/item/weapon/robot_harvester(src)
@@ -930,7 +975,8 @@ var/global/list/robot_modules = list(
 		STAT_ROB = 60,
 		STAT_TGH = 50,
 		STAT_BIO = 25,
-		STAT_COG = 25
+		STAT_COG = 25,
+		STAT_MEC = 30 //Drills
 	)
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
@@ -941,6 +987,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/miner/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/material(src)
 	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
@@ -954,6 +1001,9 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/hammer(src) //slag and ore
 	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
 	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 	..(R)
 
@@ -980,7 +1030,7 @@ var/global/list/robot_modules = list(
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 	stat_modifiers = list(
-		STAT_BIO = 30,
+		STAT_BIO = 40,
 		STAT_COG = 40,
 		STAT_MEC = 30
 	)
@@ -996,16 +1046,23 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/scalpel(src)
+	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src) //For robotic repair/mech stuff
 	src.modules += new /obj/item/weapon/tool/saw/circular(src)
-	src.modules += new /obj/item/weapon/extinguisher/mini(src)
+	src.modules += new /obj/item/weapon/tool/multitool/robotic(src) //hydro
+	src.modules += new /obj/item/weapon/robot_harvester(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
 	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/storage/bag/robotic/produce(src)
+	src.modules += new /obj/item/device/science_tool(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
+	src.modules += new /obj/item/weapon/form_printer(src)
+	src.modules += new /obj/item/weapon/gripper/paperwork(src)
+	src.modules += new /obj/item/weapon/storage/part_replacer/mini(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/hand_tele(src) //Why
 	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
@@ -1093,9 +1150,9 @@ var/global/list/robot_modules = list(
 	networks = list(NETWORK_ENGINEERING)
 	channels = list("Engineering" = 1, "Common" = 1)
 	stat_modifiers = list(
-		STAT_COG = 15,
+		STAT_COG = 25,
 		STAT_MEC = 40
-	)
+	) //so we can use rnd consoles for parts ect
 
 /obj/item/weapon/robot_module/drone/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
@@ -1104,17 +1161,23 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
+	src.modules += new /obj/item/weapon/tool/saw(src)
 	src.modules += new /obj/item/weapon/tool/hammer(src)
 	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
+	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //borrows and the like.
+	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/weapon/gripper(src)
 	src.modules += new /obj/item/weapon/soap(src)
 	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
+	src.modules += new /obj/item/weapon/gripper/chemistry(src)// For refilling autolathens with sillicon
+	src.modules += new /obj/item/weapon/storage/part_replacer/mini(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/borg/sight/meson(src)
+	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
 	src.modules += new /obj/item/device/gps(src)
 
 	//src.emag = new /obj/item/weapon/gun/energy/plasmacutter/mounted(src)
@@ -1174,6 +1237,12 @@ var/global/list/robot_modules = list(
 	P.synths = list(plastic)
 	src.modules += P
 	..(R)
+
+/obj/item/weapon/robot_module/drone/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	if(src.modules)
+		var/obj/item/weapon/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
+		KBG.reagents.add_reagent("silicate", 2 * amount)
+	..()
 
 /obj/item/weapon/robot_module/drone/construction
 	name = "construction drone module"

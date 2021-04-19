@@ -8,24 +8,24 @@
 /area/crawler)
 "c" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "d" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "e" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "f" = (
 /obj/structure/railing/grey{
 	dir = 4
 	},
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "g" = (
 /obj/effect/floor_decal/spline/grass_edge{
@@ -46,37 +46,37 @@
 /obj/structure/railing/grey{
 	dir = 8
 	},
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "k" = (
 /obj/structure/table/onestar,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "l" = (
 /obj/structure/table/onestar,
 /obj/machinery/chemical_dispenser/beer,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "m" = (
 /obj/structure/table/onestar,
 /obj/machinery/chemical_dispenser/soda,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "n" = (
 /obj/structure/railing/grey,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "o" = (
 /obj/structure/railing/grey,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "p" = (
 /obj/structure/railing/grey,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "q" = (
 /obj/machinery/light/floor,
@@ -124,16 +124,16 @@
 /area/crawler)
 "A" = (
 /obj/machinery/light/floor,
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "C" = (
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "D" = (
 /obj/structure/railing/grey{
 	dir = 1
 	},
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "F" = (
 /obj/crawler/crawler_wallbreaker,

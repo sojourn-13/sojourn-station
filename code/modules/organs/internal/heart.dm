@@ -1,5 +1,6 @@
 /obj/item/organ/internal/heart
 	name = "heart"
+	desc = "A small heart, sadly no gold..."
 	icon_state = "heart-on"
 	organ_efficiency = list(OP_HEART = 100)
 	parent_organ_base = BP_CHEST
@@ -9,12 +10,14 @@
 	oxygen_req = 10
 	nutriment_req = 10
 	var/open
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/organ/internal/heart/open
 	open = 1
 
 /obj/item/organ/internal/heart/prosthetic
 	name = "prosthetic heart"
+	desc = "synth board for drums."
 	icon_state = "heart-prosthetic"
 	dead_icon = "heart-prosthetic"
 	price_tag = 100

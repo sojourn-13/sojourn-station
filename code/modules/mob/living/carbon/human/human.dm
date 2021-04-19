@@ -1181,9 +1181,9 @@ var/list/rank_prefix = list(\
 		for(var/tag in species.has_limbs)
 			BM = Pref.get_modification(tag)
 			var/datum/organ_description/OD = species.has_limbs[tag]
-			var/datum/body_modification/PBM = Pref.get_modification(OD.parent_organ_base)
-			if(PBM && (PBM.nature == MODIFICATION_SILICON || PBM.nature == MODIFICATION_REMOVED))
-				BM = PBM
+			//var/datum/body_modification/PBM = Pref.get_modification(OD.parent_organ_base)
+			//if(PBM && (PBM.nature == MODIFICATION_SILICON || PBM.nature == MODIFICATION_REMOVED))
+			//	BM = PBM
 			if(BM.is_allowed(tag, Pref, src))
 				BM.create_organ(src, OD, Pref.modifications_colors[tag])
 			else
@@ -1198,14 +1198,15 @@ var/list/rank_prefix = list(\
 				new organ_type(src)
 
 		var/datum/category_item/setup_option/core_implant/I = Pref.get_option("Core implant")
-		if(I.implant_type)
-			var/obj/item/weapon/implant/core_implant/C = new I.implant_type
-			C.install(src)
-			C.activate()
-			if(mind)
-				C.install_default_modules_by_job(mind.assigned_job)
-				C.access.Add(mind.assigned_job.cruciform_access)
-				C.install_default_modules_by_path(mind.assigned_job)
+		if(I)
+			if(I.implant_type)
+				var/obj/item/weapon/implant/core_implant/C = new I.implant_type
+				C.install(src)
+				C.activate()
+				if(mind)
+					C.install_default_modules_by_job(mind.assigned_job)
+					C.access.Add(mind.assigned_job.cruciform_access)
+					C.install_default_modules_by_path(mind.assigned_job)
 
 	else
 		var/organ_type
@@ -1225,14 +1226,15 @@ var/list/rank_prefix = list(\
 			new organ_type(src)
 
 		if(checkprefcruciform)
-			var/datum/category_item/setup_option/core_implant/I = client.prefs.get_option("Core implant")
-			if(I.implant_type && (!mind || mind.assigned_role != "Robot"))
-				var/obj/item/weapon/implant/core_implant/C = new I.implant_type
-				C.install(src)
-				C.activate()
-				C.install_default_modules_by_job(mind.assigned_job)
-				C.access.Add(mind.assigned_job.cruciform_access)
-				C.install_default_modules_by_path(mind.assigned_job)
+			if(client)
+				var/datum/category_item/setup_option/core_implant/I = client.prefs.get_option("Core implant")
+				if(I.implant_type && (!mind || mind.assigned_role != "Robot"))
+					var/obj/item/weapon/implant/core_implant/C = new I.implant_type
+					C.install(src)
+					C.activate()
+					C.install_default_modules_by_job(mind.assigned_job)
+					C.access.Add(mind.assigned_job.cruciform_access)
+					C.install_default_modules_by_path(mind.assigned_job)
 
 	for(var/obj/item/organ/internal/carrion/C in organs_to_readd)
 		C.replaced(get_organ(C.parent_organ_base))

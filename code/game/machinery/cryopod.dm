@@ -210,7 +210,7 @@
 	on_store_name = "Robotic Storage Oversight"
 	on_enter_occupant_message = "The storage unit broadcasts a sleep signal to you. Your systems start to shut down, and you enter low-power mode."
 	allow_occupant_types = list(/mob/living/silicon/robot)
-	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
+//	disallow_occupant_types = list(/mob/living/silicon/robot/drone) We infact can put drones in storage.
 	applies_stasis = 0
 
 /obj/machinery/cryopod/elevator
@@ -228,7 +228,7 @@
 	time_till_despawn = 600 //1 minute. We want to be much faster then normal cryo, since waiting in an elevator for half an hour is a special kind of hell.
 
 	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
-	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
+//	disallow_occupant_types = list(/mob/living/silicon/robot/drone) Why would the lower colony not want us?!
 
 /obj/machinery/cryopod/dormitory
 	name = "Long Sleep Bed"

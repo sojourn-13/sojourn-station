@@ -18,6 +18,7 @@
 	phrase = "Et si ambulavero in medio umbrae mortis non timebo mala."
 	desc = "A short litany to relieve pain of the afflicted."
 	power = 50
+	ignore_stuttering = TRUE
 
 /datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.add_chemical_effect(CE_PAINKILLER, 30, TRUE)

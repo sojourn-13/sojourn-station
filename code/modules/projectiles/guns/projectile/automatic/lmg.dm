@@ -129,3 +129,35 @@
 	init_firemodes = list(
 		FULL_AUTO_600,
 		)
+
+//This should be in its own file...
+/obj/item/weapon/gun/projectile/automatic/lmg/tk
+	name = "\"Takeshi\" suppression machinegun"
+	desc = "The \"Takeshi LMG\" is marshal's answer to any scenario that requires suppression or meat grinding, a fine oiled machine of war and death."
+	icon = 'icons/obj/guns/projectile/tk.dmi'
+	icon_base = "tk"
+	icon_state = "tkclosed-empty"
+	item_state = "tkclosedmag"
+	mag_well = MAG_WELL_BOX|MAG_WELL_STANMAG
+	caliber = CAL_LRIFLE
+	damage_multiplier = 1.1 //This is clearly to high
+	penetration_multiplier = 1.1 //Ah yes wall hacks...
+	recoil_buildup = 1.7 //Why is this so good?
+
+/obj/item/weapon/gun/projectile/automatic/lmg/tk/update_icon()
+	..()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		var/percent = (ammo_magazine.stored_ammo.len / ammo_magazine.max_ammo) * 100
+		var/number = round(percent, 25)
+		iconstring += "[number]"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+/obj/item/weapon/gun/projectile/automatic/lmg/tk/Initialize()
+	. = ..()
+	update_icon()

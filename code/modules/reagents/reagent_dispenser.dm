@@ -237,6 +237,24 @@
 	anchored = 1
 	volume = 500
 	starting_reagent = "water"
+	var/cups = 20
+	var/cup_type = /obj/item/weapon/reagent_containers/food/drinks/sillycup
+
+/obj/structure/reagent_dispensers/water_cooler/attack_hand(var/mob/user)
+	if(cups > 0)
+		var/visible_messages = DispenserMessages(user)
+		visible_message(visible_messages[1], visible_messages[2])
+		var/cup = new cup_type(loc)
+		user.put_in_active_hand(cup)
+		cups--
+	else
+		to_chat(user, RejectionMessage(user))
+
+/obj/structure/reagent_dispensers/water_cooler/proc/DispenserMessages(var/mob/user)
+	return list("\The [user] grabs a paper cup from \the [src].", "You grab a paper cup from \the [src]'s cup compartment.")
+
+/obj/structure/reagent_dispensers/water_cooler/proc/RejectionMessage(var/mob/user)
+	return "\The [src]'s cup dispenser is empty."
 
 /obj/structure/reagent_dispensers/water_cooler/attackby(obj/item/I, mob/user)
 	if(QUALITY_BOLT_TURNING in I.tool_qualities)
@@ -281,7 +299,7 @@
 	amount_per_transfer_from_this = 10
 	anchored = 1
 	density = 0
-	volume = 1000
+	volume = 50000
 	starting_reagent = "virusfood"
 
 /obj/structure/reagent_dispensers/acid
@@ -293,6 +311,16 @@
 	density = 0
 	volume = 1000
 	starting_reagent = "sacid"
+
+/obj/structure/reagent_dispensers/premiumwhiskey
+	name = "Special Blend Whiskey Barrel"
+	desc = "A barrel full of Special Blend whiskey, the finest whiskey this side of the galaxy, and every other side as well."
+	icon_state = "premiumwhiskey"
+	amount_per_transfer_from_this = 10
+	volume = 1000 //Limited, rare stock! But still should be plenty to go around for everyone
+	starting_reagent = "specialwhiskey"
+	price_tag = 30
+	contents_cost = 1000 // This keg's not meant to be ordered through cargo, you start every shift with it and that's it! Big profits though...
 
 //this is big movable beaker
 /obj/structure/reagent_dispensers/bidon

@@ -1,4 +1,4 @@
-// In this file: steps for fixing organ damage, bleeding, bone fractures, necrosis and facial damage
+// In this file: steps for fixing organ damage, bleeding, bone fractures, bone damage, necrosis, and facial damage
 
 /datum/surgery_step/fix_organ
 	target_organ_type = /obj/item/organ/internal
@@ -43,6 +43,7 @@
 	)
 	if(tool.use(1))
 		organ.damage = 0
+		playsound(user.loc, 'sound/items/drop/flesh.ogg', 50, 1)
 
 /datum/surgery_step/fix_organ/fail_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	user.visible_message(
@@ -51,7 +52,49 @@
 	)
 	organ.take_damage(5, 0)
 
+/datum/surgery_step/fix_bone
+	target_organ_type = /obj/item/organ/internal/bone
+	required_tool_quality = QUALITY_BONE_GRAFTING
+	duration = 80
 
+/datum/surgery_step/fix_bone/require_tool_message(mob/living/user)
+	to_chat(user, SPAN_WARNING("You need a Bone Gel, or item capable of [required_tool_quality]"))
+
+/datum/surgery_step/fix_bone/proc/get_tool_name(obj/item/stack/tool)
+	var/tool_name = "\the [tool]"
+	if (istype(tool, /obj/item/weapon/tool/tape_roll/bonegel))
+		tool_name = "bone gel"
+	if (istype(tool, /obj/item/weapon/tool/tape_roll/glue))
+		tool_name = "superglue"
+	return tool_name
+
+/datum/surgery_step/fix_bone/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
+	return BP_IS_ORGANIC(organ) && organ.is_open() && organ.damage > 0
+
+/datum/surgery_step/fix_bone/begin_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
+	user.visible_message(
+		SPAN_NOTICE("[user] starts artificially grafting lost bone tissue on [organ.get_surgery_name()] with [get_tool_name(tool)] ."),
+		SPAN_NOTICE("You start artificially grafting lost bone tissue on [organ.get_surgery_name()] with [get_tool_name(tool)].")
+	)
+
+	var/obj/item/organ/external/limb = organ.get_limb()
+	if(limb)
+		organ.owner_custom_pain("The pain in your [limb.name] is living hell!", 1)
+
+/datum/surgery_step/fix_bone/end_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
+	user.visible_message(
+		SPAN_NOTICE("[user] artificially grafts lost bone tissue on [organ.get_surgery_name()] with [get_tool_name(tool)]."),
+		SPAN_NOTICE("You succesfuly graft lost bone tissue on [organ.get_surgery_name()] with [get_tool_name(tool)].")
+	)
+	organ.damage = 0
+	playsound(user.loc, 'sound/effects/creatures/nibble1.ogg', 50, 1) //As close a sound I could find!
+		
+/datum/surgery_step/fix_bone/fail_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
+	user.visible_message(
+		SPAN_WARNING("[user]'s hand slips, smearing [tool] all over the [organ.get_surgery_name()]!"),
+		SPAN_WARNING("Your hand slips, smearing [tool] all over the [organ.get_surgery_name()]!")
+	)
+	organ.take_damage(5, 0)
 
 /datum/surgery_step/fix_bleeding
 	required_tool_quality = QUALITY_CLAMPING

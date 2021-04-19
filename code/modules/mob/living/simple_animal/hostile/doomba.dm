@@ -28,6 +28,7 @@
 	melee_damage_upper = 10
 	leather_amount = 0
 	bones_amount = 0
+	cleaning = TRUE
 
 	//Drops
 	var/drop1 = /obj/item/weapon/scrap_lump
@@ -73,13 +74,14 @@
 	speed = 3 //speedy boy!
 	melee_damage_lower = 7
 	melee_damage_upper = 12
+	var/trip_odds = 15 //So admins can edit this
 	drop2 = /obj/item/weapon/melee/telebaton
 
 /mob/living/simple_animal/hostile/roomba/trip/AttackTarget(var/atom/A, var/proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 
-		if(istype(L) && !L.weakened && prob(15))
+		if(istype(L) && !L.weakened && prob(trip_odds))
 			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE))
 				return
 			L.Weaken(3)
@@ -208,9 +210,9 @@
 	move_to_delay = 2
 	turns_per_move = 7
 	speed = 6
-	move_to_delay = 4
 	health = 125
 	maxHealth = 125
+	cleaning = FALSE
 
 /mob/living/simple_animal/hostile/roomba/synthetic/epistol
 	name = "Greyson Positronic FBP-SEC Mark I unit"
@@ -230,6 +232,7 @@
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified burst fire cog laser rifle built into its arm."
 	icon_state = "nanotrasenrangedsmg"
 	rapid = 1
+	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam/pulse/drone
 
 /mob/living/simple_animal/hostile/roomba/synthetic/epistol/rifle
@@ -278,10 +281,72 @@
 		A.stasis = TRUE
 
 //Non-hostile to regular colonists.
-/mob/living/simple_animal/hostile/roomba/gun_ba/armored/allied
+//Roomba
+/mob/living/simple_animal/hostile/roomba/allied
+	name = "SI Combat Roomba"
+	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat."
 	faction = "neutral"
-	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a gun and seems to have added armor. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+	icon_state = "roomba_SI"
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
-/mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg/allied
+/mob/living/simple_animal/hostile/roomba/trip/armored/allied
+	name = "SI Armored Roomba"
+	desc = "A small round soteria branded research drone, usually tasked with menial work. For whatever reason, this one has been tasked for combat and given additional armor."
 	faction = "neutral"
-	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified burst fire cog laser rifle built into its arm. It doesn't seem hostile to the average colonist, but its targeting systems still determine cht'mants as hostile life forms."
+	icon_state = "roomba_SI_armor"
+	melee_damage_lower = 12
+	melee_damage_upper = 17
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+
+//Robots
+/mob/living/simple_animal/hostile/roomba/synthetic/allied
+	name = "SI Sword Drone"
+	desc = "A soteria branded sword drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
+	faction = "neutral"
+	icon = 'icons/mob/mobs-humanoid.dmi'
+	icon_state = "soteria"
+	attacktext = "slashed"
+	move_to_delay = 1
+	turns_per_move = 7
+	speed = 2
+	health = 250
+	maxHealth = 250
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	stop_automated_movement_when_pulled = TRUE
+	wander = FALSE
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/FindTarget()
+	. = ..()
+	if(.)
+		visible_emote("lets out a buzz as it detects a target!")
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced
+	name = "SI Mantis Drone"
+	desc = "A soteria branded heavily armored mantis drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
+	icon_state = "soteria_mantis"
+	health = 350
+	maxHealth = 350
+	melee_damage_lower = 30
+	melee_damage_upper = 40
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/junkbot
+	name = "Prospector Junkbot"
+	desc = "A prospector forged robot, its made from spare parts, love, and duct tape. Using designs 'borrowed' from the Soteria the prospector salvagers made these bots to function as disposable shields or \
+	to gaurd specific locations since they do not wander. While lightweight, fast, and capable of a wickedly damaging slash with its armblade, they are not that durable."
+	icon_state = "junkbot"
+	health = 125
+	maxHealth = 125
+	melee_damage_lower = 15
+	melee_damage_upper = 25
+	colony_friend = TRUE
+	friendly_to_colony = TRUE

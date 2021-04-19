@@ -225,10 +225,9 @@
 				containers.Remove(C)
 				continue
 
-			var/amount = min(C.reagents.get_free_space(), amount_to_transfer)
+			var/amount = min(C.reagents.get_free_space(), min(amount_to_transfer, R.volume))
 			if(!C.reagents.total_volume || C.reagents.has_reagent(R.id))
 				C.reagents.add_reagent(R.id, amount, R.get_data())
 				reagents.remove_reagent(R.id, amount)
 				amount_to_transfer = max(0,amount_to_transfer - amount)
 	return TRUE
-

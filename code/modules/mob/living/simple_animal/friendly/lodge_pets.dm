@@ -37,6 +37,7 @@
 	var/datum/reagents/udder = null
 	var/offspring_left = 0
 	var/milk_type = "tatonka_milk"
+	colony_friend = TRUE
 
 /mob/living/simple_animal/tatonka/New()
 	udder = new(50)
@@ -97,6 +98,8 @@
 	if(!stat && prob(3) && offspring_left > 0)
 		visible_message("[src] [pick("squats down and moos.","begins making a huge racket.","begins mooing raucously.")]")
 		offspring_left--
+		var/mob/living/simple_animal/baby_tatonka/E = new(get_turf(src))
+		START_PROCESSING(SSobj, E)
 	default_pixel_x = -16
 	pixel_x = -16
 
@@ -125,6 +128,7 @@
 	hunger_enabled = FALSE
 	default_pixel_x = -16
 	pixel_x = -16
+	colony_friend = TRUE
 
 /mob/living/simple_animal/baby_tatonka/New()
 	..()
@@ -163,7 +167,7 @@
 		/obj/item/animal_part/tangu_horn,
 		/obj/item/animal_part/tangu_horn,
 		/obj/item/animal_part/tangu_horn)
-
+	colony_friend = TRUE
 
 //Baby Clucker
 //Looks nearly the same as a regular chick.
@@ -189,6 +193,7 @@
 	autoseek_food = 0
 	beg_for_food = 0
 	hunger_enabled = FALSE
+	colony_friend = TRUE
 
 /mob/living/simple_animal/chick_clucker/New()
 	..()
@@ -234,6 +239,7 @@
 	bones_amount = 4 //The amount of bone sheets dropped.
 	has_special_parts = TRUE //var for checking during the butcher process.
 	special_parts = list(/obj/item/animal_part/clucker_feather)
+	colony_friend = TRUE
 
 /mob/living/simple_animal/clucker/New()
 	..()
@@ -266,6 +272,7 @@
 		var/obj/item/weapon/reagent_containers/food/snacks/egg/clucker/E = new(get_turf(src))
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
+		START_PROCESSING(SSobj, E)
 
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/clucker/amount_grown = 0
@@ -285,8 +292,7 @@
 	name = "cerberus"
 	desc = "A domesticated hell diver kept fat, happy, and loyal by the local hunting lodge that breed them as hunting allies and guard animals. Favored especially for their asexual \
 	reproduction after being fed various mushrooms, a fact that baffles some soteria scientists. Unlike a standard hell diver the cerberus isn't as \
-	obsessed with food but gladly lets itself get pulled along. Hunters beware, however, as the instinct to attack insectile creatures makes even these attempt to maul cht'mants to death, a trait \
-	that hasn't been bred out of them yet. Turrets from the colony will also detect these creatures as hostile life, shooting them on sight."
+	obsessed with food but gladly lets itself get pulled along. The instinct to attack insectile creatures that makes these attempt to maul cht'mants to death, has been bred out of them."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "pigrat"
 	icon_living = "pigrat"
@@ -299,6 +305,8 @@
 	has_special_parts = TRUE //var for checking during the butcher process.
 	special_parts = list(/obj/item/animal_part/cerberus_snout)
 	var/offspring_left = 0
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/hostile/helldiver/cerberus/Life()
 	. = ..()
@@ -307,6 +315,8 @@
 	if(!stat && prob(3) && offspring_left > 0)
 		visible_message("[src] [pick("squats down and grunts.","begins making a huge racket.","begins snuffling raucously.")]")
 		offspring_left--
+		var/mob/living/simple_animal/baby_cerberus/E = new(get_turf(src))
+		START_PROCESSING(SSobj, E)
 
 /mob/living/simple_animal/hostile/helldiver/cerberus/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
@@ -328,9 +338,7 @@
 /mob/living/simple_animal/hostile/helldiver/cerberus/chimera
 	name = "chimera"
 	desc = "A mutated strain of a domesticated cerberus, rarely appearing and much sleeker than their lesser cousins. Chimera are faster, better armored, and much more lethal than a cerberus \
-	thanks to its maw containing a huge singular fang, making them prized companions by all hunters. While strong, they carry the same problems a regular cerberus does, in that they attack \
-	cht'mants on sight and are viewed as hostile life forms \
-	most automated combat systems."
+	thanks to its maw containing a huge singular fang, making them prized companions by all hunters. The instinct to attack insectile creatures that makes these attempt to maul cht'mants to death, has been bred out of them."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "nightstalker"
 	icon_living = "nightstalker"
@@ -379,6 +387,8 @@
 	autoseek_food = 0
 	beg_for_food = 0
 	hunger_enabled = FALSE
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/baby_cerberus/New()
 	..()

@@ -9,11 +9,11 @@
 	icon_state = "pickaxe"
 	item_state = "pickaxe"
 	max_health = 500
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_STEEL = 6)
 	tool_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_PRYING = 20) //So it still shares its switch off quality despite not yet being used.
 	switched_off_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_PRYING = 20)
-	switched_on_qualities = list(QUALITY_DIGGING = 30, QUALITY_PRYING = 20)
+	switched_on_qualities = list(QUALITY_DIGGING = 35, QUALITY_PRYING = 20)
 	toggleable = TRUE
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
@@ -44,7 +44,7 @@
 	..()
 
 
-/obj/item/weapon/tool/pickaxe/onestar //Here's my lame attempt at adding a sound proc
+/obj/item/weapon/tool/pickaxe/onestar
 	name = "Greyson Positronic Pickaxe"
 	desc = "A standard Greyson Positronic digging tool. Whatever secrets they used to make this so powerful and cheap is a mystery."
 	icon_state = "one_star_pickaxe"
@@ -52,9 +52,9 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2, MATERIAL_DIAMOND = 2)
 	origin_tech = list(TECH_MATERIAL = 3, TECH_ENGINEERING = 2, TECH_POWER = 3)
 	switched_on_force = WEAPON_FORCE_ROBUST
-	tool_qualities = list(QUALITY_EXCAVATION = 15, QUALITY_PRYING = 25)
-	switched_off_qualities = list(QUALITY_EXCAVATION = 15, QUALITY_PRYING = 25)
-	switched_on_qualities = list(QUALITY_DIGGING = 40, QUALITY_PRYING = 20)
+	tool_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 25)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 25)
+	switched_on_qualities = list(QUALITY_DIGGING = 50, QUALITY_PRYING = 25)
 	glow_color = COLOR_BLUE_LIGHT
 	degradation = 0.6
 	workspeed = 1.2
@@ -81,8 +81,8 @@
 	icon_state = "jackhammer"
 	item_state = "jackhammer"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2)
-	tool_qualities = list(QUALITY_EXCAVATION = 30)
-	switched_off_qualities = list(QUALITY_EXCAVATION = 30)
+	tool_qualities = list(QUALITY_EXCAVATION = 35)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 35)
 	switched_on_qualities = list(QUALITY_DIGGING = 45)
 	origin_tech = list(TECH_MATERIAL = 3, TECH_POWER = 2, TECH_ENGINEERING = 2)
 	workspeed = 1.4
@@ -96,9 +96,9 @@
 	icon_state = "one_star_jackhammer"
 	item_state = "jackhammer"
 	matter = list(MATERIAL_STEEL = 7, MATERIAL_PLATINUM = 2)
-	tool_qualities = list(QUALITY_EXCAVATION = 30)
-	switched_off_qualities = list(QUALITY_EXCAVATION = 30)
-	switched_on_qualities = list(QUALITY_DIGGING = 55)
+	tool_qualities = list(QUALITY_EXCAVATION = 35)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 35)
+	switched_on_qualities = list(QUALITY_DIGGING = 60)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_POWER = 2, TECH_ENGINEERING = 3)
 	degradation = 0.6
 	workspeed = 1.7
@@ -110,9 +110,9 @@
 	desc = "Yours is the drill that will pierce through the rock walls."
 	icon_state = "handdrill"
 	item_state = "jackhammer"
-	tool_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 10)
-	switched_off_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 10)
-	switched_on_qualities = list(QUALITY_DIGGING = 40, QUALITY_DRILLING = 10)
+	tool_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 15)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 15)
+	switched_on_qualities = list(QUALITY_DIGGING = 40, QUALITY_DRILLING = 40)
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 2)
 	origin_tech = list(TECH_MATERIAL = 2, TECH_POWER = 3, TECH_ENGINEERING = 2)
 	degradation = 0.7
@@ -123,9 +123,9 @@
 	name = "Greyson Positronic mining drill"
 	desc = "Yours is the drill that will pierce through the worker, metaphorically."
 	icon_state = "one_star_drill"
-	tool_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 10)
-	switched_off_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 10)
-	switched_on_qualities = list(QUALITY_DIGGING = 40, QUALITY_DRILLING = 10)
+	tool_qualities = list(QUALITY_EXCAVATION = 20, QUALITY_DRILLING = 20)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 20, QUALITY_DRILLING = 20)
+	switched_on_qualities = list(QUALITY_DIGGING = 60, QUALITY_DRILLING = 60)
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLATINUM = 2)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_POWER = 3, TECH_ENGINEERING = 2)
 	degradation = 0.6
@@ -142,7 +142,7 @@
 	force = WEAPON_FORCE_DANGEROUS * 1.15
 	tool_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 20)
 	switched_off_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 20)
-	switched_on_qualities = list(QUALITY_DIGGING = 50, QUALITY_DRILLING = 20)
+	switched_on_qualities = list(QUALITY_DIGGING = 50, QUALITY_DRILLING = 50)
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_DIAMOND = 1)
 	origin_tech = list(TECH_MATERIAL = 6, TECH_POWER = 4, TECH_ENGINEERING = 5)
 	max_upgrades = 4
@@ -163,5 +163,5 @@
 	tool_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 15)
 	switched_off_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 15)
 	switched_on_qualities = list(QUALITY_DIGGING = 15, QUALITY_PRYING = 15)
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_STEEL = 3)

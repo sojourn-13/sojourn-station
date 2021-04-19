@@ -5,6 +5,7 @@
 	initial_icon = "marauder"
 	step_in = 3
 	step_energy_drain = 3
+	price_tag = 25000 //Rare spawns + uncraftable
 	health = 1000
 	deflect_chance = 25
 	damage_absorption = list("brute"=0.5,"fire"=0.7,"bullet"=0.45,"energy"=0.7,"bomb"=0.7)
@@ -23,10 +24,11 @@
 	force = 45
 	max_equip = 10
 
-//Iron Lords gift, will remove this if destroyed in game.
+//Iron Lords gift, will remove this if destroyed in game or sold.
 /obj/mecha/combat/dreadnought/security
 	desc = "Heavy-duty, combat exosuit, developed after the Durand model. Rarely found among civilian populations. Anyone who kept up with colony news would know this one was gifted by the Iron Lord void wolves as apart of a trade agreement and unfortunately is the only one of its kind. If destroyed, it would disappear forever."
 	name = "Iron Tyrant"
+	price_tag = 2500000 //best mech in the game
 
 /obj/mecha/combat/dreadnought/security/New()
 	..()//Let it equip whatever is needed.
@@ -57,6 +59,53 @@
 	src.smoke_system.attach(src)
 	return
 
+/obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events
+	desc = "EDIT THIS FOR EVENTS."
+	name = "EDIT THIS FOR EVENTS"
+	icon_state = "hephaestus"
+	initial_icon = "hephaestus"
+	step_in = 3
+	step_energy_drain = 1
+	dir_in = 1 //Facing North.
+	health = 8000
+	wreckage = /obj/effect/decal/mecha_wreckage/dreadnought/hephaestus
+	deflect_chance = 50
+	damage_absorption = list("brute"=0.3,"fire"=0.4,"bullet"=0.3,"energy"=0.5,"bomb"=0.55)
+
+/obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events/New()
+	..()//Let it equip whatever is needed.
+	var/obj/item/mecha_parts/mecha_equipment/ME
+	if(equipment.len)//Now to remove it and equip anew.
+		for(ME in equipment)
+			ME.detach(src)
+			qdel(ME)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/loaded(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/tool/passenger(src)
+	return
+
+/obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events/add_cell()
+	cell = new /obj/item/weapon/cell/large/moebius/nuclear(src)
+
 /obj/mecha/combat/dreadnought/seraph
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
 	name = "Seraph"
@@ -82,9 +131,9 @@
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/loaded(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/loaded(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive(src)
 	ME.attach(src)
@@ -112,9 +161,9 @@
 			qdel(ME)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/loaded(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/loaded(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive(src)
 	ME.attach(src)

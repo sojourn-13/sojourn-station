@@ -75,6 +75,43 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/weapon/tank/jetpack/oxygen
 
+//Scav
+/obj/item/clothing/head/space/void/riggedvoidsuit
+	name = "makeshift armored helmet"
+	desc = "A makeshift armored helmet you can see the glue holding it, just close enough to be airtight."
+	icon_state = "makeshift_void"
+	item_state = "makeshift_void"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+
+	armor = list(
+		melee = 40,
+		bullet = 15,
+		energy = 20,
+		bomb = 25,
+		bio = 100,
+		rad = 0
+	)
+	light_overlay = "helmet_light_dual"
+	siemens_coefficient = 0.8
+
+/obj/item/clothing/suit/space/void/riggedvoidsuit
+	name = "makeshift armored voidsuit"
+	desc = "A makeshift armored voidsuit, you can see the glue holding it, just close enough to be airtight."
+	icon_state = "makeshift_void"
+	item_state = "makeshift_void"
+	siemens_coefficient = 0.4
+	armor = list(
+		melee = 40,
+		bullet = 20,
+		energy = 20,
+		bomb = 25,
+		bio = 100,
+		rad = 0
+	)
+	siemens_coefficient = 0.8
+	slowdown = 1.6
+	helmet = /obj/item/clothing/head/space/void/riggedvoidsuit
+
 //Mining rig
 /obj/item/clothing/head/helmet/space/void/mining
 	name = "mining voidsuit helmet"

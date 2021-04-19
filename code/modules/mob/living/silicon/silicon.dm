@@ -34,6 +34,7 @@
 	#define SEC_HUD 1 //Security HUD mode
 	#define MED_HUD 2 //Medical HUD mode
 	mob_classification = CLASSIFICATION_SYNTHETIC
+	colony_friend = TRUE
 
 /mob/living/silicon/Initialize()
 	GLOB.silicon_mob_list |= src

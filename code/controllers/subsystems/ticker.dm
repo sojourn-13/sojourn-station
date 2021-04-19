@@ -250,7 +250,9 @@ SUBSYSTEM_DEF(ticker)
 
 		generate_contracts(min(6 + round(minds.len / 5), 12))
 		generate_excel_contracts(min(6 + round(minds.len / 5), 12))
+		generate_blackshield_contracts(min(6 + round(minds.len / 5), 12))
 		excel_check()
+		blackshield_check()
 		addtimer(CALLBACK(src, .proc/contract_tick), 15 MINUTES)
 	//start_events() //handles random events and space dust.
 	//new random event system is handled from the MC.
@@ -373,7 +375,7 @@ SUBSYSTEM_DEF(ticker)
 			SSticker.minds |= player.mind
 
 /datum/controller/subsystem/ticker/proc/generate_contracts(count)
-	var/list/candidates = (subtypesof(/datum/antag_contract) - typesof(/datum/antag_contract/excel))
+	var/list/candidates = (subtypesof(/datum/antag_contract) - typesof(/datum/antag_contract/excel)- typesof(/datum/antag_contract/blackshield))
 	while(count--)
 		while(candidates.len)
 			var/contract_type = pick(candidates)
@@ -387,7 +389,25 @@ SUBSYSTEM_DEF(ticker)
 				candidates -= contract_type
 			break
 
-datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
+/datum/controller/subsystem/ticker/proc/generate_blackshield_contracts(count)
+	var/list/candidates = subtypesof(/datum/antag_contract/blackshield)
+	while(count--)
+		while(candidates.len)
+			var/contract_type = pick(candidates)
+			var/datum/antag_contract/C = new contract_type
+			if(!C.can_place())
+				candidates -= contract_type
+				qdel(C)
+				continue
+			C.place()
+			if(C.unique)
+				candidates -= contract_type
+			break
+
+/datum/controller/subsystem/ticker/proc/blackshield_check()
+	addtimer(CALLBACK(src, .proc/blackshield_check), 3 MINUTES)
+
+/datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 	var/list/candidates = subtypesof(/datum/antag_contract/excel)
 	while(count--)
 		while(candidates.len)
@@ -429,8 +449,10 @@ datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 
 /datum/controller/subsystem/ticker/proc/contract_tick()
 	generate_contracts(1)
+	generate_blackshield_contracts(1)
 	generate_excel_contracts(1)
 	addtimer(CALLBACK(src, .proc/contract_tick), 15 MINUTES)
+
 /datum/controller/subsystem/ticker/proc/equip_characters()
 	var/captainless = TRUE
 	for(var/mob/living/carbon/human/player in GLOB.player_list)

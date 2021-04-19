@@ -18,6 +18,7 @@
 				"Waaaah.")
 	emote_hear = list("wahs!","chitters.")
 	emote_see = list("trundles around","rears up onto their hind legs and pounces a bug")
+	colony_friend = TRUE
 
 /mob/living/simple_animal/redpanda/fae
 	name = "fae panda"
@@ -28,6 +29,7 @@
 	health = 60
 	melee_damage_lower = 10
 	melee_damage_upper = 10
+	colony_friend = TRUE
 
 /mob/living/simple_animal/penguin
 	name = "penguin"
@@ -44,6 +46,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = list("pecked")
+	colony_friend = TRUE
 
 /mob/living/simple_animal/penguin/baby
 	name = "penguin chick"
@@ -71,6 +74,8 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = list("pecked")
+	faction = "pond"
+	colony_friend = TRUE
 
 /mob/living/simple_animal/lizard
 	name = "lizard"
@@ -89,6 +94,7 @@
 	mob_size = MOB_MINISCULE
 	possession_candidate = 1
 	seek_speed = 0.75
+	colony_friend = TRUE
 
 /mob/living/simple_animal/lizard/New()
 	..()
@@ -115,6 +121,7 @@
 				"Ararrrararr.")
 	emote_hear = list("screEEEEeeches!","chirps.")
 	emote_see = list("earflicks","sniffs at the ground")
+	colony_friend = TRUE
 
 /mob/living/simple_animal/fennec/fennix
 	name = "fennix"

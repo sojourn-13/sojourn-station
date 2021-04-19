@@ -11,7 +11,7 @@
 	var/translate_hive = 0
 	var/syndie = 0
 	var/list/channels = list()
-	matter = list(MATERIAL_STEEL = 1)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
 
 /obj/item/device/encryptionkey/attackby(obj/item/weapon/W as obj, mob/user as mob)
 
@@ -25,12 +25,12 @@
 	icon_state = "cypherkey"
 	translate_binary = 1
 	origin_tech = list(TECH_ILLEGAL = 3)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2)
 
 /obj/item/device/encryptionkey/headset_bs
 	name = "security radio encryption key"
 	icon_state = "sec_cypherkey"
 	channels = list( "Blackshield" = 1, "Marshal" = 1)
-
 
 /obj/item/device/encryptionkey/headset_mar
 	name = "security radio encryption key"

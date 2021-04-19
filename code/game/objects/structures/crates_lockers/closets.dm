@@ -321,11 +321,15 @@
 					A.forceMove(src.loc)
 					A.ex_act(severity + 1)
 				qdel(src)
+			else
+				health -= 99
 		if(3)
 			if(prob(5))
 				for(var/atom/movable/A as mob|obj in src)
 					A.forceMove(src.loc)
 				qdel(src)
+			else
+				health -= 50
 
 /obj/structure/closet/proc/populate_contents()
 	return
@@ -454,7 +458,7 @@
 		SPAN_WARNING("[user] picks in wires of the [src.name] with a multitool"), \
 		SPAN_WARNING("[pick("Picking wires in [src.name] lock", "Hacking [src.name] security systems", "Pulsing in locker controller")].")
 		)
-		if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD, required_stat = (STAT_MEC+STAT_COG))) //Not only does Cog let you skip a few stages but speed you up in hacking as well
+		if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD, required_stat = STAT_MEC))
 			if(hack_stage < hack_require)
 
 				var/obj/item/weapon/tool/T = I

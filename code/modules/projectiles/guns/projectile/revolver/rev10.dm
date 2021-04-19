@@ -13,7 +13,7 @@
 	price_tag = 800
 	damage_multiplier = 1.4
 	penetration_multiplier = 1.3
-	recoil_buildup = 20
+	recoil_buildup = 8
 	zoom_factor = 0.2
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
@@ -31,3 +31,7 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/weapon/gun/projectile/revolver/rev10/Initialize()
+	. = ..()
+	update_icon()

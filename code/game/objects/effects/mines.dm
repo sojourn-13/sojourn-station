@@ -97,23 +97,19 @@
 	..()
 	pixel_x = -16
 	pixel_y = -12
-
-/obj/item/weapon/spider_shadow_trap/Crossed(AM as mob|obj)
-	Bumped(AM)
-
+/*
+/obj/item/weapon/spider_shadow_trap/Bumped(AM as mob|obj)
+	Crossed(AM)
+*/
 /obj/item/weapon/spider_shadow_trap/attack_hand(mob/user as mob)
-	Bumped(user)
+	Crossed(user)
 
-/obj/item/weapon/spider_shadow_trap/Bumped(mob/M as mob|obj)
-
+/obj/item/weapon/spider_shadow_trap/Crossed(mob/M as mob|obj)
 	if(triggered) return
 
 	if(ishuman(M))
-		for(var/mob/O in viewers(world.view, src.loc))
-			M.visible_message(
-				SPAN_DANGER("A gutteral screeching roar is heard right before [M] is knocked down by a huge spider leaping from above!"),
-				SPAN_DANGER("You hear a gutteral screeching roar right before something huge falling from above knocks you down!")
-			)
+		M.visible_message("<span class='warning'>A gutteral screeching roar is heard right before [M] is knocked down by a huge spider leaping from above!</span>", \
+						  "<span class='warning'>You hear a gutteral screeching roar right before something huge falling from above knocks you down!</span>")
 		triggered = 1
 		call(src,triggerproc)(M)
 
@@ -123,3 +119,33 @@
 	M.Weaken(8)
 	new /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor(src.loc)
 	qdel(src)
+
+/obj/item/weapon/spider_shadow_trap/burrowing
+	name = "collection of webs"
+	desc = "Something isn't quite right with that section of the floor, it looks like something made a small door of refuse held together by webs."
+	density = 0
+	anchored = 1
+	icon = 'icons/obj/traps.dmi'
+	icon_state = "trapdoor"
+	item_state = "trapdoor"
+
+/obj/item/weapon/spider_shadow_trap/burrowing/Crossed(mob/M as mob|obj)
+	if(triggered) return
+
+	if(ishuman(M))
+		M.visible_message("<span class='warning'>The trap door opens and out springs a spider, [M] is knocked to the ground as it pounces!</span>", \
+						  "<span class='warning'>You see the ground spring open right before a bulky spider leaps out and knocks you to the ground!</span>")
+		triggered = 1
+		call(src,triggerproc)(M)
+
+/obj/item/weapon/spider_shadow_trap/burrowing/ambush(var/mob/living/M)
+	triggered = 1
+	playsound(src.loc, 'sound/effects/impacts/rumble2.ogg', 300, 1)
+	M.Weaken(8)
+	new /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing(src.loc)
+	qdel(src)
+
+/obj/item/weapon/spider_shadow_trap/burrowing/New()
+	..()
+	pixel_x = 0
+	pixel_y = 0

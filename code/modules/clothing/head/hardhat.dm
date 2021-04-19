@@ -1,6 +1,8 @@
 /obj/item/clothing/head/hardhat
 	name = "hard hat"
-	desc = "Headgear for dangerous working conditions. Comes with a built-in light and a variety of colors."
+	desc = "Headgear for dangerous working conditions. This one is an Artificer's standard yellow design with a built-in light."
+	icon_state = "hardhat-y"
+	item_state = "hardhat-y"
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4 //luminosity when on
 	light_overlay = "hardhat_light"
@@ -19,10 +21,29 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 
-/obj/item/clothing/head/hardhat/New()
-	icon_state = "hardhat-[pick("o","y","r","b")]"
-	item_state = icon_state
-	..()
+/obj/item/clothing/head/hardhat/yellow
+	name = "yellow hardhat"
+	desc = "Headgear for dangerous working conditions with a built-in light. This one comes in standard Artificer's yellow."
+	icon_state = "hardhat-y"
+	item_state = "hardhat-y"
+
+/obj/item/clothing/head/hardhat/orange
+	name = "orange hardhat"
+	desc = "Headgear for dangerous working conditions with a built-in light. This one comes in orange."
+	icon_state = "hardhat-o"
+	item_state = "hardhat-o"
+
+/obj/item/clothing/head/hardhat/red
+	name = "red hardhat"
+	desc = "Headgear for dangerous working conditions with a built-in light. This one comes in red."
+	icon_state = "hardhat-r"
+	item_state = "hardhat-r"
+
+/obj/item/clothing/head/hardhat/blue
+	name = "blue hardhat"
+	desc = "Headgear for dangerous working conditions with a built-in light. This one comes in blue."
+	icon_state = "hardhat-b"
+	item_state = "hardhat-b"
 
 /obj/item/clothing/head/firefighter/chief
 	name = "guild master helmet"

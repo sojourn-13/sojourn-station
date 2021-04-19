@@ -21,6 +21,8 @@
 	src.pixel_y = rand(-5.0, 5)
 
 	// Fill the object up with the appropriate reagents.
+
+
 	if(planttype)
 		plantname = planttype
 
@@ -62,6 +64,12 @@
 	update_desc()
 	if(reagents.total_volume > 0)
 		bitesize = 1+round(reagents.total_volume / 2, 1)
+
+	if (!seed.materials)
+		return
+
+	if (seed.materials) matter = seed.materials.Copy()
+	if (seed.origin_tech) origin_tech = seed.origin_tech.Copy()
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/New()
 	..()
@@ -322,25 +330,25 @@
 
 //Used in clearing things.
 /obj/item/weapon/reagent_containers/food/snacks/grown/grass/cuttings
-	icon_state = "alien4-product"
+	icon_state = "alien4"
 	name = "plant cuttings"
 	plantname = "plant cuttings"
 	desc = "Freshly cut plant clippings."
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/flower/poppy/wild
-	icon_state = "flower3-product"
+	icon_state = "flower3"
 	name = "wild poppy"
 	plantname = "wild poppy"
 	desc = "Wild grown poppy, domesticated ones are about the same."
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/flower/sunflower/wild
-	icon_state = "flower2-product"
+	icon_state = "flower2"
 	name = "wild sunflower"
 	plantname = "wild sunflower"
 	desc = "Wild grown sunflower, not as tall as the domesticated ones."
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/flower/harebells/wild
-	icon_state = "flower5-product"
+	icon_state = "flower5"
 	name = "wild harebell"
 	plantname = "wild harebell"
 	desc = "Wildly grown harebell, much more blue then domesticated ones."

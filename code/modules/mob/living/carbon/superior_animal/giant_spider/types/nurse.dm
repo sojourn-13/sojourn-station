@@ -40,7 +40,7 @@
 	icon_living = "recluse"
 	maxHealth = 20
 	health = 20
-	poison_per_bite = 4
+	poison_per_bite = 1 //1u is all it takes to sleep you, your asleep also dosnt prevet it form attacking you more then once meaning this quit quickly stacks without someones help
 	melee_damage_lower = 3
 	melee_damage_upper = 5
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/recluse
@@ -62,6 +62,7 @@
 	poison_type = "menace"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/queen
 	meat_amount = 3
+	flash_resistances = 5 //For balance against are speedy fello
 	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
 
@@ -130,7 +131,7 @@
 							if(busy == LAYING_EGGS)
 								if(!(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
 									new /obj/effect/spider/eggcluster(loc, src)
-									fed--
+									fed -= 2
 									update_openspace()
 								busy = 0
 								stop_automated_movement = 0

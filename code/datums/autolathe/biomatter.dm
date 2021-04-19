@@ -171,6 +171,10 @@
 	name = "Hermes Boots"
 	build_path = /obj/item/clothing/shoes/hermes_shoes
 
+/datum/design/bioprinter/nt_clothes/NTvoid
+	name = "Angel Voidsuit"
+	build_path = /obj/item/clothing/suit/space/void/NTvoid
+
 //[MELEE]
 /datum/design/autolathe/sword/nt_sword
 	name = "NT Short Sword"

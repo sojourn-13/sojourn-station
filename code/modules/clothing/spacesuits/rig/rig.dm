@@ -36,7 +36,7 @@
 	siemens_coefficient = 0.1
 	permeability_coefficient = 0.1
 	unacidable = 1
-	slowdown = 1
+	slowdown = 0
 
 	var/interface_path = "hardsuit.tmpl"
 	var/ai_interface_path = "hardsuit.tmpl"

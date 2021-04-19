@@ -31,7 +31,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/selfmedicated, /datum/perk/surgical_master, /datum/perk/robotics_expert)
+	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert)
 
 	// TODO: enable after baymed
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -81,8 +81,6 @@
 		access_genetics, access_medical_suits
 	)
 
-	perks = list(/datum/perk/selfmedicated)
-
 	stat_modifiers = list(
 		STAT_MEC = 20,
 		STAT_COG = 35,
@@ -117,6 +115,7 @@
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
+	department_account_access = TRUE
 
 	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
 
@@ -132,7 +131,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/selfmedicated, /datum/perk/surgical_master, /datum/perk/robotics_expert)
+	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert)
 
 	description = "The Roboticist is a specialized scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
 	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\

@@ -381,6 +381,7 @@
 		SPAN_NOTICE("You amputate [organ.get_surgery_name()] with \the [tool].")
 	)
 	organ.droplimb(TRUE, DROPLIMB_EDGE)
+	playsound(user.loc, 'sound/sanity/limb_tear_off.ogg', 50, 1)
 
 /datum/surgery_step/amputate/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(

@@ -27,6 +27,16 @@
 	)
 	related_stats = list(STAT_COG, STAT_BIO, STAT_MEC)
 
+/datum/craft_recipe/medical/improsplint
+	name = "improvised splints"
+	result = /obj/item/stack/medical/splint/improvised
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD),
+		list(/obj/item/stack/cable_coil, 5, "time" = 5),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 10)
+	)
+	related_stats = list(STAT_BIO, STAT_MEC)
+
 /datum/craft_recipe/medical/makeshift_leg
 	name = "Junktech prosthetic left leg"
 	result = /obj/item/organ/external/robotic/junktech/l_leg

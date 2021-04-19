@@ -73,6 +73,15 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 6)
 	maxcharge = 14000
 
+/obj/item/weapon/cell/large/greyson
+	name = "GP-SI \"Posi-cell 16000L\""
+	desc = "GP-SI branded rechargeable L-standardized power cell that recharges itself over time. This type has yet to hit the market!"
+	icon_state = "greyson_b_omega"
+	maxcharge = 16000
+	autorecharging = TRUE
+	autorecharge_rate = 0.06
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_PLATINUM = 3, MATERIAL_URANIUM = 6)
+
 /obj/item/weapon/cell/large/excelsior
 	name = "Excelsior \"Zarya 18000L\""
 	desc = "Commie rechargeable L-standardized power cell. Power to the people!"
@@ -182,6 +191,15 @@
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1000
 
+/obj/item/weapon/cell/medium/greyson
+	name = "GP-SI \"Posi-cell 1600M\""
+	desc = "GP-SI branded rechargeable M-standardized power cell that recharges itself over time. This type has yet to hit the market!"
+	icon_state = "greyson_m_omega"
+	maxcharge = 1600
+	autorecharging = TRUE
+	autorecharge_rate = 0.06
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2, MATERIAL_URANIUM = 4)
+
 /obj/item/weapon/cell/medium/excelsior
 	name = "Excelsior \"Zarya 1100M\""
 	desc = "Commie rechargeable M-standardized power cell. Power to the people!"
@@ -280,6 +298,15 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.0007
 	recharge_time = 1
+
+/obj/item/weapon/cell/small/greyson
+	name = "GP-SI \"Posi-cell 400S\""
+	desc = "GP-SI branded rechargeable S-standardized power cell that recharges itself over time. This type has yet to hit the market!"
+	icon_state = "greyson_s_omega"
+	maxcharge = 500
+	autorecharging = TRUE
+	autorecharge_rate = 0.06
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 2)
 
 /obj/item/weapon/cell/small/excelsior
 	name = "Excelsior \"Zarya 400S\""

@@ -13,11 +13,12 @@
 	load_method = SINGLE_CASING
 	max_shells = 6
 	damage_multiplier = 1.36
-	recoil_buildup = 25
+	recoil_buildup = 2
 	var/chamber_open = FALSE
 	var/jammed = FALSE
 	var/jam_chance = 15
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_CALIBRE_35)
+	max_upgrades = 0
 
 /obj/item/weapon/gun/projectile/handmade_pistol/magnum
 	name = "handmade magnum"
@@ -34,7 +35,7 @@
 	and recoil as a result of its caliber."
 	caliber = CAL_SHOTGUN
 	max_shells = 2
-	recoil_buildup = 50
+	recoil_buildup = 18 //Still a shotgun
 	jam_chance = 25
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
@@ -46,7 +47,7 @@
 	caliber = CAL_ANTIM
 	max_shells = 1
 	damage_multiplier = 1
-	recoil_buildup = 75
+	recoil_buildup = 30 //still a massive bullet
 	jam_chance = 35
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 

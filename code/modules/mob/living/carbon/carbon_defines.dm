@@ -37,10 +37,12 @@
 	nutrition = 400.0//Carbon
 
 	var/is_watching = TRUE  //used for remote viewing of multiz structures
+	var/can_multiz_pb = FALSE // used for point-blanking people that camp ladders.
 
 	var/flesh_color = "#A10808"
 
 	var/obj/item/weapon/tank/internal = null//Human/Monkey
+	colony_friend = TRUE //So we dont attack monkeys/BST/People if we allied
 
 	//TODO: move to brain
 

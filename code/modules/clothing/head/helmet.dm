@@ -112,6 +112,7 @@
 /obj/item/clothing/head/helmet/hunter
 	name = "hunter's hood"
 	desc = "A visored helmet made of bone and leather with glass lenses to keep blood and grit from the eyes."
+	item_state = "hunter_helmet"
 	icon_state = "hunter_helmet"
 	armor = list(
 		melee = 60,
@@ -123,6 +124,30 @@
 	)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
+
+/obj/item/clothing/head/helmet/hunter/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["combat helmet"] = "hunter_helmet"
+	options["stalker hood"] = "hunter_helmet_stalker"
+	options["visored helmet"] = "hunter_helmet_visor"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/generic_full
 	name = "full helmet"
@@ -276,30 +301,27 @@
 // toggleable face guard
 /obj/item/clothing/head/helmet/faceshield
 	//We cant just use the armor var to store the original since initial(armor) will return a null pointer
-	var/list/armor_up = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-	var/list/armor_down = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-	var/tint_down = TINT_NONE
-	flags_inv = HIDEEARS
-	var/flags_inv_down = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
-	body_parts_covered = HEAD|EARS
-	var/body_parts_covered_down = HEAD|EARS|EYES|FACE
-	flash_protection = FLASH_PROTECTION_NONE
-	var/flash_protection_down = FLASH_PROTECTION_MAJOR
+	var/tint_up = TINT_NONE
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
+	var/flags_inv_up = HIDEEARS
+	body_parts_covered = HEAD|EARS|EYES|FACE
+	var/body_parts_covered_up = HEAD|EARS
+	flash_protection = FLASH_PROTECTION_MAJOR
+	var/flash_protection_up = FLASH_PROTECTION_NONE
 	action_button_name = "Flip Face Shield"
+	tool_qualities = list()
+	max_upgrades = 0
 	var/up = FALSE
+
 
 /obj/item/clothing/head/helmet/faceshield/riot
 	name = "riot helmet"
 	desc = "It's a helmet specifically designed to protect against close range attacks."
 	icon_state = "riot"
 	armor_up = list(melee = 35, bullet = 25, energy = 25, bomb = 20, bio = 0, rad = 0)
-	armor_down = list(melee = 40, bullet = 40, energy = 30, bomb = 35, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 35, bio = 0, rad = 0)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	price_tag = 150
-
-/obj/item/clothing/head/helmet/faceshield/Initialize()
-	. = ..()
-	set_is_up(up)
 
 /obj/item/clothing/head/helmet/faceshield/attack_self()
 	toggle()
@@ -307,23 +329,27 @@
 /obj/item/clothing/head/helmet/faceshield/update_icon()
 	icon_state = up ? "[initial(icon_state)]_up" : initial(icon_state)
 
-//I wanted to name it set_up() but some how I thought that would be misleading
-/obj/item/clothing/head/helmet/faceshield/proc/set_is_up(is_up)
-	up = is_up
+/obj/item/clothing/head/helmet/faceshield/refresh_upgrades()
+	. = ..()
 	if(up)
 		armor = getArmor(arglist(armor_up))
+		flash_protection = flash_protection_up
+		tint = tint_up
+		flags_inv = flags_inv_up
+		body_parts_covered = body_parts_covered_up
+	else
 		flash_protection = initial(flash_protection)
 		tint = initial(tint)
 		flags_inv = initial(flags_inv)
 		body_parts_covered = initial(body_parts_covered)
-	else
-		armor = getArmor(arglist(armor_down))
-		flash_protection = flash_protection_down
-		tint = tint_down
-		flags_inv = flags_inv_down
-		body_parts_covered = body_parts_covered_down
+
+//I wanted to name it set_up() but some how I thought that would be misleading
+/obj/item/clothing/head/helmet/faceshield/proc/set_is_up(is_up)
+	if(up == is_up) return
+	up = is_up
 
 	refresh_upgrades()
+
 	update_icon()
 	update_wear_icon()	//update our mob overlays
 
@@ -347,7 +373,7 @@
 	desc = "It's a helmet specifically designed for general police work. Comes with a visor face cover and extra padding for dealing with criminal scum in melee."
 	icon_state = "helmet_visor"
 	armor_up = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	armor_down = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	price_tag = 150
 

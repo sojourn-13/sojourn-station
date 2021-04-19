@@ -7,3 +7,4 @@
 	blood_req = 5
 	max_blood_storage = 25
 	oxygen_req = 5
+	w_class = ITEM_SIZE_SMALL

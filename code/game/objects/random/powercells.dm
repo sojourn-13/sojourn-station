@@ -38,3 +38,52 @@
 	name = "low chance random powercell"
 	icon_state = "battery-green-low"
 	spawn_nothing_percentage = 60
+
+/obj/random/powercell/large_safe
+	name = "random large lonestar weighted powercell"
+	icon_state = "battery-green"
+
+/obj/random/powercell/large_safe/item_to_spawn()
+	return pickweight(list(
+				/obj/item/weapon/cell/large/high = 10,\
+				/obj/item/weapon/cell/large/super = 9,\
+				/obj/item/weapon/cell/large/hyper = 3,\
+				/obj/item/weapon/cell/large/moebius/high = 6,\
+				/obj/item/weapon/cell/large/moebius/super = 4,\
+				/obj/item/weapon/cell/large/moebius/hyper = 2,\
+				/obj/item/weapon/cell/large/moebius/nuclear = 1
+				))
+
+/obj/random/powercell/medium_safe
+	name = "random medium lonestar weighted powercell"
+	icon_state = "battery-green"
+
+/obj/random/powercell/medium_safe/item_to_spawn()
+	return pickweight(list(
+				/obj/item/weapon/cell/medium = 10,\
+				/obj/item/weapon/cell/medium/high = 30,\
+				/obj/item/weapon/cell/medium/super = 12,\
+				/obj/item/weapon/cell/medium/hyper = 3,\
+				/obj/item/weapon/cell/medium/moebius = 20,\
+				/obj/item/weapon/cell/medium/moebius/high = 20,\
+				/obj/item/weapon/cell/medium/moebius/super = 10,\
+				/obj/item/weapon/cell/medium/moebius/hyper = 4,\
+				/obj/item/weapon/cell/medium/moebius/nuclear = 2
+				))
+
+/obj/random/powercell/small_safe
+	name = "random small lonestar weighted powercell"
+	icon_state = "battery-green"
+
+/obj/random/powercell/small_safe/item_to_spawn()
+	return pickweight(list(
+				/obj/item/weapon/cell/small = 20,\
+				/obj/item/weapon/cell/small/high = 40,\
+				/obj/item/weapon/cell/small/super = 16,\
+				/obj/item/weapon/cell/small/hyper = 4,\
+				/obj/item/weapon/cell/small/moebius = 12,\
+				/obj/item/weapon/cell/small/moebius/high = 10,\
+				/obj/item/weapon/cell/small/moebius/super = 8,\
+				/obj/item/weapon/cell/small/moebius/hyper = 6,\
+				/obj/item/weapon/cell/small/moebius/nuclear = 2
+				))

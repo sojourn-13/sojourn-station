@@ -47,8 +47,8 @@
 
 	var/insight
 	var/max_insight = INFINITY
-	var/insight_passive_gain_multiplier = 2
-	var/insight_gain_multiplier = 2
+	var/insight_passive_gain_multiplier = 1.75
+	var/insight_gain_multiplier = 1.75
 	var/insight_rest = 0
 	var/max_insight_rest = INFINITY
 	var/insight_rest_gain_multiplier = 1
@@ -134,9 +134,9 @@
 	give_insight(INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier)
 	while(resting < max_resting && insight >= 100)
 		if(owner.stats.getPerk(PERK_ARTIST))
-			to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? null : " Now you need to make art. You cannot gain more insight before you do."]"))
+			to_chat(owner, SPAN_NOTICE("You have gained inspiration.[resting ? null : " Now you need to put it to good use. You cannot gain more inspiration until you do."]"))
 		else
-			to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? null : " Now you need to rest and rethink your life choices."]"))
+			to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? null : " Now you need to reflect on what you have learned so far...with the help of some stuff."]"))
 			pick_desires()
 			insight -= 100
 		give_resting(1)
@@ -232,7 +232,7 @@
 	if(owner.stats.getPerk(PERK_ARTIST))
 		to_chat(owner, SPAN_NOTICE("You have created art and improved your stats."))
 	else
-		to_chat(owner, SPAN_NOTICE("You have rested well and improved your stats."))
+		to_chat(owner, SPAN_NOTICE("You have satisfied your cravings and improved your stats."))
 	owner.playsound_local(get_turf(owner), 'sound/sanity/rest.ogg', 100)
 	resting = 0
 

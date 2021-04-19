@@ -7,7 +7,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "c" = (
-/turf/simulated/floor/grass,
+/turf/simulated/floor/asteroid/grass,
 /area/crawler)
 "d" = (
 /obj/structure/railing/grey{

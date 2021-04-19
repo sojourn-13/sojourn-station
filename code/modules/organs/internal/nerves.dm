@@ -8,6 +8,7 @@
 	blood_req = 0.5
 	max_blood_storage = 2.5
 	nutriment_req = 0.5
+	w_class =  ITEM_SIZE_TINY
 
 /obj/item/organ/internal/nerve/robotic
 	name = "nerve wire"

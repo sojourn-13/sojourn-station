@@ -5,11 +5,11 @@
 //Clockrigger 2019
 
 /obj/item/weapon/oddity
-	name = "Oddity"
+	name = "An Oddity"
 	desc = "Strange item of uncertain origin."
 	icon = 'icons/obj/oddities.dmi'
-	icon_state = "gift3"
-	item_state = "electronic"
+	icon_state = "techno_part3"
+	item_state = "techno_part3"
 	w_class = ITEM_SIZE_SMALL
 
 //You choose what stat can be increased, and a maximum value that will be added to this stat
@@ -446,7 +446,7 @@
 		if(prob(1))
 			qdel(src)
 
-/obj/item/weapon/oddity/blackbox_nanoforage
+/obj/item/weapon/oddity/blackbox_nanoforge
 	name = "Matter Nano-Forge Black Box"
 	desc = "The core and data of all the designs for the Matter Nano-Forge. The craftsmanship being some of the best possible by hand tools alone."
 	icon = 'icons/obj/stationobjs.dmi'

@@ -156,7 +156,7 @@
 */
 /datum/technology/basic_medical_tools
 	name = "Basic Medical Tools"
-	desc = "Mass Spectrometry method. Experimental surgical, laser tools. Medical sensors intergrated hud in hud-glass and large revival electrical shocks."
+	desc = "Mass Spectrometry method. Experimental surgical, laser tools. Medical sensors intergrated hud in hud-glass and large revival electrical shocks. Artificial quick dry bone gel composite."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.4
@@ -171,7 +171,8 @@
 							/datum/design/research/item/medical/reagent_scanner,
 							/datum/design/research/item/medical/defibs,
 							/datum/design/research/item/scalpel_laser,
-							/datum/design/research/item/hud/health,
+							/datum/design/research/item/clothing/health,
+							/datum/design/research/item/bonegel,
 							)
 
 /datum/technology/improved_biotech
@@ -283,7 +284,8 @@
 							/datum/design/research/item/mechfab/prosthesis_moebius/r_leg,
 							/datum/design/research/item/mechfab/prosthesis_moebius/l_leg,
 							/datum/design/research/item/mechfab/prosthesis_moebius/groin,
-							/datum/design/research/item/mechfab/prosthesis_moebius/groin
+							/datum/design/research/item/mechfab/prosthesis_moebius/head,
+							/datum/design/research/item/mechfab/prosthesis_moebius/chest
 							)
 
 /datum/technology/omega_biotech

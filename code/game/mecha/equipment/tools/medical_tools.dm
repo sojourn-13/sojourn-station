@@ -461,6 +461,7 @@
 		log_message("Launched [S] from [src], targeting [target].")
 		spawn(-1)
 			src = null //if src is deleted, still process the syringe
+			var/hit = FALSE
 			for(var/i=0, i<6, i++)
 				if(!S)
 					break
@@ -474,7 +475,8 @@
 						S.icon = initial(S.icon)
 						S.reagents.trans_to_mob(M, S.reagents.total_volume, CHEM_BLOOD)
 						M.take_organ_damage(2)
-						S.visible_message("<span class=\"attack\"> [M] was hit by the syringe!</span>")
+						S.visible_message("<span class=\"attack\"> [M] was hit by \the [S]!</span>")
+						hit = TRUE
 						break
 					else if(S.loc == trg)
 						S.icon_state = initial(S.icon_state)
@@ -487,6 +489,10 @@
 					S.update_icon()
 					break
 				sleep(1)
+			S.break_syringe(force = TRUE)
+			if(!hit)
+				S.visible_message("\The [S] breaks!")
+			S.reagents.clear_reagents()
 		do_after_cooldown()
 		return 1
 

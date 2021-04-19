@@ -441,6 +441,7 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
+	price_tag = 80
 
 /*Flannel Shirts*/
 
@@ -719,6 +720,28 @@ obj/item/clothing/suit/sweater/blue
 	slot_flags = SLOT_OCLOTHING
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	siemens_coefficient = 0.9
+
+//Makeshift chest rig.
+/obj/item/clothing/suit/storage/vest/chestrig
+	name = "makeshift chest rig"
+	desc = "A makeshift chest rig made for carrying some stuff. Can carry four small items. Has little protective value.."
+	icon_state = "mchestrig"
+	item_state = "mchestrig"
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 5,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/suit/storage/vest/chestrig/New()
+	..()
+	pockets = new/obj/item/weapon/storage/internal(src)
+	pockets.storage_slots = 4
+	pockets.max_w_class = ITEM_SIZE_SMALL
+	pockets.max_storage_space = 8
 
 /*Suit Jackets*/
 /obj/item/clothing/suit/storage/suitjacket/black

@@ -327,8 +327,8 @@
 	admin_inject_log(user, target, src, contained_reagents, trans, violent=1)
 	break_syringe(target, user)
 
-/obj/item/weapon/reagent_containers/syringe/proc/break_syringe(mob/living/carbon/target, mob/living/carbon/user)
-	if(!breakable)
+/obj/item/weapon/reagent_containers/syringe/proc/break_syringe(mob/living/carbon/target, mob/living/carbon/user, force = FALSE)
+	if(!force && !breakable)
 		return
 	desc += " It is broken."
 	mode = SYRINGE_BROKEN

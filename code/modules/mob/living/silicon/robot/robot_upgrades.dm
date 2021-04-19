@@ -21,6 +21,7 @@
 	name = "robotic module reset board"
 	desc = "Used to reset a cyborg's module. Destroys any other upgrades applied to the robot."
 	icon_state = "cyborg_upgrade1"
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 6, MATERIAL_PLASTIC = 6)
 	require_module = TRUE
 
 /obj/item/borg/upgrade/reset/action(var/mob/living/silicon/robot/R)
@@ -297,6 +298,6 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/storage/bag/ore/holding(R.module)
+		R.module.modules += new/obj/item/weapon/storage/bag/robotic/holding(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE

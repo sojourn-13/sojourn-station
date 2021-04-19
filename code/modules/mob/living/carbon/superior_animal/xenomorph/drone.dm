@@ -19,7 +19,7 @@ var/datum/xenomorph/xenomorph_ai
 	health = 30
 	randpixel = 0
 	gibspawner = /obj/effect/gibspawner/xenomorph
-
+	flash_resistances = 0
 	attack_sound = list('sound/xenomorph/alien_claw_flesh1.ogg', 'sound/xenomorph/alien_claw_flesh2.ogg', 'sound/xenomorph/alien_claw_flesh3.ogg')
 	attack_sound_chance = 100
 	speak_emote = list("hisses", "screeches", "trills")

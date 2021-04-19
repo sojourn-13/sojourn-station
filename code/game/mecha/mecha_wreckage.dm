@@ -238,3 +238,7 @@
 /obj/effect/decal/mecha_wreckage/odysseus/mime
 	name = "Mime wreckage"
 	icon_state = "mime-broken"
+
+/obj/effect/decal/mecha_wreckage/dreadnought/hephaestus
+	name = "wreckage of a fancy mech"
+	icon_state = "hephaestus-broken"

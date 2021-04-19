@@ -11,6 +11,58 @@
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/head/soft(src)
 	new /obj/item/device/scanner/price(src)
+	if(prob(40))
+		new /obj/item/weapon/storage/backpack/satchel/industrial(src)
+	else if(prob(65))
+		new /obj/item/weapon/storage/backpack/industrial(src)
+	else if(prob(65))
+		new /obj/item/weapon/storage/backpack/duffelbag(src)
+	else if(prob(90))
+		new /obj/item/weapon/storage/backpack/military(src)
+	else
+		new /obj/item/weapon/storage/backpack/holding(src)
+	if(prob(33))
+		new /obj/item/weapon/gun/projectile/revolver/detective(src)
+		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
+	if(prob(33))
+		new /obj/item/weapon/gun/projectile/giskard(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+	if(prob(10))
+		new /obj/item/weapon/gun/projectile/shotgun/pump(src)
+		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
+	if(prob(33))
+		new /obj/item/weapon/storage/pouch/small_generic(src)
+	if(prob(20))
+		new /obj/item/weapon/storage/pouch/medium_generic(src)
+	if(prob(10))
+		new /obj/item/weapon/storage/pouch/large_generic(src)
+	if(prob(40))
+		new /obj/item/weapon/storage/firstaid/regular(src)
+	if(prob(25))
+		new /obj/item/weapon/storage/firstaid/adv(src)
+	if(prob(50))
+		new /obj/item/weapon/reagent_containers/syringe/stim/turbo(src)
+	if(prob(50))
+		new /obj/item/weapon/reagent_containers/syringe/stim/boxer(src)
+	if(prob(50))
+		new /obj/item/weapon/reagent_containers/syringe/stim/violence_ultra(src)
+	if(prob(5))
+		new /obj/item/weapon/gun/projectile/silenced/rat(src)
+	if(prob(5))
+		new /obj/item/weapon/oddity/common/old_money(src)
+	if(prob(5))
+		new /obj/item/weapon/oddity/common/old_id(src)
+	if(prob(5))
+		new /obj/item/weapon/oddity/common/old_newspaper(src)
+	if(prob(5))
+		new /obj/item/weapon/oddity/common/old_pda(src)
+	if(prob(5))
+		new /obj/item/weapon/oddity/common/old_radio(src)
+	if(prob(5))
+		new /obj/item/weapon/tool/polytool(src)
 
 /obj/structure/closet/secure_closet/reinforced/quartermaster
 	name = "chief executive officer's locker"
@@ -29,6 +81,7 @@
 	new /obj/item/clothing/head/soft(src)
 	new /obj/item/device/scanner/price(src)
 	new /obj/item/weapon/gun/projectile/revolver/little_comet(src)
+	new /obj/item/weapon/gun_upgrade/mechanism/glass_widow(src)
 	new /obj/item/ammo_magazine/ammobox/pistol_35(src)
 	new /obj/item/ammo_magazine/ammobox/pistol_35/rubber(src)
 
@@ -58,8 +111,8 @@
 		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
 		new /obj/item/clothing/gloves/thick/handmade(src)
 	else if(prob(70))
-		new /obj/item/clothing/suit/armor/vest(src)
-		new /obj/item/clothing/head/helmet(src)
+		new /obj/item/clothing/suit/storage/scavengerarmor(src)
+		new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	else if(prob(70))
@@ -133,6 +186,10 @@
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
+	if(prob(25))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
+	if(prob(10))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
 //Salvager lockers have less potential combat power by capped potential while still balancing with the most likely to spawn gear.
@@ -160,8 +217,8 @@
 		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
 		new /obj/item/clothing/gloves/thick/handmade(src)
 	else
-		new /obj/item/clothing/suit/armor/vest(src)
-		new /obj/item/clothing/head/helmet(src)
+		new /obj/item/clothing/suit/storage/scavengerarmor(src)
+		new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	//longarms
@@ -224,6 +281,10 @@
 		new /obj/item/weapon/storage/firstaid/adv(src)
 	else
 		new /obj/item/weapon/storage/firstaid/combat(src)
+	if(prob(50))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
+	if(prob(25))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
 //Foremans can technically do the jobs of both prospectors and salvagers (but not as well) and as such have better odds on the gear they start with.
@@ -246,12 +307,12 @@
 	else
 		new /obj/item/weapon/storage/backpack/holding(src)
 	//armor
-	if(prob(70)) //Low chance but if you get lucky you get an immediate step up in armor.
+	if(prob(60)) //Low chance but if you get lucky you get an immediate step up in armor.
 		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
 		new /obj/item/clothing/gloves/thick/handmade(src)
 	else if(prob(60))
-		new /obj/item/clothing/suit/armor/vest(src)
-		new /obj/item/clothing/head/helmet(src)
+		new /obj/item/clothing/suit/storage/scavengerarmor(src)
+		new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
 		new /obj/item/clothing/shoes/combat(src)
 	else if(prob(60))
@@ -325,6 +386,22 @@
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
+	new /obj/item/weapon/gun/projectile/silvereye(src)
+	new /obj/item/ammo_magazine/kurtz_50/empty(src)
+	new /obj/item/ammo_magazine/kurtz_50/empty(src)
+	new /obj/item/ammo_magazine/kurtz_50/empty(src)
+	if(prob(70)) //Random .50 ammo, lets not make it to op!
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/rubber(src)
+	else if(prob(50))
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	else if(prob(50))
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	else
+		new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
+		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
 	//Salvager improved
 	if(prob(30))
 		new /obj/item/weapon/storage/belt/utility/handmade/full(src)
@@ -337,11 +414,15 @@
 		new /obj/item/weapon/storage/firstaid/adv(src)
 	else
 		new /obj/item/weapon/storage/firstaid/combat(src)
+	if(prob(40))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
+	if(prob(20))
+		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
 /obj/structure/closet/secure_closet/personal/artist
 	name = "lonestar artist's locker"
-	req_access = list(access_merchant)
+	req_access = list(access_theatre)
 	access_occupy = list(access_cargo)
 	icon_state = "cargo"
 

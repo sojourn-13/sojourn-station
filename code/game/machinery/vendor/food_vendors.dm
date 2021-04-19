@@ -37,7 +37,8 @@
 					/obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack = 4
 					)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/tea/green = 10,
-						/obj/item/weapon/reagent_containers/food/drinks/tea/black = 10)
+						/obj/item/weapon/reagent_containers/food/drinks/tea/black = 10,
+						/obj/item/weapon/reagent_containers/food/drinks/bottle/fernet = 5)
 	vend_delay = 15
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this colony?;Care for a cup of coffee? It's Irish.;Whiskey for your sorrows, Beer for your break."
@@ -47,7 +48,7 @@
 /obj/machinery/vending/coffee
 	name = "Hot Coffee"
 	desc = "A vending machine which dispenses hot drinks."
-	product_slogans = "Care for a cup of hot joe?;Care for a cup of coffee?;How about a pick-me-upper?;Tea, sir/madame?;I hope you ask me for a bloody cup o' tea...;Only the finest!"
+	product_slogans = "Care for a cup of hot joe?;Care for a cup of coffee?;How about a pick-me-upper?;Want a nice tea?;I hope you ask me for a bloody cup o' tea...;Only the finest!"
 	product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the galaxy.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our hot chocolate!"
 	icon_state = "coffee"
 	icon_vend = "coffee-vend"
@@ -115,7 +116,7 @@
 	name = "Robust Softdrinks"
 	desc = "A softdrink vendor provided by Lone Star Solutions, LLC."
 	icon_state = "Cola_Machine"
-	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!;Operating heavy machinery? Robust Softdrinks has you covered!;Just to fill your sweet tooth needs!;Don't belive the reports, It doesn't have that much sugar!;Thirsty? Why not have cola!;Get your sugarwater here!;The taste of freedom!"
+	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!;Operating heavy machinery? Robust Softdrinks has you covered!;Just to fill your sweet tooth needs!;Don't believe the reports, It doesn't have that much sugar!;Thirsty? Why not have cola!;Get your sugarwater here!;The taste of freedom!"
 	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not have some cola?;Please, have a drink!;Drink up!;The best drinks in this colony.;Treat yourself to what you deserve!"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 10,
@@ -169,7 +170,9 @@
 	always_open = TRUE
 	can_stock = list(/obj/item/seeds)
 
-	products = list(/obj/item/seeds/bananaseed = 3,
+	products = list(
+					/obj/item/seeds/ambrosiarobusto = 3,
+					/obj/item/seeds/bananaseed = 3,
 					/obj/item/seeds/berryseed = 3,
 					/obj/item/seeds/carrotseed = 3,
 					/obj/item/seeds/chantermycelium = 3,
@@ -197,10 +200,16 @@
 					/obj/item/seeds/cabbageseed = 3,
 					/obj/item/seeds/grapeseed = 3,
 					/obj/item/seeds/pumpkinseed = 3,
+					/obj/item/seeds/thaadra = 3,
 					/obj/item/seeds/cherryseed = 3,
 					/obj/item/seeds/plastiseed = 3,
-					/obj/item/seeds/riceseed = 3)
-	contraband = list(/obj/item/seeds/amanitamycelium = 2,
+					/obj/item/seeds/riceseed = 3,
+					/obj/item/seeds/thaadra = 2,
+					/obj/item/seeds/gelthi = 2,
+					)
+
+	contraband = list(
+					/obj/item/seeds/amanitamycelium = 2,
 					/obj/item/seeds/glowshroom = 2,
 					/obj/item/seeds/ambrosiavulgarisseed = 2,
 					/obj/item/seeds/libertymycelium = 2,
@@ -208,7 +217,13 @@
 					/obj/item/seeds/nettleseed = 2,
 					/obj/item/seeds/reishimycelium = 2,
 					/obj/item/seeds/reishimycelium = 2,
-					/obj/item/seeds/shandseed = 2)
+					/obj/item/seeds/shandseed = 2,
+					/obj/item/seeds/jurlmah = 2,
+					/obj/item/seeds/amauri = 2,
+					/obj/item/seeds/vale = 2,
+					/obj/item/seeds/surik = 2,
+					/obj/item/seeds/telriis = 2,
+					 )
 	auto_price = FALSE
 
 /**
@@ -217,6 +232,7 @@
  * This needs to be customized to fetch the actual names of the seeds, otherwise
  * the machine would simply list "packet of seeds" times 20
  */
+
 /obj/machinery/vending/hydroseeds/build_inventory()
 	var/list/all_products = list(
 		list(products, CAT_NORMAL),

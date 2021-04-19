@@ -81,9 +81,8 @@
 	law_header = "Maintenance Protocols"
 
 /datum/ai_laws/drone/New()
-	add_inherent_law("Preserve, repair and improve the station to the best of your abilities.")
-	add_inherent_law("Cause no harm to the station or anything on it.")
-	add_inherent_law("Interact with no being that is not a fellow maintenance drone.")
+	add_inherent_law("Preserve, repair, and improve the colony to the best of your abilities.")
+	add_inherent_law("Cause no harm to the colony and its crew.")
 	..()
 
 /datum/ai_laws/construction_drone
@@ -91,8 +90,7 @@
 	law_header = "Construction Protocols"
 
 /datum/ai_laws/construction_drone/New()
-	add_inherent_law("Repair, refit and upgrade your assigned vessel.")
-	add_inherent_law("Prevent unplanned damage to your assigned vessel wherever possible.")
+	add_inherent_law("MALFUCTION! ERROR! ERROR! 404 FILE NOT FOUND! LAWSET UNDETERMINED!")
 	..()
 
 /******************** T.Y.R.A.N.T. ********************/

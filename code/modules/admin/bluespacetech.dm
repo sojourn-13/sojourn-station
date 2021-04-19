@@ -72,7 +72,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	spawn(10)
 		bst_post_spawn(bst)
 
-	log_admin("Bluespace Tech Spawned: X:[bst.x] Y:[bst.y] Z:[bst.z] User:[src]")
+	log_and_message_admins("has become a Bluespace Technician \the [jumplink(T)] User:[src]", location = T) //So we can go to it
+	log_admin("Bluespace Tech Spawned: X:[bst.x] Y:[bst.y] Z:[bst.z] User:[src]") //Going to leave this do to XYZ logging
 	return 1
 
 /client/proc/bst_post_spawn(mob/living/carbon/human/bst/bst)
@@ -159,7 +160,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	set name = "Teleport out"
 	set desc = "Activate bluespace to leave and return to your original mob (if you have one)."
 	set category = "BST"
-
+	log_and_message_admins("has Bluespace Technician Teleported Out")
 	src.suicide()
 
 /mob/living/carbon/human/bst/verb/tgm()
@@ -178,7 +179,10 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/weapon/storage/backpack/holding/bst
+	name = "stablized bag of holding"
+	desc = "A backpack that opens into a localized pocket of bluespace. An example of stable bluespace that predate the crash and maintains its stability even with other bluespace objects."
 	worn_access = TRUE
+	bluespace_safe = TRUE
 
 /obj/item/device/radio/headset/ert/bst
 	name = "bluespace technician's headset"

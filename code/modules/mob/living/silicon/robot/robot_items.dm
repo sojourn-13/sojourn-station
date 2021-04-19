@@ -407,7 +407,7 @@
 
 /obj/item/weapon/tool/crowbar/robotic
 	icon = 'icons/obj/robot_items.dmi'
-	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_DIGGING = 35)
+	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_HAMMERING = 10) //We can dig but not that fast!
 
 /obj/item/weapon/tool/wrench/robotic
 	icon = 'icons/obj/robot_items.dmi'
@@ -423,6 +423,18 @@
 /obj/item/weapon/tool/wirecutters/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 40, QUALITY_CUTTING = 30)
+
+/obj/item/weapon/tool/pickaxe/robotic
+	tool_qualities = list(QUALITY_EXCAVATION = 70) //So it still shares its switch off quality despite not yet being used.
+	switched_off_qualities = list(QUALITY_EXCAVATION = 70)
+	switched_on_qualities = list(QUALITY_DIGGING = 20)
+	workspeed = 0.6
+
+/obj/item/weapon/tool/pickaxe/robotic/sec //Were even slower and less good
+	tool_qualities = list(QUALITY_EXCAVATION = 10) //So it still shares its switch off quality despite not yet being used.
+	switched_off_qualities = list(QUALITY_EXCAVATION = 10)
+	switched_on_qualities = list(QUALITY_DIGGING = 10)
+	workspeed = 0.4
 
 /obj/item/weapon/tool/weldingtool/robotic
 	icon = 'icons/obj/robot_items.dmi'
@@ -641,7 +653,6 @@
 		/obj/item/weapon/reagent_containers/food/snacks/meat
 	)
 
-
 /obj/item/weapon/storage/bag/robotic/trash
 	name = "internal trash container"
 	desc = "An internalized trash container for gathering trash. Become a walking trash can, today!"
@@ -676,3 +687,24 @@
 	can_hold = list (
 		/obj/item/stack/material
 	)
+
+/obj/item/weapon/storage/bag/robotic/holding
+	name = "satchel of holding"
+	desc = "A revolution in convenience, this satchel allows for immense ore or produce storage even has safty restrictions to stabilize unwanted reactions."
+	icon_state = "satchel_bspace"
+	icon = 'icons/obj/mining.dmi'
+	max_storage_space = DEFAULT_HUGE_STORAGE * 10
+	max_w_class = ITEM_SIZE_BULKY
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
+	origin_tech = list(TECH_BLUESPACE = 4)
+	can_hold = list(/obj/item/weapon/ore,
+	                /obj/item/weapon/reagent_containers/food/snacks/grown,
+	                /obj/item/seeds,
+	                /obj/item/weapon/grown,
+	                /obj/item/weapon/reagent_containers/food/snacks/egg,
+	                /obj/item/weapon/reagent_containers/food/snacks/meat)
+
+/obj/item/weapon/storage/bag/ore/holding/New()
+	..()
+	item_flags |= BLUESPACE
+	bluespace_entropy(4, get_turf(src))

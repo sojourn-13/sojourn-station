@@ -410,7 +410,6 @@ proc/TextPreview(var/string, var/len=40)
 
 
 /proc/pencode2html(t)
-	t = cp1251_to_utf8(t)
 	t = replacetext(t, "\n", "<BR>")
 	t = replacetext(t, "\[center\]", "<center>")
 	t = replacetext(t, "\[/center\]", "</center>")
@@ -445,6 +444,7 @@ proc/TextPreview(var/string, var/len=40)
 	t = replacetext(t, "\[row\]", "</td><tr>")
 	t = replacetext(t, "\[cell\]", "<td>")
 	t = replacetext(t, "\[logo\]", "<img src = ntlogo.png>")
+	t = replacetext(t, "\[logolonestar\]", "<img src = talisman.png>")
 	t = replacetext(t, "\[editorbr\]", "")
 	return t
 

@@ -56,114 +56,19 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 
-/datum/craft_recipe/weapon/pistol
-	name = "handmade pistol"
-	result = /obj/item/weapon/gun/projectile/handmade_pistol
-	icon_state = "woodworking"
+/datum/craft_recipe/weapon/kenny
+	name = "scrap bot deployer"
+	result = /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot
 	steps = list(
-		list(/obj/item/stack/rods, 3, "time" = 60),
-		list(QUALITY_WELDING, 10, "time" = 30),
-		list(/obj/item/weapon/crossbowframe, 1, "time" = 20)
+		list(/obj/item/weapon/grenade/chem_grenade, 1),
+		list(/obj/item/clothing/head/space/void/riggedvoidsuit, 1),
+		list(/obj/item/weapon/computer_hardware/processor_unit, 1),
+		list(/obj/item/weapon/oddity, 1), //For the soul!
+		list(/obj/item/stack/cable_coil, 4),
+		list(/obj/item/clothing/suit/hooded/cloak/simple, 1),
+		list(/obj/item/weapon/scrap_lump, 1),
+		list(/obj/item/weapon/tool/tape_roll, 10, "time" = 10)
 	)
-
-/datum/craft_recipe/weapon/pistol_magnum
-	name = "handmade magnum"
-	result = /obj/item/weapon/gun/projectile/handmade_pistol/magnum
-	icon_state = "woodworking"
-	steps = list(
-		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
-		list(QUALITY_SAWING, 10, "time" = 30),
-		list(QUALITY_ADHESIVE, 10, "time" = 30),
-		list(QUALITY_WELDING, 10, "time" = 30),
-	)
-
-/datum/craft_recipe/weapon/pistol_slugger
-	name = "handmade slugger"
-	result = /obj/item/weapon/gun/projectile/handmade_pistol/shotgun
-	icon_state = "woodworking"
-	steps = list(
-		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
-		list(QUALITY_SAWING, 10, "time" = 30),
-		list(QUALITY_ADHESIVE, 10, "time" = 30),
-		list(QUALITY_WELDING, 10, "time" = 30),
-	)
-
-/datum/craft_recipe/weapon/pistol_man_opener
-	name = "handmade man-opener"
-	result = /obj/item/weapon/gun/projectile/handmade_pistol/anti_material
-	icon_state = "woodworking"
-	steps = list(
-		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
-		list(QUALITY_SAWING, 10, "time" = 30),
-		list(QUALITY_ADHESIVE, 10, "time" = 30),
-		list(QUALITY_WELDING, 10, "time" = 30),
-	)
-
-/datum/craft_recipe/weapon/ammo_kit
-	name = "ammo kit"
-	result = /obj/item/ammo_kit
-	icon_state = "woodworking"
-	steps = list(
-		list(/obj/item/stack/rods, 10, "time" = 60),
-		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
-		list(CRAFT_MATERIAL, 4, MATERIAL_CARDBOARD, "time" = 60),
-		list(/obj/item/weapon/tool/wrench/improvised, 1, "time" = 60),
-		list(/obj/item/weapon/tool/knife/shiv, 1, "time" = 60),
-		list(/obj/item/weapon/tool/wirecutters/improvised, 1, "time" = 60),
-		list(QUALITY_WELDING, 15, "time" = 30),
-		list(QUALITY_CUTTING, 10, "time" = 30),
-		list(QUALITY_ADHESIVE, 15, "time" = 30),
-		list(QUALITY_SCREW_DRIVING, 15, "time" = 30),
-		list(QUALITY_SAWING, 15, "time" = 30)
-	)
-
-/datum/craft_recipe/weapon/shrapnelcannon
-	name = "\"Shellshock\" scrap rifle"
-	result = /obj/item/weapon/gun/energy/shrapnel
-	icon_state = "gun"
-	steps = list(
-		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
-		list(/obj/item/stack/material/steel, 8, "time" = 20),
-		list(QUALITY_CUTTING, 20, "time" = 40),
-		list(QUALITY_HAMMERING, 20, "time" = 40),
-		list(/obj/item/stack/cable_coil, 10, "time" = 20),
-		list(QUALITY_WIRE_CUTTING, 20, 30),
-		list(QUALITY_SCREW_DRIVING, 20, "time" = 60),
-		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
-	)
-
-/datum/craft_recipe/weapon/lasersmg
-	name = "Lasblender - Texin"
-	result = /obj/item/weapon/gun/energy/lasersmg
-	icon_state = "gun"
-	steps = list(
-		list(/obj/item/weapon/gun/projectile/automatic/texan, 1),
-		list(QUALITY_WELDING, 10, "time" = 30),
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL, "time" = 10),
-		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
-		list(/obj/item/weapon/computer_hardware/led, 1),
-		list(/obj/item/stack/cable_coil, 5, "time" = 20),
-		list(/obj/item/weapon/stock_parts/capacitor, 1, "time" = 5),
-		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
-		list(QUALITY_ADHESIVE, 15, 70)
-	)
-
-/datum/craft_recipe/weapon/lasersmg_alt
-	name = "Lasblender - Mac"
-	result = /obj/item/weapon/gun/energy/lasersmg/alt
-	icon_state = "gun"
-	steps = list(
-		list(/obj/item/weapon/gun/projectile/automatic/mac, 1),
-		list(QUALITY_WELDING, 10, "time" = 30),
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL, "time" = 10),
-		list(/obj/item/weapon/stock_parts/subspace/crystal, 1),
-		list(/obj/item/weapon/computer_hardware/led, 1),
-		list(/obj/item/stack/cable_coil, 5, "time" = 20),
-		list(/obj/item/weapon/stock_parts/capacitor, 1, "time" = 5),
-		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
-		list(QUALITY_ADHESIVE, 15, 70)
-	)
-
 /datum/craft_recipe/weapon/handmade_shield
 	name = "handmade shield"
 	result = /obj/item/weapon/shield/riot/handmade
@@ -294,18 +199,6 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(/obj/item/stack/rods, 3, "time" = 50)
-	)
-
-/datum/craft_recipe/weapon/rxd
-	name = "RXD - rapid crossbow device"
-	result = /obj/item/weapon/gun/launcher/crossbow/RCD
-	steps = list(
-		list(/obj/item/weapon/rcd, 1, "time" = 30),
-		list(QUALITY_SCREW_DRIVING, 10, 30),
-		list(QUALITY_SAWING, 10, "time" = 60),
-		list(/obj/item/weapon/crossbowframe, 1, "time" = 20),
-		list(QUALITY_WELDING, 10, "time" = 30),
-		list(/obj/item/stack/cable_coil, 2, "time" = 10)
 	)
 
 /datum/craft_recipe/weapon/spoon

@@ -56,6 +56,9 @@
 	is_critical = 1
 
 /obj/machinery/power/apc/hyper
+	lighting = 0
+	equipment = 0
+	environ = 0
 	cell_type = /obj/item/weapon/cell/large/hyper
 
 /obj/machinery/power/apc/hyper/critical

@@ -46,7 +46,7 @@
 	desc = "Used for pulsing wires to test which to cut. You can use this on airlocks, APCs or even lockers to try to hack them. This version is a more bulky and uses a medium cell."
 	icon_state = "adv_multitool"
 	tool_qualities = list(QUALITY_PULSING = 50)
-	matter = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 5, MATERIAL_PLATINUM = 1)
+	matter = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 5, MATERIAL_GOLD = 1)
 	origin_tech = list(TECH_MAGNET = 5, TECH_ENGINEERING = 2)
 	use_power_cost = 0.50
 	workspeed = 1.2

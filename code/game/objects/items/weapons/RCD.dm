@@ -142,7 +142,7 @@
 			if(gotFloor)
 				build_cost =  10
 				build_delay = 50
-				build_turf = get_base_turf(local_turf.z)
+				build_turf = get_base_turf_by_area(local_turf)
 			else if(istype(T,/obj/structure/low_wall))
 				build_delay = 40
 				build_cost =  5

@@ -116,7 +116,7 @@
 	icon_state = "cargoshwall1"
 
 /turf/simulated/shuttle/wall/escpod
-	name = "Escape Pod"
+	name = "Shuttle Pod"
 	icon = 'icons/turf/shuttleescpod.dmi'
 	icon_state = "escpodwall1"
 

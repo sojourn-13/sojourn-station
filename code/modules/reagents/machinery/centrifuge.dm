@@ -29,6 +29,7 @@
 	var/mode = MODE_SEPARATING
 	var/beakerSlots = 3
 	var/unitsPerSec = 2
+	var/amount_we_can_transfer_into = 0 // how many units can we transfer into a beaker?
 
 /obj/machinery/centrifuge/Destroy()
 	QDEL_NULL(mainBeaker)
@@ -61,8 +62,11 @@
 		return
 	if(on)
 		if(mode == MODE_SEPARATING)
+			amount_we_can_transfer_into = mainBeaker.reagents.total_volume
+			if(unitsPerSec > amount_we_can_transfer_into)
+				amount_we_can_transfer_into = unitsPerSec
 			mainBeaker.reagents.handle_reactions()
-			mainBeaker.separate_solution(separationBeakers, unitsPerSec, mainBeaker.reagents.get_master_reagent_id())
+			mainBeaker.separate_solution(separationBeakers, amount_we_can_transfer_into, mainBeaker.reagents.get_master_reagent_id())
 
 		if(world.time >= lastActivation + workTime)
 			finish()
@@ -121,7 +125,7 @@
 
 
 /obj/machinery/centrifuge/attack_hand(mob/user)
-	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+	if(user.stats?.getPerk(PERK_MEDICAL_EXPERT) || !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
@@ -244,6 +248,7 @@
 	var/beakerSlots = 2
 	var/on = FALSE
 	var/mode = MODE_SEPARATING
+	var/amount_we_can_transfer_into = 0 // how many units can we transfer into a beaker?
 
 /obj/item/device/makeshift_centrifuge/Destroy()
 	QDEL_NULL(mainBeaker)
@@ -258,8 +263,11 @@
 		if(mainBeaker && mainBeaker.reagents.total_volume)
 			switch(mode)
 				if(MODE_SEPARATING)
+					amount_we_can_transfer_into = mainBeaker.reagents.total_volume
+					if(5 > amount_we_can_transfer_into)
+						amount_we_can_transfer_into = 5
 					mainBeaker.reagents.handle_reactions()
-					mainBeaker.separate_solution(separationBeakers, 5, mainBeaker.reagents.get_master_reagent_id())
+					mainBeaker.separate_solution(separationBeakers, amount_we_can_transfer_into, mainBeaker.reagents.get_master_reagent_id())
 				if(MODE_SYNTHESISING)
 					mainBeaker.reagents.rotating = TRUE
 					mainBeaker.reagents.handle_reactions()

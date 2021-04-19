@@ -64,7 +64,7 @@
 
 /obj/item/weapon/tool_upgrade/reinforcement/guard
 	name = "metal guard"
-	desc = "A bent piece of metal that wraps around sensitive parts of a tool, protecting it from impacts, debris, and stray fingers."
+	desc = "A bent piece of metal that wraps around sensitive parts of a tool, protecting it from impacts, debris, and stray fingers. Could be added to the back of a gun to help stablize it as well."
 	icon_state = "guard"
 	matter = list(MATERIAL_PLASTEEL = 5)
 
@@ -76,6 +76,8 @@
 	UPGRADE_PRECISION = 5,
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 0.85)
 	I.required_qualities = list(QUALITY_CUTTING,QUALITY_DRILLING, QUALITY_SAWING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_WELDING, QUALITY_HAMMERING)
 	I.prefix = "shielded"
 
@@ -129,10 +131,10 @@
 	UPGRADE_WORKSPEED = 0.15
 	)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL = 0.9,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
 	)
 	I.gun_loc_tag = GUN_GRIP
-	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING, QUALITY_WEAVING)
 	I.prefix = "ergonomic"
 
 /obj/item/weapon/tool_upgrade/productivity/ratchet
@@ -166,7 +168,7 @@
 	UPGRADE_COLOR = "#FF4444"
 	)
 	I.prefix = "red"
-	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING, QUALITY_WEAVING)
 
 /obj/item/weapon/tool_upgrade/productivity/whetstone
 	name = "sharpening block"
@@ -188,7 +190,7 @@
 	)
 	I.req_gun_tags = list(GUN_BAYONET)
 	I.gun_loc_tag = GUN_KNIFE
-	I.required_qualities = list(QUALITY_CUTTING,QUALITY_SAWING, QUALITY_SHOVELING, QUALITY_WIRE_CUTTING)
+	I.required_qualities = list(QUALITY_CUTTING,QUALITY_SAWING, QUALITY_SHOVELING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING)
 	I.prefix = "sharpened"
 
 /obj/item/weapon/tool_upgrade/productivity/diamond_blade
@@ -211,7 +213,7 @@
 	)
 	I.req_gun_tags = list(GUN_BAYONET)
 	I.gun_loc_tag = GUN_KNIFE
-	I.required_qualities = list(QUALITY_CUTTING, QUALITY_SHOVELING, QUALITY_SAWING, QUALITY_WIRE_CUTTING, QUALITY_PRYING)
+	I.required_qualities = list(QUALITY_CUTTING, QUALITY_SHOVELING, QUALITY_SAWING, QUALITY_WIRE_CUTTING, QUALITY_PRYING, QUALITY_SHOVELING, QUALITY_DIGGING)
 	I.negative_qualities = list(QUALITY_WELDING, QUALITY_LASER_CUTTING)
 	I.prefix = "diamond-edged"
 
@@ -288,8 +290,14 @@
 	UPGRADE_POWERCOST_MULT = 1.25,
 	UPGRADE_FUELCOST_MULT = 1.25
 	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_DAMAGE_MULT = 1.2,
+	GUN_UPGRADE_CHARGECOST = 1.35
+	)
 	I.prefix = "boosted"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
+	I.gun_loc_tag = GUN_MECHANISM
+	I.req_gun_tags = list(GUN_ENERGY)
 
 /obj/item/weapon/tool_upgrade/productivity/injector
 	name = "plasma injector"
@@ -342,10 +350,10 @@
 	UPGRADE_PRECISION = 10,
 	UPGRADE_HEALTH_THRESHOLD = 10)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+		GUN_UPGRADE_RECOIL = 0.8,
 	)
 	I.gun_loc_tag = GUN_GRIP
-	I.required_qualities = list(QUALITY_CUTTING,QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING)
+	I.required_qualities = list(QUALITY_CUTTING,QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_WEAVING)
 	I.prefix = "stabilized"
 
 /obj/item/weapon/tool_upgrade/refinement/magbit
@@ -360,7 +368,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10
 	)
-	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING, QUALITY_PULSING)
+	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING, QUALITY_PULSING, QUALITY_SHOVELING, QUALITY_DIGGING)
 	I.prefix = "magnetic"
 
 /obj/item/weapon/tool_upgrade/refinement/ported_barrel
@@ -384,7 +392,7 @@
 		GUN_UPGRADE_DAMAGE_MULT = 0.9
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = GUN_BARREL
+	I.gun_loc_tag = GUN_MUZZLE
 	I.required_qualities = list(QUALITY_WELDING)
 	I.prefix = "ported"
 
@@ -409,7 +417,7 @@
 		GUN_UPGRADE_RECOIL = 0.6,
 		GUN_UPGRADE_DAMAGE_MULT = 0.9
 		)
-	I.gun_loc_tag = GUN_BARREL
+	I.gun_loc_tag = GUN_MUZZLE
 	I.required_qualities = list(QUALITY_WELDING)
 	I.prefix = "gravity-compensated"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
@@ -519,6 +527,7 @@
 	icon_state = "spike"
 	desc = "An array of sharp bits of steel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity. Alternatively you could slap it on the end of a gun barrel as a ghetto bayonet at the cost of some accuracy."
 	matter = list(MATERIAL_STEEL = 2)
+	price_tag = 10
 
 /obj/item/weapon/tool_upgrade/augment/spikes/New()
 	..()
@@ -552,6 +561,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_SANCTIFY = TRUE,
 	UPGRADE_FORCE_MOD = 8,
+	UPGRADE_PRECISION = 10,
 	UPGRADE_HEALTH_THRESHOLD = 10,
 	UPGRADE_DEGRADATION_MULT = 0.8,
 	UPGRADE_WORKSPEED = -0.5

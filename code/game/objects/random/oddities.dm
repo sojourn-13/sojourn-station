@@ -49,6 +49,7 @@
 	return pickweight(list(
 				/obj/item/weapon/gun/projectile/handmade_pistol/anti_material/reliable = 1,
 				/obj/item/weapon/gun/energy/sniperrifle/saint = 1,
+				/obj/item/weapon/gun/projectile/deaglebolt = 1,
 				/obj/item/weapon/gun/projectile/automatic/lmg/saw/unicorn = 1,
 				/obj/item/weapon/gun/projectile/revolver/mistral/elite = 1,
 				/obj/item/weapon/gun/energy/lasersmg/inferno = 1,
@@ -58,4 +59,10 @@
 				/obj/item/weapon/gun/energy/ntpistol/mana = 1,
 				/obj/item/weapon/gun/projectile/automatic/maxim/replica = 1,
 				/obj/item/weapon/oddity/nt/seal = 1,
+				/obj/item/weapon/gun/projectile/clarissa/devil_eye = 1,
+				/obj/item/weapon/gun/projectile/automatic/slaught_o_matic/lockpickomatic = 1,
+				/obj/item/weapon/gun/energy/captain/zapper = 1,
+				/obj/item/weapon/gun/energy/xray/psychic_cannon = 1,
+				/obj/item/weapon/gun/projectile/boltgun/bluecross = 1,
+				/obj/item/weapon/gun/energy/lasersmg/chaos_engine =1 ,
 				/obj/item/weapon/soap/bluespase = 0.5)) //Ye not a "gun" but still good for this

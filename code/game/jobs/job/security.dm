@@ -291,6 +291,8 @@
 		STAT_ROB = 10,
 	)
 
+	perks = list(/datum/perk/medicalexpertise)
+
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/chem_catalog,
@@ -380,7 +382,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 
 	access = list(
-		access_security, access_moebius, access_engine, access_mailsorting,access_eva,
+		access_security, access_moebius, access_engine, access_mailsorting, access_eva, access_forensics_lockers, access_medspec,
 		access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks, access_prospector, access_kitchen, access_medical_suits
 	)
 

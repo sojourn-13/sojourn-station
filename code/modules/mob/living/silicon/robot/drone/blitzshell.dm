@@ -15,6 +15,10 @@
 	real_name = "\"Blitzshell\" assault drone ([rand(100,999)])"
 	name = real_name
 
+/mob/living/silicon/robot/drone/blitzshell/init()
+	..()
+	locked = locked //No cheesing these ones.
+
 /mob/living/silicon/robot/drone/blitzshell/is_allowed_vent_crawl_item()
 	return TRUE
 
@@ -54,6 +58,7 @@
 	//modules += new /obj/item/weapon/gun/energy/laser/mounted/blitz(src) //Deemed too strong for initial loadout
 	modules += new /obj/item/weapon/gun/energy/plasma/mounted/blitz(src)
 	modules += new /obj/item/weapon/tool/knife/tacknife(src) //For claiming heads for assassination missions
+	modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //For blinding/cuff/muting people
 	//Objective stuff
 	modules += new /obj/item/weapon/storage/bsdm/permanent(src) //for sending off item contracts
 	modules += new /obj/item/weapon/gripper/antag(src) //For picking up item contracts

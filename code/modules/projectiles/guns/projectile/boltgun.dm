@@ -10,7 +10,7 @@
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	caliber = CAL_RIFLE
-	fire_delay = 2 // double the standart
+	fire_delay = 2
 	damage_multiplier = 1.1
 	penetration_multiplier  = 1.5
 	recoil_buildup = 40 //same as AMR
@@ -29,20 +29,6 @@
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/true
 	var/bolt_training = TRUE
-
-/obj/item/weapon/gun/projectile/boltgun/bluecross
-	name = "\"Bluecross\" boltgun"
-	desc = "A single shot rifle; perfect for small game hunters! \
-			Amazing for a budget - or if you hate yourself. One of the two."
-	icon = 'icons/obj/guns/projectile/bluecross.dmi'
-	icon_state = "bluecross"
-	item_state = "bluecross"
-	damage_multiplier = 3.1
-	penetration_multiplier  = 2
-	max_shells = 1
-	price_tag = 750
-	sharp = FALSE
-	saw_off = FALSE
 
 /obj/item/weapon/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" boltgun"
@@ -121,7 +107,8 @@
 		to_chat(user, SPAN_NOTICE("You work the bolt closed."))
 		playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltforward.ogg', 75, 1)
 		bolt_open = 0
-	add_fingerprint(user)
+	if(user)
+		add_fingerprint(user)
 	update_icon()
 
 /obj/item/weapon/gun/projectile/boltgun/special_check(mob/user)

@@ -2,7 +2,9 @@
 // Note - For some reason the code shits itself if you try to remove the beakers and there isn't any real harm with it being there. Probably fix it later. Maybe. If I can be arsed. - Kazkin
 /obj/machinery/bulletfabricator
 	name = "Bullet Fabricator"
-	desc = "A machine for producing ammo magazines, speed loaders, ammo boxes, and exotic munitions using any type of materials converted into an unknown state, with rare or valuable materials having greater point values. Originally a scavenged design from the Greyson Positronics repurposed by the Artificer's Guild. How it works? Nobody is quite sure. The time it takes to fabricate munitions varies by cost and the machine parts used."
+	desc = "A machine for producing ammo magazines, speed loaders, ammo boxes, and exotic munitions using any type of materials converted into an unknown state, \
+	with rare or valuable materials having greater point values. Originally a scavenged design from the Greyson Positronics repurposed by the Artificer's Guild. \
+	How it works? Nobody is quite sure. The time it takes to fabricate munitions varies by cost and the machine parts used."
 	icon = 'icons/obj/machines/autolathe.dmi'
 	icon_state = "ammolathe"
 	density = 1
@@ -177,6 +179,9 @@
 			list(name="Box (20mm Payload)", cost=3850, path=/obj/item/ammo_magazine/ammobox/shotgun/payload),
 			list(name="Box (10x24mm Caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c10x24),
 			list(name="Box (.60-06 AP)", cost=1650, path=/obj/item/ammo_magazine/ammobox/antim),
+		"Mech Boxes",
+			list(name="Ultra AC 2 ammunition box", cost=750, path=/obj/item/mech_ammo_box/lmg), //Cheap for the sake of sales, 35 x 2 = 70 so its a 11x~ mark up
+			list(name="LBX AC 10 ammunition box", cost=750, path=/obj/item/mech_ammo_box/scattershot),
 	)
 
 
@@ -196,6 +201,9 @@
 	return
 
 /obj/machinery/bulletfabricator/attackby(var/obj/item/I, var/mob/user)
+
+	if(istype(I, /obj/item/stack/material/cyborg))
+		return //Prevents borgs throwing their stuff into it
 
 	if(default_deconstruction(I, user))
 		return

@@ -32,6 +32,8 @@
 	var/stop_automated_movement = 0 //use this to temporarely stop random movement
 	var/stop_automated_movement_when_pulled = 0
 
+	var/flash_resistances = 0 //Normal flash done by a hand held is 10, 10+ is for bombs
+
 	var/toxin_immune = FALSE
 
 	var/contaminant_immunity = FALSE //if TRUE, mob is immune to harmful contaminants in air (plasma), skin contact, does not relate to breathing
@@ -46,6 +48,7 @@
 
 	var/waring_faction = "" //What faction do we hate?
 	var/waring_faction_multy = 1 //How much more damage do we do to our ennemy faction?
+	colony_friend = FALSE
 
 
 	var/min_air_pressure = 50 //below this, brute damage is dealt
@@ -93,6 +96,16 @@
 
 	var/fleshcolor = "#666600"
 	var/bloodcolor = "#666600"
+	//Armor values for the mob. Works like normal armor values.
+	var/armor = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0,
+		agony = 0
+	)
 
 /mob/living/carbon/superior_animal/New()
 	..()

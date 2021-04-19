@@ -265,8 +265,8 @@
 			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
 		return
 
-
-	add_fingerprint(user)
+	if(user)
+		add_fingerprint(user)
 
 	if(!special_check(user))
 		return
@@ -528,11 +528,13 @@
 			hud_actions += action
 			if(istype(src.loc, /mob))
 				var/mob/user = src.loc
-				user.client.screen += action
+				if(user)
+					user.client.screen += action
 	else
 		if(istype(src.loc, /mob))
 			var/mob/user = src.loc
-			user.client.screen -= action
+			if(user)
+				user.client.screen -= action
 		hud_actions -= action
 		qdel(action)
 

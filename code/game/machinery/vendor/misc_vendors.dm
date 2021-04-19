@@ -196,6 +196,9 @@
 				/obj/item/weapon/storage/fancy/cigarettes/fortressblue = 7,
 				/obj/item/weapon/storage/fancy/cigar = 2,
 				/obj/item/clothing/mask/vape = 5,
+				/obj/item/clothing/mask/smokable/pipe = 2,
+				/obj/item/clothing/mask/smokable/pipe/cobpipe = 2,
+				/obj/item/clothing/mask/smokable/pipe/glass = 2,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry = 10,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/banana = 10,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/lemon = 10,
@@ -251,6 +254,9 @@
 				/obj/item/weapon/flame/lighter/zippo/communist = 500,
 				/obj/item/weapon/storage/fancy/cigar = 250,
 				/obj/item/clothing/mask/vape = 150,
+				/obj/item/clothing/mask/smokable/pipe = 75,
+				/obj/item/clothing/mask/smokable/pipe/cobpipe = 25,
+				/obj/item/clothing/mask/smokable/pipe/glass = 150,
 				/obj/item/weapon/storage/fancy/cigarettes/khi = 500,
 				/obj/item/weapon/storage/fancy/cigarettes/comred = 525)
 
@@ -398,32 +404,33 @@
 				/obj/item/clothing/suit/straight_jacket = 5,
 				/obj/item/weapon/legcuffs/fuzzy = 5)
 	prices = list(
-				/obj/item/clothing/under/costume/kinky/latex_maid = 200,
-				/obj/item/clothing/under/costume/kinky/leather = 200,
-				/obj/item/clothing/under/costume/kinky/sexy_clown = 200,
-				/obj/item/clothing/under/costume/kinky/sexy_mime = 200,
-				/obj/item/clothing/under/costume/kinky/stripper_green = 200,
-				/obj/item/clothing/under/costume/kinky/stripper_pink = 200,
-				/obj/item/clothing/suit/costume/kinky/sexy_engineer = 200,
-				/obj/item/clothing/suit/costume/kinky/sexy_internalaffairs = 200,
-				/obj/item/clothing/suit/costume/kinky/sexy_lumberjack = 200,
-				/obj/item/clothing/suit/costume/kinky/sexy_miner = 200,
-				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 200,
-				/obj/item/clothing/mask/costume/kinky/sexy_clown = 200,
-				/obj/item/clothing/mask/costume/kinky/sexy_mime = 200,
-				/obj/item/clothing/mask/muzzle = 200,
-				/obj/item/clothing/glasses/blindfold = 200,
-				/obj/item/weapon/handcuffs/fuzzy = 200,
+				/obj/item/clothing/under/costume/kinky/latex_maid = 100,
+				/obj/item/clothing/under/costume/kinky/leather = 100,
+				/obj/item/clothing/under/costume/kinky/sexy_clown = 100,
+				/obj/item/clothing/under/costume/kinky/sexy_mime = 100,
+				/obj/item/clothing/under/costume/kinky/stripper_green = 100,
+				/obj/item/clothing/under/costume/kinky/stripper_pink = 100,
+				/obj/item/clothing/suit/costume/kinky/sexy_engineer = 100,
+				/obj/item/clothing/suit/costume/kinky/sexy_internalaffairs = 100,
+				/obj/item/clothing/suit/costume/kinky/sexy_lumberjack = 100,
+				/obj/item/clothing/suit/costume/kinky/sexy_miner = 100,
+				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 100,
+				/obj/item/clothing/mask/costume/kinky/sexy_clown = 100,
+				/obj/item/clothing/mask/costume/kinky/sexy_mime = 100,
+				/obj/item/clothing/mask/muzzle = 100,
+				/obj/item/clothing/glasses/blindfold = 100,
+				/obj/item/weapon/handcuffs/fuzzy = 100,
 				/obj/item/weapon/tool/tape_roll = 50,
 				/obj/item/stack/cable_coil/random = 50,
-				/obj/item/clothing/suit/straight_jacket = 200,
-				/obj/item/weapon/legcuffs/fuzzy = 200)
+				/obj/item/clothing/suit/straight_jacket = 100,
+				/obj/item/weapon/legcuffs/fuzzy = 100)
 
 /obj/machinery/vending/fortune
 	name = "The Great Zoltan"
 	desc = "An archaic fortune teller machine. It looks recently refurbished."
 	icon_state = "fortuneteller"
 	icon_vend = "fortuneteller-vend"
+	vendor_department = DEPARTMENT_CHURCH
 	product_slogans = list("Ha ha ha ha ha!",
 	"I am the great wizard Zoltan!",
 	"Learn your fate!")
@@ -436,3 +443,37 @@
 /obj/machinery/vending/fortune/postvend_effect()
 	playsound(loc, 'sound/machines/fortune_riff.ogg', 100, 1)
 	return
+
+//For the propis loot
+/obj/machinery/vending/propis_loot_box
+	name = "Prospectors 'Git-yer-Shit' Vendor"
+	desc = "The prospectors much loved 'Git-yer-Shit' a machine meant to sap the credits... 'reward' people for playing a lottery like system for boxes of items. Please spend responsibly."
+	icon_state = "MagiVend"
+	product_slogans = list("Imagine the rare stuff and buy more!", "Rare stuff if you buy more!", "Buy and get random items!", "Don't quit, buy more!", "Its not a lootbox, its surprise mechanics!")
+	vendor_department = DEPARTMENT_PROSPECTOR
+	products = list(
+		/obj/item/weapon/storage/box/vendor_lootbox = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_light = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_medium = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_high = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_basic = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_moderate = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_high = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_low = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_moderate = 3,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_high = 3
+		)
+	prices = list(
+		/obj/item/weapon/storage/box/vendor_lootbox = 50,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_light = 100,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_medium = 250,
+		/obj/item/weapon/storage/box/vendor_lootbox/combat_basic_high = 500,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_basic = 100,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_moderate = 250,
+		/obj/item/weapon/storage/box/vendor_lootbox/medicine_high = 500,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_low = 150,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_moderate = 300,
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_high = 600
+		)
+	product_ads = "Imagine the rare stuff and buy more!;Rare stuff if you buy more!;Buy and get random items!;Don't quit, buy more!;Its not a lootbox, its surprise mechanics!"
+	auto_price = FALSE
