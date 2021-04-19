@@ -145,18 +145,28 @@
 	recoil_buildup = 1.7 //Why is this so good?
 
 /obj/item/weapon/gun/projectile/automatic/lmg/tk/update_icon()
-	..()
-
+//	..() We are rather different then other guns and lmgs.
+//	icon_state = "[icon_base][cover_open ? "_open" : "_closed"]" - this is for ref of what it did before.
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
+
+	if (cover_open)
+		iconstring += "open"
+		itemstring += "open"
+	else
+		iconstring += "closed"
+		itemstring += "closed"
 
 	if (ammo_magazine)
 		var/percent = (ammo_magazine.stored_ammo.len / ammo_magazine.max_ammo) * 100
 		var/number = round(percent, 25)
 		iconstring += "[number]"
+	else
+		iconstring += "-empty"
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
 
 /obj/item/weapon/gun/projectile/automatic/lmg/tk/Initialize()
 	. = ..()
