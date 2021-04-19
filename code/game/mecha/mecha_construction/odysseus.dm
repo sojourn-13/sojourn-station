@@ -115,295 +115,295 @@
 		//TODID: better messages.
 		switch(index)
 			if(21)
-				user.visible_message(
-					"[user] opens [holder] internal cover box",
+				usr.visible_message(
+					"[usr] opens [holder] internal cover box", \
 					"You openn [holder] internal cover box."
 				)
 				holder.icon_state = "odysseus1"
 			if(20)
 				if(diff==FORWARD)
-					user.visible_message(
-					"[user] adds in [holder] cell box systems",
+					usr.visible_message(
+					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
 					holder.icon_state = "odysseus0"
 				else
-					user.visible_message(
-						"[user] screws back [holder] cover",
+					usr.visible_message(
+						"[usr] screws back [holder] cover", \
 						"You screw [holder] internal cover back."
 					)
 					holder.icon_state = "odysseus0"
 			if(19)
 				if(diff==FORWARD)
-					user.visible_message(
-					"[user] adds in [holder] hydraulic systems",
+					usr.visible_message(
+					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
 					holder.icon_state = "odysseus1"
 				else
-					user.visible_message(
-						"[user] takes out [holder] hydraulic systems",
+					usr.visible_message(
+						"[usr] takes out [holder] hydraulic systems", \
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "odysseus0"
 					new /obj/item/weapon/tool_upgrade/augment/cell_mount(get_turf(holder))
 			if(18)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] connects [holder] hydraulic systems",
+					usr.visible_message(
+						"[usr] connects [holder] hydraulic systems", \
 						"You connect [holder] hydraulic systems."
 					)
 					holder.icon_state = "odysseus1"
 				else
-					user.visible_message(
-						"[user] takes out [holder] hydraulic systems",
+					usr.visible_message(
+						"[usr] takes out [holder] hydraulic systems", \
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "odysseus0"
 					new /obj/item/weapon/tool_upgrade/augment/hydraulic(get_turf(holder))
 			if(17)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] activates [holder] hydraulic systems.",
+					usr.visible_message(
+						"[usr] activates [holder] hydraulic systems.", \
 						"You activate [holder] hydraulic systems."
 					)
 					holder.icon_state = "odysseus2"
 				else
-					user.visible_message(
-						"[user] disconnects [holder] hydraulic systems",
+					usr.visible_message(
+						"[usr] disconnects [holder] hydraulic systems", \
 						"You disconnect [holder] hydraulic systems."
 					)
 					holder.icon_state = "odysseus0"
 			if(16)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] adds the wiring to [holder].",
+					usr.visible_message(
+						"[usr] adds the wiring to [holder].", \
 						"You add the wiring to [holder]."
 					)
 					holder.icon_state = "odysseus3"
 				else
-					user.visible_message(
-						"[user] deactivates [holder] hydraulic systems.",
+					usr.visible_message(
+						"[usr] deactivates [holder] hydraulic systems.", \
 						"You deactivate [holder] hydraulic systems."
 					)
 					holder.icon_state = "odysseus1"
 			if(15)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] adjusts the wiring of [holder].",
+					usr.visible_message(
+						"[usr] adjusts the wiring of [holder].", \
 						"You adjust the wiring of [holder]."
 					)
 					holder.icon_state = "odysseus4"
 				else
-					user.visible_message(
-						"[user] removes the wiring from [holder].",
+					usr.visible_message(
+						"[usr] removes the wiring from [holder].", \
 						"You remove the wiring from [holder]."
 					)
 					new /obj/item/stack/cable_coil (get_turf(holder), 4)
 					holder.icon_state = "odysseus2"
 			if(14)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] installs the central control module into [holder].",
+					usr.visible_message(
+						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
 					qdel(used_atom)
 					holder.icon_state = "odysseus5"
 				else
-					user.visible_message(
-						"[user] disconnects the wiring of [holder].",
+					usr.visible_message(
+						"[usr] disconnects the wiring of [holder].", \
 						"You disconnect the wiring of [holder]."
 					)
 					holder.icon_state = "odysseus3"
 			if(13)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] secures the mainboard.",
+					usr.visible_message(
+						"[usr] secures the mainboard.", \
 						"You secure the mainboard."
 					)
 					holder.icon_state = "odysseus6"
 				else
-					user.visible_message(
-						"[user] removes the central control module from [holder].",
+					usr.visible_message(
+						"[usr] removes the central control module from [holder].", \
 						"You remove the central computer mainboard from [holder]."
 					)
 					new /obj/item/weapon/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "odysseus4"
 			if(12)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] installs the peripherals control module into [holder].",
+					usr.visible_message(
+						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
 					qdel(used_atom)
 					holder.icon_state = "odysseus7"
 				else
-					user.visible_message(
-						"[user] unfastens the mainboard.",
+					usr.visible_message(
+						"[usr] unfastens the mainboard.", \
 						"You unfasten the mainboard."
 					)
 					holder.icon_state = "odysseus5"
 			if(11)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] secures the peripherals control module.",
+					usr.visible_message(
+						"[usr] secures the peripherals control module.", \
 						"You secure the peripherals control module."
 					)
 					holder.icon_state = "odysseus8"
 				else
-					user.visible_message(
-						"[user] removes the peripherals control module from [holder].",
+					usr.visible_message(
+						"[usr] removes the peripherals control module from [holder].", \
 						"You remove the peripherals control module from [holder]."
 					)
 					new /obj/item/weapon/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "odysseus6"
 			if(10)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] installs internal armor layer to [holder].",
+					usr.visible_message(
+						"[usr] installs internal armor layer to [holder].", \
 						"You install internal armor layer to [holder]."
 					)
 					holder.icon_state = "odysseus9"
 				else
-					user.visible_message(
-						"[user] unfastens the peripherals control module.",
+					usr.visible_message(
+						"[usr] unfastens the peripherals control module.", \
 						"You unfasten the peripherals control module."
 					)
 					holder.icon_state = "odysseus7"
 			if(9)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] secures internal armor layer.",
+					usr.visible_message(
+						"[usr] secures internal armor layer.", \
 						"You secure internal armor layer."
 					)
 					holder.icon_state = "odysseus10"
 				else
-					user.visible_message(
-						"[user] pries internal armor layer from [holder].",
+					usr.visible_message(
+						"[usr] pries internal armor layer from [holder].", \
 						"You prie internal armor layer from [holder]."
 					)
 					new /obj/item/stack/material/steel (get_turf(holder), 5)
 					holder.icon_state = "odysseus8"
 			if(8)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] secures internal armor layer.",
+					usr.visible_message(
+						"[usr] secures internal armor layer.", \
 						"You secure internal armor layer."
 					)
 					holder.icon_state = "odysseus10"
 				else
-					user.visible_message(
-						"[user] pries internal fittings from [holder].",
+					usr.visible_message(
+						"[usr] pries internal fittings from [holder].", \
 						"You prie internal fitting from [holder]."
 					)
 					new /obj/item/stack/material/plastic (get_turf(holder), 5)
 					holder.icon_state = "odysseus8"
 			if(7)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] welds internal armor layer to [holder].",
+					usr.visible_message(
+						"[usr] welds internal armor layer to [holder].", \
 						"You weld the internal armor layer to [holder]."
 					)
 					holder.icon_state = "odysseus11"
 				else
-					user.visible_message(
-						"[user] unfastens the internal armor layer.",
+					usr.visible_message(
+						"[usr] unfastens the internal armor layer.", \
 						"You unfasten the internal armor layer."
 					)
 					holder.icon_state = "odysseus9"
 			if(6)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] welds internal armor layer to [holder].",
+					usr.visible_message(
+						"[usr] welds internal armor layer to [holder].", \
 						"You weld the internal armor layer to [holder]."
 					)
 					holder.icon_state = "odysseus11"
 				else
-					user.visible_message(
-						"[user] unfastens the internal armor layer.",
+					usr.visible_message(
+						"[usr] unfastens the internal armor layer.", \
 						"You unfasten the internal armor layer."
 					)
 					holder.icon_state = "odysseus9"
 			if(5)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] a [used_atom] mounted HUD to [holder].",
+					usr.visible_message(
+						"[usr] a [used_atom] mounted HUD to [holder].", \
 						"You install Med Hud to [holder]."
 					)
 					holder.icon_state = "odysseus12"
 				else
-					user.visible_message(
-						"[user] takes out [holder] mounted HUD",
+					usr.visible_message(
+						"[usr] takes out [holder] mounted HUD", \
 						"You disconnect and remove [holder] the Medical Huds."
 					)
 					holder.icon_state = "odysseus11"
 					new /obj/item/rig_module/vision/medhud(get_turf(holder))
 			if(4)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] adds connections to the Medical Hud.",
+					usr.visible_message(
+						"[usr] adds connections to the Medical Hud.", \
 						"You adds wiring connecting the Medical Hud."
 					)
 					holder.icon_state = "odysseus13"
 				else
-					user.visible_message(
-						"[user] removes wire form [holder].",
+					usr.visible_message(
+						"[usr] removes wire form [holder].", \
 						"You unscrews and take out wiring from [holder]."
 					)
 					new /obj/item/stack/cable_coil (get_turf(holder), 4)
 					holder.icon_state = "odysseus11"
 			if(4)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] adds connections to the Medical Hud.",
+					usr.visible_message(
+						"[usr] adds connections to the Medical Hud.", \
 						"You adds wiring connecting the Medical Hud."
 					)
 					holder.icon_state = "odysseus13"
 				else
-					user.visible_message(
-						"[user] removes wire form [holder].",
+					usr.visible_message(
+						"[usr] removes wire form [holder].", \
 						"You unscrews and take out wiring from [holder]."
 					)
 					new /obj/item/stack/cable_coil (get_turf(holder), 4)
 					holder.icon_state = "odysseus11"
 			if(3)
 				if(diff==FORWARD)
-					user.visible_message(
-					"[user] adds in a [holder]",
+					usr.visible_message(
+					"[usr] adds in a [holder]", \
 					"You adds in [holder]."
 					)
 					holder.icon_state = "odysseus11"
 				else
-					user.visible_message(
-						"[user] takes out a heat sink form [holder]",
+					usr.visible_message(
+						"[usr] takes out a heat sink form [holder]", \
 						"You disconnect and remove [holder] heat sink."
 					)
 					holder.icon_state = "odysseus13"
 					new /obj/item/weapon/tool_upgrade/reinforcement/heatsink(get_turf(holder))
 			if(2)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] secures external armor layer.",
+					usr.visible_message(
+						"[usr] secures external armor layer.", \
 						"You secure external reinforced armor layer."
 					)
 					holder.icon_state = "odysseus13"
 				else
 					var/obj/item/stack/material/plasteel/MS = new (get_turf(holder), 5)
-					user.visible_message(
-						"[user] pries [MS] from [holder].",
+					usr.visible_message(
+						"[usr] pries [MS] from [holder].", \
 						"You prie [MS] from [holder]."
 					)
 					holder.icon_state = "odysseus11"
 			if(1)
 				if(diff==FORWARD)
-					user.visible_message(
-						"[user] welds external armor layer to [holder].",
+					usr.visible_message(
+						"[usr] welds external armor layer to [holder].", \
 						"You weld external armor layer to [holder]."
 					)
 					holder.icon_state = "odysseus14"
 				else
-					user.visible_message(
-						"[user] unfastens the external armor layer.",
+					usr.visible_message(
+						"[usr] unfastens the external armor layer.", \
 						"You unfasten the external armor layer."
 					)
 					holder.icon_state = "odysseus12"

@@ -20,7 +20,7 @@
 	if(!ispath(step[key]))
 		if(istype(used_atom, /obj/item))
 			var/obj/item/I = used_atom
-			return I.use_tool(user, holder, WORKTIME_EXTREMELY_LONG, step[key], FAILCHANCE_NORMAL, required_stat = STAT_MEC)
+			return I.use_tool(user, holder, WORKTIME_LONG, step[key], FAILCHANCE_NORMAL, required_stat = STAT_MEC)
 
 	else if(istype(used_atom, /obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/C = used_atom
@@ -41,7 +41,6 @@
 		if(S.rating < step["rating"]) //Rating is used for a gate of stockparts to be better but we dont use its rating...
 			return 0
 		usr.drop_from_inventory(S, holder)
-
 	return 1
 
 /datum/construction/reversible/mecha/action(atom/used_atom,mob/user as mob)
