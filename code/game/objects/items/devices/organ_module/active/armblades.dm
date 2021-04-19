@@ -52,6 +52,31 @@
 	..()
 	playsound(H.loc, 'sound/weapons/saberoff.ogg', 50, 1)
 
+/obj/item/weapon/tool/cht_mant_claws
+	name = "chitinous claws"
+	desc = "A set of cht'mant claws, hard as chitin and suited as dangerous armor rending weapons."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "chtmant_claws"
+	item_state = null
+	worksound = WORKSOUND_HARD_SLASH
+	force = WEAPON_FORCE_ROBUST
+	throwforce = WEAPON_FORCE_WEAK
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_SMALL
+	attack_verb = list("stabbed", "chopped", "cut", "sliced", "reaped")
+	tool_qualities = list(QUALITY_CUTTING = 30)
+	degradation = 0
+	max_upgrades = 0
+
+/obj/item/organ_module/active/simple/cht_mant_claws
+	name = "chitinous claws"
+	desc = "A set of cht'mant claws, hard as chitin and suited as dangerous armor rending weapons."
+	verb_name = "Deploy chitinous claws"
+	icon_state = "chtmant_claws"
+	matter = list(MATERIAL_BIOMATTER = 20)
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/weapon/tool/cht_mant_claws
+
 /obj/item/weapon/tool/armscythe
 	name = "organic scythe"
 	desc = "An organic blade deployed from your arm. The favourite augment for those who prefer alternatives to metal."

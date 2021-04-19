@@ -196,10 +196,10 @@
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
-	holder.mod_climb_delay -= 0.5
+	holder.mod_climb_delay -= 0.75
 
 /datum/perk/parkour/remove()
-	holder.mod_climb_delay += 0.5
+	holder.mod_climb_delay += 0.75
 	..()
 
 /datum/perk/chaingun_smoker
@@ -238,7 +238,7 @@
 
 /datum/perk/ass_of_concrete
 	name = "Immovable Object"
-	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around, as long as you stand perfectly still."
+	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around, as long as you walk instead of run."
 	//icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/ass_of_concrete/assign(mob/living/carbon/human/H)

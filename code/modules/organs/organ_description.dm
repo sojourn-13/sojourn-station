@@ -201,6 +201,7 @@
 
 /datum/organ_description/head/soteria_synthetic
 	default_type = /obj/item/organ/external/robotic/moebius
+	functions = null
 
 /datum/organ_description/arm/left/soteria_synthetic
 	default_type = /obj/item/organ/external/robotic/moebius
@@ -223,6 +224,7 @@
 
 /datum/organ_description/head/artificer_guild_synthetic
 	default_type = /obj/item/organ/external/robotic/technomancer
+	functions = null
 
 /datum/organ_description/arm/left/artificer_guild_synthetic
 	default_type = /obj/item/organ/external/robotic/technomancer
@@ -235,3 +237,26 @@
 
 /datum/organ_description/leg/right/artificer_guild_synthetic
 	default_type = /obj/item/organ/external/robotic/technomancer
+
+//FBP
+/datum/organ_description/chest/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/groin/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/head/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+	functions = null
+
+/datum/organ_description/arm/left/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/arm/right/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/leg/left/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/leg/right/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic

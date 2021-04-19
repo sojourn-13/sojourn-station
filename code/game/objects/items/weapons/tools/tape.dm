@@ -43,6 +43,16 @@
 	max_stock = 100
 	preloaded_reagents = list("glue" = 15, "plasticide" = 5)
 
+/obj/item/weapon/tool/tape_roll/repair_goo
+	name = "repair goo"
+	desc = "A wad of sticky gray goo capable of repairing tools and sealing cracks."
+	icon_state = "repair_goo"
+	tool_qualities = list(QUALITY_ADHESIVE = 50, QUALITY_SEALING = 50, QUALITY_CAUTERIZING = 5, QUALITY_BONE_GRAFTING = 25)
+	matter = list(MATERIAL_PLASTIC = 20)
+	use_stock_cost = 0.10
+	max_stock = 100
+	preloaded_reagents = list("glue" = 15, "plasticide" = 5)
+
 /obj/item/weapon/tool/tape_roll/flextape
 	name = "flex tape"
 	desc = "To fix a lot of damage! PS: It doesn't repair the Supermatter."

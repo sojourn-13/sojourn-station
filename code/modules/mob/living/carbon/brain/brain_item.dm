@@ -98,7 +98,20 @@
 	icon_state = "green slime extract"
 
 /obj/item/organ/internal/brain/golem
-	name = "chem"
+	name = "scroll"
 	desc = "A tightly furled roll of paper, covered with indecipherable runes."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll"
+
+/obj/item/organ/internal/brain/synthetic
+	name = "synthetic brain"
+	desc = "A synthetic brain, free willed and extremely valuable, often used in only the most complex and dangerous robots."
+	icon_state = "brain_synth"
+	organ_efficiency = list(BP_BRAIN = 200)
+	price_tag = 12000
+	blood_req = 0
+	max_blood_storage = 2.5
+	oxygen_req = 0
+	nutriment_req = 0
+	nature = MODIFICATION_SILICON
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_GOLD = 1)

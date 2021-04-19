@@ -81,6 +81,8 @@
 /datum/sanity/proc/onLife()
 	if(owner.stat == DEAD || owner.in_stasis)
 		return
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		return
 	var/affect = SANITY_PASSIVE_GAIN * sanity_passive_gain_multiplier
 	if(owner.stat)
 		changeLevel(affect)

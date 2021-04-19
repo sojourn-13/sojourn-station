@@ -46,7 +46,7 @@
 //Delayed equipping
 /obj/item/clothing/pre_equip(var/mob/user, var/slot)
 	..(user, slot)
-	if (equip_delay > 0)
+	if (equip_delay > 0 && !user.stats.getPerk(PERK_SECOND_SKIN))
 		//If its currently worn, we must be taking it off
 		if (is_worn())
 			user.visible_message(

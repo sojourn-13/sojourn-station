@@ -6,6 +6,15 @@
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/weapon/tool/medmultitool/medimplant
 
+/obj/item/organ_module/active/simple/surgical/cht_mant
+	name = "surgical omni-gland"
+	desc = "An all in one organic touch that functions through a set of chemicals, enzymes, and a cht'mants sensitive glands."
+	verb_name = "Ready surgical hand"
+	icon_state = "cht_nerves"
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/weapon/tool/medmultitool/medimplant/cht_mant
+	matter = list(MATERIAL_BIOMATTER = 10)
+
 /obj/item/organ_module/active/simple/surgical/organic
 	name = "embedded organic surgical multitool"
 	desc = "An all in one organic surgical tool made of biomass that functions through a set of chemicals, enzymes, and the users will."
@@ -17,7 +26,6 @@
 
 /obj/item/weapon/biogoop/surgical
 	name = "incomplete organic surgical augment"
-
 
 /obj/item/weapon/biogoop/surgical/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
