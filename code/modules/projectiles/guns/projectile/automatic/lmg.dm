@@ -136,8 +136,8 @@
 	desc = "The \"Takeshi LMG\" is marshal's answer to any scenario that requires suppression or meat grinding, a fine oiled machine of war and death."
 	icon = 'icons/obj/guns/projectile/tk.dmi'
 	icon_base = "tk"
-	icon_state = "tkclosed-empty"
-	item_state = "tkclosedmag"
+	icon_state = "tk"
+	item_state = "tk"
 	mag_well = MAG_WELL_BOX|MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
 	damage_multiplier = 1.1 //This is clearly to high
