@@ -1992,7 +1992,7 @@
 	filling_color = "#9E673A"
 	bitesize = 10
 	center_of_mass = list("x"=16, "y"=5)
-	nutriment_desc = list("tomato" = 2, "potato" = 2, "carrot" = 2, "eggplant" = 2, "mushroom" = 2)
+	nutriment_desc = list("tomato" = 2, "potato" = 2, "carrot" = 2, "mushroom" = 2) // I said no eggplant!!!
 	nutriment_amt = 6
 	preloaded_reagents = list("protein" = 4, "tomatojuice" = 5, "imidazoline" = 5, "water" = 5)
 	cooked = TRUE

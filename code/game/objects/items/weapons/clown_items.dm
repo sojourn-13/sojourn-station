@@ -41,10 +41,10 @@
 /obj/item/weapon/soap/examine(mob/user)
 	..()
 	if (how_many_times_we_can_pull_a_pro_clown_gamer_move > 0)
-		to_chat(user, "<span class='info'>The [src] of soap looks slippery.</span>")
+		to_chat(user, "<span class='info'>The bar of [src] looks slippery.</span>")
 		return
 	if (how_many_times_we_can_pull_a_pro_clown_gamer_move == 0)
-		to_chat(user, "<span class='info'>The [src] of soap looks a bit dry</span>")
+		to_chat(user, "<span class='info'>The bar of [src] looks a bit dry</span>")
 		return
 
 
@@ -67,7 +67,7 @@
 		qdel(target)
 		return
 	else if(istype(target,/turf))
-		to_chat(user, "You start scrubbing the [target.name]")
+		to_chat(user, "You start scrubbing \the [target.name]")
 		if(do_after(user, clean_speed, target)) //Soap should be slower and worse than mop
 			to_chat(user, "<span class='notice'>You scrub \the [target.name] clean.</span>")
 			var/turf/T = target
@@ -127,11 +127,11 @@
 	reagent_storage = 25 //we can clean 5 more tiles before needing more water
 
 /obj/item/weapon/soap/deluxe/New()
-	desc = "A deluxe Lonestar brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
+	desc = "A deluxe Lonestar-brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
 	..()
 
 /obj/item/weapon/soap/church
-	desc = "A Absolute brand bar of soap. It has a faithful smell."
+	desc = "An Absolutism-brand bar of soap. It has a faithful smell."
 	icon_state = "soapchuchie"
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 6
 	clean_speed = 45
@@ -145,11 +145,12 @@
 	clean_speed = 35 //Almost the same as a mop
 	reagent_storage = 30 //Same as mop
 	slip_power = 5
+	cleaning_reagent = "sterilizine" //Syndie bar soaps were always meant to quickly clean bloodstains to hide their crimes. AFAIK this should be a counter to luminol too, making it worth it.
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 15
 
 /obj/item/weapon/soap/commie
 	name = "excelsior soap"
-	desc = "A bar of with the words of \"For one to be truly free from shackles one must be clean\". Smells of struggles of the working class."
+	desc = "A bar of soap with the words \"For one to be truly free from shackles one must be clean\" engraved on it. Smells of struggles of the working class."
 	icon_state = "soapcommie"
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 20
 	clean_speed = 35 //Almost the same as a mop
@@ -163,7 +164,7 @@
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 10
 	clean_speed = 45
 	reagent_storage = 10 //less then normal
-	slip_power = 2 //weak do to being handmade
+	slip_power = 2 //weak due to being handmade
 
 /obj/item/weapon/soap/hunters/New()
 	..()
@@ -173,8 +174,8 @@
 		icon_state = "soaproach_red"
 
 /obj/item/weapon/soap/bluespase
-	desc = "An anomalous bar of blue soap created by an unknown person (or group?) their work marked by a blue cross,\
-	these items are known to vanish and reappear when left alone. Smells of bluespace and hospitals."
+	desc = "An anomalous bar of blue soap created by an unknown person (or group?), their work marked by a blue cross.\
+	These items are known to vanish and reappear when left alone. Smells of bluespace and hospitals."
 	icon_state = "soapblue"
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 30
 	clean_speed = 15 // 2x faster then a mop

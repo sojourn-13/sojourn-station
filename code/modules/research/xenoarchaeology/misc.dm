@@ -68,12 +68,13 @@
 		..()
 		sleep(2)
 		new /obj/item/clothing/under/rank/scientist(src)
-		new /obj/item/clothing/suit/storage/toggle/labcoat(src)
+		new /obj/item/clothing/suit/storage/membrane(src) //SCIENCE!!!
 		new /obj/item/clothing/shoes/color(src)
 		new /obj/item/clothing/glasses/powered/science(src)
 		new /obj/item/device/radio/headset/headset_sci(src)
 		new /obj/item/weapon/storage/belt/archaeology(src)
 		new /obj/item/weapon/tool/pickaxe/excavation(src)
+		new /obj/item/weapon/storage/backpack/duffelbag(src)
 		return
 
 /obj/structure/closet/excavation

@@ -4,7 +4,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //To do, make matter bins, do something
-//To do, make the capator do something
 
 /obj/machinery/chemical_dispenser
 	name = "chem dispenser"
@@ -22,23 +21,23 @@
 	var/cell_charger_additon = 0 //This is not a TRUE/FALSE
 	var/accept_beaker = TRUE //At TRUE, ONLY accepts beakers.
 	var/hackedcheck = FALSE
-	var/list/dispensable_reagents
+	var/list/dispensable_reagents //I seriously hope this fixes the scrambling on part upgrade.
 	var/list/level0 = list(
-		"hydrazine","lithium","carbon",
-		"ammonia","acetone","sodium",
-		"aluminum","silicon","phosphorus",
-		"sulfur","hclacid","potassium",
-		"iron","copper","mercury",
-		"radium","water","ethanol",
-		"sugar","sacid","tungsten"
+		"acetone", "aluminum", "ammonia",
+		"carbon", "copper", "ethanol",
+		"hclacid", "hydrazine", "iron", 
+		"lithium", "mercury", "phosphorus",
+		"potassium", "radium", "sacid",
+		"silicon", "sodium", "sugar",
+		"sulfur", "tungsten", "water",
 	)
 
 	var/list/level1 = list("oil", "cryptobiolin")
 	var/list/level2 = list("toxin", "sodiumchloride")
-	var/list/level3 = list("potassium_chloride", "cryptobiolin")
+	var/list/level3 = list("mutagen")
 	var/list/level4 = list("inaprovaline")
 
-	var/list/hacked_reagents = list("cleaner") //Basic stuff
+	var/list/hacked_reagents = list("mindbreaker", "cleaner") //USEFUL stuff
 	var/obj/item/weapon/reagent_containers/beaker = null
 
 /obj/machinery/chemical_dispenser/RefreshParts()
@@ -353,11 +352,14 @@
 	circuit = /obj/item/weapon/circuitboard/chemical_dispenser/industrial
 	level0 = list(
 		"acetone","aluminum","ammonia",
-		"copper","ethanol","hydrazine",
-		"iron","radium","sacid",
-		"hclacid","silicon","tungsten"
+		"copper","ethanol","hclacid",
+		"hydrazine","iron","phosphorus",
+		"potassium", "radium","sacid",
+		"silicon","sulfur","tungsten"
 	)
 
 	level1 = list("oil", "cryptobiolin", "sterilizine")
+	level2 = list("foaming_agent", "plasticide", "instant_ice")
+	level3 = list("pacid") //Now it has chems for what it's supposed to do, and worth upgrading past Picos
 
-	hacked_reagents = list("cleaner","silicate","coolant") //So we have a reason to keep you
+	hacked_reagents = list("cleaner","surfactant","silicate","coolant") //So we have a reason to keep you
