@@ -258,6 +258,7 @@
 
 /obj/item/weapon/storage/box/syndie_kit/cigarette/populate_contents()
 	var/obj/item/weapon/storage/fancy/cigarettes/pack
+//Flash
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
 	fill_cigarre_package(pack, list("aluminum" = 4, "potassium" = 4, "sulfur" = 4))
 	pack.desc += " 'F' has been scribbled on it."
@@ -265,7 +266,7 @@
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
 	fill_cigarre_package(pack, list("aluminum" = 4, "potassium" = 4, "sulfur" = 4))
 	pack.desc += " 'F' has been scribbled on it."
-
+//Smoke
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
 	fill_cigarre_package(pack, list("potassium" = 4, "sugar" = 4, "phosphorus" = 4))
 	pack.desc += " 'S' has been scribbled on it."
@@ -274,14 +275,19 @@
 	fill_cigarre_package(pack, list("potassium" = 4, "sugar" = 4, "phosphorus" = 4))
 	pack.desc += " 'S' has been scribbled on it."
 
+// Dylovene
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
-	// Dylovene. Going with 1.5 rather than 1.6666666...
-	//fill_cigarre_package(pack, list("potassium" = 1.5, "ammonia" = 1.5, "silicon" = 1.5))
-	// Mindbreaker
-	fill_cigarre_package(pack, list("silicon" = 6.0, "hydrazine" = 4.5, "potassium" = 1.5, "ammonia" = 1.5))
+	pack.reagents.add_reagent("anti_toxin", 15 * pack.storage_slots)
+	pack.desc += " 'DY' has been scribbled on it."
 
+
+// Mindbreaker
+
+	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
+	pack.reagents.add_reagent("mindbreaker", 15 * pack.storage_slots)
 	pack.desc += " 'MB' has been scribbled on it."
 
+// Tricord
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
 	pack.reagents.add_reagent("tricordrazine", 15 * pack.storage_slots)
 	pack.desc += " 'T' has been scribbled on it."
