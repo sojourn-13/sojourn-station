@@ -745,6 +745,9 @@
 	if(in_stasis)
 		return
 
+	if(species.reagent_tag == IS_SYNTHETIC)
+		return
+
 	if(reagents)
 		chem_effects.Cut()
 		analgesic = 0
@@ -767,7 +770,7 @@
 
 	if(status_flags & GODMODE)	return 0	//godmode
 
-	if(species.light_dam)
+	if(species.light_dam)//TODO: Use this proc for flora and mycus races. Search proc mycus. -Note for Kaz.
 		var/light_amount = 0
 		if(isturf(loc))
 			var/turf/T = loc

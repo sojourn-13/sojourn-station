@@ -11,6 +11,6 @@
 	price_tag = 1000 //more op and rare than miller, hits harder, but have fun with hittin anything
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.25
-	recoil_buildup = 40
-	one_hand_penalty = 30
+	recoil_buildup = 8
+	one_hand_penalty = 15
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)

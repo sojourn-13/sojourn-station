@@ -46,6 +46,7 @@
 #define PERK_EAR_OF_QUICKSILVER /datum/perk/ear_of_quicksilver
 #define PERK_JUNKBORN /datum/perk/junkborn
 #define PERK_ASS_OF_CONCRETE /datum/perk/ass_of_concrete
+#define PERK_BRAWN /datum/perk/brawn
 #define PERK_SURE_STEP /datum/perk/sure_step
 #define PERK_SPIDER_FRIEND /datum/perk/spiderfriend
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
@@ -64,3 +65,7 @@
 #define PERK_BOLT_REFLECT /datum/perk/job/bolt_reflect
 #define PERK_JINGLE_JANGLE /datum/perk/job/jingle_jangle
 #define PERK_BUTCHER /datum/perk/job/butcher
+#define PERK_PERFECT_SHOT /datum/perk/exceptional_aim
+#define PERK_STAY_HYDRATED /datum/perk/stay_hydrated
+#define PERK_SECOND_SKIN /datum/perk/second_skin
+#define PERK_IRON_FLESH /datum/perk/iron_flesh

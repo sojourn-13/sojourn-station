@@ -60,6 +60,24 @@ obj/item/organ/external/robotic/technomancer/groin
 	name = "\"Artificer Guild\" Head"
 	default_description = /datum/organ_description/head
 
+/obj/item/organ/external/robotic/full_body_prosthetic
+	name = "Full Body Prosthetic \"Synth-Skin\""
+	desc = "A full body prosthetic with \"realistic\" synth skin."
+	force_icon = 'icons/mob/human_races/cyberlimbs/fbp.dmi'
+	model = "fbp"
+
+obj/item/organ/external/robotic/full_body_prosthetic/groin
+	name = "Full Body Prosthetic \"Synth-Skin\" Groin"
+	default_description = /datum/organ_description/groin
+
+/obj/item/organ/external/robotic/full_body_prosthetic/torso
+	name = "Full Body Prosthetic \"Synth-Skin\" Torso"
+	default_description = /datum/organ_description/chest
+
+/obj/item/organ/external/robotic/full_body_prosthetic/head
+	name = "Full Body Prosthetic \"Synth-Skin\" Head"
+	default_description = /datum/organ_description/head
+
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""
 	desc = "Custom tooled and held together by hope and duct tape."

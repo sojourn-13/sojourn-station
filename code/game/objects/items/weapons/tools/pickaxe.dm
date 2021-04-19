@@ -76,7 +76,7 @@
 	workspeed = 1.4
 
 /obj/item/weapon/tool/pickaxe/jackhammer
-	name = "Jackhammer"
+	name = "jackhammer"
 	desc = "Cracks rocks with blasts, perfect for killing cave lizards."
 	icon_state = "jackhammer"
 	item_state = "jackhammer"
@@ -149,6 +149,7 @@
 	degradation = 0.1
 	use_fuel_cost = 0.07
 	max_fuel = 120
+	workspeed = 1.5
 
 /obj/item/weapon/tool/pickaxe/diamonddrill/rig
 	use_fuel_cost = 0

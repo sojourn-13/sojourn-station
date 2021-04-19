@@ -8,7 +8,7 @@
 				if(try_tame(H, howdoitameahorseinminecraft))
 					return FALSE //If they manage to tame the roach, stop the attack
 		if(istype(L) && !L.weakened && prob(knockdown_odds))
-			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE))
+			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE) || L.stats.getPerk(PERK_BRAWN))
 				return
 			L.Weaken(3)
 			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))

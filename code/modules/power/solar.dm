@@ -14,12 +14,18 @@
 	var/glass_power = 1 //How much are more are we getting from the glass?
 	var/id = 0
 	health = 10
-	var/obscured = 0
-	var/sunfrac = 0
+	var/obscured = 0 //When we draw are line to the sun, are we blocked by something?
+	var/sunfrac = 0 //This is used for maths on how much power were getting, based on were the sun is vs pannel angel
 	var/adir = SOUTH // actual dir
 	var/ndir = SOUTH // target dir
 	var/turn_angle = 0
 	var/obj/machinery/power/solar_control/control = null
+
+/obj/machinery/power/solar/Initialize(mapload) //We want to make them like 20% odds to brake but not when made.
+	..()
+	if(prob(20))
+		broken()
+
 
 /obj/machinery/power/solar/drain_power()
 	return -1
@@ -78,7 +84,7 @@
 	else if (I)
 		src.add_fingerprint(user)
 		src.health -= I.force
-		//src.healthcheck()
+		src.healthCheck()
 	..()
 
 

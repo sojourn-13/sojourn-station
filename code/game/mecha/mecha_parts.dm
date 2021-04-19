@@ -41,12 +41,14 @@
 
 /obj/item/mecha_parts/chassis/ripley
 	name = "Ripley Chassis"
+	desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."
 	construct_type = /datum/construction/mecha/ripley_chassis
 	matter = list(MATERIAL_STEEL = 30)
 
 
 /obj/item/mecha_parts/chassis/ripley/firefighter
 	name = "Firefighter Chassis"
+	desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."
 	construct_type = /datum/construction/mecha/firefighter_chassis
 
 
@@ -89,9 +91,9 @@
 
 /obj/item/mecha_parts/chassis/gygax
 	name = "Gygax Chassis"
+	desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."
 	construct_type = /datum/construction/mecha/gygax_chassis
 	matter = list(MATERIAL_PLASTEEL = 30)
-
 
 /obj/item/mecha_parts/part/gygax_torso
 	name = "Gygax Torso"
@@ -137,13 +139,14 @@
 	name = "Gygax Armour Plates"
 	icon_state = "gygax_armour"
 	origin_tech = list(TECH_MATERIAL = 6, TECH_COMBAT = 4, TECH_ENGINEERING = 5)
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_TRITIUM = 10)
+	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASMA = 10)
 
 
 //////////// Durand
 
 /obj/item/mecha_parts/chassis/durand
 	name = "Durand Chassis"
+	desc = "A chassis or case for a Gygax mech, needs Gygax arms, legs, head, as well as a magboots and added four brace bars."
 	construct_type = /datum/construction/mecha/durand_chassis
 	matter = list(MATERIAL_PLASTEEL = 30)
 
@@ -198,10 +201,10 @@
 
 /obj/item/mecha_parts/chassis/phazon
 	name = "Phazon Chassis"
+	desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."
 	origin_tech = list(TECH_MATERIAL =7)
 	construct_type = /datum/construction/mecha/phazon_chassis
 	matter = list(MATERIAL_PLASTEEL = 25)
-
 
 /obj/item/mecha_parts/part/phazon_torso
 	name = "Phazon Torso"

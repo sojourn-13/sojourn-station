@@ -188,6 +188,11 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/external/robotic/junktech
 	icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
 
+/datum/body_modification/limb/prosthesis/full_body_prosthetic
+	id = "prosthesis_full_body_prosthetic"
+	replace_limb = /obj/item/organ/external/robotic/full_body_prosthetic
+	icon = 'icons/mob/human_races/cyberlimbs/fbp.dmi'
+
 /datum/body_modification/limb/prosthesis/moebius
 	id = "prosthesis_moebius"
 	replace_limb = /obj/item/organ/external/robotic/moebius

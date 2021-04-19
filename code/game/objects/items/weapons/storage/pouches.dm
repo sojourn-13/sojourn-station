@@ -58,6 +58,12 @@
 	max_storage_space = DEFAULT_SMALL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
 
+/obj/item/weapon/storage/pouch/medium_generic/opifex
+	name = "opifex smuggle pouch"
+	desc = "Can hold nearly anything in it, but only a moderate amount. Made by the opifex, for the opifex."
+	icon_state = "medium_opifex"
+	item_state = "medium_opifex"
+
 /obj/item/weapon/storage/pouch/large_generic
 	name = "large generic pouch"
 	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket"

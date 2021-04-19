@@ -178,6 +178,16 @@
 
 	max_upgrades = 0 //NO
 
+/obj/item/weapon/tool/medmultitool/medimplant/cht_mant
+	name = "surgical omni-gland"
+	desc = "An all in one organic touch that functions through a set of chemicals, enzymes, and a cht'mants sensitive glands."
+	icon_state = "chtmant_hand"
+	use_power_cost = 0
+	suitable_cell = null
+	degradation = 0
+	max_upgrades = 0
+	workspeed = 1.1 //Can't be upgraded and its locked behind a race that can literally get no other implants but this one, which can't be upgraded, so its slightly better. -Kaz
+
 /obj/item/weapon/tool/medmultitool/medimplant/organic
 	name = "organic medical omnitool"
 	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels. This version is made of entirely organic materials and doesn't require a power cell, sadly it cannot be upgraded and work takes slightly longer, but at least it is self repairing."

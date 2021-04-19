@@ -299,7 +299,7 @@
 	amount_per_transfer_from_this = 10
 	anchored = 1
 	density = 0
-	volume = 1000
+	volume = 50000
 	starting_reagent = "virusfood"
 
 /obj/structure/reagent_dispensers/acid

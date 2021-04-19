@@ -15,6 +15,8 @@
 		/obj/machinery/beehive,
 		/obj/item/seeds
 	)
+	var/datum/seed/loaded_seed
+	var/datum/reagents/loaded_reagents
 
 /obj/item/device/scanner/plant/is_valid_scan_target(atom/O)
 	if(is_type_in_list(O, valid_targets))
@@ -22,12 +24,14 @@
 	return FALSE
 
 /obj/item/device/scanner/plant/scan(atom/A, mob/user)
+	loaded_seed = null
+	loaded_reagents = null
 	scan_title = "[A] at [get_area(A)]"
 	scan_data = plant_scan_results(A)
 	flick("hydro2", src)
 	show_results(user)
 
-/proc/plant_scan_results(obj/target)
+/obj/item/device/scanner/plant/proc/plant_scan_results(obj/target)
 	var/datum/seed/grown_seed
 	var/datum/reagents/grown_reagents
 
@@ -50,18 +54,23 @@
 
 		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = target
 		grown_seed = plant_controller.seeds[G.plantname]
+		loaded_seed = grown_seed
 		grown_reagents = G.reagents
+		loaded_reagents = grown_reagents
 
 	else if(istype(target,/obj/item/weapon/grown))
 
 		var/obj/item/weapon/grown/G = target
 		grown_seed = plant_controller.seeds[G.plantname]
+		loaded_seed = grown_seed
 		grown_reagents = G.reagents
+		loaded_reagents = grown_reagents
 
 	else if(istype(target,/obj/item/seeds))
 
 		var/obj/item/seeds/S = target
 		grown_seed = S.seed
+		loaded_seed = grown_seed
 
 	else if(istype(target,/obj/machinery/portable_atmospherics/hydroponics))
 
@@ -69,8 +78,9 @@
 		if(H.frozen == 1)
 			to_chat(usr, "<span class='warning'>Disable the cryogenic freezing first!</span>")
 			return
-		grown_seed = H.seed
-		grown_reagents = H.reagents
+		var/datum/seed/S = H.seed
+		grown_seed = S
+		loaded_seed = grown_seed
 
 	if(!grown_seed)
 		return("No Data Available")
@@ -203,3 +213,18 @@
 
 
 	return JOINTEXT(dat)
+
+// A special paper that we can scan with the science tool
+/obj/item/weapon/paper/plant_report
+	var/datum/seed/scanned_seed
+	var/datum/reagents/scanned_reagents
+
+/obj/item/device/scanner/plant/print_report(var/mob/living/user)
+	if(!scan_data)
+		to_chat(user, "There is no scan data to print.")
+		return
+	var/obj/item/weapon/paper/plant_report/P = new(get_turf(src), scan_data, "paper - [scan_title]")
+	P.scanned_seed = src.loaded_seed
+	P.scanned_reagents = src.loaded_reagents
+	user.put_in_hands(P)
+	user.visible_message("\The [src] spits out a piece of paper.")

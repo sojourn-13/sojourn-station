@@ -499,8 +499,13 @@
 	else
 		to_chat(user, SPAN_NOTICE("The safety is off."))
 
-	if(one_hand_penalty)
+	if(can_dual == TRUE)
+		to_chat(user, SPAN_NOTICE("This gun can be duel-wielded effectively, if you're skilled enough."))
+
+	if(one_hand_penalty && !user.stats.getPerk(PERK_PERFECT_SHOT))
 		to_chat(user, SPAN_WARNING("This gun needs to be wielded in both hands to be used most effectively."))
+	else if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))
+		to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands, if you weren't such a skilled shot."))
 
 /obj/item/weapon/gun/proc/initialize_firemodes()
 	QDEL_CLEAR_LIST(firemodes)

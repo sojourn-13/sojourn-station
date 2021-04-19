@@ -27,6 +27,19 @@
 	desc = "All sablekyne are covered in bone-like plating across various parts of the body, this layer of natural armor along the shins, thighs, fore-arms, and shoulders allow you to absorb impacts better than anyone, adding a further tolerance to pain."
 	//icon_state = "" // - No icon, suggestion - Riot Shield?
 
+/datum/perk/brawn
+	name = "Brawny Build"
+	desc = "All sablekyne are stocky and built wide, your brawny build and low center of gravity gives you exceptional balance. Few beasts can knock you down and not even the strongest men can push you over, provided you walk instead of run."
+	//icon_state = "muscular" // https://game-icons.net
+
+/datum/perk/brawn/assign(mob/living/carbon/human/H)
+	..()
+	holder.mob_bump_flag = HEAVY
+
+/datum/perk/ass_of_concrete/remove()
+	holder.mob_bump_flag = ~HEAVY
+	..()
+
 ///////////////////////////////////////Mar'qua perks
 /datum/perk/suddenbrilliance
 	name = "Sudden Brilliance"
@@ -50,7 +63,20 @@
 /datum/perk/inspired
 	name = "Inspired Intellect"
 	desc = "Even the most humble Mar'qua is capable of study and extrapolation, your natural intellect allows you to become gain inspiration more easily."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+
+/datum/perk/alien_nerves
+	name = "Adapted Nervous System"
+	desc = "A mar'qua's nervous system has long since adapted to the use of stimulants, chemicals, and different toxins. Unlike lesser races, you can handle a wide variety of chemicals before showing any side effects and you'll never become addicted."
+
+/datum/perk/alien_nerves/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 0
+	holder.metabolism_effects.nsa_threshold += 300
+
+/datum/perk/alien_nerves/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 1
+	holder.metabolism_effects.nsa_threshold -= 300
+	..()
 
 //////////////////////////////////////Human perks
 /datum/perk/tenacity
@@ -91,7 +117,7 @@
 	user.reagents.add_reagent("hustim", 5)
 	return ..()
 
-/*
+
 /datum/perk/slymarbo
 	name = "Inspiring Battlecry"
 	desc = "Life has taught you that beyond sheer force of will, what made your kind conquer the stars was also a sense of camaraderie and cooperation among your battle brothers and sisters. Your heroic warcry can inspire yourself and others to better performance in combat."
@@ -129,7 +155,7 @@
 
 /datum/perk/slymarbo/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
 	participant.stats.changeStat(stat, -amount)
-*/
+
 
 //////////////////////////////////////Kriosan perks
 /datum/perk/enhancedsenses
@@ -150,6 +176,10 @@
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("kriotol", 5)
 	return ..()
+
+/datum/perk/exceptional_aim
+	name = "Instinctual Skill"
+	desc = "All kriosans understand the dynamics of shooting, to such a degree that guns are more extensions to one's hand than weapon. You take no penalty when firing any range weapon one handed."
 
 ////////////////////////////////////////Akula perks
 /datum/perk/recklessfrenzy
@@ -173,6 +203,11 @@
 	user.reagents.add_reagent("robustitol", 5)
 	return ..()
 
+/datum/perk/iron_flesh
+	name = "Iron Flesh"
+	desc = "Akula scales are not only tough and resistant to damage but exceptionally skilled at naturally forcing out embedded objects that somehow punch through. You'll never get a bullet nor object stuck inside when hit."
+
+
 ////////////////////////////////////////Naramad perks
 /datum/perk/adrenalineburst
 	name = "Adrenaline Burst"
@@ -194,10 +229,13 @@
 	user.reagents.add_reagent("naratonin", 5)
 	return ..()
 
+/datum/perk/stay_hydrated
+	name = "Hydration Reliance"
+	desc = "Naramad have adapted biology heavily reliant on the intake of fluids, in particular clean clear water. Drinking purified water, even tap water, heals your body slowly, as if you drank tricordizine!"
+
 /datum/perk/born_warrior
 	name = "Born Warrior"
 	desc = "No matter their background all naramadi are capable bringing any object to bear as a weapon, be it bladed or blunt. Unlike other races your grip is iron and you'll never lose your weapon through embedding it in an enemy."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
 
 /////////////////////////////////////////Cindarite perks
 /datum/perk/purgetoxins
@@ -237,6 +275,10 @@
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("cindicillin", 5)
 	return ..()
+
+/datum/perk/second_skin
+	name = "Second Skin"
+	desc = "Cindarites, be they bunker born or spacers, are used to wearing bulky enviromental suits. This life time of being acclimated to heavy clothing has become a second skin for many, allowing you to remove clothing instantly and never suffer slowdown from heavy armor."
 
 ///////////////////////////////////////////Opifex perks
 /datum/perk/opifex_backup
@@ -416,3 +458,27 @@
 	name = "Scuttlebug"
 	desc = "While your definitive purpose is not as clearly defined as other castes within the cht'mant hive your constant movement and labors have made you quite used to the hustle and bustle, letting you run faster than most races."
 	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+
+/datum/perk/repair_goo
+	name = "Produce Repair Goo"
+	desc = "Fixing things is apart of your caste as it is scuttling around keeping yourself busy. As such you can vomit out glue-like goo that functions exceptionally well for tool and general repairs."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/repair_goo/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your body hasn't finished recovering, you will need to wait a bit longer."))
+		return FALSE
+	if(usr.nutrition <= 350)
+		to_chat(usr, SPAN_NOTICE("You do not have enough nutrition to produce more goo, find things to eat!"))
+		return FALSE
+	cooldown_time = world.time + 1 HOURS
+	usr.nutrition -= 350
+	user.visible_message("<b><font color='red'>[user] vomits a sticky gray tar onto the floor!</font><b>", "<b><font color='red'>You vomit out your repair goo onto the floor!</font><b>", "<b><font color='red'>You hear a retching noise!</font><b>")
+	log_and_message_admins("used their [src] perk.")
+	playsound(usr.loc, 'sound/effects/blobattack.ogg', 50, 1)
+	new /obj/item/weapon/tool/tape_roll/repair_goo(usr.loc)
+	return ..()

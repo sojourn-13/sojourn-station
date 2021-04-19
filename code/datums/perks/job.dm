@@ -196,10 +196,10 @@
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
-	holder.mod_climb_delay -= 0.5
+	holder.mod_climb_delay -= 0.75
 
 /datum/perk/parkour/remove()
-	holder.mod_climb_delay += 0.5
+	holder.mod_climb_delay += 0.75
 	..()
 
 /datum/perk/chaingun_smoker
@@ -238,7 +238,7 @@
 
 /datum/perk/ass_of_concrete
 	name = "Immovable Object"
-	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around, as long as you stand perfectly still."
+	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around, as long as you walk instead of run."
 	//icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/ass_of_concrete/assign(mob/living/carbon/human/H)
@@ -265,22 +265,22 @@
 	..()
 	initial_time = world.time
 	cooldown_time = world.time + 30 MINUTES
-	holder.brute_mod_perk += 0.15
-	holder.burn_mod_perk += 0.15
-	holder.oxy_mod_perk += 0.15
-	holder.toxin_mod_perk += 0.15
-	holder.stats.changeStat(STAT_ROB, -15)
-	holder.stats.changeStat(STAT_TGH, -15)
-	holder.stats.changeStat(STAT_VIG, -15)
+	holder.brute_mod_perk += 0.10
+	holder.burn_mod_perk += 0.10
+	holder.oxy_mod_perk += 0.10
+	holder.toxin_mod_perk += 0.10
+	holder.stats.changeStat(STAT_ROB, -10)
+	holder.stats.changeStat(STAT_TGH, -10)
+	holder.stats.changeStat(STAT_VIG, -10)
 
 /datum/perk/rezsickness/remove()
-	holder.brute_mod_perk -= 0.15
-	holder.burn_mod_perk -= 0.15
-	holder.oxy_mod_perk -= 0.15
-	holder.toxin_mod_perk -= 0.15
-	holder.stats.changeStat(STAT_ROB, 15)
-	holder.stats.changeStat(STAT_TGH, 15)
-	holder.stats.changeStat(STAT_VIG, 15)
+	holder.brute_mod_perk -= 0.10
+	holder.burn_mod_perk -= 0.10
+	holder.oxy_mod_perk -= 0.10
+	holder.toxin_mod_perk -= 0.10
+	holder.stats.changeStat(STAT_ROB, 10)
+	holder.stats.changeStat(STAT_TGH, 10)
+	holder.stats.changeStat(STAT_VIG, 10)
 	..()
 
 /datum/perk/rezsickness/severe
@@ -289,19 +289,19 @@
 
 /datum/perk/rezsickness/severe/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk += 0.10
-	holder.burn_mod_perk += 0.10
-	holder.oxy_mod_perk += 0.10
-	holder.toxin_mod_perk += 0.10
+	holder.brute_mod_perk += 0.15
+	holder.burn_mod_perk += 0.15
+	holder.oxy_mod_perk += 0.15
+	holder.toxin_mod_perk += 0.15
 	holder.stats.changeStat(STAT_COG, -15)
 	holder.stats.changeStat(STAT_MEC, -15)
 	holder.stats.changeStat(STAT_BIO, -15)
 
 /datum/perk/rezsickness/severe/remove()
-	holder.brute_mod_perk -= 0.10
-	holder.burn_mod_perk -= 0.10
-	holder.oxy_mod_perk -= 0.10
-	holder.toxin_mod_perk -= 0.10
+	holder.brute_mod_perk -= 0.15
+	holder.burn_mod_perk -= 0.15
+	holder.oxy_mod_perk -= 0.15
+	holder.toxin_mod_perk -= 0.15
 	holder.stats.changeStat(STAT_COG, 15)
 	holder.stats.changeStat(STAT_MEC, 15)
 	holder.stats.changeStat(STAT_BIO, 15)
@@ -317,24 +317,24 @@
 	holder.burn_mod_perk += 0.25
 	holder.oxy_mod_perk += 0.25
 	holder.toxin_mod_perk += 0.25
-	holder.stats.changeStat(STAT_ROB, -15)
-	holder.stats.changeStat(STAT_TGH, -15)
-	holder.stats.changeStat(STAT_VIG, -15)
-	holder.stats.changeStat(STAT_COG, -15)
-	holder.stats.changeStat(STAT_MEC, -15)
-	holder.stats.changeStat(STAT_BIO, -15)
+	holder.stats.changeStat(STAT_ROB, -20)
+	holder.stats.changeStat(STAT_TGH, -20)
+	holder.stats.changeStat(STAT_VIG, -20)
+	holder.stats.changeStat(STAT_COG, -20)
+	holder.stats.changeStat(STAT_MEC, -20)
+	holder.stats.changeStat(STAT_BIO, -20)
 
 /datum/perk/rezsickness/severe/fatal/remove()
 	holder.brute_mod_perk -= 0.25
 	holder.burn_mod_perk -= 0.25
 	holder.oxy_mod_perk -= 0.25
 	holder.toxin_mod_perk -= 0.25
-	holder.stats.changeStat(STAT_ROB, 15)
-	holder.stats.changeStat(STAT_TGH, 15)
-	holder.stats.changeStat(STAT_VIG, 15)
-	holder.stats.changeStat(STAT_COG, 15)
-	holder.stats.changeStat(STAT_MEC, 15)
-	holder.stats.changeStat(STAT_BIO, 15)
+	holder.stats.changeStat(STAT_ROB, 20)
+	holder.stats.changeStat(STAT_TGH, 20)
+	holder.stats.changeStat(STAT_VIG, 20)
+	holder.stats.changeStat(STAT_COG, 20)
+	holder.stats.changeStat(STAT_MEC, 20)
+	holder.stats.changeStat(STAT_BIO, 20)
 	..()
 
 /datum/perk/rezsickness/on_process()

@@ -275,7 +275,7 @@
 		M.adjustCloneLoss(-(20 + (M.getCloneLoss() * effect_multiplier)))
 		M.adjustOxyLoss(-(20 + (M.getOxyLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_OXYGENATED, 1)
-		M.heal_organ_damage(20 * effect_multiplier, 10 * effect_multiplier, 10 * effect_multiplier, 10 * effect_multiplier)
+		M.heal_organ_damage(40 * effect_multiplier, 20 * effect_multiplier, 20 * effect_multiplier, 20 * effect_multiplier)
 		M.adjustToxLoss(-(20 + (M.getToxLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_PULSE, -2)
 
@@ -295,7 +295,7 @@
 		M.adjustCloneLoss(-(30 + (M.getCloneLoss() * effect_multiplier)))
 		M.adjustOxyLoss(-(30 + (M.getOxyLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_OXYGENATED, 2)
-		M.heal_organ_damage(30 * effect_multiplier, 30 * effect_multiplier, 30 * effect_multiplier, 30 * effect_multiplier)
+		M.heal_organ_damage(40 * effect_multiplier, 40 * effect_multiplier, 40 * effect_multiplier, 40 * effect_multiplier)
 		M.adjustToxLoss(-(30 + (M.getToxLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_PULSE, -2)
 
