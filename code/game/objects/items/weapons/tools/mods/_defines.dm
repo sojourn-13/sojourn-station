@@ -109,6 +109,7 @@
 #define GUN_GRIP "grip slot"
 #define GUN_KNIFE "knife slot"
 #define GUN_MAGWELL "magwell slot"
+#define GUN_SIGHT "sight slot"
 
 //Whitelist Tag defines
 #define GUN_SILENCABLE "silencable"
