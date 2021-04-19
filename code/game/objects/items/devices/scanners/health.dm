@@ -50,7 +50,7 @@
 		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
 		return
 
-	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+	if(!user.stats?.getPerk(PERK_ADVANCED_MEDICAL) || !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
