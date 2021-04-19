@@ -145,7 +145,7 @@
 
 
 /obj/machinery/electrolyzer/attack_hand(mob/user)
-	if(user.stats?.getPerk(PERK_MEDICAL_EXPERT) || !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) || !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
