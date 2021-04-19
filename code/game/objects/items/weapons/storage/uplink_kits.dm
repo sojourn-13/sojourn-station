@@ -259,26 +259,26 @@
 /obj/item/weapon/storage/box/syndie_kit/cigarette/populate_contents()
 	var/obj/item/weapon/storage/fancy/cigarettes/pack
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list("aluminum" = 6, "potassium" = 6, "sulfur" = 6))
+	fill_cigarre_package(pack, list("aluminum" = 4, "potassium" = 4, "sulfur" = 4))
 	pack.desc += " 'F' has been scribbled on it."
 
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list("aluminum" = 6, "potassium" = 6, "sulfur" = 6))
+	fill_cigarre_package(pack, list("aluminum" = 4, "potassium" = 4, "sulfur" = 4))
 	pack.desc += " 'F' has been scribbled on it."
 
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list("potassium" = 6, "sugar" = 6, "phosphorus" = 6))
+	fill_cigarre_package(pack, list("potassium" = 4, "sugar" = 4, "phosphorus" = 4))
 	pack.desc += " 'S' has been scribbled on it."
 
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list("potassium" = 6, "sugar" = 6, "phosphorus" = 6))
+	fill_cigarre_package(pack, list("potassium" = 4, "sugar" = 4, "phosphorus" = 4))
 	pack.desc += " 'S' has been scribbled on it."
 
 	pack = new /obj/item/weapon/storage/fancy/cigarettes(src)
 	// Dylovene. Going with 1.5 rather than 1.6666666...
-	fill_cigarre_package(pack, list("potassium" = 1.5, "nitrogen" = 1.5, "silicon" = 1.5))
+	//fill_cigarre_package(pack, list("potassium" = 1.5, "ammonia" = 1.5, "silicon" = 1.5))
 	// Mindbreaker
-	fill_cigarre_package(pack, list("silicon" = 4.5, "hydrogen" = 4.5))
+	fill_cigarre_package(pack, list("silicon" = 6.0, "hydrazine" = 4.5, "potassium" = 1.5, "ammonia" = 1.5))
 
 	pack.desc += " 'MB' has been scribbled on it."
 
