@@ -14,6 +14,7 @@
 	var/list/perks = list()           //perk paths
 	var/allow_modifications = TRUE
 	var/list/restricted_to_species = list()
+	var/obj/item/organ_module/racial_implants = null
 
 /datum/category_item/setup_option/New()
 	. = ..()
@@ -36,5 +37,8 @@
 		character.stats.changeStat(stat, stat_modifiers[stat])
 	for(var/perk in src.perks)
 		character.stats.addPerk(perk)
+	if(racial_implants)
+		var/obj/item/organ_module/install_implant = new racial_implants
+		install_implant.install(character.organs_by_name[BP_R_ARM])
 
 /datum/category_item/setup_option/proc/get_icon()

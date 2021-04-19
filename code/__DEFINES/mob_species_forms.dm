@@ -77,8 +77,9 @@
 #define FORM_CHTMANT			"Cht'mant"
 #define FORM_CINDAR				"Cindarite"
 #define FORM_OPIFEX				"Opifex"
-#define FORM_SOTSYNTH			"Soteria Full Body Positronic"
-#define FORM_AGSYNTH			"Artificer Guild Full Body Positronic"
+#define FORM_SOTSYNTH			"Soteria Synthetic"
+#define FORM_AGSYNTH			"Artificer Guild Synthetic"
+#define FORM_FBP				"Full Body Prosthetic"
 
 #define FORM_BIRD				"Avian"
 

@@ -258,6 +258,14 @@
 		to_chat(user, SPAN_WARNING("\The [src] is already occupied."))
 		return
 
+	var/mob/living/carbon/human/H = M
+	if(H.species.reagent_tag == IS_SYNTHETIC)
+		if(M == user)
+			visible_message("\The [user] tries climbing into \the [src] but it refuses a synthetic life form.")
+		else
+			visible_message("\The [user] tries putting [M] into \the [src] but it refuses a synthetic life form.")
+		return
+
 	if(M == user)
 		visible_message("\The [user] starts climbing into \the [src].")
 	else

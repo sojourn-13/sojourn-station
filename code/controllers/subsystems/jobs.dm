@@ -408,8 +408,6 @@ SUBSYSTEM_DEF(job)
 	else
 		to_chat(H, "Your job is [rank] and the game just can't handle it! Please report this bug to an administrator.")
 
-
-
 /proc/EquipCustomLoadout(var/mob/living/carbon/human/H, var/datum/job/job)
 	if(!H || !H.client)
 		return

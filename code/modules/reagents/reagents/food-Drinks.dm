@@ -42,7 +42,7 @@
 	affect_ingest(M, alien, effect_multiplier * 1.2)
 
 /datum/reagent/organic/nutriment/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if(M.species.reagent_tag == IS_SABLEKYNE)
+	if(M.species.reagent_tag == IS_CARNIVORE)
 		M.adjustNutrition(nutriment_factor * 0.25)
 		return
 
@@ -66,7 +66,7 @@
 	color = "#440000"
 
 /datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if(M.species.reagent_tag == IS_SABLEKYNE)
+	if(M.species.reagent_tag == IS_CARNIVORE)
 		M.adjustNutrition(nutriment_factor * 1.50)
 	return ..()
 
@@ -648,7 +648,7 @@
 	description = "Tasty green tea. It has antioxidants; it's good for you!"
 	taste_description = "subtle green tea"
 	color = "#669900"
-	
+
 	glass_icon_state = "greentea"
 	glass_name = "green tea"
 	glass_desc = "Tasty green tea. It has antioxidants; it's good for you!"
@@ -659,7 +659,7 @@
 	description = "Green tea, cold and served with ice."
 	taste_description = "cold green tea"
 	color = "#669900" // Nice.
-	
+
 	glass_name = "iced green tea"
 	glass_desc = "It looks like green tea with ice. One might even call it iced green tea."
 	glass_icon_state = "icedgreen"
@@ -2496,7 +2496,7 @@
 	taste_description = "unbearable bitterness"
 	color = "#150905" // rgb(21, 9, 5)
 	strength = 5 //Not meant to be drank on its own!
-	
+
 	glass_icon_state = "fernetpuro"
 	glass_name = "pure Fernet"
 	glass_desc = "A glass of pure Fernet, a bitter herb digestiff. Are you sure you can stomach this undilluted...?"

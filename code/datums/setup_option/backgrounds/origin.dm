@@ -72,15 +72,16 @@
 	name = "Medical Positronic"
 	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Your specific model was designed with \
 	in-house medical imaging, surgical support systems, and a suite of data stored biological reference documents fed to the brain within through a real-time artificial intelligence system. The entire \
-	system works on a subconscious level, allowing the existing machinery to work with instead of for the user."
+	system works on a subconscious level, allowing the existing machinery to work with instead of for the user. This model comes with a surgical omnitool implanted in the right arm."
 
 	restricted_to_species = list(FORM_SOTSYNTH)
+	racial_implants = (/obj/item/organ_module/active/simple/surgical)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 10,
+		STAT_BIO = 30,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
@@ -89,16 +90,18 @@
 	name = "Engineering Positronic"
 	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Your specific model was designed with \
 	sturdy reinforced chassis functions and augmented tool support to further enhance your innate skills. Due to an often times self tinkering habit, engineering FBP's are made sturdy and equipped \
-	with a repository of schematics and tool tips fed directly to the user on a subconscious level, allowing the existing machinery to work with instead of for the user."
+	with a repository of schematics and tool tips fed directly to the user on a subconscious level, allowing the existing machinery to work with instead of for the user. This model comes with an \
+	engineering omnitool implanted in the right arm."
 
 	restricted_to_species = list(FORM_SOTSYNTH)
+	racial_implants = (/obj/item/organ_module/active/simple/engineer)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 5,
+		STAT_TGH = 15,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 5,
+		STAT_MEC = 15,
 		STAT_COG = 0
 	)
 
@@ -106,14 +109,16 @@
 	name = "Combat Positronic"
 	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Combat positronics are built specifically \
 	for the protection of colony interests but allowed to retain their free will, unlike other cyborgs. Combat positronics have the sturdiest physical designs and enhanced hydraulic systems to \
-	further enhance their physical strength. In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and study combatants."
+	further enhance their physical strength. In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and study combatants. This model comes with an energy blade \
+	module implanted in the right arm."
 
 	restricted_to_species = list(FORM_SOTSYNTH)
+	racial_implants = (/obj/item/organ_module/active/simple/armblade/energy_blade)
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 10,
-		STAT_VIG = 10,
+		STAT_ROB = 20,
+		STAT_TGH = 20,
+		STAT_VIG = 20,
 		STAT_BIO = 0,
 		STAT_MEC = -5,
 		STAT_COG = -5
@@ -123,16 +128,18 @@
 	name = "Mechanical Adept"
 	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Your specific model was designed with \
 	a suite of integrated repair AI modules and augmented tool support to further enhance your innate skills. While not as sturdy as some other models of FBP's such as the Soteria designs the \
-	artificer guild positronics come with a far more advanced mechanical support subsystem, allowing for superior designs, methods, and implementations."
+	artificer guild positronics come with a far more advanced mechanical support subsystem, allowing for superior designs, methods, and implementations. This design come with an engineering \
+	omni-tool built in your right arm."
 
 	restricted_to_species = list(FORM_AGSYNTH)
+	racial_implants = (/obj/item/organ_module/active/simple/engineer)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 15,
+		STAT_MEC = 30,
 		STAT_COG = 0
 	)
 
@@ -140,37 +147,41 @@
 	name = "\"Long-Haul\" Body Chassis"
 	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This particular model is the work of Tacitus \
 	O'Conner himself, artificer guild grand master. Unlike the mechanical adept model this chassis is built to last, being far more sturdy and capable of performing alone or with teams of engineers cut \
-	off from the colony for extended periods. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and improved cogitation computers."
+	off from the colony for extended periods. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and improved cogitation computers. This design come \
+	with an engineering omni-tool built in your right arm."
 
 	restricted_to_species = list(FORM_AGSYNTH)
+	racial_implants = (/obj/item/organ_module/active/simple/engineer)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 10,
+		STAT_TGH = 20,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 10
+		STAT_COG = 15
 	)
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_mine
 	name = "\"Depts-Class\" Body Chassis"
 	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This particular model is made with mining in \
 	mind. Unlike the mechanical adept model this chassis is built work long hard hours in the darkness, being far more able to smash down rock veins and dig out tunnels rich with both soft \
-	and hard materials alike. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and pre-programmed assistants in maintaining tools and own self."
+	and hard materials alike. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and pre-programmed assistants in maintaining tools and one's ownself. \
+	This design comes with a mining omnitool, which boasts a munchkin 3000 multitool, a greyson power drill, advanced ore scanner, and emergency radio."
 
 	restricted_to_species = list(FORM_AGSYNTH)
+	racial_implants = (/obj/item/organ_module/active/multitool/miner)
 
 //Idea for this is that you were made with being a miner, thus giving you everything you need as one
 //The main boon being you get a bit of evey skill you /need/ to mine out faster and maintain tools / set up the big drills.
 //-0Loss Stats +15Gained Stat
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 5,
+		STAT_ROB = 20,
+		STAT_TGH = 10,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 5,
+		STAT_MEC = 10,
 		STAT_COG = 0
 	)
 
@@ -417,6 +428,7 @@
 	restricted_to_species = list(FORM_OPIFEX)
 
 	perks = list(/datum/perk/opifex_backup)
+	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -438,6 +450,7 @@
 	restricted_to_species = list(FORM_OPIFEX)
 
 	perks = list(/datum/perk/opifex_backup_medical)
+	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -459,6 +472,7 @@
 	restricted_to_species = list(FORM_OPIFEX)
 
 	perks = list(/datum/perk/opifex_backup_combat)
+	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -478,7 +492,7 @@
 
 	restricted_to_species = list(FORM_CHTMANT)
 	allow_modifications = FALSE
-	perks = list(/datum/perk/scuttlebug)
+	perks = list(/datum/perk/scuttlebug, /datum/perk/repair_goo)
 
 	stat_modifiers = list(
 		STAT_ROB = 4,
@@ -501,6 +515,8 @@
 	restricted_depts = SECURITY | PROSPECTOR
 	allow_modifications = FALSE
 	perks = list(/datum/perk/ichor)
+	racial_implants = (/obj/item/organ_module/active/simple/surgical/cht_mant)
+
 
 	stat_modifiers = list(
 		STAT_ROB = -8,
@@ -524,6 +540,7 @@
 	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/smc, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/paramedic, /datum/job/premier, /datum/job/pg, /datum/job/chief_engineer, /datum/job/chaplain, /datum/job/merchant)
 
 	perks = list(/datum/perk/chitinarmor)
+	racial_implants = (/obj/item/organ_module/active/simple/cht_mant_claws)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
