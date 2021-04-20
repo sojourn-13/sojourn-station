@@ -21,6 +21,7 @@
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "phazon0"
 		const_holder.density = 1
+		const_holder.desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."
 		spawn()
 			qdel(src)
 		return
@@ -31,95 +32,95 @@
 	steps = list(
 		//1
 		list("key"=/obj/item/weapon/hand_tele,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="The hand tele is to be installed."),
 		//2
 		list("key"=QUALITY_WELDING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="External armor is wrenched but not welded down."),
 		//3
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed not not bolted in place."),
 		//4
 		list("key"=/obj/item/mecha_parts/part/phazon_armor,
-			"backkey"=QUALITY_WELDING,
+			//"backkey"=QUALITY_WELDING,
 			"desc"="Phase armor is welded but missing phazon armor external plate."),
 		//5
 		list("key"=QUALITY_WELDING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="Phase internal armor is wrenched down and waits welding."),
 		//6
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Phase armor is installed and needs bolting."),
 		//7
 		list("key"=/obj/item/stack/material/plasteel,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The bluespace crystal is engaged and can be protected over with plasteel plates."),
 		//8
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_WIRE_CUTTING,
+			//"backkey"=QUALITY_WIRE_CUTTING,
 			"desc"="The bluespace crystal is connected but needs to be set with a screwdriver."),
 		//9
 		list("key"=/obj/item/stack/cable_coil,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="The bluespace crystal is installed but unwired."),
 		//10
 		list("key"=/obj/item/weapon/stock_parts/subspace/crystal,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Super capacitor is secured and bluespace crystal is awaiting to be subspace tooned with a crystal."),
 		//12
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Super capacitor is installed but unscrewed."),
 		//12
 		list("key"=/obj/item/weapon/stock_parts/capacitor/super,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Phasic scanner module is secured and can connect to a super capacitor."),
 		//13
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Phasic scanner module is installed but unscrewed."),
 		//14
 		list("key"=/obj/item/weapon/stock_parts/scanning_module/phasic,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Weapon control module is secured and can connect to a phasic scanning module"),
 		//15
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Weapon control is installed and can be screwed down."),
 		//16
 		list("key"=/obj/item/weapon/circuitboard/mecha/targeting,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Peripherals control module is secured and waiting a targeting board."),
 		//17
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed and needs to be screwed down"),
 		//18
 		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured and ready for a peripherals control module."),
 		//19
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed, but unscrewed."),
 		//20
 		list("key"=/obj/item/weapon/circuitboard/mecha/main,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted for connecting to a central control board."),
 		//21
 		list("key"=QUALITY_WIRE_CUTTING,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is added but needs adjustments."),
 		//22
 		list("key"=/obj/item/stack/cable_coil,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The hydraulic systems are active but unlinked to internal power systems."),
 		//23
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="The hydraulic systems are connected but not screwed into place."),
 		//24
 		list("key"=QUALITY_BOLT_TURNING,

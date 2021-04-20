@@ -140,11 +140,11 @@
 				<br>
 
 				<h1><a name="Prep">Knowing your tool</a></h1>
-				The suspension field is quite the bulky tool. Hated or loved by many its a critical piece to us doing xenoarch correctly.
-				The suspension field has large bulky legs that we wrench into place. Ontop of having to make sure we have it facing the
-				right direction there is the settings on it. It also requires power but they should have a large cell in it to begin with
-				Of course you might have to replace that cell at some point too. Overall its a complicated piece with a lot of value.
-				In my workplace we only have two of them. So if your workplace is like mine. Make sure to not lose them to the wildlife. <br>
+				The suspension field is quite the bulky tool. Hated or loved by many, it's a critical piece for us to do xenoarch correctly.
+				The suspension field has large bulky legs that we wrench into place. On top of having to make sure we have it facing the
+				right direction there's also the settings on it. It also requires power, but they should have a large cell in it to begin with
+				Of course you might have to replace that cell at some point too. Overall, it's a complicated piece with a lot of value.
+				In my workplace we only have two of them. So, if your workplace is like mine, make sure to not lose them to the wildlife. <br>
 				<ul>
 					<li>Heavy and Bulky.</li>
 					<li>Requires wrench to get legs into place.</li>
@@ -156,9 +156,9 @@
 				<a href="#Contents">Contents</a>
 
 				<h1><a name="Setup">Setting up your generator</a></h1>
-				Now lets assume you dragged that bulky generator all the way out to your digsite. Congrads its heavy.
+				Now let's assume you dragged that bulky generator all the way out to your digsite. Congrats, it's heavy.
 				But now we have to get it against the dig itself. Make sure you have space for both it and you. You'll
-				have to dig a little more once its turned on. And of course. It should be facing the dig. Once its
+				have to dig a little more once its turned on. And of course, it should be facing the dig. Once it's
 				against the dig and facing it, just wrench the legs down and into place. It should be secure now. Then
 				Swipe your ID to unlock the device. It should give a whole bunch of options that will make newer
 				archeologist's heads spin.<br>
@@ -168,10 +168,10 @@
 				<a href="#Contents">Contents</a>
 
 				<h1><a name="Settings">Getting your settings right</a></h1>
-				So now that we have a long list of settings, which one do we pick? Well this takes a little memorization. Or a handy guide on hand.
-				For each outcome of what we find on our depth scanner there is a corrisponding setting we put the Suspension field generator too.
-				Below you'll see I have labeled six of them. But why only six? Cause thats the only ones you'll need. The others are for other
-				fields of science that wont be covered for a xenoarch focused setup guide. Please take your time to learn these. Eventually you
+				So now that we have a long list of settings, which one do we pick? Well, this takes a little memory. Or a handy guide on hand.
+				For each outcome of what we find on our depth scanner there is a corresponding setting we put the Suspension Field Generator too.
+				Below you'll see I have labeled six of them. But why only six? 'Cause that's the only ones you'll ever need. The others are for other
+				fields of science that won't be covered on a xenoarch focused setup guide. Please take your time to learn these. Eventually you
 				won't even need a book to refrence!<br>
 				<ul>
 					<li><b>Trace Organic Cells</b> - We use a Diffracted Carbon Dioxide Laser.</li>
@@ -179,13 +179,13 @@
 					<li><b>Crystalline Structures</b> - Trace around the crystals with a Nitrogen Tracer Field.</li>
 					<li><b>Metallic Derivative</b> - Make sure you don't mix the two metals up. Derivative takes Mercury Dispersion Waves.</li>
 					<li><b>Metallic Composite</b> - Make sure you don't mix the two metals up. Iron Wafer Conduction for composites.</li>
-					<li><b>Unknown</b> - If you picked up unknown then something is normally wrong. Make sure to make a note for heads. Nothing works here.</li>
+					<li><b>Unknown</b> - If you picked up unknown then something is normally wrong. Make sure to make a note for Mkne. Nothing works here.</li>
 				</ul><br>
 				<a href="#Contents">Contents</a>
 
 				<h1><a name="End">Footnotes</a></h1>
-				After setting up and getting your settings, go ahead and turn it on and finish your dig. Make sure to turn it off and all. But overall. Please
-				be careful with the equipment. Its bulky and heavy. Annoying to haul around but there is only so many of them. And they are needed.
+				After setting up and getting your settings ready, go ahead and turn it on and finish your digging. Make sure to turn it off and all when you're finished.
+				But overall, please be careful with the equipment. It's bulky and heavy and annoying to haul around, but there is only so many of them. And they are needed.
 				Eventually youll get the settings down. Its a memorization thing.<br>
 				<a href="#Contents">Contents</a>
 

@@ -682,7 +682,7 @@ I said no!
 	result = /obj/item/weapon/reagent_containers/food/snacks/rofflewaffles
 
 /datum/recipe/stew
-	fruit = list("potato" = 1, "tomato" = 1, "carrot" = 1, "eggplant" = 1, "mushroom" = 1)
+	fruit = list("potato" = 1, "tomato" = 1, "carrot" = 1, "mushroom" = 1) // No eggplant! Terrible!
 	reagents = list("water" = 10)
 	items = list(/obj/item/weapon/reagent_containers/food/snacks/meat)
 	result = /obj/item/weapon/reagent_containers/food/snacks/stew

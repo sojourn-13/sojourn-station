@@ -85,7 +85,7 @@
 						break//usually only kill one mouse per proc
 
 /mob/living/simple_animal/cat/beg(var/atom/thing, var/atom/holder)
-	visible_emote("licks its lips and hungrily glares at [holder]'s [thing.name]")
+	visible_emote("licks [get_gender() == MALE ? "his" : get_gender() == FEMALE ? "her" : "their"] lips and hungrily glares at [holder]'s [thing.name]")
 
 /mob/living/simple_animal/cat/Released()
 	//A thrown cat will immediately attack mice near where it lands

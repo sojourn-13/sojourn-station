@@ -17,6 +17,7 @@
 		const_holder.icon_state = "ripley0"
 		const_holder.density = 1
 		const_holder.cut_overlays()
+		const_holder.desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."
 		spawn()
 			qdel(src)
 		return
@@ -27,87 +28,87 @@
 	steps = list(
 		//1
 		list("key"=QUALITY_WELDING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="External armor is wrenched and glass case if fully installed. Last step is just to weld it down."),
 		//2
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed and needs glass a to be screwed down."),
 		//3
 		list("key"=/obj/item/stack/material/glass,
-			"backkey"=QUALITY_WELDING,
+			//"backkey"=QUALITY_WELDING,
 			"desc"="External armor is installed and needs glass a to be installed."),
 		//4
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed but not bolted down."),
 		//5
 		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/heatsink,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor plating leaves a gap for the heatsink."),
 		//6
 		list("key"=/obj/item/stack/material/plasteel,
-			"backkey"=QUALITY_WELDING,
+			//"backkey"=QUALITY_WELDING,
 			"desc"="Internal armor is welded and ready for a plasteel external armor."),
 		//7
 		list("key"=QUALITY_WELDING,
-			"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="Internal armor is wrenched and ready for a plate of plasteel external armor."),
+			//"backkey"=QUALITY_BOLT_TURNING,
+			"desc"="Internal armor is wrenched and ready for some welding down."),
 		//8
 		list("key"=/obj/item/stack/material/plastic,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is secured but needs plastic fitting."),
 		//9
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor is installed but needs to be bolted down"),
 		//10
 		list("key"=/obj/item/stack/material/steel,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Peripherals control module is secured and ready for a internal steel armor plate"),
 		//11
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed but needs to be screwed down"),
 		//12
 		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured and read to be connected to a peripheral control module"),
 		//13
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed but not screwed down."),
 		//14
 		list("key"=/obj/item/weapon/circuitboard/mecha/main,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted and ready for a central control module."),
 		//15
 		list("key"=QUALITY_WIRE_CUTTING,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is added but needs adjustments with a wire cutter."),
 		//16
 		list("key"=/obj/item/stack/cable_coil,
-			"backkey"=QUALITY_SCREW_DRIVING,
+			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The hydraulic systems are active but unwired."),
 		//17
 		list("key"=QUALITY_SCREW_DRIVING,
-			"backkey"=QUALITY_BOLT_TURNING,
+			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="The hydraulic systems are connected but screwed in."),
 		//18
 		list("key"=QUALITY_BOLT_TURNING,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="The hydraulic systems are disconnected but needs some bolting."),
 		//19
 		list("key"=/obj/item/weapon/tool_upgrade/productivity/motor,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Hydraulics set inside need to be linked to a eletric moter."),
 		//20
 		list("key"=/obj/item/weapon/tool_upgrade/augment/hydraulic,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="With the cell mount added it can now have the hydraulics added."),
 		//21
 		list("key"=/obj/item/weapon/tool_upgrade/augment/cell_mount,
-			"backkey"=QUALITY_PRYING,
+			//"backkey"=QUALITY_PRYING,
 			"desc"="Mech case is made and needs to start with a cell mount."),
 		//22
 		list("key"=QUALITY_SCREW_DRIVING,
@@ -135,6 +136,7 @@
 					"You adds in [holder]'s cell box systems."
 					)
 					holder.icon_state = "ripley0"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] screws back [holder] cover.", \
@@ -148,6 +150,7 @@
 					"You adds in [holder]'s hydraulic systems."
 					)
 					holder.icon_state = "ripley1"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems.", \
@@ -162,6 +165,7 @@
 						"You connect [holder] hydraulic systems."
 					)
 					holder.icon_state = "ripley1"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems.", \
@@ -353,6 +357,7 @@
 						"You secure external reinforced armor layer."
 					)
 					holder.icon_state = "ripley13"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] pries external armor layer from [holder].", \
@@ -366,6 +371,7 @@
 					"[usr] adds in a [holder]", \
 					"You adds in [holder]."
 					)
+					qdel(used_atom)
 					holder.icon_state = "fireripley11"
 				else
 					usr.visible_message(
