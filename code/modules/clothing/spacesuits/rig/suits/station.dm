@@ -210,7 +210,61 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rig_module/storage
 		)
 
+/***************************************
+	Adv Hazmat: Rnd/CRO
+****************************************/
+/obj/item/weapon/rig/advhazmat
+	name = "Advanced AMI control module"
+	suit_type = "advanced hazmat hardsuit"
+	desc = "An Anomalous Material Interaction hardsuit that protects against the strangest energies the universe can throw at it. \
+	This advanced verson is made with speed in mind as well better armor plates at the cost of power."
+	icon_state = "science_ami_rig"
+	armor = list(
+		melee = 35,
+		bullet = 30,
+		energy = 40,
+		bomb = 90,
+		bio = 100,
+		rad = 100
+	)
+	slowdown = 0 //were light!
+	drain = 35 //Costs in power
+	offline_slowdown = 3 //You better be on
+	offline_vision_restriction = 1
+	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_GOLD = 5, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 10) //Costly!
+	chest_type = /obj/item/clothing/suit/space/rig/advhazmat
+	helm_type =  /obj/item/clothing/head/helmet/space/rig/advhazmat
+	boot_type =  /obj/item/clothing/shoes/magboots/rig/advhazmat
+	glove_type = /obj/item/clothing/gloves/rig/advhazmat
 
+	extra_allowed = list(
+		/obj/item/stack/flag,
+		/obj/item/weapon/tool,
+		/obj/item/device/scanner/health,
+		/obj/item/device/measuring_tape,
+		/obj/item/device/ano_scanner,
+		/obj/item/device/depth_scanner,
+		/obj/item/device/core_sampler,
+		/obj/item/device/gps,
+		/obj/item/device/beacon_locator,
+		/obj/item/device/radio/beacon,
+		/obj/item/weapon/storage/bag/fossils
+	)
+
+	req_access = list()
+
+/obj/item/clothing/suit/space/rig/advhazmat
+	name = "Advanced AMI suit"
+
+/obj/item/clothing/gloves/rig/advhazmat
+	name = "Advanced AMI gloves"
+	siemens_coefficient = 0
+
+/obj/item/clothing/shoes/magboots/rig/advhazmat
+	name = "Advanced AMI shoes"
+
+/obj/item/clothing/head/helmet/space/rig/advhazmat
+	name = "Advanced AMI void helm"
 
 /***************************************
 	Medical
@@ -262,8 +316,8 @@ Advanced Voidsuit: Guild Master
 	desc = "A security hardsuit designed for prolonged EVA in dangerous environments."
 	icon_state = "hazard_rig"
 	armor = list(
-		melee = 30,
-		bullet = 30,
+		melee = 40,
+		bullet = 40,
 		energy = 40,
 		bomb = 90,
 		bio = 100,

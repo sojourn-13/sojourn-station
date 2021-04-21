@@ -49,8 +49,9 @@
 		bio = 100,
 		rad = 45
 	)
+	slowdown = -0.2 //We speed up the user at cost of horrable armor
 	emp_protection = 0
-	matter = list(MATERIAL_STEEL = 50, MATERIAL_PLASTIC = 50, MATERIAL_GLASS = 30) //Costly!
+	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10) //Costly!
 
 	chest_type = /obj/item/clothing/suit/space/rig/light/ultra_light
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/light/ultra_light
