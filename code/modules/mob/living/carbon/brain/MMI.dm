@@ -18,7 +18,7 @@
 
 /obj/item/device/mmi
 	name = "man-machine interface"
-	desc = "The Warrior's bland acronym, MMI, obscures the true horror of this monstrosity."
+	desc = "The Warrior's bland acronym, MMI, obscures the true horror of this monstrosity. Under no circumstances should this be placed in anything except a cyborg chassis. Reminder, synthetic designs made by Soteria and the Artificer Guild are not cyborgs."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "mmi_empty"
 	w_class = ITEM_SIZE_NORMAL
