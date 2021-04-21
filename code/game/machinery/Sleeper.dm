@@ -106,7 +106,7 @@
 	icon_state = "sleeper_[occupant ? "1" : "0"]"
 
 /obj/machinery/sleeper/attack_hand(var/mob/user)
-	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT)) //Are we missing the perk AND to low on bio?
+	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT) && !usr.stat_check(STAT_COG, 50)) //Are we missing the perk AND to low on bio? Needs bio 25 so cog 50 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
