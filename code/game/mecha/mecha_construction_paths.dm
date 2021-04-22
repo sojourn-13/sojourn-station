@@ -42,6 +42,24 @@
 		if(S.rating < step["rating"]) //Rating is used for a gate of stockparts to be better but we dont use its rating...
 			return 0
 		usr.drop_from_inventory(S, holder)
+
+	else if(istype(used_atom, /obj/item/weapon/tool_upgrade))
+		var/obj/item/weapon/tool_upgrade/U = used_atom
+		usr.drop_from_inventory(U, holder) //U for upgrade
+
+	else if(istype(used_atom, /obj/item/mecha_parts))
+		var/obj/item/mecha_parts/M = used_atom
+		usr.drop_from_inventory(M, holder) //M for mech part
+
+
+	else if(istype(used_atom, /obj/item/weapon/circuitboard/mecha))
+		var/obj/item/weapon/circuitboard/mecha/B = used_atom
+		usr.drop_from_inventory(B, holder) //B for Board
+
+	else if(istype(used_atom, /obj/item/rig_module/vision))
+		var/obj/item/rig_module/vision/V = used_atom
+		usr.drop_from_inventory(V, holder) //V for vision
+
 	return 1
 
 /datum/construction/reversible/mecha/action(atom/used_atom,mob/user as mob)

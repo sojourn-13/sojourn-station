@@ -126,7 +126,6 @@
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus0"
 				else
 					usr.visible_message(
@@ -140,7 +139,6 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus1"
 				else
 					usr.visible_message(
@@ -196,7 +194,6 @@
 						"You adjust the wiring of [holder]."
 					)
 					holder.icon_state = "odysseus4"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the wiring from [holder].", \
@@ -223,7 +220,6 @@
 						"[usr] secures the mainboard.", \
 						"You secure the mainboard."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus6"
 				else
 					usr.visible_message(
@@ -307,7 +303,6 @@
 						"You weld the internal armor layer to [holder]."
 					)
 					holder.icon_state = "odysseus11"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] unfastens the internal armor layer.", \
@@ -334,7 +329,6 @@
 						"You install Med Hud to [holder]."
 					)
 					holder.icon_state = "odysseus12"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] mounted HUD", \
@@ -362,7 +356,6 @@
 					"[usr] adds in a [holder]", \
 					"You adds in [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus11"
 				else
 					usr.visible_message(

@@ -143,7 +143,6 @@
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter0"
 				else
 					usr.visible_message(
@@ -157,14 +156,12 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter1"
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems", \
 						"You disconnect and remove [holder] hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter0"
 					new /obj/item/weapon/tool_upgrade/augment/cell_mount(get_turf(holder))
 			if(21)
@@ -174,7 +171,6 @@
 						"You connect [holder] hydraulic systems."
 					)
 					holder.icon_state = "firefighter1"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems", \
@@ -229,7 +225,6 @@
 						"You adjust the wiring of [holder]."
 					)
 					holder.icon_state = "firefighter4"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the wiring from [holder].", \
@@ -257,7 +252,6 @@
 						"You secure the mainboard."
 					)
 					holder.icon_state = "firefighter6"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the central control module from [holder].", \
@@ -299,7 +293,6 @@
 						"You install internal armor layer to [holder]."
 					)
 					holder.icon_state = "firefighter9"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] unfastens the peripherals control module.", \
@@ -382,7 +375,6 @@
 						"You install external reinforced armor layer to [holder]."
 					)
 					holder.icon_state = "firefighter12"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] cuts internal armor layer from [holder].", \

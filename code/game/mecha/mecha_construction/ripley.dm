@@ -136,7 +136,6 @@
 					"You adds in [holder]'s cell box systems."
 					)
 					holder.icon_state = "ripley0"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] screws back [holder] cover.", \
@@ -150,7 +149,6 @@
 					"You adds in [holder]'s hydraulic systems."
 					)
 					holder.icon_state = "ripley1"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems.", \
@@ -219,7 +217,6 @@
 						"You adjust the wiring of [holder]."
 					)
 					holder.icon_state = "ripley4"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the wiring from [holder].", \
@@ -247,7 +244,6 @@
 						"You secure the mainboard."
 					)
 					holder.icon_state = "ripley6"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the central control module from [holder].", \
@@ -343,7 +339,6 @@
 						"You install external reinforced armor layer to [holder]."
 					)
 					holder.icon_state = "ripley12"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] cuts internal armor layer from [holder].", \
@@ -370,7 +365,6 @@
 					"[usr] adds in a [holder]", \
 					"You adds in [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "fireripley11"
 				else
 					usr.visible_message(

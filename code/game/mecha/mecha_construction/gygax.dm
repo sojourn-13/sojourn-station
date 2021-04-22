@@ -168,7 +168,6 @@
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax0"
 				else
 					usr.visible_message(
@@ -182,7 +181,6 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax1"
 				else
 					usr.visible_message(
@@ -251,7 +249,6 @@
 						"[usr] adds the wiring to [holder].", \
 						"You add the wiring to [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax3"
 				else
 					usr.visible_message(
@@ -279,7 +276,6 @@
 						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax5"
 				else
 					usr.visible_message(
@@ -307,7 +303,6 @@
 						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax7"
 				else
 					usr.visible_message(
@@ -335,7 +330,6 @@
 						"[usr] installs the weapon control module into [holder].", \
 						"You install the weapon control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax9"
 				else
 					usr.visible_message(
@@ -435,7 +429,6 @@
 						"You secure internal armor layer."
 					)
 					holder.icon_state = "gygax16"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] pries internal armor layer from [holder].", \
@@ -464,7 +457,6 @@
 						"You bolt down armor plating [holder]."
 					)
 					holder.icon_state = "gygax15"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes a internal armor plate.", \
@@ -492,7 +484,6 @@
 						"You weld the internal armor layer to [holder]."
 					)
 					holder.icon_state = "gygax17"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] unfastens the internal armor layer.", \
@@ -545,7 +536,6 @@
 						"[usr] screws down the glass case on [holder].", \
 						"You fasten the glass to [holder]."
 					)
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes glass form.", \

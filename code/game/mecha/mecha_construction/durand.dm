@@ -170,7 +170,6 @@
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand0"
 				else
 					usr.visible_message(
@@ -184,7 +183,6 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand1"
 				else
 					usr.visible_message(
@@ -199,7 +197,6 @@
 						"[usr] connects [holder] a motor", \
 						"You connect [holder] a motor in."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand1"
 				else
 					usr.visible_message(
@@ -268,7 +265,6 @@
 						"You adjust the wiring of [holder]."
 					)
 					holder.icon_state = "durand4"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the wiring from [holder].", \
@@ -296,7 +292,6 @@
 						"You secure the mainboard."
 					)
 					holder.icon_state = "durand6"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the central control module from [holder].", \
@@ -324,7 +319,6 @@
 						"You secure the peripherals control module."
 					)
 					holder.icon_state = "durand8"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the peripherals control module from [holder].", \
@@ -451,7 +445,6 @@
 						"You install internal armor layer to [holder]."
 					)
 					holder.icon_state = "durand15"
-					qdel(used_atom)
 				else
 					new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(get_turf(holder))
 					usr.visible_message(
@@ -479,7 +472,6 @@
 						"You bolt down armor plating [holder]."
 					)
 					holder.icon_state = "durand15"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes a internal armor plate.", \
@@ -506,7 +498,6 @@
 						"[usr] installs durand Armour Plates to [holder].", \
 						"You install durand Armour Plates to [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand18"
 				else
 					usr.visible_message(
@@ -560,7 +551,6 @@
 						"[usr] screws down the glass case on [holder].", \
 						"You fasten the glass to [holder]."
 					)
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] unfastens durand Armour Plates.", \
