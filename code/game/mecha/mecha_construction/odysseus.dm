@@ -2,21 +2,19 @@
 
 /datum/construction/mecha/odysseus_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/odysseus_torso),//1
-		list("key"=/obj/item/mecha_parts/part/odysseus_head),//2
-		list("key"=/obj/item/mecha_parts/part/odysseus_left_arm),//3
-		list("key"=/obj/item/mecha_parts/part/odysseus_right_arm),//4
-		list("key"=/obj/item/mecha_parts/part/odysseus_left_leg),//5
-		list("key"=/obj/item/mecha_parts/part/odysseus_right_leg)//6
+		list("key"=/obj/item/mecha_parts/part/odysseus_torso, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//1
+		list("key"=/obj/item/mecha_parts/part/odysseus_head, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//2
+		list("key"=/obj/item/mecha_parts/part/odysseus_left_arm, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//3
+		list("key"=/obj/item/mecha_parts/part/odysseus_right_arm, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//4
+		list("key"=/obj/item/mecha_parts/part/odysseus_left_leg, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//5
+		list("key"=/obj/item/mecha_parts/part/odysseus_right_leg, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head.")//6
 	)
-
 	spawn_result()
 		var/obj/item/mecha_parts/chassis/const_holder = holder
 		const_holder.construct = new /datum/construction/reversible/mecha/odysseus(const_holder)
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "odysseus0"
 		const_holder.density = 1
-		const_holder.desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."
 		spawn()
 			qdel(src)
 		return
@@ -120,6 +118,7 @@
 					"[usr] opens [holder] internal cover box", \
 					"You openn [holder] internal cover box."
 				)
+				qdel(used_atom)
 				holder.icon_state = "odysseus1"
 			if(20)
 				if(diff==FORWARD)
@@ -127,7 +126,6 @@
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus0"
 				else
 					usr.visible_message(
@@ -141,7 +139,6 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus1"
 				else
 					usr.visible_message(
@@ -210,7 +207,6 @@
 						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus5"
 				else
 					usr.visible_message(
@@ -238,7 +234,6 @@
 						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus7"
 				else
 					usr.visible_message(
@@ -333,7 +328,6 @@
 						"[usr] a [used_atom] mounted HUD to [holder].", \
 						"You install Med Hud to [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus12"
 				else
 					usr.visible_message(
@@ -362,7 +356,6 @@
 					"[usr] adds in a [holder]", \
 					"You adds in [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "odysseus11"
 				else
 					usr.visible_message(

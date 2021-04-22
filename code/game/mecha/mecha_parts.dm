@@ -12,7 +12,6 @@
 	flags = CONDUCT
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2)
 
-
 /obj/item/mecha_parts/chassis
 	name = "Mecha Chassis"
 	icon_state = "backbone"
@@ -45,12 +44,10 @@
 	construct_type = /datum/construction/mecha/ripley_chassis
 	matter = list(MATERIAL_STEEL = 30)
 
-
 /obj/item/mecha_parts/chassis/ripley/firefighter
 	name = "Firefighter Chassis"
 	desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."
 	construct_type = /datum/construction/mecha/firefighter_chassis
-
 
 /obj/item/mecha_parts/part/ripley_torso
 	name = "Ripley Torso"

@@ -3,12 +3,12 @@
 
 /datum/construction/mecha/firefighter_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/ripley_torso),//1
-		list("key"=/obj/item/mecha_parts/part/ripley_left_arm),//2
-		list("key"=/obj/item/mecha_parts/part/ripley_right_arm),//3
-		list("key"=/obj/item/mecha_parts/part/ripley_left_leg),//4
-		list("key"=/obj/item/mecha_parts/part/ripley_right_leg),//5
-		list("key"=/obj/item/clothing/suit/fire)//6
+		list("key"=/obj/item/mecha_parts/part/ripley_torso, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//1
+		list("key"=/obj/item/mecha_parts/part/ripley_left_arm, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//2
+		list("key"=/obj/item/mecha_parts/part/ripley_right_arm, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//3
+		list("key"=/obj/item/mecha_parts/part/ripley_left_leg, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//4
+		list("key"=/obj/item/mecha_parts/part/ripley_right_leg, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//5
+		list("key"=/obj/item/clothing/suit/fire, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit.")//6
 	)
 
 	spawn_result()
@@ -17,7 +17,6 @@
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "firefirefighter0"
 		const_holder.density = 1
-		const_holder.desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."
 		spawn()
 			qdel(src)
 		return
@@ -137,13 +136,13 @@
 					"You openn [holder] internal cover box."
 				)
 				holder.icon_state = "firefighter1"
+				qdel(used_atom)
 			if(23)
 				if(diff==FORWARD)
 					usr.visible_message(
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter0"
 				else
 					usr.visible_message(
@@ -157,14 +156,12 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter1"
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems", \
 						"You disconnect and remove [holder] hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter0"
 					new /obj/item/weapon/tool_upgrade/augment/cell_mount(get_turf(holder))
 			if(21)
@@ -241,7 +238,6 @@
 						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter5"
 				else
 					usr.visible_message(
@@ -269,7 +265,6 @@
 						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter7"
 				else
 					usr.visible_message(
@@ -406,7 +401,6 @@
 					"[usr] adds in a [holder]",
 					"You adds in [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefirefighter11"
 				else
 					usr.visible_message(

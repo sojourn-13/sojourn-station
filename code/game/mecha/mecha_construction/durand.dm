@@ -3,17 +3,17 @@
 
 /datum/construction/mecha/durand_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/durand_torso),//1
-		list("key"=/obj/item/mecha_parts/part/durand_left_arm),//2
-		list("key"=/obj/item/mecha_parts/part/durand_right_arm),//3
-		list("key"=/obj/item/mecha_parts/part/durand_left_leg),//4
-		list("key"=/obj/item/mecha_parts/part/durand_right_leg),//5
-		list("key"=/obj/item/mecha_parts/part/durand_head),//6
-		list("key"=/obj/item/clothing/shoes/magboots),//7
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick),//8
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick),//9
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick),//10
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick)//11
+		list("key"=/obj/item/mecha_parts/part/durand_torso, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//1
+		list("key"=/obj/item/mecha_parts/part/durand_left_arm, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//2
+		list("key"=/obj/item/mecha_parts/part/durand_right_arm, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//3
+		list("key"=/obj/item/mecha_parts/part/durand_left_leg, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//4
+		list("key"=/obj/item/mecha_parts/part/durand_right_leg, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//5
+		list("key"=/obj/item/mecha_parts/part/durand_head, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//6
+		list("key"=/obj/item/clothing/shoes/magboots, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//7
+		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//8
+		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//9
+		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//10
+		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars.")//11
 	)
 
 	spawn_result()
@@ -21,7 +21,6 @@
 		const_holder.construct = new /datum/construction/reversible/mecha/durand(const_holder)
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "durand0"
-		const_holder.desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."
 		const_holder.density = 1
 		spawn()
 			qdel(src)
@@ -38,7 +37,7 @@
 		//2
 		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/plating,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="External armor is installed, just needs the internal reunforcement plate mod."),
+			"desc"="External armor is installed, just needs the internal reinforcement plate mod."),
 		//3
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
@@ -46,7 +45,7 @@
 		//4
 		list("key"=/obj/item/stack/material/glass/reinforced,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="External armor is installed and needs glass a to be installed."),
+			"desc"="External armor is installed and needs reinforced glass a to be installed."),
 		//5
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
@@ -171,7 +170,6 @@
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand0"
 				else
 					usr.visible_message(
@@ -185,7 +183,6 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand1"
 				else
 					usr.visible_message(
@@ -200,7 +197,6 @@
 						"[usr] connects [holder] a motor", \
 						"You connect [holder] a motor in."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand1"
 				else
 					usr.visible_message(
@@ -216,7 +212,6 @@
 						"You connect [holder] to the hydraulic systems."
 					)
 					holder.icon_state = "durand1"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] a high power motor", \
@@ -283,7 +278,6 @@
 						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand5"
 				else
 					usr.visible_message(
@@ -311,7 +305,6 @@
 						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand7"
 				else
 					usr.visible_message(
@@ -339,7 +332,6 @@
 						"[usr] installs the weapon control module into [holder].", \
 						"You install the weapon control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand9"
 				else
 					usr.visible_message(
@@ -453,7 +445,6 @@
 						"You install internal armor layer to [holder]."
 					)
 					holder.icon_state = "durand15"
-					qdel(used_atom)
 				else
 					new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(get_turf(holder))
 					usr.visible_message(
@@ -481,7 +472,6 @@
 						"You bolt down armor plating [holder]."
 					)
 					holder.icon_state = "durand15"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes a internal armor plate.", \
@@ -508,7 +498,6 @@
 						"[usr] installs durand Armour Plates to [holder].", \
 						"You install durand Armour Plates to [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand18"
 				else
 					usr.visible_message(
@@ -562,7 +551,6 @@
 						"[usr] screws down the glass case on [holder].", \
 						"You fasten the glass to [holder]."
 					)
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] unfastens durand Armour Plates.", \

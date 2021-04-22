@@ -3,11 +3,11 @@
 
 /datum/construction/mecha/ripley_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/ripley_torso),//1
-		list("key"=/obj/item/mecha_parts/part/ripley_left_arm),//2
-		list("key"=/obj/item/mecha_parts/part/ripley_right_arm),//3
-		list("key"=/obj/item/mecha_parts/part/ripley_left_leg),//4
-		list("key"=/obj/item/mecha_parts/part/ripley_right_leg)//5
+		list("key"=/obj/item/mecha_parts/part/ripley_torso, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."),//1
+		list("key"=/obj/item/mecha_parts/part/ripley_left_arm, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."),//2
+		list("key"=/obj/item/mecha_parts/part/ripley_right_arm, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."),//3
+		list("key"=/obj/item/mecha_parts/part/ripley_left_leg, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."),//4
+		list("key"=/obj/item/mecha_parts/part/ripley_right_leg, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs.")//5
 	)
 
 	spawn_result()
@@ -17,7 +17,6 @@
 		const_holder.icon_state = "ripley0"
 		const_holder.density = 1
 		const_holder.cut_overlays()
-		const_holder.desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."
 		spawn()
 			qdel(src)
 		return
@@ -129,6 +128,7 @@
 					"You openn [holder] internal cover box."
 				)
 				holder.icon_state = "ripley1"
+				qdel(used_atom)
 			if(21)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -136,7 +136,6 @@
 					"You adds in [holder]'s cell box systems."
 					)
 					holder.icon_state = "ripley0"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] screws back [holder] cover.", \
@@ -150,7 +149,6 @@
 					"You adds in [holder]'s hydraulic systems."
 					)
 					holder.icon_state = "ripley1"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems.", \
@@ -165,7 +163,6 @@
 						"You connect [holder] hydraulic systems."
 					)
 					holder.icon_state = "ripley1"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems.", \
@@ -233,7 +230,6 @@
 						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "ripley5"
 				else
 					usr.visible_message(
@@ -261,7 +257,6 @@
 						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "ripley7"
 				else
 					usr.visible_message(
@@ -357,7 +352,6 @@
 						"You secure external reinforced armor layer."
 					)
 					holder.icon_state = "ripley13"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] pries external armor layer from [holder].", \
@@ -371,7 +365,6 @@
 					"[usr] adds in a [holder]", \
 					"You adds in [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "fireripley11"
 				else
 					usr.visible_message(

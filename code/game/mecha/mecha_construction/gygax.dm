@@ -3,14 +3,14 @@
 
 /datum/construction/mecha/gygax_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/gygax_torso),//1
-		list("key"=/obj/item/mecha_parts/part/gygax_left_arm),//2
-		list("key"=/obj/item/mecha_parts/part/gygax_right_arm),//3
-		list("key"=/obj/item/mecha_parts/part/gygax_left_leg),//4
-		list("key"=/obj/item/mecha_parts/part/gygax_right_leg),//5
-		list("key"=/obj/item/mecha_parts/part/gygax_head),//6
-		list("key"=/obj/item/weapon/tool_upgrade/productivity/antistaining),//7 the idea is that its like an oil for its movement
-		list("key"=/obj/item/weapon/stock_parts/smes_coil)//8 Lots of power and connections to legs
+		list("key"=/obj/item/mecha_parts/part/gygax_torso, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//1
+		list("key"=/obj/item/mecha_parts/part/gygax_left_arm, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//2
+		list("key"=/obj/item/mecha_parts/part/gygax_right_arm, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//3
+		list("key"=/obj/item/mecha_parts/part/gygax_left_leg, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//4
+		list("key"=/obj/item/mecha_parts/part/gygax_right_leg, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//5
+		list("key"=/obj/item/mecha_parts/part/gygax_head, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//6
+		list("key"=/obj/item/weapon/tool_upgrade/productivity/antistaining, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//7 the idea is that its like an oil for its movement
+		list("key"=/obj/item/weapon/stock_parts/smes_coil, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils.")//8 Lots of power and connections to legs
 	)
 
 	spawn_result()
@@ -19,7 +19,6 @@
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "gygax0"
 		const_holder.density = 1
-		const_holder.desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."
 		spawn()
 			qdel(src)
 		return
@@ -43,7 +42,7 @@
 		//4
 		list("key"=/obj/item/stack/material/glass/reinforced,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="External armor is installed and needs glass a to be installed."),
+			"desc"="External armor is installed and needs reinforced glass a to be installed."),
 		//5
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
@@ -161,6 +160,7 @@
 					"[usr] opens [holder] internal cover box", \
 					"You openn [holder] internal cover box."
 				)
+				qdel(used_atom)
 				holder.icon_state = "gygax1"
 			if(29)
 				if(diff==FORWARD)
@@ -168,7 +168,6 @@
 					"[usr] adds in [holder] cell box systems", \
 					"You adds in [holder]'s cell box systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax0"
 				else
 					usr.visible_message(
@@ -182,7 +181,6 @@
 					"[usr] adds in [holder] hydraulic systems", \
 					"You adds in [holder]'s hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax1"
 				else
 					usr.visible_message(
@@ -197,7 +195,6 @@
 						"[usr] connects [holder] hydraulic systems", \
 						"You connect [holder] hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax1"
 				else
 					usr.visible_message(
@@ -279,7 +276,6 @@
 						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax5"
 				else
 					usr.visible_message(
@@ -307,7 +303,6 @@
 						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax7"
 				else
 					usr.visible_message(
@@ -335,7 +330,6 @@
 						"[usr] installs the weapon control module into [holder].", \
 						"You install the weapon control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax9"
 				else
 					usr.visible_message(
@@ -448,7 +442,6 @@
 						"[usr] installs internal armor layer to [holder].", \
 						"You install internal armor layer to [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax15"
 				else
 					new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(get_turf(holder))
@@ -476,7 +469,6 @@
 						"[usr] bolts down armor plates to [holder].", \
 						"You bolt down armor plating [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax15"
 				else
 					usr.visible_message(
@@ -504,7 +496,6 @@
 						"[usr] installs Gygax Armour Plates to [holder].", \
 						"You install Gygax Armour Plates to [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax18"
 				else
 					usr.visible_message(
@@ -558,7 +549,6 @@
 						"[usr] screws down the glass case on [holder].", \
 						"You fasten the glass to [holder]."
 					)
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] installs a booster into the controles.", \
