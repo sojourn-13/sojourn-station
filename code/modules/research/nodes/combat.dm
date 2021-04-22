@@ -272,4 +272,5 @@
 	cost = 5000
 
 	unlocks_designs = list(/datum/design/research/item/clothing/medarmor,
-							/datum/design/research/item/clothing/armor_laserproof)
+							/datum/design/research/item/clothing/armor_laserproof,
+							/datum/design/research/item/clothing/rig_advhazmat)
