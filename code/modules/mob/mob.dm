@@ -1103,20 +1103,26 @@ mob/proc/yank_out_object()
 	"}
 	// Perks
 	var/list/Plist = list()
+	var/column = 1
 	for(var/perk in stats.perks)
 		var/datum/perk/P = perk
 		//var/filename = sanitizeFileName("[P.type].png")
 		//var/asset = asset_cache.cache[filename] // this is definitely a hack, but getAtomCacheFilename accepts only atoms for no fucking reason whatsoever.
 		//if(asset)
-		Plist += "<td valign='middle'></td><td><span style='text-align:center'>[P.name]<br>[P.desc]</span></td>"
+		if( column == 1)
+			Plist += "<td valign='middle'><span style='text-align:center'>[P.name]<br>[P.desc]</span></td>"
+			column = 2
+		else
+			Plist += "<td valign='middle'><span style='text-align:center'>[P.name]<br>[P.desc]</span></td><tr></tr>"
+			column = 1
 	data += {"
 		<table width=80%>
 			<th colspan=2>Perks</th>
-			<tr>[Plist.Join("</tr><tr>")]</tr>
+			<tr>[Plist.Join()]</tr>
 		</table>
 	"}
 
-	var/datum/browser/B = new(src, "StatsBrowser","[user == src ? "Your stats:" : "[name]'s stats"]", 1000, 345)
+	var/datum/browser/B = new(src, "StatsBrowser","[user == src ? "Your stats:" : "[name]'s stats"]", 1000, 400)
 	B.set_content(data)
 	B.set_window_options("can_minimize=0")
 	B.open()
