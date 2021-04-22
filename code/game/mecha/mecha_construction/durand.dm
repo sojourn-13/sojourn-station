@@ -37,7 +37,7 @@
 		//2
 		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/plating,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="External armor is installed, just needs the internal reunforcement plate mod."),
+			"desc"="External armor is installed, just needs the internal reinforcement plate mod."),
 		//3
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
