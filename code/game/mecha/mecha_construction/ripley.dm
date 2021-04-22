@@ -128,6 +128,7 @@
 					"You openn [holder] internal cover box."
 				)
 				holder.icon_state = "ripley1"
+				qdel(used_atom)
 			if(21)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -164,7 +165,6 @@
 						"You connect [holder] hydraulic systems."
 					)
 					holder.icon_state = "ripley1"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems.", \
@@ -219,6 +219,7 @@
 						"You adjust the wiring of [holder]."
 					)
 					holder.icon_state = "ripley4"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the wiring from [holder].", \
@@ -232,7 +233,6 @@
 						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "ripley5"
 				else
 					usr.visible_message(
@@ -247,6 +247,7 @@
 						"You secure the mainboard."
 					)
 					holder.icon_state = "ripley6"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the central control module from [holder].", \
@@ -260,7 +261,6 @@
 						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "ripley7"
 				else
 					usr.visible_message(
@@ -343,6 +343,7 @@
 						"You install external reinforced armor layer to [holder]."
 					)
 					holder.icon_state = "ripley12"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] cuts internal armor layer from [holder].", \
@@ -356,7 +357,6 @@
 						"You secure external reinforced armor layer."
 					)
 					holder.icon_state = "ripley13"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] pries external armor layer from [holder].", \

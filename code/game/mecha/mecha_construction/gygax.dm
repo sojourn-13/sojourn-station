@@ -42,7 +42,7 @@
 		//4
 		list("key"=/obj/item/stack/material/glass/reinforced,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="External armor is installed and needs glass a to be installed."),
+			"desc"="External armor is installed and needs reinforced glass a to be installed."),
 		//5
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
@@ -160,6 +160,7 @@
 					"[usr] opens [holder] internal cover box", \
 					"You openn [holder] internal cover box."
 				)
+				qdel(used_atom)
 				holder.icon_state = "gygax1"
 			if(29)
 				if(diff==FORWARD)
@@ -196,7 +197,6 @@
 						"[usr] connects [holder] hydraulic systems", \
 						"You connect [holder] hydraulic systems."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax1"
 				else
 					usr.visible_message(
@@ -251,6 +251,7 @@
 						"[usr] adds the wiring to [holder].", \
 						"You add the wiring to [holder]."
 					)
+					qdel(used_atom)
 					holder.icon_state = "gygax3"
 				else
 					usr.visible_message(
@@ -434,6 +435,7 @@
 						"You secure internal armor layer."
 					)
 					holder.icon_state = "gygax16"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] pries internal armor layer from [holder].", \
@@ -447,7 +449,6 @@
 						"[usr] installs internal armor layer to [holder].", \
 						"You install internal armor layer to [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax15"
 				else
 					new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(get_turf(holder))
@@ -463,6 +464,7 @@
 						"You bolt down armor plating [holder]."
 					)
 					holder.icon_state = "gygax15"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes a internal armor plate.", \
@@ -475,7 +477,6 @@
 						"[usr] bolts down armor plates to [holder].", \
 						"You bolt down armor plating [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax15"
 				else
 					usr.visible_message(
@@ -491,6 +492,7 @@
 						"You weld the internal armor layer to [holder]."
 					)
 					holder.icon_state = "gygax17"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] unfastens the internal armor layer.", \
@@ -503,7 +505,6 @@
 						"[usr] installs Gygax Armour Plates to [holder].", \
 						"You install Gygax Armour Plates to [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "gygax18"
 				else
 					usr.visible_message(
@@ -544,6 +545,7 @@
 						"[usr] screws down the glass case on [holder].", \
 						"You fasten the glass to [holder]."
 					)
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes glass form.", \
@@ -557,7 +559,6 @@
 						"[usr] screws down the glass case on [holder].", \
 						"You fasten the glass to [holder]."
 					)
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] installs a booster into the controles.", \

@@ -136,6 +136,7 @@
 					"You openn [holder] internal cover box."
 				)
 				holder.icon_state = "firefighter1"
+				qdel(used_atom)
 			if(23)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -173,6 +174,7 @@
 						"You connect [holder] hydraulic systems."
 					)
 					holder.icon_state = "firefighter1"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] hydraulic systems", \
@@ -227,6 +229,7 @@
 						"You adjust the wiring of [holder]."
 					)
 					holder.icon_state = "firefighter4"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the wiring from [holder].", \
@@ -240,7 +243,6 @@
 						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter5"
 				else
 					usr.visible_message(
@@ -255,6 +257,7 @@
 						"You secure the mainboard."
 					)
 					holder.icon_state = "firefighter6"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the central control module from [holder].", \
@@ -268,7 +271,6 @@
 						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefighter7"
 				else
 					usr.visible_message(
@@ -297,6 +299,7 @@
 						"You install internal armor layer to [holder]."
 					)
 					holder.icon_state = "firefighter9"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] unfastens the peripherals control module.", \
@@ -379,6 +382,7 @@
 						"You install external reinforced armor layer to [holder]."
 					)
 					holder.icon_state = "firefighter12"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] cuts internal armor layer from [holder].", \
@@ -405,7 +409,6 @@
 					"[usr] adds in a [holder]",
 					"You adds in [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "firefirefighter11"
 				else
 					usr.visible_message(

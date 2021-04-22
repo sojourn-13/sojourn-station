@@ -45,7 +45,7 @@
 		//4
 		list("key"=/obj/item/stack/material/glass/reinforced,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="External armor is installed and needs glass a to be installed."),
+			"desc"="External armor is installed and needs reinforced glass a to be installed."),
 		//5
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
@@ -215,7 +215,6 @@
 						"You connect [holder] to the hydraulic systems."
 					)
 					holder.icon_state = "durand1"
-					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] takes out [holder] a high power motor", \
@@ -269,6 +268,7 @@
 						"You adjust the wiring of [holder]."
 					)
 					holder.icon_state = "durand4"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the wiring from [holder].", \
@@ -282,7 +282,6 @@
 						"[usr] installs the central control module into [holder].", \
 						"You install the central computer mainboard into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand5"
 				else
 					usr.visible_message(
@@ -297,6 +296,7 @@
 						"You secure the mainboard."
 					)
 					holder.icon_state = "durand6"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the central control module from [holder].", \
@@ -310,7 +310,6 @@
 						"[usr] installs the peripherals control module into [holder].", \
 						"You install the peripherals control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand7"
 				else
 					usr.visible_message(
@@ -325,6 +324,7 @@
 						"You secure the peripherals control module."
 					)
 					holder.icon_state = "durand8"
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] removes the peripherals control module from [holder].", \
@@ -338,7 +338,6 @@
 						"[usr] installs the weapon control module into [holder].", \
 						"You install the weapon control module into [holder]."
 					)
-					qdel(used_atom)
 					holder.icon_state = "durand9"
 				else
 					usr.visible_message(
