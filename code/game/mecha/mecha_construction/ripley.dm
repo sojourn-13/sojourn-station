@@ -3,11 +3,11 @@
 
 /datum/construction/mecha/ripley_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/ripley_torso),//1
-		list("key"=/obj/item/mecha_parts/part/ripley_left_arm),//2
-		list("key"=/obj/item/mecha_parts/part/ripley_right_arm),//3
-		list("key"=/obj/item/mecha_parts/part/ripley_left_leg),//4
-		list("key"=/obj/item/mecha_parts/part/ripley_right_leg)//5
+		list("key"=/obj/item/mecha_parts/part/ripley_torso, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."),//1
+		list("key"=/obj/item/mecha_parts/part/ripley_left_arm, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."),//2
+		list("key"=/obj/item/mecha_parts/part/ripley_right_arm, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."),//3
+		list("key"=/obj/item/mecha_parts/part/ripley_left_leg, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."),//4
+		list("key"=/obj/item/mecha_parts/part/ripley_right_leg, desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs.")//5
 	)
 
 	spawn_result()
@@ -17,7 +17,6 @@
 		const_holder.icon_state = "ripley0"
 		const_holder.density = 1
 		const_holder.cut_overlays()
-		const_holder.desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."
 		spawn()
 			qdel(src)
 		return

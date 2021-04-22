@@ -2,21 +2,19 @@
 
 /datum/construction/mecha/odysseus_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/odysseus_torso),//1
-		list("key"=/obj/item/mecha_parts/part/odysseus_head),//2
-		list("key"=/obj/item/mecha_parts/part/odysseus_left_arm),//3
-		list("key"=/obj/item/mecha_parts/part/odysseus_right_arm),//4
-		list("key"=/obj/item/mecha_parts/part/odysseus_left_leg),//5
-		list("key"=/obj/item/mecha_parts/part/odysseus_right_leg)//6
+		list("key"=/obj/item/mecha_parts/part/odysseus_torso, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//1
+		list("key"=/obj/item/mecha_parts/part/odysseus_head, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//2
+		list("key"=/obj/item/mecha_parts/part/odysseus_left_arm, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//3
+		list("key"=/obj/item/mecha_parts/part/odysseus_right_arm, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//4
+		list("key"=/obj/item/mecha_parts/part/odysseus_left_leg, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//5
+		list("key"=/obj/item/mecha_parts/part/odysseus_right_leg, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head.")//6
 	)
-
 	spawn_result()
 		var/obj/item/mecha_parts/chassis/const_holder = holder
 		const_holder.construct = new /datum/construction/reversible/mecha/odysseus(const_holder)
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "odysseus0"
 		const_holder.density = 1
-		const_holder.desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."
 		spawn()
 			qdel(src)
 		return

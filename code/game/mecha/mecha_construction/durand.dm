@@ -3,17 +3,17 @@
 
 /datum/construction/mecha/durand_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/durand_torso),//1
-		list("key"=/obj/item/mecha_parts/part/durand_left_arm),//2
-		list("key"=/obj/item/mecha_parts/part/durand_right_arm),//3
-		list("key"=/obj/item/mecha_parts/part/durand_left_leg),//4
-		list("key"=/obj/item/mecha_parts/part/durand_right_leg),//5
-		list("key"=/obj/item/mecha_parts/part/durand_head),//6
-		list("key"=/obj/item/clothing/shoes/magboots),//7
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick),//8
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick),//9
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick),//10
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick)//11
+		list("key"=/obj/item/mecha_parts/part/durand_torso, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//1
+		list("key"=/obj/item/mecha_parts/part/durand_left_arm, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//2
+		list("key"=/obj/item/mecha_parts/part/durand_right_arm, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//3
+		list("key"=/obj/item/mecha_parts/part/durand_left_leg, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//4
+		list("key"=/obj/item/mecha_parts/part/durand_right_leg, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//5
+		list("key"=/obj/item/mecha_parts/part/durand_head, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//6
+		list("key"=/obj/item/clothing/shoes/magboots, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//7
+		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//8
+		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//9
+		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//10
+		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars.")//11
 	)
 
 	spawn_result()
@@ -21,7 +21,6 @@
 		const_holder.construct = new /datum/construction/reversible/mecha/durand(const_holder)
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "durand0"
-		const_holder.desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."
 		const_holder.density = 1
 		spawn()
 			qdel(src)

@@ -3,16 +3,16 @@
 //Hardest mech to made on start do to its components being rather costly and unable to be given back making it a investement
 /datum/construction/mecha/phazon_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/phazon_torso),//1
-		list("key"=/obj/item/mecha_parts/part/phazon_left_arm),//2
-		list("key"=/obj/item/mecha_parts/part/phazon_right_arm),//3
-		list("key"=/obj/item/mecha_parts/part/phazon_left_leg),//4
-		list("key"=/obj/item/mecha_parts/part/phazon_right_leg),//5
-		list("key"=/obj/item/mecha_parts/part/phazon_head), //6,
-		list("key"=/obj/item/bluespace_crystal/artificial), //7,
-		list("key"=/obj/item/weapon/stock_parts/smes_coil/super_capacity), //8,
-		list("key"=/obj/item/weapon/gun_upgrade/mechanism/overdrive), //9,
-		list("key"=/obj/item/weapon/cell/large/moebius/nuclear) //10
+		list("key"=/obj/item/mecha_parts/part/phazon_torso, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//1
+		list("key"=/obj/item/mecha_parts/part/phazon_left_arm, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//2
+		list("key"=/obj/item/mecha_parts/part/phazon_right_arm, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//3
+		list("key"=/obj/item/mecha_parts/part/phazon_left_leg, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//4
+		list("key"=/obj/item/mecha_parts/part/phazon_right_leg, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//5
+		list("key"=/obj/item/mecha_parts/part/phazon_head, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //6,
+		list("key"=/obj/item/bluespace_crystal/artificial, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //7,
+		list("key"=/obj/item/weapon/stock_parts/smes_coil/super_capacity, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //8,
+		list("key"=/obj/item/weapon/gun_upgrade/mechanism/overdrive, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //9,
+		list("key"=/obj/item/weapon/cell/large/moebius/nuclear, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil.") //10
 	)
 
 	spawn_result()
@@ -21,7 +21,6 @@
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "phazon0"
 		const_holder.density = 1
-		const_holder.desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."
 		spawn()
 			qdel(src)
 		return

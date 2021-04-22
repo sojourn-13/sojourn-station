@@ -3,12 +3,12 @@
 
 /datum/construction/mecha/firefighter_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/ripley_torso),//1
-		list("key"=/obj/item/mecha_parts/part/ripley_left_arm),//2
-		list("key"=/obj/item/mecha_parts/part/ripley_right_arm),//3
-		list("key"=/obj/item/mecha_parts/part/ripley_left_leg),//4
-		list("key"=/obj/item/mecha_parts/part/ripley_right_leg),//5
-		list("key"=/obj/item/clothing/suit/fire)//6
+		list("key"=/obj/item/mecha_parts/part/ripley_torso, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//1
+		list("key"=/obj/item/mecha_parts/part/ripley_left_arm, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//2
+		list("key"=/obj/item/mecha_parts/part/ripley_right_arm, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//3
+		list("key"=/obj/item/mecha_parts/part/ripley_left_leg, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//4
+		list("key"=/obj/item/mecha_parts/part/ripley_right_leg, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."),//5
+		list("key"=/obj/item/clothing/suit/fire, desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit.")//6
 	)
 
 	spawn_result()
@@ -17,7 +17,6 @@
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "firefirefighter0"
 		const_holder.density = 1
-		const_holder.desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."
 		spawn()
 			qdel(src)
 		return
