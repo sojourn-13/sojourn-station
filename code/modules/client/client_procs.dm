@@ -361,7 +361,9 @@
 		'html/panels.css',
 		'html/images/loading.gif',
 		'html/images/ntlogo.png',
-		'html/images/talisman.png'
+		'html/images/talisman.png',
+		'html/images/nadezhdalogo.png',
+		'html/images/lonestarlogo.png'
 		)
 
 	spawn (10) //removing this spawn causes all clients to not get verbs.
