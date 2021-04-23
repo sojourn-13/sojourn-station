@@ -14,7 +14,7 @@
 	sharp = FALSE
 	edge = TRUE
 	max_health = 500
-	tool_qualities = list(QUALITY_SHOVELING = 30, QUALITY_DIGGING = 30, QUALITY_EXCAVATION = 10, QUALITY_HAMMERING = 10)
+	tool_qualities = list(QUALITY_SHOVELING = 35, QUALITY_DIGGING = 35, QUALITY_EXCAVATION = 10, QUALITY_HAMMERING = 15)
 
 /obj/item/weapon/tool/shovel/improvised
 	name = "junk shovel"
@@ -33,7 +33,7 @@
 	w_class = ITEM_SIZE_SMALL
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6)
-	tool_qualities = list(QUALITY_SHOVELING = 40, QUALITY_DIGGING = 40, QUALITY_PRYING = 25, QUALITY_HAMMERING = 15, QUALITY_CUTTING = 10, QUALITY_SAWING = 5)
+	tool_qualities = list(QUALITY_SHOVELING = 45, QUALITY_DIGGING = 45, QUALITY_PRYING = 30, QUALITY_HAMMERING = 15, QUALITY_CUTTING = 10, QUALITY_SAWING = 5)
 	workspeed = 1.2
 
 /obj/item/weapon/tool/shovel/onestar_shovel
@@ -43,8 +43,8 @@
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6, MATERIAL_PLATINUM = 3)
-	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 40, QUALITY_EXCAVATION = 40)
-	workspeed = 1.6
+	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 45, QUALITY_EXCAVATION = 45)
+	workspeed = 1.4
 	degradation = 0.8
 	max_upgrades = 2
 
@@ -69,7 +69,7 @@
 	throwforce = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 6,  MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
-	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 40, QUALITY_EXCAVATION = 20, QUALITY_HAMMERING = 15)
+	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 45, QUALITY_EXCAVATION = 20, QUALITY_HAMMERING = 15)
 	workspeed = 1.3
 	use_power_cost = 0.8
 	degradation = 0.7

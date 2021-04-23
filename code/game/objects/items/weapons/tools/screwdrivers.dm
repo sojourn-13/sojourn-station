@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_TINY
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1)
 	attack_verb = list("stabbed")
-	tool_qualities = list(QUALITY_SCREW_DRIVING = 30, QUALITY_BONE_SETTING = 10)
+	tool_qualities = list(QUALITY_SCREW_DRIVING = 35, QUALITY_BONE_SETTING = 10)
 
 /obj/item/weapon/tool/screwdriver/bs
 	name = "bluespace screwdriver"

@@ -39,7 +39,7 @@
 	item_state = "arc_welder"
 	w_class = ITEM_SIZE_NORMAL
 	worksound = WORKSOUND_WELDING
-	switched_on_qualities = list(QUALITY_WELDING = 40, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 15, QUALITY_CAUTERIZING = 10)
+	switched_on_qualities = list(QUALITY_WELDING = 45, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 15, QUALITY_CAUTERIZING = 10)
 	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 3)
 	price_tag = 1000 //valuable given its design
 	use_power_cost = 1.2

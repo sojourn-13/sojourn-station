@@ -10,7 +10,7 @@
 	attack_verb = list("pinched", "nipped")
 	sharp = TRUE
 	edge = TRUE
-	tool_qualities = list(QUALITY_WIRE_CUTTING = 30, QUALITY_RETRACTING = 15, QUALITY_BONE_SETTING = 15)
+	tool_qualities = list(QUALITY_WIRE_CUTTING = 35, QUALITY_RETRACTING = 15, QUALITY_BONE_SETTING = 15)
 
 /obj/item/weapon/tool/wirecutters/bs
 	name = "bluespace wire cutters"
@@ -35,7 +35,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 1)
-	tool_qualities = list(QUALITY_WIRE_CUTTING = 40, QUALITY_CUTTING = 30)
+	tool_qualities = list(QUALITY_WIRE_CUTTING = 45, QUALITY_CUTTING = 30)
 	degradation = 0.7
 	max_upgrades = 4
 
@@ -45,7 +45,7 @@
 	icon_state = "pliers"
 	edge = FALSE
 	sharp = FALSE
-	tool_qualities = list(QUALITY_WIRE_CUTTING = 10, QUALITY_CLAMPING = 20, QUALITY_BOLT_TURNING = 15, QUALITY_BONE_SETTING = 20)
+	tool_qualities = list(QUALITY_WIRE_CUTTING = 15, QUALITY_CLAMPING = 20, QUALITY_BOLT_TURNING = 15, QUALITY_BONE_SETTING = 20)
 
 /obj/item/weapon/tool/wirecutters/onestar_pliers //hybrid of wirecutters, wrench and cautery now in plat!
 	name = "Greyson Positronic pliers"
@@ -55,7 +55,7 @@
 	icon_state = "one_star_pliers"
 	edge = TRUE //We
 	sharp = TRUE//Are
-	tool_qualities = list(QUALITY_WIRE_CUTTING = 30, QUALITY_CLAMPING = 30, QUALITY_BOLT_TURNING = 30, QUALITY_BONE_SETTING = 30, QUALITY_RETRACTING = 20)
+	tool_qualities = list(QUALITY_WIRE_CUTTING = 35, QUALITY_CLAMPING = 35, QUALITY_BOLT_TURNING = 35, QUALITY_BONE_SETTING = 35, QUALITY_RETRACTING = 20)
 	degradation = 0.8 //We drgrade quickly...
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 1)
 	max_upgrades = 2

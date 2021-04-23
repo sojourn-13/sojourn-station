@@ -11,7 +11,7 @@
 	attack_verb = list("attacked", "slashed", "sawed", "cut")
 	sharp = TRUE
 	edge = TRUE
-	tool_qualities = list(QUALITY_SAWING = 30, QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 20)
+	tool_qualities = list(QUALITY_SAWING = 35, QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 20)
 	embed_mult = 1 //Serrated blades catch on bone more easily
 
 /obj/item/weapon/tool/saw/bs
@@ -24,11 +24,11 @@
 	desc = "A rather robust hand saw for cutting down trees quickly and cleanly."
 	icon_state = "one_star_metal_saw"
 	force = WEAPON_FORCE_PAINFUL
-	tool_qualities = list(QUALITY_SAWING = 50, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 25)
+	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 45, QUALITY_WIRE_CUTTING = 25)
 	degradation = 0.6
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 2)
 	max_upgrades = 2
-	workspeed = 1.4
+	workspeed = 1.2
 
 /obj/item/weapon/tool/saw/improvised
 	name = "choppa"
@@ -48,7 +48,7 @@
 	force = WEAPON_FORCE_ROBUST
 	armor_penetration = ARMOR_PEN_MODERATE
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 2)
-	tool_qualities = list(QUALITY_SAWING = 40, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 30)
+	tool_qualities = list(QUALITY_SAWING = 45, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 30)
 
 	use_power_cost = 0.45
 	suitable_cell = /obj/item/weapon/cell/small

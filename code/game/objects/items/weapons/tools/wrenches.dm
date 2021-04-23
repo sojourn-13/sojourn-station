@@ -9,7 +9,7 @@
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 3)
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
-	tool_qualities = list(QUALITY_BOLT_TURNING = 30, QUALITY_HAMMERING = 10)
+	tool_qualities = list(QUALITY_BOLT_TURNING = 35, QUALITY_HAMMERING = 10)
 
 /obj/item/weapon/tool/wrench/bs
 	name = "bluespace wrench"
@@ -31,7 +31,7 @@
 	desc = "If everything else failed - bring a bigger wrench."
 	icon_state = "big-wrench"
 	w_class = ITEM_SIZE_NORMAL
-	tool_qualities = list(QUALITY_BOLT_TURNING = 40,QUALITY_HAMMERING = 30)
+	tool_qualities = list(QUALITY_BOLT_TURNING = 45, QUALITY_HAMMERING = 30)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 1)
 	force = WEAPON_FORCE_DANGEROUS
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY

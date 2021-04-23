@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_WOOD = 2)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
-	tool_qualities = list(QUALITY_HAMMERING = 30, QUALITY_PRYING = 10)
+	tool_qualities = list(QUALITY_HAMMERING = 35, QUALITY_PRYING = 10)
 
 /obj/item/weapon/tool/hammer/powered_hammer
 	name = "powered sledgehammer"

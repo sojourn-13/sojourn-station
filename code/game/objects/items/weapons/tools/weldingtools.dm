@@ -9,7 +9,7 @@
 	worksound = WORKSOUND_WELDING
 	matter = list(MATERIAL_STEEL = 5)
 	origin_tech = list(TECH_ENGINEERING = 1)
-	switched_on_qualities = list(QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 10, QUALITY_WIRE_CUTTING = 10)
+	switched_on_qualities = list(QUALITY_WELDING = 35, QUALITY_CAUTERIZING = 10, QUALITY_WIRE_CUTTING = 10)
 
 	sparks_on_use = TRUE
 	eye_hazard = TRUE
@@ -66,7 +66,7 @@
 	icon_state = "adv_welder"
 	item_state = "adv_welder"
 	glow_color = COLOR_BLUE_LIGHT
-	switched_on_qualities = list(QUALITY_WELDING = 40, QUALITY_CAUTERIZING = 15, QUALITY_WIRE_CUTTING = 15)
+	switched_on_qualities = list(QUALITY_WELDING = 45, QUALITY_CAUTERIZING = 15, QUALITY_WIRE_CUTTING = 15)
 	max_fuel = 40
 	matter = list(MATERIAL_PLASTEEL = 5)
 	switched_on_force = WEAPON_FORCE_PAINFUL * 1.15 //Slightly more powerful, not much more so
@@ -89,11 +89,11 @@
 	item_state = "welder"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2)
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_MATERIAL = 3)
-	switched_on_qualities = list(QUALITY_WELDING = 40, QUALITY_CAUTERIZING = 20, QUALITY_WIRE_CUTTING = 20)
+	switched_on_qualities = list(QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 25, QUALITY_WIRE_CUTTING = 25)
 	glow_color = COLOR_RED_LIGHT
 	use_fuel_cost = 0.15
 	max_fuel = 20
 	degradation = 0.6
 	heat = 2750
 	max_upgrades = 2
-	workspeed = 1.7
+	workspeed = 1.5

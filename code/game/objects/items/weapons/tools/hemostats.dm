@@ -6,7 +6,7 @@
 	flags = CONDUCT
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	attack_verb = list("attacked", "pinched")
-	tool_qualities = list(QUALITY_CLAMPING = 30)
+	tool_qualities = list(QUALITY_CLAMPING = 35)
 
 /obj/item/weapon/tool/hemostat/adv
 	name = "precise hemostat"

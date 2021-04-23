@@ -24,7 +24,7 @@
 	return tool_name
 
 /datum/surgery_step/fix_organ/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
-	return BP_IS_ORGANIC(organ) && organ.is_open() && organ.damage > 0
+	return !BP_IS_ROBOTIC(organ) && organ.is_open() && organ.damage > 0 // Assisted organs also deserve to be healed.
 
 /datum/surgery_step/fix_organ/begin_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	user.visible_message(
