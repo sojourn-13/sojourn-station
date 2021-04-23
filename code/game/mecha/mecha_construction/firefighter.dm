@@ -136,7 +136,6 @@
 					"You openn [holder] internal cover box."
 				)
 				holder.icon_state = "firefighter1"
-				qdel(used_atom)
 			if(23)
 				if(diff==FORWARD)
 					usr.visible_message(

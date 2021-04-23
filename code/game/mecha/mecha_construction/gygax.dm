@@ -160,7 +160,6 @@
 					"[usr] opens [holder] internal cover box", \
 					"You openn [holder] internal cover box."
 				)
-				qdel(used_atom)
 				holder.icon_state = "gygax1"
 			if(29)
 				if(diff==FORWARD)
