@@ -96,7 +96,7 @@
 
 /obj/structure/closet/secure_closet/personal/prospector/populate_contents()
 	new /obj/item/device/radio/headset/headset_pro(src)
-	if(prob(80))
+	if(prob(70))
 		new /obj/item/weapon/storage/backpack/satchel/industrial(src)
 	else if(prob(80))
 		new /obj/item/weapon/storage/backpack/industrial(src)
@@ -107,7 +107,7 @@
 	else
 		new /obj/item/weapon/storage/backpack/holding(src)
 	//armor
-	if(prob(90)) //Prospector has slightly better chance at getting good armor
+	if(prob(80)) //Prospector has slightly better chance at getting good armor
 		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
 		new /obj/item/clothing/gloves/thick/handmade(src)
 	else if(prob(80))
@@ -172,7 +172,7 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 	//melee
-	if(prob(90)) //Mostly standard issue machete with a holster but you have a small chance to get a much better item.
+	if(prob(80)) //Mostly standard issue machete with a holster but you have a small chance to get a much better item.
 		new /obj/item/clothing/accessory/holster/saber/machete(src)
 		new /obj/item/weapon/tool/sword/machete(src)
 	else if(prob(60))
@@ -202,7 +202,7 @@
 
 /obj/structure/closet/secure_closet/personal/salvager/populate_contents()
 	new /obj/item/device/radio/headset/headset_pro(src)
-	if(prob(80))
+	if(prob(70))
 		new /obj/item/weapon/storage/backpack/satchel/medical(src)
 	else if(prob(65))
 		new /obj/item/weapon/storage/backpack/medical(src)
@@ -213,7 +213,7 @@
 	else
 		new /obj/item/weapon/storage/backpack/holding(src)
 	//armor
-	if(prob(90)) //Low chance but if you get lucky you get an immediate step up in armor.
+	if(prob(80)) //Low chance but if you get lucky you get an immediate step up in armor.
 		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
 		new /obj/item/clothing/gloves/thick/handmade(src)
 	else
@@ -254,7 +254,7 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 	//melee
-	if(prob(90)) //Mostly standard issue machete with a holster but you have a small chance to get a much better item.
+	if(prob(80)) //Mostly standard issue machete with a holster but you have a small chance to get a much better item.
 		new /obj/item/clothing/accessory/holster/saber/machete(src)
 		new /obj/item/weapon/tool/sword/machete(src)
 	else if(prob(60))
