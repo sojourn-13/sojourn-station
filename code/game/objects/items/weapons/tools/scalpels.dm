@@ -15,14 +15,14 @@
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 10)
+	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_WIRE_CUTTING = 10)
 
 /obj/item/weapon/tool/scalpel/advanced
 	name = "advanced scalpel"
 	desc = "Made of more expensive materials, sharper and generally more reliable."
 	icon_state = "scalpel_t4"
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 1)
-	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 10)
+	tool_qualities = list(QUALITY_CUTTING = 45, QUALITY_WIRE_CUTTING = 10)
 	degradation = 0.12
 	max_upgrades = 4
 
@@ -34,7 +34,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_MODERATE
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 4)
-	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 20, QUALITY_LASER_CUTTING = 40, QUALITY_CAUTERIZING = 20)
+	tool_qualities = list(QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 20, QUALITY_LASER_CUTTING = 60, QUALITY_CAUTERIZING = 20)
 	degradation = 0.11
 	use_power_cost = 0.12
 	suitable_cell = /obj/item/weapon/cell/small

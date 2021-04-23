@@ -395,10 +395,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/smokable/cigarette/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
 
-	if(istype(W, /obj/item/weapon/melee/energy/sword))
-		var/obj/item/weapon/melee/energy/sword/S = W
+	if(istype(W, /obj/item/weapon/melee/energy))
+		var/obj/item/weapon/melee/energy/S = W
 		if(S.active)
 			light(SPAN_WARNING("[user] swings their [W], barely missing their nose. They light their [name] in the process."))
+			playsound(loc, 'sound/weapons/blade1.ogg', 50, 1)
 
 	return
 

@@ -2343,7 +2343,7 @@
 		to_chat(user, SPAN_NOTICE("You tear \the [src] open."))
 		return
 	if(warm)
-		to_chat(user, SPAN_NOTICE("You are pretty sure \the [src] can't be heated again."))
+		to_chat(user, SPAN_NOTICE("You already crushed \the [src] and it's still heating up, be patient."))
 		return
 	user.visible_message(
 		SPAN_NOTICE("[user] crushes \the [src] package."),
@@ -2361,16 +2361,13 @@
 		to_chat(user, SPAN_WARNING("You viciously open \the [src] with your teeth, you animal."))
 
 /obj/item/weapon/reagent_containers/food/snacks/mre/proc/heat()
-	if(warm == TRUE)
-		to_chat(usr, SPAN_WARNING("You already crushed this!"))
-		return
 	for(var/reagent in heated_reagents)
 		reagents.add_reagent(reagent, heated_reagents[reagent])
 	bitesize = 6
-	icon_state = "[initial(icon_state)]_hot"
+	icon_state = "mre_hot"
 
 /obj/item/weapon/reagent_containers/food/snacks/mre/proc/open(mob/user)
-	icon_state = "[initial(icon_state)]_open"
+	icon_state = "mre_open"
 	desc = "A plethora of steaming beans mixed with meat, ready for consumption."
 	open = TRUE
 	reagent_flags |= REFILLABLE

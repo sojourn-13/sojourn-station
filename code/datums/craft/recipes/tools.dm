@@ -132,7 +132,7 @@
 	result = /obj/item/weapon/tool/tape_roll/web
 	steps = list(
 		list(/obj/item/stack/medical/bruise_pack/handmade, 3, "time" = 50),
-		list(/obj/effect/spider/stickyweb, 1, "time" = 30)
+		list(/obj/item/stack/material/silk, 1, 30)
 	)
 
 //Rods bent into wierd shapes and held together with a screw

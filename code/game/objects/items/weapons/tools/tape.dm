@@ -4,7 +4,7 @@
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "taperoll"
 	w_class = ITEM_SIZE_SMALL
-	tool_qualities = list(QUALITY_ADHESIVE = 30, QUALITY_SEALING = 30)
+	tool_qualities = list(QUALITY_ADHESIVE = 35, QUALITY_SEALING = 35)
 	matter = list(MATERIAL_PLASTIC = 3)
 	worksound = WORKSOUND_TAPE
 	use_stock_cost = 0.15

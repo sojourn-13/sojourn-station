@@ -192,7 +192,7 @@
 
 					if(W.tool_qualities[quality] >= 35)
 						var/stat_cost = round(W.tool_qualities[quality] / 15)
-						if(quality == QUALITY_BOLT_TURNING || quality == QUALITY_SCREW_DRIVING || quality == QUALITY_CUTTING)
+						if(quality == QUALITY_BOLT_TURNING || quality == QUALITY_SCREW_DRIVING || quality == QUALITY_LASER_CUTTING)
 							oddity_stats[STAT_COG] += stat_cost
 							useful = TRUE
 
@@ -204,7 +204,7 @@
 							oddity_stats[STAT_ROB] += stat_cost
 							useful = TRUE
 
-						else if (quality == QUALITY_WELDING || quality == QUALITY_WIRE_CUTTING || quality == QUALITY_SAWING || quality == QUALITY_LASER_CUTTING)
+						else if (quality == QUALITY_WELDING || quality == QUALITY_WIRE_CUTTING || quality == QUALITY_SAWING || quality == QUALITY_CUTTING) // There is no saw that doesn't have cutting quality, better for consistency and desired output.
 							oddity_stats[STAT_VIG] += stat_cost
 							useful = TRUE
 

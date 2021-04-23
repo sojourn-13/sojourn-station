@@ -11,7 +11,7 @@
 /obj/item/weapon/bananapeel/Crossed(AM as mob|obj)
 	if (isliving(AM))
 		var/mob/living/M = AM
-		M.slip("the [src.name]",4)
+		M.slip("\the [src.name]",4)
 /*
  * Soap
  */
@@ -27,7 +27,7 @@
 	throw_range = 20
 	matter = list(MATERIAL_BIOMATTER = 12)
 	var/how_many_times_we_can_pull_a_pro_clown_gamer_move = 3 //How many times we can slip something before we got to give it more water
-	var/slip_power = 3 //how powerful is are slip?
+	var/slip_power = 3 //how powerful is our slip?
 	var/clean_speed = 50 //How fast we are at cleaning
 	var/reagent_storage = 20 //How many units we store
 	var/cleaning_reagent = "cleaner" //What do we use to clean?

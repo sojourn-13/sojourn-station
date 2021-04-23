@@ -13,7 +13,7 @@
 	w_class = ITEM_SIZE_SMALL
 	throwforce = WEAPON_FORCE_HARMLESS
 	worksound = WORKSOUND_PULSING
-	tool_qualities = list(QUALITY_PULSING = 30)
+	tool_qualities = list(QUALITY_PULSING = 35)
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_MAGNET = 1, TECH_ENGINEERING = 1)
 	use_power_cost = 0.08
@@ -45,7 +45,7 @@
 	name = "advanced multitool"
 	desc = "Used for pulsing wires to test which to cut. You can use this on airlocks, APCs or even lockers to try to hack them. This version is a more bulky and uses a medium cell."
 	icon_state = "adv_multitool"
-	tool_qualities = list(QUALITY_PULSING = 50)
+	tool_qualities = list(QUALITY_PULSING = 45)
 	matter = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 5, MATERIAL_GOLD = 1)
 	origin_tech = list(TECH_MAGNET = 5, TECH_ENGINEERING = 2)
 	use_power_cost = 0.50

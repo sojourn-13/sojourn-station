@@ -557,13 +557,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 		handle_germ_effects()
 
 /obj/item/organ/external/proc/handle_germ_sync()
-	var/antibiotics = owner.reagents.get_reagent_amount("spaceacillin")
+	var/antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
 	for(var/datum/wound/W in wounds)
 		//Open wounds can become infected
 		if (owner.germ_level > W.germ_level && W.infection_check())
 			W.germ_level++
 
-	if (antibiotics < 5)
+	if (antibiotics <= 5)
 		for(var/datum/wound/W in wounds)
 			//Infected wounds raise the organ's germ level
 			if (W.germ_level > germ_level)
@@ -575,7 +575,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(germ_level < INFECTION_LEVEL_TWO)
 		return ..()
 
-	var/antibiotics = owner.reagents.get_reagent_amount("spaceacillin")
+	var/antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
 
 	if(germ_level >= INFECTION_LEVEL_TWO)
 		//spread the infection to internal organs
@@ -612,7 +612,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 				if (parent.germ_level < INFECTION_LEVEL_ONE*2 || prob(30))
 					parent.germ_level++
 
-	if(germ_level >= INFECTION_LEVEL_THREE && antibiotics < 30)	//overdosing is necessary to stop severe infections
+	if(germ_level >= INFECTION_LEVEL_THREE && antibiotics <= 15)	// Overdosing shouldn't be how you solve such severe infections
 		if (!(status & ORGAN_DEAD))
 			status |= ORGAN_DEAD
 			to_chat(owner, SPAN_NOTICE("You can't feel your [name] anymore..."))
