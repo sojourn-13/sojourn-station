@@ -14,7 +14,7 @@
 	crate_name = "special ops crate"
 	group = "Security"
 	hidden = TRUE
-/*
+
 /datum/supply_pack/sts_lrifle
 	name = "STS Carbine(.257) Weapons Crate"
 	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/lrifle,
@@ -44,8 +44,7 @@
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "STS Heavy Rifle(.408) Weapons Crate"
 	group = "Security"
-*/
-//STS rifles are no longer vended out here. Lonestar is switching to handguns.
+
 /datum/supply_pack/thirtyfive_ammo
 	name = "HS .35 Handgun Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/pistol_35,
