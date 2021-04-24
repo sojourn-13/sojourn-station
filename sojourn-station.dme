@@ -2029,6 +2029,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\dino.dm"
 #include "code\modules\mob\living\simple_animal\hostile\doomba.dm"
 #include "code\modules\mob\living\simple_animal\hostile\frog.dm"
+#include "code\modules\mob\living\simple_animal\hostile\fungi.dm"
 #include "code\modules\mob\living\simple_animal\hostile\hivebot.dm"
 #include "code\modules\mob\living\simple_animal\hostile\hostile.dm"
 #include "code\modules\mob\living\simple_animal\hostile\huntersprey.dm"

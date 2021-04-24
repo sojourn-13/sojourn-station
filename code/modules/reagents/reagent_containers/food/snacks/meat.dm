@@ -171,3 +171,9 @@
 	bitesize = 6
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("protein" = 6, "pacid" = 6)
+
+/obj/item/weapon/reagent_containers/food/snacks/meat/fungi
+	name = "fungal slab"
+	icon_state = "lizardmeat"
+	filling_color = "#E2FFDE"
+	preloaded_reagents = list("protein" = 6, "dexalinp" = 3, "haloperidol" = 4, "hyronalin" = 5, "vermicetol" = 3, "dermaline" = 2, "kelotane" = 2, "peridaxon" = 2, "varceptol" = 3, "meralyne" = 3, "tricordrazine" = 4, "oxycodone" = 5)
