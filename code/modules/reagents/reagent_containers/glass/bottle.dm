@@ -146,3 +146,49 @@
 	desc = "A small bottle. Contains a derived extract of blood mixed with tahca horns, a powerful anti-viral for dealing with diseases and infection when injected into the bloodstream."
 	icon_state = "bottle"
 	preloaded_reagents = list("tahcacillin" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic
+	name = "resin bottle"
+	desc = "A small bottle made of organic resin with a small bark-like lid."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle_b"
+	item_state = "atoxinbottle"
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(5,10,15,25,30,60)
+	volume = 60
+	filling_states = "20;40;60;80;100"
+	label_icon_state = "bottle_b_labeled"
+	lid_icon_state = "lid_bottle_b"
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/dexalinp
+	preloaded_reagents = list("dexalinp" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/haloperidol
+	preloaded_reagents = list("haloperidol" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/hyronalin
+	preloaded_reagents = list("hyronalin" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/vermicetol
+	preloaded_reagents = list("vermicetol" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/dermaline
+	preloaded_reagents = list("dermaline" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/kelotane
+	preloaded_reagents = list("kelotane" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/peridaxon
+	preloaded_reagents = list("peridaxon" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/varceptol
+	preloaded_reagents = list("varceptol" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/oxycodone
+	preloaded_reagents = list("oxycodone" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/tricordrazine
+	preloaded_reagents = list("tricordrazine" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/meralyne
+	preloaded_reagents = list("meralyne" = 60)
