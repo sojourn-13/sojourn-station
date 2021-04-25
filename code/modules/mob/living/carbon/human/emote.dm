@@ -59,13 +59,13 @@
 				use_sound = 'sound/machines/synth_no.ogg'
 			else if(act == "rcough")
 				display_msg = "emits a robotic cough"
-				if(get_gender() == FEMALE)
+				if(get_sex() == FEMALE)
 					use_sound = pick('sound/effects/mob_effects/f_machine_cougha.ogg','sound/effects/mob_effects/f_machine_coughb.ogg')
 				else
 					use_sound = pick('sound/effects/mob_effects/m_machine_cougha.ogg','sound/effects/mob_effects/m_machine_coughb.ogg', 'sound/effects/mob_effects/m_machine_coughc.ogg')
 			else if(act == "rsneeze")
 				display_msg = "emits a robotic sneeze"
-				if(get_gender() == FEMALE)
+				if(get_sex() == FEMALE)
 					use_sound = 'sound/effects/mob_effects/machine_sneeze.ogg'
 				else
 					use_sound = 'sound/effects/mob_effects/f_machine_sneeze.ogg'
@@ -239,7 +239,7 @@
 				if (!muzzled)
 					message = "chuckles."
 					m_type = 2
-					if(get_gender() == FEMALE)
+					if(get_sex() == FEMALE)
 						playsound(src, 'sound/voice/womanlaugh.ogg', 70)
 					else
 						playsound(src, 'sound/voice/manlaugh1.ogg', 70)
@@ -270,7 +270,7 @@
 				if (!muzzled)
 					message = "coughs!"
 					m_type = 2
-					if(get_gender() == FEMALE)
+					if(get_sex() == FEMALE)
 						switch(pick("1", "2"))
 							if("1")
 								playsound(src, 'sound/effects/mob_effects/f_cougha.ogg', 70)
@@ -329,7 +329,7 @@
 				if (!muzzled)
 					message = "giggles."
 					m_type = 2
-					if(get_gender() == FEMALE)
+					if(get_sex() == FEMALE)
 						playsound(src, 'sound/voice/womanlaugh.ogg', 70)
 					else
 						playsound(src, 'sound/voice/manlaugh1.ogg', 70)
@@ -420,7 +420,7 @@
 				if (!muzzled)
 					message = "laughs."
 					m_type = 2
-					if(get_gender() == FEMALE)
+					if(get_sex() == FEMALE)
 						playsound(src, 'sound/voice/womanlaugh.ogg', 70)
 					else
 						playsound(src, 'sound/voice/manlaugh1.ogg', 70)
@@ -547,7 +547,7 @@
 				if (!muzzled)
 					message = "sneezes."
 					m_type = 2
-					if(get_gender() == FEMALE)
+					if(get_sex() == FEMALE)
 						playsound(loc, 'sound/effects/mob_effects/f_sneeze.ogg', 70, 1)
 					else
 						playsound(loc, 'sound/effects/mob_effects/sneeze.ogg', 70, 0) //Please don't give it variance, you sneeze like Barry White 80% of the time.
@@ -662,7 +662,7 @@
 					m_type = 2
 					if(prob(1))
 						playsound(loc, 'sound/voice/wilhelm_scream.ogg', 80, 1)
-					else if(get_gender() == FEMALE)
+					else if(get_sex() == FEMALE)
 						switch(pick("1", "2", "3", "4", "5"))
 							if("1")
 								playsound(loc, 'sound/voice/femalescream_1.ogg', 80, 1)
@@ -690,17 +690,17 @@
 					message = "makes a very loud noise."
 					m_type = 2
 			cloud_emote = "cloud-scream"
-		
+
 		if("urah") //Emoting will NOT give you the perk's bonuses, but anyone who knows the emote can at least use it for flavor value.
 			if (miming)
 				message = "acts out a battlecry!"
 				m_type = 1
 			else if (!muzzled)
-				message = "releases a heroic roar, inspiring everyone around [get_gender() == MALE ? "him" : get_visible_gender() == FEMALE ? "her" : "them"]! URA!"
+				message = "releases a heroic roar, inspiring everyone around [gender_word("him")]! URA!"
 				m_type = 2
-				if(get_gender() == MALE)
+				if(get_sex() == MALE)
 					playsound(loc, 'sound/voice/ura.ogg', 80, 1) //URAH!!!
-				else if(get_gender() == FEMALE || PLURAL || NEUTER)
+				else if(get_sex() == FEMALE || PLURAL || NEUTER)
 					playsound(loc, 'sound/voice/femalewarcry.ogg', 80, 1)
 			else
 				message = "makes a very loud noise."

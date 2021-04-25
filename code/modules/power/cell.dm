@@ -104,16 +104,18 @@
 
 //Convenience proc for objects which may use or give
 /obj/item/weapon/cell/proc/transfer(var/amount)
-	if(amount >= 0)
+	if(amount > 0)
 		return give(amount)
-	else
+	else if(amount < 0)
 		return -use(-amount)
+	return 0
 
 /obj/item/weapon/cell/proc/checked_transfer(var/amount)
-	if(amount >= 0)
+	if(amount > 0)
 		return give(amount)
-	else
+	else if(amount < 0)
 		return -checked_use(-amount)
+	return 0
 
 // use power from a cell, returns the amount actually used
 /obj/item/weapon/cell/proc/use(var/amount)
@@ -130,8 +132,7 @@
 /obj/item/weapon/cell/proc/checked_use(var/amount)
 	if(!check_charge(amount))
 		return 0
-	use(amount)
-	return 1
+	return use(amount) //This'll be nonzero if successful anyway.
 
 // recharge the cell
 /obj/item/weapon/cell/proc/give(var/amount)
