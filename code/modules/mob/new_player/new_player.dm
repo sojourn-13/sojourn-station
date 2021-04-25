@@ -447,7 +447,7 @@
 
 /mob/new_player/get_gender()
 	if(!client || !client.prefs) ..()
-	return client.prefs.gender
+	return GLOB.gender_datums[client.prefs.gender]
 
 /mob/new_player/is_ready()
 	return ready && ..()

@@ -87,7 +87,6 @@
 	var/operating = 1
 	var/charging = 0
 	var/chargemode = 1
-	var/chargecount = 0
 	var/locked = 1
 	var/coverlocked = 1
 	var/aidisabled = 0
@@ -594,7 +593,6 @@
 		user.visible_message(\
 			SPAN_WARNING("[user.name] has inserted the power cell to [src.name]!"),\
 			SPAN_NOTICE("You insert the power cell."))
-		chargecount = 0
 		update_icon()
 
 	else if (istype(I, /obj/item/weapon/card/id)||istype(I, /obj/item/modular_computer))
@@ -1029,7 +1027,7 @@
 
 //Returns 1 if the APC should attempt to charge
 /obj/machinery/power/apc/proc/attempt_charging()
-	return (chargemode && charging == 1 && operating)
+	return (chargemode && operating)
 
 
 /obj/machinery/power/apc/draw_power(var/amount)
@@ -1089,71 +1087,39 @@
 		log_debug("Status: [main_status] - Excess: [excess] - Last Equip: [lastused_equip] - Last Light: [lastused_light] - Longterm: [longtermpower]")
 
 	if(cell && !shorted)
-		// draw power from cell as before to power the area
-		var/cellused = min(cell.charge, CELLRATE * lastused_total)	// clamp deduction to a max, amount left in cell
-		cell.use(cellused)
+		//How much power is desired?
+		var/needed_power = lastused_total
+		//How much power would we need for charging.
+		//Unless it's disabled, in which case 0
+		var/charging_power = src.attempt_charging() ? cell.maxcharge*chargelevel/CELLRATE : 0
 
-		if(excess > lastused_total)		// if power excess recharge the cell
-										// by the same amount just used
-			var/draw = draw_power(cellused/CELLRATE) // draw the power needed to charge this cell
-			cell.give(draw * CELLRATE)
-		else		// no excess, and not enough per-apc
-			if( (cell.charge/CELLRATE + excess) >= lastused_total)		// can we draw enough from cell+grid to cover last usage?
-				var/draw = draw_power(excess)
-				cell.charge = min(cell.maxcharge, cell.charge + CELLRATE * draw)	//recharge with what we can
-				charging = 0
-			else	// not enough power available to run the last tick!
-				charging = 0
-				chargecount = 0
-				// This turns everything off in the case that there is still a charge left on the battery, just not enough to run the room.
-				equipment = autoset(equipment, 0)
-				lighting = autoset(lighting, 0)
-				environ = autoset(environ, 0)
-				autoflag = 0
+		needed_power -= draw_power(needed_power + charging_power) // draw the power needed to charge this cell
+		if(needed_power >= 0) charging = 0 //The cell needs to be drained.
+		var/charge_rate = -cell.checked_transfer(-needed_power*CELLRATE)/CELLRATE //Drain (or charge) the cell, and modify with the charged amount.
+		needed_power -= charge_rate
+		if(needed_power > 0)	// The cell could not supply enough power.
+			// This turns everything off in the case that there is still a charge left on the battery, just not enough to run the room.
+			equipment = autoset(equipment, 0)
+			lighting = autoset(lighting, 0)
+			environ = autoset(environ, 0)
+			autoflag = 0
 
+		lastused_charging = 0 //Not as branchy as an else.
+		if(charge_rate < 0) //We charged!
+			lastused_charging = -charge_rate*CELLRATE
+			lastused_total += lastused_charging
+			charging = 1
 
 		// Set channels depending on how much charge we have left
 		update_channels()
-
-		// now trickle-charge the cell
-		lastused_charging = 0 // Clear the variable for new use.
-		if(src.attempt_charging())
-			if(excess > 0)		// check to make sure we have enough to charge
-				// Max charge is capped to % per second constant
-				var/ch = min(excess*CELLRATE, cell.maxcharge*chargelevel)
-
-				ch = draw_power(ch/CELLRATE) // Removes the power we're taking from the grid
-				cell.give(ch*CELLRATE) // actually recharge the cell
-				lastused_charging = ch
-				lastused_total += ch // Sensors need this to stop reporting APC charging as "Other" load
-			else
-				charging = 0		// stop charging
-				chargecount = 0
 
 		// show cell as fully charged if so
 		if(cell.charge >= cell.maxcharge)
 			cell.charge = cell.maxcharge
 			charging = 2
 
-		if(chargemode)
-			if(!charging)
-				if(excess > cell.maxcharge*chargelevel)
-					chargecount++
-				else
-					chargecount = 0
-
-				if(chargecount >= 10)
-
-					chargecount = 0
-					charging = 1
-
-		else // chargemode off
-			charging = 0
-			chargecount = 0
-
 	else // no cell, switch everything off
 		charging = 0
-		chargecount = 0
 		equipment = autoset(equipment, 0)
 		lighting = autoset(lighting, 0)
 		environ = autoset(environ, 0)
