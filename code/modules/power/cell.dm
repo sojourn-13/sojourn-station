@@ -102,6 +102,19 @@
 /obj/item/weapon/cell/proc/check_charge(var/amount)
 	return (charge >= amount)
 
+//Convenience proc for objects which may use or give
+/obj/item/weapon/cell/proc/transfer(var/amount)
+	if(amount >= 0)
+		return give(amount)
+	else
+		return -use(-amount)
+
+/obj/item/weapon/cell/proc/checked_transfer(var/amount)
+	if(amount >= 0)
+		return give(amount)
+	else
+		return -checked_use(-amount)
+
 // use power from a cell, returns the amount actually used
 /obj/item/weapon/cell/proc/use(var/amount)
 	if(rigged && amount > 0)
