@@ -835,3 +835,6 @@ default behaviour is:
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/proc/drip_blood(var/amt as num)
 	blood_splatter(src,src)
+
+/mob/living/proc/eyecheck()
+	return 0
