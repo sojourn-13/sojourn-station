@@ -41,10 +41,10 @@
 /obj/item/weapon/soap/examine(mob/user)
 	..()
 	if (how_many_times_we_can_pull_a_pro_clown_gamer_move > 0)
-		to_chat(user, "<span class='info'>The bar of [src] looks slippery.</span>")
+		to_chat(user, "<span class='info'>[src] looks slippery.</span>")
 		return
 	if (how_many_times_we_can_pull_a_pro_clown_gamer_move == 0)
-		to_chat(user, "<span class='info'>The bar of [src] looks a bit dry</span>")
+		to_chat(user, "<span class='info'>[src] looks a bit dry</span>")
 		return
 
 
@@ -93,7 +93,7 @@
 
 	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
-	if(user.client && (target in user.client.screen))
+	if(user.client && (target in user.client.screen)) // There needs to be a better way to handle this, you have to throw the item to clean it and you should be able to clean it if it's on your hands.
 		to_chat(user, "<span class='notice'>You need to take that [target.name] off before cleaning it.</span>")
 		return
 	else

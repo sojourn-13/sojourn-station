@@ -439,7 +439,7 @@
 		if((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
 			return
 		var/obj/item/weapon/stamp/S = P
-		playsound(src,'sound/effects/Stamp.ogg',40,1)
+		playsound(src,'sound/bureaucracy/stamp.ogg',40,1)
 		stamp(S.stamp_text ? S.stamp_text : "This paper has been stamped with the [P.name].", "paper_[P.icon_state]", S.xplus, S.xminus, S.yplus, S.yminus)
 		stamped &= S.stamp_flags
 		user << SPAN_NOTICE("You stamp the paper with your [S.name].")

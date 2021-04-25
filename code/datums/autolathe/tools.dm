@@ -237,3 +237,7 @@
 /datum/design/autolathe/tool/bonegel
 	name = "bone gel"
 	build_path = /obj/item/weapon/tool/tape_roll/bonegel
+
+/datum/design/autolathe/tool/hatton_ammo
+	name = "Artificer's Guild BT \"Hatton\" gas tube"
+	build_path = /obj/item/weapon/hatton_magazine

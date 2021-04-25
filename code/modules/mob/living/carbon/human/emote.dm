@@ -69,6 +69,9 @@
 					use_sound = 'sound/effects/mob_effects/machine_sneeze.ogg'
 				else
 					use_sound = 'sound/effects/mob_effects/f_machine_sneeze.ogg'
+			else if(act == "slowclap")
+				display_msg = "activates their slow-clap processor" // Good, that's still working.
+				use_sound = 'sound/misc/slowclap.ogg'
 
 			if (param)
 				message = "[display_msg] at [param]."
@@ -209,6 +212,14 @@
 				playsound(loc, 'sound/misc/clapping.ogg', 80)
 				if(miming)
 					m_type = 1
+		if ("slowclap")
+			if (!src.restrained())
+				message = "sarcastically slow claps."
+				m_type = 2
+				playsound(loc, 'sound/misc/slowclap.ogg', 80)
+				if(miming)
+					m_type = 1
+
 		if ("flap")
 			if (!src.restrained())
 				message = "flaps [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] wings."
@@ -548,9 +559,9 @@
 					message = "sneezes."
 					m_type = 2
 					if(get_gender() == FEMALE)
-						playsound(loc, 'sound/effects/mob_effects/f_sneeze.ogg', 70, 1)
+						playsound(loc, 'sound/effects/mob_effects/f_sneeze.ogg', 70)  //Please don't EVER give it variance, you sneeze like Barry White sneezing 80% of the time.
 					else
-						playsound(loc, 'sound/effects/mob_effects/sneeze.ogg', 70, 0) //Please don't give it variance, you sneeze like Barry White 80% of the time.
+						playsound(loc, 'sound/effects/mob_effects/sneeze.ogg', 70)
 				else
 					message = "makes a strange noise."
 					m_type = 2
@@ -847,8 +858,8 @@
 		if ("help")
 			to_chat(src, "awoo, aslap-(none)/mob, bark, blink, blink_r, blush, bow-(none)/mob, burp, chirp, choke, chuckle, clap, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
 					flip, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, mumble, nod, nya, pale, peep, point-atom, \
-					raise, salute, scream, sneeze, shake, shiver, shrug, sigh, signal-#1-10, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, stopsway/swag, squeak, sway/wag, swish, tremble, twitch, \
-					twitch_v, vomit, weh, whimper, wink, yawn, ycackle. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping")
+					raise, salute, scream, sneeze, shake, shiver, shrug, sigh, signal-#1-10, slap-(none)/mob, slowclap, smile, sneeze, sniff, snore, stare-(none)/mob, stopsway/swag, squeak, sway/wag, swish, tremble, twitch, \
+					twitch_v, vomit, weh, whimper, wink, yawn, ycackle. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping, slowclap")
 
 		else
 			to_chat(src, "\blue Unusable emote '[act]'. Say *help for a list.")
