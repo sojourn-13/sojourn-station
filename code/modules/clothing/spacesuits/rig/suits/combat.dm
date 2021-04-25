@@ -54,7 +54,7 @@
 //blacksheild
 /obj/item/weapon/rig/combat/blackshield
 	name = "Blackshield Ops control module"
-	desc = "A Blackshield rig module that has been fitted for combat in CQC, do to this its rather bulkery then normal standard security hardsuits."
+	desc = "A Blackshield RIG module that has been tailored for CQC. Due to its plating, it's slightly bulkier than normal standard security hardsuits."
 	icon_state = "blackshield_rig"
 	suit_type = "light suit"
 	armor = list(
