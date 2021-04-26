@@ -182,6 +182,12 @@
 			to_chat(user, SPAN_DANGER("The gun's safety is on!"))
 			handle_click_empty(user)
 			return FALSE
+	if(restrict_safety) //if we are restructed to be only saft then we also check
+		if(safety) //Danger zone dosnt force safety so we check again
+			to_chat(user, SPAN_DANGER("The gun's safety is on!"))
+			handle_click_empty(user)
+			return FALSE
+			
 	if(twohanded)
 		if(!wielded)
 			if (world.time >= recentwield + 1 SECONDS)
@@ -703,7 +709,6 @@
 	init_offset = initial(init_offset)
 	proj_damage_adjust = list()
 	fire_sound = initial(fire_sound)
-	restrict_safety = initial(restrict_safety)
 	rigged = initial(rigged)
 	zoom_factor = initial(zoom_factor)
 	force = initial(force)
