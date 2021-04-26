@@ -7,7 +7,7 @@
 	build_type = MECHFAB
 	storage_capacity = 240
 	speed = 3
-
+	unsuitable_materials = list()	// Can use biomatter too for some seals and rigs.
 	have_disk = FALSE
 	have_reagents = FALSE
 	have_recycling = FALSE
