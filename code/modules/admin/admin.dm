@@ -1225,3 +1225,102 @@ ADMIN_VERB_ADD(/datum/admins/proc/paralyze_mob, R_ADMIN, FALSE)
 			return 0
 		return 1
 	return 0
+//This proc lets us make artifacts with the effects and triggers we want.
+ADMIN_VERB_ADD(/datum/admins/proc/spawn_artifact, R_ADMIN, FALSE)
+/datum/admins/proc/spawn_artifact(effect in subtypesof(/datum/artifact_effect))
+	set category = "Debug"
+	set desc = "(atom path) Spawn an artifact with a specified effect."
+	set name = "Spawn Artifact"
+
+	if (!check_rights(R_ADMIN|R_DEBUG,0))
+		return
+
+	var/obj/machinery/artifact/A
+	var/primary_trigger
+
+	var/datum/artifact_effect/secondary_effect
+	var/secondary_trigger
+
+	if (ispath(effect))
+		primary_trigger = input(usr, "Choose a trigger", "Choose a trigger") as null | anything in list("TRIGGER_TOUCH", "TRIGGER_WATER", "TRIGGER_ACID", "TRIGGER_VOLATILE", "TRIGGER_TOXIN", "TRIGGER_FORCE", "TRIGGER_ENERGY", "TRIGGER_HEAT", "TRIGGER_COLD", "TRIGGER_PLASMA", "TRIGGER_OXY", "TRIGGER_CO2", "TRIGGER_NITRO")
+
+		if (!primary_trigger)
+			return
+		//This is a very ghetto way of doing it, but this is an admin ability and it shouldn't be called every second, so we should be fine. Feel free to rework the implementation.
+		switch(primary_trigger)
+			if("TRIGGER_TOUCH")
+				primary_trigger = 0
+			if("TRIGGER_WATER")
+				primary_trigger = 1
+			if("TRIGGER_ACID")
+				primary_trigger = 2
+			if("TRIGGER_VOLATILE")
+				primary_trigger = 3
+			if("TRIGGER_TOXIN")
+				primary_trigger = 4
+			if("TRIGGER_FORCE")
+				primary_trigger = 5
+			if("TRIGGER_ENERGY")
+				primary_trigger = 6
+			if("TRIGGER_HEAT")
+				primary_trigger = 7
+			if("TRIGGER_COLD")
+				primary_trigger = 8
+			if("TRIGGER_PLASMA")
+				primary_trigger = 9
+			if("TRIGGER_OXY")
+				primary_trigger = 10
+			if("TRIGGER_CO2")
+				primary_trigger = 11
+			if("TRIGGER_NITRO")
+				primary_trigger = 12
+
+		var/choice = alert(usr, "Secondary effect?", "Secondary effect", "Yes", "No") == "Yes"
+
+		if (choice)
+			secondary_effect = input(usr, "Choose an effect", "Choose effect") as null | anything in subtypesof(/datum/artifact_effect)
+
+			if (!ispath(secondary_effect))
+				return
+
+			secondary_trigger = input(usr, "Choose a trigger", "Choose a trigger") as null | anything in list("TRIGGER_TOUCH", "TRIGGER_WATER", "TRIGGER_ACID", "TRIGGER_VOLATILE", "TRIGGER_TOXIN", "TRIGGER_FORCE", "TRIGGER_ENERGY", "TRIGGER_HEAT", "TRIGGER_COLD", "TRIGGER_PLASMA", "TRIGGER_OXY", "TRIGGER_CO2", "TRIGGER_NITRO")
+
+			if (!secondary_trigger)
+				return
+			switch(secondary_trigger)
+				if("TRIGGER_TOUCH")
+					secondary_trigger = 0
+				if("TRIGGER_WATER")
+					secondary_trigger = 1
+				if("TRIGGER_ACID")
+					secondary_trigger = 2
+				if("TRIGGER_VOLATILE")
+					secondary_trigger = 3
+				if("TRIGGER_TOXIN")
+					secondary_trigger = 4
+				if("TRIGGER_FORCE")
+					secondary_trigger = 5
+				if("TRIGGER_ENERGY")
+					secondary_trigger = 6
+				if("TRIGGER_HEAT")
+					secondary_trigger = 7
+				if("TRIGGER_COLD")
+					secondary_trigger = 8
+				if("TRIGGER_PLASMA")
+					secondary_trigger = 9
+				if("TRIGGER_OXY")
+					secondary_trigger = 10
+				if("TRIGGER_CO2")
+					secondary_trigger = 11
+				if("TRIGGER_NITRO")
+					secondary_trigger = 12
+
+		A = new(usr.loc)
+		A.my_effect = new effect(A)
+		A.my_effect.trigger = primary_trigger
+
+		if (secondary_effect)
+			A.secondary_effect = new secondary_effect
+			A.secondary_effect.trigger = secondary_trigger
+		else
+			QDEL_NULL(A.secondary_effect)
