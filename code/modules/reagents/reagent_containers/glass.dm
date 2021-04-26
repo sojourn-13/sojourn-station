@@ -104,6 +104,23 @@
 			return TRUE
 	return ..()
 
+/obj/item/weapon/reagent_containers/glass/pre_attack(atom/target, mob/user, params)
+	if(user.a_intent == I_DISARM)
+		if(is_drainable() && reagents.total_volume && istype(target, /obj/structure/sink))
+			to_chat(user, SPAN_NOTICE("You pour the solution into [target]."))
+			reagents.remove_any(reagents.total_volume)
+			return TRUE
+		if(is_open_container() && reagents.total_volume && istype(target, /obj/item/weapon/reagent_containers/glass))
+			if(reagents && !target.reagents.get_free_space())
+				to_chat(user, SPAN_NOTICE("[target] is full."))
+				return TRUE
+			else
+				playsound(src,'sound/effects/Liquid_transfer_mono.ogg',50,1)
+				to_chat(user, SPAN_NOTICE("You pour as much as you can into [target]."))
+				reagents.trans_to_obj(target, reagents.total_volume)
+			return TRUE
+	return ..()
+
 /obj/item/weapon/reagent_containers/glass/attack(mob/M as mob, mob/user as mob, def_zone)
 	if(force && !(flags & NOBLUDGEON) && user.a_intent == I_HURT)
 		return ..()
