@@ -364,6 +364,8 @@ SUBSYSTEM_DEF(job)
 				if("Robot")
 					return H.Robotize()
 				if("AI")
+					var/sound/announce_sound = (SSticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/ai/newAI.ogg', volume=20)
+					global_announcer.autosay(new_sound=announce_sound)
 					return H
 				if("Premier")
 					var/sound/announce_sound = (SSticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/misc/boatswain.ogg', volume=20)

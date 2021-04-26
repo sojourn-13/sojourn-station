@@ -69,6 +69,7 @@
 	src.occupant = L
 	update_use_power(2)
 	update_icon()
+	playsound(src, 'sound/machines/medbayscanner1.ogg', 50)
 	src.add_fingerprint(usr)
 
 

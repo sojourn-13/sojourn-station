@@ -547,6 +547,6 @@ SUBSYSTEM_DEF(ticker)
 		log_game("[i]s[total_antagonists[i]].")
 
 /datum/controller/subsystem/ticker/proc/shift_end(round_end_time = config.automatic_restart_delay)
-	command_announcement.Announce("Today's shift will be ending in [round(round_end_time/(1 MINUTE))] minute[round_end_time >= 1 MINUTE && round_end_time < 2 MINUTES ? "" : "s"]. Please finish up all current tasks and return all departamental equipment used.", "Shift End Call", new_sound = 'sound/misc/notice3.ogg')
+	command_announcement.Announce("Today's shift will be ending in [round(round_end_time/(1 MINUTE))] minute[round_end_time >= 1 MINUTE && round_end_time < 2 MINUTES ? "" : "s"]. Please finish up all current tasks and return all departmental equipment used.", "Shift End Call", new_sound = 'sound/misc/notice3.ogg')
 	automatic_restart_allowed = FALSE
 	scheduled_restart = world.time + round_end_time

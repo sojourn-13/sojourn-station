@@ -1,7 +1,7 @@
 //Procedures in this file: hardsuit removal
 
 /datum/old_surgery_step/hardsuit
-	required_tool_quality = QUALITY_WELDING
+	required_tool_quality = QUALITY_SAWING // Palliative fix for FBP's dying while wearing one.
 	required_stat = STAT_MEC
 
 	can_infect = 0

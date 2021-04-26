@@ -136,9 +136,9 @@
 	give_insight(INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier)
 	while(resting < max_resting && insight >= 100)
 		if(owner.stats.getPerk(PERK_ARTIST))
-			to_chat(owner, SPAN_NOTICE("You have gained inspiration.[resting ? null : " Now you need to put it to good use. You cannot gain more inspiration until you do."]"))
+			to_chat(owner, SPAN_NOTICE("You have gained inspiration.[resting ? null : " Now you need to put it to good use by creating works of art. You cannot gain more inspiration until you do."]"))
 		else
-			to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? null : " Now you need to reflect on what you have learned so far...with the help of some stuff."]"))
+			to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? null : " Now you need to reflect on what you have learned so far by satisfying your cravings."]")) // Do you want me to add a goddamn meta "click on the eye to see your cravings" or is this not clear enough?
 			pick_desires()
 			insight -= 100
 		give_resting(1)

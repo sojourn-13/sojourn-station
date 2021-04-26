@@ -69,6 +69,9 @@
 					use_sound = 'sound/effects/mob_effects/machine_sneeze.ogg'
 				else
 					use_sound = 'sound/effects/mob_effects/f_machine_sneeze.ogg'
+			else if(act == "slowclap")
+				display_msg = "activates their slow-clap processor" // Good, that's still working.
+				use_sound = 'sound/misc/slowclap.ogg'
 
 			if (param)
 				message = "[display_msg] at [param]."
@@ -209,6 +212,15 @@
 				playsound(loc, 'sound/misc/clapping.ogg', 80)
 				if(miming)
 					m_type = 1
+
+		if ("slowclap")
+			if (!src.restrained())
+				message = "sarcastically slow claps."
+				m_type = 2
+				playsound(loc, 'sound/misc/slowclap.ogg', 80)
+				if(miming)
+					m_type = 1
+
 		if ("flap")
 			if (!src.restrained())
 				message = "flaps [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] wings."
@@ -548,9 +560,9 @@
 					message = "sneezes."
 					m_type = 2
 					if(get_sex() == FEMALE)
-						playsound(loc, 'sound/effects/mob_effects/f_sneeze.ogg', 70, 1)
+						playsound(loc, 'sound/effects/mob_effects/f_sneeze.ogg', 70) // Please DON'T give it variance, you sneeze like Barry White 80% of the time.
 					else
-						playsound(loc, 'sound/effects/mob_effects/sneeze.ogg', 70, 0) //Please don't give it variance, you sneeze like Barry White 80% of the time.
+						playsound(loc, 'sound/effects/mob_effects/sneeze.ogg', 70)
 				else
 					message = "makes a strange noise."
 					m_type = 2

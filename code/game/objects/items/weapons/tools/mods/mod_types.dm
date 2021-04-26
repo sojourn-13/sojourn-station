@@ -154,7 +154,7 @@
 
 /obj/item/weapon/tool_upgrade/productivity/red_paint
 	name = "red paint"
-	desc = "Do red tools really work faster or is the effect purely psychological?"
+	desc = "Do red tools really work faster or is the effect purely psychological? Needless to say, you can't strip it off once applied."
 	icon_state = "paint_red"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	can_remove = FALSE
@@ -172,7 +172,7 @@
 
 /obj/item/weapon/tool_upgrade/productivity/whetstone
 	name = "sharpening block"
-	desc = "A rough single-use block to sharpen a blade or a rifle bayonet. The honed edge cuts smoothly."
+	desc = "A rough single-use block to sharpen a blade or a rifle bayonet. The honed edge cuts smoothly, and can never be dulled."
 	icon_state = "whetstone"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_DIAMOND = 3)
 	can_remove = FALSE
@@ -260,7 +260,7 @@
 
 /obj/item/weapon/tool_upgrade/productivity/antistaining
 	name = "anti-staining paint"
-	desc = "Applying a thin coat of this paint on a tool prevents stains, dirt or dust to adhere to its surface. Everyone work better and faster with clean tools."
+	desc = "Applying a thin coat of this paint on a tool prevents blood stains, dirt or dust to adhere to its surface. Everyone works better and faster with clean tools. Once applied, it can't ever be stripped."
 	icon_state = "antistaining"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_PLASMA = 3)
 	can_remove = FALSE
@@ -447,8 +447,9 @@
 /obj/item/weapon/tool_upgrade/augment/cell_mount
 	name = "heavy cell mount"
 	icon_state = "cell_mount"
-	desc = "A bulky adapter which allows oversized power cells to be installed into small tools."
+	desc = "A bulky adapter which allows oversized power cells to be installed into small tools. Due to its delicate integration, it can't be removed once installed."
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
+	can_remove = FALSE // To fix exploit of fitting large cells on tools then taking out the mod while conserving a large cell.
 
 /obj/item/weapon/tool_upgrade/augment/cell_mount/New()
 	..()
