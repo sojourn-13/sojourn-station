@@ -351,9 +351,9 @@
 "gM" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/smartfridge/seeds,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "gN" = (/turf/unsimulated/mineral{name = "chimney wall"},/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gO" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"gP" = (/obj/effect/step_trigger/riverforest_to_huntinglodge_1_A,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"gP" = (/obj/effect/step_trigger/riverforest_to_huntinglodge_1_B,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "gQ" = (/turf/unsimulated/mineral/transition,/area/nadezhda/outside/forest/hunting_lodge)
-"gR" = (/obj/effect/step_trigger/riverforest_to_huntinglodge_1_B,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"gR" = (/obj/effect/step_trigger/riverforest_to_huntinglodge_1_A,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "gS" = (/obj/machinery/vending/hydroseeds{slogan_delay = 700},/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "gT" = (/obj/machinery/cryopod/dormitory,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gU" = (/obj/structure/table/reinforced,/obj/random/toy/plushie,/obj/machinery/computer/cryopod/dormitory{pixel_x = -32},/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -506,7 +506,6 @@ aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaB
 aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 euaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 "}
-
 (1,1,2) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
