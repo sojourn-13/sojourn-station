@@ -308,7 +308,7 @@
 
 /obj/item/weapon/storage/firstaid/soteria/large
 	name = "reinforced triage kit"
-	desc = "A reinforced, specialized triage kit outfitted for Soteria personnel only. This one is larger in capacity thanks to minor bluespace infusement, and should help Paramedics carry everything they need for any emergency."
+	desc = "A reinforced, specialized triage kit outfitted for Soteria personnel only. This one is larger in capacity thanks to Soteria ingenuity, and should help Paramedics carry everything they need for any emergency."
 	icon_state = "rtk"
 	item_state = "rtk"
 	storage_slots = 12
