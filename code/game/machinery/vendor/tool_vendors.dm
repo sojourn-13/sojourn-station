@@ -212,14 +212,14 @@
 /obj/machinery/vending/plasmaresearch
 	name = "Toximate 3000"
 	desc = "All the fine parts you need in one vending machine!"
-	products = list(/obj/item/clothing/under/rank/scientist = 6,
+	products = list(/obj/item/clothing/under/rank/scientist = 10,
 					/obj/item/clothing/suit/bio_suit = 6,
 					/obj/item/clothing/head/bio_hood = 6,
-					/obj/item/device/transfer_valve = 6,
-					/obj/item/device/assembly/timer = 6,
-					/obj/item/device/assembly/signaler = 6,
-					/obj/item/device/assembly/prox_sensor = 6,
-					/obj/item/device/assembly/igniter = 6)
+					/obj/item/device/transfer_valve = 60,
+					/obj/item/device/assembly/timer = 60,
+					/obj/item/device/assembly/signaler = 60,
+					/obj/item/device/assembly/prox_sensor = 60,
+					/obj/item/device/assembly/igniter = 60)
 	auto_price = FALSE
 
 //This one's from bay12
