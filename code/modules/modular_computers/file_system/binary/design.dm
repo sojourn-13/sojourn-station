@@ -24,8 +24,7 @@
 	SSresearch.initialize_design_file(src)
 
 /datum/computer_file/binary/design/proc/on_design_set()
-	if (design)
-		set_filename(design.id)
+	set_filename(design.id)
 
 /datum/computer_file/binary/design/proc/set_copy_protection(enabled)
 	copy_protected = enabled
