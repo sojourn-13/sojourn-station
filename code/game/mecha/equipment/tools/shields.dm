@@ -25,14 +25,15 @@
 	return
 
 /obj/item/mecha_parts/mecha_equipment/combat_shield/Destroy()
-	chassis.overlays -= drone_overlay
-	my_shield.forceMove(src)
-	my_shield.destroy_shields()
-	my_shield.my_tool = null
-	my_shield.my_mecha = null
-	qdel(my_shield)
-	my_shield = null
-	..()
+	if (chassis)
+		chassis.overlays -= drone_overlay
+		my_shield.forceMove(src)
+		my_shield.destroy_shields()
+		my_shield.my_tool = null
+		my_shield.my_mecha = null
+		qdel(my_shield)
+		my_shield = null
+	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/combat_shield/attach(obj/mecha/M as obj)
 	..()
