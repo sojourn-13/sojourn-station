@@ -117,7 +117,7 @@
 "cp" = (/obj/random/gun_shotgun/low_chance,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/dungeon/outside/monster_cave)
 "cq" = (/obj/structure/window/reinforced,/obj/structure/table/standard,/obj/item/weapon/storage/deferred/meds,/obj/item/stack/nanopaste,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cs" = (/mob/living/simple_animal/hostile/hivebot,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
-"ct" = (/mob/living/simple_animal/hostile/voidwolf/fieldtech/ranged,/turf/unsimulated/mineral,/area/nadezhda/dungeon/outside/smuggler_zone)
+"ct" = (/mob/living/simple_animal/hostile/hivebot,/turf/unsimulated/mineral,/area/colony)
 "cu" = (/obj/random/spider_trap_burrowing/low_chance,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/lakeside)
 "cv" = (/obj/random/cloth/helmet/low_chance,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/dungeon/outside/monster_cave)
 "cw" = (/obj/structure/invislightsmall,/turf/simulated/mineral/random/rogue,/area/nadezhda/outside/forest)
@@ -173,7 +173,7 @@
 "dM" = (/turf/simulated/floor/carpet/sblucarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dN" = (/obj/random/mob/voidwolf,/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dO" = (/obj/structure/mopbucket,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/mop,/turf/simulated/floor/tiled/techmaint,/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"dP" = (/mob/living/simple_animal/hostile/voidwolf/aerotrooper,/turf/unsimulated/mineral,/area/asteroid/rogue)
+"dP" = (/mob/living/simple_animal/hostile/hivebot/range,/turf/unsimulated/mineral,/area/colony)
 "dV" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/tiled/techmaint,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dW" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dX" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone)
@@ -1077,7 +1077,7 @@
 "vs" = (/obj/structure/flora/small/rock1,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/dungeon/outside/monster_cave)
 "vt" = (/obj/structure/sign/departmentold/restroom{pixel_x = 30},/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone)
 "vu" = (/obj/structure/table/woodentable,/obj/random/ammo/shotgun,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone)
-"vv" = (/mob/living/simple_animal/hostile/roomba/gun_ba,/turf/unsimulated/mineral,/area/asteroid/rogue)
+"vv" = (/mob/living/simple_animal/hostile/republicon/range,/turf/unsimulated/mineral,/area/colony)
 "vw" = (/obj/item/remains/deer,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/dungeon/outside/monster_cave)
 "vx" = (/obj/item/remains/ribcage,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/dungeon/outside/monster_cave)
 "vy" = (/obj/structure/flora/small/busha3,/obj/structure/flora/small/busha3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
@@ -1947,8 +1947,7 @@
 "Mr" = (/obj/structure/table/bench/wooden,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Ms" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "Mu" = (/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced,/obj/machinery/porta_turret/One_star{check_access = 0},/turf/simulated/floor/bluegrid,/area/nadezhda/outside/one_star)
-"Mv" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol/rifle,/turf/unsimulated/mineral,/area/asteroid/rogue)
-"Mw" = (/mob/living/simple_animal/hostile/roomba,/turf/unsimulated/mineral,/area/asteroid/rogue)
+"Mv" = (/mob/living/simple_animal/hostile/republicon,/turf/unsimulated/mineral,/area/colony)
 "Mx" = (/obj/structure/table/onestar,/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 8},/obj/random/junkfood/onlyburger,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "My" = (/obj/structure/closet/crate/bin,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Mz" = (/obj/structure/table/onestar,/obj/random/powercell/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
@@ -1959,7 +1958,6 @@
 "MK" = (/obj/structure/table/onestar,/obj/random/junkfood/onlypizza,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
 "MN" = (/obj/structure/table/reinforced,/obj/item/weapon/tool/screwdriver,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/wood/wild3,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "MO" = (/obj/structure/table/onestar,/obj/structure/window/reinforced{dir = 4},/obj/item/weapon/oddity/common/old_money,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
-"MR" = (/mob/living/simple_animal/hostile/roomba/chemical/med/healer,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "MU" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/storage/box/syndie_kit/space,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "MV" = (/obj/structure/table/onestar,/obj/machinery/microwave,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "MW" = (/obj/machinery/light/floor{dir = 8; pixel_x = -8},/obj/structure/extinguisher_cabinet{pixel_x = -24},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
@@ -1968,7 +1966,6 @@
 "Nf" = (/obj/structure/flora/small/trailrockb1,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/one_star)
 "Ng" = (/obj/structure/table/steel_reinforced,/obj/random/dungeon_gun_mods/low_chance,/obj/random/dungeon_gun_mods/low_chance,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Nh" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 1},/obj/machinery/porta_turret/One_star{check_access = 0},/turf/simulated/floor/bluegrid,/area/nadezhda/outside/one_star)
-"Nk" = (/mob/living/simple_animal/hostile/voidwolf/ranged,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Nl" = (/obj/machinery/papershredder,/obj/item/weapon/oddity/common/paper_bundle{pixel_y = 13},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
 "No" = (/obj/structure/flora/ausbushes/fullgrass,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "Np" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
@@ -1980,7 +1977,6 @@
 "NA" = (/obj/machinery/light/floor{dir = 4; pixel_x = 6},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "NB" = (/obj/random/traps/low_chance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper)
 "NC" = (/mob/living/simple_animal/hostile/voidwolf/aerotrooper,/turf/simulated/floor/wood/wild3,/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"NE" = (/mob/living/simple_animal/hostile/voidwolf{health = 250; melee_damage_upper = 40; move_speed = 12; name = "Void Wolf Trainned Commando"; seek_speed = 1; speed = 5},/turf/unsimulated/mineral,/area/asteroid/rogue)
 "NG" = (/obj/structure/flora/ausbushes/brflowers,/obj/item/clothing/head/hairflower/white,/obj/structure/window/reinforced,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "NO" = (/obj/structure/table/onestar,/obj/random/tool/advanced/onestar/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "NP" = (/obj/structure/boulder,/turf/simulated/floor/asteroid/grass,/area/colony/exposedsun/pastgate)
@@ -1990,28 +1986,22 @@
 "NX" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/reagent_containers/syringe/drugs_recreational,/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs,/obj/item/weapon/reagent_containers/syringe/stim/party_drops,/obj/random/junkfood/onlyburger,/obj/random/booze,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Oa" = (/obj/machinery/light/floor{dir = 4; pixel_x = -5},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Oc" = (/obj/item/trash/cigbutt/ishimura,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
-"Of" = (/mob/living/simple_animal/hostile/roomba/gun_ba/plasma,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Oh" = (/mob/living/simple_animal/hostile/bear/polar,/turf/unsimulated/mineral,/area/colony/exposedsun/pastgate)
 "Oj" = (/obj/structure/table/onestar,/obj/item/weapon/folder/cyan,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
-"Om" = (/mob/living/simple_animal/hostile/roomba/gun_ba/armored,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "On" = (/obj/structure/table/onestar,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 4},/obj/random/common_oddities/low_chance,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "Op" = (/obj/structure/bed/chair/custom/onestar,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "Or" = (/obj/structure/multiz/ladder,/turf/simulated/floor/asteroid/grass,/area/colony/exposedsun/pastgate)
 "Ot" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper)
-"Ou" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol/heavy,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Ov" = (/obj/structure/salvageable/server_os,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "Ow" = (/obj/structure/table/onestar,/obj/item/weapon/folder/blue,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "Oy" = (/obj/structure/salvageable/data_os,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
-"Oz" = (/mob/living/simple_animal/hostile/voidwolf,/turf/unsimulated/mineral,/area/nadezhda/dungeon/outside/smuggler_zone)
 "OB" = (/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "OC" = (/obj/structure/table/onestar,/obj/item/weapon/folder/blue,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
 "OK" = (/obj/structure/salvageable/implant_container_os,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "OM" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "OP" = (/obj/random/junk,/obj/random/traps/low_chance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "OR" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/prepper)
-"OS" = (/mob/living/simple_animal/hostile/roomba/synthetic,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "OT" = (/obj/structure/table/onestar,/obj/random/material,/obj/item/weapon/tool/wrench/big_wrench,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
-"OV" = (/mob/living/simple_animal/hostile/onestar_custodian/chef,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "OZ" = (/obj/structure/reagent_dispensers/fueltank/huge/derelict,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Pb" = (/obj/structure/reagent_dispensers/water_cooler,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "Pe" = (/obj/structure/flora/ausbushes/ppflowers,/obj/item/clothing/head/hairflower/yellow,/mob/living/simple_animal/hostile/onestar_custodian/chef,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
@@ -2020,9 +2010,7 @@
 "Pi" = (/obj/machinery/light/floor,/obj/structure/reagent_dispensers/water_cooler,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Pj" = (/obj/structure/table/onestar,/obj/item/weapon/paper/Court,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Pn" = (/obj/structure/table/onestar,/obj/item/weapon/tool/pickaxe/drill/onestar,/obj/random/pack/tech_loot/onestar,/obj/random/pack/tech_loot/onestar,/obj/random/pack/tech_loot/onestar,/obj/random/pack/tech_loot/onestar,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
-"Po" = (/mob/living/simple_animal/hostile/republicon,/turf/unsimulated/mineral,/area/colony)
 "Pp" = (/obj/structure/table/onestar,/obj/item/weapon/storage/box/matches,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
-"Ps" = (/mob/living/simple_animal/hostile/hivebot/range,/turf/unsimulated/mineral,/area/colony)
 "Pt" = (/obj/item/weapon/plastique,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Pu" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Grayson Positronic Outpost"},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "Pv" = (/obj/structure/table/rack/shelf,/obj/random/powercell/low_chance,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
@@ -2046,7 +2034,6 @@
 "PT" = (/obj/machinery/light/floor{pixel_y = -7},/mob/living/simple_animal/hostile/onestar_custodian/chef,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "PV" = (/obj/structure/grille,/obj/structure/barricade,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "PY" = (/obj/structure/closet/crate/trashcart,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
-"Qa" = (/mob/living/simple_animal/hostile/hivebot,/turf/unsimulated/mineral,/area/colony)
 "Qf" = (/mob/living/simple_animal/hostile/onestar_custodian/engineer,/obj/machinery/light/floor,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
 "Qg" = (/obj/effect/decal/cleanable/rubble,/obj/structure/barricade,/turf/simulated/floor/asteroid/dirt/dark,/area/nadezhda/outside/one_star)
 "Qh" = (/obj/structure/table/reinforced,/obj/item/weapon/reagent_containers/food/drinks/cans/sodawater,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
@@ -2082,17 +2069,13 @@
 "Rm" = (/obj/structure/bed/chair/custom/onestar{dir = 1},/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "Rn" = (/mob/living/simple_animal/hostile/hivebot,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "Rp" = (/obj/structure/sink/kitchen{pixel_y = 24},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
-"Rr" = (/mob/living/simple_animal/hostile/voidwolf{health = 250; melee_damage_upper = 40; move_speed = 12; name = "Void Wolf Trainned Commando"; seek_speed = 1; speed = 5},/turf/unsimulated/mineral,/area/nadezhda/dungeon/outside/smuggler_zone)
 "Rs" = (/obj/item/stack/material/cardboard/random,/obj/item/stack/material/cardboard/random,/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Rv" = (/obj/item/trash/cigbutt/fortressblue,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "Rx" = (/obj/item/clothing/head/hairflower/blue,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
-"Rz" = (/mob/living/simple_animal/hostile/republicon/range,/turf/unsimulated/mineral,/area/colony)
-"RC" = (/mob/living/simple_animal/hostile/voidwolf/fieldtech/ranged,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "RG" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "RH" = (/obj/machinery/light/floor,/mob/living/simple_animal/hostile/roomba/synthetic,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "RK" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/storage/box/syndie_kit/hpistol,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "RP" = (/obj/structure/table/onestar,/obj/random/powercell/low_chance,/obj/item/weapon/stock_parts/matter_bin/one_star,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
-"RQ" = (/mob/living/simple_animal/hostile/roomba/trip,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "RR" = (/obj/machinery/photocopier,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "RS" = (/obj/structure/flora/ausbushes/ppflowers,/obj/item/clothing/head/hairflower,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "RU" = (/obj/structure/table/onestar,/obj/random/powercell/low_chance,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
@@ -2101,7 +2084,6 @@
 "RY" = (/obj/machinery/light/floor,/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "RZ" = (/obj/random/mob/voidwolf,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "Sa" = (/mob/living/simple_animal/hostile/panther,/turf/unsimulated/mineral,/area/colony/exposedsun/pastgate)
-"Sb" = (/mob/living/simple_animal/hostile/voidwolf/aerotrooper,/turf/unsimulated/mineral,/area/nadezhda/dungeon/outside/smuggler_zone)
 "Sd" = (/obj/structure/bed/chair/custom/onestar,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "Se" = (/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
 "Sf" = (/obj/structure/closet/crate/bin,/obj/random/tool/low_chance,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
@@ -2123,7 +2105,6 @@
 "SM" = (/obj/random/tool_upgrade/rare,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "SN" = (/obj/structure/table/onestar,/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced,/obj/item/device/radio/phone,/obj/item/weapon/oddity/common/old_money,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "SP" = (/obj/structure/bed/chair/custom/onestar/red{dir = 8},/obj/item/trash/cigbutt/toha,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
-"SQ" = (/mob/living/simple_animal/hostile/onestar_custodian/engineer,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "SR" = (/obj/structure/bed/chair/custom/onestar{dir = 1},/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "ST" = (/obj/machinery/light/small{dir = 8},/obj/machinery/porta_turret/prepper{check_access = 0},/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "SU" = (/obj/machinery/porta_turret/prepper{check_access = 0; health = 40; installation = /obj/item/weapon/gun/energy/retro; maxHealth = 40},/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/dungeon/outside/smuggler_zone)
@@ -2144,22 +2125,18 @@
 "Tv" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/storage/box/syndie_kit/ewar_voice,/obj/structure/sign/warning/caution{pixel_y = 30},/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Tw" = (/obj/structure/table/onestar,/obj/item/weapon/reagent_containers/food/drinks/cans/sodawater,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "Tx" = (/obj/structure/extinguisher_cabinet{pixel_x = -24},/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
-"Ty" = (/mob/living/simple_animal/hostile/voidwolf/fieldtech,/turf/unsimulated/mineral,/area/nadezhda/dungeon/outside/smuggler_zone)
 "TB" = (/mob/living/simple_animal/hostile/onestar_custodian,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "TC" = (/obj/structure/closet/crate/trashcart,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "TD" = (/obj/structure/flora/pottedplant/dead,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/one_star)
-"TE" = (/mob/living/simple_animal/hostile/onestar_custodian,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "TH" = (/obj/structure/closet/firecloset,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "TJ" = (/obj/effect/decal/cleanable/rubble,/obj/random/mob/undergroundmob/low_chance,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "TN" = (/obj/structure/closet/random_miscellaneous,/turf/simulated/floor/wood/wild5,/area/asteroid/rogue)
-"TO" = (/mob/living/simple_animal/hostile/voidwolf/fieldtech,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "TP" = (/obj/structure/table/onestar,/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 4},/obj/item/weapon/folder/blue,/obj/item/device/radio/phone,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "TX" = (/obj/structure/table/onestar,/obj/item/weapon/tool/screwdriver/combi_driver/onestar,/obj/random/pack/tech_loot/onestar,/obj/random/pack/tech_loot/onestar,/obj/random/pack/tech_loot/onestar,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "TY" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Grayson Positronic Outpost"},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "TZ" = (/obj/random/mob/voidwolf,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Ua" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/reagent_containers/food/snacks/syndicake,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Ub" = (/obj/structure/table/onestar,/obj/item/weapon/pen/multi,/obj/item/weapon/paper_bin,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
-"Ud" = (/mob/living/simple_animal/hostile/voidwolf/captain,/turf/unsimulated/mineral,/area/nadezhda/dungeon/outside/smuggler_zone)
 "Ue" = (/obj/structure/table/onestar,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 4},/obj/item/weapon/folder/blue,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "Uf" = (/obj/machinery/light/small,/turf/simulated/floor/wood/wild3,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Ui" = (/obj/structure/flora/pottedplant/flower,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
@@ -2214,19 +2191,16 @@
 "Wf" = (/obj/structure/table/onestar,/obj/item/weapon/paper/card/smile,/obj/item/weapon/paper/card/smile,/obj/item/weapon/paper/card/smile,/obj/item/weapon/paper/card/smile,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Wg" = (/mob/living/simple_animal/hostile/republicon,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "Wh" = (/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/pen/red,/obj/item/weapon/pen/red,/obj/item/weapon/pen/red,/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
-"Wj" = (/mob/living/simple_animal/hostile/roomba/trip/armored,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Wk" = (/turf/simulated/mineral/random/rogue,/area/nadezhda/outside/forest)
 "Wl" = (/obj/structure/multiz/ladder,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "Wm" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/window/reinforced,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "Wn" = (/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
-"Wp" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Wq" = (/obj/structure/salvageable/console_os,/obj/structure/window/reinforced{dir = 1},/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "Wv" = (/obj/structure/salvageable/console_os,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "Ww" = (/obj/structure/window/reinforced{dir = 1},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "Wx" = (/obj/structure/table/onestar,/obj/random/junkfood,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "Wy" = (/obj/random/mob/undergroundmob,/obj/effect/decal/cleanable/rubble,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "WC" = (/obj/effect/overlay/wallrot,/turf/simulated/wall,/area/nadezhda/dungeon/outside/zoo)
-"WF" = (/mob/living/simple_animal/hostile/voidwolf/captain,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "WG" = (/obj/effect/overlay/wallrot,/turf/simulated/wall,/area/colony/exposedsun/pastgate)
 "WH" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Grayson Positronic Outpost"; dir = 2},/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "WJ" = (/obj/structure/flora/big/bush1,/obj/structure/grille,/obj/structure/barricade,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
@@ -2239,7 +2213,6 @@
 "WW" = (/obj/structure/bed/chair/custom/onestar/red{dir = 8},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "WY" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/dungeon/outside/prepper)
 "WZ" = (/obj/structure/bed/chair/custom/onestar{dir = 1},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
-"Xb" = (/mob/living/simple_animal/hostile/roomba/chemical,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Xe" = (/obj/structure/table/onestar,/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 8},/obj/random/junkfood,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "Xf" = (/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "Xg" = (/obj/machinery/vending/cigarette,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
@@ -2265,13 +2238,10 @@
 "XV" = (/obj/random/junk,/obj/random/junk,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "XX" = (/obj/structure/flora/small/busha2,/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "XY" = (/obj/structure/window/reinforced{dir = 8},/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
-"XZ" = (/mob/living/simple_animal/hostile/voidwolf/ranged,/turf/unsimulated/mineral,/area/nadezhda/dungeon/outside/smuggler_zone)
 "Ya" = (/mob/living/simple_animal/hostile/roomba/slayer,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "Yb" = (/obj/structure/table/onestar,/obj/random/junkfood,/obj/random/junkfood,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
-"Yc" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Yd" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "Ye" = (/obj/structure/bed/chair/custom/onestar{dir = 1},/obj/machinery/light/floor{dir = 8; pixel_x = -5},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
-"Yh" = (/mob/living/simple_animal/hostile/roomba/slayer,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Yi" = (/mob/living/simple_animal/hostile/render,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Yj" = (/obj/random/cluster/roaches/low_chance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "Yl" = (/obj/structure/catwalk,/obj/structure/catwalk,/mob/living/simple_animal/hostile/onestar_custodian,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
@@ -2294,7 +2264,6 @@
 "YL" = (/obj/machinery/vending/coffee,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "YP" = (/mob/living/simple_animal/hostile/hivebot/range,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "YQ" = (/mob/living/simple_animal/hostile/nightmare,/turf/unsimulated/mineral,/area/asteroid/rogue)
-"YT" = (/mob/living/simple_animal/hostile/roomba/chemical/med,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "YU" = (/obj/structure/flora/tree/jungle/variant5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "YV" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "YW" = (/obj/item/weapon/plastique,/turf/simulated/floor/asteroid/dirt/dark,/area/nadezhda/outside/one_star)
@@ -2302,7 +2271,6 @@
 "YY" = (/obj/effect/decal/cleanable/rubble,/obj/item/ammo_magazine/maxim_75,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "YZ" = (/obj/random/spider_trap_burrowing/low_chance,/obj/effect/decal/cleanable/rubble,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Zb" = (/obj/random/spider_trap_burrowing/low_chance,/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest)
-"Zd" = (/mob/living/simple_animal/hostile/roomba/boomba,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "Ze" = (/obj/machinery/light,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/nadezhda/dungeon/outside/zoo)
 "Zf" = (/mob/living/simple_animal/hostile/roomba/synthetic,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "Zg" = (/obj/machinery/vending/snack,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
@@ -2326,7 +2294,6 @@
 "ZL" = (/obj/machinery/partyalarm{pixel_y = -32},/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ZO" = (/obj/structure/table/onestar,/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 8},/obj/random/pack/tech_loot/onestar,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "ZP" = (/obj/structure/bed/chair,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
-"ZR" = (/mob/living/simple_animal/hostile/voidwolf,/turf/unsimulated/mineral,/area/asteroid/rogue)
 "ZT" = (/obj/structure/salvageable/console_os{dir = 1},/obj/structure/window/reinforced,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "ZU" = (/obj/random/material,/obj/random/material,/obj/random/material,/obj/random/material,/obj/random/material,/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
 "ZW" = (/obj/structure/table/onestar,/obj/item/weapon/oddity/common/old_newspaper,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
@@ -2424,15 +2391,15 @@ abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVgugugugCgCdcdcdcgCgCgCgeguguaVaVaVaVaVaVaVaVaVaV
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVgugugugCdcdcdcdcgCgCnQguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESERFNERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERERaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVgugubAgCgCgCdcdcgCgCgeguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVgugCgCgugugegCgphbgCguguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERERERaVaVaVaVaVaVaVaVERadERERERERaVaVaVaVESFnaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVgugCgCguguguguguguguguguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVKlESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESESERERERERERERFJERERERERaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVgugCgCgCgCgpguguguguguguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVKlESETaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhiOVOShiYhhiOfhiMwhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVERFNESERAVaVaVaVaVaVaVaVaVaVaVaVaVaVESESERaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVhihihihiaVaVaVaVaVaVaVaVaVgugugCgCdcgCgCguguguguguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVKlKmETaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERESESERERaVaVaVaVaVaVaVERaVaVaVaVERERESESESERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVhihihihiaVaVaVaVaVaVaVaVaVgugugugCdcdcgCgCgCgpguguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhiSQWphiWjhiOmhiZdhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVFNERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERERERERERESESESESERERERERaVaVaVaVERESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVhihihihiaVaVaVaVaVaVaVaVaVgugCgegCdcdcdcdcgCgCgCguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESESaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVhiYihihiaVaVaVaVaVaVaVaVaVhbgCgpgCdcdcdcgWdcgCgCguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVESESKqERERERAVFNFNaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhiTEYchiRQhivvhiXbhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESFNaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVhihihihiaVaVaVaVaVaVaVaVaVgegsgCdcdcdcdcyADcgCgCguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESESERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERAVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVhihihihiaVaVaVaVaVaVaVaVaVgpgCdcdcdcgYdcdcdcgCgCgCguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVETESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihiMvhiOuhiMRhiYThiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESERERERbkERERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERERaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVhiYQhihiaVaVaVaVaVaVaVaVaVgCdcdcdcdcgYdcdcdcgCgCgCgCguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVESESESERaVaVaVaVaVaVaVaVaVaVaVaVERERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVgugCgCguguguguguguguguguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVKlESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESESERERERERERERFJERERERERaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVgugCgCgCgCgpguguguguguguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVKlESETaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVERFNESERAVaVaVaVaVaVaVaVaVaVaVaVaVaVESESERaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVhihihihiaVaVaVaVaVaVaVaVaVgugugCgCdcgCgCguguguguguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVKlKmETaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERESESERERaVaVaVaVaVaVaVERaVaVaVaVERERESESESERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVhihihihiaVaVaVaVaVaVaVaVaVgugugugCdcdcgCgCgCgpguguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVFNERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERERERERERESESESESERERERERaVaVaVaVERESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVhihihihiaVaVaVaVaVaVaVaVaVgugCgegCdcdcdcdcgCgCgCguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESESaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVhiYihihiaVaVaVaVaVaVaVaVaVhbgCgpgCdcdcdcgWdcgCgCguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVAVESESKqERERERAVFNFNaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESFNaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVhihihihiaVaVaVaVaVaVaVaVaVgegsgCdcdcdcdcyADcgCgCguguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESESERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERAVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVhihihihiaVaVaVaVaVaVaVaVaVgpgCdcdcdcgYdcdcdcgCgCgCguguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVETESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESERERERbkERERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERERaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVhiYQhihiaVaVaVaVaVaVaVaVaVgCdcdcdcdcgYdcdcdcgCgCgCgCguaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVESESESERaVaVaVaVaVaVaVaVaVaVaVaVERERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVESESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
 abaVaVhihihihiaVaVaVaVaVaVaVaVgpdcdcdcdcdcgYdcdcdcdcgCgChbgCaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVFNESERaVaVaVaVaVaVaVaVaVaVERESESaVaVaVaVaVaVETETESESESETaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERbkERESESERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
 abaVaVhihihihiaVaVaVaVaVaVaVaVgCdcdcyAdcdcEYdcdcdcdcdcgCgCgCaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVETESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVESESFNaVaVaVaVaVaVaVaVaVaVaVaVaVERESESaVaVaVERESdDESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVgCdcdcdcdcdcgYdcdcdcdcdcdcgCgpgCaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVETESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERESaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERERERERERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVERaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
@@ -2526,15 +2493,15 @@ abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbLQvbLbLbLbLbLbLbLbLbLbLbLbLbLVGNXMrbLbLbmbmbmbm
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbLbLbLbLQvbLbLbLbLbLbLbLbLbLbLMrQXMrbLbLbmbmbmbmbmbLbLbmbmbmbmbmedeEMabmbLbLbLbVbVbVbVbVbVNWbVbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbLbLwcbmbmbmbmbmbmbmbmbmbmbLbLMrQOVGbLbWbmekeldwbmbLbLbmececeeenerereubmbLbLbLfsbVbVewbVbVbVPCbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbLbLbmbmaVaVaVaVaVaVaVaVbmdWbLbLbLbLbLbLbmeqwfeqcGbLbLcGervQererererMbbmbLbLbLbmbmbmbmbmbmbmbmbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVhihihihihihiaVaVaVaVaVaVbmbLbLbmaVaVaVaVaVaVaVaVaVbmbLbLbLZLbLbLbLbmeseqeAbmbLbLbmeBeCeDeeerereybmbLbLbLbmaVaVaVaVhihihihihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
-abaVaVhiZRhihidPhiaVaVaVaVaVaVbmbLbLbmaVaVaVaVaVaVaVaVaVbmbLbLbLbmbmbmbmbmbmbmbmbmbLusbmbmbmbmbmeFerercGbLbLbLbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
-abaVaVhihihihihihiaVaVaVaVaVaVbmbLbLbmaVaVaVaVaVaVaVaVaVbmbLbLbLbmJLwieIGgeKJPeMbmbLbLbmeNeOchenerererbmbLbLwcbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
-abaVaVhiWFhihiTOhiaVaVaVaVaVaVbmcXcXbmbmbmbmbmbmbmbmbmbmbmbLbLbLcGbRbLbLbLbLbLbLcGbLbLcGerervQererereQbmbLusbLbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
-abaVaVhihihihihihiaVaVaVaVaVaVbmbLbLbLeReSeTeUeUeVeWeXbmbmbLbLbLbmeYeYbLeZfafbfcbmbLcXbmeeeeeeeeervQeNbmbLbLbLbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
-abaVaVhiRChihiNkhiaVaVaVaVaVaVbmcWbLbLbLJQbLbLbLJQbLwcbmbmbmbmbmbmbmbmbmbmbmbmbmbmbLwcbmbmbmbmbmfefffgbmbmbmbmbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
-abaVaVhihihihihihiaVaVaVaVaVaVbmbmbLbLfhfiTZbLfjfkbLflbmbmbmbmbmbmbmbmbmbmbmbmbmbmcXbLbmbmbmbmbmbmbmbmbmbmbmbmbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
-abaVaVhiNEhihihihiaVaVaVaVaVaVaVbmfmbLfnfobLbLfqfrbLflbmbmbmbmfufvfyXsfufAfybmbmbmcOcObmbmbmfufvfyfBXsfBfufAfybmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
-abaVaVhihihihihihiaVaVaVaVaVaVaVbmwobLbLbLbLTZbLbLbLbLbLbLcXcOfBfBfBfBfBfBfBfBfzfBfBfBfBfzfBfBfBfBfBfBfBfBfBfBbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbLbLbmaVaVaVaVaVaVaVaVaVbmbLbLbLZLbLbLbLbmeseqeAbmbLbLbmeBeCeDeeerereybmbLbLbLbmaVaVaVaVhihihihihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihihihihihihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbLbLbmaVaVaVaVaVaVaVaVaVbmbLbLbLbmbmbmbmbmbmbmbmbmbLusbmbmbmbmbmeFerercGbLbLbLbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbLbLbmaVaVaVaVaVaVaVaVaVbmbLbLbLbmJLwieIGgeKJPeMbmbLbLbmeNeOchenerererbmbLbLwcbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmcXcXbmbmbmbmbmbmbmbmbmbmbmbLbLbLcGbRbLbLbLbLbLbLcGbLbLcGerervQererereQbmbLusbLbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbLbLbLeReSeTeUeUeVeWeXbmbmbLbLbLbmeYeYbLeZfafbfcbmbLcXbmeeeeeeeeervQeNbmbLbLbLbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmcWbLbLbLJQbLbLbLJQbLwcbmbmbmbmbmbmbmbmbmbmbmbmbmbmbLwcbmbmbmbmbmfefffgbmbmbmbmbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbmbLbLfhfiTZbLfjfkbLflbmbmbmbmbmbmbmbmbmbmbmbmbmbmcXbLbmbmbmbmbmbmbmbmbmbmbmbmbmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmfmbLfnfobLbLfqfrbLflbmbmbmbmfufvfyXsfufAfybmbmbmcOcObmbmbmfufvfyfBXsfBfufAfybmhiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
+abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmwobLbLbLbLTZbLbLbLbLbLbLcXcOfBfBfBfBfBfBfBfBfzfBfBfBfBfzfBfBfBfBfBfBfBfBfBfBbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmwobLJRbLbLbLbLdlbLbLcXbLbLcOfBfBfBfBfBwpwpfBfBfBfBfBfBfBfBwpwpfBfBfBfBfBfBfBbmaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmfBfBfBfBfBwsftbmbmwuSqfBwvbmbmfxwwfBfBfBfBfBfBfBbmhihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmfuwyfywzfBwsftbmbmwAfBwzwBbmbmfxwwfBfBfBwzfufvfybmhihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
@@ -2543,10 +2510,10 @@ aaababababababababababababababababababababababababababababababababababababababab
 "}
 (1,1,2) = {"
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
+abababababababababababababababababababababababababababctabdPabvvabMvabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababQaabPsabRzabPoabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 fFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFhvhvfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfF
@@ -2739,13 +2706,13 @@ fFsJsJsJsJsJsJsJsJaQdXKcaQsJsJsJsJsJsJsJsJsJaQKcbuaQsJsJaQdXbubuaQextMetaQvjvkvl
 fFsJsJsJsJsJsJsJsJaQbubuaQsJsJsJsJsJsJsJsJsJaQbubuaQsJsJaQbuKcvtaQaQaQaQaQaQaQaQaQbubuaQaQaQaQaQvubububPbububuaQsXJCzwhWhWAehWDazLDaEtEthWgogogogfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfhAhACCCChAhWhWwXhWhWhWhWAeAeAeAeAeAeAeAeAeAeAeAeAeAeAeAeAehWhWhWhWhWAehWAeAeAeAeAehWhWhWhWAehWhWhWhWhWhWfEfFsNszszszFPsGszszszaLvwFPszszszszszszvxaLszvzuKszszszszszszFPuvFPdZtlFPvAtPFPsEFPFPFPcvFPcvFPszsNsNsNsNsN
 fFsJsJsJsJsJsJsJsJaQbubuaQsJsJsJsJsJsJsJsJsJaQbubuaQsJsJaQbububuaQegeheiaQvbbvvdaQbubuaQvdbvvbaQwrbubuaQbububuaQsXJCzLEthWhWhWDazLDahWEthWgogogogfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfhAhAhACCCChAhWhWhWhWvJhWhWAeAeAeAeAeAeAeAeAeAeAeAeAeAeAehWhWhWhWhWAeAeAeAeAeAeAeAeAehWhWhWhWhWhWhWClhWhAhAfFsNszszszFPFPFPFPFPFPaLFPszszszszszszaLFPFPFPFPszszszszszszFPtmFPFPwtFPFPFPFPFPFPsRFPFPwZxaxbszsNsNsNsNsN
 fFsXsXsXsXsXsXaQaQaQbubuaQaQaQaQaQaQaQaQaQaQaQbubuaQaQaQaQbubububPtMJUtMaQbuKcbubPbububPbuKcbuaQuZbuxcaQbuKcbuaQsXzwzLzLzLzLzLKdzLDahWEthWgogogogfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfhAhAhAhAhACChAhWhWhWhWhWAeAeAeAehWhWhWAeAeAeAeAeAeAehWhWhWhWAeAeAeAeAeAehWAeAeAehWhWhWhWhWhWhWhWClhAhAhAhAfFsNszszszaDFPFPFPFPFPFPJNtkszszszszszFPFPukszFPszszszszszszFPFPxdaLxeFPaNxfFPtjFPcvxgFPxhFPsGszsNsNsNsNsN
-fFsXOzsXsXSbsXaQxibvKcbuxjxjbUbUuWxkuWxjuWuWxjbububvuWaQaQuHbubuaQextMetaQxlvlvlaQdXbuaQvlxmxnaQxcKcuZaQbubuuHaQsXzwDazLzLEthWDazLDahWEthWgogogogfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfhAhAhAhAhAhACCCChWClhWAeAeAeAeAehWAeAeAehWhWhWAeLHhWhWhWAeAeAehWhWhWhWhWhWAeAehWhWhWhWhWhWhWhWClhAhAhAhAfEfFsNszszszszszszszszsTdZFPFPxfFPFPdZFPFPaLszszFPszsFaDszszszFPsGFPFPxdFPFPFPFPxhFPFPFPaLFPFPdaszsNsNsNsNsN
+fFsXsXsXsXsXsXaQxibvKcbuxjxjbUbUuWxkuWxjuWuWxjbububvuWaQaQuHbubuaQextMetaQxlvlvlaQdXbuaQvlxmxnaQxcKcuZaQbubuuHaQsXzwDazLzLEthWDazLDahWEthWgogogogfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfhAhAhAhAhAhACCCChWClhWAeAeAeAeAehWAeAeAehWhWhWAeLHhWhWhWAeAeAehWhWhWhWhWhWAeAehWhWhWhWhWhWhWhWClhAhAhAhAfEfFsNszszszszszszszszsTdZFPFPxfFPFPdZFPFPaLszszFPszsFaDszszszFPsGFPFPxdFPFPFPFPxhFPFPFPaLFPFPdaszsNsNsNsNsN
 fFsXsXsXsXsXsXaQbUbububububuJWbubuKcbububububuKcKcbuxiaQaQaQaQaQaQaQaQaQaQaQaQaQaQbubuaQaQaQaQaQxcdtxoaQaQaQaQaQsXzwEtDaDaEtzLzLzLDahWEthWgogogogfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfhAhAhAhWAeAeAeAeAeAeAeAehWhWhWhWhWhWhWClhWAeAeAeAeAeAeAeAeAeAeAeAehWhWhWhWEGhWhWhAhAhAhAfEfEfFsNszszszszszszszszszuKFPFPFPFPFPFPFPsGuKszszFPFPFPFPFPFPFPFPFPFPFPFPFPFPFPxpukFPFPdacpckcvaNszsNsNsNsNsN
-fFsXUdsXsXTysXaQbUbubuxqxrxsbubuxtxuxvbuJWemxxxybubuuWaQsJsJsJsJsJsJaQaQaQaQaQaQaQududaQaQaQaQaQaQaQaQaQsXsXsXsXzwEtzLzLzLzLzLzLzLDahWhWhWgogogogfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgffEfEgfgfgfhAhAhWAeAeAehWAehWhWhWvJhAhAhAhAhACChWhWhWhWhWhWhWhWhWhWhWAehWhWhWhWhWClhAhAfEfEfEfEfEfFsNszszszszszszszszszszszszszszszszszszszszszszxzsGsGFPdZFPFPsGxddZvaFPtlFPFPFPFPaDszxAvAxBxCszsNsNsNsNsN
+fFsXsXsXsXsXsXaQbUbubuxqxrxsbubuxtxuxvbuJWemxxxybubuuWaQsJsJsJsJsJsJaQaQaQaQaQaQaQududaQaQaQaQaQaQaQaQaQsXsXsXsXzwEtzLzLzLzLzLzLzLDahWhWhWgogogogfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgffEfEgfgfgfhAhAhWAeAeAehWAehWhWhWvJhAhAhAhAhACChWhWhWhWhWhWhWhWhWhWhWAehWhWhWhWhWClhAhAfEfEfEfEfEfFsNszszszszszszszszszszszszszszszszszszszszszszxzsGsGFPdZFPFPsGxddZvaFPtlFPFPFPFPaDszxAvAxBxCszsNsNsNsNsN
 fFsXsXsXsXsXsXaQxibubuxDxExFbubuxGxHxububuxIxJxububuuWaQsJsJsJsJsJsJaQuWxKbuaQaQaQbubuaQaQaQuWxKxMaQsXzwzwzwzwJDJDEtzLzLzLzLzLzLEtDaDaDahWgogogogfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgffEfEfEfEgfhAhACCCCAeAeAeAehWhWCCCCCChAhAhAhAhACCCChAhWhWhWhWhWhWhWhWAehWhWhWClClhAhABLfEfEfEfEfEfFsNszszszszszszszszszszszszszszszszszszszszszszszszszszszszszFPFPsAaLFPdZFPFPaDaDszszFQxOJExQszsNsNsNsNsN
-fFsXctsXsXXZsXaQKcbubububuJWbubububuKcbubububububuJWbuaQsJsJsJsJsJsJaQbubububuKcbubuvebuKcbubububuaQsXzwhWEtEthWhWhWhWhWhWhWhWEtEtEthWDahWgogogofEgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgffEfEfEfEfEfEfEfEfEfEgfhACCCCAeAehWhWCCCChAgfgfgfgfgfgfhAhACChAhAhAhAhAhACCCCClhWhWhWhAhAhABLBLfEfEfEfEfEfFsNszszszszszszszszszszszszszszszszszszszszszszszszszszszszszsztSFPsGFPFPaDaDaDszszszsEckxRpuJFsNsNsNsNsN
+fFsXsXsXsXsXsXaQKcbubububuJWbubububuKcbubububububuJWbuaQsJsJsJsJsJsJaQbubububuKcbubuvebuKcbubububuaQsXzwhWEtEthWhWhWhWhWhWhWhWEtEtEthWDahWgogogofEgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgffEfEfEfEfEfEfEfEfEfEgfhACCCCAeAehWhWCCCChAgfgfgfgfgfgfhAhACChAhAhAhAhAhACCCCClhWhWhWhAhAhABLBLfEfEfEfEfEfFsNszszszszszszszszszszszszszszszszszszszszszszszszszszszszszsztSFPsGFPFPaDaDaDszszszsEckxRpuJFsNsNsNsNsN
 fFsXsXsXsXsXsXaQxixixUuWxixixixibSxVbSbSxjxjxixixWxixiaQsJsJsJsJsJsJaQbtxXxXbubububububububuxXxXbtaQsXzwhWhWEtEthWhWBLBLBLhWhWhWhWhWhWDahWgogogofEfEfEfEfEfEgfgfgfgfgfgfgfgfgfgfgfgfgffEfEfEfEfEfEfEfEfEfEfEfEfEfEfEhAhAhACChAhAhAhAhAgfgfgfgfgfgfgfgfgfgffEfEfEgfgfgfgfgfgfgfgdpGgfgffEfEfEfEfEfEfEfEfFsNszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszsGFPJGaDaDaDszszszszvAxZyaybszsNsNsNsNsN
-fFsXRrsXsXsXsXaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQsJsJsJsJsJsJaQaQwqfwbubububububububuwxyeaQaQsXzwhWhWhWhWBLhWBLBLBLBLBLhWBLBLhWBLhWIUgogofEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEgfgfgfgfgfgfgfgffEfEfEfEfEgfgfgfgffEfEfEfEfEgfgfgfgfgfgfDxDxgffEfEfEfEfEfEfEfEfEfFsNszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszJHJIszszsNsNsNsNsN
+fFsXsXsXsXsXsXaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQaQsJsJsJsJsJsJaQaQwqfwbubububububububuwxyeaQaQsXzwhWhWhWhWBLhWBLBLBLBLBLhWBLBLhWBLhWIUgogofEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEgfgfgfgfgfgfgfgffEfEfEfEfEgfgfgfgffEfEfEfEfEgfgfgfgfgfgfDxDxgffEfEfEfEfEfEfEfEfEfFsNszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszJHJIszszsNsNsNsNsN
 fFsXsXsXsXsXsXsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJaQwqfwdtbuxMxMxMxMbudtwxyeaQsJsXzwBLBLBLBLBLBLfEfEfEfEBLBLBLBLBLBLBLIUgogofEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEpGDxfEfEfEfEfEfEfEfEfEfEfFsNszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszsNsNsNsNsN
 fFsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJsJaQaQaQaQaQaQaQaQaQaQaQaQaQaQsJsXfFfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEgogogofEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEDxDxfEfEfEfEfEfEfEfEfEfEfFfFszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszszsNsNsNsNsN
 vZfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFrRLTfFfFfFfFfFfFfFfFfFfFfFfFsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsNsN
