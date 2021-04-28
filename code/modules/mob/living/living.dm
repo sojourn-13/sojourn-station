@@ -294,12 +294,12 @@ default behaviour is:
 	return halloss
 
 /mob/living/proc/adjustHalLoss(var/amount)
-	if(status_flags & GODMODE)
+	if(status_flags & GODMODE || NO_BREATHE)
 		return FALSE	//godmode
 	halloss = min(max(halloss + amount, 0),(maxHealth*2))
 
 /mob/living/proc/setHalLoss(var/amount)
-	if(status_flags & GODMODE)
+	if(status_flags & GODMODE || NO_BREATHE)
 		return FALSE	//godmode
 	halloss = amount
 
@@ -826,8 +826,9 @@ default behaviour is:
 	return
 
 /mob/living/proc/adjustNutrition(var/amount, var/mob/living/carbon/human/H)
-	if(H.species.reagent_tag == IS_SYNTHETIC)
-		return
+	if(H)
+		if(H.species.reagent_tag == IS_SYNTHETIC)
+			return
 	nutrition += amount
 	nutrition = max(0,min(nutrition, max_nutrition))	//clamp the value
 
