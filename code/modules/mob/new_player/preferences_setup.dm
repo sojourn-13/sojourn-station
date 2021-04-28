@@ -244,4 +244,4 @@
 						update_icon = TRUE
 
 	if(update_icon)
-		mannequin.update_icons()
+		mannequin.regenerate_icons()
