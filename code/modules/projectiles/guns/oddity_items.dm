@@ -135,20 +135,20 @@
 	charge_meter = FALSE
 
 /obj/item/weapon/gun/energy/xray/psychic_cannon
-	name = "\"Medijack\" cannon"
+	name = "\"Manta-RAY\" cannon"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			An unusual gun sought after by the Soteria when it appears for both its utility and its research value. It's durasteel interior and unknown technological function allows \
-			this weapon to switch between armor penetrating moderate damage x-ray shots or, more unusually, shots that heal toxins, burns, and brute damage in low amounts."
+			this weapon to use moderately high damage armor penetrating x-ray laser blasts. While a strict step up from a standard x-ray weapon in all ways, this weapon is more valued for \
+			its research points in the deconstrustive analyzer."
 	icon = 'icons/obj/guns/energy/psychiccannon.dmi'
 	icon_state = "psychic_lasercannon"
 	item_state = "psychic_lasercannon"
 	fire_sound = 'sound/weapons/laser3.ogg'
 	origin_tech = list(TECH_COMBAT = 19, TECH_MATERIAL = 19, TECH_MAGNET = 19, TECH_ILLEGAL = 19)
 	price_tag = 4000
+	damage_multiplier = 1.2
 	charge_cost = 100
 	twohanded = FALSE
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
-	init_firemodes = list(
-		list(mode_name="x-ray", projectile_type = /obj/item/projectile/beam/xray, icon="kill"),
-		list(mode_name="healing", projectile_type = /obj/item/projectile/beam/sniper/healing, icon="stun"),
-		)
+	can_dual = TRUE
+	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
