@@ -294,12 +294,12 @@ default behaviour is:
 	return halloss
 
 /mob/living/proc/adjustHalLoss(var/amount)
-	if(status_flags & GODMODE || NO_BREATHE)
+	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	halloss = min(max(halloss + amount, 0),(maxHealth*2))
 
 /mob/living/proc/setHalLoss(var/amount)
-	if(status_flags & GODMODE || NO_BREATHE)
+	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	halloss = amount
 
