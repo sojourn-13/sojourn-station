@@ -5,7 +5,6 @@
 	icon_living = "crusher"
 	icon_dead = "crusher_dead"
 	icon_rest = "crusher_stunned"
-	flash_resistances = 7 //Crushers are meant to be tanks, let them tank!
 	maxHealth = 500
 	health = 500
 	attack_sound = list('sound/xenomorph/alien_footstep_charge1.ogg', 'sound/xenomorph/alien_footstep_charge2.ogg', 'sound/xenomorph/alien_footstep_charge3.ogg')
@@ -20,7 +19,6 @@
 	icon_living = "screecher"
 	icon_dead = "screecher_dead"
 	icon_rest = "screecher_stunned"
-	flash_resistances = 2 //For balance against are speedy fello
 	maxHealth = 400
 	health = 400
 
@@ -35,7 +33,6 @@
 	icon_living = "ravager"
 	icon_dead = "ravager_dead"
 	icon_rest = "ravager_stunned"
-	flash_resistances = 2 //For balance against are speedy fello
 	maxHealth = 450
 	health = 450
 
@@ -52,7 +49,6 @@
 	icon_living = "defiler"
 	icon_dead = "defiler_dead"
 	icon_rest = "defiler_stunned"
-	flash_resistances = 8 //One of the weakest ones and if they fall down likely will die quickly
 	maxHealth = 400
 	health = 400
 
@@ -68,7 +64,6 @@
 	icon_living = "hivelord"
 	icon_dead = "hivelord_dead"
 	icon_rest = "hivelord_stunned"
-	flash_resistances = 5 //Kinda slow, not really flash proof but has good amout of resistants
 	maxHealth = 900
 	health = 900
 

@@ -133,7 +133,7 @@
 	turns_per_move = 1
 	melee_damage_lower = 40
 	melee_damage_upper = 50
-	flash_resistances = 10 //For balance against are speedy fello
+	flash_resistances = 100 //Many large eyes, flashing one doesn't blind the others
 	poison_per_bite = 6
 	poison_type = "stoxin"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/reaper_spider

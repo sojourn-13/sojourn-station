@@ -65,4 +65,8 @@
 				/obj/item/weapon/gun/energy/xray/psychic_cannon = 1,
 				/obj/item/weapon/gun/projectile/boltgun/bluecross = 1,
 				/obj/item/weapon/gun/energy/lasersmg/chaos_engine =1 ,
+				/obj/item/weapon/tool/nailstick/ogre = 1,
+				/obj/item/weapon/material/butterfly/frenchman = 1,
+				/obj/item/weapon/tool/wrench/big_wrench/freedom = 1,
+				/obj/item/weapon/tool/saw/hyper/doombringer = 1,
 				/obj/item/weapon/soap/bluespase = 0.5)) //Ye not a "gun" but still good for this
