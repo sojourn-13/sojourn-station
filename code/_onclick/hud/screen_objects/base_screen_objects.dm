@@ -523,8 +523,10 @@
 
 /obj/screen/nutrition/update_icon()
 	set src in usr.client.screen
-	var/mob/living/carbon/human/H = parentmob
 	cut_overlays()
+	var/mob/living/carbon/human/H = parentmob
+	if(H.species.reagent_tag == IS_SYNTHETIC)
+		return
 	switch(H.nutrition)
 		if(450 to INFINITY)				add_overlay( ovrls["nutrition0"])
 		if(350 to 450)					add_overlay( ovrls["nutrition1"])

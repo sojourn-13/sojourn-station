@@ -13,8 +13,8 @@ GLOBAL_REAL(SSmentor_tickets, /datum/controller/subsystem/tickets/mentor_tickets
 	ticket_help_type = "Mentorhelp"
 	ticket_help_span = "mentorhelp"
 	other_ticket_name = "Admin"
-	other_ticket_permission = R_ADMIN
-	close_rights = R_MENTOR | R_ADMIN
+	other_ticket_permission = R_ADMIN | R_MOD
+	close_rights = R_MOD | R_ADMIN
 	rights_needed = R_MENTOR | R_ADMIN | R_MOD
 
 /datum/controller/subsystem/tickets/mentor_tickets/Initialize()

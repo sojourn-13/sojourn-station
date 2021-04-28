@@ -19,11 +19,10 @@ var/datum/xenomorph/xenomorph_ai
 	health = 30
 	randpixel = 0
 	gibspawner = /obj/effect/gibspawner/xenomorph
-	flash_resistances = 0
 	attack_sound = list('sound/xenomorph/alien_claw_flesh1.ogg', 'sound/xenomorph/alien_claw_flesh2.ogg', 'sound/xenomorph/alien_claw_flesh3.ogg')
 	attack_sound_chance = 100
 	speak_emote = list("hisses", "screeches", "trills")
-	emote_see = list("flexes and unflexes its claws", "whips its tails about wildly", "drips saliva onto the ground")
+	emote_see = list("flexes and unflexes its claws.", "whips its tails about wildly!", "drips saliva onto the ground.")
 	speak_chance = 5
 	deathmessage = "lets out a shrill scream as it dies!"
 	overkill_gib = 20
@@ -42,6 +41,7 @@ var/datum/xenomorph/xenomorph_ai
 	melee_damage_upper = 15
 	can_burrow = FALSE
 	acceptableTargetDistance = 5
+	flash_resistances = 50 //No eyes.
 
 	min_breath_required_type = 0
 	min_air_pressure = 0 //below this, brute damage is dealt

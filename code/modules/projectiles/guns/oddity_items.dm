@@ -1,3 +1,6 @@
+//Oddity items are rare rewards from special locations that are usually highly defended by many or very powerful mobs, requiring effort to obtain them. They are often simple equipment with better stats
+//or unique effects. These should never be placed enmasse or in easily reached places. -Kaz
+//Guns
 /obj/item/weapon/gun/projectile/handmade_pistol/anti_material/reliable
 	name = "\"Finger of God\" handmade pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
@@ -135,20 +138,86 @@
 	charge_meter = FALSE
 
 /obj/item/weapon/gun/energy/xray/psychic_cannon
-	name = "\"Medijack\" cannon"
+	name = "\"Manta-RAY\" cannon"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			An unusual gun sought after by the Soteria when it appears for both its utility and its research value. It's durasteel interior and unknown technological function allows \
-			this weapon to switch between armor penetrating moderate damage x-ray shots or, more unusually, shots that heal toxins, burns, and brute damage in low amounts."
+			this weapon to use moderately high damage armor penetrating x-ray laser blasts. While a strict step up from a standard x-ray weapon in all ways, this weapon is more valued for \
+			its research points in the deconstrustive analyzer."
 	icon = 'icons/obj/guns/energy/psychiccannon.dmi'
 	icon_state = "psychic_lasercannon"
 	item_state = "psychic_lasercannon"
 	fire_sound = 'sound/weapons/laser3.ogg'
 	origin_tech = list(TECH_COMBAT = 19, TECH_MATERIAL = 19, TECH_MAGNET = 19, TECH_ILLEGAL = 19)
 	price_tag = 4000
+	damage_multiplier = 1.2
 	charge_cost = 100
 	twohanded = FALSE
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
-	init_firemodes = list(
-		list(mode_name="x-ray", projectile_type = /obj/item/projectile/beam/xray, icon="kill"),
-		list(mode_name="healing", projectile_type = /obj/item/projectile/beam/sniper/healing, icon="stun"),
-		)
+	can_dual = TRUE
+	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
+
+//Melee Weapons
+/obj/item/weapon/tool/nailstick/ogre
+	name = "\"Oni\" Greatclub"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			A wooden club inscribed with several symbols of jana, though they make no sense put together. The wood is of unusual qualities and some lunatic hammered durasteel nails into \
+			it. Either the maker didn't know or didn't care about the value, it still ended up a supremely deadly weapon ... or hammer."
+	icon_state = "oni"
+	force_unwielded = WEAPON_FORCE_BRUTAL
+	force_wielded = WEAPON_FORCE_LETHAL
+	throwforce = WEAPON_FORCE_PAINFUL
+	w_class = ITEM_SIZE_NORMAL
+	armor_penetration = ARMOR_PEN_HALF
+	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
+	max_upgrades = 5
+	tool_qualities = list(QUALITY_HAMMERING = 100)
+
+/obj/item/weapon/tool/knife/dagger/assassin/ubersaw
+	name = "\"Uber\" syringe-dagger"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			Whoever made this was very pro-active about collecting samples in the middle of active combat. They probably lost their medical license."
+
+/obj/item/weapon/material/butterfly/frenchman
+	name = "\"Frenchman\" butterfly blade"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			A french flag has been embossed on the handle, the deftness of this blade and how supremely lethal its diamond edged blade is would make this perfect for sinking said blade \
+			into a monsters back... or another colonist."
+	icon_state = "frenchmen"
+	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_DIAMOND = 3)
+	backstab_damage = 50
+
+/obj/item/weapon/tool/wrench/big_wrench/freedom
+	name = "\"Freedom\" wrench"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			The sign of a man is someone who can build and who can break, with a wrench like this, you'll do both."
+	icon_state = "freedom_wrench"
+	w_class = ITEM_SIZE_NORMAL
+	tool_qualities = list(QUALITY_BOLT_TURNING = 80, QUALITY_HAMMERING = 80)
+	matter = list(MATERIAL_PLASTEEL = 5)
+	force = WEAPON_FORCE_BRUTAL
+	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
+	throwforce = WEAPON_FORCE_PAINFUL
+	degradation = 0.7
+	max_upgrades = 4
+
+/obj/item/weapon/tool/saw/hyper/doombringer
+	name = "\"Doombringer\" chainsword"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			The only thing they fear is you."
+	icon_state = "rip_and_tear"
+	hitsound = WORKSOUND_CHAINSAW
+	worksound = WORKSOUND_CHAINSAW
+	force = WEAPON_FORCE_GODLIKE
+	w_class = ITEM_SIZE_NORMAL
+	armor_penetration = ARMOR_PEN_HALF
+	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
+	tool_qualities = list(QUALITY_SAWING = 70, QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 30)
+	max_upgrades = 4
+	degradation = 0.1
+	use_power_cost = 1
+	suitable_cell = /obj/item/weapon/cell/medium
+
+//Armor
+
+
+//Tools and tool mods (these are for things not intended for fighting but for actual tools)

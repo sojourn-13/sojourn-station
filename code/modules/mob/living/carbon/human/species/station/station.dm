@@ -512,6 +512,8 @@
 	slowdown = 0.3
 	radiation_mod = 0
 	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -571,6 +573,8 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
 
 	dark_color = "#FA8128"
 	light_color = "#FCAE1E"

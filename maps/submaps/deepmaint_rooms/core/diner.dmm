@@ -1,13 +1,18 @@
 "aa" = (/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "ab" = (/obj/machinery/door/airlock/freezer,/turf/simulated/floor/tiled/white,/area/deepmaint)
 "ac" = (/turf/simulated/wall,/area/deepmaint)
+"ad" = (/obj/item/weapon/reagent_containers/food/snacks/meat,/obj/effect/decal/cleanable/blood,/obj/item/weapon/tool/knife/hook,/mob/living/carbon/superior_animal/roach/roachling,/turf/simulated/floor/tiled/white,/area/deepmaint)
+"ae" = (/obj/machinery/light/small,/obj/item/weapon/reagent_containers/food/snacks/meat,/obj/effect/decal/cleanable/blood,/mob/living/carbon/superior_animal/roach/roachling,/turf/simulated/floor/tiled/white,/area/deepmaint)
 "af" = (/obj/random/junk,/turf/simulated/floor/tiled/steel,/area/deepmaint)
+"ag" = (/obj/random/cluster/xenomorphs,/turf/simulated/floor/tiled/cafe,/area/deepmaint)
+"ah" = (/obj/random/cluster/xenomorphs,/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "ai" = (/obj/machinery/light,/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "aj" = (/obj/structure/bed/chair/custom/onestar{dir = 8},/turf/simulated/floor/wood/wild4,/area/deepmaint)
 "ak" = (/obj/structure/closet/secure_closet/freezer/fridge,/turf/simulated/floor/tiled/white,/area/deepmaint)
 "al" = (/obj/random/cloth/suit,/turf/simulated/floor/wood,/area/deepmaint)
 "am" = (/obj/structure/table/standard,/turf/simulated/floor/wood/wild4,/area/deepmaint)
-"ao" = (/mob/living/carbon/superior_animal/roach/roachling,/obj/item/weapon/reagent_containers/food/snacks/meat,/obj/effect/decal/cleanable/blood,/obj/item/weapon/tool/knife/hook,/turf/simulated/floor/tiled/white,/area/deepmaint)
+"an" = (/obj/random/cluster/roaches,/turf/simulated/floor/wood,/area/deepmaint)
+"ao" = (/obj/structure/bed/chair/custom/onestar{dir = 8},/obj/random/credits,/turf/simulated/floor/wood/wild4,/area/deepmaint)
 "ar" = (/obj/structure/railing{tag = "icon-railing0 (EAST)"; icon_state = "railing0"; dir = 4},/obj/structure/railing,/turf/simulated/floor/wood/wild4,/area/deepmaint)
 "as" = (/obj/structure/sink/kitchen{pixel_y = 32},/obj/item/trash/tray,/turf/simulated/floor/tiled/cafe,/area/deepmaint)
 "aw" = (/obj/structure/bed/chair/custom/onestar{dir = 4},/turf/simulated/floor/wood/wild4,/area/deepmaint)
@@ -24,8 +29,6 @@
 "aK" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/cafe,/area/deepmaint)
 "aL" = (/obj/machinery/microwave,/obj/structure/table/marble,/turf/simulated/floor/tiled/cafe,/area/deepmaint)
 "aN" = (/obj/structure/closet/secure_closet/freezer/meat,/turf/simulated/floor/tiled/white,/area/deepmaint)
-"aO" = (/obj/machinery/light/small,/mob/living/carbon/superior_animal/roach/roachling,/obj/item/weapon/reagent_containers/food/snacks/meat,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/white,/area/deepmaint)
-"aQ" = (/obj/random/cluster/roaches/lower_chance,/turf/simulated/floor/wood,/area/deepmaint)
 "aR" = (/obj/structure/table/glass,/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda,/obj/random/credits,/turf/simulated/floor/wood/wild3,/area/deepmaint)
 "aS" = (/obj/structure/table/bench/marble,/obj/random/cloth/holster,/turf/simulated/floor/wood,/area/deepmaint)
 "aT" = (/obj/item/weapon/gun_upgrade/trigger/cop_block,/turf/simulated/floor/wood,/area/deepmaint)
@@ -45,7 +48,6 @@
 "bp" = (/obj/structure/table/glass,/obj/item/trash/snack_bowl,/obj/item/weapon/reagent_containers/food/drinks/drinkingglass,/turf/simulated/floor/wood/wild3,/area/deepmaint)
 "bq" = (/turf/simulated/floor/tiled/cafe,/area/deepmaint)
 "br" = (/obj/item/trash/cheesie,/obj/item/trash/chips,/turf/simulated/floor/tiled/steel,/area/deepmaint)
-"bu" = (/obj/effect/decal/cleanable/blood/drip,/obj/random/cluster/roaches,/turf/simulated/floor/wood,/area/deepmaint)
 "bx" = (/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/wood,/area/deepmaint)
 "bz" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/cafe,/area/deepmaint)
 "bA" = (/obj/machinery/vending/cola,/turf/simulated/floor/tiled/steel,/area/deepmaint)
@@ -59,7 +61,6 @@
 "bL" = (/obj/structure/table/standard,/obj/machinery/light/floor,/obj/item/trash/plate,/obj/item/weapon/reagent_containers/food/drinks/drinkingglass,/obj/random/cloth/gloves,/turf/simulated/floor/wood,/area/deepmaint)
 "bN" = (/obj/structure/table/standard,/obj/machinery/light/floor,/obj/random/junkfood/rotten,/turf/simulated/floor/wood,/area/deepmaint)
 "bO" = (/obj/structure/table/standard,/obj/item/trash/waffles,/turf/simulated/floor/wood,/area/deepmaint)
-"bP" = (/obj/random/cluster/roaches,/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "bQ" = (/obj/structure/bed/chair/custom/onestar{desc = "A old chair. Doesn't look very comfortable."; name = "old chair"; dir = 1},/obj/random/cloth/armor/low_chance,/turf/simulated/floor/wood,/area/deepmaint)
 "bS" = (/obj/item/trash/cheesie,/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "bV" = (/obj/effect/window_lwall_spawn,/turf/simulated/floor/tiled/steel,/area/deepmaint)
@@ -75,7 +76,6 @@
 "cl" = (/obj/structure/table/glass,/obj/item/trash/snack_bowl,/turf/simulated/floor/wood/wild3,/area/deepmaint)
 "cm" = (/obj/random/cluster/roaches/lower_chance,/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "cn" = (/obj/item/trash/cigbutt/cigarbutt,/turf/simulated/floor/wood/wild3,/area/deepmaint)
-"co" = (/obj/random/cluster/roaches,/turf/simulated/floor/wood/wild3,/area/deepmaint)
 "cq" = (/obj/structure/railing,/turf/simulated/floor/wood/wild4,/area/deepmaint)
 "cs" = (/turf/simulated/floor/wood/wild4,/area/deepmaint)
 "cy" = (/obj/structure/table/bench/marble,/obj/random/cloth/helmet,/obj/random/cloth/holster,/obj/random/gun_cheap,/obj/effect/decal/cleanable/blood,/obj/item/weapon/oddity/common/old_knife,/obj/random/cloth/under/low_chance,/obj/random/credits,/turf/simulated/floor/wood,/area/deepmaint)
@@ -88,7 +88,6 @@
 "lD" = (/obj/structure/table/standard,/obj/item/trash/snack_bowl,/turf/simulated/floor/wood,/area/deepmaint)
 "oa" = (/obj/structure/table/glass,/obj/item/weapon/reagent_containers/food/drinks/drinkingglass,/turf/simulated/floor/wood/wild3,/area/deepmaint)
 "qY" = (/obj/structure/bed/chair/custom/onestar{desc = "A old chair. Doesn't look very comfortable."; name = "old chair"; dir = 1},/obj/random/cloth/backpack,/obj/random/credits,/turf/simulated/floor/wood,/area/deepmaint)
-"ri" = (/obj/structure/bed/chair/custom/onestar{dir = 8},/obj/random/cluster/roaches/low_chance,/obj/random/credits,/turf/simulated/floor/wood/wild4,/area/deepmaint)
 "rE" = (/obj/structure/table/glass,/obj/item/trash/popcorn,/obj/random/common_oddities/low_chance,/obj/random/credits,/turf/simulated/floor/wood/wild3,/area/deepmaint)
 "tZ" = (/obj/structure/bed/chair/custom/onestar{desc = "A old chair. Doesn't look very comfortable."; name = "old chair"; dir = 1},/obj/random/boxes/low_chance,/turf/simulated/floor/wood,/area/deepmaint)
 "um" = (/obj/machinery/light/floor,/obj/random/junk,/turf/simulated/floor/tiled/steel,/area/deepmaint)
@@ -104,7 +103,6 @@
 "Ps" = (/obj/structure/table/glass,/obj/machinery/light/floor,/obj/item/trash/waffles,/obj/random/junkfood/rotten,/turf/simulated/floor/wood/wild3,/area/deepmaint)
 "QC" = (/obj/structure/bed/chair/custom/onestar,/obj/random/cloth/suit/low_chance,/turf/simulated/floor/wood,/area/deepmaint)
 "QE" = (/obj/structure/bed/chair/custom/onestar{desc = "A old chair. Doesn't look very comfortable."; name = "old chair"; dir = 1},/obj/random/cloth/suit/low_chance,/turf/simulated/floor/wood,/area/deepmaint)
-"UZ" = (/obj/structure/table/standard,/obj/item/trash/plate,/obj/random/cluster/roaches/low_chance,/turf/simulated/floor/wood/wild4,/area/deepmaint)
 "Wb" = (/obj/structure/scrap/food,/turf/simulated/floor/wood,/area/deepmaint)
 "WS" = (/obj/structure/bed/chair/custom/onestar,/obj/random/boxes/low_chance,/turf/simulated/floor/wood,/area/deepmaint)
 "Yn" = (/obj/structure/railing{tag = "icon-railing0 (EAST)"; icon_state = "railing0"; dir = 4},/turf/simulated/floor/wood/wild4,/area/deepmaint)
@@ -115,21 +113,21 @@
 (1,1,1) = {"
 aaaaafaaaiaaaaaaaaaiaaaaaaaaaiaaaaaaaaaaaa
 aaaaacacacacacacacacacacacacacacacbAaaaaaf
-afaaacakaoabasaIaLaLaUaZbabqbqbbacbCbraWaa
-aaaaacaNaOacbqbqaBbqbqbqbzbDbqaBacbCaWaabS
+afaaacakadabasaIaLaLaUaZbabqbqbbacbCbraWaa
+aaaaacaNaeacbqbqaBagbqbqbzbDbqbqacbCaWaabS
 aaafacacacacaKbqbqbqbqbqacacbqacaccabSaaaf
 aaaabVcgbZchbkcibebfbgbkbibZbxbZbVcjaaaaaa
-afaabVbZckclbkcnbkbkcobkblBcaQbZbVaaFvbEaa
-aaaabVaQbZPsaRYPoabobprEgJfsbZazbVaaaaaaaf
-aaaabZbZbdalaSbZcyckbZckbZbZbZbZbZbPbEaaaa
-aaaabxbZbZbZbuaTbZbZbZcgbZbdbZbZbZafbEaaaa
-aaafbVbZbZbZbZbZbZWbbZbxbZbZbxbZbVaaaaaaaa
+afaabVbZckclbkcnbkbkbkbkblBcbZbZbVaaFvbEaa
+aaahbVbZbZPsaRYPoabobprEgJfsbZazbVahaaaaaf
+aaaabZbZbdalaSbZcyckbZckbZbZbZbZbZaabEaaaa
+aaaabxbZbZbZbxaTbZbZbZcgbZbdbZbZbZafbEaaaa
+aaafbVbZbZanbZbZbZWbbZbxanbZbxbZbVaaaaaaaa
 aaaabVbFbGfoaxbZazbdytbZaAWSQCaAbVaaafaaaf
-aaaabVbJbKbObLbZbZbZbZbZbNlDbOaDbVaaaaaaaa
-aaaabVqYbQxfhQbZaExGbZbZQExftZxfbVaaafaaaf
-afaaacbVbVbVbVbVbZacbZbVbVbVbVbVacbPaaaaaa
+aaahbVbJbKbObLbZbZbZbZbZbNlDbOaDbVaaaaaaaa
+aaaabVqYbQxfhQbZaExGbZbZQExftZxfbVahafaaaf
+afaaacbVbVbVbVbVbZacbZbVbVbVbVbVacaaaaaaaa
 aaaaaFawZaOcajcscsaGcscsbWyQjrajZOaaafaaaf
-aaaabXawUZamajcscscscscsawEvggriYnaabEaaaa
+aaaabXawyQamajcscscscscsawEvggaoYnaabEaaaa
 aaaaaHcqcqcqcqcqcscscscqcqcqcqcqaraaaaaaaa
 aaafaaaaaaaaaaaaaaaaafaaaaaaafaaaaaaafaabE
 aaaaAYcmaaaaafaaaaAYaaaaaaaaafcmumaaaaaaaa

@@ -9,7 +9,6 @@
 
 	maxHealth = 1600
 	health = 1600
-	flash_resistances = 9 //We are the second in command, lets not fall
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
@@ -25,7 +24,6 @@
 	icon_dead = "queen_dead"
 	icon_rest = "queen_stunned"
 	status_flags = 0
-	flash_resistances = 9.9 //Can mini stun to help make the queen want to attack the other people so it dosnt solo bullie one
 	maxHealth = 3000
 	health = 3000
 	poison_per_bite = 10

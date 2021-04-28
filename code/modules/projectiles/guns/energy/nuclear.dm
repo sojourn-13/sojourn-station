@@ -12,6 +12,7 @@
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_URANIUM = 10)
 	price_tag = 2000
 	charge_cost = 50
+	can_dual = FALSE
 
 	init_firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, fire_sound='sound/weapons/Taser.ogg', icon="stun"),

@@ -825,7 +825,9 @@ default behaviour is:
 /mob/living/proc/vomit()
 	return
 
-/mob/living/proc/adjustNutrition(var/amount)
+/mob/living/proc/adjustNutrition(var/amount, var/mob/living/carbon/human/H)
+	if(H.species.reagent_tag == IS_SYNTHETIC)
+		return
 	nutrition += amount
 	nutrition = max(0,min(nutrition, max_nutrition))	//clamp the value
 
