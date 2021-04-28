@@ -5,7 +5,7 @@
 
 /obj/machinery/matter_nanoforge
 	name = "Matter NanoForge"
-	desc = "It consumes items and produces compressed matter."
+	desc = "It consumes items and produces compressed matter. Objects produced by it are made up of compressed matter that can not be broken back down for their material value."
 	icon = 'icons/obj/machines/matterforge.dmi'
 	icon_state = "techprint"
 	density = TRUE
@@ -496,7 +496,7 @@
 
 /obj/machinery/matter_nanoforge/proc/fabricate_design(datum/design/design)
 	consume_materials(design)
-	design.Fabricate(drop_location(), mat_efficiency, src)
+	design.Fabricate(drop_location(), 0, src)
 
 	working = FALSE
 	current_design = null
@@ -504,7 +504,7 @@
 	next_file()
 
 /obj/machinery/matter_nanoforge/proc/consume_materials(datum/design/design)
-	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - design.materials[MATERIAL_COMPRESSED_MATTER])
+	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - (design.materials[MATERIAL_COMPRESSED_MATTER] * mat_efficiency))
 	return TRUE
 
 #undef ERR_OK
