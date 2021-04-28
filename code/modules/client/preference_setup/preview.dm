@@ -14,8 +14,10 @@ datum/preferences/proc/update_preview_icon(var/naked = FALSE)
 	if(SSticker.current_state > GAME_STATE_STARTUP)
 		dress_preview_mob(mannequin, naked)
 
+	/*
 	mannequin.dir = EAST
 	preview_east = getFlatIcon(mannequin, EAST)
+	*/
 
 	mannequin.dir = WEST
 	var/icon/stamp = getFlatIcon(mannequin, WEST)
@@ -33,7 +35,7 @@ datum/preferences/proc/update_preview_icon(var/naked = FALSE)
 	preview_south = stamp
 
 	// Scaling here to prevent blurring in the browser.
-	preview_east.Scale(preview_east.Width() * 2, preview_east.Height() * 2)
+	//preview_east.Scale(preview_east.Width() * 2, preview_east.Height() * 2)
 	preview_west.Scale(preview_west.Width() * 2, preview_west.Height() * 2)
 	preview_north.Scale(preview_north.Width() * 2, preview_north.Height() * 2)
 	preview_south.Scale(preview_south.Width() * 2, preview_south.Height() * 2)
