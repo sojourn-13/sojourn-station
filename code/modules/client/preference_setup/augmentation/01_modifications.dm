@@ -2,7 +2,7 @@
 	var/list/modifications_data   = list()
 	var/list/modifications_colors = list()
 	var/current_organ = BP_TORSO
-	var/global/list/r_organs = list(BP_HEAD, BP_R_ARM, BP_CHEST, BP_R_LEG, BP_L_ARM, BP_GROIN, BP_L_LEG)
+	var/global/list/r_organs = list(BP_HEAD, BP_R_ARM, BP_R_LEG, BP_L_ARM, BP_GROIN, BP_L_LEG)
 	var/global/list/l_organs = list(BP_EYES, OP_HEART, OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT, OP_STOMACH, BP_BRAIN, OP_LUNGS, OP_LIVER)
 	var/global/list/internal_organs = list("chest2", OP_HEART, OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT, OP_STOMACH, BP_BRAIN, OP_LUNGS, OP_LIVER)
 
@@ -72,7 +72,7 @@
 		dat += "<br>[disp_name]<br>"
 
 	dat += "</td><td style='width:80px;'><center><img src=new_previewicon[pref.preview_dir].png height=64 width=64>"
-	dat += "<br><center><a href='?src=\ref[src];rotate=right'>&lt;&lt;</a> <a href='?src=\ref[src];rotate=left'>&gt;&gt;</a></center></td>"
+//	dat += "<br><center><a href='?src=\ref[src];rotate=right'>&lt;&lt;</a> <a href='?src=\ref[src];rotate=left'>&gt;&gt;</a></center></td>"
 	dat += "<td style='width:115px; text-align:left'>"
 
 	for(var/organ in pref.l_organs)
