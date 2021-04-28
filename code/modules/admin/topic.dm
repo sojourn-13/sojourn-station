@@ -25,7 +25,7 @@
 	if(href_list["openticket"])
 		var/ticketID = text2num(href_list["openticket"])
 		if(!href_list["is_mhelp"])
-			if(!check_rights(R_ADMIN))
+			if(!check_rights(R_ADMIN|R_MOD))
 				return
 			SStickets.showDetailUI(usr, ticketID)
 		else
@@ -35,22 +35,22 @@
 
 	if(href_list["take_question"])
 		var/indexNum = text2num(href_list["take_question"])
-		if(check_rights(R_ADMIN))
+		if(check_rights(R_ADMIN|R_MOD))
 			SStickets.takeTicket(indexNum)
 
 	if(href_list["resolve"])
 		var/indexNum = text2num(href_list["resolve"])
-		if(check_rights(R_ADMIN))
+		if(check_rights(R_ADMIN|R_MOD))
 			SStickets.resolveTicket(indexNum)
 
 	if(href_list["convert_ticket"])
 		var/indexNum = text2num(href_list["convert_ticket"])
-		if(check_rights(R_ADMIN))
+		if(check_rights(R_ADMIN|R_MOD))
 			SStickets.convert_to_other_ticket(indexNum)
 
 	if(href_list["autorespond"])
 		var/indexNum = text2num(href_list["autorespond"])
-		if(check_rights(R_ADMIN))
+		if(check_rights(R_ADMIN|R_MOD))
 			SStickets.autoRespond(indexNum)
 
 	var/static/list/topic_handlers = AdminTopicHandlers()

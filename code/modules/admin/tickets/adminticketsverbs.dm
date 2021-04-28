@@ -6,7 +6,7 @@ ADMIN_VERB_ADD(/client/proc/openAdminTicketUI, R_ADMIN, FALSE)
 	set name = "Open Admin Ticket Interface"
 	set category = "Admin"
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_ADMIN|R_MENTOR))
 		return
 
 	SStickets.showUI(usr)
@@ -16,7 +16,7 @@ ADMIN_VERB_ADD(/client/proc/resolveAllAdminTickets, R_ADMIN, FALSE)
 	set name = "Resolve All Open Admin Tickets"
 	set category = null
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_ADMIN|R_MOD))
 		return
 
 	if(alert("Are you sure you want to resolve ALL open admin tickets?","Resolve all open admin tickets?","Yes","No") != "Yes")

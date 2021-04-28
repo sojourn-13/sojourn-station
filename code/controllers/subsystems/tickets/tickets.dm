@@ -29,8 +29,8 @@ SUBSYSTEM_DEF(tickets)
 	var/span_class = "adminticket"
 	var/ticket_system_name = "Admin Tickets"
 	var/ticket_name = "Admin Ticket"
-	var/close_rights = R_ADMIN
-	var/rights_needed = R_ADMIN | R_MOD
+	var/close_rights = R_ADMIN|R_MOD
+	var/rights_needed = R_ADMIN|R_MOD
 
 	/// Text that will be added to the anchor link
 	var/anchor_link_extra = ""
@@ -223,14 +223,14 @@ SUBSYSTEM_DEF(tickets)
 			return
 	T.assignStaff(C)
 
-	var/response_phrases = list("Thanks" = "Thanks, have a Paradise day!",
+	var/response_phrases = list("Thanks" = "Thanks, have a good day!",
 		"Handling It" = "The issue is being looked into, thanks.",
 		"Already Resolved" = "The problem has been resolved already.",
 		//"Mentorhelp" = "Please redirect your question to Mentorhelp, as they are better experienced with these types of questions.",
 		"Happens Again" = "Thanks, let us know if it continues to happen.",
 		"Github Issue Report" = "To report a bug, please go to our <a href='[config.githuburl]'>Github page</a>. Then go to 'Issues'. Then 'New Issue'. Then fill out the report form. If the report would reveal current-round information, file it after the round ends.",
 		"Clear Cache" = "To fix a blank screen, go to the 'Special Verbs' tab and press 'Reload UI Resources'. If that fails, clear your BYOND cache (instructions provided with 'Reload UI Resources'). If that still fails, please adminhelp again, stating you have already done the following." ,
-		"IC Issue" = "This is an In Character (IC) issue and will not be handled by admins. You could speak to Security, Internal Affairs, a Departmental Head, Nanotrasen Representetive, or any other relevant authority currently on station.",
+		"IC Issue" = "This is an In Character (IC) issue and will not be handled by admins. You could speak to Security, premiers, a Departmental Head, or any other relevant authority currently on the colony.",
 		"Reject" = "Reject",
 		"Man Up" = "Man Up",
 		"Appeal on the Forums" = "Appealing a ban must occur on the forums. Privately messaging, or adminhelping about your ban will not resolve it. To appeal your ban, please head to <a href='[config.banappeals]'>[config.banappeals]</a>"
