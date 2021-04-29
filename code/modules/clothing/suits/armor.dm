@@ -351,7 +351,6 @@
 	icon_state = "mercwebvest"
 	item_state = "mercwebvest"
 	max_upgrades = 0 //No upgrading this one
-	price_tag = 300
 	tool_qualities = list()
 	armor = list(
 		melee = 55,
@@ -419,7 +418,6 @@ obj/item/clothing/suit/armor/flackvest
 	blood_overlay_type = "armor"
 	slowdown = 0.5
 	armor = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
-	price_tag = 250
 
 obj/item/clothing/suit/armor/flackvest/militia
 	name = "blackshield flak vest"
