@@ -38,7 +38,7 @@
 	leather_amount = 0
 	bones_amount = 0
 
-/mob/living/simple_animal/hostile/syndicate/death(gibbed, deathmessage = "<b>[src]</b> drops its weapon as it explodes in a shower of gore when their death implant detonates!")
+/mob/living/simple_animal/hostile/syndicate/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
 	..()
 	new /obj/effect/gibspawner/human(src.loc)
 	playsound(src, 'sound/effects/Explosion2.ogg', 75, 1, -3)
@@ -63,7 +63,7 @@
 
 /mob/living/simple_animal/hostile/syndicate/melee/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(O.force)
-		if(prob(80))
+		if(prob(65))
 			var/damage = O.force
 			if (O.damtype == HALLOSS)
 				damage = 0

@@ -198,6 +198,11 @@
 	attack_verb = list("shoved", "bashed")
 	var/active = 0
 
+/obj/item/weapon/shield/energy/reaver
+	name = "reaver combat shield"
+	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere. This one was created for void wolves, generally employed by reavers."
+	icon_state = "voidwolfshield0" // eshield1 for expanded
+
 /obj/item/weapon/shield/energy/handle_shield(mob/user)
 	if(!active)
 		return 0 //turn it on first!

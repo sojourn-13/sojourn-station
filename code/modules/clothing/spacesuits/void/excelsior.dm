@@ -13,10 +13,10 @@
 	)
 
 	armor = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
-		bomb = 25,
+		melee = 60,
+		bullet = 60,
+		energy = 60,
+		bomb = 75,
 		bio = 100,
 		rad = 90
 	)
@@ -36,10 +36,10 @@
 	w_class = ITEM_SIZE_NORMAL
 	//Decent all around, but less ballistic resistance
 	armor = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
-		bomb = 25,
+		melee = 60,
+		bullet = 60,
+		energy = 60,
+		bomb = 75,
 		bio = 100,
 		rad = 90
 	)

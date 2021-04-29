@@ -122,6 +122,7 @@
 	emote_hear = list("screEEEEeeches!","chirps.")
 	emote_see = list("earflicks","sniffs at the ground")
 	colony_friend = TRUE
+	faction = "pond"
 
 /mob/living/simple_animal/fennec/fennix
 	name = "fennix"

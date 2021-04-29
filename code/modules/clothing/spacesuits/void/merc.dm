@@ -35,6 +35,19 @@
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF
 
+/obj/item/clothing/suit/space/void/SCAF/voidwolf
+	name = "REAVER-SCAF suit"
+	desc = "A bulky antique suit of refurbished infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. This one has a void wolf paint job with intimidating red colors."
+	icon_state = "scaf_wolf"
+	item_state = "scaf_wolf"
+	helmet = /obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
+
+/obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
+	name = "REAVER-SCAF helmet"
+	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet. This one has a void wolf paint job with intimidating red colors."
+	icon_state = "scaf_wolf"
+	item_state = "scaf_wolf"
+
 /obj/item/clothing/head/helmet/space/void/SCAF/blackshield
 	name = "blackshield SCAF helmet"
 	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet. Features an inbuilt camera feed and helmet light."

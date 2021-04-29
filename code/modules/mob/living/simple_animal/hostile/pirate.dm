@@ -130,3 +130,85 @@
 	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/melee/energy/sword/pirate
 	weapon2 = /obj/item/weapon/gun/energy/gun
+
+//Reavers, the void wolf elite.
+/mob/living/simple_animal/hostile/voidwolf/elite
+	name = "Void Reaver Stormtrooper"
+	desc = "A void wolf reaver stormtrooper, vatgrown and given bionic enhancements, with far better equipment and decades of experience raiding ships and killing men under the command of a true reaver."
+	icon_state = "reaver_lasrak"
+	projectilesound = 'sound/weapons/Laser.ogg'
+	maxHealth = 250
+	health = 250
+	melee_damage_lower = 20 //We dont like melee
+	melee_damage_upper = 25
+	ranged = 1
+	rapid = 1
+	ranged_cooldown = 3
+	minimum_distance = 4
+	projectiletype = /obj/item/projectile/beam/heavylaser
+	weapon1 = /obj/item/weapon/gun/energy/lasercore
+
+/mob/living/simple_animal/hostile/voidwolf/elite/bullpup
+	icon_state = "reaver_bulldog"
+	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
+	projectiletype = /obj/item/projectile/bullet/light_rifle_257
+	weapon1 = /obj/item/weapon/gun/projectile/automatic/bulldog
+
+/mob/living/simple_animal/hostile/voidwolf/elite/gyrojet
+	icon_state = "reaver_gyro"
+	projectilesound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	projectiletype = /obj/item/projectile/bullet/gyro
+	weapon1 = /obj/item/weapon/gun/projectile/gyropistol
+	rapid = 0
+
+/mob/living/simple_animal/hostile/voidwolf/elite/myrmidon
+	icon_state = "reaver_melee"
+	melee_damage_lower = 35
+	melee_damage_upper = 40
+	maxHealth = 350
+	health = 350
+	ranged = 0
+	rapid = 0
+	weapon1 = /obj/item/weapon/tool/sword/saber/cutlass
+	weapon2 = /obj/item/weapon/shield/energy/reaver
+
+/mob/living/simple_animal/hostile/voidwolf/elite/myrmidon/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(O.force)
+		if(prob(65))
+			var/damage = O.force
+			if (O.damtype == HALLOSS)
+				damage = 0
+			health -= damage
+			visible_message("\red \b [src] has been attacked with the [O] by [user]. ")
+		else
+			visible_message("\red \b [src] blocks the [O]! ")
+		//user.do_attack_animation(src)
+	else
+		to_chat(usr, "\red This weapon is ineffective, it does no damage.")
+		visible_message("\red [user] gently taps [src] with the [O]. ")
+
+
+/mob/living/simple_animal/hostile/voidwolf/elite/myrmidon/bullet_act(var/obj/item/projectile/Proj)
+	if(!Proj)	return
+	if(prob(65))
+		..()
+	else
+		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
+	return 0
+
+/mob/living/simple_animal/hostile/voidwolf/elite/Initialize()
+	..()
+	if(prob(50))
+		icon_state = "[icon_state]_elite"
+
+/mob/living/simple_animal/hostile/voidwolf/elite/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
+	..()
+	new /obj/effect/gibspawner/human(src.loc)
+	playsound(src, 'sound/effects/Explosion2.ogg', 75, 1, -3)
+	if(weapon1)
+		new weapon1(src.loc)
+	if(weapon2)
+		new weapon2(src.loc)
+	qdel(src)
+	return
+
