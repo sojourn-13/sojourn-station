@@ -30,8 +30,8 @@
 
 //HOP
 /obj/item/clothing/head/rank/first_officer
-	name = "steward's cap"
-	desc = "A stylish field-cover that both protects you from enraged former-crewmembers and gives you a false sense of authority."
+	name = "steward's hat"
+	desc = "A stylish hat that both protects you from enraged former-crewmembers and gives you a false sense of authority."
 	icon_state = "hopcap"
 
 //Chaplain
