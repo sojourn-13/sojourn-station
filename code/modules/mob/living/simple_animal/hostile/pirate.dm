@@ -146,7 +146,7 @@
 	ranged_cooldown = 3
 	minimum_distance = 4
 	projectiletype = /obj/item/projectile/beam/heavylaser
-	weapon1 = /obj/item/weapon/gun/energy/lasercore
+	weapon1 = /obj/item/weapon/gun/energy/firestorm
 
 /mob/living/simple_animal/hostile/voidwolf/elite/bullpup
 	icon_state = "reaver_bulldog"
@@ -211,4 +211,3 @@
 		new weapon2(src.loc)
 	qdel(src)
 	return
-
