@@ -1,7 +1,6 @@
 //
 // Abstract Class
 //
-
 /mob/living/simple_animal/hostile/mimic
 	name = "suspicious object"
 	desc = "It seems rather.. gooey. Is that thing organic?"
@@ -13,7 +12,7 @@
 	response_help = "touches"
 	response_disarm = "pushes"
 	response_harm = "hits"
-	speed = 12
+	speed = 1
 	maxHealth = 200
 	health = 200
 
@@ -35,7 +34,7 @@
 	bones_amount = 0
 
 	faction = "mimic"
-	move_to_delay = 6
+	move_to_delay = 2
 
 /mob/living/simple_animal/hostile/mimic/Initialize()
 	icon_state = "mimic_[pick("trashcart","crate","bin","steel","wood","med","freezer","wep","stool","body","ore")]"

@@ -28,7 +28,7 @@
 
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 
-/mob/living/simple_animal/hostile/megafauna/death(gibbed, var/list/force_grant)
+/mob/living/simple_animal/hostile/megafauna/one_star/death(gibbed, var/list/force_grant)
 	if(health <= 0)
 		visible_message("<b>[src]</b> blows apart in an explosion!")
 		explosion(src.loc, 0,1,3)

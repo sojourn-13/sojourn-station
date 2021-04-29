@@ -428,6 +428,22 @@
 	item_state = icon_state
 	..()
 
+/obj/item/clothing/head/space/void/assault/void_wolf
+	name = "reaver assault helmet"
+	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in. This one was made for a void wolf reaver."
+
+/obj/item/clothing/head/space/void/assault/void_wolf/New()
+	icon_state = "assault_wolf"
+	item_state = "assault_wolf"
+
+/obj/item/clothing/suit/space/void/assault/void_wolf
+	name = "reaver assault armor"
+	icon_state = "assaultsuit"
+	desc = "Void wolves prey on Kriosan trade ships and frontier colonies all the time, in rare circumstances they engage military ships, with skilled and ballzy void wolf reavers succeeding \
+	and making off with expensive loot, such as this assault armor given a void wolf paint job."
+	item_state = "assault_wolf"
+	helmet = /obj/item/clothing/head/space/void/assault/void_wolf
+
 /obj/item/clothing/suit/space/void/assault
 	name = "assault armor"
 	icon_state = "assaultsuit"

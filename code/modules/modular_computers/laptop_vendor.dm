@@ -342,7 +342,7 @@ obj/machinery/lapvend/attackby(obj/item/weapon/W as obj, mob/user as mob)
 
 /obj/machinery/slotmachine/Initialize()
 	. = ..()
-	jackpot = rand(20000,50000);
+	jackpot = rand(2000,5000);
 	plays = rand(1,50)
 	slots = list("1" = "Seven","2" = "Seven","3" = "Seven")
 	update_icon()
