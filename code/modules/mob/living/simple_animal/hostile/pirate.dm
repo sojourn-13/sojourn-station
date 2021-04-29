@@ -145,7 +145,7 @@
 	rapid = 1
 	ranged_cooldown = 3
 	minimum_distance = 4
-	projectiletype = /obj/item/projectile/beam/heavylaser
+	projectiletype = /obj/item/projectile/beam/weak/smg
 	weapon1 = /obj/item/weapon/gun/energy/firestorm
 
 /mob/living/simple_animal/hostile/voidwolf/elite/bullpup
