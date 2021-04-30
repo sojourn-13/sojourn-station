@@ -274,6 +274,7 @@
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(S)
 			if(blood_DNA)
+				LAZYINITLIST(S.blood_DNA)
 				S.blood_DNA |= blood_DNA
 		return transfer
 	return 0
@@ -296,7 +297,7 @@
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(newstack)
 			if(blood_DNA)
-				newstack.blood_DNA |= blood_DNA
+				newstack.blood_DNA = blood_DNA.Copy()
 		return newstack
 	return null
 
