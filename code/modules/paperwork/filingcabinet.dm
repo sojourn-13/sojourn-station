@@ -170,3 +170,41 @@
 /obj/structure/filingcabinet/medical/attack_tk()
 	populate()
 	..()
+
+
+/*
+ * Employment Record Cabinets
+ */
+/obj/structure/filingcabinet/employment
+	var/virgin = 1
+
+/obj/structure/filingcabinet/employment/populate()
+	if(virgin)
+		for(var/datum/data/record/G in data_core.general)
+			var/datum/data/record/M
+			for(var/datum/data/record/R in data_core.medical) //we  pull form medical to get the basics of age/id/name ect
+				if((R.fields["name"] == G.fields["name"] || R.fields["id"] == G.fields["id"]))
+					M = R
+					break
+			if(M)
+				var/obj/item/weapon/paper/P = new /obj/item/weapon/paper(src)
+				P.info = "<CENTER><B>Employment Record</B></CENTER><BR>"
+				P.info += "Name: [G.fields["name"]] ID: [G.fields["id"]]<BR>\nSex: [G.fields["sex"]]<BR>\nAge: [G.fields["age"]]<BR>\nFingerprint: [G.fields["fingerprint"]]<BR>\nPhysical Status: [G.fields["p_stat"]]<BR>\nMental Status: [G.fields["m_stat"]]<BR>"
+
+				P.info += "<BR>\n<CENTER><B>Employment Data</B></CENTER><BR>\nCURRENT QUALIFICATIONS: [M.fields["b_type"]]<BR>\nCURRENT CERTIFICATIONS: [M.fields["b_dna"]]<BR>\n<BR>\nEMPLOYMENT HISTORY: [M.fields["mi_dis"]]<BR>\nDetails: [M.fields["mi_dis_d"]]<BR>\n<BR>\nMajor Disabilities: [M.fields["ma_dis"]]<BR>\nDetails: [M.fields["ma_dis_d"]]<BR>\n<BR>\nDetails: [M.fields["alg_d"]]<BR>\n<BR>\nDetails: [M.fields["cdi_d"]]<BR>\n<BR>\nImportant Notes:<BR>\n\t[M.fields["notes"]]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>"
+				var/counter = 1
+				while(M.fields["com_[counter]"])
+					P.info += "[M.fields["com_[counter]"]]<BR>"
+					counter++
+				P.info += "</TT>"
+				P.name = "Employment Record ([G.fields["name"]])"
+			virgin = 0	//tabbing here is correct- it's possible for people to try and use it
+						//before the records have been generated, so we do this inside the loop.
+
+/obj/structure/filingcabinet/employment/attack_hand()
+	populate()
+	..()
+
+/obj/structure/filingcabinet/employment/attack_tk()
+	populate()
+	..()
