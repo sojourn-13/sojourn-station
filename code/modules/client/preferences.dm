@@ -245,10 +245,11 @@
 	character.update_underwear(0)
 
 	character.update_hair(0)
-	character.update_icons()
 
 	if(is_preview_copy)
 		return
+
+	character.update_icons()
 
 	for(var/lang in alternate_languages)
 		character.add_language(lang)
