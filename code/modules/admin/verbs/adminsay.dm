@@ -19,13 +19,13 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_say, R_ADMIN, TRUE)
 				to_chat(C, "<span class='admin_channel'>" + create_text_tag("admin", "ADMIN:", C) + " <span class='name'>[key_name(usr, 1)]</span>([admin_jump_link(mob, src)]): <span class='message'>[msg]</span></span>")
 
 
-ADMIN_VERB_ADD(/client/proc/cmd_mod_say, R_ADMIN|R_MOD|R_MENTOR, TRUE)
+ADMIN_VERB_ADD(/client/proc/cmd_mod_say, R_ADMIN|R_MOD|R_MENTOR|R_DEBUG, TRUE)
 /client/proc/cmd_mod_say(msg as text)
 	set category = "Special Verbs"
 	set name = "Msay"
 	set hidden = 1
 
-	if(!check_rights(R_ADMIN|R_MOD|R_MENTOR))	return
+	if(!check_rights(R_ADMIN|R_MOD|R_MENTOR|R_DEBUG))	return
 
 	msg = sanitize(msg)
 	log_admin("MOD: [key_name(src)] : [msg]")
