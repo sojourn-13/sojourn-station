@@ -113,6 +113,26 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	)
 	build_time = 5 SECONDS
 
+
+//For making mobs
+/datum/nt_blueprint/mob
+
+/datum/nt_blueprint/mob/rook
+	name = "Rook Golem"
+	build_path = /mob/living/simple_animal/hostile/roomba/synthetic/allied/rook
+	materials = list(
+		/obj/item/stack/material/steel = 15,
+		/obj/item/stack/material/plastic = 10,
+		/obj/item/stack/material/gold = 10,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/biomatter = 30,
+		/obj/item/stack/material/diamond = 1,
+		/obj/item/weapon/book/ritual/cruciform = 1 //Limiting factor
+	)
+	build_time = 20 SECONDS //We dont want to make these in combat
+
+//For making machinery
 /datum/nt_blueprint/machinery
 
 /datum/nt_blueprint/machinery/obelisk

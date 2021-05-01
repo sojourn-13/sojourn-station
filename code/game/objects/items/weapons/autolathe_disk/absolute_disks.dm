@@ -308,3 +308,13 @@
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
 		/datum/design/autolathe/gun/ionrifle = 3,
 	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_plasma_shells
+	disk_name = "Absolute Armory - Plasma Shell Pack"
+	desc = "A rare and expensive disk containing designs for highly advanced plasma based shotgun shells."
+	icon_state = "neotheology"
+	license = 8 // 20 heavy plasma shells or 40 normal shots.
+	designs = list(
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0
+	)
