@@ -25,7 +25,7 @@
 	var/autorecharge_rate = 0.03
 	var/recharge_time = 4 //How often nuclear cells will recharge
 	var/charge_tick = 0
-	var/charge_delay = 15
+	var/charge_delay = 10
 	var/last_charge_status = -1 //used in update_icon optimization
 
 /obj/item/weapon/cell/Initialize()
