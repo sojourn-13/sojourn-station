@@ -163,6 +163,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	log_and_message_admins("has Bluespace Technician Teleported Out")
 	src.suicide()
 
+
 /mob/living/carbon/human/bst/verb/tgm()
 	set name = "Toggle Godmode"
 	set desc = "Enable or disable god mode. For testing things that require you to be vulnerable."
@@ -173,6 +174,35 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 
 	to_chat(src, span("notice", "God mode is now [status_flags & GODMODE ? "enabled" : "disabled"]"))
 
+/mob/living/carbon/human/bst/verb/bst_raise_stats()
+	set name = "Raise All Stats By 5"
+	set desc = "Gives you 5+ to all stats."
+	set category = "BST"
+	log_and_message_admins("has Bluespace Technician raised stats by 5")
+
+	to_chat(src, SPAN_NOTICE("Stats raised by 5"))
+
+	src.stats.changeStat(STAT_COG, 5)
+	src.stats.changeStat(STAT_MEC, 5)
+	src.stats.changeStat(STAT_BIO, 5)
+	src.stats.changeStat(STAT_ROB, 5)
+	src.stats.changeStat(STAT_TGH, 5)
+	src.stats.changeStat(STAT_VIG, 5)
+
+/mob/living/carbon/human/bst/verb/bst_lower_stats()
+	set name = "Lowers All Stats By 5"
+	set desc = "Removes 5 to all stats."
+	set category = "BST"
+	log_and_message_admins("has Bluespace Technician lowered stats by 5")
+
+	to_chat(src, SPAN_NOTICE("Stats lowered by 5"))
+
+	src.stats.changeStat(STAT_COG, -5)
+	src.stats.changeStat(STAT_MEC, -5)
+	src.stats.changeStat(STAT_BIO, -5)
+	src.stats.changeStat(STAT_ROB, -5)
+	src.stats.changeStat(STAT_TGH, -5)
+	src.stats.changeStat(STAT_VIG, -5)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////I T E M S/////////////////////////////////////////////////////////

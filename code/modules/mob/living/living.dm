@@ -437,6 +437,7 @@ default behaviour is:
 	SetParalysis(0)
 	SetStunned(0)
 	SetWeakened(0)
+	setHalLoss(0)
 
 	// shut down ongoing problems
 	radiation = 0
