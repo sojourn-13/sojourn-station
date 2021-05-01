@@ -1,8 +1,8 @@
 /obj/machinery/vending/weapon_machine
 	name = "Marshal Portable Armory"
 	desc = "A self-defense equipment vending machine. When you need to be tacticool."
-	product_slogans = "The best defense is good offense!;Buy for your whole family today!;Nobody can outsmart bullet!;Stupidity can be cured! By LEAD.;Dead kids can't bully your children!;Guns kill people, It's never your fault!;It's dangerous to go unarmed, take this!;Buy more ammo, you never know when you'll need it!" //Yes, It's a Zelda reference, fight me - Papalus
-	product_ads = "Stunning!;Take justice in your own hands!;LEADership!;It's not your fault!;His fault for being in sights!;Serve them a cold plate of justice!;Justice in lead form!;Smell the gunpowder!;Better now than never!"
+	product_slogans = "The best defense is good offense!;Buy for your whole family today!;Nobody can outsmart bullet!;Stupidity can be cured! By LEAD.;Remember, 'Stand your Ground' is applicable in a court of law!;Guns kill people, It's never your fault!;It's dangerous to go unarmed, take this!;Buy more ammo, you never know when you'll need it!" //Yes, It's a Zelda reference, fight me - Papalus
+	product_ads = "Stunning!;Take justice in your own hands!;LEADership!;Guns don't kill people, YOU do!;His fault for being in sights!;Serve them a cold plate of justice!;Justice in lead form!;Smell the gunpowder!;Better now than never!"
 	icon_state = "weapon"
 	no_criminals = TRUE
 	products = list(/obj/item/device/flash = 2,
@@ -62,18 +62,18 @@
 
 	prices = list(/obj/item/device/flash = 200,
 	/obj/item/weapon/reagent_containers/spray/pepper = 50,
-	/obj/item/weapon/gun/projectile/automatic/slaught_o_matic = 50,
-	/obj/item/weapon/gun/projectile/olivaw = 300,
-	/obj/item/weapon/gun/projectile/giskard = 500,
-	/obj/item/weapon/gun/projectile/colt = 900,
-	/obj/item/weapon/gun/energy/gun/martin = 120,
-	/obj/item/weapon/gun/projectile/glock = 900,
-	/obj/item/weapon/gun/projectile/revolver/detective = 400,
-	/obj/item/weapon/gun/projectile/clarissa = 450, //Weakest gun in the game - SoJ Edit
+	/obj/item/weapon/gun/projectile/automatic/slaught_o_matic = 100,
+	/obj/item/weapon/gun/projectile/olivaw = 450,
+	/obj/item/weapon/gun/projectile/giskard = 550,
+	/obj/item/weapon/gun/projectile/colt = 800,
+	/obj/item/weapon/gun/energy/gun/martin = 350,
+	/obj/item/weapon/gun/projectile/glock = 1000,
+	/obj/item/weapon/gun/projectile/revolver/detective = 450,
+	/obj/item/weapon/gun/projectile/clarissa = 250, //Weakest gun in the game - SoJ Edit
 	/obj/item/weapon/gun/projectile/shotgun/pump/gladstone = 1500,
-	/obj/item/weapon/gun/projectile/shotgun/pump = 1300,
+	/obj/item/weapon/gun/projectile/shotgun/pump = 1100,
 	/obj/item/weapon/gun/projectile/automatic/mac = 2000,
-	/obj/item/weapon/gun/projectile/boltgun/lever = 1800,
+	/obj/item/weapon/gun/projectile/boltgun/lever = 1400,
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 30,
 	/obj/item/ammo_magazine/pistol_35/rubber = 50,
 	/obj/item/ammo_magazine/highcap_pistol_35/rubber = 80,
