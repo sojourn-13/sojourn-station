@@ -253,7 +253,7 @@
 			continue
 		else if(temp.wounds.len > 0 || temp.open)
 			if(temp.is_stump() && temp.parent)
-				wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [temp.parent.name].</span><br>"
+				wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [temp.get_wounds_desc()] on [his] [temp.parent.name].</span><br>"
 			else
 				wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [temp.get_wounds_desc()] on [his] [temp.name].</span><br>"
 			if(temp.status & ORGAN_BLEEDING)

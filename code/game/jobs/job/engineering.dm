@@ -183,7 +183,7 @@ Outside of this, you should devote time to learning and configuring various syst
 This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, or purchased from Lonestar or the Prospectors.<br>\
 Do not let outsiders, even Command Staff, interfere with the duties of the Guild. And remember - be ready to respond to emergency calls at any time."
 
-	duties = "Start up the supermatter.<br>\
+	duties = "Start up the solars and generators.<br>\
 	Repair anything and anyone that needs some maintenance.<br>\
 	Respond to distress calls and patch breaches in the walls.<br>\
 	Keep every part of the colony powered, oxygenated, and ready to use."

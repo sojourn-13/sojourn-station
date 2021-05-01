@@ -401,7 +401,11 @@
 	desc = "Paramedic's Office"
 	region = ACCESS_REGION_MEDBAY
 
-// /var/const/free_access_id = 69
+/var/const/access_sec_shop = 69 // Security doors to ther shop, only for WO/Spec officer
+/datum/access/access_sec_shop
+	id = access_sec_shop
+	desc = "Security Shop"
+	region = ACCESS_REGION_SECURITY
 
 /**************
 * NeoTheology *

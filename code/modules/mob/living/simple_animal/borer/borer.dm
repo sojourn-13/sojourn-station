@@ -355,7 +355,7 @@
 		update_dead_sight()
 	else
 		if (is_ventcrawling)
-			sight |= SEE_TURFS|SEE_OBJS|BLIND
+			sight |= SEE_TURFS|SEE_OBJS|SEE_MOBS|BLIND
 		else
 			//sight = initial(sight)
 			see_in_dark = initial(see_in_dark)

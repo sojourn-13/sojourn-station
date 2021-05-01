@@ -2,24 +2,29 @@
 var/global/BSACooldown = 0
 var/global/floorIsLava = 0
 
+#define ADMIN_QUE(user,display) "<a href='?_src_=holder;adminmoreinfo=\ref[user]'>[display]</a>"
+#define ADMIN_PP(user,display) "<a href='?_src_=holder;adminplayeropts=\ref[user]'>[display]</a>"
+#define ADMIN_VV(atom,display) "<a href='?_src_=vars;Vars=\ref[atom]'>[display]</a>"
+#define ADMIN_SM(user,display) "<a href='?_src_=holder;subtlemessage=\ref[user]'>[display]</a>"
+#define ADMIN_TP(user,display) "<a href='?_src_=holder;traitor=\ref[user]'>[display]</a>"
 
 ////////////////////////////////
-/proc/message_admins(var/msg)
+/proc/message_admins(var/msg, tag = "admin_log", tagtext = "ADMIN LOG")
 	lobby_message(message = msg, color = "#FFA500")
-	msg = "<span class=\"log_message\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
-	log_adminwarn(msg)
+	var/m = "<span class=\"log_message\"><span class=\"prefix\">[tagtext]:</span> <span class=\"message\">[msg]</span></span>"
+	log_adminwarn(m)
 	for(var/client/C in admins)
-		if(R_ADMIN & C.holder.rights)
-			to_chat(C, msg)
+		m = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[msg]</span></span>"
+		if(check_rights(R_ADMIN, 0, C.mob))
+			to_chat(C, m)
 
-/proc/msg_admin_attack(var/text) //Toggleable Attack Messages
+/proc/msg_admin_attack(var/text, tag = "attack", tagtext = "ATTACK:") //Toggleable Attack Messages
 	log_attack(text)
-	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
 	lobby_message(message = text, color = "#FFA500")
 	for(var/client/C in admins)
-		if(R_ADMIN || R_MOD & C.holder.rights)
+		if(check_rights(R_ADMIN, 0, C.mob))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
-				var/msg = rendered
+				var/msg = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[text]</span></span>"
 				to_chat(C, msg)
 
 /**
@@ -29,11 +34,12 @@ var/global/floorIsLava = 0
  * important - If the message is important. If TRUE it will ignore the PREF_HEAR preferences,
                send a sound and flash the window. Defaults to FALSE
  */
-/proc/message_adminTicket(msg, important = FALSE)
+/proc/message_adminTicket(msg, important = FALSE, quiet = FALSE, tag = "admin_ticket", tagtext = "Request for Help")
 	for(var/client/C in admins)
-		if(R_ADMIN & C.holder.rights)
-			to_chat(C, msg)
-			if(important || (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR))
+		if(check_rights(R_ADMIN | R_MOD, 0, C.mob))
+			var/rendered = "<span class=\"adminhelp\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> [msg]</span></span>"
+			to_chat(C, rendered)
+			if(important || (!quiet && (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)))
 				sound_to(C, 'sound/effects/adminhelp.ogg')
 
 /**
@@ -43,11 +49,12 @@ var/global/floorIsLava = 0
  * important - If the message is important. If TRUE it will ignore the PREF_HEAR preferences,
                send a sound and flash the window. Defaults to FALSE
  */
-/proc/message_mentorTicket(msg, important = FALSE)
+/proc/message_mentorTicket(msg, important = FALSE, quiet = FALSE, tag = "mentor_ticket", tagtext = "Request for Mentor")
 	for(var/client/C in admins)
 		if(check_rights(R_ADMIN | R_MENTOR | R_MOD, 0, C.mob))
-			to_chat(C, msg)
-			if(important || (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR))
+			var/rendered = "<span class=\"adminhelp\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> [msg]</span></span>"
+			to_chat(C, rendered)
+			if(important || (!quiet && (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)))
 				sound_to(C, 'sound/effects/adminhelp.ogg')
 
 
@@ -1099,23 +1106,18 @@ ADMIN_VERB_ADD(/datum/admins/proc/toggleguests, R_ADMIN, FALSE)
 		M = whom
 		C = M.client
 	else
-		return "<b>(*not an mob*)</b>"
+		return "<b>(*not a mob*)</b>"
 	switch(detail)
 		if(0)
 			return "<b>[key_name(C, link, name, highlight_special)]</b>"
-
 		if(1)	//Private Messages
-			return "<b>[key_name(C, link, name, highlight_special)](<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>)</b>"
-
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE(M,"?")])</b>"
 		if(2)	//Admins
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special)](<A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;subtlemessage=[ref_mob]'>SM</A>) ([admin_jump_link(M, UNLINT(src))]) (<A HREF='?_src_=holder;check_antagonist=1'>CA</A>)</b>"
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE(M,"?")]) ([ADMIN_PP(M,"PP")]) ([ADMIN_VV(M,"VV")]) ([ADMIN_SM(M,"SM")]) ([admin_jump_link(M, UNLINT(src))]) ([ADMIN_TP(M,"TP")])</b>"
 		if(3)	//Devs
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special)](<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>)([admin_jump_link(M, UNLINT(src))])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_VV(M,"VV")])([admin_jump_link(M, UNLINT(src))])</b>"
 		if(4)	//Mentors
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;subtlemessage=[ref_mob]'>SM</A>) ([admin_jump_link(M, UNLINT(src))])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)] ([ADMIN_QUE(M,"?")]) ([ADMIN_PP(M,"PP")]) ([ADMIN_VV(M,"VV")]) ([ADMIN_SM(M,"SM")]) ([admin_jump_link(M, UNLINT(src))])</b>"
 
 
 //
@@ -1324,3 +1326,9 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_artifact, R_ADMIN, FALSE)
 			A.secondary_effect.trigger = secondary_trigger
 		else
 			QDEL_NULL(A.secondary_effect)
+
+#undef ADMIN_QUE
+#undef ADMIN_PP
+#undef ADMIN_VV
+#undef ADMIN_SM
+#undef ADMIN_TP

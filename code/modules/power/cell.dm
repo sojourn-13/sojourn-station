@@ -25,6 +25,7 @@
 	var/autorecharge_rate = 0.03
 	var/recharge_time = 4 //How often nuclear cells will recharge
 	var/charge_tick = 0
+	var/charge_delay = 10
 	var/last_charge_status = -1 //used in update_icon optimization
 
 /obj/item/weapon/cell/Initialize()
@@ -35,9 +36,9 @@
 		START_PROCESSING(SSobj, src)
 
 /obj/item/weapon/cell/Process()
-	charge_tick++
-	if(charge_tick < recharge_time) return 0
-	charge_tick = 0
+	charge_tick--
+	if(charge_tick > 0) return 0
+	charge_tick = recharge_time
 	give(maxcharge * autorecharge_rate)
 
 	// If installed in a gun, update gun icon to reflect new charge level.
@@ -120,6 +121,7 @@
 
 // use power from a cell, returns the amount actually used
 /obj/item/weapon/cell/proc/use(var/amount)
+	charge_tick = max(charge_delay, charge_tick) //The cooldown could be shorter than the refresh time.
 	if(rigged && amount > 0)
 		explode()
 		return 0
