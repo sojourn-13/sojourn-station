@@ -147,18 +147,21 @@
 	minimum_distance = 4
 	projectiletype = /obj/item/projectile/beam/weak/smg
 	weapon1 = /obj/item/weapon/gun/energy/firestorm
+	weapon2 = null
 
 /mob/living/simple_animal/hostile/voidwolf/elite/bullpup
 	icon_state = "reaver_bulldog"
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/bulldog
+	weapon2 = null
 
 /mob/living/simple_animal/hostile/voidwolf/elite/gyrojet
 	icon_state = "reaver_gyro"
 	projectilesound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/gyro
 	weapon1 = /obj/item/weapon/gun/projectile/gyropistol
+	weapon2 = null
 	rapid = 0
 
 /mob/living/simple_animal/hostile/voidwolf/elite/myrmidon
