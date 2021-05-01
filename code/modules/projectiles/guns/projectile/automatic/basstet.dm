@@ -5,8 +5,8 @@
 	icon = 'icons/obj/guns/projectile/basstet.dmi'
 	icon_state = "basstet"
 	item_state = "basstet"
-	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_WOOD = 10)
-	price_tag = 150
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 10)
+	price_tag = 800
 	damage_multiplier = 0.9 //Cheaer AK basiclly
 	w_class = ITEM_SIZE_NORMAL
 	recoil_buildup = 10
