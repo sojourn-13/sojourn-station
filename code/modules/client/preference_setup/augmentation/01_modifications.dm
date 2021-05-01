@@ -33,15 +33,15 @@
 /datum/category_item/player_setup_item/augmentation/modifications/content(var/mob/user)
 	if(!pref.preview_icon)
 		pref.update_preview_icon(naked = TRUE)
-		if ((pref.preview_dir== EAST) && (!pref.preview_east))
-			pref.mannequin = get_mannequin(pref.client_ckey)
-			pref.mannequin.delete_inventory(TRUE)
-			if(SSticker.current_state > GAME_STATE_STARTUP)
-				pref.dress_preview_mob(pref.mannequin, TRUE)
-			pref.mannequin.dir = EAST
-			pref.preview_east = getFlatIcon(pref.mannequin, EAST)
-			pref.preview_east.Scale(pref.preview_east.Width() * 2, pref.preview_east.Height() * 2)
-			user << browse_rsc(pref.preview_east, "new_previewicon[EAST].png")
+	if ((pref.preview_dir== EAST) && (!pref.preview_east))
+		pref.mannequin = get_mannequin(pref.client_ckey)
+		pref.mannequin.delete_inventory(TRUE)
+		if(SSticker.current_state > GAME_STATE_STARTUP)
+			pref.dress_preview_mob(pref.mannequin, TRUE)
+		pref.mannequin.dir = EAST
+		pref.preview_east = getFlatIcon(pref.mannequin, EAST)
+		pref.preview_east.Scale(pref.preview_east.Width() * 2, pref.preview_east.Height() * 2)
+		user << browse_rsc(pref.preview_east, "new_previewicon[EAST].png")
 
 	if(pref.preview_north && pref.preview_south  && pref.preview_west)
 		user << browse_rsc(pref.preview_north, "new_previewicon[NORTH].png")
@@ -192,6 +192,7 @@
 			pref.preview_east = getFlatIcon(pref.mannequin, EAST)
 			pref.preview_east.Scale(pref.preview_east.Width() * 2, pref.preview_east.Height() * 2)
 			user << browse_rsc(pref.preview_east, "new_previewicon[EAST].png")
+
 		return TOPIC_REFRESH
 
 	return ..()

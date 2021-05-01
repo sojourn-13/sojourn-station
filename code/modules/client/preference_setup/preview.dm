@@ -19,6 +19,7 @@ datum/preferences/proc/update_preview_icon(var/naked = FALSE)
 	mannequin.dir = EAST
 	preview_east = getFlatIcon(mannequin, EAST)
 	*/
+	preview_east = null
 
 	mannequin.dir = WEST
 	var/icon/stamp = getFlatIcon(mannequin, WEST)
