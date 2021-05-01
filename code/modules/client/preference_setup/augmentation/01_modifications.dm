@@ -33,10 +33,19 @@
 /datum/category_item/player_setup_item/augmentation/modifications/content(var/mob/user)
 	if(!pref.preview_icon)
 		pref.update_preview_icon(naked = TRUE)
-	if(pref.preview_north && pref.preview_south  && pref.preview_west /* && pref.preview_east */)
+		if ((pref.preview_dir== EAST) && (!pref.preview_east))
+			pref.mannequin = get_mannequin(pref.client_ckey)
+			pref.mannequin.delete_inventory(TRUE)
+			if(SSticker.current_state > GAME_STATE_STARTUP)
+				pref.dress_preview_mob(pref.mannequin, TRUE)
+			pref.mannequin.dir = EAST
+			pref.preview_east = getFlatIcon(pref.mannequin, EAST)
+			pref.preview_east.Scale(pref.preview_east.Width() * 2, pref.preview_east.Height() * 2)
+			user << browse_rsc(pref.preview_east, "new_previewicon[EAST].png")
+
+	if(pref.preview_north && pref.preview_south  && pref.preview_west)
 		user << browse_rsc(pref.preview_north, "new_previewicon[NORTH].png")
 		user << browse_rsc(pref.preview_south, "new_previewicon[SOUTH].png")
-	//	user << browse_rsc(pref.preview_east, "new_previewicon[EAST].png")
 		user << browse_rsc(pref.preview_west, "new_previewicon[WEST].png")
 
 	var/dat = list()
@@ -72,7 +81,7 @@
 		dat += "<br>[disp_name]<br>"
 
 	dat += "</td><td style='width:80px;'><center><img src=new_previewicon[pref.preview_dir].png height=64 width=64>"
-//	dat += "<br><center><a href='?src=\ref[src];rotate=right'>&lt;&lt;</a> <a href='?src=\ref[src];rotate=left'>&gt;&gt;</a></center></td>"
+	dat += "<br><center><a href='?src=\ref[src];rotate=right'>&lt;&lt;</a> <a href='?src=\ref[src];rotate=left'>&gt;&gt;</a></center></td>"
 	dat += "<td style='width:115px; text-align:left'>"
 
 	for(var/organ in pref.l_organs)
@@ -174,6 +183,15 @@
 			pref.preview_dir = turn(pref.preview_dir,-90)
 		else
 			pref.preview_dir = turn(pref.preview_dir,90)
+		if ((pref.preview_dir == EAST) && (!pref.preview_east))
+			pref.mannequin = get_mannequin(pref.client_ckey)
+			pref.mannequin.delete_inventory(TRUE)
+			if(SSticker.current_state > GAME_STATE_STARTUP)
+				pref.dress_preview_mob(pref.mannequin, TRUE)
+			pref.mannequin.dir = EAST
+			pref.preview_east = getFlatIcon(pref.mannequin, EAST)
+			pref.preview_east.Scale(pref.preview_east.Width() * 2, pref.preview_east.Height() * 2)
+			user << browse_rsc(pref.preview_east, "new_previewicon[EAST].png")
 		return TOPIC_REFRESH
 
 	return ..()

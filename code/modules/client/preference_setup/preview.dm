@@ -5,9 +5,10 @@ datum/preferences
 	var/icon/preview_east  = null
 	var/icon/preview_west  = null
 	var/preview_dir = SOUTH	//for augmentation
+	var/mob/living/carbon/human/dummy/mannequin/mannequin = null
 
 datum/preferences/proc/update_preview_icon(var/naked = FALSE)
-	var/mob/living/carbon/human/dummy/mannequin/mannequin = get_mannequin(client_ckey)
+	mannequin = get_mannequin(client_ckey)
 	mannequin.delete_inventory(TRUE)
 	preview_icon = icon('icons/effects/96x64.dmi', bgstate)
 
