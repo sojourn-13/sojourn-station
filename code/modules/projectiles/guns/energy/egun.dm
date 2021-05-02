@@ -41,7 +41,7 @@
 	charge_cost = 50
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 1)
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 4, MATERIAL_SILVER = 2)
-	price_tag = 75
+	price_tag = 250
 	modifystate = null
 	suitable_cell = /obj/item/weapon/cell/small
 	cell_type = /obj/item/weapon/cell/small
@@ -72,7 +72,7 @@
 	charge_cost = 50
 	can_dual = TRUE
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_WOOD = 4, MATERIAL_SILVER = 2)
-	price_tag = 90
+	price_tag = 150
 	init_firemodes = list(
 		WEAPON_NORMAL,
  		WEAPON_CHARGE

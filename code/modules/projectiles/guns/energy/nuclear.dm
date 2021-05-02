@@ -1,11 +1,11 @@
 /obj/item/weapon/gun/energy/gun/nuclear
 	name = "Prototype: advanced energy gun"
-	desc = "An energy gun with an experimental miniaturized reactor. It offers a self charging cell and fires in both lethal and stun. Comes with a folding stock that allows this rifle to fit a holster."
+	desc = "An energy gun with an experimental miniaturized reactor. It offers a self charging cell and fires in both lethal and stun."
 	icon = 'icons/obj/guns/energy/nucgun.dmi'
 	icon_state = "nucgun"
 	item_charge_meter = TRUE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 5, TECH_POWER = 3)
-	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL //looks heavier than a pistol
 	self_recharge = 1
 	modifystate = null
@@ -34,7 +34,7 @@
 
 /obj/item/weapon/gun/energy/gun/nuclear/proc/update_charge()
 	var/ratio = cell.charge / cell.maxcharge
-	ratio = round(ratio, 0.25) * 100
+	ratio = round(ratio, 0.20) * 100
 	add_overlay("nucgun-[ratio]")
 	set_item_state("-[ratio]")
 

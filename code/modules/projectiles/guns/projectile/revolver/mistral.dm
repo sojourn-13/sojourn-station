@@ -10,7 +10,7 @@
 	max_shells = 6
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
-	price_tag = 850
+	price_tag = 900
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.5
 	recoil_buildup = 6

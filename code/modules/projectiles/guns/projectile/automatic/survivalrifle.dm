@@ -12,7 +12,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
-	price_tag = 1000
+	price_tag = 1250
 	caliber = "10x24"
 	penetration_multiplier = 1.3
 	damage_multiplier = 1.1

@@ -7,6 +7,7 @@
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+
 /obj/item/projectile/bullet/grenade
 	name = "grenade shell"
 	icon_state = "grenade"
