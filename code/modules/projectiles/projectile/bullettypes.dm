@@ -106,7 +106,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 5)
+			L.reagents.add_reagent("stoxin", 3)
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
