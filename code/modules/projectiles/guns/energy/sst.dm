@@ -34,7 +34,7 @@
 	fire_delay = 12
 	recoil_buildup = 6
 	can_dual = FALSE
-	damage_multiplier = 1.5
+	damage_multiplier = 1.3
 	projectile_type=/obj/item/projectile/bullet/magnun_40/rubber/soporific
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 5)
 	price_tag = 1600
