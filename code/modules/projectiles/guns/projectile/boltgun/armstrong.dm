@@ -10,7 +10,7 @@
 	max_shells = 11
 	price_tag = 650
 	recoil_buildup = 10
-	damage_multiplier = 1
-	penetration_multiplier  = 1.3
+	damage_multiplier = 0.9
+	penetration_multiplier  = 1.1
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 5)
 	saw_off = FALSE

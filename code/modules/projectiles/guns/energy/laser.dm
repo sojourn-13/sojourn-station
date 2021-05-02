@@ -120,9 +120,9 @@
 	recoil_buildup = 2
 	one_hand_penalty = 3
 	projectile_type = /obj/item/projectile/beam
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/weapon/cell/medium
 	cell_type = /obj/item/weapon/cell/small
-	charge_cost = 25
+	charge_cost = 40
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
 		BURST_8_ROUND,

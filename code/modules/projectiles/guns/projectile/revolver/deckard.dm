@@ -7,7 +7,7 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 5
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
-	price_tag = 1550 //one of most robust revolvers here
+	price_tag = 1400 //one of most robust revolvers here
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.5
 	recoil_buildup = 8

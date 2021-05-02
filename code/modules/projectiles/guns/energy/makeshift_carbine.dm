@@ -14,7 +14,7 @@
 	zoom_factor = 0
 	charge_cost = 100 //worst lightfall
 	fire_delay = 10 //ditto
-	price_tag = 500
+	price_tag = 400
 	init_firemodes = list(
 		WEAPON_NORMAL
 	)

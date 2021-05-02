@@ -9,7 +9,7 @@
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 3)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
-	price_tag = 1250
+	price_tag = 1500
 	ammo_type = "/obj/item/ammo_casing/a75"
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL

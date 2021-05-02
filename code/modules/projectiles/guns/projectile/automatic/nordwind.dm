@@ -68,3 +68,19 @@
 /obj/item/weapon/gun/projectile/automatic/nordwind/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/weapon/gun/projectile/automatic/nordwind/strelki/sawn
+	name = "\"Strelki\" precision rifle"
+	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\
+			Someone has decided it's a good idea to take off the scope, saw off most of the wood and.. put a barrel shroud on it? Why in Gods name. ."
+	icon = 'icons/obj/guns/projectile/sawnoff/strelki.dmi'
+	icon_state = "strelki"
+	item_state = "strelki"
+	w_class = ITEM_SIZE_BULKY
+	slot_flags = SLOT_BACK|SLOT_BELT
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 6, MATERIAL_WOOD = 5)
+	price_tag = 450
+	zoom_factor = 0.0
+	recoil_buildup = 15
+	damage_multiplier = 0.7
+	one_hand_penalty = 25

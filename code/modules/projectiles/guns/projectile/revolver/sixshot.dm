@@ -19,6 +19,16 @@
 	sawn = /obj/item/weapon/gun/projectile/revolver/sixshot/sawn
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 
+/obj/item/weapon/gun/projectile/revolver/sixshot/update_icon()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(wielded)
+		itemstring += "_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
 /obj/item/weapon/gun/projectile/revolver/sixshot/sawn
 	name = "sawn-off \"Six-Shot\" revolving shotgun"
 	desc = "An absolutely mutilated Six-Shot revolving shotgun. The mad-man who did this lobbed off the stock into just a wood pistol grip and shortened the barrel to be barely longer than the cylinder."

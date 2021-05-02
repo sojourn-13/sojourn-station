@@ -13,7 +13,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_SMG
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
-	price_tag = 750
+	price_tag = 950
 	penetration_multiplier = 1.2
 	recoil_buildup = 5
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
