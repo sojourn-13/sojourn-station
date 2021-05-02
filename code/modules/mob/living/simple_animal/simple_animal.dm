@@ -414,6 +414,18 @@
 			M.do_attack_animation(src)
 			//TODO: Push the mob away or something
 
+/* //Couldn't seem to get this working, at some point I will revisit and fix this, but everytime you disarm a mob it ignores the weaken and doesn't fall over. -Kaz
+		if (I_DISARM)
+			if (!weakened && (prob(30) + (M.stats.getStat(STAT_ROB) * 0.1)))
+				M.visible_message("\red [M] has knocked \the [src] over!")
+				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				Weaken(3)
+			else
+				M.visible_message("\red [M] failed to shove \the [src]")
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+
+			M.do_attack_animation(src)
+*/
 		if(I_GRAB)
 			if (M == src)
 				return
@@ -431,11 +443,23 @@
 			M.visible_message("\red [M] has grabbed [src] passively!")
 			M.do_attack_animation(src)
 
-		if(I_HURT)
-			adjustBruteLoss(harm_intent_damage)
-			playsound(src, pick(punch_sound),60,1)
-			M.visible_message("\red [M] [response_harm] \the [src]")
-			M.do_attack_animation(src)
+		if (I_HURT) //TODOKAZ: Make it so it checks your racial unarmed attacks and modified the damage based on it + changes the attack text and sound played. -Kaz
+			var/damage = 3
+			if ((stat == CONSCIOUS) && prob(10))
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				M.visible_message("\red [M] missed \the [src]")
+			else
+				if (istype(M))
+					damage += max(0, (M.stats.getStat(STAT_ROB) / 10))
+					if (HULK in M.mutations)
+						damage *= 2
+
+				playsound(loc, "punch", 25, 1, -1)
+				M.visible_message("\red [M] punched \the [src]")
+
+				adjustBruteLoss(damage)
+				updatehealth()
+				M.do_attack_animation(src)
 
 	return
 
@@ -505,8 +529,6 @@
 		if(3.0)
 			adjustBruteLoss(30)
 
-
-
 /mob/living/simple_animal/proc/SA_attackable(target_mob)
 	if (isliving(target_mob))
 		var/mob/living/L = target_mob
@@ -538,13 +560,13 @@
 	var/actual_meat_amount = max(1,(meat_amount/2))
 	drop_embedded()
 	if(user.stats.getPerk(PERK_BUTCHER))
-		var/actual_leather_amount = max(1,(leather_amount/2))
-		if(actual_leather_amount>0 && (stat == DEAD))
+		var/actual_leather_amount = max(0,(leather_amount/2))
+		if(actual_leather_amount > 0 && (stat == DEAD))
 			for(var/i=0;i<actual_leather_amount;i++)
 				new /obj/item/stack/material/leather(get_turf(src))
 
-		var/actual_bones_amount = max(1,(bones_amount/2))
-		if(actual_bones_amount>0 && (stat == DEAD))
+		var/actual_bones_amount = max(0,(bones_amount/2))
+		if(actual_bones_amount > 0 && (stat == DEAD))
 			for(var/i=0;i<actual_bones_amount;i++)
 				new /obj/item/stack/material/bone(get_turf(src))
 
@@ -552,7 +574,7 @@
 			for(var/animal_part in special_parts)
 				new animal_part(get_turf(src))
 
-	if(meat_type && actual_meat_amount>0 && (stat == DEAD))
+	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
 			var/obj/item/meat = new meat_type(get_turf(src))
 			meat.name = "[src.name] [meat.name]"

@@ -187,7 +187,7 @@
 			to_chat(user, SPAN_DANGER("The gun's safety is on!"))
 			handle_click_empty(user)
 			return FALSE
-			
+
 	if(twohanded)
 		if(!wielded)
 			if (world.time >= recentwield + 1 SECONDS)
@@ -291,7 +291,7 @@
 
 		projectile.multiply_projectile_damage(damage_multiplier)
 
-		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02) //every 10 points is 1 AP added on
+		projectile.multiply_projectile_penetration(penetration_multiplier * (user.stats.getStat(STAT_VIG) * 0.5)) //Soj edit, the eris math made someone with 100 vig get only 3.2 armor pen. -Kaz
 
 		projectile.multiply_pierce_penetration(pierce_multiplier)
 
