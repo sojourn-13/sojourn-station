@@ -3,6 +3,26 @@
 	build_path = /obj/item/weapon/gun/energy/retro
 	category = CAT_WEAPON
 
+/datum/design/research/item/greyson/abnegate
+	name = "\"SST Abnegate\" handgun"
+	build_path = /obj/item/weapon/gun/energy/sst
+	category = CAT_WEAPON
+
+/datum/design/research/item/greyson/formatbound
+	name = "\"SST Format Bound\" handgun"
+	build_path = /obj/item/weapon/gun/energy/sst/formatbound
+	category = CAT_WEAPON
+
+/datum/design/research/item/greyson/humility
+	name = "\"SST Humility\" shotgun"
+	build_path = /obj/item/weapon/gun/energy/sst/humility
+	category = CAT_WEAPON
+
+/datum/design/research/item/greyson/systemcost
+	name = "\"SST System Cost\" light machinegun"
+	build_path = /obj/item/weapon/gun/energy/sst/systemcost
+	category = CAT_WEAPON
+
 /datum/design/research/item/greyson/iron_lock_security_armor
 	name = "Greyson Positronic Ablative Vest"
 	build_path = /obj/item/clothing/suit/armor/vest/iron_lock_security

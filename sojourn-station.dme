@@ -2355,6 +2355,7 @@
 #include "code\modules\projectiles\guns\energy\plasma.dm"
 #include "code\modules\projectiles\guns\energy\railgun.dm"
 #include "code\modules\projectiles\guns\energy\sniperrifle.dm"
+#include "code\modules\projectiles\guns\energy\sst.dm"
 #include "code\modules\projectiles\guns\energy\stun.dm"
 #include "code\modules\projectiles\guns\energy\temperature.dm"
 #include "code\modules\projectiles\guns\energy\xray.dm"

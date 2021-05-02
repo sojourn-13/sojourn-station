@@ -22,6 +22,15 @@
 	embed = FALSE
 	sharp = FALSE
 
+/obj/item/projectile/bullet/pistol_35/rubber/soporific
+	name = "soporific coated rubber bullet"
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			L.reagents.add_reagent("stoxin", 2)
+
 /obj/item/projectile/bullet/pistol_35/hv
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 10
@@ -52,6 +61,7 @@
 /obj/item/projectile/bullet/pistol_35/scrap
 	damage_types = list(BRUTE = 12)
 	armor_penetration = 0
+
 
 //Revolvers and high-caliber pistols
 //*********************************//
@@ -88,6 +98,15 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.9
+
+/obj/item/projectile/bullet/magnun_40/rubber/soporific
+	name = "soporific coated rubber bullet"
+
+/obj/item/projectile/bullet/magnun_40/rubber/soporific/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			L.reagents.add_reagent("stoxin", 3)
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
@@ -250,6 +269,15 @@
 	can_ricochet = TRUE
 	step_delay = 0.9
 
+/obj/item/projectile/bullet/rifle_75/rubber/soporific
+	name = "soporific coated rubber bullet"
+
+/obj/item/projectile/bullet/rifle_75/rubber/soporific/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			L.reagents.add_reagent("stoxin", 1)
+
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 25)
@@ -361,6 +389,15 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 1.65
+
+/obj/item/projectile/bullet/shotgun/beanbag/soporific
+	name = "soporific coated beanbag"
+
+/obj/item/projectile/bullet/shotgun/beanbag/soporific/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			L.reagents.add_reagent("stoxin", 5)
 
 /obj/item/projectile/bullet/shotgun/practice
 	name = "practice slug"
