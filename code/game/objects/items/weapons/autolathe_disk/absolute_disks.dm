@@ -114,7 +114,7 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lemant
-	disk_name = "NT - .40/20mm Pilgrim revolver"
+	disk_name = "Absolute Armory - .40/20mm Pilgrim revolver"
 	icon_state = "neotheology"
 
 	license = 12
