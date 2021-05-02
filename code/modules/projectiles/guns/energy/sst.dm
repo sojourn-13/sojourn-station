@@ -37,7 +37,7 @@
 	damage_multiplier = 1.5
 	projectile_type=/obj/item/projectile/bullet/magnun_40/rubber/soporific
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 5)
-	price_tag = 2000
+	price_tag = 1600
 
 /obj/item/weapon/gun/energy/sst/humility
 	name = "\"SST Humility\" shotgun"
