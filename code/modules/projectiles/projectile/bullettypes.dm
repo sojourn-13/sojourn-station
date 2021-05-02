@@ -29,7 +29,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 3)
+			L.reagents.add_reagent("stoxin", 2)
 
 /obj/item/projectile/bullet/pistol_35/hv
 	damage_types = list(BRUTE = 20)
