@@ -113,6 +113,24 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lemant
+	disk_name = "NT - .40/20mm Pilgrim revolver"
+	icon_state = "neotheology"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/lemant = 3,
+		/datum/design/autolathe/ammo/slmagnum_practice = 0,
+		/datum/design/autolathe/ammo/slmagnum_rubber,
+		/datum/design/autolathe/ammo/slmagnum,
+		/datum/design/autolathe/ammo/slmagnum_lethal = 2,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_illumination,
+		/datum/design/autolathe/ammo/shotgun_pellet = 2,
+		/datum/design/autolathe/ammo/shotgun = 2,
+		)
+
 //Church shotgun
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator
 	disk_name = "Absolute Armory - 20mm Regulator Shotgun"

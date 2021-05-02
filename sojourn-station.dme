@@ -2429,6 +2429,7 @@
 #include "code\modules\projectiles\guns\projectile\revolver\deckard.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\detective.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\handmade.dm"
+#include "code\modules\projectiles\guns\projectile\revolver\lemant.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\mateba.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\mistral.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\rev10.dm"

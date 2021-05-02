@@ -232,6 +232,7 @@
 		/obj/item/weapon/melee,
 		/obj/item/weapon/tool/knife,
 		/obj/item/weapon/gun/projectile/mk58,
+		/obj/item/weapon/gun/projectile/revolver/lemant,
 		/obj/item/weapon/gun/energy/gun,
 		/obj/item/weapon/gun/projectile/clarissa,
 		/obj/item/weapon/gun/projectile/giskard,

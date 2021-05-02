@@ -71,6 +71,10 @@
 	name = "OT HG .40 \"Mk58\""
 	build_path = /obj/item/weapon/gun/projectile/mk58/wood
 
+/datum/design/autolathe/gun/lemant
+	name = "NT .40/20mm \"Pilgrim\""
+	build_path = /obj/item/weapon/gun/projectile/revolver/lemant
+
 /datum/design/autolathe/gun/ten
 	name = "SA HG .40 \"Delta Elite\""
 	build_path = /obj/item/weapon/gun/projectile/colt/ten
