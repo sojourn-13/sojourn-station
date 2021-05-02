@@ -69,7 +69,6 @@
 	tech_type = RESEARCH_GREYSON
 	icon = "abnegate"
 	required_technologies = list(/datum/technology/GP_window)
-	required_tech_levels = list(RESEARCH_COMBAT = 10)
 	cost = 10000
 	unlocks_designs = list(/datum/design/research/item/greyson/abnegate,
 						/datum/design/research/item/greyson/formatbound,
