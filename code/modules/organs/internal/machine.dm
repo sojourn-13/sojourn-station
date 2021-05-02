@@ -53,11 +53,12 @@
 	var/cost = get_servo_cost()
 	if(world.time - owner.l_move_time < 15)
 		cost *= 2
+	/*
 	if(!use(cost))
 		if(!owner.lying && !owner.buckled)
 			to_chat(owner, SPAN_WARNING("You don't have enough energy to function!"))
 		owner.Paralyse(3)
-
+	*/ // Since atom cells don't recharge, this will keep triggering over and over, paralizing the user and knocking them over every minute or so.
 /obj/item/organ/internal/cell/emp_act(severity)
 	..()
 	if(cell)
