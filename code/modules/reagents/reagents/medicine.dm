@@ -1127,6 +1127,8 @@
 	M.stats.addTempStat(STAT_TGH, 10, STIM_TIME, "kriotol")
 	M.stats.addTempStat(STAT_VIG, 20, STIM_TIME, "kriotol")
 	M.add_chemical_effect(CE_DARKSIGHT, SEE_INVISIBLE_NOLIGHTING)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/stim/robustitol
 	name = "Robustitol"
@@ -1165,6 +1167,8 @@
 	scannable = 1
 
 /datum/reagent/medicine/sergatonin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_TGH, 25, STIM_TIME, "naratonin")
+	M.stats.addTempStat(STAT_ROB, 25, STIM_TIME, "naratonin")
 	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
 	M.add_chemical_effect(CE_PULSE, 2)
 

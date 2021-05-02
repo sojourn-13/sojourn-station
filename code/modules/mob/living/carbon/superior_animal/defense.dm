@@ -2,13 +2,13 @@
 	var/actual_meat_amount = max(1,(meat_amount/2))
 	drop_embedded()
 	if(user.stats.getPerk(PERK_BUTCHER))
-		var/actual_leather_amount = max(1,(leather_amount/2))
-		if(actual_leather_amount>0 && (stat == DEAD))
+		var/actual_leather_amount = max(0,(leather_amount/2))
+		if(actual_leather_amount > 0 && (stat == DEAD))
 			for(var/i=0;i<actual_leather_amount;i++)
 				new /obj/item/stack/material/leather(get_turf(src))
 
-		var/actual_bones_amount = max(1,(bones_amount/2))
-		if(actual_bones_amount>0 && (stat == DEAD))
+		var/actual_bones_amount = max(0,(bones_amount/2))
+		if(actual_bones_amount > 0 && (stat == DEAD))
 			for(var/i=0;i<actual_bones_amount;i++)
 				new /obj/item/stack/material/bone(get_turf(src))
 
@@ -16,7 +16,7 @@
 			for(var/animal_part in special_parts)
 				new animal_part(get_turf(src))
 
-	if(meat_type && actual_meat_amount>0 && (stat == DEAD))
+	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
 			var/obj/item/meat = new meat_type(get_turf(src))
 			meat.name = "[src.name] [meat.name]"
@@ -92,8 +92,8 @@
 			return 1
 
 		if (I_DISARM)
-			if (!weakened && prob(30))
-				M.visible_message("\red [M] has shoved \the [src]")
+			if (!weakened && (prob(30) + (H.stats.getStat(STAT_ROB) * 0.1)))
+				M.visible_message("\red [M] has knocked \the [src] over!")
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				Weaken(3)
 
