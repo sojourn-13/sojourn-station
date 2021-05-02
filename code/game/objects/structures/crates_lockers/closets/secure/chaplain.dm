@@ -21,6 +21,7 @@
 	new /obj/item/weapon/deck/tarot(src)
 	new /obj/item/weapon/storage/sheath/joyeuse(src)
 	new /obj/item/weapon/gun/projectile/mk58/wood(src)
+	new /obj/item/weapon/gun/projectile/revolver/lemant(src)
 	new /obj/item/ammo_magazine/magnum_40(src)
 	new /obj/item/ammo_magazine/magnum_40(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
