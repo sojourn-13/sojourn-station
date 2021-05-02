@@ -28,6 +28,14 @@
 	name = "shotgun shells (illumination)"
 	build_path = /obj/item/ammo_casing/shotgun/illumination/prespawned
 
+/datum/design/autolathe/ammo/shotgun_plasma
+	name = "shotgun shells (Plasma)"
+	build_path = /obj/item/ammo_casing/shotgun/plasma/prespawned
+
+/datum/design/autolathe/ammo/shotgun_plasma_heavy
+	name = "shotgun shells (Heavy Plasma)"
+	build_path = /obj/item/ammo_casing/shotgun/plasma_heavy/prespawned
+
 /datum/design/autolathe/ammo/shotgun_he
 	name = "20mm shells (HEFI)"
 	build_path = /obj/item/ammo_casing/shotgun/payload/prespawned

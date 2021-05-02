@@ -350,3 +350,20 @@
 	melee_damage_upper = 25
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/rook
+	name = "Rook Golem"
+	desc = "A massive gold gilded robotic golem made designed by Brown to help protect the Absolutism and guard areas of portents form local wildlife." //Todo: Have kaz rewrite this and better lore, maybe Greyson AI helped make it?
+	faction = "neutral"
+	icon = 'icons/mob/mobs-humanoid.dmi'
+	icon_state = "rook"
+	attacktext = "pumbles"
+	move_to_delay = 2
+	turns_per_move = 2
+	speed = 2
+	health = 550
+	maxHealth = 550
+	melee_damage_lower = 20 //Big slow things dont deal a lot do to bullet sponges
+	melee_damage_upper = 20
+	drop1 = /obj/item/stack/material/gold/random
+	drop2 = /obj/item/weapon/book/ritual/cruciform
