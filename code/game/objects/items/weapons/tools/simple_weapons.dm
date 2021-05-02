@@ -23,8 +23,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hm_spikeclub"
 	item_state = "hm_spikeclub"
-	force_unwielded = WEAPON_FORCE_NORMAL
-	force_wielded = WEAPON_FORCE_BRUTAL
+	force = WEAPON_FORCE_PAINFUL
 	throwforce = WEAPON_FORCE_PAINFUL
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 2)
@@ -63,9 +62,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_PRYING = 20, QUALITY_SAWING = 15)
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
-	force = WEAPON_FORCE_NORMAL
-	force_unwielded = WEAPON_FORCE_NORMAL
-	force_wielded = WEAPON_FORCE_BRUTAL
+	force = WEAPON_FORCE_BRUTAL
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	embed_mult = 1 //Axes cut deep, and their hooked shape catches on things
@@ -84,9 +81,7 @@
 	desc = "Chop the wood to fuel the fire."
 	icon_state = "woodsmanaxe0"
 	wielded_icon = "woodsmanaxe1"
-	force = WEAPON_FORCE_DANGEROUS
-	force_unwielded = WEAPON_FORCE_DANGEROUS
-	force_wielded = WEAPON_FORCE_ROBUST
+	force = WEAPON_FORCE_ROBUST
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 30)
 	w_class = ITEM_SIZE_BULKY
@@ -97,8 +92,6 @@
 	icon_state = "sec_tomahawk"
 	wielded_icon = "sec_tomahawk"
 	force = WEAPON_FORCE_DANGEROUS
-	force_unwielded = WEAPON_FORCE_DANGEROUS
-	force_wielded = WEAPON_FORCE_ROBUST
 	throwforce = WEAPON_FORCE_BRUTAL
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
@@ -254,7 +247,6 @@
 	item_state = "skinning"
 	armor_penetration = ARMOR_PEN_DEEP
 	throwforce = WEAPON_FORCE_WEAK
-	armor_penetration = ARMOR_PEN_SHALLOW
 	tool_qualities = list(QUALITY_CUTTING = 50)
 
 /obj/item/weapon/tool/knife/dagger/ceremonial

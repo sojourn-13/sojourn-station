@@ -95,9 +95,7 @@
 	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BELT|SLOT_BACK
-	force = WEAPON_FORCE_NORMAL
-	force_unwielded = WEAPON_FORCE_NORMAL
-	force_wielded = WEAPON_FORCE_ROBUST
+	force = WEAPON_FORCE_ROBUST
 	tool_qualities = list(QUALITY_HAMMERING = 15)
 	attack_verb = list("attacked", "smashed", "bludgeoned", "beaten")
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
