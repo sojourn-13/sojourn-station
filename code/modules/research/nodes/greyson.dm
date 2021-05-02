@@ -61,7 +61,8 @@
 	required_tech_levels = list(RESEARCH_COMBAT = 10)
 	cost = 15000
 	unlocks_designs = list(/datum/design/research/item/greyson/glass_widow)
-/datum/technology/SST
+
+/datum/technology/sst
 	name = "Soteria Surface Tenstion Project"
 	desc = "The development of non-lethal weapons for Soteria Medical using GP technology."
 	x = 0.3
