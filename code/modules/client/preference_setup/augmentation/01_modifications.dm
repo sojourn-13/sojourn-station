@@ -2,7 +2,7 @@
 	var/list/modifications_data   = list()
 	var/list/modifications_colors = list()
 	var/current_organ = BP_TORSO
-	var/global/list/r_organs = list(BP_HEAD, BP_R_ARM, BP_CHEST, BP_R_LEG, BP_L_ARM, BP_GROIN, BP_L_LEG)
+	var/global/list/r_organs = list(BP_HEAD, BP_R_ARM, BP_R_LEG, BP_L_ARM, BP_GROIN, BP_L_LEG)
 	var/global/list/l_organs = list(BP_EYES, OP_HEART, OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT, OP_STOMACH, BP_BRAIN, OP_LUNGS, OP_LIVER)
 	var/global/list/internal_organs = list("chest2", OP_HEART, OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT, OP_STOMACH, BP_BRAIN, OP_LUNGS, OP_LIVER)
 
@@ -33,10 +33,19 @@
 /datum/category_item/player_setup_item/augmentation/modifications/content(var/mob/user)
 	if(!pref.preview_icon)
 		pref.update_preview_icon(naked = TRUE)
-	if(pref.preview_north && pref.preview_south && pref.preview_east && pref.preview_west)
+	if ((pref.preview_dir== EAST) && (!pref.preview_east))
+		pref.mannequin = get_mannequin(pref.client_ckey)
+		pref.mannequin.delete_inventory(TRUE)
+		if(SSticker.current_state > GAME_STATE_STARTUP)
+			pref.dress_preview_mob(pref.mannequin, TRUE)
+		pref.mannequin.dir = EAST
+		pref.preview_east = getFlatIcon(pref.mannequin, EAST)
+		pref.preview_east.Scale(pref.preview_east.Width() * 2, pref.preview_east.Height() * 2)
+		user << browse_rsc(pref.preview_east, "new_previewicon[EAST].png")
+
+	if(pref.preview_north && pref.preview_south  && pref.preview_west)
 		user << browse_rsc(pref.preview_north, "new_previewicon[NORTH].png")
 		user << browse_rsc(pref.preview_south, "new_previewicon[SOUTH].png")
-		user << browse_rsc(pref.preview_east, "new_previewicon[EAST].png")
 		user << browse_rsc(pref.preview_west, "new_previewicon[WEST].png")
 
 	var/dat = list()
@@ -174,6 +183,16 @@
 			pref.preview_dir = turn(pref.preview_dir,-90)
 		else
 			pref.preview_dir = turn(pref.preview_dir,90)
+		if ((pref.preview_dir == EAST) && (!pref.preview_east))
+			pref.mannequin = get_mannequin(pref.client_ckey)
+			pref.mannequin.delete_inventory(TRUE)
+			if(SSticker.current_state > GAME_STATE_STARTUP)
+				pref.dress_preview_mob(pref.mannequin, TRUE)
+			pref.mannequin.dir = EAST
+			pref.preview_east = getFlatIcon(pref.mannequin, EAST)
+			pref.preview_east.Scale(pref.preview_east.Width() * 2, pref.preview_east.Height() * 2)
+			user << browse_rsc(pref.preview_east, "new_previewicon[EAST].png")
+
 		return TOPIC_REFRESH
 
 	return ..()
