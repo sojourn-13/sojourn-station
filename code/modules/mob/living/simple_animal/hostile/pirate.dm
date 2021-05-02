@@ -147,18 +147,21 @@
 	minimum_distance = 4
 	projectiletype = /obj/item/projectile/beam/weak/smg
 	weapon1 = /obj/item/weapon/gun/energy/firestorm
+	weapon2 = null
 
 /mob/living/simple_animal/hostile/voidwolf/elite/bullpup
 	icon_state = "reaver_bulldog"
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/bulldog
+	weapon2 = null
 
 /mob/living/simple_animal/hostile/voidwolf/elite/gyrojet
 	icon_state = "reaver_gyro"
 	projectilesound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/gyro
 	weapon1 = /obj/item/weapon/gun/projectile/gyropistol
+	weapon2 = null
 	rapid = 0
 
 /mob/living/simple_animal/hostile/voidwolf/elite/myrmidon
@@ -171,21 +174,21 @@
 	rapid = 0
 	weapon1 = /obj/item/weapon/tool/sword/saber/cutlass
 	weapon2 = /obj/item/weapon/shield/energy/reaver
+	armor = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0,
+		agony = 1000 //Pain damage proof, and rubber proof.
+	)
 
 /mob/living/simple_animal/hostile/voidwolf/elite/myrmidon/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(O.force)
-		if(prob(65))
-			var/damage = O.force
-			if (O.damtype == HALLOSS)
-				damage = 0
-			health -= damage
-			visible_message("\red \b [src] has been attacked with the [O] by [user]. ")
-		else
-			visible_message("\red \b [src] blocks the [O]! ")
-		//user.do_attack_animation(src)
-	else
-		to_chat(usr, "\red This weapon is ineffective, it does no damage.")
-		visible_message("\red [user] gently taps [src] with the [O]. ")
+	if(prob(65))
+		visible_message("\red \b [src] blocks the [O]! ")
+		return
+	..()
 
 
 /mob/living/simple_animal/hostile/voidwolf/elite/myrmidon/bullet_act(var/obj/item/projectile/Proj)

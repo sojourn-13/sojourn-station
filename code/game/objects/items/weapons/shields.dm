@@ -203,6 +203,14 @@
 	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere. This one was created for void wolves, generally employed by reavers."
 	icon_state = "voidwolfshield0" // eshield1 for expanded
 
+/obj/item/weapon/shield/energy/reaver/update_icon()
+	icon_state = "voidwolfshield[active]"
+	update_wear_icon()
+	if(active)
+		set_light(1.5, 1.5, COLOR_LIGHTING_RED_BRIGHT)
+	else
+		set_light(0)
+
 /obj/item/weapon/shield/energy/handle_shield(mob/user)
 	if(!active)
 		return 0 //turn it on first!

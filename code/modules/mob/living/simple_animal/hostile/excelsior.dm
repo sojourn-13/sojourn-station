@@ -54,7 +54,7 @@
 
 /mob/living/simple_animal/hostile/excelsior/excel_ak
 	icon_state = "excel_ak"
-	projectiletype = /obj/item/ammo_casing/light_rifle_257/hv
+	projectiletype = /obj/item/projectile/bullet/light_rifle_257/hv
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/ak47
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 
