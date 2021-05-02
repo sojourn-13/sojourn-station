@@ -291,7 +291,7 @@
 
 		projectile.multiply_projectile_damage(damage_multiplier)
 
-		projectile.multiply_projectile_penetration(penetration_multiplier * (user.stats.getStat(STAT_VIG) * 0.5)) //Soj edit, the eris math made someone with 100 vig get only 3.2 armor pen. -Kaz
+		projectile.multiply_projectile_penetration(penetration_multiplier + (user.stats.getStat(STAT_VIG) * 0.05))
 
 		projectile.multiply_pierce_penetration(pierce_multiplier)
 
