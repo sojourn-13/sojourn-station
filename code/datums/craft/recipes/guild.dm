@@ -174,6 +174,22 @@
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/heavypulserifle
+	name = "Jury-Rigged EZ-13 MK2 Heavy Pulse Rifle"
+	result = /obj/item/weapon/gun/energy/laser/heavypulserifle
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse, 1, "time" = 30),
+		list(QUALITY_SAWING, 40, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40),
+		list(/obj/item/stack/cable_coil, 30, "time" = 30),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(/obj/item/stack/material/plasteel, 20, "time" = 30),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/material/silver, 10, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 10)
+	)
+
 /datum/craft_recipe/guild/mace
 	name = "War Mace"
 	result = /obj/item/weapon/tool/hammer/mace
