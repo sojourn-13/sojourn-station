@@ -358,7 +358,7 @@
 	icon = 'icons/mob/mobs-humanoid.dmi'
 	icon_state = "rook"
 	attacktext = "pumbles"
-	move_to_delay = 2
+	move_to_delay = 8
 	turns_per_move = 2
 	speed = 2
 	health = 550
