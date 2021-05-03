@@ -23,7 +23,7 @@ var/const/AUTOLATHE_DISABLE_WIRE = 4
 	switch(index)
 		if(AUTOLATHE_HACK_WIRE)
 			A.hacked = !mended
-			A.queue_max = A.hacked ? 16 : 8
+			A.queue_max += A.hacked ? 8 : -8 //Modular
 		if(AUTOLATHE_SHOCK_WIRE)
 			A.shocked = !mended
 		if(AUTOLATHE_DISABLE_WIRE)
@@ -36,11 +36,11 @@ var/const/AUTOLATHE_DISABLE_WIRE = 4
 	switch(index)
 		if(AUTOLATHE_HACK_WIRE)
 			A.hacked = !A.hacked
-			A.queue_max = A.hacked ? 16 : 8
+			A.queue_max += 8
 			spawn(50)
 				if(A && !IsIndexCut(index))
 					A.hacked = 0
-					A.queue_max = A.hacked ? 16 : 8
+					A.queue_max -= 8
 					Interact(usr)
 		if(AUTOLATHE_SHOCK_WIRE)
 			A.shocked = !A.shocked

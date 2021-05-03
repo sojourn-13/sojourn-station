@@ -57,7 +57,7 @@
 	var/have_disk = TRUE
 	var/have_reagents = TRUE
 	var/have_materials = TRUE
-	var/have_recycling = TRUE
+	var/have_recycling = FALSE
 	var/have_design_selector = TRUE
 
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
@@ -893,6 +893,7 @@
 	circuit = /obj/item/weapon/circuitboard/autolathe_industrial
 	speed = 4
 	storage_capacity = 240
+	have_recycling = TRUE
 
 #undef ERR_OK
 #undef ERR_NOTFOUND

@@ -5,6 +5,7 @@
 	icon_state = "stanok"
 	circuit = /obj/item/weapon/circuitboard/excelsiorautolathe
 
+	have_recycling = TRUE
 	build_type = AUTOLATHE | BIOPRINTER
 	speed = 4
 	storage_capacity = 240

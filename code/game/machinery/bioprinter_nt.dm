@@ -6,6 +6,7 @@
 	build_type = AUTOLATHE | BIOPRINTER
 	storage_capacity = 480
 	speed = 5
+	have_recycling = TRUE
 
 /obj/machinery/autolathe/bioprinter/attackby(obj/item/I, mob/user)
 	//hacky way to forbid deconstruction but use ..()
