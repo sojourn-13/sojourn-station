@@ -10,5 +10,7 @@
 	department = "Civilian"
 	supervisors = "nobody! You're a visitor"
 	selection_color = "#9b633e"
+	wage = WAGE_NONE
+	initial_balance = 0
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/visitor
