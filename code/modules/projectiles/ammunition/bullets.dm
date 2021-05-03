@@ -477,7 +477,7 @@
 	name = "laser shell"
 	desc = "A 20mm laser shell."
 	icon_state = "lasershell"
-	icon_state = "lasershell-spent"
+	spent_icon = "lasershell-spent"
 	projectile_type = /obj/item/projectile/beam/shotgun
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8)
 	maxamount = 5
@@ -500,8 +500,8 @@
 	name = "plasma shell"
 	desc = "A 20mm plasma shell."
 	icon_state = "plasmashell"
-	icon_state = "plasmashell-spent"
-	projectile_type = /obj/item/projectile/plasma
+	spent_icon = "plasmashell-spent"
+	projectile_type = /obj/item/projectile/plasma/shell
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8, MATERIAL_URANIUM = 0.8)
 	maxamount = 5
 
@@ -512,8 +512,8 @@
 	name = "heavy plasma shell"
 	desc = "A 20mm heavy plasma shot shell."
 	icon_state = "plasmashell"
-	icon_state = "plasmashell-spent"
-	projectile_type = /obj/item/projectile/plasma/heavy
+	spent_icon = "plasmashell-spent"
+	projectile_type = /obj/item/projectile/plasma/heavy/shell
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8, MATERIAL_URANIUM = 0.8)
 	maxamount = 5
 
