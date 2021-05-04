@@ -12,6 +12,9 @@
 
 	var/eating_time = 900
 
+	var/moved = FALSE
+	var/move_attack_mult = 0.6
+
 	var/icon_living
 	var/icon_dead
 	var/icon_rest //resting/unconscious animation

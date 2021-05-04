@@ -7,6 +7,8 @@
 
 	var/damage = rand(melee_damage_lower, melee_damage_upper)
 
+	if(moved) damage *= move_attack_mult
+
 	if(waring_faction)
 		damage = damage*waring_faction_multy
 

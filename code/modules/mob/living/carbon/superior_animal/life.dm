@@ -10,6 +10,8 @@
 /mob/living/carbon/superior_animal/Life()
 	. = ..()
 
+	moved = FALSE
+
 	objectsInView = null
 
 	if(client || AI_inactive)
@@ -20,26 +22,26 @@
 	if (!check_AI_act())
 		return
 
-	switch(stance)
-		if(HOSTILE_STANCE_IDLE)
-			if (!busy) // if not busy with a special task
-				stop_automated_movement = 0
-			target_mob = findTarget()
-			if (target_mob)
-				stance = HOSTILE_STANCE_ATTACK
+	if(stance == HOSTILE_STANCE_IDLE)
+		if (!busy) // if not busy with a special task
+			stop_automated_movement = 0
+		target_mob = findTarget()
+		if (target_mob)
+			stance = HOSTILE_STANCE_ATTACK
 
-		if(HOSTILE_STANCE_ATTACK)
-			if(destroy_surroundings)
-				destroySurroundings()
+	if(stance == HOSTILE_STANCE_ATTACK)
+		if(destroy_surroundings)
+			destroySurroundings()
 
-			stop_automated_movement = 1
-			stance = HOSTILE_STANCE_ATTACKING
-			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, target_mob, 1, move_to_delay)
+		stop_automated_movement = 1
+		stance = HOSTILE_STANCE_ATTACKING
+		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+		walk_to(src, target_mob, 1, move_to_delay)
+		moved = 1
 
-		if(HOSTILE_STANCE_ATTACKING)
-			if(destroy_surroundings)
-				destroySurroundings()
+	if(stance == HOSTILE_STANCE_ATTACKING)
+		if(destroy_surroundings)
+			destroySurroundings()
 
 			prepareAttackOnTarget()
 
