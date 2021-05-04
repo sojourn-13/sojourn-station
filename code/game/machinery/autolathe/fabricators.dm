@@ -149,11 +149,15 @@
 			list(name="Box (.50 Rubber)", cost=330, path=/obj/item/ammo_magazine/ammobox/kurtz_50/rubber),
 			list(name="Box (.50 Practice)", cost=100, path=/obj/item/ammo_magazine/ammobox/kurtz_50/practice),
 		".257 Ammo Packets",
-			list(name="Packet (Standard)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257),
+			list(name="Packet (Standard)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257_small),
 			list(name="Packet (High velocity)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv),
 			list(name="Packet (Hollow-point)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257_small/lethal),
 			list(name="Packet (Rubber)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber),
-			list(name="Packet (Practice)", cost=990, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/practice),
+			list(name="Packet (Practice)", cost=850, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/practice),
+		".257 Ammo Box",
+			list(name="Packet (Standard)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257),
+			list(name="Packet (Rubber)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber),
+			list(name="Packet (Practice)", cost=2600, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/practice),
 		"7.5 Ammo Boxes",
 			list(name="Box (7.5 Standard)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75),
 			list(name="Box (7.5 High velocity)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75_small/hv),
@@ -286,7 +290,7 @@
 	var/S = 0
 	for(var/obj/item/stack/material/I in contents)
 		S += 5
-		points += I.amount * I.price_tag
+		points += I.amount * I.price_tag * 5
 		//if(I.reagents.get_reagent_amount("nutriment") < 0.1)
 		//	points += 1
 		//else points += I.reagents.get_reagent_amount("nutriment") * 8 * eat_eff

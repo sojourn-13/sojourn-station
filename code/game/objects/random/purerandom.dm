@@ -130,7 +130,7 @@
 				/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 1,
 				/obj/item/weapon/flamethrower = 1,
 				/obj/item/weapon/gun/projectile/mk58 = 1,
-				/obj/item/weapon/gun/projectile/revolver/lemant = 1,
+				/obj/item/weapon/gun/projectile/revolver/lemant = 0.5,
 				/obj/item/weapon/gun/projectile/giskard = 1,
 				/obj/item/weapon/gun/projectile/revolver/deckard = 1,
 				/obj/item/weapon/gun/projectile/revolver/detective = 1,
