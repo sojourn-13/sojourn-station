@@ -50,7 +50,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/obj/machinery/autolathe/rnd/protolathe/linked_lathe = null		//Linked Protolathe
 	var/obj/machinery/autolathe/rnd/imprinter/linked_imprinter = null	//Linked Circuit Imprinter
 
-	var/screen = SCREEN_MAIN	//Which screen is currently showing.
+	var/screen = SCREEN_LOCKED	//Which screen is currently showing.
 	var/id     = 0			//ID of the computer (for server restrictions).
 	var/sync   = 1		//If sync = 0, it doesn't show up on Server Control Console
 	var/can_research = TRUE   //Is this console capable of researching
@@ -380,7 +380,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	return designs_list
 
 /obj/machinery/computer/rdconsole/attack_hand(mob/user)
-	if(!usr.stat_check(STAT_COG, 20))
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 60))
 		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
 		return
 

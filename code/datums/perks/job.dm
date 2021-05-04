@@ -411,6 +411,10 @@
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
 
+/datum/perk/si_sci
+	name = "SI Science Trainning"
+	desc = "You know how to use RnD core consoles and Exosuit Fabs."
+
 /datum/perk/greenthumb
 	name = "Green Thumb"
 	desc = "After growing plants for years (or at least being around those that do) you have become a botanical expert. You can get all information about plants, from stats \

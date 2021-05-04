@@ -69,3 +69,4 @@
 #define PERK_STAY_HYDRATED /datum/perk/stay_hydrated
 #define PERK_SECOND_SKIN /datum/perk/second_skin
 #define PERK_IRON_FLESH /datum/perk/iron_flesh
+#define PERK_SI_SCI /datum/perk/si_sci

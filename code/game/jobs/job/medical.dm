@@ -30,7 +30,7 @@
 		STAT_COG = 25
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
