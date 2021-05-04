@@ -10,6 +10,9 @@
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
 
+/obj/item/projectile/plasma/shell
+	damage_types = list(BURN = 36)
+
 /obj/item/projectile/plasma/light
 	name = "light plasma bolt"
 	damage_types = list(BURN = 28)
@@ -19,6 +22,9 @@
 	name = "heavy plasma bolt"
 	damage_types = list(BURN = 30)
 	armor_penetration = 30
+
+/obj/item/projectile/plasma/heavy/shell
+	damage_types = list(BURN = 42)
 
 /obj/item/projectile/plasma/impact
 	name = "plasma impact bolt"
