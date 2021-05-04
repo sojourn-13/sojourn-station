@@ -5,7 +5,7 @@
 
 /obj/random/gun_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/weapon/gun/projectile/mk58 = 1,\
-				/obj/item/weapon/gun/projectile/revolver/lemant = 1,\
+				/obj/item/weapon/gun/projectile/revolver/lemant = 0.5,\
 				/obj/item/weapon/gun/projectile/mk58/wood = 1,\
 				/obj/item/weapon/gun/projectile/revolver/detective = 3,\
 				/obj/item/weapon/gun/energy/shrapnel = 4,\
@@ -110,6 +110,7 @@
 				/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/weapon/gun/projectile/automatic/sts/hrifle/sawn = 1,\
 				/obj/item/weapon/gun/projectile/automatic/greasegun = 1,\
+				/obj/item/weapon/gun/projectile/automatic/bren = 0.5,
 				//obj/item/weapon/gun/projectile/automatic/lmg/saw = 0.5,
 				//obj/item/weapon/gun/projectile/automatic/pitbull = 1,
 				//obj/item/weapon/gun/projectile/automatic/ak47/sa = 3,
@@ -225,7 +226,6 @@
 				/obj/item/weapon/gun/projectile/automatic/chaingun = 2,
 				/obj/item/weapon/gun/projectile/automatic/lmg/pk = 3,
 				/obj/item/weapon/gun/projectile/automatic/dp = 1,
-				/obj/item/weapon/gun/projectile/automatic/bren = 1.5,
 				/obj/item/weapon/gun/projectile/automatic/mac/croon = 1,
 				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 3,
 				/obj/item/weapon/gun/projectile/shotgun/pump/combat = 3,

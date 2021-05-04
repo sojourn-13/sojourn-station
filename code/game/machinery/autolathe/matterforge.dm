@@ -625,7 +625,8 @@
 	lst[MATERIAL_CLOTH] = 0.10
 	lst[MATERIAL_SILK] = 0.05
 	lst[MATERIAL_CARDBOARD] = 0.10
-	lst[MATERIAL_LEATHER] = 0.10
+	lst[MATERIAL_LEATHER] = 0.70
+	lst[MATERIAL_BONE] = 0.70
 	lst[MATERIAL_TITANIUM] = 0.70
 
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)

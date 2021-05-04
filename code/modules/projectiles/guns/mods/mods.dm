@@ -20,7 +20,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_SILENCER = TRUE,
-		GUN_UPGRADE_DAMAGE_PLUS = -0.1
+		GUN_UPGRADE_RECOIL = 0.9,
+		GUN_UPGRADE_PEN_MULT = 0.9
 		)
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_SILENCABLE)
@@ -268,7 +269,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_MULT = 0.80,
+	GUN_UPGRADE_DAMAGE_MULT = 0.90,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 0.25)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
