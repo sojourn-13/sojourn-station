@@ -333,6 +333,6 @@
 	icon_state = "neotheology"
 	license = 8 // 20 heavy plasma shells or 40 normal shots.
 	designs = list(
-		/datum/design/autolathe/ammo/shotgun_beanbag,
-		/datum/design/autolathe/ammo/shotgun_blanks = 0
+		/datum/design/autolathe/ammo/shotgun_plasma_heavy = 2,
+		/datum/design/autolathe/ammo/shotgun_plasma,
 	)
