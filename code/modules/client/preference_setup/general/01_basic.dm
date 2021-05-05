@@ -124,6 +124,7 @@
 
 /datum/category_item/player_setup_item/physical/basic/OnTopic(var/href,var/list/href_list, var/mob/user)
 	var/datum/species/S = all_species[pref.species]
+	pref.categoriesChanged = "Basic"
 
 	if(href_list["rename"])
 		var/raw_name = input(user, "Choose your character's name:", "Character Name", pref.real_name)  as text|null

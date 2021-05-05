@@ -32,6 +32,7 @@
 	var/savefile/loaded_character
 	var/datum/category_collection/player_setup_collection/player_setup
 	var/datum/browser/panel
+	var/categoriesChanged = "All"
 
 /datum/preferences/New(client/C)
 	if(istype(C))
@@ -170,6 +171,87 @@
 
 /datum/preferences/proc/copy_to(mob/living/carbon/human/character, is_preview_copy = FALSE)
 	// Sanitizing rather than saving as someone might still be editing when copy_to occurs.
+
+	if(is_preview_copy && categoriesChanged != "All")
+
+		character.set_species(species) //2
+		character.set_form(species_form) //2
+		character.rebuild_organs(src) //7-8
+
+		switch(categoriesChanged)
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+			if("Basic")
+				categoriesChanged=null
+				if(be_random_name)   //1
+					real_name = random_name(gender,species)
+				if(config.humans_need_surnames)
+					var/firstspace = findtext(real_name, " ")
+					var/name_length = length(real_name)
+					if(!firstspace)	//we need a surname
+						real_name += " [pick(GLOB.last_names)]"
+					else if(firstspace == name_length)
+						real_name += "[pick(GLOB.last_names)]"
+				character.fully_replace_character_name(newname = real_name) //1
+				character.gender = gender //1
+				character.identifying_gender = gender_identity //1
+				character.age = age //1
+				character.b_type = b_type //1
+				character.species_aan = species_aan //1
+				character.species_color_key = species_color //1
+				character.species_name = custom_species //1
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+			if("Body")
+				categoriesChanged=null
+				character.h_style = h_style //2
+				character.f_style = f_style //2
+				character.eyes_color = eyes_color //2
+				character.hair_color = hair_color //2
+				character.facial_color = facial_color //2
+				character.skin_color = skin_color //2
+				character.s_tone = s_tone //2
+				character.grad_color = grad_color //2
+				character.grad_style = grad_style //2
+				character.update_hair(0) //2
+				character.force_update_limbs()//2
+	/////////////////////////////////////////////////////////////////////////////////////////////////
+			if("Equipment")
+				categoriesChanged=null
+				QDEL_NULL_LIST(character.worn_underwear) //4
+				character.worn_underwear = list() //4
+				for(var/underwear_category_name in all_underwear) //4
+					var/datum/category_group/underwear/underwear_category = GLOB.underwear.categories_by_name[underwear_category_name]
+					if(underwear_category)
+						var/underwear_item_name = all_underwear[underwear_category_name]
+						var/datum/category_item/underwear/UWD = underwear_category.items_by_name[underwear_item_name]
+						var/metadata = all_underwear_metadata[underwear_category_name]
+						var/obj/item/underwear/UW = UWD.create_underwear(character, metadata, character.form.underwear_icon)
+						if(UW)
+							UW.ForceEquipUnderwear(character, FALSE)
+					else
+						all_underwear -= underwear_category_name
+
+				character.update_underwear(0) //4
+				character.backpack_setup = new(backpack, backpack_metadata["[backpack]"]) //4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+			if ("Furry",)
+				categoriesChanged=null
+				character.blood_color = blood_color //6
+				character.ears = GLOB.ears_styles_list[ears_style] //6
+				character.ears_colors = ears_colors
+				character.tail = GLOB.tail_styles_list[tail_style] //6
+				character.tail_colors = tail_colors
+				character.wings = GLOB.wings_styles_list[wings_style] //6
+				character.wings_colors = wings_colors
+				character.body_markings = body_markings //6
+			if ("Augmentation",)
+				categoriesChanged=null
+				character.update_implants(0) //7-8
+
+		character.update_body(0)
+		categoriesChanged = null
+		return
+
+
 	player_setup.sanitize_setup()
 	character.set_species(species) //2
 	character.set_form(species_form) //2
@@ -178,7 +260,6 @@
 
 	if(be_random_name)   //1
 		real_name = random_name(gender,species)
-
 	if(config.humans_need_surnames)
 		var/firstspace = findtext(real_name, " ")
 		var/name_length = length(real_name)
@@ -207,6 +288,8 @@
 	character.update_hair(0) //2
 	character.force_update_limbs()//2
 
+	QDEL_NULL_LIST(character.worn_underwear) //4
+	character.worn_underwear = list() //4
 	for(var/underwear_category_name in all_underwear) //4
 		var/datum/category_group/underwear/underwear_category = GLOB.underwear.categories_by_name[underwear_category_name]
 		if(underwear_category)
@@ -220,10 +303,6 @@
 			all_underwear -= underwear_category_name
 
 	character.update_underwear(0) //4
-
-	QDEL_NULL_LIST(character.worn_underwear)
-	character.worn_underwear = list()
-
 	character.backpack_setup = new(backpack, backpack_metadata["[backpack]"]) //4
 
 
@@ -238,24 +317,9 @@
 
 	character.update_implants(0) //7-8
 
-
-	// Build mob body from prefs
-
-
-
-
-
-
-
 	character.update_body(0)
 
 	character.update_mutations(0)
-
-
-
-
-	if(is_preview_copy)
-		return
 
 	character.update_icons()
 
