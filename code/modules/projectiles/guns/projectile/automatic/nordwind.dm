@@ -42,7 +42,7 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 750
 	zoom_factor = 0.5
-	recoil_buildup = 20
+	recoil_buildup = 14
 	damage_multiplier = 0.9
 	one_hand_penalty = 25
 	auto_eject = FALSE
