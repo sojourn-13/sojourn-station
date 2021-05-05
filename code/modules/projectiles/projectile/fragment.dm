@@ -25,5 +25,5 @@
 /obj/item/projectile/bullet/pellet/fragment/rubber
 	damage_types = list(BRUTE = 1)
 	agony = 32
-    embed = FALSE
+	embed = FALSE
     sharp = FALSE
