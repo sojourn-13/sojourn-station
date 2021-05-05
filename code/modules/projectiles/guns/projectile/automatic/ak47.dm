@@ -62,7 +62,7 @@
 	price_tag = 600
 	recoil_buildup = 3
 	one_hand_penalty = 10
-	damage_multiplier = 1
+	damage_multiplier = 1.2 //We hold less ammo but deal about the same damage
 	saw_off = FALSE
 	caliber = CAL_SCI
 	mag_well = MAG_WELL_LSRIFLE
