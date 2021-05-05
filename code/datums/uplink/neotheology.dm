@@ -6,7 +6,6 @@ Intended for inquisitors and maybe future crusaders
 A small pool of thematically appropriate religious items that are generally cheaper than conventional equivilants
 */
 
-
 //Lets make sure only appropriately ranked NT Church members can see this category
 //We do this by setting canview conditions on the individual items like this.
 //These are checked by the category, and also in other places
@@ -33,10 +32,9 @@ A small pool of thematically appropriate religious items that are generally chea
 
 	return FALSE
 
-
-
 /datum/uplink_item/item/neotheology
 	category = /datum/uplink_category/neotheology
+	antag_roles = null
 
 //A single blank cruciform implant, nothing special about it. Useful for field baptism
 /datum/uplink_item/item/neotheology/cruciform
@@ -44,15 +42,11 @@ A small pool of thematically appropriate religious items that are generally chea
 	item_cost = 1
 	path = /obj/item/weapon/implant/core_implant/cruciform
 
-
 //A ritual book, for if you lose your own. Note that all books are the same, the rituals are stored in the cruciform implant
 /datum/uplink_item/item/neotheology/bible
 	name = "Ritual Book"
 	item_cost = 1
 	path = /obj/item/weapon/book/ritual/cruciform
-
-
-
 
 //A priest cruciform implant, allows field promotion of a disciple to a preacher.
 //This also requires an inquisitor ritual to complete the process, so it can't be done by anyone else
@@ -61,13 +55,11 @@ A small pool of thematically appropriate religious items that are generally chea
 	item_cost = 3
 	path = /obj/item/weapon/coreimplant_upgrade/cruciform/priest
 
-
 //Ritual blade, for if you need a competent weapon, or for replacing one the preacher lost
 /datum/uplink_item/item/neotheology/knife
 	name = "Ritual Blade"
 	item_cost = 2
 	path = /obj/item/weapon/tool/knife/neotritual
-
 
 /datum/uplink_item/item/neotheology/coat
 	name = "Preacher Coat"
@@ -80,38 +72,36 @@ A small pool of thematically appropriate religious items that are generally chea
 */
 /datum/uplink_item/item/neotheology/laser
 	item_cost = 10
-	name = "OT LG \"Lightfall\""
+	name = "LG \"Lightfall\""
 	path = /obj/item/weapon/gun/energy/laser
 
 /datum/uplink_item/item/neotheology/ion
 	item_cost = 8
-	name = "OT IR \"Halicon\""
+	name = "IR \"Halicon\""
 	path = /obj/item/weapon/gun/energy/ionrifle
-
 
 /datum/uplink_item/item/neotheology/pulse
 	item_cost = 10
-	name = "OT PR \"Dominion\""
+	name = "PR \"Dominion\""
 	path = /obj/item/weapon/gun/energy/plasma
 
 /datum/uplink_item/item/neotheology/pulse_destroyer
 	item_cost = 10
-	name = "OT PR \"Purger\""
+	name = "PR \"Purger\""
 	path = /obj/item/weapon/gun/energy/plasma/destroyer
 
 /datum/uplink_item/item/neotheology/xbow
 	item_cost = 5
-	name = "OT EC \"Nemesis\""
+	name = "EC \"Nemesis\""
 	path = /obj/item/weapon/gun/energy/crossbow
 
 /datum/uplink_item/item/neotheology/xbow_heavy
 	item_cost = 8
-	name = "OT EC \"Themis\""
+	name = "EC \"Themis\""
 	path = /obj/item/weapon/gun/energy/crossbow/largecrossbow
-
 
 /datum/uplink_item/item/neotheology/sniper
 	item_cost = 13
-	name = "OT MER \"Valkyrie\""
+	name = "MER \"Valkyrie\""
 	path = /obj/item/weapon/gun/energy/sniperrifle
 

@@ -3,6 +3,7 @@
 ********************/
 /datum/uplink_item/item/tools
 	category = /datum/uplink_category/tools
+	antag_roles = null
 
 /datum/uplink_item/item/tools/toolbox
 	name = "Fully Loaded Toolbox"
@@ -91,11 +92,13 @@
 	name = "Powersink (DANGER!)"
 	item_cost = 10
 	path = /obj/item/device/powersink
+	antag_roles = ROLES_UPLINK_BASE
 
 /datum/uplink_item/item/tools/teleporter
 	name = "Teleporter Circuit Board"
 	item_cost = 8
 	path = /obj/item/weapon/circuitboard/teleporter
+	antag_roles = ROLES_UPLINK_BASE
 
 /datum/uplink_item/item/tools/teleporter/New()
 	..()
@@ -105,11 +108,13 @@
 	name = "Hacked AI Upload Module"
 	item_cost = 14
 	path = /obj/item/weapon/aiModule/syndicate
+	antag_roles = ROLES_UPLINK_BASE
 
 /datum/uplink_item/item/tools/supply_beacon
 	name = "Hacked Supply Beacon (DANGER!)"
 	item_cost = 14
 	path = /obj/item/supply_beacon
+	antag_roles = ROLES_UPLINK_BASE
 /* //commented out because we don't use sanity currently
 /datum/uplink_item/item/tools/mind_fryer
 	name = "Mind Fryer"
@@ -173,9 +178,8 @@
 
 /datum/uplink_item/item/tools/mental_imprinter
 	name = "Mental Imprinter"
-	item_cost = 5 //Why is this so much? Its only 5+ of a stat...
+	item_cost = 3 //Why is this so much? Its only 5+ of a stat...
 	path = /obj/item/device/mental_imprinter
-	antag_roles = list(ROLE_TRAITOR,ROLE_MARSHAL,ROLE_INQUISITOR,ROLE_MERCENARY,ROLE_CARRION)
 
 //********** Blitzshell unique uplink items **********//
 
