@@ -26,4 +26,4 @@
 	damage_types = list(BRUTE = 1)
 	agony = 32
 	embed = FALSE
-    sharp = FALSE
+	sharp = FALSE
