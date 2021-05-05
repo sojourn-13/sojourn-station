@@ -51,4 +51,4 @@
 	icon_state = "stinger"
 	item_state = "stinger"
 	loadable = TRUE
-    fragment_type = /obj/item/projectile/bullet/pellet/fragment/rubber
+	fragment_type = /obj/item/projectile/bullet/pellet/fragment/rubber
