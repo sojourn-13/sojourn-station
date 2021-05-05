@@ -47,7 +47,7 @@
 
 /obj/item/weapon/grenade/frag/stinger
 	name = "GmbH \"Stinger\""
-    desc = "A repurposed fragmentation grenade loaded in 50.Kurts rubbers, ready to serve the public trust."
+	desc = "A repurposed fragmentation grenade loaded in 50.Kurts rubbers, ready to serve the public trust."
     icon_state = "stinger"
     item_state = "stinger"
     loadable = TRUE
