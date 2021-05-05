@@ -46,7 +46,7 @@
 	damage_step = 3
 
 /obj/item/weapon/grenade/frag/stinger
-    name = "H&S Marshal \"Stinger\""
+    name = "GmbH \"Stinger\""
     desc = "A repurposed fragmentation grenade loaded in 50.Kurts rubbers, ready to serve the public trust."
     icon_state = "stinger"
     item_state = "stinger"
