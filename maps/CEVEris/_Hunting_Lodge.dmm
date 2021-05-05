@@ -334,7 +334,7 @@
 "gv" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/material/glass/random,/obj/item/weapon/tool/hammer,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gw" = (/obj/structure/table/reinforced,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gx" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/cable_coil/random,/obj/item/weapon/computer_hardware/hard_drive/portable/design/misc,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"gy" = (/obj/machinery/autolathe,/obj/machinery/light,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gy" = (/obj/machinery/light,/obj/machinery/autolathe/industrial,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gz" = (/obj/structure/table/reinforced,/obj/item/weapon/tool/fireaxe/woodsman,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gA" = (/obj/structure/table/woodentable,/obj/item/weapon/material/ashtray,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gB" = (/obj/landmark/join/start/lodge_hunter,/obj/structure/bed/chair/wood,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
