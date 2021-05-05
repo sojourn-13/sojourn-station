@@ -49,6 +49,6 @@
 	name = "GmbH \"Stinger\""
 	desc = "A repurposed fragmentation grenade loaded in 50.Kurts rubbers, ready to serve the public trust."
 	icon_state = "stinger"
-    item_state = "stinger"
+	item_state = "stinger"
     loadable = TRUE
     fragment_type = /obj/item/projectile/bullet/pellet/fragment/rubber
