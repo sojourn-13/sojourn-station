@@ -158,6 +158,7 @@
 	return
 
 /datum/category_item/player_setup_item/augmentation/modifications/OnTopic(var/href, list/href_list, mob/user)
+	pref.categoriesChanged = "Augmentation"
 	if(href_list["organ"])
 		pref.current_organ = href_list["organ"]
 		return TOPIC_REFRESH_UPDATE_PREVIEW
