@@ -66,6 +66,20 @@
 							/datum/design/research/item/ammo/shotgun_stun
 						)
 
+/datum/technology/sst
+	name = "Soteria Surface Tenstion Project"
+	desc = "The development of non-lethal weapons for Soteria Medical using GP technology."
+	x = 0.6
+	y = 0.3
+	tech_type = RESEARCH_COMBAT
+	icon = "abnegate"
+	required_technologies = list(/datum/technology/advanced_nonlethal)
+	required_tech_levels = list(RESEARCH_GREYSON = 3) //Likely people will get parts/cog/bots for this
+	cost = 7500
+	unlocks_designs = list(/datum/design/research/item/greyson/abnegate,
+						/datum/design/research/item/greyson/formatbound,
+						/datum/design/research/item/greyson/humility,
+						/datum/design/research/item/greyson/systemcost)
 
 /datum/technology/hardsuit_nonlethal
 	name = "Mounted Non-Lethal"
@@ -155,6 +169,7 @@
 							/datum/design/research/item/weapon/centurio,
 							/datum/design/research/item/weapon/auretian
 						)
+
 
 /datum/technology/adv_lethal
 	name = "Advanced Lethal Weapons"
