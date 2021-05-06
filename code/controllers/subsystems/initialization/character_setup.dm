@@ -17,7 +17,7 @@ SUBSYSTEM_DEF(character_setup)
 		prefs.setup()
 
 	for(var/d in preferences_datums)
-		var/datum/preferences/prefs = d
+		var/datum/preferences/prefs = preferences_datums[d]
 		if(istype(prefs) && !prefs.path)
 			error("Prefs failed to setup (SS): [prefs.client_ckey]")
 			prefs.setup()
