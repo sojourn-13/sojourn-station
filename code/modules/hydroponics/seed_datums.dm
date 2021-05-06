@@ -452,7 +452,7 @@
 	seed_name = "plump helmet"
 	display_name = "plump helmet mushrooms"
 	mutants = list("walkingmushroom","towercap")
-	chems = list("nutriment" = list(2,10))
+	chems = list("nutriment" = list(2,10), "spaceacillin" = list(2,10))
 	kitchen_tag = "plumphelmet"
 
 /datum/seed/mushroom/plump/New()
