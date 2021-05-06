@@ -100,7 +100,7 @@
 
 /obj/item/weapon/gun/energy/firestorm
 	name = "\"Firestorm\" assault SMG"
-	desc = "A front loading laser SMG made more close quarters, compactness and its high rate of fire. Its downside revolves around its usage of small batteries.\
+	desc = "A front loading laser SMG made more close quarters, compactness and its high rate of fire. Luckily it appears to make up for its charge usage by taking medium cell batteries.\
 	On the side of the gun under the barrel appears to be an 'H&S' marking. Surprising considering the quality of the weapon!"
 	icon = 'icons/obj/guns/energy/firestorm.dmi'
 	icon_state = "firestorm"

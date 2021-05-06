@@ -14,12 +14,12 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 1750
+	price_tag = 1500
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	recoil_buildup = 10
+	recoil_buildup = 5
 	one_hand_penalty = 10 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
@@ -59,7 +59,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 3, TECH_POWER = 5)
-	price_tag = 600
+	price_tag = 1000
 	recoil_buildup = 3
 	one_hand_penalty = 10
 	damage_multiplier = 1.2 //We hold less ammo but deal about the same damage
@@ -81,9 +81,9 @@
 	icon_state = "AK"
 	item_state = "AK"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
-	price_tag = 750
+	price_tag = 1000
 	damage_multiplier = 1.2
-	recoil_buildup = 14
+	recoil_buildup = 7
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/ak47/sawn
@@ -98,8 +98,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
-	price_tag = 500
-	recoil_buildup = 16
+	price_tag = 650
+	recoil_buildup = 13
 	one_hand_penalty = 20
 	damage_multiplier = 0.8
 	saw_off = FALSE
