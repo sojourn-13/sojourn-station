@@ -1330,9 +1330,9 @@
 
 /datum/seed/shand
 	name = "shand"
-	seed_name = "S'randar's hand"
-	display_name = "S'randar's hand leaves"
-	chems = list("bicaridine" = list(0,10))
+	seed_name = "Mercy's hand"
+	display_name = "Mercy's hand leaves"
+	chems = list("bicaridine" = list(1,10), "anti_toxin" = list(1,10))
 	kitchen_tag = "shand"
 
 /datum/seed/shand/New()
@@ -1350,8 +1350,8 @@
 
 /datum/seed/mtear
 	name = "mtear"
-	seed_name = "Messa's tear"
-	display_name = "Messa's tear leaves"
+	seed_name = "Sun tear"
+	display_name = "Sun tear leaves"
 	chems = list("honey" = list(1,10), "kelotane" = list(3,5))
 	kitchen_tag = "mtear"
 
