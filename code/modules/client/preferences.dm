@@ -37,7 +37,7 @@
 	if(istype(C))
 		client = C
 		client_ckey = C.ckey
-		SScharacter_setup.preferences_datums += src
+		SScharacter_setup.preferences_datums[client_ckey] = src
 		if(SScharacter_setup.initialized)
 			setup()
 		else

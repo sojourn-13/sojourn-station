@@ -165,7 +165,6 @@
 	prefs = SScharacter_setup.preferences_datums[ckey]
 	if(!prefs)
 		prefs = new /datum/preferences(src)
-		SScharacter_setup.preferences_datums[ckey] = prefs
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 
@@ -247,7 +246,7 @@
 	return null
 
 
-/client/proc/get_country()
+/client/proc/get_country()prefs
 	// Return data:
 	// Success: list("country" = "United States", "country_code" = "US")
 	// Fail: null
