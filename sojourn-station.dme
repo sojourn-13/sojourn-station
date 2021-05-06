@@ -455,6 +455,7 @@
 #include "code\datums\uplink\uplink_categories.dm"
 #include "code\datums\uplink\uplink_items.dm"
 #include "code\datums\uplink\uplink_sources.dm"
+#include "code\datums\uplink\void_wolf.dm"
 #include "code\datums\wires\airlock.dm"
 #include "code\datums\wires\alarm.dm"
 #include "code\datums\wires\apc.dm"

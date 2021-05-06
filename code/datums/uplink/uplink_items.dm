@@ -30,7 +30,7 @@ var/datum/uplink/uplink = new()
 	var/desc
 	var/item_cost = 0
 	var/datum/uplink_category/category		// Item category
-	var/list/antag_roles = ROLES_UPLINK_BASE	// Antag roles this item is displayed to. If empty, display to all.
+	var/list/antag_roles = ""	// Antag roles this item is displayed to. If empty, display to all.
 
 /datum/uplink_item/item
 	var/path = null
