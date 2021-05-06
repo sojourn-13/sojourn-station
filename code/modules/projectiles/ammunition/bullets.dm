@@ -577,17 +577,17 @@
 
 /obj/item/ammo_casing/beam
 	name = "laser casing"
-	desc = "A laser casing."
+	desc = "A laser casing thats cal is .223."
 	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/weak
 
 /obj/item/ammo_casing/beam/ap
-	desc = "A piercing laser casing. Meant for penetration of armor."
+	desc = "A piercing laser casing. Meant for penetration of armor thats cal is .223."
 	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/weak/ap
 
 /obj/item/ammo_casing/beam/lethal
-	desc = "A dence laser casing. Compact laser that is easily blocked by armor."
+	desc = "A dence laser casing. Compact laser that is easily blocked by armor thats cal is .223."
 	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/weak/lethal
 

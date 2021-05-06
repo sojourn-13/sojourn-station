@@ -111,8 +111,8 @@
 //Starstriker - The gun thats able to strike the stars!
 /datum/design/research/item/weapon/starstriker
 	name = "\"Star Striker\" laser boltgun"
-	desc = "A mix of the lighter version of the Sike point 257 hunting rifle, but with the twist of using laser based casings rather then normal bullet based projectiles."
-	build_path = /obj/item/weapon/gun/projectile/boltgun/scout/sci
+	desc = "A mix of the lighter version of the Sike point 257 hunting rifle, but with the twist of using laser based casings rather then normal bullet based projectiles. Its cal is .233 unlike the gun its based on."
+	build_path = /obj/item/weapon/gun/projectile/boltgun/sci
 
 //LAK - The gun thats able to laser shot away most proplems
 /datum/design/research/item/weapon/laser_ak
@@ -206,19 +206,19 @@
 
 /datum/design/research/item/ammo/laser
 	name = "\"Star Striker\" casing"
-	desc = "A single casing for the Star Striker laser rifle."
+	desc = "A single casing for the Star Striker laser rifle, its cal is .233."
 	build_path = /obj/item/ammo_casing/beam
 	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_SILVER = 0.5) //Takes silver
 
 /datum/design/research/item/ammo/laser/ap
 	name = "\"Star Striker\" piercing laser casing."
-	desc = "A single casing for the Star Striker laser rifle. Meant for penetration of armor."
+	desc = "A single casing for the Star Striker laser rifle. Meant for penetration of armor, its cal is .233."
 	build_path = /obj/item/ammo_casing/beam/ap
 	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_GOLD = 0.5) //Takes gold
 
 /datum/design/research/item/ammo/laser/lethal
 	name = "\"Star Striker\" dense laser casing."
-	desc = "A single casing for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor."
+	desc = "A single casing for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor, its cal is .233."
 	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_PLASMA = 0.5) //Takes plasma
 	build_path = /obj/item/ammo_casing/beam/lethal
 
