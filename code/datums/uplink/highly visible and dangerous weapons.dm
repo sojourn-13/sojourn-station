@@ -3,6 +3,13 @@
 ***************************************/
 /datum/uplink_item/item/visible_weapons
 	category = /datum/uplink_category/visible_weapons
+	antag_roles = null
+
+/datum/uplink_item/item/visible_weapons/makarov
+	name = "\"Makarov\" pistol"
+	desc = "Ammo not induced."
+	item_cost = 2 //Ammo not induced
+	path = /obj/item/weapon/gun/projectile/clarissa/makarov
 
 /datum/uplink_item/item/visible_weapons/dartgun
 	name = "Dart Gun"
@@ -59,8 +66,4 @@
 	name = "Anti-Materiel Rifle"
 	item_cost = 20
 	path = /obj/item/weapon/storage/box/syndie_kit/antimaterial_rifle
-
-/datum/uplink_item/item/visible_weapons/rigged
-	name = "Weapon reverse loader"
-	item_cost = 5
-	path = /obj/item/weapon/gun_upgrade/mechanism/reverse_loader
+	antag_roles = ROLES_UPLINK_BASE
