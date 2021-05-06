@@ -3,7 +3,6 @@
 ***************************************/
 /datum/uplink_item/item/visible_weapons
 	category = /datum/uplink_category/visible_weapons
-	antag_roles = null
 
 /datum/uplink_item/item/visible_weapons/makarov
 	name = "\"Makarov\" pistol"
@@ -66,4 +65,3 @@
 	name = "Anti-Materiel Rifle"
 	item_cost = 20
 	path = /obj/item/weapon/storage/box/syndie_kit/antimaterial_rifle
-	antag_roles = ROLES_UPLINK_BASE

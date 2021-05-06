@@ -4,7 +4,6 @@
 /datum/uplink_item/item/telecrystal
 	category = /datum/uplink_category/telecrystals
 	desc = "Acquire the uplink crystals in pure form."
-	antag_roles = null
 
 /datum/uplink_item/item/telecrystal/get_goods(var/obj/item/device/uplink/U, var/loc)
 	return new /obj/item/stack/telecrystal(loc, cost(U.uses))

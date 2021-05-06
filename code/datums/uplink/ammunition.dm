@@ -4,7 +4,6 @@
 /datum/uplink_item/item/ammo
 	item_cost = 4
 	category = /datum/uplink_category/ammunition
-	antag_roles = null
 
 /datum/uplink_item/item/ammo/pistol
 	name = ".35 HV box"

@@ -3,7 +3,6 @@
 *******************************/
 /datum/uplink_item/item/stealth_items
 	category = /datum/uplink_category/stealth_items
-	antag_roles = null
 
 /datum/uplink_item/item/stealth_items/syndigaloshes
 	name = "No-Slip sole"
@@ -19,7 +18,7 @@
 	name = "Agent ID card"
 	item_cost = 3
 	path = /obj/item/weapon/card/id/syndicate
-//	antag_roles = list(ROLE_TRAITOR,ROLE_MARSHAL,ROLE_INQUISITOR,ROLE_MERCENARY,ROLE_CARRION)
+	antag_roles = list(ROLE_TRAITOR,ROLE_MARSHAL,ROLE_INQUISITOR,ROLE_MERCENARY,ROLE_CARRION)
 
 /datum/uplink_item/item/stealth_items/chameleon_kit
 	name = "Chameleon Kit"
