@@ -3,7 +3,6 @@
 ***********/
 /datum/uplink_item/item/implants
 	category = /datum/uplink_category/implants
-	antag_roles = null
 
 /datum/uplink_item/item/implants/imp_freedom
 	name = "Freedom Implant"
@@ -19,7 +18,6 @@
 	name = "Explosive Implant (DANGER!)"
 	item_cost = 10
 	path = /obj/item/weapon/storage/box/syndie_kit/imp_explosive
-	antag_roles = ROLES_UPLINK_BASE
 
 /datum/uplink_item/item/implants/imp_spying
 	name = "Spying Implant"
@@ -38,7 +36,6 @@
 /datum/uplink_item/item/implants/imp_uplink
 	name = "Uplink Implant"
 	path = /obj/item/weapon/storage/box/syndie_kit/imp_uplink
-	antag_roles = ROLES_UPLINK_BASE
 
 /datum/uplink_item/item/implants/imp_uplink/New()
 	..()

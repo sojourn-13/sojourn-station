@@ -3,7 +3,6 @@
 **********/
 /datum/uplink_item/item/medical
 	category = /datum/uplink_category/medical
-	antag_roles = null
 
 /datum/uplink_item/item/medical/sinpockets
 	name = "Box of Sin-Pockets"
@@ -22,12 +21,12 @@
 
 /datum/uplink_item/item/medical/nanites
 	name = "Raw nanite vial"
-	item_cost = 2
+	item_cost = 5
 	path = /obj/item/weapon/reagent_containers/glass/beaker/vial/nanites
 
 /datum/uplink_item/item/medical/uncapnanites
 	name = "Raw uncapped nanite vial"
-	item_cost = 6
+	item_cost = 8
 	path = /obj/item/weapon/reagent_containers/glass/beaker/vial/uncapnanites
 
 /datum/uplink_item/item/medical/gene_vial

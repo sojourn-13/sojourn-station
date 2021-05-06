@@ -3,7 +3,6 @@
 ************/
 /datum/uplink_item/item/badassery
 	category = /datum/uplink_category/badassery
-//	antag_roles = null
 
 /**************
 * Random Item *
