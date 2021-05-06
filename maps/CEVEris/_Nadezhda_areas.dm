@@ -281,6 +281,12 @@
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
+/area/nadezhda/outside/forest/swamp_hut
+	name = "Swamp Hut"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+	requires_power = FALSE
+
 /area/nadezhda/outside/forest/river_forest_light
 	name = "River Forest"
 	icon_state = "forest"
