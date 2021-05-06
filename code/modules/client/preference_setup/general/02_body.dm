@@ -165,6 +165,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 /datum/category_item/player_setup_item/physical/body/OnTopic(var/href,var/list/href_list, var/mob/user)
 
+	pref.categoriesChanged = "Body"
 	var/datum/species/mob_species = all_species[pref.species]
 	var/datum/species_form/mob_species_form = GLOB.all_species_form_list[pref.species_form]
 	if(href_list["toggle_species_verbose"])

@@ -271,7 +271,7 @@
 "fk" = (/obj/structure/table/woodentable,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fl" = (/obj/structure/coatrack,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fm" = (/obj/structure/table/woodentable,/obj/item/ammo_casing/shotgun/pellet/prespawned,/obj/item/weapon/gun/projectile/shotgun/pump/gladstone/queen,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"fn" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/boltgun/scout/sci,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fn" = (/obj/structure/table/woodentable,/obj/item/weapon/gun/projectile/boltgun/sci,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fo" = (/obj/structure/table/woodentable,/obj/item/clothing/accessory/holster/saber/machete/occupied,/obj/item/clothing/head/helmet/hunter,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fp" = (/obj/structure/table/rack/shelf,/obj/item/ammo_magazine/ammobox/magnum_40,/obj/item/ammo_magazine/ammobox/magnum_40,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fq" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Medical Room"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)

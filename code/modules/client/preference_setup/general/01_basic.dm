@@ -97,6 +97,11 @@
 				pref.real_name = random_name(pref.gender, pref.species)
 	*/
 /datum/category_item/player_setup_item/physical/basic/content()
+	if(global.all_species[pref.species]?.obligate_name)
+		pref.custom_species = global.all_species[pref.species]
+	if ((pref.species == "Human") && (pref.custom_species in global.all_species))
+		pref.custom_species = "Human"
+
 	. = list()
 	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
 	. += "<span class='info' style='color:#0000cc;background-color:#ffffff;padding:5px;'> This is <b>[pref.real_name]</b>, <b><font color='[pref.species_color]'>a[pref.species_aan] [pref.custom_species]</font></b>!</span> <br>"
@@ -119,6 +124,7 @@
 
 /datum/category_item/player_setup_item/physical/basic/OnTopic(var/href,var/list/href_list, var/mob/user)
 	var/datum/species/S = all_species[pref.species]
+	pref.categoriesChanged = "Basic"
 
 	if(href_list["rename"])
 		var/raw_name = input(user, "Choose your character's name:", "Character Name", pref.real_name)  as text|null

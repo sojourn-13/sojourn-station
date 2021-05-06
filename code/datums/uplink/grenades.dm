@@ -3,6 +3,7 @@
 ************/
 /datum/uplink_item/item/grenades
 	category = /datum/uplink_category/grenades
+	antag_roles = null
 
 /datum/uplink_item/item/grenades/anti_photon
 	name = "5xPhoton Disruption Grenades"
@@ -38,3 +39,4 @@
 	name = "viscerator grenade"
 	item_cost = 4
 	path = /obj/item/weapon/grenade/spawnergrenade/manhacks
+	antag_roles = ROLES_UPLINK_BASE

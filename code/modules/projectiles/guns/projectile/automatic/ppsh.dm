@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
 	penetration_multiplier = 1.2
-	recoil_buildup = 5
+	recoil_buildup = 3.5
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	one_hand_penalty = 20
@@ -48,6 +48,6 @@
 	price_tag = 1200
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.0
-	recoil_buildup = 10
+	recoil_buildup = 5
 	one_hand_penalty = 20
 	auto_eject = 0
