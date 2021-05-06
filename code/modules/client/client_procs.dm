@@ -246,7 +246,7 @@
 	return null
 
 
-/client/proc/get_country()prefs
+/client/proc/get_country(prefs)
 	// Return data:
 	// Success: list("country" = "United States", "country_code" = "US")
 	// Fail: null
