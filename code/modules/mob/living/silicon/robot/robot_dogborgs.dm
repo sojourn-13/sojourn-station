@@ -18,7 +18,7 @@
 		STAT_ROB = 60,
 		STAT_TGH = 60,
 		STAT_BIO = 25,
-		STAT_COG = 25
+		STAT_COG = 60
 	)
 
 	desc = "Focused on keeping the peace and fighting off threats to the colony, the IH K9 Module is a \
@@ -179,7 +179,7 @@
 		STAT_ROB = 25,
 		STAT_TGH = 25,
 		STAT_BIO = 25,
-		STAT_COG = 25
+		STAT_COG = 60
 	)
 	desc = "A vast machine designed for cleaning up trash and scrubbing floors. A fairly specialised task, \
 	but requiring a large capacity. The huge chassis consequentially grants it a degree of toughness, \
@@ -247,7 +247,7 @@
 
 	stat_modifiers = list(
 		STAT_BIO = 40,
-		STAT_COG = 40,
+		STAT_COG = 80,
 		STAT_MEC = 30
 	)
 
@@ -319,7 +319,7 @@
 	engineering tasks."
 
 	stat_modifiers = list(
-		STAT_COG = 40,
+		STAT_COG = 80,
 		STAT_MEC = 40,
 		STAT_BIO = 25
 	)
