@@ -194,7 +194,7 @@
 	name = "ammunition packet (old 7.5mm Rifle)"
 	icon_state = "srifle_s"
 	max_ammo = 30 //Were a small packet not a box
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
 
 /obj/item/ammo_magazine/ammobox/rifle_75/pickup(mob/user)
