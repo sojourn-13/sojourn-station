@@ -59,7 +59,7 @@ var/global/list/robot_modules = list(
 	//Stat modifiers for skillchecks
 	var/list/stat_modifiers = list(
 		STAT_BIO = 25,
-		STAT_COG = 25,
+		STAT_COG = 60,
 		STAT_ROB = 5,
 		STAT_TGH = 5,
 		STAT_MEC = 5
@@ -246,7 +246,7 @@ var/global/list/robot_modules = list(
 	desc = "The baseline, jack of all trades. Can do a little of everything. Some DIY, some healing, some combat."
 	stat_modifiers = list(
 		STAT_BIO = 30,
-		STAT_COG = 30,
+		STAT_COG = 70,
 		STAT_ROB = 30,
 		STAT_TGH = 30,
 		STAT_MEC = 30
@@ -321,7 +321,7 @@ var/global/list/robot_modules = list(
 
 	stat_modifiers = list(
 		STAT_BIO = 60,
-		STAT_COG = 30
+		STAT_COG = 60
 	)
 
 /obj/item/weapon/robot_module/medical/general/New(var/mob/living/silicon/robot/R)
@@ -425,7 +425,7 @@ var/global/list/robot_modules = list(
 		STAT_BIO = 40,
 		STAT_ROB = 30,
 		STAT_TGH = 30,
-		STAT_COG = 30
+		STAT_COG = 60
 	)
 
 	desc = "The rescue borg fills the role of paramedic. \
@@ -510,7 +510,7 @@ var/global/list/robot_modules = list(
 	engineering tasks."
 
 	stat_modifiers = list(
-		STAT_COG = 40,
+		STAT_COG = 80,
 		STAT_MEC = 40,
 		STAT_BIO = 25
 	)
@@ -741,7 +741,7 @@ var/global/list/robot_modules = list(
 		STAT_ROB = 60,
 		STAT_TGH = 60,
 		STAT_BIO = 25,
-		STAT_COG = 25
+		STAT_COG = 60
 	)
 
 /obj/item/weapon/robot_module/security/general
@@ -814,7 +814,7 @@ var/global/list/robot_modules = list(
 		STAT_ROB = 25,
 		STAT_TGH = 25,
 		STAT_BIO = 30,
-		STAT_COG = 25
+		STAT_COG = 60
 	)
 
 	desc = "A vast machine designed for cleaning up trash and scrubbing floors. A fairly specialised task, \
@@ -887,7 +887,7 @@ var/global/list/robot_modules = list(
 
 	stat_modifiers = list(
 		STAT_BIO = 30,
-		STAT_COG = 30,
+		STAT_COG = 80,
 		STAT_ROB = 30,
 		STAT_TGH = 30,
 		STAT_MEC = 30
@@ -975,7 +975,7 @@ var/global/list/robot_modules = list(
 		STAT_ROB = 60,
 		STAT_TGH = 50,
 		STAT_BIO = 25,
-		STAT_COG = 25,
+		STAT_COG = 60,
 		STAT_MEC = 30 //Drills
 	)
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
@@ -1031,7 +1031,7 @@ var/global/list/robot_modules = list(
 
 	stat_modifiers = list(
 		STAT_BIO = 40,
-		STAT_COG = 40,
+		STAT_COG = 90,
 		STAT_MEC = 30
 	)
 
@@ -1150,7 +1150,7 @@ var/global/list/robot_modules = list(
 	networks = list(NETWORK_ENGINEERING)
 	channels = list("Engineering" = 1, "Common" = 1)
 	stat_modifiers = list(
-		STAT_COG = 25,
+		STAT_COG = 60,
 		STAT_MEC = 40
 	) //so we can use rnd consoles for parts ect
 
