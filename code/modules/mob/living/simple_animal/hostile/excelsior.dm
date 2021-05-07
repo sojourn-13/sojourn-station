@@ -60,6 +60,7 @@
 
 /mob/living/simple_animal/hostile/excelsior/excel_vintorez
 	icon_state = "excel_vintorez"
+	rapid = 0 //The gun cant rapid fire...
 	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/vintorez
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
