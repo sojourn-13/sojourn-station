@@ -9,7 +9,7 @@
 	caliber = CAL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 6
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
+	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_WOOD = 6)
 	price_tag = 800
 	damage_multiplier = 1.4
 	penetration_multiplier = 1.3
@@ -46,7 +46,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	fire_sound = 'sound/weapons/Gunshot_light.ogg'
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 6)
 	price_tag = 350
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
