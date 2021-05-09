@@ -9,7 +9,7 @@
 	price_tag = 800
 	damage_multiplier = 0.9 //Cheaer AK basiclly
 	w_class = ITEM_SIZE_NORMAL
-	recoil_buildup = 10
+	recoil_buildup = 8
 	caliber = CAL_LRIFLE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_STANMAG
