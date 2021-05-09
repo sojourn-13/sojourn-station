@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 9
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
-	price_tag = 850
+	price_tag = 450
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	recoil_buildup = 4

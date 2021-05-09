@@ -206,6 +206,8 @@
 					/obj/item/seeds/riceseed = 3,
 					/obj/item/seeds/thaadra = 2,
 					/obj/item/seeds/gelthi = 2,
+					/obj/item/seeds/mtearseed = 2,
+					/obj/item/seeds/shandseed = 2,
 					)
 
 	contraband = list(
@@ -213,11 +215,9 @@
 					/obj/item/seeds/glowshroom = 2,
 					/obj/item/seeds/ambrosiavulgarisseed = 2,
 					/obj/item/seeds/libertymycelium = 2,
-					/obj/item/seeds/mtearseed = 2,
 					/obj/item/seeds/nettleseed = 2,
 					/obj/item/seeds/reishimycelium = 2,
 					/obj/item/seeds/reishimycelium = 2,
-					/obj/item/seeds/shandseed = 2,
 					/obj/item/seeds/jurlmah = 2,
 					/obj/item/seeds/amauri = 2,
 					/obj/item/seeds/vale = 2,
