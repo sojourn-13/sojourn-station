@@ -23,6 +23,7 @@
 	var/department_account_access = FALSE	// Can this position access the department acount, even if they're not a head?
 	var/minimum_character_age = 0
 	var/ideal_character_age = 30
+	var/playtimerequired = 0				// How many minutes in this deaprtment are required to play this job?
 	var/create_record = 1					// Do we announce/make records for people who spawn on this job?
 	var/list/also_known_languages = list()	// additional chance based languages to all jobs.
 
@@ -171,6 +172,34 @@
 		to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [minimum_character_age].</span>")
 		return TRUE
 
+	if(playtimerequired)
+		if(department == "Security" && playtimerequired > prefs.securityplaytime)
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
+		if(department == "Medical" && playtimerequired > prefs.medicalplaytime)
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
+		if(department == "Engineering" && playtimerequired > prefs.engineeringplaytime)
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
+		if(department == "Science" && playtimerequired > prefs.scienceplaytime)
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
+		if(department == "Lonestar" && playtimerequired > prefs.lonestarplaytime)
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
+		if(department == "Church" && playtimerequired > prefs.churchplaytime)
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
+		if(department == "Prospectors" && playtimerequired > prefs.prospectorsplaytime)
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
+		if(department == "Independent" && playtimerequired > prefs.independentplaytime)
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
+		if(department == "Command" && playtimerequired > prefs.commandplaytime)
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
 	return FALSE
 
 /datum/job/proc/is_setup_restricted(list/options)

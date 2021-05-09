@@ -573,6 +573,52 @@ ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 	T.stats.addPerk(perkname)
 	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
 
+ADMIN_VERB_ADD(/client/proc/playtimeadd, R_ADMIN|R_MOD, FALSE|R_DEBUG)
+/client/proc/playtimeadd(mob/T as mob in GLOB.player_list)
+	set category = "Fun"
+	set name = "Add Playtime"
+	set desc = "Add playtime to a ckey."
+	var/datum/perk/departmentpt = input("What department do you wish to add playtime to?") as null|anything in list("Security", "Medical", "Guild", "Research", "Lonestar", "Church", "Prospectors", "Hunting Lodge", "Council", "All")
+	var/timeadded = input("How much time do you wish to add in minutes?") as null|num
+	if(isnull(timeadded))
+		return
+	timeadded = round(timeadded)
+	if (!departmentpt)
+		return
+	if(QDELETED(T))
+		to_chat(usr, "Creature has been delete in the meantime.")
+		return
+	if(departmentpt == "All")
+		T.client.prefs.securityplaytime += timeadded
+		T.client.prefs.medicalplaytime += timeadded
+		T.client.prefs.engineeringplaytime += timeadded
+		T.client.prefs.scienceplaytime += timeadded
+		T.client.prefs.lonestarplaytime += timeadded
+		T.client.prefs.churchplaytime += timeadded
+		T.client.prefs.prospectorsplaytime += timeadded
+		T.client.prefs.independentplaytime += timeadded
+		T.client.prefs.commandplaytime += timeadded
+	if(departmentpt == "Security")
+		T.client.prefs.securityplaytime += timeadded
+	if(departmentpt == "Medical")
+		T.client.prefs.securityplaytime += timeadded
+	if(departmentpt == "Guild")
+		T.client.prefs.securityplaytime += timeadded
+	if(departmentpt == "Research")
+		T.client.prefs.securityplaytime += timeadded
+	if(departmentpt == "Lonestar")
+		T.client.prefs.securityplaytime += timeadded
+	if(departmentpt == "Church")
+		T.client.prefs.securityplaytime += timeadded
+	if(departmentpt == "Prospectors")
+		T.client.prefs.securityplaytime += timeadded
+	if(departmentpt == "Hunting Lodge")
+		T.client.prefs.securityplaytime += timeadded
+	if(departmentpt == "Council")
+		T.client.prefs.securityplaytime += timeadded
+	message_admins("\blue [key_name_admin(usr)] added [timeadded] MINUTES of [departmentpt] to [key_name(T)].", 1)
+	log_admin("[key_name_admin(usr)] added [timeadded] MINUTES of [departmentpt] to [key_name(T)].")
+
 ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
 /client/proc/perkremove(mob/T as mob in SSmobs.mob_list)
 	set category = "Fun"

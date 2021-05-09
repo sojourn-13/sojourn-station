@@ -1061,6 +1061,39 @@ mob/proc/yank_out_object()
 	else
 		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
 
+/mob/verb/check_playtime()
+	set name = "Check Playtime"
+	set category = "IC"
+	set src = usr
+
+	to_chat(src, "You have spent [src.client.prefs.securityplaytime] minutes keeping the colony safe in Blackshield and Marshals.")
+	if(src.client.prefs.securityplaytime > 6000)
+		to_chat(src, "<I><B>You're a known face around Blackshield and Marshals, you're the colony's pride when it comes to Security!</B></I>")
+	to_chat(src, "You have spent [src.client.prefs.medicalplaytime] minutes treating the wounded in Soteria Medical.")
+	if(src.client.prefs.medicalplaytime > 6000)
+		to_chat(src, "<I><B>You've saved your fair share of lives and that has not gone unnoticed.</B></I>")
+	to_chat(src, "You have spent [src.client.prefs.engineeringplaytime] minutes powering the colony and fixing it in the Artificer's Guild.")
+	if(src.client.prefs.engineeringplaytime > 6000)
+		to_chat(src, "<I><B>Lights, camera, action! You've kept the colony powered and in one piece so well that the Guild Masters invited you to grill with them.</B></I>")
+	to_chat(src, "You have spent [src.client.prefs.scienceplaytime] minutes researching for a better tomorrow in Soteria Research.")
+	if(src.client.prefs.scienceplaytime > 6000)
+		to_chat(src, "<I><B>You've learned the most valuable lesson in Soteria: ethics and the laws of physics are just suggestions. </B></I>")
+	to_chat(src, "You have spent [src.client.prefs.churchplaytime] minutes doing the Absolute's will in the Church.")
+	if(src.client.prefs.churchplaytime > 6000)
+		to_chat(src, "<I><B>You're a shining beacon of the Absolute's will and benevolence. This is the path to becoming a living saint.</B> </I>")
+	to_chat(src, "You have spent [src.client.prefs.lonestarplaytime] minutes making deals in Lonestar.")
+	if(src.client.prefs.lonestarplaytime > 6000)
+		to_chat(src, "<I><B>You could get a good deal from the devil if you tried. Lonestar's pockets swell with every word you utter. </B></I>")
+	to_chat(src, "You have spent [src.client.prefs.prospectorsplaytime] minutes scavenging with the Prospectors.")
+	if(src.client.prefs.prospectorsplaytime > 6000)
+		to_chat(src, "<I><B>Robots, monsters and blackshield tried but could not stop you from becoming a prospecting legend. You're an unstoppable garbage man!. </B></I>")
+	to_chat(src, "You have spent [src.client.prefs.independentplaytime] minutes stalking prey in the Hunter's Lodge.")
+	if(src.client.prefs.independentplaytime > 6000)
+		to_chat(src, "<I><B>The bigger they are, the harder they fall and they all fell before you. There's no beast that could best you. </B></I>")
+	to_chat(src, "You have spent [src.client.prefs.commandplaytime] minutes leading factions in the Council.")
+	if(src.client.prefs.independentplaytime > 6000)
+		to_chat(src, "<I><B>You're a natural born leader and it shows. Decisive and charismatic, the Council is lucky to have you!</B> </I>")
+
 /mob/verb/browse_mine_stats()
 	set name		= "Show stats and perks"
 	set desc		= "Browse your character stats and perks."
