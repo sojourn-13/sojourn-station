@@ -133,9 +133,27 @@
 			bad_message = "\[IN [(available_in_days)] DAYS]"*/
 		else if(job.minimum_character_age && user.client && (user.client.prefs.age < job.minimum_character_age))
 			bad_message = "\[MINIMUM CHARACTER AGE: [job.minimum_character_age]]"
+		else if(job.playtimerequired && user.client)
+			if(job.department == "Security" && job.playtimerequired > user.client.prefs.securityplaytime)
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+			if(job.department == "Medical" && job.playtimerequired > user.client.prefs.medicalplaytime)
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+			if(job.department == "Engineering" && job.playtimerequired > user.client.prefs.engineeringplaytime)
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+			if(job.department == "Science" && job.playtimerequired > user.client.prefs.scienceplaytime)
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+			if(job.department == "Lonestar" && job.playtimerequired > user.client.prefs.lonestarplaytime)
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+			if(job.department == "Church" && job.playtimerequired > user.client.prefs.churchplaytime)
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+			if(job.department == "Prospectors" && job.playtimerequired > user.client.prefs.prospectorsplaytime)
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+			if(job.department == "Independent" && job.playtimerequired > user.client.prefs.independentplaytime)
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+			if(job.department == "Command" && job.playtimerequired > user.client.prefs.commandplaytime)
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
 		else if(user.client && job.is_setup_restricted(user.client.prefs.setup_options))
 			bad_message = "\[SETUP RESTRICTED]"
-
 		if(("Assistant" in pref.job_low) && (rank != "Assistant"))
 			. += "<a href='?src=\ref[src];set_skills=[rank]'><font color=grey>[rank]</font></a></td><td></td></tr>"
 			continue

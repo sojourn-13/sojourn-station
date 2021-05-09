@@ -22,7 +22,7 @@
 	loaded_preferences = S
 	return 1
 
-/datum/preferences/proc/save_preferences()
+/datum/preferences/proc/save_preferences(var/announce = 1)
 	if(!path)				return 0
 	if(!check_cooldown())
 		if(istype(client))
@@ -32,8 +32,8 @@
 	var/savefile/S = new /savefile(path)
 	if(!S)					return 0
 	S.cd = "/"
-
-	log_and_message_admins("[key_name(usr)] has saved their preferences.")
+	if(announce == 1)
+		log_and_message_admins("[key_name(usr)] has saved their preferences.")
 
 	S["version"] << SAVEFILE_VERSION_MAX
 	player_setup.save_preferences(S)
