@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/energy/sst
 	name = "\"SST Abnegate\" handgun"
-	desc = "\"Soteria Surface Tension\" brand handgun. A cooperative project between Soteria Medical and Soteria Research, the Abnegate uses Greyson tech to internally synthesize soporific coated .35 calliber bullets. Initially designed at the request of orderlies for a proper way to sedate rowdy armored targets from a distance."
+	desc = "\"Soteria Surface Tension\" brand handgun. A cooperative project between Soteria Medical and Soteria Research, the Abnegate uses Greyson tech to internally synthesize soporific coated .35 calliber bullets. \
+	Initially designed at the request of orderlies for a proper way to sedate rowdy armored targets from a distance."
 	icon = 'icons/obj/guns/energy/abnegate.dmi'
 	icon_state = "abnegate"
 	item_state = "abnegate"
@@ -23,7 +24,8 @@
 
 /obj/item/weapon/gun/energy/sst/formatbound
 	name = "\"SST Format Bound\" handgun"
-	desc = "\"Soteria Surface Tension\" brand heavy handgun. Further development on the cooperative project between Soteria Medical and Soteria Research known as Soteria Surface Tension. This heavy handgun fires a stronger bullet and carries more anesthetics, for the stubborn person that won't get out of your medical bay."
+	desc = "\"Soteria Surface Tension\" brand heavy handgun. Further development on the cooperative project between Soteria Medical and Soteria Research known as Soteria Surface Tension. \
+	This heavy handgun fires a stronger bullet and carries more anesthetics, for the stubborn person that won't get out of your medical bay."
 	icon = 'icons/obj/guns/energy/format_bound.dmi'
 	icon_state = "format_bound"
 	item_state = "format_bound"
@@ -41,7 +43,8 @@
 
 /obj/item/weapon/gun/energy/sst/humility
 	name = "\"SST Humility\" shotgun"
-	desc = "\"Soteria Surface Tension\" brand semi-automatic shotgun. Larger threats demanded larger ordinance and Soteria responded to the internal need for such equipment. Its internal mechanism prints out soporific coated ammunition as it fires. The Humility has the firepower to down larger monstrous targets as well as stop anyone why may be posing a threat to Soteria Medical. "
+	desc = "\"Soteria Surface Tension\" brand semi-automatic shotgun. Larger threats demanded larger ordinance and Soteria responded to the internal need for such equipment. \
+	Its internal mechanism prints out soporific coated ammunition as it fires. The Humility has the firepower to down larger monstrous targets as well as stop anyone why may be posing a threat to Soteria Medical. "
 	icon = 'icons/obj/guns/energy/humility.dmi'
 	wielded_item_state = "_doble"
 	icon_state = "humility"
@@ -76,7 +79,8 @@
 
 /obj/item/weapon/gun/energy/sst/systemcost
 	name = "\"SST System Cost\" light machinegun"
-	desc = "\"Soteria Surface Tension\" brand light machinegun. The true answer to a horde of either monsters or rubberneckers in the medical bay. Able to fire soporific coated bullets at a high rate of fire, the System Cost is an orderly's dream come true."
+	desc = "\"Soteria Surface Tension\" brand light machinegun. The true answer to a horde of either monsters or rubberneckers in the medical bay. \
+	Able to fire soporific coated bullets at a high rate of fire, the System Cost is an orderly's dream come true."
 	icon = 'icons/obj/guns/energy/system_cost.dmi'
 	icon_state = "system_cost"
 	item_state = "system_cost"

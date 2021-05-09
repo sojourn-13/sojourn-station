@@ -62,20 +62,6 @@
 	cost = 15000
 	unlocks_designs = list(/datum/design/research/item/greyson/glass_widow)
 
-/datum/technology/sst
-	name = "Soteria Surface Tenstion Project"
-	desc = "The development of non-lethal weapons for Soteria Medical using GP technology."
-	x = 0.3
-	y = 0.3
-	tech_type = RESEARCH_GREYSON
-	icon = "abnegate"
-	required_technologies = list(/datum/technology/GP_window)
-	cost = 10000
-	unlocks_designs = list(/datum/design/research/item/greyson/abnegate,
-						/datum/design/research/item/greyson/formatbound,
-						/datum/design/research/item/greyson/humility,
-						/datum/design/research/item/greyson/systemcost)
-
 /datum/technology/GP_unmaker
 	name = "Greyson Positronic Tyrant Destroyers"
 	desc = "The rare and highly vauleable GP Master Unmaker Infuser gun mod and portable self charging combat shields."
