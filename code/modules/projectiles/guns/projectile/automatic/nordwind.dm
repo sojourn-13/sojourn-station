@@ -41,7 +41,7 @@
 	gun_tags = list(GUN_PROJECTILE)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 750
-	zoom_factor = 0.5
+	zoom_factor = 0.6
 	recoil_buildup = 14
 	damage_multiplier = 0.9
 	one_hand_penalty = 25
