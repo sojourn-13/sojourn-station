@@ -405,6 +405,7 @@
 		"Moth Wings, Snowy",
 		"Moth Wings, White",
 		"Moth Wings, Worker",
+		"Moth Wings, Plain",
 		"Spider Legs"
 		)
 
