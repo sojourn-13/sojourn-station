@@ -406,7 +406,6 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_OFFSET = 0.9,
-		GUN_UPGRADE_RECOIL = 1.1,
 		GUN_UPGRADE_ZOOM = 1.2
 		)
 	I.gun_loc_tag = GUN_SCOPE
@@ -422,7 +421,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_OFFSET = 0.7,
-		GUN_UPGRADE_RECOIL = 1.3,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.4,
 		GUN_UPGRADE_ZOOM = 2
 		)
 	I.gun_loc_tag = GUN_SCOPE
