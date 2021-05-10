@@ -77,7 +77,7 @@
 		to_chat(user, "\The [shotgun] is empty.")
 
 /obj/item/weapon/gun/projectile/revolver/lemant/deacon
-	name = "\"Deacon\" kurtz revolver"
+	name = "\"Deacon\" heavy revolver"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	Some pilgrims find what they are looking for..."
 	icon_state = "lemant_blue"
