@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/revolver/rev10
 	name = "\"Frontier\" magnum revolver"
 	desc = "A well made police revolver used by many departments round the universal frontier. While the design appears to predate its production by H&S it has become iconic to their company for stopping power. \
-	It appears to take .40 magnum rounds."
+	It appears to take .40 magnum rounds loaded via its break-action."
 	icon = 'icons/obj/guns/projectile/rev10.dmi'
 	icon_state = "rev10"
 	item_state = "rev10"
@@ -39,7 +39,7 @@
 /obj/item/weapon/gun/projectile/revolver/rex10
 	name = "\"Cowboy\" double-action revolver"
 	desc = "A relatively common gun around the frontier of the galaxy. This gun can be found worn by outlaws, criminals and small-time sheriffs or law enforcement. \
-	It lacks any serial markings; it's hard to tell who even produces these guns they're so common."
+	It lacks any serial markings; it's hard to tell who even produces these guns they're so common. But hey, easy reloading via its break-action!"
 	icon = 'icons/obj/guns/projectile/rex10.dmi'
 	icon_state = "rex10"
 	item_state = "rex10"
