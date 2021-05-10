@@ -46,7 +46,7 @@
 	damage_multiplier = 0.9
 	one_hand_penalty = 25
 	auto_eject = FALSE
-	sawn_off = TRUE
+	saw_off = TRUE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
@@ -85,4 +85,4 @@
 	recoil_buildup = 15
 	damage_multiplier = 0.7
 	one_hand_penalty = 25
-	sawn_off = FALSE
+	saw_off = FALSE
