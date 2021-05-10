@@ -53,7 +53,7 @@
 	icon_state = "ldrum"
 	desc = "A 71 round drum magazine marked for .35 Auto."
 	origin_tech = list(TECH_COMBAT = 2)
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	caliber = CAL_PISTOL

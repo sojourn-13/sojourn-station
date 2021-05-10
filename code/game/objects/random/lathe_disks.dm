@@ -17,6 +17,7 @@
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58 = 3,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rex10 = 3.5,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lemant = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/colt = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/glock = 2.5,
@@ -95,6 +96,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58 = 8,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/colt = 8,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rafale = 6,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rex10 = 8,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/revolver = 5,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/revolver_mateba = 2,
