@@ -40,7 +40,7 @@
 	name = "\"Cowboy\" double-action revolver"
 	desc = "A relatively common gun around the frontier of the galaxy. This gun can be found worn by outlaws, criminals and small-time sheriffs or law enforcement. \
 	It lacks any serial markings; it's hard to tell who even produces these guns they're so common."
-	icon = 'icons/obj/guns/projectile/rex10/dmi'
+	icon = 'icons/obj/guns/projectile/rex10.dmi'
 	icon_state = "rex10"
 	item_state = "rex10"
 	caliber = CAL_PISTOL
