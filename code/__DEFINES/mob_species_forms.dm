@@ -62,6 +62,8 @@
 #define FORM_LIZARD_TGSMOOTH    "Smooth-Snouted Lizard"
 #define FORM_VULPINE			"Vulpine"
 #define FORM_FENNEC				"Fennec"
+#define FORM_MOTH				"Moth"
+#define FORM_MOTH_WHITE			"Moth (Colorable)"
 #define FORM_NARAMAD			"Naramad"
 #define FORM_SLIME				"Slime"
 #define FORM_AVIAN				"Avian"
