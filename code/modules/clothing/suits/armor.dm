@@ -596,3 +596,18 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		bomb = 10,
 		bio = 0,
 		rad = 0)
+
+/obj/item/clothing/suit/armor/vest/handmadewooden
+	name = "wooden armor"
+	desc = "A series of planks held into a relatively torso shaped form by cloth tied around the shoulders and waist. Then further padded with more cloth along the inside."
+	icon_state = "hm_woodvest"
+	item_state = "hm_woodvest"
+	armor = list(
+		melee = 35,
+		bullet = 30,
+		energy = 25,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	)
+	price_tag = 50
