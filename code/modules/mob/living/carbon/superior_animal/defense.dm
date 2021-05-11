@@ -92,7 +92,7 @@
 			return 1
 
 		if (I_DISARM)
-			if (!weakened && (prob(30) + (H.stats.getStat(STAT_ROB) * 0.1)))
+			if (!weakened && (prob(30 + (H.stats.getStat(STAT_ROB) * 0.1))))
 				M.visible_message("\red [M] has knocked \the [src] over!")
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				Weaken(3)
