@@ -1370,14 +1370,14 @@
 	name = "Ashen Stone"
 	icon = 'icons/obj/flora/church_stuff.dmi'
 	icon_state = "church_rock"
-	desc = "A church artifact of a stone with a secondary ore inside."
+	desc = "A stone found by the church, said to hold some sort of significance, though no one is quite sure what."
 	anchored = 1
 	density = 1
 
 /obj/structure/flora/church_tree //fancy red tree
-	name = "Charry Tree"
+	name = "Cherry Tree"
 	icon = 'icons/obj/flora/church_stuff.dmi'
 	icon_state = "red_tree_alt"
-	desc = "A large hard wood thats bark itself is hard as steel, typically used to meditate under and contemplate. Or a good date spot."
+	desc = "A large hard wood tree with bark like steel, typically used for meditation."
 	anchored = 1
 	density = 1
