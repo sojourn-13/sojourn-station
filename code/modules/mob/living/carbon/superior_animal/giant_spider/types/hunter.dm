@@ -89,9 +89,11 @@
 			help_shake_act(M)
 
 		if (I_GRAB)
-			if(!weakened)
+			if(!weakened && stat == CONSCIOUS)
+				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
+					return 1
 				M.Weaken(3)
-				visible_message(SPAN_WARNING("[src] breaks the grapple and uses its size to knock [M] over!"))
+				visible_message(SPAN_WARNING("\red [src] breaks the grapple and uses its size to knock [M] over!"))
 				return 1
 			else
 				if(M == src || anchored)
@@ -124,7 +126,9 @@
 				Weaken(3)
 
 				return 1
-			else
+			else if(!weakened && stat == CONSCIOUS)
+				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
+					return 1
 				M.visible_message("\red [src] knocks [M] to the ground!")
 				M.Weaken(3)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
@@ -211,3 +215,78 @@
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider/slip(var/slipped_on)
 	return FALSE
+
+/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider/attack_hand(mob/living/carbon/M as mob)
+	..()
+	var/mob/living/carbon/human/H = M
+
+	switch(M.a_intent)
+		if (I_HELP)
+			help_shake_act(M)
+
+		if (I_GRAB)
+			if(!weakened && stat == CONSCIOUS)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustOxyLoss(25)
+				M.Weaken(5)
+				visible_message(SPAN_WARNING("\red [src] immediately crushes [M] with its titan bulk when they stupidly try to grab it!"))
+				return 1
+			else
+				if(M == src || anchored)
+					return 0
+				for(var/obj/item/weapon/grab/G in src.grabbed_by)
+					if(G.assailant == M)
+						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
+						return
+
+				var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(M, src)
+				if(buckled)
+					to_chat(M, SPAN_NOTICE("You cannot grab [src], \he is buckled in!"))
+				if(!G) //the grab will delete itself in New if affecting is anchored
+					return
+
+				M.put_in_active_hand(G)
+				G.synch()
+				LAssailant = M
+
+				M.do_attack_animation(src)
+				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
+
+				return 1
+
+		if (I_DISARM)
+			if(!weakened && stat == CONSCIOUS)
+				M.visible_message("\red [src] hammers [M] to the ground!")
+				M.Weaken(5)
+				M.adjustBruteLoss(50)
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+
+			M.do_attack_animation(src)
+
+		if (I_HURT)
+			var/damage = 3
+			if ((stat == CONSCIOUS) && prob(10))
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				M.visible_message("\red [M] missed \the [src]")
+			else
+				if (istype(H))
+					damage += max(0, (H.stats.getStat(STAT_ROB) / 10))
+					if (HULK in H.mutations)
+						damage *= 2
+
+				playsound(loc, "punch", 25, 1, -1)
+				M.visible_message("\red [M] has punched \the [src]")
+
+				adjustBruteLoss(damage)
+				updatehealth()
+				M.do_attack_animation(src)
+
+				return 1
