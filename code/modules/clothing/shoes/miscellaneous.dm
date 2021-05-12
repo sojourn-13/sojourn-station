@@ -120,6 +120,16 @@
 	desc = "A pair of fancy high heels."
 	icon_state = "heels"
 
+/obj/item/clothing/shoes/aerostatic_boots
+	name = "aerostatic boots"
+	desc = "A pair of running shoes that are designed with speed in mind, that stated they dont really make you go faster, and look quit nice."
+	icon_state = "aerostatic_boots"
+
+/obj/item/clothing/shoes/render //Armored a bit do to the hide
+	name = "lizardskin shoes"
+	desc = "A green pare of shoes made of a lizardskin, likely a young render..."
+	icon_state = "lizardskin_shoes"
+	armor = list(melee = 20, bullet = 15, energy = 10, bomb = 10, bio = 10, rad = 0)
 
 /*Flats*/
 

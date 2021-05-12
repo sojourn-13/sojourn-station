@@ -149,6 +149,14 @@
 	display_name = "monomial belt"
 	path = /obj/item/clothing/under/monomial_belt
 
+/datum/gear/uniform/lemniscate
+	display_name = "lemniscate skirt"
+	path = /obj/item/clothing/under/rank/lemniscate
+
+/datum/gear/uniform/monashka
+	display_name = "monashka garments"
+	path = /obj/item/clothing/under/rank/monashka
+
 /datum/gear/uniform/neon
 	display_name = "neon tracksuits, color presets"
 	path = /obj/item/clothing/under/neon

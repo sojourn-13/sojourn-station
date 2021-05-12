@@ -371,6 +371,19 @@
 		STAT_VIG = 7,
 	)
 
+/obj/item/weapon/oddity/rare/eldritch_tie
+	name = "Horrifying tie"
+	desc = "A tie no one would be caught dead wearing!"
+	icon_state = "eldritch_tie"
+	oddity_stats = list(
+		STAT_COG = 6,
+		STAT_TGH = 6,
+		STAT_BIO = 6,
+		STAT_ROB = 6,
+	)
+	price_tag = 2000 //Its a good tie for a collector
+	perk = /datum/perk/sure_step //Insainly rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
+
 //Non-Spawn
 //Odditys that are event only or spawned in on map gen
 /obj/item/weapon/oddity/rare/golden_cup
@@ -504,4 +517,5 @@
 		STAT_TGH = 12,
 		STAT_BIO = 8
 	)
+	price_tag = 800 //Its a good trophy for a collector
 	perk = /datum/perk/oddity/harden

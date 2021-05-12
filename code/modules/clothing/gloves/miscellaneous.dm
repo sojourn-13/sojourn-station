@@ -114,6 +114,15 @@
 	siemens_coefficient = 0.50 //thick work gloves
 	price_tag = 50
 
+/obj/item/clothing/gloves/aerostatic_gloves
+	name = "red designer leather gloves"
+	desc = "A pair of elegant leather gloves."
+	icon_state = "aerostatic_gloves"
+	item_state = "aerostatic_gloves"
+	permeability_coefficient = 0.05
+	siemens_coefficient = 0.50 //thick work gloves
+	price_tag = 50
+
 /obj/item/clothing/gloves/fingerless
 	desc = "A pair of gloves modified for species with clawed hands."
 	name = "fingerless gloves"
