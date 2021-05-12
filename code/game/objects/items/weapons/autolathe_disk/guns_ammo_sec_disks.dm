@@ -90,6 +90,8 @@
 		/datum/design/autolathe/ammo/magnum_ammobox,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
