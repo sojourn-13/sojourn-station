@@ -124,3 +124,29 @@
 /datum/gear/suit/punkvest
 	display_name = "cyberpunk vest"
 	path = /obj/item/clothing/suit/punkvest/cyber
+
+/datum/gear/suit/radhat
+	display_name = "radiation hood"
+	path = /obj/item/clothing/head/radiation
+
+/datum/gear/suit/radsuit
+	display_name = "radiation suit"
+	path = /obj/item/clothing/suit/radiation
+
+/datum/gear/suit/radhat
+	display_name = "radiation hood"
+	path = /obj/item/clothing/head/radiation
+
+/datum/gear/suit/radsuit
+	display_name = "radiation suit"
+	path = /obj/item/clothing/suit/radiation
+
+/datum/gear/suit/expeditionhat
+	display_name = "expedition hood"
+	path = /obj/item/clothing/head/helmet/space/anomaly
+	cost = 2 //Some good armor but slowdown
+
+/datum/gear/suit/expeditionsuit
+	display_name = "expedition suit"
+	path = /obj/item/clothing/suit/space/anomaly
+	cost = 2 //Some good armor but slowdown
