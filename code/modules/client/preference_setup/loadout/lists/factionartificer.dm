@@ -14,7 +14,7 @@
 	allowed_roles = list(JOBS_ENGINEERING)
 
 /datum/gear/factionartificer/normal_skirt
-	display_name = "plan skirt, artificer"
+	display_name = "plain skirt, artificer"
 	path = /obj/item/clothing/under/rank/engineer/skirt
 	allowed_roles = list("Guild Master","Guild Adept")
 	slot = slot_w_uniform
