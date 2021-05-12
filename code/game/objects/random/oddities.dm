@@ -33,7 +33,8 @@
 				/obj/item/weapon/oddity/common/device = 2,
 				/obj/item/weapon/oddity/common/lighter = 3,
 				/obj/item/weapon/oddity/common/mirror = 3,
-				/obj/item/weapon/oddity/common/disk = 2
+				/obj/item/weapon/oddity/common/disk = 2,
+				/obj/item/weapon/oddity/rare/eldritch_tie = 0.01 //SO RARE
 				))
 
 /obj/random/common_oddities/low_chance

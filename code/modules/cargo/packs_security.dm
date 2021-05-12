@@ -292,8 +292,12 @@
 	name = "Marshal Ablative Armor Crate"
 	contains = list(/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/suit/armor/laserproof,
-					/obj/item/clothing/head/helmet,
-					/obj/item/clothing/head/helmet)
+					/obj/item/clothing/shoes/ablasive,
+					/obj/item/clothing/shoes/ablasive,
+					/obj/item/clothing/gloves/thick/ablasive,
+					/obj/item/clothing/gloves/thick/ablasive,
+					/obj/item/clothing/head/helmet/laserproof,
+					/obj/item/clothing/head/helmet/laserproof)
 	cost = 2800
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "Marshal ablative armor crate"

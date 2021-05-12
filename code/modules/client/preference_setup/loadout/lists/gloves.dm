@@ -42,3 +42,10 @@
 	path = /obj/item/clothing/gloves/latex
 	slot = slot_gloves
 	cost = 1
+
+/datum/gear/gloves/red_leather
+	display_name = "gloves, red designer leather gloves"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/aerostatic_gloves
+	slot = slot_gloves
+	cost = 1

@@ -64,6 +64,15 @@
 	display_name = "reinforced shoes"
 	path = /obj/item/clothing/shoes/reinforced
 
+/datum/gear/shoes/aerostatic_boots
+	display_name = "aerostatic boots"
+	path = /obj/item/clothing/shoes/aerostatic_boots
+
+/datum/gear/shoes/render_boots
+	display_name = "lizardskin shoes"
+	cost = 2//somewhat armored
+	path =/obj/item/clothing/shoes/render
+
 /datum/gear/shoes/sandals
 	display_name = "sandals"
 	path = /obj/item/clothing/shoes/sandal
