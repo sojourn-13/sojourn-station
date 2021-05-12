@@ -17,6 +17,15 @@
 	siemens_coefficient = 0 // DAMN BOI
 	species_restricted = null
 
+/obj/item/clothing/shoes/ablasive
+	name = "ablative jackboots"
+	desc = "A thick pare of boots that excels in protecting the wearer against energy projectiles."
+	armor = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
+	icon_state = "swat"
+	force = WEAPON_FORCE_WEAK
+	siemens_coefficient = 0.6
+	can_hold_knife = TRUE
+
 /obj/item/clothing/shoes/swat
 	name = "\improper SWAT shoes"
 	desc = "When you want to turn up the heat."

@@ -296,6 +296,7 @@
 				/obj/item/clothing/gloves/boxing/green = 1,
 				/obj/item/clothing/gloves/boxing/yellow = 1,
 				/obj/item/clothing/gloves/captain = 1,
+				/obj/item/clothing/gloves/thick/ablasive = 2,
 				/obj/item/clothing/gloves/color = 3,
 				/obj/item/clothing/gloves/color/blue = 3,
 				/obj/item/clothing/gloves/color/brown = 3,
@@ -361,7 +362,8 @@
 				/obj/item/clothing/shoes/jackboots = 14,
 				/obj/item/clothing/shoes/leather = 14,
 				/obj/item/clothing/shoes/aerostatic_boots = 10,
-				/obj/item/clothing/shoes/render = 14,
+				/obj/item/clothing/shoes/render = 10,
+				/obj/item/clothing/shoes/ablasive = 8,
 				/obj/item/clothing/shoes/reinforced = 14,
 				/obj/item/clothing/shoes/workboots = 4))
 
