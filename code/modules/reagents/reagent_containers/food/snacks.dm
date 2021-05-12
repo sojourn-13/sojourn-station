@@ -1816,6 +1816,52 @@
 	if(reagents.has_reagent("blood"))
 		Expand()
 
+/obj/item/weapon/reagent_containers/food/snacks/cube/elektromagnetisch
+	name = "Elektromagnetisch Cube"
+	desc = "Just add Blood!"
+	reagent_flags = REFILLABLE
+	icon = 'icons/obj/roach_cubes.dmi'
+	icon_state = "elektromagnetischrcube"
+	bitesize = 12
+	filling_color = "#ADAC7F"
+	center_of_mass = list("x"=16, "y"=14)
+	preloaded_reagents = list("protein" = 10)
+	//taste_tag = list(MEAT_FOOD,BLAND_FOOD)
+
+/obj/item/weapon/reagent_containers/food/snacks/cube/elektromagnetisch/proc/Expand()
+	src.visible_message(SPAN_NOTICE("\The [src] expands!"))
+	var/turf/T = get_turf(src)
+	new/mob/living/carbon/superior_animal/roach/elektromagnetisch(T)
+	qdel(src)
+	return TRUE
+
+/obj/item/weapon/reagent_containers/food/snacks/cube/elektromagnetisch/on_reagent_change()
+	if(reagents.has_reagent("blood"))
+		Expand()
+
+/obj/item/weapon/reagent_containers/food/snacks/cube/glowing
+	name = "Gluhend Cube"
+	desc = "Just add Blood!"
+	reagent_flags = REFILLABLE
+	icon = 'icons/obj/roach_cubes.dmi'
+	icon_state = "glowingcube"
+	bitesize = 12
+	filling_color = "#ADAC7F"
+	center_of_mass = list("x"=16, "y"=14)
+	preloaded_reagents = list("protein" = 10)
+	//taste_tag = list(MEAT_FOOD,BLAND_FOOD)
+
+/obj/item/weapon/reagent_containers/food/snacks/cube/glowing/proc/Expand()
+	src.visible_message(SPAN_NOTICE("\The [src] expands!"))
+	var/turf/T = get_turf(src)
+	new/mob/living/carbon/superior_animal/roach/glowing(T)
+	qdel(src)
+	return TRUE
+
+/obj/item/weapon/reagent_containers/food/snacks/cube/glowing/on_reagent_change()
+	if(reagents.has_reagent("blood"))
+		Expand()
+
 /obj/item/weapon/reagent_containers/food/snacks/cube/grestrahlte
 	name = "Grestrahlte Cube"
 	desc = "Just add Blood!"
