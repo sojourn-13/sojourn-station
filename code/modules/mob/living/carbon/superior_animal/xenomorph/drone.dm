@@ -96,7 +96,7 @@ var/datum/xenomorph/xenomorph_ai
 		if (I_GRAB)
 			if(!weakened && stat == CONSCIOUS)
 				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
-					M.visible_message("\red The [src] breaks the grapple and impales [M] with it's armor-piercing tail! [M] manages to stay standing!")
+					M.visible_message("\red [src] breaks the grapple and impales [M] with it's armor-piercing tail! [M] manages to stay standing!")
 					M.adjustBruteLoss(50)
 					return 1
 				M.visible_message("\red The [src] breaks the grapple and impales [M] with it's armor-piercing tail!")
@@ -136,7 +136,7 @@ var/datum/xenomorph/xenomorph_ai
 				return 1
 			else if(!weakened && stat == CONSCIOUS)
 				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
-					M.visible_message("\red The [src] breaks the grapple and impales [M] with it's armor-piercing tail! [M] manages to stay standing!")
+					M.visible_message("\red [src] breaks the grapple and impales [M] with it's armor-piercing tail! [M] manages to stay standing!")
 					M.adjustBruteLoss(50)
 					return 1
 				M.visible_message("\red [M] gets impaled by \the [src]'s armor-piercing tail!")
