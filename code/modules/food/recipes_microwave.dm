@@ -1086,6 +1086,18 @@ I said no!
 	items = list(/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/kraftwerk)
 	result = /obj/item/weapon/reagent_containers/food/snacks/cube/kraftwerk
 
+/datum/recipe/cube/elektromagnetisch
+	fruit = list("potato" = 1)
+	reagents = list("protein" = 10, "iron" = 10)
+	items = list(/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch)
+	result = /obj/item/weapon/reagent_containers/food/snacks/cube/elektromagnetisch
+
+/datum/recipe/cube/glowing
+	fruit = list("potato" = 1)
+	reagents = list("protein" = 10, MATERIAL_URANIUM = 10)
+	items = list(/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/glowing)
+	result = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/glowing
+
 /datum/recipe/cube/roachling
 	fruit = list("potato" = 1)
 	reagents = list("protein" = 5)
