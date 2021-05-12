@@ -89,7 +89,9 @@
 			help_shake_act(M)
 
 		if (I_GRAB)
-			if(!weakened)
+			if(!weakened && stat == CONSCIOUS)
+				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
+					return 1
 				M.Weaken(3)
 				visible_message(SPAN_WARNING("[src] breaks the grapple and uses its size to knock [M] over!"))
 				return 1
@@ -124,7 +126,9 @@
 				Weaken(3)
 
 				return 1
-			else
+			else if(!weakened && stat == CONSCIOUS)
+				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
+					return 1
 				M.visible_message("\red [src] knocks [M] to the ground!")
 				M.Weaken(3)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)

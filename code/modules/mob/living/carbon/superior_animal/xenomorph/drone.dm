@@ -94,8 +94,12 @@ var/datum/xenomorph/xenomorph_ai
 			help_shake_act(M)
 
 		if (I_GRAB)
-			if(!weakened)
-				M.visible_message("\red [src] breaks the grapple and impales [M] with its tail!")
+			if(!weakened && stat == CONSCIOUS)
+				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
+					M.visible_message("\red The [src] breaks the grapple and impales [M] with it's armor-piercing tail! [M] manages to stay standing!")
+					M.adjustBruteLoss(50)
+					return 1
+				M.visible_message("\red The [src] breaks the grapple and impales [M] with it's armor-piercing tail!")
 				M.adjustBruteLoss(50)
 				M.Weaken(3)
 				return 1
@@ -130,8 +134,12 @@ var/datum/xenomorph/xenomorph_ai
 				Weaken(3)
 
 				return 1
-			else
-				M.visible_message("\red [M] gets impaled by \the [src]'s tail!")
+			else if(!weakened && stat == CONSCIOUS)
+				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
+					M.visible_message("\red The [src] breaks the grapple and impales [M] with it's armor-piercing tail! [M] manages to stay standing!")
+					M.adjustBruteLoss(50)
+					return 1
+				M.visible_message("\red [M] gets impaled by \the [src]'s armor-piercing tail!")
 				M.adjustBruteLoss(50)
 				M.Weaken(3)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
