@@ -125,6 +125,14 @@
 	display_name = "cyberpunk vest"
 	path = /obj/item/clothing/suit/punkvest/cyber
 
+/datum/gear/suit/aerostatic_bomber_jacket
+	display_name = "red bomber jacket"
+	path = /obj/item/clothing/suit/storage/aerostatic_bomber_jacket
+
+/datum/gear/suit/jamrock_blazer
+	display_name = "jamrock blazer"
+	path = /obj/item/clothing/suit/storage/jamrock_blazer
+
 /datum/gear/suit/radhat
 	display_name = "radiation hood"
 	path = /obj/item/clothing/head/radiation

@@ -157,6 +157,14 @@
 	display_name = "monashka garments"
 	path = /obj/item/clothing/under/rank/monashka
 
+/datum/gear/uniform/aerostatic_suit
+	display_name = "dark comfortable clothing"
+	path = /obj/item/clothing/under/aerostatic_suit
+
+/datum/gear/uniform/jamrock_suit
+	display_name = "brown comfortable clothing"
+	path = /obj/item/clothing/under/jamrock_suit
+
 /datum/gear/uniform/neon
 	display_name = "neon tracksuits, color presets"
 	path = /obj/item/clothing/under/neon
