@@ -296,6 +296,11 @@
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
+/area/nadezhda/outside/forest/river_forest_underground
+	name = "River Forest Underground"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
 /area/nadezhda/outside/forest/hunting_lodge
 	name = "Hunting Lodge"
 	icon_state = "forest"
