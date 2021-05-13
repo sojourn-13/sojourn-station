@@ -1,7 +1,7 @@
 /mob/living/carbon/superior_animal/roach/elektromagnetisch
 	name = "Elektromagnetisch Roach"
 	desc = "A monstrous, dog-sized cockroach. This blue glowing one looks like its plusing with energy."
-	icon_state = "panzer"
+	icon_state = "elektromagnetisch"
 	meat_amount = 2
 	turns_per_move = 2
 	maxHealth = 120
