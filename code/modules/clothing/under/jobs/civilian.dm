@@ -86,6 +86,12 @@
 	icon_state = "hop"
 	item_state = "b_suit"
 
+/obj/item/clothing/under/rank/first_officer/skirt
+	desc = "A tan shirt with a premier guard's badge, worn alongside a black skirt."
+	name = "steward's skirt"
+	icon_state = "hop_skirt"
+	item_state = "b_suit"
+
 /obj/item/clothing/under/rank/first_officer/suit
 	name = "steward's suit"
 	desc = "A teal suit complete with a white shirt and orange tie. This one has a premier guard's badge."
