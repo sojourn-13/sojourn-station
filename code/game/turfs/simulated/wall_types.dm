@@ -24,7 +24,7 @@
 	icon_base_override = "Nashef_reinforced"
 
 /turf/simulated/wall/tomb_king/New(var/newloc)
-	..(newloc, MATERIAL_STEEL, MATERIAL_STEEL) //3strong
+	..(newloc, MATERIAL_STEEL)
 
 /turf/simulated/wall/rock
 	name = "rock wall"
