@@ -1,17 +1,30 @@
 /turf/simulated/wall/r_wall
 	icon_state = "rgeneric"
+
 /turf/simulated/wall/r_wall/New(var/newloc)
 	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
 
 /turf/simulated/wall/cult
 	icon_state = "cult"
+
 /turf/simulated/wall/cult/New(var/newloc)
 	..(newloc,"cult","cult2")
+
 /turf/unsimulated/wall/cult
 	name = "cult wall"
 	desc = "Hideous images dance beneath the surface."
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "cult"
+
+/turf/simulated/wall/tomb_king
+	name = "strange wall"
+	desc = "A reinforced wall painted obsidian and gold, glyphs and strange depictions of unknown tales told in images decorate the base."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "Nashef_reinforced"
+	icon_base_override = "Nashef_reinforced"
+
+/turf/simulated/wall/tomb_king/New(var/newloc)
+	..(newloc, MATERIAL_STEEL, MATERIAL_STEEL) //3strong
 
 /turf/simulated/wall/rock
 	name = "rock wall"

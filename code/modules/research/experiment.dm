@@ -95,7 +95,6 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/item_tech_points = 0
 	var/has_new_tech = FALSE
 	var/is_board = istype(I, /obj/item/weapon/circuitboard)
-	var/is_integrated_circuit = istype(I, /obj/item/integrated_circuit) //We cant have nice things
 
 	for(var/T in temp_tech)
 		if(tech_points[T])
@@ -103,7 +102,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 				item_tech_points += temp_tech[T] * tech_points[T]
 			else
 				if(saved_tech_levels[T] && (temp_tech[T] in saved_tech_levels[T])) // You only get a fraction of points if you researched items with this level already
-					if(!is_board || !is_integrated_circuit) // Boards are cheap to make so we don't give any points for repeats
+					if(!is_board) // Boards are cheap to make so we don't give any points for repeats
 						item_tech_points += temp_tech[T] * tech_points[T] * 0.1
 				else
 					item_tech_points += temp_tech[T] * tech_points[T]
