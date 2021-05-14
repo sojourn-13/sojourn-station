@@ -20,8 +20,10 @@
 	name = "strange wall"
 	desc = "A reinforced wall painted obsidian and gold, glyphs and strange depictions of unknown tales told in images decorate the base."
 	icon = 'icons/turf/wall_masks.dmi'
-	icon_state = "Nashef_reinforced"
-	icon_base_override = "Nashef_reinforced"
+	icon_state = "Nashef_standard"
+	icon_base = "Nashef_standard"
+	icon_base_override = "Nashef_standard"
+	icon_base_reinf = "Nashef_reinforced"
 
 /turf/simulated/wall/tomb_king/New(var/newloc)
 	..(newloc, MATERIAL_STEEL)
