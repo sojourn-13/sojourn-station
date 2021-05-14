@@ -90,6 +90,7 @@
 	can_dual = FALSE
 	price_tag = 3200
 	charge_meter = FALSE
+	slot_flags = SLOT_BACK
 	charge_cost = 450
 	suitable_cell = /obj/item/weapon/cell/large
 	recoil_buildup = 2

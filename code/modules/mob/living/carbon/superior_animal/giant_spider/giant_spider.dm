@@ -34,7 +34,6 @@
 
 	var/poison_per_bite = 2
 	var/poison_type = "pararein"
-	pass_flags = PASSTABLE
 	faction = "spiders"
 
 /mob/living/carbon/superior_animal/giant_spider/New(var/location, var/atom/parent)

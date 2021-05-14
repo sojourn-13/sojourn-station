@@ -875,6 +875,7 @@
 #include "code\game\objects\items\devices\powersink.dm"
 #include "code\game\objects\items\devices\propaganda_chip.dm"
 #include "code\game\objects\items\devices\restoration_kits.dm"
+#include "code\game\objects\items\devices\scarab.dm"
 #include "code\game\objects\items\devices\spy_bug.dm"
 #include "code\game\objects\items\devices\spy_sensor.dm"
 #include "code\game\objects\items\devices\suit_cooling.dm"
