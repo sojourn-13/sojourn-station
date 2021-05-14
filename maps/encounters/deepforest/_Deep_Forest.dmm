@@ -163,7 +163,7 @@
 "dn" = (/obj/random/closet_tech,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "do" = (/obj/machinery/sleeper{dir = 8},/turf/simulated/floor/tiled/white,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dp" = (/turf/simulated/floor/tiled/white,/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"dq" = (/obj/machinery/sleeper{icon_state = "sleeper_0"; dir = 4},/turf/simulated/floor/tiled/white,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"dq" = (/obj/machinery/sleeper{dir = 4; icon_state = "sleeper_0"},/turf/simulated/floor/tiled/white,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dr" = (/obj/structure/table/reinforced,/obj/item/device/radio/uplink,/turf/simulated/floor/wood/wild3,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ds" = (/obj/structure/salvageable/console_os{dir = 1},/turf/simulated/floor/wood/wild3,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dt" = (/obj/machinery/light/small,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone)
@@ -1632,19 +1632,19 @@
 "FU" = (/obj/structure/flora/small/rock4,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "FV" = (/obj/structure/flora/ausbushes/ywflowers,/obj/item/weapon/mine_old{layer = 2.6},/turf/simulated/floor/asteroid/grass,/area/colony/exposedsun/pastgate)
 "FW" = (/obj/structure/flora/ausbushes/grassybush,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest)
-"FX" = (/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
+"FX" = (/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "FY" = (/turf/simulated/floor/wood/wild4,/area/nadezhda/outside/forest)
 "FZ" = (/obj/structure/flora/small/busha2,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest)
 "Ga" = (/obj/structure/flora/small/rock1,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "Gb" = (/obj/structure/flora/tree/jungle/variant4,/obj/structure/flora/small/bushb2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
-"Gc" = (/obj/structure/flora/ausbushes/stalkybush,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
+"Gc" = (/obj/structure/flora/ausbushes/stalkybush,/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "Gd" = (/obj/structure/flora/small/busha2,/obj/structure/flora/big/bush2,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
 "Ge" = (/obj/random/cluster/spiders/low_chance,/turf/simulated/floor/wood/wild4,/area/asteroid/rogue)
 "Gf" = (/obj/effect/decal/cleanable/rubble,/obj/random/cluster/spiders/low_chance,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Gg" = (/obj/structure/table/rack/shelf,/obj/random/firstaid/low_chance,/obj/random/firstaid/low_chance,/obj/random/firstaid/low_chance,/obj/random/firstaid/low_chance,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Gh" = (/obj/structure/flora/small/rock3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "Gi" = (/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/meadow)
-"Gj" = (/obj/structure/flora/ausbushes/reedbush,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
+"Gj" = (/obj/structure/flora/ausbushes/reedbush,/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "Gk" = (/obj/structure/flora/small/busha2,/obj/structure/flora/big/bush2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest)
 "Gl" = (/obj/structure/flora/small/busha2,/obj/structure/flora/big/bush2,/obj/structure/flora/big/bush2,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
 "Gm" = (/obj/structure/flora/small/rock2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
@@ -1652,20 +1652,20 @@
 "Go" = (/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/lakeside)
 "Gp" = (/obj/structure/flora/tree/jungle/variant3,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/meadow)
 "Gq" = (/obj/structure/flora/big/bush2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/lakeside)
-"Gr" = (/obj/structure/flora/small/busha2,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
+"Gr" = (/obj/structure/flora/small/busha2,/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "Gs" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/tree/jungle/variant3,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "Gt" = (/obj/structure/flora/big/bush2,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/lakeside)
-"Gu" = (/obj/structure/flora/ausbushes/brflowers,/obj/structure/flora/big/bush2,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
+"Gu" = (/obj/structure/flora/ausbushes/brflowers,/obj/structure/flora/big/bush2{pixel_y = -23},/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
 "Gv" = (/obj/structure/flora/ausbushes/brflowers,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest)
 "Gw" = (/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/meadow)
 "Gx" = (/obj/structure/flora/tree/jungle/variant3,/obj/structure/flora/small/bushb2,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
 "Gy" = (/obj/structure/flora/ausbushes/fullgrass,/obj/structure/flora/tree/jungle/variant5,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
 "Gz" = (/obj/structure/flora/ausbushes/pointybush,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "GA" = (/turf/unsimulated/wall/jungle,/area/nadezhda/outside/lakeside)
-"GB" = (/obj/structure/flora/big/bush2,/obj/structure/flora/big/bush2,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
+"GB" = (/obj/effect/overlay/water/top,/obj/structure/flora/big/bush2,/obj/structure/flora/big/bush2,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "GC" = (/obj/structure/flora/ausbushes/reedbush,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest)
 "GD" = (/obj/structure/flora/tree/jungle,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/meadow)
-"GE" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/flora/big/bush2,/obj/structure/flora/big/bush2,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
+"GE" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/flora/big/bush2,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
 "GF" = (/obj/structure/flora/ausbushes/ppflowers,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/meadow)
 "GG" = (/obj/structure/flora/small/rock5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "GH" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/flora/small/busha2,/obj/structure/flora/tree/jungle_small/variant4,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest)
@@ -1861,7 +1861,7 @@
 "Kp" = (/obj/random/mob/nightmare/low_chance,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Kq" = (/obj/effect/decal/cleanable/rubble,/obj/random/mob/nightmare/low_chance,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Kr" = (/obj/machinery/light/floor{pixel_y = -7},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
-"Ks" = (/obj/random/mob/croaker/low_chance,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
+"Ks" = (/obj/random/mob/croaker/low_chance,/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "Kt" = (/obj/machinery/vending/snack,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Ku" = (/obj/random/mob/croaker/low_chance,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/lakeside)
 "Kv" = (/obj/landmark/storyevent/midgame_stash_spawn,/turf/simulated/floor/wood/wild4,/area/asteroid/rogue)
@@ -1932,6 +1932,7 @@
 "LI" = (/obj/structure/bed/chair/custom/onestar/red{dir = 4},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "LJ" = (/obj/random/mob/tengolo/low_chance,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/lakeside)
 "LK" = (/obj/random/mob/tengolo/low_chance,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
+"LL" = (/obj/structure/flora/big/bush2,/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "LM" = (/obj/structure/bed/chair/custom/onestar{dir = 1},/obj/machinery/light/floor,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "LN" = (/obj/random/mob/hakhma/low_chance,/turf/simulated/floor/asteroid/grass,/area/colony/exposedsun/pastgate)
 "LO" = (/obj/item/trash/cigbutt/toha,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
@@ -1981,7 +1982,7 @@
 "Np" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/danger,/area/nadezhda/dungeon/outside/prepper)
 "Nq" = (/obj/machinery/light/floor{dir = 8; pixel_x = -8},/obj/structure/extinguisher_cabinet{pixel_x = -24},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Nr" = (/obj/random/junkfood,/obj/random/junkfood,/obj/random/junkfood,/obj/random/junkfood,/obj/random/junkfood,/obj/random/junkfood,/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
-"Nu" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Grayson Positronic Outpost"; dir = 2},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
+"Nu" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 2; locked = 1; name = "Grayson Positronic Outpost"},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
 "Ny" = (/obj/structure/bed/chair/comfy,/mob/living/simple_animal/hostile/voidwolf/captain,/turf/simulated/floor/wood/wild3,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Nz" = (/obj/item/weapon/folder/red,/obj/item/weapon/folder/red,/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "NA" = (/obj/machinery/light/floor{dir = 4; pixel_x = 6},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
@@ -1991,11 +1992,12 @@
 "NO" = (/obj/structure/table/onestar,/obj/random/tool/advanced/onestar/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "NP" = (/obj/structure/boulder,/turf/simulated/floor/asteroid/grass,/area/colony/exposedsun/pastgate)
 "NS" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
-"NT" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Grayson Positronic Outpost"; dir = 2},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
+"NT" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 2; locked = 1; name = "Grayson Positronic Outpost"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "NW" = (/obj/random/mob/voidwolf,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "NX" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/reagent_containers/syringe/drugs_recreational,/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs,/obj/item/weapon/reagent_containers/syringe/stim/party_drops,/obj/random/junkfood/onlyburger,/obj/random/booze,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Oa" = (/obj/machinery/light/floor{dir = 4; pixel_x = -5},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Oc" = (/obj/item/trash/cigbutt/ishimura,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
+"Od" = (/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "Oj" = (/obj/structure/table/onestar,/obj/item/weapon/folder/cyan,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "On" = (/obj/structure/table/onestar,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 4},/obj/random/common_oddities/low_chance,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "Op" = (/obj/structure/bed/chair/custom/onestar,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
@@ -2006,6 +2008,7 @@
 "Oy" = (/obj/structure/salvageable/data_os,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "OB" = (/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "OC" = (/obj/structure/table/onestar,/obj/item/weapon/folder/blue,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
+"OI" = (/obj/structure/flora/big/bush2{pixel_x = -13; pixel_y = -5},/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest)
 "OK" = (/obj/structure/salvageable/implant_container_os,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "OM" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "OP" = (/obj/random/junk,/obj/random/traps/low_chance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
@@ -2081,6 +2084,7 @@
 "RG" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "RH" = (/obj/machinery/light/floor,/mob/living/simple_animal/hostile/roomba/synthetic,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)
 "RK" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/storage/box/syndie_kit/hpistol,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"RO" = (/obj/effect/overlay/water,/obj/structure/flora/big/bush2{pixel_x = -24; pixel_y = -24},/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "RP" = (/obj/structure/table/onestar,/obj/random/powercell/low_chance,/obj/item/weapon/stock_parts/matter_bin/one_star,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "RR" = (/obj/machinery/photocopier,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "RS" = (/obj/structure/flora/ausbushes/ppflowers,/obj/item/clothing/head/hairflower,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
@@ -2147,6 +2151,7 @@
 "Uk" = (/obj/structure/boulder,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/meadow)
 "Ul" = (/obj/item/weapon/pen,/obj/item/weapon/pen,/obj/item/weapon/pen,/obj/item/weapon/pen,/obj/item/weapon/pen,/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "Um" = (/obj/structure/table/rack/shelf,/obj/random/powercell/low_chance,/obj/random/powercell,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
+"Uo" = (/obj/effect/overlay/water,/obj/structure/flora/big/bush2,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "Up" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/storage/box/syndie_kit/spy_sensor,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Ur" = (/obj/structure/flora/ausbushes/grassybush,/turf/unsimulated/mineral,/area/nadezhda/dungeon/outside/smuggler_zone)
 "Uw" = (/obj/machinery/light/small{dir = 4; pixel_y = 0},/obj/machinery/porta_turret/prepper{check_access = 0},/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -2164,6 +2169,7 @@
 "UZ" = (/obj/structure/table/onestar,/obj/random/powercell/low_chance,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
 "Ve" = (/obj/structure/invislight,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "Vg" = (/obj/structure/bed/chair/custom/onestar/red{dir = 1},/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
+"Vh" = (/obj/effect/overlay/water/top{pixel_y = -9},/obj/effect/overlay/water/top{pixel_y = -17},/obj/effect/overlay/water/top,/obj/effect/overlay/water/top{pixel_y = -22},/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "Vj" = (/obj/structure/salvageable/console_os{dir = 1},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
 "Vl" = (/obj/structure/closet/crate/serbcrate,/obj/random/powercell/medium_safe,/obj/item/weapon/tool/pickaxe/jackhammer,/turf/simulated/floor/wood/wild5,/area/asteroid/rogue)
 "Vn" = (/obj/structure/table/onestar,/obj/random/tool/advanced/onestar/low_chance,/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
@@ -2203,7 +2209,7 @@
 "Wy" = (/obj/random/mob/undergroundmob,/obj/effect/decal/cleanable/rubble,/turf/simulated/floor/asteroid/dirt/dark,/area/asteroid/rogue)
 "WC" = (/obj/effect/overlay/wallrot,/turf/simulated/wall,/area/nadezhda/dungeon/outside/zoo)
 "WG" = (/obj/effect/overlay/wallrot,/turf/simulated/wall,/area/colony/exposedsun/pastgate)
-"WH" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Grayson Positronic Outpost"; dir = 2},/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
+"WH" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 2; locked = 1; name = "Grayson Positronic Outpost"},/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "WJ" = (/obj/structure/flora/big/bush1,/obj/structure/grille,/obj/structure/barricade,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "WK" = (/obj/structure/table/onestar,/obj/item/weapon/tool/pickaxe/onestar,/obj/random/pack/tech_loot/onestar,/obj/random/pack/tech_loot/onestar,/obj/random/pack/tech_loot/onestar,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/nadezhda/outside/one_star)
 "WM" = (/obj/structure/table/onestar,/obj/item/weapon/reagent_containers/food/drinks/teapot,/obj/item/weapon/reagent_containers/food/drinks/mug/teacup,/obj/item/weapon/reagent_containers/food/drinks/mug/teacup,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
@@ -2228,6 +2234,7 @@
 "XF" = (/mob/living/simple_animal/hostile/onestar_custodian/chef,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "XG" = (/obj/item/weapon/paper,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "XH" = (/obj/random/scrap/sparse_weighted/low_chance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
+"XJ" = (/obj/effect/overlay/water,/obj/structure/flora/big/bush2{pixel_x = -20; pixel_y = -24},/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "XK" = (/obj/machinery/door/airlock/highsecurity{locked = 1},/obj/random/traps/low_chance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/monofloor,/area/nadezhda/dungeon/outside/prepper)
 "XN" = (/obj/structure/multiz/ladder,/obj/structure/flora/small/bushb2,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "XP" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/storage/box/syndie_kit/revolver,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -2256,6 +2263,7 @@
 "Yz" = (/obj/structure/bed/chair/custom/onestar/red,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "YB" = (/obj/structure/table/reinforced,/obj/item/weapon/deck/cards,/obj/item/weapon/storage/pill_bottle/dice,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/meadow)
 "YE" = (/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
+"YF" = (/obj/structure/flora/big/bush2{pixel_x = -18; pixel_y = -30},/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest)
 "YG" = (/obj/structure/boulder,/turf/simulated/floor/asteroid/dirt,/area/colony/exposedsun/pastgate)
 "YH" = (/obj/structure/flora/ausbushes/ywflowers,/obj/item/clothing/head/hairflower,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 8},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star)
 "YK" = (/obj/random/mob/nightmare,/turf/simulated/floor/wood/wild5,/area/asteroid/rogue)
@@ -2292,6 +2300,7 @@
 "ZP" = (/obj/structure/bed/chair,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/meadow)
 "ZT" = (/obj/structure/salvageable/console_os{dir = 1},/obj/structure/window/reinforced,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star)
 "ZU" = (/obj/random/material,/obj/random/material,/obj/random/material,/obj/random/material,/obj/random/material,/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/one_star)
+"ZV" = (/obj/effect/overlay/water/top{pixel_y = -10},/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest)
 "ZW" = (/obj/structure/table/onestar,/obj/item/weapon/oddity/common/old_newspaper,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star)
 "ZZ" = (/obj/structure/flora/small/trailrockb2,/obj/machinery/light/floor,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/one_star)
 
@@ -2504,7 +2513,6 @@ abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmfuwyfywzfBwsftbmbm
 abaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmhihiaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVhihihihihiab
 aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 "}
-
 (1,1,2) = {"
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababctabdPabvvabMvabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
@@ -2585,16 +2593,16 @@ fFfEfEfEfEfEgfhkhkzPAbililAbzPgfgffEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEDxDxDxDxfEfEfE
 fFfEfEfEfEfEfEhwzPzPilililhfhkgffEfEfEDxDxDxDxDxDxDxDxDxDxfEfEfEfEfEDxDxDxfEfEfEfEfEfEfEfEhWhWhWyPpkpIaoplaoaoaoaoaoaoaoaoaoaoaoaoqaaoaoaoaoaopIpkaoaopkaoYHPIWmXRSJMnWmNGRGaopkaoaopkaoqaaoaoaoKZaoaoaoaoaoaoaoaoKZKZaoaoaoplaopIpkyPhWDlDluRhWhAhkhkhkAoilhkhkhkhkvmAMilhkhkhkofililililAoAihkhkhkhkhBAqhBAqhBhBELAqhkhkhkhkhWhWhWhWvJhWhWhWhWhWhAzwfFnEnEnEnEnEnEnEnEnEnEnEnEnEnEnEnEnEfFzwhWhWhWhWhWhWzwfFfF
 fFfEfEfEfEfEfEhwhwhkilililhfhkgffEfEDxDxDxDxDxDxDxDxDxDxDxDxDxfEfEfEfEDxDxDxfEfEfEfEfEBLBLhWhWyPpkpIaoaopIXFpIpIpIpISDpIpIaoKipIpIpISDpIpIpIpIpIpkaoaopkaoaoaoaoaoaoaoaoaoaoaopkaoaopkaoaopIroSDKProPYUDRRroKPSDropIpIpIpIpIpIaopIpIpkyPhWhWhWhWEphkhkhkAiilhkhkhkilililAbhkhkhkhkilililAoAohZhkhkhkhBEMvRililENENLSEOEOhkhkhkhADAAdAdhWhWhWhWhWhWhAhAfFnEnEnEnEnEnEnEnEnEnEnEnEnEnEnEnEnEfFzwhWhWhWhWhWzwzwfFfF
 fFfEfEfEfEfEfEhwhwhfilililzPhkgffEDxDxyQyQyQyQyQyQyQyQyQyQyQyQfEfEfEfEDxDxDxfEfEfEfEfEBLBLAehWyPpIaoaoaopIafafafafafafafafPuaoafafafafafafafafafafHXICafafafpNpNpkpkpkpNpNafafafHXICafPuaoafafafafafafafafafafafafafafafafafSlaoaoaopIyPhWhWhWDlEphkhkhkhkilhkhkhkililAbEPhkhkilhkhkAiAiAihkhkhkhkhkArilENENENENEQFOFOFOEOFRFShAhAhAAdAzFThWhWvJhWhAhAgffFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFzwhWFUhWhWzwzwzwfFfF
-fFfEfEfEfEfEfEhwhkhfhEililzPzPgffEDxDxyQyRyRyRyQyQyRyRyRyRyQyQDxfEDxDxDxDxDxfEfEfEfEfEBLAeAehWyPpIaoaoKZpIafaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoafUialpMpNpNpMqLqLpNpNqLqLqLqZpNqLqLpMpNpNpMalUiafpIpIpIpIpIpIpIpIpIpIpIpIpIpIpIafpIaoaoaopIyPhWhWhWDlhAhkhkhkEFilhZhkhkilAbAbzPhkhkhkhkhkhkhkhkhkhBhBELBZENENENilFWEOFXFXFXFYFYFXFRzshkhkhkhkAohWhWhWhWhWhAhAhAzwzwfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFhWhWhWhWhWzwzwzwfFfF
+fFfEfEfEfEfEfEhwhkhfhEililzPzPgffEDxDxyQyRyRyRyQyQyRyRyRyRyQyQDxfEDxDxDxDxDxfEfEfEfEfEBLAeAehWyPpIaoaoKZpIafaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoafUialpMpNpNpMqLqLpNpNqLqLqLqZpNqLqLpMpNpNpMalUiafpIpIpIpIpIpIpIpIpIpIpIpIpIpIpIafpIaoaoaopIyPhWhWhWDlhAhkhkhkEFilhZhkhkilAbAbzPhkhkhkhkhkhkhkhkhkhBhBELBZENENENilFWOIFXFXFXFYFYFXLLzshkhkhkhkAohWhWhWhWhWhAhAhAzwzwfFfFfFfFfFfFfFfFfFfFfFfFfFfFfFhWhWhWhWhWzwzwzwfFfF
 fFfEfEfEfEfEfEhwhkhkilililhEzPhkgfDxDxyQyRyRyRyQyQyRyRyRyRyQyQDxDxDxDxDxDxDxfEfEBLBLBLBLMhAehWyPpIaoplaopIafaopTNOWvskaoNOpPPhaopPWxYraoaoafdzalpRpNpNpRalTBpNqhpNpNpNqhpNalalpRpNpNpRalSiafpIpTNOWvskaoNOpPPhaopPWxYraopIafpIaoaoaopIyPhWhWhWDlElhkhkhkBlAoilAizuilhkhkhkhkhkhkhkzPzPzPhkzbArENENENENilEOEQFXFXFXFXFXFYFYFXFXFZhkhkhkhkAihWhWhWhWCFhWhWhAhAhWhWhWhWGahWhWhWhWhWhWhWhWhWhWvJhWhWhWvJhWhWzwzwfFfF
 fFfEfEfEfEfEfEhwhkhkhkilililAbzPgfDxDxyQyRyRyRySySyRyRyRyRyQyQDxDxDxDxDxDxDxfEfEBLBLBLBLAeAehWyPpIaoaoaopIafaoaoaosvpTaoaopSWxaoaopSNOaoaoafqzpQalpNpNalalpNpNpNrZpNrZpNpNpNalalpNpNalpQqzafpIaoaosvpTaoaopSWxaoaopSNOaopIafpIaoaoaopIyPhWhWDlhWElhkhkhkAiAoilAihkilhkhkhkhkAbGbAbAbilArArilvRENENENEQFOGcFXKsFXFXFXFXFYFYFXFXFZGdhkhkhkhkAUhWhWhWhWDfhWhWhWhWhWhWhWhWhWhWhWzLhWGhhWhWhWhWzLzLhWhWhWhWhWhWzwfFfF
 fFfEfEfEfEfEfEfEfEhkhfvmilttilzPkcDxDxfEyRyRyRyRyRyRyRyRyRyQyQDxDxDxDmDxDxfEfEfEBLBLBLBLhWhWhWyPpIaoKZaopIafMWaoqaaoaoaoaoaoplaoaoaoaoqaNAafPyalalpVpVqDpNpNpNpWrJpYrJpZpNpNpNqDpVpValalQMafNqaoqaaoKMaoaoaoplaoaoaoaoqaZnafPOaoaoaopIyPhWhWhWCFhAhkhkhkhkAbAoAUhAhWhAhAhAzKhWhWhWhWhWGiENZbENilEQEQFOFXFXFXFXFXFXFXGjFYFYFXGjFOGkGlhkhkhkhAGmhWhWDhDhhWFUhWhWGnhWhWvJhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWzwzwfFfF
-fFfEfEfEfEfEfEfEgfhkhkhkililililDxDxfEfEyRyRyRyRyRyRyRyRyRyQyQDxDxDxDxbZDxfEfEfEBLBLBLBLhWhWhWyPpIaoaoaopIafaoaoaoaoaoaoqJaoaoaoaoaoaoaoaoafPbalalpVpVpNpNpNpNqdKOpIKQqgpNpNpNpNpVpValalPbafpIaoaoaoaoaoaoYaaoaoaoaoaoXxpIafpIaoaoaopIyPhWDlhWhWEljrhkhkhkAbAoAUhAhWhAhWhWhWhWhWhWhWhWhWGoilEQFOFXFXFXFXFXFXGjFOEOEQEQFYFYFOEQEQilhBGdhkhkhAhAhWDhAUhAhAGphAhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWzwzwfFfF
+fFfEfEfEfEfEfEfEgfhkhkhkililililDxDxfEfEyRyRyRyRyRyRyRyRyRyQyQDxDxDxDxbZDxfEfEfEBLBLBLBLhWhWhWyPpIaoaoaopIafaoaoaoaoaoaoqJaoaoaoaoaoaoaoaoafPbalalpVpVpNpNpNpNqdKOpIKQqgpNpNpNpNpVpValalPbafpIaoaoaoaoaoaoYaaoaoaoaoaoXxpIafpIaoaoaopIyPhWDlhWhWEljrhkhkhkAbAoAUhAhWhAhWhWhWhWhWhWhWhWhWGoilEQFOFXFXFXFXFXFXGjFOYFEQEQFYFYFOEQEQilhBGdhkhkhAhAhWDhAUhAhAGphAhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWzwzwfFfF
 fFfEfEfEfEfEfEfEgfhkhkhfilililhmDxDxfEfEyRyRyRyRyRyRyRyRyRfEfEDxDmDxDxDxDxfEfEfEBLBLUkAeAeAehWyPpIaoplaopIafaoVzpTWvNOaoaoaoqaMzNOpPOjaoaoafUialalalalpQpMpNpNpIpIeopIpIpNpNpMpQalalalalUiafpIVzpTWvNOaoaoaoqaMzNOpPOjaopIafpIaoaoaopIyPhWDlDlhWhAhkhkhkAbAbilAUhABUhWhWhWhWEHhWhWhWhAGpGqArvRFXFXFXFXFXFXGrFZFZofilEOEQEQENEQilililGkhlhlhkgfhAhAhAhAhAhAhAhWhWhWhWhWhWhWGmhWhWhWhWhWhWhWhWhWhWhWhWhWhWhWzwfFfF
-fFfEfEfEfEfEfEfEfEhkhkhkzPililhmDxfEfEfEyRyRyRyRyRyRyRyRyRfEfEDxDxDxDxDxDxfEfEfEBLUkMhAeAehWhWyPpIaoaoaopIafaoaoaoKSskaoaoaopNaoaopSpTaoaoafafafpkpkpkafafpNpNafafafafafpNpNafafafafafafafafpIpIpIqHXBpIaoaopNaoaopSpTaopIafpIKZaoaopIyPhWhWDlhWhAhkhkzPAbililAUhAGshWhWhWhWhWhWhWhWhAhAGthBGuFXFXFXFXGvFZFZEOililAGililENZbENENilililArhChlgfhAhAhAhAhAhAhAhAhWhWhWzLhWhWhWhWwXhWhWhWhWhWhWhWhWhWhWhWhWhWzwfFfF
-fFfEfEfEfEfEfEfEfEhkhkhkzPyUhmhmDxfEfEfEyRyRyRyRyRyRyRyRfEfEfEDxDxDxDxDxDxfEfEfEBLBLUkAeGwhWhWyPpIaoaoaopIafaoaoaoaoaoYaYnaoaoaopkpkpkpkpkafSDrJaoaoaoaoafpNpNpkQEqiQEpkpNqZafpIqeqeqeRpSDafpkpkpkpkafSDaoaopNpNaoaoaoaoOBafpIaoaoaopIyPhWhWDlDlhAhkzPGxililGyEphWBUhWGzhWhWhWhWzLDlBVhAGAhkhBGBFXFXEQGCEQEQililililvRilENENENENENENENAMilhWhAhAhAhAhAhAgfhAhAhWhWhWhWhWhWhWhWwXhWhWirhWhWhWhWhWhWhWhWhWfFfFfFfF
-fFfEfEfEfEfEfEfEfEhwhkhkhfzPyUvmfEfEfEyRyRyRyRyRyRyRyRyRfEfEfEfEDxDxbZDxDxfEfEfEBLBLBLMhAehWhWyPpIaoKZaopIafaoalalalalpNpNaoaoKMpkpIpIpIpIafaoaoaoqrqsRXafpNqZpkpkpkpkpkpNpNafPOqtquTwpIpIpNpNpNpNUFafPMaoaoqhOCPApPMzaopIafpIaoaoaopIyPhWhWhWDlGDhkhkAoilBaEfEpDlhWhWhWhWChhWhWzLhWhAhAGAhkhkAqGEFXFRArFZAoAoililhCilililililENENENENENENGiGihWAdGFhAhAgfhAhAhADhDhhWhWhWhWhWzLzLhWhWhWhWhWhWhWGGhWhWBLfFfFfFfF
-fFfEfEfEfEfEfEfEfEfEhwhkhkhkzPfEfEfEfEyRyRyRyRyRyRyRyRfEfEfEfEfEfEDxDxDxbZfEfEfEBLBLBLBLBLhWhWyPpIaoplaopIafaooZqyqzalpNpNplaoaopkpIaoplaoqEaoaosvPjSdplafpNpNpIPYpIpIpIpNpNafTfalalalpNqZpNqZpNpNpNafpIaoaopNNlaopSPAaopIafpIaoaoaopIyPhWhWhWhWhAhkGHAoilBazihADlhWhWBUhWhWhWhWzLzLhAhAGAhkhkhkhkGkGkAoAoAoBDGdGdhlhlhkililAoGkGIhkhByvAoGiGiGiGiAzAdhAhAhAhAhAhAAUAUDhhWhWhWhWhWhWhWhWhWhWzLhWhWhWBLBLfFfFfFfF
+fFfEfEfEfEfEfEfEfEhkhkhkzPililhmDxfEfEfEyRyRyRyRyRyRyRyRyRfEfEDxDxDxDxDxDxfEfEfEBLUkMhAeAehWhWyPpIaoaoaopIafaoaoaoKSskaoaoaopNaoaopSpTaoaoafafafpkpkpkafafpNpNafafafafafpNpNafafafafafafafafpIpIpIqHXBpIaoaopNaoaopSpTaopIafpIKZaoaopIyPhWhWDlhWhAhkhkzPAbililAUhAGshWhWhWhWhWhWhWhWhAhAGthBGuZVVhFXFXGvFZFZEOililAGililENZbENENilililArhChlgfhAhAhAhAhAhAhAhAhWhWhWzLhWhWhWhWwXhWhWhWhWhWhWhWhWhWhWhWhWhWzwfFfF
+fFfEfEfEfEfEfEfEfEhkhkhkzPyUhmhmDxfEfEfEyRyRyRyRyRyRyRyRfEfEfEDxDxDxDxDxDxfEfEfEBLBLUkAeGwhWhWyPpIaoaoaopIafaoaoaoaoaoYaYnaoaoaopkpkpkpkpkafSDrJaoaoaoaoafpNpNpkQEqiQEpkpNqZafpIqeqeqeRpSDafpkpkpkpkafSDaoaopNpNaoaoaoaoOBafpIaoaoaopIyPhWhWDlDlhAhkzPGxililGyEphWBUhWGzhWhWhWhWzLDlBVhAGAhkhBGBOdROEQGCEQEQililililvRilENENENENENENENAMilhWhAhAhAhAhAhAgfhAhAhWhWhWhWhWhWhWhWwXhWhWirhWhWhWhWhWhWhWhWhWfFfFfFfF
+fFfEfEfEfEfEfEfEfEhwhkhkhfzPyUvmfEfEfEyRyRyRyRyRyRyRyRyRfEfEfEfEDxDxbZDxDxfEfEfEBLBLBLMhAehWhWyPpIaoKZaopIafaoalalalalpNpNaoaoKMpkpIpIpIpIafaoaoaoqrqsRXafpNqZpkpkpkpkpkpNpNafPOqtquTwpIpIpNpNpNpNUFafPMaoaoqhOCPApPMzaopIafpIaoaoaopIyPhWhWhWDlGDhkhkAoilBaEfEpDlhWhWhWhWChhWhWzLhWhAhAGAhkhkAqGEXJUoArFZAoAoililhCilililililENENENENENENGiGihWAdGFhAhAgfhAhAhADhDhhWhWhWhWhWzLzLhWhWhWhWhWhWhWGGhWhWBLfFfFfFfF
+fFfEfEfEfEfEfEfEfEfEhwhkhkhkzPfEfEfEfEyRyRyRyRyRyRyRyRfEfEfEfEfEfEDxDxDxbZfEfEfEBLBLBLBLBLhWhWyPpIaoplaopIafaooZqyqzalpNpNplaoaopkpIaoplaoqEaoaosvPjSdplafpNpNpIPYpIpIpIpNpNafTfalalalpNqZpNqZpNpNpNafpIaoaopNNlaopSPAaopIafpIaoaoaopIyPhWhWhWhWhAhkGHAoilBazihADlhWhWBUhWhWhWhWzLzLhAhAGAhkhkhkhkAoGkAoAoAoBDGdGdhlhlhkililAoGkGIhkhByvAoGiGiGiGiAzAdhAhAhAhAhAhAAUAUDhhWhWhWhWhWhWhWhWhWhWzLhWhWhWBLBLfFfFfFfF
 fFfEfEfEfEfEfEfEfEfEhwhwhkhkhkfEfEfEyRyRyRyRyRyRyRyRyRfEfEfEfEfEfEfEfEDxDxDxDxYGBLBLBLBLBLhWhWyPpIaoaoaopIafaooZqzqOalpNpNaoaoaoLiaoKiaopIafWfaoaoqXqYaoafpNpNqZpNqZpNqZpNpNafpIqLKUqLpNpNqZpNZGpNpNrvaoaoaopNpNKVaoaoaopIafpIaoqaaopIyPhWhWhWhWhAAiBEBaBaAohkGJDlhWhWhWhWwXhWhWhWzLAIhAGAhkhkhkhkhkAoGKGLGMhBhkhkhkhlhlhBGdGdhkhkhkhkhkAihWhWGNddGihWhWhAhAhAhAhAhAhAhAvJhWhWhWhWhWvJhWhWhWzLhWhWBLBLBLfFfFfFfF
 fFfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEyRyRyRyRyRyRyRyRyRfEfEfEfEfEfEfEfEfEDxDxbZZvfEBLBLBLBLBLhWhWyPpIaoaoaopIafaoLIqOqyalrbpNaoaoaoLiaoaopIpIafrfKiaoaoaoaoafpIpNpNrKpNrKpNpNpIafPOqOalqOpIpIpNpNpNpNKNafPOaoaopNUZNOpPWeaoZnafPOaoaoaopIyPhWhWhWhWhAhkEeBvilAihkAUhWhWGOhWhWhWhWGPhWhAhAhAgfhkhkhkhkzPzPhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkGFhWGiGiGihWhWhWhAhAhAhAhAhAhAhWGQhWhWhWhWhWhWhWhWhWhWBLBLBLBLfFfFfFfF
 fFfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEfEyRyRyRyRyRyRyRyRyRfEfEfEfEfEfEfEfEfEfEYGYGfEQGBLBLBLBLBLhWhWyPpIaoKZaopIafaoalalalalpNpNaoaoSDpkaoaopkpkafafafafafafafafroqhpNpNSDpNpNqhroafpIKXpIKXpIafpkpkpkpNpNrvaoqaaopNrKaopSWxaopIafpIaoaoaopIyPhWhWhWhWhAGRysBaAohkhkAUhWhWAShWhWhWhWhWChDthAhAgfhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkhkiSzjzjhkhkhkhkhAhAhWGiGiGiGivJGphAhAhAhAhAhAhAhAhWhWhWhWhWhWhWhWhWBLBLBLBLBLfFfFfFfF
