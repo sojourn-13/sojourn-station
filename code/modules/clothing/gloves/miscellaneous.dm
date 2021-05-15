@@ -80,6 +80,11 @@
 	icon_state = "ihscombat"
 	item_state = "ihscombat"
 	price_tag = 150
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_PLATINUM = 2)
+
+/obj/item/clothing/gloves/thick/ablasive/iron_lock_security
+	name = "outdated gloves"
+	desc = "An \"Iron Lock Security\" ablative gloves with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
 
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
 	desc = "A pair of fire, shock-proof, and impact-resistant combat gloves."
