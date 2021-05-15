@@ -83,8 +83,8 @@
 	name = "Hermes Boots"
 	desc = "Boots used by the faithful to spread the word of God more quickly by small hidden wheels under the heels. Sadly not all that good at protecting your feet as other more robust boots."
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
+	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
 	icon_state = "hermes"
 	item_state = "hermes"
-	slowdown = SHOES_SLOWDOWN - 0.1 //As aposed to clown shoes
+	slowdown = SHOES_SLOWDOWN - 0.05 //5% speed buff
 	can_hold_knife = 1//Still boots
