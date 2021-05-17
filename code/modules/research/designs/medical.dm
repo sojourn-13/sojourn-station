@@ -111,43 +111,44 @@
 	desc = "An all-in-one smart medical tool implant based on the legendary Greyson Positronic model."
 	build_path = /obj/item/weapon/tool/medmultitool/medimplant/sci
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 15, MATERIAL_GOLD = 3, MATERIAL_SILVER = 5)
+	category = CAT_TOOLMODS
 
 /datum/design/research/item/scalpel_laser
 	name = "Laser Scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting while instantly searing bleeding cuts through laser cauterization."
 	build_path = /obj/item/weapon/tool/scalpel/laser
-	category = "Medical"
+	category = CAT_TOOLMODS
 
 /datum/design/research/item/bonesetter_adv
 	name = "Bone Clamp Setter"
 	desc = "An advanced bone clamping tool, allows for more precise settling of bones with less wrist force required."
 	build_path = /obj/item/weapon/tool/bonesetter/adv
 	sort_string = "MBBBA"
-	category = "Medical"
+	category = CAT_TOOLMODS
 
 /datum/design/research/item/cautery_adv
 	name = "High Power Cautery"
 	desc = "A cautery with self-regulating heat transfer capabilities, allows for quicker and more precise cauterization of surgical incisions."
 	build_path = /obj/item/weapon/tool/cautery/adv
-	category = "Medical"
+	category = CAT_TOOLMODS
 
 /datum/design/research/item/hemostat_adv
 	name = "Precise Hemostat"
 	desc = "An advanced hemostat with better vein clamping strength and an adaptive tip tuned to also allow easier extraction of shrapnel, organs, and implants."
 	build_path = /obj/item/weapon/tool/hemostat/adv
-	category = "Medical"
+	category = CAT_TOOLMODS
 
 /datum/design/research/item/retractor_adv
 	name = "Extended Retractor"
 	desc = "Retracts surgical incisions with greater precision and speed than normal."
 	build_path = /obj/item/weapon/tool/retractor/adv
-	category = "Medical"
+	category = CAT_TOOLMODS
 
 /datum/design/research/item/medsaw_circular
 	name = "Medical Circular Saw"
 	desc = "For clean bone cutting, but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
 	build_path = /obj/item/weapon/tool/saw/circular/medical
-	category = "Medical"
+	category = CAT_TOOLMODS
 
 /datum/design/research/item/medical/nanopaste
 	name = "Nanopaste"
@@ -160,7 +161,7 @@
 	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
 	build_path = /obj/item/weapon/tool/tape_roll/bonegel
 	materials = list(MATERIAL_PLASTIC = 10)
-	category = "Medical"
+	category = CAT_TOOLMODS
 
 //Brain stuff
 /datum/design/research/item/posibrain

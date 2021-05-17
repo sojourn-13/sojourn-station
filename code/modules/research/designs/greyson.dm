@@ -136,7 +136,7 @@
 	category = CAT_TOOLMODS
 
 /datum/design/research/item/greyson/ai_tool
-	name = "GP Repair Nano AI Tool Upgrade"
+	name = "GP Nano-integrated AI Tool Upgrade"
 	build_path = /obj/item/weapon/tool_upgrade/augment/ai_tool
 	category = CAT_TOOLMODS
 

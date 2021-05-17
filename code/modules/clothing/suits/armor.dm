@@ -438,8 +438,8 @@ obj/item/clothing/suit/armor/flackvest/green
 obj/item/clothing/suit/armor/flackvest/commander
 	name = "commander's flak vest"
 	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. Smells of napalm and the sea."
-	icon_state = "flakvest_green"
-	item_state = "flakvest_green"
+	icon_state = "flakvest_mil"
+	item_state = "flakvest_mil"
 	blood_overlay_type = "armor"
 	slowdown = 0.2
 	armor = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
