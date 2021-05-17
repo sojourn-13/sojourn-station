@@ -551,6 +551,7 @@
 	desc = "A crudely made gauntlet consisting of straps, metal reinforcement and render skin - including it's deadly claws."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "gauntlet"
+	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_SAWING = 20) //Cuts people down just like trees.
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_NORMAL
