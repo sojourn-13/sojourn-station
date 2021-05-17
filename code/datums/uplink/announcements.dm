@@ -3,17 +3,18 @@
 *****************/
 /datum/uplink_item/abstract/announcements
 	category = /datum/uplink_category/services
+	antag_roles = ROLES_UPLINK_BASE
 
 /datum/uplink_item/abstract/announcements/buy(var/obj/item/device/uplink/U, var/mob/user)
 	. = ..()
 	if(.)
 		log_and_message_admins("has triggered a falsified [src]", user)
-
+/*
 /datum/uplink_item/abstract/announcements/announce/New()
 	..()
-	name = "Ship-wide Announcement"
+	name = "Colony-wide Announcement"
 	item_cost = 2
-	desc = "Broadcasts a message anonymously to the entire vessel. Triggers immediately after supplying additional data."
+	desc = "Broadcasts a message anonymously to the entire colony. Triggers immediately after supplying additional data."
 
 /datum/uplink_item/abstract/announcements/announce/get_goods(var/obj/item/device/uplink/U, var/loc, var/mob/user, var/list/args)
 	var/message = input(user, "What would you like the text of the announcement to be? Write as much as you like, The title will appear as Unknown Broadcast", "False Announcement") as text|null
@@ -21,7 +22,7 @@
 		return FALSE
 	command_announcement.Announce(message, "Unknown Broadcast")
 	return 1
-
+*/
 /datum/uplink_item/abstract/announcements/fake_crew_arrival
 	name = "Crew Arrival Announcement/Records"
 	desc = "Creates a fake crew arrival announcement as well as fake crew records, using your current appearance (including held items!) and worn id card. Trigger with care!"
@@ -79,7 +80,7 @@
 
 	AnnounceArrival(general.fields["name"], general.fields["rank"], "has completed cryogenic revival")
 	return 1
-
+/*
 /datum/uplink_item/abstract/announcements/fake_ion_storm
 	name = "Ion Storm Announcement"
 	desc = "Interferes with the station's ion sensors. Triggers immediately upon investment."
@@ -88,7 +89,7 @@
 /datum/uplink_item/abstract/announcements/fake_ion_storm/get_goods(var/obj/item/device/uplink/U, var/loc)
 	ion_storm_announcement()
 	return 1
-/*
+
 /datum/uplink_item/abstract/announcements/fake_radiation
 	name = "Radiation Storm Announcement"
 	desc = "Interferes with the station's radiation sensors. Triggers immediately upon investment."
