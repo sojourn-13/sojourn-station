@@ -101,7 +101,9 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 				item_tech_points += temp_tech[T] * tech_points[T]
 			else
 				if(saved_tech_levels[T] && (temp_tech[T] in saved_tech_levels[T])) // You only get a fraction of points if you researched items with this level already
-					if(!istype(I,/obj/item/weapon/circuitboard) || !istype(I,/obj/item/integrated_circuit)) //Boards and ciruits are cheap and spamable to make
+					if(istype(I,/obj/item/weapon/circuitboard) || istype(I,/obj/item/integrated_circuit)) //Boards and ciruits are cheap and spamable to make
+						item_tech_points += temp_tech[T] * tech_points[T] * 0
+					else
 						item_tech_points += temp_tech[T] * tech_points[T] * 0.1
 				else
 					item_tech_points += temp_tech[T] * tech_points[T]
