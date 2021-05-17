@@ -107,10 +107,7 @@
 	else
 		new /obj/item/weapon/storage/backpack/holding(src)
 	//armor
-	if(prob(80)) //Prospector has slightly better chance at getting good armor
-		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
-		new /obj/item/clothing/gloves/thick/handmade(src)
-	else if(prob(80))
+	if(prob(80))
 		new /obj/item/clothing/suit/storage/scavengerarmor(src)
 		new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
@@ -153,7 +150,7 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	//pistols
-	if(prob(80)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
+	if(prob(50)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
 		new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src)
 	else if(prob(80))
 		new /obj/item/weapon/gun/projectile/revolver/detective(src)
@@ -186,9 +183,9 @@
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
-	if(prob(15))
+	if(prob(25))
 		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
-	if(prob(5))
+	if(prob(15))
 		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
@@ -213,14 +210,8 @@
 	else
 		new /obj/item/weapon/storage/backpack/holding(src)
 	//armor
-	if(prob(80)) //Low chance but if you get lucky you get an immediate step up in armor.
-		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
-		new /obj/item/clothing/gloves/thick/handmade(src)
-	else
-		new /obj/item/clothing/suit/storage/scavengerarmor(src)
-		new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
-		new /obj/item/clothing/gloves/thick/combat(src)
-		new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/suit/storage/scavengerarmor(src)
+	new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 	//longarms
 	if(prob(80))
 		new /obj/item/weapon/gun/energy/shrapnel(src)
@@ -235,7 +226,7 @@
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 	//pistols
-	if(prob(80)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
+	if(prob(50)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
 		new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src)
 	else if(prob(80))
 		new /obj/item/weapon/gun/projectile/revolver/detective(src)
@@ -271,19 +262,19 @@
 	new /obj/item/device/radio/off(src)
 	//Salvager
 	if(prob(90))
-		new /obj/item/weapon/storage/belt/utility/handmade/full(src)
-	else
 		new /obj/item/weapon/storage/belt/utility/full(src)
+	else
+		new /obj/item/weapon/storage/belt/utility/handmade/full(src)
 	new /obj/item/weapon/storage/firstaid/regular(src)
 	if(prob(90))
 		new /obj/item/weapon/storage/firstaid/ifak(src)
-	else if(prob(80))
+	if(prob(80))
 		new /obj/item/weapon/storage/firstaid/adv(src)
 	else
 		new /obj/item/weapon/storage/firstaid/combat(src)
-	if(prob(25))
+	if(prob(50))
 		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
-	if(prob(10))
+	if(prob(20))
 		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
@@ -307,10 +298,7 @@
 	else
 		new /obj/item/weapon/storage/backpack/holding(src)
 	//armor
-	if(prob(70)) //Low chance but if you get lucky you get an immediate step up in armor.
-		new /obj/item/clothing/suit/armor/vest/handmade_black(src)
-		new /obj/item/clothing/gloves/thick/handmade(src)
-	else if(prob(70))
+	if(prob(70))
 		new /obj/item/clothing/suit/storage/scavengerarmor(src)
 		new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 		new /obj/item/clothing/gloves/thick/combat(src)
@@ -332,18 +320,10 @@
 		new /obj/item/clothing/shoes/combat(src)
 	//longarms
 	if(prob(60))
-		new /obj/item/weapon/gun/energy/shrapnel(src)
-		new /obj/item/weapon/cell/medium/high(src)
-		new /obj/item/weapon/cell/medium/high(src)
-	else if(prob(60))
-		new /obj/item/weapon/gun/energy/lasersmg(src)
-		new /obj/item/weapon/cell/medium/high(src)
-		new /obj/item/weapon/cell/medium/high(src)
-	else if(prob(60))
 		new /obj/item/weapon/gun/projectile/shotgun/pump(src)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
-	else if(prob(30))
+	else if(prob(60))
 		new /obj/item/weapon/gun/projectile/boltgun/sa(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
@@ -353,24 +333,7 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	//pistols
-	if(prob(35)) //Coin toss off the bat if you get fucked on pistol spawns, encourages prospies to by from sec armory
-		new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src)
-	else if(prob(40))
-		new /obj/item/weapon/gun/projectile/revolver/detective(src)
-		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
-		new /obj/item/ammo_magazine/speed_loader_pistol_35(src)
-	else if(prob(40))
-		new /obj/item/weapon/gun/projectile/giskard(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-	else if(prob(50))
-		new /obj/item/weapon/gun/projectile/mk58(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-	else
-		new /obj/item/weapon/gun/projectile/olivaw(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+	new /obj/item/weapon/gun/projectile/automatic/slaught_o_matic(src) //has silver eye
 	//melee
 	if(prob(80)) //Mostly standard issue machete with a holster but you have a small chance to get a much better item.
 		new /obj/item/clothing/accessory/holster/saber/machete(src)
@@ -387,26 +350,12 @@
 	new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
 	new /obj/item/weapon/gun/projectile/silvereye(src)
-	new /obj/item/ammo_magazine/kurtz_50/empty(src)
-	new /obj/item/ammo_magazine/kurtz_50/empty(src)
-	new /obj/item/ammo_magazine/kurtz_50/empty(src)
-	if(prob(70)) //Random .50 ammo, lets not make it to op!
-		new /obj/item/ammo_magazine/ammobox/kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/ammobox/kurtz_50/rubber(src)
-	else if(prob(50))
-		new /obj/item/ammo_magazine/ammobox/kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
-	else if(prob(50))
-		new /obj/item/ammo_magazine/ammobox/kurtz_50/lethal(src)
-		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
-	else
-		new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
-		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
 	//Salvager improved
-	if(prob(30))
-		new /obj/item/weapon/storage/belt/utility/handmade/full(src)
-	else
-		new /obj/item/weapon/storage/belt/utility/full(src)
+	new /obj/item/weapon/storage/belt/utility/full(src)
 	new /obj/item/weapon/storage/firstaid/regular(src)
 	if(prob(60))
 		new /obj/item/weapon/storage/firstaid/ifak(src)
@@ -418,6 +367,8 @@
 		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
 	if(prob(20))
 		new /obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot(src)
+	if(prob(35))
+		new /obj/item/weapon/tool/power_fist(src)
 
 
 /obj/structure/closet/secure_closet/personal/artist

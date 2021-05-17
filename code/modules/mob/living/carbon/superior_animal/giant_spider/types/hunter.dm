@@ -23,6 +23,42 @@
 	..()
 	alpha = 255
 
+/mob/living/carbon/superior_animal/giant_spider/hunter/shocker
+	name = "shock rock spider"
+	desc = "Furry and black, it makes you shudder to look at it. This one has yellowed metallic chitin that crackles with electricity."
+	icon_state = "spark"
+	icon_living = "spark"
+
+/mob/living/carbon/superior_animal/giant_spider/hunter/shocker/UnarmedAttack(var/atom/A, var/proximity)
+	. = ..()
+
+	if(isliving(A))
+		var/mob/living/L = A
+		if(istype(L) && prob(50))
+			var/damage = rand(melee_damage_lower, melee_damage_upper)
+			L.damage_through_armor(damage, HALLOSS)
+			playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
+			L.visible_message(SPAN_DANGER("\the [src] shocks \the [L]!"))
+
+/mob/living/carbon/superior_animal/giant_spider/hunter/pepper
+	name = "pepper spider"
+	desc = "Furry and black, it makes you shudder to look at it. This one is blood red and pulsating with sacks of irratent gas."
+	icon_state = "pepper"
+	icon_living = "pepper"
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/pepper
+	emote_see = list("chitters.","rubs its legs.","vibrates.","belches flames!")
+
+/mob/living/carbon/superior_animal/giant_spider/hunter/pepper/UnarmedAttack(var/atom/A, var/proximity)
+	. = ..()
+
+	if(isliving(A))
+		var/mob/living/L = A
+		if(istype(L) && prob(50))
+			var/damage = rand(melee_damage_lower, melee_damage_upper)
+			L.damage_through_armor(damage, BURN)
+			playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
+			L.visible_message(SPAN_DANGER("\the [src] breathes fire \the [L]!"))
+
 /mob/living/carbon/superior_animal/giant_spider/hunter/viper
 	name = "viper spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes and a large red splotch on its abdomen."
@@ -54,7 +90,6 @@
 	. = ..()
 	src.gib()
 	explosion(src.loc, 0,1,3)
-
 
 //fortress spiders are tanks, not any faster but can knock enemies down and take a few more hits.
 /mob/living/carbon/superior_animal/giant_spider/tarantula
@@ -162,6 +197,16 @@
 	icon_living = "ogre"
 	poison_per_bite = 4
 	move_to_delay = 4
+
+/mob/living/carbon/superior_animal/giant_spider/tarantula/pit
+	name = "pit snapper spider"
+	desc = "Furry and orange, it makes you shudder to look at it. What it lacks in toxins, it makes up for in its immense bone-snapping mandibles."
+	icon_state = "pit"
+	icon_living = "pit"
+	poison_per_bite = 0
+	move_to_delay = 4
+	melee_damage_lower = 35
+	melee_damage_upper = 40
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing
 	name = "trapdoor spider"
