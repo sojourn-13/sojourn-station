@@ -2496,6 +2496,7 @@
 #include "code\modules\reagents\machinery\chem_master.dm"
 #include "code\modules\reagents\machinery\electrolyzer.dm"
 #include "code\modules\reagents\machinery\grinder.dm"
+#include "code\modules\reagents\reagent_containers\bidon.dm"
 #include "code\modules\reagents\reagent_containers\blood_pack.dm"
 #include "code\modules\reagents\reagent_containers\borghydro.dm"
 #include "code\modules\reagents\reagent_containers\dropper.dm"
