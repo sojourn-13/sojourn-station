@@ -123,6 +123,7 @@ var/datum/xenomorph/xeno_morph_ai
 	health = 60
 	melee_damage_lower = 15
 	melee_damage_upper = 20
+	flash_resistances = 0
 
 	move_to_delay = 6
 	turns_per_move = 18

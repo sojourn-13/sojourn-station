@@ -24,6 +24,7 @@
 	auto_eject = 1
 	init_firemodes = list(
 		FULL_AUTO_600,
+		BURST_3_ROUND,
 		BURST_8_ROUND,
 		)
 

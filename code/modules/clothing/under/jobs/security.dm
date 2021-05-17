@@ -129,6 +129,7 @@
 	desc = "It's a jumpskirt worn by those few with the dedication to achieve the position of \"Warrant Officer\". It has additional armor to protect the wearer."
 	icon_state = "hos_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
 /obj/item/clothing/head/rank/commander
 	name = "warrant officer's Hat"
 	desc = "The hat of the Warrant Officer. For showing the officers who's in charge."

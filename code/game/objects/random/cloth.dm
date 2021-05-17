@@ -37,10 +37,6 @@
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 
-
-
-
-
 /obj/random/cloth/armor
 	name = "random armor"
 	desc = "This is a random armor."
@@ -73,9 +69,6 @@
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 
-
-
-
 /obj/random/cloth/suit
 	name = "random suit"
 	desc = "This is a random suit."
@@ -105,6 +98,8 @@
 				/obj/item/clothing/suit/gorka/toggle/gorka/crew_o = 2,
 				/obj/item/clothing/suit/gorka/toggle/gorka/crew_y = 2,
 				/obj/item/clothing/suit/gorka/toggle/gorka = 2,
+				/obj/item/clothing/suit/storage/aerostatic_bomber_jacket = 2,
+				/obj/item/clothing/suit/storage/jamrock_blazer = 2,
 				/obj/item/clothing/suit/storage/toggle/labcoat = 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/chemist= 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/cmo = 3,
@@ -118,10 +113,6 @@
 	name = "low chance random suit"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
-
 
 /obj/random/cloth/hazmatsuit
 	name = "random hazmat suit"
@@ -143,10 +134,6 @@
 	name = "low chance random hazmat suit"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
-
 
 /obj/random/cloth/under
 	name = "random under"
@@ -187,6 +174,8 @@
 				/obj/item/clothing/under/gorka/creworange = 2,
 				/obj/item/clothing/under/gorka/crewyellow = 2,
 				/obj/item/clothing/under/gorka/standard = 2,
+				/obj/item/clothing/under/jamrock_suit = 2,
+				/obj/item/clothing/under/aerostatic_suit = 2,
 				/obj/item/clothing/under/costume/history/pirate = 5,
 				/obj/item/clothing/under/color/purple = 5,
 				/obj/item/clothing/under/costume/misc/rainbowjumpsuit = 5,
@@ -208,10 +197,6 @@
 	name = "low chance random under"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
-
 
 /obj/random/cloth/helmet
 	name = "random helmet"
@@ -298,21 +283,20 @@
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 
-
-
-
 /obj/random/cloth/gloves
 	name = "random gloves"
 	desc = "This is a random gloves."
 	icon_state = "armor-grey"
 
 /obj/random/cloth/gloves/item_to_spawn()
-	return pickweight(list(/obj/item/clothing/gloves/botanic_leather = 3,
+	return pickweight(list(/obj/item/clothing/gloves/botanic_leather = 2,
+				/obj/item/clothing/gloves/aerostatic_gloves = 2,
 				/obj/item/clothing/gloves/boxing = 2,
 				/obj/item/clothing/gloves/boxing/blue = 5,
 				/obj/item/clothing/gloves/boxing/green = 1,
 				/obj/item/clothing/gloves/boxing/yellow = 1,
 				/obj/item/clothing/gloves/captain = 1,
+				/obj/item/clothing/gloves/thick/ablasive = 2,
 				/obj/item/clothing/gloves/color = 3,
 				/obj/item/clothing/gloves/color/blue = 3,
 				/obj/item/clothing/gloves/color/brown = 3,
@@ -337,9 +321,6 @@
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 
-
-
-
 /obj/random/cloth/glasses
 	name = "random glasses"
 	desc = "This is a random glasses."
@@ -347,6 +328,7 @@
 
 /obj/random/cloth/glasses/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/glasses/eyepatch = 4,
+				/obj/item/clothing/glasses/binoclard_lenses = 2,
 				/obj/item/clothing/glasses/regular/gglasses = 2,
 				/obj/item/clothing/glasses/hud/health = 2,
 				/obj/item/clothing/glasses/hud/security = 2,
@@ -358,9 +340,6 @@
 	name = "low chance random glasses"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
 
 /obj/random/cloth/shoes
 	name = "random shoes"
@@ -382,6 +361,9 @@
 				/obj/item/clothing/shoes/galoshes = 8,
 				/obj/item/clothing/shoes/jackboots = 14,
 				/obj/item/clothing/shoes/leather = 14,
+				/obj/item/clothing/shoes/aerostatic_boots = 10,
+				/obj/item/clothing/shoes/render = 10,
+				/obj/item/clothing/shoes/ablasive = 8,
 				/obj/item/clothing/shoes/reinforced = 14,
 				/obj/item/clothing/shoes/workboots = 4))
 
@@ -389,9 +371,6 @@
 	name = "low chance random shoes"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
 
 /obj/random/cloth/backpack
 	name = "random backpack"

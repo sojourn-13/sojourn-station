@@ -41,11 +41,12 @@
 	gun_tags = list(GUN_PROJECTILE)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 750
-	zoom_factor = 0.5
-	recoil_buildup = 20
+	zoom_factor = 0.6
+	recoil_buildup = 14
 	damage_multiplier = 0.9
 	one_hand_penalty = 25
 	auto_eject = FALSE
+	saw_off = TRUE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
@@ -84,3 +85,4 @@
 	recoil_buildup = 15
 	damage_multiplier = 0.7
 	one_hand_penalty = 25
+	saw_off = FALSE

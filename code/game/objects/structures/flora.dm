@@ -1365,3 +1365,19 @@
 	icon_state = "basalt3"
 	desc = "A dull and sturdy rock."
 	anchored = 1
+
+/obj/structure/flora/church_rock //Durasteel ore
+	name = "Ashen Stone"
+	icon = 'icons/obj/flora/church_stuff.dmi'
+	icon_state = "church_rock"
+	desc = "A stone found by the church, said to hold some sort of significance, though no one is quite sure what."
+	anchored = 1
+	density = 1
+
+/obj/structure/flora/church_tree //fancy red tree
+	name = "Cherry Tree"
+	icon = 'icons/obj/flora/church_stuff.dmi'
+	icon_state = "red_tree_alt"
+	desc = "A large hard wood tree with bark like steel, typically used for meditation."
+	anchored = 1
+	density = 1

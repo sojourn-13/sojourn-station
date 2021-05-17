@@ -48,6 +48,12 @@
 	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the insignia of the Blackshield."
 	icon_state = "gorka_ih"
 
+/obj/item/clothing/under/rank/trooper/skirt
+	name = "blackshield skirt"
+	desc = "A skirt in blackshield colours and fitted for same attachments of shoulderboards. Sadly this likely will not help protect your feet or legs form cuts and scratches"
+	icon_state = "gorka_blackshield_skort"
+	item_state = "gorka_blackshield_skort"
+
 /obj/item/clothing/under/rank/trooper/green
 	name = "green blackshield gorka"
 	desc = "A rugged set of militant and quite slavic two-tone clothes."

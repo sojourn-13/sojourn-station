@@ -10,13 +10,11 @@
 "aj" = (/obj/structure/flora/ausbushes/palebush,/turf/simulated/floor/rock,/area/nadezhda/outside/forest/hunting_lodge)
 "ak" = (/obj/structure/flora/ausbushes/palebush,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
 "al" = (/obj/structure/flora/small/rock2,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
-"am" = (/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
-"an" = (/obj/structure/flora/ausbushes/reedbush,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
-"ao" = (/obj/random/toy/plushie_onlycarp,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
+"an" = (/obj/structure/flora/ausbushes/reedbush,/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
 "ap" = (/obj/structure/flora/ausbushes/reedbush,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
-"aq" = (/obj/random/toy/plushie_onlysquid,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
+"aq" = (/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
 "ar" = (/obj/item/weapon/material/harpoon,/obj/item/toy/plushie/carp,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
-"as" = (/obj/item/weapon/ore,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
+"as" = (/obj/item/weapon/ore,/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
 "at" = (/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
 "au" = (/obj/structure/flora/tree/jungle_small/variant3,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
 "av" = (/obj/item/weapon/ore,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
@@ -216,16 +214,16 @@
 "eh" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Shed"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "ei" = (/obj/structure/flora/ausbushes/ppflowers,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "ej" = (/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"ek" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 1},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
+"ek" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 1; matter = list("wood" = 4); name = "wooden fence"},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
 "el" = (/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
 "em" = (/obj/effect/floor_decal/spline/plain,/obj/structure/railing/grey,/obj/machinery/light{dir = 4},/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"en" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 8},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
+"en" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 8; matter = list("wood" = 4); name = "wooden fence"},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
 "eo" = (/obj/machinery/portable_atmospherics/hydroponics/soil,/turf/simulated/floor/asteroid/dirt/flood/plough,/area/nadezhda/outside/forest/hunting_lodge)
-"ep" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 4},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
+"ep" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 4; matter = list("wood" = 4); name = "wooden fence"},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
 "eq" = (/obj/structure/flora/tree/jungle/variant2,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
-"er" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 1},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 8},/obj/structure/sink/puddle,/obj/item/toy/desk/dippingbird,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"er" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 1; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 8; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/obj/item/toy/desk/dippingbird,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "es" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
-"et" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 4},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 1},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"et" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 4; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 1; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "eu" = (/obj/map_data/hunting_lodge,/turf/unsimulated/wall/jungle/variant,/area/nadezhda/outside/forest/hunting_lodge)
 "ev" = (/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest/hunting_lodge)
 "ew" = (/turf/simulated/open,/area/nadezhda/outside/forest/hunting_lodge)
@@ -344,8 +342,8 @@
 "gF" = (/obj/structure/reagent_dispensers/watertank/derelict,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "gG" = (/obj/structure/table/rack/shelf,/obj/item/stack/material/wood/random,/obj/item/stack/material/wood/random,/obj/item/stack/material/wood/random,/obj/item/weapon/tool/hammer,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "gH" = (/obj/structure/table/rack/shelf,/obj/item/weapon/soap,/obj/item/weapon/staff/broom,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/reagent_containers/glass/bucket,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
-"gI" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 8},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
-"gJ" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 4},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"gI" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 8; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"gJ" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 4; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "gK" = (/obj/random/mob/tahca/low_chance,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
 "gL" = (/obj/random/mob/tengolo/low_chance,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
 "gM" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/smartfridge/seeds,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
@@ -361,7 +359,7 @@
 "gW" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/box/bottles,/obj/item/weapon/storage/box/bottles,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gX" = (/obj/structure/table/rack/shelf,/obj/item/weapon/beartrap,/obj/item/weapon/beartrap,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gY" = (/obj/structure/railing,/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
-"gZ" = (/obj/structure/railing{icon_state = "railing0"; dir = 4},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
+"gZ" = (/obj/structure/railing{dir = 4; icon_state = "railing0"},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
 "ha" = (/obj/effect/floor_decal/industrial/warningred{dir = 8},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "hb" = (/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "hc" = (/obj/effect/floor_decal/industrial/warningred{dir = 4},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
@@ -370,15 +368,15 @@
 "hf" = (/obj/effect/floor_decal/industrial/warningred{dir = 8},/obj/effect/floor_decal/industrial/stand_clear/red{dir = 8},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "hg" = (/obj/effect/shuttle_landmark/hunting_lodge,/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "hh" = (/obj/effect/floor_decal/industrial/warningred{dir = 4},/obj/effect/floor_decal/industrial/stand_clear/red{dir = 4},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
-"hi" = (/obj/structure/railing{icon_state = "railing0"; dir = 4},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
-"hj" = (/obj/structure/railing{tag = "icon-railing0 (EAST)"; icon_state = "railing0"; dir = 4},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"hi" = (/obj/structure/railing{dir = 4; icon_state = "railing0"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"hj" = (/obj/structure/railing{dir = 4; icon_state = "railing0"; tag = "icon-railing0 (EAST)"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "hk" = (/obj/effect/floor_decal/industrial/warningred,/obj/effect/floor_decal/industrial/warningred{dir = 8},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "hl" = (/obj/effect/floor_decal/industrial/warningred,/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "hm" = (/obj/effect/floor_decal/industrial/warningred,/obj/effect/floor_decal/industrial/stand_clear/red,/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "hn" = (/obj/effect/floor_decal/industrial/warningred,/obj/effect/floor_decal/industrial/warningred{dir = 4},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "ho" = (/obj/structure/railing,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/outside/forest/hunting_lodge)
 "hp" = (/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
-"hq" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"; dir = 1},/obj/machinery/smartfridge/drying_rack,/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/dungeon/outside/abandoned_solars/powered)
+"hq" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 1; matter = list("wood" = 4); name = "wooden fence"},/obj/machinery/smartfridge/drying_rack,/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/dungeon/outside/abandoned_solars/powered)
 "hr" = (/obj/machinery/beehive,/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/dungeon/outside/abandoned_solars/powered)
 "iX" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "jf" = (/obj/structure/closet/crate,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/item/stack/rods/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -388,6 +386,7 @@
 "uG" = (/obj/structure/table/reinforced,/obj/item/stack/material/wood/random,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "wZ" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/cable_coil/random,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "xv" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"zn" = (/obj/effect/overlay/water/top,/obj/effect/overlay/water,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
 "zI" = (/obj/structure/table/woodentable,/obj/item/weapon/storage/pill_bottle/dice,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "En" = (/obj/structure/table/reinforced,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/item/stack/rods/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "JC" = (/obj/structure/table/woodentable,/obj/machinery/recharger,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -398,6 +397,7 @@
 "TT" = (/obj/structure/table/rack/shelf,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/item/stack/rods/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Uz" = (/obj/structure/table/reinforced,/obj/random/ammo/shotgun,/obj/item/stack/material/steel/random,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "XX" = (/obj/structure/table/reinforced,/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow,/obj/item/stack/cable_coil/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Zl" = (/obj/structure/flora/ausbushes/reedbush,/obj/effect/overlay/water/top,/obj/effect/overlay/water,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -407,12 +407,12 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaabababababababababacabababadababacadabababacaeafadacababababababacacadaeadagagagagadabahacacaeacacababaeagagahabagagacacabababadafaeadabababacaeagagagagagadaeabahababababaiacaeagagagagajacaaaaaaaaaaaaaaaa
-aaaaaaabababababacacababacacaeaeaeadagagagagagagagagagagagagagagagakagagalagagagagamanamamagagagagagagagakagagagamamalagamamagagagapagagakagagagagagagagamamamamamagagagagagalagagagagagamamamanakagagaaaaaaaaaaaaaa
-aaaaabababacacaeaeaeaeaeaeaeaeadadagamamamanamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamaqamamamamamamamamamamamamamamamamamamamamamanaaaaaaaaaaaaaa
-aaaaacacacacaeadaeaeadadaeadadadagamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamaoamaaaaaaaaaaaaaa
-aaaaalagagagagagagagagagagagalagamamamagagagalagagagaganamamaqamalagagaraganagagalagagagagagagakagagagagamanamamagagagagakagagalagagagagagamamamamamagagagagagagalagakanamamamamasagagagagalagagagagagagaaaaaaaaaaaa
-aaaaamamamamamamamanamamamamamamamamakatatatatatatatatagagagagagatgKatatatagatatatatatatatatatatatatatatalagagagatatatatatatatatatatatatatagagagagagatatatatatatatatatagagagagakagatauatatatatatatatatataaaaaaaaaaaa
-aaamamamamamamamamamamamamamamamamagatatatatatatatatatatatatatatatatatatatatatatatatatatauatatatatatatatatatatatatatatavatatawatatatatatatatatatatatatavatatawatatatatatatatatatatatatatatatatatatatawaaaaaaaaaaaaaa
+aaaaaaabababababacacababacacaeaeaeadagagagagagagagagagagagagagagagakagagalagagagagaqanaqaqagagagagagagagakagagagaqaqalagaqaqagagagapagagakagagagagagagagaqaqaqaqaqagagagagagalagagagagagaqaqaqanakagagaaaaaaaaaaaaaa
+aaaaabababacacaeaeaeaeaeaeaeaeadadagaqaqaqanaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqanaaaaaaaaaaaaaa
+aaaaacacacacaeadaeaeadadaeadadadagaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaaaaaaaaaaaaaa
+aaaaalagagagagagagagagagagagalagaqaqaqagagagalagagagagZlznznznznalagagaragZlagagalagagagagagagakagagagagaqanaqaqagagagagakagagalagagagagagaqaqaqaqaqagagagagagagalagakanaqaqaqaqasagagagagalagagagagagagaaaaaaaaaaaa
+aaaaaqaqaqaqaqaqaqanaqaqaqaqaqaqaqaqakatatatatatatatatagagagagagatgKatatatagatatatatatatatatatatatatatatalagagagatatatatatatatatatatatatatagagagagagatatatatatatatatatagagagagakagatauatatatatatatatatataaaaaaaaaaaa
+aaaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqagatatatatatatatatatatatatatatatatatatatatatatatatatatauatatatatatatatatatatatatatatavatatawatatatatatatatatatatatatavatatawatatatatatatatatatatatatatatatatatatatawaaaaaaaaaaaaaa
 aaagagagagagagagalagagagagagagagalatatatatatatatatatatatatatatatatatatatatavatatawatatatatatatatatatatatatatatatataxatatatatatatatatatatatatataxatatatatatatatatatatatatatatatatatatatgKatatatatatatataaaaaaaaaaaaaa
 aaaaavatatatatatatauatatatayatatatavatatatatatatauatatatayataxatatauatatatatatatatatatatatatatatatatatatatatatatatatatatatauatazatataxatatatatatatatatatatauatazatatatatatatatatatatatatavatawatatatayaaaaaaaaaaaaaa
 aaaaatatatabawatatatatatatatatatatatatatabawatatatatatatatatatatatatatataxatatauatazatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatatataxatatatatatatatayatatatatatabaaaaaaaaaaaaaa

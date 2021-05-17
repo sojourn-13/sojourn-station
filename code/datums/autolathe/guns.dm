@@ -42,6 +42,10 @@
 	name = "H&S REV .35 \"Havelock\""
 	build_path = /obj/item/weapon/gun/projectile/revolver/detective
 
+/datum/design/autolathe/gun/rex10
+	name = "H&S REX .35 \"Cowboy\""
+	build_path = /obj/item/weapon/gun/projectile/revolver/rex10
+
 /datum/design/autolathe/gun/mk58
 	name = "OT HG .35 \"Mk58\""
 	build_path = /obj/item/weapon/gun/projectile/mk58

@@ -28,8 +28,10 @@
 	if(user.a_intent == I_DISARM)
 		damtype = HALLOSS
 		force = WEAPON_FORCE_PAINFUL
+		armor_penetration = ARMOR_PEN_SHALLOW
 
 	if(user.a_intent == I_HURT)
+		damtype = BRUTE
 		force = WEAPON_FORCE_ROBUST
 
 	if ((CLUMSY in user.mutations) && prob(50))
@@ -112,7 +114,8 @@
 
 		if(user.a_intent == I_DISARM)
 			damtype = HALLOSS
-			force = WEAPON_FORCE_PAINFUL
+			force = 18 //3 more then help but not as good as a wooden classic
+			armor_penetration = ARMOR_PEN_SHALLOW
 
 		if(user.a_intent == I_HURT)
 			damtype = BRUTE

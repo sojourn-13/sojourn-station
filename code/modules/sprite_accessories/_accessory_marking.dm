@@ -33,6 +33,16 @@
 		icon_state = "animeeyesouter"
 		body_parts = list(BP_HEAD)
 
+	bugeyeleft
+		name = "Bug Eye (Left)"
+		icon_state = "bugeyeleft"
+		body_parts = list(BP_HEAD)
+
+	bugeyeright
+		name = "Bug Eye (right)"
+		icon_state = "bugeyeright"
+		body_parts = list(BP_HEAD)
+
 /*Back Stripe*/
 
 	backstripe

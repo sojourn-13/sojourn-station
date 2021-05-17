@@ -75,3 +75,16 @@
 		to_chat(user, "\The [shotgun] has \a [shotgun.chambered] loaded.")
 	else
 		to_chat(user, "\The [shotgun] is empty.")
+
+/obj/item/weapon/gun/projectile/revolver/lemant/deacon
+	name = "\"Deacon\" heavy revolver"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	Some pilgrims find what they are looking for..."
+	icon_state = "lemant_blue"
+	item_state = "lemant_blue"
+	caliber = CAL_50
+	var/obj/item/weapon/gun/projectile/underslung/launcher
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		list(mode_name="fire grenades",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
+		)

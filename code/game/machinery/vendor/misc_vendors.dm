@@ -396,6 +396,9 @@
 				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 5,
 				/obj/item/clothing/mask/costume/kinky/sexy_clown = 5,
 				/obj/item/clothing/mask/costume/kinky/sexy_mime = 5,
+				/obj/item/clothing/under/rank/trooper/skirt = 5,
+				/obj/item/clothing/under/rank/engineer/skirt = 5,
+				/obj/item/clothing/under/rank/engineer/skirt/alt = 5,
 				/obj/item/clothing/mask/muzzle = 5,
 				/obj/item/clothing/glasses/blindfold = 5,
 				/obj/item/weapon/handcuffs/fuzzy = 5,
@@ -417,6 +420,9 @@
 				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 100,
 				/obj/item/clothing/mask/costume/kinky/sexy_clown = 100,
 				/obj/item/clothing/mask/costume/kinky/sexy_mime = 100,
+				/obj/item/clothing/under/rank/trooper/skirt = 100,
+				/obj/item/clothing/under/rank/engineer/skirt = 125, //has rad shielding
+				/obj/item/clothing/under/rank/engineer/skirt/alt = 125,
 				/obj/item/clothing/mask/muzzle = 100,
 				/obj/item/clothing/glasses/blindfold = 100,
 				/obj/item/weapon/handcuffs/fuzzy = 100,
@@ -461,7 +467,8 @@
 		/obj/item/weapon/storage/box/vendor_lootbox/medicine_high = 3,
 		/obj/item/weapon/storage/box/vendor_lootbox/oddity_low = 3,
 		/obj/item/weapon/storage/box/vendor_lootbox/oddity_moderate = 3,
-		/obj/item/weapon/storage/box/vendor_lootbox/oddity_high = 3
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_high = 3,
+		/obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot = 3
 		)
 	prices = list(
 		/obj/item/weapon/storage/box/vendor_lootbox = 50,
@@ -473,7 +480,8 @@
 		/obj/item/weapon/storage/box/vendor_lootbox/medicine_high = 500,
 		/obj/item/weapon/storage/box/vendor_lootbox/oddity_low = 150,
 		/obj/item/weapon/storage/box/vendor_lootbox/oddity_moderate = 300,
-		/obj/item/weapon/storage/box/vendor_lootbox/oddity_high = 600
+		/obj/item/weapon/storage/box/vendor_lootbox/oddity_high = 600,
+		/obj/item/weapon/grenade/spawnergrenade/manhacks/junkbot = 100
 		)
 	product_ads = "Imagine the rare stuff and buy more!;Rare stuff if you buy more!;Buy and get random items!;Don't quit, buy more!;Its not a lootbox, its surprise mechanics!"
 	auto_price = FALSE

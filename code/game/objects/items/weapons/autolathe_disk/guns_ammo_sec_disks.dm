@@ -90,6 +90,8 @@
 		/datum/design/autolathe/ammo/magnum_ammobox,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
@@ -1082,4 +1084,16 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/gun/survivalrifle = 3,
 		/datum/design/autolathe/ammo/mag_10x24,
 		/datum/design/autolathe/ammo/box_10x24 = 2,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/rex10
+	disk_name = "H&S - Cowboy Revolver"
+	icon_state = "ironhammer"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/rex10 = 3,
+		/datum/design/autolathe/ammo/slpistol_rubber = 2,
+		/datum/design/autolathe/ammo/slpistol,
+		/datum/design/autolathe/ammo/slpistol_lethal,
 	)

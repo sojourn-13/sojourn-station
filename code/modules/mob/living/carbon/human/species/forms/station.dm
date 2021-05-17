@@ -102,6 +102,20 @@
 	deform = 'icons/mob/human_races/r_def_spider.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
+/datum/species_form/moth
+	playable = TRUE
+	name = FORM_MOTH
+	base = 'icons/mob/human_races/r_moth.dmi'
+	deform = null
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR | HAS_EYE_COLOR
+
+/datum/species_form/moth_white
+	playable = TRUE
+	name = FORM_MOTH_WHITE
+	base = 'icons/mob/human_races/r_moth_white.dmi'
+	deform = null
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
 
 /datum/species_form/stationxeno
 	playable = FALSE

@@ -9,7 +9,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
+	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL|MAG_WELL_DRUM
 	auto_eject = 1
 	can_dual = TRUE
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)

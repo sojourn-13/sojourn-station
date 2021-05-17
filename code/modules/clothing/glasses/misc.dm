@@ -59,6 +59,13 @@
 	item_state = "headset" // lol
 	body_parts_covered = 0
 
+/obj/item/clothing/glasses/binoclard_lenses
+	name = "binoclard lenses"
+	desc = "Wide rim disks for glasses popularized back vagabonds and drifters alike."
+	icon_state = "binoclard_lenses"
+	item_state = "binoclard_lenses" // lol
+	body_parts_covered = 0
+
 /obj/item/clothing/glasses/scanners
 	name = "scanning goggles"
 	desc = "A very oddly shaped pair of goggles with bits of wire poking out the sides. A soft humming sound emanates from it."

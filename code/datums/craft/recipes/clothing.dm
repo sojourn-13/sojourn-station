@@ -163,3 +163,15 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
 	)
+
+
+
+/datum/craft_recipe/clothing/woodenarmor
+	name = "wooden armor"
+	result =/obj/item/clothing/suit/armor/vest/handmadewooden
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(QUALITY_SAWING, 10, 90),
+		list(/obj/item/stack/material/cloth, 5, time = 30),
+		list(QUALITY_CUTTING, 10, 80)
+	)

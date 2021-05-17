@@ -214,6 +214,13 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/wings/moth_plain
+	name = "Moth Wings, Plain"
+	desc = ""
+	icon_state = "moth_plain"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/wings/spider_legs
 	name = "Spider Legs"
 	desc = ""
