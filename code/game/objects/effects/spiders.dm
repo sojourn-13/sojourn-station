@@ -309,3 +309,6 @@
 	for(var/atom/movable/A in contents)
 		A.forceMove(get_turf(src))
 	return ..()
+
+/obj/effect/spider/spiderling/near_grown
+	amount_grown = 80

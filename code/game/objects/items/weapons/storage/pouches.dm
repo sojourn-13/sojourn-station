@@ -78,11 +78,11 @@
 
 /obj/item/weapon/storage/pouch/medical_supply
 	name = "medical supply pouch"
-	desc = "Can hold medical equipment. But only about three pieces of it."
+	desc = "Can hold medical equipment. But only about four pieces of it."
 	icon_state = "medical_supply"
 	item_state = "medical_supply"
 
-	storage_slots = 3
+	storage_slots = 4
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -104,11 +104,11 @@
 
 /obj/item/weapon/storage/pouch/engineering_tools
 	name = "engineering tools pouch"
-	desc = "Can hold small engineering tools. But only about three pieces of them."
+	desc = "Can hold small engineering tools. But only about four pieces of them."
 	icon_state = "engineering_tool"
 	item_state = "engineering_tool"
 
-	storage_slots = 3
+	storage_slots = 4
 	max_w_class = ITEM_SIZE_SMALL
 
 	can_hold = list(
@@ -134,11 +134,11 @@
 
 /obj/item/weapon/storage/pouch/engineering_supply
 	name = "engineering supply pouch"
-	desc = "Can hold engineering equipment. But only about two pieces of it."
+	desc = "Can hold engineering equipment. But only about three pieces of it."
 	icon_state = "engineering_supply"
 	item_state = "engineering_supply"
 
-	storage_slots = 2
+	storage_slots = 3
 	w_class = ITEM_SIZE_NORMAL
 	max_w_class = ITEM_SIZE_NORMAL
 
@@ -163,11 +163,11 @@
 
 /obj/item/weapon/storage/pouch/janitor_supply
 	name = "janitorial supply pouch"
-	desc = "Can hold janitorial equipment, but only about three pieces of them."
+	desc = "Can hold janitorial equipment, but only about four pieces of them."
 	icon_state = "janitor_supply"
 	item_state = "janitor_supply"
 
-	storage_slots = 3
+	storage_slots = 4
 	w_class = ITEM_SIZE_NORMAL
 	max_w_class = ITEM_SIZE_NORMAL
 
@@ -186,7 +186,7 @@
 	icon_state = "ammo"
 	item_state = "ammo"
 
-	storage_slots = 3
+	storage_slots = 4
 	w_class = ITEM_SIZE_NORMAL
 	max_w_class = ITEM_SIZE_NORMAL
 
@@ -197,7 +197,7 @@
 
 /obj/item/weapon/storage/pouch/tubular
 	name = "tubular pouch"
-	desc = "Can hold five cylindrical and small items, including but not limiting to flares, glowsticks, syringes and even hatton tubes or rockets."
+	desc = "Can hold seven cylindrical and small items, including but not limiting to flares, glowsticks, syringes and even hatton tubes or rockets."
 	icon_state = "flare"
 	item_state = "flare"
 

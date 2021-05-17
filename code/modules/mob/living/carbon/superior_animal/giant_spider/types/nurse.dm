@@ -20,6 +20,7 @@
 	meat_amount = 3
 	var/fed = 0
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
+	var/web_activity = 30
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
 	name = "midwife spider"
@@ -32,6 +33,41 @@
 	melee_damage_upper = 15
 	poison_per_bite = 4
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/midwife
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/carrier
+	name = "carrier spider"
+	desc = "Furry and tan, it makes you shudder to look at it. This one has brilliant green eyes, its body swollen with pulsating eggs."
+	icon_state = "carrier"
+	icon_living = "carrier"
+	deathmessage = "splits open! Several wriggling spiders crawl from its gore!"
+	var/has_made_spiderlings = FALSE
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/carrier/death(var/gibbed,var/message = deathmessage)
+	if (stat != DEAD)
+		target_mob = null
+		stance = initial(stance)
+		stop_automated_movement = initial(stop_automated_movement)
+		walk(src, 0)
+		if(!has_made_spiderlings)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			has_made_spiderlings = TRUE
+
+		density = 0
+		layer = LYING_MOB_LAYER
+
+	. = ..()
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver
+	name = "orb weaver spider"
+	desc = "Furry and green, it makes you shudder to look at it. This one has lots of energy and even more webs covering its body."
+	icon_state = "webslinger"
+	icon_living = "webslinger"
+	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.","bounces happily in place!")
+	web_activity = 90
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
 	name = "recluse spider"
@@ -94,7 +130,7 @@
 	if(!stat)
 		if(stance == HOSTILE_STANCE_IDLE)
 			//30% chance to stop wandering and do something
-			if(!busy && prob(30))
+			if(!busy && prob(web_activity))
 				//first, check for potential food nearby to cocoon
 				var/list/cocoonTargets = new
 				for(var/mob/living/C in getObjectsInView())
