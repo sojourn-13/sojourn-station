@@ -18,11 +18,11 @@
 	if(locked)
 		to_chat(user, "<span class='info'>The small wire locks are intact and active.</span>")
 	if(!locked)
-		to_chat(user, "<span class='info'>It seems someone has plused and disconected the wire lock.</span>")
+		to_chat(user, "<span class='info'>It seems someone has pulsed and disconencted the wire lock.</span>")
 	if(health >= 60)
 		to_chat(user, "<span class='info'>The case's glass is in perfect health.</span>")
 	if(30 >= health && !destroyed)
-		to_chat(user, "<span class='info'>The protective glass seems like its about to brake.</span>")
+		to_chat(user, "<span class='info'>The protective glass seems like its about to break.</span>")
 
 /obj/structure/displaycase/ex_act(severity)
 	switch(severity)
