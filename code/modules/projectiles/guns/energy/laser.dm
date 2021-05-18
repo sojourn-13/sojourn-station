@@ -62,7 +62,7 @@
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
 	charge_cost = 50
-	price_tag = 1000
+	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
@@ -115,7 +115,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GLASS = 4)
-	price_tag = 650
+	price_tag = 1100
 	damage_multiplier = 0.8
 	recoil_buildup = 2
 	one_hand_penalty = 3
