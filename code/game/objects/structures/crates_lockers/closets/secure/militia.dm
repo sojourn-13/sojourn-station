@@ -158,8 +158,8 @@
 	if(prob(40))
 		new /obj/item/weapon/storage/backpack/militia(src)
 	else
-		new /obj/item/weapon/storage/backpack/duffelbag
-	new /obj/item/weapon/storage/pouch/medical_supply
+		new /obj/item/weapon/storage/backpack/duffelbag(src)
+	new /obj/item/weapon/storage/pouch/medical_supply(src)
 	new /obj/item/weapon/storage/firstaid/ifak(src)
 	new /obj/item/weapon/storage/firstaid/adv(src)
 	new /obj/item/weapon/storage/firstaid/combat(src)
