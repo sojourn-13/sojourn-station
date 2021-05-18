@@ -1,3 +1,4 @@
+/*
 /mob/living/carbon/superior_animal/roach/elektromagnetisch
 	name = "Elektromagnetisch Roach"
 	desc = "A monstrous, dog-sized cockroach. This blue glowing one looks like its plusing with energy."
@@ -34,3 +35,4 @@
 		layer = LYING_MOB_LAYER
 
 	. = ..()
+*/

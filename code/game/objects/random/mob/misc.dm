@@ -65,7 +65,7 @@
 				/mob/living/carbon/superior_animal/xenomorph/defender = 6,
 				/mob/living/carbon/superior_animal/xenomorph/warrior/shrike = 6,
 				/mob/living/carbon/superior_animal/xenomorph/warrior/bull = 6,
-				/mob/living/carbon/superior_animal/xenomorph/spitter/boiler = 6,
+				//mob/living/carbon/superior_animal/xenomorph/spitter/boiler = 6,
 				//impressive
 				/mob/living/carbon/superior_animal/xenomorph/warrior/bull/crusher = 4,
 				/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/screecher = 4,
