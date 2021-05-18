@@ -33,7 +33,7 @@
 	melee_damage_upper = 15
 	poison_per_bite = 4
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/midwife
-
+/*
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
 	name = "carrier spider"
 	desc = "Furry and tan, it makes you shudder to look at it. This one has brilliant green eyes, its body swollen with pulsating eggs."
@@ -60,7 +60,7 @@
 		layer = LYING_MOB_LAYER
 
 	. = ..()
-
+*/
 /mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver
 	name = "orb weaver spider"
 	desc = "Furry and green, it makes you shudder to look at it. This one has lots of energy and even more webs covering its body."

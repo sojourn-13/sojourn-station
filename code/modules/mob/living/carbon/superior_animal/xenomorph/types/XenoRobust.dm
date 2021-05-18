@@ -108,7 +108,7 @@ var/datum/xenomorph/xeno_morph_ai
 	attack_sound = list('sound/xenomorph/alien_bite1.ogg', 'sound/xenomorph/alien_bite2.ogg')
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-
+/*
 /mob/living/carbon/superior_animal/xenomorph/spitter/boiler
 	name = "boiler"
 	desc = "A xenomorph boiler, the more evolved spitter, with far more toxic chemicals leaking from its maw and with an annoying habit of exploding on death."
@@ -127,3 +127,4 @@ var/datum/xenomorph/xeno_morph_ai
 
 	move_to_delay = 6
 	turns_per_move = 18
+*/

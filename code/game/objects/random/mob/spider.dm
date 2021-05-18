@@ -8,7 +8,7 @@
 				/mob/living/carbon/superior_animal/giant_spider/nurse = 30,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 15,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver = 14,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/carrier = 12,\
+				//mob/living/carbon/superior_animal/giant_spider/nurse/carrier = 12,\//
 				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 5,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/plasma = 4,\
