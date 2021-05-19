@@ -103,7 +103,7 @@
 /datum/ritual/cruciform/lemniscate/long_boost
 	name = "Long boost ritual"
 	phrase = null
-	desc = "This litany boosts mechanical stats of everyone who's hear you on the short time. "
+	desc = "This litany boosts the stats of everyone who's hear you on the short time. "
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	effect_time = 30 MINUTES
@@ -111,9 +111,9 @@
 	category = "Lemniscate"
 	var/list/stats_to_boost = list()
 
-/datum/ritual/cruciform/priest/short_boost/New()
+/datum/ritual/cruciform/lemniscate/long_boost/New()
 	..()
-	desc = "This litany boosts [get_stats_to_text()] stats of evryone who hears you, for about ten minutes."
+	desc = "This litany boosts [get_stats_to_text()] stats of evryone who hears you, for about thirty minutes."
 
 
 /datum/ritual/cruciform/lemniscate/long_boost/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
@@ -166,12 +166,12 @@
 /datum/ritual/cruciform/lemniscate/long_boost/mental
 	name = "Sanctorum of Life"
 	phrase = "Venite ad me omnes qui laboratis, et onerati estis, et ego reficiam vos."
-	stats_to_boost = list(STAT_MEC = 10, STAT_COG = 10, STAT_BIO = 10)
+	stats_to_boost = list(STAT_MEC = 15, STAT_COG = 15, STAT_BIO = 15)
 
 /datum/ritual/cruciform/lemniscate/long_boost/physical
 	name = "Pilgrim's Path"
 	phrase = "Confortare et esto robustus. Nolite timere nec paveatis a conspectu eorum quia Dominus Deus tuus ipse est ductor tuus. Et non dimittet nec derelinquet te."
-	stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
+	stats_to_boost = list(STAT_ROB = 15, STAT_TGH = 15, STAT_VIG = 15)
 
 
 /datum/ritual/cruciform/monomial
