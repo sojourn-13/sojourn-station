@@ -376,8 +376,13 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/datum/controller/subsystem/SS
 	var/SS_flags
 
+	var/list/systemorder
+
 	//Optimize here so that the process is faster when actually enqueuing.
-	var/list/systemorder = (subsystemstocheck - last_queue) + (last_queue & subsystemstocheck)
+	if(last_queue)
+		systemorder = (subsystemstocheck - last_queue) + (last_queue & subsystemstocheck)
+	else
+		systemorder = subsystemstocheck
 
 	for (var/i = systemorder.len; i > 0; i--)
 		var/thing = systemorder[i]
