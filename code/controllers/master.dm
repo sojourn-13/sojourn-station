@@ -47,6 +47,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/queue_priority_count_bg = 0 //Same, but for background subsystems
 	var/map_loading = FALSE	//Are we loading in a new map?
 
+	var/list/datum/controller/subsystem/last_queue = null
+
 	var/list/total_run_times
 	var/current_runlevel	//for scheduling different subsystems for different stages of the round
 
@@ -374,7 +376,11 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/datum/controller/subsystem/SS
 	var/SS_flags
 
-	for (var/thing in subsystemstocheck)
+	//Optimize here so that the process is faster when actually enqueuing.
+	var/list/systemorder = (subsystemstocheck - last_queue) + (last_queue & subsystemstocheck)
+
+	for (var/i = systemorder.len; i > 0; i--)
+		var/thing = systemorder[i]
 		if (!thing)
 			subsystemstocheck -= thing
 			continue
@@ -409,6 +415,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/ran_non_ticker = FALSE
 	var/bg_calc //have we swtiched current_tick_budget to background mode yet?
 	var/tick_usage
+
+	last_queue = queue.Copy()
 
 	//keep running while we have stuff to run and we haven't gone over a tick
 	//	this is so subsystems paused eariler can use tick time that later subsystems never used
