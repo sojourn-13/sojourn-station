@@ -8,11 +8,11 @@
 	item_suffix = ""
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_LRIFLE
+	caliber = CAL_RIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
@@ -83,7 +83,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 1000
 	damage_multiplier = 1.2
-	recoil_buildup = 7
+	recoil_buildup = 8
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/ak47/sawn
@@ -99,7 +99,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 650
-	recoil_buildup = 13
+	recoil_buildup = 12
 	one_hand_penalty = 20
 	damage_multiplier = 0.8
 	saw_off = FALSE
