@@ -208,10 +208,6 @@
 	name = "Excelsior .257 AK"
 	build_path = /obj/item/weapon/gun/projectile/automatic/ak47
 
-/datum/design/autolathe/gun/ak47_sa
-	name = "SA CAR .257 \"Kalashnikov\""
-	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/sa
-
 /datum/design/autolathe/gun/basstet
 	name = "NM CAR .257 \"Basstet\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/basstet
@@ -258,6 +254,10 @@
 /datum/design/autolathe/gun/sts30
 	name = "SA BR - 7.5mm  \"STS-30\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/sts/rifle
+
+/datum/design/autolathe/gun/ak47_sa
+	name = "SA CAR 7.5 \"Kalashnikov\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/sa
 
 /datum/design/autolathe/gun/mg_pk
 	name = "SA - 7.5mm Pulemyot Kalashnikova MG"

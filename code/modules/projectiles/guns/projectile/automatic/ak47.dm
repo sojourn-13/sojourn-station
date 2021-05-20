@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/automatic/ak47
 	name = "Excelsior \"Kalashnikov\" carbine"
 	desc = "\"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\"\
-		 A copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in .257. This is an abysmal, printed copy."
+		 A copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in 7.5. This is an abysmal, printed copy."
 	icon = 'icons/obj/guns/projectile/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -76,7 +76,7 @@
 /obj/item/weapon/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-		 A copy of the AKM pattern, shortened into a mid-length carbine and chambered in .257. The left arm of the unfree world."
+		 A copy of the AKM pattern, shortened into a mid-length carbine and chambered in 7.5. The left arm of the unfree world."
 	icon = 'icons/obj/guns/projectile/ak_wood.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -91,7 +91,7 @@
 /obj/item/weapon/gun/projectile/automatic/ak47/sawn
 	name = "sawn-off \"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-	A copy of the AKM pattern chambered in .257 and crudely sawed down to a shadow of its former self. Rifle was fine. Was."
+	A copy of the AKM pattern chambered in 7.5 and crudely sawed down to a shadow of its former self. Rifle was fine. Was."
 	icon = 'icons/obj/guns/projectile/sawnoff/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
