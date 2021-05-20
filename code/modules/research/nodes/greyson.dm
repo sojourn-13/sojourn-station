@@ -45,7 +45,9 @@
 	cost = 2500 //Cheap do to being already done in other nodes but less good*
 
 	unlocks_designs = list(/datum/design/research/item/greyson/iron_lock_security_armor,
-						   /datum/design/research/item/greyson/iron_lock_security_helmet)
+						   /datum/design/research/item/greyson/iron_lock_security_helmet,
+						   /datum/design/research/item/greyson/iron_lock_security_gloves,
+						   /datum/design/research/item/greyson/iron_lock_security_boots)
 
 /datum/technology/GP_window
 	name = "Greyson Positronic Glass-Widow Infuser"

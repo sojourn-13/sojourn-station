@@ -88,3 +88,38 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire grenades",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+
+/obj/item/weapon/gun/projectile/revolver/lemant/deacon/Initialize()
+	. = ..()
+	launcher = new(src)
+
+/obj/item/weapon/gun/projectile/revolver/lemant/deacon/attackby(obj/item/I, mob/user)
+	if((istype(I, /obj/item/ammo_casing/grenade)))
+		launcher.load_ammo(I, user)
+	else
+		..()
+
+/obj/item/weapon/gun/projectile/revolver/lemant/deacon/attack_hand(mob/user)
+	var/datum/firemode/cur_mode = firemodes[sel_mode]
+
+	if(user.get_inactive_hand() == src && cur_mode.settings["use_launcher"])
+		launcher.unload_ammo(user)
+	else
+		..()
+
+/obj/item/weapon/gun/projectile/revolver/lemant/deacon/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
+	var/datum/firemode/cur_mode = firemodes[sel_mode]
+
+	if(cur_mode.settings["use_launcher"])
+		launcher.Fire(target, user, params, pointblank, reflex)
+		if(!launcher.chambered)
+			switch_firemodes() //switch back automatically
+	else
+		..()
+
+/obj/item/weapon/gun/projectile/revolver/lemant/deacon/examine(mob/user)
+	..()
+	if(launcher.loaded.len)
+		to_chat(user, "\The [launcher] has \a [launcher.chambered] loaded.")
+	else
+		to_chat(user, "\The [launcher] is empty.")

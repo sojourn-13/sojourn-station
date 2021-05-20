@@ -25,6 +25,11 @@
 	force = WEAPON_FORCE_WEAK
 	siemens_coefficient = 0.6
 	can_hold_knife = TRUE
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 15, MATERIAL_PLATINUM = 2)
+
+/obj/item/clothing/shoes/ablasive/iron_lock_security
+	name = "outdated jackboots"
+	desc = "An \"Iron Lock Security\" ablative boots with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
 
 /obj/item/clothing/shoes/swat
 	name = "\improper SWAT shoes"

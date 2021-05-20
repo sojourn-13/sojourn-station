@@ -42,11 +42,12 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	// The type of the last subsystem to be process()'d.
 	var/last_type_processed
 
-	var/datum/controller/subsystem/queue_head //Start of queue linked list
-	var/datum/controller/subsystem/queue_tail //End of queue linked list (used for appending to the list)
+	var/list/datum/controller/subsystem/queue = list()
 	var/queue_priority_count = 0 //Running total so that we don't have to loop thru the queue each run to split up the tick
 	var/queue_priority_count_bg = 0 //Same, but for background subsystems
 	var/map_loading = FALSE	//Are we loading in a new map?
+
+	var/list/datum/controller/subsystem/last_queue = null
 
 	var/list/total_run_times
 	var/current_runlevel	//for scheduling different subsystems for different stages of the round
@@ -252,8 +253,6 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		if (SS.flags & SS_NO_FIRE)
 			continue
 		SS.queued_time = 0
-		SS.queue_next = null
-		SS.queue_prev = null
 		SS.state = SS_IDLE
 		if (SS.flags & SS_TICKER)
 			tickersubsystems += SS
@@ -272,8 +271,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		if(!added_to_any)
 			WARNING("[SS.name] subsystem is not SS_NO_FIRE but also does not have any runlevels set!")
 
-	queue_head = null
-	queue_tail = null
+	queue = list()
 	//these sort by lower priorities first to reduce the number of loops needed to add subsequent SS's to the queue
 	//(higher subsystems will be sooner in the queue, adding them later in the loop means we don't have to loop thru them next queue add)
 	sortTim(tickersubsystems, /proc/cmp_subsystem_priority)
@@ -318,7 +316,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			SS.can_fire = 0
 		if (!Failsafe || (Failsafe.processing_interval > 0 && (Failsafe.lasttick+(Failsafe.processing_interval*5)) < world.time))
 			new/datum/controller/failsafe() // (re)Start the failsafe.
-		if (!queue_head || !(iteration % 3))
+		if (!LAZYLEN(queue) || !(iteration % 3))
 			var/checking_runlevel = current_runlevel
 			if(cached_runlevel != checking_runlevel)
 				//resechedule subsystems
@@ -345,7 +343,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			sleep(10)
 			continue
 
-		if (queue_head)
+		if (LAZYLEN(queue))
 			if (RunQueue() <= 0)
 				if (!SoftReset(tickersubsystems, runlevel_sorted_subsystems))
 					to_chat(world, "MC: SoftReset() failed, crashing")
@@ -357,7 +355,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 				sleep(10)
 				continue
 		error_level--
-		if (!queue_head) //reset the counts if the queue is empty, in the off chance they get out of sync
+		if (!LAZYLEN(queue)) //reset the counts if the queue is empty, in the off chance they get out of sync
 			queue_priority_count = 0
 			queue_priority_count_bg = 0
 
@@ -378,7 +376,16 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/datum/controller/subsystem/SS
 	var/SS_flags
 
-	for (var/thing in subsystemstocheck)
+	var/list/systemorder
+
+	//Optimize here so that the process is faster when actually enqueuing.
+	if(last_queue)
+		systemorder = (subsystemstocheck - last_queue) + (last_queue & subsystemstocheck)
+	else
+		systemorder = subsystemstocheck
+
+	for (var/i = systemorder.len; i > 0; i--)
+		var/thing = systemorder[i]
 		if (!thing)
 			subsystemstocheck -= thing
 			continue
@@ -402,7 +409,6 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 // Run thru the queue of subsystems to run, running them while balancing out their allocated tick precentage
 /datum/controller/master/proc/RunQueue()
 	. = 0
-	var/datum/controller/subsystem/queue_node
 	var/queue_node_flags
 	var/queue_node_priority
 	var/queue_node_paused
@@ -415,16 +421,18 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/bg_calc //have we swtiched current_tick_budget to background mode yet?
 	var/tick_usage
 
+	last_queue = queue.Copy()
+
 	//keep running while we have stuff to run and we haven't gone over a tick
 	//	this is so subsystems paused eariler can use tick time that later subsystems never used
 //	world << "trying to enter while in RunQueue"
-	while (ran && queue_head && TICK_USAGE < TICK_LIMIT_MC)
+	while (ran && LAZYLEN(queue) && TICK_USAGE < TICK_LIMIT_MC)
 //		world << "entered first while in RunQueue"
 		ran = FALSE
 		bg_calc = FALSE
 		current_tick_budget = queue_priority_count
-		queue_node = queue_head
-		while (queue_node)
+		var/list/cache_queue = queue.Copy()
+		for(var/datum/controller/subsystem/queue_node in cache_queue)
 //			world << "entered second while in RunQueue"
 			if (ran && TICK_USAGE > TICK_LIMIT_RUNNING)
 //				world << "break on (if ran&& TICK_USAGE...)"
@@ -444,7 +452,6 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 					queue_priority_count -= queue_node_priority
 					queue_priority_count += queue_node.queued_priority
 					current_tick_budget -= queue_node_priority
-					queue_node = queue_node.queue_next
 //					world << "contunue on line 441"
 					continue
 
@@ -490,7 +497,6 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			if (state == SS_PAUSED)
 				queue_node.paused_ticks++
 				queue_node.paused_tick_usage += tick_usage
-				queue_node = queue_node.queue_next
 				continue
 
 			queue_node.ticks = MC_AVERAGE(queue_node.ticks, queue_node.paused_ticks)
@@ -525,8 +531,6 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			//remove from queue
 			queue_node.dequeue()
 
-			queue_node = queue_node.queue_next
-
 	. = 1
 
 //resets the queue, and all subsystems, while filtering out the subsystem lists
@@ -551,21 +555,14 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 				I -= list(SS)
 			to_chat(world, "MC: SoftReset: Found bad entry in subsystem list, '[SS]'")
 			continue
-		if (SS.queue_next && !istype(SS.queue_next))
-			to_chat(world, "MC: SoftReset: Found bad data in subsystem queue, queue_next = '[SS.queue_next]'")
-		SS.queue_next = null
-		if (SS.queue_prev && !istype(SS.queue_prev))
-			to_chat(world, "MC: SoftReset: Found bad data in subsystem queue, queue_prev = '[SS.queue_prev]'")
-		SS.queue_prev = null
 		SS.queued_priority = 0
 		SS.queued_time = 0
 		SS.state = SS_IDLE
-	if (queue_head && !istype(queue_head))
-		to_chat(world, "MC: SoftReset: Found bad data in subsystem queue, queue_head = '[queue_head]'")
-	queue_head = null
-	if (queue_tail && !istype(queue_tail))
-		to_chat(world, "MC: SoftReset: Found bad data in subsystem queue, queue_tail = '[queue_tail]'")
-	queue_tail = null
+	if (LAZYLEN(queue) && !istype(queue[1], /datum/controller/subsystem))
+		to_chat(world, "MC: SoftReset: Found bad data in subsystem queue, queue_head = '[queue[1]]'")
+	if (LAZYLEN(queue) && !istype(queue[queue.len], /datum/controller/subsystem))
+		to_chat(world, "MC: SoftReset: Found bad data in subsystem queue, queue_tail = '[queue[queue.len]]'")
+	queue = list()
 	queue_priority_count = 0
 	queue_priority_count_bg = 0
 	to_chat(world, "MC: SoftReset: Finished.")

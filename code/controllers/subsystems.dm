@@ -27,9 +27,6 @@
 	var/times_fired = 0		//number of times we have called fire()
 	var/queued_time = 0		//time we entered the queue, (for timing and priority reasons)
 	var/queued_priority 	//we keep a running total to make the math easier, if priority changes mid-fire that would break our running total, so we store it here
-	//linked list stuff for the queue
-	var/datum/controller/subsystem/queue_next
-	var/datum/controller/subsystem/queue_prev
 
 	var/runlevels = RUNLEVELS_DEFAULT	//points of the game at which the SS can fire
 
@@ -51,13 +48,14 @@
 	. = SS_SLEEPING
 	fire(resumed)
 	. = state
-	if (state == SS_SLEEPING)
-		state = SS_IDLE
-	if (state == SS_PAUSING)
-		var/QT = queued_time
-		enqueue()
-		state = SS_PAUSED
-		queued_time = QT
+	switch(state)
+		if (SS_SLEEPING)
+			state = SS_IDLE
+		if (SS_PAUSING)
+			var/QT = queued_time
+			enqueue()
+			state = SS_PAUSED
+			queued_time = QT
 
 //previously, this would have been named 'process()' but that name is used everywhere for different things!
 //fire() seems more suitable. This is the procedure that gets called every 'wait' deciseconds.
@@ -75,8 +73,6 @@
 	return ..()
 
 //Queue it to run.
-//	(we loop thru a linked list until we get to the end or find the right point)
-//	(this lets us sort our run order correctly without having to re-sort the entire already sorted list)
 /datum/controller/subsystem/proc/enqueue()
 	var/SS_priority = priority
 	var/SS_flags = flags
@@ -84,7 +80,10 @@
 	var/queue_node_priority
 	var/queue_node_flags
 
-	for (queue_node = Master.queue_head; queue_node; queue_node = queue_node.queue_next)
+	var/i
+
+	for(i = 1; i <= Master.queue.len; i++)
+		queue_node = Master.queue[i]
 		queue_node_priority = queue_node.queued_priority
 		queue_node_flags = queue_node.flags
 
@@ -116,34 +115,11 @@
 	else
 		Master.queue_priority_count += SS_priority
 
-	queue_next = queue_node
-	if (!queue_node)//we stopped at the end, add to tail
-		queue_prev = Master.queue_tail
-		if (Master.queue_tail)
-			Master.queue_tail.queue_next = src
-		else //empty queue, we also need to set the head
-			Master.queue_head = src
-		Master.queue_tail = src
-
-	else if (queue_node == Master.queue_head)//insert at start of list
-		Master.queue_head.queue_prev = src
-		Master.queue_head = src
-		queue_prev = null
-	else
-		queue_node.queue_prev.queue_next = src
-		queue_prev = queue_node.queue_prev
-		queue_node.queue_prev = src
+	Master.queue.Insert(i, src)
 
 
 /datum/controller/subsystem/proc/dequeue()
-	if (queue_next)
-		queue_next.queue_prev = queue_prev
-	if (queue_prev)
-		queue_prev.queue_next = queue_next
-	if (src == Master.queue_tail)
-		Master.queue_tail = queue_prev
-	if (src == Master.queue_head)
-		Master.queue_head = queue_next
+	Master.queue.Remove(src)
 	queued_time = 0
 	if (state == SS_QUEUED)
 		state = SS_IDLE

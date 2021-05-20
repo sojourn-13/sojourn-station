@@ -551,11 +551,46 @@
 	desc = "A crudely made gauntlet consisting of straps, metal reinforcement and render skin - including it's deadly claws."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "gauntlet"
+	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_SAWING = 20) //Cuts people down just like trees.
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5)
 	attack_verb = list("clawed", "scratched", "lacerated", "slashed")
+
+/obj/item/weapon/tool/power_fist
+	name = "power fist"
+	desc = "A battery powered hydraulic combat gauntlet designed for extended operations where close combat and muscles matter most."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "powerfist"
+	toggleable = TRUE
+	worksound = WORKSOUND_HAMMER
+	switched_on_force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 7)
+	attack_verb = list("punched", "decked", "haymakered", "uppercut")
+	degradation = 0.7
+	use_power_cost = 1
+	suitable_cell = /obj/item/weapon/cell/medium
+	switched_on_qualities = list(QUALITY_HAMMERING = 30)
+	switched_off_qualities = list(QUALITY_HAMMERING = 10)
+
+/obj/item/weapon/tool/power_fist/turn_on(mob/user)
+	if (cell && cell.charge > 0)
+		item_state = "[initial(item_state)]_on"
+		to_chat(user, SPAN_NOTICE("You switch [src] on."))
+		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+		..()
+	else
+		item_state = initial(item_state)
+		to_chat(user, SPAN_WARNING("[src] has no power!"))
+
+/obj/item/weapon/tool/power_fist/turn_off(mob/user)
+	item_state = initial(item_state)
+	playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+	to_chat(user, SPAN_NOTICE("You switch [src] off."))
+	..()
 
 //POLEARMS
 /obj/item/weapon/tool/spear
