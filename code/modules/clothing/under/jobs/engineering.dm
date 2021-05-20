@@ -72,8 +72,8 @@
 /obj/item/clothing/under/rank/engineer/skirt/alt
 	desc = "A yellow engineering skirt worn by guild adepts. It has minor radiation shielding and some decorative padding."
 	name = "adept's padded skirt"
-	icon_state = "artificer_apprentice_skirt"
-	item_state = "artificer_apprentice_skirt"
+	icon_state = "artificer_jumpskirt_adept"
+	item_state = "artificer_jumpskirt_adept"
 	armor = list(
 		melee = 0,
 		bullet = 0,

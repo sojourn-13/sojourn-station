@@ -10,3 +10,11 @@
 /datum/design/autolathe/clothing/iron_lock_security_helmet
 	name = "Greyson Positronic Ablative Helmet"
 	build_path = /obj/item/clothing/head/helmet/laserproof/iron_lock_security
+
+/datum/design/autolathe/clothing/iron_lock_security_gloves
+	name = "Greyson Positronic Ablative Gloves"
+	build_path = /obj/item/clothing/gloves/thick/ablasive/iron_lock_security
+
+/datum/design/autolathe/clothing/iron_lock_security_boots
+	name = "Greyson Positronic Ablative Boots"
+	build_path = /obj/item/clothing/shoes/ablasive/iron_lock_security

@@ -290,7 +290,7 @@
 	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
-///snowflake caseless
+///10mm caseless
 /obj/item/ammo_casing/c10x24
 	desc = "A 10mm x 24 caseless cartidge."
 	caliber = "10x24"

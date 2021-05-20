@@ -392,6 +392,18 @@
 		number = round(percent, 25)
 	icon_state = "pk_box-[number]"
 
+/obj/item/ammo_magazine/rifle_75_linked_box/highvelocity
+	name = "linked ammunition box (7.5mm Rifle highvelocity)"
+	ammo_type = /obj/item/ammo_casing/rifle_75/hv
+
+/obj/item/ammo_magazine/rifle_75_linked_box/rubber
+	name = "linked ammunition box (7.5mm Rifle rubber)"
+	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
+
+/obj/item/ammo_magazine/rifle_75_linked_box/lethal
+	name = "linked ammunition box (7.5mm Rifle hollowpoint)"
+	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
+
 /obj/item/ammo_magazine/rifle_75_linked_box/empty
 	matter = list(MATERIAL_STEEL = 2)
 	initial_ammo = 0
@@ -494,6 +506,18 @@
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 1)
 	ammo_type = /obj/item/ammo_casing/c10x24
 	max_ammo = 99
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/rifle_10x24
+	name = "light rifle magazine"
+	desc = "A 20 round magazine marked for 10x24 rounds."
+	icon_state = "rifle"
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_RIFLE
+	matter = list(MATERIAL_STEEL = 8)
+	caliber = "10x24"
+	ammo_type = /obj/item/ammo_casing/c10x24
+	max_ammo = 20
 	multiple_sprites = 1
 
 ////.50 kurtz////

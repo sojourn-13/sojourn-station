@@ -49,6 +49,8 @@
 	designs = list(
 		/datum/design/autolathe/clothing/iron_lock_security_armor,
 		/datum/design/autolathe/clothing/iron_lock_security_helmet,
+		/datum/design/autolathe/clothing/iron_lock_security_gloves,
+		/datum/design/autolathe/clothing/iron_lock_security_boots,
 	)
 
 // Excelsior We also replace "name" for spawning reasons

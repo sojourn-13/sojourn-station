@@ -38,3 +38,4 @@
 	name = "viscerator grenade"
 	item_cost = 4
 	path = /obj/item/weapon/grenade/spawnergrenade/manhacks
+	antag_roles = ROLES_UPLINK_BASE

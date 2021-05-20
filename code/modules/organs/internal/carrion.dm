@@ -459,19 +459,24 @@
 	..()
 
 /obj/structure/spider_nest/proc/spawn_spider()
-	var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 2,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 1,\
-				/mob/living/carbon/superior_animal/giant_spider/plasma = 1,\
+	var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 35,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse = 30,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver = 14,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/carrier = 12,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 5,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 4,\
+				/mob/living/carbon/superior_animal/giant_spider/plasma = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor = 1,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 3,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula = 3,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/ogre = 2,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing = 1
+				/mob/living/carbon/superior_animal/giant_spider/hunter = 35,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 20,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/shocker = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/pepper = 10,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula = 10,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/ogre = 8,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/pit = 8,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing = 6
 				))
 	new spider_to_spawn(loc)
 	visible_message(SPAN_WARNING("A spider spews out of \The [src]"))

@@ -7,7 +7,7 @@
 	maxHealth = 120
 	health = 120
 	move_to_delay = 7
-	deathmessage = "glows violently as it dies!"
+	deathmessage = "pulses violently as it dies!"
 	melee_damage_lower = 12
 	melee_damage_upper = 15 //Rare
 

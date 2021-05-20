@@ -303,7 +303,7 @@
 	name = "GP-SI \"Posi-cell 400S\""
 	desc = "GP-SI branded rechargeable S-standardized power cell that recharges itself over time. This type has yet to hit the market!"
 	icon_state = "greyson_s_omega"
-	maxcharge = 500
+	maxcharge = 400
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 2)

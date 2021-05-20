@@ -157,7 +157,8 @@
 				prefix = "(Eye) "
 			else
 				prefix = "(Core) "
-		to_chat(t, "<span class='ooc'><span class='looc'>" + create_text_tag("looc", "LOOC:", t) + " <span class='prefix'>[prefix]</span><EM>[display_name][admin_stuff]:</EM> <span class='message'>[msg]</span></span></span>")
+		if(t.get_preference_value(/datum/client_preference/show_looc) == GLOB.PREF_SHOW)
+			to_chat(t, "<span class='ooc'><span class='looc'>" + create_text_tag("looc", "LOOC:", t) + " <span class='prefix'>[prefix]</span><EM>[display_name][admin_stuff]:</EM> <span class='message'>[msg]</span></span></span>")
 
 
 	for(var/client/adm in admins)	//Now send to all admins that weren't in range.
