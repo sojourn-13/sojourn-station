@@ -170,16 +170,16 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/zatvor
-	disk_name = "NM .257 bolt \"Zatvor\" rifle"
+	disk_name = "NM 7.5 bolt \"Zatvor\" rifle"
 	icon_state = "blackshield"
 	license = 8
 
 	designs = list(
 		/datum/design/autolathe/gun/zatvor = 3,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small = 2,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 3,
+		/datum/design/autolathe/ammo/rifle_ammobox_small = 2,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber = 2,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 3,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
@@ -364,7 +364,6 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox,
 		/datum/design/autolathe/ammo/shotgun_box = 3, //35 x 6 (210 shells well a full disk of 5 x 20 = 100)
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 3,
-		/datum/design/autolathe/ammo/mag_10x24 = 1,
 		/datum/design/autolathe/ammo/box_10x24 = 5,
 		/datum/design/autolathe/ammo/box_antim = 5,
 		)

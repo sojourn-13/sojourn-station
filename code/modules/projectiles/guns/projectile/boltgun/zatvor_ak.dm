@@ -6,8 +6,8 @@
 	item_state = "zatvor"
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
-	caliber = CAL_LRIFLE
-	max_shells = 30
+	caliber = CAL_RIFLE
+	max_shells = 20
 	damage_multiplier = 0.8
 	penetration_multiplier  = 1.0
 	slot_flags = SLOT_BELT|SLOT_BACK
