@@ -113,7 +113,7 @@
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
 
-/ojb/item/weapon/gun/projectile/boltgun/lever/handcock
+/obj/item/weapon/gun/projectile/boltgun/lever/handcock
 	name = "\"Handcock\" lever action rifle"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			The weapon's loading port seems skillfully enlarged to allow larger rounds to be loaded into the rifle of .06-06 caliber! \
