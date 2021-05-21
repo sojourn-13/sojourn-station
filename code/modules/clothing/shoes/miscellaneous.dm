@@ -145,6 +145,11 @@
 	icon_state = "lizardskin_shoes"
 	armor = list(melee = 20, bullet = 15, energy = 10, bomb = 10, bio = 10, rad = 0)
 
+/obj/item/clothing/shoes/church_blacksilk_boots
+	name = "blacksilk boots"
+	desc = "A pare of silk boots that is common to see in more faithful places."
+	icon_state = "church_blacksilk_boots"
+
 /*Flats*/
 
 /obj/item/clothing/shoes/flats
