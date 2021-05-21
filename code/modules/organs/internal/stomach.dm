@@ -15,4 +15,4 @@
 	price_tag = 100
 	nature = MODIFICATION_SILICON
 	matter = list(MATERIAL_STEEL = 1)
-	organ_efficiency = list(OP_STOMACH = 150)
+	organ_efficiency = list(OP_STOMACH = 100)
