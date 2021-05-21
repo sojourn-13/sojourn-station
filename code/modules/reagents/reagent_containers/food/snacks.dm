@@ -309,6 +309,7 @@
 	nutriment_amt = 8
 	nutriment_desc = list("apples" = 3,"salad" = 5)
 	preloaded_reagents = list("doctorsdelight" = 8, "tricordrazine" = 8)
+	matter = list(MATERIAL_BIOMATTER = 13)
 	bitesize = 3
 	cooked = TRUE
 
@@ -323,6 +324,7 @@
 	nutriment_amt = 1
 	nutriment_desc = list("candy" = 1)
 	preloaded_reagents = list("sugar" = 3)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/donor
 	name = "donor candy"
@@ -331,6 +333,7 @@
 	trash = /obj/item/trash/candy
 	nutriment_desc = list("candy" = 10)
 	preloaded_reagents = list("nutriment" = 10, "sugar" = 6)
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar
 	name = "protein bar"
@@ -339,6 +342,7 @@
 	trash = /obj/item/trash/candy/proteinbar
 	nutriment_amt = 9
 	nutriment_desc = list("nutriment" = 7, "protein" = 8)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/pistachios_pack
 	name = "pistachios pack"
@@ -348,6 +352,7 @@
 	nutriment_amt = 4
 	nutriment_desc = list("pistachios" = 3, "protein" = 2, "sodiumchloride" = 2)
 	preloaded_reagents = list("nutriment" = 1, "sodiumchloride" = 6)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/sunflowerseeds
 	name = "sunflower fried seed pack"
@@ -356,6 +361,7 @@
 	trash = /obj/item/trash/semki
 	nutriment_amt = 3
 	nutriment_desc = list("nutriment" = 2, "protein" = 1)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/energybar
 	name = "energy bar"
@@ -365,6 +371,7 @@
 	nutriment_amt = 1
 	nutriment_desc = list("nutriment" = 1, "sugar" = 29)
 	preloaded_reagents = list("nutriment" = 1, "sugar" = 29)
+	matter = list(MATERIAL_BIOMATTER = 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
@@ -387,6 +394,7 @@
 	center_of_mass = list("x"=15, "y"=15)
 	nutriment_amt = 3
 	nutriment_desc = list("salt" = 1, "chips" = 2)
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/gamerchips
 	name = "boritos crips packet"
@@ -398,6 +406,7 @@
 	center_of_mass = list("x"=15, "y"=15)
 	nutriment_amt = 3
 	nutriment_desc = list("cool ranch" = 2, "corn" = 1)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/cookie
 	name = "cookie"
@@ -464,6 +473,7 @@
 	nutriment_amt = 2
 	bitesize = 10
 	preloaded_reagents = list("sprinkles" = 1)
+	matter = list(MATERIAL_BIOMATTER = 12)
 	New()
 		..()
 		var/chaosselect = pick(1,2,3,4,5,6,7,8,9,10)
@@ -504,6 +514,7 @@
 	nutriment_amt = 3
 	bitesize = 5
 	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 5)
+	matter = list(MATERIAL_BIOMATTER = 4)
 	New()
 		..()
 		if(prob(30))
@@ -521,6 +532,7 @@
 	nutriment_amt = 3
 	bitesize = 5
 	preloaded_reagents = list("sprinkles" = 1, "slimejelly" = 5)
+	matter = list(MATERIAL_BIOMATTER = 4)
 	New()
 		..()
 		if(prob(30))
@@ -538,6 +550,7 @@
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_amt = 3
 	preloaded_reagents = list("sprinkles" = 1, "cherryjelly" = 5)
+	matter = list(MATERIAL_BIOMATTER = 4)
 	New()
 		..()
 		if(prob(30))
@@ -554,6 +567,7 @@
 	volume = 10
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("egg" = 3)
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/afterattack(obj/O as obj, mob/user as mob, proximity)
 	if(istype(O,/obj/machinery/microwave))
@@ -592,6 +606,7 @@
 	desc = "A clucker egg!"
 	icon_state = "egg"
 	filling_color = "#ffe6d1"
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/blue
 	icon_state = "egg-blue"
@@ -629,6 +644,7 @@
 	var/buff_time = 20 MINUTES
 	nutriment_amt = 3
 	preloaded_reagents = list("sprinkles" = 2)
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/stat_buff/On_Consume(var/mob/eater, var/mob/feeder = null)
 	..()
@@ -697,6 +713,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 3, "sodiumchloride" = 1, "blackpepper" = 1)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledegg
 	name = "boiled egg"
@@ -704,6 +721,7 @@
 	icon_state = "egg"
 	filling_color = "#FFFFFF"
 	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/tofu
 	name = "tofu"
@@ -714,6 +732,7 @@
 	center_of_mass = list("x"=17, "y"=10)
 	nutriment_amt = 3
 	nutriment_desc = list("tofu" = 3, "goeyness" = 3)
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/tofurkey
 	name = "tofurkey"
@@ -726,6 +745,7 @@
 	nutriment_desc = list("turkey" = 3, "tofu" = 5, "goeyness" = 4)
 	preloaded_reagents = list("stoxin" = 3)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 20)
 
 /obj/item/weapon/reagent_containers/food/snacks/stuffing
 	name = "stuffing"
@@ -736,6 +756,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_amt = 3
 	nutriment_desc = list("dryness" = 2, "bread" = 2)
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/fishfingers
 	name = "fish fingers"
@@ -745,6 +766,7 @@
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("protein" = 4, "carpotoxin" = 3)
+	matter = list(MATERIAL_BIOMATTER = 8)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/hugemushroomslice
@@ -757,6 +779,7 @@
 	nutriment_amt = 3
 	nutriment_desc = list("raw" = 2, "mushroom" = 2)
 	preloaded_reagents = list("psilocybin" = 3)
+	matter = list(MATERIAL_BIOMATTER = 11)
 
 /obj/item/weapon/reagent_containers/food/snacks/tomatomeat
 	name = "tomato slice"
@@ -767,6 +790,7 @@
 	center_of_mass = list("x"=17, "y"=16)
 	nutriment_amt = 3
 	nutriment_desc = list("raw" = 2, "tomato" = 3)
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/meatball
 	name = "meatball"
@@ -776,6 +800,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=16)
 	preloaded_reagents = list("protein" = 3)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/sausage
 	name = "sausage"
@@ -785,6 +810,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=16)
 	preloaded_reagents = list("protein" = 6)
+	matter = list(MATERIAL_BIOMATTER = 7)
 
 /obj/item/weapon/reagent_containers/food/snacks/donkpocket
 	name = "donk-pocket"
@@ -795,6 +821,7 @@
 	nutriment_desc = list("heartiness" = 1, "dough" = 2)
 	nutriment_amt = 2
 	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 	var/warm = 0
 	var/list/heated_reagents = list("tricordrazine" = 5)
@@ -844,6 +871,7 @@
 	center_of_mass = list("x"=15, "y"=11)
 	preloaded_reagents = list("protein" = 6, "alkysine" = 6)
 	bitesize = 2
+	matter = list(MATERIAL_BIOMATTER = 30)
 
 /obj/item/weapon/reagent_containers/food/snacks/human
 	var/hname = ""
@@ -857,6 +885,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=11)
 	preloaded_reagents = list("protein" = 6)
+	matter = list(MATERIAL_BIOMATTER = 16)
 
 /obj/item/weapon/reagent_containers/food/snacks/cheeseburger
 	name = "cheeseburger"
@@ -866,6 +895,7 @@
 	nutriment_desc = list("cheese" = 2, "bun" = 2)
 	nutriment_amt = 2
 	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 12)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeyburger
@@ -878,6 +908,7 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 3)
+	matter = list(MATERIAL_BIOMATTER = 13)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/fishburger
@@ -888,6 +919,7 @@
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("protein" = 6, "carpotoxin" = 3)
+	matter = list(MATERIAL_BIOMATTER = 14)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/tofuburger
@@ -899,6 +931,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("bun" = 2, "pseudo-soy meat" = 3)
 	nutriment_amt = 6
+	matter = list(MATERIAL_BIOMATTER = 12)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/roburger
@@ -910,6 +943,7 @@
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_desc = list("bun" = 2, "metal" = 3)
 	nutriment_amt = 2
+	matter = list(MATERIAL_BIOMATTER = 6)
 	New()
 		..()
 		if(prob(5))
@@ -923,6 +957,7 @@
 	bitesize = 0.1
 	volume = 100
 	center_of_mass = list("x"=16, "y"=11)
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 	New()
 		..()
@@ -935,7 +970,7 @@
 	icon_state = "xburger"
 	filling_color = "#43DE18"
 	center_of_mass = list("x"=16, "y"=11)
-
+	matter = list(MATERIAL_BIOMATTER = 13)
 	New()
 		..()
 		reagents.add_reagent("protein", 8)
@@ -950,6 +985,7 @@
 	center_of_mass = list("x"=17, "y"=12)
 	nutriment_desc = list("bun" = 2, "clown shoe" = 3)
 	nutriment_amt = 6
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/mimeburger
 	name = "mime burger"
@@ -960,6 +996,7 @@
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_desc = list("bun" = 2, "mime paint" = 3)
 	nutriment_amt = 6
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/kampferburger
 	name = "kampfer burger"
@@ -970,6 +1007,7 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 2
 	preloaded_reagents = list("protein" = 4)
+	matter = list(MATERIAL_BIOMATTER = 15)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/panzerburger
@@ -981,6 +1019,7 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 1
 	preloaded_reagents = list("protein" = 8)
+	matter = list(MATERIAL_BIOMATTER = 17)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/jagerburger
@@ -992,6 +1031,7 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 6)
+	matter = list(MATERIAL_BIOMATTER = 16)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/seucheburger
@@ -1003,6 +1043,7 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 2
 	preloaded_reagents = list("protein" = 4)
+	matter = list(MATERIAL_BIOMATTER = 16)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/bigroachburger
@@ -1014,6 +1055,7 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 8)
+	matter = list(MATERIAL_BIOMATTER = 35)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/fuhrerburger
@@ -1025,6 +1067,7 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 8, "Fuhrole" = 3)
+	matter = list(MATERIAL_BIOMATTER = 20)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/kaiserburger
@@ -1036,6 +1079,7 @@
 	nutriment_desc = list("bun" = 2)
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 10)
+	matter = list(MATERIAL_BIOMATTER = 50)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/omelette
@@ -1047,6 +1091,7 @@
 	bitesize = 1
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("protein" = 8)
+	matter = list(MATERIAL_BIOMATTER = 15)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/muffin
@@ -1058,6 +1103,7 @@
 	center_of_mass = list("x"=17, "y"=4)
 	nutriment_desc = list("sweetness" = 3, "muffin" = 3)
 	nutriment_amt = 6
+	matter = list(MATERIAL_BIOMATTER = 5)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/pie
@@ -1071,6 +1117,7 @@
 	nutriment_desc = list("pie" = 3, "cream" = 2)
 	nutriment_amt = 4
 	preloaded_reagents = list("banana" = 5)
+	matter = list(MATERIAL_BIOMATTER = 15)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/pie/throw_impact(atom/hit_atom)
@@ -1092,6 +1139,7 @@
 	nutriment_desc = list("sweetness" = 2, "pie" = 3)
 	nutriment_amt = 4
 	preloaded_reagents = list("berryjuice" = 5)
+	matter = list(MATERIAL_BIOMATTER = 12)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/waffles
@@ -1104,6 +1152,7 @@
 	nutriment_desc = list("waffle" = 8)
 	nutriment_amt = 8
 	bitesize = 2
+	matter = list(MATERIAL_BIOMATTER = 6)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/eggplantparm
@@ -1117,6 +1166,7 @@
 	nutriment_amt = 6
 	bitesize = 2
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/soylentgreen
 	name = "soylent green"
@@ -1128,6 +1178,7 @@
 	center_of_mass = list("x"=15, "y"=11)
 	preloaded_reagents = list("protein" = 10)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 25)
 
 /obj/item/weapon/reagent_containers/food/snacks/soylenviridians
 	name = "soylen virdians"
@@ -1140,6 +1191,7 @@
 	nutriment_desc = list("some sort of protein" = 10) //seasoned VERY well.
 	nutriment_amt = 10
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/meatpie
 	name = "meat-pie"
@@ -1150,6 +1202,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("protein" = 10)
+	matter = list(MATERIAL_BIOMATTER = 22)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/tofupie
@@ -1163,6 +1216,7 @@
 	nutriment_desc = list("tofu" = 2, "pie" = 8)
 	nutriment_amt = 10
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/amanita_pie
 	name = "amanita pie"
@@ -1175,6 +1229,7 @@
 	nutriment_amt = 5
 	preloaded_reagents = list("amatoxin" = 3, "psilocybin" = 1)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/plump_pie
 	name = "plump pie"
@@ -1186,12 +1241,14 @@
 	nutriment_desc = list("heartiness" = 2, "mushroom" = 3, "pie" = 3)
 	nutriment_amt = 8
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 12)
 	New()
 		..()
 		if(prob(10))
 			name = "exceptional plump pie"
 			desc = "Microwave is taken by a fey mood! It has cooked an exceptional plump pie!"
 			reagents.add_reagent("tricordrazine", 5)
+			matter = list(MATERIAL_BIOMATTER = 18)
 
 /obj/item/weapon/reagent_containers/food/snacks/xemeatpie
 	name = "xeno-pie"
@@ -1202,6 +1259,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("protein" = 10)
+	matter = list(MATERIAL_BIOMATTER = 18)
 
 /obj/item/weapon/reagent_containers/food/snacks/wingfangchu
 	name = "wing fang chu"
@@ -1212,6 +1270,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=17, "y"=9)
 	preloaded_reagents = list("protein" = 6)
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/human/kabob
 	name = "-kabob"
@@ -1222,6 +1281,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=17, "y"=15)
 	preloaded_reagents = list("protein" = 8)
+	matter = list(MATERIAL_BIOMATTER = 18)
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeykabob
 	name = "meat-kabob"
@@ -1232,6 +1292,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=17, "y"=15)
 	preloaded_reagents = list("protein" = 8)
+	matter = list(MATERIAL_BIOMATTER = 16)
 
 /obj/item/weapon/reagent_containers/food/snacks/tofukabob
 	name = "tofu-kabob"
@@ -1243,6 +1304,7 @@
 	center_of_mass = list("x"=17, "y"=15)
 	nutriment_desc = list("tofu" = 3, "metal" = 1)
 	nutriment_amt = 8
+	matter = list(MATERIAL_BIOMATTER = 12)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/cubancarp
@@ -1257,6 +1319,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 3, "carpotoxin" = 3, "capsaicin" = 3)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/popcorn
 	name = "popcorn"
@@ -1268,6 +1331,7 @@
 	center_of_mass = list("x"=16, "y"=8)
 	nutriment_desc = list("popcorn" = 3)
 	nutriment_amt = 2
+	matter = list(MATERIAL_BIOMATTER = 2)
 	bitesize = 0.1 //this snack is supposed to be eating during looooong time. And this it not dinner food! --rastaf0
 	New()
 		..()
@@ -1287,6 +1351,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=9)
 	preloaded_reagents = list("protein" = 4)
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/no_raisin
 	name = "4No Raisins"
@@ -1297,6 +1362,7 @@
 	center_of_mass = list("x"=15, "y"=4)
 	nutriment_desc = list("dried raisins" = 6)
 	nutriment_amt = 6
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/spacetwinkie
 	name = "Space Twinkie"
@@ -1306,6 +1372,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=11)
 	preloaded_reagents = list("sugar" = 4)
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers
 	name = "Cheesie Honkers"
@@ -1317,6 +1384,7 @@
 	center_of_mass = list("x"=15, "y"=9)
 	nutriment_desc = list("cheese" = 5, "chips" = 2)
 	nutriment_amt = 4
+	matter = list(MATERIAL_BIOMATTER = 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/syndicake
 	name = "syndi-cakes"
@@ -1329,6 +1397,7 @@
 	nutriment_amt = 4
 	trash = /obj/item/trash/syndi_cakes
 	preloaded_reagents = list("doctorsdelight" = 5)
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/loadedbakedpotato
 	name = "loaded baked potato"
@@ -1340,6 +1409,7 @@
 	nutriment_desc = list("baked potato" = 3)
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 3)
+	matter = list(MATERIAL_BIOMATTER = 12)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/fries
@@ -1352,6 +1422,7 @@
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_desc = list("fresh fries" = 4)
 	nutriment_amt = 4
+	matter = list(MATERIAL_BIOMATTER = 4)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/soydope
@@ -1364,6 +1435,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("slime" = 2, "soy" = 2)
 	nutriment_amt = 2
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/spagetti
 	name = "spaghetti"
@@ -1374,6 +1446,7 @@
 	center_of_mass = list("x"=16, "y"=16)
 	nutriment_desc = list("noodles" = 2)
 	nutriment_amt = 1
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/cheesyfries
 	name = "cheesy fries"
@@ -1387,6 +1460,7 @@
 	nutriment_amt = 4
 	preloaded_reagents = list("protein" = 2)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 7)
 
 /obj/item/weapon/reagent_containers/food/snacks/fortunecookie
 	name = "fortune cookie"
@@ -1416,6 +1490,7 @@
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("protein" = 4, "sodiumchloride" = 1, "blackpepper" = 1)
+	matter = list(MATERIAL_BIOMATTER = 11)
 	cooked = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/spacylibertyduff
@@ -1430,6 +1505,7 @@
 	nutriment_amt = 6
 	preloaded_reagents = list("psilocybin" = 6)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/amanitajelly
 	name = "amanita jelly"
@@ -1443,6 +1519,7 @@
 	nutriment_amt = 6
 	preloaded_reagents = list("amatoxin" = 6, "psilocybin" = 3)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/poppypretzel
 	name = "poppy pretzel"
@@ -1455,6 +1532,7 @@
 	nutriment_desc = list("poppy seeds" = 2, "pretzel" = 3)
 	nutriment_amt = 5
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/meatballsoup
 	name = "meatball soup"
@@ -1466,6 +1544,7 @@
 	center_of_mass = list("x"=16, "y"=8)
 	preloaded_reagents = list("protein" = 8, "water" = 5)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/slimesoup
 	name = "slime soup"
@@ -1474,6 +1553,7 @@
 	filling_color = "#C4DBA0"
 	bitesize = 5
 	preloaded_reagents = list("slimejelly" = 5, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/bloodsoup
 	name = "tomato soup"
@@ -1483,6 +1563,7 @@
 	bitesize = 5
 	center_of_mass = list("x"=16, "y"=7)
 	preloaded_reagents = list("protein" = 2, "blood" = 10, "water" = 5)
+	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/clownstears
 	name = "clown's tears"
@@ -1494,6 +1575,7 @@
 	nutriment_amt = 4
 	bitesize = 5
 	preloaded_reagents = list("banana" = 5, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/vegetablesoup
 	name = "vegetable soup"
@@ -1507,6 +1589,7 @@
 	bitesize = 5
 	preloaded_reagents = list("water" = 5)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/nettlesoup
 	name = "nettle soup"
@@ -1520,6 +1603,7 @@
 	bitesize = 5
 	preloaded_reagents = list("water" = 5, "tricordrazine" = 5)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 18)
 
 /obj/item/weapon/reagent_containers/food/snacks/mysterysoup
 	name = "mystery soup"
@@ -1539,36 +1623,46 @@
 				reagents.add_reagent("nutriment", 6)
 				reagents.add_reagent("capsaicin", 3)
 				reagents.add_reagent("tomatojuice", 2)
+				matter = list(MATERIAL_BIOMATTER = 17)
 			if(2)
 				reagents.add_reagent("nutriment", 6)
 				reagents.add_reagent("frostoil", 3)
 				reagents.add_reagent("tomatojuice", 2)
+				matter = list(MATERIAL_BIOMATTER = 19)
 			if(3)
 				reagents.add_reagent("nutriment", 5)
 				reagents.add_reagent("water", 5)
 				reagents.add_reagent("tricordrazine", 5)
+				matter = list(MATERIAL_BIOMATTER = 13)
 			if(4)
 				reagents.add_reagent("nutriment", 5)
 				reagents.add_reagent("water", 10)
+				matter = list(MATERIAL_BIOMATTER = 3)
 			if(5)
 				reagents.add_reagent("nutriment", 2)
 				reagents.add_reagent("banana", 10)
+				matter = list(MATERIAL_BIOMATTER = 19)
 			if(6)
 				reagents.add_reagent("nutriment", 6)
 				reagents.add_reagent("blood", 10)
+				matter = list(MATERIAL_BIOMATTER = 23)
 			if(7)
 				reagents.add_reagent("slimejelly", 10)
 				reagents.add_reagent("water", 10)
+				matter = list(MATERIAL_BIOMATTER = 18)
 			if(8)
 				reagents.add_reagent("carbon", 10)
 				reagents.add_reagent("toxin", 10)
+				matter = list(MATERIAL_BIOMATTER = 3)
 			if(9)
 				reagents.add_reagent("nutriment", 5)
 				reagents.add_reagent("tomatojuice", 10)
+				matter = list(MATERIAL_BIOMATTER = 20)
 			if(10)
 				reagents.add_reagent("nutriment", 6)
 				reagents.add_reagent("tomatojuice", 5)
 				reagents.add_reagent("imidazoline", 5)
+				matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/wishsoup
 	name = "wish Soup"
@@ -1585,6 +1679,7 @@
 		if(prob(25))
 			src.desc = "A wish come true!"
 			reagents.add_reagent("nutriment", 8, list("something good" = 8))
+			matter = list(MATERIAL_BIOMATTER = 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/hotchili
 	name = "hot chili"
@@ -1598,7 +1693,7 @@
 	bitesize = 5
 	preloaded_reagents = list("protein" = 3, "capsaicin" = 3, "tomatojuice" = 2)
 	cooked = TRUE
-
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/coldchili
 	name = "cold chili"
@@ -1612,6 +1707,7 @@
 	bitesize = 5
 	preloaded_reagents = list("protein" = 3, "frostoil" = 3, "tomatojuice" = 2)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 15)
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube
 	name = "monkey cube"
@@ -1621,7 +1717,7 @@
 	bitesize = 12
 	filling_color = "#ADAC7F"
 	center_of_mass = list("x"=16, "y"=14)
-
+	matter = list(MATERIAL_BIOMATTER = 20)
 	var/wrapped = FALSE
 	var/monkey_type = "Monkey"
 	preloaded_reagents = list("protein" = 10)
@@ -1644,6 +1740,7 @@
 	to_chat(user, "You unwrap the cube.")
 	wrapped = FALSE
 	reagent_flags |= REFILLABLE
+	matter = list(MATERIAL_BIOMATTER = 21)
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube/on_reagent_change()
 	if(reagents.has_reagent("water"))
@@ -1654,6 +1751,9 @@
 	icon_state = "monkeycubewrap"
 	reagent_flags = NONE
 	wrapped = TRUE
+
+/obj/item/weapon/reagent_containers/food/snacks/cube
+	matter = list(MATERIAL_BIOMATTER = 20)
 
 /obj/item/weapon/reagent_containers/food/snacks/cube/roach
 	name = "Roach Cube"
@@ -1893,6 +1993,7 @@
 	bitesize = 2
 	nutriment_desc = list("magic" = 3, "buns" = 3)
 	nutriment_amt = 6
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/bigbiteburger
 	name = "big bite burger"
@@ -1905,6 +2006,7 @@
 	nutriment_amt = 4
 	preloaded_reagents = list("protein" = 10)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 60)
 
 /obj/item/weapon/reagent_containers/food/snacks/enchiladas
 	name = "enchiladas"
@@ -1918,6 +2020,7 @@
 	nutriment_amt = 2
 	preloaded_reagents = list("protein" = 6, "capsaicin" = 6)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 15)
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeysdelight
 	name = "monkey's delight"
@@ -1929,6 +2032,7 @@
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("protein" = 10, "banana" = 5, "blackpepper" = 1, "sodiumchloride" = 1)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 33)
 
 /obj/item/weapon/reagent_containers/food/snacks/baguette
 	name = "baguette"
@@ -1941,6 +2045,7 @@
 	nutriment_amt = 6
 	preloaded_reagents = list("blackpepper" = 1, "sodiumchloride" = 1)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/fishandchips
 	name = "fish and chips"
@@ -1966,6 +2071,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 3)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/toastedsandwich
 	name = "toasted sandwich"
@@ -1979,6 +2085,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 3, "carbon" = 2)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 17)
 
 /obj/item/weapon/reagent_containers/food/snacks/toasted_guild_sandwich
 	name = "delux toasted sandwich"
@@ -1992,6 +2099,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 3, "machine binding ritual" = 3, "glucose" = 2)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 23)
 
 /obj/item/weapon/reagent_containers/food/snacks/grilledcheese
 	name = "grilled cheese sandwich"
@@ -2004,6 +2112,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 4)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 20)
 
 /obj/item/weapon/reagent_containers/food/snacks/tomatosoup
 	name = "tomato soup"
@@ -2017,6 +2126,7 @@
 	nutriment_amt = 5
 	preloaded_reagents = list("tomatojuice" = 10)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/rofflewaffles
 	name = "roffle waffles"
@@ -2030,6 +2140,7 @@
 	nutriment_amt = 8
 	preloaded_reagents = list("psilocybin" = 8)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/stew
 	name = "stew"
@@ -2042,6 +2153,7 @@
 	nutriment_amt = 6
 	preloaded_reagents = list("protein" = 4, "tomatojuice" = 5, "imidazoline" = 5, "water" = 5)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 17)
 
 /obj/item/weapon/reagent_containers/food/snacks/jelliedtoast
 	name = "jellied toast"
@@ -2053,6 +2165,7 @@
 	center_of_mass = list("x"=16, "y"=8)
 	nutriment_desc = list("toasted bread" = 2)
 	nutriment_amt = 1
+	matter = list(MATERIAL_BIOMATTER = 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/jelliedtoast/cherry
 	preloaded_reagents = list("cherryjelly" = 5)
@@ -2069,6 +2182,7 @@
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_desc = list("buns" = 5)
 	nutriment_amt = 5
+	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/jellyburger/slime
 	preloaded_reagents = list("slimejelly" = 5)
@@ -2087,6 +2201,7 @@
 	nutriment_amt = 8
 	preloaded_reagents = list("water" = 5)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/stewedsoymeat
 	name = "stewed soy meat"
@@ -2098,6 +2213,7 @@
 	nutriment_desc = list("soy" = 4, "tomato" = 4)
 	nutriment_amt = 8
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledspagetti
 	name = "boiled spaghetti"
@@ -2109,6 +2225,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("noodles" = 2)
 	nutriment_amt = 2
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledrice
 	name = "boiled rice"
@@ -2120,6 +2237,7 @@
 	center_of_mass = list("x"=17, "y"=11)
 	nutriment_desc = list("rice" = 2)
 	nutriment_amt = 2
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/ricepudding
 	name = "rice pudding"
@@ -2132,6 +2250,7 @@
 	nutriment_desc = list("rice" = 2)
 	nutriment_amt = 4
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/pastatomato
 	name = "spaghetti"
@@ -2145,6 +2264,7 @@
 	nutriment_amt = 6
 	preloaded_reagents = list("tomatojuice" = 10)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/meatballspagetti
 	name = "spaghetti & meatballs"
@@ -2158,6 +2278,7 @@
 	nutriment_amt = 4
 	preloaded_reagents = list("protein" = 4)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 18)
 
 /obj/item/weapon/reagent_containers/food/snacks/spesslaw
 	name = "spesslaw"
@@ -2170,6 +2291,7 @@
 	nutriment_amt = 4
 	preloaded_reagents = list("protein" = 4)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 28)
 
 /obj/item/weapon/reagent_containers/food/snacks/carrotfries
 	name = "carrot fries"
@@ -2183,6 +2305,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("imidazoline" = 3)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/superbiteburger
 	name = "super bite burger"
@@ -2195,6 +2318,7 @@
 	nutriment_amt = 25
 	preloaded_reagents = list("protein" = 25)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 40)
 
 /obj/item/weapon/reagent_containers/food/snacks/candiedapple
 	name = "candied apple"
@@ -2206,6 +2330,7 @@
 	nutriment_desc = list("apple" = 3, "caramel" = 3, "sweetness" = 2)
 	nutriment_amt = 3
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/applepie
 	name = "apple pie"
@@ -2217,6 +2342,7 @@
 	nutriment_desc = list("sweetness" = 2, "apple" = 2, "pie" = 2)
 	nutriment_amt = 4
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/cherrypie
 	name = "cherry pie"
@@ -2228,6 +2354,7 @@
 	nutriment_desc = list("sweetness" = 2, "cherry" = 2, "pie" = 2)
 	nutriment_amt = 4
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/twobread
 	name = "two bread"
@@ -2239,6 +2366,7 @@
 	nutriment_desc = list("sourness" = 2, "bread" = 2)
 	nutriment_amt = 2
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/jellysandwich
 	name = "jelly sandwich"
@@ -2250,6 +2378,7 @@
 	center_of_mass = list("x"=16, "y"=8)
 	nutriment_desc = list("bread" = 2)
 	nutriment_amt = 2
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/jellysandwich/slime
 	preloaded_reagents = list("slimejelly" = 5)
@@ -2263,6 +2392,7 @@
 	icon_state = "boiledslimecore" //nonexistant?
 	bitesize = 3
 	preloaded_reagents = list("slimejelly" = 5)
+	matter = list(MATERIAL_BIOMATTER = 33)
 
 /obj/item/weapon/reagent_containers/food/snacks/mint
 	name = "mint"
@@ -2272,6 +2402,7 @@
 	bitesize = 1
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("mint" = 1)
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/mushroomsoup
 	name = "chantrelle soup"
@@ -2284,6 +2415,7 @@
 	nutriment_desc = list("mushroom" = 8, "milk" = 2)
 	nutriment_amt = 8
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/plumphelmetbiscuit
 	name = "plump helmet biscuit"
@@ -2295,6 +2427,7 @@
 	nutriment_desc = list("mushroom" = 4)
 	nutriment_amt = 5
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 9)
 	New()
 		..()
 		if(prob(10))
@@ -2313,6 +2446,7 @@
 	center_of_mass = list("x"=17, "y"=10)
 	preloaded_reagents = list("protein" = 5)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/weapon/reagent_containers/food/snacks/beetsoup
 	name = "beet soup"
@@ -2324,6 +2458,7 @@
 	center_of_mass = list("x"=15, "y"=8)
 	nutriment_desc = list("tomato" = 4, "beet" = 4)
 	nutriment_amt = 8
+	matter = list(MATERIAL_BIOMATTER = 11)
 	cooked = TRUE
 	New()
 		..()
@@ -2340,6 +2475,7 @@
 	nutriment_amt = 8
 	bitesize = 3
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/validsalad
 	name = "valid salad"
@@ -2353,6 +2489,7 @@
 	bitesize = 3
 	preloaded_reagents = list("protein" = 2)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 19)
 
 /obj/item/weapon/reagent_containers/food/snacks/appletart
 	name = "golden apple streusel tart"
@@ -2366,6 +2503,7 @@
 	bitesize = 3
 	preloaded_reagents = list("gold" = 5)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 20)
 
 //mre food
 /obj/item/weapon/reagent_containers/food/snacks/mre
@@ -2382,6 +2520,7 @@
 	var/warm = FALSE
 	var/open = FALSE
 	var/list/heated_reagents = list("tricordrazine" = 5)
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/mre/attack_self(mob/user)
 	if(!open)
@@ -2428,6 +2567,7 @@
 	nutriment_amt = 5
 	preloaded_reagents = list("protein" = 6, "iron" = 2)
 	heated_reagents = list("bicaridine" = 5, "kelotane" = 5)
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/mre_paste
 	name = "nutrient paste"
@@ -2439,6 +2579,7 @@
 	bitesize = 2
 	nutriment_amt = 3
 	preloaded_reagents = list("hyperzine" = 2, "paracetamol" = 3)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/canned_peaches
 	name = "canned peaches"
@@ -2450,6 +2591,7 @@
 	bitesize = 2
 	nutriment_amt = 3
 	preloaded_reagents = list("sugar" = 2)
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/mre_cracker
 	name = "enriched cracker"
@@ -2461,6 +2603,7 @@
 	bitesize = 2
 	nutriment_amt = 1
 	preloaded_reagents = list("dexalin" = 1, "nicotine" = 1)
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy/mre
 	name = "morale bar"
@@ -2507,6 +2650,7 @@
 	nutriment_desc = list("bread" = 10)
 	nutriment_amt = 10
 	preloaded_reagents = list("protein" = 20)
+	matter = list(MATERIAL_BIOMATTER = 20)
 
 /obj/item/weapon/reagent_containers/food/snacks/meatbreadslice
 	name = "meatbread slice"
@@ -2518,6 +2662,7 @@
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("protein" = 4, "nutriment" = 2)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/xenomeatbread
 	name = "xenomeatbread loaf"
@@ -2531,6 +2676,7 @@
 	nutriment_desc = list("bread" = 10)
 	nutriment_amt = 10
 	preloaded_reagents = list("protein" = 20)
+	matter = list(MATERIAL_BIOMATTER = 20)
 
 /obj/item/weapon/reagent_containers/food/snacks/xenomeatbreadslice
 	name = "xenomeatbread slice"
@@ -2543,6 +2689,7 @@
 	nutriment_amt = 2
 	nutriment_desc = list("bread" = 2)
 	preloaded_reagents = list("protein" = 4)
+	matter = list(MATERIAL_BIOMATTER = 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/bananabread
 	name = "banana-nut bread"
@@ -2556,6 +2703,7 @@
 	nutriment_desc = list("bread" = 10)
 	nutriment_amt = 10
 	preloaded_reagents = list("banana" = 20)
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/bananabreadslice
 	name = "banana-nut bread slice"
@@ -2567,6 +2715,7 @@
 	center_of_mass = list("x"=16, "y"=8)
 	preloaded_reagents = list("banana" = 4, "nutriment" = 4)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/tofubread
 	name = "tofubread"
@@ -2579,6 +2728,7 @@
 	center_of_mass = list("x"=16, "y"=9)
 	nutriment_desc = list("tofu" = 10)
 	nutriment_amt = 30
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/tofubreadslice
 	name = "tofubread slice"
@@ -2604,6 +2754,7 @@
 	nutriment_desc = list("cake" = 10, "sweetness" = 10, "carrot" = 15)
 	nutriment_amt = 25
 	preloaded_reagents = list("imidazoline" = 10)
+	matter = list(MATERIAL_BIOMATTER = 25)
 
 /obj/item/weapon/reagent_containers/food/snacks/carrotcakeslice
 	name = "carrot cake slice"
@@ -2617,6 +2768,7 @@
 	nutriment_desc = list("cake" = 2, "sweetness" = 2, "carrot" = 3)
 	preloaded_reagents = list("imidazoline" = 2)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/braincake
 	name = "brain cake"
@@ -2630,6 +2782,7 @@
 	nutriment_amt = 5
 	bitesize = 2
 	preloaded_reagents = list("protein" = 25, "alkysine" = 10)
+	matter = list(MATERIAL_BIOMATTER = 60)
 
 /obj/item/weapon/reagent_containers/food/snacks/braincakeslice
 	name = "brain cake slice"
@@ -2640,6 +2793,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=12)
 	preloaded_reagents = list("protein" = 5, "nutriment" = 1, "alkysine" = 2)
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesecake
 	name = "cheese cake"
@@ -2653,6 +2807,7 @@
 	nutriment_amt = 10
 	bitesize = 2
 	preloaded_reagents = list("protein" = 15)
+	matter = list(MATERIAL_BIOMATTER = 25)
 
 /obj/item/weapon/reagent_containers/food/snacks/cheesecakeslice
 	name = "cheese cake slice"
@@ -2664,6 +2819,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 3, "nutriment" = 2)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/plaincake
 	name = "vanilla cake"
@@ -2675,6 +2831,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("cake" = 10, "sweetness" = 10, "vanilla" = 15)
 	nutriment_amt = 20
+	matter = list(MATERIAL_BIOMATTER = 20)
 
 /obj/item/weapon/reagent_containers/food/snacks/plaincakeslice
 	name = "vanilla cake slice"
@@ -2686,6 +2843,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("nutriment" = 4)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/orangecake
 	name = "orange cake"
@@ -2697,6 +2855,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("cake" = 10, "sweetness" = 10, "orange" = 15)
 	nutriment_amt = 20
+	matter = list(MATERIAL_BIOMATTER = 25)
 
 /obj/item/weapon/reagent_containers/food/snacks/orangecakeslice
 	name = "orange cake slice"
@@ -2708,6 +2867,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("nutriment" = 4)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/limecake
 	name = "lime cake"
@@ -2719,6 +2879,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("cake" = 10, "sweetness" = 10, "lime" = 15)
 	nutriment_amt = 20
+	matter = list(MATERIAL_BIOMATTER = 25)
 
 /obj/item/weapon/reagent_containers/food/snacks/limecakeslice
 	name = "lime cake slice"
@@ -2730,6 +2891,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("nutriment" = 4)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/lemoncake
 	name = "lemon cake"
@@ -2741,6 +2903,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("cake" = 10, "sweetness" = 10, "lemon" = 15)
 	nutriment_amt = 20
+	matter = list(MATERIAL_BIOMATTER = 25)
 
 /obj/item/weapon/reagent_containers/food/snacks/lemoncakeslice
 	name = "lemon cake slice"
@@ -2752,6 +2915,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("nutriment" = 4)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/chocolatecake
 	name = "chocolate cake"
@@ -2763,6 +2927,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("cake" = 10, "sweetness" = 10, "chocolate" = 15)
 	nutriment_amt = 20
+	matter = list(MATERIAL_BIOMATTER = 30)
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolatecakeslice
 	name = "chocolate cake slice"
@@ -2774,6 +2939,7 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("nutriment" = 4)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolatepiece
 	name = "chocolate piece"
@@ -2783,6 +2949,7 @@
 	nutriment_amt = 1
 	nutriment_desc = list("chocolate" = 3, "caramel" = 2, "lusciousness" = 1)
 	bitesize = 2
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolatepiece/white
 	name = "white chocolate piece"
@@ -2790,12 +2957,14 @@
 	icon_state = "chocolatepiece_white"
 	filling_color = "#E2DAD3"
 	nutriment_desc = list("white chocolate" = 3, "creaminess" = 1)
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolatepiece/truffle
 	name = "chocolate truffle"
 	desc = "A bite-sized milk chocolate truffle that could buy anyone's love."
 	icon_state = "chocolatepiece_truffle"
 	nutriment_desc = list("chocolate" = 3, "undying devotion" = 3)
+	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesewheel
 	name = "cheese wheel"
@@ -2809,6 +2978,7 @@
 	nutriment_desc = list("cheese" = 10)
 	nutriment_amt = 10
 	preloaded_reagents = list("protein" = 10)
+	matter = list(MATERIAL_BIOMATTER = 15)
 
 /obj/item/weapon/reagent_containers/food/snacks/cheesewedge
 	name = "cheese wedge"
@@ -2817,6 +2987,7 @@
 	filling_color = "#FFF700"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=10)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/birthdaycake
 	name = "birthday cake"
@@ -2830,6 +3001,7 @@
 	nutriment_desc = list("cake" = 10, "sweetness" = 10)
 	nutriment_amt = 20
 	preloaded_reagents = list("sprinkles" = 10)
+	matter = list(MATERIAL_BIOMATTER = 45)
 
 /obj/item/weapon/reagent_containers/food/snacks/birthdaycakeslice
 	name = "birthday cake slice"
@@ -2840,6 +3012,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("nutriment" = 4, "sprinkles" = 2)
+	matter = list(MATERIAL_BIOMATTER = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/bread
 	name = "bread"
@@ -2852,6 +3025,7 @@
 	center_of_mass = list("x"=16, "y"=9)
 	nutriment_desc = list("bread" = 6)
 	nutriment_amt = 6
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/breadslice
 	name = "bread slice"
@@ -2875,6 +3049,7 @@
 	nutriment_amt = 5
 	bitesize = 2
 	preloaded_reagents = list("protein" = 15)
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/creamcheesebreadslice
 	name = "cream cheese bread slice"
@@ -2886,6 +3061,7 @@
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("protein" = 3)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/watermelonslice
 	name = "watermelon slice"
@@ -2907,6 +3083,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("cake" = 10, "sweetness" = 10, "apple" = 15)
 	nutriment_amt = 15
+	matter = list(MATERIAL_BIOMATTER = 25)
 
 /obj/item/weapon/reagent_containers/food/snacks/applecakeslice
 	name = "apple cake slice"
@@ -2918,6 +3095,7 @@
 	nutriment_amt = 3
 	center_of_mass = list("x"=16, "y"=14)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pumpkinpie
 	name = "pumpkin pie"
@@ -2929,6 +3107,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("pie" = 5, "cream" = 5, "pumpkin" = 5)
 	nutriment_amt = 15
+	matter = list(MATERIAL_BIOMATTER = 25)
 
 /obj/item/weapon/reagent_containers/food/snacks/pumpkinpieslice
 	name = "pumpkin pie slice"
@@ -2940,6 +3119,7 @@
 	nutriment_amt = 3
 	center_of_mass = list("x"=16, "y"=12)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/cracker
 	name = "cracker"
@@ -2950,13 +3130,12 @@
 	nutriment_desc = list("salt" = 1, "cracker" = 2)
 	nutriment_amt = 1
 
-
-
 /////////////////////////////////////////////////PIZZA////////////////////////////////////////
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza
 	slices_num = 6
 	filling_color = "#BAA14C"
+	matter = list(MATERIAL_BIOMATTER = 25)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/margherita
 	name = "margherita"
@@ -2979,6 +3158,7 @@
 	center_of_mass = list("x"=18, "y"=13)
 	preloaded_reagents = list("nutriment" = 5, "protein" = 1, "tomatojuice" = 1)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/meatpizza
 	name = "meat pizza"
@@ -3001,6 +3181,7 @@
 	center_of_mass = list("x"=18, "y"=13)
 	preloaded_reagents = list("protein" = 7, "tomatojuice" = 1)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/mushroompizza
 	name = "mushroom pizza"
@@ -3023,6 +3204,7 @@
 	center_of_mass = list("x"=18, "y"=13)
 	preloaded_reagents = list("nutriment" = 5, "protein" = 1)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza
 	name = "vegetable pizza"
@@ -3045,6 +3227,7 @@
 	center_of_mass = list("x"=18, "y"=13)
 	preloaded_reagents = list("nutriment" = 4, "protein" = 1, "tomatojuice" = 1, "imidazoline" = 2)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/pizzabox
 	name = "pizza box"
@@ -3233,6 +3416,7 @@
 	nutriment_desc = list("dough" = 3)
 	nutriment_amt = 3
 	preloaded_reagents = list("protein" = 1)
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 // Dough + rolling pin = flat dough
 /obj/item/weapon/reagent_containers/food/snacks/dough/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -3251,6 +3435,7 @@
 	slices_num = 3
 	center_of_mass = list("x"=16, "y"=16)
 	preloaded_reagents = list("protein" = 1, "nutriment" = 3)
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/doughslice
 	name = "dough slice"
@@ -3263,6 +3448,7 @@
 	center_of_mass = list("x"=17, "y"=19)
 	nutriment_desc = list("dough" = 1)
 	nutriment_amt = 1
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/bun
 	name = "bun"
@@ -3273,6 +3459,7 @@
 	center_of_mass = list("x"=16, "y"=12)
 	nutriment_desc = list("bun" = 4)
 	nutriment_amt = 4
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/bun/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	// Bun + meatball = burger
@@ -3328,6 +3515,7 @@
 	nutriment_amt = 4
 	preloaded_reagents = list("protein" = 3)
 	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/weapon/reagent_containers/food/snacks/rawcutlet
 	name = "raw cutlet"
@@ -3347,6 +3535,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=17, "y"=20)
 	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/rawmeatball
 	name = "raw meatball"
@@ -3356,6 +3545,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=15)
 	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/hotdog
 	name = "hotdog"
@@ -3364,6 +3554,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=17)
 	preloaded_reagents = list("protein" = 6)
+	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/flatbread
 	name = "flatbread"
@@ -3374,6 +3565,7 @@
 	center_of_mass = list("x"=16, "y"=16)
 	nutriment_desc = list("bread" = 3)
 	nutriment_amt = 3
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 // potato + knife = raw sticks
 /obj/item/weapon/reagent_containers/food/snacks/grown/potato/attackby(obj/item/I, mob/user)
@@ -3394,6 +3586,7 @@
 	center_of_mass = list("x"=16, "y"=12)
 	nutriment_desc = list("raw potato" = 3)
 	nutriment_amt = 3
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/liquidfood
 	name = "\improper liquidfood ration"
@@ -3406,6 +3599,7 @@
 	nutriment_desc = list("chalk" = 6)
 	nutriment_amt = 20
 	preloaded_reagents = list("iron" = 3)
+	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/tastybread
 	name = "bread tube"
@@ -3417,6 +3611,7 @@
 	center_of_mass = list("x"=17, "y"=16)
 	nutriment_desc = list("bread" = 2, "sweetness" = 3)
 	nutriment_amt = 6
+	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/organ
 	name = "organ"
@@ -3426,6 +3621,7 @@
 	filling_color = "#E00D34"
 	bitesize = 3
 	nutriment_amt = 5
+	matter = list(MATERIAL_BIOMATTER = 15)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy_drop_blue
 	name = "\improper red gum stick"
@@ -3436,6 +3632,7 @@
 	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
 	nutriment_amt = 0
 	preloaded_reagents = list("gum drops" = 3)
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/candy_drop_red
 	name = "\improper blue gum stick"
@@ -3446,3 +3643,4 @@
 	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
 	nutriment_amt = 0
 	preloaded_reagents = list("gum drops" = 5, "hacker" = 15)
+	matter = list(MATERIAL_BIOMATTER = 12)
