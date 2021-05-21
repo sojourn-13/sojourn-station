@@ -42,7 +42,7 @@
 /datum/ritual/cruciform/base/flare
 	name = "Holy Light"
 	phrase = "Lucerna pedibus meis verbum tuum, et lumen semitis meis."
-	desc = "Litany of pilgrims that creates a small light for some time."
+	desc = "Litany of pilgrims that creates a small light for about half an hour."
 	power = 30 //Cheap but not too cheap. Pretty powerful to light up a location for 30 mins.
 
 /datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
