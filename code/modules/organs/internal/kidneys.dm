@@ -31,7 +31,7 @@
 	price_tag = 100
 	nature = MODIFICATION_SILICON
 	matter = list(MATERIAL_STEEL = 1)
-	organ_efficiency = list(OP_KIDNEYS = 150)
+	organ_efficiency = list(OP_KIDNEYS = 50)
 
 /obj/item/organ/internal/kidney/left
 /obj/item/organ/internal/kidney/right
