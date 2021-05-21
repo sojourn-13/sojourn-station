@@ -35,9 +35,10 @@
 
 /obj/structure/reagent_dispensers/bidon/singluar/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/weapon/tool/multitool))
-		if(!timer_till_mixing)
+		if(!timing)
 			to_chat(user, SPAN_NOTICE("You start the timer."))
 			timing = TRUE
+			ticktock()
 			return
 	else
 		. = ..()
@@ -45,14 +46,16 @@
 
 /obj/structure/reagent_dispensers/bidon/singluar/proc/timer_end()
 	reagent_flags &= ~(NO_REACT)
-	sleep(5)
+	spawn(10)
 	reagent_flags |= NO_REACT
 
-/obj/structure/reagent_dispensers/bidon/singluar/Process()
+/obj/structure/reagent_dispensers/bidon/singluar/proc/ticktock()
 	if(timing && (timer_till_mixing > 0))
 		timer_till_mixing--
+		spawn(10)
+		ticktock()
 	if(timing && timer_till_mixing <= 0)
-		timing = 0
+		timing = FALSE
 		timer_end()
 		timer_till_mixing = 120
 
