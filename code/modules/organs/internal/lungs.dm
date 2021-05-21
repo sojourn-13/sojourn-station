@@ -21,6 +21,7 @@
 
 /obj/item/organ/internal/lungs/prosthetic
 	name = "prosthetic lungs"
+	desc = "Lungs made out of metal. Still work just as well as normal lungs."
 	icon_state = "lungs-prosthetic"
 	price_tag = 100
 	nature = MODIFICATION_SILICON

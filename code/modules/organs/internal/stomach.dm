@@ -11,6 +11,7 @@
 
 /obj/item/organ/internal/stomach/prosthetic
 	name = "prosthetic stomach"
+	desc = "A metal stomach, work just as well as a normal one."
 	//icon_state = "stomach-prosthetic" // No prosthetic stomach sprites.
 	price_tag = 100
 	nature = MODIFICATION_SILICON
