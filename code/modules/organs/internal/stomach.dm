@@ -8,3 +8,11 @@
 	max_blood_storage = 25
 	oxygen_req = 5
 	w_class = ITEM_SIZE_SMALL
+
+/obj/item/organ/internal/stomach/prosthetic
+	name = "prosthetic stomach"
+	//icon_state = "stomach-prosthetic" // No prosthetic stomach sprites.
+	price_tag = 100
+	nature = MODIFICATION_SILICON
+	matter = list(MATERIAL_STEEL = 1)
+	organ_efficiency = list(OP_STOMACH = 150)

@@ -1,5 +1,6 @@
 /obj/item/organ/internal/eyes
 	name = "eyeballs"
+	desc = "Eyes. They allow you to see."
 	icon_state = "eyes"
 	gender = PLURAL
 	organ_efficiency = list(OP_EYES = 100)
@@ -16,6 +17,7 @@
 
 /obj/item/organ/internal/eyes/prosthetic
 	name = "prosthetic eyes"
+	desc = "Eyes. They allow you to see. These one are made of metal."
 	icon_state = "eyes-prosthetic"
 	price_tag = 100
 	nature = MODIFICATION_SILICON

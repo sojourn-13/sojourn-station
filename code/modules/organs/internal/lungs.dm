@@ -18,3 +18,10 @@
 	organ_efficiency = list(OP_LUNGS = 133)
 	specific_organ_size = 3
 	breath_modulo = 8
+
+/obj/item/organ/internal/lungs/prosthetic
+	name = "prosthetic lungs"
+	icon_state = "lungs-prosthetic"
+	price_tag = 100
+	nature = MODIFICATION_SILICON
+	matter = list(MATERIAL_STEEL = 1)
