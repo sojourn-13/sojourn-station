@@ -166,3 +166,8 @@ the lims and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/modules/hud/night_bio
 	build_path = /obj/item/weapon/biogoop/night
 	name = "Embedded bio-night vision shades"
+
+// Bone Reinforcement
+/datum/design/research/item/mechfab/modules/bone_brace
+	build_path =/obj/item/bone_brace
+	name = "Bone Brace"
