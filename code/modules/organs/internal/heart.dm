@@ -17,7 +17,7 @@
 
 /obj/item/organ/internal/heart/prosthetic
 	name = "prosthetic heart"
-	desc = "synth board for drums."
+	desc = "A metal heart, doesn't beat like a normal heart, but do the same job."
 	icon_state = "heart-prosthetic"
 	dead_icon = "heart-prosthetic"
 	price_tag = 100
