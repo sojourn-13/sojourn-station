@@ -1815,7 +1815,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/cube/panzer/on_reagent_change()
 	if(reagents.has_reagent("blood"))
 		Expand()
-
+/*
 /obj/item/weapon/reagent_containers/food/snacks/cube/elektromagnetisch
 	name = "Elektromagnetisch Cube"
 	desc = "Just add Blood!"
@@ -1838,7 +1838,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/cube/elektromagnetisch/on_reagent_change()
 	if(reagents.has_reagent("blood"))
 		Expand()
-
+*/
 /obj/item/weapon/reagent_containers/food/snacks/cube/glowing
 	name = "Gluhend Cube"
 	desc = "Just add Blood!"
