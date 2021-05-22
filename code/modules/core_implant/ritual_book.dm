@@ -4,7 +4,7 @@
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book"
 	var/has_reference = FALSE
-
+	slot_flags = SLOT_BELT
 	var/expanded_group = null
 	var/current_category = "Common"
 	var/reference_mode = FALSE
