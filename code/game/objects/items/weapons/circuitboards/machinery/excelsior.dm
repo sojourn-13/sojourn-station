@@ -38,7 +38,7 @@
 
 /obj/item/weapon/circuitboard/diesel
 	name = "circuit board diesel generator"
-	build_name = " "
+	build_name = ""
 	build_path = /obj/machinery/power/port_gen/pacman/diesel
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 3, TECH_POWER = 3, TECH_PLASMA = 3, TECH_ENGINEERING = 3, TECH_ILLEGAL = 2)
@@ -51,7 +51,7 @@
 
 /obj/item/weapon/circuitboard/excelsior_boombox
 	name = "circuit board excelsior boombox"
-	build_name = " "
+	build_name = ""
 	build_path = /obj/machinery/excelsior_boombox
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 3, TECH_ILLEGAL = 1)
