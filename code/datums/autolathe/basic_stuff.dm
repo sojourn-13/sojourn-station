@@ -30,14 +30,6 @@
 	name = "tape recorder"
 	build_path = /obj/item/device/taperecorder
 
-/datum/design/autolathe/misc/tube
-	name = "light tube"
-	build_path = /obj/item/weapon/light/tube
-
-/datum/design/autolathe/misc/bulb
-	name = "light bulb"
-	build_path = /obj/item/weapon/light/bulb
-
 /datum/design/autolathe/misc/ashtray
 	name = "glass ashtray"
 	build_path = /obj/item/weapon/material/ashtray
@@ -49,3 +41,27 @@
 /datum/design/autolathe/misc/bodybag
 	name = "body bag"
 	build_path = /obj/item/bodybag
+
+/datum/design/autolathe/misc/tube
+	name = "light tube"
+	build_path = /obj/item/weapon/light/tube
+
+/datum/design/autolathe/misc/tube_large
+	name = "large light tube"
+	build_path = /obj/item/weapon/light/tube/large
+
+/datum/design/autolathe/misc/tube_powersaver
+	name = "Artificer \"Power Cord\" light tube"
+	build_path = /obj/item/weapon/light/tube/power_saver
+
+/datum/design/autolathe/misc/bulb
+	name = "light bulb"
+	build_path = /obj/item/weapon/light/bulb
+
+/datum/design/autolathe/misc/bulb_powersaver
+	name = "Artificer \"Power Cord\" light bulb"
+	build_path = /obj/item/weapon/light/bulb/power_saver
+
+/datum/design/autolathe/misc/bulb_spot
+	name = "Artificer \"Seer\" light bulb"
+	build_path = /obj/item/weapon/light/bulb/spotlight
