@@ -259,7 +259,7 @@ obj/item/clothing/suit/fluff/kimono
 
 /obj/item/clothing/suit/blacksilk
 	name = "blacksilk tabard"
-	desc = "A somewhat revealing ivory tabard favored by older orders for ceremony, used often for funerals and coupled with light under clothes."
+	desc = "A somewhat revealing black and gold tabard favored by older orders for ceremony, used often for funerals and coupled with light under clothes."
 	icon_state = "church_blacksilk_suit"
 	item_state = "church_blacksilk_suit"
 
