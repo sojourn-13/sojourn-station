@@ -171,10 +171,10 @@
 /datum/sanity/proc/pick_desires()
 	desires.Cut()
 	var/list/candidates = list(
-		INSIGHT_DESIRE_FOOD,
-		INSIGHT_DESIRE_ALCOHOL,
-		INSIGHT_DESIRE_SMOKING,
-		INSIGHT_DESIRE_DRUGS,
+		INSIGHT_DESIRE_FOOD = 3,
+		INSIGHT_DESIRE_ALCOHOL = 3,
+		INSIGHT_DESIRE_SMOKING = 1,
+		INSIGHT_DESIRE_DRUGS = 2,
 	)
 	for(var/i = 0; i < INSIGHT_DESIRE_COUNT; i++)
 		var/desire = pick_n_take(candidates)
