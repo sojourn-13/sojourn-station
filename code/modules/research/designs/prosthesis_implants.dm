@@ -19,6 +19,11 @@
 /datum/design/research/item/mechfab/prosthesis/groin
 	build_path = /obj/item/organ/external/robotic/groin
 
+// Bone Reinforcement
+/datum/design/research/item/mechfab/prosthesis/bone_brace
+	build_path =/obj/item/bone_brace
+	name = "Bone Brace"
+
 //Upgraded prosthesis ========================
 /datum/design/research/item/mechfab/prosthesis_moebius
 	category = CAT_PROSTHESIS
