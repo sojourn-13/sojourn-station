@@ -27,7 +27,7 @@
 
 /obj/item/organ/internal/kidney/prosthetic
 	name = "prosthetic kidneys"
-	desc = "Prosthetic kindeys, doesn't work as well as the real deal.
+	desc = "Prosthetic kindeys, doesn't work as well as the real deal."
 	icon_state = "kidneys-prosthetic"
 	price_tag = 100
 	nature = MODIFICATION_SILICON
