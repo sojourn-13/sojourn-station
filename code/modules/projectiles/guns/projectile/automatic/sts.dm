@@ -166,6 +166,7 @@
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
+	w_class = ITEM_SIZE_BULKY
 	penetration_multiplier = 0.8
 	damage_multiplier = 1
 	recoil_buildup = 20
