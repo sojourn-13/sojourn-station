@@ -39,6 +39,32 @@
 	H.adjustToxLoss(5)
 	return TRUE
 
+/datum/ritual/cruciform/base/glow_book
+	name = "Word of Guidance"
+	phrase = "Legem pone mihi, Domine, in via tua, et dirige me in semitam rectam, propter inimicos meos."
+	desc = "A prayer to light your way. It makes the ritual book you're holding glow brightly for fifteen minutes. "
+	power = 15
+	cooldown = TRUE
+	cooldown_time = 15 MINUTES
+	cooldown_category = "bglow"
+
+/datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+	var/successful = FALSE
+	var/list/people_around = list()
+	if (istype(H.get_active_hand(), /obj/item/weapon/book/ritual/cruciform))
+		var/obj/item/weapon/book/ritual/cruciform/M = H.get_active_hand()
+		M.light_range = 5 //Slightly better than as a lantern since you can only hold it in hand or within the belt slot.
+		playsound(H.loc, 'sound/ambience/ambicha2.ogg', 50, 1)
+		for(var/mob/living/carbon/human/participant in people_around)
+			to_chat(participant, SPAN_NOTICE("The ritual book [H] is holding begins to glow with holy light!"))
+		to_chat(H, SPAN_NOTICE("The ritual book you are holding begins to glow with holy light!"))
+		spawn(9000) M.light_range = initial(M.light_range)
+		successful = TRUE
+		set_personal_cooldown(H)
+	else
+		to_chat(H, SPAN_DANGER("You need to be holding a ritual book to perfom this rite."))
+	return successful
+
 /datum/ritual/cruciform/base/flare
 	name = "Holy Light"
 	phrase = "Lucerna pedibus meis verbum tuum, et lumen semitis meis."
