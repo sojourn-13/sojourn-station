@@ -79,9 +79,9 @@
 		/datum/design/autolathe/ammo/rifle_short_hv,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/sl_rifle,						//boltgun ammo
-		/datum/design/autolathe/ammo/lrifle,						//AK ammo
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/rifle,						//AK ammo
+		/datum/design/autolathe/ammo/rifle_short_rubber,
+		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/pistol_35_drum,				//ppsh
 		/datum/design/autolathe/ammo/pistol_35_drum/empty,
 		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
@@ -142,9 +142,9 @@
 		/datum/design/autolathe/ammo/smg,							//drozd ammo
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/sl_rifle,						//boltgun ammo
-		/datum/design/autolathe/ammo/lrifle,						//AK ammo
-		/datum/design/autolathe/ammo/lrifle_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/rifle,						//AK ammo
+		/datum/design/autolathe/ammo/rifle_rubber,
+		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/rifle,							//vintorez ammo
 		/datum/design/autolathe/ammo/rifle_short_hv,
 		/datum/design/autolathe/ammo/lrifle_ammobox,				//ppsh
@@ -255,9 +255,9 @@
 	license = -1
 	designs = list(
 		/datum/design/autolathe/gun/ak47,
-		/datum/design/autolathe/ammo/lrifle,						//AK ammo
-		/datum/design/autolathe/ammo/lrifle_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/ammo/rifle,						//AK ammo
+		/datum/design/autolathe/ammo/rifle_rubber,
+		/datum/design/autolathe/ammo/rifle_ammobox,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer

@@ -6,13 +6,13 @@
 	item_state = "zatvor"
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
-	caliber = CAL_LRIFLE
-	max_shells = 30
+	caliber = CAL_RIFLE
+	max_shells = 20
 	damage_multiplier = 0.8
 	penetration_multiplier  = 1.0
 	slot_flags = SLOT_BELT|SLOT_BACK
 	recoil_buildup = 10
-	price_tag = 600
+	price_tag = 500
 	one_hand_penalty = 15
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 20, MATERIAL_WOOD = 5)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)

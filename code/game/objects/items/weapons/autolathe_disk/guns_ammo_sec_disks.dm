@@ -170,16 +170,17 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/zatvor
-	disk_name = "NM .257 bolt \"Zatvor\" rifle"
+	disk_name = "NM 7.5 bolt \"Zatvor\" rifle"
 	icon_state = "blackshield"
 	license = 8
 
 	designs = list(
 		/datum/design/autolathe/gun/zatvor = 3,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small = 2,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 3,
+		/datum/design/autolathe/ammo/rifle_ammobox_small = 2,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber = 2,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 3,
+		/datum/design/autolathe/ammo/sl_rifle = 2,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
@@ -803,23 +804,6 @@
 
 // .257
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov
-	disk_name = "SA - .257 Kalashnikov Rifle"
-	icon_state = "ironhammer"
-
-	license = 16
-	designs = list(
-		/datum/design/autolathe/gun/ak47_sa = 6,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short,
-		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/lrifle_practice = 1,
-		/datum/design/autolathe/ammo/lrifle_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle = 2,
-		/datum/design/autolathe/ammo/lrifle_lethal = 4,
-	)
-
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/saw
 	disk_name = "SA - .257 Pegasus LMG"
 	icon_state = "ironhammer"
@@ -859,24 +843,42 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
+
+// 7.5 Rifles
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov
+	disk_name = "SA - 7.5 Kalashnikov Rifle"
+	icon_state = "ironhammer"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/ak47_sa = 6,
+		/datum/design/autolathe/ammo/rifle_short_practice = 0,
+		/datum/design/autolathe/ammo/rifle_short_rubber,
+		/datum/design/autolathe/ammo/rifle_short,
+		/datum/design/autolathe/ammo/rifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/rifle_practice = 1,
+		/datum/design/autolathe/ammo/rifle_rubber = 2,
+		/datum/design/autolathe/ammo/rifle = 2,
+		/datum/design/autolathe/ammo/rifle_lethal = 4,
+	)
+
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bren
-	disk_name = "No-Publisher - .257 \"Kalashnabren\""
+	disk_name = "No-Publisher - 7.5 \"Kalashnabren\""
 	icon_state = "black"
 
 	license = 16
 	designs = list(
 		/datum/design/autolathe/gun/bren = 6,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short,
-		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/lrifle_practice = 1,
-		/datum/design/autolathe/ammo/lrifle_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle = 2,
-		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+		/datum/design/autolathe/ammo/rifle_short_practice = 0,
+		/datum/design/autolathe/ammo/rifle_short_rubber,
+		/datum/design/autolathe/ammo/rifle_short,
+		/datum/design/autolathe/ammo/rifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/rifle_practice = 1,
+		/datum/design/autolathe/ammo/rifle_rubber = 2,
+		/datum/design/autolathe/ammo/rifle = 2,
+		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
-
-// 7.5 Rifles
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/boltgun_sa
 	disk_name = "SA - 7.5mm Novakovic Rifle"
