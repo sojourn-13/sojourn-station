@@ -3,12 +3,11 @@
 	desc = "Contains all the rituals a disciple needs."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book"
+	slot_flags = SLOT_BELT
 	var/has_reference = FALSE
-
 	var/expanded_group = null
 	var/current_category = "Common"
 	var/reference_mode = FALSE
-
 
 /obj/item/weapon/book/ritual/attack_self(mob/living/carbon/human/H)
 	playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg',\
