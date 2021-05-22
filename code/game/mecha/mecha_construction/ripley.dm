@@ -221,7 +221,7 @@
 						"[usr] removes the wiring from [holder].", \
 						"You remove the wiring from [holder]."
 					)
-					new /obj/item/stack/cable_coil (get_turf(holder), 4)
+					new /obj/item/stack/cable_coil (get_turf(holder), 5)
 					holder.icon_state = "ripley2"
 			if(14)
 				if(diff==FORWARD)
