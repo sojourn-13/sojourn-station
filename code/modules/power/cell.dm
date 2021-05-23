@@ -181,10 +181,10 @@
 /obj/item/weapon/cell/proc/explode()
 	var/turf/T = get_turf(src.loc)
 /*
- * 1000-cell	explosion(T, -1, 0, 1, 1)
- * 2500-cell	explosion(T, -1, 0, 1, 1)
- * 10000-cell	explosion(T, -1, 1, 3, 3)
- * 15000-cell	explosion(T, -1, 2, 4, 4)
+ * 1000-cell	explosion(T, 0, 0, 1, 1)
+ * 2500-cell	explosion(T, 0, 0, 1, 1)
+ * 10000-cell	explosion(T, 0, 1, 3, 3)
+ * 15000-cell	explosion(T, 0, 2, 4, 4)
  * */
 	if (charge==0)
 		return

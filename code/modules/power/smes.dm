@@ -394,7 +394,7 @@
 			smoke.set_up(3, 0, src.loc)
 			smoke.attach(src)
 			smoke.start()
-			explosion(src.loc, -1, 0, 1, 3, 1, 0)
+			explosion(src.loc, 0, 0, 1, 3, 1, 0)
 			qdel(src)
 			return
 		else if(prob(15)) //Power drain

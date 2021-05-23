@@ -44,6 +44,6 @@
 	else if (reagents.total_volume > 50)
 		explosion(src.loc,0,1,3)
 	else if (reagents.total_volume > 0)
-		explosion(src.loc,-1,1,2)
+		explosion(src.loc,0,1,2)
 	if(src)
 		qdel(src)

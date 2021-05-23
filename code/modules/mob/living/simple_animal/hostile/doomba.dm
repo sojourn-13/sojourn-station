@@ -113,7 +113,7 @@
 	. = ..()
 	if(.) // If we succeeded in hitting.
 		src.visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
-		explosion(get_turf(loc), -1, -1, 2, 3)
+		explosion(get_turf(loc), 0, 0, 2, 3)
 		death()
 
 /mob/living/simple_animal/hostile/roomba/gun_ba
