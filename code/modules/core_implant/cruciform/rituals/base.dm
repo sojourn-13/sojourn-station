@@ -58,7 +58,7 @@
 			SPAN_NOTICE("The ritual book [H] is holding begins to emit light."),
 			SPAN_NOTICE("The ritual book you're holding begins to glow brightly.")
 		)
-		spawn(100) M.light_range = initial(M.light_range)
+		spawn(9000) M.light_range = initial(M.light_range)
 		successful = TRUE
 		set_personal_cooldown(H)
 	else
