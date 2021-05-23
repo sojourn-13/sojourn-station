@@ -206,6 +206,7 @@
 	H.adjustOxyLoss(-20)
 	H.adjustBrainLoss(-5)
 	H.updatehealth()
+	set_personal_cooldown(H)
 	return TRUE
 
 /datum/ritual/cruciform/monomial/perfect_self
