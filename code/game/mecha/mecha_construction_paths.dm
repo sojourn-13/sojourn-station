@@ -25,7 +25,7 @@
 
 	else if(istype(used_atom, /obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/C = used_atom
-		if(C.use(4)) //We use 4 coils. no idea why
+		if(C.use(5)) //We use 5 coils. no idea why
 			playsound(holder, 'sound/items/Deconstruct.ogg', 50, 1)
 		else
 			to_chat(user, ("There's not enough cable to finish the task."))

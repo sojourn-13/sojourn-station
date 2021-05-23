@@ -252,7 +252,6 @@ SUBSYSTEM_DEF(ticker)
 		generate_excel_contracts(min(6 + round(minds.len / 5), 12))
 		generate_blackshield_contracts(min(6 + round(minds.len / 5), 12))
 		excel_check()
-		blackshield_check()
 		addtimer(CALLBACK(src, .proc/contract_tick), 15 MINUTES)
 	//start_events() //handles random events and space dust.
 	//new random event system is handled from the MC.
@@ -404,9 +403,6 @@ SUBSYSTEM_DEF(ticker)
 				candidates -= contract_type
 			break
 
-/datum/controller/subsystem/ticker/proc/blackshield_check()
-	addtimer(CALLBACK(src, .proc/blackshield_check), 3 MINUTES)
-
 /datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 	var/list/candidates = subtypesof(/datum/antag_contract/excel)
 	while(count--)
@@ -439,7 +435,7 @@ SUBSYSTEM_DEF(ticker)
 		var/marked_areas = 0
 		if(M.completed)
 			return
-		for (var/obj/item/device/propaganda_chip/C in world)
+		for (var/obj/item/device/propaganda_chip/C in ship_areas)
 			if (C.active)
 				if (get_area(C) in targets)
 					marked_areas += 1

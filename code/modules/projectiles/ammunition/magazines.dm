@@ -369,6 +369,7 @@
 
 /obj/item/ammo_magazine/rifle_75_linked_box
 	name = "linked ammunition box (7.5mm Rifle)"
+	desc = "A 100 round linked box marked for 7.5mm Rifle."
 	icon_state = "pk_box"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -411,6 +412,7 @@
 ///easiest to make it a child
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257
 	name = "linked ammunition box (.257 Carbine)"
+	desc = "A 100 round linked box marked for .257 Carbine."
 	icon_state = "pk_box"
 	caliber = CAL_LRIFLE
 	ammo_type = /obj/item/ammo_casing/light_rifle_257
@@ -422,6 +424,7 @@
 
 /obj/item/ammo_magazine/maxim_75
 	name = "pan magazine (7.5mm Rifle)"
+	desc = "A 96 round pan magazine marked for 7.5mm Rifle."
 	icon_state = "maxim"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PAN
@@ -565,6 +568,7 @@
 
 /obj/item/ammo_magazine/speed_loader_pistol_35
 	name = "speed loader (.35 Special)"
+	desc = "A 6 round speed loader marked for .35 Auto."
 	icon_state = "slpistol_l"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_PISTOL
@@ -597,6 +601,7 @@
 
 /obj/item/ammo_magazine/speed_loader_magnum_40
 	name = "speed loader (.40 Magnum)"
+	desc = "A 6 round speed loader marked for .40 Magnum."
 	icon_state = "slmagnum_l"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_MAGNUM
@@ -629,6 +634,7 @@
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50
 	name = "speed loader (.50 Kurtz)"
+	desc = "A 5 round speed loader marked for .50 Kurtz."
 	icon_state = "slmagnum_p"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_50
@@ -661,6 +667,7 @@
 
 /obj/item/ammo_magazine/speed_loader_rifle_75
 	name = "ammo strip (7.5mm Rifle)"
+	desc = "A 10 round ammo strip for 7.5mm Rifle."
 	icon_state = "rifle"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = "rifle"
@@ -671,7 +678,8 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408
-	name = "ammo strip (.408 Rifle)"
+	name = "ammo strip (.408 Heavy Rifle)"
+	desc = "A 10 round ammo strip for .408 Heavy Rifle."
 	icon_state = "rifle"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = "hrifle"
@@ -685,6 +693,7 @@
 
 /obj/item/ammo_magazine/caps
 	name = "speed loader (caps)"
+	desc = "A 8 round speed loader for cap guns."
 	icon_state = "slpistol_l"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_CAP
@@ -696,6 +705,7 @@
 
 /obj/item/ammo_magazine/a75
 	name = "ammo magazine (.70 gyro)"
+	desc = "A 4 magazine in .70 gyto."
 	icon_state = "gyropistol"
 	icon = 'icons/obj/ammo_mags.dmi'
 	mag_type = MAGAZINE
@@ -713,6 +723,7 @@
 
 /obj/item/ammo_magazine/m12
 	name = "20mm ammo drum (sabot slug)"
+	desc = "A 20mm ammo drum for the Pug Shotgun or Payload Rifle, holds 8 shells"
 	icon_state = "m12_slug"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_DRUM
@@ -742,6 +753,7 @@
 
 /obj/item/ammo_magazine/sbaw
 	name = "20mm SBAW magazine (sabot slug)"
+	desc = "A 10 magazine for 20mm shotgun shells."
 	icon_state = "sbaw"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_DRUM

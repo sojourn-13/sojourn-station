@@ -113,6 +113,22 @@
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
 
+/obj/item/weapon/gun/projectile/boltgun/lever/handcock
+	name = "\"Handcock\" lever action rifle"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			The weapon's loading port seems skillfully enlarged to allow larger rounds to be loaded into the rifle of .06-06 caliber! \
+			Wild-west styled antimaterial rifle.. who would have thought?"
+	iocn = 'icons/obj/guns/projectile/lever.dmi'
+	icon_state = "armstrong"
+	item_state = "armstrong"
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
+	bolt_training = FALSE
+	caliber = CAL_ANTIM
+	max_shells = 4
+	recoil_buildup = 60
+	one_hand_penalty = 80
+	price_tag = 10000
+
 /obj/item/weapon/gun/projectile/automatic/slaught_o_matic/lockpickomatic
 	name = "\"Lockpick-o-Matic\""
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \

@@ -257,6 +257,12 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "white_tabard"
 	item_state = "white_tabard"
 
+/obj/item/clothing/suit/blacksilk
+	name = "blacksilk tabard"
+	desc = "A somewhat revealing black and gold tabard favored by older orders for ceremony, used often for funerals and coupled with light under clothes."
+	icon_state = "church_blacksilk_suit"
+	item_state = "church_blacksilk_suit"
+
 /obj/item/clothing/suit/punkvest
 	name = "punk vest"
 	desc = "A dark vest made out of light, breathable fabric. Feeling lucky, punk?"

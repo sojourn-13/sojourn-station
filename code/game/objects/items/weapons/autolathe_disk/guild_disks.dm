@@ -214,6 +214,13 @@
 		/datum/design/research/item/weapon/toolmod/hydraulic,
 		/datum/design/research/item/weapon/toolmod/injector,
 		/datum/design/research/item/weapon/toolmod/plasmablock,
+		// From Light
+		/datum/design/autolathe/misc/tube,
+		/datum/design/autolathe/misc/tube_large,
+		/datum/design/autolathe/misc/tube_powersaver,
+		/datum/design/autolathe/misc/bulb,
+		/datum/design/autolathe/misc/bulb_spot,
+		/datum/design/autolathe/misc/bulb_powersaver,
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork
@@ -241,6 +248,12 @@
 	/datum/design/research/item/part/smes_coil/super_capacity = 2,
 	/datum/design/autolathe/tool/multitool = 5,
 	/datum/design/autolathe/tool/multitool/advanced = 10,
+	/datum/design/autolathe/misc/tube,
+	/datum/design/autolathe/misc/tube_large,
+	/datum/design/autolathe/misc/tube_powersaver,
+	/datum/design/autolathe/misc/bulb,
+	/datum/design/autolathe/misc/bulb_spot,
+	/datum/design/autolathe/misc/bulb_powersaver,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork/factory
@@ -370,5 +383,9 @@
 	/datum/design/autolathe/conveyor_switch,
 	/datum/design/autolathe/misc/floor_light,
 	/datum/design/autolathe/misc/tube,
+	/datum/design/autolathe/misc/tube_large,
+	/datum/design/autolathe/misc/tube_powersaver,
 	/datum/design/autolathe/misc/bulb,
+	/datum/design/autolathe/misc/bulb_spot,
+	/datum/design/autolathe/misc/bulb_powersaver,
 	)

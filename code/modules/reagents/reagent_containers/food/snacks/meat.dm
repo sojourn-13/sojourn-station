@@ -6,7 +6,7 @@
 	filling_color = "#FF1C1C"
 	center_of_mass = list("x"=16, "y"=14)
 	bitesize = 3
-	matter = list(MATERIAL_BIOMATTER = 20)
+	matter = list(MATERIAL_BIOMATTER = 10)
 	preloaded_reagents = list("protein" = 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/attackby(obj/item/I, mob/user)

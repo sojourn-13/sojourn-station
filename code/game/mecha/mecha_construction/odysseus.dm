@@ -198,7 +198,7 @@
 						"[usr] removes the wiring from [holder].", \
 						"You remove the wiring from [holder]."
 					)
-					new /obj/item/stack/cable_coil (get_turf(holder), 4)
+					new /obj/item/stack/cable_coil (get_turf(holder), 5)
 					holder.icon_state = "odysseus2"
 			if(14)
 				if(diff==FORWARD)
@@ -347,7 +347,7 @@
 						"[usr] removes wire form [holder].", \
 						"You unscrews and take out wiring from [holder]."
 					)
-					new /obj/item/stack/cable_coil (get_turf(holder), 4)
+					new /obj/item/stack/cable_coil (get_turf(holder), 5)
 					holder.icon_state = "odysseus11"
 			if(3)
 				if(diff==FORWARD)

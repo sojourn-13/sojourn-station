@@ -161,3 +161,40 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+
+/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
+	name = "\"Solarian\" carbine"
+	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
+		 It appears to have been converted at some point to chamber in .257, possibly having taken different rounds at some point."
+	icon = 'icons/obj/guns/projectile/solmarine.dmi'
+	icon_state = "solmarine"
+	item_state = "solmarine"
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 6)
+	mag_well = MAG_WELL_STANMAG
+	caliber = CAL_LRIFLE
+	price_tag = 1000
+	damage_multiplier = 1.0
+	penetration_multiplier = 1.2
+	recoil_buildup = 8
+	one_hand_penalty = 25
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+		)
+	saw_off = TRUE
+	sawn = /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
+
+/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
+	name = "sawn down \"Solarian\" carbine"
+	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
+		 It appears to have been converted at some point to chamber in .257, possibly having taken different rounds at some point. \
+		 Someone butchered this thing beyond recognition! At least it fits in a holster, I guess.."
+	icon = 'icons/obj/guns/projectile/Warthog.dmi'
+	icon_state = "solmarine"
+	item_state = "solmarine"
+	damage_multiplier = 0.8
+	price_tag = 650
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	can_dual = TRUE
+	recoil_buildup = 16
+	one_hand_penalty = 20
