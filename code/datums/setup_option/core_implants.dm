@@ -12,7 +12,8 @@
 		/datum/job/supsec,
 		/datum/job/inspector,
 		/datum/job/officer,
-		/datum/job/smc
+		/datum/job/smc,
+		/datum/job/premier
 		)
 	allowed_depts = CHURCH
 	allow_modifications = TRUE
