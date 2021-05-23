@@ -87,6 +87,7 @@
 	phrase = "Deus meus ut quid dereliquisti me."
 	desc = "Call for help, allowing other cruciform bearers to hear your cries."
 	power = 50
+	ignore_stuttering = TRUE
 
 /datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	for(var/mob/living/carbon/human/target in disciples)
