@@ -107,7 +107,7 @@
 	damage_multiplier = 0.8
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
 	init_firemodes = list(
-		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/hrifle/railgun, icon="kill"),
+		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/heavy_rifle_408/railgun, icon="kill"),
 		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/weak, charge_cost=10000, icon="grenade"),
 	)
 	var/consume_cell = FALSE
