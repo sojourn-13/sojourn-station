@@ -193,7 +193,9 @@
 	phrase = "Ut det Dominus virtutem populo suo? Sit Dominus benedicet populo suo in pace."
 	desc = "A short litany that removes all pain, it is much stronger then the relief litany, but requires more power and has a five minute recharge time between uses."
 	power = 50
+	cooldown = TRUE
 	cooldown_time = 5 MINUTES
+	cooldown_category = "monopain"
 	ignore_stuttering = TRUE
 
 /datum/ritual/cruciform/monomial/ironskin/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
