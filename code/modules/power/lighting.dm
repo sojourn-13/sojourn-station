@@ -670,12 +670,12 @@
 // use power
 
 #define LIGHTING_POWER_FACTOR 20		//20W per unit luminosity
-
+//Lights will never cost more then 300ws
 /obj/machinery/light/Process()
 	if(on &! failty_connection)
-		use_power(light_range * LIGHTING_POWER_FACTOR - its_power_saved, LIGHT)
+		use_power(clamp(0, light_range * 2 * LIGHTING_POWER_FACTOR - its_power_saved, 300), LIGHT)
 	if(on && failty_connection)
-		use_power(light_range * 2 * its_power_saved - its_power_saved, LIGHT)
+		use_power(clamp(0, light_range * 2 * LIGHTING_POWER_FACTOR - its_power_saved, 300), LIGHT)
 
 
 // called when area power state changes
