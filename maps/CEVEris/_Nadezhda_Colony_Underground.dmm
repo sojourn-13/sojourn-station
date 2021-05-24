@@ -71,7 +71,7 @@
 "abs" = (/obj/structure/holohoop{dir = 1},/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/crew_quarters/fitness)
 "abt" = (/obj/machinery/conveyor/east{id = "QMLoad"},/turf/simulated/floor/plating,/area/nadezhda/quartermaster/hangarsupply)
 "abu" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light,/obj/random/structures,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/nadezhda/engineering/atmos)
-"abv" = (/obj/machinery/light{dir = 1},/obj/machinery/autolathe/industrial,/turf/simulated/floor/wood,/area/nadezhda/command/gmaster)
+"abv" = (/obj/machinery/light{dir = 1},/obj/machinery/autolathe/loaded,/turf/simulated/floor/wood,/area/nadezhda/command/gmaster)
 "abw" = (/obj/machinery/autolathe/industrial,/turf/simulated/floor/tiled/steel/gray_platform,/area/nadezhda/engineering/workshop)
 "abx" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/rnd/rbreakroom)
 "aby" = (/obj/structure/bed/chair,/obj/landmark/join/start/scientist,/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/rnd/rbreakroom)
