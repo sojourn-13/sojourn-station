@@ -489,7 +489,7 @@
 			return TRUE
 
 		var/limb = affecting.name
-		if(!(affecting.organ_tag in list(BP_L_ARM,BP_R_ARM,BP_L_LEG ,BP_R_LEG)))
+		if(!(affecting.organ_tag in list(BP_L_LEG, BP_R_LEG, BP_L_ARM, BP_R_ARM, BP_CHEST, BP_GROIN, BP_HEAD)))
 			to_chat(user, SPAN_DANGER("You can't apply a splint there!"))
 			return
 		if(affecting.status & ORGAN_SPLINTED)
