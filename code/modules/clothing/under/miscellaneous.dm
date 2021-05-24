@@ -328,13 +328,13 @@
 
 /obj/item/clothing/under/jamrock_suit
 	name = "brown comfortable clothing"
-	desc = "A suit and pants that are basic in colour but comfortable to ware."
+	desc = "A suit and pants that are basic in colour but comfortable to wear."
 	icon_state = "jamrock_suit"
 	item_state = "jamrock_suit"
 
 /obj/item/clothing/under/aerostatic_suit
 	name = "dark comfortable clothing"
-	desc = "A suit and pants that are basic in colour but comfortable to ware."
+	desc = "A suit and pants that are basic in colour but comfortable to wear."
 	icon_state = "aerostatic_suit"
 	item_state = "aerostatic_suit"
 
