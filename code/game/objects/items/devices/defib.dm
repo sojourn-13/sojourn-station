@@ -516,8 +516,16 @@
 	M.updatehealth()
 	apply_brain_damage(M, deadtime)
 
+	if(!M.stats.getPerk(/datum/perk/rezsickness))
+		M.stats.changeStat(STAT_MEC, -15)
+		M.stats.changeStat(STAT_BIO, -15)
+		M.stats.changeStat(STAT_COG, -15)
+		M.stats.changeStat(STAT_ROB, -15)
+		M.stats.changeStat(STAT_TGH, -15)
+		M.stats.changeStat(STAT_VIG, -15)
+
 	switch(M.stats.getStat(STAT_TGH))
-		if(0 to 40)
+		if(-200 to 40)
 			M.stats.addPerk(/datum/perk/rezsickness/severe/fatal)
 			log_debug("Try to add mild rez sickness.")
 		if(40 to 60)

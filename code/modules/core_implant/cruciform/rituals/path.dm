@@ -283,7 +283,7 @@
 	log_and_message_admins("performed an ire litany")
 	for(var/mob/living/victim in view(user))
 		if(!victim.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
-			if(prob(100 - victim.stats.getStat(STAT_VIG)))
+			if(prob(100 - (victim.stats.getStat(STAT_VIG) * 3)))
 				to_chat(victim, SPAN_WARNING("You feel a blast of energy that knocks you down!"))
 				victim.Stun(3)
 				victim.Weaken(3)

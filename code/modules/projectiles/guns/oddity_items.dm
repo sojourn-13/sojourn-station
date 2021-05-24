@@ -118,7 +118,7 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			The weapon's loading port seems skillfully enlarged to allow larger rounds to be loaded into the rifle of .06-06 caliber! \
 			Wild-west styled antimaterial rifle.. who would have thought?"
-	iocn = 'icons/obj/guns/projectile/lever.dmi'
+	icon = 'icons/obj/guns/projectile/lever.dmi'
 	icon_state = "armstrong"
 	item_state = "armstrong"
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
