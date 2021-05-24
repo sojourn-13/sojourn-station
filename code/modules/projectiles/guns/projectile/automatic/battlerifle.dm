@@ -79,7 +79,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/scoped
 	name = "\"Longarm\" marksman rifle"
-	desc = "A heavy front line designated marksman rifle manufactured by Scarborough Arms, also known as the M13A2 Special Purpose Rifle in its generic military form. \
+	desc = "A heavy front line designated marksman rifle manufactured by H&S, also known as the M13A2 Special Purpose Rifle in its generic military form. \
 		 Either a copy or 'liberated' example, it fires a variety of utility and specialized munitions. \
 		 Chambered in .408, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an advanced combat sight and limited to semiautomatic and two-round burst."
@@ -123,7 +123,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine
 	name = "\"Boar\" heavy carbine"
-	desc = "A heavy second-line carbine manufactured by Scarborough Arms, as well as number of state arsenals. Designed for close range encounters and support fire. \
+	desc = "A heavy second-line carbine manufactured by H&S, as well as number of state arsenals. Designed for close range encounters and support fire. \
 		 A rifle fashioned for cover fire and cramped environments, taking influence from the MK-12 Omnicarbine, chambered in .408 caliber. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 Despite the blinding muzzle flash and agonizing recoil, its small size arguably makes up for the disadvantages."
@@ -145,7 +145,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds
 	name = "\"Warthog\" advanced carbine"
-	desc = "A heavy second-line carbine manufactured by Scarborough Arms, as well as number of state arsenals. Designed for close range encounters and support fire. \
+	desc = "A heavy second-line carbine manufactured by H&S, as well as number of state arsenals. Designed for close range encounters and support fire. \
 		 A rifle fashioned for cover fire and cramped environments. Chambered in 10x50mm Omni. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 This one is fitted with a muzzle brake, fore grip, holographic sight, and limited to 3-round bursts, it's almost manageable. Almost."
