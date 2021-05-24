@@ -431,8 +431,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		ran = FALSE
 		bg_calc = FALSE
 		current_tick_budget = queue_priority_count
-		var/list/cache_queue = queue.Copy()
-		for(var/datum/controller/subsystem/queue_node in cache_queue)
+		for(var/datum/controller/subsystem/queue_node in queue)
 //			world << "entered second while in RunQueue"
 			if (ran && TICK_USAGE > TICK_LIMIT_RUNNING)
 //				world << "break on (if ran&& TICK_USAGE...)"

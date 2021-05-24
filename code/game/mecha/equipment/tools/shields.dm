@@ -295,8 +295,9 @@
 	visible_message("<span class='notice'>\The [user] [!active ? "de":""]activates \the [src].</span>")
 
 /obj/item/shield_projector/Process()
-	if(shield_health < max_shield_health && ( (last_damaged_time + shield_regen_delay) < world.time) )
-		adjust_health(shield_regen_amount)
+	if(shield_health < max_shield_health && ( (last_damaged_time + shield_regen_delay) < world.time))
+		if(always_on || !active)
+			adjust_health(shield_regen_amount)
 		if(always_on && !active) // Make shields as soon as possible if this is set.
 			create_shields()
 		if(shield_health == max_shield_health)
