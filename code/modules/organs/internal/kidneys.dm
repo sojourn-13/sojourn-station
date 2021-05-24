@@ -34,6 +34,6 @@
 	matter = list(MATERIAL_STEEL = 1)
 	organ_efficiency = list(OP_KIDNEYS = 50)
 
-/obj/item/organ/internal/kidney/left
-/obj/item/organ/internal/kidney/right
+/obj/item/organ/internal/kidney/prosthetic/left
+/obj/item/organ/internal/kidney/prosthetic/right
 	icon_state = "kidneys-prosthetic2"

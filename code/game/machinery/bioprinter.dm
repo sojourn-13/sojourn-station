@@ -40,7 +40,8 @@
 		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney, 20),
 		OP_EYES =   		list(/obj/item/organ/internal/eyes,   30),
 		OP_LIVER =   		list(/obj/item/organ/internal/liver,  50),
-		OP_BLOOD_VESSEL =    	list(/obj/item/organ/internal/blood_vessel,  10),
+		OP_STOMACH = 		list(/obj/item/organ/internal/stomach, 50),
+		OP_BLOOD_VESSEL =	list(/obj/item/organ/internal/blood_vessel,  10),
 		OP_MUSCLE  =    	list(/obj/item/organ/internal/muscle,  20),
 		OP_NERVE  =	    	list(/obj/item/organ/internal/nerve,  10)
 		)
@@ -107,7 +108,8 @@
 		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney/prosthetic, 20),
 		OP_EYES =    		list(/obj/item/organ/internal/eyes/prosthetic,   30),
 		OP_LIVER =   		list(/obj/item/organ/internal/liver/prosthetic,  50),
-		OP_BLOOD_VESSEL =    	list(/obj/item/organ/internal/blood_vessel,  10),
+		OP_STOMACH = 		list(/obj/item/organ/internal/stomach/prosthetic, 50),
+		OP_BLOOD_VESSEL =	list(/obj/item/organ/internal/blood_vessel/prosthetic,  10),
 		OP_MUSCLE  =    	list(/obj/item/organ/internal/muscle/robotic,  20),
 		OP_NERVE  =	    	list(/obj/item/organ/internal/nerve/robotic,  10)
 		)
