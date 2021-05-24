@@ -537,15 +537,13 @@
 			action = new /obj/screen/item_action/top_bar/gun/scope
 			action.owner = src
 			hud_actions += action
-			if(istype(src.loc, /mob))
-				var/mob/user = src.loc
-				if(user)
-					user.client.screen += action
+			if(ismob(loc))
+				var/mob/user = loc
+				user.client?.screen += action
 	else
-		if(istype(src.loc, /mob))
-			var/mob/user = src.loc
-			if(user)
-				user.client.screen -= action
+		if(ismob(loc))
+			var/mob/user = loc
+			user.client?.screen -= action
 		hud_actions -= action
 		qdel(action)
 
