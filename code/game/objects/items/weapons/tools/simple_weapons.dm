@@ -259,7 +259,7 @@
 	max_upgrades = 4
 
 /obj/item/weapon/tool/knife/dagger/bluespace
-	name = "/improper Soteria \"Displacement Dagger\""
+	name = "\improper Soteria \"Displacement Dagger\""
 	desc = "A teleportation matrix attached to a dagger, for sending things you stab it into very far away."
 	icon_state = "bluespace_dagger"
 	item_state = "bluespace_dagger"
@@ -563,6 +563,7 @@
 	desc = "A battery powered hydraulic combat gauntlet designed for extended operations where close combat and muscles matter most."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "powerfist"
+	item_state = "powerfist"
 	toggleable = TRUE
 	worksound = WORKSOUND_HAMMER
 	switched_on_force = WEAPON_FORCE_BRUTAL
