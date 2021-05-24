@@ -1391,7 +1391,7 @@
 "hkt" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/steel,/area/nadezhda/hallway/surface/section1)
 "hky" = (/turf/simulated/shuttle/wall/mining{icon_state = "10,15"},/area/nadezhda/pros/proelav)
 "hkD" = (/obj/structure/table/standard,/obj/machinery/recharger,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint_cargo,/area/nadezhda/dungeon/outside/abandoned_outpost)
-"hkH" = (/obj/structure/flora/church_rock{density = 0; pixel_x = -15},/turf/simulated/floor/beach/sand,/area/nadezhda/outside/meadow)
+"hkH" = (/obj/structure/flora/church_rock,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/meadow)
 "hly" = (/obj/machinery/door/airlock/maintenance_interior{name = "Airlock"},/obj/random/traps/low_chance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/dungeon/outside/abandoned_outpost)
 "hlN" = (/obj/effect/decal/cleanable/dirt,/obj/landmark/storyevent/midgame_stash_spawn,/turf/simulated/floor/wood/wild5,/area/nadezhda/dungeon/outside/campground)
 "hlS" = (/obj/structure/table/steel_reinforced,/obj/machinery/recharger/wallcharger{pixel_x = -26},/obj/item/roller,/obj/item/weapon/storage/firstaid/regular,/obj/item/bodybag/cryobag,/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/security/maingate{name = "\improper Outdoors - Pad"})
