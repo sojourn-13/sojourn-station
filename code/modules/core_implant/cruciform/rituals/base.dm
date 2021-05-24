@@ -50,14 +50,14 @@
 
 /datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	var/successful = FALSE
-	var/list/people_around = list()
 	if (istype(H.get_active_hand(), /obj/item/weapon/book/ritual/cruciform))
 		var/obj/item/weapon/book/ritual/cruciform/M = H.get_active_hand()
 		M.light_range = 5 //Slightly better than as a lantern since you can only hold it in hand or within the belt slot.
-		playsound(H.loc, 'sound/ambience/ambicha2.ogg', 50, 1)
-		for(var/mob/living/carbon/human/participant in people_around)
-			to_chat(participant, SPAN_NOTICE("The ritual book [H] is holding begins to glow with holy light!"))
-		to_chat(H, SPAN_NOTICE("The ritual book you are holding begins to glow with holy light!"))
+		playsound(H.loc, 'sound/ambience/ambicha2.ogg', 75, 1)
+		H.visible_message(
+			SPAN_NOTICE("The ritual book [H] is holding begins to emit light."),
+			SPAN_NOTICE("The ritual book you're holding begins to glow brightly.")
+		)
 		spawn(9000) M.light_range = initial(M.light_range)
 		successful = TRUE
 		set_personal_cooldown(H)
@@ -87,6 +87,7 @@
 	phrase = "Deus meus ut quid dereliquisti me."
 	desc = "Call for help, allowing other cruciform bearers to hear your cries."
 	power = 50
+	ignore_stuttering = TRUE
 
 /datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	for(var/mob/living/carbon/human/target in disciples)
