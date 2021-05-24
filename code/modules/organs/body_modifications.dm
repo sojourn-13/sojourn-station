@@ -223,7 +223,7 @@ var/global/list/modifications_types = list(
 		return new replace_limb(holder)
 	else
 		return new organ(holder)
-
+/* Commented out due to no way to differenciate them.
 /datum/body_modification/organ/assisted
 	name = "Assisted organ"
 	short_name = "P: assisted"
@@ -237,7 +237,7 @@ var/global/list/modifications_types = list(
 	I.min_bruised_damage = 15
 	I.min_broken_damage = 35
 	return I
-
+*/
 
 /datum/body_modification/organ/robotize_organ
 	name = "Robotic organ"
