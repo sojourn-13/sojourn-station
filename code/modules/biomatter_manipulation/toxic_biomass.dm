@@ -37,6 +37,7 @@
 	icon = 'icons/obj/bioreactor_misc.dmi'
 	icon_state = "biomass-1"
 	anchored = TRUE
+	layer = TURF_LAYER + 0.6
 
 
 /obj/effect/decal/cleanable/solid_biomass/Initialize()
