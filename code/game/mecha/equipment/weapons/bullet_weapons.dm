@@ -119,7 +119,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak
 	name = "\improper jury-rigged flak cannon"
 	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
-	icon_state = "mecha_scatter"
+	icon_state = "mecha_makeshift_scatter"
 	equip_cooldown = 20
 	projectile = /obj/item/projectile/bullet/magnum_40
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
@@ -162,7 +162,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/scrap
 	name = "\improper jury-rigged lead repeater"
 	desc = "Few would call this weapon reliable, fewer know just how valuable it is."
-	icon_state = "mecha_uac2"
+	icon_state = "mecha_makeshift_uac2"
 	equip_cooldown = 10
 	projectile = /obj/item/projectile/bullet/pistol_35
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
