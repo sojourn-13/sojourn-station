@@ -23,36 +23,40 @@
 	category = "Devotion"
 
 /datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
-	if(!targets.len)
-		fail("Target not found.",user,C,targets)
-		return FALSE
+	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
 
-	var/obj/item/weapon/implant/core_implant/CI = targets[1]
-
-	if(!CI.active || !CI.wearer)
-
+	if(!CI || !CI.active || !CI.wearer)
 		fail("Cruciform not found.", user, C)
 		return FALSE
 
-	var/mob/living/M = CI.wearer
+	var/mob/living/carbon/human/H = CI.wearer
 
-	log_and_message_admins(" inflicted pain on [CI.wearer] with penance litany")
-	to_chat(M, SPAN_DANGER("A wave of agony washes over you, the cruciform in your chest searing like a star for a few moments of eternity."))
+	if(!istype(H))
+		fail("Target not found.",user,C,targets)
+		return FALSE
 
+	//Checking turfs allows this to be done in unusual circumstances, like if both are inside the same mecha
+	var/turf/T = get_turf(user)
+	if (!(T.Adjacent(get_turf(H))))
+		to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
+		return
 
-	var/datum/effect/effect/system/spark_spread/s = new
-	s.set_up(1, 1, M.loc)
-	s.start()
+	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of penance")
+	if (do_after(user, 20, H, TRUE))
+		T = get_turf(user)
+		if (!(T.Adjacent(get_turf(H))))
+			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
+			return
 
-	M.apply_effect(50, AGONY, 0)
+		log_and_message_admins(" inflicted pain on [H] with penance litany")
+		to_chat(H, SPAN_DANGER("A wave of agony washes over you, the cruciform in your chest searing like a star for a few moments of eternity."))
 
-	return TRUE
-
-/datum/ritual/targeted/cruciform/priest/penance/process_target(var/index, var/obj/item/weapon/implant/core_implant/target, var/text)
-	target.update_address()
-	if(index == 1 && target.address == text)
-		if(target.wearer && (target.loc && (target.locs[1] in view())))
-			return target
+		H.apply_effect(50, AGONY, 0)
+		H.apply_effect(50, HALLOSS, 0)
+		var/datum/effect/effect/system/spark_spread/s = new
+		s.set_up(1, 1, H.loc)
+		s.start()
+		return TRUE
 
 /*
 	Convalescence
@@ -429,7 +433,7 @@
 		return FALSE
 
 	if(!istype(CI.upgrades) || length(CI.upgrades) <= 0)
-		fail("here is no upgrades on this one.", user, C)
+		fail("There is no upgrades on this one.", user, C)
 		return FALSE
 
 	for(var/obj/item/weapon/coreimplant_upgrade/CU in CI.upgrades)
@@ -711,7 +715,7 @@
 	to_chat(T, SPAN_NOTICE("You feel slightly better as your pain eases."))
 	to_chat(user, SPAN_NOTICE("You ease the pain of [T.name]."))
 
-	T.add_chemical_effect(CE_PAINKILLER, 15)  // painkiller effect to target
+	T.add_chemical_effect(CE_PAINKILLER, 50)  // painkiller effect to target
 
 	return TRUE
 

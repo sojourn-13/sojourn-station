@@ -42,10 +42,10 @@
 /datum/ritual/cruciform/base/glow_book
 	name = "Word of Guidance"
 	phrase = "Legem pone mihi, Domine, in via tua, et dirige me in semitam rectam, propter inimicos meos."
-	desc = "A prayer to light your way. It makes the ritual book you're holding glow brightly for fifteen minutes. "
-	power = 15
+	desc = "A prayer to light your way. It makes the ritual book you're holding glow brightly for ten minutes. "
+	power = 10 //Cost correlates to duration
 	cooldown = TRUE
-	cooldown_time = 15 MINUTES
+	cooldown_time = 10 MINUTES
 	cooldown_category = "bglow"
 
 /datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
@@ -58,7 +58,7 @@
 			SPAN_NOTICE("The ritual book [H] is holding begins to emit light."),
 			SPAN_NOTICE("The ritual book you're holding begins to glow brightly.")
 		)
-		spawn(9000) M.light_range = initial(M.light_range)
+		spawn(6000) M.light_range = initial(M.light_range)
 		successful = TRUE
 		set_personal_cooldown(H)
 	else
@@ -68,16 +68,16 @@
 /datum/ritual/cruciform/base/flare
 	name = "Holy Light"
 	phrase = "Lucerna pedibus meis verbum tuum, et lumen semitis meis."
-	desc = "Litany of pilgrims that creates a small light for about half an hour."
-	power = 30 //Cheap but not too cheap. Pretty powerful to light up a location for 30 mins.
+	desc = "Litany of pilgrims that creates a small light for about twenty minutes."
+	power = 20 //Cost correlates to duration.
 	cooldown = TRUE
-	cooldown_time = 1 MINUTES
+	cooldown_time = 2 MINUTES
 	cooldown_category = "flare"
 
 /datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	playsound(H.loc, 'sound/effects/snap.ogg', 50, 1)
 	new /obj/effect/sparks(H.loc)
-	new /obj/effect/effect/smoke/illumination(H.loc, brightness=max(6), lifetime=30000) //About the same brightness as a lantern and its almost free!
+	new /obj/effect/effect/smoke/illumination(H.loc, brightness=max(6), lifetime=12000) //About the same brightness as a lantern and its almost free!
 	set_personal_cooldown(H)
 	return TRUE
 
