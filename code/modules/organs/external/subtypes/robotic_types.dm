@@ -138,7 +138,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "Reinforced dark prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/blackshield.dmi'
 	model = "blackshield"
-	armor = list(melee = 50, bullet = 50, energy = 50, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 40, bullet = 40, energy = 25, bomb = 25, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_PLASTEEL = 10)
 	max_damage = 70
 	min_broken_damage = 50
