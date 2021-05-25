@@ -181,8 +181,10 @@
 				/obj/item/weapon/gun/energy/ntpistol = 2,\
 				/obj/item/weapon/gun/energy/gun = 2,\
 				/obj/item/weapon/gun/energy/retro = 1,\
+				/obj/item/weapon/gun/energy/lasercannon = 1,\
 				/obj/item/weapon/gun/energy/lasercore = 1,\
-				/obj/item/weapon/gun/energy/firestorm = 0.5))
+				/obj/item/weapon/gun/energy/firestorm = 0.5,\
+				/obj/item/weapon/gun/energy/centauri = 0.1))
 
 /obj/random/gun_energy_cheap/low_chance
 	name = "low chance random cheap energy weapon"
@@ -253,6 +255,7 @@
 				/obj/item/weapon/gun/energy/laser/railgun/pistol = 1,
 				/obj/item/weapon/gun/energy/plasma/auretian = 1,
 				/obj/item/weapon/gun/energy/centurio = 2,
+				/obj/item/weapon/gun/energy/centauri = 1,
 				/obj/item/weapon/gun/energy/gun/nuclear = 2,
 				/obj/item/weapon/gun/energy/plasma/destroyer = 1))
 

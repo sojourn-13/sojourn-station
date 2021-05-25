@@ -357,6 +357,10 @@
 	name = "OT SP \"Counselor\""
 	build_path = /obj/item/weapon/gun/energy/taser
 
+/datum/design/autolathe/gun/titanica
+	name = "H&S E Cannon \"Titanica\""
+	build_path = /obj/item/weapon/gun/energy/lasercannon
+
 /datum/design/autolathe/gun/energygun
 	name = "H&S PDW E \"Spider Rose\""
 	build_path = /obj/item/weapon/gun/energy/gun

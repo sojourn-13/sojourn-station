@@ -1053,6 +1053,46 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/small/high,
 	)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercannon
+	disk_name = "H&S - \"Titanica\" Laser Cannon"
+	icon_state = "frozenstar"
+
+	license = 8 //2 gun 2 cell,
+	designs = list(
+		/datum/design/autolathe/gun/titanica = 3,
+		/datum/design/autolathe/cell/small/high,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/auretian
+	disk_name = "SI - \"Auretian\" E Pistol"
+	icon_state = "moebius"
+
+	license = 8 //1 gun 1 cell, or 4 good cells that are bette then normal
+	designs = list(
+		/datum/design/research/item/weapon/auretian = 6,
+		/datum/design/research/item/powercell/small/basic = 2,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercannon
+	disk_name = "SI - \"Solaris\" Laser Cannon"
+	icon_state = "moebius"
+
+	license = 8 //1 gun 1 cell, or 4 good cells that are bette then normal
+	designs = list(
+		/datum/design/research/item/weapon/lasercannon = 6,
+		/datum/design/research/item/powercell/medium/basic = 2,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/centauri
+	disk_name = "SI - centauri PDW E"
+	icon_state = "moebius"
+
+	license = 8 //2 gun 1 cell, or 4 good cells that are bette then normal
+	designs = list(
+		/datum/design/research/item/weapon/centauri = 3,
+		/datum/design/research/item/powercell/medium/basic = 2,
+	)
+
 // PLASMA ARMS
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cassad
@@ -1065,7 +1105,18 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-//10mm Rifles
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/centurio
+	disk_name = "SI - \"Centurio\" Plasma Pistol"
+	icon_state = "moebius"
+
+	license = 8 //1 gun 1 cell, or 4 good cells that are bette then normal
+	designs = list(
+		/datum/design/research/item/weapon/centurio = 6,
+		/datum/design/research/item/powercell/medium/basic = 2,
+	)
+
+
+//10mm Guns
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pulse_rifle
 	disk_name = "PAR - 10mm Caseless Pulse Rifle"
@@ -1100,3 +1151,31 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/ammo/slpistol,
 		/datum/design/autolathe/ammo/slpistol_lethal,
 	)
+
+//.223 Guns
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/laser_ak
+	disk_name = "SI - \"Legkiy-Kalashnikov\" laser carbine"
+	icon_state = "moebius"
+
+	license = 22 //This is a lot by the looks but understand that each bullet prints in 1s, so 1 gun 1 mag 20 bullets
+	designs = list(
+		/datum/design/research/item/weapon/laser_ak,
+		/datum/design/research/item/ammo/laser_mag,
+		/datum/design/research/item/ammo/laser,
+		/datum/design/research/item/ammo/laser/ap,
+		/datum/design/research/item/ammo/laser/lethal,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/laser_sniper
+	disk_name = "SI - \"Star Striker\" laser boltgun"
+	icon_state = "moebius"
+
+	license = 31 //This is a lot by the looks but understand that each bullet prints in 1s, so 1 gun and 30 bullets (3 reloads)
+	designs = list(
+		/datum/design/research/item/weapon/starstriker,
+		/datum/design/research/item/ammo/laser,
+		/datum/design/research/item/ammo/laser/ap,
+		/datum/design/research/item/ammo/laser/lethal,
+	)
+

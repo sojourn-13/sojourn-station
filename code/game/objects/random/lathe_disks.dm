@@ -141,6 +141,8 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/martin = 8,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firestorm = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercore = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercannon = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/centauri = 1,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/nemesis = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/themis = 4,
