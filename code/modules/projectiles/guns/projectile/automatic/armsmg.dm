@@ -17,6 +17,6 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.5
-	gun_tags = list(GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	recoil_buildup = 5 // it's stuck in your fucking hand or something
 	one_hand_penalty = 1 // see the above
