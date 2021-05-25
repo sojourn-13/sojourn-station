@@ -2343,6 +2343,7 @@
 #include "code\modules\projectiles\guns\oddity_items.dm"
 #include "code\modules\projectiles\guns\projectile.dm"
 #include "code\modules\projectiles\guns\energy\cassad.dm"
+#include "code\modules\projectiles\guns\energy\centauri.dm"
 #include "code\modules\projectiles\guns\energy\centurio_auretian.dm"
 #include "code\modules\projectiles\guns\energy\charge.dm"
 #include "code\modules\projectiles\guns\energy\crossbow.dm"
