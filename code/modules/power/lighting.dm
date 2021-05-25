@@ -186,16 +186,8 @@
 	var/rigged = 0				// true if rigged to explode
 	var/firealarmed = 0
 	var/atmosalarmed = 0
-	var/its_power_saved = 0
-
-	var/failty_connection = FALSE //RnG for lights to have bad wires, this makes them take more active and passive power
 
 // the smaller bulb light fixture
-/obj/machinery/light/New()
-	..()
-	if(prob(1))
-		failty_connection = TRUE
-
 
 /obj/machinery/light/floor
 	name = "floorlight fixture"
@@ -232,7 +224,7 @@
 	update(0)
 	..()
 
-/obj/machinery/light/floor/built/New() //This is for floor lights
+/obj/machinery/light/floor/built/New() //WHAT IT IS?!?!??!?!?
 	status = LIGHT_EMPTY
 	update(0)
 	..()
@@ -322,7 +314,6 @@
 /obj/machinery/light/proc/update(var/trigger = 1)
 
 	update_icon()
-
 	if(on == TRUE)
 		if(needsound == 1)
 			playsound(src.loc, 'sound/effects/Custom_lights.ogg', 65, 1)
@@ -356,10 +347,6 @@
 	if(on != on_gs)
 		on_gs = on
 
-	if(failty_connection)
-		idle_power_usage *= 2
-		active_power_usage *= 2
-
 /obj/machinery/light/attack_generic(var/mob/user, var/damage)
 	if(!damage)
 		return
@@ -382,8 +369,6 @@
 // examine verb
 /obj/machinery/light/examine(mob/user)
 	..()
-	if(failty_connection)
-		to_chat(user, "The wire inside the frame seems to be badly connected and should be fixed with a wirecutter or plier.")
 	switch(status)
 		if(LIGHT_OK)
 			to_chat(user, "It is turned [on? "on" : "off"].")
@@ -406,15 +391,6 @@
 		if(isliving(user))
 			var/mob/living/U = user
 			LR.ReplaceLight(src, U)
-			return
-
-	if(istype(I, /obj/item/weapon/tool/wirecutters))
-		if(!failty_connection)
-			to_chat(user, SPAN_WARNING("The wire is correctly installed."))
-			return
-		if(failty_connection)
-			to_chat(user, SPAN_WARNING("You correct the wire saving power!"))
-			failty_connection = FALSE
 			return
 
 	// attempt to insert light
@@ -505,7 +481,6 @@
 			s.set_up(3, 1, src)
 			s.start()
 			//if(!user.mutations & COLD_RESISTANCE)
-			failty_connection = TRUE //You messed up the wiring
 			if (prob(75))
 				electrocute_mob(user, get_area(src), src, rand(0.7,1))
 
@@ -606,7 +581,6 @@
 	L.brightness_range = brightness_range
 	L.brightness_power = brightness_power
 	L.brightness_color = brightness_color
-	L.its_power_saved  = its_power_saved
 
 	// light item inherits the switchcount, then zero it
 	L.switchcount = switchcount
@@ -644,7 +618,6 @@
 		return
 	status = LIGHT_OK
 	on = TRUE
-	failty_connection = FALSE
 	update()
 
 // explosion effect
@@ -670,12 +643,11 @@
 // use power
 
 #define LIGHTING_POWER_FACTOR 20		//20W per unit luminosity
-//Lights will never cost more then 300ws
+
+
 /obj/machinery/light/Process()
-	if(on &! failty_connection)
-		use_power(clamp(0, light_range * 2 * LIGHTING_POWER_FACTOR - its_power_saved, 300), LIGHT)
-	if(on && failty_connection)
-		use_power(clamp(0, light_range * 2 * LIGHTING_POWER_FACTOR - its_power_saved, 300), LIGHT)
+	if(on)
+		use_power(light_range * LIGHTING_POWER_FACTOR, LIGHT)
 
 
 // called when area power state changes
@@ -712,12 +684,11 @@
 	var/status = 0		// LIGHT_OK, LIGHT_BURNED or LIGHT_BROKEN
 	var/base_state
 	var/switchcount = 0	// number of times switched
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1)
+	matter = list(MATERIAL_GLASS = 1)
 	var/rigged = 0		// true if rigged to explode
 	var/brightness_range = 2 //how much light it gives off
 	var/brightness_power = 1
 	var/brightness_color = null
-	var/its_power_saved = 0
 	preloaded_reagents = list("silicon" = 10, "tungsten" = 5)
 
 /obj/item/weapon/light/tube
@@ -729,21 +700,20 @@
 	brightness_range = 8
 	brightness_power = 3
 
-/obj/item/weapon/light/tube/power_saver
-	name = "Artificer \"Power Cord\" light tube"
-	desc = "A replacement light tube this one has better coils saving power."
-	icon_state = "ltube"
-	base_state = "ltube"
-	item_state = "c_tube"
-	brightness_range = 8
-	brightness_power = 3
-	its_power_saved = 5
-
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
+	matter = list(MATERIAL_GLASS = 2)
 	brightness_range = 15
 	brightness_power = 4
+
+/obj/item/weapon/light/tube/power_saver
+	name = "Artificer \"Power Cord\" light tube"
+	icon_state = "ltube"
+	base_state = "ltube"
+	item_state = "c_tube"
+	brightness_range = 6
+	brightness_power = 3
 
 /obj/item/weapon/light/bulb
 	name = "light bulb"
@@ -754,29 +724,25 @@
 	brightness_range = 5
 	brightness_power = 2
 
+/obj/item/weapon/light/throw_impact(atom/hit_atom)
+	..()
+	shatter()
+
 /obj/item/weapon/light/bulb/power_saver
 	name = "Artificer \"Power Cord\" light bulb"
-	desc = "A replacement light bulb this one has better coils saving power."
 	icon_state = "ltube"
 	base_state = "ltube"
 	item_state = "c_tube"
-	brightness_range = 5
+	brightness_range = 3
 	brightness_power = 2
-	its_power_saved = 3
 
 /obj/item/weapon/light/bulb/spotlight
 	name = "Artificer \"Seer\" light bulb"
-	desc = "A replacement light bulb this one has thicker coil inside for large amout of light at the cost of power."
 	icon_state = "ltube"
 	base_state = "ltube"
 	item_state = "c_tube"
 	brightness_range = 7
 	brightness_power = 4
-	its_power_saved = -5
-
-/obj/item/weapon/light/throw_impact(atom/hit_atom)
-	..()
-	shatter()
 
 /obj/item/weapon/light/bulb/fire
 	name = "fire bulb"
