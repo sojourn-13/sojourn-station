@@ -64,6 +64,7 @@
 /obj/item/weapon/reagent_containers/glass/beaker/bluespace/New()
 	..()
 	item_flags |= BLUESPACE
+	bluespace_entropy(1, get_turf(src))
 
 /obj/item/weapon/reagent_containers/glass/beaker/vial
 	name = "vial"
