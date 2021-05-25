@@ -81,6 +81,7 @@
 #define FORM_OPIFEX				"Opifex"
 #define FORM_SOTSYNTH			"Soteria Synthetic"
 #define FORM_AGSYNTH			"Artificer Guild Synthetic"
+#define FORM_BSSYNTH			"Blackshield Synthetic"
 #define FORM_FBP				"Full Body Prosthetic"
 
 #define FORM_BIRD				"Avian"

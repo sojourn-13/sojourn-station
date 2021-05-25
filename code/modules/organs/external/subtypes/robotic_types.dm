@@ -133,6 +133,40 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	name = "\"Soteria\" Head"
 	default_description = /datum/organ_description/head
 
+/obj/item/organ/external/robotic/blackshield
+	name = "\"Blackshield\""
+	desc = "Reinforced dark prosthesis designed for heavy combat."
+	force_icon = 'icons/mob/human_races/cyberlimbs/blackshield.dmi'
+	model = "blackshield"
+	armor = list(melee = 50, bullet = 50, energy = 50, bomb = 30, bio = 100, rad = 100)
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_PLASTEEL = 10)
+	max_damage = 70
+	min_broken_damage = 50
+	min_malfunction_damage = 30
+
+/obj/item/organ/external/robotic/blackshield/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/blackshield/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/blackshield/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/blackshield/r_leg
+	default_description = /datum/organ_description/leg/right
+
+/obj/item/organ/external/robotic/blackshield/groin
+	default_description = /datum/organ_description/groin
+
+/obj/item/organ/external/robotic/blackshield/torso
+	name = "\"Blackshield\" Torso"
+	default_description = /datum/organ_description/chest
+
+/obj/item/organ/external/robotic/blackshield/head
+	name = "\"Blackshield\" Head"
+	default_description = /datum/organ_description/head
+
 //In game prostheses
 /obj/item/organ/external/robotic/excelsior
 	name = "Excelsior"

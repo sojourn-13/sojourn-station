@@ -104,6 +104,10 @@ the lims and such to pull out the internal bits for other people if needed
 	name = "Embedded Energy Blade"
 	build_path = /obj/item/organ_module/active/simple/armblade/energy_blade
 
+/datum/design/research/item/mechfab/modules/taser
+	name = "Embedded Taser"
+	build_path = /obj/item/organ_module/active/simple/taser
+
 /datum/design/research/item/mechfab/modules/runner
 	name = "Mechanical Muscles"
 	build_path = /obj/item/organ_module/muscle
