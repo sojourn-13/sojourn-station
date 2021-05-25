@@ -214,9 +214,9 @@
 	desc = "A box containing a mad scientist costume."
 
 /obj/item/weapon/storage/box/costume/madscientist/populate_contents()
-	new /obj/item/clothing/head/costume/halloween/mad
-	new /obj/item/clothing/suit/costume/halloween/madscientist
-	new /obj/item/clothing/under/scrubs/purple
+	new /obj/item/clothing/head/costume/halloween/mad(src)
+	new /obj/item/clothing/suit/costume/halloween/madscientist(src)
+	new /obj/item/clothing/under/scrubs/purple(src)
 
 /obj/item/weapon/storage/box/costume/mailman
 	name = "mailman costume kit"

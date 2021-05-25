@@ -18,7 +18,6 @@
 		//general clothes
 		/datum/design/bioprinter/wallet,
 		/datum/design/bioprinter/botanic_leather,
-		/datum/design/bioprinter/leather/satchel,
 		/datum/design/bioprinter/leather/leather_jacket,
 		/datum/design/bioprinter/belt/utility,
 		/datum/design/bioprinter/belt/medical,
@@ -34,6 +33,10 @@
 		/datum/design/bioprinter/nt_clothes/hermes_shoes,
 		//medical
 		/datum/design/autolathe/firstaid/nt,
+		//backpacks
+		/datum/design/bioprinter/leather/storage/backpack/satchel/neotheology,
+		/datum/design/bioprinter/leather/storage/backpack/neotheology,
+		/datum/design/bioprinter/leather/storage/backpack/sport/neotheology,
 		//pouches
 		/datum/design/bioprinter/pouch/engineering_supply,
 		/datum/design/bioprinter/pouch/engineering_tools,
@@ -282,7 +285,7 @@
 		/datum/design/bioprinter/nt_clothes/hermes_shoes,
 		/datum/design/bioprinter/belt/security/neotheology,
 		//holsters
-		/datum/design/bioprinter/storage/sheath,
+		/datum/design/bioprinter/leather/holster/saber/greatsword/churchprint,
 		/datum/design/bioprinter/leather/holster,
 		/datum/design/bioprinter/leather/holster/armpit,
 		/datum/design/bioprinter/leather/holster/waist,

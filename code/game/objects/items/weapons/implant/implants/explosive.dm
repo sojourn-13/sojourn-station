@@ -58,14 +58,14 @@
 					sleep(25)
 					if (part.organ_tag in list(BP_CHEST, BP_HEAD, BP_GROIN))
 						part.createwound(BRUISE, 60)	//mangle them instead
-						explosion(get_turf(wearer), -1, -1, 2, 3)
+						explosion(get_turf(wearer), 0, 0, 2, 3)
 						qdel(src)
 					else
-						explosion(get_turf(wearer), -1, -1, 2, 3)
+						explosion(get_turf(wearer), 0, 0, 2, 3)
 						part.droplimb(0,DROPLIMB_BLUNT)
 						qdel(src)
 			if (elevel == "Destroy Body")
-				explosion(get_turf(T), -1, 0, 1, 6)
+				explosion(get_turf(T), 0, 0, 1, 6)
 				T.gib()
 			if (elevel == "Full Explosion")
 				explosion(get_turf(T), 0, 1, 3, 6)
@@ -102,7 +102,7 @@
 					part.createwound(BRUISE, 60)	//mangle them instead
 				else
 					part.droplimb(0,DROPLIMB_BLUNT)
-			explosion(get_turf(wearer), -1, -1, 2, 3)
+			explosion(get_turf(wearer), 0, 0, 2, 3)
 			qdel(src)
 
 /obj/item/weapon/implant/explosive/malfunction(severity)

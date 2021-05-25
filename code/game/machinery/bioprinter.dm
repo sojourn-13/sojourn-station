@@ -91,6 +91,12 @@
 			qdel(W)
 			return
 
+	if(default_deconstruction(O, user))
+		return
+
+	if(default_part_replacement(O, user))
+		return
+
 	return ..()
 
 /obj/machinery/bioprinter/prosthetics
@@ -133,7 +139,7 @@
 	else
 		to_chat(user, SPAN_WARNING("There is not enough matter in the printer."))
 
-obj/machinery/bioprinter/prosthetics/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/bioprinter/prosthetics/attackby(obj/item/weapon/W, mob/user)
 	// Steel for matter.
 	if(istype(W, /obj/item/stack/material) && W.get_material_name() == MATERIAL_STEEL)
 		var/obj/item/stack/S = W
@@ -143,5 +149,10 @@ obj/machinery/bioprinter/prosthetics/attackby(obj/item/weapon/W, mob/user)
 		qdel(W)
 		return
 
+	if(default_deconstruction(O, user))
+		return
 
+	if(default_part_replacement(O, user))
+		return
 
+	return ..()

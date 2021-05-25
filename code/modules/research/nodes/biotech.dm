@@ -13,7 +13,9 @@
 
 	unlocks_designs = list(	/datum/design/research/item/part/micro_mani,
 							/datum/design/research/item/part/basic_sensor,
-							/datum/design/research/item/medical/autopsy_scanner
+							/datum/design/research/item/medical/autopsy_scanner,
+							/datum/design/research/item/beaker/smoll,
+							/datum/design/research/item/beaker/big
 						)
 
 /datum/technology/medical_cooling
@@ -306,8 +308,11 @@
 
 	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/armor,
 							/datum/design/research/item/mechfab/modules/armblade,
+							/datum/design/research/item/mechfab/modules/wolverine,
 							/datum/design/research/item/mechfab/modules/energy_blade,
 							/datum/design/research/item/mechfab/modules/taser,
+							/datum/design/research/item/mechfab/modules/armsmg,
+							/datum/design/research/item/mechfab/modules/armshield,
 							/datum/design/research/item/mechfab/modules/runner,
 							/datum/design/research/item/mechfab/modules/hud/med,
 							/datum/design/research/item/mechfab/modules/hud/sec,

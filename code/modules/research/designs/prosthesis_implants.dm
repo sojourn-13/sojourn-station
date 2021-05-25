@@ -100,6 +100,10 @@ the lims and such to pull out the internal bits for other people if needed
 	name = "Embedded Arm Blade"
 	build_path = /obj/item/organ_module/active/simple/armblade
 
+/datum/design/research/item/mechfab/modules/wolverine
+	name = "Embedded Claws"
+	build_path = /obj/item/organ_module/active/simple/wolverine
+
 /datum/design/research/item/mechfab/modules/energy_blade
 	name = "Embedded Energy Blade"
 	build_path = /obj/item/organ_module/active/simple/armblade/energy_blade
@@ -107,6 +111,14 @@ the lims and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/modules/taser
 	name = "Embedded Taser"
 	build_path = /obj/item/organ_module/active/simple/taser
+
+/datum/design/research/item/mechfab/modules/armsmg
+	name = "Embedded SMG"
+	build_path = /obj/item/organ_module/active/simple/armsmg
+
+/datum/design/research/item/mechfab/modules/armshield
+	name = "Embedded Shield"
+	build_path = /obj/item/organ_module/active/simple/armshield
 
 /datum/design/research/item/mechfab/modules/runner
 	name = "Mechanical Muscles"
