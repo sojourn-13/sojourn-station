@@ -196,9 +196,9 @@
 	perks = list(/datum/perk/oddity/fast_walker)
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
+		STAT_ROB = 25,
+		STAT_TGH = 25,
+		STAT_VIG = 25,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
