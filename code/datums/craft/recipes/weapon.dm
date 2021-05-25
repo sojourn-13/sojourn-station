@@ -241,3 +241,18 @@
 		list(/obj/item/stack/cable_coil, 2, "time" = 10), //Wire it up
 		list(QUALITY_WIRE_CUTTING, 30, "time" = 50), //Fix the wires
 	)
+
+/datum/craft_recipe/weapon/armgun
+	name = "embedded SMG"
+	result = /obj/item/organ_module/active/simple/armsmg
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/automatic, 1),
+		list(/obj/item/trash/material/metal, "time" = 10),
+		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 10),
+		list(/obj/item/weapon/gun/projectile, 1, "time" = 20),
+		list(QUALITY_WELDING, 10, "time" = 40),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(/obj/item/trash/material/circuit, 1),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 10),
+		list(QUALITY_ADHESIVE, 15, 70)
+	)
