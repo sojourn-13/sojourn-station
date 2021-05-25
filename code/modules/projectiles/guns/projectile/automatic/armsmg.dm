@@ -3,7 +3,7 @@
 	icon_state = "armsmg"
 	item_state = null
 	name = "embedded SMG"
-	desc = "A makeshift SMG deployed from your arm. The favourite hidden weapon of many brutish types. Takes all kinds of .35 auto magazines."
+	desc = "A SMG deployed from your arm. The favourite hidden weapon of many brutish types. Takes all kinds of .35 auto magazines."
 	w_class = ITEM_SIZE_NORMAL
 	can_dual = 1
 	caliber = CAL_PISTOL
