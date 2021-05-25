@@ -37,9 +37,9 @@
 	name = "Cardboard"
 	build_path = /obj/item/stack/material/cardboard/random // I guess it depends on the protein content.
 */
-/datum/design/bioprinter/storage/sheath
-	name = "sheath"
-	build_path = /obj/item/weapon/storage/sheath
+/datum/design/bioprinter/leather/holster/saber/greatsword/churchprint
+	name = "Absolutist Sword Scabbard"
+	build_path = /obj/item/clothing/accessory/holster/saber/greatsword/churchprint
 
 /datum/design/bioprinter/wallet
 	name = "Wallet"
@@ -56,6 +56,18 @@
 /datum/design/bioprinter/leather/satchel
 	name = "Leather Satchel"
 	build_path = /obj/item/weapon/storage/backpack/satchel
+
+/datum/design/bioprinter/leather/storage/backpack/satchel/neotheology
+	name = "Cruciform  Satchel"
+	build_path = /obj/item/weapon/storage/backpack/satchel/neotheology
+
+/datum/design/bioprinter/leather/storage/backpack/neotheology
+	name = "Cruciform Backpack"
+	build_path = /obj/item/weapon/storage/backpack/neotheology
+
+/datum/design/bioprinter/leather/storage/backpack/sport/neotheology
+	name = "Cruciform Sport Backpack"
+	build_path = /obj/item/weapon/storage/backpack/sport/neotheology
 
 /datum/design/bioprinter/leather/leather_jacket
 	name = "Leather jacket"

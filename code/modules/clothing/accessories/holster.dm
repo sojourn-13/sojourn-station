@@ -198,6 +198,28 @@ Sword holsters
 /obj/item/clothing/accessory/holster/saber/greatsword/occupied/Initialize()
 	holstered = new holstered_spawn
 
+//Subtype which is for printing from the biomachine
+/obj/item/clothing/accessory/holster/saber/greatsword/churchprint
+	name = "Absolutist Sword Scabbard"
+	desc = "A sturdy brown leather scabbard with gold trim. Perfectly designed for holding weapons to fight against the enemies of the Church."
+	icon_state = "crusader_holster"
+	overlay_state = "crusader"
+	can_hold = list(
+		/obj/item/weapon/tool/sword/nt,
+		/obj/item/weapon/tool/sword/crusader
+		)
+
+/obj/item/clothing/accessory/holster/saber/greatsword/churchprint/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "crusader_layer"))
+
+/obj/item/clothing/accessory/holster/saber/greatsword/churchprint/occupied
+	var/holstered_spawn = /obj/item/weapon/tool/sword/crusader
+
+/obj/item/clothing/accessory/holster/saber/greatsword/churchprint/occupied/Initialize()
+	holstered = new holstered_spawn
 
 
 
