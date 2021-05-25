@@ -11,7 +11,7 @@
 	required_tech_levels = list()
 	cost = 0
 
-	unlocks_designs = list(/datum/design/research/item/beacon)
+	unlocks_designs = list(/datum/design/research/item/beaconz)
 
 /datum/technology/radio_transmission
 	name = "Blue-space Transmission"

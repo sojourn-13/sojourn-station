@@ -13,7 +13,9 @@
 
 	unlocks_designs = list(	/datum/design/research/item/part/micro_mani,
 							/datum/design/research/item/part/basic_sensor,
-							/datum/design/research/item/medical/autopsy_scanner
+							/datum/design/research/item/medical/autopsy_scanner,
+							/datum/design/research/item/beaker/smoll,
+							/datum/design/research/item/beaker/big
 						)
 
 /datum/technology/medical_cooling

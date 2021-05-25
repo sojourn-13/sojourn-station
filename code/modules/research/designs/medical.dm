@@ -104,6 +104,14 @@
 	desc = "A bluespace beaker, powered by experimental bluespace technology and Element Cuban combined with Compound Pete. Can hold up to 300 units."
 	build_path = /obj/item/weapon/reagent_containers/glass/beaker/bluespace
 
+/datum/design/research/item/beaker/smoll
+	name = "Glass beaker"
+	build_path = /obj/item/weapon/reagent_containers/glass/beaker
+
+/datum/design/research/item/beaker/big
+	name = "Large glass beaker"
+	build_path = /obj/item/weapon/reagent_containers/glass/beaker/large
+
 
 //Surgery tools
 /datum/design/research/item/medical/medimplant_sci
