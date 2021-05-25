@@ -1084,7 +1084,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/centauri
-	disk_name = "SI - centauri PDW E"
+	disk_name = "SI - \"Centauri\" PDW E"
 	icon_state = "moebius"
 
 	license = 8 //2 gun 1 cell, or 4 good cells that are bette then normal
