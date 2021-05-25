@@ -120,6 +120,10 @@ the lims and such to pull out the internal bits for other people if needed
 	name = "Embedded Mining Multitool"
 	build_path = /obj/item/organ_module/active/multitool/miner
 
+/datum/design/research/item/mechfab/modules/multitool/farmer
+	name = "Embedded Farming Multitool"
+	build_path = /obj/item/organ_module/active/multitool/farmer
+
 //Implants
 /datum/design/research/item/implant
 	build_type = PROTOLATHE | MECHFAB

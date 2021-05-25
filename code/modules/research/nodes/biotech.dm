@@ -279,6 +279,7 @@
 							/datum/design/research/item/mechfab/modules/multitool/surgical,
 							/datum/design/research/item/mechfab/modules/multitool/engineer,
 							/datum/design/research/item/mechfab/modules/multitool/miner,
+							/datum/design/research/item/mechfab/modules/multitool/farmer,
 							/datum/design/research/item/mechfab/prosthesis_moebius/r_arm,
 							/datum/design/research/item/mechfab/prosthesis_moebius/l_arm,
 							/datum/design/research/item/mechfab/prosthesis_moebius/r_leg,
