@@ -375,7 +375,6 @@
 	update_use_power(IDLE_POWER_USE)
 
 /obj/machinery/repair_station/attackby(var/obj/item/weapon/O, var/mob/user)
-	.=..()
 
 	if(default_deconstruction(O, user))
 		return
@@ -388,6 +387,7 @@
 		if(S.use(1))
 			to_chat(user, SPAN_NOTICE("You insert a sheet of \the [S]. \The [src] now has [repair_amount] repair points remaining."))
 			repair_amount += 25
+	..()
 
 #undef REPAIR_HULL
 #undef REPAIR_COMPONENTS
