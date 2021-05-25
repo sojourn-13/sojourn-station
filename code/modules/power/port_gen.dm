@@ -81,7 +81,7 @@
 			stat &= ~EMPED
 
 /obj/machinery/power/port_gen/proc/explode()
-	explosion(src.loc, -1, 3, 5, -1)
+	explosion(src.loc, 0, 3, 5, 0)
 	qdel(src)
 
 #define TEMPERATURE_DIVISOR 40

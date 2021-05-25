@@ -17,8 +17,8 @@
 	sharp = TRUE
 	edge = TRUE
 
-/obj/item/projectile/bullet/gyro/on_hit(atom/target)
-	explosion(target, -1, 0, 2)
+/obj/item/projectile/bullet/gyro/on_impact(atom/target)
+	explosion(target, 0, 1, 2)
 	return TRUE
 
 /obj/item/projectile/bullet/rocket
@@ -32,8 +32,8 @@
 	set_light(2.5, 0.5, "#dddd00")
 	..(target, target_zone, x_offset, y_offset, angle_offset)
 
-/obj/item/projectile/bullet/rocket/on_hit(atom/target)
-	explosion(target, 0, 1, 2, 4)
+/obj/item/projectile/bullet/rocket/on_impact(atom/target)
+	explosion(loc, 0, 1, 2, 4)
 	set_light(0)
 	return TRUE
 

@@ -517,8 +517,8 @@
 	edge = TRUE
 	step_delay = 0.9
 
-/obj/item/projectile/bullet/shotgun/payload/on_hit(atom/target)
-	explosion(target, -1, 0, 2)
+/obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
+	explosion(target, 0, 0, 3)
 	return TRUE
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
