@@ -813,7 +813,7 @@
 // Randomizes a bunch of weapon stats on application - stats are set on creation of the item to prevent people from re-rolling until they get what they want
 /obj/item/weapon/tool_upgrade/augment/randomizer
 	name = "BSL \"Randomizer\" tool polish"
-	desc = "This unidentified tar-like liquid warps and bends reality around it. Applying it to a tool may have unexpected results."
+	desc = "This unidentified tar-like stable liquid warps and bends reality around it. Applying it to a tool may have unexpected results."
 	icon_state = "randomizer"
 	matter = list(MATERIAL_PLASMA = 4, MATERIAL_URANIUM = 4)
 
@@ -830,6 +830,7 @@
 	UPGRADE_COLOR = "#3366ff"
 	)
 	I.prefix = "theoretical"
+	bluespace_entropy(1, get_turf(src))
 
 /obj/item/weapon/tool_upgrade/artwork_tool_mod
 	name = "Weird Revolver"

@@ -91,10 +91,10 @@
 			qdel(W)
 			return
 
-	if(default_deconstruction(O, user))
+	if(default_deconstruction(W, user))
 		return
 
-	if(default_part_replacement(O, user))
+	if(default_part_replacement(W, user))
 		return
 
 	return ..()
@@ -149,10 +149,10 @@
 		qdel(W)
 		return
 
-	if(default_deconstruction(O, user))
+	if(default_deconstruction(W, user))
 		return
 
-	if(default_part_replacement(O, user))
+	if(default_part_replacement(W, user))
 		return
 
 	return ..()

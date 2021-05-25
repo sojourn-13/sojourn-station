@@ -41,6 +41,10 @@
 	name = "\"Auretian\" Energy Pistol"
 	build_path = /obj/item/weapon/gun/energy/plasma/auretian
 
+/datum/design/research/item/weapon/centauri
+	name = "\"Centauri\" Energy PDW"
+	build_path = /obj/item/weapon/gun/energy/centauri
+
 /datum/design/research/item/weapon/decloner
 	name = "Prototype: Biological Demolecularizer"
 	build_path = /obj/item/weapon/gun/energy/decloner
