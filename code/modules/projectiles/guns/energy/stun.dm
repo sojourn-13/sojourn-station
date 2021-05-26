@@ -57,3 +57,9 @@
 	suitable_cell = /obj/item/weapon/cell/small
 	cell_type = /obj/item/weapon/cell/small
 	projectile_type = /obj/item/projectile/energy/electrode
+
+/obj/item/weapon/gun/energy/taser/blackshield
+
+/obj/item/weapon/gun/energy/taser/blackshield/New()
+	cell = new /obj/item/weapon/cell/medium/hyper(src)
+	. =..()

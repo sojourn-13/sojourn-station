@@ -191,7 +191,7 @@
 	While less physically sturdy than its melee and ranged counterpart, this model is lighter, faster and come with a built-in taser to catch running criminals."
 
 	restricted_to_species = list(FORM_BSSYNTH)
-	racial_implants = (/obj/item/organ_module/active/simple/taser)
+	racial_implants = (/obj/item/organ_module/active/simple/taser/blackshield)
 
 	perks = list(/datum/perk/oddity/fast_walker)
 
@@ -230,7 +230,7 @@
 	on a subconscious level allow for robust and study combatants. This model comes with an implanted .35 smg in the right arm."
 
 	restricted_to_species = list(FORM_BSSYNTH)
-	racial_implants = (/obj/item/organ_module/active/simple/armsmg)
+	racial_implants = (/obj/item/organ_module/active/simple/armsmg/blackshield)
 
 	stat_modifiers = list(
 		STAT_ROB = 30,
