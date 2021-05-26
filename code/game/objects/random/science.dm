@@ -20,8 +20,8 @@
 	/obj/item/weapon/computer_hardware/hard_drive/portable/research_points/rare = 1,
 	/obj/item/weapon/rig/hazmat = 2,
 	/obj/item/weapon/rig/hazmat/equipped = 1,
-	/obj/item/weapon/tool/multitool/uplink = 0.01, //REALLY RARE
-	/obj/item/device/radio/headset/uplink = 0.01
+	/obj/item/weapon/tool/multitool/uplink = 0.001, //REALLY RARE
+	/obj/item/device/radio/headset/uplink = 0.001
 	))
 
 /obj/random/science/low_chance
