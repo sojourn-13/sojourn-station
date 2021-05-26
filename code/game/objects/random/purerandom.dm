@@ -54,6 +54,8 @@
 				/obj/item/device/flash = 2,
 				/obj/item/device/camera_film = 4,
 				/obj/item/device/radio = 3,
+				/obj/item/device/radio/headset = 1,
+				/obj/item/device/radio/headset/uplink = 0.01,
 				/obj/item/device/debugger = 1,
 				/obj/item/device/aicard = 1,
 				/obj/item/weapon/storage/box/data_disk/basic = 2,
