@@ -81,7 +81,7 @@
 	if(buckled_mob)
 		buckled_mob.set_dir(dir)
 
-/obj/structure/bed/chair/verb/rotate()
+/obj/structure/bed/chair/verb/rotate_me()
 	set name = "Rotate Chair"
 	set category = "Object"
 	set src in oview(1)
