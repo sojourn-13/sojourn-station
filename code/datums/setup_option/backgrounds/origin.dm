@@ -211,7 +211,8 @@
 	on a subconscious level allow for robust and study combatants. This model comes with an armblade module implanted in the right arm and a shield implanted in the left."
 
 	restricted_to_species = list(FORM_BSSYNTH)
-	racial_implants = (/obj/item/organ_module/active/simple/armblade, /obj/item/organ_module/active/simple/armshield)
+	racial_implants = (/obj/item/organ_module/active/simple/armblade)
+	racial_implants_l = (/obj/item/organ_module/active/simple/armshield)
 
 	stat_modifiers = list(
 		STAT_ROB = 40,
