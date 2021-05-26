@@ -194,15 +194,8 @@ GLOBAL_LIST_EMPTY(conveyor_switches)
 	if(!can_conveyor_run())
 		return
 	use_power(100)
-	affecting = loc.contents - src // moved items will be all in loc
-	if(!affecting)
-		return
-	sleep(1)
-	for(var/atom/movable/A in affecting)
-		if(!A.anchored)
-			if(A.loc == loc) // prevents the object from being affected if it's not currently here.
-				step_glide(A, forwards, DELAY2GLIDESIZE(wait))
-		CHECK_TICK
+	//The () around get_turf are there because it's a macro.
+	(get_turf(src)).UnloadSlide(forwards, src, DELAY2GLIDESIZE(wait)) //Now handled by turfs.
 
 /obj/machinery/conveyor/proc/can_conveyor_run()
 	if(stat & BROKEN)

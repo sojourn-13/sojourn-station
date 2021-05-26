@@ -228,6 +228,14 @@
 	face_atom(A)
 	return 1
 
+/mob/verb/haul_all_objects(turf/T as turf in oview(1))
+	set name = "Haul"
+	set category = "Object"
+
+	if(!src || !isturf(src.loc) || !(T in oview(1, src.loc)))
+		return 0
+
+	T.UnloadSlide(get_dir(T, src), src, 1)
 
 /mob/proc/ret_grab(obj/effect/list_container/mobl/L as obj, flag)
 	if(!istype(l_hand, /obj/item/weapon/grab) && !istype(r_hand, /obj/item/weapon/grab))

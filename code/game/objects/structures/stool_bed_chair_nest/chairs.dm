@@ -87,8 +87,7 @@
 	set src in oview(1)
 
 	if(config.ghost_interaction)
-		src.set_dir(turn(src.dir, 90))
-
+		rotate()
 		return
 
 	else
@@ -99,9 +98,13 @@
 		if(usr.stat || usr.restrained())
 			return
 
-		src.set_dir(turn(src.dir, 90))
+		rotate()
 		playsound(src,'sound/effects/CREAK_Wood_Tree_Creak_10_Bright_Very_Subtle_mono.ogg',100,1)
 		return
+
+
+/obj/structure/bed/chair/proc/rotate()
+	src.set_dir(turn(src.dir, 90))
 
 /obj/structure/bed/chair/shuttle
 	name = "chair"
