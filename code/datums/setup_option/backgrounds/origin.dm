@@ -360,6 +360,25 @@
 		STAT_COG = -10
 	)
 
+/datum/category_item/setup_option/background/ethnicity/naramadnorth
+	name = "Northern Naramad"
+	desc = "The northern naramad has a more simplistic mind compared to its sister species. \
+			Having grown up in large communal families on Norian the northern naramadi hold a general if not extreme distrust of all non-Naramadi. \
+			And on the other end of the spectrum they bond more easily with fellow naramdi and will perform greater acts of self-sacrifice for each other. \
+			Northern naramdi are considered the best for manual within Sol Federation's military or alternatively within the rich mines upon their homeworld. \
+			Their simpler lives outside of their mandatory service is focused more farming, growing food, menial labor, and care for each other. \
+			Once their service is finished, it is rare for this group that is so dependant and comfortable around their own to not return home."
+
+	restricted_to_species = list(FORM_NARAMAD)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 10,
+		STAT_VIG = -10,
+		STAT_BIO = 5,
+		STAT_MEC = 0,
+		STAT_COG = -5
+	)
 
 /datum/category_item/setup_option/background/ethnicity/naramadsouth
 	name = "Southern Naramad"
