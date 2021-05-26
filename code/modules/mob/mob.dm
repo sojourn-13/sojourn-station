@@ -235,6 +235,13 @@
 	if(!src || !isturf(src.loc) || !(T in oview(1, src.loc)))
 		return 0
 
+	if(ismouse(usr))
+		return
+	if(!usr || !isturf(usr.loc))
+		return
+	if(usr.stat || usr.restrained())
+		return
+
 	T.UnloadSlide(get_dir(T, src), src, 1)
 
 /mob/proc/ret_grab(obj/effect/list_container/mobl/L as obj, flag)
