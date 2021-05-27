@@ -17,7 +17,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 4, MATERIAL_STEEL = 15)
 	price_tag = 1000
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	recoil_buildup = 5
+	recoil_buildup = 4
 
 	init_firemodes = list(
 		BURST_5_ROUND,
