@@ -292,8 +292,8 @@
 	speed = 4
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	aggro_vision_range = 16
-	vision_range = 16
+	aggro_vision_range = 20
+	vision_range = 12
 	attacktext = "gnawed"
 	attack_sound = 'sound/weapons/bite.ogg'
 	speak_chance = 5

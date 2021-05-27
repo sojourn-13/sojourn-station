@@ -15,20 +15,20 @@
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
-	charge_cost = 2000
+	charge_cost = 500
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	suitable_cell = /obj/item/weapon/cell/large
 	one_hand_penalty = 10
-	fire_delay = 14 //Equivalent to a pump then fire time
-	recoil_buildup = 1.2
-	damage_multiplier = 1
+	fire_delay = 14 //Slow, on par with a shotgun pump then fire
+	recoil_buildup = 12 //Big shots, big recoil.
+	damage_multiplier = 1.2
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
 		list(mode_name="non-lethal", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
-		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=20000, icon="grenade"),
+		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=30000, icon="grenade"),
 	)
 	var/consume_cell = FALSE
-	price_tag = 1750
+	price_tag = 2250
 
 /obj/item/weapon/gun/energy/laser/railgun/consume_next_projectile()
 	if(!cell) return null
@@ -70,16 +70,16 @@
 	force = WEAPON_FORCE_NORMAL
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 4, TECH_ENGINEERING = 4)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
-	fire_delay = 12
-	charge_cost = 200
+	fire_delay = 7
+	charge_cost = 100
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
-	recoil_buildup = 0.8
+	recoil_buildup = 6 //Still a railgun.
 	can_dual = TRUE
 	twohanded = FALSE
 	init_firemodes = list(
-		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/kurtz/railgun, icon="kill"),
-		list(mode_name="non-lethal", projectile_type=/obj/item/projectile/bullet/kurtz/rubber/railgun, icon="stun"),
-		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=10000, icon="grenade"),
+		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/kurtz_50/railgun, icon="kill"),
+		list(mode_name="non-lethal", projectile_type=/obj/item/projectile/bullet/kurtz_50/rubber/railgun, icon="stun"),
+		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
 	)
 	price_tag = 1250
 
@@ -108,7 +108,7 @@
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/heavy_rifle_408/railgun, icon="kill"),
-		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/weak, charge_cost=10000, icon="grenade"),
+		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/weak, charge_cost=30000, icon="grenade"),
 	)
 	var/consume_cell = FALSE
 	price_tag = 500

@@ -15,11 +15,11 @@
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 3)
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	damage_multiplier = 0.8
+	damage_multiplier = 0.9
 	penetration_multiplier = 0.5
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
-	recoil_buildup = 5 // it's stuck in your fucking hand or something
-	one_hand_penalty = 1 // see the above
+	recoil_buildup = 2 // Low damage, low recoil, on par with the wirbelwind but less damage and can be used 1 handed.
+	one_hand_penalty = 0
 
 /obj/item/weapon/gun/projectile/automatic/armsmg/blackshield
 

@@ -628,7 +628,6 @@
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 110
-	siemens_coefficient = 0
 	reagent_tag = IS_SYNTHETIC
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -668,7 +667,7 @@
 		)
 
 	stat_modifiers = list(
-		STAT_TGH = 20
+		STAT_TGH = 10
 	)
 
 	spawn_flags = CAN_JOIN

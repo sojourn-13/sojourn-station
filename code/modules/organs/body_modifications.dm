@@ -200,6 +200,13 @@ var/global/list/modifications_types = list(
 	department_specific = list(DEPARTMENT_MEDICAL, DEPARTMENT_SCIENCE)
 	icon = 'icons/mob/human_races/cyberlimbs/moebius.dmi'
 
+/datum/body_modification/limb/prosthesis/blackshield
+	id = "prosthesis_blackshield"
+	replace_limb = /obj/item/organ/external/robotic/blackshield
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+	department_specific = list(DEPARTMENT_SECURITY)
+	icon = 'icons/mob/human_races/cyberlimbs/blackshield.dmi'
+
 /datum/body_modification/limb/mutation/New()
 	short_name = "M: [name]"
 	name = "Mutation: [name]"

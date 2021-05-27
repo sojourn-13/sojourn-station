@@ -442,15 +442,15 @@
 	hitscan = TRUE
 	can_ricochet = FALSE
 
-/obj/item/projectile/bullet/kurtz/railgun
+/obj/item/projectile/bullet/kurtz_50/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
 
-/obj/item/projectile/bullet/kurtz/rubber/railgun
+/obj/item/projectile/bullet/kurtz_50/rubber/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
 
-/obj/item/projectile/bullet/kurtz/incendiary
+/obj/item/projectile/bullet/kurtz_50/incendiary
 	damage_types = list(BRUTE = 10)
 	agony = 5
 	armor_penetration = 0
@@ -459,7 +459,7 @@
 	knockback = 0
 	var/fire_stacks = 4
 
-/obj/item/projectile/bullet/kurtz/incendiary/on_hit(atom/target, blocked = FALSE)
+/obj/item/projectile/bullet/kurtz_50/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target

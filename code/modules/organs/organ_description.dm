@@ -238,7 +238,7 @@
 /datum/organ_description/leg/right/artificer_guild_synthetic
 	default_type = /obj/item/organ/external/robotic/technomancer
 
-//Artificer
+//Blackshield
 /datum/organ_description/chest/blackshield_synthetic
 	default_type = /obj/item/organ/external/robotic/blackshield
 
