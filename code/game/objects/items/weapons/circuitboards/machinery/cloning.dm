@@ -22,3 +22,21 @@
 		/obj/item/weapon/stock_parts/console_screen = 1,
 		/obj/item/stack/cable_coil = 2
 	)
+
+/obj/item/weapon/circuitboard/organ_printer
+	build_name = "organ bioprinter"
+	build_path = /obj/machinery/bioprinter
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
+	req_components = list(
+		/obj/item/weapon/stock_parts/matter_bin = 1
+	)
+
+/obj/item/weapon/circuitboard/prosthetics_printer
+	build_name = "prosthetics printer"
+	build_path = /obj/machinery/bioprinter/prosthetics
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
+	req_components = list(
+		/obj/item/weapon/stock_parts/matter_bin = 1,
+	)

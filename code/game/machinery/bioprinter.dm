@@ -9,6 +9,8 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
 
+	circuit = /obj/item/weapon/circuitboard/organ_printer
+
 	icon_state = "bioprinter"
 	icon = 'icons/obj/surgery.dmi'
 
@@ -21,10 +23,21 @@
 		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney, 20),
 		OP_EYES =    		list(/obj/item/organ/internal/eyes,   30),
 		OP_LIVER =   		list(/obj/item/organ/internal/liver,  50),
-		OP_BLOOD_VESSEL =    	list(/obj/item/organ/internal/blood_vessel,  10),
+		OP_BLOOD_VESSEL =  	list(/obj/item/organ/internal/blood_vessel,  10),
 		OP_MUSCLE  =    	list(/obj/item/organ/internal/muscle,  20),
 		OP_NERVE  =	    	list(/obj/item/organ/internal/nerve,  10)
 		)
+
+/obj/machinery/bioprinter/RefreshParts()
+	..()
+	var/mb_rating = 0
+	var/mb_amount = 0
+	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+		mb_rating += MB.rating
+		mb_amount++
+
+	max_matter = round(initial(max_matter)*(mb_rating/mb_amount))
+
 
 /obj/machinery/bioprinter/examine(mob/user)
 	..()
@@ -102,6 +115,8 @@
 /obj/machinery/bioprinter/prosthetics
 	name = "prosthetics fabricator"
 	desc = "It's a machine that prints prosthetic organs."
+	circuit = /obj/item/weapon/circuitboard/prosthetics_printer
+
 
 /obj/machinery/bioprinter/prosthetics/New()
 	..()
