@@ -129,11 +129,6 @@
 	desc = "A pair of customized dress shoes in a tailored color."
 	icon_state = "whitedress"
 
-/obj/item/clothing/shoes/highheels
-	name = "high heels"
-	desc = "A pair of fancy high heels."
-	icon_state = "heels"
-
 /obj/item/clothing/shoes/aerostatic_boots
 	name = "aerostatic boots"
 	desc = "A pair of running shoes that are designed with speed in mind, that stated they dont really make you go faster, and look quit nice."
@@ -149,6 +144,33 @@
 	name = "blacksilk boots"
 	desc = "A pare of silk boots that is common to see in more faithful places."
 	icon_state = "church_blacksilk_boots"
+
+/*High Heels*/
+
+/obj/item/clothing/shoes/highheels
+	name = "white high heels"
+	desc = "A pair of 'sterile' high heels."
+	icon_state = "heels"
+
+/obj/item/clothing/shoes/highheels/red
+	name = "red high heels"
+	desc = "A pair of vain high heels."
+	icon_state = "redheels"
+	
+/obj/item/clothing/shoes/highheels/black
+	name = "black high heels"
+	desc = "A pair of edgy high heels, you suddenly want Kimchi."
+	icon_state = "blackheels"
+	
+/obj/item/clothing/shoes/highheels/purple
+	name = "purple high heels"
+	desc = "A pair of luxurious high heels."
+	icon_state = "purpleheels"
+	
+/obj/item/clothing/shoes/highheels/blue
+	name = "blue high heels"
+	desc = "Une paire de talons hauts appropriés."
+	icon_state = "blueheels"
 
 /*Flats*/
 
