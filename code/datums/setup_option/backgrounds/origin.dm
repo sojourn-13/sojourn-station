@@ -189,7 +189,7 @@
 	name = "Non-Lethal Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This particular model is designed for \
 	non-lethal engagements, meant to capture people alive and with minimal harm. Thanks to a wide variety of scenarios catching targets can present, be it bounty hunting, criminal arrest, or just \
-	calming unruly people, you're chassis is designed with a wide variety of physical augmentations and comes with an inbuilt taser."
+	calming unruly people, your chassis is designed with a wide variety of physical augmentations and comes with an inbuilt taser."
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/taser/blackshield)
