@@ -31,8 +31,9 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/shoes/highheels
-	display_name = "high heels"
+	display_name = "high heels selection"
 	path = /obj/item/clothing/shoes/highheels
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/shoes/hitops
 	display_name = "high-tops selection"
