@@ -780,3 +780,10 @@
 		leftleg
 			name = "Sablekyne (Bone, L.Leg)"
 			body_parts = list (BP_L_LEG)
+
+/*Marqua*/
+
+	frogeyes
+		name = "Marqua Eyes"
+		icon_state = "frogeyes"
+		body_parts = list(BP_HEAD)
