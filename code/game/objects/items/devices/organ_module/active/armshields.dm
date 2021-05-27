@@ -5,7 +5,7 @@
 	item_state = "eshield1"
 	armor = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
 	attack_verb = list("bashed")
-	base_block_chance = 35
+	base_block_chance = 50
 	price_tag = 900
 
 /obj/item/organ_module/active/simple/armshield

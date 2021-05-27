@@ -70,7 +70,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_medical
 	name = "Medical Positronic"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Your specific model was designed with \
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Your specific model was designed with \
 	in-house medical imaging, surgical support systems, and a suite of data stored biological reference documents fed to the brain within through a real-time artificial intelligence system. The entire \
 	system works on a subconscious level, allowing the existing machinery to work with instead of for the user. This model comes with a surgical omnitool implanted in the right arm."
 
@@ -88,7 +88,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_engineer
 	name = "Engineering Positronic"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Your specific model was designed with \
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Your specific model was designed with \
 	sturdy reinforced chassis functions and augmented tool support to further enhance your innate skills. Due to an often times self tinkering habit, engineering FBP's are made sturdy and equipped \
 	with a repository of schematics and tool tips fed directly to the user on a subconscious level, allowing the existing machinery to work with instead of for the user. This model comes with an \
 	engineering omnitool implanted in the right arm."
@@ -107,7 +107,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_combat
 	name = "Combat Positronic"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Combat positronics are built specifically \
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Combat positronics are built specifically \
 	for the protection of colony interests but allowed to retain their free will, unlike other cyborgs. Combat positronics have the sturdiest physical designs and enhanced hydraulic systems to \
 	further enhance their physical strength. In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and study combatants. This model comes with an energy blade \
 	module implanted in the right arm."
@@ -116,9 +116,9 @@
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/energy_blade)
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 20,
-		STAT_VIG = 20,
+		STAT_ROB = 15,
+		STAT_TGH = 15,
+		STAT_VIG = 15,
 		STAT_BIO = 0,
 		STAT_MEC = -5,
 		STAT_COG = -5
@@ -126,7 +126,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_mech_adept
 	name = "Mechanical Adept"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. Your specific model was designed with \
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Your specific model was designed with \
 	a suite of integrated repair AI modules and augmented tool support to further enhance your innate skills. While not as sturdy as some other models of FBP's such as the Soteria designs the \
 	artificer guild positronics come with a far more advanced mechanical support subsystem, allowing for superior designs, methods, and implementations. This design come with an engineering \
 	omni-tool built in your right arm."
@@ -145,7 +145,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_sturdy
 	name = "\"Long-Haul\" Body Chassis"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This particular model is the work of Tacitus \
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This particular model is the work of Tacitus \
 	O'Conner himself, artificer guild grand master. Unlike the mechanical adept model this chassis is built to last, being far more sturdy and capable of performing alone or with teams of engineers cut \
 	off from the colony for extended periods. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and improved cogitation computers. This design come \
 	with an engineering omni-tool built in your right arm."
@@ -164,7 +164,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_mine
 	name = "\"Depts-Class\" Body Chassis"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This particular model is made with mining in \
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This particular model is made with mining in \
 	mind. Unlike the mechanical adept model this chassis is built work long hard hours in the darkness, being far more able to smash down rock veins and dig out tunnels rich with both soft \
 	and hard materials alike. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and pre-programmed assistants in maintaining tools and one's ownself. \
 	This design comes with a mining omnitool, which boasts a munchkin 3000 multitool, a greyson power drill, advanced ore scanner, and emergency radio."
@@ -186,56 +186,55 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/blackshield_security
-	name = "Security Positronic"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This model is designed for Internal Security. \
-	While less physically sturdy than its melee and ranged counterpart, this model is lighter, faster and come with a built-in taser to catch running criminals."
+	name = "Non-Lethal Model"
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This particular model is designed for \
+	non-lethal engagements, meant to capture people alive and with minimal harm. Thanks to a wide variety of scenarios catching targets can present, be it bounty hunting, criminal arrest, or just \
+	calming unruly people, you're chassis is designed with a wide variety of physical augmentations and comes with an inbuilt taser."
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/taser/blackshield)
 
-	perks = list(/datum/perk/oddity/fast_walker)
-
 	stat_modifiers = list(
-		STAT_ROB = 25,
-		STAT_TGH = 25,
-		STAT_VIG = 25,
+		STAT_ROB = 15,
+		STAT_TGH = 15,
+		STAT_VIG = 15,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/ethnicity/blackshield_melee
-	name = "Melee Positronic"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This model is designed for Melee Combat. \
-	Melee positronics have the sturdiest physical designs and enhanced hydraulic systems to further enhance their physical strength. In-built armor plating and AI-fed combat techniques given \
-	on a subconscious level allow for robust and study combatants. This model comes with an armblade module implanted in the right arm and a shield implanted in the left."
+	name = "Close-Quarters-Combat Model"
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for melee conflict. \
+	CQC positronics have the sturdiest physical designs and enhanced hydraulic systems to further enhance their physical strength. In-built armor plating and AI-fed combat techniques given \
+	on a subconscious level allow for robust and study combatants. This model comes with a combat utility blackshield tomahawk and energy shield built into each arm."
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/bs_tomahawk)
 	racial_implants_l = (/obj/item/organ_module/active/simple/armshield)
 
 	stat_modifiers = list(
-		STAT_ROB = 40,
-		STAT_TGH = 40,
-		STAT_VIG = 40,
+		STAT_ROB = 20,
+		STAT_TGH = 20,
+		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/ethnicity/blackshield_ranged
-	name = "Ranged Positronic"
-	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This model is designed for Ranged Combat. \
-	Ranged positronics are slightly less sturdy than their melee counterpart, but still have a sturdy chassis and powerful hydrolics. In-built armor plating and AI-fed combat techniques given \
-	on a subconscious level allow for robust and study combatants. This model comes with an implanted .35 smg in the right arm."
+	name = "Ballistic Model"
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for ranged engagements. \
+	Ballistic positronics are slightly less sturdy than their CQC and non-lethal counterparts, but still have a sturdy chassis and AI-guided targeting systems to aid in shooting. \
+	In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and sturdy combatants. This model comes with an implanted .35 smg in the right arm."
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armsmg/blackshield)
 
 	stat_modifiers = list(
-		STAT_ROB = 30,
-		STAT_TGH = 30,
-		STAT_VIG = 30,
+		STAT_ROB = 0,
+		STAT_TGH = 20,
+		STAT_VIG = 20,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
