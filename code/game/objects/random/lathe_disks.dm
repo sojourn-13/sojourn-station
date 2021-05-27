@@ -121,6 +121,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 1,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bulldog = 4,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sol = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ostwind = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pitbull = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pulse_rifle = 1,
@@ -129,6 +130,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bren = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/dp = 0.4,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bastard = 0.6,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/heavysniper = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1,

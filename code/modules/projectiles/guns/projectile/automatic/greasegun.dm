@@ -21,6 +21,7 @@
 	one_hand_penalty = 25
 	init_firemodes = list(
 		FULL_AUTO_400,
+		SEMI_AUTO_NODELAY
 		)
 
 /obj/item/weapon/gun/projectile/automatic/greasegun/update_icon()

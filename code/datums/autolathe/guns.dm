@@ -196,6 +196,14 @@
 
 //C A R B I N E S
 
+/datum/design/autolathe/gun/bastard
+	name = "NM C-MG .257 \"Bastard\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/bastard
+
+/datum/design/autolathe/gun/sol
+	name = "SA CAR .257 \"Solarian\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
+
 /datum/design/autolathe/gun/bulldog
 	name = "H&S CAR .257 \"Bulldog\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/bulldog

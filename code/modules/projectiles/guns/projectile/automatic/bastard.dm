@@ -1,8 +1,8 @@
 /obj/item/weapon/gun/projectile/automatic/bastard
 	name = "\"Bastard\" SMG"
-	desc = "A weapon that invokes conflicting feelings. While the weapon looks to be welded, riveted and otherwise pieced together with scrap - it handles.. well, somehow. \
+	desc = "A weapon that invokes conflicting feelings. While the weapon looks to be welded, riveted and otherwise pieced together with scrap. \
 		 The SMG oddly appears to be chambered in .257 and takes box magazines, firing from an open-bolt position. An odd mix of a sub-machine gun and a 'machine'-machine gun. \
-		 Leave it to the Marshals to create something so odd yet reliable."
+		 Leave it to the Marshals to create something so odd and cheap yet reliable. On the left side appears to be some fancy-looking script 'M' symbol."
 	icon = 'icons/obj/guns/projectile/bastard.dmi'
 	icon_state = "bastard"
 	item_state = "bastard"
@@ -17,7 +17,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 4, MATERIAL_STEEL = 15)
 	price_tag = 1000
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	recoil_buildup = 5
+	recoil_buildup = 4
 
 	init_firemodes = list(
 		BURST_5_ROUND,
