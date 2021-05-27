@@ -4,6 +4,8 @@
 	icon_state = "junk-black"
 	var/list/exclusions = list()
 	var/list/items = list(
+		/obj/item/device/radio/headset = 0.01, //So we are not ALWAYS an uplink
+		/obj/item/device/radio/headset/uplink = 0.001, //Idea is that someone had to discard this into a trash pile
 		/obj/item/weapon/material/shard = 5,
 		/obj/item/weapon/material/shard/shrapnel = 8,
 		/obj/item/weapon/scrap_lump = 1,
