@@ -17,18 +17,25 @@
 	one_hand_penalty = 14
 	saw_off = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
+	pumpshotgun_sound = 'sound/weapons/guns/interact/hydra_crossbow_load.ogg'
 
-/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow/pump(mob/M as mob)
-	//var/turf/newloc = get_turf(src)
-	playsound(M, 'sound/weapons/guns/interact/hydra_crossbow_load.ogg', 60, 1)
+/obj/item/weapon/gun/projectile/handle_post_fire()
+	..()
+	to_chat(usr, SPAN_WARNING("The bolt inside heats up to a dull red glow before being fired."))
 
-	if(chambered)//We have a shell in the chamber
-		//chambered.forceMove(newloc) //Eject casing
-		chambered = null
+/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow/update_icon()
+	..()
 
-	if(loaded.len)
-		var/obj/item/ammo_casing/AC = loaded[1] //load next casing.
-		loaded -= AC //Remove casing from loaded list.
-		chambered = AC
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
 
+	if (chambered)
+		iconstring += "-drawn"
+		itemstring += "-drawn"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow/Initialize()
+	. = ..()
 	update_icon()

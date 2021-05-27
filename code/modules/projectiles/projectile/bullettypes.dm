@@ -538,14 +538,6 @@
 	embed = FALSE
 	sharp = FALSE
 
-/obj/item/projectile/bullet/crossbow_bolt
-	name = "bolt"
-	icon_state = "bolt"
-	damage_types = list(BRUTE = 54)
-	armor_penetration = 10
-	knockback = 0 //Bug doups hits
-	step_delay = 0.9
-
 /obj/item/projectile/bullet/crossbow_bolt/lethal
 	name = "bolt"
 	icon_state = "bolt"
@@ -553,14 +545,6 @@
 	agony = 22
 	armor_penetration = 5
 	step_delay = 0.9
-
-/obj/item/projectile/bullet/crossbow_bolt/rubber
-	name = "bolt"
-	icon_state = "bolt"
-	damage_types = list(BRUTE = 26)
-	agony = 45 //Really good
-	armor_penetration = 5
-	step_delay = 1.5 //Slow
 
 /obj/item/projectile/bullet/crossbow_bolt/hv
 	name = "bolt"

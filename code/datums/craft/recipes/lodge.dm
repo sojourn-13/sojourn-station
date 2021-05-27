@@ -22,14 +22,6 @@
 		list(/obj/item/weapon/ore, 1)
 	)
 
-/datum/craft_recipe/lodge/crossbow_bolts/blunt
-	name = "Blunt Crossbow Bolts"
-	result = /obj/item/ammo_casing/crossbow_bolts/blunt
-	steps = list(
-		list(/obj/item/ammo_casing/crossbow_bolts, 1),
-		list(QUALITY_HAMMERING, 15, "time" = 3),
-	)
-
 /datum/craft_recipe/lodge/crossbow_bolts/speed
 	name = "Aerodynamic Crossbow Bolts"
 	result = /obj/item/ammo_casing/crossbow_bolts/speed

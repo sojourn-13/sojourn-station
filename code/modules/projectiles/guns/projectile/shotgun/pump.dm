@@ -36,7 +36,7 @@
 
 /obj/item/weapon/gun/projectile/shotgun/pump/proc/pump(mob/M as mob)
 	var/turf/newloc = get_turf(src)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(M, pumpshotgun_sound, 60, 1)
 
 	if(chambered)//We have a shell in the chamber
 		chambered.forceMove(newloc) //Eject casing

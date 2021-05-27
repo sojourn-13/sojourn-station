@@ -641,6 +641,7 @@
 	projectile_type = /obj/item/projectile/bullet/crossbow_bolt
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 10
+	is_caseless = TRUE
 
 /obj/item/ammo_casing/crossbow_bolts/bulk //Admin spawn stuff
 	amount = 10
@@ -669,14 +670,4 @@
 /obj/item/ammo_casing/crossbow_bolts/speed/bulk //Admin spawn stuff
 	amount = 10
 
-/obj/item/ammo_casing/crossbow_bolts/blunt
-	name = "blunt crossbow bolt"
-	desc = "A finely made bolt designed for a crossbow tip dulled and rounded for when you dont want to damage the pelt but still brake a bone."
-	icon_state = "bolt"
-	caliber = CAL_CROSSBOW
-	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/rubber
-	matter = list(MATERIAL_STEEL = 1)
-	maxamount = 10
 
-/obj/item/ammo_casing/crossbow_bolts/blunt/blunt  //Admin spawn stuff
-	amount = 10
