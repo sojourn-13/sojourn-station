@@ -41,15 +41,15 @@
 		/datum/design/autolathe/gun/NM_colt,
 		/datum/design/autolathe/gun/ladon,
 		/datum/design/autolathe/gun/naga,
-		/datum/design/autolathe/gun/rev10,
 		//SMGs
 		/datum/design/autolathe/gun/greasegun,
+		/datum/design/autolathe/gun/luger,
 		//rifles
+		/datum/design/autolathe/gun/sol,
 		/datum/design/autolathe/gun/omnirifle,
 		/datum/design/autolathe/gun/standard_omnirifle,
 		/datum/design/autolathe/gun/omnicarbine,
 		/datum/design/autolathe/gun/rds_omnicarbine,
-		/datum/design/autolathe/gun/luger,
 		/datum/design/autolathe/gun/basstet,
 		//machinegun
 		/datum/design/autolathe/gun/dp,
@@ -748,6 +748,36 @@
 	)
 
 // .257 carbines
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bastard
+	disk_name = "NM - .257 \"Bastard\" Compact Machine Gun"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/bastard = 3,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sol
+	disk_name = "SA - .257 \"Solarian\" Carbine"
+	icon_state = "ironhammer"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/sol = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pitbull
 	disk_name = "H&S - .257 Pitbull Carbine"
