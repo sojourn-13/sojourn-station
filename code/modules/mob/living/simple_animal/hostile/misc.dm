@@ -141,6 +141,44 @@
 		if(L.reagents)
 			L.reagents.add_reagent(attack_reagent, rand(3,5))
 
+/mob/living/simple_animal/hostile/dsnake
+	name = "Snek"
+	desc = "A domesticated snake that was altered to make it easily seen as friendly. Seems to have fairly high intelligence as no one can seem to keep it contained for very long."
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "dsnake"
+	speak_chance = 0
+	pass_flags = PASSTABLE
+	layer = HIDE_LAYER
+	density = 0
+	turns_per_move = 2
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
+	response_help = "boops the"
+	response_disarm = "gently pushes aside the"
+	response_harm = "hits the"
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+	speed = 18
+	maxHealth = 25
+	health = 25
+	aggro_vision_range = 5
+	vision_range = 5
+	harm_intent_damage = 8
+	melee_damage_lower = 4
+	melee_damage_upper = 7
+	attacktext = "bitten"
+	attack_sound = 'sound/weapons/bite.ogg'
+	break_stuff_probability = 0
+	var/attack_reagent = "toxin"
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
+
+/mob/living/simple_animal/hostile/snake/AttackingTarget()
+	. = ..()
+	if(attack_reagent && . && isliving(target_mob))
+		var/mob/living/L = target_mob
+		if(L.reagents)
+			L.reagents.add_reagent(attack_reagent, rand(3,5))
+
 /mob/living/simple_animal/hostile/tengbrute
 	name = "tengolo brute"
 	desc = "One of the local fauna native to the planet, peaceful except around insects and insectile creatures. This is one of the males, it looks like a four-eyed monkey mixed with a warthog."
