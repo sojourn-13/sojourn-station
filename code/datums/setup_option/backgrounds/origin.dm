@@ -204,10 +204,10 @@
 	)
 
 /datum/category_item/setup_option/background/ethnicity/blackshield_melee
-	name = "Close-Quarters-Combat Model"
+	name = "Close-Quarters Combat Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for melee conflict. \
 	CQC positronics have the sturdiest physical designs and enhanced hydraulic systems to further enhance their physical strength. In-built armor plating and AI-fed combat techniques given \
-	on a subconscious level allow for robust and study combatants. This model comes with a combat utility blackshield tomahawk and energy shield built into each arm."
+	on a subconscious level allow for robust and study combatants. This model comes with a combat utility blackshield tomahawk and a marine shield built into each arm."
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/bs_tomahawk)
