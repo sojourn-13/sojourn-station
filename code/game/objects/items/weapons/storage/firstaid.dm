@@ -324,6 +324,7 @@
 		/obj/item/weapon/reagent_containers/glass/beaker,
 		/obj/item/weapon/reagent_containers/dropper,
 		/obj/item/clothing/gloves/latex,
+		/obj/item/bodybag/cryobag,
 		)
 
 /obj/item/weapon/storage/firstaid/soteria/large/populate_contents()
