@@ -34,6 +34,7 @@
 #define INSIGHT_DESIRE_ALCOHOL "alcohol"
 #define INSIGHT_DESIRE_SMOKING "smoking"
 #define INSIGHT_DESIRE_DRUGS "drugs"
+#define INSIGHT_DESIRE_DRINK_NONALCOHOL "nonalcoholic"
 
 /datum/sanity
 	var/flags
@@ -171,10 +172,18 @@
 /datum/sanity/proc/pick_desires()
 	desires.Cut()
 	var/list/candidates = list(
-		INSIGHT_DESIRE_FOOD = 3,
-		INSIGHT_DESIRE_ALCOHOL = 3,
-		INSIGHT_DESIRE_SMOKING = 1,
-		INSIGHT_DESIRE_DRUGS = 2,
+		INSIGHT_DESIRE_FOOD,
+		INSIGHT_DESIRE_FOOD,
+		INSIGHT_DESIRE_FOOD,
+		INSIGHT_DESIRE_ALCOHOL,
+		INSIGHT_DESIRE_ALCOHOL,
+		INSIGHT_DESIRE_ALCOHOL,
+		INSIGHT_DESIRE_SMOKING,
+		INSIGHT_DESIRE_DRINK_NONALCOHOL,
+		INSIGHT_DESIRE_DRINK_NONALCOHOL,
+		INSIGHT_DESIRE_DRINK_NONALCOHOL,
+		INSIGHT_DESIRE_DRUGS,
+		INSIGHT_DESIRE_DRUGS,
 	)
 	for(var/i = 0; i < INSIGHT_DESIRE_COUNT; i++)
 		var/desire = pick_n_take(candidates)
@@ -188,6 +197,10 @@
 				potential_desires = GLOB.sanity_drinks.Copy()
 				if(!potential_desires.len)
 					potential_desires = init_sanity_drinks()
+			if(INSIGHT_DESIRE_DRINK_NONALCOHOL)
+				potential_desires = GLOB.sanity_non_alcoholic_drinks.Copy()
+				if(!potential_desires.len)
+					potential_desires = init_sanity_sanity_non_alcoholic_drinks()
 			else
 				desires += desire
 				continue
