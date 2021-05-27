@@ -110,6 +110,7 @@
 				//obj/item/weapon/gun/projectile/automatic/sts/hrifle = 1,
 				/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/weapon/gun/projectile/automatic/sts/hrifle/sawn = 1,\
+				/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/solmarine = 1,\
 				/obj/item/weapon/gun/projectile/automatic/greasegun = 1,\
 				/obj/item/weapon/gun/projectile/automatic/bren = 0.5,
 				//obj/item/weapon/gun/projectile/automatic/lmg/saw = 0.5,
@@ -229,6 +230,8 @@
 				/obj/item/weapon/gun/projectile/automatic/chaingun = 2,
 				/obj/item/weapon/gun/projectile/automatic/lmg/pk = 3,
 				/obj/item/weapon/gun/projectile/automatic/dp = 1,
+				/obj/item/weapon/gun/projectile/automatic/bren = 1.5,
+				/obj/item/weapon/gun/projectile/automatic/bastard = 1,
 				/obj/item/weapon/gun/projectile/automatic/mac/croon = 1,
 				/obj/item/weapon/gun/projectile/lamia/scoped/dark = 3,
 				/obj/item/weapon/gun/projectile/shotgun/pump/combat = 3,
