@@ -218,6 +218,52 @@
 /datum/reagent/other/lipozine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
 
+/datum/reagent/organic/nutriment/dry_ramen
+	name = "Dry Ramen"
+	id = "dry_ramen"
+	description = "Space age food, since August 25, 1958. Contains dried noodles, vegetables, and chemicals that boil in contact with water."
+	taste_description = "dry and cheap noodles"
+	reagent_state = SOLID
+	nutriment_factor = 1
+	color = "#302000"
+
+/datum/reagent/organic/nutriment/hot_ramen
+	name = "Hot Ramen"
+	id = "hot_ramen"
+	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
+	taste_description = "wet and cheap noodles"
+	reagent_state = LIQUID
+	color = "#302000"
+	nutriment_factor = 3
+
+/datum/reagent/organic/nutriment/hot_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	M.bodytemperature += 5 * TEMPERATURE_DAMAGE_COEFFICIENT
+
+
+/datum/reagent/organic/nutriment/hell_ramen
+	name = "Hell Ramen"
+	id = "hell_ramen"
+	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
+	taste_description = "wet and cheap noodles on fire"
+	reagent_state = LIQUID
+	nutriment_factor = "#302000"
+	nutriment_factor = 3.2 //So you have a reason to make these over normal ones.
+
+/datum/reagent/organic/nutriment/hell_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	M.bodytemperature += 10 * TEMPERATURE_DAMAGE_COEFFICIENT
+
+/datum/reagent/organic/nothing
+	name = "Nothing"
+	id = "nothing"
+	description = "Absolutely nothing."
+	taste_description = "nothing"
+
+	glass_icon_state = "nothing"
+	glass_name = "nothing"
+	glass_desc = "Absolutely nothing."
+
 /* Non-food stuff like condiments */
 
 /datum/reagent/other/sodiumchloride
@@ -1116,38 +1162,6 @@
 	if(M.confused)
 		M.confused = max(0, M.confused - 5 * effect_multiplier)
 
-/datum/reagent/drink/dry_ramen
-	name = "Dry Ramen"
-	id = "dry_ramen"
-	description = "Space age food, since August 25, 1958. Contains dried noodles, vegetables, and chemicals that boil in contact with water."
-	taste_description = "dry and cheap noodles"
-	reagent_state = SOLID
-	nutrition = 1
-	color = "#302000"
-
-/datum/reagent/drink/hot_ramen
-	name = "Hot Ramen"
-	id = "hot_ramen"
-	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
-	taste_description = "wet and cheap noodles"
-	reagent_state = LIQUID
-	color = "#302000"
-	nutrition = 5
-	adj_temp = 5
-
-/datum/reagent/drink/hell_ramen
-	name = "Hell Ramen"
-	id = "hell_ramen"
-	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
-	taste_description = "wet and cheap noodles on fire"
-	reagent_state = LIQUID
-	color = "#302000"
-	nutrition = 5
-
-/datum/reagent/drink/hell_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
-	..()
-	M.bodytemperature += 10 * TEMPERATURE_DAMAGE_COEFFICIENT
-
 /datum/reagent/drink/ice
 	name = "Ice"
 	id = "ice"
@@ -1161,16 +1175,6 @@
 	glass_icon_state = "iceglass"
 	glass_name = "ice"
 	glass_desc = "Generally, you're supposed to put something else in there too..."
-
-/datum/reagent/drink/nothing
-	name = "Nothing"
-	id = "nothing"
-	description = "Absolutely nothing."
-	taste_description = "nothing"
-
-	glass_icon_state = "nothing"
-	glass_name = "nothing"
-	glass_desc = "Absolutely nothing."
 
 /* Alcohol */
 
