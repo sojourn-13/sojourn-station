@@ -185,6 +185,61 @@
 		STAT_COG = 0
 	)
 
+/datum/category_item/setup_option/background/ethnicity/blackshield_security
+	name = "Security Positronic"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This model is designed for Internal Security. \
+	While less physically sturdy than its melee and ranged counterpart, this model is lighter, faster and come with a built-in taser to catch running criminals."
+
+	restricted_to_species = list(FORM_BSSYNTH)
+	racial_implants = (/obj/item/organ_module/active/simple/taser/blackshield)
+
+	perks = list(/datum/perk/oddity/fast_walker)
+
+	stat_modifiers = list(
+		STAT_ROB = 25,
+		STAT_TGH = 25,
+		STAT_VIG = 25,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/ethnicity/blackshield_melee
+	name = "Melee Positronic"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This model is designed for Melee Combat. \
+	Melee positronics have the sturdiest physical designs and enhanced hydraulic systems to further enhance their physical strength. In-built armor plating and AI-fed combat techniques given \
+	on a subconscious level allow for robust and study combatants. This model comes with an armblade module implanted in the right arm and a shield implanted in the left."
+
+	restricted_to_species = list(FORM_BSSYNTH)
+	racial_implants = (/obj/item/organ_module/active/simple/armblade/bs_tomahawk)
+	racial_implants_l = (/obj/item/organ_module/active/simple/armshield)
+
+	stat_modifiers = list(
+		STAT_ROB = 40,
+		STAT_TGH = 40,
+		STAT_VIG = 40,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/ethnicity/blackshield_ranged
+	name = "Ranged Positronic"
+	desc = "Full body positronics are often times built with a specific purpose in mind to augment the qualities most appropriate to the person in question. This model is designed for Ranged Combat. \
+	Ranged positronics are slightly less sturdy than their melee counterpart, but still have a sturdy chassis and powerful hydrolics. In-built armor plating and AI-fed combat techniques given \
+	on a subconscious level allow for robust and study combatants. This model comes with an implanted .35 smg in the right arm."
+
+	restricted_to_species = list(FORM_BSSYNTH)
+	racial_implants = (/obj/item/organ_module/active/simple/armsmg/blackshield)
+
+	stat_modifiers = list(
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_VIG = 30,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
 
 /datum/category_item/setup_option/background/ethnicity/jaeger
 	name = "Jaeger"

@@ -44,6 +44,15 @@
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_SILVER = 10, MATERIAL_GOLD = 3, )
 	holding_type = /obj/item/weapon/melee/energy/blade/organ_module
 
+/obj/item/organ_module/active/simple/armblade/bs_tomahawk
+	name = "Embedded Blackshield Tomahawk"
+	desc = "A Tactical Tomahawk designed to be inserted into an arm. Gives you a nice advantage in CQC."
+	verb_name = "Deploy Tomahawk"
+	icon_state = "armblade"
+	matter = list(MATERIAL_STEEL = 16)
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/weapon/tool/fireaxe/militia_tomahawk
+
 /obj/item/organ_module/active/simple/armblade/energy_blade/deploy(mob/living/carbon/human/H, obj/item/organ/external/E)
 	..()
 	playsound(H.loc, 'sound/weapons/saberon.ogg', 50, 1)

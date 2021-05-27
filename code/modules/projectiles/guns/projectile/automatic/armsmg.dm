@@ -20,3 +20,9 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	recoil_buildup = 5 // it's stuck in your fucking hand or something
 	one_hand_penalty = 1 // see the above
+
+/obj/item/weapon/gun/projectile/automatic/armsmg/blackshield
+
+/obj/item/weapon/gun/projectile/automatic/armsmg/blackshield/New()
+	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/drum(src)
+	. =..()

@@ -310,6 +310,7 @@
 							/datum/design/research/item/mechfab/modules/armblade,
 							/datum/design/research/item/mechfab/modules/wolverine,
 							/datum/design/research/item/mechfab/modules/energy_blade,
+							/datum/design/research/item/mechfab/modules/taser,
 							/datum/design/research/item/mechfab/modules/armsmg,
 							/datum/design/research/item/mechfab/modules/armshield,
 							/datum/design/research/item/mechfab/modules/runner,

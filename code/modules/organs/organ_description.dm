@@ -238,6 +238,29 @@
 /datum/organ_description/leg/right/artificer_guild_synthetic
 	default_type = /obj/item/organ/external/robotic/technomancer
 
+//Artificer
+/datum/organ_description/chest/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/groin/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/head/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+	functions = null
+
+/datum/organ_description/arm/left/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/arm/right/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/leg/left/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/leg/right/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
 //FBP
 /datum/organ_description/chest/full_body_prosthetic
 	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
