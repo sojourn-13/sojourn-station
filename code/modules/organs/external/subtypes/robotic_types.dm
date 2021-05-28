@@ -175,7 +175,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 // Church of the Absolute
 /obj/item/organ/external/robotic/church
 	name = "\"Absolute\""
-	desc = "Reinforced dark prosthesis designed for heavy combat."
+	desc = "Gold and black prosthetics designed by the Church of the Absolute.."
 	force_icon = 'icons/mob/human_races/cyberlimbs/church.dmi'
 	model = "church"
 	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
