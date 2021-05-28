@@ -480,7 +480,11 @@
 
 /datum/chemical_reaction/nitroglycerin/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
-	e.set_up(round (created_volume/4, 1), holder.my_atom, 0, 0)
+	e.set_up(round (created_volume/2, 1), holder.my_atom, 0, 0)
+	//at created_volume/10, doble 120 beaker bomb is 5,
+	//at created_volume/4,  doble 120 beaker bomb is 21,
+	//at created_volume/2,  doble 120 beaker bomb is 43,
+	//Given the effort it takes and hydr needed for this 2 is fine.
 	if(isliving(holder.my_atom))
 		e.amount *= 0.5
 		var/mob/living/L = holder.my_atom
