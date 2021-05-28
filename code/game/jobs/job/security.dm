@@ -30,6 +30,7 @@
 		STAT_ROB = 30,
 		STAT_TGH = 40,
 		STAT_VIG = 40,
+		STAT_COG = 15,
 	)
 
 	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect)
@@ -88,6 +89,7 @@
 		STAT_ROB = 40,
 		STAT_TGH = 40,
 		STAT_VIG = 30,
+		STAT_COG = 20,
 	)
 
 	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect)
@@ -141,6 +143,7 @@
 		STAT_ROB = 25,
 		STAT_TGH = 25,
 		STAT_VIG = 25,
+		STAT_COG = 15,
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -242,6 +245,7 @@
 		STAT_BIO = 15,
 		STAT_ROB = 15,
 		STAT_TGH = 15,
+		STAT_COG = 15,
 		STAT_VIG = 25,
 	)
 
@@ -291,6 +295,7 @@
 		STAT_TGH = 10,
 		STAT_VIG = 15,
 		STAT_ROB = 10,
+		STAT_COG = 10,
 	)
 
 	perks = list(/datum/perk/medicalexpertise)
@@ -392,6 +397,7 @@
 		STAT_ROB = 25,
 		STAT_TGH = 25,
 		STAT_VIG = 20,
+		STAT_COG = 10,
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
