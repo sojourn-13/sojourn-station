@@ -246,7 +246,7 @@
 	Comes with a plant analyzer, a minihoe, a spade, a bucket and a plant bag. \
 	In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and sturdy combatants. This model comes with an implanted .35 smg in the right arm."
 
-	restricted_to_species = list(FORM_CHURHCCHSYNTH)
+	restricted_to_species = list(FORM_CHURCHSYNTH)
 	racial_implants = (/obj/item/organ_module/active/multitool/farmer)
 
 	stat_modifiers = list(
