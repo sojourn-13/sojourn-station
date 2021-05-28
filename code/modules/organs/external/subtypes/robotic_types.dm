@@ -178,7 +178,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "Reinforced dark prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/church.dmi'
 	model = "church"
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 100, rad = 100)
+	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_BIOMATTER = 30)
 	max_damage = 60
 	min_broken_damage = 50
