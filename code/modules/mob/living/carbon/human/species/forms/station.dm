@@ -236,6 +236,19 @@
 	halloss_message = "falls down with a loud clash and seems to be unresponsive."
 	halloss_message_self = "Your systems are rebooting after an overload."
 
+/datum/species_form/church_synthetic
+	playable = FALSE
+	name = FORM_CHURCHSYNTH
+	blood_color = "#191919"
+	base = 'icons/mob/human_races/r_human_white.dmi'
+	deform = 'icons/mob/human_races/r_def_human_white.dmi'
+	appearance_flags = HAS_UNDERWEAR
+	death_sound = 'sound/machines/shutdown.ogg'
+	death_message = "falls over crashing to the ground as their electronic eyes fade off."
+	knockout_message = "has been knocked offline!"
+	halloss_message = "falls down with a loud clash and seems to be unresponsive."
+	halloss_message_self = "Your systems are rebooting after an overload."
+
 /datum/species_form/full_body_prosthetic
 	playable = FALSE
 	name = FORM_FBP

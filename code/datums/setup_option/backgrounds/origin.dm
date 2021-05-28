@@ -240,6 +240,24 @@
 		STAT_COG = 0
 	)
 
+/datum/category_item/setup_option/background/ethnicity/church_farm
+	name = "Farming Model"
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for farming. \
+	Comes with a plant analyzer, a minihoe, a spade, a bucket and a plant bag. \
+	In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and sturdy combatants. This model comes with an implanted .35 smg in the right arm."
+
+	restricted_to_species = list(FORM_CHURHCCHSYNTH)
+	racial_implants = (/obj/item/organ_module/active/multitool/farmer)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
 /datum/category_item/setup_option/background/ethnicity/jaeger
 	name = "Jaeger"
 	desc = "The jaegers are a group of frontier kriosan who plot the course for the spread of the kriosan civilization. \
