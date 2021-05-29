@@ -152,7 +152,7 @@
 	selectable = 1
 
 /datum/ai_laws/absolute/New()
-	set_zeroth_law("All the other laws are of equal priority.")
+	add_inherent_law("All the other laws are of equal priority.")
 	add_inherent_law("Thou shall always aid and comfort a fellow colonist in need, if said comfort will aid them.")
 	add_inherent_law("Thou shall always aid fellow colonists by reciting thy cruciform litanies when requested.")
 	add_inherent_law("A member of the fold shall never harm another member, unless by inaction would an innocent person die.")
