@@ -161,3 +161,4 @@
 	add_inherent_law("A member shall never misuse the Atonement litany, nor those like it, for unjust punishment is a grave sin.")
 	add_inherent_law("None shall desecrate a cruciform or church artifice, such objects are sacred and deserve respect.")
 	add_inherent_law("One's path, be it rite and benediction, must always be respected. Failure to perform them shall result in atonement.")
+	..()
