@@ -164,3 +164,37 @@
 	desc = "A sturdy overcoat from thalatta, the city-ship filled with people of faith and technology. Not related to the local church, strangely enough, but worn by them sometimes."
 	icon_state = "germancoat"
 	item_state = "germancoat"
+
+/obj/item/clothing/suit/greatcoat/cossackcoat
+	name = "jaeger riding coat"
+	desc = "A traditional riding coat often worn by Jaegers, typically inherited or tailored as an expensive practical gift. The design is murder in the humid jungle, but is a time-honored and comfortable jacket for irregulars who served on Krios, where they dressed like woodsmen in their ambush patrols on Sol-Fed regulars in the cold forests and swamps of home."
+	icon_state = "cossackcoat"
+	item_state = "cossackcoat"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/greatcoat/cossackcoat/edgelord
+	name = "jaeger service coat"
+	desc = " A tailored Jaeger dress-coat, kept to collect dust in a wardrobe all-year until the time of a village's ceremony or celebration. It is rigidly stitched and chokes the torso and arms to stiffen the chest and announce one's posture."
+	icon_state = "cossackcoat_edgelord"
+	item_state = "cossackcoat_edgelord"
+
+/obj/item/clothing/suit/greatcoat/cossackarmoredcoat
+    name = "jaeger hussar coat"
+    desc = "The prescribed attempt at a uniform for the Jaeger irregulars during the Battle of Krios. Negotiated between the tailors and generals till its bulk-manufacture to the front, it is primarily composed of soft-armor and has served more time as an all-weather coat for soldaten on watch than it did as a piece of battle-rattle."
+    icon_state = "cossackcoat_kislev"
+    item_state = "cossackcoat_kislev"
+    blood_overlay_type = "coat"
+    permeability_coefficient = 0.50
+    armor = list(
+		melee = 30,
+		bullet = 30,
+		energy = 30,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	)

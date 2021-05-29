@@ -229,3 +229,11 @@
 	allowed_roles = list("Warrant Officer")
 	slot = slot_head
 	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/armoredcossackcoat
+	display_name = "jaeger hussar coat"
+	path = /obj/item/clothing/suit/greatcoat/cossackarmoredcoat
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_wear_suit
+	sort_category = "Faction: Security"
+	cost = 2
