@@ -311,3 +311,13 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/tile/floor = 1
 	)
 	build_time = 8 SECONDS
+
+// A Pacman that use biomatter as fuel.
+/datum/nt_blueprint/machinery/biopacman
+	name = "B.I.O.P.A.C.M.A.N portable generator"
+	build_path = /obj/machinery/power/port_gen/pacman/bio
+	materials = list(
+		/obj/item/stack/material/steel = 10,
+		/obj/item/stack/material/glass = 5,
+		/obj/item/stack/material/plastic = 5,
+		/obj/item/stack/material/biomatter = 20)

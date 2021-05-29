@@ -493,6 +493,24 @@
 	explosion(src.loc, 0, 0, 3, 1)
 	qdel(src)
 
+/obj/machinery/power/port_gen/pacman/bio
+	name = "B.I.O.P.A.C.M.A.N portable generator"
+	desc = "This pacman use biomatter sheets as fuel, tends to be used by the Church. Rated for 30 kW maximum safe output!"
+	icon_state = "portgen2"
+	sheet_path = /obj/item/stack/material/biomatter
+	sheet_name = "Biomatter Fuel Sheets"
+
+	// Biomatter can be made by the church.
+	power_gen = 30000 //watts
+	time_per_fuel_unit = 100
+	temperature_gain = 20
+	circuit = /obj/item/weapon/circuitboard/pacman/camp
+
+/obj/machinery/power/port_gen/pacman/bio/explode()
+	//low explosion effects, this is rather safe.
+	explosion(src.loc, 0, 0, 3, 1)
+	qdel(src)
+
 /obj/machinery/power/port_gen/pacman/miss
 	name = "M.I.S.S.P.A.C.M.A.N portable generator"
 	desc = "Using a girls best friend. Rated for 200 kW maximum safe output!"
