@@ -62,6 +62,15 @@
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/weapon/tool/sword/nt/shortsword
 
+/obj/item/organ_module/active/simple/armblade/dagger
+	name = "Embedded Dagger"
+	desc = "A ceremonial dagger designed to be inserted into an arm, may The Absolute have mercy."
+	verb_name = "Deploy dagger"
+	icon_state = "nt_dagger"
+	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_STEEL = 1)
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/weapon/tool/knife/dagger/nt
+
 /obj/item/organ_module/active/simple/armblade/energy_blade/deploy(mob/living/carbon/human/H, obj/item/organ/external/E)
 	..()
 	playsound(H.loc, 'sound/weapons/saberon.ogg', 50, 1)

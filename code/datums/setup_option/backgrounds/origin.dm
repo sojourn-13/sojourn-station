@@ -275,6 +275,24 @@
 		STAT_COG = -5
 	)
 
+/datum/category_item/setup_option/background/ethnicity/church_religion
+	name = "Ceremony Model"
+	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This one was designed by the Church for ceremonies. \
+	This model comes with an implanted dagger in the left arm and a bible in the right."
+
+	restricted_to_species = list(FORM_CHURCHSYNTH)
+	racial_implants = (/obj/item/organ_module/active/simple/bible)
+	racial_implants_l = (/obj/item/organ_module/active/simple/armblade/dagger)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 20
+	)
+
 /datum/category_item/setup_option/background/ethnicity/jaeger
 	name = "Jaeger"
 	desc = "The jaegers are a group of frontier kriosan who plot the course for the spread of the kriosan civilization. \
