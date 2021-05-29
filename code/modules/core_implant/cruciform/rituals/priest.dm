@@ -777,7 +777,7 @@
 /datum/ritual/cruciform/priest/prosthetic
 	name = "Summon Prosthetic"
 	phrase = "O absolutus! Dona mihi membra novus install a daemone pedisequus vester."
-	desc = "This litany summon an Absolute Prosthetic to install on a follower."
+	desc = "This litany summon a prosthetic limb or implant to install on a follower."
 	power = 50
 	category = "Vitae"
 
@@ -792,7 +792,7 @@
 		return FALSE
 
 	if(altar)
-		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Armblade", "Armdagger", "Bible", "Cancel Litany")
+		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Shortsword", "Ritual Knife", "Bible", "Cancel Litany")
 		if (response == "Right Arm")
 			new /obj/item/organ/external/robotic/church/r_arm(altar.loc)
 			return TRUE
@@ -805,13 +805,13 @@
 		if (response == "Left Leg")
 			new /obj/item/organ/external/robotic/church/l_leg(altar.loc)
 			return TRUE
-		if (response == "Armblade")
+		if (response == "Shortsword")
 			new /obj/item/organ_module/active/simple/armblade/shortsword(altar.loc)
-			O = "imbedded shortsword"
+			O = "shortsword"
 			return TRUE
-		if (response == "Armdagger")
-			new /obj/item/organ_module/active/simple/armblade/dagger(altar.loc)
-			O = "imbedded dagger"
+		if (response == "Ritual Knife")
+			new /obj/item/organ_module/active/simple/armblade/ritual(altar.loc)
+			O = "ritual knife"
 			return TRUE
 		if (response == "Bible")
 			new /obj/item/organ_module/active/simple/bible(altar.loc)
