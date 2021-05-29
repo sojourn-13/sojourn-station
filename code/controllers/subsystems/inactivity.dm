@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(inactivity)
 	name = "Inactivity"
-	wait = 5 MINUTES
+	wait = 1 MINUTES
 	priority = SS_PRIORITY_INACTIVITY
 	var/tmp/list/client_list
 	var/number_kicked = 0
@@ -24,28 +24,9 @@ SUBSYSTEM_DEF(inactivity)
 		if(!C.is_afk(5 MINUTES))
 			if(C.mob)
 				var/mob/living/carbon/human/SMan = C.mob
-				var/commandep = COMMAND
 				if(istype(SMan, /mob/living/carbon/human))
 					if(SMan.job)
-						if(SMan.mind.assigned_job.department == "Security")
-							C.prefs.securityplaytime += 5
-						if(SMan.mind.assigned_job.department == "Medical")
-							C.prefs.medicalplaytime += 5
-						if(SMan.mind.assigned_job.department == "Engineering")
-							C.prefs.engineeringplaytime += 5
-						if(SMan.mind.assigned_job.department == "Science")
-							C.prefs.scienceplaytime += 5
-						if(SMan.mind.assigned_job.department == "Lonestar")
-							C.prefs.lonestarplaytime += 5
-						if(SMan.mind.assigned_job.department == "Church")
-							C.prefs.churchplaytime += 5
-						if(SMan.mind.assigned_job.department == "Prospectors")
-							C.prefs.prospectorsplaytime += 5
-						if(SMan.mind.assigned_job.department == "Independent")
-							C.prefs.independentplaytime += 5
-						if(SMan.mind.assigned_job.department_flag & commandep)
-							C.prefs.commandplaytime += 5
-						C.prefs.save_preferences(0)
+						SMan.mind.assigned_job.change_playtime(C, 1)
 
 		if (MC_TICK_CHECK)
 			return
