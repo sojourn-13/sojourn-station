@@ -791,7 +791,7 @@
 		return FALSE
 
 	if(altar)
-		var/response = input(user, "What limb do you require?") in list("Right Arm","Left Arm","Right Leg","Left Leg","Cancel Litany")
+		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Armblade", "Cancel Litany")
 		if (response == "Right Arm")
 			new /obj/item/organ/external/robotic/church/r_arm(altar.loc)
 			return TRUE
@@ -803,6 +803,9 @@
 			return TRUE
 		if (response == "Left Leg")
 			new /obj/item/organ/external/robotic/church/l_leg(altar.loc)
+			return TRUE
+		if (response == "Armblade")
+			new /obj/item/organ_module/active/simple/armblade/shortsword(altar.loc)
 			return TRUE
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain a prosthetic at this time.", user, C)
