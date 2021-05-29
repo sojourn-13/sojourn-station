@@ -778,13 +778,14 @@
 	name = "Summon Prosthetic"
 	phrase = "O absolutus! Dona mihi membra novus install a daemone pedisequus vester."
 	desc = "This litany summon an Absolute Prosthetic to install on a follower."
-	power = 75
+	power = 50
 	category = "Vitae"
 
 /datum/ritual/cruciform/priest/prosthetic/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
-
 	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/O = "prosthetic limb"
+	success_message = "On the verge of audibility you hear pleasant music, the altar slides open and a [O] slips out."
 
 	if(!altar)
 		fail("This is not your altar, the litany is useless.", user, C)
@@ -806,6 +807,7 @@
 			return TRUE
 		if (response == "Armblade")
 			new /obj/item/organ_module/active/simple/armblade/shortsword(altar.loc)
+			O = "imbedded shortsword"
 			return TRUE
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain a prosthetic at this time.", user, C)
