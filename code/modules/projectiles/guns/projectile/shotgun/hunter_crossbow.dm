@@ -30,8 +30,8 @@
 	var/itemstring = ""
 
 	if (chambered)
-		iconstring += "-drawn"
-		itemstring += "-drawn"
+		iconstring += "-drawn_extra"
+		itemstring += "-drawn_extra"
 
 	icon_state = iconstring
 	set_item_state(itemstring)
