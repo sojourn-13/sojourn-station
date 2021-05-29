@@ -240,8 +240,8 @@
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/church_farm
-	name = "Farming Model"
+/datum/category_item/setup_option/background/ethnicity/church_agrolyte
+	name = "Agrolyte Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for farming.\
 	Comes with a plant analyzer, a minihoe, a spade, a bucket and a plant bag.\
 	However, it is significantly more fragile."
