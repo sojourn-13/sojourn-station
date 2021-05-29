@@ -285,12 +285,12 @@
 	racial_implants_l = (/obj/item/organ_module/active/simple/armblade/ritual)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_ROB = -5,
+		STAT_TGH = -5,
+		STAT_VIG = -5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 20
+		STAT_COG = 10
 	)
 
 /datum/category_item/setup_option/background/ethnicity/jaeger
