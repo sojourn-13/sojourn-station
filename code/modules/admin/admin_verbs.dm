@@ -573,7 +573,7 @@ ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 	T.stats.addPerk(perkname)
 	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
 
-ADMIN_VERB_ADD(/client/proc/playtimeadd, R_ADMIN|R_MOD, FALSE|R_DEBUG)
+ADMIN_VERB_ADD(/client/proc/playtimeadd, R_ADMIN|R_MOD|R_DEBUG, FALSE)
 /client/proc/playtimeadd(mob/T as mob in GLOB.player_list)
 	set category = "Fun"
 	set name = "Add Playtime"
