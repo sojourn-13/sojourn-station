@@ -390,3 +390,10 @@ AI MODULES
 	desc = "An 'Antimov' Core AI Module: 'Reconfigures the AI's core laws.'"
 	origin_tech = list(TECH_DATA = 4)
 	laws = new/datum/ai_laws/antimov()
+
+/******************** Absolute ********************/
+/obj/item/weapon/aiModule/absolute // -- TLE
+	name = "\improper 'Absolute' core AI module"
+	desc = "An 'Absolute' Core AI Module: 'Reconfigures the AI's core laws.'"
+	origin_tech = list(TECH_DATA = 4)
+	laws = new/datum/ai_laws/absolute()
