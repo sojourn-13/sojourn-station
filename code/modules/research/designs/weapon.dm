@@ -409,3 +409,8 @@
 	name = "Hydraulic Circuits"
 	build_path = /obj/item/weapon/tool_upgrade/augment/hydraulic
 	sort_string = "TAABB"
+
+/datum/design/research/item/weapon/toolmod/celladapt
+	name = "Cell Adapter"
+	build_path = /obj/item/weapon/tool_upgrade/augment/cell_adapt
+	sort_string = "TAABC"

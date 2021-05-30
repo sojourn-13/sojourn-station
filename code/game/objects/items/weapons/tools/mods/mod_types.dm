@@ -508,6 +508,28 @@
 	I.prefix = "medium-cell"
 	I.req_fuel_cell = REQ_CELL
 
+/obj/item/weapon/tool_upgrade/augment/cell_adapt
+	name = "small cell adapter"
+	icon_state = "cell_adapt"
+	desc = "A cell adapter which allows undersized power cells to be installed into tools. Due to its delicate integration, it can't be removed once installed."
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
+	can_remove = FALSE // To fix exploit of fitting large cells on tools then taking out the mod while conserving a large cell.
+
+/obj/item/weapon/tool_upgrade/augment/cell_adapt/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_DEGRADATION_MULT = 1.15,
+	UPGRADE_HEALTH_THRESHOLD = -10,
+	UPGRADE_CELLMINUS = 1
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_CELLMINUS = 1)
+	I.prefix = "medium-cell"
+	I.req_fuel_cell = REQ_CELL
+	I.req_gun_tags = list(GUN_ENERGY)
+	I.gun_loc_tag = GUN_MECHANISM
+
 //Stores moar fuel!
 /obj/item/weapon/tool_upgrade/augment/fuel_tank
 	name = "expanded fuel tank"
