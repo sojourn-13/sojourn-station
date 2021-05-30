@@ -145,6 +145,11 @@
 	desc = "A pare of silk boots that is common to see in more faithful places."
 	icon_state = "church_blacksilk_boots"
 
+/obj/item/clothing/shoes/track_shoes
+	name = "running shoes"
+	desc = "A pare of shoes with with stripes on the side for running."
+	icon_state = "trackshoes_black"
+
 /*High Heels*/
 
 /obj/item/clothing/shoes/highheels
@@ -156,17 +161,17 @@
 	name = "red high heels"
 	desc = "A pair of vain high heels."
 	icon_state = "redheels"
-	
+
 /obj/item/clothing/shoes/highheels/black
 	name = "black high heels"
 	desc = "A pair of edgy high heels, you suddenly want Kimchi."
 	icon_state = "blackheels"
-	
+
 /obj/item/clothing/shoes/highheels/purple
 	name = "purple high heels"
 	desc = "A pair of luxurious high heels."
 	icon_state = "purpleheels"
-	
+
 /obj/item/clothing/shoes/highheels/blue
 	name = "blue high heels"
 	desc = "Une paire de talons hauts appropriés."

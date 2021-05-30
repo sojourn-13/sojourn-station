@@ -338,6 +338,12 @@
 	icon_state = "aerostatic_suit"
 	item_state = "aerostatic_suit"
 
+/obj/item/clothing/under/track_suit
+	name = "striped tracksuit"
+	desc = "A tracksuit lined with white tripped fibers on its side."
+	icon_state = "tracksuit_black"
+	item_state = "tracksuit_black"
+
 /obj/item/clothing/under/neon
 	name = "green neon tracksuit"
 	desc = "A tracksuit lined with green neon fibers. Slightly luminescent."
