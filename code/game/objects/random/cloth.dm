@@ -192,7 +192,7 @@
 				/obj/item/clothing/under/leisure = 5,
 				/obj/item/clothing/under/leisure/white = 5,
 				/obj/item/clothing/under/leisure/pullover = 5,
-				/obj/item/clothing/under/track_suit = 2,))
+				/obj/item/clothing/under/track_suit = 2))
 
 /obj/random/cloth/under/low_chance
 	name = "low chance random under"
