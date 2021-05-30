@@ -665,6 +665,12 @@
 	required_reagents = list("sugar" = 1, "ethanol" = 3)
 	result_amount = 3
 
+/datum/chemical_reaction/drinks/schnapps
+	result = "schnapps"
+	required_reagents = list("sugar" = 1, "vodka" = 3)
+	catalysts = list("ethanol" = 1)
+	result_amount = 3
+
 /datum/chemical_reaction/drinks/pianowoman
 	result = "pianowoman"
 	required_reagents = list("sugar" = 1, "fernet" = 1, "lemon_lime" = 1, "capsaicin" = 1, "bluecuracao" = 1)
