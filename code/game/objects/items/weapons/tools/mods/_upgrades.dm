@@ -145,6 +145,16 @@
 				to_chat(user, SPAN_WARNING("Remove the cell from the tool first!"))
 			return FALSE
 
+	if(tool_upgrades[UPGRADE_CELLMINUS])
+		if(!(T.suitable_cell == /obj/item/weapon/cell/medium || T.suitable_cell == /obj/item/weapon/cell/large))
+			if(user)
+				to_chat(user, SPAN_WARNING("This tool does not require a cell holding upgrade."))
+			return FALSE
+		if(T.cell)
+			if(user)
+				to_chat(user, SPAN_WARNING("Remove the cell from the tool first!"))
+			return FALSE
+
 	return TRUE
 
 /datum/component/item_upgrade/proc/check_armor(var/obj/item/clothing/T, var/mob/living/user)
@@ -294,6 +304,15 @@
 				prefix = "large-cell"
 			if(/obj/item/weapon/cell/small)
 				T.suitable_cell = /obj/item/weapon/cell/medium
+				prefix = "medium-cell"
+	if(tool_upgrades[UPGRADE_CELLMINUS])
+		switch(T.suitable_cell)
+			if(/obj/item/weapon/cell/medium)
+				T.suitable_cell = /obj/item/weapon/cell/small
+				prefix = "small-cell"
+			if(/obj/item/weapon/cell/large)
+				T.suitable_cell = /obj/item/weapon/cell/medium
+				prefix = "medium-cell"
 	T.prefixes |= prefix
 
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/weapon/gun/G)
@@ -365,6 +384,14 @@
 			E.overcharge_rate *= weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX]
 		if(weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX])
 			E.overcharge_max *= weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX]
+		if(weapon_upgrades[GUN_UPGRADE_CELLMINUS])
+			switch(E.suitable_cell)
+				if(/obj/item/weapon/cell/medium)
+					E.suitable_cell = /obj/item/weapon/cell/small
+					prefix = "small-cell"
+				if(/obj/item/weapon/cell/large)
+					E.suitable_cell = /obj/item/weapon/cell/medium
+					prefix = "medium-cell"
 
 	if(istype(G, /obj/item/weapon/gun/projectile))
 		var/obj/item/weapon/gun/projectile/P = G

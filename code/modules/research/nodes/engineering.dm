@@ -338,6 +338,7 @@
 	cost = 1500
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/cellmount,
+							/datum/design/research/item/weapon/toolmod/celladapt,
 							/datum/design/research/item/weapon/toolmod/fueltank,
 							/datum/design/research/item/weapon/toolmod/expansion,
 							/datum/design/research/item/weapon/toolmod/spikes,

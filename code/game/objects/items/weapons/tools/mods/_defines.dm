@@ -38,6 +38,8 @@
 
 #define UPGRADE_CELLPLUS "cell_hold_upgrade"
 
+#define UPGRADE_CELLMINUS "cell_down_size"
+
 
 //Salvager perk define, got stuck here because fuck making a new file for something so small. -Kaz
 #define RANDOM_RARE_ITEM list(\
@@ -98,6 +100,7 @@
 #define GUN_UPGRADE_EXPLODE "self destruct"
 #define GUN_UPGRADE_RIGGED "rigged"
 #define GUN_UPGRADE_AUTOEJECT "autoeject"
+#define GUN_UPGRADE_CELLMINUS "small cell adapter"
 //Location Tag defines
 
 #define GUN_UNDERBARREL "underbarrel slot"
