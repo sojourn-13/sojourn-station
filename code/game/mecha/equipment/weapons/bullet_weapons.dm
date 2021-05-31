@@ -37,7 +37,7 @@
 			if(ammo_amout_left <= 0)
 				to_chat(user, SPAN_WARNING("The box is out of ammo."))
 				return 0
-			if(src.ammo_max_amout >= src.ammo_amout_left)
+			if(src.ammo_max_amout <= src.ammo_amout_left)
 				to_chat(user, SPAN_WARNING("The box is full."))
 				return 0
 			ammo_amout_left -= amount_per_click
@@ -71,7 +71,7 @@
 			if(FMJ.ammo_amout_left <= 0)
 				to_chat(user, SPAN_WARNING("The box is out of ammo."))
 				return 0
-			if(src.max_ammo >= src.projectiles)
+			if(src.max_ammo <= src.projectiles)
 				to_chat(user, SPAN_WARNING("The [src] is full."))
 				return 0
 			FMJ.ammo_amout_left -= FMJ.amount_per_click
