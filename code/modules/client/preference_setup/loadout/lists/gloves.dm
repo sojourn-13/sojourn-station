@@ -36,6 +36,13 @@
 	slot = slot_gloves
 	cost = 1
 
+/datum/gear/gloves/evening_ash
+	display_name = "gloves, ash evening"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/ash_evening
+	slot = slot_gloves
+	cost = 1
+
 /datum/gear/gloves/latex
 	display_name = "gloves, latex"
 	sort_category = "Gloves and Handwear"

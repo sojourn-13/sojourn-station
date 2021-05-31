@@ -191,7 +191,8 @@
 				/obj/item/clothing/under/dress/red = 5,
 				/obj/item/clothing/under/leisure = 5,
 				/obj/item/clothing/under/leisure/white = 5,
-				/obj/item/clothing/under/leisure/pullover = 5))
+				/obj/item/clothing/under/leisure/pullover = 5,
+				/obj/item/clothing/under/track_suit = 2))
 
 /obj/random/cloth/under/low_chance
 	name = "low chance random under"
@@ -314,7 +315,9 @@
 				/obj/item/clothing/gloves/thick = 5,
 				/obj/item/clothing/gloves/thick/combat = 1,
 				/obj/item/clothing/gloves/thick/swat = 2,
-				/obj/item/clothing/gloves/stungloves = 1))
+				/obj/item/clothing/gloves/stungloves = 1,
+				/obj/item/clothing/gloves/evening = 2,
+				/obj/item/clothing/gloves/ash_evening = 2))
 
 /obj/random/cloth/gloves/low_chance
 	name = "low chance random gloves"
@@ -365,7 +368,8 @@
 				/obj/item/clothing/shoes/render = 10,
 				/obj/item/clothing/shoes/ablasive = 8,
 				/obj/item/clothing/shoes/reinforced = 14,
-				/obj/item/clothing/shoes/workboots = 4))
+				/obj/item/clothing/shoes/workboots = 4,
+				/obj/item/clothing/shoes/track_shoes = 3))
 
 /obj/random/cloth/shoes/low_chance
 	name = "low chance random shoes"

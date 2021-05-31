@@ -5,6 +5,11 @@
 	slot = slot_w_uniform
 	sort_category = "Uniforms and Casual Dress"
 
+/datum/gear/uniform/tracksuit
+	display_name = "track suit"
+	path = /obj/item/clothing/under/track_suit
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/casualwear
 	display_name = "casualwear selection"
 	path = /obj/item/clothing/under/top
