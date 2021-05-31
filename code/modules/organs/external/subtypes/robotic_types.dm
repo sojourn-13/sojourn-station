@@ -109,10 +109,11 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "Reinforced purple and white prosthesis designed for space exploration and light combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/moebius.dmi'
 	model = "moebius"
-	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
+	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
 	max_damage = 60
 	min_broken_damage = 40
+	min_malfunction_damage = 30
 
 /obj/item/organ/external/robotic/moebius/l_arm
 	default_description = /datum/organ_description/arm/left
@@ -146,8 +147,8 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_PLASTEEL = 10)
 	max_damage = 60
-	min_broken_damage = 50
-	min_malfunction_damage = 40
+	min_broken_damage = 40
+	min_malfunction_damage = 30
 
 /obj/item/organ/external/robotic/blackshield/l_arm
 	default_description = /datum/organ_description/arm/left
@@ -178,11 +179,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "Gold and black prosthetics designed by the Church of the Absolute."
 	force_icon = 'icons/mob/human_races/cyberlimbs/church.dmi'
 	model = "church"
-	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_BIOMATTER = 30)
-	max_damage = 60
-	min_broken_damage = 50
-	min_malfunction_damage = 40
 
 /obj/item/organ/external/robotic/church/l_arm
 	default_description = /datum/organ_description/arm/left

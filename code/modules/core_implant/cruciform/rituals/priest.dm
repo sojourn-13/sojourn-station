@@ -806,7 +806,7 @@
 			new /obj/item/organ/external/robotic/church/l_leg(altar.loc)
 			return TRUE
 		if (response == "Shortsword")
-			new /obj/item/organ_module/active/simple/armblade/shortsword(altar.loc)
+			new /obj/item/organ_module/active/simple/armblade/longsword(altar.loc)
 			O = "shortsword"
 			return TRUE
 		if (response == "Ritual Knife")
