@@ -15,7 +15,7 @@
 	var/recent_fail = 0
 
 /obj/item/device/scanner/mass_spectrometer/is_valid_scan_target(atom/O)
-	if(!usr.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
+	if(!usr.stats?.getPerk(PERK_ADVANCED_MEDICAL) || !usr.stat_check(STAT_COG, STAT_LEVEL_BASIC)) //Health scanners do this but better.
 		to_chat(usr, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
 		return
 
