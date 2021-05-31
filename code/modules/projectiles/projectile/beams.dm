@@ -115,9 +115,9 @@
 	icon_state = "xray"
 	damage_types = list(BURN = 50)
 	armor_penetration = 40
-	stun = 3
-	weaken = 3
-	stutter = 3
+//	stun = 3
+//	weaken = 3
+//	stutter = 3
 
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer

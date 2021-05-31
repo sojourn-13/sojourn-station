@@ -22,7 +22,7 @@
 	var/bolt_open = 0
 	zoom_factor = 2.0
 	twohanded = TRUE
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	gun_tags = list(GUN_PROJECTILE)
 
 /obj/item/weapon/gun/projectile/heavysniper/update_icon()
 	..()

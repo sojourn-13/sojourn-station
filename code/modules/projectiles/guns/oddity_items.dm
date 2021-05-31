@@ -45,6 +45,7 @@
 	penetration_multiplier = 2
 	recoil_buildup = 75
 	one_hand_penalty = 50
+	gun_tags = list(GUN_PROJECTILE)
 
 /obj/item/weapon/gun/energy/ntpistol/mana
 	name = "\"Mana from Heaven\" energy pistol"
@@ -94,7 +95,7 @@
 	icon = 'icons/obj/guns/projectile/bluecross.dmi'
 	icon_state = "bluecross"
 	item_state = "bluecross"
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 	force = WEAPON_FORCE_DANGEROUS
 	bolt_training = FALSE
 	damage_multiplier = 2.5 //basic shot will 67.6~ damage
@@ -185,7 +186,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	armor_penetration = ARMOR_PEN_HALF
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
-	max_upgrades = 5
+	max_upgrades = 3
 	tool_qualities = list(QUALITY_HAMMERING = 100)
 
 /obj/item/weapon/tool/knife/dagger/assassin/ubersaw
@@ -214,7 +215,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	throwforce = WEAPON_FORCE_PAINFUL
 	degradation = 0.7
-	max_upgrades = 4
+	max_upgrades = 2
 
 /obj/item/weapon/tool/saw/hyper/doombringer
 	name = "\"Doombringer\" chainsword"
@@ -228,7 +229,7 @@
 	armor_penetration = ARMOR_PEN_HALF
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 70, QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 30)
-	max_upgrades = 4
+	max_upgrades = 2
 	degradation = 0.1
 	use_power_cost = 1
 	suitable_cell = /obj/item/weapon/cell/medium

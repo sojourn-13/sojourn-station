@@ -42,8 +42,8 @@
 		UPGRADE_HEALTH_THRESHOLD = 10
 		)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
-		GUN_UPGRADE_STEPDELAY_MULT = 0.8
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+		GUN_UPGRADE_STEPDELAY_MULT = 0.9
 	)
 	I.prefix = "heatsunk"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
@@ -104,8 +104,8 @@
 		UPGRADE_FUELCOST_MULT = 1.05
 		)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.6,
-		GUN_UPGRADE_STEPDELAY_MULT = 0.6
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
+		GUN_UPGRADE_STEPDELAY_MULT = 0.8
 	)
 	I.prefix = "plasma-cooled"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
@@ -180,8 +180,8 @@
 	UPGRADE_COLOR = "#FF4444"
 	)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
-		GUN_UPGRADE_STEPDELAY_MULT = 0.8,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.75,
+		GUN_UPGRADE_STEPDELAY_MULT = 0.75,
 		GUN_UPGRADE_OFFSET = 7,
 		GUN_UPGRADE_RECOIL = 1.3,
 		UPGRADE_COLOR = "#FF4444"
@@ -202,7 +202,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.15,
 	UPGRADE_PRECISION = 5,
-	UPGRADE_FORCE_MULT = 1.15
+	UPGRADE_FORCE_MULT = 1.1
 	)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_MELEE_DAMAGE = 1.3,
@@ -225,7 +225,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.25,
 	UPGRADE_DEGRADATION_MULT = 0.85,
-	UPGRADE_FORCE_MULT = 1.10,
+	UPGRADE_FORCE_MULT = 1.1,
 	)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_MELEE_DAMAGE = 1.2,
@@ -247,7 +247,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.20,
-	UPGRADE_FORCE_MULT = 1.15,
+	UPGRADE_FORCE_MULT = 1.1,
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_HEALTH_THRESHOLD = -10
 	)
@@ -266,7 +266,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.5,
-	UPGRADE_FORCE_MULT = 1.15,
+	UPGRADE_FORCE_MULT = 1.1,
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_POWERCOST_MULT = 1.35,
 	UPGRADE_FUELCOST_MULT = 1.35,
@@ -323,7 +323,7 @@
 	UPGRADE_FUELCOST_MULT = 1.25
 	)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_MULT = 1.25,
+	GUN_UPGRADE_DAMAGE_MULT = 1.20,
 	GUN_UPGRADE_CHARGECOST = 1.35
 	)
 	I.prefix = "boosted"
@@ -429,6 +429,8 @@
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
 	I.weapon_upgrades = list(
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.95,
+		GUN_UPGRADE_STEPDELAY_MULT = 0.95,
 		GUN_UPGRADE_MUZZLEFLASH = 0.8,
 		GUN_UPGRADE_RECOIL = 0.8,
 		GUN_UPGRADE_DAMAGE_MULT = 0.9
@@ -455,6 +457,8 @@
 	UPGRADE_BULK = 1
 	)
 	I.weapon_upgrades = list(
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.85,
+		GUN_UPGRADE_STEPDELAY_MULT = 0.85,
 		GUN_UPGRADE_MUZZLEFLASH = 0.6,
 		GUN_UPGRADE_RECOIL = 0.6,
 		GUN_UPGRADE_DAMAGE_MULT = 0.9
@@ -479,6 +483,8 @@
 	UPGRADE_ITEMFLAGPLUS = SILENT
 	)
 	I.weapon_upgrades = list(
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.65,
+		GUN_UPGRADE_STEPDELAY_MULT = 0.65,
 		GUN_UPGRADE_RECOIL = 0.5,
 	)
 	I.gun_loc_tag = GUN_GRIP
@@ -580,7 +586,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_FORCE_MOD = 4,
+	UPGRADE_FORCE_MOD = 3,
 	UPGRADE_PRECISION = -5,
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_WORKSPEED = -0.15,
@@ -670,8 +676,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_POWERCOST_MULT = 1.20,
-	UPGRADE_PRECISION = 14,
-	UPGRADE_WORKSPEED = 14,
+	UPGRADE_PRECISION = 12,
+	UPGRADE_WORKSPEED = 3,
 	UPGRADE_HEALTH_THRESHOLD = -10,
 	)
 	I.weapon_upgrades = list(
@@ -825,7 +831,7 @@
 	UPGRADE_HEALTH_THRESHOLD = rand(-10,10),
 	UPGRADE_WORKSPEED = rand(-1,3),
 	UPGRADE_PRECISION = rand(-20,20),
-	UPGRADE_FORCE_MOD = rand(-20,20),
+	UPGRADE_FORCE_MOD = rand(-10,10),
 	UPGRADE_BULK = rand(-1,2),
 	UPGRADE_COLOR = "#3366ff"
 	)

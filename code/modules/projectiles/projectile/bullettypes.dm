@@ -487,13 +487,13 @@
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
-//Should do about 68 damage at 1 tile distance (adjacent), and 40 damage at 3 tiles distance.
+//Should do about 51 damage at 1 tile distance (adjacent), and 30 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	icon_state = "birdshot-1"
 	damage_types = list(BRUTE = 18)
-	pellets = 4
+	pellets = 3
 	range_step = 1
 	spread_step = 10
 	knockback = 0 //We do not knockback do to issues with bullet douping
