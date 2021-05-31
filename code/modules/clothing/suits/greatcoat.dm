@@ -184,13 +184,13 @@
 	item_state = "cossackcoat_edgelord"
 
 /obj/item/clothing/suit/greatcoat/cossackarmoredcoat
-    name = "jaeger hussar coat"
-    desc = "The prescribed attempt at a uniform for the Jaeger irregulars during the Battle of Krios. Negotiated between the tailors and generals till its bulk-manufacture to the front, it is primarily composed of soft-armor and has served more time as an all-weather coat for soldaten on watch than it did as a piece of battle-rattle."
-    icon_state = "cossackcoat_kislev"
-    item_state = "cossackcoat_kislev"
-    blood_overlay_type = "coat"
-    permeability_coefficient = 0.50
-    armor = list(
+	name = "jaeger hussar coat"
+	desc = "The prescribed attempt at a uniform for the Jaeger irregulars during the Battle of Krios. Negotiated between the tailors and generals till its bulk-manufacture to the front, it is primarily composed of soft-armor and has served more time as an all-weather coat for soldaten on watch than it did as a piece of battle-rattle."
+	icon_state = "cossackcoat_kislev"
+	item_state = "cossackcoat_kislev"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(
 		melee = 30,
 		bullet = 30,
 		energy = 30,
