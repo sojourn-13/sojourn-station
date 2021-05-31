@@ -440,6 +440,35 @@
 	nutriment_desc = list("chocolate" = 5)
 	preloaded_reagents = list("sugar" = 2, "coco" = 2)
 
+/obj/item/weapon/reagent_containers/food/snacks/chocolatecoin
+	name = "chocolate coin"
+	desc = "Chocolate pressed into a coin shape, could pass for a coin if wrapped in gold foil."
+	icon_state = "chococoin-wrapped"
+	filling_color = "#7D5F46"
+	bitesize = 1
+	center_of_mass = list("x"=15, "y"=15)
+	nutriment_amt = 3
+	nutriment_desc = list("chocolate" = 5)
+	preloaded_reagents = list("sugar" = 2, "coco" = 2)
+	var/open = FALSE
+
+/obj/item/weapon/reagent_containers/food/snacks/chocolatecoin/attack_self(mob/user)
+	if(!open)
+		open()
+		to_chat(user, SPAN_NOTICE("You tear \the [src] open."))
+		return
+
+/obj/item/weapon/reagent_containers/food/snacks/chocolatecoin/attack(mob/M as mob, mob/user as mob, def_zone)
+	. = ..()
+	if(!open)
+		open()
+		to_chat(user, SPAN_WARNING("You viciously rip \the [src] open with your teeth, swallowing some plastic in the process, you animal."))
+
+/obj/item/weapon/reagent_containers/food/snacks/chocolatecoin/proc/open(mob/user)
+	icon_state = "chococoin"
+	open = TRUE
+
+
 /obj/item/weapon/reagent_containers/food/snacks/donut
 	name = "donut"
 	desc = "Goes great with Robust Coffee."
