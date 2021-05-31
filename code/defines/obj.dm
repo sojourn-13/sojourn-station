@@ -113,6 +113,7 @@
 	icon_state = "hangskele"
 	desc = "It's an anatomical model of a human skeletal system made of plaster."
 	anchored = 0
+	density = 0
 
 /obj/structure/showcase/horrific_experiment_cryo
 	name = "horrific experiment"
