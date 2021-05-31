@@ -337,6 +337,13 @@
 	center_of_mass = list("x"=16, "y"=4)
 	preloaded_reagents = list("fernet" = 100)
 
+/obj/item/weapon/reagent_containers/food/drinks/bottle/neulandschnapps
+	name = "Neuland Himbeergeist"
+	desc = "A kriosan-approved spirits covered in german text, wax stamp on the bottle with the crest of a obscure and minor Castellan Lord. Time to shout 'Prost!' Ja?"
+	icon_state = "neulandschnapps"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("schnapps" = 100)
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice

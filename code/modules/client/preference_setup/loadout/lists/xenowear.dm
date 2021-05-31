@@ -44,7 +44,14 @@
 /datum/gear/xenowear/kriosansuit
 	display_name = "kriosan fatigues"
 	path = /obj/item/clothing/under/kriosansuit
+	slot = slot_w_uniform
 	sort_category = "Xenowear"
+
+/datum/gear/xenowear/cossackcoat
+	display_name = "jaeger coat selection"
+	path = /obj/item/clothing/suit/greatcoat/cossackcoat
+	slot = slot_wear_suit
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"
