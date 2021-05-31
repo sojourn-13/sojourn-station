@@ -42,6 +42,7 @@
 	force_icon = 'icons/mob/human_races/cyberlimbs/frozen_star.dmi'
 	model = "frozen_star"
 
+// Artificer Guild
 /obj/item/organ/external/robotic/technomancer
 	name = "Artificer Guild \"Homebrew\""
 	desc = "Artificer Guild \"branded\" \"functional\" prosthesis."
@@ -60,6 +61,7 @@ obj/item/organ/external/robotic/technomancer/groin
 	name = "\"Artificer Guild\" Head"
 	default_description = /datum/organ_description/head
 
+// Synth-Skin
 /obj/item/organ/external/robotic/full_body_prosthetic
 	name = "Full Body Prosthetic \"Synth-Skin\""
 	desc = "A full body prosthetic with \"realistic\" synth skin."
@@ -78,6 +80,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	name = "Full Body Prosthetic \"Synth-Skin\" Head"
 	default_description = /datum/organ_description/head
 
+// Junktech
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""
 	desc = "Custom tooled and held together by hope and duct tape."
@@ -100,6 +103,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 /obj/item/organ/external/robotic/junktech/r_leg
 	default_description = /datum/organ_description/leg/right
 
+// Soteria
 /obj/item/organ/external/robotic/moebius
 	name = "\"Soteria\""
 	desc = "Reinforced purple and white prosthesis designed for space exploration and light combat."
@@ -133,6 +137,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	name = "\"Soteria\" Head"
 	default_description = /datum/organ_description/head
 
+// Blackshied
 /obj/item/organ/external/robotic/blackshield
 	name = "\"Blackshield\""
 	desc = "Reinforced dark prosthesis designed for heavy combat."
@@ -167,7 +172,42 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	name = "\"Blackshield\" Head"
 	default_description = /datum/organ_description/head
 
-//In game prostheses
+// Church of the Absolute
+/obj/item/organ/external/robotic/church
+	name = "\"Absolute\""
+	desc = "Gold and black prosthetics designed by the Church of the Absolute."
+	force_icon = 'icons/mob/human_races/cyberlimbs/church.dmi'
+	model = "church"
+	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_BIOMATTER = 30)
+	max_damage = 60
+	min_broken_damage = 50
+	min_malfunction_damage = 40
+
+/obj/item/organ/external/robotic/church/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/church/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/church/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/church/r_leg
+	default_description = /datum/organ_description/leg/right
+
+/obj/item/organ/external/robotic/church/groin
+	default_description = /datum/organ_description/groin
+
+/obj/item/organ/external/robotic/church/torso
+	name = "\"Absolute\" Torso"
+	default_description = /datum/organ_description/chest
+
+/obj/item/organ/external/robotic/church/head
+	name = "\"Absolute\" Head"
+	default_description = /datum/organ_description/head
+
+// Excelsior
 /obj/item/organ/external/robotic/excelsior
 	name = "Excelsior"
 	desc = "Plasma reinforced black prosthesis designed for heavy combat."
@@ -190,6 +230,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 /obj/item/organ/external/robotic/excelsior/r_leg
 	default_description = /datum/organ_description/leg/right
 
+// Greyson
 /obj/item/organ/external/robotic/one_star
 	name = "Greyson"
 	desc = "Advanced, extremely resilient and mobile prosthetic. Inscribed with \"Made in\" followed by gibberish, must have been lost to time."

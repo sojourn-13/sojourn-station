@@ -261,6 +261,29 @@
 /datum/organ_description/leg/right/blackshield_synthetic
 	default_type = /obj/item/organ/external/robotic/blackshield
 
+// Church
+/datum/organ_description/chest/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/groin/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/head/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+	functions = null
+
+/datum/organ_description/arm/left/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/arm/right/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/leg/left/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/leg/right/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
 //FBP
 /datum/organ_description/chest/full_body_prosthetic
 	default_type = /obj/item/organ/external/robotic/full_body_prosthetic

@@ -773,3 +773,50 @@
 	T.add_chemical_effect(CE_PAINKILLER, 15)  // painkiller effect to target
 
 	return TRUE
+
+/datum/ritual/cruciform/priest/prosthetic
+	name = "Summon Prosthetic"
+	phrase = "O absolutus! Dona mihi membra novus install a daemone pedisequus vester."
+	desc = "This litany summon a prosthetic limb or implant to install on a follower."
+	power = 50
+	category = "Vitae"
+
+/datum/ritual/cruciform/priest/prosthetic/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	var/list/OBJS = get_front(user)
+	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/O = "prosthetic limb"
+	success_message = "On the verge of audibility you hear pleasant music, the altar slides open and a [O] slips out."
+
+	if(!altar)
+		fail("This is not your altar, the litany is useless.", user, C)
+		return FALSE
+
+	if(altar)
+		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Shortsword", "Ritual Knife", "Bible", "Cancel Litany")
+		if (response == "Right Arm")
+			new /obj/item/organ/external/robotic/church/r_arm(altar.loc)
+			return TRUE
+		if (response == "Left Arm")
+			new /obj/item/organ/external/robotic/church/l_arm(altar.loc)
+			return TRUE
+		if (response == "Right Leg")
+			new /obj/item/organ/external/robotic/church/r_leg(altar.loc)
+			return TRUE
+		if (response == "Left Leg")
+			new /obj/item/organ/external/robotic/church/l_leg(altar.loc)
+			return TRUE
+		if (response == "Shortsword")
+			new /obj/item/organ_module/active/simple/armblade/shortsword(altar.loc)
+			O = "shortsword"
+			return TRUE
+		if (response == "Ritual Knife")
+			new /obj/item/organ_module/active/simple/armblade/ritual(altar.loc)
+			O = "ritual knife"
+			return TRUE
+		if (response == "Bible")
+			new /obj/item/organ_module/active/simple/bible(altar.loc)
+			O = "bible"
+			return TRUE
+		if (response == "Cancel Litany")
+			fail("You decide not to obtain a prosthetic at this time.", user, C)
+			return FALSE
