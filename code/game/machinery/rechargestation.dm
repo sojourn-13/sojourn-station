@@ -279,6 +279,8 @@
 	density = FALSE
 	layer = TURF_LAYER + 0.1
 
+	circuit = /obj/item/weapon/circuitboard/repair_station
+
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4
 	active_power_usage = 4000
