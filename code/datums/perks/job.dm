@@ -392,7 +392,7 @@
 
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
-	desc = "As a Prospector, you've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. As a result, you resist every type of damage just a little bit better than Salvagers."
+	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. As a result, you resist every type of damage just a little bit better than others not of similar toughness."
 
 /datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
 	..()

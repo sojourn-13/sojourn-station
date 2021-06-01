@@ -9,7 +9,7 @@
 #define JOBS_CHURCH "Prime", "Vector"
 #define JOBS_PROSPECTOR "Foreman","Salvager","Prospector"
 #define JOBS_NONHUMAN "AI","Robot","pAI"
-#define JOBS_INDEPENDENT "Lodge Hunt Master","Lodge Hunter"
+#define JOBS_INDEPENDENT "Lodge Hunt Master","Lodge Hunter","Outsider"
 
 #define CREDITS "&cent;"
 #define CREDS "&cent;"
