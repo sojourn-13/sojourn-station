@@ -369,7 +369,7 @@
 	product_ads = "Need a strange drink? Tired of that space cola? Try one of our Ethnic drinks!;Fresh drinks, all home made in the colony.;Homemade drinks for people who want something special."
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass = 12,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda = 10)
-	prices = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass = 25,
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass = 30,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda = 10)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cola = 20)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
