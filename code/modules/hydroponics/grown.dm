@@ -1,9 +1,7 @@
 //Grown foods.
 /obj/item/weapon/reagent_containers/food/snacks/grown
 	name = "fruit"
-
-	matter = list(MATERIAL_BIOMATTER = 10) //1 plant = 10 sheets of biomatter. 
-
+	matter = list(MATERIAL_BIOMATTER = 5)
 	icon = 'icons/obj/hydroponics_products.dmi'
 	icon_state = "blank"
 	desc = "Nutritious! Probably."
