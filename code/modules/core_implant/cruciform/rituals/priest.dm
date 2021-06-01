@@ -807,7 +807,7 @@
 			return TRUE
 		if (response == "Longsword")
 			new /obj/item/organ_module/active/simple/armblade/longsword(altar.loc)
-			O = "shortsword"
+			O = "longsword"
 			return TRUE
 		if (response == "Ritual Knife")
 			new /obj/item/organ_module/active/simple/armblade/ritual(altar.loc)
