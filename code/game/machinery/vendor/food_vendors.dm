@@ -362,12 +362,15 @@
 
 
 /obj/machinery/vending/sovietsoda
-	name = "BODA"
-	desc = "An old sweet water vending machine, how did this end up here?"
+	name = "Napitki Starogo Sveta"
+	desc = "A machine filled with odd,and strange pre solfed drinks.All drinks are made fresh in the colony."
 	icon_state = "sovietsoda"
-	product_slogans = "For Tsar and Country!;Fulfill your nutrition quota!;Drink to forget food.;You no hungry anymore, da?"
-	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. No person, no problem."
-	products = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda = 30)
+	product_slogans = "For a little bit of home.;Ethnic drinks made fresh in the lower colony!"
+	product_ads = "Need a strange drink? Tired of that space cola? Try one of our Ethnic drinks!;Fresh drinks, all home made in the colony.;Homemade drinks for people who want something special."
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass = 12,
+					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda = 10)
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass = 30,
+					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda = 10)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cola = 20)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
