@@ -332,6 +332,14 @@
 		visible_message("\The [src] buzzes \"Insufficient material remaining to continue repairs.\".")
 		stop_repairing()
 		return
+
+	for(var/V in repairing.components)
+		var/datum/robot_component/C = repairing.components[V]
+		if(C.brute_damage + C.electronics_damage >= C.max_damage)
+			visible_message("\The [src] buzzes \"[C.name] too damaged to repair, aborting.\".")
+			stop_repairing()
+			return
+
 	var/repair_count = 0
 	if(repair_complexity & REPAIR_HULL && (repairing.getBruteLoss() || repairing.getFireLoss()))
 		var/amount_to_heal = min(repair_amount, repair_rate)
