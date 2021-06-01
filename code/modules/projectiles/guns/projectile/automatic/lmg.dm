@@ -128,6 +128,7 @@
 
 	init_firemodes = list(
 		FULL_AUTO_600,
+		BURST_5_ROUND,
 		)
 
 //This should be in its own file...
