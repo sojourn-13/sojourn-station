@@ -285,7 +285,6 @@
 
 	var/mob/living/silicon/robot/repairing
 
-	var/repair_amount = 100 //How much we can heal something for.
 	var/repair_amount = 0 //How much we can heal something for.
 	var/repair_rate = 5 //How much HP we restore per second
 	var/repair_complexity = REPAIR_HULL //How complex we get regarding repairing things
