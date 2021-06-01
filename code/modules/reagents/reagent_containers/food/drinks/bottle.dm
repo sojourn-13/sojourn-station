@@ -403,3 +403,11 @@
 	item_state = "beer"
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("ale" = 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass
+	name = "Magpie Kvass"
+	desc = "A traditional russian drink. Made with in colony ingredients."
+	icon_state = "Kvass_Bottle"
+	isGlass = 0
+	center_of_mass = list("x"=16, "y"=12)
+	preloaded_reagents = list("Kvass" = 40)

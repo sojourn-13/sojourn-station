@@ -1143,6 +1143,18 @@
 	glass_name = "lemon lime soda"
 	glass_desc = "A tangy substance made of 0.5% natural citrus!"
 
+/datum/reagent/drink/Kvass
+	name = "Kvass"
+	id = "Kvass"
+	description = "A traditonal, and very popular russian drink.Made on the colony."
+	taste_description = "sweet, yet very light dark beer."
+	color = "#9F3400"
+	adj_temp = -5
+
+	glass_icon_state = "Kvass_Glass"
+	glass_name = "Kvass"
+	glass_desc = "A traditonal russian drink. This version of Kvass is darker, and a bit bolder then normal."
+
 /datum/reagent/drink/doctor_delight
 	name = "The Doctor's Delight"
 	id = "doctorsdelight"
