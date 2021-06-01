@@ -1153,7 +1153,7 @@
 
 	glass_icon_state = "Kvass_Glass"
 	glass_name = "Kvass"
-	glass_desc = "A traditonal russian drink. This version of Kvass is darker, and a bit bolder then normal."
+	glass_desc = "A traditonal russian drink. This version of Kvass is darker, and a bit bolder than normal."
 
 /datum/reagent/drink/doctor_delight
 	name = "The Doctor's Delight"
