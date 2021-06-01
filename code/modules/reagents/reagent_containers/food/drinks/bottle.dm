@@ -410,4 +410,4 @@
 	icon_state = "Kvass_Bottle"
 	isGlass = 0
 	center_of_mass = list("x"=16, "y"=12)
-	preloaded_reagents = list("Kvass" = 40)
+	preloaded_reagents = list("Kvass" = 30)
