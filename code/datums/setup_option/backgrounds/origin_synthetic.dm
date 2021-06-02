@@ -39,11 +39,11 @@
 	name = "Combat Positronic"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Combat positronics are built specifically \
 	for the protection of colony interests but allowed to retain their free will, unlike other cyborgs. Combat positronics have the sturdiest physical designs and enhanced hydraulic systems to \
-	further enhance their physical strength. In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and study combatants. This model comes with an energy blade \
+	further enhance their physical strength. In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and study combatants. This model comes with an armblade \
 	module implanted in the right arm."
 
 	restricted_to_species = list(FORM_SOTSYNTH)
-	racial_implants = (/obj/item/organ_module/active/simple/armblade/energy_blade)
+	racial_implants = (/obj/item/organ_module/active/simple/armblade)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -137,11 +137,10 @@
 	name = "Close-Quarters Combat Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for melee conflict. \
 	CQC positronics have the sturdiest physical designs and enhanced hydraulic systems to further enhance their physical strength. In-built armor plating and AI-fed combat techniques given \
-	on a subconscious level allow for robust and study combatants. This model comes with a combat utility blackshield tomahawk and a marine shield built into each arm."
+	on a subconscious level allow for robust and study combatants. This model comes with an energy blade in the right arm."
 
 	restricted_to_species = list(FORM_BSSYNTH)
-	racial_implants = (/obj/item/organ_module/active/simple/armblade/bs_tomahawk)
-	racial_implants_l = (/obj/item/organ_module/active/simple/armshield)
+	racial_implants = (/obj/item/organ_module/active/simple/armblade/energy_blade)
 
 	stat_modifiers = list(
 		STAT_ROB = 20,
@@ -156,10 +155,11 @@
 	name = "Ballistic Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for ranged engagements. \
 	Ballistic positronics are slightly less sturdy than their CQC and non-lethal counterparts, but still have a sturdy chassis and AI-guided targeting systems to aid in shooting. \
-	In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and sturdy combatants. This model comes with an implanted .35 smg in the right arm."
+	In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and sturdy combatants. This model comes with an implanted .35 smg in the right arm and a shield in the left."
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armsmg/blackshield)
+	racial_implants_l = (/obj/item/organ_module/active/simple/armshield)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
