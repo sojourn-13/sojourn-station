@@ -88,7 +88,7 @@
 	if(!lit)
 		flamer_unlit_fire(target, user, proximity)
 		return
-	else if(get_dist(target, user) <= FLOOR(2.5*pressure, 1))
+	else if(get_dist(target, user) <= round(2.5*pressure))
 		var/turf/target_turf = get_turf(target)
 		if(target_turf)
 			var/list/turflist = getline(user, target_turf)
@@ -127,7 +127,7 @@
 			return
 		mytank.reagents.trans_to_obj(D, pressure*5)
 		D.set_color()
-		D.set_up(my_target, FLOOR(2.5*pressure,1), 3)
+		D.set_up(my_target, round(2.5*pressure), 3)
 	return
 
 /obj/item/weapon/flamethrower/full/Initialize()
