@@ -35,14 +35,14 @@
 		add_overlay("+lit")
 	return
 
-/obj/item/weapon/flamethrower/examine()
+/obj/item/weapon/flamethrower/examine(mob/user)
 	..()
-	to_chat(user, SPAN_NOTICE("The pressure valve is set to [pressure]x normal pressure, and the pilot light is [lit ? lit : unlit]"))
+	to_chat(user, SPAN_NOTICE("The pressure valve is set to [pressure]x normal pressure, and the pilot light is [lit ? "lit" : "unlit"]"))
 
 /obj/item/weapon/flamethrower/attackby(obj/item/I, user)
 	if(istype(I, /obj/item/weapon/weldpack/canister))
 		if(mytank)
-			to_chat(user, SPAN_NOTICE("There appears to already be a fuel canister loaded in [src]!")))
+			to_chat(user, SPAN_NOTICE("There appears to already be a fuel canister loaded in [src]!"))
 			return
 		else
 			var/obj/item/weapon/weldpack/canister/C = I //typecasting
@@ -88,17 +88,17 @@
 	if(!lit)
 		flamer_unlit_fire(target, user, proximity)
 		return
-	else if(get_dist(target, user) <= floor(2.5*pressure))
+	else if(get_dist(target, user) <= FLOOR(2.5*pressure, 1))
 		var/turf/target_turf = get_turf(target)
 		if(target_turf)
 			var/list/turflist = getline(user, target_turf)
-			mytank.reagents.remove_reagent(fuel, pressure*5)
-			flamer_lit_fire(turflist, user)
+			mytank.reagents.remove_reagent("fuel", pressure*5)
+			flamer_lit_fire(turflist, user, get_dir(user, target))
 			return
 	else
 		return
 
-/obj/item/weapon/flamethrower/proc/flamer_lit_fire(var/list/turflist, mob/user)
+/obj/item/weapon/flamethrower/proc/flamer_lit_fire(var/list/turflist, mob/user, fire_dir)
 	if(!lit || operating)	return
 	operating = 1
 	for(var/turf/T in turflist)
@@ -109,7 +109,7 @@
 			continue	//so we don't burn the tile we be standin on
 		if(previousturf && LinkBlocked(previousturf, T))
 			break
-		new /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel(T, amount = pressure*5, get_dir(user), get_turf(src))
+		new/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel(T, amount = pressure*5, fire_dir, get_turf(src))
 
 	previousturf = null
 	operating = 0
@@ -118,7 +118,7 @@
 /obj/item/weapon/flamethrower/proc/flamer_unlit_fire(atom/A, mob/user, proximity)
 	if(A.density && proximity)
 		A.visible_message(SPAN_WARNING("[usr] sprays down [A] with fuel from the [src]!."))
-		mytank.reagents.splash(A, amount_per_transfer_from_this)
+		mytank.reagents.splash(A, pressure*5)
 	else
 		var/obj/effect/effect/water/chempuff/D = new/obj/effect/effect/water/chempuff(get_turf(src))
 		var/turf/my_target = get_turf(A)
@@ -127,7 +127,7 @@
 			return
 		mytank.reagents.trans_to_obj(D, pressure*5)
 		D.set_color()
-		D.set_up(my_target, floor(2.5*pressure), 3)
+		D.set_up(my_target, FLOOR(2.5*pressure,1), 3)
 	return
 
 /obj/item/weapon/flamethrower/full/Initialize()
