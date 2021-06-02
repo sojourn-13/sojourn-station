@@ -545,3 +545,20 @@
 	armor_penetration = 10
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
+	
+
+/obj/item/projectile/bullet/crossbow_bolt/lethal
+	name = "bolt"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 56)
+	agony = 22
+	armor_penetration = 5
+	step_delay = 0.9
+
+/obj/item/projectile/bullet/crossbow_bolt/hv
+	name = "bolt"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 58)
+	armor_penetration = 40
+	penetrating = 3
+	hitscan = TRUE

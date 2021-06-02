@@ -67,8 +67,9 @@
 		list(/obj/item/stack/cable_coil, 4),
 		list(/obj/item/clothing/suit/hooded/cloak/simple, 1),
 		list(/obj/item/weapon/scrap_lump, 1),
-		list(/obj/item/weapon/tool/tape_roll, 10, "time" = 10)
+		list(QUALITY_ADHESIVE, 15, "time" = 60)
 	)
+
 /datum/craft_recipe/weapon/handmade_shield
 	name = "handmade shield"
 	result = /obj/item/weapon/shield/riot/handmade
