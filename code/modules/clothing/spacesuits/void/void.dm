@@ -38,6 +38,7 @@
 	resilience = 0.09
 	can_breach = 1
 	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
 
 	//Inbuilt devices.
 	var/obj/item/clothing/shoes/magboots/boots = null // Deployable boots, if any.
