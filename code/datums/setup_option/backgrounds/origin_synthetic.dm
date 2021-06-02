@@ -6,6 +6,7 @@
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/surgical)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -25,6 +26,7 @@
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -44,6 +46,7 @@
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/energy_blade)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -63,6 +66,7 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -82,6 +86,7 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -101,6 +106,7 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/multitool/miner)
+	restricted_jobs = list(/datum/job/outsider)
 
 //Idea for this is that you were made with being a miner, thus giving you everything you need as one
 //The main boon being you get a bit of evey skill you /need/ to mine out faster and maintain tools / set up the big drills.
@@ -123,6 +129,7 @@
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/taser/blackshield)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -142,6 +149,7 @@
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/bs_tomahawk)
 	racial_implants_l = (/obj/item/organ_module/active/simple/armshield)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 20,
@@ -160,6 +168,7 @@
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armsmg/blackshield)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -178,6 +187,7 @@
 
 	restricted_to_species = list(FORM_CHURCHSYNTH)
 	racial_implants = (/obj/item/organ_module/active/multitool/farmer)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -196,6 +206,7 @@
 
 	restricted_to_species = list(FORM_CHURCHSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/longsword)
+	restricted_jobs = list(/datum/job/outsider)
 
 	//Compared to the soteria combat model and blackshield synths you get 20 armor across the body vs. 30/35 respectively, so what you lack in natural defense is made up in offense. -Kaz
 	stat_modifiers = list(
@@ -216,6 +227,7 @@
 	restricted_to_species = list(FORM_CHURCHSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/bible)
 	racial_implants_l = (/obj/item/organ_module/active/simple/armblade/ritual)
+	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,

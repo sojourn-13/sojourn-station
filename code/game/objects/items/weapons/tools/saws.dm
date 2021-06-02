@@ -86,7 +86,7 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20) //not the best choice to cut wires
-	max_upgrades = 4
+	max_upgrades = 3
 	use_fuel_cost = 0.1
 	max_fuel = 80
 
@@ -101,7 +101,7 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20)
-	max_upgrades = 4
+	max_upgrades = 2
 	degradation = 0.7
 	use_power_cost = 1
 	suitable_cell = /obj/item/weapon/cell/medium
