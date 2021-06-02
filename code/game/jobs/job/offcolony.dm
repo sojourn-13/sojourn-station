@@ -133,7 +133,7 @@
 /datum/job/outsider
 	title = "Outsider"
 	total_positions = 4
-	spawn_positions = 6
+	spawn_positions = 5
 	flag = OUTSIDER
 	faction = MAP_FACTION
 	department = DEPARTMENT_INDEPENDENT
