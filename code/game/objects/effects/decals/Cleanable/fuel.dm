@@ -53,7 +53,7 @@
 	icon_state = "mustard"
 	alpha = 150 //Less seeable
 	anchored = 0
-	color = "#9D14DB" // RGB (157, 20, 219)
+	color = "#660000"
 	var/turf/origin
 
 /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/New(newLoc, _amount = 1, d = 0, var/turf/_origin)
@@ -64,7 +64,7 @@
 /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/Spread()
 	//The spread for flamethrower fuel is much more precise, to create a wide fire pattern.
 	var/turf/simulated/S = loc
-	if(amount < 0.1)
+	if(amount > 0)
 		S.hotspot_expose((T20C*2) + 380,500)
 		return
 

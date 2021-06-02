@@ -132,3 +132,10 @@
 
 /obj/item/weapon/flamethrower/full/Initialize()
 	mytank = new mytank(src)
+
+/obj/item/weapon/flamethrower/MouseDrop(over_object)
+	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(mytank, usr))
+		mytank = null
+		update_icon()
+	else
+		..()
