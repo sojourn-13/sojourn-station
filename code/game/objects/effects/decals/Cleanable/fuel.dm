@@ -48,8 +48,8 @@
 
 
 /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel
-	name = "plasma mist"
-	desc = "A small, low mist of the blue gas..."
+	name = "aerosolized fuel mist"
+	desc = "A thin, low mist of volatile fuel!"
 	icon_state = "mustard"
 	alpha = 150 //Less seeable
 	anchored = 0
@@ -81,4 +81,3 @@
 		O.hotspot_expose((T20C*2) + 380,500) //Light flamethrower fuel on fire immediately.
 
 	amount *= 0.25
-
