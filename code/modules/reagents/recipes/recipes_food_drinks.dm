@@ -474,6 +474,11 @@
 	required_reagents = list("berryjuice" = 1, "cream" = 1, "vermouth" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/riotjuice
+	result = "riotjuice"
+	required_reagents = list("vodka" = 5, "pineapplejuice" = 5, "bluecuracao" = 5)
+	result_amount = 15
+
 /datum/chemical_reaction/grapesoda
 	result = "grapesoda"
 	required_reagents = list("grapejuice" = 2, "cola" = 1)

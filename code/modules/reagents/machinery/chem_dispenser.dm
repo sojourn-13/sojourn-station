@@ -25,7 +25,7 @@
 	var/list/level0 = list(
 		"acetone", "aluminum", "ammonia",
 		"carbon", "copper", "ethanol",
-		"hclacid", "hydrazine", "iron", 
+		"hclacid", "hydrazine", "iron",
 		"lithium", "mercury", "phosphorus",
 		"potassium", "radium", "sacid",
 		"silicon", "sodium", "sugar",
@@ -293,7 +293,7 @@
 		"lemon_lime","sugar","orangejuice","limejuice",
 		"sodawater","tonic","beer","kahlua","whiskey",
 		"wine","vodka","gin","rum","tequilla","vermouth",
-		"cognac","ale","mead")
+		"cognac","ale","mead", "pineapplejuice")
 
 	level1 = list("melonliquor", "bluecuracao")
 	level2 = list("sake", "irishcream")
