@@ -364,7 +364,7 @@
 
 /obj/machinery/vending/sovietsoda
 	name = "Napitki Starogo Sveta"
-	desc = "A machine filled with odd,and strange pre solfed drinks.All drinks are made fresh in the colony."
+	desc = "A machine filled with odd and strange pre-solfed drinks. Made fresh in the colony."
 	icon_state = "sovietsoda"
 	product_slogans = "For a little bit of home.;Ethnic drinks made fresh in the lower colony!"
 	product_ads = "Need a strange drink? Tired of that space cola? Try one of our Ethnic drinks!;Fresh drinks, all home made in the colony.;Homemade drinks for people who want something special."
