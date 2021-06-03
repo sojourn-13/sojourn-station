@@ -88,3 +88,11 @@
 	icon_state = "sodawater"
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("sodawater" = 50)
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/melonsoda
+	name = "Hoko Melon soda"
+	desc = "Delicious Melon soda. Made in house by the reminants of the hoko company."
+	icon_state = "melon_soda_can"
+	center_of_mass = list("x"=16, "y"=10)
+	preloaded_reagents = list("melonsoda" = 30)
+
