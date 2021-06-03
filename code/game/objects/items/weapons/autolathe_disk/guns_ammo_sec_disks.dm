@@ -913,7 +913,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bren
-	disk_name = "No-Publisher - 7.5 \"Kalashnabren\""
+	disk_name = "No-Publisher - .257 \"Kalashnabren\""
 	icon_state = "black"
 
 	license = 16
@@ -1227,4 +1227,3 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/research/item/ammo/laser/ap,
 		/datum/design/research/item/ammo/laser/lethal,
 	)
-
