@@ -19,7 +19,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 	pumpshotgun_sound = 'sound/weapons/guns/interact/hydra_crossbow_load.ogg'
 
-/obj/item/weapon/gun/projectile/handle_post_fire()
+/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow/handle_post_fire()
 	..()
 	to_chat(usr, SPAN_WARNING("The bolt inside heats up to a dull red glow before being fired."))
 
