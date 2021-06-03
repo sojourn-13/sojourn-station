@@ -1116,10 +1116,30 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 	disk_name = "SI - \"Auretian\" E Pistol"
 	icon_state = "moebius"
 
-	license = 8 //1 gun 1 cell, or 4 good cells that are bette then normal
+	license = 4 //1 gun 1 cell, or 4 good cells that are bette then normal
 	designs = list(
-		/datum/design/research/item/weapon/auretian = 6,
-		/datum/design/research/item/powercell/small/basic = 2,
+		/datum/design/research/item/weapon/auretian = 3,
+		/datum/design/research/item/powercell/small/basic,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/stun_revolver_sci
+	disk_name = "SI - \"Hestia\" Stun Revolver"
+	icon_state = "moebius"
+
+	license = 8 //2 gun 2 cell, or 8 good cells that are bette then normal
+	designs = list(
+		/datum/design/research/item/weapon/stunrevolver = 3,
+		/datum/design/research/item/powercell/small/basic,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/stun_revolver
+	disk_name = "GmbH - \"Zeus\" Stun Revolver"
+	icon_state = "frozenstar"
+
+	license = 8//2 guns 2 cells
+	designs = list(
+		/datum/design/autolathe/gun/revolver_taser = 2,
+		/datum/design/autolathe/cell/small/high,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercannon

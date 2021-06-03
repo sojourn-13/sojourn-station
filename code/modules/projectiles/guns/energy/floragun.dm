@@ -18,6 +18,10 @@
 		list(mode_name="induce evolution", projectile_type=/obj/item/projectile/energy/floraevolve, modifystate="floraevo", item_modifystate="evo", icon="destroy"),
 		)
 
+/obj/item/weapon/gun/energy/floragun/si
+	name = "SI Prototype: floral somatoray"
+	icon = 'icons/obj/guns/energy/si_flora.dmi'
+
 /obj/item/weapon/gun/energy/floragun/afterattack(obj/target, mob/user, adjacent_flag)
 	//allow shooting into adjacent hydrotrays regardless of intent
 	if(adjacent_flag && istype(target,/obj/machinery/portable_atmospherics/hydroponics))
