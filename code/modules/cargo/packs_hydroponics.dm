@@ -27,6 +27,21 @@
 	group = "Hydroponics"
 
 //farm animals - useless and annoying, but potentially a good source of food
+
+/datum/supply_pack/bees
+	name = "Bee crate"
+	contains = list(/obj/item/bee_pack,
+					/obj/item/beehive_assembly,
+					/obj/item/honey_frame,
+					/obj/item/honey_frame,
+					/obj/item/honey_frame,
+					/obj/item/bee_smoker,
+					/obj/item/weapon/circuitboard/honey_extractor)
+	cost = 800
+	containertype = /obj/structure/closet/crate
+	crate_name = "Bee crate"
+	group = "Hydroponics"
+
 /datum/supply_pack/cow
 	name = "Cow Crate"
 	cost = 2400
