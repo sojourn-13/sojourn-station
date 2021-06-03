@@ -275,11 +275,11 @@
 		return
 	switch (severity)
 		if (1)
-			take_damage(9)
+			take_damage(30) //Deals half the organs damage
 		if (2)
-			take_damage(3)
+			take_damage(25)
 		if (3)
-			take_damage(1)
+			take_damage(15)
 
 // Gets the limb this organ is located in, if any
 /obj/item/organ/proc/get_limb()
