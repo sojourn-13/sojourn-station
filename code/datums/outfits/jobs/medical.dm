@@ -40,7 +40,7 @@
 	suit =  /obj/item/clothing/suit/armor/vest
 	head = /obj/item/clothing/head/helmet/visor/cyberpunkgoggle
 	r_ear  = /obj/item/weapon/reagent_containers/syringe/large
-	backpack_contents = list(/obj/item/weapon/gun/energy/stunrevolver = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/handcuffs = 2, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/device/flash = 1)
+	backpack_contents = list(/obj/item/weapon/gun/energy/stunrevolver/sci = 1, /obj/item/weapon/cell/small/high = 2, /obj/item/weapon/handcuffs = 2, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/device/flash = 1)
 
 /decl/hierarchy/outfit/job/medical/orderly/New()
 	..()

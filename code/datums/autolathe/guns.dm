@@ -365,6 +365,10 @@
 	name = "OT SP \"Counselor\""
 	build_path = /obj/item/weapon/gun/energy/taser
 
+/datum/design/autolathe/gun/revolver_taser
+	name = "GmbH - \"Zeus\" Stun Revolver"
+	build_path = /obj/item/weapon/gun/energy/taser
+
 /datum/design/autolathe/gun/titanica
 	name = "H&S E Cannon \"Titanica\""
 	build_path = /obj/item/weapon/gun/energy/lasercannon

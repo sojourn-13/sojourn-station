@@ -52,11 +52,17 @@
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3, TECH_POWER = 2)
 	charge_cost = 50
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6, MATERIAL_SILVER = 2)
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 2)
 	price_tag = 750
 	suitable_cell = /obj/item/weapon/cell/small
 	cell_type = /obj/item/weapon/cell/small
 	projectile_type = /obj/item/projectile/energy/electrode
+
+/obj/item/weapon/gun/energy/stunrevolver/sci
+	name = "\"Hestia\" stun revolver"
+	desc = "Also know as stun revolver. Seinemetall Defense GmbH with Soteria Institute solution for non-lethal takedowns, its rather simple deisign has a smaller capacity in exchange for S-cells use. \
+			The now outdated design was the base for the much more successfull \"Counselor\". This verson is almost identical to the \"Zeus\" only being repainted after Seinemetall Defense GmbH moved to ballistics based manufacturing."
+	icon = 'icons/obj/guns/energy/si_stunrevolver.dmi'
 
 /obj/item/weapon/gun/energy/taser/blackshield
 

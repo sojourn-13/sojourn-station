@@ -44,6 +44,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/roe = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sika = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/nt_counselor = 3,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/stun_revolver = 1,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firefly = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/straylight = 1,
@@ -60,8 +61,8 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/counselor = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/spiderrose = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/martin = 3,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firestorm = 0.6,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercore = 0.4,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/firestorm = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercore = 1,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/themis = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lightfall = 1,
@@ -129,8 +130,8 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/basstet = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bren = 1,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/dp = 0.4,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bastard = 0.6,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/dp = 1,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bastard = 1,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/heavysniper = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1,
