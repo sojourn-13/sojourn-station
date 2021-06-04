@@ -37,7 +37,10 @@
 
 /obj/item/weapon/flamethrower/examine(mob/user)
 	..()
-	to_chat(user, SPAN_NOTICE("The pressure valve is set to [pressure]x normal pressure, and the pilot light is [lit ? "lit" : "unlit"]"))
+	to_chat(user, SPAN_NOTICE("The pressure valve is set to [pressure]x normal pressure, and the pilot light is [lit ? "lit" : "unlit"]."))
+	to_chat(user, SPAN_NOTICE("There is currently [mytank ? "a" : "no"] welding fuel canister loaded."))
+	if(mytank)
+		to_chat(user, SPAN_NOTICE("The fuel canister is [mytank.reagents.total_volume]% full."))
 
 /obj/item/weapon/flamethrower/attackby(obj/item/I, user)
 	if(istype(I, /obj/item/weapon/weldpack/canister))
