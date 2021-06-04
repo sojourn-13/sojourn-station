@@ -274,6 +274,20 @@
 	siemens_coefficient = 0.6
 	price_tag = 85
 
+/obj/item/clothing/head/armor/helmet/penance
+	name = "penance helmet"
+	desc = "A primitive helmet with a chainmailed coif. These were quickly made for trench conditions as logistical supply lines ran low on proper ballistic helmets, issued to consripts, thiefs, and cowards alike. Even after they were replaced, thousands of these shitty iron caps can be found as macabre military surplus. For some reason, you've decided to wear this ghastly thing."
+	icon_state = "helmet_kriosanpenace"
+	flags_inv = BLOCKHAIR
+	armor = list(
+		melee = 15,
+		bullet = 15,
+		energy = 0,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	)
+
 /obj/item/clothing/head/helmet/thunderdome
 	name = "\improper Thunderdome helmet"
 	desc = "<i>'Let the battle commence!'</i>"
