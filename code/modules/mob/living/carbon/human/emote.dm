@@ -855,6 +855,18 @@
 			m_type = 2
 			playsound(loc, 'sound/voice/YeenCackle.ogg', 50, 1, -1)
 			cloud_emote = "cloud-scream"
+		if ("shriek")
+			message = "SHRIEKS!"
+			m_type = 2
+			playsound(loc, 'sound/voice/shriek.ogg', 50, 1, -1)
+			cloud_emote = "cloud-scream"
+		if ("bellow")
+			message = "bellows!"
+			m_type = 2
+			playsound(loc, 'sound/voice/LizardBellow.ogg', 50, 1, -1)
+		if ("squeal")
+			message = "squeals."
+			playsound(loc, 'sound/voice/LizardSqueal.ogg', 50, 1, -1)
 
 		if ("help")
 			to_chat(src, "awoo, aslap-(none)/mob, bark, blink, blink_r, blush, bow-(none)/mob, burp, chirp, choke, chuckle, clap, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
