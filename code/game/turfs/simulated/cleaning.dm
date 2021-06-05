@@ -34,10 +34,12 @@
 
 //expects an atom containing the reagents used to clean the turf
 /turf/proc/clean(atom/source, mob/user)
+	var/amt = 0  // Amount of filth collected (for holy vacuum cleaner)
 	if(source.reagents.has_reagent("water", 1) || source.reagents.has_reagent("cleaner", 1) || source.reagents.has_reagent("holywater", 1) || source.reagents.has_reagent("sterilizine", 1))
 		clean_blood()
 		for(var/obj/effect/O in src)
 			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay))
+				amt++
 				qdel(O)
 		if(user && user.stats)
 			if(user.stats.getPerk(/datum/perk/neat))
@@ -48,7 +50,7 @@
 	else
 		to_chat(user, SPAN_WARNING("\The [source] is too dry to wash that."))
 	source.reagents.trans_to_turf(src, 1, 10)	//10 is the multiplier for the reaction effect. probably needed to wet the floor properly.
-
+	return amt
 
 //As above, but has limitations. Instead of cleaning the tile completely, it just cleans [count] number of things
 /turf/proc/clean_partial(atom/source, mob/user, var/count = 1)
