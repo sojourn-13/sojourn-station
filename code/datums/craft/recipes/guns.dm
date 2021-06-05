@@ -195,3 +195,16 @@
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
 	)
+
+/datum/craft_recipe/gun/multi_laser
+	name = "Multi-Laser Canon"
+	result = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy/auto
+	steps = list(
+		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+	)

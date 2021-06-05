@@ -110,10 +110,6 @@
 	name = "CH-LC \"Solaris\" laser cannon"
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
 
-/datum/design/research/item/mecha/weapon/auto_laser
-	name = "Multi-laser Cannon"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy/auto
-
 /datum/design/research/item/mecha/weapon/ion
 	name = "MkIV ion heavy cannon"
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
