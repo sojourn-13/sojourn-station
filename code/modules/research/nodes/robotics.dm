@@ -272,6 +272,7 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/mecha/weapon/laser_heavy,
+							/datum/design/research/item/mecha/weapon/auto_laser,
 							/datum/design/research/item/mecha/weapon/ion
 							)
 
