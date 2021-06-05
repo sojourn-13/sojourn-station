@@ -50,7 +50,7 @@
 	projectiles = 8
 	projectiles_per_shot = 2
 	fire_cooldown = -5
-	required_type = list(/obj/mecha)
+	required_type = list(obj/mecha/combat)
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
