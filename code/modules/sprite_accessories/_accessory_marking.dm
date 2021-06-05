@@ -125,6 +125,28 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT)
 
+/*Makeup + Lipstick*/
+
+	lipstick
+		name = "Lipstick (Human/Regular)"
+		icon_state = "lipstick"
+		body_parts = list(BP_HEAD)
+
+	lipstickkriosan
+		name = "Lipstick (Kriosan/Vulpkanin)"
+		icon_state = "lipstickkriosan"
+		body_parts = list(BP_HEAD)
+
+	lipsticknaramad
+		name = "Lipstick (Naramad)"
+		icon_state = "lipsticknaramad"
+		body_parts = list(BP_HEAD)
+
+	lipstickakula
+		name = "Lipstick (Akula)"
+		icon_state = "lipstickakula"
+		body_parts = list(BP_HEAD)
+
 /*Color Bands + Patches*/
 
 	bands
