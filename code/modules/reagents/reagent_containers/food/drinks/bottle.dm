@@ -382,6 +382,15 @@
 	isGlass = 0
 	preloaded_reagents = list("limejuice" = 100)
 
+/obj/item/weapon/reagent_containers/food/drinks/bottle/pineapplejuice
+	name = "Pineapple Juice"
+	desc = "Sweet, tangy juice. Imported from nearby colony's"
+	icon_state = "pineapplejuice"
+	item_state = "carton"
+	center_of_mass = list("x"=16, "y"=7)
+	isGlass = 0
+	preloaded_reagents = list("pineapplejuice" = 100)
+
 //Small bottles
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small
 	volume = 50
@@ -403,3 +412,11 @@
 	item_state = "beer"
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("ale" = 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass
+	name = "Magpie Kvass"
+	desc = "A traditional russian drink. Made with in colony ingredients."
+	icon_state = "Kvass_Bottle"
+	isGlass = 0
+	center_of_mass = list("x"=16, "y"=12)
+	preloaded_reagents = list("Kvass" = 30)

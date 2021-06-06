@@ -53,14 +53,14 @@
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/weapon/tool/fireaxe/militia_tomahawk
 
-/obj/item/organ_module/active/simple/armblade/shortsword
-	name = "Embedded Shortsword"
-	desc = "A shortsword designed to be inserted into an arm. You can't expect God to do all the work."
-	verb_name = "Deploy shortsword"
-	icon_state = "nt_shortsword"
+/obj/item/organ_module/active/simple/armblade/longsword
+	name = "Embedded Longsword"
+	desc = "A longsword designed to be inserted into an arm. You can't expect God to do all the work."
+	verb_name = "Deploy longsword"
+	icon_state = "nt_longsword"
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/sword/nt/shortsword
+	holding_type = /obj/item/weapon/tool/sword/nt/longsword
 
 /obj/item/organ_module/active/simple/armblade/ritual
 	name = "Embedded Knife"

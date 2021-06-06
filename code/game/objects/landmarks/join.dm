@@ -38,7 +38,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	join_tag = "aft_late_cryo"
 	message = "has completed cryogenic revival"
 	spawn_datum_type = /datum/spawnpoint/cryo
-	disallow_job = list("Robot","Lodge Hunter","Lodge Hunt Master")
+	disallow_job = list("Robot","Lodge Hunter","Lodge Hunt Master","Outsider")
 
 /obj/landmark/join/late/cryo/starboard
 	name = "Starboard Cryogenic Storage"
@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	join_tag = "starboard_late_cryo"
 	message = "has completed cryogenic revival"
 	spawn_datum_type = /datum/spawnpoint/cryo/starboard
-	disallow_job = list("Robot","Lodge Hunter","Lodge Hunt Master")
+	disallow_job = list("Robot","Lodge Hunter","Lodge Hunt Master","Outsider")
 
 /obj/landmark/join/late/cryo/elevator
 	name = "Lower Colony Elevator"
@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	join_tag = "late_elevator"
 	message = "has arrived from the lower level residential district"
 	spawn_datum_type = /datum/spawnpoint/cryo/elevator
-	disallow_job = list("Robot","Lodge Hunter","Lodge Hunt Master")
+	disallow_job = list("Robot","Lodge Hunter","Lodge Hunt Master","Outsider")
 
 /obj/landmark/join/late/dormitory
 	name = "Dormitory"
@@ -63,6 +63,14 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	message = null
 	spawn_datum_type = /datum/spawnpoint/dormitory
 	restrict_job = list("Lodge Hunter","Lodge Hunt Master")
+
+/obj/landmark/join/late/dormitory_outsider
+	name = "Outsider Bed"
+	icon_state = "player-blue-cluster"
+	join_tag = "late_dormitory"
+	message = null
+	spawn_datum_type = /datum/spawnpoint/dormitory
+	restrict_job = list("Outsider")
 
 /obj/landmark/join/late/cyborg
 	name = "Cyborg Storage"

@@ -792,7 +792,7 @@
 		return FALSE
 
 	if(altar)
-		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Shortsword", "Ritual Knife", "Bible", "Cancel Litany")
+		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Longsword", "Ritual Knife", "Bible", "Cancel Litany")
 		if (response == "Right Arm")
 			new /obj/item/organ/external/robotic/church/r_arm(altar.loc)
 			return TRUE
@@ -805,9 +805,9 @@
 		if (response == "Left Leg")
 			new /obj/item/organ/external/robotic/church/l_leg(altar.loc)
 			return TRUE
-		if (response == "Shortsword")
-			new /obj/item/organ_module/active/simple/armblade/shortsword(altar.loc)
-			O = "shortsword"
+		if (response == "Longsword")
+			new /obj/item/organ_module/active/simple/armblade/longsword(altar.loc)
+			O = "longsword"
 			return TRUE
 		if (response == "Ritual Knife")
 			new /obj/item/organ_module/active/simple/armblade/ritual(altar.loc)

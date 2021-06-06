@@ -139,6 +139,7 @@
 	for(var/obj/machinery/portable_atmospherics/hydroponics/H in view(7, src))
 		if(H.seed && !H.dead)
 			H.health += 0.05 * coef
+			H.yield_mod += 0.005 * coef
 			++trays
 	honeycombs = min(honeycombs + 0.1 * coef * min(trays, 5), frames * 100)
 
@@ -147,11 +148,15 @@
 	desc = "A machine used to turn honeycombs on the frame into honey and wax."
 	icon = 'icons/obj/virology.dmi'
 	icon_state = "centrifuge"
-
+	density = TRUE
+	anchored = TRUE
 	var/processing = 0
 	var/honey = 0
+	circuit = /obj/item/weapon/circuitboard/honey_extractor
 
 /obj/machinery/honey_extractor/attackby(var/obj/item/I, var/mob/user)
+	if(default_deconstruction(I, user))
+		return
 	if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently spinning, wait until it's finished."))
 		return
@@ -209,7 +214,7 @@
 /obj/item/beehive_assembly
 	name = "beehive assembly"
 	desc = "Contains everything you need to build a beehive."
-	icon = 'icons/obj/apiary_bees_etc.dmi'
+	icon = 'icons/obj/beekeeping.dmi'
 	icon_state = "apiary"
 
 /obj/item/beehive_assembly/attack_self(var/mob/user)

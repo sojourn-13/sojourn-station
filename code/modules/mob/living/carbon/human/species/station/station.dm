@@ -726,7 +726,7 @@
 		)
 
 	stat_modifiers = list(
-
+		STAT_BIO = 10
 	)
 
 	spawn_flags = CAN_JOIN

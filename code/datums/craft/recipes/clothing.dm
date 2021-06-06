@@ -109,7 +109,7 @@
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTIC),
 		list(CRAFT_MATERIAL, 3, MATERIAL_GLASS),
 		list(/obj/item/stack/cable_coil, 2),
-		list(/obj/item/weapon/tool/tape_roll, 10, "time" = 10),
+		list(QUALITY_ADHESIVE, 15, "time" = 60)
 	)
 
 /datum/craft_recipe/clothing/riggedvoidsuit
@@ -119,7 +119,7 @@
 		list(/obj/item/clothing/under, 1),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTIC),
-		list(/obj/item/weapon/tool/tape_roll, 10, "time" = 10),
+		list(QUALITY_ADHESIVE, 15, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
 		list(QUALITY_WELDING, 10, 20),
 	)
@@ -131,7 +131,7 @@
 		list(/obj/item/clothing/under, 1),
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
-		list(/obj/item/weapon/tool/tape_roll, 10, "time" = 10),
+		list(QUALITY_ADHESIVE, 15, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
 		list(QUALITY_WELDING, 10, 20),
 	)

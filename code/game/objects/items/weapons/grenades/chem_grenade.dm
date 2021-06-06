@@ -195,6 +195,11 @@
 	affected_area = 4
 	matter = list(MATERIAL_STEEL = 5)
 
+/obj/item/weapon/grenade/chem_grenade/large/moebius
+	name = "large Soteria chem grenade"
+	desc = "An oversized grenade that affects a larger area. Has Soteria markings"
+	icon_state = "moebius_grenade"
+
 	//I tried to just put it in the allowed_containers list but
 	//if you do that it must have reagents.  If you're going to
 	//make a special case you might as well do it explicitly. -Sayu

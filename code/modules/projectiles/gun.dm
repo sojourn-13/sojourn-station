@@ -78,6 +78,8 @@
 	var/proj_step_multiplier = 1
 	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int)
 
+	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
+
 /obj/item/weapon/gun/proc/loadAmmoBestGuess()
 	return
 

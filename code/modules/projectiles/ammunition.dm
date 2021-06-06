@@ -43,6 +43,7 @@
 		new_casing.projectile_type = src.projectile_type
 		new_casing.icon_state = src.icon_state
 		new_casing.spent_icon = src.spent_icon
+		new_casing.is_caseless = src.is_caseless
 		new_casing.maxamount = src.maxamount
 		if(ispath(new_casing.projectile_type) && src.BB)
 			new_casing.BB = new new_casing.projectile_type(new_casing)
@@ -277,6 +278,7 @@
 		inserted_casing.icon_state = C.icon_state
 		inserted_casing.spent_icon = C.spent_icon
 		inserted_casing.maxamount = C.maxamount
+		inserted_casing.is_caseless = C.is_caseless
 		if(ispath(inserted_casing.projectile_type) && C.BB)
 			inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
 		C.update_icon()

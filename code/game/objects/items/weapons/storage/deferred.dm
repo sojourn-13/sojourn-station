@@ -158,7 +158,7 @@
 	desc = "A crate containing six AKM rifles, and plenty of magazines."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/weapon/gun/projectile/automatic/ak47/sa  = 6,
-	/obj/item/ammo_magazine/light_rifle_257 = 18)
+	/obj/item/ammo_magazine/rifle_75 = 18)
 
 /obj/item/weapon/storage/deferred/crate/grenadier
 	name = "grenadier crate"
@@ -288,8 +288,9 @@
 	icon_state = "northtech_deferred"
 	initial_contents = list(
 	/obj/item/clothing/mask/balaclava/tactical = 1,
-	/obj/item/clothing/shoes/jackboots = 1,
-	/obj/item/clothing/gloves/thick  = 1,
+	/obj/item/clothing/shoes/ablasive/iron_lock_security = 1,
+	/obj/item/clothing/gloves/thick/ablasive/iron_lock_security  = 1,
 	/obj/item/clothing/head/soft/iron_lock_security = 1,
+	/obj/item/clothing/head/helmet/laserproof/iron_lock_security = 1,
 	/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
 	/obj/item/clothing/under/iron_lock_security = 1)
