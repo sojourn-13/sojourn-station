@@ -197,7 +197,7 @@
 	)
 
 /datum/craft_recipe/gun/multi_laser
-	name = "Multi-Laser Canon"
+	name = "Multi-Laser Cannon"
 	result = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy/auto
 	steps = list(
 		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
