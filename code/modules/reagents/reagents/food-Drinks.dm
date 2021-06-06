@@ -454,7 +454,7 @@
 	//Sake of coding easy and not remaking the proc we use same proc as onAlcohol for non-booze drinks
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
-		H.sanity.onAlcohol(src, effect_multiplier)
+		H.sanity.onNonAlcohol(src, effect_multiplier)
 
 // Juices
 
