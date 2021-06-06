@@ -267,8 +267,9 @@
 
 //Trilby
 
-/mob/living/simple_animal/cat/runtime
+/mob/living/simple_animal/cat/trilby_runtime
 	name = "Trilby"
+	real_name = "Trilby"
 	desc = "A bluespace denizen that purrs its way into our dimension when the very fabric of reality is teared apart."
 	icon_state = "runtimecat"
 	item_state = "runtimecat"
