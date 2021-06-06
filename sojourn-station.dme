@@ -997,6 +997,7 @@
 #include "code\game\objects\items\weapons\towel.dm"
 #include "code\game\objects\items\weapons\traps.dm"
 #include "code\game\objects\items\weapons\trays.dm"
+#include "code\game\objects\items\weapons\vacuum.dm"
 #include "code\game\objects\items\weapons\weaponry.dm"
 #include "code\game\objects\items\weapons\weldbackpack.dm"
 #include "code\game\objects\items\weapons\autolathe_disk\absolute_disks.dm"

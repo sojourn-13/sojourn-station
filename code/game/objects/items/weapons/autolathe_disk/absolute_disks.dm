@@ -51,7 +51,8 @@
 		//utilities
 		/datum/design/autolathe/gun/nt_sprayer,
 		/datum/design/autolathe/device/grenade/nt_cleaner,
-		/datum/design/autolathe/device/grenade/nt_weedkiller
+		/datum/design/autolathe/device/grenade/nt_weedkiller,
+		/datum/design/bioprinter/holyvacuum
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioaugment
