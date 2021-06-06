@@ -41,6 +41,18 @@
 	sort_category = "Xenowear"
 	cost = 0
 
+/datum/gear/xenowear/penancehelm
+	display_name = "kriosan penance helmet"
+	path = /obj/item/clothing/head/armor/helmet/penance
+	slot = slot_head
+	sort_category = "Xenowear"
+
+/datum/gear/xenowear/castellancapes
+	display_name = "castellan cape selection"
+	path = /obj/item/clothing/accessory/ccape
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Xenowear"
+
 /datum/gear/xenowear/kriosansuit
 	display_name = "kriosan fatigues"
 	path = /obj/item/clothing/under/kriosansuit
@@ -52,6 +64,7 @@
 	path = /obj/item/clothing/suit/greatcoat/cossackcoat
 	slot = slot_wear_suit
 	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Xenowear"
 
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"
