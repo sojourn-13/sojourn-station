@@ -43,7 +43,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy/auto
 	equip_cooldown = 5
 	name = "\improper Multi-laser Cannon"
-	desc = "Four Solaris Laser cannon welded together to achieve an higher firerate."
+	desc = "Four solaris laser cannons welded together to achieve a higher firerate."
 	icon_state = "mecha_auto_laser"
 	energy_drain = 180
 	projectile = /obj/item/projectile/beam/heavylaser
