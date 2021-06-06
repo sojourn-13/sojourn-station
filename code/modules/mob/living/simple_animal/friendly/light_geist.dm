@@ -1,7 +1,7 @@
 /mob/living/simple_animal/light_geist
 	name = "Light Geist"
 	real_name = "Light Geist"
-	desc = "This unusal floating creature flickers slightly in the light."
+	desc = "A strange floating creature that shimmers in the light."
 	icon_state = "lightgeist"
 
 	emote_see = list("shakes its head", "shivers")
