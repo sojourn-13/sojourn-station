@@ -79,7 +79,7 @@
 "abA" = (/obj/structure/bed/chair,/obj/landmark/join/start/scientist,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/rnd/rbreakroom)
 "abB" = (/obj/structure/bed/chair/office/dark,/obj/landmark/join/start/rd,/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/command/cro)
 "abC" = (/obj/structure/table/glass,/obj/item/toy/plushie/corgi/robo,/turf/simulated/floor/carpet/sblucarpet,/area/nadezhda/rnd/rbreakroom)
-"abD" = (/obj/structure/table/standard{name = "plastic table frame"},/obj/item/clothing/accessory/armband/cargo,/obj/item/clothing/accessory/armband/cargo,/obj/item/weapon/oddity/rare/golden_cup,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/quartermaster/office)
+"abD" = (/obj/structure/table/standard{name = "plastic table frame"},/obj/item/clothing/accessory/armband/cargo,/obj/item/clothing/accessory/armband/cargo,/turf/simulated/floor/tiled/steel/orangecorner,/area/nadezhda/quartermaster/office)
 "abE" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/turf/simulated/floor/wood,/area/nadezhda/command/cro)
 "abF" = (/obj/structure/table/glass,/obj/item/weapon/paper_bin{pixel_x = -2; pixel_y = 5},/obj/item/weapon/pen{pixel_x = -1; pixel_y = 3},/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/rnd/rbreakroom)
 "abG" = (/obj/structure/table/glass,/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/rnd/rbreakroom)
