@@ -465,6 +465,15 @@
 	desc = "Foreman's Quarters"
 	region = ACCESS_REGION_PROSPECTOR
 
+/**************
+* Hunt Lodge *
+***************/
+/var/const/access_huntmaster = 80
+/datum/access/huntmaster
+	id = access_huntmaster
+	desc = "Hunt Master"
+	region = ACCESS_REGION_NONE
+
 /******************
 * Central Command *
 ******************/
