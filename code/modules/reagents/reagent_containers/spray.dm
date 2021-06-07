@@ -182,6 +182,15 @@
 			D.set_up(my_target, rand(6, 8), 2)
 	return
 
+/obj/item/weapon/reagent_containers/spray/chemsprayer/industrial
+	name = "industrial chemical sprayer"
+	desc = "A utility used to spray large amounts of reagent in a given area. This is a heavy-duty industrial version, adapted to spraying chemicals such as cleaning compounds and fertilizers."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "chemsprayerI"
+	item_state = "chemsprayerI"
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 8)
+	volume = 300
+
 /obj/item/weapon/reagent_containers/spray/plantbgone
 	name = "Plant-B-Gone"
 	desc = "Kills those pesky weeds!"
