@@ -112,7 +112,7 @@
 			continue	//so we don't burn the tile we be standin on
 		if(previousturf && LinkBlocked(previousturf, T))
 			break
-		new/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel(T, amount = pressure*5, fire_dir, get_turf(src))
+		new/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel(T, amount = pressure*25, fire_dir, get_turf(src))
 
 	previousturf = null
 	operating = 0
