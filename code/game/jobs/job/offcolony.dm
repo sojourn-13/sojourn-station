@@ -34,6 +34,8 @@
 			/datum/craft_recipe/lodge/clucker_juice,
 			/datum/craft_recipe/lodge/tahca_antiviral,
 			/datum/craft_recipe/lodge/crossbow_bolts,
+			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
+			/datum/craft_recipe/lodge/crossbow_bolts/speed,
 			/datum/craft_recipe/lodge/duct_tape_weak,
 			/datum/craft_recipe/lodge/duct_tape,
 			/datum/craft_recipe/lodge/chimera_fang,
@@ -98,6 +100,8 @@
 			/datum/craft_recipe/lodge/clucker_juice,
 			/datum/craft_recipe/lodge/tahca_antiviral,
 			/datum/craft_recipe/lodge/crossbow_bolts,
+			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
+			/datum/craft_recipe/lodge/crossbow_bolts/speed,
 			/datum/craft_recipe/lodge/duct_tape_weak,
 			/datum/craft_recipe/lodge/duct_tape,
 			/datum/craft_recipe/lodge/chimera_fang,
@@ -129,7 +133,7 @@
 /datum/job/outsider
 	title = "Outsider"
 	total_positions = 4
-	spawn_positions = 6
+	spawn_positions = 5
 	flag = OUTSIDER
 	faction = MAP_FACTION
 	department = DEPARTMENT_INDEPENDENT

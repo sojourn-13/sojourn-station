@@ -632,7 +632,7 @@
 	projectile_type = /obj/item/projectile/bullet/grenade/flash
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 0.5, MATERIAL_GLASS = 0.5)
 
-//Snowflake ammo
+//Cross Bolt ammo
 /obj/item/ammo_casing/crossbow_bolts
 	name = "crossbow bolt"
 	desc = "A finely made bolt designed for a crossbow."
@@ -641,3 +641,33 @@
 	projectile_type = /obj/item/projectile/bullet/crossbow_bolt
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 10
+	is_caseless = TRUE
+
+/obj/item/ammo_casing/crossbow_bolts/bulk //Admin spawn stuff
+	amount = 10
+
+/obj/item/ammo_casing/crossbow_bolts/fragment
+	name = "fragment crossbow bolt"
+	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that brake apart inside the target."
+	icon_state = "bolt"
+	caliber = CAL_CROSSBOW
+	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/lethal
+	matter = list(MATERIAL_STEEL = 1)
+	maxamount = 10
+
+/obj/item/ammo_casing/crossbow_bolts/fragment/bulk //Admin spawn stuff
+	amount = 10
+
+/obj/item/ammo_casing/crossbow_bolts/speed
+	name = "aerodynamic crossbow bolt"
+	desc = "A finely made bolt designed for a crossbow added fletching and balance to shoot true and faster."
+	icon_state = "bolt"
+	caliber = CAL_CROSSBOW
+	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/hv
+	matter = list(MATERIAL_STEEL = 1)
+	maxamount = 10
+
+/obj/item/ammo_casing/crossbow_bolts/speed/bulk //Admin spawn stuff
+	amount = 10
+
+

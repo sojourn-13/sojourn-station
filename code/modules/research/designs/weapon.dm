@@ -16,8 +16,8 @@
 	category = "Misc"
 
 /datum/design/research/item/weapon/stunrevolver
-	name = "\"Zeus\" Stun Revolver"
-	build_path = /obj/item/weapon/gun/energy/stunrevolver
+	name = "\"Hestia\" Stun Revolver"
+	build_path = /obj/item/weapon/gun/energy/stunrevolver/sci
 
 /datum/design/research/item/weapon/nuclear_gun
 	name = "Prototype: Advanced Energy Gun"
@@ -65,11 +65,11 @@
 
 /datum/design/research/item/weapon/large_grenade
 	name = "Large Grenade Casing"
-	build_path = /obj/item/weapon/grenade/chem_grenade/large
+	build_path = /obj/item/weapon/grenade/chem_grenade/large/moebius
 
 /datum/design/research/item/weapon/flora_gun
 	name = "Floral Somatoray"
-	build_path = /obj/item/weapon/gun/energy/floragun
+	build_path = /obj/item/weapon/gun/energy/floragun/si
 
 /datum/design/research/item/weapon/bluespace_harpoon
 	name = "Bluespace Harpoon"

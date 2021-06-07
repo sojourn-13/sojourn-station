@@ -19,11 +19,12 @@
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/tomatojuice = 4,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/limejuice = 4,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/cream = 4,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/pineapplejuice = 4,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/tonic = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/cola = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/space_up = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/space_mountain_wind = 5,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/sodawater = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/sodawater = 11,
 					/obj/item/weapon/reagent_containers/food/drinks/flask/barflask = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/flask/vacuumflask = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 30,
@@ -363,13 +364,15 @@
 
 /obj/machinery/vending/sovietsoda
 	name = "Napitki Starogo Sveta"
-	desc = "A machine filled with odd,and strange pre solfed drinks.All drinks are made fresh in the colony."
+	desc = "A machine filled with odd and strange pre-solfed drinks. Made fresh in the colony."
 	icon_state = "sovietsoda"
 	product_slogans = "For a little bit of home.;Ethnic drinks made fresh in the lower colony!"
 	product_ads = "Need a strange drink? Tired of that space cola? Try one of our Ethnic drinks!;Fresh drinks, all home made in the colony.;Homemade drinks for people who want something special."
-	products = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass = 12,
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/melonsoda = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda = 10)
 	prices = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/kvass = 30,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/melonsoda =20,
 					/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda = 10)
 	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cola = 20)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.

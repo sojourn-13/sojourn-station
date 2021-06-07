@@ -190,7 +190,7 @@
 	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
 		 It appears to have been converted at some point to chamber in .257, possibly having taken different rounds at some point. \
 		 Someone butchered this thing beyond recognition! At least it fits in a holster."
-	icon = 'icons/obj/guns/projectile/Warthog.dmi'
+	icon = 'icons/obj/guns/projectile/sawnoff/solmarine.dmi'
 	icon_state = "solmarine"
 	item_state = "solmarine"
 	damage_multiplier = 0.8

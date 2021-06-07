@@ -360,6 +360,8 @@
 		G.rigged = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 		G.rigged = 2
+	if(weapon_upgrades[UPGRADE_COLOR])
+		G.color = weapon_upgrades[UPGRADE_COLOR]
 	if(weapon_upgrades[GUN_UPGRADE_ZOOM])
 		G.zoom_factor += weapon_upgrades[GUN_UPGRADE_ZOOM]
 		G.initialize_scope()

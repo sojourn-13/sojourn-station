@@ -52,13 +52,13 @@
 	var/successful = FALSE
 	if (istype(H.get_active_hand(), /obj/item/weapon/book/ritual/cruciform))
 		var/obj/item/weapon/book/ritual/cruciform/M = H.get_active_hand()
-		M.light_range = 5 //Slightly better than as a lantern since you can only hold it in hand or within the belt slot.
+		M.set_light(5) //Slightly better than as a lantern since you can only hold it in hand or within the belt slot.
 		playsound(H.loc, 'sound/ambience/ambicha2.ogg', 75, 1)
 		H.visible_message(
 			SPAN_NOTICE("The ritual book [H] is holding begins to emit light."),
 			SPAN_NOTICE("The ritual book you're holding begins to glow brightly.")
 		)
-		spawn(6000) M.light_range = initial(M.light_range)
+		spawn(6000) M.set_light(0)
 		successful = TRUE
 		set_personal_cooldown(H)
 	else
@@ -77,7 +77,7 @@
 /datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	playsound(H.loc, 'sound/effects/snap.ogg', 50, 1)
 	new /obj/effect/sparks(H.loc)
-	new /obj/effect/effect/smoke/illumination(H.loc, brightness=max(6), lifetime=12000) //About the same brightness as a lantern and its almost free!
+	new /obj/effect/effect/smoke/illumination(H.loc, brightness=max(7), lifetime=12000) //Very bright light.
 	set_personal_cooldown(H)
 	return TRUE
 

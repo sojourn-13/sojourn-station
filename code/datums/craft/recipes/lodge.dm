@@ -14,6 +14,24 @@
 	)
 	flags = CRAFT_BATCH
 
+/datum/craft_recipe/lodge/crossbow_bolts/lethal
+	name = "Fragment Crossbow Bolt"
+	result = /obj/item/ammo_casing/crossbow_bolts/fragment
+	steps = list(
+		list(/obj/item/ammo_casing/crossbow_bolts, 1),
+		list(/obj/item/weapon/ore, 1)
+	)
+
+/datum/craft_recipe/lodge/crossbow_bolts/speed
+	name = "Aerodynamic Crossbow Bolts"
+	result = /obj/item/ammo_casing/crossbow_bolts/speed
+	time = 0
+	steps = list(
+		list(/obj/item/ammo_casing/crossbow_bolts, 1),
+		list(CRAFT_MATERIAL, 1, MATERIAL_BONE, "time" = 1), //Takes a second
+		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 1) //Takes a second
+	)
+
 /datum/craft_recipe/lodge/hunter_crossbow
 	name = "Lodge Hunting Crossbow"
 	result = /obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow

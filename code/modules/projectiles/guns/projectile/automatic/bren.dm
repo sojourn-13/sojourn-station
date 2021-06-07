@@ -39,7 +39,7 @@
 	var/itemstring = ""
 
 	if (ammo_magazine)
-		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		iconstring += "[ammo_magazine? "mag[ammo_magazine.max_ammo]": ""]"
 		itemstring += "_full"
 
 	if(wielded)

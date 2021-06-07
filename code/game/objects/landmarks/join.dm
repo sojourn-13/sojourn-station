@@ -65,7 +65,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	restrict_job = list("Lodge Hunter","Lodge Hunt Master")
 
 /obj/landmark/join/late/dormitory_outsider
-	name = "Hobo Bed"
+	name = "Outsider Bed"
 	icon_state = "player-blue-cluster"
 	join_tag = "late_dormitory"
 	message = null

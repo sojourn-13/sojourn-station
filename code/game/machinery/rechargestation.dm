@@ -279,15 +279,21 @@
 	density = FALSE
 	layer = TURF_LAYER + 0.1
 
+	circuit = /obj/item/weapon/circuitboard/repair_station
+
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4
 	active_power_usage = 4000
 
 	var/mob/living/silicon/robot/repairing
 
-	var/repair_amount = 100 //How much we can heal something for.
+	var/repair_amount = 0 //How much we can heal something for.
 	var/repair_rate = 5 //How much HP we restore per second
 	var/repair_complexity = REPAIR_HULL //How complex we get regarding repairing things
+
+/obj/machinery/repair_station/Initialize()
+	..()
+	repair_amount = 500
 
 /obj/machinery/repair_station/examine(mob/user)
 	..()
@@ -332,6 +338,14 @@
 		visible_message("\The [src] buzzes \"Insufficient material remaining to continue repairs.\".")
 		stop_repairing()
 		return
+
+	for(var/V in repairing.components)
+		var/datum/robot_component/C = repairing.components[V]
+		if(C.brute_damage + C.electronics_damage >= C.max_damage)
+			visible_message("\The [src] buzzes \"[C.name] too damaged to repair, aborting.\".")
+			stop_repairing()
+			return
+
 	var/repair_count = 0
 	if(repair_complexity & REPAIR_HULL && (repairing.getBruteLoss() || repairing.getFireLoss()))
 		var/amount_to_heal = min(repair_amount, repair_rate)

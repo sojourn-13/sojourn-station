@@ -19,7 +19,7 @@
 	. = ..()
 	if(prob(5))
 		empulse(src.loc, 0, 3)
-		playsound(src.loc, list('sound/weapons/unknown_spacegun_burn.ogg', 'sound/weapons/unknown_spacegun_melt.ogg', 'sound/weapons/unknown_spacegun_incinerate.ogg', 'sound/weapons/unknown_spacegun_vaporize.ogg'))
+		playsound(src.loc, list('sound/weapons/unknown_spacegun_burn.ogg', 'sound/weapons/unknown_spacegun_melt.ogg', 'sound/weapons/unknown_spacegun_incinerate.ogg', 'sound/weapons/unknown_spacegun_vaporize.ogg'), 50, 1)
 
 /mob/living/carbon/superior_animal/roach/elektromagnetisch/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)

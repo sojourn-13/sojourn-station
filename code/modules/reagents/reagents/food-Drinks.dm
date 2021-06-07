@@ -434,6 +434,7 @@
 	var/adj_drowsy = 0
 	var/adj_sleepy = 0
 	var/adj_temp = 0
+	var/sanity_gain_ingest = 0.5
 	reagent_type = "Drink"
 
 /datum/reagent/drink/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -453,7 +454,7 @@
 	//Sake of coding easy and not remaking the proc we use same proc as onAlcohol for non-booze drinks
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
-		H.sanity.onAlcohol(src, effect_multiplier)
+		H.sanity.onNonAlcohol(src, effect_multiplier)
 
 // Juices
 
@@ -597,6 +598,17 @@
 	glass_icon_state = "glass_red"
 	glass_name = "watermelon juice"
 	glass_desc = "Delicious juice made from watermelon."
+
+/datum/reagent/drink/pineapplejuice
+	name = "Pineapple Juice"
+	id = "pineapplejuice"
+	description = "A tart, yet tropical juice."
+	taste_description = "pineapple"
+	color = "#FFFF66"
+
+	glass_icon_state = "glass_yellow"
+	glass_name = "pineapple juice"
+	glass_desc = "A tart, yet tropical juice."
 
 // Everything else
 
@@ -1143,17 +1155,19 @@
 	glass_name = "lemon lime soda"
 	glass_desc = "A tangy substance made of 0.5% natural citrus!"
 
-/datum/reagent/drink/Kvass
-	name = "Kvass"
-	id = "Kvass"
-	description = "A traditonal, and very popular russian drink.Made on the colony."
-	taste_description = "sweet, yet very light dark beer."
-	color = "#9F3400"
+/datum/reagent/drink/melonsoda
+	name = "Mellon Soda"
+	id = "melonsoda"
+	description = "A carbinated mellon drink."
+	taste_description = "carbinated melon"
+	reagent_state = LIQUID
+	color = "#82F296"
+	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_icon_state = "Kvass_Glass"
-	glass_name = "Kvass"
-	glass_desc = "A traditonal russian drink. This version of Kvass is darker, and a bit bolder than normal."
+	glass_icon_state  = "melon_glass"
+	glass_name = "Melon soda"
+	glass_desc = "Delicious melon soda."
 
 /datum/reagent/drink/doctor_delight
 	name = "The Doctor's Delight"
@@ -1241,6 +1255,19 @@
 /datum/reagent/ethanol/beer/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.jitteriness = max(M.jitteriness - 3 * effect_multiplier, 0)
+
+/datum/reagent/ethanol/Kvass
+	name = "Kvass"
+	id = "Kvass"
+	description = "A traditonal, and very popular russian drink.Made on the colony."
+	taste_description = "sweet, yet very light dark beer."
+	color = "#9F3400"
+	strength = 60
+	adj_temp = -5
+
+	glass_icon_state = "Kvass_Glass"
+	glass_name = "Kvass"
+	glass_desc = "A traditonal russian drink. This version of Kvass is darker, and a bit bolder than normal."
 
 /datum/reagent/ethanol/bluecuracao
 	name = "Blue Curacao"
@@ -2160,6 +2187,19 @@
 	glass_name = "red mead"
 	glass_desc = "A true Viking's beverage, though its color is strange."
 	glass_center_of_mass = list("x"=17, "y"=10)
+
+/datum/reagent/ethanol/riotjuice
+	name = "Riot Juice"
+	id = "riotjuice"
+	description = "A cocktail that is very potent. Perfect for sporting events."
+	taste_description = "strong yet drinkable alcohol"
+	color = "#33CCFF"
+	strength = 10
+
+	glass_icon_state = "riotjuice_glass"
+	glass_name = "Riot Juice"
+	glass_desc = "A very strong mixed drink. Perfect for sporting events, or plasma tag. Not for bug bites."
+	glass_center_of_mass = list("x"=16, "y"=8)
 
 /datum/reagent/ethanol/sbiten
 	name = "Sbiten"

@@ -38,7 +38,11 @@
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory/tie
 	flags = GEAR_HAS_TYPE_SELECTION
-	
+
+/datum/gear/accessory/fluffycape
+	display_name = "fluffy cape"
+	path = /obj/item/clothing/accessory/cape
+
 /datum/gear/accessory/blackshieldpatch
 	display_name = "Blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield

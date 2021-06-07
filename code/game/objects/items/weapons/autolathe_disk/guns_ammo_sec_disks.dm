@@ -29,6 +29,26 @@
 	disk_name = "Security Miscellaneous Factory"
 	license = -1
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/security/marshal_guns
+	disk_name = "Marshal \"Negotiator\" Pack"
+	icon_state = "ironhammer"
+	license = 10
+	designs = list(
+		/datum/design/autolathe/gun/rex10,
+		/datum/design/autolathe/gun/rev10,
+		/datum/design/autolathe/gun/firefly,
+		/datum/design/autolathe/gun/glock,
+		//SMGs
+		/datum/design/autolathe/gun/luger,
+		/datum/design/autolathe/gun/wirbelwind = 2,
+		/datum/design/autolathe/gun/straylight,
+		//rifles
+		/datum/design/autolathe/gun/basstet,
+		/datum/design/autolathe/gun/strelki,
+		//machinegun
+		/datum/design/autolathe/gun/dp = 2,
+		/datum/design/autolathe/gun/bastard = 2,
+		)
 
 //Blackshield
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield
@@ -43,16 +63,16 @@
 		/datum/design/autolathe/gun/naga,
 		//SMGs
 		/datum/design/autolathe/gun/greasegun,
-		/datum/design/autolathe/gun/luger,
 		//rifles
+		/datum/design/autolathe/gun/boltgun_sa,
+		/datum/design/autolathe/gun/zatvor,
 		/datum/design/autolathe/gun/sol,
 		/datum/design/autolathe/gun/omnirifle,
 		/datum/design/autolathe/gun/standard_omnirifle,
 		/datum/design/autolathe/gun/omnicarbine,
 		/datum/design/autolathe/gun/rds_omnicarbine,
-		/datum/design/autolathe/gun/basstet,
 		//machinegun
-		/datum/design/autolathe/gun/dp,
+		/datum/design/autolathe/gun/saw,
 		//grenade launcher
 		/datum/design/autolathe/gun/grenade_launcher_china_lake,
 		//STS
@@ -157,8 +177,8 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/strelki
-	disk_name = "Blackshield 7.5mm \"Strelki\""
-	icon_state = "blackshield"
+	disk_name = "NM - 7.5mm \"Strelki\""
+	icon_state = "ironhammer"
 	license = 8
 
 	designs = list(
@@ -197,8 +217,8 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/blackshield/dp
-	disk_name = "Blackshield - \"Pulemyot Degtyaryova\" LMG"
-	icon_state = "blackshield"
+	disk_name = "NM - \"Pulemyot Degtyaryova\" LMG"
+	icon_state = "ironhammer"
 	license = 8
 
 	designs = list(
@@ -428,7 +448,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/glock
-	disk_name = "SA - .35 Sky Auto Pistol"
+	disk_name = "GmbH - .35 Sky Auto Pistol"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -467,20 +487,6 @@
 		/datum/design/autolathe/ammo/slmagnum_rubber,
 		/datum/design/autolathe/ammo/slmagnum,
 		/datum/design/autolathe/ammo/slmagnum_lethal = 2,
-		)
-
-
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/revolver_mateba
-	disk_name = "SA - .50 Kurtz Mateba Revolver"
-	icon_state = "ironhammer"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/revolver/mateba = 3,
-		/datum/design/autolathe/ammo/slkurtz_practice = 0,
-		/datum/design/autolathe/ammo/slkurtz_rubber,
-		/datum/design/autolathe/ammo/slkurtz,
-		/datum/design/autolathe/ammo/slkurtz_lethal = 2,
 		)
 
 // .40 pistols
@@ -615,6 +621,19 @@
 		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz,
 		/datum/design/autolathe/ammo/kurtz_lethal = 2,
+		)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/revolver_mateba
+	disk_name = "SA - .50 Kurtz Mateba Revolver"
+	icon_state = "ironhammer"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/revolver/mateba = 3,
+		/datum/design/autolathe/ammo/slkurtz_practice = 0,
+		/datum/design/autolathe/ammo/slkurtz_rubber,
+		/datum/design/autolathe/ammo/slkurtz,
+		/datum/design/autolathe/ammo/slkurtz_lethal = 2,
 		)
 
 // SHOTGUNS
@@ -894,7 +913,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bren
-	disk_name = "No-Publisher - 7.5 \"Kalashnabren\""
+	disk_name = "No-Publisher - .257 \"Kalashnabren\""
 	icon_state = "black"
 
 	license = 16
@@ -1097,10 +1116,30 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 	disk_name = "SI - \"Auretian\" E Pistol"
 	icon_state = "moebius"
 
-	license = 8 //1 gun 1 cell, or 4 good cells that are bette then normal
+	license = 4 //1 gun 1 cell, or 4 good cells that are bette then normal
 	designs = list(
-		/datum/design/research/item/weapon/auretian = 6,
-		/datum/design/research/item/powercell/small/basic = 2,
+		/datum/design/research/item/weapon/auretian = 3,
+		/datum/design/research/item/powercell/small/basic,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/stun_revolver_sci
+	disk_name = "SI - \"Hestia\" Stun Revolver"
+	icon_state = "moebius"
+
+	license = 8 //2 gun 2 cell, or 8 good cells that are bette then normal
+	designs = list(
+		/datum/design/research/item/weapon/stunrevolver = 3,
+		/datum/design/research/item/powercell/small/basic,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/stun_revolver
+	disk_name = "GmbH - \"Zeus\" Stun Revolver"
+	icon_state = "frozenstar"
+
+	license = 8//2 guns 2 cells
+	designs = list(
+		/datum/design/autolathe/gun/revolver_taser = 2,
+		/datum/design/autolathe/cell/small/high,
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lasercannon
@@ -1208,4 +1247,3 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/research/item/ammo/laser/ap,
 		/datum/design/research/item/ammo/laser/lethal,
 	)
-
