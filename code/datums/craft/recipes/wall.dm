@@ -22,20 +22,20 @@
 	name = "railing, copper"
 	result = /obj/structure/railing
 	steps = list(
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/wall/railing_grey
 	name = "railing, grey"
 	result = /obj/structure/railing/grey
 	steps = list(
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL)
 	)
 
 //wall or small you know them req only 2 list
 /datum/craft_recipe/wall/wall
 	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 	flags = null
 	time = 120

@@ -20,7 +20,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 20),
 		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
-		list(QUALITY_ADHESIVE, 10, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
 	related_stats = list(STAT_COG)
 
@@ -31,7 +31,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
-		list(QUALITY_ADHESIVE, 10, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
 	related_stats = list(STAT_COG)
 
@@ -41,7 +41,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
-		list(QUALITY_ADHESIVE, 10, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
 	related_stats = list(STAT_COG)
 
@@ -52,7 +52,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
-		list(QUALITY_ADHESIVE, 10, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
 	related_stats = list(STAT_COG)
 
@@ -61,7 +61,7 @@
 	avaliableToEveryone = FALSE
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
-		list(QUALITY_ADHESIVE, 10, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
 	related_stats = list(STAT_COG)
 
@@ -104,14 +104,14 @@
 	result = /obj/structure/bookcase
 	icon_state = "woodworking"
 	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD)
 	)
 
 /datum/craft_recipe/storage/closet
 	name = "closet"
 	result = /obj/structure/closet
 	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/storage/coffin
@@ -119,21 +119,21 @@
 	result = /obj/structure/closet/coffin
 	icon_state = "woodworking"
 	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD)
 	)
 
 /datum/craft_recipe/storage/crate/plastic
 	name = "crate, plastic"
 	result = /obj/structure/closet/crate/plastic
 	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC)
 	)
 
 /datum/craft_recipe/storage/crate/steel
 	name = "crate, steel"
 	result = /obj/structure/closet/crate
 	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/storage/bottle
@@ -141,7 +141,7 @@
 	result = /obj/item/weapon/reagent_containers/glass/bottle
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 70),
+		list(QUALITY_WELDING, 10, 70)
 	)
 
 /datum/craft_recipe/storage/beaker
@@ -149,7 +149,7 @@
 	result = /obj/item/weapon/reagent_containers/glass/beaker
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 70),
+		list(QUALITY_WELDING, 10, 70)
 	)
 
 /datum/craft_recipe/storage/beaker_large
@@ -157,26 +157,26 @@
 	result = /obj/item/weapon/reagent_containers/glass/beaker/large
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 70),
+		list(QUALITY_WELDING, 10, 70)
 	)
 
 /datum/craft_recipe/storage/rack
 	name = "rack"
 	result = /obj/structure/table/rack
 	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/storage/shelf
 	name = "shelf"
 	result = /obj/structure/table/rack/shelf
 	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/storage/table
 	name = "table frame"
 	result = /obj/structure/table
 	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)

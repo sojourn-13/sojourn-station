@@ -144,7 +144,7 @@
 		list(QUALITY_PRYING, 10, 70),
 		list(/obj/item/stack/rods, 1, "time" = 30),
 		list(QUALITY_PRYING, 10, 70),
-		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(QUALITY_SCREW_DRIVING, 10, 70)
 	)
 
 //Metal rods reinforced with regular tape
@@ -165,7 +165,7 @@
 	steps = list(
 		list(/obj/item/weapon/weldpack, 1, "time" = 30),
 		list(QUALITY_SAWING, 10, "time" = 120),//Disassemble the backpack
-		list(QUALITY_BOLT_TURNING, 10, 40), //And open some valves
+		list(QUALITY_BOLT_TURNING, 10, 40) //And open some valves
 	)
 
 //just a clamp with a flat surface to hammer something
@@ -177,7 +177,7 @@
 		list(/obj/item/stack/rods, 2, 30),
 		list(QUALITY_WELDING, 10, 150),
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
-		list(QUALITY_WELDING, 10, 150),
+		list(QUALITY_WELDING, 10, 150)
 	)
 */
 //An improvised adapter to fit a larger power cell. This is pretty fancy as crafted items go
@@ -195,7 +195,7 @@
 		list(QUALITY_WIRE_CUTTING, 10, "time" = 60),		//adjust wiring
 		list(/obj/item/weapon/cell/large, 1),				//cell for parts
 		list(QUALITY_SAWING, 10, "time" = 70),				//The large cell is disassembled for parts
-		list(QUALITY_WELDING, 10, "time" = 70),				//weld parts in place
+		list(QUALITY_WELDING, 10, "time" = 70)				//weld parts in place
 	)
 
 //A metal plate with bolts drilled and wrenched into it
@@ -206,7 +206,7 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
 		list(QUALITY_DRILLING, 10, 150),
 		list(/obj/item/stack/rods, 2, 30),
-		list(QUALITY_BOLT_TURNING, 10, 150),
+		list(QUALITY_BOLT_TURNING, 10, 150)
 	)
 
 
@@ -218,5 +218,5 @@
 		list(/obj/item/stack/rods, 2, 30),
 		list(QUALITY_WELDING, 10, 150),
 		list(QUALITY_DRILLING, 20, 150),
-		list(QUALITY_SAWING, 20, 150),
+		list(QUALITY_SAWING, 20, 150)
 	)

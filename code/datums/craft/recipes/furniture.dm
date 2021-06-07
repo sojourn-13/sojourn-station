@@ -8,7 +8,7 @@
 	name = "bed"
 	result = /obj/structure/bed
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
 //Custom chairs
@@ -26,7 +26,7 @@
 	name = "chair, steel"
 	result = /obj/structure/bed/chair
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/furniture/wooden_chair
@@ -34,7 +34,7 @@
 	result = /obj/structure/bed/chair/custom/wood
 	icon_state = "woodworking"
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD),
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD)
 	)
 
 // Office chairs
@@ -42,7 +42,7 @@
 	name = "chair, office dark"
 	result = /obj/structure/bed/chair/office/dark
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/furniture/office_chair/light
@@ -54,7 +54,7 @@
 	name = "comfy chair, beige"
 	result = /obj/structure/bed/chair/comfy/beige
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/furniture/comfy_chair/black
@@ -94,7 +94,7 @@
 	result = /obj/item/weapon/stool
 	time = 30
 	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
 	)
 	flags = null
 
