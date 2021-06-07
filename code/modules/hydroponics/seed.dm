@@ -789,5 +789,5 @@
 	if(get_trait(TRAIT_PLANT_ICON))
 		growth_stages = plant_controller.plant_sprites[get_trait(TRAIT_PLANT_ICON)]
 	else
-		to_chat(world, SPAN_DANGER("NO PLANT_ICON FOUND"))
+		log_and_message_admins("NO PLANT_ICON FOUND")
 		growth_stages = 0

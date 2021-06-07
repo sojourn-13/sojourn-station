@@ -295,6 +295,11 @@
 	if(resting)
 		add_rest(E.type, 3 * multiplier)
 
+/datum/sanity/proc/onNonAlcohol(datum/reagent/drink/D, multiplier)
+	changeLevel(D.sanity_gain_ingest * multiplier)
+	if(resting)
+		add_rest(D.type, 3 * multiplier)
+
 /datum/sanity/proc/onEat(obj/item/weapon/reagent_containers/food/snacks/snack, amount_eaten)
 	changeLevel(snack.sanity_gain * amount_eaten / snack.bitesize)
 	if(snack.cooked && resting)

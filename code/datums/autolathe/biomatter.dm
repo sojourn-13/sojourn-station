@@ -351,7 +351,7 @@
 	name = "Universal sling"
 	build_path = /obj/item/clothing/suit/sling
 
-//[/THINGS]
+//[Gun/Mods form the bioprinter]
 /datum/design/autolathe/gun/plasma/martyr
 	name = "NT PR \"Martyr\""
 	build_path = /obj/item/weapon/gun/energy/plasma/martyr
@@ -359,3 +359,7 @@
 /datum/design/autolathe/gun_upgrade/barrel/excruciator
 	name = "New Testament \"EXCRUCIATOR\" giga lens"
 	build_path = /obj/item/weapon/gun_upgrade/barrel/excruciator
+
+/datum/design/bioprinter/holyvacuum
+	name = "\"Tersus\" Vacuum Cleaner"
+	build_path = /obj/item/weapon/holyvacuum

@@ -448,7 +448,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/glock
-	disk_name = "SA - .35 Sky Auto Pistol"
+	disk_name = "GmbH - .35 Sky Auto Pistol"
 	icon_state = "frozenstar"
 
 	license = 8

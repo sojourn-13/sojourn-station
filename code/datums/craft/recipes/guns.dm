@@ -39,7 +39,7 @@
 		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
 		list(QUALITY_SAWING, 10, "time" = 30),
 		list(QUALITY_ADHESIVE, 10, "time" = 30),
-		list(QUALITY_WELDING, 10, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30)
 	)
 
 /datum/craft_recipe/gun/pistol_slugger
@@ -50,7 +50,7 @@
 		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
 		list(QUALITY_SAWING, 10, "time" = 30),
 		list(QUALITY_ADHESIVE, 10, "time" = 30),
-		list(QUALITY_WELDING, 10, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30)
 	)
 
 /datum/craft_recipe/gun/pistol_man_opener
@@ -61,7 +61,7 @@
 		list(/obj/item/weapon/gun/projectile/handmade_pistol, 1, "time" = 60),
 		list(QUALITY_SAWING, 10, "time" = 30),
 		list(QUALITY_ADHESIVE, 10, "time" = 30),
-		list(QUALITY_WELDING, 10, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30)
 	)
 
 /datum/craft_recipe/gun/handmaderevolver
@@ -194,4 +194,17 @@
 		list(/obj/item/weapon/crossbowframe, 1, "time" = 20),
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
+	)
+
+/datum/craft_recipe/gun/multi_laser
+	name = "Multi-Laser Cannon"
+	result = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy/auto
+	steps = list(
+		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)

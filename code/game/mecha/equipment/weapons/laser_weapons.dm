@@ -40,6 +40,18 @@
 	projectile = /obj/item/projectile/beam/heavylaser
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy/auto
+	equip_cooldown = 5
+	name = "\improper Multi-laser Cannon"
+	desc = "Four solaris laser cannons welded together to achieve a higher firerate."
+	icon_state = "mecha_auto_laser"
+	energy_drain = 180
+	projectile = /obj/item/projectile/beam/heavylaser
+	projectiles = 8
+	projectiles_per_shot = 2
+	fire_cooldown = 0
+	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
 	equip_cooldown = 40
 	name = "mkIV ion heavy cannon"

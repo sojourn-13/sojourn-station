@@ -434,6 +434,7 @@
 	var/adj_drowsy = 0
 	var/adj_sleepy = 0
 	var/adj_temp = 0
+	var/sanity_gain_ingest = 0.5
 	reagent_type = "Drink"
 
 /datum/reagent/drink/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -453,7 +454,7 @@
 	//Sake of coding easy and not remaking the proc we use same proc as onAlcohol for non-booze drinks
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
-		H.sanity.onAlcohol(src, effect_multiplier)
+		H.sanity.onNonAlcohol(src, effect_multiplier)
 
 // Juices
 
