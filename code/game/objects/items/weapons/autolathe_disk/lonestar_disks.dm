@@ -166,3 +166,8 @@
 		/datum/design/autolathe/cell/small,
 		/datum/design/autolathe/cell/small/high,
 	)
+
+
+		//datum/design/autolathe/misc/floor_light = 0,
+		//datum/design/autolathe/misc/tube = 0,
+		//datum/design/autolathe/misc/bulb = 0,

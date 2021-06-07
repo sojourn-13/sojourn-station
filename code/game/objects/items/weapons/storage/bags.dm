@@ -82,6 +82,23 @@
 /obj/item/weapon/storage/bag/trash/holding/update_icon()
 	return
 
+/obj/item/weapon/storage/bag/trash/big
+	name = "large trash bag"
+	desc = "It's the ultra-heavy-duty yellow polymer kind. Time to take out the trash!"
+	icon_state = "superbag0"
+	item_state = "trashbag"
+	max_storage_space = DEFAULT_BULKY_STORAGE * 1.5
+
+/obj/item/weapon/storage/bag/trash/big/update_icon()
+	if(contents.len == 0)
+		icon_state = "superbag0"
+	else if(contents.len < 14)
+		icon_state = "superbag1"
+	else if(contents.len < 24)
+		icon_state = "superbag2"
+	else
+		icon_state = "superbag3"
+
 // -----------------------------
 //        Plastic Bag
 // -----------------------------
