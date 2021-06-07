@@ -5,7 +5,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "hydro"
 	item_state = "analyzer"
-	charge_per_use = 0 //It need to be 0 for the Green Thumb perk to work
+	charge_per_use = 2
 
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 
@@ -18,6 +18,9 @@
 	)
 	var/datum/seed/loaded_seed
 	var/datum/reagents/loaded_reagents
+
+/obj/item/device/scanner/plant/perk
+	charge_per_use = 0 //It need to be 0 for the Green Thumb perk to work
 
 /obj/item/device/scanner/plant/is_valid_scan_target(atom/O)
 	if(is_type_in_list(O, valid_targets))

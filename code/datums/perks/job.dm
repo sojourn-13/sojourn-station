@@ -421,7 +421,7 @@
 	        to harvest reagents, by examining them."
 	//icon_state = "greenthumb" // https://game-icons.net/1x1/delapouite/farmer.html
 
-	var/virtual_scanner = new /obj/item/device/scanner/plant
+	var/virtual_scanner = new /obj/item/device/scanner/plant/perk
 
 /datum/perk/greenthumb/assign(mob/living/carbon/human/H)
 	..()

@@ -855,11 +855,23 @@
 			m_type = 2
 			playsound(loc, 'sound/voice/YeenCackle.ogg', 50, 1, -1)
 			cloud_emote = "cloud-scream"
+		if ("shriek")
+			message = "SHRIEKS!"
+			m_type = 2
+			playsound(loc, 'sound/voice/shriek.ogg', 50, 1, -1)
+			cloud_emote = "cloud-scream"
+		if ("bellow")
+			message = "bellows!"
+			m_type = 2
+			playsound(loc, 'sound/voice/LizardBellow.ogg', 50, 1, -1)
+		if ("squeal")
+			message = "squeals."
+			playsound(loc, 'sound/voice/LizardSqueal.ogg', 50, 1, -1)
 
 		if ("help")
-			to_chat(src, "awoo, aslap-(none)/mob, bark, blink, blink_r, blush, bow-(none)/mob, burp, chirp, choke, chuckle, clap, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
+			to_chat(src, "awoo, aslap-(none)/mob, bark, bellow, blink, blink_r, blush, bow-(none)/mob, burp, chirp, choke, chuckle, clap, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
 					flip, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, mumble, nod, nya, pale, peep, point-atom, \
-					raise, salute, scream, sneeze, shake, shiver, shrug, sigh, signal-#1-10, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, stopsway/swag, squeak, sway/wag, swish, tremble, twitch, \
+					raise, salute, scream, sneeze, shake, shiver, shriek, shrug, sigh, signal-#1-10, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, stopsway/swag, squeak, squeal, sway/wag, swish, tremble, twitch, \
 					twitch_v, vomit, weh, whimper, wink, yawn, ycackle. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping")
 
 		else

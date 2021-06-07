@@ -142,6 +142,17 @@
 	icon_state = "box_lrifle_p"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/practice
 
+/obj/item/ammo_magazine/ammobox/light_rifle_257/lethal
+	name = "ammunition box (.257 Carbine hollow-point)"
+	icon_state = "box_clrifle_l"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
+
+/obj/item/ammo_magazine/ammobox/light_rifle_257/highvelocity
+	name = "ammunition box (.257 Carbine high-velocity)"
+	icon_state = "box_lrifle_p"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/hv
+
+// .257 Pacets
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small
 	name = "ammunition box (.257 Carbine FMJ)"
 	icon_state = "lrifle"

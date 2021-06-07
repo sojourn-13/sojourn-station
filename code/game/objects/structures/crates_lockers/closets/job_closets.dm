@@ -78,6 +78,7 @@
 	new /obj/item/weapon/soap/deluxe(src)
 	new /obj/item/weapon/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
 	new /obj/item/weapon/newspaper_stack(src)
+	new /obj/item/weapon/holyvacuum(src)
 
 /obj/structure/closet/custodial
 	name = "church custodial closet"
@@ -113,6 +114,7 @@
 	new /obj/item/clothing/suit/armor/vest/custodian(src)
 	new /obj/item/clothing/head/helmet/custodian(src)
 	new /obj/item/weapon/newspaper_stack(src)
+	new /obj/item/weapon/holyvacuum(src)
 
 /obj/structure/closet/acolyte
 	name = "vector closet"

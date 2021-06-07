@@ -247,6 +247,7 @@
 			inserted_casing.icon_state = C.icon_state
 			inserted_casing.spent_icon = C.spent_icon
 			inserted_casing.maxamount = C.maxamount
+			inserted_casing.is_caseless = C.is_caseless
 			if(ispath(inserted_casing.projectile_type) && C.BB)
 				inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
 			C.update_icon()

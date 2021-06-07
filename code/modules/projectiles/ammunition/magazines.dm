@@ -63,25 +63,25 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/rubber
-	name = "standard auto magazine (rubber)"
+	name = "standard auto drum (rubber)"
 	matter = list(MATERIAL_STEEL = 25)
 	icon_state = "ldrum_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
-	name = "standard auto magazine (hollow-point)"
+	name = "standard auto drum (hollow-point)"
 	matter = list(MATERIAL_STEEL = 25)
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 	icon_state = "ldru_l"
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/hv
-	name = "standard auto magazine (high-velocity)"
+	name = "standard auto drum (high-velocity)"
 	matter = list(MATERIAL_STEEL = 25)
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 	icon_state = "ldrum_hv"
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
-	name = "standard auto magazine"
+	name = "standard drum magazine"
 	matter = list(MATERIAL_STEEL = 4)
 	icon_state = "ldrum"
 	initial_ammo = 0
@@ -366,6 +366,7 @@
 	icon_state = "rifle_short_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
+//Linked 7.5
 
 /obj/item/ammo_magazine/rifle_75_linked_box
 	name = "linked ammunition box (7.5mm Rifle)"
@@ -418,9 +419,23 @@
 	ammo_type = /obj/item/ammo_casing/light_rifle_257
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/highvelocity
+	name = "linked ammunition box (.257 Carbine highvelocity)"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/hv
+
+/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/rubber
+	name = "linked ammunition box (.257 Carbine rubber)"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
+
+/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/lethal
+	name = "linked ammunition box (.257 Carbine hollowpoint)"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
+
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty
 	matter = list(MATERIAL_STEEL = 2)
 	initial_ammo = 0
+
+//Pan 7.5
 
 /obj/item/ammo_magazine/maxim_75
 	name = "pan magazine (7.5mm Rifle)"

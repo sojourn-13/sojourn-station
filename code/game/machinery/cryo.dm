@@ -244,7 +244,10 @@
 					occupant.adjustToxLoss(max(-1, -20/occupant.getToxLoss()))
 				var/heal_brute = occupant.getBruteLoss() ? min(20, 20/occupant.getBruteLoss()) : 0
 				var/heal_fire = occupant.getFireLoss() ? min(20, 20/occupant.getFireLoss()) : 0
+				occupant.adjustOxyLoss(-10) //Were always healing o2
+				occupant.adjustToxLoss(-1) //Were always healing a small bit of toxins
 				occupant.heal_organ_damage(heal_brute,heal_fire)
+				occupant.adjustCloneLoss(-5) //Were always healing a bit of cloneloss, not much tho
 		var/has_cryo = occupant.reagents.get_reagent_amount("cryoxadone") >= 1
 		var/has_clonexa = occupant.reagents.get_reagent_amount("clonexadone") >= 1
 		var/has_cryo_medicine = has_cryo || has_clonexa
