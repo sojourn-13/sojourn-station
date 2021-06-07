@@ -131,7 +131,8 @@
 	desc = "After many issues with scientists trying to hammer a nail, one bright individual wondered what could be achieved by attaching a stellar-grade ship engine to the back."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "chargehammer"
-	item_state = "chargehammer"
+	wielded_icon = "chargehammer1"
+	item_state = "chargehammer0"
 	w_class = ITEM_SIZE_HUGE
 	switched_on_force = WEAPON_FORCE_BRUTAL
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
@@ -143,6 +144,29 @@
 	use_power_cost = 15
 	var/datum/effect/effect/system/trail/T
 	var/last_launch
+
+/obj/item/weapon/tool/hammer/charge/turn_on(mob/user)
+
+	if (cell && cell.charge > 0)
+		item_state = "[initial(item_state)]-on"
+		icon_state = "[initial(icon_state)]_on"
+		if(wielded)
+			item_state = "chargehammer1-on"
+		to_chat(user, SPAN_NOTICE("You switch [src] on."))
+		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+		..()
+	else
+		item_state = initial(item_state)
+		to_chat(user, SPAN_WARNING("[src] has no power!"))
+
+/obj/item/weapon/tool/hammer/charge/turn_off(mob/user)
+	item_state = initial(item_state)
+	icon_state = initial(icon_state)
+	if(wielded)
+		item_state = "chargehammer1"
+	playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+	to_chat(user, SPAN_NOTICE("You switch [src] off."))
+	..()
 
 /obj/item/weapon/tool/hammer/charge/New()
 	..()
