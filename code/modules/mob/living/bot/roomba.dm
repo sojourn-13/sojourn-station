@@ -63,7 +63,6 @@
 		to_chat(user, "You activate the Roomba! Beep boop.")
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		var/mob/living/simple_animal/hostile/roomba/custom/R = new /mob/living/simple_animal/hostile/roomba/custom(get_turf(src))
-		for(var/obj/structure/reagent_dispensers/watertank/wTank in contents)
 		R.name = created_name
 		qdel(src)
 

@@ -21,3 +21,20 @@
 		list(/obj/item/weapon/tool/knife, 1, "time" = 30),
 		list(QUALITY_ADHESIVE, 35, "time" = 30)
 	)
+
+/datum/craft_recipe/robotic/armor
+	name = "Roomba Plating"
+	result = /obj/item/weapon/roomba_plating
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 60),
+		list(QUALITY_WELDING, 35, "time" = 60)
+	)
+
+/datum/craft_recipe/robotic/armor
+	name = "Heavy Roomba Plating"
+	result = /obj/item/weapon/roomba_plating/heavy
+	steps = list(
+		list(/obj/item/weapon/roomba_plating, 10, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_WELDING, 35, "time" = 60)
+	)

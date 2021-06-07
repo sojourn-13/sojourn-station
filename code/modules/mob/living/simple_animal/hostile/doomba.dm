@@ -372,6 +372,16 @@
 				to_chat(user, "You change [src]'s programming to attacking.")
 				return
 
+		else if((istype(W, /obj/item/weapon/roomba_plating)) && (panel_open))
+			if(armored)
+				to_chat(user, "There is already armor plating on [src].")
+				return
+			armored = W
+			to_chat(user, "you install the [W.name] on [src].")
+			user.remove_from_mob(W)
+			qdel(W)
+			return
+
 		else if((istype(T, /obj/item/weapon/tool/knife/roomba_knife)) && (panel_open))
 			if(weaponry)
 				to_chat(user, "There is already a weapon on [src].")
@@ -399,14 +409,26 @@
 			return
 
 		else if((QUALITY_PRYING in T.tool_qualities) && !(panel_locked))
-			if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-				if(panel_open)
-					panel_open = FALSE
-					to_chat(user, "You close [src]'s panel.")
+			var/response = input(user, "What do you want to remove?") in list("Armor", "Weapon")
+			if(response == "Armor")
+				if(!armored)
+					to_chat(user, "[src] doesn't have any armor.")
 					return
-				panel_open = TRUE
-				to_chat(user, "You open [src]'s panel.")
-				return
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					new armored(get_turf(src))
+					to_chat(user, "You remove [src]'s armor plating.")
+					armored = null
+					return
+			if(response == "Weapon")
+				if(!weaponry)
+					to_chat(user, "[src] doesn't have any weapons.")
+					return
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					to_chat(user, "You remove the [weaponry.name] from [src].")
+					new weaponry(get_turf(src))
+					weaponry = null
+					projectiletype = null
+					return
 
 	..()
 

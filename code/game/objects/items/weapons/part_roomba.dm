@@ -15,6 +15,15 @@
 	origin_tech = list(TECH_DATA = 3)
 
 // Armor Plating
+/obj/item/weapon/roomba_plating
+	name = "roomba plating"
+	desc = "Some steel sheets for attaching on a roomba to give it protection."
+	icon = 'icons/obj/robot_component.dmi'
+	icon_state = "armor"
+
+/obj/item/weapon/roomba_plating/heavy
+	name = "heavy roomba plating"
+	desc = "Some plasteel sheets for attaching on a roomba to give it extra protection."
 
 // Knife
 /obj/item/weapon/tool/knife/roomba_knife
