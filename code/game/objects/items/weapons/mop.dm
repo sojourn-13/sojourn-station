@@ -155,7 +155,7 @@
 		STOP_PROCESSING(SSobj, src)
 	else
 		START_PROCESSING(SSobj, src)
-	to_chat(user, SPAN_NOTICE("You flick the condenser switch to the [condensing ? "ON" : "OFF"] position.")
+	to_chat(user, SPAN_NOTICE("You flick the condenser switch to the [condensing ? "ON" : "OFF"] position."))
 	condensing = !condensing
 
 /obj/item/weapon/mop/guild/Process()
