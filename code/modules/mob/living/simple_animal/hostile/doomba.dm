@@ -302,6 +302,125 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
+/mob/living/simple_animal/hostile/roomba/custom
+	name = "Custom Roomba"
+	desc = "A small round roomba that can be customized for various tasks."
+	faction = "neutral"
+	icon_state = "roomba_SI_armor"
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+	var/angry = FALSE
+	var/panel_locked = TRUE
+	var/panel_open = FALSE
+	var/upgrade = list()
+	var/armored = FALSE
+	var/knife = FALSE
+	var/bomb = FALSE
+	var/gun = FALSE
+
+	var/dirty = list(
+		/obj/effect/decal/cleanable/blood/oil,
+		/obj/effect/decal/cleanable/vomit,
+		/obj/effect/decal/cleanable/crayon,
+		/obj/effect/decal/cleanable/liquid_fuel,
+		/obj/effect/decal/cleanable/mucus,
+		/obj/effect/decal/cleanable/dirt,
+		/obj/effect/decal/cleanable/rubble,
+		/obj/effect/decal/cleanable/mucus,
+		/obj/effect/decal/cleanable/blood
+		)
+
+/mob/living/simple_animal/hostile/roomba/custom/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	log_and_message_admins("Roomba attacked")
+	if(user.a_intent == I_HELP)
+		if((istype(W, /obj/item/weapon/card/id)))
+			if(panel_open)
+				log_and_message_admins("Panel was open")
+				to_chat(user, "Close the panel first")
+				return
+			var/obj/item/weapon/card/id/C = W
+			if(!access_robotics in C.access)
+				to_chat(user, "You do not have access.")
+				return
+			if(panel_locked)
+				log_and_message_admins("Panel Unlocked")
+				panel_locked = FALSE
+				to_chat(user, "You unlock [src]'s panel.")
+				return
+			panel_locked = TRUE
+			log_and_message_admins("Panel Locked")
+			to_chat(user, "You lock [src]'s panel.")
+			return
+
+		else if((QUALITY_SCREW_DRIVING) && !(panel_locked))
+			log_and_message_admins("Screwdriver")
+			var/obj/item/weapon/tool/T = W
+			if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(panel_open)
+					log_and_message_admins("Panel Closed")
+					panel_open = FALSE
+					to_chat(user, "You close [src]'s panel.")
+					return
+				log_and_message_admins("Panel Opened")
+				panel_open = TRUE
+				to_chat(user, "You open [src]'s panel.")
+				return
+
+		else if((QUALITY_PULSING) && (panel_open))
+			log_and_message_admins("Multitool")
+			if(W.use_tool(user, src, WORKTIME_SLOW, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(angry)
+					log_and_message_admins("No longer angry")
+					angry = FALSE
+					to_chat(user, "You change [src]'s programming to cleaning.")
+					return
+				log_and_message_admins("Now angry")
+				angry = TRUE
+				to_chat(user, "You change [src]'s programming to attacking.")
+				return
+
+		else if((istype(W, /obj/item/weapon/tool/roomba_knife)) && (panel_open))
+			log_and_message_admins("Knife")
+			if(knife)
+				log_and_message_admins("Knife Already there")
+				to_chat(user, "There is already a knife on [src].")
+				return
+			log_and_message_admins("Knife Installed")
+			knife = TRUE
+			to_chat(user, "you tape the knife on [src].")
+			user.remove_from_mob(W)
+			qdel(W)
+			return
+	log_and_message_admins("Custom Proc Done")
+	..()
+
+/mob/living/simple_animal/hostile/roomba/custom/examine(mob/user)
+	..()
+	if(panel_open)
+		to_chat(user, "The roomba's panel is open.")
+	else if(!panel_locked)
+		to_chat(user, "The roomba's panel is unlocked.")
+	if(angry)
+		to_chat(user, "The roomba is programmed to attack.")
+	if(knife)
+		to_chat(user, "The roomba got a knife taped to it.")
+	if(armored)
+		to_chat(user, "The roomba got plasteel plating.")
+	if(bomb)
+		to_chat(user, "The roomba got a bomb on it !")
+
+// Cleaning Protocol Section
+/mob/living/simple_animal/hostile/roomba/custom/FindTarget()
+	if(angry)
+		return ..()
+
+
+//mob/living/simple_animal/hostile/roomba/custom
+
+//mob/living/simple_animal/hostile/roomba/custom
+
 //Robots
 /mob/living/simple_animal/hostile/roomba/synthetic/allied
 	name = "SI Sword Drone"
