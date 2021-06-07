@@ -311,59 +311,92 @@
 	melee_damage_upper = 15
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
-	var/angry = FALSE
-	var/panel_locked = TRUE
-	var/panel_open = FALSE
-	var/armored = FALSE
-	var/obj/item/weapon/weaponry = null
 
-	var/dirty = list(
-		/obj/effect/decal/cleanable/blood/oil,
-		/obj/effect/decal/cleanable/vomit,
-		/obj/effect/decal/cleanable/crayon,
-		/obj/effect/decal/cleanable/liquid_fuel,
-		/obj/effect/decal/cleanable/mucus,
-		/obj/effect/decal/cleanable/dirt,
-		/obj/effect/decal/cleanable/rubble,
-		/obj/effect/decal/cleanable/mucus,
-		/obj/effect/decal/cleanable/blood
-		)
+	// Default armor values so that we can reference them.
+	var/default_armor = list(
+		melee = 15,
+		bullet = 15,
+		energy = 15,
+		bomb = 15,
+		bio = 100, // It is a robot, shouldn't be affected by viruses or pain
+		agony = 100
+	)
 
+	var/angry = FALSE // Will it attack stuff like roaches?
+	var/panel_locked = TRUE // Is the panel locked?
+	var/panel_open = FALSE // Is the panel open?
+	var/obj/item/weapon/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
+	var/obj/item/weapon/weaponry = null // Hold the roomba armor plating so that we can get it back.
+	var/cell = /obj/item/weapon/cell/medium/hyper // Store the power cell used in its construction
+
+/mob/living/simple_animal/hostile/roomba/custom/New()
+	armor = default_armor // Give the roomba it's default armor.
+	drop1 = weaponry // Make it drop its weapon.
+	cell_drop = cell // Make it drop it's power cell
+
+/*\
+ * The attackby() is basically a decision tree with branches.
+ * Since most of the branches are binary choices, there will be 'if' which return, and if you don't enter the 'if', consider it the 'else'.
+\*/
 /mob/living/simple_animal/hostile/roomba/custom/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/tool/T
-	if(user.a_intent == I_HELP)
+	var/obj/item/weapon/tool/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
 
+		// If it is a tool, assign it to the tool variable defined earlier.
 		if((istype(W, /obj/item/weapon/tool)))
 			T = W
 
+		// Check if the weapon is an ID.
 		if((istype(W, /obj/item/weapon/card/id)))
+
+			// Don't lock or unlock the panel if it is open.
 			if(panel_open)
 				to_chat(user, "Close the panel first")
 				return
+
+			// Make a new ID var so that we can use the ID-unique variable.
 			var/obj/item/weapon/card/id/C = W
+
+			// Check for robotic access
 			if(!access_robotics in C.access)
 				to_chat(user, "You do not have access.")
 				return
+
+			// Is the panel locked? If so, unlock it.
 			if(panel_locked)
 				panel_locked = FALSE
 				to_chat(user, "You unlock [src]'s panel.")
 				return
+
+			// If we're here, then the panel wasn't open, the ID has robotic access and it wasn't locked, so we don't need another check to lock the panel.
 			panel_locked = TRUE
 			to_chat(user, "You lock [src]'s panel.")
 			return
 
+		// Is the weapon able to be used as a screwdriver and is the panel unlocked?
 		else if((QUALITY_SCREW_DRIVING in T.tool_qualities) && !(panel_locked))
+
+			// Skill check to open or close the panel.
 			if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+
+				// If the panel is already open, close it.
 				if(panel_open)
 					panel_open = FALSE
 					to_chat(user, "You close [src]'s panel.")
 					return
+
+				// If we're here, then the panel wasn't open, so let's open it.
 				panel_open = TRUE
 				to_chat(user, "You open [src]'s panel.")
 				return
 
+		// Is the weapon able to be used as a screwdriver and is the panel open?
 		else if((QUALITY_PULSING in T.tool_qualities) && (panel_open))
+
+			// Skill check to change the roomba's hostilities.
 			if(T.use_tool(user, src, WORKTIME_SLOW, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+
+				// Typical binary switch, don't need to explain it again.
 				if(angry)
 					angry = FALSE
 					to_chat(user, "You change [src]'s programming to cleaning.")
@@ -372,74 +405,144 @@
 				to_chat(user, "You change [src]'s programming to attacking.")
 				return
 
-		else if((istype(W, /obj/item/weapon/roomba_plating)) && (panel_open))
+		// Are we attacking with the roomba plating and is the panel open?
+		else if((W == subtypesof(/obj/item/weapon/roomba_plating)) && (panel_open))
+
+			// Check if the roomba is already armored.
 			if(armored)
 				to_chat(user, "There is already armor plating on [src].")
 				return
-			armored = W
+
+			// Here we know there isn't any armor.
+			armored = W // Store the plating so that we can drop it later.
 			to_chat(user, "you install the [W.name] on [src].")
+			armor = armored.armor_stat // Replace the roomba's armor values with the plating's.
+
+			// Get rid of the plating
 			user.remove_from_mob(W)
 			qdel(W)
 			return
 
+		// Is it the taped knife and is the panel open?
 		else if((istype(T, /obj/item/weapon/tool/knife/roomba_knife)) && (panel_open))
+
+			// The roomba can only have one weapon at the time.
 			if(weaponry)
 				to_chat(user, "There is already a weapon on [src].")
 				return
-			weaponry = W
+
+			// New var to use the knife's unique property bla bla bla you know how it goes.
+			var/obj/item/weapon/tool/knife/roomba_knife/K = W
+
+			weaponry = K // Store the knife in the bot
 			to_chat(user, "you tape the [W.name] on [src].")
+
+			// Give the roomba the damage bonus of the knife.
+			melee_damage_lower += K.damage_boost
+			melee_damage_upper += K.damage_boost
+
+			// Remove the knife from the user's hand and delete it.
 			user.remove_from_mob(W)
 			qdel(W)
 			return
 
-		else if((istype(W, /obj/item/weapon/gun/energy)) && (panel_open))
+		// Typical 'is it a gun and is the panel open'.
+		else if((W == subtypesof(/obj/item/weapon/gun)) && (panel_open))
+
+			// Roomba already got a weapon.
 			if(weaponry)
 				to_chat(user, "There is already a weapon on [src].")
 				return
-			var/obj/item/weapon/gun/energy/G = W
-			weaponry = G
-			projectiletype = G.projectile_type
-			to_chat(user, "you tape the [W.name] on [src].")
-			user.remove_from_mob(W)
-			qdel(W)
+
+			// Roomba can only use energy guns.
+			if((W == subtypesof(/obj/item/weapon/gun/energy)))
+				var/obj/item/weapon/gun/energy/G = W // New variable to use unique var.
+				weaponry = G // Store the weapon
+				projectiletype = G.projectile_type // Allow the roomba to fire the type of laser
+				ranged = TRUE // Let the roomba know it can attack at range.
+				to_chat(user, "You install the [W.name] on [src].")
+
+				// Remove the gun from the user.
+				user.remove_from_mob(W)
+				qdel(W)
+				return
+
+			// We cannot use that gun.
+			to_chat(user, "[src] cannot use this weaponry.")
 			return
 
-		else if((istype(W, /obj/item/weapon/gun/projectile)) && (panel_open))
-			to_chat(user, "[src] cannot use projectile weaponry.")
-			return
+		// Use a crowbar to remove armor and weapons
+		else if((QUALITY_PRYING in T.tool_qualities) && (panel_open))
 
-		else if((QUALITY_PRYING in T.tool_qualities) && !(panel_locked))
+			// Show a list to let the user decide what they want to remove.
 			var/response = input(user, "What do you want to remove?") in list("Armor", "Weapon")
+
+			// We want to remove the armor.
 			if(response == "Armor")
-				if(!armored)
+
+				// Can't remove what isn't there.
+				if(armored == null)
 					to_chat(user, "[src] doesn't have any armor.")
 					return
+
+				// Skill check.
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					new armored(get_turf(src))
+					// new armored(src.loc) // Spawn the armor plating on the ground. --- Doesn't work and prevent the rest from working, to do later.
+					armored = null // Remove the armor plating from the roomba
+					armor = default_armor // Give the roomba back its default armor values.
 					to_chat(user, "You remove [src]'s armor plating.")
-					armored = null
 					return
+
+			// We want to remove the weapon.
 			if(response == "Weapon")
-				if(!weaponry)
+
+				// Can't remove something not there.
+				if(weaponry == null)
 					to_chat(user, "[src] doesn't have any weapons.")
 					return
+
+				// Skill Check.
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					// new weaponry(src.loc) // Spawn the weapon the roomba had. --- Doesn't work and prevent the rest from working, to do later.
+
+					// Was the weapon the knife ?
+					if(istype(weaponry, /obj/item/weapon/tool/knife/roomba_knife))
+						var/obj/item/weapon/tool/knife/roomba_knife/K = weaponry // Unique stat e.t.c.
+
+						// Cancel the melee damage bonus the knife gave to the roomba.
+						melee_damage_lower -= K.damage_boost
+						melee_damage_upper -= K.damage_boost
+						to_chat(user, "You remove the [weaponry.name] from [src].")
+						weaponry = null // It got no weapons now.
+						return
+
+					// If we're here then it isn't a knife, so it must be a gun.
+					projectiletype = null // The roomba don't have a projectile to shoot now.
+					ranged = FALSE // Tell the roomba it can't shoot anymore.
 					to_chat(user, "You remove the [weaponry.name] from [src].")
-					new weaponry(get_turf(src))
-					weaponry = null
-					projectiletype = null
+					weaponry = null // It got no weapons now.
 					return
 
+	// If nothing was ever triggered, continue as normal
 	..()
 
+// Custom examine message to show it's various states.
 /mob/living/simple_animal/hostile/roomba/custom/examine(mob/user)
-	..()
+	..() // Default stuff
+
+	// Is the panel open.
 	if(panel_open)
 		to_chat(user, "The roomba's panel is open.")
+
+	// If it is open then of course it is unlocked, but if it isn't open, we must show if it is locked or not.
 	else if(!panel_locked)
 		to_chat(user, "The roomba's panel is unlocked.")
+
+	// Will the roomba attack roaches and other hostiles?
 	if(angry)
 		to_chat(user, "The roomba is programmed to attack.")
+
+	// Does it have a knife or a gun ?
 	if(weaponry)
 		to_chat(user, "The roomba got a [weaponry.name] attached to it.")
 

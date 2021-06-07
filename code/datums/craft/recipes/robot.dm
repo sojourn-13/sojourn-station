@@ -9,9 +9,9 @@
 	result = /obj/item/weapon/roomba_frame
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 60),
-		list(QUALITY_WELDING, 35, "time" = 60),
-		list(QUALITY_HAMMERING, 35, "time" = 180),
-		list(QUALITY_SCREW_DRIVING, 35, "time" = 90)
+		list(QUALITY_WELDING, 10, "time" = 60),
+		list(QUALITY_HAMMERING, 10, "time" = 180),
+		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
 	)
 
 /datum/craft_recipe/robotic/knife
@@ -19,7 +19,7 @@
 	result = /obj/item/weapon/tool/knife/roomba_knife
 	steps = list(
 		list(/obj/item/weapon/tool/knife, 1, "time" = 30),
-		list(QUALITY_ADHESIVE, 35, "time" = 30)
+		list(QUALITY_ADHESIVE, 10, "time" = 30)
 	)
 
 /datum/craft_recipe/robotic/armor
@@ -27,14 +27,14 @@
 	result = /obj/item/weapon/roomba_plating
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 60),
-		list(QUALITY_WELDING, 35, "time" = 60)
+		list(QUALITY_WELDING, 10, "time" = 60)
 	)
 
-/datum/craft_recipe/robotic/armor
+/datum/craft_recipe/robotic/armor/heavy
 	name = "Heavy Roomba Plating"
 	result = /obj/item/weapon/roomba_plating/heavy
 	steps = list(
 		list(/obj/item/weapon/roomba_plating, 10, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 60),
-		list(QUALITY_WELDING, 35, "time" = 60)
+		list(QUALITY_WELDING, 10, "time" = 60)
 	)
