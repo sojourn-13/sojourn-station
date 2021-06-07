@@ -33,6 +33,9 @@
 		my_shield.my_mecha = null
 		qdel(my_shield)
 		my_shield = null
+	if(my_shield)
+		qdel(my_shield)
+		my_shield = null
 	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/combat_shield/attach(obj/mecha/M as obj)

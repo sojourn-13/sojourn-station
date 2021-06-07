@@ -91,7 +91,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 		//To be valid, the floor needs to have a wall in a cardinal direction
 		for (var/d in cardinal)
 			var/turf/T = get_step(F, d)
-			if (T.is_wall)
+			if (T && T.is_wall)
 				//Its got a wall!
 				possible_turfs[F] = T //We put this floor and its wall into the possible turfs list
 
