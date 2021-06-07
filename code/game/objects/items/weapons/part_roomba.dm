@@ -17,8 +17,9 @@
 // Armor Plating
 
 // Knife
-/obj/item/weapon/tool/roomba_knife
+/obj/item/weapon/tool/knife/roomba_knife
 	name = "roomba knife"
 	desc = "A knife with tape on it, for attaching on a roomba."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "knife_roomba"
+	tool_qualities = list()

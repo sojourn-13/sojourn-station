@@ -16,7 +16,7 @@
 
 /datum/craft_recipe/robotic/knife
 	name = "Roomba Knife"
-	result = /obj/item/weapon/tool/roomba_knife
+	result = /obj/item/weapon/tool/knife/roomba_knife
 	steps = list(
 		list(/obj/item/weapon/tool/knife, 1, "time" = 30),
 		list(QUALITY_ADHESIVE, 35, "time" = 30)

@@ -330,7 +330,12 @@
 		)
 
 /mob/living/simple_animal/hostile/roomba/custom/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	var/obj/item/weapon/tool/T
 	if(user.a_intent == I_HELP)
+
+		if((istype(W, /obj/item/weapon/tool)))
+			T = W
+
 		if((istype(W, /obj/item/weapon/card/id)))
 			if(panel_open)
 				to_chat(user, "Close the panel first")
@@ -347,8 +352,7 @@
 			to_chat(user, "You lock [src]'s panel.")
 			return
 
-		else if((QUALITY_SCREW_DRIVING) && !(panel_locked))
-			var/obj/item/weapon/tool/T = W
+		else if((QUALITY_SCREW_DRIVING in T.tool_qualities) && !(panel_locked))
 			if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_MEC))
 				if(panel_open)
 					panel_open = FALSE
@@ -358,8 +362,8 @@
 				to_chat(user, "You open [src]'s panel.")
 				return
 
-		else if((QUALITY_PULSING) && (panel_open))
-			if(W.use_tool(user, src, WORKTIME_SLOW, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+		else if((QUALITY_PULSING in T.tool_qualities) && (panel_open))
+			if(T.use_tool(user, src, WORKTIME_SLOW, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 				if(angry)
 					angry = FALSE
 					to_chat(user, "You change [src]'s programming to cleaning.")
@@ -368,7 +372,7 @@
 				to_chat(user, "You change [src]'s programming to attacking.")
 				return
 
-		else if((istype(W, /obj/item/weapon/tool/roomba_knife)) && (panel_open))
+		else if((istype(T, /obj/item/weapon/tool/knife/roomba_knife)) && (panel_open))
 			if(weaponry)
 				to_chat(user, "There is already a weapon on [src].")
 				return
@@ -394,6 +398,16 @@
 			to_chat(user, "[src] cannot use projectile weaponry.")
 			return
 
+		else if((QUALITY_PRYING in T.tool_qualities) && !(panel_locked))
+			if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(panel_open)
+					panel_open = FALSE
+					to_chat(user, "You close [src]'s panel.")
+					return
+				panel_open = TRUE
+				to_chat(user, "You open [src]'s panel.")
+				return
+
 	..()
 
 /mob/living/simple_animal/hostile/roomba/custom/examine(mob/user)
@@ -407,10 +421,7 @@
 	if(weaponry)
 		to_chat(user, "The roomba got a [weaponry.name] attached to it.")
 
-// Cleaning Protocol Section
-/mob/living/simple_animal/hostile/roomba/custom/FindTarget()
-	if(angry)
-		return ..()
+
 
 //Robots
 /mob/living/simple_animal/hostile/roomba/synthetic/allied
