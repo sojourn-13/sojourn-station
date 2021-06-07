@@ -311,6 +311,8 @@
 
 /obj/machinery/repair_station/RefreshParts()
 	..()
+	idle_power_usage = initial(idle_power_usage)
+	active_power_usage = initial(active_power_usage)
 	var/manip_level = 1
 	var/scan_level = 1
 	for(var/obj/item/weapon/stock_parts/P in component_parts)
