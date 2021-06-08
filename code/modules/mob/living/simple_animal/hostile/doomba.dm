@@ -327,11 +327,10 @@
 	var/panel_open = FALSE // Is the panel open?
 	var/obj/item/weapon/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
 	var/obj/item/weapon/weaponry = null // Hold the roomba armor plating so that we can get it back.
-	var/cell = /obj/item/weapon/cell/medium/hyper // Store the power cell used in its construction
+	var/cell = null // Store the power cell used in its construction
 
 /mob/living/simple_animal/hostile/roomba/custom/New()
 	armor = default_armor // Give the roomba it's default armor.
-	drop1 = weaponry // Make it drop its weapon.
 	cell_drop = cell // Make it drop it's power cell
 
 /*\
@@ -441,6 +440,9 @@
 			melee_damage_lower += K.damage_boost
 			melee_damage_upper += K.damage_boost
 
+			// Add the knife to the drop on death.
+			drop1 = weaponry
+
 			// Remove the knife from the user and give it to the roomba.
 			user.remove_from_mob(W)
 			W.forceMove(src)
@@ -461,6 +463,9 @@
 				projectiletype = G.projectile_type // Allow the roomba to fire the type of laser
 				ranged = TRUE // Let the roomba know it can attack at range.
 				to_chat(user, "You install the [W.name] on [src].")
+
+				// Add the gun to the drop on death.
+				drop1 = weaponry
 
 				// Remove the gun from the user and give it ot the roomva.
 				user.remove_from_mob(W)
@@ -487,7 +492,7 @@
 
 				// Skill check.
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					armored.forceMove(src.loc) // Spawn the armor plating on the ground. --- Doesn't work and prevent the rest from working, to do later.
+					armored.forceMove(src.loc) // Spawn the armor plating on the ground.
 					armored = null // Remove the armor plating from the roomba
 					armor = default_armor // Give the roomba back its default armor values.
 					to_chat(user, "You remove [src]'s armor plating.")
@@ -503,7 +508,7 @@
 
 				// Skill Check.
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					weaponry.forceMove(src.loc) // Spawn the weapon the roomba had. --- Doesn't work and prevent the rest from working, to do later.
+					weaponry.forceMove(src.loc) // Spawn the weapon the roomba had.
 
 					// Was the weapon the knife ?
 					if(istype(weaponry, /obj/item/weapon/tool/knife/roomba_knife))
