@@ -552,7 +552,7 @@
 /mob/living/simple_animal/hostile/roomba/custom/death()
 	if(cell) // Only if it does have a cell
 		cell.forceMove(src.loc) // Drop the power cell
-	if((weaponry))) // Only if it does have a weapon.
+	if(weaponry) // Only if it does have a weapon.
 		weaponry.forceMove(src.loc) // Drop the weapon
 	..()
 	return
