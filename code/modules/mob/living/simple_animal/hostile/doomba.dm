@@ -406,7 +406,7 @@
 				return
 
 		// Are we attacking with the roomba plating and is the panel open?
-		else if((W == subtypesof(/obj/item/weapon/roomba_plating)) && (panel_open))
+		else if((istype(W, /obj/item/weapon/roomba_plating)) && (panel_open))
 
 			// Check if the roomba is already armored.
 			if(armored)
@@ -420,7 +420,7 @@
 
 			// Get rid of the plating
 			user.remove_from_mob(W)
-			qdel(W)
+			W.forceMove(src)
 			return
 
 		// Is it the taped knife and is the panel open?
@@ -434,20 +434,20 @@
 			// New var to use the knife's unique property bla bla bla you know how it goes.
 			var/obj/item/weapon/tool/knife/roomba_knife/K = W
 
-			weaponry = K // Store the knife in the bot
+			src.weaponry = K // Store the knife in the bot
 			to_chat(user, "you tape the [W.name] on [src].")
 
 			// Give the roomba the damage bonus of the knife.
 			melee_damage_lower += K.damage_boost
 			melee_damage_upper += K.damage_boost
 
-			// Remove the knife from the user's hand and delete it.
+			// Remove the knife from the user and give it to the roomba.
 			user.remove_from_mob(W)
-			qdel(W)
+			W.forceMove(src)
 			return
 
 		// Typical 'is it a gun and is the panel open'.
-		else if((W == subtypesof(/obj/item/weapon/gun)) && (panel_open))
+		else if((istype(W, /obj/item/weapon/gun)) && (panel_open))
 
 			// Roomba already got a weapon.
 			if(weaponry)
@@ -462,9 +462,9 @@
 				ranged = TRUE // Let the roomba know it can attack at range.
 				to_chat(user, "You install the [W.name] on [src].")
 
-				// Remove the gun from the user.
+				// Remove the gun from the user and give it ot the roomva.
 				user.remove_from_mob(W)
-				qdel(W)
+				G.forceMove(src)
 				return
 
 			// We cannot use that gun.
@@ -487,7 +487,7 @@
 
 				// Skill check.
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					// new armored(src.loc) // Spawn the armor plating on the ground. --- Doesn't work and prevent the rest from working, to do later.
+					armored.forceMove(src.loc) // Spawn the armor plating on the ground. --- Doesn't work and prevent the rest from working, to do later.
 					armored = null // Remove the armor plating from the roomba
 					armor = default_armor // Give the roomba back its default armor values.
 					to_chat(user, "You remove [src]'s armor plating.")
@@ -503,7 +503,7 @@
 
 				// Skill Check.
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					// new weaponry(src.loc) // Spawn the weapon the roomba had. --- Doesn't work and prevent the rest from working, to do later.
+					weaponry.forceMove(src.loc) // Spawn the weapon the roomba had. --- Doesn't work and prevent the rest from working, to do later.
 
 					// Was the weapon the knife ?
 					if(istype(weaponry, /obj/item/weapon/tool/knife/roomba_knife))
