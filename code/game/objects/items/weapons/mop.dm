@@ -146,7 +146,7 @@
 	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
 	matter = list(MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 4, MATERIAL_STEEL = 4)
 	mopspeed  = 10
-	sweep_time = 4
+	sweep_time = 2
 	var/condensing = FALSE
 	var/obj/item/weapon/cell/medium/mycell
 
