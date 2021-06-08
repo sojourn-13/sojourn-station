@@ -309,6 +309,8 @@
 	icon_state = "roomba_SI_armor"
 	melee_damage_lower = 10
 	melee_damage_upper = 15
+	health = 50
+	maxHealth = 50
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
@@ -327,11 +329,11 @@
 	var/panel_open = FALSE // Is the panel open?
 	var/obj/item/weapon/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
 	var/obj/item/weapon/weaponry = null // Hold the roomba armor plating so that we can get it back.
-	var/cell = null // Store the power cell used in its construction
+	var/obj/item/weapon/mine/kamikaze = null // Store the mine the roomba can hold.
+	var/obj/item/weapon/cell/medium/cell = null // Hold the roomba's power cell.
 
 /mob/living/simple_animal/hostile/roomba/custom/New()
 	armor = default_armor // Give the roomba it's default armor.
-	cell_drop = cell // Make it drop it's power cell
 
 /*\
  * The attackby() is basically a decision tree with branches.
@@ -440,9 +442,6 @@
 			melee_damage_lower += K.damage_boost
 			melee_damage_upper += K.damage_boost
 
-			// Add the knife to the drop on death.
-			drop1 = weaponry
-
 			// Remove the knife from the user and give it to the roomba.
 			user.remove_from_mob(W)
 			W.forceMove(src)
@@ -463,9 +462,6 @@
 				projectiletype = G.projectile_type // Allow the roomba to fire the type of laser
 				ranged = TRUE // Let the roomba know it can attack at range.
 				to_chat(user, "You install the [W.name] on [src].")
-
-				// Add the gun to the drop on death.
-				drop1 = weaponry
 
 				// Remove the gun from the user and give it ot the roomva.
 				user.remove_from_mob(W)
@@ -551,7 +547,14 @@
 	if(weaponry)
 		to_chat(user, "The roomba got a [weaponry.name] attached to it.")
 
-
+// Make it drop its loot on death.
+/mob/living/simple_animal/hostile/roomba/custom/death()
+	if(cell) // Only if it does have a cell
+		cell.forceMove(src.loc) // Drop the power cell
+	if((weaponry) && (!kamikaze)) // Only if it does have a weapon and not rigged to blow.
+		weaponry.forceMove(src.loc) // Drop the weapon
+	..()
+	return
 
 //Robots
 /mob/living/simple_animal/hostile/roomba/synthetic/allied

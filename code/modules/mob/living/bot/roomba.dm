@@ -12,7 +12,7 @@
 	var/build_step = 0 // Used to know at which part of the assembly process we are.
 	var/created_name = "Roomba" // The name the roomba will start with.
 	var/step_message = "It is missing a control board." // What does the assembly need next.
-	var/power_cell // The power cell the roomba has
+	var/obj/item/weapon/cell/medium/power_cell // The power cell the roomba has
 
 /obj/item/weapon/roomba_frame/examine(mob/user)
 	..() // Default stuff
@@ -43,7 +43,7 @@
 
 		// Remove the cell
 		user.remove_from_mob(W)
-		qdel(W)
+		W.forceMove(src)
 
 	// Step 3, Wire the board and the cell
 	else if((istype(W, /obj/item/stack/cable_coil)) && (build_step == 2))
@@ -77,6 +77,7 @@
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		var/mob/living/simple_animal/hostile/roomba/custom/R = new /mob/living/simple_animal/hostile/roomba/custom(get_turf(src)) // Spawn the roomba.
 		R.cell = power_cell // Give the roomba the cell used.
+		power_cell.forceMove(R) // Give the cell
 		R.name = created_name // Pass it the custom name
 		qdel(src)
 
