@@ -65,3 +65,7 @@
 /datum/design/autolathe/misc/bulb_spot
 	name = "Artificer \"Seer\" light bulb"
 	build_path = /obj/item/weapon/light/bulb/spotlight
+
+/datum/design/autolathe/misc/trashbag
+	name = "trash bag"
+	build_path = /obj/item/weapon/storage/bag/trash

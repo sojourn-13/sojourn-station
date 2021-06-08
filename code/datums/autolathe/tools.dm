@@ -241,3 +241,11 @@
 /datum/design/autolathe/tool/hatton_ammo
 	name = "Artificer's Guild BT \"Hatton\" gas tube"
 	build_path = /obj/item/weapon/hatton_magazine
+
+/datum/design/autolathe/tool/mop
+	name = "Mop"
+	build_path = /obj/item/weapon/mop
+
+/datum/design/autolathe/tool/isprayer
+	name = "industrial chemical sprayer"
+	build_path = /obj/item/weapon/reagent_containers/spray/chemsprayer/industrial
