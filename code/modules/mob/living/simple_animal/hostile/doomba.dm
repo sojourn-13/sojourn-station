@@ -306,7 +306,8 @@
 	name = "Custom Roomba"
 	desc = "A small round roomba that can be customized for various tasks."
 	faction = "neutral"
-	icon_state = "roomba_SI_armor"
+	icon = 'icons/mobs/custom_roomba.dmi'
+	icon_state = "roomba_SI"
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	health = 50
@@ -327,7 +328,7 @@
 	var/angry = FALSE // Will it attack stuff like roaches?
 	var/panel_locked = TRUE // Is the panel locked?
 	var/panel_open = FALSE // Is the panel open?
-	var/obj/item/weapon/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
+	var/obj/item/weapon/roomba_part/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
 	var/obj/item/weapon/weaponry = null // Hold the roomba armor plating so that we can get it back.
 	var/obj/item/weapon/mine/kamikaze = null // Store the mine the roomba can hold.
 	var/obj/item/weapon/cell/medium/cell = null // Hold the roomba's power cell.
@@ -407,7 +408,7 @@
 				return
 
 		// Are we attacking with the roomba plating and is the panel open?
-		else if((istype(W, /obj/item/weapon/roomba_plating)) && (panel_open))
+		else if((istype(W, /obj/item/weapon/roomba_part/roomba_plating)) && (panel_open))
 
 			// Check if the roomba is already armored.
 			if(armored)
@@ -425,7 +426,7 @@
 			return
 
 		// Is it the taped knife and is the panel open?
-		else if((istype(T, /obj/item/weapon/tool/knife/roomba_knife)) && (panel_open))
+		else if((istype(W, /obj/item/weapon/roomba_part/roomba_knife)) && (panel_open))
 
 			// The roomba can only have one weapon at the time.
 			if(weaponry)
@@ -433,7 +434,7 @@
 				return
 
 			// New var to use the knife's unique property bla bla bla you know how it goes.
-			var/obj/item/weapon/tool/knife/roomba_knife/K = W
+			var/obj/item/weapon/roomba_part/roomba_knife/K = W
 
 			src.weaponry = K // Store the knife in the bot
 			to_chat(user, "you tape the [W.name] on [src].")
@@ -551,7 +552,7 @@
 /mob/living/simple_animal/hostile/roomba/custom/death()
 	if(cell) // Only if it does have a cell
 		cell.forceMove(src.loc) // Drop the power cell
-	if((weaponry) && (!kamikaze)) // Only if it does have a weapon and not rigged to blow.
+	if((weaponry))) // Only if it does have a weapon.
 		weaponry.forceMove(src.loc) // Drop the weapon
 	..()
 	return

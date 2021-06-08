@@ -1,25 +1,26 @@
 // Parts for the custom roomba located in code\modules\mob\living\simple_animal\hostile\doomba.dm
 
-// Circuit
-/obj/item/weapon/circuitboard/roomba
-	name = "roomba circuit board"
-	icon = 'icons/obj/module.dmi'
-	icon_state = "std_mod"
-	item_state = "electronic"
-	board_type = "other"
+// Parts for the fabrication of the roomba.
+/obj/item/weapon/roomba_part
+	name = "roomba parts"
+	desc = "Parts for the assembly of a roomba."
+	icon = 'icons/mobs/custom_roomba.dmi'
 
-/obj/item/weapon/circuitboard/roomba/control
+/obj/item/weapon/roomba_part/control
 	build_name = "roomba central control module"
 	desc = "A control board for a roomba."
 	icon_state = "mainboard"
 	origin_tech = list(TECH_DATA = 3)
 
+/obj/item/weapon/roomba_part/wheel
+	name = "roomba wheels"
+	desc = "Wheels for the assembly of a roomba."
+
 // Armor Plating
-/obj/item/weapon/roomba_plating
+/obj/item/weapon/roomba_part/roomba_plating
 	name = "roomba plating"
 	desc = "Some steel sheets for attaching on a roomba to give it protection."
-	icon = 'icons/obj/robot_component.dmi'
-	icon_state = "armor"
+	icon_state = "roomba_armor"
 
 	// The total armor it will give to the roomba.
 	var/armor_stat = list(
@@ -31,9 +32,10 @@
 		agony = 100
 	)
 
-/obj/item/weapon/roomba_plating/heavy
+/obj/item/weapon/roomba_part/roomba_plating/heavy
 	name = "heavy roomba plating"
 	desc = "Some plasteel sheets for attaching on a roomba to give it extra protection."
+	icon_state = "roomba_armor_heavy"
 	armor_stat = list(
 		melee = 50,
 		bullet = 50,
@@ -44,10 +46,9 @@
 	)
 
 // Knife
-/obj/item/weapon/tool/knife/roomba_knife
+/obj/item/weapon/roomba_part/roomba_knife
 	name = "roomba knife"
 	desc = "A knife with tape on it, for attaching on a roomba."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "knife_roomba"
+	icon_state = "roomba_knife"
 	tool_qualities = list() // So that it can't trigger the screwdriving part.
 	var/damage_boost = 30 // The damage bonus it give to the roomba when installed.
