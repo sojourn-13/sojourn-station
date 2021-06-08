@@ -307,7 +307,7 @@
 	desc = "A small round roomba that can be customized for various tasks."
 	faction = "neutral"
 	icon = 'icons/mob/custom_roomba.dmi'
-	icon_state = "roomba_SI"
+	icon_state = "roomba"
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	health = 50
