@@ -87,7 +87,7 @@
 	desc = "It's the ultra-heavy-duty yellow polymer kind. Time to take out the trash!"
 	icon_state = "superbag0"
 	item_state = "trashbag"
-	max_storage_space = DEFAULT_BULKY_STORAGE * 1.5
+	max_storage_space = DEFAULT_BULKY_STORAGE * 1.25
 
 /obj/item/weapon/storage/bag/trash/big/update_icon()
 	if(contents.len == 0)
