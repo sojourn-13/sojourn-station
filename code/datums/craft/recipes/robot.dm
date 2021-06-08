@@ -18,7 +18,7 @@
 	name = "Roomba Wheel"
 	result = /obj/item/weapon/roomba_part/wheel
 	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 60),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 60)
 	)
 

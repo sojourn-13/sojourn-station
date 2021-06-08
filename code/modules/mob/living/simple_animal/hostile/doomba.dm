@@ -345,11 +345,11 @@
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if((istype(W, /obj/item/weapon/tool)))
+		if(istype(W, /obj/item/weapon/tool))
 			T = W
 
 		// Check if the weapon is an ID.
-		if((istype(W, /obj/item/weapon/card/id)))
+		if(istype(W, /obj/item/weapon/card/id))
 
 			// Don't lock or unlock the panel if it is open.
 			if(panel_open)
