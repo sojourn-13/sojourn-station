@@ -341,11 +341,23 @@
  * Since most of the branches are binary choices, there will be 'if' which return, and if you don't enter the 'if', consider it the 'else'.
 \*/
 /mob/living/simple_animal/hostile/roomba/custom/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/tool/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
 		if(istype(W, /obj/item/weapon/tool))
+			T = W
+
+		// Check if it is a roomba part
+		if(istype(W, /obj/item/weapon/roomba_part))
+			T = W
+
+		// Check if it is a gun
+		if(istype(W, /obj/item/weapon/gun))
+			T = W
+
+		// Check if it is a mine
+		if(istype(W, /obj/item/weapon/mine))
 			T = W
 
 		// Check if the weapon is an ID.
@@ -408,7 +420,7 @@
 				return
 
 		// Are we attacking with the roomba plating and is the panel open?
-		else if((istype(W, /obj/item/weapon/roomba_part/roomba_plating)) && (panel_open))
+		else if((istype(T, /obj/item/weapon/roomba_part/roomba_plating)) && (panel_open))
 
 			// Check if the roomba is already armored.
 			if(armored)
@@ -426,7 +438,7 @@
 			return
 
 		// Is it the taped knife and is the panel open?
-		else if((istype(W, /obj/item/weapon/roomba_part/roomba_knife)) && (panel_open))
+		else if((istype(T, /obj/item/weapon/roomba_part/roomba_knife)) && (panel_open))
 
 			// The roomba can only have one weapon at the time.
 			if(weaponry)
@@ -449,7 +461,7 @@
 			return
 
 		// Typical 'is it a gun and is the panel open'.
-		else if((istype(W, /obj/item/weapon/gun)) && (panel_open))
+		else if((istype(T, /obj/item/weapon/gun)) && (panel_open))
 
 			// Roomba already got a weapon.
 			if(weaponry)
@@ -457,7 +469,7 @@
 				return
 
 			// Roomba can only use energy guns.
-			if((W == subtypesof(/obj/item/weapon/gun/energy)))
+			if(istype(T, /obj/item/weapon/gun/energy))
 				var/obj/item/weapon/gun/energy/G = W // New variable to use unique var.
 				weaponry = G // Store the weapon
 				projectiletype = G.projectile_type // Allow the roomba to fire the type of laser
@@ -471,6 +483,24 @@
 
 			// We cannot use that gun.
 			to_chat(user, "[src] cannot use this weaponry.")
+			return
+
+		// Are we trying to install a mine?
+		else if((istype(T, /obj/item/weapon/mine)) && (panel_open))
+
+			// Roomba already got a weapon.
+			if(weaponry)
+				to_chat(user, "There is already a weapon on [src].")
+				return
+
+			var/obj/item/weapon/mine/M = W // New variable to use unique var.
+			weaponry = M // Store the weapon
+			kamikaze = M // Store the mine itself.
+			to_chat(user, "You install the [W.name] on [src].")
+
+			// Remove the gun from the user and give it ot the roomva.
+			user.remove_from_mob(W)
+			M.forceMove(src)
 			return
 
 		// Use a crowbar to remove armor and weapons
@@ -552,10 +582,19 @@
 /mob/living/simple_animal/hostile/roomba/custom/death()
 	if(cell) // Only if it does have a cell
 		cell.forceMove(src.loc) // Drop the power cell
-	if(weaponry) // Only if it does have a weapon.
+	if(kamikaze) // Check if the roomba got a mine.
+		src.visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
+		kamikaze.ignite_act()
+	else if(weaponry) // Only if it does have a weapon that isn't a mine.
 		weaponry.forceMove(src.loc) // Drop the weapon
 	..()
 	return
+
+/mob/living/simple_animal/hostile/roomba/custom/AttackTarget()
+	. = ..()
+	if(.) // If we succeeded in hitting.
+		if(kamikaze) // Does the roomba got a bomb ?
+			death() // Kill the roomba which will in turn trigger the bomb.
 
 //Robots
 /mob/living/simple_animal/hostile/roomba/synthetic/allied
