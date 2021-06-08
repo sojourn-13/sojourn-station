@@ -306,7 +306,7 @@
 	name = "Custom Roomba"
 	desc = "A small round roomba that can be customized for various tasks."
 	faction = "neutral"
-	icon = 'icons/mobs/custom_roomba.dmi'
+	icon = 'icons/mob/custom_roomba.dmi'
 	icon_state = "roomba_SI"
 	melee_damage_lower = 10
 	melee_damage_upper = 15
@@ -508,8 +508,8 @@
 					weaponry.forceMove(src.loc) // Spawn the weapon the roomba had.
 
 					// Was the weapon the knife ?
-					if(istype(weaponry, /obj/item/weapon/tool/knife/roomba_knife))
-						var/obj/item/weapon/tool/knife/roomba_knife/K = weaponry // Unique stat e.t.c.
+					if(istype(weaponry, /obj/item/weapon/roomba_part/roomba_knife))
+						var/obj/item/weapon/roomba_part/roomba_knife/K = weaponry // Unique stat e.t.c.
 
 						// Cancel the melee damage bonus the knife gave to the roomba.
 						melee_damage_lower -= K.damage_boost

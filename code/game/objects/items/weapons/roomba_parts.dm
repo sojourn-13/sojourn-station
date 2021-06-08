@@ -4,10 +4,10 @@
 /obj/item/weapon/roomba_part
 	name = "roomba parts"
 	desc = "Parts for the assembly of a roomba."
-	icon = 'icons/mobs/custom_roomba.dmi'
+	icon = 'icons/mob/custom_roomba.dmi'
 
 /obj/item/weapon/roomba_part/control
-	build_name = "roomba central control module"
+	name = "roomba central control module"
 	desc = "A control board for a roomba."
 	icon_state = "mainboard"
 	origin_tech = list(TECH_DATA = 3)
@@ -15,6 +15,7 @@
 /obj/item/weapon/roomba_part/wheel
 	name = "roomba wheels"
 	desc = "Wheels for the assembly of a roomba."
+	icon_state = "roomba_wheel"
 
 // Armor Plating
 /obj/item/weapon/roomba_part/roomba_plating
