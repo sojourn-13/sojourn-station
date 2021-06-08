@@ -191,7 +191,7 @@
 	item_state = "chemsprayerI"
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 8)
 	volume = 150
-	range = 4
+	range = 5
 
 /obj/item/weapon/reagent_containers/spray/plantbgone
 	name = "Plant-B-Gone"
