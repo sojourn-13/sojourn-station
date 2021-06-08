@@ -14,9 +14,9 @@
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
 	)
 
-/datum/craft_recipe/robotic/roomba_wheel
-	name = "Roomba Wheel"
-	result = /obj/item/weapon/roomba_part/wheel
+/datum/craft_recipe/robotic/roomba_treads
+	name = "Roomba Treads"
+	result = /obj/item/weapon/roomba_part/treads
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 60)

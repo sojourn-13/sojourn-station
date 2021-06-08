@@ -12,10 +12,10 @@
 	icon_state = "mainboard"
 	origin_tech = list(TECH_DATA = 3)
 
-/obj/item/weapon/roomba_part/wheel
-	name = "roomba wheels"
-	desc = "Wheels for the assembly of a roomba."
-	icon_state = "roomba_wheel"
+/obj/item/weapon/roomba_part/treads
+	name = "roomba_treads"
+	desc = "Treads for the assembly of a roomba."
+	icon_state = "roomba_treads"
 
 // Armor Plating
 /obj/item/weapon/roomba_part/roomba_plating

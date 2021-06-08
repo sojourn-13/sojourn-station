@@ -45,7 +45,7 @@
 		W.forceMove(src)
 
 	// Step 3, it need wheels.
-	if((istype(W, /obj/item/weapon/roomba_part/wheel)) && (build_step == 2))
+	if((istype(W, /obj/item/weapon/roomba_part/treads)) && (build_step == 2))
 		build_step++ // Go to the next assembly part.
 		to_chat(user, "You add the wheels to the [src].")
 		step_message = "It is missing wiring." // Next step

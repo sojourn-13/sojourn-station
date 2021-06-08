@@ -503,6 +503,15 @@
 			M.forceMove(src)
 			return
 
+		else if(QUALITY_WELDING in T.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					health = maxHealth
+					to_chat(user, "You repair the damage to [src].")
+					return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+
 		// Use a crowbar to remove armor and weapons
 		else if((QUALITY_PRYING in T.tool_qualities) && (panel_open))
 
@@ -584,17 +593,29 @@
 		cell.forceMove(src.loc) // Drop the power cell
 	if(kamikaze) // Check if the roomba got a mine.
 		src.visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
+		kamikaze.forceMove(src.loc)
 		kamikaze.ignite_act()
-	else if(weaponry) // Only if it does have a weapon that isn't a mine.
+		qdel(kamikaze)
+		qdel(src)
+	if(weaponry) // Only if it does have a weapon that isn't a mine.
 		weaponry.forceMove(src.loc) // Drop the weapon
 	..()
 	return
+
+/*
+// Do nothing if it isn't angry.
+/mob/living/simple_animal/hostile/roomba/custom/FindTarget()
+	if(angry)
+		..()
+	else if(!angry)
+		return
 
 /mob/living/simple_animal/hostile/roomba/custom/AttackTarget()
 	. = ..()
 	if(.) // If we succeeded in hitting.
 		if(kamikaze) // Does the roomba got a bomb ?
 			death() // Kill the roomba which will in turn trigger the bomb.
+*/
 
 //Robots
 /mob/living/simple_animal/hostile/roomba/synthetic/allied
