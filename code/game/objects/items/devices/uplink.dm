@@ -265,6 +265,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 
 /obj/item/device/radio/headset/uplink
 	traitor_frequency = 1445
+	trigger_code = 1445
 
 /obj/item/device/radio/headset/uplink/New(loc, mind, crystal_amount = DEFAULT_TELECRYSTAL_AMOUNT)
 	..(loc)
