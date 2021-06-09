@@ -198,12 +198,14 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/external/robotic/moebius
 	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 	icon = 'icons/mob/human_races/cyberlimbs/moebius.dmi'
+	department_specific = list(DEPARTMENT_MEDICAL, DEPARTMENT_SCIENCE)
 
 /datum/body_modification/limb/prosthesis/blackshield
 	id = "prosthesis_blackshield"
 	replace_limb = /obj/item/organ/external/robotic/blackshield
 	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 	icon = 'icons/mob/human_races/cyberlimbs/blackshield.dmi'
+	department_specific = list(DEPARTMENT_SECURITY)
 
 /datum/body_modification/limb/prosthesis/church
 	id = "prosthesis_church"
