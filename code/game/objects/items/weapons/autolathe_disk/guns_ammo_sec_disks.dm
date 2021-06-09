@@ -1162,6 +1162,16 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/research/item/powercell/medium/basic = 2,
 	)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ion_pistol
+	disk_name = "GmbH - \"Aedes\" Stun Revolver"
+	icon_state = "frozenstar"
+
+	license = 8//2 guns 2 cells
+	designs = list(
+		/datum/design/autolathe/gun/ion_pistol = 2,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
 // PLASMA ARMS
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cassad

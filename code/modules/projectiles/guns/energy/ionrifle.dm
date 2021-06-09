@@ -34,9 +34,9 @@
 
 /obj/item/weapon/gun/energy/ionpistol
 	name = "\"Aedes\" ion-pistol"
-	desc = "A compact ion pistol produced by Seinemetall Defense GmbH, used primarly by police officers and traffic officers around the galaxy. \
-	One may wonder why someone would make an ion into a smaller, holsterable pistol - but it seems to work just fine! If you ignore the low amount of charges.."
-	icon = 'icons/obj/guns/energy/iongun.dmi'
+	desc = "A compact ion pistol produced by Seinemetall Defense GmbH, used primarly by police specialist units to disable energy weapons or electronics. \
+	It's sleek compact and design allows for it to be holsterable."
+	icon = 'icons/obj/guns/energy/ionpistol.dmi'
 	icon_state = "ionpistol"
 	item_state = "ionpistol"
 	item_charge_meter = TRUE
@@ -47,7 +47,7 @@
 	flags = CONDUCT
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	charge_cost = 400
-	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_WOOD = 5, MATERIAL_SILVER = 8)
+	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 8)
 	price_tag = 1400
 	projectile_type = /obj/item/projectile/ion
 	one_hand_penalty = 5
