@@ -240,7 +240,7 @@
 
 /obj/structure/bed/roller/compact
 	name = "compact roller bed"
-	item_form_type = /obj/structure/bed/roller/compact
+	item_form_type = /obj/item/roller/compact	//The folded-up object path.
 
 /obj/structure/bed/roller/update_icon()
 	if(density)
