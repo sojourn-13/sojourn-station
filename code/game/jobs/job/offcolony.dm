@@ -15,6 +15,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 
 	perks = list(/datum/perk/job/butcher)
+	access = list(access_huntmaster)
 
 	known_recipes = list(
 			/datum/craft_recipe/lodge/hunter_crossbow,

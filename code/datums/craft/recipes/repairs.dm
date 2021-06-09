@@ -11,7 +11,7 @@
 		list(/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/combat_shotgun
@@ -22,7 +22,7 @@
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/gladstone_shotgun
@@ -32,7 +32,7 @@
 		list(/obj/item/weapon/gun/projectile/shotgun/pump/gladstone/sawn, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/sixshot_shotgun
@@ -44,7 +44,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/grizzly_shotgun
@@ -55,7 +55,7 @@
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_HAMMERING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/obrez_shotgun
@@ -66,7 +66,7 @@
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/ak47_rifle
@@ -77,7 +77,7 @@
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_HAMMERING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/sts_carbine
@@ -87,7 +87,7 @@
 		list(/obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/sts_standard_rifle
@@ -97,7 +97,7 @@
 		list(/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_HAMMERING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/sts_heavy_rifle
@@ -107,7 +107,7 @@
 		list(/obj/item/weapon/gun/projectile/automatic/sts/hrifle/sawn, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/scout_boltgun
@@ -118,7 +118,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/sika_boltgun
@@ -130,7 +130,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/roe_boltgun
@@ -143,7 +143,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/novakovic_boltgun
@@ -155,7 +155,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/mosin_boltgun
@@ -167,7 +167,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/juggernaut_helm
@@ -184,7 +184,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_SILK),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
 		list(/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh, 1, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/juggernaut_suit
@@ -201,5 +201,5 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_SILK),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
 		list(/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh, 1, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
 	)

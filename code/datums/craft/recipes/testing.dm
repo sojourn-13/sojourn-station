@@ -6,5 +6,5 @@
 		QUALITY_SCREW_DRIVING,
 		/obj/item/weapon/pen,
 		list(/obj/item/stack/material/plastic, 1),
-		QUALITY_SCREW_DRIVING,
+		QUALITY_SCREW_DRIVING
 	)
