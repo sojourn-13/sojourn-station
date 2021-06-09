@@ -24,7 +24,7 @@
 	// Step 1, it need a circuit board.
 	if((istype(W, /obj/item/weapon/roomba_part/control)) && (build_step == 0))
 		build_step++ // Go to the next assembly part.
-		to_chat(user, "You add the control module to the [src].")
+		to_chat(user, "You add the [W.name] to the [src].")
 		step_message = "It is missing a medium power cell." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
@@ -35,8 +35,8 @@
 	// Step 2, Install the power cell
 	else if((istype(W, /obj/item/weapon/cell/medium)) && (build_step == 1))
 		build_step++ // Go to the next assembly part.
-		to_chat(user, "You add a power cell to [src].")
-		step_message = "It is missing wheels." // Next step
+		to_chat(user, "You add the [W.name] to [src].")
+		step_message = "It is missing treads." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		power_cell = W //Store the power cell for later usage.
 
@@ -47,7 +47,7 @@
 	// Step 3, it need wheels.
 	if((istype(W, /obj/item/weapon/roomba_part/treads)) && (build_step == 2))
 		build_step++ // Go to the next assembly part.
-		to_chat(user, "You add the wheels to the [src].")
+		to_chat(user, "You add the [W.name] to the [src].")
 		step_message = "It is missing wiring." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 

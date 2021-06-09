@@ -314,6 +314,8 @@
 	maxHealth = 50
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	response_help = "pet"
+	can_buckle = TRUE
 
 	// Default armor values so that we can reference them.
 	var/default_armor = list(
@@ -591,31 +593,21 @@
 /mob/living/simple_animal/hostile/roomba/custom/death()
 	if(cell) // Only if it does have a cell
 		cell.forceMove(src.loc) // Drop the power cell
+		cell = null // No more cell in the roomba
+	if(weaponry) // Only if it does have a weapon.
+		weaponry.forceMove(src.loc) // Drop the weapon
+		weaponry = null // No more weapon in the roomba
 	if(kamikaze) // Check if the roomba got a mine.
 		src.visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
-		kamikaze.forceMove(src.loc)
-		kamikaze.ignite_act()
-		qdel(kamikaze)
-		qdel(src)
-	if(weaponry) // Only if it does have a weapon that isn't a mine.
-		weaponry.forceMove(src.loc) // Drop the weapon
+		kamikaze.explode()
+		kamikaze = null // No more mine in the roomba
 	..()
 	return
 
-/*
-// Do nothing if it isn't angry.
-/mob/living/simple_animal/hostile/roomba/custom/FindTarget()
-	if(angry)
-		..()
-	else if(!angry)
-		return
-
 /mob/living/simple_animal/hostile/roomba/custom/AttackTarget()
 	. = ..()
-	if(.) // If we succeeded in hitting.
-		if(kamikaze) // Does the roomba got a bomb ?
-			death() // Kill the roomba which will in turn trigger the bomb.
-*/
+	if((.) && (kamikaze)) // If we succeeded in hitting and the roomba got a bomb.
+		death() // Kill the roomba which will in turn trigger the bomb.
 
 //Robots
 /mob/living/simple_animal/hostile/roomba/synthetic/allied
