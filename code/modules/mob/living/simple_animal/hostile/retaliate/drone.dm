@@ -93,6 +93,10 @@
 		s.set_up(3, 1, src)
 		s.start()
 		health += rand(25,100)
+		if(!rapid)
+			rapid = TRUE
+		if(prob(95) && !ranged)
+			ranged = TRUE
 
 	//spark for no reason
 	if(prob(5))
@@ -159,6 +163,10 @@
 	disabled = rand(150, 600)
 	hostile_drone = 0
 	walk(src,0)
+	if(rapid)
+		rapid = FALSE
+	if(prob(5) && ranged) //Kinda would suck if they lost their only weapon
+		ranged = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/malf_drone/death()
 	..(null,"suddenly breaks apart.")

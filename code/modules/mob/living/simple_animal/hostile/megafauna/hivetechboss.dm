@@ -31,6 +31,16 @@
 
 	projectiletype = /obj/item/projectile/goo
 
+/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/emp_act(severity)
+	..()
+	switch(severity)
+		if(1)
+			health -= 500
+		if(2)
+			health -= 250
+		if(3)
+			health -= 125
+
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/death()
 	..()
 	if(hive_ender)
