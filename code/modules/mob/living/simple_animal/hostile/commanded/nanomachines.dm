@@ -17,6 +17,11 @@
 	response_harm = "hits"
 	response_disarm = "fans at"
 
+
+/mob/living/simple_animal/hostile/commanded/nanomachine/emp_act(severity)
+	..()
+	qdel(src)
+
 /mob/living/simple_animal/hostile/commanded/nanomachine/Life()
 	regen_time++
 	if(regen_time == 2 && health < maxHealth) //slow regen
