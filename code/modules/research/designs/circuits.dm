@@ -409,3 +409,20 @@
 	name = "Industrial Grinder"
 	build_path = /obj/item/weapon/circuitboard/industrial_grinder
 	category = CAT_MEDI
+
+//Hydro
+
+/datum/design/research/circuit/extractor
+	name = "Lysis Isolation Centrifuge"
+	build_path = /obj/item/weapon/circuitboard/extractor
+	category = CAT_MACHINE
+
+/datum/design/research/circuit/seed_extractor
+	name = "Seed Extractor"
+	build_path = /obj/item/weapon/circuitboard/seed_extractor
+	category = CAT_MACHINE
+
+/datum/design/research/circuit/editor
+	name = "Bioballistic Delivery System"
+	build_path = /obj/item/weapon/circuitboard/editor
+	category = CAT_MACHINE
