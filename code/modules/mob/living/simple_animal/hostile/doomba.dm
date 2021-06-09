@@ -327,7 +327,6 @@
 		agony = 100
 	)
 
-	var/angry = FALSE // Will it attack stuff like roaches?
 	var/panel_locked = TRUE // Is the panel locked?
 	var/panel_open = FALSE // Is the panel open?
 	var/obj/item/weapon/roomba_part/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
@@ -404,21 +403,6 @@
 				// If we're here, then the panel wasn't open, so let's open it.
 				panel_open = TRUE
 				to_chat(user, "You open [src]'s panel.")
-				return
-
-		// Is the weapon able to be used as a screwdriver and is the panel open?
-		else if((QUALITY_PULSING in T.tool_qualities) && (panel_open))
-
-			// Skill check to change the roomba's hostilities.
-			if(T.use_tool(user, src, WORKTIME_SLOW, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-
-				// Typical binary switch, don't need to explain it again.
-				if(angry)
-					angry = FALSE
-					to_chat(user, "You change [src]'s programming to cleaning.")
-					return
-				angry = TRUE
-				to_chat(user, "You change [src]'s programming to attacking.")
 				return
 
 		// Are we attacking with the roomba plating and is the panel open?
@@ -580,10 +564,6 @@
 	// If it is open then of course it is unlocked, but if it isn't open, we must show if it is locked or not.
 	else if(!panel_locked)
 		to_chat(user, "The roomba's panel is unlocked.")
-
-	// Will the roomba attack roaches and other hostiles?
-	if(angry)
-		to_chat(user, "The roomba is programmed to attack.")
 
 	// Does it have a knife or a gun ?
 	if(weaponry)

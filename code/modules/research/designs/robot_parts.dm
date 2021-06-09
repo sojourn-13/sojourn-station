@@ -31,6 +31,9 @@
 	name = "Robot right leg"
 	build_path = /obj/item/robot_parts/r_leg
 
+/datum/design/research/circuit/roomba_board
+	name = "Roomba control board"
+	build_path = /obj/item/weapon/roomba_part/control
 
 /datum/design/research/item/mechfab/robot/component
 	name_category = "robot component"

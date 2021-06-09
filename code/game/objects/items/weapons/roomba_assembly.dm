@@ -68,7 +68,16 @@
 		C.use(5) // use five cables.
 
 	// Step 5, Close the panel.
-	else if((QUALITY_SCREW_DRIVING) && (build_step == 4))
+	else if((QUALITY_PULSING) && (build_step == 4))
+		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
+		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+			build_step++ // Go to the next assembly part.
+			to_chat(user, "You program the roomba.")
+			step_message = "The panel is open." // Next step
+			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
+
+	// Step 6, Close the panel.
+	else if((QUALITY_SCREW_DRIVING) && (build_step == 5))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
@@ -76,7 +85,7 @@
 			step_message = "The panel is closed, all it need is a swipe of your ID." // Next step
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
-	// Step 6, Swipe the ID to activate it.
+	// Step 7, Swipe the ID to activate it.
 	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 5))
 		var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
 		if(!access_robotics in C.access) // Are you authorized to start the roomba ?

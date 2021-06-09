@@ -245,7 +245,6 @@
 					/obj/item/weapon/tool/crowbar = 5,
 					/obj/item/weapon/weldpack/canister = 2,
 					/obj/item/weapon/weldpack = 1,
-					/obj/item/weapon/roomba_part/control = 3,
 					//Ripley
 					/obj/item/device/kit/paint/ripley = 3,
 					/obj/item/device/kit/paint/ripley/death = 3,
