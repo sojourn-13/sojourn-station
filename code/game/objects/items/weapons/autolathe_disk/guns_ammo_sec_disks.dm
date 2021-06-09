@@ -1166,7 +1166,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 	disk_name = "GmbH - \"Aedes\" Stun Revolver"
 	icon_state = "frozenstar"
 
-	license = 8//2 guns 2 cells
+	license = 6//2 guns 2 cells
 	designs = list(
 		/datum/design/autolathe/gun/ion_pistol = 2,
 		/datum/design/autolathe/cell/medium/high,
