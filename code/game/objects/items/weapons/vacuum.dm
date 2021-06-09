@@ -14,7 +14,7 @@
 
 	var/amount = 0
 	var/max_amount = 30
-	var/vacuum_time = 3
+	var/vacuum_time = 60
 
 /obj/item/weapon/holyvacuum/Initialize()
 	.=..()
