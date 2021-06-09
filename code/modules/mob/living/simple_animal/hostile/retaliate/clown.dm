@@ -299,7 +299,7 @@
 	emote_see = list("jiggles.", "wobbles.")
 	maxHealth = 400
 	health = 400
-	mob_size = MOB_SIZE_LARGE
+	mob_size = MOB_LARGE
 	speed = 20
 	attacktext = "bounces off of"
 	attack_reagent = "mindbreaker"
