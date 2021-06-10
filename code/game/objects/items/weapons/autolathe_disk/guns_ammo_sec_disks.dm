@@ -417,7 +417,7 @@
 
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/colt
-	disk_name = "SA - .35 M1911"
+	disk_name = "H&S - .35 M1911"
 	icon_state = "ironhammer"
 
 	license = 8
@@ -492,7 +492,7 @@
 // .40 pistols
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ladon
-	disk_name = "GmbH - .40 Auto-Mag Ladon Handgun"
+	disk_name = "H&S - .40 Auto-Mag Porton Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -505,7 +505,7 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ladon/sa
-	disk_name = "SA - .40 Auto-Mag Ladon Handgun"
+	disk_name = "SA - .40 Auto-Mag Sigia Handgun"
 	icon_state = "ironhammer"
 
 	license = 8
@@ -518,7 +518,7 @@
 		)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ladon/dark
-	disk_name = ".40 Auto-Mag Ladon Handgun"
+	disk_name = "GmbH - .40 Auto-Mag Ladon Handgun"
 	icon_state = "onestar"
 
 	license = 8
@@ -782,7 +782,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sol
-	disk_name = "SA - .257 \"Solarian\" Carbine"
+	disk_name = "H&S - .257 \"Solarian\" Carbine"
 	icon_state = "ironhammer"
 
 	license = 16
@@ -834,7 +834,7 @@
 
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/bulldog
-	disk_name = "H&S - .257 Bulldog Carbine"
+	disk_name = "GmbH - .257 Bulldog Carbine"
 	icon_state = "frozenstar"
 
 	license = 16
@@ -867,7 +867,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sika
-	disk_name = "SA - .257 Sika Rifle"
+	disk_name = "Hunters Inc - .257 Sika Rifle"
 	icon_state = "ironhammer"
 
 	license = 8
@@ -880,7 +880,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/roe
-	disk_name = "H&S - .257 Roe Rifle"
+	disk_name = "Hunters Inc - .257 Roe Rifle"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -930,7 +930,7 @@
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/boltgun_sa
-	disk_name = "SA - 7.5mm Novakovic Rifle"
+	disk_name = "Hunters Inc - 7.5mm Novakovic Rifle"
 	icon_state = "ironhammer"
 
 	license = 12
@@ -943,11 +943,10 @@
 		/datum/design/autolathe/ammo/sl_rifle,
 	)
 
-
 //.408 rifles
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/hustler
-	disk_name = "SA - .408 Hustler Heavy Rifle"
+	disk_name = "H&S NM - .408 Hustler Heavy Rifle"
 	icon_state = "ironhammer"
 
 	license = 12
@@ -1028,17 +1027,8 @@
 
 // Grenade Launchers
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/protector
-	disk_name = "SA - Grenade Launcher"
-	icon_state = "ironhammer"
-
-	license = 3
-	designs = list(
-		/datum/design/autolathe/gun/grenade_launcher, // "NT GL \"Protector\""
-	)
-
 obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lenar
-	disk_name = "H&S - Lenar Grenade Launcher"
+	disk_name = "GmbH - Lenar Grenade Launcher"
 	icon_state = "frozenstar"
 
 	license = 3
@@ -1209,7 +1199,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/survivalrifle
-	disk_name = "SAS - 10mm Caseless /'Bond/' Rifle"
+	disk_name = "Hunters Inc - 10mm Caseless /'Bond/' Rifle"
 	icon_state = "black"
 
 	license = 10 //2 guns 2 mags and 1 box
