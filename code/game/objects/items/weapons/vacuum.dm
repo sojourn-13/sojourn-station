@@ -57,7 +57,7 @@
 			return
 		spawn()
 			user.do_attack_animation(T)
-		user.setClickCooldown(vacuum_time)
+		user.setClickCooldown(2) //We use this to not lock people out of talking or looking around or multy tile vacuuming
 		playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 		if(do_after(user, vacuum_time, T))
 			if(T)
