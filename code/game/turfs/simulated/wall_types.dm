@@ -157,7 +157,7 @@
 	icon_state = "cargoshwall1"
 
 /obj/structure/shuttle_part/escpod
-	name = "Escape Pod"
+	name = "Shuttle Pod"
 	icon = 'icons/turf/shuttleescpod.dmi'
 	icon_state = "escpodwall1"
 

@@ -451,10 +451,19 @@
 	if(adj_temp < 0 && M.bodytemperature > 310)
 		M.bodytemperature = min(310, M.bodytemperature - (adj_temp * TEMPERATURE_DAMAGE_COEFFICIENT))
 
-	//Sake of coding easy and not remaking the proc we use same proc as onAlcohol for non-booze drinks
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
 		H.sanity.onNonAlcohol(src, effect_multiplier)
+
+/datum/reagent/drink/energy_drink_monster
+	name = "Energy Drink"
+	id = "energy_drink_monster"
+	description = "The raw essence of a electrolytes."
+	taste_description = "chemical water"
+	color = "#C3AF00"
+	adj_dizzy = -1
+	adj_drowsy = -2
+	adj_sleepy = -10
 
 // Juices
 

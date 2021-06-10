@@ -54,6 +54,13 @@
 	qdel(src)
 	return
 
+/mob/living/simple_animal/hostile/roomba/emp_act(severity)
+	..()
+	if(rapid)
+		rapid = FALSE
+	if(prob(95) && ranged)
+		ranged = FALSE
+
 /mob/living/simple_animal/hostile/roomba/slayer
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems to have a knife taped to it..?"

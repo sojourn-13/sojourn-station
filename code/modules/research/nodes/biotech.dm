@@ -99,8 +99,12 @@
 	cost = 400
 
 	unlocks_designs = list(	/datum/design/research/circuit/biogenerator,
+							/datum/design/research/circuit/extractor,
+							/datum/design/research/circuit/seed_extractor,
+							/datum/design/research/circuit/editor,
 							/datum/design/research/item/weapon/flora_gun,
-							/datum/design/research/item/botany_disk)
+							/datum/design/research/item/botany_disk
+							)
 
 /datum/technology/portable_chemistry
 	name = "Portable Chemistry"

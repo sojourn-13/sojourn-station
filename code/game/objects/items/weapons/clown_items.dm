@@ -8,10 +8,15 @@
 /*
  * Banana Peals
  */
+//its here so that its all contained in 1 file for the var
+ /obj/item/weapon/bananapeel
+ 	var/how_many_times_we_can_pull_a_pro_clown_gamer_move = 1
+ 
 /obj/item/weapon/bananapeel/Crossed(AM as mob|obj)
-	if (isliving(AM))
+	if (isliving(AM) && how_many_times_we_can_pull_a_pro_clown_gamer_move > 0)
 		var/mob/living/M = AM
 		M.slip("\the [src.name]",4)
+		how_many_times_we_can_pull_a_pro_clown_gamer_move -= 1
 /*
  * Soap
  */

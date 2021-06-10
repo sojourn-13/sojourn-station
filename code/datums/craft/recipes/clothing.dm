@@ -97,7 +97,7 @@
 	steps = list(
 		list(/obj/item/stack/medical/bruise_pack/handmade, 3, "time" = 10),
 		list(/obj/item/stack/rods, 2, "time" = 10),
-		list(/obj/item/stack/cable_coil, 2),
+		list(/obj/item/stack/cable_coil, 2)
 	)
 
 /datum/craft_recipe/clothing/riggedvoidsuit_helmet
@@ -121,7 +121,7 @@
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTIC),
 		list(QUALITY_ADHESIVE, 15, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 20),
+		list(QUALITY_WELDING, 10, 20)
 	)
 
 /datum/craft_recipe/clothing/scavengerarmor
@@ -133,7 +133,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
 		list(QUALITY_ADHESIVE, 15, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 20),
+		list(QUALITY_WELDING, 10, 20)
 	)
 
 /datum/craft_recipe/clothing/muzzle

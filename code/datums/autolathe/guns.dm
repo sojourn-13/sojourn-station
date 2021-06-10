@@ -369,6 +369,10 @@
 	name = "GmbH - \"Zeus\" Stun Revolver"
 	build_path = /obj/item/weapon/gun/energy/taser
 
+/datum/design/autolathe/gun/ion_pistol
+	name = "GmbH - \"Aedes\" Stun Revolver"
+	build_path = /obj/item/weapon/gun/energy/ionpistol
+
 /datum/design/autolathe/gun/titanica
 	name = "H&S E Cannon \"Titanica\""
 	build_path = /obj/item/weapon/gun/energy/lasercannon
