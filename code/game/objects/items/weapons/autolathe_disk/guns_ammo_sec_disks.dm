@@ -286,7 +286,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo //please, maintain general order (pistol>speedloaders>smg>other>shells)+(smaller/less damaging caliber>bigger/more damaging caliber)
 	disk_name = "SA Lethal Magazines Pack"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 20
 	designs = list(
@@ -323,7 +323,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms
 	disk_name = "SA Handgun Ammunition"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 20
 	designs = list(
@@ -343,7 +343,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle
 	disk_name = "SA Rifle Ammunition"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 20
 	designs = list(
@@ -369,7 +369,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/exotic_ammo
 	disk_name = "SA Exotic Ammunition Pack"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 	license = 20
 
 	designs = list(
@@ -506,7 +506,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ladon/sa
 	disk_name = "SA - .40 Auto-Mag Sigia Handgun"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -612,7 +612,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/akurra
 	disk_name = "SA - .50 Akurra Silenced Handgun"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -625,7 +625,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/revolver_mateba
 	disk_name = "SA - .50 Kurtz Mateba Revolver"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -640,7 +640,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/doublebarrel
 	disk_name = "SA - 20mm Double Barrel Shotgun"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -652,7 +652,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly
 	disk_name = "SA - 20mm Grizzly Shotgun"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -690,7 +690,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pug
 	disk_name = "SA - 20mm Pug Auto Shotgun"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -702,7 +702,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sixshot
 	disk_name = "SA - 20mm Revolving Shotgun"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -742,7 +742,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/texan
 	disk_name = "SA - .35 Texan SMG"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 12
 	designs = list(
@@ -755,7 +755,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mac
 	disk_name = "SA - .35 MAC SMG"
-	icon_state = "frozenstar"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -855,7 +855,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/saw
 	disk_name = "SA - .257 Pegasus LMG"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8 //So we can print 2 and some ammo
 	designs = list(
@@ -868,7 +868,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sika
 	disk_name = "Hunters Inc - .257 Sika Rifle"
-	icon_state = "ironhammer"
+	icon_state = "hunters"
 
 	license = 8
 	designs = list(
@@ -881,7 +881,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/roe
 	disk_name = "Hunters Inc - .257 Roe Rifle"
-	icon_state = "frozenstar"
+	icon_state = "hunters"
 
 	license = 8
 	designs = list(
@@ -897,7 +897,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov
 	disk_name = "SA - 7.5 Kalashnikov Rifle"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 16
 	designs = list(
@@ -931,7 +931,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/boltgun_sa
 	disk_name = "Hunters Inc - 7.5mm Novakovic Rifle"
-	icon_state = "ironhammer"
+	icon_state = "hunters"
 
 	license = 12
 	designs = list(
@@ -974,7 +974,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sts40
 	disk_name = "SA - .408 STS-40 Heavy Rifle"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -1005,7 +1005,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/heavysniper
 	disk_name = "SA - .60-06 Penetrator AMR"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 8
 	designs = list(
@@ -1017,7 +1017,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sa_pk
 	disk_name = "SA - 7.5mm Pulemyot Kalashnikova MG"
-	icon_state = "ironhammer"
+	icon_state = "sa"
 
 	license = 12
 	designs = list(
@@ -1200,7 +1200,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/survivalrifle
 	disk_name = "Hunters Inc - 10mm Caseless /'Bond/' Rifle"
-	icon_state = "black"
+	icon_state = "hunters"
 
 	license = 10 //2 guns 2 mags and 1 box
 	designs = list(
