@@ -37,10 +37,14 @@
 	break_stuff_probability = 95
 	attacktext = "mauled"
 	faction = "deathclaw"
+
+	mob_size = MOB_LARGE
+
 	maxHealth = 900
 	health = 900
 	melee_damage_lower = 35
 	melee_damage_upper = 40
+
 	old_x = -16
 	old_y = 0
 	default_pixel_x = -16
@@ -110,6 +114,7 @@
 	bones_amount = 6 //The amount of bone sheets dropped.
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	mob_size = MOB_LARGE
 
 /mob/living/simple_animal/hostile/retaliate/gaslamp
 	name = "gaslamp"
@@ -159,6 +164,7 @@
 	pixel_y = -16
 	leather_amount = 10 //The amount of leather sheets dropped.
 	bones_amount = 10 //The amount of bone sheets dropped.
+	mob_size = MOB_LARGE
 
 /mob/living/simple_animal/hostile/retaliate/hippo
 	name = "hippo"
@@ -180,6 +186,7 @@
 
 	melee_damage_upper = 25
 	melee_damage_lower = 15
+	mob_size = MOB_LARGE
 
 	old_x = -16
 	old_y = 0
@@ -219,6 +226,7 @@
 	mob_size = 3
 	leather_amount = 0 //No actual skin
 	bones_amount = 30 //Lots of bone-like chitin
+	mob_size = MOB_LARGE
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
 	..()
@@ -266,6 +274,7 @@
 	wander = 1
 	leather_amount = 20
 	bones_amount = 10
+	mob_size = MOB_LARGE
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
 	..()
@@ -310,6 +319,7 @@
 	bones_amount = 10
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	mob_size = MOB_LARGE
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
 	name = "wendigo"
