@@ -243,6 +243,17 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
+// Grenade Launchers
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/protector
+	disk_name = "OT GL - Grenade Launcher"
+	icon_state = "neotheology"
+
+	license = 3
+	designs = list(
+		/datum/design/autolathe/gun/grenade_launcher, // "NT GL \"Protector\""
+	)
+
 //Absolute Armory gun packs
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns

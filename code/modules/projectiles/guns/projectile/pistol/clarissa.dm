@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/clarissa
 	name = "\"Clarissa\" pistol"
-	desc = "A small, easily concealable, but somewhat underpowered gun. Uses .35 rounds."
+	desc = "A small, easily concealable, but somewhat underpowered gun produced by \"H&S\" as a preciser to the \"Giskard\". Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
 	icon_state = "clarissa"
 	item_state = "clarissa"
