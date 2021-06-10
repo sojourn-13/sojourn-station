@@ -25,7 +25,7 @@
 
 	var/datum/core_module/group_ritual/GR = new
 	GR.ritual = src
-	GR.implant_type = C.implant_type
+	GR.implant_type = implant_type //Defined further in document as main core implant
 	GR.phrases = phrases
 	GR.effect = new effect_type
 	GR.effect.succ_message = success_message

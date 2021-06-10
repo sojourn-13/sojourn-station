@@ -5,8 +5,15 @@
 	icon_state = "sextractor"
 	density = 1
 	anchored = 1
+	circuit = /obj/item/weapon/circuitboard/seed_extractor
 
-obj/machinery/seed_extractor/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/machinery/seed_extractor/attackby(var/obj/item/O as obj, var/mob/user as mob)
+
+	if(default_deconstruction(O, user))
+		return
+
+	if(default_part_replacement(O, user))
+		return
 
 	// Fruits and vegetables.
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown) || istype(O, /obj/item/weapon/grown))

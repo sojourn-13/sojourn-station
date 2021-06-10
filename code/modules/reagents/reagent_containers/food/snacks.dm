@@ -2534,6 +2534,45 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 20)
 
+/obj/item/weapon/reagent_containers/food/snacks/honeypudding
+	name = "honey pudding"
+	desc = "A tasty dessert that is made with honey and coca powerder for a delightful pudding."
+	icon_state = "honeypudding"
+	filling_color = "#FFFF00"
+	center_of_mass = list("x"=16, "y"=18)
+	nutriment_desc = list("coca" = 1, "honey" = 2)
+	nutriment_amt = 8
+	bitesize = 3
+	preloaded_reagents = list("honey" = 5)
+	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 25)
+
+/obj/item/weapon/reagent_containers/food/snacks/honeybuns
+	name = "iced honey buns"
+	desc = "A pastry that was iced with sugar and filled with honey."
+	icon_state = "honeybuns"
+	filling_color = "#FFFF00"
+	center_of_mass = list("x"=16, "y"=18)
+	nutriment_desc = list("honey" = 8, "pastry" = 3)
+	nutriment_amt = 8
+	bitesize = 3
+	preloaded_reagents = list("sugar" = 5, "honey" = 2)
+	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 22)
+
+/obj/item/weapon/reagent_containers/food/snacks/honey_icecream
+	name = "honey icecream"
+	desc = "A cool dessert that is a mix of ice, cream, and honey."
+	icon_state = "honey_icecream"
+	filling_color = "#FFFF00"
+	center_of_mass = list("x"=16, "y"=18)
+	nutriment_desc = list("cream" = 3, "honey" = 2)
+	nutriment_amt = 12
+	bitesize = 3
+	preloaded_reagents = list("cream" = 5, "honey" = 5)
+	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 12)
+
 //mre food
 /obj/item/weapon/reagent_containers/food/snacks/mre
 	name = "mre"

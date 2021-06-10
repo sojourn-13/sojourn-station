@@ -1086,7 +1086,7 @@
 "uT" = (/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star/fo_outside)
 "uU" = (/obj/structure/table/onestar,/obj/landmark/join/start/outsider,/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
 "uV" = (/obj/landmark/join/late/dormitory_outsider,/obj/structure/bed/padded,/obj/random/furniture/bedsheet,/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
-"uW" = (/obj/machinery/cryopod/dormitory,/obj/machinery/computer/cryopod{pixel_x = 30},/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
+"uW" = (/obj/machinery/cryopod/dormitory,/turf/simulated/floor/carpet,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "vA" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
 "vS" = (/mob/living/simple_animal/hostile/roomba/gun_ba/plasma,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "wa" = (/obj/machinery/light/floor,/mob/living/simple_animal/hostile/roomba/gun_ba/plasma,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)

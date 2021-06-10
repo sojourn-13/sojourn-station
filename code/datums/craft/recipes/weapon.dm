@@ -39,7 +39,7 @@
 	steps = list(
 		list(/obj/item/weapon/tool/weldingtool, 1, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
-		list(/obj/item/device/assembly/igniter, 1),
+		list(/obj/item/device/assembly/igniter, 1)
 	)
 
 /datum/craft_recipe/weapon/fork
@@ -240,5 +240,5 @@
 		list(/obj/item/weapon/tool_upgrade/augment/cell_mount, 1, "time" = 30),//Attach a cell-mount
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 50), //Secure it
 		list(/obj/item/stack/cable_coil, 2, "time" = 10), //Wire it up
-		list(QUALITY_WIRE_CUTTING, 30, "time" = 50), //Fix the wires
+		list(QUALITY_WIRE_CUTTING, 30, "time" = 50) //Fix the wires
 	)

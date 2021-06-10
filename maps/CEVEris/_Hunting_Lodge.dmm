@@ -10,7 +10,9 @@
 "aj" = (/obj/structure/flora/ausbushes/palebush,/turf/simulated/floor/rock,/area/nadezhda/outside/forest/hunting_lodge)
 "ak" = (/obj/structure/flora/ausbushes/palebush,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
 "al" = (/obj/structure/flora/small/rock2,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
+"am" = (/obj/structure/railing,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "an" = (/obj/structure/flora/ausbushes/reedbush,/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
+"ao" = (/obj/structure/table/reinforced,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/forest/hunting_lodge)
 "ap" = (/obj/structure/flora/ausbushes/reedbush,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
 "aq" = (/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
 "ar" = (/obj/item/weapon/material/harpoon,/obj/item/toy/plushie/carp,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
@@ -188,7 +190,7 @@
 "dH" = (/obj/random/furniture/pottedplant,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "dI" = (/obj/machinery/seed_extractor,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dJ" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/bag/produce,/obj/item/weapon/storage/bag/produce,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
-"dK" = (/obj/structure/table/rack/shelf,/obj/item/weapon/tool/minihoe,/obj/item/weapon/tool/minihoe,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
+"dK" = (/obj/structure/table/rack/shelf,/obj/item/weapon/tool/minihoe,/obj/item/weapon/tool/minihoe,/obj/item/weapon/storage/makeshift_grinder,/obj/item/device/makeshift_centrifuge,/obj/item/device/makeshift_electrolyser,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dL" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dM" = (/mob/living/simple_animal/hostile/helldiver/cerberus,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dN" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Cerberus Pen"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
@@ -274,7 +276,7 @@
 "fp" = (/obj/structure/table/rack/shelf,/obj/item/ammo_magazine/ammobox/magnum_40,/obj/item/ammo_magazine/ammobox/magnum_40,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fq" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Medical Room"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fr" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Hunt Masters Office"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"fs" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/bag/trash,/obj/item/weapon/soap/deluxe,/obj/item/weapon/mop,/obj/item/weapon/reagent_containers/glass/bucket,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fs" = (/obj/structure/table/rack/shelf,/obj/item/weapon/staff/broom,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/soap/hunters,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "ft" = (/obj/item/toy/plushie/squid/mint,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fu" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fv" = (/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -341,7 +343,7 @@
 "gE" = (/obj/structure/table/rack/shelf,/obj/item/bee_pack,/obj/item/bee_pack,/obj/item/bee_pack,/obj/item/bee_pack,/obj/item/bee_pack,/obj/item/bee_smoker,/obj/item/bee_smoker,/obj/item/beehive_assembly,/obj/item/beehive_assembly,/obj/item/beehive_assembly,/obj/item/beehive_assembly,/obj/item/bee_pack,/obj/item/bee_pack,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "gF" = (/obj/structure/reagent_dispensers/watertank/derelict,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "gG" = (/obj/structure/table/rack/shelf,/obj/item/stack/material/wood/random,/obj/item/stack/material/wood/random,/obj/item/stack/material/wood/random,/obj/item/weapon/tool/hammer,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
-"gH" = (/obj/structure/table/rack/shelf,/obj/item/weapon/soap,/obj/item/weapon/staff/broom,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/reagent_containers/glass/bucket,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
+"gH" = (/obj/machinery/shower,/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 8},/obj/machinery/door/window/southleft{name = "shower door"},/obj/structure/curtain/open,/obj/effect/floor_decal/corner_techfloor_grid,/obj/structure/window/reinforced{dir = 4; pixel_x = 0},/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gI" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 8; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "gJ" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 4; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "gK" = (/obj/random/mob/tahca/low_chance,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
@@ -378,6 +380,16 @@
 "hp" = (/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "hq" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 1; matter = list("wood" = 4); name = "wooden fence"},/obj/machinery/smartfridge/drying_rack,/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/dungeon/outside/abandoned_solars/powered)
 "hr" = (/obj/machinery/beehive,/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/dungeon/outside/abandoned_solars/powered)
+"hs" = (/obj/machinery/computer/shuttle_control/multi/surface_transport,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/forest/hunting_lodge)
+"ht" = (/obj/structure/table/woodentable,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hu" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hv" = (/obj/structure/mirror{pixel_x = 28},/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 0},/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hw" = (/obj/structure/toilet{dir = 4},/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hx" = (/obj/machinery/washing_machine,/obj/item/weapon/soap/hunters,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hy" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Bathroom"},/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hz" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/bag/trash,/obj/item/weapon/mop,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/soap/hunters,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hA" = (/obj/structure/table/woodentable,/obj/structure/sign/misc/toiletfemale{pixel_y = 30},/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hB" = (/obj/random/furniture/pottedplant,/obj/structure/sign/misc/toiletmale{pixel_y = 30},/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "iX" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/stack/material/steel/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "jf" = (/obj/structure/closet/crate,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/item/stack/rods/random,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "jJ" = (/obj/structure/table/rack/shelf,/obj/item/weapon/beartrap,/obj/item/weapon/beartrap,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -460,14 +472,14 @@ aBaBatatatatatatavatatatatatatatataDaDaPdqdqdqdqdrdrdqdqdqdqaPaDdmbkaMaCaDaDaEaD
 aBaBatatatavatatatatatatatatatatataDaDaPdvdkdldldldkdldkdldwaPaDdmbkaMaDaDaDaDaDaDaDaDaDaMaPaPaPaPaPaPaPaPaPaPaPaPdsdsaPaPaPaPaPaPaPaPaPaPaPaPaDaDaDaDaDaDaDaDaDaDaDaDaCaDaHaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
 aBaBatawatatatatatatatatatatatatataDaDaPdvdldldkdkdkdldkdldwaPaDdmdtaMaDaDaDaDaDaDaDaDaDaMaDaDaDaDaDaDaDaDaDaDaDaMduduaMaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
 aBaBatatatatatatatawatatatatauatataDaDaPdxdxdxdzdldldAdxdxdxaPaPaPdyaPaPaPaPaDaDaDaDaDaDaMaDaDaDaDaDaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDaDaDaDaCaDaDaDaDaDaDaDaDaDaDaDaDaDatauatatatatataBaBaaaaaaaaaa
-aBaBatayatatatatatatatatatayatataDaDaDaPdBdBdldCdldkdDdldfdbdEgtgSgMdIdJdKaPaDaDaDaCaDaDaMaMaMaMaMaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaEaDgYgYgYgYgYgYgYgYgYgYgYgYgYaDaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
-aBaBatatatatatatatatatatatatatataDaDaDaPdLdMdkdNdkdkdDdcdcdOdEdPdQdRdSdSdSaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaDaCaDaDaMaMaMaMaDaDaDhpaDaDaDaDaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbihdaDaDaDaDaCaDaDatatatatatatataBaBaaaaaaaaaa
-aBaBatatauatatatatatatavatatatataDaDaDaPdcdcdldCdldkdTdcdUdcdEdXdSdSdSdSdYaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbiheaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
-aBaOatatatatatatauatatatayatatatataDaDaPdcdcdfdCdldkdTdcdZdcdEeadSdSdSdSecaPaDaDaDaDaDdVaDdWaDaDaDaMaDdVaDdWaDaDaMaMaMaMaDaDaDdVaDdWaDaDaDaDgZhfhbhbhbhbhghbhbhbhbhbhhbiheaDaCaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
-aBaBatatatawatatatatatatatatauatataDaDaPedeedfdNdldkdDdcdcdOdEePdSdSdSdSfjaPaDaDaDaDaDaDaDaDaDebaDaMaDaDaDaDaDebaMaMaMaMaDaDaDaDaDaDaDebaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbihdaDaDaDaDaDaDaDatatatatatatauataBaaaaaaaaaa
-aBaBatatatatatatatatatatatavatatataDaDaPdfdfdfdCdldldDdcdcdcdEgEdSdSdSdSgFaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaCaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaCaDhihahbhbhbhbhbhbhbhbhbhbhcbiheaDaDaDaDaDaDaDaDaDaDaDatatatataBaaaaaaaaaa
-aBaBatatatatatayatatatatatatatatataDaDaPdbdfdldCdkdldDdcdcdcdEgGdSdSdSdSgHaPaDaDaEaDebaDaDegaDaDaDaMebaDaDegaDaDaMaMaMaMaDaDebaDaCegaDaDaDaDhjhkhlhmhlhlhlhlhlhlhmhlhnbiaMaDaEaDaDaEaDaDaCaDaDaDaDaDabaBaBaaaaaaaaaa
-aBaBatatatataAatatatatatatatatataDaDaDaPaPaPaPaPdldkaPaPaPaPaPaPaPehehaPaPaPaDaDaDaDaDaDaCaDdVaDaDaMaDaDaDaDdVaMaMaMaMaMaMaDaDaDaDaDdVaDaDaDhjhohohohohohohohohohobibibiaMaDaDaDaDaDaDaDaDaDaDaDaDaDaaaaaBaaaaaaaaaa
+aBaBatayatatatatatatatatatayatataDaDaDaPdBdBdldCdldkdDdldfdbdEgtgSgMdIdJdKaPaDaDaDaCaDaDaMaMaMaMaMaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaEaDgYgYgYgYgYgYgYgYgYgYgYgYgYamaDaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
+aBaBatatatatatatatatatatatatatataDaDaDaPdLdMdkdNdkdkdDdcdcdOdEdPdQdRdSdSdSaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaDaCaDaDaMaMaMaMaDaDaDhpaDaDaDaDaDaDgZhahbhbhbhbhbhbhbhbhbhbhcaohshdaDaDaDaCaDaDatatatatatatataBaBaaaaaaaaaa
+aBaBatatauatatatatatatavatatatataDaDaDaPdcdcdldCdldkdTdcdUdcdEdXdSdSdSdSdYaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbibiheaDaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
+aBaOatatatatatatauatatatayatatatataDaDaPdcdcdfdCdldkdTdcdZdcdEeadSdSdSdSecaPaDaDaDaDaDdVaDdWaDaDaDaMaDdVaDdWaDaDaMaMaMaMaDaDaDdVaDdWaDaDaDaDgZhfhbhbhbhbhghbhbhbhbhbhhbibiheaCaDaDaDaDaDatatatatatatataBaBaaaaaaaaaa
+aBaBatatatawatatatatatatatatauatataDaDaPedeedfdNdldkdDdcdcdOdEePdSdSdSdSfjaPaDaDaDaDaDaDaDaDaDebaDaMaDaDaDaDaDebaMaMaMaMaDaDaDaDaDaDaDebaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbibihdaDaDaDaDaDaDatatatatatatauataBaaaaaaaaaa
+aBaBatatatatatatatatatatatavatatataDaDaPdfdfdfdCdldldDdcdcdcdEgEdSdSdSdSgFaPaDaDaDaDaDaDaDaDaDaDaDaMaDaDaCaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaCaDhihahbhbhbhbhbhbhbhbhbhbhcbibiheaDaDaDaDaDaDaDaDaDaDatatatataBaaaaaaaaaa
+aBaBatatatatatayatatatatatatatatataDaDaPdbdfdldCdkdldDdcdcdcdEgGdSdSdSdSfsaPaDaDaEaDebaDaDegaDaDaDaMebaDaDegaDaDaMaMaMaMaDaDebaDaCegaDaDaDaDhjhkhlhmhlhlhlhlhlhlhmhlhnbibiaMaEaDaDaEaDaDaCaDaDaDaDaDabaBaBaaaaaaaaaa
+aBaBatatatataAatatatatatatatatataDaDaDaPaPaPaPaPdldkaPaPaPaPaPaPaPehehaPaPaPaDaDaDaDaDaDaCaDdVaDaDaMaDaDaDaDdVaMaMaMaMaMaMaDaDaDaDaDdVaDaDaDhjhohohohohohohohohohobibibibiaMaDaDaDaDaDaDaDaDaDaDaDaDaaaaaBaaaaaaaaaa
 aBaBatauatatatatatatatatatatatataDaDaDaDaDaDaDaDduduaMaMaMaMaDaDaDduduaDaDaDaDaDaDaDaDaDaDeiaDaDaDaMaDaDaDeiaMaMaMaMaMaMaMaMaDaDaDeiaDaDaDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaDaDaDaDaDaDaDaDaDaDaDaDaaaaaaaaaaaaaaaaaa
 aBaBatatazatawatatatatatatatatataDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaaaaaaaaaa
 aBaOatatatatatatauatatawatatatataDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaaaaaaaaaa
@@ -506,6 +518,7 @@ aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaB
 aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 euaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 "}
+
 (1,1,2) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -548,11 +561,11 @@ evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewew
 evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQbQeAeBeCgNeDeDeDeDeDeDgNeEeFeGbQbQewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
 evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQbQeHeIeIeJgNgNgNgNgNgNgNgNeIeKeLeMbQbQewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
 evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQeyeyeybQbQeNeIeIeIeObQeLeIeIfBeLeIeQeLeIeIeIeRbQbQbQbQbQbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
-eveveweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweygVeTeUeVeWeIeIeIeIeXbQgOeIeYeZfaeIeIfbfcfdeIeLfebQbQbQbQbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
-eveveweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweyeIeIeIeIeIeIeIeIeIffbQeVeIeIfgeIeLeIeIeLeIeIeIfhbQbQbQbQbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
-eveveweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweygWeSfieIeIeIffezfkfkbQfkfleLeIeIeIeLfmfnfoeIeIfpbQbQbQbQbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
-evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQbQbQbQbQfqbQbQbQbQbQbQbQbQfrfrbQbQbQbQbQbQbQbQbQbQbQbQbQbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
-evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQfsftbQfufvfvJCfxfyfzfAgcgcfvfvgcgBfzfwfxfwfCfvfvfwfwfwfCbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
+eveveweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweygVeTeUeVeWeIeIeIeIeXbQgOeIeYeZfaeIeIfbfcfdeIeLfebQgHcahtbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
+eveveweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweyeIeIeIeIeIeIeIeIeIffbQeVeIeIfgeIeLeIeIeLeIeIeIfhbQhucahvbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
+eveveweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweweygWeSfieIeIeIffezfkfkbQfkfleLeIeIeIeLfmfnfoeIeIfpbQhwcahxbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
+evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQbQbQbQbQfqbQbQbQbQbQbQbQbQfrfrbQbQbQbQbQbQbQbQbQbQbQhybQbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
+evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQhzftbQfufvfvJCfxfyfzfAgcgcfvfvgcgBfzfwfxfwfCfvfvfwhAfvhBbQewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
 evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQfDfvfEfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfvfveyewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
 evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQfufvbQfvfvfvfvfvfvfvfFfvfvfvfvfvfvfvfFfvfvfvfFfvfvfvfvfveyewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa
 evevewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewewbQfvfvbQbQfGbQbQbQbQfGbQbQbQbQbQfHbQbQbQbQfIbQbQbQfvfvfvfveyewewewewewewewewewewewewewewewewewewewewewewewewewewevevaaaaaaaaaa

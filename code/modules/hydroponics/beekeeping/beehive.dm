@@ -152,11 +152,28 @@
 	anchored = TRUE
 	var/processing = 0
 	var/honey = 0
-	circuit = /obj/item/weapon/circuitboard/honey_extractor
+	var/spin_time = 50
+	circuit = /obj/item/weapon/circuitboard/seed_extractor
+
+/obj/machinery/honey_extractor/RefreshParts()
+	..()
+	var/sm_rating = 0
+	var/sm_amount = 0
+	for(var/obj/item/weapon/stock_parts/scanning_module/SM in component_parts)
+		sm_rating += SM.rating
+		sm_amount++
+
+	spin_time = round(initial(spin_time)/(sm_rating/sm_amount))
+
 
 /obj/machinery/honey_extractor/attackby(var/obj/item/I, var/mob/user)
+
 	if(default_deconstruction(I, user))
 		return
+
+	if(default_part_replacement(I, user))
+		return
+
 	if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently spinning, wait until it's finished."))
 		return
@@ -169,7 +186,7 @@
 		processing = H.honey
 		icon_state = "centrifuge_moving"
 		qdel(H)
-		spawn(50)
+		spawn(spin_time)
 			new /obj/item/honey_frame(loc)
 			new /obj/item/stack/wax(loc)
 			honey += processing
@@ -232,6 +249,8 @@
 	desc = "Soft substance produced by bees. Used to make candles."
 	icon = 'icons/obj/beekeeping.dmi'
 	icon_state = "wax"
+	max_amount = 20
+	price_tag = 95 //long and semi hard to get
 
 /obj/item/stack/wax/New()
 	..()

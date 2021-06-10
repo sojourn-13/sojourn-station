@@ -126,6 +126,11 @@
 	name = "Sea Dog Beard"
 	icon_state = "seadog"
 
+/datum/sprite_accessory/facial_hair/shaggy
+	name = "Shaggy"
+	icon_state = "shag"
+	gender = NEUTER
+
 /datum/sprite_accessory/facial_hair/tribeard
 	name = "Tribeard"
 	icon_state = "tribeard"
@@ -195,6 +200,11 @@
 /datum/sprite_accessory/facial_hair/una_dorsalfrill
 	name = "Cindarite Dorsal Frill"
 	icon_state = "facial_dorsalfrill_s"
+	gender = NEUTER
+
+/datum/sprite_accessory/facial_hair/neck_fluff
+	name = "Neck Fluff"
+	icon_state = "neckfluff"
 	gender = NEUTER
 
 /*

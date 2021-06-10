@@ -67,6 +67,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/themis = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lightfall = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/halicon = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ion_pistol = 2,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/exotic_ammo = 3,
@@ -152,6 +153,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lightfall = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/valkirye = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/halicon = 6,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ion_pistol = 4,
 
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/dominion = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/purger = 2,
