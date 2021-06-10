@@ -50,6 +50,7 @@
 		else
 			var/obj/item/weapon/weldpack/canister/C = I //typecasting
 			mytank = C
+			user.remove_from_mob(C)
 			C.forceMove(src)
 			update_icon()
 			return

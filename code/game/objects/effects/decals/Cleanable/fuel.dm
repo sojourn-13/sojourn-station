@@ -65,6 +65,7 @@
 	//The spread for flamethrower fuel is much more precise, to create a wide fire pattern.
 	var/turf/simulated/S = loc
 	if(amount > 0)
+		world.log << "Hotspot exposed at [loc] by the [src]"
 		S.hotspot_expose((T20C*2) + 380,500)
 		return
 
