@@ -42,7 +42,7 @@
 	if(mytank)
 		to_chat(user, SPAN_NOTICE("The fuel canister is [mytank.reagents.total_volume]% full."))
 
-/obj/item/weapon/flamethrower/attackby(obj/item/I, user)
+/obj/item/weapon/flamethrower/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/weapon/weldpack/canister))
 		if(mytank)
 			to_chat(user, SPAN_NOTICE("There appears to already be a fuel canister loaded in [src]!"))
