@@ -123,6 +123,10 @@
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
 	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/akl
 
+/datum/design/research/item/weapon/heavy_plasma
+	name = "\"Ragefire\" Experimental Plasma Gun"
+	build_path = /obj/item/weapon/gun/energy/plasma/super_heavy
+
 // Ammo
 /datum/design/research/item/ammo
 	name_category = "ammunition"
