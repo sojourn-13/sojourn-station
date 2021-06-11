@@ -95,6 +95,8 @@
 	projectile_type = /obj/item/projectile/plasma/heavy/super_heavy
 	cell_type = /obj/item/weapon/cell/medium
 	charge_cost = 100
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 20, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 10)
+
 	var/explode_chance // the % of chance the gun has to explode each time it is fired without coolant. It is random between each gun.
 	var/explode_chance_min = 5 // The mininum of explode_chance
 	var/explode_chance_max = 30 // The maximum of explode_chance
@@ -110,6 +112,7 @@
 
 	init_firemodes = list(
 		list(mode_name="Super-heavy Plasma", projectile_type=/obj/item/projectile/plasma/heavy/super_heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="kill", projectile_color = "#FFFF00"),
+		list(mode_name="Super-heavy Plasma", projectile_type=/obj/item/projectile/plasma/heavy/super_heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="kill", projectile_color = "#FFFF00")
 	)
 
 /obj/item/weapon/gun/energy/plasma/super_heavy/examine(mob/user)
@@ -117,6 +120,7 @@
 	if(container)
 		to_chat(user, SPAN_NOTICE("The [src.name] currently contain [container.reagents.total_volume] of chemicals."))
 
+// We want that every gun got a random chance of exploding.
 /obj/item/weapon/gun/energy/plasma/super_heavy/New()
 	..()
 	explode_chance = rand(explode_chance_min, explode_chance_max) // If there's no coolant, it got a random chance to explode, the chance itself is random.
@@ -144,9 +148,9 @@
 			var/obj/item/weapon/reagent_containers/C = W
 
 			// Remove the container from the user and put it in the gun
-			user.remove_from_mob(C)
-			C.forceMove(src)
-			container = C
+			user.remove_from_mob(C) // Remove from the mob's hand before moving it.
+			C.forceMove(src) // Moving the container into the gun.
+			container = C // Assiging a reference variable
 			to_chat(user, "You add the [W.name] to the [src].")
 			return
 	..()
@@ -154,7 +158,7 @@
 
 /obj/item/weapon/gun/energy/plasma/super_heavy/Fire(mob/user)
 	..() // We shoot the gun before using the coolant.
-	if(!(container.reagents.remove_reagent("coolant", coolant_used_per_shot))) // Try to remove the coolant, if it can't, we continue.
+	if(!(container) || !(container.reagents.remove_reagent("coolant", coolant_used_per_shot))) // First check if we have a container, if we do, then try to remove the coolant, if it can't, we continue.
 		to_chat(user, SPAN_WARNING("Your [src.name] start to overheat.")) // Warn the user that they ran out.
 
 		if(prob(explode_chance)) // This roll the dice to see if the gun explode.
