@@ -56,6 +56,46 @@
 	)
 	related_stats = list(STAT_COG)
 
+/datum/craft_recipe/storage/leather_backpack
+	name = "leather backpack"
+	result = /obj/item/weapon/storage/backpack/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/storage/leather_backsport
+	name = "leather sport backpack"
+	result = /obj/item/weapon/storage/backpack/leather/sport
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/storage/leather_satchel
+	name = "leather satchel"
+	result = obj/item/weapon/storage/backpack/satchel/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/storage/leather_duffel
+	name = "leather duffel bag"
+	result = /obj/item/weapon/storage/backpack/duffelbag/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 20, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+	related_stats = list(STAT_COG)
+
 /datum/craft_recipe/box/adv
 	icon_state = "clothing"
 	avaliableToEveryone = FALSE

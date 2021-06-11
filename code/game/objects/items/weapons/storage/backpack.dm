@@ -194,6 +194,11 @@
 	desc = "It's a backpack made by Honk! Co."
 	icon_state = "backpack_clown"
 
+/obj/item/weapon/storage/backpack/leather
+	name = "leather backpack"
+	desc = "A backpack made of leather"
+	icon_state = "backpack_leather"
+
 //Faction-specific backpacks
 /obj/item/weapon/storage/backpack/ironhammer
 	name = "operator's backpack"
@@ -204,6 +209,11 @@
 	name = "cruciform backpack"
 	desc = "For carrying all your holy needs."
 	icon_state = "backpack_neotheology"
+
+/obj/item/weapon/storage/backpack/leather/security
+	name = "leather backpack"
+	desc = "A backpack made of leather"
+	icon_state = "backpack_leather_security"
 
 //Used by mercenaries
 /obj/item/weapon/storage/backpack/military
@@ -244,6 +254,11 @@
 	name = "botanical sport backpack"
 	desc = "A green sport backpack for plant related work."
 	icon_state = "backsport_botanical"
+
+/obj/item/weapon/storage/backpack/leather/sport
+	name = "leather sport backpack"
+	desc = "A sport backpack made of leather"
+	icon_state = "backsport_leather"
 
 //Faction-specific backsports
 /obj/item/weapon/storage/backpack/sport/ironhammer
@@ -357,3 +372,8 @@
 	max_storage_space = DEFAULT_HUGE_STORAGE * 1.5
 	matter = list(MATERIAL_BIOMATTER = 15, MATERIAL_PLASTIC = 2)
 	equip_access = FALSE
+
+/obj/item/weapon/storage/backpack/duffelbag/leather
+	name = "leather duffel"
+	desc = "A big duffel made of leather"
+	icon_state = "leather_duffel"
