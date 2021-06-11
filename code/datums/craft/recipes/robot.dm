@@ -10,7 +10,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 60),
-		list(QUALITY_HAMMERING, 10, "time" = 180),
+		list(QUALITY_BOLT_TURNING, 10, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
 	)
 

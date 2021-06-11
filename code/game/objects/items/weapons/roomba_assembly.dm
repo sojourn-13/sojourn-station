@@ -63,7 +63,7 @@
 			return
 		build_step++ // Go to the next assembly part.
 		to_chat(user, "You wire up the roomba.")
-		step_message = "The panel is open." // Next step
+		step_message = "The circuit board is unprogrammed." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		C.use(5) // use five cables.
 
@@ -86,7 +86,7 @@
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 7, Swipe the ID to activate it.
-	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 5))
+	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 6))
 		var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
 		if(!access_robotics in C.access) // Are you authorized to start the roomba ?
 			to_chat(user, "You do not have the autorization to start the roomba.")

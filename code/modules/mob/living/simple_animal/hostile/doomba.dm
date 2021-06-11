@@ -343,6 +343,7 @@
 
 /mob/living/simple_animal/hostile/roomba/custom/New()
 	armor = default_armor // Give the roomba it's default armor.
+	..()
 
 /*\
  * The attackby() is basically a decision tree with branches.
@@ -502,6 +503,7 @@
 					health = maxHealth
 					to_chat(user, "You repair the damage to [src].")
 					return
+				return
 			to_chat(user, "[src] doesn't need repairs.")
 			return
 
@@ -586,7 +588,7 @@
 		weaponry = null // No more weapon in the roomba
 	if(kamikaze) // Check if the roomba got a mine.
 		src.visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
-		kamikaze.explode()
+		kamikaze.explode() // Make the mine explode.
 		kamikaze = null // No more mine in the roomba
 	..()
 	return

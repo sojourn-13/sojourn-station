@@ -13,7 +13,7 @@
 	origin_tech = list(TECH_DATA = 3)
 
 /obj/item/weapon/roomba_part/treads
-	name = "roomba_treads"
+	name = "roomba treads"
 	desc = "Treads for the assembly of a roomba."
 	icon_state = "roomba_treads"
 
