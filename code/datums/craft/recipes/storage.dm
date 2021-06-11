@@ -4,6 +4,19 @@
 	related_stats = list(STAT_MEC)
 	time = 80
 
+/datum/craft_recipe/storage/heavytrash
+	name = "big trash bag"
+	icon_state = "clothing"
+	result = /obj/item/weapon/storage/bag/trash/big
+	steps = list(
+		list(/obj/item/weapon/storage/bag/trash, 1, "time" = 60),
+		list(QUALITY_CUTTING, 20, "time" = 60),
+		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTIC)
+		list(/obj/item/weapon/storage/bag/trash, 1, "time" = 60),
+		list(QUALITY_CUTTING, 20, "time" = 60),
+	)
+	related_stats = list(STAT_COG)
+
 /datum/craft_recipe/storage/plastic_bag
 	name = "plastic bag"
 	icon_state = "clothing"
