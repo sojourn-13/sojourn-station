@@ -113,7 +113,7 @@
 			continue	//so we don't burn the tile we be standin on
 		if(previousturf && LinkBlocked(previousturf, T))
 			break
-		var/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/fuel new /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel(T)
+		var/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/fuel = new /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel(T)
 		fuel.doDircheck(T, pressure*25, fire_dir, get_turf(src))
 
 	previousturf = null
