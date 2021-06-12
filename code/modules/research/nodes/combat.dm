@@ -240,7 +240,8 @@
 							/datum/design/research/item/ammo/laser_mag,
 							/datum/design/research/item/weapon/laser_ak,
 							/datum/design/research/item/weapon/centauri
-							//datum/design/research/item/weapon/heavy_plasma)
+							//datum/design/research/item/weapon/heavy_plasma
+							)
 
 /datum/technology/riglaser_weaponry
 	name = "Hardsuit Laser Weaponry"
