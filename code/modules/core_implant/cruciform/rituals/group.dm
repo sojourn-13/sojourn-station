@@ -60,7 +60,6 @@
 /datum/group_ritual_effect/cruciform/stat/mechanical
 	stat_buff = STAT_MEC
 
-
 /datum/ritual/group/cruciform/stat/cognition
 	name = "Discovery of the Path"
 	desc = "Boosts Cognition stat to 3 + 2 for each participant permanently, if god wills it."
@@ -78,8 +77,6 @@
 
 /datum/group_ritual_effect/cruciform/stat/cognition
 	stat_buff = STAT_COG
-
-
 
 /datum/ritual/group/cruciform/stat/biology
 	name = "Creation of Vitae"
@@ -99,7 +96,6 @@
 /datum/group_ritual_effect/cruciform/stat/biology
 	stat_buff = STAT_BIO
 
-
 /datum/ritual/group/cruciform/robustness
 	name = "Pilgrim's Path"
 	desc = "Boosts Robustness stat to 3 + 2 for each participant permanently, if god wills it."
@@ -117,7 +113,6 @@
 
 /datum/group_ritual_effect/cruciform/stat/robustness
 	stat_buff = STAT_ROB
-
 
 /datum/ritual/group/cruciform/toughness
 	name = "Reclamation of Endurance"
@@ -137,7 +132,6 @@
 
 /datum/group_ritual_effect/cruciform/stat/toughness
 	stat_buff = STAT_TGH
-
 
 /datum/ritual/group/cruciform/crusade
 	name = "Call of the Crusade"
