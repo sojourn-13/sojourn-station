@@ -70,3 +70,4 @@
 #define PERK_SECOND_SKIN /datum/perk/second_skin
 #define PERK_IRON_FLESH /datum/perk/iron_flesh
 #define PERK_SI_SCI /datum/perk/si_sci
+#define PERK_WHOLE_BODY /datum/perk/whole_body

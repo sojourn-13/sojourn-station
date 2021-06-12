@@ -437,3 +437,26 @@
 	name = "Channeling"
 	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
 			during group rituals, and have an increased regeneration of cruciform energy."
+
+/datum/perk/whole_body
+	name = "Whole of Body and Mind"
+	desc = "Your chest is unburdened and your mind is clear. You feel as if your body \
+			and soul are stronger when not restrained by dogma or sucked dry by ideological implants."
+
+/datum/perk/whole_body/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.addTempStat(STAT_ROB, 12, INFINITY, "Whole Body")
+	holder.stats.addTempStat(STAT_TGH, 12, INFINITY, "Whole Body")
+	holder.stats.addTempStat(STAT_VIG, 12, INFINITY, "Whole Body")
+	holder.stats.addTempStat(STAT_BIO, 12, INFINITY, "Whole Body")
+	holder.stats.addTempStat(STAT_COG, 12, INFINITY, "Whole Body")
+	holder.stats.addTempStat(STAT_MEC, 12, INFINITY, "Whole Body")
+
+/datum/perk/whole_body/remove()
+	holder.stats.removeTempStat(STAT_ROB, "Whole Body")
+	holder.stats.removeTempStat(STAT_TGH, "Whole Body")
+	holder.stats.removeTempStat(STAT_VIG, "Whole Body")
+	holder.stats.removeTempStat(STAT_BIO, "Whole Body")
+	holder.stats.removeTempStat(STAT_COG, "Whole Body")
+	holder.stats.removeTempStat(STAT_MEC, "Whole Body")
+	..()

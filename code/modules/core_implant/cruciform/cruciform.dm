@@ -21,10 +21,12 @@ var/list/disciples = list()
 	if(.)
 		target.stats.addPerk(/datum/perk/sanityboost)
 		target.stats.addPerk(/datum/perk/unfinished_delivery)
+		target.stats.removePerk(/datum/perk/whole_body)
 
 /obj/item/weapon/implant/core_implant/cruciform/uninstall()
 	wearer.stats.removePerk(/datum/perk/sanityboost)
 	wearer.stats.addPerk(/datum/perk/unfinished_delivery)
+	wearer.stats.addPerk(/datum/perk/whole_body)
 	return ..()
 
 /obj/item/weapon/implant/core_implant/cruciform/get_mob_overlay(gender, form)

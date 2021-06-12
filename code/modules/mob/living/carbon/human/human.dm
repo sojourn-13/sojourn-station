@@ -55,7 +55,7 @@
 	make_blood()
 
 	sanity = new(src)
-
+	src.stats.addPerk(/datum/perk/whole_body)
 	AddComponent(/datum/component/fabric)
 
 /mob/living/carbon/human/Destroy()
