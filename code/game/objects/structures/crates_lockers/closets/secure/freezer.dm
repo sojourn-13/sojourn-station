@@ -60,25 +60,13 @@
 
 /obj/structure/closet/secure_closet/freezer/mini
 	name = "mini freezer"
-	desc = "A smaller then normal freezer."
+	desc = "A smaller than normal freezer."
 	icon_state = "advanced_freezer"
 
-/obj/structure/closet/secure_closet/freezer/mini/attackby(obj/item/I, mob/user)
-	if(src.opened)
-		if(istype(I,/obj/item/tk_grab))
-			return 0
-		if(istype(I, /obj/item/weapon/storage/laundry_basket) && I.contents.len)
-			var/obj/item/weapon/storage/laundry_basket/LB = I
-			var/turf/T = get_turf(src)
-			for(var/obj/item/II in LB.contents)
-				LB.remove_from_storage(II, T)
-			user.visible_message(
-				SPAN_NOTICE("[user] empties \the [LB] into \the [src]."), \
-				SPAN_NOTICE("You empty \the [LB] into \the [src]."), \
-				SPAN_NOTICE("You hear rustling of clothes.")
-			)
-			return
-		usr.unEquip(I, src.loc)
-		return
-	else
-		src.attack_hand(user)
+/obj/structure/closet/secure_closet/freezer/mini/populate_contents()
+	for(var/i in 1 to 6)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_no_sugar(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_orange(src)
