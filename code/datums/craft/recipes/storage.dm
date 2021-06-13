@@ -78,7 +78,7 @@
 
 /datum/craft_recipe/storage/leather_satchel
 	name = "leather satchel"
-	result = obj/item/weapon/storage/backpack/satchel/leather
+	result = /obj/item/weapon/storage/backpack/satchel/leather
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 30),

@@ -376,4 +376,4 @@
 /obj/item/weapon/storage/backpack/duffelbag/leather
 	name = "leather duffel"
 	desc = "A big duffel made of leather"
-	icon_state = "leather_duffel"
+	icon_state = "duffel_leather"
