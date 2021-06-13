@@ -90,7 +90,8 @@
 /obj/item/weapon/gun/energy/plasma/super_heavy
 	name = "\"Ragefire\" Experimental Plasma Gun"
 	desc = "An \"Soteria\" brand experimental weapon that uses coolant to fire deadly plasma projectiles without needing to cool down between shots, however the gun is extremly unstable without cooling."
-	icon = 'icons/obj/guns/energy/destroyer.dmi'
+	icon = 'icons/obj/guns/energy/plasma.dmi'
+	icon_state = "plasma"
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	projectile_type = /obj/item/projectile/plasma/heavy/super_heavy
 	cell_type = /obj/item/weapon/cell/medium
