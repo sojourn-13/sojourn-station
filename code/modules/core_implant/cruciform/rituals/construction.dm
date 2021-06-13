@@ -72,7 +72,6 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	var/build_path = blueprint.build_path
 	new build_path(target_turf)
 
-
 /datum/ritual/cruciform/priest/construction/proc/items_check(mob/user,turf/target, datum/nt_blueprint/blueprint)
 	var/list/turf_contents = target.contents
 
@@ -90,6 +89,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			if(stacked.amount < required_amount)
 				return FALSE
 	return TRUE
+
 /datum/nt_blueprint/
 	var/name = "Report me"
 	var/build_path
@@ -176,6 +176,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/structure/reagent_dispensers/biomatter = 1
 	)
 	build_time = 9 SECONDS
+
 //Notice: We don't use them on Soj but its kept here for posterity. -Kaz
 //cloner
 /*
@@ -189,6 +190,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/glass/reinforced = 10,
 	)
 	build_time = 10 SECONDS
+
 /datum/nt_blueprint/machinery/reader
 	name = "Cruciform Reader"
 	build_path = /obj/machinery/neotheology/reader
@@ -199,6 +201,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/CRUCIFORM_TYPE = 1
 	)
 	build_time = 10 SECONDS
+
 /datum/nt_blueprint/machinery/biocan
 	name = "Biomass tank"
 	build_path = /obj/machinery/neotheology/biomass_container
@@ -209,6 +212,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	)
 	build_time = 8 SECONDS
 */
+
 //generator
 /datum/nt_blueprint/machinery/biogen
 	name = "Biomatter Power Generator"

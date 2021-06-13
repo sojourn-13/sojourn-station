@@ -4,12 +4,10 @@
 	desc = ""
 	category = "Crusader"
 
-
 /datum/ritual/cruciform/crusader/brotherhood
 	name = "Eternal Brotherhood"
 	phrase = "Ita multi unum corpus sumus in Christo singuli autem alter alterius membra."
 	desc = "Reveals other disciples to speaker."
-
 
 /datum/ritual/cruciform/crusader/brotherhood/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/datum/core_module/cruciform/neotheologyhud/hud_module = C.get_module(/datum/core_module/cruciform/neotheologyhud)
@@ -18,7 +16,6 @@
 	else
 		C.add_module(new /datum/core_module/cruciform/neotheologyhud)
 	return TRUE
-
 
 /datum/ritual/cruciform/crusader/battle_call
 	name = "Call to Battle"

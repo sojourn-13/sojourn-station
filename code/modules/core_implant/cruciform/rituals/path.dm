@@ -4,13 +4,11 @@
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/tessellate
 	category = "Tessellate"
 
-
 /datum/ritual/targeted/cruciform/tessellate
 	name = "cruciform targeted"
 	phrase = null
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/tessellate
 	category = "Tessellate"
-
 
 /datum/ritual/cruciform/tessellate/heal_heathen_special
 	name = "Graceful Repose"
@@ -39,14 +37,12 @@
 		fail("Your cruciform sings, alone, unto the void.", user, C)
 		return FALSE
 
-
 /datum/ritual/cruciform/tessellate/heal_heathen_special/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your most of your pain in body and mind</span>")
 		participant.add_chemical_effect(CE_PAINKILLER, 100)
 		participant.adjustCloneLoss(-20)
 		participant.adjustBrainLoss(-20)
 		participant.updatehealth()
-
 
 /datum/ritual/cruciform/tessellate/heal_heathen_improved
 	name = "Healing Word"
@@ -75,7 +71,6 @@
 		fail("Your cruciform sings, alone, unto the void.", user, C)
 		return FALSE
 
-
 /datum/ritual/cruciform/tessellate/heal_heathen_improved/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain</span>")
 		participant.add_chemical_effect(CE_PAINKILLER, 20)
@@ -86,13 +81,11 @@
 		participant.adjustBrainLoss(-5)
 		participant.updatehealth()
 
-
 /datum/ritual/cruciform/lemniscate
 	name = "cruciform"
 	phrase = null
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/lemniscate
 	category = "Lemniscate"
-
 
 /datum/ritual/targeted/cruciform/lemniscate
 	name = "cruciform targeted"
@@ -114,7 +107,6 @@
 /datum/ritual/cruciform/lemniscate/long_boost/New()
 	..()
 	desc = "This litany boosts [get_stats_to_text()] stats of evryone who hears you, for about thirty minutes."
-
 
 /datum/ritual/cruciform/lemniscate/long_boost/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
@@ -162,7 +154,6 @@
 			stats_text += ", [stat]"
 	return lowertext(stats_text)
 
-
 /datum/ritual/cruciform/lemniscate/long_boost/mental
 	name = "Sanctorum of Life"
 	phrase = "Venite ad me omnes qui laboratis, et onerati estis, et ego reficiam vos."
@@ -173,14 +164,12 @@
 	phrase = "Confortare et esto robustus. Nolite timere nec paveatis a conspectu eorum quia Dominus Deus tuus ipse est ductor tuus. Et non dimittet nec derelinquet te."
 	stats_to_boost = list(STAT_ROB = 15, STAT_TGH = 15, STAT_VIG = 15)
 
-
 /datum/ritual/cruciform/monomial
 	name = "cruciform"
 	phrase = null
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/monomial
 	fail_message = "The Cruciform feels cold against your chest."
 	category = "Monomial"
-
 
 /datum/ritual/targeted/cruciform/monomial
 	name = "cruciform targeted"
@@ -241,13 +230,11 @@
 	user.stats.changeStat(STAT_BIO, -10)
 	user.stats.changeStat(STAT_MEC, -10)
 
-
 /datum/ritual/cruciform/divisor
 	name = "cruciform"
 	phrase = null
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/divisor
 	category = "Divisor"
-
 
 /datum/ritual/targeted/cruciform/divisor
 	name = "cruciform targeted"
@@ -263,7 +250,6 @@
 	cooldown = TRUE
 	cooldown_time = 4 HOURS
 	cooldown_category = "cdefn"
-
 
 /datum/ritual/targeted/cruciform/divisor/spawn_con/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	new /obj/item/weapon/gun/energy/taser(usr.loc)

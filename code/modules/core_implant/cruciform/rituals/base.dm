@@ -5,13 +5,11 @@
 	fail_message = "The Cruciform feels cold against your chest."
 	category = "Common"
 
-
 /datum/ritual/targeted/cruciform/base
 	name = "cruciform targeted"
 	phrase = null
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform
 	category = "Common"
-
 
 /datum/ritual/cruciform/base/relief
 	name = "Relief"
@@ -26,7 +24,6 @@
 	H.apply_effect(-30, HALLOSS, 0)
 	H.updatehealth()
 	return TRUE
-
 
 /datum/ritual/cruciform/base/soul_hunger
 	name = "Soul Hunger"
@@ -80,7 +77,6 @@
 	new /obj/effect/effect/smoke/illumination(H.loc, brightness=max(7), lifetime=12000) //Very bright light.
 	set_personal_cooldown(H)
 	return TRUE
-
 
 /datum/ritual/cruciform/base/entreaty
 	name = "Entreaty"
@@ -139,7 +135,6 @@
 		to_chat(H, SPAN_NOTICE("There is nothing here. You feel safe."))
 	return TRUE
 
-
 /datum/ritual/cruciform/base/message
 	name = "Sending"
 	phrase = "Audit, me audit vocationem. Ego nuntius vobis."
@@ -159,5 +154,6 @@
 	if (!text)
 		return
 	to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks in your mind: \"[text]\"</font><b></span>")
+	log_and_message_admins("[user.real_name] sent a message to [H] with text \"[text]\"")
 	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 	playsound(H, 'sound/machines/signal.ogg', 50, 1)

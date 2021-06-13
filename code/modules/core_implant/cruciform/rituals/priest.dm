@@ -10,11 +10,11 @@
 	desc = ""
 	category = "Initiation"
 
-
 /*
 	Penance
 	Deals pain damage to a targeted disciple
 */
+
 /datum/ritual/targeted/cruciform/priest/penance
 	name = "Penance"
 	phrase = "Mihi vindicta \[Target human]"
@@ -62,6 +62,7 @@
 	Convalescence
 	Heals yourself a fair amount
 */
+
 /datum/ritual/cruciform/priest/selfheal
 	name = "Convalescence"
 	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia deus."
@@ -83,7 +84,6 @@
 	set_personal_cooldown(H)
 	return TRUE
 
-
 /datum/ritual/cruciform/priest/heal_other
 	name = "Succour"
 	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos."
@@ -100,8 +100,6 @@
 		fail("Cruciform not found.", user, C)
 		return FALSE
 
-
-
 	var/mob/living/carbon/human/H = CI.wearer
 
 	if(!istype(H))
@@ -113,7 +111,6 @@
 	if (!(T.Adjacent(get_turf(H))))
 		to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
 		return
-
 
 	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of succor")
 	if (do_after(user, 40, H, TRUE))
@@ -131,9 +128,6 @@
 		H.updatehealth()
 		set_personal_cooldown(user)
 		return TRUE
-
-
-
 
 /datum/ritual/cruciform/priest/heal_heathen
 	name = "Divine Hymn"
@@ -163,7 +157,6 @@
 		fail("Your cruciform sings, alone, unto the void.", user, C)
 		return FALSE
 
-
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain</span>")
 		participant.add_chemical_effect(CE_PAINKILLER, 15)
@@ -173,7 +166,6 @@
 		participant.adjustOxyLoss(-30)
 		participant.adjustBrainLoss(-5)
 		participant.updatehealth()
-
 
 /*
 	Scrying: Remotely look through someone's eyes. Global range, useful to find fugitives or corpses
@@ -218,9 +210,6 @@
 	if(index == 1 && target.address == text && target.active)
 		if(target.wearer && target.wearer.stat != DEAD)
 			return target
-
-
-
 
 /datum/ritual/cruciform/priest/epiphany
 	name = "Epiphany"
@@ -357,8 +346,6 @@
 		fail("[H] must be undressed.", user, C)
 		return FALSE
 
-
-
 	if(!CI.install(H, BP_CHEST, user) || CI.wearer != H)
 		fail("Commitment failed.", user, C)
 		return FALSE
@@ -375,7 +362,6 @@
 		M.updatehealth()
 
 	return TRUE
-
 
 /datum/ritual/cruciform/priest/ejection
 	name = "Deprivation"
@@ -412,7 +398,6 @@
 	else
 		fail("Deprivation does not work upon the living.", user, C)
 		return FALSE
-
 
 /datum/ritual/cruciform/priest/unupgrade
 	name = "Asacris"
@@ -474,7 +459,6 @@
 		fail("Cruciform not found",user,C)
 		return FALSE
 
-
 	if(CI.get_module(CRUCIFORM_PRIEST) || CI.get_module(CRUCIFORM_INQUISITOR))
 		fail("The target is already a devout.",user,C)
 		return FALSE
@@ -489,8 +473,6 @@
 	log_and_message_admins("promoted disciple [C] to devout with initiation litany")
 
 	return TRUE
-
-
 
 ///////////////////////////////////////
 ///////////SHORT BOOST LITANIES////////
@@ -511,7 +493,6 @@
 	..()
 	desc = "This litany boosts [get_stats_to_text()] stats of everyone who hears you, for about ten minutes."
 
-
 /datum/ritual/cruciform/priest/short_boost/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
 	for(var/mob/living/carbon/human/H in view(user))
@@ -530,7 +511,6 @@
 		fail("Your cruciform sings, alone, unto the void.", user, C)
 		return FALSE
 
-
 /datum/ritual/cruciform/priest/short_boost/proc/give_boost(mob/living/carbon/human/participant)
 	for(var/stat in stats_to_boost)
 		var/amount = stats_to_boost[stat]
@@ -538,7 +518,6 @@
 		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
 	spawn(30)
 		to_chat(participant, SPAN_NOTICE("A wave of dizziness washes over you and your mind is filled with a sudden insight into [get_stats_to_text()]."))
-
 
 /datum/ritual/cruciform/priest/short_boost/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
 	to_chat(participant, SPAN_WARNING("Your knowledge of [get_stats_to_text()] feels lessened."))
@@ -557,7 +536,6 @@
 		else
 			stats_text += ", [stat]"
 	return lowertext(stats_text)
-
 
 /datum/ritual/cruciform/priest/short_boost/mental
 	name = "Grace of Perseverance"
