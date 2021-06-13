@@ -320,7 +320,7 @@
 
 /tipsAndTricks/jobs/skyfall_timer
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "Scrap Beacon has a two hour delay before it can be used again, meaning in a productive shift you can use it 3 times before its end."
+    tipText = "Scrap Beacon has an one hour delay before it can be used again, meaning in a productive shift you can use it 8 times before its end."
 
 /tipsAndTricks/jobs/plants_n_meat
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
