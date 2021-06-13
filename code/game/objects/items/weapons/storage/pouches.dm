@@ -294,7 +294,11 @@
 		/obj/item/weapon/cell/medium,
 		/obj/item/weapon/tank/emergency_oxygen,
 		/obj/item/weapon/tank/emergency_nitgen,
-		/obj/item/device/lighting/toggleable/flashlight
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/weapon/reagent_containers/food/snacks/tastybread,
+		/obj/item/weapon/reagent_containers/food/snacks/baguette,
+		/obj/item/weapon/reagent_containers/glass/bottle,
+		/obj/item/weapon/reagent_containers/food/drinks/cans
 		)
 
 	sliding_behavior = TRUE
