@@ -344,27 +344,6 @@
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("schnapps" = 100)
 
-/obj/item/weapon/reagent_containers/food/drinks/bottle/monster
-	name = "Claw Energy"
-	desc = "Claw Energy for when you need to have your attention like a halk's eye and to take flight!"
-	icon_state = "energy_drink_monster"
-	center_of_mass = list("x"=16, "y"=6)
-	preloaded_reagents = list("energy_drink_monster" = 70, "sugar" = 30)
-
-/obj/item/weapon/reagent_containers/food/drinks/bottle/monster_no_sugar
-	name = "Claw Energy Diet"
-	desc = "Claw Energy for when you need to have your attention like a halk's eye and to take flight! This one has less sugar and more energy drink"
-	icon_state = "energy_drink_nosugar"
-	center_of_mass = list("x"=16, "y"=6)
-	preloaded_reagents = list("energy_drink_monster" = 100)
-
-/obj/item/weapon/reagent_containers/food/drinks/bottle/monster_yellow
-	name = "Claw Energy Yellow"
-	desc = "Claw Energy for when you need to have your attention like a halk's eye and to take flight! This one is mixed with Orange juice for extra flavour"
-	icon_state = "energy_drink_orange"
-	center_of_mass = list("x"=16, "y"=6)
-	preloaded_reagents = list("energy_drink_monster" = 55, "orangejuice" = 15, "sugar" = 30)
-
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice
